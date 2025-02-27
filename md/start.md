@@ -51,6 +51,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Történet](001_tortenet.md)
 - [Fejlesztők, Tesztelők](002_fejlesztok.md)
 - [Áttekintés](003_attekintes.md)
+- [Tanácsok](004_tanacsok.md)
 - [Szilánk RPG alrendszerei](005_alrendszerek.md)
 - [Szimbólumok, Jelzők](006_szimbolumok_jelzok.md)
 - [Harci linkek](007_harci_linkek.md)

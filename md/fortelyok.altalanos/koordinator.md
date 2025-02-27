@@ -10,7 +10,7 @@ Ez akkor is működik, ha nem te dobsz a próbára, azaz nem neked van a legmaga
 
 🌟 **Hatás**:
 - Koordináció Bónusz limitre: Max `3`
-- Koordináció büntetésre: Max -3
+- Koordináció büntetésre: Max `-3`
 
 ---
 ### 1. fok
@@ -32,7 +32,7 @@ Ez akkor is működik, ha nem te dobsz a próbára, azaz nem neked van a legmaga
 - Adott Képzettség - `3.szint`
 
 🌟 **Hatás**:
-- Koordináció Bónusz limitre: +2 (Max 5)
+- Koordináció Bónusz limitre: `+2` (Max 5)
 - Koordináció büntetés pontra: `-2`
 
 ---
@@ -43,9 +43,15 @@ Ez akkor is működik, ha nem te dobsz a próbára, azaz nem neked van a legmaga
 - Adott Képzettség - `3.szint`
 
 🌟 **Hatás**:
-- Koordináció Bónusz limitre: +3 (Max 6)
+- Koordináció Bónusz limitre: `+3` (Max 6)
 - Koordináció büntetés pontra: `-3`
 
 <br />
 
 ---
+
+### Megjegyzések
+
+- Ha több koordinátor van egy csapatban, akkor csak a legmagasabb fokú személy számít
+
+<br />
