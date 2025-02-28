@@ -8,6 +8,7 @@
   - [Összetett képzettségpróba - ellenpróba eset](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba---ellenpr%C3%B3ba-eset)
   - [Összhangok](#%C3%B6sszhangok)
   - [Sérülés hatása képzettségpróbára](#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra)
+  - [Tulajdonság vs Képzettség ellenpróba](xyz)
 
 ### Próbadobás
 
@@ -30,6 +31,8 @@ Tulajdonság + Képzettség + k10
 
 Ha a KM úgy látja, hogy az adott próbánál több Tulajdonság is szerepet játszik, akkor a szükséges Tulajdonságok átlagával kell számolni.
 
+<br />
+
 ---
 
 ### Tulajdonság választás (opcionális)
@@ -45,6 +48,8 @@ Tulajdonságonként viszont eltér(het)
 
 ⚡ Példa: **Ügyesség** segítségével a határoló falakon ide-oda pattogva feljutni valahova, vagy helyből **Erő** segítségével ugrani egyet felfelé. Lehet, hogy a különböző megvalósítások különböző Nehézséget eredményznek.
 
+<br />
+
 ---
 ### Kombinált képzettségpróba (több Tulajdonsággal egyszerre)
 
@@ -54,7 +59,9 @@ A Kombinált Tulajdonságpróbához hasonló helyzet, mikor a KM szerint nem csa
 
 Ekkor 
 - a fontosabbnak ítélt Tulajdonsággal dobandó az első próba
-- a másodlagos fontosságúnak ítélt Tulajdonsággal adobandó csökkentett Nehézségű próba (lásd fenn az Összetett próbát!)
+- a másodlagos fontosságúnak ítélt Tulajdonsággal dobandó a csökkentett Nehézségű próba (lásd lenn az [Összetett képzettségpróbát](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)!)
+
+<br />
 
 ---
 ### Vállalás
@@ -88,10 +95,14 @@ Ez sokat dob az esélyeken, de megvan a rizikója is: ha a fenti karakter a dob�
 
 > **Fontos**: összetett, több dobást igénylő képzettségpróbánál nem alkalmazható Vállalás! (pl. megmászni a nagy hegyet).
 
+<br />
+
 ---
 ### Próba biztos tudásból
 
 Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehetőség képzettségpróba dobására. Tipikusan a „Tudok-e valamit róla?"-jellegű határozottan eldönthető esetekben. Ilyenkor a KM dönti el, hogy az adott képzettségszinttel az adott feladat megoldható, avagy sem.
+
+<br />
 
 ---
 ### Próba képzetlenül
@@ -103,6 +114,8 @@ Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehe
 Ha a karakter egyáltalán nem jártas az adott képzettségben (vonatkozó értéke nulla), akkor - ha a képzettség leírásánál engedélyezett a képzetlen dobás - ugyanúgy próbát dob, mint bárki, de a **célszám `3`-al emelkedik**. Fizikai képzettségeknél **nem jár** a `3`-as, célszám emelő büntetés.
 
 Ha az adott képzettséget nem lehet képzetlenül megpróbálni, akkor a KM egyszerűen megtagadja a próbát, automatikusan sikertelennek véve azt.
+
+<br />
 
 ---
 ### Összetett képzettségpróba, Másodlagos próbadobások
@@ -138,6 +151,8 @@ Tehát a próbák:
 
 Hasonló szituáció: [Mászás képzettségpróbára összetett példa](szituaciok/maszas_osszetett_pelda.md)
 
+<br />
+
 ---
 ### Összetett képzettségpróba - ellenpróba eset
 
@@ -157,6 +172,8 @@ Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kih
 Ez a játékmechanika tempókezelési eszközt is adhat a KM kezébe a mesélés során, ha nem akarja lemesélni minden mozzanatát például egy hosszabb, - de sokadjára már unalmas - üldözésnek.
 
 Ezen felül a ez a módszer a feszültség fenntartására is alkalmas, mert esélyesen egészen az utolsó pár dobásig nem tudni, ki kerekedik majd felül. Alkalmazhatjuk fázisokban, időben szétterítve is, tehát attól függően, ki nyerte épp az aktuális dobást, a történet is aszerint alakul, míg az utolsó dobásnál következik be a kapott eredmény okozta esemény (például a fent említett zsoldos 5 napi üldözés után utolérte áldozatát).
+
+<br />
 
 ---
 ### Összhangok
@@ -199,6 +216,7 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 - [Lexikum](kepzettsegek.szekunder/lexikum.md) ⇆ [Művészetismeret](kepzettsegek.szekunder/muveszetismeret.md)
 - stb.
 
+<br />
 
 ---
 ### Sérülés hatása képzettségpróbára
@@ -209,6 +227,15 @@ Ha megsérül a karakter, képzettségpróbáira levonások járnak. Hogy mennyi
 | ---- | :----: | :----: | :----: | :----: |
 | **fizikai** | -  | -2 | -4 | -6 |
 | **egyéb**   | -  | -  | -1 | -3 |
+
+<br />
+
+---
+### Tulajdonság vs Képzettség ellenpróba
+
+Előfordulhat olyan furcsa helyzet, hogy a KM véleménye szerint egy szituációban az egyik fél a Tulajdonságát, a másik egy képzettségét használná.
+
+Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbálja vagy Tulajdonság ellenpróbába, vagy Képzettség ellepróbába fordítani a szituációt. Ne bonyolítsunk feleslegesen.
 
 ---
 
