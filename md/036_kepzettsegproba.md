@@ -5,7 +5,7 @@
   - [Próba biztos tudásból](#pr%C3%B3ba-biztos-tud%C3%A1sb%C3%B3l)
   - [Próba képzetlenül](#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl)
   - [Összetett képzettségpróba, Másodlagos próbadobások](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)
-  - [xyz](⭕xyz)⭕
+  - [Összetett képzettségpróba - ellenpróba eset](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba---ellenpr%C3%B3ba-eset)
   - [Összhangok](#%C3%B6sszhangok)
   - [Sérülés hatása képzettségpróbára](#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra)
 
