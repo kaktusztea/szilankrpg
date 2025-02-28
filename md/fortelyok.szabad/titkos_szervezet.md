@@ -1,4 +1,14 @@
-## 🟣 Titkos szervezeti kultúra 🔁
+## 🟣 Titkos szervezet: (szervezet neve) 🔁
+
+Többször felvehető.
+Tagja vagy, vagy alaposan ismersz egy titkos szervezetet. Ez lehet
+
+- tolvajcéh
+- fejvadász klán
+- kulturális páholy
+- vallásos szekta
+
+Járatos vagy a szervezet protokolljaikban, hierarchiában. Ismereed 
 
 ### Kiterjeszti ezeket
 

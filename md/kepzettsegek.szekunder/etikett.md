@@ -19,7 +19,7 @@ Sokszor [összetett próba](../036_kepzettsegproba.md#összetett-képzettségpr�
 
 - [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): "A vérnász során egyre több pengét kell elkerülni, a hetedik után hátulról is jöhet egy meglepetés."
 - [Teaszertartás](../fortelyok.szabad/teaszertartas.md): Amely Kultúrköröket ismersz, azok teaszertartásait **Etikett** képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó teaszertartásokat.
-- [Titkos szervezeti kultúra](../fortelyok.szabad/titkos_szervezeti_kultura.md):  "A véráldozat után két perc ima, utána indul minden fejvadász a küldetésre. Most nem szabad megszólalnom."
+- [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md):  "A véráldozat után két perc ima, utána indul minden fejvadász a küldetésre. Most nem szabad megszólalnom."
 
 ### Szituációk
 

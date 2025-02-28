@@ -71,7 +71,7 @@ Van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 - [Taktika: Útonállás, rajtaütés](fortelyok.szabad/taktika_utonallas_rajtautes.md)🔺
 - [Teaszertartás](fortelyok.szabad/teaszertartas.md)
 - [Térképészet](fortelyok.szabad/terkepeszet.md)
-- [Titkos szervezeti kultúra](fortelyok.szabad/titkos_szervezeti_kultura.md) 🔁
+- [Titkos szervezet](fortelyok.szabad/titkos_szervezet.md) 🔁
 - [Zenélés: fúvós hangszerek](fortelyok.szabad/zeneles_fuvos_hangszerek.md)
 - [Zenélés: húros hangszerek](fortelyok.szabad/zeneles_huros_hangszerek.md)
 - [Zenélés: ütős hangszerek](fortelyok.szabad/zeneles_utos_hangszerek.md)

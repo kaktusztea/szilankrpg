@@ -18,7 +18,7 @@ __
 - [Pénzügyek](../fortelyok.szabad/penzugyek.md): "A legfoglalt iratokból egyből kiviláglik: Kamarás uram kettős könyvelést vezetett."
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md): "A szimbólumok által jelképezett átjáró az kandalló feletti festményre utal!"
 - [Térképészet](../fortelyok.szabad/terkepeszet.md): "A két 'O' a két ablakot, az 'Y', a hátsó ajtót jelzi, a szaggatott vonalon az 'X' szerintem csapdát jelent."
-- [Titkos szervezeti kultúra](../fortelyok.szabad/titkos_szervezeti_kultura.md): "A Karvaly céh második embere..., a nyakát az Ítészek céhének stílusában vágták át."
+- [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md): "A Karvaly céh második embere..., a nyakát az Ítészek céhének stílusában vágták át."
 
 ### Erős kiterjesztés
 

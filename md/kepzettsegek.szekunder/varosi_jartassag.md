@@ -13,7 +13,7 @@ Emlékezet, Intelligencia
 
 ### Erős kiterjesztés
 
-- [Titkos szervezeti kultúra](../fortelyok.szabad/titkos_szervezeti_kultura.md): Egy adott titkos klán vagy szervezet belső működésének, szokásainak, hierarchiájának ismerete. Székhelyek, besúgók, informátorok fellelésének helyei.
+- [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md): Egy adott titkos klán vagy szervezet belső működésének, szokásainak, hierarchiájának ismerete. Székhelyek, besúgók, informátorok fellelésének helyei.
 
 ### Szituációk
 

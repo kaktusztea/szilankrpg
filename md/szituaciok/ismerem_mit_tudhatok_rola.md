@@ -30,13 +30,13 @@ Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismer
 
 [Városi jártasság](../kepzettsegek.szekunder/varosi_jartassag.md) képzettség
 - Tulajdonság: Emlékezet
-- Normál kiterjesztés: ["Titkos szervezeti kultúra"](../fortelyok.szabad/titkos_szervezeti_kultura.md) (adott szervezetre) fortély
+- Normál kiterjesztés: ["Titkos szervezet"](../fortelyok.szabad/titkos_szervezet.md) (adott szervezetre) fortély
 
 `VAGY`
 
 [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettség
 - Tulajdonság: Emlékezet
-- Normál kiterjesztés: ["Titkos szervezeti kultúra"](../fortelyok.szabad/titkos_szervezeti_kultura.md) (adott szervezetre) fortély
+- Normál kiterjesztés: ["Titkos szervezet"](../fortelyok.szabad/titkos_szervezet.md) (adott szervezetre) fortély
 
 ---
 ### 🔆 Nemesi körökből ismert személy
