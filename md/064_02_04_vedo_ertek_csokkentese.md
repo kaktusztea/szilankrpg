@@ -8,17 +8,17 @@ Hogy a támadó `TÉ < VÉ` esetben mennyivel csökkenti az áldozat aktuális `
 
 ### ⚜️ Alaphelyzetben (nincs előnyös-hátrányos helyzet)
 
-- mindkét fél `nagykocká`val csökkent (k100)
+- mindkét fél `nagykocka` értékévelcsökkent (k100)
 
 ### ⚜️ Legalább 1 penge fegyverméret különbségnél
 
-  - Előnyös helyzetű támadó: `nagykocka`val csökkent (k100)
-  - Hátrányos helyzetű támadó: `kiskocka`val csökkent (k100)
+  - Előnyös helyzetű támadó: `nagykocka` értékével csökkent (k100)
+  - Hátrányos helyzetű támadó: `kiskocka` értékével csökkent (k100)
 
 ### ⚜️ 2 penge, vagy nagyobb méretkülönbségnél
 
-  - Előnyös helyzetű támadó: `nagykocka+1`-el csökkent (k100)
-  - Hátrányos helyzetű támadó: `kiskocka`-val csökkent (k100)
+  - Előnyös helyzetű támadó: `nagykocka+1` értékével csökkent (k100)
+  - Hátrányos helyzetű támadó: `kiskocka` értékével csökkent (k100)
 
 ---
 ### VÉ csökkenés mérséklése
