@@ -5,6 +5,7 @@
   - [Próba biztos tudásból](#pr%C3%B3ba-biztos-tud%C3%A1sb%C3%B3l)
   - [Próba képzetlenül](#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl)
   - [Összetett képzettségpróba, Másodlagos próbadobások](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)
+  - [xyz](⭕xyz)⭕
   - [Összhangok](#%C3%B6sszhangok)
   - [Sérülés hatása képzettségpróbára](#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra)
 
@@ -54,7 +55,6 @@ A Kombinált Tulajdonságpróbához hasonló helyzet, mikor a KM szerint nem csa
 Ekkor 
 - a fontosabbnak ítélt Tulajdonsággal dobandó az első próba
 - a másodlagos fontosságúnak ítélt Tulajdonsággal adobandó csökkentett Nehézségű próba (lásd fenn az Összetett próbát!)
-
 
 ---
 ### Vállalás
@@ -137,6 +137,26 @@ Tehát a próbák:
 ```
 
 Hasonló szituáció: [Mászás képzettségpróbára összetett példa](szituaciok/maszas_osszetett_pelda.md)
+
+---
+### Összetett képzettségpróba - ellenpróba eset
+
+Különleges eset az ilyen. Olyankor fordulat elő, mikor hosszabb, összetettebb próba szükséges, amelyben a felek összemérhetik tudásukat.
+
+- Ellenpróbákat dobatunk, tehát **nincs** Nehézség célszám
+- Ellenpróbák száma páratlan és zárt végű, tehát meghatározott darab, jellemzően: `3, 5, 7`, vagy extrém esetben `9`
+- Minél hosszabb, összetettebb a cselekmény, annál több a dobások száma
+- Aki több ellenpróbát megnyer, az nyeri végül az összetett próbát
+
+#### ⚡Konkrét példa
+
+Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kihozzák hátasukból a maximumot, figyelnek a pihenésre, etetésre, a fenntartható maximális tempóra. Az ellepróba azt dönti el, utoléri -e áldozatát.
+
+#### Narratív eszköz
+
+Ez a játékmechanika tempókezelési eszközt is adhat a KM kezébe a mesélés során, ha nem akarja lemesélni minden mozzanatát például egy hosszabb, - de sokadjára már unalmas - üldözésnek.
+
+Ezen felül a ez a módszer a feszültség fenntartására is alkalmas, mert esélyesen egészen az utolsó pár dobásig nem tudni, ki kerekedik majd felül. Alkalmazhatjuk fázisokban, időben szétterítve is, tehát attól függően, ki nyerte épp az aktuális dobást, a történet is aszerint alakul, míg az utolsó dobásnál következik be a kapott eredmény okozta esemény (például a fent említett zsoldos 5 napi üldözés után utolérte áldozatát).
 
 ---
 ### Összhangok
