@@ -40,6 +40,7 @@ Ilyenkor [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzetts�
 
 ```
 Terep Nehézség: [-6; +3]
+Páncélban: [+1; 6]
 ```
 
 A talaj jellegétől függően kaphat a karakter a Nehézségre módosítókat.
