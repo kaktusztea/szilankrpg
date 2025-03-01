@@ -32,9 +32,18 @@ Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkenth
 
 <br />
 
+---
+### ⚡Példa
+
+- Összesen `3` támadásod van és `2.fokon` bírod a Daráló fortélyt
+- Ekkor az első támadás levonás nélkül indul, mint mindenkinek
+- A második támadást `TÉ:-7` levonással indítod
+- A harmadik támadást `TÉ:-14` levonással indítod
+
 ### Megjegyzések
 
-A fortély hatása minden harcmodorban, mindig érvényes.
+- A fortély hatása minden harcmodorban, mindig érvényes
+
 
 <br />
 
