@@ -6,6 +6,7 @@
 
 - [Alakzatharc](fortelyok.harci/alakzatharc.md)
 - [Belharc](fortelyok.harci/belharc.md)
+- [Daráló](fortelyok.harci/daralo.md)
 - [Elpusztíthatatlan](fortelyok.harci/elpusztithatatlan.md)
 - [Elsöprő roham](fortelyok.harci/elsopro_roham.md)
 - [Fárasztás](fortelyok.harci/farasztas.md)
