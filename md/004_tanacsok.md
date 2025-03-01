@@ -15,6 +15,8 @@ Ekkor a játékos lustaságában rábízná a KM-re, hogy majd az **kiválogatja
 
 Mesélőként ekkor (vagy a játék elején) udvariasan tudassuk a játékosokkal, hogy egy adott szituációban **nevezzék meg** az általuk használni kívánt ismeretet ÉS annak mértékét (szintjét, fokát) is - ezzel jobban részt vállalva a játékban és kevésbé leterhelve a mesélőt.
 
+<br />
+
 ---
 ### A karakterek nem gépek
 
