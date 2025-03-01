@@ -14,3 +14,10 @@ Ismerős a szituáció, mikor egy akadállyal szembesülve a játékos az alább
 Ekkor a játékos lustaságában rábízná a KM-re, hogy majd az **kiválogatja** a felsorakoztatott ismeretek közül, ami épp segíthet - akár egy svédasztalról. Ami különös, hogy az ismeret mértékét sem jelzi, mintha egy `3.szintű` lovaglás és egy `12.szintű` között semmilyen különbség nem lenne.
 
 Mesélőként ekkor (vagy a játék elején) udvariasan tudassuk a játékosokkal, hogy egy adott szituációban **nevezzék meg** az általuk használni kívánt ismeretet ÉS annak mértékét (szintjét, fokát) is - ezzel jobban részt vállalva a játékban és kevésbé leterhelve a mesélőt.
+
+---
+### A karakterek nem gépek
+
+A játékosok sokszor könnyen eltávolodnak karaktereiktől, azok nehézségeitől, egyfajta örökmozgó avatárként tekintenek rájuk.
+
+Ilyenkor alkalmazhatsz több mesélői eszközt, például a kimerülés érzékeltetését. A harc, harc után, valós pihenés nélkül komolyan próbára teszi a kalandozókat is. Ha úgy érzed, vég nélküli darálás megy, kioszthatsz bizonyos időközönként random [Fáradság Pontokat (FP)](061_02_faradsag_pont.md), amelyek felgyűlése egy idő után már a harcértékekben is megmutatkozik.
