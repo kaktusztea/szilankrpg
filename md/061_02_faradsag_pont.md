@@ -5,6 +5,7 @@ A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapot
 Az `FP` az alábbi állapotok szimulálására alkalmas:
 - tartós kimerültség
 - zúzódásokból adódó "leharcoltság"
+- harc harc után rendes, alapos, nyugodt pihenés nélkül
 - kialvatlanság
 - éhség
 - rosszullét
