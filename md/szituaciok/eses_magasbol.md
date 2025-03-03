@@ -52,6 +52,15 @@ A páncél szintén nehezít, a merev vértek jobban, a KM a körülmények és 
 <br />
 
 ---
+### Sebesülés esés után
+
+A zuhanás okozta sérülés függ a magasságtól, a talaj típusától, a viselt vértezettől.
+
+⭕TODO: [link](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.harcrendszer#nem-harci-sebz%C5%91d%C3%A9sek)
+
+<br />
+
+---
 ### ⚡Példa
 
 Tetves elvéti Mászás képzettségpróbáját és a [mentődobást](../kepzettsegek.szekunder/maszas.md#rontott-m%C3%A1sz%C3%A1s-pr%C3%B3ba-ut%C3%A1n-ment%C5%91-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) is, lehullik egy `4 méter` magas kiszögellésről. Szerencséjére egy füves susnyába érkezik (Nehézség módosító: `-3`).
