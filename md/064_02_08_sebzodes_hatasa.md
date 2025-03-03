@@ -27,6 +27,8 @@ Természetesen nem csak fegyverek okozhatnak sérülést, hanem egy mágikus tű
 
 Zuhanás, zúzódás, egyéb fizikai sérülések esetén a KM meghatároz egy sebzés értéket ugyanúgy, akár egy fegyver esetében. Pl. `k20+5`. Az **SFÉ** ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelten. Ha számít, akkor általában a **zúzó SFÉ** értéket használjuk, de KM dönt, mivel ahány eset annyiféle.
 
+A zuhanás okozta sérülés függ a magasságtól, a talaj típusától, a viselt vértezettől.
+
 ---
 ### Élőholtak sebződése 
 
