@@ -47,6 +47,8 @@ A talaj jellegétől függően kaphat a karakter a Nehézségre módosítókat.
 
 Az alapállapot a döngölt földnek megfelelő minőségű talaj. Ennél lehet sokkal könnyebb a próba, ha például hóba esik (`-6`), vagy nehezebb, ha kövezett útra, erkélyre (`+3`) érkezik az érintett.
 
+A páncél szintén nehezít, a merev vértek jobban, a KM a körülmények és a páncélok jellege, súlya alapján adjon egy plusz `Nehézség` értéket a próbára `[+1; 6]` intervallumban.
+
 <br />
 
 ---
