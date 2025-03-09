@@ -6,7 +6,7 @@
   - [Próba képzetlenül](#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl)
   - [Összetett képzettségpróba, Másodlagos próbadobások](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)
   - [Összetett képzettségpróba - ellenpróba eset](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba---ellenpr%C3%B3ba-eset)
-  - [Összhangok](#%C3%B6sszhangok)
+  - [Helyettesítés](#%C3%B6sszhangok)
   - [Sérülés hatása képzettségpróbára](#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra)
   - [Tulajdonság vs Képzettség ellenpróba](#tulajdons%C3%A1g-vs-k%C3%A9pzetts%C3%A9g-ellenpr%C3%B3ba)
 
@@ -176,38 +176,38 @@ Ezen felül a ez a módszer a feszültség fenntartására is alkalmas, mert es�
 <br />
 
 ---
-### Összhangok
+### Helyettesítés
 
-Vannak olyan esetek, amikor egyes képzettségek ismerete helyettesítő segítséget nyújthat más képzettségek használatakor. Az ilyet nevezzük Összhangnak.
+Vannak olyan esetek, amikor egyes képzettségek ismerete helyettesítő segítséget nyújthat más képzettségek használatakor.
 
-Ekkor a helyettesítő képzettség `1/3`-a helyettesíthető be az elsődleges képzettséghez.
+Ekkor a **Helyettesítő képzettség** szintjének `1/3` része alkalmazható az elsődleges képzettség helyett.
 
-❗**Fontos**: a helyettesítő értékek NEM adódnak hozzá a helyettesített képzettséghez, hanem kiváltják azt.
+❗**Fontos**: a helyettesítő értékek NEM adódnak hozzá az elsődleges képzettséghez, hanem kiváltják azt.
 
 Tehát:
 
 ```
 - (Szint/3) behelyettesítő értékként
-- Max szint Összhangokkal: 5
+- Max szint helyettesítve: 5
 - lefelé kerekítünk
 ```
 
 A helyettesítő képzettség(ek) értelemszerűen legfeljebb `5.szintű` helyettesítő értéket képesek adni (`15/3=5`).
 
-Az egyes Összhang-párokat nem írjuk le mind, ezek helyzetfüggőek, a KM rögtönözhet ha az adott szituációban úgy ítéli meg, hogy egy képzettség behelyettesíthető a fentiek szerint a másik helyére.
+Az egyes helyettesítés-párokat nem írjuk le mind, ezek helyzetfüggőek, a KM rögtönözhet ha az adott szituációban úgy ítéli meg, hogy egy képzettség behelyettesíthető a fentiek szerint a másik helyére.
 
-#### ⚡Példa: Nyomozás összhangokkal
+#### ⚡Példa: Nyomozás helyettesítéssel
 
 A karakter egy bűntény helyszínén gyanús személyekkel találkozik. Kikérezné őket, **Nyomozás** képzettségpróbát kéne dobnia. Mivel **Nyomozás** képzettsége csak `2.szintű`, ezért egy kapcsolódó képzettsége segítségére támaszkodik, amiben sokkal járatosabb és le is fedi az aktuális szituációban szükséges ismeretet. A KM az adott helyzetben ezt jól megindokoltnak látja, így engedélyezi.
 
 - Nyomozás `2.szint`
-- Emberismeret: `9.szint`  (Összhang Nyomozás képzettséggel)
+- Emberismeret: `9.szint`  (Nyomozás képzettség helyettesítése)
 
-Ebben az esetben az **Emberismeret** képzettség az, amely helyettesítő képzettségként működik. Mivel a jelen próbához az **Emberismeret** Összhangként kapcsolódik, ezért annak `1/3`-a működhet **Nyomozás** képzettségként (a próba idejére): `9/3 = 3`
+Ebben az esetben az **Emberismeret** képzettség az, amely helyettesítő képzettségként működik, ezért annak `1/3`-a működhet **Nyomozás** képzettségként (a próba idejére): `9/3 = 3`
 
 Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 
-#### ⚡További Összhang példák felsorolásszerűen
+#### ⚡További Helyettseítés példák felsorolásszerűen
 
 - [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) ⇆ [Mászás](kepzettsegek.szekunder/maszas.md)
 - [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) ⇆ [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md)

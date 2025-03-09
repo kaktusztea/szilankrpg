@@ -1,6 +1,6 @@
 ## Vértek, Páncélok
 
-<sub>→ [TODO/ISSUE oldal](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.vertek.pancelok): Még vannak nyitott problémák, azokat még ki kell vasalni.</sub>
+→ [TODO/ISSUE oldal](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.vertek.pancelok) : Még vannak nyitott problémák, azokat még ki kell vasalni.
 
 ---
 #### [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)

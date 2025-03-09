@@ -14,7 +14,7 @@ A teljes szabályt lásd a fortély leírásánál: **[Vértviselet](fortelyok.h
 - Full vértnél: VÉ:+10
 ```
 
-⭕Képzettségpróbáknál is csökkenjen a büntetés?⭕
+
 
 ---
 
