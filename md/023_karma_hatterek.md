@@ -84,7 +84,7 @@ Minimum 100 sikeres orvgyilkosság.
 #### Hatás
 A rengeteg gyilkosság megmérgezte a lelkedet, ha nem leplezed, Aurádon jól láthatóak a sötét foltok, melyek beszennyezik.
 
-Nem gyógyíthatsz se világi, se mágikus úton.
+Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md), [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettségek felső, félmágikus hatásai sem működnek.
 
 <br />
 
@@ -126,7 +126,8 @@ Például:
 - Tömegben varázsló (20%)
 - Sötétben varázsló (100%) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
 - stb  
-lásd a Mágia fejezet ⭕**„Összhang karmák”** fejezetét!⭕
+
+Lásd bővebben a Mágia fejezet ⭕TODO⭕ **Összhang karmák** fejezetét!⭕
 
 <br />
 
@@ -137,17 +138,19 @@ lásd a Mágia fejezet ⭕**„Összhang karmák”** fejezetét!⭕
 Mágikus karma.
 
 #### Követelmény
-„A cipőfűzőjét is mágiával köti be” .\
-Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
+- „A cipőfűzőjét is mágiával köti be” .\
+  Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
+- Papi mágiára nem alkalmazható
 
 #### Hatás
 
 **Pro**:  
-Az apró, kis hatású varázslatokat ingyen, vagy 1-2 Manáért tudja alkalmazni, annyira megszokottá, begyakorolttá vált a használatuk. 
+- Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk. 
 
-**Kontra**:  
-⭕• `6-os` Erősség felett a `1 szint` növekedés `2 szintnek` számít
-⭕• Nem képes Rituális mágiák alkalmazására⭕
+**Kontra**:
+⭕TODO⭕
+- Erősség: `6` felett minden további `1 szint` növekedés `2 szintnek` számít
+- Nem képes Rituális mágiák alkalmazására⭕
 
 ---
 
