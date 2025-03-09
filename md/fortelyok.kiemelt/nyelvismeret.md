@@ -1,11 +1,13 @@
 ## 🟣 Nyelvismeret (2) 🔁
 
+Kiemelt fortély, `KP`-ból nem tanulható.
+
 A [Nyelvtanulás](../kepzettsegek.szekunder/nyelvtanulas.md) képzettség által adott fortély fokokból vehető fel külön-külön minden nyelvre. A nyelvek listáját lásd [lenn](#emberi-nyelvek-list%C3%A1ja).
 
 A Nyelvismeret fortélynak `2` foka van, amelyeket kivételesen nevesítünk is:
 
-- `Alap`: ez az `1.fok`. Normális, hétköznapi beszéd. Ha nem anyanyelv, a külföldi akcentust ki lehet érezni belőle. Ennek hatását szerepjátékból intézzük.
-- `Udvari`: ez a `2.fok`. Udvari, egyházi, hivatali körökben hallott, míves beszéd. Fogyasztott, vagy aktívan művelt művészetekhez követelmény. Lásd [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség.
+- `1.fok`: `Alap szint`: a normális, hétköznapi beszéd. Ha nem anyanyelv, a külföldi akcentust ki lehet érezni belőle. Ennek hatását szerepjátékból intézzük.
+- `2.fok`: `Udvari szint`: nemesi, egyházi, hivatali, vagy művészi körökben hallott, míves beszéd. Fogyasztott, vagy aktívan művelt művészetekhez követelmény. Lásd [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség.
 
 Amennyiben nem rendelkezel a kívánt Nyelvismerettel, akkor - ha van kapcsolódó [Kultúrkör](kulturkor.md) Hátterred, akkor nagyon alap szavakat ismersz, amivel - plusz kézzel-lábbal - meg tudod értetni magad ("kő", "tűz", "vesz", "kenyér", stb)
 
@@ -23,18 +25,18 @@ Amennyiben nem rendelkezel a kívánt Nyelvismerettel, akkor - ha van kapcsolód
 
 1. Godoni nyelvek (god)
     - py4rroni / közös nyelv / új-godoni (pya)
-    - syburri (syb)
+    - syburr1 (syb)
     - shad0ni/gorv1ki (sha/gor)
 
 2. Általános nyelvek
-    - aszisz (asz)
+    - asz1sz (asz)
     - emrelin (emr)
     - erv (erv)
-    - dwoon (dwn)
-    - dzsadal (a félelem és a fenyegetés rituális nyelve)
-    - dzsad/dzsenn (dzs/dzse): a dzsenn a dzsad **udvari** foka.
-    - dzsad - fayumi dialektus (fay)
-    - dzsad - Gredh' il adf Ladzs (gre) (a fém titkos nyelve)
+    - dw00n (dwn)
+    - dzs4dal (a félelem és a fenyegetés rituális nyelve)
+    - dzs4d/dzs3nn (dzs/dzse): a dzs3nn a dzs4d **udvari** foka.
+    - dzs4d - fayumi dialektus (fay)
+    - dzs4d - Gredh' il adf Ladzs (gre) (a fém titkos nyelve)
     - sinemosi (sin)
     - ti4dlani (tia)
     - dolamin (dol)
@@ -52,14 +54,14 @@ Amennyiben nem rendelkezel a kívánt Nyelvismerettel, akkor - ha van kapcsolód
 ### Faj nyelvek
 
 - Amund (amu)
-- Aquir nyelvek (aqu)
+- Aqu1r nyelvek (aqu)
 - Csaska
 - Elf (elf)
 - Gnóm nyelvek (gno)
 - Ork (ork)
 - Törpe nyelvek
   - Híl / hílar (híl) (Tarín lakóinak szakrális nyelve)
-  - Vanír  (van) (Tarín lakóinak bórogi eredetű nyelve)
+  - Van1r  (van) (Tarín lakóinak bórogi eredetű nyelve)
 - Snil (sni) (gyíklények nyelve)
 
 ### Kyr nyelvek
