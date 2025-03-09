@@ -6,7 +6,7 @@
   - [Próba képzetlenül](#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl)
   - [Összetett képzettségpróba, Másodlagos próbadobások](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)
   - [Összetett képzettségpróba - ellenpróba eset](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba---ellenpr%C3%B3ba-eset)
-  - [Helyettesítés](#%C3%B6sszhangok)
+  - [Helyettesítés](#helyettes%C3%ADt%C3%A9s)
   - [Sérülés hatása képzettségpróbára](#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra)
   - [Tulajdonság vs Képzettség ellenpróba](#tulajdons%C3%A1g-vs-k%C3%A9pzetts%C3%A9g-ellenpr%C3%B3ba)
 
