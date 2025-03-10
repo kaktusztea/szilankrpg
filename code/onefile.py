@@ -3,9 +3,9 @@
 
 import os
 
-directory_path = '/Users/kaktusz/repo/szilank.code/md'
+directory_path = '/repo/szilank.code/md'
 
-combined_file = '/Users/kaktusz/repo/szilank.code/md/szilank.rpg.full.md'
+combined_file = '/repo/szilank.code/md/szilank.rpg.full.md'
 
 for root, dirs, files in os.walk(directory_path):
     for file_name in files:
