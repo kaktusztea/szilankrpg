@@ -94,7 +94,7 @@ class GitOps:
     def fix_all_detached_tags(self):
         print("Active branch: " + self.active_branch_name)
         print(f"ZERO tag: {self.zero_tag.name}, Zero tag commit hash: {self.zero_tag.commit.hexsha}")
-        print("(this tag is the last on-branch tag before the first detached tag.)")
+        print("(this tag is the last on-branch tag before the first detached tag)")
         for tag in gg.tags_detached:
             print("\n\n==========================================================================")
             print(f"Fixing detached tag: {tag.name} with message: '{tag.commit.message.strip()}'")
