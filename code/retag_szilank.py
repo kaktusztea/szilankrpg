@@ -3,7 +3,6 @@
 
 import git
 import sys
-import subprocess
 
 class GitOps:
     def __init__(self, repo_path, work_branch_name):
@@ -12,7 +11,8 @@ class GitOps:
         self.zero_tag = None
         self.distance_zero = 0
         if not work_branch_name:
-            self.active_branch_name = self.repo.active_branch.name        # master if you are on default
+            # 'master' if you are on default
+            self.active_branch_name = self.repo.active_branch.name
         else:
             self.active_branch_name = work_branch_name
         self.rename_prefix = 'temp_'
@@ -52,8 +52,8 @@ class GitOps:
 
     # get commit which is on active branch AND is in distance from zero. Search direction: forward
     def get_commit_in_distance_from_zero(self, distance, merge_commit_shift=0):
-        distance = int(distance - merge_commit_shift)       # correction by merge commit counts on detached chain
-                                                            # on rewritten master branch this is 0 (they disappear at rewrite)
+        distance = int(distance - merge_commit_shift)       # Correction by merge commit counts on detached chain
+                                                            # On rewritten master branch this is 0 (they disappear at history rewrite)
         zero_commit_hexsha = self.zero_tag.commit
         output = self.repo.git.execute(["git", "rev-list", "--ancestry-path", f"{zero_commit_hexsha}..HEAD"])
         target_commit = output.split("\n")[distance*-1].strip()
@@ -67,9 +67,9 @@ class GitOps:
         new_tag = f"{self.rename_prefix}{original_tagname}"
         commit = self.repo.commit(original_tagname)
         self.repo.create_tag(new_tag, commit)
-        print(f"Renamed tag '{original_tagname}' to '{new_tag}'")                                # DEBUG: remove
+        print(f"    - renamed tag '{original_tagname}' to '{new_tag}'")
         self.repo.delete_tag(original_tagname)
-        print(f"Deleted tag '{original_tagname}'")                                               # DEBUG: remove
+        print(f"    - deleted tag '{original_tagname}'")
         return new_tag
 
     def iterate_and_fix_on_detached_tags(self):
@@ -82,23 +82,24 @@ class GitOps:
             print(f"Fixing detached tag: {tag.name} with message: '{tag.commit.message.strip()}'")
             print(f"  - detached tag commit: '{tag.commit.hexsha}'")
 
+            actual_tagname = tag.name
             merge_commit_shift = int(self.get_merge_commit_count_between_detached_tag_and_zero(tag))
             print("  - merge commit shift: " + str(merge_commit_shift))
+
             distance = self.get_commit_distance(self.zero_tag.commit, tag.commit)
             print("  - distance from zero tag: " + str(distance))
 
             print("  - getting on-branch commit in distance from zero tag")
             onbranch_commit = self.get_commit_in_distance_from_zero(distance, merge_commit_shift)
 
-            actual_tagname = tag.name
             print(f"  - renaming detached tag to temporary name: {actual_tagname} → {self.rename_prefix}{actual_tagname}")
-            # prefixed_tagname = self.rename_tag_with_prefix(actual_tagname)                    # DEBUG: put back, when commits are passing
+            prefixed_tagname = self.rename_tag_with_prefix(actual_tagname)
 
             print(f"  - creating tag '{actual_tagname}' to onbranch ({self.active_branch_name}) commit '{onbranch_commit}'")
-            # self.repo.git.create_tag(actual_tagname, onbranch_commit)                         # DEBUG: put back, when commits are passing
+            self.repo.git.create_tag(actual_tagname, onbranch_commit)
 
             print(f"  - deleting renamed temp tag '{self.rename_prefix}{actual_tagname}' '")
-            # self.repo.git.tag('-d', prefixed_tagname)                                         # DEBUG: put back, when commits are passing
+            self.repo.git.tag('-d', prefixed_tagname)
 
     def dump_tag_infos(self):
         print("Printing all tags...")
