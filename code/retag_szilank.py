@@ -5,12 +5,13 @@
 ## you can use this script to retag the commits.
 
 ## - collects all detached tags
-## - guesses the zero tag
+## - guesses the zero tag (last tag from the oldest to newest which is not detached yet)
 ## - iterates through all detached tags
-##   - renames all tags to temp_*
-##   - deletes original tag from detached tag
-##   - creates a new tag on the active branch
-##   - deletes temp tags
+##   - calculates distance from zero tag
+##   - finds "active commit" (the same commit (same message, content) from the same distance from zero tag on active (master) branch)
+##   - renames tag on detached commit to temp_*
+##   - creates the actual tag on the active commit (on active branch)
+##   - deletes temp tag on detached commit
 
 ## When the script is done execute this:
 ## > git push --tags -f
