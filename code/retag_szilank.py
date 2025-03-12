@@ -91,7 +91,7 @@ class GitOps:
         print(f"    - deleted tag '{original_tagname}'")
         return new_tag
 
-    def iterate_and_fix_on_detached_tags(self):
+    def fix_all_detached_tags(self):
 
         print("Active branch: " + self.active_branch_name)
         print(f"ZERO tag: {self.zero_tag.name}, Zero tag commit hash: {self.zero_tag.commit.hexsha}")
@@ -130,5 +130,5 @@ class GitOps:
 
 
 gg = GitOps(repo_path='/repo/github/szilank.code', work_branch_name='master')
-gg.iterate_and_fix_on_detached_tags()
+gg.fix_all_detached_tags()
 # gg.dump_tag_infos()
