@@ -21,28 +21,20 @@ class GitOps:
         self.tags_detached = []
 
         self.get_tag_lists()
-        # self.dump_tag_infos()       # DEBUG only
 
         if self.guess_zero_tag() is None:
             print("No detached tags found. Exiting.")
             sys.exit(1)
 
-    def is_tag_on_active_branch(self, tag):
+    def is_tag_on_active_branch(self, tag):                                                      # WORKS OK
         active_branch_commit = self.repo.active_branch.commit
         return self.repo.merge_base(active_branch_commit, tag.commit)[0].hexsha == tag.commit.hexsha
 
-    def get_tag_lists(self):
+    def get_tag_lists(self):                                                                     # WORKS OK
         self.tags = sorted(self.repo.tags, key=lambda t: t.commit.committed_date, reverse=False)
-
-        # TODO, BUG: all tags appear detached even ones are attached to master...
-        # First detached should be tag: 0.4.2.9
-        # tag class type: git.refs.tag.TagReference
-        ## if branch_head.tags and tag_name not in branch_head.tags:
-        ##     print("tag is not attached to branch head")
-        # self.tags_detached = [tag for tag in self.tags if tag.is_detached]
         self.tags_detached = [tag for tag in self.tags if not self.is_tag_on_active_branch(tag)]
 
-    def guess_zero_tag(self):
+    def guess_zero_tag(self):                                                                    # WORKS OK
         if not self.is_tag_on_active_branch(self.tags[0]):
             print("First tag is not on active branch. Exiting.")
             return None
@@ -55,43 +47,19 @@ class GitOps:
                 previous_tag = tag
         return None     # if there was no detached tag
 
-    def get_tag_distance_from_branch_head(self, tag):
-        return self.repo.head.commit.count() - tag.commit.count()
-
-    def get_distance_from_zero_tag(self, next_tag):         # TODO
-        xxx self.zero_tag.commit.count() - next_tag.commit.count()
-
     # get commit which is on active branch AND is in distance from zero. Search direction: forward
-    def get_commit_in_distance_from_zero(self, distance):                # TODO
-        # zero_commit = self.repo.commit(self.zero_tag.commit)
-        zero_commit = self.zero_tag.commit
-
-        commits = list(self.repo.iter_commits(rev=self.repo.active_branch, max_count=distance + 1, first_parent=True, reverse=True))
-
-        # Check if the distance is within the range of available commits
-        if len(commits) <= distance or distance < 0:
-            print(f"Invalid distance: the repo has fewer than {distance+1} commits from zero.")
-            sys.exit(1)
-
-        # Return the commit at the specified distance
-        target_commit = commits[distance]
+    def get_commit_in_distance_from_zero(self, distance):                                         # ALMOST
+        zero_commit_hexsha = self.zero_tag.commit
+        output = self.repo.git.execute(["git", "rev-list", "--ancestry-path", "--skip", str(distance), f"{zero_commit_hexsha}..HEAD"])
+        target_commit = output.split("\n")[distance*-1].strip()
         return target_commit
 
 
-    # def get_commit_distance(self, master_commit, detached_commit):
-    #     # Get the commit history starting from the master branch
-    #     commits = list(self.repo.iter_commits(master_commit))
+    def get_commit_distance(self, commit1, commit2):                # WORKS OK
+        output = self.repo.git.execute(["git", "rev-list", "--count", f"{commit1}..{commit2}"])
+        return int(output.strip())
 
-    #     # Find the distance between the detached commit and master commit
-    #     for i, commit in enumerate(commits):
-    #         if commit.hexsha == detached_commit.hexsha:
-    #             return i
-
-    #     # If we get here, the detached commit isn't in the history of master
-    #     raise ValueError("Detached commit not found in the history of the master branch.")
-
-
-    def rename_tag_with_prefix(self, original_tagname):         # DONE
+    def rename_tag_with_prefix(self, original_tagname):              # WORKS OK
         new_tag = f"{self.rename_prefix}{original_tagname}"
         commit = self.repo.commit(original_tagname)
         self.repo.create_tag(new_tag, commit)
@@ -99,26 +67,30 @@ class GitOps:
         return new_tag
 
     def iterate_and_fix_on_detached_tags(self):
-        self.distance_zero = self.get_tag_distance_from_branch_head(self.zero_tag)
 
+        print(f"ZERO tag: {self.zero_tag.name}, Zero tag commit hash: {self.zero_tag.commit.hexsha}")
+        print("Printing detached tags:")                                        # DEBUG: remove
         for tag in gg.tags_detached:
-            distance = self.get_distance_from_zero_tag(tag)
-            print(f"ZERO tag ({self.zero_tag.name}) commit hash: {self.zero_tag.commit.hexsha}")
+            print(f"detached tag: {tag.name}")                                  # DEBUG: remove
+            distance = self.get_commit_distance(self.zero_tag.commit, tag.commit)
+
             print(f"tag: {tag.name}, distance from zero tag: {distance}")
             actual_tagname = tag.name
-            # prefixed_tagname = self.rename_tag_with_prefix(actual_tagname)  # DEBUG: put back, when commits are passing
+            # prefixed_tagname = self.rename_tag_with_prefix(actual_tagname)    # DEBUG: put back, when commits are passing
+            onbranch_commit = self.get_commit_in_distance_from_zero(distance)
 
-            active_commit = self.get_commit_in_distance_from_zero(distance)
             print(f"detached tag commit: '{tag.commit.hexsha}', message: '{tag.commit.message.strip()}'\n")
-            print(f"onbranch commit: '{active_commit.hexsha}', message: '{active_commit.message.strip()}'\n")
+            print(f"onbranch commit: '{onbranch_commit}''\n")
             print("==========================================================================")
 
-            # self.repo.git.create_tag(actual_tagname, active_commit)         # DEBUG: put back, when commits are passing
-            # self.repo.git.tag('-d', prefixed_tagname)                       # DEBUG: put back, when commits are passing
+            # self.repo.git.create_tag(actual_tagname, onbranch_commit)         # DEBUG: put back, when commits are passing
+            # self.repo.git.tag('-d', prefixed_tagname)                         # DEBUG: put back, when commits are passing
 
-    def dump_tag_infos(self):                                 # DONE
+    def dump_tag_infos(self):                                       # WORKS OK
+        print("Printing all tags...")
         for tag in self.tags:
-            print(f"Normal tag: {tag.name}, Commit: {tag.commit}")
+            print(f"tag: {tag.name}, Commit: {tag.commit}")
+        print("\n-------------------------------------\nPrinting detached tags...")
         for tag in self.tags_detached:
             print(f"Detached tag: {tag.name}, Commit: {tag.commit}, typeof class: {type(tag)}")
 
