@@ -39,6 +39,7 @@ class GitOps:
         self.tags = []
         self.tags_detached = []
 
+        print("Scanning tags...")
         self.get_tag_lists()
 
         if self.guess_zero_tag() is None:
@@ -128,6 +129,6 @@ class GitOps:
             print(f"Detached tag: {tag.name}, Commit: {tag.commit}, typeof class: {type(tag)}")
 
 
-gg = GitOps(repo_path='/repo/github/szilank.code', work_branch_name='master')
+gg = GitOps(repo_path='/Users/kaktusz/repo/szilank.code', work_branch_name='master')
 gg.fix_all_detached_tags()
 # gg.dump_tag_infos()
