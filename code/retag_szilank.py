@@ -102,7 +102,7 @@ class GitOps:
 
             actual_tagname = tag.name
             merge_commit_shift = int(self.get_merge_commit_count_between_detached_tag_and_zero(tag))
-            print("  - merge commit shift: " + str(merge_commit_shift))
+            print("  - merge commit count (shifting distance): " + str(merge_commit_shift))
 
             distance = self.get_commit_distance(self.zero_tag.commit, tag.commit)
             print("  - distance from zero tag: " + str(distance))
