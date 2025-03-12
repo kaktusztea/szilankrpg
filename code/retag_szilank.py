@@ -15,6 +15,9 @@
 ## When the script is done execute this:
 ## > git push --tags -f
 
+## On another working copy repo synchronize changes from remote
+## git fetch --tags -f
+
 
 import git
 import sys
