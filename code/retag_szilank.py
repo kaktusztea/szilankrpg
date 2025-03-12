@@ -96,7 +96,7 @@ class GitOps:
             prefixed_tagname = self.rename_tag_with_prefix(actual_tagname)
 
             print(f"  - creating tag '{actual_tagname}' to onbranch ({self.active_branch_name}) commit '{onbranch_commit}'")
-            self.repo.git.create_tag(actual_tagname, onbranch_commit)
+            self.repo.git.tag(actual_tagname, onbranch_commit)
 
             print(f"  - deleting renamed temp tag '{self.rename_prefix}{actual_tagname}' '")
             self.repo.git.tag('-d', prefixed_tagname)
