@@ -86,7 +86,7 @@ class GitOps:
         new_tag = f"{self.rename_prefix}{original_tagname}"
         commit = self.repo.commit(original_tagname)
         self.repo.create_tag(new_tag, commit)
-        print(f"    - renamed tag '{original_tagname}' to '{new_tag}'")
+        print(f"    - created tag '{new_tag}'")
         self.repo.delete_tag(original_tagname)
         print(f"    - deleted tag '{original_tagname}'")
         return new_tag
