@@ -1,6 +1,21 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
+## If you do a git history rewrite by "git rebase -i a1b2c3"
+## you can use this script to retag the commits.
+
+## - collects all detached tags
+## - guesses the zero tag
+## - iterates through all detached tags
+##   - renames all tags to temp_*
+##   - deletes original tag from detached tag
+##   - creates a new tag on the active branch
+##   - deletes temp tags
+
+## When the script is done execute this:
+## > git push --tags -f
+
+
 import git
 import sys
 
@@ -98,7 +113,7 @@ class GitOps:
             print(f"  - creating tag '{actual_tagname}' to onbranch ({self.active_branch_name}) commit '{onbranch_commit}'")
             self.repo.git.tag(actual_tagname, onbranch_commit)
 
-            print(f"  - deleting renamed temp tag '{self.rename_prefix}{actual_tagname}' '")
+            print(f"  - deleting renamed temp tag '{self.rename_prefix}{actual_tagname}'")
             self.repo.git.tag('-d', prefixed_tagname)
 
     def dump_tag_infos(self):
