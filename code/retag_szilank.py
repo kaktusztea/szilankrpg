@@ -107,7 +107,7 @@ class GitOps:
             distance = self.get_commit_distance(self.zero_tag.commit, tag.commit)
             print("  - distance from zero tag: " + str(distance))
 
-            print("  - getting on-branch commit in distance from zero tag")
+            print("  - guessing on-branch commit in distance from zero tag")
             onbranch_commit = self.get_commit_in_distance_from_zero(distance, merge_commit_shift)
 
             print(f"  - renaming detached tag to temporary name: {actual_tagname} → {self.rename_prefix}{actual_tagname}")
