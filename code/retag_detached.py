@@ -33,7 +33,7 @@ signal.signal(signal.SIGINT, signal_handler)
 
 
 class GitOps:
-    def __init__(self, repo_path, work_branch_name):
+    def __init__(self, repo_path, work_branch_name=None):
         self.repo = git.Repo(repo_path)
 
         self.zero_tag = None
@@ -42,7 +42,7 @@ class GitOps:
         self.branches = self.repo.branches
 
         if not work_branch_name:
-            # 'master' if you are on default
+            # active branch name by default
             self.active_branch_name = self.repo.active_branch.name
         else:
             self.active_branch_name = work_branch_name
@@ -205,7 +205,7 @@ if __name__ == "__main__":
         print(f"Error: directory is not a git repo: '{dirname}'")
         sys.exit(1)
 
-    gg = GitOps(repo_path=dirname, work_branch_name='master')
+    gg = GitOps(repo_path=dirname)
     gg.fix_all_detached_tags()
     gg.print_stats()
     # gg.dump_tag_infos()
