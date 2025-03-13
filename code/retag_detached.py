@@ -19,7 +19,7 @@
 ## On another working copy repo synchronize changes from remote
 ## git fetch --tags -f
 
-
+import os
 import git
 import sys
 
@@ -129,6 +129,19 @@ class GitOps:
             print(f"Detached tag: {tag.name}, Commit: {tag.commit}, typeof class: {type(tag)}")
 
 
-gg = GitOps(repo_path='/repo/github/szilank.code', work_branch_name='master')
-gg.fix_all_detached_tags()
-# gg.dump_tag_infos()
+if __name__ == "__main__":
+    if len(sys.argv) < 2:
+        print(f"Usage: {sys.argv[0]} <git-repo-path>")
+        sys.exit(1)
+
+    dirname = os.path.abspath(sys.argv[1])
+    if not os.path.isdir(dirname):
+        print(f"Error: directory does not exist: '{dirname}'")
+        sys.exit(1)
+    if not os.path.isdir(os.path.join(dirname, '.git')):
+        print(f"Error: directory is not a git repo: '{dirname}'")
+        sys.exit(1)
+
+    gg = GitOps(repo_path=dirname, work_branch_name='master')
+    gg.fix_all_detached_tags()
+    # gg.dump_tag_infos()
