@@ -40,7 +40,9 @@ class GitOps:
         self.tags_detached = []
 
         print("Scanning tags...")
-        self.get_tag_lists()
+        if not self.get_tag_lists():
+            print("No tags found in repo. Exiting.")
+            sys.exit(1)
 
         if self.guess_zero_tag() is None:
             print("No detached tags found. Exiting.")
@@ -53,6 +55,8 @@ class GitOps:
     def get_tag_lists(self):
         self.tags = sorted(self.repo.tags, key=lambda t: t.commit.committed_date, reverse=False)
         self.tags_detached = [tag for tag in self.tags if not self.is_tag_on_active_branch(tag)]
+        if not self.tags:
+            return False
 
     def guess_zero_tag(self):
         if not self.is_tag_on_active_branch(self.tags[0]):
