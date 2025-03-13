@@ -57,6 +57,10 @@ class GitOps:
         self.tags_detached = [tag for tag in self.tags if not self.is_tag_on_active_branch(tag)]
         if not self.tags:
             return False
+        else:
+            print(f"Found tags: {len(self.tags)}")
+            print(f"Found detached tags: {len(self.tags_detached)} ")
+            return True
 
     def guess_zero_tag(self):
         if not self.is_tag_on_active_branch(self.tags[0]):
