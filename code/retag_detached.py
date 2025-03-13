@@ -59,7 +59,11 @@ class GitOps:
         self.tags_detached_fixed = []
 
         if not self.get_tag_lists():
-            print("No tags found in repo. Exiting.")
+            print("\nNo tags found in repo. Exiting.")
+            sys.exit(1)
+
+        if not self.tags_detached:
+            print("\nNo detached tags found. Exiting.")
             sys.exit(1)
 
         if self.guess_zero_tag() is None:
