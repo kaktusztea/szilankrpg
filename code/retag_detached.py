@@ -19,9 +19,6 @@
 ## On another working copy repo synchronize changes from remote
 ## git fetch --tags -f
 
-#TODO: check commit message equality
-
-
 import os
 import git
 import sys
