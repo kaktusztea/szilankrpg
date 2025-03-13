@@ -19,9 +19,21 @@
 ## On another working copy repo synchronize changes from remote
 ## git fetch --tags -f
 
+#TODO: check commit message equality
+
+
 import os
 import git
 import sys
+import signal
+
+
+def signal_handler(sig, frame):
+    print('Interrupted by Ctrl+C')
+    sys.exit(0)
+
+signal.signal(signal.SIGINT, signal_handler)
+
 
 class GitOps:
     def __init__(self, repo_path, work_branch_name):
@@ -29,17 +41,20 @@ class GitOps:
 
         self.zero_tag = None
         self.distance_zero = 0
+
+        self.branches = self.repo.branches
+
         if not work_branch_name:
             # 'master' if you are on default
             self.active_branch_name = self.repo.active_branch.name
         else:
             self.active_branch_name = work_branch_name
         self.rename_prefix = 'temp_'
+        print("Active branch: " + self.active_branch_name)
 
         self.tags = []
         self.tags_detached = []
 
-        print("Scanning tags...")
         if not self.get_tag_lists():
             print("No tags found in repo. Exiting.")
             sys.exit(1)
@@ -48,13 +63,23 @@ class GitOps:
             print("No detached tags found. Exiting.")
             sys.exit(1)
 
+
+    def is_tag_on_any_branch(self, tag):
+        for branch in self.branches:
+            if self.repo.merge_base(branch.commit, tag.commit)[0].hexsha == tag.commit.hexsha:
+                return True
+        # print(f"debug OFF-BRANCH___ tag: {tag}")
+        return False
+
     def is_tag_on_active_branch(self, tag):
         active_branch_commit = self.repo.active_branch.commit
         return self.repo.merge_base(active_branch_commit, tag.commit)[0].hexsha == tag.commit.hexsha
 
     def get_tag_lists(self):
+        print("Scanning tags...")
         self.tags = sorted(self.repo.tags, key=lambda t: t.commit.committed_date, reverse=False)
-        self.tags_detached = [tag for tag in self.tags if not self.is_tag_on_active_branch(tag)]
+        print("Scanning for detached tags...")
+        self.tags_detached = [tag for tag in self.tags if not self.is_tag_on_any_branch(tag)]
         if not self.tags:
             return False
         else:
@@ -63,6 +88,7 @@ class GitOps:
             return True
 
     def guess_zero_tag(self):
+        print("\nGuessing zero tag on active branch...")
         if not self.is_tag_on_active_branch(self.tags[0]):
             print("First tag is not on active branch. Exiting.")
             return None
@@ -70,6 +96,8 @@ class GitOps:
         for tag in self.tags:
             if not self.is_tag_on_active_branch(tag):
                 self.zero_tag = previous_tag
+                print(f"Found ZERO tag: {self.zero_tag.name} on branch: {self.active_branch_name} (hash: {self.zero_tag.commit.hexsha})")
+                print("(this tag is the last on-branch tag before the first detached tag)\n")
                 return True
             else:
                 previous_tag = tag
@@ -78,14 +106,28 @@ class GitOps:
     def get_merge_commit_count_between_detached_tag_and_zero(self, tag):
         return self.repo.git.execute(["git", "rev-list", "--count", "--merges", f"{self.zero_tag.commit}..{tag.commit}"])
 
+    def get_commit_message_by_hexsha(self, hexsha):
+        try:
+            result = self.repo.git.execute(['git', 'show', '--no-patch', '--format=%B', hexsha]).strip()
+            return result
+        except git.GitCommandError as e:
+            print(f"git.GitCommandError: {e}")
+            return None
+
     # get commit which is on active branch AND is in distance from zero. Search direction: forward
     def get_commit_in_distance_from_zero(self, distance, merge_commit_shift=0):
         distance = int(distance - merge_commit_shift)       # Correction by merge commit counts on detached chain
                                                             # On rewritten master branch this is 0 (they disappear at history rewrite)
         zero_commit_hexsha = self.zero_tag.commit
         output = self.repo.git.execute(["git", "rev-list", "--ancestry-path", f"{zero_commit_hexsha}..HEAD"])
-        target_commit = output.split("\n")[distance*-1].strip()
-        return target_commit
+        try:
+            target_commit = output.split("\n")[distance*-1].strip()
+        except IndexError:
+            return None
+        return self.repo.commit(target_commit)
+
+    def are_commit_messages_equal(self, commit1, commit2):
+        return self.get_commit_message_by_hexsha(commit1.hexsha) == self.get_commit_message_by_hexsha(commit2.hexsha)
 
     def get_commit_distance(self, commit1, commit2):
         output = self.repo.git.execute(["git", "rev-list", "--count", f"{commit1}..{commit2}"])
@@ -101,23 +143,26 @@ class GitOps:
         return new_tag
 
     def fix_all_detached_tags(self):
-        print("Active branch: " + self.active_branch_name)
-        print(f"ZERO tag: {self.zero_tag.name}, Zero tag commit hash: {self.zero_tag.commit.hexsha}")
-        print("(this tag is the last on-branch tag before the first detached tag)")
         for tag in self.tags_detached:
-            print("\n\n==========================================================================")
-            print(f"Fixing detached tag: {tag.name} with message: '{tag.commit.message.strip()}'")
-            print(f"  - detached tag commit: '{tag.commit.hexsha}'")
+            print("\nChecking on detached tag: " + tag.name)
 
             actual_tagname = tag.name
             merge_commit_shift = int(self.get_merge_commit_count_between_detached_tag_and_zero(tag))
-            print("  - merge commit count (shifting distance): " + str(merge_commit_shift))
-
             distance = self.get_commit_distance(self.zero_tag.commit, tag.commit)
-            print("  - distance from zero tag: " + str(distance))
 
-            print("  - guessing on-branch commit in distance from zero tag")
             onbranch_commit = self.get_commit_in_distance_from_zero(distance, merge_commit_shift)
+            if not onbranch_commit:
+                print("  - Not found matching commit on active branch.")
+                continue
+            if not self.are_commit_messages_equal(onbranch_commit, tag.commit):
+                print("  - Commit messages are NOT equal. Skipping.")
+                continue
+
+            print(f"  - Fixing detached tag: {tag.name} with message: '{tag.commit.message.strip()}'")
+            print(f"  - detached tag commit: '{tag.commit.hexsha}'")
+            print("  - merge commit count (shifting distance): " + str(merge_commit_shift))
+            print("  - distance from zero tag: " + str(distance))
+            print(f"  - found commit in distance {distance} from zero (commit messages are equal): {onbranch_commit}")
 
             print(f"  - renaming detached tag to temporary name: {actual_tagname} → {self.rename_prefix}{actual_tagname}")
             prefixed_tagname = self.rename_tag_with_prefix(actual_tagname)
