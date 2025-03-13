@@ -162,16 +162,16 @@ class GitOps:
                 self.tags_detached_skipped.append(tag)
                 continue
 
-            print(f"  - Fixing detached tag: {tag.name} with message: '{tag.commit.message.strip()}'")
+            print(f"  - fixing detached tag: {tag.name} with message: '{tag.commit.message.strip()}'")
             print(f"  - detached tag commit: '{tag.commit.hexsha}'")
-            print("  - merge commit count (shifting distance): " + str(merge_commit_shift))
-            print("  - distance from zero tag: " + str(distance))
-            print(f"  - found commit in distance {distance} from zero (commit messages are equal): {onbranch_commit}")
-
+            print(f"  - merge commit count (shifting distance): {str(merge_commit_shift)}")
+            print(f"  - FOUND onbranch commit: {onbranch_commit}")
+            print(f"    - distance from ZERO tag: {distance}")
+            print(f"    - commit messages are equal: {tag.commit.message.strip()}")
             print(f"  - renaming detached tag to temporary name: {actual_tagname} → {self.rename_prefix}{actual_tagname}")
             prefixed_tagname = self.rename_tag_with_prefix(actual_tagname)
 
-            print(f"  - creating tag '{actual_tagname}' to onbranch ({self.active_branch_name}) commit '{onbranch_commit}'")
+            print(f"  - creating tag '{actual_tagname}' to onbranch commit on active branch '{self.active_branch_name}'")
             self.repo.git.tag(actual_tagname, onbranch_commit)
 
             print(f"  - deleting renamed temp tag '{self.rename_prefix}{actual_tagname}'")
