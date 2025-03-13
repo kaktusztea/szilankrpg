@@ -55,6 +55,9 @@ class GitOps:
         self.tags = []
         self.tags_detached = []
 
+        self.tags_detached_skipped = []
+        self.tags_detached_fixed = []
+
         if not self.get_tag_lists():
             print("No tags found in repo. Exiting.")
             sys.exit(1)
@@ -156,6 +159,7 @@ class GitOps:
                 continue
             if not self.are_commit_messages_equal(onbranch_commit, tag.commit):
                 print("  - Commit messages are NOT equal. Skipping.")
+                self.tags_detached_skipped.append(tag)
                 continue
 
             print(f"  - Fixing detached tag: {tag.name} with message: '{tag.commit.message.strip()}'")
@@ -172,6 +176,11 @@ class GitOps:
 
             print(f"  - deleting renamed temp tag '{self.rename_prefix}{actual_tagname}'")
             self.repo.git.tag('-d', prefixed_tagname)
+            self.tags_detached_fixed.append(tag)
+
+    def print_stats(self):
+        print(f"\nDetached tags fixed: {len(self.tags_detached_fixed)}")
+        print(f"Detached tags skipped: {len(self.tags_detached_skipped)}")
 
     def dump_tag_infos(self):
         print("Printing all tags...")
@@ -197,4 +206,5 @@ if __name__ == "__main__":
 
     gg = GitOps(repo_path=dirname, work_branch_name='master')
     gg.fix_all_detached_tags()
+    gg.print_stats()
     # gg.dump_tag_infos()
