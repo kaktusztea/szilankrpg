@@ -67,12 +67,13 @@ class GitOps:
             print("No detached tags found. Exiting.")
             sys.exit(1)
 
-
     def is_tag_on_any_branch(self, tag):
         for branch in self.branches:
-            if self.repo.merge_base(branch.commit, tag.commit)[0].hexsha == tag.commit.hexsha:
-                return True
-        # print(f"debug OFF-BRANCH___ tag: {tag}")
+            try:
+                if self.repo.merge_base(branch.commit, tag.commit)[0].hexsha == tag.commit.hexsha:
+                    return True
+            except IndexError as e:
+                return False
         return False
 
     def is_tag_on_active_branch(self, tag):
