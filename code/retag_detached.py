@@ -77,7 +77,6 @@ class GitOps:
         return False
 
     def is_tag_on_active_branch(self, tag):
-        print(f"Checking tag '{tag.name}'")
         active_branch_commit = self.repo.active_branch.commit
         try:
             is_on_branch = self.repo.merge_base(active_branch_commit, tag.commit)[0].hexsha == tag.commit.hexsha
