@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-## If you do a git history rewrite by "git rebase -i a1b2c3"
+## If you do a git history rewrite by "git rebase -i a1b2c3d4"
 ## you can use this script to retag the commits.
 
 ## - collects all detached tags
