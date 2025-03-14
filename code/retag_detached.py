@@ -142,14 +142,12 @@ class GitOps:
         new_tag = f"{self.rename_prefix}{original_tagname}"
         commit = self.repo.commit(original_tagname)
         self.repo.create_tag(new_tag, commit)
-        print(f"    - created tag '{new_tag}'")
         self.repo.delete_tag(original_tagname)
-        print(f"    - deleted tag '{original_tagname}'")
         return new_tag
 
     def fix_all_detached_tags(self):
         for tag in self.tags_detached:
-            print("\nChecking on detached tag: " + tag.name)
+            print(f"\nFixing detached tag: {tag.name}")
 
             actual_tagname = tag.name
             merge_commit_shift = int(self.get_merge_commit_count_between_detached_tag_and_zero(tag))
@@ -164,7 +162,6 @@ class GitOps:
                 self.tags_detached_skipped.append(tag)
                 continue
 
-            print(f"  - fixing detached tag: {tag.name} with message: '{tag.commit.message.strip()}'")
             print(f"  - detached tag commit: '{tag.commit.hexsha}'")
             print(f"  - merge commit count (shifting distance): {str(merge_commit_shift)}")
             print(f"  - FOUND onbranch commit: {onbranch_commit}")
@@ -179,6 +176,7 @@ class GitOps:
             print(f"  - deleting renamed temp tag '{self.rename_prefix}{actual_tagname}'")
             self.repo.git.tag('-d', prefixed_tagname)
             self.tags_detached_fixed.append(tag)
+            print(f"  - detached tag has been fixed ✅")
 
     def print_stats(self):
         print(f"\nDetached tags fixed: {len(self.tags_detached_fixed)}")
