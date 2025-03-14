@@ -64,7 +64,7 @@ class GitOps:
             sys.exit(1)
 
         if self.guess_zero_tag() is None:
-            print("No detached tags found. Exiting.")
+            print("No ZERO tag found. Exiting.")
             sys.exit(1)
 
     def is_tag_on_any_branch(self, tag):
@@ -77,8 +77,13 @@ class GitOps:
         return False
 
     def is_tag_on_active_branch(self, tag):
+        print(f"Checking tag '{tag.name}'")
         active_branch_commit = self.repo.active_branch.commit
-        return self.repo.merge_base(active_branch_commit, tag.commit)[0].hexsha == tag.commit.hexsha
+        try:
+            is_on_branch = self.repo.merge_base(active_branch_commit, tag.commit)[0].hexsha == tag.commit.hexsha
+        except IndexError:
+            is_on_branch = False
+        return is_on_branch
 
     def get_tag_lists(self):
         print("Scanning tags...")
@@ -95,7 +100,6 @@ class GitOps:
     def guess_zero_tag(self):
         print("\nGuessing zero tag on active branch...")
         if not self.is_tag_on_active_branch(self.tags[0]):
-            print("First tag is not on active branch. Exiting.")
             return None
         previous_tag = None
         for tag in self.tags:
