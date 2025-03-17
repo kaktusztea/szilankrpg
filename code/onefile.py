@@ -2,10 +2,30 @@
 # -*- coding: utf-8 -*-
 
 import os
+import sys
 
-directory_path = '/repo/szilank.code/md'
+if len(sys.argv) < 3:
+    print(f"Usage: {sys.argv[0]} <szilank repo-path> <export-dir>")
+    sys.exit(1)
 
-combined_file = '/repo/szilank.code/md/szilank.rpg.full.md'
+directory_path = os.path.abspath(sys.argv[1])
+export_path = os.path.abspath(sys.argv[2])
+
+if not os.path.isdir(directory_path):
+    print("Error: repo dir does not exist")
+    sys.exit(1)
+
+if not os.path.isdir(export_path):
+    print("Error: export dir does not exist")
+    sys.exit(1)
+
+if not os.path.isdir(os.path.join(directory_path, 'md')):
+    print("Error: 'md' directory is missing")
+    sys.exit(1)
+
+directory_path = os.path.join(directory_path, 'md')
+
+combined_file = os.path.join(export_path, 'szilank.rpg.full.md')
 
 for root, dirs, files in os.walk(directory_path):
     for file_name in files:
