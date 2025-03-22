@@ -2,13 +2,13 @@
 
 Korábban, a [Kalandozók](012_kalandozok_elotortenet_szemelyiseg_felszereles.md) bemutatásánál említett, lélekben szunnyadó **Szilánk** a játékmenetben is megjelenik. Valóságformáló hatása a játékosok számára konkrét előnyökkel jár.
 
-A Szilánk a szabályrendszerben egy pontérték, amit csak és kizárólag Kalandozók kapnak, NJK nem (kivéve, ha ő is Kalandozó!).
+A Szilánk a szabályrendszerben egy pontérték, amelyet csak és kizárólag Kalandozók kapnak, NJK nem - kivéve, ha ő is Kalandozó.
 
 <br />
 
 ### Mire jó?
 
-Egy Szilánk (pont) elhasználásával a játékos képes lesz a kalandban narratív események módosítására, akár kockadobás "megkerülésére" is.
+Egy **Szilánk** (pont) elhasználásával a játékos képes lesz a kalandban narratív események módosítására, akár kockadobás "megkerülésére" is.
 
 ❗FONTOS: **harc befolyásolására a Szilánk semmilyen formában NEM alkalmas**, ott a [Szerencsés](fortelyok.altalanos/szerencses.md) fortély vethető be - amennyiben a karakter rendelkezik vele.
 
@@ -25,9 +25,11 @@ Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, 
   értékre áll vissza
 ```
 
-Minden kaland elején a Szilánk értéke visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét (az ellenfelek lemészárlása nem tartozik ide). Ez lehet konzisztens alakítás, de csúcsjeleneletek, fontos pilanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
+Minden kaland elején a Szilánk értéke visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét - az ellenfelek lemészárlása **nem** tartozik ide. A fenti lehet konzisztens alakítás, de csúcsjeleneletek, fontos pilanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
 
-Egy kaland során `1` új Szilánkot szerezni nagy dolognak számít. `2` Szilánk szerezése egy kaland során pedig már epikus cselekedet.
+Egy kaland során
+- `1` új Szilánkot szerezni nagy dolognak számít
+- `2` Szilánk szerezése már epikus cselekedet
 
 <br />
 
@@ -79,14 +81,14 @@ Példák:
 
 **Jó**, mert narratív komplikációt vezet be a szerepjátékozás révén. Azaz: "ha ki mered játszani a karaktered egy tulajdonságát, akkor a cselekményt bonyolíthatod vele". A narratív pontok fontos tulajdonsága, hogy a történetmesélést demokratizálja, mert jelentős befolyásolási hatalmat ad a játékosok kezébe. Fontos, hogy ez a **JÁTÉKOSOK** kezébe adja a hatalmat, nem a **KARAKTEREK** kezébe. A játékos dönti el, hogy szeretné-e egy Szilánkért cserébe "**A**" helyett "**B**" irányba elvinni a kalandot. Szóval a "Szilánk" **narratív** funkcióját jól megvalósítja. Röviden: a Szilánk **megszerzésével** saját magam számára negatívan befolyásolom a kalandot, az **elköltésével** pozitívan.
 
- **Negatív lehet**, mert sok klasszikus M\* kalandozó számára idegen lehet ez a fajta játékmechanika. Nem csak a vérpistikék idegenkednek attól, hogy úgy játsszanak, amivel direkt "rosszat akarnak" a saját karakterüknek. Régi beidegződés, hogy a játékosok "féltik" a karakterüket, ezért lehet, hogy sokaknak nem működne ez a fajta jutalmazási rendszer. Ebben benne van az, hogy azért a legmélyén a szerepjáték (főleg a M\*) sokszor egy power fantasy. Persze ennek a játékmechanikának lehet egy pozitív, nevelő célzata is.
+ **Negatív lehet**, mert sok klasszikus M\* kalandozó számára idegen lehet ez a fajta játékmechanika. Nem csak a vérpistikék idegenkednek attól, hogy úgy játsszanak, amivel direkt "rosszat akarnak" a saját karakterüknek. Régi beidegződés, hogy a játékosok "féltik" a karakterüket, ezért lehet, hogy sokaknak szokatlan lehet ez a fajta jutalmazási rendszer. Ebben benne van az, hogy azért a legmélyén a szerepjáték (főleg a M*) sokszor egy power fantasy. Persze ennek a játékmechanikának lehet egy pozitív, nevelő célzata is.
 
 <br />
 
 ---
 ### ⚜️ Szilánk gyűjtésének módja: `2.` Játék végén, utólag
 
-A Kaland végén a KM és a Játékosok tartanak egy áttekintést a kalandról, ahol `5` percben megbeszélik, ki volt az, aki karaktere személyiségét, faját, leíró háttereit, tradícióját, jellemét legjobban kijátszotta. Ez alapján a játékos karaktere kap `1` Szilánkot a következő játékalom kezdetekor (a kalandon belül).
+A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról, ahol `5` percben megbeszélik, ki volt az, aki karaktere személyiségét, faját, leíró háttereit, tradícióját, jellemét legjobban kijátszotta. Ez alapján a játékos karaktere kap `1` Szilánkot a következő játékalom kezdetekor (a kalandon belül).
 
 ### 🌀 Előnyei, hátrányai
 
@@ -94,16 +96,16 @@ A Kaland végén a KM és a Játékosok tartanak egy áttekintést a kalandról,
 
  **Negatív lehet**, mert nem jutalmazza a heroikus, epikus fantasy momentumokat.
  
- **Negatív lehet**, mert nem a narratív beleszólási hatalmat jutalmazza. A `1.` előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
+ **Negatív lehet**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
 
 <br />
 
 ---
-### A csapat döntése kaland elején: melyik modell?
+### A csapat döntése kaland elején: melyik modellt használják?
 
 A kalandot megelőző áttekintő beszélgetésen a csapat eldöntheti, melyik modellt szeretné követni.
 
-A `1.` modell a heroikus fantasyt jutalmazza, a `2.` a szerepjátékozást.
+Az `1.` modell a heroikus fantasyt jutalmazza, a `2.` a szerepjátékozást.
 
 Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onnantól a kaland végéig a választott modellt kell kövessék.
 

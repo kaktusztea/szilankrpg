@@ -1,6 +1,6 @@
 ## Primer és Szekunder ismeretek kategóriái
 
-Szétválasztottuk két halmazra a `Szilánk` rendszerének `KP`-ból tanulható ismereteit "kalandozásban nagyon hasznos" (**Primer**) és "kalandozásban átlagosan hasznos" (**Szekunder**) kategóriákra, tehát "táposság" szerint csoportosítottuk őket. Ennek oka a színesebb karakterek és a kevésbé "táp" ismeretek helyzetbe hozása.
+Szétválasztottuk két halmazra a `Szilánk` rendszerének `KP`-ból tanulható ismereteit "kalandozásban nagyon hasznos" (**Primer**) és "kalandozásban átlagosan hasznos" (**Szekunder**) kategóriákra, tehát mondhatjuk, hogy "táposság" szerint csoportosítottuk őket. Ennek oka a színesebb karakterek és a kevésbé "tápos" ismeretek helyzetbe hozása.
 
 ### Primer ismeretek
 
@@ -13,7 +13,7 @@ Szétválasztottuk két halmazra a `Szilánk` rendszerének `KP`-ból tanulható
 ---
 ### Szekunder ismeretek
 
-Minden más ismeret, ami nem Primer, viszont Karakteralkotó Pontba (`KP`) kerül. A [Szekunder KP](016_kp.md#karakteralkotó-pontok-kp) csak ilyen ismeretre költhető.
+Minden más ismeret, ami nem Primer, de szintén Karakteralkotó Pontba (`KP`) kerül. Fontos, hogy a [Szekunder KP](016_kp.md#karakteralkotó-pontok-kp) csak ilyen ismeretre költhető, míg a "sima" KP bármire.
 
 ---
 
