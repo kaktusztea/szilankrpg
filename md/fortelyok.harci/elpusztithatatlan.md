@@ -7,25 +7,16 @@ A fortély segítségével minden fegyver okozta, bekapott `ÉP` sebből "átala
 
 ### 1. fok
 
-🔒 **Követelmény**:
+🔒 **Követelmény**: Edzettség: `+2`
 
-- Edzettség: `+2`
-
-
-🌟 **Hatás**:
-
-- `1 ÉP` forgatható át `FP` ponttá.
+🌟 **Hatás**: `1 ÉP` forgatható át `FP` ponttá.
 
 ---
 ### 2. fok
 
-🔒 **Követelmény**:
+🔒 **Követelmény**: Edzettség: `+3`
 
-- Edzettség: `+3`
-
-🌟 **Hatás**:
-
-- `2 ÉP` forgatható át `FP` ponttá.
+🌟 **Hatás**: `2 ÉP` forgatható át `FP` ponttá.
 
 <br />
 
