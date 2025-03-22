@@ -63,7 +63,7 @@ Példák:
 #### Mikor szerezhető Szilánk kaland közben?
 
 - `1.` a KM felajánlhatja, hogy ez egy kiemelt szituáció, ahol Szilánkot gyűjthet a játékos. Ez a Karakter számára egy hátrányos fordulat, amiben nehéz helyzetbe kerül, de bizonyíthatja rátermettségét. Ha a Játékos elfogadja, akkor a fordulat megtörténik, ő pedig kap egy Szilánkot.
-- `2.` a JK veti fel, hogy egy általa felvázolt nehéz fordulat, szituáció lép fel. Ilyenkor a KM dönt, hogy elfogadja -e a játékos ferlvetését és ezáltal a Szilánk-szerzést.
+- `2.` a JK veti fel, hogy egy általa felvázolt nehéz fordulat, szituáció lép fel. Ilyenkor a KM dönt, hogy elfogadja -e a játékos felvetését és ezáltal a Szilánk-szerzést.
 - `3.` a JK magától csinál egy kiemelt szituációt - nem feltétlenül Szilánk szerzése céljából -ilyenkor a KM utólag jutalmazhatja Szilánkkal
 
 #### Milyen szituációkban járhat **Szilánk**?
