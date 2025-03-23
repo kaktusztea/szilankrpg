@@ -1,6 +1,7 @@
 ## Képzettségek fejlesztése
 
 ```
+→ Max 15.szint
 → Primer max szint = TSz
 → Szekunder max szint = (TSz+3)
 → Növelés max: 2/TSz

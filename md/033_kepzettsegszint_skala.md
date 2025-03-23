@@ -9,6 +9,8 @@ Minden Képzettséget egy számértékkel jellemzünk, amelyből kiderül, tulaj
 
 A képzettség szint értéke a karakter életútja során - a megszerzett tapasztalatoknak hála -, növekedhet, amely fejlődést a játékos [Karakteralkotó Pontjai](016_kp.md) (`KP`)  [elosztásával](035_kepzettsegszintek_kp_igenye.md)  jelenít meg.
 
+❗Egy képzettség értéke semmilyen bónusz, vagy módosító hatására sem növekedhet `15.szint` fölé.
+
 ---
 
 🔗 [Képzettségek fejlesztése](034_kepzettsegek_fejlesztese.md) →
