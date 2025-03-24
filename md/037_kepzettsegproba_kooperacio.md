@@ -10,13 +10,14 @@ Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, 
 ### ⚜️ 1. Csoportos fizikai próbatétel
 
 ```
-Ki dob?
+Dobás:
  MIN( képzettség + Tulajdonság )
+ - társak büntetése
 ```
 
-Ez tipikusan a "Ne csesszük el" típusú próba. ⚡ Példa: csoportos Lopakodás.
+Ez tipikusan a "Ne csesszük el" típusú próba. ⚡Példa: csoportos Lopakodás.
 
-Ebben az esetben a “leggyengébb láncszem” határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb. A legalacsonyabb `(képzettség szint + Tulajdonság)` értékű karakter dobja a próbát. Ha ront, az az egész csapatra negatív hatással van.
+Ebben az esetben a “leggyengébb láncszem” határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb. A csapat a legalacsonyabb `(képzettség szint + Tulajdonság)`értékkel dobja a próbát. A rontás az egész csapat rontását jelenti.
 
 #### Társak büntetései
 
@@ -51,7 +52,7 @@ A fenti büntetést a [Koordinátor](fortelyok.altalanos/koordinator.md) fortél
 ### ⚜️ 2. Csoportos szellemi próbatétel
 
 ```
-Ki dob?
+Dobás:
  MAX( Képzettség-szint + Tulajdonság )
 ```
 
@@ -82,7 +83,7 @@ A fent említett `+3` limit növelhető a **Koordinátor** fortéllyal.
 
 #### 🔆 Koordinátor fortély
 
-A fenti limit határt a [Koordonátor](fortelyok.altalanos/koordinator.md) fortély segítségével emelhetjük.
+A fenti limit határt a [Koordinátor](fortelyok.altalanos/koordinator.md) fortély segítségével emelhetjük.
 
 <br />
 
