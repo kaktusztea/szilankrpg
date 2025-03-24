@@ -15,9 +15,11 @@ Dobás:
  - társak büntetése
 ```
 
-Ez tipikusan a "Ne csesszük el" típusú próba. ⚡Példa: csoportos Lopakodás.
+Ez a csoportos kooperáció nehezebb formája, itt a “leggyengébb láncszem” határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb.
 
-Ebben az esetben a “leggyengébb láncszem” határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb. A csapat a legalacsonyabb `(képzettség szint + Tulajdonság)`értékkel dobja a próbát. A rontás az egész csapat rontását jelenti.
+A csapat a tagjának legalacsonyabb `(képzettség szint + Tulajdonság)`értékével dobja a próbát. A rontás az egész csapat rontását jelenti.
+
+Ez tipikusan a "Ne csesszük el" típusú próba. ⚡Példa: csoportos Lopakodás.
 
 #### Társak büntetései
 
