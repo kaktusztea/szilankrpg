@@ -17,13 +17,13 @@ Dobás:
 
 Ez a csoportos kooperáció nehezebb formája, itt a “leggyengébb láncszem” határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb.
 
-A csapat a tagjának legalacsonyabb `(képzettség szint + Tulajdonság)`értékével dobja a próbát. A rontás az egész csapat rontását jelenti.
+A csapat a tagjai közül a legalacsonyabb `(képzettség szint + Tulajdonság)` értékével dobja a próbát. A rontás az egész csapat rontását jelenti.
 
 Ez tipikusan a "Ne csesszük el" típusú próba. ⚡Példa: csoportos Lopakodás.
 
 #### Társak büntetései
 
-Ha a "kripli kommandóban" többen is vannak, azaz többen bírnak a leggyengébb személy képzettség szintjével hasonló értékkel, az tovább rontja az esélyeket.
+Ha többen is a leggyengébb értékű személy ( képzettség + Tulajdonság ) szintjének közelében levő értékkel rendelkeznek, az tovább rontja az esélyeket.
 
 ```
 -1 büntetés / személy
