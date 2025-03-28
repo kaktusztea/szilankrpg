@@ -177,7 +177,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 
 - [Harci helyzetek](065_01_harci_helyzetek.md)
 - [Harci taktikák](065_02_harci_taktikak.md)
-- [Alakzatharc](065_03_alakzatharc.md)
+- [Harc alakzatban](065_03_harc_alakzatban.md)
 - [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
 
 #### 6.6 [Manőverek](066_00_manoverek.md) 🎲

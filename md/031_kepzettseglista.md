@@ -48,7 +48,9 @@
 
 🔵 [Ostromlövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
 
-🔵 [Mágikus lövészet](kepzettsegek.primer.harci/magikus_loveszet.md) <sup><sub>(40%)</sub></sup>
+🔵 [Mágikus lövészet](kepzettsegek.primer.harci/magikus_loveszet.md)
+
+🔵 [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)
 
 ---
 ### Fizikai képzettségek

@@ -1,10 +1,8 @@
 ## 🟣 Koordinátor (3)
 
-Jól tudsz egy csoportot koordinálni, nagyobb mennyiségű ember tudását a közös cél érdekében harmonizálni.
+Jól tudsz egy csoportot koordinálni **szellemi** próbatétel esetén, nagyobb mennyiségű ember tudását a közös cél érdekében harmonizálni.
 
-A képzettségpróbánál alkalmazott [Kooperáció esetén](../037_kepzettsegproba_kooperacio.md)
-- Csoportos fizikai próbatétel esetén: a kapható `-3` maximális büntetés értékét csökkentheted - így kevesebben tudják tovább rontani a csapat közös teljesítményét.
-- Csoportos szellemi próbatétel esetén: a kapható `+3` maximális bónusz limitet emelheted meg - így többen tudják már tudásukat a közös cél érdekében bevetni, amennyiben teljesítik a Kooperáció követelményeit.
+A képzettségpróbánál alkalmazott [csoportos szellemi kooperáció esetén](../037_kepzettsegproba_kooperacio.md#%EF%B8%8F-2-csoportos-szellemi-pr%C3%B3bat%C3%A9tel) esetén a kapható `+3` maximális bónusz limitet emelheted meg - így többen tudják már tudásukat a közös cél érdekében bevetni, amennyiben teljesítik a **Kooperáció** követelményeit.
 
 A fentiek akkor is működnek, ha nem te dobsz a próbára, azaz nem neked van a legalacsonyabb/legmagasabb dobás alap értéked, viszont fontos, hogy legalább `3.szinten` neked is jártasnak kell lenned az adott képzettségben.
 
@@ -12,9 +10,7 @@ A fentiek akkor is működnek, ha nem te dobsz a próbára, azaz nem neked van a
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**:
-- Koordináció Bónusz limitre: Max `3`
-- Koordináció büntetésre: Max `-3`
+🌟 **Hatás**: Koordináció Bónusz limit: max `3`
 
 ---
 ### 1. fok
@@ -23,10 +19,7 @@ A fentiek akkor is működnek, ha nem te dobsz a próbára, azaz nem neked van a
 - Intelligencia vagy Érzékenység: `+0`
 - Adott Képzettség - `3.szint`
 
-
-🌟 **Hatás**:
-- Koordináció Bónusz limitre: `+1` (Max 4)
-- Koordináció büntetés pontra: `-1`
+🌟 **Hatás**: Koordináció Bónusz limit: max `+4`
 
 ---
 ### 2. fok
@@ -35,9 +28,7 @@ A fentiek akkor is működnek, ha nem te dobsz a próbára, azaz nem neked van a
 - Intelligencia vagy Érzékenység: `+1`
 - Adott Képzettség - `3.szint`
 
-🌟 **Hatás**:
-- Koordináció Bónusz limitre: `+2` (Max 5)
-- Koordináció büntetés pontra: `-2`
+🌟 **Hatás**: Koordináció Bónusz limit: max `+5`
 
 ---
 ### 3. fok
@@ -46,9 +37,7 @@ A fentiek akkor is működnek, ha nem te dobsz a próbára, azaz nem neked van a
 - Intelligencia vagy Érzékenység: `+2`
 - Adott Képzettség - `3.szint`
 
-🌟 **Hatás**:
-- Koordináció Bónusz limitre: `+3` (Max 6)
-- Koordináció büntetés pontra: `-3`
+🌟 **Hatás**: Koordináció Bónusz limit: max `+6`
 
 <br />
 
@@ -57,5 +46,6 @@ A fentiek akkor is működnek, ha nem te dobsz a próbára, azaz nem neked van a
 ### Megjegyzések
 
 - Ha több koordinátor van egy csapatban, akkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít
+- Fizikai "párja" a [Parancsnok](../fortelyok.harci/parancsnok.md) fortély
 
 <br />

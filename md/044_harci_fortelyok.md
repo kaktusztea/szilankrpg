@@ -4,7 +4,8 @@
 
 <!-- tag: harci__fortely -->
 
-- [Alakzatharc](fortelyok.harci/alakzatharc.md)
+- [Alakzat: támadó](fortelyok.harci/alakzat_tamado.md)
+- [Alakzat: védekező](fortelyok.harci/alakzat_vedekezo.md)
 - [Belharc](fortelyok.harci/belharc.md)
 - [Daráló](fortelyok.harci/daralo.md)
 - [Elpusztíthatatlan](fortelyok.harci/elpusztithatatlan.md)
@@ -29,6 +30,7 @@
 - [Körkörös harc](fortelyok.harci/korkoros_harc.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
+- [Parancsnok](fortelyok.harci/parancsnok.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
 - [Támadás erőből](fortelyok.harci/tamadas_erobol.md)
 - [Természetes fegyver](fortelyok.harci/termeszetes.fegyver.md)
