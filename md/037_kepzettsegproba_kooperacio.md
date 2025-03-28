@@ -44,9 +44,13 @@ Minden társ `-1` büntetést ad a dobáshoz, amennyiben megfelel a lenti követ
 ⚡ Példa: legképzetlenebb személy `Képzettség-szint + Tulajdonság` értéke: `4`\
 Ilyenkor a `5, 6` és `7` értékkel bíró emberek beszámítanak fejenként `-1` büntetés pontnak. Legfeljebb `-3` büntetés pont érthető így el összesen, tehát a csoport `4-3 = 1` értékre dob `k10` kockával legrosszabb esetben.
 
-🔆 Koordinátor fortély
+#### 🔆 Koordinátor fortély
 
 A fenti büntetést a [Koordinátor](fortelyok.altalanos/koordinator.md) fortély segítségével csökkenthetjük.
+
+#### 🔆Fortély kiterjesztés
+
+Ha az adott csoportos fizikai képzettségpróbánál van fortély, amely kiterjeszti a csoportos képzettség értékét, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legalacsonyabb fokkal (akár `0` értékkel) rendelkezik. Így Normál kiterjesztés esetén levonás/bónusz, Erős Kiterjesztés esetén pedig próba-letiltás is előfordulhat.
 
 <br />
 
@@ -87,7 +91,14 @@ A fent említett `+3` limit növelhető a **Koordinátor** fortéllyal.
 
 A fenti limit határt a [Koordinátor](fortelyok.altalanos/koordinator.md) fortély segítségével emelhetjük.
 
+#### 🔆Fortély kiterjesztés
+
+Ha az adott csoportos szellemi képzettségpróbánál van fortély, amely kiterjeszti a csoportos képzettség értékét, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legmagasabb fokkal rendelkezik.
+
+
 <br />
+
+
 
 ---
 ### ⚜️ 3. Csapatmunka egy komplex feladat különböző kiosztott részfeladatokkal
