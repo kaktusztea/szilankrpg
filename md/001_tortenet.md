@@ -20,7 +20,7 @@ Kezdetek:
 
 ### 2005.05.31 - 2005.12.31
 
-2005 júniusa 🔆 volt az időszak, amikor - bő hónap alatt - megszületett a VÉ csökkentés, a sebesülés kategóriák és a távolsági harcrendszer.
+2005 júniusa 🔆 volt az időszak, amikor - bő egy hónap alatt - megszületett a VÉ csökkentés, a sebesülés kategóriák és a távolsági harcrendszer.
 
 Állapotok ebből az időszakból:
 - [2005-07-10 km20_0v9.pdf](https://github.com/kaktusztea/szilankrpg/raw/master/archive/history/2005-07-10_km20_0v9.pdf?raw=true)

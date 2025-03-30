@@ -11,13 +11,13 @@ Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepját�
 ---
 ## Filozófia
 
-A `Szilánk RPG` egy nagyfokú realitásra törekvő szerepjáték, ami mégis gördülékenynek tűnik játék során. Ennek oka, hogy a legtöbb számolást igénylő feladatot karakteralkotási időbe száműztünk. Így egy karakter megalkotása több időt vehet igénybe, viszont rendkívül egyedi, specializált végeredményt kapunk. Az elkövetkezőkben egyszerűen `Szilánk` néven fogunk hivatkozni a rendszerre.
+A `Szilánk RPG` egy realitásra törekvő fantasy szerepjáték, amely mégis gördülékenynek tűnik játék során. Ennek oka, hogy a legtöbb számolást igénylő feladatot karakteralkotási időbe száműztünk, a statisztikák kalkulálásában pedig egy fejlett [Karakteralkotó](md/start.md#karakteralkot%C3%B3) segít - így rendkívül egyedi, specializált végeredményt kaphatunk.
 
-Az első mindig a misztikus, kalandos történet hangulata és annak karakterei - a rendszer csak "másodhegedűs" - a mesélő keze alá dolgozik és fix kereteket biztosít. Az elképzelt cél egy már-már regényszerű, drámai, színészet-közeli szerepjátékot megvalósítható közeg, amit a háttérből erősen támogat a "szürke eminenciás" szabályrendszer, amely tág kereteket biztosít a kreativitásra, aztán viszont a háttérbe húzódik. A legjobb, ha egy olyan tág "kerítést" von a rendszer, hogy a játékos azt érezze, egy végtelen, rengeteg lehetőséget rejtő erdőben van, nem egy kerítéssel bekerített fenyvesben (mint ahogy amúgy). Az ilyen világ veszélyesebb, mint mondjuk egy narratív rendszer puhán körülölelő karjai, de talán magasabb szabadságérzetet is élhetünk át vele. Fontos viszont, hogy ne a kizárólag a kocka vezesse a kaland folyását - egy random rossz dobásba ne haljon bele a karakter. A rendszer legyen a játékosokért és ne fordítva!
+Az első mindig a misztikus, kalandos történet hangulata és annak karakterei - a rendszer csak "másodhegedűs" - a mesélő keze alá dolgozik és fix kereteket biztosít. Az elképzelt közeg egy már-már regényszerű, drámai, színészet-közeli szerepjátékot megvalósítható környezet, amit a háttérből erősen támogat a "szürke eminenciás" szabályrendszer. Ez a rendszer tág kereteket biztosít a kreativitásra, aztán viszont a háttérbe húzódik. A legjobb, ha a szabályok fonta "kerítés" olyan tág, hogy a játékos azt érzi, egy végtelen, rengeteg lehetőséget rejtő erdőben van, nem pedig egy kerítéssel bekerített fenyvesben. Az ilyen rendszer veszélyesebb, mint mondjuk egy narratív rendszer puhán körülölelő karjai, de talán magasabb szabadságérzetet is élhetünk át vele. Fontos viszont, hogy ne a kizárólag a kocka vezesse a kaland folyását - egy random rossz dobás ne okozza a karakter vesztét. A rendszer legyen a játékosokért és ne fordítva!
 
 A számos szabály ellenére sok helyen pont nem találunk számolást igénylő cselekedeteket, így a rendszer jobban jutalmazza az egyedi ötleteket és a nem-kockadobós szituációk kötetlensége is jobban a **szerep**játékra helyezi a hangsúlyt.
 
-Viszont mikor a játékosnak van egy jó (nem feltétlenül harci) ötlete, taktikája, akkor jól definiált szabályokat, eszközöket kap hozzá, hogy azt megvalósítsa. Mikor belép a rendszer, olyankor a komplexebb események során a számolási terheket tudatosan eloszthatjuk a játékos és mesélő (kalandmester) között. A KM tehermentesítése kiemelten fontos szempont, ebben több "félkész" érték segíti, melyeket a KM és a játékosok (még dobálás előtt) előre kiszámolhatnak - így gyorsítva a játékot.
+Viszont mikor a játékosnak van egy jó ötlete, taktikus gondolata, akkor jól definiált szabályokat, eszközöket kap, hogy azt megvalósítsa. A komplexebb események során a számolási terheket tudatosan elosztjuk a játékos és mesélő (kalandmester, KM) között. A KM tehermentesítése kiemelten fontos szempont, ebben több "félkész" érték segíti, melyeket a KM és a játékosok (még dobálás előtt) előre kiszámolhatnak - így is gyorsítva a játékot.
 
 A játékosok kreativitásának kiemelt mértékű jutalmazása nagyon fontos - ez a szituációk eltérő jellegének előtérbe helyezésével érhető el, az ötletes megoldások, jó szituáció-felismerés nagy előnyt adhat harci helyzetekben (is).
 
@@ -26,19 +26,19 @@ A játékosok kreativitásának kiemelt mértékű jutalmazása nagyon fontos - 
 
 Taktikai, szituációs, epikus. Talán ez a három kifejezés írja le legjobban a `Szilánk` harcrendszerét.
 
-Ahogy fent említettük, kiemelten alapozunk a szituációk eltérő voltára, ugyanaz a két karakter más-más körülmények, fegyverek, páncélok és taktikák alkalmazásával gyökeresen más esélyekkel indul, így aki ésszel harcol, sokat nyerhet. A csapatmunka és a szituáció-függő, taktikus gondolkodás - akár egy kis létszámú különleges egységnél - egészen erős következményeket is elérhet, mint például mindössze egy jól irányzott tőrszúrás okozta teljes győzelem a megfelelő időben és elkőkészítéssel. Egy problémának több megoldása lehet, kellő furfanggal még a harc elkerülésével is célt érhetsz.
+Ahogy fent említettük, kiemelten alapozunk a szituációk eltérő voltára, ugyanaz a két karakter más-más körülmények, fegyverek, páncélok és taktikák alkalmazásával gyökeresen más esélyekkel indul, így aki ésszel harcol, sokat nyerhet. A csapatmunka és a szituáció-függő, taktikus gondolkodás - akár egy kis létszámú különleges egységnél - egészen erős következményeket is elérhet, mint például egy jól irányzott tőrszúrás okozta teljes győzelem a megfelelő időben és elkőkészítéssel. Egy problémának több megoldása lehet, kellő furfanggal még a harc elkerülésével is célt érhetsz.
 
-Más szóval bemasírozni a mező közepére és frontálisan egymásnak esni - akár a videójátékokban - erősen ellenjavallott. Mindazonáltal próbáljuk az epikus jelleget is megőrizni, nem a hiperrealitás a cél a harc során.
+Más szóval bemasírozni a mező közepére és frontálisan egymásnak esni - akár a videójátékokban - erősen ellenjavallott. Mindazonáltal próbáljuk az epikus jelleget is megőrizni, nem a hiperrealitás a célunk a harc során.
 
 Használd környezeted adottságait és az adott körülményeket előnyös szituáció megteremtésére! Harcban az alábbi faktorok okos kombinálásával juthatsz - vagy juthatnak ellenfeleid - előnyhöz.
 
 ⚜️ Harci szituációk: ezek adott, vagy megteremtett helyzetek, amelyek módosítanak az alap harcértékeken.
 
-⚜️ Harci taktikák: tudatosan alkalmazott harci jellegek, amelyek nem-egy-csapásos műveletek, hanem tendenciák, amiket alkalmazol a harcod során.
+⚜️ Harci taktikák: tudatosan alkalmazott harci jellegek, tendenciák, amiket a karakter alkalmazhat a harc során.
 
-⚜️ Manőverek: egyedi, speciális trükkök, amelyek egy konkrét hatást, változást okoznak a harcban (Lefegyverzés, Pajzzsal öklelés, stb.)
+⚜️ Manőverek: egyedi, speciális trükkök, amelyek egy konkrét hatást, változást okoznak a harcban (Lefegyverzés, Pajzzsal öklelés, stb.) és mindig egy konkrét ellenfél ellen irányulnak
 
-⚜️ Harci fortélyok: specializált ismeretek, amelyek 1-1 részterület alaposabb ismeretével juttatnak előnyhöz.
+⚜️ Harci fortélyok: specializált, tanulható ismeretek, amelyek 1-1 részterület alaposabb ismeretével juttatnak konstans előnyhöz.
 
 ⚜️ Fegyverméret-kategóriák: nagyobb fegyver, nagyobb előny... egészen amíg szűk helyre nem kényszerülsz.
 
@@ -61,6 +61,17 @@ Távharc esetén pusztán a fegyver [Célzó Értékének](md/071_tavharc_ce.md)
 A képzettségrendszer új [Szabad Fortélyok](md/042_szabad_fortelyok.md) meghatározásával remekül hozzáigazítható más világokhoz.
 
 ---
+## Misztikus világkép
+
+A fejlesztés során az alábbi dilemmával találkoztunk:\
+Legyen a misztikus világkép világfüggő, vagy épp ellenkezőleg, független? Ha világfüggő, akkor erős korlátok közé szorulunk a fejlesztés során. Ha pedig független, akkor olyan általános, "kilúgozott" rendszer lesz a végeredmény, amelynek nincsenek gyökerei, melyek az adott világhoz kötik, amin játszunk - kiöntöttük a gyereket a fürdővízzel.
+
+A gordiuszi csomót az alábbi módon vágtuk át:\
+Yn3v mágikus és misztikus világát választottuk, ám az "csupán" inspiráció számunkra. Az istenek, túlvilági lények, legendáik és a történelem jó keretet adnak, ezeket meg is tartjuk, de a mágia, a szakrális erők működése, a szellemi energiák használata nem kötött a korábbi rendszerhez - általunk bármikor egyedi módon át- és újraírható, ha úgy látjuk, hogy  az hangulatosabb, jobban illeszkedik a mi látásmódunkhoz.
+
+Ha tehát valaki ortodox módon ragaszkodik a régi M* világához - lehet, hogy csalódni fog. Aki nyitott az újra, jöjjön velünk!
+
+---
 ## Mágia
 
 Misztikus elemekben erős hangsúly került a hangulati és szituáció-függő aspektusra és a mágia kiszámíthatatlanságára: a mágia NEM egy alternatív fizika. Ugyanaz a varázslat máshogy viselkedhet, vagy könnyebb/nehezebb a körülmények/együttállások/alkalmazó személyétől/hatalmától függően. Egyes varázslatok fizikailag is kimerítőek lehetnek.
@@ -72,7 +83,7 @@ Mágiában kisebb/nagyobb mellékhatások jelennek meg, különösen nagy hatalm
 
 Az **Etikett**, **Befolyásolás** és **Emberismeret** képzettségek fedik le ezt az ismerethalmazt, de a meggyőzés, megfélemlítés, átverés jellegű szituációk nem intézhetőek el tisztán egy **Befolyásolás** vs. **Emberismeret** kockadobással - rengeteg múlik a KM és a játékos közti párbeszéden, illetve az elképzelt karaktereken is. A dobást kapcsolódó fortélyok még tovább könnyíthetik, de a szerepjáték részt nem pótolhatják. Bővebben lásd a [Befolyásolás](md/kepzettsegek.primer.altalanos/befolyasolas.md) képzettség leírását, azon belül a [Szerepjátékos módosító](md/kepzettsegek.primer.altalanos/befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3) bemutatását.
 
-Tehát a rendszer a **_szerep-játékra_** helyezi a hangsúlyt - szemben például egy számítógépes játékkal, ahol minden szociális szituáció dobással kerül elintézésre. Az élő játék egyik legnagyobb előnyét fontosnak tartottuk kiemelten kezelni.
+A rendszer tehát a **_szerep-játékra_** helyezi a hangsúlyt - szemben például egy számítógépes játékkal, ahol minden szociális szituáció dobással kerül elintézésre. Az élő játék egyik legnagyobb előnyét fontosnak tartottuk kiemelten kezelni.
 
 ---
 ## Számok
@@ -83,10 +94,11 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 
 - **Tulajdonságok**: Erő, Edzettség, Ügyesség, Gyorsaság, Intelligencia, Emlékezet, Önuralom, Érzékenység
 - **Származtatott Harcértékek**: KÉ, TÉ, VÉ, CÉ, Manőver Pontok
+- **Szilánk**: Narratív jellegű számérték
 
 ### KP költésével növelt jellemzők
 
-- **Képzettségek**: Harci, Fizikai, Alvilági, Művészeti, Világi, Tudományos, Misztikus, **Tradíciók** (Mágia, Papi, Szellemi), Arkánumok, Slan
+- **Képzettségek**: Harci, Fizikai, Alvilági, Művészeti, Világi, Tudományos, Misztikus, **Tradíció** (Mágia, Papi, Szellemi), Arkánum, Slan
 - **Fortélyok**: Általános, Harci, Távharc, Misztikus
 - **Harcérték módosítók** (HM/CM)
 
