@@ -147,40 +147,56 @@ Ilyenkor ellenfele `Védő Értékét` annak mozgási jellege és mérete határ
 
 Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
 
-Fegyverrántás szituáción azt értjük, amikor valaki harci kontaktus közben próbálja előkapni fegyverét, hogy ne pusztakezes értékeivel legyen kénytelen küzdeni. Ez igen nehéz feladat, hiszen ellenfele által folyamatosan fenyegetve van.
+#### ⚜️ `1.`Pusztakezes harc közben megpróbál fegyvert rántani 
 
-Fegyverrántásnál pusztakezes `KÉ`-vel történik a kezdeményezés, fegyver-függő módosítóval:
+Ezen fegyverrántás szituáción azt értjük, amikor valaki harci kontaktus közben próbálja előkapni fegyverét, hogy ne pusztakezes értékeivel legyen kénytelen küzdeni. Ez igen nehéz feladat, hiszen ellenfele által folyamatosan fenyegetve van.
+
+Fegyverrántásnál pusztakezes `KÉ` értékkel történik a kezdeményezés, fegyver-függő módosítóval:
 
 ```
-KÉ: [0 ;-10]    (Például Tőr: -0 KÉ, Kétkezes csatabárd: -10KÉ)
+KÉ: [0 ;-10]    (Például Tőr: KÉ:-0, Kétkezes csatabárd: KÉ:-10)
 ```
 
 Tehát minél nehezebb előrántani egy fegyvert, annál nagyobb rá a büntetés. A levonás mértékét a KM határozza meg.
 
-Ha a fegyverrántó nyeri a kezdeményezést, akkor sikerült előrántania fegyverét, és teljes – fegyveres – `VÉ`‑je érvényesül, viszont ellenfele dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadást felemésztő cselekedet.
+#### `1.1` Elveszíti a kezdeményezést
 
-Ha a fegyverrántó elveszti a kezdeményezést, akkor fegyvertelen `VÉ`-jével várja ellenfele támadását.
+Nem sikerül előrántania a fegyvert, elvesztett egy akciót és fegyvertelen `VÉ` harcértékével várja ellenfele támadását.
 
-Viszont ha a fegyverrántó **legalább** `10`-el túldobja ellenfele Kezdeményezését, akkor annyira gyors volt, hogy már ő támadhat elsőnek azonnal – teljes harcértékével. A harc innen a megszokott módon folytatódik. **Megjegyzés**: az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is.
+#### `1.2` Fegyverrántó nyeri a kezdeményezést
 
-**Fegyverrántás** fortély bónuszai fegyverrántás szituációban (alkalmazó oldalán):
+Sikerült előrántania fegyverét, és teljes, immár fegyveres `VÉ` harcértéke érvényesül.\
+Ellenfele dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadást felemésztő cselekedet.
+
+#### `1.3` Fegyverrántó nyeri a kezdeményezést `+10` túldobással
+
+A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is.
+A harc innen a megszokott módon folytatódik.
+
+#### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
+
+Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járnak:
 
 ```
 1.fok:  KÉ:+5
 2.fok:  KÉ:+10
 ```
 
-#### Meglepetésből, vagy észrevétlen fegyverrántás
-
-Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom
-
-- A támadás az enyém
-- Az áldozat **Észlelés** próbát dob. Ha nincs meg, akkor **Orvtámadásnak** minősül a támadásom.
-- Ha megvan, akkor **Meglepetés** szituációvá enyhül a helyzet (`+20 TÉ` módosítót kapok).
-
-#### Mindkét fél fegyverrántást alkalmaz
+#### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
 
 Ekkor mindkettőjükre érvényesek a fegyverrántásnál leírt módosítók. Az szúr előbb, aki nyeri a `KÉ`-t, ellenfele pedig `Pusztakezes VÉ`-vel védekezhet csak és képtelen előkapni fegyverét. Ha elő akarja húzni, akkor a következő kör elején, támadását feláldozva újra fegyverrántással kell próbálkoznia.
+
+####  ⚜️ `3.`Meglepetésből, vagy észrevétlen fegyverrántás
+
+Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
+
+- A támadás az enyém
+- Az áldozat [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próbát dob (aktív/passzív észlelés számít!). Ha sikertelen, akkor sikeres [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadásom.
+- Ha sikeres az **Észlelés** próba, akkor [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) szituációvá enyhül a helyzet, annak bónuszaival.
+
+#### 🔆 **Szálfegyverek**
+
+Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy kézben vannak, vagy olyan módon tárolva, ahonnan lehetetlen fegyverrántással előhúzni.
 
 #### ⚡ Példák
 
@@ -195,8 +211,6 @@ Tőrrel KÉ: 28 (Tőr KÉ:+2)
 • Kétkezes csatabárdot „rántani” szinte lehetetlen (-10KÉ). Így fortély nélkül KÉ: 6
     • 2.fokú fegyverrántás fortéllyal: pont kiegyenlíti a -10 KÉ büntetést. Így KÉ=16
 ```
-
-**Szálfegyverek**, nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy kézben vannak, vagy olyan módon tárolva, ahonnan lehetetlen fegyverrántással előhúzni.
 
 <br />
 

@@ -317,11 +317,11 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 ---
 ### Orvtámadás
 
-Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálhatsz így végezni vele.
+Ha sikeres **Lopakodás/rejtőzés** vs. **Észlelés + Érzékenység** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálhatsz így végezni vele.
 
 - Nehézség: [Területre támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver adott Nehézsége `-3`. Az ott leírt lehetséges célterületekből választhatsz.
 - Fázisok: `Végrehajtás, Ellenpróba`
-  - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Észrevétlen támadás](065_01_harci_helyzetek.md#észrevétlen-támadás))
+  - `Végrehajtás` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Észrevétlen támadás](065_01_harci_helyzetek.md#észrevétlen-támadás))
 - Követelmény: [Észrevétlen támadás](065_01_harci_helyzetek.md#észrevétlen-támadás), [Hátulról támadás](065_01_harci_helyzetek.md#hátulról-támadás) harci helyzetek
 - **Hatás**:
   - a választott helyre támadsz anélkül, hogy ellenfeled ennek tudatában lenne
