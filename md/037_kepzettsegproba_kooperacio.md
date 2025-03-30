@@ -2,9 +2,11 @@
 
 Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, akkor kell az alábbi mechanikákhoz nyúlnunk. Három esetet különbözetünk meg: 
 
-- ⚜️ 1. Csoportos fizikai próbatétel
-- ⚜️ 2. Csoportos szellemi próbatétel
-- ⚜️ 3. Csapatmunka egy komplex feladat különböző kiosztott részfeladatokkal
+⚜️ 1. Csoportos fizikai próbatétel
+
+⚜️ 2. Csoportos szellemi próbatétel
+
+⚜️ 3. Csapatmunka egy komplex feladat különböző kiosztott részfeladatokkal
 
 ---
 ### ⚜️ 1. Csoportos fizikai próbatétel
