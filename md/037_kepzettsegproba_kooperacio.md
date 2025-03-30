@@ -50,9 +50,13 @@ Ilyenkor a `5, 6` és `7` értékkel bíró emberek beszámítanak fejenként `-
 
 A fenti büntetést a [Koordinátor](fortelyok.altalanos/koordinator.md) fortély segítségével csökkenthetjük.
 
-#### 🔆Fortély kiterjesztés
+#### 🔆 Fortély bónuszok
 
-Ha az adott csoportos fizikai képzettségpróbánál van fortély, amely kiterjeszti a csoportos képzettség értékét, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legalacsonyabb fokkal (akár `0` értékkel) rendelkezik. Így Normál kiterjesztés esetén levonás/bónusz, Erős Kiterjesztés esetén pedig próba-letiltás is előfordulhat.
+Ha az adott csoportos fizikai képzettségpróbánál van kapcsolódó fortély, amely bónuszt, vagy módosítót ad, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legalacsonyabb fokkal (akár `0` értékkel) rendelkezik
+
+#### 🔆 Fortély mint kiterjesztés
+
+Ha az adott csoportos fizikai képzettségpróbánál van kapcsolódó fortély, amely kiterjeszti a csoportos képzettség értékét, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legalacsonyabb fokkal (akár `0` értékkel) rendelkezik. Így Normál kiterjesztés esetén levonás/bónusz, Erős Kiterjesztés esetén pedig próba-letiltás is előfordulhat.
 
 <br />
 
