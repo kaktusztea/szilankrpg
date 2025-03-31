@@ -154,7 +154,11 @@ Ezen fegyverrántás szituáción azt értjük, amikor valaki harci kontaktus k�
 Fegyverrántásnál pusztakezes `KÉ` értékkel történik a kezdeményezés, fegyver-függő módosítóval:
 
 ```
-KÉ: [0 ;-10]    (Például Tőr: KÉ:-0, Kétkezes csatabárd: KÉ:-10)
+KÉ: [0 ;-10]
+
+Tőr: KÉ:-0
+...
+Kk csatabárd: KÉ:-10
 ```
 
 Tehát minél nehezebb előrántani egy fegyvert, annál nagyobb rá a büntetés. A levonás mértékét a KM határozza meg.
@@ -184,15 +188,16 @@ Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járn
 
 #### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
 
-Ekkor mindkettőjükre érvényesek a fegyverrántásnál leírt módosítók. Az szúr előbb, aki nyeri a `KÉ`-t, ellenfele pedig `Pusztakezes VÉ`-vel védekezhet csak és képtelen előkapni fegyverét. Ha elő akarja húzni, akkor a következő kör elején, támadását feláldozva újra fegyverrántással kell próbálkoznia.
+Ekkor mindkettőjükre érvényesek a fegyverrántásnál leírt módosítók. Az támad előbb, aki nyeri a kezdeményezést, ellenfele pedig `Pusztakezes VÉ`-vel védekezhet csak és képtelen előkapni fegyverét. Ha elő akarja húzni, akkor a következő kör elején, támadását feláldozva újra fegyverrántással kell próbálkoznia.
 
 ####  ⚜️ `3.`Meglepetésből, vagy észrevétlen fegyverrántás
 
 Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 
+- Áldozat: [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba (aktív/passzív észlelés számít)
+	- Sikertelen: [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadásom
+	- Sikeres: [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) módosítóit kapom meg
 - A támadás az enyém
-- Az áldozat [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próbát dob (aktív/passzív észlelés számít!). Ha sikertelen, akkor sikeres [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadásom.
-- Ha sikeres az **Észlelés** próba, akkor [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) szituációvá enyhül a helyzet, annak bónuszaival.
 
 #### 🔆 **Szálfegyverek**
 
