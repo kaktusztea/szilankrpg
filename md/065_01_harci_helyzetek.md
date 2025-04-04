@@ -174,8 +174,7 @@ Ellenfele dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadás
 
 #### `1.3` Fegyverrántó nyeri a kezdeményezést `+10` túldobással
 
-A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is.
-A harc innen a megszokott módon folytatódik.
+A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is. A harc innen a megszokott módon folytatódik.
 
 #### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
 
@@ -188,16 +187,17 @@ Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járn
 
 #### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
 
-Ekkor mindkettőjükre érvényesek a fegyverrántásnál leírt módosítók. Az támad előbb, aki nyeri a kezdeményezést, ellenfele pedig `Pusztakezes VÉ`-vel védekezhet csak és képtelen előkapni fegyverét. Ha elő akarja húzni, akkor a következő kör elején, támadását feláldozva újra fegyverrántással kell próbálkoznia.
+Ekkor mindkettőjükre érvényesek az `1.` pontnál leírt módosítók. Az támad előbb, aki nyeri a kezdeményezést, ellenfele pedig `Pusztakezes VÉ`-vel védekezhet csak és képtelen előkapni fegyverét. Ha elő akarja húzni, akkor a következő kör elején, támadását feláldozva újra fegyverrántással kell próbálkoznia.
 
 ####  ⚜️ `3.`Meglepetésből, vagy észrevétlen fegyverrántás
 
 Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 
-- Áldozat: [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba (aktív/passzív észlelés számít)
-	- Sikertelen: [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadásom
-	- Sikeres: [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) módosítóit kapom meg
-- A támadás az enyém
+Áldozat: [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba (aktív/passzív észlelés számít)
+- Sikertelen Észlelés: [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadás
+- Sikeres Észlelés: Támadó `KÉ:+10` bónusszal Kezdeményez
+  - Nyert Támadó `KÉ`: [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) módosítóit kapja meg a támadó
+  - Vesztett Támadó KÉ: a megtámadott még így is gyorsabban reagál! Ő támadhat elsőnek, mindketten az aktuális harcértékeikkel és fegyvereikkel
 
 #### 🔆 **Szálfegyverek**
 
