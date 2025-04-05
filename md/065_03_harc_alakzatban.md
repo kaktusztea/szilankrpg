@@ -17,28 +17,37 @@ Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összes
 - Bónusz `+2 / fok`
 
 ⚜️ **Alakzatszint**
-- [Csoportos fizikai próbatétel](037_kepzettsegproba_kooperacio.md#%EF%B8%8F-1-csoportos-fizikai-pr%C3%B3bat%C3%A9tel) szerint a csapat [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség átlaga
+- [Csoportos fizikai próbatétel](037_kepzettsegproba_kooperacio.md#%EF%B8%8F-1-csoportos-fizikai-pr%C3%B3bat%C3%A9tel) szerint a csapat [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség átlag szintje
 - [Parancsnok](fortelyok.harci/parancsnok.md) fortély enyhít a csoportos büntetéseken
 
----
+### ⚜️Támadószint
 
-⚜️**Támadószint**: `Alakzatszint + Támadófok bónusz`
+```
+Alakzatszint + Támadófok bónusz
+```
 
-⚜️**Védekezőszint**: `Alakzatszint + Védekezőfok bónusz`
+
+### ⚜️Védekezőszint
+
+```
+Alakzatszint + Védekezőfok bónusz
+```
 
 ---
 ## Alakzat harcértékeinek meghatározása
 
-**TÉ SUMMA**
-- Alakzat tagjainak fegyveres `TÉ` átlaga 
+### TÉ SUMMA
+
+- Alakzat tagjainak fegyveres `TÉ` átlaga
 - `TÉ bónusz`: **Támadószint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
-**VÉ SUMMA**
+### VÉ SUMMA
+
 - Alakzat tagjainak fegyveres `VÉ` átlaga 
 - `VÉ bónusz`:  **Védekezőszint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-- ⭕Legyen?⭕Személyek száma utáni `VÉ` bónusz (`+3 VÉ / fő;  max +30 VÉ`)
+- Személyek száma utáni `VÉ` bónusz (`+3 VÉ / fő;  max +30 VÉ`) ⭕TODO⭕: Legyen?
 
-🔆**Megjegyzés**: [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasl%C3%A9glovas-harc%C3%A9rt%C3%A9kek-kisz%C3%A1m%C3%ADt%C3%A1sa) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
+🔆 **Megjegyzés**: [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasl%C3%A9glovas-harc%C3%A9rt%C3%A9kek-kisz%C3%A1m%C3%ADt%C3%A1sa) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
 
 <br />
 
@@ -49,6 +58,7 @@ Borz
 - Alakzatharc: `6.szint`
 - Támadó-alakzat fortély: `2.fok`
 - Védekező-alakzat fortély: `2.fok`
+- 🔆 Parancsnok fortély: `1.fok`
 
 Tetves
 - Alakzatharc: `7.szint`
@@ -76,33 +86,30 @@ Csámpa
 ⚡Védekezőfok: `2`
 - `MIN(2; 2; 2; 2)`
 
-⚡Alakzatszint: `6 - (2x1) → 4`
+⚡Alakzatszint: `6 - 1 → 5.szint`
 - legalacsonyabb képzettség: `6`
-- két társ van `3` szint "távon" belül, tehát tehát `-(2x1)` büntetés
+- `2` társ van `3` szint "távon" belül, tehát `-2` lenne a büntetés
+- viszont **Borz** `1.fokú` [Parancsnok](fortelyok.harci/parancsnok.md) fortélya ebből `1`-et hatástalanít, marad `-1`
 
-⚡Támadószint: `4`
-- Alakzatszint (`4`)
+⚡Támadószint: `5`
+- Alakzatszint (`5`)
 - Támadófok bónusz: `0.fok: nincs bónusz`
-- `4 + 0 = 4`
+- `5 + 0 = 5`
 
-⚡Védekezőszint: `8`
-- Alakzatszint (`4`)
+⚡Védekezőszint: `9`
+- Alakzatszint (`5`)
 - Védekezőfok bónusz:`2.fok: +4 bónusz`
-- `4 + 4 = 8`
+- `5 + 4 = 9`
 
 ---
-🔆**Alakzat TÉ értéke**
+### 🔆**Alakzat TÉ értéke**
 - Alakzat tagjainak fegyveres `TÉ` átlaga 
-- `TÉ bónusz`: **Támadószint** (`4`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-    - `TÉ: +3` (`4.szinten` ennyi bónusz jár)
+- `TÉ bónusz: +6`  - **Támadószint** (`5`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
 
-🔆**Alakzat VÉ értéke**
+### 🔆**Alakzat VÉ értéke**
 - Alakzat tagjainak fegyveres `VÉ` átlaga 
-- `VÉ bónusz`: **Védekezőszint** (`8`) mint egy extra harcmodorból adódó érték
-    - `VÉ: +15` (`8.szinten` ennyi bónusz jár)
-- `VÉ bónusz - tagok száma után`
-    - `4` fős a csapat, `VÉ: +3/fő`
-    - `VÉ: +12`
+- `VÉ bónusz: +18` - **Védekezőszint** (`9`) mint egy extra harcmodorból adódó érték
+- `VÉ bónusz: +12` - tagok száma után `(4x3)`
 
 <br />
 
@@ -132,12 +139,13 @@ Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
 ---
 ## VÉ regenerálódás
 
-⭕TODO: ez legyen?⭕
-Az Alakzat `VÉ` értéke minden kör elején visszaáll eredeti értékére (mint az élőhalottaknál).
+⭕ Melyik modell legyen? ⭕
+- A.) Az alakzat  minden kör elején visszanyeri teljes Védő Értékét
+- B.) Az alakzat minden kör elején visszanyer 10 VÉ pontot
+    - Tipp: erre használható esetlegesen a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
+- C.) Az alakzat ellen leadott minden VÉ csökkentésekből lejön `-5 VÉ`.
 
-Látható, hogy `1` körön belül kell annyira "leverni" az alakzat Védő Értékét, hogy aztán találatot érhessünk el.
-
-Tipp: erre használható esetlegesen a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
+Egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb "kifulladásra" játszani.
 
 <br />
 
