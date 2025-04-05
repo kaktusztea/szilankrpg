@@ -142,8 +142,9 @@ Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
 ⭕ Melyik modell legyen? ⭕
 - A.) Az alakzat  minden kör elején visszanyeri teljes Védő Értékét
 - B.) Az alakzat minden kör elején visszanyer 10 VÉ pontot
-    - Tipp: erre használható esetlegesen a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
 - C.) Az alakzat ellen leadott minden VÉ csökkentésekből lejön `-5 VÉ`.
+
+Tipp: erre használható esetlegesen a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
 
 Egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb "kifulladásra" játszani.
 
