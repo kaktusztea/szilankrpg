@@ -46,13 +46,13 @@ Minden társ `-1` büntetést ad a dobáshoz, amennyiben megfelel a lenti követ
 ⚡ Példa: legképzetlenebb személy `Képzettség-szint + Tulajdonság` értéke: `4`\
 Ilyenkor a `5, 6` és `7` értékkel bíró emberek beszámítanak fejenként `-1` büntetés pontnak. Legfeljebb `-3` büntetés pont érthető így el összesen, tehát a csoport `4-3 = 1` értékre dob `k10` kockával legrosszabb esetben.
 
-#### 🔆 Koordinátor fortély
+#### 🔆 Parancsnok fortély
 
-A fenti büntetést a [Koordinátor](fortelyok.altalanos/koordinator.md) fortély segítségével csökkenthetjük.
+A fenti büntetést a [Parancsnok](fortelyok.harci/parancsnok.md) fortély segítségével csökkenthetjük.
 
 #### 🔆 Fortély bónuszok
 
-Ha az adott csoportos fizikai képzettségpróbánál van kapcsolódó fortély, amely bónuszt, vagy módosítót ad, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legalacsonyabb fokkal (akár `0` értékkel) rendelkezik
+Ha az adott csoportos fizikai képzettségpróbánál van kapcsolódó fortély, amely bónuszt, vagy módosítót ad, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legalacsonyabb fokkal (akár `0` értékkel) rendelkezik.
 
 #### 🔆 Fortély mint kiterjesztés
 
