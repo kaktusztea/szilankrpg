@@ -142,7 +142,7 @@ Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
 ⭕ Melyik modell legyen? ⭕
 - A.) Az alakzat  minden kör elején visszanyeri teljes Védő Értékét
 - B.) Az alakzat minden kör elején visszanyer 10 VÉ pontot
-- C.) Az alakzat ellen leadott minden VÉ csökkentésekből lejön `-5 VÉ`.
+- C.) Az alakzat ellen leadott minden VÉ csökkentésből lejön `-5 VÉ`.
 
 Egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb "kifulladásra" játszani.
 
