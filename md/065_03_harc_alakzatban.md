@@ -81,13 +81,13 @@ Csámpa
 - két társ van `3` szint "távon" belül, tehát tehát `-(2x1)` büntetés
 
 ⚡Támadószint: `4`
-- Alakzatszint (`4`): kiterjeszti **Támadófok** (`0`)
-- `0.fok: nincs bónusz`
+- Alakzatszint (`4`)
+- Támadófok bónusz: `0.fok: nincs bónusz`
 - `4 + 0 = 4`
 
 ⚡Védekezőszint: `8`
-- Alakzatszint (`4`): kiterjeszti **Védekezőfok** (`2`)
-- `2.fok: +4 bónusz`
+- Alakzatszint (`4`)
+- Védekezőfok bónusz:`2.fok: +4 bónusz`
 - `4 + 4 = 8`
 
 ---
