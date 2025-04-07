@@ -18,7 +18,7 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 ### Kapcsolódik
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély
-- [Taktika: Testőrség](../fortelyok.szabad/taktika_testorseg.md) fortély
+- [Taktika: Testőrség](../fortelyok.harci/taktika_testorseg.md) fortély
 - [Nyelvismeret](nyelvismeret.md) fortély
 - [Tánc](../fortelyok.szabad/tanc.md) fortély
 - [Tánc: belső stílus](../fortelyok.szabad/tanc_belso_stilus.md) fortély
