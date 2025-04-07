@@ -4,17 +4,25 @@ Mikor összehangoltan, csoportban mozognak harcosok, akkor komoly előnyt képes
 
 Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összeszokottság. Nem készítünk külön szabályokat az összeszokottság mértékének módosítóira - egy heroikus rendszerben valószínűleg összeszokott csapat indít csak csoportos támadást.
 
+Egy alakzat minimum létszáma `3` **fő** (`2` fő legfeljebb  [Páros harcot](fortelyok.harci/paros_harc.md) végezhet).
+
+---
+## Mozgástér
+
+Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, barlangban **nem lehetséges**, csak ha kivételesen nagy tér áll rendelkezésre (pl. nagy belső udvar).
+
+---
 ## Alakzat egyedi jellemzői
 
 ⚜️ **Támadófok**
 - `MIN(`Támadó-alakzat` fortély)`
 - Legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka (csapattagok között)
-- Bónusz `+2 / fok`
+- Bónusz: `+2 / fok`
 
 ⚜️ **Védekezőfok**
 - `MIN(Védekező-alakzat fortély)`
 - Legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka (csapattagok között)
-- Bónusz `+2 / fok`
+- Bónusz: `+2 / fok`
 
 ⚜️ **Alakzatszint**
 - [Csoportos fizikai próbatétel](037_kepzettsegproba_kooperacio.md#%EF%B8%8F-1-csoportos-fizikai-pr%C3%B3bat%C3%A9tel) szerint a csapat [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség átlag szintje
@@ -137,23 +145,32 @@ Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
 <br />
 
 ---
-## VÉ regenerálódás
+## VÉ csökkenés alakzat ellen alacsonyabb
 
-⭕ Melyik modell legyen? ⭕
-- A.) Az alakzat  minden kör elején visszanyeri teljes Védő Értékét
-- B.) Az alakzat minden kör elején visszanyer 10 VÉ pontot
-- C.) Az alakzat ellen leadott minden VÉ csökkentésből lejön `-5 VÉ`.
+```
+VÉ csökkenés gyengébb: -5
 
-Egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb "kifulladásra" játszani.
+Teljes Védekezés taktikában: -10
+```
 
-Tipp: ezen hatás ellen használható esetlegesen a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
+Az alakzat ellen harcoló **egyén** ugyanúgy kis/nagykockával csökkent, mint normál harc esetében - pengeméret különbségtől függően, viszont:
+
+Az alakzat **ellen** leadott minden `VÉ` csökkentésből, tehát az alakzat által elszenvedett `VÉ` csökkenésből mindig `-5` levonandó, mivel egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb a "kifulladására" játszani.
+
+Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikába áll be, akkor a fenti csökkentés `-10` értékre módosul.
+
+**Tipp**: ezen hatás ellen megfontolandó lehet a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
+
+Megjegyzés: a szabály-mechanika a [Harcos elme](fortelyok.harci/harcos_elme.md) nem-létező `5.fokaként` képzelhető el.
 
 <br />
 
 ---
-## VÉ csökkentés és pengeméret különbségek
+## VÉ csökkentés alakzat által és pengeméret különbségek
 
-Az alakzat jellemző főfegyvere vs egyén pengehosszának különbsége adja a pengeméret különbség megállapítását.
+Az alakzat jellemző főfegyvere vs egyén **pengehosszának** különbsége adja a pengeméret különbség megállapítását.
+
+Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix érték, amely az alábbiak szerint kerül kiszámításra.
 
 ### Alakzat VÉ csökkentése (fix értékek)
 
@@ -182,16 +199,12 @@ Azonos pengehossznál:
 5+ fő: +2 VÉ csökkentés
 ```
 
-Tehát az egyén számára legrosszabb esetben minden körben `-17 VÉ csökkenést` szenved el.
-
-### Egyén VÉ csökkentése
-
-Az alakzat ellen harcoló **egyén** ugyanúgy kis/nagykockával csökkent, mint normál harc esetében - pengeméret különbségtől függően.
+Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-17 VÉ csökkenést` szenved el.
 
 <br />
 
 ---
-## Támadások száma
+## Alakzat támadásainak száma
 
 ```
 Minden egyéni ellenfélre 1-1 támadás jut,
@@ -199,8 +212,9 @@ Minden egyéni ellenfélre 1-1 támadás jut,
 ```
 
 Egyértelműsítés:
-- Ha `1` emberrel harcolnak, akkor rá `1`-et támad az alakzat.
-- Ha `3` emberrel harcolnak, akkor mindegyik egyénre `1-1`-et támad az alakzat.
+- Ha `1` emberrel harcolnak, akkor őrá `1`-et támad az alakzat
+- Ha `3` emberrel harcolnak, akkor mindhárom egyénre `1-1`-et támad az alakzat
+- Max ilyen `1-1` támadások száma: Alakzat létszáma
 
 <br />
 
@@ -211,7 +225,7 @@ Egyértelműsítés:
 
 Minden ember `10 ÉP`-nek számít. Minden `10. ÉP` elvesztésénél `1` fővel csökken az Alakzat száma. Ez kihat a `VÉ` csökkentésre és harcértékekre is.
 
-Egyes lényeknél eltérhet ez a szám. Pl. orkok esetén vehetjük `15 ÉP` értékűnek `1` személyt.
+Egyes lényeknél eltérhet ez a szám. Pl. orkok esetén vehetjük `15 ÉP` értékűnek az `1` személyt.
 
 <br />
 
@@ -252,7 +266,6 @@ VÉ csökkentés/kör: 5  (csak)
 
 A VÉ értéke NEM áll vissza kör elején
 ```
-
 
 ---
 
