@@ -42,10 +42,9 @@ A fentiek akkor is működnek, ha nem te dobsz a próbára, azaz nem neked van a
 <br />
 
 ---
-
 ### Megjegyzések
 
 - Ha több koordinátor van egy csapatban, akkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít
-- Fizikai "párja" a [Parancsnok](../fortelyok.harci/parancsnok.md) fortély
+- Hasonló: [Taktika: Parancsnok](../fortelyok.harci/taktika_parancsnok.md) fortély
 
 <br />

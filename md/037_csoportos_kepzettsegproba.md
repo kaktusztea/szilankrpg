@@ -48,9 +48,9 @@ Minden társ `-1` büntetést ad a dobáshoz, amennyiben megfelel a lenti követ
 ⚡ Példa: legképzetlenebb személy `Képzettség-szint + Tulajdonság` értéke: `4`\
 Ilyenkor a `5, 6` és `7` értékkel bíró emberek beszámítanak fejenként `-1` büntetés pontnak. Legfeljebb `-3` büntetés pont érthető így el összesen, tehát a csoport `4-3 = 1` értékre dob `k10` kockával legrosszabb esetben.
 
-#### 🔆 Parancsnok fortély
+#### 🔆 Taktika: Parancsnok fortély
 
-A fenti büntetést a [Parancsnok](fortelyok.harci/parancsnok.md) fortély segítségével csökkenthetjük.
+A fenti büntetést a [Taktika: Parancsnok](fortelyok.harci/taktika_parancsnok.md) fortély segítségével csökkenthetjük.
 
 #### 🔆 Fortély bónuszok
 

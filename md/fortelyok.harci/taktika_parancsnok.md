@@ -1,4 +1,4 @@
-## 🟣 Parancsnok (3)
+## 🟣 Taktika: Parancsnok (3)
 
 A képzettségpróbánál alkalmazott [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-próbatétel) esetén a társak után kapható `-3` maximális büntetés értékét csökkentheted - így kevesebben tudják tovább rontani a csapat közös teljesítményét.
 

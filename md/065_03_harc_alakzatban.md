@@ -26,7 +26,7 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 
 ⚜️ **Alakzatszint**
 - [Csoportos fizikai képzettségpróba](037_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-próbatétel) szerint a csapat [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség átlag szintje
-- [Parancsnok](fortelyok.harci/parancsnok.md) fortély enyhít a csoportos büntetéseken
+- [Taktika: Parancsnok](fortelyok.harci/taktika_parancsnok.md) fortély enyhít a csoportos büntetéseken
 
 ### ⚜️Támadószint
 
@@ -97,7 +97,7 @@ Csámpa
 ⚡Alakzatszint: `6 - 1 → 5.szint`
 - legalacsonyabb képzettség: `6`
 - `2` társ van `3` szint "távon" belül, tehát `-2` lenne a büntetés
-- viszont **Borz** `1.fokú` [Parancsnok](fortelyok.harci/parancsnok.md) fortélya ebből `1`-et hatástalanít, marad `-1`
+- viszont **Borz** `1.fokú` [Taktika: Parancsnok](fortelyok.harci/taktika_parancsnok.md) fortélya ebből `1`-et hatástalanít, marad `-1`
 
 ⚡Támadószint: `5`
 - Alakzatszint (`5`)
