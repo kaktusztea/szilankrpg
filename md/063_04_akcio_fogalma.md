@@ -9,6 +9,7 @@ Vannak olyan cselekedetek, amelyek 0 akciót igényelnek, például odakiáltani
 - `1` Harci támadás
 - `1` Manőver
 - `1` Varázslás
+- `1` extra [Mozgás](063_05_mozgas_harc_kozben.md)
 
 ---
 

@@ -18,13 +18,23 @@ Egy karakter egy harci körön belül szabadon mozoghat maximum (`5 + Gyorsaság
 Ha a kört mozgással kezded, akkor utolsó helyre csúszol a [Kezdeményezésben](064_02_00_harc_menete_reszletes.md#kezdeményezés).
 
 ---
-### Maximum mozgás egy körben
+### Száguldás rohammal
 
 Ha a karakter a `Max mozgás` távolságnál mindenképpen nagyobb távot akar megtenni egy körben és még `1 db` támadást le is akar adni, akkor azt megteheti az alábbi megkötésekkel:
 
-- Maximum táv: `Max mozgás x 2 (méterben)`
 - A körben nem lehet/lehetett ezen kívül más támadása
 - Csak [Roham](065_02_harci_taktikak.md#roham-taktika) Harci taktikával végezhető a támadás
+- Maximum táv: `Max mozgás x 2 (méterben)`
+
+---
+### Extra mozgás a körben
+
+```
+Extra Mozgás == összes akció
+```
+
+Amennyiben nem elégszel meg az ingyenes Mozgás kereteddel a körödben:\
+mikor rád kerül a sor a Kezdeményezésben, **összes Akciód** (Támadás, Varázslás, Manőver) feladásáért további `Max Mozgás` értékednek megfelelő távot mozoghatsz.
 
 ---
 
