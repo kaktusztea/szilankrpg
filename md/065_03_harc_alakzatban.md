@@ -25,7 +25,7 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 - Bónusz: `+2 / fok`
 
 ⚜️ **Alakzatszint**
-- [Csoportos fizikai próbatétel](037_kepzettsegproba_kooperacio.md#%EF%B8%8F-1-csoportos-fizikai-pr%C3%B3bat%C3%A9tel) szerint a csapat [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség átlag szintje
+- [Csoportos fizikai képzettségpróba](037_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-próbatétel) szerint a csapat [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség átlag szintje
 - [Parancsnok](fortelyok.harci/parancsnok.md) fortély enyhít a csoportos büntetéseken
 
 ### ⚜️Támadószint

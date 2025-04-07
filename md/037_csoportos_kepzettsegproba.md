@@ -1,15 +1,17 @@
-## Kooperáció, csoportmunka képzettségpróbánál
+## Csoportos képzettségpróba
 
 Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, akkor kell az alábbi mechanikákhoz nyúlnunk. Három esetet különbözetünk meg: 
 
-⚜️ 1. Csoportos fizikai próbatétel
+⚜️ 1. Csoportos fizikai képzettségpróba
 
-⚜️ 2. Csoportos szellemi próbatétel
+⚜️ 2. Csoportos szellemi képzettségpróba
 
-⚜️ 3. Csapatmunka egy komplex feladat különböző kiosztott részfeladatokkal
+⚜️ 3. Komplex csapatmunka képzettségpróba-részfeladatokkal
+
+<br />
 
 ---
-### ⚜️ 1. Csoportos fizikai próbatétel
+### ⚜️ 1. Csoportos fizikai képzettségpróba
 
 ```
 Dobás:
@@ -61,7 +63,7 @@ Ha az adott csoportos fizikai képzettségpróbánál van kapcsolódó fortély,
 <br />
 
 ---
-### ⚜️ 2. Csoportos szellemi próbatétel
+### ⚜️ 2. Csoportos szellemi képzettségpróba
 
 ```
 Dobás:
@@ -104,10 +106,8 @@ Ha az adott csoportos szellemi képzettségpróbánál van fortély, amely kiter
 
 <br />
 
-
-
 ---
-### ⚜️ 3. Csapatmunka egy komplex feladat különböző kiosztott részfeladatokkal
+### ⚜️ 3. Komplex csapatmunka képzettségpróba-részfeladatokkal
 
 ```
 több ismeretre
@@ -117,7 +117,7 @@ több ismeretre
 
 Ez a leginkább magától értetődő eset. Egy komplex feladatnál több képzettségre, vagy (képzettéség+fortély) kiterjesztés kombinációra lehet szükség.
 
-A KM felsorolja, milyen ismeretekre van szükség és mik külön-külön a célszámok a komplex feladat elemeinek elvégzéséhez.
+A **KM** felsorolja, milyen ismeretekre van szükség és mik külön-külön a célszámok a komplex feladat elemeinek elvégzéséhez.
 
 Ezt követően a parti "összedobja, amije van". Az esetleges hiányok kezelését a KM kezeli, lehet, hogy az adott részfeladatot csak alacsonyabb szinten tudják megoldani.
 

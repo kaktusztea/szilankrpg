@@ -91,7 +91,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Képzettségek fejlesztése](034_kepzettsegek_fejlesztese.md)
 - [Képzettségszintek KP igénye](035_kepzettsegszintek_kp_igenye.md)
 - [Képzettségpróba](036_kepzettsegproba.md) 🎲
-- [Kooperáció, csoportmunka képzettségpróbánál](037_kepzettsegproba_kooperacio.md)
+- [Csoportos képzettségpróba](037_csoportos_kepzettsegproba.md) 🎲
 - [Képzettségek és Fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md)
 - [Fortélyok képzettségkiterjesztés listája (ábra)](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Bázis képzettségek](039_bazis_kepzettsegek.md)

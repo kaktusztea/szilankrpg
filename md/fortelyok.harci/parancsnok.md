@@ -1,6 +1,6 @@
 ## 🟣 Parancsnok (3)
 
-A képzettségpróbánál alkalmazott [csoportos fizikai próbatétel esetén](../037_kepzettsegproba_kooperacio.md#%EF%B8%8F-1-csoportos-fizikai-pr%C3%B3bat%C3%A9tel) a társak után kapható `-3` maximális büntetés értékét csökkentheted - így kevesebben tudják tovább rontani a csapat közös teljesítményét.
+A képzettségpróbánál alkalmazott [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-próbatétel) esetén a társak után kapható `-3` maximális büntetés értékét csökkentheted - így kevesebben tudják tovább rontani a csapat közös teljesítményét.
 
 Jó példa erre a [Harc alakzatban](../065_03_harc_alakzatban.md), amely az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettség csoportos használatát szimulálja.
 
@@ -8,7 +8,7 @@ Jó példa erre a [Harc alakzatban](../065_03_harc_alakzatban.md), amely az [Ala
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**:  Lásd [csoportos fizikai próbatétel - társak büntetései](../037_kepzettsegproba_kooperacio.md#t%C3%A1rsak-b%C3%BCntet%C3%A9sei)
+🌟 **Hatás**:  Lásd [csoportos fizikai képzettségpróba - társak büntetései](../037_csoportos_kepzettsegproba.md#társak-büntetései)
 
 ---
 ### 1. fok

@@ -2,7 +2,7 @@
 
 Jól tudsz egy csoportot koordinálni **szellemi** próbatétel esetén, nagyobb mennyiségű ember tudását a közös cél érdekében harmonizálni.
 
-A képzettségpróbánál alkalmazott [csoportos szellemi kooperáció esetén](../037_kepzettsegproba_kooperacio.md#%EF%B8%8F-2-csoportos-szellemi-pr%C3%B3bat%C3%A9tel) esetén a kapható `+3` maximális bónusz limitet emelheted meg - így többen tudják már tudásukat a közös cél érdekében bevetni, amennyiben teljesítik a **Kooperáció** követelményeit.
+A képzettségpróbánál alkalmazott [csoportos szellemi képzettségpróba](../037_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-próbatétel) esetén a kapható `+3` maximális bónusz limitet emelheted meg - így többen tudják már tudásukat a közös cél érdekében bevetni, amennyiben teljesítik a **Kooperáció** követelményeit.
 
 A fentiek akkor is működnek, ha nem te dobsz a próbára, azaz nem neked van a legalacsonyabb/legmagasabb dobás alap értéked, viszont fontos, hogy legalább `3.szinten` neked is jártasnak kell lenned az adott képzettségben.
 
