@@ -34,7 +34,6 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 Alakzatszint + Támadófok bónusz
 ```
 
-
 ### ⚜️Védekezőszint
 
 ```
@@ -239,7 +238,7 @@ A jellemző főfegyver sebzése.
 ---
 ## Alakzat taktikái, Manőverek
 
-Kizárólag az alábbi taktikák engedélyezettek
+Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok is csak fix értékekkel:
 - Támadó - fixen `TÉ:+10 / VÉ:-20`
 - Védő - fixen `TÉ:+10 / VÉ:-20`
 - Roham - `TÉ:+20`, `VÉ:-40`
@@ -250,18 +249,31 @@ Manőverek használata nem lehetséges.
 <br />
 
 ---
+## Tiltott harci taktikák Alakzat ellen
+
+Egy Alakzat ellen az alábbi taktikák NEM használhatóak:
+
+- [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-): egy Alakzatot nem lehet úgy fárasztani, mint egy személyt
+- [Kezdeményező taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika): nincs értelme, mert az alakzaté a Kezdeményezés amúgy is
+- [Kiváró taktika](065_02_harci_taktikak.md#kiv%C3%A1r%C3%B3-taktika): nincs értelme, mert az alakzaté a Kezdeményezés amúgy is
+
+<br />
+
+---
 ## Alakzat vs Alakzat
 
+```
 Maximum létszám: `20`❓
+```
 
-Ennél nagyobb létszámú összecsapásokat nem modellezünk.
+Két Alakzat egymással való harcát is modellezzük - kis (`max 20 fő / Alakzat`) létszámig. Ennél nagyobb létszámú összecsapásokat nem modellezünk.
 
-Minden mint, az `1.ESETBEN`, kivéve...
+Minden szabály ugyanaz, mint a fent leírtak, kivéve az alábbiak:
 
 ```
 1 támadás / kör minden alakzatnak
 
-VÉ csökkentés/kör: 5  (csak)
+VÉ csökkentés/kör: 5
   + 1 túlerő személyenként (max: +5)
 
 A VÉ értéke NEM áll vissza kör elején
