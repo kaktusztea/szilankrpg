@@ -147,9 +147,9 @@ Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
 ## VÉ csökkenés alakzat ellen alacsonyabb
 
 ```
-VÉ csökkenés gyengébb: -5
+Alapból gyengébb: -5
 
-Teljes Védekezés taktikában: -10
+Alakzat Teljes Védekezésben: -10
 ```
 
 Az alakzat ellen harcoló **egyén** ugyanúgy kis/nagykockával csökkent, mint normál harc esetében - pengeméret különbségtől függően, viszont:
