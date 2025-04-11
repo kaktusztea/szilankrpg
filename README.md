@@ -106,7 +106,7 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 - Manőver Pontok
 - Mágiaellenállás
 - Méregellenállás
-- KÉ, TÉ, VÉ, CÉ
+- KÉ, TÉ, VÉ, CÉ, SP, SFÉ, MGT
 
 ---
 ## Licenc
