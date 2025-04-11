@@ -1,6 +1,6 @@
 ## 🔵 Harcmodorok
 
-Ez egy [Primer (harci) képzettség](../015_primer_szekunder_ismeretek.md).
+Ez egy [Primer (harci) képzettség](../016_primer_szekunder_ismeretek.md).
 
 A harcmodorok a közvetlenül, fegyverrel való harc képességét fedik le. Kategóriánként külön-külön fel kell venni rájuk a képzettséget.\
 Alább összesen 4 különálló ilyen harcmodor képzettség általános leírását találjuk:
@@ -17,7 +17,7 @@ Nincs, csak biztos tudásból
 
 ### Speciális
 
-A képzettség minden `3. szintje` után `1` [Manőver Pont](../017_03_manover_pontok.md) jár.
+A képzettség minden `3. szintje` után `1` [Manőver Pont](../018_02_manover_pontok_99.md) jár.
 
 <br />
 

@@ -4,7 +4,7 @@
 ÉP = 12 + (Edzettség x 2)
 ```
 
-A [Karakteralkotás fejezetben](017_01_ep_kt.md) már röviden említett úgynevezett **Életerő pontokat** használjuk annak modellezésére, hogy a karakter mennyi és mekkora harcban elszenvedett sérüléseket, milyen súlyos betegségeket képes elviselni. Ha sebet kap, ezekből a pontokból kell minden alkalommal levonnia (bővebben lásd: [Sebesülés fejezet](061_03_sebesules.md)).
+A [Karakteralkotás fejezetben](018_01_ep_kt.md) már röviden említett úgynevezett **Életerő pontokat** használjuk annak modellezésére, hogy a karakter mennyi és mekkora harcban elszenvedett sérüléseket, milyen súlyos betegségeket képes elviselni. Ha sebet kap, ezekből a pontokból kell minden alkalommal levonnia (bővebben lásd: [Sebesülés fejezet](061_03_sebesules.md)).
 
 ### Életerő Pontok elosztása
 

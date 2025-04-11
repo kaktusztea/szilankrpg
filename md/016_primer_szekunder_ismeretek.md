@@ -13,10 +13,10 @@ Szétválasztottuk két halmazra a `Szilánk` rendszerének `KP`-ból tanulható
 ---
 ### Szekunder ismeretek
 
-Minden más ismeret, ami nem Primer, de szintén Karakteralkotó Pontba (`KP`) kerül. Fontos, hogy a [Szekunder KP](016_kp.md#karakteralkotó-pontok-kp) csak ilyen ismeretre költhető, míg a "sima" KP bármire.
+Minden más ismeret, ami nem Primer, de szintén Karakteralkotó Pontba (`KP`) kerül. Fontos, hogy a [Szekunder KP](014_kp.md#karakteralkotó-pontok-kp) csak ilyen ismeretre költhető, míg a "sima" KP bármire.
 
 ---
 
-🔗 [Karakteralkotó Pontok](016_kp.md) →
+🔗 [Karakteralkotó Pontok](014_kp.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

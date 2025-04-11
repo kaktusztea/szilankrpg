@@ -6,6 +6,6 @@ Lásd a [Mágiarendszer](090_magiarendszer.md) fejezetet!
 
 ---
 
-🔗 [Méregellenállás](017_05_meregellenallas.md) →
+🔗 [Méregellenállás](018_04_meregellenallas.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

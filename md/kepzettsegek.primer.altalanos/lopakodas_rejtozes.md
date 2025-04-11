@@ -2,7 +2,7 @@
 
 → ⭕[TODO elemek](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.kepzettsegek#lopakod%C3%A1srejt%C5%91z%C3%A9s)
 
-Ez egy [Primer képzettség](../015_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../016_primer_szekunder_ismeretek.md).
 
 Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között, áldozat háta mögé sunnyogni, beolvadni a környezetbe, elbújni az üldözők elől.
 

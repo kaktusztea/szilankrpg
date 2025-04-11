@@ -62,17 +62,22 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Karakteralkotó ods](011_karakteralkoto_ods.md)
 - [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_kalandozok_elotortenet_szemelyiseg_felszereles.md)
 - [Tapasztalati Szint](013_tsz_szintlepes.md)
-- [Tulajdonságok](014_01_tulajdonsagok.md)
-- [Tulajdonságpróba](014_02_tulajdonsagproba.md) 🎲
-- [Primer és Szekunder ismeretek](015_primer_szekunder_ismeretek.md)
-- [Karakteralkotó Pontok (KP)](016_kp.md)
-- [Származtatott értékek](017_00_szarmaztatott_ertekek.md)
-  - [Életerő Pont (ÉP), Fáradság Pont (FP)](017_01_ep_kt.md)
-  - [Harcérték Módosító (HM), Célzóérték Módosító (CM)](017_02_hm_cm.md)
-  - [Manőver Pontok (MP)](017_03_manover_pontok.md)
-  - [Mágiaellenállás](017_04_magiaellenallas.md) 🎲
-  - [Méregellenállás](017_05_meregellenallas.md) 🎲
-- [Szilánk](018_szilank.md)
+- [Karakteralkotó Pontok (KP)](014_kp.md)
+- [KP költésével növelt jellemzők](015_00_kp_koltesevel_novelt_jellemzok.md)
+  - [HM, CM](015_01_hm_cm.md)
+  - [Képzettségek](015_02_kepzettsegek_99.md)
+  - [Fortélyok](040_fortelyok.md)
+- [Primer és Szekunder ismeretek](016_primer_szekunder_ismeretek.md)
+- [Egyedi pontokkal növelt jellemzők](017_00_egyedi_pontokkal_novelt_jellemzok.md)
+  - [Tulajdonságok](017_01_tulajdonsagok.md)
+  - [Tulajdonságpróba](017_02_tulajdonsagproba.md) 🎲
+  - [Szilánk](017_03_szilank.md)
+- [Származtatott értékek](018_00_szarmaztatott_ertekek.md)
+  - [Életerő Pont (ÉP), Fáradság Pont (FP)](018_01_ep_kt.md)
+  - [Manőver Pontok (MP)](018_02_manover_pontok_99.md)
+  - [Mágiaellenállás](018_03_magiaellenallas.md) 🎲
+  - [Méregellenállás](018_04_meregellenallas.md) 🎲
+  - [KÉ, TÉ, VÉ, CÉ](018_05_KE_TE_VE_CE_99.md)
 - [Nem Játékos Karakterek](019_njk.md)
 
 ---
@@ -144,7 +149,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
 - [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 - [Mozgásgátló tényező (MGT)](062_03_mgt.md)
-- [HM, CM](017_02_hm_cm.md)
+- [HM, CM](015_01_hm_cm.md)
 - [Mesterfegyver fortély bónuszai](fortelyok.harci/mesterfegyver.md)
 
 #### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)

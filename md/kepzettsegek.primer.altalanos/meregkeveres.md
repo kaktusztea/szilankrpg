@@ -1,6 +1,6 @@
 ## 🔵 Méregkeverés
 
-Ez egy [Primer képzettség](../015_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../016_primer_szekunder_ismeretek.md).
 
 → [Lásd: Méregrendszer](../140_meregrendszer.md)
 

@@ -113,6 +113,6 @@ Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onna
 
 ---
 
-🔗 [Mágiaellenállás](017_04_magiaellenallas.md) →
+🔗 [Mágiaellenállás](018_03_magiaellenallas.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
