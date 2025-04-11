@@ -5,7 +5,7 @@ A vértek helyes viselése is ismereteket igényel, különben csak csetlesz-bot
 Kapcsolódik: **[Vértek, Páncélok](../069_00_vertek_pancelok.md)**
 
 ```
-1 MGT → -0,5 KÉ, -1 TÉ,VÉ
+1 MGT → -1 KÉ, TÉ
 
 1 MGT → -1/5 mozgást igénylő 
 képzettségpróbákra (lefele kerekítve)
