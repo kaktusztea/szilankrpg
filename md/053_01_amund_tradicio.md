@@ -12,7 +12,7 @@ Követelmények:
 - [Ultralátás - 2. szint](fortelyok.erzekek/ultralatas.md) fortély megléte
 - az egyes amund különleges képességeknek nincs olyan változata, amelyek e tradíció nélkül működnének
 
-Az **Amund tradíció**, a többihez hasonlóan - egy [Primer](016_primer_szekunder_ismeretek.md) képzettség.
+Az **Amund tradíció**, a többihez hasonlóan - egy [Primer](017_primer_szekunder_ismeretek.md) képzettség.
 
 Az amund karakter a Tradícióval azonos szinten ingyen megkapja az [Asztrálmégia](kepzettsegek.primer.arkanumok/asztralmagia.md) Arkánumot, amit `3.` szinttől kezdve ösztönösen használni is tud. Ennek használata speciális: a hatás nem Manából, hanem szakrális energiákból jön létre. Ennek a különleges képességnek oka az amundok asztrálsíkkal való szoros összefonódásában keresendő.
 

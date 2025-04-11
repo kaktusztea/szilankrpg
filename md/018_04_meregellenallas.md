@@ -6,6 +6,6 @@ Bővebben lásd a [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md
 
 ---
 
-🔗 [Harcérték Módosítók, Célzóérték Módosítók](015_01_hm_cm.md) →
+🔗 [KÉ, TÉ, VÉ, CÉ](018_05_KE_TE_VE_CE_99.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

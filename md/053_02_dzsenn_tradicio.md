@@ -1,6 +1,6 @@
 ## Dzsenn Tradíció
 
-Ez egy [Primer](016_primer_szekunder_ismeretek.md) képzettség.
+Ez egy [Primer](017_primer_szekunder_ismeretek.md) képzettség.
 
 ### Követelmények
 

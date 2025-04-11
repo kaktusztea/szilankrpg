@@ -80,6 +80,6 @@ A fentiek alól kivételt képez az `Erő-ellenpróba`. Ott dobás nélkül mind
 
 ---
 
-🔗 [Primer, Szekunder ismeretek](016_primer_szekunder_ismeretek.md) →
+🔗 [Szilánk](014_03_szilank.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

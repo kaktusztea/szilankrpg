@@ -1,6 +1,6 @@
 ## 🔵 Harcmodorok
 
-Ez egy [Primer (harci) képzettség](../016_primer_szekunder_ismeretek.md).
+Ez egy [Primer (harci) képzettség](../017_primer_szekunder_ismeretek.md).
 
 A harcmodorok a közvetlenül, fegyverrel való harc képességét fedik le. Kategóriánként külön-külön fel kell venni rájuk a képzettséget.\
 Alább összesen 4 különálló ilyen harcmodor képzettség általános leírását találjuk:

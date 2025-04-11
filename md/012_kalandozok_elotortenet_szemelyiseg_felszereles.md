@@ -1,6 +1,6 @@
 ## Kalandozók
 
-A **Kalandozó** lélek speciális. Mindegyikben ott szunnyad a ✨[Szilánk](017_03_szilank.md)✨, amely a nyughatatlan, folyton kalandot kereső jellemmel ruházza fel minden hordozóját.
+A **Kalandozó** lélek speciális. Mindegyikben ott szunnyad a ✨[Szilánk](014_03_szilank.md)✨, amely a nyughatatlan, folyton kalandot kereső jellemmel ruházza fel minden hordozóját.
 
 Ez az oka annak is, hogy egy **kalandozó lelkű** elf hasonlóan viselkedik, mint egyéb, akár más fajú kalandozó - kilóg a sajátjai közül. Tehát a kalandozó lelkek viselői inkarnációtól (milyen testbe születik) függetlenül némileg hasonlóan viselkednek.
 
@@ -12,7 +12,7 @@ A rendszer minden **Játékos Karaktert (JK)** Kalandozóként kezel. A Kalandoz
 A többi halandóhoz képest a Kalandozók gyorsabban gyógyulnak. A szabályrendszerben a [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md) fejezet alatt a rájuk vonatkozó értékeket találod.
 
 ---
-### [Szilánk](017_03_szilank.md)
+### [Szilánk](014_03_szilank.md)
 
 A bevezetőben említett Szilánk valóságformáló erővel bír. Ezt számszerűsítjük is, narratív elemként segíti a kalandozókat a játék során. Bővebben lásd a leírásánál.
 

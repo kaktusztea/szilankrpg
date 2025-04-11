@@ -2,7 +2,7 @@
 
 → [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.osi.nyelv.ismerete)
 
-Ez egy [Primer képzettség](../016_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
 
 Ősi nyelvenként külön-külön kell felvenni.
 

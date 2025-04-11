@@ -1,6 +1,6 @@
 ## 🔵 Alakzatharc
 
-Ez egy [Primer (harci) képzettség](../016_primer_szekunder_ismeretek.md).
+Ez egy [Primer (harci) képzettség](../017_primer_szekunder_ismeretek.md).
 
 ### Próba
 

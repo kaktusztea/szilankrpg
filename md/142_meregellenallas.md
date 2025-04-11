@@ -1,6 +1,6 @@
 ## Méregellenállás
 
-A Méregellenállás próba egyszerű [Tulajdonságpróba](017_02_tulajdonsagproba.md), melynél a karakter `Edzettség` Tulajdonsága számít.
+A Méregellenállás próba egyszerű [Tulajdonságpróba](014_02_tulajdonsagproba.md), melynél a karakter `Edzettség` Tulajdonsága számít.
 
 ```
 (Edzettség + k6)  vs  Méreg Erőssége
