@@ -4,13 +4,13 @@ Egyes értékek más, már kiszámolt értékekből származtatva kerülnek megh
 
 #### [Életerő Pont (ÉP), Fáradtság Pont (FP)](017_01_ep_kt.md)
 
+#### [Harcérték Módosító (HM), Célzóérték Módosító (CM)](017_02_hm_cm.md)
+
 #### [Manőver Pontok (MP)](017_03_manover_pontok.md)
 
-#### [Szilánk](018_szilank.md)
+#### [Mágiaellenállás](017_04_magiaellenallas.md) 🎲
 
-#### [Mágiaellenállás](017_04_magiaellenallas.md)
-
-#### [Méregellenállás](017_05_meregellenallas.md)
+#### [Méregellenállás](017_05_meregellenallas.md) 🎲
 
 ---
 
