@@ -2,27 +2,27 @@
     {
         "Pajzs név": "Kis Pajzs",
         "SP": "+0",
-        "KÉ": "",
-        "TÉ": "",
+        "KÉ": "1",
+        "TÉ": "3",
         "VÉ": "10",
-        "Sebesség": "",
-        "Speciális": ""
+        "Sebesség": "6",
+        "Speciális": "-"
     },
     {
         "Pajzs név": "Közepes Pajzs",
         "SP": "+0",
-        "KÉ": "",
-        "TÉ": "",
+        "KÉ": "2",
+        "TÉ": "4",
         "VÉ": "30",
-        "Sebesség": "",
-        "Speciális": ""
+        "Sebesség": "7",
+        "Speciális": "-"
     },
     {
         "Pajzs név": "Nagy Pajzs",
         "SP": "+0",
-        "KÉ": "",
-        "TÉ": "",
+        "KÉ": "3",
+        "TÉ": "3",
         "VÉ": "50",
-        "Sebesség": ""
+        "Sebesség": "9"
     }
 ]
