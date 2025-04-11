@@ -2,6 +2,8 @@
 
 <sub>→ [TODO/ISSUE karakteralkotás](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.karakteralkotas)</sub>
 
+Az áttekintő szöveget lásd a tartalomjegyzék után.
+
 ## Alapok
 
 ### → [Karakteralkotó ods](011_karakteralkoto_ods.md)
@@ -65,9 +67,9 @@ A [Harcérték Módosítók (HM, CM)](015_01_hm_cm.md) felvétele is `KP`-ból t
 
 A [Hátterek](020_hattererek.md) számos érdekes aspektussal ruházhatják fel karakteredet. Az egyes fajok mind [Faj-Háttereként](021_faj_hatterek.md) vehetőek fel, limitációik és - érzékeiket érintő - kapcsolódó fortélyaikat ott találod meg. Végül essen szó a [Leíró Hátterekről](022_leiro_hatterek.md), ezek egyszavas jellemzők, melyek a karakter jellemét, hátterét színesítik - tetszés szerint vehetőek fel.
 
-Jöhetnek a [Származtatott értékek](018_00_szarmaztatott_ertekek.md): az [Életerő Pont](018_01_ep_kt.md), a [Mágiaellenállás](018_03_magiaellenallas.md), a [Méregellenállás](018_04_meregellenallas.md) kiszámítása - ezekre nem kell külön pontot költeni.
+Jöhetnek a [Származtatott értékek](018_00_szarmaztatott_ertekek.md): az [Életerő Pont és Fáradság Pont](018_01_ep_kt.md), a már említett [Manőver Pontok](066_02_manover_pontok.md), a [Mágiaellenállás](018_03_magiaellenallas.md), a [Méregellenállás](018_04_meregellenallas.md) kiszámítása - ezekre nem kell külön pontot költeni.
 
-Majd jöjjön végül karaktered [harcértékeinek megállapítása](062_01_ke_te_ve_ce.md).
+Végül jöjjön karaktered [harcértékeinek megállapítása](062_01_ke_te_ve_ce.md).
 
 ---
 
