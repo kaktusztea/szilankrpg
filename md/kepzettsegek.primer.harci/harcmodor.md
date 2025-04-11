@@ -17,7 +17,7 @@ Nincs, csak biztos tudásból
 
 ### Speciális
 
-A képzettség minden `3. szintje` után `1` [Manőver Pont](../018_02_manover_pontok_99.md) jár.
+A képzettség minden `3. szintje` után `1` [Manőver Pont](../018_03_manover_pontok_99.md) jár.
 
 <br />
 

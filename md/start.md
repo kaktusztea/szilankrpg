@@ -74,10 +74,10 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Primer és Szekunder ismeretek](017_primer_szekunder_ismeretek.md)
 - [Származtatott értékek](018_00_szarmaztatott_ertekek.md)
   - [Életerő Pont (ÉP), Fáradság Pont (FP)](018_01_ep_kt.md)
-  - [Manőver Pontok (MP)](018_02_manover_pontok_99.md)
-  - [Mágiaellenállás](018_03_magiaellenallas.md) 🎲
-  - [Méregellenállás](018_04_meregellenallas.md) 🎲
-  - [KÉ, TÉ, VÉ, CÉ](018_05_KE_TE_VE_CE_99.md)
+  - [Harcértékek](018_02_harcertekek_99.md)
+  - [Manőver Pontok (MP)](018_03_manover_pontok_99.md)
+  - [Mágiaellenállás](018_04_magiaellenallas.md) 🎲
+  - [Méregellenállás](018_05_meregellenallas.md) 🎲
 - [Nem Játékos Karakterek](019_njk.md)
 
 ---
@@ -148,7 +148,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 
 - [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
 - [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-- [Mozgásgátló tényező (MGT)](062_03_mgt.md)
+- [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
 - [HM, CM](016_01_hm_cm.md)
 - [Mesterfegyver fortély bónuszai](fortelyok.harci/mesterfegyver.md)
 

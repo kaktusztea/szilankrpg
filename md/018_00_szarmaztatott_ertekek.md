@@ -4,13 +4,13 @@ Egyes értékek más, már kiszámolt értékekből származtatva kerülnek megh
 
 ### [Életerő Pont (ÉP), Fáradtság Pont (FP)](018_01_ep_kt.md)
 
-### [Manőver Pontok (MP)](018_02_manover_pontok_99.md)
+### [Harcértékek](018_02_harcertekek_99.md)
 
-### [Mágiaellenállás](018_03_magiaellenallas.md) 🎲
+### [Manőver Pontok (MP)](018_03_manover_pontok_99.md)
 
-### [Méregellenállás](018_04_meregellenallas.md) 🎲
+### [Mágiaellenállás](018_04_magiaellenallas.md) 🎲
 
-### [KÉ, TÉ, VÉ, CÉ](018_05_KE_TE_VE_CE_99.md)
+### [Méregellenállás](018_05_meregellenallas.md) 🎲
 
 ---
 

@@ -80,7 +80,7 @@ A KM bármikor rögtönözhet új Manővert, mindössze az alábbiakat kell megh
 | Nagyon nehéz |  10   |
 | Emberfeletti |  12   |
 
-Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](018_02_manover_pontok_99.md) felhasználása szükséges a Nehézség mérsékléséhez és máris meglesz az „ára”, ha valaki eséllyel alkalmazni akarja.
+Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](018_03_manover_pontok_99.md) felhasználása szükséges a Nehézség mérsékléséhez és máris meglesz az „ára”, ha valaki eséllyel alkalmazni akarja.
 
 ---
 

@@ -37,13 +37,13 @@ Az áttekintő szöveget lásd a tartalomjegyzék után.
 
 #### → [Életerő Pont (ÉP), Fáradtság Pont (FP)](018_01_ep_kt.md)
 
-#### → [Manőver Pontok](018_02_manover_pontok_99.md)
+#### → [Harcértékek](018_02_harcertekek_99.md)
 
-#### → [Mágiaellenállás](018_03_magiaellenallas.md) 🎲
+#### → [Manőver Pontok](018_03_manover_pontok_99.md)
 
-#### → [Méregellenállás](018_04_meregellenallas.md) 🎲
+#### → [Mágiaellenállás](018_04_magiaellenallas.md) 🎲
 
-#### → [KÉ, TÉ, VÉ, CÉ](018_05_KE_TE_VE_CE_99.md)
+#### → [Méregellenállás](018_05_meregellenallas.md) 🎲
 
 ---
 ### [Nem Játékos Karakterek](019_njk.md)
@@ -66,7 +66,7 @@ A [Harcérték Módosítók (HM, CM)](016_01_hm_cm.md) felvétele is `KP`-ból t
 
 A [Hátterek](020_hattererek.md) számos érdekes aspektussal ruházhatják fel karakteredet. Az egyes fajok mind [Faj-Háttereként](021_faj_hatterek.md) vehetőek fel, limitációik és - érzékeiket érintő - kapcsolódó fortélyaikat ott találod meg. Végül essen szó a [Leíró Hátterekről](022_leiro_hatterek.md), ezek egyszavas jellemzők, melyek a karakter jellemét, hátterét színesítik - tetszés szerint vehetőek fel.
 
-Jöhetnek a [Származtatott értékek](018_00_szarmaztatott_ertekek.md): az [Életerő Pont és Fáradság Pont](018_01_ep_kt.md), a már említett [Manőver Pontok](066_02_manover_pontok.md), a [Mágiaellenállás](018_03_magiaellenallas.md), a [Méregellenállás](018_04_meregellenallas.md) kiszámítása - ezekre nem kell külön pontot költeni.
+Jöhetnek a [Származtatott értékek](018_00_szarmaztatott_ertekek.md): az [Életerő Pont és Fáradság Pont](018_01_ep_kt.md), a már említett [Manőver Pontok](066_02_manover_pontok.md), a [Mágiaellenállás](018_04_magiaellenallas.md), a [Méregellenállás](018_05_meregellenallas.md) kiszámítása - ezekre nem kell külön pontot költeni.
 
 Végül jöjjön karaktered [harcértékeinek megállapítása](062_01_ke_te_ve_ce.md).
 

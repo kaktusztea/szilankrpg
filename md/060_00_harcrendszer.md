@@ -21,7 +21,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [HM, CM](016_01_hm_cm.md)
 - [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 - [Mesterfegyver fortély bónuszai](fortelyok.harci/mesterfegyver.md)
-- [Mozgásgátló tényező (MGT)](062_03_mgt.md)
+- [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
 
 ## 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 

@@ -50,6 +50,6 @@ A Közelharc, Kardvívás, Zúzás, Lándzsavívás Harcmodorok szintjei lehető
 
 ---
 
-🔗 [Mozgásgátló Tényező (MGT)](062_03_mgt.md) →
+🔗 [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
