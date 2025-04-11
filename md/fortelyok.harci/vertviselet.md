@@ -2,7 +2,7 @@
 
 A vértek helyes viselése is ismereteket igényel, különben csak csetlesz-botlasz bennük.
 
-Kapcsolódik: **[Vértek, Páncélok](../069_00_vertek_pancelok.md)**
+Kapcsolódik: **[Vértek, Páncélok](../069_00_vertek_pancelok.md)**, [MGT](../069_03_MGT.md)
 
 ```
 1 MGT → -1 KÉ, TÉ
