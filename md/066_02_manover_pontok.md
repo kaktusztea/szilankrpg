@@ -13,11 +13,8 @@ Manőver Pontok =
 
 Egy karakter [harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettség-szintjeinek összegét osztjuk el a **Tapasztalati Szinttel**.
 
-Ez adja a **Manőver Pontok** mennyiségét - felfelé ↑ kerekítve. Látható, hogy a pontok értékének fenntartásához - a Tapasztalati Szint növekedésével - folyamatosan kell növelni a harcmodor képzettségeket.
+Ez adja a **Manőver Pontok** mennyiségét - felfelé ↑ kerekítve. Látható, hogy a pontok értékének fenntartásához - a Tapasztalati Szint növekedésével - folyamatosan kell növelni a harcmodor képzettségeket. A Manőver pontok értéke így mindig `[0-4]` tartományban mozog.
 
-A Manőver pontok értéke így mindig `[0-4]` tartományban mozog.
-
-A fenti pont keretet `1` harci jelenet során használhatja fel a karakter - megtámogatva egyes elvégzett Manővereit. A [Védő Érték regenerálódásakor](064_02_09_ve_regeneralodas.md) ez a keret is "visszatöltődik".
 
 ---
 ### Felhasználása, Hatása
@@ -28,11 +25,9 @@ A fenti pont keretet `1` harci jelenet során használhatja fel a karakter - meg
    "Ellenpróba" fázisánál
 ```
 
-Egyszerre legfeljebb `2` pont használható fel (`+4` bónusz).
+A fenti pont keretet `1` harci jelenet során használhatja fel a karakter - megtámogatva egyes elvégzett Manővereit. A [Védő Érték regenerálódásakor](064_02_09_ve_regeneralodas.md) ez a keret is "visszatöltődik". A Manőver Pontokat a Manőver dobásainak megkezdése **előtt** kell beletenni, így megvan a rizikója, hogy kudarc esetén elvesznek.
 
-A Manőver Pontokat a Manőver dobásainak megkezdése **előtt** kell beletenni, így megvan a rizikója, hogy kudarc esetén elvesznek.
-
-Bővebben lásd: Manőver [Ellenpróba](066_04_manover_vegbevitele.md#ellenpróba-e) fázisa.
+Egyszerre legfeljebb `2` pont használható fel (`+4` bónusz). Bővebben lásd: Manőver [Ellenpróba](066_04_manover_vegbevitele.md#ellenpróba-e) fázisa.
 
 
 ---
