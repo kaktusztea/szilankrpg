@@ -13,14 +13,14 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 <br />
 
 ---
-## ⚜️ Harci szituációk és Manőverek - Meglepetés
+## ⚜️ Harci helyzetek és Manőverek - Meglepetés
 
 [Meglepett](065_01_harci_helyzetek.md#meglepetés) / [Készületlen](065_01_harci_helyzetek.md#készületlenség) az Ellenfél:
 - Kimarad a **Megakasztás** (`M`) fázis (ha van)
 - **Ellenpróba** Nehézsége: `-3`
 - Végrehajtás `TÉ:+40` (`TÉ:+20` helyett).
 
-## ⚜️ Harci szituációk és Manőverek - Észrevétlen támadás
+## ⚜️ Harci helyzetek és Manőverek - Észrevétlen támadás
 
 Vannak Manőverek, amelyek [Észrevétlen támadást](065_01_harci_helyzetek.md#észrevétlen-támadás) igényelnek.
 
