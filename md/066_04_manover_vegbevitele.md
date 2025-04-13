@@ -96,6 +96,15 @@ A Manőverek végrehajtásával bárki próbálkozhat, aki az adott Manővernél
 
 Amennyiben nem teljesíti, akkor is nekifuthat, de az **Ellenpróba** dobásánál a célszám számára `3`-mal megemelkedik.
 
+<br />
+
+---
+## Sikertelen Manőver és VÉ csökkentés
+
+A sikertelen Manőver mindig `kiskockás` VÉ csökkentést okoz - bármekkora is a fegyverméretek különbsége.
+
+<br />
+
 ---
 ## Újrapróbálkozás
 
