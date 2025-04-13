@@ -307,25 +307,26 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 - Nehézség:
   - `8`: egy:kettő túlerő esetén
   - `6`: egy:három túlerő esetén
-  -  `4`: egy:négy+ túlerő esetén
+  - `4`: egy:négy+ túlerő esetén
 - Fázisok: `E`
 
-**Hatás**: sikerült ellenfeled hátába kerülnöd, megkapod a [Hátulról támadás](065_01_harci_helyzetek.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról**, vagy a [Félhátulról támadás](065_01_harci_helyzetek.md#félhátulról-támadás) bónuszait - attól függően, hogy milyen pozícióban van.
+- **Követelmény**: a környezetnek, harctérnek alkalmasnak kell lennie a hátbakerülésre. Ha nincs elég hely, a KM megtagadhatja a Manőver használatát.
+- **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_01_harci_helyzetek.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról**, vagy a [Félhátulról támadás](065_01_harci_helyzetek.md#félhátulról-támadás) bónuszait - attól függően, hogy milyen pozícióban van.
 
 <br />
 
 ---
 ### Orvtámadás
 
-Ha sikeres **Lopakodás/rejtőzés** vs. **Észlelés + Érzékenység** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálhatsz így végezni vele.
+Ha sikeres **Lopakodás/rejtőzés** `vs.` **Észlelés + Érzékenység** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálhatsz így végezni vele.
 
-- Nehézség: [Területre támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver adott Nehézsége `-3`. Az ott leírt lehetséges célterületekből választhatsz.
+- Nehézség: [Területre támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver adott Nehézsége `-4`. Az ott leírt lehetséges célterületekből választhatsz.
 - Fázisok: `Végrehajtás, Ellenpróba`
   - `Végrehajtás` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Észrevétlen támadás](065_01_harci_helyzetek.md#észrevétlen-támadás))
 - Követelmény: [Észrevétlen támadás](065_01_harci_helyzetek.md#észrevétlen-támadás), [Hátulról támadás](065_01_harci_helyzetek.md#hátulról-támadás) harci helyzetek
 - **Hatás**:
   - a választott helyre támadsz anélkül, hogy ellenfeled ennek tudatában lenne
-  - Sebezz, ahogy a fegyvered sebez + a [Harci Anatómia](fortelyok.harci/harci_anatomia.md) bónuszait megkapod
+  - Sebezz, ahogy a fegyvered sebez + a [Harci Anatómia](fortelyok.harci/harci_anatomia.md) is bónuszait megkapod
 
 <br />
 
@@ -352,7 +353,7 @@ Szándékosan rongálod ellenfeled pajzsát, csökkentve annak Védő Értékét
 
 - Nehézség: `6`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- Követelmény: Aktuális harcmodor - `6.szint`, `Erő: +1`
+- Követelmény: Aktuális harcmodor - `6.szint`, `Erő: +1`, Zúzó- vagy kétkezes fegyver használata.
 - Speciális: Ez ellen a manőver ellen nem számít a pajzs adta Védő Érték!
 
 **Hatás**: Sebzést dobsz. Zúzó- és kétkezes fegyverek sebzése (SP) `1:1`-ben csökkenti ellenfeled pajzsának **Védő Értékét** (véglegesen).
@@ -364,7 +365,7 @@ Szándékosan rongálod ellenfeled pajzsát, csökkentve annak Védő Értékét
 
 Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
 
-- Nehézség: `7`
+- Nehézség: `6`
 - Fázisok: 
   - Észrevétlen támadás esetén: `Ellenpróba`
   - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba`  (`V`: standard, fegyveres VÉ ellen)
@@ -391,9 +392,9 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
         - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
     - `12`: Szemkiszúrás
 - Nehézség módosítók:
+    - `-2`: Rapír/Tőrkard
     - `0`: egykezes kardvívó fegyverekkel, Puszta kéz
     - `+2`: zúzófegyverekkel
-    - `-2`: Rapír/Tőrkard
     - `+2`: [Roham](065_02_harci_taktikak.md#roham-taktika) alkalmazása esetén
 - Fázisok: `Végrehajtás, Ellenpróba`
 	- Végrehajtás során **❗ nem kapod meg a +20 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az Ellenpróbát.
@@ -411,6 +412,8 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
 Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezében, akkor megpróbálhatod távoltartani őt, így nem tudja leadni támadását.
 
 - Nehézség: `5`
+- Nehézség módosítók:
+	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás*  Ellenpróba`
 - Követelmény:
     - fegyvered mérete legalább `1` pengével nagyobb, mint ellenfeledé
@@ -428,7 +431,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor emelkedik a nehézség (KM dönt).
 
 - Nehézség: `8`
-	- `[-4;+2]`: Harci alakzatban használva. Az alakzatok jellemzőit ismerve a KM dönt.
+	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok jellemzőit ismerve a KM dönt.
 - Fázisok: `Ellenpróba`
 - Követelmény: Aktuális harcmodor - `6.szint`
 - Ha az ellenfél jelentősen nagyobb méretű az alkalmazónál, a KM emelheti a Nehézséget `[1-4]`
