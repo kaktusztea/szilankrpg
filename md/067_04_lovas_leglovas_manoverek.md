@@ -1,6 +1,6 @@
 ## Lovas, léglovas manőverek
 
-### Manőver: Lovas, léglovas akasztása
+### ⚜️ Lovas, léglovas akasztása
 
 ❗Nem a lovas, hanem a **védekező gyalogos**, szálfegyverrel végezheti!
 
@@ -14,7 +14,7 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - csapásod eredményétől függően -  továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
 
 ---
-### Manőver: Hátas táncoltatása
+### ⚜️ Hátas táncoltatása
 
 Lovas végezheti.\
 Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel kerülni hozzád.
@@ -23,6 +23,8 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 - Fázisok: (M)egakasztás
 - Végbevitel követelménye: "**Lovas harc**" fortély 2. fokától jár
 - Hatás: Ha megvannak a követelmények, akkor megelőző (M)egakasztást dobhatsz minden veled harcérintkezésben levő ellenfeled ellen. Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így sebezni nem tudsz, de a feléd irányuló támadásokat elháríthatod.
+
+<br />
 
 ---
 ## Léglovas manőverek
