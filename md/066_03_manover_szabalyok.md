@@ -31,13 +31,7 @@ Kérdés, hogy ilyenkor miért dobunk mégis **Ellenpróbát**? Az ilyen helyzet
 ---
 ## ⚜️ Harci taktikák és Manőverek
 
-Manőver alkalmazásakor folytatható:
-- [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika)
-
-Manőver alkalmazásakor **NEM** folytatható:
-- [Teljes Védekezés Taktika](065_02_harci_taktikak.md#teljes-védekezés-taktika)
-- [Védő Taktika](065_02_harci_taktikak.md#védő-taktika)
-- [Roham:](065_02_harci_taktikak.md#roham-taktika) csak amelyik Manővernél külön meg van említve
+Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika) alkalmazható, illetve [Roham](065_02_harci_taktikak.md#roham-taktika) taktika amelyik Manővernél ez külön meg van említve - más Harci taktika nem.
 
 <br />
 
