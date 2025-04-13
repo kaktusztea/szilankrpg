@@ -49,6 +49,11 @@ Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy
 ⭕TODO⭕
 
 ---
+### Lóról leesés
+
+Lásd a [Szituációk fejezetet](szituaciok/lorol_leeses.md) alatt.
+
+---
 
 🔗 [Lovas fortélyok](067_02_lovas_leglovas_fortelyok.md) →
 
