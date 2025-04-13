@@ -20,22 +20,22 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 
 - `k100` Támadás
 - `k20` sebzésdobás
-- (SP - SFÉ) → ÉP sebzésmodell
-- Harcérték/Célzóérték Módosító (HM, CM)
+- `(SP - SFÉ) → ÉP` sebzésmodell
+- Harcérték/Célzóérték Módosító (`HM, CM`)
 - Harckeret  vs  Fegyver Sebesség → Támadások száma körönként
-  - érinti: Kétkezes harc fortély
-  - érinti: Kétkezesség fortély
+  - érinti: **Kétkezes harc** fortély
+  - érinti: **Kétkezesség** fortély
 - Fegyverméret kategóriák: pengehossz
 - Védő Érték csökkentése
 - Páncélmodell
-  - páncél generátor: `4` féle SFÉ; MGT; Ár
-  - Vértviselet fortély kapcsolat
+  - páncél generátor: `4` féle `SFÉ`; `MGT`; Ár
+  - **Vértviselet** fortély kapcsolat
 - Harci fortélyok: jellemzően statikus bónuszok
 - Harci helyzetek: adott, vagy kialakított helyzetek
 - Harci taktikák: harci jelleg általános eltolása egy irányba
 - Manőverek: egyszeri trükkök
-    - Manőver Alap: `Összes költött HM / 10`
-    - Manőver Pontok: `Harcmodorok szint összege / Tapasztalati Szint`
+    - Manőver Alap: `Összes költött HM / 10 ↑`
+    - Manőver Pontok: `Harcmodorok szint összege / Tapasztalati Szint ↑`
 
 ### Távolsági harcrendszer
 
@@ -66,7 +66,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 ---
 ### Legfontosabbak
 
-Szubjektív lista, hogy mely alrendszerek adják a `Szilánk`  "egyedi DNS"-ét (legfontosabbtól visszafelé):
+Szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-ét (legfontosabbtól visszafelé):
 
 - VÉ csökkentés
 - Képzettség-kiterjesztés Szabad-Hátterekkel
