@@ -6,7 +6,7 @@
 
 [Kiemelt fortélyok](041_kiemelt_fortelyok.md): Nyelvismeret, Kultúrkör, Helyismeret - kezelésük speciális
 
-[Szabad Fortélyok](042_szabad_fortelyok.md): képzettségeket "kiterjesztő" elemek
+[Szabad Fortélyok](042_szabad_fortelyok.md): ingyen, nem KP költésével kapott fortélyok
 
 [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
 

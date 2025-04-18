@@ -1,10 +1,19 @@
 ## Célpont Védő Értékének számítása
 
+🔆 A lenti számítások automatizálva lettek a [Karakteralkotó](start.md#karakteralkot%C3%B3) "Harcértékek" fülének tetején, így játék közben könnyen tudod kalkulálni ezt az értéket.
+
+---
+
+```
+Célpont VÉ = 
+  Szorzó x (Távolság / Fegyver Osztó) ↑
+```
+
 A célpont **Védő értéke** reprezentálja a célpont eltalálásának nehézségét. Ugyanolyan célszámként viselkedik, mint a rendes Védő érték, azaz, ha a lövést/hajítást végző karakter Célzó Értékkel együtt számított Támadó dobása eléri, vagy meghaladja ezen értéket, akkor találatról beszélünk. Amennyiben az érték alatta marad, a támadás célt téveszt.
 
 A célpont **Védő Értékét**  az ún. **Szorzó** és a célpont Távolságának és a **Fegyver Osztó** hányadosának (felfele kerekítünk) szorzataként kapjuk meg.
 
-🔆`Célpont VÉ = Szorzó  x  (Távolság / Fegyver Osztó) ↑`🔆
+
 
 ---
 ### ⚜️ Szorzó
@@ -12,7 +21,7 @@ A célpont **Védő Értékét**  az ún. **Szorzó** és a célpont Távolság�
 A Szorzó a célpont egyedi jellemzőit, illetve a környezet hatásait szimulálja. Az alábbi módosítók **összege** adja meg értékét:
 
 - \+ Mozgás módosító - célponté
-- \+ Mozgás módosító - lövészé
+- \+ Mozgás módosító - lövészé❕
 - \+ Méret módosító - célponté
 - \+ Észlelhetőség - célponté
 - \+ Szél ereje
@@ -20,8 +29,7 @@ A Szorzó a célpont egyedi jellemzőit, illetve a környezet hatásait szimulá
 ---
 #### Szorzó - Mozgás módosító
 
-Ha a célpont mozog, jóval nehezebb eltalálni. A távolság növekedésével ez a nehézség nem lineárisan, hanem exponenciálisan nő, éppen ezért érthető, hogy a mozgás is a Távolsági szorzó része. Alább az egyes mozgás típusokhoz tartozó módosítókat olvashatjuk.
-
+Ha a célpont mozog, jóval nehezebb eltalálni. A távolság növekedésével ez a nehézség nem lineárisan, hanem exponenciálisan nő, éppen ezért érthető, hogy a mozgás is a Távolsági szorzó része. Alább a Célpont egyes mozgás típusaihoz tartozó módosítókat olvashatjuk.
 
 | Célpont mozgásának jellege | Módosító | Megjegyzés                                                                                                                                                                  |
 | :------------------------- | :------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -106,7 +114,7 @@ $$ {cél\ távolsága\ (m) \over fegyver\ Osztó} → felfelé\ kerekítünk $$
 Ez a hányados adja meg, hogy a fegyver **Osztójához** viszonyítva hányadik távolság “cellában” található a célpont. A Védő Érték kiszámításánál ezzel a számmal lesz beszorozva a célpont **Szorzója**, amelyet feljebb tárgyaltunk.
 
 Például ha egy hosszú íjjal (melynek **Osztója** `3`) lövünk egy `7` méterre levő célra, akkor a hányados: `3`. \
-`7/3 → 3` mivel a `7` osztva `3`-al, felfelé kerekítve egyenlő `3`-al.
+`7/3 → 3` mivel a `7` osztva `3`-al (felfelé kerekítve) egyenlő `3`-al.
 
 Az egyszerűség kedvéért álljon erről itt egy ábra, melyről megérthetőek a fentiek.
 
