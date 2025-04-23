@@ -97,13 +97,13 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 
 ### KP költésével növelt jellemzők
 
-- **Harcérték módosítók** (HM/CM)
+- **Harcérték módosítók** (`HM/CM`)
 - **Képzettségek**: Harci, Fizikai, Alvilági, Művészeti, Világi, Tudományos, Misztikus, **Tradíció** (Mágia, Papi, Szellemi), Arkánum, Slan
 - **Fortélyok**: Általános, Harci, Távharc, Misztikus
 
 ### **Származtatott értékek**
-- Életerő Pont (ÉP), Fáradtság Pont (FP)
-- Harcértékek: KÉ, TÉ, VÉ, CÉ, SP, SFÉ, MGT
+- Életerő Pont (`ÉP`), Fáradtság Pont (`FP`)
+- Harcértékek: `KÉ, TÉ, VÉ, CÉ, SP, SFÉ, MGT`
 - Manőver Pontok
 - Mágiaellenállás
 - Méregellenállás
