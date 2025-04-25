@@ -237,19 +237,22 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Távharc sötétben](076_tavharc_sotetben.md)
 
 ---
-### 8. [Pszí](080_pszi.md)
-
-#### 8.1 [Pszi diszciplínák](081_pszi_diszciplinak.md)
+### 8. [Státuszok](080_statuszok.md)
 
 ---
-### 9. [Mágiarendszer](090_magiarendszer.md)
+### 9. [Pszí](090_pszi.md)
 
-- [Mágiaelmélet](091_magiaelmelet.md)
-- [Mágia alapszabályok](092_magia_alapszabalyok.md)
-- [Aura, Mágia akarata, Mágiaellenállás](094_aura_magia_akarata_magiaellenallas.md)
-- [Varázslás módszerei](095_varazslas_modszerek.md)
-- [Mágikus komponensek, összhangok](096_magikus_komponensek_osszhangok.md)
-- [Mágikus Szférák és Arkánumaik](097_magikus_szferak_arkanumok.md)
+#### 9.1 [Pszi diszciplínák](091_pszi_diszciplinak.md)
+
+---
+### 10. [Mágiarendszer](100_magiarendszer.md)
+
+- [Mágiaelmélet](101_magiaelmelet.md)
+- [Mágia alapszabályok](102_magia_alapszabalyok.md)
+- [Aura, Mágia akarata, Mágiaellenállás](104_aura_magia_akarata_magiaellenallas.md)
+- [Varázslás módszerei](105_varazslas_modszerek.md)
+- [Mágikus komponensek, összhangok](106_magikus_komponensek_osszhangok.md)
+- [Mágikus Szférák és Arkánumaik](107_magikus_szferak_arkanumok.md)
 - **Arkánumok listája**
   - [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
   - [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
@@ -268,38 +271,38 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
   - [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
 
 ---
-### 10. [Papi mágia](100_papimagia.md)
+### 11. [Papi mágia](110_papimagia.md)
 
-- [Papi mágia világképe](101_papi.magia.vilagkep.md)
-- [Papi mágia alapszabályai](102_papi.magia.alapszabalyok.md)
-- [Papi varázslatok](103_papi.varazslatok.md) ✨
+- [Papi mágia világképe](111_papi.magia.vilagkep.md)
+- [Papi mágia alapszabályai](112_papi.magia.alapszabalyok.md)
+- [Papi varázslatok](113_papi.varazslatok.md) ✨
 
 ---
-### 11. [Slan misztérium](110_slan.md)
+### 12. [Slan misztérium](120_slan.md)
 
  - [Slan Tradíció](053_04_slan_tradicio.md)
  - [Slan fortélyok](046_slan_fortelyok.md)
- - [Slan diszciplínák](111_slan_diszciplinak.md)
- - [Chi harc képzettségei](112_chi_harc.md)
- - [Slan fegyverek](113_slan_fegyverek.md)
+ - [Slan diszciplínák](121_slan_diszciplinak.md)
+ - [Chi harc képzettségei](122_chi_harc.md)
+ - [Slan fegyverek](123_slan_fegyverek.md)
 
 ---
-### 12. [Varázstárgyak](120_varazstargyak.md)
+### 13. [Varázstárgyak](130_varazstargyak.md)
 
 ---
-### 13. [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md)
+### 14. [Gyógyítás, gyógyulás](140_gyogyitas_gyogyulas.md)
 
 ---
 
-### 14. [Méregrendszer, Mérgek](140_meregrendszer.md)
+### 15. [Méregrendszer, Mérgek](150_meregrendszer.md)
 
-- [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
-- [Méregellenállás próba](142_meregellenallas.md)
-- [Méregérzékelés](143_meregerzekeles.md)
-- [Példamérgek](144_peldamergek.md) ⚡
+- [Méregkeverés szabályai](151_meregkeveres_szabalyai.md)
+- [Méregellenállás próba](152_meregellenallas.md)
+- [Méregérzékelés](153_meregerzekeles.md)
+- [Példamérgek](154_peldamergek.md) ⚡
 
 ---
-### 15. [Szituációk](150_szituaciok.md)
+### 16. [Szituációk](160_szituaciok.md)
 
 ---
 ## [🚧 Fejlesztő portál 🚧](https://github.com/kaktusztea/szilankrpg/wiki)

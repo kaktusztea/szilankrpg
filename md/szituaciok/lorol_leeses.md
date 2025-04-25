@@ -6,6 +6,6 @@ Ha leesel a lóról, [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md
 
 ---
 
-🔗 [Szituációk](../150_szituaciok.md) ↑
+🔗 [Szituációk](../160_szituaciok.md) ↑
 
 ⚜️ [Nyitóoldal](../start.md#15-szitu%C3%A1ci%C3%B3k)

@@ -2,13 +2,13 @@
 
 Képes vagy mágikus fókuszt, vagy emittert létrehozni.
 
-Lásd még: [Ereklyék, mágikus emitterek](../120_varazstargyak.md#ereklyék-mágikus-emitterek)
+Lásd még: [Ereklyék, mágikus emitterek](../130_varazstargyak.md#ereklyék-mágikus-emitterek)
 
 ### Tradíció felveheti
 
 - [Illuzionista](../051_05_illuzionista.md)
 - [Magasmágia](../051_01_magasmagia.md)
-- [Papi mágia](../100_papimagia.md)
+- [Papi mágia](../110_papimagia.md)
 - ⭕???⭕
 
 ### Mágikus emitter

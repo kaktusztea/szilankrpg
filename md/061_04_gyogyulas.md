@@ -8,7 +8,7 @@ A stabilizálás után az alábbi sebességgel gyógyulnak a Kalandozó karakter
 2 FP / óra alvásban
 ```
 
-Lásd még bővebben a [Gyógyítás, Gyógyulás](130_gyogyitas_gyogyulas.md) fejezetet.
+Lásd még bővebben a [Gyógyítás, Gyógyulás](140_gyogyitas_gyogyulas.md) fejezetet.
 
 ---
 

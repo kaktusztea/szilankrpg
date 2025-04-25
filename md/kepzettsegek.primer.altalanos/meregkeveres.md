@@ -2,7 +2,7 @@
 
 Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
 
-→ [Lásd: Méregrendszer](../140_meregrendszer.md)
+→ [Lásd: Méregrendszer](../150_meregrendszer.md)
 
 ### Próba speciális
 
@@ -46,7 +46,7 @@ Ismered a különböző hatású és erősségű mérgek kikeverésének módjá
 
 ### Próbák
 
-A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg szintjével** azonos. A **Méreg szintjének** számítása a [Méregrendszer](../140_meregrendszer.md) fejezetben található.
+A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg szintjével** azonos. A **Méreg szintjének** számítása a [Méregrendszer](../150_meregrendszer.md) fejezetben található.
 
 ### Méreg azonosítása tünetek, környezeti hatás alapján
 

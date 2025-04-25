@@ -1,8 +1,8 @@
 ## Méregellenállás
 
-Lásd [Méregrendszer - Méregellenállás próba](142_meregellenallas.md).
+Lásd [Méregrendszer - Méregellenállás próba](152_meregellenallas.md).
 
-Bővebben lásd a [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md) képzettség és a [Méregrendszer](140_meregrendszer.md) leírását.
+Bővebben lásd a [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md) képzettség és a [Méregrendszer](150_meregrendszer.md) leírását.
 
 ---
 

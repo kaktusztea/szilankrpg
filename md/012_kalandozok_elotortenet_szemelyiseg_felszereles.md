@@ -7,9 +7,9 @@ Ez az oka annak is, hogy egy **kalandozó lelkű** elf hasonlóan viselkedik, mi
 A rendszer minden **Játékos Karaktert (JK)** Kalandozóként kezel. A Kalandozók egyedisége a `Szilánk` rendszerében számszerűleg is megjelenik - az alábbi két speciális jellemzővel bír mindegyikük. 
 
 ---
-### [Gyorsabb gyógyulás](130_gyogyitas_gyogyulas.md) 
+### [Gyorsabb gyógyulás](140_gyogyitas_gyogyulas.md) 
 
-A többi halandóhoz képest a Kalandozók gyorsabban gyógyulnak. A szabályrendszerben a [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md) fejezet alatt a rájuk vonatkozó értékeket találod.
+A többi halandóhoz képest a Kalandozók gyorsabban gyógyulnak. A szabályrendszerben a [Gyógyítás, gyógyulás](140_gyogyitas_gyogyulas.md) fejezet alatt a rájuk vonatkozó értékeket találod.
 
 ---
 ### [Szilánk](014_03_szilank.md)

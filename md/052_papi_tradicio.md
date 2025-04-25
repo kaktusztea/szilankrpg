@@ -1,6 +1,6 @@
 ## Papi Tradíció
 
-Lásd a [Papi Mágia](100_papimagia.md) fejezetet.
+Lásd a [Papi Mágia](110_papimagia.md) fejezetet.
 
 ---
 

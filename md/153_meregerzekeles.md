@@ -40,6 +40,6 @@ Alap célszám: `xy` ⭕TODO⭕
 
 ---
 
-🔗 [Példamérgek](144_peldamergek.md) →
+🔗 [Példamérgek](154_peldamergek.md) →
 
 ⚜️ [Nyitóoldal](start.md#14-m%C3%A9regrendszer-m%C3%A9rgek)

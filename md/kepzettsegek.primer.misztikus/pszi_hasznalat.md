@@ -2,7 +2,7 @@
 
 ### Kapcsolódó oldalak
 
-- [Pszí főfejezet](../080_pszi.md)
+- [Pszí főfejezet](../090_pszi.md)
 - [Pszí STUDY oldala](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.pszi) 
 
 ### Kapcsolódik

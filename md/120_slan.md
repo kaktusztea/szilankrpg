@@ -4,11 +4,11 @@
 
 #### [Slan fortélyok](046_slan_fortelyok.md)
 
-#### [Slan diszciplínák](111_slan_diszciplinak.md)
+#### [Slan diszciplínák](121_slan_diszciplinak.md)
 
-#### [Chi harc képzettségei](112_chi_harc.md)
+#### [Chi harc képzettségei](122_chi_harc.md)
 
-#### [Slan fegyverek](113_slan_fegyverek.md)
+#### [Slan fegyverek](123_slan_fegyverek.md)
 
 ---
 ## Bevezető
