@@ -80,3 +80,9 @@ Az ék és a perem együtt ad annyit ami már rég biztos tudásból megvan, leh
 ### ⚙️ Leesés
 
 Lásd az [Esés magasból](eses_magasbol.md) szituáció leírását!
+
+---
+
+🔗 [Szituációk](../160_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../start.md#16-szitu%C3%A1ci%C3%B3k)

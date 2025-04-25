@@ -11,3 +11,9 @@ Ha ilyen állapotában támadja meg őt egy fegyveres kardjával, vagy egyéb k�
 `KÉ: [-5; -10]`
 
 A levonás a lőfegyver méretétől függ. Minél nagyobb, annál nagyobb a levonás, mivel annál időigényesebb a fegyver tűzkész állapotba hozni. KM dönt.
+
+---
+
+🔗 [Szituációk](../160_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../start.md#16-szitu%C3%A1ci%C3%B3k)

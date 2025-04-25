@@ -31,3 +31,10 @@ Csapda komplexitásától függő **Nehézség** (maximum: a készítő által m
 
 - **Erős kiterjesztés**:  [Mechanika](../fortelyok.altalanos/mechanika.md)
 - [Szabotőr](../fortelyok.altalanos/szabotor.md) fortély bónuszt ad (`+2`)
+
+
+---
+
+🔗 [Szituációk](../160_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../start.md#16-szitu%C3%A1ci%C3%B3k)
