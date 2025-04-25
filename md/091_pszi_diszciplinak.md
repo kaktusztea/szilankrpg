@@ -35,4 +35,4 @@ Dobás: [Önuralom](014_01_tulajdonsagok.md#-önuralom-️) Tulajdonsággal
 
 ---
 
-⚜️ [Nyitóoldal](start.md#8-psz%C3%AD)
+⚜️ [Nyitóoldal](start.md#9-psz%C3%AD)

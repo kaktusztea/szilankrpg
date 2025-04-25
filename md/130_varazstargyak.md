@@ -24,4 +24,4 @@ xyz2
 
 ---
 
-⚜️ [Nyitóoldal](start.md#12-var%C3%A1zst%C3%A1rgyak)
+⚜️ [Nyitóoldal](start.md#13-var%C3%A1zst%C3%A1rgyak)

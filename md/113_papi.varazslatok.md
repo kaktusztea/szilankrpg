@@ -54,4 +54,4 @@ Itt találhatjuk az összes, a rendszerben játszható pap varázslatainak lsit�
 
 ---
 
-⚜️ [Nyitóoldal](start.md#10-papi-m%C3%A1gia)
+⚜️ [Nyitóoldal](start.md#11-papi-m%C3%A1gia)

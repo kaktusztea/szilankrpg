@@ -12,4 +12,4 @@
 
 ---
 
-⚜️ [Nyitóoldal](start.md#9-m%C3%A1giarendszer)
+⚜️ [Nyitóoldal](start.md#10-m%C3%A1giarendszer)

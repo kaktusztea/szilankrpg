@@ -158,4 +158,4 @@ Amennyiben nem hagyományos, ritka fajról van szó, akkor ahhoz a [Különleges
 
 🔗 [Méregellenállás próba](152_meregellenallas.md) →
 
-⚜️ [Nyitóoldal](start.md#14-m%C3%A9regrendszer-m%C3%A9rgek)
+⚜️ [Nyitóoldal](start.md#15-m%C3%A9regrendszer-m%C3%A9rgek)

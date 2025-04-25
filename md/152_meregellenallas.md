@@ -12,4 +12,4 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](014_02_tulajdonsagpro
 
 🔗 [Méregérzékelés](153_meregerzekeles.md) →
 
-⚜️ [Nyitóoldal](start.md#14-m%C3%A9regrendszer-m%C3%A9rgek)
+⚜️ [Nyitóoldal](start.md#15-m%C3%A9regrendszer-m%C3%A9rgek)

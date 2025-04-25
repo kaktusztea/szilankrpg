@@ -48,4 +48,4 @@ Isteni energiákkal, pusztán kézrátéttellel és a pap hitével való gyógy�
 
 ---
 
-⚜️ [Nyitóoldal](start.md#13-gy%C3%B3gy%C3%ADt%C3%A1s-gy%C3%B3gyul%C3%A1s)
+⚜️ [Nyitóoldal](start.md#14-gy%C3%B3gy%C3%ADt%C3%A1s-gy%C3%B3gyul%C3%A1s)

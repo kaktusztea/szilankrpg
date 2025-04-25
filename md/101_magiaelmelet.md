@@ -6,4 +6,4 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 🔗 [Mágia alapszabályok](102_magia_alapszabalyok.md) →
 
-⚜️ [Nyitóoldal](start.md#9-m%C3%A1giarendszer)
+⚜️ [Nyitóoldal](start.md#10-m%C3%A1giarendszer)
