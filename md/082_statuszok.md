@@ -51,16 +51,25 @@ Jellemzők:
 ---
 ### ✴️ Eszmélet (1) Bódultság
 
-- pl. sima részegség
+- Kezdeményezésben utolsó
 - Hátrány-1
-- nincs biztos tudásból (at-will) varázslás
-- kivéve pap: ők részegen is tök jól varázsolnak
+    - Támadó dobás
+    - Sebző dobás ⭕ legyen ez is ⭕
+- Előny-1:
+    - Ellenfél Támadó dobás  ⭕ legyen ez is. Lehet, hogy nem kell, mert a VÉ-jét úgy is leverik, amíg ő a támadással bénázik ⭕
+- nincs biztos tudásból (at-will) varázslás, kivéve papok: ők részegen is tudnak varázsolni
+- ⚡példa: sima részegség
 
 ### ✴️ Eszmélet (2) Kábultság
 
-- pl. pocsolya részegség
-- Hátrány 2
+- Kezdeményezésben utolsó
+- Hátrány-2
+    - Támadó dobás
+    - Sebző dobás ⭕ legyen ez is ⭕
+- Előny-2:
+    - Ellenfél Támadó dobás  ⭕ legyen ez is. ⭕
 - Varázslás képesség elvesztése
+- ⚡példa: pocsolya részegség
 
 <br />
 
@@ -146,10 +155,11 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 
 **Akaraterő** Tulajdonságpróba esetleges Előnnyel, Hátránnyal
 
-⚡Példa: "Igyak piát?"
-- `1.` Simán dobsz a leküzdés ellen, ha "Nagyívó" vagy
-- `2.` `Hátrány-1`-gyel dobsz, ha sima alkesz vagy
-- `3.` `Hátrány-2`-vel dobsz, ha masszív alkesz vagy
+- Kleptománia ("El kéne lopni valamit...")
+- Alkoholizmus ("Igyak piát?")
+    - `1.` Simán dobsz a leküzdés ellen, ha "Nagyívó" vagy
+    - `2.` `Hátrány-1`-gyel dobsz, ha sima alkesz vagy
+    - `3.` `Hátrány-2`-vel dobsz, ha masszív alkesz vagy
 
 <br />
 
@@ -188,6 +198,11 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 
 ⭕TODO: Hatások?⭕
 
+⭕TODO: Ez csak random ötlet volt. Lehet, hogy inkább:
+- Átok státusz alá olvadjon be
+- varázslat legyen, aminek vannak Hatásai
+- Karma Háttér legyen
+
 <br />
 
 ---
@@ -212,15 +227,14 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 
 <br />
 
-
 ---
 ### ✴️ Zavar (1) Megrendültség
 
-⭕TODO⭕
+⭕TODO⭕ Legyen azonos az Eszmélet 1-gyel?
 
 ### ✴️ Zavar (2) Sokk
 
-⭕TODO⭕
+⭕TODO⭕ Legyen azonos az Eszmélet 2-vel?
 
 ⭕TODO: Külön legyen a Rettegéstől?
 
