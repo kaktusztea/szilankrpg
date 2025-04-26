@@ -121,3 +121,9 @@ Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra ninc
 ```
 1 ÉP / kör
 ```
+
+---
+
+🔗 [Státuszok](082_statuszok.md) →
+
+⚜️ [Nyitóoldal](start.md#8-hat%C3%A1sok-%C3%A9s-st%C3%A1tuszok)
