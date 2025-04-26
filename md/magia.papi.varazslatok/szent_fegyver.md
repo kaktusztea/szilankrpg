@@ -28,7 +28,7 @@ Fény, isten jellegével egyező hanghatások (kórus, zene, vadállatok üvölt
 #### Szabályok
 
 **Megfélemlítés**:\
-Kisszféra szintnek megfelelő **Befolyásolás (Megfélemlítés)** hatás ér automatikusan mindenkit, aki a fegyver forgatójával harcol. Ez ellen a próbát a harc során csak egyszer kell megdobni (Emberismeret+Intelligencia) kombinációval. Ha a másik fél ezt elbukja, akkor a [Félelem alatt](../082_statuszok.md#f%C3%A9lelem-alatt-1-szorong%C3%A1s) Státusz módosítóival harcol az összecsapás végéig.
+Kisszféra szintnek megfelelő **Befolyásolás (Megfélemlítés)** hatás ér automatikusan mindenkit, aki a fegyver forgatójával harcol. Ez ellen a próbát a harc során csak egyszer kell megdobni (Emberismeret+Intelligencia) kombinációval. Ha a másik fél ezt elbukja, akkor a [Félelem alatt](../082_statuszok.md#%EF%B8%8F-f%C3%A9lelem-alatt-1-szorong%C3%A1s) Státusz módosítóival harcol az összecsapás végéig.
 
 **A Szent fegyver harcértékei**:
 - mint a forgató eredeti harcértékei ezzel a fegyverrel
