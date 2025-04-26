@@ -1,6 +1,6 @@
 # Harcrendszer
 
-<sub>→ [TODO/ISSUE harcrendszer](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.harcrendszer)</sub>
+<sub>→ [TODO/ISSUE harcrendszer](https://github.com/kaktusztea/szilankrpg/wiki/TODO.harcrendszer)</sub>
 
 A szabályrendszer legizgalmasabb része természetesen a harcrendszer. Itt találhatóak azok a szabályok, amelyek segítségével a játék során lemesélt harcokat szimulálni tudjuk.
 

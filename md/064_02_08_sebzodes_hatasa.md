@@ -21,7 +21,7 @@ Abban, hogy a karakter aktuális sebesülési állapotában milyen ütemben vesz
 k20 + X
 ```
 
-⭕TODO: [Irányelvek kidolgozása](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.harcrendszer#nem-harci-sebz%C5%91d%C3%A9sek)
+⭕TODO: [Irányelvek kidolgozása](https://github.com/kaktusztea/szilankrpg/wiki/TODO.harcrendszer#nem-harci-sebz%C5%91d%C3%A9sek)
 
 Természetesen nem csak fegyverek okozhatnak sérülést, hanem egy mágikus tűzgolyó, zuhanás a tetőről, stb. A mágikus hatások sebzéseit a [Mágia](100_magiarendszer.md) fejezetben tárgyaljuk, bővebben lásd ott.
 

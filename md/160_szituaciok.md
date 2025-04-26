@@ -1,6 +1,6 @@
 # Szituációk
 
-<sub>→[TODO/ISSUE szituációk](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.szituaciok)</sub>
+<sub>→[TODO/ISSUE szituációk](https://github.com/kaktusztea/szilankrpg/wiki/TODO.szituaciok)</sub>
 
 Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyekkel újra és újra találkoznak a játékosok. Egyfajta sorvezetést nyúltani: milyen próbák, ellenpróbák szükségesek ezek során a résztvevő felek oldaláról - milyen képzettségek, fortélyok vesznek részt ilyen esetekben.
 

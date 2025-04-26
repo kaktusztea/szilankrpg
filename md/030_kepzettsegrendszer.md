@@ -1,6 +1,6 @@
 # Képzettségrendszer
 
-<sub>→ [TODO/ISSUE képzettségrendszer](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.kepzettsegek)</sub>
+<sub>→ [TODO/ISSUE képzettségrendszer](https://github.com/kaktusztea/szilankrpg/wiki/TODO.kepzettsegek)</sub>
 
 - [Képzettséglista](031_kepzettseglista.md)
 - [Primer és Szekunder képzettségek](032_primer_szekunder_kepzettsegek.md)

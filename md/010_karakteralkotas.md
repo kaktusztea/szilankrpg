@@ -1,6 +1,6 @@
 # Karakteralkotás
 
-<sub>→ [TODO/ISSUE karakteralkotás](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.karakteralkotas)</sub>
+<sub>→ [TODO/ISSUE karakteralkotás](https://github.com/kaktusztea/szilankrpg/wiki/TODO.karakteralkotas)</sub>
 
 Az áttekintő szöveget lásd a tartalomjegyzék után.
 

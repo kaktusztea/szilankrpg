@@ -1,6 +1,6 @@
 ## Fortélyok
 
-<sub>→ [TODO/ISSUE fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.fortelyok)</sub>
+<sub>→ [TODO/ISSUE fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/TODO.fortelyok)</sub>
 
 ---
 

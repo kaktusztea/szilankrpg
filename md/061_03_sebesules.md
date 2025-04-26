@@ -38,7 +38,7 @@ Fájdalomtűrés (K) + Edzettség (T)
           vs. 12
 ```
 
-⭕[Harci láz ad bónuszt?](https://github.com/kaktusztea/szilankrpg/wiki/TODO.ISSUE.fortelyok#harci-l%C3%A1z)
+⭕[Harci láz ad bónuszt?](https://github.com/kaktusztea/szilankrpg/wiki/TODO.fortelyok#harci-l%C3%A1z)
 
 Ha a karakter az S4-es (Súlyosan sebesült) kategóriába ér egyszeri [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + **Edzettség** próbát kell dobnia Nehéz (`12`) célszám ellen.
 
