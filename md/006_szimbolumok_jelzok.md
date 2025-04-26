@@ -16,6 +16,10 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🌀 Pszí
 
+🔥 Hatás
+
+✴️ Státusz
+
 ⚡ Példa
 
 ⚜️ Fejezetcím, elválasztó, példatörténet

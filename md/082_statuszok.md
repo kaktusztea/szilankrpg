@@ -1,4 +1,4 @@
-## Státuszok
+## ✴️ Státuszok
 
 Jellemzők:
 - Ideiglenes, vagy tartós hatás, amiből "ki kell gyógyulni"
@@ -29,7 +29,7 @@ Jellemzők:
 
 ---
 ---
-### Ájulás
+### ✴️ Ájulás
 
 - Teljes harcképtelenség
 - Teljes mozgásképtelenség
@@ -41,7 +41,7 @@ Jellemzők:
 <br />
 
 ---
-### Bénultság
+### ✴️ Bénultság
 
 - Teljes harcképtelenség
 - Teljes mozgásképtelenség
@@ -51,14 +51,14 @@ Jellemzők:
 <br />
 
 ---
-### Eszmélet (1) Bódultság
+### ✴️ Eszmélet (1) Bódultság
 
 - pl. sima részegség
 - Hátrány-1
 - nincs biztos tudásból (at-will) varázslás
 - kivéve pap: ők részegen is tök jól varázsolnak
 
-### Eszmélet (2) Kábultság
+### ✴️ Eszmélet (2) Kábultság
 
 - pl. pocsolya részegség
 - Hátrány 2
@@ -67,7 +67,7 @@ Jellemzők:
 <br />
 
 ---
-### Eufória
+### ✴️ Eufória
 
   - A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
   - Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
@@ -75,7 +75,7 @@ Jellemzők:
 <br />
 
 ---
-### Félelem alatt (1) Szorongás
+### ✴️ Félelem alatt (1) Szorongás
 
 Mi okozhatja?
 - nem bírja a stresszt
@@ -85,13 +85,13 @@ Mi okozhatja?
 Hatás:\
 Maximális **Védekező taktikában** kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
 
-### Félelem alatt (2) Rettegés
+### ✴️ Félelem alatt (2) Rettegés
 
 Csak Teljes Védekezés taktikát használhat: `VÉ:+30`
 
 Csak mágia vagy démonok hatására kerülhet ebbe az állapotba.
 
-### Félelem alatt (3) Bénító félelem
+### ✴️ Félelem alatt (3) Bénító félelem
 
 - bele is lehet halni
 - véd ellene: Szilánk (tehát, aki kalandozó)
@@ -103,7 +103,7 @@ Csak mágia vagy démonok hatására kerülhet ebbe az állapotba.
 <br />
 
 ---
-### Fogékony
+### ✴️ Fogékony
 
 Az ingerek, érzések könnyebben elérnek. Enyhe bágyadtság.
 ⭕TODO: Hatások?⭕
@@ -111,7 +111,7 @@ Az ingerek, érzések könnyebben elérnek. Enyhe bágyadtság.
 <br />
 
 ---
-### Indulat (1) Harag
+### ✴️ Indulat (1) Harag
 
 ⭕TODO⭕
 `TÉ:+15; VÉ:-30`
@@ -120,13 +120,13 @@ Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erej�
 
 Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen defenzív jellegű más taktikát nem (pl. Kiváró, stb).
 
-### Indulat (2) Gyűlölet
+### ✴️ Indulat (2) Gyűlölet
 
 - mint az `Indulat (1) Harag`, plusz:
 - kötelező Öngyilkos roham taktika
 - utána sima roham ha van hely
 
-### Indulat (3) Őrjöngés
+### ✴️ Indulat (3) Őrjöngés
 
 - mint az `Indulat (2) Gyűlölet`, plusz:
 - már mindenkit megtámadsz, akit látsz, nem számít, hogy barát, vagy szövetséges
@@ -134,7 +134,7 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 <br />
 
 ---
-### Inspiráció
+### ✴️ Inspiráció
 
   - A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés).
   - Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
@@ -144,7 +144,7 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 <br />
 
 ---
-### Késztetés / kísértés
+### ✴️ Késztetés / kísértés
 
 **Akaraterő** Tulajdonságpróba esetleges Előnnyel, Hátránnyal
 
@@ -156,21 +156,21 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 <br />
 
 ---
-### Kiégettség / Nihil
+### ✴️ Kiégettség / Nihil
 
 ⭕TODO: Hatások?⭕
 
 <br />
 
 ---
-### Mérgezés
+### ✴️ Mérgezés
 
 - körönként / percenként / óránként: `1 ÉP`⭕
 
 <br />
 
 ---
-### Obszesszió
+### ✴️ Obszesszió
 
   - A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
   - `Előny-1` minden dobásra, ami a megszállottság tárgyához kapcsolódik
@@ -179,36 +179,36 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 <br />
 
 ---
-### Optimizmus
+### ✴️ Optimizmus
 
 ⭕TODO: Hatások?⭕
 
 <br />
 
 ---
-### Orwella érintése
+### ✴️ Orwella érintése
 
 ⭕TODO: Hatások?⭕
 
 <br />
 
 ---
-### Trauma (1) Lélekrepedés
+### ✴️ Trauma (1) Lélekrepedés
 
 ⭕TODO: Hatások?⭕
 
-### Trauma (2) Lélektörés
+### ✴️ Trauma (2) Lélektörés
 
 ⭕TODO: Hatások?⭕
 
 <br />
 
 ---
-### Vakság (1) Félvak
+### ✴️ Vakság (1) Félvak
 
 ⭕TODO: Hatások?⭕
 
-### Vakság (2) Teljes vakság
+### ✴️ Vakság (2) Teljes vakság
 
 ⭕TODO: Hatások?⭕
 
@@ -216,11 +216,11 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 
 
 ---
-### Zavar (1) Megrendültség
+### ✴️ Zavar (1) Megrendültség
 
 ⭕TODO⭕
 
-### Zavar (2) Sokk
+### ✴️ Zavar (2) Sokk
 
 ⭕TODO⭕
 
