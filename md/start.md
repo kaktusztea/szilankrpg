@@ -238,7 +238,11 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Távharc sötétben](076_tavharc_sotetben.md)
 
 ---
-### 8. [Státuszok](080_statuszok.md)
+### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)
+
+- [Hatások](081_hatasok.md)
+- [Státuszok](082_statuszok.md)
+- [Harci helyzetek](083_harci_helyzetek_99.md) 
 
 ---
 ### 9. [Pszí](090_pszi.md)
