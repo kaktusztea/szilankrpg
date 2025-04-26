@@ -5,9 +5,7 @@ Jellemzők:
 - Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki támad, aki láthatatlan, akinek levágták a karját)
 - Karma hátterek is okozhatnak status alignementet (pl. Hiszékeny-átok: Hátrány-2 Emberismeretre)
 
-<br />
-
-### Rövid lista
+### Lista
 
 - Ájulás
 - Bénultság
