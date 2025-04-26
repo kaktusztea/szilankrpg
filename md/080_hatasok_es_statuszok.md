@@ -15,4 +15,4 @@ Egy Státusz jellemzője:
 
 ---
 
-⚜️ [Nyitóoldal](start.md#8-st%C3%A1tuszok)
+⚜️ [Nyitóoldal](start.md#8-hat%C3%A1sok-%C3%A9s-st%C3%A1tuszok)
