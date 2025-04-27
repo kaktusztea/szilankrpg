@@ -56,8 +56,6 @@ A fent kalkulált csoport-értéket lehet emelni, amennyiben az adott képzetts�
 
 → Vezető fortélyok (szellemi) ⭕LINK⭕
 
-⭕TÖRÖL: [Koordinátor](fortelyok.altalanos/koordinator.md) 
-
 <br />
 
 ---

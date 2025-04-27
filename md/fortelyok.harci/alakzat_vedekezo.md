@@ -7,7 +7,7 @@ Sok féle alakzat létezik. Gyalogos, kisebb létszámra, nagy, csatatéri form�
 - **[Harc alakzatban](../065_03_harc_alakzatban.md)** fejezet
 - [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettség
 - [Alakzat: támadó](alakzat_tamado.md) fortély
-- [Taktika: Parancsnok](taktika_parancsnok.md) fortély
+- [Vezető: Alakzatparancsnok](vezeto_alakzatparancsnok.md) fortély
 
 ### 1. fok
 

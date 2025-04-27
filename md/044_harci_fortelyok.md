@@ -34,7 +34,6 @@
 - [Taktika: Fejvadászok vezetése](fortelyok.harci/taktika_fejvadaszok_vezetese.md)🔺
 - [Taktika: Íjász](fortelyok.harci/taktika_ijasz.md)🔺
 - [Taktika: Nehézlovas](fortelyok.harci/taktika_nehezlovas.md)🔺
-- [Taktika: Parancsnok](fortelyok.harci/taktika_parancsnok.md)
 - [Taktika: Testőrség](fortelyok.harci/taktika_testorseg.md)🔺
 - [Taktika: Útonállás, rajtaütés](fortelyok.harci/taktika_utonallas_rajtautes.md)🔺
 - [Támadás erőből](fortelyok.harci/tamadas_erobol.md)
@@ -42,6 +41,7 @@
 - [Testőr](fortelyok.harci/testor.md)
 - [Vakharc](fortelyok.harci/vakharc.md)
 - [Vértviselet](fortelyok.harci/vertviselet.md)
+- [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)
 
 ---
 ### Lovas harci fortélyok

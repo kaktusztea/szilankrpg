@@ -15,18 +15,19 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 ## Alakzat egyedi jellemzői
 
 ⚜️ **Támadófok**
-- `MIN(`Támadó-alakzat` fortély)`
-- Legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka (csapattagok között)
-- Bónusz: `+2 / fok`
+- `MIN(`Támadó-alakzat` fortély )`
+- Tehát a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka (csapattagok között)
+- Bónusz: `+2 / Támadó-alakzat fok`
 
 ⚜️ **Védekezőfok**
-- `MIN(Védekező-alakzat fortély)`
-- Legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka (csapattagok között)
-- Bónusz: `+2 / fok`
+- `MIN( Védekező-alakzat fortély )`
+- Tehát a legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka (csapattagok között)
+-  Bónusz: `+2 / Védekező-alakzat fok`
 
 ⚜️ **Alakzatszint**
-- [Csoportos fizikai képzettségpróba](037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint a csapat [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség átlag szintje
-- [Taktika: Parancsnok](fortelyok.harci/taktika_parancsnok.md) fortély enyhít a csoportos büntetéseken
+- `MIN( Alakzatharc képzettség )`
+- Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a legalacsonyabb ([csoportos fizikai képzettségpróba](037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint)
+- [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) fortély bónusz: `+2 / fok`
 
 ### ⚜️Támadószint
 
@@ -45,14 +46,14 @@ Alakzatszint + Védekezőfok bónusz
 
 ### TÉ SUMMA
 
-- Alakzat tagjainak fegyveres `TÉ` átlaga
-- `TÉ bónusz`: **Támadószint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+- \+ Alakzat tagjainak fegyveres `TÉ` átlaga
+- \+ `TÉ bónusz`: **Támadószint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 ### VÉ SUMMA
 
-- Alakzat tagjainak fegyveres `VÉ` átlaga 
-- `VÉ bónusz`:  **Védekezőszint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-- Személyek száma utáni `VÉ` bónusz (`+3 VÉ / fő;  max +30 VÉ`) ⭕TODO⭕: Legyen?
+- \+ Alakzat tagjainak fegyveres `VÉ` átlaga 
+- \+ `VÉ bónusz`:  **Védekezőszint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+- \+ Személyek száma utáni `VÉ` bónusz (`+3 VÉ / fő;  max +30 VÉ`) ⭕TODO⭕: Legyen?
 
 🔆 **Megjegyzés**: [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasl%C3%A9glovas-harc%C3%A9rt%C3%A9kek-kisz%C3%A1m%C3%ADt%C3%A1sa) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
 
@@ -65,7 +66,7 @@ Borz
 - Alakzatharc: `6.szint`
 - Támadó-alakzat fortély: `2.fok`
 - Védekező-alakzat fortély: `2.fok`
-- 🔆 Parancsnok fortély: `1.fok`
+- 🔆 Vezető: Alakzatparancsnok: `1.fok`
 
 Tetves
 - Alakzatharc: `7.szint`
@@ -93,20 +94,21 @@ Csámpa
 ⚡Védekezőfok: `2`
 - `MIN(2; 2; 2; 2)`
 
-⚡Alakzatszint: `6 - 1 → 5.szint`
+⚡Alakzatszint: `6 + 2 → 8.szint`
 - legalacsonyabb képzettség: `6`
-- `2` társ van `3` szint "távon" belül, tehát `-2` lenne a büntetés
-- viszont **Borz** `1.fokú` [Taktika: Parancsnok](fortelyok.harci/taktika_parancsnok.md) fortélya ebből `1`-et hatástalanít, marad `-1`
+- **Borz** [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) `- 1.fok` fortélya: `+2` bónusz
+ 
+ <br />
 
-⚡Támadószint: `5`
-- Alakzatszint (`5`)
+⚡Támadószint: `8`
+- Alakzatszint (`8`)
 - Támadófok bónusz: `0.fok: nincs bónusz`
-- `5 + 0 = 5`
+- `8 + 0 = 8`
 
 ⚡Védekezőszint: `9`
-- Alakzatszint (`5`)
+- Alakzatszint (`8`)
 - Védekezőfok bónusz:`2.fok: +4 bónusz`
-- `5 + 4 = 9`
+- `8 + 4 = 12`
 
 ---
 ### 🔆**Alakzat TÉ értéke**
@@ -160,7 +162,7 @@ Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%
 
 **Tipp**: ezen hatás ellen megfontolandó lehet a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
 
-Megjegyzés: a szabály-mechanika a [Harcos elme](fortelyok.harci/harcos_elme.md) nem-létező `5.fokaként` képzelhető el.
+🔆 Megjegyzés: a szabály-mechanika a [Harcos elme](fortelyok.harci/harcos_elme.md) nem-létező `5.fokaként` képzelhető el.
 
 <br />
 
@@ -242,7 +244,7 @@ Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok 
 - Támadó - fixen `TÉ:+10 / VÉ:-20`
 - Védő - fixen `TÉ:+10 / VÉ:-20`
 - Roham - `TÉ:+20`, `VÉ:-40`
-- Fárasztó - `+5`; sebzés helyett  `+10` VÉ csökkentés
+- Fárasztó - `+5`; sebzés helyett `+10` VÉ csökkentés
 
 Manőverek használata nem lehetséges.
 
