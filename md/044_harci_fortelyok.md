@@ -42,7 +42,7 @@
 - [Vértviselet](fortelyok.harci/vertviselet.md)
 - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)
 - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)
-
+x
 ---
 ### Lovas harci fortélyok
 

@@ -2,9 +2,9 @@
 
 Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használjuk lovas alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md).
 
-Egy jó parancsnok képes koordinálásával a lovacsapat közös mozgását hatékonyabbá tenni.
+Egy jó parancsnok képes koordinálásával a lovascsapat közös mozgását hatékonyabbá tenni.
 
-Nehézlovas formációba fejlődés, együtt fordulni, alakzatot tartani - harci körülmények között is.
+Nehézlovas formációba fejlődni, együtt fordulni, alakzatot tartani - harci körülmények között is.
 
 ### Kiterjeszti ezeket
 

@@ -29,6 +29,7 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 - Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a legalacsonyabb ([csoportos fizikai képzettségpróba](037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint)
 - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) fortély bónusz: `+2 / fok`  (gyalogos alakzat esetén)
 - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md) fortély bónusz: `+2 / fok`  (lovas alakzat esetén)
+- [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md) fortély bónusz: `+2 / fok`  (lovas alakzat esetén)
 
 ### ⚜️Támadószint
 

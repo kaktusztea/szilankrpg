@@ -16,5 +16,6 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
     - ⭕ [Taktika: Útonállás, rajtaütés](../fortelyok.harci/taktika_utonallas_rajtautes.md): "A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lőssz, Mocsok, tied a kocsis."
 - [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md): "Lándzsások vonalba, megakasztásra készülj!"
 - [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): "Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!"
+- [Vezető: Léglovaskapitány](../fortelyok.harci/vezeto_leglovaskapitany.md): "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
 
 <br />
