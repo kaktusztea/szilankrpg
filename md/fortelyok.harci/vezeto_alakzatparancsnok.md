@@ -4,6 +4,10 @@ Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [cs
 
 A fentiek szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
 
+### Kiterjeszti ezeket
+
+- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "Lándzsások vonalba, megakasztásra készülj!"
+
 ### 1. fok
 
 🔒 **Követelmény**:

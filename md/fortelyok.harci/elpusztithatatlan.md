@@ -4,7 +4,6 @@ Mikor már mindenki azt hiszi, lekaszaboltak, hirtelen felülsz a vértócsában
 
 A fortély segítségével minden fegyver okozta, bekapott `ÉP` sebből "átalakíthatsz" pár `ÉP` pontot `FP` ponttá.
 
-
 ### 1. fok
 
 🔒 **Követelmény**: Edzettség: `+2`

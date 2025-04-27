@@ -27,7 +27,8 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 ⚜️ **Alakzatszint**
 - `MIN( Alakzatharc képzettség )`
 - Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a legalacsonyabb ([csoportos fizikai képzettségpróba](037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint)
-- [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) fortély bónusz: `+2 / fok`
+- [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) fortély bónusz: `+2 / fok`  (gyalogos alakzat esetén)
+- [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md) fortély bónusz: `+2 / fok`  (lovas alakzat esetén)
 
 ### ⚜️Támadószint
 
@@ -111,14 +112,16 @@ Csámpa
 - `8 + 4 = 12`
 
 ---
-### 🔆**Alakzat TÉ értéke**
-- Alakzat tagjainak fegyveres `TÉ` átlaga 
-- `TÉ bónusz: +6`  - **Támadószint** (`5`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
+### 🔆 Alakzat TÉ értéke
 
-### 🔆**Alakzat VÉ értéke**
+- Alakzat tagjainak fegyveres `TÉ` átlaga 
+- `TÉ bónusz: +15`  ← **Támadószint** (`8`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
+
+### 🔆 Alakzat VÉ értéke
+
 - Alakzat tagjainak fegyveres `VÉ` átlaga 
-- `VÉ bónusz: +18` - **Védekezőszint** (`9`) mint egy extra harcmodorból adódó érték
-- `VÉ bónusz: +12` - tagok száma után `(4x3)`
+- `VÉ bónusz: +18` ← **Védekezőszint** (`9`) mint egy extra harcmodorból adódó érték
+- `VÉ bónusz: +12` ← Tagok száma után `(4x3)`
 
 <br />
 
@@ -265,7 +268,7 @@ Egy Alakzat ellen az alábbi taktikák NEM használhatóak:
 ## Alakzat vs Alakzat
 
 ```
-Maximum létszám: `20`❓
+Maximum létszám: `20` ⭕
 ```
 
 Két Alakzat egymással való harcát is modellezzük - kis (`max 20 fő / Alakzat`) létszámig. Ennél nagyobb létszámú összecsapásokat nem modellezünk.
@@ -273,7 +276,9 @@ Két Alakzat egymással való harcát is modellezzük - kis (`max 20 fő / Alakz
 Minden szabály ugyanaz, mint a fent leírtak, kivéve az alábbiak:
 
 ```
-1 támadás / kör minden alakzatnak
+KÉ: ⭕TODO⭕
+
+1 támadás / kör mindkét alakzatnak
 
 VÉ csökkentés/kör: 5
   + 1 túlerő személyenként (max: +5)
