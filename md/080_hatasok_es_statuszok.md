@@ -1,11 +1,6 @@
 # Hatások és Státuszok
 
-A Státuszok ideiglenes, vagy tartós állapotok, amelyek előnyös, vagy hátrányos Hatásokat okoznak a karakteren.
-
-Egy Státusz jellemzője:
-- Ideiglenes, vagy tartós állapot, amiből "ki kell gyógyulni"
-- Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki támad, aki láthatatlan, akinek levágták a karját)
-- Karma hátterek is okozhatnak Státusz változást (pl. "Átkozott: Hiszékeny": Hátrány-2 Emberismeretre)
+A **Státuszok** ideiglenes, vagy tartós állapotok, amelyek előnyös, vagy hátrányos **Hatásokat** okoznak a karakteren.
 
 #### [Hatások](081_hatasok.md)
 

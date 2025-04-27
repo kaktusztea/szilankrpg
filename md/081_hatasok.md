@@ -11,7 +11,6 @@ Ezek speciális, kockadobásokat érintő Hatások.\
 Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:\
 **Támadó Dobás, Manőver, Tulajdonságpróba, Képzettségpróba, Sebzés, Mágia Akarata, Mágiaellenállás**.
 
-
 ---
 ### 🔥 Előny-1
 
@@ -55,6 +54,11 @@ Az adott képzettségre nem is dobhatsz próbát, azonnal kudarc.
 ### 🔥 Beszédképtelenség
 
 Képtelen vagy beszéddel hangot kiadni magadból, még egy nyikkanást sem. Ha hang komponens szükséges varázslatodhoz, akkor ⭕TODO⭕
+
+---
+### 🔥 Gondolkodásképtelenség
+
+Nem vagy képes gondolkodni - reagálni, tervezni.
 
 ---
 ### 🔥 Harcképtelenség - teljes

@@ -1,13 +1,17 @@
 ## ✴️ Státuszok
 
-Jellemzők:
-- Ideiglenes, vagy tartós hatás, amiből "ki kell gyógyulni"
-- Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki támad, aki láthatatlan, akinek levágták a karját)
-- Karma hátterek is okozhatnak status alignementet (pl. Hiszékeny-átok: Hátrány-2 Emberismeretre)
+A Státuszok ideiglenes, vagy tartós hatások, amikből "ki kell gyógyulni".
+
+Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki támad, aki láthatatlan, akinek levágták a karját)
+
+[Karma hátterek](023_karma_hatterek.md) is okozhatnak Státusz változást (pl. "Átkozott: Hiszékeny": Hátrány-2 Emberismeretre)
 
 ### Lista
 
 - Ájulás
+- Átkozott (1,2) Tulajdonság
+- Átkozott (1,2) Képzettség
+- Átkozott (1,2) Viselkedés alapúak
 - Bénultság
 - Eszmélet: (1) Bódultság, (2) Kábultság
 - Eufória
@@ -15,11 +19,10 @@ Jellemzők:
 - Fogékony
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Inspiráció
-- Késztetés / kísértés
+- Késztetés / kísértés (3)
 - Kiégettség / Nihil
-- Mérgezés
+- Mérgezés (⭕?)
 - Obszesszió
-- Optimizmus
 - Orwella érintése
 - Trauma: (1) Lélekrepedés, (2) Lélektörés
 - Vakság: (1) Félvak, (2) Teljes vakság
@@ -29,14 +32,31 @@ Jellemzők:
 ---
 ### ✴️ Ájulás
 
-- Teljes harcképtelenség
-- Teljes mozgásképtelenség
+- Harcképtelenség - teljes
+- Mozgásképtelenség
 - Varázslás képesség elvesztése
 - Pszi használat elvesztése
 - Beszédképtelenség
-- Gondolkodás képtelenség
+- Gondolkodásképtelenség
 
 <br />
+
+---
+### ✴️ Átkozott (1,2) Tulajdonság
+
+`Hátrány-1,2` adott **Tulajdonság** próbájára
+- Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték csökkenés van.
+
+### ✴️ Átkozott (1,2) Képzettség
+
+`Hátrány-1,2` adott Képzettség próbájára
+
+### ✴️ Átkozott (1,2) Viselkedés alapúak
+
+- Hiszékeny
+  - Emberismeret-próba: `Hátrány-1,2`
+  - Átverős szituációkban, (Befolyásolás+Hazudozás vs Emberismeret) ellenpróbánál
+- ⭕TODO⭕ továbbiak
 
 ---
 ### ✴️ Bénultság
@@ -52,10 +72,10 @@ Jellemzők:
 ### ✴️ Eszmélet (1) Bódultság
 
 - Kezdeményezésben utolsó
-- Hátrány-1
+- `Hátrány-1`
     - Támadó dobás
     - Sebző dobás ⭕ legyen ez is ⭕
-- Előny-1:
+- `Előny-1`:
     - Ellenfél Támadó dobás  ⭕ legyen ez is. Lehet, hogy nem kell, mert a VÉ-jét úgy is leverik, amíg ő a támadással bénázik ⭕
 - nincs biztos tudásból (at-will) varázslás, kivéve papok: ők részegen is tudnak varázsolni
 - ⚡példa: sima részegség
@@ -63,10 +83,10 @@ Jellemzők:
 ### ✴️ Eszmélet (2) Kábultság
 
 - Kezdeményezésben utolsó
-- Hátrány-2
+- `Hátrány-2`
     - Támadó dobás
     - Sebző dobás ⭕ legyen ez is ⭕
-- Előny-2:
+- `Előny-2`
     - Ellenfél Támadó dobás  ⭕ legyen ez is. ⭕
 - Varázslás képesség elvesztése
 - ⚡példa: pocsolya részegség
@@ -90,20 +110,20 @@ Mi okozhatja?
 - meg lett félemlítve pl. "Befolyásolás + Félelemkeltés" képzettség ellenpróbával (KM dönt)
 
 Hatás:\
-Maximális **Védekező taktikában** kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
+Maximális [Védő taktikában](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika) kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
 
 ### ✴️ Félelem alatt (2) Rettegés
 
-Csak Teljes Védekezés taktikát használhat: `VÉ:+30`
+Csak [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikát használhat: `VÉ:+30`
 
 Csak mágia vagy démonok hatására kerülhet ebbe az állapotba.
 
 ### ✴️ Félelem alatt (3) Bénító félelem
 
 - bele is lehet halni
-- véd ellene: Szilánk (tehát, aki kalandozó)
+- véd ellene: Szilánk megléte (tehát, aki kalandozó)
 - Hatások
-    - Teljes mozgásképtelenség (⭕link⭕csak a mozgás jellege adja a VÉ-t)
+    - Mozgásképtelenség (⭕link⭕csak a mozgás jellege adja a `VÉ`-t)
     - Varázslás képesség elvesztése
     - Pszi használat elvesztése
 
@@ -113,6 +133,7 @@ Csak mágia vagy démonok hatására kerülhet ebbe az állapotba.
 ### ✴️ Fogékony
 
 Az ingerek, érzések könnyebben elérnek. Enyhe bágyadtság.
+
 ⭕TODO: Hatások?⭕
 
 <br />
@@ -120,18 +141,15 @@ Az ingerek, érzések könnyebben elérnek. Enyhe bágyadtság.
 ---
 ### ✴️ Indulat (1) Harag
 
-⭕TODO⭕
-`TÉ:+15; VÉ:-30`
+Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör. Az ilyen karakter kötelezően maximális, `TÉ:+15` [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcol (így `VÉ:-30` sújtja).
 
-Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör. Az ilyen karakter kötelezően maximális, `TÉ:+15` [Támadó taktikával](065_02_harci_taktikak.md#támadó-taktika) harcol (így `VÉ:-30` sújtja).
-
-Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen defenzív jellegű más taktikát nem (pl. Kiváró, stb).
+Ebben az állapotban használhatja a [Kezdeményező Taktikát](#kezdem%C3%A9nyez%C5%91-taktika), de semmilyen defenzív jellegű más taktikát nem (pl. Kiváró, stb).
 
 ### ✴️ Indulat (2) Gyűlölet
 
 - mint az `Indulat (1) Harag`, plusz:
-- kötelező Öngyilkos roham taktika
-- utána sima roham ha van hely
+- kötelező [Öngyilkos roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) taktika egyszer
+- utána sima [Roham](065_02_harci_taktikak.md#roham-taktika) taktika - ha van hely
 
 ### ✴️ Indulat (3) Őrjöngés
 
@@ -145,18 +163,18 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 
   - A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés).
   - Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
-  - Előny-1 kreatív tevékenységekre
-  - Hátrány-1 koncentrációt igénylő feladatokra
+  - `Előny-1` kreatív tevékenységekre
+  - `Hátrány-1` koncentrációt igénylő feladatokra
 
 <br />
 
 ---
-### ✴️ Késztetés / kísértés
+### ✴️ Késztetés / kísértés (3)
 
 **Akaraterő** Tulajdonságpróba esetleges Előnnyel, Hátránnyal
 
-- Kleptománia ("El kéne lopni valamit...")
-- Alkoholizmus ("Igyak piát?")
+- Kleptománia (1,2) ("El kéne lopni valamit...")
+- Alkoholizmus (1,2,3) ("Igyak piát?")
     - `1.` Simán dobsz a leküzdés ellen, ha "Nagyívó" vagy
     - `2.` `Hátrány-1`-gyel dobsz, ha sima alkesz vagy
     - `3.` `Hátrány-2`-vel dobsz, ha masszív alkesz vagy
@@ -171,7 +189,7 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
 <br />
 
 ---
-### ✴️ Mérgezés
+### ✴️ Mérgezés (⭕?)
 
 - körönként / percenként / óránként: `1 ÉP`⭕
 
@@ -183,13 +201,6 @@ Ebben az állapotban használhatja a **Kezdeményező Taktikát**, de semmilyen 
   - A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
   - `Előny-1` minden dobásra, ami a megszállottság tárgyához kapcsolódik
   - `Hátrány-1`: minden más dobásra
-
-<br />
-
----
-### ✴️ Optimizmus
-
-⭕TODO: Hatások?⭕
 
 <br />
 
