@@ -236,12 +236,13 @@ Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#mozgás
 Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a játékot. Ilyenkor a következő – opcionális – szabályt javasoljuk:
 
 ```
-- TÉ:+20 mindenkinek
+- TÉ: osztás 10-zel, kerekítés (1-5: le, 6-9: fel)
+- VÉ: osztás 10-zel
+- TÉ: +2 mindenkinek
 - Nincs VÉ csökkentés
 - Nincs páncéldobás
-- TÉ/VÉ: kerekítjük 10-el oszthatóan
-  (1-5: lefelé, 6-9: felfelé)
-- Támadó dobást is kerekítjük
+- Nincs Manőver használat
+- Támadó dobás: k10
 - Erősített sebzés:
   1-10: 6ÉP
   11-20: 12ÉP
