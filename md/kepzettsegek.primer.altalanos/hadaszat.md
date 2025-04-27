@@ -14,7 +14,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
     - ⭕ [Taktika: Íjász](../fortelyok.harci/taktika_ijasz.md): "Fedezőtüzet a visszavonuló lovasság mögé!"
     - ⭕ [Taktika: Testőrség](../fortelyok.harci/taktika_testorseg.md): "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
     - ⭕ [Taktika: Útonállás, rajtaütés](../fortelyok.harci/taktika_utonallas_rajtautes.md): "A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lőssz, Mocsok, tied a kocsis."
-- [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md): "Lándzsások vonalba, megakasztásra készülj!"
+- [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md): "Lándzsások vonalba, megakasztásra készülj!"
 - [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): "Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!"
 
 <br />
