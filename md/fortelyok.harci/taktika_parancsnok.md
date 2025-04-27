@@ -8,7 +8,7 @@ Jó példa erre a [Harc alakzatban](../065_03_harc_alakzatban.md), amely az [Ala
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**:  Lásd [csoportos fizikai képzettségpróba - társak büntetései](../037_csoportos_kepzettsegproba.md#társak-büntetései)
+🌟 **Hatás**:  x
 
 ---
 ### 1. fok
