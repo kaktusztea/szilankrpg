@@ -16,51 +16,23 @@ Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, 
 ```
 Dobás:
  MIN( képzettség + Tulajdonság )
- - társak büntetése
 ```
 
 Ez a csoportos kooperáció nehezebb formája, itt a “leggyengébb láncszem” határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb.
 
-A csapat a tagjai közül a legalacsonyabb `(képzettség szint + Tulajdonság)` értékével dobja a próbát. A rontás az egész csapat rontását jelenti.
+A csapat a tagjai közül a legalacsonyabb `(képzettség szint + Tulajdonság)` értékével dobja a próbát
+- egyéni fortély bónuszok is beleszámítanak
+- kiterjesztő fortély is beleszámít
+
+A rontás az egész csapat rontását jelenti.
 
 Ez tipikusan a "Ne csesszük el" típusú próba. ⚡Példa: csoportos Lopakodás.
 
-#### Társak büntetései
+#### 🔆 Vezető fortélyok (fizikai)
 
-Ha többen is a leggyengébb értékű személy ( képzettség + Tulajdonság ) szintjének közelében levő értékkel rendelkeznek, az tovább rontja az esélyeket.
+A fent kalkulált csoport-értéket lehet emelni, amennyiben az adott képzettséghez kapcsolódó "Vezető fortély" ismeretében van egy csapattag ÉS a csapat az ő vezetése alatt összeszokott.
 
-```
--1 büntetés / személy
-
-Max -3 büntetés
-```
-
-Minden társ `-1` büntetést ad a dobáshoz, amennyiben megfelel a lenti követelményeknek. Legfeljebb `-3` büntetés érhető így el.
-
-#### Társ követelménye
-
-```
-(Képzettség-szint + Tulajdonság)
-  értéke max 3 pont távolságra van
-  a dobó személy értékétől
-```
-
-⚡ Példa: legképzetlenebb személy `Képzettség-szint + Tulajdonság` értéke: `4`\
-Ilyenkor a `5, 6` és `7` értékkel bíró emberek beszámítanak fejenként `-1` büntetés pontnak. Legfeljebb `-3` büntetés pont érthető így el összesen, tehát a csoport `4-3 = 1` értékre dob `k10` kockával legrosszabb esetben.
-
-#### 🔆 Taktika: Parancsnok fortély
-
-A fenti büntetést a [Taktika: Parancsnok](fortelyok.harci/taktika_parancsnok.md) fortély segítségével csökkenthetjük.
-
-#### 🔆 Fortély bónuszok
-
-Ha az adott csoportos fizikai képzettségpróbánál van kapcsolódó fortély, amely bónuszt, vagy módosítót ad, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legalacsonyabb fokkal (akár `0` értékkel) rendelkezik.
-
-#### 🔆 Fortély mint kiterjesztés
-
-Ha az adott csoportos fizikai képzettségpróbánál van kapcsolódó fortély, amely kiterjeszti a csoportos képzettség értékét, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legalacsonyabb fokkal (akár `0` értékkel) rendelkezik. Így Normál kiterjesztés esetén levonás/bónusz, Erős Kiterjesztés esetén pedig próba-letiltás is előfordulhat.
-
-<br />
+→ Vezető fortélyok (fizikai) ⭕LINK⭕
 
 ---
 ### ⚜️ 2. Csoportos szellemi képzettségpróba
@@ -70,39 +42,21 @@ Dobás:
  MAX( Képzettség-szint + Tulajdonság )
 ```
 
-"Összedugjuk a fejünket", hogy sikerüljön egy szellemi probléma megoldása. Ebben az esetben mindenki ugyanahhoz - a próbában érintett - képzettséghez ért és a csapat tagjai a közös tudás előnyeit hasznosítják. A csapatból az dob, akinek legnagyobb a `Képzettség szint + Tulajdonság` értéke és ehhez jönnek a segítők bónuszai.
+"Összedugjuk a fejünket", hogy sikerüljön egy szellemi probléma megoldása.
 
-#### Segítők bónuszai
+Ebben az esetben mindenki ugyanahhoz - a próbában érintett - képzettséghez ért és a csapat tagjai a közös tudás előnyeit hasznosítják.
 
-```
-+1 bónusz / személy
+A csapatból az dob, akinek legnagyobb a `(Képzettség szint + Tulajdonság)` értéke
+- egyéni fortély bónuszok is beleszámítanak
+- kiterjesztő fortély is beleszámít
 
-Max +3 bónusz
-```
+#### 🔆 Vezető fortélyok (szellemi)
 
-Minden segítő `+1` bónuszt ad a dobáshoz, amennyiben megfelel a követelményeknek. Legfeljebb `+3` bónusz érhető így el.
+A fent kalkulált csoport-értéket lehet emelni, amennyiben az adott képzettséghez kapcsolódó "Vezető fortély" ismeretében van egy csapattag ÉS a csapat az ő vezetése alatt összeszokott.
 
-#### Segítő követelménye
+→ Vezető fortélyok (szellemi) ⭕LINK⭕
 
-```
-(Képzettség-szint + Tulajdonság)
-  értéke max 3 pont távolságra lehet
-  a dobó személy értékétől
-```
-
-⚡ Példa: legképzettebb személy `Képzettség-szint + Tulajdonság` értéke: `9`\
-Ilyenkor a `8, 7` és `6` értékkel bíró emberek beszámítanak fejenként `+1` pontnak. Legfeljebb `+3` bónusz érthető így el összesen, tehát a csoport `9+3 = 12` értékre dob `k10` kockával optimális esetben.
-
-A fent említett `+3` limit növelhető a **Koordinátor** fortéllyal.
-
-#### 🔆 Koordinátor fortély
-
-A fenti limit határt a [Koordinátor](fortelyok.altalanos/koordinator.md) fortély segítségével emelhetjük.
-
-#### 🔆Fortély kiterjesztés
-
-Ha az adott csoportos szellemi képzettségpróbánál van fortély, amely kiterjeszti a csoportos képzettség értékét, akkor a résztvevő tagok közül annak a fortély foka számít, aki a legmagasabb fokkal rendelkezik.
-
+⭕TÖRÖL: [Koordinátor](fortelyok.altalanos/koordinator.md) 
 
 <br />
 
@@ -115,7 +69,7 @@ több ismeretre
   célszám (lista) 
 ```
 
-Ez a leginkább magától értetődő eset. Egy komplex feladatnál több képzettségre, vagy (képzettéség+fortély) kiterjesztés kombinációra lehet szükség.
+Ez a leginkább magától értetődő eset. Egy komplex feladatnál több képzettségre, vagy (képzettség+fortély) kiterjesztés kombinációra lehet szükség.
 
 A **KM** felsorolja, milyen ismeretekre van szükség és mik külön-külön a célszámok a komplex feladat elemeinek elvégzéséhez.
 
