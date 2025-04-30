@@ -2,15 +2,13 @@
 
 <sub>→ [TODO/ISSUE karakteralkotás](https://github.com/kaktusztea/szilankrpg/wiki/TODO.karakteralkotas)</sub>
 
-Az áttekintő szöveget lásd a tartalomjegyzék után.
+Az áttekintő szöveget lásd a tartalomjegyzék után ↓
 
-### Alapok
+### [Karakteralkotó ods](011_karakteralkoto_ods.md)
 
-#### → [Karakteralkotó ods](011_karakteralkoto_ods.md)
+### [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_kalandozok_elotortenet_szemelyiseg_felszereles.md)
 
-#### → [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_kalandozok_elotortenet_szemelyiseg_felszereles.md)
-
-#### → [Tapasztalati Szint](013_tsz_szintlepes.md)
+### [Tapasztalati Szint](013_tsz_szintlepes.md)
 
 ---
 ### [Egyedi pontokkal növelt jellemzők](014_00_egyedi_pontokkal_novelt_jellemzok.md)
