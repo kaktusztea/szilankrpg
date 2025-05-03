@@ -100,7 +100,7 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
     - nincs gátlás, DE Önuralom -1
   - Példa-2: Dreina pap tárgyalás előtt feláldozza az érzelmeit
     - Fogékonyság: -1/-2,....
-    - FONTOS: NE a legyen `CÉL==ESZKÖZ`. Hanem hátrányt adjon.
+    - FONTOS: NE legyen a `CÉL==ESZKÖZ`. Hanem hátrányt adjon.
   - Példa-3: Életerő áldozása
   - Példa-4: Vidámság áldozása
 
