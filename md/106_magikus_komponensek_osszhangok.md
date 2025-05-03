@@ -41,6 +41,7 @@ Vihar, aszály, szivárvány, napfény, holdfény
 
 ---
 ### Idő, időszak
+
 - Napszak: Napkelte, Dél, Napnyugta, Éjfél
 - Évszak: Tavasz, Nyár, Ősz, Tél
 - Holdciklus(ok): Újhold, telihold, napfogyatkozás, holdfogyatkozás
