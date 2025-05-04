@@ -106,6 +106,17 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
   - Példa-4: Vidámság áldozása
 
 ---
+### Helyszín jellege
+
+- föld alatt
+- levegőben
+- városban
+- vadonban, erdős környezet
+- hegyi környezet
+- embertömegben
+- egyedül
+
+---
 ### Fontos helyszín
 
 - történelmi: a legvidámabb esküvő volt itt 1000 éve - itt könnyebb gyógyítani, pozitív asztrális varázslatok
