@@ -41,7 +41,7 @@
 - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)
 - [Vezető: Fejvadász strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md)
 - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)
-- [Vezető: Léglovaskapitány](../fortelyok.harci/vezeto_leglovaskapitany.md)
+- [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)
 - [Vezető: Rablóvezér](fortelyok.harci/vezeto_rablovezer.md)
 
 ---
