@@ -32,4 +32,16 @@ A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
 
 🌟 **Hatás**: `+4` bónusz csoportos **Lopakodás/rejtőzés** értékre
 
+<br />
+
+### Megjegyzések
+
+Ez a fortély követelmény a Kr4ni Strategis pszí-diszciplínákhoz
+
+<br />
+
 ---
+
+
+
+

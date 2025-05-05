@@ -1,4 +1,4 @@
-## 🟣 Vezető: Útonálló (2)
+## 🟣 Vezető: Rablóvezér (2)
 
 Képes vagy egy rablóbanda
 - taktikáját, rajtaütéseit megtervezni  → **Hadászat** képzettség Normál kiterjesztése
