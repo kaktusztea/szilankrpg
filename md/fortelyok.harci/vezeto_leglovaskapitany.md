@@ -1,14 +1,19 @@
-## 🟣 Vezető: Léglovaskapitány
+## 🟣 Vezető: Léglovaskapitány (2)
 
-Az [Léglovaslás](../kepzettsegek.szekunder/leglovaglas.md)  képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használjuk lovas alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md).
-
-Egy jó parancsnok képes koordinálásával a légi lovas alakzat közös mozgását hatékonyabbá tenni.
-
-Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni a magasból - harci körülmények között is.
+Képes vagy egy légi hátas alakzat
+- egyben tartására változó harci környezetben. Megfelelő alakzat felvétele, adaptálódás  → **Hadászat** képzettség Normál kiterjesztése
+- harcát koordinálni → bónusz **Léglovaglás** (harc alakzatban)
 
 ### Kiterjeszti ezeket
 
 - [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
+
+---
+#### Bónusz
+
+Az [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használjuk lovas alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md). Egy jó parancsnok képes koordinálásával a légi lovas alakzat közös mozgását hatékonyabbá tenni.
+
+Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni a magasból - harci körülmények között is.
 
 ### 1. fok
 

@@ -1,14 +1,19 @@
-## 🟣 Vezető: Lovaskapitány
+## 🟣 Vezető: Lovaskapitány (2)
 
-Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használjuk lovas alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md).
-
-Egy jó parancsnok képes koordinálásával a lovascsapat közös mozgását hatékonyabbá tenni.
-
-Nehézlovas formációba fejlődni, együtt fordulni, alakzatot tartani - harci körülmények között is.
+Képes vagy egy hátas alakzat
+- egyben tartására változó harci környezetben. Megfelelő alakzat felvétele, adaptálódás  → **Hadászat** képzettség Normál kiterjesztése
+- harcát koordinálni → bónusz **Lovaglás** (harc alakzatban)
 
 ### Kiterjeszti ezeket
 
 - [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!"
+
+---
+#### Bónusz
+
+Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használjuk lovas alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md). Egy jó parancsnok képes koordinálásával a lovas alakzat közös mozgását hatékonyabbá tenni.
+
+Formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni - harci körülmények között is.
 
 ### 1. fok
 
