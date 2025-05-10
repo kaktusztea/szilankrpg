@@ -22,7 +22,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Inspiráció
 - Késztetés / kísértés (3)
-- Kimerültség - szellemi (3)
+- Szellemi (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - Mérgezés
 - Obszesszió
 - Trauma: (1) Lélekrepedés, (2) Lélektörés
@@ -256,12 +256,12 @@ Hátrány-2: **Akaraterő** Tulajdonságpróbára
 <br />
 
 ---
-### ✴️ Kimerültség - szellemi (1) Kialvatlanság
+### ✴️ Szellemi (1) Kialvatlanság
 
 Hatás:
   - Hátrány-1: Észlelés képzettségróba
 
-### ✴️ Kimerültség - szellemi  (2) Eltompultság
+### ✴️ Szellemi (2) Eltompultság
 
 Hatások:
   - Pszí használat elvesztése
@@ -269,7 +269,7 @@ Hatások:
   - Hátrány-1: nem-mágikus szellemi képzettségekre
   - lassabb gondolkodás
 
-### ✴️ Kimerültség - szellemi  (3) Delírium
+### ✴️ Szellemi (3) Delírium
 
 Hatások:
   - Pszí használat elvesztése
