@@ -16,7 +16,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság
 - Eufória
-- Félelem alatt: (1) Szorongás, (2) Rettegés, (3) Bénító félelem
+- Félelem: (1) Szorongás, (2) Rettegés, (3) Bénító félelem
 - Fizikai állapot: (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
 - Fogékony
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
@@ -124,7 +124,7 @@ Viszont
 <br />
 
 ---
-### ✴️ Félelem alatt (1) Szorongás
+### ✴️ Félelem (1) Szorongás
 
 Mi okozhatja?
 - nem bírja a stresszt
@@ -134,14 +134,14 @@ Mi okozhatja?
 - Hatás:
     - Maximális [Védő taktikában](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika) kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
 
-### ✴️ Félelem alatt (2) Rettegés
+### ✴️ Félelem (2) Rettegés
 
 Hatások
 - Csak [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikát használhat: `VÉ:+30`
 - Többszörös támadás elvesztése
 - Csak mágia vagy démonok hatására kerülhet ebbe az állapotba
 
-### ✴️ Félelem alatt (3) Bénító félelem
+### ✴️ Félelem (3) Bénító félelem
 
 - rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)
 - Hatások
