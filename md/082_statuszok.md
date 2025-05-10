@@ -21,7 +21,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Fogékony
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Inspiráció
-- Késztetés / kísértés (3)
+- Késztetés: (1) Sugallat, (2) Vágy, (3) Kényszer
 - Mérgezés
 - Obszesszió
 - Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
