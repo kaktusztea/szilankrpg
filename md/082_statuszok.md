@@ -22,9 +22,9 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Inspiráció
 - Késztetés / kísértés (3)
-- Szellemi (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - Mérgezés
 - Obszesszió
+- Szellemi (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - Trauma: (1) Lélekrepedés, (2) Lélektörés
 - Vakság: (1) Félvak, (2) Teljes vakság
 - Zavar: (1) Megrendültség, (2) Sokk
