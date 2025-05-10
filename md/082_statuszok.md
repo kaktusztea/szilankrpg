@@ -13,7 +13,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Átkozott (1,2) Képzettség
 - Átkozott (1,2) Viselkedés alapúak
 - Átkozott (1,2) Szakrális bélyeg alapúak
-- Bénultság
+- Bénultság (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság
 - Eufória
 - Félelem alatt: (1) Szorongás, (2) Rettegés, (3) Bénító félelem
