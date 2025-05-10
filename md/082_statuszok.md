@@ -17,7 +17,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Eszmélet: (1) Bódultság, (2) Kábultság
 - Eufória
 - Félelem: (1) Szorongás, (2) Rettegés, (3) Bénító félelem
-- Fizikai állapot: (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
+- Fizikai: (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
 - Fogékony
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Inspiráció
@@ -153,13 +153,13 @@ Hatások
 <br />
 
 ---
-### ✴️ Fizikai állapot (1) Fáradtság
+### ✴️ Fizikai (1) Fáradtság
 
 Hatások:
   - Lassuló reflexek (1)
   - Hátrány-1: nem-harc fizikai képzettségekre
 
-### ✴️ Fizikai állapot (2) Kimerültség
+### ✴️ Fizikai (2) Kimerültség
 
 Hatások:
  - Lassuló reflexek (1)
@@ -167,7 +167,7 @@ Hatások:
  - Hátrány-2: nem-harc fizikai képzettségekre
  -  Egészség kategória I: mind full FP-vel feltöltve ⭕TODO: ebből legyen Hatás?⭕
 
-### ✴️ Fizikai állapot (3) Elcsigázottság
+### ✴️ Fizikai (3) Elcsigázottság
 
 Hatások:
   - Lassuló reflexek (2)
