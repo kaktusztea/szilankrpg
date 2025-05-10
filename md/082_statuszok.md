@@ -13,18 +13,18 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Átkozott (1,2) Képzettség
 - Átkozott (1,2) Viselkedés alapúak
 - Átkozott (1,2) Szakrális bélyeg alapúak
-- Bénultság (1) Cselekvőképtelenség, (2) Paralízis
+- Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság
 - Eufória
 - Félelem alatt: (1) Szorongás, (2) Rettegés, (3) Bénító félelem
-- Fizikai állapot (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
+- Fizikai állapot: (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
 - Fogékony
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Inspiráció
 - Késztetés / kísértés (3)
 - Mérgezés
 - Obszesszió
-- Szellemi (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
+- Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - Trauma: (1) Lélekrepedés, (2) Lélektörés
 - Vakság: (1) Félvak, (2) Teljes vakság
 - Zavar: (1) Megrendültség, (2) Sokk
