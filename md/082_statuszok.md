@@ -17,7 +17,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Eszmélet: (1) Bódultság, (2) Kábultság
 - Eufória
 - Félelem alatt: (1) Szorongás, (2) Rettegés, (3) Bénító félelem
-- Fizikai állapot (3)
+- Fizikai állapot (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
 - Fogékony
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Inspiráció
