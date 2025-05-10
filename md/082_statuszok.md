@@ -256,6 +256,23 @@ Hátrány-2: **Akaraterő** Tulajdonságpróbára
 <br />
 
 ---
+### ✴️ Mérgezés
+
+Lásd a [150_meregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait**.
+
+<br />
+
+---
+### ✴️ Obszesszió
+
+A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
+
+Hatás:
+- "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
+
+<br />
+
+---
 ### ✴️ Szellemi (1) Kialvatlanság
 
 Hatás:
@@ -276,23 +293,6 @@ Hatások:
   - Hátrány-2: nem-mágikus szellemi képzettségekre
   - Hátrány-2: Mágiahasználat
   - lassabb gondolkodás
-
-<br />
-
----
-### ✴️ Mérgezés
-
-Lásd a [150_meregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait**.
-
-<br />
-
----
-### ✴️ Obszesszió
-
-A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
-
-Hatás:
-- "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
 
 <br />
 
