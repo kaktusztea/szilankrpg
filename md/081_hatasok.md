@@ -4,12 +4,13 @@ A Hatások "elemi" változások, amiket egy karakter elszenved - általában egy
 
 Egy **Státusz** több **Hatást** is képes okozni a karakteren.  Hogy egy Státusz milyen Hatások listáját okozza, azt a [Státuszok](082_statuszok.md) oldalon találod.
 
+<br />
 
-### 🔆 Előny-1,2 és Hátrány-1,2 Hatások
+## ⚜️ Előny-1,2 és Hátrány-1,2 Hatások
 
 Ezek speciális, kockadobásokat érintő Hatások.\
 Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:\
-**Támadó Dobás, Manőver, Tulajdonságpróba, Képzettségpróba, Sebzés, Mágia Akarata, Mágiaellenállás**.
+**Támadó Dobás, Manőver, Tulajdonságpróba, Képzettségpróba (mágia is), Sebzés, Mágia Akarata, Mágiaellenállás**.
 
 ---
 ### 🔥 Előny-1
@@ -45,15 +46,75 @@ Védekezésnél: a támadó dob → `Előny-1`
 
 Védekezésnél: a támadó dob → `Előny-2`
 
+<br />
+
+---
+---
+## ⚜️ Mozgással kapcsolatos Hatások
+
+⭕TODO⭕: csoportosítás
+
+
+### 🔥 Lassulás
+
+  - [Mozgás](063_05_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
+  - Felére csökken a megtehető távolságod - harcon kívül
+
+---
+
+
+### 🔥 Lecövekelt
+
+Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem befolyásolja.
+
+---
+### 🔥 Mozgásképtelenség
+
+  - ⭕VÉ csak a test mozgásának jellegétől függ⭕
+  - mozdulni se bírsz
+  - csak fizikai hatás, mentális hatása nincs
+
+
+
+
+
+
+
+---
+### 🔥 Antyssjárás elvesztése
+
+Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni - alvás közben sem.
+
+
 ---
 ### 🔥 Automatikus kudarc
 
-Az adott képzettségre nem is dobhatsz próbát, azonnal kudarc.
+- Tulajdonságpróbára
+- Képzettségpróbára
+
+Az adott Tulajdonságra/Képzettségre nem is dobhatsz próbát, azonnali kudarc.
+
+Példa: csábítás **Befolyásolás-próba** borzasztó büdösen.
 
 ---
-### 🔥 Beszédképtelenség
+### 🔥 Automatikus próbadobás
 
-Képtelen vagy beszéddel hangot kiadni magadból, még egy nyikkanást sem. Ha hang komponens szükséges varázslatodhoz, akkor ⭕TODO⭕
+Hatás:
+- sima próbadobás (Tulajdonságpróba, Képzettségpróba)
+
+Ami másnak automatikus siker, az neked sima próbadobás.
+
+---
+### 🔥 Beszédképtelenség - zagyva beszéd (1)
+
+- Nem tudsz szavakat formálni, kegfeljebb kiáltani: "Hö!"
+- Mágia hangalapú komponensét sem tudod alkalmazni
+
+---
+### 🔥 Beszédképtelenség - némultság (2)
+
+- Képtelen vagy beszéddel hangot kiadni magadból, még egy nyikkanást sem.
+- Mágia hangalapú komponensét sem tudod alkalmazni
 
 ---
 ### 🔥 Gondolkodásképtelenség
@@ -63,28 +124,12 @@ Nem vagy képes gondolkodni - reagálni, tervezni.
 ---
 ### 🔥 Harcképtelenség - teljes
 
-⭕TODO: adja: teljes bénulás; ájulás⭕
-⭕TODO: legyen részleges is?⭕
-   - ⭕VÉ itt is a mozgás jellegétől függ csak⭕
-   - csak fizikai hatás, mentális hatása nincs
+- Tudsz mozogni, menni, de harcolni nem
+- Védő Értéked a mozgásod jellegétől függ
 
----
-### 🔥 Kezdeményezésben utolsó
-
-Nem is dobhatsz, te cselekedsz a körben utoljára.
-
----
-### 🔥 Lassulás
-
-  - [Mozgás](063_05_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
-  - Felére csökken a megtehető távolságod - harcon kívül
-
----
-### 🔥 Mozgásképtelenség
-
-  - ⭕VÉ csak a test mozgásának jellegétől függ⭕
-  - mozdulni se bírsz
-  - csak fizikai hatás, mentális hatása nincs
+- ⭕TODO⭕: adja: teljes bénulás; ájulás
+- ⭕TODO⭕: legyen részleges is?
+- ⭕TODO⭕: csak fizikai hatás, mentális hatása nincs
 
 ---
 ### 🔥 Pszi használat elvesztése
@@ -92,7 +137,15 @@ Nem is dobhatsz, te cselekedsz a körben utoljára.
 Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádra nincs hatással.
 
 ---
+### 🔥 Reflexek - lassú (1)
 
+Kezdeményezéskor nem dobhatsz, a statikus KÉ értékeddel veszel részt a körben.
+
+### 🔥 Reflexek - lomha (2)
+
+Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ értékedből.
+
+---
 ### 🔥 Többszörös támadás elvesztése
 
 ```
@@ -103,6 +156,11 @@ Max 1 támadás / kör
 ### 🔥 Varázslás képesség elvesztése
 
 Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra nincs hatással.
+
+---
+### 🔥 VÉ csökkenéseid duplázódnak
+
+Mikor sikertelen támadást adnak le rád, az elszenvedett `VÉ` csökkenésed duplázódik.
 
 ---
 ### 🔥 Vérzés - gyenge
