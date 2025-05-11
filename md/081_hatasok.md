@@ -12,7 +12,6 @@ Ezek speciális, kockadobásokat érintő Hatások.\
 Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:\
 **Támadó Dobás, Manőver, Tulajdonságpróba, Képzettségpróba (mágia is), Sebzés, Mágia Akarata, Mágiaellenállás**.
 
----
 ### 🔥 Előny-1
 
 ```
@@ -22,7 +21,6 @@ Védekezés esetén:
   támadó dob → Hátrány-1
 ```
 
----
 ### 🔥 Előny-2
 
 ```
@@ -32,14 +30,12 @@ Védekezés esetén:
   támadó dob → Hátrány-2
 ```
 
----
 ### 🔥 Hátrány-1
 
 `2x` dob, a kisebb dobás számít
 
 Védekezésnél: a támadó dob → `Előny-1`
 
----
 ### 🔥 Hátrány-2
 
 `3x` dob, a legkisebb dobás számít
@@ -50,41 +46,9 @@ Védekezésnél: a támadó dob → `Előny-2`
 
 ---
 ---
-## ⚜️ Mozgással kapcsolatos Hatások
-
-⭕TODO⭕: csoportosítás
-
-
-### 🔥 Lassulás
-
-  - [Mozgás](063_05_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
-  - Felére csökken a megtehető távolságod - harcon kívül
-
----
-
-
-### 🔥 Lecövekelt
-
-Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem befolyásolja.
-
----
-### 🔥 Mozgásképtelenség
-
-  - ⭕VÉ csak a test mozgásának jellegétől függ⭕
-  - mozdulni se bírsz
-  - csak fizikai hatás, mentális hatása nincs
-
-
-
-
-
-
-
----
 ### 🔥 Antyssjárás elvesztése
 
 Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni - alvás közben sem.
-
 
 ---
 ### 🔥 Automatikus kudarc
@@ -99,19 +63,17 @@ Példa: csábítás **Befolyásolás-próba** borzasztó büdösen.
 ---
 ### 🔥 Automatikus próbadobás
 
-Hatás:
-- sima próbadobás (Tulajdonságpróba, Képzettségpróba)
+Sima próbadobás (Tulajdonságpróba, Képzettségpróba)
 
 Ami másnak automatikus siker, az neked sima próbadobás.
 
 ---
-### 🔥 Beszédképtelenség - zagyva beszéd (1)
+### 🔥 Beszéd -  zagyva
 
 - Nem tudsz szavakat formálni, kegfeljebb kiáltani: "Hö!"
 - Mágia hangalapú komponensét sem tudod alkalmazni
 
----
-### 🔥 Beszédképtelenség - némultság (2)
+### 🔥 Beszéd - némultság
 
 - Képtelen vagy beszéddel hangot kiadni magadból, még egy nyikkanást sem.
 - Mágia hangalapú komponensét sem tudod alkalmazni
@@ -119,10 +81,12 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 ---
 ### 🔥 Gondolkodásképtelenség
 
+⭕TODO⭕
+
 Nem vagy képes gondolkodni - reagálni, tervezni.
 
 ---
-### 🔥 Harcképtelenség - teljes
+### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem
 - Védő Értéked a mozgásod jellegétől függ
@@ -132,18 +96,50 @@ Nem vagy képes gondolkodni - reagálni, tervezni.
 - ⭕TODO⭕: csak fizikai hatás, mentális hatása nincs
 
 ---
+### 🔥 Mozgás - lassulás
+
+- [Mozgás](063_05_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
+- Felére csökken a megtehető távolságod - harcon kívül
+
+---
+### 🔥 Mozgás - lecövekelt
+
+Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem befolyásolja.
+
+---
+### 🔥 Mozgás - képtelen
+
+- ⭕VÉ csak a test mozgásának jellegétől függ (link)⭕
+- mozdulni se bírsz nyaktól lefelé
+- szemmozgás, légzés működik
+- csak fizikai hatás, mentális hatása nincs
+
+<br />
+
+---
 ### 🔥 Pszi használat elvesztése
 
 Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádra nincs hatással.
 
 ---
-### 🔥 Reflexek - lassú (1)
+### 🔥 Reflexek - lassú
 
 Kezdeményezéskor nem dobhatsz, a statikus KÉ értékeddel veszel részt a körben.
 
-### 🔥 Reflexek - lomha (2)
+### 🔥 Reflexek - lomha ⭕TODO? más név⭕
 
 Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ értékedből.
+
+---
+### 🔥 Süketség - részleges
+
+Hallasz, de sokkal rosszabbul. Hallás próbakor... ⭕TODO⭕
+
+### 🔥 Süketség - teljes
+
+⭕TODO⭕
+
+<br />
 
 ---
 ### 🔥 Többszörös támadás elvesztése
@@ -151,6 +147,15 @@ Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ érté
 ```
 Max 1 támadás / kör
 ```
+
+---
+### 🔥 Vakság - félvak
+
+⭕TODO: Hatások?⭕
+
+### 🔥 Vakság - teljes
+
+⭕TODO: Hatások?⭕
 
 ---
 ### 🔥 Varázslás képesség elvesztése
