@@ -8,7 +8,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 
 ### Lista
 
-- Átkozott (1,2)
+- Áldott / Átkozott (1,2)
     - Tulajdonság
     - Képzettség
     - Viselkedés
@@ -28,18 +28,25 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 
 ---
 ---
-### ✴️ Átkozott (1,2) Tulajdonság
+### ✴️ Áldott / Átkozott (1,2) Tulajdonság
 
-`Hátrány-1,2` adott **Tulajdonság** próbájára valamilyen feltétel esetén (téma, tárgy)
-- Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték csökkenés van.
+`Előny-1,2` vagy `Hátrány-1,2` adott **Tulajdonság** próbájára valamilyen feltétel esetén (téma, tárgy)
 
-### ✴️ Átkozott (1,2) Képzettség
+Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/csökkenés van.
 
-`Hátrány-1,2` adott Képzettség próbájára
+### ✴️ Áldott / Átkozott (1,2) Képzettség
+
+`Előny-1,2`, `Hátrány-1,2` adott Képzettség próbájára
  
  ⚡ Példa
 - "Átok: Alulművelt Bölcsész" 
 - Hatása:  a természettudományokkal kapcsolatban teljes a vakfolt nála. Az ilyen témájú képzettségpróbákra `Hátrány-1` büntetést kap.
+
+### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
+
+Az Aurádon egy szakrális bélyeg tündököl / éktelenkedik.
+
+ ⚡ Példa: Domvik érintése; Orwella érintése: akin ez van az ⭕TODO⭕
 
 ### ✴️ Átkozott (1,2) Viselkedés
 
@@ -53,12 +60,6 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Irigy - Nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni
   - ⭕TODO⭕
 - ⭕TODO⭕ továbbiak
-
-### ✴️ Átkozott (1,2) Szakrális bélyeg
-
-Az Aurádon egy szakrális bélyeg éktelenkedik.
-
- ⚡ Példa: Orwella érintése: akin ez van az ⭕TODO⭕
 
 <br />
 
