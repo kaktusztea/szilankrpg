@@ -16,7 +16,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
 - Érzet: (1) Fogékony, (2) Inspirált, (3) Obszesszív, (4) Eufória
-- Érzékek  ⭕???? ⭕Ez hatás, vagy státusz?⭕
+- ⭕Érzékek  ⭕???? ⭕Ez hatás, vagy státusz?⭕
 - Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕ Bénító félelem
 - Fizikai: (1) Fáradtság, (2) ⭕Kimerültség, (3) Elcsigázottság
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
