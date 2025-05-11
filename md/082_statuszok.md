@@ -58,10 +58,14 @@ Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/c
 Hatások:
 - `1`: Beszéd - zagyva 
 - `2`: Beszéd - némultság
+
 __
+
 - `1`: Süketség - részleges
 - `2`:  Süketség - teljes
+
 __
+
 - `1`: Vakság - félvak
 - `2`:Vakság - teljes
 
