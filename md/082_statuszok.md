@@ -244,7 +244,7 @@ Hatás:
 
 Hátrány-2: **Akaraterő** Tulajdonságpróbára
 
-**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz -e állni a késztetésnek.
+**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz -e állni a késztetésnek.
 
 ⚡ Példák
 - Kleptománia (1,2,3) ("El kéne lopni valamit...")
