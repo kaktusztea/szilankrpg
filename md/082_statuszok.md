@@ -62,18 +62,18 @@ Hatások:
 __
 
 - `1`: Süketség - részleges
-- `2`:  Süketség - teljes
+- `2`: Süketség - teljes
 
 __
 
 - `1`: Vakság - félvak
-- `2`:Vakság - teljes
+- `2`: Vakság - teljes
 
 ### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
 
 Az Aurádon egy szakrális bélyeg tündököl / éktelenkedik.
 
- ⚡ Példa: Domvik érintése; Orwella érintése: akin ez van az ⭕TODO⭕
+⚡ Példa: Domvik érintése; Orwella érintése: akin ez van az ⭕TODO⭕
 
 <br />
 
@@ -198,8 +198,8 @@ Hatások
 ### ✴️ Fizikai (1) Fáradtság
 
 Hatások:
-  - Reflexek - lassú
-  - Hátrány-1: nem-harc fizikai képzettségekre
+- Reflexek - lassú
+- Hátrány-1: nem-harc fizikai képzettségekre
 
 ### ✴️ Fizikai (2) Kimerültség
 
@@ -271,9 +271,9 @@ Hatás:
 ⚡ Példák
 - Kleptománia (1,2,3) ("El kéne lopni valamit...")
 - Alkoholizmus (1,2,3) ("Igyak piát?")
-    - `1.` Nagyivó: sima próba dobsz a leküzdés ellen
-    - `2.` Alkoholista: `Hátrány-1 próba
-    - `3.` Masszív alkoholista: `Hátrány-2` próba
+  - `1.` Nagyivó: sima próba dobsz a leküzdés ellen
+  - `2.` Alkoholista: `Hátrány-1 próba
+  - `3.` Masszív alkoholista: `Hátrány-2` próba
 
 <br />
 
