@@ -1,12 +1,8 @@
 ## ✴️ Státuszok
 
-A Státuszok ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell gyógyulni".
+A Státuszok ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell gyógyulnia".
 
-A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő (pl. aki támad, aki láthatatlan, akinek levágták a karját).
-
-[Karma hátterek](023_karma_hatterek.md) is okozhatnak **Státusz** változást (pl. "Átkozott: Hiszékeny": `Hátrány-2` Emberismeret képzettségpróbára)
-
-### Lista
+A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, aki láthatatlan, akinek levágták a karját).
 
 - Áldott / Átkozott (1,2)
     - Tulajdonság
@@ -16,12 +12,12 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő (pl. 
     - ⭕Szakrális bélyeg
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
-- Érzet: (1) Fogékony, (2) Inspirált, (3) Obszesszív, (4) Eufória
+- Érzet: (1) Fogékony, (2) Inspirált, (3) Obszesszív, (4) Eufórikus
 - Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕ Bénító félelem
 - Fizikai: (1) Fáradtság, (2) ⭕Kimerültség, (3) Elcsigázottság
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Késztetés: (1) Sugallat, (2) Vágy, (3) Kényszer
-- Mérgezés
+- Mérgezés\*
 - Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - ⭕Trauma: (1) Lélekrepedés, (2) Lélektörés
 - ⭕Zavar: (1) Kizökkent, (2) Megrendült, (3) Sokk
@@ -43,6 +39,8 @@ Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/c
 - Hatása:  a természettudományokkal kapcsolatban teljes a vakfolt nála. Az ilyen témájú képzettségpróbákra `Hátrány-1` büntetést kap.
 
 ### ✴️ Átkozott (1,2) Viselkedés
+
+[Karma hátterek](023_karma_hatterek.md) is okozhatnak **Státusz** változást.
 
 - Hiszékeny
   - Emberismeret-próba: `Hátrány-1,2`
@@ -153,10 +151,13 @@ A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt
 Hatás:
 - "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
 
-### ✴️ Érzet (4) Eufória
+### ✴️ Érzet (4) Eufórikus
 
- - A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
- - Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
+- A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
+
+Hatások:
+- ⭕TODO⭕
+- Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
 
 <br />
 
@@ -315,41 +316,19 @@ Hatások:
 <br />
 
 ---
-⭕TODO start⭕
-A lentieket kéne egy masszába gyúrni és egyszerűbb, kevesebb fokú státusz kategóriákat kialakítani. De mindent lefedve.
-
-Eszmélet (4) ---  Bénultság(2)  ---  Zavar (3)
-
-Eszmélet
-- (1) Bódultság
-- (2) Kábultság
-- (3) Ájulás
-- (4) Kóma
-
-Bénultság
-- (1) Cselekvőképtelenség
-- (2) Paralízis
-
-Zavar
-- (1) Kizökkent
-- (2) Megrendült
-- (3) Sokk
-
-
-⭕TODO vége⭕
-
 ### ✴️ Zavar (1) Kizökkelt
 
 A következő kör végéig tart csak.
 
-- ⭕ ez a "stunned" ⭕
+- ⭕ ez a "STUNNED" ⭕
 - ⭕ fizikai ÉS szellemi ⭕
 
+Hatások:
 - Többszörös támadás elvesztése
 - Reflexek - lomha
 - Mozgás - lecövekelt
 - Beszéd - zagyva
-- ⭕Összpontosítás képzettségpróba (Nehézség: ???, nincs Hátrány!)⭕
+- Automatikus képzettségpróba: Összpontosítás (Nehézség: ⭕???⭕)
 
 ### ✴️ Zavar (2) Megrendült
 
@@ -358,8 +337,6 @@ A következő kör végéig tart csak.
 ### ✴️ Zavar (3) Sokk
 
 ⭕TODO⭕ Legyen azonos az Eszmélet 2-vel?
-
-⭕TODO: Külön legyen a Rettegéstől?
 
 <br />
 

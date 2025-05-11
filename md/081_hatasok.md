@@ -61,7 +61,7 @@ Az adott Tulajdonságra/Képzettségre nem is dobhatsz próbát, azonnali kudarc
 Példa: csábítás **Befolyásolás-próba** borzasztó büdösen.
 
 ---
-### 🔥 Automatikus próbadobás
+### 🔥 Automatikus tulajdonság/képzettségpróba
 
 Sima próbadobás (Tulajdonságpróba, Képzettségpróba)
 
