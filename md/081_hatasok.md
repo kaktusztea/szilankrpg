@@ -72,6 +72,8 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 
 - Nem tudsz szavakat formálni, kegfeljebb kiáltani: "Hö!"
 - Mágia hangalapú komponensét sem tudod alkalmazni
+    - ⭕TODO⭕ a mágikus beszéd legyen más, azt ne blokkolja ez a Hatás (?)
+    - ⭕TODO⭕ nem a hangszalagok adják ki a mágikus hangot ??
 
 ### 🔥 Beszéd - némultság
 

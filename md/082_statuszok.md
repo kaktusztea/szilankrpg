@@ -46,6 +46,12 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Hiszékeny
   - Emberismeret-próba: `Hátrány-1,2`
   - Átverős szituációkban, (Befolyásolás+Hazudozás vs Emberismeret) ellenpróbánál
+- Meggondolatlan: Hajlamos vagy kockázatos döntéseket hozni, még akkor is, ha nincs rá szükség
+  - Önuralom próba: `Hátrány-1,2`
+- Paranoiás - Folyamatosan gyanakszol másokra, és nehezen bízol meg bárkiben
+  - ⭕TODO⭕
+- Irigy - Nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni
+  - ⭕TODO⭕
 - ⭕TODO⭕ továbbiak
 
 ### ✴️ Átkozott (1,2) Szakrális bélyeg
