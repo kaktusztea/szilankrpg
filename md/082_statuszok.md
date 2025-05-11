@@ -1,10 +1,10 @@
 ## ✴️ Státuszok
 
-A Státuszok ideiglenes, vagy tartós hatások, amikből "ki kell gyógyulni".
+A Státuszok ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell gyógyulni".
 
-Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki támad, aki láthatatlan, akinek levágták a karját)
+A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő (pl. aki támad, aki láthatatlan, akinek levágták a karját).
 
-[Karma hátterek](023_karma_hatterek.md) is okozhatnak Státusz változást (pl. "Átkozott: Hiszékeny": Hátrány-2 Emberismeretre)
+[Karma hátterek](023_karma_hatterek.md) is okozhatnak **Státusz** változást (pl. "Átkozott: Hiszékeny": `Hátrány-2` Emberismeret képzettségpróbára)
 
 ### Lista
 
