@@ -8,10 +8,11 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 
 ### Lista
 
-- Átkozott (1,2) Tulajdonság
-- Átkozott (1,2) Képzettség
-- Átkozott (1,2) Viselkedés alapúak
-- ⭕Átkozott (1,2) Szakrális bélyeg alapúak
+- Átkozott (1,2)
+    - Tulajdonság
+    - Képzettség
+    - Viselkedés
+    - ⭕Szakrális bélyeg
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
 - Érzet: (1) Fogékony, (2) Inspirált, (3) Obszesszív, (4) Eufória
@@ -23,7 +24,7 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - Mérgezés
 - Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - ⭕Trauma: (1) Lélekrepedés, (2) Lélektörés
-- ⭕Zavar: (1) Megrendültség, (2) Sokk
+- ⭕Zavar: (1) Kizökkent, (2) Megrendültség, (3) Sokk
 
 ---
 ---
@@ -40,14 +41,14 @@ Az kapja a Státuszt, akin a kondíció tartósabb, vagy aki cselekszik (pl. aki
 - "Átok: Alulművelt Bölcsész" 
 - Hatása:  a természettudományokkal kapcsolatban teljes a vakfolt nála. Az ilyen témájú képzettségpróbákra `Hátrány-1` büntetést kap.
 
-### ✴️ Átkozott (1,2) Viselkedés alapúak
+### ✴️ Átkozott (1,2) Viselkedés
 
 - Hiszékeny
   - Emberismeret-próba: `Hátrány-1,2`
   - Átverős szituációkban, (Befolyásolás+Hazudozás vs Emberismeret) ellenpróbánál
 - ⭕TODO⭕ továbbiak
 
-### ✴️ Átkozott (1,2) Szakrális bélyeg alapúak
+### ✴️ Átkozott (1,2) Szakrális bélyeg
 
 Az Aurádon egy szakrális bélyeg éktelenkedik.
 
