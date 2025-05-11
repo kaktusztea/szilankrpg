@@ -12,11 +12,11 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő (pl. 
     - Tulajdonság
     - Képzettség
     - Viselkedés
+    - Érzékek
     - ⭕Szakrális bélyeg
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
 - Érzet: (1) Fogékony, (2) Inspirált, (3) Obszesszív, (4) Eufória
-- ⭕Érzékek  ⭕???? ⭕Ez hatás, vagy státusz?⭕
 - Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕ Bénító félelem
 - Fizikai: (1) Fáradtság, (2) ⭕Kimerültség, (3) Elcsigázottság
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
@@ -24,7 +24,7 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő (pl. 
 - Mérgezés
 - Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - ⭕Trauma: (1) Lélekrepedés, (2) Lélektörés
-- ⭕Zavar: (1) Kizökkent, (2) Megrendültség, (3) Sokk
+- ⭕Zavar: (1) Kizökkent, (2) Megrendült, (3) Sokk
 
 ---
 ---
@@ -42,12 +42,6 @@ Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/c
 - "Átok: Alulművelt Bölcsész" 
 - Hatása:  a természettudományokkal kapcsolatban teljes a vakfolt nála. Az ilyen témájú képzettségpróbákra `Hátrány-1` büntetést kap.
 
-### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
-
-Az Aurádon egy szakrális bélyeg tündököl / éktelenkedik.
-
- ⚡ Példa: Domvik érintése; Orwella érintése: akin ez van az ⭕TODO⭕
-
 ### ✴️ Átkozott (1,2) Viselkedés
 
 - Hiszékeny
@@ -60,6 +54,24 @@ Az Aurádon egy szakrális bélyeg tündököl / éktelenkedik.
 - Irigy - Nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni
   - ⭕TODO⭕
 - ⭕TODO⭕ továbbiak
+
+### ✴️ Átkozott (1,2) Érzékek
+
+Hatások:
+- `1`: Beszéd - zagyva 
+- `2`: Beszéd - némultság
+__
+- `1`: Süketség - részleges
+- `2`:  Süketség - teljes
+__
+- `1`: Vakság - félvak
+- `2`:Vakság - teljes
+
+### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
+
+Az Aurádon egy szakrális bélyeg tündököl / éktelenkedik.
+
+ ⚡ Példa: Domvik érintése; Orwella érintése: akin ez van az ⭕TODO⭕
 
 <br />
 
@@ -303,7 +315,8 @@ Hatások:
 <br />
 
 ---
-⭕TODO⭕ A lentieket kéne egy masszába gyúrni és egyszerűbb, kevesebb fokú státusz kategóriákat kialakítani. De mindent lefedve.
+⭕TODO start⭕
+A lentieket kéne egy masszába gyúrni és egyszerűbb, kevesebb fokú státusz kategóriákat kialakítani. De mindent lefedve.
 
 Eszmélet (4) ---  Bénultság(2)  ---  Zavar (3)
 
@@ -317,7 +330,13 @@ Bénultság
 - (1) Cselekvőképtelenség
 - (2) Paralízis
 
-⭕TODO⭕
+Zavar
+- (1) Kizökkent
+- (2) Megrendült
+- (3) Sokk
+
+
+⭕TODO vége⭕
 
 ### ✴️ Zavar (1) Kizökkelt
 
@@ -332,7 +351,7 @@ A következő kör végéig tart csak.
 - Beszéd - zagyva
 - ⭕Összpontosítás képzettségpróba (Nehézség: ???, nincs Hátrány!)⭕
 
-### ✴️ Zavar (2) Megrendültség
+### ✴️ Zavar (2) Megrendült
 
 ⭕TODO⭕ Legyen azonos az Eszmélet 1-gyel?
 
