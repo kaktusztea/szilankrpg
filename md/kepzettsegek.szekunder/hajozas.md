@@ -8,7 +8,7 @@ A hajózás képessége magában foglalja a hajók kezelését, irányítását 
 
 ### Kapcsolódik
 
-⭕TODO⭕
+- [Vezető: Hajóskapitány](../fortelyok.altalanos/vezeto_hajoskapitany.md) fortély: csoportos hajózás esetén bónuszt ad.
 
 ### Követelmény
 
