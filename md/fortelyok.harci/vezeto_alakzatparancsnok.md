@@ -35,3 +35,4 @@ Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [cs
 ### Megjegyzések
 
 - Ha több **Alakzatparancsnok** van egy csapatban, akkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.
+- Kezeljük lazán: egy rablóbanda vezére is Alakzatparancsnoknak számít.
