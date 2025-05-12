@@ -8,7 +8,7 @@ A **Státuszok** ideiglenes, vagy tartós állapotok, amelyek előnyös, vagy h�
 
 #### [Harci helyzetek (Státuszok)](083_harci_helyzetek_99.md) ✴️🗡️
 
-#### [Mágikus Státuszok](084_magikus_statuszok_99) ✴️✨
+#### [Mágikus Státuszok](084_magikus_statuszok_99.md) ✴️✨
 
 ---
 
