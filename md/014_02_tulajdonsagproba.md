@@ -79,6 +79,11 @@ Mindkét játékos dob (NJK esetén természetesen a KM) `k6`-tal, és az eredm�
 A fentiek alól kivételt képez az `Erő-ellenpróba`. Ott dobás nélkül mindig a nagyobb `Erő` Tulajdonsággal rendelkező karakter nyer.
 
 ---
+### Sérülés hatása tulajdonságpróbára
+
+Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják a tulajdonságpróbáit.
+
+---
 
 🔗 [Szilánk](014_03_szilank.md) →
 

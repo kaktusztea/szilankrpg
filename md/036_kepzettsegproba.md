@@ -221,12 +221,7 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 ---
 ### Sérülés hatása képzettségpróbára
 
-Ha megsérül a karakter, képzettségpróbáira levonások járnak. Hogy mennyi, az attól függ, hogy melyik [sebesülés kategóriában](061_03_sebesules.md#sebes%C3%BCl%C3%A9s)) van, illetve hogy fizikai mozgást igénylő, vagy nem igénylő képzettségét teszi próbára:
-
-|      | S1  | S2 | S3 | S4 |
-| ---- | :----: | :----: | :----: | :----: |
-| **fizikai** | -  | -2 | -4 | -6 |
-| **egyéb**   | -  | -  | -1 | -3 |
+Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják a képzettségpróbáit.
 
 <br />
 
