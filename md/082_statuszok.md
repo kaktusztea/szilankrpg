@@ -19,6 +19,7 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 - Késztetés: (1) Sugallat, (2) Vágy, (3) Kényszer
 - Mérgezés\*
 - Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
+- Sérült: (1) S3, (2) S4
 - ⭕Trauma: (1) Lélekrepedés, (2) Lélektörés
 - ⭕Zavar: (1) Kizökkent, (2) Megrendült, (3) Sokk
 
@@ -307,6 +308,22 @@ Hatások:
 - lassabb gondolkodás
 
 <br />
+
+---
+### ✴️ Sérült (1) S3
+
+Ha az `S3`, vagy `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.\
+Bővebben lásd a [Sebesülés](061_03_sebesules.md#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra) fejezetet.
+
+Hatás:
+- `Hátrány-1`: fizikai képzettségpróbákra
+- `Hátrány-1`: szellemi képzettségpróbákra
+
+### ✴️ Sérült (2) S4
+
+Hatás:
+- `Hátrány-2`: fizikai képzettségpróbákra
+- `Hátrány-2`: szellemi képzettségpróbákra
 
 ---
 ### ✴️ Trauma (1) Lélekrepedés
