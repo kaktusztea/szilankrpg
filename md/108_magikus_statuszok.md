@@ -1,0 +1,3 @@
+## Mágikus Státuszok ✴️✨
+
+TODO

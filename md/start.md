@@ -258,6 +258,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Varázslás módszerei](105_varazslas_modszerek.md)
 - [Mágikus komponensek, összhangok](106_magikus_komponensek_osszhangok.md)
 - [Mágikus Szférák és Arkánumaik](107_magikus_szferak_arkanumok.md)
+- [Mágikus Státuszok](108_magikus_statuszok.md)
 - **Arkánumok listája**
   - [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
   - [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)

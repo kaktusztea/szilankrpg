@@ -1,4 +1,4 @@
-## 🔥 Hatások
+## Hatások 🔥
 
 A Hatások "elemi" változások, amiket egy karakter elszenved - általában egy **Státusz** viselése következtében.
 

@@ -2,11 +2,13 @@
 
 A **Státuszok** ideiglenes, vagy tartós állapotok, amelyek előnyös, vagy hátrányos **Hatásokat** okoznak a karakteren.
 
-#### [Hatások](081_hatasok.md)
+#### [Hatások](081_hatasok.md) 🔥
 
-#### [Státuszok](082_statuszok.md)
+#### [Státuszok](082_statuszok.md) ✴️
 
-#### [Harci helyzetek (Státuszok)](083_harci_helyzetek_99.md)
+#### [Harci helyzetek (Státuszok)](083_harci_helyzetek_99.md) ✴️🗡️
+
+#### [Mágikus Státuszok](084_magikus_statuszok_99) ✴️✨
 
 ---
 

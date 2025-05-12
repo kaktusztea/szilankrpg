@@ -10,6 +10,8 @@
 
 #### [Mágikus szférák, arkánumok](107_magikus_szferak_arkanumok.md)
 
+#### [Mágikus Státuszok](108_magikus_statuszok.md)
+
 ---
 
 ⚜️ [Nyitóoldal](start.md#10-m%C3%A1giarendszer)

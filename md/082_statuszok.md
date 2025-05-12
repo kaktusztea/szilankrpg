@@ -1,4 +1,4 @@
-## ✴️ Státuszok
+## Státuszok ✴️
 
 A Státuszok ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell gyógyulnia".
 
