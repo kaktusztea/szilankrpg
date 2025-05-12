@@ -37,10 +37,10 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 ## Főfejezetek
 
 - [Kezdetek](#0-kezdetek) &nbsp;-&nbsp; [Karakteralkotás](#1-karakteralkot%C3%A1s)
-- [Hátterek](#2-h%C3%A1tterek)  &nbsp;-&nbsp; [Képzettségrendszer](#3-k%C3%A9pzetts%C3%A9grendszer) &nbsp;-&nbsp; [Fortélyok](#4-fort%C3%A9lyok) &nbsp;-&nbsp; [Tradíciók](#5-trad%C3%ADci%C3%B3k)
+- [Hátterek](#2-h%C3%A1tterek-)  &nbsp;-&nbsp; [Képzettségrendszer](#3-k%C3%A9pzetts%C3%A9grendszer-) &nbsp;-&nbsp; [Fortélyok](#4-fort%C3%A9lyok-) &nbsp;-&nbsp; [Tradíciók](#5-trad%C3%ADci%C3%B3k)
 - [Harcrendszer](#6-harcrendszer-%EF%B8%8F) &nbsp;-&nbsp; [Távolsági Harcrendszer](#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
 - [Hatások és Státuszok](#8-hat%C3%A1sok-%C3%A9s-st%C3%A1tuszok)
-- [Pszí](#9-psz%C3%AD) &nbsp;-&nbsp; [Mágiarendszer](#10-m%C3%A1giarendszer) &nbsp;-&nbsp; [Papi mágia](#11-papi-m%C3%A1gia) &nbsp;-&nbsp; [Slan misztérium](#12-slan-miszt%C3%A9rium) &nbsp;-&nbsp; [Varázstárgyak](#13-var%C3%A1zst%C3%A1rgyak)
+- [Pszí](#9-psz%C3%AD-) &nbsp;-&nbsp; [Mágiarendszer](#10-m%C3%A1giarendszer-) &nbsp;-&nbsp; [Papi mágia](#11-papi-m%C3%A1gia) &nbsp;-&nbsp; [Slan misztérium](#12-slan-miszt%C3%A9rium) &nbsp;-&nbsp; [Varázstárgyak](#13-var%C3%A1zst%C3%A1rgyak)
 - [Gyógyítás, gyógyulás](#14-gy%C3%B3gy%C3%ADt%C3%A1s-gy%C3%B3gyul%C3%A1s) &nbsp;-&nbsp; [Méregrendszer, Mérgek](#15-m%C3%A9regrendszer-m%C3%A9rgek) &nbsp;-&nbsp; [Szituációk](#16-szitu%C3%A1ci%C3%B3k)
 
 <br />

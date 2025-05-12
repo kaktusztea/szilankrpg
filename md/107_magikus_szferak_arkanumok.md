@@ -158,4 +158,4 @@ Ez a teremtés és mágia szférája.
 
 ---
 
-⚜️ [Nyitóoldal](start.md#10-m%C3%A1giarendszer)
+⚜️ [Nyitóoldal](start.md#10-m%C3%A1giarendszer-)

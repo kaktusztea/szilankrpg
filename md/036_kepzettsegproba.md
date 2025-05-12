@@ -236,4 +236,4 @@ Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbá
 
 🔗 [Képzettségek és Fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer)
+⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

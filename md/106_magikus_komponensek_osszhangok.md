@@ -147,4 +147,4 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 
 🔗 [Mágikus szférák, arkánumaik listája](107_magikus_szferak_arkanumok.md)→
 
-⚜️ [Nyitóoldal](start.md#10-m%C3%A1giarendszer)
+⚜️ [Nyitóoldal](start.md#10-m%C3%A1giarendszer-)

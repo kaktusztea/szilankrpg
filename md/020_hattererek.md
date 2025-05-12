@@ -10,4 +10,4 @@ A Hátterek ingyenes, változatos jellemzők.
 
 ---
 
-⚜️ [Nyitóoldal](start.md#2-h%C3%A1tterek)
+⚜️ [Nyitóoldal](start.md#2-h%C3%A1tterek-)

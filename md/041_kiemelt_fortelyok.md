@@ -16,4 +16,4 @@ A Kiemelt Fortélyok alá három, egyedi ismeret tartozik, amelyek nem sorolhat�
 
 🔗 [Szabad Fortélyok](042_szabad_fortelyok.md) →
 
-⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok)
+⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok-)

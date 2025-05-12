@@ -52,4 +52,4 @@ Erről a [Képzettségek és fortélyok kapcsolata](038_01_kepzettsegek_fortelyo
 
 ---
 
-⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok)
+⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok-)

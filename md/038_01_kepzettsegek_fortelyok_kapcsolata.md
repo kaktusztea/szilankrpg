@@ -178,4 +178,4 @@ Nehéz: 12
 
 🔗 [Fortélyok kiterjesztéslistája](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer)
+⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

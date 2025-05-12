@@ -25,4 +25,4 @@ Kategóriánként alább láthatjuk őket:
 
 ---
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer)
+⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

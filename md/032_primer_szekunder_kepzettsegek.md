@@ -13,4 +13,4 @@ A [Primer és Szekunder ismeretek](017_primer_szekunder_ismeretek.md) féle felo
 
 🔗 [Képzettségszint skála](033_kepzettsegszint_skala.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer)
+⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

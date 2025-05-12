@@ -37,4 +37,4 @@
 
 🔗 [Fortélyok főoldal](040_fortelyok.md) ↑
 
-⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok)
+⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok-)
