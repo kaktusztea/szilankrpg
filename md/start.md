@@ -64,7 +64,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_kalandozok_elotortenet_szemelyiseg_felszereles.md)
 - [Tapasztalati Szint](013_tsz_szintlepes.md)
 - [Egyedi pontokkal növelt jellemzők](014_00_egyedi_pontokkal_novelt_jellemzok.md)
-  - [Tulajdonságok](014_01_tulajdonsagok.md)
+  - [Tulajdonságok](014_01_tulajdonsagok.md) ⚪
   - [Tulajdonságpróba](014_02_tulajdonsagproba.md) 🎲
   - [Szilánk](014_03_szilank.md)
 - [Karakteralkotó Pontok (KP)](015_kp.md)
@@ -82,14 +82,14 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Nem Játékos Karakterek](019_njk.md)
 
 ---
-### 2. [Hátterek](020_hattererek.md)
+### 2. [Hátterek](020_hattererek.md) 🟡
 
   - [Faj Hátterek](021_faj_hatterek.md)
   - [Leíró Hátterek](022_leiro_hatterek.md)
   - [Karma Hátterek](023_karma_hatterek.md)
 
 ---
-### 3. [Képzettségrendszer](030_kepzettsegrendszer.md)
+### 3. [Képzettségrendszer](030_kepzettsegrendszer.md) 🔵
 
 - [Képzettséglista](031_kepzettseglista.md)
 - [Primer és Szekunder képzettségek](032_primer_szekunder_kepzettsegek.md)
@@ -103,7 +103,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Bázis képzettségek](039_bazis_kepzettsegek.md)
 
 ---
-### 4. [Fortélyok](040_fortelyok.md)
+### 4. [Fortélyok](040_fortelyok.md) 🟣
 
   - [Kiemelt Fortélyok](041_kiemelt_fortelyok.md)
   - [Szabad Fortélyok](042_szabad_fortelyok.md)
@@ -240,17 +240,18 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 ---
 ### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)
 
-- [Hatások](081_hatasok.md)
-- [Státuszok](082_statuszok.md)
-- [Harci helyzetek](083_harci_helyzetek_99.md) 
+- [Hatások](081_hatasok.md) 🔥
+- [Státuszok](082_statuszok.md) ✴️
+- [Harci helyzetek](083_harci_helyzetek_99.md) ✴️🗡️
+- [Mágikus Státuszok](084_magikus_statuszok_99.md) ✴️✨
 
 ---
-### 9. [Pszí](090_pszi.md)
+### 9. [Pszí](090_pszi.md) 🌀
 
-#### 9.1 [Pszi diszciplínák](091_pszi_diszciplinak.md)
+#### 9.1 [Pszi diszciplínák](091_pszi_diszciplinak.md) 🟢
 
 ---
-### 10. [Mágiarendszer](100_magiarendszer.md)
+### 10. [Mágiarendszer](100_magiarendszer.md) ✨
 
 - [Mágiaelmélet](101_magiaelmelet.md)
 - [Mágia alapszabályok](102_magia_alapszabalyok.md)
