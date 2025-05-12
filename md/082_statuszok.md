@@ -312,7 +312,7 @@ Hatások:
 ---
 ### ✴️ Sérült (1) S3
 
-Ha az `S3`, vagy `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.\
+Ha az `S3` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.\
 Bővebben lásd a [Sebesülés](061_03_sebesules.md#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra) fejezetet.
 
 Hatás:
@@ -323,6 +323,8 @@ Hatás:
   - szellemi képzettségpróbákra
 
 ### ✴️ Sérült (2) S4
+
+Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.
 
 Hatás:
 - `Hátrány-2`:
