@@ -31,7 +31,7 @@ Ha harc közben más sebesülés kategóriába (S) lép a karakter, akkor fix `T
 | :--------: | :-: | :-: | :-: | :-: |
 | TÉ levonás |  -  | -10 | -20 | -30 |
 
-### S4 kategóriás fájdalomtűrés
+### `S4` kategóriás fájdalomtűrés
 
 ```
 Fájdalomtűrés (K) + Edzettség (T)
@@ -40,12 +40,12 @@ Fájdalomtűrés (K) + Edzettség (T)
 
 ⭕[Harci láz ad bónuszt?](https://github.com/kaktusztea/szilankrpg/wiki/TODO.fortelyok#harci-l%C3%A1z)
 
-Ha a karakter az S4-es (Súlyosan sebesült) kategóriába ér egyszeri [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + **Edzettség** próbát kell dobnia Nehéz (`12`) célszám ellen.
+Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + Edzettség)** próbát kell dobnia **Nehéz** (`12`) célszám ellen.
 
-Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
+Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia. Sikertelen próba esetén a karakter elájul.
 
 ---
-### ⚡ Példa Fájdalomtűrésre
+### ⚡ Példa Fájdalomtűrés `TÉ` módosítóira
 
 Tetves, a tolvaj Fájdalomtűrése `7.szintű`, `Önuralma:+1` (`összesen:8`)
 Ekkor az ő sebesülés táblázata így néz ki:
@@ -60,14 +60,9 @@ Ekkor az ő sebesülés táblázata így néz ki:
 Mérgezés, kínzás, egyéb fájdalom esetén a karakterek Fájdalomtűrés-próbát kell dobnia a KM által meghatározott célszámra - általában **Önuralom** Tulajdonsággal.
 
 ---
-### Sérülés hatása képzettségpróbára
+### Sérülés hatása Tulajdonság- és Képzettségpróbára
 
-Ha megsérül a karakter, képzettségpróbáira levonások járnak. Hogy mennyi, az attól függ, hogy melyik sebesülés kategóriában van, illetve hogy fizikai mozgást igénylő, vagy nem igénylő képzettségét teszi próbára:
-
-| - | S1 | S2 | S3 | S4 |
-| :-----: | :----: | :----: | :----: | :----: |
-| Fizikai képzettség | - | -2 | -4 | -6 |
-| Egyéb képzettség | - | - | -1 | -3 |
+Ha megsérül a karakter és `S3`, vagy `S4` kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják.
 
 ---
 ### ⚡ Példa a sebesülésre
