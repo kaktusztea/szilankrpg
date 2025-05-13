@@ -6,7 +6,7 @@ Képes vagy egy harci alakzat
 
 ### Kiterjeszti ezeket
 
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "Lándzsások vonalba, megakasztásra készülj!"
+- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "Lándzsások vonalba, megakasztásra készülj!" ; "A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lőssz, Mocsok, tied a kocsis.""
 
 ---
 #### Bónusz

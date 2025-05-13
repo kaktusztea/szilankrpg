@@ -32,7 +32,6 @@
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
 - [Taktika: Íjász](fortelyok.harci/taktika_ijasz.md)🔺
-- [Taktika: Testőrség](fortelyok.harci/taktika_testorseg.md)🔺
 - [Támadás erőből](fortelyok.harci/tamadas_erobol.md)
 - [Természetes fegyver](fortelyok.harci/termeszetes.fegyver.md)
 - [Testőr](fortelyok.harci/testor.md)
@@ -42,7 +41,7 @@
 - [Vezető: Fejvadász strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md)
 - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)
 - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)
-- [Vezető: Rablóvezér](fortelyok.harci/vezeto_rablovezer.md)
+- [Vezető: Testőrparancsnok](fortelyok.harci/vezeto_testorparancsnok.md)
 
 ---
 ### Lovas harci fortélyok
