@@ -42,6 +42,7 @@ Az Érzék-, Alvilági és fizikai-, Tudományos- és Befolyástól védő fort�
 - [Szerencsés](fortelyok.altalanos/szerencses.md)
 - [Úszás](fortelyok.altalanos/uszas.md)
 - [Vadember](fortelyok.altalanos/vadember.md)
+- [Vezető: Céhmester](fortelyok.altalanos/vezeto_cehmester.md) 🔁
 - [Vezető: Hajóskapitány](fortelyok.altalanos/vezeto_hajoskapitany.md)
 - [Villámgyors keresés](fortelyok.altalanos/villamgyors.kereses.md)
 - [Zártörő](fortelyok.altalanos/zartoro.md)
