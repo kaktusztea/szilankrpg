@@ -6,6 +6,10 @@ Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
 
 Intelligencia, Emlékezet
 
+### Kapcsolódik
+
+- [Vezető: Nyomozó](../fortelyok.altalanos/vezeto_nyomozo.md) fortély: csoportos nyomozás esetén bónuszt ad.
+
 ### Normál kiterjesztés
 
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre
