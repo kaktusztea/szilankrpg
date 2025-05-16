@@ -16,6 +16,11 @@ A többi halandóhoz képest a Kalandozók gyorsabban gyógyulnak. A szabályren
 
 A bevezetőben említett Szilánk valóságformáló erővel bír. Ezt számszerűsítjük is, narratív elemként segíti a kalandozókat a játék során. Bővebben lásd a leírásánál.
 
+---
+### [Manőver Pontok](066_02_manover_pontok.md)
+
+(Kizárólag) Kalandozóként néha rásegíthetsz a szerencsére a fenti pontok használatával.
+
 <br />
 
 ---
