@@ -68,14 +68,14 @@ Sima próbadobás (Tulajdonságpróba, Képzettségpróba)
 Ami másnak automatikus siker, az neked sima próbadobás.
 
 ---
-### 🔥 Beszéd -  zagyva
+### 🔥 Beszédvesztés -  részleges
 
 - Nem tudsz szavakat formálni, kegfeljebb kiáltani: "Hö!"
 - Mágia hangalapú komponensét sem tudod alkalmazni
     - ⭕TODO⭕ a mágikus beszéd legyen más, azt ne blokkolja ez a Hatás (?)
     - ⭕TODO⭕ nem a hangszalagok adják ki a mágikus hangot ??
 
-### 🔥 Beszéd - némultság
+### 🔥 Beszédvesztés - teljes
 
 - Képtelen vagy beszéddel hangot kiadni magadból, még egy nyikkanást sem.
 - Mágia hangalapú komponensét sem tudod alkalmazni
@@ -151,7 +151,7 @@ Max 1 támadás / kör
 ```
 
 ---
-### 🔥 Vakság - félvak
+### 🔥 Vakság - részleges
 
 ⭕TODO: Hatások?⭕
 

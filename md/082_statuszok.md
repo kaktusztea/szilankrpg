@@ -12,7 +12,8 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
     - ⭕Szakrális bélyeg
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
-- Érzet: (1) Fogékony, (2) Inspirált, (3) Obszesszív, (4) Eufórikus
+- Érzékvesztés: (1) részleges, (2) teljes
+- Érzet: (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
 - Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕ Bénító félelem
 - Fizikai: (1) Fáradtság, (2) ⭕Kimerültség, (3) Elcsigázottság
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
@@ -56,19 +57,7 @@ Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/c
 
 ### ✴️ Átkozott (1,2) Érzékek
 
-Hatások:
-- `1`: Beszéd - zagyva 
-- `2`: Beszéd - némultság
-
-__
-
-- `1`: Süketség - részleges
-- `2`: Süketség - teljes
-
-__
-
-- `1`: Vakság - félvak
-- `2`: Vakság - teljes
+Lásd **Érzékvesztés** (1,2) Státuszt lenn.
 
 ### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
 
@@ -135,6 +124,21 @@ Az Antyssjárás viszont ebben az állapotban is működik.
 <br />
 
 ---
+### ✴️ Érzékvesztés (1) részleges
+
+Hatás: valamelyik az alábbiak közül
+- `1`: Beszédvesztés - részleges 
+- `1`: Süketség - részleges
+- `1`: Vakság - részleges
+
+### ✴️ Érzékvesztés (2) teljes
+
+Hatás: valamelyik az alábbiak közül
+- `2`: Süketség - teljes
+- `2`: Beszédvesztés - teljes
+- `2`: Vakság - teljes
+
+---
 ### ✴️ Érzet (1) Fogékony
 
 A nem-mágikus érzékszervi, vagy érzelmi ingerek jobban hatnak rád. érzelmileg jobban megnyílsz - pozitív/negatív értelemben is.
@@ -149,16 +153,17 @@ Hatások
 - `Előny-1`: kreatív tevékenységekre
 - `Hátrány-1`: koncentrációt igénylő feladatokra
 
-### ✴️ Érzet (3) Obszesszív
+### ✴️ Érzet (3) Eufórikus
+
+- A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
+
+### ✴️ Érzet (4) Obszesszív
 
 A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
 
 Hatás:
 - "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
 
-### ✴️ Érzet (4) Eufórikus
-
-- A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
 
 Hatások:
 - ⭕TODO⭕
