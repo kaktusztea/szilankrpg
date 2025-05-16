@@ -10,7 +10,8 @@ Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket
 
 ### Kapcsolódik
 
-[Léglovas harc](../fortelyok.harci/leglovas_harc.md) fortély
+- [Léglovas harc](../fortelyok.harci/leglovas_harc.md) fortély
+- [Vezető: Léglovaskapitány](../fortelyok.harci/vezeto_leglovaskapitany.md) fortély: csoportos légi hátas alakzat vezetése esetén bónuszt ad.
 
 ### Erős kiterjesztés
 

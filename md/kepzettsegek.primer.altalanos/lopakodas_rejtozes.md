@@ -13,6 +13,7 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 ### Kapcsolódik
 
 - [Suhanó árnyék](../fortelyok.altalanos/suhano_arnyek.md) fortély
+- [Vezető: Fejvadász strategis](../fortelyok.harci/vezeto_fejvadasz_strategis.md) fortély: csoportos alakulatban lopakodás esetén bónuszt ad.
 
 ### Normál kiterjesztés
 

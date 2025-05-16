@@ -10,7 +10,8 @@ Válassz hátas fajt: 1 db [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad
 
 ### Kapcsolódik
 
-[Lovas harc](../fortelyok.harci/lovas_harc.md) fortély
+- [Lovas harc](../fortelyok.harci/lovas_harc.md) fortély
+- [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): csoportos lovas/földi alakzat vezetése esetén bónuszt ad.
 
 ### Erős kiterjesztés
 
