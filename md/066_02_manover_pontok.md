@@ -29,18 +29,31 @@ A fenti pont keretet `1` harci jelenet során használhatja fel a karakter - meg
 
 Egyszerre legfeljebb `2` pont használható fel (`+4` bónusz). Bővebben lásd: Manőver [Ellenpróba](066_04_manover_vegbevitele.md#ellenpróba-e) fázisa.
 
+---
+### Ellenfelhasználás
+
+```
+Max 1 MP / manőver
+```
+
+Angol nyelvű szerepjátékokban a "counter" jellegű felhasználásra gondolunk.
+
+Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni, akkor ő is beletehet maximum `1 MP = +2 Nehézség` értékkel a dobás Nehézségébe.
+
+**Fontos**: ezt a szándékát még a dobás **előtt** kell megtenni, így ha amúgy sem sikerült volna a Manőver, akkor feleslegesen használta el a beáldozott pontot.
 
 ---
 ### NJK Manőver Pontok
 
 ```
-Névtelen NJK: 1 MP
-Erős NJK: mint egy JK
+Névtelen NJK: 0 MP
+Erős, Kalandozó NJK:
+  mint egy JK
 ```
 
-Névtelen, átlagos **Nem Játékos Karakterek** fixen `1 MP` javadalmazást kapnak.
+Névtelen, átlagos **Nem Játékos Karakterek** nem kapnak `MP` javadalmazást.
 
-A komolyabb, kidolgozottabb, nagyobb ellenfelek, Nem Játékos Karakterek viszont ugyannyi `MP` mennyiséggel rendelkeznek, mint egy **Játékos Karakter**.
+A komolyabb, kidolgozottabb, nagyobb ellenfelek, Nem Játékos Karakterek viszont egy különleges esetben ugyannyi `MP` mennyiséggel rendelkeznek, mint egy **Játékos Karakter**: mégpedig akkor, amennyiben ők is [**Kalandozók**](012_kalandozok_elotortenet_szemelyiseg_felszereles.md) és éppen egy kalandban vesznek részt.
 
 ---
 
