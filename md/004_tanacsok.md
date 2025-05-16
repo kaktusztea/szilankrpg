@@ -23,3 +23,11 @@ Mesélőként ekkor (vagy a játék elején) udvariasan tudassuk a játékosokka
 A játékosok sokszor könnyen eltávolodnak karaktereiktől, azok nehézségeitől, egyfajta örökmozgó avatárként tekintenek rájuk.
 
 Ilyenkor alkalmazhatsz több mesélői eszközt, például a kimerülés érzékeltetését. A harc, harc után, valós pihenés nélkül komolyan próbára teszi a kalandozókat is. Ha úgy érzed, vég nélküli darálás megy, kioszthatsz bizonyos időközönként random [Fáradság Pontokat (FP)](061_02_faradsag_pont.md), amelyek felgyűlése egy idő után már a harcértékekben is megmutatkozik.
+<br />
+
+---
+### A KM nem szabálykönyv
+
+Mese közben a szűk keresztmetszet mindig a KM - ő írja le a környezetet, ő személyesíti meg a [Nem Játékos Karaktereket](019_njk.md), ő szimulálja le a képzeletbeli világ eseményeit.
+
+Ha nem jut eszedbe egy szabály, ne rakj még egy púpot szegény KM hátára, hogy tőle próbálod megtudni, inkább nézd meg a szabálykönyvben magad - ha lehetséges, készülj előre.
