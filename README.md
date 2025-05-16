@@ -67,7 +67,7 @@ A fejlesztés során az alábbi dilemmával találkoztunk:\
 Legyen a misztikus világkép világfüggő, vagy épp ellenkezőleg, független? Ha világfüggő, akkor erős korlátok közé szorulunk a fejlesztés során. Ha pedig független, akkor olyan általános, "kilúgozott" rendszer lesz a végeredmény, amelynek nincsenek gyökerei, melyek az adott világhoz kötik, amin játszunk - kiöntöttük a gyereket a fürdővízzel.
 
 A gordiuszi csomót az alábbi módon vágtuk át:\
-Yn3v mágikus és misztikus világát választottuk, ám az "csupán" inspiráció számunkra. Az istenek, túlvilági lények, legendáik és a történelem jó keretet adnak, ezeket meg is tartjuk, de a mágia, a szakrális erők működése, a szellemi energiák használata nem kötött a korábbi rendszerhez - általunk bármikor egyedi módon át- és újraírható, ha úgy látjuk, hogy  az hangulatosabb, jobban illeszkedik a mi látásmódunkhoz.
+Yn3v mágikus és misztikus világát választottuk, ám az "csupán" inspiráció számunkra. Az istenek, túlvilági lények, legendáik és a történelem jó keretet adnak, ezeket meg is tartjuk, de a mágia, a szakrális erők működése, a szellemi energiák használata nem kötött a korábbi rendszerhez - általunk bármikor egyedi módon át - és újraírható, ha úgy látjuk, hogy  az hangulatosabb, jobban illeszkedik a mi látásmódunkhoz.
 
 Ha tehát valaki ortodox módon ragaszkodik a régi M* világához - lehet, hogy csalódni fog. Aki nyitott az újra, jöjjön velünk!
 
