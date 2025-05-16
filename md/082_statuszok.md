@@ -13,9 +13,9 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
 - Érzékvesztés: (1) részleges, (2) teljes
-- Érzet: (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
 - Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕ Bénító félelem
 - Fizikai: (1) Fáradtság, (2) ⭕Kimerültség, (3) Elcsigázottság
+- Hangulat: (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Késztetés: (1) Sugallat, (2) Vágy, (3) Kényszer
 - Mérgezés\*
@@ -139,13 +139,13 @@ Hatás: valamelyik az alábbiak közül
 - `2`: Vakság - teljes
 
 ---
-### ✴️ Érzet (1) Fogékony
+### ✴️ Hangulat (1) Fogékony
 
 A nem-mágikus érzékszervi, vagy érzelmi ingerek jobban hatnak rád. érzelmileg jobban megnyílsz - pozitív/negatív értelemben is.
 
 A KM adhat valamire `Előny-1`, vagy `Hátrány-1` módosítót - hogy mire, az szituáció függő.
 
-### ✴️ Érzet (2) Inspirált
+### ✴️ Hangulat (2) Inspirált
 
 A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
 
@@ -153,11 +153,11 @@ Hatások
 - `Előny-1`: kreatív tevékenységekre
 - `Hátrány-1`: koncentrációt igénylő feladatokra
 
-### ✴️ Érzet (3) Eufórikus
+### ✴️ Hangulat (3) Eufórikus
 
 - A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
 
-### ✴️ Érzet (4) Obszesszív
+### ✴️ Hangulat (4) Obszesszív
 
 A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
 
