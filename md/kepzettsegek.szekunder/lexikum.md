@@ -6,6 +6,10 @@
 
 Emlékezet, Intelligencia
 
+### Kapcsolódik
+
+- [Vezető: Bölcsészprofesszor](../fortelyok.altalanos/vezeto_bolcseszprofesszor.md) fortély: csoportos kutatómunka, gondolkodás esetén bónuszt ad.
+
 ### Normál kiterjesztés
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Az adott, kapcsolódó **Kultúrkör** ismerete sokszor (nem mindig) szükséges.

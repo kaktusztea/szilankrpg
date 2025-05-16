@@ -5,6 +5,7 @@
 ### Kapcsolódik
 
 - [Mechanika](../fortelyok.altalanos/mechanika.md) fortély
+- [Vezető: Céhmester](../fortelyok.altalanos/vezeto_cehmester.md) fortély: csoportos nyomozás esetén bónuszt ad.
 
 ### Normál kiterjesztés 
 

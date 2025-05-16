@@ -4,7 +4,7 @@ Gyorsabban tudsz keresni, kutatni egy helyiségben.
 
 ### Kapcsolódik
 
-[Keresés](kereses.md) fortély
+- [Keresés](kereses.md) fortély
 
 ### Alapeset
 
