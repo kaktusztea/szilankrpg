@@ -5,7 +5,7 @@ A Státusz ezzel szemben egy ideiglenes, vagy tartós hatás, amiből előbb-ut�
 
 Leírásukat lásd a Harcrendszer **[Harci helyzetek](065_01_harci_helyzetek.md)** fejezetében.
 
-⭕TODO: adaptálni az Előny/Hátrány modellhez a harci helyzeteket⭕
+⭕TODO: adaptálni az Előny/Hátrány modellhez a harci helyzeteket is⭕
 ⭕Az adaptálás után ugyan már nem kap `TÉ/VÉ` módosítókat, de azokat a Harci Taktikákkal lehet hangolni⭕
 
 ---
