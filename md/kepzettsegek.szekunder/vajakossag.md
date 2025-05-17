@@ -6,6 +6,10 @@
 
 Emlékezet, Intelligencia
 
+### Kapcsolódik
+
+- [Vezető: Vajákmester](../fortelyok.altalanos/vezeto_vajakmester.md) fortély: csoportos vajákosság esetén bónuszt ad.
+
 ### Normál kiterjesztés
 
 - [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Ismered a dzsungelben növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
