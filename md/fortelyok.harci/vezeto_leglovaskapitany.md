@@ -21,6 +21,7 @@ Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, közösen 
 - Intelligencia: `+1`
 - Léglovaglás - `6.szint` (léglovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+2` bónusz
 
@@ -31,6 +32,7 @@ Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, közösen 
 - Intelligencia: `+2`
 - Léglovaglás - `9.szint` (léglovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+4` bónusz
 

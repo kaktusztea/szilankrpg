@@ -21,6 +21,7 @@ Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [cso
 - Intelligencia: `+1`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) - `6.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+2` bónusz az **Észlelés** képzettségre
 
@@ -31,5 +32,11 @@ Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [cso
 - Intelligencia: `+2`
 - Alakzatharc - `9.szint`
 - Befolyásolás - `3.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+4` bónusz az **Észlelés** képzettségre
+
+---
+### Megjegyzések
+
+- Jellemzően NJK ismeret

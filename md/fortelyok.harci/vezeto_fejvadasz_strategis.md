@@ -19,6 +19,7 @@ A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
 - Intelligencia: `+1`
 - Lopakodás/rejtőzés - `6.szint`
 - Tradíció: Fejvadász - `6.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+2` bónusz csoportos **Lopakodás/rejtőzés** értékre
 
@@ -29,6 +30,7 @@ A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
 - Intelligencia: `+2`
 - Lopakodás/rejtőzés - `9.szint`
 - Tradíció: Fejvadász - `9.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+4` bónusz csoportos **Lopakodás/rejtőzés** értékre
 

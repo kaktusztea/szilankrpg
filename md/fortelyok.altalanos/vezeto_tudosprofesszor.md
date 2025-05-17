@@ -26,3 +26,8 @@ A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos 
 🌟 **Hatás**: `+4` bónusz csoportos **Kvantikum** értékre
 
 <br />
+
+---
+### Megjegyzések
+
+- Jellemzően NJK ismeret

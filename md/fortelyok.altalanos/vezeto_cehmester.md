@@ -34,3 +34,4 @@ Tehát külön-külön kell felvenni a "Vezető: Céhmester" fortélyt minden "S
 
 - Minden Szakmára külön kell felvenni
 - Olyan Szakmákra vehető fel, ahol értelmezhető a céhszerű működés
+- Jellemzően NJK ismeret

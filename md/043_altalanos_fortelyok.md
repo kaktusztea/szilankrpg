@@ -47,6 +47,7 @@ Az Érzék-, Alvilági és fizikai-, Tudományos- és Befolyástól védő fort�
 - [Vezető: Hajóskapitány](fortelyok.altalanos/vezeto_hajoskapitany.md)
 - [Vezető: Nyomozó](fortelyok.altalanos/vezeto_nyomozo.md)
 - [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md)
+- [Vezető: Rendező](fortelyok.altalanos/vezeto_rendezo.md)
 - [Vezető: Tudósprofesszor](fortelyok.altalanos/vezeto_tudosprofesszor.md)
 - [Vezető: Vajákmester](fortelyok.altalanos/vezeto_vajakmester.md)
 - [Villámgyors keresés](fortelyok.altalanos/villamgyors.kereses.md)

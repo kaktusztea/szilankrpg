@@ -21,6 +21,7 @@ Formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni 
 - Intelligencia: `+1`
 - Lovaglás - `6.szint` (nehézlovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+2` bónusz
 
@@ -31,6 +32,7 @@ Formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni 
 - Intelligencia: `+2`
 - Lovaglás - `9.szint` (nehézlovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+4` bónusz
 

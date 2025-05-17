@@ -28,3 +28,6 @@ A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fi
 <br />
 
 ---
+### Megjegyzések
+
+- Jellemzően NJK ismeret

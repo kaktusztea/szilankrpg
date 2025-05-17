@@ -18,6 +18,7 @@ Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [cs
 - Intelligencia: `+1`
 - Alakzatharc - `6.szint`
 - Befolyásolás - `3.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+2` bónusz az **Alakzatszintre**
 
@@ -28,6 +29,7 @@ Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [cs
 - Intelligencia: `+2`
 - Alakzatharc - `9.szint`
 - Befolyásolás - `3.szint`
+- Összeszokott tagokat igényleg
 
 🌟 **Hatás**: `+4` bónusz az **Alakzatszintre**
 

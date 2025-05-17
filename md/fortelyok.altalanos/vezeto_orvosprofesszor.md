@@ -26,3 +26,8 @@ A [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséget [csop
 🌟 **Hatás**: `+4` bónusz csoportos **Orvoslás** értékre
 
 <br />
+
+---
+### Megjegyzések
+
+- Jellemzően NJK ismeret

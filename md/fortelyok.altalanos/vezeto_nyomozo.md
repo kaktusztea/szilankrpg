@@ -26,3 +26,8 @@ A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csop
 🌟 **Hatás**: `+4` bónusz csoportos **Nyomozás** értékre
 
 <br />
+
+---
+### Megjegyzések
+
+- Jellemzően NJK ismeret

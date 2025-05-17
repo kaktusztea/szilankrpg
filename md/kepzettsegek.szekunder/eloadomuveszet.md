@@ -9,6 +9,7 @@
 ### Kapcsolódik
 
 - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md)
+- [Vezető: Rendező](../fortelyok.altalanos/vezeto_rendezo.md) fortély: színésztársulat esetén bónuszt ad.
 
 ### Normál kiterjesztés
 

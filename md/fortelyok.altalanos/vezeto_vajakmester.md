@@ -26,3 +26,8 @@ A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettséget [csopor
 🌟 **Hatás**: `+4` bónusz csoportos **Vajákosság** értékre
 
 <br />
+
+---
+### Megjegyzések
+
+- Jellemzően NJK ismeret
