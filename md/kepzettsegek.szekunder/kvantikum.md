@@ -6,6 +6,10 @@ Professzor, vagy számokkal dolgozó tudósember vagy, a tudás a legfőbb kincs
 
 Intelligencia, Emlékezet
 
+### Kapcsolódik
+
+- [Vezető: Tudósprofesszor](../fortelyok.altalanos/vezeto_tudosprofesszor.md) fortély: csoportos tudományos munka esetén bónuszt ad.
+
 ### Normál kiterjesztés
 
 - [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében."

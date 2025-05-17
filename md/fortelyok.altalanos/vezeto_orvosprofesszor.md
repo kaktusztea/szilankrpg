@@ -5,7 +5,7 @@ Vezető orvosprofersszorként koordinálod az alád tartozó orvosok, gyógyít�
 ---
 #### Bónusz
 
-A [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséget [csoportos szellemi képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-2-csoportos-szellemi-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használhatja egy csoport. A fentiek szerint kiszámolt csoportos **Orvoslás** értéket egy jó vezető képes koordinálásával megemelni.
+A [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséget [csoportos szellemi képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-2-csoportos-szellemi-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használhatja egy csoport. A fentiek szerint kiszámolt csoportos **Orvoslás** értéket egy jó vezető professzor képes koordinálásával megemelni.
 
 ---
 ### 1. fok
