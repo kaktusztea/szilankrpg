@@ -10,7 +10,8 @@ Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
 
 ### Kapcsolódik
 
-[Élettan](../fortelyok.altalanos/elettan.md)
+- [Élettan](../fortelyok.altalanos/elettan.md) fortély
+- [Vezető: Orvosprofesszor ](../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos orvoslás esetén bónuszt ad.
 
 ### Normál kiterjesztés
 
