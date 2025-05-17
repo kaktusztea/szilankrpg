@@ -5,7 +5,7 @@ Képes vagy egy céh vezetésére, az adott szakma termelőképességének javí
 ---
 #### Bónusz
 
-A [Szakma](../kepzettsegek.szekunder/szakma.md) képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használják egy céh tagjai, mikor együtt készítenek valamilyen terméket. A fentiek szerint kiszámolt csoportos **Szakma - (adott szakma)** értéket egy jó céhmester képes koordinálásával megemelni.
+A [Szakma](../kepzettsegek.szekunder/szakma.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy céh tagjai, mikor együtt készítenek valamilyen terméket. A fentiek szerint kiszámolt csoportos **Szakma - (adott szakma)** értéket egy jó céhmester képes koordinálásával megemelni.
 
 Tehát külön-külön kell felvenni a "Vezető: Céhmester" fortélyt minden "Szakma - (adott szakma)" képzettséghez.
 

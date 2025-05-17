@@ -11,7 +11,7 @@ Képes vagy egy hátas alakzat
 ---
 #### Bónusz
 
-Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használjuk lovas alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md). Egy jó parancsnok képes koordinálásával a lovas alakzat közös mozgását hatékonyabbá tenni.
+Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk lovas alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md). Egy jó parancsnok képes koordinálásával a lovas alakzat közös mozgását hatékonyabbá tenni.
 
 Formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni - harci körülmények között is.
 

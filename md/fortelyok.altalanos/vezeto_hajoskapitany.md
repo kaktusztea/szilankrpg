@@ -5,7 +5,7 @@ Képes vagy egy hajó legénységének egyben tartására változó - akár harc
 ---
 #### Bónusz
 
-A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk. A fentiek szerint kiszámolt csoportos **Hajózás** értéket egy jó hajóskapitány képes koordinálásával megemelni.
+A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk. A fentiek szerint kiszámolt csoportos **Hajózás** értéket egy jó hajóskapitány képes koordinálásával megemelni.
 
 ---
 ### 1. fok

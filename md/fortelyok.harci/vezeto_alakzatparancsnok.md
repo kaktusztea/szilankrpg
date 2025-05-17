@@ -11,7 +11,7 @@ Képes vagy egy harci alakzat
 ---
 #### Bónusz
 
-Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [csoportos fizikai képzettségpróba](../037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint használjuk: [Harc alakzatban](../065_03_harc_alakzatban.md). A fentiek szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
+Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk: [Harc alakzatban](../065_03_harc_alakzatban.md). A fentiek szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
 ### 1. fok
 
 🔒 **Követelmény**:

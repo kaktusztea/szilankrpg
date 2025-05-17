@@ -1,4 +1,4 @@
-## Fortélyok képzettségkiterjesztés listája
+## Általános fortélyok képzettségkiterjesztés listája
 
 🟩 Normál kiterjesztés\
 🟥 Erős kiterjesztés
@@ -7,6 +7,6 @@
 
 ---
 
-🔗 [Bázis képzettségek](039_bazis_kepzettsegek.md) →
+🔗 [Harci fortélyok kiterjesztéslistája](038_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

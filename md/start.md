@@ -2,7 +2,7 @@
 
 ## Karakteralkotó
 
-**[Karakteralkotó v8.8.5 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v8.8.5.ods?raw=true)** &nbsp;&nbsp;- &nbsp;&nbsp;<!-- markdown-link-check-disable -->[LibreOffice ⬇️](https://www.libreoffice.org/download/download/)<!-- markdown-link-check-enable --> 
+**[Karakteralkotó v8.8.6 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v8.8.6.ods?raw=true)** &nbsp;&nbsp;- &nbsp;&nbsp;<!-- markdown-link-check-disable -->[LibreOffice ⬇️](https://www.libreoffice.org/download/download/)<!-- markdown-link-check-enable --> 
 
 <br />
 
@@ -97,9 +97,11 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Képzettségek fejlesztése](034_kepzettsegek_fejlesztese.md)
 - [Képzettségszintek KP igénye](035_kepzettsegszintek_kp_igenye.md)
 - [Képzettségpróba](036_kepzettsegproba.md) 🎲
-- [Csoportos képzettségpróba](037_csoportos_kepzettsegproba.md) 🎲
+- [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) 🎲
+- [Csoportosan végezhető képzettségek](037_02_csoportosan_vegezheto_kepzettsegek.md) 💢
 - [Képzettségek és Fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md)
-- [Fortélyok képzettségkiterjesztés listája (ábra)](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
+- [Általános fortélyok képzettségkiterjesztés listája (ábra)](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
+- [Harci fortélyok képzettségkiterjesztés listája (ábra)](038_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Bázis képzettségek](039_bazis_kepzettsegek.md)
 
 ---

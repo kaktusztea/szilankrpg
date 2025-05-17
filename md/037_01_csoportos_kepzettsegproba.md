@@ -76,3 +76,9 @@ Ezt követően a parti "összedobja, amije van". Az esetleges hiányok kezelés�
 A csoportos munka miatt a végrehajtás ideje jelentősen csökkenhet.
 
 ⚡Példa: Több "rétegű" térkép készítés, Ház építése.
+
+---
+
+🔗 [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) →
+
+⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

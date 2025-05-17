@@ -6,6 +6,8 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ⚪ Tulajdonság 🔵 Képzettség 🟣 Fortély  🟡 Háttér 🟢 Pszí diszciplína
 
+💢 Csoportban végezhető képzettség
+
 🔁 Többször felvehető ismeret
 
 🗡️ Harci taktika, Harci szituáció vagy Manőver
