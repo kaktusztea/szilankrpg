@@ -20,16 +20,23 @@ Tulajdonság + Képzettség + k10
           Célszám
 ```
 
-| Képzettségpróba<br /><sub>(dobás k10-el)</sub> | Célszám  |
-| ------ | :-----: |
-| Könnyű          | 6  |
-| Átlagos         | 9  |
-| Nehéz           | 12 |
-| Nagyon nehéz    | 15 |
-| Rendkívül nehéz | 18 |
-| Emberfeletti    | 21 |
+| Képzettségpróba<br /><sub>(dobás k10-el)</sub> | Célszám |
+| ---------------------------------------------- | :-----: |
+| Könnyű                                         |    6    |
+| Átlagos                                        |    9    |
+| Nehéz                                          |   12    |
+| Nagyon nehéz                                   |   15    |
+| Rendkívül nehéz                                |   18    |
+| Emberfeletti                                   |   21    |
+| ...                                            |   ...   |
 
 Ha a KM úgy látja, hogy az adott próbánál több Tulajdonság is szerepet játszik, akkor a szükséges Tulajdonságok átlagával kell számolni.
+
+A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Példák:
+- [Aktuális Aura számításánál](104_aura_magia_akarata_magiaellenallas.md#aura-aktu%C3%A1lis-%C3%A9rt%C3%A9ke) Aurafejlesztés képzettségpróba
+- [Méreg szintje](151_meregkeveres_szabalyai.md#a-m%C3%A9reg-szintje) Méregkeverésnél
+
+Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Például szakrális emberáldozat csökkenti a próba nehézségét.
 
 <br />
 

@@ -18,16 +18,15 @@ Abban, hogy a karakter aktuális sebesülési állapotában milyen ütemben vesz
 ### Zuhanás, megégés, zúzódás, varázslatok sebzése
 
 ```
-k20 + X
+Zuhanás SP:
+  k20 + magasság (m)
 ```
-
-⭕TODO: [Irányelvek kidolgozása](https://github.com/kaktusztea/szilankrpg/wiki/TODO.harcrendszer#nem-harci-sebz%C5%91d%C3%A9sek)
 
 Természetesen nem csak fegyverek okozhatnak sérülést, hanem egy mágikus tűzgolyó, zuhanás a tetőről, stb. A mágikus hatások sebzéseit a [Mágia](100_magiarendszer.md) fejezetben tárgyaljuk, bővebben lásd ott.
 
-Zuhanás, zúzódás, egyéb fizikai sérülések esetén a KM meghatároz egy sebzés értéket ugyanúgy, akár egy fegyver esetében. Pl. `k20+5`. Az **SFÉ** ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelten. Ha számít, akkor általában a **zúzó SFÉ** értéket használjuk, de KM dönt, mivel ahány eset annyiféle.
-
 A zuhanás okozta sérülés függ a magasságtól, a talaj típusától, a viselt vértezettől.
+
+Random zúzódás, egyéb fizikai sérülések esetén a KM meghatároz egy sebzés értéket ugyanúgy, akár egy fegyver esetében - például `k20+5`. Az **SFÉ** ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelten. Ha számít, akkor általában a **zúzó SFÉ** értéket használjuk, de KM dönt, mivel ahány eset annyiféle.
 
 ---
 ### Élőholtak sebződése 
