@@ -5,10 +5,10 @@ A Státuszok ideiglenes, vagy tartós hatások a karakteren, amikből "ki kell g
 A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél (pl. aki támad, aki láthatatlan, akinek levágták a karját).
 
 - Áldott / Átkozott (1,2)
-    - Tulajdonság
-    - Képzettség
-    - Viselkedés
-    - Érzékek
+    - Előny/Hátrány (1,2): Tulajdonság
+    - Előny/Hátrány (1,2): Képzettség
+    - Előny/Hátrány (1,2): Viselkedés
+    - Előny/Hátrány (1,2): Érzékek
     - ⭕Szakrális bélyeg
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma

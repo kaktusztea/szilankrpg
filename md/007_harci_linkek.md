@@ -6,6 +6,8 @@ Gyors elérésű link gyűjtemény - játékosok számára.
 
 [Harci helyzetek](065_01_harci_helyzetek.md)
 
+[Státuszok](082_statuszok.md)
+
 [Sebzés táblázat](064_02_07_sebzes.md#sp-%C3%A1tv%C3%A1lt%C3%A1sa-%C3%A9p-sebz%C3%A9sre-%C3%A9s-v%C3%A9-cs%C3%B6kkent%C3%A9sre)
 
 [Harc menete - tömör](064_01_harc_menete_osszefoglalas.md)
