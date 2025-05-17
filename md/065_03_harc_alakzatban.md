@@ -28,6 +28,7 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 - `MIN( Alakzatharc képzettség )`
 - Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a legalacsonyabb ([csoportos fizikai képzettségpróba](037_csoportos_kepzettsegproba.md#%EF%B8%8F-1-csoportos-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szerint)
 - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) fortély bónusz: `+2 / fok`  (gyalogos alakzat esetén)
+- [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md) fortély bónusz: `+2 / fok`  (íjász/lövész alakzat esetén)
 - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md) fortély bónusz: `+2 / fok`  (lovas alakzat esetén)
 - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md) fortély bónusz: `+2 / fok`  (lovas alakzat esetén)
 
@@ -57,7 +58,9 @@ Alakzatszint + Védekezőfok bónusz
 - \+ `VÉ bónusz`:  **Védekezőszint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 - \+ Személyek száma utáni `VÉ` bónusz (`+3 VÉ / fő;  max +30 VÉ`) ⭕TODO⭕: Legyen?
 
-🔆 **Megjegyzés**: [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasl%C3%A9glovas-harc%C3%A9rt%C3%A9kek-kisz%C3%A1m%C3%ADt%C3%A1sa) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
+🔆 **Megjegyzés**
+- [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasl%C3%A9glovas-harc%C3%A9rt%C3%A9kek-kisz%C3%A1m%C3%ADt%C3%A1sa) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
+- Íjászok/Lövészek esetén `TÉ` helyett a `CÉ` az, amelyre  a harcmodorból adódó bónusz jár
 
 <br />
 

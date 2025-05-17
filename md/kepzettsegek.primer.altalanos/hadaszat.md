@@ -12,8 +12,9 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 - [Stratégia](../fortelyok.szabad/strategia.md): "A hegyláncot tartani tudjuk, ha a 4. hadtest egy hét múlva megérkezik a folyópartra."
 - [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md): "Lándzsások vonalba, megakasztásra készülj!" ; "A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lőssz, Mocsok, tied a kocsis.""
 - [Vezető: Fejvadász strategis](../fortelyok.harci/vezeto_fejvadasz_strategis.md): "Ketten a tetőre, magitor savfelhőt a teraszra. Mortel, indulj!"
+- [Vezető: Íjászparancsnok](../fortelyok.harci/vezeto_ijaszparancsnok.md) "Fedezőtüzet a visszavonuló lovasság mögé!"
 - [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): "Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!"
 - [Vezető: Léglovaskapitány](../fortelyok.harci/vezeto_leglovaskapitany.md): "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
 - [Vezető: Testőrparancsnok](../fortelyok.harci/vezeto_testorparancsnok.md): "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
-    - ⭕ [Taktika: Íjász](../fortelyok.harci/taktika_ijasz.md): "Fedezőtüzet a visszavonuló lovasság mögé!"
+
 <br />

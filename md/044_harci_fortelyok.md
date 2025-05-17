@@ -31,7 +31,6 @@
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md)
 - [Páros harc](fortelyok.harci/paros_harc.md)
-- [Taktika: Íjász](fortelyok.harci/taktika_ijasz.md)🔺
 - [Támadás erőből](fortelyok.harci/tamadas_erobol.md)
 - [Természetes fegyver](fortelyok.harci/termeszetes.fegyver.md)
 - [Testőr](fortelyok.harci/testor.md)
@@ -39,6 +38,7 @@
 - [Vértviselet](fortelyok.harci/vertviselet.md)
 - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)
 - [Vezető: Fejvadász strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md)
+- [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)
 - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)
 - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)
 - [Vezető: Testőrparancsnok](fortelyok.harci/vezeto_testorparancsnok.md)
