@@ -71,19 +71,32 @@ Ekkor
 <br />
 
 ---
-### Vállalás
+### Vállalás és Kritikus hiba
 
 A Vállalás azt jelenti, hogy (ha a KM is beleegyezik) képzettségpróba esetén kaphatsz legfeljebb `+3` bónuszt a próbára - Te döntöd el mennyit. Minél többet vállalsz, annál nagyobb veszélynek teszed ki magad. Ugyanis a próba előtt „Vállalás próbát" kell dobni:
 
 ```
 k6 vs. (a vállalás értéke)
+
+Max vállalás: 3
+
+Kritikus hiba:
+ Dobás <= (vállalás értéke)
 ```
 
-**🔆Fontos**: A Vállalás értéke nem haladhatja meg képzettséged aktuális értékét!
+Először a képzettségpróba jön - a már megnövelt értékkel. Ha sikeres, akkor a próba hatása is sikeres lesz.\
+Ez után jön viszont a Vállalás próba - függetlenül attól, hogy a képzettségpróba sikeres volt -e, vagy sem.
 
-Ha `k6`-on a Vállalás értékével megegyezőt, vagy kisebbet dobsz, akkor kritikus, halálos hibát vétesz és természetesen nem dobhatsz képzettségpróbát se. Ebből látszik, hogy vállalni csak nagyon fontos, ritka esetben van értelme. Úgy foglalhatjuk össze, hogy mikor vállalsz, olyankor megpróbálkozol valami olyan dologgal, ami hatékonyabb, mint jelenlegi tudásod, de még nem gyakoroltad be rendesen (pl. csak ellested a mesteredtől), így a rontásra is nagyobb az esélyed.
+Ha `k6`-on a **Vállalás** értékénél nagyobbat dobsz, nincs további hatás, viszont, ha avval megegyező értékűt, vagy kisebbet, akkor 🔆 **Kritikus hibát** vétesz. Ebből látszik, hogy vállalni csak nagyon fontos, ritka esetben van értelme. Úgy foglalhatjuk össze, hogy mikor vállalsz, olyankor megpróbálkozol valami olyan dologgal, ami hatékonyabb, mint jelenlegi tudásod, de még nem gyakoroltad be rendesen (pl. csak ellested a mesteredtől), így magadat is nagyobb eséllyel sodrod veszélybe. Nem fizikai próbáknál az is előfordulhat, hogy nem is vagy tudatában, milyen szörnyű bajba keverted magad, a rontás nem azonnali fizikai hatással jár - később jársz pórul.
 
-A "halálos" hiba nem jelenti szükségszerűen a karakter végleges eltávozását, de jó időre kivonja őt a forgalomból - 🔆 **sőt, ilyenkor a papi gyógyítás sem hat rajta** - a sors oly erőihez próbált nyúlni, amelyek eltaszították vakmerő tettét.
+A **Kritikus hiba** nem jelenti szükségszerűen a karakter végleges eltávozását, de jó időre kivonja őt a forgalomból, például napokra kómába kerül, vagy hosszútávú nagy bajba sodorja, amiről tudomása sincs. Ez lehet egy narratív elem is, amit a KM alkalmaz majd a közeljövőben.
+
+Előfordulhat tehát olyan eset, hogy a **képzettségpróba** és így annak hatása sikeres volt, viszont a karakter közben **Kritikus hibát** vétett, aminek minden következményét vállalnia kell. Heroikus, önfeláldozó vagy ostoba cselekedet? Mindenki döntse ele maga.
+
+**🔆 Fontos**
+- A Vállalás értéke nem haladhatja meg a használt képzettség aktuális értékét!
+- Összetett, több dobást igénylő képzettségpróbánál nem alkalmazható Vállalás! Például megmászni a nagy hegyet.
+- Kritikus hiba esetén **nem működik a papi gyógyítás sem** a karakteren - a sors oly erőihez próbált nyúlni, amelyek eltaszították vakmerő tettét.
 
 A fenti példánál maradva egy 2-es Vállalás esetén már a következőképpen fest a próba:
 
@@ -98,9 +111,7 @@ vs. 15 (Nagyon nehéz)
 Azaz: (9+k10)  vs  15
 ```
 
-Ez sokat dob az esélyeken, de megvan a rizikója is: ha a fenti karakter a dobás előtt a Vállalás-próbánál k6-on 1-et, vagy 2-t dob, akkor Halálos hibát vét!
-
-> **Fontos**: összetett, több dobást igénylő képzettségpróbánál nem alkalmazható Vállalás! (pl. megmászni a nagy hegyet).
+Látható, hogy a vállalás sokat dob az esélyeken, de megvan a rizikója is: ha a fenti karakter a dobás előtt a Vállalás-próbánál `k6`-on `1`-et, vagy `2`-t dob, akkor **Kritikus hibát** vét!
 
 <br />
 
