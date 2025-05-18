@@ -1,7 +1,7 @@
 ## Képzettségpróba
 
   - [Próbadobás](#pr%C3%B3badob%C3%A1s)
-  - [Vállalás](#v%C3%A1llal%C3%A1s)
+  - [Vállalás](#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba)
   - [Próba biztos tudásból](#pr%C3%B3ba-biztos-tud%C3%A1sb%C3%B3l)
   - [Próba képzetlenül](#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl)
   - [Összetett képzettségpróba, Másodlagos próbadobások](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)
