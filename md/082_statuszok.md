@@ -155,7 +155,11 @@ Hatások
 
 ### ✴️ Hangulat (3) Eufórikus
 
-- A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
+A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
+
+Hatások:
+- ⭕TODO⭕
+- Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
 
 ### ✴️ Hangulat (4) Obszesszív
 
@@ -163,11 +167,6 @@ A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt
 
 Hatás:
 - "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
-
-
-Hatások:
-- ⭕TODO⭕
-- Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
 
 <br />
 
