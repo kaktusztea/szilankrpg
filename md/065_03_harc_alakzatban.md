@@ -4,7 +4,7 @@ Mikor összehangoltan, csoportban mozognak harcosok, akkor komoly előnyt képes
 
 Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összeszokottság. Nem készítünk külön szabályokat az összeszokottság mértékének módosítóira - egy heroikus rendszerben valószínűleg összeszokott csapat indít csak csoportos támadást.
 
-Egy alakzat minimum létszáma `3` **fő** (`2` fő legfeljebb  [Páros harcot](fortelyok.harci/paros_harc.md) végezhet).
+Egy alakzat minimum létszáma `3` **fő** (mert `2` fő legfeljebb  [Páros harcot](fortelyok.harci/paros_harc.md) végezhet).
 
 ---
 ## Mozgástér
