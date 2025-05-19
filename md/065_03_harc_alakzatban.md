@@ -265,6 +265,7 @@ Egy Alakzat ellen az alábbi taktikák NEM használhatóak:
 - [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-): egy Alakzatot nem lehet úgy fárasztani, mint egy személyt
 - [Kezdeményező taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika): nincs értelme, mert az alakzaté a Kezdeményezés amúgy is
 - [Kiváró taktika](065_02_harci_taktikak.md#kiv%C3%A1r%C3%B3-taktika): nincs értelme, mert az alakzaté a Kezdeményezés amúgy is
+- [Visszafogott taktika](065_02_harci_taktikak.md#visszafogott-taktika-): egy Alakzatot nem lehet visszafogottan megütni, mint egy személyt
 
 <br />
 

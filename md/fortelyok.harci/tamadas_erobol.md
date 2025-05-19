@@ -1,6 +1,6 @@
 ## 🟣 Támadás erőből (2)
 
-Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz **SP** értékedre `1:3` váltószámmal.
+Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:3` váltószámmal.
 
 ```
 TÉ:-3, SP:+1
