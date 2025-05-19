@@ -123,6 +123,8 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 
 Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádra nincs hatással.
 
+<br />
+
 ---
 ### 🔥 Reflexek - lassú
 
@@ -131,6 +133,8 @@ Kezdeményezéskor nem dobhatsz, a statikus KÉ értékeddel veszel részt a kö
 ### 🔥 Reflexek - lomha ⭕TODO? más név⭕
 
 Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ értékedből.
+
+<br />
 
 ---
 ### 🔥 Süketség - részleges
@@ -159,15 +163,21 @@ Max 1 támadás / kör
 
 ⭕TODO: Hatások?⭕
 
+<br />
+
 ---
 ### 🔥 Varázslás képesség elvesztése
 
 Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra nincs hatással.
 
+<br />
+
 ---
 ### 🔥 VÉ csökkenéseid duplázódnak
 
 Mikor sikertelen támadást adnak le rád, az elszenvedett `VÉ` csökkenésed duplázódik.
+
+<br />
 
 ---
 ### 🔥 Vérzés - gyenge
