@@ -250,7 +250,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 ---
 ### 9. [Pszí](090_pszi.md) 🌀
 
-#### 9.1 [Pszi diszciplínák](091_pszi_diszciplinak.md) 🟢
+#### 9.1 [Pszi diszciplínák](091_pszi_diszciplinak.md) 🌀
 
 ---
 ### 10. [Mágiarendszer](100_magiarendszer.md) ✨

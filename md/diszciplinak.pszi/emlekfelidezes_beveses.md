@@ -1,4 +1,4 @@
-#### 🟢 Emlékfelidézés / Emlékbevésés
+#### 🌀 Emlékfelidézés / Emlékbevésés
 
 ##### Pszí iskolák ismerik
 

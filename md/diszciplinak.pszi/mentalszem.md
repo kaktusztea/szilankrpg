@@ -1,4 +1,4 @@
-#### 🟢 Mentálszem
+#### 🌀 Mentálszem
 
 ##### Pszí iskolák ismerik
 

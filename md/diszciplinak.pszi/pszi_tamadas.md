@@ -1,4 +1,4 @@
-#### 🟢 Pszí támadás
+#### 🌀 Pszí támadás
 
 ##### Pszí iskolák ismerik
 

@@ -1,4 +1,4 @@
-#### 🟢 Pszí ostrom
+#### 🌀 Pszí ostrom
 
 ##### Pszí iskolák ismerik
 

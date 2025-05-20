@@ -1,4 +1,4 @@
-#### 🟢 Pszeudó
+#### 🌀 Pszeudó
 
 ##### Pszí iskolák ismerik
 

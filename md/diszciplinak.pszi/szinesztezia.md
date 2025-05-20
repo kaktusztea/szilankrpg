@@ -1,4 +1,4 @@
-#### 🟢 Szinesztézia
+#### 🌀 Szinesztézia
 
 ##### Pszí iskolák ismerik
 

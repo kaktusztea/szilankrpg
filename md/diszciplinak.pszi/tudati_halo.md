@@ -1,4 +1,4 @@
-#### 🟢 Tudati háló
+#### 🌀 Tudati háló
 
 ##### Pszí iskolák ismerik
 

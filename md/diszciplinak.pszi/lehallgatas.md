@@ -1,4 +1,4 @@
-#### 🟢 Lehallgatás
+#### 🌀 Lehallgatás
 
 ##### Pszí iskolák ismerik
 

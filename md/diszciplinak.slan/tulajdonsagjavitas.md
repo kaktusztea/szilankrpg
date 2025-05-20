@@ -1,4 +1,4 @@
-#### 🟢 Tulajdonságjavítás
+#### 🌀 Tulajdonságjavítás
 
 ##### Pszí iskolák ismerik
 

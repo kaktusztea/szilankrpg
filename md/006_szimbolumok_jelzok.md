@@ -4,7 +4,9 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ### Aktív jelzők
 
-⚪ Tulajdonság 🔵 Képzettség 🟣 Fortély  🟡 Háttér 🟢 Pszí diszciplína
+⚪ Tulajdonság 🔵 Képzettség 🟣 Fortély  🟡 Háttér
+
+⤴️ Fejleszthető Tulajdonság;  ⏹️ Nem fejleszthető Tulajdonság
 
 💢 Csoportban végezhető képzettség
 
@@ -16,7 +18,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 💫 Varázslási módszer
 
-🌀 Pszí
+🌀 Pszí / Pszí diszciplína
 
 🔥 Hatás
 

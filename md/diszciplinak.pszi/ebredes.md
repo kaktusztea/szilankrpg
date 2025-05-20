@@ -1,4 +1,4 @@
-#### 🟢 Ébredés
+#### 🌀 Ébredés
 
 ##### Pszí iskolák ismerik
 

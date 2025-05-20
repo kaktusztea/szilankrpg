@@ -1,4 +1,4 @@
-#### 🟢 Auralátás
+#### 🌀 Auralátás
 
 ##### Pszí iskolák ismerik
 

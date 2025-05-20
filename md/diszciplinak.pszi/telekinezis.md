@@ -1,4 +1,4 @@
-#### 🟢 Telekinézis
+#### 🌀 Telekinézis
 
 ##### Pszí iskolák ismerik
 

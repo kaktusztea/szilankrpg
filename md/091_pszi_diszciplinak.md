@@ -1,4 +1,4 @@
-## 🟢 Pszí diszciplínák
+## 🌀 Pszí diszciplínák
 
 <sub>→ [STUDY doksi](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.pszi.diszciplinak)</sub>
 
