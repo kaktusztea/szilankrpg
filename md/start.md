@@ -29,7 +29,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 
 [Képzettséglista](031_kepzettseglista.md) &nbsp;•&nbsp; [Fortélyok](040_fortelyok.md)
 
-[Fortély-Képzettség kiterjesztéslista](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md)
+[Általános Fortély-Képzettség kiterjesztéslista](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md)  &nbsp;•&nbsp; [Harci Fortély-Képzettség kiterjesztéslista](038_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
 <br />
 
