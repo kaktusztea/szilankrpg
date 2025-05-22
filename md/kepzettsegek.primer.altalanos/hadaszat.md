@@ -4,7 +4,7 @@ Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
 
 Passzív tudásként is.
 
-Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, hadtáp, harci csoportok vezetése (taktikák).
+Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, hadtáp, harci csoportok vezetése.
 
 ### Normál kiterjesztés
 
@@ -16,5 +16,9 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 - [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): "Első szakasz, kitérés a pikások előtt, második szakasz rögtön utána, ékben támadás!"
 - [Vezető: Léglovaskapitány](../fortelyok.harci/vezeto_leglovaskapitany.md): "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
 - [Vezető: Testőrparancsnok](../fortelyok.harci/vezeto_testorparancsnok.md): "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
+
+### Erős kiterjesztés
+
+- [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md): ⭕TODO⭕
 
 <br />

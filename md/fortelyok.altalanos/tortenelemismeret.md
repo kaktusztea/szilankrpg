@@ -9,6 +9,7 @@ Az ősi kultúrák történelmének ismerete a Történelemismeret fortély foka
 ### Kapcsolódik
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha erre a konkrét kultúrkörön belül vagy kíváncsi valamire, akkor ez is kiterjeszt a Lexikum próbánál.
+- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): ⭕TODO
 
 ### Kiterjeszti ezeket
 

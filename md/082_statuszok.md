@@ -21,8 +21,8 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 - Mérgezés\*
 - Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - Sérült: (1) S3, (2) S4
-- ⭕Trauma: (1) Lélekrepedés, (2) Lélektörés
-- ⭕Zavar: (1) Kizökkent, (2) Megrendült, (3) Sokk
+- Trauma: (1) Lélekrepedés, (2) Lélektörés
+- Zavar: (1) Kizökkent, (2) Megrendült, (3) Sokk
 
 ---
 ---
@@ -158,7 +158,7 @@ Hatások
 A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
 
 Hatások:
-- ⭕TODO⭕
+- Asztrális befolyásolásnak jobban ellenáll az ilyen személy. `Hátrány-1`-el dob Asztrálmágia Komplexitás-próbát a rá varázsló.
 - Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
 
 ### ✴️ Hangulat (4) Obszesszív
@@ -167,6 +167,8 @@ A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt
 
 Hatás:
 - "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
+- `Előny+1`: mindenre, ami az obszesszió tárgyához kötődik (nem harci, nem misztikus képzettségpróbákra)
+- `Hátrány-1`: minden más képzettségpróbára
 
 <br />
 
@@ -204,7 +206,7 @@ Hatások
 
 Hatások:
 - Reflexek - lassú
-- Hátrány-1: nem-harc fizikai képzettségekre
+- `Hátrány-1`: nem-harc fizikai képzettségekre
 
 ### ✴️ Fizikai (2) Kimerültség
 
@@ -321,10 +323,8 @@ Bővebben lásd a [Sebesülés](061_03_sebesules.md#s%C3%A9r%C3%BCl%C3%A9s-hat%C
 
 Hatás:
 - `Hátrány-1`:
-  - fizikai tulajdonságpróbákra
-  - fizikai képzettségpróbákra
-  - szellemi tulajdonságpróbákra
-  - szellemi képzettségpróbákra
+  - fizikai és szellemi tulajdonságpróbákra
+  - fizikai és szellemi képzettségpróbákra
 
 ### ✴️ Sérült (2) S4
 
@@ -332,44 +332,66 @@ Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el
 
 Hatás:
 - `Hátrány-2`:
-  - fizikai tulajdonságpróbákra
-  - fizikai képzettségpróbákra
-  - szellemi tulajdonságpróbákra
-  - szellemi képzettségpróbákra
+  - tulajdonságpróbákra (fizikai és szellemi)
+  - képzettségpróbákra (fizikai és szellemi)
 
 ---
 ### ✴️ Trauma (1) Lélekrepedés
 
-⭕TODO: Hatások?⭕
+- `Hátrány-1`:
+    - Önuralom Tulajdonságpróba
+    - Érzékenység Tulajdonságpróba
+    - Szociális képzettségpróbák, mikor a fenti 2 Tulajdonságot használja
+- Antyssjárás esetén "rossz" helyre kerül
 
 ### ✴️ Trauma (2) Lélektörés
 
-⭕TODO: Hatások?⭕
+- `Hátrány-2`:
+    - Önuralom Tulajdonságpróba
+    - Érzékenység Tulajdonságpróba
+    - Szociális képzettségpróbák, mikor a fenti 2 Tulajdonságot használja
+- Antyssjárás esetén "nagyon rossz" helyre kerül
 
 <br />
 
 ---
-### ✴️ Zavar (1) Kizökkelt
+### ✴️ Zavar (1) Kizökkent
 
-A következő kör végéig tart csak.
+A következő kör végéig tart.
 
-- ⭕ ez a "STUNNED" ⭕
-- ⭕ fizikai ÉS szellemi ⭕
+Hatások:
+- Reflexek - lassú
+- Többszörös támadás elvesztése
+
+Példa: ledöbbenés, stb.
+
+### ✴️ Zavar (2) Megrendült
+
+A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból ismert, "stunned".
 
 Hatások:
 - Többszörös támadás elvesztése
 - Reflexek - lomha
 - Mozgás - lecövekelt
 - Beszéd - zagyva
-- Automatikus képzettségpróba: Összpontosítás (Nehézség: ⭕???⭕)
+- 2 körig tart
 
-### ✴️ Zavar (2) Megrendült
-
-⭕TODO⭕ Legyen azonos az Eszmélet 1-gyel?
+Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az Érzékevesztés (több érzékszervre is akár)).
 
 ### ✴️ Zavar (3) Sokk
 
-⭕TODO⭕ Legyen azonos az Eszmélet 2-vel?
+Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képes részt venni.
+
+Hatások:
+- Beszédvesztés (részleges, vagy teljes - szituáció függő)
+- Harcképtelenség
+- Mozgás - lecövekelt
+- Beszéd - zagyva
+- Pszi használat elvesztése
+- Varázslás képesség elvesztése
+- Automatikus képzettségpróba: Összpontosítás (Nehézség: 12 (Nehéz)). Ha megdobja, kijöhet belőle.
+
+Példa: becsapó természetes villám lecsap melléd, szakrális mágiák mellékhatása is lehet.
 
 <br />
 
