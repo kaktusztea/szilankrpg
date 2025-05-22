@@ -70,7 +70,7 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 ---
 ### 🔥 Beszédvesztés -  részleges
 
-- Nem tudsz szavakat formálni, kegfeljebb kiáltani: "Hö!"
+- Nem tudsz szavakat formálni, legfeljebb kiáltani: "Hö!"
 - Mágia hangalapú komponensét sem tudod alkalmazni
     - ⭕TODO⭕ a mágikus beszéd legyen más, azt ne blokkolja ez a Hatás (?)
     - ⭕TODO⭕ nem a hangszalagok adják ki a mágikus hangot ??
