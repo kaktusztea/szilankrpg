@@ -13,7 +13,7 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
 - Érzékvesztés: (1) részleges, (2) teljes
-- Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕ Bénító félelem
+- Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕Bénító félelem
 - Fizikai: (1) Fáradtság, (2) ⭕Kimerültség, (3) Elcsigázottság
 - Hangulat: (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
@@ -28,13 +28,13 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 ---
 ### ✴️ Áldott / Átkozott (1,2) Tulajdonság
 
-`Előny-1,2` vagy `Hátrány-1,2` adott **Tulajdonság** próbájára valamilyen feltétel esetén (téma, tárgy)
+`Előny+1,2` vagy `Hátrány-1,2` adott **Tulajdonság** próbájára valamilyen feltétel esetén (téma, tárgy)
 
 Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/csökkenés van.
 
 ### ✴️ Áldott / Átkozott (1,2) Képzettség
 
-`Előny-1,2`, `Hátrány-1,2` adott Képzettség próbájára
+`Előny+1,2`, `Hátrány-1,2` adott Képzettség próbájára
  
  ⚡ Példa
 - "Átok: Alulművelt Bölcsész" 
@@ -143,14 +143,14 @@ Hatás: valamelyik az alábbiak közül
 
 A nem-mágikus érzékszervi, vagy érzelmi ingerek jobban hatnak rád. érzelmileg jobban megnyílsz - pozitív/negatív értelemben is.
 
-A KM adhat valamire `Előny-1`, vagy `Hátrány-1` módosítót - hogy mire, az szituáció függő.
+A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az szituáció függő.
 
 ### ✴️ Hangulat (2) Inspirált
 
 A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
 
 Hatások
-- `Előny-1`: kreatív tevékenységekre
+- `Előny+1`: kreatív tevékenységekre
 - `Hátrány-1`: koncentrációt igénylő feladatokra
 
 ### ✴️ Hangulat (3) Eufórikus
@@ -214,7 +214,7 @@ Hatások:
 - Reflexek - lassú
 - VÉ csökkenés: duplázódik
 - `Hátrány-2`: nem-harc fizikai képzettségekre
--  Egészség kategória I: mind full FP-vel feltöltve ⭕TODO: ebből legyen Hatás?⭕
+-  Egészség kategória `S1`: a teljes kategória feltöltődik új `FP`-kel ⭕TODO: ebből legyen Hatás?⭕
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
@@ -225,7 +225,7 @@ Hatások:
 - Lassúság
 - Automatikus kudarc: nem-harc fizikai képzettségek
 - Automatikus kudarc: [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) (nincs harcérték bónusz belőle)
-- Egészség kategória I és II: mind full FP-vel feltöltve
+- Egészség kategória `S1`és `S2`: mindkét kategória feltöltődik új `FP`-kel
 
 ⚡ Példa: éhhalál szélén
 
@@ -278,7 +278,7 @@ Hatás:
 ⚡ Példák
 - Kleptománia (1,2,3) ("El kéne lopni valamit...")
 - Alkoholizmus (1,2,3) ("Igyak piát?")
-  - `1.` Nagyivó: sima próba dobsz a leküzdés ellen
+  - `1.` Nagyivó: sima Akaraterő tulajdonságpróbát dobsz a leküzdés ellen
   - `2.` Alkoholista: `Hátrány-1 próba
   - `3.` Masszív alkoholista: `Hátrány-2` próba
 

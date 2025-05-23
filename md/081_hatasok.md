@@ -8,9 +8,21 @@ Egy **Státusz** több **Hatást** is képes okozni a karakteren.  Hogy egy Stá
 
 ## ⚜️ Előny-1,2 és Hátrány-1,2 Hatások
 
-Ezek speciális, kockadobásokat érintő Hatások.\
-Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:\
-**Támadó Dobás, Manőver, Tulajdonságpróba, Képzettségpróba (mágia is), Sebzés, Mágia Akarata, Mágiaellenállás**.
+```
+MIN,MAX: [-2, +2]
+```
+
+Az `Előny` és `Hátrány`  speciális, kockadobásokat érintő Hatások.\
+Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
+- Támadó Dobás
+- Manőver
+- Tulajdonságpróba
+- Képzettségpróba (mágia is)
+- Sebzés
+- Mágia Akarata
+- Mágiaellenállás
+
+🔆 Halmozódásuk esetén is az alábbi alsó és felső korlátuk érvényes: `[-2, +2]`.
 
 ### 🔥 Előny-1
 
@@ -91,11 +103,7 @@ Nem vagy képes gondolkodni - reagálni, tervezni.
 ### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem
-- Védő Értéked a mozgásod jellegétől függ
-
-- ⭕TODO⭕: adja: teljes bénulás; ájulás
-- ⭕TODO⭕: legyen részleges is?
-- ⭕TODO⭕: csak fizikai hatás, mentális hatása nincs
+- `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_01_harci_helyzetek.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s))
 
 ---
 ### 🔥 Mozgás - lassulás
@@ -111,7 +119,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 ---
 ### 🔥 Mozgás - képtelen
 
-- ⭕VÉ csak a test mozgásának jellegétől függ (link)⭕
+- VÉ csak a test mozgásának jellegétől függ (lásd a [táblázatot](065_01_harci_helyzetek.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s))
 - mozdulni se bírsz nyaktól lefelé
 - szemmozgás, légzés működik
 - csak fizikai hatás, mentális hatása nincs
@@ -173,11 +181,19 @@ Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra ninc
 <br />
 
 ---
-### 🔥 VÉ csökkenéseid duplázódnak
+### 🔥 VÉ veszteség duplázódik
 
 Mikor sikertelen támadást adnak le rád, az elszenvedett `VÉ` csökkenésed duplázódik.
 
 <br />
+
+---
+### 🔥 VÉ csökkentés duplázódik
+
+Mikor sikertelen támadást adsz le, az okozott `VÉ` csökkentésed duplázódik.
+
+<br />
+
 
 ---
 ### 🔥 Vérzés - gyenge
