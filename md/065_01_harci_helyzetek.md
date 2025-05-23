@@ -186,8 +186,8 @@ A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, te
 Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járnak:
 
 ```
-1.fok:  KÉ:+5
-2.fok:  KÉ:+10
+1.fok:  1 Hátrány fokot semlegesít a büntetésből
+2.fok:  2 Hátrány fokot semlegesít a büntetésből
 ```
 
 #### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
@@ -200,11 +200,11 @@ Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 
 Áldozat: [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba (aktív/passzív észlelés számít)
 - Sikertelen Észlelés: [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadás
-- Sikeres Észlelés: Támadó `KÉ:+10` bónusszal Kezdeményez
+- Sikeres Észlelés: Támadónak `Előny+1` Kezdeményezésre
   - Nyert Támadó `KÉ`: [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) módosítóit kapja meg a támadó
-  - Vesztett Támadó KÉ: a megtámadott még így is gyorsabban reagál! Ő támadhat elsőnek, mindketten az aktuális harcértékeikkel és fegyvereikkel
+  - Vesztett Támadó `KÉ`: a megtámadott még így is gyorsabban reagál! Ő támadhat elsőnek, mindketten az aktuális harcértékeikkel és fegyvereikkel
 
-#### 🔆 **Szálfegyverek**
+#### 🔆 Szálfegyverek
 
 Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy kézben vannak, vagy olyan módon tárolva, ahonnan lehetetlen fegyverrántással előhúzni.
 
