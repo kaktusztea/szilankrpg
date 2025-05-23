@@ -227,9 +227,11 @@ Tőrrel KÉ: 28 (Tőr KÉ:+2)
 ---
 ### Félhátulról támadás
 
-```TÉ: +10```
+```
+Előny+1: TÉ dobásra
+```
 
-Ha a karakter ellenfelére félhátulról támad, 👀`+10 TÉ` módosító járul **Támadó Értékéhez**.
+Ha a karakter ellenfelére félhátulról támad, 'Előny+1' jár TÉ dobására.
 
 Védekező Pajzs VÉ csak akkor számít, ha a pajzsot tartó kéz felőli oldalról jön a csapás.
 
