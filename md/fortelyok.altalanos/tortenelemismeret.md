@@ -9,10 +9,10 @@ Az ősi kultúrák történelmének ismerete a Történelemismeret fortély foka
 ### Kapcsolódik
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha erre a konkrét kultúrkörön belül vagy kíváncsi valamire, akkor ez is kiterjeszt a Lexikum próbánál.
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): ⭕TODO
 
 ### Kiterjeszti ezeket
 
+- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): Ismered a régi háborúk hadászati emlékeit. "A IX. Zászlóháború idején P.sz. 2885-ben Siren4rban felbukkant Nyolcadik Vörös lobogó hordozója, Unn4m4li4r vyvern-lovasai alkalmazták először az alacsonyan repülő, mélységi beszivárgás módszerét."
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): Járatos vagy a történelmi események és korszakok lefolyásában. Neves alakok, emlékezetes csaták, politikai csatározások, trónviszályok, öröklődés.
 
 ### Alapeset
