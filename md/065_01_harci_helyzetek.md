@@ -229,7 +229,7 @@ Tőrrel KÉ: 28 (Tőr KÉ:+2)
 
 ```TÉ: +10```
 
-Ha a karakter ellenfelére hátulról féltámad, 👀`+10 TÉ` módosító járul **Támadó Értékéhez**.
+Ha a karakter ellenfelére félhátulról támad, 👀`+10 TÉ` módosító járul **Támadó Értékéhez**.
 
 Védekező Pajzs VÉ csak akkor számít, ha a pajzsot tartó kéz felőli oldalról jön a csapás.
 
