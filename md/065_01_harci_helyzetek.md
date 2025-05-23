@@ -231,7 +231,7 @@ Tőrrel KÉ: 28 (Tőr KÉ:+2)
 Előny+1: TÉ dobásra
 ```
 
-Ha a karakter ellenfelére félhátulról támad, 'Előny+1' jár TÉ dobására.
+Ha a karakter ellenfelére félhátulról támad, `Előny+1` jár TÉ dobására.
 
 Védekező Pajzs VÉ csak akkor számít, ha a pajzsot tartó kéz felőli oldalról jön a csapás.
 
