@@ -6,7 +6,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod t
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak `-25 VÉ` csökkenéssel.
+🌟 **Hatás**: Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_harci_helyzetek.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-kiterjeszt%C3%A9se-m%C3%A1sra) Harci helyzetnél leírt büntetésekkel.
 
 ---
 ### 1. fok
@@ -17,7 +17,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod t
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: A levonás csak `-15 VÉ`
+🌟 **Hatás**: A [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) Hatás már nem sújt.
 
 ---
 ### 2. fok
@@ -28,13 +28,13 @@ Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod t
 - Harcmodor - `8.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: Levonás nélkül védheted pártfogoltad.
+🌟 **Hatás**: Büntetések nélkül védheted pártfogoltad. A [Többszörös támadás elvesztése](../081_hatasok.md#-t%C3%B6bbsz%C3%B6r%C3%B6s-t%C3%A1mad%C3%A1s-elveszt%C3%A9se) Hatás sem sújt már.
 
 <br />
 
 ### Megjegyzések
 
-Az oltalmazott személy nem harcolhat, a testőrnek pedig két méteren belül kell lennie.
+Az oltalmazott személy nem harcolhat, a testőrnek pedig **`2` méteren** belül kell lennie.
 
 <br />
 
