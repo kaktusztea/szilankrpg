@@ -15,8 +15,8 @@
 | [Helyhez kötve](#helyhez-kötve)                                                                 | - `Hátrány-1` TÉ dobásra<br>- `VÉ` veszteség duplázódik                                                                                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | [Képzetlen fegyverhasználat](#képzetlen-fegyverhasználat)                                       | Lásd [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) oldalt.                                                  | A levonások a Harcmodor szintjétől függnek `[0-2].szinten`.<br>A teljes képzetlenség`0.szintől`-ről indul.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [Készületlenség](#készületlenség)                                                               | Lásd a Meglepetés helyzetet!                                                                                                                       | Ha egy karakter készületlen, akkor támadója a Meglepetés szituációnak megfelelő módosítókkal támadhat rá.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| ⭕Levegőből támadás                                                                              | `Előny+2`: Támadó Dobásra                                                                                                                          | Esetleges Roham (zuhanás) külön, plusz számolandó.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| ⭕Láthatatlanul                                                                                  | Támadó:<br>- `Előny+2`: Támadó Dobásra<br>Védő:<br>- `VÉ` veszteség duplázódik                                                                     | [Vakharc](fortelyok.harci/vakharc.md) minden foka `1 fok Előnyt` semlegesít.<br>`1.fok` semlegesíti már a VÉ csökk duplázódást.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| Levegőből támadás                                                                               | `Előny+2`: Támadó Dobásra                                                                                                                          | Esetleges Roham (zuhanás) külön, plusz számolandó.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| Láthatatlanul                                                                                   | Támadó:<br>- `Előny+2`: Támadó Dobásra<br>Védő:<br>- `VÉ` veszteség duplázódik                                                                     | [Vakharc](fortelyok.harci/vakharc.md) minden foka `1 fok Előnyt` semlegesít.<br>`1.fok` semlegesíti már a VÉ csökk duplázódást.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | [Magasabbról](#magasabbról)                                                                     | `Előny+1`: Támadó Dobásra                                                                                                                          | A támadó kapja a módosítót.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
 | [Meglepetés](#meglepetés)                                                                       | Támadó:<br>- `Előny+1` TÉ dobásra<br>- `VÉ` csökkentés duplázódik<br><br>Védő:<br>- Többszörös támadás elvesztése<br>- Utolsónak támadhat a körben | Pajzs VÉ csak akkor számít, ha a csapás nem hátulról jön.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Pusztakezes harc](#pusztakezes-harc)                                                           | Lásd a [Puszta kéz harcértékeit](068_02_kozelharci_fegyverek.md)!                                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
@@ -104,6 +104,30 @@ Szűk sikátorban:
 - Fontos, hogy milyen irányból érkezik a támadás. Egy lándzsa technikáit például nem lehet itt alkalmazni, viszont a két oldalról való védettség folytán szinte lehetetlen hozzáférni. Ilyenkor a szúró szálfegyverek `+15 TÉ/VÉ` módosítót kapnak, viszont a hátulról érkező támadások ellen teljesen védtelen ilyenkor a harcos. Abba az irányba fegyverének harcértékei `0`-nak számítanak és még **további** `-15 TÉ/VÉ` csökkenést szenved el.
 
 **Megjegyzés**: a **Támadó- és Védő** taktikák **Beszorított helyzetben** továbbra is használhatóak.
+
+<br />
+
+---
+### Csúszós talaj
+
+```
+Hátrány-1: TÉ dobásra
+```
+
+Mindenkinek, aki csúszós talajon harcol `Hátrány-1` jár `TÉ` dobására.
+
+<br />
+
+---
+### Elvesztett egyensúly
+
+```
+- Hátrány-1: TÉ dobásra
+- Többszörös támadás elvesztése
+- Mozgás - lassulás
+```
+
+A hatások alapból a kör végéig tart, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
 
 <br />
 
@@ -309,6 +333,33 @@ Ha egy karakter képzetlen az általa forgatott fegyver használatában, tehát 
 ### Készületlenség
 
 Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepet%C3%A9s) szituációnak megfelelő módosítókkal támadhat rá.
+
+<br />
+
+---
+### Levegőből támadás
+
+```
+Előny+2: Támadó Dobásra
+```
+
+A levegőből támadás - például egy légi hátasról - jelentős előnnyel jár.
+
+Egy esetleges Roham (zuhanás) külön, plusz számolandó.
+
+<br />
+
+---
+### Láthatatlanul
+
+```
+Támadó: Előny+2 Támadó dobásra
+Védő: VÉ veszteség duplázódik
+```
+
+A védő
+- [Vakharc](fortelyok.harci/vakharc.md) fortélyának minden foka `1 fok Előnyt` semlegesít a támadó oldalán levő Támadó dobás bónuszából.
+- [Vakharc](fortelyok.harci/vakharc.md) fortélyának `1.foka` már semlegesíti a "VÉ veszteség duplázódik" Hatást.
 
 <br />
 
