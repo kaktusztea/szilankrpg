@@ -1,4 +1,4 @@
-## 🟣 Vezető: Nyomozó (2) 🔁
+## 🟣 Vezető: Nyomozó (2)
 
 Vezető nyomozóként koordinálod az alád tartozó nyomozók munkáját → bónusz **Nyomozás** képzettségre.
 
