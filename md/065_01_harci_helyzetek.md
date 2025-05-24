@@ -264,19 +264,24 @@ A fenti büntetést már a [Vakharc](fortelyok.harci/vakharc.md) - `1.foka` megs
 ### Földön fekve
 
 ```
-KÉ: -10, TÉ: -10, VÉ: -10
+- Hátrány-2 TÉ dobásra
+- VÉ veszteség duplázódik
 ```
+
+Földről támadni sokkal nehezebb és a kitérés is energiaigényesebb.
 
 <br />
 
 ---
 ### Hátulról támadás
 
-```TÉ: +10```
+```
+Előny+2: TÉ dobásra
+```
 
-Ha a karakter ellenfelére hátulról támad, 👀`+20 TÉ` módosító járul **Támadó Értékéhez**.
+Ha az ellenfeléredre hátulról támad, azt jelentős előnnyel jár támadáskor.
 
-A védekező pajzs VÉ értéke NEM számít.
+A védekező karakter pajzsának `VÉ` értéke NEM számít.
 
 <br />
 
@@ -284,21 +289,20 @@ A védekező pajzs VÉ értéke NEM számít.
 ### Helyhez kötve
 
 ```
-KÉ:-10, TÉ:-20, VÉ:-20
+- Hátrány-1 TÉ dobásra
+- VÉ veszteség duplázódik
 ```
 
-Ha a karakter helyhez kötve kénytelen harcolni, akkor `-10 KÉ, -20 TÉ és -20 VÉ` büntetés jár harcértékeire.
+Ha a karakter helyhez kötve kénytelen harcolni, akkor jelentős hátránnyal teheti csak ezt.
 
 <br />
 
 ---
 ### Képzetlen fegyverhasználat
 
-```
-KÉ: -20, TÉ: -30, VÉ: -30, CÉ: -30
-```
+Lásd [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) oldalt.
 
-Ha egy karakter képzetlen az általa forgatott fegyver használatában, akkor harcértékeit a fenti levonások sújtják.
+Ha egy karakter képzetlen az általa forgatott fegyver használatában, tehát `3.szint` alatt van a kapcsolódó [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettsége, akkor harcértékeit a fenti hivatkozás alatti levonások sújtják. A teljes képzetlenség a Harcmodor `0.szintjéről` indul.
 
 <br />
 
@@ -313,10 +317,10 @@ Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepet%C3%A9s
 ### Magasabbról
 
 ```
-TÉ: +10
+Előny+1: TÉ dobásra
 ```
 
-Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen helyzetben `+10 TÉ` módosító járul Támadó Értékéhez.
+Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen helyzetben `Előny+1` jár `TÉ` dobására.
 
 <br />
 
