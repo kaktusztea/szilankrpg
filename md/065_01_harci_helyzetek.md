@@ -25,7 +25,6 @@
 | [Védekező takarásban](#védekező-takarásban)                                                     | `Hátrány-1` TÉ dobásra mindkét félnél                                                                                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | [Védő Érték kiterjesztése másra](#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-kiterjeszt%C3%A9se-m%C3%A1sra) | - Többszörös támadás elvesztése<br>- `VÉ` veszteség duplázódik                                                                                     | A büntetések csökkenthetőek a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
-
 <br />
 
 ### Belharci szituáció
@@ -386,24 +385,29 @@ Sokféle állat van, ezért nem lehet egységes szabályt alkotni azok harcmodor
 ### Védekező takarásban
 
 ```
-Támadó   TÉ: -20
-Védekező TÉ: -10
+Támadó és Védekező:
+  Hátrány-1 TÉ dobásra
 ```
 
-Ebben a szituációban mindkét fél részére nehezebb harcolni, a védekező fél egy kis plusszal indul ha takarásba lép be, mint egy kapu, vagy egy falrész akár.
+Ebben a szituációban mindkét fél részére nehezebb harcolni. Példa: kapu, belógó falrész.
 
 Figyelem: ha a védekező mozgásában korlátozottá válik a körülötte levő tereptárgyaktól, akkor változik a helyzet és az alábbiak közül valamelyik (KM dönt) módosítói vonatkoznak rá:
-- [beszorított helyzet](#beszor%C3%ADtott-helyzet)
-- [helyhez kötve](#helyhez-k%C3%B6tve)
+- [Beszorított helyzet](#beszor%C3%ADtott-helyzet)
+- [Helyhez kötve](#helyhez-k%C3%B6tve)
 
 <br />
 
 ---
 ### Védő Érték kiterjesztése másra
 
-Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak `-25 VÉ` csökkenéssel.
+```
+- Többszörös támadás elvesztése
+- VÉ veszteség duplázódik
+```
 
-Ezt a képességedet javíthatod és a levonást csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
+Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de ilyenkor csak egyet támadhatsz a körben és az elszenvedett VÉ csökkenéseid is duplázódnak.
+
+A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
 
 <br />
 
