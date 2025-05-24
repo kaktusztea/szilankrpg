@@ -1,6 +1,6 @@
 ## 🟣 Vezető: Bölcsészprofesszor (2)
 
-Vezető nyomozóként koordinálod az alád tartozó bölcsészek munkáját → bónusz **Lexikum** képzettségre.
+Vezető professzorként koordinálod az alád tartozó bölcsészek munkáját → bónusz **Lexikum** képzettségre.
 
 ---
 #### Bónusz
