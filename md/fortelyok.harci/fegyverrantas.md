@@ -6,14 +6,20 @@ Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_harci_helyzetek.md#fegy
 
 🔒 **Követelmény**: Gyorsaság: `+1`
 
-🌟 **Hatás**:  `1` Hátrány fokot semlegesít a büntetésből
+🌟 **Hatás**: 
+- `1` Hátrány fokot semlegesít a büntetésből
+  VAGY
+- `1` fok Előnyt ad
 
 ---
 ### 2. fok
 
 🔒 **Követelmény**: Gyorsaság: `+2`
 
-🌟 **Hatás**: `2` Hátrány fokot semlegesít a büntetésből
+🌟 **Hatás**:
+- `2` Hátrány fokot semlegesít a büntetésből
+  VAGY
+- `2` fok Előnyt ad
 
 <br />
 

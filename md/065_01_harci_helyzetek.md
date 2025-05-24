@@ -211,16 +211,26 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy ké
 #### ⚡ Példák
 
 ```
-KÉ alap: 26 → Puszta kezes KÉ: 16  (Mivel a Puszta kéz KÉ értéke: -10)
-Tőrrel KÉ: 28 (Tőr KÉ:+2)
-• Puszta kezes KÉ (16) számít
-• Egy tőrt könnyű előrántani (0 KÉ büntetés). Így a KÉ: 16
-    • 2.fokú fegyverrántás fortéllyal: 16+10=26 (ez már csak 2-vel marad el a tőrös KÉ-től)
-• Ha kardot akarnék rántani, azt már nehezebb (-4 KÉ büntetés). Így fortély nélkül KÉ: 12
-    • 2.fokú fegyverrántás fortéllyal: 12+10=22
-• Kétkezes csatabárdot „rántani” szinte lehetetlen (-10KÉ). Így fortély nélkül KÉ: 6
-    • 2.fokú fegyverrántás fortéllyal: pont kiegyenlíti a -10 KÉ büntetést. Így KÉ=16
+KÉ alap: 26
+ → Puszta kéz KÉ: -10
+ → Puszta kezes KÉ: 16
 ```
+
+`1.` Tőr méretű fegyver előrántása
+- Alap: egy tőrt könnyű előrántani így sima `KÉ` dobás (`16`), büntetés nélkül
+- Fegyverrántás `2.fok` fortéllyal: `Előny+2` KÉ dobásra (`16`)
+
+`2.` Kard méretű fegyver előrántása
+- Ha kardot akarnék rántani, azt már nehezebb: `Hátrány-1` KÉ dobásra (`16`)
+- Fegyverrántás `2.fok` fortéllyal
+  - `Előny+1` KÉ dobásra (`16`)
+  - `Hátrány-1`-ből `2` fok pozitív irányba `Előny+1`
+
+`2.` Kétkezes csatabárd méretű fegyver előrántása
+- Ez a méret már igazi kihívás: `Hátrány-2` KÉ dobásra (`16`)
+- Fegyverrántás `2.fok` fortéllyal
+  - Alap KÉ dobás (`16`)
+  - `Hátrány-2`-ből `2` fok pozitív irányba: Alap dobás
 
 <br />
 
