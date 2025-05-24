@@ -371,9 +371,7 @@ Hátrány-1 TÉ dobásra
 
 Ha – például sérülés hatására – a harcos kénytelen átvenni fegyverét ügyetlenebb kezébe, akkor Hátrány-1 jár `TÉ` dobására.
 
-Kivételek:
-- [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md): bármelyik kezeddel is levonás nélkül tudsz harcolni, de csak 1 fegyverrel!!
-- [Kétkezes Harc](fortelyok.harci/ketkezes_harc.md) fortély
+Kivétel: [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md), amely megléte esetén bármelyik kezeddel is levonás nélkül tudsz harcolni, de csak 1 fegyverrel!!
 
 <br />
 
