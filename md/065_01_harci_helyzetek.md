@@ -327,12 +327,23 @@ Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen hel
 ---
 ### Meglepetés
 
-```TÉ: +20```
+```
+Támadó:
+- Előny+1 TÉ dobásra
+- VÉ csökkentés duplázódik
 
-Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor Meglepetésről beszélünk.\
-Az ilyen helyzetben a támadó karakter `+20 TÉ` módosítót kap harcértékeire. A védekező számára a `Pajzs VÉ` csak akkor számít, ha a csapás nem hátulról jön.
+Védő:
+- Többszörös támadás elvesztése
+- Utolsónak támadhat a körben
+- Pajzs VÉ: szituáció függő
+```
 
-Sikertelen támadás esetén is a `VÉ` csökkentés mindig legalább Nagykocka. Ha a támadó már amúgy is eléri, vagy meghaladja ezt a szintet, akkor nincs változás az általa okozott `VÉ` csökkentés mértékében.
+
+Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
+
+Az ilyen helyzetben a támadó számára `Előny+1` jár `TÉ` dobásra és `VÉ` csökkentése is duplázódik.
+
+A védekező csak `1`-et támadhat és azt is csak a kör végén teheti meg, továbbá a pajzsának `VÉ`-je csak akkor számít, ha a csapás nem hátulról jön.
 
 <br />
 
