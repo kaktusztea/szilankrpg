@@ -389,7 +389,7 @@ Hatások:
 - Beszéd - zagyva
 - Pszi használat elvesztése
 - Varázslás képesség elvesztése
-- Automatikus képzettségpróba: Összpontosítás (Nehézség: 12 (Nehéz)). Ha megdobja, kijöhet belőle.
+- Automatikus képzettségpróba: Összpontosítás (Nehézség: 12 (Nehéz)). Ha megdobja, kijöhet belőle. Onnantól Zavar (2) Megrendült Státuszra enyhül az állapot.
 
 Példa: becsapó természetes villám lecsap melléd, szakrális mágiák mellékhatása is lehet.
 
