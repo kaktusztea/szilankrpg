@@ -94,7 +94,7 @@ Beszorított helyzeten azt értjük, ha az adott fegyverrel a harcos helyhiány 
 
 Mivel nem lehet általános szabályt alkotni minden szituáció és fegyver-típus kapcsolatából, ezért csak irányelveket fektetünk le, a KM határozza meg az adott helyzet ismeretében, hogy épp milyen levonások járnak.
 
-„**Rövid**” fegyverekre (max 0,5 pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
+„**Rövid**” fegyverekre (max `0,5` pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
 
 Szobában, bútorok közt:
 - 2 kezes és szálfegyverek harcértéke `0`-ra zuhan

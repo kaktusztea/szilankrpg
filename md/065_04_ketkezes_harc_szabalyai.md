@@ -69,7 +69,7 @@ A `k20`-as sebződobással együtt dobunk `k6`-tal is:
 ---
 ### ⚡Példa-1
 
-- Harc `2db` tőrrel
+- Harc `2 db` tőrrel
 - Mivel „rövid” fegyverek, ezért hosszuk `0 pengének` számít.
 - `0+0=0 penge` így nincs Harckeret levonás:\
 `1.fok: +3 Harckeret` ; `2/3.fok: +6 Harckeret`

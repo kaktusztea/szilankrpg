@@ -35,7 +35,7 @@ Tehát a lefedettség **80%**: mellkas (50%), felkar (10%), alkar (10%), combok 
 	- Anyagminőség átlagos: `1x`
 	- Kidolgozottság „gyenge”: `0,5x`
 - Mellvért ár : `10x x 1x x 0,5  =  5x`
-- Így 1db tag ára: `5x / 5) = 1x`
+- Így `1 db` tag ára: `5x / 5) = 1x`
 - Végleges ár: `5x + (3 x 1x) = 8x`, azaz egy átlagos bőr mellvért darab nyolcszorosába kerül a fenti teljes páncél-kombó (csak `3` taggal szoroztunk, mert a mellvért-darabot már beleszámoltuk).
 
 ---
