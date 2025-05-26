@@ -72,7 +72,7 @@ Mindent lefed (100%).
 	- Fémalapanyag: Bronz: `0,5x`
 - Mellvért ár: `100x x 0,1 x 0,1 x 0,5  =  0,5x`
 - Így 1 db tag ára: `0,5x / 5 = 0,1x`
-- Végleges ár: `0,5x + (0,1 x 5) = 1x`, azaz pontosan egy átlagos bőr mellvért árának megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó (csak 5 taggal szoroztunk mert a mellvért-darabot már beleszámoltuk).
+- Végleges ár: `0,5x + (0,1 x 5) = 1x`, azaz pontosan egy átlagos bőr mellvért árának megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó (csak 5 taggal szoroztunk, mert a mellvért-darabot már beleszámoltuk).
 
 ---
 
