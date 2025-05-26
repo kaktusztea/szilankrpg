@@ -105,7 +105,7 @@ A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képess�
 
 <br />
 
-### Védő Érték (`VÉ`) - mozgás jellege szerint
+### Védő Érték (`VÉ`) - mozgás jellege és mérete szerint
 
 Van olyan helyzet, mikor a karakter képtelen a védekezésre. Vagy valamilyen [Státusz](082_statuszok.md) hatására, vagy nincs tudatában, hogy épp támadás éri. Ilyenkor a teste mozgásának jellege adja az összes Védő Értékét, akár egy mozgó tárgynak - az alábbi táblázat szerint:
 

@@ -134,17 +134,25 @@ A hatások alapból a kör végéig tart, kivéve, ha azonnal sikeres [Akrobatik
 ---
 ### Észrevétlen támadás
 
+```
+Lopakodás/rejtőzés
+  vs
+Észlelés
+```
+
+```
+VÉ ← áldozat mozgási jellege
+```
+
 Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
 
 Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen.
 
+Siker esetén ellenfele [Védő Értékét annak mozgási jellege és mérete ](062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-szerint)határozza meg.
+
+A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat. 
+
 Az **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás).
-
-A támadó más helyzeti/taktika TÉ bónuszt nem kaphat. 
-
-Ilyenkor ellenfele `Védő Értékét` annak mozgási jellege és mérete határozza meg:
-
-TODO link
 
 <br />
 
