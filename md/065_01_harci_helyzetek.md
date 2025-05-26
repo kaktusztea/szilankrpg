@@ -144,26 +144,7 @@ A támadó más helyzeti/taktika TÉ bónuszt nem kaphat.
 
 Ilyenkor ellenfele `Védő Értékét` annak mozgási jellege és mérete határozza meg:
 
-| **Célpont mozgásának jellege**    | **VÉ** |
-| --------------------------------- | :----: |
-| Álló helyzet                      |  `20`  |
-| Lassú egyenletes (séta)           |  `30`  |
-| Egyenletes kocogás                |  `50`  |
-| Sprint egyenes vonalon            |  `80`  |
-| Lassú kiszámíthatatlan            |  `50`  |
-| Közepesen gyors, kiszámíthatatlan |  `80`  |
-| Gyors, kiszámíthatatlan           | `110`  |
-
-<br/>
-
-| **Célpont mérete** | **VÉ** |
-| ------------------ | ------ |
-| Óriás              | `-30`  |
-| Ork                | `-10`  |
-| Elfszabású / ember | `+0`   |
-| Goblin             | `+20`  |
-| macska             | `+40`  |
-| egér               | `+60`  |
+TODO link
 
 <br />
 
