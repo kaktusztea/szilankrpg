@@ -51,26 +51,47 @@ Lexikum képzettségpróba + Kultúrkör (Normál kiterjesztés)
 
 
 ---
-### Kultúrkör lista draft
+### Kultúrkör lista
 
-- erv
-- tor0ni
-- pyarr0ni
-- shad0ni
-- gorv1ki
-- kr4ni
-- 1barai
-- törpe
+- 4mund
+- asz1sz
+- barbár
+- bukán
+- dw00n
+- dzs4d
+- elar
 - elf
-- ⭕TODO⭕
+- en0szukei
+- erv
+- gohr
+- gorv1ki
+- il4nori
+- khál
+- kr4ni
+- mawini
+- ni4rei
+- nomád
+- pier
+- predoci, edorli
+- py4r
+- ragnaroki
+- sh4doni
+- syburri
+- tarran
+- ti4dlani
+- tongoriai
+- t0r0ni
+- törpe
 
-⭕TODO: a lenti importált listát szinkronba hozni a Kultúrkörökkel.⭕
 
-ÉSZAKON:
+---
+### Föbb területek
+
+ÉSZAKON
 
 - Északi Szövetség és a vörös hadurak országai
 - Tor0n és a fekete hadurak országai (Abasz1sz, Gro-Ugon, az északi városállamok - mint Rowon, Al1dax -, stb.)
-- Godora és Eri.n (beleértve a környéket is, pl. Elátkozott Vidék, Sher.l nyugati része, stb.)
+- Godora és Eri0n (beleértve a környéket is, pl. Elátkozott Vidék, Sher4l nyugati része, stb.)
 
 DÉLEN
 
@@ -78,7 +99,7 @@ DÉLEN
 - Py4rroni Államszövetség és Yllin0r
 - Shad0n és környéke
 - Gorv1k és a Kereskedőhercegségek
-- Ordan és a déli városállamok
+- Ord4n és a déli városállamok
 - Taba el 1bara
 
 <br />
