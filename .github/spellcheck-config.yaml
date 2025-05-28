@@ -3,13 +3,16 @@ matrix:
   language: hu_HU
   spellcheck:
     - hunspell
+  hunspell:
+    aff: dictionaries/hu_HU/hu_HU.aff
+    dic: dictionaries/hu_HU/hu_HU.dic
   dictionary:
     encoding: utf-8
     words:
       - .github/unique_hun_words.txt
   pipeline:
-  - pyspelling.filters.markdown:   # Markdown formázás eltávolítása
-  - pyspelling.filters.html: 
+  - pyspelling.filters.markdown   # Markdown formázás eltávolítása
+  - pyspelling.filters.html
   sources:
   - 'md/**/*.md'
   default_encoding: utf-8
