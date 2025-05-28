@@ -1,9 +1,0 @@
-{
-  "version": "1.0",
-  "language": "hu_HU",
-  "paths": ["md/**/*.md"],
-  "useHunspell": true,
-  "dictionary": [
-    "unique_hun_words.txt"
-  ]
-}

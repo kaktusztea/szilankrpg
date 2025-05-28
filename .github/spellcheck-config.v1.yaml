@@ -1,8 +1,0 @@
-matrix:
-  include:
-    - name: Markdown files
-      sources:
-        - 'md/**/*.md'
-      language: hu_HU
-      spellcheck:
-        - pyspelling

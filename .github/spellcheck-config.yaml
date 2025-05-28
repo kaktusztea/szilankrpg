@@ -1,16 +1,16 @@
 matrix:
 - name: Markdown
+  language: hu_HU
   spellcheck:
     - hunspell
   dictionary:
     encoding: utf-8
+    words:
+      - .github/unique_hun_words.txt
   pipeline:
-  - pyspelling.filters.markdown:
-  - pyspelling.filters.html:
-      comments: false
-      ignores:
-      - code
-      - pre
+  - pyspelling.filters.markdown:   # Markdown formázás eltávolítása
+  - pyspelling.filters.html: 
+  - pyspelling.filters.lowercase:
   sources:
   - 'md/**/*.md'
   default_encoding: utf-8
