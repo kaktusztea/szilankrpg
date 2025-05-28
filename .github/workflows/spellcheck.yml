@@ -7,7 +7,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Download latest Hungarian Hunspell dictionary
+      - name: Download latest Hungarian Hunspell dictionary, correct encoding in aff file
         run: |
           mkdir -p dictionaries/hu_HU
           curl -L -o dictionaries/hu_HU/hu_HU.dic https://raw.githubusercontent.com/LibreOffice/dictionaries/master/hu_HU/hu_HU.dic
@@ -24,6 +24,7 @@ jobs:
         with:
           config_path: .github/spellcheck-config.yaml
           task_name: Markdown
+          spell_checker: hunspell
 
       - name: Remove .dic and .aff files
         run: |
