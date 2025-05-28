@@ -31,4 +31,4 @@ jobs:
 
       - name: Remove .dic and .aff files
         run: |
-          mkdir -p dictionaries/hu_HU
+          rm -rf dictionaries/hu_HU
