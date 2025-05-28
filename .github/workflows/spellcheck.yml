@@ -10,13 +10,9 @@ jobs:
       - name: Download latest Hungarian Hunspell dictionary
         run: |
           mkdir -p dictionaries/hu_HU
-          curl -L -o dictionaries/hu_HU/hu_HU.dic_8859-2 https://raw.githubusercontent.com/LibreOffice/dictionaries/master/hu_HU/hu_HU.dic
-          curl -L -o dictionaries/hu_HU/hu_HU.aff_8859-2 https://raw.githubusercontent.com/LibreOffice/dictionaries/master/hu_HU/hu_HU.aff
-
-      - name: ISO-8859-2 to UTF-8 conversion for .aff and .dic files
-        run: |
-          iconv -f ISO-8859-2 -t UTF-8 dictionaries/hu_HU/hu_HU.aff_8859-2 > dictionaries/hu_HU/hu_HU.aff
-          iconv -f ISO-8859-2 -t UTF-8 dictionaries/hu_HU/hu_HU.dic_8859-2 > dictionaries/hu_HU/hu_HU.dic
+          curl -L -o dictionaries/hu_HU/hu_HU.dic https://raw.githubusercontent.com/LibreOffice/dictionaries/master/hu_HU/hu_HU.dic
+          curl -L -o dictionaries/hu_HU/hu_HU.aff https://raw.githubusercontent.com/LibreOffice/dictionaries/master/hu_HU/hu_HU.aff
+          sed -i '1iSET UTF-8\nFLAG UTF-8' dictionaries/hu_HU/hu_HU.aff
 
       - name: Install Hunspell and Hungarian directionary
         run: |
