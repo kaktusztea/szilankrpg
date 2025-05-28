@@ -4,8 +4,7 @@ matrix:
   spellcheck:
     - hunspell
   hunspell:
-    aff: dictionaries/hu_HU/hu_HU.aff
-    dic: dictionaries/hu_HU/hu_HU.dic
+    d: dictionaries/hu_HU/hu_HU
   dictionary:
     encoding: utf-8
     words:
