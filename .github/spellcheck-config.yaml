@@ -10,7 +10,6 @@ matrix:
   pipeline:
   - pyspelling.filters.markdown:   # Markdown formázás eltávolítása
   - pyspelling.filters.html: 
-  - pyspelling.filters.lowercase:
   sources:
   - 'md/**/*.md'
   default_encoding: utf-8
