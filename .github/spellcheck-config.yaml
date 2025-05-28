@@ -2,8 +2,6 @@ matrix:
 - name: Markdown
   spellcheck:
     - hunspell
-  aspell:
-    lang: hu
   dictionary:
     encoding: utf-8
   pipeline:
