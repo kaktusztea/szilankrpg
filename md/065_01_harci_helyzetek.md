@@ -322,19 +322,6 @@ Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepet%C3%A9s
 <br />
 
 ---
-### Levegőből támadás
-
-```
-Előny+2: Támadó Dobásra
-```
-
-A levegőből támadás - például egy légi hátasról - jelentős előnnyel jár.
-
-Egy esetleges Roham (zuhanás) külön, plusz számolandó.
-
-<br />
-
----
 ### Láthatatlanul
 
 ```
@@ -345,6 +332,19 @@ Védő: VÉ veszteség duplázódik
 A védő
 - [Vakharc](fortelyok.harci/vakharc.md) fortélyának minden foka `1 fok Előnyt` semlegesít a támadó oldalán levő Támadó dobás bónuszából.
 - [Vakharc](fortelyok.harci/vakharc.md) fortélyának `1.foka` már semlegesíti a "VÉ veszteség duplázódik" Hatást.
+
+<br />
+
+---
+### Levegőből támadás
+
+```
+Előny+2: Támadó Dobásra
+```
+
+A levegőből támadás - például egy légi hátasról - jelentős előnnyel jár.
+
+Egy esetleges Roham (zuhanás) külön, plusz számolandó.
 
 <br />
 
