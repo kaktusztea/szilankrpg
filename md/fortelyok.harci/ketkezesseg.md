@@ -20,7 +20,7 @@ Kétkezes vagy születésed óta.
 🌟 **Hatás**:
 - Bármelyik kezeddel levonás nélkül tudsz harcolni, de csak ha `1` fegyvert használsz!
 - [Harckeret](../063_06_tamadasok_szama_fegyverrel.md#harckeret): `+1`, ha legalább `1.fokon` jártas vagy [Kétkezes harcban](ketkezes_harc.md) és épp két fegyvert forgatsz
-- 🗡️[Páros, kétkezes hajítás](../073_tavharc_taktikak.md#p%C3%A1ros-k%C3%A9tkezes-haj%C3%ADt%C3%A1s) harci szituációban csak `CÉ:-15` büntetés jár mindkét kézre.
+- [Páros, kétkezes hajítás](../073_tavharc_taktikak.md#p%C3%A1ros-k%C3%A9tkezes-haj%C3%ADt%C3%A1s) harci szituációban csak `CÉ:-15` büntetés jár mindkét kézre.
 
 <br />
 

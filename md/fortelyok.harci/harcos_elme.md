@@ -10,7 +10,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: `1` VÉ-t semlegesít az ellenfél VÉ csökkenést okozó támadásaiból.
+🌟 **Hatás**: `1` VÉ-t semlegesít az ellenfél `VÉ` csökkenést okozó támadásaiból.
 
 ---
 ### 2. fok
@@ -21,7 +21,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: `2` VÉ semlegesítése.
+🌟 **Hatás**: `2 VÉ` semlegesítése.
 
 ---
 ### 3. fok
@@ -32,7 +32,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `9.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: `3` VÉ semlegesítése.
+🌟 **Hatás**: `3 VÉ` semlegesítése.
 
 ---
 ### 4. fok
