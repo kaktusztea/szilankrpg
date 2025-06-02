@@ -15,6 +15,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 - Életerő kategóriák (**Edzettség** Tulajdonság függő)
 - Méregrendszer: méreg-generátor, mérgek működése, ellenállás
 - Tradíciók: Mágikus, Papi, Szellemi
+- Státuszok és általuk okozott Hatások
 
 ### Harcrendszer
 
@@ -31,7 +32,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
   - páncél generátor: `4` féle `SFÉ`; `MGT`; Ár
   - **Vértviselet** fortély kapcsolat
 - Harci fortélyok: jellemzően statikus bónuszok
-- Harci helyzetek: adott, vagy kialakított helyzetek
+- Harci helyzetek: adott, vagy kialakított Státuszok
 - Harci taktikák: harci jelleg általános eltolása egy irányba
 - Manőverek: egyszeri trükkök
     - Manőver Alap: `Összes költött HM / 10 ↑`
