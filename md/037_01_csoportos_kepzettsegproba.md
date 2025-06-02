@@ -30,9 +30,9 @@ Ez tipikusan a "Ne csesszük el" típusú próba. ⚡Példa: csoportos Lopakodá
 
 #### 🔆 Vezető fortélyok (fizikai)
 
-A fent kalkulált csoport-értéket lehet emelni, amennyiben az adott képzettséghez kapcsolódó "Vezető fortély" ismeretében van egy csapattag ÉS a csapat az ő vezetése alatt összeszokott.
+A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az adott képzettséghez kapcsolódó "**Vezető** fortélyt" ismeri. A bónusz csak akkor él, amennyiben a csapat az említett vezető irányítása alatt korábban összeszokott. Hogy egy Vezető fortély fizikai, vagy szellemi alapú, azt itt találhatod meg:
 
-→ Vezető fortélyok (fizikai) ⭕LINK⭕
+→ [Vezető fortélyok](037_02_csoportosan_vegezheto_kepzettsegek)
 
 ---
 ### ⚜️ 2. Csoportos szellemi képzettségpróba
@@ -52,9 +52,9 @@ A csapatból az dob, akinek legnagyobb a `(Képzettség szint + Tulajdonság)` �
 
 #### 🔆 Vezető fortélyok (szellemi)
 
-A fent kalkulált csoport-értéket lehet emelni, amennyiben az adott képzettséghez kapcsolódó "Vezető fortély" ismeretében van egy csapattag ÉS a csapat az ő vezetése alatt összeszokott.
+A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az adott képzettséghez kapcsolódó "**Vezető** fortélyt" ismeri. A bónusz csak akkor él, amennyiben a csapat az említett vezető irányítása alatt korábban összeszokott. Hogy egy Vezető fortély fizikai, vagy szellemi alapú, azt itt találhatod meg:
 
-→ Vezető fortélyok (szellemi) ⭕LINK⭕
+→ [Vezető fortélyok](037_02_csoportosan_vegezheto_kepzettsegek)
 
 <br />
 
@@ -79,6 +79,6 @@ A csoportos munka miatt a végrehajtás ideje jelentősen csökkenhet.
 
 ---
 
-🔗 [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) →
+🔗 [Csoportosan végezthető képzettségek](037_02_csoportosan_vegezheto_kepzettsegek) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

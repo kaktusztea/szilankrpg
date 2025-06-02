@@ -8,7 +8,7 @@
   varázsolhatnak
 ```
 
-A `Szilánk` rendszerében a Tradíciók reprezentálják az egyedi, különleges, karakter életútját alapjaiban meghatározó "csomagot".\
+A `Szilánk` rendszerében a **Tradíciók** reprezentálják az egyedi, különleges, karakter életútját alapjaiban meghatározó "csomagot".\
 Egy-két kivételtől eltekintve a karakterek **csak 1 Tradíciót vehetnek fel**, azt is **csak 1. tapasztalati szinten**.
 
 Mindegyik Tradíció [Primer képzettség](032_primer_szekunder_kepzettsegek.md), így csak annak szintkorlát határáig növelhető.

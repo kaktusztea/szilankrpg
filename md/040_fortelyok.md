@@ -4,18 +4,12 @@
 
 ---
 
-[Kiemelt fortélyok](041_kiemelt_fortelyok.md): Nyelvismeret, Kultúrkör, Helyismeret - kezelésük speciális
-
-[Szabad Fortélyok](042_szabad_fortelyok.md): ingyen, nem KP költésével kapott fortélyok
-
-[Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
-
-[Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
-
-[Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
-
-[Slan fortélyok](046_slan_fortelyok.md)
-
+- [Kiemelt fortélyok](041_kiemelt_fortelyok.md): Nyelvismeret, Kultúrkör, Helyismeret - kezelésük speciális
+- [Szabad Fortélyok](042_szabad_fortelyok.md): ingyen, nem KP költésével kapott fortélyok
+- [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
+- [Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
+- [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
+- [Slan fortélyok](046_slan_fortelyok.md)
 
 ---
 
@@ -48,7 +42,7 @@ Az adott fortély leírásában található egyedi bónuszt szolgáltat.
 
 Erről a [Képzettségek és fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md) fejezetben olvashatunk.
 
-Összefoglaló ábrát a fortélyok és képzettségkiterjesztésről pedig [itt láthatunk](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md).
+Összefoglaló ábrát a fortélyok és képzettségkiterjesztésről pedig [itt](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md) és [itt](038_03_harci_fortelyok_kepzettsegkiterjesztes_listaja) láthatunk.
 
 ---
 
