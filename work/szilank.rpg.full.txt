@@ -35,7 +35,7 @@ Tehát a lefedettség **80%**: mellkas (50%), felkar (10%), alkar (10%), combok 
 	- Anyagminőség átlagos: `1x`
 	- Kidolgozottság „gyenge”: `0,5x`
 - Mellvért ár : `10x x 1x x 0,5  =  5x`
-- Így 1db tag ára: `5x / 5) = 1x`
+- Így `1 db` tag ára: `5x / 5) = 1x`
 - Végleges ár: `5x + (3 x 1x) = 8x`, azaz egy átlagos bőr mellvért darab nyolcszorosába kerül a fenti teljes páncél-kombó (csak `3` taggal szoroztunk, mert a mellvért-darabot már beleszámoltuk).
 
 ---
@@ -72,7 +72,7 @@ Mindent lefed (100%).
 	- Fémalapanyag: Bronz: `0,5x`
 - Mellvért ár: `100x x 0,1 x 0,1 x 0,5  =  0,5x`
 - Így 1 db tag ára: `0,5x / 5 = 0,1x`
-- Végleges ár: `0,5x + (0,1 x 5) = 1x`, azaz pontosan egy átlagos bőr mellvért árának megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó (csak 5 taggal szoroztunk mert a mellvért-darabot már beleszámoltuk).
+- Végleges ár: `0,5x + (0,1 x 5) = 1x`, azaz pontosan egy átlagos bőr mellvért árának megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó (csak 5 taggal szoroztunk, mert a mellvért-darabot már beleszámoltuk).
 
 ---
 
@@ -837,9 +837,9 @@ Ez tipikusan a "Ne csesszük el" típusú próba. ⚡Példa: csoportos Lopakodá
 
 #### 🔆 Vezető fortélyok (fizikai)
 
-A fent kalkulált csoport-értéket lehet emelni, amennyiben az adott képzettséghez kapcsolódó "Vezető fortély" ismeretében van egy csapattag ÉS a csapat az ő vezetése alatt összeszokott.
+A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az adott képzettséghez kapcsolódó "**Vezető** fortélyt" ismeri. A bónusz csak akkor él, amennyiben a csapat az említett vezető irányítása alatt korábban összeszokott. Hogy egy Vezető fortély fizikai, vagy szellemi alapú, azt itt találhatod meg:
 
-→ Vezető fortélyok (fizikai) ⭕LINK⭕
+→ [Vezető fortélyok](037_02_csoportosan_vegezheto_kepzettsegek.md)
 
 ---
 ### ⚜️ 2. Csoportos szellemi képzettségpróba
@@ -859,9 +859,9 @@ A csapatból az dob, akinek legnagyobb a `(Képzettség szint + Tulajdonság)` �
 
 #### 🔆 Vezető fortélyok (szellemi)
 
-A fent kalkulált csoport-értéket lehet emelni, amennyiben az adott képzettséghez kapcsolódó "Vezető fortély" ismeretében van egy csapattag ÉS a csapat az ő vezetése alatt összeszokott.
+A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az adott képzettséghez kapcsolódó "**Vezető** fortélyt" ismeri. A bónusz csak akkor él, amennyiben a csapat az említett vezető irányítása alatt korábban összeszokott. Hogy egy Vezető fortély fizikai, vagy szellemi alapú, azt itt találhatod meg:
 
-→ Vezető fortélyok (szellemi) ⭕LINK⭕
+→ [Vezető fortélyok](037_02_csoportosan_vegezheto_kepzettsegek.md)
 
 <br />
 
@@ -886,7 +886,7 @@ A csoportos munka miatt a végrehajtás ideje jelentősen csökkenhet.
 
 ---
 
-🔗 [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) →
+🔗 [Csoportosan végezthető képzettségek](037_02_csoportosan_vegezheto_kepzettsegek.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
 
@@ -1303,6 +1303,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 - Életerő kategóriák (**Edzettség** Tulajdonság függő)
 - Méregrendszer: méreg-generátor, mérgek működése, ellenállás
 - Tradíciók: Mágikus, Papi, Szellemi
+- Státuszok és általuk okozott Hatások
 
 ### Harcrendszer
 
@@ -1319,7 +1320,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
   - páncél generátor: `4` féle `SFÉ`; `MGT`; Ár
   - **Vértviselet** fortély kapcsolat
 - Harci fortélyok: jellemzően statikus bónuszok
-- Harci helyzetek: adott, vagy kialakított helyzetek
+- Harci helyzetek: adott, vagy kialakított Státuszok
 - Harci taktikák: harci jelleg általános eltolása egy irányba
 - Manőverek: egyszeri trükkök
     - Manőver Alap: `Összes költött HM / 10 ↑`
@@ -1702,18 +1703,12 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 
 ---
 
-[Kiemelt fortélyok](041_kiemelt_fortelyok.md): Nyelvismeret, Kultúrkör, Helyismeret - kezelésük speciális
-
-[Szabad Fortélyok](042_szabad_fortelyok.md): ingyen, nem KP költésével kapott fortélyok
-
-[Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
-
-[Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
-
-[Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
-
-[Slan fortélyok](046_slan_fortelyok.md)
-
+- [Kiemelt fortélyok](041_kiemelt_fortelyok.md): Nyelvismeret, Kultúrkör, Helyismeret - kezelésük speciális
+- [Szabad Fortélyok](042_szabad_fortelyok.md): ingyen, nem KP költésével kapott fortélyok
+- [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
+- [Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
+- [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
+- [Slan fortélyok](046_slan_fortelyok.md)
 
 ---
 
@@ -1746,7 +1741,7 @@ Az adott fortély leírásában található egyedi bónuszt szolgáltat.
 
 Erről a [Képzettségek és fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md) fejezetben olvashatunk.
 
-Összefoglaló ábrát a fortélyok és képzettségkiterjesztésről pedig [itt láthatunk](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md).
+Összefoglaló ábrát a fortélyok és képzettségkiterjesztésről pedig [itt](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md) és [itt](038_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) láthatunk.
 
 ---
 
@@ -2895,12 +2890,12 @@ Ha az adott képzettséget nem lehet képzetlenül megpróbálni, akkor a KM egy
 ---
 ### Összetett képzettségpróba, Másodlagos próbadobások
 
-Ha a karakternek egy olyan összetett feladatot kell elvégeznie, ami nem intézhető el 1db dobással (pl. megmászni egy hegyet, vagy rettentő magas várfalat, esetleg órákon keresztül verset szavalni), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
+Ha a karakternek egy olyan összetett feladatot kell elvégeznie, ami nem intézhető el egy darab dobással (pl. megmászni egy hegyet, vagy rettentő magas várfalat, esetleg órákon keresztül verset szavalni), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
 
 - A játékos dob egy próbát az indokolt maximális nehézségre (pl. „Nagyon nehéz" (`Célszám:12`))
-- Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal (-3 célszám) alacsonyabb nehézség ellen**. Pl. (`2db Nehéz próbát`). Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
+- Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal (-3 célszám) alacsonyabb nehézség ellen**. Pl. (`2 db Nehéz próbát`). Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
 - Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat „milyen hosszú", mennyire „többlépcsős".
-- Ha nagyon finom bontást akarunk, akkor `akár 2 fokozattal` (-6  célszám) alacsonyabb nehézségre is dobathatunk akár így is: Nagyon nehéz (1db), Nehéz(1db), Átlagos (1db).
+- Ha nagyon finom bontást akarunk, akkor `akár 2 fokozattal` (-6  célszám) alacsonyabb nehézségre is dobathatunk akár így is: Nagyon nehéz (1 db), Nehéz(1 db), Átlagos (1 db).
 
 #### ⚡Példa: Megmászni egy 200 méter magas, omladékos hegyet
 
@@ -4326,7 +4321,7 @@ Hatások:
 - Beszéd - zagyva
 - Pszi használat elvesztése
 - Varázslás képesség elvesztése
-- Automatikus képzettségpróba: Összpontosítás (Nehézség: 12 (Nehéz)). Ha megdobja, kijöhet belőle.
+- Automatikus képzettségpróba: Összpontosítás (Nehézség: 12 (Nehéz)). Ha megdobja, kijöhet belőle. Onnantól "Zavar (2) Megrendült" Státuszra enyhül az állapot.
 
 Példa: becsapó természetes villám lecsap melléd, szakrális mágiák mellékhatása is lehet.
 
@@ -4893,23 +4888,26 @@ A [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) fejezetben
 
 ### Harci, vagy "taktikai" képzettségek és Vezető fortélyaik
 
-- [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) → [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)
-- [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) → [Vezető: Testőrparancsnok](fortelyok.harci/vezeto_testorparancsnok.md)
-- [Íjászat/Lövészet/Ostromlövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) → [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)
-- [Lopakodás/Rejtőzés](kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) → [Vezető: Fejvadász Strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md)
-- [Lovaglás](kepzettsegek.szekunder/lovaglas.md) → [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)
-- [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) → [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)
+- [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) → [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) (fizikai)
+- [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) → [Vezető: Testőrparancsnok](fortelyok.harci/vezeto_testorparancsnok.md) (**szellemi**)
+- [Íjászat/Lövészet/Ostromlövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) → [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md) (fizikai)
+- [Lopakodás/Rejtőzés](kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) → [Vezető: Fejvadász Strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md) (fizikai)
+- [Lovaglás](kepzettsegek.szekunder/lovaglas.md) → [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md) (fizikai)
+- [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) → [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md) (fizikai)
 
 ### Általános képzettségek és Vezető fortélyaik
 
-- [Előadóművészet](kepzettsegek.szekunder/eloadomuveszet.md) → [Vezető: Rendező](fortelyok.altalanos/vezeto_rendezo.md)
-- [Hajózás](kepzettsegek.szekunder/hajozas.md) →  [Vezető: Hajóskapitány](fortelyok.altalanos/vezeto_hajoskapitany.md)
-- [Kvantikum](kepzettsegek.szekunder/kvantikum.md) → [Vezető: Tudósprofesszor](fortelyok.altalanos/vezeto_tudosprofesszor.md)
-- [Lexikum](kepzettsegek.szekunder/lexikum.md) → [Vezető: Bölcsészprofesszor](fortelyok.altalanos/vezeto_bolcseszprofesszor.md)
-- [Nyomozás](kepzettsegek.primer.altalanos/nyomozas.md) → [Vezető: Nyomozó](fortelyok.altalanos/vezeto_nyomozo.md)
-- [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) → [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md)
-- [Szakma](kepzettsegek.szekunder/szakma.md) → [Vezető: Céhmester](fortelyok.altalanos/vezeto_cehmester.md)
-- [Vajákosság](kepzettsegek.szekunder/vajakossag.md) → [Vezető: Vajákmester](fortelyok.altalanos/vezeto_vajakmester.md)
+- [Előadóművészet](kepzettsegek.szekunder/eloadomuveszet.md) → [Vezető: Rendező](fortelyok.altalanos/vezeto_rendezo.md) (fizikai)
+- [Hajózás](kepzettsegek.szekunder/hajozas.md) →  [Vezető: Hajóskapitány](fortelyok.altalanos/vezeto_hajoskapitany.md) (fizikai)
+- [Kvantikum](kepzettsegek.szekunder/kvantikum.md) → [Vezető: Tudósprofesszor](fortelyok.altalanos/vezeto_tudosprofesszor.md) (**szellemi**)
+- [Lexikum](kepzettsegek.szekunder/lexikum.md) → [Vezető: Bölcsészprofesszor](fortelyok.altalanos/vezeto_bolcseszprofesszor.md) (**szellemi**)
+- [Nyomozás](kepzettsegek.primer.altalanos/nyomozas.md) → [Vezető: Nyomozó](fortelyok.altalanos/vezeto_nyomozo.md) (**szellemi**)
+- [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) → [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md) (**szellemi**)
+- [Szakma](kepzettsegek.szekunder/szakma.md) → [Vezető: Céhmester](fortelyok.altalanos/vezeto_cehmester.md) (fizikai)
+- [Vajákosság](kepzettsegek.szekunder/vajakossag.md) → [Vezető: Vajákmester](fortelyok.altalanos/vezeto_vajakmester.md) (**szellemi**)
+
+---
+🔗 [Képzettségek és fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
 
@@ -5485,7 +5483,7 @@ Lásd még bővebben a [Gyógyítás, Gyógyulás](140_gyogyitas_gyogyulas.md) f
 ---
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
-## KÉ, TÉ, VÉ, CÉ
+## `KÉ`, `TÉ`, `VÉ`, `CÉ`
 
 ## Harcértékek felépítése
 
@@ -5493,7 +5491,7 @@ A karaktert a harcban harcértékei jellemzik. Ezek mutatják meg, hogy mennyire
 
 - Kezdeményező Érték (`KÉ`)
 - Támadó Érték (`TÉ`)
-- Védő Érték (`VÉ`)
+- Védő Érték (`VÉ`) / Védő Érték (`VÉ`) Mozgás jellege alapján
 - Célzó Érték (`CÉ`)
 
 Ezen értékek öt jellemzőből épülnek fel:
@@ -5524,7 +5522,7 @@ CÉ konstans: -30
 ---
 És most lássuk a bevezetőben már említett négy konkrét harcértéket.
 
-### Kezdeményező érték (KÉ)
+### Kezdeményező érték (`KÉ`)
 
 A Kezdeményező Érték (**KÉ**) szerepe a harcban, hogy meghatározza, ki „mozdul először” a harcban. Nem jelent harci dominanciát, csak azt, hogy ki a gyorsabb, ki cselekedhet előbb.
 
@@ -5551,7 +5549,7 @@ A karakter Kezdeményező Értékét a következőképpen kell kiszámítani:
 <br />
 
 ---
-### Támadó Érték (TÉ)
+### Támadó Érték (`TÉ`)
 
 A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott fegyverrel milyen hatékonyan képes ellenfele ellen támadást, támadásokat intézni.
 
@@ -5573,7 +5571,7 @@ Az alábbi táblázat megadja, a Támadó Érték kiszámolásának módját.
 <br />
 
 ---
-### Védő Érték (VÉ)
+### Védő Érték (`VÉ`)
 
 A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képességét, hogy mennyire hatásosan képes elhárítani, elkerülni az ellene intézett csapásokat. Értéke nem mondható konstansnak, hisz a harci helyzettől függően változik, ráadásul kihat rá a testi-lelki, szellemi fáradság és persze a [sebesülés](061_03_sebesules.md) is.
 
@@ -5589,6 +5587,33 @@ A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képess�
 | Vértviselet – `3.fok` | A nehézvért viselés mesterei (**Vértviselet** `3.fok`) képesek a csapásokat páncélzatukról szándékoltan lecsúsztatni, sokszor hárítás helyett használva azt.  <br>Ezért félvért esetén `VÉ:+5`, teljes vért esetén `VÉ:+10` bónusz jár.                                                                                                                                                                                                                                                      |
 |       Pajzs VÉ        | Értéke a pajzs jellegétől függ.<br />Ha a karakter készületlen, vagy meglepetésből támadnak rá, a pajzs `VÉ` nem adódik hozzá a aktuális Védő Értékhez.<br />Képzetlen Pajzshasználat esetén csak értékének fele számít be.                                                                                                                                                                                                                                                                  |
 |       Speciális       | Harc során bekövetkező csökkenés (sima találat esetén)<br>  - Sebesülésből adódó csökkenés<br>  - Fortélyokból adódó módosítók<br>  - Harci helyzetből adódó módosítók (pl. harc alulról, harc megrendülten, stb)<br>  - Fegyver minőségéből adódó módosító<br>&nbsp;&nbsp;&nbsp;&nbsp; - Mestermunka: max `CÉ:+5`<br>&nbsp;&nbsp;&nbsp;&nbsp; - Gyatra fegyver: max `VÉ:-10`<br>&nbsp;&nbsp;&nbsp;&nbsp; - Mágikus fegyver módosítói<br>&nbsp;&nbsp;&nbsp;&nbsp; - Mágiából adódó módosítók |
+
+<br />
+
+### Védő Érték (`VÉ`) - mozgás jellege és mérete szerint
+
+Van olyan helyzet, mikor a karakter képtelen a védekezésre. Vagy valamilyen [Státusz](082_statuszok.md) hatására, vagy nincs tudatában, hogy épp támadás éri. Ilyenkor a teste mozgásának jellege adja az összes **Védő Értékét**, akár egy mozgó tárgynak - az alábbi táblázat szerint:
+
+| **Célpont mozgásának jellege**    | **VÉ** |
+| --------------------------------- | :----: |
+| Álló helyzet                      |  `20`  |
+| Lassú egyenletes (séta)           |  `30`  |
+| Egyenletes kocogás                |  `50`  |
+| Sprint egyenes vonalon            |  `80`  |
+| Lassú kiszámíthatatlan            |  `50`  |
+| Közepesen gyors, kiszámíthatatlan |  `80`  |
+| Gyors, kiszámíthatatlan           | `110`  |
+
+<br/>
+
+| **Célpont mérete** | **VÉ** |
+| ------------------ | ------ |
+| Óriás              | `-30`  |
+| Ork                | `-10`  |
+| Elfszabású / ember | `+0`   |
+| Goblin             | `+20`  |
+| macska             | `+40`  |
+| egér               | `+60`  |
 
 <br />
 
@@ -6926,7 +6951,7 @@ Most lássuk részletesen, hogy a fentieket hogyan alkalmazza a harcos, mikor k�
   varázsolhatnak
 ```
 
-A `Szilánk` rendszerében a Tradíciók reprezentálják az egyedi, különleges, karakter életútját alapjaiban meghatározó "csomagot".\
+A `Szilánk` rendszerében a **Tradíciók** reprezentálják az egyedi, különleges, karakter életútját alapjaiban meghatározó "csomagot".\
 Egy-két kivételtől eltekintve a karakterek **csak 1 Tradíciót vehetnek fel**, azt is **csak 1. tapasztalati szinten**.
 
 Mindegyik Tradíció [Primer képzettség](032_primer_szekunder_kepzettsegek.md), így csak annak szintkorlát határáig növelhető.
@@ -7798,7 +7823,7 @@ A `k20`-as sebződobással együtt dobunk `k6`-tal is:
 ---
 ### ⚡Példa-1
 
-- Harc `2db` tőrrel
+- Harc `2 db` tőrrel
 - Mivel „rövid” fegyverek, ezért hosszuk `0 pengének` számít.
 - `0+0=0 penge` így nincs Harckeret levonás:\
 `1.fok: +3 Harckeret` ; `2/3.fok: +6 Harckeret`
@@ -8719,26 +8744,30 @@ Alább az egyes fegyver-kategóriák tipikus **Osztó** értékét látjuk. Ett�
 
 ## Harci helyzetek ✴️🗡️
 
-| Szituáció                                                                                       |                                Módosító                                | Megjegyzés                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| :---------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Belharci szituáció](#belharci-szituáció)                                                       |                            Lásd a leírást!                             | • Bekerülni: [Belharcba kerülés](066_05_altalanos_manoverek.md#belharcba-kerülés) manőverrel<br/>• Kijönni: [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcból-kibontakozás) manőverrel<br/>• Mindenki a saját Harcmodorának módosítóival küzd<br/>• [Belharc fortély](fortelyok.harci/belharc.md) bónuszai: `KÉ:+2`, `TÉ/VÉ:+3` fokonként. Csak **Közelharc** harcmodorban jár.<br/>• A `rövid (0)` pengénél nagyobb fegyverek értékei: `0`-ra esnek, sebzésük max: `+1 SP`,  „**Harckeret**” csökken `5`-el. **Erőbónusz** és **MF** fortély bónuszai maradnak.<br/>• Puszta kéz értékei `0`-ra emelkednek<br />• Erőbónusz: `TÉ/VÉ: +10 x Erő` |
-| [Beszorított helyzet](#beszorított-helyzet)                                                     |              Lásd a [leírást](#beszor%C3%ADtott-helyzet)!              | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| [Észrevétlen támadás](#észrevétlen-támadás)                                                     |            Áldozat Védő Értéke: mozgás jellegétől függő VÉ             | **Célpont mozgás jellegétől függő VÉ**<br/>A támadó más helyzeti/taktika TÉ bónuszt nem kaphat. <br/><br/>Lásd a bővebb leírást.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| [Fegyverrántás](#fegyverrántás)                                                                 | Puszta kezes KÉ  <br/>fegyver-függő levonással:<br/><br/>`[0 ;-10] KÉ` | Pusztakezes KÉ, módosítóval. A sikeres fegyverrántás után (is) az ellenfél támad.<br />Viszont `10`-el túldobott `KÉ` esetén már maga a fegyverrántó támadhat elsőnek azonnal – teljes harcértékével. További szituációk a részletes leírásnál.<br/><br/>Fegyverrántás fortély bónusza:<br/>`1. fok: +5 KÉ`<br/>`2. fok: +10 KÉ`                                                                                                                                                                                                                                                                                                                                  |
-| [Félhátulról támadás](#félhátulról-támadás)                                                     |                                `TÉ:+10`                                | Pajzs VÉ csak akkor számít, ha a pajzsot tartó kéz felőli oldalról jön a csapás.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| [Félhomályban](#félhomályban)                                                                   |                               `VÉ: -20`                                | Félhomályban kockázatosabb védekezni, a fegyverek mozgása nehezebben látható.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| [Földön fekve](#földön-fekve)                                                                   |                        `KÉ:-10, TÉ:-10, VÉ:-10`                        | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| [Hátulról támadás](#hátulról-támadás)                                                           |                                `TÉ:+20`                                | A támadó kapja a módosítót.<br/>Pajzs VÉ nem számít.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| [Helyhez kötve](#helyhez-kötve)                                                                 |                        `KÉ:-10, TÉ:-20, VÉ:-20`                        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| [Képzetlen fegyverhasználat](#képzetlen-fegyverhasználat)                                       |                `KÉ:-20, TÉ:-30` <br/>`VÉ:-30, CÉ: -30`                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| [Készületlenség](#készületlenség)                                                               |                      Lásd a Meglepetés helyzetet!                      | Ha egy karakter készületlen, akkor támadója a Meglepetés szituációnak megfelelő módosítókkal támadhat rá.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| [Magasabbról](#magasabbról)                                                                     |                                `TÉ:+10`                                | A támadó kapja a módosítót.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| [Meglepetés](#meglepetés)                                                                       |                                `TÉ:+20`                                | A támadó kapja a módosítót.<br/>Pajzs VÉ csak akkor számít, ha a csapás nem hátulról jön.<br/>A `VÉ` csökkentés mindig legalább Nagykocka.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [Pusztakezes harc](#pusztakezes-harc)                                                           |                        `KÉ:-10, TÉ:-10, VÉ:-10`                        |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| [Rosszabbik kézben tartott fegyver](#rosszabbik-kézben-tartott-fegyver)                         |                        `KÉ:-10, TÉ:-20, VÉ:-20`                        | Kivétel:<br/>• **Kétkezesség** fortély. Csak annyit ad, hogy rosszabbik kézzel is levonás nélkül tudsz harcolni, de csak 1 fegyverrel!!<br/>• **Kétkezes Harc** fortély                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| [Vadállatok ellen](#vadállatok-ellen)                                                           |                            Lásd a leírást!                             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| [Védekező takarásban](#védekező-takarásban)                                                     |                `Támadó TÉ: -20`<br/>`Védekező TÉ: -10`                 |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| [Védő Érték kiterjesztése másra](#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-kiterjeszt%C3%A9se-m%C3%A1sra) |                                                                        | `VÉ:-25 VÉ` módosítóval.<br />Levonás csökkenthető a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| Szituáció                                                                                       | **[Hatások](081_hatasok.md)**                                                                                                                      | Megjegyzés                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| :---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [Belharci szituáció](#belharci-szituáció)                                                       | Lásd a leírást!                                                                                                                                    | • Bekerülni: [Belharcba kerülés](066_05_altalanos_manoverek.md#belharcba-kerülés) manőverrel<br/>• Kijönni: [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcból-kibontakozás) manőverrel<br/>• Mindenki a saját Harcmodorának módosítóival küzd<br/>• [Belharc fortély](fortelyok.harci/belharc.md) bónuszai: `KÉ:+2`, `TÉ/VÉ:+3` fokonként. Csak **Közelharc** harcmodorban jár.<br/>• A `rövid (0)` pengénél nagyobb fegyverek értékei: `0`-ra esnek, sebzésük max: `+1 SP`,  „**Harckeret**” csökken `5`-el. **Erőbónusz** és **MF** fortély bónuszai maradnak.<br/>• Puszta kéz értékei `0`-ra emelkednek<br />• Erőbónusz: `TÉ/VÉ: +10 x Erő` |
+| [Beszorított helyzet](#beszorított-helyzet)                                                     | Lásd a [leírást](#beszor%C3%ADtott-helyzet)!                                                                                                       | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| [Csúszós talaj](#cs%C3%BAsz%C3%B3s-talaj)                                                       | `Hátrány-1`: TÉ dobásra                                                                                                                            | Addig tart, amíg a csúszós felületen áll, mozog a karakter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [Elvesztett egyensúly](#elvesztett-egyens%C3%BAly)                                              | - `Hátrány-1`: TÉ dobásra<br>- Többszörös támadás elvesztése<br>- Mozgás - lassulás                                                                | Kör végéig tart, vagy sikeres Akrobatika próba esetén rögtön.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| [Észrevétlen támadás](#észrevétlen-támadás)                                                     | Áldozat Védő Értéke: mozgás jellegétől függő VÉ                                                                                                    | [Áldozat mozgás jellegétől függő VÉ](062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint)<br/>A támadó más helyzeti/taktika TÉ bónuszt nem kaphat. <br/>Lásd a bővebb leírást.                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [Fegyverrántás váratlanul](#fegyverr%C3%A1nt%C3%A1s-v%C3%A1ratlanul)                            | - Tőr: nincs KÉ dobás módosító<br>- Kard: `Hátrány-1` KÉ dobásra<br>- Alabárd: `Hátrány-2` KÉ dobásra                                              | Pusztakezes KÉ, módosítóval. A sikeres fegyverrántás után (is) az ellenfél támad.<br />Viszont `10`-el túldobott `KÉ` esetén már maga a fegyverrántó támadhat elsőnek azonnal – teljes harcértékével. További szituációk a részletes leírásnál.<br/><br/>Fegyverrántás fortély bónusza:<br/>`1. fok: 1 Hátrányt semlegesít`<br/>`2. fok: 2 Hátrányt semlegesít`                                                                                                                                                                                                                                                                                                   |
+| [Félhátulról támadás](#félhátulról-támadás)                                                     | `Előny+1` TÉ dobásra                                                                                                                               | Pajzs VÉ csak akkor számít, ha a pajzsot tartó kéz felőli oldalról jön a csapás.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+| [Félhomályban](#félhomályban)                                                                   | `Hátrány-1` TÉ dobásra<br>(mindenkinél)                                                                                                            | Félhomályban nehezebb harcolni, a fegyverek mozgása nehezebben látható.<br><br>[Vakharc](fortelyok.harci/vakharc.md) - `1.fok` megszünteti a büntetést.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [Földön fekve](#földön-fekve)                                                                   | - `Hátrány-2` TÉ dobásra<br>- `VÉ` veszteség duplázódik                                                                                            | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
+| [Hátulról támadás](#hátulról-támadás)                                                           | `Előny+2` TÉ dobásra                                                                                                                               | A támadó kapja a módosítót.<br/>Pajzs VÉ nem számít.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| [Helyhez kötve](#helyhez-kötve)                                                                 | - `Hátrány-1` TÉ dobásra<br>- `VÉ` veszteség duplázódik                                                                                            |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| [Képzetlen fegyverhasználat](#képzetlen-fegyverhasználat)                                       | Lásd [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) oldalt.                                                  | A levonások a Harcmodor szintjétől függnek `[0-2].szinten`.<br>A teljes képzetlenség`0.szintől`-ről indul.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [Készületlenség](#készületlenség)                                                               | Lásd a Meglepetés helyzetet!                                                                                                                       | Ha egy karakter készületlen, akkor támadója a Meglepetés szituációnak megfelelő módosítókkal támadhat rá.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [Levegőből támadás](#leveg%C5%91b%C5%91l-t%C3%A1mad%C3%A1s)                                     | `Előny+2`: Támadó Dobásra                                                                                                                          | Esetleges Roham (zuhanás) külön, plusz számolandó.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
+| [Láthatatlanul](#l%C3%A1thatatlanul)                                                            | Támadó:<br>- `Előny+2`: Támadó Dobásra<br>Védő:<br>- `VÉ` veszteség duplázódik                                                                     | [Vakharc](fortelyok.harci/vakharc.md) minden foka `1 fok Előnyt` semlegesít.<br>`1.fok` semlegesíti már a VÉ csökk duplázódást.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| [Magasabbról](#magasabbról)                                                                     | `Előny+1`: Támadó Dobásra                                                                                                                          | A támadó kapja a módosítót.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
+| [Meglepetés](#meglepetés)                                                                       | Támadó:<br>- `Előny+1` TÉ dobásra<br>- `VÉ` csökkentés duplázódik<br><br>Védő:<br>- Többszörös támadás elvesztése<br>- Utolsónak támadhat a körben | Pajzs VÉ csak akkor számít, ha a csapás nem hátulról jön.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| [Pusztakezes harc](#pusztakezes-harc)                                                           | Lásd a [Puszta kéz harcértékeit](068_02_kozelharci_fegyverek.md)!                                                                                  |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| [Rosszabbik kézben tartott fegyver](#rosszabbik-kézben-tartott-fegyver)                         | `Hátrány-1` TÉ dobásra                                                                                                                             | Kivétel:<br/>• **Kétkezesség** fortély. Csak annyit ad, hogy rosszabbik kézzel is levonás nélkül tudsz harcolni, de csak 1 fegyverrel!!<br/>• **Kétkezes Harc** fortély                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
+| [Vadállatok ellen](#vadállatok-ellen)                                                           | Lásd a [leírást](#vad%C3%A1llatok-ellen)!                                                                                                          |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| [Védekező takarásban](#védekező-takarásban)                                                     | `Hátrány-1` TÉ dobásra mindkét félnél                                                                                                              |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+| [Védő Érték kiterjesztése másra](#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-kiterjeszt%C3%A9se-m%C3%A1sra) | - Többszörös támadás elvesztése<br>- `VÉ` veszteség duplázódik                                                                                     | A büntetések csökkenthetőek a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 
 <br />
 
@@ -8809,7 +8838,7 @@ Beszorított helyzeten azt értjük, ha az adott fegyverrel a harcos helyhiány 
 
 Mivel nem lehet általános szabályt alkotni minden szituáció és fegyver-típus kapcsolatából, ezért csak irányelveket fektetünk le, a KM határozza meg az adott helyzet ismeretében, hogy épp milyen levonások járnak.
 
-„**Rövid**” fegyverekre (max 0,5 pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
+„**Rövid**” fegyverekre (max `0,5` pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
 
 Szobában, bútorok közt:
 - 2 kezes és szálfegyverek harcértéke `0`-ra zuhan
@@ -8823,61 +8852,73 @@ Szűk sikátorban:
 <br />
 
 ---
-### Észrevétlen támadás
+### Csúszós talaj
 
-Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
+```
+Hátrány-1: TÉ dobásra
+```
 
-Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen.
-
-Az **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás).
-
-A támadó más helyzeti/taktika TÉ bónuszt nem kaphat. 
-
-Ilyenkor ellenfele `Védő Értékét` annak mozgási jellege és mérete határozza meg:
-
-| **Célpont mozgásának jellege**    | **VÉ** |
-| --------------------------------- | :----: |
-| Álló helyzet                      |  `20`  |
-| Lassú egyenletes (séta)           |  `30`  |
-| Egyenletes kocogás                |  `50`  |
-| Sprint egyenes vonalon            |  `80`  |
-| Lassú kiszámíthatatlan            |  `50`  |
-| Közepesen gyors, kiszámíthatatlan |  `80`  |
-| Gyors, kiszámíthatatlan           | `110`  |
-
-<br/>
-
-| **Célpont mérete** | **VÉ** |
-| ------------------ | ------ |
-| Óriás              | `-30`  |
-| Ork                | `-10`  |
-| Elfszabású / ember | `+0`   |
-| Goblin             | `+20`  |
-| macska             | `+40`  |
-| egér               | `+60`  |
+Mindenkinek, aki csúszós talajon harcol `Hátrány-1` jár `TÉ` dobására.
 
 <br />
 
 ---
-### Fegyverrántás
+### Elvesztett egyensúly
+
+```
+- Hátrány-1: TÉ dobásra
+- Többszörös támadás elvesztése
+- Mozgás - lassulás
+```
+
+A hatások alapból a kör végéig tart, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
+
+<br />
+
+---
+### Észrevétlen támadás
+
+```
+Lopakodás/rejtőzés
+  vs
+Észlelés
+```
+
+```
+VÉ ← áldozat mozgási jellege
+```
+
+Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
+
+Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen. Siker esetén áldozata [Védő Értékét annak mozgási jellege és mérete](062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint) határozza meg. A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat. 
+
+Az **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás).
+
+<br />
+
+---
+### Fegyverrántás váratlanul
 
 Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
 
 #### ⚜️ `1.`Pusztakezes harc közben megpróbál fegyvert rántani 
 
-Ezen fegyverrántás szituáción azt értjük, amikor valaki harci kontaktus közben próbálja előkapni fegyverét, hogy ne pusztakezes értékeivel legyen kénytelen küzdeni. Ez igen nehéz feladat, hiszen ellenfele által folyamatosan fenyegetve van.
+Ezen fegyverrántás szituáción azt értjük, amikor egy fegyvertelen karakter harci kontaktus közben próbálja előkapni fegyverét, hogy ne pusztakezes értékeivel legyen kénytelen küzdeni, miközben ellenfele már fegyverével fenyegeti.
 
 Fegyverrántásnál pusztakezes `KÉ` értékkel történik a kezdeményezés, fegyver-függő módosítóval:
 
 ```
-KÉ: [0 ;-10]
+- Tőr méretű:
+  nincs KÉ dobás módosító
 
-Tőr: KÉ:-0
-...
-Kk csatabárd: KÉ:-10
+- Kard méretű:
+  `Hátrány-1` KÉ dobásra
+
+- Alabárd méretű:
+  `Hátrány-2` KÉ dobásra
 ```
 
-Tehát minél nehezebb előrántani egy fegyvert, annál nagyobb rá a büntetés. A levonás mértékét a KM határozza meg.
+Tehát minél nehezebb előrántani egy fegyvert, annál nagyobb rá a büntetés. Hogy a fegyver melyik kategóriába tartozik, azt a KM határozza meg.
 
 #### `1.1` Elveszíti a kezdeményezést
 
@@ -8897,8 +8938,8 @@ A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, te
 Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járnak:
 
 ```
-1.fok:  KÉ:+5
-2.fok:  KÉ:+10
+1.fok:  1 Hátrány fokot semlegesít a büntetésből
+2.fok:  2 Hátrány fokot semlegesít a büntetésből
 ```
 
 #### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
@@ -8911,36 +8952,48 @@ Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 
 Áldozat: [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba (aktív/passzív észlelés számít)
 - Sikertelen Észlelés: [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadás
-- Sikeres Észlelés: Támadó `KÉ:+10` bónusszal Kezdeményez
+- Sikeres Észlelés: Támadónak `Előny+1` Kezdeményezésre
   - Nyert Támadó `KÉ`: [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) módosítóit kapja meg a támadó
-  - Vesztett Támadó KÉ: a megtámadott még így is gyorsabban reagál! Ő támadhat elsőnek, mindketten az aktuális harcértékeikkel és fegyvereikkel
+  - Vesztett Támadó `KÉ`: a megtámadott még így is gyorsabban reagál! Ő támadhat elsőnek, mindketten az aktuális harcértékeikkel és fegyvereikkel
 
-#### 🔆 **Szálfegyverek**
+#### 🔆 Szálfegyverek
 
 Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy kézben vannak, vagy olyan módon tárolva, ahonnan lehetetlen fegyverrántással előhúzni.
 
 #### ⚡ Példák
 
 ```
-KÉ alap: 26 → Puszta kezes KÉ: 16  (Mivel a Puszta kéz KÉ értéke: -10)
-Tőrrel KÉ: 28 (Tőr KÉ:+2)
-• Puszta kezes KÉ (16) számít
-• Egy tőrt könnyű előrántani (0 KÉ büntetés). Így a KÉ: 16
-    • 2.fokú fegyverrántás fortéllyal: 16+10=26 (ez már csak 2-vel marad el a tőrös KÉ-től)
-• Ha kardot akarnék rántani, azt már nehezebb (-4 KÉ büntetés). Így fortély nélkül KÉ: 12
-    • 2.fokú fegyverrántás fortéllyal: 12+10=22
-• Kétkezes csatabárdot „rántani” szinte lehetetlen (-10KÉ). Így fortély nélkül KÉ: 6
-    • 2.fokú fegyverrántás fortéllyal: pont kiegyenlíti a -10 KÉ büntetést. Így KÉ=16
+KÉ alap: 26
+ → Puszta kéz KÉ: -10
+ → Puszta kezes KÉ: 16
 ```
+
+`1.` Tőr méretű fegyver előrántása
+- Alap: egy tőrt könnyű előrántani így sima `KÉ` dobás (`16`), büntetés nélkül
+- Fegyverrántás `2.fok` fortéllyal: `Előny+2` KÉ dobásra (`16`)
+
+`2.` Kard méretű fegyver előrántása
+- Ha kardot akarnék rántani, azt már nehezebb: `Hátrány-1` KÉ dobásra (`16`)
+- Fegyverrántás `2.fok` fortéllyal
+  - `Előny+1` KÉ dobásra (`16`)
+  - `Hátrány-1`-ből `2` fok pozitív irányba `Előny+1`
+
+`2.` Kétkezes csatabárd méretű fegyver előrántása
+- Ez a méret már igazi kihívás: `Hátrány-2` KÉ dobásra (`16`)
+- Fegyverrántás `2.fok` fortéllyal
+  - Alap KÉ dobás (`16`)
+  - `Hátrány-2`-ből `2` fok pozitív irányba: Alap dobás
 
 <br />
 
 ---
 ### Félhátulról támadás
 
-```TÉ: +10```
+```
+Előny+1: TÉ dobásra
+```
 
-Ha a karakter ellenfelére hátulról féltámad, 👀`+10 TÉ` módosító járul **Támadó Értékéhez**.
+Ha a karakter ellenfelére félhátulról támad, `Előny+1` jár `TÉ` dobására.
 
 Védekező Pajzs VÉ csak akkor számít, ha a pajzsot tartó kéz felőli oldalról jön a csapás.
 
@@ -8950,10 +9003,12 @@ Védekező Pajzs VÉ csak akkor számít, ha a pajzsot tartó kéz felőli oldal
 ### Félhomályban
 
 ```
-VÉ: -20
+Hátrány-1: TÉ dobásra
 ```
 
 Félhomályban kockázatosabb védekezni, a fegyverek mozgása nehezebben látható. Mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol.
+
+A fenti büntetést már a [Vakharc](fortelyok.harci/vakharc.md) - `1.foka` megszünteti.
 
 <br />
 
@@ -8961,19 +9016,24 @@ Félhomályban kockázatosabb védekezni, a fegyverek mozgása nehezebben látha
 ### Földön fekve
 
 ```
-KÉ: -10, TÉ: -10, VÉ: -10
+- Hátrány-2 TÉ dobásra
+- VÉ veszteség duplázódik
 ```
+
+Földről támadni sokkal nehezebb és a kitérés is energiaigényesebb.
 
 <br />
 
 ---
 ### Hátulról támadás
 
-```TÉ: +10```
+```
+Előny+2: TÉ dobásra
+```
 
-Ha a karakter ellenfelére hátulról támad, 👀`+20 TÉ` módosító járul **Támadó Értékéhez**.
+Ha az ellenfeléredre hátulról támad, azt jelentős előnnyel jár támadáskor.
 
-A védekező pajzs VÉ értéke NEM számít.
+A védekező karakter pajzsának `VÉ` értéke NEM számít.
 
 <br />
 
@@ -8981,21 +9041,20 @@ A védekező pajzs VÉ értéke NEM számít.
 ### Helyhez kötve
 
 ```
-KÉ:-10, TÉ:-20, VÉ:-20
+- Hátrány-1 TÉ dobásra
+- VÉ veszteség duplázódik
 ```
 
-Ha a karakter helyhez kötve kénytelen harcolni, akkor `-10 KÉ, -20 TÉ és -20 VÉ` büntetés jár harcértékeire.
+Ha a karakter helyhez kötve kénytelen harcolni, akkor jelentős hátránnyal teheti csak ezt.
 
 <br />
 
 ---
 ### Képzetlen fegyverhasználat
 
-```
-KÉ: -20, TÉ: -30, VÉ: -30, CÉ: -30
-```
+Lásd [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) oldalt.
 
-Ha egy karakter képzetlen az általa forgatott fegyver használatában, akkor harcértékeit a fenti levonások sújtják.
+Ha egy karakter képzetlen az általa forgatott fegyver használatában, tehát `3.szint` alatt van a kapcsolódó [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettsége, akkor harcértékeit a fenti hivatkozás alatti levonások sújtják. A teljes képzetlenség a Harcmodor `0.szintjéről` indul.
 
 <br />
 
@@ -9007,25 +9066,63 @@ Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepet%C3%A9s
 <br />
 
 ---
+### Láthatatlanul
+
+```
+Támadó: Előny+2 Támadó dobásra
+Védő: VÉ veszteség duplázódik
+```
+
+A védő
+- [Vakharc](fortelyok.harci/vakharc.md) fortélyának minden foka `1 fok Előnyt` semlegesít a támadó oldalán levő Támadó dobás bónuszából.
+- [Vakharc](fortelyok.harci/vakharc.md) fortélyának `1.foka` már semlegesíti a "VÉ veszteség duplázódik" Hatást.
+
+<br />
+
+---
+### Levegőből támadás
+
+```
+Előny+2: Támadó Dobásra
+```
+
+A levegőből támadás - például egy légi hátasról - jelentős előnnyel jár.
+
+Egy esetleges Roham (zuhanás) külön, plusz számolandó.
+
+<br />
+
+---
 ### Magasabbról
 
 ```
-TÉ: +10
+Előny+1: TÉ dobásra
 ```
 
-Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen helyzetben `+10 TÉ` módosító járul Támadó Értékéhez.
+Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen helyzetben `Előny+1` jár `TÉ` dobására.
 
 <br />
 
 ---
 ### Meglepetés
 
-```TÉ: +20```
+```
+Támadó:
+- Előny+1 TÉ dobásra
+- VÉ csökkentés duplázódik
 
-Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor Meglepetésről beszélünk.\
-Az ilyen helyzetben a támadó karakter `+20 TÉ` módosítót kap harcértékeire. A védekező számára a `Pajzs VÉ` csak akkor számít, ha a csapás nem hátulról jön.
+Védő:
+- Többszörös támadás elvesztése
+- Utolsónak támadhat a körben
+- Pajzs VÉ: szituáció függő
+```
 
-Sikertelen támadás esetén is a `VÉ` csökkentés mindig legalább Nagykocka. Ha a támadó már amúgy is eléri, vagy meghaladja ezt a szintet, akkor nincs változás az általa okozott `VÉ` csökkentés mértékében.
+
+Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
+
+Az ilyen helyzetben a támadó számára `Előny+1` jár `TÉ` dobásra és `VÉ` csökkentése is duplázódik.
+
+A védekező csak `1`-et támadhat és azt is csak a kör végén teheti meg, továbbá a pajzsának `VÉ`-je csak akkor számít, ha a csapás nem hátulról jön.
 
 <br />
 
@@ -9036,9 +9133,9 @@ Sikertelen támadás esetén is a `VÉ` csökkentés mindig legalább Nagykocka.
 Puszta kéz harcértékei: KÉ: -10, TÉ: -10, VÉ: -10
 ```
 
-Amennyiben valaki fegyvertelenül, puszta kézzel kénytelen egy felfegyverzett ellenféllel harcolni, akkor alapesetben hátrányban van. Ez a Puszta kéz negatív harcértékeiben mutatkozik meg. A különböző pusztakezes Fortélyok csak mérsékelik ezt a hátrányt. Egyetlen kivétel a harcművészek „**Élő fegyver**” fortélya, amely teljesen megszünteti az említett hátrányokat (`0`-ra „emeli” mindhárom harcértéket).
+Amennyiben valaki fegyvertelenül, puszta kézzel kénytelen egy felfegyverzett ellenféllel harcolni, akkor alapesetben hátrányban van. Ez a [Puszta kéz](068_02_kozelharci_fegyverek.md) negatív harcértékeiben mutatkozik meg. A különböző pusztakezes Fortélyok csak mérsékelik ezt a hátrányt. Egyetlen kivétel a harcművészek [Élő fegyver](fortelyok.slan/elo_fegyver.md) fortélya, amely mérsékeli az említett hátrányokat.
 
-A fenti levonások kizárólag **belharcban** nem érvényesülnek, ahhoz viszont „**Belharcba kerülés**” Manőver szükséges! Belharcban a Puszta kéz harcértékei `0`-ra emelkednek, valamint járnak a **Belharcból** eredő esetleges módosítók is.
+A fenti levonások kizárólag [Belharcban](#belharci-szituáció) nem érvényesülnek, ahhoz viszont „**Belharcba kerülés**” Manőver szükséges! Belharcban a Puszta kéz harcértékei `0`-ra emelkednek, valamint járnak a **Belharcból** eredő esetleges módosítók is.
 
 A **Puszta kéz** – mint fegyver – szabály szempontjából „egykezes” fegyvernek számít, tehát **nem** lehet vele **Kétkezes harcot** folytatni!
 
@@ -9048,13 +9145,12 @@ A **Puszta kéz** – mint fegyver – szabály szempontjából „egykezes” f
 ### Rosszabbik kézben tartott fegyver
 
 ```
-KÉ:-10, TÉ:-20, VÉ:-20
+Hátrány-1 TÉ dobásra
 ```
 
-Ha – akár sérülés hatására – a harcos kénytelen átvenni fegyverét ügyetlenebb kezébe, akkor csak a következő levonásokkal harcolhat: `KÉ:-10, TÉ:-20, VÉ:-20`\
-Kivétel:
-- **Kétkezesség** fortély. Csak annyit ad, hogy rosszabbik kézzel is levonás nélkül tudsz harcolni, de csak 1 fegyverrel!!
-- **Kétkezes Harc** fortély
+Ha – például sérülés hatására – a harcos kénytelen átvenni fegyverét ügyetlenebb kezébe, akkor Hátrány-1 jár `TÉ` dobására.
+
+Kivétel: [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md), amely megléte esetén bármelyik kezeddel is levonás nélkül tudsz harcolni, de csak 1 fegyverrel!!
 
 <br />
 
@@ -9069,24 +9165,29 @@ Sokféle állat van, ezért nem lehet egységes szabályt alkotni azok harcmodor
 ### Védekező takarásban
 
 ```
-Támadó   TÉ: -20
-Védekező TÉ: -10
+Támadó és Védekező:
+  Hátrány-1 TÉ dobásra
 ```
 
-Ebben a szituációban mindkét fél részére nehezebb harcolni, a védekező fél egy kis plusszal indul ha takarásba lép be, mint egy kapu, vagy egy falrész akár.
+Ebben a szituációban mindkét fél részére nehezebb harcolni. Példa: kapu, belógó falrész.
 
 Figyelem: ha a védekező mozgásában korlátozottá válik a körülötte levő tereptárgyaktól, akkor változik a helyzet és az alábbiak közül valamelyik (KM dönt) módosítói vonatkoznak rá:
-- [beszorított helyzet](#beszor%C3%ADtott-helyzet)
-- [helyhez kötve](#helyhez-k%C3%B6tve)
+- [Beszorított helyzet](#beszor%C3%ADtott-helyzet)
+- [Helyhez kötve](#helyhez-k%C3%B6tve)
 
 <br />
 
 ---
 ### Védő Érték kiterjesztése másra
 
-Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak `-25 VÉ` csökkenéssel.
+```
+- Többszörös támadás elvesztése
+- VÉ veszteség duplázódik
+```
 
-Ezt a képességedet javíthatod és a levonást csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
+Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de ilyenkor csak egyet támadhatsz a körben és az elszenvedett VÉ csökkenéseid is duplázódnak.
+
+A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
 
 <br />
 
@@ -9690,7 +9791,7 @@ Ebben az esetben az adott fortély megléte nem követelmény, viszont ha megvan
 ---
 ### `2.` Képzettségek kiterjesztése Fortélyokkal
 
-Egyes képzettségek az alap tudást lefedő ismeretek keretein túl is "kiterjeszthetőek", egyesek pedig "felszeletelhetőek" tudásterületekre. A [Szabad Fortélyok](042_szabad_fortelyok.md) jellemzője, hogy mind ilyen képzettség-kiterjesztést végeznek, de egyes egyéb fortélyok is képesek erre. Hogy melyek, azok mindig az adott képzettség adatlapján olvashatóak.
+Egyes képzettségek az alap tudást lefedő ismeretek keretein túl is "kiterjeszthetőek", egyesek pedig "felszeletelhetőek" tudásterületekre. A [Szabad Fortélyok](042_szabad_fortelyok.md) jellemzője, hogy mind ilyen képzettség-kiterjesztést végeznek, de egyes egyéb fortélyok is képesek erre. Hogy melyek, azok mindig az adott képzettség adatlapján olvashatóak (a KM megkövetelhet egyéb kiterjesztéseket is, ha indokoltnak látja).
 
 A képzettségkiterjesztésnek két módja van: **Normál** és **Erős**. Ez azt fejezi ki, hogy mennyire szigorú a kapcsolat a képzettség és a fortély között. Ha van egy képzettségpróba, amelynek ismeret területe a KM szerint ezen képzettség alá tartozik ÉS lefed egy kapcsolódó Fortélyt, akkor használjuk ezeket a kiterjesztéseket.
 
@@ -11854,7 +11955,7 @@ Bővebben lásd az alábbi Szituációk fejezetét:
 
 ## 🟣 Vezető: Bölcsészprofesszor (2)
 
-Vezető nyomozóként koordinálod az alád tartozó bölcsészek munkáját → bónusz **Lexikum** képzettségre.
+Vezető professzorként koordinálod az alád tartozó bölcsészek munkáját → bónusz **Lexikum** képzettségre.
 
 ---
 #### Bónusz
@@ -12055,12 +12156,12 @@ Ha [Tradíciót](../050_tradiciok.md) veszel fel, automatikusan megkapod az **Í
 
 ## 🟣 Vezető: Rendező (2)
 
-Képes vagy egy színitársulat vezetésére → bónusz **Előadóművészet** képzettségre.
+Képes vagy egy színtársulat vezetésére → bónusz **Előadóművészet** képzettségre.
 
 ---
 #### Bónusz
 
-A [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy színitársulat tagjai, mikor egy előadást játszanak el. A fentiek szerint kiszámolt csoportos **Előadóművészet** értéket egy jó rendező képes koordinálásával megemelni.
+A [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy színtársulat tagjai, mikor egy előadást játszanak el. A fentiek szerint kiszámolt csoportos **Előadóművészet** értéket egy jó rendező képes koordinálásával megemelni.
 
 ---
 ### 1. fok
@@ -12086,6 +12187,7 @@ A [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség
 ### Megjegyzések
 
 - Jellemzően NJK ismeret
+
 ## 🟣 Nyomolvasás (2)
 
 Megtalált nyomok értelmezését, illetve városon kívül a nyomok követését végezzük vele.
@@ -12466,7 +12568,7 @@ Nyelvi ismeretek, faji különbségek nehezítenek!
 
 ---
 
-## 🟣 Vezető: Nyomozó (2) 🔁
+## 🟣 Vezető: Nyomozó (2)
 
 Vezető nyomozóként koordinálod az alád tartozó nyomozók munkáját → bónusz **Nyomozás** képzettségre.
 
@@ -18349,26 +18451,47 @@ Lexikum képzettségpróba + Kultúrkör (Normál kiterjesztés)
 
 
 ---
-### Kultúrkör lista draft
+### Kultúrkör lista
 
-- erv
-- tor0ni
-- pyarr0ni
-- shad0ni
-- gorv1ki
-- kr4ni
-- 1barai
-- törpe
+- 4mund
+- asz1sz
+- barbár
+- bukán
+- dw00n
+- dzs4d
+- elar
 - elf
-- ⭕TODO⭕
+- en0szukei
+- erv
+- gohr
+- gorv1ki
+- il4nori
+- khál
+- kr4ni
+- mawini
+- ni4rei
+- nomád
+- pier
+- predoci, edorli
+- py4r
+- ragnaroki
+- sh4doni
+- syburri
+- tarran
+- ti4dlani
+- tongoriai
+- t0r0ni
+- törpe
 
-⭕TODO: a lenti importált listát szinkronba hozni a Kultúrkörökkel.⭕
 
-ÉSZAKON:
+---
+### Föbb területek
+
+ÉSZAKON
 
 - Északi Szövetség és a vörös hadurak országai
 - Tor0n és a fekete hadurak országai (Abasz1sz, Gro-Ugon, az északi városállamok - mint Rowon, Al1dax -, stb.)
-- Godora és Eri.n (beleértve a környéket is, pl. Elátkozott Vidék, Sher.l nyugati része, stb.)
+- Godora és Eri0n (beleértve a környéket is, pl. Elátkozott Vidék, Sher4l nyugati része, stb.)
 
 DÉLEN
 
@@ -18376,7 +18499,7 @@ DÉLEN
 - Py4rroni Államszövetség és Yllin0r
 - Shad0n és környéke
 - Gorv1k és a Kereskedőhercegségek
-- Ordan és a déli városállamok
+- Ord4n és a déli városállamok
 - Taba el 1bara
 
 <br />
@@ -18685,20 +18808,33 @@ Nincs, csak biztos tudásból.
 
 - ⭕xyz
 
-## 🟣 Harc helyhez kötve (1)
+## 🟣 Harc helyhez kötve (3)
 
 Nem esel kétségbe akkor sem, ha nem nagyon kis helyen, vagy kimozgás lehetősége nélkül kell harcolni.
+
+### Alapeset
+
+🔒 **Követelmény**: -
+
+🌟 **Hatás**: a [Helyhez kötve](../065_01_harci_helyzetek.md#helyhez-kötve) szituáció Hatásai sújtanak.
+
+---
 ### 1. fok
 
 🔒 **Követelmény**:
 - Önuralom: `+1`
 - Harcmodor - `3.szint`
 
-🌟 **Hatás**:
-- Felezi a [Helyhez kötve](../065_01_harci_helyzetek.md#helyhez-kötve) szituáció levonásait az alábbi értékekre:
-- `KÉ:-5`
-- `TÉ:-10`
-- `VÉ:-10`
+🌟 **Hatás**: a [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) Hatás már nem sújt ilyen szituációban.
+
+---
+### 2. fok
+
+🔒 **Követelmény**:
+- Önuralom: `+1`
+- Harcmodor - `6.szint`
+
+🌟 **Hatás**: a [Hátrány-1 TÉ dobásra](../081_hatasok.md#-h%C3%A1tr%C3%A1ny-1) Hatás sem sújt már.
 
 <br />
 
@@ -18907,14 +19043,14 @@ Kivételesen gyorsan mozdulsz a harcban.
 
 🌟 **Hatás**: `KÉ:+3` bónusz jár
 
-
+---
 ### 2. fok
 
 🔒 **Követelmény**: Gyorsaság VAGY Intelligencia: `+2`
 
 🌟 **Hatás**: `KÉ:+6` bónusz jár
 
-
+---
 ### 3. fok
 
 🔒 **Követelmény**: Gyorsaság ÉS Intelligencia: `+2`
@@ -19009,7 +19145,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 ---
 ### Megjegyzések
 
-- **Fegyverek**: A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például 1db hosszú kard, vagy 2db rövidkard), továbbá súlyuk is fontos tényező (KM dönt).
+- **Fegyverek**: A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például `1 db` hosszú kard, vagy `2 db` rövidkard), továbbá súlyuk is fontos tényező (KM dönt).
 - **Vértek**: a fortély csak olyan hajlékony, könnyű, nem-fém vértben használható, melynek nem nagyobb MGT-je `10`-nél.
 - **Alkalmazás**:  ha olyan a szituáció, hogy az alkalmazó nem képes, vagy nem akarja alkalmazni harca közben ezt a stílust (pl. túl feltűnő lenne az ugrabugrálása), akkor nem kapja meg a leírt bónuszokat.
 - **Helyigény**: a KM dönt, hogy van-e elég hely az alkalmazáshoz, de ne legyen túl szigorú; egy közepes szobában is alkalmazható (falra ugrás, elrugaszkodás, stb).
@@ -19473,9 +19609,7 @@ Kétkezes vagy születésed óta.
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**:
-- Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered az alábbi levonások sújtanak:
-- `KÉ:10`, `TÉ:-20`, `VÉ:-20`
+🌟 **Hatás**: Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered levonások sújtanak: [Rosszabbik kézben tartott fegyver](../065_01_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) harci helyzet
 
 ---
 ### 1. fok
@@ -19483,9 +19617,9 @@ Kétkezes vagy születésed óta.
 🔒 **Követelmény**: Csak `1.`Tapasztalati Szinten, karakteralkotáskor vehető fel.
 
 🌟 **Hatás**:
+- Bármelyik kezeddel levonás nélkül tudsz harcolni, de csak ha `1` fegyvert használsz!
 - [Harckeret](../063_06_tamadasok_szama_fegyverrel.md#harckeret): `+1`, ha legalább `1.fokon` jártas vagy [Kétkezes harcban](ketkezes_harc.md) és épp két fegyvert forgatsz
-- Mindkét kezeddel levonás nélkül tudsz harcolni, de csak ha `1` fegyvert használsz!
-- 🗡️[Páros, kétkezes hajítás](../073_tavharc_taktikak.md#p%C3%A1ros-k%C3%A9tkezes-haj%C3%ADt%C3%A1s) harci szituációban csak `CÉ:-15` büntetés jár mindkét kézre.
+- [Páros, kétkezes hajítás](../073_tavharc_taktikak.md#p%C3%A1ros-k%C3%A9tkezes-haj%C3%ADt%C3%A1s) harci szituációban csak `CÉ:-15` büntetés jár mindkét kézre.
 
 <br />
 
@@ -19598,7 +19732,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: `1` VÉ-t semlegesít az ellenfél VÉ csökkenést okozó támadásaiból.
+🌟 **Hatás**: `1` VÉ-t semlegesít az ellenfél `VÉ` csökkenést okozó támadásaiból.
 
 ---
 ### 2. fok
@@ -19609,7 +19743,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: `2` VÉ semlegesítése.
+🌟 **Hatás**: `2 VÉ` semlegesítése.
 
 ---
 ### 3. fok
@@ -19620,7 +19754,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `9.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: `3` VÉ semlegesítése.
+🌟 **Hatás**: `3 VÉ` semlegesítése.
 
 ---
 ### 4. fok
@@ -19803,13 +19937,13 @@ KÉ:-10, TÉ:-15, VÉ:-15
 
 ## 🟣 Testőr (2)
 
-Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod terjeszteni.
+Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod terjeszteni. Minden védencedre leadott támadás a te `Védő Értékeddel` szemben kerül leadásra.
 
 ### Alapeset
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak `-25 VÉ` csökkenéssel.
+🌟 **Hatás**: Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_harci_helyzetek.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-kiterjeszt%C3%A9se-m%C3%A1sra) harci helyzetnél leírt büntetésekkel.
 
 ---
 ### 1. fok
@@ -19820,7 +19954,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod t
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: A levonás csak `-15 VÉ`
+🌟 **Hatás**: A [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) Hatás már nem sújt.
 
 ---
 ### 2. fok
@@ -19831,13 +19965,13 @@ Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod t
 - Harcmodor - `8.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
-🌟 **Hatás**: Levonás nélkül védheted pártfogoltad.
+🌟 **Hatás**: Büntetések nélkül védheted pártfogoltad. A [Többszörös támadás elvesztése](../081_hatasok.md#-t%C3%B6bbsz%C3%B6r%C3%B6s-t%C3%A1mad%C3%A1s-elveszt%C3%A9se) Hatás sem sújt már.
 
 <br />
 
 ### Megjegyzések
 
-Az oltalmazott személy nem harcolhat, a testőrnek pedig két méteren belül kell lennie.
+Az oltalmazott személy nem harcolhat, a testőrnek pedig **`2` méteren** belül kell lennie.
 
 <br />
 
@@ -19953,25 +20087,31 @@ Alkalmazásához követelmény a **Harci anatómia**, melynek egyes fokai egyre 
 ## 🟣 Fegyverrántás (2)
 
 Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél.<br />
-Bónuszok 🗡️[Fegyverrántás-szituációban](../065_01_harci_helyzetek.md#fegyverrántás) (az alkalmazó karakter oldalán):
+Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_harci_helyzetek.md#fegyverr%C3%A1nt%C3%A1s-v%C3%A1ratlanul) harci helyzetben (az alkalmazó karakter oldalán):
 ### 1. fok
 
 🔒 **Követelmény**: Gyorsaság: `+1`
 
-🌟 **Hatás**: `KÉ:+5`
+🌟 **Hatás**: 
+- `1` Hátrány fokot semlegesít a büntetésből
+  VAGY
+- `1` fok Előnyt ad
 
 ---
 ### 2. fok
 
 🔒 **Követelmény**: Gyorsaság: `+2`
 
-🌟 **Hatás**: `KÉ:+10`
+🌟 **Hatás**:
+- `2` Hátrány fokot semlegesít a büntetésből
+  VAGY
+- `2` fok Előnyt ad
 
 <br />
 
 ### Megjegyzések
 
-Bővebben lásd a **Harcrendszer** fejezet 🗡️ [Fegyverrántás-szituációban](../065_01_harci_helyzetek.md#fegyverrántás) alfejezetét!
+Bővebben lásd a **Harci helyzetek** fejezet 🗡️ [Fegyverrántás váratlanul](../065_01_harci_helyzetek.md##fegyverr%C3%A1nt%C3%A1s-v%C3%A1ratlanul) bekezdését!
 
 <br />
 
