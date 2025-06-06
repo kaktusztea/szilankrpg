@@ -1,4 +1,5 @@
 import sys
+import os
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -17,8 +18,8 @@ def simulate_one_trial(num_throws_per_trial, mode):
         raise ValueError("Mode must be 'highest' or 'lowest'")
 
 def main():
-    if len(sys.argv) != 3:
-        print("Usage: python script.py <number_of_throws_per_trial> <highest|lowest>")
+    if len(sys.argv) != 4:
+        print("Usage: python script.py <number_of_throws_per_trial> <highest|lowest> <output_directory>")
         sys.exit(1)
 
     try:
@@ -33,6 +34,10 @@ def main():
     if mode not in ("highest", "lowest"):
         print("Error: mode must be 'highest' or 'lowest'")
         sys.exit(1)
+
+    output_dir = sys.argv[3]
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
 
     np.random.seed(42)  # for reproducibility
 
@@ -57,12 +62,12 @@ def main():
     plt.tight_layout()
 
     filename = f"d100_{mode}_result_count_{num_throws_per_trial}_throws_per_trial.png"
-    plt.savefig(filename)
+    filepath = os.path.join(output_dir, filename)
+    plt.savefig(filepath)
     plt.close()
 
-    print(f"Histogram saved as {filename}")
+    print(f"Histogram saved as {filepath}")
 
 if __name__ == "__main__":
     main()
-
 
