@@ -41,7 +41,7 @@ def main():
 
     np.random.seed(42)  # for reproducibility
 
-    num_trials = 10000  # fixed number of trials
+    num_trials = 100000  # fixed number of trials
 
     results = [simulate_one_trial(num_throws_per_trial, mode) for _ in range(num_trials)]
     median_result = np.median(results)
