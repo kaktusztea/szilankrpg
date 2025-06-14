@@ -14,9 +14,9 @@ Nagy pajzs: `VÉ:50`, `Erő követelmény: +2`
 
 🌟 **Hatás**:
 - Képzetlen pajzshasználó. A pajzs `VÉ` **felét** kapja csak meg
-- Kis pajzs levonás: `TÉ:-10`
-- Közepes pajzs levonás: `TÉ:-15`
-- Nagy pajzs levonás: `TÉ:-20`
+- **Kis pajzs** levonás: `TÉ:-10`
+- **Közepes pajzs** levonás: `TÉ:-15`
+- **Nagy pajzs** levonás: `TÉ:-20`
 
 ---
 ### 1. fok
@@ -25,9 +25,9 @@ Nagy pajzs: `VÉ:50`, `Erő követelmény: +2`
 
 🌟 **Hatás**:
 - Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
-- Kis pajzs levonás: `0`
-- Közepes pajzs levonás: `TÉ:-5`
-- Nagy pajzs levonás: `TÉ:-10`
+- **Kis pajzs** levonás: `0`
+- **Közepes pajzs** levonás: `TÉ:-5`
+- **Nagy pajzs** levonás: `TÉ:-10`
 
 ---
 ### 2. fok
@@ -36,11 +36,10 @@ Nagy pajzs: `VÉ:50`, `Erő követelmény: +2`
 
 🌟 **Hatás**:
 - Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
-- Kis pajzs levonás: `0`
-- Közepes pajzs levonás: `0`
-- Nagy pajzs levonás: `0`
-- Támadhatsz is a pajzzsal.
-- Ha csak pajzs van nálad, akkor azzal.
+- **Kis pajzs** levonás: `0`
+- **Közepes pajzs** levonás: `0`
+- **Nagy pajzs** levonás: `0`
+- Támadhatsz is a pajzzsal, ha csak pajzs van nálad, akkor azzal.
 - Ha fegyver is van nálad: akkor VAGY a fegyverrel VAGY a pajzzsal támadhatsz.
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket.
 
