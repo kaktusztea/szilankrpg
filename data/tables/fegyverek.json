@@ -910,7 +910,7 @@
         "VÉ": "12",
         "Sebesség": "6",
         "Kategória": "kardvívó",
-        "Speciális": "Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.<br />- [Területre/pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manővernél: a Nehézség 1-el csökken <br />- Ha az ellenfél is tőrkarddal harcol, mindketten kapnak +10 VÉ bónuszt egymás ellen.<br />- Erőbónusz nem számít!<br />- Könnyebb ellene a [Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:-2<br />- Zúzó fegyverek ellen VÉ büntetés: VÉ:-8"
+        "Speciális": "Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.<br />- [Területre/pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manővernél: a Nehézség 2-vel csökken <br />- Ha az ellenfél is tőrkarddal harcol, mindkét fél Kiskockával csökkent VÉ-t<br />- Erőbónusz nem számít!<br />- Könnyebb ellene a [Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:-2<br />- Zúzó fegyverek ellen: VÉ veszteség duplázódik"
     },
     {
         "Fegyver": "Vasököl / páncélkesztyű",
