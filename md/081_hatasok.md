@@ -194,7 +194,6 @@ Mikor sikertelen támadást adsz le, az okozott `VÉ` csökkentésed duplázódi
 
 <br />
 
-
 ---
 ### 🔥 Vérzés - gyenge
   

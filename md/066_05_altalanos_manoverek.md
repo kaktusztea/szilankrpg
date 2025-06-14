@@ -392,7 +392,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
         - [Kínokozás](fortelyok.harci/kinokozas.md) harci fortély **Fájdalomtűrés hatása** csak itt használható - ha vértmentes pont a cél.
     - `12`: Szemkiszúrás
 - Nehézség módosítók:
-    - `-2`: Rapír/Tőrkard
+    - `-2`: Tőrkard
     - `0`: egykezes kardvívó fegyverekkel, Puszta kéz
     - `+2`: zúzófegyverekkel
     - `+2`: [Roham](065_02_harci_taktikak.md#roham-taktika) alkalmazása esetén
