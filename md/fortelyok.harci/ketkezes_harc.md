@@ -22,7 +22,7 @@ Képzetlen kétkezes harc esetén két fegyver használatakor.
 - Főfegyver (nagyobb fegyver) harcmodora és értékei számítanak
 - Második fegyver értékei `0`-nak számítanak
 - Egyik fegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya sem számít
-- `KÉ/TÉ/VÉ: -10`
+- `TÉ` dobásra `Hátrány-1`
 - **Harckeret**: `+1`
 
 ---
