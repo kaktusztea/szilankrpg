@@ -46,8 +46,7 @@ Ha a **Kétkezes harc** legalább `1.fokon` megvan, akkor a **Kétkezesség** me
 ### Méret limit, követelmény
 
 - maximum `2 db`, `1 pengés` kombinációval lehet kétkezes harcot folytatni, e összesített pengeméret (`2`) felett semmilyen bónusz nem számít és a fegyverek minden harcértéke `0`-ra esik.
-- `2 db`, `1 penge` hosszú fegyver forgatása esetén követelmény is van:\
-`Erő +2`
+- `2 db`, `1 penge` hosszú fegyver forgatása esetén követelmény is van: `Erő +2`
 
 <br />
 
