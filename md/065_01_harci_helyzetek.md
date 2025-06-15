@@ -412,9 +412,9 @@ A **Puszta kéz** – mint fegyver – szabály szempontjából „egykezes” f
 Hátrány-1 TÉ dobásra
 ```
 
-Ha – például sérülés hatására – a harcos kénytelen átvenni fegyverét ügyetlenebb kezébe, akkor Hátrány-1 jár `TÉ` dobására.
+Ha – például sérülés hatására – a harcos kénytelen átvenni fegyverét ügyetlenebb kezébe, akkor `TÉ` dobására `Hátrány-1` büntetés jár.
 
-Kivétel: [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md), amely megléte esetén bármelyik kezeddel is levonás nélkül tudsz harcolni, de csak 1 fegyverrel!!
+Kivétel: [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md), amely megléte esetén bármelyik kezeddel is levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
 
 <br />
 
