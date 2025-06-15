@@ -155,6 +155,16 @@ Hallasz, de sokkal rosszabbul. Hallás próbakor... ⭕TODO⭕
 
 <br />
 
+
+---
+### 🔥 `1` támadás elvesztése
+
+```
+-1 támadás a körben
+```
+
+<br />
+
 ---
 ### 🔥 Többszörös támadás elvesztése
 
