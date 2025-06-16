@@ -7,17 +7,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Install Hunspell and Hungarian directionary
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y hunspell hunspell-hu libc-bin
+
       - name: Download latest Hungarian Hunspell dictionary, correct encoding in aff file
         run: |
           mkdir -p dictionaries/hu_HU
           curl -L -o dictionaries/hu_HU/hu_HU.dic https://raw.githubusercontent.com/LibreOffice/dictionaries/master/hu_HU/hu_HU.dic
-          curl -L -o dictionaries/hu_HU/hu_HU.aff https://raw.githubusercontent.com/LibreOffice/dictionaries/master/hu_HU/hu_HU.aff
-          sed -i '1iSET UTF-8\nFLAG UTF-8' dictionaries/hu_HU/hu_HU.aff
-
-      - name: Install Hunspell and Hungarian directionary
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y hunspell hunspell-hu
+          curl -L -o dictionaries/hu_HU/hu_HU.aff.tmp https://raw.githubusercontent.com/LibreOffice/dictionaries/master/hu_HU/hu_HU.aff
+          iconv -f ISO-8859-1 -t UTF-8 dictionaries/hu_HU/hu_HU.aff.tmp -o dictionaries/hu_HU/hu_HU.aff
 
       - name: Running spellcheck with Hunspell
         uses: rojopolis/spellcheck-github-actions@0.49.0
