@@ -1,5 +1,7 @@
 name: Spell Check
-on: [push]
+on:
+  push:
+  workflow_dispatch:
 jobs:
   hunspell:
     runs-on: ubuntu-latest
