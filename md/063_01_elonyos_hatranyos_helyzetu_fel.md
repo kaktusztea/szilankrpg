@@ -13,7 +13,7 @@ Két okból lehet valaki harcban Hátrányos helyzetben:
 
 ---
 
-Mindkét eset a [Státuszok](082_statuszok.md) alá tartozik.
+Mindkét eset a [Harci helyzetek](065_01_harci_helyzetek.md) alá tartozik.
 
 ---
 
