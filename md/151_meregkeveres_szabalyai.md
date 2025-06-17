@@ -63,13 +63,13 @@ Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, s
 - Most a legenyhébben van (1), de lehet, hogy nehezebb alvást előidézni, mint pl. bódulatot...?
 ````
 
-| Hatás max súlyossága            | Érték |
-| :------------------------------ | :---- |
-| Enyhe rosszullét, hányás, alvás | ⭕`1`  |
-| Kábulat, Görcs                  | ⭕`2`  |
-| Bódulat, Részleges bénulás      | ⭕`3`  |
-| Életveszély, Teljes bénulás     | ⭕`4`  |
-| Halál                           | ⭕`5`  |
+| Hatás max súlyossága                                                                                             | Érték |
+| :--------------------------------------------------------------------------------------------------------------- | :---- |
+| Enyhe rosszullét, hányás, alvás                                                                                  | ⭕`1`  |
+| [Eszmélet: Bódultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g), Görcs             | ⭕`2`  |
+| [Eszmélet: Kábultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g), Részleges bénulás | ⭕`3`  |
+| Életveszély, Teljes bénulás                                                                                      | ⭕`4`  |
+| Halál                                                                                                            | ⭕`5`  |
 
 #### Másodlagos hatás
 
