@@ -53,5 +53,7 @@ Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve k�
 
 ### Módosító körülmények
 
-- Bódult állapot (áfiumok, kábítószerek hatására):  `[-3; -15]`
+- Áfiumok, kábítószerek, fejbekólintás hatására:
+  - [Eszmélet: Bódultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `Előny+1` Fájdalomtűrés dobásra
+  - [Eszmélet: Kábultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g): `Előny+2` Fájdalomtűrés dobásra
 - [Harci láz](../fortelyok.harci/harci_laz.md) (lásd a leírását!)
