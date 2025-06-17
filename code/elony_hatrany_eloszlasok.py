@@ -50,6 +50,10 @@ def main():
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
+    json_dir = os.path.join(output_dir, "jsons")
+    if not os.path.exists(json_dir):
+        os.makedirs(json_dir)
+
     np.random.seed(42)  # for reproducibility
 
     dice_types = ['d6', 'd10', 'd20', 'd100']
@@ -63,15 +67,15 @@ def main():
                 results = [simulate_one_trial(num_throws_per_trial, mode, dice_type) for _ in range(num_trials)]
                 median_result = np.median(results)
 
-                # Save JSON statistics
+                # Save JSON statistics in jsons subdir
                 json_stats = generate_statistics_json(results, dice_type, mode, num_throws_per_trial, num_trials)
                 json_filename = f"{dice_type}_{mode}_stats_{num_throws_per_trial}_throws_per_trial.json"
-                json_filepath = os.path.join(output_dir, json_filename)
+                json_filepath = os.path.join(json_dir, json_filename)
                 with open(json_filepath, "w") as json_file:
                     json_file.write(json_stats)
                 print(f"Statistics JSON saved as {json_filepath}")
 
-                # Plot histogram
+                # Plot histogram (saved directly in output_dir)
                 plt.figure(figsize=(10, 6))
                 max_bin = {'d6': 7, 'd10': 11, 'd20': 21, 'd100': 102}[dice_type]
                 counts, bins, patches = plt.hist(results, bins=range(1, max_bin), alpha=0.75, color='blue', edgecolor='black')
