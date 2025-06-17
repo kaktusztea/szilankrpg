@@ -16,6 +16,7 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 - Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕Bénító félelem
 - Fizikai: (1) Fáradtság, (2) ⭕Kimerültség, (3) Elcsigázottság
 - Hangulat: (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
+- Előnyös harci helyzetű fél / Hátrányos harci helyzetű fél
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Késztetés: (1) Sugallat, (2) Vágy, (3) Kényszer
 - Mérgezés\*
@@ -177,7 +178,7 @@ Hatás:
 ---
 ### ✴️ Előnyös harci helyzetű fél és ✴️ Hátrányos harci helyzetű fél
 
-Lásd [Kiskocka/Nagykocka fejezetet](063_02_kiskocka_nagykocka.md)!
+Lásd [Előnyös harci helyzetű fél / Hátrányos harci helyzetű fél](063_01_elonyos_hatranyos_helyzetu_fel.md)!
 
 <br />
 
