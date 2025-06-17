@@ -1,0 +1,11 @@
+{
+    "dice_type": "d10",
+    "mode": "lowest",
+    "num_throws_per_trial": 2,
+    "num_trials": 100000,
+    "min_result": 1,
+    "max_result": 10,
+    "mean_result": 3.83865,
+    "median_result": 3.0,
+    "std_dev_result": 2.3490756006352798
+}

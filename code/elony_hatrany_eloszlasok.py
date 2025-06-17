@@ -2,6 +2,7 @@ import sys
 import os
 import numpy as np
 import matplotlib.pyplot as plt
+import json
 
 def throw_dice(dice_type):
     if dice_type == 'd6':
@@ -26,63 +27,72 @@ def simulate_one_trial(num_throws_per_trial, mode, dice_type):
     else:
         raise ValueError("Mode must be 'highest' or 'lowest'")
 
+def generate_statistics_json(results, dice_type, mode, num_throws_per_trial, num_trials):
+    stats = {
+        "dice_type": dice_type,
+        "mode": mode,
+        "num_throws_per_trial": num_throws_per_trial,
+        "num_trials": num_trials,
+        "min_result": int(min(results)),
+        "max_result": int(max(results)),
+        "mean_result": float(np.mean(results)),
+        "median_result": float(np.median(results)),
+        "std_dev_result": float(np.std(results))
+    }
+    return json.dumps(stats, indent=4)
+
 def main():
-    if len(sys.argv) != 5:
-        print("Usage: python script.py <number_of_throws_per_trial> <highest|lowest> <dice_type> <output_directory>")
+    if len(sys.argv) != 2:
+        print("Usage: python script.py <output_directory>")
         sys.exit(1)
 
-    try:
-        num_throws_per_trial = int(sys.argv[1])
-        if num_throws_per_trial < 1:
-            raise ValueError
-    except ValueError:
-        print("Error: number_of_throws_per_trial must be a positive integer")
-        sys.exit(1)
-
-    mode = sys.argv[2].lower()
-    if mode not in ("highest", "lowest"):
-        print("Error: mode must be 'highest' or 'lowest'")
-        sys.exit(1)
-
-    dice_type = sys.argv[3].lower()
-    if dice_type not in ("d6", "d10", "d20", "d100"):
-        print("Error: dice_type must be one of 'd6', 'd10', 'd20', 'd100'")
-        sys.exit(1)
-
-    output_dir = sys.argv[4]
+    output_dir = sys.argv[1]
     if not os.path.exists(output_dir):
         os.makedirs(output_dir)
 
     np.random.seed(42)  # for reproducibility
 
+    dice_types = ['d6', 'd10', 'd20', 'd100']
+    modes = ['highest', 'lowest']
+    num_throws_list = [2, 3]
     num_trials = 100000  # fixed number of trials
 
-    results = [simulate_one_trial(num_throws_per_trial, mode, dice_type) for _ in range(num_trials)]
-    median_result = np.median(results)
+    for dice_type in dice_types:
+        for num_throws_per_trial in num_throws_list:
+            for mode in modes:
+                results = [simulate_one_trial(num_throws_per_trial, mode, dice_type) for _ in range(num_trials)]
+                median_result = np.median(results)
 
-    plt.figure(figsize=(10, 6))
-    max_bin = {'d6': 7, 'd10': 11, 'd20': 21, 'd100': 102}[dice_type]
-    counts, bins, patches = plt.hist(results, bins=range(1, max_bin), alpha=0.75, color='blue', edgecolor='black')
-    plt.title(f"Distribution of {mode.capitalize()} Result from {num_throws_per_trial} {dice_type} Throws per Trial ({num_trials} trials)")
-    plt.xlabel("Dice Roll Result")
-    plt.ylabel("Count")
-    plt.grid(True)
+                # Save JSON statistics
+                json_stats = generate_statistics_json(results, dice_type, mode, num_throws_per_trial, num_trials)
+                json_filename = f"{dice_type}_{mode}_stats_{num_throws_per_trial}_throws_per_trial.json"
+                json_filepath = os.path.join(output_dir, json_filename)
+                with open(json_filepath, "w") as json_file:
+                    json_file.write(json_stats)
+                print(f"Statistics JSON saved as {json_filepath}")
 
-    # Median line and annotation
-    plt.axvline(median_result, color='red', linestyle='--', linewidth=2, label=f"Median: {int(median_result)}")
-    max_count = counts.max()
-    plt.text(median_result + 1, max_count * 0.9, f"Median: {int(median_result)}", color='red')
+                # Plot histogram
+                plt.figure(figsize=(10, 6))
+                max_bin = {'d6': 7, 'd10': 11, 'd20': 21, 'd100': 102}[dice_type]
+                counts, bins, patches = plt.hist(results, bins=range(1, max_bin), alpha=0.75, color='blue', edgecolor='black')
+                plt.title(f"Distribution of {mode.capitalize()} Result from {num_throws_per_trial} {dice_type} Throws per Trial ({num_trials} trials)")
+                plt.xlabel("Dice Roll Result")
+                plt.ylabel("Count")
+                plt.grid(True)
 
-    plt.legend()
-    plt.tight_layout()
+                plt.axvline(median_result, color='red', linestyle='--', linewidth=2, label=f"Median: {int(median_result)}")
+                max_count = counts.max()
+                plt.text(median_result + 1, max_count * 0.9, f"Median: {int(median_result)}", color='red')
 
-    filename = f"{dice_type}_{mode}_result_count_{num_throws_per_trial}_throws_per_trial.png"
-    filepath = os.path.join(output_dir, filename)
-    plt.savefig(filepath)
-    plt.close()
+                plt.legend()
+                plt.tight_layout()
 
-    print(f"Histogram saved as {filepath}")
+                filename = f"{dice_type}_{mode}_result_count_{num_throws_per_trial}_throws_per_trial.png"
+                filepath = os.path.join(output_dir, filename)
+                plt.savefig(filepath)
+                plt.close()
+
+                print(f"Histogram saved as {filepath}")
 
 if __name__ == "__main__":
     main()
-
