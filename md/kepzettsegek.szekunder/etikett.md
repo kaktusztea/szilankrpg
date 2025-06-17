@@ -58,5 +58,5 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 
 ### Módosító körülmények
 
-- Bódult, részeg állapotban: `[-1; -6]`
-
+- [Eszmélet: Bódultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `Hátrány-1` képzettségpróbára
+- [Eszmélet: Kábultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g): `Hátrány-2` képzettségpróbára 
