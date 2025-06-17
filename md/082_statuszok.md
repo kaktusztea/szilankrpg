@@ -175,6 +175,12 @@ Hatás:
 <br />
 
 ---
+### ✴️ Előnyös harci helyzetű fél
+
+### ✴️ Hátrányos harci helyzetű fél
+
+
+---
 ### ✴️ Félelem (1) Szorongás
 
 - Hatás:

@@ -58,6 +58,14 @@ Védekezésnél: a támadó dob → `Előny-2`
 
 ---
 ---
+### 🔥 Kiskocka és 🔥 Nagykocka
+
+Lásd [Kiskocka, Nagykocka fejezetet](063_02_kiskocka_nagykocka.md)!
+
+<br />
+
+---
+---
 ### 🔥 Antyssjárás elvesztése
 
 Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni - alvás közben sem.

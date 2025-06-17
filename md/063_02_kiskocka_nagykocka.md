@@ -15,6 +15,9 @@ Pontosabban "nagyobbikat dobott kocka".
 
 `Példa: 58 → Nagykocka: 8`
 
+---
+
+Mindkét eset a [Hatások](081_hatasok.md) alá tartozik.
 
 ---
 
