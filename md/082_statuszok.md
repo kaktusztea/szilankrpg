@@ -175,10 +175,11 @@ Hatás:
 <br />
 
 ---
-### ✴️ Előnyös harci helyzetű fél
+### ✴️ Előnyös harci helyzetű fél és ✴️ Hátrányos harci helyzetű fél
 
-### ✴️ Hátrányos harci helyzetű fél
+Lásd [Kiskocka/Nagykocka fejezetet](063_02_kiskocka_nagykocka.md)!
 
+<br />
 
 ---
 ### ✴️ Félelem (1) Szorongás
