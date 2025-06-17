@@ -1,14 +1,14 @@
 ## Előnyös helyzetű fél
 
 Két okból lehet valaki harcban Előnyös helyzetben:
-- fegyvere legalább `1 penge` hosszal nagyobb ellenfeléénél
+- fegyvere legalább `1 penge` hosszal nagyobb ellenfelénél
 - ellenféle [Beszorított helyzetben](065_01_harci_helyzetek.md#beszorított-helyzet) van
 
 ---
 ## Hátrányos helyzetű fél
 
 Két okból lehet valaki harcban Hátrányos helyzetben:
-- fegyvere legalább `1 penge` hosszal kisebb ellenfeléénél
+- fegyvere legalább `1 penge` hosszal kisebb ellenfelénél
 - [Beszorított helyzetben](065_01_harci_helyzetek.md#beszorított-helyzet) van
 
 ---
