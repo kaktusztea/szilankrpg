@@ -90,6 +90,7 @@ Viszont
 ### ✴️ Eszmélet (1) Bódultság
 
 - `Hátrány-1`: Támadó dobás
+- `Hátrány-1`: Manőver Ellenpróba dobás
 - Reflexek - lassú
 - Többszörös támadás elvesztése
 - ⭕nincs biztos tudásból (at-will) varázslás, kivéve papok: ők részegen is tudnak varázsolni⭕
@@ -98,6 +99,7 @@ Viszont
 ### ✴️ Eszmélet (2) Kábultság
 
 - `Hátrány-2`: Támadó dobás
+- `Hátrány-2`: Manőver Ellenpróba dobás
 - Reflexek - lomha
 - Többszörös támadás elvesztése
 - Automatikus kudarc: szociális képzettségpróbákra

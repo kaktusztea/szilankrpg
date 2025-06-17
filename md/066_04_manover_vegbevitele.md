@@ -54,10 +54,12 @@ Célszám:
 
 ### ⚜️ Dobás extra módosítói
 
-| Manőver Pont          | Opcionális. Pontonként `+2` bónuszt ad. Maximum `2 pont` költhető. |
-|:--------------------- | ------------------------------------------------------------------ | 
-| Követelmények nélkül  | `-3`, ha nem teljesülnek a Manőver Követelményei                   |
-| Belharc fortély fokai | `+2/fok` az alkalmazó oldalán (Belharci Manőver esetén)            |
+| Manőver Pont                                                                                      | Opcionális. Pontonként `+2` bónuszt ad. Maximum `2 pont` költhető. |
+| :------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| Követelmények nélkül                                                                              | `-3`, ha nem teljesülnek a Manőver Követelményei                   |
+| Belharc fortély fokai                                                                             | `+2/fok` az alkalmazó oldalán (Belharci Manőver esetén)            |
+| [Eszmélet: Bódultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g)     | `Hátrány-1`: Manőver Ellenpróba dobásra                            |
+| [Eszmélet: Kábultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g)<br> | `Hátrány-2`: Manőver Ellenpróba dobásra                            |
 <br />
 
 ### ⚜️ Célszám extra módosítói
