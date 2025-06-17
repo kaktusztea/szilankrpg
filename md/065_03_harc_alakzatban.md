@@ -17,12 +17,12 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 ⚜️ **Támadófok**
 - `MIN(`Támadó-alakzat` fortély )`
 - Tehát a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka (csapattagok között)
-- Bónusz: `+2 / Támadó-alakzat fok`
+- Bónusz: `+2 / Támadó-alakzat fortély fok`
 
 ⚜️ **Védekezőfok**
 - `MIN( Védekező-alakzat fortély )`
 - Tehát a legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka (csapattagok között)
--  Bónusz: `+2 / Védekező-alakzat fok`
+-  Bónusz: `+2 / Védekező-alakzat fortély fok`
 
 ⚜️ **Alakzatszint**
 - `MIN( Alakzatharc képzettség )`
