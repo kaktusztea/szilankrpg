@@ -2,13 +2,13 @@
 
 Itt tárgyaljuk a karakter előterővel, sebesüléssel kapcsolatos értékeit, azok változását harc közben, valamint sebeinek gyógyulását.
 
-#### [Életerő Pont (ÉP)](061_01_eletero_pont.md)
+### [Életerő Pont (ÉP)](061_01_eletero_pont.md)
 
-#### [Fáradság Pont (FP)](061_02_faradsag_pont.md)
+### [Fáradság Pont (FP)](061_02_faradsag_pont.md)
 
-#### [Sebesülés](061_03_sebesules.md)
+### [Sebesülés](061_03_sebesules.md)
 
-#### [Gyógyulás](061_04_gyogyulas.md)
+### [Gyógyulás](061_04_gyogyulas.md)
 
 ---
 

@@ -1,8 +1,8 @@
 ## Harc menete
 
-#### [Harc menete (összefoglaló)](064_01_harc_menete_osszefoglalas.md) 🎲
+### [Harc menete (összefoglaló)](064_01_harc_menete_osszefoglalas.md) 🎲
 
-#### [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
+### [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
 
 - [Alapfogalmak](064_02_01_alapfogalmak.md)
 -  [Kezdeményezés](064_02_02_kezdemenyezes.md)
@@ -14,7 +14,7 @@
 - [Sebződés](064_02_08_sebzodes_hatasa.md)
 - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
 
-#### [Példaharc](064_03_peldaharc.md) ⚡
+### [Példaharc](064_03_peldaharc.md) ⚡
 
 ---
 
