@@ -141,40 +141,6 @@ Hatás: valamelyik az alábbiak közül
 - `2`: Vakság - teljes
 
 ---
-### ✴️ Hangulat (1) Fogékony
-
-A nem-mágikus érzékszervi, vagy érzelmi ingerek jobban hatnak rád. érzelmileg jobban megnyílsz - pozitív/negatív értelemben is.
-
-A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az szituáció függő.
-
-### ✴️ Hangulat (2) Inspirált
-
-A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
-
-Hatások
-- `Előny+1`: kreatív tevékenységekre
-- `Hátrány-1`: koncentrációt igénylő feladatokra
-
-### ✴️ Hangulat (3) Eufórikus
-
-A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
-
-Hatások:
-- Asztrális befolyásolásnak jobban ellenáll az ilyen személy. `Hátrány-1`-el dob Asztrálmágia Komplexitás-próbát a rá varázsló.
-- Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
-
-### ✴️ Hangulat (4) Obszesszív
-
-A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
-
-Hatás:
-- "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
-- `Előny+1`: mindenre, ami az obszesszió tárgyához kötődik (nem harci, nem misztikus képzettségpróbákra)
-- `Hátrány-1`: minden más képzettségpróbára
-
-<br />
-
----
 ### ✴️ Félelem (1) Szorongás
 
 - Hatás:
@@ -230,6 +196,40 @@ Hatások:
 - Egészség kategória `S1`és `S2`: mindkét kategória feltöltődik új `FP`-kel
 
 ⚡ Példa: éhhalál szélén
+
+<br />
+
+---
+### ✴️ Hangulat (1) Fogékony
+
+A nem-mágikus érzékszervi, vagy érzelmi ingerek jobban hatnak rád. érzelmileg jobban megnyílsz - pozitív/negatív értelemben is.
+
+A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az szituáció függő.
+
+### ✴️ Hangulat (2) Inspirált
+
+A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
+
+Hatások
+- `Előny+1`: kreatív tevékenységekre
+- `Hátrány-1`: koncentrációt igénylő feladatokra
+
+### ✴️ Hangulat (3) Eufórikus
+
+A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
+
+Hatások:
+- Asztrális befolyásolásnak jobban ellenáll az ilyen személy. `Hátrány-1`-el dob Asztrálmágia Komplexitás-próbát a rá varázsló.
+- Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
+
+### ✴️ Hangulat (4) Obszesszív
+
+A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
+
+Hatás:
+- "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
+- `Előny+1`: mindenre, ami az obszesszió tárgyához kötődik (nem harci, nem misztikus képzettségpróbákra)
+- `Hátrány-1`: minden más képzettségpróbára
 
 <br />
 
