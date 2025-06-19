@@ -66,11 +66,8 @@ Belharci szituációban `KÉ`, `TÉ`, `VÉ`, `SP`  mind `0` értékre emelkednek
 
 #### ⚜️ Nem-belharcos fegyverek belharci szituációban
 
-- harcértékeik `0`-ra zuhannak
+- Mintha a "Beszoritott helyzet (2) Nagyon" helyzetbe kerülne. A Hatások azonosak.
 - sebzésük `k20+0 SP`
-- "`1` támadás elvesztése" Hatás
-- forgatója [Hátrányos szituációba](063_01_elonyos_hatranyos_helyzetu_fel.md) kerül, a belharcos pedig [Előnyösbe](063_01_elonyos_hatranyos_helyzetu_fel.md)
-- **Mesterfegyver** és az **Erőbónusz** értékei mindkét félnél megmaradnak
 - Forgatója **Akció elhasználása nélkül** ha úgy dönt, elejtheti fegyverét - így puszta kézzel harcolhat tovább (`0` fegyver harcértékekkel)
 
 #### ⚜️ Belharc fortély bónuszai
@@ -82,25 +79,11 @@ Követelmények:
 - Belharcos fegyver (`0` penge)
 - **Közelharc** harcmodor
 
-#### ⚜️ Erőbónusz extra: harcértékre is
-
-Belharci szituációban mindenki extra `TÉ/VÉ: (+10 x Erő)` harcérték módosítót kap, mert a nagyobb, erősebb ellenfelekkel testközelben sokkal nehezebb küzdeni.
-
 #### ⚜️ Harcmodorok belharci szituációban
 
 Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például egy szablyás harcoshoz bekerül egy belharcos, akkor a szablyás továbbra is **Kardvívás** harcmodorának értékeivel küzd, igaz szablyájának harcértékei `0`-ra zuhannak - annak mérete miatt.
 
 [Belharc fortély](fortelyok.harci/belharc.md) bónuszaihoz követelmény a **Közelharc** harcmodor használata, más harcmodor használata alatt nem járnak.
-
-#### ⚜️ Belharcosok támadása kívülről
-
-A Belharc `1:1` elleni szituációban használható leghatékonyabban, külső, harmadik fél ellen viszont kiszolgáltatottabb.
-
-Amennyiben a belharcban levő harcost egy harmadik (vele nem belharcban levő) fél támadja, akkor a belharcos a [Helyhez kötve](065_01_harci_helyzetek.md#helyhez-kötve) helyzet büntetéseit szenvedi el külső támadója felé.
-
-Kivétel: sikeres [Leforgatás/Irányítás](066_06_belharcos_manoverek.md#leforgatásirányítás) manőver alkalmazása után a belharcos ellenfelét beforgathatja maga és külső támadója közé - kvázi patthelyzetet okozva.
-
-<br />
 
 ---
 ### Beszorított helyzet
@@ -111,14 +94,31 @@ Mivel nem lehet általános szabályt alkotni minden szituáció és fegyver-tí
 
 „**Rövid**” fegyverekre (max `0,5` pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
 
-Szobában, bútorok közt:
-- 2 kezes és szálfegyverek harcértéke `0`-ra zuhan
-- egykezes fegyverek harcértéke **feleződik**
-
 Szűk sikátorban:
 - Fontos, hogy milyen irányból érkezik a támadás. Egy lándzsa technikáit például nem lehet itt alkalmazni, viszont a két oldalról való védettség folytán szinte lehetetlen hozzáférni. Ilyenkor a szúró szálfegyverek `+15 TÉ/VÉ` módosítót kapnak, viszont a hátulról érkező támadások ellen teljesen védtelen ilyenkor a harcos. Abba az irányba fegyverének harcértékei `0`-nak számítanak és még **további** `-15 TÉ/VÉ` csökkenést szenved el.
 
 **Megjegyzés**: a **Támadó- és Védő** taktikák **Beszorított helyzetben** továbbra is használhatóak.
+
+
+Beszoritott helyzet (1) Kicsit
+- Kezdeményezés - Lassú
+- Ellenfél TÉ Előny+1, Védő TÉ Hátrány-1
+- 1 támadás elvesztése
+- Mozgás - lassulás
+
+Beszoritott helyzet (2) Nagyon
+"A kamrában pallossal, vagy alabárddal"
+- Kezdeményezés - Nagyon Lassú
+- Ellenfél TÉ Előny+2, Védő TÉ Hátrány-2
+- Többszörös támadás elvesztése
+- Mozgás - lassulás
+- VÉ veszteség duplázódik!
+- Sebzés csökkentett: `k20+0`
+
+⭕
+2 alabárdos: nem kiolt, mindkettő szar.
+KM dönt, hogyan. Pl. Sikátorban lándzsával 1 iranyban Előny+2 TÉ
+⭕
 
 <br />
 
@@ -326,14 +326,20 @@ Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepet%C3%A9s
 ---
 ### Láthatatlanul
 
-```
-Támadó: Előny+2 Támadó dobásra
-```
+Hallható ellenfél
+- Támadó: `Előny+1` Támadó dobásra, VÉ csökkentés duplázódik
+- Védő: `Hátrány-1` Támadó dobásra
 
-**Védő**: 
-- [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges), vagy [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes) a helyzettől függően
-- Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély
-- [Vakharc](fortelyok.harci/vakharc.md) ⭕fortélyának minden foka `1 fok Előnyt` semlegesít a támadó oldalán levő Támadó dobás bónuszából⭕
+Teljesen csendes ellenfél
+- Támadó: `Előny+2` Támadó dobásra, VÉ csökkentés duplázódik
+- Védő: `Hátrány-2` Támadó dobásra
+
+[Vakharc](fortelyok.harci/vakharc.md) hatása Védő oldalán:
+- `1.fok`:megszűntet 1 Hátrány védő TÉ-re
+- `2.fok`: megszűntet 1 Előnyt a támadó TÉ-re, 1 Hátrány védő TÉ-re
+- `3.fok`: nullázza a Támadó összes előnyét és a Védő Hátrányát
+
+Megjegyzés: Fárasztó Taktika nem alkalmazható.
 
 <br />
 
@@ -341,7 +347,8 @@ Támadó: Előny+2 Támadó dobásra
 ### Levegőből támadás
 
 ```
-Előny+2: Támadó Dobásra
+- Előny+2: Támadó Dobásra
+- VÉ csökkentés duplázódik
 ```
 
 A levegőből támadás - például egy légi hátasról - jelentős előnnyel jár.

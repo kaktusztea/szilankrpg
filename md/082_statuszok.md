@@ -91,7 +91,7 @@ Viszont
 
 - `Hátrány-1`: Támadó dobás
 - `Hátrány-1`: Manőver Ellenpróba dobás
-- Reflexek - lassú
+- Kezdeményezés - lassú
 - `1` támadás elvesztése
 - ⭕nincs biztos tudásból (at-will) varázslás, kivéve papok: ők részegen is tudnak varázsolni⭕
 - ⚡példa: sima részegség
@@ -100,7 +100,7 @@ Viszont
 
 - `Hátrány-2`: Támadó dobás
 - `Hátrány-2`: Manőver Ellenpróba dobás
-- Reflexek - Nagyon lassú
+- Kezdeményezés - Nagyon lassú
 - Többszörös támadás elvesztése
 - Automatikus kudarc: szociális képzettségpróbákra
 - Varázslás képesség elvesztése
@@ -109,7 +109,6 @@ Viszont
 ### ✴️ Eszmélet (3) Ájulás
 
 - Beszéd - némultság
-- Gondolkodásképtelenség
 - Harcképtelenség
 - Mozgás - képtelen
 - Pszi használat elvesztése
@@ -167,7 +166,7 @@ Hatások
 - rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)
 - Hatások
     - Mozgás - képtelen
-    - Többszörös támadás elvesztése  ⭕TODO: vagy: Harcképtelenség?⭕
+    - Harcképtelenség
     - Varázslás képesség elvesztése
     - Pszi használat elvesztése
 
@@ -177,22 +176,22 @@ Hatások
 ### ✴️ Fizikai (1) Fáradtság
 
 Hatások:
-- Reflexek - lassú
+- Kezdeményezés - lassú
 - `Hátrány-1`: nem-harc fizikai képzettségekre
 
 ### ✴️ Fizikai (2) Kimerültség
 
 Hatások:
-- Reflexek - lassú
-- VÉ csökkenés: duplázódik
+- Kezdeményezés - lassú
+- VÉ veszteség: duplázódik
 - `Hátrány-2`: nem-harc fizikai képzettségekre
 -  Egészség kategória `S1`: a teljes kategória feltöltődik új `FP`-kel ⭕TODO: ebből legyen Hatás?⭕
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
 Hatások:
-- Reflexek - Nagyon lassú
-- VÉ csökkenéseid duplázódnak
+- Kezdeményezés - Nagyon lassú
+- VÉ veszteség duplázódik
 - Többszörös támadás elvesztése
 - Lassúság
 - Automatikus kudarc: nem-harc fizikai képzettségek
@@ -366,8 +365,9 @@ Hatás:
 A következő kör végéig tart.
 
 Hatások:
-- Reflexek - lassú
+- Kezdeményezés - lassú
 - Többszörös támadás elvesztése
+- Gyorsaság és Ügyesség tulajdonságpróba: `Hátrány-1`
 
 Példa: ledöbbenés, stb.
 
@@ -377,8 +377,9 @@ A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból 
 
 Hatások:
 - Többszörös támadás elvesztése
-- Reflexek - Nagyon lassú
+- Kezdeményezés - Nagyon lassú
 - Mozgás - lecövekelt
+- Gyorsaság és Ügyesség tulajdonságpróba: `Hátrány-2`
 - Beszéd - zagyva
 - 2 körig tart
 
@@ -392,6 +393,7 @@ Hatások:
 - Beszédvesztés (részleges, vagy teljes - szituáció függő)
 - Harcképtelenség
 - Mozgás - lecövekelt
+- Automatikus kudarc: Gyorsaság és Ügyesség tulajdonságpróba
 - Beszéd - zagyva
 - Pszi használat elvesztése
 - Varázslás képesség elvesztése

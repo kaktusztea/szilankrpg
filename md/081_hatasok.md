@@ -90,10 +90,8 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 ---
 ### 🔥 Beszédvesztés - részleges
 
-- Nem tudsz szavakat formálni, legfeljebb kiáltani: "Hö!"
-- Mágia hangalapú komponensét sem tudod alkalmazni
-    - ⭕TODO⭕ a mágikus beszéd legyen más, azt ne blokkolja ez a Hatás (?)
-    - ⭕TODO⭕ nem a hangszalagok adják ki a mágikus hangot ??
+- Nehezen tudsz szavakat formálni
+- Varázslásnál: Extra Összpontositas próba (Nehéz). Ha megvan, sikerül a hang komponenst kimondani
 
 ### 🔥 Beszédvesztés - teljes
 
@@ -126,13 +124,6 @@ próbára.
 ```
 
 <br />
-
----
-### 🔥 Gondolkodásképtelenség
-
-⭕TODO⭕
-
-Nem vagy képes gondolkodni - reagálni, tervezni.
 
 ---
 ### 🔥 Harcképtelenség
@@ -169,11 +160,11 @@ Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádr
 <br />
 
 ---
-### 🔥 Reflexek - lassú
+### 🔥 Kezdeményezés - lassú
 
 Kezdeményezéskor nem dobhatsz, a statikus `KÉ` értékeddel veszel részt a körben.
 
-### 🔥 Reflexek - nagyon lassú
+### 🔥 Kezdeményezés - nagyon lassú
 
 Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ értékedből.
 
@@ -184,6 +175,7 @@ Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ érté
 
 ```
 -1 támadás a körben
+(min 1)
 ```
 
 <br />
