@@ -328,12 +328,12 @@ Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepet%C3%A9s
 
 ```
 Támadó: Előny+2 Támadó dobásra
-Védő: VÉ veszteség duplázódik
 ```
 
-A védő
-- [Vakharc](fortelyok.harci/vakharc.md) fortélyának minden foka `1 fok Előnyt` semlegesít a támadó oldalán levő Támadó dobás bónuszából.
-- [Vakharc](fortelyok.harci/vakharc.md) fortélyának `1.foka` már semlegesíti a "VÉ veszteség duplázódik" Hatást.
+**Védő**: 
+- [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges), vagy [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes) a helyzettől függően
+- Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély
+- [Vakharc](fortelyok.harci/vakharc.md) ⭕fortélyának minden foka `1 fok Előnyt` semlegesít a támadó oldalán levő Támadó dobás bónuszából⭕
 
 <br />
 
