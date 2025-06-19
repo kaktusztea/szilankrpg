@@ -88,7 +88,7 @@ Sima próbadobás (Tulajdonságpróba, Képzettségpróba)
 Ami másnak automatikus siker, az neked sima próbadobás.
 
 ---
-### 🔥 Beszédvesztés -  részleges
+### 🔥 Beszédvesztés - részleges
 
 - Nem tudsz szavakat formálni, legfeljebb kiáltani: "Hö!"
 - Mágia hangalapú komponensét sem tudod alkalmazni
@@ -144,9 +144,9 @@ Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádr
 ---
 ### 🔥 Reflexek - lassú
 
-Kezdeményezéskor nem dobhatsz, a statikus KÉ értékeddel veszel részt a körben.
+Kezdeményezéskor nem dobhatsz, a statikus `KÉ` értékeddel veszel részt a körben.
 
-### 🔥 Reflexek - lomha ⭕TODO? más név⭕
+### 🔥 Reflexek - nagyon lassú
 
 Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ értékedből.
 
@@ -159,7 +159,7 @@ Hallasz, de sokkal rosszabbul. Hallás próbakor... ⭕TODO⭕
 
 ### 🔥 Süketség - teljes
 
-⭕TODO⭕
+Nem dobhatsz Hallás érzékkel kapcsolatos próbákat.
 
 <br />
 

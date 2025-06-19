@@ -92,7 +92,7 @@ Viszont
 - `Hátrány-1`: Támadó dobás
 - `Hátrány-1`: Manőver Ellenpróba dobás
 - Reflexek - lassú
-- Többszörös támadás elvesztése
+- `1` támadás elvesztése
 - ⭕nincs biztos tudásból (at-will) varázslás, kivéve papok: ők részegen is tudnak varázsolni⭕
 - ⚡példa: sima részegség
 
@@ -100,7 +100,7 @@ Viszont
 
 - `Hátrány-2`: Támadó dobás
 - `Hátrány-2`: Manőver Ellenpróba dobás
-- Reflexek - lomha
+- Reflexek - Nagyon lassú
 - Többszörös támadás elvesztése
 - Automatikus kudarc: szociális képzettségpróbákra
 - Varázslás képesség elvesztése
@@ -187,7 +187,7 @@ Hatások:
 ### ✴️ Fizikai (3) Elcsigázottság
 
 Hatások:
-- Reflexek - lomha
+- Reflexek - Nagyon lassú
 - VÉ csökkenéseid duplázódnak
 - Többszörös támadás elvesztése
 - Lassúság
@@ -373,7 +373,7 @@ A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból 
 
 Hatások:
 - Többszörös támadás elvesztése
-- Reflexek - lomha
+- Reflexek - Nagyon lassú
 - Mozgás - lecövekelt
 - Beszéd - zagyva
 - 2 körig tart

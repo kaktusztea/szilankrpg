@@ -442,7 +442,6 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
 <br />
 
-
 ---
 ### Sötét: teljes, zajokkal
 
