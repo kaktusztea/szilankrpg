@@ -129,7 +129,7 @@ Az Antyssjárás viszont ebben az állapotban is működik.
 ### ✴️ Érzékvesztés (1) részleges
 
 Hatás: valamelyik az alábbiak közül
-- `1`: Beszédvesztés - részleges 
+- `1`: Beszédvesztés - részleges
 - `1`: Süketség - részleges
 - `1`: Vakság - részleges
 

@@ -183,11 +183,15 @@ Max 1 támadás / kör
 ---
 ### 🔥 Vakság - részleges
 
-⭕TODO: Hatások?⭕
+```
+Hátrány-1: TÉ dobásra
+```
 
 ### 🔥 Vakság - teljes
 
-⭕TODO: Hatások?⭕
+```
+Hátrány-2: TÉ dobásra
+```
 
 <br />
 

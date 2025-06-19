@@ -64,7 +64,11 @@ Nem ellenpróbás szituációban tapasztalati ismeretekre támaszkodik az alkalm
 - Mozgás: a lopakodó az észlelő látásának perifériáján halad
 - Távolság: `10-15` méter
 
-### ⚜️ Láthatóság módosító
+### ⚜️ Vakharc módosító (áldozat)
+
+Lásd [Vakharc fortély- Bónusz: harci ösztön](../fortelyok.harci/vakharc.md#b%C3%B3nusz-harci-%C3%B6szt%C3%B6n)
+
+### ⚜️ Láthatóság módosító (lopakodó)
 
 - `-6`: Világosban, éles kontúrral válsz el a háttértől
 - `-3`: Világosban, háttértől elütő ruházatban
@@ -72,23 +76,23 @@ Nem ellenpróbás szituációban tapasztalati ismeretekre támaszkodik az alkalm
 - `+3`: Szürkület, félhomány
 - `+6`: Vaksötét. Szabad szemmel csak Infra- vagy Ultralátással vagy észlelhető.
 
-### ⚜️ Lopakodó helyzete módosító
+### ⚜️ Látótér módosító (lopakodó)
 
 - `-6`: lopakodó direkt a látótérben
 - `+0`: lopakodó az észlelő látásának perifériáján halad
 - `+6`: lopakodó az észlelő látókörén kívül halad
 
-### ⚜️ Mozgás módosító
+### ⚜️ Mozgás módosító (lopakodó)
 
 - `-6`: gyors haladás ([Suhanó árnyék](../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi)
 
-### ⚜️ Felszerelés módosító
+### ⚜️ Felszerelés módosító (lopakodó)
 
 - `+0`: csendes ruha
 - `-3`: nyikorgós ruha
 - `-6`: csörgő ruha, fémpáncél
 
-### ⚜️ Környezeti zajok módosító
+### ⚜️ Környezeti zajok módosító (lopakodó)
 
 - `-3`: süket csend
 - `+0`: gyenge alapzaj
@@ -96,13 +100,13 @@ Nem ellenpróbás szituációban tapasztalati ismeretekre támaszkodik az alkalm
 - `+3 és hallással észlelhetetlen`: hangzavar (üvöltő dervisek, kofák)
 
 
-### ⚜️ Környezet, rejtekhely
+### ⚜️ Környezet, rejtekhely (lopakodó)
 
 - `-6`: nyílt tér fedezék nélkül
 - `+0`: pár tucat ember a piacon, néhány jól használható rejtekhely, fedezék
 - `+6`: zsúfolt piac, rengeteg pult, beugró, alkóv
 
-### ⚜️ Távolság módosító, Harci szituáció megteremtése
+### ⚜️ Távolság módosító, Harci szituáció megteremtése (lopakodó)
 
 - `-9: Testközelbe kerülni; Észrevétlen támadás`
 - `-6: 1 - 5 méter; Meglepetésből támadás`

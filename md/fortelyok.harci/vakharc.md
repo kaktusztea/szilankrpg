@@ -6,10 +6,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**:
-- Csönd és sötét: `KÉ:-30`, `TÉ/VÉ:-50`
-- Zajok és sötét: `KÉ:-20`, `TÉ/VÉ:-30`
-
+🌟 **Hatás**: [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes)
 
 ---
 ### Bónusz: harci ösztön
@@ -19,16 +16,16 @@ Vakharc minden foka:
   +2 Észlelésre
 ```
 
-[Lopakodás/rejtőzés és Észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációban, **kizárólag** hátbatámadás elszenvedése esetén az ellenpróbánál az Észlelés képzettségpróba dobásodra a Vakharc minden foka `+2` bónuszt ad. Ez akkor is jár, ha egy tudottan hátad mögött álló személy hirtelen rádtámad.
+[Lopakodás/rejtőzés és Észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációban, **kizárólag** hátbatámadás elszenvedése esetén az ellenpróbánál az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettségpróba dobásodra a **Vakharc** minden foka `+2` bónuszt ad. Ez akkor is jár, ha egy tudottan hátad mögött álló személy hirtelen rádtámad.
+
 
 ---
 ### 1. fok
 
 🔒 **Követelmény**: [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
 
-🌟 **Hatás**:
-- Csönd és sötét: `KÉ:-20`, `TÉ/VÉ:-30`
-- Zajok és sötét: `KÉ:-10`, `TÉ/VÉ:-15`
+🌟 **Hatás**: ⭕TODO⭕
+
 
 ---
 ### 2. fok
@@ -36,13 +33,13 @@ Vakharc minden foka:
 🔒 **Követelmény**:
 - Érzékenység: `+3`
 - Összpontosítás - `6.szint`
-- ⚪ **Érzékenység(Intuíció)**: `+3`
+- ⚪ **Érzékenység (Intuíció)**: `+3`
   VAGY
-- ⚪ **Érzékenység(Hallás)**: `+3`
+- ⚪ **Érzékenység (Hallás)**: `+3`
 
 🌟 **Hatás**:
-- Csönd és sötét: `KÉ:-10`, `TÉ/VÉ:-15`
-- Zajok és sötét: nincs levonás
+- [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes) → [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges)
+- [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
 
 ---
 ### 3. fok
@@ -53,8 +50,8 @@ Vakharc minden foka:
 - ⚪ **Érzékenység(Intuíció)**: `+4`
 
 🌟 **Hatás**:
-- Csönd és sötét: nincs levonás
-- Zajok és sötét: nincs levonás
+- [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes) → nincs büntetés
+- [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
 
 <br />
 
