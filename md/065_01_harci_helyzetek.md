@@ -418,7 +418,8 @@ Kivétel: [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md), amely meglé
 Hatás: [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges), azaz:
 
 ```
-Hátrány-1: TÉ dobásra
+- Hátrány-1: TÉ dobásra
+- Érzék(látás) - részleges
 ```
 
 Félhomályban kockázatosabb védekezni, a fegyverek mozgása nehezebben látható. Mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol.
@@ -430,10 +431,9 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 ---
 ### Sötét: teljes, csendben
 
-Hatás: [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes), azaz:
-
 ```
-Hátrány-2: TÉ dobásra
+- Hátrány-2: TÉ dobásra
+- Érzék(látás) - teljes
 ```
 
 Sötétben a támadás sikere drasztikusan lecsökken. Mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol.
@@ -445,15 +445,14 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 ---
 ### Sötét: teljes, zajokkal
 
-Hatás: [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges), azaz
-
 ```
-Hátrány-1: TÉ dobásra
+- Hátrány-1: TÉ dobásra
+- Érzék(látás) - teljes
 ```
 
 Sötétben ugyan a támadás sikere drasztikusan lecsökken és mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol...
 
-... viszont ha apró zajok segítik az érzékelést, akkor a `TÉ` büntetés is csökken, így csak a "Vakság - részleges" Hatásnak megfelelő büntetések érvényesülnek.
+... viszont ha apró zajok segítik az érzékelést, akkor a `TÉ` dobásra a büntetés is csökken.
 
 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 

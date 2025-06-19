@@ -24,8 +24,9 @@ Vakharc minden foka:
 
 🔒 **Követelmény**: [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
 
-🌟 **Hatás**: ⭕TODO⭕
-
+🌟 **Hatás**:
+- [Vakság - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → [Vakság - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges)
+- [Vakság - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
 
 ---
 ### 2. fok
@@ -38,7 +39,7 @@ Vakharc minden foka:
 - ⚪ **Érzékenység (Hallás)**: `+3`
 
 🌟 **Hatás**:
-- [Vakság - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → [Vakság - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges)
+- [Vakság - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → nincs büntetés
 - [Vakság - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
 
 ---
@@ -52,6 +53,8 @@ Vakharc minden foka:
 🌟 **Hatás**:
 - [Vakság - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → nincs büntetés
 - [Vakság - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
+- [Süketség - teljes](https://github.com/kaktusztea/szilankrpg/blob/master/md/081_hatasok.md#-s%C3%BCkets%C3%A9g---teljes) Hatás esetén is működik, mert itt már az Intuíció használt.
+- Túlterhelt érzékek esetén is működik (túl erős fény, villódzás, hangorkán)
 
 <br />
 

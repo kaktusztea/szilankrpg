@@ -101,6 +101,33 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 - Mágia hangalapú komponensét sem tudod alkalmazni
 
 ---
+### 🔥 Érzék - zavart
+
+```
+Hátrány-1 minden adott érzéken
+  alapuló tulajdonságpróbára és
+  képzettségpróbánál
+```
+
+### 🔥 Érzék - részleges
+
+```
+Hátrány-2 minden adott érzéken
+  alapuló tulajdonságpróbára és
+  képzettségpróbánál
+```
+
+### 🔥 Érzék - teljes
+
+```
+Automatikus sikertelenség
+minden adott érzéken alapuló
+próbára.
+```
+
+<br />
+
+---
 ### 🔥 Gondolkodásképtelenség
 
 ⭕TODO⭕
@@ -153,18 +180,6 @@ Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ érté
 <br />
 
 ---
-### 🔥 Süketség - részleges
-
-Hallasz, de sokkal rosszabbul. Hallás próbakor... ⭕TODO⭕
-
-### 🔥 Süketség - teljes
-
-Nem dobhatsz Hallás érzékkel kapcsolatos próbákat.
-
-<br />
-
-
----
 ### 🔥 `1` támadás elvesztése
 
 ```
@@ -179,21 +194,6 @@ Nem dobhatsz Hallás érzékkel kapcsolatos próbákat.
 ```
 Max 1 támadás / kör
 ```
-
----
-### 🔥 Vakság - részleges
-
-```
-Hátrány-1: TÉ dobásra
-```
-
-### 🔥 Vakság - teljes
-
-```
-Hátrány-2: TÉ dobásra
-```
-
-<br />
 
 ---
 ### 🔥 Varázslás képesség elvesztése

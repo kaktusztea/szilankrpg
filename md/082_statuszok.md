@@ -126,19 +126,23 @@ Az Antyssjárás viszont ebben az állapotban is működik.
 <br />
 
 ---
-### ✴️ Érzékvesztés (1) részleges
+### ✴️ Érzékvesztés (1) zavart
 
 Hatás: valamelyik az alábbiak közül
-- `1`: Beszédvesztés - részleges
-- `1`: Süketség - részleges
-- `1`: Vakság - részleges
+
+- Érzék - zavart
+
+### ✴️ Érzékvesztés (2) részleges
+
+Hatás: valamelyik az alábbiak közül
+
+- Érzék - részleges
 
 ### ✴️ Érzékvesztés (2) teljes
 
 Hatás: valamelyik az alábbiak közül
-- `2`: Süketség - teljes
-- `2`: Beszédvesztés - teljes
-- `2`: Vakság - teljes
+
+- Érzék - teljes
 
 ---
 ### ✴️ Félelem (1) Szorongás
