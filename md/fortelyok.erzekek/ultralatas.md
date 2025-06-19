@@ -17,7 +17,7 @@ Teljes sötétben is képes vagy tájékozódni.
 
 🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md)
 
-🌟 **Hatás**: Mintha telihold fényénél tájékozódnál vaksötétben. A [félhomályban](../065_01_harci_helyzetek.md#f%C3%A9lhom%C3%A1lyban) módosítóival harcolhatsz.
+🌟 **Hatás**: Mintha telihold fényénél tájékozódnál vaksötétben. A [Sötét: Félhomály](../065_01_harci_helyzetek.md#s%C3%B6t%C3%A9t-f%C3%A9lhom%C3%A1ly) módosítóival harcolhatsz.
 
 ---
 ### 2. fok

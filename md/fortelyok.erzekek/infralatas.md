@@ -18,7 +18,7 @@ Sötétben (leginkább élőlények által kibocsátott) hőképek alapján is k
 
 🌟 **Hatás**:
 
-Mintha félhomályban tájékozódnál. A harc is ilyen módosítókkal folyik számodra: [bővebben](../065_01_harci_helyzetek.md#f%C3%A9lhom%C3%A1lyban).
+Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_01_harci_helyzetek.md#s%C3%B6t%C3%A9t-f%C3%A9lhom%C3%A1ly) módosítóival folyik számodra.
 
 ---
 ### 2. fok
