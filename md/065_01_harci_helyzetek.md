@@ -415,8 +415,6 @@ Kivétel: [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md), amely meglé
 ---
 ### Sötét: Félhomály
 
-Hatás: [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges), azaz:
-
 ```
 - Hátrány-1: TÉ dobásra
 - Érzék(látás) - részleges
