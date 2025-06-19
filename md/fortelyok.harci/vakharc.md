@@ -6,7 +6,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes)
+🌟 **Hatás**: [Vakság - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes)
 
 ---
 ### Bónusz: harci ösztön
@@ -38,8 +38,8 @@ Vakharc minden foka:
 - ⚪ **Érzékenység (Hallás)**: `+3`
 
 🌟 **Hatás**:
-- [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes) → [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges)
-- [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
+- [Vakság - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → [Vakság - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges)
+- [Vakság - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
 
 ---
 ### 3. fok
@@ -50,8 +50,8 @@ Vakharc minden foka:
 - ⚪ **Érzékenység(Intuíció)**: `+4`
 
 🌟 **Hatás**:
-- [Vakság - teljes](081_hatasok.md#-vaks%C3%A1g---teljes) → nincs büntetés
-- [Vakság - részleges](081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
+- [Vakság - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → nincs büntetés
+- [Vakság - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
 
 <br />
 
