@@ -101,6 +101,8 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 ---
 ### 🔥 Érzék - zavart
 
+Látás, Hallás, Szaglás.
+
 ```
 Hátrány-1 minden adott érzéken
   alapuló tulajdonságpróbára és

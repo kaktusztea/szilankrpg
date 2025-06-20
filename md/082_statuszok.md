@@ -12,13 +12,14 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
     - ⭕Szakrális bélyeg
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
-- Érzékvesztés: (1) részleges, (2) teljes
-- Félelem: (1) Szorongás, (2) Rettegés, (3) ⭕Bénító félelem
-- Fizikai: (1) Fáradtság, (2) ⭕Kimerültség, (3) Elcsigázottság
+- Érzékvesztés: (1) zavart, (2) részleges, (3) teljes
+- Félelem: (1) Szorongás, (2) Rettegés, (3) Bénító félelem
+- Fizikai: (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
 - Hangulat: (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Késztetés: (1) Sugallat, (2) Vágy, (3) Kényszer
 - Mérgezés\*
+- Rosszullét (1) Közepes, (2) Erős
 - Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - Sérült: (1) S3, (2) S4
 - Trauma: (1) Lélekrepedés, (2) Lélektörés
@@ -127,27 +128,30 @@ Az Antyssjárás viszont ebben az állapotban is működik.
 ---
 ### ✴️ Érzékvesztés (1) zavart
 
-Hatás: valamelyik az alábbiak közül
+```
+Érzék - zavart
+```
 
-- Érzék - zavart
+Látás, Hallás, Szaglás.
 
 ### ✴️ Érzékvesztés (2) részleges
 
-Hatás: valamelyik az alábbiak közül
+```
+Érzék - részleges
+```
 
-- Érzék - részleges
+### ✴️ Érzékvesztés (3) teljes
 
-### ✴️ Érzékvesztés (2) teljes
+```
+Érzék - teljes
+```
 
-Hatás: valamelyik az alábbiak közül
-
-- Érzék - teljes
+<br />
 
 ---
 ### ✴️ Félelem (1) Szorongás
 
-- Hatás:
-    - Maximális [Védő taktikában](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika) kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
+Hatás: Maximális [Védő taktikában](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika) kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
 
 Mi okozhatja?
 - nem bírja a stresszt
@@ -163,12 +167,13 @@ Hatások
 
 ### ✴️ Félelem (3) Bénító félelem
 
-- rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)
-- Hatások
-    - Mozgás - képtelen
-    - Harcképtelenség
-    - Varázslás képesség elvesztése
-    - Pszi használat elvesztése
+Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)
+
+Hatások
+- Mozgás - képtelen
+- Harcképtelenség
+- Varázslás képesség elvesztése
+- Pszi használat elvesztése
 
 <br />
 
@@ -185,7 +190,7 @@ Hatások:
 - Kezdeményezés - lassú
 - VÉ veszteség: duplázódik
 - `Hátrány-2`: nem-harc fizikai képzettségekre
--  Egészség kategória `S1`: a teljes kategória feltöltődik új `FP`-kel ⭕TODO: ebből legyen Hatás?⭕
+-  Egészség kategória `S1`: a teljes kategória feltöltődik új `FP`-kel
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
@@ -297,6 +302,24 @@ Lásd a [150_meregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatása
 <br />
 
 ---
+### ✴️  Rosszullét (1) Közepes
+
+```
+- Hátrány-1 TÉ dobásra
+- Kezdeményezés - lassú
+```
+
+### ✴️  Rosszullét (2) Erős
+
+```
+- Hátrány-2 TÉ dobásra
+- Kezdeményezés - nagyon lassú
+- VÉ veszteség duplázódik
+```
+
+  <br />
+
+---
 ### ✴️ Szellemi (1) Kialvatlanság
 
 Hatás:
@@ -326,19 +349,17 @@ Hatások:
 Ha az `S3` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.\
 Bővebben lásd a [Sebesülés](061_03_sebesules.md#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra) fejezetet.
 
-Hatás:
-- `Hátrány-1`:
-  - fizikai és szellemi tulajdonságpróbákra
-  - fizikai és szellemi képzettségpróbákra
+Hatás: `Hátrány-1`:
+- fizikai és szellemi tulajdonságpróbákra
+- fizikai és szellemi képzettségpróbákra
 
 ### ✴️ Sérült (2) S4
 
 Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.
 
-Hatás:
-- `Hátrány-2`:
-  - tulajdonságpróbákra (fizikai és szellemi)
-  - képzettségpróbákra (fizikai és szellemi)
+Hatás: `Hátrány-2`:
+- fizikai és szellemi tulajdonságpróbákra
+- fizikai és szellemi képzettségpróbákra
 
 ---
 ### ✴️ Trauma (1) Lélekrepedés
