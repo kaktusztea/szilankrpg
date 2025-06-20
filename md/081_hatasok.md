@@ -128,6 +128,17 @@ próbára.
 <br />
 
 ---
+### 🔥 `FP S1`
+
+Az `S1` Egészség kategória összes rubrikája feltöltődik új `FP`-kel. 
+
+### 🔥 `FP S2`
+
+Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új `FP`-kel. 
+
+<br />
+
+---
 ### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem

@@ -190,7 +190,7 @@ Hatások:
 - Kezdeményezés - lassú
 - VÉ veszteség: duplázódik
 - `Hátrány-2`: nem-harc fizikai képzettségekre
--  Egészség kategória `S1`: a teljes kategória feltöltődik új `FP`-kel
+-  `FP S1`
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
@@ -201,7 +201,7 @@ Hatások:
 - Lassúság
 - Automatikus kudarc: nem-harc fizikai képzettségek
 - Automatikus kudarc: [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) (nincs harcérték bónusz belőle)
-- Egészség kategória `S1`és `S2`: mindkét kategória feltöltődik új `FP`-kel
+-  `FP S2`
 
 ⚡ Példa: éhhalál szélén
 
