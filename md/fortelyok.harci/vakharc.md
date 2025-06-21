@@ -27,6 +27,7 @@ Vakharc minden foka:
 🌟 **Hatás**:
 - [Érzék(látás) - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → [Érzék(látás) - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges)
 - [Érzék(látás) - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
+- Megszűntet `1` fok Hátrányt a védő `TÉ`-re [Láthatatlan ellenfél](065_01_harci_helyzetek.md#l%C3%A1thatatlanul) esetén
 
 ---
 ### 2. fok
@@ -41,6 +42,7 @@ Vakharc minden foka:
 🌟 **Hatás**:
 - [Érzék(látás) - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → nincs büntetés
 - [Érzék(látás) - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
+- Megszűntet `1` Előnyt a támadó `TÉ`-re, 1 Hátrány védő `TÉ`-re [Láthatatlan ellenfél](065_01_harci_helyzetek.md#l%C3%A1thatatlanul) esetén
 
 ---
 ### 3. fok
@@ -53,6 +55,7 @@ Vakharc minden foka:
 🌟 **Hatás**:
 - [Érzék(látás) - teljes](../081_hatasok.md#-vaks%C3%A1g---teljes) → nincs büntetés
 - [Érzék(látás) - részleges](../081_hatasok.md#-vaks%C3%A1g---r%C3%A9szleges) → nincs büntetés
+- Nullázza a Támadó összes előnyét és a Védő összes Hátrányát [Láthatatlan ellenfél](065_01_harci_helyzetek.md#l%C3%A1thatatlanul) esetén
 - [Süketség - teljes](https://github.com/kaktusztea/szilankrpg/blob/master/md/081_hatasok.md#-s%C3%BCkets%C3%A9g---teljes) Hatás esetén is működik, mert itt már az Intuíció használt.
 - Túlterhelt érzékek esetén is működik (túl erős fény, villódzás, hangorkán)
 

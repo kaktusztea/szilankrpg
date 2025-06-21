@@ -147,6 +147,8 @@ VÉ csökkentésre:
 
 ❌ Más taktikával együtt
 
+❌  [Láthatatlan](065_01_harci_helyzetek.md#l%C3%A1thatatlanul) ellenfél ellen
+
 Csak **Előnyös helyzetből** lehet alkalmazni. Tehát azonos, vagy nagyobb fegyverméretnél.
 
 Ha fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta, akkor a harc ugyanúgy folyik, mint más esetben, csak `+2`-vel nő **VÉ csökkentésed** ha nem érsz el találatot támadó dobásod során.
