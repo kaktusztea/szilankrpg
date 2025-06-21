@@ -144,6 +144,18 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új `F
 - Tudsz mozogni, menni, de harcolni nem
 - `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_01_harci_helyzetek.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s))
 
+
+---
+### 🔥 Kezdeményezés - lassú
+
+Kezdeményezéskor nem dobhatsz, a statikus `KÉ` értékeddel veszel részt a körben.
+
+### 🔥 Kezdeményezés - nagyon lassú
+
+Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ értékedből.
+
+<br />
+
 ---
 ### 🔥 Mozgás - lassulás
 
@@ -172,14 +184,11 @@ Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádr
 
 <br />
 
+
 ---
-### 🔥 Kezdeményezés - lassú
+### 🔥 Sebzés csökkentett
 
-Kezdeményezéskor nem dobhatsz, a statikus `KÉ` értékeddel veszel részt a körben.
-
-### 🔥 Kezdeményezés - nagyon lassú
-
-Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ értékedből.
+`x`
 
 <br />
 

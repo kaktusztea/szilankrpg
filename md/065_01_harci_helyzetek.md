@@ -67,7 +67,7 @@ Belharci szituációban `KÉ`, `TÉ`, `VÉ`, `SP`  mind `0` értékre emelkednek
 #### ⚜️ Nem-belharcos fegyverek belharci szituációban
 
 - `0` pengénél hosszabb fegyverek
-- Hatás: mintha a "Beszoritott helyzet (2) Nagyon" helyzetbe kerülne. A Hatások azonosak.
+- Azonosk Hatások: mintha a [Beszorított helyzet (2) Erősen](#beszoritott-helyzet-2-er%C5%91sen) helyzetbe kerülne.
 - sebzésük `k20+0 SP`
 - Forgatója **Akció elhasználása nélkül** ha úgy dönt, elejtheti fegyverét - így puszta kézzel harcolhat tovább (`0` fegyver harcértékekkel)
 
