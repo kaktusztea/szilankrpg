@@ -10,12 +10,10 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
 🌟 **Hatás**:
-- Erő, Edzettség, Gyorsaság tulajdonságpróbákra: `+1`
-- `KÉ:+2`; `TÉ:+4`; `VÉ:-10`; `SP:+1`
-- Harckeret: `+1`
-- `ÉP:+2`
-- `AME, MME: +3`
-- Sebesülés TÉ levonása `5`-tel mérséklődik
+- Max Támadó taktikával kell harcolnod: `[+15TÉ; -30VÉ]`
+- Asztrál/Mentál Mágiaellenállás dobásra: `Előny+1`
+- [S4 Fájdalomtűrés próbára](../061_03_sebesules.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s): `Előny+1`
+- [Öngyilkos roham taktikát](../065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) használhatja csak roham esetén
 
 ---
 ### 2. fok
@@ -27,25 +25,27 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
 
 🌟 **Hatás**:
-- Erő, Edzettség, Gyorsaság tulajdonságpróbákra: `+3`
-- `KÉ:+6`; `TÉ:+12`; `VÉ:-10`; `SP:+3`
-- Harckeret: `+3`
-- `ÉP:+6`
-- `AME, MME: +9`
-- Sebesülés TÉ levonása `10`-tel mérséklődik
+- `TÉ`, Sebzés dobás: `Előny+1`
+- Max Támadó taktikával kell harcolnod bónusszal: `[+20TÉ; -40VÉ]`
+- Asztrál/Mentál Mágiaellenállás dobásra: `Előny+2`
+- S4 Fájdalomtűrés próbára: `Előny+2`
+- **Öngyilkos roham taktikát** használhatja csak roham esetén
 
 ---
 ### 3. fok 🔆
 
-🔒 **Követelmény**: 🔆Speciális, nem vehető fel KP-ért.<br />Csak mágiával érhető el, például ork ereklye hatása, vagy Arel áldása.<br />Ezek különleges állapotok, ezt a szintet nem lehet tanulással elérni, így **KP**-t sem lehet rá költeni.
+🔒 **Követelmény**
+- 🔆Speciális, nem vehető fel KP-ért.
+- Csak mágiával érhető el, például ork ereklye hatása, vagy Arel áldása.
+- Ezek különleges állapotok, ezt a szintet nem lehet tanulással elérni, így **KP**-t sem lehet rá költeni.
 
 🌟 **Hatás**:
-- Erő, Edzettség, Gyorsaság tulajdonságpróbákra: `+2`
-- `KÉ:+4`; `TÉ:+8`; `VÉ:-10`; `SP:+2`
-- Harckeret: `+5`
-- `ÉP:+2`
-- `AME, MME: +6`
-- Sebesülés TÉ levonása `15`-tel mérséklődik
+- `TÉ`, Sebzés dobás: `Előny+2`
+- Max Támadó taktikával kell harcolnod bónusszal: `[+25TÉ; -50VÉ]`
+- Asztrál/Mentál Mágiaellenállás dobásra: `Előny+2`
+- S4 Fájdalomtűrés próba: Automatikus siker
+- **Öngyilkos roham taktikát** használhatja csak roham esetén
+- Csak `0 ÉP` esetén hagyja abba a támadást
 
 <br />
 
@@ -53,8 +53,7 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 ### Speciális
 
 - Pajzs VÉ nem számít, lövés, mágia, pszi tiltott
-- Hajításnál a fegyver Osztója csökken: `-1` <sup><sub>(min 1)</sub></sup>
-- A +ÉP a Harci láz alkalmazása alatt adódik csak hozzá az utolsó egészség kategória oszlopához.
+- Hajításnál a fegyver Osztója csökken: `-1`  (min `1`)
 
 ---
 ### Bekerülés Harci lázba
