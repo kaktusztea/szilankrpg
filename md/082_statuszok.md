@@ -13,7 +13,7 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 - Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
 - Érzékvesztés: (1) zavart, (2) részleges, (3) teljes
-- Félelem: (1) Szorongás, (2) Rettegés, (3) Bénító félelem
+- Félelem: (1) Szorongás, (2) Rettegés/Pánik, (3) Bénító félelem
 - Fizikai: (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
 - Hangulat: (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
@@ -71,7 +71,6 @@ Az Aurádon egy szakrális bélyeg tündököl / éktelenkedik.
 ---
 ### ✴️ Bénultság (1) Cselekvőképtelenség
 
-Hatások
 - Harcképtelenség
 - Mozgás - képtelen (nyaktól lefelé)
 
@@ -158,9 +157,8 @@ Mi okozhatja?
 - kezdő a harcban
 - meg lett félemlítve pl. "Befolyásolás + Félelemkeltés" képzettség ellenpróbával (KM dönt)
 
-### ✴️ Félelem (2) Rettegés
+### ✴️ Félelem (2) Rettegés/Pánik
 
-Hatások
 - Csak [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikát használhat: `VÉ:+30`
 - Többszörös támadás elvesztése
 - Csak mágia vagy démonok hatására kerülhet ebbe az állapotba
@@ -169,7 +167,6 @@ Hatások
 
 Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)
 
-Hatások
 - Mozgás - képtelen
 - Harcképtelenség
 - Varázslás képesség elvesztése
@@ -180,13 +177,11 @@ Hatások
 ---
 ### ✴️ Fizikai (1) Fáradtság
 
-Hatások:
 - Kezdeményezés - lassú
 - `Hátrány-1`: nem-harc fizikai képzettségekre
 
 ### ✴️ Fizikai (2) Kimerültség
 
-Hatások:
 - Kezdeményezés - lassú
 - VÉ veszteség: duplázódik
 - `Hátrány-2`: nem-harc fizikai képzettségekre
@@ -194,7 +189,6 @@ Hatások:
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
-Hatások:
 - Kezdeményezés - Nagyon lassú
 - VÉ veszteség duplázódik
 - Többszörös támadás elvesztése
@@ -218,7 +212,6 @@ A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az 
 
 A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
 
-Hatások
 - `Előny+1`: kreatív tevékenységekre
 - `Hátrány-1`: koncentrációt igénylő feladatokra
 
@@ -226,15 +219,16 @@ Hatások
 
 A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
 
-Hatások:
-- Asztrális befolyásolásnak jobban ellenáll az ilyen személy. `Hátrány-1`-el dob Asztrálmágia Komplexitás-próbát a rá varázsló.
+- `Előny+1`: kreatív tevékenységekre
+- `Hátrány-2`: koncentrációt igénylő feladatokra
+- Ellenséges varázstudó: `Hátrány-1`: Asztrálmágia Komplexitás-próbára
+  (asztrális befolyásolásnak jobban ellenáll az eufórikus személy)
 - Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
 
 ### ✴️ Hangulat (4) Obszesszív
 
 A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
 
-Hatás:
 - "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
 - `Előny+1`: mindenre, ami az obszesszió tárgyához kötődik (nem harci, nem misztikus képzettségpróbákra)
 - `Hátrány-1`: minden más képzettségpróbára
@@ -266,21 +260,18 @@ Az ilyen karakter kötelezően
 ---
 ### ✴️ Késztetés (1) Sugallat
 
-Hatás:
-- **Akaraterő** Tulajdonságpróba
+- Automatikus Tulajdonságpróba: **Akaraterő**
 
-Alap **Akaraterő** Tulajdonságpróbát kell dobnod, hogy ellen tudsz -e állni a késztetésnek.
+**Akaraterő** Tulajdonságpróbát kell dobnod (`12`), hogy ellen tudsz -e állni a késztetésnek.
 
 ### ✴️ Késztetés (2) Vágy
 
-Hatás:
 - `Hátrány-1`: **Akaraterő** Tulajdonságpróbára
 
 **Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz -e állni a késztetésnek.
 
 ### ✴️ Késztetés (3) Kényszer
 
-Hatás:
 - `Hátrány-2`: **Akaraterő** Tulajdonságpróbára
 
 **Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz -e állni a késztetésnek.
@@ -322,12 +313,10 @@ Lásd a [150_meregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatása
 ---
 ### ✴️ Szellemi (1) Kialvatlanság
 
-Hatás:
 - `Hátrány-1`: Észlelés képzettségróba
 
 ### ✴️ Szellemi (2) Eltompultság
 
-Hatások:
 - Pszí használat elvesztése
 - `Hátrány-1`: Mágiahasználat   (nagyobb az esélye a mágia random hatásnak)
 - `Hátrány-1`: nem-mágikus szellemi képzettségekre
@@ -335,7 +324,6 @@ Hatások:
 
 ### ✴️ Szellemi (3) Delírium
 
-Hatások:
 - Pszí használat elvesztése
 - `Hátrány-2`: nem-mágikus szellemi képzettségekre
 - `Hátrány-2`: Mágiahasználat
@@ -349,7 +337,7 @@ Hatások:
 Ha az `S3` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.\
 Bővebben lásd a [Sebesülés](061_03_sebesules.md#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra) fejezetet.
 
-Hatás: `Hátrány-1`:
+`Hátrány-1`:
 - fizikai és szellemi tulajdonságpróbákra
 - fizikai és szellemi képzettségpróbákra
 
@@ -357,7 +345,7 @@ Hatás: `Hátrány-1`:
 
 Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.
 
-Hatás: `Hátrány-2`:
+`Hátrány-2`:
 - fizikai és szellemi tulajdonságpróbákra
 - fizikai és szellemi képzettségpróbákra
 
@@ -385,7 +373,6 @@ Hatás: `Hátrány-2`:
 
 A következő kör végéig tart.
 
-Hatások:
 - Kezdeményezés - lassú
 - Többszörös támadás elvesztése
 - Gyorsaság és Ügyesség tulajdonságpróba: `Hátrány-1`
@@ -396,7 +383,6 @@ Példa: ledöbbenés, stb.
 
 A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból ismert, "stunned".
 
-Hatások:
 - Többszörös támadás elvesztése
 - Kezdeményezés - Nagyon lassú
 - Mozgás - lecövekelt
@@ -410,7 +396,6 @@ Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az 
 
 Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képes részt venni.
 
-Hatások:
 - Beszédvesztés (részleges, vagy teljes - szituáció függő)
 - Harcképtelenség
 - Mozgás - lecövekelt

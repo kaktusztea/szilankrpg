@@ -74,7 +74,8 @@ Lásd [Vakharc fortély- Bónusz: harci ösztön](../fortelyok.harci/vakharc.md#
 - `-3`: Világosban, háttértől elütő ruházatban
 - `+0`: Átlagos nappali fény, ruhád nem üt el nagyon a háttértől
 - `+3`: Szürkület, félhomány
-- `+6`: Vaksötét. Szabad szemmel csak Infra- vagy Ultralátással vagy észlelhető.
+- `+6`: Vaksötét, vagy . Szabad szemmel csak Infra- vagy Ultralátással vagy észlelhető.
+- `+6`: a lopakodó [Láthatatlan](../065_01_harci_helyzetek.md#l%C3%A1thatatlanul)
 
 ### ⚜️ Látótér módosító (lopakodó)
 
