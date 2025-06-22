@@ -1,8 +1,6 @@
 ## Harci alapfogalmak
 
-### [Előnyös és Hátrányos helyzetű fél](063_01_elonyos_hatranyos_helyzetu_fel.md)
-
-### [Kiskocka, Nagykocka](063_02_kiskocka_nagykocka.md)
+### [Előnyös és Hátrányos helyzetű fél](063_02_elonyos_hatranyos_helyzetu_fel.md)
 
 ### [Védő Érték csökkentése](063_03_vedo_ertek_csokkentese.md)
 

@@ -147,7 +147,9 @@ VÉ csökkentésre:
 
 ❌ Más taktikával együtt
 
-❌  [Láthatatlan](065_01_harci_helyzetek.md#l%C3%A1thatatlanul) ellenfél ellen
+❌ [Láthatatlan](065_01_harci_helyzetek.md#l%C3%A1thatatlanul) ellenfél ellen
+
+✅ [Levegőből támadás](065_01_harci_helyzetek.md#leveg%C5%91b%C5%91l-t%C3%A1mad%C3%A1s) harci helyzetben
 
 Csak **Előnyös helyzetből** lehet alkalmazni. Tehát azonos, vagy nagyobb fegyverméretnél.
 

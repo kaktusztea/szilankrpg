@@ -25,8 +25,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 ## 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 
-- [Előnyös és Hátrányos helyzetű fél](063_01_elonyos_hatranyos_helyzetu_fel.md)
-- [Kiskocka, Nagykocka](063_02_kiskocka_nagykocka.md)
+- [Előnyös és Hátrányos helyzetű fél](063_02_elonyos_hatranyos_helyzetu_fel.md)
 - [Védő Érték csökkentése](063_03_vedo_ertek_csokkentese.md)
 - [Akciók fogalma](063_04_akcio_fogalma.md)
 - [Mozgás harc közben](063_05_mozgas_harc_kozben.md)

@@ -58,14 +58,6 @@ Védekezésnél: a támadó dob → `Előny-2`
 
 ---
 ---
-### 🔥 Kiskocka és 🔥 Nagykocka
-
-Lásd [Kiskocka, Nagykocka fejezetet](063_02_kiskocka_nagykocka.md)!
-
-<br />
-
----
----
 ### 🔥 Antyssjárás elvesztése
 
 Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni - alvás közben sem.
@@ -226,11 +218,25 @@ Mikor sikertelen támadást adnak le rád, az elszenvedett `VÉ` csökkenésed d
 <br />
 
 ---
-### 🔥 VÉ csökkentés duplázódik
+### 🔥 VÉ csökkentés - `Kiskocka`
 
-Mikor sikertelen támadást adsz le, az okozott `VÉ` csökkentésed duplázódik.
+Kiskocka: pontosabban "kisebbiket dobott kocka".
 
-<br />
+A `k100` támadó dobásban a két `k10` kocka közül a **kisebbik** értéket dobott kocka értékével csökkentesz `Védő Értéket` ellenfeleden.
+
+`Példa: 58 → Kiskocka: 5`
+
+###  🔥 VÉ csökkentés - `Nagykocka`
+
+Pontosabban "nagyobbikat dobott kocka".
+
+A `k100` támadó dobásban a két `k10` kocka közül a **nagyobbik** értéket dobott kocka értékével csökkentesz `Védő Értéket` ellenfeleden.
+
+`Példa: 58 → Nagykocka: 8`
+
+###  🔥 VÉ csökkentés - `Nagykocka + 1`
+
+`(Nagykocka + 1)` értékével csökkentesz `Védő Értéket` ellenfeleden.
 
 ---
 ### 🔥 Vérzés - gyenge

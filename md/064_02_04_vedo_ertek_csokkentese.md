@@ -1,32 +1,4 @@
-##  VÉ csökkentés: Támadó dobás eredménye: **TÉ < VÉ**
 
-A harc, a védekezés komolyan igénybe veszik az áldozat figyelmét, állóképességét.
-
-Ha a támadás nem érte el a megtámadott fél **Védő Értékét** (azaz a találatot), attól még ideiglenes **Védő Érték** csökkenést okoz.
-
-Hogy a támadó `TÉ < VÉ` esetben mennyivel csökkenti az áldozat aktuális `VÉ` pontjait, azt az alábbi táblázat mutatja:
-
-### ⚜️ Fegyverméret különbség kisebb `1 pengehossznál`
-
-- nincs előnyös-hátrányos helyzetű fél
-- mindkét fél [Nagykocka](063_02_kiskocka_nagykocka.md) értékével csökkent Védő Értéket
-
-### ⚜️ Fegyverméret különbség legalább `1` pengehossz
-
-  - Előnyös helyzetű: `Nagykocka` értékével csökkent Védő Értéket
-  - Hátrányos helyzetű: `Kiskocka` értékével csökkent Védő Értéket
-  - Példa: **Hosszú kard**  vs. **Tőr**
-
-### ⚜️ Fegyverméret különbség legalább `2 pengehossz` 
-
-  - Előnyös helyzetű: `Nagykocka+1` értékével csökkent Védő Értéket
-  - Hátrányos helyzetű: `Kiskocka` értékével csökkent Védő Értéket
-  - Példa: **Kétkezes kard** vs **Tőr** ; **Lándzsa** vs **Rövidkard**
-
-### ⚜️ Beszorított helyzetű védekező fél
-
-- A támadó mindenképp `Nagykocka` értékével csökkent, akkor is, ha kisebb fegyverének a pengehossza.
-- Ha `2 pengehosszal` nagyobb fegyverű a támadó, akkor természetesen itt is a `Nagykocka + 1` értékkel csökkent Védő Értéket.
 
 ---
 ### VÉ csökkenés mérséklése
