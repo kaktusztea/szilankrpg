@@ -2,7 +2,7 @@
 
 A Hatások "elemi" változások, amiket egy karakter elszenved - általában egy **Státusz** viselése következtében.
 
-Egy **Státusz** több **Hatást** is képes okozni a karakteren.  Hogy egy Státusz milyen Hatások listáját okozza, azt a [Státuszok](082_statuszok.md) oldalon találod.
+Egy **Státusz** több **Hatást** is képes okozni a karakteren.  Hogy egy Státusz milyen Hatások listáját okozza, azt a [Státuszok](082_statuszok.md) oldalon találod. Mágikus tárgyak, fegyverek is képesek lehetnek **Hatások** okozására.
 
 <br />
 
