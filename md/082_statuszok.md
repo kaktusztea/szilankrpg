@@ -56,9 +56,9 @@ Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/c
   - ⭕TODO⭕
 - ⭕TODO⭕ továbbiak
 
-### ✴️ Átkozott (1,2) Érzékek
+### ✴️ Átkozott (1,2,3) Érzékek
 
-Lásd **Érzékvesztés** (1,2) Státuszt lenn.
+Lásd **Érzékvesztés** (1,2,3) Státuszt lenn.
 
 ### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
 
@@ -127,23 +127,17 @@ Az Antyssjárás viszont ebben az állapotban is működik.
 ---
 ### ✴️ Érzékvesztés (1) zavart
 
-```
-Érzék - zavart
-```
-
 Látás, Hallás, Szaglás.
+
+[Érzék - zavart](081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
 
 ### ✴️ Érzékvesztés (2) részleges
 
-```
-Érzék - részleges
-```
+[Érzék - részleges](081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges)
 
 ### ✴️ Érzékvesztés (3) teljes
 
-```
-Érzék - teljes
-```
+[Érzék - teljes](081_hatasok.md#-%C3%A9rz%C3%A9k---teljes)
 
 <br />
 
@@ -390,7 +384,7 @@ A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból 
 - Beszéd - zagyva
 - 2 körig tart
 
-Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az Érzékevesztés (több érzékszervre is akár)).
+Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az [Érzékevesztés](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart) (több érzékszervre is akár)).
 
 ### ✴️ Zavar (3) Sokk
 
