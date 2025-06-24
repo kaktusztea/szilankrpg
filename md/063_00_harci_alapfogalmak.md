@@ -2,7 +2,7 @@
 
 ### [Harci kör](063_01_harci_kor.md)
 
-### [Akciók fogalma](063_02_akcio_fogalma.md)
+### [Akció fogalma](063_02_akcio_fogalma.md)
 
 ### [Előnyös és Hátrányos helyzetű fél](063_03_elonyos_hatranyos_helyzetu_fel.md)
 
