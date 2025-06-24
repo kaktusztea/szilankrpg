@@ -373,7 +373,7 @@ Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen hel
 ```
 Támadó:
 - Előny+1 TÉ dobásra
-- ⭕TODO: link⭕: VÉ csökkentés fok: +1
+- VÉ csökkentés: Nagykocka + 1
 
 Védő:
 - Többszörös támadás elvesztése
@@ -381,10 +381,9 @@ Védő:
 - Pajzs VÉ: szituáció függő
 ```
 
-
 Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
 
-Az ilyen helyzetben a támadó számára `Előny+1` jár `TÉ` dobásra és `VÉ` csökkentése is duplázódik.
+Az ilyen helyzetben a támadó számára `Előny+1` jár `TÉ` dobásra és `VÉ` csökkentése mindig [(Nagykocka + 1)](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka--1) lesz.
 
 A védekező csak `1`-et támadhat és azt is csak a kör végén teheti meg, továbbá a pajzsának `VÉ`-je csak akkor számít, ha a csapás nem hátulról jön.
 
