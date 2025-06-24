@@ -8,7 +8,7 @@ Lövéseidet/hajításaidat kivételesen gyorsan tudod leadni.
 - Harcmodor  **-** `5.szint`
 - (**Íjászat** vagy **Lövészet** vagy **Hajítás**)
 
-🌟 **Hatás**: Fegyvered [Sebesség](../063_06_tamadasok_szama_fegyverrel.md#fegyver-sebesség) értéke `1`-el csökken
+🌟 **Hatás**: Fegyvered [Sebesség](../063_05_tamadasok_szama_fegyverrel.md#fegyver-sebesség) értéke `1`-el csökken
 
 <br />
 

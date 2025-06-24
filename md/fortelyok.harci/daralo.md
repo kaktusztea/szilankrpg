@@ -6,7 +6,7 @@ Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkenth
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Minden [újabb támadásod](../063_06_tamadasok_szama_fegyverrel.md) `TÉ:-10` (additív) levonással történik
+🌟 **Hatás**: Minden [újabb támadásod](../063_05_tamadasok_szama_fegyverrel.md) `TÉ:-10` (additív) levonással történik
 
 ---
 ### 1. fok

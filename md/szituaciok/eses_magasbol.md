@@ -54,7 +54,7 @@ A páncél szintén nehezít, a merev vértek jobban, a KM a körülmények és 
 ---
 ### Sebesülés esés után
 
-A zuhanás okozta sérüléseket a [Sebződés hatása](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s-meg%C3%A9g%C3%A9s-z%C3%BAz%C3%B3d%C3%A1s-var%C3%A1zslatok-sebz%C3%A9se) fejezetben tárgyaljuk.
+A zuhanás okozta sérüléseket a [Sebződés hatása](../064_02_07_sebzodes_hatasa.md#zuhanás-megégés-zúzódás-varázslatok-sebzése) fejezetben tárgyaljuk.
 
 <br />
 

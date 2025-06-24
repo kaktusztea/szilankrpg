@@ -22,12 +22,12 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
 ---
 ### Elsődleges sebzési típus
 
-Lásd: [Harc menete → Elsődleges sebzési típus](064_02_06_fegyver_sebzes_jellege.md#els%C5%91dleges-sebz%C3%A9si-t%C3%ADpus)
+Lásd: [Harc menete → Elsődleges sebzési típus](064_02_05_fegyver_sebzes_jellege.md#elsődleges-sebzési-típus)
 
 ---
 ### Egyenjogú támadási típus
 
-Lásd: [Harc menete → Egyenjogú támadási típus](064_02_06_fegyver_sebzes_jellege.md#egyenjog%C3%BA-sebz%C3%A9si-t%C3%ADpus)
+Lásd: [Harc menete → Egyenjogú támadási típus](064_02_05_fegyver_sebzes_jellege.md#egyenjogú-sebzési-típus)
 
 ---
 ### Különleges fegyver szabály

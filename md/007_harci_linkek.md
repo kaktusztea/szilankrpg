@@ -8,7 +8,7 @@ Gyors elérésű link gyűjtemény - játékosok számára.
 
 [Státuszok](082_statuszok.md)
 
-[Sebzés táblázat](064_02_07_sebzes.md#sp-%C3%A1tv%C3%A1lt%C3%A1sa-%C3%A9p-sebz%C3%A9sre-%C3%A9s-v%C3%A9-cs%C3%B6kkent%C3%A9sre)
+[Sebzés táblázat](064_02_06_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre)
 
 [Harc menete - tömör](064_01_harc_menete_osszefoglalas.md)
 
@@ -40,9 +40,9 @@ Gyors elérésű link gyűjtemény - játékosok számára.
 ---
 ### Tám/kör, Mozgás
 
-[Támadások száma - ábra](063_08_harc_es_varazskeret_tamadasok_szama_abra.md)
+[Támadások száma - ábra](063_07_harc_es_varazskeret_tamadasok_szama_abra.md)
 
-[Mozgás harc közben](063_05_mozgas_harc_kozben.md)
+[Mozgás harc közben](063_04_mozgas_harc_kozben.md)
 
 ---
 ### Páncélok, Fegyverek

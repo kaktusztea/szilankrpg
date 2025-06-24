@@ -2,17 +2,17 @@
 
 ### [Harci kör](063_01_harci_kor.md)
 
-### [Előnyös és Hátrányos helyzetű fél](063_02_elonyos_hatranyos_helyzetu_fel.md)
+### [Akciók fogalma](063_02_akcio_fogalma.md)
 
-### [Akciók fogalma](063_04_akcio_fogalma.md)
+### [Előnyös és Hátrányos helyzetű fél](063_03_elonyos_hatranyos_helyzetu_fel.md)
 
-### [Mozgás harc közben](063_05_mozgas_harc_kozben.md)
+### [Mozgás harc közben](063_04_mozgas_harc_kozben.md)
 
-### [Harckeret, Támadások száma fegyverrel](063_06_tamadasok_szama_fegyverrel.md)
+### [Harckeret, Támadások száma fegyverrel](063_05_tamadasok_szama_fegyverrel.md)
 
-### [Varázskeret, Támadások száma mágiával](063_07_tamadasok_szama_varazslaskor.md)
+### [Varázskeret, Támadások száma mágiával](063_06_tamadasok_szama_varazslaskor.md)
 
-### [Támadások száma - ábra](063_08_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
+### [Támadások száma - ábra](063_07_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
 
 ---
 

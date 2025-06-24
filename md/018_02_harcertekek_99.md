@@ -4,7 +4,7 @@ Lásd a [Harcrendszer](060_00_harcrendszer.md) fejezetet.
 
 ### [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
 
-### [Sebzés Pont](064_02_07_sebzes.md)
+### [Sebzés Pont](064_02_06_sebzes.md)
 
 ### [SFÉ](069_02_SFE.md)
 

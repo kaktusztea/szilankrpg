@@ -26,25 +26,25 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 ## 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 
 - [Harci kör](063_01_harci_kor.md)
-- [Előnyös és Hátrányos helyzetű fél](063_02_elonyos_hatranyos_helyzetu_fel.md)
-- [Akciók fogalma](063_04_akcio_fogalma.md)
-- [Mozgás harc közben](063_05_mozgas_harc_kozben.md)
-- [Harckeret, Támadások száma fegyverrel](063_06_tamadasok_szama_fegyverrel.md)
-- [Varázskeret, Támadások száma mágiával](063_07_tamadasok_szama_varazslaskor.md)
-- [Támadások száma - ábra](063_08_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
+- [Akciók fogalma](063_02_akcio_fogalma.md)
+- [Előnyös és Hátrányos helyzetű fél](063_03_elonyos_hatranyos_helyzetu_fel.md)
+- [Mozgás harc közben](063_04_mozgas_harc_kozben.md)
+- [Harckeret, Támadások száma fegyverrel](063_05_tamadasok_szama_fegyverrel.md)
+- [Varázskeret, Támadások száma mágiával](063_06_tamadasok_szama_varazslaskor.md)
+- [Támadások száma - ábra](063_07_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
 
 ## 6.4 [Harc menete](064_00_harc_menete.md)
 
 - [Harc menete (összefoglaló)](064_01_harc_menete_osszefoglalas.md) 🎲
 - [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
-  - [Kezdeményezés](064_02_02_kezdemenyezes.md)
-  - [Támadó dobás](064_02_03_tamado_dobas.md)
-  - [Védő Érték csökkentése](064_02_04_vedo_ertek_csokkentese.md)
-  - [Találat](064_02_05_talalat.md)
-  - [Fegyverek sebzés jellege, páncélok SFÉ jellege](064_02_06_fegyver_sebzes_jellege.md)
-  - [Sebzés](064_02_07_sebzes.md)
-  - [Sebződés hatása](064_02_08_sebzodes_hatasa.md)
-  - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
+  - [Kezdeményezés](064_02_01_kezdemenyezes.md)
+  - [Támadó dobás](064_02_02_tamado_dobas.md)
+  - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)
+  - [Találat](064_02_04_talalat.md)
+  - [Fegyverek sebzés jellege, páncélok SFÉ jellege](064_02_05_fegyver_sebzes_jellege.md)
+  - [Sebzés](064_02_06_sebzes.md)
+  - [Sebződés hatása](064_02_07_sebzodes_hatasa.md)
+  - [Védő Érték regenerálódása](064_02_08_ve_regeneralodas.md)
 - [Példaharc](064_03_peldaharc.md) ⚡
 
 ## 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)

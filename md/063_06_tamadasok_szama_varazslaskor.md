@@ -50,6 +50,6 @@ Egy nagy, hosszú varázslat akár sok körön át is "csúszhat", ez idő alatt
 
 ---
 
-🔗 [Támadások száma ábra](063_08_harc_es_varazskeret_tamadasok_szama_abra.md) →
+🔗 [Támadások száma ábra](063_07_harc_es_varazskeret_tamadasok_szama_abra.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

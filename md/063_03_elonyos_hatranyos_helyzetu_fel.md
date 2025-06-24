@@ -17,6 +17,6 @@ Mindkét eset a [Harci helyzetek](065_01_harci_helyzetek.md) alá tartozik.
 
 ---
 
-🔗 [Védő Érték csökkentése](064_02_04_vedo_ertek_csokkentese.md) →
+🔗 [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

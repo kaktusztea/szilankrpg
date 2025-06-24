@@ -39,6 +39,6 @@ A `01`-es támadó dobás szintén kiemelt, de ezúttal negatív felhanggal. Ily
 
 ---
 
-🔗 [Védő Érték csökkentése](064_02_04_vedo_ertek_csokkentese.md) →
+🔗 [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

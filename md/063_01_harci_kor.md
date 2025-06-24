@@ -6,6 +6,6 @@ Mindenki leadja támadásait, aztán ugyanebben a sorrendben a több támadássa
 
 ---
 
-🔗 [Előnyös és Hátrányos helyzetű fél](063_02_elonyos_hatranyos_helyzetu_fel.md)] →
+🔗 [Előnyös és Hátrányos helyzetű fél](063_03_elonyos_hatranyos_helyzetu_fel.md)] →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

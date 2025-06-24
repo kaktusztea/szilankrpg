@@ -67,6 +67,6 @@ Például: csákány...
 
 ---
 
-🔗 [Sebzés](064_02_07_sebzes.md) →
+🔗 [Sebzés](064_02_06_sebzes.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
