@@ -1,8 +1,8 @@
 ## Harci alapfogalmak
 
-### [Előnyös és Hátrányos helyzetű fél](063_02_elonyos_hatranyos_helyzetu_fel.md)
+### [Harci kör](063_01_harci_kor.md)
 
-### [Védő Érték csökkentése](063_03_vedo_ertek_csokkentese.md)
+### [Előnyös és Hátrányos helyzetű fél](063_02_elonyos_hatranyos_helyzetu_fel.md)
 
 ### [Akciók fogalma](063_04_akcio_fogalma.md)
 

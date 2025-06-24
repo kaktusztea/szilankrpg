@@ -1,6 +1,25 @@
-## Védő Érték csökkentése
+## Védő Érték csökkentése: Támadó dobás eredménye: TÉ < VÉ
 
-Az [alapfogalmak oldalán](063_03_vedo_ertek_csokkentese.md) már kifejtettük ezt a fogalmakat és variációit. Most lássuk, hogy harci keretben mit is jelent ez.
+Harcban sikertelennek számít támadásod, ha a **Támadó dobásod** végső értéke nem éri el ellenfeled **Védő Értékét**.
+
+Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva. A harc, a védekezés komolyan igénybe veszik az áldozat figyelmét, állóképességét. Hogy konkrétan mennyivel csökkented Védő Értékét, az fegyvereitek pengehosszainak különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél kerül Előnyös harci helyzetbe.
+
+### ⚜️ Fegyverméret különbség kisebb `1 pengehossznál`
+
+- mindkét fél Előnyös helyzetűnek számít
+- mindkét fél [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) értékével csökkent Védő Értéket
+
+### ⚜️ Fegyverméret különbség legalább `1` pengehossz
+
+  - Előnyös helyzetű: [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) értékével csökkent Védő Értéket
+  - Hátrányos helyzetű: [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
+  - Példa: **Hosszú kard**  vs. **Tőr**
+
+### ⚜️ Fegyverméret különbség legalább `2 pengehossz` 
+
+  - Előnyös helyzetű: [Nagykocka+1](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka--1) értékével csökkent Védő Értéket
+  - Hátrányos helyzetű: [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
+  - Példa: **Kétkezes kard** vs **Tőr** ; **Lándzsa** vs **Rövidkard**
 
 ---
 ### Több támadó és harci taktikák jelentősége - a VÉ csökkentés fényében

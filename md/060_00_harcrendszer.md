@@ -25,8 +25,8 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 ## 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 
+- [Harci kör](063_01_harci_kor.md)
 - [Előnyös és Hátrányos helyzetű fél](063_02_elonyos_hatranyos_helyzetu_fel.md)
-- [Védő Érték csökkentése](063_03_vedo_ertek_csokkentese.md)
 - [Akciók fogalma](063_04_akcio_fogalma.md)
 - [Mozgás harc közben](063_05_mozgas_harc_kozben.md)
 - [Harckeret, Támadások száma fegyverrel](063_06_tamadasok_szama_fegyverrel.md)
@@ -37,7 +37,6 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 - [Harc menete (összefoglaló)](064_01_harc_menete_osszefoglalas.md) 🎲
 - [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
-  - [Alapfogalmak](064_02_01_alapfogalmak.md)
   - [Kezdeményezés](064_02_02_kezdemenyezes.md)
   - [Támadó dobás](064_02_03_tamado_dobas.md)
   - [Védő Érték csökkentése](064_02_04_vedo_ertek_csokkentese.md)

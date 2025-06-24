@@ -4,7 +4,7 @@
 
 ### [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
 
-- [Alapfogalmak](064_02_01_alapfogalmak.md)
+- [Alapfogalmak](063_01_harci_kor.md)
 -  [Kezdeményezés](064_02_02_kezdemenyezes.md)
 - [Támadó dobás](064_02_03_tamado_dobas.md)
 - [Védő Érték csökkentése](064_02_04_vedo_ertek_csokkentese.md)

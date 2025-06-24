@@ -5,8 +5,6 @@ A fentiekben kifejtettük az egyes harcértékek kiszámításának módját, az
 
 Most lássuk részletesen, hogy a fentieket hogyan alkalmazza a harcos, mikor küzdelemre kerül sor. A számolás jelentős része karakteralkotáskor történik, így a játékmenet kellően gyors marad.
 
-#### [Alapfogalmak](064_02_01_alapfogalmak.md)
-
 #### [Kezdeményezés](064_02_02_kezdemenyezes.md)
 
 #### [Támadó dobás](064_02_03_tamado_dobas.md)
