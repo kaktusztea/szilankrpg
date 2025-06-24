@@ -94,7 +94,7 @@ Példa: 58  → 8
 `1` penge, vagy nagyobb fegyverméret különbségnél:
 
 ```
-Előnyös helyzetű támadó:
+Előnyös harci helyzetű támadó:
   nagykocka értékével csökkent (k100)
   Példa: 58  → 8
 
@@ -106,7 +106,7 @@ Hátrányos helyzetű támadó:
 `2` penge, vagy nagyobb fegyverméret különbségnél:
 
 ```
-Előnyös helyzetű támadó:
+Előnyös harci helyzetű támadó:
   nagykocka+1 értékével csökkent (k100)
   Példa: 58  → 9
 

@@ -7,7 +7,7 @@
 | [Teljes Védekezés taktika](#teljes-v%C3%A9dekez%C3%A9s-taktika)       | `VÉ:+30`, ellenfeled csak `kiskockával` csökkenthet rajtad `VÉ`-t. Folyamatos hátrálás, nincs támadás, nem kombinálható más taktikával.                                                                                                |
 | [Kezdeményező taktika](#kezdem%C3%A9nyez%C5%91-taktika)               | `KÉ:+1 → VÉ:-2`, max `KÉ:+10`                                                                                                                                                                                                          |
 | [Kiváró taktika](#kiv%C3%A1r%C3%B3-taktika)                           | Átengedett `KÉ`, cserébe első visszatámadásra `TÉ:+5`                                                                                                                                                                                  |
-| [Fárasztó taktika](#f%C3%A1raszt%C3%B3-taktika-) ⇄                    | • `+2 VÉ` csökkentés <br />• Sebzés helyett: nagykockás VÉ csökkentés + további `+10 VÉ` csökkentés<br />• `00` dobásnál: további `+5 VÉ` csökkentés<br />• Csak Előnyös helyzetből lehet alkalmazni                                   |
+| [Fárasztó taktika](#f%C3%A1raszt%C3%B3-taktika-) ⇄                    | • `+2 VÉ` csökkentés <br />• Sebzés helyett: nagykockás VÉ csökkentés + további `+10 VÉ` csökkentés<br />• `00` dobásnál: további `+5 VÉ` csökkentés<br />• Csak Előnyös harci helyzetből lehet alkalmazni                                   |
 | [Visszafogott taktika](#visszafogott-taktika-) ⇄                      | Kisebb értékű kockával dobhatsz sebzéskor. Lásd a taktika részletes leírását!                                                                                                                                                          |
 | [Plusz támadás taktika](#plusz-t%C3%A1mad%C3%A1s-taktika)             | `+1 támadás`<br />Cserébe **minden** támadásodnál a körben kiskockás VÉ csökkenést szenvedsz el. A kör elején kell eldönteni, kör közben már nem módosítható.                                                                          |
 | [Roham taktika](#roham-taktika)                                       | • `TÉ:+20`, `VÉ:-40` (első oda-visszacsapáskor)<br/>• `VÉ` csökkentés duplázódik első oda-visszacsapásnál , Sebzéshez: `+5 SP` (oda-vissza)                                                                                            |
@@ -151,7 +151,7 @@ VÉ csökkentésre:
 
 ✅ [Levegőből támadás](065_01_harci_helyzetek.md#leveg%C5%91b%C5%91l-t%C3%A1mad%C3%A1s) harci helyzetben
 
-Csak **Előnyös helyzetből** lehet alkalmazni. Tehát azonos, vagy nagyobb fegyverméretnél.
+Csak **Előnyös harci helyzetből** lehet alkalmazni. Tehát azonos, vagy nagyobb fegyverméretnél.
 
 Ha fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta, akkor a harc ugyanúgy folyik, mint más esetben, csak `+2`-vel nő **VÉ csökkentésed** ha nem érsz el találatot támadó dobásod során.
 

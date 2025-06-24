@@ -195,7 +195,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelménye:
-  - Előnyös helyzet
+  - Előnyös harci helyzet
   - Aktuális harcmodor: - `5.szint`
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_harci_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
