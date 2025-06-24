@@ -158,8 +158,8 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 #### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 
 - [Harci kör](063_01_harci_kor.md)
-- [Előnyös és Hátrányos helyzetű fél](063_03_elonyos_hatranyos_helyzetu_fel.md)
 - [Akciók fogalma](063_02_akcio_fogalma.md)
+- [Előnyös és Hátrányos helyzetű fél](063_03_elonyos_hatranyos_helyzetu_fel.md)
 - [Mozgás harc közben](063_04_mozgas_harc_kozben.md)
 - [Harckeret, Támadások száma fegyverrel](063_05_tamadasok_szama_fegyverrel.md)
 - [Varázskeret, Támadások száma mágiával](063_06_tamadasok_szama_varazslaskor.md)
@@ -169,7 +169,6 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 
 - [Harc menete (összefoglaló)](064_01_harc_menete_osszefoglalas.md) 🎲
 - [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
-  - [Alapfogalmak](063_01_harci_kor.md)
   - [Kezdeményezés](064_02_01_kezdemenyezes.md)
   - [Támadó dobás](064_02_02_tamado_dobas.md)
   - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)

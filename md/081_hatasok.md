@@ -213,7 +213,7 @@ Képtelen vagy bármilyen mágia végzésére, fenntartására. Az Aurádra ninc
 ---
 ### 🔥 VÉ veszteség duplázódik
 
-Mikor sikertelen támadást adnak le rád, az elszenvedett `VÉ` csökkenésed duplázódik.
+Irányodba indított támadásnál a szokásos elszenvedett VÉ veszteséged duplázódik.
 
 <br />
 
