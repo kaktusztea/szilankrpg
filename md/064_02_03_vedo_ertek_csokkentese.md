@@ -4,16 +4,21 @@ Harcban sikertelennek számít támadásod, ha a **Támadó dobásod** végső �
 
 Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva. A harc, a védekezés komolyan igénybe veszik az áldozat figyelmét, állóképességét. Hogy konkrétan hogyan csökkented `Védő Értékét`, az fegyvereitek pengehosszainak különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben.
 
-### ⚜️ Fegyverméret különbség kisebb `1 pengehossznál`
+### ⚜️ [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
-- [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos) harci helyzet
-- mindkét fél [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) értékével csökkent Védő Értéket
+- Mikor a fegyverméret különbség legalább `-1` pengehossz
+- [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent **Védő Értéket**
 
-### ⚜️ Fegyverméret különbség legalább `1` pengehossz
+### ⚜️ [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos) harci helyzet
 
-  - [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny) → VÉ csökkentés: [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) 
-  - [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) → [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
-  - Példa: **Hosszú kard**  vs. **Tőr**
+- Mikor a fegyverméret különbség kisebb `1 pengehossznál`
+- mindkét fél [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) értékével csökkent **Védő Értéket**
+
+### ⚜️ [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
+
+- Mikor a fegyverméret különbség legalább `1` pengehossz
+- VÉ csökkentés: [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) 
+- Példa: **Hosszú kard**  vs. **Tőr**
 
 ### ⚜️ Fegyverméret különbség legalább `2 pengehossz` 
 
