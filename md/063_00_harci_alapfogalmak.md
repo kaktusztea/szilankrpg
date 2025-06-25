@@ -4,8 +4,6 @@
 
 ### [Akció fogalma](063_02_akcio_fogalma.md)
 
-### [Előnyös és Hátrányos helyzetű fél](063_03_elonyos_hatranyos_helyzetu_fel.md)
-
 ### [Mozgás harc közben](063_04_mozgas_harc_kozben.md)
 
 ### [Harckeret, Támadások száma fegyverrel](063_05_tamadasok_szama_fegyverrel.md)
