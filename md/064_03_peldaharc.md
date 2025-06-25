@@ -76,7 +76,7 @@ SFÉ: -
 
 Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a meglepetés `TÉ:+20` bónuszát kapja meg.
 
-🔆 **Megjegyzés**: mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten Előnyös harci helyzetben vannak, tehát sikertelen (nem sebző) támadások esetén a **k100** támadás `Nagykockájával` csökkentik egymás **Védő Értékét**.
+🔆 **Megjegyzés**: mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért [Pengeméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos) helyzetben vannak, tehát sikertelen (nem sebző) támadások esetén a **k100** támadás [Nagykockájával](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) csökkentik egymás **Védő Értékét**.
 
 <br />
 

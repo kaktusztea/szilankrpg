@@ -12,13 +12,13 @@ Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét
 ### ⚜️ Fegyverméret különbség legalább `1` pengehossz
 
   - [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny) → VÉ csökkentés: [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) 
-  - [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) → : [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
+  - [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) → [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
   - Példa: **Hosszú kard**  vs. **Tőr**
 
 ### ⚜️ Fegyverméret különbség legalább `2 pengehossz` 
 
-  - Előnyös harci helyzetű (2): [Nagykocka+1](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka--1) értékével csökkent Védő Értéket
-  - Hátrányos harci helyzetű: [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
+  - [Fegyverméret - 2 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)→ VÉ csökkentés: [(Nagykocka + 1)](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka--1)
+  - [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) → [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
   - Példa: **Kétkezes kard** vs **Tőr** ; **Lándzsa** vs **Rövidkard**
 
 ---
