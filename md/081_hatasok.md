@@ -151,7 +151,7 @@ Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ érté
 ---
 ### 🔥 Mozgás - lassulás
 
-- [Mozgás](063_04_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
+- [Mozgás](063_03_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
 - Felére csökken a megtehető távolságod - harcon kívül
 
 ---

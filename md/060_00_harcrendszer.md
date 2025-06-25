@@ -27,10 +27,10 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 - [Harci kör](063_01_harci_kor.md)
 - [Akció fogalma](063_02_akcio_fogalma.md)
-- [Mozgás harc közben](063_04_mozgas_harc_kozben.md)
-- [Harckeret, Támadások száma fegyverrel](063_05_tamadasok_szama_fegyverrel.md)
-- [Varázskeret, Támadások száma mágiával](063_06_tamadasok_szama_varazslaskor.md)
-- [Támadások száma - ábra](063_07_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
+- [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+- [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
+- [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
+- [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
 
 ## 6.4 [Harc menete](064_00_harc_menete.md)
 

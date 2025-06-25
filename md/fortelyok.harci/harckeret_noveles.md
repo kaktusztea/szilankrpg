@@ -1,6 +1,6 @@
 ## 🟣 Harckeret növelés (3)
 
-Támadásaid számát növelheted a [Harckeret](../063_05_tamadasok_szama_fegyverrel.md#harckeret) értékének külön növelésével.
+Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyverrel.md#harckeret) értékének külön növelésével.
 
 ### 1. fok
 

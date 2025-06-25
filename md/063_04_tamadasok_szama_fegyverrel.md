@@ -84,6 +84,6 @@ Mivel ez elérte a`7`-es értéket, ezért `+1` támadás – összesen tehát m
 
 ---
 
-🔗 [Támadások száma varázsláskor](063_06_tamadasok_szama_varazslaskor.md) →
+🔗 [Támadások száma varázsláskor](063_05_tamadasok_szama_varazslaskor.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

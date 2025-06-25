@@ -38,6 +38,6 @@ mikor rád kerül a sor a Kezdeményezésben, **összes Akciód** (Támadás, Va
 
 ---
 
-🔗 [Támadások száma fegyverrel](063_05_tamadasok_szama_fegyverrel.md) →
+🔗 [Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
