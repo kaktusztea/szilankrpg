@@ -6,13 +6,13 @@ Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét
 
 ### ⚜️ Fegyverméret különbség kisebb `1 pengehossznál`
 
-- mindkét fél Előnyös harci helyzetűnek (1) számít
+- [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos) harci helyzet
 - mindkét fél [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) értékével csökkent Védő Értéket
 
 ### ⚜️ Fegyverméret különbség legalább `1` pengehossz
 
-  - Előnyös harci helyzetű (1): [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) értékével csökkent Védő Értéket
-  - Hátrányos harci helyzetű: [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
+  - [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny) → VÉ csökkentés: [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) 
+  - [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) → : [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent Védő Értéket
   - Példa: **Hosszú kard**  vs. **Tőr**
 
 ### ⚜️ Fegyverméret különbség legalább `2 pengehossz` 
