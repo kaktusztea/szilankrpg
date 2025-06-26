@@ -84,35 +84,33 @@ Előnyös/hátrányos helyzetű harcos:
 ---
 ### 😵 TÉ < VÉ  → VÉ csökkentés
 
-Alaphelyzetben: nincs előnyös-hátrányos helyzet
+#### [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
+
 ```
-Mindkét fél nagykockával csökkent (k100),
+Mindkét fél Nagykockával csökkent (k100)
 
 Példa: 58  → 8
 ```
 
-`1` penge, vagy nagyobb fegyverméret különbségnél:
+#### [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
 ```
-Előnyös harci helyzetű támadó:
-  nagykocka értékével csökkent (k100)
+Kiskocka értékével csökkent (k100)
+  Példa: 58  → 5
+```
+
+#### [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
+
+```
+Nagykocka értékével csökkent (k100)
   Példa: 58  → 8
-
-Hátrányos helyzetű támadó:
-  kiskocka` értékével csökkent (k100)
-  Példa: 58  → 5
 ```
 
-`2` penge, vagy nagyobb fegyverméret különbségnél:
+#### [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
 
 ```
-Előnyös harci helyzetű támadó:
-  nagykocka+1 értékével csökkent (k100)
+(Nagykocka+1) értékével csökkent (k100)
   Példa: 58  → 9
-
-Hátrányos helyzetű támadó:
-  kiskocka értékével csökkent (k100)
-  Példa: 58  → 5
 ```
 
 <br />
