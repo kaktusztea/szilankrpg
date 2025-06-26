@@ -20,7 +20,7 @@ Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét
 - [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) értékével csökkent **Védő Értéket**
 - Példa: **Hosszú kard**  vs. **Tőr**
 
-### ⚜️ [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
+### ⚜️ [Fegyverméret - 2 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
 
 - Mikor a fegyverméret különbség legalább `2` pengehossz
 - [(Nagykocka + 1)](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka--1) értékével csökkent **Védő Értéket**
