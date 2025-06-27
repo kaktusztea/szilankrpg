@@ -14,19 +14,10 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 ---
 ## Alakzat egyedi jellemzői
 
-⚜️ **Támadófok**
-- `MIN(`Támadó-alakzat` fortély )`
-- Tehát a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka (csapattagok között)
-- Bónusz: `+2 / Támadó-alakzat fortély fok`
+### ⚜️ Alakzatszint
 
-⚜️ **Védekezőfok**
-- `MIN( Védekező-alakzat fortély )`
-- Tehát a legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka (csapattagok között)
--  Bónusz: `+2 / Védekező-alakzat fortély fok`
-
-⚜️ **Alakzatszint**
 - `MIN( Alakzatharc képzettség )`
-- Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a legalacsonyabb ([csoportos fizikai képzettségpróba](037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint)
+- Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint)
 - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) fortély bónusz: `+2 / fok`  (gyalogos alakzat esetén)
 - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md) fortély bónusz: `+2 / fok`  (íjász/lövész alakzat esetén)
 - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md) fortély bónusz: `+2 / fok`  (lovas alakzat esetén)
@@ -35,22 +26,26 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 ### ⚜️Támadószint
 
 ```
-Alakzatszint + Támadófok bónusz
+Alakzatszint + (2 / MIN(Támadó-alakzat fortély ))
 ```
 
+ Tehát a csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
+ 
 ### ⚜️Védekezőszint
 
 ```
-Alakzatszint + Védekezőfok bónusz
+Alakzatszint + (2 / MIN(Védekező-alakzat fortély ))
 ```
+
+Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka `2` bónusz szintet ad fokonként.
 
 ---
 ## Alakzat harcértékeinek meghatározása
 
 ### TÉ SUMMA
 
-- \+ Alakzat tagjainak fegyveres `TÉ` átlaga
-- \+ `TÉ bónusz`: **Támadószint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+- `+` Alakzat tagjainak fegyveres `TÉ` átlaga
+- `+` `TÉ bónusz`: **Támadószint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 ### VÉ SUMMA
 
@@ -93,38 +88,40 @@ Csámpa
 ---
 ## ⚡Harcértékek: 4 fős alakzat
 
-⚡Támadófok: `0`
-- `MIN(2; 1; 0; 1)`
+### ⚡Alakzatszint: `6 + 2 → 8.szint`
 
-⚡Védekezőfok: `2`
-- `MIN(2; 2; 2; 2)`
+- legalacsonyabb képzettség: `6.szint`
+- **Borz** [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md): `1.fok` → `+2 bónusz`
 
-⚡Alakzatszint: `6 + 2 → 8.szint`
-- legalacsonyabb képzettség: `6`
-- **Borz** [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) `- 1.fok` fortélya: `+2` bónusz
- 
- <br />
+<br />
 
-⚡Támadószint: `8`
-- Alakzatszint (`8`)
-- Támadófok bónusz: `0.fok: nincs bónusz`
-- `8 + 0 = 8`
+### ⚡Támadószint: `8`
 
-⚡Védekezőszint: `9`
-- Alakzatszint (`8`)
-- Védekezőfok bónusz:`2.fok: +4 bónusz`
-- `8 + 4 = 12`
+```
+Alakzatszint        =  8
+MIN(2; 1; 0; 1) x 2 =  0
+                    = 10
+```
 
----
+<br />
+
+### ⚡Védekezőszint: `10`
+
+```
+Alakzatszint        =  8
+MIN(2; 2; 2; 2) x 2 =  4
+                    = 12
+```
+
 ### 🔆 Alakzat TÉ értéke
 
 - Alakzat tagjainak fegyveres `TÉ` átlaga 
-- `TÉ bónusz: +15`  ← **Támadószint** (`8`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
+- `TÉ bónusz: +21`  ← **Támadószint** (`10`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
 
 ### 🔆 Alakzat VÉ értéke
 
 - Alakzat tagjainak fegyveres `VÉ` átlaga 
-- `VÉ bónusz: +18` ← **Védekezőszint** (`9`) mint egy extra harcmodorból adódó érték
+- `VÉ bónusz: +27` ← **Védekezőszint** (`12`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
 - `VÉ bónusz: +12` ← Tagok száma után `(4x3)`
 
 <br />
