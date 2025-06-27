@@ -1,4 +1,6 @@
-## 🟣 Harci láz (3)
+## 🟣 Harci láz (2)
+
+🔆 létezik egy speciális `3.fok` is - lásd alább.
 
 Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem gondolsz.
 ### 1. fok
