@@ -21,7 +21,7 @@ Egy karakter plusz támadásainak száma attól függ, hogy milyen fegyvert forg
 
 Számszerűen: az aktuális fegyverhez tartozó harcmodor-képzettség szintje és a Gyorsaság tulajdonság összege határozzák meg az ún. **Harckeret** értéket - amiből lejön még `3` pont. A Harckeret tehát harcmodoronként egyedi érték. A `-3` jelképezi a szokásos "nullpontot", ami a képzettségeknél az "alapszint".
 
-A **Harckeret** értéke a [Harckeret növelés](fortelyok.harci/harckeret_noveles.md), [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) , vagy a [Harci láz](fortelyok.harci/harci_laz.md) fortély segítségével emelhető tovább.
+A **Harckeret** értéke a [Harckeret növelés](fortelyok.harci/harckeret_noveles.md) és [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortélyok segítségével emelhető tovább.
 
 <br />
 

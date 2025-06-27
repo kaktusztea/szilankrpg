@@ -38,11 +38,11 @@ Fájdalomtűrés (K) + Edzettség (T)
           vs. 12
 ```
 
-⭕[Harci láz ad bónuszt?](https://github.com/kaktusztea/szilankrpg/wiki/TODO.fortelyok#harci-l%C3%A1z)
-
 Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + Edzettség)** próbát kell dobnia **Nehéz** (`12`) célszám ellen.
 
 Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia. Sikertelen próba esetén a karakter elájul.
+
+🔆 A [Harci láz](fortelyok.harci/harci_laz.md) fortély egyes fokai előnyt adnak a fenti próbára.
 
 ---
 ### ⚡ Példa Fájdalomtűrés `TÉ` módosítóira

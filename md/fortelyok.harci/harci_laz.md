@@ -30,7 +30,7 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - `TÉ`, Sebzés dobás: `Előny+1`
 - Max Támadó taktikával kell harcolnod bónusszal: `[+20TÉ; -40VÉ]`
 - Asztrál/Mentál Mágiaellenállás dobásra: `Előny+2`
-- S4 Fájdalomtűrés próbára: `Előny+2`
+- `S4` Fájdalomtűrés próbára: `Előny+2`
 - **Öngyilkos roham taktikát** használhatja csak roham esetén
 
 ---
