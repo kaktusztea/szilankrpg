@@ -132,9 +132,9 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 
 **Hatás**: Egy köríves támadásod egyszerre több ellenfelet ér el. Dobj sebzést mindegyikük ellen.
 
-**Feltétel**ek:
+**Követelmény**
 - csak azokra támadhatsz így, akik mind közvetlenül ellened harcolnak
-- fegyvered pengehossza nem lehet kisebb, mint ellenfeleid közül a leghosszabb fegyverrel harcolóé
+- [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos): fegyvered pengehossza nem lehet kisebb, mint ellenfeleid közül a leghosszabb fegyverrel harcolóé
 
 <br />
 
@@ -160,7 +160,7 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 
 - Nehézség: `7`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- Végbevitel követelménye:
+- Követelmény:
 	- Közelharc – `4.szint`
 	- Forgatott fegyverre: Mesterfegyver – `1.fok`
 
@@ -194,7 +194,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
-- Követelménye:
+- Követelmény:
   - ❌ [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) harci helyzetben nem alkalmazható
   - Aktuális harcmodor: - `5.szint`
 
@@ -418,7 +418,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás*  Ellenpróba`
 - Követelmény:
-    - fegyvered mérete legalább `1` pengével nagyobb, mint ellenfeledé
+    - [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
     - Harcmodor - `5.szint`
 
 **Hatás**: leadhatsz `TÉ:+20`-szal egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
