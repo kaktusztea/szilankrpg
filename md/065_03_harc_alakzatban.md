@@ -26,7 +26,8 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 ### ⚜️Támadószint
 
 ```
-Alakzatszint + (2 / MIN(Támadó-alakzat fortély ))
+Alakzatszint
++ (2 x  MIN(Támadó-alakzat fortély ))
 ```
 
  Tehát a csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
@@ -34,7 +35,8 @@ Alakzatszint + (2 / MIN(Támadó-alakzat fortély ))
 ### ⚜️Védekezőszint
 
 ```
-Alakzatszint + (2 / MIN(Védekező-alakzat fortély ))
+Alakzatszint
++ (2 x  MIN(Védekező-alakzat fortély ))
 ```
 
 Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka `2` bónusz szintet ad fokonként.
