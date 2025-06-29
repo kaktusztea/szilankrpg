@@ -5,8 +5,8 @@ A [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) fejezetben
 ### Harci, vagy "taktikai" képzettségek és Vezető fortélyaik
 
 - [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) → [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) (fizikai)
-- [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) → [Vezető: Testőrparancsnok](fortelyok.harci/vezeto_testorparancsnok.md) (**szellemi**❗)
-- [Íjászat/Lövészet/Ostromlövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) → [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md) (**szellemi**❗)
+- [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) → [Vezető: Testőrparancsnok](fortelyok.harci/vezeto_testorparancsnok.md) (**szellemi**)
+- [Íjászat/Lövészet/Ostromlövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) → [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md) (fizikai)
 - [Lopakodás/Rejtőzés](kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) → [Vezető: Fejvadász Strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md) (fizikai)
 - [Lovaglás](kepzettsegek.szekunder/lovaglas.md) → [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md) (fizikai)
 - [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) → [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md) (fizikai)

@@ -11,7 +11,7 @@ Képes vagy egy íjász/lövész alakzat
 ---
 #### Bónusz
 
-Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md) képzettséget [csoportos szellemi képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) (❗) szerint használjuk íjász/lövész alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md). Egy jó parancsnok képes koordinálásával az íjász/lövész alakzat közös működését hatékonyabbá tenni.
+Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md). Egy jó parancsnok képes koordinálásával az íjász/lövész alakzat közös működését hatékonyabbá tenni.
 
 Területlövés, fedezőtűz, előcsatározás és visszavonulás, csapatban mozgás, alakzatot tartani - harci körülmények között is.
 
