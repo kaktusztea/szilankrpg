@@ -56,7 +56,7 @@ Ha sikertelen, leesik. Ekkor jön a **Lóról leesés** szituáció ↓
 ---
 ### Lóról leesés - Akrobatika próba és Sérülés
 
-Ha leesel a lóról, [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében.  Egy szénaboglya például sokat könnyíthet.
+Ha leesel a lóról, [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében.  Egy szénaboglya például sokat könnyíthet.
 
 #### ⚜️Akrobatika képzettségpróba Nehézsége a ló mozgása alapján
 
