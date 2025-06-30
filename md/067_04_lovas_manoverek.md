@@ -28,6 +28,8 @@ Megpróbálsz áttörni az ellenfél sorain, lendületét és hátasod erejét h
 - Követelménye: galopp vagy gyorsabb tempó
 - Hatás: Az áttörési kísérlet sikeres esetén az ellenfelek szétszóródnak, és hátrányt szenvednek a következő körben.
 
+<br />
+
 ---
 ### ⚜️ Lovas, léglovas akasztása
 
@@ -44,8 +46,10 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
   - Minimum [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny) helyzet fegyverhosszban a lovashoz képest
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően -  továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
 
+<br />
+
 ---
-### Lóhátról lerántás
+### ⚜️ Lóhátról lerántás
 
 ❗Nem a lovas, hanem **gyalogos ellenfele** végezheti!
 
@@ -58,10 +62,12 @@ Megpróbálod lerántani lovas ellenfeled a nyergéből.
 
 Megjegyzés: A `(M)egakasztás` lépés csak akkor jön a lovastól, ha a látóterében vagy.
 
+<br />
+
 ---
 ## Léglovas manőverek
 
-Nem tartottuk fontosnak az ilyen részletes 
+Nem tartottuk fontosnak az ilyen részletes kidolgozást. Természetesen ha felmerül rá igény, a KM együttműködésével kitalálható, vagy alkalmazható ilyen Manőver is.
 
 ---
 

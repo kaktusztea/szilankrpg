@@ -284,7 +284,7 @@ Hasonlatos az Orvtámadáshoz, de itt nem a minél nagyobb sebzés, hanem az áj
 ---
 ### Lovas, léglovas akasztása
 
-Lásd a [Lovas, léglovas manőverek](067_04_lovas_leglovas_manoverek.md) oldalán.
+Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
 
 <br />
 

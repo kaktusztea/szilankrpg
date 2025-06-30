@@ -25,7 +25,7 @@ Három kategóriába csoportosítottuk a `Szilánk` által ismert Manővereket. 
 
 - [Általános Manőverek](066_05_altalanos_manoverek.md) 🎲
 - [Belharcos Manőverek](066_06_belharcos_manoverek.md) 🎲
-- [Lovas, léglovas Manőverek](066_07_lovas_leglovas_manoverek.md) 🎲
+- [Lovas Manőverek](066_07_lovas_manoverek.md) 🎲
 
 ### ⚡ Példák
 

@@ -61,7 +61,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Manőver végrehajtásának lépései](066_04_manover_vegbevitele.md)
 - [Általános Manőverek listája](066_05_altalanos_manoverek.md) 🎲
 - [Belharcos Manőverek listája](066_06_belharcos_manoverek.md) 🎲
-- [Lovas, léglovas Manőverek listája](066_07_lovas_leglovas_manoverek.md) 🎲
+- [Lovas Manőverek listája](066_07_lovas_manoverek.md) 🎲
 - [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md)
 - [Példa Manőver alkalmazására:  Lábsöprés](066_08_02_pelda_manover_lapsopres.md)
 
@@ -70,7 +70,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyok.md)
 - [Lovas, Léglovas fortélyok](067_02_lovas_leglovas_fortelyok.md)
 - [Lovas, Léglovas harci taktikák](067_03_lovas_harci_taktikak.md)
-- [Lovas, Léglovas manőverek](067_04_lovas_leglovas_manoverek.md) 🎲
+- [Lovas, Léglovas manőverek](067_04_lovas_manoverek.md) 🎲
 
 ## 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
 

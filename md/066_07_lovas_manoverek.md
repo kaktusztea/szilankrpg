@@ -1,6 +1,6 @@
-### Lovas, léglovas Manőverek
+### Lovas Manőverek
 
-Lásd a [Harc hátasról - Lovas, léglovas manőverek](067_04_lovas_leglovas_manoverek.md) fejezet alatt.
+Lásd a [Harc hátasról - Lovas manőverek](067_04_lovas_manoverek.md) fejezet alatt.
 
 ---
 
