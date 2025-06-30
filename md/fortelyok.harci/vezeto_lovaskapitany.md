@@ -1,8 +1,8 @@
 ## 🟣 Vezető: Lovaskapitány (2)
 
-Képes vagy egy hátas alakzat
-- egyben tartására változó harci környezetben. Megfelelő alakzat felvétele, adaptálódás  → **Hadászat** képzettség Normál kiterjesztése
-- harcát koordinálni → bónusz **Lovaglás** (harc alakzatban)
+Képes vagy egy lovas(hátas) alakzat
+- egyben tartására változó harci környezetben. Megfelelő alakzat felvétele, adaptálódás  → **Hadászat** képzettség **Normál kiterjesztése**
+- harcát koordinálni → bónusz **Alakzatszintre** (harc alakzatban)
 
 ### Kiterjeszti ezeket
 
@@ -11,7 +11,7 @@ Képes vagy egy hátas alakzat
 ---
 #### Bónusz
 
-Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk lovas alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md). Egy jó parancsnok képes koordinálásával a lovas alakzat közös mozgását hatékonyabbá tenni.
+Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk lovas alakzatok esetén is: [Harc alakzatban](../065_03_harc_alakzatban.md). A fentiek szerint kiszámolt **Alakzatszint** értéket egy jó lovaskapitány képes koordinálásával megemelni.
 
 Formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni - harci körülmények között is.
 
@@ -23,7 +23,7 @@ Formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni 
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényleg
 
-🌟 **Hatás**: `+2` bónusz
+🌟 **Hatás**: `+2` bónusz az **Alakzatszintre**
 
 ---
 ### 2. fok
@@ -34,13 +34,9 @@ Formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni 
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényleg
 
-🌟 **Hatás**: `+4` bónusz
+🌟 **Hatás**: `+4` bónusz az **Alakzatszintre**
 
 ---
 ### Megjegyzések
 
 - Ha több **Lovaskapitány** van egy csapatban, akkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.
-
-<br />
-
----
