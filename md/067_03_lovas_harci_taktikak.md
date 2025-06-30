@@ -17,9 +17,10 @@ Nincs elsöprőbb, mint egy lovas roham! Persze megfelelő feltételek szükség
 Ilyen támadásnál összesen 1-1 oda- és visszatámadásra van lehetőség, utána a támadó továbbrobog.
 
 Követelmények:
-- **Lovaglás** képzettségpróba ⭕xx⭕ célszám ellen
+- **Lovaglás** képzettségpróba `12` célszám ellen
 - Megfelelő mennyiségű és dőlésszögű hely a begyorsuláshoz. A KM dönt, hogy az adott terepen, az adott lóval a karakter el tudja -e érni a rohamhoz szükséges sebességet. Itt a fentieken túl kalkulálja be a ló állapotát, erejét, illetve a súlyt is, amit cipel. Ha sikerül elegendően begyorsulni, akkor a megkapja a fenti módosítókat.
 
+<br />
 
 ---
 ### Lovas támadás galoppból
@@ -37,13 +38,20 @@ Ilyen támadásnál során a támadó dönthet, hogy támadása leadása (és el
 
 
 Követelmények:
-- Lovaglás képzettségpróba ⭕xx-as⭕ célszám ellen
+- Lovaglás képzettségpróba `9` célszám ellen
 - Megfelelő mennyiségű hely a begyorsuláshoz (KM dönt)
 
----
-### ⭕XY lovas harci taktika
+<br />
 
-⭕TODO⭕: Ha van még, akkor itt kidolgozni
+---
+### Hagyományos taktikák
+
+Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal. Kivéve:
+
+- ❌ **Érintő taktika** hátasról nem végezhető 
+- 🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--l%C3%A9glovas-roham) bekezdést!
+
+<br />
 
 ---
 
