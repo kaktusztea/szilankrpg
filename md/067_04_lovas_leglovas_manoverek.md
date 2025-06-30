@@ -1,16 +1,20 @@
 ## Lovas, léglovas manőverek
 
+Egyedi húzások, amelyeket hátasodon tudsz végbevinni, meglepve ezzel ellenfeleidet.
 
 ---
 ### ⚜️ Hátas táncoltatása
 
 Lovas végezheti.\
-Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel kerülni hozzád.
+Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel kerülni hozzád. Mivel nincs `Ellenpróba` fázis, ezért **Nehézség** érték sincs.
 
-- Nehézség: -
+- Nehézség: `-`
 - Fázisok: `(M)egakasztás`
 - Végbevitel követelménye: [Lovas_harc](fortelyok.harci/lovas_harc.md) - `2.fok`
-- Hatás: Soron kívüli megelőző `(M)egakasztást` dobhatsz **minden** veled harcérintkezésben levő ellenfeled ellen. Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így sebezni nem tudsz, de a feléd irányuló támadásokat elháríthatod.
+- Hatás: 
+  - Soron kívüli megelőző `(M)egakasztást` dobhatsz **minden** veled harcérintkezésben levő ellenfeled ellen.
+  - Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így sebezni nem tudsz, de a feléd irányuló támadásokat elháríthatod.
+  - Távolsági Védő Értéked számításánál a [Mozgás módosítód](072_tavharc_ve_szorzo_oszto.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3) mérsékelteln **Kiszámíthatatlan** (`12`) lesz.
 
 <br />
 
@@ -57,7 +61,7 @@ Megjegyzés: A `(M)egakasztás` lépés csak akkor jön a lovastól, ha a látó
 ---
 ## Léglovas manőverek
 
-⭕TODO: kidolgozni⭕
+Nem tartottuk fontosnak az ilyen részletes 
 
 ---
 

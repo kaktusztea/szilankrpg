@@ -99,11 +99,12 @@ Itt a [Harci helyzetek](065_01_harci_helyzetek.md) fejezetben leírt módosító
 
 <br />
 
-
 ---
-###  ⭕Beszorítva: ???  
+### Idomítatlan hátas
 
-⭕TODO⭕
+Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, legfeljebb küzdeni tudsz, hogy nehogy ledobjon. Ilyenkor [Idomítás](kepzettsegek.szekunder/idomitas.md) képzettségpróbát kell dobj, a KM által megszabott Nehézség ellen.
+
+<br />
 
 ---
 

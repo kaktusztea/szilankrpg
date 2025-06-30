@@ -5,21 +5,21 @@ Harc közben gyakran előfordul, hogy egy karakter speciális húzásokkal prób
 A `Szilánk` harcrendszere lehetőséget ad rá, hogy a karakter harc közben ilyen speciális cselekedeteket – Manővereket – alkalmazzon. Vannak olyan Manőverek is, melyek csak adott fegyverre, vagy harcmodorra jellemzőek, de a legtöbb szabadon, bárki által alkalmazható, amennyiben eleget tesz a leírt követelményeknek.
 
 ---
-### Alapértékek
+### 🔆Alapértékek
 
 A Manőverek végrehajtója ezekkel az értékekkel próbálkozhat a Manőver **Ellenpróba** fázisában.
 
 - [Manőver Alap](066_01_manover_alap.md)
 - [Manőver Pontok](066_02_manover_pontok.md)
 
-### Szabályok
+### 🔆Szabályok
 
 Általános szabályok, megkötések, valamint a Manőver konkrét végrehajtásának leírását találod itt.
 
 - [Manőver szabályok](066_03_manover_szabalyok.md)
 - [Manőver végbevitele](066_04_manover_vegbevitele.md)
 
-### Manőver kategóriák
+### 🔆Manőver kategóriák
 
 Három kategóriába csoportosítottuk a `Szilánk` által ismert Manővereket. Listájukat és leírásukat itt találhatod:
 
