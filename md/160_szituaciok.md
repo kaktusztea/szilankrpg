@@ -28,12 +28,12 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ## Fizikai szituációk
 
-- [Ugrás magasba / távolba](szituaciok/ugras_magasba_tavolba.md) (Akrobatika)
-- [Esés magasból](szituaciok/eses_magasbol.md) (Akrobatika)
+- [Ugrás magasba / távolba](szituaciok/ugras_magasba_tavolba.md)
+- [Esés magasból](szituaciok/eses_magasbol.md)
 - [Mászás képzettségpróbára összetett példa](szituaciok/maszas_osszetett_pelda.md) ⚡
 - [Menekülés, Üldözés, Futás](szituaciok/menekules_uldozes_futas.md)
 - [Víz alatt bírni](szituaciok/viz_alatt_birni.md)
-- [Lóról leesés](szituaciok/lorol_leeses.md) (Akrobatika)
+- [Lóról/Hátasról leesés](szituaciok/lorol_hatasrol_leeses.md)
 
 ## Tudás szituációk
 

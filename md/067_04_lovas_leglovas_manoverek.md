@@ -1,17 +1,5 @@
 ## Lovas, léglovas manőverek
 
-### ⚜️ Lovas, léglovas akasztása
-
-❗Nem a lovas, hanem a **védekező gyalogos**, szálfegyverrel végezheti!
-
-❗Az alább leírtak a levegőből indított **Léglovas rohamra** is érvényesek.
-
-Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd haladó lovas felé mutat. Megelőző támadásodnál támadódat a "Lovas roham" / "Lovas támadás galoppból" és egyéb harci taktikákból adódó VÉ levonások természetesen sújtják, így extrém veszélyes egy ilyen pikába hátassal belefutni.
-
-- Nehézség: 4⭕
-- Fázisok: (M)egakasztás, (E)llenpróba
-- Végbevitel követelménye: csak akkor lehet használni ha a szálfegyveres előnyben van fegyverhosszban a lovashoz képest!
-- Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - csapásod eredményétől függően -  továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
 
 ---
 ### ⚜️ Hátas táncoltatása
@@ -20,11 +8,51 @@ Lovas végezheti.\
 Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel kerülni hozzád.
 
 - Nehézség: -
-- Fázisok: (M)egakasztás
-- Végbevitel követelménye: "**Lovas harc**" fortély 2. fokától jár
-- Hatás: Ha megvannak a követelmények, akkor megelőző (M)egakasztást dobhatsz minden veled harcérintkezésben levő ellenfeled ellen. Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így sebezni nem tudsz, de a feléd irányuló támadásokat elháríthatod.
+- Fázisok: `(M)egakasztás`
+- Végbevitel követelménye: [Lovas_harc](fortelyok.harci/lovas_harc.md) - `2.fok`
+- Hatás: Soron kívüli megelőző `(M)egakasztást` dobhatsz **minden** veled harcérintkezésben levő ellenfeled ellen. Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így sebezni nem tudsz, de a feléd irányuló támadásokat elháríthatod.
 
 <br />
+
+---
+### ⚜️ Lovas áttörés
+
+Megpróbálsz áttörni az ellenfél sorain, lendületét és hátasod erejét használva.
+
+- Nehézség: `[4-8]`  (ellenfelek száma és fegyverzete függvénye)
+- Fázisok: `(V)égrehajtás, (E)llenpróba`
+- Követelménye: galopp vagy gyorsabb tempó
+- Hatás: Az áttörési kísérlet sikeres esetén az ellenfelek szétszóródnak, és hátrányt szenvednek a következő körben.
+
+---
+### ⚜️ Lovas, léglovas akasztása
+
+❗Nem a lovas, hanem a **védekező gyalogos**, szálfegyverrel végezheti!
+
+❗Az alább leírtak a levegőből indított **Léglovas rohamra** is érvényesek.
+
+Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd haladó lovas felé mutat. Megelőző támadásodnál támadódat a "Lovas roham" / "Lovas támadás galoppból" és egyéb harci taktikákból adódó `VÉ` levonások természetesen sújtják, így extrém veszélyes egy ilyen pikába hátassal belefutni.
+
+- Nehézség: `4`
+- Fázisok: `(M)egakasztás, (E)llenpróba`
+- Végbevitel követelménye:
+  - szúró szálfegyver használata
+  - Minimum [Fegyverméret - 1 pengés előny](/065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny) helyzet fegyverhosszban a lovashoz képest
+- Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően -  továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
+
+---
+### Lóhátról lerántás
+
+❗Nem a lovas, hanem **gyalogos ellenfele** végezheti!
+
+Megpróbálod lerántani lovas ellenfeled a nyergéből.
+
+- Nehézség: `[6-12]`  (hátas mozgása, lovas hova figyel)
+- Fázisok: `(M)egakasztás, (E)llenpróba, (V)égrehajtás`
+- Végbevitel követelménye: Csak közvetlen harcérintkezés alatt
+- Hatás: Sikeres próbálkozás esetén a lovas a földre kerül.
+
+Megjegyzés: A `(M)egakasztás` lépés csak akkor jön a lovastól, ha a látóterében vagy.
 
 ---
 ## Léglovas manőverek
