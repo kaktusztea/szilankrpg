@@ -69,7 +69,7 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 
 → 🔺ISSUE: [Túl kicsi a fej szorzója](https://github.com/kaktusztea/szilankrpg/wiki/TODO.tavharc#l%C3%B6v%C3%A9szet-haj%C3%ADt%C3%A1s-kaland-tapasztalatok)
 
-→ 🔺ISSUE: [Ha a szorzó 0-ra, vagy az alá csökkenne](https://github.com/kaktusztea/szilankrpg/wiki/TODO.tavharc#Szilánk-c%C3%A9lz%C3%A1s-szorz%C3%B3).
+→ 🔺ISSUE: [Ha a szorzó 0-ra, vagy az alá csökkenne](https://github.com/kaktusztea/szilankrpg/wiki/TODO.tavharc#c%C3%A9lz%C3%A1s-szorz%C3%B3).
 
 ---
 #### Szorzó - Észlelhetőség módosító
