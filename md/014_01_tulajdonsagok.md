@@ -105,9 +105,9 @@ Emlékezet
 ---
 ### Tulajdonságok bemutatása
 
-Jelölők: ⤴️ Fejleszthető Tulajdonság ⏹️ Nem fejleszthető Tulajdonság
+Lássuk, milyen Tulajdonságokkal jellemezheted karakteredet.
 
-### ⚪ Erő ⤴️
+### ⚪ Erő
 
 ```
 Erőbónusz: 1:1 beleszámít az SP (Sebzés Pont) értékbe
@@ -136,7 +136,7 @@ rácsokat zúz. Istenként tisztelik, vagy rettegik.
 ⭕TODO⭕: Extra
 
 ---
-### ⚪ Edzettség ⤴️
+### ⚪ Edzettség
 
 Mutatja kitartásodat, hogy mennyire vagy képes elviselni a tartós fizikai megterhelést, illetve hogy mennyire vagy ellenálló a betegségekkel, fertőzésekkel, mérgekkel szemben, valamint, komolyan beleszámít életerődbe is. Ha magas, gyorsabban felépülsz sérüléseidből is.
 
@@ -159,7 +159,7 @@ jó eséllyel száll harcba. ⭕TODO⭕: Extra
 
 
 ---
-### ⚪ Ügyesség ⤴️
+### ⚪ Ügyesség
 
 Jelzi cselekedeteid összehangoltságát, mozgásod kifinomultságát, precizitását, kézügyességedet. Ezt a Tulajdonságod használod akár az egész testet igénybe vevő tevékenységről van szó, akár a kézzel, aprólékos tevékenység végzéséről, „piszmogásról".
 
@@ -182,7 +182,7 @@ Fejleszthető tulajdonság.
 
 
 ---
-### ⚪ Gyorsaság ⤴️
+### ⚪ Gyorsaság
 
 Mutatja reflexeidet, hogy milyen gyorsan mozdulsz, ha reagálni kell valamire.
 
@@ -203,11 +203,11 @@ Fejleszthető tulajdonság.
 `+5:` Észre se venni, hogy mozdult. Villámgyors. Körbefut, mire észreveszed. ⭕TODO⭕: Extra
 
 ---
-### ⚪ Intelligencia ⏹️
+### ⚪ Intelligencia
 
 Jelzi szellemi felkészültségedet mind helyzetfelismerés, problémamegoldó készség terén.
 
-Nem fejleszthető tulajdonság.
+❌ Nem fejleszthető tulajdonság.
 
 `-5:` Komplett idióta. Az evésen és alváson kívül minden kihívás számára.
 
@@ -224,7 +224,7 @@ Nem fejleszthető tulajdonság.
 `+5:` Mindent átlát, a legrejtettebb összefüggések is világosak számára. Ha hatalomvágyó, iszonyú veszélyt jelent a világ számára. ⭕TODO⭕: Extra
 
 ---
-### ⚪ Emlékezet ⤴️
+### ⚪ Emlékezet
 
 Memóriád fejlettségét mutatja, azt hogy mekkora tehetséged van lexikális ismeretek elsajátítása.
 
@@ -245,7 +245,7 @@ Fejleszthető tulajdonság.
 `+5:` Nem tanul, olvas. Számára ez ugyanazt jelenti. Minden megragad az emlékezetében méghozzá tökéletesen. Gyermekkorában történt eseményekre is pontosan emlékszik. Képes felidézni bármely beszélgetést szó szerint. Ha alacsony az Önuralma könnyen beleőrülhet. ⭕TODO⭕: Extra
 
 ---
-### ⚪ Önuralom ⤴️
+### ⚪ Önuralom
 
 Mutatja érzelmi kiegyensúlyozottságodat, stabilitásodat, illetve hogy mennyire vagy képes uralni indulataidat, hangulataidat. Fontos összetevője a fájdalom elviselésének is és az Asztrális mágiaellenállásnak.
 
@@ -269,13 +269,17 @@ beszédéből, mozdulataiból ránézésre látszik, ha valami baja van.
 `+5:` Megingathatatlan kőszikla. Tökéletesen uralja érzelmeit, teljesen el tud vonatkoztatni tőlük, kibillenteni szinte lehetetlen. Határozott, elképzeléseit mindig megvalósítja, a lehetetlen számára ismeretlen fogalom. Képes érzelmeit olyan fokon uralni, hogy külső jeleiből (testbeszéd, hang) képtelenség lelkiállapotára következtetni - leginkább egy gépre, vagy jégcsapra hasonlít. A fentiek a mágikus detektálásokat természetesen nem befolyásolják.
 
 ---
-### ⚪ Érzékenység ⏹️
+### ⚪ Érzékenység
+
+❌ Nem fejleszthető tulajdonság.
 
 Az Érzékenység részben a külvilág (leginkább más lények) rezdüléseinek érzékelését jeleníti. Ezen felül kisebb mértékben az érzelmi gazdagságot is jelképezi, de inkább a „detektáló" jellegű összetevő a kiemelt.
 
-Fontos összetevője művészeti képzettségeknek illetve az Emberismeretnek, beleszámít az Asztrális mágiaellenállásba is, valamint az [Észlelés képzettséggel](kepzettsegek.primer.altalanos/eszleles.md) párosítva a fizikai világban való érzékelést és észlelés-próbákat is ezzel végezzük (Intuíció, Látás, Hallás, Szaglás, Tapintás, Ízlelés).
+Fontos összetevője művészeti képzettségeknek illetve az [Emberismeretnek](kepzettsegek.primer.altalanos/emberismeret.md), beleszámít az Asztrális mágiaellenállásba is, valamint az [Észlelés képzettséggel](kepzettsegek.primer.altalanos/eszleles.md) párosítva a fizikai világban való érzékelést és észlelés-próbákat is ezzel végezzük (Intuíció, Látás, Hallás, Szaglás, Tapintás, Ízlelés). Állatokkal kapcsolatos képzettségeknél is hasznos lehet, mint a [Lovaglás](kepzettsegek.szekunder/lovaglas.md), vagy [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md).
 
-Nem fejleszthető tulajdonság.
+Fontos tulajdonság továbbá az összes művészetnél. Énekes előadókhoz hasonló karakterek nem szerepelnek jól alacsony Érzékenységgel, ha a karakter mégis ilyet csinálna, ő lesz az, aki a falunapokon kap 10 percet, aztán elfelejtik.
+
+Az érzéki csábítás is komoly hasznát látja az Érzékenységnek, továbbá papok, sámánok, boszorkányok, speciális mágikus irányzatok - asztrálmágia, szellemtan, káosziskolák ismérve, hogy ezzel a Tulajdonsággal operálnak.
 
 `-5:` Van ő és ... senki más. Teljesen érzéketlen, akár egy gép. Szeme láttára kiirthatják a családját, az sem mozdít meg benne semmit. Szörnyeteg. A művészeteket teljesen értelmetlennek tartaná, ha foglalkozna velük. De nem teszi. A külső ingerek nem jutnak el hozzá.
 
