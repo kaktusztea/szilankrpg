@@ -53,15 +53,19 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 
 | Célpont mérete           | Módosító |
 | ------------------------ | :------: |
+| Célpont fedezék mögött   |   +2x    |
 | Pénzérme                 |   +7x    |
 | Alma                     |   +5x    |
 | Fej, Dinnye, Macska      |   +4x    |
-| Törpe, gyerek            |   +1x    |
+| Hiúz                     |   +3x    |
+| Sas                      |   +2x    |
+| Törpe                    |   +1x    |
 | Átlagos ember/elf méretű |   +0x    |
-| Ló oldalról, Ogre        |   -1x    |
-| Lovas                    |   -2x    |
-| Bölény                   |  ⭕TODO⭕  |
-| Óriás                    |  ⭕TODO⭕  |
+| Ogre                     |   -1x    |
+| Ló oldalról              |   -2x    |
+| Lovas                    |   -3x    |
+| Bölény                   |   -3x    |
+| Óriás                    |   -5x    |
 
 → 🔺ISSUE: [Túl kicsi a fej szorzója](https://github.com/kaktusztea/szilankrpg/wiki/TODO.tavharc#l%C3%B6v%C3%A9szet-haj%C3%ADt%C3%A1s-kaland-tapasztalatok)
 
