@@ -55,8 +55,8 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 | ------------------------ | :------: |
 | Célpont fedezék mögött   |   +2x    |
 | Pénzérme                 |   +7x    |
-| Alma                     |   +5x    |
-| Fej, Dinnye, Macska      |   +4x    |
+| Alma                     |   +6x    |
+| Fej, Dinnye, Macska      |   +5x    |
 | Hiúz                     |   +3x    |
 | Sas                      |   +2x    |
 | Törpe                    |   +1x    |
