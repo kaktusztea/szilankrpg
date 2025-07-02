@@ -7,7 +7,6 @@
 - [Alapfogalmak](063_01_harci_kor.md)
 - [Kezdeményezés](064_02_01_kezdemenyezes.md)
 - [Támadó dobás](064_02_02_tamado_dobas.md)
-- [Fegyverméretek](064_02_03_fegyvermeretek)
 - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)
 - [Találat](064_02_04_talalat.md)
 - [Fegyverek sebzés jellege, páncélok SFÉ jellege](064_02_05_fegyver_sebzes_jellege.md)
