@@ -156,7 +156,7 @@
     {
         "Fegyver": "Parittya",
         "Forgatás módja": "egykezes",
-        "SP": "+0",
+        "SP": "+2",
         "Sebzés módja": "Z",
         "Átütés": "0",
         "KÉ": "4",
@@ -165,7 +165,7 @@
         "Hatótáv": "70m",
         "Sebesség": "10",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "Lehet nagy sebzése, de az SFÉ duplán számítson ellene (vagy SFÉ bónusz)"
+        "Speciális / Megjegyzés": "SFÉ duplán számít ellene"
     },
     {
         "Fegyver": "Ramiera",
