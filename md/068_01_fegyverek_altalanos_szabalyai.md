@@ -1,23 +1,56 @@
 ## Fegyverek általános szabályai
 
-### Általános fegyver-harcértékek
+### Fegyverméretek, általános fegyver-harcértékek
 
 Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – méret szerint. A lentiek irányadó értékek, az egyes konkrét fegyverek számai ettől eltérnek, viszont új fegyver beillesztése a rendszerbe így gyerekjáték.
 
-| **Kategóriánként** | KÉ | TÉ | VÉ |
-| ------------------ | ------ | ------ | ------ |
-|                    | **2**  | **4**  | **4**  |
+| **Kategóriánként** | `KÉ` | `TÉ` | `VÉ` |
+| ------------------ |:----:|:----:|:----:|
+|                    | `2`  | `4`  | `4`  |
 <br />
 
-| **Fegyver példa** | **Kategória** | **Sorszám** | &nbsp;&nbsp;KÉ&nbsp;&nbsp; | &nbsp;&nbsp;TÉ&nbsp;&nbsp; | &nbsp;&nbsp;VÉ&nbsp;&nbsp; |
-| ----------------- | ------------- | :---------: | :------------------------: | :------------------------: | :------------------------: |
-| tőr               | rövid         |      1      |             2              |             4              |             4              |
-| rövid kard        | fél penge     |      2      |             4              |             8              |             8              |
-| hosszú kard       | 1 penge       |      3      |             6              |             12             |             12             |
-| másfélkezes kard  | 1,5 penge     |      4      |             8              |             16             |             16             |
-| kétkezes kard     | 2 penge       |      5      |             10             |             20             |             20             |
-| alabárd           | 3 penge       |      7      |             12             |             28             |             28             |
-| lándzsa           | 4 penge       |      9      |             18             |             36             |             36             |
+| **Fegyver példa** | **Kategória** | **Sorszám** | `KÉ` | `TÉ` | `VÉ` |
+| ----------------- | ------------- |:-----------:|:----:|:----:|:----:|
+| tőr               | `rövid`       |     `1`     | `2`  | `4`  | `4`  |
+| rövid kard        | `0,5 penge`   |     `2`     | `4`  | `8`  | `8`  |
+| hosszú kard       | `1 penge`     |     `3`     | `6`  | `12` | `12` |
+| másfélkezes kard  | `1,5 penge`   |     `4`     | `8`  | `16` | `16` |
+| kétkezes kard     | `2 penge`     |     `5`     | `10` | `20` | `20` |
+| alabárd           | `3 penge`     |     `7`     | `12` | `28` | `28` |
+| lándzsa           | `4 penge`     |     `9`     | `18` | `36` | `36` |
+
+
+---
+### Fegyverméter elnevezések, szabályok
+
+- `rövid`: `0,3` méterig
+- `0,5 penge`: `0,4 - 0,7` méter
+- `1 penge`: `0,8` méter
+- `2 penge`: `1,6` méter
+
+---
+### Jellemző pengehosszok
+
+- kard
+  - méret: `0,75 - 0,9` méter
+  - átlag: `0,8` méter
+  - jellemzően: `1` penge
+  - maximum: `1` penge
+- alabárd
+  - méret: `1,8 - 2,5` méter
+  - átlag: `2,1` méter
+  - jellemzően: `2 penge`
+  - maximum `3 penge`
+- lándzsa
+  - méret: `1,8 - 3,5` méter
+  - átlag: `2,6` méter
+  - jellemzően: `3` penge
+  - maximum: `4 penge`
+- pika
+  - méret: `4 - 7,0` méter
+  - átlag: `5,5` méter
+  - jellemzően: `7` penge
+  - maximum: `8` penge
 
 ---
 ### Elsődleges sebzési típus

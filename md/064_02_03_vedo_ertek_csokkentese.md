@@ -2,11 +2,11 @@
 
 Harcban sikertelennek számít támadásod, ha a **Támadó dobásod** végső értéke nem éri el ellenfeled **Védő Értékét**.
 
-Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva. A harc, a védekezés komolyan igénybe veszik az áldozat figyelmét, állóképességét. Hogy konkrétan hogyan csökkented `Védő Értékét`, az fegyvereitek pengehosszainak különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben.
+Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva. A harc, a védekezés komolyan igénybe veszik az áldozat figyelmét, állóképességét. Hogy konkrétan hogyan csökkented `Védő Értékét`, az fegyvereitek pengehosszainak különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_fegyverek_altalanos_szabalyai).
 
 ### ⚜️ [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
-- Mikor a fegyverméret különbség legalább `-1` pengehossz
+- Mikor a fegyverméret különbség legalább `(-1)` pengehossz
 - [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent **Védő Értéket**
 
 ### ⚜️ [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos) harci helyzet
