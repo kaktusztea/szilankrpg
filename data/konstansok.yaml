@@ -47,13 +47,12 @@ vértek:
     SFÉ: [3,18]     # anyagfüggő (lásd lenn)
   mgt:              # mozgásgátló tényező
   - posztó: 3
-  - bőr: 6
-  - keményített.bőr: 9
-  - fegyverkabát: -1            # ⭕
-  - lánc: 12
-  - sodrony: 15
-  - pikkely: 17              # ⭕
-  - lemez: 18                # ⭕
+  - fegyverkabát: 3
+  - bőr: 8
+  - brigantin: 11
+  - lánc/sodrony: 13
+  - pikkely: 17
+  - lemez: 18
   mgt.szorzók:
   - nem.merev.nem.fém: [4,2,1,0.5,-1]   # pocsék, gyenge, átlagos, jó, mestermunka. A -1 az 'undef' jelölése.
   - nem.merev.fém: [4,3,2,1,0.5]
@@ -64,21 +63,21 @@ vértek:
     alap.MGT: 0
     ár.szorzó: 1
   - anyag: "bronz"
-    sfé.bónusz: -3          # ⭕
+    sfé.bónusz: -5
     alap.MGT: 6             # ⭕
-    ár.szorzó: 0.5          # ⭕
+    ár.szorzó: 0.5
   - anyag: "abbitacél"
-    sfé.bónusz: 2
-    alap.MGT: -1            # ⭕
+    sfé.bónusz: 5
+    alap.MGT: -5
     ár.szorzó: 10
   - anyag: "mithrill"
-    sfé.bónusz: 5
-    alap.MGT: -1            # ⭕
+    sfé.bónusz: 10
+    alap.MGT: -10           # ⭕
     ár.szorzó: 100
   - anyag: "lunír"
-    sfé.bónusz: -1          # ⭕
-    alap.MGT: -1            # ⭕
-    ár.szorzó: -1           # ⭕
+    sfé.bónusz: 15          # ⭕
+    alap.MGT: -15           # ⭕
+    ár.szorzó: 100000
   ár.szorzók:
   - pocsék: 0.1
   - gyenge: 0.5
@@ -90,34 +89,30 @@ vértek:
     SFÉ.szúró: 0
     SFÉ.vágó: 2
     SFÉ.zúzó: 2
-  - struktúra: "bőr"
+  - struktúra: "fegyverkabát"
+    SFÉ.szúró: 3
+    SFÉ.vágó: 3
+    SFÉ.zúzó: 2
+  - struktúra: "bőrpáncél"
     SFÉ.szúró: 2
     SFÉ.vágó: 4
     SFÉ.zúzó: 2
-  - struktúra: "keményített bőr"
-    SFÉ.szúró: 3
-    SFÉ.vágó: 5
-    SFÉ.zúzó: 3
-  - struktúra: "fegyverkabát"   # ⭕
-    SFÉ.szúró: -1
-    SFÉ.vágó: -1
-    SFÉ.zúzó: -1
-  - struktúra: "lánc"
-    SFÉ.szúró: [8,10,12]
-    SFÉ.vágó: [5,7,9]
-    SFÉ.zúzó: [2,3,4]
-  - struktúra: "sodrony"
-    SFÉ.szúró: [10,12,14]    # ⭕
-    SFÉ.vágó: [7,9,11]
-    SFÉ.zúzó: [3,4,5]
-  - struktúra: "pikkely"
-    SFÉ.szúró: [10,12,14]    # ⭕
-    SFÉ.vágó: [11,13,15]
-    SFÉ.zúzó: [4,6,8]
+  - struktúra: "brigantin bőrpáncél"
+    SFÉ.szúró: 10
+    SFÉ.vágó: 12
+    SFÉ.zúzó: 7
+  - struktúra: "lánc/sodrony"
+    SFÉ.szúró: 8
+    SFÉ.vágó: 13
+    SFÉ.zúzó: 5
+  - struktúra: "pikkely fémpáncél"
+    SFÉ.szúró: 12
+    SFÉ.vágó: 13
+    SFÉ.zúzó: 6
   - struktúra: "lemez"
-    SFÉ.szúró: [10,12,14]    # ⭕
-    SFÉ.vágó: [12,14,16]
-    SFÉ.zúzó: [7,9,11]
+    SFÉ.szúró: 15
+    SFÉ.vágó: 18
+    SFÉ.zúzó: 10
 
 kp:
 - alap: 150
@@ -174,10 +169,9 @@ egészség.kategória.levonás:
   - érték: -30
     típus: 52    # TÉ
 
-# ⭕Obsolete! Update these!⭕
-fortély.csoportok: [karma, háttér, mindennapi, alvilági, fizikai, szociális, világi, tudományos, művészeti, harci, távharc, lovas, titkos]
-képzettség.csoportok: [harci, fizikai, világi, alvilági, tudományos, művészeti, misztikus, vulgármágia, ordani.tűzmágia, bárdmágia, magasmágia]
-# ⭕ a mágia csoportokból lehet, hogy hiányzik még pár
+hátter.csoportok: [faj, leíró, karma]
+fortély.csoportok: [kiemelt, szabad, érzék, alvilági, tudományos, befolyástól_védő, harci, távharc, lovas, misztikus_mágia, slan, titkos]
+képzettség.csoportok: [harci, fizikai, világi, alvilági, művészeti, tudományos, misztikus, szakrális]
 
 kalk:        # Kalkulált értékek ⭕TODO: kell ez ide? Inkább külön kalkulalt_ertekek file képletekkel.
 - erőbónusz: 0

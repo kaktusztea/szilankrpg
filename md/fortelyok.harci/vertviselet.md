@@ -20,7 +20,7 @@ képzettségpróbákra (lefele kerekítve)
 - A vért teljes MGT-je érvényesül.
 - Ha nehézvértet vesz fel a karakter teljesen képzetlenül, akkor a képzetlen fegyverhasználat büntetéseinek megfelelő levonások sújtják:
   - `KÉ: -20`, `TÉ: -30`, `VÉ:-30`
-- Nehéz vért: Fegyverkabát, Lánc/Sodrony, Pikkely, Lemez
+- Nehéz vért: Lánc/Sodrony, Pikkely fémpáncél, Lemez
 - A fenti érték és az MGT okozta levonás közül a hátrányosabb az érvényes.
 
 ---

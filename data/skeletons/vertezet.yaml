@@ -1,7 +1,7 @@
 - vért: xyz
   version: 1           # a vertezet séma verziója
   stage: ""            # alpha, beta, prod // alpha: változhat struktúrálisan, beta: kész, de még nem mehet prod-ba
-  struktúra: ""        # posztó/bunda, bőr, keményített bőr, fegyverkabát, lánc, sodrony, pikkely, lemez
+  struktúra: ""        # posztó/bunda, fegyverkabát, bőrpáncél, brigantin bőrpáncél, lánc/sodrony, pikkely fémpáncél, lemez
   fémalapanyag: ""     # acél, bronz, abbitacél, mithrill, lunír -- csak ha valamilyen fémből van, egyébként üres: ""
   anyagminőség: 0      # 1: rossz, 2: átlagos, 3: jó
   kidolgozottság: 0    # 1: pocsék, 2: gyenge, 3: átlagos, 4: jó, 5: mestermunka
