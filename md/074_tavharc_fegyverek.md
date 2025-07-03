@@ -49,13 +49,6 @@ Az egyes fegyverek **Sebesség** értékét lásd a **Harcrendszer** [Fegyverek]
 <br />
 
 ---
-### Erőből / Ügyességből forgatott fegyverek
-
-Távolba ható fegyverek esetén különbséget teszünk **Erőből** és **Ügyességből** használtak között. A fenti tulajdonság szerepe a sebzésbónusz és a végső Célzó Érték kiszámításánál mutatkozik meg. Hogy egy fegyvert Erőből, vagy Ügyességből forgathatunk, azt a [Hajítófegyverek](068_06_hajitofegyverek.md) és [Lőfegyverek](068_07_lofegyverek.md) fejezetben található táblázatból olvashatjuk ki.
-
-<br />
-
----
 ### Hatótáv
 
 Minden távolba ható fegyvernek van **Hatótávja**, amely értelemszerűen az adott fegyverrel elérhető legnagyobb lőtávolságot jelenti. Ezt minden fegyvernél számon tarjuk, értékét méterben jelezzük. A játékos nem lőhet/dobhat a fegyver hatótávján túl (illetve hajítás esetén még szerepet játszhat a támadó Ereje, de erről később).
