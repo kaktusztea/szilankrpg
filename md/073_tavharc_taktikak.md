@@ -1,22 +1,32 @@
 ## Távolsági Harc taktikák
 
+Néhány speciális húzással beleszólhatunk az ilyen szituációkba.
+
+---
 ### Szándékos kitérés lövés elől
 
 Ha valaki látja és van ideje felkészülni a rá leadott lövésre/hajításra, valamint rendelkezik elegendő hellyel a kitérésre ÉS bejelenti, hogy megpróbálja elkerülni végzetét, akkor **Gyorsaságpróbát** kell dobnia, melynek nehézsége függ a lövést leadó személy távolságától, valamint az általa használt fegyvertől.
 
+
+
 | Gyorsaságpróba célszám | Dobófegyverek,<br />Mágikus lövedék I. | Íjak,<br />Mágikus lövedék II. | Nyílpuskák,<br />Mágikus lövedék III. |
 |:----------------------:| --------------------------------------:| ------------------------------:| -------------------------------------:|
-|           8            |                      1m&nbsp;-&nbsp;3m |                        0m - 5m |                              0m - 10m |
-|           7            |                                4m - 6m |             6m&nbsp;-&nbsp;10m |                   11m&nbsp;-&nbsp;20m |
-|           6            |                      7m&nbsp;-&nbsp;9m |            11m&nbsp;-&nbsp;15m |                   21m&nbsp;-&nbsp;30m |
-|           5            |                    10m&nbsp;-&nbsp;12m |            16m&nbsp;-&nbsp;20m |                   31m&nbsp;-&nbsp;40m |
+|           8            |                              `1m - 3m` |                      `0m - 5m` |                            `0m - 10m` |
+|           7            |                              `4m - 6m` |                     `6m - 10m` |                           `11m - 20m` |
+|           6            |                              `7m - 9m` |                    `11m - 15m` |                           `21m - 30m` |
+|           5            |                            `10m - 12m` |                    `16m - 20m` |                           `31m - 40m` |
 |           4            |                           Testközelben |                                |                                       |
 
-🔆 **Megjegyzés**: A próbához `+2` járul, ha a karakter rendelkezik [Kitérés lövés elől](fortelyok.harci/kiteres_loves_elol.md) harci fortéllyal.
+🔆 **Bónusz**: A próbához `+2` járul, ha a karakter rendelkezik [Kitérés lövés elől](fortelyok.harci/kiteres_loves_elol.md) harci fortéllyal.
+
+🔆 Ha a próba sikeres, a célpont elugrott a lövedék elől, a lövész már nem is tehet **Célzó dobást**.
+
+🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy talál -e.
 
 Lásd: [Elemi mágia - Formulák - Őselem idézése](kepzettsegek.primer.arkanumok/elemi_magia.md#őselem-idézése)\
-⭕ lehet h ki kéne szedni általános "Mágikus lövedék" szekcióba ⭕
+⭕TODO⭕ Mágia: lehet h ki kéne szedni általános "Mágikus lövedék" szekcióba ⭕
 
+<br />
 
 ---
 ### Páros, kétkezes hajítás
