@@ -24,7 +24,9 @@ Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász l�
 ---
 ### Lövész lőfegyverek
 
- Az Erőbónusz **nem** adódik hozzá a Lövész lőfegyverek **SP** értékéhez.
+🔆 Az Erőbónusz **nem** adódik hozzá a Lövész lőfegyverek **SP** értékéhez.
+ 
+🔆 A Kézi nyílpuska kivételével mindegyik nyílpuska kétkezes fegyver.
 
 <!-- tag: md_table_tavfegyver_start -->
 
