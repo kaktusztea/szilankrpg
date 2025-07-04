@@ -13,8 +13,6 @@ A célpont **Védő értéke** reprezentálja a célpont eltalálásának nehéz
 
 A célpont **Védő Értékét**  az ún. **Szorzó** és a célpont Távolságának és a **Fegyver Osztó** hányadosának (felfele kerekítünk) szorzataként kapjuk meg.
 
-
-
 ---
 ### ⚜️ Szorzó
 
@@ -67,8 +65,6 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 | Bölény                   |   -3x    |
 | Óriás                    |   -5x    |
 
-→ 🔺ISSUE: [Ha a szorzó 0-ra, vagy az alá csökkenne](https://github.com/kaktusztea/szilankrpg/wiki/TODO.tavharc#c%C3%A9lz%C3%A1s-szorz%C3%B3).
-
 ---
 #### Szorzó - Észlelhetőség módosító
 
@@ -100,6 +96,19 @@ Amennyiben erős szél fúj, akkor az is módosíthatja a célpont Védő Érté
 | Nagyon erős |        +4x         |
 | Viharos     |        +8x         |
 | Orkán erejű | A lövés lehetetlen |
+
+#### 🔆 Speciális eset: Szorzó értéke `1` alá kerülne
+
+Ritkán fordul elő ez az eset, főleg álldogáló, nagy méretű célok esetén. Ilyenkor a `Védő Érték` negatív értéket is felvehet a negatív **Szorzó** miatt. Ez nem gond, hiszen a `CÉ` alap `-30` alappal indul.
+
+```
+Célpont VÉ = Szorzó  +  (Távolság / Fegyver Osztó) ↑
+                     └────→ összeadás, nem szorzás
+```
+
+🔆 A képlet majdnem ugyanaz, de nem szorzás, hanem összeadás történik.
+
+🔆 Ha a Szorzó értéke éppen `0`, akkor a cépont Védő Értéke is pont `0` lesz.
 
 
 ---
@@ -138,20 +147,6 @@ Alább az egyes fegyver-kategóriák tipikus **Osztó** értékét látjuk. Ett�
 
 🔆 **Megjegyzés**: Javasoljuk a KM-nek, hogy ha esetleg mágikus, vagy kifejezetten jó minőségű fegyver értékeit akarja az alapértékhez képest módosítani, akkor az **Osztó** értékét lehetőleg **NE** módosítsa, inkább a fegyver **Célzó Értékét** változtassa.
 
-
----
-### ⚜️ Speciális eset: Osztó értéke `1` alá kerülne
-
-Ritkán fordul elő ez az eset, főleg álldogáló, nagy méretű célok esetén. Ilyenkor a `Védő Érték` negatív értéket is felvehet a negatív **Szorzó** miatt. Ez nem gond, hiszen a CÉ alap `-30` alappal indul.
-
-```
-Célpont VÉ = Szorzó  +  (Távolság / Fegyver Osztó) ↑
-                     └────→ összeadás, nem szorzás
-```
-
-🔆 A képlet majdnem ugyanaz, de nem szorzás, hanem összeadás történik.
-
-🔆 Ha a Szorzó értéke éppen `0`, akkor a cépont Védő Értéke is pont `0` lesz.
 
 ---
 
