@@ -6,7 +6,7 @@
 → Szekunder max szint = (TSz+3)
 → Növelés max: 2/TSz
 → 14-15.szintre csak spécivel
-→ 12, 15. szint: bónuszok járnak
+→ 9, 12, 15. szint: bónuszok járnak
 ```
 
 A karakterek fejlődése természetesen nem lehet ugrásszerű, meg kell őriznünk a folyamatosság illúzióját szintlépéskor, el kell kerülnünk, hogy egy `3.`Tapasztalati Szintű karakter `12-13`-as képzettség értékekkel rohangáljon. Ugyanakkor fontos színesítő, ha egy `1.`Tapasztalati Szintű karakter egyes területeken kitűnik társai közül. Általános szabályok:
@@ -39,7 +39,7 @@ A másik felső korlát lehet az adott kultúra fejletlensége, vagy korlátai. 
 ---
 ### Képzettség Bónuszok
 
-A `12. és 15. szintek` kiemelt mérföldkövek a képzettségek esetében, itt már félmágikus, különleges bónuszok tűnnek fel. Ezek leírását lásd minden esetben az adott képzettség leírásában.
+A `9.`, `12. és 15. szintek` kiemelt mérföldkövek a képzettségek esetében, itt már különleges bónuszok, feljebb félmágikus hatások tűnnek fel. Ezek leírását lásd minden esetben az adott képzettség leírásában.
 
 <br />
 
