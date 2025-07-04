@@ -7,7 +7,7 @@ Támadó CÉ =
     -30
     + CM
     + Harcmodor CÉ
-    + (2 x Önuralom/Erő)
+    + (2 x Önuralom)
     + Fegyver CÉ
     + Mf-bónusz
 ```
@@ -17,7 +17,7 @@ Támadó CÉ =
 |              `-30`              | Konstans. Ez az érték gyakorlatilag a célpont Védő Érték alapját adná, de mivel itt csak egyszer (karakteralkotáskor) kell vele számolni, ezért a számolás meggyorsítása miatt átkerült ide negatív előjellel.                                                                                                                                                                                                                         |
 |               CM                | Célzóérték Módosító. Szintenként legfeljebb `4` vehető fel. `1 CM = 2 KP`                                                                                                                                                                                                                                                                                                                                                              |
 |          Harcmodor CÉ           | Harcmodor képzettség szintje által kapott bónusz (lásd a [Harcmodor képzettségeket](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)!)                                                                                                                                                                                                                                                                                                   |
-| `2x` Önuralom<br>/<br> `2x` Erő | Az **Önuralom** (fegyvertől függ, lásd a leírásukat a "Speciális/Megjegyzés mezőben)                                                                                                                                                                                                                                                                                                                                                   |
+|          `2x` Önuralom          | Az **Önuralom** Tulajdonság kétszerese                                                                                                                                                                                                                                                                                                                                                                                                 |
 | Fegyver CÉ<br>(kategória függő) | Különbséget teszünk a fegyverkategóriák közt attól függően, hogy alapesetben milyen könnyű velük célba találni. Az alábbi értékek csak irányszámok, a konkrét fegyver értékek ettől eltérhetnek.<br> • Hajító szálfegyverek: `CÉ:+0`<br> • Apró hajítófegyverek: `CÉ:+4`<br> • Íjak: `CÉ:+10`<br> • Nyílpuskák: `CÉ:+16`<br />Lásd a [Hajítófegyverek](068_06_hajitofegyverek.md) és [Lőfegyverek](068_07_lofegyverek.md) fejezeteket! |
 |      Mesterfegyver fortély      | Mesterfegyver fortély után járó bónusz, amennyiben a használt fegyverre felvette a karakter. Fokonként `CÉ:+3` bónusz.                                                                                                                                                                                                                                                                                                                 |
 
