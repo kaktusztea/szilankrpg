@@ -1,6 +1,6 @@
 ## Lovas harci taktikák
 
- ⭕TODO: bevezető ⭕
+Ahogy a gyalogos küzdelemben is alkalmazhatóak [Harci taktikák](065_02_harci_taktikak.md), úgy hátason ülve is kapsz néhány új lehetőséget.
 
 ### Lovas roham / Léglovas roham
 
