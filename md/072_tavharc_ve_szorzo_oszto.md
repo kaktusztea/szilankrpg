@@ -138,6 +138,21 @@ Alább az egyes fegyver-kategóriák tipikus **Osztó** értékét látjuk. Ett�
 
 🔆 **Megjegyzés**: Javasoljuk a KM-nek, hogy ha esetleg mágikus, vagy kifejezetten jó minőségű fegyver értékeit akarja az alapértékhez képest módosítani, akkor az **Osztó** értékét lehetőleg **NE** módosítsa, inkább a fegyver **Célzó Értékét** változtassa.
 
+
+---
+### ⚜️ Speciális eset: Osztó értéke `1` alá kerülne
+
+Ritkán fordul elő ez az eset, főleg álldogáló, nagy méretű célok esetén. Ilyenkor a `Védő Érték` negatív értéket is felvehet a negatív **Szorzó** miatt. Ez nem gond, hiszen a CÉ alap `-30` alappal indul.
+
+```
+Célpont VÉ = Szorzó  +  (Távolság / Fegyver Osztó) ↑
+                     └────→ összeadás, nem szorzás
+```
+
+🔆 A képlet majdnem ugyanaz, de nem szorzás, hanem összeadás történik.
+
+🔆 Ha a Szorzó értéke éppen `0`, akkor a cépont Védő Értéke is pont `0` lesz.
+
 ---
 
 🔗 [Távharc taktikák](073_tavharc_taktikak.md) →
