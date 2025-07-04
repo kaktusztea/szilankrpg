@@ -28,7 +28,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 ---
 ### Megjegyzések
 
-- A plusz támadásra is vonatkozik a támadásokénti `TÉ:-10` szabály
+- A plusz támadásra is vonatkozik a nem első támadásokra vonatkozó `TÉ:-20` szabály
 - A fortély hatása lő- és hajítófegyverek használatánál nem érvényesül!
 
 <br />

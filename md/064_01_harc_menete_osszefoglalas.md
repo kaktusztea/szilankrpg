@@ -64,7 +64,10 @@ Támadó dobás: TÉ + k100
 
 ```
 Minden újabb támadás a körben:
-   TÉ:-10; -20, ...
+
+  TÉ:-20 a 2. támadástól kezdődően
+  aktuális Támadó Értékre.
+  NEM Additív.
 
 Sebzés jellege: elsődleges sebzési
         típusa az alapértelmezett
@@ -236,7 +239,7 @@ Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a 
 ```
 - TÉ: osztás 10-zel, kerekítés (1-5: le, 6-9: fel)
 - VÉ: osztás 10-zel
-- TÉ: +2 mindenkinek
+- TÉ: +2 mindenkinek (az osztás után)
 - Nincs VÉ csökkentés
 - Nincs páncéldobás
 - Nincs Manőver használat

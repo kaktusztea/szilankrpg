@@ -5,14 +5,15 @@ Támadó dobás = Támadó Érték + k100
 ```
 
 ```
-Minden újabb támadás a körben
-  TÉ: -10 levonással megy
+TÉ:-20 a 2. támadástól kezdődően
+  aktuális Támadó Értékre.
+  NEM Additív.
 
-  2.tám: TÉ:-10
+  2.tám: TÉ:-20
   3.tám: TÉ:-20, ...
 ```
 
-Harcban, támadáskor a játékos dob `k100`-al, majd a kapott értéket hozzáadja aktuális **Támadó Értékéhez**. Ennek értéke lesz a **Támadó dobás**. Amennyiben a támadónak több támadása van a körben, akkor minden egyes plusz támadás `TÉ:-10` módosítóval történik, amely halmozódik.
+Harcban, támadáskor a játékos dob `k100`-al, majd a kapott értéket hozzáadja aktuális **Támadó Értékéhez**. Ennek értéke lesz a **Támadó dobás**. Amennyiben a támadónak több támadása van a körben, akkor a `2.` támadással kezdődően minden egyes plusz támadás fixen `TÉ:-20` módosítóval történik, amely levonás **NEM** halmozódik.
 
 ---
 ### 00-ás (100-as) Támadó dobás

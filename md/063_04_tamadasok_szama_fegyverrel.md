@@ -56,18 +56,18 @@ Plusz támadások (db) =
 ### TÉ levonás támadásonként
 
 ```
-TÉ:-10 minden újabb támadásnál
+TÉ:-20 a 2. támadástól kezdődően
   aktuális Támadó Értékre.
-  Additív.
+  NEM Additív.
 ```
 
 ```
-Második támadás: TÉ:-10
+Második támadás: TÉ:-20
 Harmadik támadás: TÉ:-20
 ...
 ```
 
-A fenti módosítóknak matematikai oka van: így kerüljük el a plusz kapott támadás okozta radikális ugrást az `1` körön belül leadott támadások sikeressége kapcsán. Ne feledjük: legrosszabb esetben még így is **Védő Érték csökkenést** okoz minden támadás, így a plusz támadások ereje már önmagában is elég hangsúlyos.
+A fenti módosítóknak matematikai oka van: így kerüljük el a plusz kapott támadás okozta radikális ugrást az `1` körön belül leadott támadások potenciális sikeressége kapcsán. Ne feledjük: legrosszabb esetben még így is **Védő Érték csökkenést** okoz minden támadás, így a plusz támadások ereje már önmagában is elég hangsúlyos.
 
 <br />
 
