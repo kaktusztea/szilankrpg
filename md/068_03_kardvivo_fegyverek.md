@@ -15,6 +15,9 @@ MK: Másfélkezes fegyverek
 IV: Általános szabály
     íves fegyverekre
 
+KF: Különleges felkészítés
+   (Tradíció függő)
+
 Páncélozatlan ellenfél
 ellen +2 SP sebzésbónusz
 ```
