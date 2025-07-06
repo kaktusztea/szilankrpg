@@ -1,7 +1,5 @@
 ## Pajzsok
 
-<sub>[STUDY: Pajzshasználat](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.pajzsok.pajzshasznalat)</sub>
-
 Kapcsolódik: [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély.
 
 <!-- tag: md_table_pajzs_start -->
