@@ -1,7 +1,7 @@
 [
     {
         "Fegyver": "Bola",
-        "Forgatás módja": "egykezes",
+        "Forgatás módja": "kétkezes",
         "SP": "-",
         "Sebzés módja": "-",
         "Átütés": "0",
@@ -29,7 +29,7 @@
     },
     {
         "Fegyver": "Dobóháló",
-        "Forgatás módja": "egykezes",
+        "Forgatás módja": "kétkezes",
         "SP": "-",
         "Sebzés módja": "-",
         "Átütés": "0",
@@ -141,7 +141,7 @@
     },
     {
         "Fegyver": "Lasszó",
-        "Forgatás módja": "egykezes",
+        "Forgatás módja": "kétkezes",
         "SP": "-",
         "Sebzés módja": "-",
         "Átütés": "0",
