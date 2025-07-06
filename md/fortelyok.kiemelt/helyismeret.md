@@ -1,5 +1,7 @@
 ## 🟣 Helyismeret (városnyi terület) 🔁
 
+<!-- tag: md_fortely_multiple_helyismeret -->
+
 ```
 - 1 fokú
 - többször felvehető egy-egy

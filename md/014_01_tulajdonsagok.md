@@ -203,7 +203,7 @@ Fejleszthető tulajdonság.
 `+5:` Észre se venni, hogy mozdult. Villámgyors. Körbefut, mire észreveszed. ⭕TODO⭕: Extra
 
 ---
-### ⚪ Intelligencia
+### ⚪ Intelligencia ⏹️
 
 Jelzi szellemi felkészültségedet mind helyzetfelismerés, problémamegoldó készség terén.
 
@@ -269,7 +269,7 @@ beszédéből, mozdulataiból ránézésre látszik, ha valami baja van.
 `+5:` Megingathatatlan kőszikla. Tökéletesen uralja érzelmeit, teljesen el tud vonatkoztatni tőlük, kibillenteni szinte lehetetlen. Határozott, elképzeléseit mindig megvalósítja, a lehetetlen számára ismeretlen fogalom. Képes érzelmeit olyan fokon uralni, hogy külső jeleiből (testbeszéd, hang) képtelenség lelkiállapotára következtetni - leginkább egy gépre, vagy jégcsapra hasonlít. A fentiek a mágikus detektálásokat természetesen nem befolyásolják.
 
 ---
-### ⚪ Érzékenység
+### ⚪ Érzékenység ⏹️
 
 ❌ Nem fejleszthető tulajdonság.
 

@@ -1,5 +1,7 @@
 ## 🔵 Ősi nyelv ismerete 🔁
 
+<!-- tag: md_fortely_multiple_osinyelvismerete -->
+
 → [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.osi.nyelv.ismerete)
 
 Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).

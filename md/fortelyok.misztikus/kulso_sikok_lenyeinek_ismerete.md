@@ -1,5 +1,7 @@
 ## 🟣 Külső síkok lényeinek ismerete (1) 🔁
 
+<!-- tag: md_fortely_multiple_kulsosikoklenyeinekismerete -->
+
 A külső síkok túlvilági teremtményeinek ismerete. Alapos, előtörténettel megtámogatott indoklás kell, hogy a karakter felvehesse.
 
 ### Többször felvehető 🔁

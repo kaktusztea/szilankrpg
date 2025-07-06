@@ -1,5 +1,7 @@
 ## 🟣 Titkos szervezet: (szervezet neve) 🔁
 
+<!-- tag: md_fortely_multiple_titkosszervezet -->
+
 Többször felvehető.
 Tagja vagy, vagy alaposan ismersz egy titkos szervezetet. Ez lehet
 

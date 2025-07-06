@@ -1,5 +1,7 @@
 ## 🟣 Tánc: speciális/belső stílus 🔁
 
+<!-- tag: md_fortely_multiple_tancspecialisbelsostilus -->
+
 Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális táncot takar, mint például a **Tor0ni Vérnász**. Magától értetődik, hogy speciális/belső táncstílus tanulásához kapcsolódó **Kultúrkör** fortély is szükségeltetik (lásd követelmények).
 
 ### Kiterjeszti ezeket

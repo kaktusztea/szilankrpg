@@ -1,5 +1,8 @@
 ## 🟣 Nyelvismeret (2) 🔁
 
+<!-- tag: md_fortely_multiple_nyelvismeret -->
+
+
 Kiemelt fortély, `KP`-ból nem tanulható.
 
 A [Nyelvtanulás](../kepzettsegek.szekunder/nyelvtanulas.md) képzettség által adott fortély fokokból vehető fel külön-külön minden nyelvre. A nyelvek listáját lásd [lenn](#emberi-nyelvek-list%C3%A1ja).

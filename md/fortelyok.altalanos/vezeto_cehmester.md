@@ -1,5 +1,7 @@
 ## 🟣 Vezető: Céhmester (2) 🔁
 
+<!-- tag: md_fortely_multiple_vezetocehmester -->
+
 Képes vagy egy céh vezetésére, az adott szakma termelőképességének javítására → bónusz **Szakma - (adott szakma)** képzettségre.
 
 ---

@@ -1,11 +1,13 @@
 ## közelharci fegyverek
 
 ```
-IV: Általános szabály
-    íves fegyverekre
+IV: íves fegyver;
+    páncélozatlan ellenfél
+    ellen +2 SP bónusz
+```
 
-Páncélozatlan ellenfél
-ellen +2 SP sebzésbónusz
+```
+-1 pengehossz == speciális
 ```
 
 <!-- tag: md_table_fegyver_start -->
@@ -16,7 +18,7 @@ ellen +2 SP sebzésbónusz
 | Tőr                     |    egykezes    |    `+1`     |    `S`/`V`    |   `0`   |    `0`     |  `2`  |  `4`  |  `4`  |   `6`    | közelharci | -                                                                                                                                                                                                                                                             |
 | Béltépő                 |    egykezes    |    `+1`     |      `S`      |   `0`   |    `0`     |  `2`  |  `4`  |  `4`  |   `6`    | közelharci | - Ha minimum `11` SP lett a sebződobás, akkor `+5` SP jár.<br />    <br />- Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />    <br />- Páncéltalan esetén: K6 dobás:  <br /> `1`-`2`: a fegyver elakad a testben, ha volt sebzés. |
 | Dzsambia                |    egykezes    |    `+0`     |    `V`/`S`    |   `0`   |    `0`     |  `2`  |  `4`  |  `4`  |   `6`    | közelharci | Páncélozott ellenfélnél: SP:`+0`<br />Páncél nélküli ellenfélnél: SP:`+2`                                                                                                                                                                                     |
-| Garott                  |    egykezes    | `+8` / `+4` |      `V`      |   `0`   |    `-1`    |  `0`  |  `0`  |  `0`  |    -     | közelharci | Csak orvtámadás harci taktikában használható.<br />Az Erőbónusz beszámít.                                                                                                                                                                                     |
+| Garott                  |    kétkezes    | `+8` / `+4` |      `V`      |   `0`   |    `-1`    |  `0`  |  `0`  |  `0`  |    -     | közelharci | Csak orvtámadás harci taktikában használható.<br />Az Erőbónusz beszámít.                                                                                                                                                                                     |
 | Kés                     |    egykezes    |    `+0`     |    `S`/`V`    |   `0`   |    `0`     |  `2`  |  `3`  |  `1`  |   `6`    | közelharci | -                                                                                                                                                                                                                                                             |
 | Kriszkés                |    egykezes    |  `+3`/`0`   |    `S`/`V`    |   `0`   |    `0`     |  `4`  |  `5`  |  `2`  |   `6`    | közelharci | Páncél nélküli ellenfélnél, szúrás esetén sebzése: `+3` SP<br />Fegyverrántás szituációban `+5` KÉ<br />Páncélszúrásra nem használható.                                                                                                                       |
 | Levéltőr                |    egykezes    |    `+1`     |    `S`/`V`    |   `0`   |    `0`     |  `2`  |  `4`  |  `5`  |   `6`    | közelharci | -                                                                                                                                                                                                                                                             |
@@ -32,10 +34,6 @@ ellen +2 SP sebzésbónusz
 | Vasököl / páncélkesztyű |    egykezes    |    `+0`     |      `Z`      |   `0`   |    `0`     | `-7`  | `-7`  | `-7`  |   `6`    | közelharci | Az Erőbónusz beszámít.                                                                                                                                                                                                                                        |
 
 <!-- tag: md_table_fegyver_end -->
-
-### Megjegyzések
-
-`-1 pengehossz == speciális`
 
 ---
 

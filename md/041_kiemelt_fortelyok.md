@@ -1,6 +1,6 @@
 ## Kiemelt Fortélyok
 
-<!-- tag: kiemelt_hatter -->
+<!-- tag: kiemelt_fortely -->
 
 A Kiemelt Fortélyok alá három, egyedi ismeret tartozik, amelyek nem sorolhatóak be más fortélyok közé. Mindegyik többször felvehető. Egyedi szabályaikat lásd a leírásukban.
 

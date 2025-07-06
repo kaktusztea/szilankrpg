@@ -6,7 +6,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ⚪ Tulajdonság 🔵 Képzettség 🟣 Fortély  🟡 Háttér
 
-⤴️ Fejleszthető Tulajdonság;  ⏹️ Nem fejleszthető Tulajdonság
+⏹️ Nem fejleszthető Tulajdonság
 
 💢 Csoportban végezhető képzettség
 

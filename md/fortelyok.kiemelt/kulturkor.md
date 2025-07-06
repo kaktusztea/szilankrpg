@@ -1,5 +1,7 @@
 ## 🟣 Kultúrkör (adott kultúrkör) (1) 🔁
 
+<!-- tag: md_fortely_multiple_kulturkor -->
+
 ```
 1. Tapasztalati Szinttől kezdve
   minden 2. TSz-en kapsz egyet

@@ -1,5 +1,7 @@
 ## 🟣 Belső síkok lényeinek ismerete (1) 🔁
 
+<!-- tag: md_fortely_multiple_belsosikoklenyeinekismerete -->
+
 A belső síkok túlvilági teremtményeinek ismerete. Alapos, előtörténettel megtámogatott indoklás kell, hogy a karakter felvehesse.
 
 ### Többször felvehető 🔁

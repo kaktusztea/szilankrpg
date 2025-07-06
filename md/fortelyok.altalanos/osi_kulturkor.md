@@ -1,5 +1,7 @@
 ## 🟣 Ősi kultúrkör (adott kultúrkör) (1) 🔁
 
+<!-- tag: md_fortely_multiple_osikulturkor -->
+
 ⚡ Példa: "Ősi Kultúrkör: Dawa birodalom"
 
 Többször felvehető fortély. Az Ősi kultúrkörök ismeretét külön kezeljük a [Kultúrköröktől](../fortelyok.kiemelt/kulturkor.md) és ebből nem jár ingyenes ismeret, hanem ugyanúgy tanulható, mint bármely más általános fortély.
