@@ -171,13 +171,13 @@ Szabályok
 | [Lovas íjászat](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/lovas_ijaszat.md) |  `2`   |     |     | `1f` | `2f` |      |
 
 
-| Távolsági harci fortélyok                                                                                        | Maxfok | `1` | `2` | `3`  | `4`  | `5` |
-| ---------------------------------------------------------------------------------------------------------------- | :----: | :-: | :-: | :--: | :--: | :-: |
+| Távolsági harci fortélyok                                                                                             | Maxfok | `1` | `2` | `3`  | `4`  | `5` |
+| --------------------------------------------------------------------------------------------------------------------- | :----: | :-: | :-: | :--: | :--: | :-: |
 | [Gyors lövés](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/gyors_loves.md)               |  `1`   |     |     |      | `1f` |     |
 | [Gyors újratöltés](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/gyors_ujratoltes.md)     |  `1`   |     |     | `1f` |      |     |
 | [Képzett célzás](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/kepzett_celzas.md)         |  `1`   |     |     |      | `1f` |     |
 | [Közeli lövés](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/kozeli_loves.md)             |  `1`   |     |     |      | `1f` |     |
 | [Lövés futás közben](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/loves_futas_kozben.md) |  `1`   |     |     | `1f` |      |     |
-| [Lövés reflexből](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/loves_reflexbol.md)       |  `1`   |     |     | `1f` |      |     |
+| [Lövés reflexből](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/loves_reflexbol.md)       |  `1`   |     |     |      | `1f` |     |
 | [Mozgó cél mestere](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/mozgo_cel_mestere.md)   |  `1`   |     |     |      | `1f` |     |
 | [Távoli lövés](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.tavharc/tavoli_loves.md)             |  `1`   |     |     | `1f` |      |     |
