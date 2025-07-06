@@ -420,7 +420,7 @@
         "VÉ": "16",
         "Sebesség": "8",
         "Kategória": "kardvívó",
-        "Speciális": "MK, továbbá:<br />- 2 kézre fogva: alap <br />- 1 kézre fogva:  <br />&nbsp;&nbsp;• -3 KÉ, -5 TÉ, -5 VÉ<br />&nbsp;&nbsp;• Átütés megszűnik (ha volt)<br />&nbsp;&nbsp;• Erőbónuszra -3 büntetés, azaz a SP: -3 büntetés<br />&nbsp;&nbsp;• Sebesség, marad <br />- +1-es Erő alatt forgatva:<br />&nbsp;&nbsp;• 1 pontonként -10 minden harcértékre<br />&nbsp;&nbsp;• 1:1 levonás SP-ből"
+        "Speciális": "MK"
     },
     {
         "Fegyver": "Kard, mesterkard",
@@ -490,7 +490,7 @@
         "VÉ": "13",
         "Sebesség": "7",
         "Kategória": "kardvívó",
-        "Speciális": "MK, KF: Tradíció: Slan - 6.szint<br />Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott.<br />Fegyverrántásban képzett karakter fegyverrántó szituációban +5 KÉ-t kap."
+        "Speciális": "MK, KF: Tradíció: Slan - 6.szint<br />Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott.<br />[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban KÉ:+5 bónuszt kap."
     },
     {
         "Fegyver": "Kard, Slan csatakard",
@@ -518,7 +518,7 @@
         "VÉ": "5",
         "Sebesség": "6",
         "Kategória": "kardvívó",
-        "Speciális": "Lásd Slan kard (de nem (MK))"
+        "Speciális": "xLásd Slan kard (de nem (MK))"
     },
     {
         "Fegyver": "Kard, szablya",
