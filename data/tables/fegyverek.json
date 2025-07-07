@@ -237,7 +237,7 @@
         "VÉ": "0",
         "Sebesség": "-",
         "Kategória": "közelharci",
-        "Speciális": "Csak orvtámadás harci taktikában használható."
+        "Speciális": "\\*Lásd lenn a leírást."
     },
     {
         "Fegyver": "Harci kalapács",
@@ -983,14 +983,14 @@
         "SP": "+1",
         "Erőbónusz": "0",
         "Sebzési típus": "S",
-        "Átütés": "5+Erő",
+        "Átütés": "0",
         "Pengehossz": "0.5",
         "KÉ": "4",
         "TÉ": "8",
         "VÉ": "2",
         "Sebesség": "7",
         "Kategória": "közelharci",
-        "Speciális": "\\*Erőbónusz hozzáadódik az Átütéshez"
+        "Speciális": "Áldozat földön van, Belharci szituáció, akkor automatikus \"Pontra támadás\" Manőver Ellenpróba siker. Ilyenkor az SFÉ ellene 0, mert beszúr a rések közt."
     },
     {
         "Fegyver": "Tőr, Slan",
