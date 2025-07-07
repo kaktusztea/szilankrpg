@@ -465,7 +465,7 @@
         "VÉ": "16",
         "Sebesség": "8",
         "Kategória": "kardvívó",
-        "Speciális": "Két kézzel forgatva<br>Erő követelmény: +2"
+        "Speciális": "Erő követelmény: +2"
     },
     {
         "Fegyver": "Kard, mesterkard (1K)",
@@ -495,7 +495,7 @@
         "VÉ": "13",
         "Sebesség": "8",
         "Kategória": "kardvívó",
-        "Speciális": "Két kézzel forgatva"
+        "Speciális": ""
     },
     {
         "Fegyver": "Kard, Pugoss",
