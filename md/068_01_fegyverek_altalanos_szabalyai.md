@@ -92,6 +92,17 @@ Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
 ```
 
 ---
+#### Erőbónusz/Erőhiány
+
+Bizonyos fegyverek forgatásakor a karakter [Erő](014_01_tulajdonsagok.md#-er%C5%91) tulajdonsága hozzáadódik az `SP` értékhez Sebzéskor.
+
+🔆Az egyes fegyvertáblázatokban láthatjuk, hogy mely fegyvereknél érvényesül ez a bónusz és milyen mértékben.\
+🔆 A számérték a felső maximumot jelzi! A `99` érték azt jelzi, hogy nincs felső limitje az **Erőbónusznak**.
+⚡ Példa: ha a fegyver limit `3`, akkor egy `Erő:+5` tulajdonságú harcos is csak `+3` bónuszt kap.
+
+→ [Bővebben az Erőbónuszról itt](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-%C3%A9s-er%C5%91hi%C3%A1ny)
+
+---
 
 🔗 [Közelharci fegyverek](068_02_kozelharci_fegyverek.md) →
 
