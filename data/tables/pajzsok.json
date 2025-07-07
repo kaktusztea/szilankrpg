@@ -2,6 +2,7 @@
     {
         "Pajzs név": "Kis Pajzs",
         "SP": "+0",
+        "Erőbónusz": "0",
         "KÉ": "1",
         "TÉ": "3",
         "VÉ": "10",
@@ -11,6 +12,7 @@
     {
         "Pajzs név": "Közepes Pajzs",
         "SP": "+0",
+        "Erőbónusz": "2",
         "KÉ": "2",
         "TÉ": "4",
         "VÉ": "30",
@@ -20,6 +22,7 @@
     {
         "Pajzs név": "Nagy Pajzs",
         "SP": "+0",
+        "Erőbónusz": "4",
         "KÉ": "3",
         "TÉ": "3",
         "VÉ": "50",
