@@ -1,6 +1,12 @@
 ## közelharci fegyverek
 
 ```
+Közelharci fegyvernek számít:
+ 0,5 pengénél rövidebb
+```
+
+
+```
 IV: íves fegyver;
     páncélozatlan ellenfél
     ellen +2 SP bónusz
