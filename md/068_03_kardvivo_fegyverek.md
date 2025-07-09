@@ -6,8 +6,8 @@ MK: Másfélkezes fegyverek
 
 - KÉ:-3,  TÉ:-5,  VÉ:-5
 - Átütés megszűnik (ha volt)
-- Erőbónuszra -3 büntetés,
-  azaz a Sebzésre -3 büntetés
+- Erőbónusz limit csökken
+  (általában 2-re)
 - Sebesség, marad
 ```
 
