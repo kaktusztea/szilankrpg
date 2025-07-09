@@ -100,7 +100,7 @@ Bizonyos fegyverek forgatásakor a karakter [Erő](014_01_tulajdonsagok.md#-er%C
 🔆 A számérték a felső maximumot jelzi! A `99` érték azt jelzi, hogy az **Erőbónusznak** nincs felső limitje.
 ⚡ Példa: ha a fegyver limit `3`, akkor egy `Erő:+5` Tulajdonságú harcos is csak `+3` bónuszt kap.
 
-→ [Bővebben az Erőbónuszról itt](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-%C3%A9s-er%C5%91hi%C3%A1ny)
+→ [Bővebben az Erőbónusz/Erőhátrányról itt](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit)
 
 ---
 
