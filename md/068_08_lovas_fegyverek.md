@@ -2,12 +2,12 @@
 
 <!-- tag: md_table_fegyver_start -->
 
-| **Fegyver**         | Forgatás módja | SP  | Erőbónusz | Sebzés módja | **Átütés** | **Pengehossz** | KÉ  | TÉ  | VÉ  | Sebesség | Kategória | Speciális / Megjegyzés |
-| ------------------- | :------------: | :-: | :-------: | :----------: | :--------: | :------------: | :-: | :-: | :-: | :------: | --------- | ---------------------- |
-| ⭕ Kopja, könnyű     |                |     |    `0`    |              |            |                |     |     |     |          | lovas     |                        |
-| ⭕ Kopja, lovas      |                |     |    `0`    |              |            |                |     |     |     |          | lovas     |                        |
-| ⭕ Kopja, nehézlovas |                |     |    `0`    |              |            |                |     |     |     |          | lovas     |                        |
-| ⭕ Lovas lándzsa?    |                |     |    `0`    |              |            |                |     |     |     |          | lovas     |                        |
+| **Fegyver**         | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | **Átütés** | **Pengehossz** | KÉ  | TÉ  | VÉ  | Sebesség | Kategória | Speciális / Megjegyzés |
+| ------------------- | :------------: | :-: | :-------------: | :----------: | :--------: | :------------: | :-: | :-: | :-: | :------: | --------- | ---------------------- |
+| ⭕ Kopja, könnyű     |                |     |       `0`       |              |            |                |     |     |     |          | lovas     |                        |
+| ⭕ Kopja, lovas      |                |     |       `0`       |              |            |                |     |     |     |          | lovas     |                        |
+| ⭕ Kopja, nehézlovas |                |     |       `0`       |              |            |                |     |     |     |          | lovas     |                        |
+| ⭕ Lovas lándzsa?    |                |     |       `0`       |              |            |                |     |     |     |          | lovas     |                        |
 
 <!-- tag: md_table_fegyver_end -->
 
