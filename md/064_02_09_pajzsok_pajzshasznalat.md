@@ -35,11 +35,11 @@ Ha a karakter 🗡️[Készületlen](../065_01_harci_helyzetek.md#készületlens
 
 A kézben tartott pajzs hátrányokat okoz az egyes próbáknál - méretétől függően.
 
-`Hátrány-1;2`: amennyiben az adott szituáció megkivánja, KM dönt.
+`Hátrány-1;2`: amennyiben az adott szituáció megkívánja, KM dönt.
 
 ### Pajzs hatása fizikai képzettségpróbára
 
-`Hátrány-1;2`: amennyiben az adott szituáció megkivánja, KM dönt.
+`Hátrány-1;2`: amennyiben az adott szituáció megkívánja, KM dönt.
 
 <br />
 
