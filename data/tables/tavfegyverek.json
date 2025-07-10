@@ -30,6 +30,21 @@
         "Speciális / Megjegyzés": "Követelmény: Erő +0<br />Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel<br />"
     },
     {
+        "Fegyver": "Dobócsillag",
+        "Forgatás módja": "egykezes",
+        "SP": "-5",
+        "Erőbónusz limit": "0",
+        "Sebzés módja": "S",
+        "Átütés": "0",
+        "KÉ": "12",
+        "CÉ": "+3",
+        "Osztó": "2",
+        "Hatótáv": "15m",
+        "Sebesség": "5",
+        "Kategória": "hajító",
+        "Speciális / Megjegyzés": ""
+    },
+    {
         "Fegyver": "Dobóháló",
         "Forgatás módja": "kétkezes",
         "SP": "-",
@@ -93,7 +108,7 @@
         "Fegyver": "Hajítóbárd",
         "Forgatás módja": "egykezes",
         "SP": "+2",
-        "Erőbónusz limit": "3",
+        "Erőbónusz limit": "99",
         "Sebzés módja": "Z",
         "Átütés": "0",
         "KÉ": "8",
@@ -208,21 +223,6 @@
         "Sebesség": "6",
         "Kategória": "lőfegyver",
         "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
-    },
-    {
-        "Fegyver": "Slan csillag",
-        "Forgatás módja": "egykezes",
-        "SP": "-5",
-        "Erőbónusz limit": "0",
-        "Sebzés módja": "S",
-        "Átütés": "0",
-        "KÉ": "12",
-        "CÉ": "+3",
-        "Osztó": "1",
-        "Hatótáv": "15m",
-        "Sebesség": "5",
-        "Kategória": "hajító",
-        "Speciális / Megjegyzés": ""
     },
     {
         "Fegyver": "Tőr",
