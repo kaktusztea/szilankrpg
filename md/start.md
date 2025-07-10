@@ -176,6 +176,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
   - [Sebzés](064_02_06_sebzes.md)
   - [Sebződés hatása](064_02_07_sebzodes_hatasa.md)
   - [Védő Érték regenerálódása](064_02_08_ve_regeneralodas.md)
+  - [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md)
 - [Példaharc](064_03_peldaharc.md) ⚡
 
 #### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
@@ -214,7 +215,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 - [Hajítófegyverek](068_06_hajitofegyverek.md)
 - [Lőfegyverek](068_07_lofegyverek.md)
 - [Lovas fegyverek](068_08_lovas_fegyverek.md)
-- [Pajzsok](068_09_pajzsok.md)
+- [Pajzsok](068_09_pajzs_fegyverek.md)
 
 #### 6.9 [Vértek, páncélok](069_00_vertek_pancelok.md)
 

@@ -13,6 +13,6 @@
 
 ---
 
-🔗 [Pajzsok](068_09_pajzsok.md) →
+🔗 [Pajzsok](068_09_pajzs_fegyverek.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

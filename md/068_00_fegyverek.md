@@ -21,7 +21,7 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 ---
 
 ### [Lovas fegyverek](068_08_lovas_fegyverek.md)
-### [Pajzsok](068_09_pajzsok.md)
+### [Pajzsok](068_09_pajzs_fegyverek.md)
 
 ---
 

@@ -22,7 +22,7 @@ MGT: 5 (13 - (2 x 3) + (3 x 2) = 13
 + Vértviselet – 2.fok
 ```
 
- #### Életerő Pontok
+#### Életerő Pontok (Lord Gustav)
 
 |                |                |                |                |
 | :------------: | :------------: | :------------: | :------------: |
@@ -33,14 +33,15 @@ MGT: 5 (13 - (2 x 3) + (3 x 2) = 13
 |      `2V`      |      `2V`      |      `3V`      |                |
 |      `2V`      |      `3V`      |      ✖️✖️      |      ✖️✖️      |
 
- #### Harcérték levonások
+#### Harcérték levonások `S` kategóriákban (Lord Gustav)
 
 |**\_\_S1\_\_**|**\_\_S2\_\_**|**\_\_S3\_\_**|**\_\_S4\_\_**|
 |:---:|:---:|:---:|:---:|
 | `-` |`-1TÉ`|`-11TÉ`|`-21TÉ`|
 
-
+---
 ### Tetves, a bérgyilkos
+
 ```
 KÉ: 15 TÉ: 80 VÉ: 160
 Fegyver: Rövidkard (0,5 penge)
@@ -53,8 +54,7 @@ Vért: -
 SFÉ: -
 ```
 
-
- ####  Életerő Pontok
+#### Életerő Pontok (Tetves)
 
 |     |     |     |     |
 |:---:|:---:|:---:|:---:|
@@ -65,13 +65,16 @@ SFÉ: -
 |`1V`|`1V`|✖️✖️|✖️✖️|
 |✖️✖️|✖️✖️|✖️✖️|✖️✖️|
 
- #### Harcérték levonások
+#### Harcérték levonások `S` kategóriákban (Tetves)
 
 |**\_\_S1\_\_**|**\_\_S2\_\_**|**\_\_S3\_\_**|**\_\_S4\_\_**|
 |:---:|:---:|:---:|:---:|
 | `-` |`-4TÉ`|`-14TÉ`|`-24TÉ`|
 
+<br />
 
+---
+---
 ### Lord Gustav és Tetves részletes összecsapása
 
 Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a meglepetés `TÉ:+20` bónuszát kapja meg.
@@ -83,23 +86,25 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 ---
 #### Gustav első sebe
 
-Tetves dob: `73`. Összesen `80+20+73= 173`, ami meghaladja a lovag VÉ-jét: **talált**!
+Tetves dob: `73`. Összesen `80+20+73= 173`, ami meghaladja a lovag `Védő Értékét`: **Talált**!
 
 ```
-Tetves Sebzés dobás: k20+2  → 20 SP (Vágó)
+Tetves Sebzés dobás:
+  → k20+2  → 20 SP (Vágó)
 ```
 
-Gustav Páncéldobást végez. Teste `80%`-ban van befedve a láncing anyagával, így ha `k10`-en `1-8`-ig dob, akkor a csapás védett területet ért.\
+Gustav **Páncéldobást** végez. Teste `80%`-ban van befedve a láncing anyagával, így ha `k10`-en `1-8`-ig dob, akkor a csapás védett területet ért.\
 Gustav dob: `6`, így a páncél **SFÉ**-je beszámít.
 
-A lovag SFÉ-je vágófegyverek ellen `13`, a végső **SP** így:
+A lovag `SFÉ`-je vágófegyverek ellen `13`, a végső `SP` így:
+
 ```
 20-13 = 7SP
 
 7SP → -3 ÉP seb és -10 VÉ
 ```
 
-A `7 SP` a második Sebzés-kategóriába tartozik, ami `3 ÉP`-s (❗) sebet és (`-10 VÉ`) büntetést jelent.
+A `7 SP` a második Sebzés-kategóriába tartozik, ami `3 ÉP`-s (❗) sebet és (`-10 VÉ`) csökkenést jelent.
 
 A lovag ezzel a sebesüléssel még az `S1` egészség-kategóriában marad, így `TÉ` büntetést egyelőre nem kap. Ugyanennek a sebnek a hatására egy gyengébb fizikumú (`ÉP: 8`) ember már átcsúszna az `S2` kategóriába.
 
@@ -111,7 +116,8 @@ A lovag ezzel a sebesüléssel még az `S1` egészség-kategóriában marad, íg
 Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `144`-re. Rosszul mozdul és bekap egy újabb sebet. **Páncéldobása** (`9`) ezúttal sikertelen, a csapás fedetlen területet ért (pl. alkar), így az SFÉ-je ezúttal nem számít!
 
 ```
-Tetves Sebzés dobás: k20+2 → 11 SP (Vágó)
+Tetves Sebzés dobás:
+  → k20+2 → 11 SP (Vágó)
   → -6 ÉP seb és -15 VÉ
 ```
 
@@ -129,7 +135,9 @@ A helyzet kezd veszélyessé válni: a lovag elvesztett több, mint `30`-at **V�
 Bár sikerül sebet ejtenie támadóján (sajnos csak `3 ÉP`-t, ritka szerencsétlen dobás (`3`) volt), a sors nem kedvez a lovagnak, a gyilkos is belevág az oldalába a láncingen keresztül, bordák hasadnak.
 
 ```
-SP: 19;  SFÉ után: 6 SP  → -3 ÉP, -10 VÉ
+SP: 19
+SFÉ után: 6 SP
+  → -3 ÉP, -10 VÉ
 ```
 
 Gustavnak `6 ÉP`-je marad és `S3`-as kategóriába zuhan (további `-10 TÉ` büntetés), valamint elveszít még `10 VÉ`-t. Eddig összesen `12 ÉP`-t vesztett!
@@ -157,7 +165,8 @@ Gustav támadása: 64+97 = 151
 ```
 
 ```
-Gustav sebzése: k20 + 5 + 3 = 19 SP
+Gustav sebzése:
+  k20 + 5 + 3 = 19 SP
 ```
 
 Tetvesnek nincs vértje, ezért a `19 SP` 1:1-ben számít → `12 ÉP` és `-25 VÉ`. Tetvesnek `1 ÉP`-je marad, majdnem kettészelték!

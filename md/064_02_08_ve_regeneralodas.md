@@ -21,6 +21,6 @@ Mivel nem fáradnak szellemileg, legfeljebb ideiglenes hátrányba kerülnek, ez
 
 ---
 
-🔗 [Példaharc](064_03_peldaharc.md) →
+🔗 [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
