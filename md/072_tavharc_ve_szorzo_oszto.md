@@ -49,21 +49,21 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 ---
 #### Szorzó - Méret módosító
 
-| Célpont mérete           | Módosító |
-| ------------------------ | :------: |
-| Célpont fedezék mögött   |   +2x    |
-| Pénzérme                 |   +7x    |
-| Alma                     |   +6x    |
-| Fej, Dinnye, Macska      |   +5x    |
-| Hiúz                     |   +3x    |
-| Sas                      |   +2x    |
-| Törpe                    |   +1x    |
-| Átlagos ember/elf méretű |   +0x    |
-| Ogre                     |   -1x    |
-| Ló oldalról              |   -2x    |
-| Lovas                    |   -3x    |
-| Bölény                   |   -3x    |
-| Óriás                    |   -5x    |
+| Célpont mérete                | Módosító |
+| ----------------------------- | :------: |
+| Célpont fedezék mögött        |   +2x    |
+| Pénzérme                      |   +7x    |
+| Alma                          |   +6x    |
+| Fej, Dinnye, Macska           |   +5x    |
+| Hiúz                          |   +3x    |
+| Sas                           |   +2x    |
+| Törpe                         |   +1x    |
+| Átlagos ember/elf méretű      |   +0x    |
+| Ogre                          |   -1x    |
+| Ló oldalról / 2 harcoló ember |   -2x    |
+| Lovas                         |   -3x    |
+| Bölény                        |   -3x    |
+| Óriás                         |   -5x    |
 
 ---
 #### Szorzó - Észlelhetőség módosító

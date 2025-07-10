@@ -15,8 +15,8 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 🌟 **Hatás**:
 - Képzetlen pajzshasználó. A pajzs `VÉ` **felét** kapja csak meg ↓
 - **Kis pajzs** levonás: `TÉ:-10`
-- **Közepes pajzs** levonás: `TÉ:-15`
-- **Nagy pajzs** levonás: `TÉ:-20`
+- **Közepes pajzs** levonás: `TÉ:-20`
+- **Nagy pajzs** levonás: `TÉ:-30`
 
 ---
 ### 1. fok
@@ -26,16 +26,35 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 🌟 **Hatás**:
 - Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
 - **Kis pajzs** levonás: `0`
-- **Közepes pajzs** levonás: `TÉ:-5`
-- **Nagy pajzs** levonás: `TÉ:-10`
+- **Közepes pajzs** levonás: `TÉ:-10`
+- **Nagy pajzs** levonás: `TÉ:-20`
 
 ---
 ### 2. fok
 
-🔒 **Követelmény**: Erő: `+1`
+🔒 **Követelmény**:
+- Erő: `+1`
+- Harcmodor: `5.szint`
 
 🌟 **Hatás**:
 - Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
+- **Kis pajzs** levonás: `0`
+- **Közepes pajzs** levonás: `0`
+- **Nagy pajzs** levonás: `-10`
+- Támadhatsz is a pajzzsal, ha csak pajzs van nálad, akkor azzal.
+- Ha fegyver is van nálad: akkor VAGY a fegyverrel VAGY a pajzzsal támadhatsz.
+- Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket.
+
+---
+### 3. fok
+
+🔒 **Követelmény**:
+- Erő: `+1`
+- Harcmodor: `8.szint`
+
+🌟 **Hatás**:
+- Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
+- Extra `VÉ:+5` minden pajzshoz
 - **Kis pajzs** levonás: `0`
 - **Közepes pajzs** levonás: `0`
 - **Nagy pajzs** levonás: `0`

@@ -35,15 +35,11 @@ Ha a karakter 🗡️[Készületlen](../065_01_harci_helyzetek.md#készületlens
 
 A kézben tartott pajzs hátrányokat okoz az egyes próbáknál - méretétől függően.
 
-- Kis pajzs: kézben: `0` / háton: `0`
-- Közepes pajzs: kézben `-2` / háton: `-1`
-- Nagy pajzs: kézben `-4` / háton: `-3`
+`Hátrány-1;2`: amennyiben az adott szituáció megkivánja, KM dönt.
 
 ### Pajzs hatása fizikai képzettségpróbára
 
-- Kis pajzs: kézben `-1` / háton: `0`
-- Közepes pajzs: kézben`-3` / háton: `-2`
-- Nagy pajzs: kézben `-6` / háton: `-4`
+`Hátrány-1;2`: amennyiben az adott szituáció megkivánja, KM dönt.
 
 <br />
 
