@@ -14,13 +14,14 @@ MIN,MAX: [-2, +2]
 
 Az `Előny` és `Hátrány`  speciális, kockadobásokat érintő Hatások.\
 Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
-- Támadó Dobás
-- Manőver
+- Támadó dobás
+- Célzó dobás
+- Manőver Ellenpróba dobás
 - Tulajdonságpróba
 - Képzettségpróba (mágia is)
-- Sebzés
+- Sebzésdobás
 - Mágia Akarata
-- Mágiaellenállás
+- Mágiaellenállás dobás
 
 🔆 Halmozódásuk esetén is az alábbi alsó és felső korlátuk érvényes: `[-2, +2]`.
 
