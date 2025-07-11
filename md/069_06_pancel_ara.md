@@ -1,8 +1,9 @@
 ## Páncél Ára
 
 ```
-1x == minden tekintetből 
- átlagos bőr mellvért ára
+1x == minden tekintetben 
+      átlagos bőr mellvért ára
+   == 1 arany
 ```
 
 A páncél teljes árát a következőképpen kaphatjuk meg:
