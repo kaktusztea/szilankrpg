@@ -15,14 +15,14 @@ A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver           | Forgatás módja |    SP     | Erőbónusz limit | Sebzés módja | Átütés  | Pengehossz |  KÉ  |  TÉ  |  VÉ  | Sebesség |  Kategória  | Speciális                                                                         |
-| ----------------- | :------------: | :-------: | :-------------: | :----------: | :-----: | :--------: | :--: | :--: | :--: | :------: | :---------: | --------------------------------------------------------------------------------- |
-| Alabárd           |    kétkezes    |   `+4`    |      `99`       |  `S+Z`/`V`   |  `3/6`  |    `3`     | `12` | `28` | `28` |   `9`    | lándzsavívó | Talán a legjobb a páncélok ellen. A `6` Átütés Zúzás esetén érvényesül.           |
-| Bot, hosszú       |    kétkezes    |   `+1`    |       `2`       |     `Z`      |   `0`   |    `2`     | `14` | `16` | `24` |   `7`    | lándzsavívó |                                                                                   |
-| Lándzsa           |    kétkezes    | `+2`/`+4` |      `99`       |     `S`      | `4`/`0` |    `4`     | `14` | `32` | `32` |   `7`    | lándzsavívó | spec: lásd a hegyeket                                                             |
-| Pika              |    kétkezes    | `+2`/`+4` |       `3`       |     `S`      | `4`/`0` |    `8`     | `18` | `40` | `40` |   `10`   | lándzsavívó | Ha közrefognak, a fegyver az egyik (választott) támadó ellen `0` harcértékű lesz. |
-| Szigony, egykezes |    egykezes    |   `+2`    |       `3`       |     `S`      |   `0`   |    `2`     | `5`  | `10` | `14` |   `8`    | lándzsavívó |                                                                                   |
-| Szigony, kétkezes |    kétkezes    |   `+4`    |      `99`       |     `S`      |   `2`   |    `3`     | `10` | `22` | `26` |   `9`    | lándzsavívó |                                                                                   |
+| Fegyver           | Forgatás módja |    SP     | Erőbónusz limit | Sebzés módja | Átütés  | Íves | Pengehossz |  KÉ  |  TÉ  |  VÉ  | Sebesség |  Kategória  | Speciális                                                                         |
+| ----------------- |:--------------:|:---------:|:---------------:|:------------:|:-------:|:----:|:----------:|:----:|:----:|:----:|:--------:|:-----------:| --------------------------------------------------------------------------------- |
+| Alabárd           |    kétkezes    |   `+4`    |      `99`       |  `S+Z`/`V`   |  `3/6`  | `0`  |    `3`     | `12` | `28` | `28` |   `9`    | lándzsavívó | Talán a legjobb a páncélok ellen. A `6` Átütés Zúzás esetén érvényesül.           |
+| Bot, hosszú       |    kétkezes    |   `+1`    |       `2`       |     `Z`      |   `0`   | `0`  |    `2`     | `14` | `16` | `24` |   `7`    | lándzsavívó |                                                                                   |
+| Lándzsa           |    kétkezes    | `+2`/`+4` |      `99`       |     `S`      | `4`/`0` | `0`  |    `4`     | `14` | `32` | `32` |   `7`    | lándzsavívó | spec: lásd a hegyeket                                                             |
+| Pika              |    kétkezes    | `+2`/`+4` |       `3`       |     `S`      | `4`/`0` | `0`  |    `8`     | `18` | `40` | `40` |   `10`   | lándzsavívó | Ha közrefognak, a fegyver az egyik (választott) támadó ellen `0` harcértékű lesz. |
+| Szigony, egykezes |    egykezes    |   `+2`    |       `3`       |     `S`      |   `0`   | `0`  |    `2`     | `5`  | `10` | `14` |   `8`    | lándzsavívó |                                                                                   |
+| Szigony, kétkezes |    kétkezes    |   `+4`    |      `99`       |     `S`      |   `2`   | `0`  |    `3`     | `10` | `22` | `26` |   `9`    | lándzsavívó |                                                                                   |
 
 <!-- tag: md_table_fegyver_end -->
 

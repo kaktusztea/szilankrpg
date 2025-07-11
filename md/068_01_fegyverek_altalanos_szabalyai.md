@@ -53,14 +53,12 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
   - maximum: `8` penge
 
 ---
-### Elsődleges sebzési típus
+### Sebzéstípusok
 
-Lásd: [Harc menete → Elsődleges sebzési típus](064_02_05_fegyver_sebzes_jellege.md#elsődleges-sebzési-típus)
-
----
-### Egyenjogú támadási típus
-
-Lásd: [Harc menete → Egyenjogú támadási típus](064_02_05_fegyver_sebzes_jellege.md#egyenjogú-sebzési-típus)
+- [Elsődleges](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-els%C5%91dleges)
+- [Egyenjogú](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-egyenjog%C3%BA)
+- [Másodlagos](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos)
+- [Alkalmatlan](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-alkalmatlan)
 
 ---
 ### Különleges fegyver szabály
@@ -71,7 +69,7 @@ Jelölése: KF
 
 Egyes – speciális – fegyvereknél van megemlítve ez a szabály. Jelentése: a táblázatban leírt harcértékek csak akkor érvényesek, ha speciális iskolában, vagy onnan származó mestertől megtanulta a karakter a fegyver speciális fogásait. Ez részben előtörténet követelmény, amelyet fel kell tüntetni a karakterlapon, másrészt a fegyver Megjegyzés mezőjében szerepel, milyen más, számszerű követelménye van. Bánjunk ezzel a követelménnyel szigorúan! Ha ez nincs meg, a KM dönt, hogy milyen – alacsonyabb – harcértékekkel forgathatja a karakter a fegyvert – már ha egyáltalán...
 
-A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) `2.` foka az adott fegyverre. Ezen speciális fogásokat fortélyok formájában tanulhatja meg a harcos. Leírásukat lásd a [harci fortélyoknál](044_harci_fortelyok.md). Azok a fegyverek számítanak „Speciálisnak”, amelyek komment mezőjében szerepel a `KF` jelölés.
+A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) `2.foka` az adott fegyverre. Ezen speciális fogásokat fortélyok formájában tanulhatja meg a harcos. Leírásukat lásd a [harci fortélyoknál](044_harci_fortelyok.md). Azok a fegyverek számítanak „Speciálisnak”, amelyek komment mezőjében szerepel a `KF` jelölés.
 
 ---
 ### Puszta kéz

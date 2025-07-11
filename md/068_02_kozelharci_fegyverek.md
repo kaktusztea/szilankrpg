@@ -13,8 +13,9 @@ IV: íves fegyver;
 
 ```
 KF: Különleges felkészítés
-    Tradíció követelmény
+  - Tradíció követelmény
     (Slan / Fejvadász)
+  - Mf: 2.fok követelmény
 ```
 
 ```
@@ -25,9 +26,9 @@ KF: Különleges felkészítés
 
 | Fegyver                 | Forgatás módja |     SP      | Erőbónusz limit | Sebzési típus | Átütés | Íves | Pengehossz |  KÉ   |  TÉ   |  VÉ   | Sebesség | Kategória  | Speciális                                                                                                                                                                                                                                                        |
 | ----------------------- | :------------: | :---------: | :-------------: | :-----------: | :----: | :--: | :--------: | :---: | :---: | :---: | :------: | :--------: | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Puszta kéz              |    egykezes    |    `-5`     |      `99`       |      `Z`      |  `0`   | `0`  |    `0`     | `-10` | `-10` | `-10` |   `6`    | közelharci | FP sebesülést okoz.<br />Minden `5`-ik FP `1` ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya.                                                                                                                                          |
+| Puszta kéz              |    egykezes    |    `-5`     |      `99`       |      `Z`      |  `0`   | `0`  |    `0`     | `-10` | `-10` | `-10` |   `6`    | közelharci | `FP` sebesülést okoz.<br />Minden `5.FP` `1 ÉP` elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya.                                                                                                                                           |
 | Tőr                     |    egykezes    |    `+1`     |      `99`       |    `S`/`V`    |  `0`   | `0`  |    `0`     |  `2`  |  `4`  |  `4`  |   `6`    | közelharci | -                                                                                                                                                                                                                                                                |
-| Béltépő                 |    egykezes    |    `+1`     |       `2`       |      `S`      |  `0`   | `0`  |    `0`     |  `2`  |  `4`  |  `4`  |   `6`    | közelharci | - Ha minimum `11` SP sebzést elérsz, akkor további `+5` SP jár.<br /><br />- Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />    <br />- Páncéltalan esetén: `K6` dobás:  <br /> `1`-`2`: a fegyver elakad a testben, ha volt sebzés. |
+| Béltépő                 |    egykezes    |    `+1`     |       `2`       |      `S`      |  `0`   | `2`  |    `0`     |  `2`  |  `4`  |  `4`  |   `6`    | közelharci | - Ha minimum `11` SP sebzést elérsz, akkor további `+5 SP` jár.<br /><br />- Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />    <br />- Páncéltalan esetén: `K6` dobás:  <br /> `1`-`2`: a fegyver elakad a testben, ha volt sebzés. |
 | Dzsambia                |    egykezes    |    `+0`     |       `0`       |    `V`/`S`    |  `0`   | `1`  |    `0`     |  `2`  |  `4`  |  `4`  |   `6`    | közelharci |                                                                                                                                                                                                                                                                  |
 | Garott                  |    kétkezes    | `+8` / `+4` |       `5`       |      `V`      |  `0`   | `0`  |    `-1`    |  `0`  |  `0`  |  `0`  |    -     | közelharci | \*Lásd lenn a leírást.                                                                                                                                                                                                                                           |
 | Kés                     |    egykezes    |    `+0`     |       `2`       |    `S`/`V`    |  `0`   | `0`  |    `0`     |  `2`  |  `3`  |  `1`  |   `6`    | közelharci | -                                                                                                                                                                                                                                                                |
