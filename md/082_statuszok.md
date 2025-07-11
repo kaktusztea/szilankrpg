@@ -19,6 +19,7 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 - Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Késztetés: (1) Sugallat, (2) Vágy, (3) Kényszer
 - Mérgezés\*
+- Pajzs akadályoztatása (1,2)
 - Rosszullét (1) Közepes, (2) Erős
 - Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
 - Sérült: (1) S3, (2) S4
@@ -282,7 +283,17 @@ Az ilyen karakter kötelezően
 ---
 ### ✴️ Mérgezés
 
-Lásd a [150_meregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait**.
+Lásd a [Méregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait**.
+
+<br />
+
+---
+### ✴️ Pajzs akadályoztatása (1, 2)
+
+A pajzs viselése nehezítheti a Tulajdonságptóbákat és Képzettségpróbákat. Bővebben lásd a [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) fejezet idevágó részeit:
+
+- [Pajzs hatása fizikai Tulajdonságpróbákra](064_02_09_pajzsok_pajzshasznalat.md#pajzs-hat%C3%A1sa-fizikai-tulajdons%C3%A1gpr%C3%B3b%C3%A1kra)
+- [Pajzs hatása fizikai képzettségpróbára](064_02_09_pajzsok_pajzshasznalat.md#pajzs-hat%C3%A1sa-fizikai-tulajdons%C3%A1gpr%C3%B3b%C3%A1kra)
 
 <br />
 
