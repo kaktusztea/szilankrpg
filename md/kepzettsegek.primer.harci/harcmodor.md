@@ -13,7 +13,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 
 ### Próba
 
-Nincs, csak biztos tudásból
+Nincs, csak biztos tudásból.
 
 ### Speciális
 
@@ -30,3 +30,10 @@ A képzettség minden `3. szintje` után `1` [Manőver Pont](../018_03_manover_p
 | Mester (9)       | ⭕xyz <br /> **Példa**: x                                                                                                                             | Ügyesség: `2` |
 | Nagymester (12)  | Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.                                                                                     | Ügyesség: `3` |
 | Élő legenda (15) | Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz.<br />Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz). | Ügyesség: `3` |
+
+---
+### Hajítás harcmodor bónuszai
+
+- `9.szint`: ⭕TODO ⭕
+- `12.szint`: bármilyen hajításra alkalmatlan tárgyat a Dobótőr értékeivel tudsz dobni.
+- `15.szint`: ⭕TODO ⭕
