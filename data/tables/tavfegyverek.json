@@ -253,5 +253,20 @@
         "Sebesség": "8",
         "Kategória": "lőfegyver",
         "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
+    },
+    {
+        "Fegyver": "🔆 Nem dobásra készített tárgy",
+        "Forgatás módja": "egykezes",
+        "SP": "-5;2",
+        "Erőbónusz limit": "0-2",
+        "Sebzés módja": "S/V/Z",
+        "Átütés": "0",
+        "KÉ": "0-6",
+        "CÉ": "+0",
+        "Osztó": "1",
+        "Hatótáv": "5-10m + Erő",
+        "Sebesség": "6-9",
+        "Kategória": "hajító",
+        "Speciális / Megjegyzés": ""
     }
 ]
