@@ -39,7 +39,7 @@ A Harcrendszer végén található [fegyvertáblázatokban](068_00_fegyverek.md#
 <br />
 
 ---
-### [Sebzéstípus: elsődleges](/065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-els%C5%91dleges)
+### [Sebzéstípus: elsődleges](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-els%C5%91dleges)
 
 Ez egy Harci helyzet (státusz).\
 Majdnem minden fegyver rendelkezik egy **elsődleges sebzési típussal**, pl. szúrás. Ha emellett más típusú támadásra is alkalmas, az legtöbbször másodlagos lehet (kivételeket lásd lejjebb az "Egyenjogú sebzési típus" bekezdésben). Ha a karakter nem jelenti be, hogy milyen típusú támadást akar leadni, akkor mindig az elsődleges sebzési típust vesszük megtörténtnek.
