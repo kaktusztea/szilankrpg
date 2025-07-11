@@ -23,9 +23,9 @@ Harcban, támadáskor a játékos dob `k100`-al, majd a kapott értéket hozzáa
 Támadó: +5 SP
 ```
 
-A `00`-ás (100-as) támadó dobás kiemelt jelentőséggel bír. Ez szimbolizálja a „tökéletes csapást”, mely csak rendkívül ritkán következik be. Ilyenkor nem számít az ellenfél vértjének SFÉ-je (`SFÉ=0`), a támadó pedig `+5 SP` bónuszt adhat sebzéséhez. A fentiek alól kivételt képez a Slan „Aranyharang” technika használata és az Elemi Erő aura, de ott is érvényes a `+5` sebzés. 
+A `00`-ás (100-as) támadó dobás kiemelt jelentőséggel bír. Ez szimbolizálja a „tökéletes csapást”, mely csak rendkívül ritkán következik be. Ilyenkor nem számít az ellenfél vértjének SFÉ-je (`SFÉ=0`), a támadó pedig `+5 SP` bónuszt adhat sebzéséhez. A fentiek alól **nem képez kivételt** a Slan „Aranyharang” technika használata és az Elemi Erő aura sem és ott is érvényes a `+5` sebzés. 
 
-Fontos viszont megemlíteni, hogy amennyiben a `00`-ás dobás ellenére sem sikerült az ellenféllel szemben **Találatot** elérni, akkor az okozott sebzés kimerül a jutalomként kapott `+5` SP-ben (`1ÉP + 5 VÉ csökkentés`) SFÉ természetesen ez esetben sincs.
+Fontos viszont megemlíteni, hogy amennyiben a `00`-ás dobás ellenére sem sikerült az ellenféllel szemben **Találatot** elérni, akkor az okozott sebzés kimerül a jutalomként kapott `+5 SP`-ben (`1 ÉP + 5 VÉ csökkentés`) - `SFÉ` természetesen ez esetben sincs.
 
 ```
 "Fárasztó taktika" alkalmazásakor
