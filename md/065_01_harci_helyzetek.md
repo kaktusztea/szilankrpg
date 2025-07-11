@@ -333,7 +333,9 @@ Hátrány-1 Sebzésdobásra
 Hátrány-1 CÉ dobásra
 ```
 
-Például sámli hajítása. Az ilyen tárgyak harcértékei 
+Például sámli hajítása. Az ilyen tárgyak harcértékei amúgy is egy szűk, alsó tartományban mozognak. Lásd: [Nem dobásra készített tárgy](068_06_hajitofegyverek.md#-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgy).
+
+Ehhez jön még hozzá a fenti két dobásmódosító.
 
 ---
 ### Hátulról támadás
