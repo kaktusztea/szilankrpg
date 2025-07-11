@@ -6,6 +6,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "S+Z/V",
         "Átütés": "3/6",
+        "Íves": "0",
         "Pengehossz": "3",
         "KÉ": "12",
         "TÉ": "28",
@@ -21,6 +22,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "Z",
         "Átütés": "0",
+        "Íves": "0",
         "Pengehossz": "0",
         "KÉ": "1",
         "TÉ": "6",
@@ -36,7 +38,7 @@
         "Erőbónusz limit": "2",
         "Sebzési típus": "S",
         "Átütés": "0",
-        "Íves": "0",
+        "Íves": "2",
         "Pengehossz": "0",
         "KÉ": "2",
         "TÉ": "4",
@@ -52,6 +54,7 @@
         "Erőbónusz limit": "2",
         "Sebzés módja": "Z",
         "Átütés": "0",
+        "Íves": "0",
         "Pengehossz": "1",
         "KÉ": "4",
         "TÉ": "10",
@@ -67,6 +70,7 @@
         "Erőbónusz limit": "2",
         "Sebzés módja": "Z",
         "Átütés": "0",
+        "Íves": "0",
         "Pengehossz": "2",
         "KÉ": "14",
         "TÉ": "16",
@@ -82,6 +86,7 @@
         "Erőbónusz limit": "0",
         "Sebzés módja": "Z",
         "Átütés": "0",
+        "Íves": "0",
         "Pengehossz": "0.5",
         "KÉ": "6",
         "TÉ": "9",
@@ -97,6 +102,7 @@
         "Erőbónusz limit": "4",
         "Sebzés módja": "Z",
         "Átütés": "0",
+        "Íves": "0",
         "Pengehossz": "1",
         "KÉ": "4",
         "TÉ": "12",
@@ -112,6 +118,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "Z",
         "Átütés": "5",
+        "Íves": "0",
         "Pengehossz": "1.5",
         "KÉ": "1",
         "TÉ": "20",
@@ -127,6 +134,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "Z",
         "Átütés": "0",
+        "Íves": "0",
         "Pengehossz": "1",
         "KÉ": "3",
         "TÉ": "15",
@@ -142,6 +150,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "Z",
         "Átütés": "3",
+        "Íves": "0",
         "Pengehossz": "1",
         "KÉ": "5",
         "TÉ": "14",
@@ -157,6 +166,7 @@
         "Erőbónusz limit": "4",
         "Sebzés módja": "Z",
         "Átütés": "2",
+        "Íves": "0",
         "Pengehossz": "0.5",
         "KÉ": "4",
         "TÉ": "9",
@@ -172,6 +182,7 @@
         "Erőbónusz limit": "4",
         "Sebzés módja": "Z",
         "Átütés": "2",
+        "Íves": "0",
         "Pengehossz": "0.5",
         "KÉ": "4",
         "TÉ": "11",
@@ -187,6 +198,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "Z",
         "Átütés": "4",
+        "Íves": "0",
         "Pengehossz": "1.5",
         "KÉ": "4",
         "TÉ": "18",
@@ -202,6 +214,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "Z",
         "Átütés": "10",
+        "Íves": "0",
         "Pengehossz": "1",
         "KÉ": "5",
         "TÉ": "14",
@@ -249,6 +262,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "Z",
         "Átütés": "0",
+        "Íves": "0",
         "Pengehossz": "1.5",
         "KÉ": "1",
         "TÉ": "20",
@@ -578,7 +592,7 @@
         "VÉ": "8",
         "Sebesség": "7",
         "Kategória": "kardvívó",
-        "Speciális": ""
+        "Speciális": "MK<br>KF: Tradíció: Slan - 6.szint<br />Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül."
     },
     {
         "Fegyver": "Kard, Slan 2K",
@@ -594,7 +608,7 @@
         "VÉ": "13",
         "Sebesség": "7",
         "Kategória": "kardvívó",
-        "Speciális": "KF: Tradíció: Slan - 6.szint<br />Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott.<br />[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban KÉ:+5 bónuszt kap."
+        "Speciális": "KF: Tradíció: Slan - 6.szint<br />Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.<br />[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban KÉ:+5 bónuszt kap (csak kétkezes forgatási módban)."
     },
     {
         "Fegyver": "Kard, Slan csatakard",
@@ -728,6 +742,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "S",
         "Átütés": "4/0",
+        "Íves": "0",
         "Pengehossz": "4",
         "KÉ": "14",
         "TÉ": "32",
@@ -768,7 +783,7 @@
         "Speciális / Megjegyzés": ""
     },
     {
-        "Fegyver": "Mara-sequor",
+        "Fegyver": "Mara-sequor 1K",
         "Forgatás módja": "egykezes",
         "SP": "+6",
         "Erőbónusz limit": "3",
@@ -781,10 +796,10 @@
         "VÉ": "11",
         "Sebesség": "7",
         "Kategória": "kardvívó",
-        "Speciális": "MK,KF: Tradíció: Fejvadász - 9.szint"
+        "Speciális": "MK,<br>KF: Tradíció: Fejvadász - 9.szint"
     },
     {
-        "Fegyver": "Mara-sequor",
+        "Fegyver": "Mara-sequor 2K",
         "Forgatás módja": "kétkezes",
         "SP": "+10",
         "Erőbónusz limit": "99",
@@ -797,7 +812,7 @@
         "VÉ": "16",
         "Sebesség": "7",
         "Kategória": "kardvívó",
-        "Speciális": "MK,KF: Tradíció: Fejvadász - 9.szint<br>Mágikus fém jellege már benne van a harcértékekben."
+        "Speciális": "KF: Tradíció: Fejvadász - 9.szint<br>Mágikus fém jellege már benne van a harcértékekben."
     },
     {
         "Fegyver": "Markolatgomb",
@@ -854,6 +869,7 @@
         "Erőbónusz limit": "3",
         "Sebzés módja": "S",
         "Átütés": "4/0",
+        "Íves": "0",
         "Pengehossz": "8",
         "KÉ": "18",
         "TÉ": "40",
@@ -908,7 +924,7 @@
         "VÉ": "-10",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "FP sebesülést okoz.<br />Minden 5-ik FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya."
+        "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya."
     },
     {
         "Fegyver": "Ramiera",
@@ -949,6 +965,7 @@
         "Erőbónusz limit": "3",
         "Sebzés módja": "S",
         "Átütés": "0",
+        "Íves": "0",
         "Pengehossz": "2",
         "KÉ": "5",
         "TÉ": "10",
@@ -964,6 +981,7 @@
         "Erőbónusz limit": "99",
         "Sebzés módja": "S",
         "Átütés": "2",
+        "Íves": "0",
         "Pengehossz": "3",
         "KÉ": "10",
         "TÉ": "22",
