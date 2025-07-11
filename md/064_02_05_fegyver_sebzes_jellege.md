@@ -2,7 +2,7 @@
 
 Számos paraméter befolyásolja az éppen forgatott fegyver aktuális sebzését.
 
-#### Erőbónusz, Erőhiány, Erőbónusz limit
+### Erőbónusz, Erőhiány, Erőbónusz limit
 
 ```
 Az Erő tulajdonság 1:1-ben
@@ -17,7 +17,7 @@ Egyes fegyverek forgatása esetén a karakter fizikai ereje megnöveli az okozot
 [Erőbónusz limit](068_01_fegyverek_altalanos_szabalyai.md#er%C5%91b%C3%B3nusz-limit): egyes fegyvereknél hiába a magas **Erő** Tulajdonság egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Karakteralkotó](start.md#karakteralkot%C3%B3) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
 
 ---
-#### Sebzés jellege, páncél SFÉ jellege
+### Sebzés jellege, páncél SFÉ jellege
 
 ```
 Szúró, Vágó és Zúzó sebzés
@@ -30,24 +30,35 @@ A harcban használt fegyverek igen sokszínűek, a `Szilánk` rendszere különb
 Egyes fegyverek többféle sebzési formát is lehetővé tesznek, gondoljunk csak a jól ismert hosszú kardra, amellyel szúrni is, vágni is lehet.
 
 ---
-#### Elsődleges sebzési típus
+### Sebzéstípus: elsődleges
 
 ```
-TÉ: -10  → másodlagos sebzési típussal
-TÉ: -20  → alkalmatlan sebzési típussal
-
 Jelölése "/" jellel: például "V/S"
 V: Vágás;  S: Szúrás;  Z: Zúzás
 ```
 
+Ez egy Harci helyzet (státusz).\
 Majdnem minden fegyver rendelkezik egy **elsődleges sebzési típussal**, pl. szúrás. Ha emellett más típusú támadásra is alkalmas, az legtöbbször másodlagos lehet (kivételeket lásd lejjebb az "Egyenjogú sebzési típus" bekezdésben). Ha a karakter nem jelenti be, hogy milyen típusú támadást akar leadni, akkor mindig az elsődleges sebzési típust vesszük megtörténtnek.
 
-Például a hosszú kard: vágás/szúrás (`V/S`). Ekkor az alapértelmezett sebzési típus a vágás. Ha a karakter bejelenti, hogy szúrni szeretne, akkor azt `TÉ:-10` módosítóval teheti meg. Ha pedig zúzni szeretne (amire a fegyver alkalmatlan), akkor – ha a KM engedi – azt `TÉ:-20`-szal teheti meg.
+Például a "Hosszú kard: vágás/szúrás (`V/S`)". Ekkor az alapértelmezett, elsődleges sebzési típus a **Vágás**. 
+
+### Sebzéstípus: másodlagos
+
+Ez egy Harci helyzet (státusz).\
+
+
+TÉ: -10  → másodlagos sebzési típussal
+TÉ: -20  → alkalmatlan sebzési típussal
+
+
+Ha a karakter bejelenti, hogy szúrni szeretne, akkor azt `TÉ:-10` módosítóval teheti meg. Ha pedig zúzni szeretne (amire a fegyver alkalmatlan), akkor – ha a KM engedi – azt `TÉ:-20`-szal teheti meg.
+
+### Sebzéstípus: alkalmatlan
 
 A Harcrendszer végén található **Fegyvertáblázatban** minden fegyver sebzési típusa megtalálható.
 
 ---
-#### Egyenjogú sebzési típus
+### Sebzéstípus: egyenjogú
 
 ```
 Jelölése "+" jel: például "S+V"
