@@ -1,8 +1,9 @@
 ## Fortélyok
 
-<sub>→ [TODO/ISSUE fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/TODO.fortelyok)</sub>
+A Fortélyok egyedi ismeretek, melyeket ugyanúgy KP-ből vehet fel a karakter, mint a Képzettségeket, de legtöbbször pont rájuk épülnek, kiegészítik őket, valamint kevésbé differenciált tudást takarnak.
 
 ---
+### Kategóriák
 
 - [Kiemelt fortélyok](041_kiemelt_fortelyok.md): Nyelvismeret, Kultúrkör, Helyismeret - kezelésük speciális
 - [Szabad Fortélyok](042_szabad_fortelyok.md): ingyen, nem KP költésével kapott fortélyok
@@ -11,10 +12,9 @@
 - [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
 - [Slan fortélyok](046_slan_fortelyok.md)
 
+<br />
+
 ---
-
-A Fortélyok egyedi ismeretek, melyeket ugyanúgy KP-ből vehet fel a karakter, mint a Képzettségeket, de legtöbbször pont rájuk épülnek, kiegészítik őket, valamint kevésbé differenciált tudást takarnak.
-
 ### Általános szabályok
 
 ```
@@ -31,14 +31,14 @@ Tulajdonságok elvárt értékei, képzettségek elvárt szintje, esetleg más f
 <br />
 
 ---
-### Jellemző hatás 1: Egyedi bónusz adása
+### 🔆 Jellemző hatás 1: Egyedi bónusz adása
 
 Az adott fortély leírásában található egyedi bónuszt szolgáltat.
 
 <br />
 
 ---
-### Jellemző hatás 2: Képzettség kiterjesztése, képzettség bónusz adása
+### 🔆 Jellemző hatás 2: Képzettség kiterjesztése, képzettség bónusz adása
 
 Erről a [Képzettségek és fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md) fejezetben olvashatunk.
 
