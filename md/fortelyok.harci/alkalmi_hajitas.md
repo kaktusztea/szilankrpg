@@ -26,7 +26,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 
 🔒 **Követelmény**: [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
 
-🌟 **Hatás**: Alkalmi fegyvereid [Osztó értéke](072_tavharc_ve_szorzo_oszto.md#%EF%B8%8F-fegyver-oszt%C3%B3) `2`-re emelkedik.
+🌟 **Hatás**: Alkalmi fegyvereid [Osztó értéke](../072_tavharc_ve_szorzo_oszto.md#%EF%B8%8F-fegyver-oszt%C3%B3) `2`-re emelkedik.
 
 <br />
 
