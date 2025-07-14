@@ -31,11 +31,11 @@ A Hajítófegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez m�
 
 ### 🔆 Nem dobásra készített tárgy
 
-Nevében a lényeg. Sámli, kisasztal, malomkő...
+Nevében a lényeg. Sámli, borospalack, kisasztal, malomkő...
 
-A harcértékek a tárgy jellegétől függ, de a táblázatban található értékeken túl nem nyúlhatnak.
+A harcértékek a tárgy jellegétől függnek, de a táblázatban található értékeken túl nem nyúlhatnak.
 
-Kapcsolódó fortély: 
+Kapcsolódó fortély: [Alkalmi hajítás](fortelyok.harci/alkalmi_hajitas.md)
 
 
 ---
