@@ -4,12 +4,8 @@ Ezeknél a fegyvereknél a **Hajítás** harcmodort használjuk.
 
 A Hajítófegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez másként van, ott az adott fegyver leírásánál a „Speciális/Megjegyzés” oszlopban ezt külön feltüntetjük. 
 
+ Az [Erőbónusz](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit) és [Erőbónusz limit](068_01_fegyverek_altalanos_szabalyai.md#er%C5%91b%C3%B3nusz-limit) a szokásos módon működik hajítófegyverek esetén is.
 
-```
- Az Erőbónusz 1:1 hozzáadódik
- a hajítófegyverek SP értékéhez.
-```
- 
 <!-- tag: md_table_tavfegyver_start -->
 
 | Fegyver                        | Forgatás módja |   SP   | Erőbónusz limit | Sebzés módja | Átütés |  KÉ   |  CÉ  | Osztó |           Hatótáv | Sebesség | Kategória | Speciális / Megjegyzés                                                                                 |
@@ -35,7 +31,7 @@ Nevében a lényeg. Sámli, borospalack, kisasztal, malomkő...
 
 A harcértékek a tárgy jellegétől függnek, de a táblázatban található értékeken túl nem nyúlhatnak.
 
-Kapcsolódó fortély: [Alkalmi hajítás](fortelyok.harci/alkalmi_hajitas.md)
+Kapcsolódó fortély: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
 
 
 ---

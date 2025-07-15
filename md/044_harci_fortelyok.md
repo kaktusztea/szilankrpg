@@ -6,7 +6,7 @@
 
 - [Alakzat: támadó](fortelyok.harci/alakzat_tamado.md)
 - [Alakzat: védekező](fortelyok.harci/alakzat_vedekezo.md)
-- [Alkalmi Hajítás](fortelyok.harci/alkalmi_hajitas.md)
+- [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
 - [Belharc](fortelyok.harci/belharc.md)
 - [Daráló](fortelyok.harci/daralo.md)
 - [Elpusztíthatatlan](fortelyok.harci/elpusztithatatlan.md)
