@@ -1,11 +1,11 @@
 [
     {
-        "Fegyver": "Alabárd",
+        "Fegyver": "Alabárd S+V",
         "Forgatás módja": "kétkezes",
         "SP": "+4",
         "Erőbónusz limit": "99",
-        "Sebzés módja": "S+Z/V",
-        "Átütés": "3/6",
+        "Sebzés módja": "S+V",
+        "Átütés": "0",
         "Íves": "0",
         "Pengehossz": "3",
         "KÉ": "12",
@@ -13,7 +13,23 @@
         "VÉ": "28",
         "Sebesség": "9",
         "Kategória": "lándzsavívó",
-        "Speciális": "Talán a legjobb a páncélok ellen. A 6 Átütés Zúzás esetén érvényesül."
+        "Speciális": "Szúró és Vágó módban"
+    },
+    {
+        "Fegyver": "Alabárd Z",
+        "Forgatás módja": "kétkezes",
+        "SP": "+4",
+        "Erőbónusz limit": "99",
+        "Sebzés módja": "Z",
+        "Átütés": "5",
+        "Íves": "0",
+        "Pengehossz": "3",
+        "KÉ": "10",
+        "TÉ": "20",
+        "VÉ": "24",
+        "Sebesség": "10",
+        "Kategória": "lándzsavívó",
+        "Speciális": "Zúzó módban. Talán a legjobb a páncélok ellen az Átütéssel."
     },
     {
         "Fegyver": "Balta",
