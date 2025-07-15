@@ -7,7 +7,11 @@ Kifejezetten jól használod lőfegyveredet közeli célpontok ellen. Ez a Fort�
 - Önuralom: `+1`
 - Íjászat vagy Lövészet - `5.szint`
 
-🌟 **Hatás**: Amennyiben célzásnál a **Cellaszám**: `1`, akkor `CÉ:+10` bónuszt kapsz.
+🌟 **Hatás**: Amennyiben célzásnál a célpont az `1.` Cellában van, akkor `CÉ:+10` bónuszt kapsz.
+
+```
+Cella = Távolság / Fegyver Osztó ↑
+```
 
 <br />
 
