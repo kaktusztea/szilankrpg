@@ -29,13 +29,15 @@ A Szorzó a célpont egyedi jellemzőit, illetve a környezet hatásait szimulá
 
 Ha a célpont mozog, jóval nehezebb eltalálni. A távolság növekedésével ez a nehézség nem lineárisan, hanem exponenciálisan nő, éppen ezért érthető, hogy a mozgás is a Távolsági szorzó része. Alább a Célpont egyes mozgás típusaihoz tartozó módosítókat olvashatjuk.
 
-| Célpont mozgásának jellege | Módosító | Megjegyzés                                                                                                                                                                  |
-| :------------------------- | :------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Álló                       |   `3x`   | A célpont mozdulatlan                                                                                                                                                       |
-| Lassú, egyenletes          |   `5x`   | Lassú séta, léptetés lovon.<br />⭕Többen harcolnak, bármelyik fél eltalálása jó. (Közéjük lövés)⭕<br />⭕(Vagy: 3x (álló), méret bónusz (-1/2x). Aztán k6, h kit talált el)⭕ |
-| Gyors, egyenletes          |   `8x`   | Egyenletesen futó ember, vágtató lovas                                                                                                                                      |
-| Kiszámíthatatlan           |  `15x`   | A célpont ugrál össze-vissza, cikk-cakkban fut.                                                                                                                             |
-| Harcoló célpont            |  `20x`   | Csak egy konkrét harcoló fél eltalálása jó.                                                                                                                                 |
+| Célpont mozgásának jellege              | Módosító | Megjegyzés                                                                                                                                                                            |
+| :-------------------------------------- | :------: | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Álló                                    |   `3x`   | A célpont mozdulatlan                                                                                                                                                                 |
+| Harcoló csoport                         |  `3-5x`  | 🔆 Többen harcolnak, bármelyik fél eltalálása jó (közéjük lövés)<br>A csoport méretétől függ a Szorzó.<br>Nagy csoport: `3x`; Kis csoport: `5x`<br>Kit talál el: random dobás → `k10` |
+| Lassú, egyenletes                       |   `5x`   | Lassú séta, léptetés lovon.                                                                                                                                                           |
+| Gyors, egyenletes                       |   `8x`   | Egyenletesen futó ember, vágtató lovas                                                                                                                                                |
+| Sikertelenül szándékosan kitérő célpont |   `8x`   | Rontott Gyorsaságpróba után a lövész célzó dobást tesz                                                                                                                                |
+| Kiszámíthatatlan                        |  `15x`   | A célpont ugrál össze-vissza, cikk-cakkban fut.                                                                                                                                       |
+| Harcoló célpont                         |  `20x`   | Csak egy konkrét harcoló fél eltalálása jó.                                                                                                                                           |
 
 Természetesen a lövést végző személy mozgása is befolyásolja a találati esélyeket, hiszen könnyebb állva célozni, mint mondjuk futásból. A lövész mozgása az alábbiak szerint módosíthatja a **Szorzót**:
 
@@ -49,21 +51,22 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 ---
 #### Szorzó - Méret módosító
 
-| Célpont mérete                | Módosító |
-| ----------------------------- | :------: |
-| Célpont fedezék mögött        |   +2x    |
-| Pénzérme                      |   +7x    |
-| Alma                          |   +6x    |
-| Fej, Dinnye, Macska           |   +5x    |
-| Hiúz                          |   +3x    |
-| Sas                           |   +2x    |
-| Törpe                         |   +1x    |
-| Átlagos ember/elf méretű      |   +0x    |
-| Ogre                          |   -1x    |
-| Ló oldalról / 2 harcoló ember |   -2x    |
-| Lovas                         |   -3x    |
-| Bölény                        |   -3x    |
-| Óriás                         |   -5x    |
+| Célpont mérete                                                      | Módosító |
+| ------------------------------------------------------------------- | :------: |
+| Célpont fedezék mögött                                              |  `+2x`   |
+| Pénzérme                                                            |  `+7x`   |
+| Alma                                                                |  `+6x`   |
+| Fej, Dinnye, Macska                                                 |  `+5x`   |
+| Hiúz                                                                |  `+3x`   |
+| Sas                                                                 |  `+2x`   |
+| Törpe                                                               |  `+1x`   |
+| Átlagos ember/elf méretű<br>                                        |  `+0x`   |
+| 🔆 Többen harcolnak, bármelyik fél eltalálása jó<br>(közéjük lövés) |  `+0x`   |
+| Ogre                                                                |  `-1x`   |
+| Ló oldalról / 2 harcoló ember                                       |  `-2x`   |
+| Lovas                                                               |  `-3x`   |
+| Bölény                                                              |  `-3x`   |
+| Óriás                                                               |  `-5x`   |
 
 ---
 #### Szorzó - Észlelhetőség módosító
