@@ -51,22 +51,22 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 ---
 #### Szorzó - Méret módosító
 
-| Célpont mérete                                                              | Módosító | Megjegyzés                                                        |
-| --------------------------------------------------------------------------- | :------: | :---------------------------------------------------------------- |
-| Célpont fedezék mögött                                                      |  `+2x`   |                                                                   |
-| Pénzérme                                                                    |  `+7x`   |                                                                   |
-| Alma                                                                        |  `+6x`   |                                                                   |
-| Fej, Dinnye, Macska                                                         |  `+5x`   |                                                                   |
-| Hiúz                                                                        |  `+3x`   |                                                                   |
-| Sas                                                                         |  `+2x`   |                                                                   |
-| Törpe                                                                       |  `+1x`   |                                                                   |
-| Átlagos ember/elf méretű<br>                                                |  `+0x`   |                                                                   |
-| [Harcoló csoport](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md) |  `3-5x`  | Bármelyik fél eltalálása jó<br>Kit talál el: random dobás → `k10` |
-| Ogre                                                                        |  `-1x`   |                                                                   |
-| Ló oldalról / 2 harcoló ember                                               |  `-2x`   |                                                                   |
-| Lovas                                                                       |  `-3x`   |                                                                   |
-| Bölény                                                                      |  `-3x`   |                                                                   |
-| Óriás                                                                       |  `-5x`   |                                                                   |
+| Célpont mérete                                                              | Módosító | Megjegyzés                                                                                   |
+| --------------------------------------------------------------------------- | :------: | :------------------------------------------------------------------------------------------- |
+| Célpont fedezék mögött                                                      |  `+2x`   |                                                                                              |
+| Pénzérme                                                                    |  `+7x`   |                                                                                              |
+| Alma                                                                        |  `+6x`   |                                                                                              |
+| Fej, Dinnye, Macska                                                         |  `+5x`   |                                                                                              |
+| Hiúz                                                                        |  `+3x`   |                                                                                              |
+| Sas                                                                         |  `+2x`   |                                                                                              |
+| Törpe                                                                       |  `+1x`   |                                                                                              |
+| Átlagos ember/elf méretű<br>                                                |  `+0x`   |                                                                                              |
+| [Harcoló csoport](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md) |  `3-5x`  | Harcoló tömegbe lövés.<br>Bármelyik fél eltalálása jó.<br>Kit talál el: random dobás → `k10` |
+| Ogre                                                                        |  `-1x`   |                                                                                              |
+| Ló oldalról / 2 harcoló ember                                               |  `-2x`   |                                                                                              |
+| Lovas                                                                       |  `-3x`   |                                                                                              |
+| Bölény                                                                      |  `-3x`   |                                                                                              |
+| Óriás                                                                       |  `-5x`   |                                                                                              |
 
 ---
 #### Szorzó - Észlelhetőség módosító
