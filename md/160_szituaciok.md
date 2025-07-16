@@ -1,7 +1,5 @@
 # Szituációk
 
-<sub>→[TODO/ISSUE szituációk](https://github.com/kaktusztea/szilankrpg/wiki/TODO.szituaciok)</sub>
-
 Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyekkel újra és újra találkoznak a játékosok. Egyfajta sorvezetést nyúltani: milyen próbák, ellenpróbák szükségesek ezek során a résztvevő felek oldaláról - milyen képzettségek, fortélyok vesznek részt ilyen esetekben.
 
 ## Harci szituációk
@@ -14,7 +12,8 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ## Távharc szituációk
 
-- [Kitérés lövés elől](szituaciok/kiteres_loves_elol.md)
+- [Kitérés lövés elől próba](szituaciok/kiteres_loves_elol.md)
+- [Kitérés lövés elől sikertelen (rontott Gyorsaságpróba)](szituaciok/kiteres_loves_elol_sikertelen.md)
 - [Lövész nyúl a fegyveréért, támad rá egy harcos](szituaciok/lovesz_nyul_fegyvereert_tamad_ra_harcos.md)
 - [Többen harcolnak, belelősz a tömegbe](szituaciok/tobben_harcolnak_belelosz_a_tomegbe.md)
 

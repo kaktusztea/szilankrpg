@@ -7,8 +7,6 @@ Néhány speciális húzással beleszólhatunk az ilyen szituációkba.
 
 Ha valaki látja és van ideje felkészülni a rá leadott lövésre/hajításra, valamint rendelkezik elegendő hellyel a kitérésre ÉS bejelenti, hogy megpróbálja elkerülni végzetét, akkor **Gyorsaságpróbát** kell dobnia, melynek nehézsége függ a lövést leadó személy távolságától, valamint az általa használt fegyvertől.
 
-
-
 | Gyorsaságpróba célszám | Dobófegyverek,<br />Mágikus lövedék I. | Íjak,<br />Mágikus lövedék II. | Nyílpuskák,<br />Mágikus lövedék III. |
 |:----------------------:| --------------------------------------:| ------------------------------:| -------------------------------------:|
 |           8            |                              `1m - 3m` |                      `0m - 5m` |                            `0m - 10m` |
@@ -21,7 +19,7 @@ Ha valaki látja és van ideje felkészülni a rá leadott lövésre/hajításra
 
 🔆 Ha a próba sikeres, a célpont elugrott a lövedék elől, a lövész már nem is tehet **Célzó dobást**.
 
-🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy talál -e.
+🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy talál -e. Ennek módosítóiról [itt](szituaciok/kiteres_loves_elol_sikertelen.md).
 
 Lásd: [Elemi mágia - Formulák - Őselem idézése](kepzettsegek.primer.arkanumok/elemi_magia.md#őselem-idézése)\
 ⭕TODO⭕ Mágia: lehet h ki kéne szedni általános "Mágikus lövedék" szekcióba ⭕
