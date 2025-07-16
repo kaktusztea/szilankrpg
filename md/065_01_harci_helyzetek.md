@@ -446,6 +446,8 @@ Az ilyen helyzetben a támadó számára `Előny+1` jár `TÉ` dobásra és `VÉ
 
 A védekező csak `1`-et támadhat és azt is csak a kör végén teheti meg, továbbá a pajzsának `VÉ`-je csak akkor számít, ha a csapás nem hátulról jön.
 
+A `pajzs VÉ` csak akkor adódik hozzá a védekező aktuális `Védő Értékhez`, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
+
 <br />
 
 ---
