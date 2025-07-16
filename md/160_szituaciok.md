@@ -12,10 +12,11 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ## Távharc szituációk
 
+- [Harcoló tömegbe lövés - egy konkrét célra](szituaciok/harcolo_tomegbe_loves__egy_konkret_celra.md)
+- [Harcoló tömegbe lövés - bárki jó találatnak](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md)
 - [Kitérés lövés elől próba](szituaciok/kiteres_loves_elol.md)
 - [Kitérés lövés elől sikertelen (rontott Gyorsaságpróba)](szituaciok/kiteres_loves_elol_sikertelen.md)
 - [Lövész nyúl a fegyveréért, támad rá egy harcos](szituaciok/lovesz_nyul_fegyvereert_tamad_ra_harcos.md)
-- [Többen harcolnak, belelősz a tömegbe](szituaciok/tobben_harcolnak_belelosz_a_tomegbe.md)
 
 ## Szociális szituációk
 
