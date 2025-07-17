@@ -434,9 +434,9 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 
 - Nehézség: `8`
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok jellemzőit ismerve a KM dönt.
+        - `[1; 4]`: Ha az ellenfél jelentősen nagyobb méretű az alkalmazónál, a KM dönt.
 - Fázisok: `Ellenpróba`
 - Követelmény: Aktuális harcmodor - `6.szint`
-- Ha az ellenfél jelentősen nagyobb méretű az alkalmazónál, a KM emelheti a Nehézséget `[1-4]`
 
 **Hatás**: arra tereli az ellenfelet, amerre akarja. Hátrálásnál nem kell használni, az megy magától!
 
