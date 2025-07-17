@@ -433,8 +433,8 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor emelkedik a nehézség (KM dönt).
 
 - Nehézség: `8`
-	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok jellemzőit ismerve a KM dönt.
-        - `[1; 4]`: Ha az ellenfél jelentősen nagyobb méretű az alkalmazónál, a KM dönt.
+  - `[-3; 0]`: Harci alakzatban használva. Az alakzatok jellemzőit ismerve a KM dönt.
+  - `[1; 4]`: Ha az ellenfél jelentősen nagyobb méretű az alkalmazónál, a KM dönt.
 - Fázisok: `Ellenpróba`
 - Követelmény: Aktuális harcmodor - `6.szint`
 
