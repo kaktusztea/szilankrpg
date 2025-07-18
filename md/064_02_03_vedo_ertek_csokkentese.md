@@ -9,7 +9,7 @@ Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét
 - Mikor a fegyverméret különbség legalább `(-1)` pengehossz
 - [Kiskocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---kiskocka) értékével csökkent **Védő Értéket**
 
-### ⚜️ [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos) harci helyzet
+### ⚜️ [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
 
 - Mikor a fegyverméret különbség kisebb `1 pengehossznál`
 - mindkét fél [Nagykocka](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) értékével csökkent **Védő Értéket**
