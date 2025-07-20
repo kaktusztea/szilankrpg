@@ -44,12 +44,12 @@ CÉ = -30
 ### 🤞 Kezdeményezés
 
 ```
-Kezdeményező dobás: KÉ + k10
+Kezdeményező dobás: KÉ + k20
 ```
 
 Minden kör elején van kezdeményezés, ami csak a cselekvési sorrend meghatározására szolgál, nem jelent dominanciát, vagy a harc irányítását.
 
-A magasabb számot kapott kezd, `10`-es (`0`) dobásra rá lehet dobni újra.
+A magasabb számot kapott kezd, `20`-as dobásra rá lehet dobni újra.
 
 Azonos kezdeményezésnél: egyszerre csapnak.
 
@@ -130,6 +130,7 @@ X: fegyver alap sebzése
 ```
 - Erő Tulajdonság 1:1-ben hozzáadódik
   (vagy levonódik, ha negatív).
+  Erőbónusz limit lehet egyes fegyverekre. 
 - Mesterfegyver fortély: +1 SP / fok
 - Fegyver mágia bónusz hozzáadódik
 ```

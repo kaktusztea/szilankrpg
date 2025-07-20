@@ -77,7 +77,7 @@ SFÉ: -
 ---
 ### Lord Gustav és Tetves részletes összecsapása
 
-Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a meglepetés `TÉ:+20` bónuszát kapja meg.
+Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a meglepetés `TÉ:+20` bónuszát - és az automatikusan nyert kezedeményezést - kapja meg.
 
 🔆 **Megjegyzés**: mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért [Pengeméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos) helyzetben vannak, tehát sikertelen (nem sebző) támadások esetén a **k100** támadás [Nagykockájával](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) csökkentik egymás **Védő Értékét**.
 
@@ -155,7 +155,7 @@ Nem tudja, de ellenfele – látva elcsigázottságát –, szintén teljes tám
 ---
 #### A gyilkos veszte
 
-Tetves nyeri a kezdeményezést, viszont dobása csak `04` (összesen: `114`!), ami még így is talál (!) (tekintve, hogy a lovag `VÉ`-je csak `86` a Támadó taktika miatt), viszont sebzésnek `2`-t dob `k20`-on. Mivel `20`-nál többel ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+3 SP` jár, így a vége: `7 SP`... amit Gustav láncinge pont teljesen felfog (**páncéldobása** sikeres (`3`) volt)!
+Tetves nyeri a kezdeményezést, viszont Támadó dobása csak `04` (összesen: `114`!), ami még így is talál (!) (tekintve, hogy a lovag `VÉ`-je csak `86` a Támadó taktika miatt), viszont sebzésnek `2`-t dob `k20`-on. Mivel `20`-nál többel ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+3 SP` jár, így a vége: `7 SP`... amit Gustav láncinge pont teljesen felfog (**páncéldobása** sikeres (`3`) volt)!
 
 Tetves kardja lecsusszan az felé dobogó lovag vértjéről, aki visszatámadva... `97`-et dob. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `146`, de most ugye neki is `-30` büntetés van (támadó taktika `146-30=116`)
 
