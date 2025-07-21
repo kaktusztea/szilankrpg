@@ -52,6 +52,8 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
   - jellemzően: `7` penge
   - maximum: `8` penge
 
+<br />
+
 ---
 ### Sebzéstípusok
 
@@ -59,6 +61,8 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
 - [Egyenjogú](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-egyenjog%C3%BA)
 - [Másodlagos](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos)
 - [Alkalmatlan](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-alkalmatlan)
+
+<br />
 
 ---
 ### Különleges fegyver szabály
@@ -70,6 +74,8 @@ Jelölése: KF
 Egyes – speciális – fegyvereknél van megemlítve ez a szabály. Jelentése: a táblázatban leírt harcértékek csak akkor érvényesek, ha speciális iskolában, vagy onnan származó mestertől megtanulta a karakter a fegyver speciális fogásait. Ez részben előtörténet követelmény, amelyet fel kell tüntetni a karakterlapon, másrészt a fegyver Megjegyzés mezőjében szerepel, milyen más, számszerű követelménye van. Bánjunk ezzel a követelménnyel szigorúan! Ha ez nincs meg, a KM dönt, hogy milyen – alacsonyabb – harcértékekkel forgathatja a karakter a fegyvert – már ha egyáltalán...
 
 A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) `2.foka` az adott fegyverre. Ezen speciális fogásokat fortélyok formájában tanulhatja meg a harcos. Leírásukat lásd a [harci fortélyoknál](044_harci_fortelyok.md). Azok a fegyverek számítanak „Speciálisnak”, amelyek komment mezőjében szerepel a `KF` jelölés.
+
+<br />
 
 ---
 ### Puszta kéz
@@ -89,6 +95,8 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
 ```
 
+<br />
+
 ---
 ### Erőbónusz limit
 
@@ -98,7 +106,39 @@ Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
 🔆 A számérték a felső maximumot jelzi, a `99`-es érték azt jelzi, hogy az **Erőbónusznak** nincs felső limitje.
 ⚡ Példa: ha a fegyver Erőbónusz limitje `3`, akkor egy `Erő:+5` Tulajdonságú harcos is csak `+3` bónuszt kap mikor az adott fegyvert forgatja.
 
-→ [Bővebben az Erőbónusz/Erőhátrányról itt](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit)
+→ Bővebben a [Fegyver sebzés jellege fejezetben](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit).
+
+<br />
+
+---
+### Átütés
+
+→ Lásd a [Fegyver sebzés jellege fejezetet](064_02_05_fegyver_sebzes_jellege.md#%C3%A1t%C3%BCt%C3%A9s).
+
+---
+### Fegyverek minősége (Ideája)
+
+Silány munka, vagy messze földön híres fegyverkovács mester remeke - különbséget teszünk köztük.
+
+A minőség a tárgy - ezúttal fegyver - Ideájának erejét is mutatja: mennyire alkalmas arra a célra, amire készítették. A fentiekben semmilyen mágia nem játszik szerepet, pusztán az elkészítés minőségét mutatja. A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** is hatással van.
+
+| Fegyverek minősége | Módosítók                    |    Ár    |
+| :----------------: | :--------------------------- | :------: |
+|        `-5`        | `KÉ:-5; TÉ,CÉ,VÉ:-10; SP:-5` | `1/13 x` |
+|        `-4`        | `KÉ:-4; TÉ,CÉ,VÉ:-8, SP:-4`  | `1/10 x` |
+|        `-3`        | `KÉ:-3; TÉ,CÉ,VÉ:-6, SP:-3`  | `1/7 x`  |
+|        `-2`        | `KÉ:-2; TÉ,CÉ,VÉ:-4, SP:-2`  | `1/4 x`  |
+|        `-1`        | `KÉ:-1; TÉ,CÉ,VÉ:-2, SP:-1`  | `1/2 x`  |
+|        `0`         |                              |   `1x`   |
+|        `+1`        | `KÉ:+1; TÉ,CÉ,VÉ:+2; SP:+1`  |   `2x`   |
+|        `+2`        | `KÉ:+2; TÉ,CÉ,VÉ:+4; SP:+2`  |   `4x`   |
+|        `+3`        | `KÉ:+3; TÉ,CÉ,VÉ:+6; SP:+3`  |   `7x`   |
+|        `+4`        | `KÉ:+4; TÉ,CÉ,VÉ:+8; SP:+4`  |  `10x`   |
+|        `+5`        | `KÉ:+5; TÉ,CÉ,VÉ:+10; SP:+5` |  `13x`   |
+
+#### 🔆 Mágikus fegyverek és a fegyver Ideája
+
+Ökölszabály, hogy a mágikus fegyverbe legfeljebb akkora növelést lehet belefoglalni, amekkora az **Ideájuk** (minőségük). Tehát egy `+2`-es **Ideájú** kardba, maximum `+2`-es mágikus hatást lehet belefoglalni.
 
 ---
 

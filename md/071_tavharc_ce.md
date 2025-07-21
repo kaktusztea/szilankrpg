@@ -26,17 +26,17 @@ Támadó CÉ =
 ---
 ## Módosítók
 
-| Módosító                                                                                                                                          |   **CÉ**   |
-| :------------------------------------------------------------------------------------------------------------------------------------------------ | :--------: |
-| Célzás → 1 célzással eltöltött kör után (nem additív) 🔆                                                                                          |   `+10`    |
-| Célzás → 1 célzással eltöltött kör után (nem additív) - [Képzett célzás](fortelyok.tavharc/kepzett_celzas.md) fortéllyal 🔆                       |   `+20`    |
-| Képzetlenségből adódó levonás                                                                                                                     |   `-40`    |
-| Hirtelen lövés                                                                                                                                    |   `-30`    |
-| Álló cél "belövése" (gyakorlás) min. negyed órán át                                                                                               |  `+10-30`  |
-| Fegyver minősége                                                                                                                                  | ⭕`-5 - +5` |
-| Nem “belőtt” íjak  / most lő először ezzel az íjjal - [Távolsági Harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 9.szintje alatt            |   `-30`    |
-| Nem “belőtt” nyílpuskák / most lő először ezzel a nyílpuskával - [Távolsági Harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 9.szintje alatt |   `-15`    |
-| Egyes [Távolsági Harci Fortélyokból](044_harci_fortelyok.md#távolsági-harci-fortélyok) adódó bónuszok.                             |            |
+| Módosító                                                                                                                                                 |   **CÉ**    |
+| :------------------------------------------------------------------------------------------------------------------------------------------------------- | :---------: |
+| Célzás → 1 célzással eltöltött kör után (nem additív) 🔆                                                                                                 |    `+10`    |
+| Célzás → 1 célzással eltöltött kör után (nem additív) - [Képzett célzás](fortelyok.tavharc/kepzett_celzas.md) fortéllyal 🔆                              |    `+20`    |
+| Képzetlenségből adódó levonás                                                                                                                            |    `-40`    |
+| Hirtelen lövés                                                                                                                                           |    `-30`    |
+| Álló cél "belövése" (gyakorlás) min. negyed órán át                                                                                                      |  `+10-30`   |
+| Fegyver minősége                                                                                                                                         | `[-10;+10]` |
+| Nem “belőtt” íjak  / most lő először ezzel az íjjal - [Távolsági Harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 9.szintje alatt            |    `-30`    |
+| Nem “belőtt” nyílpuskák / most lő először ezzel a nyílpuskával - [Távolsági Harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 9.szintje alatt |    `-15`    |
+| Egyes [Távolsági Harci Fortélyokból](044_harci_fortelyok.md#távolsági-harci-fortélyok) adódó bónuszok.                                                   |             |
 
 🔆 **Célzás**: íjnál csak 1 körig lehet kitartani! 1 kör után nincs bónusz, sőt körönként `CÉ:-10` büntetés jár!
 
