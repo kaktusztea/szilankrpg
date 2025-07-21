@@ -121,10 +121,11 @@ Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
 ### Íves
 
 ```
-+2 SP / íves fok
++2 SP páncélozatlan
+   ellenfél ellen
 ```
  
-Az ilyen fegyverek páncélozatlan ellenfél ellen jobban sebeznek: minden "**Íves**" fok jellemző után `+2 SP` bónusz jár.
+Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellenük `+2 SP` bónusz jár.
 
 <br />
 

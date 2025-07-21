@@ -6,9 +6,9 @@ Közelharci fegyvernek számít:
 ```
 
 ```
-Íves fegyver [1;2]:
-  páncélozatlan ellenfél
-  ellen +2 SP bónusz / fok
+Íves fegyver:
+  +2 SP páncélozatlan
+  ellenfél ellen
 ```
 
 ```
