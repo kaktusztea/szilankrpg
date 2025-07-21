@@ -736,6 +736,22 @@
         "Speciális / Megjegyzés": ""
     },
     {
+        "Fegyver": "Korbács",
+        "Forgatás módja": "egykezes",
+        "SP": "+x",
+        "Erőbónusz limit": "",
+        "Sebzés módja": "Z",
+        "Átütés": "0",
+        "Íves": "0",
+        "Pengehossz": "1",
+        "KÉ": "x",
+        "TÉ": "x",
+        "VÉ": "x",
+        "Sebesség": "6",
+        "Kategória": "ostorharc",
+        "Speciális": ""
+    },
+    {
         "Fegyver": "Kriszkés",
         "Forgatás módja": "egykezes",
         "SP": "+3/0",
@@ -877,6 +893,38 @@
         "Sebesség": "6",
         "Kategória": "közelharci",
         "Speciális": "Ha sebzést okoz, befecskendezi a benne tárolt mérget."
+    },
+    {
+        "Fegyver": "Ostor",
+        "Forgatás módja": "egykezes",
+        "SP": "+x",
+        "Erőbónusz limit": "2",
+        "Sebzés módja": "Z",
+        "Átütés": "0",
+        "Íves": "0",
+        "Pengehossz": "3",
+        "KÉ": "x",
+        "TÉ": "x",
+        "VÉ": "x",
+        "Sebesség": "8",
+        "Kategória": "ostorharc",
+        "Speciális": ""
+    },
+    {
+        "Fegyver": "Ostorkard",
+        "Forgatás módja": "egykezes",
+        "SP": "+x",
+        "Erőbónusz limit": "2",
+        "Sebzés módja": "V",
+        "Átütés": "0",
+        "Íves": "2",
+        "Pengehossz": "3",
+        "KÉ": "x",
+        "TÉ": "x",
+        "VÉ": "x",
+        "Sebesség": "8",
+        "Kategória": "ostorharc",
+        "Speciális": "Minimum Mf:1.fok nélkül 30% esély az önsebzésre"
     },
     {
         "Fegyver": "Pika",
