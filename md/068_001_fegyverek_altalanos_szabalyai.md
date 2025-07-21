@@ -21,7 +21,7 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
 
 
 ---
-### Fegyverméter elnevezések, szabályok
+### Fegyverméret elnevezések, szabályok
 
 - `rövid`: `0,3` méterig
 - `0,5 penge`: `0,4 - 0,7` méter
