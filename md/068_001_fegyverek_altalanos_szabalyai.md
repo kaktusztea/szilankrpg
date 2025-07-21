@@ -118,6 +118,17 @@ Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
 <br />
 
 ---
+### Íves
+
+```
++2 SP / íves fok
+```
+ 
+Az ilyen fegyverek páncélozatlan ellenfél ellen jobban sebeznek: minden "**Íves**" fok jellemző után `+2 SP` bónusz jár.
+
+<br />
+
+---
 ### Fegyverek minősége (Ideája)
 
 Silány munka, vagy messze földön híres fegyverkovács mester remeke - különbséget teszünk köztük.

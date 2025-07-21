@@ -12,9 +12,9 @@ MK: Másfélkezes fegyverek
 ```
 
 ```
-Íves fegyverek:
-  Páncélozatlan ellenfél
-  ellen +2 SP sebzésbónusz
+Íves fegyver [1;2]:
+  páncélozatlan ellenfél
+  ellen +2 SP bónusz / fok
 ```
 
 ```
