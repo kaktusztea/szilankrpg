@@ -115,6 +115,8 @@ Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
 
 → Lásd a [Fegyver sebzés jellege fejezetet](064_02_05_fegyver_sebzes_jellege.md#%C3%A1t%C3%BCt%C3%A9s).
 
+<br />
+
 ---
 ### Fegyverek minősége (Ideája)
 

@@ -33,7 +33,7 @@ Támadó CÉ =
 | Képzetlenségből adódó levonás                                                                                                                            |    `-40`    |
 | Hirtelen lövés                                                                                                                                           |    `-30`    |
 | Álló cél "belövése" (gyakorlás) min. negyed órán át                                                                                                      |  `+10-30`   |
-| Fegyver minősége                                                                                                                                         | `[-10;+10]` |
+| [Fegyver minősége](068_001_fegyverek_altalanos_szabalyai.md#fegyverek-min%C5%91s%C3%A9ge-ide%C3%A1ja)                                                    | `[-10;+10]` |
 | Nem “belőtt” íjak  / most lő először ezzel az íjjal - [Távolsági Harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 9.szintje alatt            |    `-30`    |
 | Nem “belőtt” nyílpuskák / most lő először ezzel a nyílpuskával - [Távolsági Harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 9.szintje alatt |    `-15`    |
 | Egyes [Távolsági Harci Fortélyokból](044_harci_fortelyok.md#távolsági-harci-fortélyok) adódó bónuszok.                                                   |             |
