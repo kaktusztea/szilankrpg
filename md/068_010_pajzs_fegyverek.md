@@ -1,4 +1,4 @@
-## Pajzsok
+## Pajzs fegyverek
 
 Kapcsolódik
 - [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md)

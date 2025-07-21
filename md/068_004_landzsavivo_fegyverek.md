@@ -28,6 +28,6 @@ A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal
 
 ---
 
-🔗 [Zúzó fegyverek](068_05_zuzo_fegyverek.md) →
+🔗 [Zúzó fegyverek](068_005_zuzo_fegyverek.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

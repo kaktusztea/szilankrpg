@@ -26,7 +26,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 - [Hajítás alkalmatlan fegyverrel](../065_01_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet büntetései az adott fegyver dobásakor csökkennek:
   - `Hátrány-1` Sebzésdobásra
   - `Hátrány-1` `CÉ` dobásra
-- A fegyver [harcértéke](../068_06_hajitofegyverek.md#-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgy) nem változik (`CÉ=0`) 
+- A fegyver [harcértéke](../068_007_hajitofegyverek.md#-nem-dobásra-készített-tárgy) nem változik (`CÉ=0`) 
 
 ---
 ### 2. fok
@@ -37,7 +37,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 
 🌟 **Hatás**: 
 - [Hajítás alkalmatlan fegyverrel](../065_01_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet büntetései már egyáltalán nem sújtanak
-- A fegyver [harcértéke](../068_06_hajitofegyverek.md#-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgy) nem változik (`CÉ=0`) 
+- A fegyver [harcértéke](../068_007_hajitofegyverek.md#-nem-dobásra-készített-tárgy) nem változik (`CÉ=0`) 
 
 <br />
 

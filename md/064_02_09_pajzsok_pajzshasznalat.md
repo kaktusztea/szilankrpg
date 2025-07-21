@@ -4,7 +4,7 @@ A harc során pajzsokkal növelhetjük védelmünket, de ennek is megvan a foná
 
 ### Pajzsok harcértékei
 
-Lásd: [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
+Lásd: [Pajzs fegyverek](068_010_pajzs_fegyverek.md) táblázat
 
 - Kis pajzs: `VÉ:10`
 - Közepes pajzs: `VÉ:30`, `Erő követelmény: +1`

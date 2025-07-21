@@ -21,6 +21,6 @@
 
 ---
 
-🔗 [Hajítófegyverek](068_06_hajitofegyverek.md) →
+🔗 [Hajítófegyverek](068_007_hajitofegyverek.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
