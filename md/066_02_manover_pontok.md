@@ -7,7 +7,8 @@ Manőver Pontok =
  ( Közelharc
  + Kardvívás
  + Zúzás
- + Lándzsavívás )
+ + Lándzsavívás
+ + Ostorharc )
      / TSz  ↑
 ```
 

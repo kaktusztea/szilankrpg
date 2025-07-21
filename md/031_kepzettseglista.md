@@ -40,6 +40,8 @@
 
 🔵 [Zúzás](kepzettsegek.primer.harci/harcmodor.md)
 
+🔵 [Ostorharc](kepzettsegek.primer.harci/harcmodor.md)
+
 🔵 [Hajítás](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) <sup><sub>(40%)</sub></sup>
 
 🔵 [Íjászat](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 💢

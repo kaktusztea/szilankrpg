@@ -21,6 +21,6 @@
 
 ---
 
-🔗 [Lándzsavívó fegyverek](068_05_landzsavivo_fegyverek.md) →
+🔗 [Hajítófegyverek](068_06_hajitofegyverek.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

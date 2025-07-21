@@ -8,7 +8,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Önuralom: `+1`
 - [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
 🌟 **Hatás**: `1` VÉ-t semlegesít az ellenfél `VÉ` csökkenést okozó támadásaiból.
 
@@ -19,7 +19,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Önuralom: `+2`
 - Összpontosítás - `6.szint`
 - Harcmodor - `6.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
 🌟 **Hatás**: `2 VÉ` semlegesítése.
 
@@ -30,7 +30,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Önuralom: `+3`
 - Összpontosítás - `9.szint`
 - Harcmodor - `9.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
 🌟 **Hatás**: `3 VÉ` semlegesítése.
 
@@ -41,7 +41,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Önuralom: `+4`
 - Összpontosítás - `12.szint`
 - Harcmodor - `12.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 - [Teljes Védekezés Taktika](../065_02_harci_taktikak.md#teljes-védekezés-taktika) alkalmazása
 - [Chi harc - Harcmeditáció](../kepzettsegek.primer.slan/chi_harc_harcmeditacio.md) VAGY [Fejvadász Tradíció](../053_03_fejvadasz_tradicio.md) - `12.szint`
 

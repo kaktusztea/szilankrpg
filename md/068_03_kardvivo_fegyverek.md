@@ -63,6 +63,6 @@ KF: Különleges felkészítés
 
 ---
 
-🔗 [Zúzó fegyverek](068_04_zuzo_fegyverek.md) →
+🔗 [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

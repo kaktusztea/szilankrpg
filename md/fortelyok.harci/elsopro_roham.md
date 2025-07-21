@@ -18,7 +18,8 @@ Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.
 ---
 ### Megjegyzések
 
-[Öngyilkos roham](../065_02_harci_taktikak.md#öngyilkos-roham-taktika) esetén a fentiek nem használhatóak.
+- [Öngyilkos roham](../065_02_harci_taktikak.md#öngyilkos-roham-taktika) esetén a fentiek nem használhatóak.
+- Ostorharc harcmodorban nem lehet Roham taktikát használni, így ez a fortély sem vonatkozik rá
 
 <br />
 

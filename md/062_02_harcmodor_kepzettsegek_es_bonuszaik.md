@@ -6,11 +6,12 @@ A `Szilánk` rendszere az alábbi (Primer) harci képzettségeket ismeri, az al�
 - **Kardvívás**: minden további „pengés” fegyver (kétkezes kard is)
 - **Zúzás**: zúzófegyverek, csatabárdok, csákány
 - **Lándzsavívás**: Szálfegyverek
-- Hajítás: dobófegyverek a tőrtől a dárdáig
-- Íjászat: íjak
-- Lövészet: számszeríjak
-- Ostromlövészet: nagy hajító/lövő ostromgépek
-- Mágikus lövészet: mentális ismeret mágiatudóknak mágikus lövedékek, célzott hatások alkalmazására
+- **Ostroharc**: hajlékony, ostorjellegű fegyverek
+- **Hajítás**: dobófegyverek a tőrtől a dárdáig
+- **Íjászat**: íjak
+- **Lövészet**: számszeríjak
+- **Ostromlövészet**: nagy hajító/lövő ostromgépek
+- **Mágikus lövészet**: mentális ismeret mágiatudóknak mágikus lövedékek, célzott hatások alkalmazására
 
 A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyvereket milyen általános harcérték pluszokkal forgathatja a karakter.
 
@@ -46,7 +47,7 @@ A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyv
 ---
 ### Harcmodorok és Manőverek
 
-A Közelharc, Kardvívás, Zúzás, Lándzsavívás Harcmodorok szintjei lehetőséget adnak Manőverek könnyebb elvégzésére. Bővebben lásd a [Manőver Pontok](066_02_manover_pontok.md) fejezetet.
+A Közelharc, Kardvívás, Zúzás, Lándzsavívás, Ostorharc Harcmodorok szintjei lehetőséget adnak Manőverek könnyebb elvégzésére. Bővebben lásd a [Manőver Pontok](066_02_manover_pontok.md) fejezetet.
 
 ---
 

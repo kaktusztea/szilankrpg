@@ -227,6 +227,8 @@ Első oda-vissza csapásnál:
 
 ❌ Más taktikával együtt
 
+❌ Ostorharc harcmodorban
+
 Roham esetén **az első oda- és visszacsapás során** a támadó `TÉ:+20` és `VÉ:-40` módosítót kap, és `+5 SP` bónuszt sebzésdobására (`+1` sebzés kategória). Az okozott **VÉ csökkentés** duplázódik az első oda- és visszacsapásnál is.
 
 Ha roham során a karakter sebző támadást ér el, akkor az őt sújtó **VÉ büntetés** azonnal megszűnik, a rá leadott visszacsapást már normál VÉ-vel várhatja és a `+5 SP` bónusz sem jár a visszatámadó félnek.
@@ -248,7 +250,10 @@ Első oda-vissza csapásnál:
   nem érvényesül
 - Sebzés: +7 SP (oda-vissza)
 ```
+
 ❌ Más taktikával együtt
+
+❌ Ostorharc harcmodorban
 
 A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem törődik védekezésével, mindent megtesz, hogy (dupla) sebzést érjen el. Különlegessége, hogy erre az egy támadásra nem érvényesülnek a sérülésből adódó **TÉ levonások**, az adrenalin elsöpör minden gátat. Súlyosan sérült harcosok utolsó mentsvára lehet ez a taktika. Küzdelmenként **legfeljebb 1x** alkalmazható. A fentieken és a harcérték módosítókon kívül az **Öngyilkos roham** minden másban megegyezik a sima **Rohammal**.
 
@@ -260,6 +265,8 @@ Erre a [Támadás erőből](fortelyok.harci/tamadas_erobol.md) fortélyt haszná
 ✅ **Kiváró taktikával** együtt
 
 ❌ Más taktikával együtt
+
+❌ Ostorharc harcmodorban
 
 ---
 ### Érintő taktika ⇄

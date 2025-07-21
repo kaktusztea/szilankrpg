@@ -9,7 +9,7 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - Erő: `+1`
 - Edzettség `+1`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
 🌟 **Hatás**:
 - Max Támadó taktikával kell harcolnod: `[+15TÉ; -30VÉ]`
@@ -24,7 +24,7 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - Erő: `+2`
 - Edzettség `+2`
 - Harcmodor - `6.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
 🌟 **Hatás**:
 - `TÉ`, Sebzés dobás: `Előny+1`

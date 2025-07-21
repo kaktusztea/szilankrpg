@@ -9,9 +9,9 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 
 ### [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
 
-### [Zúzó fegyverek](068_04_zuzo_fegyverek.md)
+### [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
 
-### [Lándzsavívó fegyverek](068_05_landzsavivo_fegyverek.md)
+### [Zúzó fegyverek](068_05_zuzo_fegyverek.md)
 
 ---
 ### [Hajítófegyverek](068_06_hajitofegyverek.md)
