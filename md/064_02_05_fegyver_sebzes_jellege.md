@@ -16,6 +16,8 @@ Egyes fegyverek forgatása esetén a karakter fizikai ereje megnöveli az okozot
 
 [Erőbónusz limit](068_001_fegyverek_altalanos_szabalyai.md#erőbónusz-limit): egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Karakteralkotó](start.md#karakteralkot%C3%B3) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
 
+<br />
+
 ---
 ### Sebzés jellege, páncél SFÉ jellege
 
