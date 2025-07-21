@@ -742,14 +742,14 @@
         "Erőbónusz limit": "0",
         "Sebzés módja": "Z",
         "Átütés": "0",
-        "Íves": "2",
+        "Íves": "1",
         "Pengehossz": "1",
         "KÉ": "8",
         "TÉ": "10",
         "VÉ": "2",
         "Sebesség": "6",
         "Kategória": "ostorharc",
-        "Speciális": "Duplán Íves fegyvernek számít - a fegyver mögé \"becsapó\" extrém tulajdonsága miatt"
+        "Speciális": "Íves fegyvernek számít - a fegyver mögé \"becsapó\" tulajdonsága miatt"
     },
     {
         "Fegyver": "Kriszkés",
