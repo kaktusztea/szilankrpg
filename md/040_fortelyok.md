@@ -1,6 +1,6 @@
 ## Fortélyok
 
-A Fortélyok egyedi ismeretek, melyeket ugyanúgy KP-ből vehet fel a karakter, mint a Képzettségeket, de legtöbbször pont rájuk épülnek, kiegészítik őket, valamint kevésbé differenciált tudást takarnak.
+A Fortélyok egyedi ismeretek, melyeket ugyanúgy `KP`-ből vehet fel a karakter, mint a Képzettségeket, de legtöbbször pont rájuk épülnek, kiegészítik őket, valamint kevésbé differenciált tudást takarnak.
 
 ---
 ### Kategóriák
@@ -23,7 +23,7 @@ Fortély: 6 KP / fok
 
 A Fortélyokat nehézségük és összetettségük szerint csoportosítjuk. Lehetnek `1`, vagy több fokúak, minden fok költsége: `6 KP`.
 
-Több fokú Fortélyoknál szintenként csak egy fokot lehet fejlődni akkor is, ha lenne elég KP több fokra is! **Ez alól kivétel az 1. szint (karakteralkotás).**
+Több fokú Fortélyoknál szintlépések alkalmával csak `1` fokot lehet fejlődni akkor is, ha lenne elég `KP` több fokra is! **Ez alól kivétel az 1. szint (karakteralkotás).**
 
 A fortélyoknak lehetnek **követelményei**:\
 Tulajdonságok elvárt értékei, képzettségek elvárt szintje, esetleg más fortélyok megléte, vagy valamilyen nem számszerűsíthető körülmény.
