@@ -15,6 +15,7 @@ Közelharci fegyvernek számít:
 KF: Különleges felkészítés
   - Tradíció követelmény
     - A: Amund
+    - D: Dzsenn
     - S: Slan
     - F: Fejvadász
   - Mf: 2.fok követelmény
