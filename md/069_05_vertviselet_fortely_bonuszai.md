@@ -14,8 +14,6 @@ A teljes szabályt lásd a fortély leírásánál: **[Vértviselet](fortelyok.h
 - Full vértnél: VÉ:+10
 ```
 
-
-
 ---
 
 🔗 [Páncél ára](069_06_pancel_ara.md) →

@@ -246,9 +246,9 @@ Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a 
 - Nincs Manőver használat
 - Támadó dobás: k10
 - Erősített sebzés:
-  1-10: 6ÉP
-  11-20: 12ÉP
-  21-30: 20ÉP
+  1-10:   6 ÉP
+  11-20: 12 ÉP
+  21-30: 20 ÉP
   31-től halál
 ```
 

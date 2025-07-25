@@ -218,7 +218,6 @@ Irányodba indított támadásnál a szokásos elszenvedett VÉ veszteséged dup
 
 <br />
 
-
 ---
 ### 🔥 VÉ csökkentés bónusz `+[1;10]`
 

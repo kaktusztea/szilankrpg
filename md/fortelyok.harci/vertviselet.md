@@ -37,7 +37,6 @@ képzettségpróbákra (lefele kerekítve)
 KÉ:-10, TÉ:-15, VÉ:-15
 ```
 
-
 ---
 ### 2. fok
 
