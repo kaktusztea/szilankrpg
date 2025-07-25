@@ -10,9 +10,7 @@
 
 **[Segédlet esszencia (PDF)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
-[ÉP, VÉ firkálólap](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_EP_VE_firka.pdf?raw=true)
-
-NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2.odt?raw=true) • [odt 2 oldalas](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2_ketoldalas.odt) • [pdf](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2.pdf?raw=true)
+[ÉP, VÉ firkálólap](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_EP_VE_firka.pdf?raw=true) &nbsp;•&nbsp; [NJK karlap odt-1](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2.odt?raw=true) • [NJK karlap odt-2](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2_ketoldalas.odt) • [NJK karlap pdf](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2.pdf?raw=true)
 
 <br />
 
