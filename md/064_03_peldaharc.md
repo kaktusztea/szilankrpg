@@ -35,9 +35,9 @@ MGT: 5 (13 - (2 x 3) + (3 x 2) = 13
 
 #### Harcérték levonások `S` kategóriákban (Lord Gustav)
 
-|**\_\_S1\_\_**|**\_\_S2\_\_**|**\_\_S3\_\_**|**\_\_S4\_\_**|
-|:---:|:---:|:---:|:---:|
-| `-` |`-1TÉ`|`-11TÉ`|`-21TÉ`|
+| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
+| :------------: | :------------: | :------------: | :------------: |
+|      `-`       |    `TÉ:-1`     |    `TÉ:-11`    |    `TÉ:-21`    |
 
 ---
 ### Tetves, a bérgyilkos
@@ -67,9 +67,9 @@ SFÉ: -
 
 #### Harcérték levonások `S` kategóriákban (Tetves)
 
-|**\_\_S1\_\_**|**\_\_S2\_\_**|**\_\_S3\_\_**|**\_\_S4\_\_**|
-|:---:|:---:|:---:|:---:|
-| `-` |`-4TÉ`|`-14TÉ`|`-24TÉ`|
+| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
+| :------------: | :------------: | :------------: | :------------: |
+|      `-`       |    `TÉ:-4`     |    `TÉ:-14`    |    `TÉ:-24`    |
 
 <br />
 
@@ -77,7 +77,7 @@ SFÉ: -
 ---
 ### Lord Gustav és Tetves részletes összecsapása
 
-Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a meglepetés `TÉ:+20` bónuszát - és az automatikusan nyert kezedeményezést - kapja meg.
+Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezedeményezést - kapja meg.
 
 🔆 **Megjegyzés**: mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért [Pengeméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos) helyzetben vannak, tehát sikertelen (nem sebző) támadások esetén a **k100** támadás [Nagykockájával](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) csökkentik egymás **Védő Értékét**.
 
@@ -86,7 +86,9 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 ---
 #### Gustav első sebe
 
-Tetves dob: `73`. Összesen `80+20+73= 173`, ami meghaladja a lovag `Védő Értékét`: **Talált**!
+Tetves kétszer dob az `Előny+1` TÉ dobásra bónusza miatt: `21` és `73`. A jobb érték számít: `73`
+
+Összesen `80+20+73= 173`, ami meghaladja a lovag `Védő Értékét`: **Talált**!
 
 ```
 Tetves Sebzés dobás:
@@ -99,12 +101,11 @@ Gustav dob: `6`, így a páncél **SFÉ**-je beszámít.
 A lovag `SFÉ`-je vágófegyverek ellen `13`, a végső `SP` így:
 
 ```
-20-13 = 7SP
-
-7SP → -3 ÉP seb és -10 VÉ
+20-13 = 7 SP
+  → -3 ÉP, -10 VÉ
 ```
 
-A `7 SP` a második Sebzés-kategóriába tartozik, ami `3 ÉP`-s (❗) sebet és (`-10 VÉ`) csökkenést jelent.
+A `7 SP` a [Sebzés-táblázat](064_02_06_sebzes.md#sp-%C3%A1tv%C3%A1lt%C3%A1sa-%C3%A9p-sebz%C3%A9sre-%C3%A9s-v%C3%A9-cs%C3%B6kkent%C3%A9sre) alapján `3 ÉP` (❗) sebet és (`-10 VÉ`) csökkenést jelent.
 
 A lovag ezzel a sebesüléssel még az `S1` egészség-kategóriában marad, így `TÉ` büntetést egyelőre nem kap. Ugyanennek a sebnek a hatására egy gyengébb fizikumú (`ÉP: 8`) ember már átcsúszna az `S2` kategóriába.
 
@@ -113,15 +114,15 @@ A lovag ezzel a sebesüléssel még az `S1` egészség-kategóriában marad, íg
 ---
 #### Gustav második sebe
 
-Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `144`-re. Rosszul mozdul és bekap egy újabb sebet. **Páncéldobása** (`9`) ezúttal sikertelen, a csapás fedetlen területet ért (pl. alkar), így az SFÉ-je ezúttal nem számít!
+Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `144`-re. Rosszul mozdul és bekap egy újabb sebet. **Páncéldobása** (`9`) ezúttal sikertelen, a csapás fedetlen területet ért (mondjuk alkar), így az SFÉ-je ezúttal nem számít!
 
 ```
 Tetves Sebzés dobás:
-  → k20+2 → 11 SP (Vágó)
-  → -6 ÉP seb és -15 VÉ
+k20+2 → 11 SP (Vágó)
+  → -6 ÉP, -15 VÉ
 ```
 
-Ezzel Gustav bőven átkerült az `S2` egészség-kategóriába, így már `-1 TÉ` büntetése is van, ami nem számottevő (hála a magas **Fájdalomtűrés+Önuralmának**)
+Az újabb sebbel Gustav bőven átkerült az `S2` egészség-kategóriába, így már `TÉ:-1` büntetése is van, ami nem számottevő (hála a magas **Fájdalomtűrés+Önuralmának**)
 
 Aktuális harcértékei: `KÉ: 20, TÉ: 84, VÉ: 131, ÉP: 9`
 
@@ -135,8 +136,7 @@ A helyzet kezd veszélyessé válni: a lovag elvesztett több, mint `30`-at **V�
 Bár sikerül sebet ejtenie támadóján (sajnos csak `3 ÉP`-t, ritka szerencsétlen dobás (`3`) volt), a sors nem kedvez a lovagnak, a gyilkos is belevág az oldalába a láncingen keresztül, bordák hasadnak.
 
 ```
-SP: 19
-SFÉ után: 6 SP
+SP: 19-13 = 6 SP
   → -3 ÉP, -10 VÉ
 ```
 
@@ -169,7 +169,7 @@ Gustav sebzése:
   k20 + 5 + 3 = 19 SP
 ```
 
-Tetvesnek nincs vértje, ezért a `19 SP` 1:1-ben számít → `12 ÉP` és `-25 VÉ`. Tetvesnek `1 ÉP`-je marad, majdnem kettészelték!
+Tetvesnek nincs vértje, ezért a `19 SP` teljesen beszámít → `12 ÉP` és `-25 VÉ`. Tetvesnek `1 ÉP`-je marad, majdnem kettészelték!
 
 Míg Gustav 3 sebet (`12 ÉP`) is elviselt és talpon maradt, addig a gyengébb fizikumú Tetves ennyitől már kidől. `1 ÉP`-je maradt, Fájdalomtűrés próbát dob `12` ellen...
 
