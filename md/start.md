@@ -26,7 +26,7 @@ NJK Karakterlap (v1.2)  → [odt 1 oldalas](https://github.com/kaktusztea/szilan
 <br />
 
 ---
-## Főfejezetek
+## Tartalomjegyzék
 
 - [Kezdetek](#0-kezdetek) &nbsp;-&nbsp; [Karakteralkotás](#1-karakteralkot%C3%A1s)
 - [Hátterek](#2-h%C3%A1tterek-)  &nbsp;-&nbsp; [Képzettségrendszer](#3-k%C3%A9pzetts%C3%A9grendszer-) &nbsp;-&nbsp; [Fortélyok](#4-fort%C3%A9lyok-) &nbsp;-&nbsp; [Tradíciók](#5-trad%C3%ADci%C3%B3k)
