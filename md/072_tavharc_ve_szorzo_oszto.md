@@ -112,8 +112,7 @@ Célpont VÉ = Szorzó  +  (Távolság / Fegyver Osztó) ↑
 
 🔆 A képlet majdnem ugyanaz, de nem szorzás, hanem összeadás történik.
 
-🔆 Ha a Szorzó értéke éppen `0`, akkor a cépont Védő Értéke is pont `0` lesz.
-
+🔆 Ha a Szorzó értéke éppen `0`, a cépont Védő Értéke akkor is kiszámolható a fenti képlettel.
 
 ---
 ### ⚜️ Fegyver Osztó
