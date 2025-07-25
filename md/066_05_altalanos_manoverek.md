@@ -423,7 +423,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 
 **Hatás**: leadhatsz `TÉ:+20`-szal egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 
-**Fontos**: ne feledd, hogy ha egy harcon belül újra alkalmazod ezt a Manővert, az Nehézsége már  `+2`-vel magasabb lesz!
+**Fontos**: ne feledd, hogy ha egy harcon belül újra alkalmazod ezt a Manővert, az Nehézsége már `+2`-vel magasabb lesz!
 
 <br />
 
