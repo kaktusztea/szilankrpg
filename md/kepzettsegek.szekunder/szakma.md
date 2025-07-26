@@ -5,6 +5,10 @@
 - fegyverkovács
 - páncélkovács
 
+### Lásd még
+
+- [Iparos képzettségek](../030_10_iparos_kepzettsegek.md)
+
 ### Kapcsolódik
 
 - [Mechanika](../fortelyok.altalanos/mechanika.md) fortély

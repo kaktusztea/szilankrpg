@@ -24,7 +24,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
 
-## Észlelés szituációk
+## Észlelés, Lopakodás szituációk
 
 - [Érzékelés, Aktív/Passzív Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md)
 - [Lopakodás/rejtőzés és észlelése](szituaciok/lopakodas_rejtozes_es_eszlelese.md)
