@@ -1,7 +1,5 @@
 ## Érzékelés, Aktív/Passzív Észlelés
 
-<sub>→ [TODO/ISSUE Érzékelés/Észlelés](https://github.com/kaktusztea/szilankrpg/wiki/TODO.erzekeles.eszleles)</sub>
-
 ### Tág értelmezés
 
 >⭕TODO: Észlelés és Érzékelés (nem csak képzettség szintjén!) tágan értelmezve (Hatodik érzék, mágikus érzékelés (pl. manában sűrű terület), pszí érzékelő diszciplínái, hangulatok megérzése (Intuíció+Emberismeret), stb)⭕

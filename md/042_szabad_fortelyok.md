@@ -10,7 +10,7 @@ Képzettségeket
 terjesztenek ki
 ```
 
-Specializált, egy, vagy több [képzettséget](031_kepzettseglista.md) "kiterjesztő" ismeretek. Az adott képzettséggel való viszonyuk a [Normál kapcsolat és Erős kapcsolat](038_01_kepzettsegek_fortelyok_kapcsolata.md) oldalon olvasható.
+Specializált, egy, vagy több [képzettséget](030_01_kepzettseglista.md) "kiterjesztő" ismeretek. Az adott képzettséggel való viszonyuk a [Normál kapcsolat és Erős kapcsolat](030_08_01_kepzettsegek_fortelyok_kapcsolata.md) oldalon olvasható.
 
 ---
 ### Szabad Fortély tanulása

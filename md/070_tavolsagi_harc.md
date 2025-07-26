@@ -1,7 +1,5 @@
 # Távolsági harcrendszer
 
-<sub>→ [TODO/ISSUE távharc](https://github.com/kaktusztea/szilankrpg/wiki/TODO.tavharc)</sub>
-
 A távolsági lő- és hajítófegyverekkel végzett harc során az alábbi **Harcmodor képzettségek** vesznek részt a támadó oldalán:\
 [Hajítás](kepzettsegek.primer.harci/harcmodor.md), [Íjászat](kepzettsegek.primer.harci/harcmodor.md), [Lövészet](kepzettsegek.primer.harci/harcmodor.md), [Ostromlövészet](kepzettsegek.primer.harci/harcmodor.md), [Mágikus lövészet](kepzettsegek.primer.harci/harcmodor.md)
 

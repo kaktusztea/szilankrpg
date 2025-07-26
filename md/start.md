@@ -17,7 +17,7 @@
 ---
 ## Gyors elérés
 
-[Harci linkek](007_harci_linkek.md) &nbsp;•&nbsp; [Képzettséglista](031_kepzettseglista.md) &nbsp;•&nbsp; [Fortélyok](040_fortelyok.md) &nbsp;•&nbsp; [Fortély-Képzettség kiterjesztés (általános)](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md)  &nbsp;•&nbsp; [Fortély-Képzettség kiterjesztés (harci)](038_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
+[Harci linkek](007_harci_linkek.md) &nbsp;•&nbsp; [Képzettséglista](030_01_kepzettseglista.md) &nbsp;•&nbsp; [Fortélyok](040_fortelyok.md) &nbsp;•&nbsp; [Fortély-Képzettség kiterjesztés (általános)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md)  &nbsp;•&nbsp; [Fortély-Képzettség kiterjesztés (harci)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
 <br />
 
@@ -77,20 +77,21 @@
   - [Karma Hátterek](023_karma_hatterek.md)
 
 ---
-### 3. [Képzettségrendszer](030_kepzettsegrendszer.md) 🔵
+### 3. [Képzettségrendszer](030_00_kepzettsegrendszer.md) 🔵
 
-- [Képzettséglista](031_kepzettseglista.md)
-- [Primer és Szekunder képzettségek](032_primer_szekunder_kepzettsegek.md)
-- [Képzettségszint skála](033_kepzettsegszint_skala.md)
-- [Képzettségek fejlesztése](034_kepzettsegek_fejlesztese.md)
-- [Képzettségszintek KP igénye](035_kepzettsegszintek_kp_igenye.md)
-- [Képzettségpróba](036_kepzettsegproba.md) 🎲
-- [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) 🎲
-- [Csoportosan végezhető képzettségek](037_02_csoportosan_vegezheto_kepzettsegek.md) 💢
-- [Képzettségek és Fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md)
-- [Általános fortélyok képzettségkiterjesztés listája (ábra)](038_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
-- [Harci fortélyok képzettségkiterjesztés listája (ábra)](038_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
-- [Bázis képzettségek](039_bazis_kepzettsegek.md)
+- [Képzettséglista](030_01_kepzettseglista.md)
+- [Primer és Szekunder képzettségek](030_02_primer_szekunder_kepzettsegek.md)
+- [Képzettségszint skála](030_03_kepzettsegszint_skala.md)
+- [Képzettségek fejlesztése](030_04_kepzettsegek_fejlesztese.md)
+- [Képzettségszintek KP igénye](030_05_kepzettsegszintek_kp_igenye.md)
+- [Képzettségpróba](030_06_kepzettsegproba.md) 🎲
+- [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) 🎲
+- [Csoportosan végezhető képzettségek](030_07_02_csoportosan_vegezheto_kepzettsegek.md) 💢
+- [Képzettségek és Fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)
+- [Általános fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
+- [Harci fortélyok képzettségkiterjesztés listája (ábra)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
+- [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
+- [Iparos képzettségek](030_10_iparos_kepzettsegek.md)
 
 ---
 ### 4. [Fortélyok](040_fortelyok.md) 🟣

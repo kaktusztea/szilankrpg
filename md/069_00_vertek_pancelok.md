@@ -1,8 +1,5 @@
 ## Vértek, Páncélok
 
-→ [TODO/ISSUE oldal](https://github.com/kaktusztea/szilankrpg/wiki/TODO.vertek.pancelok) : Még vannak nyitott problémák, azokat még ki kell vasalni.
-
----
 ### [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 
 ### [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)

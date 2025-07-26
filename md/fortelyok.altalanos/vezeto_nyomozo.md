@@ -5,7 +5,7 @@ Vezető nyomozóként koordinálod az alád tartozó nyomozók munkáját → b�
 ---
 #### Bónusz
 
-A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csoportos szellemi képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy nyomozócsapat. A fentiek szerint kiszámolt csoportos **Nyomozás** értéket egy jó vezető nyomozó képes koordinálásával megemelni.
+A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy nyomozócsapat. A fentiek szerint kiszámolt csoportos **Nyomozás** értéket egy jó vezető nyomozó képes koordinálásával megemelni.
 
 ---
 ### 1. fok

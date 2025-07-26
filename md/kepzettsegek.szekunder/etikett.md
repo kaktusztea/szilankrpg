@@ -4,7 +4,7 @@ Hogy kell köszönteni a nemesi vendégeket, hogyan kell udvariasan hárítani e
 
 ### Próba speciális
 
-Sokszor [összetett próba](../036_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) indokolt.
+Sokszor [összetett próba](../030_06_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) indokolt.
 
 ### Domináns Tulajdonságok
 

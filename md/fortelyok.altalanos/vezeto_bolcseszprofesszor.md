@@ -5,7 +5,7 @@ Vezető professzorként koordinálod az alád tartozó bölcsészek munkáját �
 ---
 #### Bónusz
 
-A [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettséget [csoportos szellemi képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely a Lexikum képzettség alá, vagy azt [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#norm%C3%A1l-kiterjeszt%C3%A9s) próbál tudást kutatni, felhasználni. A fentiek szerint kiszámolt csoportos **Lexikum** értéket egy jó vezető professzor képes koordinálásával megemelni.
+A [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely a Lexikum képzettség alá, vagy azt [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#norm%C3%A1l-kiterjeszt%C3%A9s) próbál tudást kutatni, felhasználni. A fentiek szerint kiszámolt csoportos **Lexikum** értéket egy jó vezető professzor képes koordinálásával megemelni.
 
 ---
 ### 1. fok

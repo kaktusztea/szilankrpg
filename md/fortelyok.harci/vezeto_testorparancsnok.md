@@ -13,7 +13,7 @@ Képes vagy egy testőrcsapat
 ---
 #### Bónusz
 
-Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [csoportos szellemi képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja a testőrcsapat. A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok képes koordinálásával megemelni.
+Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja a testőrcsapat. A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok képes koordinálásával megemelni.
 
 ### 1. fok
 

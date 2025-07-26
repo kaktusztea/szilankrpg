@@ -4,7 +4,7 @@ Szétválasztottuk két halmazra a `Szilánk` rendszerének `KP`-ból tanulható
 
 ### Primer ismeretek
 
-→ **Primer képzettségek**: listájukat lásd a [Képzettséglista](031_kepzettseglista.md) oldal tetején a "Primer képzettségek" bekezdésnél.
+→ **Primer képzettségek**: listájukat lásd a [Képzettséglista](030_01_kepzettseglista.md) oldal tetején a "Primer képzettségek" bekezdésnél.
 
 → **Fortélyok**: minden harci, misztikus és mágikus fortély
 

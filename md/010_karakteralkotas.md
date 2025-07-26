@@ -1,7 +1,5 @@
 # Karakteralkotás
 
-<sub>→ [TODO/ISSUE karakteralkotás](https://github.com/kaktusztea/szilankrpg/wiki/TODO.karakteralkotas)</sub>
-
 Az áttekintő szöveget lásd a tartalomjegyzék után ↓
 
 ### [Karakteralkotó ods](011_karakteralkoto_ods.md)
@@ -24,7 +22,7 @@ Az áttekintő szöveget lásd a tartalomjegyzék után ↓
 
 #### → [HM, CM](016_01_hm_cm.md)
 
-#### → [Képzettségek](031_kepzettseglista.md)
+#### → [Képzettségek](030_01_kepzettseglista.md)
 
 #### → [Fortélyok](040_fortelyok.md)
 
@@ -54,7 +52,7 @@ Először a karakter [Tapasztalati Szintjét](013_tsz_szintlepes.md) kell meghat
 
 Folytatásként a 8 [Tulajdonságod](014_01_tulajdonsagok.md) értékét kell meghatároznod `[-5; 5]` intervallumban **Tulajdonságpontok** elosztásával, majd a [Karakteralkotó Pontjaid](015_kp.md) (`KP`) kiszámolása következik, amelyekből különböző ismereteket vehetsz majd fel. Figyelj, hogy a [Szekunder KP](015_kp.md)-kat csak [Szekunder ismeretekre költheted](017_primer_szekunder_ismeretek.md).
 
-Most a [Képzettségek listáját](031_kepzettseglista.md) tekintsd át, majd elkezdhetsz `KP`-kat költeni rájuk. Az egyes képzettségszintek exponenciálisan [egyre drágábbak](035_kepzettsegszintek_kp_igenye.md), ahogy a `0-15`-ös skálán haladsz felfelé. A `3.szint` itt is a "nullpontot" jelképezi. Sok képzettségnek van követelménye, ezeket lásd az adott képzettségek leírásában. A csatákban használt [Harcmodorok](031_kepzettseglista.md#harci-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%EF%B8%8F), a [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md) és a varázslásban alkalmazott [Mágikus Szférák és Arkánumok](107_magikus_szferak_arkanumok.md) is ilyen képzettségek. Szintén képzettségek a mágikus, papi és szellemi [Tradíciók](050_tradiciok.md).
+Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd elkezdhetsz `KP`-kat költeni rájuk. Az egyes képzettségszintek exponenciálisan [egyre drágábbak](030_05_kepzettsegszintek_kp_igenye.md), ahogy a `0-15`-ös skálán haladsz felfelé. A `3.szint` itt is a "nullpontot" jelképezi. Sok képzettségnek van követelménye, ezeket lásd az adott képzettségek leírásában. A csatákban használt [Harcmodorok](030_01_kepzettseglista.md#harci-képzettségek-🅿️), a [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md) és a varázslásban alkalmazott [Mágikus Szférák és Arkánumok](107_magikus_szferak_arkanumok.md) is ilyen képzettségek. Szintén képzettségek a mágikus, papi és szellemi [Tradíciók](050_tradiciok.md).
 
 Karakteralkotó Pontjaidat [Fortélyok](040_fortelyok.md) felvételére is költheted, amelyek változóan, `[1-4]` fokúak is lehetnek. Ezek nem szélesen skálázandó, hanem "szűk", biztos tudást adhatnak, vagy egy képzettség egy meglevő aspektusának erősítését végezhetik - jellemzően `+2` bónuszt adva fokonként.  A  [Kiemelt Fortélyok](041_kiemelt_fortelyok.md) három egyedi ismeretet adnak, amelyekre nem kell `KP`-t költened. A [Szabad Fortélyok](042_szabad_fortelyok.md) - melyekből Tapasztalati Szintenként `1 fokot` **ingyen kapsz** - specializált, egy, vagy több képzettséget "kiterjesztő" ismeretek.
 

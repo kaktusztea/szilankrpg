@@ -16,6 +16,6 @@ Ajánlott fortélyok:
 - [Suhanó árnyék](../fortelyok.altalanos/suhano_arnyek.md)
 - [Szabotőr](../fortelyok.altalanos/szabotor.md)
 
-Ajánlott képzettségek: [alvilági képzettségek](../031_kepzettseglista.md#alvil%C3%A1gi-k%C3%A9pzetts%C3%A9gek)
+Ajánlott képzettségek: [alvilági képzettségek](../030_01_kepzettseglista.md#alvilági-képzettségek)
 
 <br />

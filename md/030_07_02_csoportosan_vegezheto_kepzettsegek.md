@@ -1,6 +1,6 @@
 ## Csoportosan végezhető képzettségek
 
-A [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) fejezetben leírt szabályok az alábbi képzettségekre igazak. Mindegyik képzettségnek saját Vezető fortélya van.
+A [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) fejezetben leírt szabályok az alábbi képzettségekre igazak. Mindegyik képzettségnek saját Vezető fortélya van.
 
 ### Harci, vagy "taktikai" képzettségek és Vezető fortélyaik
 
@@ -23,6 +23,6 @@ A [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) fejezetben
 - [Vajákosság](kepzettsegek.szekunder/vajakossag.md) → [Vezető: Vajákmester](fortelyok.altalanos/vezeto_vajakmester.md) (**szellemi**)
 
 ---
-🔗 [Képzettségek és fortélyok kapcsolata](038_01_kepzettsegek_fortelyok_kapcsolata.md) →
+🔗 [Képzettségek és fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

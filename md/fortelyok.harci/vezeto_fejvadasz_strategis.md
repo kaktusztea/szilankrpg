@@ -11,7 +11,7 @@ Képes vagy egy fejvadász alakulat
 ---
 #### Bónusz
 
-A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) képzettséget [csoportos fizikai képzettségpróba](../037_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni. A fentiek szerint kiszámolt csoportos **Lopakodás/rejtőzés** értéket egy jó parancsnok képes koordinálásával megemelni.
+A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni. A fentiek szerint kiszámolt csoportos **Lopakodás/rejtőzés** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 ### 1. fok
 

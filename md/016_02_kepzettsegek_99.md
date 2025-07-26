@@ -1,6 +1,6 @@
 ## Képzettségek
 
-Lásd a [Képzettségrendszer](030_kepzettsegrendszer.md) főfejezetet.
+Lásd a [Képzettségrendszer](030_00_kepzettsegrendszer.md) főfejezetet.
 
 
 ---

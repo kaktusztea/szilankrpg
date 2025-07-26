@@ -10,6 +10,11 @@
   - [Sérülés hatása képzettségpróbára](#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra)
   - [Tulajdonság vs Képzettség ellenpróba](#tulajdons%C3%A1g-vs-k%C3%A9pzetts%C3%A9g-ellenpr%C3%B3ba)
 
+### Csoportos képzettségek
+
+- [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md)
+- [Csoportosan végezhető képzettségek listája](030_07_02_csoportosan_vegezheto_kepzettsegek.md)
+
 ### Próbadobás
 
 Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő a Célszámmal, akkor a próba sikerült.
@@ -252,6 +257,6 @@ Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbá
 
 ---
 
-🔗 [Csoportos képzettségpróba](037_01_csoportos_kepzettsegproba.md) →
+🔗 [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

@@ -21,7 +21,7 @@ Gyakran kombinálják a [Megfélemlítés](befolyasolas_modszerei.md#-megf%C3%A9
 
 #### Összetett próba
 
-Jellemző a kihallgatásnál, hogy nem `1 db` dobás dönt el mindent, mivel a kérdezés hosszú ideig is eltarthat. Ilyenkor [Összetett képzettségpróba](../036_kepzettsegproba.md#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok) dobandó - a szituáció függvényében a KM dönt, mennyire többlépcsős.
+Jellemző a kihallgatásnál, hogy nem `1 db` dobás dönt el mindent, mivel a kérdezés hosszú ideig is eltarthat. Ilyenkor [Összetett képzettségpróba](../030_06_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) dobandó - a szituáció függvényében a KM dönt, mennyire többlépcsős.
 
 ---
 ### 🔆 Megvezetés, hazudozás

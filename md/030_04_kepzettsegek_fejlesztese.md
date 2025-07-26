@@ -45,6 +45,6 @@ A `9.`, `12. és 15. szintek` kiemelt mérföldkövek a képzettségek esetében
 
 ---
 
-🔗 [Képzettségszintek KP igénye](035_kepzettsegszintek_kp_igenye.md) →
+🔗 [Képzettségszintek KP igénye](030_05_kepzettsegszintek_kp_igenye.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

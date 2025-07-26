@@ -7,10 +7,10 @@ A [Primer és Szekunder ismeretek](017_primer_szekunder_ismeretek.md) féle felo
 - minden harci képzettség
 - minden misztikus képzettség
 - minden szakrális és mágikus képzettség
-- valamint számos világi képzettség is. Ezek pontos listáját lásd a [Képzettséglista](031_kepzettseglista.md) oldalon. Jelölésük: 🅿️
+- valamint számos világi képzettség is. Ezek pontos listáját lásd a [Képzettséglista](030_01_kepzettseglista.md) oldalon. Jelölésük: 🅿️
 
 ---
 
-🔗 [Képzettségszint skála](033_kepzettsegszint_skala.md) →
+🔗 [Képzettségszint skála](030_03_kepzettsegszint_skala.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
