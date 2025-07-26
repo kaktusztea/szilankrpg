@@ -35,6 +35,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 - [Ugrás magasba / távolba](szituaciok/ugras_magasba_tavolba.md)
 - [Esés magasból](szituaciok/eses_magasbol.md)
+- [Kötéltánc](szituaciok/koteltanc.md)
 - [Mászás képzettségpróbára összetett példa](szituaciok/maszas_osszetett_pelda.md) ⚡
 - [Menekülés, Üldözés, Futás](szituaciok/menekules_uldozes_futas.md)
 - [Víz alatt bírni](szituaciok/viz_alatt_birni.md)
