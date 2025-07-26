@@ -26,6 +26,7 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 - [Gyilkos](#-gyilkos)
 - [Hírhedt](#-h%C3%ADrhedt)
 - [Hős](#-h%C5%91s)
+- Szolgalelkű
 
 #### Misztikus
 
@@ -130,6 +131,16 @@ Mindig segítesz a bajba jutottakon, mindig kész vagy az önfeláldozásra, min
 <br />
 
 
+---
+### 🟡 Szolgalelkű
+
+Nagyhatalmú emberek mellett töltöttél el jelentős időt, mellettük (alattuk) érzed jól magad. Állandó késztetést érzel a seggnyalásra.
+
+A "nagy emberek" Befolyásolás képzettségpróbája ellen csak `Hátrány-1`-el dobhatsz.
+
+<br />
+
+---
 ---
 ### 🟡 Mágia: Auraösszhang
 
