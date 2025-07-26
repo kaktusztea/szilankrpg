@@ -5,13 +5,12 @@
 ---
 ### Auraösszhang (Karma Háttér)
 
-⭕ [Auraösszhang](023_karma_hatterek.md) által adott hatás.
-
+[Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
 
 ---
 ### Profán (Karma Háttér)
 
-⭕ [Profán](023_karma_hatterek.md) által adott hatás.
+[Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
 
 ---
 ### Fizikai

@@ -29,8 +29,8 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 
 #### Misztikus
 
-- [Mágia: Összhang](#-m%C3%A1gikus-%C3%B6sszhang)
-- [Mágia: Profán](#-prof%C3%A1n)
+- [Mágia: Auraösszhang](#-m%C3%A1gia-aura%C3%B6sszhang)
+- [Mágia: Profán](#-m%C3%A1gia-prof%C3%A1n)
 
 ---
 ### 🟡 Alkoholista
