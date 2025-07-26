@@ -1,7 +1,7 @@
 ## Pajzs fegyverek
 
 Kapcsolódik
-- [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md)
+- [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) fejezet
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 
 <!-- tag: md_table_pajzs_start -->
