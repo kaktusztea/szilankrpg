@@ -10,13 +10,18 @@
 
 #### Kisszféra
 
-**3.szint**: minden seb begyógyul (ms), FP mind megmarad (kt). Kábultság/Bódultság állapot S2-S3-S4 kategórában.
+**3.szint**: minden seb begyógyul (ms), `FP` mind megmarad (fp).
+- [Eszmélet (1) Bódultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `S2` kategóriában
+- [Eszmélet (2) Kábultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g): `S3-S4` kategóriában
 
-**4.szint**: ms, kt,  Kábultság/Bódultság állapot állapot S3-S4 kategórában.
+**4.szint**: ms, fp
+- [Eszmélet (1) Bódultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `S3` kategóriában
+- [Eszmélet (2) Kábultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g): `S4` kategóriában
 
-**5.szint**: ms, kt, Kábultság/Bódultság állapot S4 kategórában.
+**5.szint**: ms, fp
+- [Eszmélet (1) Bódultság](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `S4` kategóriában
 
-**6.szint**: ms, kt, minden seb begyógyul, **nincs** Kábultság/Bódultság.
+**6.szint**: ms, fp, minden seb begyógyul, **nincs** Kábultság/Bódultság.
 
 **7.szint**: ms, 1 kategóriányi `FP` is eltűnik.
 
