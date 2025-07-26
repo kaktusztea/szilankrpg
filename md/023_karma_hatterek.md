@@ -17,6 +17,8 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 ---
 ### Tartalomjegyzék
 
+#### Általános
+
 - [Alkoholista](#-alkoholista)
 - [Bajnok](#-bajnok)
 - [Bukott gyógyító](#-bukott-gy%C3%B3gy%C3%ADt%C3%B3)
@@ -24,29 +26,34 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 - [Gyilkos](#-gyilkos)
 - [Hírhedt](#-h%C3%ADrhedt)
 - [Hős](#-h%C5%91s)
-- [Mágikus összhang](#-m%C3%A1gikus-%C3%B6sszhang)
-- [Profán](#-prof%C3%A1n)
+
+#### Misztikus
+
+- [Mágia: Összhang](#-m%C3%A1gikus-%C3%B6sszhang)
+- [Mágia: Profán](#-prof%C3%A1n)
 
 ---
 ### 🟡 Alkoholista
 
 #### Követelmény
+
 No comment 🙂
 
 #### Hatás
-⭕??⭕
+
+Egy idő után már a viselkedésén, küllemén is meglátszik - ez szociális életére is hatással van. Az ital nélkül már képtelen működni, mindent megtesz annak megszerzéséért. Elvonás esetén `Hátrány-1,2` büntetéseket kaphat Tualjdonságpróbákra, Képzettségpróbákra.
 
 <br />
-
 
 ---
 ### 🟡 Bajnok
 
 #### Követelmény
-Hasonlít a hősre, de már nem feltétlenül kell jónak lennie. A hőstettei egyetlen csoportra korlátozódnak. Ő a csoport hőse, egymaga hoz dicsőséget / védelmezi meg / viszi győzelemre a csoportot. Pl: Achilles
 
+Hasonlít a hősre, de már nem feltétlenül kell jónak lennie. A hőstettei egyetlen csoportra korlátozódnak. Ő a csoport hőse, egymaga hoz dicsőséget / védelmezi meg / viszi győzelemre a csoportot. Pl: Achilles
 #### Hatás
-⭕??⭕
+
+Puszta jelenléte lelkesítőleg hat. Minden híve, követője `Előny+1` Hatással dobja az Asztrális/Mentális Mágiaellenállását.
 
 <br />
 
@@ -55,10 +62,12 @@ Hasonlít a hősre, de már nem feltétlenül kell jónak lennie. A hőstettei e
 ### 🟡 Bukott gyógyító
 
 #### Követelmény
+
 Papként halott feltámasztással próbálkoztál, de szerencsétlenségedre a művelet Nekromanciába fordult, a lélek már eltávozott és erővel rángattad vissza.
 
 #### Hatás
-Soha többet nem leszel képes kézrátétellel gyógyítani, a ⭕[Sebgyógyítás](magia.papi.varazslatok/sebgyogyitas.md)⭕?⭕ formulát többet nem vagy képes használni. A művelet Aurádon is látható foltot ejt.
+
+Soha többet nem leszel képes kézrátétellel gyógyítani, a [Sebgyógyítás](magia.papi.varazslatok/sebgyogyitas.md) formulát többet nem vagy képes használni. A művelet Aurádon is látható foltot ejt.
 
 <br />
 
@@ -67,9 +76,11 @@ Soha többet nem leszel képes kézrátétellel gyógyítani, a ⭕[Sebgyógyít
 ### 🟡 Gyerekgyilkos
 
 #### Követelmény
+
 Szándékosan gyereket ölt.
 
 #### Hatás
+
 Az ilyen karma lemoshatatlan, Aurán jól látható mocskos szégyenfolt.<br />Történettől függően rossz hírnév is társulhat hozzá. Ha megtudják, kultúrától függő negatív hatások érik. Kiközösítés, lincselés...
 
 <br />
@@ -79,9 +90,11 @@ Az ilyen karma lemoshatatlan, Aurán jól látható mocskos szégyenfolt.<br />T
 ### 🟡 Gyilkos
 
 #### Követelmény
+
 Minimum 100 sikeres orvgyilkosság.
 
 #### Hatás
+
 A rengeteg gyilkosság megmérgezte a lelkedet, ha nem leplezed, Aurádon jól láthatóak a sötét foltok, melyek beszennyezik.
 
 Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md), [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettségek felső, félmágikus hatásai sem működnek.
@@ -93,9 +106,11 @@ Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer.alt
 ### 🟡 Hírhedt
 
 #### Követelmény
+
 Számos, nagy port kavart ügyben részt vettél, amiben neved, fizimiskád is említésre került.
 
 #### Hatás
+
 Híred messze megelőz. Ha aktív tevékenységed környékén lófrálsz, jó esély van rá, hogy felismernek... és nem csak a rajongók. % dobás dönt, az esélyt a KM határozza meg.
 
 <br />
@@ -105,16 +120,18 @@ Híred messze megelőz. Ha aktív tevékenységed környékén lófrálsz, jó e
 ### 🟡 Hős
 
 #### Követelmény
-Mindig segít a bajba jutottakon, mindig kész az önfeláldozásra, mindig a jó ügy érdekében cselekszik. Aki sok-sok hőstettet hajt végre, megkapja ezt a Karmát.
+
+Mindig segítesz a bajba jutottakon, mindig kész vagy az önfeláldozásra, mindig a jó ügy érdekében cselekszel. Aki sok-sok hőstettet hajt végre, megkapja ezt a Karmát.
 
 #### Hatás
-👀 **Pro**: Ez ténylegesen megnöveli az értékeit ⭕(mértékét még megbeszéljük)⭕, segítve ezzel további hőstetteit.<br />**Kontra**: Elég csak egyetlen rossz cselekedet, és elveszíti a karmát, és soha többé nem lehet visszaszerezni! Ekkor egy **Bukott hős** karma a jutalma... 👀
+
+**Pro**: Sokan felismernek és rögtön pozitívan viszonyulnak hozzád, amely konkrét előnyöket is okozhat: például szállásra soha nem lesz gondod, szívesebben válaszolnak a kérdéseidre, és így tovább.<br />**Kontra**: Elég csak egyetlen súlyos rossz cselekedet, és elveszíted a karmát, amelyet soha többé nem tudsz visszaszerezni! Ekkor egy **Bukott hős** karma a jutalmad... 
 
 <br />
 
 
 ---
-### 🟡 Mágikus összhang
+### 🟡 Mágia: Auraösszhang
 
 #### Követelmény
 Előtörténet, eddigi kalandok.
@@ -127,13 +144,13 @@ Például:
 - Sötétben varázsló (100%) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
 - stb  
 
-Lásd bővebben a Mágia fejezet ⭕TODO⭕ **Összhang karmák** fejezetét!⭕
+Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](106_magikus_komponensek_osszhangok.md) fejezetét!
 
 <br />
 
 
 ---
-### 🟡 Profán
+### 🟡 Mágia: Profán
 
 Mágikus karma.
 

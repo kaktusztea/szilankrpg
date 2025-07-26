@@ -3,6 +3,17 @@
 <sub>→[STUDY: Mágikus komponensek, összhangok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok)</sub>
 
 ---
+### Auraösszhang (Karma Háttér)
+
+⭕ [Auraösszhang](023_karma_hatterek.md) által adott hatás.
+
+
+---
+### Profán (Karma Háttér)
+
+⭕ [Profán](023_karma_hatterek.md) által adott hatás.
+
+---
 ### Fizikai
 
 - természetes
