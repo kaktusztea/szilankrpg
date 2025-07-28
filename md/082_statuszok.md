@@ -10,21 +10,21 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
     - Előny/Hátrány (1,2): Viselkedés
     - Előny/Hátrány (1,2): Érzékek
     - ⭕Szakrális bélyeg
-- Bénultság: (1) Cselekvőképtelenség, (2) Paralízis
-- Eszmélet: (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
-- Érzékvesztés: (1) zavart, (2) részleges, (3) teljes
-- Félelem: (1) Szorongás, (2) Rettegés/Pánik, (3) Bénító félelem
-- Fizikai: (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
-- Hangulat: (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
-- Indulat: (1) Harag, (2) Gyűlölet, (3) Őrjöngés
-- Késztetés: (1) Sugallat, (2) Vágy, (3) Kényszer
+- Bénultság (1) Cselekvőképtelenség, (2) Paralízis
+- Eszmélet (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
+- Érzékvesztés (1) zavart, (2) részleges, (3) teljes
+- Félelem (1) Szorongás, (2) Rettegés/Pánik, (3) Bénító félelem
+- Fizikai (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
+- Hangulat (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
+- Indulat (1) Harag, (2) Gyűlölet, (3) Őrjöngés
+- Késztetés (1) Sugallat, (2) Vágy, (3) Kényszer
 - Mérgezés\*
 - Pajzs akadályoztatása (1,2)
 - Rosszullét (1) Közepes, (2) Erős
-- Szellemi: (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
-- Sérült: (1) S3, (2) S4
-- Trauma: (1) Lélekrepedés, (2) Lélektörés
-- Zavar: (1) Kizökkent, (2) Megrendült, (3) Sokk
+- Szellemi (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
+- Sérült (1) S3, (2) S4
+- Trauma (1) Lélekrepedés, (2) Lélektörés
+- Zavar (1) Kizökkent, (2) Megrendült, (3) Sokk
 
 ---
 ---
