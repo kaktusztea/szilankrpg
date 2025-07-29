@@ -41,7 +41,7 @@ CÉ konstans: -30
 
 A Kezdeményező Érték (**KÉ**) szerepe a harcban, hogy meghatározza, ki „mozdul először” a harcban. Nem jelent harci dominanciát, csak azt, hogy ki a gyorsabb, ki cselekedhet előbb.
 
-A kezdeményezés műveletéről bővebben lásd a [Harc menete - Kezdeményezés](064_02_00_harc_menete_reszletes.md#kezdeményezés) fejezetet!
+A kezdeményezés műveletéről bővebben lásd a [Harc menete - Kezdeményezés](064_02_01_kezdemenyezes.md) fejezetet!
 
 Két típusú KÉ létezik:
 - Fegyveres KÉ
