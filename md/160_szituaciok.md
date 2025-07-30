@@ -40,6 +40,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Menekülés, Üldözés, Futás](szituaciok/menekules_uldozes_futas.md)
 - [Víz alatt bírni](szituaciok/viz_alatt_birni.md)
 - [Lóról/Hátasról leesés](szituaciok/lorol_hatasrol_leeses.md)
+- [Elugrani egy száguldó lovaskocsi elől](szituaciok/elugrani_lovaskocsi_elol.md)
 
 ## Tudás szituációk
 

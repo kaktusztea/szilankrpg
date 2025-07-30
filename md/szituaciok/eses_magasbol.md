@@ -1,8 +1,8 @@
 ## Esés magasból
 
-```
-→ Akrobatika képzettségpróba
+**[Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md)** képzettségpróba.
 
+```
 Nehézségek magasság alapján:
 
  1 m: 5

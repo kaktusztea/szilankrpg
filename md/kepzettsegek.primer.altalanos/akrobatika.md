@@ -12,6 +12,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 
 - [Esés magasból](../szituaciok/eses_magasbol.md)
 - [Ugrás magasba / távolba](../szituaciok/ugras_magasba_tavolba.md)
+- [Kötéltánc](../szituaciok/koteltanc.md)
 - [Lóról leesés](../szituaciok/lorol_hatasrol_leeses.md)
 
 ### Biztos tudás, követelmények
@@ -66,39 +67,38 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 ---
 ### Próbák
 
-🔆 Esés próbákat lásd az [Esés magasból](../szituaciok/eses_magasbol.md) szituáció leírásánál!
+🔆 **Esés** próbákat lásd az **[Esés magasból](../szituaciok/eses_magasbol.md)** szituáció leírásánál!
 
 #### Könnyű (6)
 
-- Kötéltánc alaphelyzet.
+- Kötéltánc alaphelyzet
 - Lecsúszni fenéken egy hosszú lépcső korlátján
+- Bevetődni egy nyitott ablakon és kigurulni
 
 #### Átlagos (9)
 
-- Elugrani egy száguldó lovaskocsi elől. Észlelés: `5 méter`.
+- Elkerülni egy hirtelen leeső akadályt futás közben
+- Gyors kigurulás végrehajtása egy enyhén lejtős, köves terepen
+- Megkapaszkodni egy ledőlő fa ágain
 
 #### Nehéz (12)
 
 - Lecsúszni talpon egy hosszú lépcső korlátján
-- Elugrani egy száguldó lovaskocsi elől. Észlelés: `3 méter`.
 - Kimozodni közepes mennyiségű potyogó sziklát
 
 #### Nagyon nehéz (15)
 
 - Végigfutni a függőleges falon `3 méter` hosszan.
 - Nekifutásból felfutni egy `3 méter` magas falon és beugrani egy ablakon
-- Elugrani egy száguldó lovaskocsi elől. Észlelés: `2 méter`.
 
 #### Rendkívül nehéz (18)
 
-- Elugrani egy száguldó lovaskocsi elől. Észlelés: `1 méter`.
 - Kimozodni sűrű sziklaomlást
 - Liánokon folyamatosan lengeni fák között (ahol lehetséges)
 
 #### Emberfeletti (21)
 
-- Szakadékbaugrani és elkapni a `10+ méterre` levő liánt sérülés nélkül.
-
+- Szakadékba ugrani és elkapni a `10+ méterre` levő liánt sérülés nélkül.
 
 <br />
 
