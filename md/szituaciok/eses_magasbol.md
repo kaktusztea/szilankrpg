@@ -31,7 +31,7 @@ Tulajdonságok:
 
 Ha például [Mászás](../kepzettsegek.szekunder/maszas.md) képzettség használata során (mint a [Mászás: összetett példa](maszas_osszetett_pelda.md)) a karakter nem képes megkapaszkodni és leesik, még mindig van esélye megúszni kisebb-nagyobb sérülésekkel a leérkezést.
 
-Ilyenkor [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát kell dobnia, ahol a Nehézség magasság-arányos és a fenti táblázatból.
+Ilyenkor [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát kell dobnia, ahol a Nehézség magasság-arányos és a fenti táblázatból kiolvasható.
 
 <br />
 
