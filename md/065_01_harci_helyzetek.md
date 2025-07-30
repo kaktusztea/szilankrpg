@@ -72,7 +72,7 @@ Minden `rövid (0)` pengehosszú fegyver, kivéve ezek közül azokat a fegyvere
 
 #### ⚜️ Puszta kéz harcértékei belharci szituációban
 
-Belharci szituációban `KÉ`, `TÉ`, `VÉ`, `SP`  mind `0` értékre emelkednek. Erőbónusz: az Erő `1:1`-ben beszámít az `SP` értékbe.
+Belharci szituációban `KÉ`, `TÉ`, `VÉ`, `SP`  mind `0` értékre emelkednek.
 
 [Puszta kéz jellemzői](068_002_kozelharci_fegyverek.md): `FP` sebesülést okoz, de minden `5.FP` → `1 ÉP` elvesztését okozza. Kivétel: harcművészek [Sárkány ököl](fortelyok.slan/sarkany_okol.md) fortélya. 
 
