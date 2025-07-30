@@ -1,6 +1,6 @@
 # Szituációk
 
-Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyekkel újra és újra találkoznak a játékosok. Egyfajta sorvezetést nyúltani: milyen próbák, ellenpróbák szükségesek ezek során a résztvevő felek oldaláról - milyen képzettségek, fortélyok vesznek részt ilyen esetekben.
+Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyekkel újra és újra találkoznak a játékosok. Ehhez szeretnénk ebben a fejezetben egyfajta sorvezetést nyúltani: milyen próbák, ellenpróbák szükségesek ezek során a résztvevő felek oldaláról - milyen képzettségek, fortélyok vesznek részt ilyen esetekben.
 
 ## Harci szituációk
 
