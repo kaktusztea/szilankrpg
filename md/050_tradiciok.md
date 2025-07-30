@@ -1,6 +1,6 @@
 ## Tradíciók
 
-<sub>→ [STUDY: Tradíciók](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.tradiciok)</sub>
+<sub>→ [STUDY: Tradíciók egyedi jellemzői](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.tradiciok.jellemzoi)</sub>
 
 ```
 - Primer képzettségek
