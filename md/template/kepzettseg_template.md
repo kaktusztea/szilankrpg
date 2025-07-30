@@ -38,7 +38,7 @@
 ---
 ### Biztos tudás, követelmények
 
-#### Novívius (3)
+#### 📖 Novívius (3)
 
 🔒 Követelmény:
 - ⭕Tulajdonság⭕: ⭕`+1`⭕
@@ -47,7 +47,7 @@
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
-#### Kismester (6)
+#### 📖 Kismester (6)
 
 🔒 Követelmény: ⭕TODO⭕
 
@@ -56,7 +56,7 @@
 <br />
 
 ---
-#### Mester (9)
+#### 📖 Mester (9)
 
 🔒 Követelmény: ⭕TODO⭕
 
@@ -65,7 +65,7 @@
 <br />
 
 ---
-#### Nagymester (12)
+#### 📖 Nagymester (12)
 
 🔒 Követelmény:  ⭕TODO⭕
 
@@ -74,7 +74,7 @@
 <br />
 
 ---
-#### Élő legenda (15)
+#### 📖 Élő legenda (15)
 
 🔒 Követelmény:  ⭕TODO⭕
 
@@ -85,27 +85,27 @@
 ---
 ### Próbák
 
-#### Könnyű (6)
+#### 🎲 Könnyű (6)
 
 ⭕TODO⭕
 
-#### Átlagos (9)
+#### 🎲 Átlagos (9)
 
 ⭕TODO⭕
 
-#### Nehéz (12)
+#### 🎲 Nehéz (12)
 
 ⭕TODO⭕
 
-#### Nagyon nehéz (15)
+#### 🎲 Nagyon nehéz (15)
 
 ⭕TODO⭕
 
-#### Rendkívül nehéz (18)
+#### 🎲 Rendkívül nehéz (18)
 
 ⭕TODO⭕
 
-#### Emberfeletti (21)
+#### 🎲 Emberfeletti (21)
 
 ⭕TODO⭕
 

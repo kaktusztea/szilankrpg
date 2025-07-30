@@ -8,7 +8,11 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ⏹️ Nem fejleszthető Tulajdonság
 
-💢 Csoportban végezhető képzettség
+💢Csoportban végezhető képzettség
+
+📖 Képzettség - biztos tudás szint
+
+🎲 Képzettség - próba nehézség
 
 🔁 Többször felvehető ismeret
 
