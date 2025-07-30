@@ -72,9 +72,9 @@
 
 🔵 [Befolyásolás](kepzettsegek.primer.altalanos/befolyasolas.md) 🅿️ <sup><sub>(50%)</sub></sup>
 
-🔵 [Emberismeret](kepzettsegek.primer.altalanos/emberismeret.md) 🅿️ <sup><sub>(90%)</sub></sup>
+🔵 [Emberismeret](kepzettsegek.primer.altalanos/emberismeret.md) 🅿️ <sup><sub>(98%)</sub></sup>
 
-🔵 [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) 🅿️💢 <sup><sub>(95%)</sub></sup>
+🔵 [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) 🅿️💢 <sup><sub>(98%)</sub></sup>
 
 🔵 [Értékbecslés](kepzettsegek.szekunder/ertekbecsles.md) <sup><sub>(10%)</sub></sup>
 
