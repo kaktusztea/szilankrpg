@@ -1107,6 +1107,24 @@
         "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya."
     },
     {
+        "Fegyver": "Puszta kéz Belharcban",
+        "Forgatás módja": "egykezes",
+        "SP": "0",
+        "Erőbónusz limit": "99",
+        "Sebzési típus": "Z",
+        "Átütés": "0",
+        "Íves": "0",
+        "MK": "0",
+        "KF": "0",
+        "Pengehossz": "0",
+        "KÉ": "-0",
+        "TÉ": "-0",
+        "VÉ": "-0",
+        "Sebesség": "6",
+        "Kategória": "közelharci",
+        "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya."
+    },
+    {
         "Fegyver": "Ramiera",
         "Forgatás módja": "egykezes",
         "SP": "+2",
