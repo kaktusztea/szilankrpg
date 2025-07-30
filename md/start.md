@@ -86,7 +86,7 @@
 - [Képzettségszintek KP igénye](030_05_kepzettsegszintek_kp_igenye.md)
 - [Képzettségpróba](030_06_kepzettsegproba.md) 🎲
 - [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) 🎲
-- [Csoportosan végezhető képzettségek](030_07_02_csoportosan_vegezheto_kepzettsegek.md) 💢
+- [Csoportosan végezhető képzettségek](030_07_02_csoportosan_vegezheto_kepzettsegek.md) 🤝
 - [Képzettségek és Fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)
 - [Általános fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Harci fortélyok képzettségkiterjesztés listája (ábra)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊

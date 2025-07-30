@@ -1,6 +1,6 @@
 ## Képzettséglista
 
-🔵 Képzettség, 🔁 Többször felvehető, 🅿️ Primer, 💢 Csoportban végezhető képzettség
+🔵 Képzettség, 🔁 Többször felvehető, 🅿️ Primer, 🤝 Csoportban végezhető képzettség
 
 ---
 
@@ -44,15 +44,15 @@
 
 🔵 [Hajítás](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) <sup><sub>(40%)</sub></sup>
 
-🔵 [Íjászat](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 💢
+🔵 [Íjászat](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 🤝
 
-🔵 [Lövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 💢
+🔵 [Lövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 🤝
 
-🔵 [Ostromlövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 💢
+🔵 [Ostromlövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 🤝
 
 🔵 [Mágikus lövészet](kepzettsegek.primer.harci/magikus_loveszet.md)
 
-🔵 [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) 💢
+🔵 [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) 🤝
 
 ---
 ### Fizikai képzettségek
@@ -63,9 +63,9 @@
 
 🔵 [Mászás](kepzettsegek.szekunder/maszas.md) <sup><sub>(100%)</sub></sup>
 
-🔵 [Lovaglás](kepzettsegek.szekunder/lovaglas.md) 💢 <sup><sub>(100%)</sub></sup>
+🔵 [Lovaglás](kepzettsegek.szekunder/lovaglas.md) 🤝 <sup><sub>(100%)</sub></sup>
 
-🔵 [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) 💢 <sup><sub>(100%)</sub></sup>
+🔵 [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) 🤝 <sup><sub>(100%)</sub></sup>
 
 ---
 ### Világi képzettségek
@@ -74,25 +74,25 @@
 
 🔵 [Emberismeret](kepzettsegek.primer.altalanos/emberismeret.md) 🅿️ <sup><sub>(98%)</sub></sup>
 
-🔵 [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) 🅿️💢 <sup><sub>(98%)</sub></sup>
+🔵 [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) 🅿️🤝 <sup><sub>(98%)</sub></sup>
 
 🔵 [Értékbecslés](kepzettsegek.szekunder/ertekbecsles.md) <sup><sub>(10%)</sub></sup>
 
 🔵 [Etikett](kepzettsegek.szekunder/etikett.md) <sup><sub>(100%)</sub></sup>
 
-🔵 [Hajózás](kepzettsegek.szekunder/hajozas.md) 💢 <sup><sub>(50%)</sub></sup>
+🔵 [Hajózás](kepzettsegek.szekunder/hajozas.md) 🤝 <sup><sub>(50%)</sub></sup>
 
-🔵 [Idomítás](kepzettsegek.szekunder/idomitas.md) <sup><sub>(80%)</sub></sup> 
+🔵 [Idomítás](kepzettsegek.szekunder/idomitas.md) <sup><sub>(80%)</sub></sup>
 
-🔵 [Nyomozás](kepzettsegek.primer.altalanos/nyomozas.md) 🅿️💢 <sup><sub>(50%)</sub></sup>
+🔵 [Nyomozás](kepzettsegek.primer.altalanos/nyomozas.md) 🅿️🤝 <sup><sub>(50%)</sub></sup>
 
 🔵 [Nyelvtanulás](kepzettsegek.szekunder/nyelvtanulas.md) <sup><sub>(40%)</sub></sup>
 
-🔵 [Szakma](kepzettsegek.szekunder/szakma.md) 💢 🔁 <sup><sub>(20%)</sub></sup>
+🔵 [Szakma](kepzettsegek.szekunder/szakma.md) 🤝 🔁 <sup><sub>(20%)</sub></sup>
 
 🔵 [Természetjárás](kepzettsegek.szekunder/termeszetjaras.md) <sup><sub>(30%)</sub></sup>
 
-🔵 [Vajákosság](kepzettsegek.szekunder/vajakossag.md) 💢 <sup><sub>(40%)</sub></sup>
+🔵 [Vajákosság](kepzettsegek.szekunder/vajakossag.md) 🤝 <sup><sub>(40%)</sub></sup>
 
 🔵 [Városi jártasság](kepzettsegek.szekunder/varosi_jartassag.md) <sup><sub>(40%)</sub></sup>
 
@@ -103,7 +103,7 @@
 
 🔵 [Csapdaállítás](kepzettsegek.szekunder/csapdaallitas.md) <sup><sub>(0%)</sub></sup>
 
-🔵 [Lopakodás/Rejtőzés](kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) 🅿️💢 <sup><sub>(70%)</sub></sup>
+🔵 [Lopakodás/Rejtőzés](kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) 🅿️🤝 <sup><sub>(70%)</sub></sup>
 
 🔵 [Lopás](kepzettsegek.szekunder/lopas.md) <sup><sub>(10%)</sub></sup>
 
@@ -117,7 +117,7 @@
 
 Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművészet** képzettségbe a belső művészetek alkotói folyamatait lefedő **Képzőművészettől**. A passzív művészeti ismereteket a **Művészetismeret** képzettség adja. Mind a három  [Szabad Fortélyok](042_szabad_fortelyok.md) alkalmazásával terjeszthető ki különböző művézeti ágakra.
 
-🔵 [Előadóművészet](kepzettsegek.szekunder/eloadomuveszet.md) 💢 <sup><sub>(40%)</sub></sup>
+🔵 [Előadóművészet](kepzettsegek.szekunder/eloadomuveszet.md) 🤝 <sup><sub>(40%)</sub></sup>
 
 🔵 [Képzőművészet](kepzettsegek.szekunder/kepzomuveszet.md) <sup><sub>(40%)</sub></sup>
 
@@ -128,15 +128,15 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Alkímia](kepzettsegek.szekunder/alkimia.md) <sup><sub>(30%)</sub></sup>
 
-🔵 [Hadászat](kepzettsegek.primer.altalanos/hadaszat.md) 🅿️ <sup><sub>(30%)</sub></sup> 
+🔵 [Hadászat](kepzettsegek.primer.altalanos/hadaszat.md) 🅿️ <sup><sub>(30%)</sub></sup>
 
 🔵 [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md) 🅿️ <sup><sub>(90%)</sub></sup>
 
-🔵 [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) 🅿️💢 <sup><sub>(70%)</sub></sup>
+🔵 [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) 🅿️🤝 <sup><sub>(70%)</sub></sup>
 
-🔵 [Kvantikum](kepzettsegek.szekunder/kvantikum.md) 💢 <sup><sub>(40%)</sub></sup>
+🔵 [Kvantikum](kepzettsegek.szekunder/kvantikum.md) 🤝 <sup><sub>(40%)</sub></sup>
 
-🔵 [Lexikum](kepzettsegek.szekunder/lexikum.md) 💢 <sup><sub>(40%)</sub></sup>
+🔵 [Lexikum](kepzettsegek.szekunder/lexikum.md) 🤝 <sup><sub>(40%)</sub></sup>
 
 ---
 ### Misztikus képzettségek 🅿️
