@@ -55,7 +55,7 @@ Ezután a kiválasztott elsődleges Tulajdonságra dobjon próbát a karakter a 
 
 #### Fontos❗
 
-A fenti szám nincs kőbe vésve! Ha a KM a másodlagos Tulajdonság szerepét még kevésbé érzi fontosnak, akkor akár `2`-vel, vagy `3`-al is csökkentheti annak Tulajdonságpróbáját.
+A fenti szám nincs kőbe vésve! Ha a KM a másodlagos Tulajdonság szerepét még kevésbé érzi fontosnak, akkor akár `2`-vel, vagy `3`-al is csökkentheti annak Nehézségét.
 
 #### ⚡Példa
 
