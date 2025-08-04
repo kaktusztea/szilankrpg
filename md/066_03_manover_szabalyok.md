@@ -19,12 +19,15 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 - Kimarad a **Megakasztás** (`M`) fázis (ha van) a védő oldalán
 - **Ellenpróba** Nehézsége: `-3`
 - **Végrehajtás** dobásnál továbbra is `TÉ:+20`, de a **Meglepetés** miatt ugye `Előny+1` jár erre a dobásra.
+- Ellenfél (kalandozó) **nem** tehet bele "ellen" `Manőver Pontot`.
 
 ## ⚜️ Harci helyzetek és Manőverek - Észrevétlen támadás
 
 Vannak Manőverek, amelyek [Észrevétlen támadást](065_01_harci_helyzetek.md#észrevétlen-támadás) igényelnek.
 
 Kérdés, hogy ilyenkor miért dobunk mégis **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik - nem véletlen, hogy az elköltött `HM` pontokon alapszik, amelyek az általános harci tapasztalatot szimbolizálják.
+
+Ellenfél (kalandozó) **nem** tehet bele "ellen" `Manőver Pontot`.
 
 <br />
 
