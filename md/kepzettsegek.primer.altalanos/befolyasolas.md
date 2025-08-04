@@ -42,9 +42,9 @@ Emberismeret + Érzékenység
 
 A parti dönti el a játék kezdetekor, hogy alkalmazza -e ezt a paramétert.
 
-A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy módosítót `[-6;+3]` tartományban és a játékos ezt hozzáadja a **Befolyásolás** képzettségpróbájához.
+A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy módosítót `[-3;+3]` tartományban és a játékos ezt hozzáadja a **Befolyásolás** képzettségpróbájához.
 
-Például a játékos nem feccöl bele túl sok energiát sem a karaktere megszemélyesítésébe, sem az ötletbe, amivel át akarja verni a másik felet, tehát valami nagyon átlátszó hazugságot akar megetetni, akkor nyugodtan kaphat `-6` büntetést is a dobásra.
+Például a játékos nem feccöl bele túl sok energiát sem a karaktere megszemélyesítésébe, sem az ötletbe, amivel át akarja verni a másik felet, tehát valami nagyon átlátszó hazugságot akar megetetni, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
 
 <br />
 

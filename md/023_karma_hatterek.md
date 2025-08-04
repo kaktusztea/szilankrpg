@@ -26,7 +26,7 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 - [Gyilkos](#-gyilkos)
 - [Hírhedt](#-h%C3%ADrhedt)
 - [Hős](#-h%C5%91s)
-- Szolgalelkű
+- [Szolgalelkű](#-szolgalelk%C5%B1)
 
 #### Misztikus
 

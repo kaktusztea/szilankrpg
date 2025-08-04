@@ -13,7 +13,9 @@ Intelligencia, Emlékezet
 ### Normál kiterjesztés
 
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre
+
 __
+
 - [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a fal sokkal vastagabb, mint a másik!"
 - [Hazudozás](../fortelyok.szabad/hazudozas.md): "Sokat  pislog, kerüli a tekintetem, hazudik..."
 - [Heraldika](../fortelyok.szabad/heraldika.md): "A famor címerében levő lombok vérszínűek, akárcsak az - állítólagos - ellenséges házéban."
@@ -36,7 +38,7 @@ __
 
 ### Leírás
 
-Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve az felderítés eljárásrendjének ismerete is fontos segítséget adhat. Az alábbi példák segítenek leírni, milyen jellegű információk nyerhetők a képzettség segítségével:
+Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve a felderítés eljárásrendjének ismerete is fontos segítséget adhat. Az alábbi példák segítenek leírni, milyen jellegű információk nyerhetők a képzettség segítségével:
 - bűnjelek elemzése és következtetés is. Példa: el lett mozdítva a bútor.
 - Mikor járt itt utoljára valaki?
 - Az asztalon heverő rengeteg iratban találni valami fontosat, összekötni a "pontokat" a most talált és a korábban talált információk alapján.

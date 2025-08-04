@@ -11,7 +11,7 @@
 - [Kvantikum](../kepzettsegek.szekunder/kvantikum.md):
   - "Nem volt könnyű, de megfejtettem a titkosírást. Ez egy üzenet a tábornoknak, amiben a csapatokat a hágó elhagyására utasítja."
   - "Megírtam az üzenetet uram, alkalmaztam a titkosírást, ha rossz kezekbe kerül, se tudják elolvasni."
-- [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md): "A szimbólumok által jelképezett átjáró az kandalló feletti festményre utal!"
+- [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md): "A szimbólumok által jelképezett átjáró a kandalló feletti festményre utal!"
 
 <br />
 

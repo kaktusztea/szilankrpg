@@ -44,7 +44,7 @@ Hasonlatos az [Aura Átütésnél leírtakhoz](104_aura_magia_akarata_magiaellen
 
 #### Aura számítása
 
-Itt is az [Aura táblázatot](104_aura_magia_akarata_magiaellenallas.md#aura-aktuális-értéke) használjuk, de nincs dobás, a számolás `1x` kell elvégezni minden Tapasztalati Szint lépésekor.
+Itt is az [Aura táblázatot](104_aura_magia_akarata_magiaellenallas.md#aura-aktuális-értéke) használjuk, de nincs dobás, a számolást `1x` kell csak elvégezni - minden Tapasztalati Szint lépésekor.
 
 Az, hogy melyik Tulajdonságot kell az Aura meghatározásakor beleszámolni, az az adott isten, vagy vallás jellegétől függ. Minden isten papjainak leírásában megadjuk, hogy melyik is ez a Tulajdonság. 
 

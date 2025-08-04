@@ -20,7 +20,7 @@ Ez egy speciális képzettség, mert nem adott nyelvre veszed fel, hanem ez jelk
 
 ### Példa ⚡
 
-"**Nyelvtanulás -** `5.szint`" →`6 pont` jár.
+**Nyelvtanulás -** `5.szint` →`6 pont` jár
 
 Pontok szétosztása Nyelvismeret fortélyokra:
 - Nyelvismeret - Közös (Udvari) (`1 pont`)  → speciális, mert az Alap ingyenes Közös nyelvre. Lásd lenn.

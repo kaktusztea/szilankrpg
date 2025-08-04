@@ -1,6 +1,10 @@
 ## Primer és Szekunder ismeretek kategóriái
 
-Szétválasztottuk két halmazra a `Szilánk` rendszerének `KP`-ból tanulható ismereteit "kalandozásban nagyon hasznos" (**Primer**) és "kalandozásban átlagosan hasznos" (**Szekunder**) kategóriákra, tehát mondhatjuk, hogy "táposság" szerint csoportosítottuk őket. Ennek oka a színesebb karakterek és a kevésbé "tápos" ismeretek helyzetbe hozása.
+A `Szilánk` rendszere alatt `KP`-ból tanulható ismereteket két önkényesen meghatározott kategóriára bontottuk:
+- **Primer**: "kalandozásban nagyon hasznos"
+- **Szekunder**: "kalandozásban átlagosan hasznos"
+
+Tehát mondhatjuk, hogy "táposság" szerint csoportosítottuk az ismereteket. Ennek oka a színesebb karakterek és a kevésbé "tápos" ismeretek helyzetbe hozása: alkothassunk színes karakter úgy is, hogy ezzel nem hozzuk magunkat hátrányba a szürke "gyilkológépeket" megalkotó játékosokkal szemben.
 
 ### Primer ismeretek
 

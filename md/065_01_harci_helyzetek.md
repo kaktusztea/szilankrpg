@@ -174,7 +174,9 @@ Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillan
 
 Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen. Siker esetén áldozata [Védő Értékét annak mozgási jellege és mérete](062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint) határozza meg. A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat. 
 
-Az **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás).
+→ [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#%EF%B8%8F-harci-helyzetek-%C3%A9s-man%C5%91verek---%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s)
+
+→ Az **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás).
 
 <br />
 
@@ -465,6 +467,8 @@ A találat esélye tovább növelhető [Támadó taktikával](065_02_harci_takti
 A védekező csak `1`-et támadhat és azt is csak a kör végén teheti meg, továbbá a pajzsának `VÉ`-je csak akkor számít, ha a csapás nem hátulról jön.
 
 A `pajzs VÉ` csak akkor adódik hozzá a védekező aktuális `Védő Értékhez`, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
+
+→ [Meglepetés és Manőverek viszonya](066_03_manover_szabalyok.md#%EF%B8%8F-harci-helyzetek-%C3%A9s-man%C5%91verek---meglepet%C3%A9s)
 
 <br />
 

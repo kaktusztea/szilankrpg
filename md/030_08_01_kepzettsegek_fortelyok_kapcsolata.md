@@ -83,9 +83,9 @@ Ha több fortély terjeszt ki képzettségpróbánál és legalább `1 db` olyan
 
 ### 🔆 Speciális: Több fortély bónusza
 
-Amennyiben több fortély terjeszt ki egy képzettséget, akkor az esetleges bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít.
+Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít.
 
-Tehát ha például egy képzettséget kiterjeszt
+Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjeszt
 - `A` fortély - `2.fok`
 - `B` fortély - `3.fok`
 

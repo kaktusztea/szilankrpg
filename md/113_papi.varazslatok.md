@@ -1,6 +1,6 @@
 ## Papi varázslatok
 
-Itt találhatjuk az összes, a rendszerben játszható pap varázslatainak lsitáját. A Harci varázslatokat 🗡️ szimbólummal jelöltük.
+Itt találhatjuk az összes, a rendszerben játszható pap varázslatainak listáját. A Harci varázslatokat 🗡️ szimbólummal jelöltük.
 
 ### Általános pap varázslatok
 

@@ -1,6 +1,6 @@
 ## 🔵 Képzőművészet
 
-Az alkotás, az kézzel alkotott műremekek aktív, ihletett kreálása.
+Az alkotás, a kézzel alkotott műremekek aktív, ihletett kreálása.
 
 ### Domináns Tulajdonságok
 
