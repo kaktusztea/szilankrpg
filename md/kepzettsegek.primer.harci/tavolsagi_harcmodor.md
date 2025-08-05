@@ -9,6 +9,8 @@ Alább összesen 4 különálló ilyen harcmodor képzettség általános leír�
 - Lövészet
 - Ostromlövészet
 
+### Speciális bónusz
+
 Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adnak harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
 
 ### Próba
