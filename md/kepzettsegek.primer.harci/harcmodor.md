@@ -26,7 +26,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 ---
 ### Biztos tudás, követelmények
 
-#### 📖 Novívius (3)
+#### Novívius (3) 📖
 
 🔒 Követelmény: Ügyesség: `+0`
 
@@ -35,7 +35,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 <br />
 
 ---
-#### 📖 Kismester (6)
+#### Kismester (6) 📖
 
 🔒 Követelmény: Ügyesség: `+1`
 
@@ -44,7 +44,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 <br />
 
 ---
-#### 📖 Mester (9)
+#### Mester (9) 📖
 
 🔒 Követelmény: Ügyesség: `+2`
 
@@ -53,7 +53,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 <br />
 
 ---
-#### 📖 Nagymester (12)
+#### Nagymester (12) 📖
 
 🔒 Követelmény: Ügyesség: `+3`
 
@@ -62,7 +62,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 <br />
 
 ---
-#### 📖 Élő legenda (15)
+#### Élő legenda (15) 📖
 
 🔒 Követelmény: Ügyesség: `+3`
 
