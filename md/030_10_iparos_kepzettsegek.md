@@ -3,8 +3,7 @@
 Az alábbi [Szakma](kepzettsegek.szekunder/szakma.md) képzettségek az **iparos** képzettségek alá tartoznak, ezek által elkészült termékek minősége (**Ideája**) függ a képzettség biztos tudás szintjétől.
 
 - ács, asztalos, cipész, cserző, ékszerész, kötélgyártó, kőműves, kádár, kovács, lakatos, pénzverő, szabó, szűcs, varga
-- kovács
-- fegyverkovács
+- (fegyver)kovács
 - páncélkovács
 
 ### Biztos tudás szintek
