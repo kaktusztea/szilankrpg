@@ -104,7 +104,7 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 ### **Származtatott értékek**
 - Életerő Pont (`ÉP`), Fáradtság Pont (`FP`)
 - Harcértékek: `KÉ, TÉ, VÉ, CÉ, SP, SFÉ, MGT`
-- Manőver Pontok
+- Manőver Pontok (`MP`)
 - Mágiaellenállás
 - Méregellenállás
 
