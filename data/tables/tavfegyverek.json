@@ -27,7 +27,7 @@
         "Hatótáv": "5m + (Erő x 3)",
         "Sebesség": "9",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "Követelmény: Erő +0<br />Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel<br />"
+        "Speciális / Megjegyzés": "Követelmény: Erő +0 Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
     },
     {
         "Fegyver": "Dobócsillag",
@@ -72,7 +72,7 @@
         "Hatótáv": "120m",
         "Sebesség": "7",
         "Kategória": "lőfegyver",
-        "Speciális / Megjegyzés": "Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: 3<br />Erőbónusz nincs"
+        "Speciális / Megjegyzés": "Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: 3 Erőbónusz nincs"
     },
     {
         "Fegyver": "Fúvócső, kicsi",
