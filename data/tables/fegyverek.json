@@ -69,7 +69,7 @@
         "VÉ": "4",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "- Ha minimum 11 SP sebzést elérsz, akkor további +5 SP jár.<br /><br />- Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />    <br />- Páncéltalan esetén: K6 dobás:  <br /> 1-2: a fegyver elakad a testben, ha volt sebzés."
+        "Speciális": "- Ha minimum 11 SP sebzést elérsz, akkor további +5 SP jár.- Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.    - Páncéltalan esetén: K6 dobás:   1-2: a fegyver elakad a testben, ha volt sebzés."
     },
     {
         "Fegyver": "Bot, furkós",
@@ -267,7 +267,7 @@
         "VÉ": "5",
         "Sebesség": "8",
         "Kategória": "zúzó",
-        "Speciális": "Nagyon vérzik<br />50% az esély, hogy beragad és nem lehet kihúzni harc közben"
+        "Speciális": "Nagyon vérzik50% az esély, hogy beragad és nem lehet kihúzni harc közben"
     },
     {
         "Fegyver": "Dzsambia",
@@ -375,7 +375,7 @@
         "VÉ": "11",
         "Sebesség": "6",
         "Kategória": "kardvívó",
-        "Speciális": "G0rv1ki klánnal, vagy mesterrel.<br />Egyébként rövidkard harcértékek.<br />Hárítófegyverként is használható."
+        "Speciális": "G0rv1ki klánnal, vagy mesterrel.Egyébként rövidkard harcértékek.Hárítófegyverként is használható."
     },
     {
         "Fegyver": "Kard, handzsár",
@@ -465,7 +465,7 @@
         "VÉ": "15",
         "Sebesség": "9",
         "Kategória": "kardvívó",
-        "Speciális": "Ha közrefogják a forgatót, fegyverének VÉ-je 0-ra zuhan.<br />Erő követelmény: +2<br />Edzettség követelmény: +1"
+        "Speciális": "Ha közrefogják a forgatót, fegyverének VÉ-je 0-ra zuhan.Erő követelmény: +2Edzettség követelmény: +1"
     },
     {
         "Fegyver": "Kard, khossas",
@@ -702,7 +702,7 @@
         "VÉ": "13",
         "Sebesség": "7",
         "Kategória": "kardvívó",
-        "Speciális": "Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.<br />[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban KÉ:+5 bónuszt kap (csak kétkezes forgatási módban)."
+        "Speciális": "Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban KÉ:+5 bónuszt kap (csak kétkezes forgatási módban)."
     },
     {
         "Fegyver": "Kard, Slan csatakard",
@@ -720,7 +720,7 @@
         "VÉ": "17",
         "Sebesség": "9",
         "Kategória": "kardvívó",
-        "Speciális": "Hihetetlen drága és ritka.<br />Csak két kézzel forgatható."
+        "Speciális": "Hihetetlen drága és ritka.Csak két kézzel forgatható."
     },
     {
         "Fegyver": "Kard, Slan rövid",
@@ -855,7 +855,7 @@
         "VÉ": "2",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "- Páncél nélküli ellenfélnél, szúrás esetén sebzése: +3 SP<br />- Fegyverrántás szituációban +5 KÉ<br />- Páncélszúrásra nem használható."
+        "Speciális": "- Páncél nélküli ellenfélnél, szúrás esetén sebzése: +3 SP- Fegyverrántás szituációban +5 KÉ- Páncélszúrásra nem használható."
     },
     {
         "Fegyver": "Lándzsa",
@@ -1104,7 +1104,7 @@
         "VÉ": "-10",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya.<br>Páncélkesztyűvel SP:-3 a (-5) helyett."
+        "Speciális": "FP sebesülést okoz.Minden 5.FP 1 ÉP elvesztését okozza.Kivéve: harcművészek „Sárkány ököl” fortélya.Páncélkesztyűvel SP:-3 a (-5) helyett."
     },
     {
         "Fegyver": "Puszta kéz Belharcban",
@@ -1122,7 +1122,7 @@
         "VÉ": "-0",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya.<br>Páncélkesztyűvel SP:-3 a (-5) helyett."
+        "Speciális": "FP sebesülést okoz.Minden 5.FP 1 ÉP elvesztését okozza.Kivéve: harcművészek „Sárkány ököl” fortélya.Páncélkesztyűvel SP:-3 a (-5) helyett."
     },
     {
         "Fegyver": "Ramiera",
@@ -1140,7 +1140,7 @@
         "VÉ": "5",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "G0rv1ki klán, vagy mester.<br>Tőrnél nehezebb elrejteni.<br>Ha a karakter nem ismeri a fegyver különleges fogásait akkor harcértékei sima tőré lesznek."
+        "Speciális": "G0rv1ki klán, vagy mester.Tőrnél nehezebb elrejteni.Ha a karakter nem ismeri a fegyver különleges fogásait akkor harcértékei sima tőré lesznek."
     },
     {
         "Fegyver": "Sequor",
@@ -1248,7 +1248,7 @@
         "VÉ": "4",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "Áldozótőr<br />Vágásnál: +0 SP"
+        "Speciális": "ÁldozótőrVágásnál: +0 SP"
     },
     {
         "Fegyver": "Tőr, ököl",
@@ -1320,7 +1320,7 @@
         "VÉ": "12",
         "Sebesség": "6",
         "Kategória": "kardvívó",
-        "Speciális": "Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.<br />- Az áldozat Páncéldobás: -1 büntetés<br />- [Területre/pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver: Ellenpróba: -2 <br />- Ha ellenfél is tőrkardos, mindketten: VÉ csökkentés: Kiskocka<br />- Könnyebb ellene a [Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:-2<br />- Zúzó fegyverek ellen: VÉ veszteség duplázódik"
+        "Speciális": "Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.- Az áldozat Páncéldobás: -1 büntetés- [Területre/pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver: Ellenpróba: -2 - Ha ellenfél is tőrkardos, mindketten: VÉ csökkentés: Kiskocka- Könnyebb ellene a [Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:-2- Zúzó fegyverek ellen: VÉ veszteség duplázódik"
     },
     {
         "Fegyver": "Vasököl / páncélkesztyű",
