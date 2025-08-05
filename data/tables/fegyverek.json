@@ -1104,7 +1104,7 @@
         "VÉ": "-10",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya."
+        "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya.<br>Páncélkesztyűvel SP:-3 a (-5) helyett."
     },
     {
         "Fegyver": "Puszta kéz Belharcban",
@@ -1122,7 +1122,7 @@
         "VÉ": "-0",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya."
+        "Speciális": "FP sebesülést okoz.<br />Minden 5.FP 1 ÉP elvesztését okozza.<br />Kivéve: harcművészek „Sárkány ököl” fortélya.<br>Páncélkesztyűvel SP:-3 a (-5) helyett."
     },
     {
         "Fegyver": "Ramiera",
