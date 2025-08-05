@@ -25,7 +25,7 @@ class MdToJsonConverter:
 
         self.tag_start = f"<!-- tag: md_table_{self.table_pattern}_start -->"
         self.tag_end = f"<!-- tag: md_table_{self.table_pattern}_end -->"
-        self.filter_out_chars = ['**', '`', '⭕TODO⭕', '⭕']
+        self.filter_out_chars = ['**', '`', '⭕TODO⭕', '⭕', '<br>', '<br />']
         self.skip_columns = params['skip_columns']
 
         # execute processing
