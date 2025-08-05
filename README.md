@@ -110,7 +110,7 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 
 ---
 ## Licenc
-Minden dokumentumra a `Creative Commons` licenc feltételei érvényesek. [Bővebben itt](LICENSE).
+Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek az alábbiak szerint: [LICENSE](LICENSE)
 
 ---
 ## A Szabályrendszer
