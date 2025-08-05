@@ -11,10 +11,14 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 - Lándzsavívás
 - Ostorharc
 
+<br />
+
 ### Speciális bónusz
 
 - Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adnak harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
 - A képzettség szintjei beleszámítanak a [Manőver Pontok](../066_02_manover_pontok.md) számításába.
+
+<br />
 
 ### Kapcsolódik
 
