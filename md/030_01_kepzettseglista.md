@@ -13,6 +13,7 @@
 - Emberismeret
 - Észlelés
 - Fájdalomtűrés
+- Hadászat
 - Lopakodás/rejtőzés
 - Méregkeverés
 - Nyomozás
