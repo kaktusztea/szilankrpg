@@ -1,40 +1,72 @@
-## 🔵 Harcmodorok
+## 🔵 Harcmodor 🔁
 
-Ez egy [Primer (harci) képzettség](../017_primer_szekunder_ismeretek.md).
+Ez egy [Primer (harci) képzettség](../017_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
 
-A harcmodorok a közvetlenül, fegyverrel való harc képességét fedik le. Kategóriánként külön-külön fel kell venni rájuk a képzettséget.\
-Alább összesen 4 különálló ilyen harcmodor képzettség általános leírását találjuk:
+A harcmodorok a közvetlenül, fegyverrel való harc képességét fedik le. Kategóriánként külön-külön fel kell venni rájuk ezt a képzettséget.
+
+Alább összesen `5` ilyen különálló harcmodor képzettség általános leírását találjuk:
 - Közelharc
 - Kardvívás
 - Zúzás
 - Lándzsavívás
 - Ostorharc
 
-Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adnak harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
+### Speciális bónusz
 
-### Próba
+- Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adnak harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
+- A képzettség szintjei beleszámítanak a [Manőver Pontok](../066_02_manover_pontok.md) számításába.
 
-Nincs, csak biztos tudásból.
+### Kapcsolódik
 
-### Speciális
-
-A képzettség minden `3. szintje` után `1` [Manőver Pont](../018_03_manover_pontok_99.md) jár.
+- [Távolsági harcmodor](tavolsagi_harcmodor.md) képzettség
+- [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) fortély egyes fokainak követelménye
 
 <br />
 
+---
 ### Biztos tudás, követelmények
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub>                                                                   |  Követelmény  |
-| :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- | :-----------: |
-| Novícius (3)     |                                                                                                                                                      | Ügyesség: `0` |
-| Kismester (6)    |                                                                                                                                                      | Ügyesség: `1` |
-| Mester (9)       | ⭕xyz <br /> **Példa**: x                                                                                                                             | Ügyesség: `2` |
-| Nagymester (12)  | Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.                                                                                     | Ügyesség: `3` |
-| Élő legenda (15) | Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz.<br />Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz). | Ügyesség: `3` |
+#### 📖 Novívius (3)
+
+🔒 Követelmény: Ügyesség: `+0`
+
+🌟 Hatás: Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
 
 ---
-### Hajítás harcmodor bónuszai
+#### 📖 Kismester (6)
 
-- `9.szint`: ⭕TODO ⭕
-- `12.szint`: bármilyen hajításra alkalmatlan tárgyat a Dobótőr értékeivel tudsz dobni.
-- `15.szint`: ⭕TODO ⭕
+🔒 Követelmény: Ügyesség: `+1`
+
+🌟 Hatás: -
+
+<br />
+
+---
+#### 📖 Mester (9)
+
+🔒 Követelmény: Ügyesség: `+2`
+
+🌟 Hatás: -
+
+<br />
+
+---
+#### 📖 Nagymester (12)
+
+🔒 Követelmény: Ügyesség: `+3`
+
+🌟 Hatás: Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
+
+<br />
+
+---
+#### 📖 Élő legenda (15)
+
+🔒 Követelmény: Ügyesség: `+3`
+
+🌟 Hatás: Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
+
+<br />
+
+---
+

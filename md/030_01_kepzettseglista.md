@@ -33,23 +33,9 @@
 ---
 ### Harci képzettségek 🅿️
 
-🔵 [Közelharc](kepzettsegek.primer.harci/harcmodor.md) <sup><sub>(60%)</sub></sup>
+🔵 [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) (Közelharc, Kardvívás, Lándzsavívás, Zúzás, Ostorharc)
 
-🔵 [Kardvívás](kepzettsegek.primer.harci/harcmodor.md)
-
-🔵 [Lándzsavívás](kepzettsegek.primer.harci/harcmodor.md)
-
-🔵 [Zúzás](kepzettsegek.primer.harci/harcmodor.md)
-
-🔵 [Ostorharc](kepzettsegek.primer.harci/harcmodor.md)
-
-🔵 [Hajítás](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) <sup><sub>(40%)</sub></sup>
-
-🔵 [Íjászat](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 🤝
-
-🔵 [Lövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 🤝
-
-🔵 [Ostromlövészet](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 🤝
+🔵 [Távolsági harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) (Hajítás, Íjászat🤝, Lövészet🤝, Ostromlövészet🤝)
 
 🔵 [Mágikus lövészet](kepzettsegek.primer.harci/magikus_loveszet.md)
 
