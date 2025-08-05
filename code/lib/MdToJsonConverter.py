@@ -46,11 +46,11 @@ class MdToJsonConverter:
         for ch in self.filter_out_chars:
             self.md = self.md.replace(ch, '')
 
-        for ch in ['<br />', '<br>']:
-            self.md = self.md.replace(ch, ' ')
-
         for ch in ['<br />- ', '<br>- ']:
             self.md = self.md.replace(ch, '. ')
+
+        for ch in ['<br />', '<br>']:
+            self.md = self.md.replace(ch, ' ')
 
     def get_table_sections_from_raw_md(self):
         """
