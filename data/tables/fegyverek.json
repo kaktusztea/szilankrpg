@@ -69,7 +69,7 @@
         "VÉ": "4",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "Ha minimum 11 SP sebzést elérsz, akkor további +5 SP jár. Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés. Páncéltalan esetén: K6 dobás:  1-2: a fegyver elakad a testben, ha volt sebzés."
+        "Speciális": "Ha minimum 11 SP sebzést elérsz, akkor további +5 SP jár. Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés. Páncéltalan esetén K6 dobás:  1 és 2 esetén a fegyver elakad a testben, ha volt sebzés."
     },
     {
         "Fegyver": "Bot, furkós",
@@ -303,7 +303,7 @@
         "VÉ": "0",
         "Sebesség": "-",
         "Kategória": "közelharci",
-        "Speciális": "\\*Lásd lenn a leírást."
+        "Speciális": "Lásd lenn a leírást."
     },
     {
         "Fegyver": "Harci kalapács",
@@ -738,7 +738,7 @@
         "VÉ": "5",
         "Sebesség": "6",
         "Kategória": "kardvívó",
-        "Speciális": "Lásd Slan kard (de nem MK)"
+        "Speciális": "Lásd Slan kard."
     },
     {
         "Fegyver": "Kard, szablya",
@@ -855,7 +855,7 @@
         "VÉ": "2",
         "Sebesség": "6",
         "Kategória": "közelharci",
-        "Speciális": "Páncél nélküli ellenfélnél, szúrás esetén: SP:+3. Fegyverrántás szituációban KÉ:+5. Páncélszúrásra nem használható."
+        "Speciális": "Páncél nélküli ellenfélnél, szúrás esetén SP:+3. Fegyverrántás szituációban KÉ:+5. Páncélszúrásra nem használható."
     },
     {
         "Fegyver": "Lándzsa",
@@ -924,7 +924,7 @@
         "VÉ": "11",
         "Sebesség": "7",
         "Kategória": "kardvívó",
-        "Speciális": ""
+        "Speciális": "Mágikus fém jellege már benne van a harcértékekben."
     },
     {
         "Fegyver": "Mara-sequor 2K",
