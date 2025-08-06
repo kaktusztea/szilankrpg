@@ -24,7 +24,7 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 <br />
 
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
 
@@ -66,12 +66,10 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-
-
 <br />
 
 ---
-### Próbák
+### Próbák 🎲 
 
 #### Könnyű (6) 🎲 
 
