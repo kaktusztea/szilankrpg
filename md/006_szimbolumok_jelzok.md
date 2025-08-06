@@ -12,7 +12,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 📖 Képzettség - biztos tudás szint
 
-🎲 Képzettség - próba nehézség
+🎲 Próbadobós jellemző/oldal; Képzettség - próba nehézség
 
 🔁 Többször felvehető ismeret
 
