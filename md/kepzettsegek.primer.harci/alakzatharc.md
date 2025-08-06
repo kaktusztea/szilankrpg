@@ -19,7 +19,7 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 - [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md) fortély: Alakzat vezeté esetén esetén bónuszt ad.
 
 ---
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
 

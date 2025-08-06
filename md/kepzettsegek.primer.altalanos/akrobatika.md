@@ -15,26 +15,25 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 - [Kötéltánc](../szituaciok/koteltanc.md)
 - [Lóról leesés](../szituaciok/lorol_hatasrol_leeses.md)
 
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
-#### Novívius (3)
+#### Novívius (3) 📖
 
 🔒 Követelmény: **Ügyesség**: `+0`
 
 🌟 Hatás: -
 
 ---
-#### Kismester (6)
+#### Kismester (6) 📖
 
 🔒 Követelmény: **Ügyesség**: `+1`
 
 🌟 Hatás: Ugrástávolság felmérése `10 méterig`
 
-
 <br />
 
 ---
-#### Mester (9)
+#### Mester (9) 📖
 
 🔒 Követelmény: **Ügyesség**: `+2`
 
@@ -45,7 +44,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 <br />
 
 ---
-#### Nagymester (12)
+#### Nagymester (12) 📖
 
 🔒 Követelmény: **Ügyesség**: `+3`
 
@@ -56,7 +55,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 <br />
 
 ---
-#### Élő legenda (15)
+#### Élő legenda (15) 📖
 
 🔒 Követelmény: **Ügyesség**: `+3`
 
@@ -65,38 +64,38 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 <br />
 
 ---
-### Próbák
+### Próbák 🎲 
 
 🔆 **Esés** próbákat lásd az **[Esés magasból](../szituaciok/eses_magasbol.md)** szituáció leírásánál!
 
-#### Könnyű (6)
+#### Könnyű (6) 🎲 
 
 - Kötéltánc alaphelyzet
 - Lecsúszni fenéken egy hosszú lépcső korlátján
 - Bevetődni egy nyitott ablakon és kigurulni
 
-#### Átlagos (9)
+#### Átlagos (9) 🎲 
 
 - Elkerülni egy hirtelen leeső akadályt futás közben
 - Gyors kigurulás végrehajtása egy enyhén lejtős, köves terepen
 - Megkapaszkodni egy ledőlő fa ágain
 
-#### Nehéz (12)
+#### Nehéz (12) 🎲 
 
 - Lecsúszni talpon egy hosszú lépcső korlátján
 - Kimozodni közepes mennyiségű potyogó sziklát
 
-#### Nagyon nehéz (15)
+#### Nagyon nehéz (15) 🎲 
 
 - Végigfutni a függőleges falon `3 méter` hosszan.
 - Nekifutásból felfutni egy `3 méter` magas falon és beugrani egy ablakon
 
-#### Rendkívül nehéz (18)
+#### Rendkívül nehéz (18) 🎲 
 
 - Kimozodni sűrű sziklaomlást
 - Liánokon folyamatosan lengeni fák között (ahol lehetséges)
 
-#### Emberfeletti (21)
+#### Emberfeletti (21) 🎲 
 
 - Szakadékba ugrani és elkapni a `10+ méterre` levő liánt sérülés nélkül.
 

@@ -1,12 +1,17 @@
 ## 🔵 Észlelés
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható.
 
 **Kapcsolódó főfejezet**: [Érzékelés, észlelés](../szituaciok/erzekeles_eszleles_aktiv_passziv.md)
 
+Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, egy meglapuló merénylő a lombok közt, egy árulkodó súrlódó nesz. Fontos, hogy az Észlelés csak a momentum észrevételt jelenti, annak értelmezését nem! Az a játékos feladata, melyet esetleg megkönnyíthet például a [Nyomozás](nyomozas.md), vagy a [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettség.
+
+<br />
+
 ### Domináns Tulajdonságok
 
-Érzékenység (fizikai érzékekre is ez használandó), Intelligencia
+- Érzékenység (fizikai érzékekre is ez használandó)
+- Intelligencia
 
 ### Kapcsolódik
 
@@ -18,8 +23,6 @@ Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
 
 - [Keresés](../fortelyok.altalanos/kereses.md): Nyomok észrevétele városi környezetben. "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 
-**Leírás**: Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, egy meglapuló merénylő a lombok közt, egy árulkodó súrlódó nesz. Fontos, hogy az Észlelés csak a momentum észrevételt jelenti, annak értelmezését nem! Az a játékos feladata, melyet esetleg megkönnyíthet például a [Nyomozás](nyomozas.md), vagy a [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettség.
-
 ### Szituációk
 
 - [Érzékelés, Aktív/Passzív Harci Észlelés](../szituaciok/erzekeles_eszleles_aktiv_passziv.md)
@@ -28,33 +31,95 @@ Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
 
 <br />
 
-### Biztos tudás, követelmények
+---
+### Biztos tudás, követelmények 📖
 
-Nincs kiemelt szinteken megkapott biztos tudás.
+#### Novívius (3) 📖
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub>                                           |   Követelmény    |
-| :--------------- | :--------------------------------------------------------------------------------------------------------------------------- | :--------------: |
-| Novícius (3)     | Szemfüles csibész                                                                                                            |        -         |
-| Kismester (6)    | Tapasztalt tolvaj                                                                                                            |        -         |
-| Mester (9)       | Veterán fejvadász                                                                                                            | Érzékenység:`+1` |
-| Nagymester (12)  | Elit, uralkodói testőr.<br />Erős, leplezetlen mágikus jelenségeket általában megérzi és azok jellegét is (pozitív, negatív) | Érzékenység:`+2` |
-| Élő legenda (15) | Harcművész nagymester, mágus.<br />„Valami nincs rendben”                                                                    | Érzékenység:`+3` |
+🔒 Követelmény: -
 
-<br />
+🌟 Hatás: Szemfüles csibész, ⭕TODO⭕
 
-### Próbák
+---
+#### Kismester (6) 📖
 
-| Célszám              | Példa                                                                                                                                                                                                                                                                                                    |
-| :------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Könnyű (6)           | Észrevenni a sarok mögül kilépő, csattogó lovaskatonát                                                                                                                                                                                                                                                   |
-| Átlagos (9)          | 1. Erdőben sétálva észrevenni a fán rohangáló mókust.<br />2. Mozaikpadló mintázatában egy élesen elütő kockát kiszúrni.<br />3. Világosban, a szobában levő egyetlen festmény mögül apró lyukon leskelődő amatőr kémet észrevenni.                                                                      |
-| Nehéz (12)           | 1. Észrevenni egy majdnem zajtalanul fejedre zuhanó sziklát néma csendben.<br />2. Kiszúrni a libbenő ruha alatt a tőrt.<br />3. Jól álcázott rejtett ajtót megtalálni 5 perc alatt.                                                                                                                     |
-| Nagyon nehéz (15)    | 1. Észrevenni egy fejedre zuhanó sziklát zajban.<br />⭕2. Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)<br />3. Jól beépített, rejtett titkos fiókot megtalálni egy nagyobb méretű bútorban.                                                                                                    |
-| Rendkívül nehéz (18) | 1. Egy képteremben, világosban kiszúrni a festmény mögül apró lyukon leskelődő kémet.<br />2. "Nem vagyok egyedül" érzése (világosban és sötétben egyaránt ugyanaz a nehézség (**Érzékenység** (Intuíció))                                                                                               |
-| Emberfeletti (21)    | Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tulajdonság segítségével dobjuk.<br />1. Mágikus csapda kitörését megérezni egy szemvillanással a kisülés előtt.<br />2. Szellemlény érintését megérezni - mágikus ismeretek nélkül.<br />⭕3. Íztelen, szagtalan ételméreg kiszúrása |
+🔒 Követelmény: -
+
+🌟 Hatás: Tapasztalt tolvaj ⭕TODO⭕
 
 <br />
 
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: Érzékenység: `+1`
+
+🌟 Hatás: Veterán fejvadász 
+⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: Elit, uralkodói testőr. Erős, leplezetlen mágikus jelenségeket általában megérzi és azok jellegét is (pozitív, negatív)
+⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: Harcművész nagymester, mágus. "Valami nincs rendben"
+⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+### Próbák 🎲 
+
+#### Könnyű (6) 🎲 
+
+Észrevenni a sarok mögül kilépő, csattogó lovaskatonát.
+
+#### Átlagos (9) 🎲 
+
+-  Erdőben sétálva észrevenni a fán rohangáló mókust.  
+- Mozaikpadló mintázatában egy élesen elütő kockát kiszúrni.  
+- Világosban, a szobában levő egyetlen festmény mögül apró lyukon leskelődő amatőr kémet észrevenni.
+
+#### Nehéz (12) 🎲 
+
+- Észrevenni egy majdnem zajtalanul fejedre zuhanó sziklát néma csendben.
+- Kiszúrni a libbenő ruha alatt a tőrt.
+- Jól álcázott rejtett ajtót megtalálni 5 perc alatt.
+
+
+#### Nagyon nehéz (15) 🎲 
+
+- Észrevenni egy fejedre zuhanó sziklát zajban.
+- ⭕ Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)
+- Jól beépített, rejtett titkos fiókot megtalálni egy nagyobb méretű bútorban.
+
+#### Rendkívül nehéz (18) 🎲 
+
+- Egy képteremben, világosban kiszúrni a festmény mögül apró lyukon leskelődő kémet.
+- "Nem vagyok egyedül" érzése. Világosban és sötétben egyaránt ugyanaz a nehézség (**Érzékenység** (Intuíció)).
+
+#### Emberfeletti (21) 🎲 
+
+Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tulajdonság segítségével dobjuk.
+- Mágikus csapda kitörését megérezni egy szemvillanással a kisülés előtt.
+- Szellemlény érintését megérezni - mágikus ismeretek nélkül.
+- ⭕3. Íztelen, szagtalan ételméreg kiszúrása
+
+<br />
+
+---
 ### Módosító körülmények
 
 - Gyorsan, nyomás alatt keresni: `-3`

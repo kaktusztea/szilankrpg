@@ -26,7 +26,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 <br />
 
 ---
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
 
