@@ -12,24 +12,28 @@ Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteke
 
 Az első (`S1`) kategóriában lévő karaktert még nem sújtják negatív módosítók, sérülése – számára – olyan könnyű, ami nem akadályozza a harcban.
 
-Az `S2`, `S3` és `S4` kategóriákba kerülve viszont már rendre `-10`; `-20` és `-30` `TÉ` a harcérték büntetés. Ezeket az értékeket viszont mérsékli az `Önuralom` tulajdonság és a Fájdalomtűrés képzettség összege. Így tehát a levonások értéke karakterenként változik.
+Az `S2`, `S3` és `S4` kategóriákba kerülve viszont már rendre `-10`; `-20` és `-30` `TÉ` a harcérték büntetés. Ezeket az értékeket viszont mérsékli az [Önuralom](014_01_tulajdonsagok.md#-%C3%B6nuralom) Tulajdonság és a [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség összege. Így tehát a levonások értéke karakterenként változik.
 
 `0 ÉP`-re érve a karakter elájul, és haldokolni kezd (Lásd [Haldoklás](#haldokl%C3%A1s)). Ha további sebet kap, meghal.
 
 ---
 ### Fájdalomtűrés
 
-A Fájdalomtűrés képzettség fontos szerepet játszik a harcban elszenvedett sebek fájdalmának elnyomásában, illetve egyéb helyzetekben a kín elviselésében. Részben játéktechnikai gyorsítás miatt, részben azért teszünk különbséget a harc közben és azon kívüli fájdalomtűrés miatt, mert harc közben az adrenalin hatására jobban bírja a karakter a fájdalmat, valamint próbáltuk a harc heroizmusát megőrizni.
+A [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség fontos szerepet játszik a harcban elszenvedett sebek fájdalmának elnyomásában, illetve egyéb helyzetekben a kín elviselésében. Részben játéktechnikai gyorsítás miatt, részben azért teszünk különbséget a harc közben és azon kívüli fájdalomtűrés miatt, mert harc közben az adrenalin hatására jobban bírja a karakter a fájdalmat, valamint próbáltuk a harc heroizmusát megőrizni.
 
 ---
 ### Fájdalomtűrés harc közben
 
-Ha harc közben más sebesülés kategóriába (S) lép a karakter, akkor fix `TÉ` levonást kap büntetésül. Ennek értékét csökkenti statikusan az alábbiak összege:\
-`Önuralom + Fájdalomtűrés`
+Ha harc közben más sebesülés kategóriába (S) lép a karakter, akkor fix `TÉ` levonást kap büntetésül. Ennek értékét csökkenti statikusan az alábbiak összege:
 
-|     -      | S1  | S2  | S3  | S4  |
-| :--------: | :-: | :-: | :-: | :-: |
-| TÉ levonás |  -  | -10 | -20 | -30 |
+```
+TÉ levonás
+  - (Önuralom + Fájdalomtűrés)
+```
+
+|     -      | S1  |  S2   |  S3   |  S4   |
+| :--------: | :-: | :---: | :---: | :---: |
+| TÉ levonás | `-` | `-10` | `-20` | `-30` |
 
 ### `S4` kategóriás fájdalomtűrés
 
@@ -38,9 +42,10 @@ Fájdalomtűrés (K) + Edzettség (T)
           vs. 12
 ```
 
-Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + Edzettség)** próbát kell dobnia **Nehéz** (`12`) célszám ellen.
+Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + Edzettség)** képzettségpróbát kell dobnia **Nehéz** (`12`) célszám ellen.
 
-Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia. Sikertelen próba esetén a karakter elájul.
+Sikertelen próba esetén a karakter elájul.\
+Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia. 
 
 🔆 A [Harci láz](fortelyok.harci/harci_laz.md) fortély egyes fokai előnyt adnak a fenti próbára.
 

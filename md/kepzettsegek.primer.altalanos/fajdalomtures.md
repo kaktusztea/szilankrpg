@@ -1,10 +1,16 @@
 ## 🔵 Fájdalomtűrés
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható.
+
+Legyőzni a fájdalmat, legyőzni önmagunkat. Ez a képzettség nem véletlenül kapcsolódik szorosan a harchoz, hiszen az a harcos, aki nem képes legyűrni sebei fájdalmát, hamar elhullik. 
+
+A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási okokból - statikus módon került beszámításra. Részleteket lásd a Harcrendszer [Sebesülés](../061_03_sebesules.md) fejezetében.
+
+Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve kínzás elviselésénél is.
 
 ### Domináns Tulajdonságok
 
-Önuralom
+- Önuralom
 
 ### Kapcsolódik
 
@@ -14,40 +20,84 @@ Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
 
 ### Bónusz: Fakír
 
-Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását
-
-### Leírás
-
-Legyőzni a fájdalmat, legyőzni önmagunkat. Ez a képzettség nem véletlenül kapcsolódik szorosan a harchoz, hiszen az a harcos, aki nem képes legyűrni sebei fájdalmát, hamar elhullik. 
-
-A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási okokból - statikus módon került beszámításra. Részleteket lásd a Harcrendszer [Sebesülés](../061_03_sebesules.md) fejezetében.
-
-Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve kínzás elviselésénél is.
+Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 <br />
 
 ### Biztos tudás, követelmények
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> |    Követelmény    |
-|:---------------- |:---------------------------------------------------------------------------------- |:-----------------:|
-| Novícius (3)     | ⭕xyz <br /> **Példa**: x                                                          |         -         |
-| Kismester (6)    | ⭕xyz <br /> **Példa**: x                                                          | Önuralom:&nbsp;0  |
-| Mester (9)       | ⭕xyz <br /> **Példa**: x                                                          | Önuralom:&nbsp;+1 |
-| Nagymester (12)  | ⭕xyz <br /> **Példa**: x                                                          | Önuralom:&nbsp;+2 |
-| Élő legenda (15) | ⭕xyz <br /> **Példa**: x                                                          | Önuralom:&nbsp;+3 |
+#### Novívius (3) 📖
+
+🔒 Követelmény: -
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: Önuralom: `0`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 <br />
 
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: Önuralom: `1`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  Önuralom: `2`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  Önuralom: `3`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+
+
+<br />
+
+---
 ### Próbák
 
-| Célszám | Példa  |
-| :----------- | :----------- |
-| Könnyű       (6)  | Körmöst kibírni. |
-| Átlagos      (9)  | A forró víz ráloccsant a kezedre. Vajon megállod -e, hogy felkiálts? |
-| Nehéz        (12) | ⭕TODO⭕ |
-| Nagyon nehéz (15) | ⭕TODO⭕ Pokoli kín. Az S3-as egészségkategóriában jársz. |
-| Rendkívül nehéz (18) | Hang nélkül kiállni, hogy csonkolnak. |
-| Emberfeletti (21) | Könnyeden kacagni, miközben karodat egy rozsdás, tompa fűrésszel vágják le. |
+#### Könnyű (6) 🎲 
+
+Körmöst kibírni.
+
+#### Átlagos (9) 🎲 
+
+A forró víz ráloccsant a kezedre. Vajon megállod -e, hogy felkiálts?
+
+#### Nehéz (12) 🎲 
+
+Az `S4` egészségkategóriában jársz, egyszeri próbát dobsz ezzel a Nehézséggel. Bővebben lásd a [Sebesülés fejezetben](../061_03_sebesules.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s).
+
+#### Nagyon nehéz (15) 🎲 
+
+⭕TODO⭕
+
+Pokoli kín.
+
+#### Rendkívül nehéz (18) 🎲 
+
+Hang nélkül kiállni, hogy csonkolnak.
+
+#### Emberfeletti (21) 🎲 
+
+Könnyeden kacagni, miközben karodat egy rozsdás, tompa fűrésszel vágják le.
 
 <br />
 

@@ -322,16 +322,16 @@ Ha az `S3` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el
 Bővebben lásd a [Sebesülés](061_03_sebesules.md#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra) fejezetet.
 
 `Hátrány-1`:
-- fizikai és szellemi tulajdonságpróbákra
-- fizikai és szellemi képzettségpróbákra
+- fizikai és szellemi Tulajdonságpróbákra
+- fizikai és szellemi Képzettségpróbákra
 
 ### ✴️ Sérült (2) S4
 
 Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.
 
 `Hátrány-2`:
-- fizikai és szellemi tulajdonságpróbákra
-- fizikai és szellemi képzettségpróbákra
+- fizikai és szellemi Tulajdonságpróbákra
+- fizikai és szellemi Képzettségpróbákra
 
 <br />
 
