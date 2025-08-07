@@ -1,5 +1,11 @@
 ## 🔵 Aurafejlesztés
 
+Lásd work linkek:
+- [ADR: Aura](https://github.com/kaktusztea/szilankrpg/wiki/ADR.aura#%EF%B8%8Fmodell-a-aura-alap--dob%C3%A1s-aura-c%C3%A9lsz%C3%A1mra)
+- [STUDY: Mágia, Aura képességei](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.aura.kepessegei#aura)
+
+Minden élőlény rendelkezik Aurával, az élettapasztalatok során ez magától erősödik is, de lehetséges tudatosan is növelni erejét.
+
 **Mágikus világkép**: a [Belső Szféra](../107_magikus_szferak_arkanumok.md#belső-szféra) alá tartozó **Aura arkánum** azonos az **Aurafejlesztés** képzettséggel.
 
 ### Domináns Tulajdonságok
@@ -10,38 +16,85 @@ Intelligencia, Érzékenység
 
 ⭕TODO⭕
 
-### Leírás
-
-Minden élőlény rendelkezik Aurával, az élettapasztalatok során ez magától erősödik is, de lehetséges tudatosan is növelni erejét.
-Lásd: [STUDY: Aura](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.Aura#modell-a) (⭕link véglegesítése, ha kész⭕)
-
 <br />
 
 ### Biztos tudás, követelmények
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
-|:---------------- |:---------------------------------------------------------------------------------- |:-----------:|
-| Novícius (3)     | xyz <br /> **Példa**: x                                                            |             |
-| Kismester (6)    | xyz <br /> **Példa**: x                                                            |             |
-| Mester (9)       | xyz <br /> **Példa**: x                                                            |             |
-| Nagymester (12)  | xyz <br /> **Példa**: x                                                            |             |
-| Élő legenda (15) | xyz <br /> **Példa**: x                                                            |             |
+#### Novívius (3) 📖
+
+🔒 Követelmény:
+- ⭕Tulajdonság⭕: ⭕`+1`⭕
+- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 <br />
 
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
 ### Próbák
 
-| Célszám | Példa  |
-| :----------- | :----------- |
-| Könnyű       (6)  | |
-| Átlagos      (9)  | |
-| Nehéz        (12) | |
-| Nagyon nehéz (15) | |
-| Rendkívül nehéz (18) | |
-| Emberfeletti (21) | |
+#### Könnyű (6) 🎲 
+
+⭕TODO⭕
+
+#### Átlagos (9) 🎲 
+
+⭕TODO⭕
+
+#### Nehéz (12) 🎲 
+
+⭕TODO⭕
+
+#### Nagyon nehéz (15) 🎲 
+
+⭕TODO⭕
+
+#### Rendkívül nehéz (18) 🎲 
+
+⭕TODO⭕
+
+#### Emberfeletti (21) 🎲 
+
+⭕TODO⭕
+
 
 <br />
 
+---
 ### Módosító körülmények
 
-- ⭕xyz
+- ⭕TODO⭕
