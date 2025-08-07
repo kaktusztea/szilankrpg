@@ -25,12 +25,11 @@ Intelligencia, Érzékenység
 
 - [Befolyásolás módszerei (Befolyásolás vs. Emberismeret)](../szituaciok/befolyasolas_modszerei.md)
 
-
 <br />
 
 ### Ellenpróbák
 
-A **Befolyásolás** szinte mindig az [Emberismeret](emberismeret.md) képzettséggel áll ellenpróbás szituációban - a szituációtól függő módosítókkal. A leggyakoribb az alábbi próba-szituáció:
+A **Befolyásolás** szinte mindig az [Emberismeret](emberismeret.md) képzettséggel áll ellenpróbás szituációban - a szituációtól függő módosítókkal, így egyéni próbákat nincs is értelme felsorolni. A leggyakoribb az alábbi próba-szituáció:
 
 ```
 Befolyásolás + Intelligencia
@@ -51,29 +50,51 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 ---
 ### Biztos tudás, követelmények
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
-|:---------------- |:---------------------------------------------------------------------------------- |:-----------:|
-| Novícius (3)     | ⭕TODO <br /> **Példa**: x                                                          |             |
-| Kismester (6)    | ⭕TODO <br /> **Példa**: x                                                          |             |
-| Mester (9)       | ⭕TODO <br /> **Példa**: x                                                          |             |
-| Nagymester (12)  | ⭕TODO <br /> **Példa**: x                                                          |             |
-| Élő legenda (15) | ⭕TODO <br /> **Példa**: x                                                          |             |
+#### Novívius (3) 📖
+
+🔒 Követelmény:
+- ⭕Tulajdonság⭕: ⭕`+1`⭕
+- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 <br />
 
-### Próbák
+---
+#### Mester (9) 📖
 
-| Célszám              | Példa |
-| :------------------- | :---- |
-| Könnyű       (6)     | ⭕     |
-| Átlagos      (9)     | ⭕     |
-| Nehéz        (12)    | ⭕     |
-| Nagyon nehéz (15)    | ⭕     |
-| Rendkívül nehéz (18) | ⭕     |
-| Emberfeletti (21)    | ⭕     |
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
 
 <br />
 
 ### Módosító körülmények
 
-- ⭕xyz
+Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**, mint ez is. Ha bármilyen Státusz hatása alatt állsz, Befolyásolás képzettségpróba előtt ellenőrizd, hogy vonatkozik -e rád bármilyen negatív [Hatás](https://github.com/kaktusztea/szilankrpg/blob/master/md/081_hatasok.md).

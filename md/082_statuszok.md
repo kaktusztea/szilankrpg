@@ -145,7 +145,8 @@ Látás, Hallás, Szaglás.
 ---
 ### ✴️ Félelem (1) Szorongás
 
-Hatás: Maximális [Védő taktikában](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika) kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
+- Maximális [Védő taktikában](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika) kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
+- `Hátrány-1`: Szociális képzettségpróbákra
 
 Mi okozhatja?
 - nem bírja a stresszt
@@ -156,6 +157,7 @@ Mi okozhatja?
 
 - Csak [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikát használhat: `VÉ:+30`
 - Többszörös támadás elvesztése
+- Automatikus kudarc: Szociális képzettségpróbákra
 - Csak mágia vagy démonok hatására kerülhet ebbe az állapotba
 
 ### ✴️ Félelem (3) Bénító félelem
