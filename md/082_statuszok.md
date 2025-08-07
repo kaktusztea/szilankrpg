@@ -90,8 +90,11 @@ Viszont
 ---
 ### ✴️ Eszmélet (1) Bódultság
 
-- `Hátrány-1`: Támadó dobás
-- `Hátrány-1`: Manőver Ellenpróba dobás
+- `Hátrány-1`
+  - Támadó dobás
+  - Manőver Ellenpróba dobás
+- `Hátrány-2`
+  - Szociális képzettségpróbákra
 - Kezdeményezés - lassú
 - `1` támadás elvesztése
 - ⭕nincs biztos tudásból (at-will) varázslás, kivéve papok: ők részegen is tudnak varázsolni⭕
@@ -99,8 +102,9 @@ Viszont
 
 ### ✴️ Eszmélet (2) Kábultság
 
-- `Hátrány-2`: Támadó dobás
-- `Hátrány-2`: Manőver Ellenpróba dobás
+- `Hátrány-2`
+  - Támadó dobás
+  - Manőver Ellenpróba dobás
 - Kezdeményezés - Nagyon lassú
 - Többszörös támadás elvesztése
 - Automatikus kudarc: szociális képzettségpróbákra
@@ -112,6 +116,9 @@ Viszont
 - Beszéd - némultság
 - Harcképtelenség
 - Mozgás - képtelen
+- Automatikus kudarc
+  - képzettségpróbák
+  - tulajdonságpróbák
 - Pszi használat elvesztése
 - Varázslás képesség elvesztése
 
@@ -121,7 +128,7 @@ Az Antyssjárás viszont ebben az állapotban is működik.
 
 - mint az Ájulásnál, továbbá:
 - Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy.
-- Az Antyss a valóságod. Ha nincs Antyssjárás ⭕TODO⭕ képzettséged⭕, akkor haladni, cselekedni is alig tudsz.
+- Az Antyss a valóságod. Ha nincs Antyssjárás ⭕TODO⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
 
 <br />
 
@@ -193,6 +200,7 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 - Automatikus kudarc: nem-harc fizikai képzettségek
 - Automatikus kudarc: [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) (nincs harcérték bónusz belőle)
 -  `FP S2`
+- `Hátrány-1`: Szociális képzettségpróbákra
 
 ⚡ Példa: éhhalál szélén
 
@@ -251,6 +259,7 @@ Az ilyen karakter kötelezően
 
 - mint az `Indulat (2) Gyűlölet`, plusz:
 - már mindenkit megtámadsz, akit látsz, nem számít, hogy barát, vagy szövetséges
+- Automatikus kudarc: Szociális képzettségpróbákra
 
 <br />
 
@@ -313,6 +322,7 @@ A pajzs viselése nehezítheti a Tulajdonságptóbákat és Képzettségpróbák
 - Hátrány-2 TÉ dobásra
 - Kezdeményezés - nagyon lassú
 - VÉ veszteség duplázódik
+- Hátrány-1: Szociális képzettségpróbákra
 ```
 
   <br />
@@ -346,13 +356,13 @@ Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el
 
 - Pszí használat elvesztése
 - `Hátrány-1`: Mágiahasználat   (nagyobb az esélye a mágia random hatásnak)
-- `Hátrány-1`: nem-mágikus szellemi képzettségekre
+- `Hátrány-1`: nem-mágikus szellemi, szociális képzettségpróbákra
 - lassabb gondolkodás
 
 ### ✴️ Szellemi (3) Delírium
 
 - Pszí használat elvesztése
-- `Hátrány-2`: nem-mágikus szellemi képzettségekre
+- `Hátrány-2`: nem-mágikus szellemi, szociális képzettségpróbákra
 - `Hátrány-2`: Mágiahasználat
 - lassabb gondolkodás
 
@@ -362,9 +372,9 @@ Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el
 ### ✴️ Trauma (1) Lélekrepedés
 
 - `Hátrány-1`:
-    - Önuralom Tulajdonságpróba
-    - Érzékenység Tulajdonságpróba
-    - Szociális képzettségpróbák, mikor a fenti 2 Tulajdonságot használja
+    - Önuralom Tulajdonságpróbára
+    - Érzékenység Tulajdonságpróbára
+    - Szociális képzettségpróbákra, mikor a fenti 2 Tulajdonságot használja
 - Antyssjárás esetén "rossz" helyre kerül
 
 ### ✴️ Trauma (2) Lélektörés
@@ -384,7 +394,8 @@ A következő kör végéig tart.
 
 - Kezdeményezés - lassú
 - Többszörös támadás elvesztése
-- Gyorsaság és Ügyesség tulajdonságpróba: `Hátrány-1`
+- `Hátrány-1`: Gyorsaság és Ügyesség Tulajdonságpróbákra
+- `Hátrány-2`: Szellemi, szociális képzettségpróbákra
 
 Példa: ledöbbenés, stb.
 
@@ -397,6 +408,7 @@ A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból 
 - Mozgás - lecövekelt
 - Gyorsaság és Ügyesség tulajdonságpróba: `Hátrány-2`
 - Beszéd - zagyva
+- Automatikus kudarc: Szellemi, szociális képzettségpróbákra
 - 2 körig tart
 
 Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az [Érzékevesztés](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart) (több érzékszervre is akár)).
@@ -408,7 +420,7 @@ Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képe
 - Beszédvesztés (részleges, vagy teljes - szituáció függő)
 - Harcképtelenség
 - Mozgás - lecövekelt
-- Automatikus kudarc: Gyorsaság és Ügyesség tulajdonságpróba
+- Automatikus kudarc: fizikai és szellemi Tulajdonságpróbákra, Képzettségpróbákra
 - Beszéd - zagyva
 - Pszi használat elvesztése
 - Varázslás képesség elvesztése
