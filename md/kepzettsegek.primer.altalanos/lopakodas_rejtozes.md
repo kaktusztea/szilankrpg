@@ -26,32 +26,75 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 
 <br />
 
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> |  Követelmény   |
-| :--------------- | :--------------------------------------------------------------------------------- | :------------: |
-| Novícius (3)     | ⭕xyz <br /> **Példa**: x                                                           | Önuralom: `+0` |
-| Kismester (6)    | ⭕xyz <br /> **Példa**: x                                                           | Önuralom: `+0` |
-| Mester (9)       | ⭕xyz <br /> **Példa**: x                                                           | Önuralom: `+1` |
-| Nagymester (12)  | ⭕xyz <br /> **Példa**: x                                                           | Önuralom: `+2` |
-| Élő legenda (15) | ⭕xyz <br /> **Példa**: x                                                           | Önuralom: `+2` |
+#### Novívius (3) 📖
+
+🔒 Követelmény: Önuralom: `+0`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: Önuralom: `+0`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: Önuralom: `+1`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  Önuralom: `+2`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  Önuralom: `+2`
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 <br />
 
-### Próbák
+### Próbák 🎲
 
 Ennek a képzettségnek a próbadobásai jellemzően ellepróbák az [Észlelés](eszleles.md) képzettséggel. Bővebben lásd a [Lopakodás/rejtőzés és észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációt.
 
 Nem ellenpróbás szituációban tapasztalati ismeretekre támaszkodik az alkalmazó:
 
-| Célszám              | Példa                                               |
-| :------------------- | :-------------------------------------------------- |
-| Könnyű       (6)     | Csendesen belépni egy nyitott ajtón                 |
-| Átlagos      (9)     | Piacon gyorsan kiszúrni a jó rejtekhelyet           |
-| Nehéz        (12)    | Egy kihalt köztéren jó rejtekhelyet találni         |
-| Nagyon nehéz (15)    | Teljesen hangtalanul érkezni esésből                |
-| Rendkívül nehéz (18) | Megérezni, melyik rejtekhely mögött van az ellenség |
-| Emberfeletti (21)    | Nyílt téren kaméleonként beleolvadni a mintázatba.  |
+#### Könnyű (6) 🎲 
+
+Csendesen belépni egy nyitott ajtón.
+
+#### Átlagos (9) 🎲 
+
+Piacon gyorsan kiszúrni a jó rejtekhelyet.
+
+#### Nehéz (12) 🎲 
+
+Egy kihalt köztéren jó rejtekhelyet találni.
+
+#### Nagyon nehéz (15) 🎲 
+
+Teljesen hangtalanul érkezni esésből.
+
+#### Rendkívül nehéz (18) 🎲 
+
+Megérezni, melyik rejtekhely mögött van az ellenség.
+
+#### Emberfeletti (21) 🎲 
+
+Nyílt téren kaméleonként beleolvadni a mintázatba.
+
+<br />
 
 ---
 ### ⚜️ Alapeset Lopakodás/rejtőzés vs. Észlelés ellenpróbához

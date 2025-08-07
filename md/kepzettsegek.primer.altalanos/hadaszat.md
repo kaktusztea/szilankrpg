@@ -26,7 +26,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 
 <br />
 
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
 
@@ -67,7 +67,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 <br />
 
 ---
-### Próbák
+### Próbák 🎲
 
 #### Könnyű (6) 🎲 
 

@@ -36,7 +36,7 @@
 <br />
 
 ---
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
 
@@ -77,7 +77,7 @@
 <br />
 
 ---
-### Próbák
+### Próbák 🎲
 
 #### Könnyű (6) 🎲 
 
