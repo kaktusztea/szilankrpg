@@ -1,12 +1,10 @@
 ## 🔵 Méregkeverés
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható, de a rontás rejtett, a játékos csak a méreg alkalmazásakor szembesül a balsikerrel (nem hat). 
 
-→ [Lásd: Méregrendszer](../150_meregrendszer.md)
+Lásd még a [Méregrendszer](../150_meregrendszer.md) főfejezetet!
 
-### Próba speciális
-
-A rontás rejtett, a játékos csak a méreg alkalmazásakor szembesül a balsikerrel (nem hat). 
+Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
 
 ### Domináns Tulajdonságok
 
@@ -14,37 +12,55 @@ Emlékezet, Önuralom, Intelligencia
 
 ### Kapcsolódik
 
-⭕xyz  ((fortély, más képzettség. Ha nincs, törölni))
+- [Méregrendszer](../150_meregrendszer.md) főfejezet
+ - [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség
+ - [Alkímia](../kepzettsegek.szekunder/alkimia.md) képzettség
+ 
+<br />
 
-### Normál kiterjesztés
+---
+### Biztos tudás, követelmények 📖
 
-⭕Tájtpus⭕ Szabad fortélyok talán, pl. [Tájtípus - erdős](../fortelyok.szabad/tajtipus_erdos.md)
-⭕xyz. Ha nincs, törölni
+#### Novívius (3) 📖
 
-### Erős kiterjesztés
+🔒 Követelmény:
+- ⭕Tulajdonság⭕: ⭕`+1`⭕
+- ⭕Képzettség⭕ - ⭕`1.szint`⭕
 
-⭕xyz. Ha nincs, törölni
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-### Leírás
+---
+#### Kismester (6) 📖
 
-Ismered a különböző hatású és erősségű mérgek kikeverésének módját, receptjeit. Magasabb szinten egyre komplexebb, rafináltabb keverékeket vagy képes összeállítani.
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás:  Dobhatsz **Érzékenység** képzettségpróbát méregérzékelésre fizikai érzékeid (látás, szaglás, ízlelés) használata nélkül is. A mérgezett borba bele sem kell innod, szagolnod, egyszerűen megérzed a mérget.
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll". ⭕TODO⭕ Hányadik szintű, stb. mérget?⭕
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: Immunissá válsz a mérgekre. Ha kr4ni vagy, Banarát készithetsz.
 
 <br />
 
 ---
-### Biztos tudás, követelmények
-
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub>                                                                                                                 |       Követelmény        |
-| :--------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------: |
-| Novícius (3)     | ⭕xyz <br /> **Példa**: x                                                                                                                                                                           | Lásd: "Limitek" bekezdés |
-| Kismester (6)    | ⭕xyz <br /> **Példa**: x                                                                                                                                                                           | Lásd: "Limitek" bekezdés |
-| Mester (9)       | Dobhatsz ⚪**Érzékenység-próbát** méregérzékelésre fizikai érzékeid (látás, szaglás, ízlelés) használata nélkül is. A mérgezett borba bele sem kell innod, szagolnod, egyszerűen megérzed a mérget. | Lásd: "Limitek" bekezdés |
-| Nagymester (12)  | Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll".<br />⭕Hányadik szintű, stb. mérget?⭕                     | Lásd: "Limitek" bekezdés |
-| Élő legenda (15) | - Immunissá válsz a mérgekre<br />- Ha kr4ni vagy, Banarát készithetsz                                                                                                                             | Lásd: "Limitek" bekezdés |
-
-<br />
-
-### Próbák
+### Próbák 🎲
 
 A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg szintjével** azonos. A **Méreg szintjének** számítása a [Méregrendszer](../150_meregrendszer.md) fejezetben található.
 
@@ -59,7 +75,9 @@ A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek c�
 
 ### Megjegyzések 
 
-- Méreganyagok kivonásához növényből/állatból a **Vajákosság**, ásványokból az **Alkímia** képzettség szükséges. Emiatt:
+⭕TODO⭕ Konszolidálni a lentieket a Méregrendszer fejezet és ezen oldal között.
+
+- Méreganyagok kivonásához növényből/állatból a [Vajákosság](../kepzettsegek.szekunder/vajakossag.md), ásványokból az [Alkímia](../kepzettsegek.szekunder/alkimia.md) képzettség szükséges. Emiatt:
 - Méreg alapanyagok követelménye: `(Alkimia + Vajákosság) >= (méreg szintje / 2)`
   - Például: méreg szintje: `16`, ez `8`-as követelmény: `(alkimia+vajákosság)` szint összege legalább `8` legyen.
   - ez megvalósulhat így például: Alkimia: `3`, Vajákosság: `5`
