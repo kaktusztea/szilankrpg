@@ -34,8 +34,6 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 
 🌟 Hatás: ⭕TODO⭕
 
-<br />
-
 ---
 #### Mester (9) 📖
 
@@ -43,16 +41,12 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 
 🌟 Hatás: Ügyesség: `+1`
 
-<br />
-
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Ügyesség: `+2`
 
 🌟 Hatás: ⭕TODO ⭕
-
-<br />
 
 ---
 #### Élő legenda (15) 📖

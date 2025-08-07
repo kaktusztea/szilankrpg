@@ -1,6 +1,6 @@
 ## 🔵 Emberismeret
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható.
 
 ### Domináns Tulajdonságok
 
@@ -35,15 +35,48 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 <br />
 
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub>                                                                                                      |                   Követelmény                    |
-| :--------------- | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------: |
-| Novícius (3)     | • Észreveszi a feltűnő érzelmi állapotokat<br />• **Példa**: átlagember                                                                                                                 |               Érzékenység:&nbsp;-1               |
-| Kismester (6)    | • Alapvető személyiségvonások felismerése<br />• **Példa**: Sokat megélt öregember, falu bölcse                                                                                         |               Érzékenység:&nbsp;0                |
-| Mester (9)       | • Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri. Mentális problémákat felismer, elkezdhet gyógyítani.<br />• **Példa**: Vallatótiszt, szélhámos |               Érzékenység:&nbsp;+1               |
-| Nagymester (12)  | Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött.<br />**Példa**: Főpap, inkvizítor, híres színész                                                       | Érzékenység:&nbsp;+2<br />Intelligencia:<br />+1 |
-| Élő legenda (15) | • Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött.<br />• **Példa**: asztrálmágus<br />• Speciális: Állandó ⭕5.szintű⭕ Asztrálszemnek⭕ megfelelő hatás.          | Érzékenység:&nbsp;+3<br />Intelligencia:<br />+2 |
+#### Novívius (3) 📖
+
+🔒 Követelmény: Érzékenység: `-1`
+
+🌟 Hatás: Észreveszi a feltűnő érzelmi állapotokat. **Példa**: átlagember.
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: Érzékenység: `+0`
+
+🌟 Hatás: Alapvető személyiségvonások felismerése. **Példa**: Sokat megélt öregember, falu bölcse.
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: Érzékenység: `+1`
+
+🌟 Hatás: Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri. Mentális problémákat felismer, elkezdhet gyógyítani. **Példa**: Vallatótiszt, szélhámos.
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:
+- Érzékenység: `+2`
+- Intelligencia: `+1`
+
+🌟 Hatás: Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött. **Példa**: Főpap, inkvizítor, híres színész.
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:
+- Érzékenység: `+3`
+- Intelligencia: `+2`
+
+🌟 Hatás:
+- Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
+- **Példa**: asztrálmágus
+- Speciális: Állandó ⭕5.szintű⭕ Asztrálszemnek⭕ megfelelő hatás.
 
 <br />
 
@@ -59,28 +92,48 @@ Emberismeret + Érzékenység
 
 Bővebben lásd: [Szituációk: Befolyásolás vs Emberismeret](../szituaciok/befolyasolas_modszerei.md) fejezet.
 
-### Aktív próbák
+<br />
+
+---
+### Aktív próbák 🎲
 
 Ilyenkor az Emberismeret egyfajta „radarként” működik, megpróbál a különböző jelek alapján következtetésekre jutni. Ez lehet tudatos, vagy tudatlan vizsgálódás, lényeg, hogy nem az alkalmazót, vagy személyiségét éri külső behatás más által (lásd Passzív próbáknál), hanem ő érzékel bizonyos jeleket.
 
-**Speciális**: a nehézséghez hozzáadódik (negatívnál levonódik) a célszemély `Önuralom` tulajdonsága!
+🔆 **Speciális**: a nehézséghez hozzáadódik (negatívnál levonódik) a célszemély `Önuralom` tulajdonsága!
 
-**Alapeset**: egy perc beszélgetés
+🔆 **Alapeset**: egy perc beszélgetés
 
-| Célszám | Példa  |
-| :----------- | :----------- |
-| Könnyű       (6)  | Leplezetlen félelmet észrevenni |
-| Átlagos      (9)  | Alapvető személyiségvonásokat felismerni |
-| Nehéz        (12) | Többszörös személyiség betegséget egy rövid beszélgetés után beazonosítani. Hiszti előszelét megérezni 🙂 |
-| Nagyon nehéz (15) | Megállapítani, hogy egy jelentős személyiségváltozás hátterében nagyszabású mágikus beavatkozás áll |
-| Rendkívül nehéz (18) | Megállapítani, hogy egy személyiségváltozás hátterében kisebb mágikus beavatkozás áll |
-| Emberfeletti (21) | Ráérezni, hogy a másik fél személyisége valószínűleg túlvilági lény befolyása alatt áll.<br />„Magzat megrontása” vulgármágikus varázslatot felismerni. |
+#### Könnyű (6) 🎲 
+
+Leplezetlen félelmet észrevenni.
+
+#### Átlagos (9) 🎲 
+
+Alapvető személyiségvonásokat felismerni.
+
+#### Nehéz (12) 🎲 
+
+Többszörös személyiség betegséget egy rövid beszélgetés után beazonosítani. Hiszti előszelét megérezni 🙂
+
+#### Nagyon nehéz (15) 🎲 
+
+Megállapítani, hogy egy jelentős személyiségváltozás hátterében nagyszabású mágikus beavatkozás áll.
+
+#### Rendkívül nehéz (18) 🎲 
+
+Megállapítani, hogy egy személyiségváltozás hátterében kisebb mágikus beavatkozás áll.
+
+#### Emberfeletti (21) 🎲 
+
+- Ráérezni, hogy a másik fél személyisége valószínűleg túlvilági lény befolyása alatt áll.  
+- „Magzat megrontása” vulgármágikus varázslatot felismerni.
 
 <br />
 
+---
 ### Módosító körülmények
 
-- Rövidebb a kontaktus ideje és/vagy kevésbé mély az alapesetnél: `[-1; -6]`
-- Hosszabb a kontaktus ideje és/vagy elmélyültebb az alapesetnél: `[+1; +6]`
+- Rövidebb a kontaktus ideje és/vagy kevésbé mély az alapesetnél: `[-1; -3]`
+- Hosszabb a kontaktus ideje és/vagy elmélyültebb az alapesetnél: `[+1; +3]`
 - Más fajú a célszemély: `[-2;-4]`
 - Asztrál szem hatása: ⭕TODO⭕

@@ -48,7 +48,7 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 <br />
 
 ---
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
 
@@ -65,16 +65,12 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-<br />
-
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
-<br />
 
 ---
 #### Nagymester (12) 📖
@@ -83,8 +79,6 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-<br />
-
 ---
 #### Élő legenda (15) 📖
 
@@ -92,9 +86,9 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-
 <br />
 
+---
 ### Módosító körülmények
 
 Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**, mint ez is. Ha bármilyen Státusz hatása alatt állsz, Befolyásolás képzettségpróba előtt ellenőrizd, hogy vonatkozik -e rád bármilyen negatív [Hatás](https://github.com/kaktusztea/szilankrpg/blob/master/md/081_hatasok.md).

@@ -35,8 +35,6 @@ Intelligencia, Érzékenység
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-<br />
-
 ---
 #### Mester (9) 📖
 
@@ -44,16 +42,12 @@ Intelligencia, Érzékenység
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-<br />
-
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
-<br />
 
 ---
 #### Élő legenda (15) 📖
@@ -90,7 +84,6 @@ Intelligencia, Érzékenység
 #### Emberfeletti (21) 🎲 
 
 ⭕TODO⭕
-
 
 <br />
 

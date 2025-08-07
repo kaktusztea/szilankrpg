@@ -30,8 +30,6 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 
 🌟 Hatás: Ugrástávolság felmérése `10 méterig`
 
-<br />
-
 ---
 #### Mester (9) 📖
 
@@ -41,8 +39,6 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 - Ugrástávolság felmérése `20 méterig`
 - Felmérni: valaki tud -e ugrani adott távolságra a rajta levő súlyokkal együtt
 
-<br />
-
 ---
 #### Nagymester (12) 📖
 
@@ -51,8 +47,6 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 🌟 Hatás:
 - Ugrástávolság felmérése korlátlanul
 - ⭕TODO: különleges képesség⭕
-
-<br />
 
 ---
 #### Élő legenda (15) 📖

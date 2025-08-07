@@ -39,8 +39,6 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-<br />
-
 ---
 #### Mester (9) 📖
 
@@ -48,16 +46,12 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-<br />
-
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Önuralom: `2`
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
-<br />
 
 ---
 #### Élő legenda (15) 📖

@@ -36,16 +36,12 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 🌟 Hatás: Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
 
-<br />
-
 ---
 #### Kismester (6) 📖
 
 🔒 Követelmény: Ügyesség: `+1`
 
 🌟 Hatás: -
-
-<br />
 
 ---
 #### Mester (9) 📖
@@ -54,16 +50,12 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 🌟 Hatás: -
 
-<br />
-
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Ügyesség: `+3`
 
 🌟 Hatás: Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
-
-<br />
 
 ---
 #### Élő legenda (15) 📖
