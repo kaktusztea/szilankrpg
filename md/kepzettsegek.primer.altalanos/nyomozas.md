@@ -1,6 +1,17 @@
 ## 🔵 Nyomozás
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható.
+
+Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve a felderítés eljárásrendjének ismerete is fontos segítséget adhat. Az alábbi példák segítenek leírni, milyen jellegű információk nyerhetők a képzettség segítségével:
+- bűnjelek elemzése és következtetés is. Példa: el lett mozdítva a bútor.
+- Mikor járt itt utoljára valaki?
+- Az asztalon heverő rengeteg iratban találni valami fontosat, összekötni a "pontokat" a most talált és a korábban talált információk alapján.
+- Vérnyomok elemzése: alvadás, jelleg. Állati vér, vagy emberi? (Ez utóbbiban a [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség segíthet).
+- Holttest vizsgálata: mitől halt meg? Apró tűnyom kiszúrása. Mérgezés? Milyen méreg lehetett?  (Ez utóbbiban a [Méregkeverés](meregkeveres.md) képzettség segíthet).
+- Kit érdemes kikérdezni a helyszínen
+- KM kis segítsége: "Valamit még nem kérdeztél meg"
+
+A rejtett nyomok megtalálásához az **[Észlelés](eszleles.md)** képzettség használandó, az értelmezéséhez pedig a **Nyomozás**.
 
 ### Domináns Tulajdonságok
 
@@ -36,49 +47,78 @@ __
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
 - [Nyomok észrevétele, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md)
 
-### Leírás
+<br />
 
-Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve a felderítés eljárásrendjének ismerete is fontos segítséget adhat. Az alábbi példák segítenek leírni, milyen jellegű információk nyerhetők a képzettség segítségével:
-- bűnjelek elemzése és következtetés is. Példa: el lett mozdítva a bútor.
-- Mikor járt itt utoljára valaki?
-- Az asztalon heverő rengeteg iratban találni valami fontosat, összekötni a "pontokat" a most talált és a korábban talált információk alapján.
-- Vérnyomok elemzése: alvadás, jelleg. Állati vér, vagy emberi? (Ez utóbbiban a [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség segíthet).
-- Holttest vizsgálata: mitől halt meg? Apró tűnyom kiszúrása. Mérgezés? Milyen méreg lehetett?  (Ez utóbbiban a [Méregkeverés](meregkeveres.md) képzettség segíthet).
-- Kit érdemes kikérdezni a helyszínen
-- KM kis segítsége: "Valamit még nem kérdeztél meg"
+### Biztos tudás, követelmények 📖
 
-A rejtett nyomok megtalálásához az **[Észlelés](eszleles.md)** képzettség használandó, az értelmezéséhez pedig a **Nyomozás**.
+#### Novívius (3) 📖
+
+🔒 Követelmény:
+- ⭕Tulajdonság⭕: ⭕`+1`⭕
+- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 <br />
 
-### Biztos tudás, követelmények
+---
+### Próbák 🎲
 
-⭕TODO
+#### Könnyű (6) 🎲 
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
-|:---------------- |:---------------------------------------------------------------------------------- |:-----------:|
-| Novícius (3)     | xyz <br /> **Példa**: x                                                            |             |
-| Kismester (6)    | xyz <br /> **Példa**: x                                                            |             |
-| Mester (9)       | xyz <br /> **Példa**: x                                                            |             |
-| Nagymester (12)  | xyz <br /> **Példa**: x                                                            |             |
-| Élő legenda (15) | xyz <br /> **Példa**: x                                                            |             |
+⭕TODO⭕
+
+#### Átlagos (9) 🎲 
+
+⭕TODO⭕
+
+#### Nehéz (12) 🎲 
+
+⭕TODO⭕
+
+#### Nagyon nehéz (15) 🎲 
+
+⭕TODO⭕
+
+#### Rendkívül nehéz (18) 🎲 
+
+⭕TODO⭕
+
+#### Emberfeletti (21) 🎲 
+
+⭕TODO⭕
 
 <br />
 
-### Próbák
-⭕TODO
-
-| Célszám | Példa  |
-| :----------- | :----------- |
-| Könnyű       (6)  | |
-| Átlagos      (9)  | |
-| Nehéz        (12) | |
-| Nagyon nehéz (15) | |
-| Rendkívül nehéz (18) | |
-| Emberfeletti (21) | |
-
-<br />
-
+---
 ### Módosító körülmények
 
-- ⭕xyz
+- ⭕TODO⭕
