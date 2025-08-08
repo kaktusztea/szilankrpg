@@ -9,7 +9,6 @@
 - [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) 🎲
 - [Csoportosan végezhető képzettségek](030_07_02_csoportosan_vegezheto_kepzettsegek.md) 🤝
 - [Képzettségek és Fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)
-
 - [Fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
 - [Iparos képzettségek](030_10_iparos_kepzettsegek.md)
