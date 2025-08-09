@@ -31,6 +31,7 @@ Méreg szintje =
 
 ---
 ### (1) Méreg Erőssége
+
 ```
  Méreg erőssége: 1-10
 ```
@@ -49,8 +50,6 @@ Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csök
 - Nagy adag: Erősség: `50%`-al nő (lefele kerekítünk)
 
 Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
-
-
 
 <br />
 
@@ -108,7 +107,6 @@ Ez a tétel attól függ, hogy milyen típusú mérget szándékozik készíteni
 
 <br />
 
-
 ---
 ### (4) Hatóidő
 
@@ -140,7 +138,6 @@ Ez a tétel attól függ, hogy milyen típusú mérget szándékozik készíteni
 - Szabadban sem eloszló légméreg: itt nincs Nehézség módosító, hanem olyan fizikai közvetítő kell, ami ezt megoldja: egy labdacs, ami látványosan okádja a füstöt - folyamatos utánpótlást adva.
 
 <br />
-
 
 ---
 ### Hány adag méreg készíthető?
