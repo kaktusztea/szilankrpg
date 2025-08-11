@@ -16,6 +16,10 @@
 
 ⭕TODO  ((fortély, más képzettség ahol ez a képzettség említve van. Ha nincs, törölni))⭕
 
+### Szituációk
+
+⭕TODO⭕ Ha van kapcsolódó szituáció, akkor itt linkelni.
+
 ### Követelmény
 
 ⭕ ha ez egy fortély, akkor tegyük az "Erős kiterjesztés" szekcióba.⭕
@@ -27,7 +31,7 @@
 
 ### Erős kiterjesztés
 
-⭕TODO. Ha nincs, törölni
+⭕TODO. Ha nincs, törölni.
 
 ### Bónuszok
 
