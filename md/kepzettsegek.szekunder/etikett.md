@@ -1,10 +1,10 @@
 ## 🔵 Etikett
 
+Próba dobható, sokszor [összetett próba](../030_06_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) indokolt.
+
 Hogy kell köszönteni a nemesi vendégeket, hogyan kell udvariasan hárítani egy meghívást, mi számít könnyed tréfának és mi halálos sértésnek? A képzettség elsősorban az udvari, nemesi környezetben való "viselkedést" fedi.
 
-### Próba speciális
-
-Sokszor [összetett próba](../030_06_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) indokolt.
+Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívásokat teljesíteni, de az alapismeret és a gyors tanulás segítségével hamar beépíthető más kultúrkörök ismerete is. Például egy "Etikett: `9.szint`" képzettséggel rendelkező py4rroni nemes pár nap alatt képes megtanulni a tor0ni udvari Etikett szabályait, mert már megvan a mentális "váz", amire csak fel kell "aggatnia" az új tudást. Ezt a [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) Kiemelt Fortély rendszerén keresztül szimuláljuk.
 
 ### Domináns Tulajdonságok
 
@@ -25,37 +25,86 @@ Sokszor [összetett próba](../030_06_kepzettsegproba.md#összetett-képzettség
 
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
 
-### Leírás
+<br />
 
-Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívásokat teljesíteni, de az alapismeret és a gyors tanulás segítségével hamar beépíthető más kultúrkörök ismerete is. Például egy "Etikett: `9.szint`"-el rendelkező py4rroni nemes pár nap alatt képes megtanulni a tor0ni udvari Etikett szabályait, mert már megvan a mentális "váz", amire csak fel kell "aggatnia" az új tudást. Ezt a [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) Kiemelt Fortély rendszerén keresztül szimuláljuk.
+---
+### Biztos tudás, követelmények 📖
+
+#### Novívius (3) 📖
+
+🔒 Követelmény:
+- Érzékenység: `+0`
+
+🌟 Hatás: Alapvető bejelentési társalgási formulák ismerete. Tudja, mikor hallgasson. **Példa**: Kezdő udvaronc
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény:
+- Érzékenység: `+1`
+- Intelligencia: `+0`
+
+🌟 Hatás: Bevonulási, bejelentési, köszöntő és udvarlási formulák lexikális ismerete. **Példa**: Ifjú kardnemes, Hivatalnok.
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény:
+- Érzékenység: `+2`
+- Intelligencia: `+1`
+
+🌟 Hatás: Ismeri és érzi a nemesi társaság hangulatának változásait. **Példa**: Pallérozott nemes, apró hercegség udvarmestere.
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:
+- Érzékenység: `+3`
+- Intelligencia: `+2`
+
+🌟 Hatás: Már nem csak a hangulat megváltozását, hanem a tömeg igényeit is érzékeli, így  jókor képes azt manipulálni. **Példa**: Tapasztalt bálozó, öreg róka. Udvari ceremóniamester.
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:
+- Érzékenység: `+4`
+- Intelligencia: `+2`
+
+🌟 Hatás: Hírneve egy olyan fegyver, ami miatt a legtöbb konfliktust nyerő helyzetből kezdheti.  **Példa**: Legendás szarkavaró. Rettegik, tisztelik... és gyűlölik.
 
 <br />
 
-### Biztos tudás, követelmények
-
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub>                                                                                                 |                   Követelmény                    |
-| :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----------------------------------------------: |
-| Novícius (3)     | Alapvető bejelentési társalgási formulák ismerete. Tudja, mikor hallgasson.<br />**Példa**: Kezdő udvaronc                                                                         |               Érzékenység:&nbsp;+0               |
-| Kismester (6)    | Bevonulási, bejelentési, köszöntő és udvarlási formulák lexikális ismerete.<br />**Példa**: Ifjú kardnemes, Hivatalnok                                                             | Intelligencia:&nbsp;+0<br />Érzékenység:&nbsp;+1 |
-| Mester (9)       | Ismeri és érzi a nemesi társaság hangulatának változásait.<br />**Példa**: Pallérozott nemes, apró hercegség udvarmestere;                                                         | Intelligencia:&nbsp;+1<br />Érzékenység:&nbsp;+2 |
-| Nagymester (12)  | Már nem csak a hangulat megváltozását, hanem a tömeg igényeit is érzékeli, így  jókor képes azt manipulálni. <br />**Példa**: Tapasztalt bálozó, öreg róka. Udvari ceremóniamester | Intelligencia:&nbsp;+2<br />Érzékenység:&nbsp;+3 |
-| Élő legenda (15) | Hírneve egy olyan fegyver, ami miatt a legtöbb konfliktust nyerő helyzetből kezdheti. <br />**Példa**: Legendás szarkavaró. Rettegik, tisztelik... és gyűlölik.                    | Intelligencia:&nbsp;+2<br />Érzékenység:&nbsp;+4 |
-
-<br />
-
+---
 ### Próbák
 
-| Célszám              | Példa                                                                                                                                                                     |
-| -------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Könnyű (6)           | Forma szerint bejelenteni a nemesi párt.                                                                                                                                  |
-| Átlagos (9)          | Forma szerint bejelenteni az ellenséges országból érkező követeket, pár mondatos bájcsevegést folytatni velük.                                                            |
-| Nehéz (12)           | Saját kultúrán belül mindenkivel rangjához illő formulákkal, szófordulatokat kommunikálni a teljes könnyedség látszatával, véletlen sértések elkerülésével.               |
-| Nagyon nehéz (15)    | Idegen kultúrába csöppenve elkerülni a sértéseket. Nemesi bálon hárítani a szóbeli rejtett  támadásokat. Szándékos párbaj provokációt presztízsveszteség nélkül hárítani. |
-| Rendkívül nehéz (18) | Tor0ni vérnászt megnyerni. Több tor0ni dáma együttes támadását látszólag könnyedén hárítani.                                                                              |
-| Emberfeletti (21)    | Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynök -, túlélnie egy t0roni vérnászt és az egész nemesi bált, sőt még a párbajra hívást is.      |
+#### Könnyű (6) 🎲 
+
+Forma szerint bejelenteni a nemesi párt.
+
+#### Átlagos (9) 🎲 
+
+Forma szerint bejelenteni az ellenséges országból érkező követeket, pár mondatos bájcsevegést folytatni velük.
+
+#### Nehéz (12) 🎲 
+
+Saját kultúrán belül mindenkivel rangjához illő formulákkal, szófordulatokat kommunikálni a teljes könnyedség látszatával, véletlen sértések elkerülésével.
+
+#### Nagyon nehéz (15) 🎲 
+
+Idegen kultúrába csöppenve elkerülni a sértéseket. Nemesi bálon hárítani a szóbeli rejtett  támadásokat. Szándékos párbaj provokációt presztízsveszteség nélkül hárítani.
+
+#### Rendkívül nehéz (18) 🎲 
+
+Tor0ni vérnászt megnyerni. Több tor0ni dáma együttes támadását látszólag könnyedén hárítani.
+
+#### Emberfeletti (21) 🎲 
+
+Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynök -, túlélnie egy t0roni vérnászt és az egész nemesi bált, sőt még a párbajra hívást is.
 
 <br />
 
+---
 ### Módosító körülmények
 
 - [Eszmélet: Bódultság Státusz](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `Hátrány-1` képzettségpróbára
