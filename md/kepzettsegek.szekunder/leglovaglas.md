@@ -15,7 +15,7 @@ Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket
 
 ### Erős kiterjesztés
 
-[Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező)
+- [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező)
 
 ### Bónusz: Állat testvér
 
@@ -23,32 +23,75 @@ Megegyezik az [Idomítás](../kepzettsegek.szekunder/idomitas.md#b%C3%B3nusz-%C3
 
 <br />
 
-### Biztos tudás, követelmények
+---
+### Biztos tudás, követelmények 📖
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub>                                                                   |   Követelmény    |
-| :--------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------: |
-| Novícius (3)     | Lassan, alacsonyan repülő lényt képes óvatosan navigálni.<br />**Példa**: Újonc léglovas                                                             | Önuralom:&nbsp;0 |
-| Kismester (6)    | Képes önállóan felmérni a szelet, ami felszálláshoz elengedhetetlen.                                                                                 | Önuralom:&nbsp;0 |
-| Mester (9)       | Képes jó eséllyel kiszámítani légi ellenfelének röppályáját.                                                                                         | Önuralom:&nbsp;0 |
-| Nagymester (12)  | [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)                                                                                                | Önuralom:&nbsp;0 |
-| Élő legenda (15) | [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)<br>Szinte egybeforr hátasával.<br />**Példa**: A legendás Sárkányszövetség óelf sárkánylovasa. | Önuralom:&nbsp;0 |
+#### Novívius (3) 📖
+
+🔒 Követelmény: Önuralom: `+0`
+
+🌟 Hatás: Lassan, alacsonyan repülő lényt képes óvatosan navigálni. **Példa**: Újonc léglovas
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: Önuralom: `+0`
+
+🌟 Hatás: Képes önállóan felmérni a szelet, ami felszálláshoz elengedhetetlen.
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: Önuralom: `+0`
+
+🌟 Hatás: Képes jó eséllyel kiszámítani légi ellenfelének röppályáját.
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény: Önuralom: `+0`
+
+🌟 Hatás: [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény: Önuralom: `+0`
+
+🌟 Hatás: [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)
 
 <br />
 
 ---
-### Próbák
+### Próbák 🎲
 
-| Célszám              | Példa                                                                                                                   |
-| :------------------- | :---------------------------------------------------------------------------------------------------------------------- |
-| Könnyű       (6)     | Egyedül megtenni egy iskolakört                                                                                         |
-| Átlagos      (9)     | Gond nélkül fel és leszállni. Zavaró körülmények nélkül akár hosszabb utat is megtenni.                                 |
-| Nehéz        (12)    | Fordulózni. Harcolni. Közepesen sérült hátassal navigálni.                                                              |
-| Nagyon nehéz (15)    | Tömegben harcolni (levegőben). Erősen sérült hátassal rossz időben navigálni. Egyensúlyból kibillent hátast „rendezni”. |
-| Rendkívül nehéz (18) | Zuhanásból sérült hátast kihozni.                                                                                       |
-| Emberfeletti (21)    | Az évszázad viharában zuhanó hátasodat felhúzni, miközben ellenfeled nyakadat szorongatja.                              |
+#### Könnyű (6) 🎲 
+
+Egyedül megtenni egy iskolakört.
+
+#### Átlagos (9) 🎲 
+
+Gond nélkül fel és leszállni. Zavaró körülmények nélkül akár hosszabb utat is megtenni.
+
+#### Nehéz (12) 🎲 
+
+Fordulózni. Harcolni. Közepesen sérült hátassal navigálni.
+
+#### Nagyon nehéz (15) 🎲 
+
+Tömegben harcolni (levegőben). Erősen sérült hátassal rossz időben navigálni. Egyensúlyból kibillent hátast „rendezni”.
+
+#### Rendkívül nehéz (18) 🎲 
+
+Zuhanásból sérült hátast kihozni.
+
+#### Emberfeletti (21) 🎲 
+
+Az évszázad viharában zuhanó hátasodat felhúzni, miközben ellenfeled nyakadat szorongatja.
 
 <br />
 
+---
 ### Módosító körülmények
 
 - Vad hátas: `[-1; -3]`
