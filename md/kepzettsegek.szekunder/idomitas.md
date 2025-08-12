@@ -1,6 +1,8 @@
 ## 🔵 Idomítás
 
-⭕TODO⭕
+A képzettség állatok idomítását fogja magában. Az egyes állatcsoportokra vonatkozó ismereteket [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével nyerheted el. 
+
+⭕TODO: Állatcsopot Szabad Fortélyok - voltak, töröltük. Legyenek újra?⭕
 
 ### Domináns Tulajdonságok
 
@@ -10,23 +12,46 @@
 
  [Lénylovas](../fortelyok.szabad/lenylovas.md) 
  
-### Leírás
-
-A képzettség állatok idomítását fogja magában. Az egyes állatcsoportokra vonatkozó ismereteket [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével nyerheted el. 
-
-⭕TODO: Állatcsopot Szabad Fortélyok - voltak, töröltük. Legyenek újra?⭕
-
 <br />
 
-### Biztos tudás, követelmények
+---
+### Biztos tudás, követelmények 📖
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
-| :--------------- | :--------------------------------------------------------------------------------- | :---------: |
-| Novícius (3)     | ⭕xyz <br /> **Példa**: x                                                           |             |
-| Kismester (6)    | ⭕xyz <br /> **Példa**: x                                                           |             |
-| Mester (9)       | ⭕xyz <br /> **Példa**: x                                                           |             |
-| Nagymester (12)  | Érzékenység: `+3`<br />[Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)       |             |
-| Élő legenda (15) | Érzékenység: `+3`<br />[Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)       |             |
+#### Novívius (3) 📖
+
+🔒 Követelmény:
+- ⭕Tulajdonság⭕: ⭕`+1`⭕
+- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény: Érzékenység: `+3`
+
+🌟 Hatás: [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény: Érzékenység: `+3`
+
+🌟 Hatás: [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)
 
 <br />
 
@@ -42,7 +67,6 @@ A felsorolt valamelyik 3 képzettség legfelső szintjein már olyan magas fokú
 `12.szint:` a karakter a társául szegődött állattal folyamatos telepatikus kapcsolatban van, képes csupán a gondolataival irányítani őt. Az állat nem köteles engedelmeskedni, ez pusztán kétoldalú kommunikáció, nem akaratirányítás. A gondolatok átadása mellett egymás érzelmi állapotát és annak változásait is képesek érzékelni, átélni.
 
 `15. szint:` a lovas ideiglenesen egybeolvad asztrálian és mentálisan az állattal, egy egységet alkotnak. A lovas képes érzékelni az állat érzékszerveivel is, és saját testeként is mozoghat vele, amennyiben az engedélyezi ezt számára. A karakter és az állat képes bármekkora távolságból kommunikálni egymással.
-
 
 <br />
 
@@ -60,6 +84,36 @@ A felsorolt valamelyik 3 képzettség legfelső szintjein már olyan magas fokú
 
 <br />
 
+---
+### Próbák 🎲
+
+#### Könnyű (6) 🎲 
+
+Egyszerű parancsok végrehajtása, mint "Ül!", "Áll!".
+
+#### Átlagos (9) 🎲 
+
+Komplexebb parancsok, mint tárgyak hozatása, átvitele valakinek.
+
+#### Nehéz (12) 🎲 
+
+Speciális parancsok, mint védelmezés.
+
+#### Nagyon nehéz (15) 🎲 
+
+Állat irányítása veszélyes helyzetekben.
+
+#### Rendkívül nehéz (18) 🎲 
+
+Telepatikus kapcsolat fenntartása, egyszerűbb gondolatok, érzések megosztása.
+
+#### Emberfeletti (21) 🎲 
+
+Teljes érzelmi, értelmi egybeolvadás az állattal.
+
+<br />
+
+---
 ### Módosító körülmények
 
 - Az állat intelligenciája: `[-3; +3]`
