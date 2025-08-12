@@ -21,9 +21,9 @@ A hajózás képessége magában foglalja a hajók kezelését, irányítását 
 <br />
 
 ---
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
-#### Novícius (3)
+#### Novícius (3) 📖
 
 🔒 Követelmény: ⭕TODO⭕
 - Tulajdonság: `+1`
@@ -32,16 +32,16 @@ A hajózás képessége magában foglalja a hajók kezelését, irányítását 
 🌟 Hatás: Alapvető hajózási ismeretek és egyszerű hajók irányítása.
 
 ---
-#### Kismester (6)
+#### Kismester (6) 📖
 
-🔒 Követelmény:
+🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: Tengeri navigáció és viharos időben való hajózás.
 
 <br />
 
 ---
-#### Mester (9)
+#### Mester (9) 📖
 
 🔒 Követelmény: ⭕TODO⭕
 
@@ -52,6 +52,15 @@ A hajózás képessége magában foglalja a hajók kezelését, irányítását 
 ---
 #### Nagymester (12)
 
+🔒 Követelmény:  ⭕TODO⭕ 📖
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+#### Élő legenda (15) 📖
+
 🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
@@ -59,38 +68,29 @@ A hajózás képessége magában foglalja a hajók kezelését, irányítását 
 <br />
 
 ---
-#### Élő legenda (15)
+### Próbák 🎲
 
-🔒 Követelmény:  ⭕TODO⭕
-
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
-<br />
-
----
-### Próbák
-
-#### Könnyű (6)
+#### Könnyű (6) 🎲
 
 Egyszerű manőverek végrehajtása nyugodt vízen.
 
-#### Átlagos (9)
+#### Átlagos (9) 🎲
 
 Navigáció ismert vizeken és egyszerű hajók kezelése.
 
-#### Nehéz (12)
+#### Nehéz (12) 🎲
 
 Hajózási manőverek végrehajtása erősebb szélben. Koordinálni a legénység munkáját.
 
-#### Nagyon nehéz (15)
+#### Nagyon nehéz (15) 🎲
 
 Viharos időben való hajózás és összetett manőverek. ⭕TODO⭕
 
-#### Rendkívül nehéz (18)
+#### Rendkívül nehéz (18) 🎲
 
 ⭕TODO⭕
 
-#### Emberfeletti (21)
+#### Emberfeletti (21) 🎲
 
 Navigáció extrém időjárási körülmények között. ⭕TODO⭕
 
