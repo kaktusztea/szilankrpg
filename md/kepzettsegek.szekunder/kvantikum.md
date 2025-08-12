@@ -21,7 +21,9 @@ Intelligencia, Emlékezet
 ### Erős kiterjesztés
 
 - [Írástudó](../fortelyok.altalanos/irastudo.md): enélkül egyik sem megy ❗
+
 __
+
 - [Asztrológia](../fortelyok.szabad/asztrologia.md): "Kiszámoltam: **Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
 - [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a torony pár hónap és leomlik."
 - [Mechanika](../fortelyok.altalanos/mechanika.md): "Rittyentettem egy átemelő darut, amivel könnyebb lesz az öntözés."
