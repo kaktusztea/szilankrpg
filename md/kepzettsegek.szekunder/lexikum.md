@@ -42,6 +42,8 @@ __
 - `12.szint`: ⭕TODO⭕Ötödkori ⭕? ismeretek; Postcognition álmok (látja a valós régmúlt eseményeit álmában)
 - `15.szint`: Negyedkori ismeretek; Jósolni képes történelmi/társadalmi mértékben
 
+<br />
+
 ---
 ### Biztos tudás, követelmények 📖
 
