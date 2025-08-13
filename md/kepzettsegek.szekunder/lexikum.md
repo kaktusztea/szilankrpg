@@ -1,6 +1,8 @@
 ## 🔵 Lexikum
 
-Általános ismeret amely a tárgyi tudásra támaszkodó tudományok alapját adja. 
+Próba dobható.
+
+Általános ismeret amely a tárgyi tudásra támaszkodó tudományok alapját adja. Könyvtárazás, tárgyi ismeretek gyűjtése, rengeteg olvasás, magolás. Igazi potenciálját a **kiterjesztését** megvalósító fenti Fortélyokkal érhetjük el.
 
 ### Domináns Tulajdonságok
 
@@ -34,37 +36,83 @@ __
 
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
 
-### Leírás
-
-Könyvtárazás, tárgyi ismeretek gyűjtése, rengeteg olvasás, magolás. Igazi potenciálját a kiterjesztését megvalósító fenti Fortélyokkal érhetjük el.
-
-### Biztos tudás, követelmények
-
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
-|:---------------- |:---------------------------------------------------------------------------------- |:-----------:|
-| Novícius (3)     | ⭕xyz <br /> **Példa**: x                                                          |             |
-| Kismester (6)    | ⭕xyz <br /> **Példa**: x                                                          |             |
-| Mester (9)       | ⭕xyz <br /> **Példa**: x                                                          |             |
-| Nagymester (12)  | ⭕xyz <br /> **Példa**: x                                                          |             |
-| Élő legenda (15) | ⭕xyz <br /> **Példa**: x                                                          |             |
-
 ### Bónuszok
 
 - `9.szint`: ⭕TODO⭕; Hatodkori ⭕? ismeretek
 - `12.szint`: ⭕TODO⭕Ötödkori ⭕? ismeretek; Postcognition álmok (látja a valós régmúlt eseményeit álmában)
 - `15.szint`: Negyedkori ismeretek; Jósolni képes történelmi/társadalmi mértékben
 
-### Próbák
+---
+### Biztos tudás, követelmények 📖
 
-| Célszám              | Példa |
-| :------------------- | :---- |
-| Könnyű       (6)     | ⭕     |
-| Átlagos      (9)     | ⭕     |
-| Nehéz        (12)    | ⭕     |
-| Nagyon nehéz (15)    | ⭕     |
-| Rendkívül nehéz (18) | ⭕     |
-| Emberfeletti (21)    | ⭕     |
+#### Novívius (3) 📖
 
+🔒 Követelmény:
+- ⭕Tulajdonság⭕: ⭕`+1`⭕
+- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+### Próbák 🎲
+
+#### Könnyű (6) 🎲 
+
+⭕TODO⭕
+
+#### Átlagos (9) 🎲 
+
+⭕TODO⭕
+
+#### Nehéz (12) 🎲 
+
+⭕TODO⭕
+
+#### Nagyon nehéz (15) 🎲 
+
+⭕TODO⭕
+
+#### Rendkívül nehéz (18) 🎲 
+
+⭕TODO⭕
+
+#### Emberfeletti (21) 🎲 
+
+⭕TODO⭕
+
+<br />
+
+---
 ### Módosító körülmények
 
 - Könyvtár: `[+1; +6]`
