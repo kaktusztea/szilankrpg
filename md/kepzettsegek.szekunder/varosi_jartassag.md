@@ -1,6 +1,17 @@
 ## 🔵 Városi jártasság
 
 ⭕TODO⭕
+- helyi pletykák ismerete és megszerzése
+- alvilági alakokat hol keresd
+⭕ Mi megy Helyismeretbe?⭕
+- helyi látványosság, politikai személyek ismerete
+- konkrét, híres személyek ismerete
+- helyi kocsmák ismerete
+- helyi színdarabok ismerete
+⭕
+Például
+- bajvívó
+- tolvaj
 
 ### Domináns Tulajdonságok
 
@@ -19,21 +30,6 @@ Emlékezet, Intelligencia
 
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
 
-### Leírás
-
-⭕TODO⭕
-- helyi pletykák ismerete és megszerzése
-- alvilági alakokat hol keresd
-⭕ Mi megy Helyismeretbe?⭕
-- helyi látványosság, politikai személyek ismerete
-- konkrét, híres személyek ismerete
-- helyi kocsmák ismerete
-- helyi színdarabok ismerete
-⭕
-Például
-- bajvívó
-- tolvaj
-
 ### Speciális
 
 Segít a Helyismeret gyorsabb megszerzésében
@@ -42,33 +38,79 @@ Segít a Helyismeret gyorsabb megszerzésében
 
 <br />
 
-### Biztos tudás, követelmények
+---
+### Biztos tudás, követelmények 📖
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
-|:---------------- |:---------------------------------------------------------------------------------- |:-----------:|
-| Novícius (3)     | xyz <br /> **Példa**: x                                                            |             |
-| Kismester (6)    | xyz <br /> **Példa**: x                                                            |             |
-| Mester (9)       | xyz <br /> **Példa**: x                                                            |             |
-| Nagymester (12)  | xyz <br /> **Példa**: x                                                            |             |
-| Élő legenda (15) | xyz <br /> **Példa**: x                                                            |             |
+#### Novívius (3) 📖
+
+🔒 Követelmény:
+- ⭕Tulajdonság⭕: ⭕`+1`⭕
+- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 <br />
 
-### Próbák
+---
+### Próbák 🎲
 
 ⭕Példa: keresek egy csövest, aki infót ad
- 
-| Célszám | Példa  |
-| :----------- | :----------- |
-| Könnyű       (6)  | |
-| Átlagos      (9)  | |
-| Nehéz        (12) | |
-| Nagyon nehéz (15) | |
-| Rendkívül nehéz (18) | |
-| Emberfeletti (21) | |
+
+#### Könnyű (6) 🎲 
+
+⭕TODO⭕
+
+#### Átlagos (9) 🎲 
+
+⭕TODO⭕
+
+#### Nehéz (12) 🎲 
+
+⭕TODO⭕
+
+#### Nagyon nehéz (15) 🎲 
+
+⭕TODO⭕
+
+#### Rendkívül nehéz (18) 🎲 
+
+⭕TODO⭕
+
+#### Emberfeletti (21) 🎲 
+
+⭕TODO⭕
 
 <br />
 
+---
 ### Módosító körülmények
 
 - ⭕TODO⭕
