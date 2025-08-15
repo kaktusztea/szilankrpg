@@ -39,9 +39,9 @@ Minden karakter `1.TSz` során ingyen megkapja a fenti két nyelvet. Amennyiben 
 <br />
 
 ---
-### Biztos tudás, követelmények
+### Biztos tudás, követelmények 📖
 
-#### Novívius (3)
+#### Novívius (3) 📖
 
 🔒 Követelmény:
 - ⭕Tulajdonság⭕: ⭕`+1`⭕
@@ -50,25 +50,28 @@ Minden karakter `1.TSz` során ingyen megkapja a fenti két nyelvet. Amennyiben 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
-#### Kismester (6)
+#### Kismester (6) 📖
 
 🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-<br />
-
 ---
-#### Mester (9)
+#### Mester (9) 📖
 
 🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
-<br />
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
-#### Nagymester (12)
+#### Élő legenda (15) 📖
 
 🔒 Követelmény:  ⭕TODO⭕
 
@@ -77,44 +80,37 @@ Minden karakter `1.TSz` során ingyen megkapja a fenti két nyelvet. Amennyiben 
 <br />
 
 ---
-#### Élő legenda (15)
-
-🔒 Követelmény:  ⭕TODO⭕
-
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
-<br />
-
----
-
-### Próbák
+### Próbák 🎲
 
 ⭕TODO: ismeretlen nyelvekből kihámozni valamit, ilyesmik. Ismeretlen nyelv nyelvcsaládjának megállapítása
 
-
-#### Könnyű (6)
-
-⭕TODO⭕
-
-#### Átlagos (9)
+#### Könnyű (6) 🎲 
 
 ⭕TODO⭕
 
-#### Nehéz (12)
+#### Átlagos (9) 🎲 
 
 ⭕TODO⭕
 
-#### Nagyon nehéz (15)
+#### Nehéz (12) 🎲 
 
 ⭕TODO⭕
 
-#### Rendkívül nehéz (18)
+#### Nagyon nehéz (15) 🎲 
 
 ⭕TODO⭕
 
-#### Emberfeletti (21)
+#### Rendkívül nehéz (18) 🎲 
 
 ⭕TODO⭕
 
+#### Emberfeletti (21) 🎲 
+
+⭕TODO⭕
 
 <br />
+
+---
+### Módosító körülmények
+
+- ⭕TODO⭕
