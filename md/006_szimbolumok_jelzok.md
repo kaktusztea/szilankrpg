@@ -8,6 +8,10 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ⏹️ Nem fejleszthető Tulajdonság
 
+🟩 Normál kiterjesztés (fortély kiterjeszt képzettséget)
+
+🟥 Erős kiterjesztés (fortély kiterjeszt képzettséget)
+
 🤝 Csoportban végezhető képzettség
 
 📖 Képzettség - biztos tudás szint
