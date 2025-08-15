@@ -1,5 +1,7 @@
 ## 🔵 Nyelvtanulás
 
+Próba speciálisan dobható: nem magára a beszédre, hanem kapcsolódó szituációkra.
+
 Ez egy speciális képzettség, mert nem adott nyelvre veszed fel, hanem ez jelképezi az összes nyelv tanulását. `4.szinttől` kezdve minden szinten `3 pontot` kapsz, melyeket [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély fokokra költhetsz. Az első `3 szint` az alapozást jelképezi, ahogy a `Szilánk` sok más területén. Ugyanez táblázatban:
 
 | Szint | Pont |
