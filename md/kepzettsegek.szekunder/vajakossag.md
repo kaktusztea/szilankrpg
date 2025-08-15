@@ -1,24 +1,5 @@
 ## 🔵 Vajákosság
 
-⭕TODO⭕
-
-### Domináns Tulajdonságok
-
-Emlékezet, Intelligencia
-
-### Kapcsolódik
-
-- [Vezető: Vajákmester](../fortelyok.altalanos/vezeto_vajakmester.md) fortély: csoportos vajákosság esetén bónuszt ad.
-
-### Normál kiterjesztés
-
-- [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Ismered a dzsungelben növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Ismered a sivatagban növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Ismered a magaslati tájon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): Ismered az erdős tájon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-
-### Leírás
-
 A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. A [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséghez szükséges orvosságok alapanyagainak beszerzéséhez szükséges képzettség. Továbbá:
 
 - növényi alapanyagok ismerete
@@ -36,33 +17,94 @@ A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segé
 - mágikus gyógyitalok alapanyagainak beszerzése: ezek sokszor ritka szörnyetegek testrészei, vagy még ritkább növények hajtásai. Mágikus gyógyitalt önnálóan **NEM** képes készíteni.
 - egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter
 
-<br />
+### Domináns Tulajdonságok
 
-### Biztos tudás, követelmények
+Emlékezet, Intelligencia
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
-|:---------------- |:---------------------------------------------------------------------------------- |:-----------:|
-| Novícius (3)     | ⭕xyz <br /> **Példa**: x                                                          |             |
-| Kismester (6)    | ⭕xyz <br /> **Példa**: x                                                          |             |
-| Mester (9)       | ⭕xyz <br /> **Példa**: x                                                          |             |
-| Nagymester (12)  | ⭕xyz <br /> **Példa**: x                                                          |             |
-| Élő legenda (15) | ⭕xyz <br /> **Példa**: x                                                          |             |
+### Kapcsolódik
 
-<br />
+- [Vezető: Vajákmester](../fortelyok.altalanos/vezeto_vajakmester.md) fortély: csoportos vajákosság esetén bónuszt ad.
 
-### Próbák
+### Normál kiterjesztés
 
-| Célszám | Példa  |
-| :----------- | :----------- |
-| Könnyű       (6)  | ⭕ |
-| Átlagos      (9)  | ⭕ |
-| Nehéz        (12) | ⭕ |
-| Nagyon nehéz (15) | ⭕ |
-| Rendkívül nehéz (18) | ⭕ |
-| Emberfeletti (21) | ⭕ |
+- [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Ismered a dzsungelben növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Ismered a sivatagban növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
+- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Ismered a magaslati tájon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
+- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): Ismered az erdős tájon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
 
 <br />
 
+---
+### Biztos tudás, követelmények 📖
+
+#### Novívius (3) 📖
+
+🔒 Követelmény:
+- ⭕Tulajdonság⭕: ⭕`+1`⭕
+- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Kismester (6) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Mester (9) 📖
+
+🔒 Követelmény: ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Nagymester (12) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+---
+#### Élő legenda (15) 📖
+
+🔒 Követelmény:  ⭕TODO⭕
+
+🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+<br />
+
+---
+### Próbák 🎲
+
+#### Könnyű (6) 🎲 
+
+⭕TODO⭕
+
+#### Átlagos (9) 🎲 
+
+⭕TODO⭕
+
+#### Nehéz (12) 🎲 
+
+⭕TODO⭕
+
+#### Nagyon nehéz (15) 🎲 
+
+⭕TODO⭕
+
+#### Rendkívül nehéz (18) 🎲 
+
+⭕TODO⭕
+
+#### Emberfeletti (21) 🎲 
+
+⭕TODO⭕
+
+<br />
+
+---
 ### Módosító körülmények
 
-- ⭕xyz
+- ⭕TODO⭕
