@@ -182,13 +182,13 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 ### ✴️ Fizikai (1) Fáradtság
 
 - Kezdeményezés - lassú
-- `Hátrány-1`: nem-harc fizikai képzettségekre
+- `Hátrány-1`: nem-harci fizikai képzettségpróbákra
 
 ### ✴️ Fizikai (2) Kimerültség
 
 - Kezdeményezés - lassú
 - VÉ veszteség: duplázódik
-- `Hátrány-2`: nem-harc fizikai képzettségekre
+- `Hátrány-2`: nem-harci fizikai képzettségpróbákra
 -  `FP S1`
 
 ### ✴️ Fizikai (3) Elcsigázottság
@@ -382,7 +382,7 @@ Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el
 - `Hátrány-2`:
     - Önuralom Tulajdonságpróba
     - Érzékenység Tulajdonságpróba
-    - Szociális képzettségpróbák, mikor a fenti 2 Tulajdonságot használja
+    - Szociális képzettségpróbákra, mikor a fenti 2 Tulajdonságot használja
 - Antyssjárás esetén "nagyon rossz" helyre kerül
 
 <br />
