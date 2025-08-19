@@ -14,7 +14,7 @@ Követelmények:
 
 Az **Amund tradíció**, a többihez hasonlóan - egy [Primer](017_primer_szekunder_ismeretek.md) képzettség.
 
-Az amund karakter a Tradícióval azonos szinten ingyen megkapja az [Asztrálmégia](kepzettsegek.primer.arkanumok/asztralmagia.md) Arkánumot, amit `3.` szinttől kezdve ösztönösen használni is tud. Ennek használata speciális: a hatás nem Manából, hanem szakrális energiákból jön létre. Ennek a különleges képességnek oka az amundok asztrálsíkkal való szoros összefonódásában keresendő.
+Az amund karakter a Tradícióval azonos szinten ingyen megkapja az [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md) Arkánumot, amit `3.` szinttől kezdve ösztönösen használni is tud. Ennek használata speciális: a hatás nem Manából, hanem szakrális energiákból jön létre. Ennek a különleges képességnek oka az amundok asztrálsíkkal való szoros összefonódásában keresendő.
 
 Fontos: csak 1 darab formulát használhat egyszerre, nem kombinálhatja őket mozaikokként!
 
