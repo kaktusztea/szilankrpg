@@ -8,11 +8,11 @@
 
 <!-- tag: md_table_fegyver_end -->
 
-<br />
-
 ### Kopja használata
 
 Csak [Lovas rohamból](067_03_lovas_harci_taktikak.md#lovas-roham--l%C3%A9glovas-roham) használató.
+
+<br />
 
 ---
 
