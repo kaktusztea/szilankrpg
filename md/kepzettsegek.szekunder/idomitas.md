@@ -1,8 +1,6 @@
 ## 🔵 Idomítás
 
-A képzettség állatok idomítását fogja magában. Az egyes állatcsoportokra vonatkozó ismereteket [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével nyerheted el. 
-
-⭕TODO: Állatcsopot Szabad Fortélyok - voltak, töröltük. Legyenek újra?⭕
+A képzettség állatok idomítását fogja magában. Az egyszerüség kedvéért univerzális tudás, nem bontjuk le állatcsoportokra - egy fantasy rendszerben ez túl speciális ismeret lenne.
 
 ### Domináns Tulajdonságok
 

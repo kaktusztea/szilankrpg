@@ -2,14 +2,17 @@
 
 <!-- tag: md_table_fegyver_start -->
 
-| **Fegyver**         | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | **Átütés** | **Pengehossz** | KÉ  | TÉ  | VÉ  | Sebesség | Kategória | Speciális / Megjegyzés |
-| ------------------- | :------------: | :-: | :-------------: | :----------: | :--------: | :------------: | :-: | :-: | :-: | :------: | --------- | ---------------------- |
-| ⭕ Kopja, könnyű     |                |     |       `0`       |              |            |                |     |     |     |          | lovas     |                        |
-| ⭕ Kopja, lovas      |                |     |       `0`       |              |            |                |     |     |     |          | lovas     |                        |
-| ⭕ Kopja, nehézlovas |                |     |       `0`       |              |            |                |     |     |     |          | lovas     |                        |
-| ⭕ Lovas lándzsa?    |                |     |       `0`       |              |            |                |     |     |     |          | lovas     |                        |
+| **Fegyver** | Forgatás módja |  SP   | Erőbónusz limit | Sebzés módja | **Átütés** | **Pengehossz** |  KÉ  |  TÉ  |  VÉ  | Sebesség | Kategória | Speciális / Megjegyzés |
+| ----------- | :------------: | :---: | :-------------: | :----------: | :--------: | :------------: | :--: | :--: | :--: | :------: | --------- | ---------------------- |
+| Kopja       |    egykezes    | `+10` |       `0`       |     `S`      |    `+5`    |      `6`       | `18` | `40` | `40` |   `99`   | lovas     |                        |
 
 <!-- tag: md_table_fegyver_end -->
+
+<br />
+
+### Kopja használata
+
+Csak [Lovas rohamból](067_03_lovas_harci_taktikak.md#lovas-roham--l%C3%A9glovas-roham) használató.
 
 ---
 
