@@ -32,35 +32,35 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 #### Novívius (3) 📖
 
-🔒 Követelmény: Ügyesség: `+0`
+🔒 Követelmény: -
 
 🌟 Hatás: Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: Ügyesség: `+1`
+🔒 Követelmény: -
 
 🌟 Hatás: -
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: Ügyesség: `+2`
+🔒 Követelmény: Ügyesség: `+0`
 
 🌟 Hatás: -
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény: Ügyesség: `+3`
+🔒 Követelmény: Ügyesség: `+0`
 
 🌟 Hatás: Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény: Ügyesség: `+3`
+🔒 Követelmény: Ügyesség: `+0`
 
 🌟 Hatás: Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
 
