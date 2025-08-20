@@ -107,6 +107,8 @@ Emlékezet
 
 Lássuk, milyen Tulajdonságokkal jellemezheted karakteredet.
 
+<br />
+
 ### ⚪ Erő
 
 ```
@@ -128,12 +130,12 @@ Fejleszthető tulajdonság.
 
 `+1/+2:` Elismerésre méltó izomzat, nem sokan kötekednek vele.
 
-`+3/+4:` Rendszeresen nyeri az erőviadalokat.
-⭕TODO⭕ Aki teheti, kitér előle.
+`+3/+4:` Rendszeresen nyeri az erőviadalokat. Aki teheti, kitér előle.
 
 `+5:` Legendás hős, puszta kézzel felemel egy szekeret, falat tör ököllel,
 rácsokat zúz. Istenként tisztelik, vagy rettegik.
-⭕TODO⭕: Extra
+
+<br />
 
 ---
 ### ⚪ Edzettség
@@ -155,8 +157,9 @@ Fejleszthető tulajdonság.
 `+3/+4:` A természet vad gyermeke. Beteg sose volt. „Kicsattanó az egészsége" - mondogatják. Lemeríthetetlen.
 
 `+5:` Legendás serpa, lerázhatatlan nyomolvasó. Minimális alvással is remekül bírja. Legendás egészségű, beteg soha nem volt, még a járványokkal, mérgekkel szemben is
-jó eséllyel száll harcba. ⭕TODO⭕: Extra
+jó eséllyel száll harcba.
 
+<br />
 
 ---
 ### ⚪ Ügyesség
@@ -177,9 +180,9 @@ Fejleszthető tulajdonság.
 
 `+3/+4:` Szemet gyönyörködtető a mozgása. Ha képzik, ünnepelt táncos, vagy halálos gyilkolóművész is lehet belőle. Kész zsonglőr.
 
-`+5:` Világhírű mutatványos - sokak szerint (tévesen) varázsló. Elit fejvadász iskolák legjobbjai. ⭕TODO⭕: Extra
+`+5:` Világhírű mutatványos - sokak szerint (tévesen) varázsló. Elit fejvadász iskolák legjobbjai.
 
-
+<br />
 
 ---
 ### ⚪ Gyorsaság
@@ -200,7 +203,9 @@ Fejleszthető tulajdonság.
 
 `+3/+4:` Boszorkányos gyorsaságú, sokan trükkre gyanakszanak - alaptalanul. Sprintben nincs párja.
 
-`+5:` Észre se venni, hogy mozdult. Villámgyors. Körbefut, mire észreveszed. ⭕TODO⭕: Extra
+`+5:` Észre se venni, hogy mozdult. Villámgyors. Körbefut, mire észreveszed.
+
+<br />
 
 ---
 ### ⚪ Intelligencia ⏹️
@@ -221,7 +226,9 @@ Jelzi szellemi felkészültségedet mind helyzetfelismerés, problémamegoldó k
 
 `+3/+4` Csiszolt elméje, villámgyors gondolkodása bámulatba ejtő. Mágiatudó, nagy konspirátor, veszélyes politikus lehet belőle.
 
-`+5:` Mindent átlát, a legrejtettebb összefüggések is világosak számára. Ha hatalomvágyó, iszonyú veszélyt jelent a világ számára. ⭕TODO⭕: Extra
+`+5:` Mindent átlát, a legrejtettebb összefüggések is világosak számára. Ha hatalomvágyó, iszonyú veszélyt jelent a világ számára.
+
+<br />
 
 ---
 ### ⚪ Emlékezet
@@ -242,7 +249,9 @@ Fejleszthető tulajdonság.
 
 `+3/+4:` Élő lexikon, adattár. Nem okoz számára gondot egész verseskötetek bebiflázása.
 
-`+5:` Nem tanul, olvas. Számára ez ugyanazt jelenti. Minden megragad az emlékezetében méghozzá tökéletesen. Gyermekkorában történt eseményekre is pontosan emlékszik. Képes felidézni bármely beszélgetést szó szerint. Ha alacsony az Önuralma könnyen beleőrülhet. ⭕TODO⭕: Extra
+`+5:` Nem tanul, olvas. Számára ez ugyanazt jelenti. Minden megragad az emlékezetében méghozzá tökéletesen. Gyermekkorában történt eseményekre is pontosan emlékszik. Képes felidézni bármely beszélgetést szó szerint. Ha alacsony az Önuralma könnyen beleőrülhet.
+
+<br />
 
 ---
 ### ⚪ Önuralom
@@ -267,6 +276,8 @@ beszédéből, mozdulataiból ránézésre látszik, ha valami baja van.
 `+3/+4:` Híres hadvezér, neves aszkéta, vagy harcművész lehet. Érzelmeit jól uralja, ha olyan a személyisége, nehezebb észrevenni, ha hazudik.
 
 `+5:` Megingathatatlan kőszikla. Tökéletesen uralja érzelmeit, teljesen el tud vonatkoztatni tőlük, kibillenteni szinte lehetetlen. Határozott, elképzeléseit mindig megvalósítja, a lehetetlen számára ismeretlen fogalom. Képes érzelmeit olyan fokon uralni, hogy külső jeleiből (testbeszéd, hang) képtelenség lelkiállapotára következtetni - leginkább egy gépre, vagy jégcsapra hasonlít. A fentiek a mágikus detektálásokat természetesen nem befolyásolják.
+
+<br />
 
 ---
 ### ⚪ Érzékenység ⏹️
