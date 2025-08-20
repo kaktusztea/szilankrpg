@@ -2,8 +2,6 @@
 
 <sub>→ [STUDY: Gyógyítás, gyógyulás](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.gyogyitas.gyogyulas)</sub>
 
-<sub>→ [STUDY: Papi mágia Gyógyítás szféra / Sebgyógyítás](magia.papi.varazslatok/sebgyogyitas.md)</sub>
-
 ---
 A harc során, vagy egyéb fizikai behatás során szerzett sebesülések ellátására és gyógyítására több módszer létezik.
 
