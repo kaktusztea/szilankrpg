@@ -15,6 +15,7 @@ A Sebesülés modellel már megismerkedtünk a harcrendszer [Életerő - Sebesü
 ```
 1 ÉP / nap
 1 FP / óra
+2 ÉP / nap zavartalan, nyugodt pihenésben, alvásban
 2 FP / óra alvásban
 ```
 
