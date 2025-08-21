@@ -204,8 +204,7 @@
 - [Ostorharc fegyverek](068_006_ostorharc_fegyverek.md)
 - [Hajítófegyverek](068_007_hajitofegyverek.md)
 - [Lőfegyverek](068_008_lofegyverek.md)
-- [Lovas fegyverek](068_009_lovas_fegyverek.md)
-- [Pajzsok fegyverek](068_010_pajzs_fegyverek.md)
+- [Pajzs fegyverek](068_010_pajzs_fegyverek.md)
 
 #### 6.9 [Vértek, páncélok](069_00_vertek_pancelok.md)
 

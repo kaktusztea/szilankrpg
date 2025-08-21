@@ -80,7 +80,6 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Zúzó fegyverek](068_005_zuzo_fegyverek.md)
 - [Hajítófegyverek](068_007_hajitofegyverek.md)
 - [Lőfegyverek](068_008_lofegyverek.md)
-- [Lovas fegyverek](068_009_lovas_fegyverek.md)
 - [Pajzsok](068_010_pajzs_fegyverek.md)
 
 ## 6.9 [Vértek, páncélok](069_00_vertek_pancelok.md)
