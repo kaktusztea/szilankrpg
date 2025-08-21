@@ -74,6 +74,8 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
 
 Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `+3 MGT` hatást okoz, amelyre nem vonatkozik a [Vértviselet](fortelyok.harci/vertviselet.md) fortély mérséklő hatása.
 
+🔆 A viselt vértezet NEM tartozik a Felszerelés és az fent számított keret alá.
+
 ---
 🔗 [Tapasztalati szint, Szintlépés](013_tsz_szintlepes.md) →
 

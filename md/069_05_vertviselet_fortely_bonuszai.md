@@ -5,7 +5,7 @@ Ennek a fortélynak az ismerete csökkenti az **MGT** okozta levonások hatásá
 A teljes szabályt lásd a fortély leírásánál: **[Vértviselet](fortelyok.harci/vertviselet.md)**
 
 ```
-1.fok: -15 MGT (könnyűvértre)
+1.fok: -15 MGT
 
 2.fok: -30 MGT
 
