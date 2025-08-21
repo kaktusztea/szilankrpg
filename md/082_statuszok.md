@@ -424,9 +424,20 @@ Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képe
 - Beszéd - zagyva
 - Pszi használat elvesztése
 - Varázslás képesség elvesztése
-- Automatikus képzettségpróba: Összpontosítás (Nehézség: 12 (Nehéz)). Ha megdobja, kijöhet belőle. Onnantól "Zavar (2) Megrendült" Státuszra enyhül az állapot.
 
-Példa: becsapó természetes villám lecsap melléd, szakrális mágiák mellékhatása is lehet.
+Kijövetel: "Összpontosítás + Önuralom" próba: 12 (Nehéz)
+- `1.` Bekerüléskor: Automatikus képzettségpróba: 
+    - Ha megdobja, átkerül "Zavar (2) Megrendült" Státuszba, ami az ott leírt időtartam után enyhül.
+- `2.` Nyugodt állapotban (Védő Érték visszanyerő szituáció)
+- `3.` Ha a fentiekben rontás történik, utána `(20-Önuralom)` perc után magától enyhül "Zavar (2) Megrendült" fokra, ami az ott leírt időtartam után enyhül.
+
+Kihozni valakit sokkból
+- `1.` "Emberismeret + Érzékenység" próba vs `12` (Nehéz)
+    - Sikeres próba kihozza "Zavar (2) Megrendült"-be, ami az ott leírt időtartam után enyhül.
+- `2.`Mágiával kihozni (`1`, `2`, `3` szintet enyhít)
+
+⚡ Példa
+- becsapó természetes villám lecsap melléd, szakrális mágiák mellékhatása is lehet.
 
 <br />
 
