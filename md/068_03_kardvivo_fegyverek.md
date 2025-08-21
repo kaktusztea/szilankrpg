@@ -8,7 +8,7 @@ MK: Másfélkezes fegyverek
 - Átütés megszűnik (ha volt)
 - Erőbónusz limit csökken
   (általában 2-re)
-- Sebesség, marad
+- Sebesség marad
 ```
 
 ```
