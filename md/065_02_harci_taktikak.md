@@ -13,7 +13,7 @@
 | [Roham taktika](#roham-taktika)                                       | • `TÉ:+20`, `VÉ:-40` (első oda-visszacsapáskor)<br/>• `VÉ` csökkentés:(Nagykocka + 1) első oda-visszacsapásnál , Sebzéshez: `+5 SP` (oda-vissza)                                                                                                                                                                                                                   |
 | [Öngyilkos roham taktika](#%C3%B6ngyilkos-roham-taktika)              | • `TÉ:+25`,`VÉ:-50` (első oda-visszacsapáskor)<br/>• `VÉ` csökkentés: (Nagykocka + 1) első oda-visszacsapásnál, Sebzéshez: `+7 SP` (oda-vissza)<br/>• `TÉ` büntetések (sérülésből) nem érvényesek<br/>• Max `1x` használható egy küzdelemben                                                                                                                       |
 | [Támadás erőből taktika](#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) | Erre a [Támadás erőből](fortelyok.harci/tamadas_erobol.md) fortélyt használhatod (lásd a leírását).                                                                                                                                                                                                                                                                |
-| [Érintő taktika](#%C3%A9rint%C5%91-taktika-) ⇄                        | `KÉ:0`, `TÉ:0`, `VÉ:-10`                                                                                                                                                                                                                                                                                                                                           |
+| [Érintő taktika](#%C3%A9rint%C5%91-taktika-) ⇄                        | `TÉ:+10`                                                                                                                                                                                                                                                                                                                                                           |
 
 🔆 A taktikák használatát kör elején, kezdeményezés előtt kell bejelenteni, kivéve az ⇄ jellel megjelölteket, azokat kör és támadások közben is lehet variálni.
 
@@ -272,8 +272,13 @@ Erre a [Támadás erőből](fortelyok.harci/tamadas_erobol.md) fortélyt haszná
 ### Érintő taktika ⇄
 
 ```
-KÉ:0, TÉ:0, VÉ:-10
+TÉ:+10
+Nincs sebzés
 ```
+
+✅ **Támadó taktikával** együtt
+
+✅ **Védő taktikával** együtt
 
 ✅ **Kezdeményező taktikával** együtt
 
@@ -281,7 +286,9 @@ KÉ:0, TÉ:0, VÉ:-10
 
 ❌ Más taktikával együtt
 
-Ha csak meg akarunk érinteni valakit harc közben, az könnyebb, mint puszta kézzel sérülést okozó támadást végbevinni. Az Érintő támadásnál a Puszta kéz harcértékei ezért a fentiek. Tehát a támadásra kisebb a büntetés, a védekezés viszont nem változik.
+Ha csak meg akarunk érinteni valakit harc közben, az könnyebb, mint sérülést okozó támadást végbevinni. Érintő támadásnál a fenti `TÉ` bónuszokat kapod és nem okozol semmilyen sebzést.
+
+A fentiek Puszta kézre és aktuálisan forgatott fegyverre egyaránt vonatkoznak. A KM dönthet úgy, hogy egyes speciális fegyvereknél (láncos buzogány, ostorharcos fegyverek) megtagadhatja ennek a taktikának az alkalamzását.
 
 ---
 
