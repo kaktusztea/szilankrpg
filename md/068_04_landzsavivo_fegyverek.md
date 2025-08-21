@@ -19,7 +19,7 @@ A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal
 | Alabárd S+V       |    kétkezes    |   `+4`    |      `99`       |    `S+V`     |   `0`   | `0`  | `0` | `0` |    `3`     | `12` | `28` | `28` |   `9`    | lándzsavívó | Szúró és Vágó módban                                                              |
 | Alabárd Z         |    kétkezes    |   `+4`    |      `99`       |     `Z`      |   `5`   | `0`  | `0` | `0` |    `3`     | `10` | `20` | `24` |   `10`   | lándzsavívó | Zúzó módban. Talán a legjobb a páncélok ellen az Átütéssel.                       |
 | Bot, hosszú       |    kétkezes    |   `+1`    |       `2`       |     `Z`      |   `0`   | `0`  | `0` | `0` |    `2`     | `14` | `16` | `24` |   `7`    | lándzsavívó |                                                                                   |
-| Kopja             |    egykezes    |   `+10`   |       `0`       |     `S`      |  `+5`   | `0`  | `0` | `0` |    `6`     | `18` | `40` | `40` |   `99`   | lándzsavívó | Csak lovon használható.                                                           |
+| Kopja             |    kétkezes    |   `+10`   |       `0`       |     `S`      |  `+5`   | `0`  | `0` | `0` |    `6`     | `18` | `40` | `40` |   `99`   | lándzsavívó | Csak lovon használható.                                                           |
 | Lándzsa           |    kétkezes    | `+2`/`+4` |      `99`       |     `S`      | `4`/`0` | `0`  | `0` | `0` |    `4`     | `14` | `32` | `32` |   `7`    | lándzsavívó | spec: lásd a hegyeket                                                             |
 | Pika              |    kétkezes    | `+2`/`+4` |       `3`       |     `S`      | `4`/`0` | `0`  | `0` | `0` |    `8`     | `18` | `40` | `40` |   `10`   | lándzsavívó | Ha közrefognak, a fegyver az egyik (választott) támadó ellen `0` harcértékű lesz. |
 | Szigony, egykezes |    egykezes    |   `+2`    |       `3`       |     `S`      |   `0`   | `0`  | `0` | `0` |    `2`     | `5`  | `10` | `14` |   `8`    | lándzsavívó |                                                                                   |
@@ -30,6 +30,8 @@ A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal
 ### Kopja használata
 
 Csak [Lovas rohamból](067_03_lovas_harci_taktikak.md#lovas-roham--l%C3%A9glovas-roham) használató.
+
+A ló lendülete mint **Erőbónusz** már beszámításra került a kopja Sebzés értékébe. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (`0`).
 
 <br />
 
