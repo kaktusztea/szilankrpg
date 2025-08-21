@@ -57,7 +57,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 
 🌟 Hatás:
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
-- Bármilyen hajításra alkalmatlan tárgyat a [Dobótőr](../068_007_hajitofegyverek.md) értékeivel tudsz dobni.
+- Bármilyen hajításra alkalmatlan tárgyat a [Dobótőr](../068_07_hajitofegyverek.md) értékeivel tudsz dobni.
 - **Pattanó lövés/hajítás**: félmágikus ismeret. Lövedéked valamilyen rejtélyes módon visszapattan bármilyen szilárd felületről, így akár takarásban levő ellenfelet is eltalálhatsz. Ezt a fajta lövést `-20 CÉ`-vel teheted meg.
 
 ---

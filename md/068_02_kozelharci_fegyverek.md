@@ -69,6 +69,6 @@ KF: Különleges felkészítés
 
 ---
 
-🔗 [Kardvívó fegyverek](068_003_kardvivo_fegyverek.md) →
+🔗 [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

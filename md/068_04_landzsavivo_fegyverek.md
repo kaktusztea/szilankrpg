@@ -35,6 +35,6 @@ Csak [Lovas rohamból](067_03_lovas_harci_taktikak.md#lovas-roham--l%C3%A9glovas
 
 ---
 
-🔗 [Zúzó fegyverek](068_005_zuzo_fegyverek.md) →
+🔗 [Zúzó fegyverek](068_05_zuzo_fegyverek.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

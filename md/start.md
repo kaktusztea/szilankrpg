@@ -196,15 +196,15 @@
 
 #### 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
 
-- [Fegyverek általános szabályai](068_001_fegyverek_altalanos_szabalyai.md)
-- [Közelharci fegyverek](068_002_kozelharci_fegyverek.md)
-- [Kardvívó fegyverek](068_003_kardvivo_fegyverek.md)
-- [Lándzsavívó fegyverek](068_004_landzsavivo_fegyverek.md)
-- [Zúzó fegyverek](068_005_zuzo_fegyverek.md)
-- [Ostorharc fegyverek](068_006_ostorharc_fegyverek.md)
-- [Hajítófegyverek](068_007_hajitofegyverek.md)
-- [Lőfegyverek](068_008_lofegyverek.md)
-- [Pajzs fegyverek](068_010_pajzs_fegyverek.md)
+- [Fegyverek általános szabályai](068_01_fegyverek_altalanos_szabalyai.md)
+- [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
+- [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
+- [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
+- [Zúzó fegyverek](068_05_zuzo_fegyverek.md)
+- [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md)
+- [Hajítófegyverek](068_07_hajitofegyverek.md)
+- [Lőfegyverek](068_08_lofegyverek.md)
+- [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
 
 #### 6.9 [Vértek, páncélok](069_00_vertek_pancelok.md)
 

@@ -156,6 +156,6 @@ A minőség a tárgy - ezúttal fegyver - Ideájának erejét is mutatja: mennyi
 
 ---
 
-🔗 [Közelharci fegyverek](068_002_kozelharci_fegyverek.md) →
+🔗 [Közelharci fegyverek](068_02_kozelharci_fegyverek.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
