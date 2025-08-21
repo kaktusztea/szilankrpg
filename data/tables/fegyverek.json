@@ -783,13 +783,16 @@
         "Erőbónusz limit": "0",
         "Sebzés módja": "S",
         "Átütés": "+5",
+        "Íves": "0",
+        "MK": "0",
+        "KF": "0",
         "Pengehossz": "6",
         "KÉ": "18",
         "TÉ": "40",
         "VÉ": "40",
         "Sebesség": "99",
-        "Kategória": "lovas",
-        "Speciális / Megjegyzés": ""
+        "Kategória": "lándzsavívó",
+        "Speciális": "Csak lovon használható."
     },
     {
         "Fegyver": "Korbács",
