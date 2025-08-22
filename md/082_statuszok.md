@@ -302,13 +302,18 @@ Lásd a [Méregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait*
 ---
 ### ✴️ Pajzs akadályoztatása (1, 2)
 
-A pajzs viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**. Bővebben lásd [itt](064_02_09_pajzsok_pajzshasznalat.md#pajzs-hat%C3%A1sa-fizikai-tulajdons%C3%A1gpr%C3%B3b%C3%A1kra).
+A pajzs viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.
 
 `Hátrány-1;2`
   - Fizikai Képzettségpróbákra
   - Fizikai Tulajdonságpróbákra
 
 A Képzettségpróbák és Tulajdonságpróbák esetében a fent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, akár teljesen el is tekinthet a hatásoktól.
+
+**Kapcsolódik**:
+- [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) fejezet
+- [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
+- [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 
 <br />
 

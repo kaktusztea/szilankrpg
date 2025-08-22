@@ -11,7 +11,7 @@ Kapcsolódik:
 1 MGT → -1 KÉ, TÉ
 ```
 
-További hatásokról a [Mozgásgátló Tényező](069_03_MGT.md) oldalon olvashatsz.
+További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olvashatsz.
 
 ---
 ### Alapeset
