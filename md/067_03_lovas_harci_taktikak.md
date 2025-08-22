@@ -5,8 +5,7 @@ Ahogy a gyalogos küzdelemben is alkalmazhatóak [Harci taktikák](065_02_harci_
 ### Lovas roham / Léglovas roham
 
 ```
-- TÉ: 30
-- VÉ: -60
+- TÉ: +30
 - SP: +10
 - 1 támadó csapás, 1 visszacsapás lehetséges
 ```
@@ -26,8 +25,7 @@ Követelmények:
 ### Lovas támadás galoppból
 
 ```
-- TÉ: 15
-- VÉ: -30
+- TÉ: +15
 - SP: +5
 - 1 támadó csapás, 1 visszacsapás lehetséges
 ```
@@ -35,7 +33,6 @@ Követelmények:
 Nem mindig sikerül elérni a rohamhoz szükséges sebességet, viszont ha a karakter képes galoppra fogni a lovát és úgy támadni, akkor is több előnyhöz jut, mintha csak egy helyben táncoltatna.
 
 Ilyen támadásnál során a támadó dönthet, hogy támadása leadása (és ellenfele visszatámadása) után továbbgaloppozik, vagy megáll ellenfele mellett és állva/táncoltatva folytatja a harcot.
-
 
 Követelmények:
 - Lovaglás képzettségpróba `9` célszám ellen
@@ -46,10 +43,9 @@ Követelmények:
 ---
 ### Hagyományos taktikák
 
-Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal. Kivéve:
+Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal. 
 
-- ❌ **Érintő taktika** hátasról nem végezhető 
-- 🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--l%C3%A9glovas-roham) bekezdést!
+🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--l%C3%A9glovas-roham) bekezdést!
 
 <br />
 
