@@ -29,7 +29,7 @@ képzettségpróbákra (lefele kerekítve)
 🔒 **Követelmény**: Erő: `+1`
 
 🌟 **Hatás**:
-- Harcban ha **könnyű vértet** viselsz, `15`-tel csökken a vért MGT-je.
+- Harcban ha vértet viselsz, `15`-tel csökken annak MGT-je.
 - A mozgást igénylő képzettségpróbákra továbbra is a teljes levonás érvényes.
 - Nehézvért viselése esetén **NEM csökken** az MGT és a képzetlen fegyverhasználat levonásainak fele sújtja a karaktert:
 
@@ -45,7 +45,7 @@ KÉ:-10, TÉ:-15, VÉ:-15
 - Edzettség: `+2`
 
 🌟 **Hatás**:
-- Harcban ha vértet viselsz, `30`-cal csökken a vért MGT-je.
+- Harcban ha vértet viselsz, `30`-cal csökken annak MGT-je.
 - A mozgást igénylő képzettségpróbákra továbbra is a teljes levonás érvényes.
 
 ---
@@ -56,7 +56,7 @@ KÉ:-10, TÉ:-15, VÉ:-15
 - Edzettség: `+2`
 
 🌟 **Hatás**:
-- Harcban ha vértet viselsz, `35`-tel csökken a vért MGT-je.
+- Harcban ha vértet viselsz, `35`-tel csökken annak MGT-je.
 - A többi, mint a `2.foknál` leírtak, de ha nehéz vértet viselsz, akkor
   - lemez félvért esetén `+5 VÉ`, lemez teljes vért esetén `+10 VÉ` bónusz adódik hozzá **Védő Értékedhez**.
   - Ennek oka, hogy már tudatosan használod vértezetedet, lecsúsztatsz róla támadásokat, stb.
