@@ -322,6 +322,8 @@ Bővebben lásd a [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet és [V
   - Fizikai Képzettségpróbákra
   - Fizikai Tulajdonságpróbákra
 
+⭕TODO⭕ 5 fokú Hátrány táblázatot betenni, ha [Agórán megbeszéltük](https://github.com/kaktusztea/szilankrpg/wiki/AGORA#mgt-%C3%A9s-a-fizikai-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9g-pr%C3%B3badob%C3%A1sok) ⭕
+
 A Képzettségpróbák és Tulajdonságpróbák esetében a fent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, akár teljesen el is tekinthet a hatásoktól.
 
 🔆 A [Vértviselet](fortelyok.harci/vertviselet.md) `MGT` csökkentő hatása a próbákra is érvényesül!
