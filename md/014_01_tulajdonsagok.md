@@ -208,7 +208,7 @@ Fejleszthető tulajdonság.
 <br />
 
 ---
-### ⚪ Intelligencia ⏹️
+### ⚪ Intelligencia
 
 Jelzi szellemi felkészültségedet mind helyzetfelismerés, problémamegoldó készség terén.
 
@@ -280,7 +280,7 @@ beszédéből, mozdulataiból ránézésre látszik, ha valami baja van.
 <br />
 
 ---
-### ⚪ Érzékenység ⏹️
+### ⚪ Érzékenység
 
 ❌ Nem fejleszthető tulajdonság.
 

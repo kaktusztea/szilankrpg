@@ -6,8 +6,6 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ⚪ Tulajdonság 🔵 Képzettség 🟣 Fortély  🟡 Háttér
 
-⏹️ Nem fejleszthető Tulajdonság
-
 🟩 Normál kiterjesztés (fortély kiterjeszt képzettséget)
 
 🟥 Erős kiterjesztés (fortély kiterjeszt képzettséget)
