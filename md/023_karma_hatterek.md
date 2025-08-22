@@ -19,20 +19,22 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 
 #### Általános
 
-- Áldott személy
-- Áldáshordozó
-- Átkozott személy
-- Átokhordozó
+- [Áldott személy](#-%C3%A1ldott-szem%C3%A9ly)
+- [Áldáshordozó](023_karma_hatterek.md#-%C3%A1ld%C3%A1shordoz%C3%B3)
+- [Átkozott személy](#-%C3%A1tkozott-szem%C3%A9ly)
+- [Átokhordozó](#-%C3%A1tokhordoz%C3%B3)
 - [Alkoholista](#-alkoholista)
-- Árnyjáró
+- [Árnyjáró](#-%C3%A1rnyj%C3%A1r%C3%B3)
 - [Bajnok](#-bajnok)
-- Bölcs Tanító
+- [Bölcs Tanító](#-b%C3%B6lcs-tan%C3%ADt%C3%B3)
 - [Bukott gyógyító](#-bukott-gy%C3%B3gy%C3%ADt%C3%B3)
 - [Gyerekgyilkos](#-gyerekgyilkos)
 - [Gyilkos](#-gyilkos)
 - [Hírhedt](#-h%C3%ADrhedt)
 - [Hős](#-h%C5%91s)
 - [Szolgalelkű](#-szolgalelk%C5%B1)
+- [Természet gyermeke](https://github.com/kaktusztea/szilankrpg/blob/master/md/023_karma_hatterek.md#-term%C3%A9szet-gyermeke)
+- [Világlátott](#-vil%C3%A1gl%C3%A1tott)
 
 #### Misztikus
 
@@ -200,6 +202,15 @@ Mindig segítesz a bajba jutottakon, mindig kész vagy az önfeláldozásra, min
 <br />
 
 ---
+### 🟡 Szolgalelkű
+
+Nagyhatalmú emberek mellett töltöttél el jelentős időt, mellettük (alattuk) érzed jól magad. Állandó késztetést érzel a seggnyalásra.
+
+A "nagy emberek" Befolyásolás képzettségpróbája ellen csak `Hátrány-1`-el dobhatsz.
+
+<br />
+
+---
 ### 🟡 Természet Gyermeke
 
 Hosszú időt töltöttél a vadonban, és szoros kapcsolatot alakítottál ki a természettel.
@@ -209,15 +220,6 @@ Nem tájegységhez kötött (!)
 Hatás:
 - Pro: Könnyebben boldogulsz a természetben: szerencséd van, és az állatok általában barátságosabbak veled.
 - Kontra: A városi környezetben nehezebben alkalmazkodsz, és az emberek furcsának találhatnak.
-
-<br />
-
----
-### 🟡 Szolgalelkű
-
-Nagyhatalmú emberek mellett töltöttél el jelentős időt, mellettük (alattuk) érzed jól magad. Állandó késztetést érzel a seggnyalásra.
-
-A "nagy emberek" Befolyásolás képzettségpróbája ellen csak `Hátrány-1`-el dobhatsz.
 
 <br />
 
