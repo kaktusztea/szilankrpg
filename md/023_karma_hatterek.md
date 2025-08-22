@@ -19,8 +19,14 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 
 #### Általános
 
+- Áldott személy
+- Áldáshordozó
+- Átkozott személy
+- Átokhordozó
 - [Alkoholista](#-alkoholista)
+- Árnyjáró
 - [Bajnok](#-bajnok)
+- Bölcs Tanító
 - [Bukott gyógyító](#-bukott-gy%C3%B3gy%C3%ADt%C3%B3)
 - [Gyerekgyilkos](#-gyerekgyilkos)
 - [Gyilkos](#-gyilkos)
@@ -32,6 +38,51 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 
 - [Mágia: Auraösszhang](#-m%C3%A1gia-aura%C3%B6sszhang)
 - [Mágia: Profán](#-m%C3%A1gia-prof%C3%A1n)
+
+<br />
+
+### 🟡 Áldott személy
+
+Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha nem leplezett, meglátszik az Aurádon. Nem keverendő a mágia által okozott [Áldott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státusszal.
+
+Hatás:
+- Pro: Bizonyos helyzetekben természetfeletti szerencséd van, vagy kisebb csodák történnek körülötted.
+- Kontra: Az áldás elveszhet, ha méltatlanná válsz rá.
+
+<br />
+
+---
+### 🟡 Áldáshordozó
+
+Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív (főleg) és negatív hatásokkal számodra.
+
+Az áldás / Aurádhoz kapcsolódó túlvilági entitás nem személyed kapcsán fejti ki főleg hatását - nem is kifejezetten számodra szól, te csak hordozod.
+
+Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helyszínek kapcsán aktiválódik. Ha nem leplezett, meglátszik az Aurádon.
+
+<br />
+
+---
+### 🟡 Átkozott személy
+
+Egy isteni entitás vagy szent hely átkát kaptad nyakadba valamilyen elmondhatatlan galádságért. Nem keverendő a mágia által okozott [Átkozott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státusszal. Ha nem leplezett, meglátszik az Aurádon.
+
+Egészen szerteágazó hatásai lehetnek, tipikusan narratív elem, amelyet a KM talál ki.
+
+<br />
+
+---
+### 🟡 Átokhordozó
+
+Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív és (főleg) negatív hatásokkal számodra.
+
+Az átok / Aurádhoz kapcsolódó túlvilági entitás nem személyed kapcsán fejti ki főleg hatását - nem is kifejezetten számodra szól, te csak hordozod.
+
+Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helyszínek kapcsán aktiválódik. Ha nem leplezett, meglátszik az Aurádon.
+
+Pl. Aquir ereklye, amitől nem tudsz megszabadulni. Vagy "Orwella érintése".
+
+<br />
 
 ---
 ### 🟡 Alkoholista
@@ -47,6 +98,16 @@ Egy idő után már a viselkedésén, küllemén is meglátszik - ez szociális 
 <br />
 
 ---
+### 🟡 Árnyjáró
+
+Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevétlenül mozogva.
+
+- Pro hatás: Könnyebben rejtőzködsz és lopakodsz, az árnyékok szinte a szövetségeseiddé válnak. [Lopakodás/rejtőzés](kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) teljes sötétben: `+3`
+- Kontra hatás: Az emberek nehezen bíznak meg benned, és gyakran gyanakodva tekintenek rád. Ha [Befolyásolás](kepzettsegek.primer.altalanos/befolyasolas.md) képzettségeddel pozitív hatást, érzelmet próbálnál elérni, dobásodra `-3` büntetést kapsz.
+
+<br />
+
+---
 ### 🟡 Bajnok
 
 #### Követelmény
@@ -58,6 +119,14 @@ Puszta jelenléte lelkesítőleg hat. Minden híve, követője `Előny+1` Hatás
 
 <br />
 
+---
+### 🟡 Bölcs Tanító
+
+Több karaktert segítettél fejlődni, tanítottál vagy mentoráltál hosszabb időn keresztül.
+
+Hatás:
+- Pro: A tanítványaid tisztelnek, és hajlandóak segíteni neked. Bölcsességed miatt könnyebben nyersz elismerést és bizalmat.
+- Kontra: Ha egy tanítványod elárul vagy kudarcot vall, az a te hírnevedet is csorbítja.
 
 ---
 ### 🟡 Bukott gyógyító
@@ -130,6 +199,18 @@ Mindig segítesz a bajba jutottakon, mindig kész vagy az önfeláldozásra, min
 
 <br />
 
+---
+### 🟡 Természet Gyermeke
+
+Hosszú időt töltöttél a vadonban, és szoros kapcsolatot alakítottál ki a természettel.
+
+Nem tájegységhez kötött (!)
+
+Hatás:
+- Pro: Könnyebben boldogulsz a természetben: szerencséd van, és az állatok általában barátságosabbak veled.
+- Kontra: A városi környezetben nehezebben alkalmazkodsz, és az emberek furcsának találhatnak.
+
+<br />
 
 ---
 ### 🟡 Szolgalelkű
@@ -137,6 +218,15 @@ Mindig segítesz a bajba jutottakon, mindig kész vagy az önfeláldozásra, min
 Nagyhatalmú emberek mellett töltöttél el jelentős időt, mellettük (alattuk) érzed jól magad. Állandó késztetést érzel a seggnyalásra.
 
 A "nagy emberek" Befolyásolás képzettségpróbája ellen csak `Hátrány-1`-el dobhatsz.
+
+<br />
+
+---
+### 🟡 Világlátott
+
+Számos különböző helyet bejártál a világon, és kalandok során bizonyítottad rátermettségedet.
+
+Hatás: Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást nem számszerűsítjük, ha szükséges a KM figyelmét is felhívhatod rá.
 
 <br />
 
