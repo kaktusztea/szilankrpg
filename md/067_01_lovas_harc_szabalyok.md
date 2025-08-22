@@ -29,11 +29,13 @@ A harcértékekhez **NEM** adódik hozzá pluszban a [Magasabbról](065_01_harci
 <br />
 
 ---
-### Fegyverméret megkötések
+### Fegyverméret megkötés
 
 **Minumum fegyverméret**: lóról **minimum `1` pengés** fegyverrel lehet csak harcolni, annál kisebbel nem
 
-**Fegyverméret-kategória**: a ló `plusz 1 pengényi` fegyver méret-kategóriát ad a lovasnak az előnyös-hátrányos helyzet megállapításánál.
+### Fegyverméret-kategória bónusz
+
+A hátas maga `plusz 1 pengényi` [fegyverméret-kategóriát](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) ad a lovasnak az [előnyös-hátrányos helyzet megállapításánál](064_02_03_vedo_ertek_csokkentese.md#%EF%B8%8F-fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny).
 
 <br />
 
@@ -44,9 +46,9 @@ Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy
 
 ```
 Seb     | Nehézség
-6-10 ÉP :  9
-11-15 ÉP: 12
-15+ ÉP  : 15
+6-10 ÉP :   9
+11-15 ÉP:  12
+15+ ÉP  :  15
 ```
 
 Ha sikertelen, leesik. Ekkor jön a **Lóról leesés** szituáció ↓
