@@ -2,14 +2,16 @@
 
 A vértek helyes viselése is ismereteket igényel, különben csak csetlesz-botlasz bennük.
 
-Kapcsolódik: **[Vértek, Páncélok](../069_00_vertek_pancelok.md)**, [MGT](../069_03_MGT.md)
+Kapcsolódik:
+- [Vértek, Páncélok](../069_00_vertek_pancelok.md)
+- [MGT](../069_03_MGT.md)
+- Páncél akadályoztatása Státusz
 
 ```
 1 MGT → -1 KÉ, TÉ
-
-1 MGT → -1/5 mozgást igénylő 
-képzettségpróbákra (lefele kerekítve)
 ```
+
+További hatásokról a [Mozgásgátló Tényező](069_03_MGT.md) oldalon olvashatsz.
 
 ---
 ### Alapeset
@@ -28,14 +30,7 @@ képzettségpróbákra (lefele kerekítve)
 
 🔒 **Követelmény**: Erő: `+1`
 
-🌟 **Hatás**:
-- Harcban ha vértet viselsz, `15`-tel csökken annak MGT-je.
-- A mozgást igénylő képzettségpróbákra továbbra is a teljes levonás érvényes.
-- Nehézvért viselése esetén **NEM csökken** az MGT és a képzetlen fegyverhasználat levonásainak fele sújtja a karaktert:
-
-```
-KÉ:-10, TÉ:-15, VÉ:-15
-```
+🌟 **Hatás**: Vérted `MGT` értéke `15`-tel csökken
 
 ---
 ### 2. fok
@@ -44,9 +39,7 @@ KÉ:-10, TÉ:-15, VÉ:-15
 - Erő: `+2`
 - Edzettség: `+2`
 
-🌟 **Hatás**:
-- Harcban ha vértet viselsz, `30`-cal csökken annak MGT-je.
-- A mozgást igénylő képzettségpróbákra továbbra is a teljes levonás érvényes.
+🌟 **Hatás**: Vérted `MGT` értéke `30`-cal csökken
 
 ---
 ### 3. fok
@@ -56,10 +49,10 @@ KÉ:-10, TÉ:-15, VÉ:-15
 - Edzettség: `+2`
 
 🌟 **Hatás**:
-- Harcban ha vértet viselsz, `35`-tel csökken annak MGT-je.
-- A többi, mint a `2.foknál` leírtak, de ha nehéz vértet viselsz, akkor
-  - lemez félvért esetén `+5 VÉ`, lemez teljes vért esetén `+10 VÉ` bónusz adódik hozzá **Védő Értékedhez**.
-  - Ennek oka, hogy már tudatosan használod vértezetedet, lecsúsztatsz róla támadásokat, stb.
+- Vérted `MGT` értéke `35`-tel csökken
+- Tudatos vérthasználat lecsúsztatásokkal:
+  - Lemez félvért esetén `VÉ:+5` bónusz
+  -  Lemez teljes vért esetén `VÉ:+10` bónusz
 
 <br />
 

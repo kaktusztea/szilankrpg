@@ -31,13 +31,15 @@ Ha a karakter 🗡️[Készületlen](065_01_harci_helyzetek.md#k%C3%A9sz%C3%BCle
 <br />
 
 ---
-### Pajzs hatása fizikai Tulajdonságpróbákra
+### Pajzs mozgásgátló hatása fizikai Tulajdonságpróbákra
 
-A kézben tartott pajzs hátrányokat okozhat az egyes Tulajdonságpróbáknál - méretétől függően. Ezt [Státuszként](082_statuszok.md#%EF%B8%8F-pajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) kezeljük.
+A pajzsokra nem vonatkozik a részletes [MGT](069_03_MGT.md) pontrendszer, azt csak vértekre alkalmazzuk.
+
+Viszont a kézben tartott pajzs hátrányokat okozhat az egyes **Tulajdonságpróbáknál** - méretétől függően. Ezt [Státuszként](082_statuszok.md#%EF%B8%8F-pajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) kezeljük.
 
 `Hátrány-1;2`: amennyiben az adott szituáció megkívánja, KM dönt.
 
-### Pajzs hatása fizikai képzettségpróbára
+### Pajzs mozgásgátló hatása fizikai képzettségpróbára
 
 A kézben tartott pajzs hátrányokat okozhat az egyes Képzettségpróbáknál - méretétől függően. Ezt [Státuszként](082_statuszok.md#%EF%B8%8F-pajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) kezeljük.
 
