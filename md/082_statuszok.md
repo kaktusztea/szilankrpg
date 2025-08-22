@@ -311,19 +311,20 @@ A pajzs viselése nehezítheti a Tulajdonságptóbákat és Képzettségpróbák
 ---
 ### ✴️  Rosszullét (1) Közepes
 
-```
-- Hátrány-1 TÉ dobásra
+- `Hátrány-1`
+  - TÉ dobásra
+  - Fizikai képzettségpróbára, Fizikai Tulajdonságpróbára
 - Kezdeményezés - lassú
-```
+
 
 ### ✴️  Rosszullét (2) Erős
 
-```
-- Hátrány-2 TÉ dobásra
+- `Hátrány-2`
+  - TÉ dobásra
+  - Fizikai képzettségpróbára, Fizikai Tulajdonságpróbára
+- `Hátrány-1`
+  - Szociális képzettségpróbákra
 - Kezdeményezés - nagyon lassú
-- VÉ veszteség duplázódik
-- Hátrány-1: Szociális képzettségpróbákra
-```
 
   <br />
 
