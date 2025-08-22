@@ -29,7 +29,7 @@ Intelligencia, Érzékenység
 
 ### Ellenpróbák
 
-A **Befolyásolás** szinte mindig az [Emberismeret](emberismeret.md) képzettséggel áll ellenpróbás szituációban - a szituációtól függő módosítókkal, így egyéni próbákat nincs is értelme felsorolni. A leggyakoribb az alábbi próba-szituáció:
+A **Befolyásolás** mindig az **[Emberismeret](emberismeret.md)** képzettséggel áll ellenpróbás szituációban - a szituációtól függő módosítókkal, így egyéni próbákat nincs is értelme felsorolni. A leggyakoribb az alábbi próba-szituáció:
 
 ```
 Befolyásolás + Intelligencia
