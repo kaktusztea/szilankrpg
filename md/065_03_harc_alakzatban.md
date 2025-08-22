@@ -44,6 +44,10 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 ---
 ## Alakzat harcértékeinek meghatározása
 
+### KÉ SUMMA
+- `+` Alakzat tagjainak fegyveres `KÉ` átlaga
+- `KÉ bónusz`: **Alakzatszint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+
 ### TÉ SUMMA
 
 - `+` Alakzat tagjainak fegyveres `TÉ` átlaga
@@ -272,7 +276,7 @@ Egy Alakzat ellen az alábbi taktikák NEM használhatóak:
 ## Alakzat vs Alakzat
 
 ```
-Maximum létszám: `20` ⭕
+Maximum létszám: `20`
 ```
 
 Két Alakzat egymással való harcát is modellezzük - kis (`max 20 fő / Alakzat`) létszámig. Ennél nagyobb létszámú összecsapásokat nem modellezünk.
@@ -280,14 +284,13 @@ Két Alakzat egymással való harcát is modellezzük - kis (`max 20 fő / Alakz
 Minden szabály ugyanaz, mint a fent leírtak, kivéve az alábbiak:
 
 ```
-KÉ: ⭕TODO⭕
-
 1 támadás / kör mindkét alakzatnak
 
 VÉ csökkentés/kör: 5
-  + 1 túlerő személyenként (max: +5)
 
-A VÉ értéke NEM áll vissza kör elején
++1 VÉ csökkentés
+  túlerő személyenként
+  (max: +5-ig)
 ```
 
 ---
