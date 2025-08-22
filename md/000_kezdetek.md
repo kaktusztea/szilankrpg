@@ -10,6 +10,8 @@ Mielőtt belevágunk a szabályok ismertetésébe, orientálódjunk egy kicsit. 
 
 #### [Áttekintés](003_attekintes.md)
 
+#### [Tanácsok](004_tanacsok.md)
+
 #### [Szilánk RPG alrendszerei](005_alrendszerek.md)
 
 #### [Szimbólumok, Jelzők](006_szimbolumok_jelzok.md)
