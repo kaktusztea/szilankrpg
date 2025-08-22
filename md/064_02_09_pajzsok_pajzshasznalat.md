@@ -19,7 +19,7 @@ Lásd: [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 
 Lásd: [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 
-🔆 Az **MGT** jellegű büntetéseket beépítettük a [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély `TÉ` levonásaiba - így nem igényelnek játék közbeni számítást.
+🔆 Az mozgást gátló büntetéseket beépítettük a [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély `TÉ` levonásaiba - így nem igényelnek játék közbeni extra számítást.
 
 <br />
 
@@ -31,19 +31,15 @@ Ha a karakter 🗡️[Készületlen](065_01_harci_helyzetek.md#k%C3%A9sz%C3%BCle
 <br />
 
 ---
-### Pajzs mozgásgátló hatása fizikai Tulajdonságpróbákra
+### Pajzs mozgásgátló hatása 
 
-A pajzsokra nem vonatkozik a részletes [MGT](069_03_MGT.md) pontrendszer, azt csak vértekre alkalmazzuk.
+A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vértekre alkalmazunk.
 
-Viszont a kézben tartott pajzs hátrányokat okozhat az egyes **Tulajdonságpróbáknál** - méretétől függően. Ezt [Státuszként](082_statuszok.md#%EF%B8%8F-pajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) kezeljük.
+[Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-pajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott pajzs.
 
-`Hátrány-1;2`: amennyiben az adott szituáció megkívánja, KM dönt.
-
-### Pajzs mozgásgátló hatása fizikai képzettségpróbára
-
-A kézben tartott pajzs hátrányokat okozhat az egyes Képzettségpróbáknál - méretétől függően. Ezt [Státuszként](082_statuszok.md#%EF%B8%8F-pajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) kezeljük.
-
-`Hátrány-1;2`: amennyiben az adott szituáció megkívánja, KM dönt.
+Hatása [Felszerelésre](012_kalandozok_elotortenet_szemelyiseg_felszereles.md#felszerel%C3%A9s):
+- Közepes pajzs: Közepes tárgy (1 pont)
+- Nagy pajzs: Nagy tárgy (2 pont)
 
 <br />
 

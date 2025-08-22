@@ -302,22 +302,24 @@ Lásd a [Méregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait*
 ---
 ### ✴️ Pajzs akadályoztatása (1, 2)
 
-A pajzs viselése nehezítheti a Tulajdonságpróbákat és Képzettségpróbákat. Bővebben lásd a [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) fejezet idevágó részeit:
+A pajzs viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**. Bővebben lásd [itt](064_02_09_pajzsok_pajzshasznalat.md#pajzs-hat%C3%A1sa-fizikai-tulajdons%C3%A1gpr%C3%B3b%C3%A1kra).
 
-`Hátrány-1;2`: KM dönt.
-- [Pajzs hatása fizikai Tulajdonságpróbákra](064_02_09_pajzsok_pajzshasznalat.md#pajzs-hat%C3%A1sa-fizikai-tulajdons%C3%A1gpr%C3%B3b%C3%A1kra)
-- [Pajzs hatása fizikai képzettségpróbára](064_02_09_pajzsok_pajzshasznalat.md#pajzs-hat%C3%A1sa-fizikai-tulajdons%C3%A1gpr%C3%B3b%C3%A1kra)
+`Hátrány-1;2`
+  - Fizikai Képzettségpróbákra
+  - Fizikai Tulajdonságpróbákra
+
+A Képzettségpróbák és Tulajdonságpróbák esetében a fent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, akár teljesen el is tekinthet a hatásoktól.
 
 <br />
 
 ---
-### ✴️ Páncél akadályoztatása (1, ♾️)
+### ✴️ Páncél akadályoztatása (1 MGT, ♾️ MGT)
 
 A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.
 
 Bővebben lásd a [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet és [Vértviselet](fortelyok.harci/vertviselet.md) fortély idevágó részeit.
 
-- 1 MGT → -1 KÉ, TÉ
+- `1 MGT → -1 KÉ, TÉ`
 - `Hátrány-1;2;3;4;5`
   - Fizikai Képzettségpróbákra
   - Fizikai Tulajdonságpróbákra
