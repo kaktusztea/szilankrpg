@@ -1,11 +1,12 @@
 ## Harci taktikák
 
 | **Taktika név**                                                       | **Hatás**                                                                                                                                                                                                                                                                                                                                                          |
-| :-------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+|:--------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | [Támadó taktika](#t%C3%A1mad%C3%B3-taktika)                           | `TÉ:+1 = VÉ:-2`, max `TÉ:+15`                                                                                                                                                                                                                                                                                                                                      |
 | [Védő taktika](#v%C3%A9d%C5%91-taktika)                               | `VÉ:+1 = TÉ:-2`, max `VÉ:+20`                                                                                                                                                                                                                                                                                                                                      |
 | [Teljes Védekezés taktika](#teljes-v%C3%A9dekez%C3%A9s-taktika)       | `VÉ:+30`, ellenfeled csak `kiskockával` csökkenthet rajtad `VÉ`-t. Folyamatos hátrálás, nincs támadás, nem kombinálható más taktikával.                                                                                                                                                                                                                            |
 | [Kezdeményező taktika](#kezdem%C3%A9nyez%C5%91-taktika)               | `KÉ:+1 → VÉ:-2`, max `KÉ:+10`                                                                                                                                                                                                                                                                                                                                      |
+| Sűrű taktika                                                          |  `-1` támadásért cserébe `1 db` olyan támadásod, ami `TÉ:-20` levonással menne, alap `TÉ`-vel történik.                                                                                                                                                                                                                                                            |
 | [Kiváró taktika](#kiv%C3%A1r%C3%B3-taktika)                           | Átengedett `KÉ`, cserébe első visszatámadásra `TÉ:+5`                                                                                                                                                                                                                                                                                                              |
 | [Fárasztó taktika](#f%C3%A1raszt%C3%B3-taktika-) ⇄                    | • `+2 VÉ` csökkentés <br />• Sebzés helyett: [Nagykockás VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s---nagykocka) + további `+10 VÉ` csökkentés<br />• `00` dobásnál: további `+5 VÉ` csökkentés<br />• [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) harci helyzetből **NEM** alkalmazható. |
 | [Visszafogott taktika](#visszafogott-taktika-) ⇄                      | Kisebb értékű kockával dobhatsz sebzéskor. Lásd a taktika részletes leírását!                                                                                                                                                                                                                                                                                      |
@@ -98,6 +99,43 @@ KÉ:+10, VÉ:-20
 ❌ Más taktikával együtt
 
 Ha mindenáron magadhoz akarod ragadni a kezdeményezést megteheted, de ennek ára van. A kapkodás sebezhetővé tesz. Kezdeményező taktika alkalmazása esetén megnövelheted **Kezdeményező Értékedet** maximum `10`-zel, de cserébe kétszer annyival tolod el `Védő Értékedet` mínuszba az **ellenfél első támadásával szemben** (akár megnyerted így a kezdeményezést, akár nem).
+
+
+---
+### Sűrű taktika
+
+Akkor tudod alkalmazni, ha már legalább `3` támadásod van a körben.\
+`-1` támadásért cserébe `1 db` "másodlagos" támadásodat, ami már `TÉ:-20` [levonással menne](063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt), továbbra is alap `TÉ`-vel dobhatsz.
+
+✅ **Támadó taktika**
+
+✅ **Kezdeményező taktika**
+
+✅ **Fárasztó taktika**
+
+✅ **Plusz támadás taktika**
+
+✅ **Támadás erőből taktika**
+
+✅ **Érintő taktika**
+
+❌ Más taktikával együtt
+
+<br />
+
+⚡ `3` támadásod van, `1` támadást beáldozol, ekkor támadásaid így történnek:
+- `1.támadás`: Alap TÉ
+- `2.támadás`: Alap TÉ
+
+⚡ `4` támadásod van, `1` támadást beáldozol, ekkor támadásaid így történnek:
+- `1.támadás`: Alap TÉ
+- `2.támadás`: Alap TÉ
+- `3.támadás`: `TÉ:-20`
+
+⚡ `5` támadásod van, `2` támadást beáldozol, ekkor támadásaid így történnek:
+- `1.támadás`: Alap TÉ
+- `2.támadás`: Alap TÉ
+- `3.támadás`: Alap TÉ
 
 ---
 ### Kiváró Taktika
