@@ -1,6 +1,6 @@
 [
     {
-        "Hárítófegyver": "Alkarvédő",
+        "Hárítófegyver": "Hárító: Alkarvédő",
         "Forgatás módja": "egykezes",
         "SP": "-",
         "Erőbónusz limit": "0",
@@ -18,10 +18,10 @@
         "Speciális": ""
     },
     {
-        "Hárítófegyver": "Csatakesztyű",
+        "Hárítófegyver": "Hárító: Csatakesztyű",
         "Forgatás módja": "egykezes",
         "SP": "-",
-        "Erőbónusz limit": "0",
+        "Erőbónusz limit": "-",
         "Sebzés módja": "-",
         "Átütés": "0",
         "Íves": "0",
@@ -30,34 +30,16 @@
         "Pengehossz": "0",
         "KÉ": "0",
         "TÉ": "0",
-        "VÉ": "",
+        "VÉ": "8",
         "Sebesség": "99",
         "Kategória": "kardvívó",
         "Speciális": ""
     },
     {
-        "Hárítófegyver": "Kard, fejvadász",
+        "Hárítófegyver": "Hárító: Köpeny",
         "Forgatás módja": "egykezes",
         "SP": "-",
-        "Erőbónusz limit": "0",
-        "Sebzés módja": "-",
-        "Átütés": "0",
-        "Íves": "0",
-        "MK": "F9",
-        "KF": "0",
-        "Pengehossz": "0.5",
-        "KÉ": "0",
-        "TÉ": "0",
-        "VÉ": "",
-        "Sebesség": "6",
-        "Kategória": "kardvívó",
-        "Speciális": "G0rv1ki klánnal, vagy mesterrel. Egyébként rövidkard harcértékek."
-    },
-    {
-        "Hárítófegyver": "Köpeny",
-        "Forgatás módja": "egykezes",
-        "SP": "-",
-        "Erőbónusz limit": "0",
+        "Erőbónusz limit": "-",
         "Sebzés módja": "-",
         "Átütés": "0",
         "Íves": "0",
@@ -66,13 +48,13 @@
         "Pengehossz": "0",
         "KÉ": "0",
         "TÉ": "0",
-        "VÉ": "",
+        "VÉ": "10",
         "Sebesség": "99",
-        "Kategória": "közelharci",
-        "Speciális": ""
+        "Kategória": "kardvívó",
+        "Speciális": "Legfeljebb 1 penge hosszú fegyverek ellen"
     },
     {
-        "Hárítófegyver": "Tonfa",
+        "Hárítófegyver": "Hárító: Tonfa",
         "Forgatás módja": "egykezes",
         "SP": "-",
         "Erőbónusz limit": "0",
