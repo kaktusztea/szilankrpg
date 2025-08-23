@@ -45,7 +45,9 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 
 ### 🟡 Áldott személy
 
-Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha nem leplezett, meglátszik az Aurádon. Nem keverendő a mágia által okozott [Áldott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státusszal.
+Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha nem leplezett, meglátszik az Aurádon.
+
+Megkapod az [Áldott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státuszt.
 
 Hatás:
 - Pro: Bizonyos helyzetekben természetfeletti szerencséd van, vagy kisebb csodák történnek körülötted.
@@ -67,7 +69,9 @@ Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helysz
 ---
 ### 🟡 Átkozott személy
 
-Egy isteni entitás vagy szent hely átkát kaptad nyakadba valamilyen elmondhatatlan galádságért. Nem keverendő a mágia által okozott [Átkozott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státusszal. Ha nem leplezett, meglátszik az Aurádon.
+Egy isteni entitás vagy szent hely átkát kaptad nyakadba valamilyen elmondhatatlan galádságért. Ha nem leplezett, meglátszik az Aurádon.
+
+Amíg meg nem szűnik az átok, megkapod az [Átkozott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státuszt.
 
 Egészen szerteágazó hatásai lehetnek, tipikusan narratív elem, amelyet a KM talál ki.
 

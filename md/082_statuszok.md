@@ -55,9 +55,7 @@ Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/c
 - Meggondolatlan: Hajlamos vagy kockázatos döntéseket hozni, még akkor is, ha nincs rá szükség
   - Önuralom próba: `Hátrány-1,2`
 - Paranoiás - Folyamatosan gyanakszol másokra, és nehezen bízol meg bárkiben
-  - ⭕TODO⭕
 - Irigy - Nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni
-  - ⭕TODO⭕
 - ⭕TODO⭕ továbbiak
 
 ### ✴️ Átkozott (1,2,3) Érzékek
@@ -68,7 +66,7 @@ Lásd **Érzékvesztés** (1,2,3) Státuszt lenn.
 
 Az Aurádon egy szakrális bélyeg tündököl / éktelenkedik.
 
-⚡ Példa: Domvik érintése; Orwella érintése: akin ez van az ⭕TODO⭕
+⚡ Példa: Domvik érintése; Orwella érintése. Okozhatja [Áldott személy](023_karma_hatterek.md#-%C3%A1ldott-szem%C3%A9ly) / [Átkozott személy](023_karma_hatterek.md#-%C3%A1tkozott-szem%C3%A9ly) Karma-Háttér is.
 
 <br />
 
