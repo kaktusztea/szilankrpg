@@ -65,6 +65,21 @@ KF: Különleges felkészítés
 <!-- tag: md_table_fegyver_end -->
 
 ---
+## Kardívó hárítófegyverek
+
+A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) szabályai szerint. Nem támadhatsz velük.
+
+<!-- tag: md_table_haritofegyver_start -->
+
+| Fegyver         | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | Átütés | Íves |  MK  | KF  | Pengehossz | KÉ  | TÉ  | VÉ  | Sebesség | Kategória  | Speciális                                                              |
+| --------------- | :------------: | :-: | :-------------: | :----------: | :----: | :--: | :--: | :-: | :--------: | :-: | :-: | :-: | :------: | :--------: | ---------------------------------------------------------------------- |
+| Csatakesztyű    |    egykezes    | `-` |       `0`       |     `-`      |  `0`   | `0`  | `0`  | `0` |    `0`     | `0` | `0` |  ⭕  |   `99`   |  kardvívó  |                                                                        |
+| Kard, fejvadász |    egykezes    | `-` |       `0`       |     `-`      |  `0`   | `0`  | `F9` | `0` |   `0.5`    | `0` | `0` |  ⭕  |   `6`    |  kardvívó  | G0rv1ki klánnal, vagy mesterrel.<br />Egyébként rövidkard harcértékek. |
+| Köpeny          |    egykezes    | `-` |       `0`       |     `-`      |  `0`   | `0`  | `0`  | `0` |    `0`     | `0` | `0` |  ⭕  |   `99`   | közelharci |                                                                        |
+
+<!-- tag: md_table_haritofegyver_end -->
+
+---
 
 🔗 [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md) →
 

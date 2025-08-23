@@ -1,4 +1,4 @@
-## közelharci fegyverek
+## Közelharci fegyverek
 
 ```
 Közelharci fegyvernek számít:
@@ -66,6 +66,27 @@ KF: Különleges felkészítés
 - A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_harci_helyzetek.md#helyhez-k%C3%B6tve) módosítókat szenved el
 
 <br />
+
+---
+## Közelharci hárítófegyverek
+
+A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) szabályai szerint. Nem támadhatsz velük.
+
+<!-- tag: md_table_haritofegyver_start -->
+
+| Fegyver   | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | Átütés | Íves | MK  | KF  | Pengehossz | KÉ  | TÉ  |    VÉ    | Sebesség | Kategória  | Speciális |
+| --------- | :------------: | :-: | :-------------: | :----------: | :----: | :--: | :-: | :-: | :--------: | :-: | :-: | :------: | :------: | :--------: | --------- |
+| Alkarvédő |    egykezes    | `-` |       `0`       |      `-      |  `0`   | `0`  | `0` | `0` |    `0`     | `0` | `0` | `10/5/0` |   `99`   | közelharci |           |
+| Tonfa     |    egykezes    | `-` |       `0`       |      `-      |  `0`   | `0`  | `0` | `0` |    `0`     | `0` | `0` | `10/5/0` |   `99`   | közelharci |           |
+
+<!-- tag: md_table_haritofegyver_end -->
+
+### Alkarvédő és Tonfa
+
+- Közelharci fegyverek ellen `VÉ:+10`
+- Egykezes, pengefegyverek ellen `VÉ:+5`
+- Ennél nagyobb fegyverek ellen nem védenek.
+- Ha mindkét karon/kézben van, akkor is csak a fenti harcértékek az irányadóak, további bónusz nem jár.
 
 ---
 
