@@ -1,3 +1,4 @@
+---
 név: ""
 skeleton_version: 1         # a karakter séma (skeleton) verziója
 faj: ""
@@ -35,7 +36,7 @@ képzettségek:
       régió: ""         # Táblázatban összeállítható: {képzettségnév} ({régió})
     - átfogó: 0
       terület: "Ynev"
-      unique: True      # Nem lehet több "átfogó" típusú. Csekkoláshoz kell ez a flag
+      unique: true      # Nem lehet több "átfogó" típusú. Csekkoláshoz kell ez a flag
   vallásismeret:
     - spec: 3                # TODO: ez tuti spec?
       vallás: "saját vallás"
@@ -43,7 +44,7 @@ képzettségek:
       hitvilág: ""
     - átfogó: 0
       terület: "általános"
-      unique: True
+      unique: true
   nyelvismeret:
     - spec: 9
       nyelv: "saját nyelv"

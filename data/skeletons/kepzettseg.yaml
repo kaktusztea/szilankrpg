@@ -1,29 +1,30 @@
+---
 név: ""
 skeleton_version: 1            # a kepzettseg séma (skeleton) verziója
 stage: ""                      # alpha, beta, prod // alpha: változhat struktúrálisan, beta: kész, de még nem mehet prod-ba
 csoport: ""                    # lásd konstansok.yaml / képzettség.csoportok
 kategóriák:
-- név: "spec"
-  enabled: False               # Létezik -e ennek a képzettségnek ilyen kategóriája. Pl. ha ez egy tisztán "átlagos" képzettség, akkor nincs 'spec' kategóriája.
-  property: ""
-  text: ""
-- név: "átlagos"
-  enabled: True
-  property: ""
-  text: ""
-- név: "átfogó"
-  enabled: False
-  property: ""
-  text: ""
+ - név: "spec"
+   enabled: false               # Létezik -e ennek a képzettségnek ilyen kategóriája. Pl. ha ez egy tisztán "átlagos" képzettség, akkor nincs 'spec' kategóriája.
+   property: ""
+   text: ""
+ - név: "átlagos"
+   enabled: true
+   property: ""
+   text: ""
+ - név: "átfogó"
+   enabled: false
+   property: ""
+   text: ""
 szintek:
-- szint: 3
-  követelmények:
-  - név: ""
-    enabled: True              # Ez a követelmény aktív, itt letiltható (akár csak ideiglenesen, tesztelési céllal). Normál állapot: True
-    érték: 0                   # szint, fok, mana, pszipont, stb. értéke
-    típus: 0                   # lásd: konstansok.yaml
-    text: ""                   # Általános szöveges leírás a konkrét követelményre. Lehet előtörténeti jellegű is.
-- szint: 6
-- szint: 9
-- szint: 12
-- szint: 15
+ - szint: 3
+   követelmények:
+    - név: ""
+      enabled: true              # Ez a követelmény aktív, itt letiltható (akár csak ideiglenesen, tesztelési céllal). Normál állapot: True
+      érték: 0                   # szint, fok, mana, pszipont, stb. értéke
+      típus: 0                   # lásd: konstansok.yaml
+      text: ""                   # Általános szöveges leírás a konkrét követelményre. Lehet előtörténeti jellegű is.
+ - szint: 6
+ - szint: 9
+ - szint: 12
+ - szint: 15

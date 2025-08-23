@@ -1,3 +1,4 @@
+---
 - fegyver: xyz          # fegyver neve. Pl. "kard, hosszú"
   skeleton_version: 1   # a fegyver séma (skeleton) verziója
   stage: ""             # alpha, beta, prod // alpha: változhat struktúrálisan, beta: kész, de még nem mehet prod-ba
