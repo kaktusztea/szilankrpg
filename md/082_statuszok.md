@@ -304,13 +304,16 @@ Lásd a [Méregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait*
 ---
 ### ✴️ Pajzs akadályoztatása (1, 2)
 
-A pajzs viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.
+A pajzs viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.\
+A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
 
 `Hátrány-1;2`
   - Fizikai Képzettségpróbákra
   - Fizikai Tulajdonságpróbákra
 
-A Képzettségpróbák és Tulajdonságpróbák esetében a fent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, akár teljesen el is tekinthet a hatásoktól.
+Hatása [Felszerelésre](012_kalandozok_elotortenet_szemelyiseg_felszereles.md#felszerel%C3%A9s):
+- Közepes pajzs: Közepes tárgy (1 pont)
+- Nagy pajzs: Nagy tárgy (2 pont)
 
 **Kapcsolódik**:
 - [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) fejezet
@@ -322,20 +325,18 @@ A Képzettségpróbák és Tulajdonságpróbák esetében a fent leírtak az ir�
 ---
 ### ✴️ Páncél akadályoztatása (1 MGT, ♾️ MGT)
 
-A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.
-
-Bővebben lásd a [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet és [Vértviselet](fortelyok.harci/vertviselet.md) fortély idevágó részeit.
+A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**. A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
 
 - `1 MGT → -1 KÉ, TÉ`
 - `Hátrány-1;2;3;4;5`
   - Fizikai Képzettségpróbákra
   - Fizikai Tulajdonságpróbákra
 
-⭕TODO⭕ 5 fokú Hátrány táblázatot betenni, ha [Agórán megbeszéltük](https://github.com/kaktusztea/szilankrpg/wiki/AGORA#mgt-%C3%A9s-a-fizikai-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9g-pr%C3%B3badob%C3%A1sok) ⭕
+⭕TODO⭕ 5 fokú Hátrány táblázat? [Agórán megbeszélni](https://github.com/kaktusztea/szilankrpg/wiki/AGORA#mgt-%C3%A9s-a-fizikai-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9g-pr%C3%B3badob%C3%A1sok) ⭕
 
-A Képzettségpróbák és Tulajdonságpróbák esetében a fent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, akár teljesen el is tekinthet a hatásoktól.
-
-🔆 A [Vértviselet](fortelyok.harci/vertviselet.md) `MGT` csökkentő hatása a próbákra is érvényesül!
+**Kapcsolódik**:
+- [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet
+- [Vértviselet](fortelyok.harci/vertviselet.md) fortély (`MGT` csökkentő hatása a **Tulajdonságpróbákra** és **Képzettségpróbákra** is hatással van!)
 
 <br />
 
