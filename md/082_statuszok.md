@@ -92,8 +92,10 @@ Viszont
 ### ✴️ Eszmélet (1) Bódultság
 
 - `Hátrány-1`
-  - Támadó dobás
+  - Támadó dobásra
   - Manőver Ellenpróba dobás
+  - Képzettségpróbákra
+  - Tulajdonságpróbákra
 - `Hátrány-2`
   - Szociális képzettségpróbákra
 - Kezdeményezés - lassú
@@ -104,8 +106,10 @@ Viszont
 ### ✴️ Eszmélet (2) Kábultság
 
 - `Hátrány-2`
-  - Támadó dobás
+  - Támadó dobásra
   - Manőver Ellenpróba dobás
+  - Képzettségpróbákra
+  - Tulajdonságpróbákra
 - Kezdeményezés - Nagyon lassú
 - Többszörös támadás elvesztése
 - Automatikus kudarc: szociális képzettségpróbákra
