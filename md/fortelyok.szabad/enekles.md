@@ -9,4 +9,14 @@ Dalolás képessége és annak műértése.
 
 <br />
 
+###  🔆 Énekkel bájolás
+
+Az Éneklés szabad fortély a [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettséget **NEM** terjeszti ki, csak egyes mágikus formulák esetében.
+
+**Énekkel elbájolni**:
+- (**Előadóművészet** (**Éneklés**) + Érzékenység) próba, hogy sikerül -e az előadás
+- ([Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) ([Csábítás](csabitas.md)) + Intelligencia) próba a bájolásra - az ének ilyenkor csak a "közvetítő közeg".
+
+Az éneklés ismerete sem ad segítséget egy igéző ének ellen.
+
 ---

@@ -67,12 +67,16 @@ __
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
+Szellemi/érzelmi Státuszokat okozhat
+
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+
+Szellemi/érzelmi Státuszokat okozhat
 
 <br />
 
