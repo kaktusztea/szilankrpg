@@ -21,8 +21,7 @@ Ha valaki látja és van ideje felkészülni a rá leadott lövésre/hajításra
 
 🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy talál -e. Ennek módosítóiról [itt](szituaciok/kiteres_loves_elol_sikertelen.md).
 
-Lásd: [Elemi mágia - Formulák - Őselem idézése](kepzettsegek.primer.arkanumok/elemi_magia.md#őselem-idézése)\
-⭕TODO⭕ Mágia: lehet h ki kéne szedni általános "Mágikus lövedék" szekcióba ⭕
+Lásd: [Elemi mágia - Formulák - Őselem idézése](kepzettsegek.primer.arkanumok/elemi_magia.md#őselem-idézése)
 
 <br />
 

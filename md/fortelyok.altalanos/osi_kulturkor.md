@@ -47,10 +47,25 @@ Itt nem szükséges az **Ősi kultúrkör** ismerete, hiszen itt általános tö
 "Kevesen tudják, de ezek a titkos kéztartások Pyarron előtti 30. században jöttek be és már a Pyarroni előtti 28. században el is tűntek az amund kultúrából!"
 
 ---
-### Ősi kultúrkörök
+### Ősi birodalmi kultúrkörök
 
+- Crantai birodalom
 - Dawa birodalom
-- ⭕TODO⭕ lista bővítése
+- Godoni birodalom
+- Godorai hercegség
+- Ó-Kyr birodalom
+- Ryeki császárság
+- Naphon kultúrkör (Pider4-hegység északi lejtője)
+- Ni4rei kultúrkör (Yian-Yiel hegylánc)
+
+### Ősi faji alapú kultúrkörök
+
+- Aquir
+- Dzsenn
+- Amund
+- Elf (Óelf)
+- Elf (Homoki)
+- Elf (Kráni)
 
 <br />
 

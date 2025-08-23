@@ -10,7 +10,7 @@ A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal
 | Széles hegyű  | `+4` |      S       |    `0`     | Nagy területet roncsol, de nehezebben megy át a páncélokon                                                                                                                                                                                                                                          |
 | Szigony       | `+4` |      S       |    `0`     | - Ha minimum `11 SP` lett a sebződobás (SFÉ lejön!), akkor `+5 SP` jár. <br />- Páncélos ellenfélnél: `K6` dobás: `1-3` értéknél a fegyver elakad a testben, ha átment rajta a sebzés.<br />- Páncéltalan esetén: `K6` dobás: `1`-es értéknél a fegyver elakad a testben, ha átment rajta a sebzés. |
 
-⭕TODO⭕: MGT bejön nagy méretnél
+A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](068_01_fegyverek_altalanos_szabalyai.md#fegyver-mozg%C3%A1sg%C3%A1tl%C3%B3-hat%C3%A1sa).
 
 <!-- tag: md_table_fegyver_start -->
 
