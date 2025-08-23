@@ -210,13 +210,13 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 ### ✴️ Fizikai (1) Fáradtság
 
 - Kezdeményezés - lassú
-- `Hátrány-1`: nem-harci fizikai képzettségpróbákra
+- `Hátrány-1`: szellemi képzettségpróbákra
 
 ### ✴️ Fizikai (2) Kimerültség
 
 - Kezdeményezés - lassú
 - VÉ veszteség: duplázódik
-- `Hátrány-2`: nem-harci fizikai képzettségpróbákra
+- `Hátrány-2`: szellemi képzettségpróbákra
 -  `FP S1`
 
 ### ✴️ Fizikai (3) Elcsigázottság
@@ -288,6 +288,7 @@ Az ilyen karakter kötelezően
 - mint az `Indulat (2) Gyűlölet`, plusz:
 - már mindenkit megtámadsz, akit látsz, nem számít, hogy barát, vagy szövetséges
 - Automatikus kudarc: Szociális képzettségpróbákra
+- Automatikus kudarc: Szellemi képzettségpróbákra 
 
 <br />
 
@@ -349,7 +350,8 @@ A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettsé
 
 - `Hátrány-1`
   - TÉ dobásra
-  - Fizikai képzettségpróbára, Fizikai Tulajdonságpróbára
+  - Fizikai képzettségpróbára
+  - Fizikai Tulajdonságpróbára
 - Kezdeményezés - lassú
 
 
@@ -357,7 +359,8 @@ A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettsé
 
 - `Hátrány-2`
   - TÉ dobásra
-  - Fizikai képzettségpróbára, Fizikai Tulajdonságpróbára
+  - Fizikai képzettségpróbára
+  - Fizikai Tulajdonságpróbára
 - `Hátrány-1`
   - Szociális képzettségpróbákra
 - Kezdeményezés - nagyon lassú
@@ -371,16 +374,16 @@ Ha az `S3` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el
 Bővebben lásd a [Sebesülés](061_03_sebesules.md#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra) fejezetet.
 
 `Hátrány-1`:
-- fizikai és szellemi Tulajdonságpróbákra
-- fizikai és szellemi Képzettségpróbákra
+- Tulajdonságpróbákra
+- Képzettségpróbákra
 
 ### ✴️ Sérült (2) S4
 
 Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.
 
 `Hátrány-2`:
-- fizikai és szellemi Tulajdonságpróbákra
-- fizikai és szellemi Képzettségpróbákra
+- Tulajdonságpróbákra
+- Képzettségpróbákra
 
 <br />
 
@@ -393,13 +396,17 @@ Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el
 
 - Pszí használat elvesztése
 - `Hátrány-1`: Mágiahasználat   (nagyobb az esélye a mágia random hatásnak)
-- `Hátrány-1`: nem-mágikus szellemi, szociális képzettségpróbákra
+- `Hátrány-1`:
+  - nem-mágikus szellemi képzettségpróbára
+  - szociális képzettségpróbákra
 - lassabb gondolkodás
 
 ### ✴️ Szellemi (3) Delírium
 
 - Pszí használat elvesztése
-- `Hátrány-2`: nem-mágikus szellemi, szociális képzettségpróbákra
+- `Hátrány-2`:
+  - nem-mágikus szellemi képzettségpróbákra
+  - szociális képzettségpróbákra
 - `Hátrány-2`: Mágiahasználat
 - lassabb gondolkodás
 
@@ -432,7 +439,9 @@ A következő kör végéig tart.
 - Kezdeményezés - lassú
 - Többszörös támadás elvesztése
 - `Hátrány-1`: Gyorsaság és Ügyesség Tulajdonságpróbákra
-- `Hátrány-2`: Szellemi, szociális képzettségpróbákra
+- `Hátrány-2`:
+  - Szellemi képzettségpróbákra
+  - Szociális képzettségpróbákra
 
 Példa: ledöbbenés, stb.
 
@@ -445,7 +454,9 @@ A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból 
 - Mozgás - lecövekelt
 - Gyorsaság és Ügyesség tulajdonságpróba: `Hátrány-2`
 - Beszéd - zagyva
-- Automatikus kudarc: Szellemi, szociális képzettségpróbákra
+- Automatikus kudarc:
+  - Szellemi képzettségpróbákra
+  - Szociális képzettségpróbákra
 - 2 körig tart
 
 Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az [Érzékevesztés](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart) (több érzékszervre is akár)).
@@ -457,7 +468,9 @@ Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képe
 - Beszédvesztés (részleges, vagy teljes - szituáció függő)
 - Harcképtelenség
 - Mozgás - lecövekelt
-- Automatikus kudarc: fizikai és szellemi Tulajdonságpróbákra, Képzettségpróbákra
+- Automatikus kudarc:
+  - Tulajdonságpróbákra
+  - Képzettségpróbákra
 - Beszéd - zagyva
 - Pszi használat elvesztése
 - Varázslás képesség elvesztése

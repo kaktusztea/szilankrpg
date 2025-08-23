@@ -1,6 +1,6 @@
 ## 🔵 Etikett
 
-Próba dobható, sokszor [összetett próba](../030_06_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) indokolt.
+Próba dobható, sokszor [összetett próba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) indokolt.
 
 Hogy kell köszönteni a nemesi vendégeket, hogyan kell udvariasan hárítani egy meghívást, mi számít könnyed tréfának és mi halálos sértésnek? A képzettség elsősorban az udvari, nemesi környezetben való "viselkedést" fedi.
 

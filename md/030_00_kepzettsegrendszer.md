@@ -5,7 +5,8 @@
 - [Képzettségszint skála](030_03_kepzettsegszint_skala.md)
 - [Képzettségek fejlesztése](030_04_kepzettsegek_fejlesztese.md)
 - [Képzettségszintek KP igénye](030_05_kepzettsegszintek_kp_igenye.md)
-- [Képzettségpróba](030_06_kepzettsegproba.md) 🎲
+- [Képzettségpróba](030_06_01_kepzettsegproba.md) 🎲
+- [Képzettségpróba Hátrányok](030_06_02_kepzettsegproba_hatranyok.md)
 - [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) 🎲
 - [Csoportosan végezhető képzettségek](030_07_02_csoportosan_vegezheto_kepzettsegek.md) 🤝
 - [Képzettségek és Fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)

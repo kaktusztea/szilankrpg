@@ -267,6 +267,6 @@ Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbá
 
 ---
 
-🔗 [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) →
+🔗 [Képzettségpróba Hátrányok](030_06_02_kepzettsegproba_hatranyok.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

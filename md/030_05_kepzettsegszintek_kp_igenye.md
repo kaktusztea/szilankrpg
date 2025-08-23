@@ -28,6 +28,6 @@ Az egyes képzettségszintek KP igénye az alábbi táblázatban található:
 
 ---
 
-🔗 [Képzettségpróba](030_06_kepzettsegproba.md) →
+🔗 [Képzettségpróba](030_06_01_kepzettsegproba.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

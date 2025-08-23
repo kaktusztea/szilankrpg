@@ -19,7 +19,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 Előbb észre kell venni az első nyomot, utána lehet követni a csapást.
 
 [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
-- [összetett képzettségpróba](../030_06_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások), tehát több dobás kell, mivel átfogóbb próba kell a folyamatos követéshez.
+- [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások), tehát több dobás kell, mivel átfogóbb próba kell a folyamatos követéshez.
 - **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás (2)](../fortelyok.altalanos/nyomolvasas.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
 
 <br />
