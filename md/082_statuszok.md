@@ -15,13 +15,13 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 - Bénultság (1) Cselekvőképtelenség, (2) Paralízis
 - Eszmélet (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
 - Érzékvesztés (1) zavart, (2) részleges, (3) teljes
+- Fegyver/Pajzs akadályoztatása (1,2)
 - Félelem (1) Szorongás, (2) Rettegés/Pánik, (3) Bénító félelem
 - Fizikai (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
 - Hangulat (1) Fogékony, (2) Inspirált, (3) Eufórikus, (4) Obszesszív
 - Indulat (1) Harag, (2) Gyűlölet, (3) Őrjöngés
 - Késztetés (1) Sugallat, (2) Vágy, (3) Kényszer
 - Mérgezés\*
-- Pajzs akadályoztatása (1,2)
 - Páncél akadályoztatása (1, ♾️)
 - Rosszullét (1) Közepes, (2) Erős
 - Szellemi (1) Kialvatlanság, (2) Eltompultság, (3) Delírium
@@ -147,6 +147,28 @@ Látás, Hallás, Szaglás.
 ### ✴️ Érzékvesztés (3) teljes
 
 [Érzék - teljes](081_hatasok.md#-%C3%A9rz%C3%A9k---teljes)
+
+<br />
+
+---
+### ✴️ Fegyver/Pajzs akadályoztatása (1, 2)
+
+Egyes fegyverek, pajzsok viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.\
+A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
+
+`Hátrány-1;2`
+  - Fizikai Tulajdonságpróbákra
+  - Fizikai Képzettségpróbákra
+
+Hatása [Felszerelésre](012_kalandozok_elotortenet_szemelyiseg_felszereles.md#felszerel%C3%A9s):
+- Másfélkezes kard: Közepes tárgy (1 pont)
+- Közepes pajzs: Közepes tárgy (1 pont)
+- Nagy pajzs: Nagy tárgy (2 pont)
+
+**Kapcsolódik**:
+- [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) fejezet
+- [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
+- [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 
 <br />
 
@@ -296,27 +318,6 @@ Az ilyen karakter kötelezően
 ### ✴️ Mérgezés
 
 Lásd a [Méregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait**.
-
-<br />
-
----
-### ✴️ Pajzs akadályoztatása (1, 2)
-
-A pajzs viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.\
-A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
-
-`Hátrány-1;2`
-  - Fizikai Képzettségpróbákra
-  - Fizikai Tulajdonságpróbákra
-
-Hatása [Felszerelésre](012_kalandozok_elotortenet_szemelyiseg_felszereles.md#felszerel%C3%A9s):
-- Közepes pajzs: Közepes tárgy (1 pont)
-- Nagy pajzs: Nagy tárgy (2 pont)
-
-**Kapcsolódik**:
-- [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) fejezet
-- [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
-- [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 
 <br />
 
