@@ -71,7 +71,7 @@ A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/ha
 
 <!-- tag: md_table_haritofegyver_start -->
 
-| Fegyver         | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | Átütés | Íves |  MK  | KF  | Pengehossz | KÉ  | TÉ  | VÉ  | Sebesség | Kategória  | Speciális                                                              |
+| Hárítófegyver   | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | Átütés | Íves |  MK  | KF  | Pengehossz | KÉ  | TÉ  | VÉ  | Sebesség | Kategória  | Speciális                                                              |
 | --------------- | :------------: | :-: | :-------------: | :----------: | :----: | :--: | :--: | :-: | :--------: | :-: | :-: | :-: | :------: | :--------: | ---------------------------------------------------------------------- |
 | Csatakesztyű    |    egykezes    | `-` |       `0`       |     `-`      |  `0`   | `0`  | `0`  | `0` |    `0`     | `0` | `0` |  ⭕  |   `99`   |  kardvívó  |                                                                        |
 | Kard, fejvadász |    egykezes    | `-` |       `0`       |     `-`      |  `0`   | `0`  | `F9` | `0` |   `0.5`    | `0` | `0` |  ⭕  |   `6`    |  kardvívó  | G0rv1ki klánnal, vagy mesterrel.<br />Egyébként rövidkard harcértékek. |
