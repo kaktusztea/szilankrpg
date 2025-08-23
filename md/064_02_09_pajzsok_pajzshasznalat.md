@@ -35,7 +35,7 @@ Ha a karakter 🗡️[Készületlen](065_01_harci_helyzetek.md#k%C3%A9sz%C3%BCle
 
 A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vértekre alkalmazunk.
 
-[Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-pajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott pajzs.
+[Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott pajzs.
 
 Hatása [Felszerelésre](012_kalandozok_elotortenet_szemelyiseg_felszereles.md#felszerel%C3%A9s):
 - Közepes pajzs: Közepes tárgy (1 pont)

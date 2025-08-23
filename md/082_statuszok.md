@@ -166,7 +166,8 @@ Hatása [Felszerelésre](012_kalandozok_elotortenet_szemelyiseg_felszereles.md#f
 - Nagy pajzs: Nagy tárgy (2 pont)
 
 **Kapcsolódik**:
-- [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) fejezet
+- [Fegyverek általános szabályai](068_01_fegyverek_altalanos_szabalyai.md#fegyver-mozg%C3%A1sg%C3%A1tl%C3%B3-hat%C3%A1sa)
+- [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md#pajzs-mozg%C3%A1sg%C3%A1tl%C3%B3-hat%C3%A1sa) fejezet
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 - [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 
