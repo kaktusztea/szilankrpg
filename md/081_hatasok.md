@@ -12,7 +12,7 @@ Egy **Státusz** több **Hatást** is képes okozni a karakteren.  Hogy egy Stá
 MIN,MAX: [-2, +2]
 ```
 
-Az `Előny` és `Hátrány`  speciális, kockadobásokat érintő Hatások.\
+Az `Előny` és `Hátrány` speciális, kockadobásokat érintő Hatások.\
 Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
 - Támadó dobás
 - Célzó dobás
@@ -24,6 +24,8 @@ Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
 - Mágiaellenállás dobás
 
 🔆 Halmozódásuk esetén is az alábbi alsó és felső korlátuk érvényes: `[-2, +2]`.
+
+🔆 Az Előny/Hátrány modell Státuszok (harci és normál) esetén alkalmazandó. A statikus ismeretek, mint a fortélyok, vagy harci taktikák esetén a konstans módosítókat alkalmazzuk.
 
 ### 🔥 Előny-1
 
