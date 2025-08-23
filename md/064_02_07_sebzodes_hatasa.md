@@ -33,8 +33,8 @@ Random zúzódás, egyéb fizikai sérülések esetén a KM meghatároz egy sebz
 
 A különböző támadási módok ellen az élőholtak különféleképpen ellenállóak, azok sebzése a következőképpen alakul:
 
-- Szúrófegyverek sebzése: `negyed SP` sebzés (lefele kerekítve) + nincs Erőbónusz
-- Vágófegyverek sebzése: `fele SP` sebzés (lefele) + van Erőbónusz. Csonkoláskor normál sebzés.
+- Szúrófegyverek sebzése: `negyed SP` sebzés ↓  + nincs Erőbónusz
+- Vágófegyverek sebzése: `fele SP` sebzés ↓  + van Erőbónusz. Csonkoláskor normál sebzés.
 - Zúzófegyverek sebzése: `rendes sebzés + Erőbónusz`
 
 ---
