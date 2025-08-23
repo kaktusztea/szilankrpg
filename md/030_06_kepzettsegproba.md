@@ -55,8 +55,8 @@ A KM is felajánlhatja a "menüt", de a játékos is jelentkezhet ötlettel, hog
 
 Tulajdonságonként viszont eltér(het)
 - Nehézség
-- a megvalósítás módja, hossza
-- a rontás hatása
+- megvalósítás módja, hossza
+- rontás hatása
 
 ⚡ Példa: **Ügyesség** segítségével a határoló falakon ide-oda pattogva feljutni valahova, vagy helyből **Erő** segítségével ugrani egyet felfelé. Lehet, hogy a különböző megvalósítások különböző Nehézséget eredményznek.
 
@@ -124,6 +124,16 @@ Látható, hogy a vállalás sokat dob az esélyeken, de megvan a rizikója is: 
 ### Próba biztos tudásból
 
 Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehetőség képzettségpróba dobására. Tipikusan a „Tudok-e valamit róla?"-jellegű határozottan eldönthető esetekben. Ilyenkor a KM dönti el, hogy az adott képzettségszinttel az adott feladat megoldható, avagy sem.
+
+<br />
+
+
+---
+### Siker/Kudarc mértéke
+
+⚜️ Ha `6` vagy annál nagyobb különbséggel (`2` tudás fok) rontottál, akkor kiemelten nagy hibát vétettél.
+
+⚜️ Ha `6` vagy annál nagyobb különbséggel (`2` tudás fok) dobtál sikert, akkor kiemelten jól sikerült a próba. Ezt a KM meséli le.
 
 <br />
 
