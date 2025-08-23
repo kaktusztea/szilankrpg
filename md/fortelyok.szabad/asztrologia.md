@@ -1,6 +1,6 @@
 ## 🟣 Asztrológia
 
-⭕TODO: bevezető⭕
+Jóslás, együttállások olvasása csillagképekből.
 
 ### Kapcsolódik
 
@@ -8,7 +8,7 @@
 
 ### Kiterjeszti ezeket
 
-[Kvantikum](../kepzettsegek.szekunder/kvantikum.md): "**Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
+[Kvantikum](../kepzettsegek.szekunder/kvantikum.md): "Kiszámoltam: **Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
 
 <br />
 

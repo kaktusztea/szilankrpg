@@ -1,6 +1,6 @@
 ## 🟣 Szobrászat
 
-⭕TODO: bevezető⭕
+Holt anyagból faragsz, hívsz életre alakokat az örökkévalóságnak.
 
 ### Kiterjeszti ezeket
 
