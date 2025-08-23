@@ -25,8 +25,8 @@ Képes vagy hárítófegyvert használni.
 ### Megjegyzések
 
 - Mesterfegyver fortély **NEM** vehető fel hárítófegyverre
-- [Közelharci hárítófegyverek listája](068_02_kozelharci_fegyverek.md#k%C3%B6zelharci-h%C3%A1r%C3%ADt%C3%B3fegyverek) 
-- [Kardvívó hárítófegyverek listája](068_03_kardvivo_fegyverek.md#kard%C3%ADv%C3%B3-h%C3%A1r%C3%ADt%C3%B3fegyverek)
+- [Közelharci hárítófegyverek listája](../068_02_kozelharci_fegyverek.md#k%C3%B6zelharci-h%C3%A1r%C3%ADt%C3%B3fegyverek)
+- [Kardvívó hárítófegyverek listája](../068_03_kardvivo_fegyverek.md#kard%C3%ADv%C3%B3-h%C3%A1r%C3%ADt%C3%B3fegyverek)
 
 <br />
 
