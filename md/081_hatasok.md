@@ -125,11 +125,11 @@ próbára.
 ---
 ### 🔥 `FP S1`
 
-Az `S1` Egészség kategória összes rubrikája feltöltődik új `FP`-kel. 
+Az `S1` Egészség kategória összes rubrikája feltöltődik új [FP](061_02_faradsag_pont.md) jelölőkkel.
 
 ### 🔥 `FP S2`
 
-Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új `FP`-kel. 
+Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [FP](061_02_faradsag_pont.md) jelölőkkel.
 
 <br />
 
