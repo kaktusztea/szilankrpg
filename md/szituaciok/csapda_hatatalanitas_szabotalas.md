@@ -20,7 +20,7 @@ Csapda komplexitásától függő **Nehézség** (maximum: a készítő által m
 
 [Csapdaállítás](../kepzettsegek.szekunder/csapdaallitas.md) + Intelligencia/Ügyesség/Emlékezet (KM dönt)
 
-- **Erős kiterjesztés**: [Mechanika](../fortelyok.altalanos/mechanika.md) (`2.foktól` ugye bónusz jár)
+- **Erős kiterjesztés**: [Mechanika](../fortelyok.altalanos/mechanika.md) (`2.foktól` ugye bónusz is jár)
 - [Szabotőr](../fortelyok.altalanos/szabotor.md) fortély bónuszt ad (`+2`)
 
 <br />
@@ -29,9 +29,8 @@ Csapda komplexitásától függő **Nehézség** (maximum: a készítő által m
 
 [Lexikum](../kepzettsegek.szekunder/lexikum.md) + Intelligencia/Ügyesség/Emlékezet (KM dönt)
 
-- **Erős kiterjesztés**:  [Mechanika](../fortelyok.altalanos/mechanika.md)
+- **Erős kiterjesztés**:  [Mechanika](../fortelyok.altalanos/mechanika.md) (`2.foktól` ugye bónusz is jár)
 - [Szabotőr](../fortelyok.altalanos/szabotor.md) fortély bónuszt ad (`+2`)
-
 
 ---
 
