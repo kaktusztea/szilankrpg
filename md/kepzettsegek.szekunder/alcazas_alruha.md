@@ -1,6 +1,6 @@
 ## 🔵 Álcázás/álruha
 
-⭕TODO⭕ Ellenpróbával menjen? Melyik képzettséggel? Álcázás/álruha vs. Észlelés VAGY Emberismeret??
+Próba dobható. Alapesetben ellenpróbával megy, a másik fél [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettséggel dob.
 
 Az álcázás nagy előny, főleg ha vadásznak rád. Megfelelő maszk, smink, ruha, szerep felvétele - ezek elengedhetetlenek. Egy jó bajusz csodákat tehet, csak le ne essen a kritikus pillanatban.
 
