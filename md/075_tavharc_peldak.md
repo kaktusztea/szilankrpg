@@ -83,7 +83,7 @@ CÉ = -30 (Konstans)
 - Lövész mozgása: `2` (lassú egyenletes)
 - Célpont mérete: `1` (Rühes cingár, apró, törpe méretű)
 - Észlelhetőség: `3` (homályos kontúr)
-- Szél: `4` (Erős szél)
+- Szél: `4` (erős szél)
 - Távolság: `12 méter`
 - Cella:  (`12m/3 ↑`) → `4`
 
