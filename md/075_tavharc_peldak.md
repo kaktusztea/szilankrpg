@@ -79,13 +79,15 @@ CÉ = -30 (Konstans)
 
 ### A célpont Védő Értéke #2
 
+**Szorzók**
 - Mozgás szorzó: `8x` (gyors, egyenletes)
 - Lövész mozgása: `2` (lassú egyenletes)
 - Célpont mérete: `1` (Rühes cingár, apró, törpe méretű)
 - Észlelhetőség: `3` (homályos kontúr)
 - Szél: `4` (erős szél)
 - Távolság: `12 méter`
-- Cella:  (`12m/3 ↑`) → `4`
+
+**Cella**:  (`12m/3 ↑`) → `4`
 
 $$VÉ = {8(gyorsan\ mozgó)+2(lövész\ lassú, egyenletes)+1(törpe\ méret)+3(homályos\ kontúr+4(erős\ szél))}\ x\ {12(távolság)\over 3(rövid\ íj\ Osztója)}$$
 
