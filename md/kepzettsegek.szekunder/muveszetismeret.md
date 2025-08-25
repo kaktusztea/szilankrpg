@@ -2,7 +2,7 @@
 
 Passzív műélvezet, a műalkotások ismerete, kritizálása, lexikális és érzelmi ismerete.
 
-A tudás szélesíthető a lenti, kiterjesztések alatt található **Szabad Fortélyok** felvételével.
+A tudás szélesíthető a lenti, kiterjesztések alatt található [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével.
 
 ### Domináns Tulajdonságok
 
@@ -10,7 +10,7 @@ Emlékezet, Intelligencia, Érzékenység
 
 ### Normál kiterjesztés
 
-- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
+- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Enélkül érvényes a `-3` levonás mindegyik meglevő művészeti ágra.
 - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md): Udvari fok (ahol szükségesnek érezzük)
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
 

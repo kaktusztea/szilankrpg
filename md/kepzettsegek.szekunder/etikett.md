@@ -12,7 +12,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 
 ### Normál kiterjesztés
 
-- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Nélküle általános etikett szabályokra és megérzéseidre támaszkodsz csak. Ha ismered, nincs gond.
+- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Nélküle általános etikett szabályokra és megérzéseidre támaszkodsz csak (jár a `-3` levonás). Ha ismered, nincs gond.
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): a helyi celebritások, nemesi körökben forgó emberek ismerete
 
 ### Erős kiterjesztés
