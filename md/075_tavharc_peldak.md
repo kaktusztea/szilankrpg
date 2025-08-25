@@ -104,7 +104,7 @@ VÉ = 18 x 4 = 72
 
 azaz ha Tetves legalább `64`-et dob `k100`-on, csak akkor talál célt.
 
-Dob `k100`-zal, az eredmény `59`, végső `CÉ = 8+59 = 67`, elvétette.... Rühes lába előtt a tetőcserépen csattan a vessző, egy merész vetődéssel átgurul a tető másik felére és némi cserepet leverve lecsúszik az ereszig. Megmenekült.
+Dob `k100`-zal, az eredmény `59`, végső `CÉ = 8+59 = 67`, elvétette.... Rühes lába előtt a tetőcserépen csattan a vessző. A cingár tolvaj egy merész vetődéssel átgurul a tető másik felére és némi cserepet leverve lecsúszik az ereszig. Megmenekült.
 
 ---
 
