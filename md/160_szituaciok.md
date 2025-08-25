@@ -9,6 +9,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Hátbaszúrni harcolót](szituaciok/hatbaszurni_harcolot.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
 - [Leütés hátulról](066_05_altalanos_manoverek.md#le%C3%BCt%C3%A9s-h%C3%A1tulr%C3%B3l)
+- [Meglepetésből pontra támadás max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
 
 ## Távharc szituációk
 
