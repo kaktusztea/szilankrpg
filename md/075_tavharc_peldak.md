@@ -36,7 +36,7 @@ CÉ = -30 (Konstans)
 $$VÉ = {5(lassú\ egyenletes)+0(normál\ méret)+0(jól\ látható)}\ x\ {15(távolság)\over 4(nyílpuska\ Osztója)}$$
 
 ```
-VÉ = 5x4 = 20
+VÉ = 5 x 4 = 20
 ```
 
 <br />
@@ -90,7 +90,7 @@ CÉ = -30 (Konstans)
 $$VÉ = {8(gyorsan\ mozgó)+2(lövész\ lassú, egyenletes)+1(törpe\ méret)+3(homályos\ kontúr+4(erős\ szél))}\ x\ {12(távolság)\over 3(rövid\ íj\ Osztója)}$$
 
 ```
-VÉ = 18x4 = 72
+VÉ = 18 x 4 = 72
 ```
 
 ### Tehát a próba #2
