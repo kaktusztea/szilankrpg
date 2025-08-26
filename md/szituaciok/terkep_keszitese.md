@@ -4,8 +4,8 @@ Nem valami hevenyészett papírfecnire gondoljunk, hanem valós, méréseken, f�
 
 [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettségpróba
 - **Nehézség**: a térkép bonyolultsága és részletessége alapján megállapított szint
-- Erős kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) - adott városnyi terület
-- Normál kiterjesztés: [Térképészet](../fortelyok.szabad/terkepeszet.md) fortély
+- **Erős kiterjesztés**: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) - adott városnyi terület
+- **Normál kiterjesztés**: [Térképészet](../fortelyok.szabad/terkepeszet.md) fortély
 
 ---
 
