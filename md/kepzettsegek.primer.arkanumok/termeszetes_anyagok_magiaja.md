@@ -1,4 +1,4 @@
-### Természetes anyagok mágiája arkánum
+## Természetes anyagok mágiája arkánum
 
 Az **Anyag** szféra alá tartozó arkánum.
 
