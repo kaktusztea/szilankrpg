@@ -45,7 +45,6 @@ Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismer
 - Tulajdonság: Emlékezet
 - Normál kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) (adott helység) fortély (nem mindig szükséges, ne legyünk szigorúak)
 
-
 ---
 
 🔗 [Szituációk](../160_szituaciok.md) ↑

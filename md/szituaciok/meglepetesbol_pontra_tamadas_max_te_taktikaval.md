@@ -17,3 +17,9 @@ Itt nem jár bónusz, de lehet Manőver Pontot (`MP`) bőven beletenni (maximum 
 ### Ellenfél visszatámadásnál
 
 A Támadó taktika kapcsán `VÉ:-30` büntetés jár a pontra támadó karakternek - ellenfele első visszatámadására. 
+
+---
+
+🔗 [Szituációk](../160_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../start.md#16-szitu%C3%A1ci%C3%B3k)

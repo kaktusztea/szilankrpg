@@ -9,7 +9,7 @@ Magában fogalja a kihallgatási technikákat (nem kínzást!), a beszédtechnik
 
 ### Szituációk
 
-[Információszerzés valakitől](../szituaciok/informacioszerzes_valakitol.md)
+- [Információszerzés valakitől](../szituaciok/informacioszerzes_valakitol.md)
 
 <br />
 

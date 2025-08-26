@@ -8,7 +8,6 @@ Különlegesen kifinomult az ízlelésed, ez lehet áldás és átok is.
 
 [Érzékenység](../014_01_tulajdonsagok.md#-%C3%A9rz%C3%A9kenys%C3%A9g) Tulajdonságodat segíti ízlelés esetén
 
-### Követelmény: -
 
 <br />
 

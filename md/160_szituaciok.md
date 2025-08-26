@@ -22,6 +22,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 ## Szociális szituációk
 
 - [Befolyásolás módszerei: Megfélemlítés, Csábítás, Átverés, hazudozás](szituaciok/befolyasolas_modszerei.md)
+- [Énekléssel bájolás](szituaciok/eneklessel_bajolas.md)
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
 
