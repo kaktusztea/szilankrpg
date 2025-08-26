@@ -1,8 +1,8 @@
 ## Meglepetésből, Pontra támadás max TÉ taktikával
 
-[Meglepetésből](../065_01_harci_helyzetek.md#meglepet%C3%A9s) támadsz (harci helyzet) és maximális **Támadó taktikát** bevetve (`TÉ:+15, VÉ:-30`) megpróbálkozol egy [Pontra támadás manőverrel](../066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s).
+[Meglepetésből](../065_01_harci_helyzetek.md#meglepet%C3%A9s) támadsz (harci helyzet) és maximális [Támadó taktikát](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) bevetve (`TÉ:+15, VÉ:-30`) megpróbálkozol egy [Pontra támadás manőverrel](../066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s).
 
-A fenti Manővernek `Végrehajtás` és `Ellenpróba` fázisai vannak. A **Meglepetés** harci helyzet bónusza és a **Támadó taktika** bónusza hogyan érvényesülnek?
+A fenti Manővernek [**Végrehajtás** és **Ellenpróba**](../066_04_manover_vegbevitele.md) fázisai vannak. A **Meglepetés** harci helyzet bónusza és a **Támadó taktika** bónusza hogyan érvényesülnek?
 
 ### Manőver **Végrehajtás** fázisa
 
