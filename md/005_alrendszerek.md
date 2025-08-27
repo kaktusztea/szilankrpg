@@ -58,7 +58,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 - Komponensek, összhangok  (-)
 - Módszerek   (fortélyok)
   - Kínált "feature" lehetőség (lista)
-  - Megnyílt lehetőséget az alábbi összhangokra  (lista)
+  - Megnyít lehetőséget Összhangokra  (lista)
 - Varázstárgyak:
   - Rúnamágiával felruházott tárgyak
   - Ereklyék, Mágikus emitterek
