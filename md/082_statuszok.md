@@ -13,6 +13,7 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
     - Előny/Hátrány (1,2): Érzékek
     - ⭕Szakrális bélyeg
 - Bénultság (1) Cselekvőképtelenség, (2) Paralízis
+- Blokkolt (1) közepesen, (2) Erősen
 - Eszmélet (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
 - Érzékvesztés (1) zavart, (2) részleges, (3) teljes
 - Fegyver/Pajzs akadályoztatása (1,2)
@@ -85,6 +86,19 @@ Viszont
 - Harcképtelenség
 - Mozgás - képtelen
 - Beszéd - némultság
+
+<br />
+
+---
+### ✴️ Blokkolt (1) közepesen
+
+- Mozgás - lassulás
+- `Hátrány-1` támadó dobás
+
+### ✴️ Blokkolt (2) erősen
+
+- Mozgás - lassulás
+- `Hátrány-2` támadó dobás
 
 <br />
 
