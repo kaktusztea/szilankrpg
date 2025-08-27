@@ -92,6 +92,8 @@ Viszont
 ---
 ### ✴️ Blokkolt (1) közepesen
 
+Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
+
 - Mozgás - lassulás
 - `Hátrány-1` támadó dobás
 
