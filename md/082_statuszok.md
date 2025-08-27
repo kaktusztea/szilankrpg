@@ -13,9 +13,9 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
     - Előny/Hátrány (1,2): Érzékek
     - ⭕Szakrális bélyeg
 - Bénultság (1) Cselekvőképtelenség, (2) Paralízis
-- Blokkolt (1) közepesen, (2) Erősen
+- Blokkolt (1) Közepesen, (2) Erősen
 - Eszmélet (1) Bódultság, (2) Kábultság, (3) Ájulás, (4) Kóma
-- Érzékvesztés (1) zavart, (2) részleges, (3) teljes
+- Érzékvesztés (1) Zavart, (2) Részleges, (3) Teljes
 - Fegyver/Pajzs akadályoztatása (1,2)
 - Félelem (1) Szorongás, (2) Rettegés/Pánik, (3) Bénító félelem
 - Fizikai (1) Fáradtság, (2) Kimerültség, (3) Elcsigázottság
@@ -90,14 +90,14 @@ Viszont
 <br />
 
 ---
-### ✴️ Blokkolt (1) közepesen
+### ✴️ Blokkolt (1) Közepesen
 
 Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
 
 - Mozgás - lassulás
 - `Hátrány-1` támadó dobás
 
-### ✴️ Blokkolt (2) erősen
+### ✴️ Blokkolt (2) Erősen
 
 - Mozgás - lassulás
 - `Hátrány-2` támadó dobás
@@ -154,17 +154,17 @@ Az Antyssjárás viszont ebben az állapotban is működik.
 <br />
 
 ---
-### ✴️ Érzékvesztés (1) zavart
+### ✴️ Érzékvesztés (1) Zavart
 
 Látás, Hallás, Szaglás.
 
 [Érzék - zavart](081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
 
-### ✴️ Érzékvesztés (2) részleges
+### ✴️ Érzékvesztés (2) Részleges
 
 [Érzék - részleges](081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges)
 
-### ✴️ Érzékvesztés (3) teljes
+### ✴️ Érzékvesztés (3) Teljes
 
 [Érzék - teljes](081_hatasok.md#-%C3%A9rz%C3%A9k---teljes)
 
