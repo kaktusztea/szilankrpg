@@ -246,6 +246,8 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy ké
 
 #### ⚡ Példák
 
+⭕k20
+
 ```
 KÉ alap: 26
  → Puszta kéz KÉ: -10
@@ -288,25 +290,25 @@ Védekező Pajzs `VÉ` csak akkor számít, ha a pajzsot tartó kéz felőli old
 
 Fegyvered legalább `1 pengével` rövidebb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1` + `k20` tizes része (`[0;1;2]`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1` + `k20` tizes része (`0;1;2`)
 
 ### Fegyverméret - Azonos
 
 Fegyvered és ellenfeled fegyverméret különbsége kisebb, mint `1 penge`.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tizes része (`[0;1;2]`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tizes része  (`0;1;2`)
 
 ### Fegyverméret - 1 pengés előny
 
 Fegyvered legalább `1 pengével` hosszabb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tizes része (`[0;1;2]`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tizes része  (`0;1;2`)
 
 ### Fegyverméret - 2 pengés előny
 
 Fegyvered legalább `2 pengével` hosszabb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3` + `k20` tizes része (`[0;1;2]`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3` + `k20` tizes része  (`0;1;2`)
 
 <br />
 
@@ -321,7 +323,6 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3` 
 Földről támadni sokkal nehezebb és a kitérés is energiaigényesebb.
 
 <br />
-
 
 ---
 ### Hajítás alkalmatlan fegyverrel
@@ -497,7 +498,7 @@ Példák: Gólem: `+1`; Sárkány: `+2 VÉ csökkentés`
 ### Pusztakezes harc
 
 ```
-Puszta kéz harcértékei: KÉ: -10, TÉ: -10, VÉ: -10
+Puszta kéz harcértékei: KÉ: -3, TÉ: -3, VÉ: -3
 ```
 
 Amennyiben valaki fegyvertelenül, puszta kézzel kénytelen egy felfegyverzett ellenféllel harcolni, akkor alapesetben hátrányban van. Ez a [Puszta kéz](068_02_kozelharci_fegyverek.md) negatív harcértékeiben mutatkozik meg. A különböző pusztakezes Fortélyok csak mérsékelik ezt a hátrányt. Egyetlen kivétel a harcművészek [Élő fegyver](fortelyok.slan/elo_fegyver.md) fortélya, amely mérsékeli az említett hátrányokat.
