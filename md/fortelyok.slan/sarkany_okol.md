@@ -1,5 +1,6 @@
 ## 🟣 Sárkány ököl (3)
 
+⭕k20
 
 ⭕TODO: Lehet, hogy ez külön lesz a [Slan](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.slan) alatt.
 

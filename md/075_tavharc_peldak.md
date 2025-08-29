@@ -1,5 +1,7 @@
 ## Példalövészet #1
 
+⭕k20
+
 Tetves, a tolvaj-bérgyilkos egy raktár ablakából, nyílpuskával les a sikátorban közelgő áldozatára, egy tehetős kalmárra, aki éppen hazafelé battyog.
 
 A könnyű nyílpuska **Osztója:** `4`
@@ -55,6 +57,8 @@ Dob `k100`-zal, az eredmény `31`, végső `CÉ = 11+31 = 42`, tehát eltalálta
 ---
 ---
 ## Példalövészet #2
+
+⭕k20
 
 Lássunk egy bonyolultabb esetet.
 
