@@ -57,8 +57,9 @@ Jelölése "+" jel: például "S+V"
 Nincs levonás egyik sebzés típusnál sem
 ```
 
-Ez egy Harci helyzet (státusz).\
-Egyes fegyverekkel többféle sebzési típust lehet használni anélkül, hogy a forgató hátrányba kerülne és levonást szenvedne el a TÉ-ből. Ilyen fegyvereknél az egyes sebzési típusokat "+" jellel választjuk el.
+Ez egy Harci helyzet (státusz).
+
+Egyes fegyverekkel többféle sebzési típust lehet használni anélkül, hogy a forgató hátrányba kerülne és levonást szenvedne el a TÉ-ből. Ilyen fegyvereknél az egyes sebzési típusokat `+` jellel választjuk el.
 
 ---
 ### [Sebzéstípus: másodlagos](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-egyenjog%C3%BA)

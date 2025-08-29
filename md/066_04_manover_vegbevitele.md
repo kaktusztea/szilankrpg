@@ -103,7 +103,7 @@ Amennyiben nem teljesíti, akkor is nekifuthat, de az **Ellenpróba** dobásán�
 ---
 ## Sikertelen Manőver és VÉ csökkentés
 
-A sikertelen Manőver mindig `kiskockás` VÉ csökkentést okoz - bármekkora is a fegyverméretek különbsége.
+A sikertelen Manőver `0` **VÉ csökkentést** okoz.
 
 <br />
 

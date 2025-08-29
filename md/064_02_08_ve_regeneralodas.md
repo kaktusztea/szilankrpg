@@ -7,7 +7,7 @@ Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Érték
 ---
 ### Győzelmi szabály
 
-Ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+10 pont` (a siker hatása a szervezetre + heroizmus).
+Ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont` (a siker hatása a szervezetre + heroizmus).
 
 ---
 ### Élőholtak VÉ regenerációja

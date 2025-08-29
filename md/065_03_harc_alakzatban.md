@@ -57,7 +57,7 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 
 - \+ Alakzat tagjainak fegyveres `VÉ` átlaga 
 - \+ `VÉ bónusz`:  **Védekezőszint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-- \+ Személyek száma utáni `VÉ` bónusz (`+3 VÉ / fő;  max +30 VÉ`)
+- \+ Személyek száma utáni `VÉ` bónusz (`+1 VÉ / fő;  max +10 VÉ`)
 
 🔆 **Megjegyzés**
 - [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasl%C3%A9glovas-harc%C3%A9rt%C3%A9kek-kisz%C3%A1m%C3%ADt%C3%A1sa) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat

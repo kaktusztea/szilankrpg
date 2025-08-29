@@ -1,4 +1,4 @@
-## ⚡Példa Manőver alkalmazására: Lefegyverzés
+## ⚡Példa Manőver alkalmazására: Lefegyverzés ⭕k20
 
 Lássunk egy  gyakorlati alkalmazást!
 

@@ -10,9 +10,9 @@
 | [Kiváró taktika](#kiv%C3%A1r%C3%B3-taktika)                           | Átengedett `KÉ`, cserébe első visszatámadásra `TÉ:+1`⭕                                                                                                                                                                                                                                       |
 | [Fárasztó taktika](#f%C3%A1raszt%C3%B3-taktika-) ⇄                    | • `+1 VÉ extra csökkentés`<br />• Sebzés helyett: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): ⭕`3 + k20` tizes része <br />• [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) harci helyzetből **NEM** alkalmazható. |
 | [Visszafogott taktika](#visszafogott-taktika-) ⇄                      | Kisebb értékű kockával dobhatsz sebzéskor. Lásd a taktika részletes leírását!                                                                                                                                                                                                                |
-| [Plusz támadás taktika](#plusz-t%C3%A1mad%C3%A1s-taktika)             | `+1 támadás`<br />Cserébe **minden** támadásodnál a körben [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1`-et szenvedsz el. A kör elején kell eldönteni, kör közben már nem módosítható.                                                                                |
-| [Roham taktika](#roham-taktika)                                       | • `TÉ:+4`, `VÉ:-8` (első oda-visszacsapáskor)<br/>• `VÉ` csökkentés: 3 + k20 tizes része első oda-visszacsapásnál , Sebzéshez: `+5 SP` (oda-vissza)                                                                                                                                          |
-| [Öngyilkos roham taktika](#%C3%B6ngyilkos-roham-taktika)              | • `TÉ:+5`,`VÉ:-10` (első oda-visszacsapáskor)<br/>• `VÉ` csökkentés: 3 + k20 tizes része első oda-visszacsapásnál, Sebzéshez: `+7 SP` (oda-vissza)<br/>• `TÉ` büntetések (sérülésből) nem érvényesek<br/>• Max `1x` használható egy küzdelemben                                              |
+| [Plusz támadás taktika](#plusz-t%C3%A1mad%C3%A1s-taktika)             | `+1 támadás`<br />Cserébe **minden** támadásodnál a körben az alábbi [VÉ csökkentést](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) szenveded el: `(1 + k20 tizes része)`.<br />A kör elején kell eldönteni, kör közben már nem módosítható.                                               |
+| [Roham taktika](#roham-taktika)                                       | • `TÉ:+4`, `VÉ:-8` (első oda-visszacsapáskor)<br/>• `VÉ` csökkentés: `(3 + k20 tizes része)` első oda-visszacsapásnál , Sebzéshez: `+5 SP` (oda-vissza)                                                                                                                                      |
+| [Öngyilkos roham taktika](#%C3%B6ngyilkos-roham-taktika)              | • `TÉ:+5`,`VÉ:-10` (első oda-visszacsapáskor)<br/>• `VÉ` csökkentés: `(3 + k20 tizes része`) első oda-visszacsapásnál, Sebzéshez: `+7 SP` (oda-vissza)<br/>• `TÉ` büntetések (sérülésből) nem érvényesek<br/>• Max `1x` használható egy küzdelemben                                          |
 | [Támadás erőből taktika](#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) | Erre a [Támadás erőből](fortelyok.harci/tamadas_erobol.md) fortélyt használhatod (lásd a leírását).                                                                                                                                                                                          |
 | [Érintő taktika](#%C3%A9rint%C5%91-taktika-) ⇄                        | `TÉ:+2`                                                                                                                                                                                                                                                                                      |
 
@@ -171,13 +171,12 @@ Ha úgy döntesz, hogy a fenti feltételekkel lemondasz a kezdeményezésről, c
 
 ```
 Ha nincs találat
-  VÉ csökkentés: alap +1 extra⭕
-  
+  VÉ csökkentés: alap +1 extra ⭕k20
 ```
 
 ```
 Sebzés helyett:
-  VÉ csökkentés: ⭕3 + k20 tizes része
+  VÉ csökkentés: 3 + k20 tizes része ⭕k20
 ```
 
 ❌ Más taktikával együtt
@@ -190,7 +189,7 @@ Sebzés helyett:
 
 Ha fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta, akkor a harc ugyanúgy folyik, mint más esetben, csak
 - ha nem érsz el találatot támadó dobásod során, akkor  **VÉ csökkentésedre** `+1` bónuszt kapsz
-- Sebző támadás esetén pedig elmarad maga a sebzés, helyette [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): ⭕`3 + k20 tizes része`. A Többszörös találat nem növeli tovább a `VÉ` csökkentést.
+- Sebző támadás esetén pedig elmarad maga a sebzés, helyette [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20 tizes része`. (⭕k20) A Többszörös találat nem növeli tovább a `VÉ` csökkentést.
 
 A Fárasztó taktikának leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a „vadat”, míg vezetőjük felkészül.
 
@@ -227,7 +226,7 @@ Némi ritmus megtörés bevállalásával csökkentheted az okozott sebzést: ki
 +1 támadás
 
 Minden támadásodnál
-  VÉ csökkentés: 1
+  VÉ csökkentés: 1 + k20 tizes része
   büntetést szenvedsz el
 ```
 

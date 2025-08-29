@@ -1,4 +1,4 @@
-## ⚡Példa Manőver alkalmazására: Lábsöprés
+## ⚡Példa Manőver alkalmazására: Lábsöprés ⭕k20
 
 Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr és elkölt `1` **Manőver Pontot**.
 

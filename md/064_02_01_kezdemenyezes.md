@@ -1,5 +1,7 @@
 ## Fegyveres Kezdeményezés
 
+⭕k20
+
 ```
 Harci KÉ + k20
 ```
@@ -12,6 +14,8 @@ Ha két karakter azonos kezdeményezést ért el, és egymással harcolnak, akko
 
 ---
 ## Varázslás Kezdeményezése
+
+⭕k20
 
 ```
 Varázslás KÉ + k20

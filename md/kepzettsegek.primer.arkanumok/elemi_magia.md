@@ -69,6 +69,8 @@ Ez is képzettségpróba.
 
 <br />
 
+⭕k20 konverzió
+
 | **Irányítás  <br>**(ahol a forma szerint értelmezhető) |              **+Komplexitás**               | **Támadó érték**<br>(ha az idézett forma közelharcba kezd az áldozattal)<br>(alap VÉ számít, ha nem mágikus a fegyver) |
 | ------------------------------------------------------ | :-----------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
 | Lassú mozgatás,<br>Kocogó ember sebessége              |                     +3                      |                                                     TÉ=40;VÉ:120\*                                                     |
@@ -100,7 +102,7 @@ A fenti példánál az ez `3`, mert annyira „nyújtja ki” a varázsló.
 ⭕Ez is kérdéses még, nem könnyű eldönteni, hogy random is legyen, de közben meg sok se legyen. Az alap sebzés a sebző elemmel való 2 szegmenses érintkezést jelenti kivéve a nyíl és a kitörés formát, ahol a sebzés egyben, azonnal történik. Ha a 2 szegmensnél tovább tartózkodik valaki az elemmel érintkezésben, akkor a többszörös idő többszörös sebzést okoz. 1 kör például már 5x-ös sebzést! Viszont nem fog senki egy tűzgolyóban álldogálni valószínűleg.⭕
 
 ---
-##### ⚡Példavarázslatok
+##### ⚡Példavarázslatok ⭕k20
 
 ###### Gyors tűzgolyó
 
@@ -154,4 +156,3 @@ A megidézett elementálokra mentálisan, vagy asztrálisan hatni a következő 
 Magas szinten ennél jönne elő pl. a tűzalak, vízalak, földalak, légies alak
 
 ⭕(ez azért jó, mert pl. a Vulgármágiában van sima tűzalak, ami könnyebb is, de célvarázslat, míg itt sokkal szabadabb a varázsló, de nagyobb a varázslat költsége.)
-

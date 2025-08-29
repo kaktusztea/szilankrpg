@@ -4,22 +4,20 @@
 ### 🧮 Harcértékek
 
 ```
-KÉ = 10⭕k20
+KÉ = 3
    + (Gyorsaság + Intelligencia)⭕k20
    + Tapasztalati szint
    + Harcmodor/Mágia-Tradíció bónusz
-   + Mf bónusz
-   + Fegyver KÉ
 
-TÉ = 20⭕k20
-   + 2 x (Erő + Ügyesség + Gyorsaság)⭕k20
+TÉ = 7
+   + Erő + Ügyesség + Gyorsaság
    + TÉ HM
    + Harcmodor/Mágia-Tradíció bónusz
    + Mf bónusz
    + Fegyver TÉ
 
-VÉ = 120⭕k20
-   + 2 x (Ügyesség + Gyorsaság)⭕k20
+VÉ = 24
+   + Ügyesség + Gyorsaság
    + VÉ HM
    + Harcmodor/Mágia-Tradíció bónusz
    + Mf bónusz
@@ -28,12 +26,11 @@ VÉ = 120⭕k20
 
 VÉ Bónusz:
   → Vértviselet 3.szint:
-    - félvért VÉ:+5
-    - teljes vért VÉ:+10
+    - félvért VÉ:+1⭕k20
+    - teljes vért VÉ:+3⭕k20
 
-CÉ = -30⭕k20
-   + (2 x Önuralom)⭕k20
-   – 30 (Konstans)
+CÉ = -10 (Konstans)
+   + Önuralom
    + CM
    + Harcmodor/Mágia-Tradíció bónusz
    + Fegyver CÉ
@@ -42,7 +39,7 @@ CÉ = -30⭕k20
 <br />
 
 ---
-### 🤞 Kezdeményezés
+### 🤞 Kezdeményezés ⭕k20
 
 ```
 Kezdeményező dobás: KÉ + k20
@@ -60,13 +57,13 @@ Azonos kezdeményezésnél: egyszerre csapnak.
 ### 🤺 Támadás
 
 ```
-Támadó dobás: TÉ + k100
+Támadó dobás: TÉ + k20
 ```
 
 ```
 Minden újabb támadás a körben:
 
-  TÉ:-20 a 2. támadástól kezdődően
+  TÉ:-4 a 2. támadástól kezdődően
   aktuális Támadó Értékre.
   NEM Additív.
 
@@ -74,13 +71,10 @@ Sebzés jellege: elsődleges sebzési
         típusa az alapértelmezett
         (például: Szúró).
         Másodlagos támadási formával
-        TÉ:-10 módosítóval támadhatsz
+        TÉ:-2 módosítóval támadhatsz
 
 Előnyös/hátrányos helyzetű harcos:
    1 penge méretkülönbségtől
-
-01 támadó dobás: kudarc, KM dönt.
-   Pl. az ellenfél kap +1 támadást
 ```
 
 <br />
@@ -136,11 +130,8 @@ X: fegyver alap sebzése
 ```
 
 ```
-- Többszörös találat (TÉ > VÉ+20):
+- Többszörös találat (TÉ > VÉ+20 ⭕k20):
       20-anként SP:+3   (max +9 SP)
-- 00 támadó dobás: SP:+5
-      Ellenfél SFÉ nem számít
-      (de Aranyharang, Elemi Erő igen)
 - Roham: SP:+5
 - Támadás erőből fortély bónusza
 ```
@@ -196,7 +187,8 @@ Teljes, fenyegetetlen nyugalom szükséges!
 VÉ: +3
 ```
 
-Ha a karakter végzett egy - hozzá hasonló tudású, vagy erősebb - ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3` pont.\
+Ha a karakter végzett egy - hozzá hasonló tudású, vagy erősebb - ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3` pont.
+
 Ez a siker hatása a szervezetre + heroizmus. Persze itt is lehetnek kivételek (barát megölése, stb).
 
 <br />
