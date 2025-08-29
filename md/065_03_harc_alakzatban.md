@@ -122,13 +122,13 @@ MIN(2; 2; 2; 2) x 2 =  4
 ### 🔆 Alakzat TÉ értéke
 
 - Alakzat tagjainak fegyveres `TÉ` átlaga 
-- `TÉ bónusz: +21`  ← **Támadószint** (`10`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
+- `TÉ bónusz: +7`  ← **Támadószint** (`10`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
 
 ### 🔆 Alakzat VÉ értéke
 
 - Alakzat tagjainak fegyveres `VÉ` átlaga 
-- `VÉ bónusz: +27` ← **Védekezőszint** (`12`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
-- `VÉ bónusz: +12` ← Tagok száma után `(4x3)`
+- `VÉ bónusz: +9` ← **Védekezőszint** (`12`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
+- `VÉ bónusz: +4` ← Tagok száma után `4`
 
 <br />
 
@@ -136,15 +136,15 @@ MIN(2; 2; 2; 2) x 2 =  4
 ## Személyek száma utáni `VÉ` bónusz
 
 ```
-+3 VÉ / fő
- Max 30 (3 x 10)
++1 VÉ / fő
+ Max 10
 ```
 
 A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy szuper harcos nem ad hozzá túl sokat az alakzathoz, ha képzetlen az alakzatharcban.
 
-Miért csak `VÉ` bónuszt ad?\
-Mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.\
-Az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) ((és ugye a durvább `VÉ-csökkentést`)) adja.
+Miért csak `VÉ` bónuszt ad?
+- mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.\
+- az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) ((és ugye a durvább `VÉ-csökkentést`)) adja.
 
 <br />
 
@@ -159,20 +159,20 @@ Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
 ## VÉ csökkenés alakzat ellen alacsonyabb
 
 ```
-Alapból gyengébb: -5
+Alapból gyengébb: -2
 
-Alakzat Teljes Védekezésben: -10
+Alakzat Teljes Védekezésben: -3
 ```
 
-Az alakzat ellen harcoló **egyén** ugyanúgy kis/nagykockával csökkent, mint normál harc esetében - pengeméret különbségtől függően, viszont:
+Az alakzat ellen harcoló **egyén** ugyanúgy csökkent `Védő Értéket`, mint normál harc esetében - pengeméret különbségtől függően, viszont:
 
-Az alakzat **ellen** leadott minden `VÉ` csökkentésből, tehát az alakzat által elszenvedett `VÉ` csökkenésből mindig `-5` levonandó, mivel egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb a "kifulladására" játszani.
+Az alakzat **ellen** leadott minden `VÉ` csökkentésből, tehát az alakzat által elszenvedett `VÉ` csökkenésből mindig `-2` levonandó, mivel egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb a "kifulladására" játszani.
 
-Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikába áll be, akkor a fenti csökkentés `-10` értékre módosul.
+Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikába áll be, akkor a fenti csökkentés `-3` értékre módosul.
 
 **Tipp**: ezen hatás ellen megfontolandó lehet a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
 
-🔆 Megjegyzés: a szabály-mechanika a [Harcos elme](fortelyok.harci/harcos_elme.md) nem-létező `5.fokaként` képzelhető el.
+🔆 Megjegyzés: a szabály-mechanika a [Harcos elme](fortelyok.harci/harcos_elme.md) nem-létező `5.fokaként` képzelhető el. ⭕k20
 
 <br />
 
@@ -187,30 +187,29 @@ Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix ért
 
 ```
 -2 penge különbség (alakzaté)
-  VÉ csökkentés: 3
+  VÉ csökkentés: 1
 
 -1 penge különbség (alakzaté)
-  VÉ csökkentés: 5
+  VÉ csökkentés: 2
 
 Azonos pengehossznál:
-  VÉ csökkentés: 7
+  VÉ csökkentés: 3
 
 +1 penge különbség (alakzaté)
-  VÉ csökkentés: 10
+  VÉ csökkentés: 4
 
 +2 penge különbség (alakzaté)
-  VÉ csökkentés: 15
+  VÉ csökkentés: 5
 ```
 
 #### Túlerő módosítója
 
 ```
-3 fő: +0 VÉ csökkentés
-4 fő: +1 VÉ csökkentés
-5+ fő: +2 VÉ csökkentés
+3  fő: +0 VÉ csökkentés
+5+ fő: +1 VÉ csökkentés
 ```
 
-Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-17 VÉ csökkenést` szenved el.
+Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-6 VÉ csökkenést` szenved el.
 
 <br />
 
@@ -250,11 +249,13 @@ A jellemző főfegyver sebzése.
 ---
 ## Alakzat taktikái, Manőverek
 
+⭕k20
+
 Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok is csak fix értékekkel:
-- Támadó - fixen `TÉ:+10 / VÉ:-20`
-- Védő - fixen `TÉ:+10 / VÉ:-20`
-- Roham - `TÉ:+20`, `VÉ:-40`
-- Fárasztó - `+5`; sebzés helyett `+10` VÉ csökkentés
+- Támadó - fixen `TÉ:+10 / VÉ:-20` ⭕k20
+- Védő - fixen `TÉ:+10 / VÉ:-20`  ⭕k20
+- Roham - `TÉ:+20`, `VÉ:-40`  ⭕k20
+- Fárasztó - `+5`; sebzés helyett `+10` VÉ csökkentés   ⭕k20
 
 Manőverek használata nem lehetséges.
 
@@ -286,9 +287,9 @@ Minden szabály ugyanaz, mint a fent leírtak, kivéve az alábbiak:
 ```
 1 támadás / kör mindkét alakzatnak
 
-VÉ csökkentés/kör: 5
+VÉ csökkentés/kör: 2
 
-+1 VÉ csökkentés
++1 VÉ csökkentés   (⭕k20)
   túlerő személyenként
   (max: +5-ig)
 ```

@@ -1,6 +1,7 @@
 ## Primer és Szekunder ismeretek kategóriái
 
 A `Szilánk` rendszere alatt `KP`-ból tanulható ismereteket két önkényesen meghatározott kategóriára bontottuk:
+
 - **Primer**: "kalandozásban nagyon hasznos"
 - **Szekunder**: "kalandozásban átlagosan hasznos"
 

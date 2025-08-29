@@ -23,7 +23,7 @@ Ezen értékek öt jellemzőből épülnek fel:
 Az alábbiakban részletesen kifejtjük a fenti értékek kiszámítási módját, valamint hogy mi és hogyan képes módosítani őket.
 
 ---
-### Harcérték Alapok ✅ k20
+### Harcérték Alapok
 
 Első szinten minden karakter egységes konstans értékeket kap `KÉ`, `TÉ`, `VÉ` és `CÉ` értékére. Ehhez az alapértékhez adódnak majd hozzá az egyéb módosítók.
 
@@ -39,7 +39,7 @@ CÉ konstans: -10
 
 ### Kezdeményező érték (`KÉ`)
 
-⭕k20
+⭕k20: ha egységes KÉ lesz, átdolgozni
 
 A Kezdeményező Érték (**KÉ**) szerepe a harcban, hogy meghatározza, ki „mozdul először” a harcban. Nem jelent harci dominanciát, csak azt, hogy ki a gyorsabb, ki cselekedhet előbb.
 
@@ -60,13 +60,12 @@ A karakter Kezdeményező Értékét a következőképpen kell kiszámítani:
 |          Intelligencia           | A karakter Intelligencia Tulajdonsága                                                                                                                                                                                                                         |
 |              Szint               | A karakter szintje                                                                                                                                                                                                                                            |
 | Harcmodor KÉ /<br />Varázslás KÉ | [Harcmodor képzettség](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szintje által kapott bónusz /<br />[Mágia Tradíció](051_00_magia_tradiciok.md) által kapott bónusz (mintha [Harcmodor képzettség](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) lenne) |
-|      Mesterfegyver fortély       | `+1` fokonként (csak harcos `KÉ` esetén)                                                                                                                                                                                                                      |
 |            Speciális             | - Gyors Kezdeményezés fortély `KÉ` bónusza<br />- Szituációkból adódó módosítók<br />- Mágia hatására kapott módosító                                                                                                                                         |
 
 <br />
 
 ---
-### Támadó Érték (`TÉ`) ✅ k20
+### Támadó Érték (`TÉ`)
 
 A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott fegyverrel milyen hatékonyan képes ellenfele ellen támadást, támadásokat intézni.
 
@@ -90,8 +89,6 @@ Az alábbi táblázat megadja, a Támadó Érték kiszámolásának módját.
 ---
 ### Védő Érték (`VÉ`)
 
- ✅ k20
-
 A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képességét, hogy mennyire hatásosan képes elhárítani, elkerülni az ellene intézett csapásokat. Értéke nem mondható konstansnak, hisz a harci helyzettől függően változik, ráadásul kihat rá a testi-lelki, szellemi fáradság és persze a [sebesülés](061_03_sebesules.md) is.
 
 |          🗡️          | Védő Érték meghatározása                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
@@ -112,8 +109,6 @@ A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képess�
 ### Védő Érték (`VÉ`) - mozgás jellege és mérete szerint
 
 Van olyan helyzet, mikor a karakter képtelen a védekezésre. Vagy valamilyen [Státusz](082_statuszok.md) hatására, vagy nincs tudatában, hogy épp támadás éri. Ilyenkor a teste mozgásának jellege adja az összes **Védő Értékét**, akár egy mozgó tárgynak - az alábbi táblázat szerint:
-
-✅ k20
 
 | **Célpont mozgásának jellege**    | **VÉ** |
 | --------------------------------- | :----: |
