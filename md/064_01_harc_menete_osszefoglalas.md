@@ -2,23 +2,24 @@
 ## A harc menete – összefoglalás
 
 ### 🧮 Harcértékek
+
 ```
-KÉ = 10
-   + (Gyorsaság + Intelligencia)
+KÉ = 10⭕k20
+   + (Gyorsaság + Intelligencia)⭕k20
    + Tapasztalati szint
    + Harcmodor/Mágia-Tradíció bónusz
    + Mf bónusz
    + Fegyver KÉ
 
-TÉ = 20
-   + 2 x (Erő + Ügyesség + Gyorsaság)
+TÉ = 20⭕k20
+   + 2 x (Erő + Ügyesség + Gyorsaság)⭕k20
    + TÉ HM
    + Harcmodor/Mágia-Tradíció bónusz
    + Mf bónusz
    + Fegyver TÉ
 
-VÉ = 120
-   + 2 x (Ügyesség + Gyorsaság)
+VÉ = 120⭕k20
+   + 2 x (Ügyesség + Gyorsaság)⭕k20
    + VÉ HM
    + Harcmodor/Mágia-Tradíció bónusz
    + Mf bónusz
@@ -30,8 +31,8 @@ VÉ Bónusz:
     - félvért VÉ:+5
     - teljes vért VÉ:+10
 
-CÉ = -30
-   + (2 x Önuralom)
+CÉ = -30⭕k20
+   + (2 x Önuralom)⭕k20
    – 30 (Konstans)
    + CM
    + Harcmodor/Mágia-Tradíció bónusz
@@ -87,33 +88,32 @@ Előnyös/hátrányos helyzetű harcos:
 ---
 ### 😵 TÉ < VÉ  → VÉ csökkentés
 
-#### [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
-
-```
-Mindkét fél Nagykockával csökkent (k100)
-
-Példa: 58  → 8
-```
-
 #### [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
 ```
-Kiskocka értékével csökkent (k100)
-  Példa: 58  → 5
+VÉ csökkentés:
+  1 + k20 tizes része
+```
+
+#### [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
+
+```
+Mindkét fél csökkent:
+  2 + k20 tizes része
 ```
 
 #### [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
 
 ```
-Nagykocka értékével csökkent (k100)
-  Példa: 58  → 8
+VÉ csökkentés:
+  2 + k20 tizes része
 ```
 
 #### [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
 
 ```
-(Nagykocka+1) értékével csökkent (k100)
-  Példa: 58  → 9
+VÉ csökkentés:
+  3 + k20 tizes része
 ```
 
 <br />
@@ -193,10 +193,10 @@ Teljes, fenyegetetlen nyugalom szükséges!
 #### Győzelmi szabály
 
 ```
-VÉ: +10
+VÉ: +3
 ```
 
-Ha a karakter végzett egy - hozzá hasonló tudású, vagy erősebb - ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+10` pont.\
+Ha a karakter végzett egy - hozzá hasonló tudású, vagy erősebb - ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3` pont.\
 Ez a siker hatása a szervezetre + heroizmus. Persze itt is lehetnek kivételek (barát megölése, stb).
 
 <br />
@@ -238,18 +238,15 @@ Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#mozgás
 Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a játékot. Ilyenkor a következő – opcionális – szabályt javasoljuk:
 
 ```
-- TÉ: osztás 10-zel, kerekítés (1-5: le, 6-9: fel)
-- VÉ: osztás 10-zel
-- TÉ: +2 mindenkinek (az osztás után)
+- TÉ: +7 mindenkinek (az osztás után)
 - Nincs VÉ csökkentés
 - Nincs páncéldobás
 - Nincs Manőver használat
-- Támadó dobás: k10
 - Erősített sebzés:
-  1-10:   6 ÉP
-  11-20: 12 ÉP
-  21-30: 20 ÉP
-  31-től halál
+  1-10:   6 ÉP⭕
+  11-20: 12 ÉP⭕
+  21-30: 20 ÉP⭕
+  31-től halál⭕
 ```
 
 ---
