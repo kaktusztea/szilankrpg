@@ -2,17 +2,19 @@
 
 Ha a karakter találatot kap, harcértékeit - fizikumától függően - levonások sújtják. Persze ami például egy nyeszlett alakot az összeesés szélére sodor, az nem okoz akkora hátrányt egy edzett korgnak.
 
-Ezért kerültek bevezetésre a sebesülés kategóriák. A karakter Életerejét 4 kategória szimbolizálja, melyek között karakteralkotáskor kell elosztani az **Életerő Pontokat.** (Lásd [Karakteralkotás – Életerő Pontok](018_01_ep_kt.md))
+Ezért kerültek bevezetésre a sebesülés kategóriák. A karakter Életerejét `4` kategória szimbolizálja, melyek között karakteralkotáskor kell elosztani az **Életerő Pontokat.** (Lásd [Karakteralkotás – Életerő Pontok](018_01_ep_kt.md))
 
 Mikor a karaktert sebesülés éri, elkezdi bejelölni az Életerő táblázatban a legmagasabb (`S1`) kategóriában lévő mezőket fentről lefelé. Mikor az első oszlop „betelt”, folytatja az `S2`, majd az `S3` kategóriában levőkkel és így tovább.
 
-Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteket, hanem a sebesülés „sorszámát” (hányadik seb a harc során) és annak jellegét (S,V,Z) írjuk beléjük (Szúró,Vágó,Zúzó), megkönnyítve a dolgunkat: rögtön látjuk, hány és mekkora sebünk van. (Az `FP` sérülések mezőbe pedig „`F`” betűt írjunk). Példa: „`Z2`” jelölés 4 db rubrikában: ez a karakter második sebe és egy `4 ÉP`-s zúzott sebet jelöl.
+Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteket, hanem a sebesülés „sorszámát” (hányadik seb a harc során) és annak jellegét (`S,V,Z`) írjuk beléjük (`Szúró,Vágó,Zúzó`), megkönnyítve a dolgunkat: rögtön látjuk, hány és mekkora sebünk van. (Az `FP` sérülések mezőbe pedig „`F`” betűt írjunk). Példa: „`Z2`” jelölés 4 db rubrikában: ez a karakter második sebe és egy `4 ÉP`-s zúzott sebet jelöl.
+
+⭕k20: ábrát utánahúzni: `TÉ` levonás:  `-3`; `-6` és `-9`
 
 ![](images/02_eletero_tablazat_harcertek_levonassal.png)
 
 Az első (`S1`) kategóriában lévő karaktert még nem sújtják negatív módosítók, sérülése – számára – olyan könnyű, ami nem akadályozza a harcban.
 
-Az `S2`, `S3` és `S4` kategóriákba kerülve viszont már rendre `-10`; `-20` és `-30` `TÉ` a harcérték büntetés. Ezeket az értékeket viszont mérsékli az [Önuralom](014_01_tulajdonsagok.md#-%C3%B6nuralom) Tulajdonság és a [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség összege. Így tehát a levonások értéke karakterenként változik.
+Az `S2`, `S3` és `S4` kategóriákba kerülve viszont már rendre `-3`; `-6` és `-9` `TÉ` a harcérték büntetés. Ezeket az értékeket viszont mérsékli a [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség: minden `3.szint` csökkent `1` büntetést (↓). Így tehát a levonások értéke karakterenként változik.
 
 `0 ÉP`-re érve a karakter elájul, és haldokolni kezd (Lásd [Haldoklás](#haldokl%C3%A1s)). Ha további sebet kap, meghal.
 
@@ -28,12 +30,12 @@ Ha harc közben más sebesülés kategóriába (S) lép a karakter, akkor fix `T
 
 ```
 TÉ levonás
-  - (Önuralom + Fájdalomtűrés)
+  - (Fájdalomtűrés szint harmada ↓)
 ```
 
-|     -      | S1  |  S2   |  S3   |  S4   |
-| :--------: | :-: | :---: | :---: | :---: |
-| TÉ levonás | `-` | `-10` | `-20` | `-30` |
+|     -      | S1  |  S2  |  S3  |  S4  |
+| :--------: | :-: | :--: | :--: | :--: |
+| TÉ levonás | `-` | `-3` | `-6` | `-9` |
 
 ### `S4` kategóriás fájdalomtűrés
 
@@ -52,12 +54,12 @@ Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
 ---
 ### ⚡ Példa Fájdalomtűrés `TÉ` módosítóira
 
-Tetves, a tolvaj Fájdalomtűrése `7.szintű`, `Önuralma:+1` (`összesen:8`)
+Tetves, a tolvaj Fájdalomtűrése `7.szintű`, ennek harmada: `2`
 Ekkor az ő sebesülés táblázata így néz ki:
 
-| - | S1 | S2 | S3 | S4 |
-| :-----: | :----: | :----: | :----: | :----: |
-| TÉ levonás | - | -2 | -12 | -22 |
+|     -      | S1  | S2  | S3  | S4  |
+| :--------: | :-: | :-: | :-: | :-: |
+| TÉ levonás |  -  |  -  | -4  | -7  |
 
 ---
 ### Fájdalomtűrés harcon kívül

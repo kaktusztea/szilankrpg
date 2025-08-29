@@ -130,8 +130,8 @@ X: fegyver alap sebzése
 ```
 
 ```
-- Többszörös találat (TÉ > VÉ+20 ⭕k20):
-      20-anként SP:+3   (max +9 SP)
+- Többszörös találat (TÉ > VÉ+4):
+      4-enként SP:+3   (max +9 SP)
 - Roham: SP:+5
 - Támadás erőből fortély bónusza
 ```

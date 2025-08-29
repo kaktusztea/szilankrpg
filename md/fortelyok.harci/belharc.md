@@ -15,11 +15,10 @@ Bővebben:
 - Gyorsaság: `+1`
 - Közelharc - `6.szint`
 
-
 🌟 **Hatás**:
-- `KÉ:+2`
-- `TÉ:+4`
-- `VÉ:+4`
+- `KÉ:+1`
+- `TÉ:+2`
+- `VÉ:+2`
 
 ---
 ### 2. fok
@@ -29,11 +28,10 @@ Bővebben:
 - Gyorsaság: `+2`
 - Közelharc - `9.szint`
 
-
 🌟 **Hatás**:
-- `KÉ:+4`
-- `TÉ:+8`
-- `VÉ:+8`
+- `KÉ:+2`
+- `TÉ:+4`
+- `VÉ:+4`
 
 <br />
 

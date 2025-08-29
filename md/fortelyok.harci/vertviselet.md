@@ -21,7 +21,7 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 🌟 **Hatás**:
 - A vért teljes MGT-je érvényesül.
 - Ha nehézvértet vesz fel a karakter teljesen képzetlenül, akkor a képzetlen fegyverhasználat büntetéseinek megfelelő levonások sújtják:
-  - `KÉ: -20`, `TÉ: -30`, `VÉ:-30`
+  - `KÉ:-6; TÉ/VÉ/CÉ :-9`
 - Nehéz vért: Lánc/Sodrony, Pikkely fémpáncél, Lemez
 - A fenti érték és az MGT okozta levonás közül a hátrányosabb az érvényes.
 
@@ -51,8 +51,8 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 🌟 **Hatás**:
 - Vérted `MGT` értéke `35`-tel csökken
 - Tudatos vérthasználat lecsúsztatásokkal:
-  - Lemez félvért esetén `VÉ:+5` bónusz
-  -  Lemez teljes vért esetén `VÉ:+10` bónusz
+  - Lemez félvért esetén `VÉ:+1` bónusz
+  -  Lemez teljes vért esetén `VÉ:+3` bónusz
 
 <br />
 

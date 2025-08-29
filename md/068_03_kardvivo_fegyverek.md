@@ -4,7 +4,7 @@
 MK: Másfélkezes fegyverek
     egy kézzel forgatva
 
-- KÉ:-3,  TÉ:-5,  VÉ:-5
+- KÉ:-1,  TÉ:-2,  VÉ:-2
 - Átütés megszűnik (ha volt)
 - Erőbónusz limit csökken
   (általában 2-re)

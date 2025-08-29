@@ -171,12 +171,12 @@ Ha úgy döntesz, hogy a fenti feltételekkel lemondasz a kezdeményezésről, c
 
 ```
 Ha nincs találat
-  VÉ csökkentés: alap +1 extra ⭕k20
+  VÉ csökkentés extra: +1
 ```
 
 ```
 Sebzés helyett:
-  VÉ csökkentés: 3 + k20 tizes része ⭕k20
+  VÉ csökkentés: 3 + k20 tizes része
 ```
 
 ❌ Más taktikával együtt
@@ -189,7 +189,7 @@ Sebzés helyett:
 
 Ha fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta, akkor a harc ugyanúgy folyik, mint más esetben, csak
 - ha nem érsz el találatot támadó dobásod során, akkor  **VÉ csökkentésedre** `+1` bónuszt kapsz
-- Sebző támadás esetén pedig elmarad maga a sebzés, helyette [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20 tizes része`. (⭕k20) A Többszörös találat nem növeli tovább a `VÉ` csökkentést.
+- Sebző támadás esetén pedig elmarad maga a sebzés, helyette [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20 tizes része`. A Többszörös találat nem növeli tovább a `VÉ` csökkentést.
 
 A Fárasztó taktikának leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a „vadat”, míg vezetőjük felkészül.
 

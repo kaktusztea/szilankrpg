@@ -42,7 +42,7 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 - Követelmény: -
 - Taktikák: Átsiklás közben nem végezhető semmilyen Harci taktika.
 
-**Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás: támadóddal **Gyorsaság** ellenpróba. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy támadást rád hátulról (`+10 TÉ`).
+**Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás: támadóddal **Gyorsaság** ellenpróba. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_01_harci_helyzetek.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) módosítóival.
 
 <br />
 
