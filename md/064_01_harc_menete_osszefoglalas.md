@@ -130,7 +130,7 @@ X: fegyver alap sebzése
 ```
 
 ```
-- Többszörös találat (TÉ > VÉ+4):
+- Többszörös találat (TÉ >= VÉ+4):
       4-enként SP:+3   (max +9 SP)
 - Roham: SP:+5
 - Támadás erőből fortély bónusza
@@ -235,10 +235,10 @@ Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a 
 - Nincs páncéldobás
 - Nincs Manőver használat
 - Erősített sebzés:
-  1-10:   6 ÉP⭕
-  11-20: 12 ÉP⭕
-  21-30: 20 ÉP⭕
-  31-től halál⭕
+  1-10:   6 ÉP  ⭕k20
+  11-20: 12 ÉP  ⭕k20
+  21-30: 20 ÉP  ⭕k20
+  31-től halál  ⭕k20
 ```
 
 ---
