@@ -4,7 +4,7 @@ Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobha
 
 Legyőzni a fájdalmat, legyőzni önmagunkat. Ez a képzettség nem véletlenül kapcsolódik szorosan a harchoz, hiszen az a harcos, aki nem képes legyűrni sebei fájdalmát, hamar elhullik. 
 
-A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási okokból - statikus módon került beszámításra. Részleteket lásd a Harcrendszer [Sebesülés](../061_03_sebesules.md) fejezetében.
+A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási okokból - statikus módon került beszámításra. Részleteket lásd a Harcrendszer [Sebesülés](../061_03_sebesules.md#f%C3%A1jdalomt%C5%B1r%C3%A9s-harc-k%C3%B6zben) fejezetében.
 
 Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve kínzás elviselésénél is.
 
