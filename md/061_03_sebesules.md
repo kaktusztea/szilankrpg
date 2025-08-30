@@ -8,8 +8,6 @@ Mikor a karaktert sebesülés éri, elkezdi bejelölni az Életerő táblázatba
 
 Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteket, hanem a sebesülés „sorszámát” (hányadik seb a harc során) és annak jellegét (`S,V,Z`) írjuk beléjük (`Szúró,Vágó,Zúzó`), megkönnyítve a dolgunkat: rögtön látjuk, hány és mekkora sebünk van. (Az `FP` sérülések mezőbe pedig „`F`” betűt írjunk). Példa: „`Z2`” jelölés 4 db rubrikában: ez a karakter második sebe és egy `4 ÉP`-s zúzott sebet jelöl.
 
-⭕k20: ábrát utánahúzni: `TÉ` levonás:  `-3`; `-6` és `-9`
-
 ![](images/02_eletero_tablazat_harcertek_levonassal.png)
 
 Az első (`S1`) kategóriában lévő karaktert még nem sújtják negatív módosítók, sérülése – számára – olyan könnyű, ami nem akadályozza a harcban.
