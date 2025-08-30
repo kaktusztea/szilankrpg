@@ -180,19 +180,19 @@ Silány munka, vagy messze földön híres fegyverkovács mester remeke - külö
 
 A minőség a tárgy - ezúttal fegyver - Ideájának erejét is mutatja: mennyire alkalmas arra a célra, amire készítették. A fentiekben semmilyen mágia nem játszik szerepet, pusztán az elkészítés minőségét mutatja. A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** is hatással van.
 
-| Fegyverek minősége | Módosítók                    |    Ár    |
-| :----------------: | :--------------------------- | :------: |
-|        `-5`        | `KÉ:-5; TÉ,CÉ,VÉ:-10; SP:-5` | `1/13 x` |
-|        `-4`        | `KÉ:-4; TÉ,CÉ,VÉ:-8, SP:-4`  | `1/10 x` |
-|        `-3`        | `KÉ:-3; TÉ,CÉ,VÉ:-6, SP:-3`  | `1/7 x`  |
-|        `-2`        | `KÉ:-2; TÉ,CÉ,VÉ:-4, SP:-2`  | `1/4 x`  |
-|        `-1`        | `KÉ:-1; TÉ,CÉ,VÉ:-2, SP:-1`  | `1/2 x`  |
-|        `0`         |                              |   `1x`   |
-|        `+1`        | `KÉ:+1; TÉ,CÉ,VÉ:+2; SP:+1`  |   `2x`   |
-|        `+2`        | `KÉ:+2; TÉ,CÉ,VÉ:+4; SP:+2`  |   `4x`   |
-|        `+3`        | `KÉ:+3; TÉ,CÉ,VÉ:+6; SP:+3`  |   `7x`   |
-|        `+4`        | `KÉ:+4; TÉ,CÉ,VÉ:+8; SP:+4`  |  `10x`   |
-|        `+5`        | `KÉ:+5; TÉ,CÉ,VÉ:+10; SP:+5` |  `13x`   |
+| Fegyverek minősége | Módosítók                |    Ár    |
+| :----------------: | :----------------------- | :------: |
+|        `-5`        | `TÉ,CÉ:-3; VÉ:-2; SP:-5` | `1/13 x` |
+|        `-4`        | `TÉ,CÉ:-2; VÉ:-2; SP:-4` | `1/10 x` |
+|        `-3`        | `TÉ,CÉ:-2; VÉ:-1; SP:-3` | `1/7 x`  |
+|        `-2`        | `TÉ,CÉ:-1; VÉ:-1; SP:-2` | `1/4 x`  |
+|        `-1`        | `TÉ,CÉ:-1; VÉ:-0; SP:-1` | `1/2 x`  |
+|        `0`         |                          |   `1x`   |
+|        `+1`        | `TÉ,CÉ:+1; VÉ:+0; SP:+1` |   `2x`   |
+|        `+2`        | `TÉ,CÉ:+1; VÉ:+1; SP:+2` |   `4x`   |
+|        `+3`        | `TÉ,CÉ:+2; VÉ:+1; SP:+3` |   `7x`   |
+|        `+4`        | `TÉ,CÉ:+2; VÉ:+2; SP:+4` |  `10x`   |
+|        `+5`        | `TÉ,CÉ:+3; VÉ:+2; SP:+5` |  `13x`   |
 
 #### 🔆 Mágikus fegyverek és a fegyver Ideája
 
