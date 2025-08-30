@@ -5,15 +5,15 @@
 - [Fegyverméret elnevezések, szabályok](#fegyverm%C3%A9ret-elnevez%C3%A9sek-szab%C3%A1lyok)
 - [Jellemző pengehosszok](068_01_fegyverek_altalanos_szabalyai.md#jellemz%C5%91-pengehosszok)
 - [Sebzéstípusok](068_01_fegyverek_altalanos_szabalyai.md#sebz%C3%A9st%C3%ADpusok)
-- KF: Különleges fegyver szabály
-- MK: Másfélkezes fegyverek egy kézzel forgatva
-- Íves fegyver
-- Puszta kéz
-- Érintő támadás
-- Erőbónusz limit
-- Átütés
-- Fegyver mozgásgátló hatása
-- Fegyverek minősége (Ideája)
+- [KF: Különleges fegyver szabály](068_01_fegyverek_altalanos_szabalyai.md#kf-k%C3%BCl%C3%B6nleges-fegyver-szab%C3%A1ly)
+- [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_fegyverek_altalanos_szabalyai.md#mk-m%C3%A1sf%C3%A9lkezes-fegyverek-egy-k%C3%A9zzel-forgatva)
+- [Íves fegyver](068_01_fegyverek_altalanos_szabalyai.md#%C3%ADves-fegyver)
+- [Puszta kéz](068_01_fegyverek_altalanos_szabalyai.md#puszta-k%C3%A9z)
+- [Érintő támadás](068_01_fegyverek_altalanos_szabalyai.md#%C3%A9rint%C5%91-t%C3%A1mad%C3%A1s)
+- [Erőbónusz limit](068_01_fegyverek_altalanos_szabalyai.md#er%C5%91b%C3%B3nusz-limit)
+- [Átütés](068_01_fegyverek_altalanos_szabalyai.md#%C3%A1t%C3%BCt%C3%A9s)
+- [Fegyver mozgásgátló hatása](068_01_fegyverek_altalanos_szabalyai.md#fegyver-mozg%C3%A1sg%C3%A1tl%C3%B3-hat%C3%A1sa)
+- [Fegyverek minősége (Ideája)](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-min%C5%91s%C3%A9ge-ide%C3%A1ja)
 
 ### Fegyverméretek, általános fegyver-harcértékek
 
