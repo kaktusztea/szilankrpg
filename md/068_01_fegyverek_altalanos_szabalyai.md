@@ -1,5 +1,20 @@
 ## Fegyverek általános szabályai
 
+
+- [Fegyverméretek, általános fegyver-harcértékek](068_01_fegyverek_altalanos_szabalyai.md#fegyverm%C3%A9retek-%C3%A1ltal%C3%A1nos-fegyver-harc%C3%A9rt%C3%A9kek)
+- [Fegyverméret elnevezések, szabályok](#fegyverm%C3%A9ret-elnevez%C3%A9sek-szab%C3%A1lyok)
+- [Jellemző pengehosszok](068_01_fegyverek_altalanos_szabalyai.md#jellemz%C5%91-pengehosszok)
+- [Sebzéstípusok](068_01_fegyverek_altalanos_szabalyai.md#sebz%C3%A9st%C3%ADpusok)
+- KF: Különleges fegyver szabály
+- MK: Másfélkezes fegyverek egy kézzel forgatva
+- Íves fegyver
+- Puszta kéz
+- Érintő támadás
+- Erőbónusz limit
+- Átütés
+- Fegyver mozgásgátló hatása
+- Fegyverek minősége (Ideája)
+
 ### Fegyverméretek, általános fegyver-harcértékek
 
 Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – méret szerint. A lentiek irányadó értékek, az egyes konkrét fegyverek számai ettől eltérnek, viszont új fegyver beillesztése a rendszerbe így gyerekjáték.
@@ -65,7 +80,7 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
 <br />
 
 ---
-### Különleges fegyver szabály
+### KF: Különleges fegyver szabály
 
 ```
 Jelölése: KF
@@ -85,7 +100,7 @@ A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](
 <br />
 
 ---
-### Másfélkezes fegyverek egy kézzel forgatva
+### MK: Másfélkezes fegyverek egy kézzel forgatva
 
 Ha egy kézzel forgatod az alapvetően két kézre tervezett másfélkezes fegyveredet, akkor az alábbi levonásokat kapod harcértékeidre:
 
@@ -96,6 +111,18 @@ Ha egy kézzel forgatod az alapvetően két kézre tervezett másfélkezes fegyv
   (általában 2-re)
 - Sebesség marad
 ```
+
+<br />
+
+---
+### Íves fegyver
+
+```
++2 SP páncélozatlan
+   ellenfél ellen
+```
+ 
+Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellenük `+2 SP` bónusz jár.
 
 <br />
 
@@ -111,11 +138,7 @@ Puszta kéz:  KÉ:-10,  TÉ:-10,  VÉ:-10
 ---
 ### Érintő támadás
 
-Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt könnyebben megteheti a támadó. Támadó Értékére nem jár levonás:
-
-```
-Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
-```
+Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt könnyebben megteheti a támadó az [Érintő taktika](065_02_harci_taktikak.md#%C3%A9rint%C5%91-taktika-) alkalmazásával.
 
 <br />
 
@@ -136,18 +159,6 @@ Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
 ### Átütés
 
 → Lásd a [Fegyver sebzés jellege fejezetet](064_02_05_fegyver_sebzes_jellege.md#%C3%A1t%C3%BCt%C3%A9s).
-
-<br />
-
----
-### Íves
-
-```
-+2 SP páncélozatlan
-   ellenfél ellen
-```
- 
-Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellenük `+2 SP` bónusz jár.
 
 <br />
 
