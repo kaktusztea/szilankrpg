@@ -132,7 +132,7 @@ Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellen
 A Puszta kéz kiemelt „fegyver”, hiszen mindig „ott van”. Puszta kézzel viszont bármilyen fegyver ellen meglehetősen kellemetlen harcolni, hiszen nincs mivel távol tartani, fenyegetni az ellenfelet. Ezért a Puszta kéz harcértékei mindenkinek a következők:
 
 ```
-Puszta kéz:  KÉ:-10,  TÉ:-10,  VÉ:-10
+Puszta kéz:  KÉ:-3,  TÉ:-3,  VÉ:-3
 ```
 
 ---
