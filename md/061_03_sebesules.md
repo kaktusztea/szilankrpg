@@ -74,8 +74,7 @@ Ha megsérül a karakter és `S3`, vagy `S4` kategóriába került, akkor ["Sér
 ---
 ### ⚡ Példa a sebesülésre
 
-Az alábbi példa Lord Gustav – Domvik lovagjának – egészség kategóriáit mutatja. `17 ÉP`-je van, `Önuralom` tulajdonságának és `Fájdalomtűrés` képzettségének összege pedig `11`.
-`(Önuralom + Fájdalomtűrés) = 11`
+Az alábbi példa Lord Gustav – Domvik lovagjának – egészség kategóriáit mutatja. `17 ÉP`-je van, `Fájdalomtűrés` képzettsége: `5.szint`
 
 Ebben az esetben az ő Életerő táblázata a következőképpen néz ki: minden oszlopba `4` - `4` `ÉP` kerül (`17 / 4` kerekítve). A maradék `1 ÉP`-t pedig balról jobbra „osztjuk el”, tehát az `S1` oszlopba kerül.
 
@@ -89,9 +88,9 @@ Sebek jellegének jelölései:
 
 Találat esetén a sebesülést először az `S1` rubrikában kezdjük jelölni, oszlopon belül pedig fentről lefelé. Ha Lord Gustav egy `2 ÉP`-s sebet kap, az az `S1` oszlopban kerül bejelölésre fentről lefele. Ilyenkor még nem sújtja levonás.
 
-Gustav ismét megsebesül. Ezúttal `5 ÉP`, ezzel az `S2` kategóriába kerül. Mivel a `(Fájdalomtűrés+Önuralom=11)` mérsékli a standard `S2`-nél használt (`TÉ:-10`) büntetést, ezért még itt sincs `TÉ` levonás.
+Gustav ismét megsebesül. Ezúttal `5 ÉP`, ezzel az `S2` kategóriába kerül. Mivel a `Fájdalomtűrés` mérsékli a standard `S2`-nél használt (`TÉ:-3`) büntetést, ezért még itt sincs `TÉ` levonás.
 
-A harmadik seb `4 ÉP`, Gustav a harmadik (közepesen sérült) kategóriába kerül. Alapból (`TÉ:-20`) lenne a büntetés, de ez (`TÉ:-9`)-re mérséklődik (`-11`).
+A harmadik seb `4 ÉP`, Gustav a harmadik (közepesen sérült) kategóriába kerül. Alapból (`TÉ:-6`) lenne a büntetés, de ez (`TÉ:-9`)-re mérséklődik (`-11`).
 
 Gustav hátrálás közben belefejel a kovácsoltvas kapuba. `4 FP` a büntetése. Ezzel az `S4` (utolsó) kategóriába került. Büntetése `TÉ:-19` (a `-30` helyett).
 
