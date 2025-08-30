@@ -13,7 +13,7 @@ Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkenth
 
 🔒 **Követelmény**: Edzettség: `+1`
 
-🌟 **Hatás**: Ha `k20` támadó dobásod legalább `11` volt, akkor a levonás csak `TÉ:-3`
+🌟 **Hatás**: Ha `k20` támadó dobásod páratlan szám volt, akkor a levonás csak `TÉ:-3`
 
 ### 2. fok
 
