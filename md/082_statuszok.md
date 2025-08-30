@@ -348,12 +348,17 @@ Lásd a [Méregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait*
 
 A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**. A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
 
-- `1 MGT → -1 KÉ, TÉ`
-- `Hátrány-1;2;3;4;5`
-  - Fizikai Képzettségpróbákra
-  - Fizikai Tulajdonságpróbákra
+```
+3 MGT → -1 TÉ  ↓
+```
 
-⭕TODO⭕ 5 fokú Hátrány táblázat? [Agórán megbeszélni](https://github.com/kaktusztea/szilankrpg/wiki/AGORA#mgt-%C3%A9s-a-fizikai-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9g-pr%C3%B3badob%C3%A1sok) ⭕
+Tehát minden `3. MGT` hatása `TÉ:-1` büntetése
+
+Fizikai Tulajdonságpróbákra és Képzettségpróbákra
+- `0-10 MGT`: nincs bünti
+- `11-20 MGT`: `Hátrány-1` próbákra
+- `21-30` MGT: `Hátrány-2` próbákra
+- `31+ MGT`: nem dobhatsz
 
 **Kapcsolódik**:
 - [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet
