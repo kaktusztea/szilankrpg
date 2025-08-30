@@ -2,7 +2,10 @@
 
 Ismered a fegyvereket remekül kiegészítő pajzsok használatát.
 
-Lásd bővebben: [Harcrendszer - Pajzsok, pajzshasználat](../064_02_09_pajzsok_pajzshasznalat.md)
+### Kapcsolódik
+
+- [Harcrendszer: Pajzsok, pajzshasználat](../064_02_09_pajzsok_pajzshasznalat.md) fejezet
+- [Pajzs fegyverek](../068_09_pajzs_fegyverek.md) harcértékei
 
 Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon még `TÉ` levonást okoz a használó oldalán. Ezek a hátrányon magasabb fokokon enyhülnek.
 
@@ -54,7 +57,7 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 
 🌟 **Hatás**:
 - Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
-- Extra `VÉ:+1` minden pajzshoz
+- Extra `VÉ:+2` minden pajzshoz
 - **Kis pajzs** levonás: `0`
 - **Közepes pajzs** levonás: `0`
 - **Nagy pajzs** levonás: `0`

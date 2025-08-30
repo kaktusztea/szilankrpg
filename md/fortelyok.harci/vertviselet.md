@@ -50,9 +50,8 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 
 🌟 **Hatás**:
 - Vérted `MGT` értéke `35`-tel csökken
-- Tudatos vérthasználat lecsúsztatásokkal:
-  - Lemez félvért esetén `VÉ:+1` bónusz
-  -  Lemez teljes vért esetén `VÉ:+3` bónusz
+- Lemez mellvért esetén `VÉ:+3` bónusz
+  (tudatos vérthasználat lecsúsztatásokkal)
 
 <br />
 
