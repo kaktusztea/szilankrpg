@@ -69,11 +69,33 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
 
 ```
 Jelölése: KF
+
+- Tradíció követelmény
+  - A: Amund
+  - D: Dzsenn
+  - S: Slan
+  - F: Fejvadász
+- Mf: 2.fok követelmény
 ```
 
 Egyes – speciális – fegyvereknél van megemlítve ez a szabály. Jelentése: a táblázatban leírt harcértékek csak akkor érvényesek, ha speciális iskolában, vagy onnan származó mestertől megtanulta a karakter a fegyver speciális fogásait. Ez részben előtörténet követelmény, amelyet fel kell tüntetni a karakterlapon, másrészt a fegyver Megjegyzés mezőjében szerepel, milyen más, számszerű követelménye van. Bánjunk ezzel a követelménnyel szigorúan! Ha ez nincs meg, a KM dönt, hogy milyen – alacsonyabb – harcértékekkel forgathatja a karakter a fegyvert – már ha egyáltalán...
 
 A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) `2.foka` az adott fegyverre. Ezen speciális fogásokat fortélyok formájában tanulhatja meg a harcos. Leírásukat lásd a [harci fortélyoknál](044_harci_fortelyok.md). Azok a fegyverek számítanak „Speciálisnak”, amelyek komment mezőjében szerepel a `KF` jelölés.
+
+<br />
+
+---
+### Másfélkezes fegyverek egy kézzel forgatva
+
+Ha egy kézzel forgatod az alapvetően két kézre tervezett másfélkezes fegyveredet, akkor az alábbi levonásokat kapod harcértékeidre:
+
+```
+- KÉ:-1,  TÉ:-2,  VÉ:-2
+- Átütés megszűnik (ha volt)
+- Erőbónusz limit csökken
+  (általában 2-re)
+- Sebesség marad
+```
 
 <br />
 

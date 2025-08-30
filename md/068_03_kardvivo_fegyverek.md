@@ -1,30 +1,11 @@
 ## Kardvívó fegyverek
 
 ```
-MK: Másfélkezes fegyverek
-    egy kézzel forgatva
+MK: Másfélkezes fegyver
 
-- KÉ:-1,  TÉ:-2,  VÉ:-2
-- Átütés megszűnik (ha volt)
-- Erőbónusz limit csökken
-  (általában 2-re)
-- Sebesség marad
-```
+Íves fegyver: [0;1]
 
-```
-Íves fegyver:
-  +2 SP páncélozatlan
-  ellenfél ellen
-```
-
-```
-KF: Különleges felkészítés
-  - Tradíció követelmény
-    - A: Amund
-    - D: Dzsenn
-    - S: Slan
-    - F: Fejvadász
-  - Mf: 2.fok követelmény
+KF: Különleges fegyver
 ```
 
 <!-- tag: md_table_fegyver_start -->
