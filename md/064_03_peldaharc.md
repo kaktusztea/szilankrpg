@@ -1,4 +1,6 @@
-## Példaharc ⭕k20
+## Példaharc
+
+⭕k20
 
 ⚡Lássunk egy konkrét összecsapást, hiszen egy példa többet ér több oldal szabályleírásnál is!
 

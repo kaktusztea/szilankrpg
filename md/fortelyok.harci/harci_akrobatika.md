@@ -1,10 +1,10 @@
 ## 🟣 Harci akrobatika (2)
 
+⭕k20 adaptáció
+
 „Pattog, mint a nikkelbolha” - mondják, ha harcolni látnak.
 
 Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen...
-
-⭕k20 adaptáció
 
 ### 1. fok
 

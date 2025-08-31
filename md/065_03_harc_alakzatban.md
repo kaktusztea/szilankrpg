@@ -249,13 +249,13 @@ A jellemző főfegyver sebzése.
 ---
 ## Alakzat taktikái, Manőverek
 
-⭕k20
-
 Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok is csak fix értékekkel:
-- Támadó - fixen `TÉ:+10 / VÉ:-20` ⭕k20
-- Védő - fixen `TÉ:+10 / VÉ:-20`  ⭕k20
-- Roham - `TÉ:+20`, `VÉ:-40`  ⭕k20
-- Fárasztó - `+5`; sebzés helyett `+10` VÉ csökkentés   ⭕k20
+- Támadó - fixen `TÉ:+3 / VÉ:-6`
+- Védő - fixen `VÉ:+4 / TÉ:-8`
+- Roham - `TÉ:+4`, `VÉ:-8`
+- Fárasztó
+  - `+2` VÉ csökkentés ha nincs találat
+  - `+5` VÉ csökkentés sebzés helyett
 
 Manőverek használata nem lehetséges.
 
