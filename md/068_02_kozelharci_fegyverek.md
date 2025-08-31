@@ -76,17 +76,17 @@ A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/ha
 
 <!-- tag: md_table_haritofegyver_start -->
 
-| Hárítófegyver     | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | Átütés | Íves | MK  | KF  | Pengehossz | KÉ  | TÉ  |    VÉ    | Sebesség | Kategória  | Speciális |
-| ----------------- | :------------: | :-: | :-------------: | :----------: | :----: | :--: | :-: | :-: | :--------: | :-: | :-: | :------: | :------: | :--------: | --------- |
-| Hárító: Alkarvédő |    egykezes    | `-` |       `0`       |      `-      |  `0`   | `0`  | `0` | `0` |    `0`     | `0` | `0` | `10/5/0` |   `99`   | közelharci |           |
-| Hárító: Tonfa     |    egykezes    | `-` |       `0`       |      `-      |  `0`   | `0`  | `0` | `0` |    `0`     | `0` | `0` | `10/5/0` |   `99`   | közelharci |           |
+| Hárítófegyver     | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | Átütés | Íves | MK  | KF  | Pengehossz | KÉ  | TÉ  |   VÉ    | Sebesség | Kategória  | Speciális |
+| ----------------- | :------------: | :-: | :-------------: | :----------: | :----: | :--: | :-: | :-: | :--------: | :-: | :-: | :-----: | :------: | :--------: | --------- |
+| Hárító: Alkarvédő |    egykezes    | `-` |       `0`       |      `-      |  `0`   | `0`  | `0` | `0` |    `0`     | `0` | `0` | `3/2/0` |   `99`   | közelharci |           |
+| Hárító: Tonfa     |    egykezes    | `-` |       `0`       |      `-      |  `0`   | `0`  | `0` | `0` |    `0`     | `0` | `0` | `3/2/0` |   `99`   | közelharci |           |
 
 <!-- tag: md_table_haritofegyver_end -->
 
 ### Alkarvédő és Tonfa
 
-- Közelharci fegyverek ellen `VÉ:+10`
-- Egykezes, pengefegyverek ellen `VÉ:+5`
+- Közelharci fegyverek ellen `VÉ:+3`
+- Egykezes, pengefegyverek ellen `VÉ:+2`
 - Ennél nagyobb fegyverek ellen nem védenek.
 - Ha mindkét karon/kézben van, akkor is csak a fenti harcértékek az irányadóak, további bónusz nem jár.
 
