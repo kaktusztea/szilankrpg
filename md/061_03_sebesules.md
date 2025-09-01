@@ -24,11 +24,19 @@ A [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettsé
 ---
 ### Fájdalomtűrés harc közben
 
-Ha harc közben más sebesülés kategóriába (S) lép a karakter, akkor fix `TÉ` levonást kap büntetésül. Ennek értékét csökkenti statikusan az alábbiak összege:
+Ha harc közben más sebesülés kategóriába (S) lép a karakter, akkor fix `TÉ` levonást kap büntetésül. Ennek értékét csökkenti statikusan a Fájdalomtűrés képzettség egyes szintjei:
 
 ```
 TÉ levonás
-  - (Fájdalomtűrés szint harmada ↓)
+  - (Fájdalomtűrés enyhítése)
+
+4.szint:  1 TÉ enyhítés
+6.szint:  2 TÉ enyhítés
+8.szint:  3 TÉ enyhítés
+10.szint: 4 TÉ enyhítés
+12.szint: 5 TÉ enyhítés
+14.szint: 6 TÉ enyhítés
+15.szint: 7 TÉ enyhítés
 ```
 
 |     -      | S1  |  S2  |  S3  |  S4  |
