@@ -1,28 +1,26 @@
 ## ⚡Példa Manőver alkalmazására: Lefegyverzés
 
-⭕k20
-
 Lássunk egy  gyakorlati alkalmazást!
 
 **Rühes** külön ismeret nélkül megpróbálja lefegyverezni ellenfelét. Mindkettőjüknél hosszú kard van, Rühes kicsivel jobb vívó.
 
 Rühes értékei:
 - `KÉ: 15`
-- `TÉ: 55 / 45`
-- `VÉ: 125`
-- `Manőver Alap = 41 HM / 10 = 4`
+- `TÉ: 35`
+- `VÉ: 52`
+- `Manőver Alap = 11 HM / 3 = 4 ↑`
 
 Ellenfelének értékei:
-- `VÉ: 115`
-- `Manőver Alap = 32 HM / 10 = 3`
+- `VÉ: 48`
+- `Manőver Alap = 9 HM / 3 = 3`
 
 **Lefegyverzés manőver**
 - Nehézsége: `10`
 - Fázisai: Végrehajtás (`V`) és Ellenpróba (`E`)
 
 **1. Végrehajtás**  (`V`)
-- Rühes `TÉ:+20` értékkel leadja támadását
-- `TÉ = 55+20+k100 = 132`, ez nagyobb mint ellenfele `VÉ`-je
+- Rühes `TÉ:+4` értékkel leadja támadását
+- `TÉ = 35 + 4 + k20(11) = 50`, ez nagyobb mint ellenfele `VÉ`-je
 - Sikeres Végrehajtás
 
 **2. Ellenpróba**  (`E`)
