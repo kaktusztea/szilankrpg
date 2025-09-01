@@ -69,15 +69,13 @@ Ez is képzettségpróba.
 
 <br />
 
-⭕k20 konverzió
-
 | **Irányítás  <br>**(ahol a forma szerint értelmezhető) |              **+Komplexitás**               | **Támadó érték**<br>(ha az idézett forma közelharcba kezd az áldozattal)<br>(alap VÉ számít, ha nem mágikus a fegyver) |
 | ------------------------------------------------------ | :-----------------------------------------: | :--------------------------------------------------------------------------------------------------------------------: |
-| Lassú mozgatás,<br>Kocogó ember sebessége              |                     +3                      |                                                     TÉ=40;VÉ:120\*                                                     |
-| Átlagos mozgatás,<br>Sprintelő ember sebessége         |                     +6                      |                                                     TÉ=80;VÉ:160\*                                                     |
-| Gyors mozgatás,<br>Mágikus lövedék I.                  |                     +9                      |                                                    TÉ=120;VÉ:180\*                                                     |
-| Nagyon gyors mozgatás,<br>Mágikus lövedék II.          |                     +12                     |                                                    TÉ=160;VÉ:240\*                                                     |
-| Nagyon gyors mozgatás,<br>Mágikus lövedék III.         |                     +15                     |                                                    TÉ=200\;VÉ:280*                                                     |
+| Lassú mozgatás,<br>Kocogó ember sebessége              |                     +3                      |                                                     TÉ=15;VÉ:40\*                                                      |
+| Átlagos mozgatás,<br>Sprintelő ember sebessége         |                     +6                      |                                                     TÉ=25;VÉ:50\*                                                      |
+| Gyors mozgatás,<br>Mágikus lövedék I.                  |                     +9                      |                                                     TÉ=35;VÉ:60\*                                                      |
+| Nagyon gyors mozgatás,<br>Mágikus lövedék II.          |                     +12                     |                                                     TÉ=45;VÉ:70\*                                                      |
+| Nagyon gyors mozgatás,<br>Mágikus lövedék III.         |                     +15                     |                                                     TÉ=55\;VÉ:80*                                                      |
 |                                                        | ⭕Összpontosítás próba<br />nehézsége is nő⭕ |                                                                                                                        |
 
 🔆Fontos: az idézett forma TÉ/VÉ-je nem lehet nagyobb a varázsló harcértékeinél - kivéve, ha mentálisan összeköt egy képzettebb harcost a varázslattal. Az ilyesmi már igazán magas szintű mágiának számít.
