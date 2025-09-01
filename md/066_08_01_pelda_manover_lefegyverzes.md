@@ -2,7 +2,7 @@
 
 Lássunk egy  gyakorlati alkalmazást!
 
-**Rühes** külön ismeret nélkül megpróbálja lefegyverezni ellenfelét. Mindkettőjüknél hosszú kard van, Rühes kicsivel jobb vívó.
+**Rühes** megpróbálja lefegyverezni ellenfelét. Mindkettőjüknél hosszú kard van, Rühes kicsivel jobb vívó.
 
 Rühes értékei:
 - `KÉ: 15`
