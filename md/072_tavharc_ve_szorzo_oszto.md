@@ -31,13 +31,13 @@ Ha a célpont mozog, jóval nehezebb eltalálni. A távolság növekedésével e
 
 | Célpont mozgásának jellege                                                             | Módosító | Megjegyzés                                                    |
 | :------------------------------------------------------------------------------------- | :------: | ------------------------------------------------------------- |
-| Álló                                                                                   |   `1x`   | A célpont mozdulatlan                                         |
-| Harcoló csoport (bárki jó találatnak)                                                  |   `0x`   | `0x`, mert mindent a **Méret** módosító értékénél szimulálunk |
-| Lassú, egyenletes                                                                      |   `2x`   | Lassú séta, léptetés lovon                                    |
-| Gyors, egyenletes                                                                      |   `3x`   | Egyenletesen futó ember, vágtató lovas                        |
-| [Sikertelenül szándékosan kitérő célpont](szituaciok/kiteres_loves_elol_sikertelen.md) |   `3x`   | Rontott Gyorsaságpróba után a lövész célzó dobást tesz        |
-| Kiszámíthatatlan                                                                       |   `5x`   | A célpont ugrál össze-vissza, cikk-cakkban fut                |
-| Harcoló célpont                                                                        |   `7x`   | Csak egy konkrét harcoló fél eltalálása jó                    |
+| Álló                                                                                   |   `2x`   | A célpont mozdulatlan                                         |
+| Lassú, egyenletes                                                                      |   `3x`   | Lassú séta, léptetés lovon                                    |
+| Gyors, egyenletes                                                                      |   `4x`   | Egyenletesen futó ember, vágtató lovas                        |
+| Kiszámíthatatlan                                                                       |   `6x`   | A célpont ugrál össze-vissza, cikk-cakkban fut                |
+| Harcoló célpont                                                                        |   `8x`   | Csak egy konkrét harcoló fél eltalálása jó                    |
+| Harcoló csoport (bárki jó találatnak)                                                  |   `1x`   | `0x`, mert mindent a **Méret** módosító értékénél szimulálunk |
+| [Sikertelenül szándékosan kitérő célpont](szituaciok/kiteres_loves_elol_sikertelen.md) |   `4x`   | Rontott Gyorsaságpróba után a lövész célzó dobást tesz        |
 
 Természetesen a lövést végző személy mozgása is befolyásolja a találati esélyeket, hiszen könnyebb állva célozni, mint mondjuk futásból. A lövész mozgása az alábbiak szerint módosíthatja a **Szorzót**:
 
@@ -143,13 +143,13 @@ Alább az egyes fegyver-kategóriák tipikus **Osztó** értékét látjuk (a je
 
 | Fegyverkategória                        |  CÉ   | Osztó | Példa fegyverek                             | Speciális                                                                                                                       |
 | --------------------------------------- | :---: | :---: | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Nem hajításra készített tárgyak**     | `+0`  | `0,5` | Kard, zsámoly, söröskorsó                   | Maximális Hatótávjukhoz hozzáadható:<br />(`Erő x Osztó`)                                                                       |
-| **Apró alkalmas fegyverek**             | `+2`  | `0,5` | Tőr, kő                                     | -                                                                                                                               |
-| **Apró hajítófegyverek, szálfegyverek** | `+3`  |  `1`  | Hajítótőr, hajítóbárd, dárda                | -                                                                                                                               |
-| **Íjak**                                | `+6`  |  `2`  | Rövid íj, hosszú íj, Kézi nyílpuska         | Sebzés bónusz: **Erő** Tulajdonság `1:1`  <br />(ha erre az Erőre lett tervezve)                                                |
-| **Nyílpuskák**                          | `+8`  |  `3`  | Minden nyílpuska<br />kivéve Kézi és Kh4rei | A kézi nyílpuskától felfelé Páncéltörőnek számítanak:<br />`SFÉ = a vért rétegeinek száma`<br>(mágikus vértek esetén a KM dönt) |
+| **Nem hajításra készített tárgyak**     | `+0`  |  `1`  | Kard, zsámoly, söröskorsó                   | Maximális Hatótávjukhoz hozzáadható:<br />(`Erő x Osztó`)                                                                       |
+| **Apró alkalmas fegyverek**             | `+2`  |  `2`  | Tőr, kő                                     | -                                                                                                                               |
+| **Apró hajítófegyverek, szálfegyverek** | `+3`  |  `3`  | Hajítótőr, hajítóbárd, dárda                | -                                                                                                                               |
+| **Íjak**                                | `+6`  |  `4`  | Rövid íj, hosszú íj, Kézi nyílpuska         | Sebzés bónusz: **Erő** Tulajdonság `1:1`  <br />(ha erre az Erőre lett tervezve)                                                |
+| **Nyílpuskák**                          | `+8`  |  `5`  | Minden nyílpuska<br />kivéve Kézi és Kh4rei | A kézi nyílpuskától felfelé Páncéltörőnek számítanak:<br />`SFÉ = a vért rétegeinek száma`<br>(mágikus vértek esetén a KM dönt) |
 | ...                                     |       |  ...  | ...                                         | ...                                                                                                                             |
-| Modern, nagy hatótávú fegyver           | `+15` |  `8`  | Távcsöves mesterlövész puska                | Ezt csak azért írjuk be, hogy látszódjon, ez a távolsági harcrendszer kiválóan adaptálható modern szerepjáték világokra is.     |
+| Modern, nagy hatótávú fegyver           | `+15` | `12`  | Távcsöves mesterlövész puska                | Ezt csak azért írjuk be, hogy látszódjon, ez a távolsági harcrendszer kiválóan adaptálható modern szerepjáték világokra is.     |
 
 🔆 **Megjegyzés**: Javasoljuk a KM-nek, hogy ha esetleg mágikus, vagy kifejezetten jó minőségű fegyver értékeit akarja az alapértékhez képest módosítani, akkor az **Osztó** értékét lehetőleg **NE** módosítsa, inkább a fegyver **Célzó Értékét** változtassa.
 

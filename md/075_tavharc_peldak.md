@@ -1,20 +1,18 @@
-## Példalövészet #1
-
-⭕k20
+## `I.` Példalövészet merénylet
 
 Tetves, a tolvaj-bérgyilkos egy raktár ablakából, nyílpuskával les a sikátorban közelgő áldozatára, egy tehetős kalmárra, aki éppen hazafelé battyog.
 
-A könnyű nyílpuska **Osztója:** `4`
+A könnyű nyílpuska **Osztója:** `5`
 
-### Tetves Célzó Értéke #1
+### `I/1` Tetves Célzó Értéke
 
 Ezt már karakteralkotáskor kiszámoltuk, így játék közben már nincs szükség semmilyen számításra. Az érthetőség kedvéért azért listázzuk a `CÉ` komponenseit.
 
 ```
 Önuralom: 3
-Lövészet: 5.szint
+Lövészet: 5.szint (CÉ:+2)
 Mesterfegyver: 0.fok
-(nyílpuska)
+Nyílpuska CÉ: 8
 ```
 
 ```
@@ -23,92 +21,133 @@ CÉ = -10 (Konstans)
      + 8 (nyílpuska CÉ)
      + 5 (CM)
      + 2 (Lövészet)
-     = 8
+```
+
+```
+CÉ = 8
 ```
 
 <br />
 
 ---
-### A célpont Védő Értéke #1
-
-- Mozgás szorzó: `2x` (lassú, egyenletes)
-- Távolság: `15 méter`
-- Cella:  (`15m/3 ↑`) → `5`
-
-$$VÉ = {2(lassú\ egyenletes)+0(normál\ méret)+0(jól\ látható)}\ x\ {15(távolság)\over 3(nyílpuska\ Osztója)}$$
+### `I/2` A célpont Védő Értéke
 
 ```
-VÉ = 2 x 5 = 10
+Cella: 4  (20m / 5 ↑)
+
+Távolság: 20 méter
+Nyílpuska Osztó: 5
+```
+
+```
+Szorzó: 3
++ 3x: Mozgás: lassú, egyenletes
+```
+
+```
+VÉ = 12  (3 x 4)
 ```
 
 <br />
 
 ---
-### Tehát a próba #1
+### `I/3` Célzó dobás
 
 ```
-8 + k20  vs  10
+8(CÉ) + k20   vs   12(VÉ)
 ```
 
-azaz ha Tetves legalább `2`-et dob `k20`-on, akkor találatot ér el. Könnyű cél...
+azaz ha Tetves legalább `4`-et dob `k20`-on, akkor találatot ér el. Könnyű cél (`85 % esély`)...
 
-Dob `k20`-zal, az eredmény `6`, végső `CÉ = 8+6 = 14`, tehát eltalálta a célt, dobhatja a sebzést.
+```
+k20 Célzó dobás: 6
+
+CÉ = 8 + 6 = 14
+ → Találat
+ → dobhatja a sebzést
+```
+
+<br />
 
 ---
 ---
-## Példalövészet #2
-
-⭕k20
+## `II.` Példalövészet a balkonról
 
 Lássunk egy bonyolultabb esetet.
 
-Tetves ezúttal ősi nemezisét Rühest, a cingár, aprótermetű tolvajt próbája rövid íjával eltaláni, miközben az az enyhe ködben, a tetőkön oson. Rühes gyors, egyenletes mozgással üget végig egy tetőgerincen `12` méter távolságra. Tetves a szomszédos balkonon áll, de íját megfeszítve, lassan sétálnia kell, hogy Rühes ne kerüljön ki a látóteréből. Balszerencséjére erős szél is fúj, így a célzás tovább nehezedik. Az észlelést továbbá enyhe köd és sötét bonyolítja - csak az épületek lámpafénye és a Vörös Hold segíti a látást.
+Tetves ezúttal ősi nemezisét Rühest, a cingár, aprótermetű tolvajt próbája rövid íjával eltaláni, miközben az az enyhe ködben, a tetőkön oson. Rühes lassú, egyenletes mozgással üget végig egy tetőgerincen `12` méter távolságra.
+
+Tetves a szomszédos balkonon áll, de rövid íját megfeszítve, lassan sétálnia kell, hogy Rühes ne kerüljön ki a látóteréből. Balszerencséjére erős szél is fúj, így a célzás tovább nehezedik. Az észlelést továbbá enyhe köd és sötét bonyolítja - csak az épületek lámpafénye és a Vörös Hold segíti a látást.
+
+---
+### `II/1` Tetves Célzó Értéke
+
+Tetves Íjászat képzettsége is `5.szintű`, sőt a **Rövid íjra** van `Mf: 1.fok` fortélya is.\
+Ez némileg mérsékli a fegyver rosszabb `CÉ` jellemzőjét.
 
 ```
 Önuralom: 3
-Lövészet: 5.szint
+Íjászat: 5.szint
 Mesterfegyver: 1.fok
-(rövid íj)
+Rövid íj CÉ: 5
 ```
 
 ```
-CÉ = -30 (Konstans)
-     + 6 (Önuralom 2x)
-     + 10 (rövid íj CÉ)
-     + 3 (Mf:1)
-     + +15 (CM)
-     + 4 (Íjászat)
-     = 8
+CÉ = -10 (Konstans)
+     + 3 (Önuralom)
+     + 5 (Rövid íj CÉ)
+     + 1 (Mf:1)
+     + 5 (CM)
+     + 2 (Íjászat)
 ```
 
-### A célpont Védő Értéke #2
-
-**Szorzók**
-- Mozgás szorzó: `8x` (gyors, egyenletes)
-- Lövész mozgása: `2` (lassú egyenletes)
-- Célpont mérete: `1` (Rühes cingár, apró, törpe méretű)
-- Észlelhetőség: `3` (homályos kontúr)
-- Szél: `4` (erős szél)
-
-**Cella**
-- Távolság: `12 méter`
-- (`12m/3 ↑`) → `4`
-
-$$VÉ = {8(gyorsan\ mozgó)+2(lövész\ lassú, egyenletes)+1(törpe\ méret)+3(homályos\ kontúr+4(erős\ szél))}\ x\ {12(távolság)\over 3(rövid\ íj\ Osztója)}$$
-
 ```
-VÉ = 18 x 4 = 72
+CÉ = 6
 ```
 
-### Tehát a próba #2
+---
+### `II/2` A célpont Védő Értéke
 
 ```
-8 + k100  vs  72
+Szorzók: 8
++ 3x: Mozgás: lassú, egyenletes
++ 1x: Lövész mozgása: lassú egyenletes
++ 1x: Célpont mérete:törpe méret (Rühes cingár)
++ 1x: Észlelhetőség: homályos kontúr
++ 2x: Szél: erős
 ```
 
-azaz ha Tetves legalább `64`-et dob `k100`-on, csak akkor talál célt.
+```
+Cella: 3  (12m / 4 ↑)
 
-Dob `k100`-zal, az eredmény `59`, végső `CÉ = 8+59 = 67`, elvétette.... Rühes lába előtt a tetőcserépen csattan a vessző. A cingár tolvaj egy merész vetődéssel átgurul a tető másik felére és némi cserepet leverve lecsúszik az ereszig. Megmenekült.
+Távolság: 12 méter
+Rövid íj Osztó: 4
+```
+
+```
+VÉ = Szorzó x Cella
+VÉ = 8 x 3 = 24
+```
+
+---
+### `II/3` Célzó dobás
+
+```
+6 + k20  vs  24
+```
+
+azaz ha Tetves legalább `18`-at dob `k20`-on, csak akkor talál célt. Nehéz próba.
+
+```
+k20 Célzó dobás: 12
+
+CÉ = 6 + 12 = 18
+ → Nem talált
+```
+
+ Elvétette.... Rühes lába előtt a tetőcserépen csattan a vessző. A cingár tolvaj egy merész vetődéssel átgurul a tető másik felére és némi cserepet leverve lecsúszik az ereszig. Megmenekült.
+
+Ha nem fújt volna a szél (`-2` a Szorzóra), akkor Tetves éppen célt talált volna és Rühes napja is sokkal rosszabbul alakul.
 
 ---
 
