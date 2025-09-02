@@ -11,7 +11,7 @@ A **Szorzó** a célpont egyedi jellemzőit, illetve a környezet hatásait szim
 ```
 
 ---
-### Szorzó - Mozgás módosító
+### Szorzó - Mozgás módosító (célpont)
 
 Ha a célpont mozog, jóval nehezebb eltalálni. A távolság növekedésével ez a nehézség nem lineárisan, hanem exponenciálisan nő, éppen ezért érthető, hogy a mozgás is a Távolsági szorzó része. Alább a Célpont egyes mozgás típusaihoz tartozó módosítókat olvashatjuk.
 
@@ -31,13 +31,19 @@ Célpont mozgás jellege
 
 1x: Harcoló csoport (bárki jó találatnak)
     Ezt is a Méret módosító
-    értékénél szimulálunk
+    értékénél szimuláljuk
 4x: Sikertelenül szándékosan kitérő célpont
     Rontott Gyorsaságpróba után
     a lövész célzó dobást tesz
 ```
 
-Bővebben: [Sikertelenül szándékosan kitérő célpont](szituaciok/kiteres_loves_elol_sikertelen.md)
+
+- **Harcoló csoport**: Harcoló tömegbe lövést jelent, ahol **bármelyik** fél eltalálása megfelel.
+  → Kit talál el: random dobás → `k10`
+- [Sikertelenül szándékosan kitérő célpont](szituaciok/kiteres_loves_elol_sikertelen.md)
+
+---
+### Szorzó - Mozgás módosító (lövész)
 
 Természetesen a lövést végző személy mozgása is befolyásolja a találati esélyeket, hiszen könnyebb állva célozni, mint mondjuk futásból. A lövész mozgása az alábbiak szerint módosíthatja a **Szorzót**:
 
@@ -69,10 +75,6 @@ Méret módosító
 -2x: lovas, bölény
 -3x: óriás
 ```
-
-**Harcoló csoport**: Harcoló tömegbe lövés.
-- Bármelyik fél eltalálása jó.
-- Kit talál el: random dobás → `k10`
 
 ---
 ### Szorzó - Észlelhetőség módosító I.
