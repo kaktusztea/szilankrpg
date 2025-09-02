@@ -48,7 +48,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 
 🌟 Hatás:
 - Bármilyen lőfegyver/hajítófegyver kerül a kezedbe, nem kell "belőnöd", gyakorolnod vele, büntetés nélkül azonnal teljes harcértékeddel tudod használni.
-- Alapeset: [CÉ számítás - Módosítók](071_tavharc_ce.md#c%C3%A9-m%C3%B3dos%C3%ADt%C3%B3k) → "Nem belőtt íjak  / most lő először ezzel"
+- Alapeset: [CÉ számítás - Módosítók](../071_tavharc_ce.md#c%C3%A9-m%C3%B3dos%C3%ADt%C3%B3k) → "Nem belőtt íjak  / most lő először ezzel"
 
 ---
 #### Nagymester (12) 📖
