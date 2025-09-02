@@ -1,5 +1,7 @@
 ## Távolsági harc vaksötétben, zajos célpontra
 
+⭕k20
+
 Ez egy speciális eset, sokat számít a "vak" szerencse is, de nem lehetetlen. Ami újdonság az az, hogy a Célzó dobást megelőzi egy random Szerencsedobás.
 
 ### Szerencsedobás

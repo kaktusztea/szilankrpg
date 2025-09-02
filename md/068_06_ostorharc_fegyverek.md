@@ -16,12 +16,12 @@
 
 Köz- és önveszélyes fegyver. Alacsonyabb [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortély ismeret esetén jó esély van rá, hogy magad is megsebezd.
 
-A `k100` támadó dobás egyben százalékdobás is: ha a lent leírt értékek vagy azok alá dobsz, akkor magadat is megsebzed. Ha "betalálsz", dobj rendes sebzést (páncéldobással együtt) magad ellen.
+A `k20` támadó dobás egyben esélydobás is: ha a lent leírt értékek vagy azok alá dobsz, akkor magadat is megsebzed. Ha "betalálsz", dobj rendes sebzést (páncéldobással együtt) magad ellen.
 
-- Harci szituációban (nem gyakorlásban) `1` kézzel / `2` kézzel:
-  - `Mf` nélkül: `50%` / `80%`
-  - `Mf: 1.fok`: `20%` /  `40%`
-  - `Mf: 2.fok`: `10%` /  `20%`
+- Harci szituációban (nem gyakorlásban) `1` kézzel / `2` kézzel (`k20`):
+  - `Mf` nélkül : `<= 10 / 16`
+  - `Mf: 1.fok`: `<= 4 / 8`
+  - `Mf: 2.fok`: `<= 2 / 4`
   - `Mf: 3.fok`: `0%` /  `0%`
 - Beszorított helyzetben harcértékei mind `0` értékre esnek!
 - Nem lehet Alakazatharcban hassználni

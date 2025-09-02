@@ -19,7 +19,7 @@ Ellenfelének értékei
 **1. Végrehajtás**
 
 - Tetves `TÉ:+4` értékkel leadja támadását
--  `TÉ = 35 + 4 + k100 = 50`, ez nagyobb mint ellenfele `VÉ`-je
+-  `TÉ = 35 + 4 + k20 = 50`, ez nagyobb mint ellenfele `VÉ`-je
 - Sikeres Végrehajtás
 
 **2. Ellenpróba**

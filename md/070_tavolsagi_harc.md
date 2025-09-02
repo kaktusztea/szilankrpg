@@ -23,7 +23,7 @@ A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem
 A lövés/hajítás során ugyanúgy támadó dobás történik az egyedileg meghatározott Célpont Védő Érték ellen.
 
 ```
-CÉ + k100  vs  VÉ
+CÉ + k20  vs  VÉ
 ```
 
 ---

@@ -5,7 +5,7 @@ Ha hirtelen kell lőnöd, rutinosan kapod elő lőfegyveredet.
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Ha hirtelen kell lőni, a **Célzó Értéket** `-30` levonás sújtja.
+🌟 **Hatás**: Ha hirtelen kell lőni, a **Célzó Értéket** `-7` levonás sújtja.
 
 ---
 ### 1. fok
