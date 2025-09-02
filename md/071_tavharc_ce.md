@@ -43,11 +43,11 @@ Támadó CÉ =
    alapesetben milyen könnyű a találat
    Irányszámok:
  • CÉ: +0 → Nem hajításra való tárgyak
- • CÉ: +2 → Apró, alkalmas fegyverek
- • CÉ: +3 → Hajító szálfegyverek
- • CÉ: +3 → Apró hajítófegyverek
- • CÉ: +6 → Íjak
- • CÉ: +8 → Nyílpuskák
+ • CÉ: +1-2 → Apró, alkalmas fegyverek
+ • CÉ: +2-3 → Hajító szálfegyverek
+ • CÉ: +2-3 → Apró hajítófegyverek
+ • CÉ: +5-6 → Íjak
+ • CÉ: +5-8 → Nyílpuskák
  • (CÉ: +15 → Távcsöves puska) 
  • (Hajító / Lőfegyverek harcértékei)
 
