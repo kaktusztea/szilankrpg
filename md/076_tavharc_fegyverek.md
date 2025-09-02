@@ -32,7 +32,7 @@ Apró alkalmas fegyverek
 
 ```
 Apró hajítófegyverek, szálfegyverek
-  CÉ: +3
+  CÉ: +3/+4
   Osztó: 3
   Példa fegyverek:
     Hajítótőr, hajítóbárd, dárda
@@ -41,7 +41,7 @@ Apró hajítófegyverek, szálfegyverek
 
 ```
 Íjak
-  CÉ: +6
+  CÉ: +5/6
   Osztó: 4
   Példa fegyverek:
     Rövid, hosszú íj, Kézi nyílpuska
