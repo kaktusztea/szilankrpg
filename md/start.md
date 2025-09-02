@@ -221,11 +221,13 @@
 ### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
 
 - [Célzó Érték számítása](071_tavharc_ce.md)
-- [Célpont Védő Értékének számítása; Szorzó; Osztó](072_tavharc_ve_oszto.md)
+- [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md)
+- [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
+- [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
 - [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
 - [Távolsági fegyverek](076_tavharc_fegyverek.md)
 - [Példalövészet](077_tavharc_peldak.md) ⚡
-- [Távharc sötétben](078_tavharc_sotetben.md)
+- [Távharc sötétben](078_tavharc_sotetben.md) ⚡
 
 ---
 ### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)

@@ -3,11 +3,11 @@
 🔆 A lenti számítások automatizálva lettek a [Karakteralkotó](start.md#karakteralkot%C3%B3) "**Harcértékek**" fülének tetején, így játék közben könnyen tudod kalkulálni a célpont Védő Értékét.
 
 - [Szorzó leírása](073_tavharc_ve_szorzo.md)
-- [Osztó, Cella leírása](072_tavharc_ve_oszto.md)
+- [Osztó, Cella leírása](072_tavharc_ve_oszto_cella.md)
 
 ```
 Cella =
-  (Távolság / Fegyver Osztó) ↑
+  (Távolság (m) / Fegyver Osztó) ↑
 ```
 
 ```

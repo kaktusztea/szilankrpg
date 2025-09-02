@@ -1,9 +1,10 @@
 ## Célzó Érték számítása
 
-Mikor a támadó lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A **Célzott Támadó dobás** így néz ki:
+Mikor a **támadó** lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A **Célzott Támadó dobás** így néz ki:
 
 ```
-Támadó CÉ + k20   vs   Célpont VÉ
+Támadó          Célpont
+CÉ + k20   vs   VÉ
 ```
 
 A `Célzó Érték` kiszámolása a következőképpen történik - még karakteralkotási időben:
@@ -48,7 +49,7 @@ Támadó CÉ =
  • CÉ: +6 - Íjak
  • CÉ: +8 - Nyílpuskák
  • (CÉ: +15 - Távcsöves puska) 
- • (Hajítófegyverek Lőfegyverek harcértékei)
+ • (Hajító / Lőfegyverek harcértékei)
 
 + Mesterfegyver fortély (max 3 fok)
    CÉ: +1 / fok bónusz
@@ -84,6 +85,6 @@ Ha **legalább fél órát** töltött el a karakter a “belövéssel”,  a "*
 
 ---
 
-🔗 [Osztó értéke a távolsági Védő Értékben](072_tavharc_ve_oszto.md) →
+🔗 [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md) →
 
 ⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)

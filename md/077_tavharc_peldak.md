@@ -1,4 +1,4 @@
-## `I.` Példalövészet merénylet
+## ⚡`I.` Példalövészet merénylet
 
 Tetves, a tolvaj-bérgyilkos egy raktár ablakából, nyílpuskával les a sikátorban közelgő áldozatára, egy tehetős kalmárra, aki éppen hazafelé battyog.
 
@@ -27,8 +27,6 @@ CÉ = -10 (Konstans)
 CÉ = 8
 ```
 
-<br />
-
 ---
 ### `I/2` A célpont Védő Értéke
 
@@ -47,8 +45,6 @@ Szorzó: 3
 ```
 VÉ = 12  (3 x 4)
 ```
-
-<br />
 
 ---
 ### `I/3` Célzó dobás
@@ -71,7 +67,7 @@ CÉ = 8 + 6 = 14
 
 ---
 ---
-## `II.` Példalövészet a balkonról
+## ⚡`II.` Példalövészet a balkonról
 
 Lássunk egy bonyolultabb esetet.
 

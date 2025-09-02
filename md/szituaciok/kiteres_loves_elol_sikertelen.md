@@ -4,7 +4,7 @@ A célpont [szándékosan megpróbált kitérni](../075_tavharc_taktikak.md#szá
 
 Ilyenkor a lövész rendesen **Célzó Dobást** tesz. A Célpont `Védő Értékének` számításakor:
 
-#### [Szorzó - Mozgás módosító](../072_tavharc_ve_oszto.md#szorzó---mozgás-módosító)
+#### [Szorzó - Mozgás módosító](../072_tavharc_ve_oszto_cella.md#szorzó---mozgás-módosító)
 
 ```
 Sikertelenül szándékosan

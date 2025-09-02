@@ -8,9 +8,24 @@ A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy 
 
 ### → [Lőfegyverek táblázata](068_08_lofegyverek.md)
 
+---
+### Általános harcértékek
+
+Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek értékei ezektől enyhén eltérhetnek:
+
+| Fegyverkategória                        |  CÉ   | Osztó | Példa fegyverek                             | Speciális                                                                                                                       |
+| --------------------------------------- | :---: | :---: | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| **Nem hajításra készített tárgyak**     | `+0`  |  `1`  | Kard, zsámoly, söröskorsó                   | Maximális Hatótávjukhoz hozzáadható:<br />(`Erő x Osztó`)                                                                       |
+| **Apró alkalmas fegyverek**             | `+2`  |  `2`  | Tőr, kő                                     | -                                                                                                                               |
+| **Apró hajítófegyverek, szálfegyverek** | `+3`  |  `3`  | Hajítótőr, hajítóbárd, dárda                | -                                                                                                                               |
+| **Íjak**                                | `+6`  |  `4`  | Rövid íj, hosszú íj, Kézi nyílpuska         | Sebzés bónusz: **Erő** Tulajdonság `1:1`  <br />(ha erre az Erőre lett tervezve)                                                |
+| **Nyílpuskák**                          | `+8`  |  `5`  | Minden nyílpuska<br />kivéve Kézi és Kh4rei | A kézi nyílpuskától felfelé Páncéltörőnek számítanak:<br />`SFÉ = a vért rétegeinek száma`<br>(mágikus vértek esetén a KM dönt) |
+| ...                                     |       |  ...  | ...                                         | ...                                                                                                                             |
+| Modern, nagy hatótávú fegyver           | `+15` | `12`  | Távcsöves mesterlövész puska                | Ezt csak azért írjuk be, hogy látszódjon, ez a távolsági harcrendszer kiválóan adaptálható modern szerepjáték világokra is.     |
+
 🔆 **Megjegyzés**: Amennyiben valaki hajításra nem alkalmas fegyvert akar dobni, akkor az adott fegyver harcmodorában kismesteri, azaz `6`.szinten jártasnak kell lennie. Ez alatt képzetlen fegyverhasználat büntetéseivel történhet a dobás.
 
-🔆 Egyes fő távolsági fegyverkategóriák jellemző értékeit lásd a Fegver osztó alatti [összefoglaló táblázatban](072_tavharc_ve_oszto.md#️-fegyver-osztó).
+🔆 Egyes fő távolsági fegyverkategóriák jellemző értékeit lásd a Fegver osztó alatti [összefoglaló táblázatban](072_tavharc_ve_oszto_cella.md#️-fegyver-osztó).
 
 <br />
 

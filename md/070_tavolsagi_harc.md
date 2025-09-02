@@ -33,7 +33,11 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 #### [Célzó Érték (CÉ) számítása](071_tavharc_ce.md)
 
-#### [Célpont Védő Értékének (VÉ) számítása; Szorzó; Osztó](072_tavharc_ve_oszto.md)
+#### [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md)
+
+#### [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
+
+#### [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
 
 ---
 ## Taktikák, fegyverek
@@ -45,9 +49,9 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 ---
 ## Példák
 
-#### [Példalövészet](077_tavharc_peldak.md)
+#### [Példalövészet](077_tavharc_peldak.md) ⚡
 
-#### [Távharc sötétben](078_tavharc_sotetben.md)
+#### [Távharc sötétben](078_tavharc_sotetben.md) ⚡
 
 ---
 
