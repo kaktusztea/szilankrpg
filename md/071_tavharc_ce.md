@@ -99,7 +99,7 @@ Belövés
 
 Bővebben:
 - [Fegyver minősége](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-minősége-ideája)
-- [Távolsági Harcmodor képzettség](app://obsidian.md/kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
+- [Távolsági Harcmodor képzettség](kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
 - [Távolsági Harci fortélyok](044_harci_fortelyok.md#távolsági-harci-fortélyok)
 
 ### Fegyver belövése
