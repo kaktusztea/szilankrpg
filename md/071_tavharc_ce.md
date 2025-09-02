@@ -42,13 +42,13 @@ Támadó CÉ =
    fegyverkategóriák különbsége:
    alapesetben milyen könnyű a találat
    Irányszámok:
- • CÉ: +0 - Nem hajításra való tárgyak
- • CÉ: +2 - Apró, alkalmas fegyverek
- • CÉ: +3 - Hajító szálfegyverek
- • CÉ: +3 - Apró hajítófegyverek
- • CÉ: +6 - Íjak
- • CÉ: +8 - Nyílpuskák
- • (CÉ: +15 - Távcsöves puska) 
+ • CÉ: +0 → Nem hajításra való tárgyak
+ • CÉ: +2 → Apró, alkalmas fegyverek
+ • CÉ: +3 → Hajító szálfegyverek
+ • CÉ: +3 → Apró hajítófegyverek
+ • CÉ: +6 → Íjak
+ • CÉ: +8 → Nyílpuskák
+ • (CÉ: +15 → Távcsöves puska) 
  • (Hajító / Lőfegyverek harcértékei)
 
 + Mesterfegyver fortély (max 3 fok)
