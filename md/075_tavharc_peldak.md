@@ -18,12 +18,12 @@ Mesterfegyver: 0.fok
 ```
 
 ```
-CÉ = -30 (Konstans)
-     + 6 (Önuralom 2x)
-     + 16 (nyílpuska CÉ)
-     + +15 (CM)
-     + 4 (Lövészet)
-     = 11
+CÉ = -10 (Konstans)
+     + 3 (Önuralom)
+     + 8 (nyílpuska CÉ)
+     + 5 (CM)
+     + 2 (Lövészet)
+     = 8
 ```
 
 <br />
@@ -31,14 +31,14 @@ CÉ = -30 (Konstans)
 ---
 ### A célpont Védő Értéke #1
 
-- Mozgás szorzó: `5x` (lassú, egyenletes)
+- Mozgás szorzó: `2x` (lassú, egyenletes)
 - Távolság: `15 méter`
-- Cella:  (`15m/4 ↑`) → `4` (az osztásnál felfelé kell kerekíteni)
+- Cella:  (`15m/3 ↑`) → `5`
 
-$$VÉ = {5(lassú\ egyenletes)+0(normál\ méret)+0(jól\ látható)}\ x\ {15(távolság)\over 4(nyílpuska\ Osztója)}$$
+$$VÉ = {2(lassú\ egyenletes)+0(normál\ méret)+0(jól\ látható)}\ x\ {15(távolság)\over 3(nyílpuska\ Osztója)}$$
 
 ```
-VÉ = 5 x 4 = 20
+VÉ = 2 x 5 = 10
 ```
 
 <br />
@@ -47,12 +47,12 @@ VÉ = 5 x 4 = 20
 ### Tehát a próba #1
 
 ```
-11 + k100  vs  20
+8 + k20  vs  10
 ```
 
-azaz ha Tetves legalább `9`-et dob `k100`-on, akkor találatot ér el. Könnyű cél...
+azaz ha Tetves legalább `2`-et dob `k20`-on, akkor találatot ér el. Könnyű cél...
 
-Dob `k100`-zal, az eredmény `31`, végső `CÉ = 11+31 = 42`, tehát eltalálta a célt, dobhatja a sebzést.
+Dob `k20`-zal, az eredmény `6`, végső `CÉ = 8+6 = 14`, tehát eltalálta a célt, dobhatja a sebzést.
 
 ---
 ---

@@ -26,11 +26,11 @@ Támadó CÉ =
   Ez az érték gyakorlatilag a célpont
   Védő Érték alapját adná, de mivel
   itt csak egyszer (karakteralkotáskor)
-  kell vele számolni, ezért a számolás 
+  kell vele számolni, ezért a számolás
   meggyorsítása miatt átkerült ide negatív előjellel.
 
 +CM: Célzóérték Módosító
-   Tapasztalati Szintenként legfeljebb 
+   Tapasztalati Szintenként legfeljebb
    `2` pont vehető fel. 1 CM = 6 KP
 
 + Harcmodor CÉ

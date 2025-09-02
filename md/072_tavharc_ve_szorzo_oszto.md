@@ -58,7 +58,7 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 | Fej, Dinnye, Macska                                                            |  `+2x`   |
 | Törpe, Sas, Hiúz                                                               |  `+1x`   |
 | Célpont fedezék mögött                                                         |  `+1x`   |
-| Átlagos ember/elf méretű<br>                                                   |  `+0x`   |
+| Átlagos ember/elf méretű                                                       |  `+0x`   |
 | [Harcoló csoport](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md) \* |   `0x`   |
 | Ogre                                                                           |  `-1x`   |
 | Ló oldalról / 2 harcoló ember                                                  |  `-1x`   |
