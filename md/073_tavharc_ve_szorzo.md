@@ -77,19 +77,9 @@ Méret módosító
 ```
 
 ---
-### Szorzó - Észlelhetőség módosító I.
+### Szorzó - Észlelhetőség módosító
 
-A látási viszonyok erősen meghatározzák a távolsági harcot, hiszen például félhomályban sokkal nehezebb eltalálni valakit, mint fényes nappal. Viszont... könnyebb valakit eltalálni sötétben, ha zajt ad ki. Ezeknek megfelelően a fenti körülmények is módosítják a Szorzó értékét. A fentieket az alábbi táblázatokban foglalhatjuk össze.
-
-```
-Környezeti fényviszonyok
-
-+1x: Szürkületben
-     Ilyenkor nehezebb
-     a távolság becslése
-```
-
-### Szorzó - Észlelhetőség módosító II.
+A látási viszonyok erősen meghatározzák a távolsági harcot, hiszen például félhomályban sokkal nehezebb eltalálni valakit, mint fényes nappal. Viszont... könnyebb valakit eltalálni sötétben, ha zajt ad ki., mintha csendben lapulna. Egyszóval a fenti körülmények is módosítják a **Szorzó** értékét:
 
 ```
 Célpont láthatósága és hangossága
@@ -97,6 +87,7 @@ Célpont láthatósága és hangossága
 0x: Jól kivehető kontúr
     Nappali célpont; napnyugtakor
     háztetőn álldogáló célpont
+1x: Szürkületben
 1x: Homályos kontúr
     Félhomályban mozgó alaké
     Testközelben levő célpont sötétben
@@ -106,7 +97,6 @@ Célpont láthatósága és hangossága
     Sötétben, csendben lapuló árnyak
 5x: Háttérrel egybeolvadó kontúr (zajos)
 *   Vaksötétben harcoló ellenfél
-    Távoli célpont sötétben
 
 99x: Háttérrel egybeolvadó kontúr (csendes)
      Lehetetlen.
