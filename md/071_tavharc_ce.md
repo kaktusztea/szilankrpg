@@ -1,6 +1,6 @@
 ## Célzó Érték számítása
 
-Mikor a támadó lövést, vagy hajítást végez, a Célzó Értékét állítja szembe a célpont távolsági Védő Értékével. A Célzó Érték kiszámolása a következőképpen történik - még karakteralkotási időben.
+Mikor a támadó lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A `Célzó Érték` kiszámolása a következőképpen történik - még karakteralkotási időben.
 
 ```
 Támadó CÉ =
@@ -12,17 +12,9 @@ Támadó CÉ =
     + Mf-bónusz
 ```
 
-|     **Összeadandó értékek**     | **Leírás**                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| :-----------------------------: | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-|              `-10`              | Konstans. Ez az érték gyakorlatilag a célpont Védő Érték alapját adná, de mivel itt csak egyszer (karakteralkotáskor) kell vele számolni, ezért a számolás meggyorsítása miatt átkerült ide negatív előjellel.                                                                                                                                                                                                                            |
-|               CM                | Célzóérték Módosító. Tapasztalati Szintenként legfeljebb `2`vehető fel. `1 CM = 6 KP`                                                                                                                                                                                                                                                                                                                                                     |
-|          Harcmodor CÉ           | Harcmodor képzettség szintje által kapott bónusz (lásd a [Harcmodor képzettségeket](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)!)                                                                                                                                                                                                                                                                                                      |
-|            Önuralom             | Az **Önuralom** Tulajdonság                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Fegyver CÉ<br>(kategória függő) | Különbséget teszünk a fegyverkategóriák közt attól függően, hogy alapesetben milyen könnyű velük célba találni. Az alábbi értékek csak irányszámok, a konkrét fegyver értékek ettől eltérhetnek.<br> • Hajító szálfegyverek: `CÉ:+1` <br/>• Apró hajítófegyverek: `CÉ:+1` <br />• Íjak: `CÉ:+3` <br />• Nyílpuskák: `CÉ:+5`<br />Lásd a [Hajítófegyverek](068_07_hajitofegyverek.md) és [Lőfegyverek](068_08_lofegyverek.md) fejezeteket! |
-|      Mesterfegyver fortély      | Mesterfegyver fortély után járó bónusz, amennyiben a használt fegyverre felvette a karakter. Fokonként `CÉ:+1` bónusz.                                                                                                                                                                                                                                                                                                                    |
 
 ```
--10 Konstans
+-10: Konstans
   Ez az érték gyakorlatilag a célpont
   Védő Érték alapját adná, de mivel
   itt csak egyszer (karakteralkotáskor)
@@ -32,7 +24,7 @@ Támadó CÉ =
 
 + CM: Célzóérték Módosító
    Tapasztalati Szintenként legfeljebb
-   `2` pont vehető fel. 1 CM = 6 KP
+   2 pont vehető fel. 1 CM = 6 KP
 
 + Harcmodor CÉ
    Harcmodor képzettség szint bónusza
@@ -52,6 +44,10 @@ Támadó CÉ =
  • CÉ: +8 - Nyílpuskák
  • (CÉ: +15 - Távcsöves puska) 
  • (Hajítófegyverek Lőfegyverek harcértékei)
+
++ Mesterfegyver fortély (max 3 fok)
+   CÉ: +1 / fok bónusz
+   adott távolsági fegyverre
 ```
 
 - [Harcmodor képzettségek bónuszai](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
