@@ -7,13 +7,30 @@ Néhány speciális húzással beleszólhatunk az ilyen szituációkba.
 
 Ha valaki látja és van ideje felkészülni a rá leadott lövésre/hajításra, valamint rendelkezik elegendő hellyel a kitérésre ÉS bejelenti, hogy megpróbálja elkerülni végzetét, akkor **Gyorsaságpróbát** kell dobnia, melynek nehézsége függ a lövést leadó személy távolságától, valamint az általa használt fegyvertől.
 
-| Gyorsaságpróba célszám | Dobófegyverek,<br />Mágikus lövedék I. | Íjak,<br />Mágikus lövedék II. | Nyílpuskák,<br />Mágikus lövedék III. |
-|:----------------------:| --------------------------------------:| ------------------------------:| -------------------------------------:|
-|           8            |                              `1m - 3m` |                      `0m - 5m` |                            `0m - 10m` |
-|           7            |                              `4m - 6m` |                     `6m - 10m` |                           `11m - 20m` |
-|           6            |                              `7m - 9m` |                    `11m - 15m` |                           `21m - 30m` |
-|           5            |                            `10m - 12m` |                    `16m - 20m` |                           `31m - 40m` |
-|           4            |                           Testközelben |                                |                                       |
+```
+Dobófegyverek, Mágikus lövedék I.
+  8:  1m - 3m
+  7:  4m - 6m
+  6:  7m - 9m
+  5:  10m - 12m
+  4:  Testközelben
+```
+
+```
+Íjak, Mágikus lövedék II.
+  8:  0m - 5m
+  7:  6m - 10m
+  6:  11m - 15m
+  5:  16m - 20m
+```
+
+```
+Nyílpuskák, Mágikus lövedék III.
+  8:  0m - 10m
+  7:  11m - 20m
+  6:  21m - 30m
+  5:  31m - 40m
+```
 
 🔆 **Bónusz**: A próbához `+2` járul, ha a karakter rendelkezik [Kitérés lövés elől](fortelyok.harci/kiteres_loves_elol.md) harci fortéllyal.
 
