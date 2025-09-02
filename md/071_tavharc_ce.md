@@ -27,28 +27,29 @@ Támadó CÉ =
   Védő Érték alapját adná, de mivel
   itt csak egyszer (karakteralkotáskor)
   kell vele számolni, ezért a számolás
-  meggyorsítása miatt átkerült ide negatív előjellel.
+  meggyorsítása miatt átkerült ide
+  negatív előjellel.
 
-+CM: Célzóérték Módosító
++ CM: Célzóérték Módosító
    Tapasztalati Szintenként legfeljebb
    `2` pont vehető fel. 1 CM = 6 KP
 
 + Harcmodor CÉ
-   Harcmodor képzettség szintje által kapott
-   bónusz (lásd a Harcmodor képzettségeket!)
+   Harcmodor képzettség szint bónusza
+   (lásd a Harcmodor képzettségeket!)
 
 + Önuralom Tulajdonság: 1:1 beszámít
 
 + Fegyver CÉ
-   Különbséget teszünk a fegyverkategóriák közt attól függően,
-   hogy alapesetben milyen könnyű velük célba találni.
-   Az alábbiak csak irányszámok, konkrét értékek eltérhetnek
+   fegyverkategóriák ülönbsége:
+   alapesetben milyen könnyű a találat
+   Az alábbiak csak irányszámok:
  • Nem hajításra készített tárgyak: 0,5
  • Hajító szálfegyverek: `CÉ:+1`
  • Apró hajítófegyverek: `CÉ:+1`
  • Íjak: `CÉ:+3`
  • Nyílpuskák: `CÉ:+5`
- • Lásd a Hajítófegyverek Lőfegyverek harcértékeit!
+ • (Hajítófegyverek Lőfegyverek harcértékei)
 ```
 
 - [Harcmodor képzettségek bónuszai](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
