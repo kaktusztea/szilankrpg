@@ -13,15 +13,64 @@ A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy 
 
 Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek értékei ezektől enyhén eltérhetnek:
 
-| Fegyverkategória                        |  CÉ   | Osztó | Példa fegyverek                             | Speciális                                                                                                                       |
-| --------------------------------------- | :---: | :---: | ------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| **Nem hajításra készített tárgyak**     | `+0`  |  `1`  | Kard, zsámoly, söröskorsó                   | Maximális Hatótávjukhoz hozzáadható:<br />(`Erő x Osztó`)                                                                       |
-| **Apró alkalmas fegyverek**             | `+2`  |  `2`  | Tőr, kő                                     | -                                                                                                                               |
-| **Apró hajítófegyverek, szálfegyverek** | `+3`  |  `3`  | Hajítótőr, hajítóbárd, dárda                | -                                                                                                                               |
-| **Íjak**                                | `+6`  |  `4`  | Rövid íj, hosszú íj, Kézi nyílpuska         | Sebzés bónusz: **Erő** Tulajdonság `1:1`  <br />(ha erre az Erőre lett tervezve)                                                |
-| **Nyílpuskák**                          | `+8`  |  `5`  | Minden nyílpuska<br />kivéve Kézi és Kh4rei | A kézi nyílpuskától felfelé Páncéltörőnek számítanak:<br />`SFÉ = a vért rétegeinek száma`<br>(mágikus vértek esetén a KM dönt) |
-| ...                                     |       |  ...  | ...                                         | ...                                                                                                                             |
-| Modern, nagy hatótávú fegyver           | `+15` | `12`  | Távcsöves mesterlövész puska                | Ezt csak azért írjuk be, hogy látszódjon, ez a távolsági harcrendszer kiválóan adaptálható modern szerepjáték világokra is.     |
+```
+Nem hajításra készített tárgyak
+  CÉ: +0
+  Osztó: 1
+  Példa fegyverek:
+    Kard, zsámoly, söröskorsó
+  Maximális Hatótávhoz: + (Erő x Osztó)
+```
+
+```
+Apró alkalmas fegyverek
+  CÉ: +2
+  Osztó: 2
+  Példa fegyverek: Tőr, kő
+  Speciális: -
+```
+
+```
+Apró hajítófegyverek, szálfegyverek
+  CÉ: +3
+  Osztó: 3
+  Példa fegyverek:
+    Hajítótőr, hajítóbárd, dárda
+  Speciális: -
+```
+
+```
+Íjak
+  CÉ: +6
+  Osztó: 4
+  Példa fegyverek:
+    Rövid íj, hosszú íj, Kézi nyílpuska
+  Sebzés bónusz: Erő 1:1
+    (ha erre az Erőre lett tervezve)
+```
+
+```
+Nyílpuskák
+  CÉ: +8
+  Osztó: 5
+  Példa fegyverek:
+    Minden nyílpuska, kivéve Kézi, Kh4rei
+  Kézi nyílpuskától felfelé Páncéltörőek
+    SFÉ = a vért rétegeinek száma
+    (mágikus vértek esetén a KM dönt)
+```
+
+```
+Modern, nagy hatótávú fegyver
+  CÉ: +15
+  Osztó: 12
+  Példa fegyverek:
+    Távcsöves mesterlövész puska
+  Csak hogy látszódjon, ez a távolsági
+  harcrendszer kiválóan adaptálható más,
+  modern szerepjáték világokra is.
+
+```
 
 🔆 **Megjegyzés**: Amennyiben valaki hajításra nem alkalmas fegyvert akar dobni, akkor az adott fegyver harcmodorában kismesteri, azaz `6`.szinten jártasnak kell lennie. Ez alatt képzetlen fegyverhasználat büntetéseivel történhet a dobás.
 
@@ -39,14 +88,14 @@ Távolsági fegyverek esetén NINCS **Többszörös találatból** adódó plusz
 ---
 ### Harckeret, Támadások száma (Íjászat, Hajítás)
 
-Ugyanúgy, ahogy a kétkezi fegyverek esetén itt is ugyanúgy a [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) rendszert használjuk.
-
 ```
 Harckeret = 
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
   - 3
 ```
+
+Ugyanúgy, ahogy a kétkezi fegyverek esetén itt is ugyanúgy a [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) rendszert használjuk.
 
 Az íjász/hajigász támadásainak száma attól függ, hogy milyen képzett az adott fegyver használatában, vagy annak Harcmodorában, illetve fürge. Ezt a kapcsolódó harci képzettség foka és a **Gyorsaság** Tulajdonság határozzák meg a fentiek szerint - amiből lejön még `3` pont.
 
