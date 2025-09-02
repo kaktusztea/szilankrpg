@@ -41,14 +41,16 @@ Támadó CÉ =
 + Önuralom Tulajdonság: 1:1 beszámít
 
 + Fegyver CÉ
-   fegyverkategóriák ülönbsége:
+   fegyverkategóriák különbsége:
    alapesetben milyen könnyű a találat
-   Az alábbiak csak irányszámok:
- • Nem hajításra készített tárgyak: 0,5
- • Hajító szálfegyverek: `CÉ:+1`
- • Apró hajítófegyverek: `CÉ:+1`
- • Íjak: `CÉ:+3`
- • Nyílpuskák: `CÉ:+5`
+   Irányszámok:
+ • CÉ: +0 - Nem hajításra való tárgyak
+ • CÉ: +2 - Apró, alkalmas fegyverek
+ • CÉ: +3 - Hajító szálfegyverek
+ • CÉ: +3 - Apró hajítófegyverek
+ • CÉ: +6 - Íjak
+ • CÉ: +8 - Nyílpuskák
+ • (CÉ: +15 - Távcsöves puska) 
  • (Hajítófegyverek Lőfegyverek harcértékei)
 ```
 
