@@ -20,10 +20,11 @@ A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem
 ---
 ## Célzó dobás
 
-A lövés/hajítás során ugyanúgy támadó dobás történik az egyedileg meghatározott Célpont Védő Érték ellen.
+A lövés/hajítás során ugyanúgy támadó dobás történik az egyedileg meghatározott Célpont `Védő Érték` ellen.
 
 ```
-CÉ + k20  vs  VÉ
+Támadó          Célpont
+CÉ + k20   vs   VÉ
 ```
 
 ---
