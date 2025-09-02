@@ -64,24 +64,47 @@ Lásd bővebben:
 <br />
 
 ---
-## Módosítók
+## CÉ Módosítók
 
-| Módosító                                                                                                                                                   |  **CÉ**   |
-|:---------------------------------------------------------------------------------------------------------------------------------------------------------- |:---------:|
-| Célzás → 1 célzással eltöltött kör után (nem additív) 🔆                                                                                                   |   `+3`    |
-| Célzás → 1 célzással eltöltött kör után (nem additív) - [Képzett célzás](fortelyok.tavharc/kepzett_celzas.md) fortéllyal 🔆                                |   `+7`    |
-| Hirtelen lövés                                                                                                                                             |   `-7`    |
-| Álló cél "belövése" (gyakorlás) min. negyed órán át                                                                                                        | `+[3-10]` |
-| [Fegyver minősége](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-minősége-ideája)                                                                      | `[-5;+5]` |
-| Nem “belőtt” íjak  / most lő először ezzel az íjjal - [Távolsági Harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) `9.szintje` alatt            |   `-10`   |
-| Nem “belőtt” nyílpuskák / most lő először ezzel a nyílpuskával - [Távolsági Harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) `9.szintje` alatt |   `-5`    |
-| Egyes [Távolsági Harci Fortélyokból](044_harci_fortelyok.md#távolsági-harci-fortélyok) adódó bónuszok.                                                     |           |
+```
++3: Célzás
+    1 célzással eltöltött
+    kör után (nem additív) 🔆
++7: Célzás +Képzett célzás fortély
+    1 célzással eltöltött
+    kör után (nem additív) 🔆
+-7: Hirtelen lövés
+```
+
+```
+[-5;+5]: Fegyver minősége
+
++ Távolsági harcmodor fortély bónuszai
+```
+
+```
+Belövés
+
+-10: Új fegyver
+    Nem “belőtt” íjak, vagy 
+    most lő először ezzel.
+    Harcmodor 9.szintje alatt
+    
++[3-10]: Konkrét álló cél
+    Ennek "belövése" minimum
+    negyed órán át (gyakorlás)
+```
 
 🔆 **Célzás**: íjnál csak 1 körig lehet kitartani! 1 kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
 
+Bővebben:
+- [Fegyver minősége](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-minősége-ideája)
+- [Távolsági Harcmodor képzettség](app://obsidian.md/kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
+- [Távolsági Harci fortélyok](044_harci_fortelyok.md#távolsági-harci-fortélyok)
+
 ### Fegyver belövése
 
-Ha **legalább fél órát** töltött el a karakter a “belövéssel”,  a "*Nem belőtt (fegyver)*" büntető módosítók megszűnnek. A használat során folyamatosan tűnik el a hátrány - erre már felesleges képletet alkotni - a KM dönt.
+Ha **legalább fél órát** töltött el a karakter a “belövéssel”,  a **"Nem belőtt (fegyver)"** büntető módosítók megszűnnek. A használat során folyamatosan tűnik el a hátrány - erre már felesleges képletet alkotni - a KM dönt.
 
 ---
 
