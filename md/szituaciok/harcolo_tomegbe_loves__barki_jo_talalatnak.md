@@ -2,21 +2,13 @@
 
 Bármelyik harcoló fél eltalálása jó, csak a tömeget magát célzod.
 
-Ilyenkor a célpont `Védő Értékének` számításakor a `Szorzó` **Mozgás** és **Méret** módosítói így alakulnak:
+### Célpont Védő Érték kiszámítása
 
-#### [Szorzó - Méret módosító](../072_tavharc_ve_oszto_cella.md#szorzó---méret-módosító)
+Szokásos módon, de
+- `1x`: [Harcoló csoport (bárki jó találatnak)](../073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont) Szorzó - Mozgás módosítóval
+- `0x`: Szorzó - Méret módosítóval, met mindent a **Mozgás** módosító értékénél szimulálunk
 
-```
-- Nagy csoport: 3x
-- Közepes csoport: 4x
-- Kis csoport: 5x
-```
-
-#### [Szorzó - Mozgás módosító](../072_tavharc_ve_oszto_cella.md#szorzó---mozgás-módosító)
-
-`0x`, mert mindent a **Méret** módosító értékénél szimulálunk
-
-#### Kit talál el
+#### Kit talál el?
 
 Random dobás: `k10`
 
