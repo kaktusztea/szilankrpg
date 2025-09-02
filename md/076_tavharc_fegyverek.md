@@ -19,7 +19,7 @@ Nem hajításra készített tárgyak
   Osztó: 1
   Példa fegyverek:
     Kard, zsámoly, söröskorsó
-  Maximális Hatótávhoz: + (Erő x Osztó)
+  Max Hatótávhoz: + (Erő x Osztó)
 ```
 
 ```
@@ -44,7 +44,7 @@ Apró hajítófegyverek, szálfegyverek
   CÉ: +6
   Osztó: 4
   Példa fegyverek:
-    Rövid íj, hosszú íj, Kézi nyílpuska
+    Rövid, hosszú íj, Kézi nyílpuska
   Sebzés bónusz: Erő 1:1
     (ha erre az Erőre lett tervezve)
 ```
@@ -54,7 +54,7 @@ Nyílpuskák
   CÉ: +8
   Osztó: 5
   Példa fegyverek:
-    Minden nyílpuska, kivéve Kézi, Kh4rei
+    Nyílpuskák, kivéve Kézi, Kh4rei
   Kézi nyílpuskától felfelé Páncéltörőek
     SFÉ = a vért rétegeinek száma
     (mágikus vértek esetén a KM dönt)
@@ -66,8 +66,8 @@ Modern, nagy hatótávú fegyver
   Osztó: 12
   Példa fegyverek:
     Távcsöves mesterlövész puska
-  Csak hogy látszódjon, ez a távolsági
-  harcrendszer kiválóan adaptálható más,
+  Hogy látszódjon, ez a távolsági
+  harcrendszer kiválóan adaptálható
   modern szerepjáték világokra is.
 
 ```
