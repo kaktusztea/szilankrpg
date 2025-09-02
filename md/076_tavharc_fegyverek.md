@@ -14,7 +14,7 @@ A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy 
 Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek értékei ezektől enyhén eltérhetnek:
 
 ```
-Nem hajításra készített tárgyak
+Nem hajításra alkalmas tárgyak 🔆
   CÉ: +0
   Osztó: 1
   Példa fegyverek:
@@ -72,9 +72,7 @@ Modern, nagy hatótávú fegyver
 
 ```
 
-🔆 **Megjegyzés**: Amennyiben valaki hajításra nem alkalmas fegyvert akar dobni, akkor az adott fegyver harcmodorában kismesteri, azaz `6`.szinten jártasnak kell lennie. Ez alatt képzetlen fegyverhasználat büntetéseivel történhet a dobás.
-
-🔆 Egyes fő távolsági fegyverkategóriák jellemző értékeit lásd a Fegver osztó alatti [összefoglaló táblázatban](072_tavharc_ve_oszto_cella.md#️-fegyver-osztó).
+🔆 Amennyiben valaki **hajításra nem alkalmas fegyvert** akar dobni, akkor az adott fegyver harcmodorában kismesteri, azaz `6`.szinten jártasnak kell lennie. Ez alatt képzetlen fegyverhasználat büntetéseivel történhet a dobás.
 
 <br />
 

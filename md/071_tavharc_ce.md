@@ -42,7 +42,7 @@ Támadó CÉ =
    fegyverkategóriák különbsége:
    alapesetben milyen könnyű a találat
    Irányszámok:
- • CÉ: +0 → Nem hajításra való tárgyak
+ • CÉ: +0 → Nem hajításra alkalmas tárgyak
  • CÉ: +1-2 → Apró, alkalmas fegyverek
  • CÉ: +2-3 → Hajító szálfegyverek
  • CÉ: +2-3 → Apró hajítófegyverek

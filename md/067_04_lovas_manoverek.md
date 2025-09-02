@@ -14,7 +14,7 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 - Hatás: 
   - Soron kívüli megelőző `(M)egakasztást` dobhatsz **minden** veled harcérintkezésben levő ellenfeled ellen.
   - Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így sebezni nem tudsz, de a feléd irányuló támadásokat elháríthatod.
-  - Távolsági Védő Értéked számításánál a [Mozgás módosítód](072_tavharc_ve_oszto_cella.md#szorzó---mozgás-módosító) mérsékelteln **Kiszámíthatatlan** (`12`) lesz.
+  - Távolsági Védő Értéked számításánál a [Szorzó - Mozgás módosítód](073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont) **Kiszámíthatatlan** (`6x`) lesz.
 
 <br />
 

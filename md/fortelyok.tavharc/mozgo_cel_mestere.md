@@ -8,8 +8,8 @@ Amennyiben **Kiszámíthatatlanul mozgó**, vagy **Harcoló** ellenfélre lősz 
 🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- Kiszámíthatatlan Szorzó: `5x`
-- Harcoló Szorzó: `7x`
+- Kiszámíthatatlan Szorzó: `6x`
+- Harcoló Szorzó: `8x`
 
 ---
 ### 1. fok

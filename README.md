@@ -56,7 +56,7 @@ A távolsági harcot számos más körülmény cizellálja, mint a célpont mozg
 
 A rendszer jól adaptálható más, akár modern kori környezetbe is.
 
-Távharc esetén pusztán a fegyver [Célzó Értékének](md/071_tavharc_ce.md) és [Osztó](md/072_tavharc_ve_szorzo_oszto.md#%EF%B8%8F-fegyver-oszt%C3%B3) jellemzőjének változtatásával - máris kész a távcsöves mesterlövész puska.
+Távharc esetén pusztán a fegyver [Célzó Értékének](md/071_tavharc_ce.md) és [Osztó](md/072_tavharc_ve_oszto_cella.md) jellemzőjének változtatásával - máris kész a távcsöves mesterlövész puska.
 
 A képzettségrendszer új [Szabad Fortélyok](md/042_szabad_fortelyok.md) meghatározásával remekül hozzáigazítható más világokhoz.
 

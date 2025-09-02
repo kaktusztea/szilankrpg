@@ -8,7 +8,7 @@ Gyakorlott vagy a nagy távolságú célok belövésében.
 - **Íjászat** vagy **Lövészet**  **-** `5.szint`
 
 
-🌟 **Hatás**: Ha olyan célra lősz/hajítasz, aminek a [(**Távolság/Fegyver Osztó**) hányadosa](../072_tavharc_ve_oszto_cella.md#️-fegyver-osztó) (Cella) nagyobb, vagy egyenlő, mint `10`, akkor a kiszámolt **Cella** értékét `1`-el csökkentheted (de `8` alá nem mehet).
+🌟 **Hatás**: Ha olyan célra lősz/hajítasz, aminek a [Cella](https://github.com/kaktusztea/szilankrpg/blob/k20/md/072_tavharc_ve_oszto_cella.md#cella) értéke nagyobb, vagy egyenlő, mint `5`, akkor a kiszámolt **Cella** értékét `1`-el csökkentheted (de `4` alá nem mehet).
 
 <br />
 

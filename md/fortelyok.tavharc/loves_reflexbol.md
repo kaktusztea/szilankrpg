@@ -14,7 +14,7 @@ Ha hirtelen kell lőnöd, rutinosan kapod elő lőfegyveredet.
 - Gyorsaság: `+1`  
 - Hajítás vagy Íjászat vagy Lövészet – `5.szint`
 
-🌟 **Hatás**: Téged nem érint a 🗡️[Hirtelen lövés](../071_tavharc_ce.md#m%C3%B3dos%C3%ADt%C3%B3k) okozta büntetés, változatlan `CÉ`-vel támadhatod a váratlanul felbukkanó célpontot.
+🌟 **Hatás**: Téged nem érint a 🗡️[Hirtelen lövés](../071_tavharc_ce.md#c%C3%A9-m%C3%B3dos%C3%ADt%C3%B3k) okozta büntetés, változatlan `CÉ`-vel támadhatod a váratlanul felbukkanó célpontot.
 
 
 <br />
