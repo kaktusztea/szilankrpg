@@ -6,9 +6,9 @@ Gyakorlott vagy a lóhátról való íjászatban, ennek hatására kisebbek nega
 🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- Léptetés esetén: `CÉ:-10`
-- Ügetés esetén: `CÉ:-20`
-- Vágta esetén: `CÉ:-40`
+- Léptetés esetén: `CÉ:-3`
+- Ügetés esetén: `CÉ:-7`
+- Vágta esetén: `CÉ:-13`
 
 ---
 ### 1. fok
@@ -21,8 +21,8 @@ Gyakorlott vagy a lóhátról való íjászatban, ennek hatására kisebbek nega
 
 🌟 **Hatás**:
 - Léptetés esetén: nincs levonás
-- Ügetés esetén: `CÉ:-10`
-- Vágta esetén: `CÉ:-20`
+- Ügetés esetén: `CÉ:-3`
+- Vágta esetén: `CÉ:-7`
 
 ---
 ### 2. fok
@@ -36,7 +36,7 @@ Gyakorlott vagy a lóhátról való íjászatban, ennek hatására kisebbek nega
 🌟 **Hatás**:
 - Léptetés esetén: nincs levonás
 - Ügetés esetén: nincs levonás
-- Vágta esetén: `CÉ:-10`
+- Vágta esetén: `CÉ:-3`
 
 <br />
 
