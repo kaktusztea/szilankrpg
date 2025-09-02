@@ -4,7 +4,7 @@ Bármelyik harcoló fél eltalálása jó, csak a tömeget magát célzod.
 
 Ilyenkor a célpont `Védő Értékének` számításakor a `Szorzó` **Mozgás** és **Méret** módosítói így alakulnak:
 
-#### [Szorzó - Méret módosító](../072_tavharc_ve_szorzo_oszto.md#szorz%C3%B3---m%C3%A9ret-m%C3%B3dos%C3%ADt%C3%B3)
+#### [Szorzó - Méret módosító](../072_tavharc_ve_oszto.md#szorzó---méret-módosító)
 
 ```
 - Nagy csoport: 3x
@@ -12,7 +12,7 @@ Ilyenkor a célpont `Védő Értékének` számításakor a `Szorzó` **Mozgás*
 - Kis csoport: 5x
 ```
 
-#### [Szorzó - Mozgás módosító](../072_tavharc_ve_szorzo_oszto.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3)
+#### [Szorzó - Mozgás módosító](../072_tavharc_ve_oszto.md#szorzó---mozgás-módosító)
 
 `0x`, mert mindent a **Méret** módosító értékénél szimulálunk
 

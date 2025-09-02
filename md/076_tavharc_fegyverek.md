@@ -10,7 +10,7 @@ A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy 
 
 🔆 **Megjegyzés**: Amennyiben valaki hajításra nem alkalmas fegyvert akar dobni, akkor az adott fegyver harcmodorában kismesteri, azaz `6`.szinten jártasnak kell lennie. Ez alatt képzetlen fegyverhasználat büntetéseivel történhet a dobás.
 
-🔆 Egyes fő távolsági fegyverkategóriák jellemző értékeit lásd a Fegver osztó alatti [összefoglaló táblázatban](072_tavharc_ve_szorzo_oszto.md#%EF%B8%8F-fegyver-oszt%C3%B3).
+🔆 Egyes fő távolsági fegyverkategóriák jellemző értékeit lásd a Fegver osztó alatti [összefoglaló táblázatban](072_tavharc_ve_oszto.md#️-fegyver-osztó).
 
 <br />
 
@@ -65,6 +65,6 @@ Egy hajítófegyvernél legfeljebb akkor elképzelhető a **Osztó** változása
 
 ---
 
-🔗 [Távharc példák](075_tavharc_peldak.md) →
+🔗 [Távharc példák](077_tavharc_peldak.md) →
 
 ⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)

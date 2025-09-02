@@ -1,6 +1,12 @@
 ## Célzó Érték számítása
 
-Mikor a támadó lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A `Célzó Érték` kiszámolása a következőképpen történik - még karakteralkotási időben.
+Mikor a támadó lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A **Célzott Támadó dobás** így néz ki:
+
+```
+Támadó CÉ + k20   vs   Célpont VÉ
+```
+
+A `Célzó Érték` kiszámolása a következőképpen történik - még karakteralkotási időben:
 
 ```
 Támadó CÉ =
@@ -11,7 +17,6 @@ Támadó CÉ =
     + Fegyver CÉ
     + Mf-bónusz
 ```
-
 
 ```
 -10: Konstans
@@ -50,6 +55,7 @@ Támadó CÉ =
    adott távolsági fegyverre
 ```
 
+Lásd bővebben:
 - [Harcmodor képzettségek bónuszai](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 - [Hajítófegyverek harcértékei](068_07_hajitofegyverek.md)
 - [Lőfegyverek harcértékei](068_08_lofegyverek.md)
@@ -77,14 +83,7 @@ Támadó CÉ =
 Ha **legalább fél órát** töltött el a karakter a “belövéssel”,  a "*Nem belőtt (fegyver)*" büntető módosítók megszűnnek. A használat során folyamatosan tűnik el a hátrány - erre már felesleges képletet alkotni - a KM dönt.
 
 ---
-## Célzott Támadó dobás
 
-```
-CÉ + k20  vs  VÉ
-```
-
----
-
-🔗 [Célpont Védő Értékének számítása, Szorzó, Osztó](072_tavharc_ve_szorzo_oszto.md) →
+🔗 [Osztó értéke a távolsági Védő Értékben](072_tavharc_ve_oszto.md) →
 
 ⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
