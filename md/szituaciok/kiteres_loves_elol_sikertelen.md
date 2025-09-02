@@ -8,7 +8,7 @@ Ilyenkor a lövész rendesen **Célzó Dobást** tesz. A Célpont `Védő Érté
 
 ```
 Sikertelenül szándékosan
- kitérő célpont: 8x
+ kitérő célpont: 4x
 ```
 
 ---
