@@ -108,7 +108,8 @@ Célpont láthatósága és hangossága
 *   Vaksötétben harcoló ellenfél
     Távoli célpont sötétben
 
-99x: Lehetetlen
+99x: Háttérrel egybeolvadó kontúr (csendes)
+     Lehetetlen.
      Nem látható, lopakodó,
      némán osonó fejvadász
 ```
