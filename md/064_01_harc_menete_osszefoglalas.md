@@ -2,23 +2,22 @@
 ## A harc menete – összefoglalás
 
 ### 🧮 Harcértékek
+
 ```
-KÉ = 10
-   + (Gyorsaság + Intelligencia)
+KÉ = 3
+   + (Gyorsaság + Intelligencia)⭕k20
    + Tapasztalati szint
    + Harcmodor/Mágia-Tradíció bónusz
-   + Mf bónusz
-   + Fegyver KÉ
 
-TÉ = 20
-   + 2 x (Erő + Ügyesség + Gyorsaság)
+TÉ = 7
+   + Erő + Ügyesség + Gyorsaság
    + TÉ HM
    + Harcmodor/Mágia-Tradíció bónusz
    + Mf bónusz
    + Fegyver TÉ
 
-VÉ = 120
-   + 2 x (Ügyesség + Gyorsaság)
+VÉ = 24
+   + Ügyesség + Gyorsaság
    + VÉ HM
    + Harcmodor/Mágia-Tradíció bónusz
    + Mf bónusz
@@ -27,12 +26,11 @@ VÉ = 120
 
 VÉ Bónusz:
   → Vértviselet 3.szint:
-    - félvért VÉ:+5
-    - teljes vért VÉ:+10
+    - félvért VÉ:+1⭕k20
+    - teljes vért VÉ:+3⭕k20
 
-CÉ = -30
-   + (2 x Önuralom)
-   – 30 (Konstans)
+CÉ = -10 (Konstans)
+   + Önuralom
    + CM
    + Harcmodor/Mágia-Tradíció bónusz
    + Fegyver CÉ
@@ -41,7 +39,7 @@ CÉ = -30
 <br />
 
 ---
-### 🤞 Kezdeményezés
+### 🤞 Kezdeményezés ⭕k20
 
 ```
 Kezdeményező dobás: KÉ + k20
@@ -59,13 +57,13 @@ Azonos kezdeményezésnél: egyszerre csapnak.
 ### 🤺 Támadás
 
 ```
-Támadó dobás: TÉ + k100
+Támadó dobás: TÉ + k20
 ```
 
 ```
 Minden újabb támadás a körben:
 
-  TÉ:-20 a 2. támadástól kezdődően
+  TÉ:-4 a 2. támadástól kezdődően
   aktuális Támadó Értékre.
   NEM Additív.
 
@@ -73,13 +71,10 @@ Sebzés jellege: elsődleges sebzési
         típusa az alapértelmezett
         (például: Szúró).
         Másodlagos támadási formával
-        TÉ:-10 módosítóval támadhatsz
+        TÉ:-2 módosítóval támadhatsz
 
 Előnyös/hátrányos helyzetű harcos:
    1 penge méretkülönbségtől
-
-01 támadó dobás: kudarc, KM dönt.
-   Pl. az ellenfél kap +1 támadást
 ```
 
 <br />
@@ -87,33 +82,32 @@ Előnyös/hátrányos helyzetű harcos:
 ---
 ### 😵 TÉ < VÉ  → VÉ csökkentés
 
-#### [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
-
-```
-Mindkét fél Nagykockával csökkent (k100)
-
-Példa: 58  → 8
-```
-
 #### [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
 ```
-Kiskocka értékével csökkent (k100)
-  Példa: 58  → 5
+VÉ csökkentés:
+  1 + k20T
+```
+
+#### [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
+
+```
+Mindkét fél csökkent:
+  2 + k20T
 ```
 
 #### [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
 
 ```
-Nagykocka értékével csökkent (k100)
-  Példa: 58  → 8
+VÉ csökkentés:
+  2 + k20T
 ```
 
 #### [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
 
 ```
-(Nagykocka+1) értékével csökkent (k100)
-  Példa: 58  → 9
+VÉ csökkentés:
+  3 + k20T
 ```
 
 <br />
@@ -136,11 +130,8 @@ X: fegyver alap sebzése
 ```
 
 ```
-- Többszörös találat (TÉ > VÉ+20):
-      20-anként SP:+3   (max +9 SP)
-- 00 támadó dobás: SP:+5
-      Ellenfél SFÉ nem számít
-      (de Aranyharang, Elemi Erő igen)
+- Többszörös találat (TÉ >= VÉ+4):
+      4-enként SP:+3   (max +9 SP)
 - Roham: SP:+5
 - Támadás erőből fortély bónusza
 ```
@@ -193,10 +184,11 @@ Teljes, fenyegetetlen nyugalom szükséges!
 #### Győzelmi szabály
 
 ```
-VÉ: +10
+VÉ: +3
 ```
 
-Ha a karakter végzett egy - hozzá hasonló tudású, vagy erősebb - ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+10` pont.\
+Ha a karakter végzett egy - hozzá hasonló tudású, vagy erősebb - ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3` pont.
+
 Ez a siker hatása a szervezetre + heroizmus. Persze itt is lehetnek kivételek (barát megölése, stb).
 
 <br />
@@ -238,13 +230,10 @@ Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#mozgás
 Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a játékot. Ilyenkor a következő – opcionális – szabályt javasoljuk:
 
 ```
-- TÉ: osztás 10-zel, kerekítés (1-5: le, 6-9: fel)
-- VÉ: osztás 10-zel
-- TÉ: +2 mindenkinek (az osztás után)
+- TÉ: +7 mindenkinek (az osztás után)
 - Nincs VÉ csökkentés
 - Nincs páncéldobás
 - Nincs Manőver használat
-- Támadó dobás: k10
 - Erősített sebzés:
   1-10:   6 ÉP
   11-20: 12 ÉP

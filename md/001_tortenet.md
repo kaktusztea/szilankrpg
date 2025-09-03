@@ -125,6 +125,10 @@ Bevezetjük a **`Szilánk RPG`** elnevezést a régi `km100` név elhagyásával
 
 <br />
 
+### 2025-08-28
+
+Tesztek a `k100` alapú Támadó Dobás konverzójára `k20`-ra. Ez minden harcértéket érint.
+
 ---
 
 🔗 [Fejlesztők](002_fejlesztok.md) →

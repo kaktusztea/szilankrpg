@@ -1,5 +1,20 @@
 ## Fegyverek általános szabályai
 
+
+- [Fegyverméretek, általános fegyver-harcértékek](068_01_fegyverek_altalanos_szabalyai.md#fegyverm%C3%A9retek-%C3%A1ltal%C3%A1nos-fegyver-harc%C3%A9rt%C3%A9kek)
+- [Fegyverméret elnevezések, szabályok](#fegyverm%C3%A9ret-elnevez%C3%A9sek-szab%C3%A1lyok)
+- [Jellemző pengehosszok](068_01_fegyverek_altalanos_szabalyai.md#jellemz%C5%91-pengehosszok)
+- [Sebzéstípusok](068_01_fegyverek_altalanos_szabalyai.md#sebz%C3%A9st%C3%ADpusok)
+- [KF: Különleges fegyver szabály](068_01_fegyverek_altalanos_szabalyai.md#kf-k%C3%BCl%C3%B6nleges-fegyver-szab%C3%A1ly)
+- [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_fegyverek_altalanos_szabalyai.md#mk-m%C3%A1sf%C3%A9lkezes-fegyverek-egy-k%C3%A9zzel-forgatva)
+- [Íves fegyver](068_01_fegyverek_altalanos_szabalyai.md#%C3%ADves-fegyver)
+- [Puszta kéz](068_01_fegyverek_altalanos_szabalyai.md#puszta-k%C3%A9z)
+- [Érintő támadás](068_01_fegyverek_altalanos_szabalyai.md#%C3%A9rint%C5%91-t%C3%A1mad%C3%A1s)
+- [Erőbónusz limit](068_01_fegyverek_altalanos_szabalyai.md#er%C5%91b%C3%B3nusz-limit)
+- [Átütés](068_01_fegyverek_altalanos_szabalyai.md#%C3%A1t%C3%BCt%C3%A9s)
+- [Fegyver mozgásgátló hatása](068_01_fegyverek_altalanos_szabalyai.md#fegyver-mozg%C3%A1sg%C3%A1tl%C3%B3-hat%C3%A1sa)
+- [Fegyverek minősége (Ideája)](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-min%C5%91s%C3%A9ge-ide%C3%A1ja)
+
 ### Fegyverméretek, általános fegyver-harcértékek
 
 Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – méret szerint. A lentiek irányadó értékek, az egyes konkrét fegyverek számai ettől eltérnek, viszont új fegyver beillesztése a rendszerbe így gyerekjáték.
@@ -65,10 +80,17 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
 <br />
 
 ---
-### Különleges fegyver szabály
+### KF: Különleges fegyver szabály
 
 ```
 Jelölése: KF
+
+- Tradíció követelmény
+  - A: Amund
+  - D: Dzsenn
+  - S: Slan
+  - F: Fejvadász
+- Mf: 2.fok követelmény
 ```
 
 Egyes – speciális – fegyvereknél van megemlítve ez a szabály. Jelentése: a táblázatban leírt harcértékek csak akkor érvényesek, ha speciális iskolában, vagy onnan származó mestertől megtanulta a karakter a fegyver speciális fogásait. Ez részben előtörténet követelmény, amelyet fel kell tüntetni a karakterlapon, másrészt a fegyver Megjegyzés mezőjében szerepel, milyen más, számszerű követelménye van. Bánjunk ezzel a követelménnyel szigorúan! Ha ez nincs meg, a KM dönt, hogy milyen – alacsonyabb – harcértékekkel forgathatja a karakter a fegyvert – már ha egyáltalán...
@@ -78,22 +100,45 @@ A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](
 <br />
 
 ---
+### MK: Másfélkezes fegyverek egy kézzel forgatva
+
+Ha egy kézzel forgatod az alapvetően két kézre tervezett másfélkezes fegyveredet, akkor az alábbi levonásokat kapod harcértékeidre:
+
+```
+- KÉ:-1,  TÉ:-2,  VÉ:-2
+- Átütés megszűnik (ha volt)
+- Erőbónusz limit csökken
+  (általában 2-re)
+- Sebesség marad
+```
+
+<br />
+
+---
+### Íves fegyver
+
+```
++2 SP páncélozatlan
+   ellenfél ellen
+```
+ 
+Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellenük `+2 SP` bónusz jár.
+
+<br />
+
+---
 ### Puszta kéz
 
 A Puszta kéz kiemelt „fegyver”, hiszen mindig „ott van”. Puszta kézzel viszont bármilyen fegyver ellen meglehetősen kellemetlen harcolni, hiszen nincs mivel távol tartani, fenyegetni az ellenfelet. Ezért a Puszta kéz harcértékei mindenkinek a következők:
 
 ```
-Puszta kéz:  KÉ:-10,  TÉ:-10,  VÉ:-10
+Puszta kéz:  KÉ:-3,  TÉ:-3,  VÉ:-3
 ```
 
 ---
 ### Érintő támadás
 
-Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt könnyebben megteheti a támadó. Támadó Értékére nem jár levonás:
-
-```
-Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
-```
+Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt könnyebben megteheti a támadó az [Érintő taktika](065_02_harci_taktikak.md#%C3%A9rint%C5%91-taktika-) alkalmazásával.
 
 <br />
 
@@ -118,18 +163,6 @@ Puszta kéz:  KÉ:-10,  TÉ:0,  VÉ:-10
 <br />
 
 ---
-### Íves
-
-```
-+2 SP páncélozatlan
-   ellenfél ellen
-```
- 
-Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellenük `+2 SP` bónusz jár.
-
-<br />
-
----
 ### Fegyver mozgásgátló hatása 
 
 A fegyverekre nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vértekre alkalmazunk.
@@ -147,19 +180,19 @@ Silány munka, vagy messze földön híres fegyverkovács mester remeke - külö
 
 A minőség a tárgy - ezúttal fegyver - Ideájának erejét is mutatja: mennyire alkalmas arra a célra, amire készítették. A fentiekben semmilyen mágia nem játszik szerepet, pusztán az elkészítés minőségét mutatja. A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** is hatással van.
 
-| Fegyverek minősége | Módosítók                    |    Ár    |
-| :----------------: | :--------------------------- | :------: |
-|        `-5`        | `KÉ:-5; TÉ,CÉ,VÉ:-10; SP:-5` | `1/13 x` |
-|        `-4`        | `KÉ:-4; TÉ,CÉ,VÉ:-8, SP:-4`  | `1/10 x` |
-|        `-3`        | `KÉ:-3; TÉ,CÉ,VÉ:-6, SP:-3`  | `1/7 x`  |
-|        `-2`        | `KÉ:-2; TÉ,CÉ,VÉ:-4, SP:-2`  | `1/4 x`  |
-|        `-1`        | `KÉ:-1; TÉ,CÉ,VÉ:-2, SP:-1`  | `1/2 x`  |
-|        `0`         |                              |   `1x`   |
-|        `+1`        | `KÉ:+1; TÉ,CÉ,VÉ:+2; SP:+1`  |   `2x`   |
-|        `+2`        | `KÉ:+2; TÉ,CÉ,VÉ:+4; SP:+2`  |   `4x`   |
-|        `+3`        | `KÉ:+3; TÉ,CÉ,VÉ:+6; SP:+3`  |   `7x`   |
-|        `+4`        | `KÉ:+4; TÉ,CÉ,VÉ:+8; SP:+4`  |  `10x`   |
-|        `+5`        | `KÉ:+5; TÉ,CÉ,VÉ:+10; SP:+5` |  `13x`   |
+| Fegyverek minősége | Módosítók                |    Ár    |
+| :----------------: | :----------------------- | :------: |
+|        `-5`        | `TÉ,CÉ:-3; VÉ:-2; SP:-5` | `1/13 x` |
+|        `-4`        | `TÉ,CÉ:-2; VÉ:-2; SP:-4` | `1/10 x` |
+|        `-3`        | `TÉ,CÉ:-2; VÉ:-1; SP:-3` | `1/7 x`  |
+|        `-2`        | `TÉ,CÉ:-1; VÉ:-1; SP:-2` | `1/4 x`  |
+|        `-1`        | `TÉ,CÉ:-1; VÉ:-0; SP:-1` | `1/2 x`  |
+|        `0`         |                          |   `1x`   |
+|        `+1`        | `TÉ,CÉ:+1; VÉ:+0; SP:+1` |   `2x`   |
+|        `+2`        | `TÉ,CÉ:+1; VÉ:+1; SP:+2` |   `4x`   |
+|        `+3`        | `TÉ,CÉ:+2; VÉ:+1; SP:+3` |   `7x`   |
+|        `+4`        | `TÉ,CÉ:+2; VÉ:+2; SP:+4` |  `10x`   |
+|        `+5`        | `TÉ,CÉ:+3; VÉ:+2; SP:+5` |  `13x`   |
 
 #### 🔆 Mágikus fegyverek és a fegyver Ideája
 

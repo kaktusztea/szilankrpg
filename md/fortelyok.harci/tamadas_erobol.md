@@ -3,11 +3,11 @@
 Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:3` váltószámmal.
 
 ```
-TÉ:-3, SP:+1
-...
-TÉ:-9, SP:+3
-...
-TÉ:-18, SP:+6
+TÉ:-1, SP:+1
+..
+TÉ:-3, SP:+3
+..
+TÉ:-6, SP:+6
 ```
 
 ### 1. fok
@@ -16,7 +16,7 @@ TÉ:-18, SP:+6
 - Erő: `+2`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Zúzás)
 
-🌟 **Hatás**: legfeljebb `+3 SP` (`TÉ:-9`) pakolható át
+🌟 **Hatás**: legfeljebb `+3 SP` (`TÉ:-3`) pakolható át
 
 ---
 ### 2. fok
@@ -25,7 +25,7 @@ TÉ:-18, SP:+6
 - Erő: `+3`
 - Harcmodor - `6.szint`<br /> (Kardvívás / Lándzsavívás / Zúzás)
 
-🌟 **Hatás**: legfeljebb `+6 SP` (`TÉ:-18`) pakolható át
+🌟 **Hatás**: legfeljebb `+6 SP` (`TÉ:-6`) pakolható át
 
 ---
 ### Megjegyzések

@@ -10,14 +10,14 @@ Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász l�
 
 <!-- tag: md_table_tavfegyver_start -->
 
-| Fegyver         | Forgatás módja |   SP   | Erőbónusz limit | Sebzés módja | Átütés |  KÉ  |  CÉ  | Osztó | Hatótáv | Sebesség | Kategória | Speciális / Megjegyzés                                                                                                                           |
-| --------------- | :------------: | :----: | :-------------: | :----------: | :----: | :--: | :--: | :---: | ------: | :------: | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Rövid íj        |    kétkezes    |  `+1`  |       `2`       |     `S`      |  `0`   | `10` | `10` |  `3`  |   `60m` |   `6`    | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Hosszú íj       |    kétkezes    |  `+3`  |       `3`       |     `S`      |  `0`   | `6`  | `12` |  `3`  |  `120m` |   `8`    | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Visszacsapó íj  |    kétkezes    |  `+4`  |       `4`       |     `S`      |  `3`   | `6`  | `10` |  `3`  |  `160m` |   `8`    | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
-| Elf íj          |    kétkezes    |  `+4`  |       `0`       |     `S`      |  `0`   | `8`  | `13` |  `4`  |  `120m` |   `7`    | lőfegyver | Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: `3`.<br />Erőbónusz nincs |
-| Fúvócső, kicsi  |    egykezes    | spec\* |       `0`       |     `S`      |  `0`   | `10` | `8`  |  `1`  |   `16m` |   `9`    | lőfegyver | `k20` dobásnál: `20`-as dobás: `1 ÉP`, különben `0 ÉP`                                                                                           |
-| Fúvócső, vadász |    kétkezes    | `-10`  |       `0`       |     `S`      |  `0`   | `5`  | `10` |  `1`  |   `30m` |   `10`   | lőfegyver |                                                                                                                                                  |
+| Fegyver         | Forgatás módja |   SP   | Erőbónusz limit | Sebzés módja | Átütés |  KÉ  | CÉ  | Osztó | Hatótáv | Sebesség | Kategória | Speciális / Megjegyzés                                                                                                                           |
+| --------------- | :------------: | :----: | :-------------: | :----------: | :----: | :--: | :-: | :---: | ------: | :------: | --------- | ------------------------------------------------------------------------------------------------------------------------------------------------ |
+| Rövid íj        |    kétkezes    |  `+1`  |       `2`       |     `S`      |  `0`   | `10` | `5` |  `4`  |   `60m` |   `6`    | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
+| Hosszú íj       |    kétkezes    |  `+3`  |       `3`       |     `S`      |  `0`   | `6`  | `6` |  `4`  |  `120m` |   `8`    | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
+| Visszacsapó íj  |    kétkezes    |  `+4`  |       `4`       |     `S`      |  `3`   | `6`  | `5` |  `4`  |  `160m` |   `8`    | lőfegyver | Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!                                                                       |
+| Elf íj          |    kétkezes    |  `+4`  |       `0`       |     `S`      |  `0`   | `8`  | `7` |  `5`  |  `120m` |   `7`    | lőfegyver | Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: `3`.<br />Erőbónusz nincs |
+| Fúvócső, kicsi  |    egykezes    | spec\* |       `0`       |     `S`      |  `0`   | `10` | `4` |  `3`  |   `16m` |   `9`    | lőfegyver | `k20` dobásnál: `20`-as dobás: `1 ÉP`, különben `0 ÉP`                                                                                           |
+| Fúvócső, vadász |    kétkezes    | `-10`  |       `0`       |     `S`      |  `0`   | `5`  | `5` |  `4`  |   `30m` |   `10`   | lőfegyver |                                                                                                                                                  |
 
 <!-- tag: md_table_tavfegyver_end -->
 
@@ -30,14 +30,14 @@ Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász l�
 
 <!-- tag: md_table_tavfegyver_start -->
 
-| Fegyver            | Forgatás módja |      SP      | Erőbónusz | Sebzés módja | Átütés | KÉ  |  CÉ  | Osztó | Hatótáv | Sebesség | Speciális / Megjegyzés                                       |
-| ------------------ | -------------- | :----------: | :-------: | :----------: | :----: | :-: | :--: | :---: | :-----: | :------: | ------------------------------------------------------------ |
-| Kézi nyílpuska     | egykezes       |     `+0`     |    `0`    |     `S`      |  `0`   | `8` | `10` |  `3`  |  `20m`  |   `10`   | A kézi nyílpuska kevésbé pontos fegyver kis mérete miatt.    |
-| Nyílpuska          | kétkezes       |     `+6`     |    `0`    |     `S`      |  `8`   | `4` | `16` |  `4`  |  `50m`  |   `13`   |                                                              |
-| Nehéz nyílpuska    | kétkezes       |    `+14`     |    `0`    |     `S`      |  `15`  | `1` | `16` |  `4`  |  `80m`  |   `16`   |                                                              |
-| Shad0ni páncéltörő | kétkezes       |    `+20`     |    `0`    |     `Z`      |  `20`  | `0` | `0`  |  `4`  | `120m`  |    -     | Újratöltés: 1 emberrel: `3` kör, 2 emberrel: `1` kör         |
-| Kharei nyílpuska   | kétkezes       |     `+3`     |    `0`    |     `S`      |  `0`   | `5` | `14` |  `4`  |  `50m`  |   `6`    | Míg ki nem fogy a tár. Újratöltés: `1` kör                   |
-| Aquir nyílpuska    | egykezes       | `halál / +6` |    `0`    |     `S`      |  `20`  | `8` | `16` |  `4`  |  `50m`  |   `7`    | Halálos hatása és Átütés értéke csak aquir kézben érvényesül |
+| Fegyver            | Forgatás módja |      SP      | Erőbónusz | Sebzés módja | Átütés | KÉ  | CÉ  | Osztó | Hatótáv | Sebesség | Speciális / Megjegyzés                                       |
+| ------------------ | -------------- | :----------: | :-------: | :----------: | :----: | :-: | :-: | :---: | :-----: | :------: | ------------------------------------------------------------ |
+| Kézi nyílpuska     | egykezes       |     `+0`     |    `0`    |     `S`      |  `0`   | `8` | `5` |  `4`  |  `20m`  |   `10`   | A kézi nyílpuska kevésbé pontos fegyver kis mérete miatt.    |
+| Nyílpuska          | kétkezes       |     `+6`     |    `0`    |     `S`      |  `8`   | `4` | `8` |  `5`  |  `50m`  |   `13`   |                                                              |
+| Nehéz nyílpuska    | kétkezes       |    `+14`     |    `0`    |     `S`      |  `15`  | `1` | `8` |  `5`  |  `80m`  |   `16`   |                                                              |
+| Shad0ni páncéltörő | kétkezes       |    `+20`     |    `0`    |     `Z`      |  `20`  | `0` | `0` |  `6`  | `120m`  |    -     | Újratöltés: 1 emberrel: `3` kör, 2 emberrel: `1` kör         |
+| Kharei nyílpuska   | kétkezes       |     `+3`     |    `0`    |     `S`      |  `0`   | `5` | `7` |  `4`  |  `50m`  |   `6`    | Míg ki nem fogy a tár. Újratöltés: `1` kör                   |
+| Aquir nyílpuska    | egykezes       | `halál / +6` |    `0`    |     `S`      |  `20`  | `8` | `9` |  `5`  |  `50m`  |   `7`    | Halálos hatása és Átütés értéke csak aquir kézben érvényesül |
 
 <!-- tag: md_table_tavfegyver_end -->
 

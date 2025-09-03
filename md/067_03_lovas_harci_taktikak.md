@@ -5,7 +5,7 @@ Ahogy a gyalogos küzdelemben is alkalmazhatóak [Harci taktikák](065_02_harci_
 ### Lovas roham / Léglovas roham
 
 ```
-- TÉ: +30
+- TÉ: +6
 - SP: +10
 - 1 támadó csapás, 1 visszacsapás lehetséges
 ```
@@ -25,7 +25,7 @@ Követelmények:
 ### Lovas támadás galoppból
 
 ```
-- TÉ: +15
+- TÉ: +3
 - SP: +5
 - 1 támadó csapás, 1 visszacsapás lehetséges
 ```

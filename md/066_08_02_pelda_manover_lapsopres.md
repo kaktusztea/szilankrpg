@@ -4,13 +4,13 @@ Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig t
 
 Tetves értékei
 - KÉ: `15`
-- TÉ: `55`
-- VÉ: `125`
-- `Manőver Alap = (41 HM / 10) = 4`
+- TÉ: `35`
+- VÉ: `52`
+- `Manőver Alap = (11 HM / 3) = 4`
 
 Ellenfelének értékei
-- `VÉ: 140`
-- `Manőver Alap = 32 HM / 10 = 3`
+- `VÉ: 48`
+- `Manőver Alap = 9 HM / 3 = 3`
 
 **Gáncsolás manőver**
 - Nehézsége: `8`
@@ -18,14 +18,14 @@ Ellenfelének értékei
 
 **1. Végrehajtás**
 
-- Tetves `TÉ:+20` értékkel leadja támadását
--  `TÉ = 55 + 20 + k100 = 142`, ez nagyobb mint ellenfele `VÉ`-je
+- Tetves `TÉ:+4` értékkel leadja támadását
+-  `TÉ = 35 + 4 + k20 = 50`, ez nagyobb mint ellenfele `VÉ`-je
 - Sikeres Végrehajtás
 
 **2. Ellenpróba**
 
-- Tetves dobása:  `4` (Manőver Alap) + `+2` (Manőver Pont bónusza) + `k10`
-- Célszám: `3 + 8  = 11` (ellenfél Manőver Alap + Gáncsolás nehézsége)
+- Tetves dobása:  `4` (Manőver Alap) `+2` (Manőver Pont bónusza) + `k10`
+- Célszám: `3 + 8 = 11` (ellenfél Manőver Alap + Gáncsolás nehézsége)
 
 ```
 Próbadobás:  (6 + k10)  vs.  11

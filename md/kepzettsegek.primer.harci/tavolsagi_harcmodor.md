@@ -48,7 +48,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 
 🌟 Hatás:
 - Bármilyen lőfegyver/hajítófegyver kerül a kezedbe, nem kell "belőnöd", gyakorolnod vele, büntetés nélkül azonnal teljes harcértékeddel tudod használni.
-- Alapeset: [CÉ számítás - Módosítók](../071_tavharc_ce.md#m%C3%B3dos%C3%ADt%C3%B3k) → "Nem belőtt íjak  / most lő először ezzel az íjjal"
+- Alapeset: [CÉ számítás - Módosítók](../071_tavharc_ce.md#c%C3%A9-m%C3%B3dos%C3%ADt%C3%B3k) → "Nem belőtt íjak  / most lő először ezzel"
 
 ---
 #### Nagymester (12) 📖
@@ -58,7 +58,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 🌟 Hatás:
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
 - Bármilyen hajításra alkalmatlan tárgyat a [Dobótőr](../068_07_hajitofegyverek.md) értékeivel tudsz dobni.
-- **Pattanó lövés/hajítás**: félmágikus ismeret. Lövedéked valamilyen rejtélyes módon visszapattan bármilyen szilárd felületről, így akár takarásban levő ellenfelet is eltalálhatsz. Ezt a fajta lövést `-20 CÉ`-vel teheted meg.
+- **Pattanó lövés/hajítás**: félmágikus ismeret. Lövedéked valamilyen rejtélyes módon visszapattan bármilyen szilárd felületről, így akár takarásban levő ellenfelet is eltalálhatsz. Ezt a fajta lövést `-7 CÉ`-vel teheted meg.
 
 ---
 #### Élő legenda (15) 📖

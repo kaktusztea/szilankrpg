@@ -1,15 +1,13 @@
 ## Kitérés lövés elől sikertelen (rontott Gyorsaságpróba)
 
-A célpont [szándékosan megpróbált kitérni](../073_tavharc_taktikak.md#sz%C3%A1nd%C3%A9kos-kit%C3%A9r%C3%A9s-l%C3%B6v%C3%A9s-el%C5%91l) a lövés/hajítás elől - sikertelenül.
+A célpont [szándékosan megpróbált kitérni](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) a lövés/hajítás elől - sikertelenül.
 
-Ilyenkor a lövész rendesen **Célzó Dobást** tesz. A Célpont `Védő Értékének` számításakor:
+Ilyenkor a lövész rendesen **Célzó Dobást** tesz. 
 
-#### [Szorzó - Mozgás módosító](../072_tavharc_ve_szorzo_oszto.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3)
+### Célpont Védő Érték kiszámítása
 
-```
-Sikertelenül szándékosan
- kitérő célpont: 8x
-```
+Szokásos módon, de\
+`4x`: [Sikertelenül szándékosan kitérő célpont](../073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont) Szorzó - Mozgás módosítóval
 
 ---
 

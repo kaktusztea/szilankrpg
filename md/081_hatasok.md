@@ -221,32 +221,17 @@ Irányodba indított támadásnál a szokásos elszenvedett VÉ veszteséged dup
 <br />
 
 ---
-### 🔥 VÉ csökkentés bónusz `+[1;10]`
+### 🔥 VÉ csökkentés bónusz `+[1;2]`
 
-Védő Érték csökkentésedhez `1`-től `10`-ig terjedő bónuszt kapsz.
+Védő Érték csökkentésedhez `1`-től `2`-ig terjedő bónuszt kapsz.
 
 <br />
 
 ---
-### 🔥 VÉ csökkentés - `Kiskocka`
+### 🔥 VÉ csökkentés: `X`
 
-Kiskocka: pontosabban "kisebbiket dobott kocka".
+Ellenfeled Védő Értékét csökkented `X` értékkel.
 
-A `k100` támadó dobásban a két `k10` kocka közül a **kisebbik** értéket dobott kocka értékével csökkentesz `Védő Értéket` ellenfeleden.
-
-`Példa: 58 → Kiskocka: 5`
-
-###  🔥 VÉ csökkentés - `Nagykocka`
-
-Pontosabban "nagyobbikat dobott kocka".
-
-A `k100` támadó dobásban a két `k10` kocka közül a **nagyobbik** értéket dobott kocka értékével csökkentesz `Védő Értéket` ellenfeleden.
-
-`Példa: 58 → Nagykocka: 8`
-
-###  🔥 VÉ csökkentés - `Nagykocka + 1`
-
-`(Nagykocka + 1)` értékével csökkentesz `Védő Értéket` ellenfeleden.
 
 ---
 ### 🔥 Vérzés - gyenge

@@ -19,8 +19,8 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 
 ### Harcrendszer
 
-- `k100` Támadás
-- `k20` sebzésdobás
+- `k20` Támadó dobás
+- `k20` Sebzésdobás
 - `(SP - SFÉ) → ÉP` sebzésmodell
 - Harcérték/Célzóérték Módosító (`HM, CM`)
 - Harckeret  vs  Fegyver Sebesség → Támadások száma körönként
@@ -35,12 +35,12 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 - Harci helyzetek: adott, vagy kialakított Státuszok
 - Harci taktikák: harci jelleg általános eltolása egy irányba
 - Manőverek: egyszeri trükkök
-    - Manőver Alap: `Összes költött HM / 10 ↑`
+    - Manőver Alap: `Összes költött HM / 3 ↑`
     - Manőver Pontok: `Harcmodorok szint összege / Tapasztalati Szint ↑`
 
 ### Távolsági harcrendszer
 
-- `Fegyver Osztó: [1;4]` - egyedi érték
+- `Fegyver Osztó: [1;5]` - egyedi érték
 - `Szorzó`: körülmények egy számban összegezve
 - `Célpont VÉ = Szorzó x (Távolság / Fegyver Osztó) ↑`
 
@@ -74,7 +74,7 @@ Szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-ét (
 - Távharc (Szorzó, Osztó)
 - Páncélmodell, Páncél generátor
 - Fegyverméret kategóriák
-- (SP - SFÉ) → ÉP sebzésmodell
+- `(SP - SFÉ) → ÉP` sebzésmodell
 - Manőverek
 - Méregrendszer
 

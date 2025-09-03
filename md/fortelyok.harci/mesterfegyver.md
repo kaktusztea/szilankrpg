@@ -16,9 +16,8 @@ A **Mesterfegyver fortély** segítségével egyes fegyverek harcértékeit tov�
 🔒 **Követelmény**: Harcmodor - `4.szint`
 
 🌟 **Hatás**:
-- `KÉ:+2`
-- `TÉ:+3`
-- `VÉ:+3`
+- `TÉ:+1`
+- `VÉ:+1`
 - `SP:+1`
 
 ---
@@ -27,9 +26,8 @@ A **Mesterfegyver fortély** segítségével egyes fegyverek harcértékeit tov�
 🔒 **Követelmény**: Harcmodor - `8.szint`
 
 🌟 **Hatás**:
-- `KÉ:+4`
-- `TÉ:+6`
-- `VÉ:+6`
+- `TÉ:+2`
+- `VÉ:+2`
 - `SP:+2`
 
 ---
@@ -38,9 +36,8 @@ A **Mesterfegyver fortély** segítségével egyes fegyverek harcértékeit tov�
 🔒 **Követelmény**: Harcmodor - `12.szint`
 
 🌟 **Hatás**:
-- `KÉ:+6`
-- `TÉ:+9`
-- `VÉ:+9`
+- `TÉ:+3`
+- `VÉ:+3`
 - `SP:+3`
 
 <br />

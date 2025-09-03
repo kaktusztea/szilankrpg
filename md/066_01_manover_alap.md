@@ -1,7 +1,7 @@
 ## Manőver Alap
 
 ```
-Manőver Alap = (HM / 10) ↑
+Manőver Alap = (HM / 3) ↑
 ```
 
 A karakter által felvett `HM` pontok tizede - felfele ↑ kerekítve.

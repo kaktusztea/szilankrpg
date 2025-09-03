@@ -1,5 +1,7 @@
 ## 🟣 Harcos elme (4)
 
+⭕k20 adaptáció
+
 A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc szellemileg.
 
 ### 1. fok

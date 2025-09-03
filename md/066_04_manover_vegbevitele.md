@@ -12,7 +12,7 @@ Egy Manőver alkalmazása – jellegétől függően – legfeljebb az alábbi h
 Az **Ellenfél** teszi. Sima (extra) támadás, ha sikeres, a Manőver rögtön sikertelen.
 
 ⚜️`2.` **Végrehajtás**\
-Manővert végző teszi. Sikeréhez sebzést érő támadás szükséges `TÉ+20` módosítóval, de nem okoz sebet. Aktuális, fegyveres `TÉ` számít. Ha sikertelen, a Manőver rögtön sikertelen.
+Manővert végző teszi. Sikeréhez sebzést érő támadás szükséges `TÉ:+4` módosítóval, de nem okoz sebet. Aktuális, fegyveres `TÉ` számít. Ha sikertelen, a Manőver rögtön sikertelen.
 Azért dobjuk ezt előbb, mert ez ad gyorsabban eredményt 🔆
 
 ⚜️`3.` **Ellenpróba**\
@@ -31,7 +31,7 @@ Ha az így érkező támadás találat (nem kell, hogy sebző is legyen), akkor 
 ---
 ## Végrehajtás (V)
 
-Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékkel, melyhez `+20 TÉ` módosító járul. Ha ez a támadás sikeres, akkor a Végrehajtás is sikeres (sebzés nincs). Ne feledjük, hogy a `TÉ` értékébe beleszámít az esetleges több támadás levonása is (`-10` támadásonként)!
+Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékkel, melyhez `TÉ:+4` módosító járul. Ha ez a támadás sikeres, akkor a Végrehajtás is sikeres (sebzés nincs). Ne feledjük, hogy a `TÉ` értékébe beleszámít az esetleges több támadás levonása is (`-10` támadásonként)!
 
 Ha a **Végrehajtás** sikertelen, akkor a helyzet megvolt, de nem sikerült kihasználni. 
 
@@ -103,7 +103,7 @@ Amennyiben nem teljesíti, akkor is nekifuthat, de az **Ellenpróba** dobásán�
 ---
 ## Sikertelen Manőver és VÉ csökkentés
 
-A sikertelen Manőver mindig `kiskockás` VÉ csökkentést okoz - bármekkora is a fegyverméretek különbsége.
+A sikertelen Manőver `0` **VÉ csökkentést** okoz.
 
 <br />
 

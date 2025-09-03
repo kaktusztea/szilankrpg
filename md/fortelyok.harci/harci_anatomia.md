@@ -52,7 +52,7 @@ Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső
 ---
 ### [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor
 
-A **Harci anatómia** fortély minden foka `10`-zel csökkenti a **Visszafogott taktika** esetén kapott `TÉ` büntetést.
+A **Harci anatómia** fortély minden foka `3`-mal csökkenti a **Visszafogott taktika** esetén kapott `TÉ` büntetést.
 
 <br />
 

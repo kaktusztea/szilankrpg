@@ -12,7 +12,7 @@
 
 **3.szint:** Csak nagy szél kerekedik, a villám 50% eséllyel csap csak le
 
-**6.szint:** A villám 6 körön belül lecsap, `k100` méter pontossággal.
+**6.szint:** A villám 6 körön belül lecsap, `k20x5` méter pontossággal.
 
 **8.szint:** A villám 5 körön belül lecsap, `3x k20` méter pontossággal.
 

@@ -6,7 +6,7 @@ Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót,
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: `1` célzással eltöltött kör után `+10 CÉ` módosítót kapsz. 
+🌟 **Hatás**: `1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. 
 
 ---
 ### 1. fok
@@ -16,7 +16,7 @@ Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót,
 - Íjászat vagy Lövészet - `5.szint`
 - Összpontosítás - `4.szint`
 
-🌟 **Hatás**: `1` célzással eltöltött kör után `+20 CÉ` módosítót kapsz. Nem additív.
+🌟 **Hatás**: `1` célzással eltöltött kör után `+7 CÉ` módosítót kapsz. Nem additív.
 
 <br />
 
