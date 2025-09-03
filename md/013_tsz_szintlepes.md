@@ -41,7 +41,7 @@ Irányelvek karakter szintekre:
 18.szint
   Világhírű legenda.
 21.szint
-  Érák formálója
+  Érák formálója.
 ```
 
 
