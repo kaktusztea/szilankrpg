@@ -79,7 +79,6 @@ Célzás
     kör után (nem additív) 🔆
 -7: Hirtelen lövés
 ```
-🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
 
 ```
 Fegyver, Belövés
@@ -95,6 +94,8 @@ Fegyver, Belövés
 
 [-5;+5]: Fegyver minősége
 ```
+
+🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
 
 Bővebben:
 - [Fegyver minősége](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-minősége-ideája)
