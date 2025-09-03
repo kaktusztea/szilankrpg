@@ -3,9 +3,9 @@
         "Pajzs név": "Kis Pajzs",
         "SP": "+0",
         "Erőbónusz limit": "0",
-        "KÉ": "1",
-        "TÉ": "3",
-        "VÉ": "15",
+        "KÉ": "0",
+        "TÉ": "1",
+        "VÉ": "3",
         "Sebesség": "6",
         "Speciális": "-"
     },
@@ -13,9 +13,9 @@
         "Pajzs név": "Közepes Pajzs",
         "SP": "+0",
         "Erőbónusz limit": "2",
-        "KÉ": "2",
-        "TÉ": "4",
-        "VÉ": "30",
+        "KÉ": "0",
+        "TÉ": "1",
+        "VÉ": "10",
         "Sebesség": "7",
         "Speciális": "Erő követelmény: +1"
     },
@@ -23,9 +23,9 @@
         "Pajzs név": "Nagy Pajzs",
         "SP": "+0",
         "Erőbónusz limit": "4",
-        "KÉ": "3",
-        "TÉ": "3",
-        "VÉ": "50",
+        "KÉ": "1",
+        "TÉ": "1",
+        "VÉ": "16",
         "Sebesség": "9"
     }
 ]
