@@ -19,21 +19,21 @@
 
 Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – méret szerint. A lentiek irányadó értékek, az egyes konkrét fegyverek számai ettől eltérnek, viszont új fegyver beillesztése a rendszerbe így gyerekjáték.
 
-| **Kategóriánként** | `KÉ` | `TÉ` | `VÉ` |
-| ------------------ |:----:|:----:|:----:|
-|                    | `2`  | `4`  | `4`  |
+| `1 penge különbség` | `KÉ` | `TÉ` | `VÉ` |
+| ------------------- | :--: | :--: | :--: |
+| ez `2` egység ugrás | `+2` | +`3` | `3`  |
 <br />
 
-| **Fegyver példa** | **Kategória** | **Sorszám** | `KÉ` | `TÉ` | `VÉ` |
-| ----------------- | ------------- |:-----------:|:----:|:----:|:----:|
-| tőr               | `rövid`       |     `1`     | `2`  | `4`  | `4`  |
-| rövid kard        | `0,5 penge`   |     `2`     | `4`  | `8`  | `8`  |
-| hosszú kard       | `1 penge`     |     `3`     | `6`  | `12` | `12` |
-| másfélkezes kard  | `1,5 penge`   |     `4`     | `8`  | `16` | `16` |
-| kétkezes kard     | `2 penge`     |     `5`     | `10` | `20` | `20` |
-| alabárd           | `3 penge`     |     `7`     | `12` | `28` | `28` |
-| lándzsa           | `4 penge`     |     `9`     | `18` | `36` | `36` |
-
+| **Fegyver példa** | **Egység** | **Kategória** | `KÉ` | `TÉ` | `VÉ` |
+| ----------------- | :--------: | ------------- | :--: | :--: | :--: |
+| tőr               |    `1`     | `rövid (0)`   | `1`  | `2`  | `1`  |
+| rövid kard        |    `2`     | `0,5 penge`   | `2`  | `3`  | `2`  |
+| hosszú kard       |    `3`     | `1 penge`     | `3`  | `4`  | `4`  |
+| másfélkezes kard  |    `4`     | `1,5 penge`   | `4`  | `6`  | `5`  |
+| kétkezes kard     |    `5`     | `2 penge`     | `5`  | `7`  | `7`  |
+| alabárd           |    `7`     | `3 penge`     | `7`  | `10` | `10` |
+| lándzsa, kopja    |    `9`     | `4 penge`     | `9`  | `13` | `13` |
+| pika              |    `11`    | `5 penge`     | `11` | `16` | `16` |
 
 ---
 ### Fegyverméret elnevezések, szabályok
