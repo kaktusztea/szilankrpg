@@ -13,7 +13,9 @@
 ### Metamágia Arkánum
 
 ```
-Metamágia Arkánum szint  ==  Mágikus tradíció szintje
+Metamágia Arkánum szint
+          ==
+Mágikus tradíció szintje
 ```
 
 A mágikus tradíciók részét képezi a mágiatörténet, a mágikus legendák, illetve az adott tradíció alá tartozó kultúra, továbbá a **Metamágia** Arkánum képzettség, amelynek szintje egyenlő magával a **Tradíció** képzettséggel (ingyen).
