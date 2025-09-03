@@ -383,14 +383,15 @@ Fontos megjegyezni: az Önuralom nem összekeverendő a neveltetéssel. Példáu
   ha olyan a személyisége, nehezebb
   észrevenni, ha hazudik.
 +5
-  Megingathatatlan kőszikla. Tökéletesen
-  uralja érzelmeit, teljesen el tud
-  vonatkoztatni tőlük, kibillenteni
-  szinte lehetetlen. Határozott,
-  elképzeléseit mindig megvalósítja,
-  a lehetetlen számára ismeretlen fogalom.
-  Képes érzelmeit olyan fokon uralni,
-  hogy külső jeleiből (testbeszéd, hang)
+  Megingathatatlan kőszikla.
+  Tökéletesen uralja érzelmeit,
+  teljesen el tud vonatkoztatni tőlük,
+  kibillenteni szinte lehetetlen.
+  Határozott, elképzeléseit mindig
+  megvalósítja, a lehetetlen számára
+  ismeretlen fogalom.
+  Érzelmeit olyan fokon uralja, hogy
+  külső jeleiből (testbeszéd, hang)
   képtelenség lelkiállapotára
   következtetni - leginkább egy gépre,
   vagy jégcsapra hasonlít.
