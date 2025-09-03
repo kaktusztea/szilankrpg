@@ -27,7 +27,6 @@ Apró alkalmas fegyverek
   CÉ: +2
   Osztó: 2
   Példa fegyverek: Tőr, kő
-  Speciális: -
 ```
 
 ```
@@ -36,7 +35,6 @@ Apró hajítófegyverek, szálfegyverek
   Osztó: 3
   Példa fegyverek:
     Hajítótőr, hajítóbárd, dárda
-  Speciális: -
 ```
 
 ```
