@@ -14,7 +14,7 @@
 
 ```
 Metamágia Arkánum szint
-          ==
+           =
 Mágikus tradíció szintje
 ```
 
