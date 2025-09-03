@@ -97,14 +97,15 @@ Fegyver, Belövés
 
 🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
 
-Bővebben:
-- [Fegyver minősége](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-minősége-ideája)
-- [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
-- [Távolsági Harcmodor képzettség](kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
-
 ### Fegyver belövése
 
 Ha **legalább fél órát** töltött el a karakter a “belövéssel”,  a **"Nem belőtt (fegyver)"** büntető módosítók megszűnnek. A használat során folyamatosan tűnik el a hátrány - erre már felesleges képletet alkotni - a KM dönt.
+
+### Bővebben
+
+- [Fegyver minősége](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-minősége-ideája)
+- [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
+- [Távolsági Harcmodor képzettség](kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
 
 ---
 
