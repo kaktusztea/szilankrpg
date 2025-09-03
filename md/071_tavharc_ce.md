@@ -67,6 +67,8 @@ Lásd bővebben:
 ## CÉ Módosítók
 
 ```
+Célzás
+
 +3: Célzás
     1 célzással eltöltött
     kör után (nem additív) 🔆
@@ -77,13 +79,11 @@ Lásd bővebben:
 ```
 
 ```
-[-5;+5]: Fegyver minősége
-
 + Távolsági harcmodor fortély bónuszai
 ```
 
 ```
-Belövés
+Fegyver, Belövés
 
 -10: Új fegyver
     Nem “belőtt” íjak, vagy 
@@ -93,6 +93,8 @@ Belövés
 +[3-10]: Konkrét álló cél
     Ennek "belövése" minimum
     negyed órán át (gyakorlás)
+
+[-5;+5]: Fegyver minősége
 ```
 
 🔆 **Célzás**: íjnál csak 1 körig lehet kitartani! 1 kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
