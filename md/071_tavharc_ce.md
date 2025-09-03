@@ -66,6 +66,8 @@ Lásd bővebben:
 ---
 ## CÉ Módosítók
 
+→ [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
+
 ```
 Célzás
 
@@ -77,10 +79,7 @@ Célzás
     kör után (nem additív) 🔆
 -7: Hirtelen lövés
 ```
-
-```
-+ Távolsági harcmodor fortély bónuszai
-```
+🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
 
 ```
 Fegyver, Belövés
@@ -97,12 +96,10 @@ Fegyver, Belövés
 [-5;+5]: Fegyver minősége
 ```
 
-🔆 **Célzás**: íjnál csak 1 körig lehet kitartani! 1 kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
-
 Bővebben:
 - [Fegyver minősége](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-minősége-ideája)
+- [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 - [Távolsági Harcmodor képzettség](kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
-- [Távolsági Harci fortélyok](044_harci_fortelyok.md#távolsági-harci-fortélyok)
 
 ### Fegyver belövése
 
