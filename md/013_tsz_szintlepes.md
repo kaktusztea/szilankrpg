@@ -18,14 +18,32 @@ A `Szilánk` rendszerében maximum a `21.tapasztalati szint` érhető el.
 
 Irányelvek karakter szintekre:
 
-`1.szint:` Tapasztalatlan mesterlegény vándorlása megkezdésekor.\
-`3.szint:` Novícius. Más rendszereknél ez az `1.szint`.\
-`6.szint:` Tapasztalt gyakornok. Sorkatona pár év tapasztalattal, tapasztalt varázslósegéd.\
-`9.szint:` Kismester. Tapasztalt harcos, elismert mágiatudó.\
-`12.szint:` Mester. Neves harcos, félelmetes mágiahasználó. \
-`15.szint:` Nagymester. Ünnepelt hadvezér, retteget magitor, főpap.\
-`18.szint:` Világhírű legenda.\
-`21.szint:` Érák formálója.
+```
+1.szint
+  Tapasztalatlan mesterlegény
+  vándorlása megkezdésekor
+3.szint
+  Novícius. Más rendszereknél
+  ez az 1.szint
+6.szint:
+  Tapasztalt gyakornok.
+  Sorkatona pár év tapasztalattal
+  tapasztalt varázslósegéd
+9.szint:
+  Kismester. Tapasztalt harcos,
+  elismert mágiatudó
+12.szint
+  Mester. Neves harcos,
+  félelmetes mágiahasználó
+15.szint
+  Nagymester. Ünnepelt hadvezér,
+  retteget magitor, főpap
+18.szint
+  Világhírű legenda.
+21.szint
+  Érák formálója
+```
+
 
 ---
 
