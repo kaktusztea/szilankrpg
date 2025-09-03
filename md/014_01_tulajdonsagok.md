@@ -444,23 +444,28 @@ Az érzéki csábítás is komoly hasznát látja az Érzékenységnek, tovább�
   Szenzitív típus, jól ráérez a
   hangulatokra, mások mozgatórugóira.
   Érdemes mentális gyakorlatokkal
-  foglalkoznia. Érzékei jónak mondhatóak.
+  foglalkoznia.
+  Érzékei jónak mondhatóak.
 +3/+4
-  „A vesédbe lát" -- mondogatják, és
-  valóban. Mindig ráérez a „lékkörre",
-  érdemes hallgatnia az ösztöneire.
-  Kiváló mágiatudó, emberismerő válhat
-  belőle. Kifinomult érzékekkel rendelkezik.
+  „A vesédbe lát" -- mondogatják,
+  és valóban. Mindig ráérez a
+  „lékkörre", érdemes hallgatnia az
+  ösztöneire. Kiváló mágiatudó,
+  emberismerő válhat belőle.
+  Kifinomult érzékekkel rendelkezik.
 +5
   Az ilyen emberek minden apró rezdülést
   érzékelnek, külső hangulatok iránt
-  rendkívül fogékonyak. Remek emberismerő,
-  vagy nagy művész válhat belőlük.
-  Általában érzelemgazdag emberek, de van,
-  akinél „mindössze" fantasztikus adottság,
-  mélyebb érzelmek nélkül. Az ilyenekből
-  lesznek a kiváló diplomaták, rettegett
-  boszorkányok. Érzékei kifinomultak.
+  rendkívül fogékonyak.
+  Remek emberismerő, vagy nagy művész
+  válhat belőlük.
+  Általában érzelemgazdag emberek,
+  de van, akinél „mindössze"
+  fantasztikus adottság, mélyebb
+  érzelmek nélkül. Az ilyenekből
+  lesznek a kiváló diplomaták,
+  rettegett boszorkányok.
+  Érzékei rendkívül kifinomultak.
 
 ```
 
