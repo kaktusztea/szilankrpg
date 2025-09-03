@@ -5,6 +5,7 @@ Ismered a sivatagi környezetet.
 ### Kiterjeszti ezeket
 
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md)
+- [Lexikum](../kepzettsegek.szekunder/lexikum.md): adott tájítpusra jellemző élővilág, földrajz - néha szükséges.
 - [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md): Homokos, köves sivatagi lankákon hangtalanul haladni.
 - [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md): Járatos vagy sivatagi típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
 - [Vajákosság](../kepzettsegek.szekunder/vajakossag.md): Ismered a sivatagban növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
@@ -12,6 +13,12 @@ Ismered a sivatagi környezetet.
 ### Követelmény
 
 - [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) - `3.szint`
+
+### Kapcsolódik
+
+- [Tájtípus: Dzsungel](tajtipus_dzsungel.md)
+- [Tájtípus: Erdős](../fortelyok.szabad/tajtipus_erdos.md)
+- [Tájtípus: Magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
 
 <br />
 
