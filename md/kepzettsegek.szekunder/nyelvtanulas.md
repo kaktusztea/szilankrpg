@@ -4,19 +4,20 @@ Próba speciálisan dobható: nem magára a beszédre, hanem kapcsolódó szitu�
 
 Ez egy speciális képzettség, mert nem adott nyelvre veszed fel, hanem ez jelképezi az összes nyelv tanulását. 
 
+---
 ### Nyelvek fokai
 
-Minden nyelv ismeretét 2 fokra osztjuk:
+Minden nyelv ismeretét `2` fokra osztjuk:
 
-- Alap: Képes vagy egy közember szintjén beszélni a nyelvet. Ha nem anyanyelved, akcentussal beszéled.
-- Udvari: Akcentus nélkül beszéled a nyelvet, az arosztokrácia szókincsével is rendelkezel, protokoláris kifejezéseket is ismersz.
+- `1: Alap`: Képes vagy egy közember szintjén beszélni a nyelvet. Ha nem anyanyelved, akcentussal beszéled.
+- `2: Udvari`: Akcentus nélkül beszéled a nyelvet, az arosztokrácia szókincsével is rendelkezel, protokoláris kifejezéseket is ismersz.
 
 ⚡ Példa: "Gorviki - Udvari"
 
-
+---
 ### Pontok
 
-`4.szinttől` kezdve minden szinten `3 pontot` kapsz, melyeket [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély fokokra költhetsz. Az első `3 szint` az alapozást jelképezi, ahogy a `Szilánk` sok más területén. Ugyanez táblázatban:
+A **Nyelvtanulás** képzettség `4.szintjétől` kezdve minden szinten `3 pontot` kapsz, melyeket [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély fokokra költhetsz. Az első `3 szint` az alapozást jelképezi, ahogy a `Szilánk` sok más területén. Ugyanez táblázatban:
 
 | Szint | Pont |
 |:-----:|:----:|
@@ -38,19 +39,19 @@ Minden nyelv ismeretét 2 fokra osztjuk:
 
 **Nyelvtanulás -** `5.szint` →`6 pont` jár
 
-Pontok szétosztása Nyelvismeret fortélyokra:
+Pontok szétosztása Nyelvismeret fortély fokokra:
 - Nyelvismeret - Közös (Udvari) (`1 pont`)  → speciális, mert a "**Közös nyelv: Alap**" foka ingyenes mindenkinek. Lásd lenn.
 - Nyelvismeret - Ereni: Alap (`1 pont`)
 - Nyelvismeret - Toroni (Udvari) (`2 pont`)
 - Nyelvismeret - Asszisz (Udvari) (`2 pont`)
 
 ---
-### Speciális
+### Ingyenes nyelvismeret fortélyok
 
 - Közös (Pyarroni) - `Alap`
 - Saját nyelv - `Alap`
 
-Minden karakter `1.TSz` során ingyen megkapja a fenti két nyelvet. Amennyiben a karakter anyanyelve a **Közös**, akkor csak azt kapja meg egyedüliként.
+Minden karakter `1.TSz` során ingyen megkapja a fenti két nyelvet `Alap` szinten. Amennyiben a karakter anyanyelve a **Közös**, akkor csak azt kapja meg egyedüliként.
 
 <br />
 
