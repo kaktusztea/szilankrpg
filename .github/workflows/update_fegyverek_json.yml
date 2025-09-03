@@ -2,9 +2,9 @@ name: Fegyver md tables to json
 
 on:
   push:
-    branches: [ master ]
+    branches: [ master, k20 ]
   pull_request:
-    branches: [ master ]
+    branches: [ master, k20 ]
 
 jobs:
   run-script:
