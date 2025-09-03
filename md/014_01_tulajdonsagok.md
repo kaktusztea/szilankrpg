@@ -162,7 +162,7 @@ Mutatja kitartásodat, hogy mennyire vagy képes elviselni a tartós fizikai meg
   Szinte folyton ellátására szorul,
   állandóan veszélyben az élete.
   Egy könnyű nátha is elviheti.
-  A rövid séta is hatalmas megterhelés számára.
+  A rövid séta is hatalmas megterhelés.
 -2/-1
   Utálja a lépcsőket, gyorsan kimerül.
   A városi sétát azért bírja.
@@ -172,20 +172,21 @@ Mutatja kitartásodat, hogy mennyire vagy képes elviselni a tartós fizikai meg
 
 +1/+2
   Jól bírja a strapát, a menetelést,
-  úszásban sokáig bírja, kiváló az egészsége,
-  csak elvétve beteg.
+  úszásban sokáig bírja, kiváló az
+ egészsége, csak elvétve beteg.
 
 +3/+4
   A természet vad gyermeke.
   Beteg sose volt.
-  „Kicsattanó az egészsége" - mondogatják.
-  Lemeríthetetlen.
+  „Kicsattanó az egészsége"
+  - mondogatják. Lemeríthetetlen.
 
 +5
-  Legendás serpa, lerázhatatlan nyomolvasó.
-  Minimális alvással is remekül bírja.
-  Legendás egészségű, beteg soha nem volt,
-  még a járványokkal, mérgekkel szemben is
+  Legendás serpa, lerázhatatlan
+  nyomolvasó. Minimális alvással is
+  remekül bírja. Legendás egészségű,
+  beteg soha nem volt, még a
+  járványokkal, mérgekkel szemben is
   jó eséllyel száll harcba.
 ```
 
@@ -211,14 +212,14 @@ Jelzi cselekedeteid összehangoltságát, mozgásod kifinomultságát, precizit�
 
 +1/+2
   Összehangolt, dinamikus mozgású,
-  ügyesen pörgeti a pénzt az ujjai között
+  ügyesen pörget pénzt az ujjai között
 +3/+4
   Szemet gyönyörködtető a mozgása.
   Ha képzik, ünnepelt táncos, vagy
-  halálos gyilkolóművész is lehet belőle.
+  halálos gyilkolóművész lehet belőle.
   Kész zsonglőr.
 +5
-  Világhírű mutatványos - sokak szerint
+  Világhírű mutatványos, sokak szerint
   (tévesen) varázsló. Elit fejvadász
   iskolák legjobbjai.
 ```
@@ -355,39 +356,46 @@ Fontos megjegyezni: az Önuralom nem összekeverendő a neveltetéssel. Példáu
 -5
   Őrült elmebetegek sajátja. Ösztönlény.
 -4/-3
-  Teljesen érzelmei uralják, szélsőséges
-  hangulatváltozásai vannak, meglehetősen
-  kiszámíthatatlan. Színlelni képtelen.
+  Teljesen érzelmei uralják,
+  szélsőséges hangulatváltozásai vannak,
+  meglehetősen kiszámíthatatlan.
+  Színlelni képtelen.
   Önállótlan, csordalény.
 -2/-1
   Labilis személyiség, sokszor elragadják
   érzelmei, gondolkodását is inkább azok
-  irányítják. Nem képes határozott döntéseket
-  hozni. Érzelmei külső jeleiben is megmutatkoznak,
-  beszédéből, mozdulataiból ránézésre látszik,
-  ha valami baja van.
+  irányítják. Nem képes határozott
+  döntéseket hozni. Érzelmei külső
+  jeleiben is megmutatkoznak, beszédéből,
+  mozdulataiból ránézésre látszik, ha
+  valami baja van.
   
 0 Átlagos
 
 +1/+2
-  Szilárd, céltudatos személyiség, aki jól uralja
-  indulatait, nehezen kibillenthető. Remek
-  parancsnok válhat belőle.
+  Szilárd, céltudatos személyiség, aki
+  jól uralja indulatait, nehezen
+  kibillenthető. Remek parancsnok
+  válhat belőle.
 +3/+4
-  Híres hadvezér, neves aszkéta, vagy harcművész
-  lehet. Érzelmeit jól uralja, ha olyan a személyisége,
-  nehezebb észrevenni, ha hazudik.
+  Híres hadvezér, neves aszkéta, vagy
+  harcművész lehet. Érzelmeit jól uralja,
+  ha olyan a személyisége, nehezebb
+  észrevenni, ha hazudik.
 +5
-  Megingathatatlan kőszikla. Tökéletesen uralja
-  érzelmeit, teljesen el tud vonatkoztatni tőlük,
-  kibillenteni szinte lehetetlen. Határozott,
-  elképzeléseit mindig megvalósítja, a lehetetlen
-  számára ismeretlen fogalom. Képes érzelmeit
-  olyan fokon uralni, hogy külső jeleiből
-  (testbeszéd, hang) képtelenség lelkiállapotára
-  következtetni - leginkább egy gépre, vagy
-  jégcsapra hasonlít. A fentiek a mágikus
-  detektálásokat természetesen nem befolyásolják.
+  Megingathatatlan kőszikla. Tökéletesen
+  uralja érzelmeit, teljesen el tud
+  vonatkoztatni tőlük, kibillenteni
+  szinte lehetetlen. Határozott,
+  elképzeléseit mindig megvalósítja,
+  a lehetetlen számára ismeretlen fogalom.
+  Képes érzelmeit olyan fokon uralni,
+  hogy külső jeleiből (testbeszéd, hang)
+  képtelenség lelkiállapotára
+  következtetni - leginkább egy gépre,
+  vagy jégcsapra hasonlít.
+  A fentiek a mágikus detektálásokat
+  természetesen nem befolyásolják.
 ```
 <br />
 
@@ -421,7 +429,7 @@ Az érzéki csábítás is komoly hasznát látja az Érzékenységnek, tovább�
   meg se próbálja értelmezni. Nem indítja
   meg semmi, legfeljebb egy családtagja
   halála - egy kicsit. „Érzéketlen tuskó"
-  - mondogatják. Érzékei erősen fejletlenek.
+  mondogatják. Érzékei erősen fejletlenek.
 -2/-1
   Nincs érzéke a hangulatok megragadásához,
   mágiával pszível, művészetekkel ne is
@@ -432,16 +440,16 @@ Az érzéki csábítás is komoly hasznát látja az Érzékenységnek, tovább�
 0 Átlagos
 
 +1/+2
-  Szenzitív típus, jól ráérez a hangulatokra,
-  mások mozgatórugóira. Érdemes mentális
-  gyakorlatokkal foglalkoznia. Érzékei jónak
-  mondhatóak.
+  Szenzitív típus, jól ráérez a
+  hangulatokra, mások mozgatórugóira.
+  Érdemes mentális gyakorlatokkal
+  foglalkoznia. Érzékei jónak mondhatóak.
 +3/+4
-  „A vesédbe lát" -- mondogatják, és valóban.
-  Mindig ráérez a „lékkörre", érdemes
-  hallgatnia az ösztöneire. Kiváló mágiatudó,
-  emberismerő válhat belőle. Kifinomult
-  érzékekkel rendelkezik.
+  „A vesédbe lát" -- mondogatják, és
+  valóban. Mindig ráérez a „lékkörre",
+  érdemes hallgatnia az ösztöneire.
+  Kiváló mágiatudó, emberismerő válhat
+  belőle. Kifinomult érzékekkel rendelkezik.
 +5
   Az ilyen emberek minden apró rezdülést
   érzékelnek, külső hangulatok iránt
@@ -451,7 +459,7 @@ Az érzéki csábítás is komoly hasznát látja az Érzékenységnek, tovább�
   akinél „mindössze" fantasztikus adottság,
   mélyebb érzelmek nélkül. Az ilyenekből
   lesznek a kiváló diplomaták, rettegett
-  boszorkányok. Érzékei végtelenül kifinomultak.
+  boszorkányok. Érzékei kifinomultak.
 
 ```
 
