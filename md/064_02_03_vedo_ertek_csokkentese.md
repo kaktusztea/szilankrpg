@@ -7,23 +7,23 @@ Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét
 ### ⚜️ [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
 - Mikor a fegyverméret különbség legalább `(-1)` pengehossz
--  [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20 tizes része`
+-  [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
 
 ### ⚜️ [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
 
 - Mikor a fegyverméret különbség kisebb `1 pengehossznál`
-- mindkét fél [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20 tizes része`
+- mindkét fél [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`
 
 ### ⚜️ [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
 
 - Mikor a fegyverméret különbség legalább `1` pengehossz
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20 tizes része`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`
 - Példa: **Hosszú kard**  vs. **Tőr** ; **Alabárd** vs **Hosszú kard**
 
 ### ⚜️ [Fegyverméret - 2 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
 
 - Mikor a fegyverméret különbség legalább `2` pengehossz
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20 tizes része`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20T`
 - Példa: **Kétkezes kard** vs **Tőr** ; **Lándzsa** vs **Rövidkard**
 
 ---

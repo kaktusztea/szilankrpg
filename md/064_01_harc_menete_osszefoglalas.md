@@ -86,28 +86,28 @@ Előnyös/hátrányos helyzetű harcos:
 
 ```
 VÉ csökkentés:
-  1 + k20 tizes része
+  1 + k20T
 ```
 
 #### [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
 
 ```
 Mindkét fél csökkent:
-  2 + k20 tizes része
+  2 + k20T
 ```
 
 #### [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
 
 ```
 VÉ csökkentés:
-  2 + k20 tizes része
+  2 + k20T
 ```
 
 #### [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
 
 ```
 VÉ csökkentés:
-  3 + k20 tizes része
+  3 + k20T
 ```
 
 <br />
@@ -235,10 +235,10 @@ Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a 
 - Nincs páncéldobás
 - Nincs Manőver használat
 - Erősített sebzés:
-  1-10:   6 ÉP  ⭕k20
-  11-20: 12 ÉP  ⭕k20
-  21-30: 20 ÉP  ⭕k20
-  31-től halál  ⭕k20
+  1-10:   6 ÉP
+  11-20: 12 ÉP
+  21-30: 20 ÉP
+  31-től halál
 ```
 
 ---

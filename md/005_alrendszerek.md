@@ -40,7 +40,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 
 ### Távolsági harcrendszer
 
-- `Fegyver Osztó: [1;4]` - egyedi érték ⭕k20
+- `Fegyver Osztó: [1;5]` - egyedi érték
 - `Szorzó`: körülmények egy számban összegezve
 - `Célpont VÉ = Szorzó x (Távolság / Fegyver Osztó) ↑`
 

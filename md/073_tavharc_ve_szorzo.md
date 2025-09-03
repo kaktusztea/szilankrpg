@@ -66,7 +66,7 @@ Méret módosító
 3x: alma
 2x: fej, dinnye, macska
 1x: törpe, sas, hiúz
-1x: célpont fedezék mögött
+1x: célpont félfedezék mögött
 
 0x: átlagos ember/elf méretű
 

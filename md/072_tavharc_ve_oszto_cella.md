@@ -17,6 +17,16 @@ Könnyű nyílpuska
 
 Tehát `5` méterenként nő a fegyverrel szemben a célpont `Védő Értéke`.
 
+#### Kategóriák Osztó értéke
+
+A távolsági fegyverek kategóriáinak átlagos **Osztó** értékét a [Távharc fegyverek](076_tavharc_fegyverek.md#%C3%A1ltal%C3%A1nos-harc%C3%A9rt%C3%A9kek) fejezetben találod.
+
+#### Távolsági fegyverek konkrét Osztója
+
+Az egyes távolsági fegyverek konkrét **Osztó** értékét azok adatlapján találod:
+- [Hajítófegyverek](068_07_hajitofegyverek.md)
+- [Lőfegyerek](068_08_lofegyverek.md)
+
 ---
 ### Cella
 

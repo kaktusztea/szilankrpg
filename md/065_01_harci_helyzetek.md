@@ -9,12 +9,12 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 | [Csúszós talaj](#cs%C3%BAsz%C3%B3s-talaj)                                                                           | `Hátrány-1`: TÉ dobásra                                                                                                                                                                                                               | Addig tart, amíg a csúszós felületen áll, mozog a karakter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
 | [Elvesztett egyensúly](#elvesztett-egyens%C3%BAly)                                                                  | - `Hátrány-1`: TÉ dobásra<br>- Többszörös támadás elvesztése<br>- [Mozgás - lassulás](081_hatasok.md#-mozg%C3%A1s---lassul%C3%A1s)                                                                                                    | Kör végéig tart, vagy sikeres Akrobatika próba (`12`) esetén rögtön.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
 | [Észrevétlen támadás](#észrevétlen-támadás)                                                                         | [Áldozat VÉ: mozgás jellegétől függ](062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint)                                                                                  | A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat. <br/>Lásd a bővebb leírást.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| [Fegyverrántás váratlanul](#fegyverr%C3%A1nt%C3%A1s-v%C3%A1ratlanul)                                                | - Tőr: nincs KÉ dobás módosító<br>- Kard: `Hátrány-1` KÉ dobásra<br>- Alabárd: `Hátrány-2` KÉ dobásra                                                                                                                                 | Pusztakezes KÉ, módosítóval. A sikeres fegyverrántás után (is) az ellenfél támad.<br />Viszont `10`-el túldobott `KÉ` esetén már maga a fegyverrántó támadhat elsőnek azonnal – teljes harcértékével. További szituációk a részletes leírásnál.<br/><br/>[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónusza:<br/>`1. fok: 1 Hátrányt semlegesít`, vagy `1 Előnyt` ad<br/>`2. fok: 2 Hátrányt semlegesít`,  vagy `2 Előnyt` ad                                                                                                                                                                                                                                                                                                 |
+| [Fegyverrántás váratlanul](#fegyverr%C3%A1nt%C3%A1s-v%C3%A1ratlanul)                                                | - Tőr: nincs KÉ dobás módosító<br>- Kard: `Hátrány-1` KÉ dobásra<br>- Alabárd: `Hátrány-2` KÉ dobásra                                                                                                                                 | Pusztakezes KÉ, módosítóval. A sikeres fegyverrántás után (is) az ellenfél támad.<br />Viszont `3`-mal túldobott `KÉ` esetén már maga a fegyverrántó támadhat elsőnek azonnal – teljes harcértékével. További szituációk a részletes leírásnál.<br/><br/>[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónusza:<br/>`1. fok: 1 Hátrányt semlegesít`, vagy `1 Előnyt` ad<br/>`2. fok: 2 Hátrányt semlegesít`,  vagy `2 Előnyt` ad                                                                                                                                                                                                                                                                                                 |
 | [Félhátulról támadás](#félhátulról-támadás)                                                                         | `Előny+1` TÉ dobásra                                                                                                                                                                                                                  | Pajzs VÉ csak akkor számít, ha a pajzsot tartó kéz felőli oldalról jön a csapás.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| [Fegyverméret - pengehátrány](#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)                                          | [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20 tizes része`                                                                                                                                                | Példa: Tőr vs. Hosszúkard                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| [Fegyverméret - Azonos](#fegyverm%C3%A9ret---azonos)                                                                | [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20 tizes része`                                                                                                                                                | Példa: Rövidkard vs Hosszúkard                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| [Fegyverméret - 1 pengés előny](#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)                                      | [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20 tizes része`                                                                                                                                                | Példa: Hosszúkard vs Tőr                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)                                      | [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20 tizes része`                                                                                                                                                | Példa: Alabárd vs Tőr                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| [Fegyverméret - pengehátrány](#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)                                          | [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`                                                                                                                                                | Példa: Tőr vs. Hosszúkard                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| [Fegyverméret - Azonos](#fegyverm%C3%A9ret---azonos)                                                                | [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`                                                                                                                                                | Példa: Rövidkard vs Hosszúkard                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| [Fegyverméret - 1 pengés előny](#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)                                      | [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`                                                                                                                                                | Példa: Hosszúkard vs Tőr                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
+| [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)                                      | [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20T`                                                                                                                                                | Példa: Alabárd vs Tőr                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 | [Földön fekve](#földön-fekve)                                                                                       | - `Hátrány-2` TÉ dobásra<br>- `VÉ` veszteség duplázódik                                                                                                                                                                               | -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | [Hajítás alkalmatlan fegyverrel](#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel)                                         | - `Hátrány-2` Sebzésdobásra<br>- `Hátrány-2` `CÉ` dobásra                                                                                                                                                                             | Például Hosszú kard hajítása.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
 | [Hajítás nem dobásra készített tárgyakkal](#haj%C3%ADt%C3%A1s-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgyakkal) | - `Hátrány-1` Sebzésdobásra<br> - `Hátrány-1` `CÉ` dobásra                                                                                                                                                                            | Például sámli hajítása.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
@@ -26,7 +26,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 | [Láthatatlanul](#l%C3%A1thatatlanul)                                                                                | Láthatatlan Támadó: `Előny+1/2` Támadó dobásra, VÉ csökkentés: `3`<br><br>Védő: `Hátrány-1/2` Támadó dobásra                                                                                                                          | Hallható/Csendes támadó.<br><br>Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | [Levegőből támadás](#leveg%C5%91b%C5%91l-t%C3%A1mad%C3%A1s)                                                         | `Előny+2`: Támadó Dobásra                                                                                                                                                                                                             | Esetleges Roham (zuhanás) külön, plusz számolandó.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
 | [Magasabbról](#magasabbról)                                                                                         | `Előny+1`: Támadó Dobásra                                                                                                                                                                                                             | A támadó kapja a módosítót.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| [Meglepetés](#meglepetés)                                                                                           | Támadó:<br>- Megnyert Kezdeményezés<br>- `Előny+1` TÉ dobásra<br>- `VÉ` csökkentés: (3 + k20 tizes része)<br><br>Védő:<br>- Többszörös támadás elvesztése<br>- Utolsónak támadhat a körben<br>- Pajzs `VÉ`: csak szemből, pajzs felől | Pajzs VÉ csak akkor számít, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.<br>A találat esélye tovább növelhető [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) kombinálva.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| [Meglepetés](#meglepetés)                                                                                           | Támadó:<br>- Megnyert Kezdeményezés<br>- `Előny+1` TÉ dobásra<br>- `VÉ` csökkentés: (3 + k20T)<br><br>Védő:<br>- Többszörös támadás elvesztése<br>- Utolsónak támadhat a körben<br>- Pajzs `VÉ`: csak szemből, pajzs felől | Pajzs VÉ csak akkor számít, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.<br>A találat esélye tovább növelhető [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) kombinálva.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
 | [Nagy méretű lény (1-2)](#nagy-m%C3%A9ret%C5%B1-l%C3%A9ny-1-2)                                                      | [VÉ csökkentés bónusz +[1;2]](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-b%C3%B3nusz-12)<br><br> Nagyobb **Erő** Tulajdonság<br>   → Nagyobb Erőbónusz (`+SP`)                                                                      | Példa:<br>Gólem: `+1 VÉ` csökkentés<br>Sárkány:`+2 VÉ` csökkentés                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | [Pusztakezes harc](#pusztakezes-harc)                                                                               | Lásd a [Puszta kéz harcértékeit](068_02_kozelharci_fegyverek.md)!                                                                                                                                                                     |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 | [Rosszabbik kézben tartott fegyver](#rosszabbik-kézben-tartott-fegyver)                                             | `Hátrány-1` TÉ dobásra                                                                                                                                                                                                                | Kivétel:<br/>• **Kétkezesség** fortély. Csak annyit ad, hogy rosszabbik kézzel is levonás nélkül tudsz harcolni, de csak 1 fegyverrel!                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
@@ -196,10 +196,10 @@ Fegyverrántásnál pusztakezes `KÉ` értékkel történik a kezdeményezés, f
   nincs KÉ dobás módosító
 
 - Kard méretű:
-  `Hátrány-1` KÉ dobásra
+  Hátrány-1 KÉ dobásra
 
 - Alabárd méretű:
-  `Hátrány-2` KÉ dobásra
+  Hátrány-2 KÉ dobásra
 ```
 
 Tehát minél nehezebb előrántani egy fegyvert, annál nagyobb rá a büntetés. Hogy a fegyver melyik kategóriába tartozik, azt a KM határozza meg.
@@ -213,7 +213,7 @@ Nem sikerül előrántania a fegyvert, elvesztett egy akciót és fegyvertelen `
 Sikerült előrántania fegyverét, és teljes, immár fegyveres `VÉ` harcértéke érvényesül.\
 Ellenfele dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadást felemésztő cselekedet.
 
-#### `1.3` Fegyverrántó nyeri a kezdeményezést `+10` túldobással
+#### `1.3` Fegyverrántó nyeri a kezdeményezést `+3` túldobással
 
 A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is. A harc innen a megszokott módon folytatódik.
 
@@ -222,8 +222,12 @@ A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, te
 Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járnak:
 
 ```
-1.fok:  1 Hátrány fokot semlegesít a büntetésből
-2.fok:  2 Hátrány fokot semlegesít a büntetésből
+1.fok:
+   1 Hátrány fokot
+   semlegesít a büntetésből
+2.fok:
+   2 Hátrány fokot
+   semlegesít a büntetésből
 ```
 
 #### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
@@ -246,28 +250,26 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy ké
 
 #### ⚡ Példák
 
-⭕k20
-
 ```
-KÉ alap: 26
- → Puszta kéz KÉ: -10
- → Puszta kezes KÉ: 16
+KÉ alap: 20
+ → Puszta kéz KÉ: -3
+ → Puszta kezes KÉ: 17
 ```
 
 `1.` Tőr méretű fegyver előrántása
-- Alap: egy tőrt könnyű előrántani így sima `KÉ` dobás (`16`), büntetés nélkül
-- Fegyverrántás `2.fok` fortéllyal: `Előny+2` KÉ dobásra (`16`)
+- Alap: egy tőrt könnyű előrántani így sima `KÉ` dobás (`17`), büntetés nélkül
+- Fegyverrántás `2.fok` fortéllyal: `Előny+2` KÉ dobásra (`17`)
 
 `2.` Kard méretű fegyver előrántása
-- Ha kardot akarnék rántani, azt már nehezebb: `Hátrány-1` KÉ dobásra (`16`)
+- Ha kardot akarnék rántani, azt már nehezebb: `Hátrány-1` KÉ dobásra (`17`)
 - Fegyverrántás `2.fok` fortéllyal
-  - `Előny+1` KÉ dobásra (`16`)
+  - `Előny+1` KÉ dobásra (`17`)
   - `Hátrány-1`-ből `2` fok pozitív irányba `Előny+1`
 
 `2.` Kétkezes csatabárd méretű fegyver előrántása
-- Ez a méret már igazi kihívás: `Hátrány-2` KÉ dobásra (`16`)
+- Ez a méret már igazi kihívás: `Hátrány-2` KÉ dobásra (`17`)
 - Fegyverrántás `2.fok` fortéllyal
-  - Alap KÉ dobás (`16`)
+  - Alap KÉ dobás (`17`)
   - `Hátrány-2`-ből `2` fok pozitív irányba: Alap dobás
 
 <br />
@@ -290,25 +292,25 @@ Védekező Pajzs `VÉ` csak akkor számít, ha a pajzsot tartó kéz felőli old
 
 Fegyvered legalább `1 pengével` rövidebb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1` + `k20` tizes része (`0;1;2`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1` + `k20` tízes része (`0;1;2`)
 
 ### Fegyverméret - Azonos
 
 Fegyvered és ellenfeled fegyverméret különbsége kisebb, mint `1 penge`.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tizes része  (`0;1;2`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tízes része  (`0;1;2`)
 
 ### Fegyverméret - 1 pengés előny
 
 Fegyvered legalább `1 pengével` hosszabb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tizes része  (`0;1;2`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tízes része  (`0;1;2`)
 
 ### Fegyverméret - 2 pengés előny
 
 Fegyvered legalább `2 pengével` hosszabb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3` + `k20` tizes része  (`0;1;2`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3` + `k20` tízes része  (`0;1;2`)
 
 <br />
 
@@ -402,11 +404,15 @@ Példák:
 ### Láthatatlanul
 
 Hallható láthatatlan ellenfél
-- Láthatatlan Támadó: `Előny+1` Támadó dobásra
+- Láthatatlan Támadó:
+  - `Előny+1` Támadó dobásra
+  - VÉ csökkentés: fixen `3`
 - Védő: `Hátrány-1` Támadó dobásra
 
 Teljesen csendes láthatatlan ellenfél
-- Láthatatlan Támadó: `Előny+2` Támadó dobásra
+- Láthatatlan Támadó:
+  - `Előny+2` Támadó dobásra
+  - VÉ csökkentés: fixen `3`
 - Védő: `Hátrány-2` Támadó dobásra
 
 [Vakharc](fortelyok.harci/vakharc.md) hatása Védő oldalán:
@@ -451,7 +457,7 @@ Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen hel
 Támadó:
 - Megnyert Kezdeményezés
 - Előny+1 TÉ dobásra
-- VÉ csökkentés: 3 + k20 tizes része
+- VÉ csökkentés: 3 + k20T
 
 Védő:
 - Többszörös támadás elvesztése
@@ -461,7 +467,7 @@ Védő:
 
 Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
 
-Az ilyen helyzetben a támadó automatikusan megnyeri a Kezdeményezést, valamint számára `Előny+1` jár `TÉ` dobásra és `VÉ` csökkentése mindig (`3 + k20 tizes része`) lesz.
+Az ilyen helyzetben a támadó automatikusan megnyeri a Kezdeményezést, valamint számára `Előny+1` jár `TÉ` dobásra és `VÉ` csökkentése mindig (`3 + k20T`) lesz.
 
 🔆 [Meglepetés és Manőverek viszonya](066_03_manover_szabalyok.md#%EF%B8%8F-harci-helyzetek-%C3%A9s-man%C5%91verek---meglepet%C3%A9s)
 
