@@ -5,9 +5,10 @@ Ahogy a gyalogos küzdelemben is alkalmazhatóak [Harci taktikák](065_02_harci_
 ### Lovas roham / Léglovas roham
 
 ```
-- TÉ: +6
-- SP: +10
-- 1 támadó csapás, 1 visszacsapás lehetséges
+TÉ: +6
+SP: +10
+1 támadó csapás lehetséges
+1 visszacsapás lehetséges
 ```
 
 Nincs elsöprőbb, mint egy lovas roham! Persze megfelelő feltételek szükségesek hozzá. Amennyiben ezek megvannak, a rohamozó komoly előnyhöz jut.\
