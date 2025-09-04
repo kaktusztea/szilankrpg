@@ -26,8 +26,7 @@ VÉ = 24
 
 VÉ Bónusz:
   → Vértviselet 3.szint:
-    - félvért VÉ:+1⭕k20
-    - teljes vért VÉ:+3⭕k20
+    + VÉ:+3 (lemez mellvértnél)
 
 CÉ = -10 (Konstans)
    + Önuralom

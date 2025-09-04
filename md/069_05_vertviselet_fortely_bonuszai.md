@@ -10,8 +10,8 @@ A teljes szabályt lásd a fortély leírásánál: **[Vértviselet](fortelyok.h
 2.fok: -30 MGT
 
 3.fok: -35 MGT
-- Mellvértnél : VÉ:+5
-- Full vértnél: VÉ:+10
+ → VÉ:+3
+ (lemez mellvértnél)
 ```
 
 ---
