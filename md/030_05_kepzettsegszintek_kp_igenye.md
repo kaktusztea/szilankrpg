@@ -4,28 +4,6 @@ A képzettségek fejlődése során a `KP igény` fokozatosan nő, tehát `1.`sz
 
 Az egyes képzettségszintek KP igénye az alábbi táblázatban található:
 
-<!-- tag: md_table_kepzettsegkp_start -->
-
-| Fokozat     | Képzettség Szint | **KP igény** |  Diff   |
-| ----------- | :--------------: | :----------: | :-----: |
-|             |       `1`        |    **6**     | `+6KP`  |
-|             |       `2`        |    **10**    | `+4KP`  |
-| Novícius    |       `3`        |    **16**    | `+6KP`  |
-|             |       `4`        |    **24**    | `+8KP`  |
-|             |       `5`        |    **34**    | `+10KP` |
-| Kismester   |       `6`        |    **46**    | `+12KP` |
-|             |       `7`        |    **60**    | `+14KP` |
-|             |       `8`        |    **76**    | `+16KP` |
-| Mester      |       `9`        |    **94**    | `+18KP` |
-|             |       `10`       |   **114**    | `+20KP` |
-|             |       `11`       |   **136**    | `+22KP` |
-| Nagymester  |       `12`       |   **160**    | `+24KP` |
-|             |       `13`       |   **186**    | `+26KP` |
-|             |       `14`       |   **214**    | `+28KP` |
-| Élő legenda |       `15`       |   **244**    | `+30KP` |
-
-<!-- tag: md_table_kepzettsegkp_end -->
-
 <!-- tag: md_codeblock_kepzettsegkp_start -->
 
 ```
