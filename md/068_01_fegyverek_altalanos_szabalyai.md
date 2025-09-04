@@ -46,26 +46,32 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
 ---
 ### Jellemző pengehosszok
 
-- kard
-  - méret: `0,75 - 0,9` méter
-  - átlag: `0,8` méter
-  - jellemzően: `1` penge
-  - maximum: `1` penge
-- alabárd
-  - méret: `1,8 - 2,5` méter
-  - átlag: `2,1` méter
-  - jellemzően: `2 penge`
-  - maximum `3 penge`
-- lándzsa
-  - méret: `1,8 - 3,5` méter
-  - átlag: `2,6` méter
-  - jellemzően: `3` penge
-  - maximum: `4 penge`
-- pika
-  - méret: `4 - 7,0` méter
-  - átlag: `5,5` méter
-  - jellemzően: `7` penge
-  - maximum: `8` penge
+
+```
+kard
+- méret: 0,75 - 0,9 méter
+- átlag: 0,8 méter
+- jellemzően: 1 penge
+- maximum: 1 penge
+
+alabárd
+- méret: 1,8 - 2,5` méter
+- átlag: 2,1 méter
+- jellemzően: 2 penge
+- maximum 3 penge
+
+lándzsa
+- méret: 1,8 - 3,5 méter
+- átlag: 2,6 méter
+- jellemzően: 3 penge
+- maximum: 4 penge
+
+pika
+- méret: 4 - 7,0 méter
+- átlag: 5,5 méter
+- jellemzően: 7 penge
+- maximum: 8 penge
+```
 
 <br />
 
@@ -180,19 +186,30 @@ Silány munka, vagy messze földön híres fegyverkovács mester remeke - külö
 
 A minőség a tárgy - ezúttal fegyver - Ideájának erejét is mutatja: mennyire alkalmas arra a célra, amire készítették. A fentiekben semmilyen mágia nem játszik szerepet, pusztán az elkészítés minőségét mutatja. A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** is hatással van.
 
-| Fegyverek minősége | Módosítók                |    Ár    |
-| :----------------: | :----------------------- | :------: |
-|        `-5`        | `TÉ,CÉ:-3; VÉ:-2; SP:-5` | `1/13 x` |
-|        `-4`        | `TÉ,CÉ:-2; VÉ:-2; SP:-4` | `1/10 x` |
-|        `-3`        | `TÉ,CÉ:-2; VÉ:-1; SP:-3` | `1/7 x`  |
-|        `-2`        | `TÉ,CÉ:-1; VÉ:-1; SP:-2` | `1/4 x`  |
-|        `-1`        | `TÉ,CÉ:-1; VÉ:-0; SP:-1` | `1/2 x`  |
-|        `0`         |                          |   `1x`   |
-|        `+1`        | `TÉ,CÉ:+1; VÉ:+0; SP:+1` |   `2x`   |
-|        `+2`        | `TÉ,CÉ:+1; VÉ:+1; SP:+2` |   `4x`   |
-|        `+3`        | `TÉ,CÉ:+2; VÉ:+1; SP:+3` |   `7x`   |
-|        `+4`        | `TÉ,CÉ:+2; VÉ:+2; SP:+4` |  `10x`   |
-|        `+5`        | `TÉ,CÉ:+3; VÉ:+2; SP:+5` |  `13x`   |
+```
+-5
+  TÉ,CÉ:-3; VÉ:-2; SP:-5; Ár:1/13 x
+-4
+  TÉ,CÉ:-2; VÉ:-2; SP:-4; Ár:1/10 x
+-3
+  TÉ,CÉ:-2; VÉ:-1; SP:-3; Ár:1/7 x
+-2
+  TÉ,CÉ:-1; VÉ:-1; SP:-2; Ár:1/4 x
+-1
+  TÉ,CÉ:-1; VÉ:-0; SP:-1; Ár:1/2 x
+ 0 
+  Nincs módosító; Ár:1x
++1
+  TÉ,CÉ:+1; VÉ:+0; SP:+1; Ár:2x
++2
+  TÉ,CÉ:+1; VÉ:+1; SP:+2; Ár:4x
++3
+  TÉ,CÉ:+2; VÉ:+1; SP:+3; Ár:7x
++4
+  TÉ,CÉ:+2; VÉ:+2; SP:+4; Ár:10x
++5
+  TÉ,CÉ:+3; VÉ:+2; SP:+5; Ár:13x
+```
 
 #### 🔆 Mágikus fegyverek és a fegyver Ideája
 
