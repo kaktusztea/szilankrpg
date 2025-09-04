@@ -6,19 +6,8 @@ Közelharci fegyvernek számít:
 ```
 
 ```
-Íves fegyver:
-  +2 SP páncélozatlan
-  ellenfél ellen
-```
-
-```
-KF: Különleges felkészítés
-  - Tradíció követelmény
-    - A: Amund
-    - D: Dzsenn
-    - S: Slan
-    - F: Fejvadász
-  - Mf: 2.fok követelmény
+Íves fegyver
+KF: Különleges fegyver
 ```
 
 ```
