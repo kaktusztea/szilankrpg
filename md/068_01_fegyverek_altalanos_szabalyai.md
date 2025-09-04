@@ -19,29 +19,59 @@
 
 Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – méret szerint. A lentiek irányadó értékek, az egyes konkrét fegyverek számai ettől eltérnek, viszont új fegyver beillesztése a rendszerbe így gyerekjáték.
 
-| `1 penge különbség` | `KÉ` | `TÉ` | `VÉ` |
-| ------------------- | :--: | :--: | :--: |
-| ez `2` egység ugrás | `+2` | +`3` | `3`  |
+```
+1 penge különbség
+(2 egység ugrás)
+
+KÉ: 2, TÉ: 3, VÉ: 3
+```
+
 <br />
 
-| **Fegyver példa** | **Egység** | **Kategória** | `KÉ` | `TÉ` | `VÉ` |
-| ----------------- | :--------: | ------------- | :--: | :--: | :--: |
-| tőr               |    `1`     | `rövid (0)`   | `1`  | `2`  | `1`  |
-| rövid kard        |    `2`     | `0,5 penge`   | `2`  | `3`  | `2`  |
-| hosszú kard       |    `3`     | `1 penge`     | `3`  | `4`  | `4`  |
-| másfélkezes kard  |    `4`     | `1,5 penge`   | `4`  | `6`  | `5`  |
-| kétkezes kard     |    `5`     | `2 penge`     | `5`  | `7`  | `7`  |
-| alabárd           |    `7`     | `3 penge`     | `7`  | `10` | `10` |
-| lándzsa, kopja    |    `9`     | `4 penge`     | `9`  | `13` | `13` |
-| pika              |    `11`    | `5 penge`     | `11` | `16` | `16` |
+```
+rövid (0)
+  Tőr
+  KÉ: 1, TÉ: 2, VÉ: 1
+
+0,5 penge (1)
+  Rövid kard
+  KÉ: 2, TÉ: 3, VÉ: 2
+
+1 penge (2)
+  Fegyver: hosszú kard
+  KÉ: 3, TÉ: 4, VÉ: 4
+
+1,5 penge (3)
+  Másfélkezes kard
+  KÉ: 4, TÉ: 6, VÉ: 5
+
+2 penge (4)
+  Kétkezes kard
+  KÉ: 5, TÉ: 7, VÉ: 7
+
+3 penge (6)  
+  Alabárd  
+  KÉ: 7, TÉ: 10, VÉ: 10
+
+4 penge (8)  
+  Lándzsa, kopja  
+  KÉ: 9, TÉ: 13, VÉ: 13
+
+5 penge (10)  
+  Pika  
+  KÉ: 11, TÉ: 16, VÉ: 16
+```
 
 ---
 ### Fegyverméret elnevezések, szabályok
 
-- `rövid`: `0,3` méterig
-- `0,5 penge`: `0,4 - 0,7` méter
-- `1 penge`: `0,8` méter
-- `2 penge`: `1,6` méter
+
+```
+rövid:     0,3 méterig
+0,5 penge: 0,4 - 0,7 méter
+1 penge:   0,8 méter
+2 penge:   1,6 méter
+```
 
 ---
 ### Jellemző pengehosszok
@@ -55,9 +85,9 @@ kard
 - maximum: 1 penge
 
 alabárd
-- méret: 1,8 - 2,5` méter
+- méret: 1,8 - 2,5 méter
 - átlag: 2,1 méter
-- jellemzően: 2 penge
+- jellemzően: 3 penge
 - maximum 3 penge
 
 lándzsa
@@ -68,9 +98,9 @@ lándzsa
 
 pika
 - méret: 4 - 7,0 méter
-- átlag: 5,5 méter
-- jellemzően: 7 penge
-- maximum: 8 penge
+- átlag: 5 méter
+- jellemzően: 5 penge
+- maximum: 6 penge
 ```
 
 <br />
