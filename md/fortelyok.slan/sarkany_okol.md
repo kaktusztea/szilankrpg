@@ -56,7 +56,6 @@ Ez a Harcművészek speciális fortélya. A **Slan pszí** útja delejes erőt a
   - `KÉ,TÉ,VÉ: 3`
   - `SP: +2 + k20`
 
-
 <br />
 
 ### Megjegyzések
