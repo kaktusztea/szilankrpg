@@ -17,7 +17,7 @@
 
 ### Próbadobás
 
-Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő a Célszámmal, akkor a próba sikerült.
+Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő a Célszámmal, akkor a próba sikerült. Ha a KM úgy látja, hogy az adott próbánál több Tulajdonság is szerepet játszik, akkor a szükséges Tulajdonságok átlagával kell számolni.
 
 ```
 Tulajdonság + Képzettség + k10
@@ -25,23 +25,24 @@ Tulajdonság + Képzettség + k10
           Célszám
 ```
 
-| Képzettségpróba<br /><sub>(dobás k10-el)</sub> | Célszám |
-| ---------------------------------------------- | :-----: |
-| Könnyű                                         |    6    |
-| Átlagos                                        |    9    |
-| Nehéz                                          |   12    |
-| Nagyon nehéz                                   |   15    |
-| Rendkívül nehéz                                |   18    |
-| Emberfeletti                                   |   21    |
-| ...                                            |   ...   |
+```
+Képzettségpróba (k10)
 
-Ha a KM úgy látja, hogy az adott próbánál több Tulajdonság is szerepet játszik, akkor a szükséges Tulajdonságok átlagával kell számolni.
+Célszámok
+ 6: Könnyű
+ 9: Átlagos
+12: Nehéz
+15: Nagyon nehéz
+18: Rendkívül nehéz
+21: Emberfeletti
+...
+```
 
-A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Példák:
+A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Például szakrális emberáldozat csökkenti a próba nehézségét.
+
+Példák:
 - [Aktuális Aura számításánál](104_aura_magia_akarata_magiaellenallas.md#aura-aktu%C3%A1lis-%C3%A9rt%C3%A9ke) Aurafejlesztés képzettségpróba
 - [Méreg szintje](151_meregkeveres_szabalyai.md#a-m%C3%A9reg-szintje) Méregkeverésnél
-
-Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Például szakrális emberáldozat csökkenti a próba nehézségét.
 
 <br />
 
@@ -162,24 +163,43 @@ Ha a karakternek egy olyan összetett feladatot kell elvégeznie, ami nem intéz
 
 #### ⚡Példa: Megmászni egy 200 méter magas, omladékos hegyet
 
-**Tetves**, a tolvaj 
-- `Mászás képzettsége: 7`
-- `Ügyessége: +2`
-- így `8+2=9`-re dob majd rá `k10`-el.
+```
+Tetves, a tolvaj
 
-⚙️ A próba „Nagyon nehéz" (`Célszám: 15`)
+7: Mászás képzettsége
+2: Ügyessége
 
-⚙️ Mivel az út hosszú, nem intézhető el a dolog `1 db` dobással, a KM `2 db Másodlagos próbát` ír elő.
+Dobás: k10 + 9
+```
 
-⚙️ Ekkor a próbák célszámai: `15`, `12`, `12` (azaz `50%`, `80%` és `80%` esély a sikerre).
+```
+15: Próba célszám
+    (Nagyon nehéz)
+```
 
-⚙️ Ezzel kb. `30%`-a van a teljes feladat sikerére (`0.5 x 0.8 x 0.8`). Látható, hogy az összetettebb feladatok nagyobb fokú biztos tudást igényelnek.
+Mivel az út hosszú, nem intézhető el a dolog `1 db` dobással, a KM `2 db Másodlagos próbát` ír elő.
+
+```
+Célszámok, esélyük
+
+15 (50%)
+12 (80%)
+12 (80%)
+```
+
+```
+30%: Teljes feladat siker esélye
+
+(0.5 x 0.8 x 0.8)
+```
+
+Látható, hogy az összetettebb feladatok nagyobb fokú biztos tudást igényelnek.
 
 Tehát a próbák:
 
 ```
-- 1x Nagyon nehéz (15)
-- 2x Nehéz        (12)
+→ 1x Nagyon nehéz (15)
+→ 2x Nehéz        (12)
 ```
 
 Hasonló szituáció: [Mászás képzettségpróbára összetett példa](szituaciok/maszas_osszetett_pelda.md)
