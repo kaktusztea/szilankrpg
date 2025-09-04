@@ -1,10 +1,21 @@
 ## Páncél tagok és a védett terület
 
-| **Páncél tag**                          | **Véd**  | **Tulajdonságok, védett helyek**        |
-| --------------------------------------- | :------: | --------------------------------------- |
-| Mellvért                                |  `50%`   | Csak a torzót védi elöl, hátul, oldalt. |
-| + Sisak                                 |  `+10%`  | A fejet védi                            |
-| Felkarok / alkarok / combok / lábszárak | `+10%`\* | Tagonként értendő a `+10%`.             |
+
+```
+Mellvért  
+  50% véd
+  Csak torzót védi elöl,
+  hátul, oldalt
+
+Sisak  
+  10% véd
+  A fejet védi
+
+Felkarok, alkarok,
+combok, lábszárak  
+  +10%* véd
+  Tagonként
+```
 
 <br />
 
@@ -22,9 +33,18 @@ Minden páncél `X %`-ban védi a testet. `X`-et a fenti táblázatból lehet ki
 ---
 ### ⚡Példa
 
-Torzót, felkart és alkart védő páncél a test `70%`-át védi (`50+10+10`).
+Torzót, felkart és alkart védő páncél a test `70%`-át védi:
 
-Így `k10`-en az `1-7`-es dobás esetén véd a páncél, `8-10`-es esetén nem, mert a csapás fedetlen részt talált el.
+```
+70 = 50 + 10 + 10
+```
+
+```
+k10
+
+1-7:  véd a páncél
+8-10: fedetlen részt talált
+```
 
 ---
 
