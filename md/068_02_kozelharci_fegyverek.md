@@ -6,7 +6,7 @@ Közelharci fegyvernek számít:
 ```
 
 ```
-Íves fegyver
+MK: Másfélkezes fegyver
 KF: Különleges fegyver
 ```
 
