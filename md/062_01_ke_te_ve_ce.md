@@ -88,35 +88,35 @@ Az alábbi táblázat megadja, a Támadó Érték kiszámolásának módját.
 ```
 🗡️ Támadó Érték meghatározása
 
-+ Konstans: 7  
-    Minden karakternek  
-+ Erő  
-    A karakter Erő Tulajdonsága  
-+ Ügyesség  
-    A karakter Ügyesség Tulajdonsága  
-+ Gyorsaság  
-    A karakter Gyorsaság Tulajdonsága  
++ Konstans: 7
+    Minden karakternek
++ Erő
+    A karakter Erő Tulajdonsága
++ Ügyesség
+    A karakter Ügyesség Tulajdonsága
++ Gyorsaság
+    A karakter Gyorsaság Tulajdonsága
 + Harcmodor TÉ  
     Harcmodor képzettség szintje által
     kapott bónusz
-+ Fegyver TÉ  
-    A forgatott fegyver Támadó Értéke  
-+ Mesterfegyver fortély  
-    +1 fokonként  
-+ HM  
++ Fegyver TÉ
+    A forgatott fegyver Támadó Értéke
++ Mesterfegyver fortély
+    +1 fokonként
++ HM
     A TÉ-re költött (KP-ból felvett)
-    Harcérték módosító  
-+ Plusz támadás levonása  
+    Harcérték módosító
++ Plusz támadás levonása
     A 2. támadástól kezdve minden támadás
     fixen TÉ:-4 levonással történik
-    (nem halmozódik!)  
-+ Speciális  
-  - Fortélyokból adódó módosítók  
-  - Harci helyzetből adódó módosítók  
-  - Fegyver minőségéből adódó módosító  
-    - Mestermunka: max TÉ:+5 ⭕k20  
-    - Gyatra fegyver: max TÉ:+5 ⭕k20  
-    - Mágikus fegyver módosítói  
+    (nem halmozódik!)
++ Speciális
+  - Fortélyokból adódó módosítók
+  - Harci helyzetből adódó módosítók
+  - Fegyver minőségéből adódó módosító
+    - TÉ: -3
+    - TÉ: +3
+  - Mágikus fegyver módosítói  
   - Mágiából adódó módosítók
 ```
 
@@ -132,23 +132,23 @@ A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képess�
 ```
 🗡️ Védő Érték meghatározása
 
-+ Konstans: 24  
++ Konstans: 24
     Minden karakternek
-+ Ügyesség  
++ Ügyesség
     A karakter Ügyesség Tulajdonsága
-+ Gyorsaság  
-    A karakter Gyorsaság Tulajdonsága   
-+ Harcmodor VÉ  
++ Gyorsaság
+    A karakter Gyorsaság Tulajdonsága
++ Harcmodor VÉ
     Harcmodor képzettség szintje által
     kapott bónusz
-+ Fegyver VÉ  
++ Fegyver VÉ
     A forgatott fegyver Védő Értéke
-+ Mesterfegyver fortély  
-    +1 fokonként   
-+ HM  
++ Mesterfegyver fortély
+    +1 fokonként
++ HM
     A VÉ-re költött (KP-ból felvett)
     Harcérték módosító
-+ Vértviselet – 3. fok  
++ Vértviselet – 3. fok
     Lemez mellvértnél VÉ:+3 bónusz
 + Pajzs VÉ
     Készületlenül, Meglepetésnél
@@ -182,12 +182,12 @@ VÉ (Célpont mozgásának jellege)
 
  7 - Álló helyzet
 10 - Lassú egyenletes
-     (séta)  
-17 - Egyenletes kocogás  
+     (séta)
+17 - Egyenletes kocogás
 27 - Sprint egyenes vonalon
-17 - Lassú kiszámíthatatlan  
-27 - Közepesen gyors, kiszámíthatatlan  
-37 - Gyors, kiszámíthatatlan  
+17 - Lassú kiszámíthatatlan
+27 - Közepesen gyors, kiszámíthatatlan
+37 - Gyors, kiszámíthatatlan
 ```
 
 ```

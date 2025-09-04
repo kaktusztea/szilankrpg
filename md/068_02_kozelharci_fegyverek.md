@@ -25,8 +25,6 @@ KF: Különleges felkészítés
 -1 pengehossz == speciális
 ```
 
-✅ k20 konverzió kész
-
 <!-- tag: md_table_fegyver_start -->
 
 | Fegyver                 | Forgatás módja |     SP      | Erőbónusz limit | Sebzési típus | Átütés | Íves | MK  |  KF  | Pengehossz |  KÉ  |  TÉ  |  VÉ  | Sebesség | Kategória  | Speciális                                                                                                                                                                                                                                   |
