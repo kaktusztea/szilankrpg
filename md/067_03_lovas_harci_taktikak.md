@@ -26,9 +26,10 @@ Követelmények:
 ### Lovas támadás galoppból
 
 ```
-- TÉ: +3
-- SP: +5
-- 1 támadó csapás, 1 visszacsapás lehetséges
+TÉ: +3
+SP: +5
+1 támadó csapás lehetséges
+1 visszacsapás lehetséges
 ```
 
 Nem mindig sikerül elérni a rohamhoz szükséges sebességet, viszont ha a karakter képes galoppra fogni a lovát és úgy támadni, akkor is több előnyhöz jut, mintha csak egy helyben táncoltatna.
