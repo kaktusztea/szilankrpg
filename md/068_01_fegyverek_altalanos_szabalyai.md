@@ -38,7 +38,7 @@ rövid (0)
   KÉ: 2, TÉ: 3, VÉ: 2
 
 1 penge (2)
-  Fegyver: hosszú kard
+  Hosszú kard
   KÉ: 3, TÉ: 4, VÉ: 4
 
 1,5 penge (3)
