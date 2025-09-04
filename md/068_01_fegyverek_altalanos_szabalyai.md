@@ -141,6 +141,8 @@ A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](
 Ha egy kézzel forgatod az alapvetően két kézre tervezett másfélkezes fegyveredet, akkor az alábbi levonásokat kapod harcértékeidre:
 
 ```
+Jelölése: MK
+
 - KÉ:-1,  TÉ:-2,  VÉ:-2
 - Átütés megszűnik (ha volt)
 - Erőbónusz limit csökken
