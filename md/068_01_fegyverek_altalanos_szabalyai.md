@@ -121,12 +121,12 @@ pika
 ```
 Jelölése: KF
 
-- Tradíció követelmény
-  - A: Amund
-  - D: Dzsenn
-  - S: Slan
-  - F: Fejvadász
-- Mf: 2.fok követelmény
+Tradíció követelmény
+  A: Amund
+  D: Dzsenn
+  S: Slan
+  F: Fejvadász
+Mf: 2.fok követelmény
 ```
 
 Egyes – speciális – fegyvereknél van megemlítve ez a szabály. Jelentése: a táblázatban leírt harcértékek csak akkor érvényesek, ha speciális iskolában, vagy onnan származó mestertől megtanulta a karakter a fegyver speciális fogásait. Ez részben előtörténet követelmény, amelyet fel kell tüntetni a karakterlapon, másrészt a fegyver Megjegyzés mezőjében szerepel, milyen más, számszerű követelménye van. Bánjunk ezzel a követelménnyel szigorúan! Ha ez nincs meg, a KM dönt, hogy milyen – alacsonyabb – harcértékekkel forgathatja a karakter a fegyvert – már ha egyáltalán...
