@@ -54,7 +54,7 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 ---
 ## Alakzat harcértékeinek meghatározása
 
-### KÉ SUMMA
+### 🔆Alakzat KÉ értéke
 
 ```
 + Kezdeményezőszint bónusza
@@ -62,7 +62,7 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 ```
 **Kezdeményezőszint** `KÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
-### TÉ SUMMA
+### 🔆Alakzat TÉ értéke
 
 ```
 + Támadószint bónusza
@@ -70,7 +70,7 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 ```
 **Támadószint** `TÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
-### VÉ SUMMA
+### 🔆Alakzat VÉ értéke
 
 ```
 + Védekezőszint bónusza
@@ -150,6 +150,16 @@ Csámpa
 +6: a legalacsonyabb képzettség szint
 +2: bónusz (Borz, Vezető: Alakzatparancsnok (1.fok))
 +4: MIN(2; 2; 2; 2) x 2
+```
+<br />
+
+### 🔆 Alakzat KÉ értéke = 23
+
+```
++20: Alakzat tagjainak fegyveres KÉ átlaga
+ +3: KÉ bónusz Kezdeményezőszint (8) után, mint egy
+     extra harcmodorból képzettség szintjéből
+     adódó bónusz
 ```
 
 ### 🔆 Alakzat TÉ értéke = 33
