@@ -69,14 +69,16 @@ A KM bármikor rögtönözhet új Manővert, mindössze az alábbiakat kell megh
 
 Új Manőver kitalálásakor a `[2;12]` intervallum értékei közül válasszunk az alábbi skála figyelembevételével.
 
-| Nehézség     | Érték |
-| ------------ | :---: |
-| Mindennapos  |   2   |
-| Könnyű       |   4   |
-| Átlagos      |   6   |
-| Nehéz        |   8   |
-| Nagyon nehéz |  10   |
-| Emberfeletti |  12   |
+```
+Manőver nehézség
+
+ 2: Mindennapos
+ 4: Könnyű
+ 6: Átlagos
+ 8: Nehéz
+10: Nagyon nehéz
+12: Emberfeletti
+```
 
 Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](018_03_manover_pontok_99.md) felhasználása szükséges a Nehézség mérsékléséhez és máris meglesz az „ára”, ha valaki eséllyel alkalmazni akarja.
 

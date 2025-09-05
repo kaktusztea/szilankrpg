@@ -64,17 +64,31 @@ Célszám:
 
 ### ⚜️ Célszám extra módosítói
 
-| Manőver Pont         | Ellenfél alkalmazhatja opcionálisan. Pontonként `+2` bónuszt ad. Maximum `2 pont` költhető. A dobások előtt kell bejelenteni. |
-|:-------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
-| Újrapróbálkozás      | `+2` → az Ellenfél már számít rá                                                                                              |
-| Módosító körülmények | `[-5;+5]` KM által megadott `+/-` érték. Körülmény függő könnyítés / nehezítés. Például "bódulat" esetén.                     |
+#### Manőver Pont
 
-**Belharci Manőverek módosítói:**
+Ellenfél alkalmazhatja opcionálisan. Pontonként `+2` bónuszt ad. Maximum `2 pont` költhető. A dobások előtt kell bejelenteni.
 
-| Belharc fortély fokai | `+2/fok` az Ellenfél oldalán (Belharci Manőver esetén) |
-|:--------------------- | ------------------------------------------------------ |
-| Testméret különbség   | `[-2; +2]`                                             |
-| Páncél különbség      | `[-2; +2]`                                             |
+```
+Manőver Pont
+
++2: Újrapróbálkozás
+  → az Ellenfél már számít rá
+
+[-5;+5]
+  KM által megadott +/- érték.
+  Körülmény függő könnyítés / nehezítés.
+  Például "bódulat" esetén.
+
+```
+
+#### Belharci Manőverek módosítói
+
+```
++2 / Belharc fortély fok
+
+[-2; +2] Testméret különbség
+[-2; +2] Páncél különbség
+```
 
 Az Ellenpróba dobása nem mást fed, mint hogy a karakter képes -e megteremteni maga számára a lehetőséget, úgymond „megágyazni magának”, hogy egyáltalán megkísérelhesse a **Manővert**. A harcban ez helyezkedést, „pozícióba kerülést” jelent, amelynek sikere függ a karakter és Ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van olyan fázis).
 
