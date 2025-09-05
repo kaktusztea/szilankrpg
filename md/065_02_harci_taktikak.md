@@ -33,8 +33,11 @@ Fárasztó taktika
     harci helyzetből NEM mehet
 
 Visszafogott taktika
-  Kisebb kockával dobhatsz sebzéskor.
-    Lásd a taktika részletes leírását!
+  Kisebb sebzéskockával dobhatsz
+  • TÉ:-3  → k20 helyett k10
+  • TÉ:-6  → k20 helyett k6
+  • TÉ:-9  → nincs kockadobás
+             csak alap sebzés
 
 Plusz támadás taktika
   +1 támadás
