@@ -8,7 +8,7 @@ Kapcsolódik:
 - [Páncél akadályoztatása](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-%EF%B8%8F) Státusz
 
 ```
-1 MGT → -1 KÉ, TÉ
+3 MGT → -1 TÉ ↓
 ```
 
 További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olvashatsz.
