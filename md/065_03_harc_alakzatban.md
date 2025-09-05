@@ -14,20 +14,29 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 ---
 ## Alakzat egyedi jellemzői
 
-### ⚜️ Alakzatszint
+### Vezető fortélyok
 
-- `MIN( Alakzatharc képzettség )`
-- Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint)
-- [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md) fortély bónusz: `+2 / fok`  (gyalogos alakzat esetén)
-- [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md) fortély bónusz: `+2 / fok`  (íjász/lövész alakzat esetén)
-- [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md) fortély bónusz: `+2 / fok`  (lovas alakzat esetén)
-- [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md) fortély bónusz: `+2 / fok`  (lovas alakzat esetén)
+Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónuszt ad a lenti Kezdeményezőszint, Támadószint, Védekezőszint számításánál.
+  - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)  (gyalogos alakzat esetén)
+  - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)  (íjász/lövész alakzat esetén)
+  - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)  (lovas alakzat esetén)
+  - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)  (lovas alakzat esetén)
+  
+### ⚜️ Kezdeményezőszint
+
+```
++MIN( Alakzatharc képzettség )
++2 / Vezető fortély bónusz fok
+```
+
+Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
 
 ### ⚜️Támadószint
 
 ```
-Alakzatszint
-+ (2 x  MIN(Támadó-alakzat fortély ))
++ MIN( Alakzatharc képzettség )
++ 2 / Vezető fortély bónusz fok
++ MIN(Támadó-alakzat fortély fok) x 2
 ```
 
  Tehát a csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
@@ -35,8 +44,9 @@ Alakzatszint
 ### ⚜️Védekezőszint
 
 ```
-Alakzatszint
-+ (2 x  MIN(Védekező-alakzat fortély ))
++ MIN( Alakzatharc képzettség )
++ 2 / Vezető fortély bónusz fok
++ MIN(Védekező-alakzat fortély fok) x 2
 ```
 
 Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka `2` bónusz szintet ad fokonként.
@@ -45,19 +55,31 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 ## Alakzat harcértékeinek meghatározása
 
 ### KÉ SUMMA
-- `+` Alakzat tagjainak fegyveres `KÉ` átlaga
-- `KÉ bónusz`: **Alakzatszint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+
+```
++ Kezdeményezőszint bónusza
++ Alakzat tagjainak fegyveres KÉ átlaga
+```
+**Kezdeményezőszint** `KÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 ### TÉ SUMMA
 
-- `+` Alakzat tagjainak fegyveres `TÉ` átlaga
-- `+` `TÉ bónusz`: **Támadószint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+```
++ Támadószint bónusza
++ Alakzat tagjainak fegyveres TÉ átlaga
+```
+**Támadószint** `TÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 ### VÉ SUMMA
 
-- \+ Alakzat tagjainak fegyveres `VÉ` átlaga 
-- \+ `VÉ bónusz`:  **Védekezőszint** mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-- \+ Személyek száma utáni `VÉ` bónusz (`+1 VÉ / fő;  max +10 VÉ`)
+```
++ Védekezőszint bónusza
++ Alakzat tagjainak fegyveres VÉ átlaga
++ Személyek száma utáni VÉ bónusz
+  (+1 VÉ / fő;  max +10 VÉ)
+```
+
+**Védekezőszint** `VÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 🔆 **Megjegyzés**
 - [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasl%C3%A9glovas-harc%C3%A9rt%C3%A9kek-kisz%C3%A1m%C3%ADt%C3%A1sa) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
@@ -68,66 +90,70 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 ---
 ## ⚡Példa: 4 fős alakzat
 
+```
 Borz
-- Alakzatharc: `6.szint`
-- Támadó-alakzat fortély: `2.fok`
-- Védekező-alakzat fortély: `2.fok`
-- 🔆 Vezető: Alakzatparancsnok: `1.fok`
+  Alakzatharc: 6.szint
+  Támadó-alakzat fortély: 2.fok
+  Védekező-alakzat fortély: 2.fok
+  🔆 Vezető: Alakzatparancsnok: 1.fok
 
 Tetves
-- Alakzatharc: `7.szint`
-- Támadó-alakzat fortély: `1.fok`
-- Védekező-alakzat fortély: `2.fok`
+  Alakzatharc: 7.szint
+  Támadó-alakzat fortély: 1.fok
+  Védekező-alakzat fortély: 2.fok
 
 Rühes
-- Alakzatharc: `8.szint`
-- Támadó-alakzat fortély: `0.fok`
-- Védekező-alakzat fortély: `2.fok`
+  Alakzatharc: 8.szint
+  Támadó-alakzat fortély: 0.fok
+  Védekező-alakzat fortély: 2.fok
 
 Csámpa
-- Alakzatharc: `10.szint`
-- Támadó-alakzat fortély: `1.fok`
-- Védekező-alakzat fortély: `2.fok`
+  Alakzatharc: 10.szint
+  Támadó-alakzat fortély: 1.fok
+  Védekező-alakzat fortély: 2.fok
+```
 
 <br />
 
 ---
 ## ⚡Harcértékek: 4 fős alakzat
 
-### ⚡Alakzatszint: `6 + 2 → 8.szint`
+### ⚡Kezdeményezőszint: `8`
 
-- legalacsonyabb képzettség: `6.szint`
-- **Borz** [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md): `1.fok` → `+2 bónusz`
+```
++6: a legalacsonyabb képzettség szint
++2: bónusz (Vezető: Alakzatparancsnok (1.fok))
+```
 
 <br />
 
 ### ⚡Támadószint: `8`
 
 ```
-Alakzatszint        =  8
-MIN(2; 1; 0; 1) x 2 =  0
-                    = 10
++6: a legalacsonyabb képzettség szint
++2: bónusz (Vezető: Alakzatparancsnok (1.fok))
++0 = MIN(2; 1; 0; 1) x 2
 ```
 
 <br />
 
-### ⚡Védekezőszint: `10`
+### ⚡Védekezőszint: `12`
 
 ```
-Alakzatszint        =  8
-MIN(2; 2; 2; 2) x 2 =  4
-                    = 12
++6: a legalacsonyabb képzettség szint
++2: bónusz (Borz, Vezető: Alakzatparancsnok (1.fok))
++4: MIN(2; 2; 2; 2) x 2
 ```
 
 ### 🔆 Alakzat TÉ értéke
 
 - Alakzat tagjainak fegyveres `TÉ` átlaga 
-- `TÉ bónusz: +7`  ← **Támadószint** (`10`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
+- `TÉ bónusz: +5`  ← **Támadószint** (`8`) mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) utáni bónusz
 
 ### 🔆 Alakzat VÉ értéke
 
 - Alakzat tagjainak fegyveres `VÉ` átlaga 
-- `VÉ bónusz: +9` ← **Védekezőszint** (`12`) mint egy extra [harcmodorból adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) után ennyi bónusz jár
+- `VÉ bónusz: +9` ← **Védekezőszint** (`12`) mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) utáni bónusz
 - `VÉ bónusz: +4` ← Tagok száma után `4`
 
 <br />
@@ -137,13 +163,13 @@ MIN(2; 2; 2; 2) x 2 =  4
 
 ```
 +1 VÉ / fő
- Max 10
+   (max 10)
 ```
 
 A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy szuper harcos nem ad hozzá túl sokat az alakzathoz, ha képzetlen az alakzatharcban.
 
 Miért csak `VÉ` bónuszt ad?
-- mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.\
+- mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.
 - az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) ((és ugye a durvább `VÉ-csökkentést`)) adja.
 
 <br />
@@ -159,9 +185,8 @@ Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
 ## VÉ csökkenés alakzat ellen alacsonyabb
 
 ```
-Alapból gyengébb: -2
-
-Alakzat Teljes Védekezésben: -3
+-2: Alapból gyengébb
+-3: Alakzat Teljes Védekezésben
 ```
 
 Az alakzat ellen harcoló **egyén** ugyanúgy csökkent `Védő Értéket`, mint normál harc esetében - pengeméret különbségtől függően, viszont:
@@ -171,8 +196,6 @@ Az alakzat **ellen** leadott minden `VÉ` csökkentésből, tehát az alakzat á
 Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikába áll be, akkor a fenti csökkentés `-3` értékre módosul.
 
 **Tipp**: ezen hatás ellen megfontolandó lehet a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
-
-🔆 Megjegyzés: a szabály-mechanika a [Harcos elme](fortelyok.harci/harcos_elme.md) nem-létező `5.fokaként` képzelhető el. ⭕k20
 
 <br />
 
@@ -186,27 +209,20 @@ Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix ért
 ### Alakzat VÉ csökkentése (fix értékek)
 
 ```
--2 penge különbség (alakzaté)
-  VÉ csökkentés: 1
-
--1 penge különbség (alakzaté)
-  VÉ csökkentés: 2
-
-Azonos pengehossznál:
-  VÉ csökkentés: 3
-
-+1 penge különbség (alakzaté)
-  VÉ csökkentés: 4
-
-+2 penge különbség (alakzaté)
-  VÉ csökkentés: 5
+1 VÉ: -2 penge különbség (alakzaté)
+2 VÉ: -1 penge különbség (alakzaté)
+3 VÉ: Azonos pengehossznál
+4 VÉ: +1 penge különbség (alakzaté)
+5 VÉ: +2 penge különbség (alakzaté)
 ```
 
 #### Túlerő módosítója
 
 ```
-3  fő: +0 VÉ csökkentés
-5+ fő: +1 VÉ csökkentés
+VÉ csökkentés
+
++0 VÉ: 3 fő
++1 VÉ: 5+ fő
 ```
 
 Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-6 VÉ csökkenést` szenved el.
@@ -217,14 +233,21 @@ Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-6 VÉ cs
 ## Alakzat támadásainak száma
 
 ```
-Minden egyéni ellenfélre 1-1 támadás jut,
-  akikkel az alakzat harcol.
+Hányat támad az alakzat?
+
+1:1 támadás
+  minden egyéni ellenfélre
+  akikkel az alakzat harcol
+
+Max 1:1 támadás = Alakzat létszáma
 ```
 
-Egyértelműsítés:
-- Ha `1` emberrel harcolnak, akkor őrá `1`-et támad az alakzat
-- Ha `3` emberrel harcolnak, akkor mindhárom egyénre `1-1`-et támad az alakzat
-- Max ilyen `1-1` támadások száma: Alakzat létszáma
+```
+Példa
+
+1 emberre: 1 támadás
+3 emberre: 1:1-et mindenkire
+```
 
 <br />
 
@@ -250,14 +273,17 @@ A jellemző főfegyver sebzése.
 ## Alakzat taktikái, Manőverek
 
 Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok is csak fix értékekkel:
-- Támadó - fixen `TÉ:+3 / VÉ:-6`
-- Védő - fixen `VÉ:+4 / TÉ:-8`
-- Roham - `TÉ:+4`, `VÉ:-8`
-- Fárasztó
-  - `+2` VÉ csökkentés ha nincs találat
-  - `+5` VÉ csökkentés sebzés helyett
 
-Manőverek használata nem lehetséges.
+```
+TÉ:+3 / VÉ:-6: Támadó taktika (fix)
+VÉ:+4 / TÉ:-8: Védő taktika (fix)
+TÉ:+4, VÉ:-8 : Roham taktika
++2 VÉ csökkentés: Fárasztó taktika, nincs találat
++5 VÉ csökkentés: Fárasztó taktika, lenne találat
+
+```
+
+Manőverek használata alakzatban nem lehetséges.
 
 <br />
 
@@ -277,7 +303,7 @@ Egy Alakzat ellen az alábbi taktikák NEM használhatóak:
 ## Alakzat vs Alakzat
 
 ```
-Maximum létszám: `20`
+Maximum létszám: 20
 ```
 
 Két Alakzat egymással való harcát is modellezzük - kis (`max 20 fő / Alakzat`) létszámig. Ennél nagyobb létszámú összecsapásokat nem modellezünk.
