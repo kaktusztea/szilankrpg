@@ -60,6 +60,7 @@ Manőver Célszám =
   (max 2 költhető)
 
 +2 / Belharc fortély fok
+  (csak belharcos manővereknél)
 
 -3: Manőver követelményei
     nem teljesülnek
@@ -79,6 +80,7 @@ Hátrány-2
 +2 / Manőver Pont (ellenfél)
 
 +2 / Belharc fortély fok (ellenfél)
+  (csak belharcos manővereknél)
 
 +2: Újrapróbálkozás
   → az ellenfél már számít rá
@@ -86,7 +88,6 @@ Hátrány-2
 [-5;+5]
   KM által megadott +/- érték.
   Körülmény függő könnyítés / nehezítés.
-  Például valamilyen Státusz esetén.
 ```
 
 Az Ellenpróba dobása nem mást fed, mint hogy a karakter képes -e megteremteni maga számára a lehetőséget, úgymond „megágyazni magának”, hogy egyáltalán megkísérelhesse a **Manővert**. A harcban ez helyezkedést, „pozícióba kerülést” jelent, amelynek sikere függ a karakter és Ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van olyan fázis).
