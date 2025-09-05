@@ -7,7 +7,7 @@ Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján
 ### Aura Alap
 
 ```
-Aura Alap == Tsz x 2
+Aura Alap  =  Tsz x 2
 ```
 
 Az **Aura Alap** az Aura része, annak "bázisa", ami mindig jelen van. Egy karakter élete során megedződik, sokat tapasztal. Az **Aura Alap** értéke ebből a tapasztalásból származik, nem igényel semmilyen tanult képzettséget - értéke a **Tapasztalati Szint** (TSz) emelkedésével automatikusan nő.
@@ -36,25 +36,29 @@ Aurafejlesztés próba:
 
 Az **Aura** egy változó érték, amit úgy kapunk meg, hogy a varázsló és a védekező fél is **Aurafejlesztés** képzettségpróbát dob az **általa önként kiválasztott Nehézségre**. Természetesen választhatják a **biztos tudás**t is, amit az `1`-es dobás (`k10`) által elérhető maximum jelent - ilyenkor nyilván nem kell dobni sem. ⭕TODO: tisztázni, egyértelműsíteni⭕Ez a "**Biztos Aura**" a támadó felől, és a "**Tudatalatti Mágiaellenállás**" a védekező fél felől.
 
-| Aurafejlesztés Próba<br>⭕TODO: más név? |       Aura       |
-| :-------------------------------------: | :--------------: |
-|                 `3`   →                 | `2 + Aura alap`  |
-|                 `6`   →                 | `5 + Aura alap`  |
-|                 `9`   →                 | `10 + Aura alap` |
-|                 `12`  →                 | `15 + Aura alap` |
-|                 `15`  →                 | `20 + Aura alap` |
-|                 `18`  →                 | `25 + Aura alap` |
-|                 `21`  →                 | `30 + Aura alap` |
-|                 `24`  →                 | `35 + Aura alap` |
-|                 `27`  →                 | `40 + Aura alap` |
-|                 `30`  →                 | `45 + Aura alap` |
+```
+Aura számítása
+
+Aurafejlesztés Célszámok
+3  →  2 + Aura alap
+6  →  5 + Aura alap
+9  →  10 + Aura alap
+12 →  15 + Aura alap
+15 →  20 + Aura alap
+18 →  25 + Aura alap
+21 →  30 + Aura alap
+24 →  35 + Aura alap
+27 →  40 + Aura alap
+30 →  45 + Aura alap
+```
+
 
 ```
 Ha sikerül a próba:
-Aura = érték a táblázatból
+ Aura = érték a táblázatból
 
 Ha nem sikerül a próba:
-Aura = Aura Alap
+ Aura = Aura Alap
 ```
 
 Tehát a **Mágia Akaratát** és a **Mágiaellenállást** azonos módon kell meghatározni.
@@ -94,13 +98,12 @@ A Mágiaellenállás egységes, nincs külön asztrál/mentál ellenállás, vag
 Amennyiben az áldozat nem tud róla, hogy varázsolnak rá, olyankor a **Tudatalatti Mágiaellenállása** érvényesül, amely a biztos tudásból meglevő **Aura** értékével számol (tehát ha k10-en `1`-es dobott volna, akkor mit ért volna el a próbán). Ugyanígy számoljuk ki a **Biztos Aura** értékét is - a támadó szempontjából.
 
 ```
-TME / Biztos Aura:
+Biztos Aura (TME):
   Önuralom + Aurafejlesztés + 1
   → X Aura
 ```
 
 <br />
-
 
 ---
 ### Mágiaellenállás változása
@@ -109,15 +112,30 @@ A Mágiaellenállás nem statikus, körülménytől hangulattól függően, esem
 Például Meglepődés / Harc / Érzelmi sokk / másra koncentrálás közben ideiglenesen csökkenhet a Mágiaellenállás, mivel egy időben nehezebb védekezni a fizikai és a felsőbb síkokon. 
 Ilyen esetekben a KM kérhet **Összpontosítás** próbát, hogy kap -e büntetést a karakter, vagy nem. Alább egy általános táblázat, hogy nagyjából milyen esetben mivel kell számolnia a védekező félnek.
 
-|                          Hatás, esemény                          |                       Aura Alap diff                        |
-| :--------------------------------------------------------------: | :---------------------------------------------------------: |
-|                           Érzelmi sokk                           |                      `-3`  (Asztrális)                      |
-|                            Kiégettség                            |                     `+1-3` (Asztrális)                      |
-|                     Erős koncentrálás másra                      | Összpontosítás próba: `[6-9-12-15]` Ha nincs meg, `-3` Aura |
-|                            Harci láz                             |              `+3` Asztrál/Mentál hatások ellen              |
-|                         Papi védő áldás                          |                  +⭕X⭕ adott hatások ellen                   |
-| Olyan érzelmi befolyás, ami tudat alatt kedvére van a célpontnak |               `-3` ilyen Asztrál hatás ellen                |
-|                                                                  |                                                             |
+```
+Hatások, események módosítói
+
+Érzelmi sokk  
+  Aura Alap diff: -3  (Asztrális)
+
+Kiégettség  
+  Aura Alap diff: +1-3 (Asztrális)
+
+Erős koncentrálás másra  
+  Összpontosítás próba: [6-9-12-15]  
+  Ha nincs meg, -3 Aura
+
+Harci láz  
+  Aura Alap diff: +3  
+  Asztrál/Mentál hatások ellen
+
+Papi védő áldás  
+  Aura Alap diff: +⭕X⭕ adott hatások ellen
+
+Olyan érzelmi befolyás, ami  
+  tudat alatt kedvére van a célpontnak  
+  Aura Alap diff: -3 ilyen Asztrál hatás ellen
+```
 
 <br />
 
@@ -127,8 +145,10 @@ Ilyen esetekben a KM kérhet **Összpontosítás** próbát, hogy kap -e büntet
 Ha a mágiatudó közvetlenül a célpont testét szeretné átalakítani, akkor nagyobb fába vágta a fejszéjét, mint akár egy sima asztrális befolyásolással. Az ilyen mágia ellen a (fizikai) Mágiaellenáláshoz bónusz járul:
 
 ```
-Mágiellenállás fizikai
-behatás ellen: Aura +(2x Edzettség)
+Mágiellenállás extra
+fizikai behatás ellen
+
+Aura +(2x Edzettség)
 ```
 
 <br />
@@ -141,26 +161,25 @@ behatás ellen: Aura +(2x Edzettség)
 #### Varázsló, mint támadó
 
 ```
-- TSz: 7 → Aura Alap = 14
-- Önuralom: +3
-- Aurafejlesztés - 7.szint
+TSz: 7 → Aura Alap = 14
+Önuralom: +3
+Aurafejlesztés - 7.szint
 
-- TME / Biztos Aura
-      = Aura Alap (14)
-      + (3+7+1)  → 10
-      = 24
+Biztos Aura (TME) = 24
+  + 14 (Aura Alap)
+  + 10 (3+7+1)
 ```
 
 #### Gyanútlan nemesember, mint védekező fél
 
 ```
-- TSz: 5 → Aura Alap = 10
-- Önuralom: `+1`
-- Aurafejlesztés - `5.szint`
+TSz: 5 → Aura Alap = 10
+Önuralom: +1
+Aurafejlesztés - 5.szint
 
-- TME = Aura Alap (10)
-      + (1+5+1)  →  5
-      = 15
+Biztos Aura (TME) = 15
+  +10 (Aura Alap)
+  +5  (1+5+1)
 ```
 
 A varázsló megpróbálja asztrális befolyása alá vonni a nemesembert. Úgy dönt, nem dob, neki elég a Biztos Aura (24), áldozatát jóval gyengébbnek véli.
