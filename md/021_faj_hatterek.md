@@ -24,7 +24,7 @@ Tehát például választhat egy **orkot**, akinek mindösszesen "**Infralátás
 - [Gnóm](hatterek.faji/gnom.md)
 - [Goblin](hatterek.faji/goblin.md)
 - [Khál](hatterek.faji/khal.md)
-- [Kyr-vérű](hatterek.faji/kyr_veru.md)
+- [Kyr](hatterek.faji/kyr.md)
 - [Ork](hatterek.faji/ork.md)
 - [Udvari ork](hatterek.faji/udvari_ork.md)
 - [Törpe](hatterek.faji/torpe.md)

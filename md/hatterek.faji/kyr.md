@@ -1,4 +1,4 @@
-## Kyr-vérű
+## Kyr
 
 ```
 Edzettség: [-5; +4] ; Önuralom [-3; +6]
