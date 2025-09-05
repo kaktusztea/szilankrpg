@@ -24,11 +24,22 @@ A [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettsé
 ---
 ### Fájdalomtűrés harc közben
 
-Ha harc közben más sebesülés kategóriába (S) lép a karakter, akkor fix `TÉ` levonást kap büntetésül. Ennek értékét csökkenti statikusan a Fájdalomtűrés képzettség egyes szintjei:
+Ha harc közben más sebesülés kategóriába (`S`) lép a karakter, akkor fix `TÉ` levonást kap büntetésül. 
 
 ```
-TÉ levonás
-  - (Fájdalomtűrés enyhítése)
+TÉ levonás alap
+
+S1:    -
+S2:  -3 TÉ
+S3:  -6 TÉ
+S4:  -9 TÉ
+```
+
+Ennek értékét csökkenti statikusan a Fájdalomtűrés képzettség egyes szintjei:
+
+```
+TÉ levonás enyhítése
+  Fájdalomtűrés képzettséggel
 
 4.szint:  1 TÉ enyhítés
 6.szint:  2 TÉ enyhítés
@@ -39,15 +50,12 @@ TÉ levonás
 15.szint: 7 TÉ enyhítés
 ```
 
-|     -      | S1  |  S2  |  S3  |  S4  |
-| :--------: | :-: | :--: | :--: | :--: |
-| TÉ levonás | `-` | `-3` | `-6` | `-9` |
-
 ### `S4` kategóriás fájdalomtűrés
 
 ```
 Fájdalomtűrés (K) + Edzettség (T)
-          vs. 12
+          vs
+          12
 ```
 
 Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + Edzettség)** képzettségpróbát kell dobnia **Nehéz** (`12`) célszám ellen.
@@ -63,9 +71,15 @@ Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
 Tetves, a tolvaj Fájdalomtűrése `5.szintű`, ez `2` pontot enyhít.\
 Ekkor az ő sebesülés táblázata így néz ki:
 
-|     -      | S1  |  S2  | S3  |  S4  |
-| :--------: | :-: | :--: | :-: | :--: |
-| TÉ levonás |  -  | `-1` | `4` | `-7` |
+
+```
+TÉ levonás összes
+
+S1:    -
+S2:  -1 TÉ
+S3:  -4 TÉ
+S4:  -7 TÉ
+```
 
 ---
 ### Fájdalomtűrés harcon kívül

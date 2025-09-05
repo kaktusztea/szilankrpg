@@ -4,14 +4,16 @@ Mikor a karakter olyan helyzetbe kerül, hogy valamelyik Tulajdonságát kell pr
 
 A KM meghatároz egy `3-8`-ig terjedő célszámot nehézségnek, a játékos pedig dob `k6`-tal, és az eredményt hozzáadja az adott **Tulajdonságának** értékéhez. Ha a kapott szám nagyobb, vagy egyenlő a célszámmal, akkor a próba sikerült.
 
-| Tulajdonságpróba <br /><sub>(dobás k6-al)</sub>  |  Célszám |
-|----------|:-------------:|
-| Könnyű   | 3 |
-| Átlagos  | 4 |
-| Nehéz    | 5 |
-| Nagyon nehéz | 6 |
-| Rendkívül nehéz | 7 |
-| Emberfeletti | 8 |
+```
+Tulajdonságpróba célszám (k6)
+
+3: Könnyű
+4: Átlagos
+5: Nehéz
+6: Nagyon nehéz
+7: Rendkívül nehéz
+8: Emberfeletti
+```
 
 ---
 ### Összetett Tulajdonságpróba
@@ -40,8 +42,8 @@ Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal alacsonyabb nehézs
 - Tehát a próbák:
 
 ```
-- 1x Nagyon nehéz (6) ellen
-- 1x Nehéz (5) ellen
+1x Nagyon nehéz (6) ellen
+1x Nehéz (5) ellen
 ```
 
 ---

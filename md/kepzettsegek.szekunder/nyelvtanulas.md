@@ -19,21 +19,23 @@ Minden nyelv ismeretét `2` fokra osztjuk:
 
 A **Nyelvtanulás** képzettség `4.szintjétől` kezdve minden szinten `3 pontot` kapsz, melyeket [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély fokokra költhetsz. Az első `3 szint` az alapozást jelképezi, ahogy a `Szilánk` sok más területén. Ugyanez táblázatban:
 
-| Szint | Pont |
-|:-----:|:----:|
-|  `3`  | `0`  |
-|  `4`  | `3`  |
-|  `5`  | `6`  |
-|  `6`  | `9`  |
-|  `7`  | `12` |
-|  `8`  | `15` |
-|  `9`  | `18` |
-| `10`  | `21` |
-| `11`  | `24` |
-| `12`  | `27` |
-| `13`  | `30` |
-| `14`  | `33` |
-| `15`  | `36` |
+
+```
+Szint   Pont
+  3       0
+  4       3
+  5       6
+  6       9
+  7      12
+  8      15
+  9      18
+ 10      21
+ 11      24
+ 12      27
+ 13      30
+ 14      33
+ 15      36
+```
 
 #### Példa ⚡
 
