@@ -6,37 +6,71 @@ Egy páncélt három jellemző ír le: a Sebzésfelfogó Érték (**SFÉ**), a M
 
 ### SFÉ
 
-- Struktúra (bőr, lánc, lemez, stb)
-- Anyagminőség (alapanyag minősége, hajtogatás, ötvözet minősége)
-- Fémalapanyag (fém vérteknél: milyen fémből készült)
+```
+Struktúra
+   bőr, lánc, lemez, stb
+Anyagminőség
+   alapanyag minősége, hajtogatás,
+   ötvözet minősége
+Fémalapanyag
+   fém vérteknél: milyen fémből készült
+```
+
 
 ###  MGT
 
-- Struktúra (bőr, lánc, lemez, stb)
-- Fémalapanyag (fém vérteknél: milyen fémből készült)
-- Kidolgozottság (illesztések minősége)
-- Mennyire passzol a vértviselő testére
-- Csatolt elemek száma
+```
+Struktúra
+   bőr, lánc, lemez, stb
+Fémalapanyag
+   fém vérteknél: milyen fémből készült
+Kidolgozottság
+   illesztések minősége
+Mennyire passzol?
+   vértviselő testére
+Csatolt elemek száma
+   darab
+```
 
 ### Ár
 
-- Struktúra (bőr, lánc, lemez, stb)
-- Anyagminőség (alapanyag, hajtogatás, ötvözet minősége)
-- Fémalapanyag (fém vérteknél: milyen fémből készült)
-- Kidolgozottság (illesztések)
-- Csatolt elemek száma
+```
+Struktúra
+   bőr, lánc, lemez, stb
+Anyagminőség
+   alapanyag, hajtogatás,
+   ötvözet minősége
+Fémalapanyag
+   fém vérteknél: milyen fémből készült
+Kidolgozottság
+   illesztések
+Csatolt elemek száma
+   darab
+```
 
 <br />
 
 ---
 ### A fenti jellemzők fordított nézetőpontból
 
-- Struktúra (bőr, sodrony, stb) → SFÉ-re, Alap-MGT-re hat
-- Fémalapanyag  (acél, abbit, mithrill) → SFÉ-re, Alap-MGT-re hat
-- Kidolgozottság (illesztések minősége) → MGT-re hat
-- Mennyire passzol a vértviselő testére → MGT-re hat
-- Csatolt elemek száma → MGT-re és védett területre hat
+```
+Struktúra
+  → bőr, sodrony, stb
+  → SFÉ-re, Alap-MGT-re hat
+Fémalapanyag
+  → acél, abbit, mithrill
+  → SFÉ-re, Alap-MGT-re hat
+Kidolgozottság
+  → illesztések minősége
+  → MGT-re hat
+Mennyire passzol
+  → vértviselő testére
+  → MGT-re hat
+Csatolt elemek száma
+  → MGT-re hat
+  → védett területre hat
 
+```
 
 ---
 
