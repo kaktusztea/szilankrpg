@@ -2,8 +2,6 @@
 
 A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek szintén [Hatásokat](081_hatasok.md) okoznak. 
 
-[Hatások](081_hatasok.md)
-
 ```
 Belharci szituáció
   lásd leírást
@@ -218,10 +216,9 @@ Vér elvakít
 ```
 
 
-
 <br />
 
-### Belharci szituáció
+## Belharci szituáció
 
 Kapcsolódik:
 - [Belharc fortély](fortelyok.harci/belharc.md)
@@ -231,33 +228,33 @@ Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe
 
 Bejutottál ellenfeled fegyverének fenyegető vége mögé, testközelbe, de nem szükségszerűen érintésbe. Ha van tanult [Belharc fortélyod](fortelyok.harci/belharc.md), harcérték bónuszokat kapsz (lásd a fortély leírását). Belharci szituációban eddig tiltott manőverek végrehajtását is megpróbálhatod, melyek végbevitelének követelménye a Belharci szituáció. Lásd bővebben: [Belharcos manőverek](066_06_belharcos_manoverek.md).
 
-#### ⚜️ Manőver: Belharcba kerülés
+### ⚜️ Manőver: Belharcba kerülés
 
 A Belharci szituációba kerüléshez ezt a manővert kell sikerrel végrehajtani. Csak **Közelharc** harcmodor alkalmazása közben lehet megpróbálni.
 
 Bővebben lásd a [manőver leírását](066_05_altalanos_manoverek.md#belharcba-kerülés).
 
-#### ⚜️ Manőver: Belharcból kibontakozás
+### ⚜️ Manőver: Belharcból kibontakozás
 
 A **Belharci szituációból** kijönni ennek sikeres végrehajtásával lehet. Bővebben lásd a [manőver leírását](066_05_altalanos_manoverek.md#belharcból-kibontakozás).
 
-#### ⚜️ Belharcos-fegyverek listája
+### ⚜️ Belharcos-fegyverek listája
 
 Minden `rövid (0)` pengehosszú fegyver, kivéve ezek közül azokat a fegyvereket, melyek leírásánál külön meg van említve, hogy nem lehet velük belharcot folytatni.
 
-#### ⚜️ Puszta kéz harcértékei belharci szituációban
+### ⚜️ Puszta kéz harcértékei belharci szituációban
 
 Belharci szituációban `KÉ`, `TÉ`, `VÉ`, `SP`  mind `0` értékre emelkednek.
 
 [Puszta kéz jellemzői](068_02_kozelharci_fegyverek.md): `FP` sebesülést okoz, de minden `5.FP` → `1 ÉP` elvesztését okozza. Kivétel: harcművészek [Sárkány ököl](fortelyok.slan/sarkany_okol.md) fortélya. 
 
-#### ⚜️ Nem-belharcos fegyverek belharci szituációban (`0` pengehossz+)
+### ⚜️ Nem-belharcos fegyverek belharci szituációban (`0` pengehossz+)
 
 - Azonos a [Beszorított helyzet (2) Erősen](#beszoritott-helyzet-2-er%C5%91sen) hatásaival.
 - [Sebzés csökkentett](081_hatasok.md#-sebz%C3%A9s-cs%C3%B6kkentett)
 - Forgatója **Akció elhasználása nélkül** ha úgy dönt, elejtheti fegyverét - így puszta kézzel harcolhat tovább (`0` fegyver harcértékekkel)
 
-#### ⚜️ Belharc fortély bónuszai
+### ⚜️ Belharc fortély bónuszai
 
 A [Belharc fortély](fortelyok.harci/belharc.md) harcérték bónuszokat ad, lásd ott.
 
@@ -266,14 +263,16 @@ Követelmények:
 - Belharcos fegyver (`0` penge)
 - **Közelharc** harcmodor
 
-#### ⚜️ Harcmodorok belharci szituációban
+### ⚜️ Harcmodorok belharci szituációban
 
 Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például egy szablyás harcoshoz bekerül egy belharcos, akkor a szablyás továbbra is **Kardvívás** harcmodorának értékeivel küzd, igaz szablyájának harcértékei `0`-ra zuhannak - annak mérete miatt.
 
 [Belharc fortély](fortelyok.harci/belharc.md) bónuszaihoz követelmény a **Közelharc** harcmodor használata, más harcmodor használata alatt nem járnak.
 
+<br />
+
 ---
-### Beszorított helyzet
+## Beszorított helyzet
 
 Beszorított helyzeten azt értjük, ha az adott fegyverrel a harcos helyhiány miatt nem képes annak technikáit maradéktalanul alkalmazni. Ez nagyon szűk helyeken egészen szélsőséges hátrányokat is okozhat fegyver-típustól függően.
 
@@ -281,7 +280,7 @@ Beszorított helyzeten azt értjük, ha az adott fegyverrel a harcos helyhiány 
 
 Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való védettség (falak) folytán szinte lehetetlen hozzáférni, ha egy irányból közelítenek. Ekkor nincs Beszorított helyzet, sőt a KM Előnyt is adhat a `TÉ` dobásra.
 
-#### Beszoritott helyzet (1) Enyhén
+### Beszoritott helyzet (1) Enyhén
 
 - Ellenfél: `Előny+1` `TÉ` dobásra
 - Beszorított karakter:
@@ -290,7 +289,7 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
   - [1 támadás elvesztése](081_hatasok.md#-1-t%C3%A1mad%C3%A1s-elveszt%C3%A9se)
   - [Mozgás - lassulás](081_hatasok.md#-mozg%C3%A1s---lassul%C3%A1s)
 
-#### Beszoritott helyzet (2) Erősen
+### Beszoritott helyzet (2) Erősen
 
 "A kamrában pallossal, vagy alabárddal"
 - Ellenfél: `Előny+2` `TÉ` dobásra
@@ -309,7 +308,7 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
 <br />
 
 ---
-### Csúszós talaj
+## Csúszós talaj
 
 ```
 Hátrány-1: TÉ dobásra
@@ -320,7 +319,7 @@ Mindenkinek, aki csúszós talajon harcol `Hátrány-1` jár `TÉ` dobására. A
 <br />
 
 ---
-### Elvesztett egyensúly
+## Elvesztett egyensúly
 
 ```
 - Hátrány-1: TÉ dobásra
@@ -333,7 +332,7 @@ A hatások alapból a kör végéig tart, kivéve, ha azonnal sikeres [Akrobatik
 <br />
 
 ---
-### Észrevétlen támadás
+## Észrevétlen támadás
 
 ```
 Lopakodás/rejtőzés
@@ -356,11 +355,11 @@ Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillan
 <br />
 
 ---
-### Fegyverrántás váratlanul
+## Fegyverrántás váratlanul
 
 Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
 
-#### ⚜️ `1.`Pusztakezes harc közben megpróbál fegyvert rántani 
+### ⚜️ `1.`Pusztakezes harc közben megpróbál fegyvert rántani 
 
 Ezen fegyverrántás szituáción azt értjük, amikor egy fegyvertelen karakter harci kontaktus közben próbálja előkapni fegyverét, hogy ne pusztakezes értékeivel legyen kénytelen küzdeni, miközben ellenfele már fegyverével fenyegeti.
 
@@ -379,20 +378,20 @@ Fegyverrántásnál pusztakezes `KÉ` értékkel történik a kezdeményezés, f
 
 Tehát minél nehezebb előrántani egy fegyvert, annál nagyobb rá a büntetés. Hogy a fegyver melyik kategóriába tartozik, azt a KM határozza meg.
 
-#### `1.1` Elveszíti a kezdeményezést
+### `1.1` Elveszíti a kezdeményezést
 
 Nem sikerül előrántania a fegyvert, elvesztett egy akciót és fegyvertelen `VÉ` harcértékével várja ellenfele támadását.
 
-#### `1.2` Fegyverrántó nyeri a kezdeményezést
+### `1.2` Fegyverrántó nyeri a kezdeményezést
 
 Sikerült előrántania fegyverét, és teljes, immár fegyveres `VÉ` harcértéke érvényesül.\
 Ellenfele dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadást felemésztő cselekedet.
 
-#### `1.3` Fegyverrántó nyeri a kezdeményezést `+3` túldobással
+### `1.3` Fegyverrántó nyeri a kezdeményezést `+3` túldobással
 
 A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is. A harc innen a megszokott módon folytatódik.
 
-#### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
+### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
 
 Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járnak:
 
@@ -405,11 +404,11 @@ Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járn
    semlegesít a büntetésből
 ```
 
-#### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
+### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
 
 Ekkor mindkettőjükre érvényesek az `1.` pontnál leírt módosítók. Az támad előbb, aki nyeri a kezdeményezést, ellenfele pedig `Pusztakezes VÉ`-vel védekezhet csak és képtelen előkapni fegyverét. Ha elő akarja húzni, akkor a következő kör elején, támadását feláldozva újra fegyverrántással kell próbálkoznia.
 
-####  ⚜️ `3.`Meglepetésből, vagy észrevétlen fegyverrántás
+###  ⚜️ `3.`Meglepetésből, vagy észrevétlen fegyverrántás
 
 Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 
@@ -419,11 +418,11 @@ Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
   - Nyert Támadó `KÉ`: [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) módosítóit kapja meg a támadó
   - Vesztett Támadó `KÉ`: a megtámadott még így is gyorsabban reagál! Ő támadhat elsőnek, mindketten az aktuális harcértékeikkel és fegyvereikkel
 
-#### 🔆 Szálfegyverek
+### 🔆 Szálfegyverek
 
 Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy kézben vannak, vagy olyan módon tárolva, ahonnan lehetetlen fegyverrántással előhúzni.
 
-#### ⚡ Példák
+### ⚡ Példák
 
 ```
 KÉ alap: 20
@@ -450,7 +449,7 @@ KÉ alap: 20
 <br />
 
 ---
-### Félhátulról támadás
+## Félhátulról támadás
 
 ```
 Előny+1: TÉ dobásra
@@ -463,25 +462,25 @@ Védekező Pajzs `VÉ` csak akkor számít, ha a pajzsot tartó kéz felőli old
 <br />
 
 ---
-### Fegyverméret - pengehátrány
+## Fegyverméret - pengehátrány
 
 Fegyvered legalább `1 pengével` rövidebb ellenfeledénél.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1` + `k20` tízes része (`0;1;2`)
 
-### Fegyverméret - Azonos
+## Fegyverméret - Azonos
 
 Fegyvered és ellenfeled fegyverméret különbsége kisebb, mint `1 penge`.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tízes része  (`0;1;2`)
 
-### Fegyverméret - 1 pengés előny
+## Fegyverméret - 1 pengés előny
 
 Fegyvered legalább `1 pengével` hosszabb ellenfeledénél.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tízes része  (`0;1;2`)
 
-### Fegyverméret - 2 pengés előny
+## Fegyverméret - 2 pengés előny
 
 Fegyvered legalább `2 pengével` hosszabb ellenfeledénél.
 
@@ -490,7 +489,7 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3` 
 <br />
 
 ---
-### Földön fekve
+## Földön fekve
 
 ```
 - Hátrány-2 TÉ dobásra
@@ -502,7 +501,7 @@ Földről támadni sokkal nehezebb és a kitérés is energiaigényesebb.
 <br />
 
 ---
-### Hajítás alkalmatlan fegyverrel
+## Hajítás alkalmatlan fegyverrel
 
 ```
 Hátrány-2 Sebzésdobásra
@@ -512,7 +511,7 @@ Hátrány-2 CÉ dobásra
 Kapcsolódik: [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) fortély.
 
 ---
-### Hajítás nem dobásra készített tárgyakkal
+## Hajítás nem dobásra készített tárgyakkal
 
 ```
 Hátrány-1 Sebzésdobásra
@@ -523,8 +522,10 @@ Például sámli hajítása. Az ilyen tárgyak harcértékei amúgy is egy szűk
 
 Kapcsolódik: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély.
 
+<br />
+
 ---
-### Hátulról támadás
+## Hátulról támadás
 
 ```
 Előny+2: TÉ dobásra
@@ -537,7 +538,7 @@ A védekező karakter pajzsának `VÉ` értéke NEM számít.
 <br />
 
 ---
-### Helyhez kötve
+## Helyhez kötve
 
 ```
 - Hátrány-1 TÉ dobásra
@@ -549,7 +550,7 @@ Ha a karakter helyhez kötve kénytelen harcolni, akkor jelentős hátránnyal t
 <br />
 
 ---
-### Képzetlen fegyverhasználat
+## Képzetlen fegyverhasználat
 
 Lásd [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) oldalt.
 
@@ -558,14 +559,14 @@ Ha egy karakter képzetlen az általa forgatott fegyver használatában, tehát 
 <br />
 
 ---
-### Készületlenség
+## Készületlenség
 
 Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepet%C3%A9s) szituációnak megfelelő módosítókkal támadhat rá.
 
 <br />
 
 ---
-### Közrefogás
+## Közrefogás
 
 Ha valakit két oldalról sikerül közrefogni, az `1 pengényi` hátrányt semlegesít.
 
@@ -575,8 +576,10 @@ Példák:
 - Két tőrös közrefog egy lándzsást
   - A lándzsás "Fegyverméret - 2 pengés" előnyből "Fegyverméret - 1 pengés" helyzetbe kerül
 
+<br />
+
 ---
-### Láthatatlanul
+## Láthatatlanul
 
 Hallható láthatatlan ellenfél
 - Láthatatlan Támadó:
@@ -600,7 +603,7 @@ Megjegyzés: Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ell
 <br />
 
 ---
-### Levegőből támadás
+## Levegőből támadás
 
 ```
 Előny+2: Támadó Dobásra
@@ -615,7 +618,7 @@ Levegőből lehetséges [Fárasztó taktikát](065_02_harci_taktikak.md#f%C3%A1r
 <br />
 
 ---
-### Magasabbról
+## Magasabbról
 
 ```
 Előny+1: TÉ dobásra
@@ -626,7 +629,7 @@ Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen hel
 <br />
 
 ---
-### Meglepetés
+## Meglepetés
 
 ```
 Támadó:
@@ -659,7 +662,7 @@ Az ilyen helyzetben a támadó automatikusan megnyeri a Kezdeményezést, valami
 <br />
 
 ---
-### Nagy méretű lény (`1-2`)
+## Nagy méretű lény (`1-2`)
 
 ```
 VÉ csökkentés bónusz: +[1;2]
@@ -676,7 +679,7 @@ Példák: Gólem: `+1`; Sárkány: `+2 VÉ csökkentés`
 <br />
 
 ---
-### Pusztakezes harc
+## Pusztakezes harc
 
 ```
 Puszta kéz harcértékei: KÉ: -3, TÉ: -3, VÉ: -3
@@ -691,7 +694,7 @@ A **Puszta kéz** – mint fegyver – szabály szempontjából „egykezes” f
 <br />
 
 ---
-### Rosszabbik kézben tartott fegyver
+## Rosszabbik kézben tartott fegyver
 
 ```
 Hátrány-1 TÉ dobásra
@@ -704,7 +707,7 @@ Kivétel: [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md), amely meglé
 <br />
 
 ---
-### Sebzéstípus: elsődleges
+## Sebzéstípus: elsődleges
 
 ```
 Sima Sebzésdobás
@@ -712,7 +715,7 @@ Sima Sebzésdobás
 
 Fegyvered elsődleges sebzési típusával támadsz. Például "Hosszú kard: Vágás".
 
-### Sebzéstípus: egyenjogú
+## Sebzéstípus: egyenjogú
 
 ```
 Sima Sebzésdobás
@@ -721,7 +724,7 @@ Sima Sebzésdobás
 Fegyvered ezen sebzéstípusa egyenjogú az elsődleges sebzéstípussal.\
 Például "Alabárd elsődleges: `Szúrás`", "Alabárd egyenjogú: `Zúzás".
 
-### Sebzéstípus: másodlagos
+## Sebzéstípus: másodlagos
 
 Fegyvered másodlagos sebzési típusával támadsz. Például "Hosszú kard: Szúrás".
 
@@ -729,7 +732,7 @@ Fegyvered másodlagos sebzési típusával támadsz. Például "Hosszú kard: Sz
 Hátrány-1 Sebzésdobásra
 ```
 
-### Sebzéstípus: alkalmatlan
+## Sebzéstípus: alkalmatlan
 
 ```
 Hátrány-2 Sebzésdobásra
@@ -740,7 +743,7 @@ Fegyvered nem erre a sebzési típusra lett kialakítva. Például "Hosszú kard
 <br />
 
 ---
-### Sötét: Félhomály
+## Sötét: Félhomály
 
 ```
 - Hátrány-1: TÉ dobásra
@@ -754,7 +757,7 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 <br />
 
 ---
-### Sötét: teljes, zajokkal
+## Sötét: teljes, zajokkal
 
 ```
 - Hátrány-1: TÉ dobásra
@@ -770,7 +773,7 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 <br />
 
 ---
-### Sötét: teljes, csendben
+## Sötét: teljes, csendben
 
 ```
 - Hátrány-2: TÉ dobásra
@@ -784,7 +787,7 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 <br />
 
 ---
-### Tűz ruhán - ég
+## Tűz ruhán - ég
 
 ```
 - Hátrány-1 Támadó dobásra
@@ -793,13 +796,13 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
 Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
 
-#### ✖️ Megszűntetése (eloltás)
+### ✖️ Megszűntetése (eloltás)
 
 - Harcban: `1 kör`
 - Harcon kívül: `1 kör`
 
 ---
-### Tűz ruhán - lángol
+## Tűz ruhán - lángol
 
 ```
 - Hátrány-2 Támadó dobásra
@@ -808,7 +811,7 @@ Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
 
 Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
 
-#### ✖️ Megszűntetése (eloltás)
+### ✖️ Megszűntetése (eloltás)
 
 - Harcban:  Nem lehetséges
 - Harcon kívül:  `2 kör`, külső segítség szükséges
@@ -816,14 +819,14 @@ Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy h
 <br />
 
 ---
-### Vadállatok ellen
+## Vadállatok ellen
 
 Sokféle állat van, ezért nem lehet egységes szabályt alkotni azok harcmodoráról, viszont kimondható, hogy az állatok nagy része általában olyan harcmodort folytat, ami a **Közelharc** + **Belharc**nak felel meg leginkább. Így harci „képzettségeik” és értékeik is e szerint legyenek meghatározva.
 
 <br />
 
 ---
-### Védekező takarásban
+## Védekező takarásban
 
 ```
 Támadó és Védekező:
@@ -839,7 +842,7 @@ Figyelem: ha a védekező mozgásában korlátozottá válik a körülötte lev�
 <br />
 
 ---
-### Védő Érték kiterjesztése másra
+## Védő Érték kiterjesztése másra
 
 ```
 - Többszörös támadás elvesztése
@@ -852,9 +855,8 @@ A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fort
 
 <br />
 
-
 ---
-### Vér elvakít
+## Vér elvakít
 
 ```
 - Érzék (Látás) - zavart
@@ -862,7 +864,7 @@ A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fort
 ```
 
 Szemedbe folyik a vér, korlátoz a látásban és a harcban.
-#### Megszűntetése
+### Megszűntetése
 
 Harcban: `1` akció felhasználásával kitörölheted a szemedből a vért, ez `1` támadás kihagyását jelenti
 
