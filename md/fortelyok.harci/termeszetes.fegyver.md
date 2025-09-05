@@ -12,9 +12,7 @@ Olyan fajú karakterrel játszol, amelynek végtagjai / harapása, egyéb fizika
 
 🔒 **Követelmény**: [Faj Háttér](../021_faj_hatterek.md)
 
-
 🌟 **Hatás**: A "Puszta kéz" sebzése `1+k20` értékre emelkedik (akár egy tőré).
-
 
 <br />
 

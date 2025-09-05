@@ -10,6 +10,7 @@ Felvehető Érzék-Fortélyok maximuma:
 - [Infralátás](../fortelyok.erzekek/infralatas.md) - 2. fok
 
 Ajánlott fortélyok:
+- [Baráti állatok](../fortelyok.altalanos/barati_allatok.md)
 - [Kitartás](../fortelyok.altalanos/kitartas.md)
 
 Ajánlott képzettségek:
