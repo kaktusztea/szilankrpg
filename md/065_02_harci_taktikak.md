@@ -18,7 +18,8 @@ Kezdeményező taktika
 
 Sűrű taktika
   → -1 támadás
-  → egy (TÉ:-4) támadásod alap TÉ-vel
+  → 1 db (TÉ:-4) támadásod
+    alap TÉ-vel
 
 Kiváró taktika
   Átengedett KÉ, cserébe első
@@ -26,10 +27,10 @@ Kiváró taktika
 
 Fárasztó taktika
   Extra VÉ csökkentés:
-  • +1 VÉ extra sima ha nem talált
+  • +1 VÉ extra ha nem talált
   • (4 + k20T) sebzés helyett
-  • "Fegyverméret - pengehátrány" harci
-    helyzetből NEM alkalmazható
+  • "Fegyverméret - pengehátrány"
+    harci helyzetből NEM mehet
 
 Visszafogott taktika
   Kisebb kockával dobhatsz sebzéskor.
@@ -42,19 +43,20 @@ Plusz támadás taktika
   Kör elején kell eldönteni
 
 Roham taktika
-  • TÉ:+4, VÉ:-8 (első oda-visszacsapáskor)
+  Első oda-visszacsapáskor
+  • TÉ:+4, VÉ:-8
   • VÉ csökkentés: (3 + k20T)
-    első oda-visszacsapásnál
-  • Sebzéshez: +5 SP (oda-vissza)
-  • Sikeres sebzésnáévisszacsapás nem kap bónuszt
+  • Sebzéshez: +5 SP
+  Sikeres sebzésnél a visszacsapás
+    nem kap bónuszt
 
 Öngyilkos roham taktika
   Első oda-visszacsapáskor
   • TÉ:+5, VÉ:-10 
   • VÉ csökkentés: (3 + k20T)
   • Sebzéshez: +7 SP
-  TÉ büntetések (sérülésből) nem érvényesek
-  Max 1x használható egy küzdelemben
+  TÉ büntetések (S) nem érvényesek
+  Max 1x használható / küzdelem
 
 Támadás erőből taktika
   Erre a Támadás erőből fortélyt
