@@ -6,15 +6,17 @@
 
 ```
 KÉ: 22 TÉ: 37 VÉ: 54
-Fegyver: Hosszú kard  (1 penge)
-Sebzés: k20+5 (V/S)  (Erőbónuszzal együtt)
 ÉP: 18
 Erő: +3
-Fájdalomtűrés (7)
-  → 4 ponttal csökkennek a TÉ levonások
 
-Vért:
-- Láncing (torzó, felkarok, combok, lábszár befedve: 80%)
+Fegyver: Hosszú kard  (1 penge)
+Sebzés: k20+5 (V/S)  (Erőbónuszzal együtt)
+
+Fájdalomtűrés (7)
+  → -4 a TÉ levonásokra
+
+Vért (80% lefedettség)
+- Láncing (torzó, felkarok, combok, lábszár)
 - Átlagos minőség, Acél
 
 SFÉ: 8 / 13 / 5
@@ -34,18 +36,25 @@ MGT: 5 (13 - (2 x 3) + (3 x 2) = 13
 
 #### Harcérték levonások `S` kategóriákban (Lord Gustav)
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| :------------: | :------------: | :------------: | :------------: |
-|      `-`       |      `0`       |    `TÉ:-3`     |    `TÉ:-6`     |
+```
+TÉ levonás összes
+
+S1:    -
+S2:    -
+S3:  -3 TÉ
+S4:  -6 TÉ
+```
 
 ---
 ### Tetves, a bérgyilkos
 
 ```
 KÉ: 15 TÉ: 35 VÉ: 52
+ÉP: 14
+
 Fegyver: Rövidkard (0,5 penge)
 Sebzés: k20+2 (V/S)
-ÉP: 14
+
 Fájdalomtűrés (6)
  → 3 ponttal csökkennek a TÉ levonások
 
@@ -65,9 +74,14 @@ SFÉ: -
 
 #### Harcérték levonások `S` kategóriákban (Tetves)
 
-| **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
-| :------------: | :------------: | :------------: | :------------: |
-|      `-`       |      `-1`      |    `TÉ:-4`     |    `TÉ:-7`     |
+```
+TÉ levonás összes
+
+S1:    -
+S2:    -
+S3:  -4 TÉ
+S4:  -7 TÉ
+```
 
 <br />
 
@@ -121,9 +135,10 @@ A lovag ezzel a sebesüléssel még az `S1` egészség-kategóriában marad, íg
 
 ```
 Lord Gustav
-- TÉ: 37
-- VÉ: 50
-- ÉP: 15
+
+TÉ: 37
+VÉ: 50
+ÉP: 15
 ```
 
 <br />
@@ -145,9 +160,10 @@ A helyzet kezd veszélyessé válni: a lovag elvesztett több, mint `14`-et **V�
 
 ```
 Lord Gustav
-- TÉ: 37
-- VÉ: 40
-- ÉP: 9
+
+TÉ: 37
+VÉ: 40
+ÉP: 9
 ```
 
 <br />
@@ -167,9 +183,10 @@ Gustavnak `6 ÉP`-je marad és `S3`-as kategóriába zuhan (itt már `-3 TÉ` b�
 
 ```
 Lord Gustav
-- TÉ: 34
-- VÉ: 36
-- ÉP: 6
+
+TÉ: 34
+VÉ: 36
+ÉP: 6
 ```
 
 Még csak `S3` kategóriában van, ha `S4`-be kerülne, automatikusan **Fájdalomtűrés** próbát kellene dobnia **Edzettséggel**, hogy ne ájuljon el azonnal. De erre egyelőre még nincs szükség. Gustav helyzete kezd reménytelen lenni, támolyog, még egy közepes seb és vége van.
