@@ -33,7 +33,7 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 - [Hírhedt](#-h%C3%ADrhedt)
 - [Hős](#-h%C5%91s)
 - [Szolgalelkű](#-szolgalelk%C5%B1)
-- [Természet gyermeke](https://github.com/kaktusztea/szilankrpg/blob/master/md/023_karma_hatterek.md#-term%C3%A9szet-gyermeke)
+- [Természet gyermeke](#-term%C3%A9szet-gyermeke)
 - [Világlátott](#-vil%C3%A1gl%C3%A1tott)
 
 #### Misztikus

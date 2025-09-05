@@ -91,4 +91,4 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 ---
 ### Módosító körülmények
 
-Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**, mint ez is. Ha bármilyen Státusz hatása alatt állsz, Befolyásolás képzettségpróba előtt ellenőrizd, hogy vonatkozik -e rád bármilyen negatív [Hatás](https://github.com/kaktusztea/szilankrpg/blob/master/md/081_hatasok.md).
+Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**, mint ez is. Ha bármilyen Státusz hatása alatt állsz, Befolyásolás képzettségpróba előtt ellenőrizd, hogy vonatkozik -e rád bármilyen negatív [Hatás](081_hatasok.md).

@@ -74,7 +74,7 @@ A karakter Kezdeményező Értékét a következőképpen kell kiszámítani:
   - Mágia hatására kapott módosító
 ```
 
-→ [Harcmodor képzettség](https://github.com/kaktusztea/szilankrpg/blob/master/md/062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szintje által kapott bónusz
+→ [Harcmodor képzettség](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szintje által kapott bónusz
 
 <br />
 
@@ -120,7 +120,7 @@ Az alábbi táblázat megadja, a Támadó Érték kiszámolásának módját.
   - Mágiából adódó módosítók
 ```
 
-→ [Harcmodor képzettségek](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szintje által kapott bónusz
+→ [Harcmodor képzettség](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szintje által kapott bónusz
 
 <br />
 
