@@ -18,7 +18,7 @@
 Mindegyik Belharcos Manőver [Belharci szituációt](065_01_harci_helyzetek.md#belharci-szituáció) igényel - kivéve a **Belharcba kerülést**.
 
 ---
-## [Ellenpróba](066_04_manover_vegbevitele.md#ellenpróba-e) módosítói Belharcos Manőverek esetén
+## [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) módosítói Belharcos Manőverek esetén
 
 - [Belharc](fortelyok.harci/belharc.md) fortély: `+2 / fok` - Támadó és Védekező számára is
 - Testméret különbség: `[-2; +2]`

@@ -42,7 +42,7 @@ Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_ta
 ---
 ## ⚜️ Manőverek nehézsége
 
-A Manőver **Nehézségét** egy `[2;12]` intervallumból vett számértékkel jellemezzük - ezzel szerepel az [Ellenpróba](066_04_manover_vegbevitele.md#ellenpróba-e) dobásban a Célszám megállapításánál.
+A Manőver **Nehézségét** egy `[2;12]` intervallumból vett számértékkel jellemezzük - ezzel szerepel az [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) dobásban a Célszám megállapításánál.
 
 A `Szilánk` Manővereinek Nehézsége azok adatlapján szerepel - lásd: [Általános](066_05_altalanos_manoverek.md), [Belharcos](066_06_belharcos_manoverek.md) és [Lovas/Léglovas](066_07_lovas_manoverek.md) Manőverek.
 

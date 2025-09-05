@@ -6,7 +6,7 @@ Manőver Alap = (HM / 3) ↑
 
 A karakter által felvett `HM` pontok tizede - felfele ↑ kerekítve.
 
-Ez a számérték karakteralkotási időben kerül kiszámításra és a Manőver [Ellenpróba](066_04_manover_vegbevitele.md#ellenpróba-e) fázisában vesz részt.
+Ez a számérték karakteralkotási időben kerül kiszámításra és a Manőver [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) fázisában vesz részt.
 
 ---
 
