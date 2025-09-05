@@ -17,7 +17,7 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 
 [Meglepett](065_01_harci_helyzetek.md#meglepetés) / [Készületlen](065_01_harci_helyzetek.md#készületlenség) az Ellenfél:
 - Kimarad a **Megakasztás** (`M`) fázis (ha van) a védő oldalán
-- **Végrehajtás** dobásnál továbbra is `TÉ:+4`, de a **Meglepetés** miatt ugye `Előny+1` jár erre a dobásra.
+- **Végrehajtás** dobásnál továbbra is `TÉ:+4`, de a **Meglepetés** miatt ugye `Előny+1` is jár erre a dobásra.
 - Támadó tehet bele `Manőver Pontot`.
 - Áldozat **nem** tehet bele "ellen" `Manőver Pontot`.
 
