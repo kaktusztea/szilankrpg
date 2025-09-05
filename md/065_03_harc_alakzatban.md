@@ -88,7 +88,23 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 <br />
 
 ---
-## ⚡Példa: 4 fős alakzat
+## Személyek száma utáni `VÉ` bónusz
+
+```
++1 VÉ / fő
+   (max 10)
+```
+
+A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy szuper harcos nem ad hozzá túl sokat az alakzathoz, ha képzetlen az alakzatharcban.
+
+Miért csak `VÉ` bónuszt ad?
+- mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.
+- az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) ((és ugye a durvább `VÉ-csökkentést`)) adja.
+
+<br />
+
+---
+## ⚡Példa: 4 fős alakzat harcértékei
 
 ```
 Borz
@@ -113,20 +129,13 @@ Csámpa
   Védekező-alakzat fortély: 2.fok
 ```
 
-<br />
-
 ---
-## ⚡Harcértékek: 4 fős alakzat
-
 ### ⚡Kezdeményezőszint: `8`
 
 ```
 +6: a legalacsonyabb képzettség szint
 +2: bónusz (Vezető: Alakzatparancsnok (1.fok))
 ```
-
-<br />
-
 ### ⚡Támadószint: `8`
 
 ```
@@ -134,8 +143,6 @@ Csámpa
 +2: bónusz (Vezető: Alakzatparancsnok (1.fok))
 +0 = MIN(2; 1; 0; 1) x 2
 ```
-
-<br />
 
 ### ⚡Védekezőszint: `12`
 
@@ -145,32 +152,28 @@ Csámpa
 +4: MIN(2; 2; 2; 2) x 2
 ```
 
-### 🔆 Alakzat TÉ értéke
-
-- Alakzat tagjainak fegyveres `TÉ` átlaga 
-- `TÉ bónusz: +5`  ← **Támadószint** (`8`) mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) utáni bónusz
-
-### 🔆 Alakzat VÉ értéke
-
-- Alakzat tagjainak fegyveres `VÉ` átlaga 
-- `VÉ bónusz: +9` ← **Védekezőszint** (`12`) mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) utáni bónusz
-- `VÉ bónusz: +4` ← Tagok száma után `4`
-
-<br />
-
----
-## Személyek száma utáni `VÉ` bónusz
+### 🔆 Alakzat TÉ értéke = 33
 
 ```
-+1 VÉ / fő
-   (max 10)
++28: Alakzat tagjainak fegyveres TÉ átlaga
+ +5: TÉ bónusz Támadószint (8) után, mint egy
+     extra harcmodorból képzettség szintjéből
+     adódó bónusz
 ```
 
-A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy szuper harcos nem ad hozzá túl sokat az alakzathoz, ha képzetlen az alakzatharcban.
+→ [harcmodor képzettség szintjéből adódó bónusz](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
-Miért csak `VÉ` bónuszt ad?
-- mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.
-- az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) ((és ugye a durvább `VÉ-csökkentést`)) adja.
+### 🔆 Alakzat VÉ értéke = 49
+
+```
++40: Alakzat tagjainak fegyveres VÉ átlaga
+ +9: TÉ bónusz Támadószint (8) után, mint egy
+     extra harcmodorból képzettség szintjéből
+     adódó bónusz
++4: Tagok száma (4) után
+```
+
+→ [harcmodor képzettség szintjéből adódó bónusz](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 <br />
 
