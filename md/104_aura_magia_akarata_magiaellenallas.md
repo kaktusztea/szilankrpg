@@ -115,25 +115,25 @@ Ilyen esetekben a KM kérhet **Összpontosítás** próbát, hogy kap -e büntet
 ```
 Hatások, események módosítói
 
-Érzelmi sokk  
+Érzelmi sokk
   Aura Alap diff: -3  (Asztrális)
 
-Kiégettség  
+Kiégettség
   Aura Alap diff: +1-3 (Asztrális)
 
-Erős koncentrálás másra  
-  Összpontosítás próba: [6-9-12-15]  
+Erős koncentrálás másra
+  Összpontosítás próba: [6-9-12-15]
   Ha nincs meg, -3 Aura
 
-Harci láz  
-  Aura Alap diff: +3  
+Harci láz
+  Aura Alap diff: +3
   Asztrál/Mentál hatások ellen
 
-Papi védő áldás  
+Papi védő áldás
   Aura Alap diff: +⭕X⭕ adott hatások ellen
 
-Olyan érzelmi befolyás, ami  
-  tudat alatt kedvére van a célpontnak  
+Olyan érzelmi befolyás, ami
+  tudat alatt kedvére van a célpontnak
   Aura Alap diff: -3 ilyen Asztrál hatás ellen
 ```
 

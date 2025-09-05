@@ -11,6 +11,7 @@ Kapcsolódik
 | Kis Pajzs     | `+0` |       `0`       | `0` | `1` | `3`  |   `6`    | -                                                                                                                                  |
 | Közepes Pajzs | `+0` |       `2`       | `0` | `1` | `10` |   `7`    | `Erő követelmény: +1`                                                                                                              |
 | Nagy Pajzs    | `+0` |       `4`       | `1` | `1` | `16` |   `9`    | `Erő követelmény: +2`<br>Legfeljebb `0,5 penge` hosszú fegyver lehet a másik kézben. Minden plusz `0.5 penge` `TÉ:-3` büntetést ad |
+
 <!-- tag: md_table_pajzs_end -->
 
 🔆 A pajzs `KÉ` és `TÉ` értékei kizárólag akkor használatosak, ha kifejezetten a pajzzsal akarunk harcolni, mert mondjuk nincs főfegyver a másik kezünkben.

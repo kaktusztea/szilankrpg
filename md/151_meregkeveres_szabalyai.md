@@ -22,7 +22,7 @@ A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek c�
 
 ```
 Méreg szintje =
-    Erősség
+  + Erősség
   + Súlyosság
   + Elállás
   + Hatóidő
@@ -62,13 +62,16 @@ Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, s
 - Most a legenyhébben van (1), de lehet, hogy nehezebb alvást előidézni, mint pl. bódulatot...?
 ````
 
-| Hatás max súlyossága                                                                                             | Érték |
-| :--------------------------------------------------------------------------------------------------------------- | :---- |
-| Enyhe rosszullét, hányás, alvás                                                                                  | ⭕`1`  |
-| [Eszmélet: Bódultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g), Görcs             | ⭕`2`  |
-| [Eszmélet: Kábultság Státusz](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g), Részleges bénulás | ⭕`3`  |
-| Életveszély, Teljes bénulás                                                                                      | ⭕`4`  |
-| Halál                                                                                                            | ⭕`5`  |
+```
+Hatás max súlyossága
+
+⭕1: Enyhe rosszullét, hányás, alvás
+⭕2: Eszmélet: Bódultság Státusz, Görcs
+⭕3: Eszmélet: Kábultság Státusz,
+     Részleges bénulás
+⭕4: Életveszély, Teljes bénulás
+⭕5: Halál
+```
 
 #### Másodlagos hatás
 
@@ -86,42 +89,48 @@ Ez a tétel attól függ, hogy milyen típusú mérget szándékozik készíteni
 
 #### (3a) Elállás
 
-| Meddig áll el? | Érték | Méregkeverés követelmény |
-|:-------------- |:-----:|:------------------------:|
-| Pár másodperc  |  `0`  |            -             |
-| `1 perc`       |  `1`  |            -             |
-| `10 perc`      |  `2`  |            -             |
-| `1 óra`        |  `3`  |        `3.szint`         |
-| `1 nap`        |  `4`  |        `6.szint`         |
-| `1 hónap`      |  `5`  |        `9.szint`         |
-| Örökké         |  `6`  |        `12.szint`        |
+```
+Meddig áll el?
+
+0: Pár másodperc  
+1: 1 perc  
+2: 10 perc  
+3: 1 óra, Méregkeverés 3.szint
+4: 1 nap, Méregkeverés 6.szint
+5: 1 hónap, Méregkeverés 9.szint
+6: Örökké, Méregkeverés 12.szint
+```
 
 #### (3b) Kiürülés
 
-| Mennyi idő alatt ürül ki | Érték | Méregkeverés követelmény |
-|:------------------------ |:-----:|:------------------------:|
-| `1 kör`                  |  `0`  |        `3.szint`         |
-| `1 óra`                  |  `1`  |        `6.szint`         |
-| `1 nap`                  |  `2`  |        `9.szint`         |
-| `1 hét`                  |  `3`  |        `12.szint`        |
+```
+Mennyi idő alatt ürül ki?
+
+0: 1 kör, Méregkeverés 3. szint
+1: 1 óra, Méregkeverés 6. szint
+2: 1 nap, Méregkeverés 9. szint
+3: 1 hét, Méregkeverés 12. szint
+```
 
 <br />
 
 ---
 ### (4) Hatóidő
 
-| Milyen gyorsan hat?       | Érték | Méregkeverés követelmény |
-| :------------------------ | :---: | :----------------------: |
-| `30 perc` - `3 óra` múlva | `+0`  |           `-`            |
-| `4 - 23 óra` múlva        | `+1`  |        `3.szint`         |
-| `2-20 perc` múlva         | `+1`  |        `3.szint`         |
-| `1-10 nap` múlva          | `+2`  |        `5.szint`         |
-| `2-6 kör` múlva           | `+2`  |        `5.szint`         |
-| `2-4 hét` múlva           | `+3`  |        `7.szint`         |
-| Gyorsan (`10 szegmens`)   | `+4`  |        `7.szint`         |
-| Hónapok múlva             | `+4`  |        `9.szint`         |
-| Azonnal (`1 szegmens`)    | `+5`  |        `9.szint`         |
-| Évek múlva                | `+5`  |        `12.szint`        |
+```
+Milyen gyorsan hat?  
+
++0: (30 perc - 3 óra múlva)
++1: (4 - 23 óra múlva), Méregkeverés 3. szint
++1: (2 - 20 perc múlva), Méregkeverés 3. szint
++2: (1 - 10 nap múlva), Méregkeverés 5. szint
++2: (2 - 6 kör múlva), Méregkeverés 5. szint
++3: (2 - 4 hét múlva), Méregkeverés 7. szint
++4: Gyorsan (10 szegmens), Méregkeverés 7. szint
++4: Hónapok múlva, Méregkeverés 9. szint
++5: Azonnal (1 szegmens), Méregkeverés 9. szint
++5: Évek múlva, Méregkeverés 12. szint
+```
 
 <br />
 
