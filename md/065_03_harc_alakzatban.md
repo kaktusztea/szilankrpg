@@ -16,21 +16,12 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 
 ### Vezető fortélyok
 
-Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónuszt ad a lenti Kezdeményezőszint, Támadószint, Védekezőszint számításánál.
+Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónuszt ad a lenti Támadószint, Védekezőszint számításánál.
   - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)  (gyalogos alakzat esetén)
   - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)  (íjász/lövész alakzat esetén)
   - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)  (lovas alakzat esetén)
   - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)  (lovas alakzat esetén)
   
-### ⚜️ Kezdeményezőszint
-
-```
-+MIN( Alakzatharc képzettség )
-+2 / Vezető fortély bónusz fok
-```
-
-Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
-
 ### ⚜️Támadószint
 
 ```
@@ -39,7 +30,8 @@ Tehát a csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) ké
 + MIN(Támadó-alakzat fortély fok) x 2
 ```
 
- Tehát a csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
+- Csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
+- Csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
  
 ### ⚜️Védekezőszint
 
@@ -54,20 +46,13 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 ---
 ## Alakzat harcértékeinek meghatározása
 
-### 🔆Alakzat KÉ értéke
-
-```
-+ Kezdeményezőszint bónusza
-+ Alakzat tagjainak fegyveres KÉ átlaga
-```
-**Kezdeményezőszint** `KÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-
 ### 🔆Alakzat TÉ értéke
 
 ```
 + Támadószint bónusza
 + Alakzat tagjainak fegyveres TÉ átlaga
 ```
+
 **Támadószint** `TÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 ### 🔆Alakzat VÉ értéke
@@ -130,16 +115,10 @@ Csámpa
 ```
 
 ---
-### ⚡Kezdeményezőszint: `8`
-
-```
-+6: a legalacsonyabb képzettség szint
-+2: bónusz (Vezető: Alakzatparancsnok (1.fok))
-```
 ### ⚡Támadószint: `8`
 
 ```
-+6: a legalacsonyabb képzettség szint
++6: legalacsonyabb Alakzatharc szint
 +2: bónusz (Vezető: Alakzatparancsnok (1.fok))
 +0 = MIN(2; 1; 0; 1) x 2
 ```
@@ -147,20 +126,11 @@ Csámpa
 ### ⚡Védekezőszint: `12`
 
 ```
-+6: a legalacsonyabb képzettség szint
++6: legalacsonyabb Alakzatharc szint
 +2: bónusz (Borz, Vezető: Alakzatparancsnok (1.fok))
 +4: MIN(2; 2; 2; 2) x 2
 ```
 <br />
-
-### 🔆 Alakzat KÉ értéke = 23
-
-```
-+20: Alakzat tagjainak fegyveres KÉ átlaga
- +3: KÉ bónusz Kezdeményezőszint (8) után, mint egy
-     extra harcmodorból képzettség szintjéből
-     adódó bónusz
-```
 
 ### 🔆 Alakzat TÉ értéke = 33
 
@@ -171,19 +141,17 @@ Csámpa
      adódó bónusz
 ```
 
-→ [harcmodor képzettség szintjéből adódó bónusz](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-
 ### 🔆 Alakzat VÉ értéke = 49
 
 ```
 +40: Alakzat tagjainak fegyveres VÉ átlaga
- +9: TÉ bónusz Támadószint (8) után, mint egy
+ +9: TÉ bónusz Védekezőszint (8) után, mint egy
      extra harcmodorból képzettség szintjéből
      adódó bónusz
 +4: Tagok száma (4) után
 ```
 
-→ [harcmodor képzettség szintjéből adódó bónusz](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+→ [Képzettség szintjéből adódó bónusz](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) ( Támadószint, Védekezőszint )
 
 <br />
 
