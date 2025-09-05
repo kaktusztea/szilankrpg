@@ -16,13 +16,16 @@ Belharci szituáció
   • Sebzés csökkentett
   • Erőbónusz és MF fortély bónuszai megmaradnak
   • Puszta kéz értékek 0-ra emeltek
+```
 
+```
 Beszorított helyzet
   lásd hozzá tartozó leírást
 
 Csúszós talaj
   Hátrány-1 TÉ dobásra
-  Tart amíg a csúszós felületen áll vagy mozog a karakter
+  Tart amíg a csúszós felületen áll
+    vagy mozog a karakter
 
 Elvesztett egyensúly
   • Hátrány-1 TÉ dobásra
@@ -32,8 +35,9 @@ Elvesztett egyensúly
     Akrobatika próba (12) esetén azonnal
 
 Észrevétlen támadás
-  Áldozat VÉ értéke a mozgás jellegétől függ
-  • Támadó nem kap további helyzeti/taktika TÉ bónuszt
+  Áldozat VÉ: mozgás jellegétől függ
+  • Támadó nem kap további
+    helyzeti/taktika TÉ bónuszt
   • Részletes szabályok a leírásban
 
 Fegyverrántás váratlanul
@@ -42,12 +46,12 @@ Fegyverrántás váratlanul
   - Kard: Hátrány-1 KÉ dobásra
   - Alabárd: Hátrány-2 KÉ dobásra
   • Pusztakezes KÉ módosítóval.
-  • 3-mal túldobott KÉ esetén a fegyverrántó
-    támadhat elsőként teljes harcértékkel.
+  • 3-mal túldobott KÉ esetén te
+    támadhatsz elsőnek full harcértékkel
     Részletek a leírásban.
   • Fegyverrántás fortély bónuszai:
-      1. fok: 1 hátrány semlegesít vagy 1 előny
-      2. fok: 2 hátrány semlegesít vagy 2 előny
+    1.: 1 hátrány semlegesít v. 1 előny
+    2.: 2 hátrány semlegesít v. 2 előny
 
 Félhátulról támadás
   Előny+1 TÉ dobásra
@@ -94,15 +98,15 @@ Helyhez kötve
   - VÉ veszteség duplázódik
 
 Képzetlen fegyverhasználat
-  lásd Harcmodor képzettségek és bónuszaik
+  lásd Harcmodor képzettségek bónuszai
   • Levonások Harcmodor szinttől
     függnek ([0-2].szinten)
-  • Teljes képzetlenség 0. szinttől indul
+  • Teljes képzetlenség 0.szinttől indul
 
 Készületlenség
   lásd Meglepetés helyzet
   Készületlen karaktert támadója
-    a Meglepetés módosítókkal támadhatja
+    Meglepetés módosítókkal támadhatja
 
 Közrefogás
   1 pengényi hátrányt semlegesít
@@ -130,7 +134,7 @@ Meglepetés
   - Többszörös támadás elvesztése
   - Utolsónak támadhat a körben
   - Pajzs VÉ csak szemből, pajzs felől
-  Pajzs VÉ csak akkor számít, ha támadás
+  Pajzs VÉ csak akkor van, ha a támadás
     szemből vagy pajzs oldalról jön.
   Tovább növelhető támadó taktikával.
 
@@ -212,6 +216,7 @@ Vér elvakít
   → Érzék (látás) zavart
   → Hátrány-1 Támadó dobásra
 ```
+
 
 
 <br />
