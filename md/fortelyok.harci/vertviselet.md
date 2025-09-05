@@ -5,7 +5,7 @@ A vértek helyes viselése is ismereteket igényel, különben csak csetlesz-bot
 Kapcsolódik:
 - [Vértek, Páncélok](../069_00_vertek_pancelok.md)
 - [MGT](../069_03_MGT.md)
-- [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-%EF%B8%8F) Státusz
+- [Páncél akadályoztatása](../082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-%EF%B8%8F) Státusz
 
 ```
 3 MGT → -1 TÉ ↓
