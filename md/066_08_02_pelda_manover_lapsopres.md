@@ -2,33 +2,62 @@
 
 Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr és elkölt `1` **Manőver Pontot**.
 
+```
 Tetves értékei
-- KÉ: `15`
-- TÉ: `35`
-- VÉ: `52`
-- `Manőver Alap = (11 HM / 3) = 4`
 
-Ellenfelének értékei
-- `VÉ: 48`
-- `Manőver Alap = 9 HM / 3 = 3`
+KÉ: 15
+TÉ: 35
+VÉ: 52
+Manőver Alap: 4
+  (11 HM / 3)
+```
 
-**Gáncsolás manőver**
-- Nehézsége: `8`
-- Fázisai: Végrehajtás (`V`) és Ellenpróba (`E`)
+```
+Rühes értékei
+
+VÉ: 48
+Manőver Alap: 3
+ (9 HM / 3)
+```
+
+```
+Gáncsolás manőver
+
+Nehézsége: 8
+Fázisai
+ - (V) Végrehajtás
+ - (E) Ellenpróba
+```
 
 **1. Végrehajtás**
 
-- Tetves `TÉ:+4` értékkel leadja támadását
--  `TÉ = 35 + 4 + k20 = 50`, ez nagyobb mint ellenfele `VÉ`-je
-- Sikeres Végrehajtás
+```
+Tetves támad TÉ:+4 bónusszal
+
+TÉ = 50
+(35 + 4 + k20)
+
+50 > ellenfél VÉ
+→ Sikeres Végrehajtás
+```
 
 **2. Ellenpróba**
 
-- Tetves dobása:  `4` (Manőver Alap) `+2` (Manőver Pont bónusza) + `k10`
-- Célszám: `3 + 8 = 11` (ellenfél Manőver Alap + Gáncsolás nehézsége)
+```
+Tetves dobása
+ + 4 (Manőver alap)
+ + 2 (Manőver Pont bónusza)
+ + k10
+
+Célszám: 11
+ +3: Rühes Manőver Alap
+ +8: Gáncsolás nehézsége
+```
 
 ```
-Próbadobás:  (6 + k10)  vs.  11
+Próbadobás
+
+(6 + k10)  vs.  11
 ```
 
 Tehát ha Tetves legalább `5`-öt dob `k10`-en, akkor az **Ellenpróba** (`E`) is sikeres és így az egész manőver is az - kikaszálta ellenfele lábát.

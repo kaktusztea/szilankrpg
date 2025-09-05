@@ -81,7 +81,7 @@ Módosítók:
 Ha elvétetted az Akrobatika (esés) próbát, a hátas mozgásától függően kapsz zuhanásból adódó sebzést.
 
 ```
-Hátas       | Nehézség
+Hátas       |   SP
 -----------------------
 Áll, Lassú: k20 +0 SP
 Üget:       k20 +5 SP
