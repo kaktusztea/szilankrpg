@@ -47,10 +47,10 @@ A hátas maga `plusz 1 pengényi` [fegyverméret-kategóriát](065_01_harci_hely
 Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy leesik -e:
 
 ```
-Seb     | Nehézség
-6-10 ÉP :   9
-11-15 ÉP:  12
-15+ ÉP  :  15
+Seb       Nehézség
+6-10 ÉP       9
+11-15 ÉP     12
+15+ ÉP       15
 ```
 
 Ha sikertelen, leesik. Ekkor jön a **Lóról leesés** szituáció ↓
@@ -65,11 +65,10 @@ Ha leesel a lóról, [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) k
 #### ⚜️Akrobatika képzettségpróba Nehézsége a ló mozgása alapján
 
 ```
-Hátas    | Nehézség
--------------------
-Áll,lassú:   9
-Üget     :  15
-Vágtázik :  18
+Hátas      Nehézség
+Áll,lassú     9
+Üget         15
+Vágtázik     18
 
 Módosítók:
 → Terep Nehézség: [-6; +3]
@@ -81,11 +80,10 @@ Módosítók:
 Ha elvétetted az Akrobatika (esés) próbát, a hátas mozgásától függően kapsz zuhanásból adódó sebzést.
 
 ```
-Hátas       |   SP
------------------------
-Áll, Lassú: k20 +0 SP
-Üget:       k20 +5 SP
-Vágtázik:   k20+15 SP
+Hátas           SP
+Áll, Lassú   k20 +0 SP
+Üget         k20 +5 SP
+Vágtázik     k20+15 SP
 ```
 
 #### ⚜️ Esés Akrobatika-próba sikeres
