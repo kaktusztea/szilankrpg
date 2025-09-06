@@ -1,7 +1,5 @@
 ## 🟣 Harcos elme (4)
 
-⭕k20 adaptáció
-
 A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc szellemileg.
 
 ### 1. fok
@@ -12,7 +10,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
-🌟 **Hatás**: `1` VÉ-t semlegesít az ellenfél `VÉ` csökkenést okozó támadásaiból.
+🌟 **Hatás**: Minden kör elején visszanyersz `1` elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 ---
 ### 2. fok
@@ -23,7 +21,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
-🌟 **Hatás**: `2 VÉ` semlegesítése.
+🌟 **Hatás**: Minden kör elején visszanyersz `2` elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 ---
 ### 3. fok
@@ -34,7 +32,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `9.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
-🌟 **Hatás**: `3 VÉ` semlegesítése.
+🌟 **Hatás**: Minden kör elején visszanyersz `3` elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 ---
 ### 4. fok
@@ -48,7 +46,8 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - [Chi harc - Harcmeditáció](../kepzettsegek.primer.slan/chi_harc_harcmeditacio.md) VAGY [Fejvadász Tradíció](../053_03_fejvadasz_tradicio.md) - `12.szint`
 
 🌟 **Hatás**:
-- Az alkalmazó `VÉ`-je [Teljes Védekezés Taktika](../065_02_harci_taktikak.md#teljes-védekezés-taktika) alkalmazásakor **egyáltalán nem csökken** ellenfelei támadásának hatására.
+- Minden kör elején visszanyersz minden elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+- Az alkalmazónak [Teljes Védekezés Taktikában](../065_02_harci_taktikak.md#teljes-védekezés-taktika) kell lennie folyamatosan.
 - Minden körben **Összpontosítás** próba: (`15 + ellenfelek száma`). Ha a követelmények nem adottak, vagy a próba sikertelen, akkor csak a `3. fok` hatásait kapja meg a karakter.
 
 <br />
