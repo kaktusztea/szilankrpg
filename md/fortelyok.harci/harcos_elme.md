@@ -10,7 +10,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `1` elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején visszanyersz `1`, - a harc során - elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 ---
 ### 2. fok
@@ -21,7 +21,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `2` elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején visszanyersz `2` - a harc során - elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 ---
 ### 3. fok
@@ -32,7 +32,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `9.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás** vagy **Ostorharc**)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `3` elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején visszanyersz `3`, - a harc során - elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 ---
 ### 4. fok
@@ -46,7 +46,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - [Chi harc - Harcmeditáció](../kepzettsegek.primer.slan/chi_harc_harcmeditacio.md) VAGY [Fejvadász Tradíció](../053_03_fejvadasz_tradicio.md) - `12.szint`
 
 🌟 **Hatás**:
-- Minden kör elején visszanyersz minden elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+- Minden kör elején visszanyersz **minden**, a harc során elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 - Az alkalmazónak [Teljes Védekezés Taktikában](../065_02_harci_taktikak.md#teljes-védekezés-taktika) kell lennie folyamatosan.
 - Minden körben **Összpontosítás** próba: (`15 + ellenfelek száma`). Ha a követelmények nem adottak, vagy a próba sikertelen, akkor csak a `3. fok` hatásait kapja meg a karakter.
 
@@ -55,7 +55,8 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 ---
 ### Megjegyzések
 
-Az `ÉP` seb okozta **VÉ csökkenésre** egyik fok sem ad védelmet.
+- Az `ÉP` seb okozta **VÉ csökkenésre** egyik fok sem ad védelmet.
+- NJK szereplők, szörnyek, természeti lények is rendelkezhetnek ezzel a fortéllyal technikailag azonos képességgel.
 
 <br />
 
