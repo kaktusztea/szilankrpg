@@ -1,6 +1,4 @@
-## 🟣 Harci akrobatika (2)
-
-⭕k20 adaptáció
+## 🟣 Harci akrobatika (3)
 
 „Pattog, mint a nikkelbolha” - mondják, ha harcolni látnak.
 
@@ -14,29 +12,36 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Akrobatika - `4.szint`
 
 🌟 **Hatás**:
-- Az [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettség szinted `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez. Felfelé kerekítünk.
-- [Kibontakozás/Átsiklás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+1` bónuszt kapsz
-- `Akrobatika x 0.5` → +TÉ
-- `Akrobatika x 0.5` → +VÉ
+- `TÉ:+1, VÉ:+1`
+- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+1` bónuszt kapsz
 
 ---
 ### 2. fok
 
 🔒 **Követelmény**:
-- Ügyesség: `+4`
-- Gyorsaság `+3`
+- Ügyesség: `+3`
+- Gyorsaság `+2`
 - Akrobatika - `8.szint`
 
 🌟 **Hatás**:
-- Az [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettség szinted `1:1` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez.
-- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+3` bónuszt kapsz
-- `Akrobatika x 1` → +TÉ
-- `Akrobatika x 1` → +VÉ
+- `TÉ:+2, VÉ:+2`
+- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+2` bónuszt kapsz
 
+### 3. fok
+
+🔒 **Követelmény**:
+- Ügyesség: `+3`
+- Gyorsaság `+3`
+- Akrobatika - `12.szint`
+
+🌟 **Hatás**:
+- `TÉ:+3, VÉ:+3`
+- [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+3` bónuszt kapsz
+ 
 <br />
 
 ---
-### Megjegyzések
+### Általános követelmények
 
 - **Fegyverek**: A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például `1 db` hosszú kard, vagy `2 db` rövidkard), továbbá súlyuk is fontos tényező (KM dönt).
 - **Vértek**: a fortély csak olyan hajlékony, könnyű, nem-fém vértben használható, melynek nem nagyobb MGT-je `10`-nél.
