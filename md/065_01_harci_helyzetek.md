@@ -365,13 +365,13 @@ Ezen fegyverrántás szituáción azt értjük, amikor egy fegyvertelen karakter
 Fegyverrántásnál pengemérettől függ, hogy milyen módosító jár a `KÉ` értékére:
 
 ```
-- Tőr méretű:
+Tőr méretű:
   nincs KÉ dobás módosító
 
-- Kard méretű:
+Kard méretű:
   Hátrány-1 KÉ dobásra
 
-- Alabárd méretű:
+Csatabárd méretű:
   Hátrány-2 KÉ dobásra
 ```
 
@@ -396,11 +396,12 @@ Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járn
 
 ```
 1.fok:
-   1 Hátrány fokot
-   semlegesít a büntetésből
+  [Hátrány-2; Előny+2] skálán
+  1 lépést felfele ugrasz
+
 2.fok:
-   2 Hátrány fokot
-   semlegesít a büntetésből
+  [Hátrány-2; Előny+2] skálán
+  2 lépést felfele ugrasz
 ```
 
 ### ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
@@ -423,26 +424,20 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy ké
 
 ### ⚡ Példák
 
-```
-KÉ alap: 20
- → Puszta kéz KÉ: -3
- → Puszta kezes KÉ: 17
-```
-
 `1.` Tőr méretű fegyver előrántása
-- Alap: egy tőrt könnyű előrántani így sima `KÉ` dobás (`17`), büntetés nélkül
-- Fegyverrántás `2.fok` fortéllyal: `Előny+2` KÉ dobásra (`17`)
+- Alap: egy tőrt könnyű előrántani így sima `KÉ` dobás, büntetés nélkül
+- Fegyverrántás `2.fok` fortéllyal: `Előny+2` KÉ dobásra
 
 `2.` Kard méretű fegyver előrántása
-- Ha kardot akarnék rántani, azt már nehezebb: `Hátrány-1` KÉ dobásra (`17`)
+- Ha kardot akarnék rántani, azt már nehezebb: `Hátrány-1` KÉ dobásra
 - Fegyverrántás `2.fok` fortéllyal
-  - `Előny+1` KÉ dobásra (`17`)
+  - `Előny+1` KÉ dobásra
   - `Hátrány-1`-ből `2` fok pozitív irányba `Előny+1`
 
 `2.` Kétkezes csatabárd méretű fegyver előrántása
-- Ez a méret már igazi kihívás: `Hátrány-2` KÉ dobásra (`17`)
+- Ez a méret már igazi kihívás: `Hátrány-2` KÉ dobásra
 - Fegyverrántás `2.fok` fortéllyal
-  - Alap KÉ dobás (`17`)
+  - Alap KÉ dobás
   - `Hátrány-2`-ből `2` fok pozitív irányba: Alap dobás
 
 <br />
