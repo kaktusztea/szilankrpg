@@ -15,9 +15,12 @@ Ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** elle
 ```
 Élőholt VÉ visszaáll
 minden kör elején
+
+(kivéve ÉP okozta VÉ
+csökkenések)
 ```
 
-Mivel nem fáradnak szellemileg, legfeljebb ideiglenes hátrányba kerülnek, ezért az élőholtak `VÉ`-je **minden** kör elején visszaáll eredeti értékére.
+Mivel nem fáradnak szellemileg, legfeljebb ideiglenes hátrányba kerülnek, ezért az élőholtak `VÉ`-je **minden** kör elején visszaáll eredeti értékére, kivéve azok a `VÉ` csökkenések, amelyek `ÉP` sebből adódtak.
 
 ---
 

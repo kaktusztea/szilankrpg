@@ -75,7 +75,7 @@ A Harci taktikák egy adott kör során a **harci jelleg** általános eltolás�
 
 ### Taktika bejelentése 🔆
 
-A taktikák használatát kör elején, kezdeményezés előtt kell bejelenteni és ez hatásuk a kör végéig tart, nem lehet kör közben módosítani.
+A taktikák használatát **kör elején, kezdeményezés előtt** kell bejelenteni és ez hatásuk a kör végéig tart, nem lehet kör közben módosítani.
 
 Kivéve a `⇄` jellel megjelölt taktikákat, mert azokat kör közben, támadások között is lehet variálni.
 

@@ -61,6 +61,11 @@ Alapelvek
 
 ```
 Támadó dobás: TÉ + k20
+
+k20 dobás
+    1: NEM kiemelkedő kudarc
+16-19: Sebzésdobás Előny+1
+   20: Sebzésdobás Előny+2 
 ```
 
 ```
@@ -78,6 +83,7 @@ Sebzés jellege: elsődleges sebzési
 
 Előnyös/hátrányos helyzetű harcos:
    1 penge méretkülönbségtől
+
 ```
 
 <br />
