@@ -5,12 +5,18 @@ A karakternek minimum `1 kör`, zavartalan, ellazult, nyugodt testi ÉS szellemi
 Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Értéke NEM regenerálódik, mert bármikor rajtaüthetnek, nem engedhet ki, figyelme továbbra is ki van hegyezve.
 
 ---
-### Győzelmi szabály
+### Játékos karakterek VÉ regenerációja harc közben
 
-Ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont` (a siker hatása a szervezetre + heroizmus).
+Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerejen valamennyit Védő Értékéből:
+
+- Győzelmi szabály: ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont` (a siker hatása a szervezetre + heroizmus).
+ - [Harcos elme](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.harci/harcos_elme.md) fortély 
+ - Papi varázslat: ⭕TODO⭕
+   - van narratív követelménye
+   - cserébe harc után `FP`büntetés
 
 ---
-### Élőholtak VÉ regenerációja
+### Élőholtak VÉ regenerációja harc közben
 
 ```
 Élőholt VÉ visszaáll
@@ -21,6 +27,18 @@ csökkenések)
 ```
 
 Mivel nem fáradnak szellemileg, legfeljebb ideiglenes hátrányba kerülnek, ezért az élőholtak `VÉ`-je **minden** kör elején visszaáll eredeti értékére, kivéve azok a `VÉ` csökkenések, amelyek `ÉP` sebből adódtak.
+
+---
+### Szörnyek, túlvilági lényeg VÉ regenerációja harc közben
+
+A fenti kreatúrák közül több is képes harc közben Védő Értékének részleges, vagy teljes visszanyerésére.
+
+Ez több kategóriára egyszerűsítettük:
+
+- `1.` [Harcos elme](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.harci/harcos_elme.md) fortély valamelyik fokával azonos hatás
+- `2.` Teljes VÉ regeneráció: minden kör elején visszaáll a teljes `VÉ`, kivéve az `ÉP` sebből kapott `VÉ` levonás
+- `3.` `ÉP` is regenerálódik (pl. vámpír). Ekkor a `2.` ponton túl az `ÉP`-ből kapott `VÉ` levonást is visszakapja minden kör elején
+- `4.` Életerő regeneráló varázslatok, zónák. Például Nekromancia varázslat zóna, ahol az élőholtak folyamatosan regenerálódnak (`ÉP` és `VÉ`)
 
 ---
 

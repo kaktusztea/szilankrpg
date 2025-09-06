@@ -96,6 +96,11 @@ Fontos szerep jut még azoknak a fegyvereknek, amelyek rendelkeznek Átütés é
 Például: Csákány.
 
 ---
+### Mágikus fegyverek sebzése
+
+Lásd [Rúnamágiával felruházott tárgyak](130_varazstargyak.md#r%C3%BAnam%C3%A1gi%C3%A1val-felruh%C3%A1zott-t%C3%A1rgyak) fejezete.
+
+---
 
 🔗 [Sebzés](064_02_06_sebzes.md) →
 
