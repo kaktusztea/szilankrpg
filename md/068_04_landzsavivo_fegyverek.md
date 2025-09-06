@@ -14,16 +14,16 @@ A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](0
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver           | Forgatás módja |    SP     | Erőbónusz limit | Sebzés módja | Átütés  | Íves | MK  | KF  | Pengehossz | KÉ  |  TÉ  |  VÉ  | Sebesség |  Kategória  | Speciális                                                                         |
-| ----------------- |:--------------:|:---------:|:---------------:|:------------:|:-------:|:----:|:---:|:---:|:----------:|:---:|:----:|:----:|:--------:|:-----------:| --------------------------------------------------------------------------------- |
-| Alabárd S+V       |    kétkezes    |   `+4`    |      `99`       |    `S+V`     |   `0`   | `0`  | `0` | `0` |    `3`     | `7` | `10` | `10` |   `9`    | lándzsavívó | Szúró és Vágó módban                                                              |
-| Alabárd Z         |    kétkezes    |   `+4`    |      `99`       |     `Z`      |   `5`   | `0`  | `0` | `0` |    `3`     | `6` | `7`  | `8`  |   `10`   | lándzsavívó | Zúzó módban. Talán a legjobb a páncélok ellen az Átütéssel.                       |
-| Bot, hosszú       |    kétkezes    |   `+1`    |       `2`       |     `Z`      |   `0`   | `0`  | `0` | `0` |    `2`     | `6` | `6`  | `8`  |   `7`    | lándzsavívó |                                                                                   |
-| Kopja             |    kétkezes    |   `+10`   |       `0`       |     `S`      |  `+5`   | `0`  | `0` | `0` |    `4`     | `9` | `13` | `13` |   `99`   | lándzsavívó | Csak lovon használható.<br>Lándzsavívás harcmodorban forgatandó.                  |
-| Lándzsa           |    kétkezes    | `+2`/`+4` |      `99`       |     `S`      | `4`/`0` | `0`  | `0` | `0` |    `4`     | `8` | `12` | `13` |   `7`    | lándzsavívó | spec: lásd a hegyeket                                                             |
-| Pika              |    kétkezes    | `+2`/`+4` |       `3`       |     `S`      | `4`/`0` | `0`  | `0` | `0` |    `5`     | `9` | `16` | `16` |   `10`   | lándzsavívó | Ha közrefognak, a fegyver az egyik (választott) támadó ellen `0` harcértékű lesz. |
-| Szigony, egykezes |    egykezes    |   `+2`    |       `3`       |     `S`      |   `0`   | `0`  | `0` | `0` |    `2`     | `3` | `4`  | `5`  |   `8`    | lándzsavívó |                                                                                   |
-| Szigony, kétkezes |    kétkezes    |   `+4`    |      `99`       |     `S`      |   `2`   | `0`  | `0` | `0` |    `3`     | `4` | `7`  | `9`  |   `9`    | lándzsavívó |                                                                                   |
+| Fegyver           |  TÉ  |  VÉ  |    SP     | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés  | Íves | MK  | KF  |  Kategória  | Speciális                                                                         |
+| ----------------- | :--: | :--: | :-------: | :------: | :----------: | :--------: | :------------: | :-------------: | :-----: | :--: | :-: | :-: | :---------: | --------------------------------------------------------------------------------- |
+| Alabárd S+V       | `10` | `10` |   `+4`    |   `9`    |    `S+V`     |    `3`     |    kétkezes    |      `99`       |   `0`   | `0`  | `0` | `0` | lándzsavívó | Szúró és Vágó módban                                                              |
+| Alabárd Z         | `7`  | `8`  |   `+4`    |   `10`   |     `Z`      |    `3`     |    kétkezes    |      `99`       |   `5`   | `0`  | `0` | `0` | lándzsavívó | Zúzó módban. Talán a legjobb a páncélok ellen az Átütéssel.                       |
+| Bot, hosszú       | `6`  | `8`  |   `+1`    |   `7`    |     `Z`      |    `2`     |    kétkezes    |       `2`       |   `0`   | `0`  | `0` | `0` | lándzsavívó |                                                                                   |
+| Kopja             | `13` | `13` |   `+10`   |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `+5`   | `0`  | `0` | `0` | lándzsavívó | Csak lovon használható.<br>Lándzsavívás harcmodorban forgatandó.                  |
+| Lándzsa           | `12` | `13` | `+2`/`+4` |   `7`    |     `S`      |    `4`     |    kétkezes    |      `99`       | `4`/`0` | `0`  | `0` | `0` | lándzsavívó | spec: lásd a hegyeket                                                             |
+| Pika              | `16` | `16` | `+2`/`+4` |   `10`   |     `S`      |    `5`     |    kétkezes    |       `3`       | `4`/`0` | `0`  | `0` | `0` | lándzsavívó | Ha közrefognak, a fegyver az egyik (választott) támadó ellen `0` harcértékű lesz. |
+| Szigony, egykezes | `4`  | `5`  |   `+2`    |   `8`    |     `S`      |    `2`     |    egykezes    |       `3`       |   `0`   | `0`  | `0` | `0` | lándzsavívó |                                                                                   |
+| Szigony, kétkezes | `7`  | `9`  |   `+4`    |   `9`    |     `S`      |    `3`     |    kétkezes    |      `99`       |   `2`   | `0`  | `0` | `0` | lándzsavívó |                                                                                   |
 
 <!-- tag: md_table_fegyver_end -->
 

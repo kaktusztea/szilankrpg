@@ -1,8 +1,12 @@
 ## Tulajdonságpróba
 
+```
+Tulajdonság + k6  vs  Célszám
+```
+
 Mikor a karakter olyan helyzetbe kerül, hogy valamelyik Tulajdonságát kell próbára tennie, – tehát nem valamelyik képzettségét érintő ismeretre van szükség –, akkor Tulajdonságpróbát kell tennie. Ez a következőképpen történik:
 
-A KM meghatároz egy `3-8`-ig terjedő célszámot nehézségnek, a játékos pedig dob `k6`-tal, és az eredményt hozzáadja az adott **Tulajdonságának** értékéhez. Ha a kapott szám nagyobb, vagy egyenlő a célszámmal, akkor a próba sikerült.
+A KM meghatároz egy `3-8`-ig terjedő célszámot nehézségnek, a játékos pedig dob `k6`-tal, és az eredményt hozzáadja az adott **Tulajdonságának** értékéhez. Ha a kapott szám nagyobb, vagy egyenlő a célszámmal, akkor a próba sikerült. **Fontos**: az `1` és `6` dobások **NEM** kiemelt értékek, nem jelentenek kritikus hibát, vagy sikert.
 
 ```
 Tulajdonságpróba célszám (k6)
@@ -14,6 +18,18 @@ Tulajdonságpróba célszám (k6)
 7: Rendkívül nehéz
 8: Emberfeletti
 ```
+
+
+---
+### Siker/Kudarc mértéke
+
+⚜️ Ha `3` vagy annál nagyobb különbséggel rontottál, akkor kiemelten nagy hibát vétettél.
+
+⚜️ Ha `3` vagy annál nagyobb különbséggel dobtál sikert, akkor kiemelten jól sikerült a próba.
+
+A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje el. Ha a KM-nek nem tetszik a játékos ötlete, felülbíráhatja.
+
+<br />
 
 ---
 ### Összetett Tulajdonságpróba

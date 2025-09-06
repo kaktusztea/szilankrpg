@@ -5,7 +5,7 @@ Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig t
 ```
 Tetves értékei
 
-KÉ: 15
+KÉ: 10
 TÉ: 35
 VÉ: 52
 Manőver Alap: 4

@@ -22,27 +22,27 @@ A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyv
 <!-- tag: md_codeblock_harcmodor_kepzettseg_bonuszok_start -->
 
 ```
-0. szint:  KÉ:-6;  TÉ/VÉ/CÉ:-9
-1. szint:  KÉ:-4;  TÉ/VÉ/CÉ:-6
-2. szint:  KÉ:-2;  TÉ/VÉ/CÉ:-3
-3. szint:  KÉ:+0;  TÉ/VÉ/CÉ:+0
-4. szint:  KÉ:+1;  TÉ/VÉ/CÉ:+1
-5. szint:  KÉ:+1;  TÉ/VÉ/CÉ:+2
-6. szint:  KÉ:+2;  TÉ/VÉ/CÉ:+3
-7. szint:  KÉ:+2;  TÉ/VÉ/CÉ:+4
-8. szint:  KÉ:+3;  TÉ/VÉ/CÉ:+5
-9. szint:  KÉ:+3;  TÉ/VÉ/CÉ:+6
-10. szint: KÉ:+4;  TÉ/VÉ/CÉ:+7
-11. szint: KÉ:+4;  TÉ/VÉ/CÉ:+8
-12. szint: KÉ:+5;  TÉ/VÉ/CÉ:+9
-13. szint: KÉ:+5;  TÉ/VÉ/CÉ:+10
-14. szint: KÉ:+6;  TÉ/VÉ/CÉ:+11
-15. szint: KÉ:+6;  TÉ/VÉ/CÉ:+12
+0. szint:  TÉ/VÉ/CÉ:-9
+1. szint:  TÉ/VÉ/CÉ:-6
+2. szint:  TÉ/VÉ/CÉ:-3
+3. szint:  TÉ/VÉ/CÉ:+0
+4. szint:  TÉ/VÉ/CÉ:+1
+5. szint:  TÉ/VÉ/CÉ:+2
+6. szint:  TÉ/VÉ/CÉ:+3
+7. szint:  TÉ/VÉ/CÉ:+4
+8. szint:  TÉ/VÉ/CÉ:+5
+9. szint:  TÉ/VÉ/CÉ:+6
+10. szint: TÉ/VÉ/CÉ:+7
+11. szint: TÉ/VÉ/CÉ:+8
+12. szint: TÉ/VÉ/CÉ:+9
+13. szint: TÉ/VÉ/CÉ:+10
+14. szint: TÉ/VÉ/CÉ:+11
+15. szint: TÉ/VÉ/CÉ:+12
 ```
 
 <!-- tag: md_codeblock_harcmodor_kepzettseg_bonuszok_end -->
 
-⚜️ A távolsági fegyvereknél értelemszerűen csak `CÉ:+1` jár szintenként és `KÉ:+1` minden `2.szinten`, hiszen nincs `TÉ` és `VÉ` értékük.
+⚜️ A távolsági fegyvereknél értelemszerűen csak `CÉ:+1` jár szintenként, hiszen nincs `TÉ` és `VÉ` értékük.
 
 ---
 ### Harcmodorok és Manőverek

@@ -5,7 +5,7 @@ Lássunk egy  gyakorlati alkalmazást!
 **Rühes** megpróbálja lefegyverezni ellenfelét. Mindkettőjüknél hosszú kard van, Rühes kicsivel jobb vívó.
 
 Rühes értékei:
-- `KÉ: 15`
+- `KÉ: 10`
 - `TÉ: 35`
 - `VÉ: 52`
 - `Manőver Alap = 11 HM / 3 = 4 ↑`

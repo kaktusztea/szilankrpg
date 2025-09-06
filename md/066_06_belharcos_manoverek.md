@@ -73,7 +73,7 @@ Lásd a [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcból-ki
 
 **Hatás**:
 	- Sikeresen lefeszítetted ellenfeledet, aki alig bír mozdulni / Kiszabadultál a feszítésből
-	- Amíg feszítve van, addig nem tud fegyverrel támadni és `TÉ/VÉ:-25` (`KÉ`-t elveszíti automatikusan)
+	- Amíg feszítve van, addig nem tud fegyverrel támadni és `TÉ/VÉ:-25` (Kezdeményezést elveszíti automatikusan)
 
 <br />
 

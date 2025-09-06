@@ -143,11 +143,11 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 ---
 ### 🔥 Kezdeményezés - lassú
 
-Kezdeményezéskor nem dobhatsz, a statikus `KÉ` értékeddel veszel részt a körben.
+`Hátrány-1` jár Kezdeményező dobásodra.
 
 ### 🔥 Kezdeményezés - nagyon lassú
 
-Kezdeményezéskor dobsz, de az értéket **levonod** (!) a fegyveres KÉ értékedből.
+`Hátrány-2` jár Kezdeményező dobásodra.
 
 <br />
 

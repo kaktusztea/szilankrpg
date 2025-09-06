@@ -28,7 +28,7 @@ Az alábbiakban részletesen kifejtjük a fenti értékek kiszámítási módjá
 Első szinten minden karakter egységes konstans értékeket kap `KÉ`, `TÉ`, `VÉ` és `CÉ` értékére. Ehhez az alapértékhez adódnak majd hozzá az egyéb módosítók.
 
 ```
-KÉ konstans: 3
+KÉ konstans: 0
 TÉ konstans: 7
 VÉ konstans: 30
 CÉ konstans: -10
@@ -39,24 +39,14 @@ CÉ konstans: -10
 
 ### Kezdeményező érték (`KÉ`)
 
-⭕k20: ha egységes KÉ lesz, átdolgozni
+A Kezdeményező Érték (**KÉ**) szerepe a harcban, hogy meghatározza, ki „mozdul először” a harcban. Nem jelent harci dominanciát, csak azt, hogy ki a gyorsabb, ki cselekedhet előbb. A kezdeményezés műveletéről bővebben lásd a [Harc menete - Kezdeményezés](064_02_01_kezdemenyezes.md) fejezetet!
 
-A Kezdeményező Érték (**KÉ**) szerepe a harcban, hogy meghatározza, ki „mozdul először” a harcban. Nem jelent harci dominanciát, csak azt, hogy ki a gyorsabb, ki cselekedhet előbb.
-
-A kezdeményezés műveletéről bővebben lásd a [Harc menete - Kezdeményezés](064_02_01_kezdemenyezes.md) fejezetet!
-
-Két típusú KÉ létezik:
-- Fegyveres KÉ
-- Varázslás KÉ
-
-A fenti két KÉ számítása azonos, egyedül a "Harcmodor"/"Mágia Tradíció" által adott bónuszban térnek el (lásd lenn). Külön számolandóak és külön is kezelendőek. Bővebben lásd a [Harc menete](064_02_00_harc_menete_reszletes.md#kezdeményezés) - "Kezdeményezés" és "Varázslás kezdeményezése" bekezdéseket.
-
-A karakter Kezdeményező Értékét a következőképpen kell kiszámítani:
+A `KÉ` egy darab, konkrét érték, ezt használjuk minden típusú cselekedet esetén. Nem tér el harcban, vagy varázslásban, az egyes fegyvereknek **sincs** saját Kezdeményező Értékük! Értékét a következőképpen kell kiszámítani:
 
 ```
 🗡️ Kezdeményező Érték meghatározása
 
-+ Konstans: 3
++ Konstans: 0
     Minden karakternek
 + Gyorsaság
     A karakter Gyorsaság Tulajdonsága
@@ -64,10 +54,6 @@ A karakter Kezdeményező Értékét a következőképpen kell kiszámítani:
     A karakter Intelligencia Tulajdonsága
 + Szint
     A karakter Tapasztalati szintje
-+ Harcmodor KÉ
-  - Harcmodor szintje által kapott bónusz
-  - Mágia Tradíció által kapott bónusz
-    (mintha Harcmodor képzettség lenne)
 + Speciális
   - Gyors Kezdeményezés fortély KÉ bónusza
   - Szituációkból adódó módosítók

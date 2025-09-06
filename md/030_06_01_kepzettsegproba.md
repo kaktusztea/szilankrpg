@@ -17,7 +17,7 @@
 
 ### Próbadobás
 
-Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő a Célszámmal, akkor a próba sikerült. Ha a KM úgy látja, hogy az adott próbánál több Tulajdonság is szerepet játszik, akkor a szükséges Tulajdonságok átlagával kell számolni.
+Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő a Célszámmal, akkor a próba sikerült. Ha a KM úgy látja, hogy az adott próbánál több Tulajdonság is szerepet játszik, akkor a szükséges Tulajdonságok átlagával kell számolni. **Fontos**: az `1` és `10` dobások **NEM** kiemelt értékek, nem jelentenek kritikus hibát, vagy sikert.
 
 ```
 Tulajdonság + Képzettség + k10
@@ -134,7 +134,9 @@ Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehe
 
 ⚜️ Ha `6` vagy annál nagyobb különbséggel (`2` tudás fok) rontottál, akkor kiemelten nagy hibát vétettél.
 
-⚜️ Ha `6` vagy annál nagyobb különbséggel (`2` tudás fok) dobtál sikert, akkor kiemelten jól sikerült a próba. Ezt a KM meséli le.
+⚜️ Ha `6` vagy annál nagyobb különbséggel (`2` tudás fok) dobtál sikert, akkor kiemelten jól sikerült a próba.
+
+A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje el. Például különösen jól sikert a hamisítás és egy játékostársa némi előnyhöz juthat a Meggyőzés próbája során. Ha a KM-nek nem tetszik a játékos ötlete, felülbíráhatja.
 
 <br />
 

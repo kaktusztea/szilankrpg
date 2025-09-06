@@ -4,10 +4,10 @@
 ### 🧮 Harcértékek
 
 ```
-KÉ = 3
-   + (Gyorsaság + Intelligencia)⭕k20
+KÉ = 0
+   + (Gyorsaság + Intelligencia)
    + Tapasztalati szint
-   + Harcmodor/Mágia-Tradíció bónusz
+   + Gyors kezdeményezés fortély bónusza
 
 TÉ = 7
    + Erő + Ügyesség + Gyorsaság
@@ -38,17 +38,21 @@ CÉ = -10 (Konstans)
 <br />
 
 ---
-### 🤞 Kezdeményezés ⭕k20
+### 🤞 Kezdeményezés
 
 ```
 Kezdeményező dobás: KÉ + k20
 ```
 
-Minden kör elején van kezdeményezés, ami csak a cselekvési sorrend meghatározására szolgál, nem jelent dominanciát, vagy a harc irányítását.
+`k20` dobás menete minden kör elején
+- `1db k20` dobás a teljes JK parti számára (egy választott játékos)
+- `1db k20` dobás az összes NJK ellenfél számára (KM)
+- mindenki azt a konkrét értéket adja hozzá saját `KÉ` értékéhez az adott körben
 
-A magasabb számot kapott kezd, `20`-as dobásra rá lehet dobni újra.
-
-Azonos kezdeményezésnél: egyszerre csapnak.
+Alapelvek
+- A Kezdeményezés csak a cselekvési sorrend meghatározására szolgál, nem jelent dominanciát, vagy a harc irányítását
+- A magasabb számot kapott karakter cselekszik előtt
+- Azonos kezdeményezésnél: egyszerre csapnak
 
 <br />
 

@@ -5,7 +5,7 @@
 ### Lord Gustav, Domvik lovagja
 
 ```
-KÉ: 22 TÉ: 37 VÉ: 54
+KÉ: 12 TÉ: 37 VÉ: 54
 ÉP: 18
 Erő: +3
 
@@ -49,7 +49,7 @@ S4:  -6 TÉ
 ### Tetves, a bérgyilkos
 
 ```
-KÉ: 15 TÉ: 35 VÉ: 52
+KÉ: 10 TÉ: 35 VÉ: 52
 ÉP: 14
 
 Fegyver: Rövidkard (0,5 penge)

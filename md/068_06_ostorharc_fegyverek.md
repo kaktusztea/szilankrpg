@@ -2,11 +2,11 @@
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver   | Forgatás módja |  SP  | Erőbónusz limit | Sebzés módja | Átütés | Íves | MK  | KF  | Pengehossz | KÉ  |  TÉ  |  VÉ  | Sebesség | Kategória | Speciális                                                            |
-| --------- | :------------: | :--: | :-------------: | :----------: | :----: | :--: | :-: | :-: | :--------: | :-: | :--: | :--: | :------: | :-------: | -------------------------------------------------------------------- |
-| Korbács   |    egykezes    | `-1` |       `2`       |     `Z`      |  `0`   | `1`  | `0` | `0` |    `1`     | `4` | `3`  | `0`  |   `6`    | ostorharc | Íves fegyvernek számít - a fegyver mögé "becsapó" tulajdonsága miatt |
-| Ostor     |    egykezes    | `+1` |       `3`       |     `Z`      |  `0`   | `1`  | `0` | `0` |    `3`     | `0` | `5`  | `2`  |   `8`    | ostorharc | Íves fegyvernek számít - a fegyver mögé "becsapó" tulajdonsága miatt |
-| Ostorkard |    egykezes    | `+3` |      `99`       |     `V`      |  `0`   | `1`  | `0` | `0` |    `3`     | `7` | `10` | `10` |   `8`    | ostorharc | Minimum `Mf:1.fok` nélkül `30%` esély az önsebzésre                  |
+| Fegyver   |  TÉ  |  VÉ  |  SP  | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Pengehossz | Kategória | Speciális                                                            |
+| --------- |:----:|:----:|:----:|:--------:|:------------:|:--------------:|:---------------:|:------:|:----:|:---:|:---:|:----------:|:---------:| -------------------------------------------------------------------- |
+| Korbács   | `3`  | `0`  | `-1` |   `6`    |     `Z`      |    egykezes    |       `2`       |  `0`   | `1`  | `0` | `0` |    `1`     | ostorharc | Íves fegyvernek számít - a fegyver mögé "becsapó" tulajdonsága miatt |
+| Ostor     | `5`  | `2`  | `+1` |   `8`    |     `Z`      |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `0` |    `3`     | ostorharc | Íves fegyvernek számít - a fegyver mögé "becsapó" tulajdonsága miatt |
+| Ostorkard | `10` | `10` | `+3` |   `8`    |     `V`      |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0` |    `3`     | ostorharc | Minimum `Mf:1.fok` nélkül `30%` esély az önsebzésre                  |
 
 <!-- tag: md_table_fegyver_end -->
 

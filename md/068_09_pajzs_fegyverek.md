@@ -6,15 +6,15 @@ Kapcsolódik
 
 <!-- tag: md_table_pajzs_start -->
 
-| Pajzs név     |  SP  | Erőbónusz limit | KÉ  | TÉ  |  VÉ  | Sebesség | Speciális                                                                                                                          |
-| ------------- | :--: | :-------------: | :-: | :-: | :--: | :------: | :--------------------------------------------------------------------------------------------------------------------------------- |
-| Kis Pajzs     | `+0` |       `0`       | `0` | `1` | `3`  |   `6`    | -                                                                                                                                  |
-| Közepes Pajzs | `+0` |       `2`       | `0` | `1` | `10` |   `7`    | `Erő követelmény: +1`                                                                                                              |
-| Nagy Pajzs    | `+0` |       `4`       | `1` | `1` | `16` |   `9`    | `Erő követelmény: +2`<br>Legfeljebb `0,5 penge` hosszú fegyver lehet a másik kézben. Minden plusz `0.5 penge` `TÉ:-3` büntetést ad |
+| Pajzs név     | TÉ  |  VÉ  | Sebesség |  SP  | Erőbónusz limit | Speciális                                                                                                                          |
+| ------------- | :-: | :--: | :------: | :--: | :-------------: | :--------------------------------------------------------------------------------------------------------------------------------- |
+| Kis Pajzs     | `1` | `3`  |   `6`    | `+0` |       `0`       | -                                                                                                                                  |
+| Közepes Pajzs | `1` | `10` |   `7`    | `+0` |       `2`       | `Erő követelmény: +1`                                                                                                              |
+| Nagy Pajzs    | `1` | `16` |   `9`    | `+0` |       `4`       | `Erő követelmény: +2`<br>Legfeljebb `0,5 penge` hosszú fegyver lehet a másik kézben. Minden plusz `0.5 penge` `TÉ:-3` büntetést ad |
 
 <!-- tag: md_table_pajzs_end -->
 
-🔆 A pajzs `KÉ` és `TÉ` értékei kizárólag akkor használatosak, ha kifejezetten a pajzzsal akarunk harcolni, mert mondjuk nincs főfegyver a másik kezünkben.
+🔆 A pajzs `TÉ` értéke kizárólag akkor használatos, ha kifejezetten a pajzzsal akarunk harcolni, mert mondjuk nincs főfegyver a másik kezünkben.
 
 🔆 Nagy pajzs: emberméretű tárgy, nem kalandozófelszerelés, lovon sem vihető, legfeljebb szekéren.
 

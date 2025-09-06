@@ -43,7 +43,6 @@ Fegyverrántás váratlanul
   - Tőr: nincs KÉ dobás módosító
   - Kard: Hátrány-1 KÉ dobásra
   - Alabárd: Hátrány-2 KÉ dobásra
-  • Pusztakezes KÉ módosítóval.
   • 3-mal túldobott KÉ esetén te
     támadhatsz elsőnek full harcértékkel
     Részletek a leírásban.
@@ -244,7 +243,7 @@ Minden `rövid (0)` pengehosszú fegyver, kivéve ezek közül azokat a fegyvere
 
 ### ⚜️ Puszta kéz harcértékei belharci szituációban
 
-Belharci szituációban `KÉ`, `TÉ`, `VÉ`, `SP`  mind `0` értékre emelkednek.
+Belharci szituációban `TÉ`, `VÉ`, `SP`  mind `0` értékre emelkednek.
 
 [Puszta kéz jellemzői](068_02_kozelharci_fegyverek.md): `FP` sebesülést okoz, de minden `5.FP` → `1 ÉP` elvesztését okozza. Kivétel: harcművészek [Sárkány ököl](fortelyok.slan/sarkany_okol.md) fortélya. 
 
@@ -363,7 +362,7 @@ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
 
 Ezen fegyverrántás szituáción azt értjük, amikor egy fegyvertelen karakter harci kontaktus közben próbálja előkapni fegyverét, hogy ne pusztakezes értékeivel legyen kénytelen küzdeni, miközben ellenfele már fegyverével fenyegeti.
 
-Fegyverrántásnál pusztakezes `KÉ` értékkel történik a kezdeményezés, fegyver-függő módosítóval:
+Fegyverrántásnál pengemérettől függ, hogy milyen módosító jár a `KÉ` értékére:
 
 ```
 - Tőr méretű:

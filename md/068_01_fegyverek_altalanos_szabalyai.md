@@ -23,7 +23,7 @@ Alább alapelveket találhatunk az egyes általános fegyverkategóriákhoz – 
 1 penge különbség
 (2 egység ugrás)
 
-KÉ: 2, TÉ: 3, VÉ: 3
+TÉ: 3, VÉ: 3
 ```
 
 <br />
@@ -31,35 +31,35 @@ KÉ: 2, TÉ: 3, VÉ: 3
 ```
 rövid (0)
   Tőr
-  KÉ: 1, TÉ: 2, VÉ: 1
+  TÉ: 2, VÉ: 1
 
 0,5 penge (1)
   Rövid kard
-  KÉ: 2, TÉ: 3, VÉ: 2
+  TÉ: 3, VÉ: 2
 
 1 penge (2)
   Hosszú kard
-  KÉ: 3, TÉ: 4, VÉ: 4
+  TÉ: 4, VÉ: 4
 
 1,5 penge (3)
   Másfélkezes kard
-  KÉ: 4, TÉ: 6, VÉ: 5
+  TÉ: 6, VÉ: 5
 
 2 penge (4)
   Kétkezes kard
-  KÉ: 5, TÉ: 7, VÉ: 7
+  TÉ: 7, VÉ: 7
 
 3 penge (6)  
   Alabárd  
-  KÉ: 7, TÉ: 10, VÉ: 10
+  TÉ: 10, VÉ: 10
 
 4 penge (8)  
   Lándzsa, kopja  
-  KÉ: 9, TÉ: 13, VÉ: 13
+  TÉ: 13, VÉ: 13
 
 5 penge (10)  
   Pika  
-  KÉ: 11, TÉ: 16, VÉ: 16
+  TÉ: 16, VÉ: 16
 ```
 
 ---
@@ -143,7 +143,7 @@ Ha egy kézzel forgatod az alapvetően két kézre tervezett másfélkezes fegyv
 ```
 Jelölése: MK
 
-- KÉ:-1,  TÉ:-2,  VÉ:-2
+- TÉ:-2,  VÉ:-2
 - Átütés megszűnik (ha volt)
 - Erőbónusz limit csökken
   (általában 2-re)
@@ -170,7 +170,7 @@ Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellen
 A Puszta kéz kiemelt „fegyver”, hiszen mindig „ott van”. Puszta kézzel viszont bármilyen fegyver ellen meglehetősen kellemetlen harcolni, hiszen nincs mivel távol tartani, fenyegetni az ellenfelet. Ezért a Puszta kéz harcértékei mindenkinek a következők:
 
 ```
-Puszta kéz:  KÉ:-3,  TÉ:-3,  VÉ:-3
+Puszta kéz:  TÉ:-3,  VÉ:-3
 ```
 
 ---
