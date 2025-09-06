@@ -20,6 +20,8 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🗡️ Harci taktika, Harci szituáció vagy Manőver
 
+`k20T`: k20 tízes része (`5 → 0`, `16 → 1`, `20 → 2`)
+
 ✨ Mágia
 
 💫 Varázslási módszer

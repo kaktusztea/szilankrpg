@@ -91,6 +91,15 @@ Előnyös/hátrányos helyzetű harcos:
 ---
 ### 😵 TÉ < VÉ  → VÉ csökkentés
 
+```
+"k20T" rövidítés == k20 tízes része
+
+Példák:
+5 → 0
+16 → 1
+20 → 2
+```
+
 #### [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
 ```
