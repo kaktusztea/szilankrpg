@@ -10,12 +10,12 @@
         "MK": "0",
         "KF": "0",
         "Pengehossz": "0",
-        "KÉ": "0",
         "TÉ": "0",
-        "VÉ": "3/2/0",
-        "Sebesség": "99",
-        "Kategória": "közelharci",
-        "Speciális": ""
+        "VÉ": "0",
+        "Sebesség": "3/2/0",
+        "Kategória": "99",
+        "Speciális": "közelharci",
+        "": ""
     },
     {
         "Hárítófegyver": "Hárító: Csatakesztyű",
@@ -28,7 +28,6 @@
         "MK": "0",
         "KF": "0",
         "Pengehossz": "0",
-        "KÉ": "0",
         "TÉ": "0",
         "VÉ": "2",
         "Sebesség": "99",
@@ -46,7 +45,6 @@
         "MK": "0",
         "KF": "0",
         "Pengehossz": "0",
-        "KÉ": "0",
         "TÉ": "0",
         "VÉ": "3",
         "Sebesség": "99",
@@ -64,11 +62,11 @@
         "MK": "0",
         "KF": "0",
         "Pengehossz": "0",
-        "KÉ": "0",
         "TÉ": "0",
-        "VÉ": "3/2/0",
-        "Sebesség": "99",
-        "Kategória": "közelharci",
-        "Speciális": ""
+        "VÉ": "0",
+        "Sebesség": "3/2/0",
+        "Kategória": "99",
+        "Speciális": "közelharci",
+        "": ""
     }
 ]

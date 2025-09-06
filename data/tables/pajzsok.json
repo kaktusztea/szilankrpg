@@ -1,32 +1,29 @@
 [
     {
         "Pajzs név": "Kis Pajzs",
-        "SP": "+0",
-        "Erőbónusz limit": "0",
-        "KÉ": "0",
         "TÉ": "1",
         "VÉ": "3",
         "Sebesség": "6",
+        "SP": "+0",
+        "Erőbónusz limit": "0",
         "Speciális": "-"
     },
     {
         "Pajzs név": "Közepes Pajzs",
-        "SP": "+0",
-        "Erőbónusz limit": "2",
-        "KÉ": "0",
         "TÉ": "1",
         "VÉ": "10",
         "Sebesség": "7",
+        "SP": "+0",
+        "Erőbónusz limit": "2",
         "Speciális": "Erő követelmény: +1"
     },
     {
         "Pajzs név": "Nagy Pajzs",
-        "SP": "+0",
-        "Erőbónusz limit": "4",
-        "KÉ": "1",
         "TÉ": "1",
         "VÉ": "16",
         "Sebesség": "9",
+        "SP": "+0",
+        "Erőbónusz limit": "4",
         "Speciális": "Erő követelmény: +2 Legfeljebb 0,5 penge hosszú fegyver lehet a másik kézben. Minden plusz 0.5 penge TÉ:-3 büntetést ad"
     }
 ]
