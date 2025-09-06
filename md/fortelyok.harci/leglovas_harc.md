@@ -2,7 +2,7 @@
 
 Repülő hátason ülve sem esel kétségbe, ha harcolni kell.
 
-Léglovas harc során ezen fortély fokától függő mértékben harcértékeidhez hozzáadódnak a 🔵 [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettségből adódó harcérték pluszok. Ezeket úgy számítjuk ki, hogy a **Léglovaglás** képzettséget egyszerűen [Harcmodorként](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) kezeljük és a szintjének megfelelő `KÉ/TÉ/VÉ` és `SP` pluszokat vesszük.
+Léglovas harc során ezen fortély fokától függő mértékben harcértékeidhez hozzáadódnak a 🔵 [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettségből adódó harcérték pluszok. Ezeket úgy számítjuk ki, hogy a **Léglovaglás** képzettséget egyszerűen [Harcmodorként](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) kezeljük és a szintjének megfelelő `TÉ/VÉ` és `SP` pluszokat vesszük.
 
 A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, tehát a fentiek bónuszként értelmezendők!
 
@@ -21,7 +21,9 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Érzékenység: `0`
 - Léglovaglás - `3.szint`
 
-🌟 **Hatás**:  A bónuszok **harmada** (↑) adódik hozzá a fegyveres harcértékeidhez.
+🌟 **Hatás**:
+- fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` léglovas bónusz járul
+- [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
 
 ---
 ### 2. fok
@@ -32,7 +34,9 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Érzékenység: `0`
 - Léglovaglás - `6.szint`
 
-🌟 **Hatás**: A bónuszok **fele** (↑) adódik hozzá a fegyveres harcértékeidhez.  [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+🌟 **Hatás**:
+- fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` léglovas bónusz járul
+- [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
 
 ---
 ### 3. fok
@@ -43,8 +47,9 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Érzékenység: `+1`
 - Léglovaglás - `9.szint`
 
-🌟 **Hatás**: A bónuszok `1:1`-ben hozzáadódnak a fegyveres harcértékeidhez. [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
-
+🌟 **Hatás**:
+- fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` léglovas bónusz járul
+- [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
 
 <br />
 

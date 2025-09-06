@@ -2,7 +2,7 @@
 
 Hátason ülve sem esel kétségbe, ha harcolni kell.
 
-Lovas harc során ezen fortély fokától függő mértékben harcértékeidhez hozzáadódnak a 🔵 [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettségből adódó harcérték pluszok. Ezeket úgy számítjuk ki, hogy a **Lovaglás** képzettséget egyszerűen [Harcmodorként](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) kezeljük és a szintjének megfelelő `KÉ/TÉ/VÉ` és `SP` pluszokat vesszük.
+Lovas harc során ezen fortély fokától függő mértékben harcértékeidhez hozzáadódnak a 🔵 [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettségből adódó harcérték pluszok. Ezeket úgy számítjuk ki, hogy a **Lovaglás** képzettséget egyszerűen [Harcmodorként](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) kezeljük és a szintjének megfelelő `TÉ/VÉ` és `SP` pluszokat vesszük.
 
 A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, tehát a fentiek bónuszként értelmezendők!
 
@@ -19,9 +19,11 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Ügyesség: `+1`
 - Önuralom: `0`
 - Érzékenység: `0`
-- Lovaglás - `3.szint`
+- Lovaglás - `6.szint`
 
-🌟 **Hatás**:  A bónuszok **harmada** (↑) adódik hozzá a fegyveres harcértékeidhez.
+🌟 **Hatás**:
+- fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` lovas bónusz járul
+- [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
 
 ---
 ### 2. fok
@@ -30,9 +32,11 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Ügyesség: `+2`
 - Önuralom: `0`
 - Érzékenység: `0`
-- Lovaglás - `6.szint`
+- Lovaglás - `9.szint`
 
-🌟 **Hatás**: A bónuszok **fele** (↑) adódik hozzá a fegyveres harcértékeidhez. [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+🌟 **Hatás**:
+- fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` lovas bónusz járul
+- [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
 
 ---
 ### 3. fok
@@ -41,9 +45,24 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Ügyesség: `+3`
 - Önuralom: `+1`
 - Érzékenység: `+1`
-- Lovaglás - `9.szint`
+- Lovaglás - `12.szint`
 
-🌟 **Hatás**: A bónuszok `1:1`-ben hozzáadódnak a fegyveres harcértékeidhez. [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
+🌟 **Hatás**:
+- fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` lovas bónusz járul
+- [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
+
+### 4. fok
+
+🔒 **Követelmény**:
+- Ügyesség: `+3`
+- Önuralom: `+1`
+- Érzékenység: `+1`
+- Lovaglás - `12.szint`
+
+🌟 **Hatás**:
+- fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` lovas bónusz járul
+- [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
+
 
 <br />
 
