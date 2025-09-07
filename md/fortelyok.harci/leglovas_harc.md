@@ -10,7 +10,7 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: A bónuszok nem adódnak hozzá, de `3.szint` alatti Légovaglás esetén elszenvedi a harcmodor szokásos harcérték büntetéseit
+🌟 **Hatás**: Függetlenül a **Léglovaglás** képzettség szintjétől, elszenveded `0.szintű` harcmodor szokásos harcérték büntetéseit
 
 ---
 ### 1. fok
