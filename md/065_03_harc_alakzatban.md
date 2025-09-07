@@ -296,9 +296,8 @@ Minden szabály ugyanaz, mint a fent leírtak, kivéve az alábbiak:
 
 VÉ csökkentés/kör: 2
 
-+1 VÉ csökkentés   (⭕k20)
-  túlerő személyenként
-  (max: +5-ig)
++1 VÉ csökkentés / +3 ember
+  (max: +5 VÉ)
 ```
 
 ---
