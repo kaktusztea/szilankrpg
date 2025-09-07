@@ -63,10 +63,10 @@ A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/ha
 
 <!-- tag: md_table_haritofegyver_start -->
 
-| Hárítófegyver     | Forgatás módja | SP  | Erőbónusz limit | Sebzés módja | Átütés | Íves | MK  | KF  | Pengehossz | TÉ  | VÉ  | Sebesség | Kategória | Speciális  |     |     |     |     |     |     |     |     |     |
-| ----------------- | :------------: | :-: | :-------------: | :----------: | :----: | :--: | :-: | :-: | :--------: | :-: | :-: | :------: | :-------: | ---------- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Hárító: Alkarvédő |    egykezes    | `-` |       `0`       |     `-`      |  `0`   | `0`  | `0` | `0` |    `0`     | `0` | `0` | `3/2/0`  |   `99`    | közelharci |     |     |     |     |     |     |     |     |     |
-| Hárító: Tonfa     |    egykezes    | `-` |       `0`       |     `-`      |  `0`   | `0`  | `0` | `0` |    `0`     | `0` | `0` | `3/2/0`  |   `99`    | közelharci |     |     |     |     |     |     |     |     |     |
+| Hárítófegyver     | TÉ  |   VÉ    |  SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória  | Speciális |
+| ----------------- | :-: | :-----: | :--: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :--------: | --------- |
+| Hárító: Alkarvédő | `0` | `3/2/0` | `-`  |   `99`   |     `-`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci |           |
+| Hárító: Tonfa     | `0` | `3/2/0` | `-3` |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci |           |
 
 <!-- tag: md_table_haritofegyver_end -->
 
