@@ -127,7 +127,7 @@ Csámpa
 
 ```
 +6: legalacsonyabb Alakzatharc szint
-+2: bónusz (Borz, Vezető: Alakzatparancsnok (1.fok))
++2: bónusz (Borz, Vezető: Alakzatparancsnok (1))
 +4: MIN(2; 2; 2; 2) x 2
 ```
 <br />
@@ -197,12 +197,12 @@ Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix ért
 5 VÉ: +2 penge különbség (alakzaté)
 ```
 
-#### Túlerő módosítója
+### Túlerő módosítója
 
 ```
 VÉ csökkentés
 
-+0 VÉ: 3 fő
++0 VÉ: 3 fő (legkisebb Alakzat)
 +1 VÉ: 5+ fő
 ```
 

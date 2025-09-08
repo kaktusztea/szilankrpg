@@ -16,7 +16,6 @@ Fémalapanyag
    fém vérteknél: milyen fémből készült
 ```
 
-
 ###  MGT
 
 ```

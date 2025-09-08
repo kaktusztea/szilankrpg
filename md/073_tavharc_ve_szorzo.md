@@ -33,8 +33,8 @@ Célpont mozgás jellege
     Ezt is a Méret módosító
     értékénél szimuláljuk
 4x: Sikertelenül szándékosan kitérő célpont
-    Rontott Gyorsaságpróba után
-    a lövész célzó dobást tesz
+    Rontott Célpont-Gyorsaságpróba után
+    a Lövész Célzó dobást tesz
 ```
 
 
