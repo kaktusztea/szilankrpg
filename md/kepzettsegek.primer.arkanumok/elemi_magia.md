@@ -147,27 +147,32 @@ Ha az idézett forma közelharcba kezd az áldozattal, `TÉ` jellemzőt nyer. Il
 Lassú mozgatás
 (Kocogó ember sebessége)
   +Komplexitás: +3
-  TÉ=15; VÉ=40*  ⭕k20
+  KÉ=10
+  TÉ=10; VÉ=30*
 
 Átlagos mozgatás
 (Sprintelő ember sebessége)
   +Komplexitás: +6
-  TÉ=25; VÉ=50*  ⭕k20
+  KÉ=15
+  TÉ=20; VÉ=40*
 
 Gyors mozgatás,
 Mágikus lövedék I.
   +Komplexitás: +9
-  TÉ=35; VÉ=60*  ⭕k20
+  KÉ=20
+  TÉ=30; VÉ=50*
 
 Nagyon gyors mozgatás,
 Mágikus lövedék II.
   +Komplexitás: +12
-  TÉ=45; VÉ=70*  ⭕k20
+  KÉ=25
+  TÉ=40; VÉ=60*
 
 Nagyon gyors mozgatás,
 Mágikus lövedék III.
   +Komplexitás: +15
-  TÉ=55; VÉ=80*  ⭕k20
+  KÉ=30
+  TÉ=60; VÉ=80*
 ```
 
 🔆Fontos: az idézett forma `TÉ/VÉ` értéke nem lehet nagyobb a varázsló harcértékeinél - kivéve, ha mentálisan összeköt egy képzettebb harcost a varázslattal. Az ilyesmi már igazán magas szintű mágiának számít.
@@ -200,7 +205,7 @@ A fenti példánál az ez `3`, mert annyira „nyújtja ki” a varázsló.
 Komplexitás = 13
   + 4 (gömb)
   + 9 (gyors)
-TÉ=100 ⭕k20
+TÉ=30
 ```
 
 ---
@@ -214,7 +219,7 @@ Komplexitás = 18
 
 (+3: plusz fejenként)
 
-TÉ=100 ⭕k20
+TÉ=30
 ```
 
 A sárkány irányításához **Összpontosítás** próba is dobatható (KM határozza meg a célszámot)
@@ -227,8 +232,10 @@ Komplexitás = 14
 6: Szabad forma
 8: Villámgyors
 
-TÉ = 150 ⭕k20
+TÉ = 60
 ```
+
+
 
 <br />
 
