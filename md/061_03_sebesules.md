@@ -45,9 +45,11 @@ TÉ levonás enyhítése
 6.szint:  2 TÉ enyhítés
 8.szint:  3 TÉ enyhítés
 10.szint: 4 TÉ enyhítés
-12.szint: 5 TÉ enyhítés
-14.szint: 6 TÉ enyhítés
-15.szint: 7 TÉ enyhítés
+11.szint: 5 TÉ enyhítés
+12.szint: 6 TÉ enyhítés
+13.szint: 7 TÉ enyhítés
+14.szint: 8 TÉ enyhítés
+15.szint: 9 TÉ enyhítés
 ```
 
 ### `S4` kategóriás fájdalomtűrés
