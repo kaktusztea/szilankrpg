@@ -10,7 +10,7 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 <br />
 
-##---
+---
 ### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖

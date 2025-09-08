@@ -11,32 +11,59 @@ A lehető legátlagosabb sodronying, fejen (sisak) és lábszárakon **kívül**
 
 Tehát a lefedettség **80%**: mellkas (50%), felkar (10%), alkar (10%), combok (10%).
 ### SFÉ
-- Struktúra: Sodronying
-- Alap SFÉ: `8` / `13` / `5` / `15`
-- Anyagminőség átlagos: `+0 SFÉ`
-- Fémalapanyag: Acél: `+0 SFÉ`
-- **Végső SFÉ**: `8` / `13` / `5` / `15 SFÉ`
+
+```
+Struktúra: Sodronying
+Alap SFÉ: 8 / 13 / 5 / 15
+Anyagminőség átlagos: +0 SFÉ
+Fémalapanyag: Acél:   +0 SFÉ
+
+Végső SFÉ: 8 / 13 / 5 / 15
+```
 
 ### MGT
 
-- Struktúra: Sodronying
-- Kidolgozottság gyenge (nem az alapanyag, az elkészítés gyenge!)
-- Alap MGT: `13` (Lánc/Sodrony)
-- Kidolgozottság: Nem merev, fém (II.kat) / Gyenge munka → `+3` MGT / tag
-- Védett terület: mellkas, felkar, alkarok, combok → `4` db tag
-- Karakter Erő tulajdonsága legyen: `+2` → (`2 x 2 = 4` MGT csökkentés)
+```
+→ Struktúra: Sodronying
+→ Kidolgozottság gyenge
+  (nem az alapanyag, az elkészítés gyenge!)
+→ Alap MGT: 13 (Lánc/Sodrony)
+→ Kidolgozottság: +3 MGT / tag
+  Nem merev, fém / Gyenge munka
+→ Védett terület: 4 db tag
+  mellkas, felkar, alkarok, combok
+→ Erő MGT csökkentése: +2
+  (4 = (2 x 2 Erő))
 
-Összesen tehát: `13  +  (4 x 3)  -  (2 x 2) = 21 MGT`
+Össz MGT: 21
+  + 13
+  + (4 x 3)
+  - (2 x 2)
+```
+
 
 ### Ár
 
-- Alap:
-	- Struktúra: Sodrony: `10x`
-	- Anyagminőség átlagos: `1x`
-	- Kidolgozottság „gyenge”: `0,5x`
-- Mellvért ár : `10x x 1x x 0,5  =  5x`
-- Így `1 db` tag ára: `5x / 5) = 1x`
-- Végleges ár: `5x + (3 x 1x) = 8x`, azaz egy átlagos bőr mellvért darab nyolcszorosába kerül a fenti teljes páncél-kombó (csak `3` taggal szoroztunk, mert a mellvért-darabot már beleszámoltuk).
+```
+Torzó: 5x ár
+→  10x (Struktúra Sodrony)
+→   1x (Anyagminőség)
+→ 0,5x (Kidolgozottság „gyenge”)
+
+(10x x 1x x 0,5)
+```
+
+```
+1 db tag ára: 1x
+  (5x / 5)
+```
+
+```
+Végleges ár: 8x
+  (5x + (3 x 1x))
+```
+
+Azaz egy átlagos bőr mellvért darab nyolcszorosába kerül a fenti teljes páncél-kombó (csak `3` taggal szoroztunk, mert a torzó-darabot már beleszámoltuk).
 
 ---
 ## ⚡Példa 2: Legvacakabb teljes lemezvért
@@ -46,34 +73,59 @@ Tehát a lefedettség **80%**: mellkas (50%), felkar (10%), alkar (10%), combok 
 Mindent lefed (100%).
 ### SFÉ
 
-- Struktúra: Lemezpáncél
-- Alap SFÉ: `15 / 18 / 10` / `20`
-- Anyagminőség leggyengébb: `SFÉ:-2`
-- Fémalapanyag: Bronz: `SFÉ:-3`
-- **Végső SFÉ**:  `10 / 13 / 5` / `15`
+```
+→ Struktúra: Lemezpáncél
+→ Alap SFÉ: 15 / 18 / 10 / 20
+→ Anyagminőség leggyengébb: SFÉ:-2
+→ Fémalapanyag: Bronz: SFÉ:-3
+
+Végső SFÉ:  10 / 13 / 5 / 15
+```
 
 ### MGT
 
-- Alap MGT:
-	- Struktúra: Lemez: `18`
-	- Fémalapanyag: Bronz: `6`
-- Kidolgozottság: Merev, fém (III.kat) / Pocsék munka → `+5` MGT / tag
-- Védett terület: mellkas, felkar, alkarok, combok, lábszárak, fej → `6` db tag
-- Karakter **Erő** tulajdonsága legyen: `+1` → (`2 x 1 = 2` MGT csökkentés)
+```
+→ Struktúra: Lemez: 18
+→ Fémalapanyag: Bronz: 6
+→ Alap MGT: 24 (bronz lemez)
+→ Kidolgozottság: +5 MGT / tag
+  Merev, fém / Pocsék munka
+→ Védett terület: 6 db tag
+  torzó, felkar, alkarok,
+  combok, lábszárak, fej
+→ Erő MGT csökkentése: +2
+  (2 = (2 x 1 Erő) )
 
-Összesen tehát: `(18 + 6)  +  (6 x 5)  –  (2 x 1) = 52 MGT`
+Össz MGT: 52
+  + 18 + 6
+  + (6 x 5)
+  - (2 x 1)
+```
 
 ### Ár
 
-- Alap:
-	- Struktúra: Lemez:`100x`
-	- Anyagminőség vacak: `0,1x`
-	- Kidolgozottság pocsék munka: `0,1x`
-	- Fémalapanyag: Bronz: `0,5x`
-- Mellvért ár: `100x x 0,1 x 0,1 x 0,5  =  0,5x`
-- Így 1 db tag ára: `0,5x / 5 = 0,1x`
-- Végleges ár: `0,5x + (0,1 x 5) = 1x`, azaz pontosan egy átlagos bőr mellvért árának megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó (csak 5 taggal szoroztunk, mert a mellvért-darabot már beleszámoltuk).
+```
+Torzó: 0,5x ár
+→  100x (Struktúra Lemez)
+→ 0,1x (Anyagminőség vacak)
+→ 0,5x (Kidolgozottság „pocsék”)
+→ 0,5x (Fémalapanyag: Bronz)
 
+(100x x 0,1x x 0,5 x 0,5)
+```
+
+```
+1 db tag ára: 0,1x
+  (0,5x / 5)
+```
+
+```
+Végleges ár: 1x
+  (0,5x + (0,1 x 5x))
+```
+
+ Azaz pontosan egy átlagos bőr mellvért árának megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó (csak 5 taggal szoroztunk, mert a torzó-darabot már beleszámoltuk).
+ 
 ---
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

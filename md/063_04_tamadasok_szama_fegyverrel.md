@@ -2,7 +2,8 @@
 
 ```
 Alapeset:
- fegyverek támadás száma: 1 / kör
+ fegyveres támadás száma:
+ 1 / kör
 ```
 
 Néhány kivételnél ez kevesebb. Lásd a [Fegyver](068_00_fegyverek.md) táblázatot!
@@ -33,9 +34,12 @@ Szintén minden fegyvernek van egy egyedi **Sebesség** értéke. Minél kisebb 
 Kézifegyvereknél az alábbi módon kategorizálunk, de ez csak irányadó, a konkrét értékeket lásd a [Fegyverek](068_00_fegyverek.md) fejezet táblázataiban:
 
 ```
-(6) rövid fegyverek            → 6 Sebesség pontonként nő 1-el a támadások száma
-(7) egykezes és szálfegyverek  → 7 Sebesség pontonként nő 1-el a támadások száma
-(8) kétkezes fegyverek         → 8 Sebesség pontonként nő 1-el a támadások száma
+Hány Sebesség pontonként kap +1
+  támadást a fegyveres
+
+6: rövid fegyverek
+7: egykezes és szálfegyverek
+8: kétkezes fegyverek
 ```
 
 <br />
@@ -56,14 +60,16 @@ Plusz támadások (db) =
 ### TÉ levonás támadásonként
 
 ```
-TÉ:-20 a 2. támadástól kezdődően
-  aktuális Támadó Értékre.
+TÉ:-4
+
+2.támadástól kezdődően
+  minden további támadásra
   NEM Additív.
 ```
 
 ```
-Második támadás: TÉ:-20
-Harmadik támadás: TÉ:-20
+Második támadás: TÉ:-4
+Harmadik támadás: TÉ:-4
 ...
 ```
 
@@ -74,13 +80,16 @@ A fenti módosítóknak matematikai oka van: így kerüljük el a plusz kapott t
 ---
 ### ⚡Példa több támadásra
 
-- Fegyver: Hosszú kard: `Sebesség: 7`
-- Harcmodor: `Kardvívás – 5.szint`
-- Gyorsaság tulajdonság: `+3`
+```
+Harckeret = 8
+  5: Kardvívás szintje
+ +3: Gyorsaság
 
-Ekkor az aktuális **Harckeret** érték:  `5+3 = 8`
+Fegyver: Hosszú kard
+  Sebesség: 7
+```
 
-Mivel ez elérte a`7`-es értéket, ezért `+1` támadás – összesen tehát már `2 db` jár körönként. A `3.` támadást `14`-es, a `4.` támadást pedig `21`-es **Harckeret** értéknél kapja meg.
+Mivel a Harckeret elérte a fegyver `7`-es Sebesség értéket, ezért `+1` támadás – összesen tehát már `2 db` jár körönként. A `3.` támadást `14`-es, a `4.` támadást pedig `21`-es **Harckeret** értéknél kapja meg.
 
 ---
 

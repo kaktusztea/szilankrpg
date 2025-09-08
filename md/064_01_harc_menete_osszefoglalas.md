@@ -71,8 +71,7 @@ k20 dobás
 ```
 Minden újabb támadás a körben:
 
-  TÉ:-4 a 2. támadástól kezdődően
-  aktuális Támadó Értékre.
+TÉ:-4 minden további támadásra.
   NEM Additív.
 
 Sebzés jellege: elsődleges sebzési
@@ -95,7 +94,7 @@ Előnyös/hátrányos helyzetű harcos:
 "k20T" rövidítés == k20 tízes része
 
 Példák:
-5 → 0
+5  → 0
 16 → 1
 20 → 2
 ```
@@ -103,28 +102,28 @@ Példák:
 #### [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
 ```
-VÉ csökkentés:
+VÉ csökkentés
   1 + k20T
 ```
 
 #### [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
 
 ```
-Mindkét fél csökkent:
+Mindkét fél csökkentése
   2 + k20T
 ```
 
 #### [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
 
 ```
-VÉ csökkentés:
+VÉ csökkentés
   2 + k20T
 ```
 
 #### [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
 
 ```
-VÉ csökkentés:
+VÉ csökkentés
   3 + k20T
 ```
 

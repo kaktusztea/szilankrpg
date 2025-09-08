@@ -99,23 +99,37 @@ Az alábbi példa Lord Gustav – Domvik lovagjának – egészség kategóriái
 Ebben az esetben az ő Életerő táblázata a következőképpen néz ki: minden oszlopba `4` - `4` `ÉP` kerül (`17 / 4` kerekítve). A maradék `1 ÉP`-t pedig balról jobbra „osztjuk el”, tehát az `S1` oszlopba kerül.
 
 Sebek jellegének jelölései:
-- **S: Szúrt seb**
-- **V: Vágott seb**
-- **Z: Zúzott seb**
-- **F: FP**
+
+```
+S: Szúrt seb
+V: Vágott seb
+Z: Zúzott seb
+F: FP
+```
 
 ![](images/03_eletero_lord_gustav.png)
 
-**`S1`**\
+```
+S1
+```
 Találat esetén a sebesülést először az `S1` rubrikában kezdjük jelölni, oszlopon belül pedig fentről lefelé. Ha Lord Gustav egy `2 ÉP`-s sebet kap, az az `S1` oszlopban kerül bejelölésre fentről lefele. Ilyenkor még nem sújtja levonás.
 
-**`S2`**\
+```
+S2
+```
+
 Gustav ismét megsebesül. Ezúttal `5 ÉP`, ezzel az `S2` kategóriába kerül. Mivel a `Fájdalomtűrés` `4` ponttal mérsékli a standard `S2`-nél használt (`TÉ:-3`) büntetést, ezért még itt sincs `TÉ` levonás.
 
-**`S3`**\
+```
+S3
+```
+
 A harmadik seb `4 ÉP`, Gustav a harmadik (közepesen sérült) kategóriába kerül. Alapból (`TÉ:-6`) lenne a büntetés, de ez (`TÉ:-2`)-re mérséklődik.
 
-**`S4`**\
+```
+S4
+```
+
 Gustav hátrálás közben belefejel a kovácsoltvas kapuba. `4 FP` a büntetése. Ezzel az `S4` (utolsó) kategóriába került. Büntetése `TÉ:-5` (a `-9` helyett).
 
 Mivel `S4` kategóriába került, jön az [automatikus Fájdalomtűrás próba](#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s) `12` (Nehéz) ellen **Edzettség** Tulajdonsággal. Ha elrontja, akkor el is ájul.

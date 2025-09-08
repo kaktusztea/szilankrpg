@@ -31,14 +31,14 @@ Mivel nem fáradnak szellemileg, legfeljebb ideiglenes hátrányba kerülnek, ez
 ---
 ### Szörnyek, túlvilági lényeg VÉ regenerációja harc közben
 
-A fenti kreatúrák közül több is képes harc közben Védő Értékének részleges, vagy teljes visszanyerésére.
+A fenti kreatúrák közül több is képes harc közben `Védő Értékének` részleges, vagy teljes visszanyerésére.
 
 Ez több kategóriára egyszerűsítettük:
 
 - `1.` [Harcos elme](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.harci/harcos_elme.md) fortély valamelyik fokával azonos hatás
 - `2.` Teljes VÉ regeneráció: minden kör elején visszaáll a teljes `VÉ`, kivéve az `ÉP` sebből kapott `VÉ` levonás
-- `3.` `ÉP` is regenerálódik (pl. vámpír). Ekkor a `2.` ponton túl az `ÉP`-ből kapott `VÉ` levonást is visszakapja minden kör elején
-- `4.` Életerő regeneráló varázslatok, zónák. Például Nekromancia varázslat zóna, ahol az élőholtak folyamatosan regenerálódnak (`ÉP` és `VÉ`)
+- `3.` `ÉP` is regenerálódik (pl. vámpír). Ekkor a `2.` ponton túl az `ÉP`-ből kapott `VÉ` levonást is visszakapja minden kör elején (csak amennyit regenerálódott)
+- `4.` Életerő regeneráló varázslatok, zónák. Például Nekromancia varázslat zóna, ahol az élőholtak folyamatosan regenerálódnak (`ÉP` és `VÉ`) valamilyen mértékben.
 
 ---
 

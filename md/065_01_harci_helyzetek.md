@@ -321,9 +321,9 @@ Mindenkinek, aki csúszós talajon harcol `Hátrány-1` jár `TÉ` dobására. A
 ## Elvesztett egyensúly
 
 ```
-- Hátrány-1: TÉ dobásra
-- Többszörös támadás elvesztése
-- Mozgás - lassulás
+→ Hátrány-1: TÉ dobásra
+→ Többszörös támadás elvesztése
+→ Mozgás - lassulás
 ```
 
 A hatások alapból a kör végéig tart, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
@@ -335,7 +335,7 @@ A hatások alapból a kör végéig tart, kivéve, ha azonnal sikeres [Akrobatik
 
 ```
 Lopakodás/rejtőzés
-  vs
+   vs
 Észlelés
 ```
 
@@ -460,25 +460,39 @@ Védekező Pajzs `VÉ` csak akkor számít, ha a pajzsot tartó kéz felőli old
 
 Fegyvered legalább `1 pengével` rövidebb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1` + `k20` tízes része (`0;1;2`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
+
+```
+1 + k20 tízes része (0;1;2)
+```
 
 ## Fegyverméret - Azonos
 
 Fegyvered és ellenfeled fegyverméret különbsége kisebb, mint `1 penge`.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tízes része  (`0;1;2`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
+```
+2 + k20 tízes része (0;1;2)
+```
 ## Fegyverméret - 1 pengés előny
 
 Fegyvered legalább `1 pengével` hosszabb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2` + `k20` tízes része  (`0;1;2`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
+```
+2 + k20 tízes része (0;1;2)
+```
 ## Fegyverméret - 2 pengés előny
 
 Fegyvered legalább `2 pengével` hosszabb ellenfeledénél.
 
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3` + `k20` tízes része  (`0;1;2`)
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
+
+```
+3 + k20 tízes része (0;1;2)
+```
 
 <br />
 
@@ -486,8 +500,8 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3` 
 ## Földön fekve
 
 ```
-- Hátrány-2 TÉ dobásra
-- VÉ veszteség duplázódik
+Hátrány-2 TÉ dobásra
+VÉ veszteség duplázódik
 ```
 
 Földről támadni sokkal nehezebb és a kitérés is energiaigényesebb.
@@ -535,8 +549,8 @@ A védekező karakter pajzsának `VÉ` értéke NEM számít.
 ## Helyhez kötve
 
 ```
-- Hátrány-1 TÉ dobásra
-- VÉ veszteség duplázódik
+Hátrány-1 TÉ dobásra
+VÉ veszteség duplázódik
 ```
 
 Ha a karakter helyhez kötve kénytelen harcolni, akkor jelentős hátránnyal teheti csak ezt.
@@ -575,22 +589,47 @@ Példák:
 ---
 ## Láthatatlanul
 
-Hallható láthatatlan ellenfél
-- Láthatatlan Támadó:
-  - `Előny+1` Támadó dobásra
-  - VÉ csökkentés: fixen `3`
-- Védő: `Hátrány-1` Támadó dobásra
+### Hallható láthatatlan ellenfél
 
-Teljesen csendes láthatatlan ellenfél
-- Láthatatlan Támadó:
-  - `Előny+2` Támadó dobásra
-  - VÉ csökkentés: fixen `3`
-- Védő: `Hátrány-2` Támadó dobásra
+```
+Láthatatlan Támadó
 
-[Vakharc](fortelyok.harci/vakharc.md) hatása Védő oldalán:
-- `1.fok`: megszűntet `1` Hátrány védő `TÉ`-re
-- `2.fok`: megszűntet `1` Előnyt a támadó `TÉ`-re, 1 Hátrány védő `TÉ`-re
-- `3.fok`: nullázza a Támadó összes előnyét és a összes Védő Hátrányát
+Előny+1 Támadó dobásra
+VÉ csökkentés: fixen 3
+```
+
+```
+Védő
+
+Hátrány-1 Támadó dobásra
+```
+
+### Teljesen csendes láthatatlan ellenfél
+
+```
+Láthatatlan Támadó
+
+Előny+2 Támadó dobásra
+VÉ csökkentés: fixen 3
+```
+
+```
+Védő
+
+Hátrány-2 Támadó dobásra
+
+Vakharc hatása:
+ 1.fok: megszűntet
+   1 Hátrányt védő TÉ-re
+2.fok: megszűntet
+   1 Előnyt támadó TÉ-re
+   1 Hátrányt védő TÉ-re
+3.fok: nullázza a
+   Támadó összes előnyét
+   Védő összes Hátrányát
+```
+
+→ [Vakharc](fortelyok.harci/vakharc.md)  fortély
 
 Megjegyzés: Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ellen.
 
@@ -676,7 +715,9 @@ Példák: Gólem: `+1`; Sárkány: `+2 VÉ csökkentés`
 ## Pusztakezes harc
 
 ```
-Puszta kéz harcértékei: KÉ: -3, TÉ: -3, VÉ: -3
+Puszta kéz harcértékei
+
+KÉ: -3, TÉ: -3, VÉ: -3
 ```
 
 Amennyiben valaki fegyvertelenül, puszta kézzel kénytelen egy felfegyverzett ellenféllel harcolni, akkor alapesetben hátrányban van. Ez a [Puszta kéz](068_02_kozelharci_fegyverek.md) negatív harcértékeiben mutatkozik meg. A különböző pusztakezes Fortélyok csak mérsékelik ezt a hátrányt. Egyetlen kivétel a harcművészek [Élő fegyver](fortelyok.slan/elo_fegyver.md) fortélya, amely mérsékeli az említett hátrányokat.
@@ -740,8 +781,8 @@ Fegyvered nem erre a sebzési típusra lett kialakítva. Például "Hosszú kard
 ## Sötét: Félhomály
 
 ```
-- Hátrány-1: TÉ dobásra
-- Érzék(látás) - részleges
+Hátrány-1 TÉ dobásra
+Érzék(látás) - részleges
 ```
 
 Félhomályban kockázatosabb védekezni, a fegyverek mozgása nehezebben látható. Mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol.
@@ -754,8 +795,8 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 ## Sötét: teljes, zajokkal
 
 ```
-- Hátrány-1: TÉ dobásra
-- Érzék(látás) - teljes
+Hátrány-1 TÉ dobásra
+Érzék(látás) - teljes
 ```
 
 Sötétben ugyan a támadás sikere drasztikusan lecsökken és mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol...
@@ -770,8 +811,8 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 ## Sötét: teljes, csendben
 
 ```
-- Hátrány-2: TÉ dobásra
-- Érzék(látás) - teljes
+Hátrány-2 TÉ dobásra
+Érzék(látás) - teljes
 ```
 
 Sötétben a támadás sikere drasztikusan lecsökken. Mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol.
@@ -784,31 +825,36 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 ## Tűz ruhán - ég
 
 ```
-- Hátrány-1 Támadó dobásra
-- (-5) SP / kör
+Hátrány-1 Támadó dobásra
+(-5) SP / kör
 ```
 
 Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
 
 ### ✖️ Megszűntetése (eloltás)
 
-- Harcban: `1 kör`
-- Harcon kívül: `1 kör`
+```
+Harcban: 1 kör
+Harcon kívül: 1 kör
+```
 
 ---
 ## Tűz ruhán - lángol
 
 ```
-- Hátrány-2 Támadó dobásra
-- (+0) SP / kör
+Hátrány-2 Támadó dobásra
+(+0) SP / kör
 ```
 
 Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
 
 ### ✖️ Megszűntetése (eloltás)
 
-- Harcban:  Nem lehetséges
-- Harcon kívül:  `2 kör`, külső segítség szükséges
+```
+Harcban: Nem lehetséges
+Harcon kívül: 2 kör,
+  külső segítség szükséges
+```
 
 <br />
 
@@ -839,8 +885,8 @@ Figyelem: ha a védekező mozgásában korlátozottá válik a körülötte lev�
 ## Védő Érték kiterjesztése másra
 
 ```
-- Többszörös támadás elvesztése
-- VÉ veszteség duplázódik
+Többszörös támadás elvesztése
+VÉ veszteség duplázódik
 ```
 
 Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de ilyenkor csak egyet támadhatsz a körben és az elszenvedett VÉ csökkenéseid is duplázódnak.
@@ -853,14 +899,14 @@ A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fort
 ## Vér elvakít
 
 ```
-- Érzék (Látás) - zavart
-- Hátrány-1: Támadó dobás
+Hátrány-1 Támadó dobásra
+Érzék (Látás) - zavart
 ```
 
 Szemedbe folyik a vér, korlátoz a látásban és a harcban.
 ### Megszűntetése
 
-Harcban: `1` akció felhasználásával kitörölheted a szemedből a vért, ez `1` támadás kihagyását jelenti
+Harcban: `1` Akció felhasználásával kitörölheted a szemedből a vért, ez `1` támadás kihagyását jelenti
 
 <br />
 

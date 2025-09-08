@@ -31,7 +31,7 @@ Ha az így érkező támadás találat (nem kell, hogy valós sebzést is okozzo
 ## ⚜️`2.` Végrehajtás (V)
 
 ```
-TÉ+4 + k10  vs  VÉ
+(TÉ +4 + k10)  vs  VÉ
 ```
 
 Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékkel, melyhez `TÉ:+4` módosító járul. Ha ez a támadás sikeres, akkor jöhet még opcionálisan az Ellenpróba fázis. Ha minden fázis sikeres, akkor a Manőver is sikeres. Ne feledjük, hogy a `TÉ` értékébe beleszámít az esetleges több támadás levonása is (`-4` támadásonként)!

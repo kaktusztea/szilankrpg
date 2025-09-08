@@ -71,15 +71,31 @@ Gyakori eset, hogy valakinek ráhúznak egy nagyot a fejére. Például sisakos 
 
 Cravignon rossz napja kezdetén rossz embernek, az elöljáró élénkítőszereket előszeretettel magába tömő testőrének szólt be a hétvégi körmeneten, mikor az áttiport a lovag lábán. A jó lovag foghegyről odavetett szitkozódása a kántálásban beállt lélegzetvételnyi szünetben szisszent ki fogainak kerítésén. A testőr - ki lábát taposta imént - ezt hallván egy gyors fordulat után méretes öklével vágott Cravignon bal vállába.
 
-- Cravignon `ÉP: 14`
-- Testőr Erő: `+2`
-- Testőr, Puszta kéz sebzése: `k20 - 5 FP + 2 (Erőbónusz)`
-- `1. Sebzés`: `19-5+2 = 14 SP` → `6`, azaz `5 FP és 1 ÉP`
+```
+Cravignon
+  ÉP: 14
+
+Testőr
+  Erő: +2
+  Puszta kéz sebzése:
+    k20 - 5 FP + 2 (Erőbónusz)
+```
+
+```
+1. Sebzés
+  19-5+2 = 14 SP
+  14 SP → 6
+  (azaz 5 FP és 1 ÉP)
+```
 
 Ezzel Cravignon már `S2` kategóriába került. Csillagokat lát a vállába hasító tompa, de brutális ütéstől. Lustán előrekaszál, de elvéti és ellenfele ismét betalál. Ezúttal gyomorszájon találják. Sziszegve szökik ki száján a levegő.
 
-- `2. Sebzés`: `9 SP` → `3 FP`
-- ezzel már `9 db` rubrika lett bejelölve a lovag Életerő táblázatában. `S3` kategóriában van. Még `2` rubrika és `S4`-be kerül.
+```
+2. Sebzés
+  9 SP → 3 FP
+```
+
+Ezzel már `9 db` rubrika lett bejelölve a lovag Életerő táblázatában. `S3` kategóriában van. Még `2` rubrika és `S4`-be kerül.
 
 Szerencséjére a testőr elégnek találja a megtorlást és felzárkózik gazdája mellé. Cravignon kivonszolja magát a kocsma mellé és lerogy a lépcsőre.
 

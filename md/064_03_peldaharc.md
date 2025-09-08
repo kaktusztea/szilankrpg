@@ -207,7 +207,7 @@ Lord Gustav VÉ: 34
 Tetves nyeri a kezdeményezést, viszont **Támadó dobása** csak `3` (összesen: `38`!), ami még így is bőven talál (!) (tekintve, hogy a lovag `VÉ`-je csak `34` a Támadó taktika miatt), viszont sebzésnek `2`-t dob `k20`-on. Mivel `4`-gyel többel ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+3 SP` jár, így a vége: `7 SP`... amit Gustav láncinge (`Szúró SFÉ:8`) pont teljesen felfog (**páncéldobása** sikeres (`3`) volt)!
 
 ```
-TÉ:35+3 = 38
+TÉ = 38 (35+3)
 Tetves Sebzés dobás:
  → k20(2) + 1(tőr) + 4
  → 7 SP
@@ -232,7 +232,9 @@ Tetvesnek nincs vértje, ezért a `21 SP` teljesen beszámít → `11 ÉP` és `
 Míg Gustav 3 sebet (`11 ÉP`) is elviselt és talpon maradt, addig a gyengébb fizikumú Tetves ennyitől már kidől. `3 ÉP`-je maradt, Fájdalomtűrés próbát dob `12` ellen...
 
 ```
-Fájdalomtűrés (K) + Edzettség (T)  vs.  12 (Nehéz)
+Fájdalomtűrés (K) + Edzettség (T)
+           vs.
+       12 (Nehéz)
 ```
 
 ... de elvéti és eszméletlenül rogy össze, miután értetlenül bámul a hasából kimeredő kardra. Ha nem látják el, szép lassan elvérzik.

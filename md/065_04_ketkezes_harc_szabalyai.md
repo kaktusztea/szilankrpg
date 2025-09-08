@@ -64,25 +64,31 @@ Ha a **Kétkezes harc** legalább `1.fokon` megvan, akkor a **Kétkezesség** me
 
 A `k20`-as sebződobással együtt dobunk `k6`-tal is:
 
-**azonos méretű fegyverek esetén**
-- `1-3`: gyengébb kéz fegyvere sebez
-- `4-6`: ügyesebb kéz fegyvere sebez
+#### Azonos méretű fegyverek esetén
 
-**nagy + kisebb fegyver esetén**
-- `1-2`: gyengébb kéz fegyvere sebez
-- `3-6`: ügyesebb kéz fegyvere sebez
+```
+1-3: gyengébb kéz fegyvere sebez
+4-6: ügyesebb kéz fegyvere sebez
+```
+
+#### Nagy + kisebb fegyver esetén
+
+```
+1-2: gyengébb kéz fegyvere sebez
+3-6: ügyesebb kéz fegyvere sebez
+```
 
 <br />
 
 ---
 ### ⚡Példa-1
 
-- Harc `2 db` tőrrel
-- Mivel „rövid” fegyverek, ezért hosszuk `0 pengének` számít.
-- `0+0=0 penge` így nincs Harckeret levonás:
-
-
 ```
+Harc 2 db tőrrel
+
+„Rövid” fegyverek → 0 pengehossz
+0+0=0 penge → nincs Harckeret levonás:
+
 1.fok:   +3 Harckeret
 2,3.fok: +6 Harckeret
 ```
@@ -92,8 +98,10 @@ A `k20`-as sebződobással együtt dobunk `k6`-tal is:
 Harc `2 db` szablyával (`1` pengés fegyverek)
 
 ```
-Össz hosszuk: 1 + 1 = 2 penge
-   →  (2 / 0,5) = 4 levonás
+Össz hosszuk 2 penge 
+ (1 + 1)
+
+→  (2 / 0,5) = 4 levonás
 ```
 
 Tehát a **Harckeret** `4`-gyel csökken. Bónuszok és levonások összege:

@@ -259,8 +259,10 @@ Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok 
 TÉ:+3 / VÉ:-6: Támadó taktika (fix)
 VÉ:+4 / TÉ:-8: Védő taktika (fix)
 TÉ:+4, VÉ:-8 : Roham taktika
-+2 VÉ csökkentés: Fárasztó taktika, nincs találat
-+5 VÉ csökkentés: Fárasztó taktika, lenne találat
++2 VÉ csökkentés:
+  Fárasztó taktika, nincs találat
++5 VÉ csökkentés:
+  Fárasztó taktika, lenne találat
 
 ```
 
@@ -292,7 +294,7 @@ Két Alakzat egymással való harcát is modellezzük - kis (`max 20 fő / Alakz
 Minden szabály ugyanaz, mint a fent leírtak, kivéve az alábbiak:
 
 ```
-1 támadás / kör mindkét alakzatnak
+1 tám/kör mindkét alakzatnak
 
 VÉ csökkentés/kör: 2
 

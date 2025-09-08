@@ -28,10 +28,10 @@ Az alábbiakban részletesen kifejtjük a fenti értékek kiszámítási módjá
 Első szinten minden karakter egységes konstans értékeket kap `KÉ`, `TÉ`, `VÉ` és `CÉ` értékére. Ehhez az alapértékhez adódnak majd hozzá az egyéb módosítók.
 
 ```
-KÉ konstans: 0
-TÉ konstans: 7
+KÉ konstans:  0
+TÉ konstans:  7
 VÉ konstans: 30
-CÉ konstans: -10
+CÉ konstans:-10
 ```
 
 ---

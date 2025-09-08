@@ -6,10 +6,13 @@ A harc során pajzsokkal növelhetjük védelmünket, de ennek is megvan a foná
 
 Lásd: [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 
-- Kis pajzs: `VÉ:3`
-- Közepes pajzs: `VÉ:10`, `Erő követelmény: +1`
-- Nagy pajzs: `VÉ:17`, `Erő követelmény: +2`
-
+```
+VÉ: +3 - Kis pajzs
+VÉ:+10 - Közepes pajzs
+         Erő: min +1
+VÉ:+17 - Nagy pajzs
+         Erő: min +2
+```
 🔆 A pajzs `TÉ` értéke kizárólag akkor használatos, ha kifejezetten a pajzzsal akarunk harcolni, mert mondjuk nincs főfegyver a másik kezünkben.
 
 <br />

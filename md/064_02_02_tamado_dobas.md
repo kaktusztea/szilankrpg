@@ -6,10 +6,10 @@ Támadó Érték + k20
 
 ```
 TÉ:-4
-  a 2. támadástól kezdődően
-  aktuális Támadó Értékre
-  (NEM Additív)
-
+  2.támadástól kezdődően
+  minden további támadásra.
+  NEM Additív.
+  
   2.tám: TÉ:-4
   3.tám: TÉ:-4, ...
 ```

@@ -14,6 +14,8 @@ Vannak olyan cselekedetek, amelyek 0 akciót igényelnek, például odakiáltani
 - Használni egy tárgyat
 - Fedezékbe húzódni
 
+Fontos, hogy egy harci körben legfeljebb `1` támadásodat válthatod át valamilyen egyéb - nem harci - cselekedetre.
+
 ---
 
 🔗 [Mozgás harc közben](063_03_mozgas_harc_kozben.md) →

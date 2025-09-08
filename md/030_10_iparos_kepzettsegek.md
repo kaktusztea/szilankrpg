@@ -14,40 +14,50 @@ Négy jellemző minőségi (Idea) szintet különböztetünk meg, amelyek megadj
 - **rutinmunka**: mindennapos munkád terméke
 - **gyors munka**: kapkodva összedobott munka
 
-#### `3.szint`
+```
+3.szint
 
-- maximum: `+1`
-- lelkiismeretes munka: `0`
-- rutinmunka: `-1`
-- gyors munka: `-2`
+maximum: +1
+lelkiismeretes munka: 0
+rutinmunka: -1
+gyors munka: -2
+```
 
-#### `6.szint`
+```
+6.szint
 
-- maximum: `+2`
-- lelkiismeretes munka: `+1`
-- rutin: `0`
-- gyors munka: `-1`
+maximum: +2
+lelkiismeretes munka: +1
+rutinmunka: +0
+gyors munka: -1
+```
 
-#### `9.szint`
+```
+9.szint
 
-- maximum: `+3`
-- lelkiismeretes munka: `+2`
-- rutin: `+1`
-- gyors munka: `0`
+maximum: +3
+lelkiismeretes munka: +2
+rutinmunka: +1
+gyors munka: +0
+```
 
-#### `12.szint`
+```
+12.szint
 
-- maximum: `+4`
-- lelkiismeretes munka: `+3`
-- rutin: `+2`
-- gyors munka: `+1`
+maximum: +4
+lelkiismeretes munka: +3
+rutinmunka: +2
+gyors munka: +1
+```
 
-#### `15.szint`
+```
+15.szint
 
-- maximum: `+5`
-- lelkiismeretes munka: `+4`
-- rutin: `+3`
-- gyors munka: `+2`
+maximum: +5
+lelkiismeretes munka: +4
+rutinmunka: +3
+gyors munka: +2
+```
 
 ---
 

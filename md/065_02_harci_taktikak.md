@@ -185,18 +185,26 @@ Akkor tudod alkalmazni, ha már legalább `3` támadásod van a körben.\
 <br />
 
 ⚡ `3` támadásod van, `1` támadást beáldozol, ekkor támadásaid így történnek:
-- `1.támadás`: Alap TÉ
-- `2.támadás`: Alap TÉ
+
+```
+1.támadás: Alap TÉ
+2.támadás: Alap TÉ
+```
 
 ⚡ `4` támadásod van, `1` támadást beáldozol, ekkor támadásaid így történnek:
-- `1.támadás`: Alap TÉ
-- `2.támadás`: Alap TÉ
-- `3.támadás`: `TÉ:-4`
+```
+1.támadás: Alap TÉ
+2.támadás: Alap TÉ
+3.támadás: TÉ:-4
+```
 
 ⚡ `5` támadásod van, `2` támadást beáldozol, ekkor támadásaid így történnek:
-- `1.támadás`: Alap TÉ
-- `2.támadás`: Alap TÉ
-- `3.támadás`: Alap TÉ
+
+```
+1.támadás: Alap TÉ
+2.támadás: Alap TÉ
+3.támadás: Alap TÉ
+```
 
 ---
 ### Kiváró Taktika
@@ -262,7 +270,8 @@ Sebzéskocka változik:
 TÉ:-3  →  k20 helyett k10
 TÉ:-6  →  k20 helyett k6
 TÉ:-9  →  nincs kockadobás
-           csak a fegyver alap sebzése
+          csak a fegyver
+          alap sebzése
 ```
 
 A [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka `3`-mel csökkenti a `TÉ` büntetést.
@@ -311,9 +320,9 @@ Cserébe **minden** támadásodnál az adott körben `1 VÉ csökkenést` szenve
 
 ```
 Első oda-vissza csapásnál:
-- TÉ:+4, VÉ:-8
-- VÉ csökkentés duplázódik (oda-vissza)
-- Sebzés: +5 SP (oda-vissza)
+→ TÉ:+4, VÉ:-8
+→ VÉ csökkentés duplázódik
+→ Sebzés: +5 SP
 ```
 
 ❌ Más taktikával együtt
@@ -335,11 +344,11 @@ Fontos, hogy Rohamnál is számítanak a fegyverméret kategóriák, tehát egy 
 
 ```
 Első oda-vissza csapásnál:
-- TÉ:+5, VÉ:-10
-- VÉ csökkentés duplázódik (oda-vissza)
-- Támadó TÉ büntetése sebesülésből
+→ TÉ:+5, VÉ:-10
+→ VÉ csökkentés duplázódik
+→ Támadó TÉ büntetése sebesülésből
   nem érvényesül
-- Sebzés: +7 SP (oda-vissza)
+→ Sebzés: +7 SP
 ```
 
 ❌ Más taktikával együtt

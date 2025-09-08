@@ -41,8 +41,6 @@ A másik felső korlát lehet az adott kultúra fejletlensége, vagy korlátai. 
 
 A `9.`, `12. és 15. szintek` kiemelt mérföldkövek a képzettségek esetében, itt már különleges bónuszok, feljebb félmágikus hatások tűnnek fel. Ezek leírását lásd minden esetben az adott képzettség leírásában.
 
-<br />
-
 ---
 
 🔗 [Képzettségszintek KP igénye](030_05_kepzettsegszintek_kp_igenye.md) →

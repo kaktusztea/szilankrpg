@@ -25,16 +25,16 @@ Alap célszám: `xy` ⭕TODO⭕
 
 
 ```
-- Alap célszám: 4 (átlagos)
+Alap célszám: 4 (átlagos)
 
-- Kis (fél) mennyiség: +1
-- Dupla mennyiség: -1
+Kis (fél) mennyiség: +1
+Dupla mennyiség: -1
 
-- Sűrű: +1
-  (azonos hatás, fele adagnál)
+Sűrű: +1
+(azonos hatás, fele adagnál)
 
-- Színtelen: +1
-- Szagtalan: +1
+Színtelen: +1
+Szagtalan: +1
 ```
 
 

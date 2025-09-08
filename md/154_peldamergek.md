@@ -3,11 +3,11 @@
 ### ⚡ **Lórúgás (brutálisan erős altató - italméreg)**
 
 ```
-- Erősség: 10 (a legerősebb)
-- Hatás max súlyossága: 1 (alvás)
-- Meddig áll el: +4 (1 nap folyadékban)
-- Hatóidő: +5 (azonnal)
-- 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
+→ Erősség: 10 (a legerősebb)
+→ Hatás max súlyossága: 1 (alvás)
+→ Meddig áll el: +4 (1 nap folyadékban)
+→ Hatóidő: +5 (azonnal)
+→ 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
 ```
 
 ```
@@ -25,11 +25,11 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 ### ⚡ **Könycsepp a pengén (halálos fegyverméreg)**
 
 ```
-- Erősség: 6
-- Hatás max súlyossága: 5 (halál)
-- Meddig áll el: +2 (10 percig a pengére locsolva)
-- Hatóidő: +4 (gyors (10 szegmens)
-- 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
+→ Erősség: 6
+→ Hatás max súlyossága: 5 (halál)
+→ Meddig áll el: +2 (10 percig a pengére locsolva)
+→ Hatóidő: +4 (gyors (10 szegmens)
+→ 1 komponensű, 1 hordozó közeg, nem-sűrű: +0
 ```
 
 ```
@@ -47,13 +47,13 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 ### ⚡ **Múló évszakok (többkomponensű mesteri ital/légiméreg)**
 
 ```
-- Erősség: 5
-- Hatás max súlyossága: 5 (halál)
-- Meddig áll el: +6 (Örökké)
-- Hatóidő: +1 (fél nap múlva)
-- 3 komponensű, 2 hordozó közeg (levegő, folyadék), nem-sűrű: +4 +3 +0
-- Csak 1 komponensben van hatóanyag, a többi természetes: +3
-- Szagtalan/ízetlen: +3
+→ Erősség: 5
+→ Hatás max súlyossága: 5 (halál)
+→ Meddig áll el: +6 (Örökké)
+→ Hatóidő: +1 (fél nap múlva)
+→ 3 komponensű, 2 hordozó közeg (levegő, folyadék), nem-sűrű: +4 +3 +0
+→ Csak 1 komponensben van hatóanyag, a többi természetes: +3
+→ Szagtalan/ízetlen: +3
 ```
 
 ```

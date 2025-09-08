@@ -55,8 +55,6 @@ A Fegyverméret-kategóriák adta különbségek az **Ellenpróbánál** (`E`) m
 
 <br />
 
-<br />
-
 ---
 ## 🔆 Tanácsok KM részére új manőver létrehozásakor
 

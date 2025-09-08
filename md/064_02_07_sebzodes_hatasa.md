@@ -33,9 +33,12 @@ Random zúzódás, egyéb fizikai sérülések esetén a KM meghatároz egy sebz
 
 A különböző támadási módok ellen az élőholtak különféleképpen ellenállóak, ezt virtuális `SFÉ`-vel szimuláljuk:
 
-- Szúrófegyver `SFÉ`: `16`
-- Vágófegyver `SFÉ`: `8`
-- Zúzófegyver `SFÉ`: `0`
+
+```
+16: Szúró SFÉ
+ 8: Vágó SFÉ
+ 0: Zúzó SFÉ
+```
 
 ---
 

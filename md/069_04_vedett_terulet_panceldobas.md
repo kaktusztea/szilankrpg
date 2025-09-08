@@ -2,15 +2,19 @@
 
 
 ```
-Mellvért  
+Torzó  
   50% véd
   Csak torzót védi elöl,
   hátul, oldalt
+```
 
+```
 Sisak  
   10% véd
   A fejet védi
+```
 
+```
 Felkarok, alkarok,
 combok, lábszárak  
   +10%* véd
