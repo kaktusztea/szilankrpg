@@ -2,7 +2,7 @@
     {
         "Fegyver": "Bola",
         "CÉ": "2",
-        "Osztó": "2",
+        "Osztó": "1",
         "SP": "-",
         "Sebesség": "11",
         "Sebzés módja": "-",
@@ -16,7 +16,7 @@
     {
         "Fegyver": "Dárda",
         "CÉ": "4",
-        "Osztó": "3",
+        "Osztó": "2",
         "SP": "+3",
         "Sebesség": "9",
         "Sebzés módja": "S",
@@ -30,7 +30,7 @@
     {
         "Fegyver": "Dobócsillag",
         "CÉ": "1",
-        "Osztó": "2",
+        "Osztó": "1",
         "SP": "-3",
         "Sebesség": "5",
         "Sebzés módja": "S",
@@ -44,7 +44,7 @@
     {
         "Fegyver": "Dobóháló",
         "CÉ": "1",
-        "Osztó": "2",
+        "Osztó": "1",
         "SP": "-",
         "Sebesség": "11",
         "Sebzés módja": "-",
@@ -58,7 +58,7 @@
     {
         "Fegyver": "Elf íj",
         "CÉ": "7",
-        "Osztó": "5",
+        "Osztó": "4",
         "SP": "+4",
         "Sebesség": "7",
         "Sebzés módja": "S",
@@ -72,7 +72,7 @@
     {
         "Fegyver": "Fúvócső, kicsi",
         "CÉ": "4",
-        "Osztó": "3",
+        "Osztó": "2",
         "SP": "spec\\*",
         "Sebesség": "9",
         "Sebzés módja": "S",
@@ -86,7 +86,7 @@
     {
         "Fegyver": "Fúvócső, vadász",
         "CÉ": "5",
-        "Osztó": "4",
+        "Osztó": "3",
         "SP": "-10",
         "Sebesség": "10",
         "Sebzés módja": "S",
@@ -100,7 +100,7 @@
     {
         "Fegyver": "Hajítóbárd",
         "CÉ": "2",
-        "Osztó": "3",
+        "Osztó": "2",
         "SP": "+2",
         "Sebesség": "7",
         "Sebzés módja": "Z",
@@ -114,7 +114,7 @@
     {
         "Fegyver": "Hajítótőr",
         "CÉ": "3",
-        "Osztó": "3",
+        "Osztó": "2",
         "SP": "+0",
         "Sebesség": "6",
         "Sebzés módja": "S",
@@ -128,7 +128,7 @@
     {
         "Fegyver": "Hosszú íj",
         "CÉ": "6",
-        "Osztó": "4",
+        "Osztó": "3",
         "SP": "+3",
         "Sebesség": "8",
         "Sebzés módja": "S",
@@ -142,7 +142,7 @@
     {
         "Fegyver": "Kő",
         "CÉ": "2",
-        "Osztó": "2",
+        "Osztó": "1",
         "SP": "-10",
         "Sebesség": "6",
         "Sebzés módja": "Z",
@@ -156,7 +156,7 @@
     {
         "Fegyver": "Lasszó",
         "CÉ": "1",
-        "Osztó": "2",
+        "Osztó": "1",
         "SP": "-",
         "Sebesség": "10",
         "Sebzés módja": "-",
@@ -170,7 +170,7 @@
     {
         "Fegyver": "Parittya",
         "CÉ": "3",
-        "Osztó": "3",
+        "Osztó": "2",
         "SP": "+2",
         "Sebesség": "10",
         "Sebzés módja": "Z",
@@ -184,7 +184,7 @@
     {
         "Fegyver": "Ramiera",
         "CÉ": "1",
-        "Osztó": "2",
+        "Osztó": "1",
         "SP": "+0",
         "Sebesség": "7",
         "Sebzés módja": "S",
@@ -198,7 +198,7 @@
     {
         "Fegyver": "Rövid íj",
         "CÉ": "5",
-        "Osztó": "4",
+        "Osztó": "3",
         "SP": "+1",
         "Sebesség": "6",
         "Sebzés módja": "S",
@@ -212,7 +212,7 @@
     {
         "Fegyver": "Tőr",
         "CÉ": "2",
-        "Osztó": "2",
+        "Osztó": "1",
         "SP": "+0",
         "Sebesség": "7",
         "Sebzés módja": "S",
@@ -226,7 +226,7 @@
     {
         "Fegyver": "Visszacsapó íj",
         "CÉ": "5",
-        "Osztó": "4",
+        "Osztó": "3",
         "SP": "+4",
         "Sebesség": "8",
         "Sebzés módja": "S",
