@@ -43,14 +43,18 @@ Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász l�
 
 ---
 
+### Mágikus lövedékek
+
+🔆 Az Erőbónusz **nem** adódik hozzá a lövedékek **SP** értékéhez.
+
 <!-- tag: md_table_tavfegyver_start-->
 
-| Fegyver             | CÉ  | Osztó | SP  | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz | Átütés | Hatótáv | Speciális / Megjegyzés |
-| ------------------- | :-: | :---: | :-: | :------: | :----------: | -------------- | :-------: | :----: | :-----: | ---------------------- |
-| Mágikus lövedék I   | `1` | `0,5` |     |          |              |                |           |        |         |                        |
-| Mágikus lövedék II  | `2` |  `1`  |     |          |              |                |           |        |         |                        |
-| Mágikus lövedék III | `4` |  `2`  |     |          |              |                |           |        |         |                        |
-| Mágikus lövedék IV  | `6` |  `3`  |     |          |              |                |           |        |         |                        |
+| Fegyver             | CÉ  | Osztó |   SP   | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz | Átütés | Hatótáv | Speciális / Megjegyzés |
+| ------------------- | :-: | :---: | :----: | :------: | :----------: | -------------- | :-------: | :----: | :-----: | ---------------------- |
+| Mágikus lövedék I   | `1` | `0,5` | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
+| Mágikus lövedék II  | `2` |  `1`  | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
+| Mágikus lövedék III | `4` |  `2`  | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
+| Mágikus lövedék IV  | `6` |  `3`  | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
 
 <!-- tag: md_table_tavfegyver_end -->
 
