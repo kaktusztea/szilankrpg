@@ -8,9 +8,7 @@ Mágiatudóként nagyon kihegyezted magad a távolba direktben ható mágiákra,
 🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/harcmodor.md) - ⭕`6.szint`
 
 🌟 **Hatás**:
-- Ha [Mágikus célzás](../kepzettsegek.primer.harci/harcmodor.md) harcmodort használod mágiatudóként, akkor:
-- **Osztó**:`+1`, amikor [Mágikus lövedéket](../kepzettsegek.primer.arkanumok/elemi_magia.md#időtartam)  használsz.
-  - ⭕TODO: link update⭕
+- [Mágikus lövedék II](../068_08_lofegyverek.md) amit használsz célzásnál "fegyverként".
 
 ---
 ### 2. fok
@@ -18,8 +16,7 @@ Mágiatudóként nagyon kihegyezted magad a távolba direktben ható mágiákra,
 🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/harcmodor.md) - ⭕`9.szint` 
 
 🌟 **Hatás**:
-- Ha **Mágikus célzás** harcmodort használod mágiatudóként, akkor:
-- **Osztó**:`+2`, amikor Mágikus lövedéket használsz.
+- [Mágikus lövedék III](../068_08_lofegyverek.md) amit használsz célzásnál "fegyverként".
 
 ---
 ### 3. fok
@@ -27,8 +24,7 @@ Mágiatudóként nagyon kihegyezted magad a távolba direktben ható mágiákra,
 🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/harcmodor.md) - ⭕`9.szint` 
 
 🌟 **Hatás**:
-- Ha **Mágikus célzás** harcmodort használod mágiatudóként, akkor:
-- **Osztó**:`+3`, amikor Mágikus lövedéket használsz.
+- [Mágikus lövedék IV](../068_08_lofegyverek.md) amit használsz célzásnál "fegyverként".
 
 <br />
 

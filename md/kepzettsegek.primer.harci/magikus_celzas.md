@@ -1,6 +1,6 @@
-## 🔵 Mágikus lövészet
+## 🔵 Mágikus célzás
 
-Ez egy [Primer (harci) képzettség](../017_primer_szekunder_ismeretek.md).
+Ez egy [Primer (harci) képzettség](../017_primer_szekunder_ismeretek.md). Ez egy harcmodor.
 
 - Lásd: [STUDY: Mágia célzása](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.celzas)
 

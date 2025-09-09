@@ -37,7 +37,7 @@
 
 🔵 [Távolsági harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) (Hajítás, Íjászat🤝, Lövészet🤝, Ostromlövészet🤝) 🔁
 
-🔵 [Mágikus lövészet](kepzettsegek.primer.harci/magikus_loveszet.md)
+🔵 [Mágikus célzás](kepzettsegek.primer.harci/magikus_celzas.md)
 
 🔵 [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) 🤝
 

@@ -7,8 +7,24 @@ Néhány speciális húzással beleszólhatunk az ilyen szituációkba.
 
 Ha valaki látja és van ideje felkészülni a rá leadott lövésre/hajításra, valamint rendelkezik elegendő hellyel a kitérésre ÉS bejelenti, hogy megpróbálja elkerülni végzetét, akkor **Gyorsaságpróbát** kell dobnia, melynek nehézsége függ a lövést leadó személy távolságától, valamint az általa használt fegyvertől.
 
+[Elemi mágia - Mozgatás](kepzettsegek.primer.arkanumok/elemi_magia.md#komplexit%C3%A1s---mozgat%C3%A1s)
+
 ```
-Dobófegyverek, Mágikus lövedék I.
+Nem alkalmas tárgyak,
+Gyors mozgatás
+  (Elemi mágia)
+  7:  1m
+  6:  2m
+  5:  3m
+  4:  Testközelben
+  3:  5m
+  2:  6m
+```
+
+```
+Dobófegyverek,
+Sebes mozgatás
+  (Elemi mágia)
   8:  1m - 3m
   7:  4m - 6m
   6:  7m - 9m
@@ -17,7 +33,9 @@ Dobófegyverek, Mágikus lövedék I.
 ```
 
 ```
-Íjak, Mágikus lövedék II.
+Íjak,
+Villámgyors mozgatás
+  (Elemi mágia)
   8:  0m - 5m
   7:  6m - 10m
   6:  11m - 15m
@@ -25,7 +43,9 @@ Dobófegyverek, Mágikus lövedék I.
 ```
 
 ```
-Nyílpuskák, Mágikus lövedék III.
+Nyílpuskák,
+Leggyorsabb mozgatás
+  (Elemi mágia)
   8:  0m - 10m
   7:  11m - 20m
   6:  21m - 30m

@@ -174,7 +174,7 @@ Fénymágia:   4.szint
 Elemi mágia - Őselem idézése
 - Alap komplexitás                 :  3.szint
 - tűzgolyó forma                   : +0 szint
-- Gyorsan mozog (Mágikus lövedék I): +9 szint
+- Gyorsan mozog (Mágikus lövedék 2-3-4??): +9 szint
 
 → komplexitása: 12. szint (próba: 5 + Tulajdonság + k10   vs.  célszám: 12)
 ```

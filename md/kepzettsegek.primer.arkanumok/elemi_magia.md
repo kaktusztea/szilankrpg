@@ -151,25 +151,29 @@ Lassú mozgatás
   TÉ=10; VÉ=30*
 
 Átlagos mozgatás
-(Sprintelő ember sebessége)
+(Futó ember sebessége)
   +Komplexitás: +6
   KÉ=15
   TÉ=20; VÉ=40*
 
-Gyors mozgatás,
-Mágikus lövedék I.
+Gyors mozgatás
+(Sprintelő ember sebessége)
+  +Komplexitás: +6
+  KÉ=10
+  TÉ=20; VÉ=40*
+
+Sebes mozgatás
   +Komplexitás: +9
   KÉ=20
   TÉ=30; VÉ=50*
+  CÉ=2, Osztó: 1
 
-Nagyon gyors mozgatás,
-Mágikus lövedék II.
+Villámgyors mozgatás,
   +Komplexitás: +12
   KÉ=25
   TÉ=40; VÉ=60*
 
-Nagyon gyors mozgatás,
-Mágikus lövedék III.
+Leggyorsabb mozgatás,
   +Komplexitás: +15
   KÉ=30
   TÉ=60; VÉ=80*

@@ -43,6 +43,19 @@ Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász l�
 
 ---
 
+<!-- tag: md_table_tavfegyver_start-->
+
+| Fegyver             | CÉ  | Osztó | SP  | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz | Átütés | Hatótáv | Speciális / Megjegyzés |
+| ------------------- | :-: | :---: | :-: | :------: | :----------: | -------------- | :-------: | :----: | :-----: | ---------------------- |
+| Mágikus lövedék I   | `1` | `0,5` |     |          |              |                |           |        |         |                        |
+| Mágikus lövedék II  | `2` |  `1`  |     |          |              |                |           |        |         |                        |
+| Mágikus lövedék III | `4` |  `2`  |     |          |              |                |           |        |         |                        |
+| Mágikus lövedék IV  | `6` |  `3`  |     |          |              |                |           |        |         |                        |
+
+<!-- tag: md_table_tavfegyver_end -->
+
+---
+
 🔗 [Pajzs fegyverek](068_09_pajzs_fegyverek.md)→
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
