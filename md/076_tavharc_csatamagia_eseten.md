@@ -73,7 +73,7 @@ Távolbahatás módja: Távoli pontban
 <br />
 
 ---
-## ⚜️Távolbahatás módja: lövedék
+## ⚜️Távolbahatás módja: Lövedék
 
 ```
 → Mágikus célzás kell
@@ -116,7 +116,7 @@ Szorzó nehezítés
 
 ### Kizárólagos formák
 
-Ezek a formák csak "Mágia adott pontban" távolbahatással hozhatóak létre.
+Ezek a formák csak "Területmágia"  hozhatóak létre.
 
 ```
 nyíl, ... ⭕
@@ -125,7 +125,7 @@ nyíl, ... ⭕
 <br />
 
 ---
-## ⚜️Távolbahatás módja: Mágia adott pontban
+## ⚜️Távolbahatás módja: Területmágia
 
 ```
 → Mágikus célzás kell
@@ -151,7 +151,7 @@ Ki kell nyúlni a távoli ponthoz
 
 ### Kizárólagos formák
 
-Ezek a formák csak "Mágia adott pontban" távolbahatással hozhatóak létre.
+Ezek a formák csak "**Területmágia**" távolbahatással hozhatóak létre.
 
 ```
 kitörés, fal, ...⭕
