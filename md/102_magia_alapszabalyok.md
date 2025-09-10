@@ -110,8 +110,14 @@ A varázsló vagy a mágiát létrehozó mágikus akarat, tárgy, terület **akt
 ### Mágia Erőssége, Erősség-próba
 
 ```
-Arkánum-1 + Tulajdonság + k10  vs.  Formula-1 meghatározott Erőssége
-Arkánum-2 + Tulajdonság + k10  vs.  Formula-2 meghatározott Erőssége
+Arkánum-1 + Tulajdonság + k10
+   vs.
+Formula-1 meghatározott Erőssége
+
+
+Arkánum-2 + Tulajdonság + k10
+   vs.
+Formula-2 meghatározott Erőssége
 ...
 ```
 
@@ -141,6 +147,7 @@ Ailtas kicsit több naftát (`8.szint`) tol bele az Elemi mágiából, mint amit
 ```
 Elemi mágia - Őselem idézése (8. szint)
   → Erősség: 8 (próba: 5 + Tulajdonság + k10   vs.  célszám: 8)
+
 Fénymágia   - Mozgó Illúzió (4. szint)
   → Erősség: 4 (biztos tudásból megvan)
 ```
@@ -160,35 +167,46 @@ A varázslat bonyolultságát, szofisztikáltságát adja. A használt formulák
 
 A formuláknak mind van meghatározott, alap Komplexitás szintjük, ezt módosíthatják (általában felfelé) annak nehezebb szintjeinek alkalmazása.
 
-#### ⚡Példa-1
-Maradva az Erősségnél bemutatott "Vízes tűzgolyó" példánál:
+#### ⚡Példa-1: "Vízes tűzgolyó"
 
-Ailtas, a varázslótanonc ismert Arkánumai (mágiaiskola-képzettségek):
+Ailtas, a varázslótanonc próbálkozik.
+
 ```
+Arkánumok
+
 Elemi mágia: 5.szint
 Fénymágia:   4.szint
 ```
 
-**Formula-1:**
+**Formula-1**
+
 ```
 Elemi mágia - Őselem idézése
-- Alap komplexitás                 :  3.szint
-- tűzgolyó forma                   : +0 szint
-- Gyorsan mozog (Mágikus lövedék 2-3-4??): +9 szint
 
-→ komplexitása: 12. szint (próba: 5 + Tulajdonság + k10   vs.  célszám: 12)
+Komplexitás: 12
+ 3.szint: Alap komplexitás
++0 szint: tűzgolyó forma
++9 szint: Gyorsan mozog
+
+Próba
+ (5 + Tul + k10)  vs  12
 ```
   
-**Formula-2:**
+**Formula-2**
+
 ```
 Fénymágia - Mozgó Illúzió
-- Alap komplexitás   :  3.szint
-- alap alakzat (gömb): +0 szint
-- 2 embernyi méret   : +2 szint
-- gyors mozgatás     : +9 szint
 
-→ komplexitása: 14. szint (próba: 4 + Tulajdonség + k10   vs.  célszám: 14)
-(ez elég kockázatos)
+Komplexitás: 14
+ 3: Alap komplexitás
++0: gyömb (alap alakzat)
++2: 2 embernyi méret
++9: gyors mozgatás
+
+Próba
+ (4 + Tul + k10)  vs  14
+
+Ez elég kockázatos.
 ```
 
 ### Varázslások száma

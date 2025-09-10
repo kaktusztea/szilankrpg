@@ -46,7 +46,7 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 #### [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
 
-#### [Távolsági harc mágikus lövedékek esetén](076_tavharc_magikus_lovedekek_eseten.md)
+#### [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
 
 #### [Távolsági fegyverek](077_tavharc_fegyverek.md)
 

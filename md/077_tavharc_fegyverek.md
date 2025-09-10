@@ -19,7 +19,7 @@ Nem hajításra alkotott tárgyak 🔆
   Osztó: 0,5
   Példa fegyverek:
     Kard, zsámoly, söröskorsó
-    Mágikus lövedék I
+    Mágiatáv I
   Max Hatótávhoz: + (Erő x Osztó)
 ```
 
@@ -29,7 +29,7 @@ Korlátosan alkalmas fegyverek
   Osztó: 1
   Példa fegyverek:
     Tőr, kő, bola
-    Mágikus lövedék II
+    Mágiatáv II
 ```
 
 ```
@@ -38,7 +38,7 @@ Apró hajítófegyverek, szálfegyverek
   Osztó: 2
   Példa fegyverek:
     Hajítótőr, hajítóbárd, dárda
-    Mágikus lövedék III
+    Mágiatáv III
 ```
 
 ```
@@ -47,7 +47,7 @@ Apró hajítófegyverek, szálfegyverek
   Osztó: 3
   Példa fegyverek:
     Rövid, hosszú íj, Kézi nyílpuska
-    Mágikus lövedék IV
+    Mágiatáv IV
   Sebzés bónusz: Erő 1:1
     (ha erre az Erőre lett tervezve)
 ```

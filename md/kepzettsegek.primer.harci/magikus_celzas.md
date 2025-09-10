@@ -10,7 +10,7 @@ A képzettség szintjétől függően büntetéseket/bónuszokat kapsz harcért�
 
 ### Kapcsolódik
 
-- [Tácolsági harc mágikus lövedékek esetén](../076_tavharc_magikus_lovedekek_eseten.md) fejezet
+- [Tácolsági harc csatamágia esetén](../076_tavharc_csatamagia_eseten.md) fejezet
 - [Harcmodor](harcmodor.md) képzettség
 - [Távolsági harcmodor](tavolsagi_harcmodor.md) képzettség
 - [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) fortély egyes fokainak követelménye
