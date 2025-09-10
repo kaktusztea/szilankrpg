@@ -88,7 +88,7 @@ Távolbahatás módja: Területmágia
   észlelhetőség.
 
 → Ellen Észleléspróba harc közben:
-  Könnyű nehézség (6)
+  Átlagos nehézség (9)
 ```
 
 ### Indítás pontja
@@ -141,7 +141,7 @@ nyíl, ... ⭕
 → Lassabb létrehozás
 
 → Ellen Észleléspróba harc közben:
-  Átlagos nehézség (9)
+  Könnyű nehézség (6)
 ```
 
 ### Indítás pontja
