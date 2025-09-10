@@ -116,7 +116,7 @@ Szorzó nehezítés
 +1x: más szögben induljon
 ```
 
-### Kizárólagos formák
+### Kizárólagos formák - Lövedék
 
 Ezek a formák csak **Lövedék** formában hozhatóak létre.
 
@@ -151,7 +151,7 @@ Ki kell nyúlni a távoli ponthoz
 → Aura átütés: távolsággal gyengül
 ```
 
-### Kizárólagos formák
+### Kizárólagos formák - Területmágia
 
 Ezek a formák csak "**Területmágia**" távolbahatással hozhatóak létre.
 
