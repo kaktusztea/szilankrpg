@@ -48,7 +48,7 @@ A **Mágikus lövedék `I-IV`** valójában `1 db` fegyver, amely `4` különbö
 Ez a fortély a mágikus fegyverekre is felvehető, akár bármely más fegyverre.
 
 ```
-1 CÉ / fok
++1 CÉ / fok
 ```
 
 ---
