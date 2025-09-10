@@ -64,7 +64,7 @@ Távolbahatás módja: lövedék
 
 
 ```
-Távolbahatás módja: Távoli pontban
+Távolbahatás módja: területmágia
 
 +0 CÉ: Kitörés
        Max sebzés: +20
