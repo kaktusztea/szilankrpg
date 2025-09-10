@@ -4,20 +4,23 @@
 
 A karaktert a harcban harcértékei jellemzik. Ezek mutatják meg, hogy mennyire képzett a küzdelem egyes területein. Alapvetően négy érték határozza meg az aktuális harcértékeket, melyek szituációtól, forgatott fegyvertől, illetve harcmodortól függően változhatnak. Ezek az alábbiak:
 
-- Kezdeményező Érték (`KÉ`)
-- Támadó Érték (`TÉ`)
-- Védő Érték (`VÉ`) / Védő Érték (`VÉ`) Mozgás jellege alapján
-- Célzó Érték (`CÉ`)
+
+```
+KÉ: Kezdeményező Érték
+TÉ: Támadó Érték
+VÉ: Védő Érték
+CÉ: Célzó Érték
+```
 
 Ezen értékek öt jellemzőből épülnek fel:
 
 ```
-- Harcérték Alap
-- Tulajdonságok
-- Harcérték Módosító
-- Harcmodor képzettség
-- Mesterfegyver fortély
-- Fegyver harcértékei
+→ Harcérték Alap
+→ Tulajdonságok
+→ Harcérték Módosító
+→ Harcmodor képzettség
+→ Mesterfegyver fortély
+→ Fegyver harcértékei
 ```
 
 Az alábbiakban részletesen kifejtjük a fenti értékek kiszámítási módját, valamint hogy mi és hogyan képes módosítani őket.
@@ -28,10 +31,10 @@ Az alábbiakban részletesen kifejtjük a fenti értékek kiszámítási módjá
 Első szinten minden karakter egységes konstans értékeket kap `KÉ`, `TÉ`, `VÉ` és `CÉ` értékére. Ehhez az alapértékhez adódnak majd hozzá az egyéb módosítók.
 
 ```
-KÉ konstans:  0
-TÉ konstans:  7
-VÉ konstans: 30
-CÉ konstans:-10
+  0: KÉ konstans
+  7: TÉ konstans
+ 30: VÉ konstans
+-10: CÉ konstans
 ```
 
 ---

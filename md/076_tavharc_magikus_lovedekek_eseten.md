@@ -2,14 +2,19 @@
 
 A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy távolabbi pontból indítanak különféle mágikus támadást ellenfeleik felé, amely fizikai sebesülést okoz. De hogyan történik ilyenkor a célzás, milyen sebességgel halad a lövedék, milyen nehéz a kontroll? Erre adunk választ az alábbiakban.
 
-## Alapértékek
+[Mágikus Célzás](kepzettsegek.primer.harci/magikus_celzas.md) **harcmodor** felvétele szükséges célzott mágikus hatások létrehozásához.
 
-→ [Mágikus Célzás](kepzettsegek.primer.harci/magikus_celzas.md) **harcmodor** felvétele szükséges
+## Célzó érték, Osztó
 
-→ `CÉ alap` és `CM` (Célzóérték HM) ugyanúgy hozzáadandóak, akár a **Lövészet**, vagy **Hajítás** harcmodor során
+```
++ CÉ Alap
+  (TSz + Gyorsaság + Intelligencia)
++ CHM
++ CÉ: (1-4) Mágikus lövedék
++ CÉ: (0-3) Formánk értéke
+```
 
----
-## Fegyver: Mágikus lövedék
+### Mágikus lövedék Értékei
 
 ```
 Mágikus lövedék I
@@ -31,32 +36,14 @@ Mágikus lövedék IV
 
 A **Mágikus lövedék `I-IV`** valójában `1 db` fegyver, amely `4` különböző értékkel rendelkezhet, a [Pontos csatamágia](fortelyok.misztikus/pontos_csatamagia.md) fortély fokától függően. A [Karakteralkotó](start.md#karakteralkot%C3%B3) fegyverválasztójában azt a verzióját használd, amely megfelel a **Pontos csatamágia** fortélyod fokának.
 
-⭕ [Work in progress](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.celzas#fegyver-m%C3%A1gikus-l%C3%B6ved%C3%A9k)
+A **Mágikus lövedék** szimulálja a távolsági fegyver kategóriákat.
 
-<br />
+### Formák `CÉ` módosítói
 
----
-## Fegyver: Mágia adott pontban
-
-⭕ [Work in progress](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.celzas#fegyver-m%C3%A1gia-adott-pontban)
-
-<br />
-
----
-### [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortély és mágikus fegyverek
-
-Ez a fortély a mágikus fegyverekre is felvehető, akár bármely más fegyverre.
+Távolba ható csapásként az egyes formák különböző `Célzó Érték` módosítókkal bírnak és más sebzésablakkal (min, max) rendelkeznek,. Például a Nyíl forma a legalkalmasabb a pontos célzásra, de kisebb maximális sebzéssel bír.
 
 ```
-+1 CÉ / fok
-```
-
----
-## Formák módosítói
-
-Lövedékként lőve az egyes formák különböző `Célzó Érték` módosítókkal bírnak. Például a Nyíl forma a legalkalmasabb a pontos célzásra, de kisebb maximális sebzéssel bír.
-
-```
+Lövedékkent
 CÉ, Forma
 
 3: Nyíl
@@ -70,8 +57,113 @@ CÉ, Forma
 ```
 
 
+```
+Távoli pontban
+CÉ, Forma
 
-⭕ [Work in progress](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.celzas#form%C3%A1k)
+0: Kitörés
+   Alap sebzés: +0
+   Max sebzés: +20
+```
+
+<br />
+
+---
+## Fegyver: Mágikus lövedék
+
+**Jellemzők**
+
+```
+→ Mágikus célzás kell
+→ Távolsággal gyengül
+  -1E / 5 méter
+
+→ Mellékhatás mágiatudó körül
+  látható csak lövésig
+```
+
+**Aura**
+
+```
+1. Nem kell kinyúlni Aurával
+  (varázslótól indul)
+
+2. Lehet kinyúlva máshonnan,
+   más szögből indítani 
+   ( +Nehézség )
+
+```
+
+**Ellen Észleléspróba harc közben**
+
+```
+Könnyű nehézség
+```
+
+<br />
+
+---
+## Fegyver: Mágia adott pontban
+
+Egy távoli pontban létrehozott elemi mágia.
+
+**Jellemzők**
+
+```
+→ Mágikus célzás kell
+→ Alap Erősség, nem gyengül
+
+→ Mágiatudó és cél közt auraszál
+  mellékhatással látható míg
+  a mana gyűlik. Könnyű kitérni.
+```
+
+**Szorzó módosítók**
+```
++1x: más szögből indított lövedék
+
++1x / 3 méter távolság ↓
+  → varázstudótól távolabbi pontból
+    indított lövedék
+  → ⚡ Példa: 3x
+    10 méter távolságra a
+    varázstudótól induljon tűznyíl
+```
+
+**Aura**
+
+```
+→ Ki kell nyúlni
+→ Lassú létrehozás
+→ Látszik az auraszál ha nincs leplezve
+→ Nem gyengül a távolsággal (Előny)
+```
+
+**Ellen Észleléspróba harc közben**
+
+```
+Átlagos nehézség
+```
+
+**Kizárólagos formák**
+
+```
+kitörés, fal, ...
+```
+
+
+⭕ [Work in progress](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.celzas#fegyver-m%C3%A1gia-adott-pontban)
+
+<br />
+
+---
+### [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortély és mágikus fegyverek
+
+Ez a fortély a mágikus fegyverekre is felvehető, akár bármely más fegyverre.
+
+```
++1 CÉ / fok
+```
 
 ---
 ### [Mágikus lövedék gyorsítása](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.misztikus/magikus_lovedek_gyorsitasa.md)
