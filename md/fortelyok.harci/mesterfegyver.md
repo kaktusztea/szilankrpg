@@ -5,9 +5,9 @@ A legtöbb esetben egy karakternek van egy (vagy több) fegyver típusa, amelyet
 A **Mesterfegyver fortély** segítségével egyes fegyverek harcértékeit tovább növelheti, így elszakadva kicsit tudásban a harcmodor többi fegyverétől.
 
 "Harcmodor" alatt az alábbi képzettségekre hivatkozunk a Követelmények szekciókban:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) 
+- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)
 - [Mágikus célzás](../kepzettsegek.primer.harci/magikus_celzas.md)
-- [Távolsági harcmodor](tavolsagi_harcmodor.md)
+- [Távolsági harcmodor](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
 
 #### Alapeset
 
