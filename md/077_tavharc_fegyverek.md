@@ -14,35 +14,40 @@ A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy 
 Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek értékei ezektől enyhén eltérhetnek:
 
 ```
-Nem hajításra alkalmas tárgyak 🔆
+Nem hajításra alkotott tárgyak 🔆
   CÉ: +0
-  Osztó: 1
+  Osztó: 0,5
   Példa fegyverek:
     Kard, zsámoly, söröskorsó
+    Mágikus lövedék I
   Max Hatótávhoz: + (Erő x Osztó)
 ```
 
 ```
-Apró alkalmas fegyverek
+Korlátosan alkalmas fegyverek
   CÉ: +2
-  Osztó: 2
-  Példa fegyverek: Tőr, kő
+  Osztó: 1
+  Példa fegyverek:
+    Tőr, kő, bola
+    Mágikus lövedék II
 ```
 
 ```
 Apró hajítófegyverek, szálfegyverek
   CÉ: +3/+4
-  Osztó: 3
+  Osztó: 2
   Példa fegyverek:
     Hajítótőr, hajítóbárd, dárda
+    Mágikus lövedék III
 ```
 
 ```
 Íjak
   CÉ: +5/6
-  Osztó: 4
+  Osztó: 3
   Példa fegyverek:
     Rövid, hosszú íj, Kézi nyílpuska
+    Mágikus lövedék IV
   Sebzés bónusz: Erő 1:1
     (ha erre az Erőre lett tervezve)
 ```
@@ -50,7 +55,7 @@ Apró hajítófegyverek, szálfegyverek
 ```
 Nyílpuskák
   CÉ: +8
-  Osztó: 5
+  Osztó: 4
   Példa fegyverek:
     Nyílpuskák, kivéve Kézi, Kh4rei
   Kézi nyílpuskától felfelé Páncéltörőek

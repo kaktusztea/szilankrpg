@@ -23,9 +23,9 @@ Mágikus lövedék II
 Mágikus lövedék III
  CÉ:+4
  Osztó: 2
-
+ 
 Mágikus lövedék IV
- CÉ:+6
+ CÉ:+4
  Osztó: 3
 ```
 
