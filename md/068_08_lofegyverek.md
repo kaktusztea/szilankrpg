@@ -53,8 +53,8 @@ Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász l�
 | ------------------- | :-: | :---: | :----: | :------: | :----------: | -------------- | :-------: | :----: | :-----: | ---------------------- |
 | Mágikus lövedék I   | `1` | `0,5` | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
 | Mágikus lövedék II  | `2` |  `1`  | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
-| Mágikus lövedék III | `4` |  `2`  | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
-| Mágikus lövedék IV  | `6` |  `3`  | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
+| Mágikus lövedék III | `3` |  `2`  | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
+| Mágikus lövedék IV  | `4` |  `3`  | `spec` |  `spec`  |    `spec`    | `spec`         |    `0`    | `spec` | `spec`  |                        |
 
 <!-- tag: md_table_tavfegyver_end -->
 
