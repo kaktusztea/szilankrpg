@@ -52,7 +52,7 @@ A **Mágiatáv** szimulálja a (mágikus) távolsági "fegyver" kategóriákat (
 Távolba ható csapásként az egyes formák különböző `Célzó Érték` módosítókkal bírnak és más maximális Sebzéssel rendelkeznek,. Például a Nyíl forma a legalkalmasabb a pontos célzásra, de kisebb maximális sebzéssel bír, mert kisebb energiát képes összpontosítani, mint mondjuk egy tűzgolyó.
 
 ```
-Távolbahatás módja: lövedék
+Távolbahatás módja: Lövedék
 
 +3 CÉ: Nyíl
        Max sebzés: +7
@@ -64,7 +64,7 @@ Távolbahatás módja: lövedék
 
 
 ```
-Távolbahatás módja: területmágia
+Távolbahatás módja: Területmágia
 
 +0 CÉ: Kitörés
        Max sebzés: +20
