@@ -29,7 +29,7 @@ Mágikus lövedék IV
  Osztó: 3
 ```
 
-A **Mágikus lövedék `I-IV`** valójában `1 db` fegyver, amely `4` különböző értékkel rendelkezhet, a [Mágikus lövész](fortelyok.misztikus/magikus_lovesz.md) fortély fokától függően. A [Karakteralkotó](start.md#karakteralkot%C3%B3) fegyverválasztójában azt a verzióját használd, amely megfelel a **Mágikus lövész** fortélyod fokának.
+A **Mágikus lövedék `I-IV`** valójában `1 db` fegyver, amely `4` különböző értékkel rendelkezhet, a [Pontos csatamágia](fortelyok.misztikus/pontos_csatamagia.md) fortély fokától függően. A [Karakteralkotó](start.md#karakteralkot%C3%B3) fegyverválasztójában azt a verzióját használd, amely megfelel a **Pontos csatamágia** fortélyod fokának.
 
 ⭕ [Work in progress](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.celzas#fegyver-m%C3%A1gikus-l%C3%B6ved%C3%A9k)
 
@@ -53,6 +53,23 @@ Ez a fortély a mágikus fegyverekre is felvehető, akár bármely más fegyverr
 
 ---
 ## Formák módosítói
+
+Lövedékként lőve az egyes formák különböző `Célzó Érték` módosítókkal bírnak. Például a Nyíl forma a legalkalmasabb a pontos célzásra, de kisebb maximális sebzéssel bír.
+
+```
+CÉ, Forma
+
+3: Nyíl
+   Alap sebzés: +0
+   Max sebzés: +7
+1: Csóva
+0: Gömb
+   Alap sebzés: +5
+   Max sebzés: +20
+0: Zápor
+```
+
+
 
 ⭕ [Work in progress](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.celzas#form%C3%A1k)
 

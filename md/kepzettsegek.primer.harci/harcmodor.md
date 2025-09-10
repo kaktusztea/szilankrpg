@@ -23,6 +23,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 ### Kapcsolódik
 
 - [Távolsági harcmodor](tavolsagi_harcmodor.md) képzettség
+- [Mágikus célzás](magikus_celzas.md)
 - [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) fortély egyes fokainak követelménye
 
 <br />

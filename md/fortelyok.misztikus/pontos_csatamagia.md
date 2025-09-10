@@ -1,4 +1,4 @@
-## 🟣 Mágikus lövész (3)
+## 🟣 Pontos csatamágia (3)
 
 Mágiatudóként a távolba direktben ható mágiákra specializálódtál, így pontosabban tudsz távolba lődözni.
 
