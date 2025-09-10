@@ -40,19 +40,22 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 #### [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
 
+ 
 ---
-## Taktikák, fegyverek
+## Taktikák, mágikus lövedékek, fegyverek
 
 #### [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
 
-#### [Távolsági fegyverek](076_tavharc_fegyverek.md)
+#### [Távolsági harc mágikus lövedékek esetén](076_tavharc_magikus_lovedekek_eseten.md)
+
+#### [Távolsági fegyverek](077_tavharc_fegyverek.md)
 
 ---
 ## Példák
 
-#### [Példalövészet](077_tavharc_peldak.md) ⚡
+#### [Példalövészet](078_tavharc_peldak.md) ⚡
 
-#### [Távharc sötétben](078_tavharc_sotetben.md) ⚡
+#### [Távharc sötétben](079_tavharc_sotetben.md) ⚡
 
 ---
 

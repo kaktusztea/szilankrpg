@@ -147,6 +147,6 @@ Ha nem fújt volna a szél (`-2` a Szorzóra), akkor Tetves éppen célt talált
 
 ---
 
-🔗 [Távharc sötétben](078_tavharc_sotetben.md) →
+🔗 [Távharc sötétben](079_tavharc_sotetben.md) →
 
 ⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)

@@ -17,10 +17,10 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 - [Harcoló tömegbe lövés - egy konkrét célra](szituaciok/harcolo_tomegbe_loves__egy_konkret_celra.md)
 - [Harcoló tömegbe lövés - bárki jó találatnak](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md)
-- [Kitérés lövés elől próba](szituaciok/kiteres_loves_elol.md)
-- [Kitérés lövés elől sikertelen (rontott Gyorsaságpróba)](szituaciok/kiteres_loves_elol_sikertelen.md)
+- [Szándékos kitérés lövés elől próba](szituaciok/szandekos_kiteres_loves_elol.md)
+- [Szándékos kitérés lövés elől sikertelen (rontott Gyorsaságpróba)](szituaciok/kiteres_loves_elol_sikertelen.md)
 - [Lövész nyúl a fegyveréért, támad rá egy harcos](szituaciok/lovesz_nyul_fegyvereert_tamad_ra_harcos.md)
-- [Lövés vaksötétben, zajos célpontra](078_tavharc_sotetben.md)
+- [Lövés vaksötétben, zajos célpontra](079_tavharc_sotetben.md)
 
 ## Szociális szituációk
 

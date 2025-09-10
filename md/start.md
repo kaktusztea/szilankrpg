@@ -225,9 +225,10 @@
 - [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
 - [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
 - [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
-- [Távolsági fegyverek](076_tavharc_fegyverek.md)
-- [Példalövészet](077_tavharc_peldak.md) ⚡
-- [Távharc sötétben](078_tavharc_sotetben.md) ⚡
+- [Távolsági harc mágikus lövedékek esetén](076_tavharc_magikus_lovedekek_eseten.md)
+- [Távolsági fegyverek](077_tavharc_fegyverek.md)
+- [Példalövészet](078_tavharc_peldak.md) ⚡
+- [Távharc sötétben](079_tavharc_sotetben.md) ⚡
 
 ---
 ### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)

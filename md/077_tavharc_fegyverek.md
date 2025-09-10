@@ -125,6 +125,6 @@ Egy hajítófegyvernél legfeljebb akkor elképzelhető a **Osztó** változása
 
 ---
 
-🔗 [Távharc példák](077_tavharc_peldak.md) →
+🔗 [Távharc példák](078_tavharc_peldak.md) →
 
 ⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
