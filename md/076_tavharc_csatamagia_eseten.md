@@ -118,7 +118,7 @@ Szorzó nehezítés
 
 ### Kizárólagos formák
 
-Ezek a formák csak "Területmágia"  hozhatóak létre.
+Ezek a formák csak "Területmágia" formában hozhatóak létre.
 
 ```
 nyíl, ... ⭕
