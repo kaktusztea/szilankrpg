@@ -5,6 +5,7 @@ A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy tá
 ## Alapértékek
 
 → [Mágikus Célzás](kepzettsegek.primer.harci/magikus_celzas.md) **harcmodor** felvétele szükséges
+
 → `CÉ alap` és `CM` (Célzóérték HM) ugyanúgy hozzáadandóak, akár a **Lövészet**, vagy **Hajítás** harcmodor során
 
 ---
