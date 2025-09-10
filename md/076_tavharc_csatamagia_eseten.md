@@ -147,7 +147,8 @@ nyíl, ... ⭕
 ### Indítás pontja
 
 ```
-Ki kell nyúlni a távoli ponthoz
+Ki kell nyúlni a távoli ponthoz,
+a hatás rögtön ott jön létre.
 → Aura ereje: távolsággal gyengül
 ```
 
