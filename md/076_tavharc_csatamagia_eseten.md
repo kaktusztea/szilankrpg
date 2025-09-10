@@ -174,7 +174,7 @@ Ez a fortély a **Mágiatáv** "fegyverre" is felvehető, akár bármely más fe
 ---
 ### [Mágikus lövedék gyorsítása](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.misztikus/magikus_lovedek_gyorsitasa.md) fortély
 
-A lövedék sebessége alapból lassú, de ezzel a fortéllyal növelni lehet. A pontosságra (`CÉ`, `Osztó`) semmilyen hatása nincs.
+A lövedék sebessége alapból lassú, ezt a Komplexitás növelésével lehet fokozni. Ebben ad könnyítést ez a fortély. A pontosságra (`CÉ`, `Osztó`) semmilyen hatása nincs.
 
 Kapcsolódik: [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#sz%C3%A1nd%C3%A9kos-kit%C3%A9r%C3%A9s-l%C3%B6v%C3%A9s-el%C5%91l)
 
