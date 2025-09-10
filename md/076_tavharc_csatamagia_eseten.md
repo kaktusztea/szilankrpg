@@ -79,7 +79,7 @@ Távolbahatás módja: Területmágia
 
 ```
 → Mágikus célzás kell
-→ Aura átütés: alap (nem gyengül)
+→ Aura ereje: alap (nem gyengül)
 → Erősség távolsággal gyengül
   -1E / 5 méter
 
@@ -148,7 +148,7 @@ nyíl, ... ⭕
 
 ```
 Ki kell nyúlni a távoli ponthoz
-→ Aura átütés: távolsággal gyengül
+→ Aura ereje: távolsággal gyengül
 ```
 
 ### Kizárólagos formák - Területmágia
