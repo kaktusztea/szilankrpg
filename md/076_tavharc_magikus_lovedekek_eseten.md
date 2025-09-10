@@ -59,7 +59,9 @@ Ez a fortély a mágikus fegyverekre is felvehető, akár bármely más fegyverr
 ---
 ### [Mágikus lövedék gyorsítása](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.misztikus/magikus_lovedek_gyorsitasa.md)
 
-A lövedék sebessége alapból lassú, de ezzel a fortéllyal növelni lehet. Kapcsolódik: [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#sz%C3%A1nd%C3%A9kos-kit%C3%A9r%C3%A9s-l%C3%B6v%C3%A9s-el%C5%91l)
+A lövedék sebessége alapból lassú, de ezzel a fortéllyal növelni lehet.
+
+Kapcsolódik: [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#sz%C3%A1nd%C3%A9kos-kit%C3%A9r%C3%A9s-l%C3%B6v%C3%A9s-el%C5%91l)
 
 ---
 ## Kapcsolódó Arkánumok
