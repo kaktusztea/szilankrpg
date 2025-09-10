@@ -66,4 +66,4 @@ Kapcsolódik: [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#sz%C
 ---
 ## Kapcsolódó Arkánumok
 
-[Elemi mágia - Formulák - Őselem idézése](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.primer.arkanumok/elemi_magia.md#őselem-idézése)"
+[Elemi mágia - Formulák - Őselem idézése](https://github.com/kaktusztea/szilankrpg/blob/master/md/kepzettsegek.primer.arkanumok/elemi_magia.md#őselem-idézése)
