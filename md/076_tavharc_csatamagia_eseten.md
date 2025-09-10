@@ -57,9 +57,11 @@ Távolbahatás módja: Lövedék
 +3 CÉ: Nyíl
        Max sebzés: +7
 +1 CÉ: Csóva
+       Max sebzés: ??
 +0 CÉ: Gömb
        Max sebzés: +20
 +0 CÉ: Zápor
+       Max sebzés: ??
 ```
 
 
