@@ -50,7 +50,7 @@ Torzó: 5x ár
 →   1x (Anyagminőség)
 → 0,5x (Kidolgozottság „gyenge”)
 
-(10x x 1x x 0,5)
+(10x x 1x x 0.5)
 ```
 
 ```
@@ -111,7 +111,7 @@ Torzó: 0,5x ár
 → 0,5x (Kidolgozottság „pocsék”)
 → 0,5x (Fémalapanyag: Bronz)
 
-(100x x 0,1x x 0,5 x 0,5)
+(100x x 0,1x x 0.5 x 0.5)
 ```
 
 ```

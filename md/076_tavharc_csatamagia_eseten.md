@@ -28,7 +28,7 @@ A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy tá
 ```
 Mágiatáv I
  CÉ:+1
- Osztó: 0,5
+ Osztó: 0.5
 
 Mágiatáv II
  CÉ:+2

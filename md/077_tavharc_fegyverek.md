@@ -16,7 +16,7 @@ Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek érté
 ```
 Nem hajításra alkotott tárgyak 🔆
   CÉ: +0
-  Osztó: 0,5
+  Osztó: 0.5
   Példa fegyverek:
     Kard, zsámoly, söröskorsó
     Mágiatáv I

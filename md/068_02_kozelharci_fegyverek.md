@@ -2,7 +2,7 @@
 
 ```
 Közelharci fegyvernek számít:
- 0,5 pengehossznál rövidebb
+ 0.5 pengehossznál rövidebb
 ```
 
 ```

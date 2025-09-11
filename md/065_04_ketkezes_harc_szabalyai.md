@@ -21,12 +21,12 @@ A **Harckeretbe** beleszámít a [Kétkezes harc](fortelyok.harci/ketkezes_harc.
 A **Harckeret** értékébe a forgatott fegyverek összesített **hossza** is beleszól:
 
 ```
-Minden 0,5 penge:
+Minden 0.5 penge:
   -1 Harckeret
 ```
 
 - Adjuk össze a forgatott két fegyver pengehosszait
-- Minden `0,5` penge `1` ponttal csökkenti a **Harckeretet**
+- Minden `0.5` penge `1` ponttal csökkenti a **Harckeretet**
 - **Fontos**: A „rövid” fegyverek `0 pengének` számítanak számolásnál!
 
 <br />
@@ -101,7 +101,7 @@ Harc `2 db` szablyával (`1` pengés fegyverek)
 Össz hosszuk 2 penge 
  (1 + 1)
 
-→  (2 / 0,5) = 4 levonás
+→  (2 / 0.5) = 4 levonás
 ```
 
 Tehát a **Harckeret** `4`-gyel csökken. Bónuszok és levonások összege:

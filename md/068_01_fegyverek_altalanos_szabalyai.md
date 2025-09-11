@@ -33,7 +33,7 @@ rövid (0)
   Tőr
   TÉ: 2, VÉ: 1
 
-0,5 penge (1)
+0.5 penge (1)
   Rövid kard
   TÉ: 3, VÉ: 2
 
@@ -68,7 +68,7 @@ rövid (0)
 
 ```
 rövid:     0,3 méterig
-0,5 penge: 0,4 - 0,7 méter
+0.5 penge: 0,4 - 0,7 méter
 1 penge:   0,8 méter
 2 penge:   1,6 méter
 ```

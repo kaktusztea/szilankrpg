@@ -211,7 +211,7 @@ Láncos fegyverekkel hajthatod vége.
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelmény:
   - Használt láncos fegyverre [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) – `1.fok`
-  - Minimum `0,5 penge` nagyságú fegyver ellen lehet használni
+  - Minimum `0.5 penge` nagyságú fegyver ellen lehet használni
 
 **Hatás**:
 - Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt. 

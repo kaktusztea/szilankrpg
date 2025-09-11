@@ -275,7 +275,7 @@ Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például
 
 Beszorított helyzeten azt értjük, ha az adott fegyverrel a harcos helyhiány miatt nem képes annak technikáit maradéktalanul alkalmazni. Ez nagyon szűk helyeken egészen szélsőséges hátrányokat is okozhat fegyver-típustól függően.
 
-„**Rövid**” fegyverekre (max `0,5` pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
+„**Rövid**” fegyverekre (max `0.5` pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
 
 Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való védettség (falak) folytán szinte lehetetlen hozzáférni, ha egy irányból közelítenek. Ekkor nincs Beszorított helyzet, sőt a KM Előnyt is adhat a `TÉ` dobásra.
 

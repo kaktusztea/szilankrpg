@@ -52,7 +52,7 @@ S4:  -6 TÉ
 KÉ: 10 TÉ: 35 VÉ: 52
 ÉP: 14
 
-Fegyver: Rövidkard (0,5 penge)
+Fegyver: Rövidkard (0.5 penge)
 Sebzés: k20+2 (V/S)
 
 Fájdalomtűrés (6)
