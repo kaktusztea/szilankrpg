@@ -131,7 +131,7 @@ nyíl, ... ⭕
 
 ```
 → Mágikus célzás kell
-→ Aura átütés: távolsággal gyengül
+→ Aura akarata: távolsággal gyengül
 → Erősség: alap (nem gyengül)
 
 → Mellékhatás: mágiatudó és cél közt
@@ -149,7 +149,7 @@ nyíl, ... ⭕
 ```
 Ki kell nyúlni a távoli ponthoz,
 a hatás rögtön ott jön létre.
-→ Aura ereje: távolsággal gyengül
+→ Aura akarata: távolsággal gyengül
 ```
 
 ### Kizárólagos formák - Területmágia
