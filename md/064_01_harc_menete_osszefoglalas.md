@@ -44,10 +44,12 @@ CÉ = -10 (Konstans)
 Kezdeményező dobás: KÉ + k20
 ```
 
-`k20` dobás menete minden kör elején
-- `1db k20` dobás a teljes JK parti számára (egy választott játékos)
-- `1db k20` dobás az összes NJK ellenfél számára (KM)
-- mindenki azt a konkrét értéket adja hozzá saját `KÉ` értékéhez az adott körben
+Játékos karakterek mind dobnak kör elején külön-külön.
+
+KM számára javasolt megoldás:
+- kidobni 5-6 `k20` dobást előre és felírni az értékeket
+- minden körben `1` számot felhasználsz
+- minden `NJK` ezt a konkrét értéket adja hozzá az adott körben a `KÉ` paraméteréhez
 
 Alapelvek
 - A Kezdeményezés csak a cselekvési sorrend meghatározására szolgál, nem jelent dominanciát, vagy a harc irányítását

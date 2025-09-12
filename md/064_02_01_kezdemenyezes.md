@@ -8,9 +8,9 @@ Minden kör elején van kezdeményező dobás, ami csak a cselekvési sorrend me
 
 A fenti érték érvényes **minden** típusú cselekedetre: harc, varázslás, egyéb cselekedetek.
 
-A játékosok közül **egy valaki** dob minden `JK` számára `k20` kockával össesen egyszer. Ezt az egy értéket adja hozzá minden játékos a Játékos Karaktere **[Kezdeményező Értékéhez](062_01_ke_te_ve_ce.md#kezdem%C3%A9nyez%C5%91-%C3%A9rt%C3%A9k-k%C3%A9)**. Aki a magasabb eredményt kapja, az kezdi a támadást.
+A játékosok mind külön-külön tesznek karakterük számára Kezdeményező dobást. Aki a magasabb eredményt kapja, az kezdi a támadást.
 
-A KM pedig szintén `1x` dob minden `NJK` számára `k20` kockával össesen egyszer. Ezt az egy értéket adja hozzá minden Nem Játékos Karakter **[Kezdeményező Értékéhez](062_01_ke_te_ve_ce.md#kezdem%C3%A9nyez%C5%91-%C3%A9rt%C3%A9k-k%C3%A9)**. 
+KM számára javasolt megoldás: `1x` dob minden `NJK` számára `k20` kockával össesen egyszer. Ezt az egy értéket adja hozzá minden Nem Játékos Karakter **[Kezdeményező Értékéhez](062_01_ke_te_ve_ce.md#kezdem%C3%A9nyez%C5%91-%C3%A9rt%C3%A9k-k%C3%A9)**. 
 
 A kialakult végső Kezdeményező Értékeket sorba rendezzük és a legmagasabbtól a legalacsonyabbig levőig minden karakter cselekszik.
 
