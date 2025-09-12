@@ -10,7 +10,7 @@ A fenti érték érvényes **minden** típusú cselekedetre: harc, varázslás, 
 
 A játékosok mind külön-külön tesznek karakterük számára Kezdeményező dobást. Aki a magasabb eredményt kapja, az kezdi a támadást.
 
-KM számára javasolt megoldás: `1x` dob minden `NJK` számára `k20` kockával össesen egyszer. Ezt az egy értéket adja hozzá minden Nem Játékos Karakter **[Kezdeményező Értékéhez](062_01_ke_te_ve_ce.md#kezdem%C3%A9nyez%C5%91-%C3%A9rt%C3%A9k-k%C3%A9)**. 
+`KM`: `1x` dob összesen - minden `NJK` számára - `k20+2` értékkel. Ezt adja hozzá **minden** Nem Játékos Karakter **[Kezdeményező Értékéhez](062_01_ke_te_ve_ce.md#kezdem%C3%A9nyez%C5%91-%C3%A9rt%C3%A9k-k%C3%A9)**. A `+2` bónusz az egyszeri dobás esetleges, tömeges negatív hatását kompenzálja. Érdemes előre, játék előtt `5-6` db értéket kidobni - ezzel is gyorsítva a játékot.
 
 A kialakult végső Kezdeményező Értékeket sorba rendezzük és a legmagasabbtól a legalacsonyabbig levőig minden karakter cselekszik.
 

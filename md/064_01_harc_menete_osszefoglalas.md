@@ -46,8 +46,9 @@ Kezdeményező dobás: KÉ + k20
 
 Játékos karakterek mind dobnak kör elején külön-külön.
 
-KM számára javasolt megoldás:
-- kidobni 5-6 `k20` dobást előre és felírni az értékeket
+KM Kezdeményező dobásai NJK értékekre
+- végzel`5-6` db `k20` dobást előre és felírod az értékeket
+- `k20+2` értékkel dobsz, hogy kompenzáld az egyszeri dobás esetleges, tömeges negatív hatását. `20` fölé a dobás értéke nem mehet.
 - minden körben `1` számot felhasználsz
 - minden `NJK` ezt a konkrét értéket adja hozzá az adott körben a `KÉ` paraméteréhez
 
