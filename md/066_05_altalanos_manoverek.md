@@ -35,7 +35,7 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
   - ± `2`  (`1` penge különbségenként) - több támadónál a legnagyobb fegyver számít
   - `+2` minden további ellenfél után
   - `-2` minden szövetséges után, aki ellenfele(i)ddel harcol
-- Ellenpróba célszámba a legmagasabb ellenfél MP érték számít be
+- Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
 - Fázisok: `Ellenpróba (Megakasztás)`
 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
 	- **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
@@ -145,13 +145,13 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
   - ± `2`  (`1` penge különbségenként) - több támadónál a legnagyobb fegyver számít
   - `+2` minden további ellenfél után
   - `-2` minden szövetséges után, aki ellenfeleddel harcol
-- Ellenpróba célszámba a legmagasabb ellenfél MP érték számít be
+- Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
 - Fázisok: `Ellenpróba (Megakasztás)`
 	- **Ellenpróba** sikeres: kibontakoztál. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
 	- **Ellenpróba** sikertelen: kibontakoztál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
 - Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető Kibontakozás.
 
-**Hatás**: Sikerül a harcból kibontakoznod, ellenfele(i)d már nem támadhat(nak) rád. Ha üldöznek, futás: támadóddal **Gyorsaság** ellenpróba. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy támadást rád hátulról (`+10 TÉ`).
+**Hatás**: Sikerül a harcból kibontakoznod, ellenfele(i)d már nem támadhat(nak) rád. Ha üldöznek, futás: támadóddal **Gyorsaság** ellenpróba. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy támadást rád hátulról (`Előny+2` Támadó dobásra).
 
 <br />
 
