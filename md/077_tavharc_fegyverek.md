@@ -93,12 +93,11 @@ Távolsági fegyverek esetén NINCS **Többszörös találatból** adódó plusz
 Harckeret = 
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
-  - 3
 ```
 
 Ugyanúgy, ahogy a kétkezi fegyverek esetén itt is ugyanúgy a [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) rendszert használjuk.
 
-Az íjász/hajigász támadásainak száma attól függ, hogy milyen képzett az adott fegyver használatában, vagy annak Harcmodorában, illetve fürge. Ezt a kapcsolódó harci képzettség foka és a **Gyorsaság** Tulajdonság határozzák meg a fentiek szerint - amiből lejön még `3` pont.
+Az íjász/hajigász támadásainak száma attól függ, hogy milyen képzett az adott fegyver használatában, vagy annak Harcmodorában, illetve fürge. Ezt a kapcsolódó harci képzettség foka és a **Gyorsaság** Tulajdonság határozzák meg a fentiek szerint.
 
 Távolsági fegyverek esetén - szemben a kétkezi fegyverekkel - nem mindegyiknek van **Sebesség** értéke, mivel újratöltésük annyi időt vesz igénybe, hogy nem lehetséges velük egy körben többször támadni (pl. nyílpuskák).
 

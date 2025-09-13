@@ -25,7 +25,7 @@ VÉ = 24
    + Pajzs VÉ
 
 VÉ Bónusz:
-  → Vértviselet 3.szint:
+  → Nehézvértviselet 3.szint:
     + VÉ:+3 (lemez mellvértnél)
 
 CÉ = -10 (Konstans)

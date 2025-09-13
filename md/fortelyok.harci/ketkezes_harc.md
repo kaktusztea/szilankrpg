@@ -36,7 +36,7 @@ Képzetlen kétkezes harc esetén két fegyver használatakor.
   - Főfegyver (nagyobb fegyver) harcmodora számít
   - Fegyver harcértékek összeadódnak
   - Egyik fegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya sem számít
-  - Harckeret: `+3`
+  - Harckeret: `+2`
 
 ---
 ### 2. fok
@@ -49,7 +49,7 @@ Képzetlen kétkezes harc esetén két fegyver használatakor.
 - Főfegyver (nagyobb fegyver) harcmodora számít
 - Fegyver harcértékek összeadódnak
 - Csak a főfegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya számít (akkor is, ha a két fegyver típusa ugyanaz!)
-- Harckeret: `+6`
+- Harckeret: `+3`
 
 ---
 ### 3. fok
@@ -62,7 +62,7 @@ Képzetlen kétkezes harc esetén két fegyver használatakor.
   - Főfegyver (nagyobb fegyver) harcmodora számít
   - Fegyver harcértékek összeadódnak
   - mindkét fegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya számít
-  - Harckeret: `+6`
+  - Harckeret: `+4`
 
 <br />
 

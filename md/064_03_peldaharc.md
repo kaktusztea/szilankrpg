@@ -16,12 +16,11 @@ Fájdalomtűrés (7)
   → -4 a TÉ levonásokra
 
 Vért (80% lefedettség)
-- Láncing (torzó, felkarok, combok, lábszár)
+- Láncing (torzó + 3 (felkarok, combok, lábszár))
 - Átlagos minőség, Acél
 
 SFÉ: 8 / 13 / 5
-MGT: 5 (13 - (2 x 3) + (3 x 2) = 13
-+ Vértviselet – 2.fok
+MGT: 10 = 7 + (3 x 1)
 ```
 
 #### Életerő Pontok (Lord Gustav)

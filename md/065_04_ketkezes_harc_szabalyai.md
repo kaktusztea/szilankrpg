@@ -13,9 +13,9 @@ A **Harckeretbe** beleszámít a [Kétkezes harc](fortelyok.harci/ketkezes_harc.
 
 ```
 0.fok: +1 Harckeret
-1.fok: +3 Harckeret
-2.fok: +6 Harckeret
-3.fok: +6 Harckeret
+1.fok: +2 Harckeret
+2.fok: +3 Harckeret
+3.fok: +4 Harckeret
 ```
 
 A **Harckeret** értékébe a forgatott fegyverek összesített **hossza** is beleszól:
@@ -89,8 +89,9 @@ Harc 2 db tőrrel
 „Rövid” fegyverek → 0 pengehossz
 0+0=0 penge → nincs Harckeret levonás:
 
-1.fok:   +3 Harckeret
-2,3.fok: +6 Harckeret
+1.fok: +2 Harckeret
+2.fok: +3 Harckeret
+3.fok: +4 Harckeret
 ```
 
 ### ⚡Példa-2
@@ -107,8 +108,9 @@ Harc `2 db` szablyával (`1` pengés fegyverek)
 Tehát a **Harckeret** `4`-gyel csökken. Bónuszok és levonások összege:
 
 ```
-1.fok:   (3-4) =  -1 Harckeret
-2,3.fok: (6-4) =  +2 Harckeret
+1.fok: (2-4) =  -2 Harckeret
+2.fok: (3-4) =  -1 Harckeret
+3.fok: (4-4) =  +0 Harckeret
 ```
 
 ---

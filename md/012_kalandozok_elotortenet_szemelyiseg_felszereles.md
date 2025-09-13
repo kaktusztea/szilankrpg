@@ -69,12 +69,22 @@ Hogy hány **közepes** és **nagy** tárgyat vagy képes hordozni anélkül, ho
 
 Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az alábbiak szerint:
 
-- közepes tárgy: `-1 pont` → példa: rövidkard, 20m kötél
-- nagy tárgy: `-2 pont` → példa: alabárd, nagy pajzs
+```
+-1 pont: közepes tárgy
+  → rövidkard, 20m kötél ..
+-2 pont: nagy tárgy
+  → alabárd, nagy pajzs ..
+```
 
-Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `+3 MGT` hatást okoz, amelyre nem vonatkozik a [Vértviselet](fortelyok.harci/vertviselet.md) fortély mérséklő hatása.
+Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `+1 Nehézvért MGT` hatást okoz
+```
+-1 TÉ / MGT
+-1 Harckeret / MGT
+```
 
-🔆 A viselt vértezet NEM tartozik a Felszerelés és az fent számított keret alá.
+🔆 A fentire nem vonatkozik a [Nehézvértviselet](fortelyok.harci/nehezvertviselet.md) fortély mérséklő hatása.
+
+🔆 A viselt vértezet NEM tartozik a Felszerelés és a fent számított keret alá.
 
 ---
 🔗 [Tapasztalati szint, Szintlépés](013_tsz_szintlepes.md) →

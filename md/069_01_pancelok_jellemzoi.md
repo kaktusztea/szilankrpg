@@ -23,12 +23,10 @@ Struktúra
    bőr, lánc, lemez, stb
 Fémalapanyag
    fém vérteknél: milyen fémből készült
-Kidolgozottság
-   illesztések minősége
+Csatolt elemek száma és minősége
+   érték x darab
 Mennyire passzol?
    vértviselő testére
-Csatolt elemek száma
-   darab
 ```
 
 ### Ár
@@ -59,16 +57,12 @@ Struktúra
 Fémalapanyag
   → acél, abbit, mithrill
   → SFÉ-re, Alap-MGT-re hat
-Kidolgozottság
-  → illesztések minősége
-  → MGT-re hat
 Mennyire passzol
   → vértviselő testére
   → MGT-re hat
-Csatolt elemek száma
+Csatolt elemek száma, minősége
   → MGT-re hat
   → védett területre hat
-
 ```
 
 ---

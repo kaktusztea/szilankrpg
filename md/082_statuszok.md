@@ -349,29 +349,36 @@ Lásd a [Méregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait*
 A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**. A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
 
 ```
-MGT hatása Támadó Értékre
+MGT hatása
 
-3 MGT → -1 TÉ  ↓
+Könnyűvértek
+ 1 MGT == -1 Harckeret
+
+Nehézvértek
+ 1 MGT == -1 Harckeret
+          -1 TÉ
+
+ Nehézvértviselet fortély
+   Csökkenti a TÉ büntetést
 ```
-
 
 ```
 MGT hatása Fizikai
  Tulajdonságpróbákra és Képzettségpróbákra
 
- 0-10 MGT: nincs büntetés
-11-20 MGT: Hátrány-1 próbákra
-21-30 MGT: Hátrány-2 próbákra
-  31+ MGT: nem dobhatsz
+ 0-7  MGT: nincs büntetés
+ 8-10 MGT: Hátrány-1 próbákra
+11-13 MGT: Hátrány-2 próbákra
+  14+ MGT: nem dobhatsz
 
 
-Vértviselet fortély MGT csökkentő
-hatása a próbákra is hatással van!
+Nehézvértviselet fortély MGT csökkentő
+ hatása a próbákra is hatással van!
 ```
 
 **Kapcsolódik**:
 - [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet
-- [Vértviselet](fortelyok.harci/vertviselet.md) fortély
+- [Nehézvértviselet](fortelyok.harci/nehezvertviselet.md) fortély
 
 <br />
 
