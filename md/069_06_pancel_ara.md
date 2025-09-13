@@ -27,7 +27,7 @@ Csatolt tagok ára
 
 A mellvért-darab árát az **SFÉ** táblázatban találjuk (szorzó) és az Anyagminőségtől is függ.
 
-A **Kidolgozottság** szorzót a [Vértek kidolgozottsága](069_03_MGT.md#3-csatolt-mgt) táblázat tartalmazza. Érthető módon ha jobb a kidolgozottság, drágább a páncél.
+A **Kidolgozottság** szorzót [itt találjuk](069_03_MGT.md#%C3%A1r-szorz%C3%B3). Érthető módon ha jobb a kidolgozottság, drágább a páncél.
 
 Ha fém vértről beszélünk és a vért nem hagyományosan acélból készült, akkor a [Fém vértek alapanyagai](069_02_SFE.md#3-f%C3%A9malapanyag-sf%C3%A9-%C3%A1r-szorz%C3%B3) táblázatban található **Fémanyag-szorzó** értéket is be kell vonni (az Acél szorzója: `1`). Például **abbitacél** esetén az értéket `10`-zel kell szorozni.
 
