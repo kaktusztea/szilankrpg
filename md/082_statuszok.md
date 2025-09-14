@@ -371,7 +371,6 @@ MGT hatása Fizikai
 11-13 MGT: Hátrány-2 próbákra
   14+ MGT: nem dobhatsz
 
-
 Nehézvértviselet fortély MGT csökkentő
  hatása a próbákra is hatással van!
 ```

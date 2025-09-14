@@ -32,6 +32,15 @@ A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje 
 <br />
 
 ---
+### MGT hatása fizikai Tulajdonságpróbára
+
+Páncélod akadályozhat a fizikai Tulajdonságpróbák végrehajtásában.
+
+Ezt a [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) Státusz írja le.
+
+<br />
+
+---
 ### Összetett Tulajdonságpróba
 
 Ha a karakternek egy olyan összetett próbát kell tennie, ami nem intézhető el `1 db` dobással (pl. több fázisból álló kombinált mozdulatsor, egy összetett, hosszan tartó, hullámzó érzelemimpulzus értelmezése **Érzékenység** próbával), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:

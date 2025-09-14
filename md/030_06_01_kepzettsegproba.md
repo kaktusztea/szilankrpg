@@ -64,6 +64,15 @@ Tulajdonságonként viszont eltér(het)
 <br />
 
 ---
+### MGT hatása fizikai Képzettségpróbákra
+
+Páncélod akadályozhat a fizikai Képzettségpróbák végrehajtásában.
+
+Ezt a [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) Státusz írja le.
+
+<br />
+
+---
 ### Kombinált képzettségpróba (több Tulajdonsággal egyszerre)
 
 Kizárólag [Összetett képzettségpróba](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok) esetén alkalmazható!
