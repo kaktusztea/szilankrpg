@@ -82,9 +82,7 @@ Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, po
 -1 Harckeret / MGT
 ```
 
-🔆 A fentire nem vonatkozik a [Nehézvértviselet](fortelyok.harci/nehezvertviselet.md) fortély mérséklő hatása.
-
-🔆 A viselt vértezet NEM tartozik a Felszerelés és a fent számított keret alá.
+🔆 A viselt vértezet NEM számít be a Felszerelés által fent számított keret alá.
 
 ---
 🔗 [Tapasztalati szint, Szintlépés](013_tsz_szintlepes.md) →
