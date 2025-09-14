@@ -35,18 +35,14 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 ---
 ### 2. fok
 
-🔒 **Követelmény**:
-- Erő: `+2`
-- Edzettség: `+2`
+🔒 **Követelmény**: Erő: `+2`
 
 🌟 **Hatás**: Nehézvérted `MGT` értékének `TÉ` büntetése `10`-zel enyhül
 
 ---
 ### 3. fok
 
-🔒 **Követelmény**:
-- Erő: `+2`
-- Edzettség: `+2`
+🔒 **Követelmény**: Erő: `+2`
 
 🌟 **Hatás**:
 - Nehézvérted `MGT` értékének `TÉ` büntetése `12`-vel enyhül
