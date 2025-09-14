@@ -57,16 +57,20 @@ Anyagminőség
 ```
 Struktúra
   → bőr, sodrony, stb
-  → SFÉ-re, Alap-MGT-re hat
+  → Hat erre: SFÉ, MGT, Ár
 Fémalapanyag
   → acél, abbit, mithrill
-  → SFÉ-re, Alap-MGT-re hat
-Mennyire passzol
-  → vértviselő testére
-  → MGT-re hat
+  → Hat erre: SFÉ, MGT, Ár
 Csatolt elemek száma, minősége
-  → MGT-re hat
+  → Hat erre: MGT, Ár
   → védett területre hat
+Anyagminőség
+  → Hat erre: SFÉ, Ár
+Mennyire passzol?
+  → vértviselő testére
+  → Hat erre: MGT
+Erő
+  → Hat erre: MGT
 ```
 
 ---
