@@ -1,18 +1,8 @@
 ## Nehézvértviselet fortély bónuszai
 
-Ennek a fortélynak az ismerete csökkenti az **MGT** okozta levonások hatását.
+Ennek a fortélynak az ismerete csökkenti a nehézvértek `MGT` értéke okozta `TÉ` levonások hatását.
 
 A teljes szabályt lásd a fortély leírásánál: **[Nehézvértviselet](fortelyok.harci/nehezvertviselet.md)**
-
-```
-1.fok: -5 MGT
-
-2.fok: -10 MGT
-
-3.fok: -12 MGT
- → VÉ:+3
- (lemez mellvértnél)
-```
 
 ---
 
