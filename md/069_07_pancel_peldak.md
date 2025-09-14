@@ -17,9 +17,10 @@ Tehát a lefedettség `80%`: mellkas (`50%`), felkar (`10%`), alkar (`10%`), com
 
 ```
 Struktúra: Sodronying
+
 Alap SFÉ: 8 / 13 / 5 / 15
-Anyagminőség átlagos: +0 SFÉ
-Fémalapanyag: Acél:   +0 SFÉ
++0 SFÉ: Anyagminőség átlagos
++0 SFÉ: Fémalapanyag: Acél
 
 Végső SFÉ: 8 / 13 / 5 / 15
 ```
