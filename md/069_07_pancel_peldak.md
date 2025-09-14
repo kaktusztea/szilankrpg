@@ -13,7 +13,7 @@ A lehető legátlagosabb sodronying, fejen (sisak) és lábszárakon **kívül**
 
 Tehát a lefedettség `80%`: mellkas (`50%`), felkar (`10%`), alkar (`10%`), combok (`10%`).
 
-### SFÉ
+### SFÉ: `8` / `13` / `5` / `15`
 
 ```
 Struktúra: Sodronying
@@ -25,7 +25,7 @@ Alap SFÉ: 8 / 13 / 5 / 15
 Végső SFÉ: 8 / 13 / 5 / 15
 ```
 
-### MGT
+### MGT: `9`
 
 ```
 Védett terület:
@@ -34,13 +34,13 @@ Védett terület:
 ```
 
 ```
-MGT: 12
+MGT: 9
 +8: Sodronying
-+6 (+2 MGT / tag) (pocsék)
++3 (+1 MGT / tag) (pocsék)
 -2: Erő MGT csökkentése
 ```
 
-### Ár
+### Ár: `8x`
 
 ```
 Torzó: 5x ár
@@ -70,7 +70,7 @@ Azaz egy átlagos bőr mellvért darab nyolcszorosába kerül a fenti teljes pá
 
 Mindent lefed (100%).
 
-### SFÉ: `10 / 13 / 5 / 15`
+### SFÉ: `10` / `13` / `5` / `15`
 
 ```
 → Struktúra: Lemezpáncél
@@ -79,7 +79,7 @@ Mindent lefed (100%).
 → Fémalapanyag: Bronz: SFÉ:-3
 ```
 
-### MGT: `21`
+### MGT: `26`
 
 ```
 Védett terület:
@@ -89,15 +89,15 @@ Védett terület:
 ```
 
 ```
-MGT: 21
+MGT: 26
 +10: Lemez
-+2: Bronz
-+10 (+2 MGT / tag)
+ +2: Bronz
++15 (+3 MGT / tag)
    Kidolgozottság pocsék
--1: Erő MGT csökkentése
+ -1: Erő MGT csökkentése
 ```
 
-### Ár
+### Ár: `1x`
 
 ```
 Torzó: 0,5x ár

@@ -13,14 +13,18 @@ Fegyver: Hosszú kard  (1 penge)
 Sebzés: k20+5 (V/S)  (Erőbónuszzal együtt)
 
 Fájdalomtűrés (7)
-  → -4 a TÉ levonásokra
+  → 4 könnyítés a TÉ levonásokra
 
 Vért (80% lefedettség)
-- Láncing (torzó + 3 (felkarok, combok, lábszár))
-- Átlagos minőség, Acél
+- Láncing torzó
+  +3 tag: felkarok, combok, lábszár
+- Átlagos minőség (1/tag)
+- Fémalapanyag: Acél (+0)
+- Erő: -3
 
 SFÉ: 8 / 13 / 5
-MGT: 10 = 7 + (3 x 1)
+MGT: 8 = 8 + (3 x 1) -3
+ → Harckeretre -8  → T/K: 1
 ```
 
 #### Életerő Pontok (Lord Gustav)
@@ -55,7 +59,7 @@ Fegyver: Rövidkard (0.5 penge)
 Sebzés: k20+2 (V/S)
 
 Fájdalomtűrés (6)
- → 3 ponttal csökkennek a TÉ levonások
+ → 3 könnyítés a TÉ levonásokra
 
 Vért: -
 SFÉ: -
