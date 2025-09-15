@@ -16,12 +16,11 @@ Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
   - Vért MGT
-  - 3
 ```
 
 Egy karakter plusz támadásainak száma attól függ, hogy milyen fegyvert forgat, mennyire képzett annak Harcmodorában, és hogy mennyire fürge (`Gyorsaság` tulajdonság).
 
-Számszerűen: az aktuális fegyverhez tartozó harcmodor-képzettség szintje és a Gyorsaság tulajdonság összege határozzák meg az ún. **Harckeret** értéket - amiből lejön még `3` pont. A Harckeret tehát harcmodoronként egyedi érték. A `-3` jelképezi a szokásos "nullpontot", ami a képzettségeknél az "alapszint". A vértek `MGT` értéke lejön a Harckeretből, így érdemes megfontolni: a több támadás, vagy a nagyobb védelem a fontosabb.
+Számszerűen: az aktuális fegyverhez tartozó harcmodor-képzettség szintje és a Gyorsaság tulajdonság összege határozzák meg az ún. **Harckeret** értéket. A Harckeret tehát harcmodoronként egyedi érték. A vértek `MGT` értéke lejön a Harckeretből, így érdemes megfontolni: a több támadás, vagy a nagyobb védelem a fontosabb.
 
 A **Harckeret** értéke a [Harckeret növelés](fortelyok.harci/harckeret_noveles.md) és [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortélyok segítségével emelhető tovább.
 

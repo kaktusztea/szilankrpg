@@ -55,7 +55,7 @@ Az egyes Tulajdonságok bemutatása előtt egy tömör összefoglaló táblázat
 Erő
   - Támadó Érték (TÉ)
   - Erőbónusz 1:1
-  - Követelmény nehezebb páncélokhoz
+  - Nehézvértviselet követelmény
 ```
 
 ```
@@ -72,14 +72,15 @@ Edzettség
 ```
 ```
 Gyorsaság
-  - Kezdeményező Érték
-  - Támadó Érték (TÉ) (2x)
-  - Védő Érték (2x)
+  - Kezdeményező Érték (KÉ)
+  - Támadó Érték (TÉ)
+  - Védő Érték (VÉ)
   - Harckeret
 ```
 
 ```
 Intelligencia
+  - Kezdeményező Érték (KÉ)
   - KP/Szint (1:1)
 ```
 
@@ -90,8 +91,7 @@ Emlékezet
 
 ```
 Önuralom
-  - Célzó Érték (CÉ) (2x)
-  - Fájdalomtűrés
+  - Célzó Érték (CÉ)
   - Mágikus ismeretek követelménye
 ```
 

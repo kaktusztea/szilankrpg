@@ -227,7 +227,6 @@ Plusz támadások (db) =
 Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság
-  - 3
 
 Fegyver Sebesség:
   fegyverenként eltérő egyéni érték 
