@@ -40,35 +40,39 @@ MGT: 9
 -2: Erő MGT csökkentése
 ```
 
-### Ár: `8x`
+### Ár: `16x`
 
 ```
-Torzó: 5x ár
-→  10x (Struktúra Sodrony)
-→   1x (Anyagminőség)
-→ 0,5x (Kidolgozottság „gyenge”)
-
-5x = 10x x 1x x 0.5
-```
-
-```
-1x = 1 db tag ára
-  (5x / 5)
+Torzó: 10x ár
+  10x (Struktúra Sodrony)
+  1x (Fémalapanyag: Acél)
+  1x (Anyagminőség: Átlagos)
 ```
 
 ```
-Végleges ár: 8x
-  (5x + (3 x 1x))
+Csatolt tagok ára: 6x ár
+
+  1/5x
+  10x (Torzó ár)
+   1x (Kidolgozottság „átlagos”)
+   3x (Csatolt tagok db)
 ```
 
-Azaz egy átlagos bőr mellvért darab nyolcszorosába kerül a fenti teljes páncél-kombó (csak `3` taggal szoroztunk, mert a torzó-darabot már beleszámoltuk).
+```
+Végleges ár: 13x
+  10x + 6x
+```
+
+Azaz egy átlagos bőr torzó darab `16`-szorosába kerül a fenti teljes páncél-kombó.
+
+<br />
 
 ---
 ## ⚡Példa 2: Legvacakabb teljes lemezvért
 
-... amiben a lehető legnehezebb mozogni (Kidolgozottság: pocsék, Fémalapanyaga: bronz) és még az Anyagminősége is a legvacakabb.
+... amiben a lehető legnehezebb mozogni (Fémalapanyaga: bronz; Anyagminősége a legvacakabb és még a tagok Kidolgozottsága: pocsék).
 
-Mindent lefed (100%).
+Mindent lefed (`100%`).
 
 ### SFÉ: `10` / `13` / `5` / `15`
 
@@ -97,29 +101,33 @@ MGT: 26
  -1: Erő MGT csökkentése
 ```
 
-### Ár: `1x`
+### Ár: `7,5x`
 
 ```
-Torzó: 0,5x ár
-→  100x (Struktúra Lemez)
-→ 0,1x (Anyagminőség vacak)
-→ 0,5x (Kidolgozottság „pocsék”)
+Torzó: 5x ár
+
+→ 100x (Struktúra Lemez)
 → 0,5x (Fémalapanyag: Bronz)
+→ 0,1x (Anyagminőség vacak)
 
-(100x x 0,1x x 0.5 x 0.5)
-```
-
-```
-0,1x = 1 db tag ára
-  (0,5x / 5)
+(100x x 0,5x x 0,1)
 ```
 
 ```
-1x: Végleges ár
-  (0,5x + (0,1 x 5x))
+Csatolt tagok ára: 2,5x
+
+x 1/5
+x 5   (Torzó ár)
+x 0,5 (Kidolgozottság „pocsék”)
+x 5   (Csatolt tagok db)
 ```
 
- Azaz pontosan egy átlagos bőr mellvért árának megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó (csak 5 taggal szoroztunk, mert a torzó-darabot már beleszámoltuk).
+```
+Végleges ár: 7,5x
+  (5x + 2,5x)
+```
+
+ Azaz egy átlagos bőr mellvért árának `7,5`-szeresének megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó.
  
 ---
 

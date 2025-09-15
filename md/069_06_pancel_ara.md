@@ -4,8 +4,8 @@ A páncél teljes árát a következőképpen kaphatjuk meg:
 
 ```
 Teljes ár
-   = (Torzó Struktúra Ár + Csatolt tagok Ára)
-   x Fémalapanyag x Anyagminőség
+   = Torzó Struktúra Ár
+   + Csatolt tagok Ára
 ```
 
 ---
@@ -41,9 +41,11 @@ Csatolt tagok (max 5 db)
   comb-tagok
   lábszár-tagok
   sisak
+```
 
+```
 Kidolgozottság
-   0.1: Pocsék
+   0.5: Pocsék
    1: Átlagos
  100: Mestermunka
 ```
@@ -51,7 +53,7 @@ Kidolgozottság
 ---
 ### Fémalapanyag Ár szorzó
 
-A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón. 
+A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
 
 ```
   1x  : Acél
