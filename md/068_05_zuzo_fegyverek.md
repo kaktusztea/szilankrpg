@@ -12,9 +12,9 @@
 | Buzogány, láncos    | `6` | `2` | `+4` |   `7`    |     `Z`      |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0` |    `1`     |   zúzó    | Ellene az ellenfél Pajzs VÉ fele számít csak!                                     |
 | Buzogány, shadleki  | `6` | `3` | `+5` |   `7`    |     `Z`      |    egykezes    |      `99`       |  `3`   | `0`  | `0` | `0` |    `1`     |   zúzó    |                                                                                   |
 | Buzogány, tollas    | `3` | `1` | `+4` |   `6`    |     `Z`      |    egykezes    |       `4`       |  `2`   | `0`  | `0` | `0` |   `0.5`    |   zúzó    |                                                                                   |
-| Csatabárd, egykezes | `4` | `2` | `+4` |   `7`    |     `Z`      |    egykezes    |       `4`       |  `2`   | `0`  | `0` | `0` |   `0.5`    |   zúzó    |                                                                                   |
-| Csatabárd, kétkezes | `6` | `3` | `+8` |   `9`    |     `Z`      |    kétkezes    |      `99`       |  `4`   | `0`  | `0` | `0` |   `1.5`    |   zúzó    |                                                                                   |
-| Csatacsákány        | `5` | `2` | `+5` |   `8`    |     `Z`      |    egykezes    |      `99`       |  `10`  | `0`  | `0` | `0` |    `1`     |   zúzó    | Nagyon vérzik.<br />`50%` az esély, hogy beragad és nem lehet kihúzni harc közben |
+| Csatabárd, egykezes | `4` | `2` | `+4` |   `7`    |     `V`      |    egykezes    |       `4`       |  `2`   | `0`  | `0` | `0` |   `0.5`    |   zúzó    |                                                                                   |
+| Csatabárd, kétkezes | `6` | `3` | `+8` |   `9`    |     `V`      |    kétkezes    |      `99`       |  `4`   | `0`  | `0` | `0` |   `1.5`    |   zúzó    |                                                                                   |
+| Csatacsákány        | `5` | `2` | `+5` |   `8`    |     `S`      |    egykezes    |      `99`       |  `10`  | `0`  | `0` | `0` |    `1`     |   zúzó    | Nagyon vérzik.<br />`50%` az esély, hogy beragad és nem lehet kihúzni harc közben |
 | Harci kalapács      | `7` | `2` | `+7` |   `9`    |     `Z`      |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` |   `1.5`    |   zúzó    | **Erő** követelmény:`+2`                                                          |
 
 <!-- tag: md_table_fegyver_end -->
