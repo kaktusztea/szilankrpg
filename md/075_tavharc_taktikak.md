@@ -5,7 +5,7 @@ Néhány speciális húzással beleszólhatunk az ilyen szituációkba.
 ---
 ### Szándékos kitérés lövés elől
 
-Ha valaki látja és van ideje felkészülni a rá leadott **lövésre/hajításra**, valamint rendelkezik elegendő hellyel a kitérésre ÉS bejelenti, hogy megpróbálja elkerülni végzetét, akkor **[Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát** kell dobnia, melynek nehézsége függ a lövést leadó személy távolságától, valamint az általa használt fegyvertől.
+Ha valaki látja és van ideje felkészülni a rá leadott **lövésre/hajításra**, valamint rendelkezik elegendő hellyel a kitérésre ÉS bejelenti, hogy megpróbálja elkerülni végzetét, akkor **[Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát** kell dobnia **Gyorsaság** Tulajdonsággal, melynek nehézsége függ a lövést leadó személy távolságától, valamint az általa használt fegyvertől.
 
 Kapcsolódik: [Elemi mágia - Mozgatás](kepzettsegek.primer.arkanumok/elemi_magia.md#komplexit%C3%A1s---mozgat%C3%A1s) (EM)
 
