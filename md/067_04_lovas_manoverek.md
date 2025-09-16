@@ -56,7 +56,7 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
 Megpróbálod lerántani lovas ellenfeled a nyergéből.
 
 - Nehézség: `[6-12]`  (hátas mozgása, lovas hova figyel)
-- Fázisok: `(M)egakasztás, (E)llenpróba, (V)égrehajtás`
+- Fázisok: `(M)egakasztás, (V)égrehajtás, (E)llenpróba`
 - Végbevitel követelménye: Csak közvetlen harcérintkezés alatt
 - Hatás: Sikeres próbálkozás esetén a lovas a földre kerül.
 

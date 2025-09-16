@@ -103,7 +103,7 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 
   - Nehézség: 10
   - Fázisok: `Végrehajtás, Ellenpróba`
-  - **Végrehajtás** fázisra **NEM JÁR** a `TÉ:+20` módosító
+  - **Végrehajtás** fázisra **NEM JÁR** a `TÉ:+4` módosító
 
 **Hatás**: Olyan helyzetet alakítasz ki, ahol az ellenfél fegyvere már nem fenyeget, te viszont életfontosságú pont mellé helyezed fegyvered- például a nyakára teszed fegyveredet, míg ő kiszolgáltatottan féltérdre rogy. Ha megmozdul, végzel vele.
 
@@ -399,7 +399,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
     - `+2`: zúzófegyverekkel
     - `+2`: [Roham](065_02_harci_taktikak.md#roham-taktika) alkalmazása esetén
 - Fázisok: `Végrehajtás, Ellenpróba`
-	- Végrehajtás során **❗ nem kapod meg a +20 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az Ellenpróbát.
+	- Végrehajtás során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az Ellenpróbát.
 - Követelmény: Aktuális harcmodor - `6.szint`
 
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület eseténa [Harci Anatómia](fortelyok.harci/harci_anatomia.md) **SP** bónusz érvényesül.
@@ -421,7 +421,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
     - [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
     - Harcmodor - `5.szint`
 
-**Hatás**: leadhatsz `TÉ:+20`-szal egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
+**Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
 
 **Fontos**: ne feledd, hogy ha egy harcon belül újra alkalmazod ezt a Manővert, az Nehézsége már `+2`-vel magasabb lesz!
 

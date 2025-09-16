@@ -112,7 +112,7 @@ Lásd a [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcból-ki
 - Nehézség: `8` 
 	- ± **Erő** különbség
 	- `+[1-6]`: ellenfél páncélban van. KM dönt a mértékről.
-- Fázisok: `Ellenpróba Végrehajtás`
+- Fázisok: `Végrehajtás, Ellenpróba`
 - Végbevitel követelménye: Belharc – `2.fok`
 
 **Hatás**: kitörted ellenfeled lábát, `6 ÉP` sebzés
@@ -144,7 +144,7 @@ Lásd a [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcból-ki
 
 - Nehézség: `10`
 	- `+[1-6]`: ellenfél páncélban van. KM dönt a mértékről.
-- Fázisok: `Ellenpróba Végrehajtás`
+- Fázisok: `Végrehajtás Ellenpróba`
 - Végbevitel követelménye:
 	- Belharc – `2.fok`
 	- Harci anatóma – `1.fok`
