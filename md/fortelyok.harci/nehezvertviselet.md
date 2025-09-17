@@ -22,7 +22,6 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 
 🌟 **Hatás**:
 - A vért `MGT` értékének teljes `TÉ` büntetése érvényesül
-- Ha nehézvértet vesz fel a karakter teljesen képzetlenül, akkor a képzetlen fegyverhasználat büntetéseinek megfelelő levonások sújtják: `KÉ:-6; TÉ/VÉ/CÉ :-9`
 - A fenti `TÉ` levonás és az MGT okozta `TÉ` levonás közül a hátrányosabb az érvényes
 
 ---
