@@ -42,7 +42,7 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 🔒 **Követelmény**: Erő: `+2`
 
 🌟 **Hatás**:
-- Nehézvérted `TÉ` büntetése ennyivel csökken: `-12`
+- Nehézvérted `TÉ` büntetése ennyivel csökken: `-15`
 - Nehézvért viselése esetén `VÉ:+3` bónuszt kapsz
   (tudatos vérthasználat lecsúsztatásokkal)
 
