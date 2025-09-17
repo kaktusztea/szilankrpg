@@ -20,8 +20,7 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**:
-- A vért teljes büntetése érvényesül `-TÉ == MGT`
+🌟 **Hatás**: a vért teljes büntetése érvényesül `-TÉ == MGT`
 
 ---
 ### 1. fok
