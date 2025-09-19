@@ -65,9 +65,10 @@ class MdToJsonConverter:
                 continue
             if self.tag_end in line:
                 is_between_markers = False
-                self.md = "\n".join(extracted_lines)
+                break
             if is_between_markers:
                 extracted_lines.append(line.strip())
+        self.md = "\n".join(extracted_lines)
 
     def is_csv_string(self, vstr):
         """
