@@ -28,7 +28,7 @@ VÉ Bónusz:
   → Nehézvértviselet 3.szint:
     + VÉ:+3 (lemez mellvértnél)
 
-CÉ = -10 (Konstans)
+CÉ = -15 (Konstans)
    + Önuralom
    + CM
    + Harcmodor/Mágia-Tradíció bónusz

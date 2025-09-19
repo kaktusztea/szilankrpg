@@ -16,7 +16,7 @@ Nyílpuska CÉ: 8
 ```
 
 ```
-CÉ = -10 (Konstans)
+CÉ = -15 (Konstans)
      + 3 (Önuralom)
      + 8 (nyílpuska CÉ)
      + 5 (CM)
@@ -24,7 +24,7 @@ CÉ = -10 (Konstans)
 ```
 
 ```
-CÉ = 8
+CÉ = 3
 ```
 
 ---
@@ -38,27 +38,27 @@ Nyílpuska Osztó: 5
 ```
 
 ```
-Szorzó: 3
-+ 3x: Mozgás: lassú, egyenletes
+Szorzó: 2
++ 2x: Mozgás: lassú, egyenletes
 ```
 
 ```
-VÉ = 12  (3 x 4)
+VÉ = 8  (2 x 4)
 ```
 
 ---
 ### `I/3` Célzó dobás
 
 ```
-8(CÉ) + k20   vs   12(VÉ)
+3(CÉ) + k20   vs   8(VÉ)
 ```
 
-azaz ha Tetves legalább `4`-et dob `k20`-on, akkor találatot ér el. Könnyű cél (`85 % esély`)...
+azaz ha Tetves legalább `5`-öt dob `k20`-on, akkor találatot ér el. Könnyű cél (`75 % esély`)...
 
 ```
 k20 Célzó dobás: 6
 
-CÉ = 8 + 6 = 14
+CÉ = 3 + 6 = 9
  → Találat
  → dobhatja a sebzést
 ```
@@ -89,7 +89,7 @@ Rövid íj CÉ: 5
 ```
 
 ```
-CÉ = -10 (Konstans)
+CÉ = -15 (Konstans)
      + 3 (Önuralom)
      + 5 (Rövid íj CÉ)
      + 1 (Mf:1)
@@ -98,15 +98,15 @@ CÉ = -10 (Konstans)
 ```
 
 ```
-CÉ = 6
+CÉ = 1
 ```
 
 ---
 ### `II/2` A célpont Védő Értéke
 
 ```
-Szorzók: 8
-+ 3x: Mozgás: lassú, egyenletes
+Szorzók: 7
++ 2x: Mozgás: lassú, egyenletes
 + 1x: Lövész mozgása: lassú egyenletes
 + 1x: Célpont mérete:törpe méret (Rühes cingár)
 + 1x: Észlelhetőség: homályos kontúr
@@ -122,22 +122,22 @@ Rövid íj Osztó: 4
 
 ```
 VÉ = Szorzó x Cella
-VÉ = 8 x 3 = 24
+VÉ = 7 x 3 = 21
 ```
 
 ---
 ### `II/3` Célzó dobás
 
 ```
-6 + k20  vs  24
+1 + k20  vs  21
 ```
 
-azaz ha Tetves legalább `18`-at dob `k20`-on, csak akkor talál célt. Nehéz próba.
+azaz ha Tetves csak a `20`-as dobás `k20`-on talál célt. Nehéz próba.
 
 ```
 k20 Célzó dobás: 12
 
-CÉ = 6 + 12 = 18
+CÉ = 1 + 12 = 13
  → Nem talált
 ```
 

@@ -18,21 +18,21 @@ Ha a célpont mozog, jóval nehezebb eltalálni. A távolság növekedésével e
 ```
 Célpont mozgás jellege
 
-2x: Álló
+1x: Álló
     A célpont mozdulatlan
-3x: Lassú, egyenletes
+2x: Lassú, egyenletes
     Lassú séta, léptetés lovon
-4x: Gyors, egyenletes
+3x: Gyors, egyenletes
     Egyenletesen futó ember, vágtató lovas
-6x: Kiszámíthatatlan
+5x: Kiszámíthatatlan
     A célpont ugrál, cikk-cakkban fut
-8x: Harcoló célpont
+7x: Harcoló célpont
     Csak konkrét harcoló fél eltalálása jó
 
-1x: Harcoló csoport (bárki jó találatnak)
+2x: Harcoló csoport (bárki jó találatnak)
     Ezt is a Méret módosító
     értékénél szimuláljuk
-4x: Sikertelenül szándékosan kitérő célpont
+3x: Sikertelenül szándékosan kitérő célpont
     Rontott Célpont-Gyorsaságpróba után
     a Lövész Célzó dobást tesz
 ```

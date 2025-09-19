@@ -34,7 +34,7 @@ Első szinten minden karakter egységes konstans értékeket kap `KÉ`, `TÉ`, `
   0: KÉ konstans
   7: TÉ konstans
  30: VÉ konstans
--10: CÉ konstans
+-15: CÉ konstans
 ```
 
 ---

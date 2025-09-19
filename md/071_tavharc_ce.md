@@ -11,7 +11,7 @@ A `Célzó Érték` kiszámolása a következőképpen történik - még karakte
 
 ```
 Támadó CÉ =
-    -10
+    -15
     + CM
     + Harcmodor CÉ
     + Önuralom
@@ -20,7 +20,7 @@ Támadó CÉ =
 ```
 
 ```
--10: Konstans
+-15: Konstans
   Ez az érték gyakorlatilag a célpont
   Védő Érték alapját adná, de mivel
   itt csak egyszer (karakteralkotáskor)
