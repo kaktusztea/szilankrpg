@@ -54,20 +54,51 @@ class MdToJsonConverter:
 
     def get_table_sections_from_raw_md(self):
         """
-        Filter markdown table code from raw markdown data
+        Extract one or more markdown table sections from raw markdown data
+        between self.tag_start and self.tag_end markers. If multiple table
+        sections are found, keep the header from the first section and append
+        only data rows from subsequent sections (skipping their header and
+        separator lines) so the converter can treat them as one continuous table.
         """
-        extracted_lines = []
+        sections = []
+        current_section_lines = []
         is_between_markers = False
 
         for line in self.md.split("\n"):
             if self.tag_start in line:
                 is_between_markers = True
+                current_section_lines = []
                 continue
             if self.tag_end in line:
                 is_between_markers = False
-                break
+                # store the collected section (strip empty lines)
+                if current_section_lines:
+                    sections.append([l.strip() for l in current_section_lines if l.strip() != ""])
+                current_section_lines = []
+                continue
             if is_between_markers:
-                extracted_lines.append(line.strip())
+                current_section_lines.append(line)
+
+        # If file ended while still inside a section, append it as well
+        if current_section_lines:
+            sections.append([l.strip() for l in current_section_lines if l.strip() != ""])
+
+        # Build the combined markdown: keep the first section's header+separator,
+        # and for subsequent sections append only data rows (skip first two lines).
+        extracted_lines = []
+        for idx, sec in enumerate(sections):
+            if not sec:
+                continue
+            if idx == 0:
+                extracted_lines.extend(sec)
+            else:
+                # Skip header and separator lines of subsequent sections if present
+                if len(sec) > 2:
+                    extracted_lines.extend(sec[2:])
+                else:
+                    # If section doesn't have expected header+separator, try to add whatever lines exist
+                    extracted_lines.extend(sec)
+
         self.md = "\n".join(extracted_lines)
 
     def is_csv_string(self, vstr):
