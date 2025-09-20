@@ -20,7 +20,7 @@ jobs:
         python-version: '3.13.0'
 
     - name: Execute process_kp_igeny.py
-      run: python code/process_kp_igeny.py md/062_02_harcmodor_kepzettsegek_es_bonuszaik.md data/harcmodor_kepzettsegek_bonuszok.json
+      run: python code/process_harcmodor_kepzettsegek_bonuszok.py md/062_02_harcmodor_kepzettsegek_es_bonuszaik.md data/harcmodor_kepzettsegek_bonuszok.json
     - name: Check for Changes
       run: |
         if [[ $(git status --porcelain) ]]; then
@@ -39,7 +39,7 @@ jobs:
       if: ${{ env.files_modified == 'true' }}
       run: |
         git add .
-        git commit -m "GitHub Action: process_kp_igeny.py"
+        git commit -m "GitHub Action: process_harcmodor_kepzettsegek_bonuszok.py"
 
     - name: Push Changes
       if: ${{ env.files_modified == 'true' }}
