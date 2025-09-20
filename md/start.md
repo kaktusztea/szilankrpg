@@ -201,7 +201,7 @@
 - [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
 - [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
 - [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
-- [Zúzó fegyverek](068_05_zuzo_fegyverek.md)
+- [Aprító fegyverek](068_05_aprito_fegyverek.md)
 - [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md)
 - [Hajítófegyverek](068_07_hajitofegyverek.md)
 - [Lőfegyverek](068_08_lofegyverek.md)
