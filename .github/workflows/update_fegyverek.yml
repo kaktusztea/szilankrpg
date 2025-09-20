@@ -1,4 +1,4 @@
-name: Update KP igeny json
+name: Update Fegyverek json
 
 on:
   push:
@@ -19,8 +19,16 @@ jobs:
       with:
         python-version: '3.13.0'
 
-    - name: Execute process_kp_igeny.py
-      run: python code/process_kp_igeny.py
+    - name: Install Python Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install natsort
+        # Install dependencies if requirements.txt exists
+        # if [ -f "requirements.txt" ]; then pip install -r requirements.txt; fi
+
+    - name: Execute process_fegyverek.py
+      run: python code/process_fegyverek.py
+
     - name: Check for Changes
       run: |
         if [[ $(git status --porcelain) ]]; then
@@ -39,7 +47,7 @@ jobs:
       if: ${{ env.files_modified == 'true' }}
       run: |
         git add .
-        git commit -m "GitHub Action: process_kp_igeny.py"
+        git commit -m "GitHub Action: process_fegyverek.py"
 
     - name: Push Changes
       if: ${{ env.files_modified == 'true' }}
