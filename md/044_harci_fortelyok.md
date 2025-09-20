@@ -59,6 +59,7 @@
 
 <!-- tag: tavharc__fortely -->
 
+- [Gyors hajítás](fortelyok.tavharc/gyors_hajitas.md)
 - [Gyors lövés](fortelyok.tavharc/gyors_loves.md)
 - [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md)
 - [Képzett célzás](fortelyok.tavharc/kepzett_celzas.md)

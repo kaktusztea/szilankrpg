@@ -4,7 +4,7 @@ Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót,
 
 ### Alapeset
 
-🔒 **Követelmény**: -
+🔒 **Követelmény**: Csak íjjal végezhető
 
 🌟 **Hatás**: `1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. 
 
@@ -12,6 +12,7 @@ Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót,
 ### 1. fok
 
 🔒 **Követelmény**:
+- Csak íjjal végezhető
 - Önuralom: `+1`
 - Íjászat vagy Lövészet - `5.szint`
 - Összpontosítás - `4.szint`
