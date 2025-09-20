@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 from lib.JinjaHandler import JinjaHandler
-import
 import sys
 
 template_dir =  sys.argv[1]
