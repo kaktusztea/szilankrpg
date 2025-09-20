@@ -10,6 +10,8 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Ügyesség: `+2`
 - Gyorsaság `+2`
 - Akrobatika - `4.szint`
+- Csak Hajlékonyvértben
+- Maximum `MGT:10` értékű vértben
 
 🌟 **Hatás**:
 - `TÉ:+1, VÉ:+1`
@@ -22,6 +24,8 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Ügyesség: `+3`
 - Gyorsaság `+2`
 - Akrobatika - `8.szint`
+ - Csak Hajlékonyvértben
+- Maximum `MGT:10` értékű vértben
 
 🌟 **Hatás**:
 - `TÉ:+2, VÉ:+2`
@@ -33,6 +37,8 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - Ügyesség: `+3`
 - Gyorsaság `+3`
 - Akrobatika - `12.szint`
+- Csak Hajlékonyvértben
+- Maximum `MGT:10` értékű vértben
 
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3`
