@@ -6,7 +6,7 @@ A Manőverek [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B
 Manőver Pontok =
  ( Közelharc
  + Kardvívás
- + Zúzás
+ + Aprítás
  + Lándzsavívás
  + Ostorharc )
      / TSz  ↑

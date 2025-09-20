@@ -6,7 +6,7 @@ Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.
 
 🔒 **Követelmény**:
 - Harcmodor  **-** `4.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Zúzás**)
+- (**Közelharc** vagy **Kardvívás** vagy **Aprítás** vagy **Lándzsavívás** vagy **Ostroharc**)
 - Roham taktika
 
 🌟 **Hatás**:

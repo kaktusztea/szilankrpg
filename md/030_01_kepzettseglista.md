@@ -33,7 +33,7 @@
 ---
 ### Harci képzettségek 🅿️
 
-🔵 [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) (Közelharc, Kardvívás, Lándzsavívás, Zúzás, Ostorharc) 🔁
+🔵 [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) (Közelharc, Kardvívás, Lándzsavívás, Aprítás, Ostorharc) 🔁
 
 🔵 [Távolsági harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) (Hajítás, Íjászat🤝, Lövészet🤝, Ostromlövészet🤝) 🔁
 
