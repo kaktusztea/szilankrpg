@@ -76,7 +76,7 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
   → alabárd, nagy pajzs ..
 ```
 
-Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `+1 Nehézvért MGT` hatást okoz
+Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `+1 Merevvért MGT` hatást okoz
 ```
 -1 TÉ / MGT
 -1 Harckeret / MGT

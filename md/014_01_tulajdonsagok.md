@@ -55,7 +55,7 @@ Az egyes Tulajdonságok bemutatása előtt egy tömör összefoglaló táblázat
 Erő
   - Támadó Érték (TÉ)
   - Erőbónusz 1:1
-  - Nehézvértviselet követelmény
+  - Merevvértviselet követelmény
 ```
 
 ```

@@ -1,8 +1,8 @@
-## Nehézvértviselet fortély bónuszai
+## Merevvértviselet fortély bónuszai
 
-Ennek a fortélynak az ismerete csökkenti a nehézvértek `MGT` értéke okozta `TÉ` levonások hatását.
+Ennek a fortélynak az ismerete csökkenti a merevvért `MGT` értéke okozta `TÉ` levonások hatását.
 
-A teljes szabályt lásd a fortély leírásánál: **[Nehézvértviselet](fortelyok.harci/nehezvertviselet.md)**
+A teljes szabályt lásd a fortély leírásánál: **[Merevvértviselet](fortelyok.harci/merevvertviselet.md)**
 
 ---
 

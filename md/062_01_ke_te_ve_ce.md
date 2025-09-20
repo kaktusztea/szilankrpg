@@ -137,8 +137,8 @@ A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képess�
 + HM
     A VÉ-re költött (KP-ból felvett)
     Harcérték módosító
-+ Nehézvértviselet – 3. fok
-    Nehéz mellvérteknél VÉ:+3 bónusz
++ Merevvértviselet – 3. fok
+    Merev mellvérteknél VÉ:+3 bónusz
 + Pajzs VÉ
     Készületlenül, Meglepetésnél
     pajzs VÉ nem adódik hozzá.

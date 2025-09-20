@@ -1,7 +1,7 @@
-## 🟣 Nehézvértviselet (3)
+## 🟣 Merevvértviselet (3)
 
-A lemezvértek helyes viselése is ismereteket igényel, különben csak csetlesz-botlasz bennük.\
-Nehézvértek: Pikkely fémpáncél, Lemezvért
+A merev vértek helyes viselése is ismereteket igényel, különben csak csetlesz-botlasz bennük.\
+Merevvértek: Pikkely fémpáncél, Lemezvért
 
 Kapcsolódik:
 - [Vértek, Páncélok](../069_00_vertek_pancelok.md)
@@ -9,7 +9,7 @@ Kapcsolódik:
 - [Páncél akadályoztatása](../082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) Státusz
 
 ```
-Nehézvért büntetése
+Merevvért büntetése
  1 MGT → -1 TÉ
 ```
 
@@ -27,14 +27,14 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 
 🔒 **Követelmény**: Erő: `+1`
 
-🌟 **Hatás**: Nehézvérted `TÉ` büntetése ennyivel csökken: `-5`
+🌟 **Hatás**: Merevvérted `TÉ` büntetése ennyivel csökken: `-5`
 
 ---
 ### 2. fok
 
 🔒 **Követelmény**: Erő: `+2`
 
-🌟 **Hatás**: Nehézvérted `TÉ` büntetése ennyivel csökken: `-10`
+🌟 **Hatás**: Merevvérted `TÉ` büntetése ennyivel csökken: `-10`
 
 ---
 ### 3. fok
@@ -42,8 +42,8 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 🔒 **Követelmény**: Erő: `+2`
 
 🌟 **Hatás**:
-- Nehézvérted `TÉ` büntetése ennyivel csökken: `-15`
-- Nehézvért viselése esetén `VÉ:+3` bónuszt kapsz
+- Merevvérted `TÉ` büntetése ennyivel csökken: `-15`
+- Merevvért viselése esetén `VÉ:+3` bónuszt kapsz
   (tudatos vérthasználat lecsúsztatásokkal)
 
 <br />

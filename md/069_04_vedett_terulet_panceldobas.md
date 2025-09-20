@@ -52,6 +52,6 @@ k10
 
 ---
 
-🔗 [Nehézvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md) →
+🔗 [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

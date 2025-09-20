@@ -351,14 +351,14 @@ A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettsé
 ```
 MGT hatása
 
-Könnyűvértek
+Hajlékonyvért
  1 MGT == -1 Harckeret
 
-Nehézvértek
+Merevvértek
  1 MGT == -1 Harckeret
           -1 TÉ
 
- Nehézvértviselet fortély
+ Merevvértviselet fortély
    Csökkenti a TÉ büntetést
 ```
 
@@ -371,13 +371,13 @@ MGT hatása Fizikai
 11-13 MGT: Hátrány-2 próbákra
   14+ MGT: nem dobhatsz
 
-Nehézvértviselet fortély MGT csökkentő
+Merevvértviselet fortély MGT csökkentő
  hatása a próbákra is hatással van!
 ```
 
 **Kapcsolódik**:
 - [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet
-- [Nehézvértviselet](fortelyok.harci/nehezvertviselet.md) fortély
+- [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély
 
 <br />
 

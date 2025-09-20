@@ -8,7 +8,7 @@
 
 ### [Védett terület, Páncéldobás](069_04_vedett_terulet_panceldobas.md)
 
-### [Nehézvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
+### [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
 
 ### [Páncél ára](069_06_pancel_ara.md)
 

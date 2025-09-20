@@ -30,7 +30,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 - Védő Érték csökkentése
 - Páncélmodell
   - páncél generátor: `4` féle `SFÉ`; `MGT`; Ár
-  - **Nehézvértviselet** fortély kapcsolat
+  - **Merevvértviselet** fortély kapcsolat
 - Harci fortélyok: jellemzően statikus bónuszok
 - Harci helyzetek: adott, vagy kialakított Státuszok
 - Harci taktikák: harci jelleg általános eltolása egy irányba

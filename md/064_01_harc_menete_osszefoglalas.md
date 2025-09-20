@@ -25,8 +25,8 @@ VÉ = 24
    + Pajzs VÉ
 
 VÉ Bónusz:
-  → Nehézvértviselet 3.szint:
-    + VÉ:+3 (lemez mellvértnél)
+  → Merevvértviselet 3.szint:
+    + VÉ:+3 (merev mellvérteknél)
 
 CÉ = -15 (Konstans)
    + Önuralom
