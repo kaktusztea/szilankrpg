@@ -2,7 +2,7 @@
 
 Mágiatudóként nagyon kihegyezted magad a lövedékek gyorsítására.
 
-Kapcsolódik: [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől)
+Kapcsolódik: [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) szituáció
 
 ---
 ### 1. fok
