@@ -1,8 +1,0 @@
-{
-    "id":"harcmodor_kepzettseg_bonuszok",
-    "output":"harcmodor_kepzettseg_bonuszok.json",
-    "file_pattern": "harcmodor_kepzettsegek_es_bonuszaik.md",
-    "table_pattern": "harcmodor_kepzettseg_bonuszok",
-    "sortkey": "Harcmodor Szint",
-    "skip_columns": []
-}

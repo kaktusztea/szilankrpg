@@ -1,8 +1,0 @@
-{
-    "id":"kepzettseg_kp",
-    "output":"kepzettseg_kp.json",
-    "file_pattern": "kepzettsegszintek_kp_igenye.md",
-    "table_pattern": "kepzettsegkp",
-    "sortkey": "Képzettség Szint",
-    "skip_columns": ["Fokozat"]
-}
