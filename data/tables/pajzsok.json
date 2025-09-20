@@ -1,6 +1,6 @@
 [
     {
-        "Pajzs név": "Kis Pajzs",
+        "Pajzs": "Kis Pajzs",
         "TÉ": "1",
         "VÉ": "3",
         "Sebesség": "6",
@@ -9,7 +9,7 @@
         "Speciális": "-"
     },
     {
-        "Pajzs név": "Közepes Pajzs",
+        "Pajzs": "Közepes Pajzs",
         "TÉ": "1",
         "VÉ": "10",
         "Sebesség": "7",
@@ -18,7 +18,7 @@
         "Speciális": "Erő követelmény: +1"
     },
     {
-        "Pajzs név": "Nagy Pajzs",
+        "Pajzs": "Nagy Pajzs",
         "TÉ": "1",
         "VÉ": "16",
         "Sebesség": "9",

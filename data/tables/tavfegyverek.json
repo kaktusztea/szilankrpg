@@ -1,5 +1,18 @@
 [
     {
+        "Fegyver": "Aquir nyílpuska",
+        "CÉ": "9",
+        "Osztó": "4",
+        "SP": "halál / +6",
+        "Sebesség": "7",
+        "Sebzés módja": "S",
+        "Forgatás módja": "egykezes",
+        "Erőbónusz": "0",
+        "Átütés": "20",
+        "Hatótáv": "50m",
+        "Speciális / Megjegyzés": "Halálos hatása és Átütés értéke csak aquir kézben érvényesül"
+    },
+    {
         "Fegyver": "Bola",
         "CÉ": "2",
         "Osztó": "1",
@@ -140,6 +153,32 @@
         "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
     },
     {
+        "Fegyver": "Kézi nyílpuska",
+        "CÉ": "5",
+        "Osztó": "3",
+        "SP": "+0",
+        "Sebesség": "10",
+        "Sebzés módja": "S",
+        "Forgatás módja": "egykezes",
+        "Erőbónusz": "0",
+        "Átütés": "0",
+        "Hatótáv": "20m",
+        "Speciális / Megjegyzés": "A kézi nyílpuska kevésbé pontos fegyver kis mérete miatt."
+    },
+    {
+        "Fegyver": "Kharei nyílpuska",
+        "CÉ": "7",
+        "Osztó": "3",
+        "SP": "+3",
+        "Sebesség": "6",
+        "Sebzés módja": "S",
+        "Forgatás módja": "kétkezes",
+        "Erőbónusz": "0",
+        "Átütés": "0",
+        "Hatótáv": "50m",
+        "Speciális / Megjegyzés": "Míg ki nem fogy a tár. Újratöltés: 1 kör"
+    },
+    {
         "Fegyver": "Kő",
         "CÉ": "2",
         "Osztó": "1",
@@ -166,6 +205,32 @@
         "Hatótáv": "10m",
         "Kategória": "hajító",
         "Speciális / Megjegyzés": "Sebesülés az esés következtében lehet."
+    },
+    {
+        "Fegyver": "Nehéz nyílpuska",
+        "CÉ": "8",
+        "Osztó": "4",
+        "SP": "+14",
+        "Sebesség": "16",
+        "Sebzés módja": "S",
+        "Forgatás módja": "kétkezes",
+        "Erőbónusz": "0",
+        "Átütés": "15",
+        "Hatótáv": "80m",
+        "Speciális / Megjegyzés": ""
+    },
+    {
+        "Fegyver": "Nyílpuska",
+        "CÉ": "8",
+        "Osztó": "4",
+        "SP": "+6",
+        "Sebesség": "13",
+        "Sebzés módja": "S",
+        "Forgatás módja": "kétkezes",
+        "Erőbónusz": "0",
+        "Átütés": "8",
+        "Hatótáv": "50m",
+        "Speciális / Megjegyzés": ""
     },
     {
         "Fegyver": "Parittya",
@@ -208,6 +273,19 @@
         "Hatótáv": "60m",
         "Kategória": "lőfegyver",
         "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
+    },
+    {
+        "Fegyver": "Shad0ni páncéltörő",
+        "CÉ": "0",
+        "Osztó": "5",
+        "SP": "+20",
+        "Sebesség": "-",
+        "Sebzés módja": "Z",
+        "Forgatás módja": "kétkezes",
+        "Erőbónusz": "0",
+        "Átütés": "20",
+        "Hatótáv": "120m",
+        "Speciális / Megjegyzés": "Újratöltés: 1 emberrel: 3 kör, 2 emberrel: 1 kör"
     },
     {
         "Fegyver": "Tőr",

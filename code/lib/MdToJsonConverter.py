@@ -17,6 +17,7 @@ class MdToJsonConverter:
             sys.exit(1)
 
         self.md = None
+        self.table_sections = []   # list of sections; each section is list of lines
         self.list_dicts = []
         self.id = params['id']
         self.filepattern = params['file_pattern']
@@ -55,10 +56,13 @@ class MdToJsonConverter:
     def get_table_sections_from_raw_md(self):
         """
         Extract one or more markdown table sections from raw markdown data
-        between self.tag_start and self.tag_end markers. If multiple table
-        sections are found, keep the header from the first section and append
-        only data rows from subsequent sections (skipping their header and
-        separator lines) so the converter can treat them as one continuous table.
+        between self.tag_start and self.tag_end markers.
+
+        Each collected section is stored as a list of cleaned, non-empty lines
+        in self.table_sections. We do NOT merge tables at the raw-text level
+        anymore; instead convert_md_to_json will parse each section separately
+        and append its rows. This prevents column/shift corruption when
+        headers differ or when tables are repeated in the same file.
         """
         sections = []
         current_section_lines = []
@@ -71,9 +75,11 @@ class MdToJsonConverter:
                 continue
             if self.tag_end in line:
                 is_between_markers = False
-                # store the collected section (strip empty lines)
                 if current_section_lines:
-                    sections.append([l.strip() for l in current_section_lines if l.strip() != ""])
+                    # strip whitespace and drop fully empty lines
+                    cleaned = [l.strip() for l in current_section_lines if l.strip() != ""]
+                    if cleaned:
+                        sections.append(cleaned)
                 current_section_lines = []
                 continue
             if is_between_markers:
@@ -81,25 +87,11 @@ class MdToJsonConverter:
 
         # If file ended while still inside a section, append it as well
         if current_section_lines:
-            sections.append([l.strip() for l in current_section_lines if l.strip() != ""])
+            cleaned = [l.strip() for l in current_section_lines if l.strip() != ""]
+            if cleaned:
+                sections.append(cleaned)
 
-        # Build the combined markdown: keep the first section's header+separator,
-        # and for subsequent sections append only data rows (skip first two lines).
-        extracted_lines = []
-        for idx, sec in enumerate(sections):
-            if not sec:
-                continue
-            if idx == 0:
-                extracted_lines.extend(sec)
-            else:
-                # Skip header and separator lines of subsequent sections if present
-                if len(sec) > 2:
-                    extracted_lines.extend(sec[2:])
-                else:
-                    # If section doesn't have expected header+separator, try to add whatever lines exist
-                    extracted_lines.extend(sec)
-
-        self.md = "\n".join(extracted_lines)
+        self.table_sections = sections
 
     def is_csv_string(self, vstr):
         """
@@ -113,42 +105,74 @@ class MdToJsonConverter:
             return False
 
     def convert_md_to_json(self):
-        for n, line in enumerate(self.md[1:-1].split('\n')):
-            data = {}
-            if n == 0:
-                header = [t.strip() for t in line.split('|')[1:-1]]
-            if n > 1:
-                values = [t.strip() for t in line.split('|')[1:-1]]
+        """
+        Parse each table section independently. Each section is expected to be
+        a Markdown table with header on the first line and separator on the
+        second line (e.g. | Col1 | Col2 |).
+        For each section:
+          - extract header columns
+          - for each data row (from line index 2 onward) split values
+          - if a row has fewer values than header, pad with empty strings
+          - if a row has more values than header, truncate extras
+        This prevents misalignment across multiple table sections and preserves
+        each table's header mapping.
+        """
+        for sec_idx, sec in enumerate(self.table_sections):
+            if not sec:
+                continue
+            if len(sec) < 2:
+                # Not a valid table (no header + separator); skip
+                print(f"MdToJsonConverter.convert_md_to_json(): skipping section {sec_idx} (too few lines)")
+                continue
+
+            header_line = sec[0]
+            # header_line format: | Col1 | Col2 | ...
+            header = [t.strip() for t in header_line.split('|')[1:-1]]
+
+            # iterate data rows (skip header and separator lines)
+            for row_idx, row_line in enumerate(sec[2:], start=2):
+                # skip empty rows
+                if not row_line.strip():
+                    continue
+                values = [t.strip() for t in row_line.split('|')[1:-1]]
+
+                # normalize length: pad with "" or truncate to match header length
+                if len(values) < len(header):
+                    values += [""] * (len(header) - len(values))
+                elif len(values) > len(header):
+                    values = values[:len(header)]
+
+                data = {}
                 for col, value in zip(header, values):
                     if col not in self.skip_columns:
                         if self.is_csv_string(value):
-                            parts = [ tp.strip() for tp in value.split(';') ]
+                            parts = [tp.strip() for tp in value.split(';')]
                             data[col] = dict()
                             # Split by ":" and store them as key:value entry
                             for pp in parts:
-                                k = pp.split(":")[0].strip()
-                                v = pp.split(":")[1].strip()
-                                data[col][k] = v
+                                # protect against malformed pp without ":"
+                                if ":" in pp:
+                                    k = pp.split(":", 1)[0].strip()
+                                    v = pp.split(":", 1)[1].strip()
+                                    data[col][k] = v
+                                else:
+                                    # treat whole part as key with empty value
+                                    data[col][pp] = ""
                         else:
                             data[col] = value
+                # Only append non-empty dicts (or append empty if that's desired)
                 self.list_dicts.append(data)
-            n += 1
 
     def order_json_by_key(self):
         """"
         Order json by sortkey value
         """
         if self.sortkey:
-            # Detect entries missing the sortkey
-            missing_count = sum(1 for d in self.list_dicts if self.sortkey not in d)
-            if missing_count:
-                print(f"MdToJsonConverter.sortkey(): 'sortkey' in dict is not present at '{self.id}' for {missing_count} entr{'y' if missing_count==1 else 'ies'}; those will be treated as empty string for sorting.")
             try:
-                # Use get() and str() to avoid KeyError and ensure .lower() works
                 self.list_dicts = natsort.natsorted(self.list_dicts, key=lambda x: str(x.get(self.sortkey, "")).lower())
-            except Exception as e:
-                print(f"MdToJsonConverter.sortkey(): error sorting by 'sortkey' at '{self.id}': {e}")
-                # Leave list unsorted if sorting fails
+            except KeyError as e:
+                print(f"MdToJsonConverter.sortkey(): 'sortkey' in dict is not present at '{self.id}'")
+                sys.exit(1)
 
     def write_json(self, path_json=None):
         if not path_json:
