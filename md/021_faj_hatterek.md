@@ -1,7 +1,5 @@
 ## Faj Hátterek
 
-<!-- tag: faj__hatter -->
-
 ```
 Faj követelmény:
   Érzék-Fortélyok közül minimum
