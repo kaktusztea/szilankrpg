@@ -6,7 +6,7 @@ Kapcsolódik
 
 <!-- tag: md_table_pajzs_start -->
 
-| Pajzs név     | TÉ  |  VÉ  | Sebesség |  SP  | Erőbónusz limit | Speciális                                                                                                                          |
+| Pajzs         | TÉ  |  VÉ  | Sebesség |  SP  | Erőbónusz limit | Speciális                                                                                                                          |
 | ------------- | :-: | :--: | :------: | :--: | :-------------: | :--------------------------------------------------------------------------------------------------------------------------------- |
 | Kis Pajzs     | `1` | `3`  |   `6`    | `+0` |       `0`       | -                                                                                                                                  |
 | Közepes Pajzs | `1` | `10` |   `7`    | `+0` |       `2`       | `Erő követelmény: +1`                                                                                                              |

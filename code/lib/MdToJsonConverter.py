@@ -139,11 +139,16 @@ class MdToJsonConverter:
         Order json by sortkey value
         """
         if self.sortkey:
+            # Detect entries missing the sortkey
+            missing_count = sum(1 for d in self.list_dicts if self.sortkey not in d)
+            if missing_count:
+                print(f"MdToJsonConverter.sortkey(): 'sortkey' in dict is not present at '{self.id}' for {missing_count} entr{'y' if missing_count==1 else 'ies'}; those will be treated as empty string for sorting.")
             try:
-                self.list_dicts = natsort.natsorted(self.list_dicts, key=lambda x: x[self.sortkey].lower())
-            except KeyError as e:
-                print(f"MdToJsonConverter.sortkey(): 'sortkey' in dict is not present at '{self.id}'")
-                sys.exit(1)
+                # Use get() and str() to avoid KeyError and ensure .lower() works
+                self.list_dicts = natsort.natsorted(self.list_dicts, key=lambda x: str(x.get(self.sortkey, "")).lower())
+            except Exception as e:
+                print(f"MdToJsonConverter.sortkey(): error sorting by 'sortkey' at '{self.id}': {e}")
+                # Leave list unsorted if sorting fails
 
     def write_json(self, path_json=None):
         if not path_json:
