@@ -1,24 +1,41 @@
 ## Gnóm
 
+bevezető ⭕
+
+### ⚜️Tulajdonság keretek
+
 ```
-Erő [-5; +2] ; Edzettség [-5; +3]
-Ügyesség [-2; +5] ; Intelligencia [+0; +6]
+[-5; +2] Erő
+[-5; +3] Edzettség
+[-2; +5] Ügyesség
+[+0; +6] Intelligencia
 ```
 
-🔆Futásnál, úszásnál, gyaloglásnál `-2` jár a Gyorsaságpróbáira.
+### ⚜️Érzék-Fortélyok maximuma
 
-Felvehető Érzék-Fortélyok maximuma:
 - [Ultralátás](../fortelyok.erzekek/fejlett_szaglas.md) - 3. fok
 - [Infralátás](../fortelyok.erzekek/infralatas.md) - 2. fok
 - [Barlangi tájékozódás](../fortelyok.erzekek/barlangi_tajekozodas.md) - 1. fok
 
-Ajánlott fortélyok:
+
+### ⚜️Faj misztérium
+
+Faj misztérium: Gnóm ⭕
+
+<br />
+
+---
+### Tiltott ismeretek, Korlátok
+
+Futásnál, úszásnál, gyaloglásnál `-2` jár a Gyorsaságpróbáira.
+
+### Ajánlott fortélyok
+
 - [Építészet](../fortelyok.altalanos/epiteszet.md)
 - [Mechanika](../fortelyok.altalanos/mechanika.md)
 - [Zártörő](../fortelyok.altalanos/zartoro.md)
 
-Ajánlott képzettségek:
-- [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)
-    - [Térképészet](../fortelyok.szabad/terkepeszet.md) SzH
+### Ajánlott képzettségek
 
-<br />
+- [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)
+- [Térképészet](../fortelyok.szabad/terkepeszet.md) SzH
