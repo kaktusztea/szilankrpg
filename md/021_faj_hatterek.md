@@ -18,7 +18,7 @@ Speciális:
 - [Kevert fajú](hatterek.faji/kevert_faju.md)
 
 ---
-Minden fajnak az alábbi jellemzőit fogja egybe a választott Faj-Háttér, mint keret:
+ A választott Faj-Háttér keretként fogja egybe minden egyes faj egyedi jellemzőit, melyek alább láthatóak:
 
 ### ⚜️Tulajdonság keretek
 
