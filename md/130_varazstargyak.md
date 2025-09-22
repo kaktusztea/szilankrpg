@@ -15,7 +15,7 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
 
 ### Mágikus fegyverek
 
-- [Idea szabály-megkötés](https://github.com/kaktusztea/szilankrpg/blob/master/md/068_01_fegyverek_altalanos_szabalyai.md#-m%C3%A1gikus-fegyverek-%C3%A9s-a-fegyver-ide%C3%A1ja)
+- [Idea szabály-megkötés](068_01_fegyverek_altalanos_szabalyai.md#-m%C3%A1gikus-fegyverek-%C3%A9s-a-fegyver-ide%C3%A1ja)
 - Fokozatosan kapja a fegyver az egyre erősebb hatásokat, ahogy egyre erősebb mágia ruházza fel
   - `1.` Átütést adnak - ez az élőholtak ellen is jó, mert az ő különféle fegyverekkel szembeni ellenállásukat [virtuális SFÉ használatával](064_02_07_sebzodes_hatasa.md#%C3%A9l%C5%91holtak-sebz%C5%91d%C3%A9se) modellezzük
   - `2.` `TÉ/VÉ/SP` értékek erősebb mágiánál

@@ -35,7 +35,7 @@ Amennyiben egy játékos választ egy Faj Hátteret a karakterének, akkor az an
 
 Tehát például választhat egy **orkot**, akinek mindösszesen "**Infralátás - 1.fok**" Érzék-Fortélya van. Nincs kiemelkedően jó szaglása, vagy hallása és a föld alatt sem kap bónuszokat. Egy faj nem minden egyede egyforma. A játékos megkapja a lehetőséget egy sokféle különleges érzékkel megáldott egyed indítására, de az sok KP-ba fog kerülni - a választás az övé.
 
-### ⚜️Faj misztérium
+### ⚜️[Faj misztérium](030_01_kepzettseglista.md#faj-miszt%C3%A9riumok-%F0%9F%85%BF%EF%B8%8F)
 
 **Opcionálisan** felvehető, primer 🅿️ képzettség, amely kimondottan az adott faj misztikus/mágikus, ősi gyökerei felé nyúl ki.
 

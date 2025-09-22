@@ -10,7 +10,7 @@ Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Érték
 Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerejen valamennyit Védő Értékéből:
 
 - Győzelmi szabály: ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont` (a siker hatása a szervezetre + heroizmus).
- - [Harcos elme](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.harci/harcos_elme.md) fortély 
+ - [Harcos elme](fortelyok.harci/harcos_elme.md) fortély 
  - Papi varázslat: ⭕TODO⭕
    - van narratív követelménye
    - cserébe harc után `FP`büntetés
@@ -35,7 +35,7 @@ A fenti kreatúrák közül több is képes harc közben `Védő Értékének` r
 
 Ez több kategóriára egyszerűsítettük:
 
-- `1.` [Harcos elme](https://github.com/kaktusztea/szilankrpg/blob/master/md/fortelyok.harci/harcos_elme.md) fortély valamelyik fokával azonos hatás
+- `1.` [Harcos elme](fortelyok.harci/harcos_elme.md) fortély valamelyik fokával azonos hatás
 - `2.` Teljes VÉ regeneráció: minden kör elején visszaáll a teljes `VÉ`, kivéve az `ÉP` sebből kapott `VÉ` levonás
 - `3.` `ÉP` is regenerálódik (pl. vámpír). Ekkor a `2.` ponton túl az `ÉP`-ből kapott `VÉ` levonást is visszakapja minden kör elején (csak amennyit regenerálódott)
 - `4.` Életerő regeneráló varázslatok, zónák. Például Nekromancia varázslat zóna, ahol az élőholtak folyamatosan regenerálódnak (`ÉP` és `VÉ`) valamilyen mértékben.
