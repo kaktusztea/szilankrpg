@@ -358,8 +358,9 @@ Merevvértek
  1 MGT == -1 Harckeret
           -1 TÉ
 
- Merevvértviselet fortély
-   Csökkenti a TÉ büntetést
+TÉ büntetést csökkenti
+  Merevvértviselet fortély
+  Erő Tulajdonság 1:1
 ```
 
 ```

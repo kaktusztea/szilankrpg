@@ -11,6 +11,9 @@ Kapcsolódik:
 ```
 Merevvért büntetése
  1 MGT → -1 TÉ
+
+Merevvértviselet enyhíti
+Erő Tulajdonság enyhíti
 ```
 
 További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olvashatsz.
@@ -46,6 +49,8 @@ További hatásokról a [Mozgásgátló Tényező](../069_03_MGT.md) oldalon olv
 - Merevvért viselése esetén `VÉ:+3` bónuszt kapsz
   (tudatos vérthasználat lecsúsztatásokkal)
 
-<br />
-
 ---
+
+### Erő Tulajdonság
+
+A merevvértek `TÉ` büntetését is csökkenti az **Erő** Tulajdonság
