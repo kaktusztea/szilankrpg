@@ -2,6 +2,10 @@
 
 <--- Leírás ide jön --->
 
+**RAW**
+
+- Természetes anyagok mágiája
+
 
 ---
 ### Biztos tudás, követelmények 📖

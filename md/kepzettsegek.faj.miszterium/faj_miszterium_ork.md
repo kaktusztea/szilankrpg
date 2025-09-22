@@ -2,6 +2,10 @@
 
 <--- Leírás ide jön --->
 
+**RAW**
+
+- Természetes fegyver
+- Nekromancia arkánuma, hogy kicselezzék Orwella átkát
 
 ---
 ### Biztos tudás, követelmények 📖

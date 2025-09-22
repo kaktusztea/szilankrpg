@@ -17,6 +17,9 @@
 - `Mentálmágia szint == ("Faj misztérium: Dzsenn" szintje) - 8`
 - A dzsenn képes nem Manából, hanem pszi energiáiból Mentálmágikus mozaikokat megidézni. Ennek a különleges képességnek oka a dzsennek mentálsíkkal való szoros összefonódásában keresendő. Fontos: csak 1 darab formulát használhat egyszerre, nem kombinálhatja őket mozaikokként!
 - Előnye, hogy például a Manaszipoly Metamágia formula nem használható rá, mivel nem történik Mana fókuszálás, továbbá Manaholt területeken is használható.
+- Mentálmágia, mint speciális pszionikus képesség, NEM a Magasmágia Mentálmágiája, vagy a Vulgármágia Mentálmágiája, hanem egy egyedi "dzsenn" Mentálmágia Arkánum.
+- Egyedi, "dzsennes" formulák vannak alatta, mint minden tradíció esetén. Legyen gyengébb (talán), vagy szűkebb scope.
+- Lélek szférát használnak a dzsenn papok (?ez hogy jön ide?)
 
 ⭕TODO⭕ A képzettség további előnye, hogy "Kyr" varázslói pszí diszciplínákat (⭕Asztrálszem/Mentálszem, stb⭕) is képesek `3.` szinttől használni.
 

@@ -1,10 +1,11 @@
-## Faj misztérium: Gnóm
+## Faj misztérium: Anatyda
 
 <--- Leírás ide jön --->
 
 **RAW**
 
-- Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia módszerrel), vagy Teremtés arkánuma (ősibb nép, mint az elfek)
+- Alakváltás (természetes anyagok mágiája); Vérfarkasok, Vértigrisek, stb.
+- Erre a legalkalmasabb az Anatyda lenne, mert ők alapból ember kinézetű alakváltók, az egész kontinensen jelen vannak, de azért nincsenek túl sokan
 
 ---
 ### Biztos tudás, követelmények 📖
