@@ -30,7 +30,7 @@ Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `12.szint`
 - [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `9.szint`
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `2.fok`
-- [Fejvadász Tradíció](../053_03_fejvadasz_tradicio.md) - `6.szint`
+- [Fejvadász Tradíció](../053_01_fejvadasz_tradicio.md) - `6.szint`
 - Mester, aki tanítja
 - A `3.fokot` csak fejvadász, boszorkány, boszorkánymester és egyes harcművész iskolákban tanítják
 

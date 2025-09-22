@@ -6,6 +6,6 @@
 
 ---
 
-🔗 [Slan Tradíció](053_04_slan_tradicio.md) →
+🔗 [Slan Tradíció](053_02_slan_tradicio.md) →
 
 ⚜️ [Nyitóoldal](start.md)

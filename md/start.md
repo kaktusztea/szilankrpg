@@ -122,10 +122,8 @@
 
 #### 5.3 [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
 
-- [Amund Tradíció](053_01_amund_tradicio.md)
-- [Dzsenn Tradíció](053_02_dzsenn_tradicio.md)
-- [Fejvadász Tradíció](053_03_fejvadasz_tradicio.md)
-- [Slan Tradíció](053_04_slan_tradicio.md)
+- [Fejvadász Tradíció](053_01_fejvadasz_tradicio.md)
+- [Slan Tradíció](053_02_slan_tradicio.md)
 
 ---
 ### 6. [Harcrendszer](060_00_harcrendszer.md) 🗡️
@@ -280,7 +278,7 @@
 ---
 ### 12. [Slan misztérium](120_slan.md)
 
- - [Slan Tradíció](053_04_slan_tradicio.md)
+ - [Slan Tradíció](053_02_slan_tradicio.md)
  - [Slan fortélyok](046_slan_fortelyok.md)
  - [Slan diszciplínák](121_slan_diszciplinak.md)
  - [Chi harc képzettségei](122_chi_harc.md)
