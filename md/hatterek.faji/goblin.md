@@ -25,9 +25,9 @@ Faj misztérium: Goblin ⭕
 <br />
 
 ---
-### Tiltott ismeretek
+### Tiltott ismeretek, korlátok
 
-⭕
+TODO ⭕
 
 ### Ajánlott fortélyok
 

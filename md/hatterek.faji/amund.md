@@ -26,7 +26,7 @@ TODO ⭕
 <br />
 
 ---
-### Tiltott ismeretek
+### Tiltott ismeretek, korlátok
 
 A Pszít nem képesek elsajátítani.
 

@@ -1,18 +1,36 @@
 ## Udvari ork
 
+bevezető ⭕
+
+### ⚜️Tulajdonság keretek
+
 ```
-Erő: [-1; +6] ; Edzettség [-1; +5]
-Intelligencia; [-5; +3]
+[-1; +6] Erő
+[-1; +5] Edzettség
+[-5; +3] Intelligencia
 ```
 
-Felvehető Érzék-Fortélyok maximuma:
+### ⚜️Érzék-Fortélyok maximuma
+
 - [Infralátás](../fortelyok.erzekek/infralatas.md) - 1. fok
 - [Barlangi tájékozódás](../fortelyok.erzekek/barlangi_tajekozodas.md) - 1. fok
 - [Fejlett szaglás](../fortelyok.erzekek/fejlett_szaglas.md) - 1. fok
 
-Ajánlott fortélyok: -
+### ⚜️Faj misztérium
 
-Ajánlott képzettségek:
-- [Etikett](../kepzettsegek.szekunder/etikett.md)
+Faj misztérium: Ork ⭕ ??
 
 <br />
+
+---
+### Tiltott ismeretek, korlátok
+
+TODO ⭕
+
+### Ajánlott fortélyok
+
+TODO ⭕
+
+### Ajánlott képzettségek
+
+- [Etikett](../kepzettsegek.szekunder/etikett.md)

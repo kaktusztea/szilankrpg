@@ -1,16 +1,34 @@
 ## Kyr
 
+bevezető ⭕
+
+### ⚜️Tulajdonság keretek
+
 ```
-Edzettség: [-5; +4] ; Önuralom [-3; +6]
+[-5; +4] Edzettség
+[-3; +6] Önuralom
 ```
 
-Felvehető Érzék-Fortélyok maximuma:
+### ⚜️Érzék-Fortélyok maximuma
+
 - [Ultralátás](../fortelyok.erzekek/fejlett_szaglas.md) - 1. fok
 
-Ajánlott Kiemelt/Szabad fortélyok: [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) (Kyr)
+### ⚜️Faj misztérium
 
-Ajánlott képzettségek:
-- [Etikett](../kepzettsegek.szekunder/etikett.md) (Kyr kultúrkör)
-- [Ősi nyelv ismerete](../kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) (Kyr)
+Faj misztérium: Kyr ⭕
 
 <br />
+
+---
+### Tiltott ismeretek, korlátok
+
+TODO ⭕
+
+### Ajánlott fortélyok
+
+- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) (Kyr)
+
+### Ajánlott képzettségek
+
+- [Etikett](../kepzettsegek.szekunder/etikett.md) (Kyr kultúrkör)
+- [Ősi nyelv ismerete](../kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) (Kyr)

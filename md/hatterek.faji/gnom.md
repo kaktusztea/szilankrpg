@@ -25,7 +25,7 @@ Faj misztérium: Gnóm ⭕
 <br />
 
 ---
-### Tiltott ismeretek, Korlátok
+### Tiltott ismeretek, korlátok
 
 Futásnál, úszásnál, gyaloglásnál `-2` jár a Gyorsaságpróbáira.
 

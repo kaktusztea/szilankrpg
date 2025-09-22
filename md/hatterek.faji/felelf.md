@@ -29,9 +29,11 @@ TODO ⭕
 <br />
 
 ---
-### Tiltott ismeretek
+### Tiltott ismeretek, korlátok
 
-x
+Nincs faj misztériuma.
+
+TODO ⭕
 
 ### Ajánlott fortélyok
 

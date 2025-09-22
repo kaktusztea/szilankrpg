@@ -23,7 +23,7 @@ TODO ⭕
 <br />
 
 ---
-### Tiltott ismeretek
+### Tiltott ismeretek, korlátok
 
 Nincs.
 

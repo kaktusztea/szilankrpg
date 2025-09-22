@@ -1,19 +1,36 @@
 ## Ork
 
+bevezető ⭕
+
+### ⚜️Tulajdonság keretek
+
 ```
-Erő: [-1; +6] ; Edzettség [+0; +6]
-Intelligencia [-5; +2]
+[-1; +6] Erő
+[+0; +6] Edzettség
+[-5; +2] Intelligencia
 ```
 
-Felvehető Érzék-Fortélyok maximuma:
+### ⚜️Érzék-Fortélyok maximuma
+
 - [Infralátás](../fortelyok.erzekek/infralatas.md) - 2. fok
 - [Barlangi tájékozódás](../fortelyok.erzekek/barlangi_tajekozodas.md) - 1. fok
 - [Fejlett szaglás](../fortelyok.erzekek/fejlett_szaglas.md) - 1. fok
 
-Ajánlott fortélyok:
-- [Kitartás](../fortelyok.altalanos/kitartas.md)
+### ⚜️Faj misztérium
 
-Ajánlott képzettségek:
-- [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)
+Faj misztérium: Ork ⭕
 
 <br />
+
+---
+### Tiltott ismeretek, korlátok
+
+TODO ⭕
+
+### Ajánlott fortélyok
+
+- [Kitartás](../fortelyok.altalanos/kitartas.md)
+
+### Ajánlott képzettségek
+
+- [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)

@@ -27,7 +27,7 @@ TODO ⭕
 <br />
 
 ---
-### Tiltott ismeretek
+### Tiltott ismeretek, korlátok
 
 TODO ⭕
 
