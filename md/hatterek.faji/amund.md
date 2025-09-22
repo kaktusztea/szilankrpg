@@ -17,7 +17,7 @@ A Taba el-Ibara holdkék szemű ősfaja.
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Amund ⭕
+[Faj misztérium: Amund](../kepzettsegek.faj.miszterium/faj_miszterium_amund.md)
 
 ### ⚜️Faji fortélyok
 

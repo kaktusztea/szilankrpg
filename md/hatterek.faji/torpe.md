@@ -19,7 +19,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Törpe ⭕
+[Faj misztérium: Törpe](../kepzettsegek.faj.miszterium/faj_miszterium_torpe.md)
 
 <br />
 

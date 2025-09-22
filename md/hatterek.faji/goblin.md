@@ -20,7 +20,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Goblin ⭕
+[Faj misztérium: Goblin](../kepzettsegek.faj.miszterium/faj_miszterium_goblin.md)
 
 <br />
 

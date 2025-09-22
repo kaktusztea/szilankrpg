@@ -15,7 +15,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Kyr ⭕
+[Faj misztérium: Kyr](../kepzettsegek.faj.miszterium/faj_miszterium_kyr.md)
 
 <br />
 

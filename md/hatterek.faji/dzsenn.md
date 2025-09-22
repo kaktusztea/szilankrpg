@@ -15,7 +15,7 @@ Nincs speciális felvehető érzék fortély.
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Dzsenn ⭕
+[Faj misztérium: Dzsenn](../kepzettsegek.faj.miszterium/faj_miszterium_dzsenn.md)
 
 ### ⚜️Faji fortélyok
 

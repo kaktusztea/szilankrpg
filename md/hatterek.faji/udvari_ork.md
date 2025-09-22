@@ -18,7 +18,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Ork ⭕ ??
+Faj misztérium: Ork ⭕TODO⭕ ???
 
 <br />
 

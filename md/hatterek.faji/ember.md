@@ -14,7 +14,7 @@ Nincs speciális felvehető érzék fortély.
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Ember ⭕
+[Faj misztérium: Ember](../kepzettsegek.faj.miszterium/faj_miszterium_ember.md)
 
 ### ⚜️Faji fortélyok
 

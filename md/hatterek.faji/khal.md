@@ -23,7 +23,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Khál ⭕
+[Faj misztérium: Khál](../kepzettsegek.faj.miszterium/faj_miszterium_khal.md)
 
 <br />
 

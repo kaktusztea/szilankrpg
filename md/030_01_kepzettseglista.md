@@ -28,7 +28,7 @@
 
 [Harci](#harci-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%EF%B8%8F) - [Fizikai](#fizikai-k%C3%A9pzetts%C3%A9gek) - [Világi](#vil%C3%A1gi-k%C3%A9pzetts%C3%A9gek) - [Alvilági](#alvil%C3%A1gi-k%C3%A9pzetts%C3%A9gek) - [Művészeti](#m%C5%B1v%C3%A9szeti-k%C3%A9pzetts%C3%A9gek) - [Tudományos](#tudom%C3%A1nyos-k%C3%A9pzetts%C3%A9gek)
 
-[Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%EF%B8%8F) - [Mágikus Szférák és Arkánumaik](#m%C3%A1gikus-szf%C3%A9r%C3%A1k-%C3%A9s-ark%C3%A1numaik-%F0%9F%85%BF%EF%B8%8F) - [Papi mágia](#papi-m%C3%A1gia-%F0%9F%85%BF%EF%B8%8F)
+Faj misztériumok - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%EF%B8%8F) - [Mágikus Szférák és Arkánumaik](#m%C3%A1gikus-szf%C3%A9r%C3%A1k-%C3%A9s-ark%C3%A1numaik-%F0%9F%85%BF%EF%B8%8F) - [Papi mágia](#papi-m%C3%A1gia-%F0%9F%85%BF%EF%B8%8F)
 
 ---
 ### Harci képzettségek 🅿️
@@ -124,6 +124,31 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 🔵 [Kvantikum](kepzettsegek.szekunder/kvantikum.md) 🤝
 
 🔵 [Lexikum](kepzettsegek.szekunder/lexikum.md) 🤝
+
+---
+### Faj misztériumok 🅿️
+
+🔵 [Faj misztérium: Amund](kepzettsegek.faj.miszterium/faj_miszterium_amund.md)
+
+🔵 [Faj misztérium: Dzsenn](kepzettsegek.faj.miszterium/faj_miszterium_dzsenn.md)
+
+🔵 [Faj misztérium: Elf](kepzettsegek.faj.miszterium/faj_miszterium_elf.md)
+
+🔵 [Faj misztérium: Ember](kepzettsegek.faj.miszterium/faj_miszterium_ember.md)
+
+🔵 [Faj misztérium: Gnóm](kepzettsegek.faj.miszterium/faj_miszterium_gnom.md)
+
+🔵 [Faj misztérium: Goblin](kepzettsegek.faj.miszterium/faj_miszterium_goblin.md)
+
+🔵 [Faj misztérium: Khál](kepzettsegek.faj.miszterium/faj_miszterium_khal.md)
+
+🔵 [Faj misztérium: Kyr](kepzettsegek.faj.miszterium/faj_miszterium_kyr.md)
+
+🔵 [Faj misztérium: Ork](kepzettsegek.faj.miszterium/faj_miszterium_ork.md)
+
+🔵 [Faj misztérium: Udvari ork](kepzettsegek.faj.miszterium/faj_miszterium_udvari_ork.md)
+
+🔵 [Faj misztérium: Törpe](kepzettsegek.faj.miszterium/faj_miszterium_torpe.md)
 
 ---
 ### Misztikus képzettségek 🅿️

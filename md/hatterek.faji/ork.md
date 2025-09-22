@@ -18,7 +18,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-Faj misztérium: Ork ⭕
+[Faj misztérium: Ork](../kepzettsegek.faj.miszterium/faj_miszterium_ork.md)
 
 <br />
 
