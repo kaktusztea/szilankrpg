@@ -6,6 +6,19 @@ Ide tartozik:
 - félelf
 - dzsad
 
+---
+**RAW**
+
+- érzék fortélyokat felvehet - OK
+- tulajdonság limit - OK
+- ők NEM tudnak faj Arkánumot tanulni! Így le tudjuk tápolni őket kicsit.
+- a legtöbb lény Yn3ven ilyen
+
+Kalandozók (Szilánkkal)
+- választhatnak, hogy biológiailag félelf, de felveszi az Elf képzettséget.
+
+
+---
 TODO ⭕
 
 ### ⚜️Tulajdonság keretek
