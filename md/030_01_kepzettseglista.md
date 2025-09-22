@@ -130,6 +130,8 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Faj misztérium: Amund](kepzettsegek.faj.miszterium/faj_miszterium_amund.md)
 
+🔵 [Faj misztérium: Anatyda](kepzettsegek.faj.miszterium/faj_miszterium_anatyda.md)
+
 🔵 [Faj misztérium: Dzsenn](kepzettsegek.faj.miszterium/faj_miszterium_dzsenn.md)
 
 🔵 [Faj misztérium: Elf](kepzettsegek.faj.miszterium/faj_miszterium_elf.md)

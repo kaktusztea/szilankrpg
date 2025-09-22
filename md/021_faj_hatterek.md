@@ -3,7 +3,7 @@
 Az alábbiakban a játszható és nem játszható fajok bemutatását egyedi jellemzőiket találjuk, amelyekből választhat a játékos karaktere megalkotásakor.
 
 - [Amund](hatterek.faji/amund.md)
-- [Anatyda](kepzettsegek.faj.miszterium/faj_miszterium_anatyda.md)
+- [Anatyda](hatterek.faji/anatyda.md)
 - [Dzsenn](hatterek.faji/dzsenn.md)
 - [Elf](hatterek.faji/elf.md)
 - [Ember](hatterek.faji/ember.md)
