@@ -28,7 +28,7 @@ VÉ Bónusz:
   → Merevvértviselet 3.szint:
     + VÉ:+3 (merev mellvérteknél)
 
-CÉ = -15 (Konstans)
+CÉ = -20 (Konstans)
    + Önuralom
    + CM
    + Harcmodor/Mágia-Tradíció bónusz
