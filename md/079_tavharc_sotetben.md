@@ -23,11 +23,11 @@ Ha a fenti `k10`-es próba sikertelen, akkor a lövés/dobás is automatikusan s
 ### `I/1` Harcos Célzó Értéke nyílpuskával, vaksötétben
 
 ```
-CÉ = 7
+CÉ = 2
 ```
 
 ```
-CÉ = – 10(konstans)
+CÉ = – 15(konstans)
      + 3 (Önuralom)
      + 8 (nyílpuska CÉ)
      + 5 (CM)
@@ -57,22 +57,22 @@ Nyílpuska Osztó: 5
 ```
 
 ```
-Szorzó: 8
- + 3x: Mozgás: lassan mozgó
+Szorzó: 7
+ + 2x: Mozgás: lassan mozgó
  + 5x: Észlelhetőség
        (sötét, zajos célpont)
 ```
 
 ```
-VÉ = 16  (8 x 2)
+VÉ = 14  (7 x 2)
 VÉ = Szorzó x Cella
 ```
 
 ```
 Célzó dobás-1
 
-7(CÉ) + k20   vs   16(VÉ)
- → találati esély: 45%
+2(CÉ) + k20   vs   14(VÉ)
+ → találati esély: 40%
 ```
 
 ### ⚡Példa-2 Célpont 🔆áll, zajos, sötét
@@ -85,21 +85,21 @@ Nyílpuska Osztó: 5
 ```
 
 ```
-Szorzó: 7
- + 2x: Mozgás: álló
+Szorzó: 6
+ + 1x: Mozgás: álló
  + 5x: Észlelhetőség
        (sötét, zajos célpont)
 ```
 
 ```
-VÉ = 14  (7 x 2)
+VÉ = 12  (6 x 2)
 ```
 
 ```
 Célzó dobás-2
 
-7(CÉ) + k20   vs   14(VÉ)
- → találati esély: 65%
+2(CÉ) + k20   vs   12(VÉ)
+ → találati esély: 50%
 ```
 
 ---

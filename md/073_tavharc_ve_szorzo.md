@@ -24,9 +24,9 @@ Célpont mozgás jellege
     Lassú séta, léptetés lovon
 3x: Gyors, egyenletes
     Egyenletesen futó ember, vágtató lovas
-5x: Kiszámíthatatlan
+4x: Kiszámíthatatlan
     A célpont ugrál, cikk-cakkban fut
-7x: Harcoló célpont
+5x: Harcoló célpont
     Csak konkrét harcoló fél eltalálása jó
 
 2x: Harcoló csoport (bárki jó találatnak)
