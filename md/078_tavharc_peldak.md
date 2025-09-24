@@ -16,7 +16,7 @@ Nyílpuska CÉ: 8
 ```
 
 ```
-CÉ = -20 (Konstans)
+CÉ = -15 (Konstans)
      + 3 (Önuralom)
      + 8 (nyílpuska CÉ)
      + 5 (CM)
@@ -24,7 +24,7 @@ CÉ = -20 (Konstans)
 ```
 
 ```
-CÉ = -2
+CÉ = 3
 ```
 
 ---
@@ -50,15 +50,15 @@ VÉ = 8  (2 x 4)
 ### `I/3` Célzó dobás
 
 ```
--2(CÉ) + k20   vs   8(VÉ)
+3(CÉ) + k20   vs   8(VÉ)
 ```
 
-azaz ha Tetves legalább `10`-et dob `k20`-on, akkor találatot ér el. Átlagos cél (`50 % esély`)...
+azaz ha Tetves legalább `5`-öt dob `k20`-on, akkor találatot ér el. Átlagos cél (`75 % esély`)...
 
 ```
-k20 Célzó dobás: 11
+k20 Célzó dobás: 6
 
-CÉ = -2 + 11 = 9
+CÉ = 3 + 6 = 9
  → Találat
  → dobhatja a sebzést
 ```
@@ -89,7 +89,7 @@ Rövid íj CÉ: 5
 ```
 
 ```
-CÉ = -20 (Konstans)
+CÉ = -15 (Konstans)
      + 3 (Önuralom)
      + 5 (Rövid íj CÉ)
      + 1 (Mf:1)
@@ -98,19 +98,19 @@ CÉ = -20 (Konstans)
 ```
 
 ```
-CÉ = -2
+CÉ = 3
 ```
 
 ---
 ### `II/2` A célpont Védő Értéke
 
 ```
-Szorzók: 6
+Szorzók: 7
 + 2x: Mozgás: lassú, egyenletes
 + 1x: Lövész mozgása: lassú egyenletes
 + 1x: Célpont mérete:törpe méret (Rühes cingár)
 + 1x: Észlelhetőség: homályos kontúr
-+ 1x: Szél: enyhe
++ 2x: Szél: erős
 ```
 
 ```
@@ -122,28 +122,28 @@ Rövid íj Osztó: 4
 
 ```
 VÉ = Szorzó x Cella
-VÉ = 6 x 3 = 18
+VÉ = 7 x 3 = 21
 ```
 
 ---
 ### `II/3` Célzó dobás
 
 ```
--2 + k20  vs  18
+3 + k20  vs  21
 ```
 
-azaz ha Tetves csak a `20`-as dobás `k20`-on talál célt. Nehéz próba.
+azaz ha Tetvesnek minum`18`-as dobásra van szüksége `k20`-on, hogy célt találjon. Nehéz próba.
 
 ```
-k20 Célzó dobás: 14
+k20 Célzó dobás: 15
 
-CÉ = -2 + 14 = 12
+CÉ = 3 + 15 = 18
  → Nem talált
 ```
 
  Elvétette.... Rühes lába előtt a tetőcserépen csattan a vessző. A cingár tolvaj egy merész vetődéssel átgurul a tető másik felére és némi cserepet leverve lecsúszik az ereszig. Megmenekült.
 
-Ha nem fújt volna a szél (`-1` Szorzóra) és nem ilyen rosszak a látási viszonyok (`-1` Szorzóra), akkor Tetves éppen célt talált volna (`VÉ=12 (4x3)`) és Rühes napja is sokkal rosszabbul alakul.
+Ha nem fújt volna ennyire erősen a szél (`-1` Szorzóra) vagy nem ilyen rosszak a látási viszonyok (ez is `-1` Szorzóra), akkor Tetves éppen célt talált volna (`VÉ=18 (6x3)`) és Rühes napja is sokkal rosszabbul alakul.
 
 ---
 
