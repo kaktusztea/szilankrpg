@@ -48,14 +48,14 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 🔒 Követelmény: Érzékenység: `+0`
 
-🌟 Hatás: Alapvető személyiségvonások felismerése. **Példa**: Sokat megélt öregember, falu bölcse.
+🌟 Hatás: Alapvető személyiségvonások felismerése. **Példa**: Sokat megélt öregember, falu bölcse. Ránézésre képes vagy megkülönböztetni, hogy egy személy vezető típus, vagy inkább követő. Kivéve ha szándékosan titkolja, vagy szerepet játszik. Meg tudod ítélni, mennyire figyelnek rád ténylegesen - csak udvariasan bólogatnak, vagy valóban érdekli őket a mondandód.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Érzékenység: `+1`
 
-🌟 Hatás: Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri. Mentális problémákat felismer, elkezdhet gyógyítani. **Példa**: Vallatótiszt, szélhámos.
+🌟 Hatás: Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri. Mentális problémákat felismer, elkezdhet gyógyítani. **Példa**: Vallatótiszt, szélhámos. Ha belépsz egy társaságba, érzed, hogy ki a „hangadó”, kinek a véleményét kell elsősorban befolyásolnod.
 
 ---
 #### Nagymester (12) 📖
@@ -64,7 +64,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 - Érzékenység: `+2`
 - Intelligencia: `+1`
 
-🌟 Hatás: Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött. **Példa**: Főpap, inkvizítor, híres színész.
+🌟 Hatás: Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött. **Példa**: Főpap, inkvizítor, híres színész. Minden beszélgetésben automatikusan megérzed, ki a leginkább megingatható fél. Nem azt, hogy hogyan, hanem kit lehet legkönnyebben befolyásolni.
 
 ---
 #### Élő legenda (15) 📖

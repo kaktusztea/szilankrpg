@@ -52,43 +52,48 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Intelligencia: `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Ha beleszólsz egy társalgásba, a jelenlévők legalább figyelembe veszik, nem söprik félre teljesen. Hanghordozásod ösztönösen figyelemfelkeltő, előadásod nem esik szét – a közönség könnyebben odafigyel, mint egy átlagember esetén. Rövid ideig fenn tudod tartani egy kisebb csoport érdeklődését, anélkül hogy erőlködnöd kellene.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Intelligencia: `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Ha szónokolsz vagy beszélsz, az átlagemberek ösztönösen elcsendesednek, hogy hallják.
+Szavaid megerősítik társaid mondanivalóját: ha valaki melletted beszél, annak szavai nagyobbnak, fontosabbnak tűnnek.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Intelligencia: `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Szavaidnak „súlya” van: aki hallgat, egy pillanatig nem tudja elhessegetni, hanem kénytelen tudomást venni róla. Egy rövid mondatodat bárki észben tartja, nem siklik át rajta. Például egy parancs vagy fontos kijelentés „megragad”.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Intelligencia: `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Hangodban és gesztusaidban van valami, amit nehéz másképp értelmezni, mint hogy „érvényes ember” beszél. Olyan, mintha tekintélyed természetes lenne.
+
+Alacsonyabb tapasztalati szintű karakterekkel szemben ha parancsoló vagy sürgető hangon kérsz valamit, a hallgatóban azonnali belső késztetés támad a teljesítésére – még ha utána ellen is állhat, de a pillanatnyi késztetés mindenképp létrejön.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Intelligencia: `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Szavaid képesek mint gondolatmag befúródni a hallgatóba, nagy valószínűséggel később is újra és újra eszükbe jutnak.
+
+Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még az ellenség is ösztönösen súllyal mérlegeli, amit mond, és csak tudatos erőfeszítéssel söpri félre.
 
 <br />
 
 ---
 ### Módosító körülmények
 
-Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**, mint ez is. Ha bármilyen Státusz hatása alatt állsz, Befolyásolás képzettségpróba előtt ellenőrizd, hogy vonatkozik -e rád bármilyen negatív [Hatás](../081_hatasok.md).
+Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**.
+
+Ha bármilyen Státusz hatása alatt állsz, **Befolyásolás** képzettségpróba előtt [ellenőrizd](../082_statuszok.md), hogy vonatkozik -e rád bármilyen negatív [Hatás](../081_hatasok.md).
