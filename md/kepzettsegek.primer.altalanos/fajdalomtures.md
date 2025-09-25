@@ -26,39 +26,26 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Önuralom: `0`
-
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Önuralom: `1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Fájdalmait képes „kívülre helyezni”, a test és a tudat közé éket verve átmenetileg. Harcban nem alkalmazható.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Önuralom: `2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: A testi szenvedés nem látszik meg az arcán – kínzás vagy harci sérülés alatt sem mutatja meg a gyengeséget. Testi fájdalom tünetei nem látszanak meg: nincs apró remegés, zihálás, szapora szívverés. Tartós fájdalom alatt is képes figyelni, beszélni, tárgyalni.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  Önuralom: `3`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Fájdalmát akarata szerint választja meg – ha kell, teljesen letiltja, mintha nem is érezné.
 
 <br />
 
@@ -79,13 +66,11 @@ Az `S4` egészségkategóriában jársz, egyszeri próbát dobsz ezzel a Nehézs
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
-
-Pokoli kín.
+Súlyos sebet (minimum `6 ÉP`) kapsz, de nem kiáltasz fel.
 
 #### Rendkívül nehéz (18) 🎲 
 
-Hang nélkül kiállni, hogy csonkolnak.
+Hang nélkül kiállni, hogy csonkolnak. Nagyon súlyos sebet (minimum `9 ÉP`) kapsz, de nem kiáltasz fel.
 
 #### Emberfeletti (21) 🎲 
 
