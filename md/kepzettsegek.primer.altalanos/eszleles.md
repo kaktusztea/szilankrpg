@@ -34,18 +34,11 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás: Szemfüles csibész, ⭕TODO⭕
-
----
 #### Kismester (6) 📖
 
 🔒 Követelmény: -
 
-🌟 Hatás: Tapasztalt tolvaj ⭕TODO⭕
+🌟 Hatás: Nem tudnak átverni egyszerű „eltakarásokkal”: ha egy fontos tárgy szándékosan ki van takarva, mindig érzed, hogy „van ott valami”.
 
 <br />
 
@@ -54,28 +47,29 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény: Érzékenység: `+1`
 
-🌟 Hatás: Veterán fejvadász 
-⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Tapasztalt fejvadász. Megérzed, ha valaki a közeledben leplezés nélkül, tartósan rád figyel - még ha nem is látod a személyt.
 
 <br />
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Érzékenység: `+2`
 
-🌟 Hatás: Elit, uralkodói testőr. Erős, leplezetlen mágikus jelenségeket általában megérzi és azok jellegét is (pozitív, negatív)
-⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Elit, uralkodói testőr. Kiszagolod az erős mágia- vagy Aura jelenlétet: pontos értelmezéshez kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
 
 <br />
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Érzékenység: `+2`
 
-🌟 Hatás: Harcművész nagymester, mágus. "Valami nincs rendben"
-⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Harcművész nagymester, mágus.
+
+Ha a környezetedben bármi torzul, „nem a természetes rend szerint van” - pl. láthatatlan lény jelenléte, szellem, titkos ajtó mögül áramló energia. Nem mindig tudod megmagyarázni, de biztosan érzed: „valami nincs rendben”.
+
+Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető jel – gyakorlatilag megelőző intuíciót jelent.
 
 <br />
 
@@ -102,7 +96,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 #### Nagyon nehéz (15) 🎲 
 
 - Észrevenni egy fejedre zuhanó sziklát zajban.
-- ⭕ Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)
+- ⭕TODO: Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)
 - Jól beépített, rejtett titkos fiókot megtalálni egy nagyobb méretű bútorban.
 
 #### Rendkívül nehéz (18) 🎲 
@@ -115,7 +109,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tulajdonság segítségével dobjuk.
 - Mágikus csapda kitörését megérezni egy szemvillanással a kisülés előtt.
 - Szellemlény érintését megérezni - mágikus ismeretek nélkül.
-- ⭕3. Íztelen, szagtalan ételméreg kiszúrása
+- ⭕TODO: Íztelen, szagtalan ételméreg kiszúrása
 
 <br />
 
