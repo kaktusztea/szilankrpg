@@ -7,6 +7,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 ### Kapcsolódik
 
 - [Harci akrobatika](../fortelyok.harci/harci_akrobatika.md) fortély
+- [Kitérés lövés elől](../fortelyok.harci/kiteres_loves_elol.md)
 
 ### Szituációk
 
@@ -14,6 +15,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 - [Ugrás magasba / távolba](../szituaciok/ugras_magasba_tavolba.md)
 - [Kötéltánc](../szituaciok/koteltanc.md)
 - [Lóról leesés](../szituaciok/lorol_hatasrol_leeses.md)
+- [Szándékos kitérés lövés elől](../szituaciok/szandekos_kiteres_loves_elol.md)
 
 ### Biztos tudás, követelmények 📖
 
@@ -46,14 +48,14 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 
 🌟 Hatás:
 - Ugrástávolság felmérése korlátlanul
-- ⭕TODO: különleges képesség⭕
+- Képes vagy lassítani esésedet. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségek feleződnek. Ugrásmagasságod duplázódik.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: **Ügyesség**: `+3`
 
-🌟 Hatás: ⭕TODO: ((Speciális skill, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és mindig puhán érsz földet. Ugrásmagasságod négyszereződik.
 
 <br />
 

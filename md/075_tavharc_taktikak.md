@@ -9,7 +9,7 @@ Néhány speciális húzással beleszólhatunk az ilyen szituációkba.
 Akrobatika képzettségpróba
   Gyorsaság Tulajdonsággal
 
-+2 Kitérés lövés elől
++2 "Kitérés lövés elől"
    harci fortéllyal
 ```
 
