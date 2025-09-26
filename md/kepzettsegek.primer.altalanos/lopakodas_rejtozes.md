@@ -32,35 +32,41 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Ösztönösen össze tudod húzni magad: ha van legalább valami takarás (láda, kő, sarok), mindig jól húzódsz meg mögötte.
+- Mindig ösztönösen kerülöd a legzajosabb talajt (deszkarepedés, száraz levelek) – sosem lépsz **direkt** rá.
 
 ---
 #### Kismester (6) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Tudod, hogyan kell mozdulatlan testtel beleolvadni a környezetbe: ha nem mozogsz, sokkal nehezebb kiszúrni téged.
+- Ha több rejtekhely közül választhatsz, mindig ösztönösen a jobbat választod, nem a kevésbé védettet.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Önuralom: `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Érzéked van a környezetre: érzed, melyik fedezék lesz valóban biztonságos, és melyik árulkodó.
+- Amikor mozdulatlanul lapulsz, a figyelők szeme gyakran átcsúszik rajtad – mintha észrevétlenebb lennél, mint mások.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Önuralom: `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Félmágikus hatás: porban, hóban nem látszik a lábnyomod, vízben nem keltesz hullámot, a száraz levél nem zörög..
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  Önuralom: `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Félmágikus hatás: emberméretnél kisebb tárgyak mögött (sötét sarok, függöny, váza) is el tudsz bújni.
 
 <br />
 
