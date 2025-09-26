@@ -17,19 +17,15 @@ Intelligencia, Emlékezet
 
 ### Kapcsolódik
 
-⭕xyz  ((fortély, más képzettség. Ha nincs, törölni))
-
-### Követelmény
-
-⭕ ((ha nincs, törölni))
+- [Álcázás/álruha](alcazas_alruha.md) képzettség
+- [Méregkeverés](../kepzettsegek.primer.altalanos/meregkeveres.md) képzettség
 
 ### Normál kiterjesztés
 
-⭕xyz. Ha nincs, törölni
-
-### Erős kiterjesztés
-
-⭕xyz. Ha nincs, törölni
+- [Tájtípus: Dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Dzsungelben található szervetlen alapanyagok felkutatása
+- [Tájtípus: Erdős](../fortelyok.szabad/tajtipus_erdos.md): Erdős tájakon található szervetlen alapanyagok felkutatása
+- [Tájtípus: Magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Magaslati tájakon található szervetlen alapanyagok felkutatása
+- [Tájtípus: Sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Sivatagi tájakon található szervetlen alapanyagok felkutatása
 
 <br />
 
@@ -42,7 +38,10 @@ Intelligencia, Emlékezet
 - Emlékezet: `+0`
 - Intelligencia: `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Ösztönösen tudod, hogyan kell az anyagokat kezelni: soha nem robbantod fel magad pusztán figyelmetlenségből.
+- Ránézésre meg tudod különböztetni az alapvető anyagokat (lúg, sav, szerves–szervetlen, mérgező–ártalmatlan).
+- A legegyszerűbb főzetek, kenőcsök és oldatok, mint a zecetsavas tisztító, alapgyanta, alkoholos származékok - elkészítése mindig sikerül.
 
 ---
 #### Kismester (6) 📖
@@ -60,7 +59,12 @@ Intelligencia, Emlékezet
 - Emlékezet: `+2`
 - Intelligencia: `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Meg tudod állapítani, melyik növényből/ásványból lehet értékes hatóanyagot kivonni, és melyik csak időpocsékolás.
+- kezded látni az anyagok „rejtett szerkezetét”: ha egy összetevőt nézel, megérzed, hogy mibe alakítható át.
+- Tudod, melyik oldószer, milyen hőmérséklet vagy eszköz alkalmas egy alapanyag feldolgozására.
+- Automatikusan ki tudod választani a legjobb stabilizálószert egy keverékhez anélkül, hogy próbálgatnál.
+- Tudod, hogyan kell szakszerűen tárolni a mágiakomponenseket: sosem romlanak rád a polcon, és mindig felismered, ha valami rosszul lett konzerválva.
 
 ---
 #### Nagymester (12) 📖
@@ -69,7 +73,10 @@ Intelligencia, Emlékezet
 - Emlékezet: `+2`
 - Intelligencia: `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Egy anyagról első pillantásra tudod, hogy sav‑e, lúg‑e vagy semleges - nem szükséges megvizsgálnod sem.
+- Bármilyen laborban automatikusan a rendelkezésedre áll a „kreatív helyettesítés”: ha hiányzik valami eszköz vagy komponens, rögtön tudod, mivel lehet pótolni.
+- Félmágikus hatás: képes vagy apró arany‑szemcséket puszta kézzel kivonni sziklákból és földből.
 
 ---
 #### Élő legenda (15) 📖
@@ -78,7 +85,9 @@ Intelligencia, Emlékezet
 - Emlékezet: `+3`
 - Intelligencia: `+3`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Félmágikus tudásod révén tényleges aranyat tudsz transzmutálni
+- Igazi próbád a **Mindent Oldó Szer** és a **Prima Materia** kutatása, amihez már stabil tudásod van, mint kiindulópont.
 
 <br />
 
@@ -87,28 +96,36 @@ Intelligencia, Emlékezet
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Savas/lúgos oldat elkészítése.
+- Növényből egyszerű kivonat főzése.
+- Illatszer vagy alap festék előállítása.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Mérgekhez szükséges **alapanyag** kivonása (nem maga a méreg!).
+- Stabil ragasztó, gyanta vagy olajkeverék előállítása.
+- Egy egyszerű alkímiai összetevő szakszerű tartósítása.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Robbanó elegy, instabil sav, vagy illékony anyag biztonságos előállítása.
+- Kiemelkedően tiszta fém kinyerése (pl. ezüstérc → ezüst) laborban.
+- Mágiakomponens előkészítése, amely hónapokig használható marad.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Különösen veszélyes vegyület–vegyület reakció stabilizálása.
 
 #### Rendkívül nehéz (18) 🎲 
 
-Arany előállítása, végleges transzmutációval.\
-Mindent oldó szer előállítása.
+- Arany előállítása, végleges transzmutációval (összetett próbával).
 
 #### Emberfeletti (21) 🎲 
 
-Prima Materia előállítása (összetett próbával).
+- Prima Materia előállítása (összetett próbával).
+- Mindent oldó szer előállítása (összetett próbával).
+- A világ szövetét érintő transzmutációs kísérletek (pl. kőből kenyér, vízből vér).
+- Saját auráddal felruházott alkimista anyagok létrehozása, amelyek „élő szubsztanciaként” viselkednek (összetett próbával).
 
 <br />
 

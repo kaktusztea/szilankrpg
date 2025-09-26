@@ -22,6 +22,10 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 ### Normál kiterjesztés
 
 - [Keresés](../fortelyok.altalanos/kereses.md): Nyomok észrevétele városi környezetben. "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
+- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): ⭕TODO⭕
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): ⭕TODO⭕
+- [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): ⭕TODO⭕
+- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): ⭕TODO⭕
 
 ### Szituációk
 
