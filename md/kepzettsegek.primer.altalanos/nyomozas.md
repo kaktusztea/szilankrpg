@@ -51,41 +51,36 @@ __
 
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
-
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
----
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+1`, Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Ösztönösen érzed, hogy kihez érdemes először szót intézni egy nyomozásban - a leggyengébb láncszem mindig feltűnik számodra.
+- Soha nem veszítesz el apró, rövid távú nyomokat: ha most láttál egy lábnyomot, vagy egy odavágó levelet, pár nap múlva is emlékszel rá.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+2`, Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Érzed, ha valami nem áll össze egy nyomozásban - a tudatalattid figyelmeztet, hogy egy fontos részlet hiányzik vagy hamis.
+- A fejedben látod a szoba alaprajzát, gyorsan átlátod, hol érdemes kutatni időpocsékolás nélkül.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+2`, Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Megérzed, mikor hazudnak neked a tények: egy hamis nyom, egy manipulatív elrendezés, egy „elültetett bizonyíték” kellemetlenül szúrja a szemed.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+3`, Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Látod magad előtt a történteket, bár konkrét személyek, tárgyak helyett szimbólumok formájában.
 
 <br />
 
@@ -94,31 +89,34 @@ __
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Rájössz, hogy egy bútor el lett mozdítva.
+- Kiszúrsz egy egyszerű, friss vérnyomot a padlón.
+- Egy gyanús papírt felismerni a rendezetlen iratok között.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Rájössz, mikor járt itt utoljára valaki (pl. a por állapotából).
+- Egy rövid beszélgetés alapján kideríted, ki tudhat a legtöbbet az ügyről.
+- Apró kéznyomot felfedezel egy poros tárgyon.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Kiszúrsz egy **tűszúrást** egy holttesten.
+- Megállapítod, hogy a helyszíni vér alvadása órákkal ezelőtti.
+- Széttöredezett utalásokból rájössz, hogy két gyanúsított lehet, hogy összejátszik.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Egy vallomásból kiszúrod, hogy kulcsfontosságú részletet hallgattak el.
+- A nyomokból felismered, hogy egy tettes színlelte az eseményeket, pl. betörést imitált.
+- Kaotikus helyszínen (pl. verekedés, piaci kavarodás) értelmes nyomokat tudsz rekonstruálni.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Átérzed, hogy a halott utolsó pillanataiban milyen érzéseket élt át.
+- Hetekkel vagy hónapokkal korábban elhelyezett nyomokat is képes vagy visszafejteni.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
-
-<br />
-
----
-### Módosító körülmények
-
-- ⭕TODO⭕
+- Évek múltán, egy felújított szobában is érzed: „itt gyilkosság történt.”
+- Töredékjegyzetekből és szétszórt dokumentumokból képes vagy rekonstruálni egy teljes összeesküvés történetét.
