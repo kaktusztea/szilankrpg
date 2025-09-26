@@ -40,7 +40,7 @@ Intelligencia, Emlékezet
 
 🌟 Hatás:
 - Ösztönösen tudod, hogyan kell az anyagokat kezelni: soha nem robbantod fel magad pusztán figyelmetlenségből.
-- Ránézésre meg tudod különböztetni az alapvető anyagokat (lúg, sav, szerves–szervetlen, mérgező–ártalmatlan).
+- Felületes vizsgálattaé meg tudod különböztetni az alapvető anyagokat (lúg, sav, szerves–szervetlen, mérgező–ártalmatlan).
 - A legegyszerűbb főzetek, kenőcsök és oldatok, mint a zecetsavas tisztító, alapgyanta, alkoholos származékok - elkészítése mindig sikerül.
 
 ---
@@ -50,7 +50,9 @@ Intelligencia, Emlékezet
 - Emlékezet: `+1`
 - Intelligencia: `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Meg tudod állapítani, melyik növényből/ásványból lehet értékes hatóanyagot kivonni, és melyik csak időpocsékolás.
+- Tudod, melyik oldószer, milyen hőmérséklet vagy eszköz alkalmas egy alapanyag feldolgozására.
 
 ---
 #### Mester (9) 📖
@@ -60,9 +62,7 @@ Intelligencia, Emlékezet
 - Intelligencia: `+2`
 
 🌟 Hatás:
-- Meg tudod állapítani, melyik növényből/ásványból lehet értékes hatóanyagot kivonni, és melyik csak időpocsékolás.
-- kezded látni az anyagok „rejtett szerkezetét”: ha egy összetevőt nézel, megérzed, hogy mibe alakítható át.
-- Tudod, melyik oldószer, milyen hőmérséklet vagy eszköz alkalmas egy alapanyag feldolgozására.
+- Kezded látni az anyagok „rejtett szerkezetét”: ha egy összetevőt nézel, megérzed, hogy mibe alakítható át.
 - Automatikusan ki tudod választani a legjobb stabilizálószert egy keverékhez anélkül, hogy próbálgatnál.
 - Tudod, hogyan kell szakszerűen tárolni a mágiakomponenseket: sosem romlanak rád a polcon, és mindig felismered, ha valami rosszul lett konzerválva.
 
