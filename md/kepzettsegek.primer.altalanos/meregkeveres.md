@@ -23,39 +23,40 @@ Emlékezet, Önuralom, Intelligencia
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Emlékezet `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Mindig emlékszel az alapvető, közismert mérgek receptjeire, és nem hibázol el triviális keverést (pl. patkányméreg, alap altató).
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+1`, Önuralom `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Már nem ronthatsz el egyszerű mérget úgy, hogy magadat veszélyeztesd közben; kicsúszott mozdulatnál is ösztönösen hárítod a veszélyt.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+1`, Önuralom `+0`
 
-🌟 Hatás:  Dobhatsz **Érzékenység** képzettségpróbát méregérzékelésre fizikai érzékeid (látás, szaglás, ízlelés) használata nélkül is. A mérgezett borba bele sem kell innod, szagolnod, egyszerűen megérzed a mérget.
+🌟 Hatás:  Dobhatsz **Érzékenység** képzettségpróbát méregérzékelésre fizikai érzékeid (látás, szaglás, ízlelés) használata nélkül is. A mérgezett italba bele sem kell innod, szagolnod, egyszerűen csak megérzed a mérget.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Emlékezet `+2`, Önuralom `+1`
 
-🌟 Hatás: Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll". ⭕TODO⭕ Hányadik szintű, stb. mérget?⭕
+🌟 Hatás:
+- Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll". ⭕TODO⭕ Hányadik szintű, stb. mérget?⭕
+- Ha megérintesz valakit, automatikusan apró adag mérget juttathatsz belé – ez mindig apró dózis a saját repertoárodból (pl. bénító, gyengítő).
+- A saját szervezeteddel kompatibilis mérgeket (amiket te készítettél) kis adagban be tudod építeni magadba anélkül, hogy kifejtenék hatásukat, majd később bőrödön át kieresztheted.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+2`, Önuralom `+2`
 
-🌟 Hatás: Immunissá válsz a mérgekre. Ha kr4ni vagy, Banarát készithetsz.
+🌟 Hatás: Immunissá válsz minden típusú méregre. Ha kr4ni vagy, Banarát készithetsz.
 
 <br />
 
