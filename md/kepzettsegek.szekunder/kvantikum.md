@@ -4,7 +4,7 @@ Próba dobható.
 
 Professzor, vagy számokkal dolgozó tudósember vagy, a tudás a legfőbb kincsed. A képzettség általános ismeret amely a számokkal való munkára támaszkodó tudományok alapját adja. Alapból magába foglalja a matematikát, számtant, mértant.
 
-Igazi potenciálját a **kiterjesztését** megvalósító Fortélyokkal érhetjük el - lásd lenn.
+Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal érhetjük el.
 
 ### Domináns Tulajdonságok
 
