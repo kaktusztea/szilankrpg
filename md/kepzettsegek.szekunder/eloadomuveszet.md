@@ -37,43 +37,47 @@ Aktív, alkotó művész vagy. A lenti [Szabad-Fortélyok](../042_szabad_fortely
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Érzékenység `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Mindig tudod, hogyan állj közönség elé: hangod, mozdulataid, gesztusaid nem válnak röhejessé.
+- Átlagos hallgatóid figyelme ösztönösen rád irányul, még ha kezdő szinten is vagy.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- A közönségből mindig kiváltasz valamilyen alap reakciót – tapsot, mosolyt, füttyentést, de nem közönyt.
+- Nem felejtesz szöveget, dalt, tánclépést, mindig átsegít a rutin.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Fellépésed minden közönségre érzelmi hatást gyakorol: a nézők átélik, amit mutatsz, és nem maradnak kívülállók.
+- Olyan mértékben átéled az előadást, hogy a hallgatóságot is belehúzhatod – együtt nevetnek, sírnak, táncolnak veled.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Érzékenység `+3`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
-Szellemi/érzelmi Státuszokat okozhat
+🌟 Hatás:
+- Előadásaiddal szellemi és érzelmi [Státuszokat](../082_statuszok.md) válthatsz ki: képes vagy megnyugtatni, feldühíteni, reményt adni vagy kétségbe ejteni a hallgatóságot.
+- Jelenléted akkor is „fellépés”, ha nem színpadon vagy: társasági helyzetekben automatikusan vonzod a figyelmet és irányítod a hangulatot.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Érzékenység `+3`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
-Szellemi/érzelmi Státuszokat okozhat
+🌟 Hatás:
+- Képes vagy tömegeket közös érzelmi állapotba rántani – ujjongásba, gyászba, harci lázba vagy eksztázisba.
+- Szónoklataiddal és művészeteddel a világ históriájába írsz: a nevedhez kötődő dalokat, jeleneteket és táncokat még évszázadok múlva is idézik.
 
 <br />
 
@@ -84,31 +88,43 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Egy egyszerű dal vagy történet kellemes előadása.
+- Nézők megmosolyogtatása egy rögtönzött tréfával.
+- Hibátlan előadás rutinszerű hangszeres darabból.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Egy kisebb közönség megnyerése egy dalban vagy jelenetben.
+- Publikum szórakoztatása tánccal vagy zsonglőrszámmal.
+- Egy közönséges színdarabban hitelesen játszol el egy szerepet.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Színészi játékoddal vagy zenéddel meghatod a közönséget.
+- Egy előadásban több szerepet váltogatsz hibátlanul.
+- Rögtönzöl, és a közönség észre sem veszi, hogy nem így tervezted.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Előadásoddal megváltoztatod a hangulatot: a sírók nevetni kezdenek, a dühösek lecsendesednek.
+- Színészként olyan hiteles vagy, hogy egy pillanatra mindenki azt hiszi, valóban az vagy, akit játszol.
+- Zenészként vagy előadóként képes vagy rivalizálni a legnagyobb mesterekkel.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Előadásoddal szellemi vagy érzelmi [Státuszt](../082_statuszok.md) okozol (pl. inspiráció, reményvesztés, áhítat).
+- Teljes tömeget ragadsz magaddal: a kocsmát egy emberként tombolásra vagy sírásra ösztönzöd.
+- Táncoddal vagy gesztusaiddal mágikusnak tűnő hatást érsz el – még ha valódi mágia nincs is a mozdulataidban. Láttatni tudsz művészeteddel álomszerű jeleneteket hallgatóságod elméjében.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
+- Egyetlen fellépéseddel legendává válsz: a történetedet, dalodat énekli a város.
+- Tömegeket vagy seregeket hangolsz össze: harci indulótól politikai szónoklatig.
+- Színpadi játékod valóságnak érződik: a közönség – és talán a világ szövete is – reagál rá.
 
 <br />
 
 ---
 ### Módosító körülmények
 
-- ⭕TODO⭕
+- Ellenséges tömeg: `+3-6`
