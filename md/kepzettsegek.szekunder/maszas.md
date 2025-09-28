@@ -4,7 +4,7 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
 
 ### Domináns Tulajdonságok
 
-- Ügyesség, Edzettség (a mászáshoz): technikás, rövid úthoz az Ügyesség, hosszabb úthoz az Edzettség a javasolt
+- Ügyesség, Edzettség (a mászáshoz): technikás, rövid úthoz az **Ügyesség**, hosszabb úthoz az **Edzettség** a javasolt
 - Önuralom (rontott próbánál)
 - Erő (erőtartalék kritikus helyzetben)
 - Intelligencia (felmérni a mászandó terepet, helyeket)
@@ -32,7 +32,7 @@ Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor
 - Erő:`-1`
 - Ügyesség:`0`
 
-🌟 Hatás: Tudja melyik fa bírja el a súlyát és melyik nem. **Példa**: Erdőszerető gyerek, aki felmászik minden fára.
+🌟 Hatás: Tudod melyik fa bírja el a súlyod és melyik nem. **Példa**: Erdőszerető gyerek, aki felmászik minden fára.
 
 ---
 #### Kismester (6) 📖
@@ -42,7 +42,7 @@ Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor
 - Ügyesség:`+1`
 
 🌟 Hatás:
-- Ismeri az alapvető mászási technikákat, pár hasznos csomót
+- Ismered az alapvető mászási technikákat, pár hasznos csomót.
 - **Példa**: Gyakorlott mászó, rendszeres kiránduló
 - Tanulható: [Pók](../fortelyok.altalanos/pok.md) fortély
 
@@ -55,7 +55,7 @@ Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor
 - Önuralom:`+1`
 
 🌟 Hatás: 
-- Ismeri az összes mászási technikát és faltípust, mászáshoz szükséges csomókat. Jó látási viszonyok közt ránézésre nagyjából meg tudja mondani, mennyire omladékos a terep. Tudja milyen testhelyzetben pihenjen kapaszkodás közben.
+- Ismered az összes mászási technikát és faltípust, mászáshoz szükséges csomókat. Jó látási viszonyok közt ránézésre nagyjából meg tudod mondani, mennyire omladékos a terep. Tudod milyen testhelyzetben pihenj kapaszkodás közben.
 - **Példa**: Képzett hegymászó, profi besurranó tolvaj
 
 ---
@@ -68,7 +68,7 @@ Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor
 - Összpontosítás: `3.szint`
 
 🌟 Hatás: 
-- A fentieken kívül képes úgy tartalékolni az erejét, hogy hosszabb távon se fárad ki. Akár egy órát is tartja magát puszta kézzel.
+- A fentieken kívül képes vagy úgy tartalékolni az erejét, hogy hosszabb távon se fáradsz ki. Akár egy órát is tartod magát puszta kézzel.
 - **Példa**: Neves mestergyilkos, behatoló egység vezető fejvadásza
 
 ---
@@ -81,22 +81,10 @@ Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor
 - Összpontosítás: `6.szint`
 
 🌟 Hatás:
-- Ilyen nincs!! A puszta, csúszós sziklafalon is felkúszik. Kézfeje, lába deformálódott – alkalmazkodva a mászás követelményeihez.
-- Félmágikus hatású ismeretekhez jut.
-- Függeszkedve órákat is kibír!
+- Ilyen nincs!! A puszta, csúszós sziklafalon is felkúszol. Kézfejed, lábad deformálódott – alkalmazkodva a mászás követelményeihez.
+- **Tapadás**: Titkos, félmágikus ismeret, bónusz. Képes vagy pókként megtapadni a falon – akár a mennyezeten is. A kapaszkodáshoz nincs szükséged kiszögelésre.
+- Függeszkedve órákat is kibírsz!
 - **Példa**: mágiával kondicionált elit birodalmi fejvadász
-- Képzettség bónusz: [Tapadás](#b%C3%B3nusz-tapad%C3%A1s)
-
-<br />
-
----
-### Bónusz: Tapadás
-
-Titkos, félmágikus ismeret.
-
-**Követelmény**: Mászás - `15.szint`, Életed a mászás
-
-`15.szint`: Képes vagy pókként megtapadni a falon – akár a mennyezeten is. A kapaszkodáshoz nincs szükséged kiszögelésre.
 
 <br />
 
@@ -137,7 +125,7 @@ Visszahajló acélfalon felmászni.
 - Sötétben mászni: `[-3; -6]`
 - Plusz súllyal mászni: Erőtől függ, a KM dönt. Keretek: `[-1; -6]` ; Erőpróba kellhet
 - Lengő kötélen mászni: `[-1; -6]`
-- Sérülten mászni: Lásd a [Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára) c. fejezetet!
+- Sérülten mászni: [Sérülés hatása képzettségpróbára](../030_06_01_kepzettsegproba.md#sérülés-hatása-képzettségpróbára)
 - Mászókampók: `+3` → csak ha a mászófelületbe könnyen rögzíthetőek.
 
 <br />
@@ -145,7 +133,7 @@ Visszahajló acélfalon felmászni.
 ---
 ### Hosszabb mászandó út
 
-Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) dobást kell végezni (Edzettség Tulajdonsággal).
+Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) dobást kell végezni (**Edzettség** Tulajdonsággal).
 
 ---
 ### Rontott mászás próba után: Mentő képzettségpróba
@@ -195,5 +183,3 @@ Lásd: [Esés magasból](../szituaciok/eses_magasbol.md) szituáció.
 Ha a próbát nagyon kiélezett, életveszélyes helyzetben rontja el a karakter, a KM dönthet úgy, hogy `Önuralom` próbát dobat. Ha ez nincs meg, akkor a KM-nek jogában áll, hogy tetszőlegesen nagy `Erő` Tulajdonság tartalékot felhasználtasson a karakterrel (adrenalin hatása). Így jó eséllyel meg tud kapaszkodni, de minden erőtartalékát feléli, gyakorlatilag remegve a falhoz tapadva marad, további mászása erősen kérdéses, segítségre szorul.
 
 Hogy egy karakter hányas `Erő` tulajdonsággal képes még továbbmászni, az főleg a testsúlyától, kisebb részben pedig pszichikai állapotától függ. A fenti probléma eldöntése a KM feladata.
-
----
