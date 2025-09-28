@@ -1,21 +1,10 @@
 ## 🔵 Vajákosság
 
-A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. A [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséghez szükséges orvosságok alapanyagainak beszerzéséhez szükséges képzettség. Továbbá:
+A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Jártatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, kristályokból, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
 
-- növényi alapanyagok ismerete
-- állatokból kinyert anyagok ismerete
-- Gyógyítás képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes gyógyhatású, tudatmódositó, bódító és afrodiziákum készítmények előállítására. Önállóan nem.
-- mágikus italok, porok. Követleményei:
-  - mágikus alapanyagok, lények testrészei, kristály,
-  - adott csillagállások
-- ⭕bájitalok, ⭕varázsszerek készítése, enyhébb, ⭕gyengébb hatású mágikus italok kikeverése (például "Erő növelő főzet", "Látópor", amely csíp ugyan, de infralátást ad rövid ideig)
-  - ⭕Szerelmi bájital (megrendelő haj, köröm, stb.). A célponttal meg kell itatni.
-  - ⭕Erőnövelő kenőcs. Követelmény:
-    - medveháj
-    - telihold
-    - rengeteg más növény
-- mágikus gyógyitalok alapanyagainak beszerzése: ezek sokszor ritka szörnyetegek testrészei, vagy még ritkább növények hajtásai. Mágikus gyógyitalt önnálóan **NEM** képes készíteni.
-- egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter
+[Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes gyógyhatású, tudatmódositó, bódító és afrodiziákum készítmények előállítására. Önállóan nem.
+
+Egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önnálóan **NEM** vagy képes készíteni.
 
 ### Domináns Tulajdonságok
 
@@ -39,39 +28,53 @@ Emlékezet, Intelligencia
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Emlékezet `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: "A füves ember"
+- Alap gyógy- és mérgező növények felismerése.
+- Egyszerű főzetek: nyugtató, fájdalomcsillapító italok, gyenge hánytató vagy tisztító teák készítése kész recept alapján.
+- Tisztában vagy az alapvető szárítási és tárolási módszerekkel.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: "A patikárius"
+- Az adott tájtípus régió növény- és állati anyagait felismered, elkülöníted.
+- Recept alapján elő tudod készíteni a hozzávalókat (darabolás, szárítás, forralás).
+- Recept alapján tudatosan bódító/fájdalomcsillapító szereket állítasz elő (füst, tea, bódító ital).
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+1`, Intelligencia `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: "A boszorkánysegéd"
+- Ritkább alapanyagokat (pl. mandragóra, sárkányvér) biztonságosan kezeled.
+- Érzékeid, laborod segítség tudsz különböztetni valódi gyógyfőzetet a hamisítványtól.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+2`, Intelligencia `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Ismersz csillagállás- és holdfázis-függő recepteket.
+- Többtucatnyi összetevős szert vagy bájitalt is el tudsz készíteni.
+- Mágikus szörnyek testrészeinek hatóanyagait érted, és ki tudod nyerni – de nagy gyógy- vagy varázsital készítéséhez mágushasználó kell.
+- Nagyobb, sok összetevős keverékek alapanyagait páratlan biztonsággal előkészíted.
+- Szeretett vagy rettegett figurává válsz: falusiak, nemesek egyaránt hozzád fordulhatnak „titkos alapanyagokért”.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+3`, Intelligencia `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Pusztán ránézésből megmondod, mi rejlik a növényben, szervben, kristályban.
+- Képes vagy előkészíteni olyan mágikus főzeteket, amelyek teljes hatásukat csak varázshatalommal érhetik el.
+- Neved forog országszerte, varázstudók és boszorkánykörök keresik máshol beszerezhetetlen alapanyagaidat.
 
 <br />
 
@@ -80,31 +83,42 @@ Emlékezet, Intelligencia
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Gyógynövény vagy mérgező növény felismerése.
+- Szárítás, tárolás.
+- Alap főzet (fájdalomcsillapító, nyugtató tea) készítése.
+- Egyszerű állati szerv (pl. kígyóméreg) biztonságos kivonása.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Recept alapján többcélú orvosi főzet előkészítése.
+- Növényből por vagy kenőcs készítése.
+- Recept szerinti bódító ital hozzávalóinak összeállítása.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Ritka növény vagy állati anyag felismerése, feldolgozása.
+- Afrodiziákum vagy tudatmódosító ital összeállítása recept szerint.
+- Alkoholba oldott tartós hatóanyag előállítása.
+- Szerves anyagból tartós hatóanyag kivonása.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Csillagálláshoz kötött begyűjtés és előkészítés.
+- Gyengén mágikus főzet előkészítése recept alapján
+- Szörnyetegek testéből hatóanyag kinyerése.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Tömérdek összetevőből álló készítmény hibátlan elkészítése recept alapján.
+- Hamisítványról ránézésre eldönteni, mennyire veszélyes.
+- Ritka mágikus növény biztonságos kezelése, tartósítása.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
-
-<br />
+- Bonyolult, évtizedekig őrzött recept hibátlan reprodukálása.
+- Legendás lény (pl. unikornis, mantikór, sárkány) szervének kezelése és hatásainak kinyerése, tartósítása.
 
 ---
-### Módosító körülmények
+## Módosító körülmények
 
-- ⭕TODO⭕
+- Felszereltség: `[-3;+3]`
