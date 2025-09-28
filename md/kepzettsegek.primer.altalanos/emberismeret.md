@@ -76,7 +76,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 🌟 Hatás:
 - Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
 - **Példa**: asztrálmágus
-- Speciális: Állandó ⭕5.szintű⭕ Asztrálszemnek⭕ megfelelő hatás.
+- Speciális: Állandó ⭕Asztrálszemnek⭕ megfelelő hatás.
 
 <br />
 
