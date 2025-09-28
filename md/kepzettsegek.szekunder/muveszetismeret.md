@@ -13,6 +13,7 @@ Emlékezet, Intelligencia, Érzékenység
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Enélkül érvényes a `-3` levonás mindegyik meglevő művészeti ágra.
 - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md): Udvari fok (ahol szükségesnek érezzük)
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
+- [Hamisítás](../fortelyok.altalanos/hamisitas.md): Felismered, hogy a mű hamisítvány
 
 __
 
@@ -39,39 +40,49 @@ __
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Érzékenység `+1` vagy Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Felismered a köznapi ízlésnek megfelelő darabokat, stílusokat.
+- Megkülönbözteted a giccs, a népszerű darab és a komolyabb értékű alkotás közötti különbségeket.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+1`, Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Tudod egy-egy műben azonosítani az alkotót, korszakot vagy iskolát (pl. k4r stílus, shad0ni festői jelleg).
+- Képes vagy röviden megindokolni, mitől értékes vagy rossz színvonalú egy alkotás.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+2`, Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Biztosan felismered a nagy mesterek stílusát, szignóját, jellegzetes forma- és dallamvilágát.
+- Ismered a híres előadások, festmények, építészeti darabok mögötti történeteket és hátteret.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Érzékenység `+2`, Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Rendszerekben gondolkodva összekötöd a korszakokat és művészeti ágakat: pl. tudod, hogy egy hadjárat vagy vallási mozgalom konkrét stílusváltással is együtt járt.
+- Mélyebb jelentésrétegeket olvasol ki egy darabból: allegóriák, szimbolika, társadalmi üzenet.
+- Jártas vagy ritka stílusokban, elfeledett művészeti irányzatokban is.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+3`, Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Olyan szinten értesz a művészethez, hogy időnként prófétikus meglátásaid támadnak egy alkotásról (pl. „Ez a szobor egy pusztulásra ítélt birodalom végső kétségbeesése”).
+- Misztikus módon képes vagy „beleérezni” egy műbe: megérzed az alkotó érzelmeit, szándékát, vagy a kort, amelyben létrejött.
+- Egy műalkotás elemzésével társadalmi vagy politikai folyamatok előrejelzését is adhatod.
 
 <br />
 
@@ -82,31 +93,32 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Felismerni egy ismert szobrot, festményt vagy népszerű dalt.
+- Megkülönböztetni jobb és silányabb munkát (pl. kocsmadal vs. neves bárd szerzeménye).
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Azonosítani az alkotó stílusát vagy a mű származási területét.
+- Udvari színdarab, klasszikus tánc, közismert építészeti irányzat felismerése.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Híres mester művének felismerése egy vázlatról vagy töredékről.
+- Egy darab vagy előadás mélyebb szimbolikájának elemzése.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Ismeretlen műből megállapítani, melyik korszakból és iskolából származhat.
+- Egy régi vagy ritka táncstílus mozdulataiból következtetni a hagyományra.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Elveszett mester stílusát felismerni egy töredékből.
+- Egy szimbolikus, vallásos vagy politikai tartalmat mély szinten helyesen feldolgozni.
+- Rejtett jelentést, titkos üzenetet megtalálni a műben.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
-
-<br />
-
----
-### Módosító körülmények
-
-- ⭕TODO⭕
+- Egy mű „lelki lenyomatához” kapcsolódni: megérezni az alkotó érzelmeit.
+- Történelmi-társadalmi próféciává kibontani a mű jelentését.
+- Olyan rejtett, kódolt üzeneteket megfejteni, amit az alkotó szándékosan rejtett el.

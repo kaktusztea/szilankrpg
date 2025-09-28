@@ -13,6 +13,7 @@ Jól tudsz másolni műkincseket, műtárgyakat. Képes vagy egyes művészeti �
 
 - [Értékbecslés](../kepzettsegek.szekunder/ertekbecsles.md): Már a hamis portéka is könnyebben feltűnik.
 - [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md): valamelyik képzőművészeti ágban, amely a képzettség leírásánál szerepel és amelynek fortélya megvan karakterednek - képes vagy tudásodnak megfelelő szintű hamisítványokat létrehozni.
+- [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md)
 - [Szakma](../kepzettsegek.szekunder/szakma.md) (asztalos, cipész, szabó, ékszerész, pénzverő, stb. ): az adott szakma magas szintű produktumainak hamisítása.
 
 ### Ha képzőművészetekkel kapcsolatos hamisítást akarsz végezni
@@ -20,7 +21,8 @@ Jól tudsz másolni műkincseket, műtárgyakat. Képes vagy egyes művészeti �
 - Rendelkezned kell a kapcsolódó [Szabad Fortéllyal](../042_szabad_fortelyok.md)  (például: "Festészet").
 -  A [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md) adja a képzettségedet.
 - Hamisítvány felismerése: [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md) képzettséggel dobunk ellenpróbát a hamisító [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md) képzettsége ellen.
-- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) (adott kultúra) Fortély Normál kiterjesztésben van, így anélkül ugye `-3` büntetés a képzettségpróbákra.
+  - [Hamisítás](hamisitas.md) fortély mindkettőt kiterjeszti (N).
+  - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) (adott kultúra) Fortély mindkettőt kiterjeszti (N).
 
 ### Ha szakmával kapcsolatos hamisítást akarsz végezni
 
