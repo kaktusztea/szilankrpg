@@ -62,74 +62,93 @@ Minden karakter `1.TSz` során ingyen megkapja a fenti két nyelvet `Alap` szint
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: -
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Rendszerben kezded látni a nyelveket: felismered a közös szavakat, toldalékokat.
+- Meg tudod mondani, hogy hallott szöveg „ismerős” vagy „idegen” családba tartozik-e.
+- Lassú, de biztos tanulás — egyszerű mondatok, szavak bemagolása idegen nyelven.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Gyorsabb tanulás: napi helyzetből, gesztusok és szavak alapján értesz meg idegen szavakat.
+- Felismered egy szöveg nyelvcsaládját és nagyobb dialektuscsoportját.
+- Rövid szólistákat, beszélgetéseket lassan, de biztosan fordítasz.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Nyelvtani mintázatok, szerkezetek felismerése: idegen nyelvet hallva képes vagy alapvető nyelvtani szabályait megsejteni.
+- Képes vagy kódolt vagy töredezett nyelvi szövegből értelmes részeket kihámozni.
+- Képes vagy eltérő nyelvek között közvetíteni: tolmácsolás szinte valós időben, kisebb hibákkal.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Új nyelvet rövid idő alatt megtanulsz alapszinten (pl. hónapok helyett hetek).
+- Megérted az archaikus vagy kihalt nyelvek szövegeinek jelentős részét.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+3`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Új nyelvet hallva napok alatt elsajátítasz egy használható alapot.
+- Szinte minden nyelv szándékát, érzelmi töltetét megragadod.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-⭕TODO: ismeretlen nyelvekből kihámozni valamit, ilyesmik. Ismeretlen nyelv nyelvcsaládjának megállapítása
-
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Ismeretlen nyelvből felismerni néhány szót, köszönést, számot.
+- A szöveg nyelvcsaládját, írásrendszerének alapját megállapítani.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Egyszerű üzenet értelmezése kontextus alapján.
+- Beszélgetés hangulatát, konfliktusát kihallani, noha nem értesz mindent.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Rövid, idegen nyelvű szöveg nagy részének pontos megértése.
+- Bonyolult beszélgetésből a lényegi információ kihámozása.
+- Előtted sosem hallott idegen nyelv alapmondatait átültetni közös (p4ar) nyelvre.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Archaikus / kihalt nyelv töredékeit megfejteni.
+- Konkrét szándék, rejtett fenyegetés kiolvasása idegen beszélgetés mögül.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Soha nem hallott nyelven hosszabb szöveg nagy részét értelmezni, közben aktívan tolmácsolni.
+- Több nyelv keverékét (pl. zsargon) megfejteni és összefésülni.
+- Szakrális beszéd nyelvi szimbólumait átültetni közös beszédre.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
+- „Elfeledett, isteni nyelv” töredékének megértése.
+- Azonnali tolmácsolás teljesen új nyelvről közösre.
+- Nyelvi mintázatból előre megérezni a kulturális hátteret, társadalmi berendezkedést.
 
 <br />
 
 ---
 ### Módosító körülmények
 
-- ⭕TODO⭕
+- Könyvtár: `+3`
+- Tanító aktívan segít: `+3`
