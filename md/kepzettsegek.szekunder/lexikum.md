@@ -41,52 +41,56 @@ __
 
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
 
-### Bónuszok
-
-- `9.szint`: ⭕TODO⭕; Hatodkori ⭕? ismeretek
-- `12.szint`: ⭕TODO⭕Ötödkori ⭕? ismeretek; Postcognition álmok (látja a valós régmúlt eseményeit álmában)
-- `15.szint`: Negyedkori ismeretek; Jósolni képes történelmi/társadalmi mértékben
-
-<br />
-
 ---
 ### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Intelligencia `+1` vagy Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Mindig képes vagy alapvető tényeket felidézni jól ismert kultúrákból és a közelmúltból.
+- Soha nem kevered össze teljesen az alapfogalmakat: tudod, mely isten milyen szférákat ural, mely népek, milyen mértékegységeket használnak, mi egy híres város neve és földrajzi helye.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+1`, Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Egész jól könyvtárazol.
+- Hozzáértően különbözteted meg a korszakokat, kultúrköröket, megjegyzel szimbólumokat, neveket, családfákat.
+- Megkülönbözteted a helyi hagyományt a legendától.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+1`, Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Fel tudsz már idézni hatodkori ismereteket, eseményeket, neves személyeket. Próbát igényel.
+- A könyvtári rendet és keresést automatikusan átlátod, gyorsabban találsz információt.
+- Ha történelmi vagy társadalmi összefüggést keresel, ösztönösen ráérzel, hol keresd a választ a könyvtárban.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Intelligencia `+2`, Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Fel tudsz már idézni ötödkori ismereteket, eseményeket, neves személyeket. Próbát igényel.
+- A régi nyelveket és szövegeket könnyebben érted és kapcsolod össze más tudományokkal.
+- Álmaidban vagy meditációdban valódi régmúlt események képei törnek rád.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+2`, Emlékezet `+3`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Fel tudsz már idézni negyedkori ismereteket, eseményeket, neves személyeket. Próbát igényel.
+- Képes vagy jóslat-szerű következtetésekre: régmúlt és jelen mintázataiból társadalmi, politikai folyamatokat, várható eseményeket előre megjósolsz.
+- Legendás bölcsként tisztelnek.
 
 <br />
 
@@ -95,27 +99,37 @@ __
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Nevezetes személy, város, esemény nevének és időszakának felidézése.
+- Hétköznapi jelvény, szimbólum, címer azonosítása.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Közismert esemény részletszintű elmondása (ki, mikor, hol).
+- Uralkodóházak, befolyásos nemzetségek és vallási rendek összekapcsolása.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Hatodkori események, történelem részleteinek pontos felidézése.
+- Ritkább szimbólumok, archaikus címerek, törvények felismerése.
+- Komplex könyvtári kutatás – gyorsan valódi, releváns forráshoz jutsz.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Ötödkori vagy korábbi események és személyek megidézése.
+- Rejtett összefüggések felismerése különböző források között.
+- Ritka kultúrkör, nyelv vagy tájtípus ismerete felidézésből.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Negyedkori, vagy korábbi események írott forrásokból való pontos visszafejtése.
+- Átfogó társadalmi, politikai ok-okozati háló felállítása.
+- Elveszett könyv, irat, tudás helyének és tartalmának következtetéssel való megsejtése.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
+- Negyedkori tudás felidézése, titkos rendek ismerete.
+- Álmaidban vagy meditációdban átélt valódi régmúlt események helyes értelmezése.
+- Jövő társadalmi eseményeinek előrejelzése a múlt és jelen mintái alapján.
 
 <br />
 
@@ -123,3 +137,5 @@ __
 ### Módosító körülmények
 
 - Könyvtár: `[+1; +6]`
+- Hozzáférés: tiltott források vagy hiányos anyag: `[-1; -6]`
+- Nyelvi nehézségek: fordítás, nyelvjárás: `[-2; -4]`
