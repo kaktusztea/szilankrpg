@@ -2,7 +2,7 @@
 
 Próba speciálisan dobható: nem magára a beszédre, hanem kapcsolódó szituációkra.
 
-Ez egy speciális képzettség, mert nem adott nyelvre veszed fel, hanem ez jelképezi az összes nyelv tanulását. 
+Ez egy speciális képzettség, mert nem adott nyelvre veszed fel, hanem ez jelképezi az összes nyelv tanulását.
 
 ---
 ### Nyelvek fokai
