@@ -43,39 +43,53 @@ __
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Intelligencia `+1` **vagy** Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Mindig helyesen számolsz összegeket, törteket, alap geometriai alakzatokat.
+- Általában jól becsülsz meg mennyiségeket: súly, térfogat, hossz, idő.
+- Alapvető arányokat és logikai összefüggéseket reflexből átlátsz (pl. ha három hordó bor van 18 emberre, fejenként hány korsó jut).
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+1`, Emlékezet `+1`  
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Fejedben is könnyedén végzel közepesen összetett számításokat.
+- Felismersz egyszerűbb rejtjelezést, vagy kódokot (pl. betűcserés írás, sorcsere). A megfejtése próbadobásos.
+- Szerkezeteknél, egyszerű épületeknél vagy gépeknél kiszúrod, ha valami szerkezetileg hibás, billeg, túlsúlyos.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Intelligencia `+2`, Emlékezet `+1`  
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Megérted és megjegyzed a bonyolult matematikai képleteket és térképi ábrákat.
+- Tervezel és átlátsz alapvető erőátviteli rendszereket (csigák, emelők, hidak, vízemelők).
+- Ösztönösen ráérzel, ha nem stimmelnek a számok a főkönyvben. Hogy mi, az már próbadobásos.
+
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Intelligencia `+3`, Emlékezet `+1`  
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Bármilyen összetett számításnál – asztrológiai képlet, építési tervek, komplex kódok – mindig jó irányba indulsz el a számításnál.
+- Felismered az ismétlődő mintázatokat az időjárásban, csillagokban, szerkezetekben, piacokban.
+- Misztikus módon érzed a valószínűségeket: melyik az esélyesebb kimenetel, még ha pontos számítást nem is végzel.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Intelligencia `+4`, Emlékezet `+1`  
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Minden, ami a világban rendezetlennek látszik, számodra mintát, összefüggést mutat.
+- Matematikai és logikai számításod „emberfeletti”, olyan gyorsan és hibátlanul számolsz fejben. Nincs szükséged papírra sem – látod magad előtt.
+- Belelátsz a világ törvényeibe – a sors számokban íródik előtted: asztrológia, mechanika, pénzügy, hadrendi logisztika – mind csak eszközök a számodra.
 
 <br />
 
@@ -84,31 +98,43 @@ __
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Alap matematikai számítás, egyszerű mérés, törtek, mértékegységek átváltása.
+- Egyszerű kód (betűcsere, szójáték) megfejtése.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Kisebb épület tervének értelmezése.
+- Kereskedői számvetés gyors átlátása.
+- Csillagállás alapján irány nagyjából meghatározása.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Itt már gyakoriak az Összetett próbát igénylő dobások.
+- Bonyolultabb titkosírás megfejtése (pl. többsoros transzpozíció).
+- Közepes szerkezet megtervezése (csiga-rendszer, daru, vízimalom).
+- Bonyolult pénzügyi trükk (adócsalás vagy nagykereskedelmi árkalkuláció) leleplezése.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Építészeti, mechanikai rendszer hibátlan megtervezése (torony, híd).
+- Többszintű titkosírás feltörése rövid idő alatt.
+- Pontos előrejelzést adni egyes árúk, javak árainak mozgásáról.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Nagy volumenű hadtáp/logisztikai számítás gyors és pontos elvégzése.
+- Égbolt alapján kozmikus esemény (napfogyatkozás, üstökös útja) meghatározása.
+- Olyan komplex kód megfejtése/megírása, ami még a szakértőket is próbára teszi.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
+- Valószínűségi előrejelzéssel megérzed a jövő közelgő lehetőségeit (például: mely kereskedelmi útvonal lesz nyereséges, vagy merre fúj majd a szél a következő napokban).
+- Egyedül képes vagy több száz ember munkáját igénylő számításokra rövid idő alatt (hatalmas építkezések, erődítmény vagy mechanikus csoda).
+- Matematikai szinten a világ törvényeit úgy olvasod, mint más a betűket – közel jársz ahhoz, hogy „alkímiává” vagy „mágikus fizikává” váljon a tudományod.
 
 <br />
 
 ---
 ### Módosító körülmények
 
-- ⭕TODO⭕
+- Kapkodó munka: `+3`
