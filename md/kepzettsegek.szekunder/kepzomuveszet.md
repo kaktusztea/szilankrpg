@@ -4,6 +4,8 @@ Próba dobható.
 
 Az alkotás, a kézzel alkotott műremekek aktív, ihletett kreálása, amit aktív művészként lelkesen űzöl. A lenti [Szabad Fortély](../042_szabad_fortelyok.md) listából, - a Normál és Erős kiterjesztés alatt - vehetsz fel művészeti ágakat, terjesztheted ki a képzettséget ezekkel az ismeretekkel.
 
+Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély is (Normál kiterjesztésben).
+
 ### Domináns Tulajdonságok
 
 Érzékenység, Ügyesség
@@ -36,39 +38,51 @@ Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfel
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Érzékenység `+1` vagy Ügyesség `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Tudsz olyan művet készíteni (rajz, faragvány, kalligráfia), amely felismerhető és esztétikus, már nem csak udvarias mosolyt vált ki.
+- A saját ismert kultúrköröd stílusában biztos kézzel hozol létre egyszerűbb darabokat.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+1`, Ügyesség `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Munkáid már kereskedelmi értékkel bírnak: egy faluban, városban könnyedén akad vevő rájuk.
+- Ha más stílusban alkotsz, akkor is ösztönösen alkalmazod a kompozíciós szabályokat (arány, színek, formák).
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+1`, Ügyesség `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Alkotásaid **már érzelmeket váltanak ki** nézőikből – örömet, áhítatot, szomorúságot.
+- Hamisítvány esetén van rá esély, hogy nagyon enyhén, de megérzed, hogy hiányzik belőle az „ihlet”.
+- A közönség rád már művészként tekint, nem csak kézművesként.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+2`, Ügyesség `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Műveid már szellemi/érzelmi [Státuszt](../082_statuszok.md) válthatnak ki: nyugtatnak, feldühítenek, áhítatba ringatnak.
+- Bármilyen stílust képes vagy utánozni a meglévő tudásod szerint – sőt, új irányzatokat teremtesz.
+- Műveid túlélhetik az időt: sokkal lassabban pusztulnak, alkotó energiát is egyben tartja azt – még halálod után is. Esés, ütődés nem tesz kárt benne, fegyverrel is nehezebb tönkretenni.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+3`, Ügyesség `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Alkotásod már nemcsak mű: legendává válik – korszakokat, dinasztiákat, vallásokat határozhat meg.
+- Félmágikus (szakrális?) kapcsolatod lesz az Ihlettel: úgy érzed, nem te formálod a művet, hanem a mű születik rajtad keresztül.
+- Nevén neveznek téged a történelemben: stílusok és korszakok viselik a nyomod.
+- Műved egyáltalán nem pusztul az idővel, még fegyverrel is nagyon nehéz (bár nem lehetetlen) tönkretenni.
 
 <br />
 
@@ -77,32 +91,45 @@ Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfel
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Egyszerű, arányos rajz elkészítése.
+- Díszítő motívum vagy kalligráf betű leírása tisztán.
+- Alap plasztikák, köztéri dísztárgyak helyes méretarányban.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Élethű portré festése.
+- Szobor alkotása, amely már felismerhető jelleggel bír.
+- Díszítmény, amely gazdagabb környezetben is megállja a helyét.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Egy alkotás, amely már érzelmet vált ki a szemlélőből.
+- Szobor/festmény/kalligráfia létrehozása, amely műkedvelők szerint is kiemelkedő darab.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Város szintű hírnév szerzése műalkotásoddal.
+- Egy mű, amely vallási/eszmei áhítatot vált a szemlélőiben.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Korszakalkotó mű létrehozása, amely művészeti irányzatot teremt.
+- Egy műalkotás, amely politikai/ társadalmi eseményeket is befolyásolhat.
+- Átlagembert félmágikus érzelmi hatás alá vonja.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
+- Egy alkotás, amely örökre beírja magát a történelembe.
+- A műveddel spirituális kapcsolatot teremtesz a befogadó néző számára.
+- Aurád erejével azonos érzelmi hatást fejthetsz ki a nézők irányába – halálod után is.
+- Lelked beleköltözhet a műbe halálod pillanatában (titkos tudás)
 
 <br />
 
 ---
 ### Módosító körülmények
 
-- ⭕TODO⭕
-
+- Rendelkezésre álló idő
+  - Kapkodás: `–3`
+  - ráérős munka `+2`
+- Környezet inspiráló hatása (pl. szent hely, művésztelep): `+2`
