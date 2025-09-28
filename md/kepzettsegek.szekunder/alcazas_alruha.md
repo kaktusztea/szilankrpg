@@ -27,17 +27,7 @@ Beolvadni a helyi átlagos lakosok közé nagy előny - eltűnni az üldözők e
 
 ### Normál kiterjesztés
 
-⭕TODO: Kultúrkör?⭕
-
-### Erős kiterjesztés
-
-⭕TODO. Ha nincs, törölni
-
-### Bónuszok: Élő álca
-
-Titkos, félmágikus ismeret. Csak az álcázás legnagyobb mesterei ismerik – állítólag.
-
-`15.szint:` Alkalmazója kellékek nélkül is képes átformálni vonásait. A hatás csak annyi lehet, amennyit maszkkészítő eszközökkel is el tudna érni. Például: pár perc alatt szakállat, bajszot növeszt, ráncokat varázsol az arcára, megváltozik szeme színe, stb.
+- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)
 
 ---
 ### Biztos tudás, követelmények 📖
@@ -49,15 +39,12 @@ Titkos, félmágikus ismeret. Csak az álcázás legnagyobb mesterei ismerik –
 🌟 Hatás: 
 - `+1` szerep, ami passzol a személyiségéhez
 - Tudsz bajuszt, kisebb szakállat ragasztani úgy, hogy jó eséllyel nem esik le
-- ⭕2x??⭕+1 szerep, ami passzol a személyiségéhez
 - Példa: Segéd a színházban
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény:
-- Ügyesség: `+0`  
-- ⭕Érzékenység:`+0`⭕
+🔒 Követelmény: Ügyesség:`+1`, Érzékenység:`+0`
 
 🌟 Hatás: 
 - `+1` szerep, ami passzol a személyiségéhez
@@ -70,47 +57,38 @@ Titkos, félmágikus ismeret. Csak az álcázás legnagyobb mesterei ismerik –
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény:
-- Ügyesség:`+1`
-- ⭕Érzékenység:`+1`⭕
-- ⭕Alkímia – `3.szint`⭕
+🔒 Követelmény: Ügyesség:`+2`, Érzékenység:`+1`
 
 🌟 Hatás:
 - `+1` szerep, ami kicsit eltér a személyiségétől
 - `+1` szerep,ami közepesen eltér a személyiségétől
-- Alaposabban ismered az egyes izzadást gátló szereket, tartósabb ragasztókat. Összetételük ismeretében be tudod szerezni a hozzájuk való alapanyagokat. 1 perc alatt össze tudsz válogatni magadnak egy álcára valót az eléd kerülő rengeteg ruhából, kellékből (a felvétel persze már más tészta).
-- ⭕Az álcád karbantartás nélkül akár 2-3 napot is kibír.
+- Alaposabban ismered az egyes izzadást gátló szereket, tartósabb ragasztókat. Összetételük ismeretében be tudod szerezni a hozzájuk való alapanyagokat. `1` perc alatt össze tudsz válogatni magadnak egy álcára valót az eléd kerülő rengeteg ruhából, kellékből (a felvétel persze már más tészta).
+- Az álcád karbantartás nélkül akár 2-3 napot is kibír.
 - Példa: beépülő fejvadász, orvgyilkos
 - Tanulható: [Százarcú - 2.fok](../fortelyok.altalanos/szazarcu.md) (8.szinten)
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:
-- Ügyesség:`+1`
-- ⭕Érzékenység:`+1`⭕
-- Alkímia – `5.szint`
+🔒 Követelmény: Ügyesség:`+2`, Érzékenység:`+2`
 
 🌟 Hatás: 
 - `+1` szerep,ami közepesen eltér a személyiségétől
 - `+1` szerep, ami nagyon eltér a személyiségétől
 - Ha nincs megfelelő alapanyag a kencéidhez, akkor sem esel kétségbe, tudsz rögtönözni, ismersz helyettesítő anyagokat is. Rögtönzött felszerelést kevesebb, mint fél perc alatt össze tudsz válogatni.
-- Az álcád karbantartás nélkül akár ⭕`XXX`⭕ napot is kibír.
+- Az álcád karbantartás nélkül akár `1` hetet is kibír.
 - Példa: „kaméleon” mestergyilkos
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:
-- Ügyesség:`+2`
-- ⭕Érzékenység:`+2`⭕
-- Alkímia – `7.szint`
+🔒 Követelmény: Ügyesség:`+3`, Érzékenység:`+2`
 
 🌟 Hatás:
-- `+1` szerep, ami ⭕???⭕
+- `+1` szerep, ami nagyon eltér a személyiségétől
 - Az álcád szinte már művészeti alkotás. Karbantartást nem igényel, sminked mintha második bőröd lenne.
 - Példa: Előbb a szakács fia volt, most épp a báróné!
-- Képzettség-bónusz: [Élő álca](#b%C3%B3nuszok-%C3%A9l%C5%91-%C3%A1lca)
+- Élő álca: alkalmazója kellékek nélkül is képes átformálni vonásait. A hatás csak annyi lehet, amennyit maszkkészítő eszközökkel is el tudna érni. Például: pár perc alatt szakállat, bajszot növeszt, ráncokat varázsol az arcára, megváltozik szeme színe, stb.
 
 <br />
 
@@ -119,29 +97,30 @@ Titkos, félmágikus ismeret. Csak az álcázás legnagyobb mesterei ismerik –
 
 #### Könnyű (6) 🎲 
 
-Olyan álbajuszt/szakállat ragasztani, ami nem esik le egész nap.
+- Olyan álbajuszt/szakállat ragasztani, ami nem esik le egész nap.
 
 #### Átlagos (9) 🎲 
 
-Azonos nemű és felépítésű, +/-20 év korú személlyé átvedleni.
+- Azonos nemű és felépítésű, +/-20 év korú személlyé átvedleni.
 
 #### Nehéz (12) 🎲 
 
-20 évnél nagyobb korkülönbséget hitelesen megjeleníteni.\
-Más nemű, hasonló korú személlyé átvedleni.
+- 20 évnél nagyobb korkülönbséget hitelesen megjeleníteni.
+- Más nemű, hasonló korú személlyé átvedleni.
 
 #### Nagyon nehéz (15) 🎲 
 
-Más felépítésű személlyé átvedleni.
+- Más felépítésű személlyé átvedleni.
 
 #### Rendkívül nehéz (18) 🎲 
 
-Más magasságú, nemű, teljesen más karakterű másik személlyé átváltozni.\
-Más fajú (de hasonló testfelépítésű) lénnyé átalakulni.
+- Más magasságú, nemű, teljesen más karakterű másik személlyé átváltozni.
+- Más fajú (de hasonló testfelépítésű) lénnyé átalakulni.
 
 #### Emberfeletti (21) 🎲 
 
-Egy kis cérnából és egy falevélből álcát készíteni. Más testfelépítésű lénnyé válni.
+- Egy kis cérnából és egy falevélből álcát készíteni.
+- Más testfelépítésű lénnyé válni.
 
 <br />
 
