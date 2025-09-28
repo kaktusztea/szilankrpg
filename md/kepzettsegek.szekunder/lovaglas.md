@@ -19,9 +19,9 @@ Válassz hátas fajt: `1 db` [Lénylovas](../fortelyok.szabad/lenylovas.md) Szab
 
 [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező)
 
-### Bónusz: Állat testvér
+### Állat testvér
 
-Megegyezik az [Idomítás](../kepzettsegek.szekunder/idomitas.md#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r) képzettségnél leírtakkal.
+Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat között – lelki társsá válnak –, ami különleges telepátiát hoz létre közöttük. A kapcsolat olyan konkrét állatokra vonatkozik csak, akikkel a viselője legalább 1 éve szoros napi érintkezésben van és a köztük levő kapcsolat szeretetteljesnek mondható.
 
 <br />
 
