@@ -51,14 +51,14 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)
+🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r)
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)
+🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r)
 
 <br />
 

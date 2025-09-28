@@ -14,6 +14,7 @@ Válassz hátas fajt: `1 db` [Lénylovas](../fortelyok.szabad/lenylovas.md) Szab
 
 - [Lovas harc](../fortelyok.harci/lovas_harc.md) fortély
 - [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): csoportos lovas/földi alakzat vezetése esetén bónuszt ad.
+- [Léglovaglás](leglovaglas.md) képzettség
 
 ### Erős kiterjesztés
 
@@ -53,14 +54,14 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)
+🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r)
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)
+🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r)
 
 <br />
 
@@ -85,11 +86,11 @@ Tömegben harcolni. Durván kitört hátast „rendezni”.
 
 #### Rendkívül nehéz (18) 🎲 
 
-Vakon vágtázni. Telepatikusan megértetni az állattal, hogy veszély közeleg és menjen egy adott helyre a közelben (csak "[Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)" megléte esetén).
+Vakon vágtázni. Telepatikusan megértetni az állattal, hogy veszély közeleg és menjen egy adott helyre a közelben (csak [Állat testvér](#%A1llat-testv%C3%A9r) megléte esetén).
 
 #### Emberfeletti (21) 🎲 
 
-Tomboló viharban egy vágtázó hátason egy lábon állva fél percig megmaradni. Telepatikusan megértetni az állattal komplexebb, előre nem begyakorolt feladatokat (csak "[Állat testvér](#b%C3%B3nusz-%C3%A1llat-testv%C3%A9r)" megléte esetén). KM szava dönt, de legyünk észnél.
+Tomboló viharban egy vágtázó hátason egy lábon állva fél percig megmaradni. Telepatikusan megértetni az állattal komplexebb, előre nem begyakorolt feladatokat (csak [Állat testvér](#%A1llat-testv%C3%A9r) megléte esetén). KM szava dönt, de legyünk észnél.
 
 <br />
 
