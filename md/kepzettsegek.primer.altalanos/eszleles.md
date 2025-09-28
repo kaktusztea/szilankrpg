@@ -100,7 +100,7 @@ Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető j
 #### Nagyon nehéz (15) 🎲 
 
 - Észrevenni egy fejedre zuhanó sziklát zajban.
-- ⭕TODO: Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)
+- Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)
 - Jól beépített, rejtett titkos fiókot megtalálni egy nagyobb méretű bútorban.
 
 #### Rendkívül nehéz (18) 🎲 
@@ -113,7 +113,7 @@ Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető j
 Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tulajdonság segítségével dobjuk.
 - Mágikus csapda kitörését megérezni egy szemvillanással a kisülés előtt.
 - Szellemlény érintését megérezni - mágikus ismeretek nélkül.
-- ⭕TODO: Íztelen, szagtalan ételméreg kiszúrása
+- Íztelen, szagtalan ételméreg kiszúrása
 
 <br />
 
