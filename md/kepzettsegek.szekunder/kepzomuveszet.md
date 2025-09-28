@@ -130,6 +130,6 @@ Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfel
 ### Módosító körülmények
 
 - Rendelkezésre álló idő
-  - Kapkodás: `–3`
+  - Kapkodás: `-3`
   - ráérős munka `+2`
 - Környezet inspiráló hatása (pl. szent hely, művésztelep): `+2`
