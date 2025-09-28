@@ -58,6 +58,13 @@ Minden karakter `1.TSz` során ingyen megkapja a fenti két nyelvet `Alap` szint
 <br />
 
 ---
+### Domináns tulajdonságok
+
+Emlékezet, Érzékenység.
+
+<br />
+
+---
 ### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
