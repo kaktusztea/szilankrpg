@@ -1,6 +1,6 @@
 ## 🔵 Természetjárás
 
-A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni, amelyeket a fenti **ok** határoznak meg. Ebből 1 alapból jár a képzettség felvételekor, a többi `SzP` használatával vehető fel később.
+A képzettség a táj ismeretét és annak környezeti jellemzőit fogja egybe és adott tájtípusokra lehet megtanulni. Ebből `1 db` alapból jár a képzettség felvételekor, a többit [Szabad Fortélyok](../042_szabad_fortelyok.md) felvételével szerezheted meg.
 
 A képzettség magában foglalja a következőket:
 - Túlélés, hideg és meleg elleni technikák, tűzrakás
@@ -36,46 +36,58 @@ A képzettség magában foglalja a következőket:
 
 Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpontokat, mankót adhat. Tehát ha a karakter megdobja próbáját, akkor a KM csak segítségeket tárhat a játékos elé, a teljes megoldást nem kínálhatja tálcán.
 
-⭕TODO: szokásos kifejtés, szintek, esetleges követelmények⭕
-
 ---
 ### Biztos tudás, követelmények 📖
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény: Érzékenység `+0`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Egyszerű terepi túlélés: képes vagy tüzet rakni, alapvető vadnövényeket felismerni.
+- Rövid ideig önállóan is boldogulsz saját tájtípusodon.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Felismered a táj tipikus állatait, növényeit, sok esetben a mérgező és gyógyító fajokat is.
+- A legtöbb nyomot értelmezni tudod: megmondod, milyen lény járhatott ott.
+- Tájékozódási érzéked megbízható: ritkán tévedsz el.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Érzékenység `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Hónapokig képes vagy fennmaradni a természetben önállóan.
+- Nyomaid elrejtését, más nyomainak követését mesterfokon végzed.
+- Meg tudod mondani egy állat méretét, közelítő számát, állapotát pusztán a nyomából.
+- Ismersz sok „vadásztrükköt”: csapdakészítés, vadfelhajtás, vadcsapda kerülése.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Érzékenység `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Másokat is hozzá tudsz segíteni a természetben való túléléshez (csapat teljes ellátása vadonban).
+- Megmondod nyomokból, mikor ment át a lény, milyen állapotban van, mennyit pihent.
+- Úgy olvasod a természet apró jeleit (törött ág, víz fodrozódása), mintha könyv volna.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény:  Érzékenység `+3`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- A természet jelzései szinte „beszélnek” hozzád.
+- Képes vagy teljes törzseket, seregeket vadonban vezetni, elrejteni, élelmezni.
+- Puszta jelekből (madarak mozgása, füst, szag) előre látod az időjárást, ellenség közeledtét, állatok viselkedését.
+- Nyomolvasás: akár napokra visszamenő eseményláncolatot össze tudsz rakni.
 
 <br />
 
@@ -84,31 +96,41 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Tűzgyújtás, ivóvíz találása, ismert bogyó/növény felismerése.
+- Állatnyom észrevétele puha talajon.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Tájékozódás sűrű erdőben vagy ködben.
+- Vad elejtése csapdával vagy rögtönzött eszközzel.
+- Nyomból felismerni, milyen állat hagyta.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Több napig élni vadonban külső forrás nélkül.
+- Elrejtőzni üldözők elől természetes terepen.
+- Nyomból következtetni az állat/testalkat méretére, mozgására, mikor járt erre.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Nagyvad becserkészése (pl. medve, vaddisznó).
+- Sérült vagy hiányos nyomokból pontos következtetést levonni.
+- Ellenséges csoport csapásának észlelése, titkos pihenőhely felfedezése.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Hosszú távon egy sereg, csapat természetbeni elvezetése élelemmel, vízzel.
+- Különlegesen ritka növény, gomba vagy állat nyomainak felismerése.
+- Tudatosan félrevezetni üldözőt hosszabb távon (nyomok hamisítása).
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
+- Több napos, szinte elmosódott nyomból rekonstruálni eseményt.
+- Rejtett jelekből következtetni, amelyeket alapból csak állatok értenek (madarak viselkedése, állati szag mintázatok).
 
 <br />
 
 ---
 ### Módosító körülmények
 
-- ⭕TODO⭕
+- Időjárás rossz: `[-1; -6]`
