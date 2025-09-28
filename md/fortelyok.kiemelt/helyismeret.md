@@ -3,14 +3,15 @@
 <!-- tag: md_fortely_multiple_helyismeret -->
 
 ```
-- 1 fokú
-- többször felvehető egy-egy
+1 fokú
+
+Többször felvehető egy-egy
   átlagos városnyi területre
 
-- 1.Tapasztalati Szinttől kezdve
+1.Tapasztalati Szinttől kezdve
   minden 2. TSz-en kapsz egyet
 
-- Kaland végén kaphatóak belőle
+Kaland végén kaphatóak belőle
   ingyen, a KM-től
 
 ⚡ Példa: "Helyismeret: Gianag"
