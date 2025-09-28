@@ -2,37 +2,33 @@
 
 Próba dobható.
 
-Bármilyen vagyontárgy értékének felbecslése, legyenek akár fegyverek, ékszerek, festmények, szobrok, stb.
+Bármilyen vagyontárgy értékének felbecslése, legyenek akár fegyverek, ékszerek, festmények, szobrok, híres műalkotások, legendás relikviák, ősi ereklyék a hatodkorból, ötödkorból, negyedkorból, harmadkorból.
 
-⭕TODO⭕: kidolgozni ezeket
-- Minél ritkább egy tárgy annál nehezebb.
-- Híres ereklyék ismerete is benne van
-- Célszámot módosító körülmények
-  - Tárgy komplexitása
-  - Tárgy ritkasága
-- ékszerek, festmények, ősi fegyverek, ritka szobrok, híres műalkotások, legendás relikviák, ősi ereklyék a hatodkorból, ötödkorból, negyedkorból, harmadkorból.
-⭕TODO⭕
+Híres ereklyék ismeretét is magában foglalja. Minél ritkább egy tárgy annál nehezebb a próba.
+
+Hamis műkincsek felismerése ([Hamisítás](../fortelyok.altalanos/hamisitas.md) kiterjesztéssel):
+```
+Képzőművészet + Érzékenység  (Készítő)
+  + Hamisítás kiterjesztés (N)
+      vs
+Értékbecslés + Intelligencia (Felismerő)
+  + Hamisítás kiterjesztés (N)
+
+Mindkettőt Normál kiterjeszti:
+  - Kultúrkör fortély
+  - Festészet fortély
+  - Kalligráfia fortély
+  - Szobrászat fortély
+```
 
 ### Domináns Tulajdonságok
 
-Emlékezet
-
-### Kapcsolódik
-
-⭕TODO  ((fortély, más képzettség ahol ez a képzettség említve van. Ha nincs, törölni))⭕
-
-### Szituációk
-
-⭕TODO⭕ Ha van kapcsolódó szituáció, akkor itt linkelni.
+Emlékezet, Intelligencia
 
 ### Normál kiterjesztés
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): Már a hamis portéka is könnyebben feltűnik.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott **Ősi kultúrkör** idejében készült műkincsek felismerése, értékük felmérése.
-
-### Bónuszok
-
-⭕TODO⭕
 
 <br />
 
@@ -41,39 +37,48 @@ Emlékezet
 
 #### Novívius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+🔒 Követelmény:E mlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Mindig el tudod dönteni, hogy egy tárgy gyakorlati vagy piaci értékű (pl. bronzkard csak fegyver, míg egy ezüsttál értékes portéka).
+- Nem ejtenek át apró, silány hamisítványokkal (például aranyozott rézgyűrűt aranynak nézni).
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+1`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás: Biztos kézzel becsülöd meg a mindennapi értékes tárgyakat: ékszereket, érméket, fegyvereket, dísztárgyakat.
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Meglátod és érzed, ha egy tárgy szokatlanul értékes, akkor is, ha más hétköznapi holmik közé rejtették.
+- Nem csak az arany és ezüst matériát különbözteted meg, hanem a szimbolikus értéket is: tudod, miért drága egy ritka ékszer, festmény vagy ősi fegyver.
+- Hamisítvány felismerésében már nehéz átverni: a jó minőségű másolat is felkelti a gyanúdat.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- Ránézésre felismered a híres műhelyek, mesteremberek, kultúrkörök jellegzetes stílusát.
+- Ha kezedbe veszel egy ritka relikviát és azt nálad alacsonyabb képzettség-szintű valaki készítette, azon ösztönösen megérzed: eredeti‑e vagy hamisítvány, még akkor is, ha a csak egyetlen apró szimbólumon bukik meg.
+- Képes vagy megbecsülni legendás értékű tárgyakat (korabeli fegyverek, történelmi szobrok, híres relikviák) – legalább nagyságrendi pontossággal.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
+🔒 Követelmény: Emlékezet `+2`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+🌟 Hatás:
+- A másodkortól örökölt tárgyak, legendás relikviákkal tudsz felszínesen kommunikálni.
+- Nemcsak az értéket, hanem a tárgy jelentőségét, szellemi súlyát is látod – tudod, miért írta bele a világ történelmébe valaki.
+- A legjobb hamisítványok sem tévesztenek meg: a tárgy aurájából megérzed, hogy az eredeti alkotó szelleme hiányzik belőle.
 
 <br />
 
@@ -82,31 +87,45 @@ Emlékezet
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+- Megállapítani egy hétköznapi tárgy (pl. egyszerű ékszer, boros kupa) hozzávetőleges piaci értékét.
+- Különbséget tenni réz és aranyozott réz között.
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+- Megállapítani egy jobb minőségű kard vagy felszerelés piaci értékét.
+- Egy alap hamisítvány felismerése (pl. gyenge festményutánzat).
+- Azonnal eldönteni, hogy egy átlagos ékszer értékes vagy tucatáru.
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+- Ritkább műalkotások (festmények, szobrok, arany‑ vagy ezüsttárgyak) valódi értékének megbecslése.
+- Jó minőségű hamisítvány felismerése.
+- Egy régi érme vagy tárgy történeti jelentőségének felmérése.
 
 #### Nagyon nehéz (15) 🎲 
 
-⭕TODO⭕
+- Híres műhelyhez vagy mestermunkához köthető tárgy hitelesítése.
+- Ősi relikviák, ritka szertartási kellékek piaci és kulturális értékének felmérése.
+- Egy legendás műalkotás eredetiségének bizonyítása.
 
 #### Rendkívül nehéz (18) 🎲 
 
-⭕TODO⭕
+- Legendás ereklyék, több száz éves tárgyak, koronák, szimbolikus relikviák pontos felbecslése.
+- Egy korokon átnyúló hamisítvány (pl. több száz év alatt többször átdolgozott tárgy) felismerése.
+- Egy ismeretlen, de nyilvánvalóan fontos tárgyról pontosan tudni, miért értékes.
+- Egy legendás történelmi alak által használt műremekből llátomáson keresztül a legenda újraélése - nem a valós történetet, hanem a belőle formálódott (akár már elfeledett) mítoszt.
 
 #### Emberfeletti (21) 🎲 
 
-⭕TODO⭕
+- Őskorból vagy istenek korából származó mitikus ereklyék értékét felismerni.
+- Egy tárgy aurájából megérezni, hogy hogyan kapcsolódik a világ történetéhez vagy mítoszaihoz.
+- Egy legendás történelmi alak által használt műremekből látomáson keresztül újraélheted legendás, valós pillanatait. 
 
 <br />
 
 ---
 ### Módosító körülmények
 
-- ⭕TODO⭕
+- Tárgy komplexitása
+- Tárgy ritkasága
+- Tárgy kora
