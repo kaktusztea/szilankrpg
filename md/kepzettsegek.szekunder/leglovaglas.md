@@ -15,7 +15,7 @@ Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket
 
 ### Erős kiterjesztés
 
-- [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező)
+- [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező, többször felvehető más fajú légi hátasokra)
 
 ### Állat testvér
 
@@ -30,35 +30,42 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: Lassan, alacsonyan repülő lényt képes óvatosan navigálni. **Példa**: Újonc léglovas
+🌟 Hatás:
+- Alacsonyan, egyenes röppályán tudod tartani a hátast.
+- Iskolaköröket biztonsággal repülöd.
+- **Példa**: Újonc léglovas
 
 ---
 #### Kismester (6) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: Képes önállóan felmérni a szelet, ami felszálláshoz elengedhetetlen.
+🌟 Hatás:
+- Szélirány és légáram felismerése – képes vagy önállóan felszállni és leszállni.
+- Hosszabb út is teljesíthető zavartalan időben.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: Képes jó eséllyel kiszámítani légi ellenfelének röppályáját.
+🌟 Hatás:
+- Jó eséllyel kiszámítod az ellenfelek röppályáját.
+- Fordulókat, zuhanásos manővereket végre tudsz hajtani. Mérsékelt sérülésekkel is irányban tartod a hátast.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r)
+🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r)
+🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
 
 <br />
 
@@ -67,27 +74,35 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 #### Könnyű (6) 🎲 
 
-Egyedül megtenni egy iskolakört.
+- Egyedül megtenni egy iskolakört.
+- Egyenes emelkedés és sima ereszkedés.
 
 #### Átlagos (9) 🎲 
 
-Gond nélkül fel és leszállni. Zavaró körülmények nélkül akár hosszabb utat is megtenni.
+- Gond nélkül fel és leszállni.
+- Zavaró körülmények nélkül akár hosszabb utat is megtehetsz.
 
 #### Nehéz (12) 🎲 
 
-Fordulózni. Harcolni. Közepesen sérült hátassal navigálni.
+- Fordulózás, gyors irányváltások.
+- Hátas sérült szárnnyal vagy fáradt hátassal.
+- Légi közelharc folytatható.
 
 #### Nagyon nehéz (15) 🎲 
 
-Tömegben harcolni (levegőben). Erősen sérült hátassal rossz időben navigálni. Egyensúlyból kibillent hátast „rendezni”.
+- Tömegben harcolni (levegőben).
+- Erősen sérült hátassal rossz időben navigálni. Egyensúlyból kibillent hátast „rendezni”.
+- Harc és rossz idő együtt: villámló ég, szakadó eső.
 
 #### Rendkívül nehéz (18) 🎲 
 
-Zuhanásból sérült hátast kihozni.
+- Zuhanásból sérült hátast kihozni.
+- Orkánban repülni
 
 #### Emberfeletti (21) 🎲 
 
-Az évszázad viharában zuhanó hátasodat felhúzni, miközben ellenfeled nyakadat szorongatja.
+- Az évszázad viharában zuhanó hátasodat felhúzni, miközben ellenfeled nyakadat szorongatja.
+- Telepatikus összhanggal ösztönszerűen végrehajtani bonyolult manővereket (siklás, kitérés, közös támadás).
 
 <br />
 
@@ -95,4 +110,8 @@ Az évszázad viharában zuhanó hátasodat felhúzni, miközben ellenfeled nyak
 ### Módosító körülmények
 
 - Vad hátas: `[-1; -3]`
-- Más fajú légi hátas esetén: [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély
+- Más fajú légi hátas esetén: [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély szükséges
+- Időjárás:
+    - Erős szél vagy felhőszaggatás: `–3`
+    - Vihar, orkán: `–6`
+    
