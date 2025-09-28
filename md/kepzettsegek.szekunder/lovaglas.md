@@ -40,28 +40,28 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 🔒 Követelmény: Önuralom: `-1`
 
-🌟 Hatás: Képes vagy egyenletes galoppra, vágtára.
+🌟 Hatás: Biztonsággal vezetsz egyenletes galoppban, vágtában. Tudsz irányt és tempót váltani.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: Képes nyereg nélkül, "szőrén" megülni a hátast.
+🌟 Hatás: Képes nyereg nélkül, "szőrén" megülnöd a hátast, amely testi egyensúlyodból érti jeleid. Rövid ideig képes vagy harcolni lovon.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r)
+🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r) kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r)
+🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
 
 <br />
 
@@ -70,27 +70,33 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 #### Könnyű (6) 🎲 
 
-Egyedül, léptetve átbaktatni a szomszédos faluba. Nyugodt körülmények között galoppozni.
+- Egyedül, léptetve átbaktatni a szomszédos faluba.
+- Nyugodt körülmények között galoppozni.
 
 #### Átlagos (9) 🎲 
 
-Esőben galoppozni, kicsit vágtázni.
+- Esőben, csúszós terepen galoppozni, kicsit vágtázni.
+- Szűk ösvényen egyensúlyban maradás.
 
 #### Nehéz (12) 🎲 
 
-Hátassal harcolni. Makrancos hátast először sikeresen megülni.
+- Hátassal harcolni.
+- Makrancos hátast először sikeresen megülni.
 
 #### Nagyon nehéz (15) 🎲 
 
-Tömegben harcolni. Durván kitört hátast „rendezni”.
+- Tömegben, pánikoló hátasok között is irányítani a lovat.
+- Durván kitört hátast „rendezni”.
 
 #### Rendkívül nehéz (18) 🎲 
 
-Vakon vágtázni. Telepatikusan megértetni az állattal, hogy veszély közeleg és menjen egy adott helyre a közelben (csak [Állat testvér](#%A1llat-testv%C3%A9r) megléte esetén).
+- Vakon vágtázni, a ló ösztöneire hagyatkozni.
+- [Állat testvér] esetén: veszély közeledtét telepatikusan jelezni az állatnak és hogy menjen egy adott helyre a közelben.
 
 #### Emberfeletti (21) 🎲 
 
-Tomboló viharban egy vágtázó hátason egy lábon állva fél percig megmaradni. Telepatikusan megértetni az állattal komplexebb, előre nem begyakorolt feladatokat (csak [Állat testvér](#%A1llat-testv%C3%A9r) megléte esetén). KM szava dönt, de legyünk észnél.
+- Tomboló viharban egy vágtázó hátason egy lábon állva fél percig megmaradni.
+- [Állat testvér] esetén: telepatikus, nem begyakorolt komplex parancsok (pl. „vidd biztonságba a társamat, majd térj vissza értem”).
 
 <br />
 
@@ -98,4 +104,4 @@ Tomboló viharban egy vágtázó hátason egy lábon állva fél percig megmarad
 ### Módosító körülmények
 
 - Vad hátas: `[-1; -3]`
-- Más fajú földi hátas esetén: [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély
+- Más fajú földi hátas esetén: [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély szükséges
