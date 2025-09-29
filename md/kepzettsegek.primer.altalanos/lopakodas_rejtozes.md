@@ -34,7 +34,7 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 
 🌟 Hatás:
 - Ösztönösen össze tudod húzni magad: ha van legalább valami takarás (láda, kő, sarok), mindig jól húzódsz meg mögötte.
-- Mindig ösztönösen kerülöd a legzajosabb talajt (deszkarepedés, száraz levelek) – sosem lépsz **direkt** rá.
+- Mindig ösztönösen kerülöd a legzajosabb talajt (deszkarepedés, száraz levelek) – sosem lépsz direkt rá.
 
 ---
 #### Kismester (6) 📖
