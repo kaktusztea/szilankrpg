@@ -25,6 +25,23 @@ Előbb észre kell venni az első nyomot, utána lehet követni a csapást.
 <br />
 
 ---
+### Leplezett nyomok követése a természetben 🌳
+
+Ha a követett személy szándékosan leplezi nyomait, akkor ellenpróbás szituáció következik:
+
+```
+Természetjárás + Érzékenység (nyomolvasó)
+                vs
+Természetjárás + Intelligencia (menekülő)
+
+Normál Kiterjesztés egyszerre mindkét félnél
+ - Nyomolvasás fortély ÉS
+ - Tájtípus (aktuális tájra) fortély
+```
+
+<br />
+
+---
 ### Nyomok értelmezése a természetben 🌳
 
 "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
