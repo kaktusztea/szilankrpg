@@ -42,7 +42,7 @@ A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen 
 
 Példák:
 - [Aktuális Aura számításánál](104_aura_magia_akarata_magiaellenallas.md#aura-aktu%C3%A1lis-%C3%A9rt%C3%A9ke) Aurafejlesztés képzettségpróba
-- [Méreg szintje](151_meregkeveres_szabalyai.md#a-m%C3%A9reg-szintje) Méregkeverésnél
+- [Méreg komplexitása](151_meregkeveres_szabalyai.md#a-m%C3%A9reg-komplexitása) Méregkeverésnél
 
 <br />
 

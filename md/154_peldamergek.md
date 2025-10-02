@@ -11,7 +11,7 @@
 ```
 
 ```
-Így a méreg szintje: 20
+Így a méreg komplexitása: 20
  → Minimum 10. szintű méregkeverés szükséges
 ```
 
@@ -33,7 +33,7 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 ```
 
 ```
-Így a méreg szintje: 17
+Így a méreg komplexitása: 17
  → Minimum 9. szintű Méregkeverés képzettség szükséges
 ```
 
@@ -57,7 +57,7 @@ Fontos, hogy amennyiben 10 percen belül nem kerül a pengéről véráramba, ak
 ```
 
 ```
-Így a méreg szintje: 30
+Így a méreg komplexitása: 30
  → Minimum 15. szintű Méregkeverés képzettség szükséges 5-ös Tulajdonsággal!
 ```
 

@@ -6,7 +6,9 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](014_02_tulajdonsagpro
 (Edzettség + k6)  vs  Méreg Erőssége
 ```
 
-🔆 **Fontos**: a méregellenállást a méreg **Erőssége** (és NEM szintje) ellen kell dobni!
+🔆 **Fontos**: a Méregellenállást a méreg **Erőssége** (és NEM komplexitása) ellen kell dobni!
+
+🔆 Bónuszt ad: [Méregálló](../fortelyok.altalanos/meregallo.md) fortély
 
 ---
 

@@ -14,14 +14,14 @@ A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriá
 A **Méregkeverés** külön képzettség, működését lásd [annak leírásában](kepzettsegek.primer.altalanos/meregkeveres.md).
 
 ---
-## A méreg szintje
+## A méreg komplexitása
 
-A mérgeket elkészítésük bonyolultsága szerint egy ún. Szinttel jellemzünk.
+A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
-A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg szintjével** azonos.
+A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos.
 
 ```
-Méreg szintje =
+Méreg komplexitása =
   + Erősség
   + Súlyosság
   + Elállás

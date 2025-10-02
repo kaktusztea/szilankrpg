@@ -13,8 +13,9 @@ Emlékezet, Önuralom, Intelligencia
 ### Kapcsolódik
 
 - [Méregrendszer](../150_meregrendszer.md) főfejezet
- - [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség
- - [Alkímia](../kepzettsegek.szekunder/alkimia.md) képzettség
+- [Méregálló](../fortelyok.altalanos/meregallo.md) fortély
+- [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség
+- [Alkímia](../kepzettsegek.szekunder/alkimia.md) képzettség
  
 <br />
 
@@ -47,7 +48,7 @@ Emlékezet, Önuralom, Intelligencia
 🔒 Követelmény:  Emlékezet `+2`, Önuralom `+1`
 
 🌟 Hatás:
-- Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll". ⭕TODO⭕ Hányadik szintű, stb. mérget?⭕
+- Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll". ⭕TODO⭕ Mekkora komplexitású, stb. mérget?⭕
 - Ha megérintesz valakit, automatikusan apró adag mérget juttathatsz belé – ez mindig apró dózis a saját repertoárodból (pl. bénító, gyengítő).
 - A saját szervezeteddel kompatibilis mérgeket (amiket te készítettél) kis adagban be tudod építeni magadba anélkül, hogy kifejtenék hatásukat, majd később bőrödön át kieresztheted.
 
@@ -63,7 +64,7 @@ Emlékezet, Önuralom, Intelligencia
 ---
 ### Próbák 🎲
 
-A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg szintjével** azonos. A **Méreg szintjének** számítása a [Méregrendszer](../150_meregrendszer.md) fejezetben található.
+A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos. A **Méreg komplexitásának** számítása a [Méregrendszer](../150_meregrendszer.md) fejezetben található.
 
 ### Méreg azonosítása tünetek, környezeti hatás alapján
 
@@ -79,9 +80,9 @@ A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek c�
 ⭕TODO⭕ Konszolidálni a lentieket a Méregrendszer fejezet és ezen oldal között.
 
 - Méreganyagok kivonásához növényből/állatból a [Vajákosság](../kepzettsegek.szekunder/vajakossag.md), ásványokból az [Alkímia](../kepzettsegek.szekunder/alkimia.md) képzettség szükséges. Emiatt:
-- Méreg alapanyagok követelménye: `(Alkimia + Vajákosság) >= (méreg szintje / 2)`
-  - Például: méreg szintje: `16`, ez `8`-as követelmény: `(alkimia+vajákosság)` szint összege legalább `8` legyen.
+- Méreg alapanyagok követelménye: `(Alkimia + Vajákosság) >= (méreg komplexitása / 2)`
+  - Például: méreg komplexitása: `16`, ez `8`-as követelmény: `(alkimia + vajákosság)` szint összege legalább `8` legyen.
   - ez megvalósulhat így például: Alkimia: `3`, Vajákosság: `5`
   - Ha csak szervetlen alkotóelemet akar a méregkeverő, akkor csak az **Alkímia** tudja az alapanyag követelményt teljesiteni
   - Ha csak állati/növényi alkotóelemet akar a méregkeverő, akkor csak a **Vajákosság** tudja az alapanyag követelményt teljesiteni
-- Ellenméreg kikeverése: Ellenpróba a méreg szintje ellen
+- Ellenméreg kikeverése: Ellenpróba a méreg komplexitása ellen
