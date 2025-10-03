@@ -63,7 +63,7 @@ Faj misztériumok - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%E
 
 🔵 [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) 🅿️ 🤝
 
-🔵 [Értékbecslés](kepzettsegek.szekunder/ertekbecsles.md
+🔵 [Értékbecslés](kepzettsegek.szekunder/ertekbecsles.md)
 
 🔵 [Etikett](kepzettsegek.szekunder/etikett.md)
 
