@@ -76,7 +76,7 @@ Szavaid megerősítik társaid mondanivalóját: ha valaki melletted beszél, an
 
 🔒 Követelmény:  Intelligencia: `+2`
 
-🌟 Hatás: Hangodban és gesztusaidban van valami, amit nehéz másképp értelmezni, mint hogy „ez bizony egy hiteles ember”. Olyan, mintha a belőled áradó tekintélye természetesen lengené körül lényedet.
+🌟 Hatás: Hangodban és gesztusaidban van valami, amit nehéz másképp értelmezni, mint hogy „ez bizony egy hiteles ember”. Olyan, mintha a belőled áradó tekintély természetesen lengené körül lényedet.
 
 Alacsonyabb tapasztalati szintű karakterekkel szemben ha parancsoló vagy sürgető hangon kérsz valamit, a hallgatóban azonnali belső késztetés támad a teljesítésére – még ha utána ellen is állhat, de a pillanatnyi késztetés mindenképp létrejön.
 
