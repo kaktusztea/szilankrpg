@@ -115,5 +115,5 @@ Intelligencia, Önuralom
 ---
 ### Módosító körülmények
 
-- Csapda hatástalanítása külső nyom hátrahagyása nélkül: `-3`
-- [Szabotőr](../fortelyok.altalanos/szabotor.md) által hatástalanított csapdáról megmondani, hogy már nem aktív: `-3`
+- Csapda hatástalanítása külső nyom hátrahagyása nélkül: `+3`
+- [Szabotőr](../fortelyok.altalanos/szabotor.md) által hatástalanított csapdáról megmondani, hogy már nem aktív: `+3`

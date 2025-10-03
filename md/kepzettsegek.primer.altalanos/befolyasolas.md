@@ -2,7 +2,7 @@
 
 Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba, ellenpróba dobható.
 
-Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi. Alapból sima érveléstechinka, de a lenti Fortélyokkal **kiterjeszthető** más szituációkra is.
+Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi. Alapból sima érveléstechnika, de a lenti Fortélyokkal **kiterjeszthető** más szituációkra is.
 
 ### Domináns Tulajdonságok
 
@@ -76,7 +76,9 @@ Szavaid megerősítik társaid mondanivalóját: ha valaki melletted beszél, an
 
 🔒 Követelmény:  Intelligencia: `+2`
 
-🌟 Hatás: Hangodban és gesztusaidban van valami, amit nehéz másképp értelmezni, mint hogy „ez bizony egy hiteles ember”. Olyan, mintha a belőled áradó tekintély természetesen lengené körül lényedet.
+🌟 Hatás: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor a hatás némileg elmélyül.
+
+Hangodban és gesztusaidban van valami, amit nehéz másképp értelmezni, mint hogy „ez bizony egy hiteles ember”. Olyan, mintha a belőled áradó tekintély természetesen lengené körül lényedet.
 
 Alacsonyabb tapasztalati szintű karakterekkel szemben ha parancsoló vagy sürgető hangon kérsz valamit, a hallgatóban azonnali belső késztetés támad a teljesítésére – még ha utána ellen is állhat, de a pillanatnyi késztetés mindenképp létrejön.
 
@@ -85,7 +87,9 @@ Alacsonyabb tapasztalati szintű karakterekkel szemben ha parancsoló vagy sürg
 
 🔒 Követelmény:  Intelligencia: `+2`
 
-🌟 Hatás: Szavaid apró gondolatmagként fészkelik be magukat a hallgatóba, nagy valószínűséggel később is újra és újra eszükbe jut, amit "elültettél".
+🌟 Hatás: Aurádra már dobhatsz is, a többi hatás megegyezik a `12.szinten` leírtakkal.
+
+Szavaid apró gondolatmagként fészkelik be magukat a hallgatóba, nagy valószínűséggel később is újra és újra eszükbe jut, amit "elültettél".
 
 Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még ellenfeleid is ösztönösen hangsúlyt adnak mondandódnak, és csak tudatos erőfeszítéssel képesek kisöpörni gondolataikból.
 

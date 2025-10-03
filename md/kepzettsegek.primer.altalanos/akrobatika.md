@@ -30,7 +30,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 
 🔒 Követelmény: **Ügyesség**: `+1`
 
-🌟 Hatás: Ugrástávolság felmérése `10 méterig`
+🌟 Hatás: Ugrástávolság felmérése kb. `10 méterig`
 
 ---
 #### Mester (9) 📖
@@ -38,7 +38,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 🔒 Követelmény: **Ügyesség**: `+2`
 
 🌟 Hatás:
-- Ugrástávolság felmérése `20 méterig`
+- Ugrástávolság felmérése kb. `20 méterig`
 - Felmérni: valaki tud -e ugrani adott távolságra a rajta levő súlyokkal együtt
 
 ---
@@ -75,11 +75,11 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 - Elkerülni egy hirtelen leeső akadályt futás közben
 - Gyors kigurulás végrehajtása egy enyhén lejtős, köves terepen
 - Megkapaszkodni egy ledőlő fa ágain
-
+x
 #### Nehéz (12) 🎲 
 
 - Lecsúszni talpon egy hosszú lépcső korlátján
-- Kimozodni közepes mennyiségű potyogó sziklát
+- Kimozogni közepes mennyiségű potyogó sziklát
 
 #### Nagyon nehéz (15) 🎲 
 
@@ -94,16 +94,3 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 #### Emberfeletti (21) 🎲 
 
 - Szakadékba ugrani és elkapni a `10+ méterre` levő liánt sérülés nélkül.
-
-<br />
-
----
-### Módosító körülmények
-
-- kötéltánc átlagos szélben: `+3`
-- kötéltánc erős szélben: `+6`
-- kötéltánc halálos magasságban: `+3`
-
-### Megjegyzés
-
-- **Kötéltánc** szituációt általában **Önuralom** Tulajdonsággal dobjuk
