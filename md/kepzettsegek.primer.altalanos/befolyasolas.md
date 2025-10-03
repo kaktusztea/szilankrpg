@@ -87,7 +87,7 @@ Alacsonyabb tapasztalati szintű karakterekkel szemben ha parancsoló vagy sürg
 
 🌟 Hatás: Szavaid apró gondolatmagként fészkelik be magukat a hallgatóba, nagy valószínűséggel később is újra és újra eszükbe jut, amit "elültettél".
 
-Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még az ellenség is ösztönösen súllyal mérlegeli, amit mond, és csak tudatos erőfeszítéssel söpri félre.
+Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még ellenfeleid is ösztönösen hangsúlyt adnak neki, és csak tudatos erőfeszítéssel képesek félresöpörni elméjükben.
 
 <br />
 
