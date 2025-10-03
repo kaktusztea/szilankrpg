@@ -11,7 +11,7 @@ A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriá
 - növényi
 - ásványi (szervetlen)
 
-A **Méregkeverés** külön képzettség, működését lásd [annak leírásában](kepzettsegek.primer.altalanos/meregkeveres.md).
+A **[Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md)** külön képzettség, működését lásd annak leírásában.
 
 ---
 ## A méreg komplexitása
@@ -87,6 +87,8 @@ Ez a tétel attól függ, hogy milyen típusú mérget szándékozik készíteni
 - **Elállás**: kizárólag fegyvermérgek esetén: meddig áll el szabad levegőn/folyadékban?
 - **Kiürülés**: minden más méreg típus esetén - mennyi idő alatt ürül ki az áldozat szervezetéből
 
+A "**Méregkeverés X.szint**" ("Mk") az **igényelt biztos tudás** szintjét jelenti.
+
 #### (3a) Elállás
 
 ```
@@ -96,9 +98,9 @@ Meddig áll el?
 1: 1 perc  
 2: 10 perc  
 3: 1 óra, Méregkeverés 3.szint
-4: 1 nap, Méregkeverés 6.szint
-5: 1 hónap, Méregkeverés 9.szint
-6: Örökké, Méregkeverés 12.szint
+4: 1 nap, Mk 6.szint
+5: 1 hónap, Mk 9.szint
+6: Örökké, Mk 12.szint
 ```
 
 #### (3b) Kiürülés
@@ -106,10 +108,10 @@ Meddig áll el?
 ```
 Mennyi idő alatt ürül ki?
 
-0: 1 kör, Méregkeverés 3. szint
-1: 1 óra, Méregkeverés 6. szint
-2: 1 nap, Méregkeverés 9. szint
-3: 1 hét, Méregkeverés 12. szint
+0: 1 kör, Mk 3. szint
+1: 1 óra, Mk 6. szint
+2: 1 nap, Mk 9. szint
+3: 1 hét, Mk 12. szint
 ```
 
 <br />
@@ -121,15 +123,15 @@ Mennyi idő alatt ürül ki?
 Milyen gyorsan hat?  
 
 +0: (30 perc - 3 óra múlva)
-+1: (4 - 23 óra múlva), Méregkeverés 3. szint
-+1: (2 - 20 perc múlva), Méregkeverés 3. szint
-+2: (1 - 10 nap múlva), Méregkeverés 5. szint
-+2: (2 - 6 kör múlva), Méregkeverés 5. szint
-+3: (2 - 4 hét múlva), Méregkeverés 7. szint
-+4: Gyorsan (10 szegmens), Méregkeverés 7. szint
-+4: Hónapok múlva, Méregkeverés 9. szint
-+5: Azonnal (1 szegmens), Méregkeverés 9. szint
-+5: Évek múlva, Méregkeverés 12. szint
++1: (4 - 23 óra múlva), Mk 3. szint
++1: (2 - 20 perc múlva), Mk 3. szint
++2: (1 - 10 nap múlva), Mk 5. szint
++2: (2 - 6 kör múlva), Mk 5. szint
++3: (2 - 4 hét múlva), Mk 7. szint
++4: Gyorsan (10 szegmens), Mk 7. szint
++4: Hónapok múlva, Mk 9. szint
++5: Azonnal (1 szegmens), Mk 9. szint
++5: Évek múlva, Mk 12. szint
 ```
 
 <br />

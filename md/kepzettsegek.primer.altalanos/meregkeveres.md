@@ -22,6 +22,8 @@ Emlékezet, Önuralom, Intelligencia
 ---
 ### Biztos tudás, követelmények 📖
 
+A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../151_meregkeveres_szabalyai.md#3-el%C3%A1ll%C3%A1s--ki%C3%BCr%C3%BCl%C3%A9s) is **biztos tudást igényel**. Bővebben lásd ott.
+
 #### Novívius (3) 📖
 
 🔒 Követelmény: Emlékezet `+0`
@@ -33,14 +35,14 @@ Emlékezet, Önuralom, Intelligencia
 
 🔒 Követelmény: Emlékezet `+1`, Önuralom `+0`
 
-🌟 Hatás: Már nem ronthatsz el egyszerű mérget úgy, hogy magadat veszélyeztesd közben; kicsúszott mozdulatnál is ösztönösen hárítod a veszélyt.
+🌟 Hatás: Már nem ronthatsz el egyszerű mérget úgy, hogy magadat veszélyeztesd közben, például rossz üvegcsébe öntöd az egyik alapanyagot.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Emlékezet `+1`, Önuralom `+0`
 
-🌟 Hatás:  Dobhatsz **Érzékenység** képzettségpróbát méregérzékelésre fizikai érzékeid (látás, szaglás, ízlelés) használata nélkül is. A mérgezett italba bele sem kell innod, szagolnod, egyszerűen csak megérzed a mérget.
+🌟 Hatás:  Dobhatsz **Érzékenység** képzettségpróbát méregérzékelésre fizikai érzékeid (látás, szaglás, ízlelés) használata nélkül is. A mérgezett italba bele sem kell innod, szagolnod, sikeres próba esetén egyszerűen csak megérzed a mérget.
 
 ---
 #### Nagymester (12) 📖
@@ -50,7 +52,7 @@ Emlékezet, Önuralom, Intelligencia
 🌟 Hatás:
 - Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll". ⭕TODO⭕ Mekkora komplexitású, stb. mérget?⭕
 - Ha megérintesz valakit, automatikusan apró adag mérget juttathatsz belé – ez mindig apró dózis a saját repertoárodból (pl. bénító, gyengítő).
-- A saját szervezeteddel kompatibilis mérgeket (amiket te készítettél) kis adagban be tudod építeni magadba anélkül, hogy kifejtenék hatásukat, majd később bőrödön át kieresztheted.
+- A saját szervezeteddel kompatibilis mérgeket (amiket te készítettél) kis adagban be tudod építeni a testedbe anélkül, hogy kifejtenék hatásukat, majd később bőrödön át kieresztheted.
 
 ---
 #### Élő legenda (15) 📖
@@ -68,10 +70,9 @@ A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek c�
 
 ### Méreg azonosítása tünetek, környezeti hatás alapján
 
-- Sima Méregkeverés próba
-- Alap célszám: `6`
-- Félrevezető (speciális) :`+3/6`
-- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `-2 / fok`
+- Sima Méregkeverés próba, alap célszám: `6`
+- Félrevezető (speciális) :`+3/6 Nehézség`
+- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `-2 Nehézség / fok`
 
 <br />
 
