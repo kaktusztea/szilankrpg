@@ -32,7 +32,7 @@ Beolvadni a helyi átlagos lakosok közé nagy előny - eltűnni az üldözők e
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Ügyesség: `0`
 

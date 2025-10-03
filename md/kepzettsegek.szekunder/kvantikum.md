@@ -41,7 +41,7 @@ __
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Intelligencia `+1` **vagy** Emlékezet `+1`
 

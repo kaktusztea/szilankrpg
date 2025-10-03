@@ -28,7 +28,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Ügyesség: `+0`
 

@@ -15,7 +15,7 @@ A képzettség állatok idomítását fogja magában. Az egyszerüség kedvéér
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Érzékenység `+0`
 

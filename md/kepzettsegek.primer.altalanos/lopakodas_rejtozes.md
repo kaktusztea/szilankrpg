@@ -28,7 +28,7 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 

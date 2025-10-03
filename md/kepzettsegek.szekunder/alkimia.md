@@ -32,7 +32,7 @@ Intelligencia, Emlékezet
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény:
 - Emlékezet: `+0`

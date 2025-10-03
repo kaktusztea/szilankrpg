@@ -23,7 +23,7 @@ Intelligencia, Önuralom
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Intelligencia vagy Önuralom `+1`
 

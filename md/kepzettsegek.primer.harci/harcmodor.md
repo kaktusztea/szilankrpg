@@ -31,7 +31,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: -
 

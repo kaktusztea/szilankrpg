@@ -10,7 +10,7 @@
 ### Biztos tudás, követelmények 📖
 
 ```
-Novívius (3) 📖
+Novícius (3) 📖
 
 ⭕TODO⭕
 ```

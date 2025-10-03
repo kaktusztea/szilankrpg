@@ -26,7 +26,7 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
 
 Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor azon a terepen a mászó bárhol képes megállva kipihenni magát.
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény:
 - Erő:`-1`

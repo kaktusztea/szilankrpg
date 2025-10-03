@@ -50,7 +50,7 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Intelligencia: `+0`
 

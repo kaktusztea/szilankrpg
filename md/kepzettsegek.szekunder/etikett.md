@@ -30,7 +30,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény:
 - Érzékenység: `+0`

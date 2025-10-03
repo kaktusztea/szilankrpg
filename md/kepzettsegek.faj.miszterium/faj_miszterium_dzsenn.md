@@ -50,7 +50,7 @@ Amennyiben a dzsenn felveszi a [Magasmágia](../051_01_magasmagia.md) tradíció
 ### Biztos tudás, követelmények 📖
 
 ```
-Novívius (3) 📖
+Novícius (3) 📖
 
 ⭕TODO⭕
 ```

@@ -33,7 +33,7 @@ Továbbá minden Szférát rendesen tanulnia kell. A két képesség nem kombin�
 ### Biztos tudás, követelmények 📖
 
 ```
-Novívius (3) 📖
+Novícius (3) 📖
 
 ⭕TODO⭕
 ```

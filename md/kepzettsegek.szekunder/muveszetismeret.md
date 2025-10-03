@@ -42,7 +42,7 @@ __
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Érzékenység `+1` vagy Emlékezet `+1`
 

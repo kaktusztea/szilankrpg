@@ -35,7 +35,7 @@ Változó.
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: megfelelő Tulajdonság: `+0` (Ügyesség, Intelligencia, Emlékezet vagy Érzékenység a szakmától függően)
 

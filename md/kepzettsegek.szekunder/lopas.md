@@ -34,7 +34,7 @@ Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módo
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Ügyesség `+1` vagy Önuralom `+1`
 

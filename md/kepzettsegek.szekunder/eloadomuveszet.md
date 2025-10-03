@@ -35,7 +35,7 @@ Aktív, alkotó művész vagy. A lenti [Szabad-Fortélyok](../042_szabad_fortely
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Érzékenység `+0`
 

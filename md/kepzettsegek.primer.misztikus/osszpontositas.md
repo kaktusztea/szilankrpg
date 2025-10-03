@@ -38,7 +38,7 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény:
 - ⭕Tulajdonság⭕: ⭕`+1`⭕

@@ -26,7 +26,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novívius (3) 📖
+#### Novícius (3) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
