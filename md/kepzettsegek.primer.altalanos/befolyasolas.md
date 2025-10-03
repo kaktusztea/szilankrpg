@@ -85,7 +85,7 @@ Alacsonyabb tapasztalati szintű karakterekkel szemben ha parancsoló vagy sürg
 
 🔒 Követelmény:  Intelligencia: `+2`
 
-🌟 Hatás: Szavaid apró gondolatmagként fészkik be magukat a hallgatóba, nagy valószínűséggel később is újra és újra eszükbe jut, amit "elültettél".
+🌟 Hatás: Szavaid apró gondolatmagként fészkelik be magukat a hallgatóba, nagy valószínűséggel később is újra és újra eszükbe jut, amit "elültettél".
 
 Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még az ellenség is ösztönösen súllyal mérlegeli, amit mond, és csak tudatos erőfeszítéssel söpri félre.
 
