@@ -1,6 +1,6 @@
 ## 🔵 Emberismeret
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható.
+Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba, ellenpróba dobható.
 
 ### Domináns Tulajdonságok
 

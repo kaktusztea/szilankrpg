@@ -33,6 +33,10 @@ __
 
 - [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): Mozdulatok alapján felismersz egy adott belső táncstílust. Minél magasabb szintű próbát dobsz meg, annál mélyebb jelentések, árnyalatok válnak egyértelművé.
 
+### Szituációk
+
+- [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md)
+
 <br />
 
 ---

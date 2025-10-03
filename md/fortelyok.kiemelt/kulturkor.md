@@ -19,7 +19,7 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 
 ### Kapcsolódik
 
-- [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély
+- [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély; [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md) szituáció
 - [Nyelvismeret](nyelvismeret.md) fortély
 - [Tánc](../fortelyok.szabad/tanc.md) fortély
 - [Tánc: belső stílus](../fortelyok.szabad/tanc_belso_stilus.md) fortély

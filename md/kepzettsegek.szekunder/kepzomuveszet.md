@@ -4,7 +4,7 @@ Próba dobható.
 
 Az alkotás, a kézzel alkotott műremekek aktív, ihletett kreálása, amit aktív művészként lelkesen űzöl. A lenti [Szabad Fortély](../042_szabad_fortelyok.md) listából, - a Normál és Erős kiterjesztés alatt - vehetsz fel művészeti ágakat, terjesztheted ki a képzettséget ezekkel az ismeretekkel.
 
-Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély is (Normál kiterjesztésben).
+Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély is (Normál kiterjesztésben). Lásd még a [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md) szituációt.
 
 ### Domináns Tulajdonságok
 
@@ -28,6 +28,10 @@ __
 - [Festészet](../fortelyok.szabad/festeszet.md): Vászonra álmodod a lelkedben születő képeket.
 - [Kalligráfia](../fortelyok.szabad/kalligrafia.md): Mesterien bánsz a pennával, festett betűidben ott lakozik az örökkévalóság.
 - [Szobrászat](../fortelyok.szabad/szobraszat.md): Kezed alatt agyagból, kőből, fából, fémből készülnek a mesteri alkotások.
+
+### Szituációk
+
+- [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md)
 
 <br />
 

@@ -10,6 +10,7 @@ Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz v�
 ### Kapcsolódik
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély
+- [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md) szituáció
 
 <br />
 

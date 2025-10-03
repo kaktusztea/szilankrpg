@@ -6,21 +6,6 @@ Bármilyen vagyontárgy értékének felbecslése, legyenek akár fegyverek, ék
 
 Híres ereklyék ismeretét is magában foglalja. Minél ritkább egy tárgy annál nehezebb a próba.
 
-Hamis műkincsek felismerése ([Hamisítás](../fortelyok.altalanos/hamisitas.md) kiterjesztéssel):
-```
-Képzőművészet + Érzékenység  (Készítő)
-  + Hamisítás kiterjesztés (N)
-      vs
-Értékbecslés + Intelligencia (Felismerő)
-  + Hamisítás kiterjesztés (N)
-
-Mindkettőt Normál kiterjeszti:
-  - Kultúrkör fortély
-  - Festészet fortély
-  - Kalligráfia fortély
-  - Szobrászat fortély
-```
-
 ### Domináns Tulajdonságok
 
 Emlékezet, Intelligencia
@@ -29,6 +14,10 @@ Emlékezet, Intelligencia
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): Már a hamis portéka is könnyebben feltűnik.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott **Ősi kultúrkör** idejében készült műkincsek felismerése, értékük felmérése.
+
+### Szituációk
+
+- [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md)
 
 <br />
 

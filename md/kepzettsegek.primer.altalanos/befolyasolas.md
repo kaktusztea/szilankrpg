@@ -1,6 +1,6 @@
 ## 🔵 Befolyásolás
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). 
+Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba, ellenpróba dobható.
 
 Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi. Alapból sima érveléstechinka, de a lenti Fortélyokkal **kiterjeszthető** más szituációkra is.
 
