@@ -55,7 +55,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 🔒 Követelmény: Érzékenység: `+1`
 
-🌟 Hatás: Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri. Mentális problémákat felismer, elkezdhet gyógyítani. **Példa**: Vallatótiszt, szélhámos. Ha belépsz egy társaságba, érzed, hogy ki a „hangadó”, kinek a véleményét kell elsősorban befolyásolnod.
+🌟 Hatás: Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri. Mentális problémákat felismer, elkezdhet gyógyítani. **Példa**: Vallatótiszt, szélhámos. Ha belépsz egy társaságba, érzed, hogy ki a „hangadó”, kinek a véleményét kell elsősorban befolyásolnod. Ha belépsz egy közösségi térbe, megérzed az alaphangulatot.
 
 ---
 #### Nagymester (12) 📖
@@ -64,7 +64,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 - Érzékenység: `+2`
 - Intelligencia: `+1`
 
-🌟 Hatás: Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött. **Példa**: Főpap, inkvizítor, híres színész. Minden beszélgetésben automatikusan megérzed, ki a leginkább megingatható fél. Nem azt, hogy hogyan, hanem kit lehet legkönnyebben befolyásolni.
+🌟 Hatás: Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött. **Példa**: Főpap, inkvizítor, híres színész. Minden beszélgetésben automatikusan megérzed, ki a leginkább megingatható fél. Nem azt, hogy hogyan, hanem kit lehet legkönnyebben befolyásolni. Ha belépsz akár egy üres helyre is, megérzed az erős, leplezetlen asztrális lenyomatokat.
 
 ---
 #### Élő legenda (15) 📖
@@ -76,10 +76,11 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 🌟 Hatás:
 - Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
 - **Példa**: asztrálmágus
-- Speciális: Állandó ⭕Asztrálszemnek⭕ megfelelő hatás.
+- Speciális: Szemed kinyílt az Asztrálsíkra is, képes vagy ott is érzékelni. ⭕TODO: Asztrálszem⭕
 
 <br />
 
+---
 ### Ellenpróbák
 
 A **Emberismeret** mindig a **[Befolyásolás](befolyasolas.md)** képzettséggel áll ellenpróbás szituációban - a szituációtól függő módosítókkal. A leggyakoribb az alábbi próba-szituáció:

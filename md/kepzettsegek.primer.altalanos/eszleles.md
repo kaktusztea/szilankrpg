@@ -38,7 +38,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény: -
 
-🌟 Hatás: Nem tudnak átverni egyszerű „eltakarásokkal”: ha egy fontos tárgy szándékosan ki van takarva, mindig érzed, hogy „van ott valami”.
+🌟 Hatás: -
 
 <br />
 
@@ -78,13 +78,13 @@ Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető j
 
 #### Könnyű (6) 🎲 
 
-Észrevenni a sarok mögül kilépő, csattogó lovaskatonát.
+- Észrevenni a sarok mögül kilépő, csattogó lovaskatonát.
 
 #### Átlagos (9) 🎲 
 
--  Erdőben sétálva észrevenni a fán rohangáló mókust.  
+- Erdőben sétálva észrevenni a fán rohangáló mókust.  
 - Mozaikpadló mintázatában egy élesen elütő kockát kiszúrni.  
-- Világosban, a szobában levő egyetlen festmény mögül apró lyukon leskelődő amatőr kémet észrevenni.
+- Jól beépített, rejtett titkos fiókot megtalálni egy nagyobb méretű bútorban.
 
 #### Nehéz (12) 🎲 
 
@@ -92,12 +92,10 @@ Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető j
 - Kiszúrni a libbenő ruha alatt a tőrt.
 - Jól álcázott rejtett ajtót megtalálni 5 perc alatt.
 
-
 #### Nagyon nehéz (15) 🎲 
 
 - Észrevenni egy fejedre zuhanó sziklát zajban.
 - Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)
-- Jól beépített, rejtett titkos fiókot megtalálni egy nagyobb méretű bútorban.
 
 #### Rendkívül nehéz (18) 🎲 
 
