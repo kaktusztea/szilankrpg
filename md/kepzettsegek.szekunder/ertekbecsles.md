@@ -14,7 +14,9 @@ Emlékezet, Intelligencia
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): Már a hamis portéka is könnyebben feltűnik.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott **Ősi kultúrkör** idejében készült műkincsek felismerése, értékük felmérése.
-
+__
+- [Szobrászat](../fortelyok.szabad/szobraszat.md): Ismered a [Kultúrkörnek](../fortelyok.kiemelt/kulturkor.md) megfelelő klasszikus szobrok értékét.
+- [Festészet](../fortelyok.szabad/festeszet.md): Ismered, felismered adott [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) festőinek, műveiknek értékét.
 ### Szituációk
 
 - [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md)
