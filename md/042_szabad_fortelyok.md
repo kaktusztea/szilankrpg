@@ -75,9 +75,6 @@ Van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 - [Zeneszerző](fortelyok.szabad/zeneszerzo.md)
 - [Zsonglőrködés](fortelyok.szabad/zsonglorkodes.md)
 
-hivatalnok,
-
-
 ---
 
 🔗 [Fortélyok](040_fortelyok.md) ↑

@@ -27,12 +27,12 @@ Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemz�
 Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsolódó fortélyok.
 
 - Fortélyok
-  - Fegyverkovács (követelménye: Kovács Szabad Fortély)
-  - Páncélkovács (követelménye: Kovács Szabad Fortély)
+  - [Fegyverkovács](../fortelyok.altalanos/kezmuves_fegyverkovacs.md) (követelménye: [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély)
+  - [Páncélkovács](../fortelyok.altalanos/kezmuves_pancelkovacs.md) (követelménye: [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély)
 - Szabad Fortélyok
-  - Kovács
-  - Ács
-  - Asztalos
+  - [Kovács](../fortelyok.szabad/kezmuves_kovacs.md)
+  - [Ács](../fortelyok.szabad/kezmuves_acs.md)
+  - [Asztalos](../fortelyok.szabad/kezmuves_asztalos.md)
   - Cipész
   - Cserző
   - Ékszerész
