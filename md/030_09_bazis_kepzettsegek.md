@@ -19,6 +19,10 @@ Kategóriánként alább láthatjuk őket:
 - [Befolyásolás](kepzettsegek.primer.altalanos/befolyasolas.md): aktív, hatást kifejtő alap (🅿️ Primer ismeret)
 - [Emberismeret](kepzettsegek.primer.altalanos/emberismeret.md): passzív, hatást felismerő alap ( 🅿️Primer ismeret)
 
+### Iparos
+
+- [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md): produktumok, kézzel létrehozott termékek alkotását takaró alapismeret, melyet szakma fortélyok terjesztenek ki (`E`).
+
 ### Hadi tudományok
 
 - [Hadászat](kepzettsegek.primer.altalanos/hadaszat.md): haditudományok alapja
