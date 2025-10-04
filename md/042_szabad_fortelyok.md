@@ -1,7 +1,5 @@
 ## Szabad Fortélyok
 
-<!-- tag: szabad_hatter -->
-
 ```
 Ingyenes
 1 db / TSz
@@ -52,11 +50,20 @@ Van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 - [Kézműves: Ács](fortelyok.szabad/kezmuves_acs.md)
 - [Kézműves: Asztalos](fortelyok.szabad/kezmuves_asztalos.md)
 - [Kézműves: Cipész](fortelyok.szabad/kezmuves_cipesz.md)
+- [Kézműves: Cukrász](../fortelyok.szabad/kezmuves_cukrasz.md)
 - [Kézműves: Cserző](fortelyok.szabad/kezmuves_cserzo.md)
 - [Kézműves: Ékszerész](fortelyok.szabad/kezmuves_ekszeresz.md)
 - [Kézműves: Kötélgyártó](fortelyok.szabad/kezmuves_kotelgyarto.md)
 - [Kézműves: Kőműves](fortelyok.szabad/kezmuves_komuves.md)
+- [Kézműves: Kádár](fortelyok.szabad/kezmuves_kadar.md)
 - [Kézműves: Kovács](fortelyok.szabad/kezmuves_kovacs.md)
+- [Kézműves: Lakatos](fortelyok.szabad/kezmuves_lakatos.md)
+- [Kézműves: Molnár](fortelyok.szabad/kezmuves_molnar.md)
+- [Kézműves: Pék](fortelyok.szabad/kezmuves_penzvero.md)
+- [Kézműves: Pénzverő](fortelyok.szabad/kezmuves_penzvero.md)
+- [Kézműves: Szabó](fortelyok.szabad/kezmuves_szabo.md)
+- [Kézműves: Szakács](fortelyok.szabad/kezmuves_szakacs.md)
+- [Kézműves: Szűcs](fortelyok.szabad/kezmuves_szucs.md)
 - [Kihallgatás](fortelyok.szabad/kihallgatas.md)
 - [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) 🔁
 - [Lénylovas](fortelyok.szabad/lenylovas.md) 🔁

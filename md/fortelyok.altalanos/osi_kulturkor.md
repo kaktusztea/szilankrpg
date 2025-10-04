@@ -26,7 +26,6 @@ Mi tartozik bele ebbe az ismeretbe? Az adott ősi kultúrkörön belül:
 - [Értékbecslés](../kepzettsegek.szekunder/ertekbecsles.md): Az adott **Ősi kultúrkör** idejében készült műkincsek felismerése, értékük felmérése.
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): Az adott, kapcsolódó **Ősi kultúrkör** ismerete néha (nem mindig) szükséges. Gyakran párban terjesztik ki például [Építészet](epiteszet.md) ÉS **Ősi kultúrkör**.
 
-
 ---
 ### Példák
 
