@@ -1225,5 +1225,22 @@
         "KF": "0",
         "Kategória": "közelharci",
         "Speciális": ""
+    },
+    {
+        "Fegyver": "Vívóbot",
+        "TÉ": "4",
+        "VÉ": "4",
+        "SP": "-5",
+        "Sebesség": "7",
+        "Sebzés módja": "Z",
+        "Pengehossz": "1",
+        "Forgatás módja": "egykezes",
+        "Erőbónusz limit": "1",
+        "Átütés": "0",
+        "Íves": "0",
+        "MK": "0",
+        "KF": "0",
+        "Kategória": "kardvívó",
+        "Speciális": "Fából készült gyakorlófegyver."
     }
 ]
