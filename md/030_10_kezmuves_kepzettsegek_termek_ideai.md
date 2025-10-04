@@ -1,14 +1,14 @@
-## Iparos képzettségek
+## Kézműves képzettségek termék ideái
 
-Az alábbi [Szakma](kepzettsegek.szekunder/szakma.md) képzettségek az **iparos** képzettségek alá tartoznak, ezek által elkészült termékek minősége (**Ideája**) függ a képzettség biztos tudás szintjétől.
+Az alábbi [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettségek által elkészült termékek minősége (**Ideája**) függ a képzettség biztos tudás szintjétől.
 
-- ács, asztalos, cipész, cserző, ékszerész, kötélgyártó, kőműves, kádár, kovács, lakatos, pénzverő, szabó, szűcs, varga
+- kovács, ács, asztalos, cipész, cserző, ékszerész, kötélgyártó, kőműves, kádár, lakatos, molnár, pék, pénzverő, szabó, szűcs, varga
 - (fegyver)kovács
 - páncélkovács
 
 ### Biztos tudás szintek
 
-Négy jellemző minőségi (Idea) szintet különböztetünk meg, amelyek megadják, hogy az egyes képzettség tudásszinteken milyen minőségű (**Ideájú**) tárgyakat vagy képes alkotni:
+Négy jellemző minőségi (Idea) szintet különböztetünk meg, amelyek megadják, hogy az egyes [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettség tudásszinteken milyen minőségű (**Ideájú**) tárgyakat vagy képes alkotni:
 - **maximum**: határidőtől nem hátráltatva, tudásod legjobbját nyújtva elkészített műremek
 - **lelkiismeretes munka**: odafigyelve az apró részletekre, de még ésszerű időkeretben készített alkotás
 - **rutinmunka**: mindennapos munkád terméke

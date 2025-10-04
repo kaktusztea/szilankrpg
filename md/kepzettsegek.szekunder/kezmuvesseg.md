@@ -1,13 +1,8 @@
-## 🔵 Szakma 🔁
+## 🔵 Kézművesség
 
 Próba dobható.
 
-Magasabb szintjein a karakter egyre jobb, majd mesteri szintű produktumokat hoz létre, illetve társadalmi elismertségre tesz szert. Az alábbi szakmákat különböztetjük meg, mindegyikhez külön-külön fel kell venni a "Szakma" képzettséget. Példa: "Szakma: Ács".
-
-- ács, asztalos, borbély, cipész, cserző, ékszerész, gazdálkodás(birtok), hivatalnok, kötélgyártó, kőműves, kádár, lakatos, molnár, pék, pénzverő, rejtjelfejtő, szabó, szűcs, varga
-- kovács
-- fegyverkovács
-- páncélkovács
+Magasabb szintjein a karakter egyre jobb, majd mesteri szintű produktumokat hoz létre, illetve társadalmi elismertségre tesz szert.
 
 ### Domináns Tulajdonságok
 
@@ -15,22 +10,42 @@ Változó.
 
 ### Lásd még
 
-- [Iparos képzettségek](../030_10_iparos_kepzettsegek.md)
+- [Kézműves képzettségek termék ideái](../030_10_kezmuves_kepzettsegek_termek_ideai.md)
 
 ### Kapcsolódik
 
 - [Mechanika](../fortelyok.altalanos/mechanika.md) fortély
 - [Vezető: Céhmester](../fortelyok.altalanos/vezeto_cehmester.md) fortély: csoportos munka esetén bónuszt ad.
 
-### Normál kiterjesztés 
+### Normál kiterjesztés
 
-- [Hamisítás](../fortelyok.altalanos/hamisitas.md): az adott szakma magas szintű produktumainak hamisítása és felismerése.
+- [Hamisítás](../fortelyok.altalanos/hamisitas.md): az adott kézműves szakma magas szintű produktumainak hamisítása és felismerése.
 - [Mechanika](../fortelyok.altalanos/mechanika.md) (fegyverkovács, páncélkovács): mechanikus komponensekkel bővített fegyverekhez, páncélokhoz
 
-### Normál kiterjesztés (Hivatalnok Szakmához)
+### Erős kiterjesztés
 
-- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Az ehavi beszedett többletadók elegek lesznek a kölcsön törlesztésére." Hivatalnokként specializálódtál, értesz a pénzügyekhez is.
-- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni." Hivatalnokként specializálódtál, értesz a jogrendszerhez is. 
+Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsolódó fortélyok.
+
+- Fortélyok
+  - Fegyverkovács (követelménye: Kovács Szabad Fortély)
+  - Páncélkovács (követelménye: Kovács Szabad Fortély)
+- Szabad Fortélyok
+  - Kovács
+  - Ács
+  - Asztalos
+  - Cipész
+  - Cserző
+  - Ékszerész
+  - Kötélgyártó
+  - Kőműves
+  - Kádár
+  - Lakatos
+  - Molnár
+  - Pék
+  - Pénzverő
+  - Szabó
+  - Szűcs
+  - Varga
 
 ---
 ### Biztos tudás, követelmények 📖
@@ -127,4 +142,4 @@ Igen gyakori a [csoportos képzettségpróba](../030_07_01_csoportos_kepzettsegp
 ---
 ### Módosító körülmények
 
-- Rövid határidő: `-3`
+- Rövid határidő: `+3`

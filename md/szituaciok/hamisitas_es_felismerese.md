@@ -81,7 +81,7 @@ Szakma + Tulajdonság
   Hamisítás kiterjesztés (N)
 ```
 
-Kapcsolódik: [Szakma](../kepzettsegek.szekunder/szakma.md) képzettség.
+Kapcsolódik: [Szakma](../kepzettsegek.szekunder/kezmuvesseg.md) képzettség.
 
 ---
 

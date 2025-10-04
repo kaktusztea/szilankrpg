@@ -92,7 +92,7 @@
 - [Általános fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Harci fortélyok képzettségkiterjesztés listája (ábra)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
-- [Iparos képzettségek](030_10_iparos_kepzettsegek.md)
+- [Kézműves képzettségek termék ideái](030_10_kezmuves_kepzettsegek_termek_ideai.md)
 
 ---
 ### 4. [Fortélyok](040_fortelyok.md) 🟣
