@@ -40,7 +40,7 @@ A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vértek
 
 [Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott pajzs.
 
-Hatása [Felszerelésre](012_00_karakter_jellemzoi.md#felszerelés):
+Hatása [Felszerelésre](012_06_felszereles.md):
 - Közepes pajzs: Közepes tárgy (1 pont)
 - Nagy pajzs: Nagy tárgy (2 pont)
 

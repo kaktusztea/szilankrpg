@@ -21,7 +21,7 @@ A Sebesülés modellel már megismerkedtünk a harcrendszer [Életerő - Sebesü
 
 Amennyiben a vérzést sikerült valamilyen módon elállítani, a sebesült karakter sebeiből `1 ÉP` 1 nap alatt, `1 FP` 1 óra alatt gyógyul meg összesen.
 
-A fentiek a [Kalandozókra vonatkozó gyorsabb gyógyulás](012_00_karakter_jellemzoi.md#gyorsabb-gyógyulás) modelljét mutatják.
+A fentiek a [Kalandozókra vonatkozó gyorsabb gyógyulás](012_01_kalandozok.md#gyorsabb-gy%C3%B3gyul%C3%A1s) modelljét mutatják.
 
 <br />
 

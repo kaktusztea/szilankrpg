@@ -180,7 +180,7 @@ A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyze
   - Fizikai Tulajdonságpróbákra
   - Fizikai Képzettségpróbákra
 
-Hatása [Felszerelésre](012_00_karakter_jellemzoi.md#felszerelés):
+Hatása [Felszerelésre](012_06_felszereles.md):
 - Másfélkezes kard: Közepes tárgy (1 pont)
 - Közepes pajzs: Közepes tárgy (1 pont)
 - Nagy pajzs: Nagy tárgy (2 pont)
