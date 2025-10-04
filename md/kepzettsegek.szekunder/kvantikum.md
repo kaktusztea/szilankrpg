@@ -16,6 +16,8 @@ Intelligencia, Emlékezet
 
 ### Normál kiterjesztés
 
+- [Gazdálkodás](../fortelyok.szabad/gazdalkodas.md): "A birtok idén már nyereséges volt köszönhetően a 12 marhának, amit tavaly vettünk a Szőlőshegyi özvegytől."
+- [Hivatalnok](../fortelyok.szabad/hivatalnok.md): "Az uraság 3 évre adta bérbe kizárólagossággal az említett földet - a hosszabbításhoz új kérvényt kell benyújtani."
 - [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az ehavi beszedett többletadók elegek lesznek a kölcsön törlesztésére."
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md)
   - "Nem volt könnyű, de megfejtettem a titkosírást. Ez egy üzenet a tábornoknak, amiben a csapatokat a hágó elhagyására utasítja."

@@ -12,7 +12,7 @@
 - [Képzettségek és Fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)
 - [Fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
-- [Kézműves képzettségek termék ideái](030_10_kezmuves_kepzettsegek_termek_ideai.md)
+- [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md)
 
 Mikor a játékos megalkotja karakterét, amellyel Yn3v világán kalandozni fog, meghatározza azokat az ismereteket, jártasságokat, amelyeket - az addigi élete során - elsajátított. A **Szilánk** rendszere a fentieket a Képzettségek, Fortélyok és Hátterek tanulásával szimulálja. Ebben a fejezetben a Képzettségekkel fogunk foglalkozni.
 

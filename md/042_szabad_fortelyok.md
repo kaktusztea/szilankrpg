@@ -42,8 +42,10 @@ Van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 - [Fejlett ízlelés](fortelyok.szabad/fejlett_izleles.md)
 - [Fejlett tapintás](fortelyok.szabad/fejlett_tapintas.md)
 - [Festészet](fortelyok.szabad/festeszet.md)
+- [Gazdalkodás](fortelyok.szabad/gazdalkodas.md)
 - [Hazudozás](fortelyok.szabad/hazudozas.md)
 - [Heraldika](fortelyok.szabad/heraldika.md)
+- [Hivatalnok](../fortelyok.szabad/hivatalnok.md)
 - [Irodalom](fortelyok.szabad/irodalom.md)
 - [Jogismeret](fortelyok.szabad/jogismeret.md)
 - [Kalligráfia](fortelyok.szabad/kalligrafia.md)
@@ -73,7 +75,7 @@ Van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 - [Zeneszerző](fortelyok.szabad/zeneszerzo.md)
 - [Zsonglőrködés](fortelyok.szabad/zsonglorkodes.md)
 
-gazdálkodás(birtok), hivatalnok,
+hivatalnok,
 
 
 ---

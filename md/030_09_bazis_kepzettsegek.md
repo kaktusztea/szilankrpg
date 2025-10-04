@@ -25,6 +25,6 @@ Kategóriánként alább láthatjuk őket:
 
 ---
 
-🔗 [Kézműves képzettségek termék ideái](030_10_kezmuves_kepzettsegek_termek_ideai.md) →
+🔗 [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md) →
 
 ⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)

@@ -8,9 +8,9 @@ Magasabb szintjein a karakter egyre jobb, majd mesteri szintű produktumokat hoz
 
 Változó.
 
-### Lásd még
+### Alkotott tárgyak Ideái
 
-- [Kézműves képzettségek termék ideái](../030_10_kezmuves_kepzettsegek_termek_ideai.md)
+Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemzünk. Ez a szint függ a létrehozó kézműves mester jártasságának képzettség-szintjétől. Erről bővebben a külön [Kézműves tárgyak ideái](../030_10_kezmuves_targyak_ideai.md) fejezetben olvashatsz.
 
 ### Kapcsolódik
 
@@ -74,6 +74,7 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
 🔒 Követelmény: megfelelő Tulajdonság: `+2` (Ügyesség, Intelligencia, Emlékezet vagy Érzékenység a szakmától függően)
 
 🌟 Hatás:
+- Az általad létrehozott tárgy már valamilyen formában mágikus hatású
 - Magas minőségű munkák létrehozására vagy képes, amelyek már kereskedők, nemesek, katonák igényeit is kielégítik.
 - Meg tudsz javítani sérült termékeket (pl. fegyvert, ruhát, szerszámot).
 - A szakmádhoz tartozó közösségben szaktekintélynek számítasz.
@@ -84,6 +85,8 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
 🔒 Követelmény:  megfelelő Tulajdonság: `+3` (Ügyesség, Intelligencia, Emlékezet vagy Érzékenység a szakmától függően)
 
 🌟 Hatás:
+- Az általad létrehozott tárgy már valamilyen formában mágikus hatású. Pl. cipő, amiben gyorsabban tudsz futni, ugrani, vagy lopakodni - ennek feltétele, hogy a tárgy Ideája az általad elkészíthető legmagasabb értékű legyen (minimum `+4`). Ez rendkívül sok időt és türelmet igénylő, nagyon nehéz művelet.
+- Az általad létrehozott tárgyon kevésbé fog az enyészet. Pl. nem romlik meg az étel, amit szakácsként készítettél.
 - Olyan termékeket készítesz, amelyek egyedi, kiemelkedő értékkel bírnak (mesterjeggyel ellátott tárgyak).
 - Más mestereknek is tanítványokat adhatsz, és iskolát nyithatsz.
 - A tárgyaid akár kisebb mágikus vagy mechanikus kiegészítéseket is fogadhatnak (pl. rejtett rekesz, páncél illesztés).
@@ -97,6 +100,22 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
 - Termékeid túlmutatnak a köznapin: egész városok, birodalmak jegyzik meg a neved.
 - Egy kezed alól kikerült fegyver, páncél, építmény vagy műtárgy örökségként él tovább.
 - Amit készítesz, arról ismeretlen országokban is tudják: „Ez bizony Brocco műhelyéből való.”
+
+
+12.szint:
+  - mágikus tulajdonságú a tárgy.
+  - Képes mágikus hatást is kiváltani. Pl. cipőben gyorsabban tudsz futni, vagy ugrani. Kimaxolt Idea is kell hozzá (+4).
+    - Gyors, ugrásos, lopakodós. Sok idő megcsinálni és k. nehéz.
+  - Kevésbé fog rajta az enyészet. Pl. nem romlik meg az étel.
+
+15.szint:
+  - Egyáltalán nem fog rajta az enyészet.
+  - képes vagy ereklyét alkotni (max 1). Kpes saját lelkét belefoglalni élete művébe. Esetleg egy készletet (tárgy készlet).
+    - lélek
+    - isteni entitás
+    - démonhercegi
+
+
 
 <br />
 

@@ -1,10 +1,6 @@
-## Kézműves képzettségek termék ideái
+## Kézműves tárgyak Ideái
 
-Az alábbi [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettségek által elkészült termékek minősége (**Ideája**) függ a képzettség biztos tudás szintjétől.
-
-- kovács, ács, asztalos, cipész, cserző, ékszerész, kötélgyártó, kőműves, kádár, lakatos, molnár, pék, pénzverő, szabó, szűcs, varga
-- (fegyver)kovács
-- páncélkovács
+Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemzünk. Ez a szint függ a létrehozó mester [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettségének szintjétől. Természetesen jártasnak kell lenned a képzettséget kiterjesztő adott [szakma fortélyban](kepzettsegek.szekunder/kezmuvesseg.md#er%C5%91s-kiterjeszt%C3%A9s) is.
 
 ### Biztos tudás szintek
 
