@@ -11,7 +11,7 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 
 ### [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
 
-### [Aprító fegyverek](068_05_aprito_fegyverek.md)
+### [Romboló fegyverek](068_05_rombolo_fegyverek.md)
 
 ### [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md)
 

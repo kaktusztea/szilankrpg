@@ -77,7 +77,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
 - [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
 - [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
-- [Aprító fegyverek](068_05_aprito_fegyverek.md)
+- [Romboló fegyverek](068_05_rombolo_fegyverek.md)
 - [Hajítófegyverek](068_07_hajitofegyverek.md)
 - [Lőfegyverek](068_08_lofegyverek.md)
 - [Pajzsok](068_09_pajzs_fegyverek.md)
