@@ -13,9 +13,8 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 ### Kiterjeszti ezeket
 
 - [Csapdaállítás](../kepzettsegek.szekunder/csapdaallitas.md): mechanikus csapdák állításához követelmény lehet a Mechanika
+- [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md): egyes képzműves szakmák igényelhetik
 - [Kvantikum](../kepzettsegek.szekunder/kvantikum.md): "Rittyentettem egy átemelő darut, amivel könnyebb lesz az öntözés."
-- [Szakma - Fegyverkovács](../kepzettsegek.szekunder/kezmuvesseg.md): Kh4rei nyílpuska és társai 
-- [Szakma - Páncélkovács](../kepzettsegek.szekunder/kezmuvesseg.md): "A gépszolga nem kér enni!"
 
 ### Bónuszt ad erre
 

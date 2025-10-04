@@ -20,7 +20,7 @@ Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemz�
 ### Normál kiterjesztés
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): az adott kézműves szakma magas szintű produktumainak hamisítása és felismerése.
-- [Mechanika](../fortelyok.altalanos/mechanika.md) (fegyverkovács, páncélkovács): mechanikus komponensekkel bővített fegyverekhez, páncélokhoz
+- [Mechanika](../fortelyok.altalanos/mechanika.md) (Kézműves:Fegyverkovács, Kézműves:Páncélkovács): mechanikus komponensekkel bővített fegyverekhez, páncélokhoz
 
 ### Erős kiterjesztés
 
