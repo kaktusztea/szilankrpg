@@ -30,7 +30,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Hamisítás](fortelyok.altalanos/hamisitas.md)
 - [Hangutánzás](fortelyok.altalanos/hangutanzas.md)
 - [Kaméleon](fortelyok.altalanos/kameleon.md)
-- [Keresés](fortelyok.altalanos/kereses.md)
+- [Keresés/Rejtés](fortelyok.altalanos/kereses_rejtes.md)
 - [Kitartás](fortelyok.altalanos/kitartas.md)
 - [Kocsihajtás](fortelyok.altalanos/kocsihajtas.md)
 - [Kötelékből szabadulás](fortelyok.altalanos/kotelekbol_szabadulas.md)

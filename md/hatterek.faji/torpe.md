@@ -32,7 +32,7 @@ bevezető ⭕
 
 - [Építészet](../fortelyok.altalanos/epiteszet.md)
 - [Kitartás](../fortelyok.altalanos/kitartas.md)
-- [Keresés](../fortelyok.altalanos/kereses.md)
+- [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md)
 - [Nyomolvasás](../fortelyok.altalanos/nyomolvasas.md)
 - [Villámgyors keresés](../fortelyok.altalanos/villamgyors.kereses.md)
 

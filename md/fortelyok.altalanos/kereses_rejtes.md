@@ -1,8 +1,9 @@
-## 🟣 Keresés (2)
+## 🟣 Keresés/rejtés (2)
 
-Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, valamint természeti közegben megbújó nyomok felkutatásában adhat segítséget, amely próbát az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettséggel végzünk.
+Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben megbújó nyomok felkutatásában, illetve ezek elrejtésében adhat segítséget.
 
-Bővebben lásd az alábbi Szituációk fejezetét:
+### Szituációk
+
 - [Nyomok észrevétele, Nyomkövetés - természetben](../szituaciok/nyomok_nyomkovetes_termeszet.md)
 - [Nyomok észrevétele, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md)
 

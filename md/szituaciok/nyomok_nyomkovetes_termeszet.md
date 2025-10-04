@@ -9,7 +9,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 
 [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő megfelelő szint ellen
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés (2)](../fortelyok.altalanos/kereses.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
+- **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
 
 <br />
 

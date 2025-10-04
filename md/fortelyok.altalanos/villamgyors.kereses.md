@@ -1,10 +1,10 @@
 ## 🟣 Villámgyors keresés (1)
 
-Gyorsabban tudsz keresni, kutatni egy helyiségben.
+Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 
 ### Kapcsolódik
 
-- [Keresés](kereses.md) fortély
+- [Keresés/rejtés](kereses_rejtes.md) fortély
 
 ### Alapeset
 
@@ -18,7 +18,7 @@ Gyorsabban tudsz keresni, kutatni egy helyiségben.
 🔒 **Követelmény**:
 
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettség - `3.szint`
-- [Keresés](kereses.md) fortély: `1.fok`
+- [Keresés/rejtés](kereses_rejtes.md) fortély: `1.fok`
 
 🌟 **Hatás**: A Villámgyors keresés kapkodós helyzetekben nullázza az Alapesetnél leírt büntetést.
 

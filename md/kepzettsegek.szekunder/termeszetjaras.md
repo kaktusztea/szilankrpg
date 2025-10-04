@@ -21,7 +21,7 @@ A képzettség magában foglalja a következőket:
 
 ### Normál kiterjesztés
 
-- [Keresés](../fortelyok.altalanos/kereses.md): Nyomok észrevétele a természetben. "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
+- [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md): Nyomok észrevétele a természetben. "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 - [Nyomolvasás](../fortelyok.altalanos/nyomolvasas.md):
     - Nyomok követése a természetben - miután már megtaláltad. "Erre haladt tovább, látszik a letört ágakból."
     - Nyomok értelmezése a természetben. "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
@@ -32,7 +32,7 @@ A képzettség magában foglalja a következőket:
 
 ### Nyomkövetés
 
- A képzettség a vadonban található nyomok értelmezését is magában foglalja. Képes vagy olvasni az elfszabásúak, állatok, helyre jellemző szörnyetegek által hagyott nyomokból. Nem keverendő össze az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettséggel (+[Keresés](../fortelyok.altalanos/kereses.md) fortéllyal), ami valaminek az észrevételét jelenti, titkos rejtekajtók, zugok felkutatását fedi, az észrevett jellemző értelmezését nem!
+ A képzettség a vadonban található nyomok értelmezését is magában foglalja. Képes vagy olvasni az elfszabásúak, állatok, helyre jellemző szörnyetegek által hagyott nyomokból. Nem keverendő össze az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettséggel (+[Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md) fortéllyal), ami valaminek az észrevételét jelenti, titkos rejtekajtók, zugok felkutatását fedi, az észrevett jellemző értelmezését nem!
 
 Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpontokat, mankót adhat. Tehát ha a karakter megdobja próbáját, akkor a KM csak segítségeket tárhat a játékos elé, a teljes megoldást nem kínálhatja tálcán.
 
