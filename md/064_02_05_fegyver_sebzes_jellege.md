@@ -54,7 +54,7 @@ Majdnem minden fegyver rendelkezik egy **elsődleges sebzési típussal**, pl. s
 Például a "Hosszú kard: vágás/szúrás (`V/S`)". Ekkor az alapértelmezett, elsődleges sebzési típus a **Vágás**. 
 
 ---
-### [Sebzéstípus: másodlagos](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-egyenjog%C3%BA)
+### [Sebzéstípus: másodlagos](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos)
 
 ```
 Hátrány-1 Sebzésdobásra
