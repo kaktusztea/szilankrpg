@@ -30,15 +30,15 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
   - [Fegyverkovács](../fortelyok.altalanos/kezmuves_fegyverkovacs.md) (követelménye: [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély)
   - [Páncélkovács](../fortelyok.altalanos/kezmuves_pancelkovacs.md) (követelménye: [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély)
 - Szabad Fortélyok
-  - [Kovács](../fortelyok.szabad/kezmuves_kovacs.md)
   - [Ács](../fortelyok.szabad/kezmuves_acs.md)
   - [Asztalos](../fortelyok.szabad/kezmuves_asztalos.md)
-  - Cipész
-  - Cserző
-  - Ékszerész
-  - Kötélgyártó
-  - Kőműves
+  - [Cipész](../fortelyok.szabad/kezmuves_cipesz.md)
+  - [Cserző](../fortelyok.szabad/kezmuves_cserzo.md)
+  - [Ékszerész](../fortelyok.szabad/kezmuves_ekszeresz.md)
+  - [Kötélgyártó](../fortelyok.szabad/kezmuves_kotelgyarto.md)
+  - [Kőműves](../fortelyok.szabad/kezmuves_komuves.md)
   - Kádár
+  - [Kovács](../fortelyok.szabad/kezmuves_kovacs.md)
   - Lakatos
   - Molnár
   - Pék

@@ -49,6 +49,14 @@ Van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 - [Irodalom](fortelyok.szabad/irodalom.md)
 - [Jogismeret](fortelyok.szabad/jogismeret.md)
 - [Kalligráfia](fortelyok.szabad/kalligrafia.md)
+- [Kézműves: Ács](fortelyok.szabad/kezmuves_acs.md)
+- [Kézműves: Asztalos](fortelyok.szabad/kezmuves_asztalos.md)
+- [Kézműves: Cipész](fortelyok.szabad/kezmuves_cipesz.md)
+- [Kézműves: Cserző](fortelyok.szabad/kezmuves_cserzo.md)
+- [Kézműves: Ékszerész](fortelyok.szabad/kezmuves_ekszeresz.md)
+- [Kézműves: Kötélgyártó](fortelyok.szabad/kezmuves_kotelgyarto.md)
+- [Kézműves: Kőműves](fortelyok.szabad/kezmuves_komuves.md)
+- [Kézműves: Kovács](fortelyok.szabad/kezmuves_kovacs.md)
 - [Kihallgatás](fortelyok.szabad/kihallgatas.md)
 - [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) 🔁
 - [Lénylovas](fortelyok.szabad/lenylovas.md) 🔁
