@@ -65,11 +65,12 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény:  Érzékenység: `+2`
 
-🌟 Hatás: Harcművész nagymester, mágus.
+🌟 Hatás:
 
-Ha a környezetedben bármi torzul, „nem a természetes rend szerint van” - pl. láthatatlan lény jelenléte, szellem, titkos ajtó mögül áramló energia. Nem mindig tudod megmagyarázni, de biztosan érzed: „valami nincs rendben”.
-
-Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető jel – gyakorlatilag megelőző intuíciót jelent.
+- Harcművész nagymester, mágus.
+- Új érzékek nyílnak meg számodra misztikus formában. ⭕TODO⭕
+- Ha a környezetedben bármi torzul, „nem a természetes rend szerint van” - pl. láthatatlan lény jelenléte, szellem, titkos ajtó mögül áramló energia. Nem mindig tudod megmagyarázni, de biztosan érzed: „valami nincs rendben”.
+- Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető jel – gyakorlatilag megelőző intuíciót jelent.
 
 <br />
 
