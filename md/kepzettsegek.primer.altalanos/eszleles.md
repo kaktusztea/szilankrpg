@@ -114,6 +114,6 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 ---
 ### Célszám módosító körülmények
 
-- Gyorsan, nyomás alatt keresni: `-3`
-- Zavaró körülmények: `[-1;-6]`
-- Ha az észlelés aktív: `+3`
+- Gyorsan, nyomás alatt keresni: `+3`
+- Zavaró körülmények: `[+1; +6]`
+- Ha az észlelés aktív: `-3`

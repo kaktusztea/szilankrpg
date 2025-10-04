@@ -105,7 +105,7 @@ Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynö
 <br />
 
 ---
-### Célszám módosító körülmények
+### Dobás módosító körülmények
 
 - [Eszmélet: Bódultság Státusz](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g) módosítói
 - [Eszmélet: Kábultság Státusz](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g) módosítói

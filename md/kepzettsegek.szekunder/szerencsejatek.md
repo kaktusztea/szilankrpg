@@ -111,5 +111,5 @@ Szerencsejáték
 ---
 ### Célszám módosító körülmények
 
-- Kocsma, barátságos közeg: `+2`
-- Teljesen idegen kaszinó, ismeretlen szabályok: `-2`
+- Kocsma, barátságos közeg: `-3`
+- Teljesen idegen kaszinó, ismeretlen szabályok: `+3`

@@ -111,54 +111,72 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 - Mozgás: a lopakodó az észlelő látásának perifériáján halad
 - Távolság: `10-15` méter
 
-### ⚜️ Vakharc módosító (áldozat)
+### ⚜️ Vakharc dobás módosító (áldozat)
 
 Lásd [Vakharc fortély- Bónusz: harci ösztön](../fortelyok.harci/vakharc.md#b%C3%B3nusz-harci-%C3%B6szt%C3%B6n)
 
-### ⚜️ Láthatóság módosító (lopakodó)
+### ⚜️ Láthatóság célszám módosító (lopakodó)
 
-- `-6`: Világosban, éles kontúrral válsz el a háttértől
-- `-3`: Világosban, háttértől elütő ruházatban
-- `+0`: Átlagos nappali fény, ruhád nem üt el nagyon a háttértől
-- `+3`: Szürkület, félhomány
-- `+6`: Vaksötét, vagy . Szabad szemmel csak Infra- vagy Ultralátással vagy észlelhető.
-- `+6`: a lopakodó [Láthatatlan](../065_01_harci_helyzetek.md#l%C3%A1thatatlanul)
+```
++6 Világosban, éles kontúrral válsz el a háttértől
++3: Világosban, háttértől elütő ruházatban
++0: Átlagos nappali fény, ruhád nem üt el a háttértől
+-3: Szürkület, félhomány
+-6: Vaksötét. Szabad szemmel csak
+    Infra- vagy Ultralátással vagy észlelhető
+-6: a lopakodó Láthatatlan
+```
 
-### ⚜️ Látótér módosító (lopakodó)
+Kapcsolódik: [Láthatatlan](../065_01_harci_helyzetek.md#l%C3%A1thatatlanul)
 
-- `-6`: lopakodó direkt a látótérben
-- `+0`: lopakodó az észlelő látásának perifériáján halad
-- `+6`: lopakodó az észlelő látókörén kívül halad
+### ⚜️ Látótér célszám módosító (lopakodó)
 
-### ⚜️ Mozgás módosító (lopakodó)
+```
++6: lopakodó direkt a látótérben
++0: lopakodó az észlelő látásának perifériáján halad
+-6: lopakodó az észlelő látókörén kívül halad
+```
 
-- `-6`: gyors haladás ([Suhanó árnyék](../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi)
+### ⚜️ Mozgás célszám módosító (lopakodó)
 
-### ⚜️ Felszerelés módosító (lopakodó)
+```
++6: gyors haladás
+```
+ 
+ [Suhanó árnyék](../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
+ 
+### ⚜️ Felszerelés célszám módosító (lopakodó)
 
-- `+0`: csendes ruha
-- `-3`: nyikorgós ruha
-- `-6`: csörgő ruha, fémpáncél
+```
++0: csendes ruha
++3: nyikorgós ruha
++6: csörgő ruha, fémpáncél
+```
 
-### ⚜️ Környezeti zajok módosító (lopakodó)
+### ⚜️ Környezeti zajok célszám módosító (lopakodó)
 
-- `-3`: süket csend
-- `+0`: gyenge alapzaj
-- `+3`: közepesen zajos környezet (nyugisabb piac)
-- `+3 és hallással észlelhetetlen`: hangzavar (üvöltő dervisek, kofák)
+```
++3: süket csend
++0: gyenge alapzaj
+-3: közepesen zajos környezet (nyugisabb piac)
+-3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
+```
 
+### ⚜️ Környezet, rejtekhely célszám módosító (lopakodó)
 
-### ⚜️ Környezet, rejtekhely (lopakodó)
+```
++6: nyílt tér fedezék nélkül
++0: pár tucat ember a piacon, néhány jól használható rejtekhely, fedezék
+-6: zsúfolt piac, rengeteg pult, beugró, alkóv
+```
 
-- `-6`: nyílt tér fedezék nélkül
-- `+0`: pár tucat ember a piacon, néhány jól használható rejtekhely, fedezék
-- `+6`: zsúfolt piac, rengeteg pult, beugró, alkóv
+### ⚜️ Távolság rejtekhely módosító, Harci szituáció megteremtése (lopakodó)
 
-### ⚜️ Távolság módosító, Harci szituáció megteremtése (lopakodó)
-
-- `-9: Testközelbe kerülni; Észrevétlen támadás`
-- `-6: 1 - 5 méter; Meglepetésből támadás`
-- `-3: 6 - 9 méter`
-- `+0: 10 - 15 méter` 🔆
-- `+3: 16 - 20 méter`
-- `+6: 20 - 30 méter`
+```
++9: Testközelbe kerülni; Észrevétlen támadás
++6: 1 - 5 méter; Meglepetésből támadás
++3: 6 - 9 méter
++0: 10 - 15 méter 🔆
+-3: 16 - 20 méter
+-6: 20 - 30 méter
+```

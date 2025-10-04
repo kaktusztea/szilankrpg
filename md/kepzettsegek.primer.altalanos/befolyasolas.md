@@ -98,6 +98,6 @@ Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még ellenf
 ---
 ### Célszám módosító körülmények
 
-- Olyan nyelven próbáksz hatni, amit nem ért(enek) a célszemély(ek): `+3 Nehézség`
+- Olyan nyelven próbáksz hatni, amit nem ért(enek) a célszemély(ek): `+3`
 - Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**.
 - Ha bármilyen Státusz hatása alatt állsz, **Befolyásolás** képzettségpróba előtt [ellenőrizd](../082_statuszok.md), hogy vonatkozik -e rád bármilyen negatív [Hatás](../081_hatasok.md).

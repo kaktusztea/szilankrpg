@@ -127,5 +127,5 @@ Beolvadni a helyi átlagos lakosok közé nagy előny - eltűnni az üldözők e
 ---
 ### Célszám módosító körülmények
 
-- Gyors átöltözés: körülménytől függ: `[-1; -6]`
-- Szegényes felszerelés: `[-1; -6]`
+- Gyors átöltözés: körülménytől függ: `[+1; +6]`
+- Szegényes felszerelés: `[+1; +6]`

@@ -116,6 +116,6 @@ Csúszósabb érték mozdítása elejtés nélkül.
 ---
 ### Célszám módosító körülmények
 
-- Kapkodni kell: `-3`
-- Nincs meg a testközeli távolság, csak pár lépés: `-3`
-- Zajos, zsibongó környezet: `+3`
+- Kapkodni kell: `+3`
+- Nincs meg a testközeli távolság, csak pár lépés: `+3`
+- Zajos, zsibongó környezet: `-3`

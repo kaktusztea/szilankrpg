@@ -157,5 +157,5 @@ Emlékezet, Érzékenység.
 ---
 ### Célszám módosító körülmények
 
-- Könyvtár: `+3`
-- Tanító aktívan segít: `+3`
+- Könyvtár: `-3`
+- Tanító aktívan segít: `-3`

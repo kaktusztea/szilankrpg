@@ -134,7 +134,7 @@ Megállapítani, hogy egy személyiségváltozás hátterében kisebb mágikus b
 ---
 ### Célszám módosító körülmények
 
-- Rövidebb a kontaktus ideje és/vagy kevésbé mély az alapesetnél: `[-1; -3]`
-- Hosszabb a kontaktus ideje és/vagy elmélyültebb az alapesetnél: `[+1; +3]`
-- Más fajú a célszemély: `[-2;-4]`
+- Rövidebb a kontaktus ideje és/vagy kevésbé mély az alapesetnél: `+3`
+- Hosszabb a kontaktus ideje és/vagy elmélyültebb az alapesetnél: `-3`
+- Más fajú a célszemély: `+3`
 - Asztrál szem hatása: ⭕TODO⭕

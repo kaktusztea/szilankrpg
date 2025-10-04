@@ -134,6 +134,6 @@ Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfel
 ### Célszám módosító körülmények
 
 - Rendelkezésre álló idő
-  - Kapkodás: `-3`
-  - ráérős munka `+2`
-- Környezet inspiráló hatása (pl. szent hely, művésztelep): `+2`
+  - Kapkodás: `+3`
+  - ráérős munka `-2`
+- Környezet inspiráló hatása (pl. szent hely, művésztelep): `-2`

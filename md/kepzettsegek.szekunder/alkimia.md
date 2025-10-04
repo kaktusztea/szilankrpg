@@ -132,4 +132,4 @@ Intelligencia, Emlékezet
 ---
 ### Célszám módosító körülmények
 
-Rosszul felszerelt labor, műszerek hiánya: `[-3; -9]`
+Rosszul felszerelt labor, műszerek hiánya: `[+3; +9]`
