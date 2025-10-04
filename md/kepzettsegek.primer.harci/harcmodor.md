@@ -56,14 +56,18 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 🔒 Követelmény: Ügyesség: `+0`
 
-🌟 Hatás: Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
+🌟 Hatás:
+- Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
+- A [Sebzéstípus másodlagos](../065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos) és [Sebzéstípus alakalmatlan](../065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-alkalmatlan) Harci helyzetek `Hátrány` büntetései csökkennek `1`-gyel.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Ügyesség: `+0`
 
-🌟 Hatás: Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
+🌟 Hatás:
+- A [Sebzéstípus másodlagos](../065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos) és [Sebzéstípus alakalmatlan](../065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-alkalmatlan) Harci helyzetek `Hátrány` büntetései megszűnnek.
+- Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
 
 <br />
 

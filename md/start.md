@@ -49,7 +49,13 @@
 ### 1. [Karakteralkotás](010_karakteralkotas.md)
 
 - [Karakteralkotó ods](011_karakteralkoto_ods.md)
-- [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_kalandozok_elotortenet_szemelyiseg_felszereles.md)
+- [A karakter jellemzői](012_00_karakter_jellemzoi.md)
+  - [Kalandozók](012_01_kalandozok.md)
+  - [Őrszemek](012_02_orszemek.md)
+  - [Előtörténet](012_03_elotortenet.md)
+  - [Személyiségek](012_04_szemelyisegek.md)
+  - [Külső](012_05_kulso.md)
+  - [Felszerelés](012_06_felszereles.md)
 - [Tapasztalati Szint](013_tsz_szintlepes.md)
 - [Egyedi pontokkal növelt jellemzők](014_00_egyedi_pontokkal_novelt_jellemzok.md)
   - [Tulajdonságok](014_01_tulajdonsagok.md) ⚪

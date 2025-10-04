@@ -206,7 +206,7 @@ A fegyverekre nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vért
 
 [Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott fegyver.
 
-Hatása [Felszerelésre](012_kalandozok_elotortenet_szemelyiseg_felszereles.md#felszerel%C3%A9s):
+Hatása [Felszerelésre](012_00_karakter_jellemzoi.md#felszerelés):
 - Másfélkezes kard: Közepes tárgy (1 pont)
 - Kétkezes kard, Lándzsa: Nagy tárgy (2 pont)
 

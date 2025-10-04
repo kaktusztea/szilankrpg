@@ -18,6 +18,6 @@ A KP költések, HM limit, Harcmodorok, Kétkezes Harc, Mesterfegyver bónuszai,
 
 ---
 
-🔗 [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_kalandozok_elotortenet_szemelyiseg_felszereles.md) →
+🔗 [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_00_karakter_jellemzoi.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

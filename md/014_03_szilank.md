@@ -1,6 +1,6 @@
 ## Szilánk
 
-Korábban, a [Kalandozók](012_kalandozok_elotortenet_szemelyiseg_felszereles.md) bemutatásánál említett, lélekben szunnyadó **Szilánk** a játékmenetben is megjelenik. Valóságformáló hatása a játékosok számára konkrét előnyökkel jár.
+Korábban, a [Kalandozók](012_00_karakter_jellemzoi.md) bemutatásánál említett, lélekben szunnyadó **Szilánk** a játékmenetben is megjelenik. Valóságformáló hatása a játékosok számára konkrét előnyökkel jár.
 
 A Szilánk a szabályrendszerben egy pontérték, amelyet csak és kizárólag Kalandozók kapnak, NJK nem - kivéve, ha ő is Kalandozó.
 

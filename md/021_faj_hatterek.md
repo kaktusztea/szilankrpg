@@ -18,9 +18,9 @@ Az alábbiakban a játszható és nem játszható fajok bemutatását egyedi jel
 Speciális:
 - [Kevert fajú](hatterek.faji/kevert_faju.md)
 
----
  A választott Faj-Háttér keretként fogja egybe minden egyes faj egyedi jellemzőit, melyek alább láthatóak:
 
+---
 ### ⚜️Tulajdonság keretek
 
 Minden fajnak vannak szellemi, fizikai határai. Van, hogy ez az átlag fölé emeli őket, vagy épp ellenkezőleg: lehetséges minimumot/maximumot húzhat egyes [Tulajdonságok](014_01_tulajdonsagok.md) szintjén.
@@ -30,12 +30,14 @@ Példa:
 [-2; +6] Edzettség
 ```
 
+---
 ### ⚜️Felvehető Érzék-Fortélyok maximuma
 
 Amennyiben egy játékos választ egy Faj Hátteret a karakterének, akkor az annál felsorolt lehetséges [Érzék-Fortélyok](043_altalanos_fortelyok.md#érzék-fortélyok) közül **minimum 1 fokot** köteles felvenni hozzá.
 
 Tehát például választhat egy **orkot**, akinek mindösszesen "**Infralátás - 1.fok**" Érzék-Fortélya van. Nincs kiemelkedően jó szaglása, vagy hallása és a föld alatt sem kap bónuszokat. Egy faj nem minden egyede egyforma. A játékos megkapja a lehetőséget egy sokféle különleges érzékkel megáldott egyed indítására, de az sok KP-ba fog kerülni - a választás az övé.
 
+---
 ### ⚜️[Faj misztérium](030_01_kepzettseglista.md#faj-miszt%C3%A9riumok-%F0%9F%85%BF%EF%B8%8F)
 
 **Opcionálisan** felvehető, primer 🅿️ képzettség, amely kimondottan az adott faj misztikus/mágikus, ősi gyökerei felé nyúl ki.
@@ -44,6 +46,7 @@ Csak biztos tudásból adódó ismereteket nyújt, melyek magasabb szinteken egy
 
 Példa: [Faj misztérium: Törpe](kepzettsegek.faj.miszterium/faj_miszterium_torpe.md)
 
+---
 ### ⚜️Faji fortélyok
 
 Általában csak az adott fajra jellemző specializált, nem misztikus ismeretek.

@@ -4,7 +4,7 @@ Az áttekintő szöveget lásd a tartalomjegyzék után ↓
 
 ### [Karakteralkotó ods](011_karakteralkoto_ods.md)
 
-### [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_kalandozok_elotortenet_szemelyiseg_felszereles.md)
+### [Kalandozók, Előtörténet, Személyiség, Felszerelés](012_00_karakter_jellemzoi.md)
 
 ### [Tapasztalati Szint](013_tsz_szintlepes.md)
 
