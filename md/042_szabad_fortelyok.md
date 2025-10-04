@@ -41,6 +41,7 @@ Van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 - [Fejlett tapintás](fortelyok.szabad/fejlett_tapintas.md)
 - [Festészet](fortelyok.szabad/festeszet.md)
 - [Gazdalkodás](fortelyok.szabad/gazdalkodas.md)
+- [Harci iskola](fortelyok.szabad/harci_iskola.md) 🔁
 - [Hazudozás](fortelyok.szabad/hazudozas.md)
 - [Heraldika](fortelyok.szabad/heraldika.md)
 - [Hivatalnok](fortelyok.szabad/hivatalnok.md)

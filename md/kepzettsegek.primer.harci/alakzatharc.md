@@ -16,6 +16,7 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 
 - [Alakzat: támadó](../fortelyok.harci/alakzat_tamado.md) fortély
 - [Alakzat: védekező](../fortelyok.harci/alakzat_vedekezo.md) fortély
+- [Harci iskola](../fortelyok.szabad/harci_iskola.md) Szabad Fortély
 - [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md) fortély: alakzat vezetése esetén bónuszt ad.
 
 ---
@@ -51,7 +52,7 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény: "Speciális harci iskola" Szabad Fortély
+🔒 Követelmény: [Harci iskola](../fortelyok.szabad/harci_iskola.md) Szabad Fortély
 
 🌟 Hatás: Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra. Társaiddal összekapcsolódnak érzékszerveitek - bármilyen extra misztikus tudás nélkül.
 
