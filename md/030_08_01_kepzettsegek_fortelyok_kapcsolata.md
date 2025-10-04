@@ -152,13 +152,13 @@ Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_
 
 \- JK: "Természetjárás: `7.szint`, Érzékenység: `+2`"
 
-\- KM: "Ehhez a szituációhoz a **Természetjárás** képzettséghez **két** kiterjesztő **Szabad Hátter** kapcsolódik. Ezekkel hogy állsz? Ha nincs meg bármelyik, akkor is dobhatsz, de csak `-3` büntetéssel."
-- [Nyomolvasás](fortelyok.altalanos/nyomolvasas.md)
+\- KM: "Ehhez a szituációhoz a **Természetjárás** képzettséghez **két** kiterjesztő **Szabad Fortély** kapcsolódik. Ezekkel hogy állsz? Ha nincs meg bármelyik, akkor is dobhatsz, de csak `-3` büntetéssel."
+- [Nyomolvasás/eltűntetés](fortelyok.altalanos/nyomolvasas_eltuntetes.md)
 - [Tájtípus: erdős](fortelyok.szabad/tajtipus_erdos.md)
 
 \- JK: "Nyomolvasás: `2.fok`, Tájtípus: erdős: `1.fok`, kimaxoltam."
 
-\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `+2` bónuszt, mert a Nyomolvasás Szabad Háttered nem `1.`, hanem `2.fokú`."\
+\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `+2` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`."\
 Összetett képzettségpróba lesz, mert hosszan kell követni a nyomokat. Két próbát kell dobnod:
 
 ```

@@ -33,7 +33,7 @@ bevezető ⭕
 - [Építészet](../fortelyok.altalanos/epiteszet.md)
 - [Kitartás](../fortelyok.altalanos/kitartas.md)
 - [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md)
-- [Nyomolvasás](../fortelyok.altalanos/nyomolvasas.md)
+- [Nyomolvasás/eltűntetés](../fortelyok.altalanos/nyomolvasas_eltuntetes.md)
 - [Villámgyors keresés](../fortelyok.altalanos/villamgyors.kereses.md)
 
 ### Ajánlott képzettségek

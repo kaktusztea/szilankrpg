@@ -70,7 +70,7 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 Szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-ét (legfontosabbtól visszafelé):
 
 - VÉ csökkentés
-- Képzettség-kiterjesztés Szabad-Hátterekkel
+- Képzettség-kiterjesztés Fortélyokkal
 - Távharc (Szorzó, Osztó)
 - Páncélmodell, Páncél generátor
 - Fegyverméret kategóriák

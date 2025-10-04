@@ -20,7 +20,7 @@ Előbb észre kell venni az első nyomot, utána lehet követni a csapást.
 
 [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
 - [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások), tehát több dobás kell, mivel átfogóbb próba kell a folyamatos követéshez.
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás (2)](../fortelyok.altalanos/nyomolvasas.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
+- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
 
 <br />
 
@@ -35,7 +35,7 @@ Természetjárás + Érzékenység (nyomolvasó)
 Természetjárás + Intelligencia (menekülő)
 
 Normál Kiterjesztés egyszerre mindkét félnél
- - Nyomolvasás fortély ÉS
+ - Nyomolvasás/eltűntetés fortély ÉS
  - Tájtípus (aktuális tájra) fortély
 ```
 
@@ -48,7 +48,7 @@ Normál Kiterjesztés egyszerre mindkét félnél
 
  [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
 - **Nehézség**: a nyom bonyolultságának megfelelő szint ellen
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás (2)](../fortelyok.altalanos/nyomolvasas.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
+- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
 
 ---
 

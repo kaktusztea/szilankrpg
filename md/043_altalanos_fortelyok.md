@@ -35,7 +35,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Kocsihajtás](fortelyok.altalanos/kocsihajtas.md)
 - [Kötelékből szabadulás](fortelyok.altalanos/kotelekbol_szabadulas.md)
 - [Méregálló](fortelyok.altalanos/meregallo.md)
-- [Nyomolvasás](fortelyok.altalanos/nyomolvasas.md)
+- [Nyomolvasás/eltűntetés](fortelyok.altalanos/nyomolvasas_eltuntetes.md)
 - [Pók](fortelyok.altalanos/pok.md)
 - [Sprint](fortelyok.altalanos/sprint.md)
 - [Suhanó árnyék](fortelyok.altalanos/suhano_arnyek.md)
