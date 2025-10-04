@@ -7,7 +7,7 @@ A harcmodorok a közvetlenül, fegyverrel való harc képességét fedik le. Kat
 Alább összesen `5` ilyen különálló harcmodor képzettség általános leírását találjuk:
 - Közelharc
 - Kardvívás
-- Aprítás
+- Rombolás
 - Lándzsavívás
 - Ostorharc
 

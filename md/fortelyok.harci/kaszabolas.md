@@ -7,7 +7,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 🔒 **Követelmény**:
 - Erő: `+1`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)  **-** `4.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Aprítás** vagy **Ostorharc**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**: Ha harcképtelenné teszel valakit, akkor kapsz `1` bónusz támadást egy közeli ellenfél ellen. Ezt egy körben max `1x` alkalmazhatod.
 
@@ -19,7 +19,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 🔒 **Követelmény**:
 - Erő: `+1`
 - Harcmodor  **-** `8.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Aprítás** vagy **Ostorharc**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**: Mint az `1.fok`, de akárhányszor alkalmazhatod egy körben.
 

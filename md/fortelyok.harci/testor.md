@@ -15,7 +15,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod t
 - Önuralom: `+1`
 - [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Aprítás** vagy **Ostorharc**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**: A [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) Hatás már nem sújt.
 
@@ -26,7 +26,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod t
 - Önuralom: `+2`
 - Összpontosítás - `6.szint`
 - Harcmodor - `8.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Aprítás** vagy **Ostorharc**)
+- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**: Büntetések nélkül védheted pártfogoltad. A [Többszörös támadás elvesztése](../081_hatasok.md#-t%C3%B6bbsz%C3%B6r%C3%B6s-t%C3%A1mad%C3%A1s-elveszt%C3%A9se) Hatás sem sújt már.
 

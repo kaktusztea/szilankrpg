@@ -33,7 +33,7 @@ Faj misztériumok - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%E
 ---
 ### Harci képzettségek 🅿️
 
-🔵 [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) (Közelharc, Kardvívás, Lándzsavívás, Aprítás, Ostorharc) 🔁
+🔵 [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) (Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc) 🔁
 
 🔵 [Távolsági harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) (Hajítás, Íjászat🤝, Lövészet🤝, Ostromlövészet🤝) 🔁
 

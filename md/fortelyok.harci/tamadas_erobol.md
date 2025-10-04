@@ -14,7 +14,7 @@ TÉ:-6, SP:+6
 
 🔒 **Követelmény**: 
 - Erő: `+2`
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Aprítás)
+- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
 - Ostorharcban nem lehet
 
 🌟 **Hatás**: legfeljebb `+3 SP` (`TÉ:-3`) pakolható át
@@ -24,7 +24,7 @@ TÉ:-6, SP:+6
 
 🔒 **Követelmény**:
 - Erő: `+3`
-- Harcmodor - `6.szint`<br /> (Kardvívás / Lándzsavívás / Aprítás)
+- Harcmodor - `6.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
 - Ostorharcban nem lehet
 
 🌟 **Hatás**: legfeljebb `+6 SP` (`TÉ:-6`) pakolható át
