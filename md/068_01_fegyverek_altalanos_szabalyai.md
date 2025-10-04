@@ -109,7 +109,6 @@ pika
 ### Sebzéstípusok
 
 - [Elsődleges](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-els%C5%91dleges)
-- [Egyenjogú](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-egyenjog%C3%BA)
 - [Másodlagos](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos)
 - [Alkalmatlan](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-alkalmatlan)
 

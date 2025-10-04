@@ -49,24 +49,9 @@ A Harcrendszer végén található [fegyvertáblázatokban](068_00_fegyverek.md#
 
 Ez egy Harci helyzet (státusz).
 
-Majdnem minden fegyver rendelkezik egy **elsődleges sebzési típussal**, pl. szúrás. Ha emellett más típusú támadásra is alkalmas, az legtöbbször másodlagos lehet (kivételeket lásd lejjebb az "Egyenjogú sebzési típus" bekezdésben). Ha a karakter nem jelenti be, hogy milyen típusú támadást akar leadni, akkor mindig az elsődleges sebzési típust vesszük megtörténtnek.
+Majdnem minden fegyver rendelkezik egy **elsődleges sebzési típussal**, pl. szúrás. Ha emellett más típusú támadásra is alkalmas, az a másodlagos sebzéstípus. Ha a karakter nem jelenti be, hogy milyen típusú támadást akar leadni, akkor mindig az elsődleges sebzési típust vesszük megtörténtnek.
 
 Például a "Hosszú kard: vágás/szúrás (`V/S`)". Ekkor az alapértelmezett, elsődleges sebzési típus a **Vágás**. 
-
----
-### [Sebzéstípus: egyenjogú](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-egyenjog%C3%BA)
-
-```
-Jelölése "+" jel
-  Például "S+V"
-
-Nincs levonás egyik
-  sebzés típusnál sem
-```
-
-Ez egy Harci helyzet (státusz).
-
-Egyes fegyverekkel többféle sebzési típust lehet használni anélkül, hogy a forgató hátrányba kerülne és levonást szenvedne el a TÉ-ből. Ilyen fegyvereknél az egyes sebzési típusokat `+` jellel választjuk el.
 
 ---
 ### [Sebzéstípus: másodlagos](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-egyenjog%C3%BA)

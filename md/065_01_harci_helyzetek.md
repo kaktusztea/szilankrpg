@@ -157,11 +157,6 @@ Sebzéstípus: elsődleges
   Használja a fegyver
     elsődleges sebzési típusát
 
-Sebzéstípus: egyenjogú
-  S0ima sebzésdobás
-  Használja a fegyver egyenjogú
-    sebzési típusát
-
 Sebzéstípus: másodlagos
   Hátrány-1 Sebzésdobásra
   Használja a fegyver másodlagos
@@ -749,15 +744,6 @@ Sima Sebzésdobás
 ```
 
 Fegyvered elsődleges sebzési típusával támadsz. Például "Hosszú kard: Vágás".
-
-## Sebzéstípus: egyenjogú
-
-```
-Sima Sebzésdobás
-```
-
-Fegyvered ezen sebzéstípusa egyenjogú az elsődleges sebzéstípussal.\
-Például "Alabárd elsődleges: `Szúrás`", "Alabárd egyenjogú: `Zúzás".
 
 ## Sebzéstípus: másodlagos
 
