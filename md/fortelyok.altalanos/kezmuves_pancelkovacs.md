@@ -8,7 +8,7 @@ Fém ötvözetekből kalapálsz páncélokat. Fegyvereket NEM.
 
 ### Követelmény
 
-- [Kovács](kezmuves_kovacs.md) Szabad Fortély
+- [Kovács](../fortelyok.szabad/kezmuves_kovacs.md) Szabad Fortély
 
 ### Kapcsolódik
 
