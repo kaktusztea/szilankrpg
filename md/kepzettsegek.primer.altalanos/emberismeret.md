@@ -132,7 +132,7 @@ Megállapítani, hogy egy személyiségváltozás hátterében kisebb mágikus b
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Rövidebb a kontaktus ideje és/vagy kevésbé mély az alapesetnél: `[-1; -3]`
 - Hosszabb a kontaktus ideje és/vagy elmélyültebb az alapesetnél: `[+1; +3]`

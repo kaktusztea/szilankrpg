@@ -50,6 +50,6 @@ Nincs, csak biztos tudásból.
 
 <br />
 
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - ⭕xyz

@@ -136,6 +136,6 @@ __
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Kapkodó munka: `+3`

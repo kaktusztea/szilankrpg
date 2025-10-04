@@ -83,7 +83,7 @@ Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzők
 <br />
 
 
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - ⭕xyz
 

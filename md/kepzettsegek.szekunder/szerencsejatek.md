@@ -109,7 +109,7 @@ Szerencsejáték
 - Komoly bűnszervezet vagy arisztokrácia legendás bajnokságának is bajnoka is vagy.
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Kocsma, barátságos közeg: `+2`
 - Teljesen idegen kaszinó, ismeretlen szabályok: `-2`

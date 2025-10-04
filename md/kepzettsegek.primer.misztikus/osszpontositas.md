@@ -106,6 +106,6 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - ⭕TODO⭕

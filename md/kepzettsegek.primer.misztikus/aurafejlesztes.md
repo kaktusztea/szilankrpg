@@ -88,6 +88,6 @@ Intelligencia, Érzékenység
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - ⭕TODO⭕

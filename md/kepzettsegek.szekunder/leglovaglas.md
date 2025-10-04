@@ -107,7 +107,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Vad hátas: `[-1; -3]`
 - Más fajú légi hátas esetén: [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély szükséges

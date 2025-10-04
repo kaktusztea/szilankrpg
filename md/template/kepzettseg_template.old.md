@@ -50,6 +50,6 @@
 
 <br />
 
-##### Módosító körülmények
+##### Célszám módosító körülmények
 
 - ⭕xyz

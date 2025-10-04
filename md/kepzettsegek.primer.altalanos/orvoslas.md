@@ -134,6 +134,6 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - ⭕TODO⭕

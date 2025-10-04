@@ -78,7 +78,7 @@ Könnyeden kacagni, miközben karodat egy rozsdás, tompa fűrésszel vágják l
 
 <br />
 
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Áfiumok, kábítószerek, fejbekólintás hatására:
   - [Eszmélet: Bódultság Státusz](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g): `Előny+1` Fájdalomtűrés dobásra

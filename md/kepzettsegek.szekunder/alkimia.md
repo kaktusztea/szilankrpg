@@ -130,6 +130,6 @@ Intelligencia, Emlékezet
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 Rosszul felszerelt labor, műszerek hiánya: `[-3; -9]`

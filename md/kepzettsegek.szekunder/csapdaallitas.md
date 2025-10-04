@@ -113,7 +113,7 @@ Intelligencia, Önuralom
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Csapda hatástalanítása külső nyom hátrahagyása nélkül: `+3`
 - [Szabotőr](../fortelyok.altalanos/szabotor.md) által hatástalanított csapdáról megmondani, hogy már nem aktív: `+3`

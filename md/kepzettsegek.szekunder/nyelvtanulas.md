@@ -155,7 +155,7 @@ Emlékezet, Érzékenység.
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Könyvtár: `+3`
 - Tanító aktívan segít: `+3`

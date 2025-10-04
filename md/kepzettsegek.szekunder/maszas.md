@@ -118,7 +118,7 @@ Visszahajló acélfalon felmászni.
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Rontott próba utáni **Mentő** képzettségpróba: `-3`
 - Gyorsan mászni: `-3`

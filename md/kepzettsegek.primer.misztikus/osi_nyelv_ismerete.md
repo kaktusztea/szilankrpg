@@ -111,6 +111,6 @@ Emlékezet
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - ⭕TODO⭕

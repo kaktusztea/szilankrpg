@@ -134,7 +134,7 @@ __
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Könyvtár: `[+1; +6]`
 - Hozzáférés: tiltott források vagy hiányos anyag: `[-1; -6]`

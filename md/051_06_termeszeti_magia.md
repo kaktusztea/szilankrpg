@@ -91,7 +91,7 @@ Most lássuk a **Természeti Tradíció** egyes szintjeihez rendelt jellemzőket
 <br />
 
 
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - ⭕xyz
 

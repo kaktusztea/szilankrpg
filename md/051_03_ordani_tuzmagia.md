@@ -83,7 +83,7 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 <br />
 
 
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - ⭕xyz
 

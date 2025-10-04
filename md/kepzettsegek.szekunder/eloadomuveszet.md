@@ -125,6 +125,6 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Ellenséges tömeg: `+3-6`

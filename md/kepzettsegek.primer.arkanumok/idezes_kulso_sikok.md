@@ -63,7 +63,7 @@ Ha a fenti próba sikeres, akkor a démon játéktechnikailag rendes mágiaellen
 
 <br />
 
-##### Módosító körülmények
+##### Célszám módosító körülmények
 
 - ⭕xyz
 

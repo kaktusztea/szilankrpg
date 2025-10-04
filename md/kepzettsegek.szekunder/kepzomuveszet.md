@@ -131,7 +131,7 @@ Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfel
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Rendelkezésre álló idő
   - Kapkodás: `-3`

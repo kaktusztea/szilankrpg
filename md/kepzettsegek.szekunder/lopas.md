@@ -114,7 +114,7 @@ Csúszósabb érték mozdítása elejtés nélkül.
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Kapkodni kell: `-3`
 - Nincs meg a testközeli távolság, csak pár lépés: `-3`

@@ -140,7 +140,7 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Szűkös határidő: `-3`
 - Jó hírnév: `+3`

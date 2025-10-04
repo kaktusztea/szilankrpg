@@ -118,7 +118,7 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Sietős nyitás: `-3`
 - Zavaró tényezők (őrjárat, zaj, káosz, sötét): `-3`

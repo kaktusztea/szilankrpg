@@ -113,7 +113,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Az állat intelligenciája: `[-3; +3]`
 - Zavaró tényezők: zaj, villogó fények, harc: `[-1; -6]`

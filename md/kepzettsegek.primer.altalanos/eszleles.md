@@ -112,7 +112,7 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Gyorsan, nyomás alatt keresni: `-3`
 - Zavaró körülmények: `[-1;-6]`

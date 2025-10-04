@@ -115,7 +115,7 @@ __
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Tárgy komplexitása
 - Tárgy ritkasága

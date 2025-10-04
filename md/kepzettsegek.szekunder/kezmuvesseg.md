@@ -140,6 +140,6 @@ Igen gyakori a [csoportos képzettségpróba](../030_07_01_csoportos_kepzettsegp
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Rövid határidő: `+3`

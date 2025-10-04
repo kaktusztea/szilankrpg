@@ -120,7 +120,7 @@ Nagyon gyakori eset az [összetett képzettségpróba](../030_06_01_kepzettsegpr
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 **Időjárás**:
 - Enyhe szél, jó idő: `+0`

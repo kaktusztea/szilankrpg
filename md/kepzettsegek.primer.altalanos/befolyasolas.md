@@ -96,7 +96,7 @@ Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még ellenf
 <br />
 
 ---
-### Módosító körülmények
+### Célszám módosító körülmények
 
 - Olyan nyelven próbáksz hatni, amit nem ért(enek) a célszemély(ek): `+3 Nehézség`
 - Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**.
