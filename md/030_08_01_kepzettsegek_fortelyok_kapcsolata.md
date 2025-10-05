@@ -83,7 +83,7 @@ Ha több fortély terjeszt ki képzettségpróbánál és legalább `1 db` olyan
 
 ### 🔆 Speciális: Több fortély bónusza
 
-Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít.
+Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít. Kivéve, ha az alacsonyabb elérte a maximum fokot. Ilyenkor a magasabb bónusza az irányadó.
 
 Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjeszt
 - `A` fortély - `2.fok`
@@ -150,7 +150,7 @@ Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_
 
 \- KM: "Mennyi a **Természetjárás** képzettséged és az **Érzékenység** Tulajdonságod? Ezekkel fogsz dobni."
 
-\- JK: "Természetjárás: `7.szint`, Érzékenység: `+2`"
+\- JK: "Természetjárás: `6.szint`, Érzékenység: `+1`"
 
 \- KM: "Ehhez a szituációhoz a **Természetjárás** képzettséghez **két** kiterjesztő **Szabad Fortély** kapcsolódik. Ezekkel hogy állsz? Ha nincs meg bármelyik, akkor is dobhatsz, de csak `-3` büntetéssel."
 - [Nyomolvasás/eltűntetés](fortelyok.altalanos/nyomolvasas_eltuntetes.md)
@@ -158,7 +158,7 @@ Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_
 
 \- JK: "Nyomolvasás: `2.fok`, Tájtípus: erdős: `1.fok`, kimaxoltam."
 
-\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `+2` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`."\
+\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `+2` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`." A "Tájtípus: erdős" nem korlátozza le a Nyomolvasás/eltűntetés bónuszát, mert nincs magasabb foka, mint `1`.\
 Összetett képzettségpróba lesz, mert hosszan kell követni a nyomokat. Két próbát kell dobnod:
 
 ```
@@ -169,7 +169,9 @@ Nehéz: 12
 \- JK: "OK, az **Átlagos (9)** így már dobás nélkül is megvan. A **Nehéz (12)**-re dobok... megvan!
 
 ```
-7 + 2 + k10 → 14
+Alap: 7 + 1 + 2
+
+10 + k10 → 14
 ```
 
 \- KM: "Rendben, meglátod a következő csizmanyomot, aztán pár letört ágat, némi szőrcsomóval, ami beleakadt. Észak felé, a hegyek irányába haladtok..."
