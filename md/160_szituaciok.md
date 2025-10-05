@@ -29,12 +29,13 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
 
-## Észlelés, Lopakodás szituációk
+## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 
 - [Érzékelés, Aktív/Passzív Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md)
 - [Lopakodás/rejtőzés és észlelése](szituaciok/lopakodas_rejtozes_es_eszlelese.md)
 - [Nyomok észrevétele, nyomkövetés - természetben](szituaciok/nyomok_nyomkovetes_termeszet.md)
 - [Nyomok észrevétele, nyomkövetés - városban](szituaciok/nyomok_nyomkovetes_varos.md)
+- [Nyomok, tárgyak elrejtése/észlelése](szituaciok/nyomok_targyak_elrejtese.md)
 - [Ellopni valamit, kirabolni valakit](szituaciok/lopas_kirablas.md)
 
 ## Fizikai szituációk
