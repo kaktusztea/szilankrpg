@@ -31,6 +31,8 @@ Az alábbi Fortélyok a képzettség `3.szintjének` elérésekor vehetőek csak
 
 A képzettség annyiban speciális, hogy a (harcmodorokhoz hasonlóan) a `3.szint` adja az „alapszintet", azaz egy felnőtt átlagember ekkora emberismerettel rendelkezik. Az ez alatti értékkel rendelkezők köznyelven a „szerencsétlen balek" és a „palimadár" kategóriába tartoznak..
 
+Magasabb szinteken terápiás hatásokat is gyakorolhatsz mentális problémák enyhítésére.
+
 Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (Csábítás, stb).
 
 <br />
@@ -55,7 +57,12 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 🔒 Követelmény: Érzékenység: `+1`
 
-🌟 Hatás: Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri. Mentális problémákat felismer, elkezdhet gyógyítani. **Példa**: Vallatótiszt, szélhámos. Ha belépsz egy társaságba, érzed, hogy ki a „hangadó”, kinek a véleményét kell elsősorban befolyásolnod. Ha belépsz egy közösségi térbe, megérzed az alaphangulatot.
+🌟 Hatás:
+- Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri.
+- Ha belépsz egy társaságba, érzed, hogy ki a „hangadó”, kinek a véleményét kell elsősorban befolyásolnod. Ha belépsz egy közösségi térbe, megérzed az alaphangulatot.
+- Mentális problémákat felismersz, elkezdhetsz gyógyítani.
+- Terápia: [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s): Hetek alatt képes vagy `1` fokot enyhíteni belőle
+- **Példa**: Vallatótiszt, szélhámos. 
 
 ---
 #### Nagymester (12) 📖
@@ -64,7 +71,12 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 - Érzékenység: `+2`
 - Intelligencia: `+1`
 
-🌟 Hatás: Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött. **Példa**: Főpap, inkvizítor, híres színész. Minden beszélgetésben automatikusan megérzed, ki a leginkább megingatható fél. Nem azt, hogy hogyan, hanem kit lehet legkönnyebben befolyásolni. Ha belépsz akár egy üres helyre is, megérzed az erős, leplezetlen asztrális lenyomatokat.
+🌟 Hatás:
+- Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött.
+- Minden beszélgetésben automatikusan megérzed, ki a leginkább megingatható fél. Nem azt, hogy hogyan, hanem kit lehet legkönnyebben befolyásolni.
+- Ha belépsz akár egy üres helyre is, megérzed az erős, leplezetlen asztrális lenyomatokat.
+- Terápia: [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s): Napok, hetek alatt képes vagy `2` fokot enyhíteni belőle
+- **Példa**: Főpap, inkvizítor, híres színész.
 
 ---
 #### Élő legenda (15) 📖
@@ -75,6 +87,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 🌟 Hatás:
 - Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
+- **Terápia**: pusztán egy rövid beszélgetés alatt képes vagy a  [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s) hatását megszűntetni.
 - **Példa**: asztrálmágus
 - Speciális: Szemed kinyílt az Asztrálsíkra is, képes vagy ott is érzékelni. ⭕TODO: Asztrálszem⭕
 
