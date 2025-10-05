@@ -31,7 +31,7 @@ Kapcsolódik:
 ---
 ### Nyomok elrejtése/megtalálása  természetben 🌳
 
-Lásd: [Leplezett nyomok követése a természetben](szituaciok/nyomok_nyomkovetes_termeszet.md#leplezett-nyomok-k%C3%B6vet%C3%A9se-a-term%C3%A9szetben-) szituációt.
+Lásd a [Leplezett nyomok követése a természetben](nyomok_nyomkovetes_termeszet.md#leplezett-nyomok-k%C3%B6vet%C3%A9se-a-term%C3%A9szetben-) szituációt.
 
 ---
 
