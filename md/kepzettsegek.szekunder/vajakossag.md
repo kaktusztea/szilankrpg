@@ -2,9 +2,13 @@
 
 A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Jártatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, kristályokból, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
 
-[Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes gyógyhatású, tudatmódositó, bódító és afrodiziákum készítmények előállítására. Önállóan nem.
+Képes vagy kikeverni és tartós állapotban tárolni a végső gyógyhatású matériát.
+
+[Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes gyógyhatású, tudatmódositó, bódító és afrodiziákum készítmények előállítására.
 
 Egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önnálóan **NEM** vagy képes készíteni.
+
+Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik. 
 
 ### Domináns Tulajdonságok
 
@@ -52,7 +56,7 @@ Emlékezet, Intelligencia
 
 🌟 Hatás: "A boszorkánysegéd"
 - Ritkább alapanyagokat (pl. mandragóra, sárkányvér) biztonságosan kezeled.
-- Érzékeid, laborod segítség tudsz különböztetni valódi gyógyfőzetet a hamisítványtól.
+- Érzékeid és laborod segítségével meg tudsz különböztetni valódi gyógyfőzetet a hamisítványtól.
 
 ---
 #### Nagymester (12) 📖
@@ -64,7 +68,7 @@ Emlékezet, Intelligencia
 - Többtucatnyi összetevős szert vagy bájitalt is el tudsz készíteni.
 - Mágikus szörnyek testrészeinek hatóanyagait érted, és ki tudod nyerni – de nagy gyógy- vagy varázsital készítéséhez mágushasználó kell.
 - Nagyobb, sok összetevős keverékek alapanyagait páratlan biztonsággal előkészíted.
-- Szeretett vagy rettegett figurává válsz: falusiak, nemesek egyaránt hozzád fordulhatnak „titkos alapanyagokért”.
+- Szeretett vagy rettegett figurává válsz: falusiak, nemesek egyaránt hozzád fordulhatnak „titkos alapanyagokért”, bájitalokért.
 
 ---
 #### Élő legenda (15) 📖
