@@ -140,18 +140,22 @@ Milyen gyorsan hat?
 ### (5) Speciális
 
 ```
-+2: Több komponensű: minden új komponens
-+3: Több hordozó közeg (étel/ital, légnemű, véráram),
-    minden plusz hordozó
-+3: Több hordozó közegből csak 1 hatóanyaggal,
++2: Plusz 1 komponens
++3: Plusz 1 hordozó közeg
+    (étel/ital, légnemű, véráram),
++3: Több hordozó közegből
+    csak 1 a méreg hatóanyag,
     a többi természetes alapanyag
-+2: Sűrű: kis mennyiség is elég 1 adaghoz
++2: Sűrű: kis mennyiség is
+    elég 1 adaghoz
 +3: Színtelen
 +3: Szagtalan/ízetlen (egyben értendő)
-+3/+6: Félrevezető tünetek (két fokozat, ennyivel nő az azonosítás nehézsége)
-- : Szabadban sem eloszló légméreg:
-    nincs nehézség módosító, viszont speciális fizikai közvetítő kell,
-    (pl. füstöt okádó labdacs, folyamatos utánpótlással)
++3/+6: Félrevezető tünetek I, II.
+    (ennyivel nő az azonosítás nehézsége)
++0: Szabadban sem eloszló légméreg:
+    nem nehezebb, de speciális fizikai
+    közvetítő kell (füstöt okádó labdacs),
+    folyamatos utánpótlással)
 ```
 
 <br />
