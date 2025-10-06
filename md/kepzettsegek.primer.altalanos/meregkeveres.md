@@ -72,7 +72,7 @@ A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek c�
 
 - Sima Méregkeverés próba, alap célszám: `6`
 - Félrevezető (speciális) :`+3/6 Nehézség`
-- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `-2 Nehézség / fok`
+- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `+2 dobás bónusz / fok`
 
 <br />
 
