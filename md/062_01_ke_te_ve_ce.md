@@ -116,7 +116,7 @@ Az alábbi táblázat megadja, a Támadó Érték kiszámolásának módját.
 ---
 ### Védő Érték (`VÉ`)
 
-A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képességét, hogy mennyire hatásosan képes elhárítani, elkerülni az ellene intézett csapásokat. Értéke nem mondható konstansnak, hisz a harci helyzettől függően változik, ráadásul kihat rá a testi-lelki, szellemi fáradság és persze a [sebesülés](061_03_sebesules.md) is.
+A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képességét, hogy mennyire hatásosan képes elhárítani, elkerülni az ellene intézett csapásokat. Értéke nem mondható állandónak, hisz a harci helyzettől függően változik, ráadásul kihat rá a testi-lelki, szellemi fáradság és persze a [sebesülés](061_03_sebesules.md) is.
 
 ```
 🗡️ Védő Érték meghatározása
@@ -152,10 +152,11 @@ A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képess�
     - Harci helyzetből adódó módosítók
       (harc alulról, harc megrendülten, stb)
     - Fegyver minőségéből adódó módosító
-        - Mestermunka: max CÉ:+2
-        - Gyatra fegyver: max VÉ:-3
-        - Mágikus fegyver módosítói
-        - Mágiából adódó módosítók
+      - VÉ: -2
+      - VÉ: +2
+      - Gyatra fegyver, Mestermunka, stb.
+    - Mágikus fegyver módosítói
+    - Mágiából adódó módosítók
 ```
 
 → [Harcmodor képzettségek](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szintje által kapott bónusz

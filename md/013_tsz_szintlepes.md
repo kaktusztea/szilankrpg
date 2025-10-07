@@ -37,7 +37,7 @@ Irányelvek karakter szintekre:
   félelmetes mágiahasználó
 15.szint
   Nagymester. Ünnepelt hadvezér,
-  retteget magitor, főpap
+  rettegett magitor, főpap
 18.szint
   Világhírű legenda.
 21.szint

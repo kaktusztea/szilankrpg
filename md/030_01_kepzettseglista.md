@@ -102,7 +102,7 @@ Faj misztériumok - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%E
 ---
 ### Művészeti képzettségek
 
-Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművészet** képzettségbe a belső művészetek alkotói folyamatait lefedő **Képzőművészettől**. A passzív művészeti ismereteket a **Művészetismeret** képzettség adja. Mind a három  [Szabad Fortélyok](042_szabad_fortelyok.md) alkalmazásával terjeszthető ki különböző művézeti ágakra.
+Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművészet** képzettségbe a belső művészetek alkotói folyamatait lefedő **Képzőművészettől**. A passzív művészeti ismereteket a **Művészetismeret** képzettség adja. Mind a három  [Szabad Fortélyok](042_szabad_fortelyok.md) alkalmazásával terjeszthető ki különböző művészeti ágakra.
 
 🔵 [Előadóművészet](kepzettsegek.szekunder/eloadomuveszet.md) 🤝
 

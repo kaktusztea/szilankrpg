@@ -29,7 +29,7 @@ Az áttekintő szöveget lásd a tartalomjegyzék után ↓
 ### [Primer és Szekunder ismeretek](017_primer_szekunder_ismeretek.md)
 
 ---
-### [Számaztatott értékek](018_00_szarmaztatott_ertekek.md)
+### [Származtatott értékek](018_00_szarmaztatott_ertekek.md)
 
 #### → [Életerő Pont (ÉP), Fáradtság Pont (FP)](018_01_ep_kt.md)
 
