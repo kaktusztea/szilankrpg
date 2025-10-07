@@ -59,7 +59,7 @@ A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../
 
 🔒 Követelmény: Emlékezet `+2`, Önuralom `+2`
 
-🌟 Hatás: Immunissá válsz minden típusú méregre. Ha kr4ni vagy, Banarát készithetsz.
+🌟 Hatás: Immunissá válsz minden típusú méregre. Ha kr4ni vagy, Banarát készíthetsz.
 
 <br />
 
