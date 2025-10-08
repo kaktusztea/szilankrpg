@@ -121,7 +121,7 @@ A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képess�
 ```
 🗡️ Védő Érték meghatározása
 
-+ Konstans: 24
++ Konstans: 30
     Minden karakternek
 + Ügyesség
     A karakter Ügyesség Tulajdonsága

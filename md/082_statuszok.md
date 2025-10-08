@@ -370,7 +370,7 @@ MGT hatása Fizikai
  0-7  MGT: nincs büntetés
  8-10 MGT: Hátrány-1 próbákra
 11-13 MGT: Hátrány-2 próbákra
-  14+ MGT: nem dobhatsz
+  14+ MGT: Automatikus kudarc
 
 Merevvértviselet fortély MGT csökkentő
  hatása a próbákra is hatással van!
