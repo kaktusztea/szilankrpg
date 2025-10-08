@@ -1,6 +1,6 @@
 # Karakteralkotás
 
-Az áttekintő szöveget lásd a tartalomjegyzék után ↓
+
 
 - [Karakteralkotás bevezetés](010_01_karakteralkotas_bevezeto.md)
 - [Karakteralkotó ods](010_02_karakteralkoto_ods.md)
@@ -32,6 +32,6 @@ Az áttekintő szöveget lásd a tartalomjegyzék után ↓
 
 ---
 
-🔗 [Karakteralkotó ods](010_02_karakteralkoto_ods.md) →
+🔗 [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

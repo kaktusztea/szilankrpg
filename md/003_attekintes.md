@@ -8,10 +8,10 @@ A M* világán nem az acél az egyetlen fegyver, vagy óvó erő. Szellemi energ
 
 Kiemelt fejezetet szenteltünk a [Szituációknak](160_szituaciok.md), amely fejezetei segítenek, hogy ne maradj sorvezető nélkül klasszikus próbahelyzetek során sem, mint például az [Érzékelés, Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) - ami talán a leggyakoribb ellenpróbás szituáció, amivel a kalandozásaid során találkozhatsz. 
 
-Alább a dokumentumban előforduló, segítő szimbólumok magyarázatát találod. Utána pedig belevágunk a [Karakteralkotás](010_00_karakteralkotas.md) mélységeibe. Kalandra fel!
+LáásuAlább a dokumentumban előforduló, segítő szimbólumok magyarázatát találod. Utána pedig belevágunk a [Karakteralkotás](010_00_karakteralkotas.md) mélységeibe. Kalandra fel!
 
 ---
 
-🔗 [A Szilánk RPG alrendszerei](005_alrendszerek.md) →
+🔗 [Tanácsok](004_tanacsok.md) →
 
 ⚜️ [Nyitóoldal](start.md#0-kezdetek) 

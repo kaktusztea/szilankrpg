@@ -32,3 +32,9 @@ Ilyenkor alkalmazhatsz több mesélői eszközt, például a kimerülés érzék
 Mese közben a szűk keresztmetszet mindig a KM - ő írja le a környezetet, ő személyesíti meg a [Nem Játékos Karaktereket](010_10_njk.md), ő szimulálja le a képzeletbeli világ eseményeit.
 
 Ha nem jut eszedbe egy szabály, ne rakj még egy púpot szegény KM hátára, hogy tőle próbálod megtudni, inkább nézd meg a szabálykönyvben magad - ha lehetséges, készülj előre.
+
+---
+
+🔗 [Alrendszerek](005_alrendszerek.md) →
+
+⚜️ [Nyitóoldal](start.md#0-kezdetek) 
