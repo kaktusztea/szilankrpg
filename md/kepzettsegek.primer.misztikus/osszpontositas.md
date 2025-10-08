@@ -1,6 +1,6 @@
 ## 🔵 Összpontosítás
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható.
+Ez egy [Primer képzettség](../010_08_primer_szekunder_ismeretek.md). Próba dobható.
 
 Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekben, varázslat hosszas fenntartásakor. Olyan helyzetekben, amelyek a külvilág kizárását igénylik. Normál, nyugodt helyzetben nem kell használni! A diszciplínák alkalmazásainak szintje nem függ ezen képzettségtől.
 

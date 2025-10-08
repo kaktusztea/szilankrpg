@@ -6,6 +6,6 @@ Bővebben lásd a [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md
 
 ---
 
-🔗 [KÉ, TÉ, VÉ, CÉ](018_02_harcertekek_99.md) →
+🔗 [NJK](019_10_njk.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

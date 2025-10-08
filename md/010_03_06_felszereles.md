@@ -30,6 +30,6 @@ Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, po
 🔆 A viselt vértezet NEM számít be a Felszerelés által fent számított keret alá.
 
 ---
-🔗 [A karakter jellemzői](012_00_karakter_jellemzoi.md) ↑
+🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

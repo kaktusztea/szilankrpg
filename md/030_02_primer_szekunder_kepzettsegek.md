@@ -1,6 +1,6 @@
 ## Primer és Szekunder képzettségek
 
-A [Primer és Szekunder ismeretek](017_primer_szekunder_ismeretek.md) féle felosztás a képzettségeken belül is megtörténik. Önkényesen felosztottuk a tanulható képzettségeket e két csoport között.
+A [Primer és Szekunder ismeretek](010_08_primer_szekunder_ismeretek.md) féle felosztás a képzettségeken belül is megtörténik. Önkényesen felosztottuk a tanulható képzettségeket e két csoport között.
 
 **Primer** alá tartozik
 

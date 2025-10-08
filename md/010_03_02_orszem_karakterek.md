@@ -14,7 +14,7 @@ Míg a Kalandozók lételeme a mozgás, az Őrszem karakter pont ennek ellentét
 - Sárkány kincshalma rejtekében
 
 ---
-🔗 [Előtörténet](012_03_elotortenet.md) →
+🔗 [Előtörténet](010_03_03_elotortenet.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
 

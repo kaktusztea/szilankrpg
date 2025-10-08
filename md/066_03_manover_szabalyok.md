@@ -78,7 +78,7 @@ Manőver nehézség
 12: Emberfeletti
 ```
 
-Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](018_03_manover_pontok_99.md) felhasználása szükséges a Nehézség mérsékléséhez és máris meglesz az „ára”, ha valaki eséllyel alkalmazni akarja.
+Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](010_09_03_manover_pontok_99.md) felhasználása szükséges a Nehézség mérsékléséhez és máris meglesz az „ára”, ha valaki eséllyel alkalmazni akarja.
 
 ---
 

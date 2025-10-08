@@ -1,6 +1,6 @@
 ## 🔵 Lopakodás/rejtőzés
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md).
+Ez egy [Primer képzettség](../010_08_primer_szekunder_ismeretek.md).
 
 Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között, áldozat háta mögé sunnyogni, beolvadni a környezetbe, elbújni az üldözők elől.
 

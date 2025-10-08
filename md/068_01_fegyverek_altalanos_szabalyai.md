@@ -182,7 +182,7 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 ---
 ### Erőbónusz limit
 
-Általában a fegyverek forgatásakor a karakter [Erő](014_01_tulajdonsagok.md#-er%C5%91) tulajdonsága `1:1` hozzáadódik az `SP` értékhez Sebzéskor - ez az [Erőbónusz](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit). Azonban egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat a karakter.
+Általában a fegyverek forgatásakor a karakter [Erő](010_05_01_tulajdonsagok.md#-erő) tulajdonsága `1:1` hozzáadódik az `SP` értékhez Sebzéskor - ez az [Erőbónusz](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit). Azonban egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat a karakter.
 
 🔆 Az egyes fegyvertáblázatokban láthatjuk, hogy mely fegyvereknél érvényesül az Erőbónusz és milyen felső limittel.\
 🔆 A számérték a felső maximumot jelzi, a `99`-es érték azt jelzi, hogy az **Erőbónusznak** nincs felső limitje.
@@ -206,7 +206,7 @@ A fegyverekre nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vért
 
 [Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott fegyver.
 
-Hatása [Felszerelésre](012_06_felszereles.md):
+Hatása [Felszerelésre](010_03_06_felszereles.md):
 - Másfélkezes kard: Közepes tárgy (1 pont)
 - Kétkezes kard, Lándzsa: Nagy tárgy (2 pont)
 

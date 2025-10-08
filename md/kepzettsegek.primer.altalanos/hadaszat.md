@@ -1,6 +1,6 @@
 ## 🔵 Hadászat
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható, passzív tudásként is.
+Ez egy [Primer képzettség](../010_08_primer_szekunder_ismeretek.md). Próba dobható, passzív tudásként is.
 
 Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, hadtáp, harci csoportok vezetése.
 

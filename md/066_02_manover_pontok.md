@@ -55,7 +55,7 @@ Erős, Kalandozó NJK:
 
 A **Nem Játékos Karakterek** alapból **nem kapnak** `MP` javadalmazást.
 
-A komolyabb, kidolgozottabb, nagyobb ellenfél Nem Játékos Karakterek viszont egy különleges esetben ugyannyi `MP` mennyiséggel rendelkeznek, mint egy **Játékos Karakter**: mégpedig akkor, amennyiben ők is [**Kalandozók**](012_00_karakter_jellemzoi.md) és éppen egy kalandban vesznek részt.
+A komolyabb, kidolgozottabb, nagyobb ellenfél Nem Játékos Karakterek viszont egy különleges esetben ugyannyi `MP` mennyiséggel rendelkeznek, mint egy **Játékos Karakter**: mégpedig akkor, amennyiben ők is [**Kalandozók**](010_03_00_karakter_jellemzoi.md) és éppen egy kalandban vesznek részt.
 
 ---
 

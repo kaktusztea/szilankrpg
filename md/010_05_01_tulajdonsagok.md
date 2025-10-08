@@ -466,11 +466,10 @@ Az érzéki csábítás is komoly hasznát látja az Érzékenységnek, tovább�
   lesznek a kiváló diplomaták,
   rettegett boszorkányok.
   Érzékei rendkívül kifinomultak.
-
 ```
 
 ---
 
-🔗 [Tulajdonságpróba](014_02_tulajdonsagproba.md) →
+🔗 [Tulajdonságpróba](010_05_02_tulajdonsagproba.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

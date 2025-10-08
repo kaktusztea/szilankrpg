@@ -1,6 +1,6 @@
 ## 🔵 Méregkeverés
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható, de a rontás rejtett, a játékos csak a méreg alkalmazásakor szembesül a balsikerrel (nem hat). 
+Ez egy [Primer képzettség](../010_08_primer_szekunder_ismeretek.md). Próba dobható, de a rontás rejtett, a játékos csak a méreg alkalmazásakor szembesül a balsikerrel (nem hat). 
 
 Lásd még a [Méregrendszer](../150_meregrendszer.md) főfejezetet!
 

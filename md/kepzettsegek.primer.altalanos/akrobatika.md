@@ -1,6 +1,6 @@
 ## 🔵 Akrobatika
 
-Ez egy [Primer képzettség](../017_primer_szekunder_ismeretek.md). Próba dobható.
+Ez egy [Primer képzettség](../010_08_primer_szekunder_ismeretek.md). Próba dobható.
 
 Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a **kötéltáncot** is.
 

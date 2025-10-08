@@ -12,6 +12,6 @@ Lásd a [Harcrendszer](060_00_harcrendszer.md) fejezetet.
 
 ---
 
-🔗 [Nem Játékos Karakterek](019_njk.md) →
+🔗 [Manőver Pontok](010_09_03_manover_pontok_99.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

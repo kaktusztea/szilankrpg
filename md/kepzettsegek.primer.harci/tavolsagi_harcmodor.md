@@ -1,6 +1,6 @@
 ## 🔵 Távolsági harcmodor
 
-Ez egy [Primer (harci) képzettség](../017_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
+Ez egy [Primer (harci) képzettség](../010_08_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
 
 A távolsági harcmodorok a távolból ható fegyverek forgatásának képességét fedik le. Kategóriánként külön-külön fel kell venni rájuk a képzettséget.
 

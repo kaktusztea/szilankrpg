@@ -17,7 +17,7 @@ Ha megnyerted a Futás ellenpróbát, sikerült lehagynod üldöződet.
 ---
 ### 🔆 Futás ellenpróba
 
-Ez egy sima ⚪ **Gyorsaság** [Tulajdonság ellenpróba](../014_02_tulajdonsagproba.md#tulajdonság-ellenpróba).
+Ez egy sima ⚪ **Gyorsaság** [Tulajdonság ellenpróba](../010_05_02_tulajdonsagproba.md#tulajdonság-ellenpróba).
 
 🔆 Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
 
