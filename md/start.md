@@ -51,7 +51,7 @@
 - [Karakteralkotó ods](011_karakteralkoto_ods.md)
 - [A karakter jellemzői](012_00_karakter_jellemzoi.md)
   - [Kalandozók](012_01_kalandozok.md)
-  - [Őrszemek](012_02_orszemek.md)
+  - [Őrszemek](012_02_orszem_karakterek.md)
   - [Előtörténet](012_03_elotortenet.md)
   - [Személyiségek](012_04_szemelyisegek.md)
   - [Külső](012_05_kulso.md)

@@ -1,5 +1,7 @@
 ## Személyiség, szociális jellemzők
 
+Egy karakter megalkotásakor erősen ajánlott kifejteni az alábbiakat:
+
 Mennyire kommunikatív, introvertált, extrovertált, milyen hangulatot áraszt, piszkálódó és így tovább.
 
 Mennyire gazdag érzelmileg? Az **Önuralom**, **Érzékenység** **Tulajdonságok** ehhez csak támpontot, vázat adnak.

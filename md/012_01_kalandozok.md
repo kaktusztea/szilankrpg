@@ -22,6 +22,6 @@ A bevezetőben említett Szilánk valóságformáló erővel bír. Ezt számszer
 (Kizárólag) Kalandozóként néha rásegíthetsz a harci szerencsére a fenti pontok használatával.
 
 ---
-🔗 [Őrszemek](012_02_orszemek.md)→
+🔗 [Őrszem karakterek](012_02_orszem_karakterek.md)→
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
