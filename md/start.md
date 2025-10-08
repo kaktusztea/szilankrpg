@@ -73,7 +73,7 @@
   - [Manőver Pontok (MP)](010_09_03_manover_pontok_99.md)
   - [Mágiaellenállás](010_09_04_magiaellenallas.md) 🎲
   - [Méregellenállás](010_09_05_meregellenallas.md) 🎲
-- [Nem Játékos Karakterek](019_10_njk.md)
+- [Nem Játékos Karakterek](010_10_njk.md)
 
 ---
 ### 2. [Hátterek](020_hattererek.md) 🟡

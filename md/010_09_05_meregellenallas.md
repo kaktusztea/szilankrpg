@@ -6,6 +6,6 @@ Bővebben lásd a [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md
 
 ---
 
-🔗 [NJK](019_10_njk.md) →
+🔗 [NJK](010_10_njk.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
