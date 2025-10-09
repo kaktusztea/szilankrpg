@@ -1,6 +1,6 @@
 ## ⚡`I.` Példalövészet merénylet
 
-Tetves, a tolvaj-bérgyilkos egy raktár ablakából, nyílpuskával les a sikátorban közelgő áldozatára, egy tehetős kalmárra, aki éppen hazafelé battyog.
+Tetves, a tolvaj-bérgyilkos egy raktár ablakából les nyílpuskával a sikátorban hazafelé battyogó tehetős kalmárra.
 
 A könnyű nyílpuska **Osztója:** `5`
 

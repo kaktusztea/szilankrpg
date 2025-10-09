@@ -1,6 +1,6 @@
 ## Fáradtság Pont (`FP`)
 
-A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapota között, amely a pillanatnyi állapotát, ájulástól való „távolságát” meghatározza. Ez utóbbit szimulálja a **Fáradtság Pont** (`FP`). Az `FP` értékének semmi köze nincs a **Fájdalomtűrés** képzettséghez, tőle teljesen független fogalom!
+A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapota között, amely a pillanatnyi ájulástól való „távolságát” meghatározza. Ez utóbbit szimulálja a **Fáradtság Pont** (`FP`). Az `FP` értékének semmi köze nincs a **Fájdalomtűrés** képzettséghez, tőle teljesen független fogalom!
 
 Az `FP` az alábbi állapotok szimulálására alkalmas:
 - tartós kimerültség

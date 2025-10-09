@@ -4,7 +4,7 @@ Mikor lóra szállsz, számos előnyhöz juthatsz, amennyiben képzett lovas vag
 
 ### Követelmény
 
-Akinek csak **Lovaglás** képzettsége van, még nem képes lóról harcolni, gyalogos harcértékeihez a **képzetlen harcmodor harcérték** levonásai adódnak **pluszban** hozzá.
+Akinek csak **Lovaglás** képzettsége van, még nem képes lóról harcolni - sőt gyalogos harcértékeihez a **képzetlen harcmodor harcérték** levonásai is **pluszban** hozzáadódnak - a Lovaglás képzettség, mint "harcmodor" által.
 
 Sok függ a [Lovaglás képzettség](kepzettsegek.szekunder/lovaglas.md) szintjétől és a [Lovas harc](fortelyok.harci/lovas_harc.md) fortély megtanult fokainak mértékétől.
 
@@ -44,7 +44,7 @@ A hátas maga `plusz 1 pengényi` [fegyverméret-kategóriát](065_01_harci_hely
 ---
 ### Sebesüléskor leesés kockázata
 
-Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy leesik -e:
+Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy lássuk, leesik -e:
 
 ```
 Seb       Nehézség

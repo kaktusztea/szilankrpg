@@ -9,7 +9,7 @@ Három tagot látsz: mellvért-darabot, felkar-tagot, alkar-tagot. Méretben pas
 ---
 ## ⚡Példa 1: Átlagos páncél
 
-A lehető legátlagosabb sodronying, fejen (sisak) és lábszárakon **kívül** mindent beborítva.
+A lehető legátlagosabb sodronying, fejen (sisak) és lábszárakon **kívül** mindent beborít.
 
 Tehát a lefedettség `80%`: mellkas (`50%`), felkar (`10%`), alkar (`10%`), combok (`10%`).
 
@@ -63,7 +63,7 @@ Végleges ár: 13x
   10x + 6x
 ```
 
-Azaz egy átlagos bőr torzó darab `16`-szorosába kerül a fenti teljes páncél-kombó.
+Azaz egy átlagos bőr torzódarab `16`-szorosába kerül a fenti teljes páncélkombó.
 
 <br />
 
