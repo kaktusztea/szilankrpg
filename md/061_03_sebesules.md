@@ -73,7 +73,6 @@ Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
 Tetves, a tolvaj Fájdalomtűrése `5.szintű`, ez `2` pontot enyhít.\
 Ekkor az ő sebesülés táblázata így néz ki:
 
-
 ```
 TÉ levonás összes
 
