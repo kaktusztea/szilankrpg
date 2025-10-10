@@ -1,6 +1,6 @@
 # Karakteralkotás
 
-Itt megtudhatod, hogyan alkoss meg egy karaktert a Szilánk szabályrendszere alatt.
+Megérkeztünk a karakter megalkotásának fejezetéhez.
 
 - [Karakteralkotás bevezetés](010_01_karakteralkotas_bevezeto.md)
 - [Karakteralkotó ods](010_02_karakteralkoto_ods.md)
