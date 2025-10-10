@@ -27,7 +27,7 @@ Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, po
 -1 Harckeret / MGT
 ```
 
-🔆 A viselt vértezet NEM számít be a Felszerelés által fent számított keret alá.
+🔆 A viselt vértezet NEM számít be a felszerelési tárgyak levonásai alá - arra a páncélok MGT értékét használjuk.
 
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
