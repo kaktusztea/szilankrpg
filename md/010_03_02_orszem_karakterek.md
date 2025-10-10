@@ -1,6 +1,6 @@
 ## Őrszem karakterek
 
-A Kalandozók mellett egy másik kiemelt, speciális lélek típus, amelyek a létezés síkján szilárd oszlopként állnak.
+A Kalandozók mellett egy másik kiemelt, speciális lélek típus, amely a létezés síkján szilárd oszlopként áll.
 
 Míg a Kalandozók lételeme a mozgás, az Őrszem karakter pont ennek ellentéte: egy adott terület ura. Ez lehet egy templom, egy város, egy régió, egy elfeledett szakrális, mágikus hely.
 
