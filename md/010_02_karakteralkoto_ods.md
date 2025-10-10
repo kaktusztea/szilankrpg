@@ -11,7 +11,7 @@ A felületen a **halványsárgával** jelölt mezők módosíthatóak, minden m�
 
 ### Ellenőrző funkciók, automatizmusok
 
-Egyes kiemelt - főleg harci - képzettségek és fortélyok követelményeit ellenőrzi a Karakteralkotó - ezek alapból szerepelnek is már a felületen, de ami nincs beírva, azok követelményeit egyelőre magunknak kell végeznünk.
+Egyes kiemelt - főleg harci - képzettségek és fortélyok követelményeit ellenőrzi a Karakteralkotó - ezek alapból szerepelnek is már a felületen, de ami nincs beírva, azok követelményeit egyelőre magunknak kell ellenőriznünk.
 
 A KP költések, HM limit, Harcmodorok, Kétkezes Harc, Mesterfegyver bónuszai, Páncélok értékei, ÉP táblázat számai, stb. mind automatikusan kerülnek kiszámításra.
 
