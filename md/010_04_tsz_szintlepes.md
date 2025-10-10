@@ -27,8 +27,8 @@ Irányelvek karakter szintekre:
   ez az 1.szint
 6.szint:
   Tapasztalt gyakornok.
-  Sorkatona pár év tapasztalattal
-  tapasztalt varázslósegéd
+  Sorkatona pár év tapasztalattal.
+  Tapasztalt varázslósegéd.
 9.szint:
   Kismester. Tapasztalt harcos,
   elismert mágiatudó
