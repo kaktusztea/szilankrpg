@@ -6,7 +6,7 @@ Fontos különbség más, hagyományos rendszerekhez képest, hogy a Szilánk ka
 
 Mikor karaktert alkotsz, először fejben elképzeled a küllemét, a jellemét, a származását, hogy mihez ért, miben jó, milyen ismereteket tanult eddigi pályafutása során, majd jöhetnek a számokkal ennek megfeletetett, modellezett jellemzői.
 
-Ha egyből fejest ugranál a közepébe, a [Példakarakter megalkotása](010_11_peldakarakter_megalkotasa.md) fejezetben lépésről lépésre bemutatjuk egy karakter létrehozását. Mindazonáltal érdemes lehet előbb elolvasni a megelőző fejezeteket is.
+Ha egyből fejest ugranál a közepébe, a [Példakarakter megalkotása](010_11_peldakarakter_megalkotasa.md) fejezetben lépésről lépésre bemutatjuk a folyamatot. Mindazonáltal érdemes lehet előbb elolvasni a megelőző fejezeteket is.
 
 <br />
 
