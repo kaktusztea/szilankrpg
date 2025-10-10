@@ -5,7 +5,6 @@ Egy `Szilánk` karakter megalkotása nagyságrendekkel meggyorsítható a **Kara
 <!-- markdown-link-check-disable -->
 Használatához [LibreOffice](https://www.libreoffice.org/download/download/) telepítése szükséges, a Microsoft Office sajnos nem kezeli jól az <!-- markdown-link-check-disable --> [OpenDocument](https://groups.oasis-open.org/communities/tc-community-home2?CommunityKey=4bf06d41-79ad-4c58-9e8e-018dc7d05da8) <!-- markdown-link-check-enable --> szabványt...
 
-
 ### Szerkesztési tanácsok
 
 A felületen a **halványsárgával** jelölt mezők módosíthatóak, minden mást az automatizmus számol. A választható elemek (képzettségek, fortélyok, hátterek, fegyverek) mind legördülő menüből választhatóak, a számértékeket a numerikus billentyűzeten írjuk be. Számos aktív ellenőrző funkció működik a felületen, hogy ne írhassunk be érvénytelen értékeket.
