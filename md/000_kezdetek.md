@@ -4,7 +4,7 @@
 
 Mielőtt belevágunk a szabályok ismertetésébe, a karakteralkotás folyamatába, orientálódjunk egy kicsit. Mi ez a rendszer, honnan, mikor indult és miért? Mik a főbb jellemzői, kinek szántuk?
 
-Pár hasznos tanács a szerepjáték során gyakran előforduló klasszikus hibák elkerülésére.
+Adunk pár hasznos tanácsot is  a szerepjáték során gyakran előforduló klasszikus hibák elkerülésére.
 
 Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiájáról, valamint a dokumentumban használt szimbólumokról. Végül egy játékot meggyorsító Harci linkgyűjteménnyel zárjuk a fejezetet.
 

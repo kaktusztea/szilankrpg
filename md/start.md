@@ -48,6 +48,7 @@
 ---
 ### 1. [Karakteralkotás](010_00_karakteralkotas.md)
 
+- [Karakteralkotás bevezetés](010_01_karakteralkotas_bevezeto.md)
 - [Karakteralkotó ods](010_02_karakteralkoto_ods.md)
 - [A karakter jellemzői](010_03_00_karakter_jellemzoi.md)
   - [Kalandozók](010_03_01_kalandozok.md)

@@ -8,7 +8,10 @@ A M* világán nem az acél az egyetlen fegyver, vagy óvó erő. Szellemi energ
 
 Kiemelt fejezetet szenteltünk a [Szituációknak](160_szituaciok.md), amely fejezetei segítenek, hogy ne maradj sorvezető nélkül klasszikus próbahelyzetek során sem, mint például az [Érzékelés, Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) - ami talán a leggyakoribb ellenpróbás szituáció, amivel a kalandozásaid során találkozhatsz. 
 
-LáásuAlább a dokumentumban előforduló, segítő szimbólumok magyarázatát találod. Utána pedig belevágunk a [Karakteralkotás](010_00_karakteralkotas.md) mélységeibe. Kalandra fel!
+A rendszer kiválóan adaptálható nem-fantasy, modern világokra is, ennek főleg két eszköze van szabályok szontjén:
+
+- új ad-hoc [Szabad fortélyok](042_szabad_fortelyok.md) meghatározásával a képzettségek kiterjesztéseként (példákkal)
+- [Távharc Osztó](072_tavharc_ve_oszto_cella.md) meghatározásával lőfegyverekre (Távcsöves puska: `10`)
 
 ---
 

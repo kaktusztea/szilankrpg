@@ -19,7 +19,7 @@ Mikor karaktert alkotsz, először fejben elképzeled a küllemét, a jellemét,
 3.szint: nullpont
 ```
 
-Először a karakter [Tapasztalati Szintjét](010_04_tsz_szintlepes.md) kell meghatároznod. A `Szilánk` rendszerében `1-21.szint` intervallumban játszhatsz karakterrel, a **3. Tapasztalati szint** szimbolizálja a "nullpontot", az átlagos, hétköznapi, novícius karaktert, amit más szerepjátékok `1.szintű` kalandozóként jellemeznek.
+Először a karakter [Tapasztalati Szintjét](010_04_tsz_szintlepes.md) kell meghatároznod. A `Szilánk` rendszerében `[1; 21]` szint intervallumban játszhatsz karakterrel, a **3. Tapasztalati szint** szimbolizálja a "nullpontot", az átlagos, hétköznapi, novícius karaktert, amit más szerepjátékok `1.szintű` kalandozóként jellemeznek.
 
 Ez a filozófia (`3.szint` a nullpont) a szabályrendszer más területein is visszaköszön majd.
 
