@@ -29,6 +29,7 @@ Itt megtudhatod, hogyan alkoss meg egy karaktert a Szilánk szabályrendszere al
   - [Mágiaellenállás](010_09_04_magiaellenallas.md) 🎲
   - [Méregellenállás](010_09_05_meregellenallas.md) 🎲
 -  [Nem Játékos Karakterek](010_10_njk.md)
+- [Példakarakter megalkotása](010_11_peldakarakter_megalkotasa.md)
 
 ---
 

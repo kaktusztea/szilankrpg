@@ -75,6 +75,7 @@
   - [Mágiaellenállás](010_09_04_magiaellenallas.md) 🎲
   - [Méregellenállás](010_09_05_meregellenallas.md) 🎲
 - [Nem Játékos Karakterek](010_10_njk.md)
+- [Példakarakter megalkotása](010_11_peldakarakter_megalkotasa.md)
 
 ---
 ### 2. [Hátterek](020_hattererek.md) 🟡
