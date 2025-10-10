@@ -105,6 +105,21 @@ Jöhetnek a [Származtatott értékek](010_09_00_szarmaztatott_ertekek.md) kisz�
 
 Végül jöjjön karaktered [harcértékeinek megállapítása](062_01_ke_te_ve_ce.md) a harci ismereteid értékei alapján.
 
+<br />
+
+---
+## Ajánlás karakteralkotás opcionális menetére
+
+A lenti folyamat leginkább karakterközpontú játékosok számára ajánlott, akik nem csak egy számhalmazon alapuló gyilkológéppel szeretnének játszani, hanem "élő, lélegző" karaktereket alkotnának.
+
+Az elvont és színesítő ismeretek felől haladunk a "tápos" irányba. A harci, misztikus ismeretek meghatározása történik a folyamat legvégén.
+
+- `1.` Karakter előtörténeténetének kidolgozása - számok nélkül
+- `2.` Karakter jelleme, személyiségének meghatározása
+- `3.` Szabad Fortélyok kiválasztása
+- `4.` Szekunder KP elköltése
+- `5.` Sima KP elköltése (ne feledd ,ezeket is lehet szekunderre ismeretekre fordítani!)
+
 ---
 
 🔗 [Karakteralkotó ods](010_02_karakteralkoto_ods.md) →
