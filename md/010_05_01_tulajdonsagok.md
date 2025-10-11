@@ -68,7 +68,6 @@ Edzettség
 Ügyesség
   - Támadó Érték (TÉ)
   - Védő Érték (VÉ)
-  - max HM/Szint értéke
 ```
 ```
 Gyorsaság
