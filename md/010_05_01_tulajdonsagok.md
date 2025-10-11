@@ -39,7 +39,7 @@ Tulajdonság  |  Költség
 
 \* Csak faji módosítóval, vagy mágiával
 
-`Minden negyedik` karakterszinten kapsz további `+2` pontot, melyet szintén a fenti táblázat alapján fordíthatsz tulajdonságaid növelésére. Figyelem! Nem egy Tulajdonság értékét növelheted kettővel, hanem ennyi pontot kapsz, amelyből kigazdálkodhatsz egy Tulajdonság növelést. Az így kapott bónusz pontokat „tartalékolhatod” is. Például egy `+3`-ról `+4`-re való növelés költsége `4 pont`, amelyre `2 szint` fejlődés során tehetsz szert.
+`Minden második` karakterszinten kapsz további `+1` pontot, melyet szintén a fenti táblázat alapján fordíthatsz Tulajdonságaid növelésére. Figyelem! Nem egy Tulajdonság értékét növelheted egyel, hanem ennyi pontot kapsz, amelyből kigazdálkodhatsz egy Tulajdonság növelést. Az így kapott bónusz pontokat „tartalékolhatod” is. Például egy `+3`-ról `+4`-re való növelés költsége `4 pont`, amely bónuszra `8` Tapasztalati szint` fejlődés során tehetsz szert.
 
 ---
 A Tulajdonságok értéke alapesetben `-5` és `+5` között mozoghat. A `-5` értelemszerűen a leggyengébb, súlyosan fogyatékos karakterek sajátja, míg a `+5`-ös értékkel bírók a legendák héroszai, irigyelt, rosszabb esetben gyűlölt nagyságok. A fenti határokon a [Faj Hátterek jellemzői](021_faj_hatterek.md), illetve esetleges mágikus hatások változtathatnak, de ökölszabály, hogy **elfszabásúak** egyik tulajdonsága sem nőhet `+7` fölé semmilyen körülmények között.
