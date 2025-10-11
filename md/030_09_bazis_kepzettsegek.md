@@ -21,7 +21,7 @@ Kategóriánként alább láthatjuk őket:
 
 ### Iparos
 
-- [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md): produktumok, kézzel létrehozott termékek alkotását takaró alapismeret, melyet szakma fortélyok terjesztenek ki (`E`).
+- [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md): produktumok, kézzel létrehozott termékek alkotását takaró alapismeret, melyet kézműves fortélyok terjesztenek ki (`E`).
 
 ### Hadi tudományok
 

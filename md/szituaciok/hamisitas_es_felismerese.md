@@ -63,16 +63,16 @@ Kapcsolódik: [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md), [
 <br />
 
 ---
-### Szakma vs Szakma
+### Kézművesség vs Kézművesség
 
 Egy adott szakmában létrehozott produktum hamisítása és annak felismerése.
 
 ```
 🔆Készítő
-Szakma + Tulajdonság
+Kézművesség + Tulajdonság
       vs
 🔆Felismerő
-Szakma + Tulajdonság
+Kézművesség + Tulajdonság
 ```
 
 
@@ -81,7 +81,7 @@ Szakma + Tulajdonság
   Hamisítás kiterjesztés (N)
 ```
 
-Kapcsolódik: [Szakma](../kepzettsegek.szekunder/kezmuvesseg.md) képzettség.
+Kapcsolódik: [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettség.
 
 ---
 

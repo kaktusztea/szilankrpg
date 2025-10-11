@@ -75,7 +75,7 @@ Faj misztériumok - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%E
 
 🔵 [Nyelvtanulás](kepzettsegek.szekunder/nyelvtanulas.md)
 
-🔵 [Szakma](kepzettsegek.szekunder/kezmuvesseg.md) 🤝 🔁
+🔵 [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) 🤝 🔁
 
 🔵 [Természetjárás](kepzettsegek.szekunder/termeszetjaras.md)
 

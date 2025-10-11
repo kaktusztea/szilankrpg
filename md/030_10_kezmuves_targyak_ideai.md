@@ -1,6 +1,6 @@
 ## Kézműves tárgyak Ideái
 
-Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemzünk. Ez a szint függ a létrehozó mester [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettségének szintjétől. Természetesen jártasnak kell lenned a képzettséget kiterjesztő adott [szakma fortélyban](kepzettsegek.szekunder/kezmuvesseg.md#er%C5%91s-kiterjeszt%C3%A9s) is.
+Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemzünk. Ez a szint függ a létrehozó mester [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) képzettségének szintjétől. Természetesen jártasnak kell lenned a képzettséget kiterjesztő adott [kézműves fortélyban](kepzettsegek.szekunder/kezmuvesseg.md#er%C5%91s-kiterjeszt%C3%A9s) is.
 
 ### Biztos tudás szintek
 

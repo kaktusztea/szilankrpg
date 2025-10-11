@@ -13,7 +13,7 @@ Jól tudsz másolni műkincseket, műtárgyakat. Képes vagy egyes művészeti �
 
 - [Értékbecslés](../kepzettsegek.szekunder/ertekbecsles.md): Már a hamis portéka is könnyebben feltűnik.
 - [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md): valamelyik képzőművészeti ágban, amely a képzettség leírásánál szerepel és amelynek fortélya megvan karakterednek - képes vagy tudásodnak megfelelő szintű hamisítványokat létrehozni.
-- [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) (asztalos, cipész, szabó, ékszerész, pénzverő, stb. ): az adott szakma magas szintű produktumainak hamisítása.
+- [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) (asztalos, cipész, szabó, ékszerész, pénzverő, stb. ): az adott kézműves szakma magas szintű produktumainak hamisítása.
 - [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md): Felismered, hogy a mű hamisítvány.
 
 ### Szituációk
