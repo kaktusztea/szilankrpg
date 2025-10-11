@@ -35,6 +35,9 @@ Tulajdonság  |  Költség
      5            20
      6*           26
      7*           33
+
+
++1 pont / 2 TSz
 ```
 
 \* Csak faji módosítóval, vagy mágiával
