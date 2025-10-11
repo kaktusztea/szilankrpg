@@ -49,13 +49,13 @@ Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni,
 ```
 NJK: 0 MP
 
-Erős, Kalandozó NJK:
+Erős, Kalandozó, Őrszem NJK:
   MP, mint egy JK
 ```
 
 A **Nem Játékos Karakterek** alapból **nem kapnak** `MP` javadalmazást.
 
-A komolyabb, kidolgozottabb, nagyobb ellenfél Nem Játékos Karakterek viszont egy különleges esetben ugyannyi `MP` mennyiséggel rendelkeznek, mint egy **Játékos Karakter**: mégpedig akkor, amennyiben ők is [**Kalandozók**](010_03_00_karakter_jellemzoi.md) és éppen egy kalandban vesznek részt.
+A komolyabb, kidolgozottabb Nem Játékos Karakter ellenfelek viszont egy különleges esetben ugyannyi `MP` mennyiséggel rendelkeznek, mint egy **Játékos Karakter**: mégpedig akkor, amennyiben ők is [**Kalandozók**](010_03_00_karakter_jellemzoi.md), vagy **[Őrszemek](010_03_02_orszem_karakterek.md)**.
 
 ---
 

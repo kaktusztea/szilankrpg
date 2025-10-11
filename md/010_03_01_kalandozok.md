@@ -19,7 +19,7 @@ A bevezetőben említett Szilánk valóságformáló erővel bír. Ezt számszer
 ---
 ### [Manőver Pontok](066_02_manover_pontok.md)
 
-(Kizárólag) Kalandozóként néha rásegíthetsz a harci szerencsére a fenti pontok használatával.
+Kalandozóként, vagy [Őrszemként](010_03_02_orszem_karakterek.md) a karakter néha rásegít a harci szerencsére a fenti pontok használatával.
 
 ---
 🔗 [Őrszem karakterek](010_03_02_orszem_karakterek.md)→
