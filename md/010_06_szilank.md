@@ -19,7 +19,7 @@ Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, 
 ### Javadalmazás
 
 ```
-- Kaland elején 1 Szilánk / JK
+- Kaland elején: 1 Szilánk / JK
 - Max: 3 Szilánk
 - Következő Kaland elején 1 
   értékre áll vissza
@@ -29,7 +29,7 @@ Minden kaland elején a Szilánk értéke visszaáll `1`-re. A kaland során sze
 
 Egy kaland során
 - `1` új Szilánkot szerezni nagy dolognak számít
-- `2` Szilánk szerezése már epikus cselekedet
+- `2` Szilánk szerezése már eposzi cselekedet
 
 <br />
 
@@ -42,20 +42,20 @@ Példák:
 - Véletlenül épp ismerem a fogadóst korábbról.
 - Mindenkinek jut épp elég ló, mikor friss hátasokra váltunk.
 - A boltos nőnek épp a férfiideálja a Játékos Karakter.
-- Elrontottam az Emberismeret képzettségpróbámat, de tegnap hallottam erről a törpéről a kártyaasztalnál, hogy imádja az arany ékszereket.
-- Szerencsére épp van egy titkosajtó a fogadó szobájában. Fontos: attól, hogy ott van, még lehet, hogy nem taláják meg - például mert elrontják az Észlelés képzettségpróbát.
-- "Egy ritka növényt keresek, dobhassak rá Természetjárást, hogy találok -e." Olyan esetben, ahol nem is dobhatna, mert nem őshonos erre a növény.
+- Elrontottam az **Emberismeret** képzettségpróbámat, de tegnap hallottam erről a törpéről a kártyaasztalnál, hogy imádja az arany ékszereket.
+- Szerencsére épp van egy titkosajtó a fogadó szobájában. Fontos: attól, hogy ott van, még lehet, hogy nem találjátok meg - például mert elrontjátok az Észlelés képzettségpróbát.
+- "Egy ritka növényt keresek, dobhassak rá **Természetjárást**, hogy találok -e." Olyan esetben, ahol amúgy nem is dobhatnál, mert nem őshonos a növény errefelé.
 
 <br />
 
-### 🔆 Használata: Nagy belenyúlás a történetbe: `2 Szilánk`
+### 🔆 Használata: Jelentős belenyúlás a történetbe: `2 Szilánk`
 
 Fontos: a `2` Szilánk költség NEM adható össze két külön karakter pontjaiból, egy személynek kell fedeznie a teljes költséget!
 
 Példák:
 - "Éppen sikerül kihallgatnom a fekete mágust - gonosz terveiről". KM: "Rendben, nagy mázlid volt, a mágus azt mondja, hogy ..."
 - Épp van egy titkosajtó a halálszekta börtönében (ezt is meg kell még találni)
-- "Újra elrontottam a Mászás próbámat, le fogok zuhanni a biztos halálba. Mi van, ha pont ledob egy kötelet az a goblin, akinek az életét megkíméltem a sziklateraszon?" KM: "Rendben."
+- "Újra elrontottam a **Mászás** próbámat, le fogok zuhanni a biztos halálba. Mi van, ha pont ledob egy kötelet az a goblin, akinek az életét megkíméltem a sziklateraszon?" KM: "Rendben."
 
 <br />
 
@@ -79,9 +79,9 @@ Példák:
 
 **Jó**, mert törekszik a heroikus, epikus fantasy történetmesélése, és jutalmazza a legendás pillanatokat.
 
-**Jó**, mert narratív komplikációt vezet be a szerepjátékozás révén. Azaz: "ha ki mered játszani a karaktered egy tulajdonságát, akkor a cselekményt bonyolíthatod vele". A narratív pontok fontos tulajdonsága, hogy a történetmesélést demokratizálja, mert jelentős befolyásolási hatalmat ad a játékosok kezébe. Fontos, hogy ez a **JÁTÉKOSOK** kezébe adja a hatalmat, nem a **KARAKTEREK** kezébe. A játékos dönti el, hogy szeretné-e egy Szilánkért cserébe "**A**" helyett "**B**" irányba elvinni a kalandot. Szóval a "Szilánk" **narratív** funkcióját jól megvalósítja. Röviden: a Szilánk **megszerzésével** saját magam számára negatívan befolyásolom a kalandot, az **elköltésével** pozitívan.
+**Jó lehet**, mert narratív komplikációt vezet be a szerepjátékozás révén. Azaz: "ha ki mered játszani a karaktered egy tulajdonságát, akkor a cselekményt bonyolíthatod vele". A narratív pontok fontos tulajdonsága, hogy a történetmesélést demokratizálja, mert jelentős befolyásolási hatalmat ad a játékosok kezébe. Fontos, hogy ez a **JÁTÉKOSOK** kezébe adja a hatalmat, nem a **KARAKTEREK** kezébe. A játékos dönti el, hogy szeretné-e egy Szilánkért cserébe "**A**" helyett "**B**" irányba elvinni a kalandot. Szóval a "Szilánk" **narratív** funkcióját jól megvalósítja. Röviden: a Szilánk **megszerzésével** saját magam számára negatívan befolyásolom a kalandot, az **elköltésével** pozitívan.
 
- **Negatív lehet**, mert sok klasszikus M\* kalandozó számára idegen lehet ez a fajta játékmechanika. Nem csak a vérpistikék idegenkednek attól, hogy úgy játsszanak, amivel direkt "rosszat akarnak" a saját karakterüknek. Régi beidegződés, hogy a játékosok "féltik" a karakterüket, ezért lehet, hogy sokaknak szokatlan lehet ez a fajta jutalmazási rendszer. Ebben benne van az, hogy azért a legmélyén a szerepjáték (főleg a M*) sokszor egy power fantasy. Persze ennek a játékmechanikának lehet egy pozitív, nevelő célzata is.
+ **Lehetnek hátrányai is**, mert sok klasszikus M\* kalandozó számára idegen lehet ez a fajta játékmechanika. Nem csak a vérpistikék idegenkednek attól, hogy úgy játsszanak, amivel direkt "rosszat akarnak" a saját karakterüknek. Régi beidegződés, hogy a játékosok "féltik" a karakterüket, ezért lehet, hogy sokaknak szokatlan lehet ez a fajta jutalmazási rendszer. Ebben benne van az, hogy azért a legmélyén a szerepjáték (főleg a M*) sokszor egy power fantasy. Persze ennek a játékmechanikának lehet egy pozitív, nevelő célzata is.
 
 <br />
 
@@ -94,14 +94,14 @@ A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról,
 
 **Jó**, mert szorgalmazza, jutalmazza a "jó" szerepjátékot, a karakter kijátszását. Emellett minden játékalkalommal garantáltan lesz egy plusz Szilánkja valakinek, nem függ attól, hogy a kalandban történt-e kellően jelentős esemény.
 
- **Negatív lehet**, mert nem jutalmazza a heroikus, epikus fantasy momentumokat.
+ **Lehet hátránya is**, mert nem jutalmazza a heroikus, epikus fantasy momentumokat.
  
- **Negatív lehet**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
+ **Lehet azért is hátránya**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` mód előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
 
 <br />
 
 ---
-### A csapat döntése kaland elején: melyik modellt használják?
+### A csapat döntése kaland elején: melyik modellt használják? `1.; 2.`
 
 A kalandot megelőző áttekintő beszélgetésen a csapat eldöntheti, melyik modellt szeretné követni.
 
