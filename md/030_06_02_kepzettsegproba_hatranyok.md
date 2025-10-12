@@ -23,49 +23,49 @@ Automatikus kudarc
 ### Fizikai képzettségpróba hátrányok
 
 `Hátrány-1`
-- Fegyver/Pajzs akadályoztatása (1)
-- Páncél akadályoztatása (1)
+- Fegyver/Pajzs akadályoztatása (`1`)
+- Páncél akadályoztatása (`1`)
 
 `Hátrány-2`
-- Fegyver/Pajzs akadályoztatása (2)
-- Páncél akadályoztatása (2) .. ?
-- Rosszullét (2) Erős
+- Fegyver/Pajzs akadályoztatása (`2`)
+- Páncél akadályoztatása (`2`) .. ?
+- Rosszullét (`2`) Erős
 
 ---
 ### Szellemi képzettségpróba hátrányok
 
 `Hátrány-1`
-- Fizikai (1) Fáradtság
-- Szellemi (2) Eltompultság
+- Fizikai (`1`) Fáradtság
+- Szellemi (`2`) Eltompultság
 
 `Hátrány-2`
-- Fizikai (2) Kimerültség
-- Szellemi (3) Delírium
-- Zavar (1) Kizökkent
+- Fizikai (`2`) Kimerültség
+- Szellemi (`3`) Delírium
+- Zavar (`1`) Kizökkent
 
 Automatikus kudarc
-- Indulat (3) Őrjöngés
-- Zavar (2) Megrendült
+- Indulat (`3`) Őrjöngés
+- Zavar (`2`) Megrendült
 
 ---
 ### Szociális képzettségpróba hátrányok
 
 `Hátrány-1`
-- Félelem (1) Szorongás
-- Fizikai (3) Elcsigázottság
-- Rosszullét (2) Erős
-- Szellemi (2) Eltompultság
+- Félelem (`1`) Szorongás
+- Fizikai (`3`) Elcsigázottság
+- Rosszullét (`2`) Erős
+- Szellemi (`2`) Eltompultság
 
 `Hátrány-2`
-- Eszmélet (1) Bódultság
-- Szellemi (3) Delírium
-- Zavar (1) Kizökkent
+- Eszmélet (`1`) Bódultság
+- Szellemi (`3`) Delírium
+- Zavar (`1`) Kizökkent
 
 Automatikus kudarc
-- Eszmélet (2) Kábultság
-- Félelem (2) Rettegés/Pánik
-- Indulat (3) Őrjöngés
-- Zavar (2) Megrendült
+- Eszmélet (`2`) Kábultság
+- Félelem (`2`) Rettegés/Pánik
+- Indulat (`3`) Őrjöngés
+- Zavar (`2`) Megrendült
 
 <br />
 

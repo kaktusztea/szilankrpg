@@ -1,7 +1,11 @@
 ## Képzettségek és fortélyok kapcsolata
 
-Két módszer létezik: **Bónusz adása** és **Kiterjesztés** (Normál, Erős).
+Két módszer létezik arra, hogyan képes egy fortély képzettség(ek)re hatást gyakorolni:
 
+- **Bónusz adása**
+- **Kiterjesztés** (Normál, Erős).
+
+---
 ### `1.` Fortély mint bónusz
 
 ```
@@ -18,9 +22,9 @@ Ebben az esetben az adott fortély megléte nem követelmény, viszont ha megvan
 ---
 ### `2.` Képzettségek kiterjesztése Fortélyokkal
 
-Egyes képzettségek az alap tudást lefedő ismeretek keretein túl is "kiterjeszthetőek", egyesek pedig "felszeletelhetőek" tudásterületekre. A [Szabad Fortélyok](042_szabad_fortelyok.md) jellemzője, hogy mind ilyen képzettség-kiterjesztést végeznek, de egyes egyéb fortélyok is képesek erre. Hogy melyek, azok mindig az adott képzettség adatlapján olvashatóak (a KM megkövetelhet egyéb kiterjesztéseket is, ha indokoltnak látja).
+Egyes képzettségek az alap tudást lefedő ismeretek keretein túl is "**kiterjeszthetőek**", egyesek pedig "felszeletelhetőek" tudásterületekre. A [Szabad Fortélyok](042_szabad_fortelyok.md) jellemzője, hogy mind ilyen képzettség-kiterjesztést végeznek, de egyes egyéb fortélyok is képesek erre. Hogy melyek, azok mindig az adott képzettség adatlapján olvashatóak (a KM megkövetelhet egyéb kiterjesztéseket is, ha indokoltnak látja).
 
-A képzettségkiterjesztésnek két módja van: **Normál** és **Erős**. Ez azt fejezi ki, hogy mennyire szigorú a kapcsolat a képzettség és a fortély között. Ha van egy képzettségpróba, amelynek ismeret területe a KM szerint ezen képzettség alá tartozik ÉS lefed egy kapcsolódó Fortélyt, akkor használjuk ezeket a kiterjesztéseket.
+A képzettségkiterjesztésnek két módja van: **Normál** és **Erős**. Ez azt fejezi ki, hogy mennyire szigorú a kapcsolat a képzettség és a fortély között. Ha van egy képzettségpróba, amelynek ismereti területe a KM szerint ezen képzettség alá tartozik ÉS lefed egy kapcsolódó Fortélyt, akkor **kiterjesztésről** beszélünk.
 
 ### 🔆 Képzettség törzstudása
 
@@ -83,7 +87,7 @@ Ha több fortély terjeszt ki képzettségpróbánál és legalább `1 db` olyan
 
 ### 🔆 Speciális: Több fortély bónusza
 
-Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít. Kivéve, ha az alacsonyabb elérte a maximum fokot. Ilyenkor a magasabb bónusza az irányadó.
+Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít. Kivéve, ha az alacsonyabb elérte a maximum fokát. Ilyenkor a magasabb bónusza az irányadó.
 
 Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjeszt
 - `A` fortély - `2.fok`

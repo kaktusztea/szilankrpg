@@ -176,12 +176,42 @@ Ha az adott képzettséget nem lehet képzetlenül megpróbálni, akkor a KM egy
 
 Ha a karakternek egy olyan összetett feladatot kell elvégeznie, ami nem intézhető el egy darab dobással (pl. megmászni egy hegyet, vagy rettentő magas várfalat, esetleg órákon keresztül verset szavalni), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
 
-- A játékos dob egy próbát az indokolt maximális nehézségre, például „Nagyon nehéz" (`Célszám:12`).
-- Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal (`-3` célszám) alacsonyabb nehézség ellen**. Pl. (`2 db Nehéz próbát`). Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
-- Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat „milyen hosszú", mennyire „többlépcsős".
-- Ha nagyon finom bontást akarunk, akkor `akár 2 fokozattal` (-6  célszám) alacsonyabb nehézségre is dobathatunk akár így is: Nagyon nehéz (1 db), Nehéz(1 db), Átlagos (1 db).
+A játékos dob egy próbát az indokolt maximális nehézségre, például:
 
-#### ⚡Példa: Megmászni egy 200 méter magas, omladékos hegyet
+#### Elsődleges dobás
+
+```
+Célszám: 15 (Nagyon nehéz)
+```
+
+#### Másodlagos dobás
+
+Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal (`-3` célszám) alacsonyabb nehézség ellen**. Például:
+
+```
+Célszám: 12 (Nehéz)
+2 db próba
+```
+
+ Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
+
+#### Lépcsőzetes Célszámok módszere
+
+Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat „milyen hosszú", mennyire „többlépcsős". Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal (Célszámra: `-6` ) alacsonyabb nehézségre is dobathatunk akár teljesen folyamatos lefutással is:
+
+```
+Dobások Célszáma
+
+Elsődleges: 15 (Nagyon nehéz)
+Másodlagos: 12 (Nehéz)
+Másodlagos:  9 (Átlagos)
+```
+
+🔆 Megjegyzés: `2` fokozatnál (Célszámra: `-6` ) nagyobb különbségű dobást nem tehetsz.
+
+<br />
+
+#### ⚡Példa összetett képzettségpróbára: Megmászni egy 200 méter magas, omladékos hegyet
 
 ```
 Tetves, a tolvaj
@@ -229,7 +259,7 @@ Hasonló szituáció: [Mászás képzettségpróbára összetett példa](szituac
 ---
 ### Összetett képzettségpróba - ellenpróba eset
 
-Különleges eset az ilyen. Olyankor fordulat elő, mikor hosszabb, összetettebb próba szükséges, amelyben a felek összemérhetik tudásukat.
+Különleges eset az ilyen. Olyankor fordulhat elő, mikor hosszabb, összetettebb próba szükséges, amelyben a felek összemérhetik tudásukat.
 
 - Ellenpróbákat dobatunk, tehát **nincs** Nehézség célszám
 - Ellenpróbák száma páratlan és zárt végű, tehát meghatározott darab, jellemzően: `3, 5, 7`, vagy extrém esetben `9`
@@ -238,36 +268,33 @@ Különleges eset az ilyen. Olyankor fordulat elő, mikor hosszabb, összetetteb
 
 #### ⚡Konkrét példa
 
-Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kihozzák hátasukból a maximumot, figyelnek a pihenésre, etetésre, a fenntartható maximális tempóra. Az ellepróba azt dönti el, utoléri-e áldozatát.
+Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kihozzák hátasukból a maximumot, figyelnek a pihenésre, etetésre, a fenntartható maximális tempóra. Az ellepróba azt dönti el, utoléri-e az üldöző áldozatát.
 
 #### Narratív eszköz
 
-Ez a játékmechanika tempókezelési eszközt is adhat a KM kezébe a mesélés során, ha nem akarja lemesélni minden mozzanatát például egy hosszabb, - de sokadjára már unalmas - üldözésnek.
+A fent leírt játékmechanika tempókezelési eszközt is adhat a KM kezébe a mesélés során, ha nem akarja lemesélni minden mozzanatát például egy hosszabb, - de sokadjára már unalmas - üldözésnek.
 
-Ezen felül a ez a módszer a feszültség fenntartására is alkalmas, mert esélyesen egészen az utolsó pár dobásig nem tudni, ki kerekedik majd felül. Alkalmazhatjuk fázisokban, időben szétterítve is, tehát attól függően, ki nyerte épp az aktuális dobást, a történet is aszerint alakul, míg az utolsó dobásnál következik be a kapott eredmény okozta esemény (például a fent említett zsoldos 5 napi üldözés után utolérte áldozatát).
+Ezen felül ez a módszer a feszültség fenntartására is alkalmas, mert esélyesen egészen az utolsó pár dobásig nem tudni, ki kerekedik majd felül. Alkalmazhatjuk fázisokban, időben szétterítve is, tehát attól függően, ki nyerte épp az aktuális dobást, a történet is aszerint alakul, míg az utolsó dobásnál következik be a kapott eredmény okozta esemény (például a fent említett zsoldos `5` napi üldözés után utolérte a menekülőt).
 
 <br />
 
 ---
 ### Helyettesítés
 
-Vannak olyan esetek, amikor egyes képzettségek ismerete helyettesítő segítséget nyújthat más képzettségek használatakor.
-
-Ekkor a **Helyettesítő képzettség** szintjének `1/3` része alkalmazható az elsődleges képzettség helyett.
-
-❗**Fontos**: a helyettesítő értékek NEM adódnak hozzá az elsődleges képzettséghez, hanem kiváltják azt.
-
-Tehát:
-
 ```
-- (Szint/3) behelyettesítő értékként
+- (képzettség szint/3)
+  behelyettesítő értékként
 - Max szint helyettesítve: 5
 - lefelé kerekítünk
 ```
 
-A helyettesítő képzettség(ek) értelemszerűen legfeljebb `5.szintű` helyettesítő értéket képesek adni (`15/3=5`).
+Vannak olyan esetek, amikor egyes képzettségek ismerete helyettesítő segítséget nyújthat más képzettségek használatakor.
 
-Az egyes helyettesítés-párokat nem írjuk le mind, ezek helyzetfüggőek, a KM rögtönözhet ha az adott szituációban úgy ítéli meg, hogy egy képzettség behelyettesíthető a fentiek szerint a másik helyére.
+Ekkor a **Helyettesítő képzettség** szintjének `1/3 ↓` része alkalmazható az elsődleges képzettség helyett.
+
+❗**Fontos**: a helyettesítő értékek NEM adódnak hozzá az elsődleges képzettséghez, hanem kiváltják azt.
+
+A helyettesítő képzettség(ek) értelemszerűen legfeljebb `5.szintű` helyettesítő értéket képesek adni (`15/3=5`). Az egyes helyettesítés-párokat nem írjuk le mind, ezek helyzetfüggőek, a KM rögtönözhet ha az adott szituációban úgy ítéli meg, hogy egy képzettség behelyettesíthető a fentiek szerint a másik helyére.
 
 #### ⚡Példa: Nyomozás helyettesítéssel
 
@@ -280,7 +307,7 @@ Ebben az esetben az **Emberismeret** képzettség az, amely helyettesítő képz
 
 Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 
-#### ⚡További Helyettseítés példák felsorolásszerűen
+#### ⚡További Helyettesítés példák felsorolásszerűen
 
 - [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) ⇆ [Mászás](kepzettsegek.szekunder/maszas.md)
 - [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) ⇆ [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md)
@@ -294,7 +321,7 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 ---
 ### Sérülés hatása képzettségpróbára
 
-Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják a képzettségpróbáit.
+Ha a karakter megsérül és `S3`, vagy `S4` [Sebesülés-kategóriába](https://github.com/kaktusztea/szilankrpg/blob/master/md/061_03_sebesules.md) került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják a képzettségpróbáit.
 
 <br />
 

@@ -34,6 +34,8 @@ A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az ad
 
 → [Vezető fortélyok](030_07_02_csoportosan_vegezheto_kepzettsegek.md)
 
+<br />
+
 ---
 ### ⚜️ 2. Csoportos szellemi képzettségpróba
 
