@@ -111,6 +111,6 @@ Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába kategóri
 
 ---
 
-🔗 [Szilánk](010_05_03_szilank.md) →
+🔗 [Szilánk](010_06_szilank.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

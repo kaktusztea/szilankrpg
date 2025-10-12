@@ -58,24 +58,24 @@
   - [Külső](010_03_05_kulso.md)
   - [Felszerelés](010_03_06_felszereles.md)
 - [Tapasztalati Szint](010_04_tsz_szintlepes.md)
-- [Egyedi pontokkal növelt jellemzők](010_05_00_egyedi_pontokkal_novelt_jellemzok.md)
-  - [Tulajdonságok](010_05_01_tulajdonsagok.md) ⚪
+- [Tulajdonságok, Tulajdonságpróba](010_05_00_tulajdonsagok_tulajdonsagproba.md)
+  - [Tulajdonságok](010_05_01_tulajdonsagok.md)
   - [Tulajdonságpróba](010_05_02_tulajdonsagproba.md) 🎲
-  - [Szilánk](010_05_03_szilank.md)
-- [Karakteralkotó Pontok (KP)](010_06_kp.md)
-- [KP költésével növelt jellemzők](010_07_00_kp_koltesevel_novelt_jellemzok.md)
-  - [HM, CM](010_07_01_hm_cm.md)
-  - [Képzettségek](010_07_02_kepzettsegek_99.md)
-  - [Fortélyok](010_07_03_fortelyok_99.md)
-- [Primer és Szekunder ismeretek](010_08_primer_szekunder_ismeretek.md)
-- [Származtatott értékek](010_09_00_szarmaztatott_ertekek.md)
-  - [Életerő Pont (ÉP), Fáradság Pont (FP)](010_09_01_ep_kt.md)
-  - [Harcértékek](010_09_02_harcertekek_99.md)
-  - [Manőver Pontok (MP)](010_09_03_manover_pontok_99.md)
-  - [Mágiaellenállás](010_09_04_magiaellenallas.md) 🎲
-  - [Méregellenállás](010_09_05_meregellenallas.md) 🎲
-- [Nem Játékos Karakterek](010_10_njk.md)
-- [Példakarakter megalkotása](010_11_peldakarakter_megalkotasa.md)
+- [Szilánk](010_06_szilank.md)
+- [Karakteralkotó Pontok (KP)](010_07_kp.md)
+- [KP költésével növelt jellemzők](010_08_00_kp_koltesevel_novelt_jellemzok.md)
+  - [HM, CM](010_08_01_hm_cm.md)
+  - [Képzettségek](010_08_02_kepzettsegek_99.md)
+  - [Fortélyok](010_08_03_fortelyok_99.md)
+- [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md)
+- [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md)
+  - [Életerő Pont (ÉP), Fáradság Pont (FP)](010_10_01_ep_kt.md)
+  - [Harcértékek](010_10_02_harcertekek_99.md)
+  - [Manőver Pontok (MP)](010_10_03_manover_pontok_99.md)
+  - [Mágiaellenállás](010_10_04_magiaellenallas.md) 🎲
+  - [Méregellenállás](010_10_05_meregellenallas.md) 🎲
+- [Nem Játékos Karakterek](010_11_njk.md)
+- [Példakarakter megalkotása](010_12_peldakarakter_megalkotasa.md)
 
 ---
 ### 2. [Hátterek](020_hattererek.md) 🟡
@@ -148,7 +148,7 @@
 - [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
 - [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 - [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
-- [HM, CM](010_07_01_hm_cm.md)
+- [HM, CM](010_08_01_hm_cm.md)
 - [Mesterfegyver fortély bónuszai](fortelyok.harci/mesterfegyver.md)
 
 #### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)

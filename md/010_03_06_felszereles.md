@@ -21,13 +21,14 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
   → alabárd, nagy pajzs ..
 ```
 
-Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `+1 Merevvért MGT` hatást okoz
+Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként az alábbi hatást okozza:
+
 ```
 -1 TÉ / MGT
 -1 Harckeret / MGT
 ```
 
-🔆 A viselt vértezet NEM számít be a felszerelési tárgyak levonásai alá - arra a páncélok MGT értékét használjuk.
+🔆 A viselt vértezet NEM számít be a fenti felszerelési tárgyak levonásai alá - arra a páncélok MGT értékét használjuk.
 
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑

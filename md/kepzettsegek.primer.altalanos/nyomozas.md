@@ -1,6 +1,6 @@
 ## 🔵 Nyomozás
 
-Ez egy [Primer képzettség](../010_08_primer_szekunder_ismeretek.md). Próba dobható.
+Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
 Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve a felderítés eljárásrendjének ismerete is fontos segítséget adhat. Az alábbi példák segítenek leírni, milyen jellegű információk nyerhetők a képzettség segítségével:
 - bűnjelek elemzése és következtetés is. Példa: el lett mozdítva a bútor.

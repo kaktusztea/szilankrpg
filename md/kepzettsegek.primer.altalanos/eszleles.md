@@ -1,6 +1,6 @@
 ## 🔵 Észlelés
 
-Ez egy [Primer képzettség](../010_08_primer_szekunder_ismeretek.md). Próba dobható.
+Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
 **Kapcsolódó főfejezet**: [Érzékelés, észlelés](../szituaciok/erzekeles_eszleles_aktiv_passziv.md)
 

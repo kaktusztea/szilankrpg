@@ -29,9 +29,9 @@ Ilyenkor alkalmazhatsz több mesélői eszközt, például a kimerülés érzék
 ---
 ### A KM nem szabálykönyv
 
-Mese közben a szűk keresztmetszet mindig a KM - ő írja le a környezetet, ő személyesíti meg a [Nem Játékos Karaktereket](010_10_njk.md), ő szimulálja le a képzeletbeli világ eseményeit.
+Mese közben a szűk keresztmetszet mindig a KM - ő írja le a környezetet, ő személyesíti meg a [Nem Játékos Karaktereket](010_11_njk.md), ő szimulálja le a képzeletbeli világ eseményeit.
 
-Ha nem jut eszedbe egy szabály, ne rakj még egy púpot szegény KM hátára, hogy tőle próbálod megtudni, inkább nézd meg a szabálykönyvben magad - ha lehetséges, készülj előre.
+Ha nem jut eszedbe egy szabály, ne rakj még egy púpot szegény KM hátára azzal, hogy belőle próbálod kipréselni a szabályokat - nézd inkább meg a szabálykönyvben magad, és ha lehetséges, készülj előre.
 
 ---
 

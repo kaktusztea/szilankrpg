@@ -1,6 +1,6 @@
 ## Harci linkek
 
-Gyors elérésű link gyűjtemény - játékosok számára.
+Gyors elérésű link gyűjtemény - játékalkalomra.
 
 [Harci taktikák](065_02_harci_taktikak.md)
 

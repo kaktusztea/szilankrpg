@@ -10,7 +10,7 @@ Az első `2` tapasztalati szint az előtörténet részének tekinthető, amenny
 
 A karakter fejlődése - kalandjai során megélt tapasztalatoknak köszönhetően - természetesen folyamatos, de az adminisztráció megkönnyítése érdekében alkalmazzuk a „Szintlépés" fogalmát. Szintlépés olyankor következik be, amikor a KM úgy ítéli, a karakter jelentősen fejlődött, sokat tapasztalt és ennek ideje lenne értékeiben is megmutatkoznia - ekkor bejelenti annak szintlépését.
 
-A játékos ezt követően a karakteralkotásnál meghatározott szabályok szerint növelheti karaktere egyes értékeit az ún. **Karakteralkotó Pontokból** (`KP`), melyeket ilyenkor kap. Ez utóbbi pontok elköltését lásd bővebben a [Karakteralkotó pontok (KP)](010_06_kp.md) fejezetben.
+A játékos ezt követően a karakteralkotásnál meghatározott szabályok szerint növelheti karaktere egyes értékeit az ún. **Karakteralkotó Pontokból** (`KP`), melyeket ilyenkor újra kap. Ez utóbbi pontok elköltését lásd bővebben a [Karakteralkotó Pontok (KP)](010_07_kp.md) fejezetben.
 
 Aki békésen, kihívások, újdonságok, megpróbáltatások nélkül éli életét, az nem tapasztal sokat, élete végére legfeljebb `5-6.szintre` jut el.
 
@@ -46,6 +46,6 @@ Irányelvek karakter szintekre:
 
 ---
 
-🔗 [Egyedi pontokkal növelt jellemzők](010_05_00_egyedi_pontokkal_novelt_jellemzok.md) →
+🔗 [Egyedi pontokkal növelt jellemzők](010_05_00_tulajdonsagok_tulajdonsagproba.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

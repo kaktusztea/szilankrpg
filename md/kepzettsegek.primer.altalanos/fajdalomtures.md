@@ -1,6 +1,6 @@
 ## 🔵 Fájdalomtűrés
 
-Ez egy [Primer képzettség](../010_08_primer_szekunder_ismeretek.md). Próba dobható.
+Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
 Legyőzni a fájdalmat, legyőzni önmagunkat. Ez a képzettség nem véletlenül kapcsolódik szorosan a harchoz, hiszen az a harcos, aki nem képes legyűrni sebei fájdalmát, hamar elhullik. 
 

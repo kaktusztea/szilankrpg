@@ -113,6 +113,6 @@ Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onna
 
 ---
 
-🔗 [Karakteralkotó Pontok (KP)](010_06_kp.md) →
+🔗 [Karakteralkotó Pontok (KP)](010_07_kp.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

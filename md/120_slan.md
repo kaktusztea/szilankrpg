@@ -15,7 +15,6 @@
 
 ⭕ TODO ⭕
 
-
 ---
 
 ⚜️ [Nyitóoldal](start.md#12-slan-miszt%C3%A9rium)

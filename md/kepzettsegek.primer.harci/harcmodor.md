@@ -1,6 +1,6 @@
 ## 🔵 Harcmodor 🔁
 
-Ez egy [Primer (harci) képzettség](../010_08_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
+Ez egy [Primer (harci) képzettség](../010_09_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
 
 A harcmodorok a közvetlenül, fegyverrel való harc képességét fedik le. Kategóriánként külön-külön fel kell venni rájuk ezt a képzettséget.
 

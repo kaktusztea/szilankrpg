@@ -1,17 +1,17 @@
 ## A Szilánk RPG alrendszerei
 
-Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen alrendszerek működnek a `Szilánk` rendszere alatt.
+Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő struktúra, amely végigvezet, milyen alrendszerek működnek a `Szilánk` rendszere alatt.
 
 ### Általános
 
 - Tulajdonságok: `[-5; +5]` + `k6` Tulajdonságpróba
 - Képzettségek: `[0-15]` + `k10` Képzettségpróba
-- Képzettség-kiterjesztés Szabad-Fortélyokkal
+- Képzettség-kiterjesztés Fortélyokkal, Szabad-Fortélyokkal
 - Fortélyok: `1-4.` fokig terjedhetnek - statikus ismeretek, nincs próba
 - Hátterek:
     - Faj: Elf, Ember, Törpe, stb.
     - Leíró: színesítő, szabadon választható jellemzők
-    - Karma: kalandjaid során KM-től kapod
+    - Karma: kalandjaid során KM-től kapod tetteit után
 - Életerő kategóriák (**Edzettség** Tulajdonság függő)
 - Méregrendszer: méreg-generátor, mérgek működése, ellenállás
 - Tradíciók: Mágikus, Papi, Szellemi
@@ -19,21 +19,21 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 
 ### Harcrendszer
 
+- `k20` Kezdeményező dobás
 - `k20` Támadó dobás
 - `k20` Sebzésdobás
 - `(SP - SFÉ) → ÉP` sebzésmodell
 - Harcérték/Célzóérték Módosító (`HM, CM`)
-- Harckeret  vs  Fegyver Sebesség → Támadások száma körönként
-  - érinti: **Kétkezes harc** fortély
-  - érinti: **Kétkezesség** fortély
-- Fegyverméret kategóriák: pengehossz
-- Védő Érték csökkentése
+- (`Harckeret / Fegyver Sebesség) + 1` → Támadások száma körönként
+- Kétkezes harc
+- Fegyverméret kategóriák: pengehossz →  pengeelőny, pengehátrány
+- Védő Érték csökkentése (pengeelőny/hátrány függő)
 - Páncélmodell
   - páncél generátor: `4` féle `SFÉ`; `MGT`; Ár
   - **Merevvértviselet** fortély kapcsolat
 - Harci fortélyok: jellemzően statikus bónuszok
-- Harci helyzetek: adott, vagy kialakított Státuszok
-- Harci taktikák: harci jelleg általános eltolása egy irányba
+- Harci helyzetek: adott, vagy kialakított harci Státuszok
+- Harci taktikák: harci jelleg általános, tudatos eltolása egy irányba
 - Manőverek: egyszeri trükkök
     - Manőver Alap: `Összes költött HM / 3 ↑`
     - Manőver Pontok: `Harcmodorok szint összege / Tapasztalati Szint ↑`
@@ -48,15 +48,15 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
 
 `1.`
 - Varázskeret
-- Mágikus akarat (Aura vs Aura)   (Aurafejlesztés)
+- Mágikus akarat (Aura vs Aura)   (Aurafejlesztés képzettség)
 - Mágikus célzás
 
 `2.`
-- Tradíciók   (képzettségek)
-- Szférák/Arkánumok   (képzettségek)
-- Formulák (varázslatok)
-- Komponensek, összhangok  (-)
-- Módszerek   (fortélyok)
+- Tradíció képzettségek
+- Szférák/Arkánum képzettségek
+- Formulák (egyes varázslatok Arkánumok alatt)
+- Komponensek, összhangok
+- Varázslási Módszerek  (misztikus fortélyok)
   - Kínált "feature" lehetőség (lista)
   - Megnyít lehetőséget Összhangokra  (lista)
 - Varázstárgyak:
@@ -65,9 +65,9 @@ Itt egy tömör áttekintő struktúrát láthatsz, amely végigvezet, milyen al
   - Szellem által megszállt tárgyak
 
 ---
-### Legfontosabbak
+### Szilánk DNS
 
-Szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-ét (legfontosabbtól visszafelé):
+Egy szubjektív lista arról, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-ét:
 
 - VÉ csökkentés
 - Képzettség-kiterjesztés Fortélyokkal

@@ -1,6 +1,6 @@
 ## 🔵 Mágikus célzás
 
-Ez egy [Primer (harci) képzettség](../010_08_primer_szekunder_ismeretek.md). Ez egy harcmodor.
+Ez egy [Primer (harci) képzettség](../010_09_primer_szekunder_ismeretek.md). Ez egy harcmodor.
 
 ### Speciális bónusz
 
