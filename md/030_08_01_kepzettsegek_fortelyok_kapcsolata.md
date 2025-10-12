@@ -141,6 +141,7 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 ```
 7 + k10  vs  12
 ```
+  
   → Tehát ha legalább `5`-öt dobok `k10`-en, akkor sikerül a próba.
 
 <br />
@@ -162,8 +163,7 @@ Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_
 
 \- JK: "Nyomolvasás: `2.fok`, Tájtípus: erdős: `1.fok`, kimaxoltam."
 
-\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `+2` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`." A "Tájtípus: erdős" nem korlátozza le a Nyomolvasás/eltűntetés bónuszát, mert nincs magasabb foka, mint `1`.\
-Összetett képzettségpróba lesz, mert hosszan kell követni a nyomokat. Két próbát kell dobnod:
+\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `+2` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`." A "Tájtípus: erdős" nem korlátozza le a Nyomolvasás/eltűntetés bónuszát, mert nincs magasabb foka, mint `1`. Összetett képzettségpróba lesz, mert hosszan kell követni a nyomokat. Két próbát kell dobnod:
 
 ```
 Nehéz: 12
@@ -173,9 +173,9 @@ Nehéz: 12
 \- JK: "OK, az **Átlagos (9)** így már dobás nélkül is megvan. A **Nehéz (12)**-re dobok... megvan!
 
 ```
-Alap: 7 + 1 + 2
+Alap: 6 + 1 + 2(bónusz)
 
-10 + k10 → 14
+9 + k10 → 14
 ```
 
 \- KM: "Rendben, meglátod a következő csizmanyomot, aztán pár letört ágat, némi szőrcsomóval, ami beleakadt. Észak felé, a hegyek irányába haladtok..."
