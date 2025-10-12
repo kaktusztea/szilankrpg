@@ -4,7 +4,7 @@ Ide tartoznak a karakter Származását, Jellemét, Küllemét leíró Hátterek
 
 <!-- tag: szarmazas__jellem__kullem__hatter -->
 
-Alább 1-2 szavas jelzőket találsz, amelyek további szinesítő elemeket adhatnak karaktered megalkotásakor. A lentiek nem fednek le mindent, a KM és a játékos is közösen kitalálhatnak új, szinesítő Háttereket bármelyik lenti kategóriában. Az ésszerűség keretein belül bármennyit felvehetsz.
+Alább 1-2 szavas leíró jelzőket találsz, amelyek további szinesítő elemeket adhatnak karaktered megalkotásakor. A lentiek nem fednek le mindent, a KM és a játékos is közösen kitalálhatnak új, szinesítő Leíró Háttereket bármelyik lenti kategóriában. Az ésszerűség keretein belül bármennyit felvehetsz.
 
 ### Származás
 

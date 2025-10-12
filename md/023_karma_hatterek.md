@@ -5,10 +5,11 @@
 A Karma Hátterek speciális jellemvonások, melyek követelményei nem számszerűek, hanem valamely esemény, különleges cselekedet, rendszeres szokás ismétlése. Így Karmákat csak kalandok során lehet „megszerezni”. Hatásuk a karakter Auráján is megjelenik. Minden esetben a KM adja őket, a játékos nem veheti fel önként, valamint nem követelheti azt a KM-en.
 
 Két forrásból juthatunk Karmához:
+
 - Az itt lent leírt konkrét karmák listájából, amennyiben a követelményeknek megfelel
 - KM által kitalált, egyedi Karmákból (itt a mesélő ésszel adományozzon)
 
-A lenti Karmák nem feltétlenül fednek le mindent, a KM ha úgy érzi az adott kaland hangulatához illene egy új, általa kitalált Karma, akkor nyugodtan megadhatja, de legyen tekintettel az erőviszonyokra, Karmaként csak valamilyen színesítő ismeretet adjon, ne számszerű előnyöket.
+A lenti Karmák nem feltétlenül fednek le mindent, a KM ha úgy érzi az adott kaland hangulatához illene egy új, általa kitalált Karma, akkor nyugodtan megadhatja, de legyen tekintettel az erőviszonyokra: Karmaként csak valamilyen színesítő ismeretet adjon, ne számszerű előnyöket.
 
 A Karmák lehetnek önmagukban, vagy %-kal jellemezhetőek.
 
@@ -69,7 +70,7 @@ Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helysz
 ---
 ### 🟡 Átkozott személy
 
-Egy isteni entitás vagy szent hely átkát kaptad nyakadba valamilyen elmondhatatlan galádságért. Ha nem leplezett, meglátszik az Aurádon.
+Egy isteni entitás vagy szent hely átkát kaptad nyakadba valamilyen elmondhatatlan galádságért. Ha az átok nem leplezett, meglátszik az Aurádon is.
 
 Amíg meg nem szűnik az átok, megkapod az [Átkozott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státuszt.
 
@@ -84,7 +85,7 @@ Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív és (főleg) n
 
 Az átok / Aurádhoz kapcsolódó túlvilági entitás nem személyed kapcsán fejti ki főleg hatását - nem is kifejezetten számodra szól, te csak hordozod.
 
-Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helyszínek kapcsán aktiválódik. Ha nem leplezett, meglátszik az Aurádon.
+Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helyszínek kapcsán aktiválódik. Ha az átok / entitás nem leplezett, meglátszik az Aurádon.
 
 Pl. Aquir ereklye, amitől nem tudsz megszabadulni. Vagy "Orwella érintése".
 
@@ -99,7 +100,7 @@ No comment 🙂
 
 #### Hatás
 
-Egy idő után már a viselkedésén, küllemén is meglátszik - ez szociális életére is hatással van. Az ital nélkül már képtelen működni, mindent megtesz annak megszerzéséért. Elvonás esetén `Hátrány-1,2` büntetéseket kaphat Tualjdonságpróbákra, Képzettségpróbákra.
+Egy idő után már a viselkedéseden, küllemeden is meglátszik - ez szociális életedre is hatással van. Az ital nélkül már képtelen vagy működni, mindent megteszel annak megszerzéséért. Elvonás esetén `Hátrány-1,2` büntetéseket kaphatsz Tulajdonságpróbákra, Képzettségpróbákra.
 
 <br />
 
@@ -118,10 +119,11 @@ Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevét
 
 #### Követelmény
 
-Hasonlít a hősre, de már nem feltétlenül kell jónak lennie. A hőstettei egyetlen csoportra korlátozódnak. Ő a csoport hőse, egymaga hoz dicsőséget / védelmezi meg / viszi győzelemre a csoportot. Pl: Achilles
+Hasonlít a hősre, de nem feltétlenül kell jónak, nemesnek lenned. Hőstetteid egyetlen csoportra korlátozódnak. Te vagy a csoport hőse, egymagad hozol dicsőséget / védelmezed meg / viszed győzelemre a csoportot. Példa: Akhilleusz.
+
 #### Hatás
 
-Puszta jelenléte lelkesítőleg hat. Minden híve, követője `Előny+1` Hatással dobja az Asztrális/Mentális Mágiaellenállását.
+Puszta jelenléted lelkesítőleg hat. Minden híved, követőd `Előny+1` Hatással dobja az Asztrális/Mentális Mágiaellenállását.
 
 <br />
 
@@ -131,7 +133,7 @@ Puszta jelenléte lelkesítőleg hat. Minden híve, követője `Előny+1` Hatás
 Több karaktert segítettél fejlődni, tanítottál vagy mentoráltál hosszabb időn keresztül.
 
 Hatás:
-- Pro: A tanítványaid tisztelnek, és hajlandóak segíteni neked. Bölcsességed miatt könnyebben nyersz elismerést és bizalmat.
+- Pro: Tanítványaid tisztelnek, és hajlandóak segíteni neked. Bölcsességed miatt könnyebben nyersz elismerést és bizalmat.
 - Kontra: Ha egy tanítványod elárul vagy kudarcot vall, az a te hírnevedet is csorbítja.
 
 ---
@@ -153,14 +155,13 @@ Soha többet nem leszel képes kézrátétellel gyógyítani, a [Sebgyógyítás
 
 #### Követelmény
 
-Szándékosan gyereket ölt.
+Szándékosan gyereket öltél.
 
 #### Hatás
 
-Az ilyen karma lemoshatatlan, Aurán jól látható mocskos szégyenfolt.<br />Történettől függően rossz hírnév is társulhat hozzá. Ha megtudják, kultúrától függő negatív hatások érik. Kiközösítés, lincselés...
+Az ilyen karma lemoshatatlan, Aurán jól látható mocskos szégyenfolt. Történettől függően rossz hírnév is társulhat hozzá. Ha megtudják, kultúrától függő negatív hatások érnek. Kiközösítés, lincselés...
 
 <br />
-
 
 ---
 ### 🟡 Gyilkos
@@ -177,31 +178,31 @@ Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer.alt
 
 <br />
 
-
 ---
 ### 🟡 Hírhedt
 
 #### Követelmény
 
-Számos, nagy port kavart ügyben részt vettél, amiben neved, fizimiskád is említésre került.
+Számos, nagy port kavart ügyben vettél részt, amiben neved, fizimiskád is említésre került.
 
 #### Hatás
 
-Híred messze megelőz. Ha aktív tevékenységed környékén lófrálsz, jó esély van rá, hogy felismernek... és nem csak a rajongók. % dobás dönt, az esélyt a KM határozza meg.
+Híred messze megelőz. Ha aktív tevékenységed környékén lófrálsz, jó esély van rá, hogy felismernek... és nem csak a rajongók... Egy `%` dobás dönt, az esélyt a KM határozza meg.
 
 <br />
-
 
 ---
 ### 🟡 Hős
 
 #### Követelmény
 
-Mindig segítesz a bajba jutottakon, mindig kész vagy az önfeláldozásra, mindig a jó ügy érdekében cselekszel. Aki sok-sok hőstettet hajt végre, megkapja ezt a Karmát.
+Mindig segítesz a bajbajutottakon, mindig kész vagy az önfeláldozásra, mindig a jó ügy érdekében cselekszel. Aki sok-sok hőstettet hajt végre, megkapja ezt a Karmát.
 
 #### Hatás
 
-**Pro**: Sokan felismernek és rögtön pozitívan viszonyulnak hozzád, amely konkrét előnyöket is okozhat: például szállásra soha nem lesz gondod, szívesebben válaszolnak a kérdéseidre, és így tovább.<br />**Kontra**: Elég csak egyetlen súlyos rossz cselekedet, és elveszíted a karmát, amelyet soha többé nem tudsz visszaszerezni! Ekkor egy **Bukott hős** karma a jutalmad... 
+**Pro**: Sokan felismernek és rögtön pozitívan viszonyulnak hozzád, amely konkrét előnyöket is okozhat: például szállásra soha nem lesz gondod, szívesebben válaszolnak a kérdéseidre, és így tovább.
+
+**Kontra**: Elég csak egyetlen súlyos rossz cselekedet, és elveszíted a karmát, amelyet soha többé nem tudsz visszaszerezni! Ekkor egy **Bukott hős** karma a jutalmad... 
 
 <br />
 
@@ -210,7 +211,9 @@ Mindig segítesz a bajba jutottakon, mindig kész vagy az önfeláldozásra, min
 
 Nagyhatalmú emberek mellett töltöttél el jelentős időt, mellettük (alattuk) érzed jól magad. Állandó késztetést érzel a seggnyalásra.
 
-A "nagy emberek" Befolyásolás képzettségpróbája ellen csak `Hátrány-1`-el dobhatsz.
+#### Hatás
+
+A "nagy emberek" feléd irányuló **Befolyásolás** képzettségpróbája ellen csak `Hátrány-1` büntetéssel dobhatsz **Emberismeret** képzettségre.
 
 <br />
 
@@ -221,9 +224,10 @@ Hosszú időt töltöttél a vadonban, és szoros kapcsolatot alakítottál ki a
 
 Nem tájegységhez kötött (!)
 
-Hatás:
+#### Hatás
+
 - Pro: Könnyebben boldogulsz a természetben: szerencséd van, és az állatok általában barátságosabbak veled.
-- Kontra: A városi környezetben nehezebben alkalmazkodsz, és az emberek furcsának találhatnak.
+- Kontra: A városi környezetben nehezebben alkalmazkodsz, és az emberek némely szokásodat furcsának találhatják.
 
 <br />
 
@@ -232,7 +236,9 @@ Hatás:
 
 Számos különböző helyet bejártál a világon, és kalandok során bizonyítottad rátermettségedet.
 
-Hatás: Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást nem számszerűsítjük, ha szükséges a KM figyelmét is felhívhatod rá.
+#### Hatás
+
+Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást nem számszerűsítjük, ha szükséges a KM figyelmét is felhívhatod rá.
 
 <br />
 
@@ -244,17 +250,16 @@ Hatás: Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a ha
 Előtörténet, eddigi kalandok.
 
 #### Hatás
-Mágikus karma  
-Például:  
-- Esőben varázsló (30%)  
-- Tömegben varázsló (20%)
-- Sötétben varázsló (100%) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
+
+Mágikus karmához jutsz. Például:  
+- Esőben varázsló (`30 %`)  
+- Tömegben varázsló (`20 %`)
+- Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
 - stb  
 
 Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](106_magikus_komponensek_osszhangok.md) fejezetét!
 
 <br />
-
 
 ---
 ### 🟡 Mágia: Profán
@@ -274,7 +279,7 @@ Mágikus karma.
 **Kontra**:
 ⭕TODO⭕
 - Erősség: `6` felett minden további `1 szint` növekedés `2 szintnek` számít
-- Nem képes Rituális mágiák alkalmazására⭕
+- Nem vagy képes Rituális mágiák alkalmazására⭕
 
 ---
 

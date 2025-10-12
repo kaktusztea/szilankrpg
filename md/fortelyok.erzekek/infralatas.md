@@ -31,7 +31,7 @@ Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_0
 
 ### Megjegyzések
 
-- Felvételéhez olyan [Faj-Háttér](../021_faj_hatterek.md) szükséges, amelynél szerepel az **Infralátás**, mint felvehető Érzék-fortély
+- Felvételéhez olyan [Faj Háttér](../021_faj_hatterek.md) szükséges, amelynél szerepel az **Infralátás**, mint felvehető Érzék-fortély
 - A távolság "használhatóságát" továbbra is az **Észlelés** képzettség határozza meg (mennyire folynak össze a hőfoltok).
 - A látótávolságot infrában a [Fejlett látás](fejlett_latas.md) Érzék-fortély is befolyásolja, ezért látnak az elfek a legtávolabb hőképek alapján.
 - &#8203;2. fokon sem adnak értékelhető képet egy föld alatti kripta hideg kőfalai

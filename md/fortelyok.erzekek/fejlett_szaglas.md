@@ -37,7 +37,7 @@ Például a közelben van egy ember, vagy kiérzed az italból, a fura mellékil
 
 ### Követelmény
 
-- Felvételéhez olyan [Faj-Háttér](../021_faj_hatterek.md) szükséges, amelynél szerepel a **Fejlett szaglás**, mint felvehető Érzék-fortély
+- Felvételéhez olyan [Faj Háttér](../021_faj_hatterek.md) szükséges, amelynél szerepel a **Fejlett szaglás**, mint felvehető Érzék-fortély
 
  
 <br />

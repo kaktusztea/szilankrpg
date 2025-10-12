@@ -87,7 +87,7 @@ A [Harcérték Módosítók (HM, CM)](010_08_01_hm_cm.md) az általános harci t
 
 A [Hátterek](020_hattererek.md) számos érdekes aspektussal ruházhatják fel karakteredet. Leginkább színesítő szerepet látnak el, **nem** kerülnek `KP`ba.
 
-- [Faj-Háttér](021_faj_hatterek.md) felvételével határozhatod meg karaktered faját - tulajdonság limitációik, érzékeiket érintő, kapcsolódó fortélyaik, faj-misztériumuk ez alatt a háttér alatt kerülnek összefogásra.
+- [Faj Háttér](021_faj_hatterek.md) felvételével határozhatod meg karaktered faját - tulajdonság limitációik, érzékeiket érintő, kapcsolódó fortélyaik, faj-misztériumuk ez alatt a háttér alatt kerülnek összefogásra.
 - [Leíró Hátterek](022_leiro_hatterek.md): egyszavas jellemzők, melyek a karakter jellemét, hátterét színesítik - tetszés szerint vehetőek fel.
 - [Karma Hátterek](023_karma_hatterek.md): események, különleges, kalandok során végzett cselekedetek hatására kapott jellemzők.
 

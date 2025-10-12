@@ -37,7 +37,7 @@ Teljes sötétben is képes vagy tájékozódni.
 
 ### Megjegyzések
 
-- Felvételéhez olyan [Faj-Háttér](../021_faj_hatterek.md) szükséges, amelynél szerepel az **Ultralátás**, mint felvehető **Érzék-fortély**
+- Felvételéhez olyan [Faj Háttér](../021_faj_hatterek.md) szükséges, amelynél szerepel az **Ultralátás**, mint felvehető **Érzék-fortély**
 - A látás fekete-fehérben történik
 - A távolság "használhatóságát" továbbra is az **Észlelés** képzettség határozza meg
 - A látótávolságot ultralátásban a [Fejlett látás](fejlett_latas.md) Érzék-fortély is befolyásolja - ugyanúgy, mint a hagyományos látás esetében
