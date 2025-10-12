@@ -3,13 +3,12 @@
 A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzónán (biztos tudás) kívüli mértékben is. Ilyenkor képzettségdobást teszünk.
 
   - [Próbadobás](#pr%C3%B3badob%C3%A1s)
-  - Kombinált képzettségpróba (több Tulajdonsággal egyszerre)
-  - Tulajdonság választás (opcionális)
-  - Páncél MGT hatása fizikai Képzettségpróbákra
-  - Kombinált képzettségpróba (több Tulajdonsággal egyszerre)
+  - [Tulajdonság választás (opcionális)](#tulajdons%C3%A1g-v%C3%A1laszt%C3%A1s-opcion%C3%A1lis)
+  - [Páncél MGT hatása fizikai Képzettségpróbákra](#p%C3%A1nc%C3%A9l-mgt-hat%C3%A1sa-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1kra)
+  - [Kombinált képzettségpróba (több Tulajdonsággal egyszerre)](#kombin%C3%A1lt-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-t%C3%B6bb-tulajdons%C3%A1ggal-egyszerre)
   - [Vállalás és Kritikus hiba](#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba)
   - [Próba biztos tudásból](#pr%C3%B3ba-biztos-tud%C3%A1sb%C3%B3l)
-  - Siker/Kudarc mértéke
+  - [Siker/Kudarc mértéke](#sikerkudarc-m%C3%A9rt%C3%A9ke)
   - [Próba képzetlenül](#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl)
   - [Összetett képzettségpróba, Másodlagos próbadobások](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)
   - [Összetett képzettségpróba - ellenpróba eset](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba---ellenpr%C3%B3ba-eset)
@@ -97,7 +96,7 @@ Ekkor
 ---
 ### Vállalás és Kritikus hiba
 
-A Vállalás azt jelenti, hogy (ha a KM is beleegyezik) képzettségpróba esetén kaphatsz legfeljebb `+3` bónuszt a próbára - Te döntöd el mennyit. Minél többet vállalsz, annál nagyobb veszélynek teszed ki magad. Ugyanis a próba előtt „Vállalás próbát" kell dobni:
+A Vállalás azt jelenti, hogy (ha a KM is beleegyezik) képzettségpróba esetén kaphatsz `[+1; +3]` bónuszt a próbára - te döntöd el mennyit. Minél többet vállalsz, annál nagyobb veszélynek teszed ki magad. Ugyanis a próba előtt „Vállalás próbát" kell dobni:
 
 ```
 k6 vs. (a vállalás értéke)
@@ -109,7 +108,7 @@ Kritikus hiba:
 ```
 
 Először a képzettségpróba jön - a már megnövelt értékkel. Ha sikeres, akkor a próba hatása is sikeres lesz.\
-Ez után jön viszont a Vállalás próba - függetlenül attól, hogy a képzettségpróba sikeres volt-e, vagy sem.
+Ez után jön viszont a fenti **Vállalás próba** - függetlenül attól, hogy a képzettségpróba sikeres volt-e, vagy sem.
 
 Ha `k6`-on a **Vállalás** értékénél nagyobbat dobsz, nincs további hatás, viszont, ha avval megegyező értékűt, vagy kisebbet, akkor 🔆 **Kritikus hibát** vétesz. Ebből látszik, hogy vállalni csak nagyon fontos, ritka esetben van értelme. Úgy foglalhatjuk össze, hogy mikor vállalsz, olyankor megpróbálkozol valami olyan dologgal, ami hatékonyabb, mint jelenlegi tudásod, de még nem gyakoroltad be rendesen (pl. csak ellested a mesteredtől), így magadat is nagyobb eséllyel sodrod veszélybe. Nem fizikai próbáknál az is előfordulhat, hogy nem is vagy tudatában, milyen szörnyű bajba keverted magad, a rontás nem azonnali fizikai hatással jár - később jársz pórul.
 
@@ -117,10 +116,11 @@ A **Kritikus hiba** nem jelenti szükségszerűen a karakter végleges eltávoz�
 
 Előfordulhat tehát olyan eset, hogy a **képzettségpróba** és így annak hatása sikeres volt, viszont a karakter közben **Kritikus hibát** vétett, aminek minden következményét vállalnia kell. Heroikus, önfeláldozó vagy ostoba cselekedet? Mindenki döntse ele maga.
 
-**🔆 Fontos**
+#### 🔆 Fontos szabályok Vállalásra
+
 - A Vállalás értéke nem haladhatja meg a használt képzettség aktuális értékét!
 - Összetett, több dobást igénylő képzettségpróbánál nem alkalmazható Vállalás! Például megmászni a nagy hegyet.
-- Kritikus hiba esetén **nem működik a papi gyógyítás sem** a karakteren - a sors oly erőihez próbált nyúlni, amelyek eltaszították vakmerő tettét.
+- Kritikus hiba esetén **nem működik a Papi gyógyítás sem** a karakteren - a sors oly erőihez próbált nyúlni, amelyek eltaszították vakmerő tettét.
 
 A fenti példánál maradva egy 2-es Vállalás esetén már a következőképpen fest a próba:
 
@@ -146,7 +146,6 @@ Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehe
 
 <br />
 
-
 ---
 ### Siker/Kudarc mértéke
 
@@ -165,7 +164,8 @@ A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje 
 → +3 a próba nehézségére
 → Fizikai képzettségeknél nincs büntetés
 ```
-Ha a karakter egyáltalán nem jártas az adott képzettségben (vonatkozó értéke nulla), akkor - ha a képzettség leírásánál engedélyezett a képzetlen dobás - ugyanúgy próbát dob, mint bárki, de a **célszám `3`-al emelkedik**. Fizikai képzettségeknél **nem jár** a `3`-as, célszám emelő büntetés.
+
+Ha a karakter egyáltalán nem jártas az adott képzettségben (vonatkozó értéke nulla), akkor - ha a képzettség leírásánál engedélyezett a képzetlen dobás - ugyanúgy próbát dob, mint bárki, de a **célszám `3`-al emelkedik**. Fizikai képzettségeknél **nem jár** a fenti, célszámot emelő büntetés.
 
 Ha az adott képzettséget nem lehet képzetlenül megpróbálni, akkor a KM egyszerűen megtagadja a próbát, automatikusan sikertelennek véve azt.
 
@@ -176,8 +176,8 @@ Ha az adott képzettséget nem lehet képzetlenül megpróbálni, akkor a KM egy
 
 Ha a karakternek egy olyan összetett feladatot kell elvégeznie, ami nem intézhető el egy darab dobással (pl. megmászni egy hegyet, vagy rettentő magas várfalat, esetleg órákon keresztül verset szavalni), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
 
-- A játékos dob egy próbát az indokolt maximális nehézségre (pl. „Nagyon nehéz" (`Célszám:12`))
-- Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal (-3 célszám) alacsonyabb nehézség ellen**. Pl. (`2 db Nehéz próbát`). Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
+- A játékos dob egy próbát az indokolt maximális nehézségre, például „Nagyon nehéz" (`Célszám:12`).
+- Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal (`-3` célszám) alacsonyabb nehézség ellen**. Pl. (`2 db Nehéz próbát`). Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
 - Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat „milyen hosszú", mennyire „többlépcsős".
 - Ha nagyon finom bontást akarunk, akkor `akár 2 fokozattal` (-6  célszám) alacsonyabb nehézségre is dobathatunk akár így is: Nagyon nehéz (1 db), Nehéz(1 db), Átlagos (1 db).
 
