@@ -50,3 +50,9 @@ A fenti határokon a [Faj Hátterek jellemzői](021_faj_hatterek.md), illetve es
 A kinézetre és érzelmi „felépítésre" vonatkozó jellemzőket a játékosra bízzuk, nem rendelünk hozzá további értékeket - dolgozza ki ő karakteralkotáskor, a KM-el egyeztetve és használja ehhez bátran a [Leíró Háttereket](022_leiro_hatterek.md).
 
 Hisszük, hogy nem kell minden jellemzőt számszerűsíteni és a fentiek részben szabadon meghatározható jellemzők, így főleg a játékos beleélőképességén múlik, hogy milyen hatással vannak más karakterekre.
+
+---
+
+🔗 [Tulajdonságok bónuszai](010_05_03_tulajdonsagok_bonuszai.md) →
+
+⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
