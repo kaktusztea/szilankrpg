@@ -182,7 +182,7 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 ---
 ### Erőbónusz limit
 
-Általában a fegyverek forgatásakor a karakter [Erő](010_05_01_00_tulajdonsagok_listaja.md#-erő) tulajdonsága `1:1` hozzáadódik az `SP` értékhez Sebzéskor - ez az [Erőbónusz](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit). Azonban egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat a karakter.
+Általában a fegyverek forgatásakor a karakter [Erő](010_05_01_01_ero.md) tulajdonsága `1:1` hozzáadódik az `SP` értékhez Sebzéskor - ez az [Erőbónusz](064_02_05_fegyver_sebzes_jellege.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit). Azonban egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat a karakter.
 
 🔆 Az egyes fegyvertáblázatokban láthatjuk, hogy mely fegyvereknél érvényesül az Erőbónusz és milyen felső limittel.\
 🔆 A számérték a felső maximumot jelzi, a `99`-es érték azt jelzi, hogy az **Erőbónusznak** nincs felső limitje.

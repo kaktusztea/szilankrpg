@@ -6,7 +6,7 @@ Különlegesen kifinomult a tapintásod, ez lehet áldás és átok is.
 
 ### Bónusz
 
-- [Érzékenység](../010_05_01_00_tulajdonsagok_listaja.md#-érzékenység) Tulajdonságodat segíti tapintás esetén
+- [Érzékenység](../010_05_01_08_erzekenyseg.md) Tulajdonságodat segíti tapintás esetén
 
 <br />
 

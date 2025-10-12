@@ -2,7 +2,7 @@
 
 <sub>→ [STUDY doksi](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.pszi.diszciplinak)</sub>
 
-Dobás: [Önuralom](010_05_01_00_tulajdonsagok_listaja.md#-önuralom) Tulajdonsággal
+Dobás: [Önuralom](010_05_01_07_onuralom.md) Tulajdonsággal
 
 - [Auralátás](diszciplinak.pszi/auralatas.md)
 - [Ébredés](diszciplinak.pszi/ebredes.md)

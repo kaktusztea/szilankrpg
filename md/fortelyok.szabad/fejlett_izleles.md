@@ -6,8 +6,7 @@ Különlegesen kifinomult az ízlelésed, ez lehet áldás és átok is.
 
 ### Bónusz
 
-- [Érzékenység](../010_05_01_00_tulajdonsagok_listaja.md#-érzékenység) Tulajdonságodat segíti ízlelés esetén
-
+- [Érzékenység](../010_05_01_08_erzekenyseg.md) Tulajdonságodat segíti ízlelés esetén
 
 <br />
 
