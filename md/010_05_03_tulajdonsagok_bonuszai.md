@@ -22,6 +22,7 @@ Edzettség
   - Támadó Érték (TÉ)
   - Védő Érték (VÉ)
 ```
+
 ```
 Gyorsaság
   - Kezdeményező Érték (KÉ)
@@ -55,7 +56,6 @@ Emlékezet
   - Asztrálmágia, mágikus érzékelés
   - Szociális "detekciók"
 ```
-
 
 ---
 
