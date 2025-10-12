@@ -39,7 +39,7 @@ Emberismeret + Érzékenység
 
 ### 🔆 Szerepjátékos módosító
 
-A parti dönti el a játék kezdetekor, hogy alkalmazza -e ezt a paramétert.
+A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
 
 A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az előadás/párbeszéd minőségétől függően a KM ad egy módosítót `[-3;+3]` tartományban és a játékos ezt hozzáadja a **Befolyásolás** képzettségpróbájához.
 
@@ -100,4 +100,4 @@ Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még ellenf
 
 - Olyan nyelven próbáksz hatni, amit nem ért(enek) a célszemély(ek): `+3`
 - Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**.
-- Ha bármilyen Státusz hatása alatt állsz, **Befolyásolás** képzettségpróba előtt [ellenőrizd](../082_statuszok.md), hogy vonatkozik -e rád bármilyen negatív [Hatás](../081_hatasok.md).
+- Ha bármilyen Státusz hatása alatt állsz, **Befolyásolás** képzettségpróba előtt [ellenőrizd](../082_statuszok.md), hogy vonatkozik-e rád bármilyen negatív [Hatás](../081_hatasok.md).

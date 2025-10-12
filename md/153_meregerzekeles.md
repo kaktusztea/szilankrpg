@@ -1,6 +1,6 @@
 ## Méregérzékelés
 
-Kiszagolod -e a neked felszolgált borban a mérget, feltűnik -e szoba levegőjében terjengő kesernyés szag?
+Kiszagolod-e a neked felszolgált borban a mérget, feltűnik-e szoba levegőjében terjengő kesernyés szag?
 
 Ha a méregnek több hordozója van, mindegyikre külön próbá(k) dobható(ak) - kivéve ha az adott komponens természetes alapú (mondjuk sima virágpor, ami alapból nem is mérgező).
 

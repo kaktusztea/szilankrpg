@@ -44,7 +44,7 @@ Példák:
 - A boltos nőnek épp a férfiideálja a Játékos Karakter.
 - Elrontottam az **Emberismeret** képzettségpróbámat, de tegnap hallottam erről a törpéről a kártyaasztalnál, hogy imádja az arany ékszereket.
 - Szerencsére épp van egy titkosajtó a fogadó szobájában. Fontos: attól, hogy ott van, még lehet, hogy nem találjátok meg - például mert elrontjátok az Észlelés képzettségpróbát.
-- "Egy ritka növényt keresek, dobhassak rá **Természetjárást**, hogy találok -e." Olyan esetben, ahol amúgy nem is dobhatnál, mert nem őshonos a növény errefelé.
+- "Egy ritka növényt keresek, dobhassak rá **Természetjárást**, hogy találok-e." Olyan esetben, ahol amúgy nem is dobhatnál, mert nem őshonos a növény errefelé.
 
 <br />
 
@@ -65,7 +65,7 @@ Példák:
 #### Mikor szerezhető Szilánk kaland közben?
 
 - `1.` a KM felajánlhatja, hogy ez egy kiemelt szituáció, ahol Szilánkot gyűjthet a játékos. Ez a Karakter számára egy hátrányos fordulat, amiben nehéz helyzetbe kerül, de bizonyíthatja rátermettségét. Ha a Játékos elfogadja, akkor a fordulat megtörténik, ő pedig kap egy Szilánkot.
-- `2.` a JK veti fel, hogy egy általa felvázolt nehéz fordulat, szituáció lép fel. Ilyenkor a KM dönt, hogy elfogadja -e a játékos felvetését és ezáltal a Szilánk-szerzést.
+- `2.` a JK veti fel, hogy egy általa felvázolt nehéz fordulat, szituáció lép fel. Ilyenkor a KM dönt, hogy elfogadja-e a játékos felvetését és ezáltal a Szilánk-szerzést.
 - `3.` a JK magától csinál egy kiemelt szituációt - nem feltétlenül Szilánk szerzése céljából - ilyenkor a KM utólag jutalmazhatja Szilánkkal
 
 #### Milyen szituációkban járhat **Szilánk**?

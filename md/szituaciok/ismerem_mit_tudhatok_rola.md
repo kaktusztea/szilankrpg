@@ -1,6 +1,6 @@
 ## Ismerem azt a nevet? Mit tudhatok róla?
 
-Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismereteire, hogy eldöntsük, hallott -e már róla és ha igen, mit.
+Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismereteire, hogy eldöntsük, hallott-e már róla és ha igen, mit.
 
 \- JK: *"Ismerem ezt az "Mottar" nevű alakot?"* \
 \- KM: *"Igen, ő az Ekkorin család vezetője. Úgy hírlik, kapzsi és gyáva is."*

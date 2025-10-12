@@ -42,7 +42,7 @@ A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a vi
 
 ⚙️ `+2`-es **Erő** bevetése: az aktuális mászás során a játékos elhasználhat pontokat karaktere `Erő` Tulajdonságából (maximum `0` értékre mehet le), amiből utána percenként `1` pont tér vissza (bővebben lásd a [Mászás képzettség leírását](../kepzettsegek.szekunder/maszas.md#er%C5%91-bevet%C3%A9se-rontott-m%C3%A1sz%C3%A1s-ut%C3%A1ni-ment%C5%91-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-dob%C3%A1sn%C3%A1l)). Tetves felhasználja mind a két **Erő** pontját.
 
-⚙️ Mászás képzettségpróba: fel tudja -e húzni magát a kitett helyzetből - erőtartalékai bevetésével?\
+⚙️ Mászás képzettségpróba: fel tudja-e húzni magát a kitett helyzetből - erőtartalékai bevetésével?\
 ⚙️ A Nehézség `+3` az eredetihez képesz, így `15+3 = 18`, azaz Rendkívül nehéz próba
 
 `Mászás(7)+Ügyesség(3)+Erő(2) = 12 + k10`
@@ -59,7 +59,7 @@ Tetves minden erejét bevetve felgyűrte magát a `11 cm` széles kiszögellésr
 
 ### ⚙️ [Megállás és pihenés a falon rontás után](../kepzettsegek.szekunder/maszas.md#meg%C3%A1ll%C3%A1s-%C3%A9s-pihen%C3%A9s-a-falon-ront%C3%A1s-ut%C3%A1n)
 
-Ez **2 biztos tudást** igényel, hogy meg tudja -e tartani magát tartósan. Ebben segíti a **perem** és az **ék**.
+Ez **2 biztos tudást** igényel, hogy meg tudja-e tartani magát tartósan. Ebben segíti a **perem** és az **ék**.
 
 1️⃣ **Edzettség** Tulajdonságpróba - Könnyű (`3`) → megvan biztos tudásból ✅
 - Ék: `-2` Nehézség

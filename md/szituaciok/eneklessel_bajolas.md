@@ -2,7 +2,7 @@
 
 Az Éneklés szabad fortély a [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettséget **NEM** terjeszti ki, csak egyes mágikus formulák esetében.
 
-`1.` **Énekkel elbájolni**: képzettségpróba, hogy sikerül -e az előadás
+`1.` **Énekkel elbájolni**: képzettségpróba, hogy sikerül-e az előadás
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség
 - [Éneklés](../fortelyok.szabad/enekles.md) (Erős kiterjesztés)
 - **Érzékenység** Tulajdonság

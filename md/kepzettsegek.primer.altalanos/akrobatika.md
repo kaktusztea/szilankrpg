@@ -39,7 +39,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 
 🌟 Hatás:
 - Ugrástávolság felmérése kb. `20 méterig`
-- Felmérni: valaki tud -e ugrani adott távolságra a rajta levő súlyokkal együtt
+- Felmérni: valaki tud-e ugrani adott távolságra a rajta levő súlyokkal együtt
 
 ---
 #### Nagymester (12) 📖

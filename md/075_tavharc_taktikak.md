@@ -61,7 +61,7 @@ Leggyorsabb mozgatás (EM)
 
 🔆 Ha a próba sikeres, a célpont elugrott a lövedék elől, a lövész már nem is tehet **Célzó dobást**.
 
-🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy talál -e. Ennek módosítóiról: [Kitérés lövés elől sikertelen](szituaciok/kiteres_loves_elol_sikertelen.md).
+🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy talál-e. Ennek módosítóiról: [Kitérés lövés elől sikertelen](szituaciok/kiteres_loves_elol_sikertelen.md).
 
 <br />
 

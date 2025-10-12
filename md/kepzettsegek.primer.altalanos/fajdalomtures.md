@@ -58,7 +58,7 @@ Körmöst kibírni.
 
 #### Átlagos (9) 🎲 
 
-A forró víz ráloccsant a kezedre. Vajon megállod -e, hogy felkiálts?
+A forró víz ráloccsant a kezedre. Vajon megállod-e, hogy felkiálts?
 
 #### Nehéz (12) 🎲 
 

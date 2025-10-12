@@ -44,7 +44,7 @@ A hátas maga `plusz 1 pengényi` [fegyverméret-kategóriát](065_01_harci_hely
 ---
 ### Sebesüléskor leesés kockázata
 
-Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy lássuk, leesik -e:
+Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy lássuk, leesik-e:
 
 ```
 Seb       Nehézség

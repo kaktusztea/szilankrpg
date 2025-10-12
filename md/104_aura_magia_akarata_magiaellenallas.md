@@ -1,6 +1,6 @@
 ## Aura, Mágia Akarata, Mágiaellenállás
 
-<sub>→ [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.Aura) </sub>
+→ [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.Aura)
 
 Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján öleli körbe, védelmezi a lelket. Az Aura a karakterek mágikus akarata és egyben Mágiaellenállása is (Asztrál, Mentál, Fizikai).
 
@@ -110,7 +110,7 @@ Biztos Aura (TME):
 
 A Mágiaellenállás nem statikus, körülménytől hangulattól függően, események hatására kis mértékben változhat.
 Például Meglepődés / Harc / Érzelmi sokk / másra koncentrálás közben ideiglenesen csökkenhet a Mágiaellenállás, mivel egy időben nehezebb védekezni a fizikai és a felsőbb síkokon. 
-Ilyen esetekben a KM kérhet **Összpontosítás** próbát, hogy kap -e büntetést a karakter, vagy nem. Alább egy általános táblázat, hogy nagyjából milyen esetben mivel kell számolnia a védekező félnek.
+Ilyen esetekben a KM kérhet **Összpontosítás** próbát, hogy kap-e büntetést a karakter, vagy nem. Alább egy általános táblázat, hogy nagyjából milyen esetben mivel kell számolnia a védekező félnek.
 
 ```
 Hatások, események módosítói

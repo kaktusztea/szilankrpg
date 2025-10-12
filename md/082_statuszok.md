@@ -313,19 +313,19 @@ Az ilyen karakter kötelezően
 
 - Automatikus Tulajdonságpróba: **Akaraterő**
 
-**Akaraterő** Tulajdonságpróbát kell dobnod (`12`), hogy ellen tudsz -e állni a késztetésnek.
+**Akaraterő** Tulajdonságpróbát kell dobnod (`12`), hogy ellen tudsz-e állni a késztetésnek.
 
 ### ✴️ Késztetés (2) Vágy
 
 - `Hátrány-1`: **Akaraterő** Tulajdonságpróbára
 
-**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz -e állni a késztetésnek.
+**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
 ### ✴️ Késztetés (3) Kényszer
 
 - `Hátrány-2`: **Akaraterő** Tulajdonságpróbára
 
-**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz -e állni a késztetésnek.
+**Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
 ⚡ Példák
 - Kleptománia (1,2,3) ("El kéne lopni valamit...")

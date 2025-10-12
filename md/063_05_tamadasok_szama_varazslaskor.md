@@ -40,7 +40,7 @@ csak a kör elején lehet megkezdeni!
 
 A **Varázskeret** minden kör elején eredeti értékére "töltődik vissza".
 
-Kör elején azt kell megvizsgálni, hogy a **"Formula-Sebesség"** eléri -e a **Varázskeretet**.
+Kör elején azt kell megvizsgálni, hogy a **"Formula-Sebesség"** eléri-e a **Varázskeretet**.
 
 `1.` Ha egyenlő, vagy alatta van, akkor az aktuális **"Formula-Sebesség"** értékét levonjuk a **Varázskeretből**. A karakter a maradék keretből gazdálkodhat még a kör hátralevő részében.
 

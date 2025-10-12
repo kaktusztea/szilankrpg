@@ -18,7 +18,7 @@ Ilyen támadásnál összesen 1-1 oda- és visszatámadásra van lehetőség, ut
 
 Követelmények:
 - **Lovaglás** képzettségpróba `12` célszám ellen
-- Megfelelő mennyiségű és dőlésszögű hely a begyorsuláshoz. A KM dönt, hogy az adott terepen, az adott lóval a karakter el tudja -e érni a rohamhoz szükséges sebességet. Itt a fentieken túl kalkulálja be a ló állapotát, erejét, illetve a súlyt is, amit cipel. Ha sikerül elegendően begyorsulni, akkor a megkapja a fenti módosítókat.
+- Megfelelő mennyiségű és dőlésszögű hely a begyorsuláshoz. A KM dönt, hogy az adott terepen, az adott lóval a karakter el tudja-e érni a rohamhoz szükséges sebességet. Itt a fentieken túl kalkulálja be a ló állapotát, erejét, illetve a súlyt is, amit cipel. Ha sikerül elegendően begyorsulni, akkor a megkapja a fenti módosítókat.
 
 <br />
 

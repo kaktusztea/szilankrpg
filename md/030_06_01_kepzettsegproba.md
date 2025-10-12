@@ -52,7 +52,7 @@ Példák:
 
 Hogy mely Tulajdonsággal kell a képzettségpróbát dobni, azt alapesetben a KM határozza meg, de van, hogy megoldható több Tulajdonsággal is.
 
-A KM is felajánlhatja a "menüt", de a játékos is jelentkezhet ötlettel, hogy ő melyik Tulajdonság segítségével **hogyan** oldaná meg a feladatot. A KM dönt, hogy ezt elfogadja -e.
+A KM is felajánlhatja a "menüt", de a játékos is jelentkezhet ötlettel, hogy ő melyik Tulajdonság segítségével **hogyan** oldaná meg a feladatot. A KM dönt, hogy ezt elfogadja-e.
 
 Tulajdonságonként viszont eltér(het)
 - Nehézség
@@ -100,7 +100,7 @@ Kritikus hiba:
 ```
 
 Először a képzettségpróba jön - a már megnövelt értékkel. Ha sikeres, akkor a próba hatása is sikeres lesz.\
-Ez után jön viszont a Vállalás próba - függetlenül attól, hogy a képzettségpróba sikeres volt -e, vagy sem.
+Ez után jön viszont a Vállalás próba - függetlenül attól, hogy a képzettségpróba sikeres volt-e, vagy sem.
 
 Ha `k6`-on a **Vállalás** értékénél nagyobbat dobsz, nincs további hatás, viszont, ha avval megegyező értékűt, vagy kisebbet, akkor 🔆 **Kritikus hibát** vétesz. Ebből látszik, hogy vállalni csak nagyon fontos, ritka esetben van értelme. Úgy foglalhatjuk össze, hogy mikor vállalsz, olyankor megpróbálkozol valami olyan dologgal, ami hatékonyabb, mint jelenlegi tudásod, de még nem gyakoroltad be rendesen (pl. csak ellested a mesteredtől), így magadat is nagyobb eséllyel sodrod veszélybe. Nem fizikai próbáknál az is előfordulhat, hogy nem is vagy tudatában, milyen szörnyű bajba keverted magad, a rontás nem azonnali fizikai hatással jár - később jársz pórul.
 
@@ -229,7 +229,7 @@ Különleges eset az ilyen. Olyankor fordulat elő, mikor hosszabb, összetetteb
 
 #### ⚡Konkrét példa
 
-Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kihozzák hátasukból a maximumot, figyelnek a pihenésre, etetésre, a fenntartható maximális tempóra. Az ellepróba azt dönti el, utoléri -e áldozatát.
+Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kihozzák hátasukból a maximumot, figyelnek a pihenésre, etetésre, a fenntartható maximális tempóra. Az ellepróba azt dönti el, utoléri-e áldozatát.
 
 #### Narratív eszköz
 

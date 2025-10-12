@@ -166,9 +166,9 @@ Ehhez 2 próbának kell meglennie **biztos tudásból**:
 - Mászás képzettségpróba  (a fenti körülményektől függ)
 
 A Nehézség a körülményektől függ, de jellemzően alacsonyabb, mint az eredeti próba. Az alábbi tényezők adhatnak bónuszt:
-- van -e kikötés valahova
-- van -e rendes biztosítás
-- van -e perem, amin ülni lehet
+- van-e kikötés valahova
+- van-e rendes biztosítás
+- van-e perem, amin ülni lehet
 
 ---
 ### Leesés szituáció

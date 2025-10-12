@@ -4,6 +4,8 @@ Lásd a [Mágiarendszer](100_magiarendszer.md) fejezetet!
 
 🚧 Majd ha ott kész, akkor beírni ide. 🚧
 
+⭕MÁGIA TODO⭕
+
 ---
 
 🔗 [Méregellenállás](010_10_05_meregellenallas.md) →
