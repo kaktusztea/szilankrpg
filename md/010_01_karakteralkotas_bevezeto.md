@@ -108,6 +108,19 @@ Végül jöjjön karaktered [harcértékeinek megállapítása](062_01_ke_te_ve_
 <br />
 
 ---
+## Mágia ismeretek felépítése
+
+Használjunk egy "fa" hasonlatot.
+
+A "törzs", az **alapozás** egy [Mágia Tradíció](051_00_magia_tradiciok.md) képzettség felvétele, amely meghatározza, milyen jellegű mágiát fog használni, milyen "tradíciót" követ a karakter.
+
+A fa "ágai" a [Mágikus Szférák / Arkánum](107_magikus_szferak_arkanumok.md) képzettségek. Ezek a mágiaiskolák, amelyeket az adott Tradíció alatt a karakter megtanult és annak kontextusában használni is képes. Lehet a tanult Arkánum neve ugyanaz, ám egy "Asztrálmágia Arkánum" más-más formulákat tartalmaz a [Magasmágia](051_01_magasmagia.md) és másokat például a [Vulgármágia](051_02_vulgarmagia.md) alatt.
+
+Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) amelyek a "levelek" a fa ágain. Ide tartoznak a [Varázslás módszerek](105_varazslas_modszerek.md) és más misztikus, színesítő, specializálódó ismeretek.
+
+<br />
+
+---
 ## Ajánlás karakteralkotás opcionális menetére
 
 A lenti folyamat leginkább karakterközpontú játékosok számára ajánlott, akik nem csak egy számhalmazon alapuló gyilkológéppel szeretnének játszani, hanem "élő, lélegző" karaktereket alkotnának.
