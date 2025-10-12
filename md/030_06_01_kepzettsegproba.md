@@ -1,8 +1,15 @@
 ## Képzettségpróba
 
+A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzónán (biztos tudás) kívüli mértékben is. Ilyenkor képzettségdobást teszünk.
+
   - [Próbadobás](#pr%C3%B3badob%C3%A1s)
+  - Kombinált képzettségpróba (több Tulajdonsággal egyszerre)
+  - Tulajdonság választás (opcionális)
+  - Páncél MGT hatása fizikai Képzettségpróbákra
+  - Kombinált képzettségpróba (több Tulajdonsággal egyszerre)
   - [Vállalás és Kritikus hiba](#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba)
   - [Próba biztos tudásból](#pr%C3%B3ba-biztos-tud%C3%A1sb%C3%B3l)
+  - Siker/Kudarc mértéke
   - [Próba képzetlenül](#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl)
   - [Összetett képzettségpróba, Másodlagos próbadobások](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)
   - [Összetett képzettségpróba - ellenpróba eset](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba---ellenpr%C3%B3ba-eset)
@@ -15,9 +22,12 @@
 - [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md)
 - [Csoportosan végezhető képzettségek listája](030_07_02_csoportosan_vegezheto_kepzettsegek.md)
 
+---
 ### Próbadobás
 
-Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő a Célszámmal, akkor a próba sikerült. Ha a KM úgy látja, hogy az adott próbánál több Tulajdonság is szerepet játszik, akkor a szükséges Tulajdonságok átlagával kell számolni. **Fontos**: az `1` és `10` dobások **NEM** kiemelt értékek, nem jelentenek kritikus hibát, vagy sikert.
+Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** szint értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő az adott szituációra meghatározott **Célszámmal**, akkor a próba sikerült.
+
+Ha a KM úgy látja, hogy az adott próbánál több Tulajdonság is szerepet játszik, akkor a szükséges Tulajdonságok átlagával kell számolni. **Fontos**: az `1` és `10` dobások **NEM** kiemelt értékek, nem jelentenek kritikus hibát, vagy sikert.
 
 ```
 Tulajdonság + Képzettség + k10
@@ -25,10 +35,9 @@ Tulajdonság + Képzettség + k10
           Célszám
 ```
 
-```
-Képzettségpróba (k10)
+#### Képzettségpróba Célszámok
 
-Célszámok
+```
  6: Könnyű
  9: Átlagos
 12: Nehéz
@@ -36,18 +45,18 @@ Célszámok
 18: Rendkívül nehéz
 21: Emberfeletti
 ...
+30: Maximum célszám
 ```
 
-A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Például szakrális emberáldozat csökkenti a próba nehézségét.
+A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Random példa: "szakrális emberáldozat csökkenti az adott próba nehézségét".
 
-Példák:
+Példák `21` feletti célszámokra:
 - [Aktuális Aura számításánál](104_aura_magia_akarata_magiaellenallas.md#aura-aktu%C3%A1lis-%C3%A9rt%C3%A9ke) Aurafejlesztés képzettségpróba
 - [Méreg komplexitása](151_meregkeveres_szabalyai.md#a-m%C3%A9reg-komplexitása) Méregkeverésnél
 
 <br />
 
 ---
-
 ### Tulajdonság választás (opcionális)
 
 Hogy mely Tulajdonsággal kell a képzettségpróbát dobni, azt alapesetben a KM határozza meg, de van, hogy megoldható több Tulajdonsággal is.
@@ -64,7 +73,7 @@ Tulajdonságonként viszont eltér(het)
 <br />
 
 ---
-### MGT hatása fizikai Képzettségpróbákra
+### Páncél MGT hatása fizikai Képzettségpróbákra
 
 Páncélod akadályozhat a fizikai Képzettségpróbák végrehajtásában.
 

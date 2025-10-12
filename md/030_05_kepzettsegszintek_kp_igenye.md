@@ -2,7 +2,7 @@
 
 A képzettségek fejlődése során a `KP igény` fokozatosan nő, tehát `1.`szintről `2.`szintre sokkal könnyebb fejlődni, mint mondjuk `4.`szintről `5.`szintre. Képzettségben hagyományos tanulással **legfeljebb** `13.`szintig lehet fejlődni. Lásd [bővebben itt](030_04_kepzettsegek_fejlesztese.md#a-14-és-15-képzettségszint).
 
-Az egyes képzettségszintek KP igénye az alábbi táblázatban található:
+Az egyes képzettségszintek `KP` igénye az alábbi táblázatban található:
 
 <!-- tag: md_codeblock_kepzettsegkp_start -->
 

@@ -4,16 +4,16 @@
 → Max 15.szint
 → Primer max szint = TSz
 → Szekunder max szint = (TSz+3)
-→ Növelés max: 2/TSz
-→ 14-15.szintre csak spécivel
+→ Növelés max: 2 szint / TSz
+→ 14-15.szintre csak speciális módon
 → 9, 12, 15. szint: bónuszok járnak
 ```
 
 A karakterek fejlődése természetesen nem lehet ugrásszerű, meg kell őriznünk a folyamatosság illúzióját szintlépéskor, el kell kerülnünk, hogy egy `3.`Tapasztalati Szintű karakter `12-13`-as képzettség értékekkel rohangáljon. Ugyanakkor fontos színesítő, ha egy `1.`Tapasztalati Szintű karakter egyes területeken kitűnik társai közül. Általános szabályok:
 
-A **Primer** képzettségek szintje legfeljebb (`Tapasztalati Szint`) értékével megegyező lehet
+A **Primer** képzettségek szintje legfeljebb (`Tapasztalati Szint`) értékével megegyező lehet.
 
-A **Szekunder** képzettségek értéke legfeljebb (`Tapasztalati Szint + 3`) lehet
+A **Szekunder** képzettségek értéke legfeljebb (`Tapasztalati Szint + 3`) lehet.
 
 Szintlépéskor legfeljebb `2-vel` növelhetőek a képzettségek, kivéve, ha `0`-ról akar valaki egy képzettséget tanulni. Ilyenkor szintlépéskor maximum `3.szintre` növelheti egy lépésben az ilyen képzettséget.
 
@@ -39,7 +39,7 @@ A másik felső korlát lehet az adott kultúra fejletlensége, vagy korlátai. 
 ---
 ### Képzettség Bónuszok
 
-A `9.`, `12. és 15. szintek` kiemelt mérföldkövek a képzettségek esetében, itt már különleges bónuszok, feljebb félmágikus hatások tűnnek fel. Ezek leírását lásd minden esetben az adott képzettség leírásában.
+A `9.`, `12. és 15. szintek` kiemelt mérföldkövek a képzettségek esetében, itt már különleges bónuszok, félmágikus hatások tűnnek fel. Ezek leírását lásd minden esetben az adott képzettség oldalán.
 
 ---
 

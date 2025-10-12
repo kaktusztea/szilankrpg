@@ -1,5 +1,7 @@
 ## Képzettséglista
 
+Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - jelleg csoportosítva. A használt jelölők:
+
 🔵 Képzettség, 🔁 Többször felvehető, 🅿️ Primer, 🤝 Csoportban végezhető képzettség
 
 ---
@@ -28,7 +30,7 @@
 
 [Harci](#harci-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%EF%B8%8F) - [Fizikai](#fizikai-k%C3%A9pzetts%C3%A9gek) - [Világi](#vil%C3%A1gi-k%C3%A9pzetts%C3%A9gek) - [Alvilági](#alvil%C3%A1gi-k%C3%A9pzetts%C3%A9gek) - [Művészeti](#m%C5%B1v%C3%A9szeti-k%C3%A9pzetts%C3%A9gek) - [Tudományos](#tudom%C3%A1nyos-k%C3%A9pzetts%C3%A9gek)
 
-Faj misztériumok - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%EF%B8%8F) - [Mágikus Szférák és Arkánumaik](#m%C3%A1gikus-szf%C3%A9r%C3%A1k-%C3%A9s-ark%C3%A1numaik-%F0%9F%85%BF%EF%B8%8F) - [Papi mágia](#papi-m%C3%A1gia-%F0%9F%85%BF%EF%B8%8F)
+[Faj misztériumok](#faj-miszt%C3%A9riumok-%F0%9F%85%BF%EF%B8%8F) - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%EF%B8%8F) - [Mágikus Szférák és Arkánumaik](#m%C3%A1gikus-szf%C3%A9r%C3%A1k-%C3%A9s-ark%C3%A1numaik-%F0%9F%85%BF%EF%B8%8F) - [Papi mágia](#papi-m%C3%A1gia-%F0%9F%85%BF%EF%B8%8F)
 
 ---
 ### Harci képzettségek 🅿️
@@ -97,7 +99,6 @@ Faj misztériumok - [Misztikus](#misztikus-k%C3%A9pzetts%C3%A9gek-%F0%9F%85%BF%E
 🔵 [Szerencsejáték](kepzettsegek.szekunder/szerencsejatek.md)
 
 🔵 [Zárnyitás](kepzettsegek.szekunder/zarnyitas.md)
-
 
 ---
 ### Művészeti képzettségek
@@ -196,7 +197,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Életerő Manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
 
-🔵 [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)  <sup><sub>(15%)</sub></sup>
+🔵 [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)
 
 #### Idézés szféra
 
@@ -225,7 +226,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 ---
 ### Papi mágia 🅿️
 
-[STUDY oldal: Varázslat szférák](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.papimagia#var%C3%A1zslat-szf%C3%A9r%C3%A1k) - mint iskola-képzettségek (draft)
+[STUDY oldal: Varázslat szférák](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.papimagia#var%C3%A1zslat-szf%C3%A9r%C3%A1k) - mint iskola-képzettségek (draft) ⭕MÁGIA TODO⭕
 
 ---
 ### Slan 🅿️
