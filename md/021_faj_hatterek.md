@@ -23,7 +23,7 @@ Speciális:
 ---
 ### ⚜️Tulajdonság keretek
 
-Minden fajnak vannak szellemi, fizikai határai. Van, hogy ez az átlag fölé emeli őket, vagy épp ellenkezőleg: lehetséges minimumot/maximumot húzhat egyes [Tulajdonságok](010_05_01_tulajdonsagok.md) szintjén.
+Minden fajnak vannak szellemi, fizikai határai. Van, hogy ez az átlag fölé emeli őket, vagy épp ellenkezőleg: lehetséges minimumot/maximumot húzhat egyes [Tulajdonságok](010_05_01_00_tulajdonsagok_listaja.md) szintjén.
 
 Példa:
 ```

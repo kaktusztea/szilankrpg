@@ -12,7 +12,7 @@ Ilyenkor egyszerű harci [Kezdeményezést](../064_02_01_kezdemenyezes.md) kell 
 
 ### 🔆 Nem harci cselekedet esetén
 
-Ilyen esetben **Gyorsaság** [Tulajdonság ellenpróbát](../010_05_02_tulajdonsagproba.md#tulajdonság-ellenpróba) dobassunk. Reflex jellegű és futás szituáció esetén szintén.
+Ilyen esetben **Gyorsaság** [Tulajdonság ellenpróbát](../010_05_04_tulajdonsagproba.md#tulajdonság-ellenpróba) dobassunk. Reflex jellegű és futás szituáció esetén szintén.
 
 A próbát módosíthatja, ha valaki közelebb van az elérni kívánt célhoz, illetve ne feledkezzünk meg a [Sprint](../fortelyok.altalanos/sprint.md) fortély módosítóiról sem.
 

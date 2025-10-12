@@ -46,6 +46,6 @@ Irányelvek karakter szintekre:
 
 ---
 
-🔗 [Egyedi pontokkal növelt jellemzők](010_05_00_tulajdonsagok_tulajdonsagproba.md) →
+🔗 [Egyedi pontokkal növelt jellemzők](010_05_00_tulajdonsagok.md) →
 
 ⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)

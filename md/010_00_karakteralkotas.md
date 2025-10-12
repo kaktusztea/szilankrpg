@@ -12,9 +12,9 @@ Eljött az ideje, hogy karaktert alkossunk.
   - [Külső](010_03_05_kulso.md)
   - [Felszerelés](010_03_06_felszereles.md)
 - [Tapasztalati Szint](010_04_tsz_szintlepes.md)
-- [Tulajdonságok, Tulajdonságpróba](010_05_00_tulajdonsagok_tulajdonsagproba.md)
-  - [Tulajdonságok](010_05_01_tulajdonsagok.md)
-  - [Tulajdonságpróba](010_05_02_tulajdonsagproba.md) 🎲
+- [Tulajdonságok, Tulajdonságpróba](010_05_00_tulajdonsagok.md)
+  - [Tulajdonságok](010_05_01_00_tulajdonsagok_listaja.md)
+  - [Tulajdonságpróba](010_05_04_tulajdonsagproba.md) 🎲
 - [Szilánk](010_06_szilank.md)
 - [Karakteralkotó Pontok (KP)](010_07_kp.md)
 - [KP költésével növelt jellemzők](010_08_00_kp_koltesevel_novelt_jellemzok.md)

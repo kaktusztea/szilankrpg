@@ -34,7 +34,7 @@ Hogy a KM hányadik szintet engedélyez kezdésnek, az csak rajta és a parti j�
 [-5; 5]
 ```
 
-Folytatásként a `8 db` egyedi [Tulajdonságod](010_05_01_tulajdonsagok.md) értékét kell meghatároznod `[-5; 5]` intervallumban **Tulajdonságpontok** elosztásával. A fenti intervallumot a [Fajok](021_faj_hatterek.md) egyedi jellmzői módosíthatják.
+Folytatásként a `8 db` egyedi [Tulajdonságod](010_05_01_00_tulajdonsagok_listaja.md) értékét kell meghatároznod `[-5; 5]` intervallumban **Tulajdonságpontok** elosztásával. A fenti intervallumot a [Fajok](021_faj_hatterek.md) egyedi jellmzői módosíthatják.
 
 <br />
 
