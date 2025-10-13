@@ -75,6 +75,7 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további szinesítő eleme
 - "Kapcsolat:"
 - "Lekötelezettje neki/nekik:"
 - "Párkapcsolatban vele:"
+- "Szervezet tagja:"
 
 ---
 

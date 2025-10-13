@@ -3,14 +3,15 @@
 <!-- tag: md_fortely_multiple_titkosszervezet -->
 
 Többször felvehető.
-Tagja vagy, vagy alaposan ismersz egy titkos szervezetet. Ez lehet
+
+Alaposan ismersz, vagy tagja vagy egy titkos szervezetnek. Ez lehet
 
 - tolvajcéh
 - fejvadász klán
 - kulturális páholy
 - vallásos szekta
 
-Járatos vagy a szervezet protokolljaikban, hierarchiában. Ismereed 
+Járatos vagy a szervezet protokolljaikban, hierarchiában. Ismered a vezetőket, kapcsolattartókat.
 
 ### Kiterjeszti ezeket
 
