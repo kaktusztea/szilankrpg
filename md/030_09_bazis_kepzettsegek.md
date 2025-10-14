@@ -1,8 +1,6 @@
 ## Bázis képzettségek
 
-Vannak bizonyos bázis képzettségek, amelyek alaptudását sok [Szabad Fortély](042_szabad_fortelyok.md) és [Általános fortély](043_altalanos_fortelyok.md) terjeszti ki (lásd az [előző oldalt](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)). Kezelésük nem tér el a többi képzettségtől, de célszerűnek tartottuk egy áttekintő oldalon összegyűjteni őket.
-
-Kategóriánként alább láthatjuk őket:
+Vannak bizonyos bázis képzettségek, amelyek alaptudását sok [Szabad Fortély](042_szabad_fortelyok.md) és [Általános fortély](043_altalanos_fortelyok.md) terjeszti ki (lásd az [előző oldalt](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)). Kezelésük nem tér el a többi képzettségtől, de célszerűnek tartottuk egy áttekintő oldalon kategóriák szerint összegyűjteni őket.
 
 ### Tudás
 
