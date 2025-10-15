@@ -13,46 +13,46 @@ Négy jellemző minőségi (Idea) szintet különböztetünk meg, amelyek megadj
 ```
 3.szint
 
-maximum: +1
-lelkiismeretes munka: 0
-rutinmunka: -1
-gyors munka: -2
++1: maximum
+ 0: lelkiismeretes munka
+-1: rutinmunka
+-2: gyors munka
 ```
 
 ```
 6.szint
 
-maximum: +2
-lelkiismeretes munka: +1
-rutinmunka: +0
-gyors munka: -1
++2: maximum
++1: lelkiismeretes munka
+ 0: rutinmunka
+-1: gyors munka
 ```
 
 ```
 9.szint
 
-maximum: +3
-lelkiismeretes munka: +2
-rutinmunka: +1
-gyors munka: +0
++3: maximum
++2: lelkiismeretes munka
++1: rutinmunka
++0: gyors munka
 ```
 
 ```
 12.szint
 
-maximum: +4
-lelkiismeretes munka: +3
-rutinmunka: +2
-gyors munka: +1
++4: maximum
++3: lelkiismeretes munka
++2: rutinmunka
++1: gyors munka
 ```
 
 ```
 15.szint
 
-maximum: +5
-lelkiismeretes munka: +4
-rutinmunka: +3
-gyors munka: +2
++5: maximum
++4: lelkiismeretes munka
++3: rutinmunka
++2: gyors munka
 ```
 
 ---
