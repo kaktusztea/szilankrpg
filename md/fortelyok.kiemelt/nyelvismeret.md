@@ -5,7 +5,7 @@
 
 Kiemelt fortély, `KP`-ból nem tanulható.
 
-A [Nyelvtanulás](../kepzettsegek.szekunder/nyelvtanulas.md) képzettség által kapott pontokból vehetsz fel 1:1 fokot egyes nyelvekre. A nyelvek listáját lásd [lenn](#emberi-nyelvek-list%C3%A1ja).
+A [Nyelvtanulás](../kepzettsegek.szekunder/nyelvtanulas.md) képzettség által kapott pontokból vehetsz fel `1:1` fokot egyes nyelvekre. A nyelvek listáját lásd [lenn](#emberi-nyelvek-list%C3%A1ja).
 
 A Nyelvismeret fortélynak `2` foka van, amelyeket kivételesen nevesítünk is:
 
