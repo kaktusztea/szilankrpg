@@ -10,7 +10,6 @@ Aktív, alkotó művész vagy. A lenti [Szabad-Fortélyok](../042_szabad_fortely
 
 ### Kapcsolódik
 
-- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md)
 - [Vezető: Rendező](../fortelyok.altalanos/vezeto_rendezo.md) fortély: színésztársulat esetén bónuszt ad.
 
 ### Normál kiterjesztés
@@ -21,7 +20,9 @@ Aktív, alkotó művész vagy. A lenti [Szabad-Fortélyok](../042_szabad_fortely
 
 - [Éneklés](../fortelyok.szabad/enekles.md): nézők előtt dalolsz a hallgatók örömére.
 - [Irodalom](../fortelyok.szabad/irodalom.md): Versek, novellák, regények, históriák, színdarabok írása.
+  - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) Udvari foka egy plusz **Erős** követelmény
 - [Színjátszás](../fortelyok.szabad/szinjatszas.md): Életed a világot jelentő deszkák. Vándorszínháztól a nagyvárosok ünnepelt színészóriásaikig mind a publikum hálájára vágytok. A [Kultúrkörnek](../fortelyok.kiemelt/kulturkor.md) megfelelő darabokban játszol.
+  - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) Udvari foka egy plusz **Erős** követelmény
 - [Tánc](../fortelyok.szabad/tanc.md): Művelni vagy képes a Kultúrköreidnek megfelelő tánc stílusokat.
 - [Zsonglőrködés](../fortelyok.szabad/zsonglorkodes.md): Ujjaid között pörögnek, forognak a labdák, kések, kisállatok. A publikum ámul.
 - [Zenélés: fúvós hangszerek](../fortelyok.szabad/zeneles_fuvos_hangszerek.md): Ismered a fúvós hangszerek megszólaltatásának módját. Hogy mennyire élvezhetően, az az Előadóművészet képzettséged szintjétől függ.

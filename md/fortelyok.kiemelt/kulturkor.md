@@ -3,9 +3,11 @@
 <!-- tag: md_fortely_multiple_kulturkor -->
 
 ```
-1. Tapasztalati Szinttől kezdve
-  minden 2. TSz-en kapsz egyet
+1 db / minden 2.TSz
+(kezdve: 1.TSz)
 ```
+
+Karaktered már `1.` Tapasztalati Szinten és onnan kezdve minden `2.` Tapasztalati Szinten kap "ingyen" egy általad választott és KM által jóváhagyott Kultúrkör fortélyt. Tehát `1, 3, 5, 7, stb` TSz alkalmával.
 
 ⚡ Példa: "Kultúrkör: Tor0n"; "Kultúrkör: Py4rron"
 
@@ -16,6 +18,8 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 - zenék, ünnepek, ételek
 - szokások, népszokások, babonák, vallásismeret
 - szleng, alkudozás kultúrája, hírességek
+
+<br />
 
 ### Kapcsolódik
 
@@ -35,22 +39,28 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): Az adott, kapcsolódó **Kultúrkör** ismerete sokszor (nem mindig) szükséges, hiánya esetén jár a standard levonás.
 - [Városi jártasság](../kepzettsegek.szekunder/varosi_jartassag.md): Az adott kultúrkör ismerete képes pótolni a Helyismeret hiányát. Ha ez megvan, de az nem, akkor sem jár a levonás.
 
-### Példák
+<br />
 
-⚡Példa-1: Eren állam 600 éves koronázási szokásaira dobok egy történelemismeretet
+---
+### ⚡Példa-1
 
-Lexikum képzettségpróba
-+ Történelemismeret (Erős kiterjesztés)
-+ Kultúrkör (Normál kiterjesztés)
+Eren állam `600` éves koronázási szokásaira dobok egy történelemismeretet.
 
-⚡Példa-2: szakállas törpe nőket hogyan különböztessünk meg?
+**Lexikum** képzettségpróba
++ **Történelemismeret** fortély (**E**rős kiterjesztés)
++ Kultúrkör (Eren) fortély (**N**ormál kiterjesztés)
 
-Etikett képzettségpróba + Kultúrkör (Normál kiterjesztés)
+### ⚡Példa-2
 
-⚡Példa-3: mikor van az éves Ocsánysimogató ünnep és mit kell olyankor csinálni?
+Szakállas törpe nőket hogyan különböztessünk meg?
 
-Lexikum képzettségpróba + Kultúrkör (Normál kiterjesztés)
+**Etikett** képzettségpróba + **Kultúrkör** (Törpe) fortély (**N**ormál kiterjesztés)
 
+### ⚡Példa-3
+
+Mikor van az éves Ocsánysimogató ünnep és mit kell olyankor csinálni?
+
+**Lexikum** képzettségpróba + **Kultúrkör** (Aprajafalva) fortély (**N**ormál kiterjesztés)
 
 ---
 ### Kultúrkör lista
@@ -87,15 +97,13 @@ Lexikum képzettségpróba + Kultúrkör (Normál kiterjesztés)
 
 
 ---
-### Föbb területek
-
-ÉSZAKON
+### Föbb területek Északon
 
 - Északi Szövetség és a vörös hadurak országai
 - Tor0n és a fekete hadurak országai (Abasz1sz, Gro-Ugon, az északi városállamok - mint Rowon, Al1dax -, stb.)
 - Godora és Eri0n (beleértve a környéket is, pl. Elátkozott Vidék, Sher4l nyugati része, stb.)
 
-DÉLEN
+### Föbb területek Délen
 
 - Kr4n és a déli nomádok
 - Py4rroni Államszövetség és Yllin0r
