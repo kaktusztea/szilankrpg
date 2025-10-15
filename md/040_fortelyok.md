@@ -6,7 +6,7 @@ A Fortélyok egyedi ismeretek, melyeket ugyanúgy `KP`-ból vehet fel a karakter
 ### Kategóriák
 
 - [Kiemelt fortélyok](041_kiemelt_fortelyok.md): Nyelvismeret, Kultúrkör, Helyismeret - kezelésük speciális
-- [Szabad Fortélyok](042_szabad_fortelyok.md): ingyen, nem 'KP' költésével kapott fortélyok
+- [Szabad Fortélyok](042_szabad_fortelyok.md): ingyen, nem `KP` költésével kapott fortélyok
 - [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
 - [Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
 - [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
