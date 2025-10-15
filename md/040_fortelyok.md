@@ -33,7 +33,7 @@ Tulajdonságok elvárt értékei, képzettségek elvárt szintje, esetleg más f
 ---
 ### 🔆 Jellemző hatás 1: Egyedi bónusz adása
 
-Az adott fortély leírásában található egyedi bónuszt szolgáltat.
+Az adott fortély - leírásában található - egyedi bónuszt szolgáltat.
 
 <br />
 
