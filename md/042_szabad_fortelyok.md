@@ -17,7 +17,7 @@ Hozzájutni Szabad Fortélyokhoz többféleképpen lehet:
 
 `1.` KM adja ingyen, olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során megültél egy **Wyvernt**, ekkor megkapod a [Lénylovas - Wyvern](fortelyok.szabad/lenylovas.md) Szabad Fortélyt ingyen.
 
-`2.`  A Tapasztalati Szintenként ingyen kapott `1 db` Szabad Fortélyt elköltöd a felvételére
+`2.` A Tapasztalati Szintenként ingyen kapott `1 db` Szabad Fortély javadalmazásból elköltesz egyet a felvételére.
 
 `3.` `KP`-t költesz rá (Sima, vagy Szekunder). Ezt akkor teheted, ha már elköltötted a `2.` pontban említett ingyenes fortélyokat.
 
