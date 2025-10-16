@@ -1,6 +1,6 @@
 ## 🟣 Festészet
 
-Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz vászonra színes műveket.
+Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz vászonra színes műveket. Vagy passzív tudásként ismered a nagy festők műveit, technikáját, műveinek szellemiségét.
 
 ### Kiterjeszti ezeket
 
