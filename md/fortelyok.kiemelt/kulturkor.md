@@ -11,7 +11,7 @@ Karaktered már `1.` Tapasztalati Szinten és onnan kezdve minden `2.` Tapasztal
 
 ⚡ Példa: "Kultúrkör: Tor0n"; "Kultúrkör: Py4rron"
 
-Kalandozásai során a karakter számos helyre elvetődik. Ha ott rászán időt az helyi kultúra tanulmányozására, akkor már ott is képes lesz Kultúrkör-függő képzettségeit maximális hatékonysággal kiaknázni, büntetés nélküli próbákat dobni rá. Ez minden - kultúrköri ismeretet igénylő - képzettségre igaz.
+Kalandozásai során a karakter számos helyre elvetődik. Ha ott rászán időt a helyi kultúra tanulmányozására, akkor már ott is képes lesz Kultúrkör-függő képzettségeit maximális hatékonysággal kiaknázni, büntetés nélküli próbákat dobni rá. Ez minden - kultúrköri ismeretet igénylő - képzettségre igaz.
 
 Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 - akcentus, dialektus
