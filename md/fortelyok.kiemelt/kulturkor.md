@@ -33,34 +33,53 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 ### Kiterjeszti ezeket
 
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): enélkül érvényes a levonás mindegyik lenti művészeti ágra.
-- [Etikett](../kepzettsegek.szekunder/etikett.md): Nélküle általános etikett szabályokra és megérzéseidre támaszkodsz csak. Ha ismered, nincs gond.
-- [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md): enélkül érvényes a levonás mindegyik lenti művészeti ágra.
-- [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md): enélkül érvényes a levonás mindegyik lenti művészeti ágra.
+- [Etikett](../kepzettsegek.szekunder/etikett.md): Nélküle általános etikett szabályokra és megérzéseidre támaszkodsz csak. Ha ismered az adott kultúrkört, akkor nincs levonás.
+- [Képzőművészet](../kepzettsegek.szekunder/kepzomuveszet.md): enélkül érvényes a levonás mindegyik alá tartozó művészeti ágra.
+- [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md): enélkül érvényes a levonás mindegyik alá tartozó művészeti ágra.
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): Az adott, kapcsolódó **Kultúrkör** ismerete sokszor (nem mindig) szükséges, hiánya esetén jár a standard levonás.
 - [Városi jártasság](../kepzettsegek.szekunder/varosi_jartassag.md): Az adott kultúrkör ismerete képes pótolni a Helyismeret hiányát. Ha ez megvan, de az nem, akkor sem jár a levonás.
 
 <br />
 
 ---
+### ⚡Példák
+
+```
+(N) Normál kiterjesztés
+(E) Erős kiterjesztés
+```
+
 ### ⚡Példa-1
 
 Eren állam `600` éves koronázási szokásaira dobok egy történelemismeretet.
 
-**Lexikum** képzettségpróba
-+ **Történelemismeret** fortély (**E**rős kiterjesztés)
-+ Kultúrkör (Eren) fortély (**N**ormál kiterjesztés)
+```
+Lexikum képzettségpróba
+
++ Történelemismeret fortély (E)
++ Kultúrkör (Eren) fortély  (N)
+```
 
 ### ⚡Példa-2
 
 Szakállas törpe nőket hogyan különböztessünk meg?
 
-**Etikett** képzettségpróba + **Kultúrkör** (Törpe) fortély (**N**ormál kiterjesztés)
+```
+Etikett képzettségpróba
+
++ Kultúrkör (Törpe) fortély (N)
+```
 
 ### ⚡Példa-3
 
 Mikor van az éves Ocsánysimogató ünnep és mit kell olyankor csinálni?
 
-**Lexikum** képzettségpróba + **Kultúrkör** (Aprajafalva) fortély (**N**ormál kiterjesztés)
+
+```
+Lexikum képzettségpróba
+
++ Kultúrkör (Aprajafalva) fortély (N)
+```
 
 ---
 ### Kultúrkör lista
