@@ -108,7 +108,7 @@ Végül jöjjön karaktered [harcértékeinek megállapítása](062_01_ke_te_ve_
 <br />
 
 ---
-## Mágia ismeretek felépítése
+### Mágia ismeretek felépítése
 
 Használjunk egy "fa" hasonlatot.
 
