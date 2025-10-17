@@ -8,30 +8,30 @@ Képzettségeket
 terjesztenek ki
 ```
 
-Specializált, egy, vagy több [képzettséget](030_01_kepzettseglista.md) "kiterjesztő" ismeretek. Az adott képzettséggel való viszonyuk a [Normál kapcsolat és Erős kapcsolat](030_08_01_kepzettsegek_fortelyok_kapcsolata.md) oldalon olvasható.
+Specializált, egy, vagy több [képzettséget](030_01_kepzettseglista.md) "kiterjesztő" ismeretek. Egyes képzettségekkel való viszonyuk a [Normál kapcsolat és Erős kapcsolat](030_08_01_kepzettsegek_fortelyok_kapcsolata.md) oldalon olvasható. Minden Tapasztalati Szinten kapsz egyet **ingyen** - `KP` költése nélkül.
 
 ---
 ### Szabad Fortély tanulása
 
-Hozzájutni Szabad Fortélyokhoz többféleképpen lehet:
+Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 
-`1.` KM adja ingyen, olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során megültél egy **Wyvernt**, ekkor megkapod a [Lénylovas - Wyvern](fortelyok.szabad/lenylovas.md) Szabad Fortélyt ingyen.
+`1.` A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásából elköltesz egyet a felvételére. A Karakteralkotóban a "Speciális" fülön ilyenkor `1` értéket írj a "**Költve**" mezőbe értékként.
 
-`2.` A Tapasztalati Szintenként ingyen kapott `1 db` Szabad Fortélyból jövő javadalmazásából elköltesz egyet a felvételére.
+`2.` `KP`-t költesz rá (Sima, vagy Szekunder). Ezt a lehetőség akkor jön be, ha már elköltötted a `2.` pontban említett ingyenes fortélyok keretedet, de te szeretnél még továbbiakat felvenni. A Karakteralkotóban a "Speciális" fülön ilyenkor is `1` értéket írj a "**Költve**" mezőbe értékként - az automatikus ellenőrzés kezeli, ha túllépted az ingyenes keretedet és levonja a `KP` költséget.
 
-`3.` `KP`-t költesz rá (Sima, vagy Szekunder). Ezt akkor teheted, ha már elköltötted a `2.` pontban említett ingyenes fortélyokat.
+`3.` KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Lénylovas - Wyvern](fortelyok.szabad/lenylovas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást. A Karakteralkotóban a "Speciális" fülön ilyenkor `0` értéket írj a "**Költve**" mezőbe értékként.
 
 ---
 ### Általános szabályok
 
-Van, hogy egy képzettséghez számos Szabad Fortély kapcsolódik - gyakorlatilag felszabdalják a képzettséget alterületekre.
+**Képzettség nézőpontból**: van, hogy egy képzettséghez számos Szabad Fortély kapcsolódik, terjeszti ki - gyakorlatilag felszabdalják a képzettséget alterületekre.
 
-Van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
-
-🔁 jelentése: többször felvehető Szabad Fortély
+**Szabad Fortély nézőpontból**: van, hogy egy Szabad Fortély több képzettséget is kiterjeszt.
 
 ---
 ### Tanulható Szabad Fortélyok listája
+
+ Többször felvehető Szabad Fortély jelölése: 🔁
 
 - [Alkudozás](fortelyok.szabad/alkudozas.md)
 - [Asztrológia](fortelyok.szabad/asztrologia.md)
