@@ -22,7 +22,7 @@ Intelligencia, Emlékezet
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md)
   - "Nem volt könnyű, de megfejtettem a titkosírást. Ez egy üzenet a tábornoknak, amiben a csapatokat a hágó elhagyására utasítja."
   - "Megírtam az üzenetet uram, alkalmaztam a titkosírást, ha rossz kezekbe kerül, se tudják elolvasni."
-- [Térképészet](../fortelyok.szabad/terkepeszet.md): "Elkészültem a kastély körüli dombok térképével, a magasságvonalakon látszik, hogy kemény mászás vár arra, aki nem a főúton szándékozik bemenni."
+- [Térképészet](../fortelyok.szabad/terkepeszet.md): Térképet készítesz. "Elkészültem a kastély körüli dombok térképével, a magasságvonalakon látszik, hogy kemény mászás vár arra, aki nem a főúton szándékozik bemenni."
 
 ### Erős kiterjesztés
 

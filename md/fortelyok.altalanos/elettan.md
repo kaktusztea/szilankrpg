@@ -7,6 +7,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 ### Kapcsolódik
 
 - [Harci anatómia](../fortelyok.harci/harci_anatomia.md)
+
 ### Bónuszt ad erre
 
 - [Méregkeverés](../kepzettsegek.primer.altalanos/meregkeveres.md) képzettség: `+2`

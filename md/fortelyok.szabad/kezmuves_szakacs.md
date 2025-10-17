@@ -1,6 +1,6 @@
 ## 🟣 Kézműves: Szakács
 
-Finom étkek készítése, vagy a hadsereg hadtápjának működtetése.
+Finom étkek készítése, vagy akár a hadsereg hadtápjának működtetése.
 
 ### Kiterjeszti ezeket
 

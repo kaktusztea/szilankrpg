@@ -1,6 +1,6 @@
 ## 🟣 Kézműves: Lakatos
 
-Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások.
+Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások kerülnek ki kezed alól.
 
 Magasabb szinten egyéb vasból és acélból készült szerkezetek, például ajtók, ablakok, korlátok, lépcsők, és más fémes tartószerkezetek készítése, javítása is ide tartozik.
 

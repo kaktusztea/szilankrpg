@@ -1,9 +1,10 @@
 ## 🟣 Tánc
 
-Amely [Kultúrköröket](../fortelyok.kiemelt/kulturkor.md) ismersz, azok táncait **Előadóművészet** képzettséged szintjének megfelelően járni is tudod.
+Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) táncai **Előadóművészet** képzettséged szintjének megfelelően járni is tudod.
+
 ### Kiterjeszti ezeket
 
-- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): Művelni vagy képes a Kultúrköreidnek megfelelő tánc stílusokat.
+- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): a Kultúrköreidnek megfelelő tánc stílusokat járni tudod.
 - [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md): Ismered a Kultúrköreidnek megfelelő tánc stílusokat, a híresebb előadókat, táncos darabokat.
 
 <br />

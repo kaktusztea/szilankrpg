@@ -2,6 +2,10 @@
 
 Dalolás képessége és annak műértése.
 
+### Követelmény
+
+- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) ha indokolt
+
 ### Kiterjeszti ezeket
 
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): nézők előtt dalolsz a hallgatók örömére.

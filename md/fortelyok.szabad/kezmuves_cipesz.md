@@ -1,6 +1,6 @@
 ## 🟣 Kézműves: Cipész
 
-Cipőket készített a pórnépnek, vagy az udvari dámák kecses lábaira.
+Cipőket készítesz a pórnépnek, vagy az udvari dámák kecses lábaira.
 
 ### Kiterjeszti ezeket
 

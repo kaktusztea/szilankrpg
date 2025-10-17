@@ -2,6 +2,8 @@
 
 Zord külsőd és fenyegető belsőd engedelmességre parancsolja a pondrókat.
 
+Passzív ismeretként nem tojod össze magad egy kis keménykedéstől.
+
 ### Kiterjeszti ezeket
 
 - [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md): "Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér..."
