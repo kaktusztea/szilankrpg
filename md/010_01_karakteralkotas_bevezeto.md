@@ -121,7 +121,7 @@ Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortel
 <br />
 
 ---
-## Ajánlás karakteralkotás opcionális menetére
+### Ajánlás karakteralkotás opcionális menetére
 
 A lenti folyamat leginkább karakterközpontú játékosok számára ajánlott, akik nem csak egy számhalmazon alapuló gyilkológéppel szeretnének játszani, hanem "élő, lélegző" karaktereket alkotnának.
 
