@@ -13,7 +13,8 @@ A Taba el-Ibara holdkék szemű ősfaja.
 
 ### ⚜️Felvehető Érzék-Fortélyok maximuma
 
-[Ultralátás](../fortelyok.erzekek/fejlett_szaglas.md) - 3. fok (csak a papi kaszt)
+- [Ultralátás](../fortelyok.erzekek/fejlett_szaglas.md) - 2. fok (átlagos amund)
+- [Ultralátás](../fortelyok.erzekek/fejlett_szaglas.md) - 3. fok (csak a papi kaszt)
 
 ### ⚜️Faj misztérium
 

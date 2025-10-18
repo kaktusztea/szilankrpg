@@ -5,6 +5,7 @@
 Fajhoz felvehető Érzék-fortély.
 
 Különlegesen jó a szaglásod, állatokéval vetekszik.
+
 ### Alapeset
 
 🔒 **Követelmény**:  -
@@ -14,7 +15,7 @@ Különlegesen jó a szaglásod, állatokéval vetekszik.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md)
+🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Fejlett szaglás**, mint felvehető Érzék-fortély
 
 🌟 **Hatás**:
 - Olyan **Érzékenység** próbákat dobhatsz, amelyet egy átlag szaglású ember egyáltalán nem, tehát megnyit lehetőségeket
@@ -26,6 +27,7 @@ Különlegesen jó a szaglásod, állatokéval vetekszik.
 ### Tulajdonságpróbához paraméterek
 
 A KM számára az alábbi paraméterek adhatnak kapaszkodót, mikor megállapítja a Nehézséget:
+
 - szag erőssége
 - széljárás iránya
 - távolság
@@ -33,13 +35,6 @@ A KM számára az alábbi paraméterek adhatnak kapaszkodót, mikor megállapít
 
 Például a közelben van egy ember, vagy kiérzed az italból, a fura mellékillatot.
 
-<br />
-
-### Követelmény
-
-- Felvételéhez olyan [Faj Háttér](../021_faj_hatterek.md) szükséges, amelynél szerepel a **Fejlett szaglás**, mint felvehető Érzék-fortély
-
- 
 <br />
 
 ---
