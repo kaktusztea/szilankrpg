@@ -4,13 +4,14 @@ Szívós vagy mint egy rozsomák.
 
 ### Kapcsolódik
 
+- [Futás](futas.md)
 - [Úszás](uszas.md)
 
 ### 1. fok
 
 🔒 **Követelmény**: Edzettség: `+1`
 
-🌟 **Hatás**: [Úszás](uszas.md), [Futás](futas.md), vagy egyéb tartós, **hosszútávú** igénybevételnél ⚪**Edzettség** próbára `+1` bónusz
+🌟 **Hatás**: **Hosszútávú** [Úszás](uszas.md), [Futás](futas.md), vagy egyéb ilyen tartós igénybevételnél ⚪**Edzettség** próbádra `+1` bónuszt kapsz.
 
 <br />
 

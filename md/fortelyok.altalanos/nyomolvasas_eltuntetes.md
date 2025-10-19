@@ -10,8 +10,8 @@ Megtalált nyomok értelmezését, eltűntetését, illetve városon kívül a n
 
 ### Szituációk
 
-- [Nyomok észrevétele, Nyomkövetés - természetben](../szituaciok/nyomok_nyomkovetes_termeszet.md)
-- [Nyomok észrevétele, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md)
+- [Nyomok értelmezése természetben](../szituaciok/nyomok_nyomkovetes_termeszet.md#nyomok-%C3%A9rtelmez%C3%A9se-a-term%C3%A9szetben-)
+- [Nyomok értelmezése városi környzetben](../szituaciok/nyomok_nyomkovetes_varos.md#nyomok-%C3%A9rtelmez%C3%A9se-v%C3%A1rosi-k%C3%B6rnyzetben-)
 
 ### 1. fok
 
