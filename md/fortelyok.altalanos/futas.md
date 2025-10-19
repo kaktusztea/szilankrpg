@@ -13,7 +13,7 @@ Nem csak rohangálsz, mint egy futóbolond, hanem kitartó, hosszas futás sorá
 
 🌟 **Hatás**:
 - Hosszútávfutáskor **Edzettség** próbára: `+1`
-- Rövidtávfutásra: **Gyorsaság** próbára: `+1`
+- Rövidtávfutásnál: **Gyorsaság** próbára: `+1`
 
 ---
 ### 2. fok
@@ -22,7 +22,7 @@ Nem csak rohangálsz, mint egy futóbolond, hanem kitartó, hosszas futás sorá
 
 🌟 **Hatás**:
 - Hosszútávfutáskor **Edzettség** próbára: `+2`
-- Rövidtávfutásra: **Gyorsaság** próbára: `+2`
+- Rövidtávfutásnál: **Gyorsaság** próbára: `+2`
 
 <br />
 

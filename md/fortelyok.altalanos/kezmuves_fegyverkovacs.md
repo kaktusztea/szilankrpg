@@ -4,7 +4,7 @@ Fém ötvözetekből kalapálsz ki fegyvereket. Páncélokat NEM.
 
 ### Kiterjeszti ezeket
 
-- [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
+- [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettség
 
 ### Követelmény
 
@@ -13,14 +13,14 @@ Fém ötvözetekből kalapálsz ki fegyvereket. Páncélokat NEM.
 ### Kapcsolódik
 
 - [Mechanika](mechanika.md) fortély: mechanikus komponensekkel bővített fegyverekhez (kh4rei nyílpuska)
-- [Páncélkovács](../fortelyok.altalanos/kezmuves_pancelkovacs.md) fortély
+- [Páncélkovács](../fortelyok.altalanos/kezmuves_pancelkovacs.md) fortély mint hasonló fortély
 
 ---
 ### 1. fok
 
 🔒 **Követelmény**: Ügyesség: `+0`
 
-🌟 **Hatás**: Dobhatsz alap szinten Kézművesség képzettségre fegyver kovácsolásakor.
+🌟 **Hatás**: Dobhatsz alap szinten [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettségre fegyver kovácsolásakor.
 
 ---
 ### 2. fok

@@ -13,14 +13,14 @@ Az egyik legrégebbi alvilági mesterség, amelynek célja sokszor csak a szóra
 
 🔒 **Követelmény**: Érzékenység: `+2`
 
-🌟 **Hatás**: Zajos háttérben megtévesztően képes vagy utánozni egy előzőleg legalább 1 percig beszélni hallott személy hangját.
+🌟 **Hatás**: Zajos háttérben megtévesztően képes vagy utánozni egy előzőleg legalább `1` percig beszélni hallott személy hangját.
 
 ---
 ### 3. fok
 
 🔒 **Követelmény**: Érzékenység: `+2`
 
-🌟 **Hatás**: Teljesen megtévesztően utánzol egy emberi hangot, csendes körülmények között is.
+🌟 **Hatás**: Teljesen megtévesztően utánzol egy emberi hangot, csendes körülmények között is, ha előzőleg legalább `1` percig hallottad beszélni.
 
 <br />
 

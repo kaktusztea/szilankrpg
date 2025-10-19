@@ -1,5 +1,7 @@
 ## 🟣 Éber alvó (1)
 
+Könnyebben felriadsz gyanús zajokra.
+
 ### 1. fok
 
 🔒 **Követelmény**: nincs

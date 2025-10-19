@@ -5,14 +5,15 @@ A lenti két fortély egymással "szimbiózisban" létezik. Egy jól megkötött
 Megkötözés/szabadulás szituációban (akár egymás távollétében) Ügyesség tulajdonság-ellenpróba dobandó. Mindkét fortély esetén az alábbi bónuszok járnak:
 
 ```
-Ügyesség ellenpróba
-- 1.fok: +2
-- 2.fok: +4
+Ügyesség ellenpróba bónuszai
+
+1.fok: +2
+2.fok: +4
 ```
 
 ## 🟣 Csomózás (2)
 
-Csomók ismerete.
+Csomók ismerete, kötése, rögzítése.
 
 ### 1. fok
 
@@ -52,6 +53,10 @@ Könnyebben kibújsz kötelékeidből.
 
 🌟 **Hatás**:
 - Ügyesség ellenpróbához: `+4` 
+
+### Megjegyzés
+
+🔆 Mechanikus zárakhoz [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettség szükséges.
 
 <br />
 
