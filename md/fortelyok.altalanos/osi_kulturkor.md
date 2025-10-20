@@ -24,7 +24,8 @@ Mi tartozik bele ebbe az ismeretbe? Az adott ősi kultúrkörön belül:
 ### Kiterjeszti ezt
 
 - [Értékbecslés](../kepzettsegek.szekunder/ertekbecsles.md): Az adott **Ősi kultúrkör** idejében készült műkincsek felismerése, értékük felmérése.
-- [Lexikum](../kepzettsegek.szekunder/lexikum.md): Az adott, kapcsolódó **Ősi kultúrkör** ismerete néha (nem mindig) szükséges. Gyakran párban terjesztik ki például [Építészet](epiteszet.md) ÉS **Ősi kultúrkör**.
+- [Lexikum](../kepzettsegek.szekunder/lexikum.md): Az adott, kapcsolódó **Ősi kultúrkör** ismerete néha (nem mindig) szükséges.
+  Gyakran párban terjeszti ki például [Építészet](epiteszet.md) ÉS **Ősi kultúrkör** fortély.
 
 ---
 ### Példák
@@ -48,12 +49,12 @@ Itt nem szükséges az **Ősi kultúrkör** ismerete, hiszen itt általános tö
 ---
 ### Ősi birodalmi kultúrkörök
 
-- Crantai birodalom
-- Dawa birodalom
-- Godoni birodalom
-- Godorai hercegség
-- Ó-Kyr birodalom
-- Ryeki császárság
+- Cr4ntai birodalom
+- D4wa birodalom
+- G0doni birodalom
+- G0dorai hercegség
+- Ó-K4r birodalom
+- Ry3ki császárság
 - Naphon kultúrkör (Pider4-hegység északi lejtője)
 - Ni4rei kultúrkör (Yian-Yiel hegylánc)
 

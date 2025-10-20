@@ -21,6 +21,7 @@ Nemesi, egyházi, hivatali, vagy művészi körökben hallott, míves beszéd. F
 
 - [Írástudó](../fortelyok.altalanos/irastudo.md) fortély
 - [Irodalom](../fortelyok.szabad/irodalom.md) fortély
+- [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md) fortély
 - [Kultúrkör](kulturkor.md) fortély
 - [Szájról olvasás](../fortelyok.altalanos/szajrol_olvasas.md) fortély
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség
