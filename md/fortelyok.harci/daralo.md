@@ -24,7 +24,7 @@ Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkenth
 ---
 ### ⚡ Példa
 
-- Összesen `3` támadásod van és bírod `2.fokon` a Daráló fortélyt
+- Összesen `3` támadásod van és `2.fokon` bírod a **Daráló** fortélyt
 - Ekkor az első támadás `TÉ` levonás nélkül indul, mint mindenkinek
 - A második és az utána levő összes támadást `TÉ:-3` levonással indítod
 

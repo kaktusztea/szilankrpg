@@ -1,6 +1,6 @@
 ## 🟣 Alakzat: védekező (2)
 
-Sok féle alakzat létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok. Ezek között nem differenciálunk, a támadó, vagy védekező jelleget viszont minden ilyen csoport el tudja tolni valamelyik irányba. Ez a fortély a védekező jelleget erősíti.
+Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok. Ezek között nem differenciálunk, a támadó, vagy védekező jelleget viszont minden ilyen csoport el tudja tolni valamelyik irányba. Ez a fortély a védekező jelleget erősíti.
 
 ### Kapcsolódik
 

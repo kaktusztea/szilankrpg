@@ -1,6 +1,6 @@
 ## 🟣 Alakzat: támadó (2)
 
-Sok féle alakzat létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok. Ezek között nem differenciálunk, a támadó, vagy védekező jelleget viszont minden ilyen csoport el tudja tolni valamelyik irányba. Ez a fortély a támadó jelleget erősíti.
+Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok. Ezek között nem differenciálunk, a támadó, vagy védekező jelleget viszont minden ilyen csoport el tudja tolni valamelyik irányba. Ez a fortély a támadó jelleget erősíti.
 
 ### Kapcsolódik
 
@@ -13,14 +13,14 @@ Sok féle alakzat létezik. Gyalogos, kisebb létszámra, nagy, csatatéri form�
 
 🔒 **Követelmény**: Harcmodor - `6.szint`
 
-🌟 **Hatás**: Lásd [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
+🌟 **Hatás**: Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
 
 ---
 ### 2. fok
 
 🔒 **Követelmény**: Harcmodor - `9.szint`
 
-🌟 **Hatás**: Lásd [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
+🌟 **Hatás**: Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
 
 <br />
 

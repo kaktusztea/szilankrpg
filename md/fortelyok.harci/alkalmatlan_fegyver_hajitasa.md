@@ -2,8 +2,7 @@
 
 Minden egyedi fegyverre külön kell felvenni. Például "Kard, Hosszú".
 
-Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajításra alkalmas fegyverek közül kiválasztani egyet (pl. egy Hosszúkardot), aminek a hajításában nagy tapasztalatra teszel szert. Kezedben e fegyver
-(`CÉ=0`) 
+Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajításra alkalmas fegyverek közül kiválasztani egyet (pl. egy Hosszúkardot), aminek a hajításában nagy tapasztalatra teszel szert. Kezedben e fegyver `CÉ=0` értékekkel hajítható. 
 
 ### Kapcsolódik
 
@@ -12,7 +11,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 ### Alapeset
 
 🌟 **Hatás**:
-- [Hajítás alkalmatlan fegyverrel](../065_01_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet büntetéseivel tudsz csak nem dobásra alkalmas fegyvereket hajítani.
+- [Hajítás alkalmatlan fegyverrel](../065_01_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet büntetéseivel tudsz csak dobásra nem alkalmas fegyvereket hajítani.
 - Az ilyen fegyverek **Célzó Értéke** mindig: `CÉ:0`
 
 ---

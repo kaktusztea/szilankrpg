@@ -2,7 +2,7 @@
 
 Mikor összehangoltan, csoportban mozognak harcosok, akkor komoly előnyt képesek kiépíteni. Az egyén feladata ellenük nagyon nehézzé válik, ilyenkor leginkább egy másik alakzat az, ami hatékonyan képes lehet vele felvenni a harcot.
 
-Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összeszokottság. Nem készítünk külön szabályokat az összeszokottság mértékének módosítóira - egy heroikus rendszerben valószínűleg összeszokott csapat indít csak csoportos támadást.
+Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összeszokottság. Nem készítünk külön szabályokat az összeszokottság mértékének módosítóira - egy heroikus rendszerben valószínűleg összeszokott csapat indít csak csoportos támadást. A fentiket az **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettség tanulásával lehet elsajátítani.
 
 Egy alakzat minimum létszáma `3` **fő** (mert `2` fő legfeljebb  [Páros harcot](fortelyok.harci/paros_harc.md) végezhet).
 
@@ -30,7 +30,7 @@ Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónusz
 + MIN(Támadó-alakzat fortély fok) x 2
 ```
 
-- Csapattagok [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
+- Csapattagok **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
 - Csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
  
 ### ⚜️Védekezőszint
