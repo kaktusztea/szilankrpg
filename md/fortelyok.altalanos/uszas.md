@@ -18,9 +18,7 @@ Ha egy kacsaúsztatónál mélyebb vízbe tévedsz, többé már nem merülsz el
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**:
-- Tudsz úszni
-- Hosszú távú úszás esetén⚪**Edzettség** próbára: `+2`
+🌟 **Hatás**: Tudsz úszni
 
 ---
 ### 2. fok
@@ -29,7 +27,7 @@ Ha egy kacsaúsztatónál mélyebb vízbe tévedsz, többé már nem merülsz el
 
 🌟 **Hatás**:
 - Tudsz úszni
-- Hosszú távú úszás esetén⚪**Edzettség** próbára: `+4`
+- Hosszú távú úszás esetén⚪**Edzettség** próbára: `+2`
 
 <br />
 

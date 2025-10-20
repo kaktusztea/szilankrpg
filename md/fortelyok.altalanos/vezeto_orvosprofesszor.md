@@ -1,6 +1,6 @@
 ## 🟣 Vezető: Orvosprofesszor (2)
 
-Vezető orvosprofersszorként koordinálod az alád tartozó orvosok, gyógyítók munkáját → bónusz **Orvoslás** képzettségre.
+Vezető orvosprofesszorként koordinálod az alád tartozó orvosok, gyógyítók munkáját → bónusz **Orvoslás** képzettségre.
 
 ---
 #### Bónusz
