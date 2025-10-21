@@ -43,7 +43,6 @@ Plusz támadás taktika
   +1 támadás
   Cserébe minden támadásodnál
     VÉ csökkentést kapsz: (1 + k20T)
-  Kör elején kell eldönteni
 
 Roham taktika
   Első oda-visszacsapáskor
@@ -308,10 +307,11 @@ Minden támadásodnál
 
 ✅ Több ellenféllel való harc esetén
 
-
 Felpörögsz és csapásaid záporoznak ellenfeledre. `+1 támadáshoz` jutsz a körben.
 
-Cserébe **minden** támadásodnál az adott körben `1 VÉ csökkenést` szenvedsz el, mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc. A taktikát a kör elején kell eldönteni és a kör végéig már nem módosítható.
+Cserébe **minden** támadásodnál az adott körben `(1 + k20T) VÉ csökkenést` szenvedsz el, mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc. A taktikát a kör elején kell eldönteni és a kör végéig már nem módosítható.
+
+🔆NEM csak a plusz támadásodra, hanem **mindegyik** támadásodra jár a `VÉ csökkenés`.
 
 🔆Tipp: ha fix növelésre vágysz, a [Harckeret növelés](fortelyok.harci/harckeret_noveles.md) fortély felvétele segíthet.
 

@@ -47,8 +47,9 @@ Fegyverrántás váratlanul
     támadhatsz elsőnek full harcértékkel
     Részletek a leírásban.
   • Fegyverrántás fortély bónuszai:
-    1.: 1 hátrány semlegesít v. 1 előny
-    2.: 2 hátrány semlegesít v. 2 előny
+    [Hátrány-2; Előny+2] skálán
+    1.fok: 1 lépést felfele ugrasz
+    2.fok: 2 lépést felfele ugrasz
 
 Félhátulról támadás
   Előny+1 TÉ dobásra
