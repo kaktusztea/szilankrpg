@@ -10,7 +10,7 @@ A fortély nagy ismerői a bajvívók és harcosok.
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**:
-- Ha a [Fárasztó taktikát](../065_02_harci_taktikak.md#fárasztó-taktika-) alkalmazod akkor extra `+1 VÉ` csökkentés bónuszt kapsz ellenfeledre támadáskor
+- [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-) alkalmazása esetén extra `+1 VÉ` csökkentés bónuszt kapsz
 - Sikeres és sikertelen támadás esetén is
 
 ---

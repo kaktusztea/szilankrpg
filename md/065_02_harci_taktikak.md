@@ -260,7 +260,7 @@ Ha fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy
 
 A Fárasztó taktikának leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a „vadat”, míg vezetőjük felkészül.
 
-Kapcsolódó fortély: [Fárasztás](fortelyok.harci/farasztas.md) harci fortély
+Kapcsolódik: [Fárasztás](fortelyok.harci/farasztas.md) harci fortély
 
 ---
 ### Visszafogott taktika ⇄
