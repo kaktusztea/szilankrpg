@@ -17,12 +17,9 @@ A fortély segítségével minden fegyver okozta, bekapott `ÉP` sebből "átala
 
 🌟 **Hatás**: `2 ÉP` forgatható át `FP` ponttá.
 
-<br />
+---
+### `ÉP` vs `FP`
 
-#### Megjegyzések
-
-Fontos: ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! [Bővebben](../061_02_faradsag_pont.md#val%C3%B3s-%C3%A9p-seb-elszenved%C3%A9se-fp-ut%C3%A1n).
-
-<br />
+Ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! [Bővebben](../061_02_faradsag_pont.md#val%C3%B3s-%C3%A9p-seb-elszenved%C3%A9se-fp-ut%C3%A1n).
 
 ---

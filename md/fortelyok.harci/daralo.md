@@ -28,10 +28,9 @@ Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkenth
 - Ekkor az első támadás `TÉ` levonás nélkül indul, mint mindenkinek
 - A második és az utána levő összes támadást `TÉ:-3` levonással indítod
 
-### 🔆 Megjegyzések
+---
+### Harcmodorok
 
-- A fortély hatása minden harcmodorban, mindig érvényes
-
-<br />
+A fortély hatása **minden** harcmodorban, mindig érvényes
 
 ---

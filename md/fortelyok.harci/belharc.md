@@ -39,13 +39,9 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 - `TÉ:+4`
 - `VÉ:+4`
 
-<br />
-
 ---
-#### Megjegyzések
+###  Ellenfél módosítói
 
-Az ellenfél módosítóinak változását szintén a Harcrendszer fejezet [Harci helyzet: Belharci szituáció](../065_01_harci_helyzetek.md#belharci-szituáció) leírásánál találod.
-
-<br />
+Ezek változását szintén a Harcrendszer fejezet [Harci helyzet: Belharci szituáció](../065_01_harci_helyzetek.md#belharci-szituáció) leírásánál találod.
 
 ---

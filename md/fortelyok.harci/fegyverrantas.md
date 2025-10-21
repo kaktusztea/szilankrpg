@@ -16,6 +16,4 @@ Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_harci_helyzetek.md#fegy
 
 🌟 **Hatás**: Fegyverrántás Kezdeményezésénél a `[Hátrány-2; Előny+2]` skálán `2` lépést felfele ugrasz
 
-<br />
-
 ---

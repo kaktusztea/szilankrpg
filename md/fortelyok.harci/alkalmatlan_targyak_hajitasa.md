@@ -28,6 +28,4 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 
 🌟 **Hatás**: Alkalmi fegyvereid [Osztó értéke](../072_tavharc_ve_oszto_cella.md) `2`-re emelkedik.
 
-<br />
-
 ---

@@ -22,6 +22,4 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 
 🌟 **Hatás**: Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
 
-<br />
-
 ---

@@ -38,6 +38,4 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 - [Hajítás alkalmatlan fegyverrel](../065_01_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet büntetései már egyáltalán nem sújtanak
 - A fegyver [harcértéke](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy) nem változik (`CÉ=0`) 
 
-<br />
-
 ---

@@ -7,20 +7,16 @@ Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.
 🔒 **Követelmény**:
 - Harcmodor  **-** `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Rombolás** vagy **Lándzsavívás**)
-- Roham taktika
+- [Roham](../065_02_harci_taktikak.md#roham-taktika) taktika
 
 🌟 **Hatás**:
 - Roham esetén: `KÉ:+5`
 - Erőbónusz: `x2` (duplázódik)
-
-<br />
 
 ---
 ### Megjegyzések
 
 - [Öngyilkos roham](../065_02_harci_taktikak.md#öngyilkos-roham-taktika) esetén a fentiek nem használhatóak.
 - Ostorharc harcmodorban nem lehet Roham taktikát használni, így ez a fortély sem vonatkozik rá
-
-<br />
 
 ---
