@@ -265,15 +265,16 @@ Kapcsolódik: [Fárasztás](fortelyok.harci/farasztas.md) harci fortély
 ### Visszafogott taktika ⇄
 
 ```
-Sebzéskocka változik:
-TÉ:-3  →  k20 helyett k10
-TÉ:-6  →  k20 helyett k6
-TÉ:-9  →  nincs kockadobás
-          csak a fegyver
-          alap sebzése
+TÉ mínusz      Sebzéskocka
+
+TÉ:-3    →  k20 helyett k10
+TÉ:-6    →  k20 helyett k6
+TÉ:-9    →  nincs kockadobás
+            csak a fegyver
+            alap sebzése
 ```
 
-A [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka `3`-mel csökkenti a `TÉ` büntetést.
+A [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka `3`-mal csökkenti a `TÉ` büntetést.
 
 ✅ **Kezdeményező taktikával** együtt
 
@@ -281,10 +282,9 @@ A [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka `3`-
 
 ❌ Más taktikával együtt
 
-
 Szándékosan kisebb sebzést próbálsz okozni találatkor - általában olyankor fordul elő, mikor nem cél az ellenfél megölése.
 
-Némi ritmus megtörés bevállalásával csökkentheted az okozott sebzést: kisebb értékű kockával dobhatsz sebzéskor.
+Némi ritmus megtörés bevállalásával (TÉ mínusz) csökkentheted az okozott sebzést: kisebb értékű kockával dobhatsz sebzéskor.
 
 ---
 ### Plusz támadás taktika
