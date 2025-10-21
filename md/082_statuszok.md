@@ -351,7 +351,7 @@ A páncél viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettsé
 ```
 MGT hatása
 
-Hajlékonyvért
+Hajlékonyvértek
  1 MGT == -1 Harckeret
 
 Merevvértek
@@ -376,7 +376,8 @@ Merevvértviselet fortély MGT csökkentő
  hatása a próbákra is hatással van!
 ```
 
-**Kapcsolódik**:
+#### Kapcsolódik
+
 - [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély
 
@@ -526,8 +527,6 @@ Kihozni valakit sokkból
 ⚡ Példák
 - természetes villám lecsap melléd
 - szakrális mágiák mellékhatása is lehet
-
-<br />
 
 ---
 
