@@ -22,6 +22,4 @@ Kivételesen gyorsan mozdulsz a harcban.
 
 🌟 **Hatás**: `KÉ:+6` bónusz jár
 
-<br />
-
 ---

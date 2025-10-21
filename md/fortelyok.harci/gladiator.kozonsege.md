@@ -1,6 +1,6 @@
 ## 🟣 Gladiátor közönsége (1)
 
-Ha éltető közönség előtt harcolsz, az megacélozza izmaidat, a látványos diadal mindennél édesebb.
+Ha éltető közönség előtt harcolsz, az extázis megacélozza izmaidat - a látványos diadal mindennél édesebb lesz.
 
 ### 1. fok
 
@@ -11,13 +11,11 @@ Ha éltető közönség előtt harcolsz, az megacélozza izmaidat, a látványos
 
 🌟 **Hatás**:
 
--  `TÉ:+10` a harc idejére
+-  `TÉ:+3` a harc idejére
 
 ---
 ### Megjegyzések
 
 Valódi aréna hangulat szükséges. A szükséges létszámot, környezetet nem specifikáljuk, a KM szava dönt.
-
-<br />
 
 ---
