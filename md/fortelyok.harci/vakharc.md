@@ -18,7 +18,6 @@ Vakharc minden foka:
 
 [Lopakodás/rejtőzés és Észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációban, **kizárólag** hátbatámadás elszenvedése esetén az ellenpróbánál az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettségpróba dobásodra a **Vakharc** minden foka `+2` bónuszt ad. Ez akkor is jár, ha egy tudottan hátad mögött álló személy hirtelen rádtámad.
 
-
 ---
 ### 1. fok
 

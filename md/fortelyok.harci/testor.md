@@ -1,6 +1,6 @@
 ## 🟣 Testőr (2)
 
-Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod terjeszteni. Minden védencedre leadott támadás a te `Védő Értékeddel` szemben kerül leadásra.
+Hasznos fortély, ha **Védő Értékedet** egy másik - együttműködő - személyre is ki akarod terjeszteni. Minden védencedre leadott támadás a te `Védő Értékeddel` szemben kerül leadásra.
 
 ### Alapeset
 
@@ -30,12 +30,9 @@ Hasznos fortély, ha **Védő Értékedet** egy másik személyre is ki akarod t
 
 🌟 **Hatás**: Büntetések nélkül védheted pártfogoltad. A [Többszörös támadás elvesztése](../081_hatasok.md#-t%C3%B6bbsz%C3%B6r%C3%B6s-t%C3%A1mad%C3%A1s-elveszt%C3%A9se) Hatás sem sújt már.
 
-<br />
-
-### Megjegyzések
+---
+### Távolság
 
 Az oltalmazott személy nem harcolhat, a testőrnek pedig **`2` méteren** belül kell lennie.
-
-<br />
 
 ---
