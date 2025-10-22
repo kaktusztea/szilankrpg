@@ -9,18 +9,12 @@ Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt löv
 - Gyorsasság: `+3`
 - Összpontosítás - `6.szint`
 
-🌟 **Hatás**:
+🌟 **Hatás**: [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) szituációban **Akrobatika** képzettségpróbádra `+2` bónuszt kapsz
 
-[Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) szituációban amennyiben
+### Követelmények
+
 - észleled, hogy rád lőnek
 - nem számítasz 🗡️[Készületlennek](../065_01_harci_helyzetek.md#készületlenség)
-- kizárólag arra figyelsz, hogy elkerüld a lövedéket, akkor az erre vonatkozó
-
-```
-Akrobatika képzettségpróbára
- +2 bónuszt kapsz
-```
-
-<br />
+- kizárólag arra figyelsz, hogy elkerüld a lövedéket
 
 ---

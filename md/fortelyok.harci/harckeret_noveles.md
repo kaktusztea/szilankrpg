@@ -6,30 +6,29 @@ Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyve
 
 🔒 **Követelmény**:
 - Gyorsaság VAGY Intelligencia: `+1`
+- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**: `+1` Harckeret
-
-<br />
 
 ---
 ### 2. fok
 
 🔒 **Követelmény**:
 - Gyorsaság VAGY Intelligencia: `+2`
+- Harcmodor - `7.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**: `+2` Harckeret
-
-<br />
 
 ---
 ### 3. fok
 
 🔒 **Követelmény**:
 - Gyorsaság VAGY Intelligencia: `+2`
+- Harcmodor - `10.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**: `+3` Harckeret
 
-<br />
+---

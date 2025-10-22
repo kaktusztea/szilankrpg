@@ -12,10 +12,10 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**:
-- Max Támadó taktikával kell harcolnod: `[+15TÉ; -30VÉ]`
+- Max Támadó taktikával kell harcolnod: `[+3 TÉ; -6 VÉ]`
 - Asztrál/Mentál Mágiaellenállás dobásra: `Előny+1`
 - [S4 Fájdalomtűrés próbára](../061_03_sebesules.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s): `Előny+1`
-- [Öngyilkos roham taktikát](../065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) használhatja csak roham esetén
+- Roham helyett kötelezően az [Öngyilkos roham taktikát](../065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) kell használnod
 
 ---
 ### 2. fok
@@ -27,34 +27,33 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**:
-- `TÉ`, Sebzés dobás: `Előny+1`
-- Max Támadó taktikával kell harcolnod bónusszal: `[+20TÉ; -40VÉ]`
+- `TÉ` dobás: `Előny+1`
+- Sebzés dobás: `Előny+1`
+- Max **Támadó taktikával** kell harcolnod: `[+3 TÉ; -6 VÉ]`
 - Asztrál/Mentál Mágiaellenállás dobásra: `Előny+2`
 - `S4` Fájdalomtűrés próbára: `Előny+2`
-- **Öngyilkos roham taktikát** használhatja csak roham esetén
+- Roham helyett kötelezően az **Öngyilkos roham** taktikát kell használnod
 
 ---
 ### 3. fok 🔆
 
 🔒 **Követelmény**
-- 🔆Speciális, nem vehető fel KP-ért.
+- 🔆Speciális, nem vehető fel `KP`-ból, mert ez különleges állapot.
 - Csak mágiával érhető el, például ork ereklye hatása, vagy Arel áldása.
-- Ezek különleges állapotok, ezt a szintet nem lehet tanulással elérni, így **KP**-t sem lehet rá költeni.
 
 🌟 **Hatás**:
-- `TÉ`, Sebzés dobás: `Előny+2`
-- Max Támadó taktikával kell harcolnod bónusszal: `[+25TÉ; -50VÉ]`
+- `TÉ` dobás: `Előny+2`
+- Sebzés dobás: `Előny+2`
+- Max Támadó taktikával kell harcolnod: `[+3 TÉ; -6 VÉ]`
 - Asztrál/Mentál Mágiaellenállás dobásra: `Előny+2`
 - `S4` Fájdalomtűrés próba: Automatikus siker
-- **Öngyilkos roham taktikát** használhatja csak roham esetén
-- Csak `0 ÉP` esetén hagyja abba a támadást
-
-<br />
+- Roham helyett kötelezően az **Öngyilkos roham** taktikát kell használnod
+- Csak `0 ÉP` esetén hagyod abba a támadást
 
 ---
 ### Speciális
 
-- Pajzs VÉ nem számít, lövés, mágia, pszi tiltott
+- Pajzs `VÉ` **nem** számít, lövés, mágia, pszi tiltott
 - Hajításnál a fegyver Osztója csökken: `-1`  (min `1`)
 
 ---
@@ -63,7 +62,5 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - 2 kör hergelés szükséges
 - Harc közben elég `1` kör
 - Ha sebet kap (vagy okoz magának), akkor szintén elég `1` kör
-
-<br />
 
 ---

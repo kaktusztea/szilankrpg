@@ -33,13 +33,13 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `2.fok`
 - [Fejvadász Tradíció](../053_01_fejvadasz_tradicio.md) - `6.szint`
 - Mester, aki tanítja
-- A `3.fokot` csak fejvadász, vulgármágiával foglalkozó és egyes harcművész iskolákban tanítják
+- A `3.fokot` csak fejvadász, vulgármágiát oktató és egyes harcművész iskolákban tanítják
 
 🌟 **Hatás**:
 - [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén: `SP:+4` (csak vértmentes ponton)
 - [Orvtámadás](../066_05_altalanos_manoverek.md#orvtámadás) Manőver esetén `SP:+4` (csak vértmentes ponton)
 - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
-- Szemgolyót szedhet ki harc közben: Sikeres [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel. Nem csak kiüti, hanem ki is szedheti.
+- Szemgolyót szedhet ki harc közben: Sikeres [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
 
 ---
 ### [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver alkalmazásakor
@@ -62,6 +62,6 @@ Alkalmazásához követelmény a **Harci anatómia**, melynek egyes fokai egyre 
 - A fortély alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára.
 - [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
 - Csatabárdokkal, buzogányokkal, kétkezes fegyverekkel a fortély nem alkalmazható.
-- A fent leírt előnyök nem érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
+- A fortély átal leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
 
 ---

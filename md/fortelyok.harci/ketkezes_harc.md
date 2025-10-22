@@ -13,7 +13,7 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ### Alapeset
 
-Képzetlen kétkezes harc esetén két fegyver használatakor.
+Képzetlen kétkezes harc két fegyver használatakor.
 
 🔒 **Követelmény**: -
 
@@ -63,7 +63,5 @@ Képzetlen kétkezes harc esetén két fegyver használatakor.
   - Fegyver harcértékek összeadódnak
   - mindkét fegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya számít
   - **Harckeret**: `+4`
-
-<br />
 
 ---

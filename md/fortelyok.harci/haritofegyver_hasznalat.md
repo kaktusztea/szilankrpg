@@ -2,10 +2,6 @@
 
 Képes vagy hárítófegyvert használni.
 
-### Kapcsolódik
-
-[Mesterfegyver](mesterfegyver.md) fortély
-
 ### Alapeset
 
 🔒 **Követelmény**: -
@@ -17,17 +13,14 @@ Képes vagy hárítófegyvert használni.
 
 🔒 **Követelmény**: Ügyesség: `+1`
 
-🌟 **Hatás**: Megkapod a hárítófegyver **VÉ** értékét is.
+🌟 **Hatás**: Megkapod a hárítófegyver `VÉ` értékét is. **[Mesterfegyver](mesterfegyver.md)** fortély `VÉ` bónusza is beszámít.
 
 <br />
 
 ---
-### Megjegyzések
+### Hárítófegyverek listája
 
-- **[Mesterfegyver](mesterfegyver.md)** fortély felvehető hárítófegyverekre is. Ekkor a fortély `VÉ` bónusza is beszámít (de csak az).
-- [Közelharci hárítófegyverek listája](../068_02_kozelharci_fegyverek.md#k%C3%B6zelharci-h%C3%A1r%C3%ADt%C3%B3fegyverek)
-- [Kardvívó hárítófegyverek listája](../068_03_kardvivo_fegyverek.md#kard%C3%ADv%C3%B3-h%C3%A1r%C3%ADt%C3%B3fegyverek)
-
-<br />
+- [Közelharci hárítófegyverek](../068_02_kozelharci_fegyverek.md#k%C3%B6zelharci-h%C3%A1r%C3%ADt%C3%B3fegyverek)
+- [Kardvívó hárítófegyverek](../068_03_kardvivo_fegyverek.md#kard%C3%ADv%C3%B3-h%C3%A1r%C3%ADt%C3%B3fegyverek)
 
 ---
