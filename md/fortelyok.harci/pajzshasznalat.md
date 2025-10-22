@@ -17,9 +17,10 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 
 🌟 **Hatás**:
 - Képzetlen pajzshasználó. A pajzs `VÉ` **felét** kapja csak meg ↓
-- **Kis pajzs** levonás: `TÉ:-3`
-- **Közepes pajzs** levonás: `TÉ:-6`
-- **Nagy pajzs** levonás: `TÉ:-9`
+- `TÉ` levonás
+  - **Kis pajzs**: `-3`
+  - **Közepes pajzs**: `-6`
+  - **Nagy pajzs**: `-9`
 
 ---
 ### 1. fok
@@ -28,9 +29,10 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 
 🌟 **Hatás**:
 - Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
-- **Kis pajzs** levonás: `0`
-- **Közepes pajzs** levonás: `TÉ:-3`
-- **Nagy pajzs** levonás: `TÉ:-6`
+- `TÉ` levonás
+  - **Kis pajzs**: `0`
+  - **Közepes pajzs**: `-3`
+  - **Nagy pajzs**: `-6`
 
 ---
 ### 2. fok
@@ -41,10 +43,11 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 
 🌟 **Hatás**:
 - Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
-- **Kis pajzs** levonás: `0`
-- **Közepes pajzs** levonás: `0`
-- **Nagy pajzs** levonás: `-3`
-- Támadhatsz is a pajzzsal, ha csak pajzs van nálad, akkor azzal.
+- `TÉ` levonás
+  - **Kis pajzs**: `0`
+  - **Közepes pajzs**: `0`
+  - **Nagy pajzs**: `-3`
+- Támadhatsz is a pajzzsal - ha csak az van nálad, akkor azzal.
 - Ha fegyver is van nálad: akkor VAGY a fegyverrel VAGY a pajzzsal támadhatsz.
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket.
 
@@ -58,13 +61,9 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 🌟 **Hatás**:
 - Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
 - Extra `VÉ:+2` minden pajzshoz
-- **Kis pajzs** levonás: `0`
-- **Közepes pajzs** levonás: `0`
-- **Nagy pajzs** levonás: `0`
-- Támadhatsz is a pajzzsal, ha csak pajzs van nálad, akkor azzal.
+- `TÉ` levonás: `0`
+- Támadhatsz is a pajzzsal - ha csak az van nálad, akkor azzal.
 - Ha fegyver is van nálad: akkor VAGY a fegyverrel VAGY a pajzzsal támadhatsz.
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket.
-
-<br />
 
 ---

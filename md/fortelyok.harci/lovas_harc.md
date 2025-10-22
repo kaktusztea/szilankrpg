@@ -2,15 +2,11 @@
 
 Hátason ülve sem esel kétségbe, ha harcolni kell.
 
-Lovas harc során ezen fortély fokától függő mértékben harcértékeidhez hozzáadódnak a 🔵 [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettségből adódó harcérték pluszok. Ezeket úgy számítjuk ki, hogy a **Lovaglás** képzettséget egyszerűen [Harcmodorként](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) kezeljük és a szintjének megfelelő `TÉ/VÉ` és `SP` pluszokat vesszük.
-
-A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, tehát a fentiek bónuszként értelmezendők!
-
 ### Alapeset
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Függetlenül a **Lovaglás** képzettség szintjétől, elszenveded `0.szintű` harcmodor szokásos harcérték büntetéseit
+🌟 **Hatás**: Függetlenül a **Lovaglás** képzettség szintjétől, elszenveded `0.szintű` harcmodor szokásos harcérték büntetéseit: `TÉ/VÉ: -9`
 
 ---
 ### 1. fok
@@ -22,7 +18,7 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Lovaglás - `6.szint`
 
 🌟 **Hatás**:
-- fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` lovas bónusz járul
+- Fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` lovas bónusz járul
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
 
 ---
@@ -35,7 +31,7 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Lovaglás - `9.szint`
 
 🌟 **Hatás**:
-- fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` lovas bónusz járul
+- Fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` lovas bónusz járul
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
 
 ---
@@ -48,7 +44,7 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Lovaglás - `12.szint`
 
 🌟 **Hatás**:
-- fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` lovas bónusz járul
+- Fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` lovas bónusz járul
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
 
 ### 4. fok
@@ -60,17 +56,12 @@ A forgatott fegyver Harcmodorából adódó értékek továbbra is megmaradnak, 
 - Lovaglás - `12.szint`
 
 🌟 **Hatás**:
-- fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` lovas bónusz járul
+- Fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` lovas bónusz járul
 - [Lovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz
-
-
-<br />
 
 ---
 ### Speciális
 
 [Harc lóhátról, Légi hátasról fejezet](../067_00_harc_hatasrol.md)
-
-<br />
 
 ---

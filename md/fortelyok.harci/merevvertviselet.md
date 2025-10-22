@@ -17,7 +17,7 @@ Merevvért büntetés Hatásairól a [Mozgásgátló Tényező (MGT)](../069_03_
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: a vért teljes büntetése érvényesül: `-TÉ == MGT`
+🌟 **Hatás**: a vért teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ---
 ### 1. fok
@@ -40,12 +40,7 @@ Merevvért büntetés Hatásairól a [Mozgásgátló Tényező (MGT)](../069_03_
 
 🌟 **Hatás**:
 - Merevvérted `TÉ` büntetése ennyivel enyhül: `-15`
-- Merevvért viselése esetén `VÉ:+3` bónuszt kapsz
+- Merevvért viselése esetén `VÉ:+3` bónuszt kapsz (ha a lefedettség minimum `70%`)
   (tudatos vérthasználat lecsúsztatásokkal)
-
----
-### Erő Tulajdonság
-
-A merevvértek `TÉ` büntetését is csökkenti az **Erő** Tulajdonság.
 
 ---
