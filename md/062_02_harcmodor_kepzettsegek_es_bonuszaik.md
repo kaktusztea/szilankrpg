@@ -13,7 +13,7 @@ A `Szilánk` rendszere az alábbi (Primer) harci képzettségeket ismeri, az al�
 - **Ostromlövészet**: nagy hajító/lövő ostromgépek
 - **Mágikus lövészet**: mentális ismeret mágiatudóknak mágikus lövedékek, célzott hatások alkalmazására
 
-🔆**Fegyver harcértékek erősítése** a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortéllyal lehetséges.
+🔆 **Fegyver harcértékek erősítése** a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortéllyal lehetséges.
 
 <br />
 
@@ -42,7 +42,7 @@ A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyv
 
 <!-- tag: md_codeblock_harcmodor_kepzettseg_bonuszok_end -->
 
-⚜️ A távolsági fegyvereknél értelemszerűen csak `CÉ:+1` jár szintenként, hiszen nincs `TÉ` és `VÉ` értékük.
+🔆 A távolsági fegyvereknél értelemszerűen csak `CÉ:+1` jár szintenként, hiszen nincs `TÉ` és `VÉ` értékük.
 
 ---
 ### Harcmodorok és Manőverek
