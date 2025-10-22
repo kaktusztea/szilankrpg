@@ -202,7 +202,7 @@ Védekező takarásban
 Védő Érték kiterjesztése másra
 - Többszörös támadás elvesztése
 - VÉ veszteség duplázódik
-  Büntetések csökkenthetők
+- Büntetések csökkenthetők
     Testőr fortély tanulásával
 
 Vér elvakít
