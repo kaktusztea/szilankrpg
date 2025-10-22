@@ -9,7 +9,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)  **-** `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 **Hatás**: Ha harcképtelenné teszel valakit, akkor azonnal kapsz `+1` soron kívüli bónusz támadást egy közeli ellenfél ellen. Ezt egy körben max `1x` alkalmazhatod.
+🌟 **Hatás**: Ha harcképtelenné teszel valakit, akkor azonnal kapsz `+1` soron kívüli bónusz támadást egy közeli ellenfél ellen. Ezt egy körben legfeljebb `1x` alkalmazhatod.
 
 ---
 ### 2. fok
@@ -24,7 +24,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 ---
 ### Megjegyzések
 
-- A plusz támadásra is vonatkozik a **nem első** támadásokra vonatkozó `TÉ:-4` szabály
-- A fortély hatása lő- és hajítófegyverek használatánál nem érvényesül!
+- A plusz támadásra mindig a szokásos `TÉ:-4` módosító vonatkozik
+- Lő- és hajítófegyvereknél nem alkalmazható
 
 ---
