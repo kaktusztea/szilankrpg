@@ -37,6 +37,8 @@ Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [cso
 🌟 **Hatás**: `+4` bónusz az **Észlelés** képzettségre
 
 ---
-### Megjegyzések
+### Jellemzően
 
-- Jellemzően NJK ismeret
+Jellemzően NJK ismeret
+
+---
