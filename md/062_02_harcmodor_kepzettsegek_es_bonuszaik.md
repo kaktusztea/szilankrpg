@@ -47,7 +47,7 @@ A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyv
 ---
 ### Harcmodorok és Manőverek
 
-A Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc Harcmodorok szintjei lehetőséget adnak Manőverek könnyebb elvégzésére. Bővebben lásd a [Manőver Pontok](066_02_manover_pontok.md) fejezetet.
+A Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc Harcmodorok szintjeinek összege lehetőséget ad Manőverek könnyebb elvégzésére. Bővebben lásd a [Manőver Pontok](066_02_manover_pontok.md) fejezetet.
 
 ---
 
