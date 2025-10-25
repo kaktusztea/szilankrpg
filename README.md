@@ -123,11 +123,11 @@ Lássuk hát a részletes szabályrendszert:\
 ## Fejlesztés statisztikái
 
 ![](https://progress-bar.xyz/98/?title=Karakteralkotás%20%20%20%20%20%20%20%20%20%20%20%20&width=400&color=babaca)\
-![](https://progress-bar.xyz/97/?title=K%C3%A9pzetts%C3%A9grendszer%20%20%20%20%20%20%20%20%20&width=400&color=babaca)\
-![](https://progress-bar.xyz/80/?title=K%C3%A9pzetts%C3%A9gek%20kidolgzotts%C3%A1ga&width=400&color=babaca)\
-![](https://progress-bar.xyz/97/?title=Fort%C3%A9lyok%20kidolgzotts%C3%A1ga%20%20%20&width=400&color=babaca)\
-![](https://progress-bar.xyz/90/?title=H%C3%A1tterek%20kidolgzotts%C3%A1ga%20%20%20%20&width=400&color=babaca)\
-![](https://progress-bar.xyz/95/?title=Harcrendszer%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&width=400&color=babaca)\
+![](https://progress-bar.xyz/98/?title=K%C3%A9pzetts%C3%A9grendszer%20%20%20%20%20%20%20%20%20&width=400&color=babaca)\
+![](https://progress-bar.xyz/90/?title=K%C3%A9pzetts%C3%A9gek%20kidolgzotts%C3%A1ga&width=400&color=babaca)\
+![](https://progress-bar.xyz/98/?title=Fort%C3%A9lyok%20kidolgzotts%C3%A1ga%20%20%20&width=400&color=babaca)\
+![](https://progress-bar.xyz/95/?title=H%C3%A1tterek%20kidolgzotts%C3%A1ga%20%20%20%20&width=400&color=babaca)\
+![](https://progress-bar.xyz/98/?title=Harcrendszer%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&width=400&color=babaca)\
 ![](https://progress-bar.xyz/15/?title=M%C3%A1giarendszer%20%20%20%20%20%20%20%20%20%20%20%20%20%20&width=400&color=babaca)
 
 ---
