@@ -65,6 +65,8 @@ Védekezésnél: a támadó dob → `Előny-2`
 
 Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni - alvás közben sem.
 
+<br />
+
 ---
 ### 🔥 Automatikus kudarc
 
@@ -75,12 +77,16 @@ Az adott Tulajdonságra/Képzettségre nem is dobhatsz próbát, azonnali kudarc
 
 Példa: csábítás **Befolyásolás-próba** borzasztó büdösen.
 
+<br />
+
 ---
 ### 🔥 Automatikus tulajdonság/képzettségpróba
 
 Sima próbadobás (Tulajdonságpróba, Képzettségpróba)
 
 Ami másnak automatikus siker, az neked sima próbadobás.
+
+<br />
 
 ---
 ### 🔥 Beszédvesztés - részleges
@@ -93,26 +99,32 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 - Képtelen vagy beszéddel hangot kiadni magadból, még egy nyikkanást sem.
 - Mágia hangalapú komponensét sem tudod alkalmazni
 
+<br />
+
 ---
 ### 🔥 Érzék - zavart
 
-Látás, Hallás, Szaglás.
+Látás / Hallás / Szaglás.
 
 ```
 Hátrány-1 minden adott érzéken
   alapuló tulajdonságpróbára és
-  képzettségpróbánál
+  képzettségpróbára
 ```
 
 ### 🔥 Érzék - részleges
 
+Látás / Hallás / Szaglás.
+
 ```
 Hátrány-2 minden adott érzéken
   alapuló tulajdonságpróbára és
-  képzettségpróbánál
+  képzettségpróbára
 ```
 
 ### 🔥 Érzék - kioltott
+
+Látás / Hallás / Szaglás.
 
 ```
 Automatikus sikertelenség
