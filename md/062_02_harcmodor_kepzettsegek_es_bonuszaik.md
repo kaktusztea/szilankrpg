@@ -1,24 +1,5 @@
 ## Harcmodor képzettségek és bónuszaik
 
-A `Szilánk` rendszere az alábbi (Primer) harci képzettségeket ismeri, az alájuk tartozó fegyvercsoportokkal:
-
-- **Közelharc**: Rövid (`0`) pengehosszú fegyverek, puszta kéz
-- **Kardvívás**: minden további „pengés” fegyver (kétkezes kard is)
-- **Rombolás**: zúzófegyverek, csatabárdok, csákány
-- **Lándzsavívás**: Szálfegyverek
-- **Ostroharc**: hajlékony, ostorjellegű fegyverek
-- **Hajítás**: dobófegyverek a tőrtől a dárdáig
-- **Íjászat**: íjak
-- **Lövészet**: számszeríjak
-- **Ostromlövészet**: nagy hajító/lövő ostromgépek
-- **Mágikus lövészet**: mentális ismeret mágiatudóknak mágikus lövedékek, célzott hatások alkalmazására
-
-🔆 **Fegyver harcértékek erősítése** a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortéllyal lehetséges.
-
-<br />
-
-A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyverek egyedi harcértékeihez milyen általános harcérték pluszokat kap még a karakter.
-
 <!-- tag: md_codeblock_harcmodor_kepzettseg_bonuszok_start -->
 
 ```
@@ -42,7 +23,27 @@ A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyv
 
 <!-- tag: md_codeblock_harcmodor_kepzettseg_bonuszok_end -->
 
+A harci képzettségek aktuális szintjétől függ, hogy az alá tartozó fegyverek egyedi harcértékeihez milyen általános harcérték pluszokat kap még a karakter.
+
 🔆 A távolsági fegyvereknél értelemszerűen csak `CÉ:+1` jár szintenként, hiszen nincs `TÉ` és `VÉ` értékük.
+
+---
+### Harcmodorok egyedi jellemzői
+
+A `Szilánk` rendszere az alábbi (Primer) harci képzettségeket ismeri, az alájuk tartozó fegyvercsoportokkal:
+
+- **Közelharc**: Rövid (`0`) pengehosszú fegyverek, puszta kéz
+- **Kardvívás**: minden további „pengés” fegyver (kétkezes kard is)
+- **Rombolás**: zúzófegyverek, csatabárdok, csákány
+- **Lándzsavívás**: Szálfegyverek
+- **Ostroharc**: hajlékony, ostorjellegű fegyverek
+- **Hajítás**: dobófegyverek a tőrtől a dárdáig
+- **Íjászat**: íjak
+- **Lövészet**: számszeríjak
+- **Ostromlövészet**: nagy hajító/lövő ostromgépek
+- **Mágikus lövészet**: mentális ismeret mágiatudóknak mágikus lövedékek, célzott hatások alkalmazására
+
+🔆 **Fegyver harcértékek erősítése** a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortéllyal lehetséges.
 
 ---
 ### Harcmodorok és Manőverek
