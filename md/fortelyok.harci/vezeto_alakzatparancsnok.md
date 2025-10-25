@@ -1,19 +1,27 @@
 ## 🟣 Vezető: Alakzatparancsnok (2)
 
-Képes vagy egy harci alakzat
-- egyben tartására változó harci környezetben. Megfelelő alakzat felvétele, adaptálódás  → **Hadászat** képzettség Normál kiterjesztése
-- harcát koordinálni → bónusz **Alakzatszintre** (harc alakzatban)
+Egy jó vezető csodákat tehet egy fegyveres alakzattal.
+
 
 ### Kiterjeszti ezeket
 
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "Lándzsások vonalba, megakasztásra készülj!" ; "A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lőssz, Mocsok, tied a kocsis.""
+- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
+
+    - Megfelelő alakzat felvétele, adaptálódás
+    - Alakzat egyben tartása változó harci környezetben
+    - ⚡"Lándzsások vonalba, megakasztásra készülj!"
+    - ⚡"A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lőssz, Rühes, tied a kocsis."
 
 ---
-#### Bónusz
+### Alapeset
 
-Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk: [Harc alakzatban](../065_03_harc_alakzatban.md). A fentiek szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
+Az **[Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md)** képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk.
 
+
+---
 ### 1. fok
+
+A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Intelligencia: `+1`
@@ -35,7 +43,10 @@ Az [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [cs
 🌟 **Hatás**: `+4` bónusz az **Alakzatszintre**
 
 ---
-### Megjegyzések
+### Több Alakzatparancsnok a csapatban
 
-- Ha több **Alakzatparancsnok** van egy csapatban, akkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.
-- Kezeljük lazán: egy rablóbanda vezére is Alakzatparancsnoknak számít.
+Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.
+
+### Kezeljük lazán
+
+Egy rablóbanda vezére is Alakzatparancsnoknak számít.
