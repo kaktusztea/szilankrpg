@@ -1,21 +1,24 @@
 ## 🟣 Vezető: Léglovaskapitány (2)
 
-Képes vagy egy légi hátas alakzat
-- egyben tartására változó harci környezetben. Megfelelő alakzat felvétele, adaptálódás  → **Hadászat** képzettség **Normál kiterjesztése**
-- harcát koordinálni → bónusz **Alakzatszintre** (harc alakzatban)
+Egy légi hátasokkal küzdő egység parancsnokakként koordinálod annak harcát.
 
 ### Kiterjeszti ezeket
 
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
+- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
+    - Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, adaptálódás
+    - Közösen lecsapni a magasból - harci körülmények között is.
+    - Légi hátas alakzat egyben tartására változó harci környezetben.
+    - ⚡ "Maradjunk a felhők takarásában, a jelemre zuhanásba, cél a katapult."
 
 ---
-#### Bónusz
+### Alapeset
 
-Az [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk lovas alakzatok esetén is: [Harc alakzatban](../065_03_harc_alakzatban.md). A fentiek szerint kiszámolt **Alakzatszint** értéket egy jó léglovaskapitány képes koordinálásával megemelni.
+Az [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
 
-Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, közösen lecsapni a magasból - harci körülmények között is.
-
+---
 ### 1. fok
+
+A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó léglovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Intelligencia: `+1`
@@ -37,6 +40,8 @@ Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, közösen 
 🌟 **Hatás**: `+4` bónusz az **Alakzatszintre**
 
 ---
-### Megjegyzések
+### Több Léglovaskapitány a csapatban
 
-- Ha több **Léglovaskapitány** van egy csapatban, akkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.
+Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.
+
+---

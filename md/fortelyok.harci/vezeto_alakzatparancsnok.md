@@ -2,11 +2,9 @@
 
 Egy jó vezető csodákat tehet egy fegyveres alakzattal.
 
-
 ### Kiterjeszti ezeket
 
 - [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
-
     - Megfelelő alakzat felvétele, adaptálódás
     - Alakzat egyben tartása változó harci környezetben
     - ⚡"Lándzsások vonalba, megakasztásra készülj!"
@@ -50,3 +48,5 @@ Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít
 ### Kezeljük lazán
 
 Egy rablóbanda vezére is Alakzatparancsnoknak számít.
+
+---

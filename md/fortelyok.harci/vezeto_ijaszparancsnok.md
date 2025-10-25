@@ -1,21 +1,23 @@
 ## 🟣 Vezető: Íjászparancsnok (2)
 
-Képes vagy egy íjász/lövész alakzat
-- egyben tartására változó harci környezetben. Megfelelő alakzat felvétele, adaptálódás  → **Hadászat** képzettség Normál kiterjesztése
-- harcát koordinálni → bónusz **Íjászat/Lövészet/Ostromlövészet** (harc alakzatban)
+Íjászaid összehangolt egységként mozognak, oda szórják halálos nyilaikat, ahova épp kell.
 
 ### Kiterjeszti ezeket
 
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "Fedezőtüzet a visszavonuló lovasság mögé!"
+- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
+    - Területlövés, fedezőtűz, előcsatározás és visszavonulás
+    - Csapatban mozgás, megfelelő alakzat felvétele, annak tartása - harci körülmények között is.
+    - ⚡ "Fedezőtüzet a visszavonuló lovasság mögé!"
 
 ---
-#### Bónusz
+### Alapeset
 
-Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén: [Harc alakzatban](../065_03_harc_alakzatban.md). Egy jó parancsnok képes koordinálásával az íjász/lövész alakzat közös működését hatékonyabbá tenni.
+Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén.
 
-Területlövés, fedezőtűz, előcsatározás és visszavonulás, csapatban mozgás, alakzatot tartani - harci körülmények között is.
-
+---
 ### 1. fok
+
+A [Harc alakzatban](app://obsidian.md/065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Távolsági harcmodor** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Intelligencia: `+1`
@@ -35,11 +37,12 @@ Területlövés, fedezőtűz, előcsatározás és visszavonulás, csapatban moz
 🌟 **Hatás**: `+4` bónusz
 
 ---
-### Megjegyzések
+### Több Íjászkapitány a csapatban
 
-- Ha több **Íjászkapitány** van egy csapatban, akkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.
-- Jellemzően NJK ismeret
+Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít - nyilván amennyiben hajlandó a koordinálásra.
 
-<br />
+### Jellemzően
+
+NJK ismeret.
 
 ---
