@@ -6,7 +6,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: [Érzék(látás) - teljes](../081_hatasok.md#-%C3%A9rz%C3%A9k---teljes)
+🌟 **Hatás**: [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott)
 
 ---
 ### Bónusz: harci ösztön
@@ -24,7 +24,7 @@ Vakharc minden foka:
 🔒 **Követelmény**: [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
 
 🌟 **Hatás**:
-- [Érzék(látás) - teljes](../081_hatasok.md#-%C3%A9rz%C3%A9k---teljes) → [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) 
+- [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) 
 - [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) → [Érzék(látás) - zavart](../081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
 - Megszűntet `1` fok Hátrányt a védő `TÉ`-re [Láthatatlan ellenfél](../065_01_harci_helyzetek.md#l%C3%A1thatatlanul) esetén
 
@@ -39,7 +39,7 @@ Vakharc minden foka:
 - ⚪ **Érzékenység (Hallás)**: `+3`
 
 🌟 **Hatás**:
-- [Érzék(látás) - teljes](../081_hatasok.md#-%C3%A9rz%C3%A9k---teljes) → [Érzék(látás) - zavart](../081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
+- [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → [Érzék(látás) - zavart](../081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
 - [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) → nincs büntetés
 - Megszűntet `1` Előnyt a támadó `TÉ`-re, 1 Hátrány védő `TÉ`-re [Láthatatlan ellenfél](../065_01_harci_helyzetek.md#l%C3%A1thatatlanul) esetén
 
@@ -52,10 +52,10 @@ Vakharc minden foka:
 - ⚪ **Érzékenység(Intuíció)**: `+4`
 
 🌟 **Hatás**:
-- [Érzék(látás) - teljes](../081_hatasok.md#-%C3%A9rz%C3%A9k---teljes) → nincs büntetés
+- [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → nincs büntetés
 - [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) → nincs büntetés
 - Nullázza a Támadó összes előnyét és a Védő összes Hátrányát [Láthatatlan ellenfél](../065_01_harci_helyzetek.md#l%C3%A1thatatlanul) esetén
-- [Érzék(hallás) - teljes](../081_hatasok.md#-%C3%A9rz%C3%A9k---teljes) Hatás esetén is működik, mert itt már az Intuíció használt.
+- [Érzék(hallás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) Hatás esetén is működik, mert itt már az Intuíció használt.
 - Túlterhelt érzékek esetén is működik (túl erős fény, villódzás, hangorkán)
 
 <br />

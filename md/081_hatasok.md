@@ -112,7 +112,7 @@ Hátrány-2 minden adott érzéken
   képzettségpróbánál
 ```
 
-### 🔥 Érzék - teljes
+### 🔥 Érzék - kioltott
 
 ```
 Automatikus sikertelenség

@@ -166,7 +166,7 @@ Látás, Hallás, Szaglás.
 
 ### ✴️ Érzékvesztés (3) Teljes
 
-[Érzék - teljes](081_hatasok.md#-%C3%A9rz%C3%A9k---teljes)
+[Érzék - kioltott](081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott)
 
 <br />
 

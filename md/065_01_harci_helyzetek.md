@@ -176,13 +176,13 @@ Sötét: Félhomály
 
 Sötét: teljes, zajokkal
   - Hátrány-1 TÉ dobásra
-  - Érzék (látás) teljes zavart
+  - Érzék (látás) kioltott
   Mérsékli: Vakharc fortély
     Zajok mérséklik a büntetést
 
 Sötét: teljes, csendben
   - Hátrány-2 TÉ dobásra
-  - Érzék (látás) teljes zavart
+  - Érzék (látás) kioltott
   Mérsékli: Vakharc fortély
 
 Tűz ruhán - ég
@@ -783,7 +783,7 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
 ```
 Hátrány-1 TÉ dobásra
-Érzék(látás) - teljes
+Érzék(látás) - kioltott
 ```
 
 Sötétben ugyan a támadás sikere drasztikusan lecsökken és mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol...
@@ -799,7 +799,7 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
 ```
 Hátrány-2 TÉ dobásra
-Érzék(látás) - teljes
+Érzék(látás) - kioltott
 ```
 
 Sötétben a támadás sikere drasztikusan lecsökken. Mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol.
