@@ -85,7 +85,7 @@ Viszont
 
 - Harcképtelenség
 - Mozgás - képtelen
-- Beszéd - némultság
+- Beszéd - némult
 
 <br />
 
@@ -134,7 +134,7 @@ Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatá
 
 ### ✴️ Eszmélet (3) Ájulás
 
-- Beszéd - némultság
+- Beszéd - némult
 - Harcképtelenség
 - Mozgás - képtelen
 - Automatikus kudarc
@@ -491,7 +491,7 @@ A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból 
 - Kezdeményezés - Nagyon lassú
 - Mozgás - lecövekelt
 - Gyorsaság és Ügyesség tulajdonságpróba: `Hátrány-2`
-- Beszéd - zagyva
+- Beszéd - zavart
 - Automatikus kudarc:
   - Szellemi képzettségpróbákra
   - Szociális képzettségpróbákra
@@ -503,13 +503,13 @@ Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az 
 
 Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képes részt venni.
 
-- Beszédvesztés (részleges, vagy teljes - szituáció függő)
+- Beszéd (zavart, vagy némult - szituáció függő)
 - Harcképtelenség
 - Mozgás - lecövekelt
 - Automatikus kudarc:
   - Tulajdonságpróbákra
   - Képzettségpróbákra
-- Beszéd - zagyva
+- Beszéd - zavart
 - Pszi használat elvesztése
 - Varázslás képesség elvesztése
 

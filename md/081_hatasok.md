@@ -89,12 +89,12 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 <br />
 
 ---
-### 🔥 Beszédvesztés - részleges
+### 🔥 Beszéd - zavart
 
 - Nehezen tudsz szavakat formálni
 - Varázslásnál: Extra Összpontositas próba (Nehéz). Ha megvan, sikerül a hang komponenst kimondani
 
-### 🔥 Beszédvesztés - teljes
+### 🔥 Beszéd - némult
 
 - Képtelen vagy beszéddel hangot kiadni magadból, még egy nyikkanást sem.
 - Mágia hangalapú komponensét sem tudod alkalmazni
