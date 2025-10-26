@@ -6,7 +6,6 @@ import random
 def experiment(dice, throws):
 
     roll = [ random.randint(1, dice) for _ in range(throws) ]
-    # roll = random.randint(1, dice)
     return max(roll)
 
 num_experiments = 100000
