@@ -1,6 +1,6 @@
 # Gyógyítás, gyógyulás
 
-<sub>→ [STUDY: Gyógyítás, gyógyulás](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.gyogyitas.gyogyulas)</sub>
+→ [STUDY: Gyógyítás, gyógyulás](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.gyogyitas.gyogyulas)
 
 ---
 A harc során, vagy egyéb fizikai behatás során szerzett sebesülések ellátására és gyógyítására több módszer létezik.
