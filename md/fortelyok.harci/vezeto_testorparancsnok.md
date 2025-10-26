@@ -1,21 +1,24 @@
 ## 🟣 Vezető: Testőrparancsnok
 
-Képes vagy egy testőrcsapat 
-- egyben tartására, tagjainak elhelyezésére, feladatok kiosztására, járatos vagy az általad ismert [Kultúrköreid](../fortelyok.kiemelt/kulturkor.md) megfelelő testőri protokolljaiban.\
-→ **Hadászat** képzettség Normál kiterjesztése
-- éberségét erősíteni\
-→ bónusz csoportos **Észlelés** képzettségpróbára
+Testőred egy entitásként védelmeznek személyeket, területet vagy építményeket.
 
 ### Kiterjeszti ezeket
 
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md): "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
+- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md)
+  - Testőrsapat egyben tartása, tagjainak elhelyezésére, feladatok kiosztására.
+  - Járatos vagy az általad ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) megfelelő testőri protokolljaiban.
+  - ⚡ "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
 
 ---
-#### Bónusz
+### Alapeset
 
-Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja a testőrcsapat. A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok képes koordinálásával megemelni.
+Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget a testőrcsapat a [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja.
 
+---
 ### 1. fok
+
+A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok képes koordinálásával megemelni.
+
 
 🔒 **Követelmény**:
 - Intelligencia: `+1`
