@@ -7,7 +7,7 @@ Gyakorlott vagy a nagy távolságú célok belövésében. Csak nyílpuska, vagy
 - Önuralom: `+1`
 - **Lövészet**  **-** `5.szint`
 
-🌟 **Hatás**: Ha olyan célra lősz/hajítasz, aminek a [Cella](../072_tavharc_ve_oszto_cella.md#cella) értéke nagyobb, vagy egyenlő, mint `5`, akkor a kiszámolt **Cella** értékét `1`-el csökkentheted (de `4` alá nem mehet).
+🌟 **Hatás**: Ha olyan célra lősz, aminek a [Cella](../072_tavharc_ve_oszto_cella.md#cella) értéke nagyobb, vagy egyenlő, mint `5`, akkor a kiszámolt **Cella** értékét `1`-el csökkentheted (de `4` alá nem mehet).
 
 <br />
 
