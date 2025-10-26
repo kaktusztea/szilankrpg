@@ -3,13 +3,13 @@
 → [STUDY: Tradíciók egyedi jellemzői](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.tradiciok.jellemzoi)
 
 ```
-- Primer képzettségek
-- Mágia tradíciók a 3. szinttől
+→ Primer képzettségek
+→ Mágia tradíciók a 3. szinttől
   varázsolhatnak
 ```
 
 A `Szilánk` rendszerében a **Tradíciók** reprezentálják az egyedi, különleges, karakter életútját alapjaiban meghatározó "csomagot".\
-Egy-két kivételtől eltekintve a karakterek **csak 1 Tradíciót vehetnek fel**, azt is **csak 1. tapasztalati szinten**.
+A karakterek **csak 1 Tradíciót vehetnek fel**, azt is **csak 1. tapasztalati szinten**.
 
 Mindegyik Tradíció [Primer képzettség](030_02_primer_szekunder_kepzettsegek.md), így csak annak szintkorlát határáig növelhető.
 
@@ -50,7 +50,7 @@ Milyen Tradíciókat ismer a `Szilánk` rendszere?
 
 ### Tradíciók követelményei
 
-Minden Tradíciónak vannak valamilyen követelményei, ezeket bővebben lásd az adott Tradíció leírásában.
+Az adott Tradíciók követelményeit lásd azok leírásában.
 
 ### Írástudó fortély extra
 
