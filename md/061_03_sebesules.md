@@ -6,13 +6,16 @@ Ha a karakter találatot kap, harcértékeit - fizikumától függően - levoná
 
 A fenti egyedi jellemzők miatt kerültek bevezetésre a **Sebesülés kategóriák**.
 
-A karakter Életerejét `4` kategória szimbolizálja egy táblázatban, melyek között karakteralkotáskor kell elosztani az **Életerő Pontokat.** (Lásd [Karakteralkotás – Életerő Pontok](010_10_01_ep_fp.md))
+A karakter Életerejét `4` kategória szimbolizálja egy táblázatban, melyek között karakteralkotáskor kell elosztani az [Életerő Pontokat](010_10_01_ep_fp.md).
 
+---
 ### Sebesülés jelölése a táblázatban
 
 Mikor a karaktert sebesülés éri, elkezdi bejelölni az Életerő táblázatban a legmagasabb (`S1`) kategóriában lévő mezőket fentről lefelé. Mikor az első oszlop „betelt”, folytatja az `S2`, majd az `S3` kategóriában levőkkel és így tovább.
 
-Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteket, hanem a sebesülés „sorszámát” (hányadik seb a harc során) és annak jellegét (`S,V,Z`) írjuk beléjük (`Szúró,Vágó,Zúzó`), megkönnyítve a dolgunkat: rögtön látjuk, hány és mekkora sebünk van. (Az `FP` sérülések mezőbe pedig „`F`” betűt írjunk). Példa: „`Z2`” jelölés 4 db rubrikában: ez a karakter második sebe és egy `4 ÉP`-s zúzott sebet jelöl.
+Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteket, hanem a sebesülés „sorszámát” (hányadik seb a harc során) és annak jellegét (`S,V,Z`) írjuk beléjük (`Szúró,Vágó,Zúzó`), megkönnyítve a dolgunkat: rögtön látjuk, hány és mekkora sebünk van. (Az `FP` sérülések mezőbe pedig „`F`” betűt írjunk).
+
+Példa: „`Z2`” jelölés 4 db rubrikában: ez a karakter második sebe és egy `4 ÉP`-s zúzott sebet jelöl.
 
 ![](images/02_eletero_tablazat_harcertek_levonassal.png)
 
