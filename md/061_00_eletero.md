@@ -1,6 +1,6 @@
 ## Életerő
 
-Itt tárgyaljuk a karakter előterővel, sebesüléssel kapcsolatos értékeit, azok változását harc közben, valamint sebeinek gyógyulását.
+Itt tárgyaljuk a karakter életerővel, sebesüléssel kapcsolatos értékeit, azok változását harc közben, valamint sebeinek gyógyulását.
 
 ### [Életerő Pont (ÉP)](061_01_eletero_pont.md)
 
