@@ -21,7 +21,7 @@ Az `FP`-nek nincs kezdeti értéke, csak a fenti hatások valamelyike következt
 
 Tipikus esete az `FP` sebesülésnek, mikor valakit alaposan fejbe kólintanak. Ez – szándéktól függően – okozhat valós sebesülést is, de ezen kívül `Fáradtság Pontokat` is szül. Másik példa lehet, mikor a karakter rosszullétet okozó mérget iszik.
 
-Jelölését lásd a [Sebesülés](061_03_sebesules.md) fejezetben.
+Jelölését lásd a [Sebesülés](061_03_sebesules.md#fp-jel%C3%B6l%C3%A9se-az-%C3%A9p-t%C3%A1bl%C3%A1zatban) fejezetben.
 
 ---
 ### Valós ÉP seb elszenvedése FP után
