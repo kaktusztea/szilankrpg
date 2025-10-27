@@ -1,10 +1,10 @@
 ## Fáradtság Pont (`FP`)
 
-A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapota között, amely a pillanatnyi ájulástól való „távolságát” meghatározza. Ez utóbbit szimulálja a **Fáradtság Pont** (`FP`).
+A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapota között, amely a pillanatnyi ájulástól való „távolságát” meghatározza. Ez utóbbiban vállal szerepet a **Fáradtság Pont** (`FP`).
 
 🔆 Az `FP` értékének semmi köze nincs a **Fájdalomtűrés** képzettséghez, tőle teljesen független fogalom.
 
-### Milyen állapototkat szimulál az FP?
+### Milyen állapotokat szimulál az FP?
 
 - tartós kimerültség
 - zúzódásokból adódó "leharcoltság"
@@ -27,6 +27,14 @@ A sima `ÉP` és az `FP` értékek kezelése ugyanabban az `ÉP` táblázatban t
 
 Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `FP`-ket (ajánlott egy `F` betű írása a rubrikákba).
 
+A lenti példa:
+- `2 db` valós seb
+  - `3 ÉP` Vágott
+  - `5 ÉP` Zúzott
+- `3 FP`
+
+![](images/06_fp.png)
+
 ---
 ### Valós ÉP seb elszenvedése FP után
 
@@ -35,7 +43,7 @@ Amennyiben a karakter életerő táblázatában van bármennyi `FP`, akkor egy �
 ---
 ### Túlcsordult `FP`
 
-Amennyiben az életerő táblázat "betelt" és van benne `FP`, akkor a "túlcsorduló" bármilyen sebzés (`ÉP, FP`) felülről átírja az `FP` pontokat `ÉP` pontokra.
+Amennyiben az életerő táblázat "betelt" és van benne `FP`, akkor a "túlcsorduló" bármilyen sebzés (`ÉP, FP`) felülről **átírja** az `FP` pontokat `ÉP` pontokká.
 
 ---
 ### FP gyógyulása
@@ -73,7 +81,7 @@ A szabály sebzésenként számít, tehát bekaphat a karakter több '4 FP' sebe
 ---
 ### Fejbe vágás
 
-Gyakori eset, hogy valakinek ráhúznak egy nagyot a fejére. Például sisakos ellenfelet fejen találnak egy buzogánnyal. A sisak ugyan megvédi, de a feje mégis igen nagy traumát szenved el, pár körig meglehetősen kellemetlenül érzi magát. Ez természetesen helyzet specifikus, a – KM dönt –, de irányadónak elmondhatjuk, hogy ilyenkor például plusz `2-3 FP` büntetést kap az áldozat, amelyek azonban pár kör alatt elmúlnak. Ne keverjük a **Fejbe vágást** a 🗡️[Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról) harci taktikával!
+Gyakori eset, hogy valakinek ráhúznak egy nagyot a fejére. Például sisakos ellenfelet fejen találnak egy buzogánnyal. A sisak ugyan megvédi, de a feje mégis igen nagy traumát szenved el, pár körig meglehetősen kellemetlenül érzi magát. Ez természetesen helyzet specifikus, a – KM dönt –, de irányadónak elmondhatjuk, hogy ilyenkor például plusz `2-3 FP` büntetést kap az áldozat, amelyek azonban pár kör alatt elmúlnak. Ne tévesszük össze a **Fejbe vágást** a 🗡️[Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról) harci taktikával!
 
 ---
 ### ⚡ Példa `FP` alkalmazására
@@ -92,12 +100,13 @@ Testőr
 
 ```
 1. Sebzés
+  k20 dobás: 19
   19-5+2 = 14 SP
   14 SP → 6
   (azaz 5 FP és 1 ÉP)
 ```
 
-Ezzel Cravignon már `S2` kategóriába került. Csillagokat lát a vállába hasító tompa, de brutális ütéstől. Lustán előrekaszál, de elvéti és ellenfele ismét betalál. Ezúttal gyomorszájon találják. Sziszegve szökik ki száján a levegő.
+Ezzel Cravignon máris `S2` kategóriába került. Csillagokat lát a vállába hasító tompa, de brutális ütéstől. Lustán előrekaszál, de elvéti és ellenfele ismét betalál. Ezúttal gyomorszájon találják. Sziszegve szökik ki száján a levegő.
 
 ```
 2. Sebzés
