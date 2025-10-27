@@ -1,14 +1,16 @@
 ## 🟣 Vezető: Nyomozó (2)
 
-Vezető nyomozóként koordinálod az alád tartozó nyomozók munkáját → bónusz **Nyomozás** képzettségre.
+Vezető nyomozóként koordinálod az alád tartozó nyomozók munkáját.
 
 ---
-#### Bónusz
+### Alapeset
 
-A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy nyomozócsapat. A fentiek szerint kiszámolt csoportos **Nyomozás** értéket egy jó vezető nyomozó képes koordinálásával megemelni.
+A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy nyomozócsapat. 
 
 ---
 ### 1. fok
+
+A fentiek szerint kiszámolt csoportos **Nyomozás** értéket egy jó vezető nyomozó képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Intelligencia: `+2`
@@ -25,9 +27,9 @@ A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csop
 
 🌟 **Hatás**: `+4` bónusz csoportos **Nyomozás** értékre
 
-<br />
+---
+### Jellemzően
+
+NJK ismeret.
 
 ---
-### Megjegyzések
-
-- Jellemzően NJK ismeret

@@ -30,3 +30,5 @@ TODO⭕
 ### Ajánlott képzettségek
 
 TODO⭕
+
+---

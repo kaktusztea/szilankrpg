@@ -16,6 +16,4 @@ Ismered az erdős környezetet.
 - [Tájtípus: Magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
 - [Tájtípus: Sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
 
-<br />
-
 ---

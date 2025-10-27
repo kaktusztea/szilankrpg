@@ -25,9 +25,8 @@ Sötétben (leginkább élőlények által kibocsátott) hőképek alapján is k
 
 🌟 **Hatás**: Ha van a hőképben eltérés, látod a sötétben - legyenek akár élőlények, akár tárgyak. Amenyiben ez teljesül, a harcban nem jár számodra levonás.
 
-<br />
-
-### Megjegyzések
+---
+### Egyedi jellemzők
 
 - A távolság "használhatóságát" továbbra is az **Észlelés** képzettség határozza meg (mennyire folynak össze a hőfoltok).
 - A látótávolságot infrában a [Fejlett látás](fejlett_latas.md) Érzék-fortély is befolyásolja, ezért látnak az elfek a legtávolabb hőképek alapján.
@@ -35,7 +34,5 @@ Sötétben (leginkább élőlények által kibocsátott) hőképek alapján is k
 - A látható fény "elnyomja" a hőképeket, napvilágnál nem használható, szürkületkor lassan kezd "átderengeni", sötétben magától átveszi a hagyományos látás szerepét. Tehát nem "kapcsolgatható".
 - Tűz, vagy erős hőforrások közelében nem működik (mintha napba néznél)
 - Erős ködben nem működik
-
-<br />
 
 ---

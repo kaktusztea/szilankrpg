@@ -18,6 +18,4 @@ Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális tá
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) fortély 🔁
 - [Tánc](tanc.md) fortély
 
-<br />
-
 ---

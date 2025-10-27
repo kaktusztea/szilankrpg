@@ -10,6 +10,4 @@ Jóslás, együttállások olvasása csillagképekből.
 
 - [Kvantikum](../kepzettsegek.szekunder/kvantikum.md): "Kiszámoltam: **Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
 
-<br />
-
 ---

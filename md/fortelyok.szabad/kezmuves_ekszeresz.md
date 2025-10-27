@@ -6,6 +6,4 @@ Nemes fémekből gyönyörű ékszerek készítése, ritka ékkövek míves kere
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

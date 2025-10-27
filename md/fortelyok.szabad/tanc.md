@@ -7,6 +7,4 @@ Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) táncai **Előadó
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): a Kultúrköreidnek megfelelő tánc stílusokat járni tudod.
 - [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md): Ismered a Kultúrköreidnek megfelelő tánc stílusokat, a híresebb előadókat, táncos darabokat.
 
-<br />
-
 ---

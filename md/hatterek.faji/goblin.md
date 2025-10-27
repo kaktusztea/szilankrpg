@@ -38,3 +38,5 @@ TODO ⭕
 ### Ajánlott képzettségek
 
 [alvilági képzettségek](../030_01_kepzettseglista.md#alvilági-képzettségek)
+
+---

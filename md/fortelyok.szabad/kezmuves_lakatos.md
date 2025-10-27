@@ -8,6 +8,4 @@ Magasabb szinten egyéb vasból és acélból készült szerkezetek, például a
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

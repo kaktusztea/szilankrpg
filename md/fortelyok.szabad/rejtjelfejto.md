@@ -13,6 +13,4 @@
   - "Megírtam az üzenetet uram, alkalmaztam a titkosírást, ha rossz kezekbe kerül, se tudják elolvasni."
 - [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md): "A szimbólumok által jelképezett átjáró a kandalló feletti festményre utal!"
 
-<br />
-
 ---

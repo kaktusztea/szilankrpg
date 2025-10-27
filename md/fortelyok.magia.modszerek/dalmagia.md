@@ -10,6 +10,4 @@ Képes vagy dalba ágyazni a mágikus hatást.
 
 xyz
 
-<br />
-
 ---

@@ -8,6 +8,4 @@ A fenti készítményből szabsz és varrsz ruhákat, bundákat, ködmönöket. 
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

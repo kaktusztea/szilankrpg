@@ -12,6 +12,4 @@ Személyeket, vagy tárgyakat átkozhatsz meg, betegséggel, balszerencsével, b
 
 xyz
 
-<br />
-
 ---

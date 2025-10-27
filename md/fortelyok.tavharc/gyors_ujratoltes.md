@@ -20,6 +20,4 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni számsze
 - Kézi- vagy Könnyű nyílpuskád **Sebesség** értéket kap, melynek nagysága `8`.
 - Így lehetséges lesz nyílpuskával egy körben többször is támadni, de legfeljebb `3x`.
 
-<br />
-
 ---

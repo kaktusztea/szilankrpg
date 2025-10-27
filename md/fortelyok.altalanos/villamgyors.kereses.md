@@ -6,6 +6,7 @@ Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 
 - [Keresés/rejtés](kereses_rejtes.md) fortély
 
+---
 ### Alapeset
 
 🔒 **Követelmény**:  -
@@ -22,4 +23,4 @@ Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 
 🌟 **Hatás**: A Villámgyors keresés kapkodós helyzetekben nullázza az Alapesetnél leírt büntetést.
 
-<br />
+---

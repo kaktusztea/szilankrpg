@@ -12,14 +12,14 @@ Az egyik leggyakoribb félrevezető technika, talán nem is kell magyarázni.
 
 - [Tiszta fej](../fortelyok.altalanos/tiszta_fej.md) fortély
 
+---
 ### Aktív alkalmazás
 
 Megpróbálsz megetetni valakivel egy jó kis hazugságot.
 
+---
 ### Passzív alkalmazás
 
 Téged próbálnak átverni.
-
-<br />
 
 ---

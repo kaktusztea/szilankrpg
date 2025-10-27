@@ -39,3 +39,5 @@ bevezető ⭕
 ### Ajánlott képzettségek
 
 TODO ⭕
+
+---

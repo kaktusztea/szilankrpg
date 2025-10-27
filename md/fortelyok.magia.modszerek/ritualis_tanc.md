@@ -14,6 +14,4 @@ Képes vagy szakrális Tánc, vagy nem-szakrális Rituálé formájában mágiku
 
 xyz
 
-<br />
-
 ---

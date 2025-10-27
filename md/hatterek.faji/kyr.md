@@ -32,3 +32,5 @@ TODO ⭕
 
 - [Etikett](../kepzettsegek.szekunder/etikett.md) (Kyr kultúrkör)
 - [Ősi nyelv ismerete](../kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) (Kyr)
+
+---

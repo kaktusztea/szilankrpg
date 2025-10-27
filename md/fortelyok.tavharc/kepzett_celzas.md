@@ -19,13 +19,10 @@ Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót,
 
 🌟 **Hatás**: `1` célzással eltöltött kör után `+7 CÉ` módosítót kapsz. Nem additív.
 
-<br />
-
-### Megjegyzések
+---
+### Egyedi jellemzők
 
 - A **Képzett célzás** csak kiszámíthatóan mozgó cél ellen alkalmazható.
 - Íjat legfeljebb `1` körig tarthatsz ki, utána minden további kör nemhogy javít, de ront a találati esélyeken (körönként ugyanennyit).
-
-<br />
 
 ---

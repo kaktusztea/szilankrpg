@@ -12,6 +12,4 @@ Képes vagy mágikus szimbólumokba mágikus hatást zárni, vagy rúnákkal fel
 
 xyz
 
-<br />
-
 ---

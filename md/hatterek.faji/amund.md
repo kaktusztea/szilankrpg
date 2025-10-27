@@ -39,3 +39,5 @@ A Pszít nem képesek elsajátítani.
 
 - [Ősi nyelv ismerete](../kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) (amund)
 - [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+
+---

@@ -12,6 +12,4 @@ Gyertyába foglalsz mágikus hatást, vagy komponensként használod.
 
 xyz
 
-<br />
-
 ---

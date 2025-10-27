@@ -16,6 +16,4 @@ Ismered a sivatagi környezetet.
 - [Tájtípus: Erdős](../fortelyok.szabad/tajtipus_erdos.md)
 - [Tájtípus: Magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
 
-<br />
-
 ---

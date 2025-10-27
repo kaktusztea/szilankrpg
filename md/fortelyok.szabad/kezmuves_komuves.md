@@ -6,6 +6,4 @@ Kövekből és égetett téglákból erős, tartós épületszerkezeteket kész�
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

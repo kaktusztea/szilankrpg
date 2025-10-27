@@ -15,6 +15,4 @@ Jobban össze tudod sűríteni a varázslatodat, így egy körben nagyobbak a le
 
 🌟 **Hatás**: [Varázskeret](../063_05_tamadasok_szama_varazslaskor.md#varázskeret) értéked `+4`-el nő (összesen).
 
-<br />
-
 ---

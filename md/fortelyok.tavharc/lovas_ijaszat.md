@@ -1,6 +1,7 @@
 ## 🟣 Lovas íjászat (2)
 
 Gyakorlott vagy a lóhátról való íjászatban, ennek hatására kisebbek negatív módosítóid, ha mozgó hátasodról lősz.
+
 ### Alapeset
 
 🔒 **Követelmény**: -
@@ -37,7 +38,5 @@ Gyakorlott vagy a lóhátról való íjászatban, ennek hatására kisebbek nega
 - Léptetés esetén: nincs levonás
 - Ügetés esetén: nincs levonás
 - Vágta esetén: `CÉ:-3`
-
-<br />
 
 ---

@@ -11,6 +11,4 @@ Kézzel készített bábúkkal távolról hatsz áldozatodra.
 
 xyz
 
-<br />
-
 ---

@@ -19,6 +19,4 @@ A fenti információ más módon - ritka, titkos fóliásokkal bújásával - is
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély
 - Legalább egy nap időtartam, míg a boncolás folyik
 
-<br />
-
 ---

@@ -19,8 +19,7 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 - szokások, népszokások, babonák, vallásismeret
 - szleng, alkudozás kultúrája, hírességek
 
-<br />
-
+---
 ### Kapcsolódik
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély; [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md) szituáció
@@ -30,6 +29,7 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 - [Teaszertartás](../fortelyok.szabad/teaszertartas.md) fortély
 - [Vezető: Testőrparancsnok](../fortelyok.harci/vezeto_testorparancsnok.md) fortély
 
+---
 ### Kiterjeszti ezeket
 
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): enélkül érvényes a levonás mindegyik lenti művészeti ágra.
@@ -130,7 +130,5 @@ Lexikum képzettségpróba
 - Gorv1k és a Kereskedőhercegségek
 - Ord4n és a déli városállamok
 - Taba el 1bara
-
-<br />
 
 ---

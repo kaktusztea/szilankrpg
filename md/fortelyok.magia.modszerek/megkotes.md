@@ -11,6 +11,4 @@ Képes vagy megkötni valamiben a mágikus hatást.
 
 xyz
 
-<br />
-
 ---

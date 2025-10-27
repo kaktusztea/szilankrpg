@@ -11,6 +11,4 @@ Kézzel készített maszkot - szerves, vagy szervetlen anyagból - készítesz, 
 
 xyz
 
-<br />
-
 ---

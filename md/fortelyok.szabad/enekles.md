@@ -15,7 +15,4 @@ Dalolás képessége és annak műértése.
 
 - [Énekléssel bájolás](../szituaciok/eneklessel_bajolas.md)
 
-<br />
-
-
 ---

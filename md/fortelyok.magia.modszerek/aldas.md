@@ -11,6 +11,4 @@ Személyeket, vagy tárgyakat áldhatsz meg, különleges képességekkel felruh
 
 xyz
 
-<br />
-
 ---

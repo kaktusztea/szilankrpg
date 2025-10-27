@@ -6,6 +6,4 @@ Cipőket készítesz a pórnépnek, vagy az udvari dámák kecses lábaira.
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

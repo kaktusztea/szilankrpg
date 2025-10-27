@@ -6,6 +6,4 @@ Asztalos mesterként fából alkotsz bútorokat, szerszámokat.
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

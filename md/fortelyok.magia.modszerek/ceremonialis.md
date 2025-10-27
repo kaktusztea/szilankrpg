@@ -14,6 +14,4 @@ Képes vagy nagy, hosszú, ceremoniális mágiák formájában mágikus hatást 
 
 xyz
 
-<br />
-
 ---

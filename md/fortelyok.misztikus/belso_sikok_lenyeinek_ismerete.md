@@ -26,6 +26,5 @@ A belső síkok túlvilági teremtményeinek ismerete. Alapos, előtörténettel
 
 🌟 **Hatás**:  Dobhatsz [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettségpróbát egyes lények ismeretére.
 
-<br />
 
 ---

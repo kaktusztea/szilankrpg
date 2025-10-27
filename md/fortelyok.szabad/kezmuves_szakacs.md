@@ -6,6 +6,4 @@ Finom étkek készítése, vagy akár a hadsereg hadtápjának működtetése.
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

@@ -11,6 +11,4 @@ Képes vagy formázni a létrehozott mágiát.
 
 xyz
 
-<br />
-
 ---

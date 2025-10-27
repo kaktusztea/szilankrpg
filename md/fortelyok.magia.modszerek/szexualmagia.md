@@ -15,6 +15,4 @@ Intim együttlét során hozod létre a mágikus hatást.
 
 xyz
 
-<br />
-
 ---

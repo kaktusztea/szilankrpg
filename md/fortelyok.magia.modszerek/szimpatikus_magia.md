@@ -22,6 +22,4 @@ A tárgyak, lények, események közti kapcsolati hídon keresztül küldesz át
 
 xyz
 
-<br />
-
 ---

@@ -3,12 +3,14 @@
 Képes vagy egy hajó legénységének egyben tartására változó - akár harci - környezetben → bónusz **Hajózás** képzettségre.
 
 ---
-#### Bónusz
+### Alapeset
 
-A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk. A fentiek szerint kiszámolt csoportos **Hajózás** értéket egy jó hajóskapitány képes koordinálásával megemelni.
+A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk.
 
 ---
 ### 1. fok
+
+A fentiek szerint kiszámolt csoportos **Hajózás** értéket egy jó hajóskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Intelligencia: `+1`
@@ -25,9 +27,9 @@ A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fi
 
 🌟 **Hatás**: `+4` bónusz csoportos **Hajózás** értékre
 
-<br />
+---
+### Jellemzően
+
+NJK ismeret.
 
 ---
-### Megjegyzések
-
-- Jellemzően NJK ismeret

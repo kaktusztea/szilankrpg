@@ -11,6 +11,4 @@ Képes vagy szakrális Litániák és Rituálék formájában mágikus hatást l
 
 xyz
 
-<br />
-
 ---

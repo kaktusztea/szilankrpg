@@ -7,7 +7,5 @@ Képes vagy az álomsíkon közlekedni.
 
 🌟 **Hatás**: ⭕???⭕
 
-<br />
-
 ---
 

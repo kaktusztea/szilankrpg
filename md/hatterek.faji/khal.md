@@ -43,3 +43,4 @@ TODO ⭕
 - [Mászás](../kepzettsegek.szekunder/maszas.md)
 - [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md)
 
+---

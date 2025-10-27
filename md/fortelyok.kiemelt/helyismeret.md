@@ -24,6 +24,7 @@ Kaland végén kaphatóak belőle
 - [Városi jártasság](../kepzettsegek.szekunder/varosi_jartassag.md): Az adott környék ismerete sokat segít, nélküle az általános tapasztalatok dominálnak inkább.
 - [Etikett](../kepzettsegek.szekunder/etikett.md): a helyi celebritások, nemesi körökben forgó emberek ismerete (nem mindig szükséges, ne legyünk szigorúak)
 
+---
 ### Mit fed le
 
 A Helyismeret forrása az előtörténet és az átélt kalandok. Az alábbi ismereteket foglalja magában:
@@ -36,6 +37,7 @@ A Helyismeret forrása az előtörténet és az átélt kalandok. Az alábbi ism
 - alvilági alakokat hol keresd
 - helyi színdarabok
 
+---
 ### Leírás
 
 Kalandozásai során a karakter számos helyre elvetődik.  Ha ott rászán időt a város tanulmányozására, akkor már ott is képes lesz Helyismeret-függő képzettségeit maximális hatékonysággal kiaknázni, büntetés nélküli próbákat dobni rá.
@@ -43,7 +45,5 @@ Kalandozásai során a karakter számos helyre elvetődik.  Ha ott rászán idő
 A játékosnak jeleznie kell, hogy aktívan tanulmányozza az adott helységet (könyvtár, bálok, kocsmák, stb. látogatása, helyi kapcsolatrendszer kiépítése).
 
 Az előírt mennyiség felett a KM egy kaland végén tetszés szerint adhat a karakternek egy **Helyismeret** Fortélyt arra a helyre vonatkoztatva, ahol a kaland játszódott.
-
-<br />
 
 ---

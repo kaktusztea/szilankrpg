@@ -34,3 +34,5 @@ TODO ⭕
 ### Ajánlott képzettségek
 
 - [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)
+
+---

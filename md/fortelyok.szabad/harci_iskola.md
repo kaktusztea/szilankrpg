@@ -8,6 +8,4 @@ Külön kell felvenni minden egyes harci iskolához, melyet vagy a világleírá
 
 - [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettség
 
-<br />
-
 ---

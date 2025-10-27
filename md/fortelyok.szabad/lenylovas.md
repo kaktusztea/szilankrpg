@@ -15,13 +15,12 @@ Természetesen földi hátast csak a **Lovaglás**, légi hátast pedig csak a *
 - [Idomítás](../kepzettsegek.szekunder/idomitas.md)
 - [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) 
 - [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md)
- 
+
+---
 ### Alapeset
 
 Ha az idegen hátas lényt hirtelen, gyakorlás nélkül ülöd meg, akkor **Lovaglás/Léglovaglás** képzetséged `6`-tal kevesebbnek számít.
 
 Ha harcolnál is, akkor a [Lovas harc](../fortelyok.harci/lovas_harc.md) fortélynál leírt mértékben kalkuláld az értékeidet (természetesen a `-6`-os képzettség büntetéssel számolva.
-
-<br />
 
 ---

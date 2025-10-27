@@ -58,12 +58,9 @@ Passzív: az alkalmazó csak magára képes a diszciplínákat alkalmazni﻿.
 
 🌟 **Hatás**: Titkos fok. ⭕Legyen?
 
-<br />
-
-### Megjegyzések
+---
+### Titkos fok?
 
 Lehetséges, hogy létezik egy titkos, 4. fok, amiről alig tudni valamit
-
-<br />
 
 ---

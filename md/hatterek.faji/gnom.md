@@ -39,3 +39,5 @@ Futásnál, úszásnál, gyaloglásnál `-2` jár a Gyorsaságpróbáira.
 
 - [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)
 - [Térképészet](../fortelyok.szabad/terkepeszet.md) SzH
+
+---

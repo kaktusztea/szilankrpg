@@ -6,6 +6,4 @@ Az adott uralkodó nevében és pecsétjével fémlemezekből kalapáccsal versz
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

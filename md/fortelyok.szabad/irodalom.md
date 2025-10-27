@@ -13,6 +13,4 @@ Hogy az adott kultúrkörben képes legyél aktívan művelni (írni, előadni) 
 
 A passzív fogyasztásra (Művészetismeret) csak a  "[Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - Udvari fok" a követelmény.
 
-<br />
-
 ---

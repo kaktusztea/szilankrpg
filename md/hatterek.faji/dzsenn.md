@@ -38,3 +38,5 @@ Nincs ⭕
 
 - [Ősi nyelv ismerete](../kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) (dzsenn)
 - [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md)
+
+---

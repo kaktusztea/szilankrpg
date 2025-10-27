@@ -8,6 +8,4 @@ Alapesetben ha gyorsabban akarsz kinyitni egy zárat, akkor [büntetés jár a p
 
 🌟 **Hatás**: Sietős zárnyitás esetén sem emelkedik a célszám.
 
-<br />
-
 ---

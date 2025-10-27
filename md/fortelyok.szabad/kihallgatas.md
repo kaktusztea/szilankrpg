@@ -11,6 +11,4 @@ Magában fogalja a kihallgatási technikákat (nem kínzást!), a beszédtechnik
 
 - [Információszerzés valakitől](../szituaciok/informacioszerzes_valakitol.md)
 
-<br />
-
 ---

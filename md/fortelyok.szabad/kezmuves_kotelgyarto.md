@@ -6,6 +6,4 @@ Ismered a kötélverés mesterségét. Különböző forrásaid lehetnek a köt�
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

@@ -22,6 +22,4 @@ Amennyiben **Kiszámíthatatlanul mozgó**, vagy **Harcoló** ellenfélre lősz 
 - Kiszámíthatatlan Szorzó: `3x`
 - Harcoló Szorzó: `4x`
 
-<br />
-
 ---

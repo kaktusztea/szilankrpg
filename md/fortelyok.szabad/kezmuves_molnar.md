@@ -6,6 +6,4 @@ Malomban dolgozol, lisztet és különböző kalászosok feldolgozását végzed
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

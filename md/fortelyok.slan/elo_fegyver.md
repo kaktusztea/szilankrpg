@@ -35,12 +35,9 @@
 🌟 **Hatás**:
 - lorem ipsum
 
-<br />
-
+---
 ### Megjegyzések
 
 - lorem ipsum dorem🗡️ amet
-
-<br />
 
 ---

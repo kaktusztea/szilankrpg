@@ -1,6 +1,7 @@
 ## 🟣 Közeli lövés fegyverrel (1)
 
 Kifejezetten jól használod lőfegyveredet közeli célpontok ellen. Ez a Fortély csak lőfegyverekkel (íjak, nyílpuskák) használható.
+
 ### 1. fok
 
 🔒 **Követelmény**:
@@ -12,7 +13,5 @@ Kifejezetten jól használod lőfegyveredet közeli célpontok ellen. Ez a Fort�
 ```
 Cella = Távolság / Fegyver Osztó ↑
 ```
-
-<br />
 
 ---

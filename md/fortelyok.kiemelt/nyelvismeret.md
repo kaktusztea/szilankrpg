@@ -29,6 +29,7 @@ Nemesi, egyházi, hivatali, vagy művészi körökben hallott, míves beszéd. F
 
 ---
 ### Emberi nyelvek listája
+
 ([forrás](https://magus.fandom.com/hu/wiki/Nyelvek_%C3%A9s_nyelcsal%C3%A1dok))
 
 1. Godoni nyelvek (god)
@@ -79,7 +80,5 @@ Nemesi, egyházi, hivatali, vagy művészi körökben hallott, míves beszéd. F
 - ryeki  (rye)
 - tor0ni (tor)
 - köztor0ni (tor)
-
-<br />
 
 ---

@@ -24,14 +24,10 @@ Különlegesen éles a szemed, messzire ellátsz.
 
 🌟 **Hatás**: `2x` messzebbre lász, mint egy átlagos ember. A látást érintő Észleléspróbákra `+2` bónuszt kapsz
 
+---
+### Hatása Infralátásra, Ultralátásra
 
-<br />
-
-### Megjegyzések
-
-- Infralátásra is vonatkozik, így aki ezt a fortélyt felveszi, az a hőkép-tartományban is messzebbre ellát. Jellemzően ilyenek az elfek.
-- Ultralátásra is vonatkozik, így aki ezt a fortélyt felveszi, az a hőkép-tartományban is messzebbre ellát. Jellemzően ilyenek az amundok.
-
-<br />
+- Infralátásra is vonatkozik, így aki ezt a fortélyt felveszi, az a hőkép-tartományban is messzebbre ellát. Jellemzően ilyenek az **elfek**.
+- Ultralátásra is vonatkozik, így aki ezt a fortélyt felveszi, annak használatával is messzebbre ellát. Jellemzően ilyenek az **amundok**.
 
 ---

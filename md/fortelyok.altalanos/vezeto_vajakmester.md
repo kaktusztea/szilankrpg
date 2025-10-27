@@ -1,14 +1,16 @@
 ## 🟣 Vezető: Vajákmester (2)
 
-Vezető vajákmesterként koordinálod az alád tartozó laboratóriumi segédek, gyógyszerészek, füves asszonyok munkáját → bónusz **Vajákosság** képzettségre.
+Vezető vajákmesterként koordinálod az alád tartozó laboratóriumi segédek, gyógyszerészek, füves asszonyok munkáját.
 
 ---
-#### Bónusz
+### Alapeset
 
-A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport. A fentiek szerint kiszámolt csoportos **Vajákosság** értéket egy jó vezető vajákos képes koordinálásával megemelni.
+A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
 
 ---
 ### 1. fok
+
+A fentiek szerint kiszámolt csoportos **Vajákosság** értéket egy jó vezető vajákos képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Intelligencia: `+0`
@@ -25,9 +27,9 @@ A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettséget [csopor
 
 🌟 **Hatás**: `+4` bónusz csoportos **Vajákosság** értékre
 
-<br />
+---
+### Jellemzően
+
+NJK ismeret.
 
 ---
-### Megjegyzések
-
-- Jellemzően NJK ismeret

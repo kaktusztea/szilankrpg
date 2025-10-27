@@ -1,15 +1,17 @@
 ## 🟣 Vezető: Tudósprofesszor (2)
 
-Vezető tudósprofesszorként koordinálod az alád tartozó nyomozók munkáját → bónusz **Kvantikum** képzettségre.
+Vezető tudósprofesszorként koordinálod az alád tartozó nyomozók munkáját.
 
 ---
 #### Bónusz
 
-A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely a Kvantikum képzettség alá, vagy azt [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#norm%C3%A1l-kiterjeszt%C3%A9s) próbál tudást kutatni, felhasználni. A fentiek szerint kiszámolt csoportos **Kvantikum** értéket egy jó vezető professzor képes koordinálásával megemelni.
+A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#norm%C3%A1l-kiterjeszt%C3%A9s) próbál tudást kutatni, felhasználni.
 
 ---
 ### 1. fok
 
+ A fentiek szerint kiszámolt csoportos **Kvantikum** értéket egy jó vezető professzor képes koordinálásával megemelni.
+ 
 🔒 **Követelmény**:
 - Intelligencia: `+2`
 - Kvantikum - `6.szint`
@@ -25,9 +27,9 @@ A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos 
 
 🌟 **Hatás**: `+4` bónusz csoportos **Kvantikum** értékre
 
-<br />
+---
+### Jellemzően
+
+NJK ismeret.
 
 ---
-### Megjegyzések
-
-- Jellemzően NJK ismeret

@@ -24,6 +24,4 @@ Ehhez vagy kelljen külön elosztó/generátor/manafókusz/varázskör (hívjuk 
 
 ⚡Harmadik példa: Harcoló kyr alakulat (anno). Az alakzat közepén halad az emitter varázstárgy, ami aktívvá teszi a fegyvereket X méter sugarú körben és amit az őt hordozó varázslónak/mágiahasználónak egy állandó enyhe koncentrációval kell működtetnie. Ha az ellen esetleg elzsákmányolja a fegyvereket, a mágia kialszik. Sőt az emitterrel se mennek semmire, mert nem tudják használni.
 
-<br />
-
 ---

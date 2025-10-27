@@ -40,3 +40,5 @@ TODO ⭕
 
 - [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md)
 - [Lovaglás](../kepzettsegek.szekunder/lovaglas.md)
+
+---

@@ -16,6 +16,4 @@ Ismered a magaslati, sarkvidéki környezetet.
 - [Tájtípus: Erdős](../fortelyok.szabad/tajtipus_erdos.md)
 - [Tájtípus: Sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
 
-<br />
-
 ---

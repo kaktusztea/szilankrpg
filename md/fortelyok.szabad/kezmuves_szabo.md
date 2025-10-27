@@ -8,6 +8,4 @@ Sérült ruhadarabokat is javítasz.
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

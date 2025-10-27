@@ -13,6 +13,4 @@ Kifejezetten jól használod lőfegyveredet közeli célpontok ellen. Ez a Fort�
 Cella = Távolság / Fegyver Osztó ↑
 ```
 
-<br />
-
 ---

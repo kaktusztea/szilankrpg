@@ -8,6 +8,4 @@ Elsősorban tölgyfából dolgozol, hordókat faabroncsokkal kötsz össze.
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

@@ -6,6 +6,4 @@ Járatos vagy a nyersbőrök tartósításában, előkészítésében.
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
-<br />
-
 ---

@@ -35,6 +35,4 @@ A KM számára az alábbi paraméterek adhatnak kapaszkodót, mikor megállapít
 
 Például a közelben van egy ember, vagy kiérzed az italból, a fura mellékillatot.
 
-<br />
-
 ---
