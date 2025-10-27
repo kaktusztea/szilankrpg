@@ -19,10 +19,6 @@ Példa: „`Z2`” jelölés 4 db rubrikában: ez a karakter második sebe és e
 
 ![](images/02_eletero_tablazat_harcertek_levonassal.png)
 
-Az első (`S1`) kategóriában lévő karaktert még nem sújtják negatív módosítók, sérülése – számára – olyan könnyű, ami nem akadályozza a harcban.
-
-Az `S2`, `S3` és `S4` kategóriákba kerülve viszont már rendre `-3`; `-6` és `-9` `TÉ` a harcérték büntetés. Ezeket az értékeket viszont mérsékli a [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség: a `4. szinttől` kezdve `1:1` csökkenti mindhárom oszlop levonásait. Így tehát a levonások értéke karakterenként változik.
-
 `0 ÉP`-re érve a karakter elájul, és haldokolni kezd (Lásd [Haldoklás](#haldokl%C3%A1s)). Ha további sebet kap, meghal.
 
 ---
@@ -33,10 +29,14 @@ A sima `ÉP` és az `FP` értékek kezelése ugyanabban az `ÉP` táblázatban t
 Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `FP`-ket (ajánlott egy `F` betű írása a rubrikákba).
 
 A lenti példa:
-- `2 db` valós seb
-  - `3 ÉP` Vágott
-  - `5 ÉP` Zúzott
-- `3 FP`
+
+
+```
+2 db valós seb
+ → 3 ÉP Vágott
+ → 5 ÉP Zúzott
+3 FP
+```
 
 ![](images/06_fp.png)
 
@@ -48,7 +48,7 @@ A [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettsé
 ---
 ### Fájdalomtűrés harc közben
 
-Ha harc közben más sebesülés kategóriába (`S`) lép a karakter, akkor fix `TÉ` levonást kap büntetésül. 
+Ha harc közben más sebesülés kategóriába (`S`) lép a karakter, akkor statikus `TÉ` levonást kap büntetésül. Az első (`S1`) kategóriában lévő karaktert még nem sújtják negatív módosítók, sérülése – számára – olyan könnyű, ami még nem akadályozza a harcban. Az `S2`, `S3` és `S4` kategóriákba kerülve viszont már `TÉ` büntetések sújtják.
 
 ```
 TÉ levonás alap
@@ -59,7 +59,7 @@ S3:  -6 TÉ
 S4:  -9 TÉ
 ```
 
-Ennek értékét csökkenti statikusan a Fájdalomtűrés képzettség egyes szintjei:
+Ennek értékét csökkentik statikusan a [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség egyes szintjei, így tehát a levonások értéke karakterenként változik.
 
 ```
 TÉ levonás enyhítése
@@ -76,6 +76,7 @@ TÉ levonás enyhítése
 15.szint: 9 TÉ enyhítés
 ```
 
+---
 ### `S4` kategóriás fájdalomtűrés
 
 ```
@@ -109,7 +110,7 @@ S4:  -7 TÉ
 ---
 ### Fájdalomtűrés harcon kívül
 
-Mérgezés, kínzás, egyéb fájdalom esetén a karakterek Fájdalomtűrés-próbát kell dobnia a KM által meghatározott célszámra - általában **Önuralom** Tulajdonsággal.
+Mérgezés, kínzás, egyéb fájdalom esetén a karakterek **Fájdalomtűrés** képzettségpróbát kell dobnia a KM által meghatározott célszámra - általában **Önuralom** Tulajdonsággal.
 
 ---
 ### Sérülés hatása Tulajdonság- és Képzettségpróbára
@@ -119,7 +120,16 @@ Ha megsérül a karakter és `S3`, vagy `S4` kategóriába került, akkor ["Sér
 ---
 ### ⚡ Példa a sebesülésre
 
-Az alábbi példa Lord Gustav – Domvik lovagjának – egészség kategóriáit mutatja. `17 ÉP`-je van, `Fájdalomtűrés` képzettsége: `7.szint`, ezzel `7-3 = 4` ponttal csökkenti minden oszlop `TÉ` büntetését.
+Az alábbi példa Lord Gustav – Domvik lovagjának – egészség kategóriáit mutatja.
+
+```
+ÉP: 18
+Fájdalomtűrés - 10.szint
+
+S2: -0 TÉ
+S3: -2 TÉ
+S4: -5 TÉ
+```
 
 Ebben az esetben az ő Életerő táblázata a következőképpen néz ki: minden oszlopba `4` - `4` `ÉP` kerül (`17 / 4` kerekítve). A maradék `1 ÉP`-t pedig balról jobbra „osztjuk el”, tehát az `S1` oszlopba kerül.
 
@@ -159,7 +169,7 @@ Gustav hátrálás közben belefejel a kovácsoltvas kapuba. `4 FP` a büntetés
 
 Mivel `S4` kategóriába került, jön az [automatikus Fájdalomtűrás próba](#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s) `12` (Nehéz) ellen **Edzettség** Tulajdonsággal. Ha elrontja, akkor el is ájul.
 
-Ha túléli a kalandot, akkor a „szerzett” `4 FP` gyógyulása `4 óra` alatt, a sebek okozta ÉP csökkenés pedig a [Gyógyulás](061_04_gyogyulas.md) fejezetben meghatározott ütemben történik.
+Ha túléli a kalandot, akkor a „szerzett” `4 FP` gyógyulása `4 óra` alatt, a valós sebek okozta `ÉP` csökkenés gyógyulása pedig a [Gyógyulás](061_04_gyogyulas.md) fejezetben meghatározott ütemben történik.
 
 ---
 ### Haldoklás
@@ -168,7 +178,16 @@ Ha a karakter ÉP-inek száma `0`-ra zuhan, akkor haldokolni kezd.
 
 Ilyenkor dobnia kell egy `Edzettség` tulajdonságpróbát `Átlagos (5-ös)` nehézség ellen. Ha megdobja, életben marad, de `2 perc` múlva újra dobnia kell, míg nem stabilizálják. Ha elrontja, meghal.
 
-**Stabilizálás**: `Sebgyógyítás`, vagy `Gyógyítás` képzettségpróba Átlagos (`9`) nehézség ellen. Ha egy karaktert stabilizáltak, akkor nem kell `Edzettség` próbát dobnia, de továbbra is igaz rá, hogy minden további sebzés azonnal végez vele.
+#### Haldokló stabilizálása
+
+```
+Sebgyógyítás vagy Gyógyítás
+ képzettségpróba
+
+Nehézség: 9
+```
+
+Ha egy karaktert stabilizáltak, akkor nem kell `Edzettség` próbát dobnia, de továbbra is igaz rá, hogy minden további sebzés azonnal végez vele.
 
 ---
 
