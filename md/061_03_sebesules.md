@@ -2,7 +2,11 @@
 
 Ha a karakter találatot kap, harcértékeit - fizikumától függően - levonások sújtják. Persze ami például egy nyeszlett alakot az összeesés szélére sodor, az nem okoz akkora hátrányt egy edzett korgnak.
 
-Ezért kerültek bevezetésre a sebesülés kategóriák. A karakter Életerejét `4` kategória szimbolizálja, melyek között karakteralkotáskor kell elosztani az **Életerő Pontokat.** (Lásd [Karakteralkotás – Életerő Pontok](010_10_01_ep_kt.md))
+### Sebesülés kategóriák táblázata
+
+A fenti egyedi jellemzők miatt kerültek bevezetésre a sebesülés kategóriák. A karakter Életerejét `4` kategória szimbolizálja egy táblázatban, melyek között karakteralkotáskor kell elosztani az **Életerő Pontokat.** (Lásd [Karakteralkotás – Életerő Pontok](010_10_01_ep_kt.md))
+
+### Sebesülés jelölése a táblázatban
 
 Mikor a karaktert sebesülés éri, elkezdi bejelölni az Életerő táblázatban a legmagasabb (`S1`) kategóriában lévő mezőket fentről lefelé. Mikor az első oszlop „betelt”, folytatja az `S2`, majd az `S3` kategóriában levőkkel és így tovább.
 
@@ -15,6 +19,21 @@ Az első (`S1`) kategóriában lévő karaktert még nem sújtják negatív mód
 Az `S2`, `S3` és `S4` kategóriákba kerülve viszont már rendre `-3`; `-6` és `-9` `TÉ` a harcérték büntetés. Ezeket az értékeket viszont mérsékli a [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség: a `4. szinttől` kezdve `1:1` csökkenti mindhárom oszlop levonásait. Így tehát a levonások értéke karakterenként változik.
 
 `0 ÉP`-re érve a karakter elájul, és haldokolni kezd (Lásd [Haldoklás](#haldokl%C3%A1s)). Ha további sebet kap, meghal.
+
+---
+### FP jelölése az `ÉP` táblázatban
+
+A sima `ÉP` és az `FP` értékek kezelése ugyanabban az `ÉP` táblázatban történik, hatásaik is megegyeznek, csak az `FP` esetén nincs valós fizikai sérülés, viszont a „sebesülés” okozta harcérték levonások úgy számítandóak, mintha valós sebzés történt volna! A gyakorlatban ez úgy néz ki, hogy ha a karakter **Fáradság Pontot** szerez, azt bejelöli a rendes `ÉP` táblázatában.
+
+Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `FP`-ket (ajánlott egy `F` betű írása a rubrikákba).
+
+A lenti példa:
+- `2 db` valós seb
+  - `3 ÉP` Vágott
+  - `5 ÉP` Zúzott
+- `3 FP`
+
+![](images/06_fp.png)
 
 ---
 ### Fájdalomtűrés
