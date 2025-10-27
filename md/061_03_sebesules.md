@@ -134,7 +134,7 @@ Ha megsérül a karakter és `S3`, vagy `S4` kategóriába került, akkor ["Sér
 ---
 ### ⚡ Komplex példa a sebesülésre
 
-Láásuk Lord Gustav – Domvik lovagjának – egészség kategóriáit.
+Lássuk Lord Gustav – Domvik lovagjának – egészség kategóriáit.
 
 ```
 ÉP: 18
