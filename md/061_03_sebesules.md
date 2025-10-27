@@ -13,9 +13,18 @@ A karakter Életerejét `4` kategória szimbolizálja egy táblázatban, melyek 
 
 Mikor a karaktert sebesülés éri, elkezdi bejelölni az Életerő táblázatban a legmagasabb (`S1`) kategóriában lévő mezőket fentről lefelé. Mikor az első oszlop „betelt”, folytatja az `S2`, majd az `S3` kategóriában levőkkel és így tovább.
 
+#### Sebek jellegének jelölései
+
 Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteket, hanem a sebesülés „sorszámát” (hányadik seb a harc során) és annak jellegét (`S,V,Z`) írjuk beléjük (`Szúró,Vágó,Zúzó`), megkönnyítve a dolgunkat: rögtön látjuk, hány és mekkora sebünk van. (Az `FP` sérülések mezőbe pedig „`F`” betűt írjunk).
 
-Példa: „`Z2`” jelölés 4 db rubrikában: ez a karakter második sebe és egy `4 ÉP`-s zúzott sebet jelöl.
+```
+S: Szúrt seb
+V: Vágott seb
+Z: Zúzott seb
+F: FP
+```
+
+Példa: `Z2` jelölés `4 db` rubrikával: ez a karakter második sebe és egy `4 ÉP`-s zúzott sebet jelöl.
 
 ![](images/02_eletero_tablazat_harcertek_levonassal.png)
 
@@ -28,8 +37,7 @@ A sima `ÉP` és az `FP` értékek kezelése ugyanabban az `ÉP` táblázatban t
 
 Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `FP`-ket (ajánlott egy `F` betű írása a rubrikákba).
 
-A lenti példa:
-
+#### ⚡ Példa FP jelölésére
 
 ```
 2 db valós seb
@@ -39,6 +47,8 @@ A lenti példa:
 ```
 
 ![](images/06_fp.png)
+
+<br />
 
 ---
 ### Fájdalomtűrés
@@ -112,15 +122,19 @@ S4:  -7 TÉ
 
 Mérgezés, kínzás, egyéb fájdalom esetén a karakterek **Fájdalomtűrés** képzettségpróbát kell dobnia a KM által meghatározott célszámra - általában **Önuralom** Tulajdonsággal.
 
+<br />
+
 ---
 ### Sérülés hatása Tulajdonság- és Képzettségpróbára
 
 Ha megsérül a karakter és `S3`, vagy `S4` kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják.
 
----
-### ⚡ Példa a sebesülésre
+<br />
 
-Az alábbi példa Lord Gustav – Domvik lovagjának – egészség kategóriáit mutatja.
+---
+### ⚡ Komplex példa a sebesülésre
+
+Láásuk Lord Gustav – Domvik lovagjának – egészség kategóriáit.
 
 ```
 ÉP: 18
@@ -131,50 +145,53 @@ S3: -2 TÉ
 S4: -5 TÉ
 ```
 
-Ebben az esetben az ő Életerő táblázata a következőképpen néz ki: minden oszlopba `4` - `4` `ÉP` kerül (`17 / 4` kerekítve). A maradék `1 ÉP`-t pedig balról jobbra „osztjuk el”, tehát az `S1` oszlopba kerül.
-
-Sebek jellegének jelölései:
-
-```
-S: Szúrt seb
-V: Vágott seb
-Z: Zúzott seb
-F: FP
-```
+Minden oszlopba `4` - `4` `ÉP` kerül (`18 / 4` kerekítve).\
+A maradék `2 ÉP`-t balról jobbra „osztjuk el”, tehát az `S1` oszlopba kerül.
 
 ![](images/03_eletero_lord_gustav.png)
 
 ```
 S1
 ```
-Találat esetén a sebesülést először az `S1` rubrikában kezdjük jelölni, oszlopon belül pedig fentről lefelé. Ha Lord Gustav egy `2 ÉP`-s sebet kap, az az `S1` oszlopban kerül bejelölésre fentről lefele. Ilyenkor még nem sújtja levonás.
+
+Ha Lord Gustav egy `3 ÉP` súlyosságú sebet kap, az az `S1` oszlopban kerül bejelölésre fentről lefele. Ilyenkor még nem sújtja levonás.
 
 ```
 S2
 ```
 
-Gustav ismét megsebesül. Ezúttal `5 ÉP`, ezzel az `S2` kategóriába kerül. Mivel a `Fájdalomtűrés` `4` ponttal mérsékli a standard `S2`-nél használt (`TÉ:-3`) büntetést, ezért még itt sincs `TÉ` levonás.
+Gustav ismét megsebesül. Ezúttal `5 ÉP`, ezzel az `S2` kategóriába kerül.\
+Mivel a `Fájdalomtűrés` `4` ponttal mérsékli a standard `S2`-nél használt (`TÉ:-3`) büntetést, ezért még itt sincs `TÉ` levonás.
 
 ```
 S3
 ```
 
-A harmadik seb `4 ÉP`, Gustav a harmadik (közepesen sérült) kategóriába kerül. Alapból (`TÉ:-6`) lenne a büntetés, de ez (`TÉ:-2`)-re mérséklődik.
+A harmadik seb `3 ÉP`, Gustav a harmadik (közepesen sérült) kategóriába kerül. Alapból (`TÉ:-6`) lenne a büntetés, de ez (`TÉ:-2`)-re mérséklődik.
 
 ```
 S4
 ```
 
-Gustav hátrálás közben belefejel a kovácsoltvas kapuba. `4 FP` a büntetése. Ezzel az `S4` (utolsó) kategóriába került. Büntetése `TÉ:-5` (a `-9` helyett).
+Gustav hátrálás közben belefejel a kovácsoltvas kapuba. `5 FP` a büntetése. Ezzel az `S4` (utolsó) kategóriába került.\
+Büntetése `TÉ:-5` (a `-9` helyett).
 
 Mivel `S4` kategóriába került, jön az [automatikus Fájdalomtűrás próba](#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s) `12` (Nehéz) ellen **Edzettség** Tulajdonsággal. Ha elrontja, akkor el is ájul.
 
 Ha túléli a kalandot, akkor a „szerzett” `4 FP` gyógyulása `4 óra` alatt, a valós sebek okozta `ÉP` csökkenés gyógyulása pedig a [Gyógyulás](061_04_gyogyulas.md) fejezetben meghatározott ütemben történik.
 
+<br />
+
 ---
 ### Haldoklás
 
-Ha a karakter ÉP-inek száma `0`-ra zuhan, akkor haldokolni kezd.
+```
+Edzettség tulajdonságpróba
+
+Nehézség: 5 (Átlagos)
+```
+
+Ha a karakter `ÉP` értéke `0`-ra zuhan, akkor haldokolni kezd.
 
 Ilyenkor dobnia kell egy `Edzettség` tulajdonságpróbát `Átlagos (5-ös)` nehézség ellen. Ha megdobja, életben marad, de `2 perc` múlva újra dobnia kell, míg nem stabilizálják. Ha elrontja, meghal.
 

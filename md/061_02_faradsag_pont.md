@@ -41,7 +41,9 @@ Amennyiben az életerő táblázat "betelt" és van benne `FP`, akkor a "túlcso
 2 FP: alvásban óránként
 ```
 
-Az `FP`, mivel nem valós sebesülés okozta, gyorsabban „gyógyul”, mint a valós `ÉP` seb. Fizikai behatás esetén kb. **óránként 1 pont „tűnik el”**, és így szép lassan „visszaolvad” a valós sebzésbe.
+Az `FP`, mivel nem valós sebesülés okozta, gyorsabban „gyógyul”, mint a valós `ÉP` seb.
+
+Fizikai behatás esetén kb. **óránként 1 pont „tűnik el”**, és így szép lassan „visszaolvad” a valós sebzésbe.
 
 Mérgezés, betegség esetén a hatás tartósabb is lehet, itt a KM dönt. **Alvás közben** a gyógyulási sebesség duplázódik, tehát `2 FP / óra`. Ha a KM úgy látja indokoltnak eltérhet a fenti számoktól.
 
@@ -64,7 +66,7 @@ Az `FP` kiválóan alkalmas kocsmai verekedések, kisebb – nem „vérre menő
 
 **Minden `5. FP` okoz csak `1 ÉP` valós sebesülést: `4 FP, 1 ÉP`**
 
-A szabály sebzésenként számít, tehát bekaphat a karakter több '4 FP' sebet anélkül, hogy 'ÉP' sebet szerezne.
+A szabály sebzésenként számít, tehát a karakter elszenvedhet több `4 FP` értékű csapást anélkül, hogy `ÉP` sebet szerezne.
 
 ---
 ### Fejbe vágás
