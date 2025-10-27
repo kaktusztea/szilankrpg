@@ -2,7 +2,7 @@
 
 Egyes értékek más, már kiszámolt értékekből származtatva kerülnek meghatározásra.
 
-### [Életerő Pont (ÉP), Fáradtság Pont (FP)](010_10_01_ep_kt.md)
+### [Életerő Pont (ÉP), Fáradtság Pont (FP)](010_10_01_ep_fp.md)
 
 ### [Harcértékek](010_10_02_harcertekek_99.md)
 

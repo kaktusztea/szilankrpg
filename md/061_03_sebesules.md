@@ -4,7 +4,9 @@ Ha a karakter találatot kap, harcértékeit - fizikumától függően - levoná
 
 ### Sebesülés kategóriák táblázata
 
-A fenti egyedi jellemzők miatt kerültek bevezetésre a sebesülés kategóriák. A karakter Életerejét `4` kategória szimbolizálja egy táblázatban, melyek között karakteralkotáskor kell elosztani az **Életerő Pontokat.** (Lásd [Karakteralkotás – Életerő Pontok](010_10_01_ep_kt.md))
+A fenti egyedi jellemzők miatt kerültek bevezetésre a **Sebesülés kategóriák**.
+
+A karakter Életerejét `4` kategória szimbolizálja egy táblázatban, melyek között karakteralkotáskor kell elosztani az **Életerő Pontokat.** (Lásd [Karakteralkotás – Életerő Pontok](010_10_01_ep_fp.md))
 
 ### Sebesülés jelölése a táblázatban
 

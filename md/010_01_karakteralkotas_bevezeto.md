@@ -98,7 +98,7 @@ A [Hátterek](020_hattererek.md) számos érdekes aspektussal ruházhatják fel 
 
 Jöhetnek a [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md) kiszámításai. Ezek a jellemzők nem kerülnek külön pontba, a karakter meglevő ismereteinek értékeiből számoljuk ki őket:
 
-- [Életerő Pont és Fáradság Pont](010_10_01_ep_kt.md)
+- [Életerő Pont és Fáradság Pont](010_10_01_ep_fp.md)
 - [Manőver Pontok](066_02_manover_pontok.md)
 - [Mágiaellenállás](010_10_04_magiaellenallas.md)
 - [Méregellenállás](010_10_05_meregellenallas.md) 

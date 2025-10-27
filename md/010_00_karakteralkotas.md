@@ -23,7 +23,7 @@ Eljött az ideje, hogy karaktert alkossunk.
   - [Fortélyok](040_fortelyok.md)
 - [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md)
 - [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md)
-  - [Életerő Pont (ÉP), Fáradtság Pont (FP)](010_10_01_ep_kt.md)
+  - [Életerő Pont (ÉP), Fáradtság Pont (FP)](010_10_01_ep_fp.md)
   - [Harcértékek](010_10_02_harcertekek_99.md)
   - [Manőver Pontok](010_10_03_manover_pontok_99.md)
   - [Mágiaellenállás](010_10_04_magiaellenallas.md) 🎲
