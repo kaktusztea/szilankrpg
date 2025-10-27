@@ -5,7 +5,7 @@
 Képes vagy egy céh vezetésére, az adott kézműves szakma termelőképességének javítására → bónusz **Kézművesség - (adott szakma)** képzettségre.
 
 ---
-#### Bónusz
+### Bónusz
 
 A [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy céh tagjai, mikor együtt készítenek valamilyen terméket. A fentiek szerint kiszámolt csoportos **Kézművesség - (adott szakma)** értéket egy jó céhmester képes koordinálásával megemelni.
 

@@ -8,6 +8,4 @@ Könnyebben felriadsz gyanús zajokra.
 
 🌟 **Hatás**: Alvás közben dobott [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) próbádra `+2` bónusz jár.
 
-<br />
-
 ---

@@ -25,9 +25,7 @@ A [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettséget [csoportos szel
 
 🌟 **Hatás**: `+4` bónusz csoportos **Lexikum** értékre
 
-<br />
-
 ---
-### Megjegyzések
+### Jellemzően
 
-- Jellemzően NJK ismeret
+NJK ismeret.

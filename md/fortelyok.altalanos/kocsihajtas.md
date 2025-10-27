@@ -15,6 +15,4 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 
 🌟 **Hatás**: Harci szekerek, nagy fogatok kezelése
 
-<br />
-
 ---

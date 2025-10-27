@@ -30,6 +30,4 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 
 🌟 **Hatás**: Az Alapesetnél leírt büntetéseket `6`-tal csökkentheted képzettségpróbánál.
 
-<br />
-
 ---

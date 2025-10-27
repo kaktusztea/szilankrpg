@@ -22,12 +22,9 @@ Az egyik legrégebbi alvilági mesterség, amelynek célja sokszor csak a szóra
 
 🌟 **Hatás**: Teljesen megtévesztően utánzol egy emberi hangot, csendes körülmények között is, ha előzőleg legalább `1` percig hallottad beszélni.
 
-<br />
-
-### Megjegyzések
+---
+### Körülmények hatásai
 
 Nyelvi ismeretek, faji különbségek nehezítenek!
-
-<br />
 
 ---

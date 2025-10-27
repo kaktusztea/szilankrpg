@@ -19,12 +19,9 @@ Ismered a betűvésés és olvasás udományát.
 
 🌟 **Hatás**: Minden nyelvet, amit legalább **Udvari** szinten beszélsz, képes vagy írásban is megérteni, továbbá írni is tudsz vele.
 
-<br />
-
+---
 ### Speciális
 
 Ha [Tradíciót](../050_tradiciok.md) veszel fel, automatikusan megkapod az **Írástudó** fortélyt. 
-
-<br />
 
 ---

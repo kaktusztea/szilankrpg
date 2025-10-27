@@ -13,6 +13,4 @@ Szívós vagy mint egy rozsomák.
 
 🌟 **Hatás**: **Hosszútávú** [Úszás](uszas.md), [Futás](futas.md), vagy egyéb ilyen tartós igénybevételnél ⚪**Edzettség** próbádra `+1` bónuszt kapsz.
 
-<br />
-
 ---

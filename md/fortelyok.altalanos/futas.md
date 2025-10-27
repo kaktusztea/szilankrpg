@@ -24,6 +24,4 @@ Nem csak rohangálsz, mint egy futóbolond, hanem kitartó, hosszas futás sorá
 - Hosszútávfutáskor **Edzettség** próbára: `+2`
 - Rövidtávfutásnál: **Gyorsaság** próbára: `+2`
 
-<br />
-
 ---

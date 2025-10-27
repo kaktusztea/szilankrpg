@@ -1,11 +1,14 @@
 ## Fáradtság Pont (`FP`)
 
-A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapota között, amely a pillanatnyi ájulástól való „távolságát” meghatározza. Ez utóbbit szimulálja a **Fáradtság Pont** (`FP`). Az `FP` értékének semmi köze nincs a **Fájdalomtűrés** képzettséghez, tőle teljesen független fogalom!
+A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapota között, amely a pillanatnyi ájulástól való „távolságát” meghatározza. Ez utóbbit szimulálja a **Fáradtság Pont** (`FP`).
 
-Az `FP` az alábbi állapotok szimulálására alkalmas:
+🔆 Az `FP` értékének semmi köze nincs a **Fájdalomtűrés** képzettséghez, tőle teljesen független fogalom.
+
+### Milyen állapototkat szimulál az FP?
+
 - tartós kimerültség
 - zúzódásokból adódó "leharcoltság"
-- harc harc után rendes, alapos, nyugodt pihenés nélkül
+- harc utáni kimerültség - rendes, alapos, nyugodt pihenés elmaradásakor
 - kialvatlanság
 - éhség
 - rosszullét
@@ -13,9 +16,11 @@ Az `FP` az alábbi állapotok szimulálására alkalmas:
 - másnaposság
 - pánikroham hatása
 
-Az `FP`-nek nincs kezdeti értéke, csak a fenti hatások valamelyike következtében jöhet létre. Tehát ebből a szempontból jegyzése az `ÉP`-vel ellentétes. Mikor valaki olyan „sebesülést” szenved el, hogy `FP`-t „szerez”, a hatás megegyezik azzal, mint amit valós sebesülés esetén tapasztal, de nem jár strukturális károsodással (valódi `ÉP` sebbel), vagy halállal, legfeljebb ájulással. Tipikus esete az `FP` sebesülésnek, mikor valakit alaposan fejbe kólintanak. Ez – szándéktól függően – okozhat valós sebesülést is, de ezen kívül `Fáradtság Pontokat` is szül. Másik példa lehet, mikor a karakter rosszullétet okozó mérget iszik.
+Az `FP`-nek nincs kezdeti értéke, csak a fenti hatások valamelyike következtében jöhet létre. Tehát ebből a szempontból jegyzése az `ÉP`-vel ellentétes. Mikor valaki olyan „sebesülést” szenved el, hogy `FP`-t „szerez”, a hatás megegyezik azzal, mint amit valós sebesülés esetén tapasztal, de nem jár strukturális károsodással (valódi `ÉP` sebbel), vagy halállal, legfeljebb ájulással.
 
-A sima `ÉP` és az `FP` értékek kezelése ugyanabban az `ÉP` táblázatban történik, hatásaik is megegyeznek, csak az `FP` esetén nincs valós fizikai sérülés, viszont a „sebesülés” okozta harcérték levonások úgy számítandóak, mintha valós sebzés történt volna! A gyakorlatban ez úgy néz ki, hogy ha a karakter **Fáradság Pontot** szerez, azt bejelöli a rendes `ÉP` táblázatban.
+Tipikus esete az `FP` sebesülésnek, mikor valakit alaposan fejbe kólintanak. Ez – szándéktól függően – okozhat valós sebesülést is, de ezen kívül `Fáradtság Pontokat` is szül. Másik példa lehet, mikor a karakter rosszullétet okozó mérget iszik.
+
+A sima `ÉP` és az `FP` értékek kezelése ugyanabban az `ÉP` táblázatban történik, hatásaik is megegyeznek, csak az `FP` esetén nincs valós fizikai sérülés, viszont a „sebesülés” okozta harcérték levonások úgy számítandóak, mintha valós sebzés történt volna! A gyakorlatban ez úgy néz ki, hogy ha a karakter **Fáradság Pontot** szerez, azt bejelöli a rendes `ÉP` táblázatában.
 
 ---
 ### Sebzések jelölése az `ÉP` táblázatban
@@ -40,7 +45,11 @@ Amennyiben az életerő táblázat "betelt" és van benne `FP`, akkor a "túlcso
 2 FP: alvásban óránként
 ```
 
-Az `FP`, mivel nem valós sebesülés okozta, gyorsabban „gyógyul”, mint a valós `ÉP` seb. Fizikai behatás esetén kb. **óránként 1 pont „tűnik el”**, és így szép lassan „visszaolvad” a valós sebzésbe. Mérgezés, betegség esetén a hatás tartósabb is lehet, itt a KM dönt. **Alvás közben** a gyógyulási sebesség duplázódik, tehát `2 FP / óra`. Ha a KM úgy látja indokoltnak eltérhet a fenti számoktól.
+Az `FP`, mivel nem valós sebesülés okozta, gyorsabban „gyógyul”, mint a valós `ÉP` seb. Fizikai behatás esetén kb. **óránként 1 pont „tűnik el”**, és így szép lassan „visszaolvad” a valós sebzésbe.
+
+Mérgezés, betegség esetén a hatás tartósabb is lehet, itt a KM dönt. **Alvás közben** a gyógyulási sebesség duplázódik, tehát `2 FP / óra`. Ha a KM úgy látja indokoltnak eltérhet a fenti számoktól.
+
+Kapcsolódik: [Vadember](fortelyok.altalanos/vadember.md) fortély
 
 ---
 ### Tartós rosszullét

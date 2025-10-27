@@ -67,6 +67,4 @@ Itt nem szükséges az **Ősi kultúrkör** ismerete, hiszen itt általános tö
 - Elf (Homoki)
 - Elf (Kráni)
 
-<br />
-
 ---

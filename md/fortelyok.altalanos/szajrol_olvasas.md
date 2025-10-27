@@ -13,6 +13,4 @@
 🌟 **Hatás**:
 - Pusztán a szájmozgást megfigyelve, hallás nélkül is képes vagy megérteni, mit mond valaki.
 
-<br />
-
 ---

@@ -29,6 +29,4 @@ Fém ötvözetekből kalapálsz ki fegyvereket. Páncélokat NEM.
 
 🌟 **Hatás**: `+2` bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor.
 
-<br />
-
 ---

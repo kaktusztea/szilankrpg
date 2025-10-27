@@ -15,6 +15,4 @@ Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer.alt
 
 🌟 **Hatás**: Fájdalomtűrés próbára: `+4`
 
-<br />
-
 ---

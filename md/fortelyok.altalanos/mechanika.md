@@ -37,8 +37,9 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettségre: `+4`
 - A kapcsolódó képzettségek kiterjesztés követelményeként már `+2` bónuszt is ad.
 
-<br />
+---
+### Fizikai és Matematikai ismeretek
 
-### Megjegyzések
+Ezek **NEM** ide tartoznak, hanem a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettség szerves részét képezik.
 
-- A Fizikai és Matematikai ismeretek NEM ide tartoznak, azok a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettség szerves részét képezik.
+---

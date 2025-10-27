@@ -13,6 +13,4 @@
 - [Művészetismeret](../kepzettsegek.szekunder/muveszetismeret.md): "Shad0ni hatást érzek azon az oszlopfőn..."
 - [Kvantikum](../kepzettsegek.szekunder/kvantikum.md): "Az a torony pár hónap és leomlik."
 
-<br />
-
 ---

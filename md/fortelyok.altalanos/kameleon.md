@@ -10,6 +10,4 @@ Az egyes személyiségekbe ruhaként bújsz, ösztönös tehetséged van más je
 
 🌟 **Hatás**:  Az **Álcázás/Álruha** képzettség tanulása során nem minden `3.`, hanem minden `2.` szinten kap új szerepet a karakter.
 
-<br />
-
 ---

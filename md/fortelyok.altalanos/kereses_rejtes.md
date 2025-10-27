@@ -23,12 +23,11 @@ Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben me
 
 🌟 **Hatás**: Lásd a leírást fenn.
 
+---
 ### 2. fok
 
 🔒 **Követelmény**: Észlelés - `3.szint`
 
 🌟 **Hatás**: Lásd a leírást fenn.
-
-<br />
 
 ---

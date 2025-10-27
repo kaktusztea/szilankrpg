@@ -26,5 +26,3 @@ A víz mélye a te közeged, ritkábban kell feljönnöd levegőért.
 - Edzettség: `+2`
 
 🌟 **Hatás**: Ennyi ideig bírod a víz alatt: `1 + (2x Edzettség) perc`
-
-<br />

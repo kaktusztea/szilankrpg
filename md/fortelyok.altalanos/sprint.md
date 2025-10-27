@@ -13,6 +13,4 @@ Rövidtávú futásban nincs párod.
 
 🌟 **Hatás**: [Futás](futas.md) esetén **rövid távú** igénybevételnél ⚪ **Gyorsaság** próbára `+2` bónusz jár (futás)
 
-<br />
-
 ---

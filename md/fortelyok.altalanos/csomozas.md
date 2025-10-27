@@ -54,10 +54,9 @@ Könnyebben kibújsz kötelékeidből.
 🌟 **Hatás**:
 - Ügyesség ellenpróbához: `+4` 
 
-### Megjegyzés
+---
+### Mechanikus zárak
 
 🔆 Mechanikus zárakhoz [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettség szükséges.
-
-<br />
 
 ---
