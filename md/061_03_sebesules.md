@@ -6,7 +6,7 @@ Ha a karakter találatot kap, harcértékeit - fizikumától függően - levoná
 
 A fenti egyedi jellemzők miatt kerültek bevezetésre a **Sebesülés kategóriák**.
 
-A karakter Életerejét `4` kategória szimbolizálja egy táblázatban, melyek között karakteralkotáskor kell elosztani az [Életerő Pontokat](010_10_01_ep_fp.md).
+A karakter Életerejét táblázatos formában `4` kategóriára osztjuk. Karakteralkotáskor ezek között kell elosztani az [Életerő Pontokat](010_10_01_ep_fp.md).
 
 ---
 ### Sebesülés jelölése a táblázatban
@@ -15,7 +15,9 @@ Mikor a karaktert sebesülés éri, elkezdi bejelölni az Életerő táblázatba
 
 #### Sebek jellegének jelölései
 
-Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteket, hanem a sebesülés „sorszámát” (hányadik seb a harc során) és annak jellegét (`S,V,Z`) írjuk beléjük (`Szúró,Vágó,Zúzó`), megkönnyítve a dolgunkat: rögtön látjuk, hány és mekkora sebünk van. (Az `FP` sérülések mezőbe pedig „`F`” betűt írjunk).
+Hasznos segítség lehet, ha sérüléskor nem beikszeljük az egyes négyzeteket, hanem a sebesülés jellegét (`S,V,Z == Szúró,Vágó,Zúzó`) és „sorszámát” (hányadik seb a harc során)  írjuk beléjük.
+
+Ezzel megkönnyítjük a dolgunkat, hiszen rögtön látjuk, hány és mekkora sebünk van.
 
 ```
 S: Szúrt seb
@@ -24,7 +26,9 @@ Z: Zúzott seb
 F: FP
 ```
 
-Példa: `Z2` jelölés `4 db` rubrikával: ez a karakter második sebe és egy `4 ÉP`-s zúzott sebet jelöl.
+⚡ Példa: `Z2` jelölés `4 db` rubrikával
+- ez a karakter második sebe
+- egy `4 ÉP`-s zúzott sebet jelöl.
 
 ![](images/02_eletero_tablazat_harcertek_levonassal.png)
 
@@ -33,7 +37,7 @@ Példa: `Z2` jelölés `4 db` rubrikával: ez a karakter második sebe és egy `
 ---
 ### FP jelölése az `ÉP` táblázatban
 
-A sima `ÉP` és az `FP` értékek kezelése ugyanabban az `ÉP` táblázatban történik, hatásaik is megegyeznek, csak az `FP` esetén nincs valós fizikai sérülés, viszont a „sebesülés” okozta harcérték levonások úgy számítandóak, mintha valós sebzés történt volna! A gyakorlatban ez úgy néz ki, hogy ha a karakter **Fáradság Pontot** szerez, azt bejelöli a rendes `ÉP` táblázatában.
+A sima `ÉP` és az [FP](061_02_faradsag_pont.md) értékek kezelése ugyanabban az `ÉP` táblázatban történik, hatásaik is megegyeznek, csak az `FP` esetén nincs valós fizikai sérülés, viszont a „sebesülés” okozta harcérték levonások úgy számítandóak, mintha valós sebzés történt volna. A gyakorlatban ez úgy néz ki, hogy ha a karakter **Fáradság Pontot** szerez, azt bejelöli a rendes `ÉP` táblázatában.
 
 Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `FP`-ket (ajánlott egy `F` betű írása a rubrikákba).
 
@@ -48,10 +52,34 @@ Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `F
 
 ![](images/06_fp.png)
 
+---
+### Haldoklás
+
+```
+Edzettség tulajdonságpróba
+
+Nehézség: 5 (Átlagos)
+```
+
+Ha a karakter `ÉP` értéke `0`-ra zuhan, akkor haldokolni kezd és a Sérült - Haldoklás Státuszt kapja.
+
+Ilyenkor a karakter `2` percenként `Edzettség` tulajdonságpróbát dob `Átlagos (5-ös)` Nehézség ellen, amíg nem stabilizálják. Ha a dobást elrontja, meghal.
+
+#### Haldokló stabilizálása
+
+```
+Sebgyógyítás vagy Gyógyítás
+ képzettségpróba
+
+Nehézség: 9
+```
+
+Ha egy karaktert stabilizáltak, akkor nem kell `Edzettség` próbát dobnia, de továbbra is igaz rá, hogy minden további sebzés azonnal végez vele.
+
 <br />
 
 ---
-### Fájdalomtűrés
+## Fájdalomtűrés
 
 A [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség fontos szerepet játszik a harcban elszenvedett sebek fájdalmának elnyomásában, illetve egyéb helyzetekben a kín elviselésében. Részben játéktechnikai gyorsítás miatt, részben azért teszünk különbséget a harc közben és azon kívüli fájdalomtűrés miatt, mert harc közben az adrenalin hatására jobban bírja a karakter a fájdalmat, valamint próbáltuk a harc heroizmusát megőrizni.
 
@@ -183,28 +211,6 @@ Ha túléli a kalandot, akkor a „szerzett” `4 FP` gyógyulása `4 óra` alat
 <br />
 
 ---
-### Haldoklás
-
-```
-Edzettség tulajdonságpróba
-
-Nehézség: 5 (Átlagos)
-```
-
-Ha a karakter `ÉP` értéke `0`-ra zuhan, akkor haldokolni kezd.
-
-Ilyenkor dobnia kell egy `Edzettség` tulajdonságpróbát `Átlagos (5-ös)` nehézség ellen. Ha megdobja, életben marad, de `2 perc` múlva újra dobnia kell, míg nem stabilizálják. Ha elrontja, meghal.
-
-#### Haldokló stabilizálása
-
-```
-Sebgyógyítás vagy Gyógyítás
- képzettségpróba
-
-Nehézség: 9
-```
-
-Ha egy karaktert stabilizáltak, akkor nem kell `Edzettség` próbát dobnia, de továbbra is igaz rá, hogy minden további sebzés azonnal végez vele.
 
 ---
 

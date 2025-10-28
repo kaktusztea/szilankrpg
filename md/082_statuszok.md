@@ -423,6 +423,18 @@ Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el
 - Tulajdonságpróbákra
 - Képzettségpróbákra
 
+### ✴️ Sérült (3) Haldoklás
+
+Ha `0 ÉP` értékre érsz, haldoklani kezdesz. Erről bővebben [itt](061_03_sebesules.md#haldokl%C3%A1s).
+
+- Harcképtelenség
+- Mozgás - lecövekelt
+- Automatikus kudarc
+  - képzettségpróbák
+  - tulajdonságpróbák
+- Pszi használat elvesztése
+- Varázslás képesség elvesztése
+
 <br />
 
 ---
