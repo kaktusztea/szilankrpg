@@ -10,7 +10,7 @@ A [Karakteralkotás fejezetben](010_10_01_ep_fp.md) már röviden említett úgy
 
 ![](images/06_eletero_tablazat.png)
 
-Az **Életerő Pontok** `4` egészség kategória közt egyenlő arányban oszlanak el. A maradékot balról jobbra osztjuk el az oszlopok között. Az egyes oszlopokhoz rendelt ún. **Sebesülés kategóriák** (`S`) szimulálják, hogy milyen állapotban van a karakter: az `S1` az enyhén, `S2` a közepesen, `S3` a súlyosan, az `S4` pedig a halálosan sérült állapotot jelöli.
+Az **Életerő Pontok** `4 db` Sebesülés-kategória között egyenlő arányban oszlanak el. A maradékot balról jobbra osztjuk el az oszlopok között. Az egyes oszlopokhoz rendelt ún. **Sebesülés kategóriák** (`S`) szimulálják, hogy milyen állapotban van a karakter: az `S1` az enyhén, `S2` a közepesen, `S3` a súlyosan, az `S4` pedig a halálosan sérült állapotot jelöli.
 
 
 ```
