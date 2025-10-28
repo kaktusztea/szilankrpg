@@ -5,7 +5,7 @@ Sebesüléskor a karakter értelemszerűen nem képes a továbbiakban is 100%-os
 
 Ha valakit találat ért és átkerül másik sebesülés-kategóriába (`S2, S3, S4`), akkor `TÉ levonást` kap, melyet statikusan mérsékel a [Fájdalomtűrés képzettség](kepzettsegek.primer.altalanos/fajdalomtures.md) és [Önuralom tulajdonságok](010_05_01_07_onuralom.md) összege. Ez azért előnyös, mert ismét karakteralkotás alatt számítjuk ki a fenti értékeket, nem vesz el időt a játékból.
 
-Bővebben lásd: [Fájdalomtűrés fejezet](061_03_sebesules.md#f%C3%A1jdalomt%C5%B1r%C3%A9s-harc-k%C3%B6zben)
+Bővebben lásd: [Fájdalomtűrés fejezet](061_03_sebesules.md#1-f%C3%A1jdalomt%C5%B1r%C3%A9s-harc-k%C3%B6zben)
 
 ---
 ### Vérzés
