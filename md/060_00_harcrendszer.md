@@ -16,10 +16,9 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 ## 6.2 [Alapértékek](062_00_alapertekek.md)
 
 - [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
-- [HM, CM](010_08_01_hm_cm.md)
 - [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-- [Mesterfegyver fortély bónuszai](fortelyok.harci/mesterfegyver.md)
 - [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
+- [HM, CM](062_04_hm_cm.md)
 
 ## 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 

@@ -74,7 +74,7 @@
 - [Szilánk](010_06_szilank.md)
 - [Karakteralkotó Pontok (KP)](010_07_kp.md)
 - [KP költésével növelt jellemzők](010_08_00_kp_koltesevel_novelt_jellemzok.md)
-  - [HM, CM](010_08_01_hm_cm.md)
+  - [HM, CM](010_08_01_hm_cm_99.md)
   - [Képzettségek](010_08_02_kepzettsegek_99.md)
   - [Fortélyok](010_08_03_fortelyok_99.md)
 - [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md)
@@ -158,8 +158,7 @@
 - [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
 - [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 - [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
-- [HM, CM](010_08_01_hm_cm.md)
-- [Mesterfegyver fortély bónuszai](fortelyok.harci/mesterfegyver.md)
+- [HM, CM](062_04_hm_cm.md)
 
 #### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 

@@ -1,6 +1,6 @@
 ## KP költésével növelt jellemzők
 
-### [Harcérték módosítók (HM/CM)](010_08_01_hm_cm.md)
+### [Harcérték módosítók (HM/CM)](010_08_01_hm_cm_99.md)
 
 ### [Képzettségek](010_08_02_kepzettsegek_99.md)
 

@@ -18,7 +18,7 @@ Eljött az ideje, hogy karaktert alkossunk.
 - [Szilánk](010_06_szilank.md)
 - [Karakteralkotó Pontok (KP)](010_07_kp.md)
 - [KP költésével növelt jellemzők](010_08_00_kp_koltesevel_novelt_jellemzok.md)
-  - [HM, CM](010_08_01_hm_cm.md)
+  - [HM, CM](010_08_01_hm_cm_99.md)
   - [Képzettségek](030_01_kepzettseglista.md)
   - [Fortélyok](040_fortelyok.md)
 - [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md)

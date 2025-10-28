@@ -78,7 +78,7 @@ Fontos kiemelni a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) harci forté
 ---
 ### Harcérték módosítók (HM/CM)
 
-A [Harcérték Módosítók (HM, CM)](010_08_01_hm_cm.md) az általános harci tapasztalat növekedését szimbolizálják, felvételük szintén `KP`-ból történik.
+A [Harcérték Módosítók (HM, CM)](062_04_hm_cm.md) az általános harci tapasztalat növekedését szimbolizálják, felvételük szintén `KP`-ból történik.
 
 <br />
 

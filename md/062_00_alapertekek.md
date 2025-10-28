@@ -6,9 +6,7 @@
 
 ### [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
 
-### [HM, CM](010_08_01_hm_cm.md)
-
-### [Mesterfegyver fortély bónuszai](fortelyok.harci/mesterfegyver.md)
+### [HM, CM](062_04_hm_cm.md)
 
 ---
 
