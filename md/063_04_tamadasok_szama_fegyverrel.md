@@ -18,9 +18,9 @@ Harckeret =
   - Vért MGT
 ```
 
-Egy karakter plusz támadásainak száma attól függ, hogy milyen fegyvert forgat, mennyire képzett annak Harcmodorában, és hogy mennyire fürge (`Gyorsaság` tulajdonság).
+Egy karakter plusz támadásainak száma attól függ, hogy mennyire képzett az adott fegyver harcmodorában, mennyire fürge (`Gyorsaság` tulajdonság) és milyen vértet visel.
 
-Számszerűen: az aktuális fegyverhez tartozó harcmodor-képzettség szintje és a Gyorsaság tulajdonság összege határozzák meg az ún. **Harckeret** értéket. A Harckeret tehát harcmodoronként egyedi érték. A vértek `MGT` értéke lejön a Harckeretből, így érdemes megfontolni: a több támadás, vagy a nagyobb védelem a fontosabb.
+Számszerűen: az aktuális fegyverhez tartozó harcmodor-képzettség szintje és a Gyorsaság tulajdonság összege határozzák meg az ún. **Harckeret** értéket, melyet a viselt vért `MGT` értéke mérsékel. A Harckeret tehát harcmodoronként egyedi érték. Mivel a vértek `MGT` értéke lejön a Harckeretből, így érdemes megfontolni: a több támadás, vagy a nagyobb védelem a fontosabb.
 
 A **Harckeret** értéke a [Harckeret növelés](fortelyok.harci/harckeret_noveles.md) és [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortélyok segítségével emelhető tovább.
 
@@ -29,7 +29,7 @@ A **Harckeret** értéke a [Harckeret növelés](fortelyok.harci/harckeret_novel
 ---
 ### Fegyver Sebesség
 
-Szintén minden fegyvernek van egy egyedi **Sebesség** értéke. Minél kisebb ez a szám, annál fürgébb, minél nagyobb, annál lomhább az adott fegyver.
+Minden fegyvernek van egy egyedi **Sebesség** értéke. Minél kisebb ez a szám, annál fürgébb a fegyver és minél nagyobb, annál lomhább.
 
 Kézifegyvereknél az alábbi módon kategorizálunk, de ez csak irányadó, a konkrét értékeket lásd a [Fegyverek](068_00_fegyverek.md) fejezet táblázataiban:
 
@@ -63,8 +63,8 @@ Plusz támadások (db) =
 TÉ:-4
 
 2.támadástól kezdődően
-  minden további támadásra
-  NEM Additív.
+  minden további támadásra.
+  NEM Additív!
 ```
 
 ```
@@ -73,7 +73,7 @@ Harmadik támadás: TÉ:-4
 ...
 ```
 
-A fenti módosítóknak matematikai oka van: így kerüljük el a plusz kapott támadás okozta radikális ugrást az `1` körön belül leadott támadások potenciális sikeressége kapcsán. Ne feledjük: legrosszabb esetben még így is **Védő Érték csökkenést** okoz minden támadás, így a plusz támadások ereje már önmagában is elég hangsúlyos.
+A fenti módosítónak matematikai oka van: így kerüljük el a plusz kapott támadás okozta radikális ugrást az `1` körön belül leadott támadások potenciális sikeressége kapcsán. Ne feledjük: legrosszabb esetben még így is **Védő Érték csökkenést** okoz minden támadás, így a plusz támadások ereje már önmagában is elég hangsúlyos.
 
 <br />
 
@@ -82,14 +82,16 @@ A fenti módosítóknak matematikai oka van: így kerüljük el a plusz kapott t
 
 ```
 Harckeret = 8
-  5: Kardvívás szintje
+ +5: Kardvívás szintje
  +3: Gyorsaság
 
 Fegyver: Hosszú kard
   Sebesség: 7
 ```
 
-Mivel a Harckeret elérte a fegyver `7`-es Sebesség értéket, ezért `+1` támadás – összesen tehát már `2 db` jár körönként. A `3.` támadást `14`-es, a `4.` támadást pedig `21`-es **Harckeret** értéknél kapja meg.
+Mivel az aktuális Harckeret értékét (`8`) elérte a fegyver `7`-es Sebesség értéke, ezért `+1` támadás – összesen tehát már `2 db` jár körönként.
+
+A `3.` támadást `14`-es, a `4.` támadást pedig `21`-es **Harckeret** értéknél kapod meg.
 
 ---
 
