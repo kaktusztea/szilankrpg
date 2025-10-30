@@ -1,6 +1,6 @@
 ## Védő Érték regenerálódása
 
-A karakternek minimum `1 kör`, zavartalan, ellazult, nyugodt testi ÉS szellemi pihenésre van szüksége, hogy visszanyerje **Védő Értékét**.
+A karakternek minimum `1 kör`, zavartalan, ellazult, nyugodt, fenyegetéstől mentes testi ÉS szellemi pihenésre van szüksége, hogy visszanyerje **Védő Értékét**.
 
 Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Értéke NEM regenerálódik, mert bármikor rajtaüthetnek, nem engedhet ki, figyelme továbbra is ki van hegyezve.
 
@@ -9,7 +9,7 @@ Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Érték
 
 Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerejen valamennyit Védő Értékéből:
 
-- Győzelmi szabály: ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont` (a siker hatása a szervezetre + heroizmus).
+- Győzelmi szabály: ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont` (a siker hatása a szervezetre + heroizmus). Persze itt is lehetnek kivételek (barát megölése, stb).
  - [Harcos elme](fortelyok.harci/harcos_elme.md) fortély 
  - Papi varázslat: ⭕TODO⭕
    - van narratív követelménye

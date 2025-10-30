@@ -12,27 +12,30 @@ KÉ = 0
 TÉ = 7
    + Erő + Ügyesség + Gyorsaság
    + TÉ HM
-   + Harcmodor/Mágia-Tradíció bónusz
+   + Harcmodor bónusz
    + Mf bónusz
    + Fegyver TÉ
 
 VÉ = 24
    + Ügyesség + Gyorsaság
    + VÉ HM
-   + Harcmodor/Mágia-Tradíció bónusz
+   + Harcmodor bónusz
    + Mf bónusz
    + Fegyver VÉ
    + Pajzs VÉ
-
-VÉ Bónusz:
-  → Merevvértviselet 3.szint:
-    + VÉ:+3 (merev mellvérteknél)
+   +3 (Merevvértviselet 3.szint)
 
 CÉ = -15 (Konstans)
    + Önuralom
    + CM
-   + Harcmodor/Mágia-Tradíció bónusz
+   + Harcmodor bónusz
    + Fegyver CÉ
+
+SP Alap =
+ + fegyver alap sebzése
+ + Erőbónusz (fegyverfüggő limit lehetséges)
+ + Mesterfegyver fortély: +1 SP / fok
+ + Fegyver mágia bónusz
 ```
 
 <br />
@@ -44,19 +47,6 @@ CÉ = -15 (Konstans)
 Kezdeményező dobás: KÉ + k20
 ```
 
-Játékos karakterek mind dobnak kör elején külön-külön.
-
-KM Kezdeményező dobásai NJK értékekre
-- végzel`5-6` db `k20` dobást előre és felírod az értékeket
-- `k20+2` értékkel dobsz, hogy kompenzáld az egyszeri dobás esetleges, tömeges negatív hatását. `20` fölé a dobás értéke nem mehet.
-- minden körben `1` számot felhasználsz
-- minden `NJK` ezt a konkrét értéket adja hozzá az adott körben a `KÉ` paraméteréhez
-
-Alapelvek
-- A Kezdeményezés csak a cselekvési sorrend meghatározására szolgál, nem jelent dominanciát, vagy a harc irányítását
-- A magasabb számot kapott karakter cselekszik előtt
-- Azonos kezdeményezésnél: egyszerre csapnak
-
 <br />
 
 ---
@@ -67,31 +57,33 @@ Támadó dobás: TÉ + k20
 
 k20 dobás
     1: NEM kiemelkedő kudarc
-16-19: Sebzésdobás Előny+1
-   20: Sebzésdobás Előny+2 
+16-19: Sebzésdobásra Előny+1
+   20: Sebzésdobásra Előny+2 
 ```
 
 ```
 Minden újabb támadás a körben:
+  TÉ:-4 (NEM additív!)
+```
 
-TÉ:-4 minden további támadásra.
-  NEM Additív.
+```
+Sebzés jellege
+→ Elsődleges sebzési forma
+  az alapértelmezett
+→ Másodlagos támadási formával
+  TÉ:-2 módosító
 
-Sebzés jellege: elsődleges sebzési
-        típusa az alapértelmezett
-        (például: Szúró).
-        Másodlagos támadási formával
-        TÉ:-2 módosítóval támadhatsz
+```
 
+```
 Előnyös/hátrányos helyzetű harcos:
    1 penge méretkülönbségtől
-
 ```
 
 <br />
 
 ---
-### 😵 TÉ < VÉ  → VÉ csökkentés
+### 😵 VÉ csökkentés ( TÉ < VÉ )
 
 ```
 "k20T" rövidítés == k20 tízes része
@@ -133,38 +125,33 @@ VÉ csökkentés
 <br />
 
 ---
-### 🗡️ Fegyver
+### 🗡️ Sebzés
 
 ```
-Fegyver SP: k20 + X
-
-X: fegyver alap sebzése
-```
-
-```
-- Erő Tulajdonság 1:1-ben hozzáadódik
-  (vagy levonódik, ha negatív).
-  Erőbónusz limit lehet egyes fegyverekre. 
-- Mesterfegyver fortély: +1 SP / fok
-- Fegyver mágia bónusz hozzáadódik
+ k20 + Fegyver SP Alap
 ```
 
 ```
-- Többszörös találat (TÉ >= VÉ+4):
-      4-enként SP:+3   (max +9 SP)
-- Roham: SP:+5
-- Támadás erőből fortély bónusza
+→ Roham: SP:+5
+→ Támadás erőből fortély bónusza
+```
+
+```
+Többszörös találat bónusza
+   TÉ >= VÉ + 4    SP:+3
+   TÉ >= VÉ + 8    SP:+6
+   TÉ >= VÉ + 12   SP:+9
 ```
 
 <br />
 
 ---
-### 💥 TÉ >= VÉ  → Találat, Sebzés
+### 💥 Találat, Sebzés ( TÉ >= VÉ )
 
 ```
 Páncéldobás: áldozat dob k10    
-   → nincs SFÉ
-   → van SFÉ (szúró, vágó, zúzó)
+   • nincs SFÉ
+   • van SFÉ (szúró, vágó, zúzó)
      Fegyver Átütés csökkenti!
 ```
 
@@ -177,39 +164,32 @@ SP = Fegyver SP
 
 ```
 ÉP seb:
-  - SP ↔ ÉP átváltás Sebzés táblázatban
+  • SP → ÉP átváltás Sebzés táblázatban
 
 VÉ csökkentés:
-  - SP ↔ VÉ átváltás Sebzés táblázatban
-  - Fárasztó taktika alkalmazásakor:
+  • SP → VÉ átváltás Sebzés táblázatban
+  • Fárasztó taktika alkalmazásakor:
     nincs Sebzés, VÉ:+5 csökkentés
 ```
 
 Lásd: [Sebzés táblázat](064_02_06_sebzes.md)
 
-**Megjegyzés**: a [Harci anatómia](fortelyok.harci/harci_anatomia.md) ÉP bónusza csak akkor adható hozzá, ha az vértmentes pontot támadsz!
-
 <br />
 
 ---
 ### 🍎 VÉ regenerálódás
-```
-1 kör pihenéssel töltött idő:
-    visszatér a harcban
-    (nem sebtől) elvesztett VÉ
-```
-
-Teljes, fenyegetetlen nyugalom szükséges!
-
-#### Győzelmi szabály
 
 ```
-VÉ: +3
+1 kör nyugodt pihenéssel töltött idő
+  → visszatér a harcban
+    elvesztett VÉ
+  → seb okozta csökkenés megmarad
 ```
 
-Ha a karakter végzett egy - hozzá hasonló tudású, vagy erősebb - ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3` pont.
-
-Ez a siker hatása a szervezetre + heroizmus. Persze itt is lehetnek kivételek (barát megölése, stb).
+```
+Győzelmi szabály
+  VÉ: +3
+```
 
 <br />
 
@@ -223,16 +203,7 @@ Plusz támadások (db) =
   Harckeret / (Fegyver Sebesség)
 ```
 
-```
-Harckeret =
-    aktuális Harcmodor szint
-  + Gyorsaság
-
-Fegyver Sebesség:
-  fegyverenként eltérő egyéni érték 
-```
-
-Lásd: [Fegyverek táblázat](068_00_fegyverek.md)
+Lásd: [Harckeret](../063_04_tamadasok_szama_fegyverrel.md#harckeret) és [Fegyverek](068_00_fegyverek.md)
 
 <br />
 
