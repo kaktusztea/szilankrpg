@@ -1,30 +1,34 @@
-## Védő Érték csökkentése: Támadó dobás eredménye: TÉ < VÉ
+## Védő Érték csökkentése (TÉ < VÉ)
 
 Harcban sikertelennek számít támadásod, ha a **Támadó dobásod** végső értéke nem éri el ellenfeled **Védő Értékét**.
 
-Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva. A harc, a védekezés komolyan igénybe veszik az áldozat figyelmét, állóképességét. Hogy konkrétan hogyan csökkented `Védő Értékét`, az fegyvereitek pengehosszainak különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_fegyverek_altalanos_szabalyai.md).
+Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva, hiszen a harc, a védekezés komolyan igénybe veszik az áldozat figyelmét, állóképességét. Hogy konkrétan milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehosszainak különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_fegyverek_altalanos_szabalyai.md).
+
+Az aktuális fegyverméretek különbségét Harci helyzetekkel (harci státuszokkal) modellezzük.
 
 ### ⚜️ [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny)
 
-- Mikor a fegyverméret különbség legalább `(-1)` pengehossz
+- Fegyverméret különbség legalább `(-1)` pengehossz
 -  [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
 
 ### ⚜️ [Fegyverméret - Azonos](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---azonos)
 
-- Mikor a fegyverméret különbség kisebb `1 pengehossznál`
+- Fegyverméret különbség kisebb `1 pengehossznál`
 - mindkét fél [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`
 
 ### ⚜️ [Fegyverméret - 1 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---1-peng%C3%A9s-el%C5%91ny)
 
-- Mikor a fegyverméret különbség legalább `1` pengehossz
+- Fegyverméret különbség legalább `+1` pengehossz
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`
-- Példa: **Hosszú kard**  vs. **Tőr** ; **Alabárd** vs **Hosszú kard**
+- Példa: **Hosszú kard**  vs. **Tőr**
+- Példa: **Alabárd** vs **Hosszú kard**
 
 ### ⚜️ [Fegyverméret - 2 pengés előny](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
 
-- Mikor a fegyverméret különbség legalább `2` pengehossz
+- Fegyverméret különbség legalább `+2` pengehossz
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20T`
-- Példa: **Kétkezes kard** vs **Tőr** ; **Lándzsa** vs **Rövidkard**
+- Példa: **Kétkezes kard** vs **Tőr**
+- Példa: **Lándzsa** vs **Rövidkard**
 
 ---
 ### Több támadó és harci taktikák jelentősége - a VÉ csökkentés fényében
