@@ -32,10 +32,11 @@ CÉ = -15 (Konstans)
    + Fegyver CÉ
 
 SP Alap =
- + fegyver alap sebzése
- + Erőbónusz (fegyverfüggő limit lehetséges)
- + Mesterfegyver fortély: +1 SP / fok
- + Fegyver mágia bónusz
+   + fegyver alap sebzése
+   + Erőbónusz
+     (fegyverfüggő limit lehetséges)
+   + Mesterfegyver fortély: +1 SP / fok
+   + Fegyver mágia bónusz
 ```
 
 <br />
@@ -125,22 +126,23 @@ VÉ csökkentés
 <br />
 
 ---
-### 🗡️ Sebzés
+### 🗡️ Fegyver sebzése
 
 ```
  k20 + Fegyver SP Alap
 ```
 
 ```
-→ Roham: SP:+5
-→ Támadás erőből fortély bónusza
+Módosítók
+  Roham: SP:+5
+  Támadás erőből fortély bónusza
 ```
 
 ```
 Többszörös találat bónusza
-   TÉ >= VÉ + 4    SP:+3
-   TÉ >= VÉ + 8    SP:+6
-   TÉ >= VÉ + 12   SP:+9
+  TÉ >= VÉ + 4    SP:+3
+  TÉ >= VÉ + 8    SP:+6
+  TÉ >= VÉ + 12   SP:+9
 ```
 
 <br />
@@ -149,10 +151,11 @@ Többszörös találat bónusza
 ### 💥 Találat, Sebzés ( TÉ >= VÉ )
 
 ```
-Páncéldobás: áldozat dob k10    
-   • nincs SFÉ
-   • van SFÉ (szúró, vágó, zúzó)
-     Fegyver Átütés csökkenti!
+Páncéldobás: áldozat dob k10 (%)  
+   • 0 SFÉ
+   • van SFÉ (szúró, vágó, zúzó).
+     Fegyver Átütés csökkenti SFÉ
+     aktuális értékét.
 ```
 
 ```
@@ -163,13 +166,14 @@ SP = Fegyver SP
 ```
 
 ```
-ÉP seb:
+ÉP seb
   • SP → ÉP átváltás Sebzés táblázatban
 
-VÉ csökkentés:
+VÉ csökkentés sebzés esetén
   • SP → VÉ átváltás Sebzés táblázatban
   • Fárasztó taktika alkalmazásakor:
-    nincs Sebzés, VÉ:+5 csökkentés
+    • nincs Sebzés
+    • 4 + k20T VÉ csökkentés
 ```
 
 Lásd: [Sebzés táblázat](064_02_06_sebzes.md)
@@ -203,7 +207,7 @@ Plusz támadások (db) =
   Harckeret / (Fegyver Sebesség)
 ```
 
-Lásd: [Harckeret](../063_04_tamadasok_szama_fegyverrel.md#harckeret) és [Fegyverek](068_00_fegyverek.md)
+Lásd: [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) és [Fegyverek](068_00_fegyverek.md)
 
 <br />
 
@@ -220,11 +224,11 @@ Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#mozgás
 Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a játékot. Ilyenkor a következő – opcionális – szabályt javasoljuk:
 
 ```
-- TÉ: +7 mindenkinek (az osztás után)
-- Nincs VÉ csökkentés
-- Nincs páncéldobás
-- Nincs Manőver használat
-- Erősített sebzés:
+• TÉ: +7 mindenkinek
+• Nincs VÉ csökkentés
+• Nincs páncéldobás
+• Nincs Manőver használat
+• Erősített sebzés:
   1-10:   6 ÉP
   11-20: 12 ÉP
   21-30: 20 ÉP
