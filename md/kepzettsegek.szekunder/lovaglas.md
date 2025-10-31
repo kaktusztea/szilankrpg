@@ -54,14 +54,14 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r) kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
+🌟 Hatás: [Állat testvér](#%C3%A1llat-testv%C3%A9r) kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
+🌟 Hatás: [Állat testvér](#%C3%A1llat-testv%C3%A9r) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
 
 <br />
 

@@ -58,14 +58,14 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
+🌟 Hatás: [Állat testvér](#%C3%A1llat-testv%C3%A9r): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%A1llat-testv%C3%A9r): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
+🌟 Hatás: [Állat testvér](#%C3%A1llat-testv%C3%A9r): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
 
 <br />
 

@@ -1,7 +1,7 @@
 ## Fegyverek általános szabályai
 
 - [Fegyverméretek, általános fegyver-harcértékek](068_01_fegyverek_altalanos_szabalyai.md#fegyverm%C3%A9retek-%C3%A1ltal%C3%A1nos-fegyver-harc%C3%A9rt%C3%A9kek)
-- [Fegyverméret elnevezések](#fegyverm%C3%A9ret-elnevez%C3%A9sek-szab%C3%A1lyok)
+- [Fegyverméret elnevezések](#fegyverm%C3%A9ret-elnevez%C3%A9sek)
 - [Jellemző pengehosszok](068_01_fegyverek_altalanos_szabalyai.md#jellemz%C5%91-pengehosszok)
 - [Sebzéstípusok](068_01_fegyverek_altalanos_szabalyai.md#sebz%C3%A9st%C3%ADpusok)
 - [KF: Különleges fegyver szabály](068_01_fegyverek_altalanos_szabalyai.md#kf-k%C3%BCl%C3%B6nleges-fegyver-szab%C3%A1ly)
