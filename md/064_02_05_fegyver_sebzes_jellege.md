@@ -12,7 +12,7 @@ A negatív Erő érték
 nyilván csökkenést okoz.
 ```
 
-Egyes fegyverek forgatása esetén a karakter fizikai ereje megnöveli az okozott sebzés. Tipikusan azok a fegyverek ezek, amelyek használata során a plusz erő használata felgyorsítja azt, jól kivezethető ívű csapások végezhetők vele. Továbbá számos fegyver van, melynek forgatása **Erő** követelményhez kötött, azaz csak megfelelő fizikumú karakter használhatja. Erről az egyes fegyverek egyéni leírásában találhatunk részleteket, de általánosságban a fenti szabályok az irányadóak.
+Egyes fegyverek forgatása esetén a karakter fizikai ereje megnöveli az okozott sebzést. Tipikusan azok a fegyverek ezek, amelyek használata során a plusz erő használata felgyorsítja azt, jól kivezethető ívű csapások végezhetők vele. Továbbá számos fegyver van, melynek forgatása **Erő** követelményhez kötött, azaz csak megfelelő fizikumú karakter használhatja. Erről az egyes fegyverek egyéni leírásában találhatunk részleteket, de általánosságban a fenti szabályok az irányadóak.
 
 [Erőbónusz limit](068_01_fegyverek_altalanos_szabalyai.md#erőbónusz-limit): egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Karakteralkotó](start.md#karakteralkot%C3%B3) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
 
