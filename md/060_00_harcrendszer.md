@@ -37,7 +37,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
   - [Támadó dobás](064_02_02_tamado_dobas.md)
   - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)
   - [Találat](064_02_04_talalat.md)
-  - [Fegyverek sebzés jellege, páncélok SFÉ jellege](064_02_05_fegyver_sebzes_jellege.md)
+  - [Fegyverek sebzés jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md)
   - [Sebzés](064_02_07_sebzes.md)
   - [Sebződés hatása](064_02_08_sebzodes_hatasa.md)
   - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)

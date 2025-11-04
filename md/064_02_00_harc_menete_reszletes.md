@@ -12,7 +12,7 @@ Most lássuk a fogalmak részletes kifejtését és alkalmazásuk módját. A sz
 
 #### [Találat](064_02_04_talalat.md)
 
-#### [Fegyverek sebzés jellege](064_02_05_fegyver_sebzes_jellege.md)
+#### [Fegyverek sebzés jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md)
 
 #### [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md)
 

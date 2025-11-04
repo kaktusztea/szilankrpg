@@ -105,9 +105,9 @@ pika
 ---
 ### Sebzéstípusok
 
-- [Elsődleges](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-els%C5%91dleges)
-- [Másodlagos](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos)
-- [Alkalmatlan](064_02_05_fegyver_sebzes_jellege.md#sebz%C3%A9st%C3%ADpus-alkalmatlan)
+- [Elsődleges](064_02_05_fegyver_sebzes_jellege_tipusa.md#sebzéstípus-elsődleges)
+- [Másodlagos](064_02_05_fegyver_sebzes_jellege_tipusa.md#sebzéstípus-másodlagos)
+- [Alkalmatlan](064_02_05_fegyver_sebzes_jellege_tipusa.md#sebzéstípus-alkalmatlan)
 
 <br />
 
@@ -186,7 +186,7 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 ---
 ### Átütés
 
-→ Lásd a [Fegyver sebzés jellege fejezetet](064_02_05_fegyver_sebzes_jellege.md#%C3%A1t%C3%BCt%C3%A9s).
+→ Lásd a [Fegyver sebzés jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md#átütés) fejezetet.
 
 <br />
 

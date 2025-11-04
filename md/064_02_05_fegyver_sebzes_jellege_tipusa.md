@@ -1,4 +1,4 @@
-## Sebzés jellege, páncél SFÉ jellege
+## Sebzés jellege
 
 ```
 Szúró, Vágó és Zúzó sebzés
@@ -8,24 +8,32 @@ Szúró, Vágó és Zúzó sebzés
 
 Támadáskor fontos paraméter a csapás jellegének, valamint az ellenfél vértjének aktuális **Sebzés Felfogó Értéke**, az `SFÉ`, amely mérsékelheti a sebesülést. Ez utóbbi (`SFÉ`) nem egy konkrét érték, pont a támadás jellegétől és a fegyver esetleges átütéséből adódik.
 
-A harcban használt fegyverek igen sokszínűek, a `Szilánk` rendszere különbséget tesz az általuk okozott sebzés jellege szerint: **⚜️Szúró, ⚜️Vágó és ⚜️Zúzó** támadás.
+A harcban használt fegyverek igen sokszínűek, a `Szilánk` rendszere különbséget tesz az általuk okozott sebzés jellege szerint:
 
-Egyes fegyverek többféle sebzési formát is lehetővé tesznek, gondoljunk csak a jól ismert hosszú kardra, amellyel szúrni is, vágni is lehet.
+- **⚜️Szúró (`S`)
+- ⚜️Vágó (`V`)
+- ⚜️**Zúzó** (`Z`)
+- ⚜️**Energia** (`E`)
+
+### Fegyverek többféle sebzés típussal
+
+Egyes fegyverek többféle sebzési formát is lehetővé tesznek, gondoljunk csak a jól ismert Hosszú kardra, amellyel szúrni is, vágni is lehet.
 
 ```
 Jelölése "/" jellel
-  Például "V/S"
 
-V: Vágás
-S: Szúrás
-Z: Zúzás
+Példa: "V/S"
 ```
 
-A Harcrendszer végén található [fegyvertáblázatokban](068_00_fegyverek.md#k%C3%B6zelharci-fegyverek) minden fegyver sebzési típusai megtalálhatóak.
+A Harcrendszer végén található [fegyvertáblázatokban](068_00_fegyverek.md#k%C3%B6zelharci-fegyverek) minden fegyver sebzés jellegei megtalálhatóak.
 
 <br />
 
 ---
+## Sebzés típusok
+
+A fent 
+
 ### [Sebzéstípus: elsődleges](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-els%C5%91dleges)
 
 Ez egy **Harci helyzet** (státusz).
