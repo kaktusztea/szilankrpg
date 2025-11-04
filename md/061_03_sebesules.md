@@ -55,7 +55,7 @@ Nehézség: 5 (Átlagos)
 
 Ha a karakter `ÉP` értéke `0`-ra zuhan, akkor haldokolni kezd és a [Sérült - Haldoklás](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-3-haldokl%C3%A1s) Státuszt kapja. Ha további sebet kap, meghal.
 
-Ilyenkor a karakter `2` percenként `Edzettség` tulajdonságpróbát dob `Átlagos (5-ös)` Nehézség ellen, amíg nem stabilizálják. Ha a dobást elrontja, meghal.
+Ilyenkor a karakter `2` percenként `Edzettség` Tulajdonságpróbát dob `Átlagos (5)` Nehézség ellen, amíg nem stabilizálják. Ha a dobást elrontja, meghal.
 
 #### Haldokló stabilizálása
 
