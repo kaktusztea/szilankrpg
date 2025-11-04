@@ -28,11 +28,11 @@ A Harcrendszer végén található [fegyvertáblázatokban](068_00_fegyverek.md#
 ---
 ### [Sebzéstípus: elsődleges](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-els%C5%91dleges)
 
-Ez egy Harci helyzet (státusz).
+Ez egy **Harci helyzet** (státusz).
 
-Majdnem minden fegyver rendelkezik egy **elsődleges sebzési típussal**, pl. szúrás. Ha emellett más típusú támadásra is alkalmas, az a másodlagos sebzéstípus. Ha a karakter nem jelenti be, hogy milyen típusú támadást akar leadni, akkor mindig az elsődleges sebzési típust vesszük megtörténtnek.
+Minden fegyver rendelkezik egy **elsődleges sebzési típussal**, pl. "szúrás". Ha emellett más jelegű támadásra is alkalmas, akkor van másodlagos sebzéstípusa is (lásd lenn). Ha a karakter nem jelenti be, hogy milyen típusú támadást akar leadni, akkor mindig az elsődleges sebzési típust vesszük megtörténtnek.
 
-Például a "Hosszú kard: vágás/szúrás (`V/S`)". Ekkor az alapértelmezett, elsődleges sebzési típus a **Vágás**. 
+Például a "Hosszú kard: vágás/szúrás (`V/S`)". Ekkor az alapértelmezett az elsődleges sebzési jellege, azaz a "vágás". 
 
 ---
 ### [Sebzéstípus: másodlagos](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos)
@@ -43,7 +43,9 @@ Hátrány-1 Sebzésdobásra
 
 Ez egy Harci helyzet (státusz).
 
-Ha a karakter bejelenti, hogy Hosszú kardjával **Szúrni** szeretne. Ez fegyverének másodlagos sebzési típusa, így némi büntető módosítóval teheti meg.
+Ha a karakter bejelnti, hogy fegyverének másodlagos sebzési típus
+
+A karakter bejelenti, hogy Hosszú kardjával **Szúrni** szeretne. Ez fegyverének másodlagos sebzési típusa, így némi büntető módosítóval teheti meg.
 
 ---
 ### [Sebzéstípus: alkalmatlan](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-alkalmatlan)

@@ -1,18 +1,18 @@
 ## Fegyverek általános szabályai
 
-- [Fegyverméretek, általános fegyver-harcértékek](068_01_fegyverek_altalanos_szabalyai.md#fegyverm%C3%A9retek-%C3%A1ltal%C3%A1nos-fegyver-harc%C3%A9rt%C3%A9kek)
+- [Fegyverméretek, általános fegyver-harcértékek](#fegyverm%C3%A9retek-%C3%A1ltal%C3%A1nos-fegyver-harc%C3%A9rt%C3%A9kek)
 - [Fegyverméret elnevezések](#fegyverm%C3%A9ret-elnevez%C3%A9sek)
-- [Jellemző pengehosszok](068_01_fegyverek_altalanos_szabalyai.md#jellemz%C5%91-pengehosszok)
-- [Sebzéstípusok](068_01_fegyverek_altalanos_szabalyai.md#sebz%C3%A9st%C3%ADpusok)
-- [KF: Különleges fegyver szabály](068_01_fegyverek_altalanos_szabalyai.md#kf-k%C3%BCl%C3%B6nleges-fegyver-szab%C3%A1ly)
-- [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_fegyverek_altalanos_szabalyai.md#mk-m%C3%A1sf%C3%A9lkezes-fegyverek-egy-k%C3%A9zzel-forgatva)
-- [Íves fegyver](068_01_fegyverek_altalanos_szabalyai.md#%C3%ADves-fegyver)
-- [Puszta kéz](068_01_fegyverek_altalanos_szabalyai.md#puszta-k%C3%A9z)
-- [Érintő támadás](068_01_fegyverek_altalanos_szabalyai.md#%C3%A9rint%C5%91-t%C3%A1mad%C3%A1s)
-- [Erőbónusz limit](068_01_fegyverek_altalanos_szabalyai.md#er%C5%91b%C3%B3nusz-limit)
-- [Átütés](068_01_fegyverek_altalanos_szabalyai.md#%C3%A1t%C3%BCt%C3%A9s)
-- [Fegyver mozgásgátló hatása](068_01_fegyverek_altalanos_szabalyai.md#fegyver-mozg%C3%A1sg%C3%A1tl%C3%B3-hat%C3%A1sa)
-- [Fegyverek minősége (Ideája)](068_01_fegyverek_altalanos_szabalyai.md#fegyverek-min%C5%91s%C3%A9ge-ide%C3%A1ja)
+- [Jellemző pengehosszok](#jellemz%C5%91-pengehosszok)
+- [Sebzéstípusok](#sebz%C3%A9st%C3%ADpusok)
+- [KF: Különleges fegyver szabály](#kf-k%C3%BCl%C3%B6nleges-fegyver-szab%C3%A1ly)
+- [MK: Másfélkezes fegyverek egy kézzel forgatva](#mk-m%C3%A1sf%C3%A9lkezes-fegyverek-egy-k%C3%A9zzel-forgatva)
+- [Íves fegyver](#%C3%ADves-fegyver)
+- [Puszta kéz](#puszta-k%C3%A9z)
+- [Érintő támadás](#%C3%A9rint%C5%91-t%C3%A1mad%C3%A1s)
+- [Erőbónusz limit](#er%C5%91b%C3%B3nusz-limit)
+- [Átütés](#%C3%A1t%C3%BCt%C3%A9s)
+- [Fegyver mozgásgátló hatása](#fegyver-mozg%C3%A1sg%C3%A1tl%C3%B3-hat%C3%A1sa)
+- [Fegyverek minősége (Ideája)](#fegyverek-min%C5%91s%C3%A9ge-ide%C3%A1ja)
 
 ### Fegyverméretek, általános fegyver-harcértékek
 
@@ -179,7 +179,7 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 ---
 ### Erőbónusz limit
 
-→ Lásd a [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md#er%C5%91b%C3%B3nusz-er%C5%91hi%C3%A1ny-er%C5%91b%C3%B3nusz-limit) fejezetben.
+→ Lásd a [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md#er%C5%91b%C3%B3nusz-limit) fejezetben.
 
 <br />
 
