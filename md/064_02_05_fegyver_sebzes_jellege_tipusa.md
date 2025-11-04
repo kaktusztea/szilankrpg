@@ -91,10 +91,11 @@ Aktuális SFÉ =
   Vért SFÉ - Átütés
 ```
 
-Fontos szerep jut még azoknak a fegyvereknek, amelyek rendelkeznek Átütés értékkel (a legtöbb fegyver `Átütés értéke: 0`), mivel a támadott vért megfelelő `SFÉ`-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a vért végleges aktuális `SFÉ`-jét.
+Sokszor fontos szerep jut azoknak a fegyvereknek is, amelyek rendelkeznek **Átütés** értékkel, mivel a támadott vért megfelelő `SFÉ`-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a vért végleges aktuális `SFÉ`-jét.
 
-Átütéssel olyan fegyverek rendelkeznek, amelyek kifejezetten alkalmasak vértek átlyukasztására legtöbbször azon okból, hogy kis területre koncentrálnak nagy erőt.\
-Például: Csákány.
+A legtöbb fegyver **Átütés** értéke: `0`
+
+Átütéssel olyan fegyverek rendelkeznek, amelyek kifejezetten alkalmasak vértek átlyukasztására legtöbbször azon okból, hogy kis területre koncentrálnak nagy erőt. ⚡Példa: Csákány
 
 ---
 ## Mágikus fegyverek sebzése
@@ -103,6 +104,6 @@ Lásd [Rúnamágiával felruházott tárgyak](130_varazstargyak.md#r%C3%BAnam%C3
 
 ---
 
-🔗 [Sebzés](064_02_07_sebzes.md) →
+🔗 [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
