@@ -48,7 +48,7 @@ Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `F
 ### Haldoklás
 
 ```
-Edzettség tulajdonságpróba
+Edzettség Tulajdonságpróba
 
 Nehézség: 5 (Átlagos)
 ```
