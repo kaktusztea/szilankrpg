@@ -10,6 +10,8 @@ akkor pedig levonódik.
 
 Egyes fegyverek forgatása esetén a karakter fizikai ereje megnöveli az okozott sebzést. Tipikusan azok a fegyverek, amelyek használata során a plusz erő használata felgyorsítja a csapást, jól kivezethető ívű mozdulatok végezhetőek vele. Továbbá számos fegyver van, melynek forgatása **Erő** követelményhez kötött, azaz csak megfelelő fizikumú karakter használhatja. Erről az egyes fegyverek egyéni leírásában találhatunk részleteket, de általánosságban a fenti szabályok az irányadóak.
 
+<br />
+
 ---
 ## Erőbónusz limit
 

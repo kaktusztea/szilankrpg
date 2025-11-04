@@ -1,7 +1,6 @@
-
 ## A harc menete – részletes leírás
 
-A fentiekben tömören összefoglaltuk az egyes harcértékek és alapfogalmak kiszámításának módját.
+Az előző fejezetben tömören összefoglaltuk az egyes harcértékek és alapfogalmak kiszámításának módját.
 
 Most lássuk a fogalmak részletes kifejtését és alkalmazásuk módját. A számolás jelentős része karakteralkotáskor történik, így a játékmenet kellően gyors marad.
 
@@ -22,7 +21,6 @@ Most lássuk a fogalmak részletes kifejtését és alkalmazásuk módját. A sz
 #### [Sebződés hatása](064_02_08_sebzodes_hatasa.md)
 
 #### [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
-
 
 ---
 
