@@ -1,26 +1,23 @@
 ## Sebzés jellege
 
+Egy fegyver egy, vagy többféleképpen tud sebet ejteni jelleg szerint.
+
 ```
-Szúró, Vágó és Zúzó sebzés
+⚜️ Szúró   (S)
+⚜️ Vágó    (V)
+⚜️ Zúzó    (Z)
+⚜️ Energia (E)
 ```
 
-⭕TODO: átfogalmazás, átstruktúrálás⭕
+Amiért ez fontos, az a Páncélok SFÉ értéke, amely szintén e `4` kategória szerint kap mind eltérő értékeket, tehát egyes páncélok ellen a szúró, míg mások ellen mondjuk a zúzó fegyverek hatásosak. Sőt páncél nélküli ellenfélnél egyes vágó fegyverek kerülnek előnybe.
 
-Támadáskor fontos paraméter a csapás jellegének, valamint az ellenfél vértjének aktuális **Sebzés Felfogó Értéke**, az `SFÉ`, amely mérsékelheti a sebesülést. Ez utóbbi (`SFÉ`) nem egy konkrét érték, pont a támadás jellegétől és a fegyver esetleges átütéséből adódik.
-
-A harcban használt fegyverek igen sokszínűek, a `Szilánk` rendszere különbséget tesz az általuk okozott sebzés jellege szerint:
-
-- **⚜️Szúró (`S`)
-- ⚜️Vágó (`V`)
-- ⚜️**Zúzó** (`Z`)
-- ⚜️**Energia** (`E`)
-
-### Fegyverek többféle sebzés típussal
+### Fegyverek többféle sebzés jelleggel
 
 Egyes fegyverek többféle sebzési formát is lehetővé tesznek, gondoljunk csak a jól ismert Hosszú kardra, amellyel szúrni is, vágni is lehet.
 
 ```
-Jelölése "/" jellel
+Többféle sebzés jelleg
+  jegyzése: "/" jellel
 
 Példa: "V/S"
 ```
@@ -32,15 +29,31 @@ A Harcrendszer végén található [fegyvertáblázatokban](068_00_fegyverek.md#
 ---
 ## Sebzés típusok
 
-A fent 
+Bár sok fegyver többféle, fent részletezett sebzés jelleggel is rendelkezik, ezek nem egyenrangúak.
+
+Különbséget teszünk az alábbi fegyver **sebzés típusok** szerint:
+
+```
+→ elsődleges
+→ másodlagos
+→ alkalmatlan
+```
 
 ### [Sebzéstípus: elsődleges](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-els%C5%91dleges)
 
 Ez egy **Harci helyzet** (státusz).
 
-Minden fegyver rendelkezik egy **elsődleges sebzési típussal**, pl. "szúrás". Ha emellett más jelegű támadásra is alkalmas, akkor van másodlagos sebzéstípusa is (lásd lenn). Ha a karakter nem jelenti be, hogy milyen típusú támadást akar leadni, akkor mindig az elsődleges sebzési típust vesszük megtörténtnek.
+Minden fegyver rendelkezik egy **elsődleges sebzési típussal**. ⚡Példa: "szúrás".
 
-Például a "Hosszú kard: vágás/szúrás (`V/S`)". Ekkor az alapértelmezett az elsődleges sebzési jellege, azaz a "vágás". 
+Ha emellett más jelegű támadásra is alkalmas, akkor van másodlagos sebzéstípusa is (lásd lenn). Amennyiben a karakter nem jelenti be, hogy milyen típusú sebzést akar okozni majd sebzéskor, akkor mindig ezt az **elsődleges** sebzési típust vesszük alapértelmezettnek.
+
+#### ⚡Példa: Hosszú kard 2 sebzés jellege
+
+```
+vágás/szúrás (V/S)
+
+→ elsődleges sebzési jellege: "vágás"
+```
 
 ---
 ### [Sebzéstípus: másodlagos](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-m%C3%A1sodlagos)
@@ -51,9 +64,11 @@ Hátrány-1 Sebzésdobásra
 
 Ez egy Harci helyzet (státusz).
 
-Ha a karakter bejelnti, hogy fegyverének másodlagos sebzési típus
+A karakter **még támadó dobás előtt** bejelenti, hogy fegyverének másodlagos sebzési típusát akarja majd használni találatkor. Ekkor sebzéskor a fenti Hátrány Hatást szenvedi el.
 
-A karakter bejelenti, hogy Hosszú kardjával **Szúrni** szeretne. Ez fegyverének másodlagos sebzési típusa, így némi büntető módosítóval teheti meg.
+#### ⚡Példa: Szúrás Hosszú karddal
+
+A karakter bejelenti, hogy Hosszú kardjával **Szúrni** szeretne. Ez fegyverének **másodlagos sebzési típusa**, így a Sebzésdobást `Hátrány-1` büntető módosítóval teheti csak meg.
 
 ---
 ### [Sebzéstípus: alkalmatlan](065_01_harci_helyzetek.md#sebz%C3%A9st%C3%ADpus-alkalmatlan)
@@ -64,7 +79,7 @@ Hátrány-2 Sebzésdobásra
 
 Ez egy Harci helyzet (státusz).
 
-Ha a karakter olyan sebzési típussal szeretne betalálni, amire fegyvere nem lett kialakítva (nem elsődleges, nem egyjogú, nem másodlagos) akkor, ha a KM engedi – azt további büntető módosítóval teheti meg.
+Ha a karakter olyan sebzési típussal szeretne betalálni, amire fegyvere nem lett kialakítva (nem elsődleges, nem másodlagos) akkor, ha a KM is engedi – a sebzésdobást további büntető módosítóval teheti csak meg.
 
 <br />
 
