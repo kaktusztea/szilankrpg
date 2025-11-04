@@ -132,7 +132,7 @@ A lovag `SFÉ`-je szúrófegyverek ellen `8`, a végső `SP` így:
   → -3 ÉP, -4 VÉ
 ```
 
-A `7 SP` a [Sebzés-táblázat](064_02_06_sebzes.md#sp-%C3%A1tv%C3%A1lt%C3%A1sa-%C3%A9p-sebz%C3%A9sre-%C3%A9s-v%C3%A9-cs%C3%B6kkent%C3%A9sre) alapján `3 ÉP` (❗) sebet és (`-4 VÉ`) csökkenést jelent.
+A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre) alapján `3 ÉP` (❗) sebet és (`-4 VÉ`) csökkenést jelent.
 
 A lovag ezzel a sebesüléssel még az `S1` egészség-kategóriában marad, így `TÉ` büntetést egyelőre nem kap. Ugyanennek a sebnek a hatására egy gyengébb fizikumú (`ÉP: 8`) ember már átcsúszna az `S2` kategóriába.
 

@@ -4,7 +4,7 @@ Ismered a fegyvereket remekül kiegészítő pajzsok használatát.
 
 ### Kapcsolódik
 
-- [Harcrendszer: Pajzsok, pajzshasználat](../064_02_09_pajzsok_pajzshasznalat.md) fejezet
+- [Harcrendszer: Pajzsok, pajzshasználat](../064_02_10_pajzsok_pajzshasznalat.md) fejezet
 - [Pajzs fegyverek](../068_09_pajzs_fegyverek.md) harcértékei
 
 Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon még `TÉ` levonást okoz a használó oldalán. Ezek a hátrányon magasabb fokokon enyhülnek.

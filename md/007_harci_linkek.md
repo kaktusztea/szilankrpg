@@ -8,7 +8,7 @@ Gyors elérésű link gyűjtemény - játékalkalomra.
 
 [Státuszok](082_statuszok.md)
 
-[Sebzés táblázat](064_02_06_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre)
+[Sebzés táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre)
 
 [Harc menete - tömör](064_01_harc_menete_osszefoglalas.md)
 

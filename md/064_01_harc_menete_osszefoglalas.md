@@ -176,7 +176,7 @@ VÉ csökkentés sebzés esetén
     • 4 + k20T VÉ csökkentés
 ```
 
-Lásd: [Sebzés táblázat](064_02_06_sebzes.md)
+Lásd: [Sebzés táblázat](064_02_07_sebzes.md)
 
 <br />
 

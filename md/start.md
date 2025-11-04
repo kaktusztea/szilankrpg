@@ -177,11 +177,12 @@
   - [Támadó dobás](064_02_02_tamado_dobas.md)
   - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)
   - [Találat](064_02_04_talalat.md)
-  - [Fegyverek sebzés jellege, páncélok SFÉ jellege](064_02_05_fegyver_sebzes_jellege.md)
-  - [Sebzés](064_02_06_sebzes.md)
-  - [Sebződés hatása](064_02_07_sebzodes_hatasa.md)
-  - [Védő Érték regenerálódása](064_02_08_ve_regeneralodas.md)
-  - [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md)
+  - [Fegyverek sebzés jellege](064_02_05_fegyver_sebzes_jellege.md)
+  - [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md)
+  - [Sebzés](064_02_07_sebzes.md)
+  - [Sebződés hatása](064_02_08_sebzodes_hatasa.md)
+  - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
+  - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md)
 - [Példaharc](064_03_peldaharc.md) ⚡
 
 #### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)

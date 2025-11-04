@@ -26,7 +26,7 @@ Ez adja a **Manőver Pontok** mennyiségét - felfelé ↑ kerekítve. Látható
    "Ellenpróba" fázisánál
 ```
 
-A fenti pont keretet `1` harci jelenet során használhatja fel a karakter - megtámogatva egyes elvégzett Manővereit. A [Védő Érték regenerálódásakor](064_02_08_ve_regeneralodas.md) ez a keret is "visszatöltődik". A Manőver Pontokat a Manőver dobásainak megkezdése **előtt** kell beletenni, így megvan a rizikója, hogy kudarc esetén elvesznek.
+A fenti pont keretet `1` harci jelenet során használhatja fel a karakter - megtámogatva egyes elvégzett Manővereit. A [Védő Érték regenerálódásakor](064_02_09_ve_regeneralodas.md) ez a keret is "visszatöltődik". A Manőver Pontokat a Manőver dobásainak megkezdése **előtt** kell beletenni, így megvan a rizikója, hogy kudarc esetén elvesznek.
 
 Egyszerre legfeljebb `2` pont használható fel (`+4` bónusz). Bővebben lásd: Manőver [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) fázisa.
 

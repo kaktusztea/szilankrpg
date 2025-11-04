@@ -1,31 +1,12 @@
-## Fegyver sebzés jellege
-
-Számos paraméter befolyásolja az éppen forgatott fegyver aktuális sebzését.
-
-### Erőbónusz, Erőhiány, Erőbónusz limit
-
-```
-Az Erő tulajdonság 1:1-ben
-hozzáadódik az SP értékhez.
-
-A negatív Erő érték
-nyilván csökkenést okoz.
-```
-
-Egyes fegyverek forgatása esetén a karakter fizikai ereje megnöveli az okozott sebzést. Tipikusan azok a fegyverek ezek, amelyek használata során a plusz erő használata felgyorsítja azt, jól kivezethető ívű csapások végezhetők vele. Továbbá számos fegyver van, melynek forgatása **Erő** követelményhez kötött, azaz csak megfelelő fizikumú karakter használhatja. Erről az egyes fegyverek egyéni leírásában találhatunk részleteket, de általánosságban a fenti szabályok az irányadóak.
-
-[Erőbónusz limit](068_01_fegyverek_altalanos_szabalyai.md#erőbónusz-limit): egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Karakteralkotó](start.md#karakteralkot%C3%B3) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
-
-<br />
-
----
-### Sebzés jellege, páncél SFÉ jellege
+## Sebzés jellege, páncél SFÉ jellege
 
 ```
 Szúró, Vágó és Zúzó sebzés
 ```
 
-Támadáskor fontos momentum annak jellegének meghatározása, valamint az ellenfél vértjének aktuális **Sebzés Felfogó Értéke**, az **SFÉ**, amely mérsékelheti a sebesülést. Ez utóbbi (SFÉ) nem egy konkrét érték, pont a támadás jellegétől és a fegyver esetleges átütéséből adódik.
+⭕TODO: átfogalmazás, átstruktúrálás⭕
+
+Támadáskor fontos paraméter a csapás jellegének, valamint az ellenfél vértjének aktuális **Sebzés Felfogó Értéke**, az `SFÉ`, amely mérsékelheti a sebesülést. Ez utóbbi (`SFÉ`) nem egy konkrét érték, pont a támadás jellegétől és a fegyver esetleges átütéséből adódik.
 
 A harcban használt fegyverek igen sokszínűek, a `Szilánk` rendszere különbséget tesz az általuk okozott sebzés jellege szerint: **⚜️Szúró, ⚜️Vágó és ⚜️Zúzó** támadás.
 
@@ -78,25 +59,25 @@ Ha a karakter olyan sebzési típussal szeretne betalálni, amire fegyvere nem l
 <br />
 
 ---
-#### Átütés
+## Átütés
 
 ```
 Aktuális SFÉ =
   Vért SFÉ - Átütés
 ```
 
-Fontos szerep jut még azoknak a fegyvereknek, amelyek rendelkeznek Átütés értékkel (a legtöbb fegyver `Átütés értéke: 0`), mivel a támadott vért megfelelő SFÉ-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a vért végleges aktuális SFÉ-jét.
+Fontos szerep jut még azoknak a fegyvereknek, amelyek rendelkeznek Átütés értékkel (a legtöbb fegyver `Átütés értéke: 0`), mivel a támadott vért megfelelő `SFÉ`-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a vért végleges aktuális `SFÉ`-jét.
 
 Átütéssel olyan fegyverek rendelkeznek, amelyek kifejezetten alkalmasak vértek átlyukasztására legtöbbször azon okból, hogy kis területre koncentrálnak nagy erőt.\
 Például: Csákány.
 
 ---
-### Mágikus fegyverek sebzése
+## Mágikus fegyverek sebzése
 
 Lásd [Rúnamágiával felruházott tárgyak](130_varazstargyak.md#r%C3%BAnam%C3%A1gi%C3%A1val-felruh%C3%A1zott-t%C3%A1rgyak) fejezete.
 
 ---
 
-🔗 [Sebzés](064_02_06_sebzes.md) →
+🔗 [Sebzés](064_02_07_sebzes.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

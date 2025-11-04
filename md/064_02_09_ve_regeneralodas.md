@@ -42,6 +42,6 @@ Ez több kategóriára egyszerűsítettük:
 
 ---
 
-🔗 [Pajzsok, pajzshasználat](064_02_09_pajzsok_pajzshasznalat.md) →
+🔗 [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
