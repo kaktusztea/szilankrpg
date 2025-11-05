@@ -1,9 +1,10 @@
 ## Sebződés hatása
 
-Sebesüléskor a karakter értelemszerűen nem képes a továbbiakban is 100%-os teljesítményt nyújtani. Alább arról olvashatunk, hogy milyen következményei vannak a sérüléseknek számokban kifejezve.
+Sebesüléskor a karakter értelemszerűen nem képes a továbbiakban is `100%`-os teljesítményt nyújtani. Alább arról olvashatunk, hogy milyen következményei vannak a sérüléseknek számokban kifejezve.
+
 ### Harcérték csökkenés
 
-Ha valakit találat ért és átkerül másik sebesülés-kategóriába (`S2, S3, S4`), akkor `TÉ levonást` kap, melyet statikusan mérsékel a [Fájdalomtűrés képzettség](kepzettsegek.primer.altalanos/fajdalomtures.md) és [Önuralom tulajdonságok](010_05_01_07_onuralom.md) összege. Ez azért előnyös, mert ismét karakteralkotás alatt számítjuk ki a fenti értékeket, nem vesz el időt a játékból.
+Ha valakit találat ért és átkerül másik sebesülés-kategóriába (`S2, S3, S4`), akkor `TÉ` levonást kap, melyet statikusan mérsékel a [Fájdalomtűrés képzettség](kepzettsegek.primer.altalanos/fajdalomtures.md) és [Önuralom tulajdonságok](010_05_01_07_onuralom.md) összege. Ez azért előnyös, mert ismét karakteralkotás alatt számítjuk ki a fenti értékeket, nem vesz el időt a játékból.
 
 Bővebben lásd: [Fájdalomtűrés fejezet](061_03_sebesules.md#1-f%C3%A1jdalomt%C5%B1r%C3%A9s-harc-k%C3%B6zben)
 
@@ -26,13 +27,12 @@ Természetesen nem csak fegyverek okozhatnak sérülést, hanem egy mágikus tű
 
 A zuhanás okozta sérülés függ a magasságtól, a talaj típusától, és a viselt vértezettől.
 
-Random zúzódás, egyéb fizikai sérülések esetén a KM meghatároz egy sebzés értéket ugyanúgy, akár egy fegyver esetében - például `k20+5`. Az **SFÉ** ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelten. Ha számít, akkor általában a **zúzó SFÉ** értéket használjuk, de KM dönt, mivel ahány eset annyiféle.
+Random zúzódás, egyéb fizikai sérülések esetén a KM meghatároz egy sebzés értéket ugyanúgy, akár egy fegyver esetében - például `k20+5`. Az **SFÉ** ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelten. Ha számít, akkor általában a **zúzó SFÉ** értéket használjuk, de KM dönt, mivel ahány eset, annyi féle.
 
 ---
 ### Élőholtak sebződése 
 
 A különböző támadási módok ellen az élőholtak különféleképpen ellenállóak, ezt virtuális `SFÉ`-vel szimuláljuk:
-
 
 ```
 16: Szúró SFÉ
