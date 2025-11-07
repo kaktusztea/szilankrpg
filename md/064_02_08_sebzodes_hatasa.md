@@ -24,6 +24,26 @@ Zuhanás SP:
 A zuhanás okozta sérülés függ a magasságtól, a talaj típusától, és a viselt vértezettől.
 
 ---
+### Megégés
+
+```
+Elszenvedett SP
+
+k20
+ +0: fáklya érintése / 1x
+ +2: égő végtag / kör
+ +5: égő felsőruházat / kör
++10: égő teljes ruházat / kör
+```
+
+
+```
+Σ SFÉ = viselt páncélrétegek száma
+
+Védővarázslatok adhatnak bónuszt.
+```
+
+---
 ### Random zúzódás
 
 ilyen és egyéb nem harci fizikai sérülések esetén a KM meghatároz egy sebzés értéket ugyanúgy, akár egy fegyver esetében.
@@ -42,12 +62,16 @@ Természetesen nem csak fegyverek okozhatnak sérülést, hanem egy mágikus tű
 ---
 ### Élőholtak sebződése 
 
-A különböző támadási módok ellen az élőholtak különféleképpen ellenállóak, ezt virtuális `SFÉ`-vel szimuláljuk:
+A különböző támadási módok ellen az élőholtak különféleképpen ellenállóak, ezt virtuális [SFÉ](069_02_SFE.md)-vel szimuláljuk:
 
 ```
 16: Szúró SFÉ
  8: Vágó SFÉ
  0: Zúzó SFÉ
+ 4: Energia SFÉ
+ 
+-4: Tűz SFÉ (spec)
+    (extra SP)
 ```
 
 ---
