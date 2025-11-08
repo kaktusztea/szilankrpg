@@ -15,7 +15,7 @@ Az alkotott tárgyakat - minőségüktől függően - egy Idea-szinttel jellemz�
 ### Kapcsolódik
 
 - [Mechanika](../fortelyok.altalanos/mechanika.md) fortély
-- [Vezető: Céhmester](../fortelyok.altalanos/vezeto_cehmester.md) fortély: csoportos munka esetén bónuszt ad.
+- [Műhelymester](../fortelyok.altalanos/muhelymester.md) fortély
 
 ### Normál kiterjesztés
 

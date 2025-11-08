@@ -35,6 +35,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Kocsihajtás](fortelyok.altalanos/kocsihajtas.md)
 - [Kötelékből szabadulás](fortelyok.altalanos/kotelekbol_szabadulas.md)
 - [Méregálló](fortelyok.altalanos/meregallo.md)
+- [Műhelymester](fortelyok.altalanos/muhelymester.md)
 - [Nyomolvasás/eltűntetés](fortelyok.altalanos/nyomolvasas_eltuntetes.md)
 - [Pók](fortelyok.altalanos/pok.md)
 - [Sprint](fortelyok.altalanos/sprint.md)
@@ -46,7 +47,6 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Úszás](fortelyok.altalanos/uszas.md)
 - [Vadember](fortelyok.altalanos/vadember.md)
 - [Vezető: Bölcsészprofesszor](fortelyok.altalanos/vezeto_bolcseszprofesszor.md)
-- [Vezető: Céhmester](fortelyok.altalanos/vezeto_cehmester.md) 🔁
 - [Vezető: Hajóskapitány](fortelyok.altalanos/vezeto_hajoskapitany.md)
 - [Vezető: Nyomozó](fortelyok.altalanos/vezeto_nyomozo.md)
 - [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md)
