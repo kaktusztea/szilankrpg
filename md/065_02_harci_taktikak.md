@@ -41,8 +41,8 @@ Visszafogott taktika
 
 Plusz támadás taktika
   +1 támadás
-  Cserébe minden támadásodnál
-    VÉ csökkentést kapsz: (1 + k20T)
+  Leadásakor -4 VÉ csökkenést
+  szenvedsz el.
 
 Roham taktika
   Első oda-visszacsapáskor
@@ -292,9 +292,9 @@ Némi ritmus megtörés bevállalásával (TÉ mínusz) csökkentheted az okozot
 ```
 +1 támadás
 
-Minden támadásodnál
-  VÉ csökkentés: 1 + k20T
-  büntetést szenvedsz el
+Leadásakor azonnal
+-4 VÉ csökkenést
+szenvedsz el
 ```
 
 ✅ **Támadó taktikával** együtt
@@ -309,11 +309,9 @@ Minden támadásodnál
 
 Felpörögsz és csapásaid záporoznak ellenfeledre. `+1 támadáshoz` jutsz a körben.
 
-Cserébe **minden** támadásodnál az adott körben `(1 + k20T) VÉ csökkenést` szenvedsz el, mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc. A taktikát a kör elején kell eldönteni és a kör végéig már nem módosítható.
+Cserébe az adott plusz támadás leadásakor azonnal `-4 VÉ` csökkenést szenvedsz el, mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc. A taktikát a kör elején kell eldönteni és a kör végéig már nem módosítható.
 
-🔆NEM csak a plusz támadásodra, hanem **mindegyik** támadásodra jár a `VÉ csökkenés`.
-
-🔆Tipp: ha fix növelésre vágysz, a [Harckeret növelés](fortelyok.harci/harckeret_noveles.md) fortély felvétele segíthet.
+🔆 Tipp: ha fix növelésre vágysz, a [Harckeret növelés](fortelyok.harci/harckeret_noveles.md) fortély felvétele segíthet.
 
 ---
 ### Roham taktika
