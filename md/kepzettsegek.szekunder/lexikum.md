@@ -4,9 +4,13 @@ Próba dobható.
 
 Általános ismeret amely a tárgyi tudásra támaszkodó tudományok alapját adja. Könyvtárazás, tárgyi ismeretek gyűjtése, rengeteg olvasás, magolás. Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal érhetjük el.
 
+### Követelmény
+
+- Nem lehetsz [Analfabéta](../022_leiro_hatterek.md#extra).
+
 ### Domináns Tulajdonságok
 
-Emlékezet, Intelligencia
+- Emlékezet, Intelligencia
 
 ### Kapcsolódik
 
@@ -29,8 +33,6 @@ __
 
 ### Erős kiterjesztés
 
-- [Írástudó](../fortelyok.altalanos/irastudo.md): enélkül egyik sem megy ❗
-__
 - [Élettan](../fortelyok.altalanos/elettan.md): Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten.
 - [Mechanika](../fortelyok.altalanos/mechanika.md): Mechanikus zárak készítése. **Nem** helyettesíti a [Zárnyitás](zarnyitas.md) képzettséget
 - [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md): Járatos vagy a történelmi események és korszakok lefolyásában. Neves alakok, emlékezetes csaták, politikai csatározások, trónviszályok, öröklődés.

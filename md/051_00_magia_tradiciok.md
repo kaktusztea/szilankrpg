@@ -34,11 +34,6 @@ A Metamágia Arkánumok tradíciók szerint eltérnek!
 Minden Tradíció szintjeinek lehetnek követelményei, amelyek biztosítják, hogy csak tálentummal megáldott személyek tanulhassák az adott ismereteket.
 
 ---
-### Írástudó fortély extra
-
-Ha egy karakter tiszta Mágikus vagy Papi Tradíciót tanul, akkor automatikusan, ingyen megkapja az [Írástudó](fortelyok.altalanos/irastudo.md) fortélyt.
-
----
 
 🔗 [Magasmágia tradíció](051_01_magasmagia.md) →
 

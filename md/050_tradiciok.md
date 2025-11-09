@@ -52,10 +52,6 @@ Milyen Tradíciókat ismer a `Szilánk` rendszere?
 
 Az adott Tradíciók követelményeit lásd azok leírásában.
 
-### Írástudó fortély extra
-
-Ha egy karakter tiszta Mágikus vagy Papi Tradíciót tanul és eléri benne a `3.` szintet, akkor automatikusan, ingyen megkapja az [Írástudó](fortelyok.altalanos/irastudo.md) fortélyt.
-
 ---
 
 ⚜️ [Nyitóoldal](start.md#5-trad%C3%ADci%C3%B3k)

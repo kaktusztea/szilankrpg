@@ -14,12 +14,15 @@ A normális, hétköznapi beszéd. Ha nem anyanyelv, a külföldi akcentust ki l
 
 ### `2.fok`: Udvari szint
 
-Nemesi, egyházi, hivatali, vagy művészi körökben hallott, míves beszéd. Fogyasztott, vagy aktívan művelt művészetekhez követelmény. Lásd [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség.
+Nemesi, egyházi, hivatali, vagy művészi körökben hallott, míves beszéd. Fogyasztott, vagy aktívan művelt művészetekhez követelmény. Lásd [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség.\
+
+### Írás/olvasás
+
+Minden nyelvet, amit legalább **Alap** szinten beszélsz, képes vagy olvasni és írni is.
 
 ---
 ### Kapcsolódik
 
-- [Írástudó](../fortelyok.altalanos/irastudo.md) fortély
 - [Irodalom](../fortelyok.szabad/irodalom.md) fortély
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md) fortély
 - [Kultúrkör](kulturkor.md) fortély

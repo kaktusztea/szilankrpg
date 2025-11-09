@@ -6,6 +6,10 @@ Ide tartoznak a karakter Származását, Jellemét, Küllemét leíró Hátterek
 
 Alább 1-2 szavas leíró jelzőket találsz, amelyek további szinesítő elemeket adhatnak karaktered megalkotásakor. A lentiek nem fednek le mindent, a KM és a játékos is közösen kitalálhatnak új, szinesítő Leíró Háttereket bármelyik lenti kategóriában. Az ésszerűség keretein belül bármennyit felvehetsz.
 
+### Extra
+
+- Analfabéta: nem tudsz írni/olvasni. Csak `1.TSz` alatt vehető fel. Cserébe kapsz `6 KP` bónuszt.
+
 ### Származás
 
 - Árva

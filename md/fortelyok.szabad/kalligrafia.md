@@ -9,7 +9,7 @@
 
 ### Követelmény
 
-- [Írástudó](../fortelyok.altalanos/irastudo.md) fortély
+- Nem lehetsz [Analfabéta](../022_leiro_hatterek.md#extra)
 
 ### Kapcsolódik
 
