@@ -9,7 +9,7 @@
 
 ### Követelmény
 
-- Nem lehetsz [Analfabéta](../022_leiro_hatterek.md#extra)
+- Nem lehetsz [Analfabéta](../fortelyok.kiemelt/analfabeta.md).
 
 ### Kapcsolódik
 

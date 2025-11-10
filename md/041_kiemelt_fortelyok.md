@@ -11,6 +11,15 @@ A Kiemelt Fortélyok alá három, egyedi ismeret tartozik, amelyek nem sorolhat�
 #### [Kultúrkör](fortelyok.kiemelt/kulturkor.md) 🔁
 
 ---
+#### [Analfabéta](fortelyok.kiemelt/analfabeta.md)
+
+#### [Süketség](fortelyok.kiemelt/suketseg.md)
+
+#### [Tartós sérültség](fortelyok.kiemelt/tartos_serultseg.md)
+
+#### [Vakság](fortelyok.kiemelt/vaksag.md)
+
+---
 
 🔗 [Fortélyok](040_fortelyok.md) ↑
 

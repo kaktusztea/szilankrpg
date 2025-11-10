@@ -10,7 +10,7 @@ Teljes sötétben is képes vagy tájékozódni.
 
 🔒 **Követelmény**:  -
 
-🌟 **Hatás**: Emberi látás, teljes sötétben gyakorlatilag vakság, nem látsz semmit.
+🌟 **Hatás**: Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz semmit. **Látás** érzékére [Érzékvesztés - teljes](../082_statuszok.md#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-3-teljes) Státusz.
 
 ---
 ### 1. fok

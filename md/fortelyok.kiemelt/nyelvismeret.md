@@ -18,7 +18,7 @@ Nemesi, egyházi, hivatali, vagy művészi körökben hallott, míves beszéd. F
 
 ### Írás/olvasás
 
-Minden nyelvet, amit legalább **Alap** szinten beszélsz, képes vagy olvasni és írni is.
+Minden nyelvet, amit legalább **Alap** szinten beszélsz, képes vagy olvasni és írni is - kivéve ha [Analfabéta](../fortelyok.kiemelt/analfabeta.md) vagy.
 
 ---
 ### Kapcsolódik
