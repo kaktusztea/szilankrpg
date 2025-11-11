@@ -7,13 +7,23 @@ Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Érték
 ---
 ### Játékos karakterek VÉ regenerációja harc közben
 
-Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerejen valamennyit Védő Értékéből:
+Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerejen valamennyit Védő Értékéből.
 
-- **Győzelmi szabály**: ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont`. Ez a siker hatása a szervezetre kiegészítve némi heroizmussal. Persze itt is lehetnek kivételek, mint mondjuk egy barát megölése.
- - [Harcos elme](fortelyok.harci/harcos_elme.md) fortély 
- - Papi varázslat: ⭕TODO⭕
-   - van narratív követelménye
-   - cserébe harc után `FP`büntetés
+#### ⚜️Győzelmi szabály
+
+ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont`. Ez a siker hatása a szervezetre kiegészítve némi heroizmussal. Persze itt is lehetnek kivételek, mint mondjuk egy barát megölése.
+
+#### ⚜️[Harcos elme](fortelyok.harci/harcos_elme.md) fortély 
+
+Lásd a fortély leírását.
+
+#### ⚜️Papi varázslat
+
+⭕TODO⭕
+- van narratív követelménye
+- cserébe harc után `FP`büntetés
+
+<br />
 
 ---
 ### Élőholtak VÉ regenerációja harc közben
