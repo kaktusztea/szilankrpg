@@ -22,6 +22,6 @@ Tartós sérültségért
 ---
 ### Hatása fizikai fizikai Tulajdonságokra
 
-A rokkantság csökkenti a karakter fizikai Tulajdonságait is. Erre végképp nem adnánk képletet, hiszen attól is függ, hogy az adott cselekedet során okoz-e hátrányt a sérülés, vagy sem. A fentiek mértékét szintén a KM-re bízzuk.
+A rokkantság sokszor csökkentheti a karakter fizikai Tulajdonságait is. Erre végképp nem adnánk képletet, hiszen attól is függ, hogy az adott cselekedet során okoz-e hátrányt a sérülés, vagy sem. A fentiek mértékét és alkalmazását a KM-re bízzuk.
 
 ---
