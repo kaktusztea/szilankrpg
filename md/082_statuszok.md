@@ -228,12 +228,20 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 - Kezdeményezés - lassú
 - `Hátrány-1`: szellemi képzettségpróbákra
 
+⚡ Példa:
+- `2` napja nem aludtál
+- Edzettségedhez mérten elfáradtál hegymászás során
+
 ### ✴️ Fizikai (2) Kimerültség
 
 - Kezdeményezés - lassú
 - VÉ veszteség: duplázódik
 - `Hátrány-2`: szellemi képzettségpróbákra
 -  `FP S1`
+
+⚡ Példák
+- `3` napja nem aludtál
+- összeverten menekülsz órák óta
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
@@ -246,7 +254,7 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 -  `FP S2`
 - `Hátrány-1`: Szociális képzettségpróbákra
 
-⚡ Példa: éhhalál szélén
+⚡ Példa: éhhalál szélén tengődés
 
 <br />
 
