@@ -1,6 +1,6 @@
 ## 🟣 Szájról olvasás (1)
 
-"Azt mondja neki, végezzenek velünk..!"
+"Azt mondja neki, végezzenek velünk a vacsora közben..!"
 
 ### 1. fok
 
@@ -11,6 +11,6 @@
 - Jól látható legyen a célszemély szája
 
 🌟 **Hatás**:
-- Pusztán a szájmozgást megfigyelve, hallás nélkül is képes vagy megérteni, mit mond valaki.
+- [Beszéd szájról olvasása](../szituaciok/beszed_szajrol_olvasasa.md) szituációban az **Érzékenység** Tulajdonságpróba Célszámára `-3` módosítót kapsz.
 
 ---
