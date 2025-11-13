@@ -37,7 +37,7 @@ Tehát `3.szintű` **Lovaglással** ugyanannyi a karakter harcértéke, mint ló
 
 ### Fegyverméret-kategória bónusz
 
-A hátas maga `plusz 1 pengényi` [fegyverméret-kategóriát](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) ad a lovasnak az [előnyös-hátrányos helyzet megállapításánál](064_02_03_vedo_ertek_csokkentese.md#%EF%B8%8F-fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny).
+A hátas maga `plusz 1 pengényi` extra [fegyverméret-kategóriát](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) ad a lovasnak a [Fegyverméret](064_02_03_vedo_ertek_csokkentese.md) harci helyzet megállapításánál.
 
 <br />
 

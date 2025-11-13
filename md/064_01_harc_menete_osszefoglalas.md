@@ -77,8 +77,9 @@ Sebzés jellege
 ```
 
 ```
-Előnyös/hátrányos helyzetű harcos:
-   1 penge méretkülönbségtől
+"Fegyverméret ..."
+  harci helyzetek határozzák
+  meg a VÉ csökkentést
 ```
 
 <br />

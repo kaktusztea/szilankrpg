@@ -655,6 +655,8 @@ Előny+1: TÉ dobásra
 
 Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen helyzetben `Előny+1` jár `TÉ` dobására.
 
+A [harc hátasról](067_00_harc_hatasrol.md) helyzet esetén NEM jár ez a módosító, ott külön tárgyaljuk az egyes módosítókat.
+
 <br />
 
 ---
