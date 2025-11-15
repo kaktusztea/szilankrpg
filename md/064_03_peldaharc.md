@@ -10,7 +10,7 @@ KÉ: 12 TÉ: 37 VÉ: 54
 Erő: +3
 
 Fegyver: Hosszú kard  (1 penge)
-Sebzés: k20+5 (V/S)  (Erőbónuszzal együtt)
+Sebzés: k20+5 (V/S)  (Erőbónuszzal)
 
 Fájdalomtűrés (7)
   → 4 könnyítés a TÉ levonásokra
