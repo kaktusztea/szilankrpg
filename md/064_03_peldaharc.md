@@ -18,7 +18,7 @@ Fájdalomtűrés (7)
 Vért (80% lefedettség)
 - Láncing torzó (MGT:8)
   +3 tag: felkarok, combok, lábszár
-- Átlagos minőség (1/tag)
+- Átlagos minőség (1 MGT / tag)
 - Fémalapanyag: Acél (+0)
 - Erő: -3
 
