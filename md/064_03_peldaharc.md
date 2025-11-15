@@ -1,6 +1,6 @@
 ## Példaharc
 
-⚡Lássunk egy konkrét összecsapást, hiszen egy példa többet ér több oldal szabályleírásnál is!
+⚡Lássunk egy konkrét összecsapást, hiszen egy példa többet ér száz oldal szabályleírásnál!
 
 ### Lord Gustav, Domvik lovagja
 
