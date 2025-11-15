@@ -16,7 +16,7 @@ Fájdalomtűrés (7)
   → 4 könnyítés a TÉ levonásokra
 
 Vért (80% lefedettség)
-- Láncing torzó
+- Láncing torzó (MGT:8)
   +3 tag: felkarok, combok, lábszár
 - Átlagos minőség (1/tag)
 - Fémalapanyag: Acél (+0)
