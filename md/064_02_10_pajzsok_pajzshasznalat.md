@@ -13,7 +13,8 @@ VÉ:+10 - Közepes pajzs
 VÉ:+17 - Nagy pajzs
          Erő: min +2
 ```
-🔆 A pajzs `TÉ` értéke kizárólag akkor használatos, ha kifejezetten a pajzzsal akarunk harcolni, mert mondjuk nincs főfegyver a másik kezünkben.
+
+🔆 A pajzs `TÉ` értéke csak akkor használatos, ha kizárólagosan pajzzsal akarunk harcolni, és nem használunk más fegyvert.
 
 <br />
 
@@ -41,6 +42,7 @@ A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vértek
 [Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott pajzs.
 
 Hatása [Felszerelésre](010_03_06_felszereles.md):
+
 - Közepes pajzs: Közepes tárgy (1 pont)
 - Nagy pajzs: Nagy tárgy (2 pont)
 
