@@ -12,8 +12,8 @@ Erő: +3
 Fegyver: Hosszú kard  (1 penge)
 Sebzés: k20+5 (V/S)  (Erőbónuszzal)
 
-Fájdalomtűrés (7)
-  → 4 könnyítés a TÉ levonásokra
+Fájdalomtűrés (8)
+  → 3 könnyítés a TÉ levonásokra
 
 Vért (80% lefedettség)
 - Láncing torzó (MGT:8)
@@ -41,6 +41,7 @@ MGT: 8 = 8 + (3 x 1) -3
 
 ```
 TÉ levonás összes
+(3 könnyítéssel)
 
 S1:    -
 S2:    -
@@ -59,7 +60,7 @@ Fegyver: Rövidkard (0.5 penge)
 Sebzés: k20+2 (V/S)
 
 Fájdalomtűrés (6)
- → 3 könnyítés a TÉ levonásokra
+ → 2 könnyítés a TÉ levonásokra
 
 Vért: -
 SFÉ: -
@@ -79,6 +80,7 @@ SFÉ: -
 
 ```
 TÉ levonás összes
+(2 könnyítéssel)
 
 S1:    -
 S2:    -
@@ -120,7 +122,8 @@ Teljes TÉ
 A `TÉ: 55` pont meghaladja a lovag `Védő Értékét (44)`: **Talált**!
 
 ```
-Tetves Sebzés dobás:
+Tetves Sebzés dobás: 9 és 13
+(2x, mert TÉ k20 kockája 15 felett volt)
   → k20(13) + 2(fegyver)
   → 15 SP (Szúró)
 ```
@@ -152,7 +155,7 @@ VÉ: 50
 ---
 ### Gustav második sebe  (`S2` kategória)
 
-Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-re. Rosszul mozdul és bekap egy újabb sebet. **Páncéldobása** (`9`) ezúttal sikertelen, a csapás fedetlen területet ért (mondjuk alkar), így az `SFÉ`-je ezúttal nem számít!
+Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-ra. Rosszul mozdul és bekap egy újabb sebet. **Páncéldobása** (`9`) ezúttal sikertelen, a csapás fedetlen területet ért (mondjuk alkar), így az `SFÉ`-je ezúttal nem számít!
 
 ```
 Tetves Sebzés dobás:
@@ -219,7 +222,7 @@ Tetves Sebzés dobás:
  → 7 SP
 ```
 
-Tetves kardja lecsusszan az felé dobogó lovag vértjéről, aki visszatámadva... `15`-öt dob támadására. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `40`, de most ugye neki is `-6` büntetése van erre (Támadó taktika miatt `40-6=33`)
+Tetves kardja lecsusszan a felé dobogó lovag vértjéről, aki visszatámadva... `15`-öt dob támadására. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `40`, de most ugye neki is `-6` büntetése van erre (Támadó taktika miatt `40-6=33`)
 
 ```
 Gustav támadása: 34+19 = 53
