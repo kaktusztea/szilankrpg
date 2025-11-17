@@ -3,9 +3,11 @@
 Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kiszúrni, értelmezni. A nyomok *követése* városi környezetben nem értelmezhető - kivéve az olyan egyértelmű jeleket, mint például a vérnyomok, de ezeket bárki képes követni.
 
 ---
-### Nyomok észrevétele városi környezetben 🏠
+### Nyomok észrevétele/eltűntetése városi környezetben 🏠
 
 "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
+
+"Hopp, a bocskorom nyoma ottmaradt... már törlöm is le a kis ecsetemmel.."
 
 **[Észlelés](../kepzettsegek.primer.altalanos/eszleles.md)** képzettségpróba
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő megfelelő szint ellen
@@ -27,6 +29,20 @@ Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése.
   - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md)  (ennél használható a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)) képzettség is
 
 Példákhoz lásd a fenti, kapcsolódó fortélyok **Nyomozás** képzettséghez kapcsolódó leírásait.
+
+---
+### Leplezett nyomok észrevétele városi környzetben 🏠
+
+Ha egy helyszínen a korábban ott járt személy szándékosan leplezi nyomait, akkor ellenpróbás szituáció következik:
+
+```
+Észlelés + Érzékenység (kereső)
+                vs
+Észlelés + Intelligencia (rejtő)
+
+Normál Kiterjesztés egyszerre mindkét félnél
+ - Keresés/rejtés fortély
+```
 
 ---
 
