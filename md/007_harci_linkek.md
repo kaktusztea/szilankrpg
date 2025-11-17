@@ -35,7 +35,7 @@ Gyors elérésű link gyűjtemény - játékalkalomra.
 
 [Sebesülés](061_03_sebesules.md)
 
-[Gyógyulás](061_04_gyogyulas.md)
+[Gyógyulás](061_06_gyogyulas.md)
 
 ---
 ### Tám/kör, Mozgás

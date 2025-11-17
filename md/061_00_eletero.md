@@ -8,7 +8,11 @@ Itt tárgyaljuk a karakter életerővel, sebesüléssel kapcsolatos értékeit, 
 
 ### [Sebesülés](061_03_sebesules.md)
 
-### [Gyógyulás](061_04_gyogyulas.md)
+### [Fájdalomtűrés sebesüléskor](061_04_fajdalomtures_sebesuleskor.md)
+
+### [Példa sebesülésre](061_05_pelda_sebesulesre.md)
+
+### [Gyógyulás](061_06_gyogyulas.md)
 
 ---
 

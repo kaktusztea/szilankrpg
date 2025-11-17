@@ -11,7 +11,9 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Életerő Pont (ÉP)](061_01_eletero_pont.md)
 - [Fáradság Pont (FP)](061_02_faradsag_pont.md)
 - [Sebesülés](061_03_sebesules.md)
-- [Gyógyulás](061_04_gyogyulas.md)
+- [Fájdalomtűrés sebesüléskor](061_04_fajdalomtures_sebesuleskor.md)
+- [Példa sebesülésre](061_05_pelda_sebesulesre.md)
+- [Gyógyulás](061_06_gyogyulas.md)
 
 ## 6.2 [Alapértékek](062_00_alapertekek.md)
 
