@@ -1,8 +1,8 @@
 ## Fegyverek minősége (Ideája)
 
-Silány munka, vagy messze földön híres fegyverkovács mester remeke - különbséget teszünk köztük.
+Különbséget teszünk a silány tucatkardok és a messze földön híres fegyverkovács mester remekei között.
 
-A minőség a tárgy - ezúttal fegyver - Ideájának erejét is mutatja: mennyire alkalmas arra a célra, amire készítették. A fentiekben semmilyen mágia nem játszik szerepet, pusztán az elkészítés minőségét mutatja. A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** is hatással van.
+A minőség a tárgy - ezúttal fegyver - **Ideájának** erejét is mutatja: mennyire alkalmas arra a célra, amire készítették. A fentiekben semmilyen mágia nem játszik szerepet, pusztán az elkészítés minőségét mutatja. A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** is hatással van.
 
 ```
 -5
