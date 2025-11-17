@@ -186,7 +186,7 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 - Nagy pajzs: Nagy tárgy (2 pont)
 
 **Kapcsolódik**:
-- [Fegyverek általános szabályai](068_01_fegyverek_altalanos_szabalyai.md#fegyver-mozg%C3%A1sg%C3%A1tl%C3%B3-hat%C3%A1sa)
+- [Fegyver mozgásgátló hatása](068_01_12_fegyver_mozgasgatlo_hatasa.md) fejezet
 - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md#pajzs-mozgásgátló-hatása) fejezet
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 - [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
