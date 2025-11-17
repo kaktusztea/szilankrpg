@@ -28,7 +28,6 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 - [Érzékelés, Aktív/Passzív Harci Észlelés](../szituaciok/erzekeles_eszleles_aktiv_passziv.md)
 - [Lopakodás/rejtőzés és észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md)
 - [Nyomok észrevétele, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md)
-- [Nyomok, tárgyak elrejtése](../szituaciok/nyomok_targyak_elrejtese.md)
 
 <br />
 

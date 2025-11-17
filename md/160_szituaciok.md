@@ -36,7 +36,6 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Lopakodás/rejtőzés és észlelése](szituaciok/lopakodas_rejtozes_es_eszlelese.md)
 - [Nyomok észrevétele, nyomkövetés - természetben](szituaciok/nyomok_nyomkovetes_termeszet.md)
 - [Nyomok észrevétele, nyomkövetés - városban](szituaciok/nyomok_nyomkovetes_varos.md)
-- [Nyomok, tárgyak elrejtése/észlelése](szituaciok/nyomok_targyak_elrejtese.md)
 - [Ellopni valamit, kirabolni valakit](szituaciok/lopas_kirablas.md)
 
 ## Fizikai szituációk
