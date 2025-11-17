@@ -14,7 +14,7 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 🌟 **Hatás**:
 - Max Támadó taktikával kell harcolnod: `[+3 TÉ; -6 VÉ]`
 - Asztrál/Mentál Mágiaellenállás dobásra: `Előny+1`
-- [S4 Fájdalomtűrés próbára](../061_03_sebesules.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s): `Előny+1`
+- [S4 Fájdalomtűrés próbára](../061_04_fajdalomtures_sebesuleskor.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s): `Előny+1`
 - Roham helyett kötelezően az [Öngyilkos roham taktikát](../065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) kell használnod
 
 ---

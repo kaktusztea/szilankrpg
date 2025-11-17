@@ -42,7 +42,7 @@ S4: 5 FP
 Gustav hátrálás közben belefejel a kovácsoltvas kapuba. `5 FP` a büntetése. Ezzel az `S4` (utolsó) kategóriába kerül.\
 Büntetése `TÉ:-5` (az alap `-9` helyett).
 
-Mivel `S4` kategóriába került, azonnal jön az [automatikus Fájdalomtűrás próba](#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s) `12` (Nehéz) ellen **Edzettség** Tulajdonsággal. Ha elrontja, akkor el is ájul.
+Mivel `S4` kategóriába került, azonnal jön az [automatikus Fájdalomtűrás próba](061_04_fajdalomtures_sebesuleskor.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s) `12` (Nehéz) ellen **Edzettség** Tulajdonsággal. Ha elrontja, akkor el is ájul.
 
 Ha túléli a kalandot, akkor a „szerzett” `4 FP` gyógyulása `4 óra` alatt, a valós sebek okozta `ÉP` csökkenés gyógyulása pedig a [Gyógyulás](061_06_gyogyulas.md) fejezetben meghatározott ütemben történik.
 

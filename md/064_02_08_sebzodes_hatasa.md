@@ -4,7 +4,7 @@ Különböző jellegű sérülések különböző hátrányokat okoznak.
 
 ### Harcérték csökkenés
 
-Ha valakit találat ért és átkerül egy másik sebesülés-kategóriába (`S2, S3, S4`), akkor `TÉ` levonást kap, melyet statikusan mérsékel a [Fájdalomtűrés képzettség](kepzettsegek.primer.altalanos/fajdalomtures.md) és [Önuralom tulajdonságok](010_05_01_07_onuralom.md) összege. Bővebben lásd a [Fájdalomtűrés fejezetet](061_03_sebesules.md#1-f%C3%A1jdalomt%C5%B1r%C3%A9s-harc-k%C3%B6zben).
+Ha valakit találat ért és átkerül egy másik sebesülés-kategóriába (`S2, S3, S4`), akkor `TÉ` levonást kap, melyet statikusan mérsékel a [Fájdalomtűrés képzettség](kepzettsegek.primer.altalanos/fajdalomtures.md) és [Önuralom tulajdonságok](010_05_01_07_onuralom.md) összege. Bővebben lásd a [Fájdalomtűrés fejezetet](061_04_fajdalomtures_sebesuleskor.md).
 
 ---
 ### Vérzés

@@ -4,7 +4,7 @@ Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba do
 
 Legyőzni a fájdalmat, legyőzni önmagunkat. Ez a képzettség nem véletlenül kapcsolódik szorosan a harchoz, hiszen az a harcos, aki nem képes legyűrni sebei fájdalmát, hamar elhullik. 
 
-A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási okokból - statikus módon került beszámításra. Részleteket lásd a Harcrendszer [Sebesülés](../061_03_sebesules.md#1-f%C3%A1jdalomt%C5%B1r%C3%A9s-harc-k%C3%B6zben) fejezetében.
+A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási okokból - statikus módon került beszámításra. Részleteket lásd a Harcrendszer [Sebesülés](../061_04_fajdalomtures_sebesuleskor.md) fejezetében.
 
 Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve kínzás elviselésénél is.
 
@@ -62,7 +62,7 @@ A forró víz ráloccsant a kezedre. Vajon megállod-e, hogy felkiálts?
 
 #### Nehéz (12) 🎲 
 
-Az `S4` egészségkategóriában jársz, egyszeri próbát dobsz ezzel a Nehézséggel. Bővebben lásd a [Sebesülés fejezetben](../061_03_sebesules.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s).
+Az `S4` egészségkategóriában jársz, egyszeri próbát dobsz ezzel a Nehézséggel. Bővebben lásd a [Sebesülés fejezetben](../061_04_fajdalomtures_sebesuleskor.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s).
 
 #### Nagyon nehéz (15) 🎲 
 
