@@ -16,7 +16,7 @@ Sötétben (leginkább élőlények által kibocsátott) hőképek alapján is k
 
 🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 **Hatás**: Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_01_harci_helyzetek.md#s%C3%B6t%C3%A9t-f%C3%A9lhom%C3%A1ly) módosítóival folyik számodra.
+🌟 **Hatás**: Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_01_00_harci_helyzetek.md#sötét-félhomály) módosítóival folyik számodra.
 
 ---
 ### 2. fok

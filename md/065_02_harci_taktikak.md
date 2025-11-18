@@ -93,9 +93,9 @@ TÉ:+1, VÉ:-2
 TÉ:+3, VÉ:-6
 ```
 
-✅ [Meglepetés](065_01_harci_helyzetek.md#meglepetés) szituációban
+✅ [Meglepetés](065_01_00_harci_helyzetek.md#meglepetés) szituációban
 
-❌ [Észrevétlen támadás](065_01_harci_helyzetek.md#észrevétlen-támadás) szituációban
+❌ [Észrevétlen támadás](065_01_00_harci_helyzetek.md#észrevétlen-támadás) szituációban
 
 ✅ **Kezdeményező taktikával** együtt
 
@@ -116,9 +116,9 @@ VÉ:+1, TÉ:-2
 VÉ:+4, TÉ:-8
 ```
 
-❌ [Meglepetés](065_01_harci_helyzetek.md#meglepetés) szituációban
+❌ [Meglepetés](065_01_00_harci_helyzetek.md#meglepetés) szituációban
 
-❌ [Észrevétlen támadás](065_01_harci_helyzetek.md#észrevétlen-támadás) szituációban
+❌ [Észrevétlen támadás](065_01_00_harci_helyzetek.md#észrevétlen-támadás) szituációban
 
 ❌ Más taktikával együtt
 
@@ -247,11 +247,11 @@ Sebzés helyett:
 
 ❌ Más taktikával együtt
 
-❌ [Láthatatlan](065_01_harci_helyzetek.md#l%C3%A1thatatlanul) ellenfél ellen
+❌ [Láthatatlan](065_01_00_harci_helyzetek.md#láthatatlanul) ellenfél ellen
 
-❌ [Fegyverméret - pengehátrány](065_01_harci_helyzetek.md#fegyverm%C3%A9ret---pengeh%C3%A1tr%C3%A1ny) harci helyzetből **NEM** alkalmazható.
+❌ [Fegyverméret - pengehátrány](065_01_00_harci_helyzetek.md#fegyverméret---pengehátrány) harci helyzetből **NEM** alkalmazható.
 
-✅ [Levegőből támadás](065_01_harci_helyzetek.md#leveg%C5%91b%C5%91l-t%C3%A1mad%C3%A1s) harci helyzetben
+✅ [Levegőből támadás](065_01_00_harci_helyzetek.md#levegőből-támadás) harci helyzetben
 
 Ha fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta, akkor a harc ugyanúgy folyik, mint más esetben, csak
 - ha nem érsz el találatot támadó dobásod során, akkor  **VÉ csökkentésedre** `+1` bónuszt kapsz

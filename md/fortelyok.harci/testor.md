@@ -6,7 +6,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik - együttműködő - szem
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_harci_helyzetek.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-kiterjeszt%C3%A9se-m%C3%A1sra) harci helyzetnél leírt büntetésekkel.
+🌟 **Hatás**: Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_00_harci_helyzetek.md#védő-érték-kiterjesztése-másra) harci helyzetnél leírt büntetésekkel.
 
 ---
 ### 1. fok

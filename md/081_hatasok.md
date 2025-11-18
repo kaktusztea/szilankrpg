@@ -149,7 +149,7 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 ### 🔥 Harcképtelenség
 
 - Tudsz mozogni, menni, de harcolni nem
-- `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_01_harci_helyzetek.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s))
+- `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_01_00_harci_helyzetek.md#észrevétlen-támadás))
 
 
 ---
@@ -177,7 +177,7 @@ Valamilyen okból nem tudsz helyet változtatni. A testrészeid mozgását nem b
 ---
 ### 🔥 Mozgás - képtelen
 
-- VÉ csak a test mozgásának jellegétől függ (lásd a [táblázatot](065_01_harci_helyzetek.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s))
+- VÉ csak a test mozgásának jellegétől függ (lásd a [táblázatot](065_01_00_harci_helyzetek.md#észrevétlen-támadás))
 - mozdulni se bírsz nyaktól lefelé
 - szemmozgás, légzés működik
 - csak fizikai hatás, mentális hatása nincs

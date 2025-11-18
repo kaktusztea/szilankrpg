@@ -1,6 +1,6 @@
 ## Harcot módosító tényezők
 
-### [Harci helyzetek](065_01_harci_helyzetek.md)
+### [Harci helyzetek](065_01_00_harci_helyzetek.md)
 
 ### [Harci taktikák](065_02_harci_taktikak.md)
 

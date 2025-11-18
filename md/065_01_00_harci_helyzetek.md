@@ -410,7 +410,7 @@ Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 Áldozat: [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba (aktív/passzív észlelés számít)
 - Sikertelen Észlelés: [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadás
 - Sikeres Észlelés: Támadónak `Előny+1` Kezdeményezésre
-  - Nyert Támadó `KÉ`: [Meglepetés](065_01_harci_helyzetek.md#meglepet%C3%A9s) módosítóit kapja meg a támadó
+  - Nyert Támadó `KÉ`: [Meglepetés](065_01_00_harci_helyzetek.md#meglepetés) módosítóit kapja meg a támadó
   - Vesztett Támadó `KÉ`: a megtámadott még így is gyorsabban reagál! Ő támadhat elsőnek, mindketten az aktuális harcértékeikkel és fegyvereikkel
 
 ### 🔆 Szálfegyverek

@@ -10,7 +10,7 @@ Kétkezes vagy születésed óta.
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások sújtanak: [Rosszabbik kézben tartott fegyver](../065_01_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) harci helyzet
+🌟 **Hatás**: Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások sújtanak: [Rosszabbik kézben tartott fegyver](../065_01_00_harci_helyzetek.md#rosszabbik-kézben-tartott-fegyver) harci helyzet
 
 ---
 ### 1. fok

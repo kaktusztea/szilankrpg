@@ -44,15 +44,15 @@ KF: Különleges fegyver
 
 ### Garottos támadás
 
-- Követelmény: [Észrevétlen támadás](065_01_harci_helyzetek.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) Harci helyzet
-- Siker esetén azonnal [Belharci szituáció](065_01_harci_helyzetek.md#belharci-szitu%C3%A1ci%C3%B3) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
+- Követelmény: [Észrevétlen támadás](065_01_00_harci_helyzetek.md#észrevétlen-támadás) Harci helyzet
+- Siker esetén azonnal [Belharci szituáció](065_01_00_harci_helyzetek.md#belharci-szituáció) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
   - `+8 SP` az `1.körben`
   - `+4 SP`: további körökben
 - Szabadulás a hurokból:
   - [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
   - Nehézség: `9` (magasabb)
 - Az áldozat [Leforgatás/Irányítás](066_06_belharcos_manoverek.md#leforgat%C3%A1sir%C3%A1ny%C3%ADt%C3%A1s) manőverrel terelhető, forgatható
-- A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_harci_helyzetek.md#helyhez-k%C3%B6tve) módosítókat szenved el
+- A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_00_harci_helyzetek.md#helyhez-kötve) módosítókat szenved el
 
 <br />
 
