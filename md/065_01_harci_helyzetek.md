@@ -21,8 +21,8 @@ Beszorított helyzet
   lásd hozzá tartozó leírást
 
 Csúszós talaj
-  Hátrány-1 TÉ dobásra
-  Tart amíg a csúszós felületen áll
+  • Hátrány-1 TÉ dobásra
+  • Tart amíg a csúszós felületen áll
     vagy mozog a karakter
 
 Elvesztett egyensúly
@@ -40,9 +40,9 @@ Elvesztett egyensúly
 
 Fegyverrántás váratlanul
   Hatás:
-  - Tőr: nincs KÉ dobás módosító
-  - Kard: Hátrány-1 KÉ dobásra
-  - Alabárd: Hátrány-2 KÉ dobásra
+  • Tőr: nincs KÉ dobás módosító
+  • Kard: Hátrány-1 KÉ dobásra
+  • Alabárd: Hátrány-2 KÉ dobásra
   • 3-mal túldobott KÉ esetén te
     támadhatsz elsőnek full harcértékkel
     Részletek a leírásban.
@@ -52,8 +52,8 @@ Fegyverrántás váratlanul
     2.fok: 2 lépést felfele ugrasz
 
 Félhátulról támadás
-  Előny+1 TÉ dobásra
-  Pajzs VÉ csak akkor számít,
+  • Előny+1 TÉ dobásra
+  • Pajzs VÉ csak akkor számít,
     ha a csapás a pajzsot tartó kéz
     felőli oldalról jön.
 
@@ -74,26 +74,26 @@ Fegyverméret - 2 pengés előny
   Példa: Alabárd vs Tőr
 
 Földön fekve
-  - Hátrány-2 TÉ dobásra
-  - VÉ veszteség duplázódik
+  • Hátrány-2 TÉ dobásra
+  • VÉ veszteség duplázódik
 
 Hajítás alkalmatlan fegyverrel
-  - Hátrány-2 Sebzésdobásra
-  - Hátrány-2 CÉ dobásra
+  • Hátrány-2 Sebzésdobásra
+  • Hátrány-2 CÉ dobásra
   Például Hosszú kard hajítása
 
 Hajítás nem dobásra készített tárgyakkal
-  - Hátrány-1 Sebzésdobásra
-  - Hátrány-1 CÉ dobásra
+  • Hátrány-1 Sebzésdobásra
+  • Hátrány-1 CÉ dobásra
   Például sámli hajítása
 
 Hátulról támadás
-  Előny+2 TÉ dobásra
-  Pajzs VÉ nem számít
+  • Előny+2 TÉ dobásra
+  • Pajzs VÉ nem számít
 
 Helyhez kötve
-  - Hátrány-1 TÉ dobásra
-  - VÉ veszteség duplázódik
+  • Hátrány-1 TÉ dobásra
+  • VÉ veszteség duplázódik
 
 Képzetlen fegyverhasználat
   lásd Harcmodor képzettségek bónuszai
@@ -110,28 +110,28 @@ Közrefogás
   1 pengényi hátrányt semlegesít
 
 Láthatatlanul
-  - Támadó: Előny+1/2 Támadó dobásra
+  • Támadó: Előny+1/2 Támadó dobásra
             VÉ csökkentés: 3
-  - Védő: Hátrány-1/2 Támadó dobásra
+  • Védő: Hátrány-1/2 Támadó dobásra
   • Hallható, csendes támadó
   • Mérsékli: Vakharc fortély
 
 Levegőből támadás
-  Előny+2 Támadó dobásra
-  Roham (zuhanás) külön számolandó
+  • Előny+2 Támadó dobásra
+  • Roham (zuhanás) külön számolandó
 
 Magasabbról
-  Előny+1 Támadó dobásra (támadó)
+  • Előny+1 Támadó dobásra (támadó)
 
 Meglepetés
   Támadó:
-  - Megnyert kezdeményezés
-  - Előny+1 TÉ dobásra
-  - VÉ csökkentés: 3 + k20T
+  • Megnyert kezdeményezés
+  • Előny+1 TÉ dobásra
+  • VÉ csökkentés: 3 + k20T
   Védő:
-  - Többszörös támadás elvesztése
-  - Utolsónak támadhat a körben
-  - Pajzs VÉ csak szemből, pajzs felől
+  • Többszörös támadás elvesztése
+  • Utolsónak támadhat a körben
+  • Pajzs VÉ csak szemből, pajzs felől
   Pajzs VÉ csak akkor van, ha a támadás
     szemből vagy pajzs oldalról jön.
   Tovább növelhető támadó taktikával.
@@ -147,51 +147,51 @@ Pusztakezes harc
   lásd Puszta kéz harcértékeit
 
 Rosszabbik kézben tartott fegyver
-  Hátrány-1 TÉ dobásra
-  Kivétel: Kétkezesség fortély
+  • Hátrány-1 TÉ dobásra
+  • Kivétel: Kétkezesség fortély
     Rosszabbik kézzel is levonás
     nélkül harcolhatsz
     (de csak egy fegyvernél)
 
 Sebzéstípus: elsődleges
-  Sima sebzésdobás
-  Használja a fegyver
+  • Sima sebzésdobás
+  • Használja a fegyver
     elsődleges sebzési típusát
 
 Sebzéstípus: másodlagos
-  Hátrány-1 Sebzésdobásra
-  Használja a fegyver másodlagos
+  • Hátrány-1 Sebzésdobásra
+  • Használja a fegyver másodlagos
     sebzési típusát
 
 Sebzéstípus: alkalmatlan
-  Hátrány-2 Sebzésdobásra
-  Nem megfelelő sebzési típussal sebzel
+  • Hátrány-2 Sebzésdobásra
+  • Nem megfelelő sebzési típussal sebzel
 
 Sötét: Félhomály
-  - Hátrány-1 TÉ dobásra
-  - Érzék (látás) zavart
-  Mérsékli: Vakharc fortély
+  • Hátrány-1 TÉ dobásra
+  • Érzék (látás) zavart
+  • Mérsékli: Vakharc fortély
     Félhomályban nehezebb harcolni,
     fegyverek mozgása nehezen látható
 
 Sötét: teljes, zajokkal
-  - Hátrány-1 TÉ dobásra
-  - Érzék (látás) kioltott
-  Mérsékli: Vakharc fortély
+  • Hátrány-1 TÉ dobásra
+  • Érzék (látás) kioltott
+  • Mérsékli: Vakharc fortély
     Zajok mérséklik a büntetést
 
 Sötét: teljes, csendben
-  - Hátrány-2 TÉ dobásra
-  - Érzék (látás) kioltott
-  Mérsékli: Vakharc fortély
+  • Hátrány-2 TÉ dobásra
+  • Érzék (látás) kioltott
+  • Mérsékli: Vakharc fortély
 
 Tűz ruhán - ég
-  → Hátrány-1 Támadó dobásra
-  → (k20+5 SP) / kör
+  • Hátrány-1 Támadó dobásra
+  • (k20+5 SP) / kör
 
 Tűz ruhán - lángol
-  → Hátrány-2 Támadó dobásra
-  → (k20+0 SP) / kör
+  • Hátrány-2 Támadó dobásra
+  • (k20+0 SP) / kör
 
 Vadállatok ellen
   lásd leírást
@@ -200,14 +200,14 @@ Védekező takarásban
   Hátrány-1 TÉ dobásra mindkét félnél
 
 Védő Érték kiterjesztése másra
-- Többszörös támadás elvesztése
-- VÉ veszteség duplázódik
-- Büntetések csökkenthetők
+  • Többszörös támadás elvesztése
+  • VÉ veszteség duplázódik
+  • Büntetések csökkenthetők
     Testőr fortély tanulásával
 
 Vér elvakít
-  → Érzék (látás) zavart
-  → Hátrány-1 Támadó dobásra
+  • Érzék (látás) zavart
+  • Hátrány-1 Támadó dobásra
 ```
 
 
