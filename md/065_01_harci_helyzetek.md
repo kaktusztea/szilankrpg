@@ -210,7 +210,6 @@ Vér elvakít
   • Hátrány-1 Támadó dobásra
 ```
 
-
 <br />
 
 ## Belharci szituáció
@@ -815,7 +814,7 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
 ```
 Hátrány-1 Támadó dobásra
-(-5) SP / kör
+(k20 - 5) SP / kör
 ```
 
 Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
@@ -832,7 +831,7 @@ Harcon kívül: 1 kör
 
 ```
 Hátrány-2 Támadó dobásra
-(+0) SP / kör
+(k20 + 0) SP / kör
 ```
 
 Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
