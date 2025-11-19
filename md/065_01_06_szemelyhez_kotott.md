@@ -1,4 +1,8 @@
-# Láthatatlanul; Sötétben
+# Személyhez kötött helyzetek
+
+Itt tárgyaljuk a személyhez kötött Harci helyzeteket.
+
+# Láthatatlanul
 
 ## Hallható láthatatlan ellenfél
 
@@ -45,8 +49,51 @@ Vakharc hatása:
 
 Megjegyzés: Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ellen.
 
+<br />
+
 ---
-## Sötét: Félhomály
+# Tűz ruhán
+
+## Tűz ruhán - ég
+
+```
+Hátrány-1 Támadó dobásra
+(k20 - 5) SP / kör
+```
+
+Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
+
+### ✖️ Megszűntetése (eloltás)
+
+```
+Harcban: 1 kör
+Harcon kívül: 1 kör
+```
+
+---
+## Tűz ruhán - lángol
+
+```
+Hátrány-2 Támadó dobásra
+(k20 + 0) SP / kör
+```
+
+Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
+
+### ✖️ Megszűntetése (eloltás)
+
+```
+Harcban: Nem lehetséges
+Harcon kívül: 2 kör,
+  külső segítség szükséges
+```
+
+<br />
+
+---
+# Sötétben
+
+## Sötétben: Félhomály
 
 ```
 Hátrány-1 TÉ dobásra
@@ -57,10 +104,8 @@ Félhomályban kockázatosabb védekezni, a fegyverek mozgása nehezebben látha
 
 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
-<br />
-
 ---
-## Sötét: teljes, zajokkal
+## Sötétben: teljes, zajokkal
 
 ```
 Hátrány-1 TÉ dobásra
@@ -73,10 +118,8 @@ Sötétben ugyan a támadás sikere drasztikusan lecsökken és mindenki, aki ne
 
 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
-<br />
-
 ---
-## Sötét: teljes, csendben
+## Sötétben: teljes, csendben
 
 ```
 Hátrány-2 TÉ dobásra
@@ -88,3 +131,18 @@ Sötétben a támadás sikere drasztikusan lecsökken. Mindenki, aki nem tudja [
 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
 <br />
+
+---
+## Vér elvakít
+
+```
+Hátrány-1 Támadó dobásra
+Érzék (Látás) - zavart
+```
+
+Szemedbe folyik a vér, korlátoz a látásban és a harcban.
+### ✖️ Megszűntetése
+
+Harcban: `1` Akció felhasználásával kitörölheted a szemedből a vért, ez `1` támadás kihagyását jelenti
+
+---

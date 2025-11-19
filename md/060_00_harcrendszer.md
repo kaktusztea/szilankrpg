@@ -49,6 +49,13 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 ## 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
 - [Harci helyzetek](065_01_00_harci_helyzetek.md)
+  - [Belharci szituáció](065_01_01_belharci_szituacio.md)
+  - [Fegyverrántás váratlanul](065_01_02_fegyverrantas_varatlanul.md)
+  - [Harci pozíciók](065_01_03_harci_poziciok.md)
+  - [Fegyverrel kapcsolatos helyzetek](065_01_04_fegyver_harci_helyzetek.md)
+  - [Fizikai helyzetek](065_01_05_fizikai_helyzetek.md)
+  - [Személyhez kötött](065_01_06_szemelyhez_kotott.md)
+  - [Lények](065_01_07_lenyek.md)
 - [Harci taktikák](065_02_harci_taktikak.md)
 - [Harc alakzatban](065_03_harc_alakzatban.md)
 - [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
