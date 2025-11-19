@@ -45,7 +45,7 @@ KF: Különleges fegyver
 ### Garottos támadás
 
 - Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás) Harci helyzet
-- Siker esetén azonnal [Belharci szituáció](065_01_01_belharci_szituacio.md#belharci-szituáció) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
+- Siker esetén azonnal [Belharci szituáció](065_01_01_belharci_szituacio.md) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
   - `+8 SP` az `1.körben`
   - `+4 SP`: további körökben
 - Szabadulás a hurokból:

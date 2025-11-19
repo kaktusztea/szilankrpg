@@ -15,7 +15,7 @@
 
 ## Közös követelmény
 
-Mindegyik Belharcos Manőver [Belharci szituációt](065_01_01_belharci_szituacio.md#belharci-szituáció) igényel - kivéve a **Belharcba kerülést**.
+Mindegyik Belharcos Manőver [Belharci szituációt](065_01_01_belharci_szituacio.md) igényel - kivéve a **Belharcba kerülést**.
 
 ---
 ## [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) módosítói Belharcos Manőverek esetén

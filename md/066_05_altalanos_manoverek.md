@@ -59,7 +59,7 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 	- Belharcos fegyver használata
 	- **Közelharc** harcmodor használata
 
-**Hatás**: Sikeresen bekerültél belharcba, megkapod a [Belharci szituációnál](065_01_01_belharci_szituacio.md#belharci-szituáció) leírt módosítókat.
+**Hatás**: Sikeresen bekerültél belharcba, megkapod a [Belharci szituációnál](065_01_01_belharci_szituacio.md) leírt módosítókat.
 
 **Nagy siker**: `4`-el túldobott Ellenpróbánál még sebző **Megakasztás** támadást elszenvedve is bekerülsz belharcba.
 
@@ -375,7 +375,7 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpr
 
 **Hatás**:
 - Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
-- [Belharci szituáció](065_01_01_belharci_szituacio.md#belharci-szituáció)
+- [Belharci szituáció](065_01_01_belharci_szituacio.md)
 - [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
 
 <br />

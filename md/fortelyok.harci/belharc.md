@@ -2,7 +2,7 @@
 
 Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást és a földharcot is.
 
-- Sikeres 🗡️[Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés) manőver esetén 🗡️[Belharci szituációba](../065_01_01_belharci_szituacio.md#belharci-szituáció) kerülsz.
+- Sikeres 🗡️[Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés) manőver esetén 🗡️[Belharci szituációba](../065_01_01_belharci_szituacio.md) kerülsz.
 - Belharci szituációban a fokoknál leírt pluszok járnak, ha az alábbiak mind teljesülnek:
   - **Közelharc** harcmodorban harcolsz
   - legfeljebb "rövid" (`0`) pengehosszú fegyvereket forgatsz 
@@ -10,7 +10,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 
 ### Bővebben
 
-- [Harci helyzet: Belharci szituáció](../065_01_01_belharci_szituacio.md#belharci-szituáció)
+- [Harci helyzet: Belharci szituáció](../065_01_01_belharci_szituacio.md)
 - [Belharcos manőverek](../066_06_belharcos_manoverek.md)
 
 ---
@@ -42,6 +42,6 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 ---
 ###  Ellenfél módosítói
 
-Ezek változását szintén a Harcrendszer fejezet [Harci helyzet: Belharci szituáció](../065_01_01_belharci_szituacio.md#belharci-szituáció) leírásánál találod.
+Ezek változását szintén a Harcrendszer fejezet [Harci helyzet: Belharci szituáció](../065_01_01_belharci_szituacio.md) leírásánál találod.
 
 ---
