@@ -2,3 +2,5 @@ files:
   - README.md
 dirs:
   - md
+ignorePatterns:
+  - pattern: '^https://www.libreoffice.org/download/download/$'
