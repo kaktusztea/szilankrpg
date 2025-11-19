@@ -13,6 +13,4 @@ jobs:
           reporter: github-check
           fail_on_error: false
           filter_mode: nofilter
-          config: |
-            ignorePatterns:
-              - '^https://www.libreoffice.org/download/download/$'
+          config_file: .linkspector.yml
