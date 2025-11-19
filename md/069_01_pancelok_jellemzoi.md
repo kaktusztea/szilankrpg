@@ -25,7 +25,7 @@ Struktúra
    bőr, lánc, lemez, stb
 
 Fémalapanyag
-   fém vérteknél: milyen fémből készült
+   ha fém: milyenből készült?
 
 Csatolt elemek száma és minősége
    érték x darab
