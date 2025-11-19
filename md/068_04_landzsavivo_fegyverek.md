@@ -2,7 +2,7 @@
 
 ❕A lándzsavívó, szálfegyverek használatához helyre van szükség. Amint beszűkült téren kell forgatni, harcértékük `0`-ra zuhan!
 
-A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve, egy adott irányba végzi a harcot a karakter (folyósón egy irányba küzdeni).
+A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve, egy adott irányba végzi a harcot (folyósón egy irányba küzdeni).
 
 | **Hegy**      |  SP  | Sebzés módja | **Átütés** | Speciális                                                                                                                                                                                                                                                                                           |
 | ------------- |:----:|:------------:|:----------:| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
