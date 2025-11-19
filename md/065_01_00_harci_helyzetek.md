@@ -225,7 +225,6 @@ Vér elvakít
   - Levegőből támadás
   - Magasabbról
   - Védekező takarásban
-  - 
 - [Fegyverrel kapcsolatos helyzetek](065_01_04_fegyver_harci_helyzetek.md)
   - Hajítás alkalmatlan fegyverrel
   - Hajítás nem dobásra készített tárgyakkal
