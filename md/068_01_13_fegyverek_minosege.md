@@ -33,7 +33,7 @@ A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** i
 
 ### 🔆 Mágikus fegyverek és a fegyver Ideája
 
-Ökölszabály, hogy a mágikus fegyverbe legfeljebb akkora növelést lehet belefoglalni, amekkora az **Ideájuk** (minőségük). Tehát egy `+2`-es **Ideájú** kardba, maximum `+2`-es mágikus hatást lehet belefoglalni.
+Ökölszabály, hogy egy fegyverbe legfeljebb akkora mágikus növelést lehet belefoglalni, amekkora az **Ideája** (minősége). Tehát egy `+2`-es **Ideájú** kardba, maximum `+2`-es mágikus hatást lehet belefoglalni.
 
 ---
 
