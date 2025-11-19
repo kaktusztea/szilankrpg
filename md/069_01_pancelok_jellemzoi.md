@@ -15,7 +15,7 @@ Anyagminőség (±)
    ötvözet minősége
 
 Fémalapanyag
-   fém vérteknél: milyen fémből készült
+   ha fém: milyenből készült?
 ```
 
 ###  MGT
