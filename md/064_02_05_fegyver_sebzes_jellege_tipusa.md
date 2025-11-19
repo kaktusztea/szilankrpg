@@ -39,7 +39,7 @@ Különbséget teszünk az alábbi fegyver **sebzés típusok** szerint:
 → alkalmatlan
 ```
 
-### [Sebzéstípus: elsődleges](065_01_00_harci_helyzetek.md#sebzéstípus-elsődleges)
+### [Sebzéstípus: elsődleges](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-elsődleges)
 
 Ez egy **Harci helyzet** (státusz).
 
@@ -56,7 +56,7 @@ vágás/szúrás (V/S)
 ```
 
 ---
-### [Sebzéstípus: másodlagos](065_01_00_harci_helyzetek.md#sebzéstípus-másodlagos)
+### [Sebzéstípus: másodlagos](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos)
 
 ```
 Hátrány-1 Sebzésdobásra
@@ -71,7 +71,7 @@ A karakter **még támadó dobás előtt** bejelenti, hogy fegyverének másodla
 A karakter bejelenti, hogy Hosszú kardjával **Szúrni** szeretne. Ez fegyverének **másodlagos sebzési típusa**, így a Sebzésdobást `Hátrány-1` büntető módosítóval teheti csak meg.
 
 ---
-### [Sebzéstípus: alkalmatlan](065_01_00_harci_helyzetek.md#sebzéstípus-alkalmatlan)
+### [Sebzéstípus: alkalmatlan](065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan)
 
 ```
 Hátrány-2 Sebzésdobásra

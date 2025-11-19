@@ -6,7 +6,7 @@ Nem esel kétségbe akkor sem, ha nagyon kis helyen, vagy kimozgás lehetősége
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: a [Helyhez kötve](../065_01_00_harci_helyzetek.md#helyhez-kötve) szituáció Hatásai sújtanak.
+🌟 **Hatás**: a [Helyhez kötve](../065_01_05_fizikai_helyzetek.md#helyhez-kötve) szituáció Hatásai sújtanak.
 
 ---
 ### 1. fok

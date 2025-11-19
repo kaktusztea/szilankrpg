@@ -127,7 +127,7 @@ Lásd [Vakharc fortély- Bónusz: harci ösztön](../fortelyok.harci/vakharc.md#
 -6: a lopakodó Láthatatlan
 ```
 
-Kapcsolódik: [Láthatatlan](../065_01_00_harci_helyzetek.md#láthatatlanul)
+Kapcsolódik: [Láthatatlan](../065_01_06_szemelyhez_kotott.md#láthatatlanul)
 
 ### ⚜️ Látótér célszám módosító (lopakodó)
 

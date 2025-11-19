@@ -15,7 +15,7 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 ---
 ## ⚜️ Harci helyzetek és Manőverek - Meglepetés
 
-[Meglepett](065_01_00_harci_helyzetek.md#meglepetés) / [Készületlen](065_01_00_harci_helyzetek.md#készületlenség) az Ellenfél:
+[Meglepett](065_01_03_harci_poziciok.md#meglepetés) / [Készületlen](065_01_03_harci_poziciok.md#készületlenség) az Ellenfél:
 - Kimarad a **Megakasztás** (`M`) fázis (ha van) a védő oldalán
 - **Végrehajtás** dobásnál továbbra is `TÉ:+4`, de a **Meglepetés** miatt ugye `Előny+1` is jár erre a dobásra.
 - Támadó tehet bele `Manőver Pontot`.
@@ -23,7 +23,7 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 
 ## ⚜️ Harci helyzetek és Manőverek - Észrevétlen támadás
 
-Vannak Manőverek, amelyek [Észrevétlen támadást](065_01_00_harci_helyzetek.md#észrevétlen-támadás) igényelnek.
+Vannak Manőverek, amelyek [Észrevétlen támadást](065_01_03_harci_poziciok.md#észrevétlen-támadás) igényelnek.
 
 Kérdés, hogy ilyenkor miért dobunk mégis **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik - nem véletlen, hogy az elköltött `HM` pontokon alapszik, amelyek az általános harci tapasztalatot szimbolizálják.
 

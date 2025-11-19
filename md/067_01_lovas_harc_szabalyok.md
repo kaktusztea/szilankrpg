@@ -24,7 +24,7 @@ A karakter által alapból használt gyalogos harcmodor harcértékei (pl. Kardv
 
 Tehát `3.szintű` **Lovaglással** ugyanannyi a karakter harcértéke, mint ló nélkül, a `3.szint` alatt pedig járnak a képzetlenségből adódó levonások. A `4.szinttől` kezdve viszont jönnek a plusz harcérték módosítók.
 
-🔆 A harcértékekhez **NEM** adódik hozzá pluszban a [Magasabbról](065_01_00_harci_helyzetek.md#magasabbról) harci helyzet módosítója!
+🔆 A harcértékekhez **NEM** adódik hozzá pluszban a [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet módosítója!
 
 🔆 A Kopja, mint lovas fegyver Lándzsavívás harcmodorban forgatandó.
 
@@ -37,7 +37,7 @@ Tehát `3.szintű` **Lovaglással** ugyanannyi a karakter harcértéke, mint ló
 
 ### Fegyverméret-kategória bónusz
 
-A hátas maga `plusz 1 pengényi` extra [fegyverméret-kategóriát](065_01_00_harci_helyzetek.md#fegyverméret---pengehátrány) ad a lovasnak a [Fegyverméret](064_02_03_vedo_ertek_csokkentese.md) harci helyzet megállapításánál.
+A hátas maga `plusz 1 pengényi` extra [fegyverméret-kategóriát](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány) ad a lovasnak a [Fegyverméret](064_02_03_vedo_ertek_csokkentese.md) harci helyzet megállapításánál.
 
 <br />
 

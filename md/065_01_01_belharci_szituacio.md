@@ -35,7 +35,7 @@ Belharci szituációban `TÉ`, `VÉ`, `SP`  mind `0` értékre emelkednek.
 ---
 ### ⚜️ Nem-belharcos fegyverek belharci szituációban (`0` pengehossz+)
 
-- Azonos a [Beszorított helyzet (2) Erősen](#beszoritott-helyzet-2-er%C5%91sen) hatásaival.
+- Azonos a [Beszorított helyzet (2) Erősen](065_01_03_harci_poziciok.md#beszoritott-helyzet-2-erősen) hatásaival.
 - [Sebzés csökkentett](081_hatasok.md#-sebz%C3%A9s-cs%C3%B6kkentett)
 - Forgatója **Akció elhasználása nélkül** ha úgy dönt, elejtheti fegyverét - így puszta kézzel harcolhat tovább (`0` fegyver harcértékekkel)
 

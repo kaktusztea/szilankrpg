@@ -238,7 +238,7 @@ Vér elvakít
   - Elvesztett egyensúly
   - Földön fekve
   - Helyhez kötve
-- [Állapotok](065_01_06_allapotok.md)
+- [Állapotok](065_01_06_szemelyhez_kotott.md)
   - Láthatatlanul
   - Tűz ruhán
   - Sötétben

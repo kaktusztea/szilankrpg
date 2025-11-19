@@ -177,7 +177,7 @@ Ebben a szituációban mindkét fél részére nehezebb harcolni. Példa: kapu, 
 
 Figyelem: ha a védekező mozgásában korlátozottá válik a körülötte levő tereptárgyaktól, akkor változik a helyzet és az alábbiak közül valamelyik (KM dönt) módosítói vonatkoznak rá:
 - [Beszorított helyzet](#beszor%C3%ADtott-helyzet)
-- [Helyhez kötve](#helyhez-k%C3%B6tve)
+- [Helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve)
 
 <br />
 

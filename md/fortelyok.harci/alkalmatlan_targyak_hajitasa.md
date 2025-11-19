@@ -9,7 +9,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 ### Alapeset
 
 🌟 **Hatás**:
-- [Hajítás nem dobásra készített tárgyakkal](../065_01_00_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) harci helyzet büntetéseivel tudsz csak rögtönzött, nem dobásra alkalmas tárgyakat hajítani.
+- [Hajítás nem dobásra készített tárgyakkal](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) harci helyzet büntetéseivel tudsz csak rögtönzött, nem dobásra alkalmas tárgyakat hajítani.
 - [Nem dobásra készített tárgyak harcértéke](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy) fejezetben állapíthatod meg az ilyen tárgyak statisztikáit.
 
 ---
@@ -18,7 +18,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 🔒 **Követelmény**: [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
-- Már nem sújtanak az Alapesetnél leírt [levonások](../065_01_00_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
+- Már nem sújtanak az Alapesetnél leírt [levonások](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
 - A tárgyak [harcértéke](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy) nem változik!
 
 ---

@@ -17,7 +17,7 @@ Teljes sötétben is képes vagy tájékozódni.
 
 🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 **Hatás**: Mintha telihold fényénél tájékozódnál vaksötétben. A [Sötét: Félhomály](../065_01_00_harci_helyzetek.md#sötét-félhomály) módosítóival harcolhatsz.
+🌟 **Hatás**: Mintha telihold fényénél tájékozódnál vaksötétben. A [Sötét: Félhomály](../065_01_06_szemelyhez_kotott.md#sötétben-félhomály) módosítóival harcolhatsz.
 
 ---
 ### 2. fok

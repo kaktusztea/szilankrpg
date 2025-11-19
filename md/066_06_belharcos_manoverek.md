@@ -15,7 +15,7 @@
 
 ## Közös követelmény
 
-Mindegyik Belharcos Manőver [Belharci szituációt](065_01_00_harci_helyzetek.md#belharci-szituáció) igényel - kivéve a **Belharcba kerülést**.
+Mindegyik Belharcos Manőver [Belharci szituációt](065_01_01_belharci_szituacio.md#belharci-szituáció) igényel - kivéve a **Belharcba kerülést**.
 
 ---
 ## [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) módosítói Belharcos Manőverek esetén
@@ -42,7 +42,7 @@ Mindegyik Belharcos Manőver [Belharci szituációt](065_01_00_harci_helyzetek.m
 	- [Belharc](fortelyok.harci/belharc.md) – `1.fok`
 - Súlyos ellenfélnél opcionális **Erőpróba** (KM dönt)
 
-**Hatás**: Belharc közben fogást találsz ellenfeleden és átdobod a vállad felett. Innentől kezdve a [Harc földön fekve](065_01_00_harci_helyzetek.md#földön-fekve) módosítói szerint kell számolni harcértékeit.
+**Hatás**: Belharc közben fogást találsz ellenfeleden és átdobod a vállad felett. Innentől kezdve a [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói szerint kell számolni harcértékeit.
 
 <br />
 
@@ -84,7 +84,7 @@ Lásd a [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcból-ki
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelménye: Közelharc - `5.szint`
 
-**Hatás**: Sikeresen kigáncsoltad ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Harc földön fekve](065_01_00_harci_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+**Hatás**: Sikeresen kigáncsoltad ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 **Megjegyzés**: Súlyos ellenfélnél: opcionális **Erő Tulajdonságpróba** (KM dönt). Gondoljunk a nagy, páncélos ellenfelekre! Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél [Lábsöpréssel / Ökleléssel](066_05_altalanos_manoverek.md#lábsöprés--öklelés) kell próbálkoznod.
 

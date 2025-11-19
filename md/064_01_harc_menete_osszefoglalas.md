@@ -96,28 +96,28 @@ Példák:
 20 → 2
 ```
 
-#### [Fegyverméret - pengehátrány](065_01_00_harci_helyzetek.md#fegyverméret---pengehátrány)
+#### [Fegyverméret - pengehátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány)
 
 ```
 VÉ csökkentés
   1 + k20T
 ```
 
-#### [Fegyverméret - Azonos](065_01_00_harci_helyzetek.md#fegyverméret---azonos)
+#### [Fegyverméret - Azonos](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---azonos)
 
 ```
 Mindkét fél csökkentése
   2 + k20T
 ```
 
-#### [Fegyverméret - 1 pengés előny](065_01_00_harci_helyzetek.md#fegyverméret---1-pengés-előny)
+#### [Fegyverméret - 1 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---1-pengés-előny)
 
 ```
 VÉ csökkentés
   2 + k20T
 ```
 
-#### [Fegyverméret - 2 pengés előny](#fegyverm%C3%A9ret---2-peng%C3%A9s-el%C5%91ny)
+#### [Fegyverméret - 2 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---2-pengés-előny)
 
 ```
 VÉ csökkentés
