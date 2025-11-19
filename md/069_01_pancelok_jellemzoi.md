@@ -53,7 +53,7 @@ Kidolgozottság
    illesztések minősége
 
 Fémalapanyag
-   fém vérteknél: milyen fémből készült
+   ha fém: milyenből készült?
 
 Anyagminőség
    alapanyag, hajtogatás,
