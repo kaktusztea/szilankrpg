@@ -38,24 +38,16 @@ Felszerelés túlsúly
 ```
 Struktúra
    bőr, lánc, lemez, stb
-```
 
-```
 Csatolt tagok ára
    darab
-```
 
-```
 Kidolgozottság
    illesztések minősége
-```
 
-```
 Fémalapanyag
    fém vérteknél: milyen fémből készült
-```
 
-```
 Anyagminőség
    alapanyag, hajtogatás,
    ötvözet minősége
@@ -76,14 +68,26 @@ Struktúra
 Fémalapanyag
   → acél, abbit, mithrill
   → Hat erre: SFÉ, MGT, Ár
+```
+
+```
 Csatolt elemek száma, minősége
   → Hat erre: MGT, Ár
   → védett területre hat
+```
+
+```
 Anyagminőség
   → Hat erre: SFÉ, Ár
+```
+
+```
 Mennyire passzol?
   → vértviselő testére
   → Hat erre: MGT
+```
+
+```
 Erő
   → Hat erre: MGT
 ```
