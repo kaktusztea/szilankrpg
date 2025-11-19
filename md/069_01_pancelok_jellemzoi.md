@@ -72,8 +72,7 @@ Fémalapanyag
 
 ```
 Csatolt elemek száma, minősége
-  → Hat erre: MGT, Ár
-  → védett területre hat
+  → Hat erre: MGT, Ár, védett terület
 ```
 
 ```
