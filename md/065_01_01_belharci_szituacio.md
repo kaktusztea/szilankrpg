@@ -6,11 +6,11 @@ Kapcsolódik:
 
 ## Belharc menete
 
-- Sikeres 🗡️[Belharcba kerülés](../066_06_belharcos_manoverek.md#belharcba-kerülés) manőver esetén 🗡️[Belharci szituációba](../065_01_01_belharci_szituacio.md) kerülsz.
+- Sikeres 🗡️[Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés) manőver esetén 🗡️[Belharci szituációba](065_01_01_belharci_szituacio.md) kerülsz.
 - Belharci szituációban a fokoknál leírt pluszok járnak, ha az alábbiak mind teljesülnek:
   - **Közelharc** harcmodorban harcolsz
   - legfeljebb "rövid" (`0`) pengehosszú fegyvereket forgatsz 
-- Megnyílik a lehetőség [Belharcos manőverek](../066_06_belharcos_manoverek.md) használatára
+- Megnyílik a lehetőség [Belharcos manőverek](066_06_belharcos_manoverek.md) használatára
 
 Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. Magában foglalja a birkozást és a földharcot is.
 
