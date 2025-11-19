@@ -9,9 +9,11 @@ Egy páncélt három jellemző ír le: a Sebzésfelfogó Érték (**SFÉ**), a M
 ```
 Struktúra
    bőr, lánc, lemez, stb
+
 Anyagminőség (±)
    alapanyag minősége, hajtogatás,
    ötvözet minősége
+
 Fémalapanyag
    fém vérteknél: milyen fémből készült
 ```
@@ -21,14 +23,19 @@ Fémalapanyag
 ```
 Struktúra
    bőr, lánc, lemez, stb
+
 Fémalapanyag
    fém vérteknél: milyen fémből készült
+
 Csatolt elemek száma és minősége
    érték x darab
+
 Mennyire passzol?
    vértviselő testére
+
 Erő Tulajdonság
    csökkenti
+
 Felszerelés túlsúly
    ha túlpakoltad magad
 ```
