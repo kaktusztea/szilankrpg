@@ -38,12 +38,24 @@ Felszerelés túlsúly
 ```
 Struktúra
    bőr, lánc, lemez, stb
+```
+
+```
 Csatolt tagok ára
    darab
+```
+
+```
 Kidolgozottság
    illesztések minősége
+```
+
+```
 Fémalapanyag
    fém vérteknél: milyen fémből készült
+```
+
+```
 Anyagminőség
    alapanyag, hajtogatás,
    ötvözet minősége
