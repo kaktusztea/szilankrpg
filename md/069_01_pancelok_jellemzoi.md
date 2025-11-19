@@ -70,6 +70,9 @@ Anyagminőség
 Struktúra
   → bőr, sodrony, stb
   → Hat erre: SFÉ, MGT, Ár
+```
+
+```
 Fémalapanyag
   → acél, abbit, mithrill
   → Hat erre: SFÉ, MGT, Ár
