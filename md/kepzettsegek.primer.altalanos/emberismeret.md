@@ -37,32 +37,13 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 <br />
 
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Érzékenység: `-1`
-
-🌟 Hatás: Észreveszi a feltűnő érzelmi állapotokat. **Példa**: átlagember.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Érzékenység: `+0`
-
-🌟 Hatás: Alapvető személyiségvonások felismerése. **Példa**: Sokat megélt öregember, falu bölcse. Ránézésre képes vagy megkülönböztetni, hogy egy személy vezető típus, vagy inkább követő. Kivéve ha szándékosan titkolja, vagy szerepet játszik. Meg tudod ítélni, mennyire figyelnek rád ténylegesen - csak udvariasan bólogatnak, vagy valóban érdekli őket a mondandód.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Érzékenység: `+1`
 
-🌟 Hatás:
-- Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri.
-- Ha belépsz egy társaságba, érzed, hogy ki a „hangadó”, kinek a véleményét kell elsősorban befolyásolnod. Ha belépsz egy közösségi térbe, megérzed az alaphangulatot.
-- Mentális problémákat felismersz, elkezdhetsz gyógyítani.
-- Terápia: [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s): Hetek alatt képes vagy `1` fokot enyhíteni belőle
-- **Példa**: Vallatótiszt, szélhámos. 
+🌟 Mesterfortély: ⭕
 
 ---
 #### Nagymester (12) 📖
@@ -71,12 +52,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 - Érzékenység: `+2`
 - Intelligencia: `+1`
 
-🌟 Hatás:
-- Nagyobb mágikus beavatkozást felfedezni egy jelentős személyiségváltozás mögött.
-- Minden beszélgetésben automatikusan megérzed, ki a leginkább megingatható fél. Nem azt, hogy hogyan, hanem kit lehet legkönnyebben befolyásolni.
-- Ha belépsz akár egy üres helyre is, megérzed az erős, leplezetlen asztrális lenyomatokat.
-- Terápia: [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s): Napok, hetek alatt képes vagy `2` fokot enyhíteni belőle
-- **Példa**: Főpap, inkvizítor, híres színész.
+🌟 Mesterfortély: Új asztrális érzékszerved nyílik, amellyel a személyiségvonások változásáról, érzelmi állapotokról meg tudod állapítani, hogy mágikus eredetűek-e. Igen/Nem.
 
 ---
 #### Élő legenda (15) 📖
@@ -85,7 +61,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 - Érzékenység: `+3`
 - Intelligencia: `+2`
 
-🌟 Hatás:
+🌟 Mesterfortély:
 - Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
 - **Terápia**: pusztán egy rövid beszélgetés alatt képes vagy a  [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s) hatását megszűntetni.
 - **Példa**: asztrálmágus
@@ -119,28 +95,32 @@ Ilyenkor az Emberismeret egyfajta „radarként” működik, megpróbál a kül
 
 #### Könnyű (6) 🎲 
 
-Leplezetlen félelmet észrevenni.
+Észreveszi a feltűnő, felszínes érzelmi állapotokat. Meg tudod ítélni, mennyire figyelnek rád ténylegesen - csak udvariasan bólogatnak, vagy valóban érdekli őket a mondandód.
 
 #### Átlagos (9) 🎲 
 
-Alapvető személyiségvonásokat felismerni.
+Alapvető nem leplezett személyiségvonások felismerése.
 
 #### Nehéz (12) 🎲 
 
-Többszörös személyiség betegséget egy rövid beszélgetés után beazonosítani. Hiszti előszelét megérezni 🙂
+- Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri.
+- Csapatdinamikát összevontan képes vagy megállapítani egy darab dobással. Érzed, hogy ki a „hangadó”, kinek a véleményét kell elsősorban befolyásolnod. 
+- Érzelemkitörések előszelét megérezni.
 
 #### Nagyon nehéz (15) 🎲 
 
-Megállapítani, hogy egy jelentős személyiségváltozás hátterében nagyszabású mágikus beavatkozás áll.
+- Minden beszélgetésben automatikusan megérzed, ki a leginkább megingatható fél. Nem azt, hogy hogyan, hanem kit lehet legkönnyebben befolyásolni.
+- Mentális problémákat felismersz, elkezdhetsz gyógyítani. ⭕TODO: mentális problémák gyógyítása; Terápia: [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s): Hetek alatt képes vagy `1` fokot enyhíteni belőle
 
 #### Rendkívül nehéz (18) 🎲 
 
-Megállapítani, hogy egy személyiségváltozás hátterében kisebb mágikus beavatkozás áll.
+- ⭕TODO⭕ Mágia kidolgozásakor visszatérni.
 
 #### Emberfeletti (21) 🎲 
 
-- Ráérezni, hogy a másik fél személyisége valószínűleg túlvilági lény befolyása alatt áll.  
-- „Magzat megrontása” vulgármágikus varázslatot felismerni.
+- ⭕TODO⭕ Mágia kidolgozásakor visszatérni.
+- ⭕Ráérezni, hogy a másik fél személyisége valószínűleg túlvilági lény befolyása alatt áll.
+- ⭕„Magzat megrontása” vulgármágikus varázslatot felismerni.
 
 <br />
 
@@ -151,3 +131,5 @@ Megállapítani, hogy egy személyiségváltozás hátterében kisebb mágikus b
 - Hosszabb a kontaktus ideje és/vagy elmélyültebb az alapesetnél: `-3`
 - Más fajú a célszemély: `+3`
 - Asztrál szem hatása: ⭕TODO⭕
+
+---

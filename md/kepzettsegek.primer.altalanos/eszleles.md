@@ -32,7 +32,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Kismester (6) 📖
 
@@ -47,7 +47,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény: Érzékenység: `+1`
 
-🌟 Hatás: Tapasztalt fejvadász. Megérzed, ha valaki a közeledben leplezés nélkül, tartósan rád figyel - még ha nem is látod a személyt.
+🌟 Mesterfortély: Tapasztalt fejvadász. Megérzed, ha valaki a közeledben mágikus leplezés nélkül, tartósan rád figyel - még ha nem is látod a személyt.
 
 <br />
 
@@ -56,7 +56,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény:  Érzékenység: `+2`
 
-🌟 Hatás: Elit, uralkodói testőr. Kiszagolod az erős mágia- vagy Aura jelenlétet: pontos értelmezéshez kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
+🌟 Mesterfortély: Elit, uralkodói testőr. Kiszagolod az erős mágia- vagy Aura jelenlétet: pontos értelmezéshez kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
 
 <br />
 
@@ -65,7 +65,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény:  Érzékenység: `+2`
 
-🌟 Hatás:
+🌟 Mesterfortély:
 
 - Harcművész nagymester, mágus.
 - Új érzékek nyílnak meg számodra misztikus formában. ⭕TODO⭕
@@ -118,3 +118,5 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 - Gyorsan, nyomás alatt keresni: `+3`
 - Zavaró körülmények: `[+1; +6]`
 - Ha az észlelés aktív: `-3`
+
+---

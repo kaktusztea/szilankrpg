@@ -48,50 +48,27 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Intelligencia: `+0`
-
-🌟 Hatás: Ha beleszólsz egy társalgásba, a jelenlévők legalább figyelembe veszik, nem söprik félre teljesen. Hanghordozásod ösztönösen figyelemfelkeltő, előadásod nem esik szét – a közönség könnyebben odafigyel, mint egy átlagember esetén. Rövid ideig fenn tudod tartani egy kisebb csoport érdeklődését, anélkül hogy erőlködnöd kellene.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Intelligencia: `+1`
-
-🌟 Hatás: Ha szónokolsz vagy beszélsz, az átlagemberek ösztönösen elcsendesednek, hogy hallják.
-Szavaid megerősítik társaid mondanivalóját: ha valaki melletted beszél, annak szavai nagyobbnak, fontosabbnak tűnnek.
-
----
 #### Mester (9) 📖
 
-🔒 Követelmény: Intelligencia: `+1`
+🔒 Követelmény: -
 
-🌟 Hatás: Szavaidnak „súlya” van: aki hallgat, egy pillanatig nem tudja elhessegetni, hanem kénytelen tudomást venni róla. Egy rövid mondatodat bárki észben tartja, nem siklik át rajta. Például egy parancs vagy fontos kijelentés „megragad”.
+🌟 Mesterfortély: Ha akarod, egy teremnyi ember figyelmét pusztán kisugárzásoddal fel tudod hívni magadra. Olyan a hatás, mintha felkiáltanál - de szó nélkül.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  Intelligencia: `+2`
+🔒 Követelmény: -
 
-🌟 Hatás: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor a hatás némileg elmélyül.
-
-Hangodban és gesztusaidban van valami, amit nehéz másképp értelmezni, mint hogy „ez bizony egy hiteles ember”. Olyan, mintha a belőled áradó tekintély természetesen lengené körül lényedet.
-
-Alacsonyabb tapasztalati szintű karakterekkel szemben ha parancsoló vagy sürgető hangon kérsz valamit, a hallgatóban azonnali belső késztetés támad a teljesítésére – még ha utána ellen is állhat, de a pillanatnyi késztetés mindenképp létrejön.
+🌟 Mesterfortély: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+1` jár a képzettségpróbádra.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  Intelligencia: `+2`
+🔒 Követelmény: -
 
-🌟 Hatás: Aurádra már dobhatsz is, a többi hatás megegyezik a `12.szinten` leírtakkal.
-
-Szavaid apró gondolatmagként fészkelik be magukat a hallgatóba, nagy valószínűséggel később is újra és újra eszükbe jut, amit "elültettél".
-
-Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még ellenfeleid is ösztönösen hangsúlyt adnak mondandódnak, és csak tudatos erőfeszítéssel képesek kisöpörni gondolataikból.
+🌟 Mesterfortély: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+2` jár a képzettségpróbádra.
 
 <br />
 
@@ -101,3 +78,5 @@ Jelenlétedben beszédeid mindig aránytalanul fontosnak tűnnek – még ellenf
 - Olyan nyelven próbáksz hatni, amit nem ért(enek) a célszemély(ek): `+3`
 - Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**.
 - Ha bármilyen Státusz hatása alatt állsz, **Befolyásolás** képzettségpróba előtt [ellenőrizd](../082_statuszok.md), hogy vonatkozik-e rád bármilyen negatív [Hatás](../081_hatasok.md).
+
+---

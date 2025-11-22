@@ -17,45 +17,44 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 - [Lóról leesés](../szituaciok/lorol_hatasrol_leeses.md)
 - [Szándékos kitérés lövés elől](../szituaciok/szandekos_kiteres_loves_elol.md)
 
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 
 🔒 Követelmény: **Ügyesség**: `+0`
 
-🌟 Hatás: -
+🌟 Hatás: Ugrás/esés távolság felmérése. A KM megmondja kérdésedre, hogy:
+- biztosan átugrod
+- talán: van esélyed rá, hogy átugrod
+- biztos nem tudod átugrani
+
+Ha pontosabban akarod, akkor egy `Nehéz (12)` próbával pontosíthatod a választ. Lásd ott.
 
 ---
 #### Kismester (6) 📖
 
 🔒 Követelmény: **Ügyesség**: `+1`
 
-🌟 Hatás: Ugrástávolság felmérése kb. `10 méterig`
-
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: **Ügyesség**: `+2`
 
-🌟 Hatás:
-- Ugrástávolság felmérése kb. `20 méterig`
-- Felmérni: valaki tud-e ugrani adott távolságra a rajta levő súlyokkal együtt
+🌟 Mesterfortély: Ugrásmagasságod duplázódik. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-3`.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: **Ügyesség**: `+3`
 
-🌟 Hatás:
-- Ugrástávolság felmérése korlátlanul
-- Képes vagy lassítani esésedet. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségek feleződnek. Ugrásmagasságod duplázódik.
+🌟 Mesterfortély: Ugrásmagasságod háromszorozódik. Képes vagy lassítani esésedet. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-6`.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: **Ügyesség**: `+3`
 
-🌟 Hatás: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és mindig puhán érsz földet. Ugrásmagasságod négyszereződik.
+🌟 Mesterfortély: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és mindig puhán érsz földet. Ugrásmagasságod négyszereződik.
 
 <br />
 
@@ -75,14 +74,16 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 - Elkerülni egy hirtelen leeső akadályt futás közben
 - Gyors kigurulás végrehajtása egy enyhén lejtős, köves terepen
 - Megkapaszkodni egy ledőlő fa ágain
-x
+
 #### Nehéz (12) 🎲 
 
-- Lecsúszni talpon egy hosszú lépcső korlátján
+- Távolság felmérésénél a KM megmondja a célszámot.
+- Lecsúszni talpon egy hosszú lépcső korlátján.
 - Kimozogni közepes mennyiségű potyogó sziklát
 
 #### Nagyon nehéz (15) 🎲 
 
+- Felmérni: valaki tud-e ugrani adott távolságra a rajta levő súlyokkal együtt
 - Végigfutni a függőleges falon `3 méter` hosszan.
 - Nekifutásból felfutni egy `3 méter` magas falon és beugrani egy ablakon
 

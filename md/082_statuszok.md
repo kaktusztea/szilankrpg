@@ -229,8 +229,9 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 - `Hátrány-1`: szellemi képzettségpróbákra
 
 ⚡ Példa:
-- `2` napja nem aludtál
+- napok óta napja nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
+- Egy hete óta nem ettél
 
 ### ✴️ Fizikai (2) Kimerültség
 
@@ -239,8 +240,8 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 - `Hátrány-2`: szellemi képzettségpróbákra
 -  `FP S1`
 
-⚡ Példák
-- `3` napja nem aludtál
+⚡ Példa:
+- már nem is emlékszel, mikor aludtál utoljára
 - összeverten menekülsz órák óta
 
 ### ✴️ Fizikai (3) Elcsigázottság
@@ -248,13 +249,14 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 - Kezdeményezés - Nagyon lassú
 - VÉ veszteség duplázódik
 - Többszörös támadás elvesztése
-- Lassúság
-- Automatikus kudarc: nem-harc fizikai képzettségek
+- Mozgás - lassulás
 - Automatikus kudarc: [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) (nincs harcérték bónusz belőle)
+- `Hátrány-2`: minden nem-harci képzettségpróbákra 
 -  `FP S2`
-- `Hátrány-1`: Szociális képzettségpróbákra
 
 ⚡ Példa: éhhalál szélén tengődés
+
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 
 <br />
 
