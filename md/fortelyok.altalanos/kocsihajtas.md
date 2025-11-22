@@ -6,7 +6,7 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Postakocsi, ökrösszekér elvezetése
+🌟 **Hatás**: Lovasszekér, ökrösszekér, postakocsi elvezetése
 
 ---
 ### 2. fok

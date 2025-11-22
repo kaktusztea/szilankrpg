@@ -21,7 +21,8 @@ Csomók ismerete, kötése, rögzítése.
 - Ügyesség: `+0`
 
 🌟 **Hatás**:
-- Ügyesség ellenpróbához: `+2` 
+- Ügyesség ellenpróbához: `+2`
+- Különleges csomók ismerete
 
 ### 2. fok
 
@@ -30,6 +31,7 @@ Csomók ismerete, kötése, rögzítése.
 
 🌟 **Hatás**:
 - Ügyesség ellenpróbához: `+4` 
+- Mestercsomók ismerete
 
 <br />
 

@@ -4,6 +4,8 @@
 
 🔒 **Követelmény**: nincs
 
-🌟 **Hatás**: Az állatok alapból rokonszenvvel viseltetnek irányodban. Ez nem jelent automatikus együttműködést: nyilván egy kicsinyeit védő, vagy direkt fenyegetést érzékelő állat nem lesz ennyitől kezes.
+🌟 **Hatás**:
+- Az állatok, állati intelligenciájú élőlények alapból rokonszenvvel viseltetnek irányodban. Ez nem jelent automatikus együttműködést: nyilván egy kicsinyeit védő, vagy direkt fenyegetést érzékelő állat nem lesz ennyitől kezes.
+- Szociális interakciót igénylő próbáknál `+2` bónusz jelent. 
 
 ---

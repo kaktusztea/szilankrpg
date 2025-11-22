@@ -44,7 +44,6 @@ Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor
 🌟 Hatás:
 - Ismered az alapvető mászási technikákat, pár hasznos csomót.
 - **Példa**: Gyakorlott mászó, rendszeres kiránduló
-- Tanulható: [Pók](../fortelyok.altalanos/pok.md) fortély
 
 ---
 #### Mester (9) 📖

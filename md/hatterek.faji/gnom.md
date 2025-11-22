@@ -13,7 +13,7 @@ bevezető ⭕
 
 ### ⚜️Érzék-Fortélyok maximuma
 
-- [Ultralátás](../fortelyok.erzekek/fejlett_szaglas.md) - 3. fok
+- [Ultralátás](../fortelyok.erzekek/emberentuli_szaglas.md) - 3. fok
 - [Infralátás](../fortelyok.erzekek/infralatas.md) - 2. fok
 - [Barlangi tájékozódás](../fortelyok.erzekek/barlangi_tajekozodas.md) - 1. fok
 

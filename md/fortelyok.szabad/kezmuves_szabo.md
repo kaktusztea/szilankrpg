@@ -8,4 +8,8 @@ Sérült ruhadarabokat is javítasz.
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)
 
+### Kapcsolódik
+
+- [Százarcú](../fortelyok.altalanos/szazarcu.md): ha mindkét fortélyok megvan, képes vagy az ott leírtaknál leírt átalakulós ruhák elkészítésére.
+
 ---

@@ -1,4 +1,4 @@
-## 🟣 Fejlett látás (1)
+## 🟣 Emberentúli látás (1)
 
 <!-- tag: erzekfortely -->
 

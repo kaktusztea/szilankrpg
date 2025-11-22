@@ -6,7 +6,8 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 
 ### Kapcsolódik
 
-[Álcázás/álruha](../kepzettsegek.szekunder/alcazas_alruha.md) képzettség
+- [Álcázás/álruha](../kepzettsegek.szekunder/alcazas_alruha.md) képzettség
+- [Kézműves: Szabó](../fortelyok.szabad/kezmuves_szabo.md) Szabad Fortély
 
 ### Alapeset
 

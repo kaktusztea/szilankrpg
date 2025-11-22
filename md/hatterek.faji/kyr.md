@@ -11,7 +11,7 @@ bevezető ⭕
 
 ### ⚜️Érzék-Fortélyok maximuma
 
-- [Ultralátás](../fortelyok.erzekek/fejlett_szaglas.md) - 1. fok
+- [Ultralátás](../fortelyok.erzekek/emberentuli_szaglas.md) - 1. fok
 
 ### ⚜️Faj misztérium
 

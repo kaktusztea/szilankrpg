@@ -27,6 +27,6 @@ Ha egy kacsaúsztatónál mélyebb vízbe tévedsz, többé már nem merülsz el
 
 🌟 **Hatás**:
 - Tudsz úszni
-- Hosszú távú úszás esetén⚪**Edzettség** próbára: `+2`
+- Hosszú távú úszás esetén ⚪**Edzettség** próbára: `+2`
 
 ---

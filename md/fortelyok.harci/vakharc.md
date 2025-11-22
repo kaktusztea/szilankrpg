@@ -15,7 +15,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 🌟 **Hatás**:
 - Az Érzék-Hatás `1` fokot enyhül:
-  - [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) 
+  - [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges)
   - [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) → [Érzék(látás) - zavart](../081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
 - Megszűntet `1` fok Hátrányt a védő `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
 
@@ -25,10 +25,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 🔒 **Követelmény**:
 - Érzékenység: `+3`
 - Összpontosítás - `6.szint`
-- ⚪ **Érzékenység (Intuíció)**: `+3`
-  VAGY
-- ⚪ **Érzékenység (Hallás)**: `+3`
-
+  
 🌟 **Hatás**:
 - Az Érzék-Hatás `2` fokot enyhül:
   - [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → [Érzék(látás) - zavart](../081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
@@ -42,7 +39,6 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 🔒 **Követelmény**:
 - Érzékenység: `+4`
 - Összpontosítás - `9.szint`
-- ⚪ **Érzékenység(Intuíció)**: `+4`
 
 🌟 **Hatás**:
 - Az Érzék-Hatás `3` fokot enyhül:

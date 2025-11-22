@@ -12,6 +12,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 
 - [Méregkeverés](../kepzettsegek.primer.altalanos/meregkeveres.md) képzettség: `+2`
 - [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettség
+
 ### Kiterjeszti ezeket
 
 - [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md): boncolás, halott vizsgálata

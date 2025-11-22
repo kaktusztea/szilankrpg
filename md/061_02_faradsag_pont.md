@@ -47,7 +47,7 @@ Fizikai behatás esetén kb. **óránként 1 pont „tűnik el”**, és így sz
 
 Mérgezés, betegség esetén a hatás tartósabb is lehet, itt a KM dönt. **Alvás közben** a gyógyulási sebesség duplázódik, tehát `2 FP / óra`. Ha a KM úgy látja indokoltnak eltérhet a fenti számoktól.
 
-Kapcsolódik: [Vadember](fortelyok.altalanos/vadember.md) fortély
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 
 ---
 ### Tartós rosszullét

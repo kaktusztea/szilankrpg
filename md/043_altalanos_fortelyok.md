@@ -7,9 +7,9 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 <!-- tag: erzek__fortely -->
 
 - [Barlangi tájékozódás](fortelyok.erzekek/barlangi_tajekozodas.md)
-- [Fejlett hallás](fortelyok.erzekek/fejlett_hallas.md)
-- [Fejlett látás](fortelyok.erzekek/fejlett_latas.md)
-- [Fejlett szaglás](fortelyok.erzekek/fejlett_szaglas.md)
+- [Fejlett hallás](fortelyok.erzekek/emberentuli_hallas.md)
+- [Fejlett látás](fortelyok.erzekek/emberentuli_latas.md)
+- [Fejlett szaglás](fortelyok.erzekek/emberentuli_szaglas.md)
 - [Infralátás](fortelyok.erzekek/infralatas.md)
 - [Ultralátás](fortelyok.erzekek/ultralatas.md)
 
@@ -45,7 +45,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Százarcú](fortelyok.altalanos/szazarcu.md)
 - [Szerencsés](fortelyok.altalanos/szerencses.md)
 - [Úszás](fortelyok.altalanos/uszas.md)
-- [Vadember](fortelyok.altalanos/vadember.md)
+- [Szívósság](fortelyok.altalanos/szivossag.md)
 - [Vezető: Bölcsészprofesszor](fortelyok.altalanos/vezeto_bolcseszprofesszor.md)
 - [Vezető: Hajóskapitány](fortelyok.altalanos/vezeto_hajoskapitany.md)
 - [Vezető: Nyomozó](fortelyok.altalanos/vezeto_nyomozo.md)

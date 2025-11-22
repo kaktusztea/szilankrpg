@@ -37,7 +37,7 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 - [Asztrológia](fortelyok.szabad/asztrologia.md)
 - [Csábítás](fortelyok.szabad/csabitas.md)
 - [Éneklés](fortelyok.szabad/enekles.md)
-- [Fejlett ízlelés](fortelyok.szabad/fejlett_izleles.md)
+- [Emberentúli ízlelés](fortelyok.szabad/emberentuli_izleles.md)
 - [Fejlett tapintás](fortelyok.szabad/fejlett_tapintas.md)
 - [Festészet](fortelyok.szabad/festeszet.md)
 - [Gazdálkodás](fortelyok.szabad/gazdalkodas.md)

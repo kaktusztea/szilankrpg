@@ -2,11 +2,11 @@
 
 Próba dobható. Alapesetben ellenpróbával megy, a másik fél [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettséggel dob.
 
-Az álcázás nagy előny, főleg ha vadásznak rád. Megfelelő maszk, smink, ruha, szerep felvétele - ezek elengedhetetlenek. Egy jó bajusz csodákat tehet, csak le ne essen a kritikus pillanatban.
+Az álcázás nagy előny, főleg ha vadásznak rád. Megfelelő maszk, smink, ruha, archetípus felvétele - ezek elengedhetetlenek. Egy jó bajusz csodákat tehet, csak le ne essen a kritikus pillanatban.
 
-Az Álcázás/álruha képzettséggel megváltoztathatod külsődet, tudásodtól függ, hogy mennyire és milyen hitelesen. A képzettség a fentieken kívül úgynevezett „szerepeket" ad a karakternek. Ezek lehetnek pl. „pap", „nemes", „paraszt", stb. Arra jók, hogy alapvető - nem etikett! - viselkedési sablonokat adnak, melyek segítségével például elhitetheti a karakter a szemlélőkkel, hogy ő tényleg pap. A szerepek megvalósítása magában foglalja a jellegzetes testtartások átvételét, mozgási jellegeket, viselkedési mintákat is. Ez nem konkrét színészet, inkább hosszasan begyakorolt gyakorlati tudás.
+Az Álcázás/álruha képzettséggel megváltoztathatod külsődet, tudásodtól függ, hogy mennyire és milyen hitelesen. A képzettség a fentieken kívül úgynevezett „archetípusokat" ad a karakternek. Ezek lehetnek pl. „pap", „nemes", „paraszt", stb. Arra jók, hogy alapvető - nem etikett! - viselkedési sablonokat adnak, melyek segítségével például elhitetheti a karakter a szemlélőkkel, hogy ő tényleg pap. Az archetípusok megvalósítása magában foglalja a jellegzetes testtartások átvételét, mozgási jellegeket, viselkedési mintákat is. Ez nem konkrét színészet, inkább hosszasan begyakorolt gyakorlati tudás.
 
-Természetesen a fenti, nevesített szerepeken felül mássá is átlényegülhesz - erről képzettségpróba dönt. Minél távolabbi a szerep a meglevő, ismert szerepeidtől, illetve alap személyiségedtől, külsődtől, annál nehezebb a próba. KM dönt.
+Természetesen a fenti, nevesített archetípusokon felül mássá is átlényegülhesz - erről képzettségpróba dönt. Minél távolabbi az archetípus a meglevő, ismert archetípusaidtól, illetve alap személyiségedtől, külsődtől, annál nehezebb a próba. KM dönt.
 
 ### Szürke átlagember szerep
 

@@ -1,5 +1,7 @@
 ## 🟣 Műhelymester (1)
 
+Tipikusan NJK fortély.
+
 Jól tudod delegálni a kézműves termékek előállításához szükséges munkafolyamatokat.
 
 ### Kapcsolódik

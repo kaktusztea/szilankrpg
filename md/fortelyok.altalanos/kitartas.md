@@ -1,6 +1,6 @@
 ## 🟣 Kitartás (1)
 
-Szívós vagy mint egy rozsomák.
+Kemény vagy mint egy rozsomák.
 
 ### Kapcsolódik
 

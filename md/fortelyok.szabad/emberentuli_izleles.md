@@ -1,4 +1,4 @@
-## 🟣 Fejlett ízlelés
+## 🟣 Emberentúli ízlelés
 
 Különlegesen kifinomult az ízlelésed, ez lehet áldás és átok is.
 

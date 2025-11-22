@@ -1,8 +1,10 @@
-## 🟣 Fejlett hallás (1)
+## 🟣 Emberentúli hallás (1)
 
 <!-- tag: erzekfortely -->
 
 Fajhoz felvehető Érzék-fortély.
+
+Csak karakteralkotáskor vehető fel, vagy mágia hatására.
 
 ### Alapeset
 
