@@ -159,3 +159,5 @@ Emlékezet, Érzékenység.
 
 - Könyvtár: `-3`
 - Tanító aktívan segít: `-3`
+
+---
