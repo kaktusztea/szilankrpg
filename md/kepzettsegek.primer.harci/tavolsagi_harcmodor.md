@@ -30,30 +30,28 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 
 #### Novícius (3) 📖
 
-🔒 Követelmény: Ügyesség: `+0`
+🔒 Követelmény: -
 
 🌟 Hatás: Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
 
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: Ügyesség: `+1`
+🔒 Követelmény: -
 
 🌟 Hatás: -
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: Ügyesség: `+2`
+🔒 Követelmény: -
 
-🌟 Hatás:
-- Bármilyen lőfegyver/hajítófegyver kerül a kezedbe, nem kell "belőnöd", gyakorolnod vele, büntetés nélkül azonnal teljes harcértékeddel tudod használni.
-- Alapeset: [CÉ számítás - Módosítók](../071_tavharc_ce.md#c%C3%A9-m%C3%B3dos%C3%ADt%C3%B3k) → "Nem belőtt íjak  / most lő először ezzel"
+🌟 Hatás: Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_13_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény: Ügyesség: `+3`
+🔒 Követelmény: 
 
 🌟 Hatás:
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
@@ -63,12 +61,10 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény: Ügyesség: `+3`
+🔒 Követelmény: -
 
 🌟 Hatás:
 - Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz.
 - Választhatsz: `0 ÉP`-re kerül, vagy tetsződleges végtagját használhatatlanná teszed (össz ÉP `1/4`-ét elveszíti).
-
-<br />
 
 ---

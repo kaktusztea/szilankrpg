@@ -16,7 +16,7 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 - [Erőbónusz limit](068_01_10_erobonusz_limit.md)
 - [Átütés](068_01_11_atutes.md)
 - [Fegyver mozgásgátló hatása](068_01_12_fegyver_mozgasgatlo_hatasa.md)
-- [Fegyverek minősége (Ideája)](068_01_13_fegyverek_minosege.md)
+- [Fegyverek minősége (Ideája)](068_01_13_fegyverek_minosege_ideaja.md)
 
 ---
 ### [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)

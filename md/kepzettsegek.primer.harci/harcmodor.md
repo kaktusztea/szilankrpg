@@ -47,14 +47,14 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: Ügyesség: `+0`
+🔒 Követelmény: -
 
-🌟 Hatás: -
+🌟 Hatás: Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_13_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény: Ügyesség: `+0`
+🔒 Követelmény: -
 
 🌟 Hatás:
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
@@ -63,12 +63,10 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény: Ügyesség: `+0`
+🔒 Követelmény: -
 
 🌟 Hatás:
 - A [Sebzéstípus másodlagos](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alakalmatlan](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései megszűnnek.
 - Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
-
-<br />
 
 ---

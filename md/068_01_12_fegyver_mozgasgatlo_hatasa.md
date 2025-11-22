@@ -10,6 +10,6 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 
 ---
 
-🔗 [Fegyverek minősége](068_01_13_fegyverek_minosege.md) →
+🔗 [Fegyverek minősége](068_01_13_fegyverek_minosege_ideaja.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
