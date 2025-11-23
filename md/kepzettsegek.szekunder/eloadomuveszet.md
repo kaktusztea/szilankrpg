@@ -95,6 +95,8 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 - Egy kisebb közönség megnyerése egy dalban vagy jelenetben.
 - Publikum szórakoztatása tánccal vagy zsonglőrszámmal.
 - Egy közönséges színdarabban hitelesen játszol el egy szerepet.
+- Remekül parodizálni ismert embereket, állatok hangját utánozni.
+
 
 #### Nehéz (12) 🎲 
 
@@ -126,3 +128,5 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 ### Célszám módosító körülmények
 
 - Ellenséges tömeg: `+3-6`
+
+---
