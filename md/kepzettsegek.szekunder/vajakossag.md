@@ -20,6 +20,7 @@ Emlékezet, Intelligencia
 
 ### Normál kiterjesztés
 
+- [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md): Ismered a barlangokban növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
 - [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Ismered a dzsungelben növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
 - [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Ismered a sivatagban növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
 - [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Ismered a magaslati tájon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.

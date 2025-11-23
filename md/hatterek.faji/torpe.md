@@ -15,7 +15,6 @@ bevezető ⭕
 
 - [Ultralátás](../fortelyok.erzekek/ultralatas.md) - 3. fok
 - [Infralátás](../fortelyok.erzekek/infralatas.md) - 2. fok
-- [Barlangi tájékozódás](../fortelyok.erzekek/barlangi_tajekozodas.md) - 1. fok
 
 ### ⚜️Faj misztérium
 

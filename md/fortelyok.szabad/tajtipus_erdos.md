@@ -12,8 +12,9 @@ Ismered az erdős környezetet.
 
 ### Kapcsolódik
 
-- [Tájtípus: Dzsungel](tajtipus_dzsungel.md)
-- [Tájtípus: Magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
-- [Tájtípus: Sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+- [Tájtípus: barlangi](tajtipus_barlangi.md)
+- [Tájtípus: dzsungel](tajtipus_dzsungel.md)
+- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
 
 ---

@@ -20,7 +20,7 @@ Különlegesen éles a szemed, messzire ellátsz.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Fejlett látás**, mint felvehető Érzék-fortély
+🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli látás**, mint felvehető Érzék-fortély
 
 🌟 **Hatás**: `2x` messzebbre lász, mint egy átlagos ember. A látást érintő Észleléspróbákra `+2` bónuszt kapsz
 

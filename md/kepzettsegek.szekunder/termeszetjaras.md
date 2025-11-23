@@ -25,6 +25,7 @@ A képzettség magában foglalja a következőket:
 - [Nyomolvasás/eltűntetés](../fortelyok.altalanos/nyomolvasas_eltuntetes.md):
     - Nyomok követése a természetben - miután már megtaláltad. "Erre haladt tovább, látszik a letört ágakból."
     - Nyomok értelmezése a természetben. "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
+- [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md): Járatos vagy barlangi típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a barlang jellegének megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
 - [Tájtípus - dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Járatos vagy dzsungel típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
 - [Tájtípus - sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Járatos vagy sivatagi típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
 - [Tájtípus - magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Járatos vagy magaslati típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.

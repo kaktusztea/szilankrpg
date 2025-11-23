@@ -13,7 +13,7 @@ bevezető ⭕
 
 ### ⚜️Felvehető Érzék-Fortélyok maximuma
 
-- [Fejlett látás](../fortelyok.erzekek/emberentuli_latas.md) - 1. fok
+- [Emberentúli látás](../fortelyok.erzekek/emberentuli_latas.md) - 1. fok
 - [Infralátás](../fortelyok.erzekek/infralatas.md) - 2. fok
 
 ### ⚜️Faj misztérium

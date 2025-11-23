@@ -15,6 +15,7 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 
 ### Normál kiterjesztés
 
+- [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md): Barlangi környezetben lopakodni. "Az a kristály a legapróbb rezgésre is leeshet."
 - [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): Erdős környezetben lopakodni. "Vigyázz, az avar kiszáradt, zörögne, ha rálépsz."
 - [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Homokos, köves sivatagi lankákon hangtalanul haladni.
 - [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Dzsungel környezetben settenkedni. "A vörös pille alatt ne haladj el, rikoltani fog!"

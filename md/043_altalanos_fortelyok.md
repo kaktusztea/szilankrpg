@@ -6,10 +6,9 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 
 <!-- tag: erzek__fortely -->
 
-- [Barlangi tájékozódás](fortelyok.erzekek/barlangi_tajekozodas.md)
-- [Fejlett hallás](fortelyok.erzekek/emberentuli_hallas.md)
-- [Fejlett látás](fortelyok.erzekek/emberentuli_latas.md)
-- [Fejlett szaglás](fortelyok.erzekek/emberentuli_szaglas.md)
+- [Emberentúli hallás](fortelyok.erzekek/emberentuli_hallas.md)
+- [Emberentúli látás](fortelyok.erzekek/emberentuli_latas.md)
+- [Emberentúli szaglás](fortelyok.erzekek/emberentuli_szaglas.md)
 - [Infralátás](fortelyok.erzekek/infralatas.md)
 - [Ultralátás](fortelyok.erzekek/ultralatas.md)
 

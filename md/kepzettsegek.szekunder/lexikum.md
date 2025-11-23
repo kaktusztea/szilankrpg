@@ -21,10 +21,11 @@ Próba dobható.
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Az adott, kapcsolódó **Kultúrkör** ismerete sokszor (nem mindig) szükséges.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott, kapcsolódó **Ősi Kultúrkör** ismerete néha (nem mindig) szükséges, akkor is csak [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md) fortéllyal együtt.
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): csak ha konkrétan helyi témával kapcsolatos ismeretről van szó, akkor szükséges. Ne legyünk túl szigorúak.
-- [Tájtípus: Dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): adott tájítpusra jellemző élővilág, földrajz - néha szükséges.
-- [Tájtípus: Erdős](../fortelyok.szabad/tajtipus_erdos.md): adott tájítpusra jellemző élővilág, földrajz
-- [Tájtípus: Magaslati](../fortelyok.szabad/tajtipus_magaslati.md): adott tájítpusra jellemző élővilág, földrajz - néha szükséges.
-- [Tájtípus: Sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): adott tájítpusra jellemző élővilág, földrajz - néha szükséges.
+- [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md): adott tájítpusra jellemző élővilág, földrajz - néha szükséges.
+- [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): adott tájítpusra jellemző élővilág, földrajz - néha szükséges.
+- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): adott tájítpusra jellemző élővilág, földrajz
+- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): adott tájítpusra jellemző élővilág, földrajz - néha szükséges.
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): adott tájítpusra jellemző élővilág, földrajz - néha szükséges.
 
 __
 - [Heraldika](../fortelyok.szabad/heraldika.md): "Ez a címer egy - már kihalt - kyr házé, akik Sogron egyházának voltak erős szövetségesei a hatodkorban."

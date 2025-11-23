@@ -76,6 +76,7 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 - [Színjátszás](fortelyok.szabad/szinjatszas.md)
 - [Szobrászat](fortelyok.szabad/szobraszat.md)
 - [Szónoklás](fortelyok.szabad/szonoklas.md)
+- [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md)
 - [Tájtípus: dzsungel](fortelyok.szabad/tajtipus_dzsungel.md)
 - [Tájtípus: erdős](fortelyok.szabad/tajtipus_erdos.md)
 - [Tájtípus: magaslati](fortelyok.szabad/tajtipus_magaslati.md)

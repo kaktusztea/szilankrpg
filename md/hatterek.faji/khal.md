@@ -17,9 +17,9 @@ bevezető ⭕
 
 ### ⚜️Érzék-Fortélyok maximuma
 
-- [Fejlett látás](../fortelyok.erzekek/emberentuli_latas.md) - 1. fok
-- [Fejlett hallás](../fortelyok.erzekek/emberentuli_hallas.md) - 1. fok
-- [Fejlett szaglás](../fortelyok.erzekek/emberentuli_szaglas.md) - 1. fok
+- [Emberentúli látás](../fortelyok.erzekek/emberentuli_latas.md) - 1. fok
+- [Emberentúli hallás](../fortelyok.erzekek/emberentuli_hallas.md) - 1. fok
+- [Emberentúli szaglás](../fortelyok.erzekek/emberentuli_szaglas.md) - 1. fok
 
 ### ⚜️Faj misztérium
 

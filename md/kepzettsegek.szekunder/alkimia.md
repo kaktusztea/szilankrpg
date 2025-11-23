@@ -22,10 +22,11 @@ Intelligencia, Emlékezet
 
 ### Normál kiterjesztés
 
-- [Tájtípus: Dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Dzsungelben található szervetlen alapanyagok felkutatása
-- [Tájtípus: Erdős](../fortelyok.szabad/tajtipus_erdos.md): Erdős tájakon található szervetlen alapanyagok felkutatása
-- [Tájtípus: Magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Magaslati tájakon található szervetlen alapanyagok felkutatása
-- [Tájtípus: Sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Sivatagi tájakon található szervetlen alapanyagok felkutatása
+- [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md): Barlangokban található szervetlen alapanyagok felkutatása
+- [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Dzsungelben található szervetlen alapanyagok felkutatása
+- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): Erdős tájakon található szervetlen alapanyagok felkutatása
+- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Magaslati tájakon található szervetlen alapanyagok felkutatása
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Sivatagi tájakon található szervetlen alapanyagok felkutatása
 
 <br />
 

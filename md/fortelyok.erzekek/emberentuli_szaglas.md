@@ -15,7 +15,7 @@ Különlegesen jó a szaglásod, állatokéval vetekszik.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Fejlett szaglás**, mint felvehető Érzék-fortély
+🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli szaglás**, mint felvehető Érzék-fortély
 
 🌟 **Hatás**:
 - A szaglást érintő Észleléspróbákra `+2` bónuszt kapsz
