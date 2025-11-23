@@ -16,10 +16,13 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 ### Normál kiterjesztés
 
 - [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md): Barlangi környezetben lopakodni. "Az a kristály a legapróbb rezgésre is leeshet."
-- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): Erdős környezetben lopakodni. "Vigyázz, az avar kiszáradt, zörögne, ha rálépsz."
-- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Homokos, köves sivatagi lankákon hangtalanul haladni.
 - [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Dzsungel környezetben settenkedni. "A vörös pille alatt ne haladj el, rikoltani fog!"
+- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): Erdős környezetben lopakodni. "Vigyázz, az avar kiszáradt, zörögne, ha rálépsz."
+- [Tájtípus: jégmezők](fortelyok.szabad/tajtipus_jegmezok.md): Jégmezőn lopakodni. "Ne menj a világos jégre, jobban ropog!"
 - [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Havas, hegyi, magaslati környezetben beolvadni. "Hó a szájba, ne látszódjon a lehelleted!"
+- [Tájtípus: mocsaras](fortelyok.szabad/tajtipus_mocsaras.md): Mocsaras környezetben lopakodni. "A kő mellé lépj, akkor nem cuppog."
+- [Tájtípus: puszta](fortelyok.szabad/tajtipus_puszta.md): Pusztákon lopakodni. "Maradj a sűrű fűben és együtt mozogj a széllel."
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Homokos, köves sivatagi lankákon hangtalanul haladni.
 
 ### Szituációk
 

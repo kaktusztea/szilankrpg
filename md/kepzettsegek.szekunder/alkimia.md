@@ -25,7 +25,10 @@ Intelligencia, Emlékezet
 - [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md): Barlangokban található szervetlen alapanyagok felkutatása
 - [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Dzsungelben található szervetlen alapanyagok felkutatása
 - [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): Erdős tájakon található szervetlen alapanyagok felkutatása
+- [Tájtípus: jégmezők](fortelyok.szabad/tajtipus_jegmezok.md): Jégmezők mélyén található szervetlen alapanyagok felkutatása
 - [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Magaslati tájakon található szervetlen alapanyagok felkutatása
+- [Tájtípus: mocsaras](fortelyok.szabad/tajtipus_mocsaras.md): Mocsaras tájakon található szervetlen alapanyagok felkutatása
+- [Tájtípus: puszta](fortelyok.szabad/tajtipus_puszta.md): Pusztákon található szervetlen alapanyagok felkutatása
 - [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Sivatagi tájakon található szervetlen alapanyagok felkutatása
 
 <br />
@@ -134,3 +137,5 @@ Intelligencia, Emlékezet
 ### Célszám módosító körülmények
 
 Rosszul felszerelt labor, műszerek hiánya: `[+3; +9]`
+
+---

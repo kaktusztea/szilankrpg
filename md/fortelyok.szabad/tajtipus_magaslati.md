@@ -12,8 +12,13 @@ Ismered a magaslati, sarkvidéki környezetet.
 
 ### Kapcsolódik
 
-- [Tájtípus: Dzsungel](tajtipus_dzsungel.md)
-- [Tájtípus: Erdős](../fortelyok.szabad/tajtipus_erdos.md)
-- [Tájtípus: Sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+- [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md)
+- [Tájtípus: dzsungel](fortelyok.szabad/tajtipus_dzsungel.md)
+- [Tájtípus: erdős](fortelyok.szabad/tajtipus_erdos.md)
+- [Tájtípus: jégmezők](fortelyok.szabad/tajtipus_jegmezok.md)
+- [Tájtípus: mocsaras](fortelyok.szabad/tajtipus_mocsaras.md)
+- [Tájtípus: puszta](fortelyok.szabad/tajtipus_puszta.md)
+- [Tájtípus: tengerek](fortelyok.szabad/tajtipus_tengerek.md)
+- [Tájtípus: sivatagi](fortelyok.szabad/tajtipus_sivatagi.md)
 
 ---
