@@ -28,7 +28,6 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Gyöngyhalász](fortelyok.altalanos/gyongyhalasz.md)
 - [Hamisítás](fortelyok.altalanos/hamisitas.md)
 - [Hangutánzás](fortelyok.altalanos/hangutanzas.md)
-- [Kaméleon](fortelyok.altalanos/kameleon.md)
 - [Keresés/Rejtés](fortelyok.altalanos/kereses_rejtes.md)
 - [Kitartás](fortelyok.altalanos/kitartas.md)
 - [Kocsihajtás](fortelyok.altalanos/kocsihajtas.md)

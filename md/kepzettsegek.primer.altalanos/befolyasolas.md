@@ -54,21 +54,21 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 
 🔒 Követelmény: -
 
-🌟 Mesterfortély: Ha akarod, egy teremnyi ember figyelmét pusztán kisugárzásoddal fel tudod hívni magadra. Olyan a hatás, mintha felkiáltanál - de szó nélkül.
+🌟 Mesterbónusz: Ha akarod, egy teremnyi ember figyelmét pusztán kisugárzásoddal fel tudod hívni magadra. Olyan a hatás, mintha felkiáltanál - de szó nélkül.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: -
 
-🌟 Mesterfortély: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+1` jár a képzettségpróbádra.
+🌟 Mesterbónusz: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+1` jár a képzettségpróbádra.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: -
 
-🌟 Mesterfortély: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+2` jár a képzettségpróbádra.
+🌟 Mesterbónusz: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+2` jár a képzettségpróbádra.
 
 <br />
 

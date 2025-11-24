@@ -40,21 +40,21 @@ Ha pontosabban akarod, akkor egy `Nehéz (12)` próbával pontosíthatod a vála
 
 🔒 Követelmény: **Ügyesség**: `+2`
 
-🌟 Mesterfortély: Ugrásmagasságod duplázódik. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-3`.
+🌟 Mesterbónusz: Ugrásmagasságod duplázódik. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-3`.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: **Ügyesség**: `+3`
 
-🌟 Mesterfortély: Ugrásmagasságod háromszorozódik. Képes vagy lassítani esésedet. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-6`.
+🌟 Mesterbónusz: Ugrásmagasságod háromszorozódik. Képes vagy lassítani esésedet. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-6`.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: **Ügyesség**: `+3`
 
-🌟 Mesterfortély: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és mindig puhán érsz földet. Ugrásmagasságod négyszereződik.
+🌟 Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és mindig puhán érsz földet. Ugrásmagasságod négyszereződik.
 
 <br />
 

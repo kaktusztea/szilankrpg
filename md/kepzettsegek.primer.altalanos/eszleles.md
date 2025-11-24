@@ -47,7 +47,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény: Érzékenység: `+1`
 
-🌟 Mesterfortély: Tapasztalt fejvadász. Megérzed, ha valaki a közeledben mágikus leplezés nélkül, tartósan rád figyel - még ha nem is látod a személyt.
+🌟 Mesterbónusz: Tapasztalt fejvadász. Megérzed, ha valaki a közeledben mágikus leplezés nélkül, tartósan rád figyel - még ha nem is látod a személyt.
 
 <br />
 
@@ -56,7 +56,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény:  Érzékenység: `+2`
 
-🌟 Mesterfortély: Elit, uralkodói testőr. Kiszagolod az erős mágia- vagy Aura jelenlétet: pontos értelmezéshez kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
+🌟 Mesterbónusz: Elit, uralkodói testőr. Kiszagolod az erős mágia- vagy Aura jelenlétet: pontos értelmezéshez kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
 
 <br />
 
@@ -65,7 +65,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény:  Érzékenység: `+2`
 
-🌟 Mesterfortély:
+🌟 Mesterbónusz:
 
 - Harcművész nagymester, mágus.
 - Új érzékek nyílnak meg számodra misztikus formában. ⭕TODO⭕

@@ -43,7 +43,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 🔒 Követelmény: Érzékenység: `+1`
 
-🌟 Mesterfortély: ⭕
+🌟 Mesterbónusz: ⭕
 
 ---
 #### Nagymester (12) 📖
@@ -52,7 +52,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 - Érzékenység: `+2`
 - Intelligencia: `+1`
 
-🌟 Mesterfortély: Új asztrális érzékszerved nyílik, amellyel a személyiségvonások változásáról, érzelmi állapotokról meg tudod állapítani, hogy mágikus eredetűek-e. Igen/Nem.
+🌟 Mesterbónusz: Új asztrális érzékszerved nyílik, amellyel a személyiségvonások változásáról, érzelmi állapotokról meg tudod állapítani, hogy mágikus eredetűek-e. Igen/Nem.
 
 ---
 #### Élő legenda (15) 📖
@@ -61,7 +61,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 - Érzékenység: `+3`
 - Intelligencia: `+2`
 
-🌟 Mesterfortély:
+🌟 Mesterbónusz:
 - Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
 - **Terápia**: pusztán egy rövid beszélgetés alatt képes vagy a  [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s) hatását megszűntetni.
 - **Példa**: asztrálmágus
