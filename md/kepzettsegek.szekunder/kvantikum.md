@@ -21,8 +21,6 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ### Normál kiterjesztés
 
 - [Gazdálkodás](../fortelyok.szabad/gazdalkodas.md): "A birtok idén már nyereséges volt köszönhetően a 12 marhának, amit tavaly vettünk a Szőlőshegyi özvegytől."
-- [Hivatalnok](../fortelyok.szabad/hivatalnok.md): "Az uraság 3 évre adta bérbe kizárólagossággal az említett földet - a hosszabbításhoz új kérvényt kell benyújtani."
-- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az ehavi beszedett többletadók elegek lesznek a kölcsön törlesztésére."
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md)
   - "Nem volt könnyű, de megfejtettem a titkosírást. Ez egy üzenet a tábornoknak, amiben a csapatokat a hágó elhagyására utasítja."
   - "Megírtam az üzenetet uram, alkalmaztam a titkosírást, ha rossz kezekbe kerül, se tudják elolvasni."
@@ -31,9 +29,13 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 __
 
 - [Asztrológia](../fortelyok.szabad/asztrologia.md): "Kiszámoltam: **Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
-- [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a torony pár hónap és leomlik."
 - [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni." Hivatalnokként specializálódtál, értesz a jogrendszerhez is. 
 - [Mechanika](../fortelyok.altalanos/mechanika.md): "Rittyentettem egy átemelő darut, amivel könnyebb lesz az öntözés."
+- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az ehavi beszedett többletadók elegek lesznek a kölcsön törlesztésére."
+
+### Erős kiterjesztés
+
+- [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a torony pár hónap és leomlik."
 
 ### Szituációk
 
