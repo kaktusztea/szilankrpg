@@ -2,7 +2,9 @@
 
 Próba dobható.
 
-Aktív, alkotó művész vagy. A lenti [Szabad-Fortélyok](../042_szabad_fortelyok.md) listájából válogathatsz a képzettség kiterjesztéséhez.
+Aktív, alkotó művész vagy. A lenti [Szabad-Fortélyok](../042_szabad_fortelyok.md) listájából válogathatsz a képzettség kiterjesztéséhez
+
+Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. Arra az [Álcázás/álruha](alcazas_alruha.md) képzettség felvétele ad lehetőséget.
 
 ### Domináns Tulajdonságok
 
