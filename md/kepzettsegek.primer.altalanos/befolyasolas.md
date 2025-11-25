@@ -24,7 +24,7 @@ Intelligencia, Érzékenység
 ### Erős kiterjesztés
 
 - [Háziállatok idomítása](../fortelyok.szabad/haziallatok_idomitasa.md): "Morzsi, térülj... fordulj!"
-- [Vadállat idomítása](../fortelyok.szabad/vadallatok_idomitasa.md) 🔁: "Táncolj Brumi!"
+- [Vadállat idomítása](../fortelyok.szabad/vadallat_idomitasa.md) 🔁: "Táncolj Brumi!"
 
 ### Szituációk
 

@@ -14,13 +14,13 @@ Időérzéked föld alatt is pontosan működik, érzed milyen mélyen vagy, és
 
 ### Kapcsolódik
 
-- [Tájtípus: dzsungel](fortelyok.szabad/tajtipus_dzsungel.md)
-- [Tájtípus: erdős](fortelyok.szabad/tajtipus_erdos.md)
-- [Tájtípus: jégmezők](fortelyok.szabad/tajtipus_jegmezok.md)
-- [Tájtípus: magaslati](fortelyok.szabad/tajtipus_magaslati.md)
-- [Tájtípus: mocsaras](fortelyok.szabad/tajtipus_mocsaras.md)
-- [Tájtípus: puszta](fortelyok.szabad/tajtipus_puszta.md)
-- [Tájtípus: tengerek](fortelyok.szabad/tajtipus_tengerek.md)
-- [Tájtípus: sivatagi](fortelyok.szabad/tajtipus_sivatagi.md)
+- [Tájtípus: dzsungel](tajtipus_dzsungel.md)
+- [Tájtípus: erdős](tajtipus_erdos.md)
+- [Tájtípus: jégmezők](tajtipus_jegmezok.md)
+- [Tájtípus: magaslati](tajtipus_magaslati.md)
+- [Tájtípus: mocsaras](tajtipus_mocsaras.md)
+- [Tájtípus: puszta](tajtipus_puszta.md)
+- [Tájtípus: tengerek](tajtipus_tengerek.md)
+- [Tájtípus: sivatagi](tajtipus_sivatagi.md)
 
 ---
