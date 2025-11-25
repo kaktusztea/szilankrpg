@@ -19,6 +19,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 
 - [Baráti állatok](fortelyok.altalanos/barati_allatok.md)
 - [Biztos kezű mászó](fortelyok.altalanos/biztos_kezu_maszo.md)
+- [Csábítás](fortelyok.altalanos/csabitas.md)
 - [Csomózás](fortelyok.altalanos/csomozas.md)
 - [Éber alvó](fortelyok.altalanos/eber_alvo.md)
 - [Fakír](fortelyok.altalanos/fakir.md)
@@ -28,6 +29,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Gyöngyhalász](fortelyok.altalanos/gyongyhalasz.md)
 - [Hamisítás](fortelyok.altalanos/hamisitas.md)
 - [Hangutánzás](fortelyok.altalanos/hangutanzas.md)
+- [Hazudozás](fortelyok.altalanos/hazudozas.md)
 - [Keresés/Rejtés](fortelyok.altalanos/kereses_rejtes.md)
 - [Kitartás](fortelyok.altalanos/kitartas.md)
 - [Kocsihajtás](fortelyok.altalanos/kocsihajtas.md)
@@ -38,10 +40,8 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Pók](fortelyok.altalanos/pok.md)
 - [Sprint](fortelyok.altalanos/sprint.md)
 - [Suhanó árnyék](fortelyok.altalanos/suhano_arnyek.md)
-- [Szabotőr](fortelyok.altalanos/szabotor.md)
 - [Szájról olvasás](fortelyok.altalanos/szajrol_olvasas.md)
 - [Százarcú](fortelyok.altalanos/szazarcu.md)
-- [Szerencsés](fortelyok.altalanos/szerencses.md)
 - [Úszás](fortelyok.altalanos/uszas.md)
 - [Szívósság](fortelyok.altalanos/szivossag.md)
 - [Vezető: Bölcsészprofesszor](fortelyok.altalanos/vezeto_bolcseszprofesszor.md)
@@ -51,7 +51,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Vezető: Rendező](fortelyok.altalanos/vezeto_rendezo.md)
 - [Vezető: Tudósprofesszor](fortelyok.altalanos/vezeto_tudosprofesszor.md)
 - [Vezető: Vajákmester](fortelyok.altalanos/vezeto_vajakmester.md)
-- [Villámgyors keresés](fortelyok.altalanos/villamgyors.kereses.md)
+- [Villámgyors keresés](fortelyok.altalanos/villamgyors.kereses.rejtes.md)
 - [Zártörő](fortelyok.altalanos/zartoro.md)
 
 ---
@@ -64,14 +64,6 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Mechanika](fortelyok.altalanos/mechanika.md)
 - [Ősi kultúrkör](fortelyok.altalanos/osi_kulturkor.md)
 - [Történelemismeret](fortelyok.altalanos/tortenelemismeret.md)
-
----
-### Befolyástól védő fortélyok
-
-<!-- tag: szocialis__fortely -->
-
-- [Hidegvér](fortelyok.altalanos/hidegver.md)
-- [Tiszta fej](fortelyok.altalanos/tiszta_fej.md)
 
 ---
 

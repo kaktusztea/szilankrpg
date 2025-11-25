@@ -1,4 +1,4 @@
-## 🟣 Villámgyors keresés (1)
+## 🟣 Villámgyors keresés/rejtés (1)
 
 Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 

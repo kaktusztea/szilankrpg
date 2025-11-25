@@ -28,7 +28,7 @@ Intelligencia, Emlékezet
 __
 
 - [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a fal sokkal vastagabb, mint a másik!"
-- [Hazudozás](../fortelyok.szabad/hazudozas.md): "Sokat  pislog, kerüli a tekintetem, hazudik..."
+- [Hazudozás](../fortelyok.altalanos/hazudozas.md): "Sokat  pislog, kerüli a tekintetem, hazudik..."
 - [Heraldika](../fortelyok.szabad/heraldika.md): "A famor címerében levő lombok vérszínűek, akárcsak az - állítólagos - ellenséges házéban."
 - [Kihallgatás](../fortelyok.szabad/kihallgatas.md): "Hol rejtegetitek az ereklyét? A társaid már mindent bevallottak."
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md): "A szimbólumok által jelképezett átjáró az kandalló feletti festményre utal!"

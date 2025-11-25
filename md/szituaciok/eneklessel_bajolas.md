@@ -9,7 +9,7 @@ Az Éneklés szabad fortély a [Befolyásolás](../kepzettsegek.primer.altalanos
 
 `2.` **Csábítás**: képzettségpróba bájolásra - az ének ilyenkor csak a "közvetítő közeg".
 - [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
-- [Csábítás](../fortelyok.szabad/csabitas.md) (Normál kiterjesztés)
+- [Csábítás](../fortelyok.altalanos/csabitas.md) (Normál kiterjesztés)
 - **Intelligencia** Tulajdonság
 
 Az éneklés ismerete sem ad segítséget egy igéző ének ellen.

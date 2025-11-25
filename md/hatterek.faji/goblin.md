@@ -30,9 +30,8 @@ TODO ⭕
 
 ### Ajánlott fortélyok
 
-- [Hazudozás](../fortelyok.szabad/hazudozas.md)
+- [Hazudozás](../fortelyok.altalanos/hazudozas.md)
 - [Suhanó árnyék](../fortelyok.altalanos/suhano_arnyek.md)
-- [Szabotőr](../fortelyok.altalanos/szabotor.md)
 
 ### Ajánlott képzettségek
 

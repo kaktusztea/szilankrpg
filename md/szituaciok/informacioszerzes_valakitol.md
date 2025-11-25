@@ -13,7 +13,7 @@ Kihallgató: [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzetts
 
 Kihallgatott: [Emberismeret](../kepzettsegek.primer.altalanos/emberismeret.md) képzettség
 - Tulajdonság: Önuralom
-- Normál kiterjesztés: [Kihallgatás](../fortelyok.szabad/kihallgatas.md)  VAGY  [Hazudozás](../fortelyok.szabad/hazudozas.md) fortély
+- Normál kiterjesztés: [Kihallgatás](../fortelyok.szabad/kihallgatas.md)  VAGY  [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
 
 #### Bónuszok
 

@@ -10,9 +10,11 @@ A Szilánk a szabályrendszerben egy pontérték, amelyet csak és kizárólag K
 
 Egy **Szilánk** (pont) elhasználásával a játékos képes lesz a kalandban narratív események módosítására, akár kockadobás "megkerülésére" is.
 
-❗FONTOS: **harc befolyásolására a Szilánk semmilyen formában NEM alkalmas**, ott a [Szerencsés](fortelyok.altalanos/szerencses.md) fortély vethető be - amennyiben a karakter rendelkezik vele.
-
 Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, csak egy lehetőséget teremt, amivel vagy képes élni a játékos, vagy nem.
+
+### Újradobás 1x
+
+Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz Szilánkot egy dobásod megismétlésére. Ilyenkor a másodiknak dobott érték számít - akkor is, ha az kedvezőtlenebb lett, mint az első.
 
 <br />
 

@@ -12,10 +12,8 @@ Az egyik legrégebbi alvilági mesterség, amelynek célja sokszor csak a szóra
 ### 2. fok
 
 🔒 **Követelmény**:
-- Érzékenység: `+2`
-- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) - `6.szint`
-- [Színjátszás](../fortelyok.szabad/szinjatszas.md) Szabad fortély
-- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - Alap vagy Udvari fok (KM dönt)
+- Érzékenység: `+1`
+- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - Alap vagy Udvari fok (KM dönt a szituációtól függően)
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) - ha kell (KM dönt)
 
 🌟 **Hatás**: Teljesen megtévesztően utánzol egy emberi hangot, csendes körülmények között is, ha előzőleg legalább `1` percig hallottad beszélni.

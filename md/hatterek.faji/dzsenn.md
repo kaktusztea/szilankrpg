@@ -31,8 +31,6 @@ Nincs ⭕
 ### Ajánlott fortélyok
 
 - [Pszí alkalmazás](../fortelyok.misztikus/pszi_kiterjesztes.md)
-- [Hidegvér](../fortelyok.altalanos/hidegver.md)
-- [Tiszta fej](../fortelyok.altalanos/tiszta_fej.md)
 
 ### Ajánlott képzettségek
 

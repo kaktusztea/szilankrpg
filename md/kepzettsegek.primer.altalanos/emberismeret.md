@@ -8,8 +8,6 @@ Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba, e
 
 ### Kapcsolódik
 
-- [Hidegvér](../fortelyok.altalanos/hidegver.md) fortély
-- [Tiszta fej](../fortelyok.altalanos/tiszta_fej.md) fortély
 - [Befolyásolás](befolyasolas.md) képzettség
 - [Etikett](../kepzettsegek.szekunder/etikett.md) képzettség
 
@@ -17,8 +15,8 @@ Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba, e
 
 Az alábbi Fortélyok a képzettség `3.szintjének` elérésekor vehetőek csak fel!
 - [Alkudozás](../fortelyok.szabad/alkudozas.md): "Sajnálom uram, de ez **valódi** pamut, az árért, amit kínál, egy vak koldus sem adná oda."
-- [Csábítás](../fortelyok.szabad/csabitas.md): Kiszúrod, hogy az ellenkező nem közeledése nem épp ártatlan, rejtett szándékot sejtesz.
-- [Hazudozás](../fortelyok.szabad/hazudozas.md): "Ugyan kérem, nem ma jöttem le a falvédőről."
+- [Csábítás](../fortelyok.altalanos/csabitas.md): Kiszúrod, hogy az ellenkező nem közeledése nem épp ártatlan, rejtett szándékot sejtesz.
+- [Hazudozás](../fortelyok.altalanos/hazudozas.md): "Ugyan kérem, nem ma jöttem le a falvédőről."
 - [Kihallgatás](../fortelyok.szabad/kihallgatas.md): "Kopjon le. Ilyen ócska trükköknek nem dőlök be."
 - [Megfélemlítés](../fortelyok.szabad/megfelemlites.md): "Hiába lóbálja a kardját uram, fehér kendő nélkül nem engedhetem be."
 - [Szónoklás](../fortelyok.szabad/szonoklas.md): "Még egy szélhámos... Azt a csűrt, amivel a tömegnek henceg, nem ő építtette, hanem még az öreg Szakáll kamarás uram."

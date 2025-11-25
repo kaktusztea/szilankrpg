@@ -11,14 +11,13 @@ Intelligencia, Érzékenység
 ### Kapcsolódik
 
 - [Emberismeret](emberismeret.md) képzettség
-- [Tiszta fej](../fortelyok.altalanos/tiszta_fej.md) fortély
 
 ### Normál kiterjesztés
 
 - [Alkudozás](../fortelyok.szabad/alkudozas.md): "Micsoda? A felét nem éri! Félkegyelműnek tűnök talán?!"
 - [Bűvészet](../fortelyok.szabad/buveszet.md): "Végtelen hatalmam megkettőzte az aranyok számát!"
-- [Csábítás](../fortelyok.szabad/csabitas.md): Eltekered a másik fejét. Hamar megered a nyelve, hisz a szerelem vak. Nem mágikus hatású.
-- [Hazudozás](../fortelyok.szabad/hazudozas.md): "Arra mentek! Jajjh, a lábam!"
+- [Csábítás](../fortelyok.altalanos/csabitas.md): Eltekered a másik fejét. Hamar megered a nyelve, hisz a szerelem vak. Nem mágikus hatású.
+- [Hazudozás](../fortelyok.altalanos/hazudozas.md): "Arra mentek! Jajjh, a lábam!"
 - [Megfélemlítés](../fortelyok.szabad/megfelemlites.md): "Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér..."
 - [Szónoklás](../fortelyok.szabad/szonoklas.md): "Mit választotok? A hazug, kövér urat, aki soha nem fogott kaszát a kezébe, vagy engem, aki magam is egy folyómenti faluból származom?"
 

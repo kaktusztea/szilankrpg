@@ -17,7 +17,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 - [Éber alvó](../fortelyok.altalanos/eber_alvo.md) fortély
 - [Infralátás](../fortelyok.erzekek/infralatas.md) fortély
-- [Villámgyors keresés](../fortelyok.altalanos/villamgyors.kereses.md) fortély
+- [Villámgyors keresés](../fortelyok.altalanos/villamgyors.kereses.rejtes.md) fortély
 
 ### Normál kiterjesztés
 
