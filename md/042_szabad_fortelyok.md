@@ -43,6 +43,7 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 - [Festészet](fortelyok.szabad/festeszet.md)
 - [Gazdálkodás](fortelyok.szabad/gazdalkodas.md)
 - [Harci iskola](fortelyok.szabad/harci_iskola.md) 🔁
+- [Háziállatok idomítása](fortelyok.szabad/haziallatok_idomitasa.md)
 - [Hazudozás](fortelyok.szabad/hazudozas.md)
 - [Heraldika](fortelyok.szabad/heraldika.md)
 - [Hivatalnok](fortelyok.szabad/hivatalnok.md)
