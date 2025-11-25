@@ -51,7 +51,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Vezető: Rendező](fortelyok.altalanos/vezeto_rendezo.md)
 - [Vezető: Tudósprofesszor](fortelyok.altalanos/vezeto_tudosprofesszor.md)
 - [Vezető: Vajákmester](fortelyok.altalanos/vezeto_vajakmester.md)
-- [Villámgyors keresés](fortelyok.altalanos/villamgyors.kereses.rejtes.md)
+- [Villámgyors keresés/rejtés](fortelyok.altalanos/villamgyors.kereses.rejtes.md)
 - [Zártörő](fortelyok.altalanos/zartoro.md)
 
 ---

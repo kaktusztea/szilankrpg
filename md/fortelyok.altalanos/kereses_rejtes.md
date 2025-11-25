@@ -10,7 +10,7 @@ Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben me
 ### Kapcsolódik
 
 - [Mechanika](mechanika.md) fortély
-- [Villámgyors keresés](villamgyors.kereses.rejtes.md) fortély
+- [Villámgyors keresés/rejtés](villamgyors.kereses.rejtes.md) fortély
 
 ### Kiterjeszti ezeket
 
