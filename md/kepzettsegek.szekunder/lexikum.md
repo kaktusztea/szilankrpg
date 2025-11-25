@@ -21,14 +21,14 @@ Próba dobható.
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Az adott, kapcsolódó **Kultúrkör** ismerete sokszor (nem mindig) szükséges.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott, kapcsolódó **Ősi Kultúrkör** ismerete néha (nem mindig) szükséges, akkor is csak [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md) fortéllyal együtt.
 - [Helyismeret](../fortelyok.kiemelt/helyismeret.md): csak ha konkrétan helyi témával kapcsolatos ismeretről van szó, akkor szükséges. Ne legyünk túl szigorúak.
-- [Tájtípus: barlangi](fortelyok.szabad/tajtipus_barlangi.md): adott tájítpusra jellemző élővilág, földrajz ismerete
+- [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md): adott tájítpusra jellemző élővilág, földrajz ismerete
 - [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): adott tájítpusra jellemző élővilág, földrajz ismerete
 - [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: jégmezők](fortelyok.szabad/tajtipus_jegmezok.md): adott tájítpusra jellemző élővilág, földrajz ismerete
+- [Tájtípus: jégmezők](../fortelyok.szabad/tajtipus_jegmezok.md): adott tájítpusra jellemző élővilág, földrajz ismerete
 - [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: mocsaras](fortelyok.szabad/tajtipus_mocsaras.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: puszta](fortelyok.szabad/tajtipus_puszta.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: tengerek](fortelyok.szabad/tajtipus_tengerek.md): adott tájítpusra jellemző élővilág, földrajz ismerete
+- [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md): adott tájítpusra jellemző élővilág, földrajz ismerete
+- [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md): adott tájítpusra jellemző élővilág, földrajz ismerete
+- [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md): adott tájítpusra jellemző élővilág, földrajz ismerete
 - [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): adott tájítpusra jellemző élővilág, földrajz ismerete
 
 __
