@@ -1,4 +1,4 @@
-## 🟣 Logisztika
+## 🟣 Hadtáp
 
 A hadsereg élelmezése, felszereléssel való ellátása, utánpótlási vonalak kiépítése a feladatod. Jellemzően NJK ismeret.
 

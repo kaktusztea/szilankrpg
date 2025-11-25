@@ -11,7 +11,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 
 ### Normál kiterjesztés
 
-- [Logisztika](../fortelyok.szabad/logisztika.md): "A hadtápot szét tudjuk húzni még 5 mérfölddel, de kettővel növelnünk kell a szállító szekerek számát naponta."
+- [Hadtáp](../fortelyok.szabad/hadtap.md): "A hadtápot szét tudjuk húzni még 5 mérfölddel, de kettővel növelnünk kell a szállító szekerek számát naponta."
 - [Stratégia](../fortelyok.szabad/strategia.md): "A hegyláncot tartani tudjuk, ha a 4. hadtest egy hét múlva megérkezik a folyópartra."
 - [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md): "Lándzsások vonalba, megakasztásra készülj!" ; "A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lőssz, Mocsok, tied a kocsis.""
 - [Vezető: Fejvadász strategis](../fortelyok.harci/vezeto_fejvadasz_strategis.md): "Ketten a tetőre, magitor savfelhőt a teraszra. Mortel, indulj!"

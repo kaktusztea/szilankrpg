@@ -39,6 +39,7 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 - [Éneklés](fortelyok.szabad/enekles.md)
 - [Festészet](fortelyok.szabad/festeszet.md)
 - [Gazdálkodás](fortelyok.szabad/gazdalkodas.md)
+- [Hadtáp](fortelyok.szabad/hadtap.md)
 - [Harci iskola](fortelyok.szabad/harci_iskola.md) 🔁
 - [Háziállatok idomítása](fortelyok.szabad/haziallatok_idomitasa.md)
 - [Heraldika](fortelyok.szabad/heraldika.md)
@@ -66,7 +67,6 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 - [Kihallgatás](fortelyok.szabad/kihallgatas.md)
 - [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) 🔁
 - [Lénylovas](fortelyok.szabad/lenylovas.md) 🔁
-- [Logisztika](fortelyok.szabad/logisztika.md)
 - [Megfélemlítés](fortelyok.szabad/megfelemlites.md)
 - [Pénzügyek](fortelyok.szabad/penzugyek.md)
 - [Rejtjelfejtő](fortelyok.szabad/rejtjelfejto.md)
