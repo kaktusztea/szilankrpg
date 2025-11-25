@@ -81,13 +81,8 @@ Célzás
 ```
 
 ```
-Fegyver, Belövés
+Cél belövése
 
--10: Új fegyver
-    Nem “belőtt” íjak, vagy 
-    most lő először ezzel.
-    Harcmodor 9.szintje alatt
-    
 +[3-10]: Konkrét álló cél
     Ennek "belövése" minimum
     negyed órán át (gyakorlás)
@@ -96,10 +91,6 @@ Fegyver, Belövés
 ```
 
 🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
-
-### Fegyver belövése
-
-Ha **legalább fél órát** töltött el a karakter a “belövéssel”,  a **"Nem belőtt (fegyver)"** büntető módosítók megszűnnek. A használat során folyamatosan tűnik el a hátrány - erre már felesleges képletet alkotni - a KM dönt.
 
 ### Bővebben
 

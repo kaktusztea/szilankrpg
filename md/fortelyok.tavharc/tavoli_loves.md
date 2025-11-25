@@ -1,6 +1,6 @@
 ## 🟣 Távoli lövés (1)
 
-Gyakorlott vagy a nagy távolságú célok belövésében. Csak nyílpuska, vagy más mechanikus lőfegyverrel (íjjal nem).
+Gyakorlott vagy a nagy távolságú célokra lövésben. Csak nyílpuska, vagy más mechanikus lőfegyverrel (íjjal nem).
 
 ### 1. fok
 
