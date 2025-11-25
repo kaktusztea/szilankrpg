@@ -104,7 +104,7 @@ Itt a [Harci helyzetek](065_01_00_harci_helyzetek.md) fejezetben leírt módosí
 ---
 ### Idomítatlan hátas
 
-Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, legfeljebb küzdeni tudsz, hogy nehogy ledobjon. Ilyenkor [Idomítás](kepzettsegek.szekunder/idomitas.md) képzettségpróbát kell dobj, a KM által megszabott Nehézség ellen.
+Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, legfeljebb küzdeni tudsz, hogy nehogy ledobjon. Ilyenkor [Befolyásolás](kepzettsegek.primer.altalanos/befolyasolas.md) képzettségpróbát kell dobj, [Vadállat idomítása: (adott hátas)](fortelyok.szabad/vadallat_idomitasa.md) (Erős) kiterjesztéssel , a KM által megszabott Nehézség ellen.
 
 <br />
 

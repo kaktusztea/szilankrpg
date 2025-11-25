@@ -22,6 +22,11 @@ Intelligencia, Érzékenység
 - [Megfélemlítés](../fortelyok.szabad/megfelemlites.md): "Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér..."
 - [Szónoklás](../fortelyok.szabad/szonoklas.md): "Mit választotok? A hazug, kövér urat, aki soha nem fogott kaszát a kezébe, vagy engem, aki magam is egy folyómenti faluból származom?"
 
+### Erős kiterjesztés
+
+- [Háziállatok idomítása](../fortelyok.szabad/haziallatok_idomitasa.md): "Morzsi, térülj... fordulj!"
+- [Vadállat idomítása](../fortelyok.szabad/vadallatok_idomitasa.md) 🔁: "Táncolj Brumi!"
+
 ### Szituációk
 
 - [Befolyásolás módszerei (Befolyásolás vs. Emberismeret)](../szituaciok/befolyasolas_modszerei.md)

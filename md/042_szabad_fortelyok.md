@@ -91,6 +91,7 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 - [Teaszertartás](fortelyok.szabad/teaszertartas.md)
 - [Térképészet](fortelyok.szabad/terkepeszet.md)
 - [Titkos szervezet](fortelyok.szabad/titkos_szervezet.md) 🔁
+- [Vadállat idomítása](fortelyok.szabad/vadallat_idomitasa.md) 🔁
 - [Zenélés: fúvós hangszerek](fortelyok.szabad/zeneles_fuvos_hangszerek.md)
 - [Zenélés: húros hangszerek](fortelyok.szabad/zeneles_huros_hangszerek.md)
 - [Zenélés: ütős hangszerek](fortelyok.szabad/zeneles_utos_hangszerek.md)

@@ -12,7 +12,6 @@ Természetesen földi hátast csak a **Lovaglás**, légi hátast pedig csak a *
 
 ### Kiterjeszti ezeket
 
-- [Idomítás](../kepzettsegek.szekunder/idomitas.md)
 - [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) 
 - [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md)
 

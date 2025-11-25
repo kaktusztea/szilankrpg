@@ -71,8 +71,6 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 
 🔵 [Hajózás](kepzettsegek.szekunder/hajozas.md) 🤝
 
-🔵 [Idomítás](kepzettsegek.szekunder/idomitas.md)
-
 🔵 [Nyomozás](kepzettsegek.primer.altalanos/nyomozas.md) 🅿️ 🤝
 
 🔵 [Nyelvtanulás](kepzettsegek.szekunder/nyelvtanulas.md)
