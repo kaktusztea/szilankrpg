@@ -4,6 +4,8 @@ Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok
 
 Magasabb szinten egyéb vasból és acélból készült szerkezetek, például ajtók, ablakok, korlátok, lépcsők, és más fémes tartószerkezetek készítése, javítása is ide tartozik.
 
+🔆 A zárak nyitása a [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettség alá tartozik! Ez a fortély **nem** ad bónuszt az ilyen jellegű próbákra.
+
 ### Kiterjeszti ezeket
 
 - [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md)

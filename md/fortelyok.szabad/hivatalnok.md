@@ -1,6 +1,6 @@
 ## 🟣 Hivatalnok
 
-Járatos vagy az állami, vagy uradalmi bürokráciában, ügyintézésben.
+Járatos vagy az állami, vagy uradalmi bürokráciában írott és íratlan szabályaiban, ügyintézésben.
 
 ### Kiterjeszti ezeket
 
