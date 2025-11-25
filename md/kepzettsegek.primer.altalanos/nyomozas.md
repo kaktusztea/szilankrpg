@@ -31,7 +31,6 @@ __
 - [Hazudozás](../fortelyok.szabad/hazudozas.md): "Sokat  pislog, kerüli a tekintetem, hazudik..."
 - [Heraldika](../fortelyok.szabad/heraldika.md): "A famor címerében levő lombok vérszínűek, akárcsak az - állítólagos - ellenséges házéban."
 - [Kihallgatás](../fortelyok.szabad/kihallgatas.md): "Hol rejtegetitek az ereklyét? A társaid már mindent bevallottak."
-- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Az anyai ági öröklés miatt a féltestvér is részesül az örökségből a gyászév leteltével! Tehát neki is volt indítéka."
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md): "A szimbólumok által jelképezett átjáró az kandalló feletti festményre utal!"
 - [Térképészet](../fortelyok.szabad/terkepeszet.md): "A két 'O' a két ablakot, az 'Y', a hátsó ajtót jelzi, a szaggatott vonalon az 'X' szerintem csapdát jelent."
 - [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md): "A Karvaly céh második embere..., a nyakát az Ítészek céhének stílusában vágták át."
@@ -39,6 +38,7 @@ __
 ### Erős kiterjesztés
 
 - [Élettan](../fortelyok.altalanos/elettan.md) (boncoláshoz)
+- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Az anyai ági öröklés miatt a féltestvér is részesül az örökségből a gyászév leteltével! Tehát neki is volt indítéka."
 - [Pénzügyek](../fortelyok.szabad/penzugyek.md): "A legfoglalt iratokból egyből kiviláglik: Kamarás uram kettős könyvelést vezetett."
 
 ### Szituáció

@@ -20,22 +20,18 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 ### Normál kiterjesztés
 
+- [Asztrológia](../fortelyok.szabad/asztrologia.md): "Kiszámoltam: **Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
 - [Gazdálkodás](../fortelyok.szabad/gazdalkodas.md): "A birtok idén már nyereséges volt köszönhetően a 12 marhának, amit tavaly vettünk a Szőlőshegyi özvegytől."
+- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az ehavi beszedett többletadók elegek lesznek a kölcsön törlesztésére."
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md)
   - "Nem volt könnyű, de megfejtettem a titkosírást. Ez egy üzenet a tábornoknak, amiben a csapatokat a hágó elhagyására utasítja."
   - "Megírtam az üzenetet uram, alkalmaztam a titkosírást, ha rossz kezekbe kerül, se tudják elolvasni."
 - [Térképészet](../fortelyok.szabad/terkepeszet.md): Térképet készítesz. "Elkészültem a kastély körüli dombok térképével, a magasságvonalakon látszik, hogy kemény mászás vár arra, aki nem a főúton szándékozik bemenni."
 
-__
-
-- [Asztrológia](../fortelyok.szabad/asztrologia.md): "Kiszámoltam: **Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
-- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni." Hivatalnokként specializálódtál, értesz a jogrendszerhez is. 
-- [Mechanika](../fortelyok.altalanos/mechanika.md): "Rittyentettem egy átemelő darut, amivel könnyebb lesz az öntözés."
-- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az ehavi beszedett többletadók elegek lesznek a kölcsön törlesztésére."
-
 ### Erős kiterjesztés
 
 - [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a torony pár hónap és leomlik."
+- [Mechanika](../fortelyok.altalanos/mechanika.md): "Rittyentettem egy átemelő darut, amivel könnyebb lesz az öntözés."
 
 ### Szituációk
 

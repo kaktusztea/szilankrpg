@@ -40,6 +40,7 @@ __
 
 - [Élettan](../fortelyok.altalanos/elettan.md): Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten.
 - [Hivatalnok](../fortelyok.szabad/hivatalnok.md): "Az uraság 3 évre adta bérbe kizárólagossággal az említett földet - a hosszabbításhoz új kérvényt kell benyújtani."
+- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni." Hivatalnokként specializálódtál, értesz a jogrendszerhez is. 
 - [Mechanika](../fortelyok.altalanos/mechanika.md): Mechanikus zárak készítése. **Nem** helyettesíti a [Zárnyitás](zarnyitas.md) képzettséget
 - [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md): Járatos vagy a történelmi események és korszakok lefolyásában. Neves alakok, emlékezetes csaták, politikai csatározások, trónviszályok, öröklődés.
 - [Belső síkok lényeinek ismerete](../fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md) 🔁 Ismered az adott lénycsoport fajait, alfajait, azok jellemzőit, képességeit - a képzettség szintjének megfelelő mértékben.

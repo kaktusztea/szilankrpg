@@ -2,6 +2,8 @@
 
 Jóslás, együttállások olvasása csillagképekből.
 
+⭕ TODO mágia ⭕ Visszatérni rá, mikor a mágiához érünk ⭕
+
 ### Kapcsolódik
 
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor ennek hiánya is levonást okoz.

@@ -1,6 +1,6 @@
 ## 🟣 Építészet (2)
 
-Épületek statikai ismerete, építésének módja, építészet korszakai, stílusainak ismerete.
+Épületek statikai ismerete, építésének, tervezésének módja, építészet korszakai, stílusainak ismerete.
 
 ### Kapcsolódik
 
