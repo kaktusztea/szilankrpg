@@ -71,6 +71,7 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 - [Pénzügyek](fortelyok.szabad/penzugyek.md)
 - [Rejtjelfejtő](fortelyok.szabad/rejtjelfejto.md)
 - [Stratégia](fortelyok.szabad/strategia.md)
+- [Szertartás](fortelyok.szabad/szertartas.md)
 - [Színjátszás](fortelyok.szabad/szinjatszas.md)
 - [Szobrászat](fortelyok.szabad/szobraszat.md)
 - [Szónoklás](fortelyok.szabad/szonoklas.md)
@@ -85,7 +86,6 @@ Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 - [Tájtípus: sivatagi](fortelyok.szabad/tajtipus_sivatagi.md)
 - [Tánc](fortelyok.szabad/tanc.md)
 - [Tánc: speciális/belső stílus](fortelyok.szabad/tanc_belso_stilus.md) 🔁
-- [Teaszertartás](fortelyok.szabad/teaszertartas.md)
 - [Térképészet](fortelyok.szabad/terkepeszet.md)
 - [Titkos szervezet](fortelyok.szabad/titkos_szervezet.md) 🔁
 - [Vadállat idomítása](fortelyok.szabad/vadallat_idomitasa.md) 🔁

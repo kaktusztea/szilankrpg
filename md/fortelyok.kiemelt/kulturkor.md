@@ -24,9 +24,9 @@ Mi tartozik bele ebbe az ismeretbe? Az adott kultúrkörön belül:
 
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md) fortély; [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md) szituáció
 - [Nyelvismeret](nyelvismeret.md) fortély
+- [Szertartás](../fortelyok.szabad/szertartas.md) fortély
 - [Tánc](../fortelyok.szabad/tanc.md) fortély
 - [Tánc: belső stílus](../fortelyok.szabad/tanc_belso_stilus.md) fortély
-- [Teaszertartás](../fortelyok.szabad/teaszertartas.md) fortély
 - [Vezető: Testőrparancsnok](../fortelyok.harci/vezeto_testorparancsnok.md) fortély
 
 ---

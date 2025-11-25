@@ -17,8 +17,8 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 
 ### Erős kiterjesztés
 
+- [Szertartás](../fortelyok.szabad/szertartas.md): Amely Kultúrköröket ismersz, azok egyes speciális szertartásait **Etikett** képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó szertartásokat. Példa: teaszertartás.
 - [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): "A vérnász során egyre több pengét kell elkerülni, a hetedik után hátulról is jöhet egy meglepetés."
-- [Teaszertartás](../fortelyok.szabad/teaszertartas.md): Amely Kultúrköröket ismersz, azok teaszertartásait **Etikett** képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó teaszertartásokat.
 - [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md):  "A véráldozat után két perc ima, utána indul minden fejvadász a küldetésre. Most nem szabad megszólalnom."
 
 ### Szituációk
