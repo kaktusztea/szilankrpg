@@ -2,6 +2,8 @@
 
 <!-- tag: md_fortely_multiple_tancspecialisbelsostilus -->
 
+Jellemzően Kiérdemelt szabad fortély.
+
 Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális táncot takar, mint például a **Tor0ni Vérnász**. Magától értetődik, hogy speciális/belső táncstílus tanulásához kapcsolódó [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) fortély is szükségeltetik (lásd követelmények).
 
 ### Kiterjeszti ezeket

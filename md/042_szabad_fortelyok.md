@@ -15,11 +15,17 @@ Specializált, egy, vagy több [képzettséget](030_01_kepzettseglista.md) "kite
 
 Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 
-`1.` A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásából elköltesz egyet a felvételére. A Karakteralkotóban a "Speciális" fülön ilyenkor `1` értéket írj a "**Költve**" mezőbe értékként.
+#### ⚜️ `1 db / Tsz` 
 
-`2.` `KP`-t költesz rá (Sima, vagy Szekunder). Ezt a lehetőség akkor jön be, ha már elköltötted a `2.` pontban említett ingyenes fortélyok keretedet, de te szeretnél még továbbiakat felvenni. A Karakteralkotóban a "Speciális" fülön ilyenkor is `1` értéket írj a "**Költve**" mezőbe értékként - az automatikus ellenőrzés kezeli, ha túllépted az ingyenes keretedet és levonja a `KP` költséget.
+A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásodból elköltesz egyet a felvételére. A Karakteralkotóban a "Speciális" fülön ilyenkor `1` értéket írj a "**Költve**" mezőbe értékként.
 
-`3.` KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Lénylovas - Wyvern](fortelyok.szabad/lenylovas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást. A Karakteralkotóban a "Speciális" fülön ilyenkor `0` értéket írj a "**Költve**" mezőbe értékként.
+#### ⚜️ `KP` költésével felvett
+
+`KP`-t költesz rá (Sima, vagy Szekunder). Ezt a lehetőség akkor jön be, ha már elköltötted a fent említett ingyenes fortély keretedet, de te szeretnél még továbbiakat felvenni. A Karakteralkotóban a "Speciális" fülön ilyenkor is `1` értéket írj a "**Költve**" mezőbe értékként - az automatikus ellenőrzés kezeli, ha túllépted az ingyenes keretedet és levonja a `KP` költséget.
+
+#### ⚜️ Kiérdemelt
+
+KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Lénylovas - Wyvern](fortelyok.szabad/lenylovas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást. A Karakteralkotóban a "Speciális" fülön ilyenkor `0` értéket írj a fortély mellett a "**Költve**" mezőbe értékként.
 
 ---
 ### Általános szabályok
