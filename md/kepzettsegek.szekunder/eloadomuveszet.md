@@ -19,16 +19,17 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör
 - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) ha érintett (Színjátszás, Irodalom, Éneklés esetén)
 __
+- [Bűvészet](../fortelyok.szabad/buveszet.md): "Amint látják a kártya a tűz martaléka lett... hm... úgy tűnik nagyuram, kedves hitvese csipkefodrai között még megvan egyben!"
 - [Éneklés](../fortelyok.szabad/enekles.md): nézők előtt dalolsz a hallgatók örömére.
 - [Irodalom](../fortelyok.szabad/irodalom.md): Versek, novellák, regények, históriák, színdarabok írása.
 - [Színjátszás](../fortelyok.szabad/szinjatszas.md): Életed a világot jelentő deszkák. Vándorszínháztól a nagyvárosok ünnepelt színészóriásaikig mind a publikum hálájára vágytok. A [Kultúrkörnek](../fortelyok.kiemelt/kulturkor.md) megfelelő darabokban játszol.
 - [Tánc](../fortelyok.szabad/tanc.md): Művelni vagy képes a Kultúrköreidnek megfelelő tánc stílusokat.
-- [Zsonglőrködés](../fortelyok.szabad/zsonglorkodes.md): Ujjaid között pörögnek, forognak a labdák, kések, kisállatok. A publikum ámul.
+- [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): Ismersz egy speciális belső táncstílust. Hogy milyen jól tudod előadni, az a próbától függ.
 - [Zenélés: fúvós hangszerek](../fortelyok.szabad/zeneles_fuvos_hangszerek.md): Ismered a fúvós hangszerek megszólaltatásának módját. Hogy mennyire élvezhetően, az az Előadóművészet képzettséged szintjétől függ.
 - [Zenélés: húros hangszerek](../fortelyok.szabad/zeneles_huros_hangszerek.md): Ismered a húros hangszerek megszólaltatásának módját. Hogy mennyire élvezhetően, az az Előadóművészet képzettséged szintjétől függ.
 - [Zenélés: ütős hangszerek](../fortelyok.szabad/zeneles_utos_hangszerek.md): Ismered az ütős hangszerek megszólaltatásának módját. Hogy mennyire élvezhetően, az az Előadóművészet képzettséged szintjétől függ.
 - [Zeneszerző](../fortelyok.szabad/zeneszerzo.md): Dallamok születnek a fejedben, melyeket papírra vetsz, hogy te, vagy akár egy zenekar előadhassa.
-- [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): Ismersz egy speciális belső táncstílust. Hogy milyen jól tudod előadni, az a próbától függ.
+- [Zsonglőrködés](../fortelyok.szabad/zsonglorkodes.md): Ujjaid között pörögnek, forognak a labdák, kések, kisállatok. A publikum ámul.
 
 <br />
 

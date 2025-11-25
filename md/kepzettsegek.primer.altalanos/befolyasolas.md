@@ -16,6 +16,7 @@ Intelligencia, Érzékenység
 ### Normál kiterjesztés
 
 - [Alkudozás](../fortelyok.szabad/alkudozas.md): "Micsoda? A felét nem éri! Félkegyelműnek tűnök talán?!"
+- [Bűvészet](../fortelyok.szabad/buveszet.md): "Végtelen hatalmam megkettőzte az aranyok számát!"
 - [Csábítás](../fortelyok.szabad/csabitas.md): Eltekered a másik fejét. Hamar megered a nyelve, hisz a szerelem vak. Nem mágikus hatású.
 - [Hazudozás](../fortelyok.szabad/hazudozas.md): "Arra mentek! Jajjh, a lábam!"
 - [Megfélemlítés](../fortelyok.szabad/megfelemlites.md): "Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér..."

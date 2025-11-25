@@ -2,18 +2,6 @@
 
 Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#%EF%B8%8F-2-csoportos-szellemi-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) formájában. A módosítók mértéke helyzettől függ.
 
-Eltulajdonítani valamit úgy, hogy akitől, vagy aki elől elemeljük, az ne vegye észre:
-
-```
-Lopás + Ügyesség
-     vs
-Észlelés + Érzékenység/Intelligencia
-```
-
-### Csoportos szellemi képzettségpróba ellenpróbánál
-
-Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módon a Lopás képzettségedre dobsz, a megfigyelők pedig a [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#%EF%B8%8F-2-csoportos-szellemi-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szabályai szerint Észlelés képzettsépróbát.
-
 ### Általános ismeretek
 
 Összefoglalva a képzettség az alábbi ismereteket nyújtja:
@@ -30,6 +18,27 @@ Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módo
 ### Szituációk
 
 - [Ellopni valamit, kirabolni valakit](../szituaciok/lopas_kirablas.md)
+
+### Normál kiterjesztés
+
+- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a füle mögül húzom ki ((majdnem ugyanazt)) az aranyórát."
+
+---
+### Próbadobás menete
+
+Eltulajdonítani valamit úgy, hogy akitől, vagy aki elől elemeljük, az ne vegye észre:
+
+```
+Lopás + Ügyesség
+     vs
+Észlelés + Érzékenység/Intelligencia
+```
+
+#### Csoportos szellemi képzettségpróba ellenpróbánál
+
+Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módon a Lopás képzettségedre dobsz, a megfigyelők pedig a [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#%EF%B8%8F-2-csoportos-szellemi-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szabályai szerint Észlelés képzettsépróbát.
+
+<br />
 
 ---
 ### Biztos tudás, követelmények 📖
