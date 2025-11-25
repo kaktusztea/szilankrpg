@@ -105,32 +105,6 @@ Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjesz
 
 <br />
 
-### 🔆 Speciális: Más karakter pótolja a hiányzó kiterjesztő fortélyt
-
-Mikor több fortély terjeszt ki egy képzettséget (mind szükséges az adott probánál), de valamelyik hiányzik, akkor ezt - a szituáció ismeretében a KM bírálata után -  pótolhatja egy másik karakter, így elkerülve a levonást (**Normál** hiány), vagy az automatikus sikertelen próbát (**Erős** hiány).
-
-Ilyen, több karakteres képzettségpróbánál a kapcsolódó képzettség és Tulajdonság minimuma számít, azaz annak a résztvevőnek a képzettség-szintje és kapcsolódó Tulajdonsága, akié az alacsonyabb.
-
-<br />
-
----
-### ⚡Példa besegítésre, hiányzó fortély pótlásával
-
-Mechanikus felvonót tervezni egy épületbe
-- Nehézség: `18` (Rendkívül Nehéz)
-- Kell hozzá: [Kvantikum](kepzettsegek.szekunder/kvantikum.md) képzettség + **Emlékezet** Tulajdonsággal dobjuk a próbát.
-- KM dönt: erre az adott esetre az alábbi 2 képzettség kiterjesztő fortély szükséges:
-    - [Építészet](fortelyok.altalanos/epiteszet.md) (Erős kiterjesztés Kvantikum felé)
-    - [Mechanika](fortelyok.altalanos/mechanika.md) (Erős kiterjesztés Kvantikum felé)
-- JK-1: "Kvantikum - `11.szint`", Emlékezet: `+2`. **Építészet** fortélyom van, de **Mechanika** nincs.
-- JK-2: De nekem van **Mechanika**! Az én képzettségem: "Kvantikum - `10. szint`". Emlékezet: `+3`
-- A két JK együtt megtervezi a felvonót és a beépítés módját
-    - Dobás: `10 + 2` (Kvantikum minimum, Emlékezet minimum) + k10  vs  `18`
-    - `12 + k10  vs.  18`
-    - `6`-os dobástól megvan, az esély `50%`
-
-<br />
-
 ---
 ### ⚡ Példa képzettség kiterjesztésere - hiányzó fortéllyal
 
