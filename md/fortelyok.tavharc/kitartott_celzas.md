@@ -1,10 +1,10 @@
-## 🟣 Képzett célzás (1)
+## 🟣 Kitartott célzás (1)
 
 Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót, ami lövésedet segíti, vagy gátolja - mikor kitartod célzással lövésedet.
 
 ### Alapeset
 
-🔒 **Követelmény**: Csak íjjal végezhető
+🔒 **Követelmény**: Íjjakkal és lőfegyverekkel végezhető
 
 🌟 **Hatás**: `1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. 
 
@@ -12,7 +12,7 @@ Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót,
 ### 1. fok
 
 🔒 **Követelmény**:
-- Csak íjjal végezhető
+- Íjjakkal és lőfegyverekkel végezhető
 - Önuralom: `+1`
 - Íjászat vagy Lövészet - `5.szint`
 - Összpontosítás - `4.szint`

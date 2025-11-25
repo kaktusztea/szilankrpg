@@ -1,4 +1,4 @@
-## 🟣 Távoli lövés (1)
+## 🟣 Mesterlövész (1)
 
 Gyakorlott vagy a nagy távolságú célokra lövésben. Csak nyílpuska, vagy más mechanikus lőfegyverrel (íjjal nem).
 

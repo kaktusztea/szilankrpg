@@ -62,12 +62,11 @@
 - [Gyors hajítás](fortelyok.tavharc/gyors_hajitas.md)
 - [Gyors lövés](fortelyok.tavharc/gyors_loves.md)
 - [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md)
-- [Képzett célzás](fortelyok.tavharc/kepzett_celzas.md)
-- [Közeli lövés fegyverrel](fortelyok.tavharc/kozeli_loves_fegyverrel.md)
+- [Kitartott célzás](fortelyok.tavharc/kitartott_celzas.md)
 - [Lövés futás közben](fortelyok.tavharc/loves_futas_kozben.md)
 - [Lövés reflexből](fortelyok.tavharc/loves_reflexbol.md)
+- [Mesterlövész](fortelyok.tavharc/mesterlovesz.md)
 - [Mozgó cél mestere fegyverrel](fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md)
-- [Távoli lövés](fortelyok.tavharc/tavoli_loves.md)
 
 ---
 ### Slan harci fortélyok
