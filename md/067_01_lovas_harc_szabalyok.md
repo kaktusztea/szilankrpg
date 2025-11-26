@@ -91,7 +91,7 @@ Vágtázik     k20+15 SP
 Ha sikeres volt a próba, akkor is fennáll az esésből sebződés veszélye, de jelentősen kisebb mértékű:
 
 ```
-k20-10 SP
+(k20 - 10) SP
 ```
 
 ---
@@ -112,4 +112,4 @@ Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, legfeljeb
 
 🔗 [Lovas fortélyok](067_02_lovas_leglovas_fortelyok.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)
