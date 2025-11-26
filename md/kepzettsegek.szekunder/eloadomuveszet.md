@@ -16,9 +16,8 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 
 ### Erős kiterjesztés
 
-- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör
-- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) ha érintett (Színjátszás, Irodalom, Éneklés esetén)
-__
+- ❗ [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör
+- ❗ [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) ha érintett (Színjátszás, Irodalom, Éneklés esetén)
 - [Bűvészet](../fortelyok.szabad/buveszet.md): "Amint látják a kártya a tűz martaléka lett... hm... úgy tűnik nagyuram, kedves hitvese csipkefodrai között még megvan egyben!"
 - [Éneklés](../fortelyok.szabad/enekles.md): nézők előtt dalolsz a hallgatók örömére.
 - [Irodalom](../fortelyok.szabad/irodalom.md): Versek, novellák, regények, históriák, színdarabok írása.

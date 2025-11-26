@@ -10,13 +10,10 @@ Emlékezet, Intelligencia, Érzékenység
 
 ### Normál kiterjesztés
 
-- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Enélkül érvényes a `-3` levonás mindegyik meglevő művészeti ágra.
-- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md): Udvari fok (ahol szükségesnek érezzük)
-- [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
+- ❗ [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Enélkül érvényes a `-3` levonás mindegyik meglevő művészeti ágra.
+- ❗ [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md): Udvari fok (ahol szükségesnek érezzük)
+- ❗ [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): Felismered, hogy a mű hamisítvány
-
-__
-
 - [Éneklés](../fortelyok.szabad/enekles.md): felismered a híres dalnokokat, dallamaikat, slágereiket.
 - [Építészet](../fortelyok.altalanos/epiteszet.md):  "Shad0ni hatást érzek azon az oszlopfőn..."
 - [Festészet](../fortelyok.szabad/festeszet.md): Ismered, felismered adott [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) festőit, műveiket, történetüket, stílusukat.
@@ -93,7 +90,7 @@ __
 ---
 ### Próbák 🎲
 
-Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet?") magasabb az [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség, **akkor is a Művészetismeret képzettség szintjével dobunk próbát!** Attól hogy valaki remekül furulyázik a kocsmában, nem feltétlenül járatos a zenei nagyvilágban.
+Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet?") magasabb az [Előadóművészet](eloadomuveszet.md) képzettség, **akkor is a Művészetismeret képzettség szintjével dobunk próbát!** Attól hogy valaki remekül furulyázik a kocsmában, nem feltétlenül járatos a zenei nagyvilágban.
 
 #### Könnyű (6) 🎲 
 

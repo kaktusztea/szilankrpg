@@ -23,10 +23,7 @@ Intelligencia, Emlékezet
 
 ### Normál kiterjesztés
 
-- [Helyismeret](../fortelyok.kiemelt/helyismeret.md): ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre
-
-__
-
+- ❗ [Helyismeret](../fortelyok.kiemelt/helyismeret.md): ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre
 - [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a fal sokkal vastagabb, mint a másik!"
 - [Hazudozás](../fortelyok.altalanos/hazudozas.md): "Sokat  pislog, kerüli a tekintetem, hazudik..."
 - [Heraldika](../fortelyok.szabad/heraldika.md): "A famor címerében levő lombok vérszínűek, akárcsak az - állítólagos - ellenséges házéban."
@@ -45,7 +42,7 @@ __
 
 - [Információ szerzés valakitől](../szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
-- [Nyomok értelmezése, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md#nyomok-%C3%A9rtelmez%C3%A9se-v%C3%A1rosi-k%C3%B6rnyzetben-)
+- [Nyomok értelmezése, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md#nyomok-értelmezése-városi-környzetben-)
 
 <br />
 

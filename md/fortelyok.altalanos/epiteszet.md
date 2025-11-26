@@ -14,3 +14,16 @@
 - [Kvantikum](../kepzettsegek.szekunder/kvantikum.md): "Az a torony pár hónap és leomlik."
 
 ---
+### 1. fok
+
+🔒 **Követelmény**: -
+
+🌟 **Hatás**: Kiterjeszt képzettségeket `1.fokon`
+
+### 2. fok
+
+🔒 **Követelmény**: Intelligencia: `+0`
+
+🌟 **Hatás**: Kiterjeszt képzettségeket `2.fokon`
+
+---

@@ -22,9 +22,6 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Ennek ismerete nélkül nem tudsz az adott kultúrkör stílusában alkotni.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
-
-__
-
 - [Festészet](../fortelyok.szabad/festeszet.md): Vászonra álmodod a lelkedben születő képeket.
 - [Kalligráfia](../fortelyok.szabad/kalligrafia.md): Mesterien bánsz a pennával, festett betűidben ott lakozik az örökkévalóság.
 - [Szobrászat](../fortelyok.szabad/szobraszat.md): Kezed alatt agyagból, kőből, fából, fémből készülnek a mesteri alkotások.
