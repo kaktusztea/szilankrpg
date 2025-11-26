@@ -2,7 +2,7 @@
 
 ## Karakteralkotó
 
-**[Karakteralkotó v9.1.2 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.1.2.ods?raw=true)** &nbsp;&nbsp;- &nbsp;&nbsp;  [LibreOffice ⬇️](https://www.libreoffice.org/download/download/) 
+**[Karakteralkotó v9.2.0 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.0.ods?raw=true)** &nbsp;&nbsp;- &nbsp;&nbsp;  [LibreOffice ⬇️](https://www.libreoffice.org/download/download/) 
 
 <br />
 
@@ -24,12 +24,12 @@
 ---
 ## Tartalomjegyzék
 
-- [Kezdetek](#0-kezdetek) &nbsp;-&nbsp; [Karakteralkotás](#1-karakteralkot%C3%A1s)
-- [Hátterek](#2-h%C3%A1tterek-)  &nbsp;-&nbsp; [Képzettségrendszer](#3-k%C3%A9pzetts%C3%A9grendszer-) &nbsp;-&nbsp; [Fortélyok](#4-fort%C3%A9lyok-) &nbsp;-&nbsp; [Tradíciók](#5-trad%C3%ADci%C3%B3k)
-- [Harcrendszer](#6-harcrendszer-%EF%B8%8F) &nbsp;-&nbsp; [Távolsági Harcrendszer](#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
-- [Hatások és Státuszok](#8-hat%C3%A1sok-%C3%A9s-st%C3%A1tuszok)
-- [Pszí](#9-psz%C3%AD-) &nbsp;-&nbsp; [Mágiarendszer](#10-m%C3%A1giarendszer-) &nbsp;-&nbsp; [Papi mágia](#11-papi-m%C3%A1gia) &nbsp;-&nbsp; [Slan misztérium](#12-slan-miszt%C3%A9rium) &nbsp;-&nbsp; [Varázstárgyak](#13-var%C3%A1zst%C3%A1rgyak)
-- [Gyógyítás, gyógyulás](#14-gy%C3%B3gy%C3%ADt%C3%A1s-gy%C3%B3gyul%C3%A1s) &nbsp;-&nbsp; [Méregrendszer, Mérgek](#15-m%C3%A9regrendszer-m%C3%A9rgek) &nbsp;-&nbsp; [Szituációk](#16-szitu%C3%A1ci%C3%B3k)
+- [Kezdetek](#0-kezdetek) &nbsp;-&nbsp; [Karakteralkotás](#1-karakteralkotás)
+- [Hátterek](#2-hátterek-)  &nbsp;-&nbsp; [Képzettségrendszer](#3-képzettségrendszer-) &nbsp;-&nbsp; [Fortélyok](#4-fortélyok-) &nbsp;-&nbsp; [Tradíciók](#5-tradíciók)
+- [Harcrendszer](#6-harcrendszer-️) &nbsp;-&nbsp; [Távolsági Harcrendszer](#7-távolsági-harcrendszer-)
+- [Hatások és Státuszok](#8-hatások-és-státuszok)
+- [Pszí](#9-pszí-) &nbsp;-&nbsp; [Mágiarendszer](#10-mágiarendszer-) &nbsp;-&nbsp; [Papi mágia](#11-papi-mágia) &nbsp;-&nbsp; [Slan misztérium](#12-slan-misztérium) &nbsp;-&nbsp; [Varázstárgyak](#13-varázstárgyak)
+- [Gyógyítás, gyógyulás](#14-gyógyítás-gyógyulás) &nbsp;-&nbsp; [Méregrendszer, Mérgek](#15-méregrendszer-mérgek) &nbsp;-&nbsp; [Szituációk](#16-szituációk)
 
 <br />
 
