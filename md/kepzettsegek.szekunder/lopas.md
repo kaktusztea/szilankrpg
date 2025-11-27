@@ -1,6 +1,6 @@
 ## 🔵 Lopás
 
-Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#%EF%B8%8F-2-csoportos-szellemi-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) formájában. A módosítók mértéke helyzettől függ.
+Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) formájában. A módosítók mértéke helyzettől függ.
 
 ### Általános ismeretek
 
@@ -36,7 +36,7 @@ Lopás + Ügyesség
 
 #### Csoportos szellemi képzettségpróba ellenpróbánál
 
-Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módon a Lopás képzettségedre dobsz, a megfigyelők pedig a [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#%EF%B8%8F-2-csoportos-szellemi-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) szabályai szerint Észlelés képzettsépróbát.
+Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módon a Lopás képzettségedre dobsz, a megfigyelők pedig a [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szabályai szerint Észlelés képzettsépróbát.
 
 <br />
 

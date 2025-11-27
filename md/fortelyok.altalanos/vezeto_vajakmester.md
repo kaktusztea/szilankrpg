@@ -5,7 +5,7 @@ Vezető vajákmesterként koordinálod az alád tartozó laboratóriumi segédek
 ---
 ### Alapeset
 
-A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
+A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
 
 ---
 ### 1. fok

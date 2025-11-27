@@ -5,7 +5,7 @@ Képes vagy egy színtársulat vezetésére → bónusz **Előadóművészet** k
 ---
 #### Bónusz
 
-A [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy színtársulat tagjai, mikor egy előadást játszanak el. 
+A [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy színtársulat tagjai, mikor egy előadást játszanak el. 
 
 ---
 ### 1. fok

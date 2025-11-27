@@ -5,7 +5,7 @@ Vezető tudósprofesszorként koordinálod az alád tartozó nyomozók munkájá
 ---
 #### Bónusz
 
-A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#norm%C3%A1l-kiterjeszt%C3%A9s) próbál tudást kutatni, felhasználni.
+A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#normál-kiterjesztés) próbál tudást kutatni, felhasználni.
 
 ---
 ### 1. fok

@@ -1,6 +1,6 @@
 ## Képzettségpróba hátrányok
 
-Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2](081_hatasok.md#%EF%B8%8F-el%C5%91ny-12-%C3%A9s-h%C3%A1tr%C3%A1ny-12-hat%C3%A1sok)  Hatásokat szenvedhetsz el képzettségpróba dobásodra.
+Egyes **[Státuszok](082_statuszok.md)** hatására [Hátrány-1 és Hátrány-2](081_hatasok.md#️-előny-12-és-hátrány-12-hatások)  Hatásokat szenvedhetsz el képzettségpróba dobásodra. Az alábbiak egyfajta "fordított kivonatot" mutatnak a **Státuszok** oldalból kiválogatva.
 
 ---
 ### Képzettségpróba hátrányok (összes)
@@ -71,8 +71,8 @@ Automatikus kudarc
 
 ---
 
-🔗 [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) →
+🔗 [Képzettségek és fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
+⚜️ [Nyitóoldal](start.md#3-képzettségrendszer-)
 
 

@@ -1,28 +1,24 @@
-## Képzettségpróba
+# Képzettségpróba
 
 A felvett képzettségeket gyakran próbára is tesszük, sokszor a komfortzónán (biztos tudás) kívüli mértékben is. Ilyenkor képzettségdobást teszünk.
 
-  - [Próbadobás](#pr%C3%B3badob%C3%A1s)
-  - [Tulajdonság választás (opcionális)](#tulajdons%C3%A1g-v%C3%A1laszt%C3%A1s-opcion%C3%A1lis)
-  - [Páncél MGT hatása fizikai Képzettségpróbákra](#p%C3%A1nc%C3%A9l-mgt-hat%C3%A1sa-fizikai-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1kra)
-  - [Kombinált képzettségpróba (több Tulajdonsággal egyszerre)](#kombin%C3%A1lt-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-t%C3%B6bb-tulajdons%C3%A1ggal-egyszerre)
-  - [Vállalás és Kritikus hiba](#v%C3%A1llal%C3%A1s-%C3%A9s-kritikus-hiba)
-  - [Próba biztos tudásból](#pr%C3%B3ba-biztos-tud%C3%A1sb%C3%B3l)
-  - [Siker/Kudarc mértéke](#sikerkudarc-m%C3%A9rt%C3%A9ke)
-  - [Próba képzetlenül](#pr%C3%B3ba-k%C3%A9pzetlen%C3%BCl)
-  - [Összetett képzettségpróba, Másodlagos próbadobások](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)
-  - [Összetett képzettségpróba - ellenpróba eset](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba---ellenpr%C3%B3ba-eset)
-  - [Helyettesítés](#helyettes%C3%ADt%C3%A9s)
-  - [Sérülés hatása képzettségpróbára](#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra)
-  - [Tulajdonság vs Képzettség ellenpróba](#tulajdons%C3%A1g-vs-k%C3%A9pzetts%C3%A9g-ellenpr%C3%B3ba)
-
-### Csoportos képzettségek
-
-- [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md)
-- [Csoportosan végezhető képzettségek listája](030_07_02_csoportosan_vegezheto_kepzettsegek.md)
+- [Próbadobás](#próbadobás)
+- [Tulajdonság választás (opcionális)](#tulajdonság-választás-opcionális)
+- [Páncél MGT hatása fizikai Képzettségpróbákra](#páncél-mgt-hatása-fizikai-képzettségpróbákra)
+- [Vállalás és Kritikus hiba](#vállalás-és-kritikus-hiba)
+- [Próba biztos tudásból](#próba-biztos-tudásból)
+- [Siker/Kudarc mértéke](#sikerkudarc-mértéke)
+- [Próba képzetlenül](#próba-képzetlenül)
+- [Összetett képzettségpróba](#összetett-képzettségpróba)
+- [Összetett ellenpróba](#összetett-ellenpróba)
+- [Helyettesítés](#helyettesítés)
+- [Sérülés hatása képzettségpróbára](#sérülés-hatása-képzettségpróbára)
+- [Tulajdonság vs Képzettség ellenpróba](#tulajdonság-vs-képzettség-ellenpróba)
+- [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md)
+- [Csoportosan végezhető képzettségek listája](030_06_03_csoportosan_vegezheto_kepzettsegek.md)
 
 ---
-### Próbadobás
+## Próbadobás
 
 Vesszük az adott szituációban épp szükséges **Tulajdonság** értékét (KM mondja meg, hogy melyiket), hozzáadjuk a **Képzettség** szint értékét, majd dobunk `k10`-es kockával és a fentieket összeadjuk. Ha a kapott szám nagyobb, vagy egyenlő az adott szituációra meghatározott **Célszámmal**, akkor a próba sikerült.
 
@@ -34,7 +30,7 @@ Tulajdonság + Képzettség + k10
           Célszám
 ```
 
-#### Képzettségpróba Célszámok
+### Képzettségpróba Célszámok
 
 ```
  6: Könnyű
@@ -50,13 +46,13 @@ Tulajdonság + Képzettség + k10
 A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Random példa: "szakrális emberáldozat csökkenti az adott próba nehézségét".
 
 Példák `21` feletti célszámokra:
-- [Aktuális Aura számításánál](104_aura_magia_akarata_magiaellenallas.md#aura-aktu%C3%A1lis-%C3%A9rt%C3%A9ke) Aurafejlesztés képzettségpróba
-- [Méreg komplexitása](151_meregkeveres_szabalyai.md#a-m%C3%A9reg-komplexitása) Méregkeverésnél
+- [Aktuális Aura számításánál](104_aura_magia_akarata_magiaellenallas.md#aura-aktuális-értéke) Aurafejlesztés képzettségpróba
+- [Méreg komplexitása](151_meregkeveres_szabalyai.md#a-méreg-komplexitása) Méregkeverésnél
 
 <br />
 
 ---
-### Tulajdonság választás (opcionális)
+## Tulajdonság választás (opcionális)
 
 Hogy mely Tulajdonsággal kell a képzettségpróbát dobni, azt alapesetben a KM határozza meg, de van, hogy megoldható több Tulajdonsággal is.
 
@@ -72,29 +68,16 @@ Tulajdonságonként viszont eltér(het)
 <br />
 
 ---
-### Páncél MGT hatása fizikai Képzettségpróbákra
+## Páncél MGT hatása fizikai Képzettségpróbákra
 
 Páncélod akadályozhat a fizikai Képzettségpróbák végrehajtásában.
 
-Ezt a [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) Státusz írja le.
+Ezt a [Páncél akadályoztatása](082_statuszok.md#️-páncél-akadályoztatása-1-mgt-️-mgt) Státusz írja le.
 
 <br />
 
 ---
-### Kombinált képzettségpróba (több Tulajdonsággal egyszerre)
-
-Kizárólag [Összetett képzettségpróba](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok) esetén alkalmazható!
-
-A Kombinált Tulajdonságpróbához hasonló helyzet, mikor a KM szerint nem csak `1`, hanem `2` Tulajdonság is szerepet kell kapjon a próba során.
-
-Ekkor 
-- a fontosabbnak ítélt Tulajdonsággal dobandó az első próba
-- a másodlagos fontosságúnak ítélt Tulajdonsággal dobandó a csökkentett Nehézségű próba (lásd lenn az [Összetett képzettségpróbát](#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok)!)
-
-<br />
-
----
-### Vállalás és Kritikus hiba
+## Vállalás és Kritikus hiba
 
 A Vállalás azt jelenti, hogy (ha a KM is beleegyezik) képzettségpróba esetén kaphatsz `[+1; +3]` bónuszt a próbára - te döntöd el mennyit. Minél többet vállalsz, annál nagyobb veszélynek teszed ki magad. Ugyanis a próba előtt „Vállalás próbát" kell dobni:
 
@@ -116,7 +99,7 @@ A **Kritikus hiba** nem jelenti szükségszerűen a karakter végleges eltávoz�
 
 Előfordulhat tehát olyan eset, hogy a **képzettségpróba** és így annak hatása sikeres volt, viszont a karakter közben **Kritikus hibát** vétett, aminek minden következményét vállalnia kell. Heroikus, önfeláldozó vagy ostoba cselekedet? Mindenki döntse ele maga.
 
-#### 🔆 Fontos szabályok Vállalásra
+### 🔆 Fontos szabályok Vállalásra
 
 - A Vállalás értéke nem haladhatja meg a használt képzettség aktuális értékét!
 - Összetett, több dobást igénylő képzettségpróbánál nem alkalmazható Vállalás! Például megmászni a nagy hegyet.
@@ -140,14 +123,14 @@ Látható, hogy a vállalás sokat dob az esélyeken, de megvan a rizikója is: 
 <br />
 
 ---
-### Próba biztos tudásból
+## Próba biztos tudásból
 
 Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehetőség képzettségpróba dobására. Tipikusan a „Tudok-e valamit róla?"-jellegű határozottan eldönthető esetekben. Ilyenkor a KM dönti el, hogy az adott képzettségszinttel az adott feladat megoldható, avagy sem.
 
 <br />
 
 ---
-### Siker/Kudarc mértéke
+## Siker/Kudarc mértéke
 
 ⚜️ Ha `6` vagy annál nagyobb különbséggel (`2` tudás fok) rontottál, akkor kiemelten nagy hibát vétettél.
 
@@ -158,7 +141,7 @@ A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje 
 <br />
 
 ---
-### Próba képzetlenül
+## Próba képzetlenül
 
 ```
 → +3 a próba nehézségére
@@ -172,19 +155,19 @@ Ha az adott képzettséget nem lehet képzetlenül megpróbálni, akkor a KM egy
 <br />
 
 ---
-### Összetett képzettségpróba, Másodlagos próbadobások
+## Összetett képzettségpróba
 
 Ha a karakternek egy olyan összetett feladatot kell elvégeznie, ami nem intézhető el egy darab dobással (pl. megmászni egy hegyet, vagy rettentő magas várfalat, esetleg órákon keresztül verset szavalni), akkor igazságtalan lenne a maximális nehézséget többször megdobatni vele, hiszen így drasztikusan lecsökken az esélye a sikerre. Ilyenkor a következő módszert használjuk:
 
 A játékos dob egy próbát az indokolt maximális nehézségre, például:
 
-#### Elsődleges dobás
+### Elsődleges dobás
 
 ```
 Célszám: 15 (Nagyon nehéz)
 ```
 
-#### Másodlagos dobás
+### Másodlagos dobás
 
 Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal (`-3` célszám) alacsonyabb nehézség ellen**. Például:
 
@@ -195,7 +178,7 @@ Célszám: 12 (Nehéz)
 
  Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
 
-#### Lépcsőzetes Célszámok módszere
+### Lépcsőzetes Célszámok módszere
 
 Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat „milyen hosszú", mennyire „többlépcsős". Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal (Célszámra: `-6` ) alacsonyabb nehézségre is dobathatunk akár teljesen folyamatos lefutással is:
 
@@ -209,9 +192,14 @@ Másodlagos:  9 (Átlagos)
 
 🔆 Megjegyzés: `2` fokozatnál (Célszámra: `-6` ) nagyobb különbségű dobást nem tehetsz.
 
+### Másodlagos próba kiterjesztett képzettségekre
+
+Természetesen a [fortélyok által kiterjesztett képzettségekre](030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-képzettségek-kiterjesztése-fortélyokkal) is lehet másodlagos próbát dobni.
+
 <br />
 
-#### ⚡Példa összetett képzettségpróbára: Megmászni egy 200 méter magas, omladékos hegyet
+---
+### ⚡Példa összetett képzettségpróbára: Megmászni egy 200 méter magas, omladékos hegyet
 
 ```
 Tetves, a tolvaj
@@ -257,7 +245,7 @@ Hasonló szituáció: [Mászás képzettségpróbára összetett példa](szituac
 <br />
 
 ---
-### Összetett képzettségpróba - ellenpróba eset
+## Összetett ellenpróba
 
 Különleges eset az ilyen. Olyankor fordulhat elő, mikor hosszabb, összetettebb próba szükséges, amelyben a felek összemérhetik tudásukat.
 
@@ -266,11 +254,11 @@ Különleges eset az ilyen. Olyankor fordulhat elő, mikor hosszabb, összetette
 - Minél hosszabb, összetettebb a cselekmény, annál több a dobások száma
 - Aki több ellenpróbát megnyer, az nyeri végül az összetett próbát
 
-#### ⚡Konkrét példa
+### ⚡Konkrét példa
 
 Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kihozzák hátasukból a maximumot, figyelnek a pihenésre, etetésre, a fenntartható maximális tempóra. Az ellepróba azt dönti el, utoléri-e az üldöző áldozatát.
 
-#### Narratív eszköz
+### Narratív eszköz
 
 A fent leírt játékmechanika tempókezelési eszközt is adhat a KM kezébe a mesélés során, ha nem akarja lemesélni minden mozzanatát például egy hosszabb, - de sokadjára már unalmas - üldözésnek.
 
@@ -279,7 +267,7 @@ Ezen felül ez a módszer a feszültség fenntartására is alkalmas, mert esél
 <br />
 
 ---
-### Helyettesítés
+## Helyettesítés
 
 ```
 - (képzettség szint/3)
@@ -296,7 +284,7 @@ Ekkor a **Helyettesítő képzettség** szintjének `1/3 ↓` része alkalmazhat
 
 A helyettesítő képzettség(ek) értelemszerűen legfeljebb `5.szintű` helyettesítő értéket képesek adni (`15/3=5`). Az egyes helyettesítés-párokat nem írjuk le mind, ezek helyzetfüggőek, a KM rögtönözhet ha az adott szituációban úgy ítéli meg, hogy egy képzettség behelyettesíthető a fentiek szerint a másik helyére.
 
-#### ⚡Példa: Nyomozás helyettesítéssel
+### ⚡Példa: Nyomozás helyettesítéssel
 
 A karakter egy bűntény helyszínén gyanús személyekkel találkozik. Kikérezné őket, **Nyomozás** képzettségpróbát kéne dobnia. Mivel **Nyomozás** képzettsége csak `2.szintű`, ezért egy kapcsolódó képzettsége segítségére támaszkodik, amiben sokkal járatosabb és le is fedi az aktuális szituációban szükséges ismeretet. A KM az adott helyzetben ezt jól megindokoltnak látja, így engedélyezi.
 
@@ -307,7 +295,7 @@ Ebben az esetben az **Emberismeret** képzettség az, amely helyettesítő képz
 
 Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 
-#### ⚡További Helyettesítés példák felsorolásszerűen
+### ⚡További Helyettesítés példák felsorolásszerűen
 
 - [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) ⇆ [Mászás](kepzettsegek.szekunder/maszas.md)
 - [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) ⇆ [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md)
@@ -319,14 +307,14 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 <br />
 
 ---
-### Sérülés hatása képzettségpróbára
+## Sérülés hatása képzettségpróbára
 
-Ha a karakter megsérül és `S3`, vagy `S4` [Sebesülés-kategóriába](https://github.com/kaktusztea/szilankrpg/blob/master/md/061_03_sebesules.md) került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják a képzettségpróbáit.
+Ha a karakter megsérül és `S3`, vagy `S4` [Sebesülés-kategóriába](https://github.com/kaktusztea/szilankrpg/blob/master/md/061_03_sebesules.md) került, akkor ["Sérült" Státuszt](082_statuszok.md#️-sérült-1-s3) kap és az ott leírtak szerinti hatások sújtják a képzettségpróbáit.
 
 <br />
 
 ---
-### Tulajdonság vs Képzettség ellenpróba
+## Tulajdonság vs Képzettség ellenpróba
 
 Előfordulhat olyan furcsa helyzet, hogy a KM véleménye szerint egy szituációban az egyik fél a Tulajdonságát, a másik egy képzettségét használná.
 
@@ -334,6 +322,6 @@ Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbá
 
 ---
 
-🔗 [Képzettségpróba Hátrányok](030_06_02_kepzettsegproba_hatranyok.md) →
+🔗 [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
+⚜️ [Nyitóoldal](start.md#3-képzettségrendszer-)

@@ -12,7 +12,7 @@ Testőred egy entitásként védelmeznek személyeket, területet vagy építmé
 ---
 ### Alapeset
 
-Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget a testőrcsapat a [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja.
+Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget a testőrcsapat a [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja.
 
 ---
 ### 1. fok

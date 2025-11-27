@@ -5,7 +5,7 @@ Vezető orvosprofesszorként koordinálod az alád tartozó orvosok, gyógyító
 ---
 ### Alapeset
 
-A [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport. 
+A [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport. 
 
 ---
 ### 1. fok

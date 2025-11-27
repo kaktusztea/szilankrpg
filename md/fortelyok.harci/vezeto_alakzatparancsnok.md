@@ -13,7 +13,7 @@ Egy jó vezető csodákat tehet egy fegyveres alakzattal.
 ---
 ### Alapeset
 
-Az **[Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md)** képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk.
+Az **[Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md)** képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk.
 
 
 ---

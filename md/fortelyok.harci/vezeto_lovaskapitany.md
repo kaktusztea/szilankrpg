@@ -12,7 +12,7 @@ Egy földi hátasokkal küzdő egység parancsnokakként koordinálod annak harc
 ---
 ### Alapeset
 
-Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
+Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
 
 ---
 ### 1. fok

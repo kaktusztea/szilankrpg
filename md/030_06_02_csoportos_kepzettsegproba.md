@@ -1,4 +1,4 @@
-## Csoportos képzettségpróba
+# Csoportos képzettségpróba
 
 Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, akkor kell az alábbi mechanikákhoz nyúlnunk. Három esetet különbözetünk meg: 
 
@@ -11,7 +11,7 @@ Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, 
 <br />
 
 ---
-### ⚜️ 1. Csoportos fizikai képzettségpróba
+## ⚜️ 1. Csoportos fizikai képzettségpróba
 
 ```
 Dobás:
@@ -28,16 +28,16 @@ A rontás az egész csapat rontását jelenti.
 
 Ez tipikusan a "Ne csesszük el" típusú próba. ⚡Példa: csoportos Lopakodás.
 
-#### 🔆 Vezető fortélyok (fizikai)
+### 🔆 Vezető fortélyok (fizikai)
 
 A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az adott képzettséghez kapcsolódó "**Vezető** fortélyt" ismeri. A bónusz csak akkor él, amennyiben a csapat az említett vezető irányítása alatt korábban összeszokott. Hogy egy Vezető fortély fizikai, vagy szellemi alapú, azt itt találhatod meg:
 
-→ [Vezető fortélyok](030_07_02_csoportosan_vegezheto_kepzettsegek.md)
+→ [Vezető fortélyok](030_06_03_csoportosan_vegezheto_kepzettsegek.md)
 
 <br />
 
 ---
-### ⚜️ 2. Csoportos szellemi képzettségpróba
+## ⚜️ 2. Csoportos szellemi képzettségpróba
 
 ```
 Dobás:
@@ -52,35 +52,33 @@ A csapatból az dob, akinek legnagyobb a `(Képzettség szint + Tulajdonság)` �
 - egyéni fortély bónuszok is beleszámítanak
 - kiterjesztő fortély is beleszámít
 
-#### 🔆 Vezető fortélyok (szellemi)
+### 🔆 Vezető fortélyok (szellemi)
 
 A fent kalkulált csoport-értéket lehet emelni, amennyiben egy csapattag az adott képzettséghez kapcsolódó "**Vezető** fortélyt" ismeri. A bónusz csak akkor él, amennyiben a csapat az említett vezető irányítása alatt korábban összeszokott. Hogy egy Vezető fortély fizikai, vagy szellemi alapú, azt itt találhatod meg:
 
-→ [Vezető fortélyok](030_07_02_csoportosan_vegezheto_kepzettsegek.md)
+→ [Vezető fortélyok](030_06_03_csoportosan_vegezheto_kepzettsegek.md)
 
 <br />
 
 ---
-### ⚜️ 3. Komplex csapatmunka képzettségpróba-részfeladatokkal
+## ⚜️ 3. Komplex csapatmunka képzettségpróba-részfeladatokkal
 
 ```
 több ismeretre
 → több képzettségpróba
-  célszám (lista) 
+  célszám (lista)
+
+⚡ Példa: ház építése
 ```
 
-Ez a leginkább magától értetődő eset. Egy komplex feladatnál több képzettségre, vagy (képzettség+fortély) kiterjesztés kombinációra lehet szükség.
+Ez a leginkább magától értetődő eset. Egy komplex feladatnál több képzettségre, vagy (képzettség+fortély kiterjesztésre) lehet szükség, nem oldható meg egy bonyolult, kombinált próbával.
 
-A **KM** felsorolja, milyen ismeretekre van szükség és mik külön-külön a célszámok a komplex feladat elemeinek elvégzéséhez.
+A **KM** felsorolja, milyen képzettségekre van szükség és külön-külön mekkorák azok próbáinak célszámai.
 
-Ezt követően a parti "összedobja, amije van". Az esetleges hiányok kezelését a KM kezeli, lehet, hogy az adott részfeladatot csak alacsonyabb szinten tudják megoldani.
-
-A csoportos munka miatt a végrehajtás ideje jelentősen csökkenhet.
-
-⚡Példa: Több "rétegű" térkép készítés, Ház építése.
+Ezt követően a parti "összedobja, amije van", minden részfeladatra jelentkezhet bárki azzal, hogy ő vállalja a próbadobást. Az esetleges hiányok kezelését a KM kezeli, lehet, hogy az adott részfeladatot csak alacsonyabb szinten tudják megoldani.
 
 ---
 
-🔗 [Csoportosan végezthető képzettségek](030_07_02_csoportosan_vegezheto_kepzettsegek.md) →
+🔗 [Csoportosan végezthető képzettségek](030_06_03_csoportosan_vegezheto_kepzettsegek.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
+⚜️ [Nyitóoldal](start.md#3-képzettségrendszer-)

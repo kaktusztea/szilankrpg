@@ -30,7 +30,7 @@ Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónusz
 + MIN(Támadó-alakzat fortély fok) x 2
 ```
 
-- Csapattagok **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
+- Csapattagok **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
 - Csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
  
 ### ⚜️Védekezőszint
@@ -67,7 +67,7 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 **Védekezőszint** `VÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 🔆 **Megjegyzés**
-- [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasl%C3%A9glovas-harc%C3%A9rt%C3%A9kek-kisz%C3%A1m%C3%ADt%C3%A1sa) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
+- [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasléglovas-harcértékek-kiszámítása) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
 - Íjászok/Lövészek esetén `TÉ` helyett a `CÉ` az, amelyre  a harcmodorból adódó bónusz jár
 
 <br />
@@ -174,9 +174,9 @@ Az alakzat ellen harcoló **egyén** ugyanúgy csökkent `Védő Értéket`, min
 
 Az alakzat **ellen** leadott minden `VÉ` csökkentésből, tehát az alakzat által elszenvedett `VÉ` csökkenésből mindig `-2` levonandó, mivel egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb a "kifulladására" játszani.
 
-Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikába áll be, akkor a fenti csökkentés `-3` értékre módosul.
+Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-védekezés-taktika) taktikába áll be, akkor a fenti csökkentés `-3` értékre módosul.
 
-**Tipp**: ezen hatás ellen megfontolandó lehet a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-t%C3%A1mad%C3%A1s-taktika).
+**Tipp**: ezen hatás ellen megfontolandó lehet a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-támadás-taktika).
 
 <br />
 
@@ -275,9 +275,9 @@ Manőverek használata alakzatban nem lehetséges.
 
 Egy Alakzat ellen az alábbi taktikák NEM használhatóak:
 
-- [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-): egy Alakzatot nem lehet úgy fárasztani, mint egy személyt
-- [Kezdeményező taktika](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika): nincs értelme, mert az alakzaté a Kezdeményezés amúgy is
-- [Kiváró taktika](065_02_harci_taktikak.md#kiv%C3%A1r%C3%B3-taktika): nincs értelme, mert az alakzaté a Kezdeményezés amúgy is
+- [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-): egy Alakzatot nem lehet úgy fárasztani, mint egy személyt
+- [Kezdeményező taktika](065_02_harci_taktikak.md#kezdeményező-taktika): nincs értelme, mert az alakzaté a Kezdeményezés amúgy is
+- [Kiváró taktika](065_02_harci_taktikak.md#kiváró-taktika): nincs értelme, mert az alakzaté a Kezdeményezés amúgy is
 - [Visszafogott taktika](065_02_harci_taktikak.md#visszafogott-taktika-): egy Alakzatot nem lehet visszafogottan megütni, mint egy személyt
 
 <br />
@@ -306,4 +306,4 @@ VÉ csökkentés/kör: 2
 
 🔗 [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)

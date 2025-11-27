@@ -5,7 +5,7 @@ Vezető nyomozóként koordinálod az alád tartozó nyomozók munkáját.
 ---
 ### Alapeset
 
-A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csoportos szellemi képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy nyomozócsapat. 
+A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy nyomozócsapat. 
 
 ---
 ### 1. fok

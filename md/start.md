@@ -103,12 +103,12 @@
 - [Képzettségek fejlesztése](030_04_kepzettsegek_fejlesztese.md)
 - [Képzettségszintek KP igénye](030_05_kepzettsegszintek_kp_igenye.md)
 - [Képzettségpróba](030_06_01_kepzettsegproba.md) 🎲
-- [Képzettségpróba Hátrányok](030_06_02_kepzettsegproba_hatranyok.md)
-- [Csoportos képzettségpróba](030_07_01_csoportos_kepzettsegproba.md) 🎲
-- [Csoportosan végezhető képzettségek](030_07_02_csoportosan_vegezheto_kepzettsegek.md) 🤝
+- [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) 🎲
+- [Csoportosan végezhető képzettségek](030_06_03_csoportosan_vegezheto_kepzettsegek.md) 🤝
+- [Képzettségpróba Hátrányok](030_07_kepzettsegproba_hatranyok.md)
 - [Képzettségek és Fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)
-- [Általános fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
-- [Harci fortélyok képzettségkiterjesztés listája (ábra)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
+- [Fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
+- [Harci fortélyok kiterjesztéslistája (ábra)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
 - [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
 - [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md)
 

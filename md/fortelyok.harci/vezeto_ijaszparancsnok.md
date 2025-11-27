@@ -12,7 +12,7 @@
 ---
 ### Alapeset
 
-Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén.
+Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén.
 
 ---
 ### 1. fok

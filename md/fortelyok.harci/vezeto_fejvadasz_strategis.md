@@ -11,7 +11,7 @@ Egy entitásként, észrevétlenül suhantok át fejvadász alakulatoddal a véd
 ---
 ### Alapeset
 
-A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni.
+A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni.
 
 ---
 ### 1. fok

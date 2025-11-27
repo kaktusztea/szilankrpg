@@ -123,7 +123,7 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
 ---
 ### Próbák 🎲
 
-Igen gyakori a [csoportos képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md) és az [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#%C3%B6sszetett-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-m%C3%A1sodlagos-pr%C3%B3badob%C3%A1sok).
+Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md) és az [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások).
 
 #### Könnyű (6) 🎲 
 

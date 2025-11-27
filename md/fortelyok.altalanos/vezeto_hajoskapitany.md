@@ -5,7 +5,7 @@ Képes vagy egy hajó legénységének egyben tartására változó - akár harc
 ---
 ### Alapeset
 
-A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fizikai képzettségpróba](../030_07_01_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk.
+A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk.
 
 ---
 ### 1. fok

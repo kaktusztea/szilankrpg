@@ -18,22 +18,22 @@ Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni,
 
 Az ilyen helyzetben a támadó automatikusan megnyeri a Kezdeményezést, valamint számára `Előny+1` jár `TÉ` dobásra és `VÉ` csökkentése mindig (`3 + k20T`) lesz.
 
-🔆 [Meglepetés és Manőverek viszonya](066_03_manover_szabalyok.md#%EF%B8%8F-harci-helyzetek-%C3%A9s-man%C5%91verek---meglepet%C3%A9s)
+🔆 [Meglepetés és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---meglepetés)
 
-🔆 A találat esélye tovább növelhető [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) kombinálva.
+🔆 A találat esélye tovább növelhető [Támadó taktikával](065_02_harci_taktikak.md#támadó-taktika) kombinálva.
 
 🔆 A védekező csak `1`-et támadhat és azt is csak a kör végén teheti meg, továbbá a pajzsának `VÉ`-je csak akkor számít, ha a csapás nem hátulról jön.
 
 🔆 A `pajzs VÉ` csak akkor adódik hozzá a védekező aktuális `Védő Értékhez`, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
 
-🔆 [Alakzatot](065_03_harc_alakzatban.md) is meg lehet lepni. Ilyen [Észlelés szituációban](szituaciok/erzekeles_eszleles_aktiv_passziv.md) az alakzat [Csoportos szellemi Észlelés képzettségpróbát](030_07_01_csoportos_kepzettsegproba.md#%EF%B8%8F-2-csoportos-szellemi-k%C3%A9pzetts%C3%A9gpr%C3%B3ba) dob.
+🔆 [Alakzatot](065_03_harc_alakzatban.md) is meg lehet lepni. Ilyen [Észlelés szituációban](szituaciok/erzekeles_eszleles_aktiv_passziv.md) az alakzat [Csoportos szellemi Észlelés képzettségpróbát](030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) dob.
 
 🔆 Ugyanez vonatkozik a [Lopakodás/rejtőzés és észlelése szituációra](szituaciok/lopakodas_rejtozes_es_eszlelese.md) is.
 
 ---
 ## Készületlenség
 
-Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepet%C3%A9s) szituációnak megfelelő módosítókkal támadhat rá.
+Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepetés) szituációnak megfelelő módosítókkal támadhat rá.
 
 <br />
 
@@ -52,9 +52,9 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
 - Ellenfél: `Előny+1` `TÉ` dobásra
 - Beszorított karakter:
   - `Hátrány-1` TÉ dobásra
-  - [Kezdeményezés - Lassú](081_hatasok.md#-kezdem%C3%A9nyez%C3%A9s---lass%C3%BA)
-  - [1 támadás elvesztése](081_hatasok.md#-1-t%C3%A1mad%C3%A1s-elveszt%C3%A9se)
-  - [Mozgás - lassulás](081_hatasok.md#-mozg%C3%A1s---lassul%C3%A1s)
+  - [Kezdeményezés - Lassú](081_hatasok.md#-kezdeményezés---lassú)
+  - [1 támadás elvesztése](081_hatasok.md#-1-támadás-elvesztése)
+  - [Mozgás - lassulás](081_hatasok.md#-mozgás---lassulás)
 
 ---
 ### Beszoritott helyzet (2) Erősen
@@ -63,11 +63,11 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
 - Ellenfél: `Előny+2` `TÉ` dobásra
 - Beszorított karakter:
   - `Hátrány-2` TÉ dobásra
-  - [Kezdeményezés - Nagyon Lassú](081_hatasok.md#-kezdem%C3%A9nyez%C3%A9s---nagyon-lass%C3%BA)
-  - [VÉ veszteség duplázódik](081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik)
-  - [Többszörös támadás elvesztése](081_hatasok.md#-t%C3%B6bbsz%C3%B6r%C3%B6s-t%C3%A1mad%C3%A1s-elveszt%C3%A9se)
-  - [Mozgás - lassulás](081_hatasok.md#-mozg%C3%A1s---lassul%C3%A1s)
-  - [Sebzés csökkentett](081_hatasok.md#-sebz%C3%A9s-cs%C3%B6kkentett)
+  - [Kezdeményezés - Nagyon Lassú](081_hatasok.md#-kezdeményezés---nagyon-lassú)
+  - [VÉ veszteség duplázódik](081_hatasok.md#-vé-veszteség-duplázódik)
+  - [Többszörös támadás elvesztése](081_hatasok.md#-többszörös-támadás-elvesztése)
+  - [Mozgás - lassulás](081_hatasok.md#-mozgás---lassulás)
+  - [Sebzés csökkentett](081_hatasok.md#-sebzés-csökkentett)
 
 **Harci taktikák**: a **Támadó- és Védő** taktikák **Beszorított helyzetben** továbbra is használhatóak.
 
@@ -90,9 +90,9 @@ VÉ ← áldozat mozgási jellege
 
 Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
 
-Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen. Siker esetén áldozata [Védő Értékét annak mozgási jellege és mérete](062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint) határozza meg. A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat. 
+Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen. Siker esetén áldozata [Védő Értékét annak mozgási jellege és mérete](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint) határozza meg. A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat. 
 
-→ [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#%EF%B8%8F-harci-helyzetek-%C3%A9s-man%C5%91verek---%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s)
+→ [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---észrevétlen-támadás)
 
 → Az **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás).
 
@@ -148,7 +148,7 @@ A levegőből támadás - például egy légi hátasról - jelentős előnnyel j
 
 Egy esetleges Roham (zuhanás) külön, plusz számolandó.
 
-Levegőből lehetséges [Fárasztó taktikát](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-) alkalmazni.
+Levegőből lehetséges [Fárasztó taktikát](065_02_harci_taktikak.md#fárasztó-taktika-) alkalmazni.
 
 <br />
 
@@ -176,7 +176,7 @@ Támadó és Védekező:
 Ebben a szituációban mindkét fél részére nehezebb harcolni. Példa: kapu, belógó falrész.
 
 Figyelem: ha a védekező mozgásában korlátozottá válik a körülötte levő tereptárgyaktól, akkor változik a helyzet és az alábbiak közül valamelyik (KM dönt) módosítói vonatkoznak rá:
-- [Beszorított helyzet](#beszor%C3%ADtott-helyzet)
+- [Beszorított helyzet](#beszorított-helyzet)
 - [Helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve)
 
 <br />
