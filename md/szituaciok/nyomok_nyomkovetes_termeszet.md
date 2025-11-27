@@ -9,7 +9,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 
 [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő megfelelő szint ellen
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
+- **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 <br />
 
@@ -19,8 +19,8 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 Előbb észre kell venni az első nyomot, utána lehet követni a csapást.
 
 [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
-- [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások), tehát több dobás kell, mivel átfogóbb próba kell a folyamatos követéshez.
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
+- [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba), tehát több dobás kell, mivel átfogóbb próba kell a folyamatos követéshez.
+- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 <br />
 
@@ -48,10 +48,10 @@ Normál Kiterjesztés egyszerre mindkét félnél
 
  [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
 - **Nehézség**: a nyom bonyolultságának megfelelő szint ellen
-- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja) (aktuális tájra) fortély
+- **Normál Kiterjesztés egyszerre mindkettőre**: [Nyomolvasás/eltűntetés (2)](../fortelyok.altalanos/nyomolvasas_eltuntetes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 ---
 
 🔗 [Szituációk](../160_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../start.md#16-szitu%C3%A1ci%C3%B3k)
+⚜️ [Nyitóoldal](../start.md#16-szituációk)

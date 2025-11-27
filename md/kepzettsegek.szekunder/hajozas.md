@@ -19,7 +19,7 @@ A hajózás képessége magában foglalja a hajók, legénység kezelését, ir�
 ---
 ### Biztos tudás, követelmények 📖
 
-Nagyon gyakori eset az [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) Hajózás képzettség esetén, mikor **Másodlagos próbadobásokra** van szükség. Sokszor komplex, többlépcsős feladat egy hajó kezelése.
+Nagyon gyakori eset az [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) Hajózás képzettség esetén, mikor **Másodlagos próbadobásokra** van szükség. Sokszor komplex, többlépcsős feladat egy hajó kezelése.
 
 #### Novícius (3) 📖
 

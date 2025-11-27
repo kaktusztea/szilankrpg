@@ -132,7 +132,7 @@ Visszahajló acélfalon felmászni.
 ---
 ### Hosszabb mászandó út
 
-Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) dobást kell végezni (**Edzettség** Tulajdonsággal).
+Ilyen esetben [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) dobást kell végezni (**Edzettség** Tulajdonsággal).
 
 ---
 ### Rontott mászás próba után: Mentő képzettségpróba

@@ -1,6 +1,6 @@
 ## 🔵 Etikett
 
-Próba dobható, sokszor [összetett próba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) indokolt.
+Próba dobható, sokszor [összetett próba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) indokolt.
 
 Hogy kell köszönteni a nemesi vendégeket, hogyan kell udvariasan hárítani egy meghívást, mi számít könnyed tréfának és mi halálos sértésnek? A képzettség elsősorban az udvari, nemesi környezetben való "viselkedést" fedi.
 
@@ -107,5 +107,5 @@ Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynö
 ---
 ### Dobás módosító körülmények
 
-- [Eszmélet: Bódultság Státusz](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g) módosítói
-- [Eszmélet: Kábultság Státusz](../082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-2-k%C3%A1bults%C3%A1g) módosítói
+- [Eszmélet: Bódultság Státusz](../082_statuszok.md#️-eszmélet-1-bódultság) módosítói
+- [Eszmélet: Kábultság Státusz](../082_statuszok.md#️-eszmélet-2-kábultság) módosítói

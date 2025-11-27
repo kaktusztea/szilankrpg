@@ -17,7 +17,7 @@ Erő: +2
 
 A mászás elején Tetves [Mászás](../kepzettsegek.szekunder/maszas.md) képzettségpróbát dob. A terep `Nehézség: 15` (nagyon nehéz).
 
-A táv miatt a KM [összetett képzettségróbát](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba-másodlagos-próbadobások) ír elő `+1 db` próbával, így Tetvesnek egy `15`-ös és egy `12`-es próbát kell dobnia.
+A táv miatt a KM [összetett képzettségróbát](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) ír elő `+1 db` próbával, így Tetvesnek egy `15`-ös és egy `12`-es próbát kell dobnia.
 
 🔆 "Az áthajláson kell  már csak átjutnom, ott akár félseggel ki is ülhetek arra a pici párkányra és az adna egy kis szuszt. Ááá, csak ez a buzi áthajlás... de itt már kurvára alig bírom... na csak odáig még, azt jó lesz... ehehhheee,  ott a kis lépésem is.. kicsit messze, de ez van. Na lássuk..."
 
@@ -40,7 +40,7 @@ A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a vi
 
 🔆 "Ááá, nem bírom sokáig, gyerünk baszki!"
 
-⚙️ `+2`-es **Erő** bevetése: az aktuális mászás során a játékos elhasználhat pontokat karaktere `Erő` Tulajdonságából (maximum `0` értékre mehet le), amiből utána percenként `1` pont tér vissza (bővebben lásd a [Mászás képzettség leírását](../kepzettsegek.szekunder/maszas.md#er%C5%91-bevet%C3%A9se-rontott-m%C3%A1sz%C3%A1s-ut%C3%A1ni-ment%C5%91-k%C3%A9pzetts%C3%A9gpr%C3%B3ba-dob%C3%A1sn%C3%A1l)). Tetves felhasználja mind a két **Erő** pontját.
+⚙️ `+2`-es **Erő** bevetése: az aktuális mászás során a játékos elhasználhat pontokat karaktere `Erő` Tulajdonságából (maximum `0` értékre mehet le), amiből utána percenként `1` pont tér vissza (bővebben lásd a [Mászás képzettség leírását](../kepzettsegek.szekunder/maszas.md#erő-bevetése-rontott-mászás-utáni-mentő-képzettségpróba-dobásnál)). Tetves felhasználja mind a két **Erő** pontját.
 
 ⚙️ Mászás képzettségpróba: fel tudja-e húzni magát a kitett helyzetből - erőtartalékai bevetésével?\
 ⚙️ A Nehézség `+3` az eredetihez képesz, így `15+3 = 18`, azaz Rendkívül nehéz próba
@@ -57,7 +57,7 @@ Tetves minden erejét bevetve felgyűrte magát a `11 cm` széles kiszögellésr
 
 <br />
 
-### ⚙️ [Megállás és pihenés a falon rontás után](../kepzettsegek.szekunder/maszas.md#meg%C3%A1ll%C3%A1s-%C3%A9s-pihen%C3%A9s-a-falon-ront%C3%A1s-ut%C3%A1n)
+### ⚙️ [Megállás és pihenés a falon rontás után](../kepzettsegek.szekunder/maszas.md#megállás-és-pihenés-a-falon-rontás-után)
 
 Ez **2 biztos tudást** igényel, hogy meg tudja-e tartani magát tartósan. Ebben segíti a **perem** és az **ék**.
 
@@ -85,4 +85,4 @@ Lásd az [Esés magasból](eses_magasbol.md) szituáció leírását!
 
 🔗 [Szituációk](../160_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../start.md#16-szitu%C3%A1ci%C3%B3k)
+⚜️ [Nyitóoldal](../start.md#16-szituációk)
