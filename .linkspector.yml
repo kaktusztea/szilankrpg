@@ -3,5 +3,5 @@ files:
 dirs:
   - md
 ignorePatterns:
-  - pattern: '^https://www.libreoffice.org/download/download/$'
-  - pattern: '^https://groups.oasis-open.org/$'
+  - pattern: 'https://www\.libreoffice\.org/.*'
+  - pattern: 'https://groups\.oasis-open\.org/.*'
