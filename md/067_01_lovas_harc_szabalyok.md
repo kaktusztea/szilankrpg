@@ -1,114 +1,61 @@
-## Harc lóhátról
+# Lovas, léglovas harc szabályai
 
 Mikor lóra szállsz, számos előnyhöz juthatsz, amennyiben képzett lovas vagy.
 
-### Követelmény
+## Lovas harc - fortély nélkül
 
-Akinek csak **Lovaglás** képzettsége van, még nem képes lóról harcolni - sőt gyalogos harcértékeihez a **képzetlen harcmodor harcérték** levonásai is **pluszban** hozzáadódnak - a Lovaglás képzettség, mint "harcmodor" által.
+```
+TÉ/VÉ -9
 
-Sok függ a [Lovaglás képzettség](kepzettsegek.szekunder/lovaglas.md) szintjétől és a [Lovas harc](fortelyok.harci/lovas_harc.md) fortély megtanult fokainak mértékétől.
+Lenti bónuszok
+nem járnak
+```
+
+Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. A `TÉ/VÉ` büntetésen felül nem jár továbbá semmilyen lent leírt bónusz.
 
 ---
-### Lovas/Léglovas harcértékek kiszámítása
+## Lovas/Léglovas harcértékek kiszámítása
 
 ```
 Harcértékek
   = gyalogos harcértékek
-  +  harcmodor bónuszok
-     Lovaglás/Léglovaglás képzettség
-     után mintha harcmodor képezettség lenne
-(Lovas harc fortély fokától függő mértékben)
+  + Lovas harc fortély bónuszai
+
+Fegyverméretre +1 penge bónusz
+
+Minimum pengeméret: 1
 ```
 
-A karakter által alapból használt gyalogos harcmodor harcértékei (pl. Kardvívás) számítanak és ehhez **hozzáadódnak** a [Lovas harc](fortelyok.harci/lovas_harc.md) fortély fokainál leírt bónuszok.
+🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély 
 
-Tehát `3.szintű` **Lovaglással** ugyanannyi a karakter harcértéke, mint ló nélkül, a `3.szint` alatt pedig járnak a képzetlenségből adódó levonások. A `4.szinttől` kezdve viszont jönnek a plusz harcérték módosítók.
-
-🔆 A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély fokainak [Lovaglás](kepzettsegek.szekunder/lovaglas.md) / [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségszint követelményei (is) vannak!
-
-🔆 A harcértékekhez **NEM** adódik hozzá pluszban a [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet módosítója!
-
-🔆 A Kopja, mint lovas fegyver Lándzsavívás harcmodorban forgatandó.
-
-
+❌ [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet NEM jár!
 
 <br />
 
 ---
-### Fegyverméret megkötés
+## Hátason sebesülés, Leesés szituáció
 
-**Minumum fegyverméret**: lóról **minimum `1` pengés** fegyverrel lehet csak harcolni, annál kisebbel nem
-
-### Fegyverméret-kategória bónusz
-
-A hátas maga `plusz 1 pengényi` extra [fegyverméret-kategóriát](065_01_04_fegyver_harci_helyzetek.md#fegyverméret) ad a lovasnak a [Fegyverméret](064_02_03_vedo_ertek_csokkentese.md) harci helyzet megállapításánál.
+Lásd a [szituáció leírását](szituaciok/hatasrol_leeses.md)!
 
 <br />
 
 ---
-### Sebesüléskor leesés kockázata
+## Félhátulról, hátulról jövő támadások
 
-Ha sebet kap a lovas, akkor **Lovaglás** képzettségpróbát kell dobnia, hogy lássuk, leesik-e:
-
-```
-Seb       Nehézség
-6-10 ÉP       9
-11-15 ÉP     12
-15+ ÉP       15
-```
-
-Ha sikertelen, leesik. Ekkor jön a **Lóról leesés** szituáció ↓
+Itt a [Harci helyzetek](065_01_03_harci_poziciok.md#félhátulról-támadás) fejezetben leírt módosítók érvényesek.
 
 <br />
 
 ---
-### Lóról leesés - Akrobatika próba és Sérülés
+## Idomítatlan hátas
 
-Ha leesel a lóról, [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében.  Egy szénaboglya például sokat könnyíthet.
-
-#### ⚜️Akrobatika képzettségpróba Nehézsége a ló mozgása alapján
+Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, akkor legfeljebb küzdeni tudsz, hogy nehogy ledobjon a megriadt állat. Harcolni **nem** tudsz.
 
 ```
-Hátas      Nehézség
-Áll,lassú     9
-Üget         15
-Vágtázik     18
+Lovaglás/Léglovaglás képzettségpróba
 
-Módosítók:
-→ Terep Nehézség: [-6; +3]
-→ Páncélban: [+1; 6]
+Nehézség: 12-15 között
 ```
-
-#### ⚜️ Esés Akrobatika-próba sikertelen, esésből sebződés
-
-Ha elvétetted az Akrobatika (esés) próbát, a hátas mozgásától függően kapsz zuhanásból adódó sebzést.
-
-```
-Hátas           SP
-Áll, Lassú   k20 +0 SP
-Üget         k20 +5 SP
-Vágtázik     k20+15 SP
-```
-
-#### ⚜️ Esés Akrobatika-próba sikeres
-
-Ha sikeres volt a próba, akkor is fennáll az esésből sebződés veszélye, de jelentősen kisebb mértékű:
-
-```
-(k20 - 10) SP
-```
-
----
-### Félhátulról, hátulról jövő támadások
-
-Itt a [Harci helyzetek](065_01_00_harci_helyzetek.md) fejezetben leírt módosítók érvényesek.
-
-<br />
-
----
-### Idomítatlan hátas
-
-Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, legfeljebb küzdeni tudsz, hogy nehogy ledobjon. Ilyenkor [Befolyásolás](kepzettsegek.primer.altalanos/befolyasolas.md) képzettségpróbát kell dobj, [Vadállat idomítása: (adott hátas)](fortelyok.szabad/vadallat_idomitasa.md) (Erős) kiterjesztéssel , a KM által megszabott Nehézség ellen.
 
 <br />
 

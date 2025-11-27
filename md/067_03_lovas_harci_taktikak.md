@@ -1,4 +1,4 @@
-## Lovas harci taktikák
+## Lovas, léglovas harci taktikák
 
 Ahogy a gyalogos küzdelemben is alkalmazhatóak [Harci taktikák](065_02_harci_taktikak.md), úgy hátason ülve is kapsz néhány új lehetőséget.
 
@@ -47,7 +47,7 @@ Követelmények:
 
 Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal. 
 
-🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--l%C3%A9glovas-roham) bekezdést!
+🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--léglovas-roham) bekezdést!
 
 <br />
 
@@ -55,4 +55,4 @@ Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal.
 
 🔗 [Lovas és Léglovas Manőverek](067_04_lovas_manoverek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)

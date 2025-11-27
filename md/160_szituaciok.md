@@ -5,12 +5,12 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 ## Harci szituációk
 
 - [Ajtóstul nekirontani az túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
-- [Hátbaszúrás szituációig észrevétlenül lopakodva eljutni - hátulról, látótéren kívülről](szituaciok/lopakodas_rejtozes_es_eszlelese.md#%EF%B8%8F-h%C3%A1tbasz%C3%BAr%C3%A1s-szitu%C3%A1ci%C3%B3ig-%C3%A9szrev%C3%A9tlen%C3%BCl-lopakodva-eljutni---h%C3%A1tulr%C3%B3l-l%C3%A1t%C3%B3t%C3%A9ren-k%C3%ADv%C3%BClr%C5%91l)
+- [Hátbaszúrás szituációig észrevétlenül lopakodva eljutni - hátulról, látótéren kívülről](szituaciok/lopakodas_rejtozes_es_eszlelese.md#️-hátbaszúrás-szituációig-észrevétlenül-lopakodva-eljutni---hátulról-látótéren-kívülről)
 - [Hajítás alkalmatlan fegyverrel](szituaciok/hajitas_alkalmatlan_fegyverrel.md)
 - [Hajítás nem dobásra készített tárgyakkal](szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md)
 - [Hátbaszúrni harcolót](szituaciok/hatbaszurni_harcolot.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
-- [Leütés hátulról](066_05_altalanos_manoverek.md#le%C3%BCt%C3%A9s-h%C3%A1tulr%C3%B3l)
+- [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról)
 - [Meglepetésből pontra támadás max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
 
 ## Távharc szituációk
@@ -40,14 +40,16 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ## Fizikai szituációk
 
-- [Ugrás magasba / távolba](szituaciok/ugras_magasba_tavolba.md)
+- [Elugrani lovaskocsi elől](szituaciok/elugrani_lovaskocsi_elol.md)
 - [Esés magasból](szituaciok/eses_magasbol.md)
+- [Hátasról leesés](szituaciok/hatasrol_leeses.md)
 - [Kötéltánc](szituaciok/koteltanc.md)
 - [Mászás képzettségpróbára összetett példa](szituaciok/maszas_osszetett_pelda.md) ⚡
 - [Menekülés, Üldözés, Futás](szituaciok/menekules_uldozes_futas.md)
+- [Ugrás magasba / távolba](szituaciok/ugras_magasba_tavolba.md)
 - [Víz alatt bírni](szituaciok/viz_alatt_birni.md)
-- [Lóról/Hátasról leesés](szituaciok/lorol_hatasrol_leeses.md)
-- [Elugrani egy száguldó lovaskocsi elől](szituaciok/elugrani_lovaskocsi_elol.md)
+
+
 
 ## Tudás szituációk
 
@@ -57,4 +59,4 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ---
 
-⚜️ [Nyitóoldal](start.md#16-szitu%C3%A1ci%C3%B3k)
+⚜️ [Nyitóoldal](start.md#16-szituációk)
