@@ -20,7 +20,7 @@ Harcértékek
 (Lovas harc fortély fokától függő mértékben)
 ```
 
-A karakter által alapból használt gyalogos harcmodor harcértékei (pl. Kardvívás) számítanak és ehhez **hozzáadódnak** a [Lovaglás](kepzettsegek.szekunder/lovaglas.md) / [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségből - mint egy újabb harcmodorból - adódó bónuszok a [Lovas harc](fortelyok.harci/lovas_harc.md) fortélynál leírt mértékben.
+A karakter által alapból használt gyalogos harcmodor harcértékei (pl. Kardvívás) számítanak és ehhez **hozzáadódnak** a [Lovaglás](kepzettsegek.szekunder/lovaglas.md) / [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségből adódó bónuszok a [Lovas harc](fortelyok.harci/lovas_harc.md) fortélynál leírt mértékben.
 
 Tehát `3.szintű` **Lovaglással** ugyanannyi a karakter harcértéke, mint ló nélkül, a `3.szint` alatt pedig járnak a képzetlenségből adódó levonások. A `4.szinttől` kezdve viszont jönnek a plusz harcérték módosítók.
 
