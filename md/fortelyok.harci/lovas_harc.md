@@ -17,7 +17,7 @@ Hátason ülve sem esel kétségbe, ha harcolni kell.
 - Ügyesség: `+1`
 - Önuralom: `0`
 - Érzékenység: `0`
-- Lovaglás - `6.szint`
+- Lovaglás/Léglovaglás - `6.szint`
 
 🌟 **Hatás**:
 - Fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` lovas bónusz járul
@@ -30,7 +30,7 @@ Hátason ülve sem esel kétségbe, ha harcolni kell.
 - Ügyesség: `+2`
 - Önuralom: `0`
 - Érzékenység: `0`
-- Lovaglás - `9.szint`
+- Lovaglás/Léglovaglás  - `9.szint`
 
 🌟 **Hatás**:
 - Fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` lovas bónusz járul
@@ -43,7 +43,7 @@ Hátason ülve sem esel kétségbe, ha harcolni kell.
 - Ügyesség: `+3`
 - Önuralom: `+1`
 - Érzékenység: `+1`
-- Lovaglás - `12.szint`
+- Lovaglás/Léglovaglás  - `12.szint`
 
 🌟 **Hatás**:
 - Fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` lovas bónusz járul
