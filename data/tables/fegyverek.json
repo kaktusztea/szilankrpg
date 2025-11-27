@@ -785,21 +785,38 @@
         "Speciális": "Páncél nélküli ellenfélnél, szúrás esetén SP:+3. Páncélszúrásra nem használható."
     },
     {
-        "Fegyver": "Lándzsa",
+        "Fegyver": "Lándzsa, keskeny hegyű",
         "TÉ": "12",
         "VÉ": "13",
-        "SP": "+2/+4",
+        "SP": "+2",
         "Sebesség": "7",
         "Sebzés módja": "S",
         "Pengehossz": "4",
         "Forgatás módja": "kétkezes",
         "Erőbónusz limit": "99",
-        "Átütés": "4/0",
+        "Átütés": "4",
         "Íves": "0",
         "MK": "0",
         "KF": "0",
         "Kategória": "lándzsavívó",
-        "Speciális": "spec: lásd a hegyeket"
+        "Speciális": "Kis területet roncsol, de páncélokat jól üti át"
+    },
+    {
+        "Fegyver": "Lándzsa, széles hegyű",
+        "TÉ": "12",
+        "VÉ": "13",
+        "SP": "+4",
+        "Sebesség": "7",
+        "Sebzés módja": "S",
+        "Pengehossz": "4",
+        "Forgatás módja": "kétkezes",
+        "Erőbónusz limit": "99",
+        "Átütés": "0",
+        "Íves": "0",
+        "MK": "0",
+        "KF": "0",
+        "Kategória": "lándzsavívó",
+        "Speciális": "Nagy területet roncsol, de nehezebben megy át a páncélokon"
     },
     {
         "Fegyver": "Levéltőr",
@@ -938,21 +955,38 @@
         "Speciális": "Minimum Mf:1.fok nélkül 30% esély az önsebzésre"
     },
     {
-        "Fegyver": "Pika",
+        "Fegyver": "Pika, keskeny hegyű",
         "TÉ": "16",
         "VÉ": "16",
-        "SP": "+2/+4",
+        "SP": "+2",
         "Sebesség": "10",
         "Sebzés módja": "S",
         "Pengehossz": "5",
         "Forgatás módja": "kétkezes",
         "Erőbónusz limit": "3",
-        "Átütés": "4/0",
+        "Átütés": "4",
         "Íves": "0",
         "MK": "0",
         "KF": "0",
         "Kategória": "lándzsavívó",
-        "Speciális": "Ha közrefognak, a fegyver az egyik (választott) támadó ellen 0 harcértékű lesz."
+        "Speciális": "Kis területet roncsol, de páncélokat jól üti át"
+    },
+    {
+        "Fegyver": "Pika, széles hegyű",
+        "TÉ": "16",
+        "VÉ": "16",
+        "SP": "+4",
+        "Sebesség": "10",
+        "Sebzés módja": "S",
+        "Pengehossz": "5",
+        "Forgatás módja": "kétkezes",
+        "Erőbónusz limit": "3",
+        "Átütés": "0",
+        "Íves": "0",
+        "MK": "0",
+        "KF": "0",
+        "Kategória": "lándzsavívó",
+        "Speciális": "Nagy területet roncsol, de nehezebben megy át a páncélokon"
     },
     {
         "Fegyver": "Predoci egyeneskard",
@@ -1071,7 +1105,7 @@
         "MK": "0",
         "KF": "0",
         "Kategória": "lándzsavívó",
-        "Speciális": ""
+        "Speciális": "+5 SP ha SFÉ után legalább 11 SP lett a sebzés."
     },
     {
         "Fegyver": "Szigony, kétkezes",
