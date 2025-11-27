@@ -1,16 +1,21 @@
 ## Elugrani egy feléd száguldó lovaskocsi elől
 
-Ez sima ⚪ **Gyorsaság** Tulajdonságpróba.
+ **[Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md)** képzettségpróba **Gyorsaság** Tulajdonsággal, melynek nehézsége függ a lovaskocsi távolságától az észlelés pillanatában.
+ 
+```
+Nehézség távolság
+  függvényében
 
-Attól függően változhat a **Nehézség**, hogy milyen távol volt a lovaskocsi, mikor észrevetted, hogy feléd tart.
-
-- `5 méter`: Átlagos (`4`)
-- `3 méter`: Nehéz (`5`)
-- `2 méter`: Nagyon nehéz (`6`)
-- `1 méter`: Rendkívül nehéz (`7`)
+21:  1m  
+18:  2m
+15:  3m
+12:  4m
+ 9:  5m
+ 6:  6m
+```
 
 ---
 
 🔗 [Szituációk](../160_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../start.md#16-szitu%C3%A1ci%C3%B3k)
+⚜️ [Nyitóoldal](../start.md#16-szituációk)
