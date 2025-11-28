@@ -18,7 +18,13 @@ Válassz hátas fajt: `1 db` [Lénylovas](../fortelyok.szabad/lenylovas.md) Szab
 
 ### Erős kiterjesztés
 
-[Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező)
+- [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező)
+
+### Idegen hátas
+
+Ha az idegen hátas lényt hirtelen, gyakorlás nélkül ülsz meg, akkor **Lovaglás** képzetséged `6`-tal kevesebbnek számít.
+
+Ha harcolnál is, akkor a [Lovas harc](../fortelyok.harci/lovas_harc.md) fortélynál leírt mértékben kalkuláld az értékeidet (természetesen a `-6`-os képzettség büntetéssel számolva.
 
 ### Állat testvér
 
@@ -54,14 +60,14 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%C3%A1llat-testv%C3%A9r) kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
+🌟 Hatás: [Állat testvér](#állat-testvér) kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%C3%A1llat-testv%C3%A9r) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
+🌟 Hatás: [Állat testvér](#állat-testvér) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
 
 <br />
 

@@ -17,6 +17,12 @@ Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket
 
 - [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező, többször felvehető más fajú légi hátasokra)
 
+### Idegen hátas
+
+Ha az idegen hátas lényt hirtelen, gyakorlás nélkül ülsz meg, akkor **Léglovaglás** képzetséged `6`-tal kevesebbnek számít.
+
+Ha harcolnál is, akkor a [Lovas harc](../fortelyok.harci/lovas_harc.md) fortélynál leírt mértékben kalkuláld az értékeidet (természetesen a `-6`-os képzettség büntetéssel számolva.
+
 ### Állat testvér
 
 Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat között – lelki társsá válnak –, ami különleges telepátiát hoz létre közöttük. A kapcsolat olyan konkrét állatokra vonatkozik csak, akikkel a viselője legalább 1 éve szoros napi érintkezésben van és a köztük levő kapcsolat szeretetteljesnek mondható.
@@ -58,14 +64,14 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%C3%A1llat-testv%C3%A9r): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
+🌟 Hatás: [Állat testvér](#állat-testvér): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#%C3%A1llat-testv%C3%A9r): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
+🌟 Hatás: [Állat testvér](#állat-testvér): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
 
 <br />
 
