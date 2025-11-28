@@ -5,3 +5,4 @@ dirs:
 ignorePatterns:
   - pattern: 'https://www\.libreoffice\.org/.*'
   - pattern: 'https://groups\.oasis-open\.org/.*'
+  - pattern: 'https://progress-bar\.xyz/.*'
