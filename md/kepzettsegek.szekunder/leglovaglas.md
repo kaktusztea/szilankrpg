@@ -2,7 +2,7 @@
 
 Ritka szerencsés, aki ezt a képzettséget tanulhatja, mert Yn3v kevés levegőben meglovagolható teremtményeinek egyikét ülheti meg. `Pteropták, Wyvern-ek, Racklák` - hogy csak a közismertebbeket említsük.
 
-Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket a képzettség szintjétől függő tehetséggel. A tudás univerzális, némi gyakorlással más fajú légi hátasokra is használható: a [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély többszöri felvételével.
+Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket a képzettség szintjétől függő tehetséggel. A tudás univerzális, némi gyakorlással más fajú légi hátasokra is használható: a [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély többszöri felvételével.
 
 ### Domináns Tulajdonságok
 
@@ -13,9 +13,9 @@ Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket
 - [Léglovas harc](../fortelyok.harci/leglovas_harc.md) fortély
 - [Vezető: Léglovaskapitány](../fortelyok.harci/vezeto_leglovaskapitany.md) fortély: csoportos légi hátas alakzat vezetése esetén bónuszt ad.
 
-### Erős kiterjesztés
+### Normál kiterjesztés
 
-- [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező, többször felvehető más fajú légi hátasokra)
+- [Hátas](../fortelyok.szabad/hatas.md) (1 faj felvétele kötelező, többször felvehető más fajú légi hátasokra)
 
 ### Állat testvér
 
@@ -110,7 +110,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 ### Célszám módosító körülmények
 
 - Vad hátas: `[+1; +3]`
-- Más fajú légi hátas esetén: [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély szükséges
+- Más fajú légi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
 - Időjárás:
     - Erős szél vagy felhőszaggatás: `+3`
     - Vihar, orkán: `+6`

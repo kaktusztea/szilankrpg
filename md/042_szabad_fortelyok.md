@@ -25,7 +25,7 @@ A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmaz�
 
 #### ⚜️ Kiérdemelt
 
-KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Lénylovas - Wyvern](fortelyok.szabad/lenylovas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást. A Karakteralkotóban a "Speciális" fülön ilyenkor `0` értéket írj a fortély mellett a "**Költve**" mezőbe értékként.
+KM adja extraként olyan kalandban történt megpróbáltató esemény után, ami ezt indokolja. Például a történet során sikeresen megültél egy **Wyvernt**, ekkor megkapod a [Hátas - Wyvern](fortelyok.szabad/hatas.md) Szabad Fortélyt ingyen. Ez a fortély **nem** fogyasztja a Tapasztalati Szintenként kapott javadalmazást. A Karakteralkotóban a "Speciális" fülön ilyenkor `0` értéket írj a fortély mellett a "**Költve**" mezőbe értékként.
 
 ---
 ### Általános szabályok
@@ -47,6 +47,7 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 - [Gazdálkodás](fortelyok.szabad/gazdalkodas.md)
 - [Hadtáp](fortelyok.szabad/hadtap.md)
 - [Harci iskola](fortelyok.szabad/harci_iskola.md) 🔁
+- [Hátas](fortelyok.szabad/hatas.md) 🔁
 - [Háziállatok idomítása](fortelyok.szabad/haziallatok_idomitasa.md)
 - [Heraldika](fortelyok.szabad/heraldika.md)
 - [Hivatalnok](fortelyok.szabad/hivatalnok.md)
@@ -72,7 +73,6 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 - [Kézműves: Szűcs](fortelyok.szabad/kezmuves_szucs.md)
 - [Kihallgatás](fortelyok.szabad/kihallgatas.md)
 - [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) 🔁
-- [Lénylovas](fortelyok.szabad/lenylovas.md) 🔁
 - [Megfélemlítés](fortelyok.szabad/megfelemlites.md)
 - [Pénzügyek](fortelyok.szabad/penzugyek.md)
 - [Rejtjelfejtő](fortelyok.szabad/rejtjelfejto.md)
@@ -107,4 +107,4 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 
 🔗 [Általános fortélyok](043_altalanos_fortelyok.md) →
 
-⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok-)
+⚜️ [Nyitóoldal](start.md#4-fortélyok-)

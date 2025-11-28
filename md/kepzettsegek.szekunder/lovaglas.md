@@ -4,7 +4,7 @@ Próba dobható.
 
 Aki lovaglást tanul, az képes megülni egy választott földi hátast lényt a képzettség szintjétől függő tehetséggel.
 
-Válassz hátas fajt: `1 db` [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortélyt kötelezően fel kell venned. A tudás univerzális, némi gyakorlással más fajú földi hátasokra is használható: a [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély többszöri felvételével.
+Válassz hátas fajt: `1 db` [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortélyt kötelezően fel kell venned. A tudás univerzális, némi gyakorlással más fajú földi hátasokra is használható: a [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély többszöri felvételével.
 
 ### Domináns Tulajdonságok
 
@@ -16,9 +16,9 @@ Válassz hátas fajt: `1 db` [Lénylovas](../fortelyok.szabad/lenylovas.md) Szab
 - [Vezető: Lovaskapitány](../fortelyok.harci/vezeto_lovaskapitany.md): csoportos lovas/földi alakzat vezetése esetén bónuszt ad.
 - [Léglovaglás](leglovaglas.md) képzettség
 
-### Erős kiterjesztés
+### Normál kiterjesztés
 
-- [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező)
+- [Hátas: (faj)](../fortelyok.szabad/hatas.md) (1 faj felvétele kötelező)
 
 ### Állat testvér
 
@@ -104,4 +104,4 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 ### Célszám módosító körülmények
 
 - Vad hátas: `[+1; +3]`
-- Más fajú földi hátas esetén: [Lénylovas](../fortelyok.szabad/lenylovas.md) Szabad Fortély szükséges
+- Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
