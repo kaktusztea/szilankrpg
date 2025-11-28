@@ -17,12 +17,6 @@ Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket
 
 - [Lénylovas](../fortelyok.szabad/lenylovas.md) (1 faj felvétele kötelező, többször felvehető más fajú légi hátasokra)
 
-### Idegen hátas
-
-Ha az idegen hátas lényt hirtelen, gyakorlás nélkül ülsz meg, akkor **Léglovaglás** képzetséged `6`-tal kevesebbnek számít.
-
-Ha harcolnál is, akkor a [Lovas harc](../fortelyok.harci/lovas_harc.md) fortélynál leírt mértékben kalkuláld az értékeidet (természetesen a `-6`-os képzettség büntetéssel számolva.
-
 ### Állat testvér
 
 Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat között – lelki társsá válnak –, ami különleges telepátiát hoz létre közöttük. A kapcsolat olyan konkrét állatokra vonatkozik csak, akikkel a viselője legalább 1 éve szoros napi érintkezésben van és a köztük levő kapcsolat szeretetteljesnek mondható.
