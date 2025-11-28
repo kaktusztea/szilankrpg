@@ -6,7 +6,7 @@ Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkenth
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt) `TÉ:-4` levonással történik (**nem additív**)
+🌟 **Hatás**: Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#té-levonás-támadásonként) `TÉ:-4` levonással történik (**nem additív**)
 
 ---
 ### 1. fok
@@ -31,6 +31,6 @@ Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkenth
 ---
 ### Harcmodorok
 
-A fortély hatása **minden** harcmodorban, mindig érvényes
+A fortély hatása **minden** harcmodorban, mindig érvényes.
 
 ---
