@@ -33,7 +33,7 @@ A képzettség magában foglalja a következőket:
 - [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md)
 - [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md)
 - [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md)
-- [Tájtípus - sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+- [Tájtípus - sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
 (Járatos vagy az adott tájtípus jellemző környezetében. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten. Nyomok követése az adott tájtípusban)
 
 

@@ -29,7 +29,7 @@ Intelligencia, Emlékezet
 - [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
 - [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md)
 - [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md)
-- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
 (szervetlen alapanyagok felkutatása mindegyik tájtípusnál)
 
 <br />

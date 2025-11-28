@@ -28,7 +28,7 @@ Emlékezet, Intelligencia
 - [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md)
 - [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md)
 - [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md)
-- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
 (Ismered az adott tájtípusban növő növényeket, gyógyító, vagy ártó hatóanyagaikat)
 
 
