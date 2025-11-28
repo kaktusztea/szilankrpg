@@ -20,15 +20,16 @@ Emlékezet, Intelligencia
 
 ### Normál kiterjesztés
 
-- [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md): Ismered a barlangokban növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Ismered a dzsungelben növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): Ismered az erdős tájon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: jégmezők](../fortelyok.szabad/tajtipus_jegmezok.md): Ismered a jégmezőkön ritkásan növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Ismered a magaslati tájon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md): Ismered a mocsaras tájon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md): Ismered a pusztákon növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md): Ismered a tengeri, óceáni vízinövényeket, gyógyító, vagy ártó hatóanyagaikat.
-- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Ismered a sivatagban növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
+- [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
+- [Tájtípus dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
+- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md)
+- [Tájtípus: jégmezők](../fortelyok.szabad/tajtipus_jegmezok.md)
+- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
+- [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md)
+- [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md)
+- [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md)
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+(Ismered az adott tájtípusban növő növényeket, gyógyító, vagy ártó hatóanyagaikat)
 
 
 

@@ -25,16 +25,16 @@ A képzettség magában foglalja a következőket:
 - [Nyomolvasás/eltűntetés](../fortelyok.altalanos/nyomolvasas_eltuntetes.md):
     - Nyomok követése a természetben - miután már megtaláltad. "Erre haladt tovább, látszik a letört ágakból."
     - Nyomok értelmezése a természetben. "Két napja gázolt át itt egy nagytestű vad. A szőrnyomokból ítélve medve lehetett."
-- [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md): Járatos vagy barlangi típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a barlang jellegének megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
-- [Tájtípus - dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): Járatos vagy dzsungel típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
-- [Tájtípus - erdős](../fortelyok.szabad/tajtipus_erdos.md): Járatos vagy erdős típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
-- [Tájtípus: jégmezők](../fortelyok.szabad/tajtipus_jegmezok.md): Ismered a jégmezők ritkás növényeit, azok hatásait, az állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten. Nyomok követése az adott tájtípusban.
-egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
-- [Tájtípus - magaslati](../fortelyok.szabad/tajtipus_magaslati.md): Járatos vagy magaslati típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten.
-- [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md): Járatos vagy mocsaras típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten. Nyomok követése az adott tájtípusban.
-- [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md): Ismered a puszták növényeit, azok hatásait, az állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten. Nyomok követése az adott tájtípusban.
-- [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md): Járatos vagy tengrei, óceáni környezetben. Ismered a vizi növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten. Nyomok követése az adott tájtípusban.
-- [Tájtípus - sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): Járatos vagy sivatagi típusú környezetben. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, 
+- [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
+- [Tájtípus - dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
+- [Tájtípus - erdős](../fortelyok.szabad/tajtipus_erdos.md)
+- [Tájtípus: jégmezők](../fortelyok.szabad/tajtipus_jegmezok.md)
+- [Tájtípus - magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
+- [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md)
+- [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md)
+- [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md)
+- [Tájtípus - sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+(Járatos vagy az adott tájtípus jellemző környezetében. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten. Nyomok követése az adott tájtípusban)
 
 
 ### Nyomkövetés

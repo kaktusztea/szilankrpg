@@ -21,15 +21,16 @@ Próba dobható.
 - ❗ [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Az adott, kapcsolódó **Kultúrkör** ismerete sokszor (nem mindig) szükséges.
 - ❗ [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Az adott, kapcsolódó **Ősi Kultúrkör** ismerete néha (nem mindig) szükséges, akkor is csak [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md) fortéllyal együtt.
 - ❗ [Helyismeret](../fortelyok.kiemelt/helyismeret.md): csak ha konkrétan helyi témával kapcsolatos ismeretről van szó, akkor szükséges. Ne legyünk túl szigorúak.
-- [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: jégmezők](../fortelyok.szabad/tajtipus_jegmezok.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md): adott tájítpusra jellemző élővilág, földrajz ismerete
-- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md): adott tájítpusra jellemző élővilág, földrajz ismerete
+- [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
+- [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
+- [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md)
+- [Tájtípus: jégmezők](../fortelyok.szabad/tajtipus_jegmezok.md)
+- [Tájtípus: magaslati](../fortelyok.szabad/tajtipus_magaslati.md)
+- [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md)
+- [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md)
+- [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md)
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+(adott tájítpusra jellemző élővilág, földrajz ismerete)
 - [Heraldika](../fortelyok.szabad/heraldika.md): "Ez a címer egy - már kihalt - kyr házé, akik Sogron egyházának voltak erős szövetségesei a hatodkorban."
 - [Jogismeret](../fortelyok.szabad/jogismeret.md): "Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdév tömlőc és 10 ezüstpénz. Kivéve ha nemesúr áll jót az elkövetőért."
 - [Stratégia](../fortelyok.szabad/strategia.md): "Kevesen tudják, hogy a legutóbbi Zászlóháború döntő csatájában a párás idő okozta a t0roni S0gron papok összhangjainak elvesztését, amely Antoh szolgáinak irányába billentette a mérleget."
