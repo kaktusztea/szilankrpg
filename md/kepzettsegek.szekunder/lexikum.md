@@ -29,7 +29,7 @@ Próba dobható.
 - [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md)
 - [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md)
 - [Tájtípus: tengerek](../fortelyok.szabad/tajtipus_tengerek.md)
-- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
+- [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
 (adott tájítpusra jellemző élővilág, földrajz ismerete)
 - [Heraldika](../fortelyok.szabad/heraldika.md): "Ez a címer egy - már kihalt - kyr házé, akik Sogron egyházának voltak erős szövetségesei a hatodkorban."
 - [Jogismeret](../fortelyok.szabad/jogismeret.md): "Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdév tömlőc és 10 ezüstpénz. Kivéve ha nemesúr áll jót az elkövetőért."
