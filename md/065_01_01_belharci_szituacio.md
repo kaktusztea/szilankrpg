@@ -37,7 +37,7 @@ A **Belharci szituációból** kijönni ennek sikeres végrehajtásával lehet. 
 ---
 ## ⚜️ Belharcos-fegyverek listája
 
-Minden `rövid (0)` pengehosszú fegyver, kivéve ezek közül azokat a fegyvereket, melyek leírásánál külön meg van említve, hogy nem lehet velük belharcot folytatni.
+Minden `rövid (0)` pengehosszú fegyver. Kivételek lehetnek.
 
 <br />
 
