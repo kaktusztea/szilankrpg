@@ -21,7 +21,7 @@ Bejutottál ellenfeled fegyverének fenyegető vége mögé, testközelbe, de ne
 ---
 ## ⚜️ Manőver: Belharcba kerülés
 
-A Belharci szituációba kerüléshez ezt a manővert kell sikerrel végrehajtani. Csak **Közelharc** harcmodor alkalmazása közben lehet megpróbálni.
+A Belharci szituációba kerüléshez ezt a manővert kell sikerrel végrehajtani. Csak **Közelharc** harcmodorban alkalmazható.
 
 Bővebben lásd a [manőver leírását](066_05_altalanos_manoverek.md#belharcba-kerülés).
 
