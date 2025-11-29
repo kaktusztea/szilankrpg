@@ -45,7 +45,7 @@ Minden `rövid (0)` pengehosszú fegyver. Kivételek lehetnek.
 ## ⚜️ Puszta kéz harcértékei belharci szituációban
 
 ```
-Belharci szituációban
+Puszta kéz
 
 TÉ, VÉ, SP = 0
 ```
