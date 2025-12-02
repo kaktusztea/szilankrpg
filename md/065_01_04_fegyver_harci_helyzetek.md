@@ -64,11 +64,12 @@ Kapcsolódik: [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyv
 ```
 Hátrány-1 Sebzésdobásra
 Hátrány-1 CÉ dobásra
+Fegyver CÉ = 0
 ```
 
-Például sámli hajítása. Az ilyen tárgyak harcértékei amúgy is egy szűk, alsó tartományban mozognak. Lásd: [Nem dobásra készített tárgy](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy).
-
-Kapcsolódik: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély.
+Például sámli hajítása.\
+Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)\
+Mérsékelheti: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély
 
 <br />
 
