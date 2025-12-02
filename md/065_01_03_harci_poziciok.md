@@ -1,4 +1,4 @@
-# Harci pozciók
+# Harci pozíciók
 
 ## Meglepetés
 
