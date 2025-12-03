@@ -15,10 +15,6 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 Képzetlen kétkezes harc két fegyver használatakor.
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**:
-
 - Főfegyver (nagyobb fegyver) harcmodora és értékei számítanak
 - Második fegyver értékei `0`-nak számítanak
 - Egyik fegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya sem számít

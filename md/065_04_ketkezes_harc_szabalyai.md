@@ -4,7 +4,10 @@
 
 Ha mindkét kezedben fegyvert forgatnál, ahhoz a [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortély valamelyik fokát kell ismerned.
 
-A **harcérték**, **Harckeret** bónuszokat és módosítókat, valamint az **Alapesetet** lásd a [fortély leírásában](fortelyok.harci/ketkezes_harc.md).
+---
+### Alapeset, harcérték bónuszok, Harckeret módosítók
+
+Lásd a [fortély leírásában](fortelyok.harci/ketkezes_harc.md)
 
 ---
 ### Harckeret bónuszok, pengehossz függő levonások
@@ -86,9 +89,10 @@ A `k20`-as sebződobással együtt dobunk `k6`-tal is:
 ```
 Harc 2 db tőrrel
 
-„Rövid” fegyverek → 0 pengehossz
+„Rövid” fegyverek:
 0+0=0 penge → nincs Harckeret levonás:
 
+Kétkezes harc fortély fokai után:
 1.fok: +2 Harckeret
 2.fok: +3 Harckeret
 3.fok: +4 Harckeret
@@ -105,9 +109,11 @@ Harc `2 db` szablyával (`1` pengés fegyverek)
 →  (2 / 0.5) = 4 levonás
 ```
 
-Tehát a **Harckeret** `4`-gyel csökken. Bónuszok és levonások összege:
+Tehát a **Harckeret** `4`-gyel csökken a fegyverek hossza miatt.\
+Bónuszok és levonások összege:
 
 ```
+Kétkezes harc fortély fokai után:
 1.fok: (2-4) =  -2 Harckeret
 2.fok: (3-4) =  -1 Harckeret
 3.fok: (4-4) =  +0 Harckeret

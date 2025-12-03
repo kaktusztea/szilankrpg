@@ -7,9 +7,7 @@ Fajhoz felvehető Érzék-fortély.
 Sötétben (leginkább élőlények által kibocsátott) hőképek alapján is képes vagy tájékozódni.
 ### Alapeset
 
-🔒 **Követelmény**:  -
-
-🌟 **Hatás**: Emberi látás, sötétben nem látsz hőképeket.
+Emberi látás, sötétben nem látsz hőképeket.
 
 ---
 ### 1. fok
