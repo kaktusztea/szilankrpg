@@ -49,8 +49,6 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Ugrás magasba / távolba](szituaciok/ugras_magasba_tavolba.md)
 - [Víz alatt bírni](szituaciok/viz_alatt_birni.md)
 
-
-
 ## Tudás szituációk
 
 - [Csapda hatástalanítás, mechanikus szerkezet szabotásása](szituaciok/csapda_hatatalanitas_szabotalas.md)

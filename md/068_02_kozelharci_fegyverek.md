@@ -59,7 +59,9 @@ KF: Különleges fegyver
 ---
 ## Közelharci hárítófegyverek
 
-A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) szabályai szerint. Nem támadhatsz velük.
+Alapesetben hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverforgató kezedben, ha nem tudod használni, nem kapod meg annak semmilyen harcértékét (`0`-nak számítanak).
+
+Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) fortélyt, akkor az ott leírtak szerint a gyengébb kezedben forgathatsz hárítófegyvert - de továbbra sem támadhatsz vele.
 
 <!-- tag: md_table_haritofegyver_start -->
 

@@ -8,9 +8,8 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 
 ### Alapeset
 
-🌟 **Hatás**:
-- [Hajítás nem dobásra készített tárgyakkal](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) harci helyzet büntetéseivel tudsz csak rögtönzött, nem dobásra alkalmas tárgyakat hajítani.
-- [Nem dobásra készített tárgyak harcértéke](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy) fejezetben állapíthatod meg az ilyen tárgyak statisztikáit.
+- [Hajítás nem dobásra készített tárgyakkal - harci helyzet levonásai](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
+- [Nem dobásra készített tárgyak harcértékei](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
 
 ---
 ### 1. fok
@@ -26,6 +25,7 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 
 🔒 **Követelmény**: [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
 
-🌟 **Hatás**: Alkalmi fegyvereid [Osztó értéke](../072_tavharc_ve_oszto_cella.md) `2`-re emelkedik.
+🌟 **Hatás**:
+- Alkalmi fegyvereid [Osztó értéke](../072_tavharc_ve_oszto_cella.md) `2`-re emelkedik.
 
 ---

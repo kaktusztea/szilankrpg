@@ -4,9 +4,7 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni számsze
 
 ### Alapeset
 
-🔒 **Követelmény**:  -
-
-🌟 **Hatás**: Kézi- vagy Könnyű nyílpuskával körönként maximum egyszer lehet támadni.
+Kézi- vagy Könnyű nyílpuskával körönként maximum egyszer lehet támadni.
 
 ---
 ### 1. fok

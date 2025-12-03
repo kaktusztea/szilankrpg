@@ -10,7 +10,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 
 ### Alapeset
 
-🌟 **Hatás**: [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetéseivel tudsz csak dobásra nem alkalmas fegyvereket hajítani.
+[Hajítás alkalmatlan fegyverrel - harci helyzet levonásai](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
 
 ---
 ### 1. fok
@@ -33,7 +33,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 - [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**: 
-- [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései már egyáltalán nem sújtanak
+- [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései **nem** sújtanak
 - A fegyver harcértéke nem változik (`CÉ=0`) 
 
 ---

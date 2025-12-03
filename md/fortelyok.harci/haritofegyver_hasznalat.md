@@ -4,16 +4,16 @@ Képes vagy hárítófegyvert használni.
 
 ### Alapeset
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverforgató kezedben, ha nem tudod használni, nem kapod meg annak Védő Értékét. (`0`-nak számít).
+Hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverforgató kezedben, ha nem tudod használni, nem kapod meg annak Védő Értékét sem (`0`-nak számít).
 
 ---
 ### 1. fok
 
 🔒 **Követelmény**: Ügyesség: `+1`
 
-🌟 **Hatás**: Megkapod a hárítófegyver `VÉ` értékét is. **[Mesterfegyver](mesterfegyver.md)** fortély `VÉ` bónusza is beszámít.
+🌟 **Hatás**:
+- Megkapod a gyengébb kezedben forgatott hárítófegyver `VÉ` értékét pluszban (csak azt). A fegyverrel nem támadhatsz.
+- **[Mesterfegyver](mesterfegyver.md)** fortély `VÉ` bónusza is beszámít
 
 <br />
 

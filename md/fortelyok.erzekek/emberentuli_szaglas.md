@@ -8,9 +8,7 @@ Különlegesen jó a szaglásod, állatokéval vetekszik.
 
 ### Alapeset
 
-🔒 **Követelmény**:  -
-
-🌟 **Hatás**: Emberi szaglás
+Emberi szaglás
 
 ---
 ### 1. fok

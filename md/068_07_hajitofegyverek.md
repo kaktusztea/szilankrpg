@@ -31,6 +31,8 @@ Nevében a lényeg. Sámli, borospalack, kisasztal, malomkő...
 
 A harcértékek a tárgy jellegétől függnek, de a táblázatban található értékeken túl nem nyúlhatnak.
 
+`CÉ: mindig 0`
+
 Kapcsolódó fortély: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
 
 

@@ -8,9 +8,7 @@ Csak karakteralkotáskor vehető fel, vagy mágia hatására.
 
 ### Alapeset
 
-🔒 **Követelmény**:  -
-
-🌟 **Hatás**: Emberi hallás
+Emberi hallás
 
 ---
 ### 1. fok

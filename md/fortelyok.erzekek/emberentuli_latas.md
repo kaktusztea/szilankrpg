@@ -13,9 +13,7 @@ Különlegesen éles a szemed, messzire ellátsz.
 
 ### Alapeset
 
-🔒 **Követelmény**:  -
-
-🌟 **Hatás**: Emberi látás
+Emberi látás
 
 ---
 ### 1. fok
