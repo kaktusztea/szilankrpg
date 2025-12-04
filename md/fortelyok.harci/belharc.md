@@ -4,7 +4,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 
 ### Bővebben
 
-- [Harci helyzet: Belharci szituáció](../065_01_01_belharci_szituacio.md)
+- [Harci helyzet: Belharci szituáció](../065_01_01_belharci_szituacio.md) - áttekintő oldal
 - [Belharcos manőverek](../066_06_belharcos_manoverek.md)
 
 ---

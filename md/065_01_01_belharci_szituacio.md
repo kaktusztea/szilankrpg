@@ -4,17 +4,15 @@ Kapcsolódik:
 - [Belharc fortély](fortelyok.harci/belharc.md)
 - [Belharcos manőverek](066_06_belharcos_manoverek.md)
 
-## Belharc menete
+## 🔆 Belharc menete
 
-- Sikeres 🗡️[Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés) manőver esetén 🗡️[Belharci szituációba](065_01_01_belharci_szituacio.md) kerülsz.
-- Belharci szituációban a [Belharc fortélynál](fortelyok.harci/belharc.md) leírt pluszok járhatnak, ha az alábbiak mind teljesülnek:
+- Sikeres [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés) manőver → **[Belharci szituációba](065_01_01_belharci_szituacio.md)** kerülsz
+- Belharci szituációban [Belharc fortély](fortelyok.harci/belharc.md) bónuszai járnak, ha:
   - **Közelharc** harcmodorban harcolsz
-  - legfeljebb "rövid" (`0`) pengehosszú fegyvereket forgatsz 
-- Belharci szituációban megnyílik a lehetőség [Belharcos manőverek](066_06_belharcos_manoverek.md) használatára
+  - legfeljebb "rövid" (`0`) pengehosszú fegyvert forgatsz 
+- Belharci szituációban megnyílik a [Belharcos manőverek](066_06_belharcos_manoverek.md) használata
 
-Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. Magában foglalja a birkozást és a földharcot is.
-
-Bejutottál ellenfeled fegyverének fenyegető vége mögé, testközelbe, de nem szükségszerűen érintésbe. Ha van tanult [Belharc fortélyod](fortelyok.harci/belharc.md), harcérték bónuszokat kapsz (lásd a fortély leírását). Belharci szituációban eddig tiltott manőverek végrehajtását is megpróbálhatod, melyek végbevitelének követelménye a Belharci szituáció. Lásd bővebben: [Belharcos manőverek](066_06_belharcos_manoverek.md).
+Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkozást és a földharcot is.
 
 <br />
 
