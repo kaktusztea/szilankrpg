@@ -12,7 +12,7 @@ Kapcsolódik:
   - legfeljebb "rövid" (`0`) pengehosszú fegyvert forgatsz 
 - Belharci szituációban megnyílik a [Belharcos manőverek](066_06_belharcos_manoverek.md) használata
 
-Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkozást és a földharcot is.
+Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
 
 <br />
 
