@@ -331,7 +331,7 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpr
 **Hatás**:
 - Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
 - [Belharci szituáció](065_01_01_belharci_szituacio.md)
-- [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
+- [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
 
 <br />
 
