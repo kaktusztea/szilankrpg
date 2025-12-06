@@ -1,75 +1,57 @@
 # Belharci szituáció
 
-Kapcsolódik:
+Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
+
+### Kapcsolódik
+
 - [Belharc fortély](fortelyok.harci/belharc.md)
 - [Belharcos manőverek](066_06_belharcos_manoverek.md)
 
-## 🔆 Belharc menete
+---
+## ⚜️ Belharc menete
 
-- Sikeres [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés) manőver → **[Belharci szituációba](065_01_01_belharci_szituacio.md)** kerülsz
-- Belharci szituációban [Belharc fortély](fortelyok.harci/belharc.md) bónuszai járnak, ha:
+A belharcos célja **Belharci szituáció** harci helyzet elérése, hogy bónuszait kamatoztathassa.
+
+
+### `1.a` Sikeres [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés) manőver → **[Belharci szituációba](065_01_01_belharci_szituacio.md)** kerülsz
+
+A manőver csak **Közelharc** harcmodorban kezdeményezhető.
+
+### `1.b` Sikeres [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcból-kibontakozás) manőver → kikerülés **[Belharci szituációból](065_01_01_belharci_szituacio.md)** 
+
+Bárki, aki Belharci szituációban van, ezzel jöhet ki belőle - harcmodortól függetlenül.
+
+### `2.` Belharci szituációban [Belharc fortély](fortelyok.harci/belharc.md) bónuszai járnak
+
+Ennek feltételei:
   - **Közelharc** harcmodorban harcolsz
-  - legfeljebb "rövid" (`0`) pengehosszú fegyvert forgatsz 
-- Belharci szituációban megnyílik a [Belharcos manőverek](066_06_belharcos_manoverek.md) használata
+  - legfeljebb "rövid" (`0`) pengehosszú fegyvert forgatsz. Lehet rövid fegyver, ami így sem alkalmas.
 
-Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
+### `3.` Belharci szituációban [Belharcos manővereket](066_06_belharcos_manoverek.md) használhatsz
 
-<br />
-
----
-## ⚜️ Manőver: Belharcba kerülés
-
-A Belharci szituációba kerüléshez ezt a manővert kell sikerrel végrehajtani. Csak **Közelharc** harcmodorban alkalmazható.
-
-Bővebben lásd a [manőver leírását](066_05_altalanos_manoverek.md#belharcba-kerülés).
+Ha van Belharc fortélyod legalább `1.fokon`.
 
 <br />
 
 ---
-## ⚜️ Manőver: Belharcból kibontakozás
-
-A **Belharci szituációból** kijönni ennek sikeres végrehajtásával lehet. Bővebben lásd a [manőver leírását](066_05_altalanos_manoverek.md#belharcból-kibontakozás).
-
-<br />
-
----
-## ⚜️ Belharcos-fegyverek listája
-
-Minden `rövid (0)` pengehosszú fegyver. Kivételek lehetnek.
-
-<br />
-
----
-## ⚜️ Puszta kéz harcértékei belharci szituációban
+## ⚜️ [Puszta kéz](068_02_kozelharci_fegyverek.md) harcértékei belharci szituációban
 
 ```
-Puszta kéz
-
 TÉ, VÉ, SP = 0
+
+Sebzés: FP
+Minden 5.FP → 1 ÉP
 ```
 
-[Puszta kéz jellemzői](068_02_kozelharci_fegyverek.md): `FP` sebesülést okoz, de minden `5.FP` → `1 ÉP` elvesztését okozza. Kivétel: harcművészek [Sárkány ököl](fortelyok.slan/sarkany_okol.md) fortélya. 
-
 <br />
 
 ---
-## ⚜️ Nem-belharcos fegyverek belharci szituációban (`0` pengehossz+)
+## ⚜️ Nem-belharcos fegyverek belharci szituációban
 
-- Azonos a [Beszorított helyzet (2) Erősen](065_01_03_harci_poziciok.md#beszoritott-helyzet-2-erősen) hatásaival.
-- [Sebzés csökkentett](081_hatasok.md#-sebz%C3%A9s-cs%C3%B6kkentett)
-- Forgatója **Akció elhasználása nélkül** ha úgy dönt, elejtheti fegyverét - így puszta kézzel harcolhat tovább (`0` fegyver harcértékekkel)
+→ [Beszorított helyzet (2) Erősen](065_01_03_harci_poziciok.md#beszoritott-helyzet-2-erősen) harci helyzet `+` [Sebzés csökkentett](081_hatasok.md#-sebz%C3%A9s-cs%C3%B6kkentett) Hatás
 
-<br />
-
----
-## ⚜️ Belharc fortély bónuszai
-
-A [Belharc fortély](fortelyok.harci/belharc.md) harcérték bónuszokat ad, lásd ott.
-
-Követelmények:
-- Belharci szituáció
-- Belharcos fegyver (`0` penge)
-- **Közelharc** harcmodor
+A `0` pengehossznál nagyobb fegyver forgatója **Akció elhasználása nélkül** elejtheti fegyverét.\
+Ekkor a fenti **Puszta kéz** harcértékeivel küzdhet tovább.
 
 <br />
 
@@ -78,6 +60,13 @@ Követelmények:
 
 Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például egy szablyás harcoshoz bekerül egy belharcos, akkor a szablyás továbbra is **Kardvívás** harcmodorának értékeivel küzd, igaz szablyájának harcértékei `0`-ra zuhannak - annak mérete miatt.
 
-[Belharc fortély](fortelyok.harci/belharc.md) bónuszaihoz követelmény a **Közelharc** harcmodor használata, más harcmodor használata alatt nem járnak.
+[Belharc fortély](fortelyok.harci/belharc.md) harcérték-bónuszaihoz követelmény a **Közelharc** harcmodor használata - más harcmodor használata alatt nem járnak.
+
+<br />
+
+---
+## ⚜️ Állatok és Belharc
+
+Állatok általában rendelkeznek [Belharc](fortelyok.harci/belharc.md) fortéllyal. Ennek mértékéről a KM dönt.
 
 ---

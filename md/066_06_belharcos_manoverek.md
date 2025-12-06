@@ -13,21 +13,16 @@
 
 <br />
 
-## Közös követelmény
-
-Mindegyik Belharcos Manőver [Belharci szituációt](065_01_01_belharci_szituacio.md) igényel - kivéve a **Belharcba kerülést**.
-
 ---
+##  [Belharci szituáció](065_01_01_belharci_szituacio.md) mint követelmény
+
+Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
+
 ## [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) módosítói Belharcos Manőverek esetén
 
 - [Belharc](fortelyok.harci/belharc.md) fortély: `+2 / fok` - Támadó és Védekező számára is
 - Testméret különbség: `[-2; +2]`
 - Páncél különbség: `[-2; +2]`
-
----
-## Állatok és Belharc
-
-Állatok általában rendelkeznek [Belharc](fortelyok.harci/belharc.md) fortéllyal. Ennek mértékéről a KM dönt.
 
 <br />
 
@@ -38,7 +33,7 @@ Mindegyik Belharcos Manőver [Belharci szituációt](065_01_01_belharci_szituaci
 - Nehézség: `5`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Végbevitel követelménye:
-	- [Közelharc](kepzettsegek.primer.harci/harcmodor.md) – `4 .szint`
+	- [Közelharc](kepzettsegek.primer.harci/harcmodor.md) – `4.szint`
 	- [Belharc](fortelyok.harci/belharc.md) – `1.fok`
 - Súlyos ellenfélnél opcionális **Erőpróba** (KM dönt)
 
@@ -49,14 +44,38 @@ Mindegyik Belharcos Manőver [Belharci szituációt](065_01_01_belharci_szituaci
 ---
 ### Belharcba kerülés
 
-Lásd a [Belharcba kerülés manővereknél](066_05_altalanos_manoverek.md#belharcba-kerülés)!
+Átjutva a nagyobb fegyverek fenyegetésén testközelbe lavírozod magad.
+
+- Nehézség: `9`
+	- `-4`: ellenfél háttal áll
+- Fázisok: `Megakasztás, Ellenpróba`
+- Követelmény:
+    - [Belharc](fortelyok.harci/belharc.md) - `1.fok`
+	- Belharcos fegyver használata
+	- **Közelharc** harcmodor használata
+
+**Hatás**: Sikeresen bekerültél belharcba, megkapod a [Belharci szituációnál](065_01_01_belharci_szituacio.md) leírt módosítókat.
+
+**Nagy siker**: `4`-el túldobott Ellenpróbánál még sebző **Megakasztás** támadást elszenvedve is bekerülsz belharcba.
+
+**Megjegyzés**: Ha az ellenfél úgy dönt, hogy szándékosan beengedi belharcba a karaktert, akkor nincs szükség a Manőverre, dobás nélkül megtörténik a bekerülés, amelyet kezdeményezés követ, majd a harc – immár a Belharc szabályainak megfelelően.
 
 <br />
 
 ---
 ### Belharcból kibontakozás
 
-Lásd a [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcból-kibontakozás)!
+- Nehézség: `5`
+    - `-2` Belharc fortély fokonként
+    - `+2` ellenfél Belharc fortély fokaiként
+- Fázisok: `Megakasztás, Ellenpróba`
+    - **Megakasztás** sikertelen: a kibontakozás sikertelen, nem dobhatsz Ellenpróbát sem.
+	- **Ellenpróba** sikertelen: a kibontakozás sikertelen.
+	- **Ellenpróba** sikeres: kibontakoztál belharcból.
+- Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető.
+- Ha belharcban sebzel, automatikusan, más dobás nélkül kibontakozhatsz a belharci szituációból.
+
+**Hatás**: Sikeresen kibontakoztál belharcból. Most sima harci szituációban vagy ellenfeleddel.
 
 <br />
 

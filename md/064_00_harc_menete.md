@@ -15,6 +15,7 @@
 - [Sebződés](064_02_08_sebzodes_hatasa.md)
 - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
 - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md)
+- [Belharc](064_02_11_belharc_99.md)
 
 ### [Példaharc](064_03_peldaharc.md) ⚡
 

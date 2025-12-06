@@ -1,8 +1,6 @@
 ## Általános manőverek listája
 
 - [Átsiklás](#%C3%A1tsikl%C3%A1s)
-- [Belharcba kerülés](#belharcba-ker%C3%BCl%C3%A9s)
-- [Belharcból kibontakozás](#belharcb%C3%B3l-kibontakoz%C3%A1s)
 - [Csonkolás](#csonkol%C3%A1s)
 - [Ellenfél elfogása](#ellenf%C3%A9l-elfog%C3%A1sa)
 - [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
@@ -31,56 +29,13 @@
 
 Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett elsiklani a harcérintkezés elkerülése végett.
 
-- Nehézség: `6`
-  - ± `2`  (`1` penge különbségenként) - több támadónál a legnagyobb fegyver számít
-  - `+2` minden további ellenfél után
-  - `-2` minden szövetséges után, aki ellenfele(i)ddel harcol
+- Nehézség: `6 ± 2` (fegyverméretek és harcolók számától függ, KM döntése)
 - Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
-- Fázisok: `Ellenpróba (Megakasztás)`
+- Fázisok: `Ellenpróba (Megakasztás*)`
 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
 	- **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
-- Követelmény: -
-- Taktikák: Átsiklás közben nem végezhető semmilyen Harci taktika.
 
 **Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás: támadóddal **Gyorsaság** ellenpróba. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) módosítóival.
-
-<br />
-
----
-### Belharcba kerülés
-
-Átjutva a nagyobb fegyverek fenyegetésén testközelbe lavírozod magad.
-
-- Nehézség: `9`
-	- `-4`: ellenfél háttal áll
-- Fázisok: `Megakasztás, Ellenpróba`
-- Követelmény:
-    - [Belharc](fortelyok.harci/belharc.md) - `1.fok`
-	- Belharcos fegyver használata
-	- **Közelharc** harcmodor használata
-
-**Hatás**: Sikeresen bekerültél belharcba, megkapod a [Belharci szituációnál](065_01_01_belharci_szituacio.md) leírt módosítókat.
-
-**Nagy siker**: `4`-el túldobott Ellenpróbánál még sebző **Megakasztás** támadást elszenvedve is bekerülsz belharcba.
-
-**Megjegyzés**: Ha az ellenfél úgy dönt, hogy szándékosan beengedi belharcba a karaktert, akkor nincs szükség a Manőverre, dobás nélkül megtörténik a bekerülés, amelyet kezdeményezés követ, majd a harc – immár a Belharc szabályainak megfelelően.
-
-<br />
-
----
-### Belharcból kibontakozás
-
-- Nehézség: `5`
-    - `-2` Belharc fortély fokonként
-    - `+2` ellenfél Belharc fortély fokaiként
-- Fázisok: `Megakasztás, Ellenpróba`
-    - **Megakasztás** sikertelen: a kibontakozás sikertelen, nem dobhatsz Ellenpróbát sem.
-	- **Ellenpróba** sikertelen: a kibontakozás sikertelen.
-	- **Ellenpróba** sikeres: kibontakoztál belharcból.
-- Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető.
-- Ha belharcban sebzel, automatikusan, más dobás nélkül kibontakozhatsz a belharci szituációból.
-
-**Hatás**: Sikeresen kibontakoztál belharcból. Most sima harci szituációban vagy ellenfeleddel.
 
 <br />
 
