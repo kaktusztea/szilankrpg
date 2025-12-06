@@ -1,8 +1,8 @@
 ## 🤼‍♂️ Belharcos Manőverek listája
 
-- [Átdobás](#%C3%A1tdob%C3%A1s)
 - [Belharcba kerülés](#belharcba-ker%C3%BCl%C3%A9s)
 - [Belharcból kibontakozás](#belharcb%C3%B3l-kibontakoz%C3%A1s)
+- [Átdobás](#%C3%A1tdob%C3%A1s)
 - [Feszítés, Leszorítás / Feszítésből kijövetel](#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s--fesz%C3%ADt%C3%A9sb%C5%91l-kij%C3%B6vetel)
 - [Gáncsolás](#g%C3%A1ncsol%C3%A1s)
 - [Kéztörés](#k%C3%A9zt%C3%B6r%C3%A9s)
@@ -27,20 +27,6 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 <br />
 
 ---
----
-### Átdobás
-
-- Nehézség: `5`
-- Fázisok: `Végrehajtás, Ellenpróba`
-- Végbevitel követelménye:
-	- [Közelharc](kepzettsegek.primer.harci/harcmodor.md) – `4.szint`
-	- [Belharc](fortelyok.harci/belharc.md) – `1.fok`
-- Súlyos ellenfélnél opcionális **Erőpróba** (KM dönt)
-
-**Hatás**: Belharc közben fogást találsz ellenfeleden és átdobod a vállad felett. Innentől kezdve a [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói szerint kell számolni harcértékeit.
-
-<br />
-
 ---
 ### Belharcba kerülés
 
@@ -76,6 +62,20 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 - Ha belharcban sebzel, automatikusan, más dobás nélkül kibontakozhatsz a belharci szituációból.
 
 **Hatás**: Sikeresen kibontakoztál belharcból. Most sima harci szituációban vagy ellenfeleddel.
+
+<br />
+
+---
+### Átdobás
+
+- Nehézség: `5`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Végbevitel követelménye:
+	- [Közelharc](kepzettsegek.primer.harci/harcmodor.md) – `4.szint`
+	- [Belharc](fortelyok.harci/belharc.md) – `1.fok`
+- Súlyos ellenfélnél opcionális **Erőpróba** (KM dönt)
+
+**Hatás**: Belharc közben fogást találsz ellenfeleden és átdobod a vállad felett. Innentől kezdve a [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói szerint kell számolni harcértékeit.
 
 <br />
 
