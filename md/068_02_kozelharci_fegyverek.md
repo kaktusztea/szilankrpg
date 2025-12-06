@@ -49,7 +49,7 @@ KF: Különleges fegyver
   - `+8 SP` az `1.körben`
   - `+4 SP`: további körökben
 - Szabadulás a hurokból:
-  - [Belharcból kibontakozás](066_05_altalanos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
+  - [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
   - Nehézség: `9` (magasabb)
 - Az áldozat [Leforgatás/Irányítás](066_06_belharcos_manoverek.md#leforgat%C3%A1sir%C3%A1ny%C3%ADt%C3%A1s) manőverrel terelhető, forgatható
 - A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítókat szenved el
