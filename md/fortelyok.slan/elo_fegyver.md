@@ -4,13 +4,7 @@
 
 ### Alapeset
 
-⭕TODO⭕
-🔒 **Követelmény**: 
-- Tulajdonság: `+1`
-- Képzettség - `1.szint`
-
-🌟 **Hatás**:
-- lorem ipsum
+lorem ipsum
 
 ---
 ### 1. fok

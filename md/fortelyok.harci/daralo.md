@@ -4,9 +4,7 @@ Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkenth
 
 ### Alapeset
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#té-levonás-támadásonként) `TÉ:-4` levonással történik (**nem additív**)
+Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#té-levonás-támadásonként) `TÉ:-4` levonással történik (**nem additív**)
 
 ---
 ### 1. fok
