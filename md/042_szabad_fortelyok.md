@@ -88,8 +88,8 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 - [Tájtípus: magaslati](fortelyok.szabad/tajtipus_magaslati.md)
 - [Tájtípus: mocsaras](fortelyok.szabad/tajtipus_mocsaras.md)
 - [Tájtípus: puszta](fortelyok.szabad/tajtipus_puszta.md)
-- [Tájtípus: tengerek](fortelyok.szabad/tajtipus_tengerek.md)
 - [Tájtípus: sivatagi](fortelyok.szabad/tajtipus_sivatagi.md)
+- [Tájtípus: tengerek](fortelyok.szabad/tajtipus_tengerek.md)
 - [Tánc](fortelyok.szabad/tanc.md)
 - [Tánc: speciális/belső stílus](fortelyok.szabad/tanc_belso_stilus.md) 🔁
 - [Térképészet](fortelyok.szabad/terkepeszet.md)
