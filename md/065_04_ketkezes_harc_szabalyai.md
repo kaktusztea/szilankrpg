@@ -1,16 +1,16 @@
-## Kétkezes harc szabályai
+# Kétkezes harc szabályai
 
 „_Két fegyver jobb, mint egy_.”
 
 Ha mindkét kezedben fegyvert forgatnál, ahhoz a [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortély valamelyik fokát kell ismerned.
 
 ---
-### Alapeset, harcérték bónuszok, Harckeret módosítók
+## Alapeset, harcérték bónuszok, Harckeret módosítók
 
 Lásd a [fortély leírásában](fortelyok.harci/ketkezes_harc.md)
 
 ---
-### Harckeret bónuszok, pengehossz függő levonások
+## Harckeret bónuszok, pengehossz függő levonások
 
 A **Harckeretbe** beleszámít a [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortély egyes fokai által adott bónusz:
 
@@ -32,18 +32,8 @@ Minden 0.5 penge:
 - Minden `0.5` penge `1` ponttal csökkenti a **Harckeretet**
 - **Fontos**: A „rövid” fegyverek `0 pengének` számítanak számolásnál!
 
-<br />
-
 ---
-### Méret limit, követelmény
-
-- maximum `2 db`, `1 pengés` kombinációval lehet kétkezes harcot folytatni, e összesített pengeméret (`2`) felett semmilyen bónusz nem számít és a fegyverek minden harcértéke `0`-ra esik.
-- `2 db`, `1 penge` hosszú fegyver forgatása esetén követelmény is van: `Erő +2`
-
-<br />
-
----
-### Támadások számának kalkulálása
+## Támadások számának kalkulálása
 
  A **Harckeret** kalkulálásánál a **nagyobb** pengehosszú fegyver **Sebesség** értéke számít.
 
@@ -52,7 +42,16 @@ A **Harckerethez** hozzáadódik a **Kétkezes harc** fortély egyes fokai álta
 <br />
 
 ---
-### Ügyesebb kéz, [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély 
+## Méret limit, követelmény
+
+- maximum `2 db`, `1 pengés` kombinációval lehet kétkezes harcot folytatni, e összesített pengeméret (`2`) felett semmilyen bónusz nem számít és a fegyverek minden harcértéke `0`-ra esik.
+- `2 db`, `1 penge` hosszú fegyver forgatása esetén követelmény is van: `Erő +2`
+
+<br />
+
+
+---
+## Ügyesebb kéz, [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély 
 
 Kétkezes harc bónuszainak érvényesítéséhez fontos feltétel, hogy a nagyobbik fegyver **csak az ügyesebbik kézben forgatható**.
 
@@ -63,23 +62,9 @@ Ha a **Kétkezes harc** legalább `1.fokon` megvan, akkor a **Kétkezesség** me
 <br />
 
 ---
-### Sebzésnél melyik fegyver talál be a kettőből
+## Sebzésnél melyik fegyver sebez
 
-A `k20`-as sebződobással együtt dobunk `k6`-tal is:
-
-#### Azonos méretű fegyverek esetén
-
-```
-1-3: gyengébb kéz fegyvere sebez
-4-6: ügyesebb kéz fegyvere sebez
-```
-
-#### Nagy + kisebb fegyver esetén
-
-```
-1-2: gyengébb kéz fegyvere sebez
-3-6: ügyesebb kéz fegyvere sebez
-```
+Mindig az ügyesebb kézben levő fegyver sebez - kivéve ha szándékosan a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) akarsz.
 
 <br />
 

@@ -61,7 +61,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 🌟 Mesterbónusz:
 - Mágikus beavatkozást felfedezni egy átlagos személyiségváltozás mögött
-- **Terápia**: pusztán egy rövid beszélgetés alatt képes vagy a  [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s) hatását megszűntetni.
+- **Terápia**: pusztán egy rövid beszélgetés alatt képes vagy a [Státusz: Trauma (1,2)](../082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s) hatását megszűntetni.
 - **Példa**: asztrálmágus
 - Speciális: Szemed kinyílt az Asztrálsíkra is, képes vagy ott is érzékelni. ⭕TODO: Asztrálszem⭕
 
@@ -108,7 +108,7 @@ Alapvető nem leplezett személyiségvonások felismerése.
 #### Nagyon nehéz (15) 🎲 
 
 - Minden beszélgetésben automatikusan megérzed, ki a leginkább megingatható fél. Nem azt, hogy hogyan, hanem kit lehet legkönnyebben befolyásolni.
-- Mentális problémákat felismersz, elkezdhetsz gyógyítani. ⭕TODO: mentális problémák gyógyítása; Terápia: [Státusz: Trauma (1,2)](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s): Hetek alatt képes vagy `1` fokot enyhíteni belőle
+- Mentális problémákat felismersz, elkezdhetsz gyógyítani. ⭕TODO: mentális problémák gyógyítása; Terápia: [Státusz: Trauma (1,2)](../082_statuszok.md#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s): Hetek alatt képes vagy `1` fokot enyhíteni belőle
 
 #### Rendkívül nehéz (18) 🎲 
 

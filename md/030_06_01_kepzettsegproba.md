@@ -309,7 +309,7 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 ---
 ## Sérülés hatása képzettségpróbára
 
-Ha a karakter megsérül és `S3`, vagy `S4` [Sebesülés-kategóriába](https://github.com/kaktusztea/szilankrpg/blob/master/md/061_03_sebesules.md) került, akkor ["Sérült" Státuszt](082_statuszok.md#️-sérült-1-s3) kap és az ott leírtak szerinti hatások sújtják a képzettségpróbáit.
+Ha a karakter megsérül és `S3`, vagy `S4` [Sebesülés-kategóriába](061_03_sebesules.md) került, akkor ["Sérült" Státuszt](082_statuszok.md#️-sérült-1-s3) kap és az ott leírtak szerinti hatások sújtják a képzettségpróbáit.
 
 <br />
 
