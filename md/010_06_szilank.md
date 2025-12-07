@@ -57,7 +57,7 @@ Példák:
 
 <br />
 
-### 🔆 Használata: Újradobás 1x: `1 Szilánk`
+### 🔆 Használata: 1x Újradobás: `1 Szilánk`
 
 Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz `1 db` Szilánkot egy dobásod megismétlésére. Ilyenkor a másodiknak dobott érték számít - akkor is, ha az kedvezőtlenebb lett, mint az első.
 
