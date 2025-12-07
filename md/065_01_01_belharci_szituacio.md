@@ -12,7 +12,6 @@ Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe
 
 A belharcos célja **Belharci szituáció** harci helyzet elérése, hogy bónuszait kamatoztathassa.
 
-
 ### `1.a` Sikeres [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés) manőver → **[Belharci szituációba](065_01_01_belharci_szituacio.md)** kerülsz
 
 A manőver csak **Közelharc** harcmodorban kezdeményezhető.
