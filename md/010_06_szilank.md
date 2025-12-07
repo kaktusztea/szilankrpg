@@ -12,10 +12,6 @@ Egy **Szilánk** (pont) elhasználásával a játékos képes lesz a kalandban n
 
 Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, csak egy lehetőséget teremt, amivel vagy képes élni a játékos, vagy nem.
 
-### Újradobás 1x
-
-Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz Szilánkot egy dobásod megismétlésére. Ilyenkor a másodiknak dobott érték számít - akkor is, ha az kedvezőtlenebb lett, mint az első.
-
 <br />
 
 ### Javadalmazás
@@ -58,6 +54,12 @@ Példák:
 - "Éppen sikerül kihallgatnom a fekete mágust - gonosz terveiről". KM: "Rendben, nagy mázlid volt, a mágus azt mondja, hogy ..."
 - Épp van egy titkosajtó a halálszekta börtönében (ezt is meg kell még találni)
 - "Újra elrontottam a **Mászás** próbámat, le fogok zuhanni a biztos halálba. Mi van, ha pont ledob egy kötelet az a goblin, akinek az életét megkíméltem a sziklateraszon?" KM: "Rendben."
+
+<br />
+
+### 🔆 Használata: Újradobás 1x: `1 Szilánk`
+
+Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz `1 db` Szilánkot egy dobásod megismétlésére. Ilyenkor a másodiknak dobott érték számít - akkor is, ha az kedvezőtlenebb lett, mint az első.
 
 <br />
 
