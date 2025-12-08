@@ -2,7 +2,7 @@
 
 Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
 
-### Kapcsolódik
+## Kapcsolódik
 
 - [Belharc fortély](fortelyok.harci/belharc.md)
 - [Belharcos manőverek](066_06_belharcos_manoverek.md)
