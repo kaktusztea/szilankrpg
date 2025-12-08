@@ -12,7 +12,7 @@ Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásába
 
 <br />
 
-## Harckeret módosítók, Támadások száma
+## Harckeret módosítók
 
 ```
 Nagyobb fegyver Harckeret számít
