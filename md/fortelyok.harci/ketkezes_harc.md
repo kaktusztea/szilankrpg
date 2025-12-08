@@ -6,10 +6,6 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ### [Kétkezes harc szabályai](../065_04_ketkezes_harc_szabalyai.md)
 
-A téma főfejezete.
-
-### Kapcsolódik
-
 - [Mesterfegyver](mesterfegyver.md) fortély
 - [Kétkezesség](ketkezesseg.md) fortély
 
