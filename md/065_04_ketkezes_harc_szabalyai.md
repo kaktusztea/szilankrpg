@@ -15,7 +15,7 @@ Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásába
 ## Harckeret módosítók
 
 ```
-Nagyobb fegyver Harckeret számít
+Nagyobb fegyver Sebessége számít
 
 → minden 0.5 penge: -1 Harckeret
   (SUM pengeméretek)
@@ -47,44 +47,32 @@ Max SUM pengehossz:
 
 ## Sebzésnél melyik fegyver sebez
 
-Mindig az ügyesebb kézben levő fegyver sebez - kivéve ha szándékosan a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) akarsz.
+Mindig az ügyesebb kézben levő fegyver sebez.\
+Kivéve ha szándékosan a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) akarsz támadni.
 
 <br />
 
 ---
-### ⚡Példa-1
+### ⚡Példa-1: Harc 2 db tőrrel
 
 ```
-Harc 2 db tőrrel
+Kétkezes harc: 2.fok
+  +3 Harckeret 
+  → Egyik Mf számít csak Tőrre
 
-„Rövid” fegyverek:
-0+0=0 penge → nincs Harckeret levonás:
-
-Kétkezes harc fortély fokai után:
-1.fok: +2 Harckeret
-2.fok: +3 Harckeret
-3.fok: +4 Harckeret
+SUM pengehossz: 0 penge (0+0)
+  → nincs Harckeret levonás
 ```
 
-### ⚡Példa-2
-
-Harc `2 db` szablyával (`1` pengés fegyverek)
+### ⚡Példa-2: Harc `2 db` szablyával
 
 ```
-Össz hosszuk 2 penge 
- (1 + 1)
+Kétkezes harc: 3.fok
+  +4 Harckeret 
+  → Mf 2x számít
 
-→  (2 / 0.5) = 4 levonás
-```
-
-Tehát a **Harckeret** `4`-gyel csökken a fegyverek hossza miatt.\
-Bónuszok és levonások összege:
-
-```
-Kétkezes harc fortély fokai után:
-1.fok: (2-4) =  -2 Harckeret
-2.fok: (3-4) =  -1 Harckeret
-3.fok: (4-4) =  +0 Harckeret
+SUM pengehossz: 2 penge (1+1)
+  → -4 Harckeret (2 / 0.5)
 ```
 
 ---
