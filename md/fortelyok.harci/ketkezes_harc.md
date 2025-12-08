@@ -2,8 +2,6 @@
 
 Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
-<br />
-
 ### [Kétkezes harc szabályai](../065_04_ketkezes_harc_szabalyai.md)
 
 - [Mesterfegyver](mesterfegyver.md) fortély
