@@ -54,7 +54,7 @@ Kivéve direkt a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci
 ```
 Kétkezes harc: 2.fok
 → Fegyver harcértékek összeadódnak
-→ Egyik Mf számít csak Tőrre
+→ Mf: csak 1x számít Tőrre
 
 Harckeret
  +3: Kétkezes harc (2.fok)
@@ -66,7 +66,7 @@ Harckeret
 ```
 Kétkezes harc: 3.fok
 → Fegyver harcértékek összeadódnak
-→ Mf: szablya ÉS tőré is számít
+→ Mf: Szablya ÉS Tőr is számít
 
 Harckeret
  +4: Kétkezes harc (3.fok)
