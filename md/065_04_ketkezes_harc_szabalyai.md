@@ -61,16 +61,16 @@ Harckeret
  -0 = 0 / 0.5  (Σ 0+0 penge)
 ```
 
-### ⚡Példa-2: Harc `2 db` szablyával
+### ⚡Példa-2: Szablya + tőr
 
 ```
 Kétkezes harc: 3.fok
 → Fegyver harcértékek összeadódnak
-→ Mf 2x számít
+→ Mf: szablya ÉS tőré is számít
 
 Harckeret
  +4: Kétkezes harc (3.fok)
- -4 = 2 / 0.5  (Σ 1+1 penge)
+ -3 = 1.5 / 0.5  (Σ 1 + 0.5 penge)
 ```
 
 ---
