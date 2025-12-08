@@ -2,6 +2,8 @@
 
 Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
+<br />
+
 ### [Kétkezes harc szabályai](../065_04_ketkezes_harc_szabalyai.md)
 
 A téma főfejezete.
@@ -10,6 +12,8 @@ A téma főfejezete.
 
 - [Mesterfegyver](mesterfegyver.md) fortély
 - [Kétkezesség](ketkezesseg.md) fortély
+
+<br />
 
 ---
 ### Alapeset (képzetlenül)
@@ -21,6 +25,8 @@ A téma főfejezete.
 → Mesterfegyver fortélyok NEM számítanak
 → TÉ dobásra Hátrány-1
 ```
+
+<br />
 
 ---
 ### 1. fok
@@ -38,6 +44,7 @@ A téma főfejezete.
 → Mesterfegyver fortélyok NEM számítanak
 ```
 
+<br />
 
 ---
 ### 2. fok
@@ -55,6 +62,8 @@ A téma főfejezete.
 → Mesterfegyver: csak a főfegyveré számít
  (akkor is, ha a két fegyver típusa ugyanaz!)
 ```
+
+<br />
 
 ---
 ### 3. fok
