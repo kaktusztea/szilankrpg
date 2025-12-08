@@ -14,21 +14,21 @@ Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe
 
 A belharcos célja **Belharci szituáció** harci helyzet elérése, hogy bónuszait kamatoztathassa.
 
-### `1.a` Sikeres [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés) manőver → **[Belharci szituációba](065_01_01_belharci_szituacio.md)** kerülsz
+### 🔆Sikeres [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés) manőver → **[Belharci szituációba](065_01_01_belharci_szituacio.md)** kerülsz
 
 A manőver csak **Közelharc** harcmodorban kezdeményezhető.
 
-### `1.b` Sikeres [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcból-kibontakozás) manőver → kikerülés **[Belharci szituációból](065_01_01_belharci_szituacio.md)** 
+### 🔆Sikeres [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcból-kibontakozás) manőver → kikerülés **[Belharci szituációból](065_01_01_belharci_szituacio.md)** 
 
 Bárki, aki Belharci szituációban van, ezzel jöhet ki belőle - harcmodortól függetlenül.
 
-### `2.` Belharci szituációban [Belharc fortély](fortelyok.harci/belharc.md) bónuszai járnak
+### 🔆Belharci szituációban [Belharc fortély](fortelyok.harci/belharc.md) bónuszai járnak
 
 Ennek feltételei:
   - **Közelharc** harcmodorban harcolsz
   - legfeljebb "rövid" (`0`) pengehosszú fegyvert forgatsz. Lehet rövid fegyver, ami így sem alkalmas.
 
-### `3.` Belharci szituációban [Belharcos manővereket](066_06_belharcos_manoverek.md) használhatsz
+### 🔆Belharci szituációban [Belharcos manővereket](066_06_belharcos_manoverek.md) használhatsz
 
 Ha van Belharc fortélyod legalább `1.fokon`.
 
