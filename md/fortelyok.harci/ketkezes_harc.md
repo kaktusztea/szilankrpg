@@ -12,15 +12,15 @@ A téma főfejezete.
 - [Kétkezesség](ketkezesseg.md) fortély
 
 ---
-### Alapeset
+### Alapeset (képzetlenül)
 
-Képzetlen kétkezes harc - két fegyver használatakor.
-
-- **Harckeret**: `+1`
-- Főfegyver (nagyobb fegyver) harcmodora és értékei számítanak
-- Második fegyver értékei `0`-nak számítanak
-- Egyik fegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya sem számít
-- `TÉ` dobásra `Hátrány-1`
+```
+→ Harckeret: +1
+→ Főfegyver (nagyobb fegyver) harcmodora és értékei számítanak
+→ Második fegyver értékei: 0
+→ Mesterfegyver fortélyok NEM számítanak
+→ TÉ dobásra Hátrány-1
+```
 
 ---
 ### 1. fok
@@ -30,10 +30,13 @@ Képzetlen kétkezes harc - két fegyver használatakor.
 - Kiegészítő fegyver harcmodora - `3.szint`
 
 🌟 **Hatás**:
-- **Harckeret**: `+2`
-- Főfegyver (nagyobb fegyver) harcmodora számít
-- Fegyver harcértékek összeadódnak
-- Egyik fegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya sem számít
+
+```
+→ Harckeret: +2
+→ Főfegyver (nagyobb fegyver) harcmodora számít
+→ Fegyver harcértékek összeadódnak
+→ Mesterfegyver fortélyok NEM számítanak
+```
 
 
 ---
@@ -44,11 +47,14 @@ Képzetlen kétkezes harc - két fegyver használatakor.
 - Kiegészítő fegyver harcmodora - `6.szint`
 
 🌟 **Hatás**:
-- **Harckeret**: `+3`
-- Főfegyver (nagyobb fegyver) harcmodora számít
-- Fegyver harcértékek összeadódnak
-- Csak a főfegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya számít (akkor is, ha a két fegyver típusa ugyanaz!)
 
+```
+→ Harckeret: +3
+→ Főfegyver (nagyobb fegyver) harcmodora számít
+→ Fegyver harcértékek összeadódnak
+→ Mesterfegyver: csak a főfegyveré számít
+ (akkor is, ha a két fegyver típusa ugyanaz!)
+```
 
 ---
 ### 3. fok
@@ -58,9 +64,12 @@ Képzetlen kétkezes harc - két fegyver használatakor.
 - Kiegészítő fegyver harcmodora - `9.szint`
 
 🌟 **Hatás**:
-- **Harckeret**: `+4`
-- Főfegyver (nagyobb fegyver) harcmodora számít
-- Fegyver harcértékek összeadódnak
-- mindkét fegyver 🗡️[Mesterfegyver](mesterfegyver.md) fortélya számít
+
+```
+→ Harckeret: +4
+→ Főfegyver (nagyobb fegyver) harcmodora számít
+→ Fegyver harcértékek összeadódnak
+→ Mesterfegyver: mindkét fegyveré számít
+```
 
 ---

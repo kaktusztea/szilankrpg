@@ -5,59 +5,42 @@
 Ha mindkét kezedben fegyvert forgatnál, ahhoz a [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortély valamelyik fokát kell ismerned.
 
 ---
-## Alapeset, harcérték bónuszok, Harckeret módosítók
+## Harcérték bónuszok
 
-Lásd a [fortély leírásában](fortelyok.harci/ketkezes_harc.md)
-
----
-## Harckeret bónuszok, pengehossz függő levonások
-
-A **Harckeretbe** beleszámít a [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortély egyes fokai által adott bónusz:
-
-```
-0.fok: +1 Harckeret
-1.fok: +2 Harckeret
-2.fok: +3 Harckeret
-3.fok: +4 Harckeret
-```
-
-A **Harckeret** értékébe a forgatott fegyverek összesített **hossza** is beleszól:
-
-```
-Minden 0.5 penge:
-  -1 Harckeret
-```
-
-- Adjuk össze a forgatott két fegyver pengehosszait
-- Minden `0.5` penge `1` ponttal csökkenti a **Harckeretet**
-- **Fontos**: A „rövid” fegyverek `0 pengének` számítanak számolásnál!
+Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásában.
 
 ---
-## Támadások számának kalkulálása
+## Harckeret módosítók, Támadások száma
 
- A **Harckeret** kalkulálásánál a **nagyobb** pengehosszú fegyver **Sebesség** értéke számít.
+```
+Nagyobb fegyver Harckeret számít
 
-A **Harckerethez** hozzáadódik a **Kétkezes harc** fortély egyes fokai által adott bónusz.
+→ minden 0.5 penge: -1 Harckeret
+  (SUM pengeméretek)
+
+→ Kétkezes harc fortély bónusz
+  0.fok: +1 Harckeret
+  1.fok: +2 Harckeret
+  2.fok: +3 Harckeret
+  3.fok: +4 Harckeret
+
+→ Kétkezesség fortély: +1 Harckeret
+```
+
+ A „rövid” fegyverek `0 pengének` számítanak.
 
 <br />
 
 ---
-## Méret limit, követelmény
+## Fegyverméret limit
 
-- maximum `2 db`, `1 pengés` kombinációval lehet kétkezes harcot folytatni, e összesített pengeméret (`2`) felett semmilyen bónusz nem számít és a fegyverek minden harcértéke `0`-ra esik.
-- `2 db`, `1 penge` hosszú fegyver forgatása esetén követelmény is van: `Erő +2`
+```
+Max SUM pengehossz:
+ 2 x 1 penge
 
-<br />
-
-
----
-## Ügyesebb kéz, [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély 
-
-Kétkezes harc bónuszainak érvényesítéséhez fontos feltétel, hogy a nagyobbik fegyver **csak az ügyesebbik kézben forgatható**.
-
-Kivéve **Kétkezesség** fortély megléte esetén - ekkor nincs ilyen megkötés.
-
-Ha a **Kétkezes harc** legalább `1.fokon` megvan, akkor a **Kétkezesség** megléte `+1` **Harckeret** bónuszt ad.
+2 penge SUM felett:
+ minden fegyver harcérték: 0
+```
 
 <br />
 
