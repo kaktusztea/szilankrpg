@@ -25,11 +25,14 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ### 1. fok
 
-🔒 **Követelmény**:
-- Főfegyver harcmodora - `6.szint`
-- Kiegészítő fegyver harcmodora - `3.szint`
+🔒 **Követelmény**
 
-🌟 **Hatás**:
+```
+Nagyobb fegyver harcmodora - 6.szint
+Kisebb fegyver harcmodora - 3.szint
+```
+
+🌟 **Hatás**
 
 ```
 → Harckeret: +2
@@ -43,11 +46,14 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Főfegyver harcmodora - `9.szint`
-- Kiegészítő fegyver harcmodora - `6.szint`
+🔒 **Követelmény**
 
-🌟 **Hatás**:
+```
+Nagyobb fegyver harcmodora - 9.szint
+Kisebb fegyver harcmodora - 6.szint
+```
+
+🌟 **Hatás**
 
 ```
 → Harckeret: +3
@@ -61,11 +67,14 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ### 3. fok
 
-🔒 **Követelmény**:
-- Főfegyver harcmodora - `9.szint`
-- Kiegészítő fegyver harcmodora - `9.szint`
+🔒 **Követelmény**
 
-🌟 **Hatás**:
+```
+Nagyobb fegyver harcmodora - 9.szint
+Kisebb fegyver harcmodora - 9.szint
+```
+
+🌟 **Hatás**
 
 ```
 → Harckeret: +4
