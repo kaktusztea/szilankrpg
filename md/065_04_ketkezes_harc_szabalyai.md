@@ -61,7 +61,7 @@ Kétkezes harc: 2.fok
 → Egyik Mf számít csak Tőrre
 
 Harckeret
- +3: Kétkezes harc: 2.fok
+ +3: Kétkezes harc (2.fok)
  -0: SUM pengehossz: 0 penge (0+0)
 ```
 
@@ -73,7 +73,7 @@ Kétkezes harc: 3.fok
 → Mf 2x számít
 
 Harckeret
- +4: Kétkezes harc: 3.fok
+ +4: Kétkezes harc (3.fok)
  -4: SUM pengehossz: 2 penge (1+1)
 ```
 
