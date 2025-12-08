@@ -15,21 +15,18 @@ Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásába
 ## Harckeret módosítók
 
 ```
-Nagyobb fegyver Sebessége számít
-
-→ minden 0.5 penge: -1 Harckeret
+-1: minden 0.5 penge
   (SUM pengeméretek)
++1: Kétkezes harc 0.fok
++2: Kétkezes harc 1.fok
++3: Kétkezes harc 2.fok
++4: Kétkezes harc 3.fok
 
-→ Kétkezes harc fortély bónusz
-  0.fok: +1 Harckeret
-  1.fok: +2 Harckeret
-  2.fok: +3 Harckeret
-  3.fok: +4 Harckeret
-
-→ Kétkezesség fortély: +1 Harckeret
++1: Kétkezesség fortély
 ```
 
- A „rövid” fegyverek `0 pengének` számítanak.
+Nagyobb fegyver Sebessége számít.\
+A „rövid” fegyverek `0 pengének` számítanak.
 
 <br />
 
