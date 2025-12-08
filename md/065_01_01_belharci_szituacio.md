@@ -46,7 +46,6 @@ Minden 5.FP → 1 ÉP
 
 <br />
 
----
 ## ⚜️ Nem-belharcos fegyverek belharci szituációban
 
 → [Beszorított helyzet (2) Erősen](065_01_03_harci_poziciok.md#beszoritott-helyzet-2-erősen) harci helyzet `+` [Sebzés csökkentett](081_hatasok.md#-sebz%C3%A9s-cs%C3%B6kkentett) Hatás
@@ -56,7 +55,6 @@ Ekkor a fenti **Puszta kéz** harcértékeivel küzdhet tovább.
 
 <br />
 
----
 ## ⚜️ Harcmodorok belharci szituációban
 
 Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például egy szablyás harcoshoz bekerül egy belharcos, akkor a szablyás továbbra is **Kardvívás** harcmodorának értékeivel küzd, igaz szablyájának harcértékei `0`-ra zuhannak - annak mérete miatt.
@@ -65,7 +63,6 @@ Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például
 
 <br />
 
----
 ## ⚜️ Állatok és Belharc
 
 Állatok általában rendelkeznek [Belharc](fortelyok.harci/belharc.md) fortéllyal. Ennek mértékéről a KM dönt.
