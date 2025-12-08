@@ -4,10 +4,14 @@
 
 Ha mindkét kezedben fegyvert forgatnál, ahhoz a [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortély valamelyik fokát kell ismerned.
 
+<br />
+
 ---
 ## Harcérték bónuszok
 
 Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásában.
+
+<br />
 
 ---
 ## Harckeret módosítók, Támadások száma
