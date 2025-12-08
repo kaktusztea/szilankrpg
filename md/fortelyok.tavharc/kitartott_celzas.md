@@ -1,12 +1,10 @@
 ## 🟣 Kitartott célzás (1)
 
-Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót, ami lövésedet segíti, vagy gátolja - mikor kitartod célzással lövésedet.
+Vársz pár pillanatot, felméred a szelet, a távolságot és a többi változót, ami lövésedet segítheti.
 
 ### Alapeset
 
-🔒 **Követelmény**: Íjjakkal és lőfegyverekkel végezhető
-
-🌟 **Hatás**: `1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. 
+`1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz
 
 ---
 ### 1. fok
@@ -20,9 +18,10 @@ Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót,
 🌟 **Hatás**: `1` célzással eltöltött kör után `+7 CÉ` módosítót kapsz. Nem additív.
 
 ---
-### Egyedi jellemzők
+### Megkötések
 
-- A **Képzett célzás** csak kiszámíthatóan mozgó cél ellen alkalmazható.
-- Íjat legfeljebb `1` körig tarthatsz ki, utána minden további kör nemhogy javít, de ront a találati esélyeken (körönként ugyanennyit).
+- Csak kiszámíthatóan mozgó cél ellen
+- Íj max `1` körig tartható ki
+- `1 kör` után minden plusz kör `CÉ:-3` büntetés (körönként)
 
 ---

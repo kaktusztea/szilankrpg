@@ -69,25 +69,12 @@ Lásd bővebben:
 → [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 
 ```
-Célzás
-
-+3: Célzás
-    1 célzással eltöltött
++3: 1 célzással eltöltött
     kör után (nem additív) 🔆
-+7: Célzás +Képzett célzás fortély
++7: Kitartott célzás fortéllyal
     1 célzással eltöltött
     kör után (nem additív) 🔆
 -7: Hirtelen lövés
-```
-
-```
-Cél belövése
-
-+[3-10]: Konkrét álló cél
-    Ennek "belövése" minimum
-    negyed órán át (gyakorlás)
-
-[-5;+5]: Fegyver minősége
 ```
 
 🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
