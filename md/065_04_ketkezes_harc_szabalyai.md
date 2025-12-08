@@ -17,6 +17,7 @@ Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásába
 ```
 -1: minden 0.5 penge
   (SUM pengeméretek)
+
 +1: Kétkezes harc 0.fok
 +2: Kétkezes harc 1.fok
 +3: Kétkezes harc 2.fok
