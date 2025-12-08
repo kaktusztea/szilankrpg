@@ -23,7 +23,6 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 <br />
 
----
 ### 1. fok
 
 🔒 **Követelmény**:
@@ -42,7 +41,6 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 <br />
 
----
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -55,13 +53,12 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 → Harckeret: +3
 → Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
-→ Mesterfegyver: csak a főfegyveré számít
- (akkor is, ha a két fegyver típusa ugyanaz!)
+→ Mesterfegyver: csak főfegyveré számít
+ (akkor is, ha a fegyverek azonosak!)
 ```
 
 <br />
 
----
 ### 3. fok
 
 🔒 **Követelmény**:
