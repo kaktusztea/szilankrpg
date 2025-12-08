@@ -6,14 +6,12 @@ Ha mindkét kezedben fegyvert forgatnál, ahhoz a [Kétkezes harc](fortelyok.har
 
 <br />
 
----
 ## Harcérték bónuszok
 
 Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásában.
 
 <br />
 
----
 ## Harckeret módosítók, Támadások száma
 
 ```
@@ -35,7 +33,6 @@ Nagyobb fegyver Harckeret számít
 
 <br />
 
----
 ## Fegyverméret limit
 
 ```
@@ -48,7 +45,6 @@ Max SUM pengehossz:
 
 <br />
 
----
 ## Sebzésnél melyik fegyver sebez
 
 Mindig az ügyesebb kézben levő fegyver sebez - kivéve ha szándékosan a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) akarsz.
