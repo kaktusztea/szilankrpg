@@ -2,8 +2,6 @@
 
 „_Két fegyver jobb, mint egy_.”
 
-Ha mindkét kezedben fegyvert forgatnál, ahhoz a [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortély valamelyik fokát kell ismerned.
-
 <br />
 
 ## Harcérték bónuszok
@@ -46,7 +44,7 @@ Max SUM pengehossz:
 ## Sebzés
 
 Mindig az ügyesebb kézben levő fegyver sebez.\
-Kivéve ha szándékosan a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) akarsz támadni.
+Kivéve direkt a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) támadáskor.
 
 <br />
 
@@ -60,7 +58,7 @@ Kétkezes harc: 2.fok
 
 Harckeret
  +3: Kétkezes harc (2.fok)
- -0: SUM pengehossz: 0 penge (0+0)
+ -0 = 0 / 0.5  (Σ 0+0 penge)
 ```
 
 ### ⚡Példa-2: Harc `2 db` szablyával
@@ -72,7 +70,7 @@ Kétkezes harc: 3.fok
 
 Harckeret
  +4: Kétkezes harc (3.fok)
- -4: SUM pengehossz: 2 penge (1+1)
+ -4 = 2 / 0.5  (Σ 1+1 penge)
 ```
 
 ---

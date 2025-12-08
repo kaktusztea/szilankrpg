@@ -16,7 +16,8 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ```
 → Harckeret: +1
-→ Főfegyver (nagyobb fegyver) harcmodora és értékei számítanak
+→ Nagyobb fegyver harcmodor
+  és értékei számítanak
 → Második fegyver értékei: 0
 → Mesterfegyver fortélyok NEM számítanak
 → TÉ dobásra Hátrány-1
@@ -35,7 +36,8 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ```
 → Harckeret: +2
-→ Főfegyver (nagyobb fegyver) harcmodora számít
+→ Nagyobb fegyver harcmodor
+  és értékei számítanak
 → Fegyver harcértékek összeadódnak
 → Mesterfegyver fortélyok NEM számítanak
 ```
@@ -53,7 +55,7 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ```
 → Harckeret: +3
-→ Főfegyver (nagyobb fegyver) harcmodora számít
+→ Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
 → Mesterfegyver: csak a főfegyveré számít
  (akkor is, ha a két fegyver típusa ugyanaz!)
@@ -72,7 +74,7 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
 ```
 → Harckeret: +4
-→ Főfegyver (nagyobb fegyver) harcmodora számít
+→ Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
 → Mesterfegyver: mindkét fegyveré számít
 ```
