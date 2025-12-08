@@ -7,6 +7,8 @@ Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe
 - [Belharc fortély](fortelyok.harci/belharc.md)
 - [Belharcos manőverek](066_06_belharcos_manoverek.md)
 
+<br />
+
 ---
 ## ⚜️ Belharc menete
 
