@@ -29,6 +29,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Információszerzés valakitől](szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem ezt a nevet? Mit tudhatok róla?](szituaciok/ismerem_mit_tudhatok_rola.md)
 - [Beszéd szájról olvasása](szituaciok/beszed_szajrol_olvasasa.md)
+- [Állat, bestia idomítása](szituaciok/allat_bestia_idomitasa.md)
 
 ## Észlelés, Rejtés, Lopakodás, Lopás szituációk
 

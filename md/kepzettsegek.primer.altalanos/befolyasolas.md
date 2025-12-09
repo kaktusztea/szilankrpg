@@ -28,6 +28,7 @@ Intelligencia, Érzékenység
 
 ### Szituációk
 
+- [Állat, bestia idomítása](../szituaciok/allat_bestia_idomitasa.md)
 - [Befolyásolás módszerei (Befolyásolás vs. Emberismeret)](../szituaciok/befolyasolas_modszerei.md)
 
 <br />

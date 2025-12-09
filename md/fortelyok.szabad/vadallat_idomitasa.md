@@ -6,8 +6,6 @@ A lovak és egyéb, akár légi hátasok betanítása is ide tartozik.
 
 ### Kiterjeszti ezeket
 
-- [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md):
-  - Lovat betörni
-  - "Táncolj Brumi!"
+- [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md): Lovat betörni // "Táncolj Brumi!"
 
 ---
