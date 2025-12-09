@@ -137,7 +137,7 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 
 ```
 Hátrány-1 Támadó dobásra
-Érzék (Látás) - zavart
+Hátrány-1 Érzék (Látás)
 ```
 
 Szemedbe folyik a vér, korlátoz a látásban és a harcban.

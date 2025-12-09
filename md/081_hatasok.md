@@ -19,7 +19,7 @@ Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
 - Támadó dobás
 - Célzó dobás
 - Manőver Ellenpróba dobás
-- Tulajdonságpróba
+- Tulajdonságpróba, **Érzék** Tulajdonságpróba
 - Képzettségpróba (mágia is)
 - Sebzésdobás
 - Mágia Akarata
@@ -104,7 +104,7 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 <br />
 
 ---
-### 🔥 Érzék - zavart
+### 🔥 Érzék - Hátrány-1 (zavart)
 
 Látás / Hallás / Szaglás.
 
@@ -114,7 +114,7 @@ Hátrány-1 minden adott érzéken
   képzettségpróbára
 ```
 
-### 🔥 Érzék - részleges
+### 🔥 Érzék - Hátrány-2 (részleges)
 
 Látás / Hallás / Szaglás.
 
@@ -124,14 +124,13 @@ Hátrány-2 minden adott érzéken
   képzettségpróbára
 ```
 
-### 🔥 Érzék - kioltott
+### 🔥 Érzék - automatikus kudarc (kioltott)
 
 Látás / Hallás / Szaglás.
 
 ```
-Automatikus sikertelenség
-minden adott érzéken alapuló
-próbára.
+Automatikus kudarc minden
+adott érzéken alapuló próbára.
 ```
 
 <br />

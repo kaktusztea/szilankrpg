@@ -14,9 +14,10 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 🔒 **Követelmény**: [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
 
 🌟 **Hatás**:
-- Az Érzék-Hatás `1` fokot enyhül:
-  - [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges)
-  - [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) → [Érzék(látás) - zavart](../081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
+- Érzék Tulajdonságpróba büntetés `1` fokot enyhül
+  - Érzék(látás) - auto-kudarc → `Hátrány-2`
+  - Érzék(látás) - `Hátrány-2` → `Hátrány-1`
+  - Érzék(látás) - `Hátrány-1` →  semmi
 - Megszűntet `1` fok Hátrányt a védő `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
 
 ---
@@ -25,11 +26,12 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 🔒 **Követelmény**:
 - Érzékenység: `+3`
 - Összpontosítás - `6.szint`
-  
+
 🌟 **Hatás**:
-- Az Érzék-Hatás `2` fokot enyhül:
-  - [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → [Érzék(látás) - zavart](../081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
-  - [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) → nincs büntetés
+- Érzék Tulajdonságpróba büntetés `2` fokot enyhül:
+  - Érzék(látás) - auto-kudarc → `Hátrány-1`
+  - Érzék(látás) - `Hátrány-2` → semmi
+  - Érzék(látás) - `Hátrány-1` →  semmi
 - Megszűntet `1` Előnyt a Támadó `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
 - Megszűntet `1` Hátrány a Védő `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
 
@@ -41,9 +43,10 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 - Összpontosítás - `9.szint`
 
 🌟 **Hatás**:
-- Az Érzék-Hatás `3` fokot enyhül:
-  - [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) → nincs büntetés
-  - [Érzék(látás) - részleges](../081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges) → nincs büntetés
+- Érzék Tulajdonságpróba büntetés `3` fokot enyhül:
+  - Érzék(látás) - auto-kudarc → semmi
+  - Érzék(látás) - `Hátrány-2` → semmi
+  - Érzék(látás) - `Hátrány-1` →  semmi
 - Nullázza a Támadó összes előnyét és a Védő összes Hátrányát [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
 - [Érzék(hallás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) Hatás esetén is működik, mert itt már az Intuíció dolgozik.
 - Túlterhelt érzékek esetén is működik (túl erős fény, villódzás, hangorkán)

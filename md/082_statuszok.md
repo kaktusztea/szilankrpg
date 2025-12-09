@@ -34,13 +34,18 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 ---
 ### ✴️ Áldott / Átkozott (1,2) Tulajdonság
 
-`Előny+1,2` vagy `Hátrány-1,2` adott **Tulajdonság** próbájára valamilyen feltétel esetén (téma, tárgy)
-
-Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/csökkenés van.
+```
+Előny+1,2  //  Hátrány-1,2
+  adott Tulajdonságpróbájára
+  (valamilyen feltétel esetén)
+```
 
 ### ✴️ Áldott / Átkozott (1,2) Képzettség
 
-`Előny+1,2`, `Hátrány-1,2` adott Képzettség próbájára
+```
+Előny+1,2  //  Hátrány-1,2
+  adott Képzettségpróbájára
+```
 
  ⚡ Példa
 - "Átok: Alulművelt Bölcsész"
@@ -50,42 +55,80 @@ Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/c
 
 [Karma hátterek](023_karma_hatterek.md) is okozhatnak **Státusz** változást.
 
-- Hiszékeny
-  - Emberismeret-próba: `Hátrány-1,2`
-  - Átverős szituációkban, (Befolyásolás+Hazudozás vs Emberismeret) ellenpróbánál
-- Meggondolatlan: Hajlamos vagy kockázatos döntéseket hozni, még akkor is, ha nincs rá szükség
-  - Önuralom próba: `Hátrány-1,2`
-- Paranoiás - Folyamatosan gyanakszol másokra, és nehezen bízol meg bárkiben
-- Irigy - Nehezen tűröd, ha másnak több van, és hajlamos vagy emiatt rossz döntéseket hozni
-- ⭕TODO⭕ továbbiak
+#### ⚡ Példa: Hiszékeny
+```
+Hátrány-1,2: Emberismeret próbára
+
+Átverős szituációkban
+(Befolyásolás+Hazudozás vs Emberismeret)
+```
+
+#### ⚡ Példa: Meggondolatlan
+```
+Hátrány-1,2: Önuralom próba
+
+Hajlamos vagy kockázatos
+döntéseket hozni, még akkor is,
+ha nincs rá szükség
+```
+
+#### ⚡ Példa: Paranoiás
+
+```
+Folyamatosan gyanakszol másokra,
+és nehezen bízol meg bárkiben
+```
+
+#### ⚡ Példa: Irigy
+```
+Nehezen tűröd, ha másnak több
+van, és hajlamos vagy emiatt
+rossz döntéseket hozni
+```
 
 ### ✴️ Átkozott (1,2,3) Érzékek
 
-Lásd **Érzékvesztés** (1,2,3) Státuszt lenn.
+```
+Lásd Érzékvesztés (1,2,3)
+  Státuszt lenn
+```
 
 ### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
 
-Az Aurádon egy szakrális bélyeg tündököl / éktelenkedik.
 
-⚡ Példa: Domvik érintése; Orwella érintése. Okozhatja [Áldott személy](023_karma_hatterek.md#-%C3%A1ldott-szem%C3%A9ly) / [Átkozott személy](023_karma_hatterek.md#-%C3%A1tkozott-szem%C3%A9ly) Karma-Háttér is.
+```
+Aurádon egy szakrális bélyeg
+  tündököl / éktelenkedik
+```
+
+Okozhatja [Áldott személy](023_karma_hatterek.md#-%C3%A1ldott-szem%C3%A9ly) / [Átkozott személy](023_karma_hatterek.md#-%C3%A1tkozott-szem%C3%A9ly) Karma-Háttér is.
+
+⚡ Példa: Domvik érintése; Orwella érintése.
 
 <br />
 
 ---
 ### ✴️ Bénultság (1) Cselekvőképtelenség
 
-- Harcképtelenség
-- Mozgás - képtelen (nyaktól lefelé)
+```
+Harcképtelenség
+Mozgás - képtelen
+  (nyaktól lefelé)
+```
 
-Viszont
-- Beszélni még tudsz
-- Szellemi képességeket tudsz használni
+```
+Beszélni még tudsz
+Szellemi képességeket
+  tudsz használni
+```
 
 ### ✴️ Bénultság (2) Paralízis
 
-- Harcképtelenség
-- Mozgás - képtelen
-- Beszéd - némult
+```
+Harcképtelenség
+Mozgás - képtelen
+Beszéd - némult
+```
 
 <br />
 
@@ -94,60 +137,83 @@ Viszont
 
 Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
 
-- Mozgás - lassulás
-- `Hátrány-1` támadó dobás
+```
+Hátrány-1 támadó dobás
+Mozgás - lassulás
+```
 
 ### ✴️ Blokkolt (2) Erősen
 
-- Mozgás - lassulás
-- `Hátrány-2` támadó dobás
+```
+Hátrány-2 támadó dobás
+Mozgás - lassulás
+```
 
 <br />
 
 ---
 ### ✴️ Eszmélet (1) Bódultság
 
-- `Hátrány-1`
-  - Kezdeményező dobásra
-  - Támadó dobásra
-  - Manőver Ellenpróba dobás
-  - Képzettségpróbákra
-  - Tulajdonságpróbákra
-- `Hátrány-2`
-  - Szociális képzettségpróbákra
-- `1` támadás elvesztése
-- ⭕nincs biztos tudásból (at-will) varázslás, kivéve papok: ők részegen is tudnak varázsolni⭕
-- ⚡példa: sima részegség
+```
+Hátrány-1
+  Kezdeményező dobásra
+  Támadó dobásra
+  Manőver Ellenpróba dobás
+  Képzettségpróbákra
+  Tulajdonságpróbákra
+
+Hátrány-2
+  Szociális képzettségpróbákra
+  1 támadás elvesztése
+  ⭕nincs (at-will) varázslás
+  kivéve papok: részegen is tudnak⭕
+```
+
+⚡Példa: sima részegség
 
 ### ✴️ Eszmélet (2) Kábultság
 
-- `Hátrány-2`
-  - Kezdeményező dobásra
-  - Támadó dobásra
-  - Manőver Ellenpróba dobás
-  - Képzettségpróbákra
-  - Tulajdonságpróbákra
-- Többszörös támadás elvesztése
-- Automatikus kudarc: szociális képzettségpróbákra
-- Varázslás képesség elvesztése
-- ⚡példa: pocsolya részegség
+```
+Automatikus kudarc:
+  szociális képzettségpróbákra
+
+Hátrány-2
+  Kezdeményező dobásra
+  Támadó dobásra
+  Manőver Ellenpróba dobás
+  Képzettségpróbákra
+  Tulajdonságpróbákra
+
+Többszörös támadás elvesztése
+Varázslás képesség elvesztése
+```
+
+⚡Példa: pocsolya részegség
 
 ### ✴️ Eszmélet (3) Ájulás
 
-- Beszéd - némult
-- Harcképtelenség
-- Mozgás - képtelen
-- Automatikus kudarc
-  - képzettségpróbák
-  - tulajdonságpróbák
-- Pszi használat elvesztése
-- Varázslás képesség elvesztése
+```
+Harcképtelenség
 
-Az Antyssjárás viszont ebben az állapotban is működik.
+Automatikus kudarc
+  Képzettségpróbák
+  Tulajdonságpróbák
+
+Beszéd - némult
+Mozgás - képtelen
+
+Pszi használat elvesztése
+Varázslás képesség elvesztése
+
+Az Antyssjárás viszont ebben
+  az állapotban is működik
+```
+
+
 
 ### ✴️ Eszmélet (4) Kóma
 
-- mint az Ájulásnál, továbbá:
+Mint az Ájulásnál, továbbá:
 - Automatikusan Antysson ragadsz, nem is feltétlenül vagy vele tisztában, hogy ott vagy.
 - Az Antyss a valóságod. Ha nincs Antyssjárás ⭕TODO⭕ képzettséged, akkor haladni, cselekedni is alig tudsz.
 
@@ -158,15 +224,21 @@ Az Antyssjárás viszont ebben az állapotban is működik.
 
 Látás, Hallás, Szaglás.
 
-[Érzék - zavart](081_hatasok.md#-%C3%A9rz%C3%A9k---zavart)
+```
+Hátrány-1 Érzék Tulajdonságpróbákra
+```
 
 ### ✴️ Érzékvesztés (2) Részleges
 
-[Érzék - részleges](081_hatasok.md#-%C3%A9rz%C3%A9k---r%C3%A9szleges)
+```
+Hátrány-2 Érzék Tulajdonságpróbákra
+```
 
 ### ✴️ Érzékvesztés (3) Teljes
 
-[Érzék - kioltott](081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott)
+```
+Automatikus kudarc - Érzék Tulajdonságpróbákra
+```
 
 <br />
 
@@ -176,14 +248,26 @@ Látás, Hallás, Szaglás.
 Egyes fegyverek, pajzsok viselése nehezítheti a **Tulajdonságpróbákat** és **Képzettségpróbákat**.\
 A lent leírtak az irányadóak, de helyzettől függően a KM - az adott helyzet ismeretében - variálhat a mértéken, vagy akár teljesen el is tekinthet a hatásoktól.
 
-`Hátrány-1;2`
-  - Fizikai Tulajdonságpróbákra
-  - Fizikai Képzettségpróbákra
+```
+Hátrány-1;2
+  Fizikai Tulajdonságpróbákra
+  Fizikai Képzettségpróbákra
+```
 
 Hatása [Felszerelésre](010_03_06_felszereles.md):
-- Másfélkezes kard: Közepes tárgy (1 pont)
-- Közepes pajzs: Közepes tárgy (1 pont)
-- Nagy pajzs: Nagy tárgy (2 pont)
+
+
+```
+Másfélkezes kard:
+  Közepes tárgy (1 pont)
+
+Közepes pajzs:
+  Közepes tárgy (1 pont)
+
+Nagy pajzs:
+  Nagy tárgy (2 pont)
+```
+
 
 **Kapcsolódik**:
 - [Fegyver mozgásgátló hatása](068_01_12_fegyver_mozgasgatlo_hatasa.md) fejezet
@@ -196,37 +280,64 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 ---
 ### ✴️ Félelem (1) Szorongás
 
-- Maximális [Védő taktikában](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika) kezd harcolni (`VÉ:+15; TÉ:-30`). Ha akarja, ha nem.
-- `Hátrány-1`: Szociális képzettségpróbákra
+```
+Max Védő taktikában harcol
+  VÉ:+15; TÉ:-30
+
+Hátrány-1
+  Szociális képzettségpróbákra
+```
 
 Mi okozhatja?
-- nem bírja a stresszt
-- kezdő a harcban
-- meg lett félemlítve pl. "Befolyásolás + Félelemkeltés" képzettség ellenpróbával (KM dönt)
+
+
+```
+- Nem bírja a stresszt
+- Kezdő a harcban
+- Meg lett félemlítve pl.
+  "Befolyásolás + Félelemkeltés"
+  képzettség ellenpróbával (KM dönt)
+```
+
+Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 
 ### ✴️ Félelem (2) Rettegés/Pánik
 
-- Csak [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktikát használhat: `VÉ:+30`
-- Többszörös támadás elvesztése
-- Automatikus kudarc: Szociális képzettségpróbákra
-- Csak mágia vagy démonok hatására kerülhet ebbe az állapotba
+
+```
+Többszörös támadás elvesztése
+Csak Teljes Védekezés taktikát
+  használhat: VÉ:+30
+
+Automatikus kudarc
+  Szociális képzettségpróbákra
+
+Csak mágia vagy démonok hatására
+  kerülhet ebbe az állapotba
+```
+
+Lásd: [Teljes Védekezés](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) taktika
 
 ### ✴️ Félelem (3) Bénító félelem
 
 Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki kalandozó)
 
-- Mozgás - képtelen
-- Harcképtelenség
-- Varázslás képesség elvesztése
-- Pszi használat elvesztése
+```
+Mozgás - képtelen
+Harcképtelenség
+Varázslás képesség elvesztése
+Pszi használat elvesztése
+```
 
 <br />
 
 ---
 ### ✴️ Fizikai (1) Fáradtság
 
-- `Hátrány-1`: Kezdeményező dobásra
-- `Hátrány-1`: szellemi képzettségpróbákra
+```
+Hátrány-1 Kezdeményező dobásra
+Hátrány-1 szellemi képzettségpróbákra
+```
 
 ⚡ Példa:
 - napok óta napja nem aludtál
@@ -235,10 +346,12 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 
 ### ✴️ Fizikai (2) Kimerültség
 
-- `Hátrány-1`: Kezdeményező dobásra
-- VÉ veszteség: duplázódik
-- `Hátrány-2`: szellemi képzettségpróbákra
--  `FP S1`
+```
+VÉ veszteség duplázódik
+Hátrány-1 Kezdeményező dobásra
+Hátrány-2 szellemi képzettségpróbákra
+FP S1
+```
 
 ⚡ Példa:
 - már nem is emlékszel, mikor aludtál utoljára
@@ -246,17 +359,21 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
-- `Hátrány-2`: Kezdeményező dobásra
-- VÉ veszteség duplázódik
-- Többszörös támadás elvesztése
-- Mozgás - lassulás
-- Automatikus kudarc: [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) (nincs harcérték bónusz belőle)
-- `Hátrány-2`: minden nem-harci képzettségpróbákra
--  `FP S2`
+```
+VÉ veszteség duplázódik
+Hátrány-2 Kezdeményező dobásra
+Hátrány-2 nem-harci képzettségpróbákra
+Többszörös támadás elvesztése
+Mozgás - lassulás
+Automatikus kudarc
+  Harci akrobatika
+  (nincs harcérték bónusz)
+FP S2
+```
 
 ⚡ Példa: éhhalál szélén tengődés
 
-Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély,  [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
 
 <br />
 
@@ -271,26 +388,52 @@ A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az 
 
 A karaktert valami inspirálja (egy műalkotás, egy táj, egy beszélgetés). Ez kreatív energiákat szabadíthat fel, de akár a figyelmét is elvonhatja a fontos dolgokról.
 
-- `Előny+1`: kreatív tevékenységekre
-- `Hátrány-1`: koncentrációt igénylő feladatokra
+```
+Előny+1
+  kreatív tevékenységekre
+
+Hátrány-1
+  koncentrációt igénylő feladatokra
+```
 
 ### ✴️ Hangulat (3) Eufórikus
 
 A karakter euforikus állapotban van, talán valamilyen sikerélmény vagy varázslat hatására.
 
-- `Előny+1`: kreatív tevékenységekre
-- `Hátrány-2`: koncentrációt igénylő feladatokra
-- Ellenséges varázstudó: `Hátrány-1`: Asztrálmágia Komplexitás-próbára
-  (asztrális befolyásolásnak jobban ellenáll az eufórikus személy)
-- Ilyenkor túlzottan magabiztos, esetleg meggondolatlan döntéseket hozhat.
+```
+Előny+1
+  Kreatív tevékenységekre
+
+Hátrány-1
+  Ellenséges varázstudó:
+    Asztrálmágia Komplexitás-próbára
+    (asztrális befolyásolásnak jobban
+     ellenáll az eufórikus személy)
+
+Hátrány-2
+  Koncentrációt igénylő feladatokra
+
+Ilyenkor túlzottan magabiztos,
+  meggondolatlan döntéseket hozhat
+```
 
 ### ✴️ Hangulat (4) Obszesszív
 
 A karakter megszállottá válik egy dolog vagy személy iránt. Ez motivációt adhat, de a megszállottság elvakíthatja és rossz döntésekhez vezethet.
 
-- "Automatikus kudarc": hogy mire, mikre, azt a KM mondja meg, aki tartsa észben és követelje ki a játékoson.
-- `Előny+1`: mindenre, ami az obszesszió tárgyához kötődik (nem harci, nem misztikus képzettségpróbákra)
-- `Hátrány-1`: minden más képzettségpróbára
+```
+Automatikus kudarc
+  KM mondja meg, mire
+  követelje ki a játékoson.
+
+Előny+1
+  Mindenre, ami az obszesszió
+  tárgyához kötődik
+  (nem harci/misztikus képzettségpróbákra)
+
+Hátrány-1
+  Minden más Képzettségpróbára
+```
 
 <br />
 
@@ -311,38 +454,56 @@ Az ilyen karakter kötelezően
 
 ### ✴️ Indulat (3) Őrjöngés
 
-- mint az `Indulat (2) Gyűlölet`, plusz:
-- már mindenkit megtámadsz, akit látsz, nem számít, hogy barát, vagy szövetséges
-- Automatikus kudarc: Szociális képzettségpróbákra
-- Automatikus kudarc: Szellemi képzettségpróbákra
+```
+Lásd Indulat (2) Gyűlölet +
+  Mindenkit megtámadsz,
+  barát, szövetséges..
+
+Automatikus kudarc
+  Szociális képzettségpróbákra
+  Szellemi képzettségpróbákra
+```
 
 <br />
 
 ---
 ### ✴️ Késztetés (1) Sugallat
 
-- Automatikus Tulajdonságpróba: **Akaraterő**
+```
+Automatikus Tulajdonságpróba:
+  Akaraterő
+```
 
 **Akaraterő** Tulajdonságpróbát kell dobnod (`12`), hogy ellen tudsz-e állni a késztetésnek.
 
 ### ✴️ Késztetés (2) Vágy
 
-- `Hátrány-1`: **Akaraterő** Tulajdonságpróbára
+```
+Hátrány-1
+  Akaraterő Tulajdonságpróbára
+```
 
 **Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-1` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
 ### ✴️ Késztetés (3) Kényszer
 
-- `Hátrány-2`: **Akaraterő** Tulajdonságpróbára
+```
+Hátrány-2 Akaraterő Tulajdonságpróbára
+```
 
 **Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
 ⚡ Példák
-- Kleptománia (1,2,3) ("El kéne lopni valamit...")
-- Alkoholizmus (1,2,3) ("Igyak piát?")
-  - `1.` Nagyivó: sima Akaraterő tulajdonságpróbát dobsz a leküzdés ellen
-  - `2.` Alkoholista: `Hátrány-1 próba
-  - `3.` Masszív alkoholista: `Hátrány-2` próba
+
+```
+Kleptománia (1,2,3)
+  "El kéne lopni valamit..."
+
+Alkoholizmus (1,2,3) ("Igyak piát?")
+ 1. Akaraterő tulajdonságpróba (Nagyivó)
+ 2. Hátrány-1 (Alkoholista)
+ 3. Hátrány-2 (Masszív alkoholista)
+```
 
 <br />
 
@@ -396,21 +557,26 @@ Merevvértviselet fortély MGT csökkentő
 ---
 ### ✴️  Rosszullét (1) Közepes
 
-- `Hátrány-1`
-  - Kezdeményező dobásra
-  - TÉ dobásra
-  - Fizikai képzettségpróbára
-  - Fizikai Tulajdonságpróbára
+```
+Hátrány-1
+  Kezdeményező dobásra
+  TÉ dobásra
+  Fizikai képzettségpróbára
+  Fizikai Tulajdonságpróbára
+```
 
 ### ✴️  Rosszullét (2) Erős
 
-- `Hátrány-2`
-  - Kezdeményező dobásra
-  - TÉ dobásra
-  - Fizikai képzettségpróbára
-  - Fizikai Tulajdonságpróbára
-- `Hátrány-1`
-  - Szociális képzettségpróbákra
+```
+Hátrány-2
+  Kezdeményező dobásra
+  TÉ dobásra
+  Fizikai képzettségpróbára
+  Fizikai Tulajdonságpróbára
+
+Hátrány-1
+  Szociális képzettségpróbákra
+```
 
 <br />
 
@@ -420,88 +586,118 @@ Merevvértviselet fortély MGT csökkentő
 Ha az `S3` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.\
 Bővebben lásd a [Sebesülés](061_03_sebesules.md#s%C3%A9r%C3%BCl%C3%A9s-hat%C3%A1sa-tulajdons%C3%A1g--%C3%A9s-k%C3%A9pzetts%C3%A9gpr%C3%B3b%C3%A1ra) fejezetet.
 
-`Hátrány-1`:
-- Tulajdonságpróbákra
-- Képzettségpróbákra
+```
+Hátrány-1
+  Tulajdonságpróbákra
+  Képzettségpróbákra
+```
 
 ### ✴️ Sérült (2) S4
 
 Ha az `S4` sérülés-kategóriába kerülsz, az alábbi hatásokat szenveded el.
 
-`Hátrány-2`:
-- Tulajdonságpróbákra
-- Képzettségpróbákra
+```
+Hátrány-2
+  Tulajdonságpróbákra
+  Képzettségpróbákra
+```
 
 ### ✴️ Sérült (3) Haldoklás
 
 Ha `0 ÉP` értékre érsz, haldoklani kezdesz. Erről bővebben [itt](061_03_sebesules.md#haldokl%C3%A1s).
 
-- Harcképtelenség
-- Mozgás - lecövekelt
-- Automatikus kudarc
-  - képzettségpróbák
-  - tulajdonságpróbák
-- Pszi használat elvesztése
-- Varázslás képesség elvesztése
+```
+Automatikus kudarc
+  Képzettségpróbák
+  Tulajdonságpróbák
+
+Harcképtelenség
+Mozgás - lecövekelt
+
+Pszi használat elvesztése
+Varázslás képesség elvesztése
+```
 
 <br />
 
 ---
 ### ✴️ Szellemi (1) Kialvatlanság
 
-- `Hátrány-1`: Észlelés képzettségróba
+```
+Hátrány-1
+  Észlelés képzettségróba
+```
 
 ### ✴️ Szellemi (2) Eltompultság
 
-- Pszí használat elvesztése
-- `Hátrány-1`: Mágiahasználat   (nagyobb az esélye a mágia random hatásnak)
-- `Hátrány-1`:
-  - nem-mágikus szellemi képzettségpróbára
-  - szociális képzettségpróbákra
-- lassabb gondolkodás
+```
+Pszí használat elvesztése
+Lassabb gondolkodás
+
+Hátrány-1
+  Mágiahasználat
+    (random mágia hatás esélye+)
+  Nem-mágikus szellemi képzettségpróbákra
+  Szociális képzettségpróbákra
+```
 
 ### ✴️ Szellemi (3) Delírium
 
-- Pszí használat elvesztése
-- `Hátrány-2`:
-  - nem-mágikus szellemi képzettségpróbákra
-  - szociális képzettségpróbákra
-- `Hátrány-2`: Mágiahasználat
-- lassabb gondolkodás
+```
+Pszí használat elvesztése
+Lassabb gondolkodás
+
+Hátrány-2
+  Mágiahasználat
+  Nem-mágikus szellemi képzettségpróbákra
+  Szociális képzettségpróbákra
+```
 
 <br />
 
 ---
 ### ✴️ Trauma (1) Lélekrepedés
 
-- `Hátrány-1`:
-    - Önuralom Tulajdonságpróbára
-    - Érzékenység Tulajdonságpróbára
-    - Szociális képzettségpróbákra, mikor a fenti 2 Tulajdonságot használja
-- Antyssjárás esetén "rossz" helyre kerül
+```
+Hátrány-1
+  Önuralom Tulajdonságpróbára
+  Érzékenység Tulajdonságpróbára
+  Szociális képzettségpróbákra,
+    mikor ezt a 2 Tulajdonságot használja
+
+Antyssjárás esetén "rossz" helyre kerül
+```
 
 ### ✴️ Trauma (2) Lélektörés
 
-- `Hátrány-2`:
-    - Önuralom Tulajdonságpróba
-    - Érzékenység Tulajdonságpróba
-    - Szociális képzettségpróbákra, mikor a fenti 2 Tulajdonságot használja
-- Antyssjárás esetén "nagyon rossz" helyre kerül
+```
+Hátrány-2
+  Önuralom Tulajdonságpróba
+  Érzékenység Tulajdonságpróba
+  Szociális képzettségpróbákra,
+    mikor a fenti 2 Tulajdonságot használja
+
+Antyssjárás esetén "nagyon rossz" helyre kerül
+```
 
 <br />
 
 ---
 ### ✴️ Zavar (1) Kizökkent
 
-A következő kör végéig tart.
+```
+Következő kör végéig tart
 
-- Többszörös támadás elvesztése
-- `Hátrány-1`:
-  - Kezdeményező dobásra
-  - Gyorsaság és Ügyesség Tulajdonságpróbákra
-- `Hátrány-2`:
-  - Szellemi képzettségpróbákra
-  - Szociális képzettségpróbákra
+Többszörös támadás elvesztése
+
+Hátrány-1
+  Kezdeményező dobásra
+  Gyorsaság és Ügyesség Tulajdonságpróbákra
+
+Hátrány-2
+  Szellemi képzettségpróbákra
+  Szociális képzettségpróbákra
+```
 
 Példa: ledöbbenés, stb.
 
@@ -509,16 +705,21 @@ Példa: ledöbbenés, stb.
 
 A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból ismert, "stunned".
 
-- `Hátrány-2`
-  - Kezdeményező dobásra
-  - Gyorsaság és Ügyesség Tulajdonságpróbákra
-- Többszörös támadás elvesztése
-- Mozgás - lecövekelt
-- Beszéd - zavart
-- Automatikus kudarc:
-  - Szellemi képzettségpróbákra
-  - Szociális képzettségpróbákra
-- 2 körig tart
+```
+2 körig tart
+
+Automatikus kudarc
+  Szellemi képzettségpróbákra
+  Szociális képzettségpróbákra
+
+Hátrány-2
+  Kezdeményező dobásra
+  Gyorsaság és Ügyesség Tulajdonságpróbákra
+
+Többszörös támadás elvesztése
+Mozgás - lecövekelt
+Beszéd - zavart
+```
 
 Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az [Érzékevesztés](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart) (több érzékszervre is akár)).
 
@@ -526,26 +727,71 @@ Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az 
 
 Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képes részt venni.
 
-- Beszéd (zavart, vagy némult - szituáció függő)
-- Harcképtelenség
-- Mozgás - lecövekelt
-- Automatikus kudarc:
-  - Tulajdonságpróbákra
-  - Képzettségpróbákra
-- Beszéd - zavart
-- Pszi használat elvesztése
-- Varázslás képesség elvesztése
+```
+Automatikus kudarc
+  Tulajdonságpróbákra
+  Képzettségpróbákra
 
-Kijövetel: "Összpontosítás + Önuralom" próba: `12` (Nehéz)
-- `1.` Bekerüléskor: Automatikus képzettségpróba:
-    - Ha megdobja, átkerül "Zavar (2) Megrendült" Státuszba, ami az ott leírt időtartam után enyhül.
-- `2.` Nyugodt állapotban (Védő Érték visszanyerő szituáció)
-- `3.` Ha a fentiekben rontás történik, utána `(20-Önuralom)` perc után magától enyhül "Zavar (2) Megrendült" fokra, ami az ott leírt időtartam után enyhül.
+Harcképtelenség
+Mozgás - lecövekelt
 
-Kihozni valakit sokkból
-- `1.` "Emberismeret + Érzékenység" próba vs `12` (Nehéz)
-    - Sikeres próba kihozza "Zavar (2) Megrendült"-be, ami az ott leírt időtartam után enyhül.
-- `2.`Mágiával kihozni (`1`, `2`, `3` szintet enyhít)
+Pszi használat elvesztése
+Varázslás képesség elvesztése
+
+Beszéd (zavart, vagy némult)
+  (szituáció függő)
+```
+
+#### Kijövetel sokkból
+
+```
+Összpontosítás + Önuralom
+  Képzettségpróba
+
+Célszám: 12 (Nehéz)
+```
+
+```
+1. Bekerüléskor
+   Automatikus képzettségpróba
+
+Ha megdobja, átkerül
+"Zavar (2) Megrendült" Státuszba,
+ami az ott leírt időtartam után enyhül.
+```
+
+```
+2. Nyugodt állapotban
+
+Védő Érték visszanyerő szituáció
+```
+
+```
+3. Ha a fentiekben rontás történik
+
+Utána (20 - Önuralom) perc után
+magától enyhül "Zavar (2) Megrendült"
+fokra, ami az ott leírt időtartam
+után enyhül.
+```
+
+#### Kihozni valakit sokkból
+
+```
+Emberismeret + Érzékenység
+  Képzettségpróba
+
+Célszám: 12 (Nehéz)
+
+Sikeres próba kihozza
+"Zavar (2) Megrendült" fokra,
+ami az ott leírt időtartam után enyhül.
+```
+
+```
+Mágiával kihozni
+(1, 2, 3 szintet enyhít)
+```
 
 ⚡ Példák
 - természetes villám lecsap melléd

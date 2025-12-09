@@ -169,7 +169,7 @@ Sebzéstípus: alkalmatlan
 
 Sötét: Félhomály
   • Hátrány-1 TÉ dobásra
-  • Érzék (látás) zavart
+  • Hátrány-1 Érzék (látás)
   • Mérsékli: Vakharc fortély
     Félhomályban nehezebb harcolni,
     fegyverek mozgása nehezen látható
@@ -206,7 +206,7 @@ Védő Érték kiterjesztése másra
     Testőr fortély tanulásával
 
 Vér elvakít
-  • Érzék (látás) zavart
+  • Hátrány-1 Érzék (látás)
   • Hátrány-1 Támadó dobásra
 ```
 
