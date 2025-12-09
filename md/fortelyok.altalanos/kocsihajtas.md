@@ -6,13 +6,13 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: Lovasszekér, ökrösszekér, postakocsi elvezetése
+🌟 **Hatás**: Lovasszekér, ökrösszekér, postakocsi elvezetése alap sebességen.
 
 ---
 ### 2. fok
 
 🔒 **Követelmény**: Ügyesség: `+1`
 
-🌟 **Hatás**: Harci szekerek, nagy fogatok kezelése
+🌟 **Hatás**: Harci szekerek, nagy fogatok kezelése. Nagysebességű száguldás kocsival.
 
 ---
