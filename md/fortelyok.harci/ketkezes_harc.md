@@ -59,7 +59,7 @@ Kisebb fegyver harcmodora - 6.szint
 → Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
 → Mf: csak a nagyobb fegyveré számít
- (akkor is, ha a fegyverek azonosak!)
+  (ha azonosak, akkor csak egyiké)
 ```
 
 <br />
