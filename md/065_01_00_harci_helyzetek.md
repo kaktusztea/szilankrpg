@@ -1,6 +1,6 @@
 ## Harci helyzetek ✴️🗡️
 
-A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek szintén [Hatásokat](081_hatasok.md) okoznak. 
+A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek szintén [Hatásokat](081_hatasok.md) okoznak.
 
 ```
 Belharci szituáció

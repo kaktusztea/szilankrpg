@@ -146,3 +146,7 @@ Szemedbe folyik a vér, korlátoz a látásban és a harcban.
 Harcban: `1` Akció felhasználásával kitörölheted a szemedből a vért, ez `1` támadás kihagyását jelenti
 
 ---
+
+🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)

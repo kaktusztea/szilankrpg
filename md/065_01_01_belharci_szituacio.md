@@ -18,7 +18,7 @@ A belharcos célja **Belharci szituáció** harci helyzet elérése, hogy bónus
 
 A manőver csak **Közelharc** harcmodorban kezdeményezhető.
 
-### `1.b` Sikeres [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcból-kibontakozás) manőver → kikerülés **[Belharci szituációból](065_01_01_belharci_szituacio.md)** 
+### `1.b` Sikeres [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcból-kibontakozás) manőver → kikerülés **[Belharci szituációból](065_01_01_belharci_szituacio.md)**
 
 Bárki, aki Belharci szituációban van, ezzel jöhet ki belőle - harcmodortól függetlenül.
 
@@ -68,3 +68,7 @@ Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például
 Állatok általában rendelkeznek [Belharc](fortelyok.harci/belharc.md) fortéllyal. Ennek mértékéről a KM dönt.
 
 ---
+
+🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)

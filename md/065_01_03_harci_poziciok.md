@@ -51,8 +51,8 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
 
 - Ellenfél: `Előny+1` `TÉ` dobásra
 - Beszorított karakter:
+  - `Hátrány-1` KÉ dobásra
   - `Hátrány-1` TÉ dobásra
-  - [Kezdeményezés - Lassú](081_hatasok.md#-kezdeményezés---lassú)
   - [1 támadás elvesztése](081_hatasok.md#-1-támadás-elvesztése)
   - [Mozgás - lassulás](081_hatasok.md#-mozgás---lassulás)
 
@@ -63,7 +63,7 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
 - Ellenfél: `Előny+2` `TÉ` dobásra
 - Beszorított karakter:
   - `Hátrány-2` TÉ dobásra
-  - [Kezdeményezés - Nagyon Lassú](081_hatasok.md#-kezdeményezés---nagyon-lassú)
+  - Hátrány-2` KÉ dobásra
   - [VÉ veszteség duplázódik](081_hatasok.md#-vé-veszteség-duplázódik)
   - [Többszörös támadás elvesztése](081_hatasok.md#-többszörös-támadás-elvesztése)
   - [Mozgás - lassulás](081_hatasok.md#-mozgás---lassulás)
@@ -90,7 +90,7 @@ VÉ ← áldozat mozgási jellege
 
 Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
 
-Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen. Siker esetén áldozata [Védő Értékét annak mozgási jellege és mérete](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint) határozza meg. A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat. 
+Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen. Siker esetén áldozata [Védő Értékét annak mozgási jellege és mérete](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint) határozza meg. A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat.
 
 → [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---észrevétlen-támadás)
 
@@ -194,3 +194,7 @@ Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de ilye
 A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
 
 ---
+
+🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)

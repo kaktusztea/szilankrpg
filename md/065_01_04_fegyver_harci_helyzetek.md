@@ -142,3 +142,7 @@ Hátrány-2 Sebzésdobásra
 Fegyvered nem erre a sebzési típusra lett kialakítva. Például "Hosszú kard: Zúzás".
 
 ---
+
+🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)

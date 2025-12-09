@@ -49,3 +49,7 @@ Ha a karakter helyhez kötve kénytelen harcolni, akkor jelentős hátránnyal t
 <br />
 
 ---
+
+🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
+
+⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)

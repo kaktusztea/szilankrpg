@@ -14,6 +14,8 @@ MIN,MAX: [-2, +2]
 
 Az `Előny` és `Hátrány` speciális, kockadobásokat érintő Hatások.\
 Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
+
+- Kezdeményező dobás
 - Támadó dobás
 - Célzó dobás
 - Manőver Ellenpróba dobás
@@ -151,18 +153,6 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 - Tudsz mozogni, menni, de harcolni nem
 - `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_01_03_harci_poziciok.md#észrevétlen-támadás))
 
-
----
-### 🔥 Kezdeményezés - lassú
-
-`Hátrány-1` jár Kezdeményező dobásodra.
-
-### 🔥 Kezdeményezés - nagyon lassú
-
-`Hátrány-2` jár Kezdeményező dobásodra.
-
-<br />
-
 ---
 ### 🔥 Mozgás - lassulás
 
@@ -247,7 +237,7 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 
 ---
 ### 🔥 Vérzés - gyenge
-  
+
 ```
 - 1 ÉP / 10 perc
 - harcban nem számít

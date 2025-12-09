@@ -41,9 +41,9 @@ Kivétel: `Erő`, mert ott nincs próba. Itt simán `Erő` érték növekedés/c
 ### ✴️ Áldott / Átkozott (1,2) Képzettség
 
 `Előny+1,2`, `Hátrány-1,2` adott Képzettség próbájára
- 
+
  ⚡ Példa
-- "Átok: Alulművelt Bölcsész" 
+- "Átok: Alulművelt Bölcsész"
 - Hatása:  a természettudományokkal kapcsolatban teljes a vakfolt nála. Az ilyen témájú képzettségpróbákra `Hátrány-1` büntetést kap.
 
 ### ✴️ Átkozott (1,2) Viselkedés
@@ -108,13 +108,13 @@ Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatá
 ### ✴️ Eszmélet (1) Bódultság
 
 - `Hátrány-1`
+  - Kezdeményező dobásra
   - Támadó dobásra
   - Manőver Ellenpróba dobás
   - Képzettségpróbákra
   - Tulajdonságpróbákra
 - `Hátrány-2`
   - Szociális képzettségpróbákra
-- Kezdeményezés - lassú
 - `1` támadás elvesztése
 - ⭕nincs biztos tudásból (at-will) varázslás, kivéve papok: ők részegen is tudnak varázsolni⭕
 - ⚡példa: sima részegség
@@ -122,11 +122,11 @@ Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatá
 ### ✴️ Eszmélet (2) Kábultság
 
 - `Hátrány-2`
+  - Kezdeményező dobásra
   - Támadó dobásra
   - Manőver Ellenpróba dobás
   - Képzettségpróbákra
   - Tulajdonságpróbákra
-- Kezdeményezés - Nagyon lassú
 - Többszörös támadás elvesztése
 - Automatikus kudarc: szociális képzettségpróbákra
 - Varázslás képesség elvesztése
@@ -225,7 +225,7 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 ---
 ### ✴️ Fizikai (1) Fáradtság
 
-- Kezdeményezés - lassú
+- `Hátrány-1`: Kezdeményező dobásra
 - `Hátrány-1`: szellemi képzettségpróbákra
 
 ⚡ Példa:
@@ -235,7 +235,7 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 
 ### ✴️ Fizikai (2) Kimerültség
 
-- Kezdeményezés - lassú
+- `Hátrány-1`: Kezdeményező dobásra
 - VÉ veszteség: duplázódik
 - `Hátrány-2`: szellemi képzettségpróbákra
 -  `FP S1`
@@ -246,12 +246,12 @@ Rögtön bele is lehet halni, de ez ellen véd a Szilánk megléte (tehát, aki 
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
-- Kezdeményezés - Nagyon lassú
+- `Hátrány-2`: Kezdeményező dobásra
 - VÉ veszteség duplázódik
 - Többszörös támadás elvesztése
 - Mozgás - lassulás
 - Automatikus kudarc: [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) (nincs harcérték bónusz belőle)
-- `Hátrány-2`: minden nem-harci képzettségpróbákra 
+- `Hátrány-2`: minden nem-harci képzettségpróbákra
 -  `FP S2`
 
 ⚡ Példa: éhhalál szélén tengődés
@@ -314,7 +314,7 @@ Az ilyen karakter kötelezően
 - mint az `Indulat (2) Gyűlölet`, plusz:
 - már mindenkit megtámadsz, akit látsz, nem számít, hogy barát, vagy szövetséges
 - Automatikus kudarc: Szociális képzettségpróbákra
-- Automatikus kudarc: Szellemi képzettségpróbákra 
+- Automatikus kudarc: Szellemi képzettségpróbákra
 
 <br />
 
@@ -397,23 +397,22 @@ Merevvértviselet fortély MGT csökkentő
 ### ✴️  Rosszullét (1) Közepes
 
 - `Hátrány-1`
+  - Kezdeményező dobásra
   - TÉ dobásra
   - Fizikai képzettségpróbára
   - Fizikai Tulajdonságpróbára
-- Kezdeményezés - lassú
-
 
 ### ✴️  Rosszullét (2) Erős
 
 - `Hátrány-2`
+  - Kezdeményező dobásra
   - TÉ dobásra
   - Fizikai képzettségpróbára
   - Fizikai Tulajdonságpróbára
 - `Hátrány-1`
   - Szociális képzettségpróbákra
-- Kezdeményezés - nagyon lassú
 
-  <br />
+<br />
 
 ---
 ### ✴️ Sérült (1) S3
@@ -496,9 +495,10 @@ Ha `0 ÉP` értékre érsz, haldoklani kezdesz. Erről bővebben [itt](061_03_se
 
 A következő kör végéig tart.
 
-- Kezdeményezés - lassú
 - Többszörös támadás elvesztése
-- `Hátrány-1`: Gyorsaság és Ügyesség Tulajdonságpróbákra
+- `Hátrány-1`:
+  - Kezdeményező dobásra
+  - Gyorsaság és Ügyesség Tulajdonságpróbákra
 - `Hátrány-2`:
   - Szellemi képzettségpróbákra
   - Szociális képzettségpróbákra
@@ -509,10 +509,11 @@ Példa: ledöbbenés, stb.
 
 A következő utáni kör végéig tart csak (2 kör). Ez a videójátékokból ismert, "stunned".
 
+- `Hátrány-2`
+  - Kezdeményező dobásra
+  - Gyorsaság és Ügyesség Tulajdonságpróbákra
 - Többszörös támadás elvesztése
-- Kezdeményezés - Nagyon lassú
 - Mozgás - lecövekelt
-- Gyorsaság és Ügyesség tulajdonságpróba: `Hátrány-2`
 - Beszéd - zavart
 - Automatikus kudarc:
   - Szellemi képzettségpróbákra
@@ -536,7 +537,7 @@ Nagyjából 10-20 percig tart, KM dönt. Az aktuális harci jelenetben nem képe
 - Varázslás képesség elvesztése
 
 Kijövetel: "Összpontosítás + Önuralom" próba: `12` (Nehéz)
-- `1.` Bekerüléskor: Automatikus képzettségpróba: 
+- `1.` Bekerüléskor: Automatikus képzettségpróba:
     - Ha megdobja, átkerül "Zavar (2) Megrendült" Státuszba, ami az ott leírt időtartam után enyhül.
 - `2.` Nyugodt állapotban (Védő Érték visszanyerő szituáció)
 - `3.` Ha a fentiekben rontás történik, utána `(20-Önuralom)` perc után magától enyhül "Zavar (2) Megrendült" fokra, ami az ott leírt időtartam után enyhül.
