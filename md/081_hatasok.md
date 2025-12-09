@@ -153,7 +153,7 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 - `Védő Értéked` a mozgásod jellegétől függ (lásd a [táblázatot](065_01_03_harci_poziciok.md#észrevétlen-támadás))
 
 ---
-### 🔥 Mozgás - lassulás
+### 🔥 Mozgás - feleződik
 
 - [Mozgás](063_03_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
 - Felére csökken a megtehető távolságod - harcon kívül

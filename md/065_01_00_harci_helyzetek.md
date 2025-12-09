@@ -28,7 +28,7 @@ Csúszós talaj
 Elvesztett egyensúly
   • Hátrány-1 TÉ dobásra
   • Többszörös támadás elvesztése
-  • Mozgás lassulás
+  • Mozgás - feleződik
   Tart kör végéig, vagy sikeres
     Akrobatika próba (12) esetén azonnal
 

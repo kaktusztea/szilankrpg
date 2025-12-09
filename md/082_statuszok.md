@@ -138,15 +138,15 @@ Beszéd - némult
 Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
 
 ```
-Hátrány-1 Támadó dobásra
-Mozgás - lassulás
+Hátrány-1 TÉ dobásra
+Mozgás - feleződik
 ```
 
 ### ✴️ Blokkolt (2) Erősen
 
 ```
-Hátrány-2 Támadó dobásra
-Mozgás - lassulás
+Hátrány-2 TÉ dobásra
+Mozgás - feleződik
 ```
 
 <br />
@@ -156,8 +156,8 @@ Mozgás - lassulás
 
 ```
 Hátrány-1
-  Kezdeményező dobásra
-  Támadó dobásra
+  KÉ dobásra
+  TÉ dobásra
   Manőver Ellenpróba dobás
   Képzettségpróbákra
   Tulajdonságpróbákra
@@ -178,9 +178,9 @@ Automatikus kudarc:
   szociális képzettségpróbákra
 
 Hátrány-2
-  Kezdeményező dobásra
-  Támadó dobásra
-  Manőver Ellenpróba dobás
+  KÉ dobásra
+  TÉ dobásra
+  Manőver Ellenpróba dobásra
   Képzettségpróbákra
   Tulajdonságpróbákra
 
@@ -225,19 +225,22 @@ Mint az Ájulásnál, továbbá:
 Látás, Hallás, Szaglás.
 
 ```
-Hátrány-1 Érzék Tulajdonságpróbákra
+Hátrány-1
+  Érzék Tulajdonságpróbákra
 ```
 
 ### ✴️ Érzékvesztés (2) Részleges
 
 ```
-Hátrány-2 Érzék Tulajdonságpróbákra
+Hátrány-2
+  Érzék Tulajdonságpróbákra
 ```
 
 ### ✴️ Érzékvesztés (3) Teljes
 
 ```
-Automatikus kudarc - Érzék Tulajdonságpróbákra
+Automatikus kudarc
+  Érzék Tulajdonságpróbákra
 ```
 
 <br />
@@ -292,9 +295,9 @@ Mi okozhatja?
 
 
 ```
-- Nem bírja a stresszt
-- Kezdő a harcban
-- Meg lett félemlítve pl.
+→ Nem bírja a stresszt
+→ Kezdő a harcban
+→ Meg lett félemlítve pl.
   "Befolyásolás + Félelemkeltés"
   képzettség ellenpróbával (KM dönt)
 ```
@@ -302,7 +305,6 @@ Mi okozhatja?
 Lásd: [Védő taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika)
 
 ### ✴️ Félelem (2) Rettegés/Pánik
-
 
 ```
 Többszörös támadás elvesztése
@@ -335,8 +337,9 @@ Pszi használat elvesztése
 ### ✴️ Fizikai (1) Fáradtság
 
 ```
-Hátrány-1 Kezdeményező dobásra
-Hátrány-1 szellemi képzettségpróbákra
+Hátrány-1
+  KÉ dobásra
+  Szellemi képzettségpróbákra
 ```
 
 ⚡ Példa:
@@ -348,8 +351,8 @@ Hátrány-1 szellemi képzettségpróbákra
 
 ```
 VÉ veszteség duplázódik
-Hátrány-1 Kezdeményező dobásra
-Hátrány-2 szellemi képzettségpróbákra
+Hátrány-1 KÉ dobásra
+Hátrány-2 Szellemi képzettségpróbákra
 FP S1
 ```
 
@@ -361,14 +364,14 @@ FP S1
 
 ```
 Hátrány-2
-  Kezdeményező dobásra
+  KÉ dobásra
   Nem-harci képzettségpróbákra
 
 Többszörös támadás elvesztése
 VÉ veszteség duplázódik
 FP S2
 
-Mozgás - lassulás
+Mozgás - feleződik
 
 Automatikus kudarc
   Harci akrobatika
@@ -460,9 +463,9 @@ Az ilyen karakter kötelezően
 ### ✴️ Indulat (3) Őrjöngés
 
 ```
-Lásd Indulat (2) Gyűlölet +
-  Mindenkit megtámadsz,
-  barát, szövetséges..
+Lásd "Indulat (2) Gyűlölet"
+  + mindenkit megtámadsz,
+    barát, szövetséges..
 
 Automatikus kudarc
   Szociális képzettségpróbákra
@@ -475,7 +478,7 @@ Automatikus kudarc
 ### ✴️ Késztetés (1) Sugallat
 
 ```
-Automatikus Tulajdonságpróba:
+Automatikus Tulajdonságpróba
   Akaraterő
 ```
 
@@ -498,7 +501,7 @@ Hátrány-2 Akaraterő Tulajdonságpróbára
 
 **Akaraterő** Tulajdonságpróbát kell dobnod `Hátrány-2` büntetéssel, hogy ellen tudsz-e állni a késztetésnek.
 
-⚡ Példák
+#### ⚡ Példák
 
 ```
 Kleptománia (1,2,3)
@@ -564,7 +567,7 @@ Merevvértviselet fortély MGT csökkentő
 
 ```
 Hátrány-1
-  Kezdeményező dobásra
+  KÉ dobásra
   TÉ dobásra
   Fizikai képzettségpróbára
   Fizikai Tulajdonságpróbára
@@ -574,7 +577,7 @@ Hátrány-1
 
 ```
 Hátrány-2
-  Kezdeményező dobásra
+  KÉ dobásra
   TÉ dobásra
   Fizikai képzettségpróbára
   Fizikai Tulajdonságpróbára
@@ -640,10 +643,10 @@ Pszí használat elvesztése
 Lassabb gondolkodás
 
 Hátrány-1
-  Mágiahasználat
-    (random mágia hatás esélye+)
-  Nem-mágikus szellemi képzettségpróbákra
+  Szellemi képzettségpróbákra
   Szociális képzettségpróbákra
+  Mágiahasználat
+    (random mágia hatás esélye ↑)
 ```
 
 ### ✴️ Szellemi (3) Delírium
@@ -696,7 +699,7 @@ Következő kör végéig tart
 Többszörös támadás elvesztése
 
 Hátrány-1
-  Kezdeményező dobásra
+  KÉ dobásra
   Gyorsaság és Ügyesség Tulajdonságpróbákra
 
 Hátrány-2
@@ -718,8 +721,9 @@ Automatikus kudarc
   Szociális képzettségpróbákra
 
 Hátrány-2
-  Kezdeményező dobásra
-  Gyorsaság és Ügyesség Tulajdonságpróbákra
+  KÉ dobásra
+  Gyorsaság Tulajdonságpróbákra
+  Ügyesség Tulajdonságpróbákra
 
 Többszörös támadás elvesztése
 Mozgás - lecövekelt
@@ -798,9 +802,12 @@ Mágiával kihozni
 (1, 2, 3 szintet enyhít)
 ```
 
-⚡ Példák
-- természetes villám lecsap melléd
-- szakrális mágiák mellékhatása is lehet
+#### ⚡ Példák
+
+```
+Természetes villám lecsap melléd
+Szakrális mágiák mellékhatása
+```
 
 ---
 

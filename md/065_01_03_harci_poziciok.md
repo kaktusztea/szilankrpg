@@ -54,7 +54,7 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
   - `Hátrány-1` KÉ dobásra
   - `Hátrány-1` TÉ dobásra
   - [1 támadás elvesztése](081_hatasok.md#-1-támadás-elvesztése)
-  - [Mozgás - lassulás](081_hatasok.md#-mozgás---lassulás)
+  - [Mozgás - feleződik](081_hatasok.md#-mozgás---feleződik)
 
 ---
 ### Beszoritott helyzet (2) Erősen
@@ -66,7 +66,7 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
   - Hátrány-2` KÉ dobásra
   - [VÉ veszteség duplázódik](081_hatasok.md#-vé-veszteség-duplázódik)
   - [Többszörös támadás elvesztése](081_hatasok.md#-többszörös-támadás-elvesztése)
-  - [Mozgás - lassulás](081_hatasok.md#-mozgás---lassulás)
+  - [Mozgás - feleződik](081_hatasok.md#-mozgás---feleződik)
   - [Sebzés csökkentett](081_hatasok.md#-sebzés-csökkentett)
 
 **Harci taktikák**: a **Támadó- és Védő** taktikák **Beszorított helyzetben** továbbra is használhatóak.
@@ -102,7 +102,7 @@ Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillan
 ## Félhátulról támadás
 
 ```
-Előny+1: TÉ dobásra
+Előny+1 TÉ dobásra
 ```
 
 Ha a karakter ellenfelére félhátulról támad, `Előny+1` jár `TÉ` dobására.
@@ -115,7 +115,7 @@ Védekező Pajzs `VÉ` csak akkor számít, ha a pajzsot tartó kéz felőli old
 ## Hátulról támadás
 
 ```
-Előny+2: TÉ dobásra
+Előny+2 TÉ dobásra
 ```
 
 Ha az ellenfeléredre hátulról támad, azt jelentős előnnyel jár támadáskor.
@@ -141,7 +141,7 @@ Példák:
 ## Levegőből támadás
 
 ```
-Előny+2: Támadó Dobásra
+Előny+2 TÉ Dobásra
 ```
 
 A levegőből támadás - például egy légi hátasról - jelentős előnnyel jár.
@@ -156,7 +156,7 @@ Levegőből lehetséges [Fárasztó taktikát](065_02_harci_taktikak.md#fáraszt
 ## Magasabbról
 
 ```
-Előny+1: TÉ dobásra
+Előny+1 TÉ dobásra
 ```
 
 Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen helyzetben `Előny+1` jár `TÉ` dobására.

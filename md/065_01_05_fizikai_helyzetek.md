@@ -17,7 +17,7 @@ Mindenkinek, aki csúszós talajon harcol `Hátrány-1` jár `TÉ` dobására. A
 ```
 → Hátrány-1: TÉ dobásra
 → Többszörös támadás elvesztése
-→ Mozgás - lassulás
+→ Mozgás - feleződik
 ```
 
 A hatások alapból a kör végéig tart, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
