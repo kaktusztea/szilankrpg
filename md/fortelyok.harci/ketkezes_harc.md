@@ -36,8 +36,7 @@ Kisebb fegyver harcmodora - 3.szint
 
 ```
 → Harckeret: +2
-→ Nagyobb fegyver harcmodor
-  és értékei számítanak
+→ Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
 → Mesterfegyver fortélyok NEM számítanak
 ```
