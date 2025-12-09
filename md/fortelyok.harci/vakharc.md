@@ -1,12 +1,12 @@
 ## 🟣 Vakharc (3)
 
-Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány okozta [Érzék-Hatásokat](../081_hatasok.md#-%C3%A9rz%C3%A9k---zavart).
+Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány okozta [Érzék-Hatásokat](../081_hatasok.md#-%C3%A9rz%C3%A9k---h%C3%A1tr%C3%A1ny-1-zavart).
 
 ### Alapeset
 
 🔒 **Követelmény**: -
 
-🌟 **Hatás**: [Érzék(látás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) levonásai
+🌟 **Hatás**: [Érzék(látás) - automatikus kudarc](../081_hatasok.md#-%C3%A9rz%C3%A9k---automatikus-kudarc-kioltott)
 
 ---
 ### 1. fok
@@ -48,7 +48,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
   - Érzék(látás) - `Hátrány-2` → semmi
   - Érzék(látás) - `Hátrány-1` →  semmi
 - Nullázza a Támadó összes előnyét és a Védő összes Hátrányát [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
-- [Érzék(hallás) - kioltott](../081_hatasok.md#-%C3%A9rz%C3%A9k---kioltott) Hatás esetén is működik, mert itt már az Intuíció dolgozik.
+- [Érzék(hallás) - automatikus kudarc](../081_hatasok.md#-%C3%A9rz%C3%A9k---automatikus-kudarc-kioltott) Hatás esetén is működik, mert itt már az Intuíció dolgozik.
 - Túlterhelt érzékek esetén is működik (túl erős fény, villódzás, hangorkán)
 
 ---
