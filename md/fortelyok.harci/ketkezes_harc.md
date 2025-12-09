@@ -58,7 +58,7 @@ Kisebb fegyver harcmodora - 6.szint
 → Harckeret: +3
 → Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
-→ Mesterfegyver: csak főfegyveré számít
+→ Mesterfegyver: csak nagyobb fegyveré számít
  (akkor is, ha a fegyverek azonosak!)
 ```
 
