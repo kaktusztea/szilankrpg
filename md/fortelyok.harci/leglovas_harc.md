@@ -2,11 +2,11 @@
 
 Repülő hátason ülve sem esel kétségbe, ha harcolni kell.
 
-### Alapeset
+### Alapeset (képzetlenül)
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Függetlenül a **Léglovaglás** képzettség szintjétől, elszenveded `0.szintű` harcmodor szokásos harcérték büntetéseit: `TÉ/VÉ: -9`
+```
+TÉ/VÉ: -9
+```
 
 ---
 ### 1. fok
