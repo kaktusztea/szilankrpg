@@ -35,8 +35,8 @@ A „rövid” fegyverek `0 pengének` számítanak.
 Max SUM pengehossz:
  2 x 1 penge
 
-2 penge SUM felett:
- minden fegyver harcérték: 0
+SUM 2 penge felett:
+ fegyverek harcértéke: 0
 ```
 
 <br />
