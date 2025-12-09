@@ -79,7 +79,7 @@ Folyamatosan gyanakszol másokra,
 és nehezen bízol meg bárkiben
 ```
 
-#### ⚡ Példa: Irigy
+#### ⚡ Példa: Irígy
 ```
 Nehezen tűröd, ha másnak több
 van, és hajlamos vagy emiatt
