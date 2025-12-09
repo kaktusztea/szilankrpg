@@ -1037,7 +1037,7 @@
         "MK": "0",
         "KF": "0",
         "Kategória": "közelharci",
-        "Speciális": "FP sebesülést okoz. Minden 5.FP 1 ÉP elvesztését okozza. Kivéve: harcművészek „Sárkány ököl” fortélya. Páncélkesztyűvel SP:-3 a (-5) helyett."
+        "Speciális": "FP sebesülést okoz. Minden 5.FP 1 ÉP."
     },
     {
         "Fegyver": "Puszta kéz Belharcban",
@@ -1054,7 +1054,7 @@
         "MK": "0",
         "KF": "0",
         "Kategória": "közelharci",
-        "Speciális": "FP sebesülést okoz. Minden 5.FP 1 ÉP elvesztését okozza. Kivéve: harcművészek „Sárkány ököl” fortélya. Páncélkesztyűvel SP:-3 a (-5) helyett."
+        "Speciális": "FP sebesülést okoz. Minden 5.FP 1 ÉP."
     },
     {
         "Fegyver": "Ramiera",
