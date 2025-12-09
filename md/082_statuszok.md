@@ -138,14 +138,14 @@ Beszéd - némult
 Harci lassulást értünk ez alatt, amit jellemzően különféle mágikus hatások okoznak.
 
 ```
-Hátrány-1 támadó dobás
+Hátrány-1 Támadó dobásra
 Mozgás - lassulás
 ```
 
 ### ✴️ Blokkolt (2) Erősen
 
 ```
-Hátrány-2 támadó dobás
+Hátrány-2 Támadó dobásra
 Mozgás - lassulás
 ```
 
