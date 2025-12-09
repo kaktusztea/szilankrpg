@@ -4,9 +4,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 ### Alapeset
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: [Érzék(látás) - automatikus kudarc](../081_hatasok.md#-%C3%A9rz%C3%A9k---automatikus-kudarc-kioltott)
+ [Érzék(látás) - automatikus kudarc](../081_hatasok.md#-%C3%A9rz%C3%A9k---automatikus-kudarc-kioltott)
 
 ---
 ### 1. fok
