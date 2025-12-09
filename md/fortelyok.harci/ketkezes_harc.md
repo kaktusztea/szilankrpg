@@ -15,7 +15,7 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 ```
 → Harckeret: +1
 → Nagyobb fegyver harcmodor
-  és értékei számítanak
+→ Nagyobb fegyver értékei számítanak
 → Második fegyver értékei: 0
 → Mf fortélyok NEM számítanak
 → TÉ dobásra Hátrány-1
