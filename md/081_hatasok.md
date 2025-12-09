@@ -6,7 +6,7 @@ Egy **Státusz** több **Hatást** is képes okozni a karakteren.  Hogy egy Stá
 
 <br />
 
-## ⚜️ Előny-1,2 és Hátrány-1,2 Hatások
+## ⚜️ Előny+1,2 és Hátrány-1,2 Hatások
 
 ```
 MIN,MAX: [-2, +2]
@@ -15,21 +15,23 @@ MIN,MAX: [-2, +2]
 Az `Előny` és `Hátrány` speciális, kockadobásokat érintő Hatások.\
 Hogy milyen dobást befolyásolnak, az változó - amire épp vonatkoznak:
 
-- Kezdeményező dobás
-- Támadó dobás
-- Célzó dobás
-- Manőver Ellenpróba dobás
-- Tulajdonságpróba, **Érzék** Tulajdonságpróba
-- Képzettségpróba (mágia is)
-- Sebzésdobás
-- Mágia Akarata
-- Mágiaellenállás dobás
+```
+KÉ dobás
+TÉ dobás
+CÉ dobás
+Manőver Ellenpróba dobás
+Tulajdonságpróba, Érzék Tulajdonságpróba
+Képzettségpróba (mágia is)
+Sebzésdobás
+Mágia Akarata
+Mágiaellenállás dobás
+```
 
 🔆 Halmozódásuk esetén is az alábbi alsó és felső korlátuk érvényes: `[-2, +2]`.
 
-🔆 Az Előny/Hátrány modell Státuszok (harci és normál) esetén alkalmazandó. A statikus ismeretek, mint a fortélyok, vagy harci taktikák esetén a konstans módosítókat alkalmazzuk.
+🔆 A fenti Előny/Hátrány modell **Státuszok** esetén alkalmazandó. Ezzel szemben a Fortélyok és Harci taktikák esetén konstans, statikus módosítókat alkalmazunk.
 
-### 🔥 Előny-1
+### 🔥 Előny+1
 
 ```
 2x dobhat, nagyobb számít
@@ -38,7 +40,7 @@ Védekezés esetén:
   támadó dob → Hátrány-1
 ```
 
-### 🔥 Előny-2
+### 🔥 Előny+2
 
 ```
 3x dobhat, legnagyobb számít
@@ -49,15 +51,21 @@ Védekezés esetén:
 
 ### 🔥 Hátrány-1
 
-`2x` dob, a kisebb dobás számít
+```
+2x dobhat, kisebb számít
 
-Védekezésnél: a támadó dob → `Előny-1`
+Védekezés esetén:
+  támadó dob → Előny+1
+```
 
 ### 🔥 Hátrány-2
 
-`3x` dob, a legkisebb dobás számít
+```
+3x dobhat, legkisebb számít
 
-Védekezésnél: a támadó dob → `Előny-2`
+Védekezés esetén:
+  támadó dob → Előny+2
+```
 
 <br />
 

@@ -47,9 +47,12 @@ Előny+1,2  //  Hátrány-1,2
   adott Képzettségpróbájára
 ```
 
- ⚡ Példa
-- "Átok: Alulművelt Bölcsész"
-- Hatása:  a természettudományokkal kapcsolatban teljes a vakfolt nála. Az ilyen témájú képzettségpróbákra `Hátrány-1` büntetést kap.
+####  ⚡ Példa képzettség Átokra: Alulművelt Bölcsész 🤓
+
+```
+Hátrány-1
+  Természettudományos Képzettségpróbákra
+```
 
 ### ✴️ Átkozott (1,2) Viselkedés
 
@@ -95,7 +98,6 @@ Lásd Érzékvesztés (1,2,3)
 
 ### ✴️ Áldott / Átkozott (1,2) Szakrális bélyeg
 
-
 ```
 Aurádon egy szakrális bélyeg
   tündököl / éktelenkedik
@@ -103,7 +105,12 @@ Aurádon egy szakrális bélyeg
 
 Okozhatja [Áldott személy](023_karma_hatterek.md#-%C3%A1ldott-szem%C3%A9ly) / [Átkozott személy](023_karma_hatterek.md#-%C3%A1tkozott-szem%C3%A9ly) Karma-Háttér is.
 
-⚡ Példa: Domvik érintése; Orwella érintése.
+#### ⚡ Példa szakrális bélyegre
+
+```
+Domvik érintése
+Orwella érintése
+```
 
 <br />
 
@@ -154,6 +161,8 @@ Mozgás - feleződik
 ---
 ### ✴️ Eszmélet (1) Bódultság
 
+⚡Példa: sima részegség
+
 ```
 Hátrány-1
   KÉ dobásra
@@ -169,9 +178,12 @@ Hátrány-2
   kivéve papok: részegen is tudnak⭕
 ```
 
-⚡Példa: sima részegség
+
+
 
 ### ✴️ Eszmélet (2) Kábultság
+
+⚡Példa: pocsolya részegség
 
 ```
 Automatikus kudarc:
@@ -187,8 +199,6 @@ Hátrány-2
 Többszörös támadás elvesztése
 Varázslás képesség elvesztése
 ```
-
-⚡Példa: pocsolya részegség
 
 ### ✴️ Eszmélet (3) Ájulás
 
@@ -209,8 +219,6 @@ Az Antyssjárás viszont ebben
   az állapotban is működik
 ```
 
-
-
 ### ✴️ Eszmélet (4) Kóma
 
 Mint az Ájulásnál, továbbá:
@@ -226,21 +234,21 @@ Látás, Hallás, Szaglás.
 
 ```
 Hátrány-1
-  Érzék Tulajdonságpróbákra
+  Érzék(x) Tulajdonságpróbákra
 ```
 
 ### ✴️ Érzékvesztés (2) Részleges
 
 ```
 Hátrány-2
-  Érzék Tulajdonságpróbákra
+  Érzék(x) Tulajdonságpróbákra
 ```
 
 ### ✴️ Érzékvesztés (3) Teljes
 
 ```
 Automatikus kudarc
-  Érzék Tulajdonságpróbákra
+  Érzék(x) Tulajdonságpróbákra
 ```
 
 <br />
@@ -257,22 +265,21 @@ Hátrány-1;2
   Fizikai Képzettségpróbákra
 ```
 
-Hatása [Felszerelésre](010_03_06_felszereles.md):
-
+#### Hatása [Felszerelésre](010_03_06_felszereles.md)
 
 ```
-Másfélkezes kard:
+Másfélkezes kard
   Közepes tárgy (1 pont)
 
-Közepes pajzs:
+Közepes pajzs
   Közepes tárgy (1 pont)
 
-Nagy pajzs:
+Nagy pajzs
   Nagy tárgy (2 pont)
 ```
 
+#### Kapcsolódik
 
-**Kapcsolódik**:
 - [Fegyver mozgásgátló hatása](068_01_12_fegyver_mozgasgatlo_hatasa.md) fejezet
 - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md#pajzs-mozgásgátló-hatása) fejezet
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
@@ -342,7 +349,8 @@ Hátrány-1
   Szellemi képzettségpróbákra
 ```
 
-⚡ Példa:
+⚡ Példa
+
 - napok óta napja nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
 - Egy hete óta nem ettél
@@ -356,9 +364,10 @@ Hátrány-2 Szellemi képzettségpróbákra
 FP S1
 ```
 
-⚡ Példa:
-- már nem is emlékszel, mikor aludtál utoljára
-- összeverten menekülsz órák óta
+⚡ Példák
+
+- Már nem is emlékszel, mikor aludtál utoljára
+- Összeverten menekülsz órák óta
 
 ### ✴️ Fizikai (3) Elcsigázottság
 
@@ -376,12 +385,11 @@ Mozgás - feleződik
 Automatikus kudarc
   Harci akrobatika
   (nincs harcérték bónusz)
-
 ```
 
-⚡ Példa: éhhalál szélén tengődés
-
 Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély,  [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
+
+⚡ Példa: éhhalál szélén tengődés
 
 <br />
 
@@ -569,7 +577,7 @@ Merevvértviselet fortély MGT csökkentő
 Hátrány-1
   KÉ dobásra
   TÉ dobásra
-  Fizikai képzettségpróbára
+  Fizikai Képzettségpróbára
   Fizikai Tulajdonságpróbára
 ```
 
