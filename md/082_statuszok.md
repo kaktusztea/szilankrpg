@@ -360,15 +360,20 @@ FP S1
 ### ✴️ Fizikai (3) Elcsigázottság
 
 ```
-VÉ veszteség duplázódik
-Hátrány-2 Kezdeményező dobásra
-Hátrány-2 nem-harci képzettségpróbákra
+Hátrány-2
+  Kezdeményező dobásra
+  Nem-harci képzettségpróbákra
+
 Többszörös támadás elvesztése
+VÉ veszteség duplázódik
+FP S2
+
 Mozgás - lassulás
+
 Automatikus kudarc
   Harci akrobatika
   (nincs harcérték bónusz)
-FP S2
+
 ```
 
 ⚡ Példa: éhhalál szélén tengődés
