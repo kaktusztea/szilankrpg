@@ -38,7 +38,7 @@ Használd környezeted adottságait és az adott körülményeket előnyös szit
 
 ⚜️ Manőverek: egyedi, speciális trükkök, amelyek egy konkrét hatást, változást okoznak a harcban (Lefegyverzés, Pajzzsal öklelés, stb.) és mindig egy konkrét ellenfél ellen irányulnak
 
-⚜️ Harci fortélyok: specializált, tanulható ismeretek, amelyek 1-1 részterület alaposabb ismeretével juttatnak konstans előnyhöz.
+⚜️ Harci fortélyok: specializált, tanulható ismeretek, amelyek `1-1` részterület alaposabb ismeretével juttatnak konstans előnyhöz.
 
 ⚜️ Fegyverméret-kategóriák: nagyobb fegyver, nagyobb előny... egészen amíg szűk helyre nem kényszerülsz.
 
