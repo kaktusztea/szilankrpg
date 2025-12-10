@@ -3,6 +3,8 @@
 ```
 Közelharci fegyvernek számít:
  0.5 pengehossznál rövidebb
+ 
+Lehetnek kivételek
 ```
 
 ```
@@ -20,8 +22,8 @@ KF: Különleges fegyver
 | :---------------------- | :--: | :--: | :---------: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :--: | :--------: | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
 | Puszta kéz              | `-3` | `-3` |    `-5`     |   `6`    |     `Z`      |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | közelharci | `FP` sebesülést okoz. Minden `5.FP` `1 ÉP`.                                                                                                                                                                                                 |
 | Puszta kéz Belharcban   | `0`  | `0`  |     `0`     |   `6`    |     `Z`      |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | közelharci | `FP` sebesülést okoz. Minden `5.FP` `1 ÉP`.                                                                                                                                                                                                 |
-| Tőr                     | `2`  | `2`  |    `+1`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
-| Béltépő                 | `2`  | `1`  |    `+1`     |   `6`    |     `S`      |    `0`     |    egykezes    |       `2`       |  `0`   | `2`  | `0` | `0`  | közelharci | Ha minimum `11` SP sebzést elérsz, akkor további `+5 SP` jár.<br />Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />Páncéltalan esetén `K6` dobás:  `1` és `2` esetén a fegyver elakad a testben, ha volt sebzés. |
+| Tőr                     | `2`  | `1`  |    `+1`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
+| Béltépő                 | `2`  | `0`  |    `+1`     |   `6`    |     `S`      |    `0`     |    egykezes    |       `2`       |  `0`   | `2`  | `0` | `0`  | közelharci | Ha minimum `11` SP sebzést elérsz, akkor további `+5 SP` jár.<br />Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />Páncéltalan esetén `K6` dobás:  `1` és `2` esetén a fegyver elakad a testben, ha volt sebzés. |
 | Dzsambia                | `2`  | `2`  |    `+0`     |   `6`    |   `V`/`S`    |    `0`     |    egykezes    |       `0`       |  `0`   | `1`  | `0` | `0`  | közelharci |                                                                                                                                                                                                                                             |
 | Garott                  | `0`  | `0`  | `+8` / `+4` |    -     |     `V`      |    `-1`    |    kétkezes    |       `5`       |  `0`   | `0`  | `0` | `0`  | közelharci | Lásd lenn a leírást.                                                                                                                                                                                                                        |
 | Kés                     | `1`  | `1`  |    `+0`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
@@ -48,11 +50,13 @@ KF: Különleges fegyver
 - Siker esetén azonnal [Belharci szituáció](065_01_01_belharci_szituacio.md) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
   - `+8 SP` az `1.körben`
   - `+4 SP`: további körökben
-- Szabadulás a hurokból:
+- Áldozat [Leforgatás/Irányítás](066_06_belharcos_manoverek.md#leforgat%C3%A1sir%C3%A1ny%C3%ADt%C3%A1s) manőverrel terelhető, forgatható
+
+Szabadulás a hurokból:
   - [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
   - Nehézség: `9` (magasabb)
-- Az áldozat [Leforgatás/Irányítás](066_06_belharcos_manoverek.md#leforgat%C3%A1sir%C3%A1ny%C3%ADt%C3%A1s) manőverrel terelhető, forgatható
-- A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítókat szenved el
+
+A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítókat szenved el
 
 <br />
 
