@@ -31,21 +31,16 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 Ha pontosabban akarod, akkor egy `Nehéz (12)` próbával pontosíthatod a választ. Lásd ott.
 
 ---
-#### Kismester (6) 📖
-
-🔒 Követelmény: **Ügyesség**: `+1`
-
----
 #### Mester (9) 📖
 
-🔒 Követelmény: **Ügyesség**: `+2`
+🔒 Követelmény: **Ügyesség**: `+1`
 
 🌟 Mesterbónusz: Ugrásmagasságod duplázódik. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-3`.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény: **Ügyesség**: `+3`
+🔒 Követelmény: **Ügyesség**: `+2`
 
 🌟 Mesterbónusz: Ugrásmagasságod háromszorozódik. Képes vagy lassítani esésedet. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-6`.
 
