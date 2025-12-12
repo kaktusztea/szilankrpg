@@ -33,30 +33,21 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 #### Novícius (3) 📖
 
-🔒 Követelmény: -
-
-🌟 Hatás: Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás: -
+Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: -
 
-🌟 Hatás: Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_13_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
+🌟 Mesterbónusz: Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_13_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: -
 
-🌟 Hatás:
+🌟 Mesterbónusz
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
 - A [Sebzéstípus másodlagos](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alakalmatlan](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései csökkennek `1`-gyel.
 
@@ -65,7 +56,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 🔒 Követelmény: -
 
-🌟 Hatás:
+🌟 Mesterbónusz
 - A [Sebzéstípus másodlagos](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alakalmatlan](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései megszűnnek.
 - Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
 

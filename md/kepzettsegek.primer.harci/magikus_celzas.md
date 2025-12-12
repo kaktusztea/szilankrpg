@@ -22,37 +22,27 @@ A képzettség szintjétől függően büntetéseket/bónuszokat kapsz harcért�
 
 #### Novícius (3) 📖
 
-🔒 Követelmény: -
+Ettől a szinttől kezdve [nem jár büntetés Célzó Értékedre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md).
 
-🌟 Hatás: Ettől a szinttől kezdve [nem jár büntetés Célzó Értékedre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md).
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás: -
-
----
 #### Mester (9) 📖
 
-🔒 Követelmény: Önuralom: `+0`
+🔒 Követelmény: -
 
-🌟 Hatás: -
+🌟 Mesterbónusz: ⭕TODO⭕ 
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: Célzáskor kiélesedik látásod, mintha távcsőbe néznél, részleteiben látod a célt.
+🌟 Mesterbónusz: ⭕TODO⭕ Célzáskor kiélesedik látásod, mintha távcsőbe néznél, részleteiben látod a célt.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: ⭕TODO⭕
+🌟 Mesterbónusz: ⭕TODO⭕ 
 
 <br />
 
