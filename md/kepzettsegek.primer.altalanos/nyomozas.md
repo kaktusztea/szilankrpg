@@ -49,36 +49,25 @@ Intelligencia, Emlékezet
 
 ### Biztos tudás, követelmények 📖
 
-#### Kismester (6) 📖
+#### Mester (9) 📖
 
 🔒 Követelmény: Intelligencia `+1`, Emlékezet `+1`
 
-🌟 Hatás:
-- Ösztönösen érzed, hogy kihez érdemes először szót intézni egy nyomozásban - a leggyengébb láncszem mindig feltűnik számodra.
-- Soha nem veszítesz el apró, rövid távú nyomokat: ha most láttál egy lábnyomot, vagy egy odavágó levelet, pár nap múlva is emlékszel rá.
-
----
-#### Mester (9) 📖
-
-🔒 Követelmény: Intelligencia `+2`, Emlékezet `+1`
-
-🌟 Hatás:
-- Érzed, ha valami nem áll össze egy nyomozásban - a tudatalattid figyelmeztet, hogy egy fontos részlet hiányzik vagy hamis.
-- A fejedben látod a szoba alaprajzát, gyorsan átlátod, hol érdemes kutatni időpocsékolás nélkül.
+🌟 Mesterbónusz: ⭕TODO⭕ 
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Intelligencia `+2`, Emlékezet `+2`
 
-🌟 Hatás: Megérzed, mikor hazudnak neked a tények: egy hamis nyom, egy manipulatív elrendezés, egy „elültetett bizonyíték” kellemetlenül szúrja a szemed.
+🌟 Hatás: Mesterbónusz: ⭕TODO⭕ 
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Intelligencia `+3`, Emlékezet `+2`
 
-🌟 Hatás: Látod magad előtt a történteket, bár konkrét személyek, tárgyak helyett szimbólumok formájában.
+🌟 Mesterbónusz: ⭕TODO⭕ Látod magad előtt a történteket, bár konkrét személyek, tárgyak helyett szimbólumok formájában.
 
 <br />
 
@@ -96,6 +85,7 @@ Intelligencia, Emlékezet
 - Rájössz, mikor járt itt utoljára valaki (pl. a por állapotából).
 - Egy rövid beszélgetés alapján kideríted, ki tudhat a legtöbbet az ügyről.
 - Apró kéznyomot felfedezel egy poros tárgyon.
+- Ösztönösen megérzed, hogy kihez érdemes először szót intézni egy nyomozásban - a leggyengébb láncszem mindig feltűnik számodra.
 
 #### Nehéz (12) 🎲 
 

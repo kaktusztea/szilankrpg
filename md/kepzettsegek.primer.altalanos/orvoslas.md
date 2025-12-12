@@ -38,6 +38,10 @@ A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettséggel **NINC
 
 ⭕xyz. Ha nincs, törölni
 
+---
+## ⭕TODO⭕
+
+Majd ha a mágikus gyógyítást fejlesztjük, akkor ezzel együtt kezelni 
 
 ---
 ### Betegségek kezelése gyógyszerekkel
@@ -66,41 +70,25 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
-🌟 Hatás: Közepes seb (max `6 ÉP`) vérzésének elállítása
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: ⭕TODO⭕
-
-🌟 Hatás: Gyógyulási sebesség szorzó: `x2`
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: ⭕TODO⭕
 
-🌟 Hatás: Gyógyulási sebesség szorzó: `x3`. Ettől a szinttől kezdve vagy képes kézrátétellel gyógyítást megpróbálni. A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) szint követelménye a felére csökken, az energia átadása egyre hangsúlyosabb.
+🌟 Mesterbónusz: ⭕TODO⭕ Ettől a szinttől kezdve vagy képes kézrátétellel gyógyítást megpróbálni. A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) szint követelménye a felére csökken, az energia átadása egyre hangsúlyosabb.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  ⭕TODO⭕
 
-🌟 Hatás: Gyógyulási sebesség szorzó: `x4`. Már nincs szükség fizikai komponensre, tisztán kézrátételes gyógyítás történik.
+🌟 Mesterbónusz: ⭕TODO⭕  Innen prübálkozhatsz a fizikai komponens nélküli, tisztán kézrátételes gyógyítással.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  ⭕TODO⭕
 
-🌟 Hatás: Gyógyulási sebesség szorzó: ⭕`x5`
+🌟 Mesterbónusz: ⭕TODO⭕
 
 <br />
 
@@ -109,23 +97,25 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 
 #### Könnyű (6) 🎲 
 
-⭕TODO⭕
+Közepes seb (max `6 ÉP`) vérzésének elállítása
 
 #### Átlagos (9) 🎲 
 
-⭕TODO⭕
+Gyógyulási sebesség szorzó: `x2`
 
 #### Nehéz (12) 🎲 
 
-⭕TODO⭕
+Gyógyulási sebesség szorzó: `x3`. 
 
 #### Nagyon nehéz (15) 🎲 
 
-1 S kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
+- Gyógyulási sebesség szorzó: `x4`.
+- `1 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
 
 #### Rendkívül nehéz (18) 🎲 
 
-2 S kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
+- Gyógyulási sebesség szorzó: ⭕`x5`
+- `2 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
 
 #### Emberfeletti (21) 🎲 
 
