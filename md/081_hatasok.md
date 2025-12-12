@@ -20,7 +20,8 @@ KÉ dobás
 TÉ dobás
 CÉ dobás
 Manőver Ellenpróba dobás
-Tulajdonságpróba, Érzék Tulajdonságpróba
+Tulajdonságpróba
+Érzék Tulajdonságpróba
 Képzettségpróba (mágia is)
 Sebzésdobás
 Mágia Akarata
@@ -80,6 +81,7 @@ Valamilyen okból nem vagy képes az Antyss síkjára bejutni, ott közlekedni -
 ---
 ### 🔥 Automatikus kudarc
 
+- KÉ dobásra (utolsónak kezdeményezhetsz)
 - Tulajdonságpróbára
 - Képzettségpróbára
 
