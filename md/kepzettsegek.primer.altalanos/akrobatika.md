@@ -19,18 +19,6 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 
 ### Szintek, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: **Ügyesség**: `+0`
-
-🌟 Hatás: Ugrás/esés távolság felmérése. A KM megmondja kérdésedre, hogy:
-- biztosan átugrod
-- talán: van esélyed rá, hogy átugrod
-- biztos nem tudod átugrani
-
-Ha pontosabban akarod, akkor egy `Nehéz (12)` próbával pontosíthatod a választ. Lásd ott.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: **Ügyesség**: `+1`
@@ -69,12 +57,19 @@ Ha pontosabban akarod, akkor egy `Nehéz (12)` próbával pontosíthatod a vála
 - Elkerülni egy hirtelen leeső akadályt futás közben
 - Gyors kigurulás végrehajtása egy enyhén lejtős, köves terepen
 - Megkapaszkodni egy ledőlő fa ágain
+- Ugrás/esés távolság felmérése. A KM megmondja kérdésedre, hogy:
+    - biztosan átugrod
+    - talán: van esélyed rá, hogy átugrod
+    - biztos nem tudod átugrani
 
 #### Nehéz (12) 🎲 
 
 - Távolság felmérésénél a KM megmondja a célszámot.
 - Lecsúszni talpon egy hosszú lépcső korlátján.
 - Kimozogni közepes mennyiségű potyogó sziklát
+- Ugrás/esés távolság felmérése: pontosabb felmérés
+    - biztosan átugrod
+    - biztos nem tudod átugrani
 
 #### Nagyon nehéz (15) 🎲 
 
