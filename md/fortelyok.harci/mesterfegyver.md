@@ -19,9 +19,10 @@ A legtöbb esetben egy karakternek van egy (vagy több) konkrét fegyvere, amely
 🔒 **Követelmény**: Harcmodor - `4.szint`
 
 🌟 **Hatás**: adott fegyverre
-- `TÉ:+1`
-- `VÉ:+1`
-- `SP:+1`
+
+```
+TÉ, VÉ, SP: +1
+```
 
 <br />
 
@@ -30,9 +31,10 @@ A legtöbb esetben egy karakternek van egy (vagy több) konkrét fegyvere, amely
 🔒 **Követelmény**: Harcmodor - `8.szint`
 
 🌟 **Hatás**:  adott fegyverre
-- `TÉ:+2`
-- `VÉ:+2`
-- `SP:+2`
+
+```
+TÉ, VÉ, SP: +2
+```
 
 <br />
 
@@ -41,9 +43,10 @@ A legtöbb esetben egy karakternek van egy (vagy több) konkrét fegyvere, amely
 🔒 **Követelmény**: Harcmodor - `12.szint`
 
 🌟 **Hatás**:  adott fegyverre
-- `TÉ:+3`
-- `VÉ:+3`
-- `SP:+3`
+
+```
+TÉ, VÉ, SP: +3
+```
 
 ---
 ### Manőverek
