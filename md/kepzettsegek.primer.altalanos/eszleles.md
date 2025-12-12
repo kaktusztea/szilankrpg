@@ -34,15 +34,6 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 ---
 ### Szintek, követelmények 📖
 
-#### Kismester (6) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás: -
-
-<br />
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Érzékenység: `+1`
@@ -56,7 +47,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 🔒 Követelmény:  Érzékenység: `+2`
 
-🌟 Mesterbónusz: Elit, uralkodói testőr. Kiszagolod az erős mágia- vagy Aura jelenlétet: pontos értelmezéshez kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
+🌟 Mesterbónusz: Elit, uralkodói testőr. Kiszagolod a leplezetlen erős mágia- vagy Aura jelenlétet: pontos értelmezéshez kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
 
 <br />
 

@@ -8,7 +8,7 @@ Mások meggyőzését, szándékainknak megfelelő cselekedetek elérését fedi
 
 Intelligencia, Érzékenység
 
-### Kapcsolódik
+### Védekezés ellene (Kapcsolódik)
 
 - [Emberismeret](emberismeret.md) képzettség
 
@@ -81,8 +81,7 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 ---
 ### Célszám módosító körülmények
 
-- Olyan nyelven próbáksz hatni, amit nem ért(enek) a célszemély(ek): `+3`
-- Az egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív hatások a **Szociális képzettségpróbákra**.
-- Ha bármilyen Státusz hatása alatt állsz, **Befolyásolás** képzettségpróba előtt [ellenőrizd](../082_statuszok.md), hogy vonatkozik-e rád bármilyen negatív [Hatás](../081_hatasok.md).
+- Olyan nyelven próbálsz hatni, amit nem ért(enek) a célszemély(ek): `+3`
+- Egyes [Státuszok](../082_statuszok.md) hatására járhatnak negatív [hatások](../081_hatasok.md) a **Szociális képzettségpróbákra**.
 
 ---

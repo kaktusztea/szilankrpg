@@ -28,39 +28,25 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Intelligencia `+0`
-
-🌟 Hatás: Sosem kevered össze a hadrend legalapvetőbb feladatait (pl. nem felejted, hogy íjász a lovasság mögött, nem fordítva).
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Intelligencia `+1`
-
-🌟 Hatás: „Tapasztalt tiszt”. Harci helyzetben automatikusan felismered a nyilvánvaló stratégiai pontokat (híd, magaslat, szűk átjáró – ami mindig döntő lehet).
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Intelligencia `+1`
 
-🌟 Hatás: "Hadvezér". Saját seregedben mindig észreveszed, ki az, aki morálját veszti vagy ingadozik, még mielőtt szembetűnő lenne.
+🌟 Mesterbónusz: "Hadvezér". Saját seregedben mindig észreveszed, ki az, aki morálját veszti vagy ingadozik, még mielőtt szembetűnő lenne.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Intelligencia `+2`
 
-🌟 Hatás: „Stratégiai zseni”. Félmágikus érzékkel megérzi, melyik hadtest vagy alakulat rogyhat meg először nyomás alatt – és azt is, kik fogják tartani a pozíciót.
+🌟 Mesterbónusz: „Stratégiai zseni”. Félmágikus érzékkel megérzi, melyik hadtest vagy alakulat rogyhat meg először nyomás alatt – és azt is, kik fogják tartani a pozíciót.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  Intelligencia `+2`
 
-🌟 Hatás: katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmények között sem. Egy összképből (hadállások, erődítések, tábor) tudja, hogy „ez a hadjárat győzelem vagy vereség felé halad”. 
+🌟 Mesterbónusz: katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmények között sem. Egy összképből (hadállások, erődítések, tábor) tudja, hogy „ez a hadjárat győzelem vagy vereség felé halad”. 
 
 <br />
 
@@ -75,6 +61,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 
 #### Átlagos (9) 🎲 
 
+- Harci helyzetben automatikusan felismered a nyilvánvaló stratégiai pontokat (híd, magaslat, szűk átjáró – ami mindig döntő lehet).
 - Nyers ránézésre megbecsülni, mekkora veszteséggel törhet át a lándzsás alakzat egy zárt lovas ék ellen.
 - Megmondani, egy híd védéséhez a jelenlegi erőkből hány ember szükséges.
 - Egy kisebb manővert (pl. szárnytámadás vagy fedezőtűz) gyorsan lemodellezni, és felismerni, működőképes-e.
@@ -105,3 +92,5 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 - Ránézésre tudni, hogy egy hadjárat **vesztésre vagy győzelemre van ítélve**, még a fő csapásmérés előtt.
 - Az ellenség taktikáját napokkal korábban **átérezni**, szinte úgy, mintha a fejében járna.
 - Saját csapatai számára a jelenlétével azonnali hadrendfegyelmet és morált biztosítani 
+
+---

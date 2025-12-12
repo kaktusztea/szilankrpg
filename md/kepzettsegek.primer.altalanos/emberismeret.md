@@ -50,7 +50,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 - Érzékenység: `+2`
 - Intelligencia: `+1`
 
-🌟 Mesterbónusz: Új asztrális érzékszerved nyílik, amellyel a személyiségvonások változásáról, érzelmi állapotokról meg tudod állapítani, hogy mágikus eredetűek-e. Igen/Nem.
+🌟 Mesterbónusz: Új asztrális érzékszerved nyílik, amellyel a személyiségvonások változásáról, érzelmi állapotokról meg tudod állapítani, hogy mágikus eredetűek-e, amennyiben leplezetlenek. Igen/Nem.
 
 ---
 #### Élő legenda (15) 📖
@@ -125,8 +125,7 @@ Alapvető nem leplezett személyiségvonások felismerése.
 ---
 ### Célszám módosító körülmények
 
-- Rövidebb a kontaktus ideje és/vagy kevésbé mély az alapesetnél: `+3`
-- Hosszabb a kontaktus ideje és/vagy elmélyültebb az alapesetnél: `-3`
+- Rövidebb/Hosszabb a kontaktus ideje és/vagy mély / kevésbé mély az alapesetnél: `[-3;+3]`
 - Más fajú a célszemély: `+3`
 - Asztrál szem hatása: ⭕TODO⭕
 
