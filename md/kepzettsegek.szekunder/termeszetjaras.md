@@ -36,7 +36,6 @@ A képzettség magában foglalja a következőket:
 - [Tájtípus - sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
 (Járatos vagy az adott tájtípus jellemző környezetében. Ismered a növényeket, azok hatásait, állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten. Nyomok követése az adott tájtípusban)
 
-
 ### Nyomkövetés
 
  A képzettség a vadonban található nyomok értelmezését is magában foglalja. Képes vagy olvasni az elfszabásúak, állatok, helyre jellemző szörnyetegek által hagyott nyomokból. Nem keverendő össze az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettséggel (+[Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md) fortéllyal), ami valaminek az észrevételét jelenti, titkos rejtekajtók, zugok felkutatását fedi, az észrevett jellemző értelmezését nem!
@@ -46,55 +45,26 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Érzékenység `+0`
-
-🌟 Hatás:
-- Egyszerű terepi túlélés: képes vagy tüzet rakni, alapvető vadnövényeket felismerni.
-- Rövid ideig önállóan is boldogulsz saját tájtípusodon.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Érzékenység `+1`
-
-🌟 Hatás:
-- Felismered a táj tipikus állatait, növényeit, sok esetben a mérgező és gyógyító fajokat is.
-- A legtöbb nyomot értelmezni tudod: megmondod, milyen lény járhatott ott.
-- Tájékozódási érzéked megbízható: ritkán tévedsz el.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Érzékenység `+1`
 
-🌟 Hatás:
-- Hónapokig képes vagy fennmaradni a természetben önállóan.
-- Nyomaid elrejtését, más nyomainak követését mesterfokon végzed.
-- Meg tudod mondani egy állat méretét, közelítő számát, állapotát pusztán a nyomából.
-- Ismersz sok „vadásztrükköt”: csapdakészítés, vadfelhajtás, vadcsapda kerülése.
+🌟 Mesterbónusz: ⭕TODO⭕
+
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Érzékenység `+2`
 
-🌟 Hatás:
-- Másokat is hozzá tudsz segíteni a természetben való túléléshez (csapat teljes ellátása vadonban).
-- Megmondod nyomokból, mikor ment át a lény, milyen állapotban van, mennyit pihent.
-- Úgy olvasod a természet apró jeleit (törött ág, víz fodrozódása), mintha könyv volna.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  Érzékenység `+3`
 
-🌟 Hatás:
-- A természet jelzései szinte „beszélnek” hozzád.
-- Képes vagy teljes törzseket, seregeket vadonban vezetni, elrejteni, élelmezni.
-- Puszta jelekből (madarak mozgása, füst, szag) előre látod az időjárást, ellenség közeledtét, állatok viselkedését.
-- Nyomolvasás: akár napokra visszamenő eseményláncolatot össze tudsz rakni.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 <br />
 
@@ -111,6 +81,7 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 - Tájékozódás sűrű erdőben vagy ködben.
 - Vad elejtése csapdával vagy rögtönzött eszközzel.
 - Nyomból felismerni, milyen állat hagyta.
+- Felismerni a táj tipikus állatait, növényeit, sok esetben a mérgező és gyógyító fajokat is.
 
 #### Nehéz (12) 🎲 
 
@@ -121,8 +92,10 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 #### Nagyon nehéz (15) 🎲 
 
 - Nagyvad becserkészése (pl. medve, vaddisznó).
+- Megmondod nyomokból, mikor ment át a lény, milyen állapotban van, mennyit pihent.
 - Sérült vagy hiányos nyomokból pontos következtetést levonni.
 - Ellenséges csoport csapásának észlelése, titkos pihenőhely felfedezése.
+- Puszta jelekből (madarak mozgása, füst, szag) előre látod az időjárást, ellenség közeledtét, állatok viselkedését.
 
 #### Rendkívül nehéz (18) 🎲 
 
@@ -141,3 +114,5 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 ### Célszám módosító körülmények
 
 - Rossz időjárás: `[+1; +6]`
+
+---

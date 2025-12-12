@@ -11,49 +11,22 @@ Ez a képzettség nem csupán a kockák, lapok, táblajátékok ismeretéről sz
 ---
 ### Biztos tudás 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Önuralom `+0`
-
-🌟 **Hatás**:
-- Ismered az alap szabályait a legnépszerűbb játékoknak (kocka, kártya, egyszerű táblajáték).
-- Tudsz egy kis tétben, baráti szinten játszani, nem esel pánikba ha épp veszítesz.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Intelligencia `+1`, Önuralom `+0`  
-🌟 **Hatás**:
-- Tudatosan mérsz fel esélyeket, már blöffölni is mersz.
-- Felismered, ha valaki nagyon ügyetlenül csal (pl. rejti a kockát, manipulálja a lapot).
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Intelligencia `+1`, Önuralom `+1`
-🌟 **Hatás**:
-
-- Pókerarcod rezzenéstelen, hosszú játszmában sem remegsz meg.
-- Jó eséllyel kiszúrod a rutinosabb csalókat is.
-- Hírnevet szerzel: a játékosok számolnak veled, komoly játékokra is beengednek.
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Intelligencia `+2`, Önuralom `+2`
-🌟 **Hatás**:
-- Mesteri szinten olvasod az ellenfelek apró rezdüléseit.
-- A tárgyalás vagy politikai szituáció is számíthat „játéknak”: pszichológiai hasznot húzol belőle.
-- Bűnszervezetek, kaszinók, titkos klubok belső asztalaihoz kapsz meghívót.
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Intelligencia `+3`, Önuralom `+2`  
-🌟 **Hatás**:
-- Már-már természetfeletti képességgel érzed, mikor fordul a szerencse.
-- Legenda leszel: kocsmákban, palotákban, kaszinókban mindenhol ismerik a neved.
-- Képes vagy a végletekig blöffölni, sőt másokat is észrevétlenül rávenni hibás döntésekre.
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 ### Próbák 🎲
@@ -113,3 +86,5 @@ Szerencsejáték
 
 - Kocsma, barátságos közeg: `-3`
 - Teljesen idegen kaszinó, ismeretlen szabályok: `+3`
+
+---

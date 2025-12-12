@@ -28,54 +28,30 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
 
-🔒 Követelmény: Ügyesség `+0`
-
-🌟 Hatás:
-- Egyszerűbb, gyakori ajtózárakat és lakatokat kinyitsz.
-- Nem túl gyors, de ha van időd és nyugodt környezeted, működik.
-- Tudod, milyen eszközre van szükséged a munkához.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Ügyesség `+1`, Önuralom `+0`
-
-🌟 Hatás:
-- Képes vagy a legtöbb lakatot és ajtózárat perceken belül kinyitni.
-- Észreveszed, ha a zárhoz csapda kapcsolódik.
-- Detektálod a primitív álkulcs- vagy tömlőzárakat.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Ügyesség `+2`, Önuralom `+1`
 
-🌟 Hatás:
-- Gyorsan és hangtalanul dolgozol, rutinszerűen.
-- Összetettebb szerkezeteket is kinyitsz (rugós, kettős mechanizmusú zárak).
-- Gyakran a zár sérülése nélkül végzel → nehezen veszik észre, hogy ott jártál.
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Ügyesség `+2`, Önuralom `+2`
 
-🌟 Hatás:
-- Képes vagy kombinált vagy egyedi készítésű zárakat is megfejteni.
-- Érzed és hallod a szerkezet „finom jeleit” → a KM adhat plusz információt a próbád mellé.
-- Gyorsaságod legendás: amit más fél óráig babrál, te `1-2` perc alatt megoldod.
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Ügyesség `+4`, Önuralom `+2`
 
-🌟 Hatás:
+🌟 Mesterbónusz:  ⭕TODO⭕
 - A legművészibb, mágikus elemeket nélkülöző zárakat is kinyitod puszta érintésre.
-- Mozdulataid annyira természetesek, hogy szinte „suttog a zár” neked.
-- Legendák szólnak rólad, mint aki zárt szobába és lezárt ládába is be tud férkőzni, ahová nem létezik azt nyitó kulcs.
+
 
 <br />
 
@@ -96,7 +72,7 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 #### Nehéz (12) 🎲 
 
 - Bonyolultabb rugós szerkezet kinyitása.
-- Csapdával kombinált zár észrevétele és elkerülése.
+- Egyszerűbb csapdával kombinált zár észrevétele és elkerülése.
 
 #### Nagyon nehéz (15) 🎲 
 
@@ -123,3 +99,5 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 - Sietős nyitás: `+3`
 - Zavaró tényezők (zaj, káosz, sötét): `+3`
 - Hiányos eszközök: `+3`
+
+---

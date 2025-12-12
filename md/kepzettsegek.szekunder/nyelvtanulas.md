@@ -67,41 +67,19 @@ Emlékezet, Érzékenység.
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás:
-- Rendszerben kezded látni a nyelveket: felismered a közös szavakat, toldalékokat.
-- Meg tudod mondani, hogy hallott szöveg „ismerős” vagy „idegen” családba tartozik-e.
-- Lassú, de biztos tanulás — egyszerű mondatok, szavak bemagolása idegen nyelven.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Emlékezet `+0`
-
-🌟 Hatás:
-- Gyorsabb tanulás: napi helyzetből, gesztusok és szavak alapján értesz meg idegen szavakat.
-- Felismered egy szöveg nyelvcsaládját és nagyobb dialektuscsoportját.
-- Rövid szólistákat, beszélgetéseket lassan, de biztosan fordítasz.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Emlékezet `+1`
 
-🌟 Hatás:
-- Nyelvtani mintázatok, szerkezetek felismerése: idegen nyelvet hallva képes vagy alapvető nyelvtani szabályait megsejteni.
-- Képes vagy kódolt vagy töredezett nyelvi szövegből értelmes részeket kihámozni.
-- Képes vagy eltérő nyelvek között közvetíteni: tolmácsolás szinte valós időben, kisebb hibákkal.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Emlékezet `+2`
 
-🌟 Hatás:
+🌟 Mesterbónusz: ⭕TODO⭕
+
 - Új nyelvet rövid idő alatt megtanulsz alapszinten (pl. hónapok helyett hetek).
 - Megérted az archaikus vagy kihalt nyelvek szövegeinek jelentős részét.
 
@@ -110,9 +88,9 @@ Emlékezet, Érzékenység.
 
 🔒 Követelmény: Emlékezet `+3`
 
-🌟 Hatás:
+🌟 Mesterbónusz: ⭕TODO⭕
+
 - Új nyelvet hallva napok alatt elsajátítasz egy használható alapot.
-- Szinte minden nyelv szándékát, érzelmi töltetét megragadod.
 
 <br />
 
@@ -131,6 +109,7 @@ Emlékezet, Érzékenység.
 
 #### Nehéz (12) 🎲 
 
+- Eltérő nyelvek között közvetíteni: tolmácsolás szinte valós időben, kisebb hibákkal.
 - Rövid, idegen nyelvű szöveg nagy részének pontos megértése.
 - Bonyolult beszélgetésből a lényegi információ kihámozása.
 - Előtted sosem hallott idegen nyelv alapmondatait átültetni közös (p4ar) nyelvre.

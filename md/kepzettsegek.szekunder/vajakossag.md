@@ -31,62 +31,32 @@ Emlékezet, Intelligencia
 - [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
 (Ismered az adott tájtípusban növő növényeket, gyógyító, vagy ártó hatóanyagaikat)
 
-
-
 <br />
 
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Emlékezet `+0`
-
-🌟 Hatás: "A füves ember"
-- Alap gyógy- és mérgező növények felismerése.
-- Egyszerű főzetek: nyugtató, fájdalomcsillapító italok, gyenge hánytató vagy tisztító teák készítése kész recept alapján.
-- Tisztában vagy az alapvető szárítási és tárolási módszerekkel.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Emlékezet `+1`
-
-🌟 Hatás: "A patikárius"
-- Az adott tájtípus régió növény- és állati anyagait felismered, elkülöníted.
-- Recept alapján elő tudod készíteni a hozzávalókat (darabolás, szárítás, forralás).
-- Recept alapján tudatosan bódító/fájdalomcsillapító szereket állítasz elő (füst, tea, bódító ital).
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Emlékezet `+1`, Intelligencia `+0`
 
-🌟 Hatás: "A boszorkánysegéd"
-- Ritkább alapanyagokat (pl. mandragóra, sárkányvér) biztonságosan kezeled.
-- Érzékeid és laborod segítségével meg tudsz különböztetni valódi gyógyfőzetet a hamisítványtól.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Emlékezet `+2`, Intelligencia `+1`
 
-🌟 Hatás:
-- Ismersz csillagállás- és holdfázis-függő recepteket.
-- Többtucatnyi összetevős szert vagy bájitalt is el tudsz készíteni.
-- Mágikus szörnyek testrészeinek hatóanyagait érted, és ki tudod nyerni – de nagy gyógy- vagy varázsital készítéséhez mágushasználó kell.
-- Nagyobb, sok összetevős keverékek alapanyagait páratlan biztonsággal előkészíted.
-- Szeretett vagy rettegett figurává válsz: falusiak, nemesek egyaránt hozzád fordulhatnak „titkos alapanyagokért”, bájitalokért.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Emlékezet `+3`, Intelligencia `+2`
 
-🌟 Hatás:
+🌟 Mesterbónusz: ⭕TODO⭕
+
 - Pusztán ránézésből megmondod, mi rejlik a növényben, szervben, kristályban.
-- Képes vagy előkészíteni olyan mágikus főzeteket, amelyek teljes hatásukat csak varázshatalommal érhetik el.
-- Neved forog országszerte, varázstudók és boszorkánykörök keresik máshol beszerezhetetlen alapanyagaidat.
 
 <br />
 
@@ -102,7 +72,7 @@ Emlékezet, Intelligencia
 
 #### Átlagos (9) 🎲 
 
-- Recept alapján többcélú orvosi főzet előkészítése.
+- Recept alapján többcélú orvosi főzet előkészítése. Bódító/fájdalomcsillapító szereket (füst, tea, bódító ital).
 - Növényből por vagy kenőcs készítése.
 - Recept szerinti bódító ital hozzávalóinak összeállítása.
 
@@ -124,6 +94,7 @@ Emlékezet, Intelligencia
 - Tömérdek összetevőből álló készítmény hibátlan elkészítése recept alapján.
 - Hamisítványról ránézésre eldönteni, mennyire veszélyes.
 - Ritka mágikus növény biztonságos kezelése, tartósítása.
+- Mágikus szörnyek testrészeinek hatóanyagait kinyerni – de nagy gyógy- vagy varázsital készítéséhez mágushasználó kell.
 
 #### Emberfeletti (21) 🎲 
 
@@ -134,3 +105,5 @@ Emlékezet, Intelligencia
 ## Módosító körülmények
 
 - Felszereltség: `[-3;+3]`
+
+---

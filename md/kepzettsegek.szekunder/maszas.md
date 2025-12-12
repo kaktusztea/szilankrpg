@@ -26,64 +26,35 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
 
 Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor azon a terepen a mászó bárhol képes megállva kipihenni magát.
 
-#### Novícius (3) 📖
-
-🔒 Követelmény:
-- Erő:`-1`
-- Ügyesség:`0`
-
-🌟 Hatás: Tudod melyik fa bírja el a súlyod és melyik nem. **Példa**: Erdőszerető gyerek, aki felmászik minden fára.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény:
-- Erő:`-1`
-- Ügyesség:`+1`
-
-🌟 Hatás:
-- Ismered az alapvető mászási technikákat, pár hasznos csomót.
-- **Példa**: Gyakorlott mászó, rendszeres kiránduló
-
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény:
-- Erő:`-2`
 - Ügyesség:`+2`
 - Önuralom:`+1`
 
-🌟 Hatás: 
-- Ismered az összes mászási technikát és faltípust, mászáshoz szükséges csomókat. Jó látási viszonyok közt ránézésre nagyjából meg tudod mondani, mennyire omladékos a terep. Tudod milyen testhelyzetben pihenj kapaszkodás közben.
-- **Példa**: Képzett hegymászó, profi besurranó tolvaj
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:
-- Erő:`-2`
 - Ügyesség:`+3`
 - Önuralom:`+2`
-- Összpontosítás: `3.szint`
 
-🌟 Hatás: 
-- A fentieken kívül képes vagy úgy tartalékolni az erejét, hogy hosszabb távon se fáradsz ki. Akár egy órát is tartod magát puszta kézzel.
-- **Példa**: Neves mestergyilkos, behatoló egység vezető fejvadásza
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:
-- Erő:`-2`
 - Ügyesség:`+4`
 - Önuralom:`+3`
-- Összpontosítás: `6.szint`
 
-🌟 Hatás:
-- Ilyen nincs!! A puszta, csúszós sziklafalon is felkúszol. Kézfejed, lábad deformálódott – alkalmazkodva a mászás követelményeihez.
-- **Tapadás**: Titkos, félmágikus ismeret, bónusz. Képes vagy pókként megtapadni a falon – akár a mennyezeten is. A kapaszkodáshoz nincs szükséged kiszögelésre.
+🌟 Mesterbónusz: ⭕TODO⭕
+- A puszta, csúszós sziklafalon is képes vagy haladni. Kézfejed, lábad deformálódott – alkalmazkodva a mászás követelményeihez.
+- Képes vagy pókként megtapadni a falon – akár a mennyezeten is. A kapaszkodáshoz nincs szükséged kiszögelésre.
 - Függeszkedve órákat is kibírsz!
-- **Példa**: mágiával kondicionált elit birodalmi fejvadász
 
 <br />
 
@@ -96,7 +67,8 @@ Felmászni a magas tölgyfára. Kötélen mászni (plusz súllyal, illetve leng�
 
 #### Átlagos (9) 🎲 
 
-Felmászni a fogadó tetejére. Félig kikötve, félseggel ülve pihenni egy peremen.
+- Felmászni a fogadó tetejére. Félig kikötve, félseggel ülve pihenni egy peremen.
+- Jó látási viszonyok közt ránézésre nagyjából meg tudod mondani, mennyire omladékos a terep.
 
 #### Nehéz (12) 🎲 
 
@@ -182,3 +154,5 @@ Lásd: [Esés magasból](../szituaciok/eses_magasbol.md) szituáció.
 Ha a próbát nagyon kiélezett, életveszélyes helyzetben rontja el a karakter, a KM dönthet úgy, hogy `Önuralom` próbát dobat. Ha ez nincs meg, akkor a KM-nek jogában áll, hogy tetszőlegesen nagy `Erő` Tulajdonság tartalékot felhasználtasson a karakterrel (adrenalin hatása). Így jó eséllyel meg tud kapaszkodni, de minden erőtartalékát feléli, gyakorlatilag remegve a falhoz tapadva marad, további mászása erősen kérdéses, segítségre szorul.
 
 Hogy egy karakter hányas `Erő` tulajdonsággal képes még továbbmászni, az főleg a testsúlyától, kisebb részben pedig pszichikai állapotától függ. A fenti probléma eldöntése a KM feladata.
+
+---

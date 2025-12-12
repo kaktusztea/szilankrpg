@@ -44,55 +44,25 @@ Célszám: 9 + város méret módosítója
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás:
-- Felismered a város általános ritmusát: hol a piac, kik a kocsmák törzsvendégei.
-- Tudod, kinél érdemes érdeklődni pletykáért.
-- Kisebb helyi tolvajokkal, őrökkel megtalálod a kapcsolódási pontokat.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Emlékezet `+0`
-
-🌟 Hatás:
-- Tudod, melyik rétegben kinél lehet információhoz jutni: matrózok, szajhák, őrök, koldusok.
-- Könnyen találsz kapcsolatot szürke zónás alakokhoz (csempész, kocsmai verekedő, verőember).
-- Pillanatok alatt felméred, melyek a város biztonságos, veszélyes körzetei.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Emlékezet `+1`
 
-🌟 Hatás:
-- A legtöbb alvilági vagy félhivatalos alak kapcsolatban áll veled.
-- Meg tudod ítélni, kiben mennyire lehet bízni, és kinél mennyiért lehet „beszélni”.
-- Jó eséllyel szerzel információt a politikai pletykákról, kik a „helyi nagykutyák”.
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Emlékezet `+2`
 
-🌟 Hatás:
-- Minden társadalmi rétegben vannak informátoraid: koldustól a városi jegyzőig.
-- Könnyedén manipulálod a pletykafolyamot – terjesztesz hírt vagy hamis infót.
-- Hírneved miatt a városvezetés is számol veled (vagy tart tőled).
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Emlékezet `+2`
 
-🌟 Hatás:
-
-- Neved suttogja minden csapszék és alvilági zug.
-- Idegen városban rövid idő alatt kapcsolatokat találsz, mintha otthon lennél.
-- A hatalmasok is fülelnek, mit mondasz, mert tudják, hogy „a város maga beszél rajtad keresztül”.
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 <br />
 
@@ -109,7 +79,9 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 
 #### Átlagos (9) 🎲 
 
+- Megtalálni, hol lehet információhoz jutni: matrózok, szajhák, őrök, koldusok.
 - Kideríteni, ki az adott városban a legfőbb orgazda.
+- Kapcsolatot találni szürke zónás alakokhoz (csempész, kocsmai verekedő, verőember).
 - Felmérni, hova nem ajánlott bemerészkedni éjszaka.
 - Egy lebujban egy matrózból/zsoldosból információkat kihúzni.
 
@@ -145,3 +117,5 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 - Szűkös határidő: `+3`
 - Jó hírnév: `-3`
 - Rossz hírnév, karma: `[+3; +6]`
+
+---

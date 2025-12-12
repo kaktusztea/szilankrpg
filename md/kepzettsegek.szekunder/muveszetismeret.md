@@ -39,51 +39,31 @@ Emlékezet, Intelligencia, Érzékenység
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
 
-🔒 Követelmény: Érzékenység `+1` vagy Emlékezet `+1`
-
-🌟 Hatás:
-- Felismered a köznapi ízlésnek megfelelő darabokat, stílusokat.
-- Megkülönbözteted a giccs, a népszerű darab és a komolyabb értékű alkotás közötti különbségeket.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Érzékenység `+1`, Emlékezet `+1`
-
-🌟 Hatás:
-- Tudod egy-egy műben azonosítani az alkotót, korszakot vagy iskolát (pl. k4r stílus, shad0ni festői jelleg).
-- Képes vagy röviden megindokolni, mitől értékes vagy rossz színvonalú egy alkotás.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Érzékenység `+2`, Emlékezet `+1`
 
-🌟 Hatás:
-- Biztosan felismered a nagy mesterek stílusát, szignóját, jellegzetes forma- és dallamvilágát.
-- Ismered a híres előadások, festmények, építészeti darabok mögötti történeteket és hátteret.
+🌟 Mesterbónusz: ⭕TODO⭕
+
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Érzékenység `+2`, Emlékezet `+2`
 
-🌟 Hatás:
-- Rendszerekben gondolkodva összekötöd a korszakokat és művészeti ágakat: pl. tudod, hogy egy hadjárat vagy vallási mozgalom konkrét stílusváltással is együtt járt.
-- Mélyebb jelentésrétegeket olvasol ki egy darabból: allegóriák, szimbolika, társadalmi üzenet.
-- Jártas vagy ritka stílusokban, elfeledett művészeti irányzatokban is.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Érzékenység `+3`, Emlékezet `+2`
 
-🌟 Hatás:
+🌟 Mesterbónusz: ⭕TODO⭕
 - Olyan szinten értesz a művészethez, hogy időnként prófétikus meglátásaid támadnak egy alkotásról (pl. „Ez a szobor egy pusztulásra ítélt birodalom végső kétségbeesése”).
 - Misztikus módon képes vagy „beleérezni” egy műbe: megérzed az alkotó érzelmeit, szándékát, vagy a kort, amelyben létrejött.
-- Egy műalkotás elemzésével társadalmi vagy politikai folyamatok előrejelzését is adhatod.
 
 <br />
 
@@ -106,11 +86,13 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 
 - Híres mester művének felismerése egy vázlatról vagy töredékről.
 - Egy darab vagy előadás mélyebb szimbolikájának elemzése.
+-  Megmondani a híres előadások, festmények, építészeti darabok mögötti történeteket és hátteret
 
 #### Nagyon nehéz (15) 🎲 
 
 - Ismeretlen műből megállapítani, melyik korszakból és iskolából származhat.
 - Egy régi vagy ritka táncstílus mozdulataiból következtetni a hagyományra.
+- Rendszerekben gondolkodva összekötni korszakokat és művészeti ágakat: pl. tudod, hogy egy hadjárat vagy vallási mozgalom konkrét stílusváltással is együtt járt.
 
 #### Rendkívül nehéz (18) 🎲 
 
@@ -123,3 +105,5 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 - Egy mű „lelki lenyomatához” kapcsolódni: megérezni az alkotó érzelmeit.
 - Történelmi-társadalmi próféciává kibontani a mű jelentését.
 - Olyan rejtett, kódolt üzeneteket megfejteni, amit az alkotó szándékosan rejtett el.
+
+---
