@@ -29,21 +29,21 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 🔒 Követelmény: Önuralom: `1`
 
-🌟 Hatás: Fájdalmait képes „kívülre helyezni”, a test és a tudat közé éket verve átmenetileg. Harcban nem alkalmazható.
+🌟 Mesterbónusz: Egy tenyérnyi területen ki tudod kapcsolni a fájdalomérzetet a testedben. Harcban nem alkalmazható.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Önuralom: `2`
 
-🌟 Hatás: A testi szenvedés nem látszik meg az arcán – kínzás vagy harci sérülés alatt sem mutatja meg a gyengeséget. Testi fájdalom tünetei nem látszanak meg: nincs apró remegés, zihálás, szapora szívverés. Tartós fájdalom alatt is képes figyelni, beszélni, tárgyalni.
+🌟 Mesterbónusz: Testi fájdalom tünetei nem látszanak meg: nincs apró remegés, zihálás, szapora szívverés. Tartós fájdalom alatt is képes figyelni, beszélni, tárgyalni.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  Önuralom: `3`
 
-🌟 Hatás: Fájdalmát akarata szerint választja meg – ha kell, teljesen letiltja, mintha nem is érezné.
+🌟 Mesterbónusz: Fájdalmát akarata szerint választja meg – ha kell, teljesen letiltja, mintha nem is érezné.
 
 <br />
 
