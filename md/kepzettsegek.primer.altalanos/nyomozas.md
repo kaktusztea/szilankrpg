@@ -2,16 +2,17 @@
 
 Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
+A rejtett nyomok megtalálásához az **[Észlelés](eszleles.md)** képzettség használandó.\
+Nyomok értelmezéséhez a **Nyomozás** képzettség.
+
 Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illetve a felderítés eljárásrendjének ismerete is fontos segítséget adhat. Az alábbi példák segítenek leírni, milyen jellegű információk nyerhetők a képzettség segítségével:
-- bűnjelek elemzése és következtetés is. Példa: el lett mozdítva a bútor.
+- bűnjelek elemzése és következtetés is. "Itt el lett mozdítva a bútor."
 - Mikor járt itt utoljára valaki?
 - Az asztalon heverő rengeteg iratban találni valami fontosat, összekötni a "pontokat" a most talált és a korábban talált információk alapján.
 - Vérnyomok elemzése: alvadás, jelleg. Állati vér, vagy emberi? (Ez utóbbiban a [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség segíthet).
 - Holttest vizsgálata: mitől halt meg? Apró tűnyom kiszúrása. Mérgezés? Milyen méreg lehetett?  (Ez utóbbiban a [Méregkeverés](meregkeveres.md) képzettség segíthet).
 - Kit érdemes kikérdezni a helyszínen
 - KM kis segítsége: "Valamit még nem kérdeztél meg"
-
-A rejtett nyomok megtalálásához az **[Észlelés](eszleles.md)** képzettség használandó, az értelmezéséhez pedig a **Nyomozás**.
 
 ### Domináns Tulajdonságok
 

@@ -24,32 +24,20 @@ Emlékezet, Önuralom, Intelligencia
 
 A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../151_meregkeveres_szabalyai.md#3-el%C3%A1ll%C3%A1s--ki%C3%BCr%C3%BCl%C3%A9s) is **biztos tudást igényel**. Bővebben lásd ott.
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Emlékezet `+0`
-
-🌟 Hatás: Mindig emlékszel az alapvető, közismert mérgek receptjeire, és nem hibázol el triviális keverést (pl. patkányméreg, alap altató).
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Emlékezet `+1`, Önuralom `+0`
-
-🌟 Hatás: Már nem ronthatsz el egyszerű mérget úgy, hogy magadat veszélyeztesd közben, például rossz üvegcsébe öntöd az egyik alapanyagot.
 
 ---
 #### Mester (9) 📖
 
 🔒 Követelmény: Emlékezet `+1`, Önuralom `+0`
 
-🌟 Hatás:  Dobhatsz **Érzékenység** képzettségpróbát méregérzékelésre fizikai érzékeid (látás, szaglás, ízlelés) használata nélkül is. A mérgezett italba bele sem kell innod, szagolnod, sikeres próba esetén egyszerűen csak megérzed a mérget.
+🌟 Mesterbónusz: ⭕TODO⭕ Dobhatsz **Érzékenység** képzettségpróbát méregérzékelésre fizikai érzékeid (látás, szaglás, ízlelés) használata nélkül is. A mérgezett italba bele sem kell innod, szagolnod, sikeres próba esetén egyszerűen csak megérzed a mérget.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Emlékezet `+2`, Önuralom `+1`
 
-🌟 Hatás:
+🌟 Mesterbónusz: ⭕TODO⭕
 - Érintésed mérgező, de csak ha akarod. Izzadságod, nyálad, extrém esetben véred mérgező lesz mások számára. Egyfajta "méreg-testkontroll". ⭕TODO⭕ Mekkora komplexitású, stb. mérget?⭕
 - Ha megérintesz valakit, automatikusan apró adag mérget juttathatsz belé – ez mindig apró dózis a saját repertoárodból (pl. bénító, gyengítő).
 - A saját szervezeteddel kompatibilis mérgeket (amiket te készítettél) kis adagban be tudod építeni a testedbe anélkül, hogy kifejtenék hatásukat, majd később bőrödön át kieresztheted.
@@ -59,7 +47,7 @@ A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../
 
 🔒 Követelmény: Emlékezet `+2`, Önuralom `+2`
 
-🌟 Hatás: Immunissá válsz minden típusú méregre. Ha kr4ni vagy, Banarát készíthetsz.
+🌟 Mesterbónusz: ⭕TODO⭕ Immunissá válsz minden típusú méregre. Ha kr4ni vagy, Banarát készíthetsz.
 
 <br />
 
