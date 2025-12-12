@@ -29,39 +29,29 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Önuralom: `-1`
-
-🌟 Hatás: Lassan léptető hátast képes vagy óvatosan navigálni. **Példa**: Újonc lovas
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Önuralom: `-1`
-
-🌟 Hatás: Biztonsággal vezetsz egyenletes galoppban, vágtában. Tudsz irányt és tempót váltani.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: Képes nyereg nélkül, "szőrén" megülnöd a hátast, amely testi egyensúlyodból érti jeleid. Rövid ideig képes vagy harcolni lovon.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#állat-testvér) kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
+🌟 Mesterbónusz: ⭕TODO⭕
+
+- [Állat testvér](#állat-testvér) kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#állat-testvér) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
+🌟 Mesterbónusz: ⭕TODO⭕
+
+- [Állat testvér](#állat-testvér) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
 
 <br />
 

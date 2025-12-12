@@ -35,49 +35,25 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Érzékenység `+0`
-
-🌟 Hatás:
-- Mindig tudod, hogyan állj közönség elé: hangod, mozdulataid, gesztusaid nem válnak röhejessé.
-- Átlagos hallgatóid figyelme ösztönösen rád irányul, még ha kezdő szinten is vagy.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Érzékenység `+1`
-
-🌟 Hatás:
-- A közönségből mindig kiváltasz valamilyen alap reakciót – tapsot, mosolyt, füttyentést, de nem közönyt.
-- Nem felejtesz szöveget, dalt, tánclépést, mindig átsegít a rutin.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Érzékenység `+2`
 
-🌟 Hatás:
-- Fellépésed minden közönségre érzelmi hatást gyakorol: a nézők átélik, amit mutatsz, és nem maradnak kívülállók.
-- Olyan mértékben átéled az előadást, hogy a hallgatóságot is belehúzhatod – együtt nevetnek, sírnak, táncolnak veled.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Érzékenység `+3`
 
-🌟 Hatás:
-- Előadásaiddal szellemi és érzelmi [Státuszokat](../082_statuszok.md) válthatsz ki: képes vagy megnyugtatni, feldühíteni, reményt adni vagy kétségbe ejteni a hallgatóságot.
-- Jelenléted akkor is „fellépés”, ha nem színpadon vagy: társasági helyzetekben automatikusan vonzod a figyelmet és irányítod a hangulatot.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  Érzékenység `+3`
 
-🌟 Hatás:
-- Képes vagy tömegeket közös érzelmi állapotba rántani – ujjongásba, gyászba, harci lázba vagy eksztázisba.
-- Szónoklataiddal és művészeteddel a világ históriájába írsz: a nevedhez kötődő dalokat, jeleneteket és táncokat még évszázadok múlva is idézik.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 <br />
 

@@ -43,50 +43,26 @@ Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módo
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Ügyesség `+1` vagy Önuralom `+1`
-
-🌟 Hatás:
-- Türelmesen kivárod a megfelelő pillanatot.
-- Kezded megszokni, hogy a mozdulat közben a tested természetesen viselkedjen.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Ügyesség `+1`, Önuralom `+1`
-
-🌟 Hatás:
-- Mozdulataid magabiztosabbak, nem rezdülsz össze apró zajoktól.
-- Képes vagy apróságokat gyorsan elrejteni (erszény, kulcs). "Hát de üres a kezem!!"
-- Már érzésből mozogsz, nem csak koncentrált odafigyeléssel.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Ügyesség `+2`, Önuralom `+1`
 
-🌟 Hatás:
-- Mozdulataid folyékonyak és laza, természetes testbeszéddel vegyülnek.
-- Megtanultad, hogyan lehet figyelmet célzottan elterelni.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény:  Ügyesség `+2`, Önuralom `+2`
 
-🌟 Hatás:
-- Mozdulataid természetesek, mindig kihasználod a környezet adta figyelemtereléseket.
-- Egy kéz mozdul, a másik már rejti – teljesen ösztönös koordináció.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  Ügyesség `+3`, Önuralom `+2`
 
-🌟 Hatás:
+🌟 Mesterbónusz: ⭕TODO⭕
 - Misztikus hatás: kezed mozgása konkrétan láthatatlan. Sőt külső szemlélő számára úgy tűnik, mintha nem is csinálna semmit.
-- Legendás hírnév - ha engeded.
 
 <br />
 
@@ -99,7 +75,8 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 
 #### Átlagos (9) 🎲 
 
-Csúszósabb érték mozdítása elejtés nélkül.
+- Csúszósabb érték mozdítása elejtés nélkül.
+- Apróságokat gyorsan elrejteni (erszény, kulcs). "Hát de üres a kezem!!"
 
 #### Nehéz (12) 🎲 
 
@@ -128,3 +105,5 @@ Csúszósabb érték mozdítása elejtés nélkül.
 - Kapkodni kell: `+3`
 - Nincs meg a testközeli távolság, csak pár lépés: `+3`
 - Zajos, zsibongó környezet: `-3`
+
+---

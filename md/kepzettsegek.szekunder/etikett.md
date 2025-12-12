@@ -30,30 +30,13 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény:
-- Érzékenység: `+0`
-
-🌟 Hatás: Alapvető bejelentési társalgási formulák ismerete. Tudja, mikor hallgasson. **Példa**: Kezdő udvaronc
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény:
-- Érzékenység: `+1`
-- Intelligencia: `+0`
-
-🌟 Hatás: Bevonulási, bejelentési, köszöntő és udvarlási formulák lexikális ismerete. **Példa**: Ifjú kardnemes, Hivatalnok.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény:
 - Érzékenység: `+2`
 - Intelligencia: `+1`
 
-🌟 Hatás: Ismeri és érzi a nemesi társaság hangulatának változásait. **Példa**: Pallérozott nemes, apró hercegség udvarmestere.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
@@ -62,7 +45,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 - Érzékenység: `+3`
 - Intelligencia: `+2`
 
-🌟 Hatás: Már nem csak a hangulat megváltozását, hanem a tömeg igényeit is érzékeli, így  jókor képes azt manipulálni. **Példa**: Tapasztalt bálozó, öreg róka. Udvari ceremóniamester.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
@@ -71,7 +54,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 - Érzékenység: `+4`
 - Intelligencia: `+2`
 
-🌟 Hatás: Hírneve egy olyan fegyver, ami miatt a legtöbb konfliktust nyerő helyzetből kezdheti.  **Példa**: Legendás szarkavaró. Rettegik, tisztelik... és gyűlölik.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 <br />
 
@@ -80,7 +63,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 
 #### Könnyű (6) 🎲 
 
-Forma szerint bejelenteni a nemesi párt.
+Forma szerint bejelenteni a nemesi párt. Alapvető bejelentési társalgási formulák ismerete. Tudod, mikor kell hallgatni.
 
 #### Átlagos (9) 🎲 
 

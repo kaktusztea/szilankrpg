@@ -26,46 +26,28 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Önuralom: `+0`
-
-🌟 Hatás:
-- Alacsonyan, egyenes röppályán tudod tartani a hátast.
-- Iskolaköröket biztonsággal repülöd.
-- **Példa**: Újonc léglovas
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Önuralom: `+0`
-
-🌟 Hatás:
-- Szélirány és légáram felismerése – képes vagy önállóan felszállni és leszállni.
-- Hosszabb út is teljesíthető zavartalan időben.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás:
-- Jó eséllyel kiszámítod az ellenfelek röppályáját.
-- Fordulókat, zuhanásos manővereket végre tudsz hajtani. Mérsékelt sérülésekkel is irányban tartod a hátast.
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#állat-testvér): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
+🌟 Mesterbónusz:  ⭕TODO⭕
+
+ - [Állat testvér](#állat-testvér): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Hatás: [Állat testvér](#állat-testvér): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
+🌟 Mesterbónusz:  ⭕TODO⭕
+- [Állat testvér](#állat-testvér): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
 
 <br />
 
@@ -75,7 +57,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 #### Könnyű (6) 🎲 
 
 - Egyedül megtenni egy iskolakört.
-- Egyenes emelkedés és sima ereszkedés.
+- Egyenes emelkedés és sima ereszkedés, egyenesen röppályán tartás.
 
 #### Átlagos (9) 🎲 
 

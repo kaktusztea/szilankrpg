@@ -25,49 +25,26 @@ Emlékezet, Intelligencia
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény:E mlékezet `+1`
-
-🌟 Hatás:
-- Mindig el tudod dönteni, hogy egy tárgy gyakorlati vagy piaci értékű (pl. bronzkard csak fegyver, míg egy ezüsttál értékes portéka).
-- Nem ejtenek át apró, silány hamisítványokkal (például aranyozott rézgyűrűt aranynak nézni).
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Emlékezet `+1`
-
-🌟 Hatás: Biztos kézzel becsülöd meg a mindennapi értékes tárgyakat: ékszereket, érméket, fegyvereket, dísztárgyakat.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Emlékezet `+2`
 
-🌟 Hatás:
-- Meglátod és érzed, ha egy tárgy szokatlanul értékes, akkor is, ha más hétköznapi holmik közé rejtették.
-- Nem csak az arany és ezüst matériát különbözteted meg, hanem a szimbolikus értéket is: tudod, miért drága egy ritka ékszer, festmény vagy ősi fegyver.
-- Hamisítvány felismerésében már nehéz átverni: a jó minőségű másolat is felkelti a gyanúdat.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Emlékezet `+2`
 
-🌟 Hatás:
-- Ránézésre felismered a híres műhelyek, mesteremberek, kultúrkörök jellegzetes stílusát.
-- Ha kezedbe veszel egy ritka relikviát és azt nálad alacsonyabb képzettség-szintű valaki készítette, azon ösztönösen megérzed: eredeti‑e vagy hamisítvány, még akkor is, ha a csak egyetlen apró szimbólumon bukik meg.
-- Képes vagy megbecsülni legendás értékű tárgyakat (korabeli fegyverek, történelmi szobrok, híres relikviák) – legalább nagyságrendi pontossággal.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: Emlékezet `+2`
 
-🌟 Hatás:
+🌟 Mesterbónusz: ⭕TODO⭕
 - A másodkortól örökölt tárgyak, legendás relikviákkal tudsz felszínesen kommunikálni.
-- Nemcsak az értéket, hanem a tárgy jelentőségét, szellemi súlyát is látod – tudod, miért írta bele a világ történelmébe valaki.
 - A legjobb hamisítványok sem tévesztenek meg: a tárgy aurájából megérzed, hogy az eredeti alkotó szelleme hiányzik belőle.
 
 <br />
@@ -97,6 +74,7 @@ Emlékezet, Intelligencia
 - Híres műhelyhez vagy mestermunkához köthető tárgy hitelesítése.
 - Ősi relikviák, ritka szertartási kellékek piaci és kulturális értékének felmérése.
 - Egy legendás műalkotás eredetiségének bizonyítása.
+- Képes vagy megbecsülni legendás értékű tárgyakat (korabeli fegyverek, történelmi szobrok, híres relikviák) – legalább nagyságrendi pontossággal.
 
 #### Rendkívül nehéz (18) 🎲 
 

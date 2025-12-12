@@ -42,34 +42,11 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Intelligencia `+1` **vagy** Emlékezet `+1`
-
-🌟 Hatás:
-- Mindig helyesen számolsz összegeket, törteket, alap geometriai alakzatokat.
-- Általában jól becsülsz meg mennyiségeket: súly, térfogat, hossz, idő.
-- Alapvető arányokat és logikai összefüggéseket reflexből átlátsz (pl. ha három hordó bor van 18 emberre, fejenként hány korsó jut).
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Intelligencia `+1`, Emlékezet `+1`  
-
-🌟 Hatás:
-- Fejedben is könnyedén végzel közepesen összetett számításokat.
-- Felismersz egyszerűbb rejtjelezést, vagy kódokot (pl. betűcserés írás, sorcsere). A megfejtése próbadobásos.
-- Szerkezeteknél, egyszerű épületeknél vagy gépeknél kiszúrod, ha valami szerkezetileg hibás, billeg, túlsúlyos.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Intelligencia `+2`, Emlékezet `+1`  
 
-🌟 Hatás:
-- Megérted és megjegyzed a bonyolult matematikai képleteket és térképi ábrákat.
-- Tervezel és átlátsz alapvető erőátviteli rendszereket (csigák, emelők, hidak, vízemelők).
-- Ösztönösen ráérzel, ha nem stimmelnek a számok a főkönyvben. Hogy mi, az már próbadobásos.
+🌟 Hatás: Mesterbónusz:  ⭕TODO⭕
 
 
 ---
@@ -77,9 +54,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 🔒 Követelmény:  Intelligencia `+3`, Emlékezet `+1`  
 
-🌟 Hatás:
-- Bármilyen összetett számításnál – asztrológiai képlet, építési tervek, komplex kódok – mindig jó irányba indulsz el a számításnál.
-- Felismered az ismétlődő mintázatokat az időjárásban, csillagokban, szerkezetekben, piacokban.
+🌟 Mesterbónusz:  ⭕TODO⭕
 - Misztikus módon érzed a valószínűségeket: melyik az esélyesebb kimenetel, még ha pontos számítást nem is végzel.
 
 ---
@@ -87,9 +62,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 🔒 Követelmény:  Intelligencia `+4`, Emlékezet `+1`  
 
-🌟 Hatás:
-- Minden, ami a világban rendezetlennek látszik, számodra mintát, összefüggést mutat.
-- Matematikai és logikai számításod „emberfeletti”, olyan gyorsan és hibátlanul számolsz fejben. Nincs szükséged papírra sem – látod magad előtt.
+🌟 Mesterbónusz:  ⭕TODO⭕
 - Belelátsz a világ törvényeibe – a sors számokban íródik előtted: asztrológia, mechanika, pénzügy, hadrendi logisztika – mind csak eszközök a számodra.
 
 <br />
@@ -107,6 +80,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 - Kisebb épület tervének értelmezése.
 - Kereskedői számvetés gyors átlátása.
 - Csillagállás alapján irány nagyjából meghatározása.
+- Átlagos bonyolultsági kód megfejtése
 
 #### Nehéz (12) 🎲 
 
@@ -139,3 +113,5 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ### Célszám módosító körülmények
 
 - Kapkodó munka: `+3`
+
+---

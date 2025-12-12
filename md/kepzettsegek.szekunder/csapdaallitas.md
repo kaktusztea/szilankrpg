@@ -19,30 +19,12 @@ Intelligencia, Önuralom
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Intelligencia vagy Önuralom `+1`
-
-🌟 Hatás:
-- A legegyszerűbb csapdákat (pl. botlódrót, kiugró szög, leszakadó edény) biztos kézzel állítod fel – nem nem buksz le velünk azonnal.
-- Ösztönösen kerülöd az önveszélyes beállítást: a saját csapdád nem rád sül ki véletlenül.
-
----
-#### Kismester (6) 📖
+#### Mester (9) 📖
 
 🔒 Követelmény: Intelligencia `+1`, Önuralom `+1`
 
-🌟 Hatás:
-- Biztosan tudod, hogyan kell rejteni és álcázni az alapcsapdákat: egyszerű fedések, egyszerű csalik mindig jól sikerülnek.
-- Ha meglátsz egy más által hagyott primitív csapdát, azonnal észreveszed a logikáját – nem tud átverni egy „konyhakés a kötélvégén” trükk.
+🌟 Mesterbónusz: ⭕TODO⭕
 
----
-#### Mester (9) 📖
-
-🔒 Követelmény: Intelligencia `+2`, Önuralom `+1`
-
-🌟 Hatás:
-- Amikor egy teret, helyiséget vizsgálsz, ösztönösen ráérzel, hova lehetne csapdát rakni, vagy hol lehet elbújva egy.
 - Ha te állítasz fel csapdát, az időtálló, nem romlik el magától, csak ha külső tényező pusztítja.
 
 ---
@@ -50,20 +32,16 @@ Intelligencia, Önuralom
 
 🔒 Követelmény:  Intelligencia `+2`, Önuralom `+2`
 
-🌟 Hatás:
-- Egy ismeretlen helyről ránézésre tudod, hol van a legjobb pont egy halálos vagy bénító csapdához.
+🌟 Mesterbónusz: ⭕TODO⭕
 - Idegen csapdánál pusztán a szerkezet sziluettjéből megérzed, melyik elem az „éles”, melyik a biztosító – még mielőtt hozzányúlnál.
-- A hatástalanítás során képes vagy megérzés alapú reflexből a kezedet visszahúzni, ha érzed, hogy valami hibásan reagálna.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény:  Intelligencia `+3`, Önuralom `+2`
 
-🌟 Hatás:
-- Csapdáidat olyan tökéletesen fonod össze a hellyel, hogy szinte élő részei a környezetnek - kívülről járatlan szem számára felismerhetetlenek.
+🌟 Mesterbónusz: ⭕TODO⭕
 - Ha valakit a közeledben csapda veszélye fenyeget, ösztönösen érzed, és képes vagy figyelmeztetni még mielőtt aktiválná.
-- Egyetlen pillantásból ráérzel egy bonyolult, utólag idegen csapdára, hogy ki készítette (kéznyoma, stílusa).
 
 <br />
 
@@ -112,3 +90,5 @@ Intelligencia, Önuralom
 ### Célszám módosító körülmények
 
 - Csapda hatástalanítása külső nyom hátrahagyása nélkül: `+3`
+
+---

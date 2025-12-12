@@ -52,7 +52,7 @@ Intelligencia, Emlékezet
 - Emlékezet: `+2`
 - Intelligencia: `+2`
 
-🌟 Hatás: ⭕TODO⭕
+🌟 Mesterbónusz: ⭕TODO⭕
 - Egy anyagról első pillantásra tudod, hogy sav‑e, lúg‑e vagy semleges - nem szükséges megvizsgálnod sem.
 - Félmágikus hatás: képes vagy apró arany‑szemcséket puszta kézzel kivonni sziklákból és földből.
 
@@ -63,7 +63,7 @@ Intelligencia, Emlékezet
 - Emlékezet: `+3`
 - Intelligencia: `+3`
 
-🌟 Hatás: ⭕TODO⭕
+🌟 Mesterbónusz: ⭕TODO⭕
 
 <br />
 

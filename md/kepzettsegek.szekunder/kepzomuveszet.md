@@ -37,41 +37,19 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 
 Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfelelő műveket hozhatsz létre. Anélkül nem megy.
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: Érzékenység `+1` vagy Ügyesség `+1`
-
-🌟 Hatás:
-- Tudsz olyan művet készíteni (rajz, faragvány, kalligráfia), amely felismerhető és esztétikus, már nem csak udvarias mosolyt vált ki.
-- A saját ismert kultúrköröd stílusában biztos kézzel hozol létre egyszerűbb darabokat.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: Érzékenység `+1`, Ügyesség `+1`
-
-🌟 Hatás:
-- Munkáid már kereskedelmi értékkel bírnak: egy faluban, városban könnyedén akad vevő rájuk.
-- Ha más stílusban alkotsz, akkor is ösztönösen alkalmazod a kompozíciós szabályokat (arány, színek, formák).
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: Érzékenység `+1`, Ügyesség `+2`
 
-🌟 Hatás:
-- Alkotásaid **már érzelmeket váltanak ki** nézőikből – örömet, áhítatot, szomorúságot.
+🌟 Mesterbónusz: ⭕TODO⭕
 - Hamisítvány esetén van rá esély, hogy nagyon enyhén, de megérzed, hogy hiányzik belőle az „ihlet”.
-- A közönség rád már művészként tekint, nem csak kézművesként.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Érzékenység `+2`, Ügyesség `+2`
 
-🌟 Hatás:
-- Műveid már szellemi/érzelmi [Státuszt](../082_statuszok.md) válthatnak ki: nyugtatnak, feldühítenek, áhítatba ringatnak.
-- Bármilyen stílust képes vagy utánozni a meglévő tudásod szerint – sőt, új irányzatokat teremtesz.
+🌟 Mesterbónusz: ⭕TODO⭕
 - Műveid túlélhetik az időt: sokkal lassabban pusztulnak, alkotó energiát is egyben tartja azt – még halálod után is. Esés, ütődés nem tesz kárt benne, fegyverrel is nehezebb tönkretenni.
 
 ---
@@ -79,10 +57,7 @@ Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfel
 
 🔒 Követelmény: Érzékenység `+3`, Ügyesség `+2`
 
-🌟 Hatás:
-- Alkotásod már nemcsak mű: legendává válik – korszakokat, dinasztiákat, vallásokat határozhat meg.
-- Félmágikus (szakrális?) kapcsolatod lesz az Ihlettel: úgy érzed, nem te formálod a művet, hanem a mű születik rajtad keresztül.
-- Nevén neveznek téged a történelemben: stílusok és korszakok viselik a nyomod.
+🌟 Mesterbónusz: ⭕TODO⭕
 - Műved egyáltalán nem pusztul az idővel, még fegyverrel is nagyon nehéz (bár nem lehetetlen) tönkretenni.
 
 <br />
@@ -109,8 +84,7 @@ Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfel
 
 #### Nagyon nehéz (15) 🎲 
 
-- Város szintű hírnév szerzése műalkotásoddal.
-- Egy mű, amely vallási/eszmei áhítatot vált a szemlélőiben.
+- Olyan művet alkotni, ami már szellemi/érzelmi [Státuszt](../082_statuszok.md) vált ki az átlagemberben: megnyugtat, feldühít, áhítatba ringat.
 
 #### Rendkívül nehéz (18) 🎲 
 
@@ -134,3 +108,5 @@ Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfel
   - Kapkodás: `+3`
   - ráérős munka `-2`
 - Környezet inspiráló hatása (pl. szent hely, művésztelep): `-2`
+
+---
