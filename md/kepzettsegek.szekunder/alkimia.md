@@ -37,62 +37,33 @@ Intelligencia, Emlékezet
 ---
 ### Biztos tudás, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény:
-- Emlékezet: `+0`
-- Intelligencia: `+0`
-
-🌟 Hatás:
-- Ösztönösen tudod, hogyan kell az anyagokat kezelni: soha nem robbantod fel magad pusztán figyelmetlenségből.
-- Felületes vizsgálattaé meg tudod különböztetni az alapvető anyagokat (lúg, sav, szerves–szervetlen, mérgező–ártalmatlan).
-- A legegyszerűbb főzetek, kenőcsök és oldatok, mint a zecetsavas tisztító, alapgyanta, alkoholos származékok - elkészítése mindig sikerül.
-
----
-#### Kismester (6) 📖
+#### Mester (9) 📖
 
 🔒 Követelmény:
 - Emlékezet: `+1`
 - Intelligencia: `+1`
 
-🌟 Hatás:
-- Meg tudod állapítani, melyik növényből/ásványból lehet értékes hatóanyagot kivonni, és melyik csak időpocsékolás.
-- Tudod, melyik oldószer, milyen hőmérséklet vagy eszköz alkalmas egy alapanyag feldolgozására.
-
----
-#### Mester (9) 📖
-
-🔒 Követelmény:
-- Emlékezet: `+2`
-- Intelligencia: `+2`
-
-🌟 Hatás:
-- Kezded látni az anyagok „rejtett szerkezetét”: ha egy összetevőt nézel, megérzed, hogy mibe alakítható át.
-- Automatikusan ki tudod választani a legjobb stabilizálószert egy keverékhez anélkül, hogy próbálgatnál.
-- Tudod, hogyan kell szakszerűen tárolni a mágiakomponenseket: sosem romlanak rád a polcon, és mindig felismered, ha valami rosszul lett konzerválva.
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:
+🔒 Mesterbónusz:
 - Emlékezet: `+2`
 - Intelligencia: `+2`
 
-🌟 Hatás:
+🌟 Hatás: ⭕TODO⭕
 - Egy anyagról első pillantásra tudod, hogy sav‑e, lúg‑e vagy semleges - nem szükséges megvizsgálnod sem.
-- Bármilyen laborban automatikusan a rendelkezésedre áll a „kreatív helyettesítés”: ha hiányzik valami eszköz vagy komponens, rögtön tudod, mivel lehet pótolni.
 - Félmágikus hatás: képes vagy apró arany‑szemcséket puszta kézzel kivonni sziklákból és földből.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:
+🔒 Mesterbónusz:
 - Emlékezet: `+3`
 - Intelligencia: `+3`
 
-🌟 Hatás:
-- Félmágikus tudásod révén tényleges aranyat tudsz transzmutálni
-- Igazi próbád a **Mindent Oldó Szer** és a **Prima Materia** kutatása, amihez már stabil tudásod van, mint kiindulópont.
+🌟 Hatás: ⭕TODO⭕
 
 <br />
 
@@ -104,6 +75,8 @@ Intelligencia, Emlékezet
 - Savas/lúgos oldat elkészítése.
 - Növényből egyszerű kivonat főzése.
 - Illatszer vagy alap festék előállítása.
+- Felületes vizsgálattal megállapítani az alapvető anyagokat (lúg, sav, szerves–szervetlen).
+
 
 #### Átlagos (9) 🎲 
 

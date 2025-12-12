@@ -56,18 +56,14 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 
 🔒 Követelmény: Ügyesség:`+2`, Érzékenység:`+1`
 
-🌟 Mesterbónusz:
-
-- ⭕TODO⭕
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: Ügyesség:`+2`, Érzékenység:`+2`
 
-🌟 Mesterbónusz: 
-
-- ⭕TODO⭕
+🌟 Mesterbónusz:  ⭕TODO⭕
 
 ---
 #### Élő legenda (15) 📖
