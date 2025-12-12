@@ -8,14 +8,16 @@ Kivételesen gyorsan mozdulsz a harcban.
 
 🌟 **Hatás**: `KÉ:+2` bónusz jár
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: -
 
 🌟 **Hatás**: `KÉ:+4` bónusz jár
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**: -

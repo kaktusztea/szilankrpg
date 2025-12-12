@@ -8,14 +8,16 @@ Szervezeted alapból, - vagy speciális felkészítésnek hála - ellenállóbb 
 
 🌟 **Hatás**: [Méregellenállás dobásakor](../152_meregellenallas.md) kapsz `+1` bónuszt **Edzettség** Tulajdonságpróbádra.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Edzettség: `+1`
 
 🌟 **Hatás**: [Méregellenállás dobásakor](../152_meregellenallas.md) kapsz `+2` bónuszt **Edzettség** Tulajdonságpróbádra.
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**: Edzettség: `+1`

@@ -17,7 +17,8 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - [S4 Fájdalomtűrés próbára](../061_04_fajdalomtures_sebesuleskor.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s): `Előny+1`
 - Roham helyett kötelezően az [Öngyilkos roham taktikát](../065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) kell használnod
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -34,7 +35,8 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - `S4` Fájdalomtűrés próbára: `Előny+2`
 - Roham helyett kötelezően az **Öngyilkos roham** taktikát kell használnod
 
----
+<br />
+
 ### 3. fok 🔆
 
 🔒 **Követelmény**

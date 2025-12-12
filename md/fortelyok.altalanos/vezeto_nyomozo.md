@@ -18,7 +18,8 @@ A fentiek szerint kiszámolt csoportos **Nyomozás** értéket egy jó vezető n
 
 🌟 **Hatás**: `+2` bónusz csoportos **Nyomozás** értékre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

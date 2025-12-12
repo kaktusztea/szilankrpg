@@ -20,7 +20,8 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 - `TÉ:+2`
 - `VÉ:+2`
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

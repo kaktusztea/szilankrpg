@@ -16,7 +16,8 @@ TÉ:-6, SP:+6
 
 🌟 **Hatás**: legfeljebb `+3 SP` (`TÉ:-3`) pakolható át
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

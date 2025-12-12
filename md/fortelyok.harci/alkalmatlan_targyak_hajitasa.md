@@ -20,7 +20,8 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 - Már nem sújtanak az Alapesetnél leírt [levonások](../065_01_04_fegyver_harci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal) alkalmi tárgy hajításakor.
 - A tárgyak [harcértéke](../068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy) nem változik!
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`

@@ -18,7 +18,8 @@ A fentiek szerint kiszámolt csoportos **Előadóművészet** értéket egy jó 
 
 🌟 **Hatás**: `+2` bónusz csoportos **Előadóművészet** értékre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

@@ -18,7 +18,8 @@ A fentiek szerint kiszámolt csoportos **Orvoslás** értéket egy jó vezető p
 
 🌟 **Hatás**: `+2` bónusz csoportos **Orvoslás** értékre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

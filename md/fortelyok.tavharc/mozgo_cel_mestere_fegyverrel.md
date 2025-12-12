@@ -6,9 +6,6 @@ Amennyiben **Kiszámíthatatlanul mozgó**, vagy **Harcoló** ellenfélre lősz 
 
 ### Alapeset
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**:
 - Kiszámíthatatlan Szorzó: `4x`
 - Harcoló Szorzó: `5x`
 

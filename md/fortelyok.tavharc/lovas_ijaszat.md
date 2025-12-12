@@ -25,7 +25,8 @@ Gyakorlott vagy a lóhátról való íjászatban, ennek hatására kisebbek nega
 - Ügetés esetén: `CÉ:-3`
 - Vágta esetén: `CÉ:-7`
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

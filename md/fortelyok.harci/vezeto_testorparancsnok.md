@@ -14,7 +14,8 @@ Testőred egy entitásként védelmeznek személyeket, területet vagy építmé
 
 Az [Észlelés](../kepzettsegek.primer.harci/alakzatharc.md) képzettséget a testőrcsapat a [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja.
 
----
+<br />
+
 ### 1. fok
 
 A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok képes koordinálásával megemelni.
@@ -28,7 +29,8 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 
 🌟 **Hatás**: `+2` bónusz az **Észlelés** képzettségre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

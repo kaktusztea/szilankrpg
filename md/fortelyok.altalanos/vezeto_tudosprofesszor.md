@@ -18,7 +18,8 @@ A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos 
 
 🌟 **Hatás**: `+2` bónusz csoportos **Kvantikum** értékre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

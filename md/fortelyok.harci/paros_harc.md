@@ -12,7 +12,8 @@ Az összeszokott harcosok együtt eredményesebbek.
 - `TÉ:+2`, `VÉ:+2`
 - `1` ellenfél ellen `KÉ:+1` (többnél nem jár)  
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -23,7 +24,8 @@ Az összeszokott harcosok együtt eredményesebbek.
 - `TÉ:+4`, `VÉ:+4`
 - `1-2` ellenfél ellen `KÉ:+1` (többnél nem jár)  
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**:

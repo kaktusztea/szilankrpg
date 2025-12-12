@@ -8,7 +8,8 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 
 🌟 **Hatás**: Lovasszekér, ökrösszekér, postakocsi elvezetése alap sebességen.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Ügyesség: `+1`

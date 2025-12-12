@@ -19,7 +19,8 @@ Megtalált nyomok értelmezését, eltűntetését, illetve városon kívül a n
 
 🌟 **Hatás**: Lásd a Szituációkat fenn.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: -

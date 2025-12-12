@@ -18,7 +18,8 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
   - Érzék(látás) - `Hátrány-1` →  semmi
 - Megszűntet `1` fok Hátrányt a védő `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -33,7 +34,8 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 - Megszűntet `1` Előnyt a Támadó `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
 - Megszűntet `1` Hátrány a Védő `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**:

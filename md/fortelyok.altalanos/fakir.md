@@ -8,7 +8,8 @@ Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer.alt
 
 🌟 **Hatás**: Fájdalomtűrés próbára: `+2`
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Önuralom: `+3`

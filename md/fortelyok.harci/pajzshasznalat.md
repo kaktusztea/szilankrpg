@@ -34,7 +34,8 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
   - **Közepes pajzs**: `-3`
   - **Nagy pajzs**: `-6`
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -51,7 +52,8 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 - Ha fegyver is van nálad: akkor VAGY a fegyverrel VAGY a pajzzsal támadhatsz.
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket.
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**:

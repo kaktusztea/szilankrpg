@@ -18,7 +18,8 @@ A fentiek szerint kiszámolt csoportos **Hajózás** értéket egy jó hajóskap
 
 🌟 **Hatás**: `+2` bónusz csoportos **Hajózás** értékre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

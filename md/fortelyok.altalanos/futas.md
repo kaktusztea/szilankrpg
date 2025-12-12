@@ -15,7 +15,8 @@ Nem csak rohangálsz, mint egy futóbolond, hanem kitartó, hosszas futás sorá
 - Hosszútávfutáskor **Edzettség** próbára: `+1`
 - Rövidtávfutásnál: **Gyorsaság** próbára: `+1`
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Edzettség: `+2`

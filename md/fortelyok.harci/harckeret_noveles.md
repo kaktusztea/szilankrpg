@@ -11,7 +11,8 @@ Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyve
 
 🌟 **Hatás**: `+1` Harckeret
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -21,7 +22,8 @@ Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyve
 
 🌟 **Hatás**: `+2` Harckeret
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**:

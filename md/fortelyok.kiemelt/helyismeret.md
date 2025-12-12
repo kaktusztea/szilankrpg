@@ -1,4 +1,4 @@
-## 🟣 Helyismeret (városnyi terület) 🔁
+## 🟣 Helyismeret (1) (városnyi terület) 🔁
 
 <!-- tag: md_fortely_multiple_helyismeret -->
 

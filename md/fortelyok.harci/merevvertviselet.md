@@ -15,25 +15,26 @@ Merevvért büntetés Hatásairól a [Mozgásgátló Tényező (MGT)](../069_03_
 ---
 ### Alapeset
 
-🔒 **Követelmény**: -
+A vért teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
-🌟 **Hatás**: a vért teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
+<br />
 
----
 ### 1. fok
 
 🔒 **Követelmény**: Erő: `+1`
 
 🌟 **Hatás**: Merevvérted `TÉ` büntetése ennyivel enyhül: `-5`
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Erő: `+2`
 
 🌟 **Hatás**: Merevvérted `TÉ` büntetése ennyivel enyhül: `-10`
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**: Erő: `+2`

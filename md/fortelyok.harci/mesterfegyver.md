@@ -23,7 +23,8 @@ A legtöbb esetben egy karakternek van egy (vagy több) konkrét fegyvere, amely
 - `VÉ:+1`
 - `SP:+1`
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Harcmodor - `8.szint`
@@ -33,7 +34,8 @@ A legtöbb esetben egy karakternek van egy (vagy több) konkrét fegyvere, amely
 - `VÉ:+2`
 - `SP:+2`
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**: Harcmodor - `12.szint`
@@ -42,8 +44,6 @@ A legtöbb esetben egy karakternek van egy (vagy több) konkrét fegyvere, amely
 - `TÉ:+3`
 - `VÉ:+3`
 - `SP:+3`
-
-<br />
 
 ---
 ### Manőverek

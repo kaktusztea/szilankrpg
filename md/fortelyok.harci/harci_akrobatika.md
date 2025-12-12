@@ -17,7 +17,8 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - `TÉ:+1, VÉ:+1`
 - [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+1` bónuszt kapsz
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -31,7 +32,8 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 - `TÉ:+2, VÉ:+2`
 - [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+2` bónuszt kapsz
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**:

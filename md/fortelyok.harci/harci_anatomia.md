@@ -12,7 +12,8 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén:  `SP:+2` (csak vértmentes ponton)
 - [Orvtámadás](../066_05_altalanos_manoverek.md#orvtámadás) Manőver esetén `SP:+2` (csak vértmentes ponton)
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -24,7 +25,8 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén:  `SP:+4` (csak vértmentes ponton)
 - [Orvtámadás](../066_05_altalanos_manoverek.md#orvtámadás) Manőver esetén `SP:+4` (csak vértmentes ponton)
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**:

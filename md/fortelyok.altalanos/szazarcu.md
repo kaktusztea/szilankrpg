@@ -24,7 +24,8 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 
 🌟 **Hatás**: Az Alapesetnél leírt büntetéseket `3`-al csökkentheted képzettségpróbánál.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Álcázás/Álruha - `8.szint`

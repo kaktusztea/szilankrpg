@@ -9,9 +9,7 @@ Gyorsabban tudsz keresni, kutatni egy helyiségben. Vagy nyomokat elrejteni...
 ---
 ### Alapeset
 
-🔒 **Követelmény**:  -
-
-🌟 **Hatás**: Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md#c%C3%A9lsz%C3%A1m-m%C3%B3dos%C3%ADt%C3%B3-k%C3%B6r%C3%BClm%C3%A9nyek) képzettségpróbát.
+Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` büntetéssel dobod az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md#c%C3%A9lsz%C3%A1m-m%C3%B3dos%C3%ADt%C3%B3-k%C3%B6r%C3%BClm%C3%A9nyek) képzettségpróbát.
 
 ---
 ### 1. fok

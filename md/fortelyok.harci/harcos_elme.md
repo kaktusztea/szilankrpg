@@ -12,7 +12,8 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 
 🌟 **Hatás**: Minden kör elején visszanyersz `1`, - a harc során - elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -23,7 +24,8 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 
 🌟 **Hatás**: Minden kör elején visszanyersz `2` - a harc során - elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**:

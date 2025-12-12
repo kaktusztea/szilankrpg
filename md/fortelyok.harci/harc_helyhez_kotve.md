@@ -15,7 +15,8 @@ Nem esel kétségbe akkor sem, ha nagyon kis helyen, vagy kimozgás lehetősége
 
 🌟 **Hatás**: a [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) **Hatás** már **nem** sújt ilyen szituációban.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

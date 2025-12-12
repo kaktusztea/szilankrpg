@@ -15,8 +15,8 @@ Egy jó vezető csodákat tehet egy fegyveres alakzattal.
 
 Az **[Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md)** képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk.
 
+<br />
 
----
 ### 1. fok
 
 A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
@@ -29,7 +29,8 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 
 🌟 **Hatás**: `+2` bónusz az **Alakzatszintre**
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

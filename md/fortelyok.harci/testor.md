@@ -19,7 +19,8 @@ Hasznos fortély, ha **Védő Értékedet** egy másik - együttműködő - szem
 
 🌟 **Hatás**: A [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) Hatás már nem sújt.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

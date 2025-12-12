@@ -25,7 +25,8 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
   - `Hátrány-1` `CÉ` dobásra
 - A fegyver harcértéke nem változik (`CÉ=0`) 
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

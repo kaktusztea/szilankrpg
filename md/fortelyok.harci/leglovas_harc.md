@@ -21,7 +21,8 @@ TÉ/VÉ: -9
 - fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` léglovas bónusz járul
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:
@@ -34,7 +35,8 @@ TÉ/VÉ: -9
 - fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` léglovas bónusz járul
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**:

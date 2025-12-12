@@ -11,7 +11,8 @@ A győzelem mámora megacélozza izmaid és akaratod.
 
 🌟 **Hatás**: Ha harcképtelenné teszel valakit, akkor azonnal kapsz `+1` soron kívüli bónusz támadást egy közeli ellenfél ellen. Ezt egy körben legfeljebb `1x` alkalmazhatod.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

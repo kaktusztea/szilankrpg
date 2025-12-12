@@ -13,7 +13,8 @@ Egy entitásként, észrevétlenül suhantok át fejvadász alakulatoddal a véd
 
 A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni.
 
----
+<br />
+
 ### 1. fok
 
  A fentiek szerint kiszámolt csoportos **Lopakodás/rejtőzés** értéket egy jó parancsnok képes koordinálásával megemelni.
@@ -26,7 +27,8 @@ A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
 
 🌟 **Hatás**: `+2` bónusz csoportos **Lopakodás/rejtőzés** értékre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

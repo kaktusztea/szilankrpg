@@ -30,7 +30,8 @@ A fortély nélkül történelmi témában nem dobhatsz próbát [Lexikum](../ke
 - Már dobhatsz [Lexikum](../kepzettsegek.szekunder/lexikum.md) próbát történelmi témában.
 - Ősi kultúrák nélkül a világtörténelem ismerete
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

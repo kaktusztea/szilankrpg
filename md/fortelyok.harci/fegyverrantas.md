@@ -9,7 +9,8 @@ Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_02_fegyverrantas_varatl
 
 🌟 **Hatás**: Fegyverrántás **Kezdeményezés dobásnál** a `[Hátrány-2; Előny+2]` skálán `1` lépést felfele ugrasz
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Gyorsaság: `+2`

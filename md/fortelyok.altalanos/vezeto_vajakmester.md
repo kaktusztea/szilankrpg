@@ -18,7 +18,8 @@ A fentiek szerint kiszámolt csoportos **Vajákosság** értéket egy jó vezet�
 
 🌟 **Hatás**: `+2` bónusz csoportos **Vajákosság** értékre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

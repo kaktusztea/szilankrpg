@@ -27,7 +27,8 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettségre: `+2`
 - A kapcsolódó, kiterjesztett képzettségek követelményeként megszűnteti a kiterjesztés-büntetést.
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: `+1`

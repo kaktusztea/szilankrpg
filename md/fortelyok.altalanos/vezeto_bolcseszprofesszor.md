@@ -18,7 +18,8 @@ A [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettséget [csoportos szel
 
 🌟 **Hatás**: `+2` bónusz csoportos **Lexikum** értékre
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**:

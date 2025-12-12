@@ -20,7 +20,8 @@ Ha egy kacsaúsztatónál mélyebb vízbe tévedsz, többé már nem merülsz el
 
 🌟 **Hatás**: Tudsz úszni
 
----
+<br />
+
 ### 2. fok
 
 🔒 **Követelmény**: Edzettség: `+2`
