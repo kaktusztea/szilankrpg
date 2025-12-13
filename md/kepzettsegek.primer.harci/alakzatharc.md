@@ -23,38 +23,31 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 ---
 ### Szintek, követelmények 📖
 
-#### Novícius (3) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás: Egyszerűbb alakzatokat (pl. sor, oszlop) stabilan tartasz, és könnyedén igazodsz a vezető utasításaihoz.
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: -
-
-🌟 Hatás: Bonyolultabb alakzatokat is magabiztosan tartasz.
-
----
 #### Mester (9) 📖
 
 🔒 Követelmény: -
 
-🌟 Mesterbónusz: Akkor is tartod az alakzatot, ha az alakzatvezető kiesik. Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+3` jár az Aurátokra. Érzed társaid pontos elhelyezkedését, irányát az alakzatban, alapvető érzelmeit, sebesülésük tényét.
+🌟 Mesterbónusz:
+- Akkor is tartod az alakzatot, ha az alakzatvezető kiesik.
+- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+3` jár az Aurátokra.
+- Érzed társaid pontos elhelyezkedését, irányát az alakzatban, alapvető érzelmeit, sebesülésük tényét.
 
 ---
 #### Nagymester (12) 📖
 
 🔒 Követelmény: -
 
-🌟 Mesterbónusz: Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+6` jár az Aurátokra. Társaiddal közvetlen szellembeszédre vagytok képes mind - ha legalább egy valaki `12.szinten` birtokolja a képzettséget. A társnak minimum `9.szinten` kell ismernie, hogy képes legyen együttműködni.
+🌟 Mesterbónusz:
+- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+6` jár az Aurátokra.
+- Társaiddal közvetlen szellembeszédre vagytok képes mind - ha legalább egy valaki `12.szinten` birtokolja a képzettséget. A társnak minimum `9.szinten` kell ismernie, hogy képes legyen együttműködni.
 
 ---
 #### Élő legenda (15) 📖
 
 🔒 Követelmény: [Harci iskola](../fortelyok.szabad/harci_iskola.md) Szabad Fortély
 
-🌟 Mesterbónusz: Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra. Társaiddal összekapcsolódnak érzékszerveitek - bármilyen extra misztikus tudás nélkül.
+🌟 Mesterbónusz:
+- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra.
+- Társaiddal összekapcsolódnak érzékszerveitek - bármilyen extra misztikus tudás nélkül.
 
 ---
