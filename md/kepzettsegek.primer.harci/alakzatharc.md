@@ -17,6 +17,7 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 - [Alakzat: támadó](../fortelyok.harci/alakzat_tamado.md) fortély
 - [Alakzat: védekező](../fortelyok.harci/alakzat_vedekezo.md) fortély
 - [Harci iskola](../fortelyok.szabad/harci_iskola.md) Szabad Fortély
+- [Csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy testőrcsapat.
 - [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md) fortély: alakzat vezetése esetén bónuszt ad.
 
 ---

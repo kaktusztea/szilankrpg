@@ -14,10 +14,6 @@ Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont
 
 Emlékezet, Intelligencia
 
-### Kapcsolódik
-
-- [Vezető: Vajákmester](../fortelyok.altalanos/vezeto_vajakmester.md) fortély: csoportos vajákosság esetén bónuszt ad.
-
 ### Normál kiterjesztés
 
 - [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)

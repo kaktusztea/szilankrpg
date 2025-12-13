@@ -20,6 +20,7 @@ Intelligencia, Emlékezet
 
 ### Kapcsolódik
 
+- [Csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használja egy nyomozócsapat.
 - [Vezető: Nyomozó](../fortelyok.altalanos/vezeto_nyomozo.md) fortély: csoportos nyomozás esetén bónuszt ad.
 
 ### Normál kiterjesztés

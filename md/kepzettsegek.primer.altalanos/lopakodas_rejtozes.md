@@ -11,6 +11,7 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 ### Kapcsolódik
 
 - [Suhanó árnyék](../fortelyok.altalanos/suhano_arnyek.md) fortély
+- [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni.
 - [Vezető: Fejvadász strategis](../fortelyok.harci/vezeto_fejvadasz_strategis.md) fortély: csoportos alakulatban lopakodás esetén bónuszt ad.
 
 ### Normál kiterjesztés

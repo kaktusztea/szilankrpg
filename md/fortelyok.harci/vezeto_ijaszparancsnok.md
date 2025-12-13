@@ -4,10 +4,10 @@
 
 ### Kiterjeszti ezeket
 
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
-    - Területlövés, fedezőtűz, előcsatározás és visszavonulás
-    - Csapatban mozgás, megfelelő alakzat felvétele, annak tartása - harci körülmények között is.
-    - ⚡ "Fedezőtüzet a visszavonuló lovasság mögé!"
+[Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
+- Területlövés, fedezőtűz, előcsatározás és visszavonulás
+- Csapatban mozgás, megfelelő alakzat felvétele, annak tartása - harci körülmények között is.
+- ⚡ "Fedezőtüzet a visszavonuló lovasság mögé!"
 
 ---
 ### Alapeset

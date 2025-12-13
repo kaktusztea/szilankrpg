@@ -14,6 +14,7 @@ Próba dobható.
 
 ### Kapcsolódik
 
+- [Csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport, amely ezt a képzettséget [kiterjesztve](../kepzettsegek.szekunder/lexikum.md#normál-kiterjesztés) próbál tudást kutatni, felhasználni.
 - [Vezető: Bölcsészprofesszor](../fortelyok.altalanos/vezeto_bolcseszprofesszor.md) fortély: csoportos kutatómunka, gondolkodás esetén bónuszt ad.
 
 ### Normál kiterjesztés

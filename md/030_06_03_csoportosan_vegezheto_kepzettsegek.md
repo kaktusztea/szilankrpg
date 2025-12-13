@@ -19,7 +19,6 @@ A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fejezet
 - [Lexikum](kepzettsegek.szekunder/lexikum.md) → [Vezető: Bölcsészprofesszor](fortelyok.altalanos/vezeto_bolcseszprofesszor.md) (**szellemi**)
 - [Nyomozás](kepzettsegek.primer.altalanos/nyomozas.md) → [Vezető: Nyomozó](fortelyok.altalanos/vezeto_nyomozo.md) (**szellemi**)
 - [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) → [Vezető: Orvosprofesszor](fortelyok.altalanos/vezeto_orvosprofesszor.md) (**szellemi**)
-- [Vajákosság](kepzettsegek.szekunder/vajakossag.md) → [Vezető: Vajákmester](fortelyok.altalanos/vezeto_vajakmester.md) (**szellemi**)
 
 ---
 🔗 [Képzettségpróba Hátrányok](030_07_kepzettsegproba_hatranyok.md) →

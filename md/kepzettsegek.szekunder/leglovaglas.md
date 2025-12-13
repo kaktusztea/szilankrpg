@@ -11,6 +11,7 @@ Aki léglovaglást tanul, az képes megülni a fent említett repülő lényeket
 ### Kapcsolódik
 
 - [Léglovas harc](../fortelyok.harci/leglovas_harc.md) fortély
+- [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk léglovas alakzatok esetén.
 - [Vezető: Léglovaskapitány](../fortelyok.harci/vezeto_leglovaskapitany.md) fortély: csoportos légi hátas alakzat vezetése esetén bónuszt ad.
 
 ### Normál kiterjesztés

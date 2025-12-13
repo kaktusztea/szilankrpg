@@ -23,6 +23,7 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverék
 ### Kapcsolódik
 
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély
+- [Csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport. 
 - [Vezető: Orvosprofesszor](../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos orvoslás esetén bónuszt ad
 
 ### Speciális

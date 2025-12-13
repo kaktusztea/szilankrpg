@@ -22,6 +22,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 
 - [Harcmodor](harcmodor.md) képzettség
 - [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) fortély egyes fokainak követelménye
+- [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén.
 
 <br />
 

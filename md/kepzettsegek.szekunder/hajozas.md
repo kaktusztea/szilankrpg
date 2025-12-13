@@ -8,6 +8,7 @@ A hajózás képessége magában foglalja a hajók, legénység kezelését, ir�
 
 ### Kapcsolódik
 
+- [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk.
 - [Vezető: Hajóskapitány](../fortelyok.altalanos/vezeto_hajoskapitany.md) fortély: csoportos hajózás esetén bónuszt ad.
 
 ### Normál kiterjesztés

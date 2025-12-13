@@ -4,9 +4,9 @@ Egy entitásként, észrevétlenül suhantok át fejvadász alakulatoddal a véd
 
 ### Kiterjeszti ezeket
 
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
-    - Fejvadász csapat rajtaütését megtervezni, vezetni.
-    - ⚡ "Ketten a tetőre, magitor savfelhőt a teraszra. Mortel, indulj!"
+[Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
+- Fejvadász csapat rajtaütését megtervezni, vezetni.
+- ⚡ "Ketten a tetőre, magitor savfelhőt a teraszra. Mortel, indulj!"
 
 ---
 ### Alapeset
