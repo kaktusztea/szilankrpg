@@ -11,18 +11,22 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 
 ### Alapeset
 
-🔒 **Követelmény**:  -
+```
++3: Gyors átöltözés
++6: Átöltözés másodpercek alatt
+```
 
-🌟 **Hatás**:
-- Gyors átöltözéskor körülménytől függően `[+1; +6]` mértékben nőhet a képzettségpróba Nehézsége.
-- Szegényes felszerelés esetén körülménytől függően `[+1; +6]` mértékben nőhet a képzettségpróba Nehézsége.
+```
++3: Szegényes felszerelés
++6: Minimális felszerelés
+```
 
 ---
 ### 1. fok
 
 🔒 **Követelmény**: [Álcázás/álruha](../kepzettsegek.szekunder/alcazas_alruha.md) - `4.szint`
 
-🌟 **Hatás**: Az Alapesetnél leírt büntetéseket `3`-al csökkentheted képzettségpróbánál.
+🌟 **Hatás**: Az Alapesetnél leírt mindkét eset büntetéseit `3`-mal csökkentheted képzettségpróbánál.
 
 <br />
 
@@ -30,6 +34,6 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 
 🔒 **Követelmény**: Álcázás/Álruha - `8.szint`
 
-🌟 **Hatás**: Az Alapesetnél leírt büntetéseket `6`-tal csökkentheted képzettségpróbánál.
+🌟 **Hatás**: Az Alapesetnél leírt mindkét eset büntetéseit `6`-tal csökkentheted képzettségpróbánál.
 
 ---

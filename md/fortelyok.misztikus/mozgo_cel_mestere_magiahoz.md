@@ -8,8 +8,11 @@ Amennyiben **Kiszámíthatatlanul mozgó**, vagy **Harcoló** ellenfélre lősz 
 🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- Kiszámíthatatlan Szorzó: `4x`
-- Harcoló Szorzó: `5x`
+
+```
+4x: Kiszámíthatatlan Szorzó
+5x: Harcoló Szorzó
+```
 
 ---
 ### 1. fok
@@ -19,7 +22,10 @@ Amennyiben **Kiszámíthatatlanul mozgó**, vagy **Harcoló** ellenfélre lősz 
 - Mágikus célzás  **-** `5.szint`
 
 🌟 **Hatás**:
-- Kiszámíthatatlan Szorzó: `3x`
-- Harcoló Szorzó: `4x`
+
+```
+3x: Kiszámíthatatlan Szorzó
+4x: Harcoló Szorzó
+```
 
 ---

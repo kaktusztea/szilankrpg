@@ -39,7 +39,7 @@ Játék előtt konzultálj a KM-eddel és sorold el, milyen kidolgozott archetí
 ```
 1 archetípus felszerelés
 
- == közepes felszerelés tárgy
+ == közepes felszerelés tárgy //
  == nagy felszerelés tárgy
 ```
 
@@ -120,7 +120,16 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 ---
 ### Célszám módosító körülmények
 
-- Gyors átöltözés: körülménytől függ: `[+1; +6]`
-- Szegényes felszerelés: `[+1; +6]`
+```
++3: Gyors átöltözés
++6: Átöltözés másodpercek alatt
+```
+
+```
++3: Szegényes felszerelés
++6: Minimális felszerelés
+```
+
+Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
 
 ---

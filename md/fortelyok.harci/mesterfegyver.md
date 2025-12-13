@@ -9,11 +9,10 @@ A legtöbb esetben egy karakternek van egy (vagy több) konkrét fegyvere, amely
 
 #### Alapeset
 
-🔒 **Követelmény**: -
+A fegyver alap harcértékei számítanak (egyéb bónuszokkal).
 
-🌟 **Hatás**: fegyver alap harcértékei (egyéb bónuszokkal)
+<br />
 
----
 ### 1. fok
 
 🔒 **Követelmény**: Harcmodor - `4.szint`

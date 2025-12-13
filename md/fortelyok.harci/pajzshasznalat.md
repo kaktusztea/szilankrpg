@@ -13,26 +13,29 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 
 ### Alapeset
 
-🔒 **Követelmény**: -
+Képzetlen pajzshasználó. A pajzs `VÉ` **fele** aktív csak ↓, továbbá `TÉ` levonás értékei:
 
-🌟 **Hatás**:
-- Képzetlen pajzshasználó. A pajzs `VÉ` **felét** kapja csak meg ↓
-- `TÉ` levonás
-  - **Kis pajzs**: `-3`
-  - **Közepes pajzs**: `-6`
-  - **Nagy pajzs**: `-9`
+```
+TÉ levonás
+-3: Kis pajzs
+-6: Közepes pajzs
+-9: Nagy pajzs
+```
+
 
 ---
 ### 1. fok
 
 🔒 **Követelmény**: Erő: `+0`
 
-🌟 **Hatás**:
-- Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
-- `TÉ` levonás
-  - **Kis pajzs**: `0`
-  - **Közepes pajzs**: `-3`
-  - **Nagy pajzs**: `-6`
+🌟 **Hatás**: Teljes pajzs `VÉ` akítv
+
+```
+TÉ levonás
+-0: Kis pajzs
+-3: Közepes pajzs
+-6: Nagy pajzs
+```
 
 <br />
 
@@ -42,15 +45,17 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 - Erő: `+1`
 - Harcmodor: `5.szint`
 
-🌟 **Hatás**:
-- Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
-- `TÉ` levonás
-  - **Kis pajzs**: `0`
-  - **Közepes pajzs**: `0`
-  - **Nagy pajzs**: `-3`
-- Támadhatsz is a pajzzsal - ha csak az van nálad, akkor azzal.
-- Ha fegyver is van nálad: akkor VAGY a fegyverrel VAGY a pajzzsal támadhatsz.
-- Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket.
+🌟 **Hatás**: Teljes pajzs `VÉ` akítv
+
+```
+TÉ levonás
+-0: Kis pajzs
+-0: Közepes pajzs
+-3: Nagy pajzs
+```
+
+- Fegyverrel VAGY a pajzzsal külön támadhatsz
+- Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket
 
 <br />
 
@@ -60,12 +65,15 @@ Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon mé
 - Erő: `+1`
 - Harcmodor: `8.szint`
 
-🌟 **Hatás**:
-- Tudsz pajzsot használni, megkapod annak teljes `VÉ`-jét
-- Extra `VÉ:+2` minden pajzshoz
-- `TÉ` levonás: `0`
-- Támadhatsz is a pajzzsal - ha csak az van nálad, akkor azzal.
-- Ha fegyver is van nálad: akkor VAGY a fegyverrel VAGY a pajzzsal támadhatsz.
-- Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket.
+🌟 **Hatás**: Teljes pajzs `VÉ` akítv
+
+```
+TÉ levonás nincs
+VÉ:+2 minden pajzshoz
+
+```
+
+- Fegyverrel VAGY a pajzzsal külön támadhatsz
+- Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket
 
 ---

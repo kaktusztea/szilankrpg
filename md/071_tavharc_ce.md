@@ -74,7 +74,10 @@ Lásd bővebben:
 +7: Kitartott célzás fortéllyal
     1 célzással eltöltött
     kör után (nem additív) 🔆
+
 -7: Hirtelen lövés
+-0: Hirtelen lövés
+    Lövés reflexből fortéllyal
 ```
 
 🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!

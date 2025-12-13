@@ -24,7 +24,8 @@ CÉ levonás
 
 🔒 **Követelmény**:
 - Lovaglás/Léglovaglás - `6.szint`
-- Hajítás vagy Íjászat vagy Lövészet - `5.szint`
+- Távolsági harcmodor - `5.szint`\
+  (**Íjászat** / **Lövészet** / **Hajítás**)
 - [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) - `1.fok`
 - [Lovas harc](../fortelyok.harci/lovas_harc.md) - `2.fok`
 
@@ -41,7 +42,8 @@ CÉ levonás
 
 🔒 **Követelmény**:
 - Lovaglás/Léglovaglás - `9.szint`
-- Hajítás vagy Íjászat vagy Lövészet - `9.szint`
+- Távolsági harcmodor - `9.szint`\
+  (**Íjászat** / **Lövészet** / **Hajítás**)
 - [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) - `2.fok`
 - [Lovas harc](../fortelyok.harci/lovas_harc.md) - `3.fok`
 
