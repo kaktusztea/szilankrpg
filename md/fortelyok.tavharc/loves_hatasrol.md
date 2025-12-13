@@ -4,7 +4,7 @@ Gyakorlott vagy földi, vagy légi hátasról való íjászatban, lövészetben.
 
 ### Kapcsolódik
 
-[Harc lóhátról fejezet](../067_00_harc_hatasrol.md)
+[Lovas harc szabályai](../067_01_lovas_harc_szabalyai.md)
 
 <br />
 

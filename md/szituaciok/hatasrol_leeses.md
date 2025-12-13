@@ -1,6 +1,6 @@
 # Hátasról leesés
 
-Kapcsolódik:  [Lovas Harc](../067_01_lovas_harc_szabalyok.md) fejezet
+Kapcsolódik:  [Lovas Harc](../067_01_lovas_harc_szabalyai.md) fejezet
 
 ## Sebesüléskor leesés kockázata
 

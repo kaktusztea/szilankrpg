@@ -67,7 +67,7 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 **Védekezőszint** `VÉ` bónusza: mint egy extra [harcmodorból képzettség szintjéből adódó érték](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
 🔆 **Megjegyzés**
-- [Lovaglás bónuszai](067_01_lovas_harc_szabalyok.md#lovasléglovas-harcértékek-kiszámítása) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
+- [Lovaglás bónuszai](067_01_lovas_harc_szabalyai.md#lovasléglovas-harcértékek-kiszámítása) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
 - Íjászok/Lövészek esetén `TÉ` helyett a `CÉ` az, amelyre  a harcmodorból adódó bónusz jár
 
 <br />

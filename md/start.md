@@ -215,7 +215,7 @@
 
 #### 6.7 [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
 
-- [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyok.md)
+- [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyai.md)
 - [Lovas, Léglovas fortélyok](067_02_lovas_leglovas_fortelyok.md)
 - [Lovas, Léglovas harci taktikák](067_03_lovas_harci_taktikak.md)
 - [Lovas, Léglovas manőverek](067_04_lovas_manoverek.md) 🎲
