@@ -11,7 +11,7 @@ K: lövészek átlagos
 Célszám =
    + 10
    - (K / 3) ↓
-   - (Távolság / 50) ↓
+   - (Távolság / 20) ↓
    - Lövészek száma
 ```
 
