@@ -8,7 +8,7 @@
  - Könnyűléptű
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 ```
 Novícius (3) 📖

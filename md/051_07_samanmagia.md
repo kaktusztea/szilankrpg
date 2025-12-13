@@ -11,7 +11,7 @@ Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzők
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 

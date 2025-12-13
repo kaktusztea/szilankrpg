@@ -26,7 +26,7 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 
 

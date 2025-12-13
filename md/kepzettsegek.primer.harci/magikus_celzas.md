@@ -18,7 +18,7 @@ A képzettség szintjétől függően büntetéseket/bónuszokat kapsz harcért�
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 

@@ -41,7 +41,7 @@ Emlékezet
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 

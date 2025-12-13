@@ -29,7 +29,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 

@@ -36,7 +36,7 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 

@@ -42,7 +42,7 @@ Célszám: 9 + város méret módosítója
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Mester (9) 📖
 

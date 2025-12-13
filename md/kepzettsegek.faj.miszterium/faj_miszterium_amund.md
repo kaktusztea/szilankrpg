@@ -30,7 +30,7 @@ Az amund karakternek - amennyiben papi mágiatudó szeretne lenni - minimum `6.`
 Továbbá minden Szférát rendesen tanulnia kell. A két képesség nem kombinálható!
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 ```
 Novícius (3) 📖

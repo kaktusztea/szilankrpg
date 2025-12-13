@@ -19,7 +19,7 @@ Most lássuk a **Természeti Tradíció** egyes szintjeihez rendelt jellemzőket
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 

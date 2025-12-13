@@ -47,7 +47,7 @@ Amennyiben a dzsenn felveszi a [Magasmágia](../051_01_magasmagia.md) tradíció
 ⭕TODO: átnézni⭕
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 ```
 Novícius (3) 📖

@@ -25,9 +25,9 @@ Nincs, csak biztos tudásból.
 
 <br />
 
-### Biztos tudás, követelmények
+### Szintek, követelmények
 
-| Képzettség szint | Biztos tudás, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
+| Képzettség szint | Szintek, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
 |:---------------- |:---------------------------------------------------------------------------------- |:-----------:|
 | Novícius (3)     | xyz <br /> **Példa**: x                                                            |             |
 | Kismester (6)    | xyz <br /> **Példa**: x                                                            |             |

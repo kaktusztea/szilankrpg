@@ -23,7 +23,7 @@ Emlékezet, Intelligencia
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Mester (9) 📖
 

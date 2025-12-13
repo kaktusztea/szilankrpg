@@ -49,7 +49,7 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
   - [Kézműves: Szűcs](../fortelyok.szabad/kezmuves_szucs.md)
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 

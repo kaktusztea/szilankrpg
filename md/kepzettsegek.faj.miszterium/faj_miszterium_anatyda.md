@@ -8,7 +8,7 @@
 - Erre a legalkalmasabb az Anatyda lenne, mert ők alapból ember kinézetű alakváltók, az egész kontinensen jelen vannak, de azért nincsenek túl sokan
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 ```
 Novícius (3) 📖

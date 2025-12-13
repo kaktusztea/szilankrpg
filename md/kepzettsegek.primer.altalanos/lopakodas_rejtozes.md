@@ -31,7 +31,7 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 
 <br />
 
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 ---
 #### Mester (9) 📖

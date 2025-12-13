@@ -12,7 +12,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🤝 Csoportban végezhető képzettség
 
-📖 Képzettség - biztos tudás szint
+📖 Képzettség szint
 
 🎲 Próbadobós jellemző/oldal; Képzettségpróba nehézség
 

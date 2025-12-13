@@ -20,7 +20,7 @@ Emlékezet, Önuralom, Intelligencia
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../151_meregkeveres_szabalyai.md#3-el%C3%A1ll%C3%A1s--ki%C3%BCr%C3%BCl%C3%A9s) is **biztos tudást igényel**. Bővebben lásd ott.
 

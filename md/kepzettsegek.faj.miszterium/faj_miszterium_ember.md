@@ -11,7 +11,7 @@
 - jobb ellenálló képesség betegségekkel szemben (ez a való világban is kialakult Európában, mert itt volt a legtöbb nagy népsűrűségű és rettenetesen szutykos város)
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 ```
 Novícius (3) 📖

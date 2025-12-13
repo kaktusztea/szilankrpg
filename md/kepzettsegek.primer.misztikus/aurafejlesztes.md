@@ -18,7 +18,7 @@ Intelligencia, Érzékenység
 
 <br />
 
-### Biztos tudás, követelmények
+### Szintek, követelmények
 
 #### Novícius (3) 📖
 

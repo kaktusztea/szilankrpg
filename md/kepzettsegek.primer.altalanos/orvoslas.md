@@ -69,7 +69,7 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Mester (9) 📖
 

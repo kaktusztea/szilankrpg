@@ -22,7 +22,7 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 <br />
 
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 ---
 #### Mester (9) 📖

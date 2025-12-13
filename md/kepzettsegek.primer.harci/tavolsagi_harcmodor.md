@@ -27,7 +27,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Novícius (3) 📖
 

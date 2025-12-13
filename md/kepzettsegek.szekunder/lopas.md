@@ -41,7 +41,7 @@ Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módo
 <br />
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 #### Mester (9) 📖
 

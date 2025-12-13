@@ -7,7 +7,7 @@
 - Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia módszerrel), vagy Teremtés arkánuma (ősibb nép, mint az elfek)
 
 ---
-### Biztos tudás, követelmények 📖
+### Szintek, követelmények 📖
 
 ```
 Novícius (3) 📖
