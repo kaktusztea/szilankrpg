@@ -2,11 +2,11 @@
 
 Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
 
-## ⚜️ `1.`Pusztakezes harc közben megpróbál fegyvert rántani
+## ⚜️ `1.`Pusztakezes fegyvert ránt harc közben
 
-Ezen fegyverrántás szituáción azt értjük, amikor egy fegyvertelen karakter harci kontaktus közben próbálja előkapni fegyverét, hogy ne pusztakezes értékeivel legyen kénytelen küzdeni, miközben ellenfele már fegyverével fenyegeti.
+Mikor egy fegyvertelen karakter harc közben próbálja előkapni fegyverét, fegyveres ellenfelével szemben.
 
-Fegyverrántásnál pengemérettől függ, hogy milyen módosító jár a `KÉ` értékére:
+Fegyverrántásnál pengemérettől függ a `KÉ` módosító:
 
 ```
 Tőr méretű:
@@ -19,41 +19,34 @@ Csatabárd méretű:
   Hátrány-2 KÉ dobásra
 ```
 
-Tehát minél nehezebb előrántani egy fegyvert, annál nagyobb rá a büntetés. Hogy a fegyver melyik kategóriába tartozik, azt a KM határozza meg.
+Fegyver kategóriáját a KM határozza meg.
 
-### `1.1` Elveszíti a kezdeményezést
+### `1.1` Eset: Fegyverrántó elveszíti a kezdeményezést
 
-Nem sikerül előrántania a fegyvert, elvesztett egy akciót és fegyvertelen `VÉ` harcértékével várja ellenfele támadását.
+Nem sikerül előrántanod a fegyvert, elhasználtál egy támadás akciót és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled támadását.
 
-### `1.2` Fegyverrántó nyeri a kezdeményezést
+### `1.2` Eset: Fegyverrántó nyeri a kezdeményezést
 
-Sikerült előrántania fegyverét, és teljes, immár fegyveres `VÉ` harcértéke érvényesül.\
-Ellenfele dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadást felemésztő cselekedet.
+Sikerült előrántanod fegyvered, és teljes, fegyveres `VÉ` harcértéked érvényesül.\
+Ellenfeled dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadásodat felemésztő cselekedet.
 
-### `1.3` Fegyverrántó nyeri a kezdeményezést `+3` túldobással
+### `1.3` Eset: Fegyverrántó nyeri a kezdeményezést `+3` túldobással
 
 A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is. A harc innen a megszokott módon folytatódik.
 
 ### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
 
-Fegyverrántás szituációban az alkalmazó oldalán az alábbi előnyök járnak:
-
-```
-1.fok:
-  [Hátrány-2; Előny+2] skálán
-  1 lépést felfele ugrasz
-
-2.fok:
-  [Hátrány-2; Előny+2] skálán
-  2 lépést felfele ugrasz
-```
+`KÉ` dobás `[Hátrány-2; Előny+2]` skálán ugrassz feljebb. Lásd a fortélyt.
 
 <br />
 
 ---
 ## ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
 
-Ekkor mindkettőjükre érvényesek az `1.` pontnál leírt módosítók. Az támad előbb, aki nyeri a kezdeményezést, ellenfele pedig `Pusztakezes VÉ`-vel védekezhet csak és képtelen előkapni fegyverét. Ha elő akarja húzni, akkor a következő kör elején, támadását feláldozva újra fegyverrántással kell próbálkoznia.
+Mindkét félre érvényesek az `1.` pontnál leírt módosítók.
+
+- Aki nyeri a Kezdeményezést: fegyveres harcértékkel támad azonnal
+- Aki vesztett: Pusztakezes `VÉ`-vel védekezhet és képtelen előkapni fegyverét. Következő kör elején, `1` támadást feláldozva próbálkozhat újra fegyverrántással.
 
 <br />
 
@@ -73,7 +66,7 @@ Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 ---
 ## 🔆 Szálfegyverek
 
-Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy kézben vannak, vagy olyan módon tárolva, ahonnan lehetetlen fegyverrántással előhúzni.
+Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy kézben vannak, vagy nem lehetséges előhúzni.
 
 <br />
 
