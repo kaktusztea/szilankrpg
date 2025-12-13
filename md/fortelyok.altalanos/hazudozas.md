@@ -19,3 +19,10 @@ Megpróbálsz megetetni valakivel egy jó kis hazugságot.
 Téged próbálnak átverni.
 
 ---
+### 1. fok
+
+🔒 **Követelmény**: Intelligencia: `+0`
+
+🌟 **Hatás**: A kiterjesztett képzettségek hazudozással kapcsolatos próbáinál nincs levonás.
+
+---

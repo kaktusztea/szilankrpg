@@ -7,3 +7,10 @@ A másik nem elcsábítása, vagy a rosszindulatú csábítás felismerése.
 - [Emberismeret](../kepzettsegek.primer.altalanos/emberismeret.md): Kiszúrod, hogy az ellenkező nem közeledése nem épp ártatlan, rejtett szándékot sejtesz.
 
 ---
+### 1. fok
+
+🔒 **Követelmény**: Intelligencia: `+0`
+
+🌟 **Hatás**: A kiterjesztett képzettségek csábítással kapcsolatos próbáinál nincs levonás.
+
+---

@@ -73,7 +73,6 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 - [Kézműves: Szűcs](fortelyok.szabad/kezmuves_szucs.md)
 - [Kihallgatás](fortelyok.szabad/kihallgatas.md)
 - [Különleges faj boncolása](fortelyok.szabad/kulonleges_faj_boncolasa.md) 🔁
-- [Megfélemlítés](fortelyok.szabad/megfelemlites.md)
 - [Pénzügyek](fortelyok.szabad/penzugyek.md)
 - [Rejtjelfejtő](fortelyok.szabad/rejtjelfejto.md)
 - [Stratégia](fortelyok.szabad/strategia.md)

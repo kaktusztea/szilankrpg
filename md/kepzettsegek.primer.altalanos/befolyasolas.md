@@ -18,7 +18,7 @@ Intelligencia, Érzékenység
 - [Bűvészet](../fortelyok.szabad/buveszet.md): "Végtelen hatalmam megkettőzte az aranyok számát!"
 - [Csábítás](../fortelyok.altalanos/csabitas.md): Eltekered a másik fejét. Hamar megered a nyelve, hisz a szerelem vak. Nem mágikus hatású.
 - [Hazudozás](../fortelyok.altalanos/hazudozas.md): "Arra mentek! Jajjh, a lábam!"
-- [Megfélemlítés](../fortelyok.szabad/megfelemlites.md): "Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér..."
+- [Megfélemlítés](../fortelyok.altalanos/megfelemlites.md): "Kár lenne ezért a szép mellényért, nehezen jön ki belőle a vér..."
 - [Szónoklás](../fortelyok.szabad/szonoklas.md): "Mit választotok? A hazug, kövér urat, aki soha nem fogott kaszát a kezébe, vagy engem, aki magam is egy folyómenti faluból származom?"
 
 ### Erős kiterjesztés

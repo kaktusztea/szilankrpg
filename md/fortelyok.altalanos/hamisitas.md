@@ -19,3 +19,12 @@ Jól tudsz másolni műkincseket, műtárgyakat. Képes vagy egyes művészeti �
 ### Szituációk
 
 - [Hamisítás és felismerése](../szituaciok/hamisitas_es_felismerese.md)
+
+---
+### 1. fok
+
+🔒 **Követelmény**: Intelligencia: `+0`
+
+🌟 **Hatás**: Ismered a boncolás tudományát.
+
+---

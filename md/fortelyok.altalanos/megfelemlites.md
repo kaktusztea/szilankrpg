@@ -10,3 +10,10 @@ Passzív ismeretként nem tojod össze magad egy kis keménykedéstől.
 - [Emberismeret](../kepzettsegek.primer.altalanos/emberismeret.md): "Hiába lóbálja a kardját uram, fehér kendő nélkül nem engedhetem be."
 
 ---
+### 1. fok
+
+🔒 **Követelmény**: Intelligencia: `+0`
+
+🌟 **Hatás**: A kiterjesztett képzettségek megfélemlítéssel kapcsolatos próbáinál nincs levonás.
+
+---

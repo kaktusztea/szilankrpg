@@ -56,13 +56,13 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 
 [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Intelligencia vagy Érzékenység
-- Normál kiterjesztés: [Megfélemlítés](../fortelyok.szabad/megfelemlites.md) fortély
+- Normál kiterjesztés: [Megfélemlítés](../fortelyok.altalanos/megfelemlites.md) fortély
 
 `VS`
 
 [Emberismeret](../kepzettsegek.primer.altalanos/emberismeret.md) képzettség
 - Tulajdonság: Önuralom
-- Normál kiterjesztés: [Megfélemlítés](../fortelyok.szabad/megfelemlites.md) fortély
+- Normál kiterjesztés: [Megfélemlítés](../fortelyok.altalanos/megfelemlites.md) fortély
 
 #### Megfélemlítés Módosítók
 

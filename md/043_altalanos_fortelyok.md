@@ -34,6 +34,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Kitartás](fortelyok.altalanos/kitartas.md)
 - [Kocsihajtás](fortelyok.altalanos/kocsihajtas.md)
 - [Kötelékből szabadulás](fortelyok.altalanos/kotelekbol_szabadulas.md)
+- [Megfélemlítés](fortelyok.altalanos/megfelemlites.md)
 - [Méregálló](fortelyok.altalanos/meregallo.md)
 - [Műhelymester](fortelyok.altalanos/muhelymester.md)
 - [Nyomolvasás/eltűntetés](fortelyok.altalanos/nyomolvasas_eltuntetes.md)
