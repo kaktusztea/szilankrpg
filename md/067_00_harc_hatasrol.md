@@ -1,8 +1,6 @@
 ## Harc lóhátról, légi hátasról
 
-<sub>→ Nyitott kérdések a [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.lovasharc).</sub>
-
-Aki lóról harcol, az előnyben van, részben a magasabb pozíció, részben lova állandó mozgása, fenyegetése miatt.
+Aki hátasról harcol, az előnyben van, részben a magasabb pozíció, részben az állat állandó mozgása, fenyegetése miatt.
 
 ### [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyai.md)
 
