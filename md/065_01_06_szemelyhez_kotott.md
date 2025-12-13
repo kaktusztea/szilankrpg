@@ -110,6 +110,7 @@ Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély.
 ```
 Hátrány-1 TÉ dobásra
 Érzék(látás) - kioltott
+ (automatikus kudarc)
 ```
 
 Sötétben ugyan a támadás sikere drasztikusan lecsökken és mindenki, aki nem tudja [Infralátással](fortelyok.erzekek/infralatas.md), [Ultralátással](fortelyok.erzekek/ultralatas.md), vagy más módon kompenzálni a láthatóság csökkenését, az a fenti módosítóval harcol...
