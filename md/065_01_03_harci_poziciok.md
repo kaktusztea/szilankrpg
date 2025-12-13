@@ -51,8 +51,8 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
 
 - Ellenfél: `Előny+1` `TÉ` dobásra
 - Beszorított karakter:
-  - `Hátrány-1` KÉ dobásra
-  - `Hátrány-1` TÉ dobásra
+  - `Hátrány-1 KÉ` dobásra
+  - `Hátrány-1 TÉ` dobásra
   - [1 támadás elvesztése](081_hatasok.md#-1-támadás-elvesztése)
   - [Mozgás - feleződik](081_hatasok.md#-mozgás---feleződik)
 
@@ -62,8 +62,8 @@ Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való v�
 "A kamrában pallossal, vagy alabárddal"
 - Ellenfél: `Előny+2` `TÉ` dobásra
 - Beszorított karakter:
-  - `Hátrány-2` TÉ dobásra
-  - Hátrány-2` KÉ dobásra
+  - `Hátrány-2 TÉ` dobásra
+  - `Hátrány-2 KÉ` dobásra
   - [VÉ veszteség duplázódik](081_hatasok.md#-vé-veszteség-duplázódik)
   - [Többszörös támadás elvesztése](081_hatasok.md#-többszörös-támadás-elvesztése)
   - [Mozgás - feleződik](081_hatasok.md#-mozgás---feleződik)
