@@ -82,22 +82,36 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy ké
 
 ### `1.` Tőr méretű fegyver előrántása
 
-- Alap: egy tőrt könnyű előrántani így sima `KÉ` dobás, büntetés nélkül
-- Fegyverrántás `2.fok` fortéllyal: `Előny+2` KÉ dobásra
+```
+KÉ dobás
+→ Tőr: nincs büntetés
+→ Fegyverrántás: 2.fok
+  Előny+2 bónusz
+
+SUM: Előny+2 KÉ dobásra
+```
 
 ### `2.` Kard méretű fegyver előrántása
 
-- Ha kardot akarnék rántani, azt már nehezebb: `Hátrány-1` KÉ dobásra
-- Fegyverrántás `2.fok` fortéllyal
-  - `Előny+1` KÉ dobásra
-  - `Hátrány-1`-ből `2` fok pozitív irányba `Előny+1`
+```
+KÉ dobás
+→ Kard: Hátrány-1
+→ Fegyverrántás: 2.fok
+  Előny+2 bónusz
+
+SUM: Előny+1 KÉ dobásra
+```
 
 ### `3.` Kétkezes csatabárd méretű fegyver előrántása
 
-- Ez a méret már igazi kihívás: `Hátrány-2` KÉ dobásra
-- Fegyverrántás `2.fok` fortéllyal
-  - Alap KÉ dobás
-  - `Hátrány-2`-ből `2` fok pozitív irányba: Alap dobás
+```
+KÉ dobás
+→ KK csatabárd: Hátrány-2
+→ Fegyverrántás: 2.fok
+  Előny+2 bónusz
+
+SUM: sima KÉ dobás
+```
 
 ---
 
