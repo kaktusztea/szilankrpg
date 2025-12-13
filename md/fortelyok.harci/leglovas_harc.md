@@ -2,13 +2,22 @@
 
 Repülő hátason ülve sem esel kétségbe, ha harcolni kell.
 
+### Kapcsolódik
+
+- [Harc lóhátról fejezet](../067_00_harc_hatasrol.md): itt tárgyaljuk a **Léglovaglás** részleteit is.
+- [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettség
+
+<br />
+
+---
 ### Alapeset (képzetlenül)
 
 ```
 TÉ/VÉ: -9
 ```
 
----
+<br />
+
 ### 1. fok
 
 🔒 **Követelmény**:
@@ -48,10 +57,5 @@ TÉ/VÉ: -9
 🌟 **Hatás**:
 - fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` léglovas bónusz járul
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
-
----
-### Speciális
-
-Lásd a [Harc lóhátról fejezetet](../067_00_harc_hatasrol.md) - itt tárgyaljuk a **Léglovaglás** részleteit is.
 
 ---

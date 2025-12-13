@@ -11,7 +11,7 @@ Lenti bónuszok
 nem járnak
 ```
 
-Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. A `TÉ/VÉ` büntetésen felül nem jár továbbá semmilyen lent leírt bónusz.
+Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) / [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. Ilyen képzetlen helyzetben a fenti `TÉ/VÉ` büntetésen felül  semmilyen lent leírt bónusz sem jár.
 
 ---
 ## Lovas/Léglovas harcértékek kiszámítása
@@ -26,9 +26,16 @@ Fegyverméretre +1 penge bónusz
 Minimum pengeméret: 1
 ```
 
-🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély 
+🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély
 
 ❌ [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet NEM jár!
+
+<br />
+
+---
+## Lövés hátasról
+
+[Lövés hátasról](fortelyok.tavharc/loves_hatasrol.md) fortély szükséges hozzá. Nélküle a fortély Alapeseténél leírt büntetések érvényesek. Földi és légi hátasokra is érvényes.
 
 <br />
 

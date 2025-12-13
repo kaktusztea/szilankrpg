@@ -52,7 +52,7 @@
 
 - [Léglovas harc](fortelyok.harci/leglovas_harc.md)
 - [Lovas harc](fortelyok.harci/lovas_harc.md)
-- [Lovas íjászat](fortelyok.tavharc/lovas_ijaszat.md)
+- [Lövés hátasról](fortelyok.tavharc/loves_hatasrol.md)
 
 ---
 ### Távolsági harci fortélyok

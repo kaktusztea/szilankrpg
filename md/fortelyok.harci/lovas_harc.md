@@ -2,13 +2,22 @@
 
 Hátason ülve sem esel kétségbe, ha harcolni kell.
 
+### Kapcsolódik
+
+- [Harc lóhátról fejezet](../067_00_harc_hatasrol.md): itt tárgyaljuk a **Léglovaglás** részleteit is.
+- [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettség
+
+<br />
+
+---
 ### Alapeset (képzetlenül)
 
 ```
 TÉ/VÉ: -9
 ````
 
----
+<br />
+
 ### 1. fok
 
 🔒 **Követelmény**:
