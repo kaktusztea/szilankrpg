@@ -48,14 +48,16 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 #### [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
 
-#### [Távolsági fegyverek](077_tavharc_fegyverek.md)
+### [Területlövés](077_teruletloves.md)
+
+#### [Távolsági fegyverek](078_tavharc_fegyverek.md)
 
 ---
 ## Példák
 
-#### [Példalövészet](078_tavharc_peldak.md) ⚡
+#### [Példalövészet](079_01_tavharc_peldak.md) ⚡
 
-#### [Távharc sötétben](079_tavharc_sotetben.md) ⚡
+#### [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
 
 ---
 

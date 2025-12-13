@@ -19,7 +19,7 @@ Tehát `5` méterenként nő a fegyverrel szemben a célpont `Védő Értéke`.
 
 #### Kategóriák Osztó értéke
 
-A távolsági fegyverek kategóriáinak átlagos **Osztó** értékét a [Távharc fegyverek](077_tavharc_fegyverek.md#általános-harcértékek) fejezetben találod.
+A távolsági fegyverek kategóriáinak átlagos **Osztó** értékét a [Távharc fegyverek](078_tavharc_fegyverek.md#általános-harcértékek) fejezetben találod.
 
 #### Távolsági fegyverek konkrét Osztója
 

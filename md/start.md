@@ -264,9 +264,10 @@
 - [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
 - [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
 - [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
-- [Távolsági fegyverek](077_tavharc_fegyverek.md)
-- [Példalövészet](078_tavharc_peldak.md) ⚡
-- [Távharc sötétben](079_tavharc_sotetben.md) ⚡
+- [Területlövés](077_teruletloves.md)
+- [Távolsági fegyverek](078_tavharc_fegyverek.md)
+- [Példalövészet](079_01_tavharc_peldak.md) ⚡
+- [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
 
 ---
 ### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)

@@ -147,6 +147,6 @@ Ha nem fújt volna ennyire erősen a szél (`-1` Szorzóra) vagy nem ilyen rossz
 
 ---
 
-🔗 [Távharc sötétben](079_tavharc_sotetben.md) →
+🔗 [Távharc sötétben](079_02_tavharc_sotetben.md) →
 
 ⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)

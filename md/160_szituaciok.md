@@ -20,7 +20,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Szándékos kitérés lövés elől próba](szituaciok/szandekos_kiteres_loves_elol.md)
 - [Szándékos kitérés lövés elől sikertelen (rontott Gyorsaságpróba)](szituaciok/kiteres_loves_elol_sikertelen.md)
 - [Lövész nyúl a fegyveréért, támad rá egy harcos](szituaciok/lovesz_nyul_fegyvereert_tamad_ra_harcos.md)
-- [Lövés vaksötétben, zajos célpontra](079_tavharc_sotetben.md)
+- [Lövés vaksötétben, zajos célpontra](079_02_tavharc_sotetben.md)
 
 ## Szociális szituációk
 

@@ -182,3 +182,9 @@ Kapcsolódik: [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#sz%C
 ## Kapcsolódó Arkánumok
 
 [Elemi mágia - Formulák - Őselem idézése](kepzettsegek.primer.arkanumok/elemi_magia.md#őselem-idézése)
+
+---
+
+🔗 [Területlövés](077_teruletloves.md) →
+
+⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
