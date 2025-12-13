@@ -10,9 +10,8 @@ Alább egy rövid idővonalon haladhatunk végig, jelölve a rendszer fejleszté
 
 <br />
 
-### 2005.05.31
+### 2005.05.31: Kezdetek
 
-Kezdetek:
 - a rendszer első neve `km20` volt
 - első, háziszabályokat tartalmazó dokumentum: [2005-05-31_haziszabalyok_0v2.pdf](https://github.com/kaktusztea/szilankrpg/raw/master/archive/history/2005-05-31_haziszabalyok_0v2.pdf?raw=true)
 
