@@ -7,13 +7,7 @@
 Ez a Harcművészek speciális fortélya. A **Slan pszí** útja delejes erőt ad a harcművésznek pusztakezes küzdelmében.
 ### Alapeset
 
-🔒 **Követelmény**:  -
-
-🌟 **Hatás**:
-- Puszta kézzel csak `FP` sérülés okozható
-- [Pusztakezes harcértékek](../065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc)
-  - `KÉ,TÉ,VÉ: -3`
-  - `SP: -5+k20`
+Puszta kézzel csak `FP` sérülés okozható. Lásd  [Pusztakezes harcértékek](../065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc).
 
 ---
 ### 1. fok
@@ -23,10 +17,14 @@ Ez a Harcművészek speciális fortélya. A **Slan pszí** útja delejes erőt a
 - Slan Tradíció - `3.szint
 
 🌟 **Hatás**:
-- Minden `3.FP` → `1 ÉP` seb
-- Puszta kéz harcértékei:
-  - `KÉ,TÉ,VÉ: -3`
-  - `SP: -2 + k20`
+
+```
+Minden 3.FP → 1 ÉP seb
+
+Puszta kéz harcértékei:
+ KÉ,TÉ,VÉ: -3
+ SP: -2 + k20
+```
 
 ---
 ### 2. fok
@@ -37,10 +35,14 @@ Ez a Harcművészek speciális fortélya. A **Slan pszí** útja delejes erőt a
 - Mesterfegyver fortély (Puszta kéz): `1.fok`
 
 🌟 **Hatás**:
-- Minden `2.FP` → `1 ÉP` seb
-- Puszta kéz harcértékei:
-  - `KÉ,TÉ,VÉ: 0`
-  - `SP: 0 + k20`
+
+```
+Minden 2.FP → 1 ÉP seb
+
+Puszta kéz harcértékei:
+ KÉ,TÉ,VÉ: 0
+ SP: 0 + k20
+```
 
 ---
 ### 3. fok
@@ -51,10 +53,14 @@ Ez a Harcművészek speciális fortélya. A **Slan pszí** útja delejes erőt a
 - Mesterfegyver fortély (Puszta kéz): `2.fok`
 
 🌟 **Hatás**:
-- Minden sebzés rendes ÉP seb
-- Puszta kéz harcértékei:
-  - `KÉ,TÉ,VÉ: 3`
-  - `SP: +2 + k20`
+
+```
+Minden sebzés rendes ÉP seb
+
+Puszta kéz harcértékei:
+ KÉ,TÉ,VÉ: 3
+ SP: +2 + k20
+```
 
 ---
 ### Mesterfegyver bónusza

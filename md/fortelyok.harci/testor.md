@@ -4,9 +4,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik - együttműködő - szem
 
 ### Alapeset
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_03_harci_poziciok.md#védő-érték-kiterjesztése-másra) harci helyzetnél leírt büntetésekkel.
+Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_03_harci_poziciok.md#védő-érték-kiterjesztése-másra) harci helyzetnél leírt büntetésekkel.
 
 ---
 ### 1. fok
@@ -32,7 +30,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik - együttműködő - szem
 🌟 **Hatás**: Büntetések nélkül védheted pártfogoltad. A [Többszörös támadás elvesztése](../081_hatasok.md#-t%C3%B6bbsz%C3%B6r%C3%B6s-t%C3%A1mad%C3%A1s-elveszt%C3%A9se) Hatás sem sújt már.
 
 ---
-### Távolság
+### Követelmény, Távolság
 
 Az oltalmazott személy nem harcolhat, a testőrnek pedig **`2` méteren** belül kell lennie.
 

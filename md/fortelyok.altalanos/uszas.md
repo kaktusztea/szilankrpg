@@ -9,9 +9,7 @@ Ha egy kacsaúsztatónál mélyebb vízbe tévedsz, többé már nem merülsz el
 
 ### Alapeset
 
-🔒 **Követelmény**:  -
-
-🌟 **Hatás**: Az illető elmerül, fuldoklik.
+Az illető elmerül, fuldoklik.
 
 ---
 ### 1. fok

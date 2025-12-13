@@ -6,13 +6,15 @@ Fajhoz felvehető Érzék-fortély.
 
 Teljes sötétben is képes vagy tájékozódni.
 
+<br />
+
 ### Alapeset
 
-🔒 **Követelmény**:  -
+Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz semmit.\
+**Látás** érzékére [Érzékvesztés - teljes](../082_statuszok.md#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-3-teljes) Státusz.
 
-🌟 **Hatás**: Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz semmit. **Látás** érzékére [Érzékvesztés - teljes](../082_statuszok.md#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-3-teljes) Státusz.
+<br />
 
----
 ### 1. fok
 
 🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 1.fok**, mint felvehető Érzék-fortély
@@ -25,14 +27,15 @@ Teljes sötétben is képes vagy tájékozódni.
 
 🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 2.fok**, mint felvehető Érzék-fortély
 
-🌟 **Hatás**: Mintha szürkületkor tájékozódnál. Vaksötétben is tudsz olvasni, de csak bogarászva, mintha egy gyufa fényénél, lassan forgatnád a lapokat. Türelemjáték. A harcban nem jár számodra levonás.
+🌟 **Hatás**: Harcban nem jár számodra levonás. Mintha szürkületkor tájékozódnál. Vaksötétben is tudsz olvasni, de csak bogarászva, mintha egy gyufa fényénél, lassan forgatnád a lapokat. Türelemjáték. 
 
----
+<br />
+
 ### 3. fok
 
 🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 3.fok**, mint felvehető Érzék-fortély
 
-🌟 **Hatás**: Tökéletesen látsz, mintha nappal lenne, a látótávolság is ugyanaz. Úgy tudsz olvasni, mint napvilágnál. A harcban nem jár számodra levonás.
+🌟 **Hatás**: Harcban nem jár számodra levonás. Tökéletesen látsz, mintha nappal lenne, a látótávolság is ugyanaz. Úgy tudsz olvasni, mint napvilágnál.
 
 ---
 ### Egyedi jellemzők
