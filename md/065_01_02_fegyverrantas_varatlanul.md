@@ -55,13 +55,19 @@ Mindkét félre érvényesek az `1.` pontnál leírt módosítók.
 
 Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 
-Áldozat: [Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba (aktív/passzív észlelés számít)
+[Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba áldozat részéről (aktív/passzív észlelés számít)
 
-Sikertelen Észlelés: [Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadás
+#### `3.1` Sikertelen Észlelés áldozattól
 
-Sikeres Észlelés: Támadónak `Előny+1` Kezdeményezésre
-- Nyert Támadó `KÉ`: [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) módosítóit kapja meg a támadó
-- Vesztett Támadó `KÉ`: a megtámadott még így is gyorsabban reagál! Ő támadhat elsőnek, mindketten az aktuális harcértékeikkel és fegyvereikkel
+[Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadás támadó részéről.
+
+#### `3.2` Sikeres Észlelés áldozattól
+
+Támadó: `Előny+1 KÉ` dobásra
+
+- Támadó nyert `KÉ`: [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) bónuszait kapja
+- Megtámadott nyert `KÉ`: még így is ő támadhat elsőnek!\
+  Mindketten aktuális harcértékeikkel és fegyvereikkel
 
 <br />
 
