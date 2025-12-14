@@ -13,7 +13,7 @@ Belharci szituáció
   • Ha fegyver hossza rövidnél nagyobb: beszorított helyzet hatásai
   • Sebzés csökkentett
   • Erőbónusz és MF fortély bónuszai megmaradnak
-  • Puszta kéz értékek 0-ra emeltek
+  • Puszta kéz értékei 0-ra emelkednek
 ```
 
 ```
@@ -193,7 +193,7 @@ Tűz ruhán - lángol
   • Hátrány-2 Támadó dobásra
   • (k20+0 SP) / kör
 
-Vadállatok ellen
+Vadállatok elleni harc
   lásd leírást
 
 Védekező takarásban
@@ -245,7 +245,7 @@ Vér elvakít
   - [Vér elvakít](065_01_06_szemelyhez_kotott.md#v%C3%A9r-elvak%C3%ADt)
 - [Lények](065_01_07_lenyek.md)
   - [Nagy méretű lény (`1-2`)](065_01_07_lenyek.md#nagy-m%C3%A9ret%C5%B1-l%C3%A9ny-1-2)
-  - [Vadállatok ellen](065_01_07_lenyek.md#vad%C3%A1llatok-ellen)
+  - [Vadállatok elleni harc](065_01_07_lenyek.md#vad%C3%A1llatok-elleni-harc)
 
 ---
 
