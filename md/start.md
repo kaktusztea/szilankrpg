@@ -2,7 +2,7 @@
 
 ## Karakteralkotó
 
-**[Karakteralkotó v9.2.0 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.0.ods?raw=true)** &nbsp;&nbsp;- &nbsp;&nbsp;  [LibreOffice ⬇️](https://www.libreoffice.org/download/download/) 
+**[Karakteralkotó v9.2.0 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.0.ods?raw=true)** &nbsp;&nbsp;- &nbsp;&nbsp;  [LibreOffice](https://www.libreoffice.org/download/download/) ⬇️
 
 <br />
 
