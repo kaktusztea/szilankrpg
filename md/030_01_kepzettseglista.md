@@ -79,7 +79,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 
 🔵 [Természetjárás](kepzettsegek.szekunder/termeszetjaras.md)
 
-🔵 [Vajákosság](kepzettsegek.szekunder/vajakossag.md) 🤝
+🔵 [Vajákosság](kepzettsegek.szekunder/vajakossag.md)
 
 🔵 [Városi jártasság](kepzettsegek.szekunder/varosi_jartassag.md)
 
