@@ -40,43 +40,56 @@ Ha egy karakter készületlen, akkor támadója a [Meglepetés](#meglepetés) sz
 ---
 ## Beszorított helyzet
 
-Beszorított helyzeten azt értjük, ha az adott fegyverrel a harcos helyhiány miatt nem képes annak technikáit maradéktalanul alkalmazni. Ez nagyon szűk helyeken egészen szélsőséges hátrányokat is okozhat fegyver-típustól függően.
+Ha harcos helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ez nagyon szűk helyeken egészen szélsőséges hátrányokat is okozhat fegyver-típustól függően.
 
 „**Rövid**” fegyverekre (max `0.5` pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
 
 Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való védettség (falak) folytán szinte lehetetlen hozzáférni, ha egy irányból közelítenek. Ekkor nincs Beszorított helyzet, sőt a KM Előnyt is adhat a `TÉ` dobásra.
 
----
 ### Beszoritott helyzet (1) Enyhén
 
-- Ellenfél: `Előny+1` `TÉ` dobásra
-- Beszorított karakter:
-  - `Hátrány-1 KÉ` dobásra
-  - `Hátrány-1 TÉ` dobásra
-  - [1 támadás elvesztése](081_hatasok.md#-1-támadás-elvesztése)
-  - [Mozgás - feleződik](081_hatasok.md#-mozgás---feleződik)
+```
+Ellenfél
+ Előny+1 TÉ dobásra
 
----
+Beszorított karakter
+  Hátrány-1
+    KÉ dobásra
+    TÉ dobásra
+  1 támadás elvesztése
+  Mozgás - feleződik
+```
+
 ### Beszoritott helyzet (2) Erősen
 
 "A kamrában pallossal, vagy alabárddal"
-- Ellenfél: `Előny+2` `TÉ` dobásra
-- Beszorított karakter:
-  - `Hátrány-2 TÉ` dobásra
-  - `Hátrány-2 KÉ` dobásra
-  - [VÉ veszteség duplázódik](081_hatasok.md#-vé-veszteség-duplázódik)
-  - [Többszörös támadás elvesztése](081_hatasok.md#-többszörös-támadás-elvesztése)
-  - [Mozgás - feleződik](081_hatasok.md#-mozgás---feleződik)
-  - [Sebzés csökkentett](081_hatasok.md#-sebzés-csökkentett)
 
-**Harci taktikák**: a **Támadó- és Védő** taktikák **Beszorított helyzetben** továbbra is használhatóak.
+```
+Ellenfél
+ Előny+2 TÉ dobásra
 
-**Fontos**: Két Beszorított helyzetű harcos értékei nem "oltják ki" egymást. Mindkettőre igazak a "Beszorított karakter" büntetései.
+Beszorított karakter
+  Hátrány-2
+    KÉ dobásra
+    TÉ dobásra
+  VÉ veszteség duplázódik
+  Többszörös támadás elvesztése
+  Mozgás - feleződik
+  Sebzés csökkentett
+  (0 + k20 SP)
+```
+
+
+✅ **Támadó- és Védő** taktikák továbbra is használhatóak
+
+🔆 Két Beszorított helyzetű harcos: mindkettőre érvényesek a büntetések
 
 <br />
 
 ---
 ## Észrevétlen támadás
+
+Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
 
 ```
 Lopakodás/rejtőzés
@@ -85,16 +98,19 @@ Lopakodás/rejtőzés
 ```
 
 ```
-VÉ ← áldozat mozgási jellege
+Áldozat VÉ
+  áldozat mozgási jellege
+  határozza meg, ha a
+  Lopakodás sikeres
 ```
 
-Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
-
-Észrevétlen támadáshoz az alkalmazónak sikeres ellenpróbát kell dobnia **Lopakodás/rejtőzés** képzettségével áldozata **Észlelés** képzettsége ellen. Siker esetén áldozata [Védő Értékét annak mozgási jellege és mérete](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint) határozza meg. A támadó más helyzeti/taktika `TÉ` bónuszt nem kaphat.
+→ [VÉ: Mozgási jelleg és méret](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint)
 
 → [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---észrevétlen-támadás)
 
-→ Az **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás).
+🔆 Támadó más `TÉ` bónuszt nem kaphat
+
+🔆 **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás)
 
 <br />
 
@@ -105,9 +121,7 @@ Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillan
 Előny+1 TÉ dobásra
 ```
 
-Ha a karakter ellenfelére félhátulról támad, `Előny+1` jár `TÉ` dobására.
-
-Védekező Pajzs `VÉ` csak akkor számít, ha a pajzsot tartó kéz felőli oldalról jön a csapás.
+🔆 Védekező Pajzs `VÉ` csak akkor számít, ha a tartó kéz felőli oldalról jön a csapás
 
 <br />
 
@@ -118,22 +132,26 @@ Védekező Pajzs `VÉ` csak akkor számít, ha a pajzsot tartó kéz felőli old
 Előny+2 TÉ dobásra
 ```
 
-Ha az ellenfeléredre hátulról támad, azt jelentős előnnyel jár támadáskor.
-
-A védekező karakter pajzsának `VÉ` értéke NEM számít.
+🔆 Védekező pajzs `VÉ` értéke **NEM** számít
 
 <br />
 
 ---
 ## Közrefogás
 
-Ha valakit két oldalról sikerül közrefogni, az `1 pengényi` hátrányt semlegesít.
+Ha valakit két oldalról sikerül közrefogni, az `1 pengényi` hátrányt semlegesít annak pengeelőnyéből.
 
-Példák:
-- Két tőrös közrefog egy Hosszú kardost
-  - A hosszú kardos "**Fegyverméret - 1 pengés**" helyzetből "Fegyverméret - Azonos" helyzetbe kerül
-- Két tőrös közrefog egy lándzsást
-  - A lándzsás "Fegyverméret - 2 pengés" előnyből "Fegyverméret - 1 pengés" helyzetbe kerül
+#### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
+
+A hosszú kardos
+- "Fegyverméret - 1 pengés" helyzetből
+- "**Fegyverméret - Azonos**" helyzetbe kerül
+
+#### ⚡Példa: Két tőrös közrefog egy lándzsást
+
+A lándzsás
+- "Fegyverméret - 2 pengés" előnyből
+- "**Fegyverméret - 1 pengés**" helyzetbe kerül
 
 <br />
 
@@ -144,11 +162,9 @@ Példák:
 Előny+2 TÉ Dobásra
 ```
 
-A levegőből támadás - például egy légi hátasról - jelentős előnnyel jár.
+🔆 Roham (zuhanás) külön, plusz számolandó
 
-Egy esetleges Roham (zuhanás) külön, plusz számolandó.
-
-Levegőből lehetséges [Fárasztó taktikát](065_02_harci_taktikak.md#fárasztó-taktika-) alkalmazni.
+🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
 
 <br />
 
@@ -159,9 +175,7 @@ Levegőből lehetséges [Fárasztó taktikát](065_02_harci_taktikak.md#fáraszt
 Előny+1 TÉ dobásra
 ```
 
-Ha valaki magasabbról harcol, az előnyben van ellenfelével szemben. Ilyen helyzetben `Előny+1` jár `TÉ` dobására.
-
-A [harc hátasról](067_00_harc_hatasrol.md) helyzet esetén NEM jár ez a módosító, ott külön tárgyaljuk az egyes módosítókat.
+🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
 
 <br />
 
@@ -173,9 +187,9 @@ Támadó és Védekező:
   Hátrány-1 TÉ dobásra
 ```
 
-Ebben a szituációban mindkét fél részére nehezebb harcolni. Példa: kapu, belógó falrész.
+🔆 Ebben a szituációban mindkét fél számára nehezebb harcolni. Példa: kapu, belógó falrész.
 
-Figyelem: ha a védekező mozgásában korlátozottá válik a körülötte levő tereptárgyaktól, akkor változik a helyzet és az alábbiak közül valamelyik (KM dönt) módosítói vonatkoznak rá:
+🔆 Ha a harcos mozgásában korlátozottá válik pl. tereptárgyaktól, akkor már egy más helyzet (KM dönt) vonatkozik rá:
 - [Beszorított helyzet](#beszorított-helyzet)
 - [Helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve)
 
@@ -189,9 +203,9 @@ Többszörös támadás elvesztése
 VÉ veszteség duplázódik
 ```
 
-Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de ilyenkor csak egyet támadhatsz a körben és az elszenvedett VÉ csökkenéseid is duplázódnak.
+🔆 Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
 
-A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
+🔆 A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
 
 ---
 

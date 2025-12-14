@@ -190,12 +190,11 @@ Képtelen vagy bármilyen diszciplína végzésére, fenntartására. Az Aurádr
 
 <br />
 
-
 ---
 ### 🔥 Sebzés csökkentett
 
 ```
-k20+0 SP
+0 + k20 SP
 ```
 
 <br />
