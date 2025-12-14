@@ -12,7 +12,7 @@ A számos összecsapás során sebeket osztasz és szenvedsz el. A [Gyógyítás
 
 Kiemelt fejezetet szenteltünk a [Szituációknak](160_szituaciok.md), amely fejezetei segítenek, hogy ne maradj sorvezető nélkül klasszikus próbahelyzetek során sem, mint például az [Érzékelés, Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) - ami talán a leggyakoribb ellenpróbás szituáció, amivel a kalandozásaid során találkozhatsz. 
 
-A rendszer kiválóan adaptálható nem-fantasy, modern világokra is, ennek főleg két eszköze van szabályok szontjén:
+A rendszer kiválóan adaptálható nem-fantasy, modern világokra is, ennek főleg két eszköze van szabályok szintjén:
 
 - új ad-hoc [Szabad fortélyok](042_szabad_fortelyok.md) meghatározásával a képzettségek kiterjesztéseként (példákkal)
 - [Távharc Osztó](072_tavharc_ve_oszto_cella.md) meghatározásával lőfegyverekre (Távcsöves puska: `10`)
