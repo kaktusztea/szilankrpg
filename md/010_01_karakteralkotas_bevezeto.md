@@ -67,7 +67,7 @@ Karakteralkotó Pontjaidat [Fortélyok](040_fortelyok.md) felvételére is költ
 
 A [Kiemelt Fortélyok](041_kiemelt_fortelyok.md) három egyedi ismeretet adnak, amelyekre nem kell `KP`-t költened.
 
-A [Szabad Fortélyok](042_szabad_fortelyok.md) - melyekből Tapasztalati Szintenként `1 fokot` **ingyen kapsz** - specializált, egy, vagy több képzettséget [kiterjesztő](030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) ismeretek.
+A [Szabad Fortélyok](042_szabad_fortelyok.md) - melyekből Tapasztalati Szintenként `1 db` **ingyen jár** - specializált, egy, vagy több képzettséget [kiterjesztő](030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) ismeretek.
 
 A [Pszí alkalmazás](fortelyok.misztikus/pszi_kiterjesztes.md) is a Fortélyok közt található.
 
