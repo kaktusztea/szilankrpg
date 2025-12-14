@@ -22,7 +22,7 @@ Mesélőként ekkor (vagy a játék elején) udvariasan tudassuk a játékosokka
 
 A játékosok sokszor könnyen eltávolodnak karaktereiktől, azok nehézségeitől, egyfajta örökmozgó avatárként tekintenek rájuk.
 
-Ilyenkor alkalmazhatsz több mesélői eszközt, például a kimerülés érzékeltetését. A harc, harc után, valós pihenés nélkül komolyan próbára teszi a kalandozókat is. Ha úgy érzed, vég nélküli darálás megy, kioszthatsz bizonyos időközönként random [Fáradság Pontokat (FP)](061_02_faradsag_pont.md), amelyek felgyűlése egy idő után már a harcértékekben is megmutatkozik.
+Ilyenkor alkalmazhatsz több mesélői eszközt, például a kimerülés érzékeltetését. A harc valós pihenés nélkül komolyan próbára teszi a kalandozókat is. Ha úgy érzed, vég nélküli darálás megy, kioszthatsz bizonyos időközönként random [Fáradság Pontokat (FP)](061_02_faradsag_pont.md), amelyek felgyűlése egy idő után már a harcértékekben is megmutatkozik.
 
 <br />
 
