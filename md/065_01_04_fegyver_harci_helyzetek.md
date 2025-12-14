@@ -67,18 +67,20 @@ Hátrány-1 CÉ dobásra
 Fegyver CÉ = 0
 ```
 
-Például sámli hajítása.\
-Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)\
-Mérsékelheti: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély
+⚡ Példa: sámli hajítása
+
+🔆 Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
+
+🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély
 
 <br />
 
 ---
 ## Képzetlen fegyverhasználat
 
-Lásd [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) oldalt.
+→ [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
-Ha egy karakter képzetlen az általa forgatott fegyver használatában, tehát `3.szint` alatt van a kapcsolódó [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettsége, akkor harcértékeit a fenti hivatkozás alatti levonások sújtják. A teljes képzetlenség a Harcmodor `0.szintjéről` indul.
+🔆 `3.szint` alatti kapcsolódó [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettségnél
 
 <br />
 
