@@ -11,7 +11,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Hátterek:
     - Faj: Elf, Ember, Törpe, stb.
     - Leíró: színesítő, szabadon választható jellemzők
-    - Karma: kalandjaid során KM-től kapod tetteit után
+    - Karma: kalandjaid során KM-től kapod tetteid után
 - Életerő kategóriák (**Edzettség** Tulajdonság függő)
 - Méregrendszer: méreg-generátor, mérgek működése, ellenállás
 - Tradíciók: Mágikus, Papi, Szellemi
