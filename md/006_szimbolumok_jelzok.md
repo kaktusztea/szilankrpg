@@ -49,10 +49,6 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🔺 ISSUE link (wiki)
 
-🔹 [OUT-OF-SYNC](https://github.com/kaktusztea/szilankrpg/wiki/OUT-OF-SYNC): a megjelölt rész inkonzisztens állapotban van más dokumentumok tartalmával.
-
-👀 [FIGYELT ELEM](https://github.com/kaktusztea/szilankrpg/wiki/FIGYELT-ELEMEK): a megjelölt részt figyelni kell egyensúly szempontból.
-
 🚧 Fejlesztése folyamatban
 
 ---
