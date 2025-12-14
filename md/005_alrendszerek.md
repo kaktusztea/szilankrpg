@@ -1,6 +1,6 @@
 ## A Szilánk RPG alrendszerei
 
-Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő struktúra, amely végigvezet, milyen alrendszerek működnek a `Szilánk` rendszere alatt.
+Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő struktúra, amely végigvezet, milyen alrendszerek működnek a `Szilánk` alatt.
 
 ### Általános
 
