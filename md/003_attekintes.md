@@ -2,7 +2,9 @@
 
 ⚜️ [Nyitóoldal](start.md)
 
-Mit is találsz ebben a szabályrendszerben? Ha sorban haladsz - és ez az ajánlott -, akkor elsőnek segítünk megalkotni a játékban megszemélyesített szereplődet a [Karakteralkotás](010_00_karakteralkotas.md) fejezetben, akivel más hősökkel együtt, csapatban, számos veszélyes helyzettel dacolhattok, élhettek át misztikus kalandokat. Az ilyen szituációkban előkerülnek a kardok, a páncélok és a taktikázás. A [Harcrendszer](060_00_harcrendszer.md) fejezetben az ilyen pusztakezes, vagy távolsági hadakozás szabályait taglaljuk.
+Mit is találsz ebben a szabályrendszerben? Ha sorban haladsz - és ez az ajánlott -, akkor elsőnek segítünk megalkotni a játékban megszemélyesített szereplődet a [Karakteralkotás](010_00_karakteralkotas.md) fejezetben, akivel más hősökkel együtt, csapatban, számos veszélyes helyzettel dacolhattok, élhettek át misztikus kalandokat.
+
+Az ilyen szituációkban előkerülnek a kardok, a páncélok és a taktikázás. A [Harcrendszer](060_00_harcrendszer.md) fejezetben az ilyen pusztakezes, vagy távolsági hadakozás szabályait taglaljuk.
 
 A M* világán nem az acél az egyetlen fegyver, vagy óvó erő. Mágikus hatalmadat a [Mágiarendszer](100_magiarendszer.md) fejezetekben terjesztheted ki. A számos összecsapás során sebeket osztasz és szenvedsz el. A [Gyógyítás, Gyógyulás](140_gyogyitas_gyogyulas.md) fejezet ennek a folyamatát fedi le, a [Méregrendszer](150_meregrendszer.md) a sunyibb megoldások alkalmazóinak mutathat érdekes oldalakat.
 
