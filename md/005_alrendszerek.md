@@ -14,7 +14,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
     - Karma: kalandjaid során KM-től kapod tetteid után
 - Életerő kategóriák (**Edzettség** Tulajdonság függő)
 - Méregrendszer: méreg-generátor, mérgek működése, ellenállás
-- Tradíciók: Mágikus, Papi, Szellemi
+- Tradíciók: Mágikus, Papi
 - Státuszok és általuk okozott Hatások
 
 ### Harcrendszer
