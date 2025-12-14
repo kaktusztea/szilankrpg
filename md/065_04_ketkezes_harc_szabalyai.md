@@ -8,24 +8,32 @@
 
 Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásában.
 
+```
+Nagyobb fegyver
+  Sebessége számít
+  Harcmodora számít
+```
+
 <br />
 
-## Harckeret módosítók
+## Harckeret számításhoz
 
 ```
 -1: minden 0.5 penge
     (SUM pengeméretek)
 
++1: Kétkezesség fortély
+
 +1: Kétkezes harc 0.fok
 +2: Kétkezes harc 1.fok
 +3: Kétkezes harc 2.fok
 +4: Kétkezes harc 3.fok
-
-+1: Kétkezesség fortély
 ```
 
-Nagyobb fegyver Sebessége számít.\
-A „rövid” fegyverek `0 pengének` számítanak.
+```
+„rövid” fegyverek
+  0 pengének számítanak
+```
 
 <br />
 
@@ -58,7 +66,8 @@ Kétkezes harc: 2.fok
 
 Harckeret
  +3: Kétkezes harc (2.fok)
- -0 = 0 / 0.5  (Σ 0+0 penge)
+ -0 = 0 / 0.5
+     SUM 0+0 penge
 ```
 
 ### ⚡Példa-2: Szablya + tőr
@@ -70,7 +79,8 @@ Kétkezes harc: 3.fok
 
 Harckeret
  +4: Kétkezes harc (3.fok)
- -3 = 1.5 / 0.5  (Σ 1 + 0.5 penge)
+ -3 = 1.5 / 0.5
+      SUM (1 + 0.5) penge
 ```
 
 ---

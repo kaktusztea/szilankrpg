@@ -10,13 +10,19 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 <br />
 
 ---
+### Használt harcmodor
+
+```
+Nagyobb fegyveré számít
+```
+
+---
 ### Alapeset (képzetlenül)
 
 ```
 → Harckeret: +1
-→ Nagyobb fegyver harcmodor
 → Nagyobb fegyver értékei számítanak
-→ Második fegyver értékei: 0
+→ Kisebb fegyver értékei: 0
 → Mf fortélyok NEM számítanak
 → TÉ dobásra Hátrány-1
 ```
@@ -28,15 +34,16 @@ Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 🔒 **Követelmény**
 
 ```
-Nagyobb fegyver harcmodora - 6.szint
-Kisebb fegyver harcmodora - 3.szint
+Nagyobb fegyver
+  harcmodora - 6.szint
+Kisebb fegyver
+  harcmodora - 3.szint
 ```
 
 🌟 **Hatás**
 
 ```
 → Harckeret: +2
-→ Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
 → Mf fortélyok NEM számítanak
 ```
@@ -48,15 +55,16 @@ Kisebb fegyver harcmodora - 3.szint
 🔒 **Követelmény**
 
 ```
-Nagyobb fegyver harcmodora - 9.szint
-Kisebb fegyver harcmodora - 6.szint
+Nagyobb fegyver
+  harcmodora - 9.szint
+Kisebb fegyver
+  harcmodora - 6.szint
 ```
 
 🌟 **Hatás**
 
 ```
 → Harckeret: +3
-→ Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
 → Mf: csak a nagyobb fegyveré számít
   (ha azonosak, akkor csak egyiké)
@@ -69,15 +77,16 @@ Kisebb fegyver harcmodora - 6.szint
 🔒 **Követelmény**
 
 ```
-Nagyobb fegyver harcmodora - 9.szint
-Kisebb fegyver harcmodora - 9.szint
+Nagyobb fegyver
+  harcmodora - 9.szint
+Kisebb fegyver
+  harcmodora - 9.szint
 ```
 
 🌟 **Hatás**
 
 ```
 → Harckeret: +4
-→ Nagyobb fegyver harcmodora számít
 → Fegyver harcértékek összeadódnak
 → Mf: mindkét fegyveré számít
 ```
