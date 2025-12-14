@@ -4,10 +4,10 @@
 ## Csúszós talaj
 
 ```
-Hátrány-1: TÉ dobásra
+Hátrány-1 TÉ dobásra
 ```
 
-Mindenkinek, aki csúszós talajon harcol `Hátrány-1` jár `TÉ` dobására. Addig tart, amíg a csúszós felületen áll, mozog a karakter.
+Addig tart, amíg a csúszós felületen áll, mozog a karakter.
 
 <br />
 
@@ -15,12 +15,12 @@ Mindenkinek, aki csúszós talajon harcol `Hátrány-1` jár `TÉ` dobására. A
 ## Elvesztett egyensúly
 
 ```
-→ Hátrány-1: TÉ dobásra
-→ Többszörös támadás elvesztése
-→ Mozgás - feleződik
+Hátrány-1 TÉ dobásra
+Többszörös támadás elvesztése
+Mozgás - feleződik
 ```
 
-A hatások alapból a kör végéig tart, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
+A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
 
 <br />
 
@@ -32,8 +32,6 @@ Hátrány-2 TÉ dobásra
 VÉ veszteség duplázódik
 ```
 
-Földről támadni sokkal nehezebb és a kitérés is energiaigényesebb.
-
 <br />
 
 ---
@@ -43,8 +41,6 @@ Földről támadni sokkal nehezebb és a kitérés is energiaigényesebb.
 Hátrány-1 TÉ dobásra
 VÉ veszteség duplázódik
 ```
-
-Ha a karakter helyhez kötve kénytelen harcolni, akkor jelentős hátránnyal teheti csak ezt.
 
 <br />
 

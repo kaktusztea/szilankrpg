@@ -87,17 +87,20 @@ Fegyver CÉ = 0
 ---
 ## Pusztakezes harc
 
+Egy fegyvertelen harcos jelentős hátrányban van egy fegyveressel szemben, ezért negatívak a [Puszta kéz](068_02_kozelharci_fegyverek.md) harcértékei.
+
 ```
 Puszta kéz harcértékei
 
 KÉ: -3, TÉ: -3, VÉ: -3
 ```
 
-Amennyiben valaki fegyvertelenül, puszta kézzel kénytelen egy felfegyverzett ellenféllel harcolni, akkor alapesetben hátrányban van. Ez a [Puszta kéz](068_02_kozelharci_fegyverek.md) negatív harcértékeiben mutatkozik meg. A különböző pusztakezes Fortélyok csak mérsékelik ezt a hátrányt. Egyetlen kivétel a harcművészek [Élő fegyver](fortelyok.slan/elo_fegyver.md) fortélya, amely mérsékeli az említett hátrányokat.
+🔆 Kapcsolódik:
+- [Élő fegyver](fortelyok.slan/elo_fegyver.md) fortély
+- [Természetes fegyver](fortelyok.harci/termeszetes.fegyver.md) fortély
+- [Belharci szituáció](065_01_01_belharci_szituacio.md), ahol a Puszta kéz harcértékei `0`-ra emelkednek és járnak a **Belharcból** eredő esetleges módosítók is.
 
-A fenti levonások kizárólag [Belharcban](065_01_01_belharci_szituacio.md) nem érvényesülnek, ahhoz viszont „**Belharcba kerülés**” Manőver szükséges! Belharcban a Puszta kéz harcértékei `0`-ra emelkednek, valamint járnak a **Belharcból** eredő esetleges módosítók is.
-
-A **Puszta kéz** – mint fegyver – szabály szempontjából „egykezes” fegyvernek számít, tehát **nem** lehet vele **Kétkezes harcot** folytatni!
+🔆 A **Puszta kéz** „egykezes” fegyvernek számít, tehát **nem** lehet vele **Kétkezes harcot** folytatni
 
 <br />
 
@@ -108,9 +111,7 @@ A **Puszta kéz** – mint fegyver – szabály szempontjából „egykezes” f
 Hátrány-1 TÉ dobásra
 ```
 
-Ha – például sérülés hatására – a harcos kénytelen átvenni fegyverét ügyetlenebb kezébe, akkor `Hátrány-1` büntetés jár `TÉ` dobására.
-
-Kivétel: [Kétkezesség fortély](fortelyok.harci/ketkezesseg.md), amely megléte esetén bármelyik kezeddel is levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
+🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
 
 <br />
 

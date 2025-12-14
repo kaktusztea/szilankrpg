@@ -8,15 +8,13 @@ Itt tárgyaljuk a személyhez kötött Harci helyzeteket.
 
 ```
 Láthatatlan Támadó
-
-Előny+1 Támadó dobásra
-VÉ csökkentés: fixen 3
+  Előny+1 Támadó dobásra
+  VÉ csökkentés: fixen 3
 ```
 
 ```
 Védő
-
-Hátrány-1 Támadó dobásra
+  Hátrány-1 Támadó dobásra
 ```
 
 ---
@@ -24,25 +22,23 @@ Hátrány-1 Támadó dobásra
 
 ```
 Láthatatlan Támadó
-
-Előny+2 Támadó dobásra
-VÉ csökkentés: fixen 3
+  Előny+2 Támadó dobásra
+  VÉ csökkentés: fixen 3
 ```
 
 ```
 Védő
-
-Hátrány-2 Támadó dobásra
+  Hátrány-2 Támadó dobásra
 
 Vakharc hatása:
  1.fok: megszűntet
-   1 Hátrányt védő TÉ-re
-2.fok: megszűntet
-   1 Előnyt támadó TÉ-re
-   1 Hátrányt védő TÉ-re
-3.fok: nullázza a
-   Támadó összes előnyét
-   Védő összes Hátrányát
+    1 Hátrányt védő TÉ-re
+ 2.fok: megszűntet
+    1 Előnyt támadó TÉ-re
+    1 Hátrányt védő TÉ-re
+ 3.fok: nullázza a
+    Támadó összes előnyét
+    Védő összes Hátrányát
 ```
 
 → [Vakharc](fortelyok.harci/vakharc.md)  fortély
