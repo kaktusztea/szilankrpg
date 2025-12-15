@@ -23,7 +23,7 @@ Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a
 
 ### Ökölszabály Védő Érték eltolásra 🔆
 
-**Védő Értékedet** legfeljebb `-30/+30` értékkel tolhatod el (taktikák kombinálása esetén is).
+**Védő Értékedet** legfeljebb `-10/+10` értékkel tolhatod el (taktikák kombinálása esetén is).
 
 <br />
 
