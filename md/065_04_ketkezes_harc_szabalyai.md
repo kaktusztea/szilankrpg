@@ -4,7 +4,7 @@
 
 <br />
 
-## Harcérték bónuszok
+## Harcérték kétkezes harcban
 
 Lásd a [Kétkezes harc fortély](fortelyok.harci/ketkezes_harc.md) leírásában.
 
