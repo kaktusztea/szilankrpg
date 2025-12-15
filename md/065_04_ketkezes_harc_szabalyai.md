@@ -16,7 +16,7 @@ Nagyobb fegyver
 
 <br />
 
-## Harckeret számításhoz
+## Harckeret módosítók
 
 ```
 -1: minden 0.5 penge
