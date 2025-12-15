@@ -112,7 +112,8 @@ A szándékot, hogy Támadó taktikát akarsz alkalmazni, előre be kell jelente
 
 ```
 VÉ:+1, TÉ:-2
-...
+VÉ:+2, TÉ:-4
+VÉ:+3, TÉ:-6
 VÉ:+4, TÉ:-8
 ```
 
