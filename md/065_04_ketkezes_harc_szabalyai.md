@@ -31,6 +31,10 @@ Nagyobb fegyver
 ```
 
 ```
+SUM pengeméretek:
+ mindkét fegyver
+ pengeméreteinek összege
+
 „rövid” fegyverek
   0 pengének számítanak
 ```
