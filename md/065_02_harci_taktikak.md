@@ -18,11 +18,12 @@ A Harci taktikák egy adott kör során a **harci jelleg** általános eltolás�
 
 ### Taktika bejelentése 🔆
 
-A taktikák használatát **kör elején, kezdeményezés előtt** kell bejelenteni és ez hatásuk a kör végéig tart, nem lehet kör közben módosítani, kivéve a `⇄` jellel megjelölt taktikákat (azokat igen).
+A taktikák használatát **kör elején, kezdeményezés előtt** kell bejelenteni.\
+Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a `⇄` jellel megjelölt taktikákat (azokat igen).
 
 ### Ökölszabály Védő Érték eltolásra 🔆
 
-Egyes taktikák kombinálhatóak egymással, mások nem (lásd leírásukat), de fontos szabály, hogy **Védő Értékedet** legfeljebb `-30/+30`-al tolhatod el.
+**Védő Értékedet** legfeljebb `-30/+30` értékkel tolhatod el (taktikák kombinálása esetén is).
 
 <br />
 
