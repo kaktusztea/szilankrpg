@@ -27,7 +27,7 @@ Dobás:
 k20  vs  Célszám
 ```
 
-A célpont dob `k20` kockával: amennyiben a dobás eléri a Célszámot, akkor eltalálja egy lövedék.
+A célpont dob `k20` kockával: amennyiben dobása eléri a Célszámot, akkor eltalálja egy lövedék.
 
 ### Több találat
 
