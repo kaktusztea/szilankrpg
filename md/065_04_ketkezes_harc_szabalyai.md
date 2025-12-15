@@ -46,7 +46,7 @@ SUM 2 penge felett
 +4: Kétkezes harc 3.fok
 ```
 
-
+Tehát a két fegyver összpengeméretét elosztjuk `0.5`-tel és ennyi lejön a Harckeretből.
 
 <br />
 
