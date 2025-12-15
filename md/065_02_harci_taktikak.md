@@ -10,8 +10,8 @@
 - [Sűrű taktika](#s%C5%B1r%C5%B1-taktika)
 - [Támadás erőből taktika](#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika)
 - [Támadó taktika](#t%C3%A1mad%C3%B3-taktika)
-- [Teljes Védekezés taktika](#teljes-v%C3%A9dekez%C3%A9s-taktika)
 - [Védő taktika](#v%C3%A9d%C5%91-taktika)
+- [Teljes Védekezés taktika](#teljes-v%C3%A9dekez%C3%A9s-taktika)
 - [Visszafogott taktika](#visszafogott-taktika-)
 
 A Harci taktikák egy adott kör során a **harci jelleg** általános eltolását valósítják meg egy adott irányba. Ez az eltolás tudatos, egy tendenciát modellez, ezért is térnek el a Harci taktikák a Harci helyzetektől (amelyeket harci Státuszokként értelmezünk inkább).
