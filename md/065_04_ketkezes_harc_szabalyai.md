@@ -44,7 +44,7 @@ SUM pengeméretek:
 ## Fegyverméret limit
 
 ```
-Max SUM pengehossz:
+Max SUM pengeméretek:
  2 x 1 penge
 
 SUM 2 penge felett:
