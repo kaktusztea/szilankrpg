@@ -1,82 +1,25 @@
 ## Harci taktikák
 
-```
+
 Támadó taktika
-  TÉ:+1 = VÉ:-2; max TÉ:+3
-
 Védő taktika
-  VÉ:+1 = TÉ:-2; max VÉ:+4
-
 Teljes Védekezés taktika
-  VÉ:+6
-  Ellenfél VÉ csökkentés: (1 + k20T)
-  Folyamatos hátrálás, nincs támadás,
-    nem kombinálható más taktikával.
-
 Kezdeményező taktika
-  KÉ:+1 → VÉ:-2, max KÉ:+2
-
 Sűrű taktika
-  → -1 támadás
-  → 1 db (TÉ:-4) támadásod
-    alap TÉ-vel
-
 Kiváró taktika
-  Átengedett KÉ, cserébe első
-  visszatámadásra TÉ:+2
-
 Fárasztó taktika
-  Extra VÉ csökkentés:
-  • +1 VÉ extra ha nem talált
-  • (4 + k20T) sebzés helyett
-  • "Fegyverméret - pengehátrány"
-    harci helyzetből NEM mehet
-
 Visszafogott taktika
-  Kisebb sebzéskockával dobhatsz
-  • TÉ:-3  → k20 helyett k10
-  • TÉ:-6  → k20 helyett k6
-  • TÉ:-9  → nincs kockadobás
-             csak alap sebzés
-
 Plusz támadás taktika
-  +1 támadás
-  Leadásakor -4 VÉ csökkenést
-  szenvedsz el.
-
 Roham taktika
-  Első oda-visszacsapáskor
-  • TÉ:+4, VÉ:-8
-  • VÉ csökkentés: (3 + k20T)
-  • Sebzéshez: +5 SP
-  Sikeres sebzésnél a visszacsapás
-    nem kap bónuszt
-
 Öngyilkos roham taktika
-  Első oda-visszacsapáskor
-  • TÉ:+5, VÉ:-10 
-  • VÉ csökkentés: (3 + k20T)
-  • Sebzéshez: +7 SP
-  TÉ büntetések (S) nem érvényesek
-  Max 1x használható / küzdelem
-
 Támadás erőből taktika
-  Erre a Támadás erőből fortélyt
-    használhatod (lásd a leírását)
-
 Érintő taktika
-  TÉ:+3
-```
-
-Részletes leírásukat [lásd lenn](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika).
 
 A Harci taktikák egy adott kör során a **harci jelleg** általános eltolását valósítják meg egy adott irányba. Ez az eltolás tudatos, egy tendenciát modellez, ezért is térnek el a Harci taktikák a Harci helyzetektől (amelyeket harci Státuszokként értelmezünk inkább).
 
 ### Taktika bejelentése 🔆
 
-A taktikák használatát **kör elején, kezdeményezés előtt** kell bejelenteni és ez hatásuk a kör végéig tart, nem lehet kör közben módosítani.
-
-Kivéve a `⇄` jellel megjelölt taktikákat, mert azokat kör közben, támadások között is lehet variálni.
+A taktikák használatát **kör elején, kezdeményezés előtt** kell bejelenteni és ez hatásuk a kör végéig tart, nem lehet kör közben módosítani, kivéve a `⇄` jellel megjelölt taktikákat (azokat igen).
 
 ### Ökölszabály Védő Érték eltolásra 🔆
 
@@ -103,7 +46,7 @@ TÉ:+3, VÉ:-6
 
 ❌ Más taktikával együtt
 
-Dönthetsz úgy, hogy a következő körben a támadásra helyezed a hangsúlyt és nyomulsz előre. Ekkor védekezésedre kevésbé ügyelsz, sebezhetőbb vagy. Te határozod meg, hogy mennyire tolod el a harcmodorodat a támadás irányába. `TÉ`-det `+1-3`-ig növelheted meg ideiglenesen. Minden pont növelés után `-2` **Védő Érték** módosítót kapsz.
+A támadásra helyezed a hangsúlyt és nyomulsz előre, ekkor védekezésedre kevésbé ügyelsz, sebezhetőbb vagy. Te határozod meg, hogy mennyire tolod el a harcmodorodat a támadás irányába. `TÉ`-det `+1-3`-ig növelheted meg ideiglenesen. Minden pont növelés után `-2` **Védő Érték** módosítót kapsz.
 
 A szándékot, hogy Támadó taktikát akarsz alkalmazni, előre be kell jelentened, mielőtt az adott kör elkezdődött volna. Kör közben nem változtathatsz a taktikán. Ha ebben a taktikában küzdesz, akkor lehetőségeidhez mérten folyamatosan nyomulsz előre.
 
@@ -123,26 +66,28 @@ VÉ:+4, TÉ:-8
 
 ❌ Más taktikával együtt
 
-Dönthetsz úgy, hogy a következő körben a védekezésedre helyezed a hangsúlyt. Ekkor kisebb vehemenciával támadsz, ez megmutatkozik Támadó Értékedben is.
+A védekezésedre helyezed a hangsúlyt, ekkor kisebb vehemenciával támadsz.
 
 Te határozod meg, hogy mennyire tolod el a harcmodorodat a védekezés irányába. **Védő Értékedet** `+1-4`-ig növelheted meg ideiglenesen. Minden pont növelés után `-2` **Támadó Érték** módosítót kapsz.
-
-Tehát vállalásodtól függően így módosíthatod harcértékeidet. Pl:
 
 ---
 ### Teljes Védekezés Taktika
 
 ```
-- VÉ:+6
-- Ellenfeled csak (1 + k20T)
-  értékkel csökkenthet rajtad VÉ-t.
+VÉ:+6
+
+Ellenfeled csak (1 + k20T)
+  értékkel csökkenthet rajtad VÉ-t
+
+Folyamatos hátrálás, nincs támadás,
+  nem kombinálható más taktikával
 ```
 
 ❌ Más taktikával együtt
 
-Ha úgy döntesz, hogy a következő körben csak a védekezéssel törődsz (előre be kell jelenteni!), kizárólag a feléd irányuló támadásokat próbálod elkerülni, nem támadsz (!), valamint folyamatosan hátrálsz, akkor `VÉ:+6` módosítót kapsz arra a körre. A kör közben nem változtathatsz a taktikádon, ha ismét támadni akarsz, azt csak a következő körben teheted meg.
+A következő körben csak a védekezéssel törődsz (előre be kell jelentened) és kizárólag a feléd irányuló támadásokat próbálod elkerülni, nem támadsz (!), valamint folyamatosan hátrálsz, akkor `VÉ:+6` módosítót kapsz arra a körre. A kör közben nem változtathatsz a taktikádon, ha ismét támadni akarsz, azt csak a következő körben teheted meg.
 
-Fontos, hogy másra nem pazarolhatod figyelmedet, kizárólag a védekezésre, tehát nem is varázsolhatsz. Ha nem így teszel, vagy nem vagy képes a folyamatos hátrálásra (például egy fal miatt, ami elzárja mögötted az utat), akkor a KM – tetszése szerint – csökkentheti a fenti `VÉ` módosítódat, akár `0`-ig is.
+Kizárólag a védekezésre figyelhetsz, tehát nem is varázsolhatsz. Ha nem így teszel, vagy nem vagy képes a folyamatos hátrálásra (például egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` módosítódat, akár `0`-ig is.
 
 ---
 ### Kezdeményező taktika
@@ -164,6 +109,13 @@ Ha mindenáron magadhoz akarod ragadni a kezdeményezést megteheted, de ennek �
 
 ---
 ### Sűrű taktika
+
+```
+-1 támadás
+
+1 db (TÉ:-4) támadásod
+  alap TÉ-vel
+```
 
 Akkor tudod alkalmazni, ha már legalább `3` támadásod van a körben.\
 `-1` támadásért cserébe `1 db` "másodlagos" támadásodat, ami már `TÉ:-4` [levonással menne](063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt), továbbra is alap `TÉ`-vel dobhatsz.
@@ -211,7 +163,8 @@ Akkor tudod alkalmazni, ha már legalább `3` támadásod van a körben.\
 
 ```
 Átengedett KÉ
- → TÉ:+2 első
+
+TÉ:+2 első
    visszatámadásra
 ```
 
@@ -266,7 +219,8 @@ Kapcsolódik: [Fárasztás](fortelyok.harci/farasztas.md) harci fortély
 ### Visszafogott taktika ⇄
 
 ```
-TÉ mínusz      Sebzéskocka
+TÉ levonásért cserébe
+  kisebb Sebzéskocka
 
 TÉ:-3    →  k20 helyett k10
 TÉ:-6    →  k20 helyett k6
@@ -285,7 +239,7 @@ A [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka `3`-
 
 Szándékosan kisebb sebzést próbálsz okozni találatkor - általában olyankor fordul elő, mikor nem cél az ellenfél megölése.
 
-Némi ritmus megtörés bevállalásával (TÉ mínusz) csökkentheted az okozott sebzést: kisebb értékű kockával dobhatsz sebzéskor.
+Némi ritmus megtörés bevállalásával (`TÉ` mínusz) csökkentheted a Sebzésdobás kockáját.
 
 ---
 ### Plusz támadás taktika
@@ -318,10 +272,10 @@ Cserébe az adott plusz támadás leadásakor azonnal `-4 VÉ` csökkenést szen
 ### Roham taktika
 
 ```
-Első oda-vissza csapásnál:
-→ TÉ:+4, VÉ:-8
-→ VÉ csökkentés duplázódik
-→ Sebzés: +5 SP
+Első oda-vissza csapásnál
+  TÉ:+4, VÉ:-8
+  VÉ csökkentés duplázódik
+  Sebzés: +5 SP
 ```
 
 ❌ Más taktikával együtt
@@ -342,12 +296,15 @@ Fontos, hogy Rohamnál is számítanak a fegyverméret kategóriák, tehát egy 
 ### Öngyilkos roham taktika
 
 ```
-Első oda-vissza csapásnál:
-→ TÉ:+5, VÉ:-10
-→ VÉ csökkentés duplázódik
-→ Támadó TÉ büntetése sebesülésből
+Első oda-vissza csapásnál
+  TÉ:+5, VÉ:-10
+  VÉ csökkentés duplázódik
+  Sebzés: +7 SP
+
+TÉ büntetés sebesülésből
   nem érvényesül
-→ Sebzés: +7 SP
+
+Max 1x használható / küzdelem
 ```
 
 ❌ Más taktikával együtt
