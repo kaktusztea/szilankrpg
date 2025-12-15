@@ -16,6 +16,22 @@ Nagyobb fegyver
 
 <br />
 
+## SUM Pengeméretek
+
+A két fegyver pengeméreteinek összege.
+  
+```
+Max: 2 x 1 penge
+
+2 penge felett
+  fegyverek harcértéke: 0
+
+„rövid” fegyverek
+  0 pengének számítanak
+```
+
+<br />
+
 ## Harckeret módosítók
 
 ```
@@ -30,26 +46,7 @@ Nagyobb fegyver
 +4: Kétkezes harc 3.fok
 ```
 
-```
-SUM pengeméretek:
-  a két fegyver
-  pengeméreteinek összege
 
-„rövid” fegyverek
-  0 pengének számítanak
-```
-
-<br />
-
-## Fegyverméret limit
-
-```
-Max SUM pengeméretek:
- 2 x 1 penge
-
-SUM 2 penge felett:
- fegyverek harcértéke: 0
-```
 
 <br />
 
@@ -68,10 +65,15 @@ Kétkezes harc: 2.fok
 → Fegyver harcértékek összeadódnak
 → Mf: csak 1x számít Tőrre
 
-Harckeret
+Harckeret: +3
  +3: Kétkezes harc (2.fok)
- -0 = 0 / 0.5
-     SUM 0+0 penge
+ -0 = 0 / 0.5 (pengehossz után)
+ 
+```
+
+```
+SUM Pengeméret
+  0 = 0 + 0
 ```
 
 ### ⚡Példa-2: Szablya + tőr
@@ -81,10 +83,14 @@ Kétkezes harc: 3.fok
 → Fegyver harcértékek összeadódnak
 → Mf: Szablya ÉS Tőr is számít
 
-Harckeret
+Harckeret: +1
  +4: Kétkezes harc (3.fok)
- -3 = 1.5 / 0.5
-      SUM (1 + 0.5) penge
+ -3 = 1.5 / 0.5 (pengehossz után)
+```
+
+```
+SUM Pengeméret
+  1.5 = 1 + 0.5
 ```
 
 ---
