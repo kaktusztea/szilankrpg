@@ -135,7 +135,7 @@ Tehát vállalásodtól függően így módosíthatod harcértékeidet. Pl:
 ```
 - VÉ:+6
 - Ellenfeled csak (1 + k20T)
-  cértékkel csökkenthet rajtad VÉ-t.
+  értékkel csökkenthet rajtad VÉ-t.
 ```
 
 ❌ Más taktikával együtt
