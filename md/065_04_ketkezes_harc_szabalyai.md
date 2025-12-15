@@ -23,7 +23,7 @@ A két fegyver pengeméreteinek összege.
 ```
 Max: 2 x 1 penge
 
-2 penge felett
+SUM 2 penge felett
   fegyverek harcértéke: 0
 
 „rövid” fegyverek
