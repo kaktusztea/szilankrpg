@@ -459,7 +459,7 @@ Hátrány-1
 Aki **Haragból** harcol, az kevesebbet törődik a védekezéssel, minden erejével ellenfele elpusztítására tör.
 
 Az ilyen karakter kötelezően
-- maximális, `TÉ:+15` [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcol (így `VÉ:-30` sújtja).
+- maximális, `TÉ:+3` [Támadó taktikával](065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) harcol (így `VÉ:-6` sújtja).
 - ebben az állapotban használhatja a [Kezdeményező Taktikát](065_02_harci_taktikak.md#kezdem%C3%A9nyez%C5%91-taktika), de semmilyen defenzív jellegű más taktikát nem (pl. Kiváró, stb).
 
 ### ✴️ Indulat (2) Gyűlölet
