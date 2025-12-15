@@ -14,10 +14,10 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v3
 
-    - name: Set up Python 3.13
+    - name: Set up Python 3.14
       uses: actions/setup-python@v4
       with:
-        python-version: '3.13.0'
+        python-version: '3.14.2"
 
     - name: Execute process_kp_igeny.py
       run: python code/process_harcmodor_kepzettseg_bonuszok.py md/062_02_harcmodor_kepzettsegek_es_bonuszaik.md data/tables/harcmodor_kepzettsegek_bonuszok.json
