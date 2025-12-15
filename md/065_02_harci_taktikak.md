@@ -1,18 +1,19 @@
 ## Harci taktikák
 
-- [Érintő taktika](#%C3%A9rint%C5%91-taktika-)
-- [Fárasztó taktika](#f%C3%A1raszt%C3%B3-taktika-)
+
+- [Támadó taktika](#t%C3%A1mad%C3%B3-taktika)
+- [Védő taktika](#v%C3%A9d%C5%91-taktika)
+- [Teljes Védekezés taktika](#teljes-v%C3%A9dekez%C3%A9s-taktika)
 - [Kezdeményező taktika](#kezdem%C3%A9nyez%C5%91-taktika)
+- [Sűrű taktika](#s%C5%B1r%C5%B1-taktika)
 - [Kiváró taktika](#kiv%C3%A1r%C3%B3-taktika)
-- [Öngyilkos roham taktika](#%C3%B6ngyilkos-roham-taktika)
+- [Fárasztó taktika](#f%C3%A1raszt%C3%B3-taktika-)
+- [Visszafogott taktika](#visszafogott-taktika-)
 - [Plusz támadás taktika](#plusz-t%C3%A1mad%C3%A1s-taktika)
 - [Roham taktika](#roham-taktika)
-- [Sűrű taktika](#s%C5%B1r%C5%B1-taktika)
+- [Öngyilkos roham taktika](#%C3%B6ngyilkos-roham-taktika)
 - [Támadás erőből taktika](#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika)
-- [Támadó taktika](#t%C3%A1mad%C3%B3-taktika)
-- [Teljes Védekezés taktika](#teljes-v%C3%A9dekez%C3%A9s-taktika)
-- [Védő taktika](#v%C3%A9d%C5%91-taktika)
-- [Visszafogott taktika](#visszafogott-taktika-)
+- [Érintő taktika](#%C3%A9rint%C5%91-taktika-)
 
 A Harci taktikák egy adott kör során a **harci jelleg** általános eltolását valósítják meg egy adott irányba. Ez az eltolás tudatos, egy tendenciát modellez, ezért is térnek el a Harci taktikák a Harci helyzetektől (amelyeket harci Státuszokként értelmezünk inkább).
 
