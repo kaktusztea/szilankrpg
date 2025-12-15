@@ -89,7 +89,7 @@ Egyes taktikák kombinálhatóak egymással, mások nem (lásd leírásukat), de
 
 ```
 TÉ:+1, VÉ:-2
-...
+TÉ:+2, VÉ:-4
 TÉ:+3, VÉ:-6
 ```
 
