@@ -5,13 +5,14 @@ Speciális faj háttér. bevezető ⭕
 Ide tartozik:
 - félelf
 - dzsad
+- kyr vérű
 
 ---
 **RAW**
 
 - érzék fortélyokat felvehet - OK
 - tulajdonság limit - OK
-- ők NEM tudnak faj Arkánumot tanulni! Így le tudjuk tápolni őket kicsit.
+- ők NEM tudnak faj Arkánumot tanulni! De A [Kalandozók](../010_03_01_kalandozok.md) igen! Ők dönthetnek, hogy melyik faj misztériumát választja.
 - a legtöbb lény Yn3ven ilyen
 
 Kalandozók (Szilánkkal)
