@@ -19,6 +19,10 @@ Tartós sérültségért
 
 **Fontos**: ha a karakter később, tehát **nem** `1.szinten`, karakteralkotáskor sérül le tartósan, akkor természetesen NEM jár a fenti `KP` bónusz.
 
+### Későbbi gyógyulás
+
+Ha a karakter története során meggyógyul a fenti tartós sérülésből akár isteni csoda, akár más kaland eseménye által, akkor a fenti `KP` javadalmazást azonnal, vagy - ha nincs elegendő `KP`-ja rá akkor - következő szintlépéskor vissza kell "fizetnie".
+
 ---
 ### Hatása fizikai fizikai Tulajdonságokra
 
