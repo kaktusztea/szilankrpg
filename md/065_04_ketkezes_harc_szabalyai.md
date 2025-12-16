@@ -58,7 +58,7 @@ Kivéve direkt a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci
 <br />
 
 ---
-### ⚡Példa-1: Harc 2 db tőrrel
+### ⚡Példa: Harc 2 db tőrrel
 
 ```
 Kétkezes harc: 2.fok
@@ -76,7 +76,7 @@ SUM Pengeméret
   0 = 0 + 0
 ```
 
-### ⚡Példa-2: Szablya + tőr
+### ⚡Példa: Szablya + tőr
 
 ```
 Kétkezes harc: 3.fok
