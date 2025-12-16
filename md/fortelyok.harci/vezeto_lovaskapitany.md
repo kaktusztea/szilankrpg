@@ -21,7 +21,6 @@ Az [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettséget [csoportos 
 A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó lovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
-- Intelligencia: `+1`
 - Lovaglás - `6.szint` (nehézlovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényleg

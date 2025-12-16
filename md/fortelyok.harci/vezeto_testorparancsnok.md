@@ -22,7 +22,6 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 
 
 🔒 **Követelmény**:
-- Intelligencia: `+1`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) - `6.szint`
 - Összeszokott tagokat igényleg

@@ -22,7 +22,6 @@ Az **[Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md)** képzettséget
 A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
-- Intelligencia: `+1`
 - Alakzatharc - `6.szint`
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
@@ -34,7 +33,6 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 ### 2. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+2`
 - Alakzatharc - `9.szint`
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel

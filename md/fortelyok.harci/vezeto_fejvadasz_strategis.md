@@ -20,7 +20,6 @@ A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
  A fentiek szerint kiszámolt csoportos **Lopakodás/rejtőzés** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
-- Intelligencia: `+1`
 - Lopakodás/rejtőzés - `6.szint`
 - Tradíció: Fejvadász - `6.szint`
 - Összeszokott tagokat igényleg

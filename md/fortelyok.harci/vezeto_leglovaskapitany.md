@@ -22,7 +22,6 @@ Az [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettséget [cso
 A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Alakzatszint** értéket egy jó léglovaskapitány képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
-- Intelligencia: `+1`
 - Léglovaglás - `6.szint` (léglovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényleg
