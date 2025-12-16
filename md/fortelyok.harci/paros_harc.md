@@ -1,12 +1,15 @@
-## 🟣 Páros harc (3)
+## 🟣 Páros harc (3) (partner neve) 🔁
 
-Az összeszokott harcosok együtt eredményesebbek.
+Az összeszokott harcosok együtt eredményesebbek. Többször felvehető személyenként.
+
+Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mint partner.
 
 ### 1. fok
 
 🔒 **Követelmény**:
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)  **-** `3.szint` (mindkét félnek)
-- Két jól összeszokott társ. Legalább 1 éve harcolnak együtt a közös taktika szerint.
+- Két jól összeszokott társ.
+- A konkrét partnert nevesíteni kell.
 
 🌟 **Hatás**:
 - `TÉ:+2`, `VÉ:+2`
@@ -18,7 +21,7 @@ Az összeszokott harcosok együtt eredményesebbek.
 
 🔒 **Követelmény**:
 - Harcmodor  **-** `6.szint` (mindkét félnek)
-- Két jól összeszokott társ. Legalább `1` éve harcolnak együtt a közös taktika szerint.
+- Két jól összeszokott társ.
 
 🌟 **Hatás**:
 - `TÉ:+4`, `VÉ:+4`
@@ -30,7 +33,7 @@ Az összeszokott harcosok együtt eredményesebbek.
 
 🔒 **Követelmény**:
 - Harcmodor  **-** `9.szint` (mindkét félnek)
-- Ikrek, harmonikus kapcsolattal a felek között. Bővebben lásd lenn ("Ikerharc").
+- Egypetéjű ikrek, harmonikus kapcsolattal a felek között. Bővebben lásd lenn ("Ikerharc").
 
 🌟 **Hatás**:
 - `TÉ:+6`, `VÉ:+6`

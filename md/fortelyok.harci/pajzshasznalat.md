@@ -26,7 +26,7 @@ TÉ levonás
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Erő: `+0`
+🔒 **Követelmény**: Harcmodor: `3.szint`
 
 🌟 **Hatás**: Teljes pajzs `VÉ` akítv
 
@@ -41,9 +41,7 @@ TÉ levonás
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Erő: `+1`
-- Harcmodor: `5.szint`
+🔒 **Követelmény**: Harcmodor: `5.szint`
 
 🌟 **Hatás**: Teljes pajzs `VÉ` akítv
 
@@ -61,16 +59,13 @@ TÉ levonás
 
 ### 3. fok
 
-🔒 **Követelmény**:
-- Erő: `+1`
-- Harcmodor: `8.szint`
+🔒 **Követelmény**: Harcmodor: `8.szint`
 
 🌟 **Hatás**: Teljes pajzs `VÉ` akítv
 
 ```
 TÉ levonás nincs
 VÉ:+2 minden pajzshoz
-
 ```
 
 - Fegyverrel VAGY a pajzzsal külön támadhatsz

@@ -21,7 +21,7 @@ A vért teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 1. fok
 
-🔒 **Követelmény**: Erő: `+1`
+🔒 **Követelmény**: Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
 
 🌟 **Hatás**: Merevvérted `TÉ` büntetése ennyivel enyhül: `-5`
 
@@ -29,7 +29,7 @@ A vért teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 2. fok
 
-🔒 **Követelmény**: Erő: `+2`
+🔒 **Követelmény**: Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
 
 🌟 **Hatás**: Merevvérted `TÉ` büntetése ennyivel enyhül: `-10`
 
@@ -37,11 +37,13 @@ A vért teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 3. fok
 
-🔒 **Követelmény**: Erő: `+2`
+🔒 **Követelmény**: Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
 
 🌟 **Hatás**:
 - Merevvérted `TÉ` büntetése ennyivel enyhül: `-15`
 - Merevvért viselése esetén `VÉ:+3` bónuszt kapsz (ha a lefedettség minimum `70%`)
   (tudatos vérthasználat lecsúsztatásokkal)
+
+🔆 A Harcmodor követelmény csak a megtanuláshoz szükséges. Bármelyik fenn leírt harcmodor ismerete lehetővé teszi a megtanulást.
 
 ---

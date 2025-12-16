@@ -6,8 +6,8 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 
 🔒 **Követelmény**:
 
-- [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) - `6.szint`
-- Sikeres **Akrobatika** próba **minden kör elején**
+- [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) - `6.szint`
+- Sikeres **Észlelés** próba **minden kör elején**
  
 ```
 Nehézség

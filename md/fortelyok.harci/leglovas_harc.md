@@ -20,11 +20,7 @@ TÉ/VÉ: -9
 
 ### 1. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+1`
-- Önuralom: `0`
-- Érzékenység: `0`
-- Léglovaglás - `3.szint`
+🔒 **Követelmény**: Léglovaglás - `3.szint`
 
 🌟 **Hatás**:
 - fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` léglovas bónusz járul
@@ -35,9 +31,6 @@ TÉ/VÉ: -9
 ### 2. fok
 
 🔒 **Követelmény**:
-- Ügyesség: `+2`
-- Önuralom: `0`
-- Érzékenység: `0`
 - Léglovaglás - `6.szint`
 
 🌟 **Hatás**:
@@ -48,11 +41,7 @@ TÉ/VÉ: -9
 
 ### 3. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+2`
-- Önuralom: `+1`
-- Érzékenység: `+1`
-- Léglovaglás - `9.szint`
+🔒 **Követelmény**: Léglovaglás - `9.szint`
 
 🌟 **Hatás**:
 - fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` léglovas bónusz járul

@@ -4,10 +4,7 @@ Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt löv
 
 ### 1. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+3`
-- Gyorsasság: `+3`
-- Összpontosítás - `6.szint`
+🔒 **Követelmény**: Összpontosítás - `6.szint`
 
 🌟 **Hatás**: [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) szituációban **Akrobatika** képzettségpróbádra `+2` bónuszt kapsz
 
