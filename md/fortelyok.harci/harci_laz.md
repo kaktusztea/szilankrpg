@@ -6,8 +6,6 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 ### 1. fok
 
 🔒 **Követelmény**:
-- Erő: `+1`
-- Edzettség `+1`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
@@ -22,8 +20,6 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 ### 2. fok
 
 🔒 **Követelmény**:
-- Erő: `+2`
-- Edzettség `+2`
 - Harcmodor - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
@@ -56,13 +52,12 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 ### Speciális
 
 - Pajzs `VÉ` **nem** számít, lövés, mágia, pszi tiltott
-- Hajításnál a fegyver Osztója csökken: `-1`  (min `1`)
+- Hajítani lehet, lőni nem
 
 ---
 ### Bekerülés Harci lázba
 
-- 2 kör hergelés szükséges
-- Harc közben elég `1` kör
-- Ha sebet kap (vagy okoz magának), akkor szintén elég `1` kör
+- `ÉP` seb elszenvedése szükséges az adott harci szituációban. Lehet önsebzés is.
+- Vagy egy hosszú hergelős rituálé. Elérhető mágiával és bódító szerekkel.
 
 ---

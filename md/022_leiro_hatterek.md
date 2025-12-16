@@ -10,6 +10,8 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további szinesítő eleme
 
 - Árva
 - Erdőlakó
+- Gladiátor
+- Harcművész
 - Jobbágy
 - Nemes
 - Polgár

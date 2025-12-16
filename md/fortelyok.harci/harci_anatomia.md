@@ -5,8 +5,8 @@ Távharcos harcmodorokra NEM alkalmazható.
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
+- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
+- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
 
 🌟 **Hatás**:
 - [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén:  `SP:+2` (csak vértmentes ponton)
@@ -17,8 +17,8 @@ Távharcos harcmodorokra NEM alkalmazható.
 ### 2. fok
 
 🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `8.szint`
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
+- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
+- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `9.szint`
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
@@ -31,15 +31,12 @@ Távharcos harcmodorokra NEM alkalmazható.
 
 🔒 **Követelmény**:
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `12.szint`
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `9.szint`
-- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `2.fok`
-- [Fejvadász Tradíció](../053_01_fejvadasz_tradicio.md) - `6.szint`
-- Mester, aki tanítja
-- A `3.fokot` csak fejvadász, vulgármágiát oktató és egyes harcművész iskolákban tanítják
+- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `12.szint`
+- [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
-- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén: `SP:+4` (csak vértmentes ponton)
-- [Orvtámadás](../066_05_altalanos_manoverek.md#orvtámadás) Manőver esetén `SP:+4` (csak vértmentes ponton)
+- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén: `SP:+6` (csak vértmentes ponton)
+- [Orvtámadás](../066_05_altalanos_manoverek.md#orvtámadás) Manőver esetén `SP:+6` (csak vértmentes ponton)
 - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
 - Szemgolyót szedhet ki harc közben: Sikeres [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
 

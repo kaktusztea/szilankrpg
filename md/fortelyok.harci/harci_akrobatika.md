@@ -7,9 +7,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 ### 1. fok
 
 🔒 **Követelmény**:
-- Ügyesség: `+2`
-- Gyorsaság `+2`
-- Akrobatika - `4.szint`
+- Akrobatika - `6.szint`
 - Csak Hajlékonyvértben
 - Maximum `MGT:10` értékű vértben
 
@@ -22,9 +20,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 ### 2. fok
 
 🔒 **Követelmény**:
-- Ügyesség: `+3`
-- Gyorsaság `+2`
-- Akrobatika - `8.szint`
+- Akrobatika - `9.szint`
 - Csak Hajlékonyvértben
 - Maximum `MGT:10` értékű vértben
 
@@ -37,8 +33,6 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 ### 3. fok
 
 🔒 **Követelmény**:
-- Ügyesség: `+3`
-- Gyorsaság `+3`
 - Akrobatika - `12.szint`
 - Csak Hajlékonyvértben
 - Maximum `MGT:10` értékű vértben
@@ -52,11 +46,9 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 
 #### Fegyverek
 
-A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például `1 db` hosszú kard, vagy `2 db` rövidkard), továbbá súlyuk is fontos tényező (KM dönt). Kétkezes szálfegyverek közül csak a könnyű, fából készültek, mint a hosszú bot, vagy fából készült lándzsa használható - ha van elég hely.
+A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például `1 db` hosszú kard, vagy `2 db` rövidkard), továbbá súlyuk is fontos tényező (KM dönt).
 
-#### Vértek
-
-A fortély csak olyan hajlékony vértben használható, melynek nem nagyobb [MGT](../069_03_MGT.md) értéke `10`-nél.
+Lándzsavívásban kétkezes szálfegyverekkel lehet (nincs pengekorlát), de csak a könnyű, fából készültek, mint a hosszú bot, vagy fából készült lándzsa használható - ha van elég hely.
 
 #### Alkalmazás
 

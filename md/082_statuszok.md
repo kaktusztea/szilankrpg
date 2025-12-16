@@ -754,31 +754,7 @@ Beszéd (zavart, vagy némult)
 #### Kijövetel sokkból
 
 ```
-Összpontosítás + Önuralom
-  Képzettségpróba
-
-Célszám: 12 (Nehéz)
-```
-
-```
-1. Bekerüléskor
-   Automatikus képzettségpróba
-
-Ha megdobja, átkerül
-"Zavar (2) Megrendült" Státuszba,
-ami az ott leírt időtartam után enyhül.
-```
-
-```
-2. Nyugodt állapotban
-
-Védő Érték visszanyerő szituáció
-```
-
-```
-3. Ha a fentiekben rontás történik
-
-Utána (20 - Önuralom) perc után
+(20 - Önuralom) perc után
 magától enyhül "Zavar (2) Megrendült"
 fokra, ami az ott leírt időtartam
 után enyhül.

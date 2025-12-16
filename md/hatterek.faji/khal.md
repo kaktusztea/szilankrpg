@@ -34,7 +34,7 @@ TODO ⭕
 
 ### Ajánlott fortélyok
 
-- [Természetes fegyver](../fortelyok.harci/termeszetes.fegyver.md)
+- [Természetes fegyver](../fortelyok.harci/termeszetes_fegyver.md)
 - [Kétkezes Harc](../fortelyok.harci/ketkezes_harc.md)
 - [Kitartás](../fortelyok.altalanos/kitartas.md)
 

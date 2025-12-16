@@ -1,6 +1,6 @@
 ## 🟣 Kétkezesség (1)
 
-Kétkezes vagy születésed óta.
+Kétkezes vagy születésed óta, vagy később szorgalmasan begyakoroltak.
 
 ### Kapcsolódik
 
@@ -14,7 +14,7 @@ Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások s
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Csak `1.`Tapasztalati Szinten, karakteralkotáskor vehető fel.
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - Bármelyik kezeddel levonás nélkül tudsz harcolni, de csak ha `1` fegyvert használsz!

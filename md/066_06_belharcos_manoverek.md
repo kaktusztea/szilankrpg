@@ -82,7 +82,7 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 ---
 ### Feszítés, Leszorítás / Feszítésből kijövetel
 
-- Nehézség: `6` ± **Erő** különbség
+- Nehézség: `6`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Végbevitel követelménye:
 	- Belharc – `1.fok` (kijövetelhez nem kell)
@@ -129,7 +129,6 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 ### Lábtörés
 
 - Nehézség: `8` 
-	- ± **Erő** különbség
 	- `+[1-6]`: ellenfél páncélban van. KM dönt a mértékről.
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Végbevitel követelménye: Belharc – `2.fok`

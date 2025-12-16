@@ -5,7 +5,7 @@ Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél.
 Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_02_fegyverrantas_varatlanul.md#fegyverrántás-váratlanul) harci helyzetben (az alkalmazó karakter oldalán):
 ### 1. fok
 
-🔒 **Követelmény**: Gyorsaság: `+1`
+🔒 **Követelmény**: Harcmodor: `4.szint`
 
 🌟 **Hatás**: Fegyverrántás **Kezdeményezés dobásnál** a `[Hátrány-2; Előny+2]` skálán `1` lépést felfele ugrasz
 
@@ -13,7 +13,7 @@ Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_02_fegyverrantas_varatl
 
 ### 2. fok
 
-🔒 **Követelmény**: Gyorsaság: `+2`
+🔒 **Követelmény**: Harcmodor: `8.szint`
 
 🌟 **Hatás**: Fegyverrántás **Kezdeményezés dobásnál** a `[Hátrány-2; Előny+2]` skálán `2` lépést felfele ugrasz
 

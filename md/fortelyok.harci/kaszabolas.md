@@ -5,7 +5,6 @@ A győzelem mámora megacélozza izmaid és akaratod.
 #### 1. fok
 
 🔒 **Követelmény**:
-- Erő: `+1`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)  **-** `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
@@ -16,7 +15,6 @@ A győzelem mámora megacélozza izmaid és akaratod.
 ### 2. fok
 
 🔒 **Követelmény**:
-- Erő: `+1`
 - Harcmodor  **-** `8.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
