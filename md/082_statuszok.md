@@ -6,72 +6,24 @@ A Státuszt az "kapja", akin a kondíció tartósabb, vagy aki a cselekvő fél 
 
 Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt.
 
-
-```
-Áldott / Átkozott (1,2)
-  Előny/Hátrány (1,2): Tulajdonság
-  Előny/Hátrány (1,2): Képzettség
-  Előny/Hátrány (1,2): Viselkedés
-  Előny/Hátrány (1,2): Érzékek
-  ⭕Szakrális bélyeg
-Bénultság
-  (1) Cselekvőképtelenség
-  (2) Paralízis
-Blokkolt
-  (1) Közepesen
-  (2) Erősen
-Eszmélet
-  (1) Bódultság
-  (2) Kábultság
-  (3) Ájulás
-  (4) Kóma
-Érzékvesztés
-  (1) Zavart
-  (2) Részleges
-  (3) Teljes
-Fegyver/Pajzs akadályoztatása (1,2)
-Félelem
-  (1) Szorongás
-  (2) Rettegés/Pánik
-  (3) Bénító félelem
-Fizikai
-  (1) Fáradtság
-  (2) Kimerültség
-  (3) Elcsigázottság
-Hangulat
-  (1) Fogékony
-  (2) Inspirált
-  (3) Eufórikus
-  (4) Obszesszív
-Indulat
-  (1) Harag
-  (2) Gyűlölet
-  (3) Őrjöngés
-Késztetés
-  (1) Sugallat
-  (2) Vágy
-  (3) Kényszer
-Mérgezés\*
-Páncél akadályoztatása (1, ♾️)
-Rosszullét
-  (1) Közepes
-  (2) Erős
-Szellemi
-  (1) Kialvatlanság
-  (2) Eltompultság
-  (3) Delírium
-Sérült
-  (1) S3
-  (2) S4
-Trauma
-  (1) Lélekrepedés
-  (2) Lélektörés
-Zavar
-  (1) Kizökkent
-  (2) Megrendült
-  (3) Sokk
-```
-
+- [Áldott / Átkozott (1,2)](#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g)
+- [Bénultság (2)](#%EF%B8%8F-b%C3%A9nults%C3%A1g-1-cselekv%C5%91k%C3%A9ptelens%C3%A9g)
+- [Blokkolt (2)](#%EF%B8%8F-blokkolt-1-k%C3%B6zepesen)
+- [Eszmélet (4)](#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g)
+- [Érzékvesztés (3)](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart)
+- [Fegyver/Pajzs akadályoztatása (1,2)](#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
+- [Félelem (3)](#%EF%B8%8F-f%C3%A9lelem-1-szorong%C3%A1s)
+- [Fizikai (3)](#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g)
+- [Hangulat (4)](#%EF%B8%8F-hangulat-1-fog%C3%A9kony)
+- [Indulat (3)](#%EF%B8%8F-indulat-1-harag)
+- [Késztetés (3)](#%EF%B8%8F-k%C3%A9sztet%C3%A9s-1-sugallat)
+- [Mérgezés\*](#%EF%B8%8F-m%C3%A9rgez%C3%A9s)
+- [Páncél akadályoztatása (1, ♾️)](#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt)
+- [Rosszullét (2)](#%EF%B8%8F--rosszull%C3%A9t-1-k%C3%B6zepes)
+- [Sérült (2)](#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3)
+- [Szellemi (3)](#%EF%B8%8F-szellemi-1-kialvatlans%C3%A1g)
+- [Trauma (2)](#%EF%B8%8F-trauma-1-l%C3%A9lekreped%C3%A9s)
+- [Zavar (3)](#%EF%B8%8F-zavar-1-kiz%C3%B6kkent)
 
 ---
 ---
