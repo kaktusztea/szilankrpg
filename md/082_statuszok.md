@@ -173,9 +173,6 @@ Hátrány-2
   kivéve papok: részegen is tudnak⭕
 ```
 
-
-
-
 ### ✴️ Eszmélet (2) Kábultság
 
 ⚡Példa: pocsolya részegség
