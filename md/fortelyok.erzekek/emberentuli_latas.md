@@ -20,12 +20,20 @@ Emberi látás
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli látás**, mint felvehető Érzék-fortély
 
-🌟 `2x` messzebbre lász, mint egy átlagos ember. A látást érintő Észleléspróbákra `+2` bónuszt kapsz
+🌟 **Hatás**:
+
+```
++2 Látás Tulajdonságpróbákra
+
+2x messzebbre látsz,
+ mint egy átlagos ember
+```
+
 
 ---
 ### Hatása Infralátásra, Ultralátásra
 
-- Infralátásra is vonatkozik, így aki ezt a fortélyt felveszi, az a hőkép-tartományban is messzebbre ellát. Jellemzően ilyenek az **elfek**.
-- Ultralátásra is vonatkozik, így aki ezt a fortélyt felveszi, annak használatával is messzebbre ellát. Jellemzően ilyenek az **amundok**.
+- Infralátásra is vonatkozik, így a hőkép-tartományban is messzebbre látsz. Példa: **elfek**.
+- Ultralátásra is vonatkozik, így messzebbre ellátsz vele. Példa: **amundok**.
 
 ---

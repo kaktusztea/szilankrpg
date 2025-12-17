@@ -7,7 +7,7 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 🔒 **Követelmény**:
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) - `6.szint`
 - Sikeres **Észlelés** próba **minden kör elején**
- 
+
 ```
 Nehézség
 10 + (plusz támadók száma x 2)

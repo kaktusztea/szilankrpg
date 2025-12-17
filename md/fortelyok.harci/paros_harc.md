@@ -12,8 +12,13 @@ Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mi
 - A konkrét partnert nevesíteni kell.
 
 🌟 **Hatás**:
-- `TÉ:+2`, `VÉ:+2`
-- `1` ellenfél ellen `KÉ:+1` (többnél nem jár)  
+
+```
+TÉ, VÉ :+2
+
+1:1 harcban KÉ:+1
+(többnél nem jár)  
+```
 
 <br />
 
@@ -24,8 +29,13 @@ Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mi
 - Két jól összeszokott társ.
 
 🌟 **Hatás**:
-- `TÉ:+4`, `VÉ:+4`
-- `1-2` ellenfél ellen `KÉ:+1` (többnél nem jár)  
+
+```
+TÉ, VÉ :+4
+
+1:2 harcig KÉ:+1
+(többnél nem jár)  
+```
 
 <br />
 
@@ -36,13 +46,18 @@ Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mi
 - Egypetéjű ikrek, harmonikus kapcsolattal a felek között. Bővebben lásd lenn ("Ikerharc").
 
 🌟 **Hatás**:
-- `TÉ:+6`, `VÉ:+6`
-- `1-3` ellenfél ellen `+1 KÉ` (többnél nem jár)
+
+```
+TÉ, VÉ :+6
+
+1:3 harcig KÉ:+1
+(többnél nem jár)  
+```
 
 ---
 ### Ikerharc
 
-- Csak ikertestvérek között lehetséges, az is csak akkor ha kisgyerekkoruk óta folyamatosan legalább `5 évig` gyakorolták a közös taktikát, mivel mély rezdülések és teljes összhang szükséges.
+- Csak egypetéjű ikertestvérek között lehetséges, az is csak akkor ha kisgyerekkoruk óta folyamatosan legalább `5 évig` gyakorolták a közös taktikát, mivel mély rezdülések és teljes összhang szükséges.
 - Ha a két fél haragban van, kapcsolatuk disszonáns, vagy már `1 éve` nem gyakoroltak együtt, akkor a `2.foknak` megfelelő szintre esnek vissza.
 
 ---

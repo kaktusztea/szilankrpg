@@ -9,7 +9,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `1`, - a harc során - elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején visszanyersz `1`, harcban elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 <br />
 
@@ -20,7 +20,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `7.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `2` - a harc során - elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején visszanyersz `2`harcban elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 <br />
 
@@ -31,7 +31,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - Harcmodor - `10.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `3`, - a harc során - elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején visszanyersz `3`, harcban elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 
 ---
 ### 4. fok
@@ -44,7 +44,7 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 - [Teljes Védekezés Taktika](../065_02_harci_taktikak.md#teljes-védekezés-taktika) alkalmazása folyamatosan
 
 🌟 **Hatás**:
-- Minden kör elején visszanyersz `3`, - a harc során - elvesztett `VÉ`-t ÉS **minden, előző kör során** elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+- Minden kör elején visszanyersz `3`, harcban elvesztett `VÉ`-t ÉS **minden, előző kör során** elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
 - Minden körben **Összpontosítás** próba: (`15 + ellenfelek száma`). Ha a követelmények nem adottak, vagy a próba sikertelen, akkor csak a `3. fok` hatásait kapja meg a karakter.
 
 ---

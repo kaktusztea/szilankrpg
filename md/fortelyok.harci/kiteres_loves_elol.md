@@ -2,16 +2,16 @@
 
 Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt lövedékek elől való kitérésben.
 
-### 1. fok
-
-🔒 Összpontosítás - `6.szint`
-
-🌟 [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) szituációban **Akrobatika** képzettségpróbádra `+2` bónuszt kapsz
-
 ### Követelmények
 
 - észleled, hogy rád lőnek
 - nem számítasz 🗡️[Készületlennek](../065_01_03_harci_poziciok.md#készületlenség)
 - kizárólag arra figyelsz, hogy elkerüld a lövedéket
+
+### 1. fok
+
+🔒 Összpontosítás - `6.szint`
+
+🌟 [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) szituációban **Akrobatika** képzettségpróbádra `+2` bónuszt kapsz
 
 ---

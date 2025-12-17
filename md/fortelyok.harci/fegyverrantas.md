@@ -7,14 +7,24 @@ Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_02_fegyverrantas_varatl
 
 🔒 Harcmodor: `4.szint`
 
-🌟 Fegyverrántás **Kezdeményezés dobásnál** a `[Hátrány-2; Előny+2]` skálán `1` lépést felfele ugrasz
+🌟 **Hatás**:
 
-<br />
+```
+Fegyverrántás Kezdeményezés dobásnál
+  [Hátrány-2; Előny+2] skálán
+  1 lépést felfele ugrasz
+```
 
 ### 2. fok
 
 🔒 Harcmodor: `8.szint`
 
-🌟 Fegyverrántás **Kezdeményezés dobásnál** a `[Hátrány-2; Előny+2]` skálán `2` lépést felfele ugrasz
+🌟 **Hatás**:
+
+```
+Fegyverrántás Kezdeményezés dobásnál
+  [Hátrány-2; Előny+2] skálán
+  2 lépést felfele ugrasz
+```
 
 ---

@@ -10,8 +10,11 @@ Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.
 - [Roham](../065_02_harci_taktikak.md#roham-taktika) taktika
 
 🌟 **Hatás**:
-- Roham esetén: `KÉ:+5`
-- Erőbónusz: `x2` (duplázódik)
+
+```
+Roham esetén: KÉ:+5
+Erőbónusz duplázódik
+```
 
 ---
 ### Megjegyzések

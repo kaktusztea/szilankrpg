@@ -43,9 +43,9 @@ Kisebb fegyver
 🌟 **Hatás**
 
 ```
-→ Harckeret: +2
-→ Fegyver harcértékek összeadódnak
-→ Mf fortélyok NEM számítanak
+Harckeret: +2
+Fegyver harcértékek összeadódnak
+Mf fortélyok NEM számítanak
 ```
 
 <br />
@@ -64,10 +64,10 @@ Kisebb fegyver
 🌟 **Hatás**
 
 ```
-→ Harckeret: +3
-→ Fegyver harcértékek összeadódnak
-→ Mf: csak a nagyobb fegyveré számít
-  (ha azonosak, akkor csak egyiké)
+Harckeret: +3
+Fegyver harcértékek összeadódnak
+Mf: csak a nagyobb fegyveré számít
+    (ha azonosak, akkor csak egyiké)
 ```
 
 <br />
@@ -86,9 +86,9 @@ Kisebb fegyver
 🌟 **Hatás**
 
 ```
-→ Harckeret: +4
-→ Fegyver harcértékek összeadódnak
-→ Mf: mindkét fegyveré számít
+Harckeret: +4
+Fegyver harcértékek összeadódnak
+Mf: mindkét fegyveré számít
 ```
 
 ---

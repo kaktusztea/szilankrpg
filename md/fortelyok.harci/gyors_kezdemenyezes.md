@@ -6,13 +6,9 @@ Kivételesen gyorsan mozdulsz a harcban.
 
 🌟 `KÉ:+2` bónusz jár
 
-<br />
-
 ### 2. fok
 
 🌟 `KÉ:+4` bónusz jár
-
-<br />
 
 ### 3. fok
 

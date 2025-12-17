@@ -19,7 +19,9 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 Mintha telihold fényénél tájékozódnál vaksötétben. A [Sötét: Félhomály](../065_01_06_szemelyhez_kotott.md#sötétben-félhomály) módosítóival harcolhatsz.
+🌟**Hatás**:
+- Mintha telihold fényénél tájékozódnál vaksötétben.
+- [Sötét: Félhomály](../065_01_06_szemelyhez_kotott.md#sötétben-félhomály) módosítóival harcolhatsz.
 
 <br />
 

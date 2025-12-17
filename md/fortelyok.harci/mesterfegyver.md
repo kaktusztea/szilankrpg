@@ -17,11 +17,7 @@ A fegyver alap harcértékei számítanak (egyéb bónuszokkal).
 
 🔒 Harcmodor - `4.szint`
 
-🌟 adott fegyverre
-
-```
-TÉ, VÉ, SP: +1
-```
+🌟 adott fegyverre `TÉ, VÉ, SP: +1`
 
 <br />
 
@@ -29,11 +25,7 @@ TÉ, VÉ, SP: +1
 
 🔒 Harcmodor - `8.szint`
 
-🌟 adott fegyverre
-
-```
-TÉ, VÉ, SP: +2
-```
+🌟 adott fegyverre `TÉ, VÉ, SP: +2`
 
 <br />
 
@@ -41,11 +33,7 @@ TÉ, VÉ, SP: +2
 
 🔒 Harcmodor - `12.szint`
 
-🌟 adott fegyverre
-
-```
-TÉ, VÉ, SP: +3
-```
+🌟 adott fegyverre `TÉ, VÉ, SP: +3`
 
 ---
 ### Manőverek

@@ -23,7 +23,7 @@ TÉ/VÉ: -9
 🔒 Léglovaglás - `3.szint`
 
 🌟 **Hatás**:
-- fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` léglovas bónusz járul
+- `TÉ:+3, VÉ:+3` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
 
 <br />
@@ -33,7 +33,7 @@ TÉ/VÉ: -9
 🔒 Léglovaglás - `6.szint`
 
 🌟 **Hatás**:
-- fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` léglovas bónusz járul
+- `TÉ:+6, VÉ:+6` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
 
 <br />
@@ -43,7 +43,7 @@ TÉ/VÉ: -9
 🔒 Léglovaglás - `9.szint`
 
 🌟 **Hatás**:
-- fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` léglovas bónusz járul
+- `TÉ:+9, VÉ:+9` léglovas bónusz
 - [Léglovas Manővereket](../067_04_lovas_manoverek.md) végezhetsz.
 
 ---

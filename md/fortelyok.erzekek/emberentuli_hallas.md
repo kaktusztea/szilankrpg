@@ -15,6 +15,13 @@ Emberi hallás
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli hallás**, mint felvehető Érzék-fortély
 
-🌟`2x` messzebbről meghallasz bármit, mint egy átlagos ember. A hallást érintő Észleléspróbákra `+2` bónuszt kapsz.
+🌟**Hatás**:
+
+```
++2 Hallás Tulajdonságpróbákra
+
+2x messzebbről meghallasz bármit,
+ mint egy átlagos ember
+```
 
 ---

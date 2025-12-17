@@ -9,8 +9,6 @@
 5x: Harcoló Szorzó
 ```
 
-<br />
-
 ### 1. fok
 
 🔒 Távolsági Harcmodor  **-** `5.szint`\
