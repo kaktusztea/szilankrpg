@@ -33,9 +33,9 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
   említett körülmények összegzett értékére
 ```
 
-## Lények méret különbsége
+## [Lények méret különbsége](065_01_07_lenyek.md)
 
-amennyiben a támadó lény akár csak `1` kategóriával is kisebb, mint ellenfele, akkor
+Amennyiben a támadó lény akár csak `1` kategóriával is kisebb, mint ellenfele, akkor
 - Támadóként: Belharcos Manővere automatikusan sikertelen lesz.
 - Védekezőként: ellenfele `-3` könnyítő módosítót kap az Ellenpróba Nehézségére
 
