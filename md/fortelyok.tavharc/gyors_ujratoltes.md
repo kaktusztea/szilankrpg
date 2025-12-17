@@ -13,6 +13,6 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpus
 
 🌟 **Hatás**:
 - A kilőtt nyílpuskád újratöltéséhez szükséges idő lecsökken.
-- Körönként maximum egyszer tudsz lőni - ha az újratöltésen kívül mást nem cselekszel (de [Mozgásodat](063_03_mozgas_harc_kozben.md) továbbra elhasználhatod).
+- Körönként maximum egyszer tudsz lőni - ha az újratöltésen kívül mást nem cselekszel (de [Mozgásodat](../063_03_mozgas_harc_kozben.md) továbbra elhasználhatod).
 
 ---
