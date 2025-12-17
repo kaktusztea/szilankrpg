@@ -2,13 +2,13 @@ name: Linkspector wiki
 on: [push]
 jobs:
   check-links:
-    name: runner / linkspector wiki
+    name: Check linkspector wiki
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
           repository: ${{github.repository}}.wiki
-      - name: Run linkspector
+      - name: Run linkspector wiki
         uses: umbrelladocs/action-linkspector@v1
         with:
           github_token: ${{ secrets.github_token }}
