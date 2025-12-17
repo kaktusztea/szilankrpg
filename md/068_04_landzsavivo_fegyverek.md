@@ -2,7 +2,7 @@
 
 ❕A lándzsavívó, szálfegyverek használatához helyre van szükség. Amint beszűkült téren kell forgatni, harcértékük `0`-ra zuhan! A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve, egy adott irányba végzi a harcot (folyósón egy irányba küzdeni).
 
-A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](068_01_12_fegyver_mozgasgatlo_hatasa.md).
+A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md).
 
 <!-- tag: md_table_fegyver_start -->
 

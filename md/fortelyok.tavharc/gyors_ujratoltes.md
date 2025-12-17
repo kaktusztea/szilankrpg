@@ -1,19 +1,18 @@
 ## 🟣 Gyors újratöltés (1)
 
-Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni számszeríjadat.
+Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpuskádat.
 
 ### Alapeset
 
-Kézi- vagy Könnyű nyílpuskával körönként maximum egyszer lehet támadni.
+[Nyílpuskák jellemzői](../068_01_09_nyilpuskak.md): Csak minden `2.körben` lehetséges velük lőni
 
 ---
 ### 1. fok
 
-🔒 Lövészet  **-** `5.szint`
+🔒 Lövészet  **-** `8.szint`
 
 🌟 **Hatás**:
 - A kilőtt nyílpuskád újratöltéséhez szükséges idő lecsökken.
-- Kézi- vagy Könnyű nyílpuskád **Sebesség** értéket kap, melynek nagysága `8`.
-- Így lehetséges lesz nyílpuskával egy körben többször is támadni, de legfeljebb `3x`.
+- Körönként maximum egyszer tudsz lőni - ha az újratöltésen kívül mást nem cselekszel (de [Mozgásodat](063_03_mozgas_harc_kozben.md) továbbra elhasználhatod).
 
 ---

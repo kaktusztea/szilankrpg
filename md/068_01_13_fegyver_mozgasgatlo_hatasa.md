@@ -1,4 +1,4 @@
-## Fegyver mozgásgátló hatása 
+## Fegyver mozgásgátló hatása
 
 A fegyverekre nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vértekre alkalmazunk.
 
@@ -10,6 +10,6 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 
 ---
 
-🔗 [Fegyverek minősége](068_01_13_fegyverek_minosege_ideaja.md) →
+🔗 [Fegyverek minősége](068_01_14_fegyverek_minosege_ideaja.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

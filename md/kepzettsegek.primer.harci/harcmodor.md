@@ -40,7 +40,7 @@ Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_har
 
 🔒 Követelmény: -
 
-🌟 Mesterbónusz: Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_13_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
+🌟 Mesterbónusz: Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_14_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
 ---
 #### Nagymester (12) 📖

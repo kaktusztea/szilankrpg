@@ -24,20 +24,22 @@ Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász l�
 ---
 ### Lövész lőfegyverek
 
+🔆Lásd: [Nyílpuskák](068_01_09_nyilpuskak.md) fejezetet.
+
 🔆 Az Erőbónusz **nem** adódik hozzá a Lövész lőfegyverek **SP** értékéhez.
- 
+
 🔆 A Kézi nyílpuska kivételével mindegyik nyílpuska kétkezes fegyver.
 
 <!-- tag: md_table_tavfegyver_start -->
 
 | Fegyver            | CÉ  | Osztó |      SP      | Sebesség | Sebzés módja | Forgatás módja | Erőbónusz | Átütés | Hatótáv | Speciális / Megjegyzés                                       |
 | ------------------ | :-: | :---: | :----------: | :------: | :----------: | -------------- | :-------: | :----: | :-----: | ------------------------------------------------------------ |
-| Kézi nyílpuska     | `3` |  `4`  |     `+0`     |   `10`   |     `S`      | egykezes       |    `0`    |  `0`   |  `20m`  | A kézi nyílpuska kevésbé pontos fegyver kis mérete miatt.    |
-| Nyílpuska          | `5` |  `5`  |     `+6`     |   `13`   |     `S`      | kétkezes       |    `0`    |  `8`   |  `50m`  |                                                              |
-| Nehéz nyílpuska    | `5` |  `5`  |    `+14`     |   `16`   |     `S`      | kétkezes       |    `0`    |  `15`  |  `80m`  |                                                              |
-| Shad0ni páncéltörő | `0` |  `6`  |    `+20`     |    -     |     `Z`      | kétkezes       |    `0`    |  `20`  | `120m`  | Újratöltés: 1 emberrel: `3` kör, 2 emberrel: `1` kör         |
-| Kharei nyílpuska   | `4` |  `4`  |     `+3`     |   `6`    |     `S`      | kétkezes       |    `0`    |  `0`   |  `50m`  | Míg ki nem fogy a tár. Újratöltés: `1` kör                   |
-| Aquir nyílpuska    | `6` |  `5`  | `halál / +6` |   `7`    |     `S`      | egykezes       |    `0`    |  `20`  |  `50m`  | Halálos hatása és Átütés értéke csak aquir kézben érvényesül |
+| Kézi nyílpuska     | `3` |  `4`  |     `+0`     |   `-1`   |     `S`      | egykezes       |    `0`    |  `0`   |  `20m`  | A kézi nyílpuska kevésbé pontos fegyver kis mérete miatt.    |
+| Nyílpuska          | `5` |  `5`  |     `+6`     |   `-1`   |     `S`      | kétkezes       |    `0`    |  `8`   |  `50m`  |                                                              |
+| Nehéz nyílpuska    | `5` |  `5`  |    `+14`     |   `-1`   |     `S`      | kétkezes       |    `0`    |  `15`  |  `80m`  |                                                              |
+| Shad0ni páncéltörő | `0` |  `6`  |    `+20`     |   `-1`   |     `Z`      | kétkezes       |    `0`    |  `20`  | `120m`  | Újratöltés: 1 emberrel: `3` kör, 2 emberrel: `1` kör         |
+| Kharei nyílpuska   | `4` |  `4`  |     `+3`     |   `-1`   |     `S`      | kétkezes       |    `0`    |  `0`   |  `50m`  | Míg ki nem fogy a tár. Újratöltés: `1` kör                   |
+| Aquir nyílpuska    | `6` |  `5`  | `halál / +6` |   `-1`   |     `S`      | egykezes       |    `0`    |  `20`  |  `50m`  | Halálos hatása és Átütés értéke csak aquir kézben érvényesül |
 
 <!-- tag: md_table_tavfegyver_end -->
 

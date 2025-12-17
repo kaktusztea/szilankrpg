@@ -4,6 +4,6 @@
 
 ---
 
-🔗 [Átütés](068_01_11_atutes.md) →
+🔗 [Átütés](068_01_12_atutes.md) →
 
 ⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)

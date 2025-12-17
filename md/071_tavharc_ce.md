@@ -84,7 +84,7 @@ Lásd bővebben:
 
 ### Bővebben
 
-- [Fegyver minősége](068_01_13_fegyverek_minosege_ideaja.md)
+- [Fegyver minősége](068_01_14_fegyverek_minosege_ideaja.md)
 - [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 - [Távolsági Harcmodor képzettség](kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
 

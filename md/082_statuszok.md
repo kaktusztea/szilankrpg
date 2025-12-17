@@ -272,7 +272,7 @@ Nagy pajzs
 
 #### Kapcsolódik
 
-- [Fegyver mozgásgátló hatása](068_01_12_fegyver_mozgasgatlo_hatasa.md) fejezet
+- [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md) fejezet
 - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md#pajzs-mozgásgátló-hatása) fejezet
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 - [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
