@@ -12,17 +12,17 @@ A [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettséget [csoportos 
 
  A fentiek szerint kiszámolt csoportos **Kvantikum** értéket egy jó vezető professzor képes koordinálásával megemelni.
 
-🔒 **Követelmény**: Kvantikum - `6.szint`
+🔒 Kvantikum - `6.szint`
 
-🌟 **Hatás**: `+2` bónusz csoportos **Kvantikum** értékre
+🌟 `+2` bónusz csoportos **Kvantikum** értékre
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Kvantikum - `9.szint`
+🔒 Kvantikum - `9.szint`
 
-🌟 **Hatás**: `+4` bónusz csoportos **Kvantikum** értékre
+🌟 `+4` bónusz csoportos **Kvantikum** értékre
 
 ---
 ### Jellemzően

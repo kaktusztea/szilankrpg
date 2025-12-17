@@ -6,17 +6,17 @@ A fortély segítségével minden fegyver okozta, bekapott `ÉP` sebből "átala
 
 ### 1. fok
 
-🔒 **Követelmény**: Fájdalomtűrés: `7.szint`
+🔒 Fájdalomtűrés: `7.szint`
 
-🌟 **Hatás**: `1 ÉP` forgatható át `FP` ponttá.
+🌟 `1 ÉP` forgatható át `FP` ponttá.
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Fájdalomtűrés: `10.szint`
+🔒 Fájdalomtűrés: `10.szint`
 
-🌟 **Hatás**: `2 ÉP` forgatható át `FP` ponttá.
+🌟 `2 ÉP` forgatható át `FP` ponttá.
 
 ---
 ### `ÉP` vs `FP`

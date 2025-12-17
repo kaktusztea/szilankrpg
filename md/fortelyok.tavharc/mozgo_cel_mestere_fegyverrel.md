@@ -13,13 +13,10 @@
 
 ### 1. fok
 
-🔒 **Követelmény**:
-- Önuralom: `+1`
-- Távolsági Harcmodor  **-** `5.szint`\
+🔒 Távolsági Harcmodor  **-** `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 
 🌟 **Hatás**:
-
 ```
 3x: Kiszámíthatatlan Szorzó
 4x: Harcoló Szorzó

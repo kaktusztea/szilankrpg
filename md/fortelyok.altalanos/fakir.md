@@ -4,16 +4,10 @@ Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer.alt
 
 ### 1. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Fájdalomtűrés próbára: `+2`
-
-<br />
+🌟 Fájdalomtűrés próbára: `+2`
 
 ### 2. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Fájdalomtűrés próbára: `+4`
+🌟 Fájdalomtűrés próbára: `+4`
 
 ---

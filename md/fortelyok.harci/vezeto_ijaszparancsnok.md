@@ -24,7 +24,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt 
 - Íjászat/Lövészet/Ostromlövészet - `6.szint`
 - Összeszokott tagokat igényleg
 
-🌟 **Hatás**: `+2` bónusz
+🌟 `+2` bónusz az **Alakzatszintre**
 
 <br />
 
@@ -34,7 +34,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt 
 - Íjászat/Lövészet/Ostromlövészet - `9.szint`
 - Összeszokott tagokat igényleg
 
-🌟 **Hatás**: `+4` bónusz
+🌟 `+4` bónusz az **Alakzatszintre**
 
 ---
 ### Több Íjászkapitány a csapatban

@@ -13,11 +13,11 @@ Emberi szaglás
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli szaglás**, mint felvehető Érzék-fortély
+🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli szaglás**, mint felvehető Érzék-fortély
 
 🌟 **Hatás**:
 - A szaglást érintő Észleléspróbákra `+2` bónuszt kapsz
-- `2x` messzebbről megérzel szagokat, mint egy átlagos ember 
+- `2x` messzebbről megérzel szagokat, mint egy átlagos ember
 - Olyan **Érzékenység** próbákat dobhatsz, amelyet egy átlag szaglású ember egyáltalán nem, tehát megnyit lehetőségeket
 - Egyszerre több szagot képes érezni, míg az ember csak egyet
 - Egyéb alap szagok nem zavarják meg - ha nem túl erősek, képes megkülönböztetni a szagok forrását.

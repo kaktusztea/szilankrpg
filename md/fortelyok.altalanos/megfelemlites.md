@@ -12,8 +12,6 @@ Passzív ismeretként nem tojod össze magad egy kis keménykedéstől.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: A kiterjesztett képzettségek megfélemlítéssel kapcsolatos próbáinál nincs levonás.
+🌟 A kiterjesztett képzettségek megfélemlítéssel kapcsolatos próbáinál nincs levonás.
 
 ---

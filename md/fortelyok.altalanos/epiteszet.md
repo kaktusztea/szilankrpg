@@ -16,14 +16,10 @@
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Kiterjeszt képzettségeket `1.fokon`
+🌟 Kiterjeszt képzettségeket `1.fokon`
 
 ### 2. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Kiterjeszt képzettségeket `2.fokon`
+🌟 Kiterjeszt képzettségeket `2.fokon`
 
 ---

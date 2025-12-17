@@ -14,15 +14,9 @@ Az illető elmerül, fuldoklik.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Tudsz úszni
-
-<br />
+🌟 Tudsz úszni
 
 ### 2. fok
-
-🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - Tudsz úszni

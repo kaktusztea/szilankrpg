@@ -20,7 +20,7 @@ TÉ/VÉ: -9
 
 ### 1. fok
 
-🔒 **Követelmény**: Lovaglás/Léglovaglás - `6.szint`
+🔒 Lovaglás/Léglovaglás - `6.szint`
 
 🌟 **Hatás**:
 - Fegyveres harcértékeidhez `TÉ:+3, VÉ:+3` lovas bónusz járul
@@ -30,7 +30,7 @@ TÉ/VÉ: -9
 
 ### 2. fok
 
-🔒 **Követelmény**: Lovaglás/Léglovaglás  - `9.szint`
+🔒 Lovaglás/Léglovaglás  - `9.szint`
 
 🌟 **Hatás**:
 - Fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` lovas bónusz járul
@@ -40,7 +40,7 @@ TÉ/VÉ: -9
 
 ### 3. fok
 
-🔒 **Követelmény**: Lovaglás/Léglovaglás  - `12.szint`
+🔒 Lovaglás/Léglovaglás  - `12.szint`
 
 🌟 **Hatás**:
 - Fegyveres harcértékeidhez `TÉ:+9, VÉ:+9` lovas bónusz járul

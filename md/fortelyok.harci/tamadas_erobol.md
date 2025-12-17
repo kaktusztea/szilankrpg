@@ -11,17 +11,17 @@ TÉ:-6, SP:+6
 
 ### 1. fok
 
-🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
+🔒 [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
 
-🌟 **Hatás**: legfeljebb `+3 SP` (`TÉ:-3`) pakolható át
+🌟 Legfeljebb `+3 SP` (`TÉ:-3`) pakolható át
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Harcmodor - `6.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
+🔒 Harcmodor - `6.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
 
-🌟 **Hatás**: legfeljebb `+6 SP` (`TÉ:-6`) pakolható át
+🌟 Legfeljebb `+6 SP` (`TÉ:-6`) pakolható át
 
 ---
 ### Harcmodor korlátozás

@@ -15,16 +15,10 @@ Megtalált nyomok értelmezését, eltűntetését, illetve városon kívül a n
 
 ### 1. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Lásd a Szituációkat fenn.
-
-<br />
+🌟 A Hatás leírásáért lásd Szituációkat fenn.
 
 ### 2. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Lásd a Szituációkat fenn.
+🌟 A Hatás leírásáért lásd Szituációkat fenn.
 
 ---

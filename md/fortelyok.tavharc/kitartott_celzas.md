@@ -11,11 +11,10 @@ Vársz pár pillanatot, felméred a szelet, a távolságot és a többi változ�
 
 🔒 **Követelmény**:
 - Íjjakkal és lőfegyverekkel végezhető
-- Önuralom: `+1`
 - Íjászat vagy Lövészet - `5.szint`
 - Összpontosítás - `4.szint`
 
-🌟 **Hatás**: `1` célzással eltöltött kör után `+7 CÉ` módosítót kapsz. Nem additív.
+🌟 `1` célzással eltöltött kör után `+7 CÉ` módosítót kapsz. Nem additív.
 
 ---
 ### Megkötések

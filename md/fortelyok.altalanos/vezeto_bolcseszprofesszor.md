@@ -12,17 +12,15 @@ A [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettséget [csoportos szel
 
  A fentiek szerint kiszámolt csoportos **Lexikum** értéket egy jó vezető professzor képes koordinálásával megemelni.
 
-🔒 **Követelmény**: Lexikum - `6.szint`
+🔒 Lexikum - `6.szint`
 
-🌟 **Hatás**: `+2` bónusz csoportos **Lexikum** értékre
-
-<br />
+🌟 `+2` bónusz csoportos **Lexikum** értékre
 
 ### 2. fok
 
-🔒 **Követelmény**: Lexikum - `9.szint`
+🔒 Lexikum - `9.szint`
 
-🌟 **Hatás**: `+4` bónusz csoportos **Lexikum** értékre
+🌟 `+4` bónusz csoportos **Lexikum** értékre
 
 ---
 ### Jellemzően

@@ -9,16 +9,16 @@ Nem esel kétségbe akkor sem, ha nagyon kis helyen, vagy kimozgás lehetősége
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Harcmodor - `3.szint`
+🔒 Harcmodor - `3.szint`
 
-🌟 **Hatás**: a [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) **Hatás** már **nem** sújt ilyen szituációban.
+🌟 Már nem sújt a [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) **Hatás** ilyen szituációban.
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Harcmodor - `6.szint`
+🔒 Harcmodor - `6.szint`
 
-🌟 **Hatás**: a [Hátrány-1 TÉ dobásra](../081_hatasok.md#-h%C3%A1tr%C3%A1ny-1) **Hatás** **sem** sújt már.
+🌟 Már nem sújt [Hátrány-1 TÉ dobásra](../081_hatasok.md#-h%C3%A1tr%C3%A1ny-1) **Hatás** sem.
 
 ---

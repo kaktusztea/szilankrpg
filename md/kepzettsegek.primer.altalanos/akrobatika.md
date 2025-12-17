@@ -42,17 +42,17 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 <br />
 
 ---
-### Próbák 🎲 
+### Próbák 🎲
 
 🔆 **Esés** próbákat lásd az **[Esés magasból](../szituaciok/eses_magasbol.md)** szituáció leírásánál!
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Kötéltánc alaphelyzet
 - Lecsúszni fenéken egy hosszú lépcső korlátján
 - Bevetődni egy nyitott ablakon és kigurulni
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Elkerülni egy hirtelen leeső akadályt futás közben
 - Gyors kigurulás végrehajtása egy enyhén lejtős, köves terepen
@@ -62,7 +62,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
     - talán: van esélyed rá, hogy átugrod
     - biztos nem tudod átugrani
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Távolság felmérésénél a KM megmondja a célszámot.
 - Lecsúszni talpon egy hosszú lépcső korlátján.
@@ -71,17 +71,17 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
     - biztosan átugrod
     - biztos nem tudod átugrani
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Felmérni: valaki tud-e ugrani adott távolságra a rajta levő súlyokkal együtt
 - Végigfutni a függőleges falon `3 méter` hosszan.
 - Nekifutásból felfutni egy `3 méter` magas falon és beugrani egy ablakon
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Kimozodni sűrű sziklaomlást
 - Liánokon folyamatosan lengeni fák között (ahol lehetséges)
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Szakadékba ugrani és elkapni a `10+ méterre` levő liánt sérülés nélkül.

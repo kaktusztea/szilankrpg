@@ -4,8 +4,8 @@ Alapesetben ha gyorsabban akarsz kinyitni egy zárat, akkor [büntetés jár a p
 
 ### 1. fok
 
-🔒 **Követelmény**: [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) - `6.szint`
+🔒 [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) - `6.szint`
 
-🌟 **Hatás**: Sietős zárnyitás esetén sem emelkedik a célszám.
+🌟 Sietős zárnyitás esetén sem emelkedik a célszám.
 
 ---

@@ -8,14 +8,12 @@ A víz mélye a te közeged, ritkábban kell feljönnöd levegőért.
 
 ### Alapeset
 
-🔒 **Követelmény**: [Úszás](uszas.md): `1.fok`
+🔒[Úszás](uszas.md): `1.fok`
 
-🌟 **Hatás**: Ennyi ideig bírod a víz alatt: `1 + Edzettség perc`
-
-<br />
+🌟 Ennyi ideig bírod a víz alatt: `1 + Edzettség perc`
 
 ### 1. fok
 
-🔒 **Követelmény**: Úszás: `2.fok`
+🔒Úszás: `2.fok`
 
-🌟 **Hatás**: Ennyi ideig bírod a víz alatt: `1 + (2x Edzettség) perc`
+🌟 Ennyi ideig bírod a víz alatt: `1 + (2x Edzettség) perc`

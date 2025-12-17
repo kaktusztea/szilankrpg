@@ -21,8 +21,6 @@ Téged próbálnak átverni.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: A kiterjesztett képzettségek hazudozással kapcsolatos próbáinál nincs levonás.
+🌟 A kiterjesztett képzettségek hazudozással kapcsolatos próbáinál nincs levonás.
 
 ---

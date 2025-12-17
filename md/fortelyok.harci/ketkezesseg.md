@@ -14,8 +14,6 @@ Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások s
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
 🌟 **Hatás**:
 - Bármelyik kezeddel levonás nélkül tudsz harcolni, de csak ha `1` fegyvert használsz!
 - [Harckeret](../063_04_tamadasok_szama_fegyverrel.md#harckeret): `+1` bónusz

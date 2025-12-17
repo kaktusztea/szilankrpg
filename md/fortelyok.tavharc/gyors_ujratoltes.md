@@ -9,9 +9,7 @@ Kézi- vagy Könnyű nyílpuskával körönként maximum egyszer lehet támadni.
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- Gyorsaság: `+1`
-- Lövészet  **-** `5.szint`
+🔒 Lövészet  **-** `5.szint`
 
 🌟 **Hatás**:
 - A kilőtt nyílpuskád újratöltéséhez szükséges idő lecsökken.

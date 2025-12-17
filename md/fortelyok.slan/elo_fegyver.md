@@ -10,20 +10,18 @@ lorem ipsum
 ### 1. fok
 
 ⭕TODO⭕
-🔒 **Követelmény**: Képzettség - `1.szint`
+🔒 Képzettség - `1.szint`
 
 
-🌟 **Hatás**:
-- lorem ipsum
+🌟 lorem ipsum
 
 ---
 ### 2. fok
 
 ⭕TODO⭕
-🔒 **Követelmény**: Képzettség - `1.szint`
+🔒 Képzettség - `1.szint`
 
-🌟 **Hatás**:
-- lorem ipsum
+🌟 lorem ipsum
 
 ---
 ### Megjegyzések

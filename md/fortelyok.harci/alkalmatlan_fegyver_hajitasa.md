@@ -2,7 +2,7 @@
 
 Minden egyedi fegyverre külön kell felvenni. Például "Kard, Hosszú".
 
-Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajításra alkalmas fegyverek közül kiválasztani egyet (pl. egy Hosszúkardot), aminek a hajításában nagy tapasztalatra teszel szert. Kezedben e fegyver `CÉ=0` értékekkel hajítható. 
+Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajításra alkalmas fegyverek közül kiválasztani egyet (pl. egy Hosszúkardot), aminek a hajításában nagy tapasztalatra teszel szert. Kezedben e fegyver `CÉ=0` értékekkel hajítható.
 
 ### Kapcsolódik
 
@@ -23,7 +23,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 - [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései az adott fegyver dobásakor csökkennek:
   - `Hátrány-1` Sebzésdobásra
   - `Hátrány-1` `CÉ` dobásra
-- A fegyver harcértéke nem változik (`CÉ=0`) 
+- A fegyver harcértéke nem változik (`CÉ=0`)
 
 <br />
 
@@ -33,8 +33,8 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 - [Fegyver harcmodora](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
 - [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 
-🌟 **Hatás**: 
+🌟 **Hatás**:
 - [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései **nem** sújtanak
-- A fegyver harcértéke nem változik (`CÉ=0`) 
+- A fegyver harcértéke nem változik (`CÉ=0`)
 
 ---

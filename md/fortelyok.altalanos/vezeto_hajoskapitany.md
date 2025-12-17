@@ -12,17 +12,15 @@ A [Hajózás](../kepzettsegek.szekunder/hajozas.md) képzettséget [csoportos fi
 
 A fentiek szerint kiszámolt csoportos **Hajózás** értéket egy jó hajóskapitány képes koordinálásával megemelni.
 
-🔒 **Követelmény**: Hajózás - `6.szint`
+🔒 Hajózás - `6.szint`
 
-🌟 **Hatás**: `+2` bónusz csoportos **Hajózás** értékre
-
-<br />
+🌟 `+2` bónusz csoportos **Hajózás** értékre
 
 ### 2. fok
 
-🔒 **Követelmény**: Hajózás - `9.szint`
+🔒 Hajózás - `9.szint`
 
-🌟 **Hatás**: `+4` bónusz csoportos **Hajózás** értékre
+🌟 `+4` bónusz csoportos **Hajózás** értékre
 
 ---
 ### Jellemzően

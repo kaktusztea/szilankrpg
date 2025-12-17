@@ -26,7 +26,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
 
-🌟 **Hatás**: `+2` bónusz az **Alakzatszintre**
+🌟 `+2` bónusz az **Alakzatszintre**
 
 <br />
 
@@ -37,7 +37,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényel
 
-🌟 **Hatás**: `+4` bónusz az **Alakzatszintre**
+🌟 `+4` bónusz az **Alakzatszintre**
 
 ---
 ### Több Alakzatparancsnok a csapatban

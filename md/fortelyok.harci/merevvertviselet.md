@@ -21,23 +21,23 @@ A vért teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 
 ### 1. fok
 
-🔒 **Követelmény**: Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
 
-🌟 **Hatás**: Merevvérted `TÉ` büntetése ennyivel enyhül: `-5`
+🌟 Merevvérted `TÉ` büntetése ennyivel enyhül: `-5`
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
 
-🌟 **Hatás**: Merevvérted `TÉ` büntetése ennyivel enyhül: `-10`
+🌟 Merevvérted `TÉ` büntetése ennyivel enyhül: `-10`
 
 <br />
 
 ### 3. fok
 
-🔒 **Követelmény**: Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
+🔒 Van Kardívás/Rombolás/Lándzsavívás Harcmodorod - `3.szinten`
 
 🌟 **Hatás**:
 - Merevvérted `TÉ` büntetése ennyivel enyhül: `-15`

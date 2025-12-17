@@ -10,20 +10,18 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Közelharc - `6.szint`
+🔒 Közelharc - `6.szint`
 
-🌟 **Hatás**: [Belharci szituációban](../065_01_01_belharci_szituacio.md) alábbi bónuszok
+🌟 [Belharci szituációban](../065_01_01_belharci_szituacio.md) alábbi bónuszok
 - `KÉ:+1`
 - `TÉ:+2`
 - `VÉ:+2`
 
-<br />
-
 ### 2. fok
 
-🔒 **Követelmény**: Közelharc - `9.szint`
+🔒 Közelharc - `9.szint`
 
-🌟 **Hatás**: [Belharci szituációban](../065_01_01_belharci_szituacio.md) alábbi bónuszok
+🌟 [Belharci szituációban](../065_01_01_belharci_szituacio.md) alábbi bónuszok
 - `KÉ:+2`
 - `TÉ:+4`
 - `VÉ:+4`

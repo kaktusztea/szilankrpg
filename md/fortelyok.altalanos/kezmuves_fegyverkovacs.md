@@ -18,16 +18,10 @@ Fém ötvözetekből kalapálsz ki fegyvereket. Páncélokat NEM.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Dobhatsz alap szinten [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettségre fegyver kovácsolásakor.
-
-<br />
+🌟 Dobhatsz alap szinten [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzettségre fegyver kovácsolásakor.
 
 ### 2. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: `+2` bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor.
+🌟 `+2` bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor.
 
 ---

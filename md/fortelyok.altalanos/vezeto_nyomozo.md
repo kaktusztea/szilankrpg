@@ -12,17 +12,17 @@ A [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettséget [csop
 
 A fentiek szerint kiszámolt csoportos **Nyomozás** értéket egy jó vezető nyomozó képes koordinálásával megemelni.
 
-🔒 **Követelmény**: Nyomozás - `6.szint`
+🔒 Nyomozás - `6.szint`
 
-🌟 **Hatás**: `+2` bónusz csoportos **Nyomozás** értékre
+🌟 `+2` bónusz csoportos **Nyomozás** értékre
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Nyomozás - `9.szint`
+🔒 Nyomozás - `9.szint`
 
-🌟 **Hatás**: `+4` bónusz csoportos **Nyomozás** értékre
+🌟 `+4` bónusz csoportos **Nyomozás** értékre
 
 ---
 ### Jellemzően

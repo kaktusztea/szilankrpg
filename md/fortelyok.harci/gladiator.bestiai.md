@@ -8,7 +8,7 @@ Ha nem emberekkel, hanem nem-elfszabásű szörnyetegekkel szállsz szembe, elő
 - [Gladiátor Leíró Háttér](../022_leiro_hatterek.md#sz%C3%A1rmaz%C3%A1s)
 - Harcmodor - `6.szint`
 
-🌟 **Hatás**: `VÉ:+3` bónusz a harc idejére
+🌟 `VÉ:+3` bónusz a harc idejére
 
 ---
 ### Megjegyzések

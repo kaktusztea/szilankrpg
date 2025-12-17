@@ -4,7 +4,7 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 
 ### 1. fok
 
-🔒 **Követelmény**: Lovaglás/Léglovaglás - `3.szint`
+🔒 Lovaglás/Léglovaglás - `3.szint`
 
 🌟 **Hatás**:
 - `TÉ/VÉ: +4`
@@ -15,7 +15,7 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 
 ### 2. fok
 
-🔒 **Követelmény**: Lovaglás/Léglovaglás - `6.szint`
+🔒 Lovaglás/Léglovaglás - `6.szint`
 
 🌟 **Hatás**:
 - `TÉ/VÉ: +8`, Harci szekerek, nagy fogatok kezelése
@@ -24,7 +24,7 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 
 ### 3. fok
 
-🔒 **Követelmény**: Lovaglás/Léglovaglás - `9.szint`
+🔒 Lovaglás/Léglovaglás - `9.szint`
 
 🌟 **Hatás**:
 - `TÉ/VÉ: +12`

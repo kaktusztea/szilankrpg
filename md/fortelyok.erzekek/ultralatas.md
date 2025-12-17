@@ -17,25 +17,25 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 ### 1. fok
 
-🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 1.fok**, mint felvehető Érzék-fortély
+🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 **Hatás**: Mintha telihold fényénél tájékozódnál vaksötétben. A [Sötét: Félhomály](../065_01_06_szemelyhez_kotott.md#sötétben-félhomály) módosítóival harcolhatsz.
+🌟 Mintha telihold fényénél tájékozódnál vaksötétben. A [Sötét: Félhomály](../065_01_06_szemelyhez_kotott.md#sötétben-félhomály) módosítóival harcolhatsz.
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 2.fok**, mint felvehető Érzék-fortély
+🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 2.fok**, mint felvehető Érzék-fortély
 
-🌟 **Hatás**: Harcban nem jár számodra levonás. Mintha szürkületkor tájékozódnál. Vaksötétben is tudsz olvasni, de csak bogarászva, mintha egy gyufa fényénél, lassan forgatnád a lapokat. Türelemjáték. 
+🌟 Harcban nem jár számodra levonás. Mintha szürkületkor tájékozódnál. Vaksötétben is tudsz olvasni, de csak bogarászva, mintha egy gyufa fényénél, lassan forgatnád a lapokat. Türelemjáték.
 
 <br />
 
 ### 3. fok
 
-🔒 **Követelmény**: Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 3.fok**, mint felvehető Érzék-fortély
+🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 3.fok**, mint felvehető Érzék-fortély
 
-🌟 **Hatás**: Harcban nem jár számodra levonás. Tökéletesen látsz, mintha nappal lenne, a látótávolság is ugyanaz. Úgy tudsz olvasni, mint napvilágnál.
+🌟 Harcban nem jár számodra levonás. Tökéletesen látsz, mintha nappal lenne, a látótávolság is ugyanaz. Úgy tudsz olvasni, mint napvilágnál.
 
 ---
 ### Egyedi jellemzők

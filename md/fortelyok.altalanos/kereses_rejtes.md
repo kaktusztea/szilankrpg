@@ -19,16 +19,14 @@ Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben me
 
 ### 1. fok
 
-🔒 **Követelmény**: Észlelés - `3.szint`
+🔒 Észlelés - `3.szint`
 
-🌟 **Hatás**: Lásd a leírást fenn.
-
-<br />
+🌟 Hatás leírását lásd fenn.
 
 ### 2. fok
 
-🔒 **Követelmény**: Észlelés - `3.szint`
+🔒 Észlelés - `3.szint`
 
-🌟 **Hatás**: Lásd a leírást fenn.
+🌟 Hatás leírását lásd fenn.
 
 ---

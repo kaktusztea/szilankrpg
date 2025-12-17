@@ -12,17 +12,17 @@ A [Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséget [csop
 
 A fentiek szerint kiszámolt csoportos **Orvoslás** értéket egy jó vezető professzor képes koordinálásával megemelni.
 
-🔒 **Követelmény**: Orvoslás - `6.szint`
+🔒 Orvoslás - `6.szint`
 
-🌟 **Hatás**: `+2` bónusz csoportos **Orvoslás** értékre
+🌟 `+2` bónusz csoportos **Orvoslás** értékre
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Orvoslás - `9.szint`
+🔒 Orvoslás - `9.szint`
 
-🌟 **Hatás**: `+4` bónusz csoportos **Orvoslás** értékre
+🌟 `+4` bónusz csoportos **Orvoslás** értékre
 
 ---
 ### Jellemzően

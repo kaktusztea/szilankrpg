@@ -26,9 +26,9 @@ TÉ levonás
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Harcmodor: `3.szint`
+🔒 Harcmodor: `3.szint`
 
-🌟 **Hatás**: Teljes pajzs `VÉ` akítv
+🌟 Teljes pajzs `VÉ` akítv
 
 ```
 TÉ levonás
@@ -41,9 +41,9 @@ TÉ levonás
 
 ### 2. fok
 
-🔒 **Követelmény**: Harcmodor: `5.szint`
+🔒 Harcmodor: `5.szint`
 
-🌟 **Hatás**: Teljes pajzs `VÉ` akítv
+🌟 Teljes pajzs `VÉ` akítv
 
 ```
 TÉ levonás
@@ -59,9 +59,9 @@ TÉ levonás
 
 ### 3. fok
 
-🔒 **Követelmény**: Harcmodor: `8.szint`
+🔒 Harcmodor: `8.szint`
 
-🌟 **Hatás**: Teljes pajzs `VÉ` akítv
+🌟 Teljes pajzs `VÉ` akítv
 
 ```
 TÉ levonás nincs

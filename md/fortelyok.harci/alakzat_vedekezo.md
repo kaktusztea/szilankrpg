@@ -11,16 +11,16 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 
 ### 1. fok
 
-🔒 **Követelmény**: Harcmodor - `6.szint`
+🔒 Harcmodor - `6.szint`
 
-🌟 **Hatás**: Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
+🌟 Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Harcmodor - `9.szint`
+🔒 Harcmodor - `9.szint`
 
-🌟 **Hatás**: Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
+🌟 Lásd a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezetet.
 
 ---

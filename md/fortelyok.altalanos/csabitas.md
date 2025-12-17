@@ -9,8 +9,6 @@ A másik nem elcsábítása, vagy a rosszindulatú csábítás felismerése.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
 🌟 **Hatás**: A kiterjesztett képzettségek csábítással kapcsolatos próbáinál nincs levonás.
 
 ---

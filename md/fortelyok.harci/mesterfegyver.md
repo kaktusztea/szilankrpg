@@ -15,9 +15,9 @@ A fegyver alap harcértékei számítanak (egyéb bónuszokkal).
 
 ### 1. fok
 
-🔒 **Követelmény**: Harcmodor - `4.szint`
+🔒 Harcmodor - `4.szint`
 
-🌟 **Hatás**: adott fegyverre
+🌟 adott fegyverre
 
 ```
 TÉ, VÉ, SP: +1
@@ -27,9 +27,9 @@ TÉ, VÉ, SP: +1
 
 ### 2. fok
 
-🔒 **Követelmény**: Harcmodor - `8.szint`
+🔒 Harcmodor - `8.szint`
 
-🌟 **Hatás**:  adott fegyverre
+🌟 adott fegyverre
 
 ```
 TÉ, VÉ, SP: +2
@@ -39,9 +39,9 @@ TÉ, VÉ, SP: +2
 
 ### 3. fok
 
-🔒 **Követelmény**: Harcmodor - `12.szint`
+🔒 Harcmodor - `12.szint`
 
-🌟 **Hatás**:  adott fegyverre
+🌟 adott fegyverre
 
 ```
 TÉ, VÉ, SP: +3

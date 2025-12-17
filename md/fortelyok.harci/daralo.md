@@ -9,17 +9,11 @@ Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#té-levonás
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: Ha `k20` támadó dobásod páratlan szám volt, akkor a levonás csak `TÉ:-3`
-
-<br />
+🌟 Ha `k20` támadó dobásod páratlan szám volt, akkor a levonás csak `TÉ:-3`
 
 ### 2. fok
 
-🔒 **Követelmény**: -
-
-🌟 **Hatás**: A levonás mindig csak `TÉ:-3`
+🌟 A levonás mindig csak `TÉ:-3`
 
 ---
 ### ⚡ Példa

@@ -16,10 +16,9 @@ Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` bü
 ### 1. fok
 
 🔒 **Követelmény**:
-
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettség - `3.szint`
 - [Keresés/rejtés](kereses_rejtes.md) fortély: `1.fok`
 
-🌟 **Hatás**: A Villámgyors keresés kapkodós helyzetekben nullázza az Alapesetnél leírt büntetést.
+🌟 A Villámgyors keresés kapkodós helyzetekben nullázza az Alapesetnél leírt büntetést.
 
 ---

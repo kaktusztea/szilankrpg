@@ -15,10 +15,6 @@ Puszta kéz sebzése: -5+k20
 - [Faj Háttér](../021_faj_hatterek.md) ahol ajánlott fortély a **Természetes fegyver**
 - Példa: [Faj Háttér: Khál](../hatterek.faji/khal.md)
 
-🌟 **Hatás**:
-
-```
-Puszta kéz sebzése: 1+k20
-```
+🌟 Puszta kéz sebzése: `1+k20`
 
 ---

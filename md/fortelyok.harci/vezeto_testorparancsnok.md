@@ -26,7 +26,7 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) - `6.szint`
 - Összeszokott tagokat igényleg
 
-🌟 **Hatás**: `+2` bónusz az **Észlelés** képzettségre
+🌟 `+2` bónusz az **Észlelés** képzettségre
 
 <br />
 
@@ -37,7 +37,7 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényleg
 
-🌟 **Hatás**: `+4` bónusz az **Észlelés** képzettségre
+🌟 `+4` bónusz az **Észlelés** képzettségre
 
 ---
 ### Jellemzően

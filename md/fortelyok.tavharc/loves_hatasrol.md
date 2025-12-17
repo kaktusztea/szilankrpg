@@ -29,14 +29,7 @@ CÉ levonás
 - [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) - `1.fok`
 - [Lovas harc](../fortelyok.harci/lovas_harc.md) - `2.fok`
 
-🌟 **Hatás**: `CÉ` levonás
-
-```
--3: Ügetésben
--7: Vágtában
-```
-
-<br />
+🌟 `CÉ:-3` Ügetésben, `CÉ:-7` Vágtában
 
 ### 2. fok
 
@@ -47,6 +40,6 @@ CÉ levonás
 - [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) - `2.fok`
 - [Lovas harc](../fortelyok.harci/lovas_harc.md) - `3.fok`
 
-🌟 **Hatás**: `CÉ:-3` vágtában
+🌟 `CÉ:-3` vágtában
 
 ---

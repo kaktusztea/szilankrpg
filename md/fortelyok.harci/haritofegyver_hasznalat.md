@@ -9,8 +9,6 @@ Hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverforgató kezed
 ---
 ### 1. fok
 
-🔒 **Követelmény**: -
-
 🌟 **Hatás**:
 - Megkapod a gyengébb kezedben forgatott hárítófegyver `VÉ` értékét pluszban (csak azt). A fegyverrel nem támadhatsz.
 - **[Mesterfegyver](mesterfegyver.md)** fortély `VÉ` bónusza is beszámít

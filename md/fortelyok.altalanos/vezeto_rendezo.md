@@ -5,24 +5,24 @@ Képes vagy egy színtársulat vezetésére → bónusz **Előadóművészet** k
 ---
 #### Bónusz
 
-A [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy színtársulat tagjai, mikor egy előadást játszanak el. 
+A [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy színtársulat tagjai, mikor egy előadást játszanak el.
 
 ---
 ### 1. fok
 
 A fentiek szerint kiszámolt csoportos **Előadóművészet** értéket egy jó rendező képes koordinálásával megemelni.
 
-🔒 **Követelmény**: Előadóművészet - `6.szint`
+🔒 Előadóművészet - `6.szint`
 
-🌟 **Hatás**: `+2` bónusz csoportos **Előadóművészet** értékre
+🌟 `+2` bónusz csoportos **Előadóművészet** értékre
 
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**: Előadóművészet - `9.szint`
+🔒 Előadóművészet - `9.szint`
 
-🌟 **Hatás**: `+4` bónusz csoportos **Előadóművészet** értékre
+🌟 `+4` bónusz csoportos **Előadóművészet** értékre
 
 ---
 ### Jellemzően
