@@ -2,6 +2,24 @@
 
 Ismered a test sebezhető pontjait és tisztában vagy a létfontosságú belső szervek elhelyezkedésével.\
 Távharcos harcmodorokra NEM alkalmazható.
+
+### Megkötések
+
+- A fortély alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára.
+- [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
+- Csatabárdokkal, buzogányokkal, kétkezes fegyverekkel a fortély nem alkalmazható.
+- A fortély átal leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
+
+### Extra bónuszok
+
+- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver (lásd lenn) alkalmazásakor
+    - a **Harci anatómia** fortély minden foka: `2`-vel csökkenti a **Manőver Ellenpróba** Nehézséget.
+- [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor
+    - A **Harci anatómia** fortély minden foka `3`-mal csökkenti a **Visszafogott taktika** esetén kapott `TÉ` büntetést.
+- [Kínokozás](kinokozas.md) fortély
+    - Alkalmazásához követelmény a **Harci anatómia**, melynek egyes fokai egyre erősebb hatáshoz vezetnek.
+
+---
 ### 1. fok
 
 🔒 **Követelmény**:
@@ -39,28 +57,5 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Orvtámadás](../066_05_altalanos_manoverek.md#orvtámadás) Manőver esetén `SP:+6` (csak vértmentes ponton)
 - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
 - Szemgolyót szedhet ki harc közben: Sikeres [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
-
----
-### [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver alkalmazásakor
-
-... a **Harci anatómia** fortély minden foka: `2`-vel csökkenti a **Manőver Ellenpróba** Nehézséget.
-
----
-### [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor
-
-A **Harci anatómia** fortély minden foka `3`-mal csökkenti a **Visszafogott taktika** esetén kapott `TÉ` büntetést.
-
----
-### [Kínokozás](kinokozas.md) fortély
-
-Alkalmazásához követelmény a **Harci anatómia**, melynek egyes fokai egyre erősebb hatáshoz vezetnek.
-
----
-### Megkötések
-
-- A fortély alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára.
-- [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
-- Csatabárdokkal, buzogányokkal, kétkezes fegyverekkel a fortély nem alkalmazható.
-- A fortély átal leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
 
 ---
