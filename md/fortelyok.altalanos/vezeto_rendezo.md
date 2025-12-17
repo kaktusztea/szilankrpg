@@ -12,9 +12,7 @@ A [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség
 
 A fentiek szerint kiszámolt csoportos **Előadóművészet** értéket egy jó rendező képes koordinálásával megemelni.
 
-🔒 **Követelmény**:
-- Érzékenység: `+2`
-- Előadóművészet - `6.szint`
+🔒 **Követelmény**: Előadóművészet - `6.szint`
 
 🌟 **Hatás**: `+2` bónusz csoportos **Előadóművészet** értékre
 
@@ -22,9 +20,7 @@ A fentiek szerint kiszámolt csoportos **Előadóművészet** értéket egy jó 
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Érzékenység: `+3`
-- Előadóművészet - `9.szint`
+🔒 **Követelmény**: Előadóművészet - `9.szint`
 
 🌟 **Hatás**: `+4` bónusz csoportos **Előadóművészet** értékre
 

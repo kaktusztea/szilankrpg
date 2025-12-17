@@ -21,7 +21,7 @@ Téged próbálnak átverni.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Intelligencia: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: A kiterjesztett képzettségek hazudozással kapcsolatos próbáinál nincs levonás.
 

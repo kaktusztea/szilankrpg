@@ -4,7 +4,7 @@ Az egyik legrégebbi alvilági mesterség, amelynek célja sokszor csak a szóra
 
 ### 1. fok
 
-🔒 **Követelmény**: Érzékenység: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: Zajos háttérben megtévesztően képes vagy utánozni egy előzőleg legalább `1` percig beszélni hallott személy hangját.
 
@@ -13,7 +13,6 @@ Az egyik legrégebbi alvilági mesterség, amelynek célja sokszor csak a szóra
 ### 2. fok
 
 🔒 **Követelmény**:
-- Érzékenység: `+1`
 - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - Alap vagy Udvari fok (KM dönt a szituációtól függően)
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) - ha kell (KM dönt)
 

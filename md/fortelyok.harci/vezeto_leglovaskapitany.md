@@ -33,7 +33,6 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 ### 2. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+2`
 - Léglovaglás - `9.szint` (léglovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényleg

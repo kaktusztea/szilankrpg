@@ -30,8 +30,7 @@ TÉ/VÉ: -9
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Léglovaglás - `6.szint`
+🔒 **Követelmény**: Léglovaglás - `6.szint`
 
 🌟 **Hatás**:
 - fegyveres harcértékeidhez `TÉ:+6, VÉ:+6` léglovas bónusz járul

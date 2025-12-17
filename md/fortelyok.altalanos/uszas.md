@@ -22,7 +22,7 @@ Az illető elmerül, fuldoklik.
 
 ### 2. fok
 
-🔒 **Követelmény**: Edzettség: `+2`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - Tudsz úszni

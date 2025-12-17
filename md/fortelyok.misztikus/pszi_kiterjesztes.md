@@ -12,8 +12,6 @@ Passzív: az alkalmazó csak magára képes a diszciplínákat alkalmazni﻿.
 ### 1. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+0`
-- Önuralom: `+1`
 - [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
 - [Pszí használat](../kepzettsegek.primer.misztikus/pszi_hasznalat.md) - `3.szint
 
@@ -26,8 +24,6 @@ Passzív: az alkalmazó csak magára képes a diszciplínákat alkalmazni﻿.
 ### 2. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+1`
-- Önuralom: `+2`
 - Összpontosítás - `6.szint`
 - Pszí-használat- `6.szint
 
@@ -40,8 +36,6 @@ Passzív: az alkalmazó csak magára képes a diszciplínákat alkalmazni﻿.
 ### 3. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+2`
-- Önuralom: `+3`
 - Összpontosítás - `9.szint`
 - Pszí-használat - ⭕`12.szint
 

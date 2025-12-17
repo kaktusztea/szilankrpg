@@ -5,7 +5,6 @@ Ha nem emberekkel, hanem nem-elfszabásű szörnyetegekkel szállsz szembe, elő
 ### 1. fok
 
 🔒 **Követelmény**:
-
 - [Gladiátor Leíró Háttér](../022_leiro_hatterek.md#sz%C3%A1rmaz%C3%A1s)
 - Harcmodor - `6.szint`
 

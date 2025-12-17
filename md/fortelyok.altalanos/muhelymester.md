@@ -13,7 +13,6 @@ Jól tudod delegálni a kézműves termékek előállításához szükséges mun
 ### 1. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+1`
 - Kézművesség - `9.szint`
 - Azon Kézműves szakmákra alkalmazhatod, amelyre megvan a "[Kézművesség - adott szakma](../042_szabad_fortelyok.md#tanulhat%C3%B3-szabad-fort%C3%A9lyok-list%C3%A1ja)" Szabad Fortélyod.
 

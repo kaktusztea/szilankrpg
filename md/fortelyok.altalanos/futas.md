@@ -9,7 +9,7 @@ Nem csak rohangálsz, mint egy futóbolond, hanem kitartó, hosszas futás sorá
 
 ### 1. fok
 
-🔒 **Követelmény**: Edzettség: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - Hosszútávfutáskor **Edzettség** próbára: `+1`

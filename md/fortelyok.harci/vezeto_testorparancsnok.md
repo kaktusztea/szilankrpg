@@ -33,7 +33,6 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 ### 2. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+2`
 - Alakzatharc - `9.szint`
 - Befolyásolás - `3.szint`
 - Összeszokott tagokat igényleg

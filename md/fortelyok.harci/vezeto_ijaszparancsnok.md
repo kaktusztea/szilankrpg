@@ -31,7 +31,6 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt 
 ### 2. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+2`
 - Íjászat/Lövészet/Ostromlövészet - `9.szint`
 - Összeszokott tagokat igényleg
 

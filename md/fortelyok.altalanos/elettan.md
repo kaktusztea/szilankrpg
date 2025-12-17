@@ -22,7 +22,7 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Intelligencia: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: Ismered a boncolás tudományát.
 

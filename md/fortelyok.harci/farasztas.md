@@ -5,7 +5,6 @@ A fortély nagy ismerői a bajvívók és harcosok.
 ### 1. fok
 
 🔒 **Követelmény**:
-- Ügyesség: `+1`
 - Harcmodor  **-** `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 

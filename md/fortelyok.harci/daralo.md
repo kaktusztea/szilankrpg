@@ -9,7 +9,7 @@ Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#té-levonás
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Edzettség: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: Ha `k20` támadó dobásod páratlan szám volt, akkor a levonás csak `TÉ:-3`
 
@@ -17,7 +17,7 @@ Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#té-levonás
 
 ### 2. fok
 
-🔒 **Követelmény**: Edzettség: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: A levonás mindig csak `TÉ:-3`
 

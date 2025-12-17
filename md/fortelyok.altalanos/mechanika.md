@@ -4,7 +4,7 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 
 ### Kapcsolódik
 
-- [Építészet](epiteszet.md) fortély: ritka eset, hogy mindkettő kell a Lexikum dobáshoz. Épületbe épített mechanikus szerkezetek készítésekor. Gnómok és törpék sajátja. 
+- [Építészet](epiteszet.md) fortély: ritka eset, hogy mindkettő kell a Lexikum dobáshoz. Épületbe épített mechanikus szerkezetek készítésekor. Gnómok és törpék sajátja.
 - [Keresés/rejtés](kereses_rejtes.md) fortély: csapdához, titkosajtóhoz, amiben összetettebb mechanikus szerkezet van
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) fortély: bónuszt ad rá a Mechanika (lásd ott)
 - [Csapda hatástalanítás, mechanikus szerkezet szabotálása](../szituaciok/csapda_hatatalanitas_szabotalas.md) szituáció
@@ -21,7 +21,7 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 
 ### 1. fok
 
-🔒 **Követelmény**: Intelligencia: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettségre: `+2`
@@ -31,7 +31,7 @@ A mechanikus szerkezetek ismerete sok esetben lehet megkövetelt tudás.
 
 ### 2. fok
 
-🔒 **Követelmény**: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - [Zárnyitás](../kepzettsegek.szekunder/zarnyitas.md) képzettségre: `+4`

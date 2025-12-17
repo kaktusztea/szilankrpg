@@ -31,7 +31,6 @@ A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
 ### 2. fok
 
 🔒 **Követelmény**:
-- Intelligencia: `+2`
 - Lopakodás/rejtőzés - `9.szint`
 - Tradíció: Fejvadász - `9.szint`
 - Összeszokott tagokat igényleg

@@ -23,8 +23,7 @@ A fortély nélkül történelmi témában nem dobhatsz próbát [Lexikum](../ke
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- Emlékezet: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - Már dobhatsz [Lexikum](../kepzettsegek.szekunder/lexikum.md) próbát történelmi témában.
@@ -34,8 +33,7 @@ A fortély nélkül történelmi témában nem dobhatsz próbát [Lexikum](../ke
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Emlékezet: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - A [Lexikum](../kepzettsegek.szekunder/lexikum.md) próbát `+2` bónusszal dobhatod történelmi témában.

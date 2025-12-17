@@ -17,8 +17,7 @@ Csomók ismerete, kötése, rögzítése.
 
 ### 1. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
 - Ügyesség ellenpróbához: `+2`
@@ -26,11 +25,10 @@ Csomók ismerete, kötése, rögzítése.
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- Ügyesség ellenpróbához: `+4` 
+- Ügyesség ellenpróbához: `+4`
 - Mestercsomók ismerete
 
 <br />
@@ -42,19 +40,17 @@ Könnyebben kibújsz kötelékeidből.
 
 ### 1. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- Ügyesség ellenpróbához: `+2` 
+- Ügyesség ellenpróbához: `+2`
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+2`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**:
-- Ügyesség ellenpróbához: `+4` 
+- Ügyesség ellenpróbához: `+4`
 
 ---
 ### Mechanikus zárak

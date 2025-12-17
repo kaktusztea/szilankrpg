@@ -12,7 +12,7 @@ Passzív ismeretként nem tojod össze magad egy kis keménykedéstől.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Intelligencia: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: A kiterjesztett képzettségek megfélemlítéssel kapcsolatos próbáinál nincs levonás.
 

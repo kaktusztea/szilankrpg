@@ -9,7 +9,7 @@ Kemény vagy mint egy rozsomák.
 
 ### 1. fok
 
-🔒 **Követelmény**: Edzettség: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: **Hosszútávú** [Úszás](uszas.md), [Futás](futas.md), vagy egyéb ilyen tartós igénybevételnél ⚪**Edzettség** próbádra `+1` bónuszt kapsz.
 

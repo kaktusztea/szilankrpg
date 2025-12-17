@@ -9,7 +9,7 @@ A másik nem elcsábítása, vagy a rosszindulatú csábítás felismerése.
 ---
 ### 1. fok
 
-🔒 **Követelmény**: Intelligencia: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: A kiterjesztett képzettségek csábítással kapcsolatos próbáinál nincs levonás.
 

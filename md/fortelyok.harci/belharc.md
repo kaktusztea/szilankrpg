@@ -10,10 +10,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+1`
-- Gyorsaság: `+1`
-- Közelharc - `6.szint`
+🔒 **Követelmény**: Közelharc - `6.szint`
 
 🌟 **Hatás**: [Belharci szituációban](../065_01_01_belharci_szituacio.md) alábbi bónuszok
 - `KÉ:+1`
@@ -24,10 +21,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Ügyesség: `+2`
-- Gyorsaság: `+2`
-- Közelharc - `9.szint`
+🔒 **Követelmény**: Közelharc - `9.szint`
 
 🌟 **Hatás**: [Belharci szituációban](../065_01_01_belharci_szituacio.md) alábbi bónuszok
 - `KÉ:+2`

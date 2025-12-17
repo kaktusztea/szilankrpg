@@ -4,7 +4,7 @@ Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer.alt
 
 ### 1. fok
 
-🔒 **Követelmény**: Önuralom: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: Fájdalomtűrés próbára: `+2`
 
@@ -12,7 +12,7 @@ Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer.alt
 
 ### 2. fok
 
-🔒 **Követelmény**: Önuralom: `+3`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: Fájdalomtűrés próbára: `+4`
 

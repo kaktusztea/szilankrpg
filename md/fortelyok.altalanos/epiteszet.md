@@ -22,7 +22,7 @@
 
 ### 2. fok
 
-🔒 **Követelmény**: Intelligencia: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: Kiterjeszt képzettségeket `2.fokon`
 

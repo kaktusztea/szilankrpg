@@ -17,9 +17,7 @@ Amennyiben **Kiszámíthatatlanul mozgó**, vagy **Harcoló** ellenfélre lősz 
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- Önuralom: `+1`
-- Mágikus célzás  **-** `5.szint`
+🔒 **Követelmény**: Mágikus célzás  **-** `5.szint`
 
 🌟 **Hatás**:
 

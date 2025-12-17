@@ -4,7 +4,7 @@ Szervezeted alapból, - vagy speciális felkészítésnek hála - ellenállóbb 
 
 ### 1. fok
 
-🔒 **Követelmény**: Edzettség: `+0`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: [Méregellenállás dobásakor](../152_meregellenallas.md) kapsz `+1` bónuszt **Edzettség** Tulajdonságpróbádra.
 
@@ -12,7 +12,7 @@ Szervezeted alapból, - vagy speciális felkészítésnek hála - ellenállóbb 
 
 ### 2. fok
 
-🔒 **Követelmény**: Edzettség: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: [Méregellenállás dobásakor](../152_meregellenallas.md) kapsz `+2` bónuszt **Edzettség** Tulajdonságpróbádra.
 
@@ -20,7 +20,7 @@ Szervezeted alapból, - vagy speciális felkészítésnek hála - ellenállóbb 
 
 ### 3. fok
 
-🔒 **Követelmény**: Edzettség: `+1`
+🔒 **Követelmény**: -
 
 🌟 **Hatás**: [Méregellenállás dobásakor](../152_meregellenallas.md) kapsz `+3` bónuszt **Edzettség** Tulajdonságpróbádra.
 

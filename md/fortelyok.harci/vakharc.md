@@ -22,9 +22,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Érzékenység: `+3`
-- Összpontosítás - `6.szint`
+🔒 **Követelmény**: Összpontosítás - `6.szint`
 
 🌟 **Hatás**:
 - Érzék Tulajdonságpróba büntetés `2` fokot enyhül:
@@ -38,9 +36,7 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 ### 3. fok
 
-🔒 **Követelmény**:
-- Érzékenység: `+4`
-- Összpontosítás - `9.szint`
+🔒 **Követelmény**: Összpontosítás - `9.szint`
 
 🌟 **Hatás**:
 - Érzék Tulajdonságpróba büntetés `3` fokot enyhül:
