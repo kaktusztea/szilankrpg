@@ -174,7 +174,7 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Ökl
 
 - Nehézség: `12`
 - Fázisok: `Végrehajtás Ellenpróba`
-- Követelmény: Megelőző sikeres [Feszítés, Leszorítás](#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s--fesz%C3%ADt%C3%A9sb%C5%91l-kij%C3%B6vetel) Manőver
+- Követelmény: Megelőző sikeres [Feszítés, Leszorítás](#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s) Manőver
 
 **Hatás**:
 - Kitörted ellenfeled nyakát.
