@@ -35,7 +35,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 ### Szituációk
 
-- [Térkép készítése](../szituaciok/terkep_keszitese.md)
+- [Térkép készítése, értelmezése](../szituaciok/terkep_keszitese_ertelmezes.md)
 
 <br />
 
@@ -44,7 +44,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 #### Mester (9) 📖
 
-🔒 Követelmény: Intelligencia `+2`, Emlékezet `+1`  
+🔒 Követelmény: Intelligencia `+2`, Emlékezet `+1`
 
 🌟 Hatás: Mesterbónusz:  ⭕TODO⭕
 
@@ -52,7 +52,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  Intelligencia `+3`, Emlékezet `+1`  
+🔒 Követelmény:  Intelligencia `+3`, Emlékezet `+1`
 
 🌟 Mesterbónusz:  ⭕TODO⭕
 - Misztikus módon érzed a valószínűségeket: melyik az esélyesebb kimenetel, még ha pontos számítást nem is végzel.
@@ -60,7 +60,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  Intelligencia `+4`, Emlékezet `+1`  
+🔒 Követelmény:  Intelligencia `+4`, Emlékezet `+1`
 
 🌟 Mesterbónusz:  ⭕TODO⭕
 - Belelátsz a világ törvényeibe – a sors számokban íródik előtted: asztrológia, mechanika, pénzügy, hadrendi logisztika – mind csak eszközök a számodra.
@@ -70,38 +70,40 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Alap matematikai számítás, egyszerű mérés, törtek, mértékegységek átváltása.
 - Egyszerű kód (betűcsere, szójáték) megfejtése.
+- Egyszerűbb térkép olvasása
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Kisebb épület tervének értelmezése.
 - Kereskedői számvetés gyors átlátása.
 - Csillagállás alapján irány nagyjából meghatározása.
 - Átlagos bonyolultsági kód megfejtése
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Itt már gyakoriak az Összetett próbát igénylő dobások.
 - Bonyolultabb titkosírás megfejtése (pl. többsoros transzpozíció).
 - Közepes szerkezet megtervezése (csiga-rendszer, daru, vízimalom).
 - Bonyolult pénzügyi trükk (adócsalás vagy nagykereskedelmi árkalkuláció) leleplezése.
+- Harcászati tékép olvasása ([Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md)) Szabad fortély kiterjesztheti (`N`).
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Építészeti, mechanikai rendszer hibátlan megtervezése (torony, híd).
 - Többszintű titkosírás feltörése rövid idő alatt.
 - Pontos előrejelzést adni egyes árúk, javak árainak mozgásáról.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Nagy volumenű hadtáp/logisztikai számítás gyors és pontos elvégzése.
 - Égbolt alapján kozmikus esemény (napfogyatkozás, üstökös útja) meghatározása.
 - Olyan komplex kód megfejtése/megírása, ami még a szakértőket is próbára teszi.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Valószínűségi előrejelzéssel megérzed a jövő közelgő lehetőségeit (például: mely kereskedelmi útvonal lesz nyereséges, vagy merre fúj majd a szél a következő napokban).
 - Egyedül képes vagy több száz ember munkáját igénylő számításokra rövid idő alatt (hatalmas építkezések, erődítmény vagy mechanikus csoda).
