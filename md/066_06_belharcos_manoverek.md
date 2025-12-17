@@ -3,7 +3,8 @@
 - [Belharcba kerülés](#belharcba-ker%C3%BCl%C3%A9s)
 - [Belharcból kibontakozás](#belharcb%C3%B3l-kibontakoz%C3%A1s)
 - [Átdobás](#%C3%A1tdob%C3%A1s)
-- [Feszítés, Leszorítás / Feszítésből kijövetel](#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s--fesz%C3%ADt%C3%A9sb%C5%91l-kij%C3%B6vetel)
+- [Feszítés, Leszorítás](#fesz%C3%ADt%C3%A9s-leszor%C3%ADt%C3%A1s)
+- [Feszítésből kijövetel](#fesz%C3%ADt%C3%A9sb%C5%91l-kij%C3%B6vetel)
 - [Gáncsolás](#g%C3%A1ncsol%C3%A1s)
 - [Kéztörés](#k%C3%A9zt%C3%B6r%C3%A9s)
 - [Lábtörés](#l%C3%A1bt%C3%B6r%C3%A9s)
@@ -57,10 +58,7 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 
 - Nehézség: `5`
 - Fázisok: `Megakasztás, Ellenpróba`
-    - **Megakasztás** sikertelen: a kibontakozás sikertelen, nem dobhatsz Ellenpróbát sem.
-	- **Ellenpróba** sikertelen: a kibontakozás sikertelen.
-	- **Ellenpróba** sikeres: kibontakoztál belharcból.
-- Taktikák: Védő Taktika és Teljes Védekezés Taktika közben is végezhető.
+- Taktikák: [Védő Taktika](065_02_harci_taktikak.md#v%C3%A9d%C5%91-taktika) és [Teljes Védekezés Taktika](065_02_harci_taktikak.md#teljes-v%C3%A9dekez%C3%A9s-taktika) közben is végezhető.
 - Ha belharcban sebzel, automatikusan, más dobás nélkül kibontakozhatsz a belharci szituációból.
 
 **Hatás**: Sikeresen kibontakoztál belharcból. Most sima harci szituációban vagy ellenfeleddel.
@@ -80,7 +78,7 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 <br />
 
 ---
-### Feszítés, Leszorítás / Feszítésből kijövetel
+### Feszítés, Leszorítás
 
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
@@ -89,14 +87,18 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 - Sikeresen lefeszítetted, aki alig bír mozdulni / Kiszabadultál a feszítésből
 - Amíg feszítve van, addig nem tud fegyverrel támadni
 
- #### 🔆 Kijövetel: Körönként dobandó próba
+<br />
 
-```
-Fájdalomtűrés + Önuralom
-    vs  15
-```
+---
+### Feszítésből kijövetel
 
-Kudarc esetén az áldozat képtelen visszatámadni és mágiát, pszít használni.
+- Nehézség: `8`
+- Fázisok: `Végrehajtás, Ellenpróba`
+- Extra képzettségpróba követelmény:
+    - Fájdalomtűrés + Önuralom. Nehézség: `15`
+    - Körönként dobandó. Kudarc esetén az áldozat képtelen visszatámadni és mágiát, pszít használni.
+
+**Hatás**: Sikeresen kijöttél a leszorításból. A [Belharci szituáció](065_01_01_belharci_szituacio.md) megmarad.
 
 <br />
 
