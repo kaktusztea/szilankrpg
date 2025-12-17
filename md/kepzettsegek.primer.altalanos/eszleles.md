@@ -36,8 +36,6 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 
 #### Mester (9) 📖
 
-🔒 Követelmény: Érzékenység: `+1`
-
 🌟 Mesterbónusz: Tapasztalt fejvadász. Megérzed, ha valaki a közeledben mágikus leplezés nélkül, tartósan rád figyel - még ha nem is látod a személyt.
 
 <br />
@@ -45,16 +43,12 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  Érzékenység: `+2`
-
-🌟 Mesterbónusz: Elit, uralkodói testőr. Kiszagolod a leplezetlen erős mágia- vagy Aura jelenlétet: pontos értelmezéshez kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
+🌟 Mesterbónusz: Elit, uralkodói testőr. Kiszagolod a leplezetlen erős mágia- vagy Aura jelenlétet: pontos értelmezéshez, irányához kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
 
 <br />
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  Érzékenység: `+2`
 
 🌟 Mesterbónusz:
 
@@ -81,7 +75,6 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 #### Nehéz (12) 🎲 
 
 - Észrevenni egy majdnem zajtalanul fejedre zuhanó sziklát néma csendben.
-- Kiszúrni a libbenő ruha alatt a tőrt.
 - Jól álcázott rejtett ajtót megtalálni 5 perc alatt.
 
 #### Nagyon nehéz (15) 🎲 

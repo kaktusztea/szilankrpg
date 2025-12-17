@@ -21,21 +21,15 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 
 #### Mester (9) 📖
 
-🔒 Követelmény: **Ügyesség**: `+1`
-
 🌟 Mesterbónusz: Ugrásmagasságod duplázódik. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-3`.
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény: **Ügyesség**: `+2`
-
 🌟 Mesterbónusz: Ugrásmagasságod háromszorozódik. Képes vagy lassítani esésedet. Az [Esés magasból](../szituaciok/eses_magasbol.md) szituációban számodra a Nehézségre: `-6`.
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény: **Ügyesség**: `+3`
 
 🌟 Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és mindig puhán érsz földet. Ugrásmagasságod négyszereződik.
 

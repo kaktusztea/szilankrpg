@@ -27,23 +27,17 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: Önuralom: `1`
-
-🌟 Mesterbónusz: Egy tenyérnyi területen ki tudod kapcsolni a fájdalomérzetet a testedben. Harcban nem alkalmazható.
+🌟 Mesterbónusz: Egy testrésznyi területen (pl. alkar) ki tudod kapcsolni a fájdalomérzetet a testedben. Harcban nem alkalmazható.
 
 ---
 #### Nagymester (12) 📖
-
-🔒 Követelmény:  Önuralom: `2`
 
 🌟 Mesterbónusz: Testi fájdalom tünetei nem látszanak meg: nincs apró remegés, zihálás, szapora szívverés. Tartós fájdalom alatt is képes figyelni, beszélni, tárgyalni.
 
 ---
 #### Élő legenda (15) 📖
 
-🔒 Követelmény:  Önuralom: `3`
-
-🌟 Mesterbónusz: Fájdalmát akarata szerint választja meg – ha kell, teljesen letiltja, mintha nem is érezné.
+🌟 Mesterbónusz: Harcon kívül fájdalmát akarata szerint választja meg – ha kell, teljesen letiltja, mintha nem is érezné.
 
 <br />
 
