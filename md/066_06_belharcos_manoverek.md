@@ -49,7 +49,7 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 
 🔆 **Nagy siker**: `4`-el túldobott Ellenpróbánál még sebző **Megakasztás** támadást elszenvedve is bekerülsz belharci szituációba.
 
-🔆Ha az ellenfél úgy dönt, hogy szándékosan beenged belharcba, akkor nincs szükség a Manőverre.
+🔆 Ha az ellenfél úgy dönt, hogy szándékosan beenged belharcba, akkor nincs szükség a Manőverre.
 
 <br />
 
