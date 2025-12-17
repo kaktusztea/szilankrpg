@@ -9,8 +9,7 @@ Lassú futás közben `+2x` [Szorzó](../073_tavharc_ve_szorzo.md#szorz%C3%B3-
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- Távolsági harcmodor - `5.szint\
+🔒 Távolsági harcmodor - `5.szint\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 
 🌟 Ha lassú futás közben lősz, vagy hajítasz, akkor csak `+1x` [Szorzó](../073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-l%C3%B6v%C3%A9sz) büntetés jár a célpont `VÉ` kiszámításánál
