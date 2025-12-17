@@ -33,6 +33,16 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
   említett körülmények összegzett értékére
 ```
 
+## Lények méret különbsége
+
+amennyiben a támadó lény akár csak `1` kategóriával is kisebb, mint ellenfele, akkor
+- Támadóként: Belharcos Manővere automatikusan sikertelen lesz.
+- Védekezőként: ellenfele `-3` könnyítő módosítót kap az Ellenpróba Nehézségére
+
+⚡ Példa
+- goblin vs ember (kicsi, normál)
+- ember vs Ogár
+
 <br />
 
 ---
