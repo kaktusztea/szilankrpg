@@ -28,6 +28,11 @@ Mi tartozik bele ebbe az ismeretbe? Az adott ősi kultúrkörön belül:
   Gyakran párban terjeszti ki például [Építészet](epiteszet.md) ÉS **Ősi kultúrkör** fortély.
 
 ---
+### 1. fok
+
+🌟 Kiterjeszt képzettségeket (lásd fenn).
+
+---
 ### Példák
 
 #### ⚡ Lexikum + Ősi kultúrkör kiterjesztés
