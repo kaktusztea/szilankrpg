@@ -1,5 +1,6 @@
 ## 🟣 Támadás erőből (2)
 
+Tudod használni a [Támadás erőből](../065_02_harci_taktikak.md#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) harci helyzetet.\
 Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal.
 
 ```
@@ -10,7 +11,7 @@ TÉ:-6, SP:+6
 
 ### 1. fok
 
-🔒 **Követelmény**: 
+🔒 **Követelmény**:
 - Erő: `+2`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
 

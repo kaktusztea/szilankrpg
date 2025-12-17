@@ -16,10 +16,10 @@ Nagyobb fegyver
 
 <br />
 
-## SUM Pengeméretek
+## SUM [Pengeméretek](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret)
 
 A két fegyver pengeméreteinek összege.
-  
+
 ```
 Max: 2 x 1 penge
 
@@ -32,7 +32,7 @@ SUM 2 penge felett
 
 <br />
 
-## Harckeret módosítók
+## [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) módosítók
 
 ```
 -1: minden 0.5 penge
