@@ -244,7 +244,7 @@ Vér elvakít
   - [Sötétben](065_01_06_szemelyhez_kotott.md#s%C3%B6t%C3%A9tben)
   - [Vér elvakít](065_01_06_szemelyhez_kotott.md#v%C3%A9r-elvak%C3%ADt)
 - [Lények](065_01_07_lenyek.md)
-  - [Kis méretű lény (`1-2`)](#kis-méretű-lény-1-2)
+  - [Kis méretű lény (`1-2`)](065_01_07_lenyek.md#kis-m%C3%A9ret%C5%B1-l%C3%A9ny-1-2)
   - [Nagy méretű lény (`1-2`)](065_01_07_lenyek.md#nagy-m%C3%A9ret%C5%B1-l%C3%A9ny-1-2)
   - [Vadállatok elleni harc](065_01_07_lenyek.md#vad%C3%A1llatok-elleni-harc)
 
