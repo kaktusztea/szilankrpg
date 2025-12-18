@@ -209,17 +209,17 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Sors Befolyásolás](kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
 
-#### Belső Szféra
+#### Mágia Szféra
 
 → **Aura** arkánum, amely azonos az 🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
 
-→ **Pszí** arkánum, amely azonos a 🔵 [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md) képzettséggel
+→ [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánum
 
-#### Titkos Szféra
+#### Titkos (Teremtés) Szféra
 
-→ Élet Princípiumának a megteremtése, Lélekcsíra megteremtése: csak az istenek rendelkeznek vele, halandó nem ismerheti.
+→ Élet Princípiumának a megteremtése. Élőlény megteremtése.
 
-→ [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánum, amely a [Mágia Tradíciók](051_00_magia_tradiciok.md) tanulása által kapható meg, így nem kell külön képzettségként felvenni.
+→ Lélekcsíra megteremtése: csak az istenek rendelkeznek vele, halandó nem ismerheti. Halhatatlan.
 
 ---
 ### Papi mágia 🅿️
