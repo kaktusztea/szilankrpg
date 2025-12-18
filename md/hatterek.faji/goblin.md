@@ -14,8 +14,9 @@ bevezető ⭕
 
 ### ⚜️Érzék-Fortélyok maximuma
 
-- [Infralátás](../fortelyok.erzekek/infralatas.md) - 1. fok
-- [Emberentúli szaglás](../fortelyok.erzekek/emberentuli_szaglas.md) - 1. fok
+- [Emberentúli szaglás](../fortelyok.erzekek/emberentuli_szaglas.md) - `1.fok`
+- [Infralátás](../fortelyok.erzekek/infralatas.md) - `1.fok`
+- [Irányérzék](../fortelyok.erzekek/iranyerzek.md) - `1.fok`
 
 ### ⚜️Faj misztérium
 

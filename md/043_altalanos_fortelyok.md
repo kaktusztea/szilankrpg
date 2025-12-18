@@ -10,6 +10,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 - [Emberentúli látás](fortelyok.erzekek/emberentuli_latas.md)
 - [Emberentúli szaglás](fortelyok.erzekek/emberentuli_szaglas.md)
 - [Infralátás](fortelyok.erzekek/infralatas.md)
+- [Irányérzék](fortelyok.erzekek/iranyerzek.md)
 - [Ultralátás](fortelyok.erzekek/ultralatas.md)
 
 ---
