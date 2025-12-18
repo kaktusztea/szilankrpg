@@ -24,12 +24,23 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**:
-- `TÉ` dobás: `Előny+1`
-- Sebzés dobás: `Előny+1`
-- Max **Támadó taktikával** kell harcolnod: `[+3 TÉ; -6 VÉ]`
-- Asztrál/Mentál Mágiaellenállás dobásra: `Előny+2`
-- `S4` Fájdalomtűrés próbára: `Előny+2`
-- Roham helyett kötelezően az **Öngyilkos roham** taktikát kell használnod
+
+```
+Max Támadó taktika kötelező
+  TÉ:+3; VÉ:-6
+
+Előny+1
+  TÉ dobás
+  Sebzés dobás
+
+Előny+2
+  S4 Fájdalomtűrés próbára
+  Mágiaellenállás dobásra
+    Asztrál/Mentál hatás esetén
+
+ Roham helyett Öngyilkos roham
+   taktikát kell használnod
+```
 
 <br />
 
