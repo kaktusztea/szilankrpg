@@ -6,7 +6,7 @@
 
 ##### Követelmények
 
-⭕TODO
+⭕TODO⭕
 
 ##### Hatás
 
