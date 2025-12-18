@@ -6,46 +6,65 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 
 🔒 **Követelmény**:
 - [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
+- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint` (nem-távolsági)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `1`, harcban elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején
+
+```
+Visszanyersz: 1 VÉ
+ Kivéve ami sebesülésből
+```
 
 <br />
 
 ### 2. fok
 
 🔒 **Követelmény**:
-- Összpontosítás - `6.szint`
-- Harcmodor - `7.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
+- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
+- Harcmodor - `7.szint` (nem-távolsági)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `2`harcban elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején
+
+```
+Visszanyersz: 2 VÉ
+ Kivéve ami sebesülésből
+```
 
 <br />
 
 ### 3. fok
 
 🔒 **Követelmény**:
-- Összpontosítás - `9.szint`
-- Harcmodor - `10.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
+- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `9.szint`
+- Harcmodor - `10.szint` (nem-távolsági)
 
-🌟 **Hatás**: Minden kör elején visszanyersz `3`, harcban elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
+🌟 **Hatás**: Minden kör elején
+
+```
+Visszanyersz: 3 VÉ
+ Kivéve ami sebesülésből
+```
 
 ---
 ### 4. fok
 
 🔒 **Követelmény**:
-- Önuralom: `+4`
 - Összpontosítás - `12.szint`
-- Harcmodor - `12.szint`
-- (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
+- Harcmodor - `12.szint` (nem-távolsági)
 - [Teljes Védekezés Taktika](../065_02_harci_taktikak.md#teljes-védekezés-taktika) alkalmazása folyamatosan
 
-🌟 **Hatás**:
-- Minden kör elején visszanyersz `3`, harcban elvesztett `VÉ`-t ÉS **minden, előző kör során** elvesztett `VÉ`-t, kivéve amiket Sebesülésből szereztél.
-- Minden körben **Összpontosítás** próba: (`15 + ellenfelek száma`). Ha a követelmények nem adottak, vagy a próba sikertelen, akkor csak a `3. fok` hatásait kapja meg a karakter.
+🌟 **Hatás**: Minden kör elején
+
+```
+Visszanyersz: 3 VÉ
+ Kivéve ami sebesülésből
+
+Összpontosítás próba:
+→ 15 + ellenfelek száma
+→ Sikeres próba: Visszanyersz
+   minden előző harci kör
+   során elvesztett VÉ-t is
+```
 
 ---
 ### NJK ismeretként
