@@ -11,12 +11,22 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 🔒 [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
 
-🌟 **Hatás**:
-- Érzék Tulajdonságpróba büntetés `1` fokot enyhül
-  - Érzék(látás) - auto-kudarc → `Hátrány-2`
-  - Érzék(látás) - `Hátrány-2` → `Hátrány-1`
-  - Érzék(látás) - `Hátrány-1` →  semmi
-- Megszűntet `1` fok Hátrányt a védő `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
+🌟 **Hatás**: Érzék(látás) Tulajdonságpróba büntetés `1` fokot enyhül
+
+```
+  auto-kudarc → Hátrány-2
+  Hátrány-2   → Hátrány-1
+  Hátrány-1   → semmi
+```
+
+```
+Láthatatlan ellenfélnél
+
+1 fokot megszűntet
+  Védő TÉ Hátrányból
+```
+
+→ [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul)
 
 <br />
 
@@ -24,13 +34,20 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 🔒 Összpontosítás - `6.szint`
 
-🌟 **Hatás**:
-- Érzék Tulajdonságpróba büntetés `2` fokot enyhül:
-  - Érzék(látás) - auto-kudarc → `Hátrány-1`
-  - Érzék(látás) - `Hátrány-2` → semmi
-  - Érzék(látás) - `Hátrány-1` →  semmi
-- Megszűntet `1` Előnyt a Támadó `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
-- Megszűntet `1` Hátrány a Védő `TÉ`-re [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
+🌟 **Hatás**: Érzék(látás) Tulajdonságpróba büntetés `2` fokot enyhül
+
+```
+  auto-kudarc  → Hátrány-1
+  Hátrány-1,2  → semmi
+```
+
+```
+Láthatatlan ellenfélnél
+
+1 fokot megszűntet
+  Védő TÉ Hátrányból
+  Támadó TÉ Előnyből
+```
 
 <br />
 
@@ -38,14 +55,22 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 
 🔒 Összpontosítás - `9.szint`
 
-🌟 **Hatás**:
-- Érzék Tulajdonságpróba büntetés `3` fokot enyhül:
-  - Érzék(látás) - auto-kudarc → semmi
-  - Érzék(látás) - `Hátrány-2` → semmi
-  - Érzék(látás) - `Hátrány-1` →  semmi
-- Nullázza a Támadó összes előnyét és a Védő összes Hátrányát [Láthatatlan ellenfél](../065_01_06_szemelyhez_kotott.md#láthatatlanul) esetén
-- [Érzék(hallás) - automatikus kudarc](../081_hatasok.md#-%C3%A9rz%C3%A9k---automatikus-kudarc-kioltott) Hatás esetén is működik, mert itt már az Intuíció dolgozik.
-- Túlterhelt érzékek esetén is működik (túl erős fény, villódzás, hangorkán)
+🌟 **Hatás**: Érzék(látás) Tulajdonságpróba büntetés `3` fokot enyhül
+
+```
+  auto-kudarc  → semmi
+  Hátrány-1,2  → semmi
+```
+
+```
+Láthatatlan ellenfélnél
+
+Mindent megszűntet
+  Védő TÉ Hátrányból
+  Támadó TÉ Előnyből
+```
+
+Túlterhelt érzékek esetén is működik (túl erős fény, villódzás, hangorkán).
 
 ---
 ### Bónusz: harci ösztön
@@ -53,9 +78,11 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 ```
 Vakharc minden foka:
   +2 Észlelésre
+  hátbatámadás
+  elszenvedésekor
 ```
 
-[Lopakodás/rejtőzés és Észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációban, **kizárólag** hátbatámadás elszenvedése esetén az ellenpróbánál az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettségpróba dobásodra a **Vakharc** minden foka `+2` bónuszt ad. Ez akkor is jár, ha egy tudottan hátad mögött álló személy hirtelen rádtámad.
+[Lopakodás/rejtőzés és Észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációban.
 
 ---
 ### "Mindenki képzetlen" eset
