@@ -2,7 +2,7 @@
 
 Az Érzékenység részben a külvilág (leginkább más lények) rezdüléseinek érzékelését jeleníti. Ezen felül kisebb mértékben az érzelmi gazdagságot is jelképezi, de inkább a „detektáló" jellegű összetevő a kiemelt.
 
-Fontos összetevője művészeti képzettségeknek illetve az [Emberismeretnek](kepzettsegek.primer.altalanos/emberismeret.md), beleszámít az Asztrális mágiaellenállásba is, valamint az [Észlelés képzettséggel](kepzettsegek.primer.altalanos/eszleles.md) párosítva a fizikai világban való érzékelést és észlelés-próbákat is ezzel végezzük (Intuíció, Látás, Hallás, Szaglás, Tapintás, Ízlelés). Állatokkal kapcsolatos képzettségeknél is hasznos lehet, mint a [Lovaglás](kepzettsegek.szekunder/lovaglas.md), vagy [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md).
+Fontos összetevője művészeti képzettségeknek illetve az [Emberismeretnek](kepzettsegek.primer.altalanos/emberismeret.md), valamint az [Észlelés képzettséggel](kepzettsegek.primer.altalanos/eszleles.md) párosítva a fizikai világban való érzékelést és észlelés-próbákat is ezzel végezzük (Intuíció, Látás, Hallás, Szaglás, Tapintás, Ízlelés). Állatokkal kapcsolatos képzettségeknél is hasznos lehet, mint a [Lovaglás](kepzettsegek.szekunder/lovaglas.md), vagy [Léglovaglás](kepzettsegek.szekunder/leglovaglas.md).
 
 Fontos tulajdonság továbbá az összes művészetnél. Énekes előadókhoz hasonló karakterek nem szerepelnek jól alacsony Érzékenységgel, ha a karakter mégis ilyet csinálna, ő lesz az, aki a falunapokon kap 10 percet, aztán elfelejtik.
 

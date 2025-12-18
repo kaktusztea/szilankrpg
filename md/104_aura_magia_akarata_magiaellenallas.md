@@ -109,7 +109,7 @@ Biztos Aura (TME):
 ### Mágiaellenállás változása
 
 A Mágiaellenállás nem statikus, körülménytől hangulattól függően, események hatására kis mértékben változhat.
-Például Meglepődés / Harc / Érzelmi sokk / másra koncentrálás közben ideiglenesen csökkenhet a Mágiaellenállás, mivel egy időben nehezebb védekezni a fizikai és a felsőbb síkokon. 
+Például Meglepődés / Harc / Érzelmi sokk / másra koncentrálás közben ideiglenesen csökkenhet a Mágiaellenállás, mivel egy időben nehezebb védekezni a fizikai és a felsőbb síkokon.
 Ilyen esetekben a KM kérhet **Összpontosítás** próbát, hogy kap-e büntetést a karakter, vagy nem. Alább egy általános táblázat, hogy nagyjából milyen esetben mivel kell számolnia a védekező félnek.
 
 ```
@@ -131,6 +131,10 @@ Harci láz
 
 Papi védő áldás
   Aura Alap diff: +⭕X⭕ adott hatások ellen
+
+Isteni kegy
+
+Védőszellem
 
 Olyan érzelmi befolyás, ami
   tudat alatt kedvére van a célpontnak

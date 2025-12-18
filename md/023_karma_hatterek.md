@@ -123,7 +123,7 @@ Hasonlít a hősre, de nem feltétlenül kell jónak, nemesnek lenned. Hőstette
 
 #### Hatás
 
-Puszta jelenléted lelkesítőleg hat. Minden híved, követőd `Előny+1` Hatással dobja az Asztrális/Mentális Mágiaellenállását.
+Puszta jelenléted lelkesítőleg hat. Minden híved, követőd `Előny+1` Hatással dobja az Mágiaellenállását Asztrális/Mentális hatások ellen.
 
 <br />
 
