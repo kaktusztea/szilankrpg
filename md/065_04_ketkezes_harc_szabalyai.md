@@ -32,28 +32,32 @@ SUM 2 penge felett
 
 <br />
 
-## [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) módosítók
+## Fegyverméretek hatása [Harckeretre](063_04_tamadasok_szama_fegyverrel.md#harckeret)
+
+ A két fegyver összpengeméretét (SUM) elosztjuk `0.5`-tel és ennyi lejön a Harckeretből.
 
 ```
--1: minden 0.5 penge
+-1: minden 0.5 penge után
     (SUM pengeméretek)
+```
 
+### Fortélyok hatása [Harckeretre](063_04_tamadasok_szama_fegyverrel.md#harckeret)
+
+```
 +1: Kétkezesség fortély
 
-+1: Kétkezes harc 0.fok
-+2: Kétkezes harc 1.fok
-+3: Kétkezes harc 2.fok
-+4: Kétkezes harc 3.fok
++1: Kétkezes harc 0.foka
++2: Kétkezes harc 1.foka
++3: Kétkezes harc 2.foka
++4: Kétkezes harc 3.foka
 ```
-
-Tehát a két fegyver összpengeméretét elosztjuk `0.5`-tel és ennyi lejön a Harckeretből.
 
 <br />
 
 ## Sebzés
 
 Mindig az ügyesebb kézben levő fegyver sebez.\
-Kivéve direkt a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) támadáskor.
+Kivéve ha direkt a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) akarsz támadni.
 
 <br />
 

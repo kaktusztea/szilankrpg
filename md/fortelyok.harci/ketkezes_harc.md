@@ -21,7 +21,8 @@ Nagyobb fegyveré számít
 
 ```
 → Harckeret: +1
-→ Nagyobb fegyver értékei számítanak
+→ Nagyobb fegyver értékei
+  számítanak csak
 → Kisebb fegyver értékei: 0
 → Mf fortélyok NEM számítanak
 → TÉ dobásra Hátrány-1
