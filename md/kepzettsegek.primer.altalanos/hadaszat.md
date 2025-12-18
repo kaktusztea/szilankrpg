@@ -26,7 +26,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 
 <br />
 
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

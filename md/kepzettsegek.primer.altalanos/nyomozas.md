@@ -48,7 +48,7 @@ Intelligencia, Emlékezet
 
 <br />
 
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

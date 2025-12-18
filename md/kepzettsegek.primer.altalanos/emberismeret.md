@@ -35,7 +35,7 @@ Az egyes, speciális szituációkban a fenti Fortélyok adhatnak segítséget (C
 
 <br />
 
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

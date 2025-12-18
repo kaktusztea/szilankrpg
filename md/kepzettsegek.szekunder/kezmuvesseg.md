@@ -49,7 +49,7 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
   - [Kézműves: Szűcs](../fortelyok.szabad/kezmuves_szucs.md)
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Novícius (3) 📖
 
@@ -125,34 +125,34 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
 
 Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md) és az [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba).
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Egyszerű feladat (pl. kenyeret sütni, zsákot varrni, fát fűrészelni).
 - Alapanyag felismerése (fa, szövet, fém).
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Teljes értékű termék elkészítése (ruha, bútor, fegyver).
 - Áru becslése piacon (ár, minőség felismerése).
 - Egyszerű sérülés javítása (varrás, élezés, kőfaragás).
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Minőségi, díszesebb termék készítése.
 - Egyedi igények kielégítése (pl. szabott ruha, illesztett szerszám, páncél).
 - Rejtett hibák felismerése más termékében.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Kiemelkedő munka létrehozása, amelynek híre hamar elterjed a településen/városban.
 - Bonyolult javítás / átalakítás (pl. törött páncél javítása, épület tartóelemének erősítése).
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Mesteri munka: amely arisztokraták, hadseregek, egyházak megrendelésére készül.
 - Egyedi szerkezeti megoldások, titkos rekeszek, különleges formák.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Legendás munka: örökké emlegetett, mágikusnak tűnő szilárdságú vagy szépségű tárgy.
 - Olyan építmény, páncél vagy tárgy, amely több generáción keresztül fennmarad.

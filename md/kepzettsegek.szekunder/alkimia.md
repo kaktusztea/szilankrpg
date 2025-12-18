@@ -35,7 +35,7 @@ Intelligencia, Emlékezet
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 
@@ -70,7 +70,7 @@ Intelligencia, Emlékezet
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Savas/lúgos oldat elkészítése.
 - Növényből egyszerű kivonat főzése.
@@ -78,27 +78,27 @@ Intelligencia, Emlékezet
 - Felületes vizsgálattal megállapítani az alapvető anyagokat (lúg, sav, szerves–szervetlen).
 
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Mérgekhez szükséges **alapanyag** kivonása (nem maga a méreg!).
 - Stabil ragasztó, gyanta vagy olajkeverék előállítása.
 - Egy egyszerű alkímiai összetevő szakszerű tartósítása.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Robbanó elegy, instabil sav, vagy illékony anyag biztonságos előállítása.
 - Kiemelkedően tiszta fém kinyerése (pl. ezüstérc → ezüst) laborban.
 - Mágiakomponens előkészítése, amely hónapokig használható marad.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Különösen veszélyes vegyület–vegyület reakció stabilizálása.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Arany előállítása, végleges transzmutációval (összetett próbával).
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Prima Materia előállítása (összetett próbával).
 - Mindent oldó szer előállítása (összetett próbával).

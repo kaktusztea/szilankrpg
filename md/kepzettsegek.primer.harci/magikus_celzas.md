@@ -18,7 +18,7 @@ A képzettség szintjétől függően büntetéseket/bónuszokat kapsz harcért�
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Novícius (3) 📖
 
@@ -28,7 +28,7 @@ Ettől a szinttől kezdve [nem jár büntetés Célzó Értékedre](../062_02_ha
 
 🔒 Követelmény: -
 
-🌟 Mesterbónusz: ⭕TODO⭕ 
+🌟 Mesterbónusz: ⭕TODO⭕
 
 ---
 #### Nagymester (12) 📖
@@ -42,7 +42,7 @@ Ettől a szinttől kezdve [nem jár büntetés Célzó Értékedre](../062_02_ha
 
 🔒 Követelmény: Önuralom: `+0`
 
-🌟 Mesterbónusz: ⭕TODO⭕ 
+🌟 Mesterbónusz: ⭕TODO⭕
 
 <br />
 

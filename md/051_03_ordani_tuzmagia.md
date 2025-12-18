@@ -11,7 +11,7 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Novícius (3) 📖
 
@@ -56,27 +56,27 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 ⭕TODO⭕
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 ⭕TODO⭕
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 ⭕TODO⭕
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 ⭕TODO⭕
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 ⭕TODO⭕
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 ⭕TODO⭕
 

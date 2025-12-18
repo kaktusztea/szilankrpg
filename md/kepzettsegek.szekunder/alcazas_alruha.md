@@ -50,7 +50,7 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

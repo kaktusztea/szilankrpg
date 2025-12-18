@@ -25,7 +25,7 @@ Nincs, csak biztos tudásból.
 
 <br />
 
-### Szintek, követelmények
+### Szintek
 
 xyz
 

@@ -17,7 +17,7 @@ Magába foglalja az [esést](../szituaciok/eses_magasbol.md), **ugrást** és a 
 - [Lóról leesés](../szituaciok/hatasrol_leeses.md)
 - [Szándékos kitérés lövés elől](../szituaciok/szandekos_kiteres_loves_elol.md)
 
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

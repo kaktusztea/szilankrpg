@@ -43,7 +43,7 @@ A képzettség magában foglalja a következőket:
 Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpontokat, mankót adhat. Tehát ha a karakter megdobja próbáját, akkor a KM csak segítségeket tárhat a játékos elé, a teljes megoldást nem kínálhatja tálcán.
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 
@@ -71,25 +71,25 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Tűzgyújtás, ivóvíz találása, ismert bogyó/növény felismerése.
 - Állatnyom észrevétele puha talajon.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Tájékozódás sűrű erdőben vagy ködben.
 - Vad elejtése csapdával vagy rögtönzött eszközzel.
 - Nyomból felismerni, milyen állat hagyta.
 - Felismerni a táj tipikus állatait, növényeit, sok esetben a mérgező és gyógyító fajokat is.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Több napig élni vadonban külső forrás nélkül.
 - Elrejtőzni üldözők elől természetes terepen.
 - Nyomból következtetni az állat/testalkat méretére, mozgására, mikor járt erre.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Nagyvad becserkészése (pl. medve, vaddisznó).
 - Megmondod nyomokból, mikor ment át a lény, milyen állapotban van, mennyit pihent.
@@ -97,13 +97,13 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 - Ellenséges csoport csapásának észlelése, titkos pihenőhely felfedezése.
 - Puszta jelekből (madarak mozgása, füst, szag) előre látod az időjárást, ellenség közeledtét, állatok viselkedését.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Hosszú távon egy sereg, csapat természetbeni elvezetése élelemmel, vízzel.
 - Különlegesen ritka növény, gomba vagy állat nyomainak felismerése.
 - Tudatosan félrevezetni üldözőt hosszabb távon (nyomok hamisítása).
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Több napos, szinte elmosódott nyomból rekonstruálni eseményt.
 - Rejtett jelekből következtetni, amelyeket alapból csak állatok értenek (madarak viselkedése, állati szag mintázatok).

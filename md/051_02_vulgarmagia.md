@@ -11,7 +11,7 @@ Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzők
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Novícius (3) 📖
 

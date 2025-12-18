@@ -25,7 +25,7 @@ Nincs, csak biztos tudásból.
 
 <br />
 
-### Szintek, követelmények
+### Szintek
 
 | Képzettség szint | Szintek, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub> | Követelmény |
 |:---------------- |:---------------------------------------------------------------------------------- |:-----------:|

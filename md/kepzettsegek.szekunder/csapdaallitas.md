@@ -17,7 +17,7 @@ Intelligencia, Önuralom
 - [Csapda hatástalanítás, mechanikus szerkezet szabotásása](../szituaciok/csapda_hatatalanitas_szabotalas.md)
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

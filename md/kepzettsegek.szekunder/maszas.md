@@ -22,7 +22,7 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor azon a terepen a mászó bárhol képes megállva kipihenni magát.
 
@@ -61,28 +61,28 @@ Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 Felmászni a magas tölgyfára. Kötélen mászni (plusz súllyal, illetve lengő kötélen nehezebb! Lásd a módosítóknál).
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Felmászni a fogadó tetejére. Félig kikötve, félseggel ülve pihenni egy peremen.
 - Jó látási viszonyok közt ránézésre nagyjából meg tudod mondani, mennyire omladékos a terep.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 Repedéses kőfalon felmászni, omladékos, nagyon meredek leejtőn feljutni.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 Függőleges – nem repedéses – téglafalon felmászni, visszahajlásokkal tagolt meredek sziklafalon felmászni.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 Gleccserszakadékból puszta kézzel kimászni.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 Visszahajló acélfalon felmászni.
 
@@ -130,7 +130,7 @@ Az elköltött **Erő** pontok az aktuális mászó szituáció végéig nem té
 
 ### Megállás ÉS pihenés a falon rontás után
 
-Előfordul, hogy egy **rontott** Mászás képzettségpróba dobás után meg kell állni, pihenni a falon. 
+Előfordul, hogy egy **rontott** Mászás képzettségpróba dobás után meg kell állni, pihenni a falon.
 
 Ehhez 2 próbának kell meglennie **biztos tudásból**:
 - Edzettség tulajdonságpróba (a fenti körülményektől függ)

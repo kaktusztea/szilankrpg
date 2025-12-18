@@ -9,7 +9,7 @@ Ez a képzettség nem csupán a kockák, lapok, táblajátékok ismeretéről sz
 Önuralom, Intelligencia
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

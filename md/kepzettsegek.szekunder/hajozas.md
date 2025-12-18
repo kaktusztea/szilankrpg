@@ -18,7 +18,7 @@ A hajózás képessége magában foglalja a hajók, legénység kezelését, ir�
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 Nagyon gyakori eset az [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) Hajózás képzettség esetén, mikor **Másodlagos próbadobásokra** van szükség. Sokszor komplex, többlépcsős feladat egy hajó kezelése.
 

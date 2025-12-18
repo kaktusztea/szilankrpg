@@ -40,7 +40,7 @@
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Novícius (3) 📖
 

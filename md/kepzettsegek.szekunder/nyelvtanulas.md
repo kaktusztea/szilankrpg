@@ -65,7 +65,7 @@ Emlékezet, Érzékenység.
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

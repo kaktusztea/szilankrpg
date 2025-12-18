@@ -28,7 +28,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

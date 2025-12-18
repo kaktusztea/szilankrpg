@@ -32,7 +32,7 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 
@@ -60,34 +60,34 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 <br />
 
 ---
-### Próbák 🎲 
+### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Észrevenni a sarok mögül kilépő, csattogó lovaskatonát.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
-- Erdőben sétálva észrevenni a fán rohangáló mókust.  
-- Mozaikpadló mintázatában egy élesen elütő kockát kiszúrni.  
+- Erdőben sétálva észrevenni a fán rohangáló mókust.
+- Mozaikpadló mintázatában egy élesen elütő kockát kiszúrni.
 - Jól beépített, rejtett titkos fiókot megtalálni egy nagyobb méretű bútorban.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Észrevenni egy majdnem zajtalanul fejedre zuhanó sziklát néma csendben.
 - Jól álcázott rejtett ajtót megtalálni 5 perc alatt.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Észrevenni egy fejedre zuhanó sziklát zajban.
 - Átlagos minőségű ételmérget kiszúrni (szaglás/ízlelés)
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Egy képteremben, világosban kiszúrni a festmény mögül apró lyukon leskelődő kémet.
 - "Nem vagyok egyedül" érzése. Világosban és sötétben egyaránt ugyanaz a nehézség (**Érzékenység** (Intuíció)).
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tulajdonság segítségével dobjuk.
 - Mágikus csapda kitörését megérezni egy szemvillanással a kisülés előtt.

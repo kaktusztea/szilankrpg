@@ -41,7 +41,7 @@ Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módo
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 
@@ -69,30 +69,30 @@ Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módo
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Csúszósabb érték mozdítása elejtés nélkül.
 - Apróságokat gyorsan elrejteni (erszény, kulcs). "Hát de üres a kezem!!"
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Kettős mozdulat: elvenni az egyiket, miközben visszateszel valami mást.
 - Mozdulat végrehajtása fél figyelem mellett (más beszéd közben).
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Zajos, kaotikus környezetben is természetes mozdulatot végezni és takarni.
 - Ékszer, gyűrű, csat észrevétlen manipulációja úgy, hogy ne tapintással ne legyen észlelhető.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Több tárgy manipulálása szinte egy időben.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Bármi elvétele úgy, hogy a mozdulat „észlelhetetlen” → ellenfél még utólag sem mindig biztos benne, hogy történt valami.
 - Teljes csoport / tömeg közepén természetesen kivitelezett észrevétlen mozdulat miközben a figyelem rád szegeződik.

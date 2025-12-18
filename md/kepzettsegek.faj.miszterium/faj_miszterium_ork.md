@@ -8,7 +8,7 @@
 - Nekromancia arkánuma, hogy kicselezzék Orwella átkát
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 ```
 Novícius (3) 📖

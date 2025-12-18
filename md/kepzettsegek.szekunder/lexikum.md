@@ -40,7 +40,7 @@ Próba dobható.
 
 - [Élettan](../fortelyok.altalanos/elettan.md): Jártas vagy az általad ismert fajok anatómiájában a képzettségnek megfelelő szinten.
 - [Hivatalnok](../fortelyok.szabad/hivatalnok.md): "Az uraság 3 évre adta bérbe kizárólagossággal az említett földet - a hosszabbításhoz új kérvényt kell benyújtani."
-- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni." Hivatalnokként specializálódtál, értesz a jogrendszerhez is. 
+- [Jogismeret](../fortelyok.szabad/jogismeret.md): "Három példányban iktatni, utána lehet kegyelemért folyamodni." Hivatalnokként specializálódtál, értesz a jogrendszerhez is.
 - [Mechanika](../fortelyok.altalanos/mechanika.md): Mechanikus zárak készítése. **Nem** helyettesíti a [Zárnyitás](zarnyitas.md) képzettséget
 - [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md): Járatos vagy a történelmi események és korszakok lefolyásában. Neves alakok, emlékezetes csaták, politikai csatározások, trónviszályok, öröklődés.
 - [Belső síkok lényeinek ismerete](../fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md) 🔁 Ismered az adott lénycsoport fajait, alfajait, azok jellemzőit, képességeit - a képzettség szintjének megfelelő mértékben.
@@ -51,7 +51,7 @@ Próba dobható.
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 
@@ -80,38 +80,38 @@ Próba dobható.
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Nevezetes személy, város, esemény nevének és időszakának felidézése.
 - Hétköznapi jelvény, szimbólum, címer azonosítása.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Közismert esemény részletszintű elmondása (ki, mikor, hol).
 - Uralkodóházak, befolyásos nemzetségek és vallási rendek összekapcsolása.
 - Könyvtározással megtalálni egy ismert személyről szóló főbb műveket
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Megkülönböztetni a helyi hagyományt a legendától.
 - Hatodkori események, történelem részleteinek pontos felidézése.
 - Ritkább szimbólumok, archaikus címerek, törvények felismerése.
 - Komplex könyvtári kutatás – gyorsan valódi, releváns forráshoz jutsz.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Ötödkori vagy korábbi események és személyek megidézése.
 - Rejtett összefüggések felismerése különböző források között.
 - Ritka kultúrkör, nyelv vagy tájtípus ismerete felidézésből.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Jóslat-szerű következtetésekre a régmúlt és a jelen mintázataiból: társadalmi, politikai folyamatokat, várható eseményeket előre megjósolni (összetett próba).
 - Negyedkori, vagy korábbi események írott forrásokból való pontos visszafejtése.
 - Átfogó társadalmi, politikai ok-okozati háló felállítása.
 - Elveszett könyv, irat, tudás helyének és tartalmának következtetéssel való megsejtése.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Negyedkori tudás felidézése, titkos rendek ismerete.
 - Álmaidban vagy meditációdban átélt valódi régmúlt események helyes értelmezése.

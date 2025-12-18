@@ -31,7 +31,7 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 
 <br />
 
-### Szintek, követelmények 📖
+### Szintek
 
 ---
 #### Mester (9) 📖
@@ -63,27 +63,27 @@ Ennek a képzettségnek a próbadobásai jellemzően ellepróbák az [Észlelés
 
 Nem ellenpróbás szituációban tapasztalati ismeretekre támaszkodik az alkalmazó:
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 Csendesen belépni egy nyitott ajtón.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 Piacon gyorsan kiszúrni a jó rejtekhelyet.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 Egy kihalt köztéren jó rejtekhelyet találni.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 Teljesen hangtalanul érkezni esésből.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 Megérezni, melyik rejtekhely mögött van az ellenség.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 Nyílt téren kaméleonként beleolvadni a mintázatba.
 
@@ -129,9 +129,9 @@ Kapcsolódik: [Láthatatlan](../065_01_06_szemelyhez_kotott.md#láthatatlanul)
 ```
 +6: gyors haladás
 ```
- 
+
  [Suhanó árnyék](../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
- 
+
 ### ⚜️ Felszerelés célszám módosító (lopakodó)
 
 ```

@@ -33,7 +33,7 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

@@ -54,7 +54,7 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

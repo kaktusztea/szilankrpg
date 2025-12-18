@@ -27,7 +27,7 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Novícius (3) 📖
 
@@ -43,7 +43,7 @@ Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_har
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény: 
+🔒 Követelmény:
 
 🌟 Mesterbónusz:
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.

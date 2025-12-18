@@ -21,7 +21,7 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 - [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md) fortély: alakzat vezetése esetén bónuszt ad.
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

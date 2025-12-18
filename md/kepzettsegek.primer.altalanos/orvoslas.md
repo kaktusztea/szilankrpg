@@ -23,7 +23,7 @@ Magasabb szinteken egyre kevésbé van szükség fizikai komponensekre, keverék
 ### Kapcsolódik
 
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély
-- [Csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport. 
+- [Csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szerint használhatja egy csoport.
 - [Vezető: Orvosprofesszor](../fortelyok.altalanos/vezeto_orvosprofesszor.md) fortély: csoportos orvoslás esetén bónuszt ad
 
 ### Speciális
@@ -42,7 +42,7 @@ A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettséggel **NINC
 ---
 ## ⭕TODO⭕
 
-Majd ha a mágikus gyógyítást fejlesztjük, akkor ezzel együtt kezelni 
+Majd ha a mágikus gyógyítást fejlesztjük, akkor ezzel együtt kezelni
 
 ---
 ### Betegségek kezelése gyógyszerekkel
@@ -69,7 +69,7 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 
@@ -96,29 +96,29 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 Közepes seb (max `6 ÉP`) vérzésének elállítása
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 Gyógyulási sebesség szorzó: `x2`
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
-Gyógyulási sebesség szorzó: `x3`. 
+Gyógyulási sebesség szorzó: `x3`.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Gyógyulási sebesség szorzó: `x4`.
 - `1 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Gyógyulási sebesség szorzó: ⭕`x5`
 - `2 S` kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`)
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 3 S kategóriát kézrátétellel begyógyítani (`ÉP` → `FP`); csonkolást gyógyítani (csak ha megvan a levágott végtag)
 

@@ -40,7 +40,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 

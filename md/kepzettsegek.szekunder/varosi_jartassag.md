@@ -42,7 +42,7 @@ Célszám: 9 + város méret módosítója
 <br />
 
 ---
-### Szintek, követelmények 📖
+### Szintek
 
 #### Mester (9) 📖
 
@@ -71,13 +71,13 @@ Célszám: 9 + város méret módosítója
 
 Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Megtalálni a legnépszerűbb kocsmát.
 - Hallomásból tudni a helyi színházi darabról.
 - Pár órán belül koldusoktól megszerezni egy alap pletykát.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Megtalálni, hol lehet információhoz jutni: matrózok, szajhák, őrök, koldusok.
 - Kideríteni, ki az adott városban a legfőbb orgazda.
@@ -85,25 +85,25 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 - Felmérni, hova nem ajánlott bemerészkedni éjszaka.
 - Egy lebujban egy matrózból/zsoldosból információkat kihúzni.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Találni egy őrt, aki kenőpénzért cserébe szívesen segít.
 - Ismerni egy titokban működő kocsmai bajvívó helyszínt.
 - Politikai pletyka megszerzése elsőkézből.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Eljutni egy alvilági tanácskozás helyszínére.
 - Hamis pletykát elterjeszteni, amit a város többsége igaznak hisz (összetett próba)
 - Titkos kapcsolatot találni egy céhvezetőhöz.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Titkos társaság szokásait kiismerni.
 - Feltérképezni egy alvilági informátorhálózatot (összetett próba).
 - Létező előljáró botrányát kideríteni a köznép szóbeszéde alapján.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Olyan hírt kreálni, amit a város hivatalos történelmi eseményként kezel.
 - Egy teljes város alvilági és pletykaáramlási rendszerét átlátni.
