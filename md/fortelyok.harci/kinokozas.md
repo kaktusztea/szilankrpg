@@ -7,9 +7,11 @@ Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 ### 1. fok
 
 🔒 **Követelmény**:
-- Csak egykezes szúró-vágó-ostor fegyverrel alkalmazhatod, amellyel lehetséges pontra támadni
-- [Harci anatómia](harci_anatomia.md): `1.fok` ([megkötései](harci_anatomia.md#megk%C3%B6t%C3%A9sek) számítanak)
-- Sikeres [Területre/Pontra támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) manőver (ne feledjük: csak vértmentes pontnál számít!)
+
+- Csak egykezes szúró-vágó-ostor fegyverrel, amellyel lehetséges pontra támadni
+- Harci anatómia: `1.fok` ([megkötései](harci_anatomia.md#megk%C3%B6t%C3%A9sek) számítanak)
+- Csak vértmentes pontot támadhatsz
+- Sikeres [Területre/Pontra támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) manőver
 
 🌟 **Hatás**: Eltaláltad a kiszemelt fájdalmas pontot ellenfeled testén
 
@@ -19,8 +21,8 @@ Sebzésed: 1 ÉP
 Áldozat: Fájdalomtűrés + Önuralom próba
   Harci anatómiád
     1.fok: 9 Célszám
-    1.fok: 12 Célszám
-    1.fok: 15 Célszám
+    2.fok: 12 Célszám
+    3.fok: 15 Célszám
 ```
 
 Ha az áldozat elrontja a próbát, akkor a következő körben valamelyik módosítóval harcol (KM dönt):
