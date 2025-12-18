@@ -17,7 +17,6 @@ lorem ipsum
 🌟 **Hatás**:
 - lorem ipsum
 
----
 ### 2. fok
 
 🔒 **Követelmény**:

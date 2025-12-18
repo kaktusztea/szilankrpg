@@ -39,71 +39,46 @@
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Novícius (3) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
+⭕TODO⭕
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+#### 🌟 `12.szint`
 
----
-#### Kismester (6) 📖
+⭕TODO⭕
 
-🔒 Követelmény: ⭕TODO⭕
+#### 🌟 `15.szint`
 
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
----
-#### Mester (9) 📖
-
-🔒 Követelmény: ⭕TODO⭕
-
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
----
-#### Nagymester (12) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
-
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
-
-🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
+⭕TODO⭕
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 ⭕TODO⭕
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 ⭕TODO⭕
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 ⭕TODO⭕
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 ⭕TODO⭕
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 ⭕TODO⭕
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 ⭕TODO⭕
 
