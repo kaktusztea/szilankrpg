@@ -48,64 +48,56 @@ Intelligencia, Emlékezet
 
 <br />
 
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Intelligencia `+1`, Emlékezet `+1`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕ 
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕
 
-🔒 Követelmény: Intelligencia `+2`, Emlékezet `+2`
+#### 🌟 `15.szint`
 
-🌟 Hatás: Mesterbónusz: ⭕TODO⭕ 
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Intelligencia `+3`, Emlékezet `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕ Látod magad előtt a történteket, bár konkrét személyek, tárgyak helyett szimbólumok formájában.
+⭕TODO⭕ Látod magad előtt a történteket, bár konkrét személyek, tárgyak helyett szimbólumok formájában.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Rájössz, hogy egy bútor el lett mozdítva.
 - Kiszúrsz egy egyszerű, friss vérnyomot a padlón.
 - Egy gyanús papírt felismerni a rendezetlen iratok között.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Rájössz, mikor járt itt utoljára valaki (pl. a por állapotából).
 - Egy rövid beszélgetés alapján kideríted, ki tudhat a legtöbbet az ügyről.
 - Apró kéznyomot felfedezel egy poros tárgyon.
 - Ösztönösen megérzed, hogy kihez érdemes először szót intézni egy nyomozásban - a leggyengébb láncszem mindig feltűnik számodra.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Kiszúrsz egy **tűszúrást** egy holttesten.
 - Megállapítod, hogy a helyszíni vér alvadása órákkal ezelőtti.
 - Széttöredezett utalásokból rájössz, hogy két gyanúsított lehet, hogy összejátszik.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Egy vallomásból kiszúrod, hogy kulcsfontosságú részletet hallgattak el.
 - A nyomokból felismered, hogy egy tettes színlelte az eseményeket, pl. betörést imitált.
 - Kaotikus helyszínen (pl. verekedés, piaci kavarodás) értelmes nyomokat tudsz rekonstruálni.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Átérzed, hogy a halott utolsó pillanataiban milyen érzéseket élt át.
 - Hetekkel vagy hónapokkal korábban elhelyezett nyomokat is képes vagy visszafejteni.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Évek múltán, egy felújított szobában is érzed: „itt gyilkosság történt.”
 - Töredékjegyzetekből és szétszórt dokumentumokból képes vagy rekonstruálni egy teljes összeesküvés történetét.

@@ -41,28 +41,19 @@ Célszám: 9 + város méret módosítója
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Emlékezet `+1`
+ ⭕TODO⭕
 
-🌟 Mesterbónusz:  ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+ ⭕TODO⭕
 
-🔒 Követelmény: Emlékezet `+2`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz:  ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Emlékezet `+2`
-
-🌟 Mesterbónusz:  ⭕TODO⭕
+ ⭕TODO⭕
 
 <br />
 

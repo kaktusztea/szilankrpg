@@ -8,7 +8,7 @@ Képes vagy kikeverni és tartós állapotban tárolni a végső gyógyhatású 
 
 Egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önnálóan **NEM** vagy képes készíteni.
 
-Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik. 
+Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
 
 ### Domináns Tulajdonságok
 
@@ -29,70 +29,59 @@ Emlékezet, Intelligencia
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Emlékezet `+1`, Intelligencia `+0`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕
 
-🔒 Követelmény: Emlékezet `+2`, Intelligencia `+1`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Emlékezet `+3`, Intelligencia `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-
-- Pusztán ránézésből megmondod, mi rejlik a növényben, szervben, kristályban.
+⭕TODO⭕ Pusztán ránézésből megmondod, mi rejlik a növényben, szervben, kristályban.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Gyógynövény vagy mérgező növény felismerése.
 - Szárítás, tárolás.
 - Alap főzet (fájdalomcsillapító, nyugtató tea) készítése.
 - Egyszerű állati szerv (pl. kígyóméreg) biztonságos kivonása.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Recept alapján többcélú orvosi főzet előkészítése. Bódító/fájdalomcsillapító szereket (füst, tea, bódító ital).
 - Növényből por vagy kenőcs készítése.
 - Recept szerinti bódító ital hozzávalóinak összeállítása.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Ritka növény vagy állati anyag felismerése, feldolgozása.
 - Afrodiziákum vagy tudatmódosító ital összeállítása recept szerint.
 - Alkoholba oldott tartós hatóanyag előállítása.
 - Szerves anyagból tartós hatóanyag kivonása.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Csillagálláshoz kötött begyűjtés és előkészítés.
 - Gyengén mágikus főzet előkészítése recept alapján
 - Szörnyetegek testéből hatóanyag kinyerése.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Tömérdek összetevőből álló készítmény hibátlan elkészítése recept alapján.
 - Hamisítványról ránézésre eldönteni, mennyire veszélyes.
 - Ritka mágikus növény biztonságos kezelése, tartósítása.
 - Mágikus szörnyek testrészeinek hatóanyagait kinyerni – de nagy gyógy- vagy varázsital készítéséhez mágushasználó kell.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Bonyolult, évtizedekig őrzött recept hibátlan reprodukálása.
 - Legendás lény (pl. unikornis, mantikór, sárkány) szervének kezelése és hatásainak kinyerése, tartósítása.

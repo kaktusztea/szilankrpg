@@ -34,36 +34,21 @@ Intelligencia, Emlékezet
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény:
-- Emlékezet: `+1`
-- Intelligencia: `+1`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
-
-🔒 Mesterbónusz:
-- Emlékezet: `+2`
-- Intelligencia: `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 - Egy anyagról első pillantásra tudod, hogy sav‑e, lúg‑e vagy semleges - nem szükséges megvizsgálnod sem.
 - Félmágikus hatás: képes vagy apró arany‑szemcséket puszta kézzel kivonni sziklákból és földből.
 
----
-#### Élő legenda (15) 📖
+#### 🌟 `15.szint`
 
-🔒 Mesterbónusz:
-- Emlékezet: `+3`
-- Intelligencia: `+3`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
 <br />
 

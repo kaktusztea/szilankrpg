@@ -64,31 +64,23 @@ Emlékezet, Érzékenység.
 
 <br />
 
----
-### Szintek
 
-#### Mester (9) 📖
+### Mesterbónuszok
 
-🔒 Követelmény: Emlékezet `+1`
+#### 🌟 `9.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
----
-#### Nagymester (12) 📖
+#### 🌟 `12.szint`
 
-🔒 Követelmény:  Emlékezet `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
 - Új nyelvet rövid idő alatt megtanulsz alapszinten (pl. hónapok helyett hetek).
 - Megérted az archaikus vagy kihalt nyelvek szövegeinek jelentős részét.
 
----
-#### Élő legenda (15) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény: Emlékezet `+3`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
 - Új nyelvet hallva napok alatt elsajátítasz egy használható alapot.
 
@@ -97,35 +89,35 @@ Emlékezet, Érzékenység.
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Ismeretlen nyelvből felismerni néhány szót, köszönést, számot.
 - A szöveg nyelvcsaládját, írásrendszerének alapját megállapítani.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Egyszerű üzenet értelmezése kontextus alapján.
 - Beszélgetés hangulatát, konfliktusát kihallani, noha nem értesz mindent.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Eltérő nyelvek között közvetíteni: tolmácsolás szinte valós időben, kisebb hibákkal.
 - Rövid, idegen nyelvű szöveg nagy részének pontos megértése.
 - Bonyolult beszélgetésből a lényegi információ kihámozása.
 - Előtted sosem hallott idegen nyelv alapmondatait átültetni közös (p4ar) nyelvre.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Archaikus / kihalt nyelv töredékeit megfejteni.
 - Konkrét szándék, rejtett fenyegetés kiolvasása idegen beszélgetés mögül.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Soha nem hallott nyelven hosszabb szöveg nagy részét értelmezni, közben aktívan tolmácsolni.
 - Több nyelv keverékét (pl. zsargon) megfejteni és összefésülni.
 - Szakrális beszéd nyelvi szimbólumait átültetni közös beszédre.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - „Elfeledett, isteni nyelv” töredékének megértése.
 - Azonnali tolmácsolás teljesen új nyelvről közösre.

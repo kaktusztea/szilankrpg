@@ -27,61 +27,46 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény:
-- Érzékenység: `+2`
-- Intelligencia: `+1`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕
 
-🔒 Követelmény:
-- Érzékenység: `+3`
-- Intelligencia: `+2`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:
-- Érzékenység: `+4`
-- Intelligencia: `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
 <br />
 
 ---
 ### Próbák
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 Forma szerint bejelenteni a nemesi párt. Alapvető bejelentési társalgási formulák ismerete. Tudod, mikor kell hallgatni.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 Forma szerint bejelenteni az ellenséges országból érkező követeket, pár mondatos bájcsevegést folytatni velük.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 Saját kultúrán belül mindenkivel rangjához illő formulákkal, szófordulatokat kommunikálni a teljes könnyedség látszatával, véletlen sértések elkerülésével.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 Idegen kultúrába csöppenve elkerülni a sértéseket. Nemesi bálon hárítani a szóbeli rejtett  támadásokat. Szándékos párbaj provokációt presztízsveszteség nélkül hárítani.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 Tor0ni vérnászt megnyerni. Több tor0ni dáma együttes támadását látszólag könnyedén hárítani.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynök -, túlélnie egy t0roni vérnászt és az egész nemesi bált, sőt még a párbajra hívást is.
 

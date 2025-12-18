@@ -32,28 +32,19 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Érzékenység `+2`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕
 
-🔒 Követelmény:  Érzékenység `+3`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  Érzékenység `+3`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
 <br />
 
@@ -62,13 +53,13 @@ Fontos: NEM tartozik a képzettség alá a kellékek használata, készítése. 
 
 Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet?") magasabb az **Előadóművészet** képzettség, **akkor is a [Művészetismeret](muveszetismeret.md) képzettség szintjével dobunk próbát**! Attól hogy valaki remekül furulyázik a kocsmában, nem feltétlenül járatos a zenei nagyvilágban.
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Egy egyszerű dal vagy történet kellemes előadása.
 - Nézők megmosolyogtatása egy rögtönzött tréfával.
 - Hibátlan előadás rutinszerű hangszeres darabból.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Egy kisebb közönség megnyerése egy dalban vagy jelenetben.
 - Publikum szórakoztatása tánccal vagy zsonglőrszámmal.
@@ -76,25 +67,25 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 - Remekül parodizálni ismert embereket, állatok hangját utánozni.
 
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Színészi játékoddal vagy zenéddel meghatod a közönséget.
 - Egy előadásban több szerepet váltogatsz hibátlanul.
 - Rögtönzöl, és a közönség észre sem veszi, hogy nem így tervezted.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Előadásoddal megváltoztatod a hangulatot: a sírók nevetni kezdenek, a dühösek lecsendesednek.
 - Színészként olyan hiteles vagy, hogy egy pillanatra mindenki azt hiszi, valóban az vagy, akit játszol.
 - Zenészként vagy előadóként képes vagy rivalizálni a legnagyobb mesterekkel.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Előadásoddal szellemi vagy érzelmi [Státuszt](../082_statuszok.md) okozol (pl. inspiráció, reményvesztés, áhítat).
 - Teljes tömeget ragadsz magaddal: a kocsmát egy emberként tombolásra vagy sírásra ösztönzöd.
 - Táncoddal vagy gesztusaiddal mágikusnak tűnő hatást érsz el – még ha valódi mágia nincs is a mozdulataidban. Láttatni tudsz művészeteddel álomszerű jeleneteket hallgatóságod elméjében.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Egyetlen fellépéseddel legendává válsz: a történetedet, dalodat énekli a város.
 - Tömegeket vagy seregeket hangolsz össze: harci indulótól politikai szónoklatig.

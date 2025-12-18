@@ -12,9 +12,10 @@ Alább összesen 4 különálló ilyen harcmodor képzettség általános leír�
 
 <br />
 
-### Speciális bónusz
+### Jellemzők
 
-Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adnak harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
+- Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adnak harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
+- `3.`szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
 
 <br />
 
@@ -26,36 +27,20 @@ Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adn
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Novícius (3) 📖
+#### 🌟 `9.szint`
 
-Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
+Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_14_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
----
-#### Mester (9) 📖
+#### 🌟 `12.szint`
 
-🔒 Követelmény: -
-
-🌟 Mesterbónusz: Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_14_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
-
----
-#### Nagymester (12) 📖
-
-🔒 Követelmény:
-
-🌟 Mesterbónusz:
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
 - Bármilyen hajításra alkalmatlan tárgyat a [Dobótőr](../068_07_hajitofegyverek.md) értékeivel tudsz dobni.
 - **Pattanó lövés/hajítás**: félmágikus ismeret. Lövedéked valamilyen rejtélyes módon visszapattan bármilyen szilárd felületről, így akár takarásban levő ellenfelet is eltalálhatsz. Ezt a fajta lövést `-7 CÉ`-vel teheted meg.
 
----
-#### Élő legenda (15) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény: -
-
-🌟 Mesterbónusz:
 - Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz.
 - Választhatsz: `0 ÉP`-re kerül, vagy tetsződleges végtagját használhatatlanná teszed (össz ÉP `1/4`-ét elveszíti).
 

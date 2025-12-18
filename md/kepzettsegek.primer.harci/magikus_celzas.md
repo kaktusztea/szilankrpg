@@ -2,9 +2,10 @@
 
 Ez egy [Primer (harci) képzettség](../010_09_primer_szekunder_ismeretek.md). Ez egy harcmodor.
 
-### Speciális bónusz
+### Jellemzők
 
-A képzettség szintjétől függően büntetéseket/bónuszokat kapsz harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
+- A képzettség szintjétől függően büntetéseket/bónuszokat kapsz harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
+- `3.` szinttől kezdve [nem jár büntetés Célzó Értékedre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md).
 
 <br />
 
@@ -17,34 +18,19 @@ A képzettség szintjétől függően büntetéseket/bónuszokat kapsz harcért�
 
 <br />
 
----
-### Szintek
 
-#### Novícius (3) 📖
+### Mesterbónuszok
 
-Ettől a szinttől kezdve [nem jár büntetés Célzó Értékedre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md).
+#### 🌟 `9.szint`
 
-#### Mester (9) 📖
+⭕TODO⭕
 
-🔒 Követelmény: -
+#### 🌟 `12.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕ Célzáskor kiélesedik látásod, mintha távcsőbe néznél, részleteiben látod a célt.
 
----
-#### Nagymester (12) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény: Önuralom: `+0`
-
-🌟 Mesterbónusz: ⭕TODO⭕ Célzáskor kiélesedik látásod, mintha távcsőbe néznél, részleteiben látod a célt.
+⭕TODO⭕
 
 ---
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Önuralom: `+0`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-
-<br />
-
----
-

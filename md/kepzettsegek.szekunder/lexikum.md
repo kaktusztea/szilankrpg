@@ -50,30 +50,19 @@ Próba dobható.
 
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Intelligencia `+1`, Emlékezet `+2`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕ Álmaidban vagy meditációdban valódi régmúlt események képei törnek rád.
 
-🔒 Követelmény:  Intelligencia `+2`, Emlékezet `+2`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-
-- Álmaidban vagy meditációdban valódi régmúlt események képei törnek rád.
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Intelligencia `+2`, Emlékezet `+3`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
 <br />
 

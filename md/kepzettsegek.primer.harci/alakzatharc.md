@@ -2,13 +2,9 @@
 
 Ez egy [Primer (harci) képzettség](../010_09_primer_szekunder_ismeretek.md). Próba **nincs**, csak biztos tudásból használható.
 
-### Próba
+###  [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet
 
-Nincs, csak biztos tudásból.
-
-### Speciális
-
-A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet írja le.
+Ez írjale a képzettség használatát.
 
 <br />
 
@@ -21,33 +17,22 @@ A képzettség használatát a [Harc alakzatban](../065_03_harc_alakzatban.md) f
 - [Vezető: Alakzatparancsnok](../fortelyok.harci/vezeto_alakzatparancsnok.md) fortély: alakzat vezetése esetén bónuszt ad.
 
 ---
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: -
-
-🌟 Mesterbónusz:
 - Akkor is tartod az alakzatot, ha az alakzatvezető kiesik.
 - Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+3` jár az Aurátokra.
 - Érzed társaid pontos elhelyezkedését, irányát az alakzatban, alapvető érzelmeit, sebesülésük tényét.
 
----
-#### Nagymester (12) 📖
+#### 🌟 `12.szint`
 
-🔒 Követelmény: -
-
-🌟 Mesterbónusz:
-- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+6` jár az Aurátokra.
+Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+6` jár az Aurátokra.
 - Társaiddal közvetlen szellembeszédre vagytok képes mind - ha legalább egy valaki `12.szinten` birtokolja a képzettséget. A társnak minimum `9.szinten` kell ismernie, hogy képes legyen együttműködni.
 
----
-#### Élő legenda (15) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény: [Harci iskola](../fortelyok.szabad/harci_iskola.md) Szabad Fortély
-
-🌟 Mesterbónusz:
-- Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra.
+Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár az Aurátokra.
 - Társaiddal összekapcsolódnak érzékszerveitek - bármilyen extra misztikus tudás nélkül.
 
 ---

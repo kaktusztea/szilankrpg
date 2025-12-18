@@ -8,25 +8,23 @@ Ez a képzettség nem csupán a kockák, lapok, táblajátékok ismeretéről sz
 
 Önuralom, Intelligencia
 
----
-### Szintek
+<br />
 
-#### Mester (9) 📖
+### Mesterbónuszok
 
-🔒 Követelmény: Intelligencia `+1`, Önuralom `+1`
-🌟 Mesterbónusz:  ⭕TODO⭕
+#### 🌟 `9.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕
 
-🔒 Követelmény: Intelligencia `+2`, Önuralom `+2`
-🌟 Mesterbónusz:  ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Élő legenda (15) 📖
+⭕TODO⭕
 
-🔒 Követelmény: Intelligencia `+3`, Önuralom `+2`  
-🌟 Mesterbónusz:  ⭕TODO⭕
+#### 🌟 `15.szint`
+
+⭕TODO⭕
+
+<br />
 
 ---
 ### Próbák 🎲

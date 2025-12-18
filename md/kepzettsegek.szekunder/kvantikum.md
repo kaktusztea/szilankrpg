@@ -39,31 +39,19 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Intelligencia `+2`, Emlékezet `+1`
+⭕TODO⭕
 
-🌟 Hatás: Mesterbónusz:  ⭕TODO⭕
+#### 🌟 `12.szint`
 
+⭕TODO⭕ Misztikus módon érzed a valószínűségeket: melyik az esélyesebb kimenetel, még ha pontos számítást nem is végzel.
 
----
-#### Nagymester (12) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény:  Intelligencia `+3`, Emlékezet `+1`
-
-🌟 Mesterbónusz:  ⭕TODO⭕
-- Misztikus módon érzed a valószínűségeket: melyik az esélyesebb kimenetel, még ha pontos számítást nem is végzel.
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  Intelligencia `+4`, Emlékezet `+1`
-
-🌟 Mesterbónusz:  ⭕TODO⭕
-- Belelátsz a világ törvényeibe – a sors számokban íródik előtted: asztrológia, mechanika, pénzügy, hadrendi logisztika – mind csak eszközök a számodra.
+⭕TODO⭕ Belelátsz a világ törvényeibe – a sors számokban íródik előtted: asztrológia, mechanika, pénzügy, hadrendi logisztika – mind csak eszközök a számodra.
 
 <br />
 

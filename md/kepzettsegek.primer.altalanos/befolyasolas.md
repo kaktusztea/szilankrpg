@@ -54,27 +54,19 @@ Például a játékos nem feccöl bele túl sok energiát sem a karaktere megsze
 <br />
 
 ---
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: -
+Ha akarod, egy teremnyi ember figyelmét pusztán kisugárzásoddal fel tudod hívni magadra. Olyan a hatás, mintha felkiáltanál - de szó nélkül.
 
-🌟 Mesterbónusz: Ha akarod, egy teremnyi ember figyelmét pusztán kisugárzásoddal fel tudod hívni magadra. Olyan a hatás, mintha felkiáltanál - de szó nélkül.
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+1` jár a képzettségpróbádra.
 
-🔒 Követelmény: -
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+1` jár a képzettségpróbádra.
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: -
-
-🌟 Mesterbónusz: Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+2` jár a képzettségpróbádra.
+Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemélyen, vagy tömegen. Ha Aurád felülkerekedik, akkor `Előny+2` jár a képzettségpróbádra.
 
 <br />
 

@@ -9,6 +9,9 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
 - Erő (erőtartalék kritikus helyzetben)
 - Intelligencia (felmérni a mászandó terepet, helyeket)
 
+### Pihenés
+Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor azon a terepen a mászó bárhol képes megállva kipihenni magát.
+
 ### Kapcsolódik
 
 - [Biztos kezű mászó](../fortelyok.altalanos/biztos_kezu_maszo.md) fortély
@@ -21,37 +24,19 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor azon a terepen a mászó bárhol képes megállva kipihenni magát.
+#### 🌟 `9.szint`
 
----
-#### Mester (9) 📖
+⭕TODO⭕
 
-🔒 Követelmény:
-- Ügyesség:`+2`
-- Önuralom:`+1`
+#### 🌟 `12.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
----
-#### Nagymester (12) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény:
-- Ügyesség:`+3`
-- Önuralom:`+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:
-- Ügyesség:`+4`
-- Önuralom:`+3`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 - A puszta, csúszós sziklafalon is képes vagy haladni. Kézfejed, lábad deformálódott – alkalmazkodva a mászás követelményeihez.
 - Képes vagy pókként megtapadni a falon – akár a mennyezeten is. A kapaszkodáshoz nincs szükséged kiszögelésre.
 - Függeszkedve órákat is kibírsz!

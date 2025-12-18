@@ -32,27 +32,19 @@ Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, 
 <br />
 
 ---
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🌟 Mesterbónusz: Tapasztalt fejvadász. Megérzed, ha valaki a közeledben mágikus leplezés nélkül, tartósan rád figyel - még ha nem is látod a személyt.
+Tapasztalt fejvadász. Megérzed, ha valaki a közeledben mágikus leplezés nélkül, tartósan rád figyel - még ha nem is látod a személyt.
 
-<br />
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+Elit, uralkodói testőr. Kiszagolod a leplezetlen erős mágia- vagy Aura jelenlétet: pontos értelmezéshez, irányához kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
 
-🌟 Mesterbónusz: Elit, uralkodói testőr. Kiszagolod a leplezetlen erős mágia- vagy Aura jelenlétet: pontos értelmezéshez, irányához kell más képzettség, de érzed, hogy pozitív vagy fenyegető az energia.
+#### 🌟 `15.szint`
 
-<br />
-
----
-#### Élő legenda (15) 📖
-
-🌟 Mesterbónusz:
-
-- Harcművész nagymester, mágus.
+Harcművész nagymester, mágus.
 - Új érzékek nyílnak meg számodra misztikus formában. ⭕TODO⭕
 - Ha a környezetedben bármi torzul, „nem a természetes rend szerint van” - pl. láthatatlan lény jelenléte, szellem, titkos ajtó mögül áramló energia. Nem mindig tudod megmagyarázni, de biztosan érzed: „valami nincs rendben”.
 - Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető jel – gyakorlatilag megelőző intuíciót jelent.

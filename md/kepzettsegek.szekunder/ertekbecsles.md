@@ -22,28 +22,19 @@ Emlékezet, Intelligencia
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Emlékezet `+2`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕
 
-🔒 Követelmény: Emlékezet `+2`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Emlékezet `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 - A másodkortól örökölt tárgyak, legendás relikviákkal tudsz felszínesen kommunikálni.
 - A legjobb hamisítványok sem tévesztenek meg: a tárgy aurájából megérzed, hogy az eredeti alkotó szelleme hiányzik belőle.
 
@@ -52,42 +43,42 @@ Emlékezet, Intelligencia
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Megállapítani egy hétköznapi tárgy (pl. egyszerű ékszer, boros kupa) hozzávetőleges piaci értékét.
 - Különbséget tenni réz és aranyozott réz között.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Megállapítani egy jobb minőségű kard vagy felszerelés piaci értékét.
 - Egy alap hamisítvány felismerése (pl. gyenge festményutánzat).
 - Azonnal eldönteni, hogy egy átlagos ékszer értékes vagy tucatáru.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Ritkább műalkotások (festmények, szobrok, arany‑ vagy ezüsttárgyak) valódi értékének megbecslése.
 - Jó minőségű hamisítvány felismerése.
 - Egy régi érme vagy tárgy történeti jelentőségének felmérése.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Híres műhelyhez vagy mestermunkához köthető tárgy hitelesítése.
 - Ősi relikviák, ritka szertartási kellékek piaci és kulturális értékének felmérése.
 - Egy legendás műalkotás eredetiségének bizonyítása.
 - Képes vagy megbecsülni legendás értékű tárgyakat (korabeli fegyverek, történelmi szobrok, híres relikviák) – legalább nagyságrendi pontossággal.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Legendás ereklyék, több száz éves tárgyak, koronák, szimbolikus relikviák pontos felbecslése.
 - Egy korokon átnyúló hamisítvány (pl. több száz év alatt többször átdolgozott tárgy) felismerése.
 - Egy ismeretlen, de nyilvánvalóan fontos tárgyról pontosan tudni, miért értékes.
 - Egy legendás történelmi alak által használt műremekből llátomáson keresztül a legenda újraélése - nem a valós történetet, hanem a belőle formálódott (akár már elfeledett) mítoszt.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Őskorból vagy istenek korából származó mitikus ereklyék értékét felismerni.
 - Egy tárgy aurájából megérezni, hogy hogyan kapcsolódik a világ történetéhez vagy mítoszaihoz.
-- Egy legendás történelmi alak által használt műremekből látomáson keresztül újraélheted legendás, valós pillanatait. 
+- Egy legendás történelmi alak által használt műremekből látomáson keresztül újraélheted legendás, valós pillanatait.
 
 <br />
 

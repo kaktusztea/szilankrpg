@@ -13,10 +13,11 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 <br />
 
-### Speciális bónusz
+### Jellemzők
 
 - Ezek a képzettségek - szintjüktől függően - büntetéseket/bónuszokat adnak harcértékedre. Bővebben lásd a [Harcértékek elemei - Harcmodor képzettségek](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md) fejezetet.
 - A képzettség szintjei beleszámítanak a [Manőver Pontok](../066_02_manover_pontok.md) számításába.
+- `3.szint`: Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
 
 <br />
 
@@ -28,35 +29,20 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 <br />
 
----
-### Szintek
 
-#### Novícius (3) 📖
+### Mesterbónuszok
 
-Ettől a szinttől kezdve [nem jár büntetés a harcértékeidre](../062_02_harcmodor_kepzettsegek_es_bonuszaik.md), ha egy ebben a harcmodorban forgatott fegyverrel harcolni próbálsz.
+#### 🌟 `9.szint`
 
----
-#### Mester (9) 📖
+Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_14_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
-🔒 Követelmény: -
+#### 🌟 `12.szint`
 
-🌟 Mesterbónusz: Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_01_14_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
-
----
-#### Nagymester (12) 📖
-
-🔒 Követelmény: -
-
-🌟 Mesterbónusz
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
 - A [Sebzéstípus másodlagos](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alakalmatlan](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései csökkennek `1`-gyel.
 
----
-#### Élő legenda (15) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény: -
-
-🌟 Mesterbónusz
 - A [Sebzéstípus másodlagos](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alakalmatlan](../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései megszűnnek.
 - Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz. Vagy `0` ÉP-re, vagy **max FP**-re kerül (te döntesz).
 

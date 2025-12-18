@@ -26,40 +26,32 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 
 <br />
 
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Intelligencia `+1`
+"Hadvezér". Saját seregedben mindig észreveszed, ki az, aki morálját veszti vagy ingadozik, még mielőtt szembetűnő lenne.
 
-🌟 Mesterbónusz: "Hadvezér". Saját seregedben mindig észreveszed, ki az, aki morálját veszti vagy ingadozik, még mielőtt szembetűnő lenne.
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+„Stratégiai zseni”. Félmágikus érzékkel megérzi, melyik hadtest vagy alakulat rogyhat meg először nyomás alatt – és azt is, kik fogják tartani a pozíciót.
 
-🔒 Követelmény:  Intelligencia `+2`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: „Stratégiai zseni”. Félmágikus érzékkel megérzi, melyik hadtest vagy alakulat rogyhat meg először nyomás alatt – és azt is, kik fogják tartani a pozíciót.
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  Intelligencia `+2`
-
-🌟 Mesterbónusz: katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmények között sem. Egy összképből (hadállások, erődítések, tábor) tudja, hogy „ez a hadjárat győzelem vagy vereség felé halad”. 
+Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmények között sem. Egy összképből (hadállások, erődítések, tábor) tudja, hogy „ez a hadjárat győzelem vagy vereség felé halad”.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
  - Felmérni, hány óra alatt érhet oda egy kisebb egység (pl. 20 lovas) a közeli faluba, ha az út ismert és járható.
 - Kiszúrni egy rosszul felállított őrséget (pl. egy gyalogos, aki fedezet nélkül áll egy nyitott mező szélén).
 - Egy napi menetoszlopból felismerni, mennyi szekér kell az élelmezéshez.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Harci helyzetben automatikusan felismered a nyilvánvaló stratégiai pontokat (híd, magaslat, szűk átjáró – ami mindig döntő lehet).
 - Nyers ránézésre megbecsülni, mekkora veszteséggel törhet át a lándzsás alakzat egy zárt lovas ék ellen.
@@ -67,30 +59,30 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 - Egy kisebb manővert (pl. szárnytámadás vagy fedezőtűz) gyorsan lemodellezni, és felismerni, működőképes-e.
 - Megmondani, hogy egy felállított tábor szerkezetében van‑e komoly gyenge pont (pl. rossz kerítés, túl széles bejárat).
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Egy nagyobb csata (pl. 1000+ fős ütközet) kimeneteléhez kulcsfontosságú tereptárgyakat, körülményeket felismerni első pillantásra.
 - Kitalálni, hogy egy ellenséges támadás: **felderítés, elterelés vagy főcsapás**.
 - A logisztikai lánc alapján észrevenni: az ellenség túl messze nyújtotta a hadtápját, ezért sebezhető.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Hadnagyok, parancsnokok kvalitásait felismerni pusztán a mozdulataikból és szervezési ütemükből.
 - Megérezni, hogy az ellenség „túl könnyen enged” → rejtett csapdát készít.
 - Órák alatt átlátni egy **többfrontos hadjárat logisztikáját**, és előre megmondani, hogy két hét múlva hol fognak tartani.
 - Széttöredezett információból (részseregek helyzete, szállítások, hírek) összerakni az ellenséges főhaditerv körvonalait.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Pusztán néhány zászlójel és porfelhő alapján felismerni egy hadtest valódi nagyságát és mozgásirányát.
 - Több ezer fő csapatmozgásaiban **előre látni, hol omlik össze a front** – órákkal vagy napokkal az esemény előtt.
 - A saját hadjáratban: kiszúrni, ha túlzottan „tökéletes” a helyzet, és az egész a vesztükre játszik.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Egyetlen rövid jelentésből (pl. „két falu elhagyva, erdőben porfelhő”) **helyesen kitalálni az ellenség főhaditervét**.
 - Ránézésre tudni, hogy egy hadjárat **vesztésre vagy győzelemre van ítélve**, még a fő csapásmérés előtt.
 - Az ellenség taktikáját napokkal korábban **átérezni**, szinte úgy, mintha a fejében járna.
-- Saját csapatai számára a jelenlétével azonnali hadrendfegyelmet és morált biztosítani 
+- Saját csapatai számára a jelenlétével azonnali hadrendfegyelmet és morált biztosítani
 
 ---

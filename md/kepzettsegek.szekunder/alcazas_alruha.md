@@ -49,46 +49,36 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Ügyesség:`+2`, Érzékenység:`+1`
+⭕TODO⭕
 
-🌟 Mesterbónusz:  ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕
 
-🔒 Követelmény: Ügyesség:`+2`, Érzékenység:`+2`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz:  ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Ügyesség:`+3`, Érzékenység:`+2`
-
-🌟 Mesterbónusz:
-- Élő álca: alkalmazója kellékek nélkül is képes átformálni vonásait. A hatás csak annyi lehet, amennyit maszkkészítő eszközökkel is el tudna érni. Például: pár perc alatt szakállat, bajszot növeszt, ráncokat varázsol az arcára, megváltozik szeme színe, stb. Az így növesztett részek a test részei, nem is vehetőek le.
+Élő álca: alkalmazója kellékek nélkül is képes átformálni vonásait. A hatás csak annyi lehet, amennyit maszkkészítő eszközökkel is el tudna érni. Például: pár perc alatt szakállat, bajszot növeszt, ráncokat varázsol az arcára, megváltozik szeme színe, stb. Az így növesztett részek a test részei, nem is vehetőek le.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Olyan álbajuszt/szakállat ragasztani, ami nem esik le egész nap.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Egyszerűbb bajusz/szakáll készítése
 - Olyan ragasztás, ami `1` napig biztosan kitart
 - Azonos nemű és felépítésű, +/-20 év korú személlyé átvedleni.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Izzadást gátló szereket, tartósabb ragasztókat kotyvasztani. Összetételük ismeretében beszerezni a hozzájuk való alapanyagokat.
 - `1` perc alatt összeválogatni magadnak egy álcára valót az eléd kerülő rengeteg ruhából, kellékből (a felvétel persze már más tészta).
@@ -96,21 +86,21 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 - 20 évnél nagyobb korkülönbséget hitelesen megjeleníteni.
 - Más nemű, hasonló korú személlyé átvedleni.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Ha nincs megfelelő alapanyag a kencéidhez, rögtönözni helyettesítő anyagokkal.
 - Rögtönzött felszerelést kevesebb, mint fél perc alatt összeválogatni.
 - Olyan álcát készíteni, amely karbantartás nélkül akár `1` hetet is kibír.
 - Más felépítésű személlyé átvedleni.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Más magasságú, nemű, teljesen más karakterű másik személlyé átváltozni.
 - Más fajú (de hasonló testfelépítésű) lénnyé átalakulni.
 - Olyan álcát készíteni, amely karbantartást sem igényel.Sminked mintha második bőröd lenne.
 - "Előbb a szakács fia volt, most épp a báróné!"
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Egy kis cérnából és egy falevélből álcát készíteni.
 - Más testfelépítésű lénnyé válni.

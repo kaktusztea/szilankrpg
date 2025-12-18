@@ -6,6 +6,10 @@ A hajózás képessége magában foglalja a hajók, legénység kezelését, ir�
 
 Érzékenység, Intelligencia, Emlékezet, Ügyesség
 
+###  [Összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba)
+
+Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbadobásokra** van szükség. Sokszor komplex, többlépcsős feladat egy hajó kezelése.
+
 ### Kapcsolódik
 
 - [Csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használják egy hajó tengerészei, mikor együtt, legénységként kell dolgozniuk.
@@ -17,39 +21,19 @@ A hajózás képessége magában foglalja a hajók, legénység kezelését, ir�
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-Nagyon gyakori eset az [összetett képzettségpróba](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) Hajózás képzettség esetén, mikor **Másodlagos próbadobásokra** van szükség. Sokszor komplex, többlépcsős feladat egy hajó kezelése.
+#### 🌟 `9.szint`
 
-#### Mester (9) 📖
+⭕TODO⭕ Vihar közeledtét óra előrejelzéssel megérzed
 
-🔒 Követelmény: Intelligencia `+2`, Emlékezet `+1`  
+#### 🌟 `12.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-- Vihar közeledtét óra előrejelzéssel megérzed
+⭕TODO⭕ Érzed, "hallod" a hajódat: tudod, mikor roppan a test, mikor bír még többet, mikor kell engedni a vásznakon.
 
-<br />
+#### 🌟 `15.szint`
 
----
-#### Nagymester (12) 📖
-
-🔒 Követelmény: Intelligencia `+2`, Emlékezet `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-
-- Érzed, "hallod" a hajódat: tudod, mikor roppan a test, mikor bír még többet, mikor kell engedni a vásznakon.
-
-<br />
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Intelligencia `+2`, Emlékezet `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-
-- Érzékeid összekapcsolódnak a tengerrel: érzed az áramlatokat, szélirányt, halrajokat és vihart – mintha maga a tenger beszélne hozzád.
+⭕TODO⭕ Érzékeid összekapcsolódnak a tengerrel: érzed az áramlatokat, szélirányt, halrajokat és vihart – mintha maga a tenger beszélne hozzád.
 
 <br />
 

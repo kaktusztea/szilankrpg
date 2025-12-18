@@ -24,65 +24,55 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Önuralom: `+0`
+⭕TODO⭕
 
-🌟 Mesterbónusz:  ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
-
-🔒 Követelmény: Önuralom: `+0`
-
-🌟 Mesterbónusz:  ⭕TODO⭕
+⭕TODO⭕
 
  - [Állat testvér](#állat-testvér): telepatikus összhang a társaddal, aki reagál a gondolataidra zuhanás, manőver vagy harc közben is.
 
----
-#### Élő legenda (15) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény: Önuralom: `+0`
-
-🌟 Mesterbónusz:  ⭕TODO⭕
-- [Állat testvér](#állat-testvér): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
+⭕TODO⭕ [Állat testvér](#állat-testvér): asztrális-mentális egyesülés. Te és a lény egyetlen árnyék vagytok az égen, ösztönösen érzékelitek egymás mozdulatait és szándékait.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Egyedül megtenni egy iskolakört.
 - Egyenes emelkedés és sima ereszkedés, egyenesen röppályán tartás.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Gond nélkül fel és leszállni.
 - Zavaró körülmények nélkül akár hosszabb utat is megtehetsz.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Fordulózás, gyors irányváltások.
 - Hátas sérült szárnnyal vagy fáradt hátassal.
 - Légi közelharc folytatható.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Tömegben harcolni (levegőben).
 - Erősen sérült hátassal rossz időben navigálni. Egyensúlyból kibillent hátast „rendezni”.
 - Harc és rossz idő együtt: villámló ég, szakadó eső.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Zuhanásból sérült hátast kihozni.
 - Orkánban repülni
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Az évszázad viharában zuhanó hátasodat felhúzni, miközben ellenfeled nyakadat szorongatja.
 - Telepatikus összhanggal ösztönszerűen végrehajtani bonyolult manővereket (siklás, kitérés, közös támadás).
@@ -97,4 +87,3 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 - Időjárás:
     - Erős szél vagy felhőszaggatás: `+3`
     - Vihar, orkán: `+6`
-    

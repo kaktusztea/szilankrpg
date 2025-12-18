@@ -68,28 +68,19 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: ⭕TODO⭕
+⭕TODO⭕ Ettől a szinttől kezdve vagy képes kézrátétellel gyógyítást megpróbálni. A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) szint követelménye a felére csökken, az energia átadása egyre hangsúlyosabb.
 
-🌟 Mesterbónusz: ⭕TODO⭕ Ettől a szinttől kezdve vagy képes kézrátétellel gyógyítást megpróbálni. A [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) szint követelménye a felére csökken, az energia átadása egyre hangsúlyosabb.
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕  Innen prübálkozhatsz a fizikai komponens nélküli, tisztán kézrátételes gyógyítással.
 
-🔒 Követelmény:  ⭕TODO⭕
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕  Innen prübálkozhatsz a fizikai komponens nélküli, tisztán kézrátételes gyógyítással.
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
 <br />
 

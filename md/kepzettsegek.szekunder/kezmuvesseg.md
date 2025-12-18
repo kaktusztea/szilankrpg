@@ -48,74 +48,44 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
   - [Kézműves: Szakács](../fortelyok.szabad/kezmuves_szakacs.md)
   - [Kézműves: Szűcs](../fortelyok.szabad/kezmuves_szucs.md)
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Novícius (3) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: megfelelő Tulajdonság: `+0` (Ügyesség, Intelligencia, Emlékezet vagy Érzékenység a szakmától függően)
-
-🌟 Hatás:
-- Alapfogások birtokában vagy, felismered a mesterségedhez tartozó szerszámokat és alapanyagokat.
-- Egyszerű, hétköznapi munkát el tudsz végezni segítség mellett (pl. zsák varrása, egyszerű kenyérsütés, nyers rönk fűrészelése).
-
----
-#### Kismester (6) 📖
-
-🔒 Követelmény: megfelelő Tulajdonság: `+1` (Ügyesség, Intelligencia, Emlékezet vagy Érzékenység a szakmától függően)
-
-🌟 Hatás:
-- Önállóan és megbízhatóan dolgozol: elkészítesz teljes értékű árut vagy elvégzel egy folyamatot.
-- A szakmádban való eligazodás (árak, anyagok, minőség) biztonsággal megy.
-- Eladható munkát végzel, amit a céh elfogadna.
-
----
-#### Mester (9) 📖
-
-🔒 Követelmény: megfelelő Tulajdonság: `+2` (Ügyesség, Intelligencia, Emlékezet vagy Érzékenység a szakmától függően)
-
-🌟 Hatás:
 - Az általad létrehozott tárgy már valamilyen formában mágikus hatású
 - Magas minőségű munkák létrehozására vagy képes, amelyek már kereskedők, nemesek, katonák igényeit is kielégítik.
 - Meg tudsz javítani sérült termékeket (pl. fegyvert, ruhát, szerszámot).
 - A szakmádhoz tartozó közösségben szaktekintélynek számítasz.
 
----
-#### Nagymester (12) 📖
+#### 🌟 `12.szint`
 
-🔒 Követelmény:  megfelelő Tulajdonság: `+3` (Ügyesség, Intelligencia, Emlékezet vagy Érzékenység a szakmától függően)
+⭕TODO⭕
 
-🌟 Hatás:
 - Az általad létrehozott tárgy már valamilyen formában mágikus hatású. Pl. cipő, amiben gyorsabban tudsz futni, ugrani, vagy lopakodni - ennek feltétele, hogy a tárgy Ideája az általad elkészíthető legmagasabb értékű legyen (minimum `+4`). Ez rendkívül sok időt és türelmet igénylő, nagyon nehéz művelet.
 - Az általad létrehozott tárgyon kevésbé fog az enyészet. Pl. nem romlik meg az étel, amit szakácsként készítettél.
 - Olyan termékeket készítesz, amelyek egyedi, kiemelkedő értékkel bírnak (mesterjeggyel ellátott tárgyak).
 - Más mestereknek is tanítványokat adhatsz, és iskolát nyithatsz.
 - A tárgyaid akár kisebb mágikus vagy mechanikus kiegészítéseket is fogadhatnak (pl. rejtett rekesz, páncél illesztés).
 
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  megfelelő Tulajdonság: `+3` (Ügyesség, Intelligencia, Emlékezet vagy Érzékenység a szakmától függően)
-
-🌟 Hatás:
-- Termékeid túlmutatnak a köznapin: egész városok, birodalmak jegyzik meg a neved.
-- Egy kezed alól kikerült fegyver, páncél, építmény vagy műtárgy örökségként él tovább.
-- Amit készítesz, arról ismeretlen országokban is tudják: „Ez bizony Brocco műhelyéből való.”
-
-
-12.szint:
+⭕TODO⭕
   - mágikus tulajdonságú a tárgy.
   - Képes mágikus hatást is kiváltani. Pl. cipőben gyorsabban tudsz futni, vagy ugrani. Kimaxolt Idea is kell hozzá (+4).
     - Gyors, ugrásos, lopakodós. Sok idő megcsinálni és k. nehéz.
   - Kevésbé fog rajta az enyészet. Pl. nem romlik meg az étel.
 
-15.szint:
-  - Egyáltalán nem fog rajta az enyészet.
-  - képes vagy ereklyét alkotni (max 1). Kpes saját lelkét belefoglalni élete művébe. Esetleg egy készletet (tárgy készlet).
+#### 🌟 `15.szint`
+
+⭕TODO⭕
+- Termékeid túlmutatnak a köznapin: egész városok, birodalmak jegyzik meg a neved.
+- Egy kezed alól kikerült fegyver, páncél, építmény vagy műtárgy örökségként él tovább.
+- Amit készítesz, arról ismeretlen országokban is tudják: „Ez bizony Brocco műhelyéből való.”
+
+⭕TODO⭕
+- Egyáltalán nem fog rajta az enyészet.
+- képes vagy ereklyét alkotni (max 1). Kpes saját lelkét belefoglalni élete művébe. Esetleg egy készletet (tárgy készlet).
     - lélek
     - isteni entitás
     - démonhercegi
-
 
 
 <br />

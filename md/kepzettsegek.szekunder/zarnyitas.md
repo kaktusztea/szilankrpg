@@ -1,6 +1,6 @@
 ## 🔵 Zárnyitás
 
-A zárak finom, hangtalan és szakszerű kinyitására szolgáló képzettség.  
+A zárak finom, hangtalan és szakszerű kinyitására szolgáló képzettség.
 Kiterjed az alábbiakra:
 - kulcs nélküli zárnyitás (tőrrel, finom eszközökkel, hajszállal, tolvajkulccsal),
 - rejtett mechanizmusok kitapintása
@@ -25,67 +25,54 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 
 <br />
 
----
-### Szintek
 
+### Mesterbónuszok
 
+#### 🌟 `9.szint`
 
----
-#### Mester (9) 📖
+ ⭕TODO⭕
 
-🔒 Követelmény: Ügyesség `+2`, Önuralom `+1`
+#### 🌟 `12.szint`
 
-🌟 Mesterbónusz:  ⭕TODO⭕
+ ⭕TODO⭕
 
----
-#### Nagymester (12) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény: Ügyesség `+2`, Önuralom `+2`
-
-🌟 Mesterbónusz:  ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Ügyesség `+4`, Önuralom `+2`
-
-🌟 Mesterbónusz:  ⭕TODO⭕
-- A legművészibb, mágikus elemeket nélkülöző zárakat is kinyitod puszta érintésre.
-
+⭕TODO⭕ A legművészibb, mágikus elemeket nélkülöző zárakat is kinyitod puszta érintésre.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Egyszerű, elrozsdásodott vagy primitív zár kinyitása.
 - Ismert típusú lakat felnyitása nyugodt körülmények között, idő nem számít.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Mindennapi ajtózár nyitása normál eszközökkel.
 - Lakat kinyitása sietés nélkül.
 - Felismerni, ha a zár piszkálva volt más által.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Bonyolultabb rugós szerkezet kinyitása.
 - Egyszerűbb csapdával kombinált zár észrevétele és elkerülése.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Egyedi készítésű lakat feltörése.
 - Zár kinyitása szokatlan eszközzel (pl. hajtű).
 - Zárnyitás nyom nélkül.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Ritka, mániákusan túlbonyolított szerkezet kinyitása.
 - Hamar „átlátni” a zárszerkezet működését.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Legendás, egyedi mestermunka-zárak megnyitása.
 - Zár kinyitása szinte pusztán a „tapasztalati érzékelésből”, eszköz nélkül.

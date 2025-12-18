@@ -40,29 +40,19 @@ Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módo
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Ügyesség `+2`, Önuralom `+1`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕
 
-🔒 Követelmény:  Ügyesség `+2`, Önuralom `+2`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  Ügyesség `+3`, Önuralom `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-- Misztikus hatás: kezed mozgása konkrétan láthatatlan. Sőt külső szemlélő számára úgy tűnik, mintha nem is csinálna semmit.
+⭕TODO⭕ Misztikus hatás: kezed mozgása konkrétan láthatatlan. Sőt külső szemlélő számára úgy tűnik, mintha nem is csinálna semmit.
 
 <br />
 

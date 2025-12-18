@@ -26,64 +26,51 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Önuralom: `+0`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
----
-#### Nagymester (12) 📖
+⭕TODO⭕ [Állat testvér](#állat-testvér): kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
 
-🔒 Követelmény: Önuralom: `+0`
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-
-- [Állat testvér](#állat-testvér) kapcsolat kialakul: a társaddal telepatikus kommunikációra vagy képes, érzi az érzelmeid.
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Önuralom: `+0`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-
-- [Állat testvér](#állat-testvér) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
+⭕TODO⭕ [Állat testvér](#állat-testvér) képesség kiterjesztése: mély asztrális-mentális egyesülés, érzékszerveitek és mozgásotok is összefonódhat.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Egyedül, léptetve átbaktatni a szomszédos faluba.
 - Nyugodt körülmények között galoppozni.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Esőben, csúszós terepen galoppozni, kicsit vágtázni.
 - Szűk ösvényen egyensúlyban maradás.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Hátassal harcolni.
 - Makrancos hátast először sikeresen megülni.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Tömegben, pánikoló hátasok között is irányítani a lovat.
 - Durván kitört hátast „rendezni”.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Vakon vágtázni, a ló ösztöneire hagyatkozni.
 - [Állat testvér] esetén: veszély közeledtét telepatikusan jelezni az állatnak és hogy menjen egy adott helyre a közelben.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Tomboló viharban egy vágtázó hátason egy lábon állva fél percig megmaradni.
 - [Állat testvér] esetén: telepatikus, nem begyakorolt komplex parancsok (pl. „vidd biztonságba a társamat, majd térj vissza értem”).

@@ -36,32 +36,19 @@ Emlékezet, Intelligencia, Érzékenység
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
+#### 🌟 `9.szint`
 
+⭕TODO⭕
 
----
-#### Mester (9) 📖
+#### 🌟 `12.szint`
 
-🔒 Követelmény: Érzékenység `+2`, Emlékezet `+1`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `15.szint`
 
-
----
-#### Nagymester (12) 📖
-
-🔒 Követelmény:  Érzékenység `+2`, Emlékezet `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Érzékenység `+3`, Emlékezet `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 - Olyan szinten értesz a művészethez, hogy időnként prófétikus meglátásaid támadnak egy alkotásról (pl. „Ez a szobor egy pusztulásra ítélt birodalom végső kétségbeesése”).
 - Misztikus módon képes vagy „beleérezni” egy műbe: megérzed az alkotó érzelmeit, szándékát, vagy a kort, amelyben létrejött.
 
@@ -72,35 +59,35 @@ Emlékezet, Intelligencia, Érzékenység
 
 Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet?") magasabb az [Előadóművészet](eloadomuveszet.md) képzettség, **akkor is a Művészetismeret képzettség szintjével dobunk próbát!** Attól hogy valaki remekül furulyázik a kocsmában, nem feltétlenül járatos a zenei nagyvilágban.
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Felismerni egy ismert szobrot, festményt vagy népszerű dalt.
 - Megkülönböztetni jobb és silányabb munkát (pl. kocsmadal vs. neves bárd szerzeménye).
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Azonosítani az alkotó stílusát vagy a mű származási területét.
 - Udvari színdarab, klasszikus tánc, közismert építészeti irányzat felismerése.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Híres mester művének felismerése egy vázlatról vagy töredékről.
 - Egy darab vagy előadás mélyebb szimbolikájának elemzése.
 -  Megmondani a híres előadások, festmények, építészeti darabok mögötti történeteket és hátteret
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Ismeretlen műből megállapítani, melyik korszakból és iskolából származhat.
 - Egy régi vagy ritka táncstílus mozdulataiból következtetni a hagyományra.
 - Rendszerekben gondolkodva összekötni korszakokat és művészeti ágakat: pl. tudod, hogy egy hadjárat vagy vallási mozgalom konkrét stílusváltással is együtt járt.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Elveszett mester stílusát felismerni egy töredékből.
 - Egy szimbolikus, vallásos vagy politikai tartalmat mély szinten helyesen feldolgozni.
 - Rejtett jelentést, titkos üzenetet megtalálni a műben.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Egy mű „lelki lenyomatához” kapcsolódni: megérezni az alkotó érzelmeit.
 - Történelmi-társadalmi próféciává kibontani a mű jelentését.

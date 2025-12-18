@@ -31,32 +31,23 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 
 <br />
 
-### Szintek
+### Mesterbónuszok
 
----
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Önuralom: `+1`
+⭕TODO⭕ Érzéked van a környezetre: érzed, melyik fedezék lesz valóban biztonságos, és melyik árulkodó.
 
-🌟 Mesterbónusz: ⭕TODO⭕ Érzéked van a környezetre: érzed, melyik fedezék lesz valóban biztonságos, és melyik árulkodó.
+#### 🌟 `12.szint`
 
+⭕TODO⭕ Félmágikus hatás: porban, hóban nem látszik a lábnyomod, vízben nem keltesz hullámot, a száraz levél nem zörög..
 
----
-#### Nagymester (12) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény:  Önuralom: `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕ Félmágikus hatás: porban, hóban nem látszik a lábnyomod, vízben nem keltesz hullámot, a száraz levél nem zörög..
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  Önuralom: `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕ Félmágikus hatás: emberméretnél kisebb tárgyak mögött (sötét sarok, függöny, váza) is el tudsz bújni.
+⭕TODO⭕ Félmágikus hatás: emberméretnél kisebb tárgyak mögött (sötét sarok, függöny, váza) is el tudsz bújni.
 
 <br />
 
+---
 ### Próbák 🎲
 
 Ennek a képzettségnek a próbadobásai jellemzően ellepróbák az [Észlelés](eszleles.md) képzettséggel. Bővebben lásd a [Lopakodás/rejtőzés és észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációt.

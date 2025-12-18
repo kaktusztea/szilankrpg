@@ -22,22 +22,19 @@ Lásd a [Fakír](../fortelyok.altalanos/fakir.md) fortély leírását!
 
 <br />
 
-### Szintek
+### Mesterbónuszok
 
----
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🌟 Mesterbónusz: Egy testrésznyi területen (pl. alkar) ki tudod kapcsolni a fájdalomérzetet a testedben. Harcban nem alkalmazható.
+Egy testrésznyi területen (pl. alkar) ki tudod kapcsolni a fájdalomérzetet a testedben. Harcban nem alkalmazható.
 
----
-#### Nagymester (12) 📖
+#### 🌟 `12.szint`
 
-🌟 Mesterbónusz: Testi fájdalom tünetei nem látszanak meg: nincs apró remegés, zihálás, szapora szívverés. Tartós fájdalom alatt is képes figyelni, beszélni, tárgyalni.
+Testi fájdalom tünetei nem látszanak meg: nincs apró remegés, zihálás, szapora szívverés. Tartós fájdalom alatt is képes figyelni, beszélni, tárgyalni.
 
----
-#### Élő legenda (15) 📖
+#### 🌟 `15.szint`
 
-🌟 Mesterbónusz: Harcon kívül fájdalmát akarata szerint választja meg – ha kell, teljesen letiltja, mintha nem is érezné.
+Harcon kívül fájdalmát akarata szerint választja meg – ha kell, teljesen letiltja, mintha nem is érezné.
 
 <br />
 

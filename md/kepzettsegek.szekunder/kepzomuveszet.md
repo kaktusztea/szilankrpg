@@ -20,7 +20,7 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 
 ### Erős kiterjesztés
 
-- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Ennek ismerete nélkül nem tudsz az adott kultúrkör stílusában alkotni.
+- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md): Ha érintett az adott kultúrkör. Ennek ismerete nélkül **nem** tudsz az adott kultúrkör stílusában alkotni.
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
 - [Festészet](../fortelyok.szabad/festeszet.md): Vászonra álmodod a lelkedben születő képeket.
 - [Kalligráfia](../fortelyok.szabad/kalligrafia.md): Mesterien bánsz a pennával, festett betűidben ott lakozik az örökkévalóság.
@@ -32,67 +32,53 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 
 <br />
 
----
-### Szintek
+### Mesterbónuszok
 
-Az általad ismert [Kultúrkör](../fortelyok.kiemelt/kulturkor.md)öknek megfelelő műveket hozhatsz létre. Anélkül nem megy.
+#### 🌟 `9.szint`
 
-#### Mester (9) 📖
+⭕TODO⭕ Hamisítvány esetén van rá esély, hogy nagyon enyhén, de megérzed, hogy hiányzik belőle az „ihlet”.
 
-🔒 Követelmény: Érzékenység `+1`, Ügyesség `+2`
+#### 🌟 `12.szint`
 
-🌟 Mesterbónusz: ⭕TODO⭕
-- Hamisítvány esetén van rá esély, hogy nagyon enyhén, de megérzed, hogy hiányzik belőle az „ihlet”.
+ ⭕TODO⭕ Műveid túlélhetik az időt: sokkal lassabban pusztulnak, alkotó energiát is egyben tartja azt – még halálod után is. Esés, ütődés nem tesz kárt benne, fegyverrel is nehezebb tönkretenni.
 
----
-#### Nagymester (12) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény: Érzékenység `+2`, Ügyesség `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-- Műveid túlélhetik az időt: sokkal lassabban pusztulnak, alkotó energiát is egyben tartja azt – még halálod után is. Esés, ütődés nem tesz kárt benne, fegyverrel is nehezebb tönkretenni.
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény: Érzékenység `+3`, Ügyesség `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-- Műved egyáltalán nem pusztul az idővel, még fegyverrel is nagyon nehéz (bár nem lehetetlen) tönkretenni.
+⭕TODO⭕Műved egyáltalán nem pusztul az idővel, még fegyverrel is nagyon nehéz (bár nem lehetetlen) tönkretenni.
 
 <br />
 
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 - Egyszerű, arányos rajz elkészítése.
 - Díszítő motívum vagy kalligráf betű leírása tisztán.
 - Alap plasztikák, köztéri dísztárgyak helyes méretarányban.
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 - Élethű portré festése.
 - Szobor alkotása, amely már felismerhető jelleggel bír.
 - Díszítmény, amely gazdagabb környezetben is megállja a helyét.
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 - Egy alkotás, amely már érzelmet vált ki a szemlélőből.
 - Szobor/festmény/kalligráfia létrehozása, amely műkedvelők szerint is kiemelkedő darab.
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 - Olyan művet alkotni, ami már szellemi/érzelmi [Státuszt](../082_statuszok.md) vált ki az átlagemberben: megnyugtat, feldühít, áhítatba ringat.
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 - Korszakalkotó mű létrehozása, amely művészeti irányzatot teremt.
 - Egy műalkotás, amely politikai/ társadalmi eseményeket is befolyásolhat.
 - Átlagembert félmágikus érzelmi hatás alá vonja.
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 - Egy alkotás, amely örökre beírja magát a történelembe.
 - A műveddel spirituális kapcsolatot teremtesz a befogadó néző számára.

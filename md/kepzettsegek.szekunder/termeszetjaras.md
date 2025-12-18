@@ -42,29 +42,19 @@ A képzettség magában foglalja a következőket:
 
 Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpontokat, mankót adhat. Tehát ha a karakter megdobja próbáját, akkor a KM csak segítségeket tárhat a játékos elé, a teljes megoldást nem kínálhatja tálcán.
 
----
-### Szintek
+### Mesterbónuszok
 
-#### Mester (9) 📖
+#### 🌟 `9.szint`
 
-🔒 Követelmény: Érzékenység `+1`
+⭕TODO⭕
 
-🌟 Mesterbónusz: ⭕TODO⭕
+#### 🌟 `12.szint`
 
+⭕TODO⭕
 
----
-#### Nagymester (12) 📖
+#### 🌟 `15.szint`
 
-🔒 Követelmény:  Érzékenység `+2`
-
-🌟 Mesterbónusz: ⭕TODO⭕
-
----
-#### Élő legenda (15) 📖
-
-🔒 Követelmény:  Érzékenység `+3`
-
-🌟 Mesterbónusz: ⭕TODO⭕
+⭕TODO⭕
 
 <br />
 
