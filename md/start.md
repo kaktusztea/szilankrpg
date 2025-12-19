@@ -1,8 +1,8 @@
 # Szilánk RPG szabályrendszer
 
-**[Karakteralkotó v9.2.1 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)**
+### **[Karakteralkotó ods](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)**
 
-**[Segédlet ingame (PDF)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
+### **[Segédlet ingame pdf](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
 ---
 ## Gyors elérés
