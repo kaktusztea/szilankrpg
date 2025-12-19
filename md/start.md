@@ -106,7 +106,7 @@
 ---
 ### 5. [Tradíciók](050_tradiciok.md)
 
-#### 5.1 [Mágia tradíciók](051_00_magia_tradiciok.md)
+### 5.1 [Mágia tradíciók](051_00_magia_tradiciok.md)
 
 - [Magasmágia](051_01_magasmagia.md)
 - [Vulgármágia](051_02_vulgarmagia.md)
@@ -117,9 +117,9 @@
 - [Sámánmágia](051_07_samanmagia.md)
 - [Drágakőmágia](051_08_dragakomagia.md)
 
-#### 5.2 [Papi tradíció](052_papi_tradicio.md)
+### 5.2 [Papi tradíció](052_papi_tradicio.md)
 
-#### 5.3 [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
+### 5.3 [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
 
 - [Fejvadász Tradíció](053_01_fejvadasz_tradicio.md)
 - [Slan Tradíció](053_02_slan_tradicio.md)
