@@ -755,9 +755,7 @@ Beszéd (zavart, vagy némult)
 
 ```
 (20 - Önuralom) perc után
-magától enyhül "Zavar (2) Megrendült"
-fokra, ami az ott leírt időtartam
-után enyhül.
+2.fokra enyhül
 ```
 
 #### Kihozni valakit sokkból
@@ -767,10 +765,7 @@ Emberismeret + Érzékenység
   Képzettségpróba
 
 Célszám: 12 (Nehéz)
-
-Sikeres próba kihozza
-"Zavar (2) Megrendült" fokra,
-ami az ott leírt időtartam után enyhül.
+ → siker enyhíti 2.fokra
 ```
 
 ```
