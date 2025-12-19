@@ -21,18 +21,6 @@
 
 <br />
 
----
-## Tartalomjegyzék
-
-- [Kezdetek](#0-kezdetek) &nbsp;-&nbsp; [Karakteralkotás](#1-karakteralkotás)
-- [Hátterek](#2-hátterek-)  &nbsp;-&nbsp; [Képzettségrendszer](#3-képzettségrendszer-) &nbsp;-&nbsp; [Fortélyok](#4-fortélyok-) &nbsp;-&nbsp; [Tradíciók](#5-tradíciók)
-- [Harcrendszer](#6-harcrendszer-️) &nbsp;-&nbsp; [Távolsági Harcrendszer](#7-távolsági-harcrendszer-)
-- [Hatások és Státuszok](#8-hatások-és-státuszok)
-- [Pszí](#9-pszí-) &nbsp;-&nbsp; [Mágiarendszer](#10-mágiarendszer-) &nbsp;-&nbsp; [Papi mágia](#11-papi-mágia) &nbsp;-&nbsp; [Slan misztérium](#12-slan-misztérium) &nbsp;-&nbsp; [Varázstárgyak](#13-varázstárgyak)
-- [Gyógyítás, gyógyulás](#14-gyógyítás-gyógyulás) &nbsp;-&nbsp; [Méregrendszer, Mérgek](#15-méregrendszer-mérgek) &nbsp;-&nbsp; [Szituációk](#16-szituációk)
-
-<br />
-
 ⚜️ ⚜️ ⚜️
 
 ### 0. [Kezdetek](000_kezdetek.md)
