@@ -127,7 +127,7 @@
 ---
 ### 6. [Harcrendszer](060_00_harcrendszer.md) 🗡️
 
-#### 6.1 [Életerő, Sebesülés](061_00_eletero.md)
+### 6.1 [Életerő, Sebesülés](061_00_eletero.md)
 
 - [Életerő Pont (ÉP)](061_01_eletero_pont.md)
 - [Fáradság Pont (FP)](061_02_faradsag_pont.md)
@@ -136,14 +136,14 @@
 - [Példa sebesülésre](061_05_pelda_sebesulesre.md)
 - [Gyógyulás](061_06_gyogyulas.md)
 
-#### 6.2 [Alapértékek](062_00_alapertekek.md)
+### 6.2 [Alapértékek](062_00_alapertekek.md)
 
 - [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
 - [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 - [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
 - [HM, CM](062_04_hm_cm.md)
 
-#### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
+### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 
 - [Harci kör](063_01_harci_kor.md)
 - [Akció fogalma](063_02_akcio_fogalma.md)
@@ -152,7 +152,7 @@
 - [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
 - [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
 
-#### 6.4 [Harc menete](064_00_harc_menete.md)
+### 6.4 [Harc menete](064_00_harc_menete.md)
 
 - [Harc menete (összefoglaló)](064_01_harc_menete_osszefoglalas.md) 🎲
 - [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
@@ -168,7 +168,7 @@
   - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md)
 - [Példaharc](064_03_peldaharc.md) ⚡
 
-#### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
+### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
 - [Harci helyzetek](065_01_00_harci_helyzetek.md)
   - [Belharci szituáció](065_01_01_belharci_szituacio.md)
@@ -182,7 +182,7 @@
 - [Harc alakzatban](065_03_harc_alakzatban.md)
 - [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
 
-#### 6.6 [Manőverek](066_00_manoverek.md) 🎲
+### 6.6 [Manőverek](066_00_manoverek.md) 🎲
 
 - [Manőver Alap](066_01_manover_alap.md)
 - [Manőver Pontok](066_02_manover_pontok.md)
@@ -194,14 +194,14 @@
 - [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md) ⚡
 - [Példa Manőver alkalmazására: Lábsöprés](066_08_02_pelda_manover_lapsopres.md) ⚡
 
-#### 6.7 [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
+### 6.7 [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
 
 - [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyai.md)
 - [Lovas, Léglovas fortélyok](067_02_lovas_leglovas_fortelyok.md)
 - [Lovas, Léglovas harci taktikák](067_03_lovas_harci_taktikak.md)
 - [Lovas, Léglovas manőverek](067_04_lovas_manoverek.md) 🎲
 
-#### 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
+### 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
 
 - [Fegyverek általános szabályai](068_01_00_fegyverek_altalanos_szabalyai.md)
   - [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
@@ -227,7 +227,7 @@
 - [Lőfegyverek](068_08_lofegyverek.md)
 - [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
 
-#### 6.9 [Vértek, páncélok](069_00_vertek_pancelok.md)
+### 6.9 [Vértek, páncélok](069_00_vertek_pancelok.md)
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
