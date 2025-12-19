@@ -4,7 +4,8 @@ Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepját�
 
 ## ⚜️ **[Szabályrendszer](md/start.md)** ⚜️
 
----
+<br />
+
 ## Filozófia
 
 A `Szilánk RPG` egy realitásra törekvő fantasy szerepjáték, amely mégis gördülékenynek tűnik játék során. Ennek oka, hogy a legtöbb számolást igénylő feladatot karakteralkotási időbe száműztünk, a statisztikák kalkulálásában pedig egy fejlett [Karakteralkotó](md/start.md#karakteralkot%C3%B3) segít - így rendkívül egyedi, specializált végeredményt kaphatunk.
