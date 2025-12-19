@@ -128,7 +128,7 @@ Lássuk hát a részletes szabályrendszert:\
 ![](https://progress-bar.xyz/15/?title=M%C3%A1giarendszer%20%20%20%20%20%20%20%20%20%20%20%20%20%20&width=400&color=babaca)
 
 ---
-## 🚧 **[Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki)** 🚧
+## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
 
 Itt folyik a hátralévő és nyitott témák kidolgozása.
 
