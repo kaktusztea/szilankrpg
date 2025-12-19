@@ -1,6 +1,6 @@
 ## Harci linkek
 
-Gyors elérésű link gyűjtemény - játékalkalomra.
+Linkgyűjtemény játékalkalmakra.
 
 [Harci taktikák](065_02_harci_taktikak.md)
 
@@ -10,7 +10,7 @@ Gyors elérésű link gyűjtemény - játékalkalomra.
 
 [Sebzés táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre)
 
-[Harc menete - tömör](064_01_harc_menete_osszefoglalas.md)
+[Harc menete (tömör verzió)](064_01_harc_menete_osszefoglalas.md)
 
 ---
 ### Manőverek
