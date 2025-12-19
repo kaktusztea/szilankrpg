@@ -2,13 +2,15 @@
 
 ## Karakteralkotó
 
-**[Karakteralkotó v9.2.1 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)** &nbsp;&nbsp;- &nbsp;&nbsp;  [LibreOffice](https://www.libreoffice.org/download/download/) ⬇️
+**[Karakteralkotó v9.2.1 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)**
+
+[LibreOffice](https://www.libreoffice.org/download/download/) ⬇️
+
+**[Segédlet ingame (PDF)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
 <br />
 
 ## Segédletek játékalkalmakhoz
-
-**[Segédlet ingame (PDF)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
 [ÉP, VÉ firkálólap](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_EP_VE_firka.pdf?raw=true) &nbsp;•&nbsp; [NJK karlap odt-1](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2.odt?raw=true) • [NJK karlap odt-2](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2_ketoldalas.odt) • [NJK karlap pdf](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2.pdf?raw=true)
 
