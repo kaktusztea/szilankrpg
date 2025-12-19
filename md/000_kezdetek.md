@@ -22,6 +22,8 @@ Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiáj�
 
 #### [Harci linkek](007_harci_linkek.md)
 
+#### [Segéd dokumentumok játékalkalmakhoz](008_seged_dokumentumok.md)
+
 ---
 
 ⚜️ [Nyitóoldal](start.md#0-kezdetek) 

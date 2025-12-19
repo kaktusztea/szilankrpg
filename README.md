@@ -2,11 +2,7 @@
 
 Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepjáték rendszer ([CC](LICENSE)).
 
-⚜️ **[Szilánk RPG szabályrendszer](md/start.md)** ⚜️
-
-🚧 **[Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki)** 🚧
-
-🗡️ **[Harci linkek](md/007_harci_linkek.md)**
+## ⚜️ **[Szabályrendszer](md/start.md)** ⚜️
 
 ---
 ## Filozófia
@@ -129,6 +125,11 @@ Lássuk hát a részletes szabályrendszert:\
 ![](https://progress-bar.xyz/95/?title=H%C3%A1tterek%20kidolgzotts%C3%A1ga%20%20%20%20&width=400&color=babaca)\
 ![](https://progress-bar.xyz/98/?title=Harcrendszer%20%20%20%20%20%20%20%20%20%20%20%20%20%20%20&width=400&color=babaca)\
 ![](https://progress-bar.xyz/15/?title=M%C3%A1giarendszer%20%20%20%20%20%20%20%20%20%20%20%20%20%20&width=400&color=babaca)
+
+---
+## 🚧 **[Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki)** 🚧
+
+Itt folyik a hátralévő és nyitott témák kidolgozása.
 
 ---
 **Szilánk**: Szerepjáték szabályrendszer fantasy világokra

@@ -1,27 +1,17 @@
 # Szilánk RPG szabályrendszer
 
-## Karakteralkotó
-
 **[Karakteralkotó v9.2.1 (ods)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)**
 
-[LibreOffice](https://www.libreoffice.org/download/download/) ⬇️
-
 **[Segédlet ingame (PDF)](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
-
-<br />
-
-## Segédletek játékalkalmakhoz
-
-[ÉP, VÉ firkálólap](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_EP_VE_firka.pdf?raw=true) &nbsp;•&nbsp; [NJK karlap odt-1](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2.odt?raw=true) • [NJK karlap odt-2](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2_ketoldalas.odt) • [NJK karlap pdf](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_NJK_karlap_v1.2.pdf?raw=true)
-
-<br />
 
 ---
 ## Gyors elérés
 
-**[Harci linkek](007_harci_linkek.md)** &nbsp;•&nbsp; [Képzettséglista](030_01_kepzettseglista.md) &nbsp;•&nbsp; [Fortélyok](040_fortelyok.md) &nbsp;•&nbsp; [Státuszok](082_statuszok.md) &nbsp;•&nbsp; [Fortély-Képzettség kiterjesztés (általános)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md)  &nbsp;•&nbsp; [Fortély-Képzettség kiterjesztés (harci)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
-
-<br />
+- **[Harci linkek](007_harci_linkek.md)**
+- [Képzettséglista](030_01_kepzettseglista.md) • [Fortélyok](040_fortelyok.md)
+- [Státuszok](082_statuszok.md)
+- [Fortély-Képzettség kiterjesztés (általános)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md)
+- [Fortély-Képzettség kiterjesztés (harci)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
 ⚜️ ⚜️ ⚜️
 
@@ -34,6 +24,7 @@
 - [Szilánk RPG alrendszerei](005_alrendszerek.md)
 - [Szimbólumok, Jelzők](006_szimbolumok_jelzok.md)
 - [Harci linkek](007_harci_linkek.md)
+- [Segéd dokumentumok játékalkalmakhoz](008_seged_dokumentumok.md)
 
 ---
 ### 1. [Karakteralkotás](010_00_karakteralkotas.md)
