@@ -53,4 +53,6 @@ Gyors elérésű link gyűjtemény - játékalkalomra.
 
 ---
 
+🔗 [Segéd dokumentumok játékalkalmakhoz](008_seged_dokumentumok.md)→
+
 ⚜️ [Nyitóoldal](start.md#0-kezdetek) 
