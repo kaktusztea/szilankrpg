@@ -1,6 +1,6 @@
-# Szilánk RPG
+# Szilánk RPG ([CC](LICENSE))
 
-Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepjáték rendszer ([CC](LICENSE)).
+Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepjáték rendszer.
 
 ## ⚜️ **[Szabályrendszer](md/start.md)** ⚜️
 
