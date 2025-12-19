@@ -755,7 +755,7 @@ Beszéd (zavart, vagy némult)
 
 ```
 (20 - Önuralom) perc után
-2.fokra enyhül
+  enyhül 2.fokra
 ```
 
 #### Kihozni valakit sokkból
@@ -765,7 +765,7 @@ Emberismeret + Érzékenység
   Képzettségpróba
 
 Célszám: 12 (Nehéz)
- → siker enyhíti 2.fokra
+  → siker enyhíti 2.fokra 
 ```
 
 ```
