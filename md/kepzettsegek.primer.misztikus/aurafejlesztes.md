@@ -6,7 +6,7 @@ Lásd work linkek:
 
 Minden élőlény rendelkezik Aurával, az élettapasztalatok során ez magától erősödik is, de lehetséges tudatosan is növelni erejét.
 
-**Mágikus világkép**: a [Belső Szféra](../107_magikus_szferak_arkanumok.md#mágia-szféra) alá tartozó **Aura arkánum** azonos az **Aurafejlesztés** képzettséggel.
+**Mágikus világkép**: a [Mágia Szféra](../107_magikus_szferak_arkanumok.md#%EF%B8%8F-m%C3%A1gia-szf%C3%A9ra) alá tartozó **Aura arkánum** azonos az **Aurafejlesztés** képzettséggel.
 
 ### Domináns Tulajdonságok
 
