@@ -34,7 +34,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
   - [Sötétben](065_01_06_szemelyhez_kotott.md#s%C3%B6t%C3%A9tben)
   - [Vér elvakít](065_01_06_szemelyhez_kotott.md#v%C3%A9r-elvak%C3%ADt)
 - ### [Lények](065_01_07_lenyek.md)
-  - [Lények méret különbsége [0;+6]](065_01_07_lenyek.md#nagy-m%C3%A9ret%C5%B1-l%C3%A9ny-1-2)
+  - [Lények méret különbsége [0;+6]](065_01_07_lenyek.md#l%C3%A9nyek-m%C3%A9ret-k%C3%BCl%C3%B6nbs%C3%A9ge-06)
   - [Vadállatok elleni harc](065_01_07_lenyek.md#vad%C3%A1llatok-elleni-harc)
 
 ---
