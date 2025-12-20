@@ -1,6 +1,4 @@
-## Harci linkek
-
-Linkgyűjtemény játékalkalmakra.
+## Harci linkek játékalkalmakra
 
 [Harci taktikák](065_02_harci_taktikak.md)
 
