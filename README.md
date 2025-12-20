@@ -23,7 +23,7 @@ A játékosok kreativitásának kiemelt mértékű jutalmazása nagyon fontos - 
 
 Taktikai, szituációs, epikus. Talán ez a három kifejezés írja le legjobban a `Szilánk` harcrendszerét.
 
-Ahogy fent említettük, kiemelten alapozunk a szituációk eltérő voltára, ugyanaz a két karakter más-más körülmények, fegyverek, páncélok és taktikák alkalmazásával gyökeresen más esélyekkel indul, így aki ésszel harcol, sokat nyerhet. A csapatmunka és a szituáció-függő, taktikus gondolkodás - akár egy kis létszámú különleges egységnél - egészen erős következményeket is elérhet, mint például egy jól irányzott tőrszúrás okozta teljes győzelem a megfelelő időben és elkőkészítéssel. Egy problémának több megoldása lehet, kellő furfanggal még a harc elkerülésével is célt érhetsz.
+Ahogy fent említettük, kiemelten alapozunk a szituációk eltérő voltára: ugyanaz a két karakter más-más körülmények, fegyverek, páncélok és taktikák alkalmazásával gyökeresen más esélyekkel indul, így aki ésszel harcol, sokat nyerhet. A csapatmunka és a szituáció-függő, taktikus gondolkodás - akár egy kis létszámú különleges egységnél - egészen erős következményeket is elérhet, mint például egy jól irányzott tőrszúrás okozta teljes győzelem a megfelelő időben és elkőkészítéssel. Egy problémának több megoldása lehet, kellő furfanggal még a harc elkerülésével is célt érhetsz.
 
 Más szóval bemasírozni a mező közepére és frontálisan egymásnak esni - akár a videójátékokban - erősen ellenjavallott. Mindazonáltal próbáljuk az epikus jelleget is megőrizni, nem a hiperrealitás a célunk a harc során.
 
