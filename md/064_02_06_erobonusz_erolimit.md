@@ -17,7 +17,7 @@ Továbbá számos fegyver van, melynek forgatása bizonyos **Erő** követelmén
 ---
 ## Erőbónusz limit
 
-Egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat velük a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Karakteralkotó](start.md#karakteralkot%C3%B3-ods) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
+Egyes fegyvereknél hiába a magas **Erő** Tulajdonság, egy bizonyos értéknél több **Erőbónuszt** nem alkalmazhat velük a karakter. Ezek az egyedi limitek is szerepelnek a fegyvertáblázatokban, valamint a [Karakteralkotó](start.md#karakteralkot%C3%B3--seg%C3%A9dlet) is kalkulál vele a Sebzés `SP` értékének meghatározásánál.
 
 A számérték a felső maximumot jelzi, a `99`-es érték azt jelzi, hogy az **Erőbónusznak** nincs felső limitje.
 
