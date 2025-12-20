@@ -12,4 +12,4 @@ Itt nyomtatható segédlet dokumentumokat találsz, amelyek jól jöhetnek a kal
 
 ---
 
-⚜️ [Nyitóoldal](start.md#0-kezdetek) 
+⚜️ [Nyitóoldal](start.md#99-%C3%A1ttekint%C3%A9s) 

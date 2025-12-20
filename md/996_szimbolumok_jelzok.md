@@ -55,4 +55,4 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🔗 [Harci linkek](997_harci_linkek.md) →
 
-⚜️ [Nyitóoldal](start.md#0-kezdetek)
+⚜️ [Nyitóoldal](start.md#99-%C3%A1ttekint%C3%A9s)
