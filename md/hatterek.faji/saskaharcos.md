@@ -1,20 +1,20 @@
-## Északi Ember
+## Sáskaharcos
 
 bevezető ⭕
 
 ### ⚜️Tulajdonság keretek
 
 ```
-[-5; +5] a határ minden Tulajdonságra
+[-5; +5] xyz
 ```
 
 ### ⚜️Felvehető Érzék-Fortélyok maximuma
 
-Nincs speciális felvehető érzék fortély.
+- xyz
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Északi Ember](../kepzettsegek.faj.miszterium/faj_miszterium_eszaki_ember.md)
+[Faj misztérium: Sáskaharcos](../kepzettsegek.faj.miszterium/faj_miszterium_saskaharcos.md)
 
 ### ⚜️Faji fortélyok
 
@@ -25,14 +25,14 @@ TODO ⭕
 ---
 ### Tiltott ismeretek, korlátok
 
-Nincs.
+TODO ⭕
 
 ### Ajánlott fortélyok
 
-TODO ⭕
+- xyz
 
 ### Ajánlott képzettségek
 
-TODO ⭕
+- xyz
 
 ---

@@ -1,10 +1,10 @@
-## Faj misztérium: Khál
+## Faj misztérium: Erdőpille
 
 <--- Leírás ide jön --->
 
 **RAW**
 
-- xyz
+- kisállatok megidézése / hívása
 
 ---
 ### Szintek
@@ -38,3 +38,4 @@ Nagymester (12) 📖
 
 ⭕TODO⭕
 ```
+x

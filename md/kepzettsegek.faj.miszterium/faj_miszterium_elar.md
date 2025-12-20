@@ -1,4 +1,4 @@
-## Faj misztérium: Khál
+## Faj misztérium: Elar
 
 <--- Leírás ide jön --->
 

@@ -1,20 +1,20 @@
-## Déli Ember
+## Hómanó
 
 bevezető ⭕
 
 ### ⚜️Tulajdonság keretek
 
 ```
-[-5; +5] a határ minden Tulajdonságra
+[-5; +5] xyz
 ```
 
 ### ⚜️Felvehető Érzék-Fortélyok maximuma
 
-Nincs speciális felvehető érzék fortély.
+- xyz
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Déli Ember](../kepzettsegek.faj.miszterium/faj_miszterium_deli_ember.md)
+[Faj misztérium: Hómanó](../kepzettsegek.faj.miszterium/faj_miszterium_homano.md)
 
 ### ⚜️Faji fortélyok
 
@@ -25,14 +25,14 @@ TODO ⭕
 ---
 ### Tiltott ismeretek, korlátok
 
-Nincs.
+TODO ⭕
 
 ### Ajánlott fortélyok
 
-TODO ⭕
+- xyz
 
 ### Ajánlott képzettségek
 
-TODO ⭕
+- xyz
 
 ---

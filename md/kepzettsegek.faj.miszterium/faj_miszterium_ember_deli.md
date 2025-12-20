@@ -1,4 +1,4 @@
-## Faj misztérium: Déli Ember
+## Faj misztérium: Ember (déli)
 
 <--- Leírás ide jön --->
 

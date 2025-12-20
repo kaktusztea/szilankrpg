@@ -1,4 +1,4 @@
-## Faj misztérium: Khál
+## Faj misztérium: Feenhar
 
 <--- Leírás ide jön --->
 
@@ -38,3 +38,4 @@ Nagymester (12) 📖
 
 ⭕TODO⭕
 ```
+x

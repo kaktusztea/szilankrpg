@@ -135,21 +135,41 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Faj misztérium: Elf](kepzettsegek.faj.miszterium/faj_miszterium_elf.md)
 
-🔵 [Faj misztérium: Ember](kepzettsegek.faj.miszterium/faj_miszterium_eszaki_ember.md)
+🔵 [Faj misztérium: Ember (déli)](kepzettsegek.faj.miszterium/faj_miszterium_ember_deli.md)
+
+🔵 [Faj misztérium: Ember (északi)](kepzettsegek.faj.miszterium/faj_miszterium_ember_eszaki.md)
+
+🔵 [Faj misztérium: Erdőpille](kepzettsegek.faj.miszterium/faj_miszterium_erdopille.md)
+
+🔵 [Faj misztérium: Feenhar](kepzettsegek.faj.miszterium/faj_miszterium_feenhar.md)
 
 🔵 [Faj misztérium: Gnóm](kepzettsegek.faj.miszterium/faj_miszterium_gnom.md)
 
 🔵 [Faj misztérium: Goblin](kepzettsegek.faj.miszterium/faj_miszterium_goblin.md)
 
+🔵 [Faj misztérium: Gyíklény](kepzettsegek.faj.miszterium/faj_miszterium_gyikleny.md)
+
+🔵 [Faj misztérium: Hómanó](kepzettsegek.faj.miszterium/faj_miszterium_homano.md)
+
+🔵 [Faj misztérium: Homoki elf](kepzettsegek.faj.miszterium/faj_miszterium_homoki_elf.md)
+
 🔵 [Faj misztérium: Khál](kepzettsegek.faj.miszterium/faj_miszterium_khal.md)
+
+🔵 [Faj misztérium: Kineta](kepzettsegek.faj.miszterium/faj_miszterium_kineta.md)
+
+🔵 [Faj misztérium: Kobold](kepzettsegek.faj.miszterium/faj_miszterium_kobold.md)
 
 🔵 [Faj misztérium: Kyr](kepzettsegek.faj.miszterium/faj_miszterium_kyr.md)
 
 🔵 [Faj misztérium: Ork](kepzettsegek.faj.miszterium/faj_miszterium_ork.md)
 
-🔵 [Faj misztérium: Udvari ork](kepzettsegek.faj.miszterium/faj_miszterium_udvari_ork.md)
+🔵 [Faj misztérium: Sáskaharcos](kepzettsegek.faj.miszterium/faj_miszterium_saskaharcos.md)
 
 🔵 [Faj misztérium: Törpe](kepzettsegek.faj.miszterium/faj_miszterium_torpe.md)
+
+🔵 [Faj misztérium: Tűzkobold](kepzettsegek.faj.miszterium/faj_miszterium_tuzkobold.md)
+
+🔵 [Faj misztérium: Udvari ork](kepzettsegek.faj.miszterium/faj_miszterium_udvari_ork.md)
 
 ---
 ### Misztikus képzettségek 🅿️

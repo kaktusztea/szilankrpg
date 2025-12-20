@@ -1,4 +1,4 @@
-## Faj misztérium: Északi Ember
+## Faj misztérium: Ember (Északi)
 
 <--- Leírás ide jön --->
 

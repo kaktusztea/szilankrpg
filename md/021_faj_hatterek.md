@@ -11,27 +11,27 @@ Az alábbiakban a játszható és nem játszható fajok bemutatását egyedi jel
 
 - [Amund](hatterek.faji/amund.md)
 - [Anatyda](hatterek.faji/anatyda.md)
-- Buzzgoblin
+- [Buzzgoblin](hatterek.faji/buzzgoblin.md)
 - [Dzsenn](hatterek.faji/dzsenn.md)
-- Elar
+- [Elar](hatterek.faji/elar.md)
 - [Elf](hatterek.faji/elf.md)
-- [Északi Ember](hatterek.faji/eszaki_ember.md)
-- [Déli Ember](hatterek.faji/deli_ember.md)
-- Erdőpille
-- Feenhar
+- [Ember (Északi)](hatterek.faji/ember_eszaki.md)
+- [Ember (Déli)](hatterek.faji/ember_deli.md)
+- [Erdőpille](hatterek.faji/erdopille.md)
+- [Feenhar](hatterek.faji/feenhar.md)
 - [Gnóm](hatterek.faji/gnom.md)
 - [Goblin](hatterek.faji/goblin.md)
-- Gyíklény (snil)
-- Hómanó
-- Homoki elf
+- [Gyíklény (snil)](hatterek.faji/gyikleny.md)
+- [Hómanó](hatterek.faji/homano.md)
+- [Homoki elf](hatterek.faji/homoki_elf.md)
 - [Khál](hatterek.faji/khal.md)
-- Kineta
-- Kobold
+- [Kineta](hatterek.faji/kineta.md)
+- [Kobold](hatterek.faji/kobold.md)
 - [Kyr](hatterek.faji/kyr.md)
 - [Ork](hatterek.faji/ork.md)
-- Sáskaharcos
+- [Sáskaharcos](hatterek.faji/saskaharcos.md)
 - [Törpe](hatterek.faji/torpe.md)
-- Tűzkobold
+- [Tűzkobold](hatterek.faji/tuzkobold.md)
 - [Udvari ork](hatterek.faji/udvari_ork.md)
 
 Speciális:
