@@ -41,4 +41,4 @@ Lásd a [Szabad Fortélyok](042_szabad_fortelyok.md) fejezetet.
 
 🔗 [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

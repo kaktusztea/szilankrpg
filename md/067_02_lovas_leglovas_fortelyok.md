@@ -7,4 +7,4 @@ A Lovas és Léglovas harchoz szükséges, vagy azt érintő fortélyok rövid l
 
 🔗 [Lovas harci takikák](067_03_lovas_harci_taktikak.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

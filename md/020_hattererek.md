@@ -10,4 +10,4 @@ A Hátterek ingyenesen felvehető, változatos jellemzők.
 
 ---
 
-⚜️ [Nyitóoldal](start.md#2-h%C3%A1tterek-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#2-hátterek-)

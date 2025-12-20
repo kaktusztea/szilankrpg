@@ -59,4 +59,4 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 
 🔗 [Példaharc](064_03_peldaharc.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -32,4 +32,4 @@ A Befolyásolásos szituációknál említett [Átverés, Hazudozás](befolyasol
 
 🔗 [Szituációk](../160_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../start.md#16-szituációk)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)

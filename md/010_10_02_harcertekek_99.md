@@ -14,4 +14,4 @@ Lásd a [Harcrendszer](060_00_harcrendszer.md) fejezetet.
 
 🔗 [Manőver Pontok](010_10_03_manover_pontok_99.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

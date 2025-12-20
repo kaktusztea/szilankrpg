@@ -8,4 +8,4 @@
 
 🔗 [Slan Tradíció](053_02_slan_tradicio.md) →
 
-⚜️ [Nyitóoldal](start.md)
+⚜️ [Nyitóoldal](szabalyrendszer.md)

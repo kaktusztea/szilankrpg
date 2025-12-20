@@ -84,4 +84,4 @@ Nem kötelező, de az adott fajnál jellemzően gyakran előforduló képzettsé
 
 🔗 [Leíró Hátterek](022_leiro_hatterek.md) →
 
-⚜️ [Nyitóoldal](start.md#2-h%C3%A1tterek-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#2-hátterek-)

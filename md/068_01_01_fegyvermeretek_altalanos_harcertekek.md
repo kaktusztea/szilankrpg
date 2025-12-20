@@ -49,4 +49,4 @@ rövid (0)
 
 🔗 [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -16,5 +16,5 @@ Míg a Kalandozók lételeme a mozgás, az Őrszem karakter pont ennek statikus 
 ---
 🔗 [Előtörténet](010_03_03_elotortenet.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)
 

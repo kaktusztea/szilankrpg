@@ -35,4 +35,4 @@ Dobás: [Önuralom](010_05_01_07_onuralom.md) Tulajdonsággal
 
 ---
 
-⚜️ [Nyitóoldal](start.md#9-psz%C3%AD-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#9-pszí-)

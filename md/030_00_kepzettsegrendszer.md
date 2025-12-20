@@ -20,4 +20,4 @@ Mikor a játékos megalkotja karakterét, amellyel Yn3v világán kalandozni fog
 
 ---
 
-⚜️ [Nyitóoldal](start.md#3-képzettségrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

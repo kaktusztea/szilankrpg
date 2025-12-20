@@ -54,4 +54,4 @@ Itt találhatjuk az összes, a rendszerben játszható pap varázslatainak list�
 
 ---
 
-⚜️ [Nyitóoldal](start.md#11-papi-m%C3%A1gia)
+⚜️ [Nyitóoldal](szabalyrendszer.md#11-papi-mágia)

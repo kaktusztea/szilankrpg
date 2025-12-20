@@ -103,4 +103,4 @@ A haladóbb formulák leírását alább.
 
 🔗 [Illuzionista tradíció ](051_05_illuzionista.md) →
 
-⚜️ [Nyitóoldal](start.md#5-trad%C3%ADci%C3%B3k)
+⚜️ [Nyitóoldal](szabalyrendszer.md#5-tradíciók)

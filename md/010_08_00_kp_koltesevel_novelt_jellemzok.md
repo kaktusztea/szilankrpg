@@ -10,4 +10,4 @@
 
 🔗 [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

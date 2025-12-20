@@ -113,4 +113,4 @@ Szerencséjére a testőr elégnek találja a megtorlást és felzárkózik gazd
 
 🔗 [Sebesülés](061_03_sebesules.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

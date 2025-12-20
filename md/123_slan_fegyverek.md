@@ -6,4 +6,4 @@
 
 🔗 [Slan főoldal](120_slan.md) ↑
 
-⚜️ [Nyitóoldal](start.md#12-slan-miszt%C3%A9rium)
+⚜️ [Nyitóoldal](szabalyrendszer.md#12-slan-misztérium)

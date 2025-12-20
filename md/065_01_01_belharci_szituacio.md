@@ -71,4 +71,4 @@ Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például
 
 🔗 [Harci helyzetek](065_01_00_harci_helyzetek.md) ↑
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -23,4 +23,4 @@ A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fejezet
 ---
 🔗 [Képzettségpróba Hátrányok](030_07_kepzettsegproba_hatranyok.md) →
 
-⚜️ [Nyitóoldal](start.md#3-képzettségrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

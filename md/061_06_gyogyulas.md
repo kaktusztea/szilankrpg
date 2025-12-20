@@ -12,4 +12,4 @@ Lásd még bővebben a [Gyógyítás, Gyógyulás](140_gyogyitas_gyogyulas.md) f
 
 ---
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

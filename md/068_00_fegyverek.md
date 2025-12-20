@@ -39,4 +39,4 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 
 ---
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

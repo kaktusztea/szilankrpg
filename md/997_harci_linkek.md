@@ -53,4 +53,4 @@
 
 🔗 [Segéd dokumentumok játékalkalmakhoz](998_seged_dokumentumok.md)→
 
-⚜️ [Nyitóoldal](start.md#99-%C3%A1ttekint%C3%A9s) 
+⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés) 

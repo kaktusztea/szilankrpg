@@ -81,4 +81,4 @@ Ha megsérül a karakter és `S3`, vagy `S4` kategóriába került, akkor ["Sér
 
 🔗 [Fájdalomtűrés sebesüléskor](061_04_fajdalomtures_sebesuleskor.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

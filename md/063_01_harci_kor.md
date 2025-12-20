@@ -10,4 +10,4 @@ Mindenki leadja támadásait, aztán ugyanebben a sorrendben a több támadássa
 
 🔗 [Akció fogalma](063_02_akcio_fogalma.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

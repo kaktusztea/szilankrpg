@@ -42,4 +42,4 @@ Amennyiben nem elégszel meg az ingyenes Mozgás kereteddel a körödben, akkor 
 
 🔗 [Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

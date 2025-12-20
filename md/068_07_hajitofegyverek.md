@@ -40,4 +40,4 @@ Kapcsolódó fortély: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmat
 
 🔗 [Lőfegyverek](068_08_lofegyverek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

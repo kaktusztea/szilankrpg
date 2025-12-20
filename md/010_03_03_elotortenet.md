@@ -5,4 +5,4 @@ Mikor karaktert alkotunk (remélhetőleg) nem pusztán egy számhalmazt hozunk l
 ---
 🔗 [Személyiségek](010_03_04_szemelyisegek.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

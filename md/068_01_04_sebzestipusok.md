@@ -8,4 +8,4 @@
 
 🔗 [Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

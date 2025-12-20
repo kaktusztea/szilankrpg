@@ -74,4 +74,4 @@ A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/ha
 
 🔗 [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

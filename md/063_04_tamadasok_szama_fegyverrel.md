@@ -97,4 +97,4 @@ A `3.` támadást `14`-es, a `4.` támadást pedig `21`-es **Harckeret** érték
 
 🔗 [Támadások száma varázsláskor](063_05_tamadasok_szama_varazslaskor.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

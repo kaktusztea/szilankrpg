@@ -29,4 +29,4 @@ Vannak bizonyos bázis képzettségek, amelyek alaptudását sok [Szabad Fortél
 
 🔗 [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

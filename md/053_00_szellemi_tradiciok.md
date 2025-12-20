@@ -7,4 +7,4 @@ A lenti szellemi tradíciók a Pszí speciális válfajait, illetve egyéb egyed
 
 ---
 
-⚜️ [Nyitóoldal](start.md)
+⚜️ [Nyitóoldal](szabalyrendszer.md)

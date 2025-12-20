@@ -20,4 +20,4 @@ Fontos, hogy egy harci körben legfeljebb `1` támadásodat válthatod át valam
 
 🔗 [Mozgás harc közben](063_03_mozgas_harc_kozben.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

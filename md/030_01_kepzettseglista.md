@@ -241,4 +241,4 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔗 [Primer, szekunder képzettségek](030_02_primer_szekunder_kepzettsegek.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

@@ -55,4 +55,4 @@ Jelzi szellemi felkészültségedet mind helyzetfelismerés, mind problémamegol
 
 🔗 [Emlékezet](010_05_01_06_emlekezet.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

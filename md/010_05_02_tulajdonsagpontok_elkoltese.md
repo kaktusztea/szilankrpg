@@ -55,4 +55,4 @@ Hisszük, hogy nem kell minden jellemzőt számszerűsíteni és a fentiek rész
 
 🔗 [Tulajdonságok bónuszai](010_05_03_tulajdonsagok_bonuszai.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

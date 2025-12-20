@@ -43,7 +43,7 @@ Mágiatáv IV
  Osztó: 3
 ```
 
-A **Mágiatáv `I-IV`** valójában `1 db` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](start.md#karakteralkot%C3%B3--seg%C3%A9dlet) fegyverválasztójában azt a verzióját használd, amely megfelel a **Mágiatáv növelés** fortélyod fokának.
+A **Mágiatáv `I-IV`** valójában `1 db` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](szabalyrendszer.md#karakteralkotó--segédlet) fegyverválasztójában azt a verzióját használd, amely megfelel a **Mágiatáv növelés** fortélyod fokának.
 
 A **Mágiatáv** szimulálja a (mágikus) távolsági "fegyver" kategóriákat ("tárgy, hajító, nyíl, nyílpuska").
 
@@ -187,4 +187,4 @@ Kapcsolódik: [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#sz%C
 
 🔗 [Területlövés](077_teruletloves.md) →
 
-⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

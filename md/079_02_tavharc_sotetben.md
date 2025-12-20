@@ -104,4 +104,4 @@ Célzó dobás-2
 
 ---
 
-⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

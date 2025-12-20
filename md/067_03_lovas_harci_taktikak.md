@@ -55,4 +55,4 @@ Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal.
 
 🔗 [Lovas és Léglovas Manőverek](067_04_lovas_manoverek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

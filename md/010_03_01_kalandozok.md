@@ -24,4 +24,4 @@ Kalandozóként, vagy [Őrszemként](010_03_02_orszem_karakterek.md) a karakter 
 ---
 🔗 [Őrszem karakterek](010_03_02_orszem_karakterek.md)→
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

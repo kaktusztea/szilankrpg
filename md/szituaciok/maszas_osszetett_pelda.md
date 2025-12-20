@@ -85,4 +85,4 @@ Lásd az [Esés magasból](eses_magasbol.md) szituáció leírását!
 
 🔗 [Szituációk](../160_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../start.md#16-szituációk)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)

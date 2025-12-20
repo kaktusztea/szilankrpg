@@ -73,6 +73,6 @@ Automatikus kudarc
 
 🔗 [Képzettségek és fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md) →
 
-⚜️ [Nyitóoldal](start.md#3-képzettségrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)
 
 

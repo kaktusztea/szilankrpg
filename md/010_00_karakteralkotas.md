@@ -35,4 +35,4 @@ Eljött az ideje, hogy karaktert alkossunk.
 
 🔗 [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

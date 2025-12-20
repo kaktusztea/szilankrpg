@@ -54,4 +54,4 @@ A Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc Harcmodorok szi
 
 🔗 [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

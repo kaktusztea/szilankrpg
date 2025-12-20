@@ -33,4 +33,4 @@ Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, po
 ---
 🔗 [A karakter jellemzői](010_03_00_karakter_jellemzoi.md) ↑
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

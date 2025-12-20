@@ -78,4 +78,4 @@ A fegyver méretének az **Erő** Tulajdonság és a KM józan esze szab határt
 
 🔗 [Távharc fegyverek](078_tavharc_fegyverek.md) →
 
-⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

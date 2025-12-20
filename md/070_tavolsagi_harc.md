@@ -61,4 +61,4 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 ---
 
-⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

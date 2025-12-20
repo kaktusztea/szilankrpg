@@ -186,4 +186,4 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Ökl
 
 🔗 [Lovas Manőverek listája](066_07_lovas_manoverek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

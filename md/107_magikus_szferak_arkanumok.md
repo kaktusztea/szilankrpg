@@ -147,4 +147,4 @@ Annyi ősi nyelv van, ahány mágiaiskola.
 
 ---
 
-⚜️ [Nyitóoldal](start.md#10-m%C3%A1giarendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

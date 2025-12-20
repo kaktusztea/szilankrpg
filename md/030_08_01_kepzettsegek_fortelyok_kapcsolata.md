@@ -166,4 +166,4 @@ Alap: 6 + 1 + 2(bónusz)
 
 🔗 [Fortélyok kiterjesztéslistája](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

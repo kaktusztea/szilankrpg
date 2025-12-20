@@ -314,4 +314,4 @@ Szándékosan kisebb sebzést próbálsz okozni találatkor - általában mikor 
 
 🔗 [Harc alakzatban](065_03_harc_alakzatban.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -106,4 +106,4 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 
 🔗 [Általános fortélyok](043_altalanos_fortelyok.md) →
 
-⚜️ [Nyitóoldal](start.md#4-fortélyok-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#4-fortélyok-)

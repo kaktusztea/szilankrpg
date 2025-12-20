@@ -58,4 +58,4 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ---
 
-⚜️ [Nyitóoldal](start.md#16-szituációk)
+⚜️ [Nyitóoldal](szabalyrendszer.md#16-szituációk)

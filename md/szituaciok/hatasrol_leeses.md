@@ -62,4 +62,4 @@ Ha sikeres volt a próba, akkor is fennáll az esésből sebződés veszélye, d
 
 🔗 [Szituációk](../160_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../start.md#16-szituációk)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)

@@ -16,4 +16,4 @@ Egyes értékek más, már kiszámolt értékekből származtatva kerülnek megh
 
 🔗 [NJK](010_11_njk.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

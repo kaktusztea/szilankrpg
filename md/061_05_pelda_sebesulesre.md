@@ -50,4 +50,4 @@ Ha túléli a kalandot, akkor a „szerzett” `4 FP` gyógyulása `4 óra` alat
 
 🔗 [Gyógyulás](061_06_gyogyulas.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

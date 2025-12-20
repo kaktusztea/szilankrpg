@@ -1,6 +1,6 @@
 ## Áttekintés
 
-⚜️ [Nyitóoldal](start.md)
+⚜️ [Nyitóoldal](szabalyrendszer.md)
 
 Mit is találsz ebben a szabályrendszerben? Ha sorban haladsz - és ez az ajánlott -, akkor elsőnek segítünk megalkotni a játékban megszemélyesített szereplődet a [Karakteralkotás](010_00_karakteralkotas.md) fejezetben, akivel más hősökkel együtt, csapatban, számos veszélyes helyzettel dacolhattok, élhettek át misztikus kalandokat.
 
@@ -21,4 +21,4 @@ A rendszer kiválóan adaptálható nem-fantasy, modern világokra is, ennek fő
 
 🔗 [Tanácsok](994_tanacsok.md) →
 
-⚜️ [Nyitóoldal](start.md#99-%C3%A1ttekint%C3%A9s) 
+⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés) 

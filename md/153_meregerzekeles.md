@@ -42,4 +42,4 @@ Szagtalan: +1
 
 🔗 [Példamérgek](154_peldamergek.md) →
 
-⚜️ [Nyitóoldal](start.md#15-m%C3%A9regrendszer-m%C3%A9rgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#15-méregrendszer-mérgek)

@@ -83,4 +83,4 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további szinesítő eleme
 
 🔗 [Karma Hátterek](023_karma_hatterek.md) →
 
-⚜️ [Nyitóoldal](start.md#2-h%C3%A1tterek-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#2-hátterek-)

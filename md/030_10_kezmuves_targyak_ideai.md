@@ -57,4 +57,4 @@ Négy jellemző minőségi (Idea) szintet különböztetünk meg, amelyek megadj
 
 ---
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

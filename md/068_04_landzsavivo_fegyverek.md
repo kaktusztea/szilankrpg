@@ -35,4 +35,4 @@ A ló lendülete mint **Erőbónusz** már beszámításra került a kopja Sebz�
 
 🔗 [Romboló fegyverek](068_05_rombolo_fegyverek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -269,4 +269,4 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 
 🔗 [Státuszok](082_statuszok.md) →
 
-⚜️ [Nyitóoldal](start.md#8-hat%C3%A1sok-%C3%A9s-st%C3%A1tuszok)
+⚜️ [Nyitóoldal](szabalyrendszer.md#8-hatások-és-státuszok)

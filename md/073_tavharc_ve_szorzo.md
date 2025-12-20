@@ -124,4 +124,4 @@ Szél ereje
 
 🔗 [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md) →
 
-⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

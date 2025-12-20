@@ -102,4 +102,4 @@ Erő
 
 🔗 [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

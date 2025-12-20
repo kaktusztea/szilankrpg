@@ -78,4 +78,4 @@ A különböző támadási módok ellen az élőholtak különféleképpen ellen
 
 🔗 [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

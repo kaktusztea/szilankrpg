@@ -41,4 +41,4 @@ Tehát egy `+2`-es **Ideájú** kardba, maximum `+2`-es mágikus hatást lehet b
 
 🔗 [Közelharci fegyverek](068_02_kozelharci_fegyverek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

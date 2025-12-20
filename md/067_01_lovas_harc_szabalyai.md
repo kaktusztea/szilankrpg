@@ -70,4 +70,4 @@ Nehézség: 12-15 között
 
 🔗 [Lovas fortélyok](067_02_lovas_leglovas_fortelyok.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

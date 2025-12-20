@@ -37,4 +37,4 @@ Minden Tradíció szintjeinek lehetnek követelményei, amelyek biztosítják, h
 
 🔗 [Magasmágia tradíció](051_01_magasmagia.md) →
 
-⚜️ [Nyitóoldal](start.md#5-trad%C3%ADci%C3%B3k)
+⚜️ [Nyitóoldal](szabalyrendszer.md#5-tradíciók)

@@ -324,4 +324,4 @@ Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbá
 
 🔗 [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) →
 
-⚜️ [Nyitóoldal](start.md#3-képzettségrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

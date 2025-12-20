@@ -92,4 +92,4 @@ Lásd bővebben:
 
 🔗 [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md) →
 
-⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

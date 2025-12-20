@@ -84,4 +84,4 @@ Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, í
 
 🔗 [Manőver végbevitele](066_04_manover_vegbevitele.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

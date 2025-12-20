@@ -11,4 +11,4 @@
 
 🔗 [Tapasztalati szint, szintlépés](010_04_tsz_szintlepes.md)  →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

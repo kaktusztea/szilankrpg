@@ -37,4 +37,4 @@ Ha nem jut eszedbe egy szabály, ne rakj még egy púpot szegény KM hátára az
 
 🔗 [Alrendszerek](995_alrendszerek.md) →
 
-⚜️ [Nyitóoldal](start.md#99-%C3%A1ttekint%C3%A9s) 
+⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés) 

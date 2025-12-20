@@ -101,4 +101,4 @@ Természetesen ebbe is bele lehet kötni, hogy pl. egy adott országban nem pont
 
 🔗 [Páncél példák](069_07_pancel_peldak.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

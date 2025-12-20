@@ -77,4 +77,4 @@ Mérgezés, kínzás, egyéb fájdalom esetén a karakterek **Fájdalomtűrés**
 
 🔗 [Példa sebesülésre](061_05_pelda_sebesulesre.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

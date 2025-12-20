@@ -41,4 +41,4 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 🔗 [Harci taktikák](065_02_harci_taktikak.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-️)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

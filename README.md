@@ -2,13 +2,13 @@
 
 Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepjáték rendszer.
 
-## ⚜️ **[Szabályrendszer](md/start.md)**
+## ⚜️ **[Szabályrendszer](md/szabalyrendszer.md)**
 
 <br />
 
 ## Filozófia
 
-A `Szilánk RPG` egy realitásra törekvő fantasy szerepjáték, amely mégis gördülékenynek tűnik játék során. Ennek oka, hogy a legtöbb számolást igénylő feladatot karakteralkotási időbe száműztünk, a statisztikák kalkulálásában pedig egy fejlett [Karakteralkotó](md/start.md#karakteralkot%C3%B3--seg%C3%A9dlet) segít - így rendkívül egyedi, specializált végeredményt kaphatunk.
+A `Szilánk RPG` egy realitásra törekvő fantasy szerepjáték, amely mégis gördülékenynek tűnik játék során. Ennek oka, hogy a legtöbb számolást igénylő feladatot karakteralkotási időbe száműztünk, a statisztikák kalkulálásában pedig egy fejlett [Karakteralkotó](md/szabalyrendszer.md#karakteralkotó--segédlet) segít - így rendkívül egyedi, specializált végeredményt kaphatunk.
 
 Az első mindig a misztikus, kalandos történet hangulata és annak karakterei - a rendszer csak "másodhegedűs" - a mesélő keze alá dolgozik és fix kereteket biztosít. Az elképzelt közeg egy regényszerű, drámai szerepjátékot megvalósítható környezet, amit a háttérből erősen támogat a "szürke eminenciás" szabályrendszer. Ez a rendszer tág kereteket biztosít a kreativitásra, aztán viszont a háttérbe húzódik. A legjobb, ha a szabályok fonta "kerítés" olyan tág, hogy a játékos azt érzi, egy végtelen, rengeteg lehetőséget rejtő erdőben van, nem pedig egy kerítéssel bekerített fenyvesben. Az ilyen típusú rendszer veszélyesebb, mint mondjuk egy narratív rendszer puhán körülölelő karjai, de talán magasabb szabadságérzetet is élhetünk át vele. Fontos, hogy ne kizárólag a kocka vezesse a kaland folyását - egy random rossz dobás ne okozza a karakter vesztét. A rendszer legyen a játékosokért és ne fordítva.
 
@@ -113,7 +113,7 @@ Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek a
 ## A Szabályrendszer
 
 Lássuk hát a részletes szabályrendszert:\
-⚜️ **[Szilánk RPG szabályrendszer](md/start.md)** ⚜️
+⚜️ **[Szilánk RPG szabályrendszer](md/szabalyrendszer.md)** ⚜️
 
 ---
 

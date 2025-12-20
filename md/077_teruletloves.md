@@ -40,4 +40,4 @@ Minden +3-al túldobott Célszám:
 
 🔗 [Távharc fegyverek](078_tavharc_fegyverek.md) →
 
-⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

@@ -46,4 +46,4 @@ Erről a [Képzettségek és fortélyok kapcsolata](030_08_01_kepzettsegek_forte
 
 ---
 
-⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#4-fortélyok-)

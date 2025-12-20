@@ -126,4 +126,4 @@ A sikertelen Manőver `0` **VÉ csökkentést** okoz.
 
 🔗 [Általános Manőverek listája](066_05_altalanos_manoverek.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

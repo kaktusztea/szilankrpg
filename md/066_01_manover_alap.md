@@ -12,4 +12,4 @@ Ez a számérték karakteralkotási időben kerül kiszámításra és a Manőve
 
 🔗 [Manőver Pontok](066_02_manover_pontok.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

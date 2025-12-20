@@ -54,4 +54,4 @@ Az adott Tradíciók követelményeit lásd azok leírásában.
 
 ---
 
-⚜️ [Nyitóoldal](start.md#5-trad%C3%ADci%C3%B3k)
+⚜️ [Nyitóoldal](szabalyrendszer.md#5-tradíciók)

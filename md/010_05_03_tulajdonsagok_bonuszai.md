@@ -61,4 +61,4 @@ Emlékezet
 
 🔗 [Tulajdonságpróba](010_05_04_tulajdonsagproba.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

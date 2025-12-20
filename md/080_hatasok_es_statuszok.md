@@ -12,4 +12,4 @@ A **Státuszok** ideiglenes, vagy tartós állapotok, amelyek előnyös, vagy h�
 
 ---
 
-⚜️ [Nyitóoldal](start.md#8-hat%C3%A1sok-%C3%A9s-st%C3%A1tuszok)
+⚜️ [Nyitóoldal](szabalyrendszer.md#8-hatások-és-státuszok)

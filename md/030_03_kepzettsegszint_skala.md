@@ -15,4 +15,4 @@ A képzettség szint értéke a karakter életútja során - a megszerzett tapas
 
 🔗 [Képzettségek fejlesztése](030_04_kepzettsegek_fejlesztese.md) →
 
-⚜️ [Nyitóoldal](start.md#3-k%C3%A9pzetts%C3%A9grendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

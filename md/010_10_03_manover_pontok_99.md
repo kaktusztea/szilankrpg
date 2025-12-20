@@ -10,4 +10,4 @@ Leírásukat lásd a [Manőver - Manőver Pontok](066_02_manover_pontok.md) feje
 
 🔗 [Mágiaellenállás](010_10_04_magiaellenallas.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

@@ -30,4 +30,4 @@ xyz2
 
 ---
 
-⚜️ [Nyitóoldal](start.md#13-var%C3%A1zst%C3%A1rgyak)
+⚜️ [Nyitóoldal](szabalyrendszer.md#13-varázstárgyak)

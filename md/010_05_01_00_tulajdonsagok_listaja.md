@@ -18,4 +18,4 @@ A későbbiekben ezek a számok fogják alapját adni a karakter más, összetet
 
 🔗 [Tulajdonságpontok elköltése](010_05_02_tulajdonsagpontok_elkoltese.md) →
 
-⚜️ [Nyitóoldal](start.md#1-karakteralkot%C3%A1s)
+⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

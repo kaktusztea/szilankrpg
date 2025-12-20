@@ -106,4 +106,4 @@ Lásd [Rúnamágiával felruházott tárgyak](130_varazstargyak.md#r%C3%BAnam%C3
 
 🔗 [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -240,4 +240,4 @@ Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a 
 
 🔗 [Harc menete - részletes](064_02_00_harc_menete_reszletes.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

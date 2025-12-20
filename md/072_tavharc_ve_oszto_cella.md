@@ -66,4 +66,4 @@ Javasoljuk a KM-nek, hogy ha esetleg mágikus, vagy kifejezetten jó minőségű
 
 🔗 [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md) →
 
-⚜️ [Nyitóoldal](start.md#7-t%C3%A1vols%C3%A1gi-harcrendszer-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

@@ -8,4 +8,4 @@ Ez a [Gyöngyhalász](../fortelyok.altalanos/gyongyhalasz.md) fortéllyal fejles
 
 🔗 [Szituációk](../160_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../start.md#16-szitu%C3%A1ci%C3%B3k)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)

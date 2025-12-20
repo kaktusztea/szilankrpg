@@ -25,4 +25,4 @@
 
 🔗 [Slan diszciplínák](121_slan_diszciplinak.md) →
 
-⚜️ [Nyitóoldal](start.md#4-fort%C3%A9lyok-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#4-fortélyok-)

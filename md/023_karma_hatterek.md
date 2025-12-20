@@ -283,5 +283,5 @@ Mágikus karma.
 
 ---
 
-⚜️ [Nyitóoldal](start.md#2-h%C3%A1tterek-)
+⚜️ [Nyitóoldal](szabalyrendszer.md#2-hátterek-)
 

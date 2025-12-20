@@ -16,4 +16,4 @@ Jelölése: MK
 
 🔗 [Íves fegyver](068_01_07_ives_fegyver.md) →
 
-⚜️ [Nyitóoldal](start.md#6-harcrendszer-%EF%B8%8F)
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
