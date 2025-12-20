@@ -2,6 +2,12 @@
 
 blah
 
+<br />
+
+### Speciális, Megkötések
+
+lorem ipsum dorem🗡️ amet
+
 ### Alapeset
 
 lorem ipsum
@@ -18,11 +24,5 @@ lorem ipsum
 🔒 Képzettség - `x.szint`
 
 🌟 lorem ipsum
-
-<br />
-
-### Megjegyzések
-
-- lorem ipsum dorem🗡️ amet
 
 ---
