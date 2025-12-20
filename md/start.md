@@ -1,4 +1,4 @@
-# Szilánk szabályrendszer
+# Szabályrendszer
 
 ### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)** | **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
