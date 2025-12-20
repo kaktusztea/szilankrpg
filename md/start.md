@@ -7,9 +7,10 @@
 ---
 ## Gyors elérés
 
-- **[Harci linkek](007_harci_linkek.md)** • [Képzettséglista](030_01_kepzettseglista.md)
-- [Fortélyok](040_fortelyok.md) • [Státuszok](082_statuszok.md)
-- Fortély-Képzettség kiterjesztés: [általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) | [harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
+- **[Harci linkek](007_harci_linkek.md)** • [Státuszok](082_statuszok.md)
+- [Képzettségek](030_01_kepzettseglista.md) • [Fortélyok](040_fortelyok.md) 
+  - [kiterjesztés - általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md)
+  - [kiterjesztés - harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
 ⚜️ ⚜️ ⚜️
 
