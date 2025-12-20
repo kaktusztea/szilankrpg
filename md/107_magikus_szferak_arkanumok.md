@@ -132,29 +132,18 @@ Annyi ősi nyelv van, ahány mágiaiskola.
   - ✨Ősi nyelv: ⭕?
 
 ---
-### Belső szféra
+### Mágia Szféra
 
-✨Ősi nyelv: ⭕?
-
-Jelenleg nincs olyan isten, amely ezt a Szférát uralná és papjainak elérhető lenne.
-
-- Aura - azonos az [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
-  - ✨Ősi nyelv: ⭕?
-- Pszí - azonos a [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md) képzettséggel
-  - ✨Ősi nyelv: ⭕?
+- **Aura** arkánum, amely azonos az 🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
+- [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánum
 
 ---
-### Titkos Szféra
+### Titkos (Teremtés) Szféra
 
-✨Ősi nyelv: Linhua Domini, de nincs aki ősnyelvként beszélné.
+→ Élet Princípiumának a megteremtése. Élőlény megteremtése.
 
-Ez a teremtés és mágia szférája. 
+→ Lélekcsíra megteremtése: csak az istenek rendelkeznek vele, halandó nem ismerheti. Halhatatlan.
 
-- Teremtés: Ez a teremtés titkos arkánuma. Csak az istenek rendelkeznek vele.
-  - Élet Princípiumának a megteremtése
-  - Lélekcsíra megteremtése
-  - ✨Ősi nyelv: ⭕?
-- Mana == Minden Tradíció [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánuma ⭕(== Tradíció ??)⭕
 
 ---
 
