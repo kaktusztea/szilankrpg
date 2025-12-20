@@ -7,7 +7,7 @@
 Több nem vehető fel.
 ```
 
-Az alábbiakban a játszható és nem játszható fajok bemutatását egyedi jellemzőiket találjuk, amelyekből választhat a játékos karaktere megalkotásakor. **Fontos**: Faj-Háttérből `1` darab választható a játék legelején.
+Az alábbiakban a játszható fajok bemutatását egyedi jellemzőiket találjuk, amelyekből választhat a játékos karaktere megalkotásakor. A KM megtilthat bizonyos fajokat, ha úgy látja jónak.
 
 - [Amund](hatterek.faji/amund.md)
 - [Anatyda](hatterek.faji/anatyda.md)
