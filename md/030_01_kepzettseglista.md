@@ -131,7 +131,11 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Faj misztérium: Anatyda](kepzettsegek.faj.miszterium/faj_miszterium_anatyda.md)
 
+🔵 [Faj misztérium: Buzzgoblin](kepzettsegek.faj.miszterium/faj_miszterium_buzzgoblin.md)
+
 🔵 [Faj misztérium: Dzsenn](kepzettsegek.faj.miszterium/faj_miszterium_dzsenn.md)
+
+🔵 [Faj misztérium: Elar](kepzettsegek.faj.miszterium/faj_miszterium_elar.md)
 
 🔵 [Faj misztérium: Elf](kepzettsegek.faj.miszterium/faj_miszterium_elf.md)
 

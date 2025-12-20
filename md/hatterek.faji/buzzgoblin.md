@@ -14,7 +14,7 @@ TODO⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Anatyda](../kepzettsegek.faj.miszterium/faj_miszterium_anatyda.md)
+[Faj misztérium: Buzzgoblin](../kepzettsegek.faj.miszterium/faj_miszterium_buzzgoblin.md)
 
 <br />
 
