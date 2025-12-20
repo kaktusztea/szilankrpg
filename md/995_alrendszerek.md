@@ -80,6 +80,6 @@ Egy szubjektív lista arról, hogy mely alrendszerek adják a `Szilánk` "egyedi
 
 ---
 
-🔗 [Szimbólumok, Jelzők](006_szimbolumok_jelzok.md) →
+🔗 [Szimbólumok, Jelzők](996_szimbolumok_jelzok.md) →
 
 ⚜️ [Nyitóoldal](start.md#0-kezdetek) 

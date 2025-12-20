@@ -53,6 +53,6 @@ Linkgyűjtemény játékalkalmakra.
 
 ---
 
-🔗 [Segéd dokumentumok játékalkalmakhoz](008_seged_dokumentumok.md)→
+🔗 [Segéd dokumentumok játékalkalmakhoz](998_seged_dokumentumok.md)→
 
 ⚜️ [Nyitóoldal](start.md#0-kezdetek) 

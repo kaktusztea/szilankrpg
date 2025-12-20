@@ -1,4 +1,4 @@
-# Kezdetek
+# Áttekintés
 
 Üdvözlünk a `Szilánk` szerepjáték rendszer oldalain!
 
@@ -8,21 +8,21 @@ Adunk pár hasznos tanácsot is  a szerepjáték során gyakran előforduló kla
 
 Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiájáról, valamint a dokumentumban használt szimbólumokról. Végül egy játékot meggyorsító Harci linkgyűjteménnyel zárjuk a fejezetet.
 
-#### [Történet](001_tortenet.md)
+#### [Történet](991_tortenet.md)
 
-#### [Fejlesztők, Tesztelők](002_fejlesztok.md)
+#### [Fejlesztők, Tesztelők](992_fejlesztok.md)
 
-#### [Áttekintés](003_attekintes.md)
+#### [Áttekintés](993_attekintes.md)
 
-#### [Tanácsok](004_tanacsok.md)
+#### [Tanácsok](994_tanacsok.md)
 
-#### [Szilánk RPG alrendszerei](005_alrendszerek.md)
+#### [Szilánk RPG alrendszerei](995_alrendszerek.md)
 
-#### [Szimbólumok, Jelzők](006_szimbolumok_jelzok.md)
+#### [Szimbólumok, Jelzők](996_szimbolumok_jelzok.md)
 
-#### [Harci linkek](007_harci_linkek.md)
+#### [Harci linkek](997_harci_linkek.md)
 
-#### [Segéd dokumentumok játékalkalmakhoz](008_seged_dokumentumok.md)
+#### [Segéd dokumentumok játékalkalmakhoz](998_seged_dokumentumok.md)
 
 ---
 

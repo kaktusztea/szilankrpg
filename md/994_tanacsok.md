@@ -35,6 +35,6 @@ Ha nem jut eszedbe egy szabály, ne rakj még egy púpot szegény KM hátára az
 
 ---
 
-🔗 [Alrendszerek](005_alrendszerek.md) →
+🔗 [Alrendszerek](995_alrendszerek.md) →
 
 ⚜️ [Nyitóoldal](start.md#0-kezdetek) 

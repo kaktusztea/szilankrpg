@@ -19,6 +19,6 @@ A rendszer kiválóan adaptálható nem-fantasy, modern világokra is, ennek fő
 
 ---
 
-🔗 [Tanácsok](004_tanacsok.md) →
+🔗 [Tanácsok](994_tanacsok.md) →
 
 ⚜️ [Nyitóoldal](start.md#0-kezdetek) 

@@ -2,18 +2,7 @@
 
 ### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)** | **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
-**[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
-
-### 0. [Kezdetek](000_kezdetek.md)
-
-- [Történet](001_tortenet.md)
-- [Fejlesztők, Tesztelők](002_fejlesztok.md)
-- [Áttekintés](003_attekintes.md)
-- [Tanácsok](004_tanacsok.md)
-- [Szilánk RPG alrendszerei](005_alrendszerek.md)
-- [Szimbólumok, Jelzők](006_szimbolumok_jelzok.md)
-- [Harci linkek](007_harci_linkek.md)
-- [Segéd dokumentumok játékalkalmakhoz](008_seged_dokumentumok.md)
+**[Harci linkek](997_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
 ---
 ### 1. [Karakteralkotás](010_00_karakteralkotas.md)
@@ -313,6 +302,18 @@
 
 ---
 ### 16. [Szituációk](160_szituaciok.md)
+
+---
+### 99. [Áttekintés](990_attekintes.md)
+
+- [Történet](991_tortenet.md)
+- [Fejlesztők, Tesztelők](992_fejlesztok.md)
+- [Áttekintés](993_attekintes.md)
+- [Tanácsok](994_tanacsok.md)
+- [Szilánk RPG alrendszerei](995_alrendszerek.md)
+- [Szimbólumok, Jelzők](996_szimbolumok_jelzok.md)
+- [Harci linkek](997_harci_linkek.md)
+- [Segéd dokumentumok játékalkalmakhoz](998_seged_dokumentumok.md)
 
 ---
 ## [🚧 Fejlesztő portál 🚧](https://github.com/kaktusztea/szilankrpg/wiki)
