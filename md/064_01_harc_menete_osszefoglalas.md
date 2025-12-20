@@ -205,7 +205,7 @@ Győzelmi szabály
 1 + Plusz támadások
 
 Plusz támadások (db) =
-  Harckeret / (Fegyver Sebesség)
+  Harckeret / (Fegyver Sebesség) ↓
 ```
 
 Lásd: [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) és [Fegyverek](068_00_fegyverek.md)
