@@ -1,4 +1,4 @@
-## Faj misztérium: Ember
+## Faj misztérium: Déli Ember
 
 <--- Leírás ide jön --->
 
@@ -6,7 +6,7 @@
 
 - TODO: egy újfajta érzék fortélyokat kitalálni
 - adaptív faj, mindent meg tud tanulni
-- Nagyon alkalmazkodó faj, gyorsabban gyógyulnak, mint a többiek. A bónusz mértéke a "Faj: Ember" képzettségtől függ?
+- Nagyon alkalmazkodó faj, gyorsabban gyógyulnak, mint a többiek. A bónusz mértéke a "Faj: Déli Ember" képzettségtől függ?
 - gyorsabb gyógyulás
 - jobb ellenálló képesség betegségekkel szemben (ez a való világban is kialakult Európában, mert itt volt a legtöbb nagy népsűrűségű és rettenetesen szutykos város)
 

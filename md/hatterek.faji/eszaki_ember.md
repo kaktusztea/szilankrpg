@@ -1,4 +1,4 @@
-## Ember
+## Északi Ember
 
 bevezető ⭕
 
@@ -14,7 +14,7 @@ Nincs speciális felvehető érzék fortély.
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Ember](../kepzettsegek.faj.miszterium/faj_miszterium_ember.md)
+[Faj misztérium: Északi Ember](../kepzettsegek.faj.miszterium/faj_miszterium_eszaki_ember.md)
 
 ### ⚜️Faji fortélyok
 

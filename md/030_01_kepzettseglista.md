@@ -135,7 +135,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Faj misztérium: Elf](kepzettsegek.faj.miszterium/faj_miszterium_elf.md)
 
-🔵 [Faj misztérium: Ember](kepzettsegek.faj.miszterium/faj_miszterium_ember.md)
+🔵 [Faj misztérium: Ember](kepzettsegek.faj.miszterium/faj_miszterium_eszaki_ember.md)
 
 🔵 [Faj misztérium: Gnóm](kepzettsegek.faj.miszterium/faj_miszterium_gnom.md)
 

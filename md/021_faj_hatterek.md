@@ -11,16 +11,28 @@ Az alábbiakban a játszható és nem játszható fajok bemutatását egyedi jel
 
 - [Amund](hatterek.faji/amund.md)
 - [Anatyda](hatterek.faji/anatyda.md)
+- Buzzgoblin
 - [Dzsenn](hatterek.faji/dzsenn.md)
+- Elar
 - [Elf](hatterek.faji/elf.md)
-- [Ember](hatterek.faji/ember.md)
+- [Északi Ember](hatterek.faji/eszaki_ember.md)
+- [Déli Ember](hatterek.faji/deli_ember.md)
+- Erdőpille
+- Feenhar
 - [Gnóm](hatterek.faji/gnom.md)
 - [Goblin](hatterek.faji/goblin.md)
+- Gyíklény (snil)
+- Hómanó
+- Homoki elf
 - [Khál](hatterek.faji/khal.md)
+- Kineta
+- Kobold
 - [Kyr](hatterek.faji/kyr.md)
 - [Ork](hatterek.faji/ork.md)
-- [Udvari ork](hatterek.faji/udvari_ork.md)
+- Sáskaharcos
 - [Törpe](hatterek.faji/torpe.md)
+- Tűzkobold
+- [Udvari ork](hatterek.faji/udvari_ork.md)
 
 Speciális:
 - [Kevert fajú](hatterek.faji/kevert_faju.md)
