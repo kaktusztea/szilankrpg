@@ -4,12 +4,10 @@
 
 ### **[Segédlet ingame pdf](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
-## Gyors elérés
-
-- **[Harci linkek](007_harci_linkek.md)** • [Státuszok](082_statuszok.md)
-- [Képzettségek](030_01_kepzettseglista.md) • [Fortélyok](040_fortelyok.md) 
-  - [kiterjesztés - általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md)
-  - [kiterjesztés - harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
+---
+**[Harci linkek](007_harci_linkek.md)** • [Státuszok](082_statuszok.md) • [Képzettségek](030_01_kepzettseglista.md) • [Fortélyok](040_fortelyok.md) 
+- [kiterjesztés - általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md)
+- [kiterjesztés - harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
 ⚜️ ⚜️ ⚜️
 
