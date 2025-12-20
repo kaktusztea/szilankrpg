@@ -127,7 +127,7 @@ Lássuk hát a részletes szabályrendszert:\
 ![](https://progress-bar.xyz/100/?title=Harcrendszer%20%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/15/?title=M%C3%A1giarendszer%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/85/?title=Méregrendszer%20%20%20%20%20%20&width=200&color=babaca)\
-![](https://progress-bar.xyz/90/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
+![](https://progress-bar.xyz/95/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
 
 ---
 ## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
