@@ -9,29 +9,20 @@ lorem ipsum
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- Tulajdonság: `+1`
-- Képzettség - `1.szint`
+🔒 Képzettség - `x.szint`
 
-
-🌟 **Hatás**:
-- lorem ipsum
+🌟 lorem ipsum
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- Tulajdonság: `+1`
-- Képzettség - `1.szint`
+🔒 Képzettség - `x.szint`
 
-🌟 **Hatás**:
-- lorem ipsum
+🌟 lorem ipsum
 
 <br />
 
 ### Megjegyzések
 
 - lorem ipsum dorem🗡️ amet
-
-<br />
 
 ---
