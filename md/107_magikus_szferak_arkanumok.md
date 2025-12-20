@@ -1,4 +1,4 @@
-## Mágikus Szférák és arkánumaik listája
+# Mágikus Szférák és arkánumaik listája
 
 ⭕TODO⭕: Bevezető, legenda, utalás mágiaelméletre.
 
@@ -6,144 +6,146 @@
 
 Minden szféra alá 2 Arkánum (mágiaiskola) tartozik.
 
-Minden Arkánum egy ősi nyelvnek felel meg.
-Annyi ősi nyelv van, ahány mágiaiskola.
+Minden Szféra / Arkánum egy ősi nyelvnek felel meg.
 
-⭕Minden Szféra egy szakrális nyelvnek fele meg??.⭕
+Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 
 Ősi nyelvek még: kyr, óelf
 
 ---
-### Anyag szféra
+## ⚜️ Anyag szféra
 
-✨Ősi nyelv: Aquir
+### [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
 
-- [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
   - Őselem idézése
   - ...
-  -  ✨Ősi nyelv: ⭕?
-- [Természetes anyagok mágiája](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md)
+
+### [Természetes anyagok mágiája](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md)
+
   - Ideamágia (CX)
   - [Méregmágia](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md#méregmágia)
   - Méregmágia szemita (CX)
-  - ✨Ősi nyelv: Gnóm
+
 
 ---
-### Lélek
+## ⚜️ Lélek szféra
 
-✨Ősi nyelv: ⭕?
+### [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
 
-- [Asztrál](kepzettsegek.primer.arkanumok/asztralmagia.md)
-  - Hangulatmágia
-  - Asztrális befolyás
-  - ide tartoznak pl. az átkok (sorsjellegű, jellemtorzítás)
-  - asztrál-átoklevétel (magasmágus nem tudja ezeket pl)
-  - Szexuálmágia
-  - Bájolások
-  - ✨Ősi nyelv: Amund
-- [Mentál](kepzettsegek.primer.arkanumok/mentalmagia.md)
-  - mentál-átkok
-  - mentál-átoklevétel
-  - ✨Ősi nyelv: Dzsenn
+- Hangulatmágia
+- Asztrális befolyás
+- ide tartoznak pl. az átkok (sorsjellegű, jellemtorzítás)
+- asztrál-átoklevétel (magasmágus nem tudja ezeket pl)
+- Szexuálmágia
+- Bájolások
+
+### [Mentálmágia](kepzettsegek.primer.arkanumok/mentalmagia.md)
+
+- ...
+- mentál-átkok
+- mentál-átoklevétel
 
 ---
-### Jelenségek szféra
-
-✨Ősi nyelv: ⭕?
+## ⚜️ Jelenségek szféra
 
 ⭕CX Elemimágia formuláinak egy része ide jön⭕
 
-- [Illúziók](kepzettsegek.primer.arkanumok/illuziok.md)
-  - Fénymágia, Szagmágia
-  - Hangmágia/[Csendmágia](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#csendmágia)
-  - Szagmágia
-  - ✨Ősi nyelv: ⭕?
-- [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
-  - Időjárásbefolyásolás
-  - Villámmmágia
-  - ✨Ősi nyelv: ⭕Óelf⭕?
+### [Illúziók](kepzettsegek.primer.arkanumok/illuziok.md)
+
+- Fénymágia, Szagmágia
+- Hangmágia / [Csendmágia](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#csendmágia)
+- Szagmágia
+
+### [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
+
+- Időjárásbefolyásolás
+- Villámmmágia
+
 
 ---
-### Téridő szféra
+## ⚜️ Téridő szféra
 
-✨Ősi nyelv: ⭕?
+### [Időmágia](kepzettsegek.primer.arkanumok/idomagia.md)
 
-- [Időmágia](kepzettsegek.primer.arkanumok/idomagia.md)
-  - ✨Ősi nyelv: ⭕?
-- [Térmágia](kepzettsegek.primer.arkanumok/termagia.md)
-  - ✨Ősi nyelv: ⭕?
+### [Térmágia](kepzettsegek.primer.arkanumok/termagia.md)
+
 
 ---
-### Életerő szféra (élet-halál)
+## ⚜️ Életerő szféra (élet-halál)
 
-✨Ősi nyelv: ⭕?
+### [Életerő manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
 
-- [Életerő manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
-  - Gyógyítás
-    - Sebgyógyítás
-    - Isteni Életerő átadása (`FP` átalakítása `ÉP`-vé rögtön)
-    - Betegségek gyógyítása
-    - Méregsemlegesítés
-    - Fiatalítás
-    - Lelki szenvedés enyhítése
-    - Rontáslevétel
-    - Termékenységi Mágia
-  - Rontások
-    - betegség is ide tartozik
-    - életerő szívása és átadása (holtnak és élőnek is)
-  - Betegségek
-  - ✨Ősi nyelv: ⭕?
-- [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)
-  - Élőholtak manipulálása
-  - ✨Ősi nyelv: ⭕?
+- Gyógyítás
+  - Sebgyógyítás
+  - Isteni Életerő átadása (`FP` átalakítása `ÉP`-vé rögtön)
+  - Betegségek gyógyítása
+  - Méregsemlegesítés
+  - Fiatalítás
+  - Lelki szenvedés enyhítése
+  - Rontáslevétel
+  - Termékenységi Mágia
+- Rontások
+  - betegség is ide tartozik
+  - életerő szívása és átadása (holtnak és élőnek is)
+- Betegségek
+
+### [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)
+
+- Élőholtak manipulálása
+
 
 ---
-### Idézés szféra
+## ⚜️ Idézés szféra
 
-✨Ősi nyelv: ⭕?
+### [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
 
-- [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
   - állatok (alacsony szintű)
   - szörnyek (kicsit magasabb)
   - elementálok
   - ⭕Nekromancia: kísértetek (ember lelkek / lelkekbol lehasadt szellemek) idézése
   - ember lelkek / lelkekbol lehasadt szellemek
   - természeti szellemek
-  - ✨Ősi nyelv: ⭕?
-- [Külső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md)
-  - Demonológia
-  - Theurgia
-  - Goécia
-  - [Szeráfok, szerafisták](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#szer%C3%A1fi-m%C3%A1gi%C3%A1k) ?
-  - Isteni síkra távozott lelkek visszahívása (ez feketemágia)
-  - ✨Ősi nyelv: ⭕?
+
+### [Külső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md)
+
+- Demonológia
+- Theurgia
+- Goécia
+- [Szeráfok, szerafisták](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#szer%C3%A1fi-m%C3%A1gi%C3%A1k) ?
+- Isteni síkra távozott lelkek visszahívása (ez feketemágia)
+
 
 ---
-### Sors szféra
+## ⚜️ Sors szféra
 
-✨Ősi nyelv: ⭕?
+### [Sors Érzékelés](kepzettsegek.primer.arkanumok/sors_erzekeles.md)
 
-- [Sors Érzékelés](kepzettsegek.primer.arkanumok/sors_erzekeles.md)
-  - jövendőmondás / múltbatekintés
-  - ✨Ősi nyelv: ⭕?
-- [Sors Befolyásolás](kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
-  - Árnyékra ható mágia
-  - Lélekmágia (véletlenmágia) (CX)
-  - ✨Ősi nyelv: ⭕?
+- jövendőmondás / múltbatekintés
 
----
-### Mágia Szféra
+### [Sors Befolyásolás](kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
 
-- **Aura** arkánum, amely azonos az 🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
-- [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánum
+- Árnyékra ható mágia
+- Lélekmágia (véletlenmágia) (CX)
 
 ---
-### Titkos (Teremtés) Szféra
+## ⚜️ Mágia Szféra
 
-→ Élet Princípiumának a megteremtése. Élőlény megteremtése.
+### Aura
 
-→ Lélekcsíra megteremtése: csak az istenek rendelkeznek vele, halandó nem ismerheti. Halhatatlan.
+- azonos az 🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
 
+### [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md)
+
+---
+## ⚜️ Titkos (Teremtés) Szféra
+
+### Élet Princípiumának a megteremtése
+
+- Élőlény megteremtése
+
+### Lélekcsíra megteremtése
+
+- Csak az istenek rendelkeznek vele, halandó nem ismerheti. Halhatatlan.
 
 ---
 

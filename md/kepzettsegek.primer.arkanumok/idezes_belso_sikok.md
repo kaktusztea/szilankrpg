@@ -1,5 +1,7 @@
 ## Belső síkok lényeinek idézése arkánum
 
+Ősi nyelv: ⭕?
+
 Az **Idézés** szféra alá tartozó arkánum.
 
 - elementálok

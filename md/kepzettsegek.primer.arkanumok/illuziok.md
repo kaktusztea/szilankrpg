@@ -1,5 +1,7 @@
 ## Illúziók arkánum
 
+Ősi nyelv: ⭕?
+
 Az **Jelenségek** szféra alá tartozó arkánum.
 
 ### Hangmágia

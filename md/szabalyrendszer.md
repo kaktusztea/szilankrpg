@@ -307,9 +307,9 @@
 
 - [Történet](991_tortenet.md)
 - [Fejlesztők, Tesztelők](992_fejlesztok.md)
-- [Áttekintés](993_attekintes.md)
-- [Tanácsok](994_tanacsok.md)
-- [Szilánk RPG alrendszerei](995_alrendszerek.md)
+- [Bevezető](993_bevezeto.md)
+- [Szilánk RPG alrendszerei](994_alrendszerek.md)
+- [Tanácsok](995_tanacsok.md)
 - [Szimbólumok, Jelzők](996_szimbolumok_jelzok.md)
 - [Harci linkek](997_harci_linkek.md)
 - [Segéd dokumentumok játékalkalmakhoz](998_seged_dokumentumok.md)

@@ -1,5 +1,7 @@
 ## Külső síkok lényeinek idézése arkánum
 
+Ősi nyelv: ⭕?
+
 ⭕TODO: Szétbontani ezt Tradíciók szerint⭕
 
 Az **Idézés** szféra alá tartozó arkánum.

@@ -1,5 +1,7 @@
 ## Életerő Manipulálása arkánum
 
+Ősi nyelv: ⭕?
+
 [STUDY: Papimágia -- Gyógyítás](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.papimagia.szfera.gyogyitas#papi-mágia---gyógyítás-szféra)
 
 Az **Életerő** szféra alá tartozó arkánum.

@@ -1,5 +1,7 @@
 ## Nekromancia arkánum
 
+Ősi nyelv: ⭕?
+
 Az **Életerő** szféra alá tartozó arkánum.
 
 ### Élőholtak manipulálása

@@ -12,11 +12,11 @@ Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiáj�
 
 #### [Fejlesztők, Tesztelők](992_fejlesztok.md)
 
-#### [Áttekintés](993_attekintes.md)
+#### [Bevezető](993_bevezeto.md)
 
-#### [Tanácsok](994_tanacsok.md)
+#### [Szilánk RPG alrendszerei](994_alrendszerek.md)
 
-#### [Szilánk RPG alrendszerei](995_alrendszerek.md)
+#### [Tanácsok](995_tanacsok.md)
 
 #### [Szimbólumok, Jelzők](996_szimbolumok_jelzok.md)
 
@@ -26,4 +26,4 @@ Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiáj�
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés) 
+⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés)

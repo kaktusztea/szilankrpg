@@ -1,5 +1,7 @@
 ## Elemi mágia arkánum
 
+Ősi nyelv: ⭕?
+
 Az **Anyag** szféra alá tartozó arkánum.
 
 ```
