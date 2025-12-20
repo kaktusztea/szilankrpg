@@ -6,7 +6,7 @@ Eljött az ideje, hogy karaktert alkossunk.
 - [Karakteralkotó ods](010_02_karakteralkoto_ods.md)
 - [Karakterek jellemzői](010_03_00_karakter_jellemzoi.md)
   - [Kalandozók](010_03_01_kalandozok.md)
-  - [Őrszem karakterek](010_03_02_orszem_karakterek.md)
+  - [Őrszemek](010_03_02_orszem_karakterek.md)
   - [Előtörténet](010_03_03_elotortenet.md)
   - [Személyiségek](010_03_04_szemelyisegek.md)
   - [Külső](010_03_05_kulso.md)
