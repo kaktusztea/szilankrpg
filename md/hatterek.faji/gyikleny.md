@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Snil](../kepzettsegek.faj.miszterium/faj_miszterium_snil.md)
+[Faj misztérium: Snil](../kepzettsegek.faj.miszterium/faj_miszterium_gyikleny.md)
 
 ### ⚜️Faji fortélyok
 
