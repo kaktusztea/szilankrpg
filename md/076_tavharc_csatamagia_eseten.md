@@ -43,7 +43,7 @@ Mágiatáv IV
  Osztó: 3
 ```
 
-A **Mágiatáv `I-IV`** valójában `1 db` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](szabalyrendszer.md#karakteralkotó--segédlet) fegyverválasztójában azt a verzióját használd, amely megfelel a **Mágiatáv növelés** fortélyod fokának.
+A **Mágiatáv `I-IV`** valójában `1 db` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) fegyverválasztójában azt a verzióját használd, amely megfelel a **Mágiatáv növelés** fortélyod fokának.
 
 A **Mágiatáv** szimulálja a (mágikus) távolsági "fegyver" kategóriákat ("tárgy, hajító, nyíl, nyílpuska").
 
@@ -97,7 +97,7 @@ Távolbahatás módja: Területmágia
 
 Varázslótól indul. Nincs Célzásnál Szorzó nehezítés.
 
-#### `2.` Aurával kinyúlva máshonnan, vagy más szögből indítani 
+#### `2.` Aurával kinyúlva máshonnan, vagy más szögből indítani
 
 ```
 Szorzó nehezítés

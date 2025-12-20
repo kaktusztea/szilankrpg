@@ -25,7 +25,7 @@
     - [Emlékezet](010_05_01_06_emlekezet.md)
     - [Önuralom](010_05_01_07_onuralom.md)
     - [Érzékenység](010_05_01_08_erzekenyseg.md)
-  -  [Tulajdonságpontok elköltése](010_05_02_tulajdonsagpontok_elkoltese.md)
+  - [Tulajdonságpontok elköltése](010_05_02_tulajdonsagpontok_elkoltese.md)
   - [Tulajdonságok bónuszai](010_05_03_tulajdonsagok_bonuszai.md)
   - [Tulajdonságpróba](010_05_04_tulajdonsagproba.md) 🎲
 - [Szilánk](010_06_szilank.md)
