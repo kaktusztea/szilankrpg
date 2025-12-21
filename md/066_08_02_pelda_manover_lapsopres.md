@@ -25,8 +25,8 @@ Gáncsolás manőver
 
 Nehézsége: 8
 Fázisai
-  (V) Végrehajtás
-  (E) Ellenpróba
+  (V)égrehajtás
+  (E)llenpróba
 ```
 
 **1. Végrehajtás**
