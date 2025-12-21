@@ -46,7 +46,7 @@ TÉ = 50
 ```
 Tetves dobása
  + 4 (Manőver alap)
- + 2 (Manőver Pont bónusza)
+ + 2 (1 Manőver Pont bónusza)
  + k10
 
 Célszám: 11
