@@ -1,6 +1,6 @@
 ## Mágikus komponensek, összhangok
 
-→[STUDY: Mágikus komponensek, összhangok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕
+→ [STUDY: Mágikus komponensek, összhangok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕
 
 ---
 ### Auraösszhang (Karma Háttér)
