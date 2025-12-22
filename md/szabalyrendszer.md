@@ -245,11 +245,11 @@
 
 - [Mágiaelmélet](101_magiaelmelet.md)
 - [Mágia alapszabályok](102_magia_alapszabalyok.md)
-- [Aura, Mágia akarata, Mágiaellenállás](104_aura_magia_akarata_magiaellenallas.md)
-- [Varázslás módszerei](105_varazslas_modszerek.md)
-- [Mágikus komponensek, összhangok](106_magikus_komponensek_osszhangok.md)
-- [Mágikus Szférák és Arkánumaik](107_magikus_szferak_arkanumok.md)
-- [Mágikus Státuszok](108_magikus_statuszok.md)
+- [Aura, Mágia akarata, Mágiaellenállás](103_aura_magia_akarata_magiaellenallas.md)
+- [Varázslás módszerei](104_varazslas_modszerek.md)
+- [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)
+- [Mágikus Szférák és Arkánumaik](106_magikus_szferak_arkanumok.md)
+- [Mágikus Státuszok](107_magikus_statuszok.md)
 - **Arkánumok listája**
   - [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
   - Aura

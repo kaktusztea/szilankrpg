@@ -2,20 +2,7 @@
 
 <!-- tag: slan__fortely -->
 
-⭕TODO⭕
-
-
----
-### Általános Slan fortélyok
-
-⭕TODO⭕
-
-
----
-### Harci Slan fortélyok
-
-- [Élő fegyver](fortelyok.slan/elo_fegyver.md) 🔺
-- [Sárkány ököl](fortelyok.slan/sarkany_okol.md) 🔺
+→ [STUDY: Slan fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.slan#speci%C3%A1lis-slan-fort%C3%A9lyok) ⭕
 
 ---
 

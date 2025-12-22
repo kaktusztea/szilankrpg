@@ -1,6 +1,6 @@
 ## Mágikus Státuszok ✴️✨
 
-Leírásukat lásd a Mágiarendszer [Mágikus Státuszok](108_magikus_statuszok.md) fejezetében.
+Leírásukat lásd a Mágiarendszer [Mágikus Státuszok](107_magikus_statuszok.md) fejezetében.
 
 ---
 

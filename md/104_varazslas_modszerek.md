@@ -6,6 +6,6 @@ Bővebben lásd a [Varázslás módszerek](045_misztikus_magia_fortelyok.md#var�
 
 ---
 
-🔗 [Mágikus komponensek, összhangok](106_magikus_komponensek_osszhangok.md)→
+🔗 [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)→
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

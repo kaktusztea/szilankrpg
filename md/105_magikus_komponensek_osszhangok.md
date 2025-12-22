@@ -155,6 +155,6 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 
 ---
 
-🔗 [Mágikus szférák, arkánumaik listája](107_magikus_szferak_arkanumok.md)→
+🔗 [Mágikus szférák, arkánumaik listája](106_magikus_szferak_arkanumok.md)→
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

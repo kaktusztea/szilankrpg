@@ -257,7 +257,7 @@ Mágikus karmához jutsz. Például:
 - Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
 - stb  
 
-Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](106_magikus_komponensek_osszhangok.md) fejezetét!
+Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md) fejezetét!
 
 <br />
 
