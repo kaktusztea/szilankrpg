@@ -99,9 +99,11 @@ Most megismerkedünk a fent zanzásított fogalmakkal részleteiben is.
 <br/>
 
 ### Mágia Akarata
+
 ```
 Varázsló Aura + k10   vs.  Célpont Aura + 10
 ```
+
 A varázsló vagy a mágiát létrehozó mágikus akarat, tárgy, terület **aktuális** Aurája. Ez feszül szembe a célpont Aurájával (ha van). A varázsló aktuális Aurája nyilván alacsonyabb lehet ha kinyúl Szellemkezével, vagy Zónában kiterjeszti akaratát. Amennyiben a varázsló dobott értéke eléri, vagy meghaladja a védekező félét, a mágia átjutott annak védelmén és kifejti rá hatását az alsóbb síkokon.
 
 <br />
@@ -139,7 +141,7 @@ Ailtas, a varázslótanonc ismert Arkánumai (mágiaiskola-képzettségek):
 Elemi mágia: 5.szint
 Fénymágia:   4.szint
 ```
-  
+
 **A varázslat**: "Vízes tűzgolyó", azaz tűzgolyó idézése, ami fénymágiával vízgömbnek tűnik.
 Ailtas kicsit több naftát (`8.szint`) tol bele az Elemi mágiából, mint amit biztos kézzel meg tudna tenni - kockáztat.
 
@@ -191,7 +193,7 @@ Komplexitás: 12
 Próba
  (5 + Tul + k10)  vs  12
 ```
-  
+
 **Formula-2**
 
 ```
@@ -216,7 +218,7 @@ Ez elég kockázatos.
 ---
 ### Varázslás utáni kimerülés - Rizikó varázslatnál
 
-Amennyiben a varázsló olyan mágiát használ, aminél nem biztos tudásból varázsol (Rizikó), mind az Erősség, mind a Komplexitás esetén csökken a használt Arkánum szintje - ideiglenesen.    
+Amennyiben a varázsló olyan mágiát használ, aminél nem biztos tudásból varázsol (Rizikó), mind az Erősség, mind a Komplexitás esetén csökken a használt Arkánum szintje - ideiglenesen.
 
 🚧 ⭕[Modell-1 és Modell-2 a STUDY oldalon](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.alapszabalyok#var%C3%A1zsl%C3%A1s-ut%C3%A1ni-kimer%C3%BCl%C3%A9s---rizik%C3%B3-var%C3%A1zslatn%C3%A1l)⭕
 

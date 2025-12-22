@@ -1,4 +1,4 @@
-## Támadások száma varázsláskor
+## Támadások száma varázsláskor / kör
 
 ### Varázskeret
 

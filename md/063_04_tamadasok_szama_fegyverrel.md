@@ -1,4 +1,4 @@
-## Támadások száma fegyverrel
+## Támadások száma fegyverrel / kör
 
 ```
 Alapeset:
