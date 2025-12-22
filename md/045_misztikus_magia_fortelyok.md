@@ -15,22 +15,8 @@
 
 ### Varázslás módszerek
 
-- [Áldás](fortelyok.magia.modszerek/aldas.md) 🔺
-- [Átok](fortelyok.magia.modszerek/atok.md) 🔺
-- [Bábúmágia](fortelyok.magia.modszerek/babumagia.md) 🔺
-- [Bájitalok](fortelyok.magia.modszerek/bajitalok.md)
-- [Ceremoniális mágiák](fortelyok.magia.modszerek/ceremonialis.md) 🔺
-- [Dalmágia](fortelyok.magia.modszerek/dalmagia.md) 🔺
-- [Fókuszok, emitterek](fortelyok.magia.modszerek/fokuszok_emitterek.md) 🔺
-- [Formázás](fortelyok.magia.modszerek/formazas.md) 🔺
-- [Gyertyamágia](fortelyok.magia.modszerek/gyertyamagia.md) 🔺
-- [Jelmágia, Rúnamágia](fortelyok.magia.modszerek/jelmagia_runamagia.md) 🔺
-- [Litánia, Rituálé](fortelyok.magia.modszerek/litania_rituale.md) 🔺
-- [Maszkmágia](fortelyok.magia.modszerek/maszkmagia.md) 🔺
-- [Megkötés](fortelyok.magia.modszerek/megkotes.md) / ⭕titkos alkímia? (CX)⭕
-- [Rituális/Tánc mágia](fortelyok.magia.modszerek/ritualis_tanc.md) 🔺
-- [Szexuálmágia](fortelyok.magia.modszerek/szexualmagia.md)
-- [Szimpatikus mágia](fortelyok.magia.modszerek/szimpatikus_magia.md)
+→ [ADR: Varázslás módszerek](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslas.modszerek) ⭕
+
 
 ---
 

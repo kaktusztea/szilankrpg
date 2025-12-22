@@ -80,6 +80,9 @@ Ha a fent tárgyalt Aurafejlesztés próbát elrontotta a karakter, további neg
 ---
 ### Mágia Akarata vs Mágiaellenállás
 
+A varázsló vagy a mágiát létrehozó mágikus akarat, tárgy, terület **aktuális** Aurája. Ez feszül szembe a célpont Aurájával (ha van). A varázsló aktuális Aurája nyilván alacsonyabb lehet ha kinyúl Szellemkezével, vagy Zónában kiterjeszti akaratát. Amennyiben a varázsló dobott értéke eléri, vagy meghaladja a védekező félét, a mágia átjutott annak védelmén és kifejti rá hatását az alsóbb síkokon.
+
+
 ```
 Mágia Akarata  vs  Mágiaellenállás
                =
