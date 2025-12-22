@@ -67,7 +67,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 ---
 ### Szilánk DNS
 
-Egy szubjektív lista arról, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-ét:
+Egy szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-ét:
 
 - VÉ csökkentés
 - Képzettség-kiterjesztés Fortélyokkal
