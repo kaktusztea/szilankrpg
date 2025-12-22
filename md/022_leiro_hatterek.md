@@ -8,13 +8,17 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további szinesítő eleme
 
 ### Származás
 
+- Apród
 - Árva
 - Erdőlakó
+- Fejvadász
 - Gladiátor
 - Harcművész
 - Jobbágy
+- Lovag
 - Nemes
 - Polgár
+- Varázsló
 - Városlakó
 
 ### Jellem, fóbiák, hobbik
