@@ -29,7 +29,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
 - [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
 - [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
-- [Támadások száma - ábra](063_06_harc_tamadasok_szama_abra.md) 📊
+- [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
 
 ## 6.4 [Harc menete](064_00_harc_menete.md)
 
