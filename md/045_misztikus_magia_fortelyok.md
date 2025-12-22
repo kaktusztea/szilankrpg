@@ -8,6 +8,7 @@
 - [Mágikus lövedék gyorsítása](fortelyok.misztikus/magikus_lovedek_gyorsitasa.md)
 - [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md)
 - [Mozgó cél mestere mágiához](fortelyok.misztikus/mozgo_cel_mestere_magiahoz.md)
+- [Gyors varázsló](fortelyok.misztikus/gyors_varazslo.md)
 - [Pszí alkalmazás](fortelyok.misztikus/pszi_kiterjesztes.md) 🔺
 
 ⭕TODO: kidolgozni még⭕
