@@ -10,7 +10,7 @@
 
 ### [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
 
-### [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
+### [Támadások száma - ábra](063_06_harc_tamadasok_szama_abra.md) 📊
 
 ---
 
