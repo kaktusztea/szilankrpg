@@ -2,7 +2,7 @@
 
 <!-- tag: slan__fortely -->
 
-→ [STUDY: Slan fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.slan#speci%C3%A1lis-slan-fort%C3%A9lyok) ⭕
+⭕TODO
 
 ---
 

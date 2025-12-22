@@ -4,6 +4,10 @@
 
 → [STUDY: Misztikus Fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) ⭕
 
+### Varázslás módszerek
+
+→ [STUDY: Varázslás módszerek](STUDY.varazslas.modszerek)
+
 ---
 
 🔗 [Slan fortélyok](046_slan_fortelyok.md) →
