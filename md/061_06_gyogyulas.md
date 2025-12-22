@@ -1,6 +1,6 @@
 ## Gyógyulás
 
-A [stabilizálás](061_03_sebesules.md#haldokl%C3%B3-stabiliz%C3%A1l%C3%A1sa) után az alábbi sebességgel gyógyulnak a [Kalandozó](010_03_01_kalandozok.md#gyorsabb-gy%C3%B3gyul%C3%A1s) karakterek.
+A [stabilizálás](061_03_sebesules.md#haldokl%C3%B3-stabiliz%C3%A1l%C3%A1sa) után az alábbi sebességgel gyógyulnak a [Kalandozó](010_03_01_kalandozok.md#gyorsabb-gy%C3%B3gyul%C3%A1s) karakterek:
 
 ```
 1 ÉP / nap
