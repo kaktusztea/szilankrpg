@@ -6,7 +6,7 @@
 
 ### Varázslás módszerek
 
-→ [STUDY: Varázslás módszerek](STUDY.varazslas.modszerek)
+→ [STUDY: Varázslás módszerek](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazslas.modszerek)
 
 ---
 

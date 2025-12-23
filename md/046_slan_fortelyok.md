@@ -4,6 +4,10 @@
 
 ⭕TODO
 
+### Slan harci fortélyok
+
+⭕TODO
+
 ---
 
 🔗 [Fortélyok főoldal](040_fortelyok.md) ↑
