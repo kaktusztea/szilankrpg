@@ -1,0 +1,112 @@
+name: Linkspector summary
+
+on:
+  workflow_run:
+    workflows:
+      - "Linkspector wiki"
+      - "Linkspector code"
+    types: [completed]
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  summarize-broken-links:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download workflow run logs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          WORKFLOW_NAME: ${{ github.event.workflow_run.name }}
+        run: |
+          set -euo pipefail
+          echo "Downloading logs for workflow run id: ${{ github.event.workflow_run.id }} (workflow: $WORKFLOW_NAME)"
+          curl -fsSL -H "Authorization: token $GITHUB_TOKEN" "${{ github.server_url }}/repos/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}/logs" -o logs.zip
+          unzip -q logs.zip -d logs
+          # Concatenate all job log files into one file
+          LANG=C
+          find logs -type f -name "*.txt" -print0 | xargs -0 cat > all_logs.txt || true
+
+      - name: Parse broken links and write summary files
+        env:
+          WORKFLOW_NAME: ${{ github.event.workflow_run.name }}
+        run: |
+          python3 - <<'PY'
+          import re, os
+          try:
+              with open('all_logs.txt','r',encoding='utf-8',errors='ignore') as f:
+                  s = f.read()
+          except FileNotFoundError:
+              s = ''
+
+          records = []
+          # Pattern with explicit line number in same entry
+          pat = re.compile(r'message:\"Cannot reach\s+([^\\"]+)\"\\s+location:\\{path:\"([^\\"]+)\"\\s+range:\\{start:\\{line:(\\d+)', re.MULTILINE)
+          for m in pat.finditer(s):
+              raw_url = m.group(1).strip()
+              url = re.split(r'\s+Status:|\s+Cannot find:|\s+Cannot find section:', raw_url)[0].strip()
+              path = m.group(2)
+              line = m.group(3)
+              records.append((path,line,url))
+
+          # Pattern without immediate line number but with location path
+          pat2 = re.compile(r'message:\"Cannot reach\s+([^\\"]+)\"[^\\n]*location:\\{path:\"([^\\"]+)\"', re.MULTILINE)
+          for m in pat2.finditer(s):
+              raw_url = m.group(1).strip()
+              url = re.split(r'\s+Status:|\s+Cannot find:|\s+Cannot find section:', raw_url)[0].strip()
+              path = m.group(2)
+              # try to find nearby line number
+              start = max(0, m.start()-200)
+              end = min(len(s), m.end()+200)
+              snippet = s[start:end]
+              ln = re.search(r'line:(\d+)', snippet)
+              line = ln.group(1) if ln else '(not available in log)'
+              records.append((path,line,url))
+
+          # Deduplicate while preserving order
+          seen = set(); uniq = []
+          for r in records:
+              if r not in seen:
+                  seen.add(r); uniq.append(r)
+
+          wf = os.environ.get('WORKFLOW_NAME','').lower()
+          # Choose output filename based on triggering workflow name
+          if 'code' in wf:
+              outname = 'broken-links-code-summary.txt'
+          elif 'wiki' in wf:
+              outname = 'broken-links-wiki-summary.txt'
+          else:
+              outname = 'broken-links-summary.txt'
+
+          # Always also produce the alternate file so both are available
+          altname = 'broken-links-wiki-summary.txt' if outname == 'broken-links-code-summary.txt' else 'broken-links-code-summary.txt'
+
+          for name in (outname, altname):
+              with open(name,'w',encoding='utf-8') as out:
+                  if not uniq:
+                      out.write('No broken links found.\n')
+                  else:
+                      for path,line,url in uniq:
+                          out.write(f"location: {path}\nline: {line}\nbroken URL: {url}\n\n")
+          print('Wrote', outname, 'and', altname)
+          PY
+
+      - name: Upload summary artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: ${{ github.event.workflow_run.name }}-broken-links-summary
+          path: |
+            broken-links-wiki-summary.txt
+            broken-links-code-summary.txt
+
+      - name: Print generated summary (for quick view)
+        if: always()
+        run: |
+          echo "=== Generated summary files ==="
+          ls -la || true
+          echo "--- broken-links-wiki-summary.txt ---"
+          cat broken-links-wiki-summary.txt || true
+          echo "--- broken-links-code-summary.txt ---"
+          cat broken-links-code-summary.txt || true
+
