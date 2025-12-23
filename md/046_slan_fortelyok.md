@@ -4,7 +4,7 @@
 
 ⭕TODO
 
-### Slan harci fortélyok
+### Harci Slan fortélyok
 
 ⭕TODO
 
