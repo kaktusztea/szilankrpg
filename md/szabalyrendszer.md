@@ -315,6 +315,6 @@
 - [Segéd dokumentumok játékalkalmakhoz](998_seged_dokumentumok.md)
 
 ---
-## [🚧 Fejlesztő portál 🚧](https://github.com/kaktusztea/szilankrpg/wiki)
+## 🚧[Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki)🚧
 
 ---
