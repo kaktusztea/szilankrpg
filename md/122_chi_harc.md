@@ -1,11 +1,6 @@
 ## Chi Harc
 
-## Chi harc képzettségek
-
-- [Aranyharang](kepzettsegek.primer.slan/chi_harc_aranyharang.md)
-- [Belső idő](kepzettsegek.primer.slan/chi_harc_belso_ido.md)
-- [Kiáltás](kepzettsegek.primer.slan/chi_harc_kialtas.md)
-- [Harcmeditáció](kepzettsegek.primer.slan/chi_harc_harcmeditacio.md)
+TODO
 
 ---
 

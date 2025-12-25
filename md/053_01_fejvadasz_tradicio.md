@@ -1,6 +1,6 @@
 ## Fejvadász Tradíciók
 
-<sub>→ [STUDY: Fejvadász Tradíció](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.fejvadasz.tradicio)</sub>
+→ [STUDY: Fejvadász Tradíció](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.fejvadasz.tradicio)
 
 ⭕TODO⭕
 

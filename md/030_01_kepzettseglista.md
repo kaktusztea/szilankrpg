@@ -251,17 +251,6 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 [STUDY oldal: Varázslat szférák](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.papimagia#var%C3%A1zslat-szf%C3%A9r%C3%A1k) - mint iskola-képzettségek (draft) ⭕MÁGIA TODO⭕
 
 ---
-### Slan 🅿️
-
-🔵 [Chi Harc - Aranyharang](kepzettsegek.primer.slan/chi_harc_aranyharang.md)
-
-🔵 [Chi Harc - Belső idő](kepzettsegek.primer.slan/chi_harc_belso_ido.md)
-
-🔵 [Chi Harc - Kiáltás](kepzettsegek.primer.slan/chi_harc_kialtas.md)
-
-🔵 [Chi Harc - Harcmeditáció](kepzettsegek.primer.slan/chi_harc_harcmeditacio.md)
-
----
 
 🔗 [Primer, szekunder képzettségek](030_02_primer_szekunder_kepzettsegek.md) →
 

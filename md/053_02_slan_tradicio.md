@@ -1,6 +1,6 @@
 ## Slan tradíció
 
-Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.slan) fejlesztjük. Amint ott elkészül, bemásolni ide.
+⭕TODO⭕: még nem biztos, hogy Tradíció lesz.
 
 ---
 

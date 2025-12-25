@@ -96,7 +96,7 @@ KÉ: -3, TÉ: -3, VÉ: -3
 ```
 
 🔆 Kapcsolódik:
-- [Élő fegyver](fortelyok.slan/elo_fegyver.md) fortély
+
 - [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md) fortély
 - [Belharci szituáció](065_01_01_belharci_szituacio.md), ahol a Puszta kéz harcértékei `0`-ra emelkednek és járnak a **Belharcból** eredő esetleges módosítók is.
 

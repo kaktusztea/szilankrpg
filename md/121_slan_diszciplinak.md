@@ -1,9 +1,8 @@
 ## Slan diszciplínák
 
-⭕ TODO ⭕
+→ [STUDY: Slan diszciplínák](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.slan.diszciplinak)
 
-- [Képességjavítás](diszciplinak.slan/tulajdonsagjavitas.md)
-- [Testuralom](diszciplinak.slan/testuralom.md)
+⭕ TODO ⭕
 
 ---
 
