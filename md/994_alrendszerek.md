@@ -5,7 +5,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 ### Általános
 
 - Tulajdonságok: `[-5; +5]` + `k6` Tulajdonságpróba
-- Képzettségek: `[0-15]` + `k10` Képzettségpróba
+- Képzettségek: `[0-15]` + egy Tulajdonság + `k10` Képzettségpróba
 - Képzettség-kiterjesztés Fortélyokkal, Szabad-Fortélyokkal
 - Fortélyok: `1-4.` fokig terjedhetnek - statikus ismeretek, nincs próba
 - Hátterek:
