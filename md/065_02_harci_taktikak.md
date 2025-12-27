@@ -144,7 +144,7 @@ Minden másban megegyezik a sima **Rohammal**.
 szenvedsz el azonnal
 ```
 
-✅ **Támadó taktikával, Érintő, Támadás Erőből taktikával** együtt
+✅ **Támadó, Érintő, Támadás Erőből taktikával** együtt
 
 ❌ Más taktikával együtt
 
