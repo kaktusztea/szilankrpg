@@ -191,7 +191,7 @@ Mindkét félnek
 Akkor tudod alkalmazni, ha már legalább `3` támadásod van a körben.\
 `-1` támadásért cserébe `1 db` "másodlagos" támadásodat, ami már `TÉ:-4` [levonással menne](063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt), továbbra is alap `TÉ`-vel dobhatod.
 
-✅ **Támadó, Érintő taktika, Fárasztó, Kezdeményező, Plusz támadás, Támadás erőből**
+✅ **Támadó, Érintő, Fárasztó, Kezdeményező, Plusz támadás, Támadás erőből taktika**
 
 ❌ Más taktikával együtt
 
