@@ -3,6 +3,7 @@
 **[Harci linkek](997_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [Kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [Kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
 ---
+### 0. [Áttekintés](990_attekintes.md)
 ### 1. [Karakteralkotás](010_00_karakteralkotas.md)
 
 - [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md)
@@ -301,18 +302,6 @@
 
 ---
 ### 16. [Szituációk](160_szituaciok.md)
-
----
-### 99. [Áttekintés](990_attekintes.md)
-
-- [Történet](991_tortenet.md)
-- [Fejlesztők, Tesztelők](992_fejlesztok.md)
-- [Bevezető](993_bevezeto.md)
-- [Szilánk RPG alrendszerei](994_alrendszerek.md)
-- [Tanácsok](995_tanacsok.md)
-- [Szimbólumok, Jelzők](996_szimbolumok_jelzok.md)
-- [Harci linkek](997_harci_linkek.md)
-- [Segéd dokumentumok játékalkalmakhoz](998_seged_dokumentumok.md)
 
 ---
 ## 🚧[Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki)🚧
