@@ -118,15 +118,18 @@ Inkább bevárod ellenfeled támadását, kifejezetten az ellencsapásra készü
 ### Öngyilkos roham taktika
 
 ```
-Első oda-vissza csapásnál
-  TÉ:+5, VÉ:-10
-  VÉ csökkentés duplázódik
-  Sebzés: +7 SP
+Max 1x / küzdelem
 
-TÉ büntetés sebesülésből
-  nem érvényesül
+Első oda-vissza csapásnál:
 
-Max 1x használható / küzdelem
+ Támadónak
+   TÉ:+5, VÉ:-10
+   TÉ büntetés sebesülésből
+     nem érvényesül
+
+ Mindkét félnek
+   Sebzés: +7 SP
+   VÉ csökkentés duplázódik
 ```
 
 ❌ Más taktikával együtt
@@ -135,7 +138,12 @@ Max 1x használható / küzdelem
 
 A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem törődik védekezésével, mindent megtesz, hogy hatalmas sebzést érjen el. Súlyosan sérült harcosok utolsó mentsvára lehet.
 
-Minden másban megegyezik a sima [Roham taktikával](#roham-taktika).
+🔆 Ha a rohamozó betalál (nem muszáj sebzőnek lennie):
+
+- `VÉ` büntetése azonnal megszűnik
+- `+5 SP` nem jár a visszatámadó félnek
+
+🔆 Rohamhoz min `5-10m` nekifutás szükséges (terepviszony, felszerelés súly függő)
 
 ---
 ### Plusz támadás taktika
@@ -161,12 +169,14 @@ Felpörögsz, cserébe azonnal `VÉ:-4` csökkenést szenvedsz el - mivel rendk�
 ### Roham taktika
 
 ```
-Támadónak
-  TÉ:+4, VÉ:-8
+Első oda-vissza csapásnál:
 
-Mindkét félnek
-  Sebzés: +5 SP
-  VÉ csökkentés duplázódik
+ Támadónak
+   TÉ:+4, VÉ:-8
+
+ Mindkét félnek
+   Sebzés: +5 SP
+   VÉ csökkentés duplázódik
 ```
 
 ❌ Más taktikával együtt
