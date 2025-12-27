@@ -150,7 +150,7 @@ szenvedsz el azonnal
 
 ✅ Több ellenféllel való harc esetén
 
-Felpörögsz és csapásaid záporoznak ellenfeledre, cserébe azonnal `-4 VÉ` csökkenést szenvedsz el, mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc. A taktikát a kör elején kell eldönteni és a kör végéig már nem módosítható.
+Felpörögsz, cserébe azonnal `VÉ:-4` csökkenést szenvedsz el, mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc.
 
 🔆 Tipp: ha fix plusz támadást szeretnél, a **[Harckeret növelés](fortelyok.harci/harckeret_noveles.md)** fortély felvétele segíthet.
 
