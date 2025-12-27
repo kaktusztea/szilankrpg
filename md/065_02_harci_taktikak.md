@@ -130,7 +130,7 @@ Max 1x használható / küzdelem
 
 ❌ Ostorharc harcmodorban
 
-A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem törődik védekezésével, mindent megtesz, hogy (dupla) sebzést érjen el. Súlyosan sérült harcosok utolsó mentsvára lehet.
+A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem törődik védekezésével, mindent megtesz, hogy hatalmas sebzést érjen el. Súlyosan sérült harcosok utolsó mentsvára lehet.
 
 Minden másban megegyezik a sima **Rohammal**.
 
