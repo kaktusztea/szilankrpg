@@ -37,4 +37,4 @@ Ha nem jut eszedbe egy szabály, ne rakj még egy púpot szegény KM hátára az
 
 🔗 [Szimbólumok, Jelzők](996_szimbolumok_jelzok.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés)
+⚜️ [Nyitóoldal](szabalyrendszer.md)

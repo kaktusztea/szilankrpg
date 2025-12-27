@@ -134,4 +134,4 @@ Bevezetjük a **`Szilánk RPG`** elnevezést a régi `km100` név elhagyásával
 
 🔗 [Fejlesztők](992_fejlesztok.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés) 
+⚜️ [Nyitóoldal](szabalyrendszer.md)

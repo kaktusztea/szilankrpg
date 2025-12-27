@@ -304,6 +304,6 @@
 ### 16. [Szituációk](160_szituaciok.md)
 
 ---
-## 🚧[Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki)🚧
+## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
 
 ---

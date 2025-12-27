@@ -12,4 +12,4 @@ Itt nyomtatható segédlet dokumentumokat találsz, amelyek a kaland során jól
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés)
+⚜️ [Nyitóoldal](szabalyrendszer.md)

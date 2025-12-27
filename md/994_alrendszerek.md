@@ -82,4 +82,4 @@ Egy szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-�
 
 🔗 [Tanácsok](995_tanacsok.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#99-áttekintés)
+⚜️ [Nyitóoldal](szabalyrendszer.md)
