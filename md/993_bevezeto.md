@@ -1,7 +1,5 @@
 ## Bevezető
 
-Ugyan az általános szabályok könnyebb elérése miatt most a tartalomjegyzék végén vagyunk, ez mégis egy bevezető, amit jellemzően csak egyszer olvasol el.
-
 Mit is találsz ebben a szabályrendszerben? Ha az elejéről sorban haladsz - és ez az ajánlott -, akkor elsőnek segítünk megalkotni a játékban megszemélyesített szereplődet a [Karakteralkotás](010_00_karakteralkotas.md) fejezetben.
 
 A [Harcrendszer](060_00_harcrendszer.md) fejezetben a fegyveres, vagy távolsági hadakozás szabályait, taktikáit taglaljuk. Misztikus hatalmadat a [Mágiarendszer](100_magiarendszer.md) fejezetekben terjesztheted ki.
