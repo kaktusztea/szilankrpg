@@ -1,4 +1,4 @@
-## Fejlesztők
+## Fejlesztők, Tesztelők
 
 A `Szilánk` fejlesztésében részt vevő személyek.
 
