@@ -43,7 +43,7 @@ Speciális:
  A fent kiválasztott **Faj Háttér** keretként fogja egybe minden egyes faj egyedi jellemzőit, melyek alább láthatóak:
 
 ---
-### ⚜️ Tulajdonság keretek
+### `1.` Tulajdonság keretek
 
 Minden fajnak vannak szellemi, fizikai határai. Van, hogy ez az átlag fölé emeli őket, vagy épp ellenkezőleg.
 A Tulajdonság keretek lehetséges minimumot/maximumot húznak az egyes [Tulajdonságok](010_05_01_00_tulajdonsagok_listaja.md) szintjén.
@@ -55,7 +55,7 @@ Példa:
 ```
 
 ---
-### ⚜️ Felvehető Érzék-Fortélyok maximuma
+### `2.` Felvehető Érzék-Fortélyok maximuma
 
 Amennyiben egy játékos választ egy Faj Hátteret a karakterének, akkor az annál felsorolt lehetséges [Érzék-Fortélyok](043_altalanos_fortelyok.md#érzék-fortélyok) közül **minimum 1 fokot** köteles `KP`-ból felvenni hozzá.
 
@@ -64,7 +64,7 @@ Tehát például ha spórolna a `KP` javadalmazáson, akkor alkothat egy olyan *
 A játékos megkapja a lehetőséget egy sokféle különleges érzékkel megáldott egyed indítására (lásd az adott Fej Háttér leírását a keretek megállapítására), de az sok KP-ba fog kerülni - a választás az övé.
 
 ---
-### ⚜️ [Faj misztérium](030_01_kepzettseglista.md#faj-miszt%C3%A9riumok-%F0%9F%85%BF%EF%B8%8F)
+### `3.` [Faj misztérium](030_01_kepzettseglista.md#faj-miszt%C3%A9riumok-%F0%9F%85%BF%EF%B8%8F) képzettség
 
 **Opcionálisan** felvehető, primer 🅿️ képzettség, amely kimondottan az adott faj misztikus/mágikus, ősi gyökerei felé nyúl ki.
 
@@ -73,7 +73,24 @@ Csak biztos tudásból adódó ismereteket nyújt, melyek magasabb szinteken egy
 Példa: [Faj misztérium: Törpe](kepzettsegek.faj.miszterium/faj_miszterium_torpe.md)
 
 ---
-### ⚜️ Faji fortélyok
+### `4.` Faj Arkánum képzettség
+
+ Minden 4nevi faj egy mágikus [arkánumhoz](106_magikus_szferak_arkanumok.md) kapcsolódik (pl. Amund: Asztrálmágia). Több faj is kapcsolódhat ugyahhoz az Arkánumhoz - de más képesség formájában.
+
+A fent említett Arkánum adja a faj - eredetében gyökerező - misztikus képességeit. Minél magasabb a faj Arkánum szintje, annál közelebb kerül ősi eredetéhez a faj adott egyede.
+
+Az egyes szinteknek lehetnek követelményei.
+
+
+
+- lehetnek követelményei: pl. pszí dzsennél
+- gyakorlatilag egy gyengébb mágiaiskola. Minden fajhoz 1 Arkánum van kötve
+- Pl. Amund: gyengébb Amund-Asztrál mágiaiskola
+- Pl. Dzsenn: gyengébb Dzsenn-Mentál mágiaiskola
+- Minden faj kap ehhez az arkánumához `1 db` [varázslási módszert](https://github.com/kaktusztea/szilankrpg/blob/master/md/045_misztikus_magia_fortelyok.md#var%C3%A1zsl%C3%A1s-m%C3%B3dszerek), amivel finomítjuk és behatároljuk, hogy mit és milyen formában tudja az adott faj gyakorolni különleges képességeit.
+
+---
+### `5.` Faji fortélyok
 
 Általában csak az adott fajra jellemző specializált, nem misztikus ismeretek.
 
@@ -84,7 +101,7 @@ Példa: [Faj misztérium: Törpe](kepzettsegek.faj.miszterium/faj_miszterium_tor
 
 Milyen ismereteket nem vehet fel a karakter ha ezt a fajt választja, illetve ha fel is vehet, milyen korlátokkal.
 
-### Ajánlott fortélyok
+### Ajánlott fortélyok, képzettségek
 
 Nem kötelező, de az adott fajnál jellemzően gyakran előforduló fortélyok.
 
