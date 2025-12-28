@@ -80,6 +80,6 @@ Egy szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-�
 
 ---
 
-🔗 [Tanácsok](995_tanacsok.md) →
+🔗 [Tanácsok](005_tanacsok.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md)

@@ -51,6 +51,6 @@
 
 ---
 
-🔗 [Segéd dokumentumok játékalkalmakhoz](998_seged_dokumentumok.md)→
+🔗 [Segéd dokumentumok játékalkalmakhoz](008_seged_dokumentumok.md)→
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md)

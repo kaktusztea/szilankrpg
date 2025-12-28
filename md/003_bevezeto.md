@@ -12,6 +12,6 @@ A rendszer jól adaptálható nem-fantasy, modern világokra is új, ad-hoc [Sza
 
 ---
 
-🔗 [A Szilánk RPG alrendszerei](994_alrendszerek.md) →
+🔗 [A Szilánk RPG alrendszerei](004_alrendszerek.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md)

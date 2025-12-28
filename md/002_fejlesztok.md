@@ -21,6 +21,6 @@ Mittelholcz Iván
 
 ---
 
-🔗 [Bevezető](993_bevezeto.md) →
+🔗 [Bevezető](003_bevezeto.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md)
