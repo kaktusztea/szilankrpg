@@ -95,10 +95,12 @@ Az egyes szinteknek lehetnek követelményei.
 
 Milyen ismereteket nem vehet fel a karakter ha ezt a fajt választja, illetve ha fel is vehet, milyen korlátokkal.
 
+---
 ## `7.` Ajánlott fortélyok, képzettségek
 
 Nem kötelező, de az adott fajnál jellemzően gyakran előforduló fortélyok.
 
+---
 ## `8.` Ajánlott képzettségek
 
 Nem kötelező, de az adott fajnál jellemzően gyakran előforduló képzettségek.
