@@ -1,6 +1,6 @@
 ## Aura, Mágia Akarata, Mágiaellenállás
 
-→ [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.Aura)
+→ [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslas.menete)
 
 Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján öleli körbe, védelmezi a lelket. Az Aura a karakterek mágikus akarata és egyben Mágiaellenállása is (Asztrál, Mentál, Fizikai).
 
