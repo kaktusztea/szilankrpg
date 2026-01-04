@@ -8,6 +8,8 @@ Adunk pár hasznos tanácsot is  a szerepjáték során gyakran előforduló kla
 
 Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiájáról, valamint a dokumentumban használt szimbólumokról. Végül egy játékot meggyorsító Harci linkgyűjteménnyel zárjuk a fejezetet.
 
+A szabályrendszer eredeti, hiteles forrása ezen URL alatt található: https://github.com/kaktusztea/szilankrpg/
+
 ### [Történet](001_tortenet.md)
 
 ### [Fejlesztők, Tesztelők](002_fejlesztok.md)
