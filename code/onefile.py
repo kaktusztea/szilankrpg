@@ -83,7 +83,10 @@ combined_dir_files = []
 ######### START PROCESSING ##########
 
 # Get all .md files in root dir (non-recursive) in alphabetical order. Full paths.
-list_rootdir_files = get_md_files(path_rootdir, recursive=False)
+list_rootdir_files = [str(Path(path_rootdir).parent / 'README.md')]
+list_rootdir_files.append(str(Path(path_rootdir).parent / 'LICENSE'))
+list_rootdir_files.append(os.path.join(path_rootdir, 'szabalyrendszer.md'))
+list_rootdir_files.extend(get_md_files(path_rootdir, recursive=False))
 
 # Combine all subdir's .md files into separate combined files
 list_dirs = get_directories(path=path_rootdir, blacklist=blacklist)

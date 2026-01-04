@@ -1,4 +1,490 @@
-## File: /Users/kaktusz/repo/szilank.code/md/000_attekintes.md
+## File: /Users/kaktusz/repo/szilank.code/README.md
+# Szilánk RPG ([CC](LICENSE))
+
+Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepjáték rendszer.
+
+## ⚜️ **[Szabályrendszer](md/szabalyrendszer.md)**
+
+<br />
+
+## Filozófia
+
+A `Szilánk RPG` egy realitásra törekvő fantasy szerepjáték, amely mégis gördülékenynek tűnik játék során. Ennek oka, hogy a legtöbb számolást igénylő feladatot karakteralkotási időbe száműztünk, a statisztikák kalkulálásában pedig egy fejlett [Karakteralkotó](md/szabalyrendszer.md#karakteralkotó----segédlet) segít - így rendkívül egyedi, specializált végeredményt kaphatunk.
+
+Az első mindig a misztikus, kalandos történet hangulata és annak karakterei - a rendszer csak "másodhegedűs" - a mesélő keze alá dolgozik és fix kereteket biztosít. Az elképzelt közeg egy regényszerű, drámai szerepjátékot megvalósítható környezet, amit a háttérből erősen támogat a "szürke eminenciás" szabályrendszer. Ez a rendszer tág kereteket biztosít a kreativitásra, aztán viszont a háttérbe húzódik. A legjobb, ha a szabályok fonta "kerítés" olyan tág, hogy a játékos azt érzi, egy végtelen, rengeteg lehetőséget rejtő erdőben van, nem pedig egy kerítéssel bekerített fenyvesben. Az ilyen típusú rendszer veszélyesebb, mint egy narratív rendszer puhán körülölelő karjai, de talán magasabb szabadságérzetet is élhetünk át vele. Fontos, hogy ne kizárólag a kocka vezesse a kaland folyását - egy random rossz dobás ne okozza a karakter vesztét. A rendszer legyen a játékosokért és ne fordítva.
+
+A számos szabály ellenére sok helyen pont nem találunk számolást igénylő cselekedeteket, így a rendszer jobban jutalmazza az egyedi ötleteket és a nem-kockadobós szituációk kötetlensége is jobban a **szerep**játékra helyezi a hangsúlyt.
+
+Viszont mikor a játékosnak van egy jó ötlete, taktikus gondolata, akkor jól definiált szabályokat, eszközöket kap, hogy azt megvalósítsa. A komplexebb események során a számolási terheket tudatosan elosztjuk a játékos és mesélő (kalandmester, KM) között. A KM tehermentesítése kiemelten fontos szempont, ebben több "félkész" érték segíti, melyeket a KM és a játékosok (még dobálás előtt) előre kiszámolhatnak - így is gyorsítva a játékot.
+
+A játékosok kreativitásának kiemelt mértékű jutalmazása nagyon fontos - ez a szituációk eltérő jellegének előtérbe helyezésével érhető el, az ötletes megoldások, jó szituáció-felismerés nagy előnyt adhat harci helyzetekben (is).
+
+---
+## Harcrendszer
+
+Taktikai, szituációs, epikus. Talán ez a három kifejezés írja le legjobban a `Szilánk` harcrendszerét.
+
+Ahogy fent említettük, kiemelten alapozunk a szituációk eltérő voltára: ugyanaz a két karakter más-más körülmények, fegyverek, páncélok és taktikák alkalmazásával gyökeresen más esélyekkel indul, így aki ésszel harcol, sokat nyerhet. A csapatmunka és a szituáció-függő, taktikus gondolkodás - akár egy kis létszámú különleges egységnél - egészen erős következményeket is elérhet, mint például egy jól irányzott tőrszúrás okozta teljes győzelem a megfelelő időben és elkőkészítéssel. Egy problémának több megoldása lehet, kellő furfanggal még a harc elkerülésével is célt érhetsz.
+
+Más szóval bemasírozni a mező közepére és frontálisan egymásnak esni - akár a videójátékokban - erősen ellenjavallott. Mindazonáltal próbáljuk az epikus jelleget is megőrizni, nem a hiperrealitás a célunk a harc során.
+
+Használd környezeted adottságait és az adott körülményeket előnyös szituáció megteremtésére! Harcban az alábbi faktorok okos kombinálásával juthatsz - vagy juthatnak ellenfeleid - előnyhöz.
+
+⚜️ Harci helyzetek: ezek adott, vagy megteremtett helyzetek, amelyek módosítanak az alap harcértékeken.
+
+⚜️ Harci taktikák: tudatosan alkalmazott harci jellegek, tendenciák, amiket a karakter alkalmazhat a harc során.
+
+⚜️ Manőverek: egyedi, speciális trükkök, amelyek egy konkrét hatást, változást okoznak a harcban (Lefegyverzés, Pajzzsal öklelés, stb.) és mindig egy konkrét ellenfél ellen irányulnak
+
+⚜️ Harci fortélyok: specializált, tanulható ismeretek, amelyek `1-1` részterület alaposabb ismeretével juttatnak konstans előnyhöz.
+
+⚜️ Fegyverméret-kategóriák: nagyobb fegyver, nagyobb előny... egészen amíg szűk helyre nem kényszerülsz.
+
+⚜️ Túlerő. Több támadóval harcolni a `Szilánk` rendszerében fokozottan nehéz - sokszor a nyúlcipő felkötése a legjobb ötlet.
+
+---
+## Távolsági harcrendszer
+
+A lőfegyverek alapesetben rendkívül halálosak, viszont a vérteknek szintén nagy szerep jut (nem csak) ennek ellensúlyozására.
+
+A távolsági harcot számos más körülmény cizellálja, mint a célpont mozgásának jellege, mérete, érzékelhetősége, valamint a szél hatása.
+
+---
+## Adaptálhatóság
+
+A rendszer jól adaptálható más, akár modern kori környezetbe is.
+
+Távharc esetén pusztán a fegyver [Célzó Értékének](md/071_tavharc_ce.md) és [Osztó](md/072_tavharc_ve_oszto_cella.md) jellemzőjének változtatásával - máris kész a távcsöves mesterlövész puska.
+
+A képzettségrendszer új [Szabad Fortélyok](md/042_szabad_fortelyok.md) meghatározásával remekül hozzáigazítható más világokhoz.
+
+---
+## Misztikus világkép
+
+A fejlesztés során az alábbi dilemmával találkoztunk:\
+Legyen a misztikus világkép világfüggő, vagy épp ellenkezőleg, független? Ha világfüggő, akkor erős korlátok közé szorulunk a fejlesztés során. Ha pedig független, akkor olyan általános, "kilúgozott" rendszer lesz a végeredmény, amelynek nincsenek gyökerei, melyek az adott világhoz kötik, amin játszunk - kiöntöttük a gyereket a fürdővízzel.
+
+A gordiuszi csomót az alábbi módon vágtuk át:\
+Yn3v mágikus és misztikus világát választottuk, ám az "csupán" inspiráció számunkra. Az istenek, túlvilági lények, legendáik és a történelem jó keretet adnak, ezeket meg is tartjuk, de a mágia, a szakrális erők működése, a szellemi energiák használata nem kötött a korábbi rendszerhez - általunk bármikor egyedi módon át - és újraírható, ha úgy látjuk, hogy  az hangulatosabb, jobban illeszkedik a mi látásmódunkhoz.
+
+Ha tehát valaki ortodox módon ragaszkodik a régi M* világához - lehet, hogy csalódni fog. Aki nyitott az újra, jöjjön velünk!
+
+---
+## Mágia
+
+Misztikus elemekben erős hangsúly került a hangulati és szituáció-függő aspektusra és a mágia kiszámíthatatlanságára: a mágia NEM egy alternatív fizika. Ugyanaz a varázslat máshogy viselkedhet, vagy könnyebb/nehezebb a körülmények/együttállások/alkalmazó személyétől/hatalmától függően. Egyes varázslatok fizikailag is kimerítőek lehetnek.
+
+Mágiában kisebb/nagyobb mellékhatások jelennek meg, különösen nagy hatalmú varázslatok esetében. Papi mágiában igencsak számít az adott isten aktuális "befolyása" a világon, a papok hatalom tekintetében nem tekinthetőek egyenlőnek.
+
+---
+## Szociális ismeretek
+
+Az **Etikett**, **Befolyásolás** és **Emberismeret** képzettségek fedik le ezt az ismerethalmazt, de a meggyőzés, megfélemlítés, átverés jellegű szituációk nem intézhetőek el tisztán egy **Befolyásolás** vs. **Emberismeret** kockadobással - rengeteg múlik a KM és a játékos közti párbeszéden, illetve az elképzelt karaktereken is. A dobást kapcsolódó fortélyok még tovább könnyíthetik, de a szerepjáték részt nem pótolhatják. Bővebben lásd a [Befolyásolás](md/kepzettsegek.primer.altalanos/befolyasolas.md) képzettség leírását, azon belül a [Szerepjátékos módosító](md/kepzettsegek.primer.altalanos/befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3) bemutatását.
+
+A rendszer tehát a **_szerep-játékra_** helyezi a hangsúlyt - szemben például egy számítógépes játékkal, ahol minden szociális szituáció dobással kerül elintézésre. Az élő játék egyik legnagyobb előnyét fontosnak tartottuk kiemelten kezelni.
+
+---
+## Számok
+
+A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokból, másokat `KP` (Karakteralkotó Pont) elköltésével lehet növelni.
+
+### Egyedi pontokkal növelt jellemzők
+
+- **Tulajdonságok**: Erő, Edzettség, Ügyesség, Gyorsaság, Intelligencia, Emlékezet, Önuralom, Érzékenység
+- **Szilánk**: Narratív jellegű számérték
+
+### KP költésével növelt jellemzők
+
+- **Harcérték módosítók** (`HM/CM`)
+- **Képzettségek**: Harci, Fizikai, Alvilági, Művészeti, Világi, Tudományos, Misztikus, **Tradíció** (Mágia, Papi, Szellemi), Arkánum, Slan
+- **Fortélyok**: Általános, Harci, Távharc, Misztikus
+
+### **Származtatott értékek**
+- Életerő Pont (`ÉP`), Fáradtság Pont (`FP`)
+- Harcértékek: `KÉ, TÉ, VÉ, CÉ, SP, SFÉ, MGT`
+- Manőver Pontok (`MP`)
+- Mágiaellenállás
+- Méregellenállás
+
+---
+## Licenc
+Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek az alábbiak szerint: [LICENSE](LICENSE)
+
+---
+## A Szabályrendszer
+
+Lássuk hát a részletes szabályrendszert:\
+⚜️ **[Szilánk RPG szabályrendszer](md/szabalyrendszer.md)** ⚜️
+
+---
+
+## Fejlesztés statisztikái
+
+![](https://progress-bar.xyz/100/?title=Karakteralkotás%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/100/?title=K%C3%A9pzetts%C3%A9grendszer%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/95/?title=K%C3%A9pzetts%C3%A9gek%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/100/?title=Fort%C3%A9lyok%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/95/?title=H%C3%A1tterek%20%20%20%20%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/100/?title=Harcrendszer%20%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/15/?title=M%C3%A1giarendszer%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/85/?title=Méregrendszer%20%20%20%20%20%20&width=200&color=babaca)\
+![](https://progress-bar.xyz/95/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
+
+---
+## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
+
+Itt folyik a hátralévő és nyitott témák kidolgozása.
+
+---
+**Szilánk**: Szerepjáték szabályrendszer fantasy világokra
+
+**Kapcsolat**: `szilankrpg _kukac_ protonmail _pont_ com`
+
+Ailtas, Kaktusztea, 2005-2025 ([CC](LICENSE))
+
+
+---## File: /Users/kaktusz/repo/szilank.code/LICENSE
+Creative Commons Licenc
+
+Ez a repository, a hozzá tartozó wikioldal, az ahhoz tartozó repository
+és ezekben található minden szöveges, vagy bináris elem, azok egyes részletei,
+másolatai, korábbi állapotai, valamint kapcsolódó részei mind a
+"Creative Commons BY-NC-SA 4.0" (https://creativecommons.org/licenses/by-nc-sa/4.0/deed.hu),
+azaz a „Nevezd meg! – Ne add el! – Így add tovább!” 4.0 licenc
+feltételeinek megfelelően használható csak fel.
+
+A repository tartalmát TILOS felhasználni bármilyen gépi tanulási modell
+tanítására - beleértve a nagy nyelvi modelleket (Large Language Models)!
+
+Jogtulajdonos: Fekete Bálint (Ailtas, Kaktusztea)
+
+---
+This repository, along with its associated wiki page, the related repository,
+and all text or binary elements contained within, including their
+individual details, copies, previous states, and related parts, may only be used
+in accordance with the terms of the
+"Creative Commons BY-NC-SA 4.0 license"(https://creativecommons.org/licenses/by-nc-sa/4.0/deed.en),
+which translates to "Attribution – NonCommercial – ShareAlike!"
+
+The contents of this repository is FORBIDDEN for training machine learning models,
+including but not limited to Large Language Models (LLMs)!
+
+Copyright holder: Bálint Fekete (Ailtas, Kaktusztea)
+
+
+---## File: /Users/kaktusz/repo/szilank.code/md/szabalyrendszer.md
+### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
+
+**[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [Kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [Kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
+
+---
+### 0. [Áttekintés, Bevezető](000_attekintes.md)
+### 1. [Karakteralkotás](010_00_karakteralkotas.md)
+
+- [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md)
+- [Karakteralkotó ods](010_02_karakteralkoto_ods.md)
+- [A karakter jellemzői](010_03_00_karakter_jellemzoi.md)
+  - [Kalandozók](010_03_01_kalandozok.md)
+  - [Őrszemek](010_03_02_orszem_karakterek.md)
+  - [Előtörténet](010_03_03_elotortenet.md)
+  - [Személyiségek](010_03_04_szemelyisegek.md)
+  - [Külső](010_03_05_kulso.md)
+  - [Felszerelés](010_03_06_felszereles.md)
+- [Tapasztalati Szint](010_04_tsz_szintlepes.md)
+- [Tulajdonságok](010_05_00_tulajdonsagok.md)
+  - [Tulajdonságok listája](010_05_01_00_tulajdonsagok_listaja.md)
+    - [Erő](010_05_01_01_ero.md)
+    - [Edzettség](010_05_01_02_edzettseg.md)
+    - [Ügyesség](010_05_01_03_ugyesseg.md)
+    - [Gyorsaság](010_05_01_04_gyorsasag.md)
+    - [Intelligencia](010_05_01_05_intelligencia.md)
+    - [Emlékezet](010_05_01_06_emlekezet.md)
+    - [Önuralom](010_05_01_07_onuralom.md)
+    - [Érzékenység](010_05_01_08_erzekenyseg.md)
+  - [Tulajdonságpontok elköltése](010_05_02_tulajdonsagpontok_elkoltese.md)
+  - [Tulajdonságok bónuszai](010_05_03_tulajdonsagok_bonuszai.md)
+  - [Tulajdonságpróba](010_05_04_tulajdonsagproba.md) 🎲
+- [Szilánk](010_06_szilank.md)
+- [Karakteralkotó Pontok (KP)](010_07_kp.md)
+- [KP költésével növelt jellemzők](010_08_00_kp_koltesevel_novelt_jellemzok.md)
+  - [HM, CM](010_08_01_hm_cm_99.md)
+  - [Képzettségek](010_08_02_kepzettsegek_99.md)
+  - [Fortélyok](010_08_03_fortelyok_99.md)
+- [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md)
+- [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md)
+  - [Életerő Pont (ÉP), Fáradság Pont (FP)](010_10_01_ep_fp.md)
+  - [Harcértékek](010_10_02_harcertekek_99.md)
+  - [Manőver Pontok (MP)](010_10_03_manover_pontok_99.md)
+  - [Mágiaellenállás](010_10_04_magiaellenallas.md) 🎲
+  - [Méregellenállás](010_10_05_meregellenallas.md) 🎲
+- [Nem Játékos Karakterek](010_11_njk.md)
+- [Példakarakter megalkotása](010_12_peldakarakter_megalkotasa.md)
+
+---
+### 2. [Hátterek](020_hattererek.md) 🟡
+
+  - [Faj Hátterek](021_faj_hatterek.md)
+  - [Leíró Hátterek](022_leiro_hatterek.md)
+  - [Karma Hátterek](023_karma_hatterek.md)
+
+---
+### 3. [Képzettségrendszer](030_00_kepzettsegrendszer.md) 🔵
+
+- [Képzettséglista](030_01_kepzettseglista.md)
+- [Primer és Szekunder képzettségek](030_02_primer_szekunder_kepzettsegek.md)
+- [Képzettségszint skála](030_03_kepzettsegszint_skala.md)
+- [Képzettségek fejlesztése](030_04_kepzettsegek_fejlesztese.md)
+- [Képzettségszintek KP igénye](030_05_kepzettsegszintek_kp_igenye.md)
+- [Képzettségpróba](030_06_01_kepzettsegproba.md) 🎲
+- [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) 🎲
+- [Csoportosan végezhető képzettségek](030_06_03_csoportosan_vegezheto_kepzettsegek.md) 🤝
+- [Képzettségpróba Hátrányok](030_07_kepzettsegproba_hatranyok.md)
+- [Képzettségek és Fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)
+- [Fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
+- [Harci fortélyok kiterjesztéslistája (ábra)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
+- [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
+- [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md)
+
+---
+### 4. [Fortélyok](040_fortelyok.md) 🟣
+
+  - [Kiemelt Fortélyok](041_kiemelt_fortelyok.md)
+  - [Szabad Fortélyok](042_szabad_fortelyok.md)
+  - [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
+  - [Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
+  - [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
+  - [Slan fortélyok](046_slan_fortelyok.md)
+
+---
+### 5. [Tradíciók](050_tradiciok.md)
+
+### 5.1 [Mágia tradíciók](051_00_magia_tradiciok.md)
+
+- [Magasmágia](051_01_magasmagia.md)
+- [Vulgármágia](051_02_vulgarmagia.md)
+- [Ordani Tűzmágia](051_03_ordani_tuzmagia.md)
+- [Bárdmágia](051_04_bardmagia.md)
+- [Illuzionista](051_05_illuzionista.md)
+- [Természeti mágia](051_06_termeszeti_magia.md)
+- [Sámánmágia](051_07_samanmagia.md)
+- [Drágakőmágia](051_08_dragakomagia.md)
+
+### 5.2 [Papi tradíció](052_papi_tradicio.md)
+
+### 5.3 [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
+
+- [Fejvadász Tradíció](053_01_fejvadasz_tradicio.md)
+- [Slan Tradíció](053_02_slan_tradicio.md)
+
+---
+### 6. [Harcrendszer](060_00_harcrendszer.md) 🗡️
+
+### 6.1 [Életerő, Sebesülés](061_00_eletero.md)
+
+- [Életerő Pont (ÉP)](061_01_eletero_pont.md)
+- [Fáradság Pont (FP)](061_02_faradsag_pont.md)
+- [Sebesülés](061_03_sebesules.md)
+- [Fájdalomtűrés sebesüléskor](061_04_fajdalomtures_sebesuleskor.md)
+- [Példa sebesülésre](061_05_pelda_sebesulesre.md)
+- [Gyógyulás](061_06_gyogyulas.md)
+
+### 6.2 [Alapértékek](062_00_alapertekek.md)
+
+- [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
+- [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
+- [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
+- [HM, CM](062_04_hm_cm.md)
+
+### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
+
+- [Harci kör](063_01_harci_kor.md)
+- [Akció fogalma](063_02_akcio_fogalma.md)
+- [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+- [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
+- [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
+- [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
+
+### 6.4 [Harc menete](064_00_harc_menete.md)
+
+- [Harc menete (összefoglaló)](064_01_harc_menete_osszefoglalas.md) 🎲
+- [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
+  - [Kezdeményezés](064_02_01_kezdemenyezes.md)
+  - [Támadó dobás](064_02_02_tamado_dobas.md)
+  - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)
+  - [Találat](064_02_04_talalat.md)
+  - [Fegyverek sebzés jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md)
+  - [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md)
+  - [Sebzés](064_02_07_sebzes.md)
+  - [Sebződés hatása](064_02_08_sebzodes_hatasa.md)
+  - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
+  - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md)
+- [Példaharc](064_03_peldaharc.md) ⚡
+
+### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
+
+- [Harci helyzetek](065_01_00_harci_helyzetek.md)
+  - [Belharci szituáció](065_01_01_belharci_szituacio.md)
+  - [Fegyverrántás váratlanul](065_01_02_fegyverrantas_varatlanul.md)
+  - [Harci pozíciók](065_01_03_harci_poziciok.md)
+  - [Fegyverrel kapcsolatos helyzetek](065_01_04_fegyver_harci_helyzetek.md)
+  - [Fizikai helyzetek](065_01_05_fizikai_helyzetek.md)
+  - [Személyhez kötött](065_01_06_szemelyhez_kotott.md)
+  - [Lények](065_01_07_lenyek.md)
+- [Harci taktikák](065_02_harci_taktikak.md)
+- [Harc alakzatban](065_03_harc_alakzatban.md)
+- [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
+
+### 6.6 [Manőverek](066_00_manoverek.md) 🎲
+
+- [Manőver Alap](066_01_manover_alap.md)
+- [Manőver Pontok](066_02_manover_pontok.md)
+- [Manőver szabályok](066_03_manover_szabalyok.md)
+- [Manőver végrehajtásának lépései](066_04_manover_vegbevitele.md)
+- [Általános Manőverek listája](066_05_altalanos_manoverek.md) 🎲
+- [Belharcos Manőverek listája](066_06_belharcos_manoverek.md) 🎲
+- [Lovas Manőverek listája](066_07_lovas_manoverek.md) 🎲
+- [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md) ⚡
+- [Példa Manőver alkalmazására: Lábsöprés](066_08_02_pelda_manover_lapsopres.md) ⚡
+
+### 6.7 [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
+
+- [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyai.md)
+- [Lovas, Léglovas fortélyok](067_02_lovas_leglovas_fortelyok.md)
+- [Lovas, Léglovas harci taktikák](067_03_lovas_harci_taktikak.md)
+- [Lovas, Léglovas manőverek](067_04_lovas_manoverek.md) 🎲
+
+### 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
+
+- [Fegyverek általános szabályai](068_01_00_fegyverek_altalanos_szabalyai.md)
+  - [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
+  - [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md)
+  - [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md)
+  - [Sebzéstípusok](068_01_04_sebzestipusok.md)
+  - [KF: Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md)
+  - [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_fegyverek_egy_kezzel.md)
+  - [Íves fegyver](068_01_07_ives_fegyver.md)
+  - [Puszta kéz](068_01_08_puszta_kez.md)
+  - [Nyílpuskák](068_01_09_nyilpuskak.md)
+  - [Érintő támadás](068_01_10_erinto_tamadas.md)
+  - [Erőbónusz limit](068_01_11_erobonusz_limit.md)
+  - [Átütés](068_01_12_atutes.md)
+  - [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md)
+  - [Fegyverek minősége (Ideája)](068_01_14_fegyverek_minosege_ideaja.md)
+- [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
+- [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
+- [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
+- [Romboló fegyverek](068_05_rombolo_fegyverek.md)
+- [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md)
+- [Hajítófegyverek](068_07_hajitofegyverek.md)
+- [Lőfegyverek](068_08_lofegyverek.md)
+- [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
+
+### 6.9 [Vértek, páncélok](069_00_vertek_pancelok.md)
+
+- [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
+- [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
+- [Mozgásgátló Tényező (MGT)](069_03_MGT.md)
+- [Védett terület, Páncéldobás](069_04_vedett_terulet_panceldobas.md)
+- [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
+- [Páncél ára](069_06_pancel_ara.md)
+- [Páncél példák](069_07_pancel_peldak.md) ⚡
+
+---
+### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
+
+- [Célzó Érték számítása](071_tavharc_ce.md)
+- [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md)
+- [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
+- [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
+- [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
+- [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
+- [Területlövés](077_teruletloves.md)
+- [Távolsági fegyverek](078_tavharc_fegyverek.md)
+- [Példalövészet](079_01_tavharc_peldak.md) ⚡
+- [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
+
+---
+### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)
+
+- [Hatások](081_hatasok.md) 🔥
+- [Státuszok](082_statuszok.md) ✴️
+- [Harci helyzetek](083_harci_helyzetek_99.md) ✴️🗡️
+- [Mágikus Státuszok](084_magikus_statuszok_99.md) ✴️✨
+
+---
+### 9. [Pszí](090_pszi.md) 🌀
+
+#### 9.1 [Pszi diszciplínák](091_pszi_diszciplinak.md) 🌀
+
+---
+### 10. [Mágiarendszer](100_magiarendszer.md) ✨
+
+- [Mágiaelmélet](101_magiaelmelet.md)
+- [Mágia alapszabályok](102_magia_alapszabalyok.md)
+- [Aura, Mágia akarata, Mágiaellenállás](103_aura_magia_akarata_magiaellenallas.md)
+- [Varázslás módszerei](104_varazslas_modszerek.md)
+- [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)
+- [Mágikus Szférák és Arkánumaik](106_magikus_szferak_arkanumok.md)
+- [Mágikus Státuszok](107_magikus_statuszok.md)
+- **Arkánumok listája**
+  - [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
+  - Aura
+  - [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
+  - [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
+  - [Életerő manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
+  - [Időmágia](kepzettsegek.primer.arkanumok/idomagia.md)
+  - [Illúziók](kepzettsegek.primer.arkanumok/illuziok.md)
+  - [Külső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md)
+  - [Mentálmágia](kepzettsegek.primer.arkanumok/mentalmagia.md)
+  - [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md)
+  - [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)
+  - [Sors befolyásolás](kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
+  - [Sors érzékelés](kepzettsegek.primer.arkanumok/sors_erzekeles.md)
+  - [Térmágia](kepzettsegek.primer.arkanumok/termagia.md)
+  - [Természetes anyagok mágiája](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md)
+  - [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
+
+---
+### 11. [Papi mágia](110_papimagia.md)
+
+- [Papi mágia világképe](111_papi.magia.vilagkep.md)
+- [Papi mágia alapszabályai](112_papi.magia.alapszabalyok.md)
+- [Papi varázslatok](113_papi.varazslatok.md) ✨
+
+---
+### 12. [Slan misztérium](120_slan.md)
+
+ - [Slan Tradíció](053_02_slan_tradicio.md)
+ - [Slan fortélyok](046_slan_fortelyok.md)
+ - [Slan diszciplínák](121_slan_diszciplinak.md)
+ - [Chi harc képzettségei](122_chi_harc.md)
+ - [Slan fegyverek](123_slan_fegyverek.md)
+
+---
+### 13. [Varázstárgyak](130_varazstargyak.md)
+
+---
+### 14. [Gyógyítás, gyógyulás](140_gyogyitas_gyogyulas.md)
+
+---
+
+### 15. [Méregrendszer, Mérgek](150_meregrendszer.md)
+
+- [Méregkeverés szabályai](151_meregkeveres_szabalyai.md)
+- [Méregellenállás próba](152_meregellenallas.md)
+- [Méregérzékelés](153_meregerzekeles.md)
+- [Példamérgek](154_peldamergek.md) ⚡
+
+---
+### 16. [Szituációk](160_szituaciok.md)
+
+---
+## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
+
+---
+
+
+---## File: /Users/kaktusz/repo/szilank.code/md/000_attekintes.md
 # Áttekintés
 
 Üdvözlünk a `Szilánk` szerepjáték rendszer oldalain!
