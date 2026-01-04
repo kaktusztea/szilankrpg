@@ -132,7 +132,7 @@ with open(combined_file, 'w', encoding='utf-8') as outfile:
             for combined_dir_file in combined_dir_files:
                 if f"__szilank.{inject_point}" in os.path.basename(combined_dir_file):
                     with open(combined_dir_file, 'r', encoding='utf-8') as injectfile:
-                        cleaned_dpath = combined_dir_file.replace(repo_path + os.sep, '')
+                        cleaned_dpath = combined_dir_file.replace(tmp_dir + os.sep, '')
                         print(f"Adding combined dirfile: {cleaned_dpath} at inject point: {inject_point}")
                         outfile.write('## File: ' + cleaned_dpath + '\n\n')
                         outfile.write(injectfile.read())

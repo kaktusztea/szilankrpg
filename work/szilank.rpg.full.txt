@@ -162,6 +162,9 @@ tanítására - beleértve a nagy nyelvi modelleket (Large Language Models)!
 
 Jogtulajdonos: Fekete Bálint (Ailtas, Kaktusztea)
 
+A szabályrendszer eredeti, hiteles forrása ezen URL alatt található:
+https://github.com/kaktusztea/szilankrpg/
+
 ---
 This repository, along with its associated wiki page, the related repository,
 and all text or binary elements contained within, including their
@@ -174,6 +177,10 @@ The contents of this repository is FORBIDDEN for training machine learning model
 including but not limited to Large Language Models (LLMs)!
 
 Copyright holder: Bálint Fekete (Ailtas, Kaktusztea)
+
+The rulebooks's original, valid content is stored under this URL:
+https://github.com/kaktusztea/szilankrpg/
+
 
 
 ---
@@ -504,6 +511,8 @@ Mielőtt belevágunk a szabályok ismertetésébe, a karakteralkotás folyamatá
 Adunk pár hasznos tanácsot is  a szerepjáték során gyakran előforduló klasszikus hibák elkerülésére.
 
 Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiájáról, valamint a dokumentumban használt szimbólumokról. Végül egy játékot meggyorsító Harci linkgyűjteménnyel zárjuk a fejezetet.
+
+A szabályrendszer eredeti, hiteles forrása ezen URL alatt található: https://github.com/kaktusztea/szilankrpg/
 
 ### [Történet](001_tortenet.md)
 
@@ -2948,7 +2957,7 @@ A fent említett Arkánum adja a faj - eredetében gyökerező - misztikus képe
 
 Az egyes szinteknek lehetnek követelményei.
 
-⭕TODO⭕ `1 db` [varázslási módszert](https://github.com/kaktusztea/szilankrpg/blob/master/md/045_misztikus_magia_fortelyok.md#var%C3%A1zsl%C3%A1s-m%C3%B3dszerek) fel kell venni egy adott módszer pool-ból.
+⭕TODO⭕ `1 db` [varázslási módszert](045_misztikus_magia_fortelyok.md#var%C3%A1zsl%C3%A1s-m%C3%B3dszerek) fel kell venni egy adott módszer pool-ból.
 
 ---
 ## `5.` Faji fortélyok
@@ -2979,7 +2988,7 @@ Nem kötelező, de az adott fajnál jellemzően gyakran előforduló képzettsé
 
 ---
 ---
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.hatterek.faji.md
+## File: __szilank.hatterek.faji.md
 
 ## File: md/hatterek.faji/amund.md
 
@@ -4811,7 +4820,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 ---
 ---
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.faj.miszterium.md
+## File: __szilank.kepzettsegek.faj.miszterium.md
 
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_amund.md
 
@@ -5987,7 +5996,7 @@ Nagymester (12) 📖
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.primer.altalanos.md
+## File: __szilank.kepzettsegek.primer.altalanos.md
 
 ## File: md/kepzettsegek.primer.altalanos/akrobatika.md
 
@@ -7034,7 +7043,7 @@ Gyógyulási sebesség szorzó: `x3`.
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.primer.arkanumok.md
+## File: __szilank.kepzettsegek.primer.arkanumok.md
 
 ## File: md/kepzettsegek.primer.arkanumok/asztralmagia.md
 
@@ -7828,7 +7837,7 @@ xyz
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.primer.harci.md
+## File: __szilank.kepzettsegek.primer.harci.md
 
 ## File: md/kepzettsegek.primer.harci/alakzatharc.md
 
@@ -8028,7 +8037,7 @@ Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_0
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.primer.misztikus.md
+## File: __szilank.kepzettsegek.primer.misztikus.md
 
 ## File: md/kepzettsegek.primer.misztikus/aurafejlesztes.md
 
@@ -8327,7 +8336,7 @@ Tradíciótól függ.
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.szekunder.md
+## File: __szilank.kepzettsegek.szekunder.md
 
 ## File: md/kepzettsegek.szekunder/alcazas_alruha.md
 
@@ -12153,7 +12162,7 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 
 ---
 ---
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.altalanos.md
+## File: __szilank.fortelyok.altalanos.md
 
 ## File: md/fortelyok.altalanos/barati_allatok.md
 
@@ -13420,7 +13429,7 @@ Alapesetben ha gyorsabban akarsz kinyitni egy zárat, akkor [büntetés jár a p
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.erzekek.md
+## File: __szilank.fortelyok.erzekek.md
 
 ## File: md/fortelyok.erzekek/emberentuli_hallas.md
 
@@ -13672,7 +13681,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.harci.md
+## File: __szilank.fortelyok.harci.md
 
 ## File: md/fortelyok.harci/alakzat_tamado.md
 
@@ -15677,7 +15686,7 @@ Jellemzően NJK ismeret
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.kiemelt.md
+## File: __szilank.fortelyok.kiemelt.md
 
 ## File: md/fortelyok.kiemelt/analfabeta.md
 
@@ -16073,7 +16082,7 @@ Vak karakter indítása esetén a karakter **látás** érzékére permanens [É
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.magia.modszerek.md
+## File: __szilank.fortelyok.magia.modszerek.md
 
 ## File: md/fortelyok.magia.modszerek/aldas.md
 
@@ -16435,7 +16444,7 @@ xyz
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.szabad.md
+## File: __szilank.fortelyok.szabad.md
 
 ## File: md/fortelyok.szabad/alkudozas.md
 
@@ -17630,7 +17639,7 @@ Nem csak eljátszani tudsz dalokat, zenei műveket, hanem komponálni is.
 
 ---
 
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.tavharc.md
+## File: __szilank.fortelyok.tavharc.md
 
 ## File: md/fortelyok.tavharc/gyors_hajitas.md
 
@@ -30058,7 +30067,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ---
 ---
-## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.szituaciok.md
+## File: __szilank.szituaciok.md
 
 ## File: md/szituaciok/ajtostul_tamadni.md
 
