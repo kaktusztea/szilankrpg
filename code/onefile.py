@@ -36,6 +36,7 @@ def concat_md_files_in_dir(dir_path):
     with open(dir_combined, 'w', encoding='utf-8') as outfile:
         for md_file in md_files_abc:
             with open(md_file, 'r', encoding='utf-8') as infile:
+                outfile.write('## File: ' + md_file + '\n')
                 outfile.write(infile.read())
                 outfile.write('\n\n')  # Separate files by two newlines
     print(f"Created combined file for directory '{dirname}': {dir_combined}")
@@ -86,7 +87,6 @@ list_rootdir_files = get_md_files(path_rootdir, recursive=False)
 
 # Combine all subdir's .md files into separate combined files
 list_dirs = get_directories(path=path_rootdir, blacklist=blacklist)
-
 for dir_path in list_dirs:
     combined_file_path = concat_md_files_in_dir(dir_path)
     combined_dir_files.append(combined_file_path)
@@ -101,12 +101,16 @@ for f in os.listdir(tmp_dir):
 if os.path.exists(combined_file):
     os.remove(combined_file)
     print(f"Deleted existing combined file: {combined_file}")
+
+print(f"Creating combined markdown file: {combined_file}")
 with open(combined_file, 'w', encoding='utf-8') as outfile:
     # First add the root dir files
     for md_file in list_rootdir_files:
         with open(md_file, 'r', encoding='utf-8') as infile:
+            print(f"Adding file: {md_file}")
+            outfile.write('## File: ' + md_file + '\n')
             outfile.write(infile.read())
-            outfile.write('\n\n')  # Separate files by two newlines
+            outfile.write('\n\n---')  # Separate files by two newlines
         ## If infile is identical with a key from inject_points, inject all matching combined dir file here: "__szilank.<inject_point>*.md"
         basename = os.path.basename(md_file)
         if basename in inject_points:
@@ -114,6 +118,7 @@ with open(combined_file, 'w', encoding='utf-8') as outfile:
             for combined_dir_file in combined_dir_files:
                 if f"__szilank.{inject_point}" in os.path.basename(combined_dir_file):
                     with open(combined_dir_file, 'r', encoding='utf-8') as injectfile:
+                        print(f"Adding combined dirfile: {combined_dir_file} at inject point: {inject_point}")
                         outfile.write(injectfile.read())
                         outfile.write('\n\n')  # Separate files by two newlines
 
