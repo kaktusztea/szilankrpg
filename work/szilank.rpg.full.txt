@@ -145,7 +145,7 @@ Ailtas, Kaktusztea, 2005-2025 ([CC](LICENSE))
 
 
 ---
-
+---
 ## File: LICENSE
 
 Creative Commons Licenc
@@ -177,7 +177,7 @@ Copyright holder: Bálint Fekete (Ailtas, Kaktusztea)
 
 
 ---
-
+---
 ## File: md/szabalyrendszer.md
 
 ### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
@@ -492,7 +492,7 @@ Copyright holder: Bálint Fekete (Ailtas, Kaktusztea)
 
 
 ---
-
+---
 ## File: md/000_attekintes.md
 
 # Áttekintés
@@ -527,7 +527,7 @@ Ezt egy rövid áttekintés követi a rendszer struktúrájáról, filozófiáj�
 
 
 ---
-
+---
 ## File: md/001_tortenet.md
 
 ## A Szilánk rendszer fejlesztésének története
@@ -670,7 +670,7 @@ Bevezetjük a **`Szilánk RPG`** elnevezést a régi `km100` név elhagyásával
 
 
 ---
-
+---
 ## File: md/002_fejlesztok.md
 
 ## Fejlesztők, Tesztelők
@@ -702,7 +702,7 @@ Mittelholcz Iván
 
 
 ---
-
+---
 ## File: md/003_bevezeto.md
 
 ## Bevezető
@@ -725,7 +725,7 @@ A rendszer jól adaptálható nem-fantasy, modern világokra is új, ad-hoc [Sza
 
 
 ---
-
+---
 ## File: md/004_alrendszerek.md
 
 ## A Szilánk RPG alrendszerei
@@ -816,7 +816,7 @@ Egy szubjektív lista, hogy mely alrendszerek adják a `Szilánk` "egyedi DNS"-�
 
 
 ---
-
+---
 ## File: md/005_tanacsok.md
 
 ## Tanácsok
@@ -862,7 +862,7 @@ Ha nem jut eszedbe egy szabály, ne rakj még egy púpot szegény KM hátára az
 
 
 ---
-
+---
 ## File: md/006_szimbolumok_jelzok.md
 
 ## Szimbólumok, jelzők
@@ -926,7 +926,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 
 ---
-
+---
 ## File: md/007_harci_linkek.md
 
 ## Harci linkek játékalkalmakra
@@ -988,7 +988,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 
 ---
-
+---
 ## File: md/008_seged_dokumentumok.md
 
 ## Segéd dokumentumok játékalkalmakhoz
@@ -1009,7 +1009,7 @@ Itt nyomtatható segédlet dokumentumokat találsz, amelyek a kaland során jól
 
 
 ---
-
+---
 ## File: md/010_00_karakteralkotas.md
 
 # Karakteralkotás
@@ -1063,7 +1063,7 @@ Eljött az ideje, hogy karaktert alkossunk.
 
 
 ---
-
+---
 ## File: md/010_01_karakteralkotas_bevezeto.md
 
 ## Karakteralkotás bevezető
@@ -1209,7 +1209,7 @@ Az elvont és színesítő ismeretek felől haladunk a "tápos" irányba. A harc
 
 
 ---
-
+---
 ## File: md/010_02_karakteralkoto_ods.md
 
 ## Karakteralkotó ods
@@ -1236,7 +1236,7 @@ A `KP` költések, `HM/CM` limit, Harcmodorok, Kétkezes Harc, Mesterfegyver bó
 
 
 ---
-
+---
 ## File: md/010_03_00_karakter_jellemzoi.md
 
 ## A karakter jellemzői
@@ -1256,7 +1256,7 @@ A `KP` költések, `HM/CM` limit, Harcmodorok, Kétkezes Harc, Mesterfegyver bó
 
 
 ---
-
+---
 ## File: md/010_03_01_kalandozok.md
 
 ## Kalandozók
@@ -1289,7 +1289,7 @@ Kalandozóként, vagy [Őrszemként](010_03_02_orszem_karakterek.md) a karakter 
 
 
 ---
-
+---
 ## File: md/010_03_02_orszem_karakterek.md
 
 ## Őrszem karakterek
@@ -1315,7 +1315,7 @@ Míg a Kalandozók lételeme a mozgás, az Őrszem karakter pont ennek statikus 
 
 
 ---
-
+---
 ## File: md/010_03_03_elotortenet.md
 
 ## Előtörténet, személyiség
@@ -1329,7 +1329,7 @@ Mikor karaktert alkotunk (remélhetőleg) nem pusztán egy számhalmazt hozunk l
 
 
 ---
-
+---
 ## File: md/010_03_04_szemelyisegek.md
 
 ## Személyiség, szociális jellemzők
@@ -1349,7 +1349,7 @@ Az imént felsorolt jellemzők egy részét csokorba szedtük és "ingyenes", ú
 
 
 ---
-
+---
 ## File: md/010_03_05_kulso.md
 
 ## Külső megjelenés és hatásai
@@ -1365,7 +1365,7 @@ Különböző fajokat a [Faj Hátterek](021_faj_hatterek.md) szekcióban válasz
 
 
 ---
-
+---
 ## File: md/010_03_06_felszereles.md
 
 ## Felszerelés
@@ -1407,7 +1407,7 @@ Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, po
 
 
 ---
-
+---
 ## File: md/010_04_tsz_szintlepes.md
 
 ## Tapasztalati szint, szintlépés
@@ -1464,7 +1464,7 @@ Irányelvek karakter szintekre:
 
 
 ---
-
+---
 ## File: md/010_05_00_tulajdonsagok.md
 
 ## Tulajdonságok
@@ -1494,7 +1494,7 @@ Irányelvek karakter szintekre:
 
 
 ---
-
+---
 ## File: md/010_05_01_00_tulajdonsagok_listaja.md
 
 ## Tulajdonságok listája
@@ -1521,7 +1521,7 @@ A későbbiekben ezek a számok fogják alapját adni a karakter más, összetet
 
 
 ---
-
+---
 ## File: md/010_05_01_01_ero.md
 
 ## ⚪ Erő
@@ -1587,7 +1587,7 @@ Erő 1:1 beleszámít az
 
 
 ---
-
+---
 ## File: md/010_05_01_02_edzettseg.md
 
 ## ⚪ Edzettség
@@ -1653,7 +1653,7 @@ Mutatja kitartásodat, hogy mennyire vagy képes elviselni a tartós fizikai meg
 
 
 ---
-
+---
 ## File: md/010_05_01_03_ugyesseg.md
 
 ## ⚪ Ügyesség
@@ -1711,7 +1711,7 @@ Jelzi mozgásod összehangoltságát, kifinomultságát, precizitását, valamin
 
 
 ---
-
+---
 ## File: md/010_05_01_04_gyorsasag.md
 
 ### ⚪ Gyorsaság
@@ -1771,7 +1771,7 @@ Haladási sebességedet, reflexeid gyorsaságát, reakcióidődet is ezzel a Tul
 
 
 ---
-
+---
 ## File: md/010_05_01_05_intelligencia.md
 
 ## ⚪ Intelligencia
@@ -1835,7 +1835,7 @@ Jelzi szellemi felkészültségedet mind helyzetfelismerés, mind problémamegol
 
 
 ---
-
+---
 ## File: md/010_05_01_06_emlekezet.md
 
 ## ⚪ Emlékezet
@@ -1902,7 +1902,7 @@ Memóriád fejlettségét mutatja, azt hogy mekkora tehetséged van lexikális i
 
 
 ---
-
+---
 ## File: md/010_05_01_07_onuralom.md
 
 ## ⚪ Önuralom
@@ -1982,7 +1982,7 @@ Fontos megjegyezni: az Önuralom nem összekeverendő a neveltetéssel. Példáu
 
 
 ---
-
+---
 ## File: md/010_05_01_08_erzekenyseg.md
 
 ## ⚪ Érzékenység
@@ -2076,7 +2076,7 @@ Az érzéki csábítás is komoly hasznát látja az Érzékenységnek, tovább�
 
 
 ---
-
+---
 ## File: md/010_05_02_tulajdonsagpontok_elkoltese.md
 
 ## Tulajdonságpontok elköltése
@@ -2140,7 +2140,7 @@ Hisszük, hogy nem kell minden jellemzőt számszerűsíteni és a fentiek rész
 
 
 ---
-
+---
 ## File: md/010_05_03_tulajdonsagok_bonuszai.md
 
 ## Tulajdonságok bónuszai
@@ -2210,7 +2210,7 @@ Emlékezet
 
 
 ---
-
+---
 ## File: md/010_05_04_tulajdonsagproba.md
 
 ## Tulajdonságpróba
@@ -2372,7 +2372,7 @@ Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába kategóri
 
 
 ---
-
+---
 ## File: md/010_06_szilank.md
 
 ## Szilánk
@@ -2500,7 +2500,7 @@ Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onna
 
 
 ---
-
+---
 ## File: md/010_07_kp.md
 
 ## Karakteralkotó pontok (KP)
@@ -2551,7 +2551,7 @@ Az alábbi [Kiemelt fortélyok](041_kiemelt_fortelyok.md) után további `KP` ja
 
 
 ---
-
+---
 ## File: md/010_08_00_kp_koltesevel_novelt_jellemzok.md
 
 ## KP költésével növelt jellemzők
@@ -2570,7 +2570,7 @@ Az alábbi [Kiemelt fortélyok](041_kiemelt_fortelyok.md) után további `KP` ja
 
 
 ---
-
+---
 ## File: md/010_08_01_hm_cm_99.md
 
 ## Harcérték Módosító (HM) / Célzóérték Módosító (CM)
@@ -2585,7 +2585,7 @@ Bővebben lásd a Harcrendszer [HM, CM fejezetében](062_04_hm_cm.md).
 
 
 ---
-
+---
 ## File: md/010_08_02_kepzettsegek_99.md
 
 ## Képzettségek
@@ -2600,7 +2600,7 @@ Lásd a [Képzettségrendszer](030_00_kepzettsegrendszer.md) főfejezetet.
 
 
 ---
-
+---
 ## File: md/010_08_03_fortelyok_99.md
 
 ## Fortélyok
@@ -2615,7 +2615,7 @@ Lásd a [Fortélyok](040_fortelyok.md) főfejezetet.
 
 
 ---
-
+---
 ## File: md/010_09_primer_szekunder_ismeretek.md
 
 ## Primer és Szekunder ismeretek kategóriái
@@ -2665,7 +2665,7 @@ Lásd a [Szabad Fortélyok](042_szabad_fortelyok.md) fejezetet.
 
 
 ---
-
+---
 ## File: md/010_10_00_szarmaztatott_ertekek.md
 
 ## Származtatott értékek
@@ -2690,7 +2690,7 @@ Egyes értékek más, már kiszámolt értékekből származtatva kerülnek megh
 
 
 ---
-
+---
 ## File: md/010_10_01_ep_fp.md
 
 ## Életerő pont (ÉP)
@@ -2725,7 +2725,7 @@ FP gyógyulása:
 
 
 ---
-
+---
 ## File: md/010_10_02_harcertekek_99.md
 
 ## Harcértékek
@@ -2748,7 +2748,7 @@ Lásd a [Harcrendszer](060_00_harcrendszer.md) fejezetet.
 
 
 ---
-
+---
 ## File: md/010_10_03_manover_pontok_99.md
 
 ## Manőver Pontok (MP)
@@ -2767,7 +2767,7 @@ Leírásukat lásd a [Manőver - Manőver Pontok](066_02_manover_pontok.md) feje
 
 
 ---
-
+---
 ## File: md/010_10_04_magiaellenallas.md
 
 ## Mágiaellenállás
@@ -2786,7 +2786,7 @@ Lásd a [Mágiarendszer](100_magiarendszer.md) fejezetet!
 
 
 ---
-
+---
 ## File: md/010_10_05_meregellenallas.md
 
 ## Méregellenállás
@@ -2803,7 +2803,7 @@ Bővebben lásd a [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md
 
 
 ---
-
+---
 ## File: md/010_11_njk.md
 
 ## Nem játékos karakterek
@@ -2827,7 +2827,7 @@ Egy egyszerű paraszt öregkorára elérheti a `5-6.` Tapasztalati Szintet is. E
 
 
 ---
-
+---
 ## File: md/010_12_peldakarakter_megalkotasa.md
 
 ## Példakarakter megalkotása
@@ -2841,7 +2841,7 @@ Egy egyszerű paraszt öregkorára elérheti a `5-6.` Tapasztalati Szintet is. E
 
 
 ---
-
+---
 ## File: md/020_hattererek.md
 
 # Hátterek
@@ -2860,7 +2860,7 @@ A Hátterek ingyenesen felvehető, változatos jellemzők.
 
 
 ---
-
+---
 ## File: md/021_faj_hatterek.md
 
 ## Faj Hátterek
@@ -2978,6 +2978,8 @@ Nem kötelező, de az adott fajnál jellemzően gyakran előforduló képzettsé
 
 
 ---
+---
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.hatterek.faji.md
 
 ## File: md/hatterek.faji/amund.md
 
@@ -3026,6 +3028,8 @@ A Pszít nem képesek elsajátítani.
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/anatyda.md
 
 ## Anatyda
@@ -3064,6 +3068,8 @@ TODO⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/buzzgoblin.md
 
 ## Buzzgoblin
@@ -3102,6 +3108,8 @@ TODO⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/dzsenn.md
 
 ## Dzsenn
@@ -3146,6 +3154,8 @@ Nincs ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/elar.md
 
 ## Elar
@@ -3188,6 +3198,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/elf.md
 
 ## Elf
@@ -3236,6 +3248,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/ember_deli.md
 
 ## Ember (Déli)
@@ -3278,6 +3292,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/ember_eszaki.md
 
 ## Ember (Északi)
@@ -3320,6 +3336,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/erdopille.md
 
 ## Erdőpille
@@ -3362,6 +3380,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/feenhar.md
 
 ## Feenhar
@@ -3404,6 +3424,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/gnom.md
 
 ## Gnóm
@@ -3450,6 +3472,8 @@ Futásnál, úszásnál, gyaloglásnál `-2` jár a Gyorsaságpróbáira.
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/goblin.md
 
 ## Goblin
@@ -3495,6 +3519,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/gyikleny.md
 
 ## Gyíklény (snil)
@@ -3537,6 +3563,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/homano.md
 
 ## Hómanó
@@ -3579,6 +3607,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/homoki_elf.md
 
 ## Homoki elf
@@ -3621,6 +3651,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/kevert_faju.md
 
 ## Kevert fajú
@@ -3687,6 +3719,8 @@ A két faj ajánlott képzettségei.
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/khal.md
 
 ## Khál
@@ -3737,6 +3771,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/kineta.md
 
 ## Kineta
@@ -3779,6 +3815,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/kobold.md
 
 ## Kobold
@@ -3821,6 +3859,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/kyr.md
 
 ## Kyr
@@ -3861,6 +3901,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/ork.md
 
 ## Ork
@@ -3902,6 +3944,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/saskaharcos.md
 
 ## Sáskaharcos
@@ -3944,6 +3988,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/torpe.md
 
 ## Törpe
@@ -3991,6 +4037,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/tuzkobold.md
 
 ## Tűzkobold
@@ -4033,6 +4081,8 @@ TODO ⭕
 ---
 
 
+---
+---
 ## File: md/hatterek.faji/udvari_ork.md
 
 ## Udvari ork
@@ -4074,6 +4124,8 @@ TODO ⭕
 ---
 
 
+---
+---
 
 
 ---
@@ -4173,7 +4225,7 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további szinesítő eleme
 
 
 ---
-
+---
 ## File: md/023_karma_hatterek.md
 
 ## Karma Hátterek
@@ -4466,7 +4518,7 @@ Mágikus karma.
 
 
 ---
-
+---
 ## File: md/030_00_kepzettsegrendszer.md
 
 # Képzettségrendszer
@@ -4495,7 +4547,7 @@ Mikor a játékos megalkotja karakterét, amellyel Yn3v világán kalandozni fog
 
 
 ---
-
+---
 ## File: md/030_01_kepzettseglista.md
 
 ## Képzettséglista
@@ -4758,6 +4810,8 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 
 ---
+---
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.faj.miszterium.md
 
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_amund.md
 
@@ -4826,6 +4880,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_anatyda.md
 
 ## Faj misztérium: Anatyda
@@ -4871,6 +4927,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_buzzgoblin.md
 
 ## Faj misztérium: Buzzgoblin
@@ -4915,6 +4973,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_dzsenn.md
 
 ## Faj misztérium: Dzsenn
@@ -4999,6 +5059,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_elar.md
 
 ## Faj misztérium: Elar
@@ -5043,6 +5105,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_elf.md
 
 ## Faj misztérium: Elf
@@ -5088,6 +5152,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_ember_deli.md
 
 ## Faj misztérium: Ember (déli)
@@ -5136,6 +5202,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_ember_eszaki.md
 
 ## Faj misztérium: Ember (Északi)
@@ -5184,6 +5252,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_erdopille.md
 
 ## Faj misztérium: Erdőpille
@@ -5228,6 +5298,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_feenhar.md
 
 ## Faj misztérium: Feenhar
@@ -5272,6 +5344,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_gnom.md
 
 ## Faj misztérium: Gnóm
@@ -5316,6 +5390,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_goblin.md
 
 ## Faj misztérium: Goblin
@@ -5357,6 +5433,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_gyikleny.md
 
 ## Faj misztérium: Gyíklény
@@ -5401,6 +5479,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_homano.md
 
 ## Faj misztérium: Hómanó
@@ -5445,6 +5525,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_homoki_elf.md
 
 ## Faj misztérium: Homoki elf
@@ -5489,6 +5571,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_khal.md
 
 ## Faj misztérium: Khál
@@ -5533,6 +5617,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_kineta.md
 
 ## Faj misztérium: Kineta
@@ -5577,6 +5663,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_kobold.md
 
 ## Faj misztérium: Kobold
@@ -5621,6 +5709,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_kyr.md
 
 ## Faj misztérium: Kyr
@@ -5662,6 +5752,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_ork.md
 
 ## Faj misztérium: Ork
@@ -5707,6 +5799,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_saskaharcos.md
 
 ## Faj misztérium: Sáskaharcos
@@ -5751,6 +5845,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_torpe.md
 
 ## Faj misztérium: Törpe
@@ -5796,6 +5892,8 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_tuzkobold.md
 
 ## Faj misztérium: Tűzkobold
@@ -5840,6 +5938,8 @@ Nagymester (12) 📖
 ```
 x
 
+---
+---
 ## File: md/kepzettsegek.faj.miszterium/faj_miszterium_udvari_ork.md
 
 ## Faj misztérium: Udvari ork
@@ -5881,9 +5981,13 @@ Nagymester (12) 📖
 ```
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.primer.altalanos.md
 
 ## File: md/kepzettsegek.primer.altalanos/akrobatika.md
 
@@ -5965,6 +6069,8 @@ Mesterbónusz: Bármilyen magasból leeshetsz, nem gyorsulsz egy idő után és 
 - Szakadékba ugrani és elkapni a `10+ méterre` levő liánt sérülés nélkül.
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/befolyasolas.md
 
 ## 🔵 Befolyásolás
@@ -6048,6 +6154,8 @@ Biztos tudás erejű Aurád (nem dohatsz rá) hatása érvényesül a célszemé
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/emberismeret.md
 
 ## 🔵 Emberismeret
@@ -6171,6 +6279,8 @@ Alapvető nem leplezett személyiségvonások felismerése.
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/eszleles.md
 
 ## 🔵 Észlelés
@@ -6279,6 +6389,8 @@ Az ilyen nehéz próbákat szinte mindig az **Érzékenység** (Intuíció) Tula
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/fajdalomtures.md
 
 ## 🔵 Fájdalomtűrés
@@ -6358,6 +6470,8 @@ Könnyeden kacagni, miközben karodat egy rozsdás, tompa fűrésszel vágják l
 - [Harci láz](../fortelyok.harci/harci_laz.md) (lásd a leírását!)
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/hadaszat.md
 
 ## 🔵 Hadászat
@@ -6450,6 +6564,8 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
 
 ## 🔵 Lopakodás/rejtőzés
@@ -6616,6 +6732,8 @@ Kapcsolódik: [Láthatatlan](../065_01_06_szemelyhez_kotott.md#láthatatlanul)
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/meregkeveres.md
 
 ## 🔵 Méregkeverés
@@ -6674,6 +6792,8 @@ A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek c�
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `+2 dobás bónusz / fok`
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/nyomozas.md
 
 ## 🔵 Nyomozás
@@ -6781,6 +6901,8 @@ Intelligencia, Emlékezet
 - Töredékjegyzetekből és szétszórt dokumentumokból képes vagy rekonstruálni egy teljes összeesküvés történetét.
 
 
+---
+---
 ## File: md/kepzettsegek.primer.altalanos/orvoslas.md
 
 ## 🔵 Orvoslás
@@ -6906,9 +7028,13 @@ Gyógyulási sebesség szorzó: `x3`.
 - ⭕TODO⭕
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.primer.arkanumok.md
 
 ## File: md/kepzettsegek.primer.arkanumok/asztralmagia.md
 
@@ -6921,6 +7047,8 @@ A **Lélek** szféra alá tartozó arkánum.
 xyz
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/elemi_magia.md
 
 ## Elemi mágia arkánum
@@ -7238,6 +7366,8 @@ Magas szinten ennél jönne elő pl. a tűzalak, vízalak, földalak, légies al
 ⭕(ez azért jó, mert pl. a Vulgármágiában van sima tűzalak, ami könnyebb is, de célvarázslat, míg itt sokkal szabadabb a varázsló, de nagyobb a varázslat költsége.)
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/eletero_manipulalasa.md
 
 ## Életerő Manipulálása arkánum
@@ -7270,6 +7400,8 @@ Az **Életerő** szféra alá tartozó arkánum.
 ⭕Rontás módszerrel?⭕
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/idezes_belso_sikok.md
 
 ## Belső síkok lényeinek idézése arkánum
@@ -7283,6 +7415,8 @@ Az **Idézés** szféra alá tartozó arkánum.
 - természeti szellemek
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md
 
 ## Külső síkok lényeinek idézése arkánum
@@ -7393,6 +7527,8 @@ A démonoknak  van egy elég nagy SFÉ-je sima fegyver ellen, de nem sebezhetetl
 Ha lejár, akkor a kapcsolat megszakad, a gyertya kialvása nem okozza a démon halálát.
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/idomagia.md
 
 ## Időmágia arkánum
@@ -7404,6 +7540,8 @@ Az **Téridő** szféra alá tartozó arkánum.
 xyz
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/illuziok.md
 
 ## Illúziók arkánum
@@ -7434,6 +7572,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/mentalmagia.md
 
 ## Mentálmágia arkánum
@@ -7445,6 +7585,8 @@ A **Lélek** szféra alá tartozó arkánum.
 xyz
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/metamagia.md
 
 ## Metamágia arkánum
@@ -7454,6 +7596,8 @@ A **Mágia** szféra alá tartozó arkánum.
 [STUDY: Metamágia](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metamagia)
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/nekromancia.md
 
 ## Nekromancia arkánum
@@ -7531,6 +7675,8 @@ Képzetlenség esetén a varázslat nem alkalmazható. Legalább `15%`-os szint 
 |    10     | Apró darabokra zúzott test egyesítése (Kb. 2-5 perc)                                                                            |
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/sors_befolyasolas.md
 
 ## Sors befolyásolás arkánum
@@ -7583,6 +7729,8 @@ Tehát:
 
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/sors_erzekeles.md
 
 ## Sors érzékelése arkánum
@@ -7592,6 +7740,8 @@ Az **Sors** szféra alá tartozó arkánum.
 xyz
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/termagia.md
 
 ## Térmágia arkánum
@@ -7603,6 +7753,8 @@ Az **Téridő** szféra alá tartozó arkánum.
 xyz
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md
 
 ## Természetes anyagok mágiája arkánum
@@ -7649,6 +7801,8 @@ Ebben az esetben a ruha akkor fejtette ki hatását, amikor fő ideája (hogy vi
 
 
 
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md
 
 ## Természeti jelenségek arkánum
@@ -7668,9 +7822,13 @@ xyz
 xyz
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.primer.harci.md
 
 ## File: md/kepzettsegek.primer.harci/alakzatharc.md
 
@@ -7714,6 +7872,8 @@ Ha tartjátok az alakzatot, a mentális és asztrális hatások ellen `+9` jár 
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.harci/harcmodor.md
 
 ## 🔵 Harcmodor 🔁
@@ -7767,6 +7927,8 @@ Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_0
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.harci/magikus_celzas.md
 
 ## 🔵 Mágikus célzás
@@ -7807,6 +7969,8 @@ Ez egy [Primer (harci) képzettség](../010_09_primer_szekunder_ismeretek.md). E
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.primer.harci/tavolsagi_harcmodor.md
 
 ## 🔵 Távolsági harcmodor
@@ -7858,9 +8022,13 @@ Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_0
 ---
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.primer.misztikus.md
 
 ## File: md/kepzettsegek.primer.misztikus/aurafejlesztes.md
 
@@ -7934,6 +8102,8 @@ Intelligencia, Érzékenység
 - ⭕TODO⭕
 
 
+---
+---
 ## File: md/kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md
 
 ## 🔵 Ősi nyelv ismerete 🔁
@@ -8029,6 +8199,8 @@ Emlékezet
 - ⭕TODO⭕
 
 
+---
+---
 ## File: md/kepzettsegek.primer.misztikus/osszpontositas.md
 
 ## 🔵 Összpontosítás
@@ -8119,6 +8291,8 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 - ⭕TODO⭕
 
 
+---
+---
 ## File: md/kepzettsegek.primer.misztikus/pszi_hasznalat.md
 
 ## 🔵 Pszí használat
@@ -8132,6 +8306,8 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 - [Pszí kiterjesztés](../fortelyok.misztikus/pszi_kiterjesztes.md) fortély
 
 
+---
+---
 ## File: md/kepzettsegek.primer.misztikus/tradicio.md
 
 ## 🔵 Tradíció
@@ -8145,9 +8321,13 @@ A Tradíciók összefoglaló leírását és listáját lásd annak a saját fej
 Tradíciótól függ.
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.kepzettsegek.szekunder.md
 
 ## File: md/kepzettsegek.szekunder/alcazas_alruha.md
 
@@ -8278,6 +8458,8 @@ Enyhíti: [Százarcú](../fortelyok.altalanos/szazarcu.md) fortély
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/alkimia.md
 
 ## 🔵 Alkímia
@@ -8382,6 +8564,8 @@ Rosszul felszerelt labor, műszerek hiánya: `[+3; +9]`
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/csapdaallitas.md
 
 ## 🔵 Csapdaállítás
@@ -8469,6 +8653,8 @@ Intelligencia, Önuralom
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/eloadomuveszet.md
 
 ## 🔵 Előadóművészet
@@ -8574,6 +8760,8 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/ertekbecsles.md
 
 ## 🔵 Értékbecslés
@@ -8668,6 +8856,8 @@ Emlékezet, Intelligencia
 - Tárgy kora
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/etikett.md
 
 ## 🔵 Etikett
@@ -8751,6 +8941,8 @@ Egy tor0ni nemesnek - kiről egy napja nyílt titok, hogy lebukott ereni ügynö
 - [Eszmélet: Kábultság Státusz](../082_statuszok.md#️-eszmélet-2-kábultság) módosítói
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/hajozas.md
 
 ## 🔵 Hajózás ⚓
@@ -8854,6 +9046,8 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/kepzomuveszet.md
 
 ## 🔵 Képzőművészet
@@ -8956,6 +9150,8 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/kezmuvesseg.md
 
 ## 🔵 Kézművesség
@@ -9095,6 +9291,8 @@ Igen gyakori a [csoportos képzettségpróba](../030_06_02_csoportos_kepzettsegp
 - Rövid határidő: `+3`
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/kvantikum.md
 
 ## 🔵 Kvantikum
@@ -9206,6 +9404,8 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/leglovaglas.md
 
 ## 🔵 Léglovaglás
@@ -9299,6 +9499,8 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
     - Vihar, orkán: `+6`
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/lexikum.md
 
 ## 🔵 Lexikum
@@ -9421,6 +9623,8 @@ Próba dobható.
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/lopas.md
 
 ## 🔵 Lopás
@@ -9524,6 +9728,8 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/lovaglas.md
 
 ## 🔵 Lovaglás
@@ -9612,6 +9818,8 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 - Más fajú földi hátas esetén: [Hátas](../fortelyok.szabad/hatas.md) Szabad Fortély szükséges
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/maszas.md
 
 ## 🔵 Mászás
@@ -9759,6 +9967,8 @@ Hogy egy karakter hányas `Erő` tulajdonsággal képes még továbbmászni, az 
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/muveszetismeret.md
 
 ## 🔵 Művészetismeret
@@ -9859,6 +10069,8 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/nyelvtanulas.md
 
 ## 🔵 Nyelvtanulás
@@ -9997,6 +10209,8 @@ Emlékezet, Érzékenység.
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/szerencsejatek.md
 
 ## 🔵 Szerencsejáték
@@ -10089,6 +10303,8 @@ Szerencsejáték
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/termeszetjaras.md
 
 ## 🔵 Természetjárás
@@ -10201,6 +10417,8 @@ Fontos, hogy a képzettség nem helyettesítheti a szerepjátszást, csak támpo
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/vajakossag.md
 
 ## 🔵 Vajákosság
@@ -10299,6 +10517,8 @@ Emlékezet, Intelligencia
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/varosi_jartassag.md
 
 ## 🔵 Városi jártasság
@@ -10415,6 +10635,8 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 ---
 
 
+---
+---
 ## File: md/kepzettsegek.szekunder/zarnyitas.md
 
 ## 🔵 Zárnyitás
@@ -10509,6 +10731,8 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 ---
 
 
+---
+---
 
 
 ---
@@ -10534,7 +10758,7 @@ A [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md) féle f
 
 
 ---
-
+---
 ## File: md/030_03_kepzettsegszint_skala.md
 
 ## Képzettségszint skála
@@ -10558,7 +10782,7 @@ A képzettség szint értéke a karakter életútja során - a megszerzett tapas
 
 
 ---
-
+---
 ## File: md/030_04_kepzettsegek_fejlesztese.md
 
 ## Képzettségek fejlesztése
@@ -10612,7 +10836,7 @@ A `9.`, `12. és 15. szintek` kiemelt mérföldkövek a képzettségek esetében
 
 
 ---
-
+---
 ## File: md/030_05_kepzettsegszintek_kp_igenye.md
 
 ## Képzettségszintek KP igénye
@@ -10651,7 +10875,7 @@ Az egyes képzettségszintek `KP` igénye az alábbi táblázatban található:
 
 
 ---
-
+---
 ## File: md/030_06_01_kepzettsegproba.md
 
 # Képzettségpróba
@@ -10984,7 +11208,7 @@ Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbá
 
 
 ---
-
+---
 ## File: md/030_06_02_csoportos_kepzettsegproba.md
 
 # Csoportos képzettségpróba
@@ -11074,7 +11298,7 @@ Ezt követően a parti "összedobja, amije van", minden részfeladatra jelentkez
 
 
 ---
-
+---
 ## File: md/030_06_03_csoportosan_vegezheto_kepzettsegek.md
 
 ## Csoportosan végezhető képzettségek
@@ -11106,7 +11330,7 @@ A [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) fejezet
 
 
 ---
-
+---
 ## File: md/030_07_kepzettsegproba_hatranyok.md
 
 ## Képzettségpróba hátrányok
@@ -11190,7 +11414,7 @@ Automatikus kudarc
 
 
 ---
-
+---
 ## File: md/030_08_01_kepzettsegek_fortelyok_kapcsolata.md
 
 ## Képzettségek és fortélyok kapcsolata
@@ -11365,7 +11589,7 @@ Alap: 6 + 1 + 2(bónusz)
 
 
 ---
-
+---
 ## File: md/030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md
 
 ## Általános fortélyok képzettségkiterjesztés listája
@@ -11383,7 +11607,7 @@ Alap: 6 + 1 + 2(bónusz)
 
 
 ---
-
+---
 ## File: md/030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md
 
 ## Harci fortélyok képzettségkiterjesztés listája
@@ -11403,7 +11627,7 @@ Alap: 6 + 1 + 2(bónusz)
 
 
 ---
-
+---
 ## File: md/030_09_bazis_kepzettsegek.md
 
 ## Bázis képzettségek
@@ -11441,7 +11665,7 @@ Vannak bizonyos bázis képzettségek, amelyek alaptudását sok [Szabad Fortél
 
 
 ---
-
+---
 ## File: md/030_10_kezmuves_targyak_ideai.md
 
 ## Kézműves tárgyak Ideái
@@ -11507,7 +11731,7 @@ Négy jellemző minőségi (Idea) szintet különböztetünk meg, amelyek megadj
 
 
 ---
-
+---
 ## File: md/040_fortelyok.md
 
 ## Fortélyok
@@ -11562,7 +11786,7 @@ Erről a [Képzettségek és fortélyok kapcsolata](030_08_01_kepzettsegek_forte
 
 
 ---
-
+---
 ## File: md/041_kiemelt_fortelyok.md
 
 ## Kiemelt Fortélyok
@@ -11596,7 +11820,7 @@ A Kiemelt Fortélyok alá három, egyedi ismeret tartozik, amelyek nem sorolhat�
 
 
 ---
-
+---
 ## File: md/042_szabad_fortelyok.md
 
 ## Szabad Fortélyok
@@ -11711,7 +11935,7 @@ KM adja extraként olyan kalandban történt megpróbáltató esemény után, am
 
 
 ---
-
+---
 ## File: md/043_altalanos_fortelyok.md
 
 ## Általános fortélyok
@@ -11792,7 +12016,7 @@ Az Érzék-, Alvilági és Fizikai-, Tudományos- és Befolyástól védő fort�
 
 
 ---
-
+---
 ## File: md/044_harci_fortelyok.md
 
 ## Harci fortélyok
@@ -11880,7 +12104,7 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 
 
 ---
-
+---
 ## File: md/045_misztikus_magia_fortelyok.md
 
 ## Misztikus és mágia fortélyok
@@ -11903,7 +12127,7 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 
 
 ---
-
+---
 ## File: md/046_slan_fortelyok.md
 
 ## Slan fortélyok
@@ -11928,6 +12152,8 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 
 
 ---
+---
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.altalanos.md
 
 ## File: md/fortelyok.altalanos/barati_allatok.md
 
@@ -11942,6 +12168,8 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/biztos_kezu_maszo.md
 
 ## 🟣 Biztos kezű mászó (1)
@@ -11957,6 +12185,8 @@ Ritkán csúszik meg a kezed.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/csabitas.md
 
 ## 🟣 Csábítás
@@ -11975,6 +12205,8 @@ A másik nem elcsábítása, vagy a rosszindulatú csábítás felismerése.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/csomozas.md
 
 ## Csomózás / Kötelékből szabadulás - fortély pár
@@ -12035,6 +12267,8 @@ Könnyebben kibújsz kötelékeidből.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/eber_alvo.md
 
 ## 🟣 Éber alvó (1)
@@ -12048,6 +12282,8 @@ Könnyebben felriadsz gyanús zajokra.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/elettan.md
 
 ## 🟣 Élettan (1)
@@ -12079,6 +12315,8 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/epiteszet.md
 
 ## 🟣 Építészet (2)
@@ -12108,6 +12346,8 @@ A speciálisabb fajokhoz külön Szabad Fortély kell a [Különleges faj boncol
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/fakir.md
 
 ## 🟣 Fakír (1)
@@ -12125,6 +12365,8 @@ Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer.alt
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/futas.md
 
 ## 🟣 Futás (2)
@@ -12163,6 +12405,8 @@ Rövidtávfutásnál
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/gyongyhalasz.md
 
 ## 🟣 Gyöngyhalász (1)
@@ -12188,6 +12432,8 @@ A víz mélye a te közeged, ritkábban kell feljönnöd levegőért.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/hamisitas.md
 
 ## 🟣 Hamisítás (1)
@@ -12220,6 +12466,8 @@ Jól tudsz másolni műkincseket, műtárgyakat. Képes vagy egyes művészeti �
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/hangutanzas.md
 
 ## 🟣 Hangutánzás (2)
@@ -12248,6 +12496,8 @@ Nyelvi ismeretek, Kultúrkörök, faji különbségek nehezítenek!
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/hazudozas.md
 
 ## 🟣 Hazudozás
@@ -12278,6 +12528,8 @@ Téged próbálnak átverni.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/kereses_rejtes.md
 
 ## 🟣 Keresés/rejtés (2)
@@ -12314,6 +12566,8 @@ Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben me
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/kezmuves_fegyverkovacs.md
 
 ## 🟣 Kézműves: Fegyverkovács (2)
@@ -12345,6 +12599,8 @@ Fém ötvözetekből kalapálsz ki fegyvereket. Páncélokat NEM.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/kezmuves_pancelkovacs.md
 
 ## 🟣 Kézműves: Páncélkovács (2)
@@ -12376,6 +12632,8 @@ Fém ötvözetekből kalapálsz páncélokat. Fegyvereket NEM.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/kitartas.md
 
 ## 🟣 Kitartás (1)
@@ -12389,6 +12647,8 @@ Kemény vagy mint egy rozsomák.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/kocsihajtas.md
 
 ## 🟣 Kocsihajtás (2)
@@ -12427,6 +12687,8 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/kotelekbol_szabadulas.md
 
 ## 🟣 Kötelékből szabadulás (2)
@@ -12434,6 +12696,8 @@ Képes vagy ló, vagy más igásállat által húzott kocsik, szekerek vezetés�
 Lásd a [Csomózás](csomozas.md) fortélyt!
 
 
+---
+---
 ## File: md/fortelyok.altalanos/mechanika.md
 
 ## 🟣 Mechanika (2)
@@ -12479,6 +12743,8 @@ Ezek **NEM** ide tartoznak, hanem a [Kvantikum](../kepzettsegek.szekunder/kvanti
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/megfelemlites.md
 
 ## 🟣 Megfélemlítés
@@ -12500,6 +12766,8 @@ Passzív ismeretként nem tojod össze magad egy kis keménykedéstől.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/meregallo.md
 
 ## 🟣 Méregálló (3)
@@ -12525,6 +12793,8 @@ Szervezeted alapból, - vagy speciális felkészítésnek hála - ellenállóbb 
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/muhelymester.md
 
 ## 🟣 Műhelymester (1)
@@ -12554,6 +12824,8 @@ Jól tudod delegálni a kézműves termékek előállításához szükséges mun
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/nyomolvasas_eltuntetes.md
 
 ## 🟣 Nyomolvasás/eltűntetés (2)
@@ -12582,6 +12854,8 @@ Megtalált nyomok értelmezését, eltűntetését, illetve városon kívül a n
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/osi_kulturkor.md
 
 ## 🟣 Ősi kultúrkör (adott kultúrkör) (1) 🔁
@@ -12661,6 +12935,8 @@ Itt nem szükséges az **Ősi kultúrkör** ismerete, hiszen itt általános tö
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/pok.md
 
 ## 🟣 Pók (1)
@@ -12676,6 +12952,8 @@ Gyorsabban tudsz mászni.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/sprint.md
 
 ## 🟣 Sprint (1)
@@ -12694,6 +12972,8 @@ Rövidtávú futásban nincs párod.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/suhano_arnyek.md
 
 ## 🟣 Suhanó árnyék (1)
@@ -12709,6 +12989,8 @@ Gyorsabban tudsz lopózni.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/szajrol_olvasas.md
 
 ## 🟣 Szájról olvasás (1)
@@ -12726,6 +13008,8 @@ Gyorsabban tudsz lopózni.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/szazarcu.md
 
 ## 🟣 Százarcú (2)
@@ -12767,6 +13051,8 @@ Rögtönzött kellékekből is képes vagy álruhát barkácsolni. Gyorsan át t
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/szivossag.md
 
 ## 🟣 Szívósság (1)
@@ -12783,6 +13069,8 @@ Olyan edzett vagy, hogy szinte a jég hátán is megélsz.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/tortenelemismeret.md
 
 ## 🟣 Történelemismeret (2)
@@ -12824,6 +13112,8 @@ A fortély nélkül történelmi témában nem dobhatsz próbát [Lexikum](../ke
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/uszas.md
 
 ## 🟣 Úszás (2)
@@ -12853,6 +13143,8 @@ Az illető elmerül, fuldoklik.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/vezeto_bolcseszprofesszor.md
 
 ## 🟣 Vezető: Bölcsészprofesszor (2)
@@ -12887,6 +13179,8 @@ NJK ismeret.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/vezeto_hajoskapitany.md
 
 ## 🟣 Vezető: Hajóskapitány (2)
@@ -12921,6 +13215,8 @@ NJK ismeret.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/vezeto_nyomozo.md
 
 ## 🟣 Vezető: Nyomozó (2)
@@ -12957,6 +13253,8 @@ NJK ismeret.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/vezeto_orvosprofesszor.md
 
 ## 🟣 Vezető: Orvosprofesszor (2)
@@ -12993,6 +13291,8 @@ NJK ismeret.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/vezeto_rendezo.md
 
 ## 🟣 Vezető: Rendező (2)
@@ -13029,6 +13329,8 @@ NJK ismeret
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/vezeto_tudosprofesszor.md
 
 ## 🟣 Vezető: Tudósprofesszor (2)
@@ -13065,6 +13367,8 @@ NJK ismeret.
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/villamgyors.kereses.rejtes.md
 
 ## 🟣 Villámgyors keresés/rejtés (1)
@@ -13093,6 +13397,8 @@ Alapesetben ha gyorsan, nyomás alatt akarsz valamit megtalálni, akkor `-3` bü
 ---
 
 
+---
+---
 ## File: md/fortelyok.altalanos/zartoro.md
 
 ## 🟣 Zártörő (1)
@@ -13108,9 +13414,13 @@ Alapesetben ha gyorsabban akarsz kinyitni egy zárat, akkor [büntetés jár a p
 ---
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.erzekek.md
 
 ## File: md/fortelyok.erzekek/emberentuli_hallas.md
 
@@ -13143,6 +13453,8 @@ Emberi hallás
 ---
 
 
+---
+---
 ## File: md/fortelyok.erzekek/emberentuli_latas.md
 
 ## 🟣 Emberentúli látás (1)
@@ -13186,6 +13498,8 @@ Emberi látás
 ---
 
 
+---
+---
 ## File: md/fortelyok.erzekek/emberentuli_szaglas.md
 
 ## 🟣 Emberentúli szaglás (1)
@@ -13227,6 +13541,8 @@ Például a közelben van egy ember, vagy kiérzed az italból, a fura mellékil
 ---
 
 
+---
+---
 ## File: md/fortelyok.erzekek/infralatas.md
 
 ## 🟣 Infralátás (2)
@@ -13268,6 +13584,8 @@ Emberi látás, sötétben nem látsz hőképeket.
 ---
 
 
+---
+---
 ## File: md/fortelyok.erzekek/iranyerzek.md
 
 ## 🟣 Irányérzék (1)
@@ -13291,6 +13609,8 @@ Nem tudod, merre van észak. Az a fa mintha mohos lenne...
 ---
 
 
+---
+---
 ## File: md/fortelyok.erzekek/ultralatas.md
 
 ## 🟣 Ultralátás (3)
@@ -13346,9 +13666,13 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 ---
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.harci.md
 
 ## File: md/fortelyok.harci/alakzat_tamado.md
 
@@ -13380,6 +13704,8 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/alakzat_vedekezo.md
 
 ## 🟣 Alakzat: védekező (2)
@@ -13410,6 +13736,8 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/alkalmatlan_fegyver_hajitasa.md
 
 ## 🟣 Alkalmatlan fegyver hajítása (2) 🔁
@@ -13454,6 +13782,8 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/alkalmatlan_targyak_hajitasa.md
 
 ## 🟣 Alkalmatlan tárgyak hajítasa (2)
@@ -13489,6 +13819,8 @@ Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fej�
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/belharc.md
 
 ## 🟣 Belharc (2)
@@ -13530,6 +13862,8 @@ Ezek változását szintén a Harcrendszer fejezet [Harci helyzet: Belharci szit
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/daralo.md
 
 ## 🟣 Daráló (1)
@@ -13573,6 +13907,8 @@ Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#té-levonás
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/elpusztithatatlan.md
 
 ## 🟣 Elpusztíthatatlan (2)
@@ -13603,6 +13939,8 @@ Ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! 
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/elsopro_roham.md
 
 ## 🟣 Elsöprő roham (1)
@@ -13632,6 +13970,8 @@ Erőbónusz duplázódik
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/farasztas.md
 
 ## 🟣 Fárasztás (1)
@@ -13656,6 +13996,8 @@ A fortély nagy ismerői a bajvívók és harcosok.
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/fegyverrantas.md
 
 ## 🟣 Fegyverrántás (2)
@@ -13690,6 +14032,8 @@ Fegyverrántás Kezdeményezés dobásnál
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/gladiator.bestiai.md
 
 ## 🟣 Gladiátor bestiái (1)
@@ -13712,6 +14056,8 @@ A szörnyeteg nem lehet éteri, vagy más síkról idézett lény. "Hagyományos
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/gladiator.kozonsege.md
 
 ## 🟣 Gladiátor közönsége (1)
@@ -13734,6 +14080,8 @@ Valódi aréna hangulat szükséges. A szükséges konkrét létszámot, környe
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/gyors_kezdemenyezes.md
 
 ## 🟣 Gyors kezdeményezés (3)
@@ -13755,6 +14103,8 @@ Kivételesen gyorsan mozdulsz a harcban.
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/harc_helyhez_kotve.md
 
 ## 🟣 Harc helyhez kötve (3)
@@ -13783,6 +14133,8 @@ Nem esel kétségbe akkor sem, ha nagyon kis helyen, vagy kimozgás lehetősége
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/harci_akrobatika.md
 
 ## 🟣 Harci akrobatika (3)
@@ -13848,6 +14200,8 @@ A KM dönt, hogy van-e elég hely az alkalmazáshoz, de ne legyen túl szigorú;
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/harci_anatomia.md
 
 ## 🟣 Harci anatómia (3)
@@ -13913,6 +14267,8 @@ Távharcos harcmodorokra NEM alkalmazható.
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/harci_laz.md
 
 ## 🟣 Harci láz (2)
@@ -14026,6 +14382,8 @@ Roham helyett Öngyilkos roham
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/harckeret_noveles.md
 
 ## 🟣 Harckeret növelés (3)
@@ -14063,6 +14421,8 @@ Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyve
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/harcos_elme.md
 
 ## 🟣 Harcos elme (4)
@@ -14141,6 +14501,8 @@ NJK szereplők, szörnyek, természeti lények is rendelkezhetnek ezzel a forté
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/haritofegyver_hasznalat.md
 
 ## 🟣 Hárítófegyver használat (1)
@@ -14169,6 +14531,8 @@ Hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverforgató kezed
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/kaszabolas.md
 
 ## 🟣 Kaszabolás (2)
@@ -14198,6 +14562,8 @@ A győzelem mámora megacélozza izmaid és akaratod.
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/ketkezes_harc.md
 
 ## 🟣 Kétkezes harc (3)
@@ -14297,6 +14663,8 @@ Mf: mindkét fegyveré számít
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/ketkezesseg.md
 
 ## 🟣 Kétkezesség (1)
@@ -14325,6 +14693,8 @@ Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások s
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/kinokozas.md
 
 ## 🟣 Kínokozás (1)
@@ -14361,6 +14731,8 @@ Ha az áldozat elrontja a próbát, akkor a következő körben valamelyik módo
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/kiteres_loves_elol.md
 
 ## 🟣 Kitérés lövés elől (1)
@@ -14382,6 +14754,8 @@ Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt löv
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/korkoros_harc.md
 
 ## 🟣 Körkörös harc (1)
@@ -14407,6 +14781,8 @@ Nehézség
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/leglovas_harc.md
 
 ## 🟣 Léglovas harc (3)
@@ -14460,6 +14836,8 @@ TÉ/VÉ: -9
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/lovas_harc.md
 
 ## 🟣 Lovas harc (3)
@@ -14518,6 +14896,8 @@ TÉ/VÉ: -9
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/merevvertviselet.md
 
 ## 🟣 Merevvértviselet (3)
@@ -14571,6 +14951,8 @@ A vért teljes `TÉ` büntetése érvényesül: `-TÉ == MGT`
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/mesterfegyver.md
 
 ## 🟣 Mesterfegyver (3)
@@ -14618,6 +15000,8 @@ Bizonyos [manőverek](../066_00_manoverek.md) végbevitelének követelménye le
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/pajzshasznalat.md
 
 ## 🟣 Pajzshasználat (3)
@@ -14696,6 +15080,8 @@ VÉ:+2 minden pajzshoz
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/paros_harc.md
 
 ## 🟣 Páros harc (3) (partner neve) 🔁
@@ -14763,6 +15149,8 @@ TÉ, VÉ :+6
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/tamadas_erobol.md
 
 ## 🟣 Támadás erőből (2)
@@ -14798,6 +15186,8 @@ A fortély **Közelharc** és **Ostorharc** Harcmodorban **NEM** használható.
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/termeszetes_fegyver.md
 
 ## 🟣 Természetes fegyver (1)
@@ -14822,6 +15212,8 @@ Puszta kéz sebzése: -5+k20
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/testor.md
 
 ## 🟣 Testőr (2)
@@ -14861,6 +15253,8 @@ Az oltalmazott személy nem harcolhat, a testőrnek pedig **`2` méteren** belü
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/vakharc.md
 
 ## 🟣 Vakharc (3)
@@ -14957,6 +15351,8 @@ Ha a harc résztvevői mind képzetlen vakharcosok, akkor jó eséllyel ütőtá
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/vezeto_alakzatparancsnok.md
 
 ## 🟣 Vezető: Alakzatparancsnok (2)
@@ -15012,6 +15408,8 @@ Egy rablóbanda vezére is Alakzatparancsnoknak számít.
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/vezeto_fejvadasz_strategis.md
 
 ## 🟣 Vezető: Fejvadász strategis (2)
@@ -15061,6 +15459,8 @@ A Kr4ni Strategis pszí-diszciplínákhoz szükséges.
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/vezeto_ijaszparancsnok.md
 
 ## 🟣 Vezető: Íjászparancsnok (2)
@@ -15113,6 +15513,8 @@ NJK ismeret.
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/vezeto_leglovaskapitany.md
 
 ## 🟣 Vezető: Léglovaskapitány (2)
@@ -15164,6 +15566,8 @@ Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/vezeto_lovaskapitany.md
 
 ## 🟣 Vezető: Lovaskapitány (2)
@@ -15214,6 +15618,8 @@ Ekkor csak a legmagasabb fokú fortéllyal rendelkező személy hatása számít
 ---
 
 
+---
+---
 ## File: md/fortelyok.harci/vezeto_testorparancsnok.md
 
 ## 🟣 Vezető: Testőrparancsnok
@@ -15265,9 +15671,13 @@ Jellemzően NJK ismeret
 ---
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.kiemelt.md
 
 ## File: md/fortelyok.kiemelt/analfabeta.md
 
@@ -15292,6 +15702,8 @@ Amennyiben karaktered később mégis megtanulnál írni/olvani,, töröld ezt a
 ---
 
 
+---
+---
 ## File: md/fortelyok.kiemelt/helyismeret.md
 
 ## 🟣 Helyismeret (1) (városnyi terület) 🔁
@@ -15345,6 +15757,8 @@ Az előírt mennyiség felett a KM egy kaland végén tetszés szerint adhat a k
 ---
 
 
+---
+---
 ## File: md/fortelyok.kiemelt/kulturkor.md
 
 ## 🟣 Kultúrkör (adott kultúrkör) (1) 🔁
@@ -15483,6 +15897,8 @@ Lexikum képzettségpróba
 ---
 
 
+---
+---
 ## File: md/fortelyok.kiemelt/nyelvismeret.md
 
 ## 🟣 Nyelvismeret (2) 🔁
@@ -15574,6 +15990,8 @@ Minden nyelvet, amit legalább **Alap** szinten beszélsz, képes vagy olvasni �
 ---
 
 
+---
+---
 ## File: md/fortelyok.kiemelt/suketseg.md
 
 ## 🟣 Süketség (1)
@@ -15592,6 +16010,8 @@ Süket karakter indítása esetén a karakter **hallás** érzékére permanens 
 ---
 
 
+---
+---
 ## File: md/fortelyok.kiemelt/tartos_serultseg.md
 
 ## 🟣 Tartós sérültség (3)
@@ -15627,6 +16047,8 @@ A rokkantság sokszor csökkentheti a karakter fizikai Tulajdonságait is. Erre 
 ---
 
 
+---
+---
 ## File: md/fortelyok.kiemelt/vaksag.md
 
 ## 🟣 Vakság (1)
@@ -15645,9 +16067,13 @@ Vak karakter indítása esetén a karakter **látás** érzékére permanens [É
 ---
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.magia.modszerek.md
 
 ## File: md/fortelyok.magia.modszerek/aldas.md
 
@@ -15667,6 +16093,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/atok.md
 
 ## 🟣 💫 Mágiamódszer: Átok (1)
@@ -15686,6 +16114,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/babumagia.md
 
 ## 🟣 💫 Mágiamódszer: Bábúmágia (1)
@@ -15704,6 +16134,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/bajitalok.md
 
 ## 🟣 💫 Mágiamódszer: Bájitalok (1)
@@ -15722,6 +16154,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/ceremonialis.md
 
 ## 🟣 💫 Mágiamódszer: Ceremoniális mágia (1)
@@ -15743,6 +16177,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/dalmagia.md
 
 ## 🟣 💫 Mágiamódszer: Dalmágia (1)
@@ -15760,6 +16196,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/fokuszok_emitterek.md
 
 ## 🟣 💫 Mágiamódszer: Fókuszok, Emitterek (1)
@@ -15791,6 +16229,8 @@ Ehhez vagy kelljen külön elosztó/generátor/manafókusz/varázskör (hívjuk 
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/formazas.md
 
 ## 🟣 💫 Mágiamódszer: Formázás (1)
@@ -15809,6 +16249,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/gyertyamagia.md
 
 ## 🟣 💫 Mágiamódszer: Gyertyamágia (1)
@@ -15828,6 +16270,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/jelmagia_runamagia.md
 
 ## 🟣 💫 Mágiamódszer: Jelmágia, Rúnamágia (1)
@@ -15847,6 +16291,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/litania_rituale.md
 
 ## 🟣 💫 Mágiamódszer: Litánia/Rituálé (1)
@@ -15865,6 +16311,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/maszkmagia.md
 
 ## 🟣 💫 Mágiamódszer: Maszkmágia (1)
@@ -15883,6 +16331,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/megkotes.md
 
 ## 🟣 💫 Mágiamódszer: Megkötés (1)
@@ -15901,6 +16351,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/ritualis_tanc.md
 
 ## 🟣 💫 Mágiamódszer: Rituális / Táncmágia (1)
@@ -15922,6 +16374,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/szexualmagia.md
 
 ## 🟣 💫 Mágiamódszer: Szexuálmágia (1)
@@ -15944,6 +16398,8 @@ xyz
 ---
 
 
+---
+---
 ## File: md/fortelyok.magia.modszerek/szimpatikus_magia.md
 
 ## 🟣 💫 Mágiamódszer: Szimpatikus mágia (1)
@@ -15973,9 +16429,13 @@ xyz
 ---
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.szabad.md
 
 ## File: md/fortelyok.szabad/alkudozas.md
 
@@ -15990,6 +16450,8 @@ Elemedben érzed magad a piacon akár fegyverekről, akár egy marék friss szam
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/asztrologia.md
 
 ## 🟣 Asztrológia
@@ -16009,6 +16471,8 @@ Jóslás, együttállások olvasása csillagképekből.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/buveszet.md
 
 ## 🟣 Bűvészet
@@ -16024,6 +16488,8 @@ Gondosan begyakorolt trükkök, kellékek segítenek a tátottszájú nézőköz
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/enekles.md
 
 ## 🟣 Éneklés
@@ -16046,6 +16512,8 @@ Dalolás képessége és annak műértése.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/festeszet.md
 
 ## 🟣 Festészet
@@ -16066,6 +16534,8 @@ Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz v�
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/gazdalkodas.md
 
 ## 🟣 Gazdálkodás
@@ -16079,6 +16549,8 @@ Képes vagy egy birtokot igazgatni.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/hadtap.md
 
 ## 🟣 Hadtáp
@@ -16092,6 +16564,8 @@ A hadsereg élelmezése, felszereléssel való ellátása, utánpótlási vonala
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/harci_iskola.md
 
 ## 🟣 Harci iskola 🔁
@@ -16108,6 +16582,8 @@ Külön kell felvenni minden egyes harci iskolához, melyet vagy a világleírá
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/hatas.md
 
 ## 🟣 Hátas (faj neve) 🔁
@@ -16131,6 +16607,8 @@ Hátas fajonként külön-külön kell felvenni. Hiánya esetén a kapcsolódó 
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/haziallatok_idomitasa.md
 
 ## 🟣 Háziállatok idomítása
@@ -16144,6 +16622,8 @@ Minden háziasított állat idomítása ide tartozik a kutyától a malacokon á
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/heraldika.md
 
 ## 🟣 Heraldika
@@ -16158,6 +16638,8 @@ Címerek ismeretét takarja.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/hivatalnok.md
 
 ## 🟣 Hivatalnok
@@ -16171,6 +16653,8 @@ Járatos vagy az állami, vagy uradalmi bürokráciában írott és íratlan sza
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/irodalom.md
 
 ## 🟣 Irodalom
@@ -16191,6 +16675,8 @@ A passzív fogyasztásra (Művészetismeret) csak a  "[Nyelvismeret](../fortelyo
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/jogismeret.md
 
 ## 🟣 Jogismeret
@@ -16207,6 +16693,8 @@ A passzív fogyasztásra (Művészetismeret) csak a  "[Nyelvismeret](../fortelyo
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kalligrafia.md
 
 ## 🟣 Kalligráfia
@@ -16231,6 +16719,8 @@ A passzív fogyasztásra (Művészetismeret) csak a  "[Nyelvismeret](../fortelyo
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_acs.md
 
 ## 🟣 Kézműves: Ács
@@ -16244,6 +16734,8 @@ A passzív fogyasztásra (Művészetismeret) csak a  "[Nyelvismeret](../fortelyo
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_asztalos.md
 
 ## 🟣 Kézműves: Asztalos
@@ -16257,6 +16749,8 @@ Asztalos mesterként fából alkotsz bútorokat, szerszámokat.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_cipesz.md
 
 ## 🟣 Kézműves: Cipész
@@ -16270,6 +16764,8 @@ Cipőket készítesz a pórnépnek, vagy az udvari dámák kecses lábaira.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_cserzo.md
 
 ## 🟣 Kézműves: Cserző
@@ -16283,6 +16779,8 @@ Járatos vagy a nyersbőrök tartósításában, előkészítésében.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_cukrasz.md
 
 ## 🟣 Kézműves: Cukrász
@@ -16296,6 +16794,8 @@ Járatos vagy a nyersbőrök tartósításában, előkészítésében.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_ekszeresz.md
 
 ## 🟣 Kézműves: Ékszerész
@@ -16309,6 +16809,8 @@ Nemes fémekből gyönyörű ékszerek készítése, ritka ékkövek míves kere
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_kadar.md
 
 ## 🟣 Kézműves: Kádár
@@ -16324,6 +16826,8 @@ Elsősorban tölgyfából dolgozol, hordókat faabroncsokkal kötsz össze.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_komuves.md
 
 ## 🟣 Kézműves: Kőműves
@@ -16337,6 +16841,8 @@ Kövekből és égetett téglákból erős, tartós épületszerkezeteket kész�
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_kotelgyarto.md
 
 ## 🟣 Kézműves: Kötélgyártó
@@ -16350,6 +16856,8 @@ Ismered a kötélverés mesterségét. Különböző forrásaid lehetnek a köt�
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_kovacs.md
 
 ## 🟣 Kézműves: Kovács
@@ -16370,6 +16878,8 @@ Alap kovácsmesterség. Fémből kalapálsz ki lópatkókat, kapákat, ásókat,
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_lakatos.md
 
 ## 🟣 Kézműves: Lakatos
@@ -16387,6 +16897,8 @@ Magasabb szinten egyéb vasból és acélból készült szerkezetek, például a
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_molnar.md
 
 ## 🟣 Kézműves: Molnár
@@ -16400,6 +16912,8 @@ Malomban dolgozol, lisztet és különböző kalászosok feldolgozását végzed
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_penzvero.md
 
 ## 🟣 Kézműves: Pénzverő
@@ -16413,6 +16927,8 @@ Az adott uralkodó nevében és pecsétjével fémlemezekből kalapáccsal versz
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_szabo.md
 
 ## 🟣 Kézműves: Szabó
@@ -16432,6 +16948,8 @@ Sérült ruhadarabokat is javítasz.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_szakacs.md
 
 ## 🟣 Kézműves: Szakács
@@ -16445,6 +16963,8 @@ Finom étkek készítése, vagy akár a hadsereg hadtápjának működtetése.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kezmuves_szucs.md
 
 ## 🟣 Kézműves: Szűcs
@@ -16460,6 +16980,8 @@ A fenti készítményből szabsz és varrsz ruhákat, bundákat, ködmönöket. 
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kihallgatas.md
 
 ## 🟣 Kihallgatás
@@ -16478,6 +17000,8 @@ Magában fogalja a kihallgatási technikákat (nem kínzást!), a beszédtechnik
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/kulonleges_faj_boncolasa.md
 
 ## 🟣 Különleges faj boncolása (faj neve) 🔁
@@ -16504,6 +17028,8 @@ A fenti információ más módon - ritka, titkos fóliásokkal bújásával - is
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/penzugyek.md
 
 ## 🟣 Pénzügyek
@@ -16518,6 +17044,8 @@ Pénzügyi ismereteid vannak.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/rejtjelfejto.md
 
 ## 🟣 Rejtjelfejtő
@@ -16538,6 +17066,8 @@ Pénzügyi ismereteid vannak.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/strategia.md
 
 ## 🟣 Stratégia
@@ -16554,6 +17084,8 @@ Jellemzően NJK ismeret.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/szertartas.md
 
 ## 🟣 Szertartás
@@ -16565,6 +17097,8 @@ Jellemzően NJK ismeret.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/szinjatszas.md
 
 ## 🟣 Színjátszás
@@ -16585,6 +17119,8 @@ Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a sz
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/szobraszat.md
 
 ## 🟣 Szobrászat
@@ -16605,6 +17141,8 @@ Holt anyagból faragsz, hívsz életre alakokat az örökkévalóságnak.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/szonoklas.md
 
 ## 🟣 Szónoklás
@@ -16625,6 +17163,8 @@ Oh, az a birka nép! Mind a lábad előtt hever, mikor súlyos gondokkal tépel�
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_barlangi.md
 
 ## 🟣 Tájtípus - barlangi
@@ -16655,6 +17195,8 @@ Időérzéked föld alatt is pontosan működik, érzed milyen mélyen vagy, és
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_dzsungel.md
 
 ## 🟣 Tájtípus - dzsungel
@@ -16683,6 +17225,8 @@ Ismered a dzsungel környezetet.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_erdos.md
 
 ## 🟣 Tájtípus - erdős
@@ -16711,6 +17255,8 @@ Ismered az erdős környezetet.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_jegmezok.md
 
 ## 🟣 Tájtípus - jégmezők
@@ -16739,6 +17285,8 @@ Ismered a jégmezők kegyetlen világát.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_magaslati.md
 
 ## 🟣 Tájtípus - magaslati
@@ -16767,6 +17315,8 @@ Ismered a magaslati, sarkvidéki környezetet.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_mocsaras.md
 
 ## 🟣 Tájtípus - mocsaras
@@ -16797,6 +17347,8 @@ Lápok, tavak, folyók, édesvizek ismerete is ide tartozik.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_puszta.md
 
 ## 🟣 Tájtípus - puszta
@@ -16825,6 +17377,8 @@ Ismered a végtelen füves puszták környezetét.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_sivatagi.md
 
 ## 🟣 Tájtípus - sivatagi
@@ -16853,6 +17407,8 @@ Ismered a sivatagi környezetet.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tajtipus_tengerek.md
 
 ## 🟣 Tájtípus - tengerek
@@ -16879,6 +17435,8 @@ Tengerek, óceánok világának ismerete.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tanc.md
 
 ## 🟣 Tánc
@@ -16893,6 +17451,8 @@ Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) táncai **Előadó
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/tanc_belso_stilus.md
 
 ## 🟣 Tánc: speciális/belső stílus 🔁
@@ -16920,6 +17480,8 @@ Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális tá
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/terkepeszet.md
 
 ## 🟣 Térképészet
@@ -16939,6 +17501,8 @@ Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális tá
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/titkos_szervezet.md
 
 ## 🟣 Titkos szervezet: (szervezet neve) 🔁
@@ -16965,6 +17529,8 @@ Járatos vagy a szervezet protokolljaikban, hierarchiában. Ismered a vezetőket
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/vadallat_idomitasa.md
 
 ## 🟣 Vadállat idomítása 🔁
@@ -16980,6 +17546,8 @@ A lovak és egyéb, akár légi hátasok betanítása is ide tartozik.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/zeneles_fuvos_hangszerek.md
 
 ## 🟣 Zenélés: fúvós hangszerek
@@ -16994,6 +17562,8 @@ Képes vagy fúvós hangszereket megszólaltatni. Az ismert **Kultúrkörök** z
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/zeneles_huros_hangszerek.md
 
 ## 🟣 Zenélés: húros hangszerek
@@ -17008,6 +17578,8 @@ Képes vagy húros hangszereket megszólaltatni. Az ismert **Kultúrkörök** ze
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/zeneles_utos_hangszerek.md
 
 ## 🟣 Zenélés: ütős hangszerek
@@ -17022,6 +17594,8 @@ Képes vagy ütős hangszereket megszólaltatni. Az ismert **Kultúrkörök** ze
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/zeneszerzo.md
 
 ## 🟣 Zeneszerző
@@ -17035,6 +17609,8 @@ Nem csak eljátszani tudsz dalokat, zenei műveket, hanem komponálni is.
 ---
 
 
+---
+---
 ## File: md/fortelyok.szabad/zsonglorkodes.md
 
 ## 🟣 Zsonglőrködés
@@ -17048,9 +17624,13 @@ Nem csak eljátszani tudsz dalokat, zenei műveket, hanem komponálni is.
 ---
 
 
+---
+---
 
 
 ---
+
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.fortelyok.tavharc.md
 
 ## File: md/fortelyok.tavharc/gyors_hajitas.md
 
@@ -17068,6 +17648,8 @@ Hajításaidat kivételesen gyorsan tudod leadni.
 ---
 
 
+---
+---
 ## File: md/fortelyok.tavharc/gyors_loves.md
 
 ## 🟣 Gyors lövés (1)
@@ -17084,6 +17666,8 @@ Lövéseidet íjjal kivételesen gyorsan tudod leadni.
 ---
 
 
+---
+---
 ## File: md/fortelyok.tavharc/gyors_ujratoltes.md
 
 ## 🟣 Gyors újratöltés (1)
@@ -17106,6 +17690,8 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpus
 ---
 
 
+---
+---
 ## File: md/fortelyok.tavharc/kitartott_celzas.md
 
 ## 🟣 Kitartott célzás (1)
@@ -17136,6 +17722,8 @@ Vársz pár pillanatot, felméred a szelet, a távolságot és a többi változ�
 ---
 
 
+---
+---
 ## File: md/fortelyok.tavharc/loves_futas_kozben.md
 
 ## 🟣 Lövés futás közben (1)
@@ -17157,6 +17745,8 @@ Lassú futás közben `+2x` [Szorzó](../073_tavharc_ve_szorzo.md#szorz%C3%B3-
 ---
 
 
+---
+---
 ## File: md/fortelyok.tavharc/loves_hatasrol.md
 
 ## 🟣 Lövés hátasról (2)
@@ -17206,6 +17796,8 @@ CÉ levonás
 ---
 
 
+---
+---
 ## File: md/fortelyok.tavharc/loves_reflexbol.md
 
 ## 🟣 Lövés reflexből (1)
@@ -17232,6 +17824,8 @@ Ha hirtelen kell lőni, a **Célzó Értéket** `-7` levonás sújtja.
 ---
 
 
+---
+---
 ## File: md/fortelyok.tavharc/mesterlovesz.md
 
 ## 🟣 Mesterlövész (1)
@@ -17247,6 +17841,8 @@ Gyakorlott vagy a nagy távolságú célokra lövésben. Csak nyílpuska, vagy m
 ---
 
 
+---
+---
 ## File: md/fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md
 
 ## 🟣 Mozgó cél mestere fegyverrel (1)
@@ -17274,6 +17870,8 @@ Gyakorlott vagy a nagy távolságú célokra lövésben. Csak nyílpuska, vagy m
 ---
 
 
+---
+---
 
 
 ---
@@ -17340,7 +17938,7 @@ Az adott Tradíciók követelményeit lásd azok leírásában.
 
 
 ---
-
+---
 ## File: md/051_00_magia_tradiciok.md
 
 ## Mágia Tradíciók
@@ -17386,7 +17984,7 @@ Minden Tradíció szintjeinek lehetnek követelményei, amelyek biztosítják, h
 
 
 ---
-
+---
 ## File: md/051_01_magasmagia.md
 
 ## Magasmágia tradíció / Metamágia arkánum
@@ -17498,7 +18096,7 @@ A haladóbb formulák leírását alább.
 
 
 ---
-
+---
 ## File: md/051_02_vulgarmagia.md
 
 ## Vulgármágia tradíció / Vulgár Metamágia arkánum
@@ -17611,7 +18209,7 @@ A haladóbb formulák leírását alább.
 
 
 ---
-
+---
 ## File: md/051_03_ordani_tuzmagia.md
 
 ## Ordani tűzmágia tradíció / Tűz Metamágia arkánum
@@ -17723,7 +18321,7 @@ A haladóbb formulák leírását alább.
 
 
 ---
-
+---
 ## File: md/051_04_bardmagia.md
 
 ## Bárdmágia tradíció / Bárd Metamágia arkánum
@@ -17835,7 +18433,7 @@ A haladóbb formulák leírását alább.
 
 
 ---
-
+---
 ## File: md/051_05_illuzionista.md
 
 ## Illuzionista tradíció / Illuzionista Metamágia arkánum
@@ -17947,7 +18545,7 @@ A haladóbb formulák leírását alább.
 
 
 ---
-
+---
 ## File: md/051_06_termeszeti_magia.md
 
 ## Természeti mágia tradíció / Természeti mágia Metamágia arkánum
@@ -18068,7 +18666,7 @@ A haladóbb formulák leírását alább.
 
 
 ---
-
+---
 ## File: md/051_07_samanmagia.md
 
 ## Sámánmágia tradíció / Sámán Metamágia arkánum
@@ -18180,7 +18778,7 @@ A haladóbb formulák leírását alább.
 
 
 ---
-
+---
 ## File: md/051_08_dragakomagia.md
 
 ## Drágakőmágia tradíció / Drágakőmágia Metamágia arkánum
@@ -18290,7 +18888,7 @@ A haladóbb formulák leírását alább.
 
 
 ---
-
+---
 ## File: md/052_papi_tradicio.md
 
 ## Papi Tradíció
@@ -18303,7 +18901,7 @@ Lásd a [Papi Mágia](110_papimagia.md) fejezetet.
 
 
 ---
-
+---
 ## File: md/053_00_szellemi_tradiciok.md
 
 ## Szellemi Tradíciók
@@ -18319,7 +18917,7 @@ A lenti szellemi tradíciók a Pszí speciális válfajait, illetve egyéb egyed
 
 
 ---
-
+---
 ## File: md/053_01_fejvadasz_tradicio.md
 
 ## Fejvadász Tradíciók
@@ -18336,7 +18934,7 @@ A lenti szellemi tradíciók a Pszí speciális válfajait, illetve egyéb egyed
 
 
 ---
-
+---
 ## File: md/053_02_slan_tradicio.md
 
 ## Slan tradíció
@@ -18353,7 +18951,7 @@ A lenti szellemi tradíciók a Pszí speciális válfajait, illetve egyéb egyed
 
 
 ---
-
+---
 ## File: md/060_00_harcrendszer.md
 
 # Harcrendszer
@@ -18478,7 +19076,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 
 ---
-
+---
 ## File: md/061_00_eletero.md
 
 ## Életerő
@@ -18503,7 +19101,7 @@ Itt tárgyaljuk a karakter életerővel, sebesüléssel kapcsolatos értékeit, 
 
 
 ---
-
+---
 ## File: md/061_01_eletero_pont.md
 
 ## Életerő Pont (`ÉP`)
@@ -18536,7 +19134,7 @@ Az állapot romlásának hatásait a már említett a [Sebesülés](061_03_sebes
 
 
 ---
-
+---
 ## File: md/061_02_faradsag_pont.md
 
 ## Fáradtság Pont (`FP`)
@@ -18658,7 +19256,7 @@ Szerencséjére a testőr elégnek találja a megtorlást és felzárkózik gazd
 
 
 ---
-
+---
 ## File: md/061_03_sebesules.md
 
 ## Sebesülés
@@ -18748,7 +19346,7 @@ Ha megsérül a karakter és `S3`, vagy `S4` kategóriába került, akkor ["Sér
 
 
 ---
-
+---
 ## File: md/061_04_fajdalomtures_sebesuleskor.md
 
 ## Fájdalomtűrés sebesüléskor
@@ -18834,7 +19432,7 @@ Mérgezés, kínzás, egyéb fájdalom esetén a karakterek **Fájdalomtűrés**
 
 
 ---
-
+---
 ## File: md/061_05_pelda_sebesulesre.md
 
 ## ⚡ Komplex példa sebesülésre
@@ -18893,7 +19491,7 @@ Ha túléli a kalandot, akkor a „szerzett” `4 FP` gyógyulása `4 óra` alat
 
 
 ---
-
+---
 ## File: md/061_06_gyogyulas.md
 
 ## Gyógyulás
@@ -18914,7 +19512,7 @@ Lásd még bővebben a [Gyógyítás, Gyógyulás](140_gyogyitas_gyogyulas.md) f
 
 
 ---
-
+---
 ## File: md/062_00_alapertekek.md
 
 ## Alapértékek
@@ -18933,7 +19531,7 @@ Lásd még bővebben a [Gyógyítás, Gyógyulás](140_gyogyitas_gyogyulas.md) f
 
 
 ---
-
+---
 ## File: md/062_01_ke_te_ve_ce.md
 
 ## `KÉ`, `TÉ`, `VÉ`, `CÉ`
@@ -19142,7 +19740,7 @@ VÉ módosító
 
 
 ---
-
+---
 ## File: md/062_02_harcmodor_kepzettsegek_es_bonuszaik.md
 
 ## Harcmodor képzettségek és bónuszaik
@@ -19205,7 +19803,7 @@ A Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc Harcmodorok szi
 
 
 ---
-
+---
 ## File: md/062_03_MGT_99.md
 
 ## Mozgásgátló Tényező (MGT )
@@ -19222,7 +19820,7 @@ Bővebben lásd a Harcrendszer [Vértek, Páncélok - MGT fejezetében](069_03_M
 
 
 ---
-
+---
 ## File: md/062_04_hm_cm.md
 
 ## Harcérték Módosító (HM) / Célzóérték Módosító (CM)
@@ -19292,7 +19890,7 @@ A `HM` és `CM` nem keverhetőek, tehát a `CM`-re költhető max pontok nem „
 
 
 ---
-
+---
 ## File: md/063_00_harci_alapfogalmak.md
 
 ## Harci alapfogalmak
@@ -19315,7 +19913,7 @@ A `HM` és `CM` nem keverhetőek, tehát a `CM`-re költhető max pontok nem „
 
 
 ---
-
+---
 ## File: md/063_01_harci_kor.md
 
 ## Harci kör
@@ -19334,7 +19932,7 @@ Mindenki leadja támadásait, aztán ugyanebben a sorrendben a több támadássa
 
 
 ---
-
+---
 ## File: md/063_02_akcio_fogalma.md
 
 ## Akció fogalma
@@ -19363,7 +19961,7 @@ Fontos, hogy egy harci körben legfeljebb `1` támadásodat válthatod át valam
 
 
 ---
-
+---
 ## File: md/063_03_mozgas_harc_kozben.md
 
 ## Mozgás harcban, mozgás hatása támadások számára
@@ -19414,7 +20012,7 @@ Amennyiben nem elégszel meg az ingyenes Mozgás kereteddel a körödben, akkor 
 
 
 ---
-
+---
 ## File: md/063_04_tamadasok_szama_fegyverrel.md
 
 ## Támadások száma fegyverrel / kör
@@ -19520,7 +20118,7 @@ A `3.` támadást `14`-es, a `4.` támadást pedig `21`-es **Harckeret** érték
 
 
 ---
-
+---
 ## File: md/063_05_tamadasok_szama_varazslaskor.md
 
 ## Támadások száma varázsláskor / kör
@@ -19581,7 +20179,7 @@ Egy nagy, hosszú varázslat akár sok körön át is "csúszhat", ez idő alatt
 
 
 ---
-
+---
 ## File: md/063_06_harc_es_varazskeret_tamadasok_szama_abra.md
 
 ## Harckeret, Varázskeret, Támadások száma - ábra
@@ -19594,7 +20192,7 @@ Egy nagy, hosszú varázslat akár sok körön át is "csúszhat", ez idő alatt
 
 
 ---
-
+---
 ## File: md/064_00_harc_menete.md
 
 ## Harc menete
@@ -19623,7 +20221,7 @@ Egy nagy, hosszú varázslat akár sok körön át is "csúszhat", ez idő alatt
 
 
 ---
-
+---
 ## File: md/064_01_harc_menete_osszefoglalas.md
 
 
@@ -19872,7 +20470,7 @@ Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a 
 
 
 ---
-
+---
 ## File: md/064_02_00_harc_menete_reszletes.md
 
 ## A harc menete – részletes leírás
@@ -19905,7 +20503,7 @@ Most lássuk a fogalmak részletes kifejtését és alkalmazásuk módját. A sz
 
 
 ---
-
+---
 ## File: md/064_02_01_kezdemenyezes.md
 
 ## Kezdeményező dobás
@@ -19947,7 +20545,7 @@ Ha két karakter azonos számot ért el Kezdeményező Dobása során, és épp 
 
 
 ---
-
+---
 ## File: md/064_02_02_tamado_dobas.md
 
 ## Támadó dobás
@@ -19981,7 +20579,7 @@ Amennyiben a támadónak több támadása van az adott körben, akkor a `2.` tá
 
 
 ---
-
+---
 ## File: md/064_02_03_vedo_ertek_csokkentese.md
 
 ## Védő Érték csökkentése (TÉ < VÉ)
@@ -20036,7 +20634,7 @@ Megnő a [Támadó/Védő taktika](065_02_harci_taktikak.md#támadó-taktika) je
 
 
 ---
-
+---
 ## File: md/064_02_04_talalat.md
 
 ## Találat ( `TÉ >= VÉ` )
@@ -20108,7 +20706,7 @@ A páncélokról bővebben a [Vértek, páncélok](069_00_vertek_pancelok.md) fe
 
 
 ---
-
+---
 ## File: md/064_02_05_fegyver_sebzes_jellege_tipusa.md
 
 ## Sebzés jellege
@@ -20223,7 +20821,7 @@ Lásd [Rúnamágiával felruházott tárgyak](130_varazstargyak.md#r%C3%BAnam%C3
 
 
 ---
-
+---
 ## File: md/064_02_06_erobonusz_erolimit.md
 
 ## Erőbónusz, Erőhiány
@@ -20267,7 +20865,7 @@ SP bónusz: csak +3
 
 
 ---
-
+---
 ## File: md/064_02_07_sebzes.md
 
 ## Sebzés
@@ -20397,7 +20995,7 @@ SP        ÉP        VÉ
 
 
 ---
-
+---
 ## File: md/064_02_08_sebzodes_hatasa.md
 
 ## Sebződés hatása
@@ -20484,7 +21082,7 @@ A különböző támadási módok ellen az élőholtak különféleképpen ellen
 
 
 ---
-
+---
 ## File: md/064_02_09_ve_regeneralodas.md
 
 ## Védő Érték regenerálódása
@@ -20547,7 +21145,7 @@ Ezt az alábbi kategóriákra bontottuk:
 
 
 ---
-
+---
 ## File: md/064_02_10_pajzsok_pajzshasznalat.md
 
 ## Pajzsok, pajzshasználat
@@ -20615,7 +21213,7 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 
 
 ---
-
+---
 ## File: md/064_03_peldaharc.md
 
 ## Példaharc
@@ -20932,7 +21530,7 @@ A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmen
 
 
 ---
-
+---
 ## File: md/065_00_harcot_modosito_tenyezok.md
 
 ## Harcot módosító tényezők
@@ -20951,7 +21549,7 @@ A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmen
 
 
 ---
-
+---
 ## File: md/065_01_00_harci_helyzetek.md
 
 ## Harci helyzetek ✴️🗡️
@@ -21001,7 +21599,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 
 ---
-
+---
 ## File: md/065_01_01_belharci_szituacio.md
 
 # Belharci szituáció
@@ -21081,7 +21679,7 @@ Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például
 
 
 ---
-
+---
 ## File: md/065_01_02_fegyverrantas_varatlanul.md
 
 # Fegyverrántás váratlanul
@@ -21208,7 +21806,7 @@ SUM: sima KÉ dobás
 
 
 ---
-
+---
 ## File: md/065_01_03_harci_poziciok.md
 
 # Harci pozíciók
@@ -21428,7 +22026,7 @@ VÉ veszteség duplázódik
 
 
 ---
-
+---
 ## File: md/065_01_04_fegyver_harci_helyzetek.md
 
 # Fegyverrel kapcsolatos helyzetek
@@ -21585,7 +22183,7 @@ Fegyvered nem erre a sebzési típusra lett kialakítva. Például "Hosszú kard
 
 
 ---
-
+---
 ## File: md/065_01_05_fizikai_helyzetek.md
 
 # Fizikai harci helyzetek
@@ -21642,7 +22240,7 @@ VÉ veszteség duplázódik
 
 
 ---
-
+---
 ## File: md/065_01_06_szemelyhez_kotott.md
 
 # Személyhez kötött helyzetek
@@ -21795,7 +22393,7 @@ Hátrány-1 Érzék (Látás)
 
 
 ---
-
+---
 ## File: md/065_01_07_lenyek.md
 
 ## Lények méret különbsége `[0;+6]`
@@ -21855,7 +22453,7 @@ Sokféle állat van, ezért nem lehet egységes szabályt alkotni azok harcmodor
 
 
 ---
-
+---
 ## File: md/065_02_harci_taktikak.md
 
 ## Harci taktikák
@@ -22186,7 +22784,7 @@ Szándékosan kisebb sebzést próbálsz okozni találatkor - általában mikor 
 
 
 ---
-
+---
 ## File: md/065_03_harc_alakzatban.md
 
 ## Harc alakzatban
@@ -22501,7 +23099,7 @@ VÉ csökkentés/kör: 2
 
 
 ---
-
+---
 ## File: md/065_04_ketkezes_harc_szabalyai.md
 
 # Kétkezes harc szabályai
@@ -22609,7 +23207,7 @@ SUM Pengeméret
 
 
 ---
-
+---
 ## File: md/066_00_manoverek.md
 
 ## Manőverek
@@ -22654,7 +23252,7 @@ Egy-két jó példa többet mond a száraz szabályleírásoknál.
 
 
 ---
-
+---
 ## File: md/066_01_manover_alap.md
 
 ## Manőver Alap
@@ -22675,7 +23273,7 @@ Ez a számérték karakteralkotási időben kerül kiszámításra és a Manőve
 
 
 ---
-
+---
 ## File: md/066_02_manover_pontok.md
 
 ## Manőver Pontok
@@ -22745,7 +23343,7 @@ A komolyabb, kidolgozottabb Nem Játékos Karakter ellenfelek viszont egy külö
 
 
 ---
-
+---
 ## File: md/066_03_manover_szabalyok.md
 
 ## ⚜️ Általános szabályok manőverekre
@@ -22838,7 +23436,7 @@ Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, í
 
 
 ---
-
+---
 ## File: md/066_04_manover_vegbevitele.md
 
 ## Manőver végbevitelének lépései
@@ -22973,7 +23571,7 @@ A sikertelen Manőver `0` **VÉ csökkentést** okoz.
 
 
 ---
-
+---
 ## File: md/066_05_altalanos_manoverek.md
 
 ## Általános manőverek listája
@@ -23385,7 +23983,7 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 
 
 ---
-
+---
 ## File: md/066_06_belharcos_manoverek.md
 
 ## 🤼‍♂️ Belharcos Manőverek listája
@@ -23580,7 +24178,7 @@ Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Ökl
 
 
 ---
-
+---
 ## File: md/066_07_lovas_manoverek.md
 
 ### Lovas Manőverek
@@ -23595,7 +24193,7 @@ Lásd a [Harc hátasról - Lovas manőverek](067_04_lovas_manoverek.md) fejezet 
 
 
 ---
-
+---
 ## File: md/066_08_01_pelda_manover_lefegyverzes.md
 
 ## ⚡Példa Manőver alkalmazására: Lefegyverzés
@@ -23672,7 +24270,7 @@ Ha Rühes `2` Manőver Pontot költött volna el, akkor már `+4` járna a prób
 
 
 ---
-
+---
 ## File: md/066_08_02_pelda_manover_lapsopres.md
 
 ## ⚡Példa Manőver alkalmazására: Lábsöprés
@@ -23745,7 +24343,7 @@ Tehát ha Tetves legalább `5`-öt dob `k10`-en, akkor az **Ellenpróba** (`E`) 
 
 
 ---
-
+---
 ## File: md/067_00_harc_hatasrol.md
 
 ## Harc lóhátról, légi hátasról
@@ -23766,7 +24364,7 @@ Aki hátasról harcol, az előnyben van, részben a magasabb pozíció, részben
 
 
 ---
-
+---
 ## File: md/067_01_lovas_harc_szabalyai.md
 
 # Lovas, léglovas harc szabályai
@@ -23845,7 +24443,7 @@ Nehézség: 12-15 között
 
 
 ---
-
+---
 ## File: md/067_02_lovas_leglovas_fortelyok.md
 
 ## Lovas és Léglovas fortélyok
@@ -23861,7 +24459,7 @@ A Lovas és Léglovas harchoz szükséges, vagy azt érintő fortélyok rövid l
 
 
 ---
-
+---
 ## File: md/067_03_lovas_harci_taktikak.md
 
 ## Lovas, léglovas harci taktikák
@@ -23925,7 +24523,7 @@ Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal.
 
 
 ---
-
+---
 ## File: md/067_04_lovas_manoverek.md
 
 ## Lovas, léglovas manőverek
@@ -24005,7 +24603,7 @@ Nem tartottuk fontosnak az ilyen részletes kidolgozást. Természetesen ha felm
 
 
 ---
-
+---
 ## File: md/068_00_fegyverek.md
 
 ## Fegyverek
@@ -24053,7 +24651,7 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 
 
 ---
-
+---
 ## File: md/068_01_00_fegyverek_altalanos_szabalyai.md
 
 ## Fegyverek általános szabályai
@@ -24080,7 +24678,7 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_01_fegyvermeretek_altalanos_harcertekek.md
 
 ## Fegyverméretek, általános fegyver-harcértékek
@@ -24137,7 +24735,7 @@ rövid (0)
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_02_fegyvermeret_elnevezesek.md
 
 ## Fegyverméret elnevezések
@@ -24156,7 +24754,7 @@ rövid:     0,3 méterig
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_03_jellemzo_pengehosszok.md
 
 ## Jellemző pengehosszok
@@ -24194,7 +24792,7 @@ pika
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_04_sebzestipusok.md
 
 ## Sebzéstípusok
@@ -24210,7 +24808,7 @@ pika
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_05_kulonleges_fegyver_szabaly.md
 
 ## KF: Különleges fegyver szabály
@@ -24239,7 +24837,7 @@ A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_06_masfelkezes_fegyverek_egy_kezzel.md
 
 ## MK: Másfélkezes fegyverek egy kézzel forgatva
@@ -24263,7 +24861,7 @@ Jelölése: MK
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_07_ives_fegyver.md
 
 ## Íves fegyver
@@ -24282,7 +24880,7 @@ Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellen
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_08_puszta_kez.md
 
 ## Puszta kéz
@@ -24303,7 +24901,7 @@ SP: -5 + k20
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_09_nyilpuskak.md
 
 ## Nyílpuskák
@@ -24324,7 +24922,7 @@ Ugyan veszélyes fegyverek, de a újratöltésük körülményes:
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_10_erinto_tamadas.md
 
 ## Érintő támadás
@@ -24338,7 +24936,7 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_11_erobonusz_limit.md
 
 ## Erőbónusz limit
@@ -24352,7 +24950,7 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_12_atutes.md
 
 ## Átütés
@@ -24366,7 +24964,7 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_13_fegyver_mozgasgatlo_hatasa.md
 
 ## Fegyver mozgásgátló hatása
@@ -24386,7 +24984,7 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_01_14_fegyverek_minosege_ideaja.md
 
 ## Fegyverek minősége (Ideája)
@@ -24435,7 +25033,7 @@ Tehát egy `+2`-es **Ideájú** kardba, maximum `+2`-es mágikus hatást lehet b
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 ---
-
+---
 ## File: md/068_02_kozelharci_fegyverek.md
 
 ## Közelharci fegyverek
@@ -24531,7 +25129,7 @@ Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_haszn
 
 
 ---
-
+---
 ## File: md/068_03_kardvivo_fegyverek.md
 
 ## Kardvívó fegyverek
@@ -24614,7 +25212,7 @@ A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/ha
 
 
 ---
-
+---
 ## File: md/068_04_landzsavivo_fegyverek.md
 
 ## Lándzsavívó fegyverek
@@ -24658,7 +25256,7 @@ A ló lendülete mint **Erőbónusz** már beszámításra került a kopja Sebz�
 
 
 ---
-
+---
 ## File: md/068_05_rombolo_fegyverek.md
 
 ## Romboló fegyverek
@@ -24690,7 +25288,7 @@ A ló lendülete mint **Erőbónusz** már beszámításra került a kopja Sebz�
 
 
 ---
-
+---
 ## File: md/068_06_ostorharc_fegyverek.md
 
 ## Ostorharc fegyverek
@@ -24724,7 +25322,7 @@ A `k20` támadó dobás egyben esélydobás is: ha a lent leírt értékek vagy 
 
 
 ---
-
+---
 ## File: md/068_07_hajitofegyverek.md
 
 ## Hajítófegyverek
@@ -24773,7 +25371,7 @@ Kapcsolódó fortély: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmat
 
 
 ---
-
+---
 ## File: md/068_08_lofegyverek.md
 
 ## Lőfegyverek harcértékei
@@ -24846,7 +25444,7 @@ Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász l�
 
 
 ---
-
+---
 ## File: md/068_09_pajzs_fegyverek.md
 
 ## Pajzs fegyverek
@@ -24875,7 +25473,7 @@ Kapcsolódik
 
 
 ---
-
+---
 ## File: md/069_00_vertek_pancelok.md
 
 ## Vértek, Páncélok
@@ -24900,7 +25498,7 @@ Kapcsolódik
 
 
 ---
-
+---
 ## File: md/069_01_pancelok_jellemzoi.md
 
 ## Páncélok jellemzői
@@ -25011,7 +25609,7 @@ Erő
 
 
 ---
-
+---
 ## File: md/069_02_SFE.md
 
 ## Sebzésfelfogó Érték (SFÉ)
@@ -25149,7 +25747,7 @@ Fém páncélok
 
 
 ---
-
+---
 ## File: md/069_03_MGT.md
 
 ## Mozgásgátló Tényező (MGT)
@@ -25346,7 +25944,7 @@ Az `MGT` az eredetihez képest annyi százalékkal nő, amennyi a vért **Sérü
 
 
 ---
-
+---
 ## File: md/069_04_vedett_terulet_panceldobas.md
 
 ## Páncél tagok és a védett terület
@@ -25409,7 +26007,7 @@ k10
 
 
 ---
-
+---
 ## File: md/069_05_vertviselet_fortely_bonuszai.md
 
 ## Merevvértviselet fortély bónuszai
@@ -25426,7 +26024,7 @@ A teljes szabályt lásd a fortély leírásánál: **[Merevvértviselet](fortel
 
 
 ---
-
+---
 ## File: md/069_06_pancel_ara.md
 
 ## Páncél Ára
@@ -25536,7 +26134,7 @@ Természetesen ebbe is bele lehet kötni, hogy pl. egy adott országban nem pont
 
 
 ---
-
+---
 ## File: md/069_07_pancel_peldak.md
 
 ## Példa egy páncél leírására
@@ -25676,7 +26274,7 @@ Végleges ár: 7,5x
 
 
 ---
-
+---
 ## File: md/070_tavolsagi_harc.md
 
 # Távolsági harcrendszer
@@ -25746,7 +26344,7 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 
 ---
-
+---
 ## File: md/071_tavharc_ce.md
 
 ## Célzó Érték számítása
@@ -25847,7 +26445,7 @@ Lásd bővebben:
 
 
 ---
-
+---
 ## File: md/072_tavharc_ve_oszto_cella.md
 
 ## Fegyver Osztó és Cella értéke a távolsági Védő Értékben
@@ -25922,7 +26520,7 @@ Javasoljuk a KM-nek, hogy ha esetleg mágikus, vagy kifejezetten jó minőségű
 
 
 ---
-
+---
 ## File: md/073_tavharc_ve_szorzo.md
 
 ## Szorzó értéke a távolsági Védő Értékben
@@ -26055,7 +26653,7 @@ Szél ereje
 
 
 ---
-
+---
 ## File: md/074_tavharc_celpont_vedo_ertek.md
 
 ## Célpont Védő Érték kiszámítása
@@ -26115,7 +26713,7 @@ Célpont VÉ =
 ⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)
 
 ---
-
+---
 ## File: md/075_tavharc_taktikak.md
 
 ## Távolsági Harc taktikák
@@ -26202,7 +26800,7 @@ A fegyver méretének az **Erő** Tulajdonság és a KM józan esze szab határt
 
 
 ---
-
+---
 ## File: md/076_tavharc_csatamagia_eseten.md
 
 ## Távolsági harc csatamagia esetén
@@ -26398,7 +26996,7 @@ Kapcsolódik: [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#sz%C
 
 
 ---
-
+---
 ## File: md/077_teruletloves.md
 
 ## Területlövés
@@ -26447,7 +27045,7 @@ Minden +3-al túldobott Célszám:
 
 
 ---
-
+---
 ## File: md/078_tavharc_fegyverek.md
 
 ## Távolsági fegyverek
@@ -26587,7 +27185,7 @@ Egy hajítófegyvernél legfeljebb akkor elképzelhető a **Osztó** változása
 
 
 ---
-
+---
 ## File: md/079_01_tavharc_peldak.md
 
 ## ⚡`I.` Példalövészet merénylet
@@ -26745,7 +27343,7 @@ Ha nem fújt volna ennyire erősen a szél (`-1` Szorzóra) vagy nem ilyen rossz
 
 
 ---
-
+---
 ## File: md/079_02_tavharc_sotetben.md
 
 ## ⚡Távolsági harc vaksötétben, zajos célpontra
@@ -26858,7 +27456,7 @@ Célzó dobás-2
 
 
 ---
-
+---
 ## File: md/080_hatasok_es_statuszok.md
 
 # Hatások és Státuszok
@@ -26879,7 +27477,7 @@ A **Státuszok** ideiglenes, vagy tartós állapotok, amelyek előnyös, vagy h�
 
 
 ---
-
+---
 ## File: md/081_hatasok.md
 
 ## Hatások 🔥
@@ -27157,7 +27755,7 @@ Ellenfeled Védő Értékét csökkented `X` értékkel.
 
 
 ---
-
+---
 ## File: md/082_statuszok.md
 
 ## Státuszok ✴️
@@ -27950,7 +28548,7 @@ Szakrális mágiák mellékhatása
 
 
 ---
-
+---
 ## File: md/083_harci_helyzetek_99.md
 
 ## Harci helyzetek ✴️🗡️
@@ -27966,7 +28564,7 @@ Leírásukat lásd a Harcrendszer **[Harci helyzetek](065_01_00_harci_helyzetek.
 
 
 ---
-
+---
 ## File: md/084_magikus_statuszok_99.md
 
 ## Mágikus Státuszok ✴️✨
@@ -27979,7 +28577,7 @@ Leírásukat lásd a Mágiarendszer [Mágikus Státuszok](107_magikus_statuszok.
 
 
 ---
-
+---
 ## File: md/090_pszi.md
 
 # 🌀Pszí
@@ -27994,7 +28592,7 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 
 ---
-
+---
 ## File: md/091_pszi_diszciplinak.md
 
 ## 🌀 Pszí diszciplínák
@@ -28007,7 +28605,7 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 
 ---
-
+---
 ## File: md/100_magiarendszer.md
 
 # Mágiarendszer
@@ -28032,7 +28630,7 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 
 ---
-
+---
 ## File: md/101_magiaelmelet.md
 
 ## Mágiaelmélet
@@ -28047,7 +28645,7 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 
 ---
-
+---
 ## File: md/102_magia_alapszabalyok.md
 
 # Mágia alapszabályok
@@ -28075,7 +28673,7 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 
 ---
-
+---
 ## File: md/103_aura_magia_akarata_magiaellenallas.md
 
 ## Aura, Mágia Akarata, Mágiaellenállás
@@ -28302,7 +28900,7 @@ A mágiatudó csalódottan horkant fel, mágiája csődöt mondott.
 
 
 ---
-
+---
 ## File: md/104_varazslas_modszerek.md
 
 ## Varázslás módszerek
@@ -28319,7 +28917,7 @@ Bővebben lásd a [Varázslás módszerek](045_misztikus_magia_fortelyok.md#var�
 
 
 ---
-
+---
 ## File: md/105_magikus_komponensek_osszhangok.md
 
 ## Mágikus komponensek, összhangok
@@ -28485,7 +29083,7 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 
 
 ---
-
+---
 ## File: md/106_magikus_szferak_arkanumok.md
 
 # Mágikus Szférák és arkánumaik listája
@@ -28643,7 +29241,7 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 
 
 ---
-
+---
 ## File: md/107_magikus_statuszok.md
 
 ## Mágikus Státuszok ✴️✨
@@ -28652,7 +29250,7 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 
 
 ---
-
+---
 ## File: md/110_papimagia.md
 
 # Papi Mágia Tradíció
@@ -28672,7 +29270,7 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 
 
 ---
-
+---
 ## File: md/111_papi.magia.vilagkep.md
 
 ## Papi mágia világkép
@@ -28699,7 +29297,7 @@ Ha a játékos a szabályok kijátszásával, egyedi értelmezésével akar blas
 
 
 ---
-
+---
 ## File: md/112_papi.magia.alapszabalyok.md
 
 ## Papi mágia alapszabályok
@@ -28790,7 +29388,7 @@ A Kegy pontokat a varázslatok **Átütésének** egyszeri erősítésére lehet
 
 
 ---
-
+---
 ## File: md/113_papi.varazslatok.md
 
 ## Papi varázslatok
@@ -28853,7 +29451,7 @@ Itt találhatjuk az összes, a rendszerben játszható pap varázslatainak list�
 
 
 ---
-
+---
 ## File: md/120_slan.md
 
 # Slan misztérium
@@ -28879,7 +29477,7 @@ Itt találhatjuk az összes, a rendszerben játszható pap varázslatainak list�
 
 
 ---
-
+---
 ## File: md/121_slan_diszciplinak.md
 
 ## Slan diszciplínák
@@ -28899,7 +29497,7 @@ Itt találhatjuk az összes, a rendszerben játszható pap varázslatainak list�
 
 
 ---
-
+---
 ## File: md/122_chi_harc.md
 
 ## Chi Harc
@@ -28916,7 +29514,7 @@ TODO
 
 
 ---
-
+---
 ## File: md/123_slan_fegyverek.md
 
 ## Slan fegyverek
@@ -28931,7 +29529,7 @@ TODO
 
 
 ---
-
+---
 ## File: md/130_varazstargyak.md
 
 # Varázstárgyak
@@ -28970,7 +29568,7 @@ xyz2
 
 
 ---
-
+---
 ## File: md/140_gyogyitas_gyogyulas.md
 
 # Gyógyítás, gyógyulás
@@ -29028,7 +29626,7 @@ Isteni energiákkal, pusztán kézrátéttellel és a pap hitével való gyógy�
 
 
 ---
-
+---
 ## File: md/150_meregrendszer.md
 
 # Méregrendszer, mérgek
@@ -29047,7 +29645,7 @@ Isteni energiákkal, pusztán kézrátéttellel és a pap hitével való gyógy�
 
 
 ---
-
+---
 ## File: md/151_meregkeveres_szabalyai.md
 
 ## Méregkeverés szabályai
@@ -29232,7 +29830,7 @@ Amennyiben nem hagyományos, ritka fajról van szó, akkor ahhoz a [Különleges
 
 
 ---
-
+---
 ## File: md/152_meregellenallas.md
 
 ## Méregellenállás
@@ -29255,7 +29853,7 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsag
 
 
 ---
-
+---
 ## File: md/153_meregerzekeles.md
 
 ## Méregérzékelés
@@ -29306,7 +29904,7 @@ Szagtalan: +1
 
 
 ---
-
+---
 ## File: md/154_peldamergek.md
 
 ## Példamérgek
@@ -29392,7 +29990,7 @@ A hatást a vajákos eltolta fél nappal, hogy éjszaka jöjjön a vég, így a 
 
 
 ---
-
+---
 ## File: md/160_szituaciok.md
 
 # Szituációk
@@ -29459,6 +30057,8 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 
 ---
+---
+## File: /var/folders/5v/14dr1vr527d8vftfx1lslz180000gp/T/tmpv96uds2t/__szilank.szituaciok.md
 
 ## File: md/szituaciok/ajtostul_tamadni.md
 
@@ -29479,6 +30079,8 @@ Fegyvertelen VÉ
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/allat_bestia_idomitasa.md
 
 # Állat, bestia idomítása
@@ -29534,6 +30136,8 @@ Idomítást, állatokat, bestiákat kontrolláló szituációban a lenti próba 
 ---
 
 
+---
+---
 ## File: md/szituaciok/befolyasolas_modszerei.md
 
 ## Befolyásolás módszerei
@@ -29613,6 +30217,8 @@ Véres karddal, félmeztelenül hadonászás: a felek ⚪ **Erő** Tulajdonság�
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/beszed_szajrol_olvasasa.md
 
 ## Beszéd szájról olvasása
@@ -29643,6 +30249,8 @@ E fölött lehetetlen.
 Lásd: [Szájról olvasás](../fortelyok.altalanos/szajrol_olvasas.md) fortély.
 
 
+---
+---
 ## File: md/szituaciok/csapda_hatatalanitas_szabotalas.md
 
 ## Csapda hatástalanítás, mechanikus szerkezet szabotálása
@@ -29683,6 +30291,8 @@ Csapda komplexitásától függő **Nehézség** (maximum: a készítő által m
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/elugrani_lovaskocsi_elol.md
 
 ## Elugrani egy feléd száguldó lovaskocsi elől
@@ -29708,6 +30318,8 @@ Nehézség távolság
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/eneklessel_bajolas.md
 
 ## Énekléssel bájolás
@@ -29733,6 +30345,8 @@ Az éneklés ismerete sem ad segítséget egy igéző ének ellen.
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/erzekeles_eszleles_aktiv_passziv.md
 
 ## Érzékelés, Aktív/Passzív Észlelés
@@ -29802,6 +30416,8 @@ Lásd: a [saját oldalát](lopakodas_rejtozes_es_eszlelese.md)!
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/eses_magasbol.md
 
 ## Esés magasból
@@ -29886,6 +30502,8 @@ Nehézség:
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/hajitas_alkalmatlan_fegyverrel.md
 
 ## Hajítás alkalmatlan fegyverrel
@@ -29903,6 +30521,8 @@ A fenti büntetéseket mérséklik:\
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md
 
 ## Hajítás nem dobásra készített tárgyakkal
@@ -29920,6 +30540,8 @@ A fenti büntetéseket mérséklik:\
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/hamisitas_es_felismerese.md
 
 ## Hamisítás és felismerése
@@ -30014,6 +30636,8 @@ Kapcsolódik: [Kézművesség](../kepzettsegek.szekunder/kezmuvesseg.md) képzet
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md
 
 ## Harcoló tömegbe lövés - bárki jó találatnak
@@ -30037,6 +30661,8 @@ Random dobás: `k10`
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/harcolo_tomegbe_loves__egy_konkret_celra.md
 
 ## Harcoló tömegbe lövés - egy konkrét célra
@@ -30059,6 +30685,8 @@ Ha elvétetted, akkor kiszámoljuk a [Tömeg Védő Értékét](harcolo_tomegbe_
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/hatasrol_leeses.md
 
 # Hátasról leesés
@@ -30128,6 +30756,8 @@ Ha sikeres volt a próba, akkor is fennáll az esésből sebződés veszélye, d
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/hatbaszurni_harcolot.md
 
 ## Hátbaszúrni harcolót
@@ -30149,6 +30779,8 @@ Egy "konstelláció" van, mikor ez mégis kivitelezhető:
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/informacioszerzes_valakitol.md
 
 ## Információszerzés valakitől
@@ -30188,6 +30820,8 @@ A Befolyásolásos szituációknál említett [Átverés, Hazudozás](befolyasol
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/ismerem_mit_tudhatok_rola.md
 
 ## Ismerem azt a nevet? Mit tudhatok róla?
@@ -30244,6 +30878,8 @@ Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismer
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/ki_mozdul_elsonek.md
 
 ## Ki mozdul elsőnek?
@@ -30279,6 +30915,8 @@ Ebben az esetben viszont **neki is** [Kezdeményezést](../064_02_01_kezdemenyez
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/kiteres_loves_elol_sikertelen.md
 
 ## Kitérés lövés elől sikertelen (rontott Akrobatika próba)
@@ -30299,6 +30937,8 @@ Szokásos módon, de\
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/koteltanc.md
 
 ## Kötéltánc
@@ -30323,6 +30963,8 @@ Ez [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettségpró
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/lopakodas_rejtozes_es_eszlelese.md
 
 ## Lopakodás/rejtőzés és észlelése
@@ -30401,6 +31043,8 @@ Lopakodás/rejtőzés (-6)
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/lopas_kirablas.md
 
 ## Ellopni valamit, kirabolni valakit
@@ -30439,6 +31083,8 @@ Lopás + Ügyesség
 <br />
 
 
+---
+---
 ## File: md/szituaciok/lovesz_nyul_fegyvereert_tamad_ra_harcos.md
 
 ## Lövész nyúl a fegyveréért, támad rá egy harcos
@@ -30470,6 +31116,8 @@ A levonás a lőfegyver méretétől függ. Minél nagyobb, annál nagyobb a lev
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/maszas_osszetett_pelda.md
 
 ## Mászás képzettségpróbára összetett példa
@@ -30562,6 +31210,8 @@ Lásd az [Esés magasból](eses_magasbol.md) szituáció leírását!
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md
 
 ## Meglepetésből, Pontra támadás max TÉ taktikával
@@ -30590,6 +31240,8 @@ A Támadó taktika kapcsán `VÉ:-6` büntetés jár a pontra támadó karaktern
 
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
+---
+---
 ## File: md/szituaciok/menekules_uldozes_futas.md
 
 ## Menekülés, Üldözés, Futás
@@ -30624,6 +31276,8 @@ Ez egy sima ⚪ **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdons
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/nyomok_nyomkovetes_termeszet.md
 
 ## Nyomok észrevétele, Nyomkövetés - természetben
@@ -30685,6 +31339,8 @@ Normál Kiterjesztés egyszerre mindkét félnél
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/nyomok_nyomkovetes_varos.md
 
 ## Nyomok észrevétele, Nyomkövetés - városi környezetben
@@ -30748,6 +31404,8 @@ Kapcsolódik:
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/szandekos_kiteres_loves_elol.md
 
 ## Szándékos kitérés lövés elől
@@ -30761,6 +31419,8 @@ Lásd a [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szánd�
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/terkep_keszitese_ertelmezes.md
 
 ## Térkép készítése, értelmezése
@@ -30781,6 +31441,8 @@ A térkép olvasása is ide tartozik, a lenti képzettséggel dobjuk. Nyilván e
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/ugras_magasba_tavolba.md
 
 ## Ugrás
@@ -30839,6 +31501,8 @@ Tulajdonságok:
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
+---
+---
 ## File: md/szituaciok/viz_alatt_birni.md
 
 ## Víz alatt bírni
@@ -30854,320 +31518,7 @@ Ez a [Gyöngyhalász](../fortelyok.altalanos/gyongyhalasz.md) fortéllyal fejles
 ⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
 
 
-
-
 ---
-
-## File: md/szabalyrendszer.md
-
-### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.1.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
-
-**[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [Kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [Kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
-
----
-### 0. [Áttekintés, Bevezető](000_attekintes.md)
-### 1. [Karakteralkotás](010_00_karakteralkotas.md)
-
-- [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md)
-- [Karakteralkotó ods](010_02_karakteralkoto_ods.md)
-- [A karakter jellemzői](010_03_00_karakter_jellemzoi.md)
-  - [Kalandozók](010_03_01_kalandozok.md)
-  - [Őrszemek](010_03_02_orszem_karakterek.md)
-  - [Előtörténet](010_03_03_elotortenet.md)
-  - [Személyiségek](010_03_04_szemelyisegek.md)
-  - [Külső](010_03_05_kulso.md)
-  - [Felszerelés](010_03_06_felszereles.md)
-- [Tapasztalati Szint](010_04_tsz_szintlepes.md)
-- [Tulajdonságok](010_05_00_tulajdonsagok.md)
-  - [Tulajdonságok listája](010_05_01_00_tulajdonsagok_listaja.md)
-    - [Erő](010_05_01_01_ero.md)
-    - [Edzettség](010_05_01_02_edzettseg.md)
-    - [Ügyesség](010_05_01_03_ugyesseg.md)
-    - [Gyorsaság](010_05_01_04_gyorsasag.md)
-    - [Intelligencia](010_05_01_05_intelligencia.md)
-    - [Emlékezet](010_05_01_06_emlekezet.md)
-    - [Önuralom](010_05_01_07_onuralom.md)
-    - [Érzékenység](010_05_01_08_erzekenyseg.md)
-  - [Tulajdonságpontok elköltése](010_05_02_tulajdonsagpontok_elkoltese.md)
-  - [Tulajdonságok bónuszai](010_05_03_tulajdonsagok_bonuszai.md)
-  - [Tulajdonságpróba](010_05_04_tulajdonsagproba.md) 🎲
-- [Szilánk](010_06_szilank.md)
-- [Karakteralkotó Pontok (KP)](010_07_kp.md)
-- [KP költésével növelt jellemzők](010_08_00_kp_koltesevel_novelt_jellemzok.md)
-  - [HM, CM](010_08_01_hm_cm_99.md)
-  - [Képzettségek](010_08_02_kepzettsegek_99.md)
-  - [Fortélyok](010_08_03_fortelyok_99.md)
-- [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md)
-- [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md)
-  - [Életerő Pont (ÉP), Fáradság Pont (FP)](010_10_01_ep_fp.md)
-  - [Harcértékek](010_10_02_harcertekek_99.md)
-  - [Manőver Pontok (MP)](010_10_03_manover_pontok_99.md)
-  - [Mágiaellenállás](010_10_04_magiaellenallas.md) 🎲
-  - [Méregellenállás](010_10_05_meregellenallas.md) 🎲
-- [Nem Játékos Karakterek](010_11_njk.md)
-- [Példakarakter megalkotása](010_12_peldakarakter_megalkotasa.md)
-
----
-### 2. [Hátterek](020_hattererek.md) 🟡
-
-  - [Faj Hátterek](021_faj_hatterek.md)
-  - [Leíró Hátterek](022_leiro_hatterek.md)
-  - [Karma Hátterek](023_karma_hatterek.md)
-
----
-### 3. [Képzettségrendszer](030_00_kepzettsegrendszer.md) 🔵
-
-- [Képzettséglista](030_01_kepzettseglista.md)
-- [Primer és Szekunder képzettségek](030_02_primer_szekunder_kepzettsegek.md)
-- [Képzettségszint skála](030_03_kepzettsegszint_skala.md)
-- [Képzettségek fejlesztése](030_04_kepzettsegek_fejlesztese.md)
-- [Képzettségszintek KP igénye](030_05_kepzettsegszintek_kp_igenye.md)
-- [Képzettségpróba](030_06_01_kepzettsegproba.md) 🎲
-- [Csoportos képzettségpróba](030_06_02_csoportos_kepzettsegproba.md) 🎲
-- [Csoportosan végezhető képzettségek](030_06_03_csoportosan_vegezheto_kepzettsegek.md) 🤝
-- [Képzettségpróba Hátrányok](030_07_kepzettsegproba_hatranyok.md)
-- [Képzettségek és Fortélyok kapcsolata](030_08_01_kepzettsegek_fortelyok_kapcsolata.md)
-- [Fortélyok képzettségkiterjesztés listája (ábra)](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
-- [Harci fortélyok kiterjesztéslistája (ábra)](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md) 📊
-- [Bázis képzettségek](030_09_bazis_kepzettsegek.md)
-- [Kézműves képzettségek termék ideái](030_10_kezmuves_targyak_ideai.md)
-
----
-### 4. [Fortélyok](040_fortelyok.md) 🟣
-
-  - [Kiemelt Fortélyok](041_kiemelt_fortelyok.md)
-  - [Szabad Fortélyok](042_szabad_fortelyok.md)
-  - [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
-  - [Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
-  - [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
-  - [Slan fortélyok](046_slan_fortelyok.md)
-
----
-### 5. [Tradíciók](050_tradiciok.md)
-
-### 5.1 [Mágia tradíciók](051_00_magia_tradiciok.md)
-
-- [Magasmágia](051_01_magasmagia.md)
-- [Vulgármágia](051_02_vulgarmagia.md)
-- [Ordani Tűzmágia](051_03_ordani_tuzmagia.md)
-- [Bárdmágia](051_04_bardmagia.md)
-- [Illuzionista](051_05_illuzionista.md)
-- [Természeti mágia](051_06_termeszeti_magia.md)
-- [Sámánmágia](051_07_samanmagia.md)
-- [Drágakőmágia](051_08_dragakomagia.md)
-
-### 5.2 [Papi tradíció](052_papi_tradicio.md)
-
-### 5.3 [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
-
-- [Fejvadász Tradíció](053_01_fejvadasz_tradicio.md)
-- [Slan Tradíció](053_02_slan_tradicio.md)
-
----
-### 6. [Harcrendszer](060_00_harcrendszer.md) 🗡️
-
-### 6.1 [Életerő, Sebesülés](061_00_eletero.md)
-
-- [Életerő Pont (ÉP)](061_01_eletero_pont.md)
-- [Fáradság Pont (FP)](061_02_faradsag_pont.md)
-- [Sebesülés](061_03_sebesules.md)
-- [Fájdalomtűrés sebesüléskor](061_04_fajdalomtures_sebesuleskor.md)
-- [Példa sebesülésre](061_05_pelda_sebesulesre.md)
-- [Gyógyulás](061_06_gyogyulas.md)
-
-### 6.2 [Alapértékek](062_00_alapertekek.md)
-
-- [KÉ, TÉ, VÉ, CÉ](062_01_ke_te_ve_ce.md)
-- [Harcmodor képzettségek és bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
-- [Mozgásgátló tényező (MGT)](062_03_MGT_99.md)
-- [HM, CM](062_04_hm_cm.md)
-
-### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
-
-- [Harci kör](063_01_harci_kor.md)
-- [Akció fogalma](063_02_akcio_fogalma.md)
-- [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
-- [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
-- [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
-- [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
-
-### 6.4 [Harc menete](064_00_harc_menete.md)
-
-- [Harc menete (összefoglaló)](064_01_harc_menete_osszefoglalas.md) 🎲
-- [Harc menete (részletes)](064_02_00_harc_menete_reszletes.md) 🎲
-  - [Kezdeményezés](064_02_01_kezdemenyezes.md)
-  - [Támadó dobás](064_02_02_tamado_dobas.md)
-  - [Védő Érték csökkentése](064_02_03_vedo_ertek_csokkentese.md)
-  - [Találat](064_02_04_talalat.md)
-  - [Fegyverek sebzés jellege, típusa](064_02_05_fegyver_sebzes_jellege_tipusa.md)
-  - [Erőbónusz, Erőlimit](064_02_06_erobonusz_erolimit.md)
-  - [Sebzés](064_02_07_sebzes.md)
-  - [Sebződés hatása](064_02_08_sebzodes_hatasa.md)
-  - [Védő Érték regenerálódása](064_02_09_ve_regeneralodas.md)
-  - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md)
-- [Példaharc](064_03_peldaharc.md) ⚡
-
-### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
-
-- [Harci helyzetek](065_01_00_harci_helyzetek.md)
-  - [Belharci szituáció](065_01_01_belharci_szituacio.md)
-  - [Fegyverrántás váratlanul](065_01_02_fegyverrantas_varatlanul.md)
-  - [Harci pozíciók](065_01_03_harci_poziciok.md)
-  - [Fegyverrel kapcsolatos helyzetek](065_01_04_fegyver_harci_helyzetek.md)
-  - [Fizikai helyzetek](065_01_05_fizikai_helyzetek.md)
-  - [Személyhez kötött](065_01_06_szemelyhez_kotott.md)
-  - [Lények](065_01_07_lenyek.md)
-- [Harci taktikák](065_02_harci_taktikak.md)
-- [Harc alakzatban](065_03_harc_alakzatban.md)
-- [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
-
-### 6.6 [Manőverek](066_00_manoverek.md) 🎲
-
-- [Manőver Alap](066_01_manover_alap.md)
-- [Manőver Pontok](066_02_manover_pontok.md)
-- [Manőver szabályok](066_03_manover_szabalyok.md)
-- [Manőver végrehajtásának lépései](066_04_manover_vegbevitele.md)
-- [Általános Manőverek listája](066_05_altalanos_manoverek.md) 🎲
-- [Belharcos Manőverek listája](066_06_belharcos_manoverek.md) 🎲
-- [Lovas Manőverek listája](066_07_lovas_manoverek.md) 🎲
-- [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md) ⚡
-- [Példa Manőver alkalmazására: Lábsöprés](066_08_02_pelda_manover_lapsopres.md) ⚡
-
-### 6.7 [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
-
-- [Lovas, Léglovas harc szabályai](067_01_lovas_harc_szabalyai.md)
-- [Lovas, Léglovas fortélyok](067_02_lovas_leglovas_fortelyok.md)
-- [Lovas, Léglovas harci taktikák](067_03_lovas_harci_taktikak.md)
-- [Lovas, Léglovas manőverek](067_04_lovas_manoverek.md) 🎲
-
-### 6.8 [Fegyverek, pajzsok](068_00_fegyverek.md)
-
-- [Fegyverek általános szabályai](068_01_00_fegyverek_altalanos_szabalyai.md)
-  - [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
-  - [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md)
-  - [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md)
-  - [Sebzéstípusok](068_01_04_sebzestipusok.md)
-  - [KF: Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md)
-  - [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_fegyverek_egy_kezzel.md)
-  - [Íves fegyver](068_01_07_ives_fegyver.md)
-  - [Puszta kéz](068_01_08_puszta_kez.md)
-  - [Nyílpuskák](068_01_09_nyilpuskak.md)
-  - [Érintő támadás](068_01_10_erinto_tamadas.md)
-  - [Erőbónusz limit](068_01_11_erobonusz_limit.md)
-  - [Átütés](068_01_12_atutes.md)
-  - [Fegyver mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md)
-  - [Fegyverek minősége (Ideája)](068_01_14_fegyverek_minosege_ideaja.md)
-- [Közelharci fegyverek](068_02_kozelharci_fegyverek.md)
-- [Kardvívó fegyverek](068_03_kardvivo_fegyverek.md)
-- [Lándzsavívó fegyverek](068_04_landzsavivo_fegyverek.md)
-- [Romboló fegyverek](068_05_rombolo_fegyverek.md)
-- [Ostorharc fegyverek](068_06_ostorharc_fegyverek.md)
-- [Hajítófegyverek](068_07_hajitofegyverek.md)
-- [Lőfegyverek](068_08_lofegyverek.md)
-- [Pajzs fegyverek](068_09_pajzs_fegyverek.md)
-
-### 6.9 [Vértek, páncélok](069_00_vertek_pancelok.md)
-
-- [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
-- [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Mozgásgátló Tényező (MGT)](069_03_MGT.md)
-- [Védett terület, Páncéldobás](069_04_vedett_terulet_panceldobas.md)
-- [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
-- [Páncél ára](069_06_pancel_ara.md)
-- [Páncél példák](069_07_pancel_peldak.md) ⚡
-
----
-### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
-
-- [Célzó Érték számítása](071_tavharc_ce.md)
-- [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md)
-- [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
-- [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
-- [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
-- [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
-- [Területlövés](077_teruletloves.md)
-- [Távolsági fegyverek](078_tavharc_fegyverek.md)
-- [Példalövészet](079_01_tavharc_peldak.md) ⚡
-- [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
-
----
-### 8. [Hatások és Státuszok](080_hatasok_es_statuszok.md)
-
-- [Hatások](081_hatasok.md) 🔥
-- [Státuszok](082_statuszok.md) ✴️
-- [Harci helyzetek](083_harci_helyzetek_99.md) ✴️🗡️
-- [Mágikus Státuszok](084_magikus_statuszok_99.md) ✴️✨
-
----
-### 9. [Pszí](090_pszi.md) 🌀
-
-#### 9.1 [Pszi diszciplínák](091_pszi_diszciplinak.md) 🌀
-
----
-### 10. [Mágiarendszer](100_magiarendszer.md) ✨
-
-- [Mágiaelmélet](101_magiaelmelet.md)
-- [Mágia alapszabályok](102_magia_alapszabalyok.md)
-- [Aura, Mágia akarata, Mágiaellenállás](103_aura_magia_akarata_magiaellenallas.md)
-- [Varázslás módszerei](104_varazslas_modszerek.md)
-- [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)
-- [Mágikus Szférák és Arkánumaik](106_magikus_szferak_arkanumok.md)
-- [Mágikus Státuszok](107_magikus_statuszok.md)
-- **Arkánumok listája**
-  - [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
-  - Aura
-  - [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
-  - [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
-  - [Életerő manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
-  - [Időmágia](kepzettsegek.primer.arkanumok/idomagia.md)
-  - [Illúziók](kepzettsegek.primer.arkanumok/illuziok.md)
-  - [Külső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md)
-  - [Mentálmágia](kepzettsegek.primer.arkanumok/mentalmagia.md)
-  - [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md)
-  - [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)
-  - [Sors befolyásolás](kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
-  - [Sors érzékelés](kepzettsegek.primer.arkanumok/sors_erzekeles.md)
-  - [Térmágia](kepzettsegek.primer.arkanumok/termagia.md)
-  - [Természetes anyagok mágiája](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md)
-  - [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
-
----
-### 11. [Papi mágia](110_papimagia.md)
-
-- [Papi mágia világképe](111_papi.magia.vilagkep.md)
-- [Papi mágia alapszabályai](112_papi.magia.alapszabalyok.md)
-- [Papi varázslatok](113_papi.varazslatok.md) ✨
-
----
-### 12. [Slan misztérium](120_slan.md)
-
- - [Slan Tradíció](053_02_slan_tradicio.md)
- - [Slan fortélyok](046_slan_fortelyok.md)
- - [Slan diszciplínák](121_slan_diszciplinak.md)
- - [Chi harc képzettségei](122_chi_harc.md)
- - [Slan fegyverek](123_slan_fegyverek.md)
-
----
-### 13. [Varázstárgyak](130_varazstargyak.md)
-
----
-### 14. [Gyógyítás, gyógyulás](140_gyogyitas_gyogyulas.md)
-
----
-
-### 15. [Méregrendszer, Mérgek](150_meregrendszer.md)
-
-- [Méregkeverés szabályai](151_meregkeveres_szabalyai.md)
-- [Méregellenállás próba](152_meregellenallas.md)
-- [Méregérzékelés](153_meregerzekeles.md)
-- [Példamérgek](154_peldamergek.md) ⚡
-
----
-### 16. [Szituációk](160_szituaciok.md)
-
----
-## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
-
 ---
 
 

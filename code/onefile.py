@@ -39,7 +39,7 @@ def concat_md_files_in_dir(dir_path):
                 cleaned_path = md_file.replace(repo_path + os.sep, '')
                 outfile.write('## File: ' + cleaned_path + '\n\n')
                 outfile.write(infile.read())
-                outfile.write('\n\n')  # Separate files by two newlines
+                outfile.write('\n\n---\n---\n')
     print(f"Created combined file for directory '{dirname}': {dir_combined}")
     return dir_combined
 
@@ -64,9 +64,9 @@ script_dir = os.path.dirname(os.path.abspath(__file__))
 combined_file = os.path.join(script_dir, '..', 'work', 'szilank.rpg.full.txt')
 
 
-# if not os.path.isdir(os.path.join(path_rootdir, 'md')):
-#     print("Error: 'md' directory is missing")
-#     sys.exit(1)
+if not os.path.isdir(path_rootdir):
+    print("Error: 'md' directory is missing")
+    sys.exit(1)
 
 inject_points = {
     '021_faj_hatterek.md': 'hatterek.faji',
@@ -88,6 +88,11 @@ list_rootdir_files = [str(Path(path_rootdir).parent / 'README.md')]
 list_rootdir_files.append(str(Path(path_rootdir).parent / 'LICENSE'))
 list_rootdir_files.append(os.path.join(path_rootdir, 'szabalyrendszer.md'))
 list_rootdir_files.extend(get_md_files(path_rootdir, recursive=False))
+
+# Remove duplicate szabalyrendszer.md if exists at the end
+if list_rootdir_files and list_rootdir_files[-1].endswith('szabalyrendszer.md'):
+    list_rootdir_files.pop()
+
 
 # Combine all subdir's .md files into separate combined files
 list_dirs = get_directories(path=path_rootdir, blacklist=blacklist)
@@ -117,7 +122,7 @@ with open(combined_file, 'w', encoding='utf-8') as outfile:
             print(f"Adding file: {cleaned_path}")
             outfile.write('## File: ' + cleaned_path + '\n\n')
             outfile.write(infile.read())
-            outfile.write('\n\n---\n\n')
+            outfile.write('\n\n---\n---\n')
 
         ## If infile is identical with a key from inject_points, inject all
         ### matching combined dir file here: "__szilank.<inject_point>*.md"
@@ -127,11 +132,11 @@ with open(combined_file, 'w', encoding='utf-8') as outfile:
             for combined_dir_file in combined_dir_files:
                 if f"__szilank.{inject_point}" in os.path.basename(combined_dir_file):
                     with open(combined_dir_file, 'r', encoding='utf-8') as injectfile:
-                        cleaned_dpath = combined_dir_file.replace(path_rootdir + os.sep, '')
-                        # print(f"Adding combined dirfile: {cleaned_dpath} at inject point: {inject_point}")
-                        # outfile.write('## File: ' + cleaned_dpath + '\n\n')
+                        cleaned_dpath = combined_dir_file.replace(repo_path + os.sep, '')
+                        print(f"Adding combined dirfile: {cleaned_dpath} at inject point: {inject_point}")
+                        outfile.write('## File: ' + cleaned_dpath + '\n\n')
                         outfile.write(injectfile.read())
-                        outfile.write('\n\n---\n\n')  # Separate files by two newlines
+                        outfile.write('\n\n---\n\n')
 
 # Clean up temp dir
 if os.path.exists(tmp_dir):
