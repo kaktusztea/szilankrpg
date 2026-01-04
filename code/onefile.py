@@ -11,9 +11,9 @@ from pathlib import Path
 
 
 def get_directories(path, blacklist=None):
-
-    """Return list of full paths to all directories in the given path."""
-    return [str(d.resolve()) for d in Path(path).iterdir() if d.is_dir() and (blacklist is None or d.name not in blacklist)]
+    """Return alphabetically sorted list of full paths to all directories in the given path."""
+    return sorted([str(d.resolve()) for d in Path(path).iterdir()
+                   if d.is_dir() and (blacklist is None or d.name not in blacklist)])
 
 
 def get_md_files(directory, recursive=False):
@@ -69,7 +69,8 @@ combined_file = os.path.join(script_dir, '..', 'work', 'szilank.rpg.full.txt')
 inject_points = {
     '021_faj_hatterek.md': 'hatterek.faji',
     '030_01_kepzettseglista.md': 'kepzettsegek',
-    '046_slan_fortelyok.md': 'fortelyok'
+    '046_slan_fortelyok.md': 'fortelyok',
+    '160_szituaciok.md': 'szituaciok'
     }
 
 blacklist=['views', 'template', 'images', '.obsidian', 'diszciplinak.pszi', 'fortelyok.misztikus', 'magia.papi.varazslatok']
@@ -89,6 +90,12 @@ list_dirs = get_directories(path=path_rootdir, blacklist=blacklist)
 for dir_path in list_dirs:
     combined_file_path = concat_md_files_in_dir(dir_path)
     combined_dir_files.append(combined_file_path)
+
+# DEBUG: list tmp dir files
+print("Combined temporary subdir markdown files:")
+for f in os.listdir(tmp_dir):
+    print(f" - {f}")
+
 
 # Combine all files into one big file
 if os.path.exists(combined_file):
