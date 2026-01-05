@@ -141,6 +141,8 @@ Itt folyik a hátralévő és nyitott témák kidolgozása.
 
 **Kapcsolat**: `szilankrpg _kukac_ protonmail _pont_ com`
 
+**Full raw document in markdown**: https://raw.githubusercontent.com/kaktusztea/szilankrpg/refs/heads/master/work/szilank.rpg.full.txt
+
 Ailtas, Kaktusztea, 2005-2025 ([CC](LICENSE))
 
 
