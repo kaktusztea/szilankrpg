@@ -1,4 +1,4 @@
-name: update work/szilank.rpg.full.txt
+name: update szilank full text file
 
 on: 
   push:
