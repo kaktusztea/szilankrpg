@@ -21,7 +21,7 @@ Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónusz
   - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)  (íjász/lövész alakzat esetén)
   - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)  (lovas alakzat esetén)
   - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)  (lovas alakzat esetén)
-  
+
 ### ⚜️Támadószint
 
 ```
@@ -32,7 +32,7 @@ Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónusz
 
 - Csapattagok **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
 - Csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
- 
+
 ### ⚜️Védekezőszint
 
 ```
@@ -45,6 +45,8 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 
 ---
 ## Alakzat harcértékeinek meghatározása
+
+A lenti értékeket célszerű játékalkalom **előtt** kiszámítani, így nem von el időt sem játékostól, sem a mesélőtől. Mivel előre tudható, hogy mely csapattagok, vagy nem játékos karakterek képesek és szoktak így küzdeni, ez felkészülési időben könnyen megállapítható.
 
 ### 🔆Alakzat TÉ értéke
 
