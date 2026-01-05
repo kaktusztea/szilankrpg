@@ -108,11 +108,6 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 <br />
 
 ---
-## Licenc
-Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek az alábbiak szerint: [LICENSE](LICENSE)
-
-<br />
-
 ## Fejlesztés statisztikái
 
 ![](https://progress-bar.xyz/100/?title=Karakteralkotás%20%20%20%20&width=200&color=babaca)\
@@ -125,16 +120,16 @@ Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek a
 ![](https://progress-bar.xyz/85/?title=Méregrendszer%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/95/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
 
-<br />
-
 ## Eszközök
 
 - [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
 - [Full raw document in markdown](https://raw.githubusercontent.com/kaktusztea/szilankrpg/refs/heads/master/work/szilank.rpg.full.txt)
 
-<br />
+## Licenc
+Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek az alábbiak szerint: [LICENSE](LICENSE)
 
----
+## Impresszum
+
 **Szilánk RPG**: Szerepjáték szabályrendszer fantasy világokra\
 **Kapcsolat**: `szilankrpg _kukac_ protonmail _pont_ com`
 
