@@ -21,6 +21,7 @@ jobs:
 
     - name: Execute process_kp_igeny.py
       run: python code/process_kp_igeny.py
+
     - name: Check for Changes
       run: |
         if [[ $(git status --porcelain) ]]; then
@@ -39,7 +40,7 @@ jobs:
       if: ${{ env.files_modified == 'true' }}
       run: |
         git add .
-        git commit -m "GitHub Action: process_kp_igeny.py"
+        git commit -m "GitHub Action: data/tables/kepzettseg_kp.json"
 
     - name: Push Changes
       if: ${{ env.files_modified == 'true' }}
