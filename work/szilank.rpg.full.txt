@@ -4,7 +4,7 @@
 
 Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepjáték rendszer.
 
-## ⚜️ **[Szabályrendszer](md/szabalyrendszer.md)**
+## **[Szabályrendszer](md/szabalyrendszer.md)** ⚜️
 
 <br />
 
@@ -110,11 +110,6 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 <br />
 
 ---
-## Licenc
-Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek az alábbiak szerint: [LICENSE](LICENSE)
-
-<br />
-
 ## Fejlesztés statisztikái
 
 ![](https://progress-bar.xyz/100/?title=Karakteralkotás%20%20%20%20&width=200&color=babaca)\
@@ -127,16 +122,16 @@ Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek a
 ![](https://progress-bar.xyz/85/?title=Méregrendszer%20%20%20%20%20%20&width=200&color=babaca)\
 ![](https://progress-bar.xyz/95/?title=Szituációk%20%20%20%20%20%20%20%20%20&width=200&color=babaca)
 
-<br />
-
 ## Eszközök
 
 - [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
 - [Full raw document in markdown](https://raw.githubusercontent.com/kaktusztea/szilankrpg/refs/heads/master/work/szilank.rpg.full.txt)
 
-<br />
+## Licenc
+Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek az alábbiak szerint: [LICENSE](LICENSE)
 
----
+## Impresszum
+
 **Szilánk RPG**: Szerepjáték szabályrendszer fantasy világokra\
 **Kapcsolat**: `szilankrpg _kukac_ protonmail _pont_ com`
 
@@ -20600,6 +20595,8 @@ Harcban sikertelennek számít támadásod, ha a **Támadó dobásod** végső �
 
 Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva, hiszen a harc, a védekezés komolyan igénybe veszik az védekező figyelmét, állóképességét. Hogy konkrétan milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
 
+A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
+
 Az aktuális fegyverméretek különbségét Harci helyzetekkel (harci státuszokkal) modellezzük.
 
 ### ⚜️ [Fegyverméret - pengehátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány)
@@ -22822,7 +22819,7 @@ Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónusz
   - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)  (íjász/lövész alakzat esetén)
   - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)  (lovas alakzat esetén)
   - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)  (lovas alakzat esetén)
-  
+
 ### ⚜️Támadószint
 
 ```
@@ -22833,7 +22830,7 @@ Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónusz
 
 - Csapattagok **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
 - Csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
- 
+
 ### ⚜️Védekezőszint
 
 ```
@@ -22846,6 +22843,8 @@ Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.har
 
 ---
 ## Alakzat harcértékeinek meghatározása
+
+A lenti értékeket célszerű játékalkalom **előtt** kiszámítani, így nem von el időt sem játékostól, sem a mesélőtől. Mivel előre tudható, hogy mely csapattagok, vagy nem játékos karakterek képesek és szoktak így küzdeni, ez felkészülési időben könnyen megállapítható.
 
 ### 🔆Alakzat TÉ értéke
 
