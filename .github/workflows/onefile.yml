@@ -1,0 +1,44 @@
+name: onefile.py script execution
+
+on: 
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    
+    - name: Set up Python
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.14.2'
+    
+    - name: Run onefile.py python script
+      run: |
+        cd code
+        python onefile.py ${{ github.workspace }}
+    
+    - name: Configure Git
+      if: ${{ env.files_modified == 'true' }}
+      run: |
+        git config user.name "github-actions[bot]"
+        git config user.email "github-actions[bot]@users.noreply.github.com"
+
+    - name: Commit Changes
+      if: ${{ env.files_modified == 'true' }}
+      run: |
+        git add .
+        git commit -m "GitHub Action: code/onefile.py"
+
+    - name: Push Changes
+      if: ${{ env.files_modified == 'true' }}
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git push
