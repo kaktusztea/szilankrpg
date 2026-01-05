@@ -22,7 +22,7 @@ jobs:
         run: |
           set -euo pipefail
           echo "Downloading logs for workflow run id: ${{ github.event.workflow_run.id }} (workflow: $WORKFLOW_NAME)"
-          curl -fsSL -H "Authorization: token $GITHUB_TOKEN" "${{ github.server_url }}/repos/${{ github.repository }}/actions/runs/${{ github.event.workflow_run.id }}/logs" -o logs.zip
+          curl -fsSL -H "Authorization: token $GITHUB_TOKEN" "https://api.github.com/repos/${{ github.repository }}/actions/runs/$RUN_ID/logs" -o logs.zip
           unzip -q logs.zip -d logs
           # Concatenate all job log files into one file
           LANG=C
