@@ -1,5 +1,9 @@
 name: Linkspector code
-on: [push]
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:  # Optional: allows manual triggering
+
 jobs:
   check-links:
     name: Check linkspector code
