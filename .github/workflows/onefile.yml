@@ -23,7 +23,15 @@ jobs:
       run: |
         cd code
         python onefile.py ${{ github.workspace }}
-    
+
+    - name: Check for Changes
+      run: |
+        if [[ $(git status --porcelain) ]]; then
+          echo "files_modified=true" > $GITHUB_ENV
+        else
+          echo "files_modified=false" > $GITHUB_ENV
+        fi
+
     - name: Configure Git
       if: ${{ env.files_modified == 'true' }}
       run: |
