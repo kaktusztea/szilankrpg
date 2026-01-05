@@ -1,4 +1,4 @@
-name: update szilank full text file
+name: Update Szilánk full text file
 
 on: 
   push:
