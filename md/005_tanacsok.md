@@ -7,7 +7,7 @@ Nyilván minden mesélő és parti más, de pár jótanács segíthet, hogy a `S
 ---
 ### "Nem svédasztal"
 
-Ismerős a szituáció, mikor egy akadállyal szembesülve a játékos az alábbiakat mondja:
+Ismerős szituáció, mikor egy akadállyal szembesülve a játékos az alábbiakat mondja:
 
 \- "Van xyz, zxy, stb... képzettségem, meg wqz fortélyom" - teszi mindezt a képzettségek szintje és a fortélyok foka nélkül.
 
