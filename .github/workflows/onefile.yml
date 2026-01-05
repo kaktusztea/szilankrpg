@@ -42,7 +42,7 @@ jobs:
       if: ${{ env.files_modified == 'true' }}
       run: |
         git add .
-        git commit -m "GitHub Action: code/onefile.py"
+        git commit -m "GitHub Action: update work/szilank.rpg.full.txt"
 
     - name: Push Changes
       if: ${{ env.files_modified == 'true' }}
