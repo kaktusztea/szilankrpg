@@ -2,7 +2,7 @@
 
 Egy fantasy világokra tervezett komplett, asztali (papír, kockák) szerepjáték rendszer.
 
-## ⚜️ **[Szabályrendszer](md/szabalyrendszer.md)**
+## **[Szabályrendszer](md/szabalyrendszer.md)** ⚜️
 
 <br />
 
