@@ -63,7 +63,7 @@ Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd
 [1; 4]. fok
 ```
 
-Karakteralkotó Pontjaidat [Fortélyok](040_fortelyok.md) felvételére is költheted, amelyek változóan, `[1-4]` fokúak is lehetnek. Ezek nem szélesen skálázandó, hanem "szűk", biztos tudást adhatnak, vagy egy képzettség egy meglevő aspektusának erősítését végezhetik - jellemzően `+2` bónuszt adva fokonként. 
+Karakteralkotó Pontjaidat [Fortélyok](040_fortelyok.md) felvételére is költheted, amelyek változóan, `[1-4]` fokúak is lehetnek. Ezek nem szélesen skálázandó, hanem "szűk", biztos tudást adhatnak, vagy egy képzettség egy meglevő aspektusának erősítését végezhetik - jellemzően `+2` bónuszt adva fokonként.
 
 A [Kiemelt Fortélyok](041_kiemelt_fortelyok.md) három egyedi ismeretet adnak, amelyekre nem kell `KP`-t költened.
 
@@ -101,7 +101,7 @@ Jöhetnek a [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md) kisz�
 - [Életerő Pont és Fáradság Pont](010_10_01_ep_fp.md)
 - [Manőver Pontok](066_02_manover_pontok.md)
 - [Mágiaellenállás](010_10_04_magiaellenallas.md)
-- [Méregellenállás](010_10_05_meregellenallas.md) 
+- [Méregellenállás](010_10_05_meregellenallas.md)
 
 Végül jöjjön karaktered [harcértékeinek megállapítása](062_01_ke_te_ve_ce.md) a harci ismereteid értékei alapján.
 
@@ -116,7 +116,7 @@ A "törzs", az **alapozás** egy [Mágia Tradíció](051_00_magia_tradiciok.md) 
 
 A fa "ágai" a [Mágikus Szférák vagy  Arkánum](106_magikus_szferak_arkanumok.md) képzettségek. Ezek a mágiaiskolák, amelyeket az adott Tradíció alatt karaktered megtanult és annak kontextusában használni is képes. Lehet a tanult Arkánum neve ugyanaz, ám egy "Asztrálmágia Arkánum" más-más formulákat tartalmaz a [Magasmágia](051_01_magasmagia.md) és másokat például a [Vulgármágia](051_02_vulgarmagia.md) alatt.
 
-Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) amelyek a "levelek" a fa ágain. Ide tartoznak a [Varázslás módszerek](104_varazslas_modszerek.md) és más misztikus, színesítő, specializálódó ismeretek.
+Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) amelyek a "levelek" a fa ágain. Ide tartoznak a [Varázslás Formák](104_varazslas_formak.md) és más misztikus, színesítő, specializálódó ismeretek.
 
 <br />
 

@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiamódszer: Dalmágia (1)
+## 🟣 💫 Mágia Forma: Dalmágia (1)
 
 Képes vagy dalba ágyazni a mágikus hatást.
 

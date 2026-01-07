@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiamódszer: Fókuszok, Emitterek (1)
+## 🟣 💫 Mágia Forma: Fókuszok, Emitterek (1)
 
 Képes vagy mágikus fókuszt, vagy emittert létrehozni.
 

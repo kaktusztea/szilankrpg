@@ -216,6 +216,6 @@ A mágiatudó csalódottan horkant fel, mágiája csődöt mondott.
 
 ---
 
-🔗 [Varázslás módszerek](104_varazslas_modszerek.md) →
+🔗 [Varázslás Formák](104_varazslas_formak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

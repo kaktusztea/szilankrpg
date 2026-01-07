@@ -20,9 +20,9 @@ Az **Életerő** szféra alá tartozó arkánum.
 ---
 ### Rontások
 
-⭕ Vagy az egy Módszer? ⭕
+⭕ Vagy az egy Forma? ⭕
 
 ---
 ### Betegségmágia
 
-⭕Rontás módszerrel?⭕
+⭕Rontás Formával?⭕

@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiamódszer: Szimpatikus mágia (1)
+## 🟣 💫 Mágia Forma: Szimpatikus mágia (1)
 
 A tárgyak, lények, események közti kapcsolati hídon keresztül küldesz át mágikus hatást.
 

@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiamódszer: Ceremoniális mágia (1)
+## 🟣 💫 Mágia Forma: Ceremoniális mágia (1)
 
 Képes vagy nagy, hosszú, ceremoniális mágiák formájában mágikus hatást létrehozni.
 

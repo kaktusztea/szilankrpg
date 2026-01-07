@@ -24,7 +24,7 @@
 - Be tudja azonosítani a jelenlét csoportját (például démon)
 - ha van kapcsolódó ismerete (pl. [Kvantikum](../../kepzettsegek.szekunder/kvantikum.md) képzettség + [Belső síkok ismerete: elementálok](../../fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md)) Szabad Fortély, akkor be is tudja azonosítani (Nehézség a lény ismertségétől függ, KM dönt)
 
-**15.szint:** 
+**15.szint:**
 
 ---
 #### Hatás
@@ -34,7 +34,7 @@ A Pap képes hite ellenségeinek hatásait, jelenlétét érzékelni:
 - nem rejtőzködő ártó entitásokat `2x Kisszféra` sugarú körben
 - adott személyre alkalmazott befolyásolást:
   - annak ideje
-  - módszer (Átok, Bűbáj vagy Csókmágia)
+  - Forma (Átok, Bűbáj vagy Csókmágia)
   - jellege: Mentál, Asztrál, Betegség, Megszállás
 
 ---

@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiamódszer: Bájitalok (1)
+## 🟣 💫 Mágia Forma: Bájitalok (1)
 
 Bájitalokba foglalhatsz mágikus hatásokat.
 

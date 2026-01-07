@@ -4,9 +4,9 @@
 
 → [STUDY: Misztikus Fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) ⭕
 
-### Varázslás módszerek
+### Varázslás formák
 
-→ [STUDY: Varázslás módszerek](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazslas.modszerek)
+→ [STUDY: Varázslás Formák](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazslas.formak)
 
 ---
 
