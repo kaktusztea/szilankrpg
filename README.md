@@ -44,7 +44,7 @@ Használd környezeted adottságait és az adott körülményeket előnyös szit
 ---
 ## Távolsági harcrendszer
 
-A lőfegyverek alapesetben rendkívül halálosak, viszont a vérteknek szintén nagy szerep jut (nem csak) ennek ellensúlyozására.
+A lőfegyverek közelről rendkívül halálosak, viszont a vérteknek szintén nagy szerep jut (nem csak) ennek ellensúlyozására.
 
 A távolsági harcot számos más körülmény cizellálja, mint a célpont mozgásának jellege, mérete, érzékelhetősége, valamint a szél hatása.
 
