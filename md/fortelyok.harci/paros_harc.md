@@ -17,7 +17,7 @@ Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mi
 TÉ, VÉ :+2
 
 1:1 harcban KÉ:+1
-(többnél nem jár)  
+(többnél nem jár)
 ```
 
 <br />
@@ -34,7 +34,7 @@ TÉ, VÉ :+2
 TÉ, VÉ :+4
 
 1:2 harcig KÉ:+1
-(többnél nem jár)  
+(többnél nem jár)
 ```
 
 <br />
@@ -51,7 +51,7 @@ TÉ, VÉ :+4
 TÉ, VÉ :+6
 
 1:3 harcig KÉ:+1
-(többnél nem jár)  
+(többnél nem jár)
 ```
 
 ---

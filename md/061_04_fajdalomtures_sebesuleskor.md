@@ -49,7 +49,7 @@ Fájdalomtűrés (K) + Edzettség (T)
 Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + Edzettség)** képzettségpróbát kell dobnia **Nehéz** (`12`) célszám ellen.
 
 Sikertelen próba esetén a karakter elájul.\
-Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia. 
+Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
 
 🔆 A [Harci láz](fortelyok.harci/harci_laz.md) fortély egyes fokai előnyt adnak a fenti próbára.
 

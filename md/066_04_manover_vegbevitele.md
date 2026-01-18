@@ -36,7 +36,7 @@ Ha az így érkező támadás találat (nem kell, hogy valós sebzést is okozzo
 
 Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékkel, melyhez `TÉ:+4` módosító járul. Ha ez a támadás sikeres, akkor jöhet még opcionálisan az Ellenpróba fázis. Ha minden fázis sikeres, akkor a Manőver is sikeres. Ne feledjük, hogy a `TÉ` értékébe beleszámít az esetleges több támadás levonása is (`-4` támadásonként)!
 
-Ha a **Végrehajtás** sikertelen, akkor a helyzet talán megvolt, de nem sikerült kihasználni. 
+Ha a **Végrehajtás** sikertelen, akkor a helyzet talán megvolt, de nem sikerült kihasználni.
 
 <br />
 
@@ -47,10 +47,10 @@ Ha a **Végrehajtás** sikertelen, akkor a helyzet talán megvolt, de nem siker�
 Manőver Alap + k10
 
        vs
-       
+
 Manőver Célszám =
  + Manőver Alap (Ellenfél)
- + Manőver Nehézség       
+ + Manőver Nehézség
 ```
 
 ### 🔆Ellenpróba Dobás extra módosítói

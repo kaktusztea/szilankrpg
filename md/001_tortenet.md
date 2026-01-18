@@ -71,7 +71,7 @@ Eddig tartott az aktív fejlesztés. Ekkor már elég előrehaladott állapotban
 **Változások a korábbi állapothoz képest:**
 - Nincsenek kasztok
 - Képzettségrendszer kész
-- Harcrendszer `k100` alapú 
+- Harcrendszer `k100` alapú
 
 <br />
 
@@ -79,7 +79,7 @@ Eddig tartott az aktív fejlesztés. Ekkor már elég előrehaladott állapotban
 
 <br />
 
-⏸️  13,5 év szünet ⏸️ 
+⏸️  13,5 év szünet ⏸️
 
 <br />
 
@@ -108,7 +108,7 @@ Első, Github release: [v0.4.0.0](https://github.com/kaktusztea/szilankrpg/relea
 
 ### 2024.01 hónap ❗
 
-Ekkor - a dokumentumok migrálása után - indult újra az aktív fejlesztés, valamint teszt játékok a rendszer aktuális állapotával. 
+Ekkor - a dokumentumok migrálása után - indult újra az aktív fejlesztés, valamint teszt játékok a rendszer aktuális állapotával.
 
 Hetente jelenik meg Github Release: [bővebben](https://github.com/kaktusztea/szilankrpg/releases)
 

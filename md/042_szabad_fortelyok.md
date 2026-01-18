@@ -15,7 +15,7 @@ Specializált, egy, vagy több [képzettséget](030_01_kepzettseglista.md) "kite
 
 Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 
-#### ⚜️ `1 db / Tsz` 
+#### ⚜️ `1 db / Tsz`
 
 A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásodból elköltesz egyet a felvételére. A Karakteralkotóban a "Speciális" fülön ilyenkor `1` értéket írj a "**Költve**" mezőbe értékként.
 

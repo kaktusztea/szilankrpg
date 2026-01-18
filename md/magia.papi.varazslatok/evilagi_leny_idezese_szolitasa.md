@@ -6,7 +6,7 @@
 
 **Hatótáv**: Tömeg
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Kisszféra
 
@@ -14,9 +14,9 @@
 - kis lények (madár, rágcsálók, denevér  (max 1 csoportnyi)).
 - Ha konkrét állat fajtát akarok, akkor
   - `+3` szint szükséges
-  - állati komponens kell. Pl. medvéhez egy medvefog. 
+  - állati komponens kell. Pl. medvéhez egy medvefog.
 
-**6.szint:** 
+**6.szint:**
 - ragadozó jön, veszélyességük kb. ugyanakkora, hogy melyik, az random
 - 2 farkas, 1 medve, 3 róka, 2 delfin, 1 bálna (csak tengeren), 1 ocsány
 - Ha konkrét állat fajtát akarok, akkor

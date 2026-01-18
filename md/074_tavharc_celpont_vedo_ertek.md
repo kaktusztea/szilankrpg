@@ -8,7 +8,7 @@ Cella =
 ```
 
 ```
-Célpont VÉ = 
+Célpont VÉ =
   Szorzó  x  Cella
 ```
 
@@ -40,7 +40,7 @@ Ritkán fordul elő ez az eset, főleg álldogáló, nagy méretű célok eseté
 Célpont VÉ =
   Szorzó
     +   ──→ összeadás (!)
-  Cella    
+  Cella
 ```
 
 

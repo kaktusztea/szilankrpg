@@ -60,7 +60,7 @@ Az `SFÉ` ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelt
 Természetesen nem csak fegyverek okozhatnak sérülést, hanem egy mágikus tűzgolyó, zuhanás a tetőről, stb. A mágikus hatások sebzéseit a [Mágia](100_magiarendszer.md) fejezetben tárgyaljuk, bővebben lásd ott.
 
 ---
-### Élőholtak sebződése 
+### Élőholtak sebződése
 
 A különböző támadási módok ellen az élőholtak különféleképpen ellenállóak, ezt virtuális [SFÉ](069_02_SFE.md)-vel szimuláljuk:
 
@@ -69,7 +69,7 @@ A különböző támadási módok ellen az élőholtak különféleképpen ellen
  8: Vágó SFÉ
  0: Zúzó SFÉ
  4: Energia SFÉ
- 
+
 -4: Tűz SFÉ (spec)
     (extra SP)
 ```

@@ -51,12 +51,12 @@ Példa: „Nagyon nehéz"
   → Célszám: 6
 ```
 
-`2.` Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal alacsonyabb nehézség ellen**. 
+`2.` Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal alacsonyabb nehézség ellen**.
 
 ```
 Például 2 db "Nehéz" próbát
   → Célszám: 5
-``` 
+```
 
 Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
 
@@ -86,17 +86,17 @@ Próba: „Nagyon nehéz" (6)
 
 Mivel a feladat elég komplex és időben is elhúzódhat, ezért nem intézhető el a dolog `1 db` dobással. A KM `1 db` Másodlagos próbát ír elő.
 
-Ekkor a próbák célszámai: 
+Ekkor a próbák célszámai:
 
- 
+
 ```
 6: 50% esély
 5: 66% esély
 
 Ezzel kb. 33% esélye van a sikerre
-( 0.5 * 0.66 ) 
+( 0.5 * 0.66 )
 ```
- 
+
  Látható, hogy az összetettebb feladatok nagyobb biztos tudást igényelnek. Tehát a próbák:
 
 ```

@@ -6,7 +6,7 @@
 
 **Hatótáv**: Közvetlen
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Kisszféra
 

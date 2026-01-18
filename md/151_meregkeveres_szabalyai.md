@@ -94,9 +94,9 @@ A "**Méregkeverés X.szint**" ("Mk") az **igényelt biztos tudás** szintjét j
 ```
 Meddig áll el?
 
-0: Pár másodperc  
-1: 1 perc  
-2: 10 perc  
+0: Pár másodperc
+1: 1 perc
+2: 10 perc
 3: 1 óra, Méregkeverés 3.szint
 4: 1 nap, Mk 6.szint
 5: 1 hónap, Mk 9.szint
@@ -120,7 +120,7 @@ Mennyi idő alatt ürül ki?
 ### (4) Hatóidő
 
 ```
-Milyen gyorsan hat?  
+Milyen gyorsan hat?
 
 +0: (30 perc - 3 óra múlva)
 +1: (4 - 23 óra múlva), Mk 3. szint

@@ -19,7 +19,7 @@
 ---
 #### Hatás
 
-A Pap érintésére az általa megérintett fegyver különleges képességre tesz szert a harc idejére. Mikor a fegyver sebet ejt az ellenfelen, az Kisszférától függő mértékben az ejtett sebből valamennyi `ÉP`-t átáramoltat forgatójába. 
+A Pap érintésére az általa megérintett fegyver különleges képességre tesz szert a harc idejére. Mikor a fegyver sebet ejt az ellenfelen, az Kisszférától függő mértékben az ejtett sebből valamennyi `ÉP`-t átáramoltat forgatójába.
 
 ---
 #### Szabályok

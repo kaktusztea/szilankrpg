@@ -1,6 +1,6 @@
 # Csoportos képzettségpróba
 
-Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, akkor kell az alábbi mechanikákhoz nyúlnunk. Három esetet különbözetünk meg: 
+Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, akkor kell az alábbi mechanikákhoz nyúlnunk. Három esetet különbözetünk meg:
 
 ⚜️ 1. Csoportos fizikai képzettségpróba
 

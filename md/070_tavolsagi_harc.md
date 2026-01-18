@@ -40,7 +40,7 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 #### [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
 
- 
+
 ---
 ## Taktikák, mágikus lövedékek, fegyverek
 

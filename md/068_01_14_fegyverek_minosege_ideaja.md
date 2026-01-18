@@ -17,7 +17,7 @@ A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** i
   TÉ,CÉ:-1; VÉ:-1; SP:-2; Ár:1/4 x
 -1
   TÉ,CÉ:-1; VÉ:-0; SP:-1; Ár:1/2 x
- 0 
+ 0
   Nincs módosító; Ár:1x
 +1
   TÉ,CÉ:+1; VÉ:+0; SP:+1; Ár:2x

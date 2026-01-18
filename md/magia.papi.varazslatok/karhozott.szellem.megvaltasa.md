@@ -6,11 +6,11 @@
 
 **Hatótáv**: Közvetlen
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Kisszféra
 
-**4.szint:** 
+**4.szint:**
 
 **5.szint:** Itt lehet először próbálkozni. Egy szokás, közepesen erős érzelem rabja maradt, ami ideláncolta az árnyékvilághoz
 

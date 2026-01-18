@@ -18,7 +18,7 @@ A pap kimondja az Exterminust. Egy gonosz lényt meg kell váltani, el kell táv
 A varázsszavak kimondása után a pap egy sötét angyalhoz hasonlatossá válik. Arca szoborszerűvé nemesül, ruhája is átalakul, fekete, csillogó vért jelenik meg rajta, teste enyhe fényt áraszt. A Pap ebben az állapotban nem tud mást varázsolni.
 
 - A pap fegyvere [Szent fegyverré](../szent_fegyver.md) alakul
-- A pap pajzsa szent pajzzsá alakul, vagy ha nincs nála, megszokott pajzsának megfelelő kategóriájú pajzs jelenik meg kezében. 
+- A pap pajzsa szent pajzzsá alakul, vagy ha nincs nála, megszokott pajzsának megfelelő kategóriájú pajzs jelenik meg kezében.
 - A pap páncélja szent páncéllá alakul
 - A pap szent kisugárzása csökkenti az ellenség Mágiaellenállását `Tsz` pontnyival.
 

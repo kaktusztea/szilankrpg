@@ -4,10 +4,10 @@ A **Kalandozó** lélek speciális. Mindegyikben ott szunnyad a ✨[Szilánk](01
 
 Ez az oka annak is, hogy egy **kalandozó lelkű** elf hasonlóan viselkedik, mint egy másik, akár más fajú kalandozó - kilóg a sajátjai közül. Tehát a kalandozó lelkek viselői inkarnációtól (milyen testbe születik) függetlenül némileg hasonlóan viselkednek.
 
-A rendszer minden **Játékos Karaktert (JK)** Kalandozóként kezel. A Kalandozók egyedisége a `Szilánk` rendszerében számszerűleg is megjelenik - az alábbi három speciális jellemzővel bír mindegyikük. 
+A rendszer minden **Játékos Karaktert (JK)** Kalandozóként kezel. A Kalandozók egyedisége a `Szilánk` rendszerében számszerűleg is megjelenik - az alábbi három speciális jellemzővel bír mindegyikük.
 
 ---
-### [Gyorsabb gyógyulás](140_gyogyitas_gyogyulas.md) 
+### [Gyorsabb gyógyulás](140_gyogyitas_gyogyulas.md)
 
 A többi halandóhoz képest a Kalandozók gyorsabban gyógyulnak. A szabályrendszerben a [Gyógyítás, gyógyulás](140_gyogyitas_gyogyulas.md) fejezet alatt a rájuk vonatkozó értékeket találod.
 

@@ -48,7 +48,7 @@ Támadó CÉ =
    +2-3 → Apró hajítófegyverek
    +5-6 → Íjak
    +5-8 → Nyílpuskák
-   (+15 → Távcsöves puska) 
+   (+15 → Távcsöves puska)
    (Hajító / Lőfegyverek harcértékei)
 
 + Mesterfegyver fortély (max 3 fok)

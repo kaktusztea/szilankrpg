@@ -4,7 +4,7 @@
 +2 SP páncélozatlan
    ellenfél ellen
 ```
- 
+
 Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellenük `+2 SP` bónusz jár.
 
 ---

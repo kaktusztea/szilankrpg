@@ -123,7 +123,7 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 ```
 7 + k10  vs  12
 ```
-  
+
   → Tehát ha legalább `5`-öt dobok `k10`-en, akkor sikerül a próba.
 
 <br />

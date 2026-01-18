@@ -12,14 +12,14 @@ Mágiatudóként a távolba direktben ható mágiákra specializálódtál, így
 ---
 ### 2. fok
 
-🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/magikus_celzas.md) - `7.szint` 
+🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/magikus_celzas.md) - `7.szint`
 
 🌟 **Hatás**: [Mágiatáv III](../068_08_lofegyverek.md#m%C3%A1gikus-l%C3%B6ved%C3%A9kek) jellemzőivel tudsz távolba ható mágiát végezni (mint "fegyver").
 
 ---
 ### 3. fok
 
-🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/magikus_celzas.md) - `9.szint` 
+🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/magikus_celzas.md) - `9.szint`
 
 🌟 **Hatás**: [Mágiatáv IV](../068_08_lofegyverek.md#m%C3%A1gikus-l%C3%B6ved%C3%A9kek) jellemzőivel tudsz távolba ható mágiát végezni (mint "fegyver").
 

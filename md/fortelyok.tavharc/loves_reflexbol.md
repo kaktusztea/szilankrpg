@@ -13,7 +13,7 @@ Ha hirtelen kell lőni, a **Célzó Értéket** `-7` levonás sújtja.
 ### 1. fok
 
 🔒 **Követelmény**:
-- Gyorsaság: `+1`  
+- Gyorsaság: `+1`
 - Távolsági harcmdoror  – `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 

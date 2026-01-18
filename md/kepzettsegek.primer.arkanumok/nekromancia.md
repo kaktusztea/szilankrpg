@@ -60,7 +60,7 @@ A sikeres varázslathoz [Élettan](../fortelyok.altalanos/elettan.md) fortély 2
 Nehézsége:               (a varázslat szintje) x 10%
 Esély a transzmutációra: ??% ⭕TODO: Képlet⭕
 ```
-  
+
 Képzetlenség esetén a varázslat nem alkalmazható. Legalább `15%`-os szint elérése szükséges hozzá.
 
 | **Szint** | **Milyen fokú foltozást kíván elérni a varázsló?**                                                                              |

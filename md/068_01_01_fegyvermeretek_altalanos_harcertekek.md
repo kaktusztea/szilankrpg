@@ -32,16 +32,16 @@ rövid (0)
   Kétkezes kard
   TÉ: 7, VÉ: 7
 
-3 penge (6)  
-  Alabárd  
+3 penge (6)
+  Alabárd
   TÉ: 10, VÉ: 10
 
-4 penge (8)  
-  Lándzsa, kopja  
+4 penge (8)
+  Lándzsa, kopja
   TÉ: 13, VÉ: 13
 
-5 penge (10)  
-  Pika  
+5 penge (10)
+  Pika
   TÉ: 16, VÉ: 16
 ```
 

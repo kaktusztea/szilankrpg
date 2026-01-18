@@ -33,7 +33,7 @@ A célpont dob `k20` kockával: amennyiben dobása eléri a Célszámot, akkor e
 
 ```
 Minden +3-al túldobott Célszám:
-  +1 találat 
+  +1 találat
 ```
 
 ---

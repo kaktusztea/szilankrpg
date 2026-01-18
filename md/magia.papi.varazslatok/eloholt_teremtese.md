@@ -23,7 +23,7 @@
 ---
 #### Hatás
 
-A Pap istene átküld egy lelket a kárpiton túlról, aki beleköltözik a holttestbe és mozgatni kezdi. Ez nem igazi feltámasztás, a lélek csak bitorolja a testet, a varázslat lejártakor eltávozik éa a test összeomlik. 
+A Pap istene átküld egy lelket a kárpiton túlról, aki beleköltözik a holttestbe és mozgatni kezdi. Ez nem igazi feltámasztás, a lélek csak bitorolja a testet, a varázslat lejártakor eltávozik éa a test összeomlik.
 
 ---
 #### Szabályok

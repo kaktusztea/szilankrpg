@@ -18,7 +18,7 @@ Lopás + Ügyesség
 ⭕TODO: csoportos szellemi képzettségpróbává alakítani ⭕
 
 `a.)` Nem tudja a tolvaj, hogy ott a testőr: Két **Lopás** próba
-- Lopás próba: **Könnyű** (`6`) 
+- Lopás próba: **Könnyű** (`6`)
 - Lopás próba (rejtett!): **Nagyon nehéz** (`15`). Erről a JK nem tud.
 
 ⭕TODO: ellenpróbás szituációvá alakítani ⭕

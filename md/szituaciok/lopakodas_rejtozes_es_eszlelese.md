@@ -44,9 +44,9 @@ A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkez�
 
 <br />
 
-### ⚜️ Hátbaszúrás szituációig észrevétlenül lopakodva eljutni - hátulról, látótéren kívülről 
+### ⚜️ Hátbaszúrás szituációig észrevétlenül lopakodva eljutni - hátulról, látótéren kívülről
 
-Tegyük fel, hogy az éjjeli, csendes palota folyósóján az őr mögé lopakodni, majd hátbaszúrni. 
+Tegyük fel, hogy az éjjeli, csendes palota folyósóján az őr mögé lopakodni, majd hátbaszúrni.
 
 Alább néhány alap módosítót látunk, az összes szituációt befolyásoló módosítót a [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md#%EF%B8%8F-alapeset-lopakod%C3%A1srejt%C5%91z%C3%A9s-vs-%C3%A9szlel%C3%A9s-ellenpr%C3%B3b%C3%A1hoz) képzettség leírásában találod.
 #### Lopakodás/rejtőzés módosítók

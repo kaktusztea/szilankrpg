@@ -72,7 +72,7 @@ Kétkezes harc: 2.fok
 Harckeret: +3
  +3: Kétkezes harc (2.fok)
  -0 = 0 / 0.5 (pengehossz után)
- 
+
 ```
 
 ```

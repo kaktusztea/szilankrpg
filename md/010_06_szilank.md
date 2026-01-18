@@ -19,7 +19,7 @@ Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, 
 ```
 - Kaland elején: 1 Szilánk / JK
 - Max: 3 Szilánk
-- Következő Kaland elején 1 
+- Következő Kaland elején 1
   értékre áll vissza
 ```
 
@@ -99,7 +99,7 @@ A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról,
 **Jó**, mert szorgalmazza, jutalmazza a "jó" szerepjátékot, a karakter kijátszását. Emellett minden játékalkalommal garantáltan lesz egy plusz Szilánkja valakinek, nem függ attól, hogy a kalandban történt-e kellően jelentős esemény.
 
  **Lehet hátránya is**, mert nem jutalmazza a heroikus, epikus fantasy momentumokat.
- 
+
  **Lehet azért is hátránya**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` mód előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
 
 <br />

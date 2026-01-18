@@ -12,7 +12,7 @@ Néhány kivételnél ez kevesebb. Lásd a [Fegyver](068_00_fegyverek.md) tábl�
 ### Harckeret
 
 ```
-Harckeret = 
+Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
   - Vért MGT

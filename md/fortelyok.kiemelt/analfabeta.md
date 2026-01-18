@@ -1,6 +1,6 @@
 ## 🟣 Analfabéta (1)
 
-Nem tudsz írni és olvasni. 
+Nem tudsz írni és olvasni.
 
 A Szilánk karakterei alapból tudnak írni/olvasni. Amennyiben olyan karaktert szeretnél, aki írás- és olvasástudatlan, akkor felveheted ezt a kiemelt fortélyt (csak `1.` Tapasztalati Szinten).
 

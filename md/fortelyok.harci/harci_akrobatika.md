@@ -40,7 +40,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3`
 - [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+3` bónuszt kapsz
- 
+
 ---
 ### Általános követelmények
 

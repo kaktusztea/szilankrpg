@@ -6,7 +6,7 @@
 
 **Hatótáv**: `TSz x 10 méter`
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Kisszféra
 

@@ -6,7 +6,7 @@
 
 **Hatótáv**: Érintés
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Kisszféra
 

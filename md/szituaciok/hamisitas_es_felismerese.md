@@ -46,7 +46,7 @@ Művészetismeret + Intelligencia
 + mindkettőre kiterjesztés:
   Hamisítás kiterjesztés (N)
   Kultúrkör kiterjesztés (E)
-  
+
 + valamelyikre kiterjesztés ezekből:
   Festészet fortély (E)
   Kalligráfia fortély (E)

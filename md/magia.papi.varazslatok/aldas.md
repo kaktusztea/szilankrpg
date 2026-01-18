@@ -6,7 +6,7 @@
 
 **Hatótáv**: Változó (Érintés, Közvetlen, Tömeg)
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Kisszféra
 
@@ -14,11 +14,11 @@
 
 **6.szint:** Mágiaellenállás növelése; Befolyásolás ellen bónusz; Fegyverek áldása
 
-**9.szint:** 
+**9.szint:**
 
 **12.szint:** Hadjárat megáldása
 
-**15.szint:** 
+**15.szint:**
 
 ---
 #### Hatás

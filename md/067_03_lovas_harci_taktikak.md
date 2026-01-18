@@ -45,7 +45,7 @@ Követelmények:
 ---
 ### Hagyományos taktikák
 
-Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal. 
+Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal.
 
 🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--léglovas-roham) bekezdést!
 

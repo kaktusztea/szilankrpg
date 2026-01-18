@@ -48,7 +48,7 @@ A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a vi
 `Mászás(7)+Ügyesség(3)+Erő(2) = 12 + k10`
 
 🎲 `6` → `18  vs  18` → épphogy megvan ✅
- 
+
 ⚙️ Tetves `Erő` Tulajdonsága az aktuális mászás idejére `0` értékre csökkent.
 
 🔆 "Áááá, kurvák vérit!!"

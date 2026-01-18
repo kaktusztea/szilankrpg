@@ -10,7 +10,7 @@ TÉ:-4
   minden további támadásnál.
   NEM Additív.
 
-Példa  
+Példa
   2.tám: TÉ:-4
   3.tám: TÉ:-4
   4.tám: TÉ:-4

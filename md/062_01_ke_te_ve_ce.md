@@ -80,7 +80,7 @@ A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott f
     A karakter Ügyesség Tulajdonsága
 + Gyorsaság
     A karakter Gyorsaság Tulajdonsága
-+ Harcmodor TÉ  
++ Harcmodor TÉ
     Harcmodor képzettség szintje által
     kapott bónusz
 + Fegyver TÉ
@@ -101,7 +101,7 @@ A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott f
     - TÉ: -3
     - TÉ: +3
   - Szituációkból adódó módosítók
-  - Mágikus fegyver módosítói  
+  - Mágikus fegyver módosítói
   - Mágia hatására kapott módosító
 ```
 

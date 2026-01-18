@@ -6,7 +6,7 @@
 
 **Varázslás ideje**: Ceremoniális
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Kisszféra
 

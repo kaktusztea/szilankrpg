@@ -90,7 +90,7 @@ Távolsági fegyverek esetén NINCS **Többszörös találatból** adódó plusz
 ### Harckeret, Támadások száma (Íjászat, Hajítás)
 
 ```
-Harckeret = 
+Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
 ```

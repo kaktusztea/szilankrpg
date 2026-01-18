@@ -5,7 +5,7 @@ A Taba el-Ibara holdkék szemű ősfaja.
 ### ⚜️Tulajdonság keretek
 
 ```
-[ 0; +5] Erő 
+[ 0; +5] Erő
 [ 0; +5] Edzettség
 [-5; +3] Intelligencia
 [-5; +3] Önuralom

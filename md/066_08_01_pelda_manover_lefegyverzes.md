@@ -24,7 +24,7 @@ Manőver Alap = 3 (9 HM / 3) ↑
 Lefegyverzés manőver
 
 Nehézsége: 10
-Fázisai: 
+Fázisai:
   Végrehajtás (V)
   Ellenpróba (E)
 

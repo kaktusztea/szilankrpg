@@ -59,7 +59,7 @@ Támadó dobás: TÉ + k20
 k20 dobás
     1: NEM kiemelkedő kudarc
 16-19: Sebzésdobásra Előny+1
-   20: Sebzésdobásra Előny+2 
+   20: Sebzésdobásra Előny+2
 ```
 
 ```
@@ -152,7 +152,7 @@ Többszörös találat bónusza
 ### 💥 Találat, Sebzés ( TÉ >= VÉ )
 
 ```
-Páncéldobás: áldozat dob k10 (%)  
+Páncéldobás: áldozat dob k10 (%)
    • 0 SFÉ
    • van SFÉ (szúró, vágó, zúzó).
      Fegyver Átütés csökkenti SFÉ

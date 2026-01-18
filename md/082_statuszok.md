@@ -765,7 +765,7 @@ Emberismeret + Érzékenység
   Képzettségpróba
 
 Célszám: 12 (Nehéz)
-  → siker enyhíti 2.fokra 
+  → siker enyhíti 2.fokra
 ```
 
 ```

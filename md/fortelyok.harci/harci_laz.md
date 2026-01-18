@@ -101,7 +101,7 @@ Előny+2
 
 Automatikus siker
   S4 Fájdalomtűrés próbára
-  
+
 Roham helyett Öngyilkos roham
    taktikát kell használnod
 ```

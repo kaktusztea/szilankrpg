@@ -6,11 +6,11 @@
 
 **Hatótáv**: Közvetlen
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Kisszféra
 
-**5.szint:** 
+**5.szint:**
 
 **7.szint:** ⭕Leplezés is megjelenhet magasabb szinteken⭕
 

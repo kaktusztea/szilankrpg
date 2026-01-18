@@ -202,7 +202,7 @@ Mindig segítesz a bajbajutottakon, mindig kész vagy az önfeláldozásra, mind
 
 **Pro**: Sokan felismernek és rögtön pozitívan viszonyulnak hozzád, amely konkrét előnyöket is okozhat: például szállásra soha nem lesz gondod, szívesebben válaszolnak a kérdéseidre, és így tovább.
 
-**Kontra**: Elég csak egyetlen súlyos rossz cselekedet, és elveszíted a karmát, amelyet soha többé nem tudsz visszaszerezni! Ekkor egy **Bukott hős** karma a jutalmad... 
+**Kontra**: Elég csak egyetlen súlyos rossz cselekedet, és elveszíted a karmát, amelyet soha többé nem tudsz visszaszerezni! Ekkor egy **Bukott hős** karma a jutalmad...
 
 <br />
 
@@ -251,11 +251,11 @@ Előtörténet, eddigi kalandok.
 
 #### Hatás
 
-Mágikus karmához jutsz. Például:  
-- Esőben varázsló (`30 %`)  
+Mágikus karmához jutsz. Például:
+- Esőben varázsló (`30 %`)
 - Tömegben varázsló (`20 %`)
 - Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
-- stb  
+- stb
 
 Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md) fejezetét!
 
@@ -273,8 +273,8 @@ Mágikus karma.
 
 #### Hatás
 
-**Pro**:  
-- Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk. 
+**Pro**:
+- Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk.
 
 **Kontra**:
 ⭕TODO⭕

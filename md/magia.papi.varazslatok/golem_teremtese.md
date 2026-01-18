@@ -6,10 +6,10 @@
 
 **Hatótáv**: Érintés
 
-**Csoportosan**: működik 
+**Csoportosan**: működik
 
 #### Követelmény
- 
+
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély
 - [Képzőművészet képzettség](../kepzettsegek.szekunder/kepzomuveszet.md) + [Szobrászat SzH](../fortelyok.szabad/szobraszat.md) - `9.szint`
 - komponens: ⭕drágakő? ⭕TODO⭕

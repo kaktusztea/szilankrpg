@@ -35,7 +35,7 @@ Ha a karakter 🗡️[Készületlen](065_01_03_harci_poziciok.md#készületlens�
 <br />
 
 ---
-### Pajzs mozgásgátló hatása 
+### Pajzs mozgásgátló hatása
 
 A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vértekre alkalmazunk.
 

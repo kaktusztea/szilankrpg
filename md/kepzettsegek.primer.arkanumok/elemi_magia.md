@@ -41,7 +41,7 @@ Képzettség
 
 ⭕TODO
 
-Tűzvarázslat előtt lehül a levegő (a hőt kivonja a környezetből) 
+Tűzvarázslat előtt lehül a levegő (a hőt kivonja a környezetből)
 
 ---
 ## Formulák
@@ -55,48 +55,48 @@ Tűzvarázslat előtt lehül a levegő (a hőt kivonja a környezetből)
 Ez is képzettségpróba.
 
 ```
-Erősség: 1  
+Erősség: 1
   Sebzés: k20 - 5
-Erősség: 2  
+Erősség: 2
   Sebzés: k20 - 4
-Erősség: 3  
+Erősség: 3
   Sebzés: k20 - 3
-Erősség: 4  
+Erősség: 4
   Sebzés: k20 - 2
-Erősség: 5  
+Erősség: 5
   Sebzés: k20 - 1
-Erősség: 6  
+Erősség: 6
   Sebzés: k20 + 0
-Erősség: 7  
+Erősség: 7
   Sebzés: k20 + 1
-Erősség: 8  
+Erősség: 8
   Sebzés: k20 + 2
-Erősség: 9  
+Erősség: 9
   Sebzés: k20 + 3
-Erősség: 10  
+Erősség: 10
   Sebzés: k20 + 4
-Erősség: 11  
+Erősség: 11
   Sebzés: k20 + 5
-Erősség: 12  
+Erősség: 12
   Sebzés: k20 + 6
-Erősség: 13  
+Erősség: 13
   Sebzés: k20 + 7
-Erősség: 14  
+Erősség: 14
   Sebzés: k20 + 8
-Erősség: 15  
+Erősség: 15
   Sebzés: k20 + 9
-Erősség: 16  
+Erősség: 16
   Sebzés: k20 + 10
-Erősség: 17  
+Erősség: 17
   Sebzés: k20 + 11
-Erősség: 18  
+Erősség: 18
   Sebzés: k20 + 12
-Erősség: 19  
+Erősség: 19
   Sebzés: k20 + 13
-Erősség: 20  
+Erősség: 20
   Sebzés: k20 + 14
 
-Erősség: 21  
+Erősség: 21
   Sebzés: k20 + 15
 ```
 
@@ -280,7 +280,7 @@ Mentál/Asztrálmágia – 9.szint
 - Mana: lénytől függ
 - Komplexitás: lénytől függ
 - Időtartam: ⭕???⭕
-  
+
 ```
 Szolga
   Erősség: 12

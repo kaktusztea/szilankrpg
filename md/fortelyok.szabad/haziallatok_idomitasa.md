@@ -1,6 +1,6 @@
 ## 🟣 Háziállatok idomítása
 
-Minden háziasított állat idomítása ide tartozik a kutyától a malacokon át a kecskékig. 
+Minden háziasított állat idomítása ide tartozik a kutyától a malacokon át a kecskékig.
 
 ### Kiterjeszti ezeket
 

@@ -20,7 +20,7 @@
 [Manőver végbevitele](066_04_manover_vegbevitele.md)
 
 ---
-### Fortélyok 
+### Fortélyok
 
 [Harci fortélyok](044_harci_fortelyok.md)
 

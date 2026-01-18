@@ -89,7 +89,7 @@ Anyagminőség Ár
 
 ```
 1x = 1 arany
-1x = minden tekintetben 
+1x = minden tekintetben
      átlagos bőr mellvért ára
 ```
 

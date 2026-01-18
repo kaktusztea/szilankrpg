@@ -37,7 +37,7 @@ Mágiatáv II
 Mágiatáv III
  CÉ:+3
  Osztó: 2
- 
+
 Mágiatáv IV
  CÉ:+4
  Osztó: 3

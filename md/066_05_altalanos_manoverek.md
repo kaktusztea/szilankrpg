@@ -169,7 +169,7 @@ Láncos fegyverekkel hajthatod vége.
   - Minimum `0.5 penge` nagyságú fegyver ellen lehet használni
 
 **Hatás**:
-- Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt. 
+- Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt.
 - Ha ellenfeled elengedi, akkor gyakorlatilag sikeres Lefegyverzéssé változik a Manőver
 - továbbra is kezében tartja:
   - [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítói sújtják
@@ -323,7 +323,7 @@ Szándékosan rongálod ellenfeled pajzsát, csökkentve annak Védő Értékét
 Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
 
 - Nehézség: `6`
-- Fázisok: 
+- Fázisok:
   - Észrevétlen támadás esetén: `Ellenpróba`
   - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba`  (`V`: standard, fegyveres VÉ ellen)
 - Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek

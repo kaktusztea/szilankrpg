@@ -128,7 +128,7 @@ Végleges ár: 7,5x
 ```
 
  Azaz egy átlagos bőr mellvért árának `7,5`-szeresének megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó.
- 
+
 ---
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

@@ -2,21 +2,21 @@
 
 
 ```
-Torzó  
+Torzó
   50% véd
   Csak torzót védi elöl,
   hátul, oldalt
 ```
 
 ```
-Sisak  
+Sisak
   10% véd
   A fejet védi
 ```
 
 ```
 Felkarok, alkarok,
-combok, lábszárak  
+combok, lábszárak
   +10%* véd
   Tagonként
 ```
