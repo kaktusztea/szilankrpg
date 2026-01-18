@@ -66,7 +66,7 @@ A fejlesztés során az alábbi dilemmával találkoztunk:\
 Legyen a misztikus világkép világfüggő, vagy épp ellenkezőleg, független? Ha világfüggő, akkor erős korlátok közé szorulunk a fejlesztés során. Ha pedig független, akkor olyan általános, "kilúgozott" rendszer lesz a végeredmény, amelynek nincsenek gyökerei, melyek az adott világhoz kötik, amin játszunk - kiöntöttük a gyereket a fürdővízzel.
 
 A gordiuszi csomót az alábbi módon vágtuk át:\
-Yn3v mágikus és misztikus világát választottuk, ám az "csupán" inspiráció számunkra. Az istenek, túlvilági lények, legendáik és a történelem jó keretet adnak, ezeket meg is tartjuk, de a mágia, a szakrális erők működése, a szellemi energiák használata nem kötött a korábbi rendszerhez - általunk bármikor egyedi módon át - és újraírható, ha úgy látjuk, hogy  az hangulatosabb, jobban illeszkedik a mi látásmódunkhoz.
+Yn3v mágikus és misztikus világát választottuk, ám az "csupán" inspiráció számunkra. Az istenek, túlvilági lények, legendáik és a történelem jó keretet adnak, ezeket meg is tartjuk, de a mágia, a szakrális erők működése, a szellemi energiák használata nem kötött a korábbi rendszerhez - általunk bármikor egyedi módon át - és újraírható, ha úgy látjuk, hogy az hangulatosabb, jobban illeszkedik a mi látásmódunkhoz.
 
 Ha tehát valaki ortodox módon ragaszkodik a régi M* világához - lehet, hogy csalódni fog. Aki nyitott az újra, jöjjön velünk!
 
@@ -125,7 +125,7 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 ## Eszközök
 
 - [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
-- [Full raw document in markdown](https://raw.githubusercontent.com/kaktusztea/szilankrpg/refs/heads/master/work/szilank.rpg.full.txt)
+- [Full raw document in markdown](https://raw.githubusercontent.com/kaktusztea/szilankrpg/refs/heads/master/work/szilank.rpg.full.md)
 
 ## Licenc
 Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek az alábbiak szerint: [LICENSE](LICENSE)
@@ -606,7 +606,7 @@ Eddig tartott az aktív fejlesztés. Ekkor már elég előrehaladott állapotban
 **Változások a korábbi állapothoz képest:**
 - Nincsenek kasztok
 - Képzettségrendszer kész
-- Harcrendszer `k100` alapú 
+- Harcrendszer `k100` alapú
 
 <br />
 
@@ -614,7 +614,7 @@ Eddig tartott az aktív fejlesztés. Ekkor már elég előrehaladott állapotban
 
 <br />
 
-⏸️  13,5 év szünet ⏸️ 
+⏸️  13,5 év szünet ⏸️
 
 <br />
 
@@ -643,7 +643,7 @@ Első, Github release: [v0.4.0.0](https://github.com/kaktusztea/szilankrpg/relea
 
 ### 2024.01 hónap ❗
 
-Ekkor - a dokumentumok migrálása után - indult újra az aktív fejlesztés, valamint teszt játékok a rendszer aktuális állapotával. 
+Ekkor - a dokumentumok migrálása után - indult újra az aktív fejlesztés, valamint teszt játékok a rendszer aktuális állapotával.
 
 Hetente jelenik meg Github Release: [bővebben](https://github.com/kaktusztea/szilankrpg/releases)
 
@@ -958,7 +958,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 [Manőver végbevitele](066_04_manover_vegbevitele.md)
 
 ---
-### Fortélyok 
+### Fortélyok
 
 [Harci fortélyok](044_harci_fortelyok.md)
 
@@ -1272,10 +1272,10 @@ A **Kalandozó** lélek speciális. Mindegyikben ott szunnyad a ✨[Szilánk](01
 
 Ez az oka annak is, hogy egy **kalandozó lelkű** elf hasonlóan viselkedik, mint egy másik, akár más fajú kalandozó - kilóg a sajátjai közül. Tehát a kalandozó lelkek viselői inkarnációtól (milyen testbe születik) függetlenül némileg hasonlóan viselkednek.
 
-A rendszer minden **Játékos Karaktert (JK)** Kalandozóként kezel. A Kalandozók egyedisége a `Szilánk` rendszerében számszerűleg is megjelenik - az alábbi három speciális jellemzővel bír mindegyikük. 
+A rendszer minden **Játékos Karaktert (JK)** Kalandozóként kezel. A Kalandozók egyedisége a `Szilánk` rendszerében számszerűleg is megjelenik - az alábbi három speciális jellemzővel bír mindegyikük.
 
 ---
-### [Gyorsabb gyógyulás](140_gyogyitas_gyogyulas.md) 
+### [Gyorsabb gyógyulás](140_gyogyitas_gyogyulas.md)
 
 A többi halandóhoz képest a Kalandozók gyorsabban gyógyulnak. A szabályrendszerben a [Gyógyítás, gyógyulás](140_gyogyitas_gyogyulas.md) fejezet alatt a rájuk vonatkozó értékeket találod.
 
@@ -1604,7 +1604,7 @@ Mutatja kitartásodat, hogy mennyire vagy képes elviselni a tartós fizikai meg
 ### Értékek
 
 ```
--5  
+-5
   Még ma meghal
 ```
 
@@ -2273,12 +2273,12 @@ Példa: „Nagyon nehéz"
   → Célszám: 6
 ```
 
-`2.` Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal alacsonyabb nehézség ellen**. 
+`2.` Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal alacsonyabb nehézség ellen**.
 
 ```
 Például 2 db "Nehéz" próbát
   → Célszám: 5
-``` 
+```
 
 Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
 
@@ -2308,17 +2308,17 @@ Próba: „Nagyon nehéz" (6)
 
 Mivel a feladat elég komplex és időben is elhúzódhat, ezért nem intézhető el a dolog `1 db` dobással. A KM `1 db` Másodlagos próbát ír elő.
 
-Ekkor a próbák célszámai: 
+Ekkor a próbák célszámai:
 
- 
+
 ```
 6: 50% esély
 5: 66% esély
 
 Ezzel kb. 33% esélye van a sikerre
-( 0.5 * 0.66 ) 
+( 0.5 * 0.66 )
 ```
- 
+
  Látható, hogy az összetettebb feladatok nagyobb biztos tudást igényelnek. Tehát a próbák:
 
 ```
@@ -2403,7 +2403,7 @@ Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, 
 ```
 - Kaland elején: 1 Szilánk / JK
 - Max: 3 Szilánk
-- Következő Kaland elején 1 
+- Következő Kaland elején 1
   értékre áll vissza
 ```
 
@@ -2483,7 +2483,7 @@ A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról,
 **Jó**, mert szorgalmazza, jutalmazza a "jó" szerepjátékot, a karakter kijátszását. Emellett minden játékalkalommal garantáltan lesz egy plusz Szilánkja valakinek, nem függ attól, hogy a kalandban történt-e kellően jelentős esemény.
 
  **Lehet hátránya is**, mert nem jutalmazza a heroikus, epikus fantasy momentumokat.
- 
+
  **Lehet azért is hátránya**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` mód előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
 
 <br />
@@ -2760,7 +2760,7 @@ Lásd a [Harcrendszer](060_00_harcrendszer.md) fejezetet.
 
 ## Manőver Pontok (MP)
 
-A [Manőverek](066_00_manoverek.md) (mint pl.  Lábsöprés, Lefegyverzés, Átdobás) kivételek, mert nem kerülnek `KP`-ba, bárki megpróbálkozhat velük alapesetben is. 
+A [Manőverek](066_00_manoverek.md) (mint pl.  Lábsöprés, Lefegyverzés, Átdobás) kivételek, mert nem kerülnek `KP`-ba, bárki megpróbálkozhat velük alapesetben is.
 
 A **Manőver Pontokat** javadalmazását a Manőverek [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) fázisánál használhatjuk fel játék közben - opcionálisan, könnyítésre.
 
@@ -2997,7 +2997,7 @@ A Taba el-Ibara holdkék szemű ősfaja.
 ### ⚜️Tulajdonság keretek
 
 ```
-[ 0; +5] Erő 
+[ 0; +5] Erő
 [ 0; +5] Edzettség
 [-5; +3] Intelligencia
 [-5; +3] Önuralom
@@ -4439,7 +4439,7 @@ Mindig segítesz a bajbajutottakon, mindig kész vagy az önfeláldozásra, mind
 
 **Pro**: Sokan felismernek és rögtön pozitívan viszonyulnak hozzád, amely konkrét előnyöket is okozhat: például szállásra soha nem lesz gondod, szívesebben válaszolnak a kérdéseidre, és így tovább.
 
-**Kontra**: Elég csak egyetlen súlyos rossz cselekedet, és elveszíted a karmát, amelyet soha többé nem tudsz visszaszerezni! Ekkor egy **Bukott hős** karma a jutalmad... 
+**Kontra**: Elég csak egyetlen súlyos rossz cselekedet, és elveszíted a karmát, amelyet soha többé nem tudsz visszaszerezni! Ekkor egy **Bukott hős** karma a jutalmad...
 
 <br />
 
@@ -4488,11 +4488,11 @@ Előtörténet, eddigi kalandok.
 
 #### Hatás
 
-Mágikus karmához jutsz. Például:  
-- Esőben varázsló (`30 %`)  
+Mágikus karmához jutsz. Például:
+- Esőben varázsló (`30 %`)
 - Tömegben varázsló (`20 %`)
 - Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
-- stb  
+- stb
 
 Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md) fejezetét!
 
@@ -4510,8 +4510,8 @@ Mágikus karma.
 
 #### Hatás
 
-**Pro**:  
-- Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk. 
+**Pro**:
+- Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk.
 
 **Kontra**:
 ⭕TODO⭕
@@ -7101,7 +7101,7 @@ Képzettség
 
 ⭕TODO
 
-Tűzvarázslat előtt lehül a levegő (a hőt kivonja a környezetből) 
+Tűzvarázslat előtt lehül a levegő (a hőt kivonja a környezetből)
 
 ---
 ## Formulák
@@ -7115,48 +7115,48 @@ Tűzvarázslat előtt lehül a levegő (a hőt kivonja a környezetből)
 Ez is képzettségpróba.
 
 ```
-Erősség: 1  
+Erősség: 1
   Sebzés: k20 - 5
-Erősség: 2  
+Erősség: 2
   Sebzés: k20 - 4
-Erősség: 3  
+Erősség: 3
   Sebzés: k20 - 3
-Erősség: 4  
+Erősség: 4
   Sebzés: k20 - 2
-Erősség: 5  
+Erősség: 5
   Sebzés: k20 - 1
-Erősség: 6  
+Erősség: 6
   Sebzés: k20 + 0
-Erősség: 7  
+Erősség: 7
   Sebzés: k20 + 1
-Erősség: 8  
+Erősség: 8
   Sebzés: k20 + 2
-Erősség: 9  
+Erősség: 9
   Sebzés: k20 + 3
-Erősség: 10  
+Erősség: 10
   Sebzés: k20 + 4
-Erősség: 11  
+Erősség: 11
   Sebzés: k20 + 5
-Erősség: 12  
+Erősség: 12
   Sebzés: k20 + 6
-Erősség: 13  
+Erősség: 13
   Sebzés: k20 + 7
-Erősség: 14  
+Erősség: 14
   Sebzés: k20 + 8
-Erősség: 15  
+Erősség: 15
   Sebzés: k20 + 9
-Erősség: 16  
+Erősség: 16
   Sebzés: k20 + 10
-Erősség: 17  
+Erősség: 17
   Sebzés: k20 + 11
-Erősség: 18  
+Erősség: 18
   Sebzés: k20 + 12
-Erősség: 19  
+Erősség: 19
   Sebzés: k20 + 13
-Erősség: 20  
+Erősség: 20
   Sebzés: k20 + 14
 
-Erősség: 21  
+Erősség: 21
   Sebzés: k20 + 15
 ```
 
@@ -7340,7 +7340,7 @@ Mentál/Asztrálmágia – 9.szint
 - Mana: lénytől függ
 - Komplexitás: lénytől függ
 - Időtartam: ⭕???⭕
-  
+
 ```
 Szolga
   Erősség: 12
@@ -7669,7 +7669,7 @@ A sikeres varázslathoz [Élettan](../fortelyok.altalanos/elettan.md) fortély 2
 Nehézsége:               (a varázslat szintje) x 10%
 Esély a transzmutációra: ??% ⭕TODO: Képlet⭕
 ```
-  
+
 Képzetlenség esetén a varázslat nem alkalmazható. Legalább `15%`-os szint elérése szükséges hozzá.
 
 | **Szint** | **Milyen fokú foltozást kíván elérni a varázsló?**                                                                              |
@@ -8307,7 +8307,7 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 ### Kapcsolódó oldalak
 
 - [Pszí főfejezet](../090_pszi.md)
- 
+
 ### Kapcsolódik
 
 - [Pszí kiterjesztés](../fortelyok.misztikus/pszi_kiterjesztes.md) fortély
@@ -11220,7 +11220,7 @@ Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbá
 
 # Csoportos képzettségpróba
 
-Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, akkor kell az alábbi mechanikákhoz nyúlnunk. Három esetet különbözetünk meg: 
+Mikor nem egy, hanem több karakter, csapatban próbál megoldani egy próbát, akkor kell az alábbi mechanikákhoz nyúlnunk. Három esetet különbözetünk meg:
 
 ⚜️ 1. Csoportos fizikai képzettségpróba
 
@@ -11549,7 +11549,7 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 ```
 7 + k10  vs  12
 ```
-  
+
   → Tehát ha legalább `5`-öt dobok `k10`-en, akkor sikerül a próba.
 
 <br />
@@ -11847,7 +11847,7 @@ Specializált, egy, vagy több [képzettséget](030_01_kepzettseglista.md) "kite
 
 Szabad Fortélyokhoz többféleképpen lehet hozzájutni:
 
-#### ⚜️ `1 db / Tsz` 
+#### ⚜️ `1 db / Tsz`
 
 A Tapasztalati Szintenként **ingyen** kapott `1 db` Szabad Fortély javadalmazásodból elköltesz egyet a felvételére. A Karakteralkotóban a "Speciális" fülön ilyenkor `1` értéket írj a "**Költve**" mezőbe értékként.
 
@@ -12198,7 +12198,7 @@ Ritkán csúszik meg a kezed.
 
 ## 🟣 Csábítás
 
-A másik nem elcsábítása, vagy a rosszindulatú csábítás felismerése. 
+A másik nem elcsábítása, vagy a rosszindulatú csábítás felismerése.
 ### Kiterjeszti ezeket
 
 - [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md): Eltekered a másik fejét. Hamar megered a nyelve, hisz a szerelem vak. Nem mágikus hatású.
@@ -12392,7 +12392,7 @@ Nem csak rohangálsz, mint egy futóbolond, hanem kitartó, hosszas futás sorá
 ```
 Hosszútávfutáskor
   Edzettség próbára: +1
-  
+
 Rövidtávfutásnál
   Gyorsaság próbára: +1
 ```
@@ -12404,7 +12404,7 @@ Rövidtávfutásnál
 ```
 Hosszútávfutáskor
   Edzettség próbára: +2
-  
+
 Rövidtávfutásnál
   Gyorsaság próbára: +2
 ```
@@ -14186,7 +14186,7 @@ Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3`
 - [Átsiklás](../066_05_altalanos_manoverek.md#átsiklás) és [Kibontakozás](../066_05_altalanos_manoverek.md#kibontakozás) Manőverre: `+3` bónuszt kapsz
- 
+
 ---
 ### Általános követelmények
 
@@ -14381,7 +14381,7 @@ Előny+2
 
 Automatikus siker
   S4 Fájdalomtűrés próbára
-  
+
 Roham helyett Öngyilkos roham
    taktikát kell használnod
 ```
@@ -15110,7 +15110,7 @@ Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mi
 TÉ, VÉ :+2
 
 1:1 harcban KÉ:+1
-(többnél nem jár)  
+(többnél nem jár)
 ```
 
 <br />
@@ -15127,7 +15127,7 @@ TÉ, VÉ :+2
 TÉ, VÉ :+4
 
 1:2 harcig KÉ:+1
-(többnél nem jár)  
+(többnél nem jár)
 ```
 
 <br />
@@ -15144,7 +15144,7 @@ TÉ, VÉ :+4
 TÉ, VÉ :+6
 
 1:3 harcig KÉ:+1
-(többnél nem jár)  
+(többnél nem jár)
 ```
 
 ---
@@ -15690,7 +15690,7 @@ Jellemzően NJK ismeret
 
 ## 🟣 Analfabéta (1)
 
-Nem tudsz írni és olvasni. 
+Nem tudsz írni és olvasni.
 
 A Szilánk karakterei alapból tudnak írni/olvasni. Amennyiben olyan karaktert szeretnél, aki írás- és olvasástudatlan, akkor felveheted ezt a kiemelt fortélyt (csak `1.` Tapasztalati Szinten).
 
@@ -16620,7 +16620,7 @@ Hátas fajonként külön-külön kell felvenni. Hiánya esetén a kapcsolódó 
 
 ## 🟣 Háziállatok idomítása
 
-Minden háziasított állat idomítása ide tartozik a kutyától a malacokon át a kecskékig. 
+Minden háziasított állat idomítása ide tartozik a kutyától a malacokon át a kecskékig.
 
 ### Kiterjeszti ezeket
 
@@ -17822,7 +17822,7 @@ Ha hirtelen kell lőni, a **Célzó Értéket** `-7` levonás sújtja.
 ### 1. fok
 
 🔒 **Követelmény**:
-- Gyorsaság: `+1`  
+- Gyorsaság: `+1`
 - Távolsági harcmdoror  – `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 
@@ -17844,7 +17844,7 @@ Gyakorlott vagy a nagy távolságú célokra lövésben. Csak nyílpuska, vagy m
 🔒 **Lövészet**  **-** `5.szint`
 
 🌟  [Cella](../072_tavharc_ve_oszto_cella.md#cella) értékre `-1` levonás, ha olyan célra lősz, ahol `Cella >= 5`.
- 
+
 ---
 
 
@@ -18164,27 +18164,27 @@ Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzők
 ---
 ### Próbák 🎲
 
-#### Könnyű (6) 🎲 
+#### Könnyű (6) 🎲
 
 ⭕TODO⭕
 
-#### Átlagos (9) 🎲 
+#### Átlagos (9) 🎲
 
 ⭕TODO⭕
 
-#### Nehéz (12) 🎲 
+#### Nehéz (12) 🎲
 
 ⭕TODO⭕
 
-#### Nagyon nehéz (15) 🎲 
+#### Nagyon nehéz (15) 🎲
 
 ⭕TODO⭕
 
-#### Rendkívül nehéz (18) 🎲 
+#### Rendkívül nehéz (18) 🎲
 
 ⭕TODO⭕
 
-#### Emberfeletti (21) 🎲 
+#### Emberfeletti (21) 🎲
 
 ⭕TODO⭕
 
@@ -19407,7 +19407,7 @@ Fájdalomtűrés (K) + Edzettség (T)
 Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + Edzettség)** képzettségpróbát kell dobnia **Nehéz** (`12`) célszám ellen.
 
 Sikertelen próba esetén a karakter elájul.\
-Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia. 
+Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
 
 🔆 A [Harci láz](fortelyok.harci/harci_laz.md) fortély egyes fokai előnyt adnak a fenti próbára.
 
@@ -19623,7 +19623,7 @@ A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott f
     A karakter Ügyesség Tulajdonsága
 + Gyorsaság
     A karakter Gyorsaság Tulajdonsága
-+ Harcmodor TÉ  
++ Harcmodor TÉ
     Harcmodor képzettség szintje által
     kapott bónusz
 + Fegyver TÉ
@@ -19644,7 +19644,7 @@ A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott f
     - TÉ: -3
     - TÉ: +3
   - Szituációkból adódó módosítók
-  - Mágikus fegyver módosítói  
+  - Mágikus fegyver módosítói
   - Mágia hatására kapott módosító
 ```
 
@@ -20036,7 +20036,7 @@ Néhány kivételnél ez kevesebb. Lásd a [Fegyver](068_00_fegyverek.md) tábl�
 ### Harckeret
 
 ```
-Harckeret = 
+Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
   - Vért MGT
@@ -20292,7 +20292,7 @@ Támadó dobás: TÉ + k20
 k20 dobás
     1: NEM kiemelkedő kudarc
 16-19: Sebzésdobásra Előny+1
-   20: Sebzésdobásra Előny+2 
+   20: Sebzésdobásra Előny+2
 ```
 
 ```
@@ -20385,7 +20385,7 @@ Többszörös találat bónusza
 ### 💥 Találat, Sebzés ( TÉ >= VÉ )
 
 ```
-Páncéldobás: áldozat dob k10 (%)  
+Páncéldobás: áldozat dob k10 (%)
    • 0 SFÉ
    • van SFÉ (szúró, vágó, zúzó).
      Fegyver Átütés csökkenti SFÉ
@@ -20567,7 +20567,7 @@ TÉ:-4
   minden további támadásnál.
   NEM Additív.
 
-Példa  
+Példa
   2.tám: TÉ:-4
   3.tám: TÉ:-4
   4.tám: TÉ:-4
@@ -20920,7 +20920,7 @@ A **Sebzésdobásra** előnyt adhat az azt megelőző [Támadó dobás](064_02_0
 Támadó dobás k20 kockája
 
  1-15: Nincs extra hatás
-16-19: Előny+1 Sebzésdobásra 
+16-19: Előny+1 Sebzésdobásra
    20: Előny+2 Sebzésdobásra
 ```
 
@@ -20928,7 +20928,7 @@ Támadó dobás k20 kockája
 ### Páncél SFÉ levonása SP értékéből
 
 ```
-SFÉ: páncéltól, támadási típustól 
+SFÉ: páncéltól, támadási típustól
      és a fegyver Átütésétől függ
 ```
 
@@ -21069,7 +21069,7 @@ Az `SFÉ` ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelt
 Természetesen nem csak fegyverek okozhatnak sérülést, hanem egy mágikus tűzgolyó, zuhanás a tetőről, stb. A mágikus hatások sebzéseit a [Mágia](100_magiarendszer.md) fejezetben tárgyaljuk, bővebben lásd ott.
 
 ---
-### Élőholtak sebződése 
+### Élőholtak sebződése
 
 A különböző támadási módok ellen az élőholtak különféleképpen ellenállóak, ezt virtuális [SFÉ](069_02_SFE.md)-vel szimuláljuk:
 
@@ -21078,7 +21078,7 @@ A különböző támadási módok ellen az élőholtak különféleképpen ellen
  8: Vágó SFÉ
  0: Zúzó SFÉ
  4: Energia SFÉ
- 
+
 -4: Tűz SFÉ (spec)
     (extra SP)
 ```
@@ -21109,7 +21109,7 @@ Több módszer létezik arra, hogy egy játékos karakter harc közben is vissza
 
 ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont`. Ez a siker hatása a szervezetre kiegészítve némi heroizmussal. Persze itt is lehetnek kivételek, mint mondjuk egy barát megölése.
 
-#### ⚜️[Harcos elme](fortelyok.harci/harcos_elme.md) fortély 
+#### ⚜️[Harcos elme](fortelyok.harci/harcos_elme.md) fortély
 
 Lásd a fortély leírását.
 
@@ -21194,7 +21194,7 @@ Ha a karakter 🗡️[Készületlen](065_01_03_harci_poziciok.md#készületlens�
 <br />
 
 ---
-### Pajzs mozgásgátló hatása 
+### Pajzs mozgásgátló hatása
 
 A pajzsokra nem vonatkozik az [MGT](069_03_MGT.md) pontrendszer, amelyet vértekre alkalmazunk.
 
@@ -23187,7 +23187,7 @@ Kétkezes harc: 2.fok
 Harckeret: +3
  +3: Kétkezes harc (2.fok)
  -0 = 0 / 0.5 (pengehossz után)
- 
+
 ```
 
 ```
@@ -23488,7 +23488,7 @@ Ha az így érkező támadás találat (nem kell, hogy valós sebzést is okozzo
 
 Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékkel, melyhez `TÉ:+4` módosító járul. Ha ez a támadás sikeres, akkor jöhet még opcionálisan az Ellenpróba fázis. Ha minden fázis sikeres, akkor a Manőver is sikeres. Ne feledjük, hogy a `TÉ` értékébe beleszámít az esetleges több támadás levonása is (`-4` támadásonként)!
 
-Ha a **Végrehajtás** sikertelen, akkor a helyzet talán megvolt, de nem sikerült kihasználni. 
+Ha a **Végrehajtás** sikertelen, akkor a helyzet talán megvolt, de nem sikerült kihasználni.
 
 <br />
 
@@ -23499,10 +23499,10 @@ Ha a **Végrehajtás** sikertelen, akkor a helyzet talán megvolt, de nem siker�
 Manőver Alap + k10
 
        vs
-       
+
 Manőver Célszám =
  + Manőver Alap (Ellenfél)
- + Manőver Nehézség       
+ + Manőver Nehézség
 ```
 
 ### 🔆Ellenpróba Dobás extra módosítói
@@ -23756,7 +23756,7 @@ Láncos fegyverekkel hajthatod vége.
   - Minimum `0.5 penge` nagyságú fegyver ellen lehet használni
 
 **Hatás**:
-- Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt. 
+- Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt.
 - Ha ellenfeled elengedi, akkor gyakorlatilag sikeres Lefegyverzéssé változik a Manőver
 - továbbra is kezében tartja:
   - [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítói sújtják
@@ -23910,7 +23910,7 @@ Szándékosan rongálod ellenfeled pajzsát, csökkentve annak Védő Értékét
 Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
 
 - Nehézség: `6`
-- Fázisok: 
+- Fázisok:
   - Észrevétlen támadás esetén: `Ellenpróba`
   - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba`  (`V`: standard, fegyveres VÉ ellen)
 - Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
@@ -24233,7 +24233,7 @@ Manőver Alap = 3 (9 HM / 3) ↑
 Lefegyverzés manőver
 
 Nehézsége: 10
-Fázisai: 
+Fázisai:
   Végrehajtás (V)
   Ellenpróba (E)
 
@@ -24520,7 +24520,7 @@ Követelmények:
 ---
 ### Hagyományos taktikák
 
-Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal. 
+Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal.
 
 🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--léglovas-roham) bekezdést!
 
@@ -24550,7 +24550,7 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 - Nehézség: `-`
 - Fázisok: `(M)egakasztás`
 - Végbevitel követelménye: [Lovas_harc](fortelyok.harci/lovas_harc.md) - `2.fok`
-- Hatás: 
+- Hatás:
   - Soron kívüli megelőző `(M)egakasztást` dobhatsz **minden** veled harcérintkezésben levő ellenfeled ellen.
   - Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így sebezni nem tudsz, de a feléd irányuló támadásokat elháríthatod.
   - Távolsági Védő Értéked számításánál a [Szorzó - Mozgás módosítód](073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont) **Kiszámíthatatlan** (`6x`) lesz.
@@ -24726,16 +24726,16 @@ rövid (0)
   Kétkezes kard
   TÉ: 7, VÉ: 7
 
-3 penge (6)  
-  Alabárd  
+3 penge (6)
+  Alabárd
   TÉ: 10, VÉ: 10
 
-4 penge (8)  
-  Lándzsa, kopja  
+4 penge (8)
+  Lándzsa, kopja
   TÉ: 13, VÉ: 13
 
-5 penge (10)  
-  Pika  
+5 penge (10)
+  Pika
   TÉ: 16, VÉ: 16
 ```
 
@@ -24881,7 +24881,7 @@ Jelölése: MK
 +2 SP páncélozatlan
    ellenfél ellen
 ```
- 
+
 Az íves, hajlított fegyverek páncélozatlan ellenfelet jobban sebeznek: ellenük `+2 SP` bónusz jár.
 
 ---
@@ -25017,7 +25017,7 @@ A skála `[-5;+5]` - ez némi harcérték változást is okoz és az **árra** i
   TÉ,CÉ:-1; VÉ:-1; SP:-2; Ár:1/4 x
 -1
   TÉ,CÉ:-1; VÉ:-0; SP:-1; Ár:1/2 x
- 0 
+ 0
   Nincs módosító; Ár:1x
 +1
   TÉ,CÉ:+1; VÉ:+0; SP:+1; Ár:2x
@@ -25052,7 +25052,7 @@ Tehát egy `+2`-es **Ideájú** kardba, maximum `+2`-es mágikus hatást lehet b
 ```
 Közelharci fegyvernek számít:
  0.5 pengehossznál rövidebb
- 
+
 Lehetnek kivételek
 ```
 
@@ -25340,7 +25340,7 @@ A `k20` támadó dobás egyben esélydobás is: ha a lent leírt értékek vagy 
 
 Ezeknél a fegyvereknél a **Hajítás** harcmodort használjuk.
 
-A Hajítófegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez másként van, ott az adott fegyver leírásánál a „Speciális/Megjegyzés” oszlopban ezt külön feltüntetjük. 
+A Hajítófegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez másként van, ott az adott fegyver leírásánál a „Speciális/Megjegyzés” oszlopban ezt külön feltüntetjük.
 
  Az [Erőbónusz](064_02_06_erobonusz_erolimit.md) és [Erőbónusz limit](064_02_06_erobonusz_erolimit.md#er%C5%91b%C3%B3nusz-limit) a szokásos módon működik hajítófegyverek esetén is.
 
@@ -25962,21 +25962,21 @@ Az `MGT` az eredetihez képest annyi százalékkal nő, amennyi a vért **Sérü
 
 
 ```
-Torzó  
+Torzó
   50% véd
   Csak torzót védi elöl,
   hátul, oldalt
 ```
 
 ```
-Sisak  
+Sisak
   10% véd
   A fejet védi
 ```
 
 ```
 Felkarok, alkarok,
-combok, lábszárak  
+combok, lábszárak
   +10%* véd
   Tagonként
 ```
@@ -26129,7 +26129,7 @@ Anyagminőség Ár
 
 ```
 1x = 1 arany
-1x = minden tekintetben 
+1x = minden tekintetben
      átlagos bőr mellvért ára
 ```
 
@@ -26278,7 +26278,7 @@ Végleges ár: 7,5x
 ```
 
  Azaz egy átlagos bőr mellvért árának `7,5`-szeresének megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó.
- 
+
 ---
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
@@ -26330,7 +26330,7 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 #### [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
 
- 
+
 ---
 ## Taktikák, mágikus lövedékek, fegyverek
 
@@ -26408,7 +26408,7 @@ Támadó CÉ =
    +2-3 → Apró hajítófegyverek
    +5-6 → Íjak
    +5-8 → Nyílpuskák
-   (+15 → Távcsöves puska) 
+   (+15 → Távcsöves puska)
    (Hajító / Lőfegyverek harcértékei)
 
 + Mesterfegyver fortély (max 3 fok)
@@ -26677,7 +26677,7 @@ Cella =
 ```
 
 ```
-Célpont VÉ = 
+Célpont VÉ =
   Szorzó  x  Cella
 ```
 
@@ -26709,7 +26709,7 @@ Ritkán fordul elő ez az eset, főleg álldogáló, nagy méretű célok eseté
 Célpont VÉ =
   Szorzó
     +   ──→ összeadás (!)
-  Cella    
+  Cella
 ```
 
 
@@ -26853,7 +26853,7 @@ Mágiatáv II
 Mágiatáv III
  CÉ:+3
  Osztó: 2
- 
+
 Mágiatáv IV
  CÉ:+4
  Osztó: 3
@@ -27045,7 +27045,7 @@ A célpont dob `k20` kockával: amennyiben dobása eléri a Célszámot, akkor e
 
 ```
 Minden +3-al túldobott Célszám:
-  +1 találat 
+  +1 találat
 ```
 
 ---
@@ -27151,7 +27151,7 @@ Távolsági fegyverek esetén NINCS **Többszörös találatból** adódó plusz
 ### Harckeret, Támadások száma (Íjászat, Hajítás)
 
 ```
-Harckeret = 
+Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
 ```
@@ -28536,7 +28536,7 @@ Emberismeret + Érzékenység
   Képzettségpróba
 
 Célszám: 12 (Nehéz)
-  → siker enyhíti 2.fokra 
+  → siker enyhíti 2.fokra
 ```
 
 ```
@@ -29359,7 +29359,7 @@ Hasonlatos az [Aura Átütésnél leírtakhoz](103_aura_magia_akarata_magiaellen
 
 Itt is az [Aura táblázatot](103_aura_magia_akarata_magiaellenallas.md#aura-aktuális-értéke) használjuk, de nincs dobás, a számolást `1x` kell csak elvégezni - minden Tapasztalati Szint lépésekor.
 
-Az, hogy melyik Tulajdonságot kell az Aura meghatározásakor beleszámolni, az az adott isten, vagy vallás jellegétől függ. Minden isten papjainak leírásában megadjuk, hogy melyik is ez a Tulajdonság. 
+Az, hogy melyik Tulajdonságot kell az Aura meghatározásakor beleszámolni, az az adott isten, vagy vallás jellegétől függ. Minden isten papjainak leírásában megadjuk, hogy melyik is ez a Tulajdonság.
 
 ```
 Aura számítása:
@@ -29755,9 +29755,9 @@ A "**Méregkeverés X.szint**" ("Mk") az **igényelt biztos tudás** szintjét j
 ```
 Meddig áll el?
 
-0: Pár másodperc  
-1: 1 perc  
-2: 10 perc  
+0: Pár másodperc
+1: 1 perc
+2: 10 perc
 3: 1 óra, Méregkeverés 3.szint
 4: 1 nap, Mk 6.szint
 5: 1 hónap, Mk 9.szint
@@ -29781,7 +29781,7 @@ Mennyi idő alatt ürül ki?
 ### (4) Hatóidő
 
 ```
-Milyen gyorsan hat?  
+Milyen gyorsan hat?
 
 +0: (30 perc - 3 óra múlva)
 +1: (4 - 23 óra múlva), Mk 3. szint
@@ -30309,12 +30309,12 @@ Csapda komplexitásától függő **Nehézség** (maximum: a készítő által m
 ## Elugrani egy feléd száguldó lovaskocsi elől
 
  **[Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md)** képzettségpróba **Gyorsaság** Tulajdonsággal, melynek nehézsége függ a lovaskocsi távolságától az észlelés pillanatában.
- 
+
 ```
 Nehézség távolság
   függvényében
 
-21:  1m  
+21:  1m
 18:  2m
 15:  3m
 12:  4m
@@ -30500,7 +30500,7 @@ Tetves könnyű bőrvértet visel, ezért a KM `+2` büntetést ad az esés sor�
 
 ```
 Nehézség:
-  9 (magasság: 4 méter) 
+  9 (magasság: 4 méter)
 - 3 (susnyásba)
 + 2 (könnyű bőrvért)
 = 8
@@ -30603,7 +30603,7 @@ Művészetismeret + Intelligencia
 + mindkettőre kiterjesztés:
   Hamisítás kiterjesztés (N)
   Kultúrkör kiterjesztés (E)
-  
+
 + valamelyikre kiterjesztés ezekből:
   Festészet fortély (E)
   Kalligráfia fortély (E)
@@ -31024,9 +31024,9 @@ A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkez�
 
 <br />
 
-### ⚜️ Hátbaszúrás szituációig észrevétlenül lopakodva eljutni - hátulról, látótéren kívülről 
+### ⚜️ Hátbaszúrás szituációig észrevétlenül lopakodva eljutni - hátulról, látótéren kívülről
 
-Tegyük fel, hogy az éjjeli, csendes palota folyósóján az őr mögé lopakodni, majd hátbaszúrni. 
+Tegyük fel, hogy az éjjeli, csendes palota folyósóján az őr mögé lopakodni, majd hátbaszúrni.
 
 Alább néhány alap módosítót látunk, az összes szituációt befolyásoló módosítót a [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md#%EF%B8%8F-alapeset-lopakod%C3%A1srejt%C5%91z%C3%A9s-vs-%C3%A9szlel%C3%A9s-ellenpr%C3%B3b%C3%A1hoz) képzettség leírásában találod.
 #### Lopakodás/rejtőzés módosítók
@@ -31078,7 +31078,7 @@ Lopás + Ügyesség
 ⭕TODO: csoportos szellemi képzettségpróbává alakítani ⭕
 
 `a.)` Nem tudja a tolvaj, hogy ott a testőr: Két **Lopás** próba
-- Lopás próba: **Könnyű** (`6`) 
+- Lopás próba: **Könnyű** (`6`)
 - Lopás próba (rejtett!): **Nagyon nehéz** (`15`). Erről a JK nem tud.
 
 ⭕TODO: ellenpróbás szituációvá alakítani ⭕
@@ -31181,7 +31181,7 @@ A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a vi
 `Mászás(7)+Ügyesség(3)+Erő(2) = 12 + k10`
 
 🎲 `6` → `18  vs  18` → épphogy megvan ✅
- 
+
 ⚙️ Tetves `Erő` Tulajdonsága az aktuális mászás idejére `0` értékre csökkent.
 
 🔆 "Áááá, kurvák vérit!!"
@@ -31243,7 +31243,7 @@ Itt nem jár bónusz, de lehet Manőver Pontot (`MP`) bőven beletenni (maximum 
 
 ### Ellenfél visszatámadásnál
 
-A Támadó taktika kapcsán `VÉ:-6` büntetés jár a pontra támadó karakternek - ellenfele első visszatámadására. 
+A Támadó taktika kapcsán `VÉ:-6` büntetés jár a pontra támadó karakternek - ellenfele első visszatámadására.
 
 ---
 
