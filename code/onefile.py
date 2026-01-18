@@ -61,7 +61,7 @@ if not os.path.isdir(path_rootdir):
 tmp_dir = tempfile.mkdtemp()
 script_dir = os.path.dirname(os.path.abspath(__file__))
 # Exported combined file path in szilank repo
-combined_file = os.path.join(script_dir, '..', 'work', 'szilank.rpg.full.txt')
+combined_file = os.path.join(script_dir, '..', 'work', 'szilank.rpg.full.md')
 
 
 if not os.path.isdir(path_rootdir):
