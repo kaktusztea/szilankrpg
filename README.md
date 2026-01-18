@@ -123,7 +123,7 @@ A `Szilánk` rendszerében nincsenek kasztok, egyes jellemzőket szabad pontokb�
 ## Eszközök
 
 - [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
-- [Full raw document in markdown](https://raw.githubusercontent.com/kaktusztea/szilankrpg/refs/heads/master/work/szilank.rpg.full.txt)
+- [Full raw document in markdown](https://raw.githubusercontent.com/kaktusztea/szilankrpg/refs/heads/master/work/szilank.rpg.full.md)
 
 ## Licenc
 Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek az alábbiak szerint: [LICENSE](LICENSE)
