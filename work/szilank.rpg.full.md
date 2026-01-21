@@ -2252,6 +2252,21 @@ A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje 
 
 <br />
 
+
+---
+## Előny-Hátrány dobások
+
+A Szilánk későbbiekben tárgyalt [Státusz rendszere](080_hatasok_es_statuszok.md) alá tartoznak az [Előnyt, vagy Hátrányt okozó Hatások](081_hatasok.md#%EF%B8%8F-el%C5%91ny12-%C3%A9s-h%C3%A1tr%C3%A1ny-12-hat%C3%A1sok), melyek gyakorlatilag bármilyen kockadobást módosíthatnak, az épp aktuális Státusz leírásától függően. A kockadobásokat az alábbi mértékben képesek módosítani, tehát egy `5` fokú skálát kapunk a kezünkbe differenciálásra.
+
+```
+Min: Hátrány-2
+Max: Előny+2
+```
+
+Természetesen a Tulajdonságpróbára is járhat Előny, vagy Hátrány - hogy mekkora, azt a Státuszok leírásánál részletezzük.
+
+<br />
+
 ---
 ### MGT hatása fizikai Tulajdonságpróbára
 
@@ -10951,6 +10966,13 @@ Tulajdonságonként viszont eltér(het)
 - rontás hatása
 
 ⚡ Példa: **Ügyesség** segítségével a határoló falakon ide-oda pattogva feljutni valahova, vagy helyből **Erő** segítségével ugrani egyet felfelé. Lehet, hogy a különböző megvalósítások különböző Nehézséget eredményznek.
+
+<br />
+
+---
+## Előny-Hátrány dobások
+
+A Tulajdonságpróbánál már említett [Státusz rendszer](080_hatasok_es_statuszok.md) alá tartozó [Előnyt, vagy Hátrányt okozó Hatások](081_hatasok.md#%EF%B8%8F-el%C5%91ny12-%C3%A9s-h%C3%A1tr%C3%A1ny-12-hat%C3%A1sok) a Képzettségpróbákra is vonatkozhatnak - az épp aktuális Státusz leírásától függően- így az `5` fokú skála itt is alkalmazásra kerülhet.
 
 <br />
 
