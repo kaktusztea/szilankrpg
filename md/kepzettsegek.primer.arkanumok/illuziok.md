@@ -14,7 +14,7 @@ xyz
 [Csendmágia RAW anyagok](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#csendmágia)
 
 ---
-### Szagmágia
+### Szagmágia / Ízmágia
 
 xyz
 
@@ -24,3 +24,8 @@ xyz
 xyz
 
 ---
+### Tapintásmágia
+
+xyz
+
+
