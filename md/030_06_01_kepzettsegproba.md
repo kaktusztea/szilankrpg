@@ -68,6 +68,13 @@ Tulajdonságonként viszont eltér(het)
 <br />
 
 ---
+## Előny-Hátrány dobások
+
+A Tulajdonságpróbánál már említett [Státusz rendszer](080_hatasok_es_statuszok.md) alá tartozó [Előnyt, vagy Hátrányt okozó Hatások](081_hatasok.md#%EF%B8%8F-el%C5%91ny12-%C3%A9s-h%C3%A1tr%C3%A1ny-12-hat%C3%A1sok) a Képzettségpróbákra is vonatkozhatnak - az épp aktuális Státusz leírásától függően- így az `5` fokú skála itt is alkalmazásra kerülhet.
+
+<br />
+
+---
 ## Páncél MGT hatása fizikai Képzettségpróbákra
 
 Páncélod akadályozhat a fizikai Képzettségpróbák végrehajtásában.
