@@ -7582,7 +7582,7 @@ xyz
 [Csendmágia RAW anyagok](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#csendmágia)
 
 ---
-### Szagmágia
+### Szagmágia / Ízmágia
 
 xyz
 
@@ -7592,6 +7592,11 @@ xyz
 xyz
 
 ---
+### Tapintásmágia
+
+xyz
+
+
 
 
 ---
@@ -22781,9 +22786,11 @@ Ellenfeled max (1 + k20T)
 
 ❌ Más taktikával együtt
 
-A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz A kör közben nem változtathatsz a taktikádon, csak a következő körben támadhatsz újra.
+A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. A kör közben nem változtathatsz a taktikádon és csak a következő körben támadhatsz újra.
 
-Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
+🔆 A [lények méretkülönbségéből](065_01_07_lenyek.md) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
+
+🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 
 ---
 ### Visszafogott taktika ⇄
