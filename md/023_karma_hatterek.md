@@ -236,7 +236,7 @@ Nem tájegységhez kötött (!)
 
 Számos különböző helyet bejártál a világon, és kalandok során bizonyítottad rátermettségedet.
 
-#### Hatás
+### Hatás
 
 Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást nem számszerűsítjük, ha szükséges a KM figyelmét is felhívhatod rá.
 
@@ -246,12 +246,12 @@ Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást ne
 ---
 ## 🟡 Mágia: Auraösszhang
 
-#### Követelmény
+### Követelmény
+
 Előtörténet, eddigi kalandok.
 
-#### Hatás
+### Hatás: Mágikus karmához jutsz.
 
-Mágikus karmához jutsz. Például:
 - Esőben varázsló (`30 %`): esőben hatékonyabban varázsol, viszont például sivatagban büntetést kap.
 - Tömegben varázsló (`20 %`):  a nagy embertömeg „tuningolja”, ott könnyebben alkalmaz mágiát. Egy kihalt területen viszont büntetés sújtja.
 - Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
@@ -266,17 +266,17 @@ Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](105_magikus
 
 Mágikus karma.
 
-#### Követelmény
-- „A cipőfűzőjét is mágiával köti be” .\
-  Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
+### Követelmény
+
+- „A cipőfűzőjét is mágiával köti be”. Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
 - Papi mágiára nem alkalmazható
 
-#### Hatás
+### Pro Hatás 
 
-**Pro**:
-- Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk.
+Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk.
 
-**Kontra**:
+### Kontra hatás
+
 ⭕TODO⭕
 - Erősség: `6` felett minden további `1 szint` növekedés `2 szintnek` számít
 - Nem vagy képes Rituális mágiák alkalmazására⭕
