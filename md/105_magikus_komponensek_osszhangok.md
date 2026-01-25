@@ -1,19 +1,9 @@
-## Mágikus komponensek, összhangok
+# Mágikus komponensek, összhangok
 
 → [STUDY: Mágikus komponensek, összhangok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕
 
 ---
-### Auraösszhang (Karma Háttér)
-
-[Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
-
----
-### Profán (Karma Háttér)
-
-[Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
-
----
-### Fizikai
+## Fizikai komponensek
 
 - természetes
   - békaháj (1)
@@ -28,37 +18,51 @@
    - ritka ereklye
    - mágikus pecsétek
 
----
-### Szimpatikus komponens
+<br />
 
-⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕
+---
+## Szimpatikus komponensek
+
+⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, eőrsebb a kapocs a személlyeél, annál erősebb a híd.
 
 - fizikai: áldozat egy személyes tárgya, áldozat egy testrésze (haj, stb), testvér, iker
 - elvont: szerelem, gyűlölet mint szimpatikus híd (ez jellemzően papi mágia legyen)
 
 ⭕Mit lehet min keresztül.⭕ Pl. asztrál/mentál hatást szerelmen keresztül. Betegséget, életerő manipuláció véren keresztül.
 
+<br />
+
 ---
-### Természeti jelenség
+## Karma Háttér összhang
+
+- [Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
+- [Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
+
+
+<br />
+
+---
+## Természeti jelenség összhang
 
 Vihar, aszály, szivárvány, napfény, holdfény
 
-  - A
-  - B
-  - Példák:
-    - Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
-    - Viharban könnyebb villámmágiát.
+Példák:
+- Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
+- Viharban könnyebb villámmágiát.
+
+<br />
 
 ---
-### Idő, időszak
+## Idő, időszak összhang
 
 - Napszak: Napkelte, Dél, Napnyugta, Éjfél
 - Évszak: Tavasz, Nyár, Ősz, Tél
 - Holdciklus(ok): Újhold, telihold, napfogyatkozás, holdfogyatkozás
 
+<br />
 
 ---
-### Őselem sűrű jelenléte
+## Őselem sűrű jelenléte mint összhang
 
 Nagy mocsár (víz), vulkán (tűz)
 
@@ -67,37 +71,46 @@ Nagy mocsár (víz), vulkán (tűz)
   - tűznél haragot könnyebb
 - xyz
 
+<br />
 
 ---
-### Csillag együttállás
+## Csillag együttállás összhangja
 
 - történelmi esemény: államalapításkor aktuális csillagállással azonos együttállás
 - misztikus együttállás
 
+<br />
+
 ---
-### Evilági lény
+## Evilági lény - összhang és komponens
 
 - jelenléte: szellemlény, uralkodó ház tagja, főpap
 - testrésze: bőre, vére, szőre, karma, nyála, stb.
 - áldozása: emberáldozat, állatáldozat, természetszellem
 
+<br />
+
 ---
-### Túlvilági lény
+## Túlvilági lény - összhang és komponens
 
 - jelenléte: élőhalott szellem, démon
 - testrésze: bőre, vére, szőre, karma, nyála, stb.
 - áldozása: élőhalott szellem, démon
 
+<br />
+
 ---
-### Álom
+## Álom - összhang és komponens
 
 Álombeli helyszínek, álmokban megjelenő lények.
 
 - megléte
 - feláldozása
 
+<br />
+
 ---
-### Érzelem, hangulat
+## Érzelem, hangulat - összhang és komponens
 
 Szeretet, félelem, gyűlölet
 
@@ -115,8 +128,10 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
   - Példa-3: Életerő áldozása
   - Példa-4: Vidámság áldozása
 
+<br />
+
 ---
-### Helyszín jellege
+## Helyszín jellege összhang
 
 - föld alatt
 - levegőben
@@ -126,22 +141,29 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 - embertömegben
 - egyedül
 
+<br />
+
 ---
-### Fontos helyszín
+## Fontos helyszín összhang
 
 - történelmi: a legvidámabb esküvő volt itt 1000 éve - itt könnyebb gyógyítani, pozitív asztrális varázslatok
 - földrajzi: Hegytető, monolitok, szakadék alja, óceán mélye, barlangi tó, ősöreg fák
 - misztikus földrajzi: szent liget, szent fa
 
+<br />
+
 ---
-### Színek, fények
+## Színek, fények összhang
 
 - konkrét fények
 - gyertyafény
 
----
-### Esemény
+<br />
 
+---
+## Esemény - összhang és komponens
+
+Összhang
 - gyerek születése
 - házasság
 - bosszú beteljesülének pillanata
@@ -149,9 +171,11 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 - koronázás
 - megvilágosodás
 - orgazmus
+- születés: gyógyítás könnyebb
+
+Komponens
 - kivégzés: életerő manipulációra bónusz
 - halál: az alkalmazó maradék életerejét mágiává formázza
-- születés: gyógyítás könnyebb
 
 ---
 

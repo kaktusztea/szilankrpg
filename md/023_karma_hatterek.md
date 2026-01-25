@@ -1,4 +1,4 @@
-## Karma Hátterek
+# Karma Hátterek
 
 <!-- tag: karma__fortely -->
 
@@ -16,9 +16,9 @@ A Karmák lehetnek önmagukban, vagy %-kal jellemezhetőek.
 Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg a KM a játékossal való egyeztetés után!
 
 ---
-### Tartalomjegyzék
+## Tartalomjegyzék
 
-#### Általános
+### Általános
 
 - [Áldott személy](#-%C3%A1ldott-szem%C3%A9ly)
 - [Áldáshordozó](023_karma_hatterek.md#-%C3%A1ld%C3%A1shordoz%C3%B3)
@@ -37,14 +37,14 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 - [Természet gyermeke](#-term%C3%A9szet-gyermeke)
 - [Világlátott](#-vil%C3%A1gl%C3%A1tott)
 
-#### Misztikus
+### Misztikus
 
 - [Mágia: Auraösszhang](#-m%C3%A1gia-aura%C3%B6sszhang)
 - [Mágia: Profán](#-m%C3%A1gia-prof%C3%A1n)
 
 <br />
 
-### 🟡 Áldott személy
+## 🟡 Áldott személy
 
 Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha nem leplezett, meglátszik az Aurádon.
 
@@ -57,7 +57,7 @@ Hatás:
 <br />
 
 ---
-### 🟡 Áldáshordozó
+## 🟡 Áldáshordozó
 
 Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív (főleg) és negatív hatásokkal számodra.
 
@@ -68,7 +68,7 @@ Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helysz
 <br />
 
 ---
-### 🟡 Átkozott személy
+## 🟡 Átkozott személy
 
 Egy isteni entitás vagy szent hely átkát kaptad nyakadba valamilyen elmondhatatlan galádságért. Ha az átok nem leplezett, meglátszik az Aurádon is.
 
@@ -79,7 +79,7 @@ Egészen szerteágazó hatásai lehetnek, tipikusan narratív elem, amelyet a KM
 <br />
 
 ---
-### 🟡 Átokhordozó
+## 🟡 Átokhordozó
 
 Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív és (főleg) negatív hatásokkal számodra.
 
@@ -92,7 +92,7 @@ Pl. Aquir ereklye, amitől nem tudsz megszabadulni. Vagy "Orwella érintése".
 <br />
 
 ---
-### 🟡 Alkoholista
+## 🟡 Alkoholista
 
 #### Követelmény
 
@@ -105,7 +105,7 @@ Egy idő után már a viselkedéseden, küllemeden is meglátszik - ez szociáli
 <br />
 
 ---
-### 🟡 Árnyjáró
+## 🟡 Árnyjáró
 
 Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevétlenül mozogva.
 
@@ -115,7 +115,7 @@ Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevét
 <br />
 
 ---
-### 🟡 Bajnok
+## 🟡 Bajnok
 
 #### Követelmény
 
@@ -128,7 +128,7 @@ Puszta jelenléted lelkesítőleg hat. Minden híved, követőd `Előny+1` Hatá
 <br />
 
 ---
-### 🟡 Bölcs Tanító
+## 🟡 Bölcs Tanító
 
 Több karaktert segítettél fejlődni, tanítottál vagy mentoráltál hosszabb időn keresztül.
 
@@ -137,7 +137,7 @@ Hatás:
 - Kontra: Ha egy tanítványod elárul vagy kudarcot vall, az a te hírnevedet is csorbítja.
 
 ---
-### 🟡 Bukott gyógyító
+## 🟡 Bukott gyógyító
 
 #### Követelmény
 
@@ -151,7 +151,7 @@ Soha többet nem leszel képes kézrátétellel gyógyítani, a [Sebgyógyítás
 
 
 ---
-### 🟡 Gyerekgyilkos
+## 🟡 Gyerekgyilkos
 
 #### Követelmény
 
@@ -164,7 +164,7 @@ Az ilyen karma lemoshatatlan, Aurán jól látható mocskos szégyenfolt. Tört�
 <br />
 
 ---
-### 🟡 Gyilkos
+## 🟡 Gyilkos
 
 #### Követelmény
 
@@ -179,7 +179,7 @@ Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer.alt
 <br />
 
 ---
-### 🟡 Hírhedt
+## 🟡 Hírhedt
 
 #### Követelmény
 
@@ -192,7 +192,7 @@ Híred messze megelőz. Ha aktív tevékenységed környékén lófrálsz, jó e
 <br />
 
 ---
-### 🟡 Hős
+## 🟡 Hős
 
 #### Követelmény
 
@@ -207,7 +207,7 @@ Mindig segítesz a bajbajutottakon, mindig kész vagy az önfeláldozásra, mind
 <br />
 
 ---
-### 🟡 Szolgalelkű
+## 🟡 Szolgalelkű
 
 Nagyhatalmú emberek mellett töltöttél el jelentős időt, mellettük (alattuk) érzed jól magad. Állandó késztetést érzel a seggnyalásra.
 
@@ -218,7 +218,7 @@ A "nagy emberek" feléd irányuló **Befolyásolás** képzettségpróbája elle
 <br />
 
 ---
-### 🟡 Természet Gyermeke
+## 🟡 Természet Gyermeke
 
 Hosszú időt töltöttél a vadonban, és szoros kapcsolatot alakítottál ki a természettel.
 
@@ -232,7 +232,7 @@ Nem tájegységhez kötött (!)
 <br />
 
 ---
-### 🟡 Világlátott
+## 🟡 Világlátott
 
 Számos különböző helyet bejártál a világon, és kalandok során bizonyítottad rátermettségedet.
 
@@ -244,7 +244,7 @@ Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást ne
 
 ---
 ---
-### 🟡 Mágia: Auraösszhang
+## 🟡 Mágia: Auraösszhang
 
 #### Követelmény
 Előtörténet, eddigi kalandok.
@@ -252,8 +252,8 @@ Előtörténet, eddigi kalandok.
 #### Hatás
 
 Mágikus karmához jutsz. Például:
-- Esőben varázsló (`30 %`)
-- Tömegben varázsló (`20 %`)
+- Esőben varázsló (`30 %`): esőben hatékonyabban varázsol, viszont például sivatagban büntetést kap.
+- Tömegben varázsló (`20 %`):  a nagy embertömeg „tuningolja”, ott könnyebben alkalmaz mágiát. Egy kihalt területen viszont büntetés sújtja.
 - Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
 - stb
 
@@ -262,7 +262,7 @@ Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](105_magikus
 <br />
 
 ---
-### 🟡 Mágia: Profán
+## 🟡 Mágia: Profán
 
 Mágikus karma.
 
