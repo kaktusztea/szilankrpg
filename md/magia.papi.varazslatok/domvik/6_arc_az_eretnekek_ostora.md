@@ -34,7 +34,7 @@ A Pap képes hite ellenségeinek hatásait, jelenlétét érzékelni:
 - nem rejtőzködő ártó entitásokat `2x Kisszféra` sugarú körben
 - adott személyre alkalmazott befolyásolást:
   - annak ideje
-  - Mágiaút (Átok, Szexuálmágia, stb.)
+  - Mágia metódus (Átok, Szexuálmágia, stb.)
   - jellege: Mentál, Asztrál, Betegség, Megszállás
 
 ---

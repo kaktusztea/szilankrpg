@@ -4,7 +4,7 @@
 
 **RAW**
 
-- Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia Mágiaúttal), vagy Teremtés arkánuma (ősibb nép, mint az elfek)
+- Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia Mágia metódussal), vagy Teremtés arkánuma (ősibb nép, mint az elfek)
 
 ---
 ### Szintek

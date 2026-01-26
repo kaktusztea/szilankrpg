@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiaút: Fókuszok, Emitterek (1)
+## 🟣 💫 Mágia metódus: Fókuszok, Emitterek (1)
 
 Képes vagy mágikus fókuszt, vagy emittert létrehozni.
 

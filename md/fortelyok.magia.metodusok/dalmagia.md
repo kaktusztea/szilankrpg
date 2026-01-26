@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiaút: Dalmágia (1)
+## 🟣 💫 Mágia metódus: Dalmágia (1)
 
 Képes vagy dalba ágyazni a mágikus hatást.
 

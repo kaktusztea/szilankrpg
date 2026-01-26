@@ -116,7 +116,7 @@ A "törzs", az **alapozás** egy [Mágia Tradíció](051_00_magia_tradiciok.md) 
 
 A fa "ágai" a [Mágikus Szférák vagy  Arkánum](106_magikus_szferak_arkanumok.md) képzettségek. Ezek a mágiaiskolák, amelyeket az adott Tradíció alatt karaktered megtanult és annak kontextusában használni is képes. Lehet a tanult Arkánum neve ugyanaz, ám egy "Asztrálmágia Arkánum" más-más formulákat tartalmaz a [Magasmágia](051_01_magasmagia.md) és másokat például a [Vulgármágia](051_02_vulgarmagia.md) alatt.
 
-Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) amelyek a "levelek" a fa ágain. Ide tartoznak a [Mágiautak](104_magiautak.md) és más misztikus, színesítő, specializálódó ismeretek.
+Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) amelyek a "levelek" a fa ágain. Ide tartoznak a [Mágia metódusok](104_magia_metodusok.md) és más misztikus, színesítő, specializálódó ismeretek.
 
 <br />
 

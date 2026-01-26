@@ -20,9 +20,9 @@ Az **Életerő** szféra alá tartozó arkánum.
 ---
 ### Rontások
 
-⭕ Vagy az egy Mágiaút inkább? ⭕
+⭕ Vagy az egy Mágia metódus inkább? ⭕
 
 ---
 ### Betegségmágia
 
-⭕Rontás Mágiaúttal?⭕
+⭕Rontás Mágia metódussal?⭕

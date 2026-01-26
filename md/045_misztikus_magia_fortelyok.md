@@ -4,9 +4,9 @@
 
 → [STUDY: Misztikus Fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) ⭕
 
-### Mágiautak
+### Mágia metódusok
 
-→ [STUDY: Mágiautak](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiautak)
+→ [STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)
 
 ---
 

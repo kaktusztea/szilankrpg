@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiaút: Szexuálmágia (1)
+## 🟣 💫 Mágia metódus: Szexuálmágia (1)
 
 Intim együttlét során hozod létre a mágikus hatást.
 

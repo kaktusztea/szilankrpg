@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiaút: Átok (1)
+## 🟣 💫 Mágia metódus: Átok (1)
 
 Személyeket, vagy tárgyakat átkozhatsz meg, betegséggel, balszerencsével, balsorssal felruházva, vagy valamely tulajdonságát gyengítve.
 

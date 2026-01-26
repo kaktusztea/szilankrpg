@@ -1,4 +1,4 @@
-## 🟣 💫 Mágiaút: Megkötés (1)
+## 🟣 💫 Mágia metódus: Megkötés (1)
 
 Képes vagy megkötni valamiben a mágikus hatást.
 
