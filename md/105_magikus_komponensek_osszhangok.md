@@ -3,6 +3,23 @@
 → [STUDY: Mágikus komponensek, összhangok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕
 
 ---
+- [Álom - összhang és komponens](#%C3%A1lom---%C3%B6sszhang-%C3%A9s-komponens)
+- [Csillag együttállás összhangja](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6sszhangja)
+- [Esemény - összhang és komponens](#esem%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
+- [Evilági lény - összhang és komponens](#evil%C3%A1gi-l%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
+- [Érzelem, hangulat - összhang és komponens](#%C3%A9rzelem-hangulat---%C3%B6sszhang-%C3%A9s-komponens)
+- [Fizikai komponensek](#fizikai-komponensek)
+- [Fontos helyszín összhang](#fontos-helysz%C3%ADn-%C3%B6sszhang)
+- [Helyszín jellege összhang](#helysz%C3%ADn-jellege-%C3%B6sszhang)
+- [Idő, időszak összhang](#id%C5%91-id%C5%91szak-%C3%B6sszhang)
+- [Karma Háttér összhang](#karma-h%C3%A1tt%C3%A9r-%C3%B6sszhang)
+- [Őselem sűrű jelenléte mint összhang](#%C5%91selem-s%C5%B1r%C5%B1-jelenl%C3%A9te-mint-%C3%B6sszhang)
+- [Szimpatikus komponensek](#szimpatikus-komponensek)
+- [Színek, fények összhang](#sz%C3%ADnek-f%C3%A9nyek-%C3%B6sszhang)
+- [Természeti jelenség összhang](#term%C3%A9szeti-jelens%C3%A9g-%C3%B6sszhang)
+- [Túlvilági lény - összhang és komponens](#t%C3%BAlvil%C3%A1gi-l%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
+
+---
 ## Fizikai komponensek
 
 - természetes
