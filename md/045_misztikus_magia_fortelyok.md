@@ -4,9 +4,9 @@
 
 → [STUDY: Misztikus Fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) ⭕
 
-### Varázslás formák
+### Mágiautak
 
-→ [STUDY: Varázslás Formák](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazslas.formak)
+→ [STUDY: Mágiautak](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiautak)
 
 ---
 

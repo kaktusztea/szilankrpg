@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia Forma: Bábúmágia (1)
+## 🟣 💫 Mágiaút: Bábúmágia (1)
 
 Kézzel készített bábúkkal távolról hatsz áldozatodra.
 

@@ -83,7 +83,7 @@ A fent említett Arkánum adja a faj - eredetében gyökerező - misztikus képe
 
 Az egyes szinteknek lehetnek követelményei.
 
-⭕TODO⭕ `1 db` varázslási  [Formát](045_misztikus_magia_fortelyok.md#var%C3%A1zsl%C3%A1s-formák) fel kell venni egy adott "Forma pool-ból".
+⭕TODO⭕ `1 db` [Mágiautat](045_misztikus_magia_fortelyok.md#mágiautak) fel kell venni egy adott "Mágiaút pool-ból".
 
 ---
 ## `5.` Faji fortélyok

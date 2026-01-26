@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia Forma: Gyertyamágia (1)
+## 🟣 💫 Mágiaút: Gyertyamágia (1)
 
 Gyertyába foglalsz mágikus hatást, vagy komponensként használod.
 

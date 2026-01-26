@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia Forma: Maszkmágia (1)
+## 🟣 💫 Mágiaút: Maszkmágia (1)
 
 Kézzel készített maszkot - szerves, vagy szervetlen anyagból - készítesz, azt nemesíted át mágikus hatással.
 

@@ -6,7 +6,7 @@
 
 ### [Aura, Mágikus Átütés, Mágiaellenállás](103_aura_magia_akarata_magiaellenallas.md)
 
-### [Varázslás Formák](104_varazslas_formak.md)
+### [Mágiautak](104_magiautak.md)
 
 ### [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)
 

@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia Forma: Rituális / Táncmágia (1)
+## 🟣 💫 Mágiaút: Rituális / Táncmágia (1)
 
 Képes vagy szakrális Tánc, vagy nem-szakrális Rituálé formájában mágikus hatást létrehozni.
 

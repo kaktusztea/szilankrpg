@@ -24,7 +24,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ✨ Mágia
 
-💫 Varázslási Forma
+💫 Varázsút
 
 🌀 Pszí / Pszí diszciplína
 

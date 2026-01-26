@@ -4,6 +4,6 @@
 
 ---
 
-🔗 [Varázslás Formák](104_varazslas_formak.md) →
+🔗 [Mágiautak](104_magiautak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
