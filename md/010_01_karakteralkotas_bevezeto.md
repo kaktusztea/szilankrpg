@@ -131,7 +131,7 @@ Az elvont és színesítő ismeretek felől haladunk a "tápos" irányba. A harc
 - `2.` Karakter jelleme, személyiségének meghatározása
 - `3.` Szabad Fortélyok kiválasztása
 - `4.` Szekunder KP elköltése
-- `5.` Sima KP elköltése (ne feledd ,ezeket is lehet szekunder ismeretekre fordítani!)
+- `5.` Sima KP elköltése (ne feledd, ezeket is lehet szekunder ismeretekre fordítani!)
 
 ---
 
