@@ -4250,7 +4250,7 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további szinesítő eleme
 ---
 ## File: md/023_karma_hatterek.md
 
-## Karma Hátterek
+# Karma Hátterek
 
 <!-- tag: karma__fortely -->
 
@@ -4268,9 +4268,9 @@ A Karmák lehetnek önmagukban, vagy %-kal jellemezhetőek.
 Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg a KM a játékossal való egyeztetés után!
 
 ---
-### Tartalomjegyzék
+## Tartalomjegyzék
 
-#### Általános
+### Általános
 
 - [Áldott személy](#-%C3%A1ldott-szem%C3%A9ly)
 - [Áldáshordozó](023_karma_hatterek.md#-%C3%A1ld%C3%A1shordoz%C3%B3)
@@ -4289,14 +4289,14 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 - [Természet gyermeke](#-term%C3%A9szet-gyermeke)
 - [Világlátott](#-vil%C3%A1gl%C3%A1tott)
 
-#### Misztikus
+### Misztikus
 
 - [Mágia: Auraösszhang](#-m%C3%A1gia-aura%C3%B6sszhang)
 - [Mágia: Profán](#-m%C3%A1gia-prof%C3%A1n)
 
 <br />
 
-### 🟡 Áldott személy
+## 🟡 Áldott személy
 
 Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha nem leplezett, meglátszik az Aurádon.
 
@@ -4309,7 +4309,7 @@ Hatás:
 <br />
 
 ---
-### 🟡 Áldáshordozó
+## 🟡 Áldáshordozó
 
 Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív (főleg) és negatív hatásokkal számodra.
 
@@ -4320,7 +4320,7 @@ Főleg a környezetedre vagy bizonyos feltételnek megfelelő személyek, helysz
 <br />
 
 ---
-### 🟡 Átkozott személy
+## 🟡 Átkozott személy
 
 Egy isteni entitás vagy szent hely átkát kaptad nyakadba valamilyen elmondhatatlan galádságért. Ha az átok nem leplezett, meglátszik az Aurádon is.
 
@@ -4331,7 +4331,7 @@ Egészen szerteágazó hatásai lehetnek, tipikusan narratív elem, amelyet a KM
 <br />
 
 ---
-### 🟡 Átokhordozó
+## 🟡 Átokhordozó
 
 Egy nagy erejű entitás hatásait hordozod, ami járhat pozitív és (főleg) negatív hatásokkal számodra.
 
@@ -4344,7 +4344,7 @@ Pl. Aquir ereklye, amitől nem tudsz megszabadulni. Vagy "Orwella érintése".
 <br />
 
 ---
-### 🟡 Alkoholista
+## 🟡 Alkoholista
 
 #### Követelmény
 
@@ -4357,7 +4357,7 @@ Egy idő után már a viselkedéseden, küllemeden is meglátszik - ez szociáli
 <br />
 
 ---
-### 🟡 Árnyjáró
+## 🟡 Árnyjáró
 
 Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevétlenül mozogva.
 
@@ -4367,7 +4367,7 @@ Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevét
 <br />
 
 ---
-### 🟡 Bajnok
+## 🟡 Bajnok
 
 #### Követelmény
 
@@ -4380,7 +4380,7 @@ Puszta jelenléted lelkesítőleg hat. Minden híved, követőd `Előny+1` Hatá
 <br />
 
 ---
-### 🟡 Bölcs Tanító
+## 🟡 Bölcs Tanító
 
 Több karaktert segítettél fejlődni, tanítottál vagy mentoráltál hosszabb időn keresztül.
 
@@ -4389,7 +4389,7 @@ Hatás:
 - Kontra: Ha egy tanítványod elárul vagy kudarcot vall, az a te hírnevedet is csorbítja.
 
 ---
-### 🟡 Bukott gyógyító
+## 🟡 Bukott gyógyító
 
 #### Követelmény
 
@@ -4403,7 +4403,7 @@ Soha többet nem leszel képes kézrátétellel gyógyítani, a [Sebgyógyítás
 
 
 ---
-### 🟡 Gyerekgyilkos
+## 🟡 Gyerekgyilkos
 
 #### Követelmény
 
@@ -4416,7 +4416,7 @@ Az ilyen karma lemoshatatlan, Aurán jól látható mocskos szégyenfolt. Tört�
 <br />
 
 ---
-### 🟡 Gyilkos
+## 🟡 Gyilkos
 
 #### Követelmény
 
@@ -4431,7 +4431,7 @@ Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer.alt
 <br />
 
 ---
-### 🟡 Hírhedt
+## 🟡 Hírhedt
 
 #### Követelmény
 
@@ -4444,7 +4444,7 @@ Híred messze megelőz. Ha aktív tevékenységed környékén lófrálsz, jó e
 <br />
 
 ---
-### 🟡 Hős
+## 🟡 Hős
 
 #### Követelmény
 
@@ -4459,7 +4459,7 @@ Mindig segítesz a bajbajutottakon, mindig kész vagy az önfeláldozásra, mind
 <br />
 
 ---
-### 🟡 Szolgalelkű
+## 🟡 Szolgalelkű
 
 Nagyhatalmú emberek mellett töltöttél el jelentős időt, mellettük (alattuk) érzed jól magad. Állandó késztetést érzel a seggnyalásra.
 
@@ -4470,7 +4470,7 @@ A "nagy emberek" feléd irányuló **Befolyásolás** képzettségpróbája elle
 <br />
 
 ---
-### 🟡 Természet Gyermeke
+## 🟡 Természet Gyermeke
 
 Hosszú időt töltöttél a vadonban, és szoros kapcsolatot alakítottál ki a természettel.
 
@@ -4484,11 +4484,11 @@ Nem tájegységhez kötött (!)
 <br />
 
 ---
-### 🟡 Világlátott
+## 🟡 Világlátott
 
 Számos különböző helyet bejártál a világon, és kalandok során bizonyítottad rátermettségedet.
 
-#### Hatás
+### Hatás
 
 Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást nem számszerűsítjük, ha szükséges a KM figyelmét is felhívhatod rá.
 
@@ -4496,16 +4496,16 @@ Könnyebben alkalmazkodsz új helyzetekhez és környezetekhez. Ezt a hatást ne
 
 ---
 ---
-### 🟡 Mágia: Auraösszhang
+## 🟡 Mágia: Auraösszhang
 
-#### Követelmény
+### Követelmény
+
 Előtörténet, eddigi kalandok.
 
-#### Hatás
+### Hatás: Mágikus karmához jutsz.
 
-Mágikus karmához jutsz. Például:
-- Esőben varázsló (`30 %`)
-- Tömegben varázsló (`20 %`)
+- Esőben varázsló (`30 %`): esőben hatékonyabban varázsol, viszont például sivatagban büntetést kap.
+- Tömegben varázsló (`20 %`):  a nagy embertömeg „tuningolja”, ott könnyebben alkalmaz mágiát. Egy kihalt területen viszont büntetés sújtja.
 - Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
 - stb
 
@@ -4514,21 +4514,21 @@ Lásd bővebben a Mágia fejezet [Mágikus komponensek, összhangok](105_magikus
 <br />
 
 ---
-### 🟡 Mágia: Profán
+## 🟡 Mágia: Profán
 
 Mágikus karma.
 
-#### Követelmény
-- „A cipőfűzőjét is mágiával köti be” .\
-  Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
+### Követelmény
+
+- „A cipőfűzőjét is mágiával köti be”. Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
 - Papi mágiára nem alkalmazható
 
-#### Hatás
+### Pro Hatás 
 
-**Pro**:
-- Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk.
+Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk.
 
-**Kontra**:
+### Kontra hatás
+
 ⭕TODO⭕
 - Erősség: `6` felett minden további `1 szint` növekedés `2 szintnek` számít
 - Nem vagy képes Rituális mágiák alkalmazására⭕
@@ -10953,7 +10953,7 @@ Tulajdonság + Képzettség + k10
 A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Random példa: "szakrális emberáldozat csökkenti az adott próba nehézségét".
 
 Példák `21` feletti célszámokra:
-- [Aktuális Aura számításánál](103_aura_magia_akarata_magiaellenallas.md#aura-aktuális-értéke) Aurafejlesztés képzettségpróba
+- Aktuális Aura számításánál Aurafejlesztés képzettségpróba ⭕LINK⭕
 - [Méreg komplexitása](151_meregkeveres_szabalyai.md#a-méreg-komplexitása) Méregkeverésnél
 
 <br />
@@ -28718,219 +28718,7 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 ## Aura, Mágia Akarata, Mágiaellenállás
 
-→ [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslas.menete)
-
-Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján öleli körbe, védelmezi a lelket. Az Aura a karakterek mágikus akarata és egyben Mágiaellenállása is (Asztrál, Mentál, Fizikai).
-
-### Aura Alap
-
-```
-Aura Alap  =  Tsz x 2
-```
-
-Az **Aura Alap** az Aura része, annak "bázisa", ami mindig jelen van. Egy karakter élete során megedződik, sokat tapasztal. Az **Aura Alap** értéke ebből a tapasztalásból származik, nem igényel semmilyen tanult képzettséget - értéke a **Tapasztalati Szint** (TSz) emelkedésével automatikusan nő.
-
-### Aurafejlesztés képzettség
-
-Az **Aura Alapon** felül lehetséges - védelmi, vagy mágikus célokból - konkrét gyakorlati képzéssel továbbfejleszteni az Aura erejét. Ezt reprezentálja az [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettség.
-
-<br />
-
----
-### Aura aktuális értéke
-
-Az aktuális **Aura** értékére az [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettség ad, adhat további pontokat - erre a játékosnak is aktív ráhatása van.
-
-```
-Aura = Aura Alap
-     + Aurafejlesztés próba eredménye
-     - Aura kiterjesztés
-```
-
-```
-Aurafejlesztés próba:
- Aurafejlesztés + Önuralom +k10
-```
-
-Az **Aura** egy változó érték, amit úgy kapunk meg, hogy a varázsló és a védekező fél is **Aurafejlesztés** képzettségpróbát dob az **általa önként kiválasztott Nehézségre**. Természetesen választhatják a **biztos tudás**t is, amit az `1`-es dobás (`k10`) által elérhető maximum jelent - ilyenkor nyilván nem kell dobni sem. ⭕TODO: tisztázni, egyértelműsíteni⭕Ez a "**Biztos Aura**" a támadó felől, és a "**Tudatalatti Mágiaellenállás**" a védekező fél felől.
-
-```
-Aura számítása
-
-Aurafejlesztés Célszámok
-3  →  2 + Aura alap
-6  →  5 + Aura alap
-9  →  10 + Aura alap
-12 →  15 + Aura alap
-15 →  20 + Aura alap
-18 →  25 + Aura alap
-21 →  30 + Aura alap
-24 →  35 + Aura alap
-27 →  40 + Aura alap
-30 →  45 + Aura alap
-```
-
-
-```
-Ha sikerül a próba:
- Aura = érték a táblázatból
-
-Ha nem sikerül a próba:
- Aura = Aura Alap
-```
-
-Tehát a **Mágia Akaratát** és a **Mágiaellenállást** azonos módon kell meghatározni.
-
-<br />
-
-### Rontott Aurafejlesztés próba
-
-⭕ más név?
-
-Ha a fent tárgyalt Aurafejlesztés próbát elrontotta a karakter, további negatív hatásokkal kell szembesülnie:
-
-**Védekező**: 1 körig csak az Alap Aurája számít (`2x TSz`), ez idő alatt nem dobhat magasabb **Aura** érték meghatározására.
-
-**Mágiatudó**: ugyanaz, mint a Védekezőnél + `1 körig` nem képes varázsolni sem!
-
-<br />
-
----
-### Mágia Akarata vs Mágiaellenállás
-
-A varázsló vagy a mágiát létrehozó mágikus akarat, tárgy, terület **aktuális** Aurája. Ez feszül szembe a célpont Aurájával (ha van). A varázsló aktuális Aurája nyilván alacsonyabb lehet ha kinyúl Szellemkezével, vagy Zónában kiterjeszti akaratát. Amennyiben a varázsló dobott értéke eléri, vagy meghaladja a védekező félét, a mágia átjutott annak védelmén és kifejti rá hatását az alsóbb síkokon.
-
-
-```
-Mágia Akarata  vs  Mágiaellenállás
-               =
-   Támadó Aura vs Védekező Aura
-```
-
-Varázsláskor a varázsló és a védekező fél is meghatározza **Aura** értékékét és ezeket vetik össze. A támadónál ezt **Mágia Akaratának**, a védekezőnél **Mágiaellenállásnak** nevezzük.
-
-Ha a **Mágia Akarata** eléri, vagy meghaladja a **Mágiellenállás** értékét, akkor a mágia átjutott a védelmen és kifejti hatását.
-
-A Mágiaellenállás egységes, nincs külön asztrál/mentál ellenállás, vagy "pajzs". Az **Aura** mind az **Asztrál**, **Mentál** és **Fizikai** síkon érkező befolyásoló/változtató hatás ellen védelmet nyújt. Egyes hatásokkal szemben alkalmanként gyengébb/erősebb lehet.
-
----
-### Tudatalatti mágiaellenállás (TME) / Biztos Aura
-
-Amennyiben az áldozat nem tud róla, hogy varázsolnak rá, olyankor a **Tudatalatti Mágiaellenállása** érvényesül, amely a biztos tudásból meglevő **Aura** értékével számol (tehát ha k10-en `1`-es dobott volna, akkor mit ért volna el a próbán). Ugyanígy számoljuk ki a **Biztos Aura** értékét is - a támadó szempontjából.
-
-```
-Biztos Aura (TME):
-  Önuralom + Aurafejlesztés + 1
-  → X Aura
-```
-
-<br />
-
----
-### Mágiaellenállás változása
-
-A Mágiaellenállás nem statikus, körülménytől hangulattól függően, események hatására kis mértékben változhat.
-Például Meglepődés / Harc / Érzelmi sokk / másra koncentrálás közben ideiglenesen csökkenhet a Mágiaellenállás, mivel egy időben nehezebb védekezni a fizikai és a felsőbb síkokon.
-Ilyen esetekben a KM kérhet **Összpontosítás** próbát, hogy kap-e büntetést a karakter, vagy nem. Alább egy általános táblázat, hogy nagyjából milyen esetben mivel kell számolnia a védekező félnek.
-
-```
-Hatások, események módosítói
-
-Érzelmi sokk
-  Aura Alap diff: -3  (Asztrális)
-
-Kiégettség
-  Aura Alap diff: +1-3 (Asztrális)
-
-Erős koncentrálás másra
-  Összpontosítás próba: [6-9-12-15]
-  Ha nincs meg, -3 Aura
-
-Harci láz
-  Aura Alap diff: +3
-  Asztrál/Mentál hatások ellen
-
-Papi védő áldás
-  Aura Alap diff: +⭕X⭕ adott hatások ellen
-
-Isteni kegy
-
-Védőszellem
-
-Olyan érzelmi befolyás, ami
-  tudat alatt kedvére van a célpontnak
-  Aura Alap diff: -3 ilyen Asztrál hatás ellen
-```
-
-<br />
-
----
-### Fizikai ellenállás átalakítással szemben
-
-Ha a mágiatudó közvetlenül a célpont testét szeretné átalakítani, akkor nagyobb fába vágta a fejszéjét, mint akár egy sima asztrális befolyásolással. Az ilyen mágia ellen a (fizikai) Mágiaellenáláshoz bónusz járul:
-
-```
-Mágiellenállás extra
-fizikai behatás ellen
-
-Aura +(2x Edzettség)
-```
-
-<br />
-
----
-### ⚡Példa
-
-⭕TODO: hozzáigazítani a doksi változtatásokhoz
-
-#### Varázsló, mint támadó
-
-```
-TSz: 7 → Aura Alap = 14
-Önuralom: +3
-Aurafejlesztés - 7.szint
-
-Biztos Aura (TME) = 24
-  + 14 (Aura Alap)
-  + 10 (3+7+1)
-```
-
-#### Gyanútlan nemesember, mint védekező fél
-
-```
-TSz: 5 → Aura Alap = 10
-Önuralom: +1
-Aurafejlesztés - 5.szint
-
-Biztos Aura (TME) = 15
-  +10 (Aura Alap)
-  +5  (1+5+1)
-```
-
-A varázsló megpróbálja asztrális befolyása alá vonni a nemesembert. Úgy dönt, nem dob, neki elég a Biztos Aura (24), áldozatát jóval gyengébbnek véli.
-
-A nemesember érzékeli az Auraérintést és úgy véli támadója jelentősen erősebb nála - kockázat.
-Szeretne `+25`-öt elérni az Aurafejlesztés próbadobás hatására, hogy Aura alapjával együtt `25`-as Aurát (Mágiaellenállást) érjen el (`10+15`).
-
-A `25`-ös Aurához `12`-es célszámot kell megdobnia az `Önuralom + Aurafejlesztés` képzettségpróbán:
-
-```
-6 + k10  vs  12
-```
-
-Azaz ha legalább `6`-ot dob k10-en, akkor sikerrel jár. Dob: `8`
-
-Ekkor a támadó vs Védő állás így néz ki:
-
-```
-24 (Varázsló Mágiájának Akarata)
-  vs
-25 (Nemesember Mágiaellenálása)
-```
-
-A nemesembernek szerencséje volt. Nem tudhatta, mekkora lesz ellenfele Mágiájának Akarata, de jól taktikázott és a kockázatot is megfelelő mederben tartotta. Megpróbálhatott volna `+20` Aura értékre dobni, de mivel annak Nehézsége `15`, így annak megdobására csak `20%` esélye lett volna (`6 + k10  vs 15`).
-
-A mágiatudó csalódottan horkant fel, mágiája csődöt mondott.
+→ [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/ADR.aura)
 
 ---
 
@@ -28960,22 +28748,12 @@ Bővebben lásd a [Varázslás Formák](045_misztikus_magia_fortelyok.md#varázs
 ---
 ## File: md/105_magikus_komponensek_osszhangok.md
 
-## Mágikus komponensek, összhangok
+# Mágikus komponensek, összhangok
 
 → [STUDY: Mágikus komponensek, összhangok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕
 
 ---
-### Auraösszhang (Karma Háttér)
-
-[Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
-
----
-### Profán (Karma Háttér)
-
-[Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
-
----
-### Fizikai
+## Fizikai komponensek
 
 - természetes
   - békaháj (1)
@@ -28990,37 +28768,51 @@ Bővebben lásd a [Varázslás Formák](045_misztikus_magia_fortelyok.md#varázs
    - ritka ereklye
    - mágikus pecsétek
 
----
-### Szimpatikus komponens
+<br />
 
-⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕
+---
+## Szimpatikus komponensek
+
+⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, eőrsebb a kapocs a személlyeél, annál erősebb a híd.
 
 - fizikai: áldozat egy személyes tárgya, áldozat egy testrésze (haj, stb), testvér, iker
 - elvont: szerelem, gyűlölet mint szimpatikus híd (ez jellemzően papi mágia legyen)
 
 ⭕Mit lehet min keresztül.⭕ Pl. asztrál/mentál hatást szerelmen keresztül. Betegséget, életerő manipuláció véren keresztül.
 
+<br />
+
 ---
-### Természeti jelenség
+## Karma Háttér összhang
+
+- [Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
+- [Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
+
+
+<br />
+
+---
+## Természeti jelenség összhang
 
 Vihar, aszály, szivárvány, napfény, holdfény
 
-  - A
-  - B
-  - Példák:
-    - Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
-    - Viharban könnyebb villámmágiát.
+Példák:
+- Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
+- Viharban könnyebb villámmágiát.
+
+<br />
 
 ---
-### Idő, időszak
+## Idő, időszak összhang
 
 - Napszak: Napkelte, Dél, Napnyugta, Éjfél
 - Évszak: Tavasz, Nyár, Ősz, Tél
 - Holdciklus(ok): Újhold, telihold, napfogyatkozás, holdfogyatkozás
 
+<br />
 
 ---
-### Őselem sűrű jelenléte
+## Őselem sűrű jelenléte mint összhang
 
 Nagy mocsár (víz), vulkán (tűz)
 
@@ -29029,37 +28821,46 @@ Nagy mocsár (víz), vulkán (tűz)
   - tűznél haragot könnyebb
 - xyz
 
+<br />
 
 ---
-### Csillag együttállás
+## Csillag együttállás összhangja
 
 - történelmi esemény: államalapításkor aktuális csillagállással azonos együttállás
 - misztikus együttállás
 
+<br />
+
 ---
-### Evilági lény
+## Evilági lény - összhang és komponens
 
 - jelenléte: szellemlény, uralkodó ház tagja, főpap
 - testrésze: bőre, vére, szőre, karma, nyála, stb.
 - áldozása: emberáldozat, állatáldozat, természetszellem
 
+<br />
+
 ---
-### Túlvilági lény
+## Túlvilági lény - összhang és komponens
 
 - jelenléte: élőhalott szellem, démon
 - testrésze: bőre, vére, szőre, karma, nyála, stb.
 - áldozása: élőhalott szellem, démon
 
+<br />
+
 ---
-### Álom
+## Álom - összhang és komponens
 
 Álombeli helyszínek, álmokban megjelenő lények.
 
 - megléte
 - feláldozása
 
+<br />
+
 ---
-### Érzelem, hangulat
+## Érzelem, hangulat - összhang és komponens
 
 Szeretet, félelem, gyűlölet
 
@@ -29077,8 +28878,10 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
   - Példa-3: Életerő áldozása
   - Példa-4: Vidámság áldozása
 
+<br />
+
 ---
-### Helyszín jellege
+## Helyszín jellege összhang
 
 - föld alatt
 - levegőben
@@ -29088,22 +28891,29 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 - embertömegben
 - egyedül
 
+<br />
+
 ---
-### Fontos helyszín
+## Fontos helyszín összhang
 
 - történelmi: a legvidámabb esküvő volt itt 1000 éve - itt könnyebb gyógyítani, pozitív asztrális varázslatok
 - földrajzi: Hegytető, monolitok, szakadék alja, óceán mélye, barlangi tó, ősöreg fák
 - misztikus földrajzi: szent liget, szent fa
 
+<br />
+
 ---
-### Színek, fények
+## Színek, fények összhang
 
 - konkrét fények
 - gyertyafény
 
----
-### Esemény
+<br />
 
+---
+## Esemény - összhang és komponens
+
+Összhang
 - gyerek születése
 - házasság
 - bosszú beteljesülének pillanata
@@ -29111,9 +28921,11 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 - koronázás
 - megvilágosodás
 - orgazmus
+- születés: gyógyítás könnyebb
+
+Komponens
 - kivégzés: életerő manipulációra bónusz
 - halál: az alkalmazó maradék életerejét mágiává formázza
-- születés: gyógyítás könnyebb
 
 ---
 
@@ -29382,11 +29194,11 @@ Az egyes varázslatoknál jelezzük, hogy a varázslás ideje melyik kategóriá
 
 Hasonlatos az [Aura Átütésnél leírtakhoz](103_aura_magia_akarata_magiaellenallas.md), de az Aura Alapra itt nem Aurafejlesztés képzettséggel dobunk, hanem a [Papi Mágia Tradíció](110_papimagia.md) képzettség szintjét vesszük alapul, a "dobást" pedig fixen `6`-nak vesszük. Ez azért van, mert a Pap csak biztos tudásból varázsolhat, nincs lehetősége Rizikó varázslásra.
 
-Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a [Mágiallenállás](103_aura_magia_akarata_magiaellenallas.md#mágia-akarata-vs-mágiaellenállás).
+Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a Mágiallenállás ⭕LINK⭕.
 
 #### Aura számítása
 
-Itt is az [Aura táblázatot](103_aura_magia_akarata_magiaellenallas.md#aura-aktuális-értéke) használjuk, de nincs dobás, a számolást `1x` kell csak elvégezni - minden Tapasztalati Szint lépésekor.
+Itt is az Aura táblázatot ⭕LINK⭕ használjuk, de nincs dobás, a számolást `1x` kell csak elvégezni - minden Tapasztalati Szint lépésekor.
 
 Az, hogy melyik Tulajdonságot kell az Aura meghatározásakor beleszámolni, az az adott isten, vagy vallás jellegétől függ. Minden isten papjainak leírásában megadjuk, hogy melyik is ez a Tulajdonság.
 
