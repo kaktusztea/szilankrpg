@@ -2,7 +2,9 @@
 
 Harcban sikertelennek számít támadásod, ha a **Támadó dobásod** végső értéke nem éri el ellenfeled **Védő Értékét**.
 
-Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva, hiszen a harc, a védekezés komolyan igénybe veszik az védekező figyelmét, állóképességét. Hogy konkrétan milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
+Ebben az esetben viszont ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva, hiszen a harc, a védekezés komolyan igénybe veszik az védekező figyelmét, szellemi képességeit és állóképességét. Minél tovább tart a harc, annál veszélyesebbé válik a harc a folyamatosan csökkenő `VÉ` csökkenés miatt. Egy tapasztalt harcos magasabb `Védő Értékkel` indul, így ő tovább képes magas szinten teljesíteni, de például több ellenfél ellen ő is hamar kifulladhat - mindenki folyamatosan csökkent rajta Védő Értéket - és váratlan vereséget szenvedhet.
+
+Hogy konkrétan milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
 
 A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
 
