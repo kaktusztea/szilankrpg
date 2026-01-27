@@ -13,7 +13,7 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 - [Érzékvesztés (3)](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart)
 - [Fegyver/Pajzs akadályoztatása (1,2)](#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
 - [Félelem (3)](#%EF%B8%8F-f%C3%A9lelem-1-szorong%C3%A1s)
-- [Fizikai (3)](#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g)
+- [Fizikai (3)](#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g-fejf%C3%A1j%C3%A1s)
 - [Hangulat (4)](#%EF%B8%8F-hangulat-1-fog%C3%A9kony)
 - [Indulat (3)](#%EF%B8%8F-indulat-1-harag)
 - [Késztetés (3)](#%EF%B8%8F-k%C3%A9sztet%C3%A9s-1-sugallat)
