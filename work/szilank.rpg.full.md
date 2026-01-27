@@ -430,7 +430,7 @@ https://github.com/kaktusztea/szilankrpg/
 - [Mágiaelmélet](101_magiaelmelet.md)
 - [Mágia alapszabályok](102_magia_alapszabalyok.md)
 - [Aura, Mágia akarata, Mágiaellenállás](103_aura_magia_akarata_magiaellenallas.md)
-- [Varázslás Formák](104_varazslas_formak.md)
+- [Mágia metódusok](104_magia_metodusok.md)
 - [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)
 - [Mágikus Szférák és Arkánumaik](106_magikus_szferak_arkanumok.md)
 - [Mágikus Státuszok](107_magikus_statuszok.md)
@@ -793,7 +793,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Szférák/Arkánum képzettségek
 - Formulák (egyes varázslatok Arkánumok alatt)
 - Komponensek, összhangok
-- Varázslás Formák  (misztikus fortélyok)
+- Mágia metódusok  (misztikus fortélyok)
   - Kínált "feature" lehetőség (lista)
   - Megnyít lehetőséget Összhangokra  (lista)
 - Varázstárgyak:
@@ -898,7 +898,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ✨ Mágia
 
-💫 Varázslási Forma
+💫 Varázsút
 
 🌀 Pszí / Pszí diszciplína
 
@@ -1191,7 +1191,7 @@ A "törzs", az **alapozás** egy [Mágia Tradíció](051_00_magia_tradiciok.md) 
 
 A fa "ágai" a [Mágikus Szférák vagy  Arkánum](106_magikus_szferak_arkanumok.md) képzettségek. Ezek a mágiaiskolák, amelyeket az adott Tradíció alatt karaktered megtanult és annak kontextusában használni is képes. Lehet a tanult Arkánum neve ugyanaz, ám egy "Asztrálmágia Arkánum" más-más formulákat tartalmaz a [Magasmágia](051_01_magasmagia.md) és másokat például a [Vulgármágia](051_02_vulgarmagia.md) alatt.
 
-Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) amelyek a "levelek" a fa ágain. Ide tartoznak a [Varázslás Formák](104_varazslas_formak.md) és más misztikus, színesítő, specializálódó ismeretek.
+Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) amelyek a "levelek" a fa ágain. Ide tartoznak a [Mágia metódusok](104_magia_metodusok.md) és más misztikus, színesítő, specializálódó ismeretek.
 
 <br />
 
@@ -1206,7 +1206,7 @@ Az elvont és színesítő ismeretek felől haladunk a "tápos" irányba. A harc
 - `2.` Karakter jelleme, személyiségének meghatározása
 - `3.` Szabad Fortélyok kiválasztása
 - `4.` Szekunder KP elköltése
-- `5.` Sima KP elköltése (ne feledd ,ezeket is lehet szekunder ismeretekre fordítani!)
+- `5.` Sima KP elköltése (ne feledd, ezeket is lehet szekunder ismeretekre fordítani!)
 
 ---
 
@@ -2970,7 +2970,7 @@ A fent említett Arkánum adja a faj - eredetében gyökerező - misztikus képe
 
 Az egyes szinteknek lehetnek követelményei.
 
-⭕TODO⭕ `1 db` varázslási  [Formát](045_misztikus_magia_fortelyok.md#var%C3%A1zsl%C3%A1s-formák) fel kell venni egy adott "Forma pool-ból".
+⭕TODO⭕ `1 db` [Mágia metódust](045_misztikus_magia_fortelyok.md#mágia-metódusok) fel kell venni egy adott "Mágia metódus pool-ból".
 
 ---
 ## `5.` Faji fortélyok
@@ -5376,7 +5376,7 @@ x
 
 **RAW**
 
-- Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia Formával), vagy Teremtés arkánuma (ősibb nép, mint az elfek)
+- Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia Mágia metódussal), vagy Teremtés arkánuma (ősibb nép, mint az elfek)
 
 ---
 ### Szintek
@@ -7414,12 +7414,12 @@ Az **Életerő** szféra alá tartozó arkánum.
 ---
 ### Rontások
 
-⭕ Vagy az egy Forma? ⭕
+⭕ Vagy az egy Mágia metódus inkább? ⭕
 
 ---
 ### Betegségmágia
 
-⭕Rontás Formával?⭕
+⭕Rontás Mágia metódussal?⭕
 
 
 ---
@@ -12147,9 +12147,9 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 
 → [STUDY: Misztikus Fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) ⭕
 
-### Varázslás formák
+### Mágia metódusok
 
-→ [STUDY: Varázslás Formák](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazslas.formak)
+→ [STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)
 
 ---
 
@@ -16107,11 +16107,11 @@ Vak karakter indítása esetén a karakter **látás** érzékére permanens [É
 
 ---
 
-## File: __szilank.fortelyok.magia.formak.md
+## File: __szilank.fortelyok.magia.metodusok.md
 
-## File: md/fortelyok.magia.formak/aldas.md
+## File: md/fortelyok.magia.metodusok/aldas.md
 
-## 🟣 💫 Mágia Forma: Áldás (1)
+## 🟣 💫 Mágia metódus: Áldás (1)
 
 Személyeket, vagy tárgyakat áldhatsz meg, különleges képességekkel felruházva, vagy valamely tulajdonságát erősítve.
 
@@ -16129,9 +16129,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/atok.md
+## File: md/fortelyok.magia.metodusok/atok.md
 
-## 🟣 💫 Mágia Forma: Átok (1)
+## 🟣 💫 Mágia metódus: Átok (1)
 
 Személyeket, vagy tárgyakat átkozhatsz meg, betegséggel, balszerencsével, balsorssal felruházva, vagy valamely tulajdonságát gyengítve.
 
@@ -16150,9 +16150,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/babumagia.md
+## File: md/fortelyok.magia.metodusok/babumagia.md
 
-## 🟣 💫 Mágia Forma: Bábúmágia (1)
+## 🟣 💫 Mágia metódus: Bábúmágia (1)
 
 Kézzel készített bábúkkal távolról hatsz áldozatodra.
 
@@ -16170,9 +16170,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/bajitalok.md
+## File: md/fortelyok.magia.metodusok/bajitalok.md
 
-## 🟣 💫 Mágia Forma: Bájitalok (1)
+## 🟣 💫 Mágia metódus: Bájitalok (1)
 
 Bájitalokba foglalhatsz mágikus hatásokat.
 
@@ -16190,9 +16190,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/ceremonialis.md
+## File: md/fortelyok.magia.metodusok/ceremonialis.md
 
-## 🟣 💫 Mágia Forma: Ceremoniális mágia (1)
+## 🟣 💫 Mágia metódus: Ceremoniális mágia (1)
 
 Képes vagy nagy, hosszú, ceremoniális mágiák formájában mágikus hatást létrehozni.
 
@@ -16213,9 +16213,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/dalmagia.md
+## File: md/fortelyok.magia.metodusok/dalmagia.md
 
-## 🟣 💫 Mágia Forma: Dalmágia (1)
+## 🟣 💫 Mágia metódus: Dalmágia (1)
 
 Képes vagy dalba ágyazni a mágikus hatást.
 
@@ -16232,9 +16232,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/fokuszok_emitterek.md
+## File: md/fortelyok.magia.metodusok/fokuszok_emitterek.md
 
-## 🟣 💫 Mágia Forma: Fókuszok, Emitterek (1)
+## 🟣 💫 Mágia metódus: Fókuszok, Emitterek (1)
 
 Képes vagy mágikus fókuszt, vagy emittert létrehozni.
 
@@ -16265,9 +16265,9 @@ Ehhez vagy kelljen külön elosztó/generátor/manafókusz/varázskör (hívjuk 
 
 ---
 ---
-## File: md/fortelyok.magia.formak/formazas.md
+## File: md/fortelyok.magia.metodusok/formazas.md
 
-## 🟣 💫 Mágia Forma: Formázás (1)
+## 🟣 💫 Mágia metódus: Formázás (1)
 
 Képes vagy formázni a létrehozott mágiát.
 
@@ -16285,9 +16285,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/gyertyamagia.md
+## File: md/fortelyok.magia.metodusok/gyertyamagia.md
 
-## 🟣 💫 Mágia Forma: Gyertyamágia (1)
+## 🟣 💫 Mágia metódus: Gyertyamágia (1)
 
 Gyertyába foglalsz mágikus hatást, vagy komponensként használod.
 
@@ -16306,9 +16306,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/jelmagia_runamagia.md
+## File: md/fortelyok.magia.metodusok/jelmagia_runamagia.md
 
-## 🟣 💫 Mágia Forma: Jelmágia, Rúnamágia (1)
+## 🟣 💫 Mágia metódus: Jelmágia, Rúnamágia (1)
 
 Képes vagy mágikus szimbólumokba mágikus hatást zárni, vagy rúnákkal felvértezett tárgyakat mágikus hatással felruházni.
 
@@ -16327,9 +16327,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/litania_rituale.md
+## File: md/fortelyok.magia.metodusok/litania_rituale.md
 
-## 🟣 💫 Mágia Forma: Litánia/Rituálé (1)
+## 🟣 💫 Mágia metódus: Litánia/Rituálé (1)
 
 Képes vagy szakrális Litániák és Rituálék formájában mágikus hatást létrehozni.
 
@@ -16347,9 +16347,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/maszkmagia.md
+## File: md/fortelyok.magia.metodusok/maszkmagia.md
 
-## 🟣 💫 Mágia Forma: Maszkmágia (1)
+## 🟣 💫 Mágia metódus: Maszkmágia (1)
 
 Kézzel készített maszkot - szerves, vagy szervetlen anyagból - készítesz, azt nemesíted át mágikus hatással.
 
@@ -16367,9 +16367,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/megkotes.md
+## File: md/fortelyok.magia.metodusok/megkotes.md
 
-## 🟣 💫 Mágia Forma: Megkötés (1)
+## 🟣 💫 Mágia metódus: Megkötés (1)
 
 Képes vagy megkötni valamiben a mágikus hatást.
 
@@ -16387,9 +16387,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/ritualis_tanc.md
+## File: md/fortelyok.magia.metodusok/ritualis_tanc.md
 
-## 🟣 💫 Mágia Forma: Rituális / Táncmágia (1)
+## 🟣 💫 Mágia metódus: Rituális / Táncmágia (1)
 
 Képes vagy szakrális Tánc, vagy nem-szakrális Rituálé formájában mágikus hatást létrehozni.
 
@@ -16410,9 +16410,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/szexualmagia.md
+## File: md/fortelyok.magia.metodusok/szexualmagia.md
 
-## 🟣 💫 Mágia Forma: Szexuálmágia (1)
+## 🟣 💫 Mágia metódus: Szexuálmágia (1)
 
 Intim együttlét során hozod létre a mágikus hatást.
 
@@ -16434,9 +16434,9 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.formak/szimpatikus_magia.md
+## File: md/fortelyok.magia.metodusok/szimpatikus_magia.md
 
-## 🟣 💫 Mágia Forma: Szimpatikus mágia (1)
+## 🟣 💫 Mágia metódus: Szimpatikus mágia (1)
 
 A tárgyak, lények, események közti kapcsolati hídon keresztül küldesz át mágikus hatást.
 
@@ -17977,7 +17977,7 @@ Az adott Tradíciók követelményeit lásd azok leírásában.
 
 ## Mágia Tradíciók
 
-<sub>→ [STUDY: Tradíciók](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.tradiciok)</sub>
+→ [STUDY: Tradíciók](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.tradiciok)
 
   - [Magasmágia (mozaikmágia)](051_01_magasmagia.md)
   - [Vulgármágia](051_02_vulgarmagia.md)
@@ -28656,7 +28656,7 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 ### [Aura, Mágikus Átütés, Mágiaellenállás](103_aura_magia_akarata_magiaellenallas.md)
 
-### [Varázslás Formák](104_varazslas_formak.md)
+### [Mágia metódusok](104_magia_metodusok.md)
 
 ### [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)
 
@@ -28722,20 +28722,20 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 ---
 
-🔗 [Varázslás Formák](104_varazslas_formak.md) →
+🔗 [Mágia metódusok](104_magia_metodusok.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
 
 
 ---
 ---
-## File: md/104_varazslas_formak.md
+## File: md/104_magia_metodusok.md
 
-## Varázslás Formák
+## Mágia metódusok
 
-Számos módszer van rá, hogy a varázstudó a mágikus hatást ebbe a világba hozza. Változó, hogy melyik Mágikus Tradíció mely Formákat ismer.
+Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a világba hozza. Változó, hogy melyik Mágikus Tradíció mely Mágia metódusok ismer.
 
-Bővebben lásd a [Varázslás Formák](045_misztikus_magia_fortelyok.md#varázslás-formák) listáját, amelyek mind mágikus fortélyként vehetőek fel.
+Bővebben lásd a [Mágia metódusok](045_misztikus_magia_fortelyok.md#mágia-metódusok) listáját, amelyek mind mágikus fortélyként vehetőek fel.
 
 ---
 
@@ -28751,6 +28751,23 @@ Bővebben lásd a [Varázslás Formák](045_misztikus_magia_fortelyok.md#varázs
 # Mágikus komponensek, összhangok
 
 → [STUDY: Mágikus komponensek, összhangok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕
+
+---
+- [Álom - összhang és komponens](#%C3%A1lom---%C3%B6sszhang-%C3%A9s-komponens)
+- [Csillag együttállás összhangja](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6sszhangja)
+- [Esemény - összhang és komponens](#esem%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
+- [Evilági lény - összhang és komponens](#evil%C3%A1gi-l%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
+- [Érzelem, hangulat - összhang és komponens](#%C3%A9rzelem-hangulat---%C3%B6sszhang-%C3%A9s-komponens)
+- [Fizikai komponensek](#fizikai-komponensek)
+- [Fontos helyszín összhang](#fontos-helysz%C3%ADn-%C3%B6sszhang)
+- [Helyszín jellege összhang](#helysz%C3%ADn-jellege-%C3%B6sszhang)
+- [Idő, időszak összhang](#id%C5%91-id%C5%91szak-%C3%B6sszhang)
+- [Karma Háttér összhang](#karma-h%C3%A1tt%C3%A9r-%C3%B6sszhang)
+- [Őselem sűrű jelenléte mint összhang](#%C5%91selem-s%C5%B1r%C5%B1-jelenl%C3%A9te-mint-%C3%B6sszhang)
+- [Szimpatikus komponensek](#szimpatikus-komponensek)
+- [Színek, fények összhang](#sz%C3%ADnek-f%C3%A9nyek-%C3%B6sszhang)
+- [Természeti jelenség összhang](#term%C3%A9szeti-jelens%C3%A9g-%C3%B6sszhang)
+- [Túlvilági lény - összhang és komponens](#t%C3%BAlvil%C3%A1gi-l%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
 
 ---
 ## Fizikai komponensek
