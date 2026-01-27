@@ -333,7 +333,7 @@ Pszi használat elvesztése
 <br />
 
 ---
-### ✴️ Fizikai (1) Fáradtság
+### ✴️ Fizikai (1) Fáradtság, Fejfájás
 
 ```
 Hátrány-1
