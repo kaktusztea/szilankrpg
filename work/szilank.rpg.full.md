@@ -13096,7 +13096,7 @@ Olyan edzett vagy, hogy szinte a jég hátán is megélsz.
 ### 1. fok
 
 🌟 **Hatás**:
-- [Fizikai Státuszok](../082_statuszok.md#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g) nálad `1 fokkal` enyhülnek. Pl. Kimerültség → Fáradtság.
+- [Fizikai Státuszok](../082_statuszok.md#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g-fejf%C3%A1j%C3%A1s) nálad `1 fokkal` enyhülnek. Pl. Kimerültség → Fáradtság.
 - Bármilyen áldatlan körülmények között is alszol, ugyanúgy ki tudod pihenni magad.
 - `Edzettség x 5` napig bírod élelem nélkül (víz nélkül nem!)
 
@@ -20620,7 +20620,9 @@ Amennyiben a támadónak több támadása van az adott körben, akkor a `2.` tá
 
 Harcban sikertelennek számít támadásod, ha a **Támadó dobásod** végső értéke nem éri el ellenfeled **Védő Értékét**.
 
-Viszont ebben az esetben ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva, hiszen a harc, a védekezés komolyan igénybe veszik az védekező figyelmét, állóképességét. Hogy konkrétan milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
+Ebben az esetben viszont ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva, hiszen a harc, a védekezés komolyan igénybe veszik az védekező figyelmét, szellemi képességeit és állóképességét. Minél tovább tart a harc, annál veszélyesebbé válik a harc a folyamatosan csökkenő `VÉ` csökkenés miatt. Egy tapasztalt harcos magasabb `Védő Értékkel` indul, így ő tovább képes magas szinten teljesíteni, de például több ellenfél ellen ő is hamar kifulladhat - mindenki folyamatosan csökkent rajta Védő Értéket - és váratlan vereséget szenvedhet.
+
+Hogy konkrétan milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
 
 A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
 
@@ -27813,7 +27815,7 @@ Megszűntetésük: a kiváltó ok és a szituáció ismerete alapján a KM dönt
 - [Érzékvesztés (3)](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart)
 - [Fegyver/Pajzs akadályoztatása (1,2)](#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
 - [Félelem (3)](#%EF%B8%8F-f%C3%A9lelem-1-szorong%C3%A1s)
-- [Fizikai (3)](#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g)
+- [Fizikai (3)](#%EF%B8%8F-fizikai-1-f%C3%A1radts%C3%A1g-fejf%C3%A1j%C3%A1s)
 - [Hangulat (4)](#%EF%B8%8F-hangulat-1-fog%C3%A9kony)
 - [Indulat (3)](#%EF%B8%8F-indulat-1-harag)
 - [Késztetés (3)](#%EF%B8%8F-k%C3%A9sztet%C3%A9s-1-sugallat)
@@ -28133,7 +28135,7 @@ Pszi használat elvesztése
 <br />
 
 ---
-### ✴️ Fizikai (1) Fáradtság
+### ✴️ Fizikai (1) Fáradtság, Fejfájás
 
 ```
 Hátrány-1
