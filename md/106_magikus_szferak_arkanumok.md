@@ -130,9 +130,7 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 ---
 ## ⚜️ Mágia Szféra
 
-### Aura
-
-- azonos az 🔵 [Aurahangolás](kepzettsegek.primer.misztikus/aurahangolas.md) képzettséggel
+### [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 
 ### [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md)
 

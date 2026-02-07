@@ -253,7 +253,7 @@
 - [Mágikus Státuszok](107_magikus_statuszok.md)
 - **Arkánumok listája**
   - [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
-  - Aura
+  - [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
   - [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
   - [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
   - [Életerő manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)

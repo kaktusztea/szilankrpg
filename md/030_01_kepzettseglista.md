@@ -178,7 +178,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 ---
 ### Misztikus képzettségek 🅿️
 
-🔵 [Aurahangolás](kepzettsegek.primer.misztikus/aurahangolas.md)
+🔵 [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 
 🔵 [Ősi nyelv ismerete](kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) 🔁
 
@@ -235,7 +235,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 #### Mágia Szféra
 
-→ **Aura** arkánum, amely azonos az 🔵 [Aurahangolás](kepzettsegek.primer.misztikus/aurahangolas.md) képzettséggel
+🔵 [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 
 → [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánum
 
