@@ -46,7 +46,7 @@ Tulajdonság + Képzettség + k10
 A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Random példa: "szakrális emberáldozat csökkenti az adott próba nehézségét".
 
 Példák `21` feletti célszámokra:
-- Aktuális Aura számításánál Aurafejlesztés képzettségpróba ⭕LINK⭕
+- Aktuális Aura számításánál Aurahangolás képzettségpróba ⭕LINK⭕
 - [Méreg komplexitása](151_meregkeveres_szabalyai.md#a-méreg-komplexitása) Méregkeverésnél
 
 <br />

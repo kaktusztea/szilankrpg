@@ -48,7 +48,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 
 `1.`
 - Varázskeret
-- Mágikus akarat (Aura vs Aura)   (Aurafejlesztés képzettség)
+- Mágikus akarat (Aura vs Aura)
 - Mágikus célzás
 
 `2.`

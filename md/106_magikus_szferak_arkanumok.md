@@ -132,7 +132,7 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 
 ### Aura
 
-- azonos az 🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
+- azonos az 🔵 [Aurahangolás](kepzettsegek.primer.misztikus/aurahangolas.md) képzettséggel
 
 ### [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md)
 

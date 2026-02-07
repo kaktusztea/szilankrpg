@@ -10,7 +10,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - minden harci képzettség
 - minden misztikus, mágikus, szakrális, pszí, slan képzettség
 - Akrobatika
-- Aurafejlesztés
+- Aurahangolás
 - Befolyásolás
 - Emberismeret
 - Észlelés
@@ -178,7 +178,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 ---
 ### Misztikus képzettségek 🅿️
 
-🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md)
+🔵 [Aurahangolás](kepzettsegek.primer.misztikus/aurahangolas.md)
 
 🔵 [Ősi nyelv ismerete](kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) 🔁
 
@@ -235,7 +235,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 #### Mágia Szféra
 
-→ **Aura** arkánum, amely azonos az 🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
+→ **Aura** arkánum, amely azonos az 🔵 [Aurahangolás](kepzettsegek.primer.misztikus/aurahangolas.md) képzettséggel
 
 → [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánum
 
