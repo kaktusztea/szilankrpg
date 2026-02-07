@@ -9,9 +9,9 @@ K: Komponens
 
 ---
 
-- [Álom (Ö, K)](#%C3%A1lom%C3%B6-k)
+- [Álom (Ö, K)](#%C3%A1lom-%C3%B6-k)
 - [Csillag együttállás (Ö)](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6)
-- [Esemény (Ö, K)](#esem%C3%A9ny%C3%B6-k)
+- [Esemény (Ö, K)](#esem%C3%A9ny-%C3%B6-k)
 - [Érzelem, hangulat (Ö, K)](#%C3%A9rzelem-hangulat%C3%B6-k)
 - [Fizikai összetevők (K)](#fizikai-komponensek)
 - [Fontos helyszín (Ö)](#fontos-helysz%C3%ADn-%C3%B6)
@@ -62,6 +62,7 @@ Komponens
 - halál: az alkalmazó maradék életerejét mágiává formázza
 
 <br />
+
 ---
 ## Érzelem, hangulat (Ö, K)
 
