@@ -9,21 +9,21 @@ K: Komponens
 
 ---
 
-- [Álom (Ö, K)](#%C3%A1lom---%C3%B6sszhang-%C3%A9s-komponens)
-- [Csillag együttállás (Ö)](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6sszhangja)
-- [Esemény (Ö, K)](#esem%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
-- [Érzelem, hangulat (Ö, K)](#%C3%A9rzelem-hangulat---%C3%B6sszhang-%C3%A9s-komponens)
+- [Álom (Ö, K)](#%C3%A1lom%C3%B6-k)
+- [Csillag együttállás (Ö)](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6)
+- [Esemény (Ö, K)](#esem%C3%A9ny%C3%B6-k)
+- [Érzelem, hangulat (Ö, K)](#%C3%A9rzelem-hangulat%C3%B6-k)
 - [Fizikai összetevők (K)](#fizikai-komponensek)
-- [Fontos helyszín (Ö)](#fontos-helysz%C3%ADn-%C3%B6sszhang)
-- [Helyszín jellege (Ö)](#helysz%C3%ADn-jellege-%C3%B6sszhang)
-- [Idő, időszak (Ö)](#id%C5%91-id%C5%91szak-%C3%B6sszhang)
-- [Karma Háttér (Ö)](#karma-h%C3%A1tt%C3%A9r-%C3%B6sszhang)
-- [Lény: evilági (Ö, K)](#evil%C3%A1gi-l%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
-- [Lény: túlvilági (Ö, K)](#t%C3%BAlvil%C3%A1gi-l%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
-- [Őselem sűrű jelenléte (Ö)](#%C5%91selem-s%C5%B1r%C5%B1-jelenl%C3%A9te-mint-%C3%B6sszhang)
+- [Fontos helyszín (Ö)](#fontos-helysz%C3%ADn-%C3%B6)
+- [Helyszín jellege (Ö)](#helysz%C3%ADn-jellege-%C3%B6)
+- [Idő, időszak (Ö)](#id%C5%91-id%C5%91szak-%C3%B6)
+- [Karma Háttér (Ö)](#karma-h%C3%A1tt%C3%A9r-%C3%B6)
+- [Lény: evilági (Ö, K)](#evil%C3%A1gi-l%C3%A9ny%C3%B6-k)
+- [Lény: túlvilági (Ö, K)](#t%C3%BAlvil%C3%A1gi-l%C3%A9ny%C3%B6-k)
+- [Őselem sűrű jelenléte (Ö)](#%C5%91selem-s%C5%B1r%C5%B1-jelenl%C3%A9te-%C3%B6)
 - [Szimpatikus komponensek](#szimpatikus-komponensek)
-- [Színek, fények (Ö)](#sz%C3%ADnek-f%C3%A9nyek-%C3%B6sszhang)
-- [Természeti jelenség (Ö)](#term%C3%A9szeti-jelens%C3%A9g-%C3%B6sszhang)
+- [Színek, fények (Ö)](#sz%C3%ADnek-f%C3%A9nyek-%C3%B6)
+- [Természeti jelenség (Ö)](#term%C3%A9szeti-jelens%C3%A9g-%C3%B6)
 
 
 ---
@@ -62,7 +62,6 @@ Komponens
 - halál: az alkalmazó maradék életerejét mágiává formázza
 
 <br />
-
 ---
 ## Érzelem, hangulat (Ö, K)
 
@@ -177,7 +176,7 @@ Nagy mocsár (víz), vulkán (tűz)
 <br />
 
 ---
-## Szimpatikus komponensek
+## Szimpatikus összetevők (K)
 
 ⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, eőrsebb a kapocs a személlyeél, annál erősebb a híd.
 
