@@ -436,7 +436,7 @@ https://github.com/kaktusztea/szilankrpg/
 - [Mágikus Státuszok](107_magikus_statuszok.md)
 - **Arkánumok listája**
   - [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
-  - Aura
+  - [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
   - [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
   - [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
   - [Életerő manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
@@ -785,7 +785,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 
 `1.`
 - Varázskeret
-- Mágikus akarat (Aura vs Aura)   (Aurafejlesztés képzettség)
+- Mágikus akarat (Aura vs Aura)
 - Mágikus célzás
 
 `2.`
@@ -4584,7 +4584,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - minden harci képzettség
 - minden misztikus, mágikus, szakrális, pszí, slan képzettség
 - Akrobatika
-- Aurafejlesztés
+- Aurahangolás
 - Befolyásolás
 - Emberismeret
 - Észlelés
@@ -4752,7 +4752,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 ---
 ### Misztikus képzettségek 🅿️
 
-🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md)
+🔵 [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 
 🔵 [Ősi nyelv ismerete](kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) 🔁
 
@@ -4809,7 +4809,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 #### Mágia Szféra
 
-→ **Aura** arkánum, amely azonos az 🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
+🔵 [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 
 → [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánum
 
@@ -7071,6 +7071,74 @@ xyz
 
 ---
 ---
+## File: md/kepzettsegek.primer.arkanumok/aurahangolas.md
+
+## 🔵 Aurahangolás
+
+Lásd: [ADR: Aura](https://github.com/kaktusztea/szilankrpg/wiki/ADR.aura#%EF%B8%8Fmodell-a-aura-alap--dob%C3%A1s-aura-c%C3%A9lsz%C3%A1mra)
+
+### Domináns Tulajdonságok
+
+Önuralom, Intelligencia, Érzékenység
+
+### Kapcsolódódik
+
+⭕TODO⭕
+
+<br />
+
+### Mesterbónuszok
+
+#### 🌟 `9.szint`
+
+
+
+#### 🌟 `12.szint`
+
+
+
+#### 🌟 `15.szint`
+
+
+<br />
+
+---
+### Próbák
+
+#### Könnyű (6) 🎲
+
+⭕TODO⭕
+
+#### Átlagos (9) 🎲
+
+⭕TODO⭕
+
+#### Nehéz (12) 🎲
+
+⭕TODO⭕
+
+#### Nagyon nehéz (15) 🎲
+
+⭕TODO⭕
+
+#### Rendkívül nehéz (18) 🎲
+
+⭕TODO⭕
+
+#### Emberfeletti (21) 🎲
+
+⭕TODO⭕
+
+<br />
+
+---
+### Célszám módosító körülmények
+
+- ⭕TODO⭕
+
+
+---
+---
 ## File: md/kepzettsegek.primer.arkanumok/elemi_magia.md
 
 ## Elemi mágia arkánum
@@ -8057,80 +8125,6 @@ Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_0
 
 ## File: __szilank.kepzettsegek.primer.misztikus.md
 
-## File: md/kepzettsegek.primer.misztikus/aurafejlesztes.md
-
-## 🔵 Aurafejlesztés
-
-Lásd work linkek:
-- [ADR: Aura](https://github.com/kaktusztea/szilankrpg/wiki/ADR.aura#%EF%B8%8Fmodell-a-aura-alap--dob%C3%A1s-aura-c%C3%A9lsz%C3%A1mra)
-- [STUDY: Mágia, Aura képességei](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.aura.kepessegei#aura)
-
-Minden élőlény rendelkezik Aurával, az élettapasztalatok során ez magától erősödik is, de lehetséges tudatosan is növelni erejét.
-
-**Mágikus világkép**: a [Mágia Szféra](../106_magikus_szferak_arkanumok.md#️-mágia-szféra) alá tartozó **Aura arkánum** azonos az **Aurafejlesztés** képzettséggel.
-
-### Domináns Tulajdonságok
-
-Intelligencia, Érzékenység
-
-### Kapcsolódódik
-
-⭕TODO⭕
-
-<br />
-
-### Mesterbónuszok
-
-#### 🌟 `9.szint`
-
-
-
-#### 🌟 `12.szint`
-
-
-
-#### 🌟 `15.szint`
-
-
-<br />
-
----
-### Próbák
-
-#### Könnyű (6) 🎲
-
-⭕TODO⭕
-
-#### Átlagos (9) 🎲
-
-⭕TODO⭕
-
-#### Nehéz (12) 🎲
-
-⭕TODO⭕
-
-#### Nagyon nehéz (15) 🎲
-
-⭕TODO⭕
-
-#### Rendkívül nehéz (18) 🎲
-
-⭕TODO⭕
-
-#### Emberfeletti (21) 🎲
-
-⭕TODO⭕
-
-<br />
-
----
-### Célszám módosító körülmények
-
-- ⭕TODO⭕
-
-
----
----
 ## File: md/kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md
 
 ## 🔵 Ősi nyelv ismerete 🔁
@@ -10953,7 +10947,7 @@ Tulajdonság + Képzettség + k10
 A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen magas célszámok esetén érdemes könnyítő módszereket keresni. Random példa: "szakrális emberáldozat csökkenti az adott próba nehézségét".
 
 Példák `21` feletti célszámokra:
-- Aktuális Aura számításánál Aurafejlesztés képzettségpróba ⭕LINK⭕
+- Aktuális Aura számításánál Aurahangolás képzettségpróba ⭕LINK⭕
 - [Méreg komplexitása](151_meregkeveres_szabalyai.md#a-méreg-komplexitása) Méregkeverésnél
 
 <br />
@@ -28754,122 +28748,31 @@ Bővebben lásd a [Mágia metódusok](045_misztikus_magia_fortelyok.md#mágia-me
 
 → [STUDY: Mágikus komponensek, összhangok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕
 
----
-- [Álom - összhang és komponens](#%C3%A1lom---%C3%B6sszhang-%C3%A9s-komponens)
-- [Csillag együttállás összhangja](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6sszhangja)
-- [Esemény - összhang és komponens](#esem%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
-- [Evilági lény - összhang és komponens](#evil%C3%A1gi-l%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
-- [Érzelem, hangulat - összhang és komponens](#%C3%A9rzelem-hangulat---%C3%B6sszhang-%C3%A9s-komponens)
-- [Fizikai komponensek](#fizikai-komponensek)
-- [Fontos helyszín összhang](#fontos-helysz%C3%ADn-%C3%B6sszhang)
-- [Helyszín jellege összhang](#helysz%C3%ADn-jellege-%C3%B6sszhang)
-- [Idő, időszak összhang](#id%C5%91-id%C5%91szak-%C3%B6sszhang)
-- [Karma Háttér összhang](#karma-h%C3%A1tt%C3%A9r-%C3%B6sszhang)
-- [Őselem sűrű jelenléte mint összhang](#%C5%91selem-s%C5%B1r%C5%B1-jelenl%C3%A9te-mint-%C3%B6sszhang)
-- [Szimpatikus komponensek](#szimpatikus-komponensek)
-- [Színek, fények összhang](#sz%C3%ADnek-f%C3%A9nyek-%C3%B6sszhang)
-- [Természeti jelenség összhang](#term%C3%A9szeti-jelens%C3%A9g-%C3%B6sszhang)
-- [Túlvilági lény - összhang és komponens](#t%C3%BAlvil%C3%A1gi-l%C3%A9ny---%C3%B6sszhang-%C3%A9s-komponens)
+```
+Ö: Összhang
+K: Komponens
+```
 
 ---
-## Fizikai komponensek
 
-- természetes
-  - békaháj (1)
-  - denevérháj
-  - medvekarom
-  - medvekoponya (2)
-  - unikornisszarv (3)
-  - ásványok, arany, ezüst
- - mágikus
-   - mithrill, lunír
-   - varázstárgyak
-   - ritka ereklye
-   - mágikus pecsétek
-
-<br />
-
----
-## Szimpatikus komponensek
-
-⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, eőrsebb a kapocs a személlyeél, annál erősebb a híd.
-
-- fizikai: áldozat egy személyes tárgya, áldozat egy testrésze (haj, stb), testvér, iker
-- elvont: szerelem, gyűlölet mint szimpatikus híd (ez jellemzően papi mágia legyen)
-
-⭕Mit lehet min keresztül.⭕ Pl. asztrál/mentál hatást szerelmen keresztül. Betegséget, életerő manipuláció véren keresztül.
-
-<br />
+- [Álom (Ö, K)](#%C3%A1lom-%C3%B6-k)
+- [Csillag együttállás (Ö)](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6)
+- [Esemény (Ö, K)](#esem%C3%A9ny-%C3%B6-k)
+- [Érzelem, hangulat (Ö, K)](#%C3%A9rzelem-hangulat-%C3%B6-k)
+- [Fizikai összetevők (K)](#fizikai-%C3%B6sszetev%C5%91k-k)
+- [Fontos helyszín (Ö)](#fontos-helysz%C3%ADn-%C3%B6)
+- [Helyszín jellege (Ö)](#helysz%C3%ADn-jellege-%C3%B6)
+- [Idő, időszak (Ö)](#id%C5%91-id%C5%91szak-%C3%B6)
+- [Karma Háttér (Ö)](#karma-h%C3%A1tt%C3%A9r-%C3%B6)
+- [Lény: evilági (Ö, K)](#l%C3%A9ny-evil%C3%A1gi-%C3%B6-k)
+- [Lény: túlvilági (Ö, K)](#l%C3%A9ny-t%C3%BAlvil%C3%A1gi-%C3%B6-k)
+- [Őselem sűrű jelenléte (Ö)](#%C5%91selem-s%C5%B1r%C5%B1-jelenl%C3%A9te-%C3%B6)
+- [Szimpatikus összetevők (K)](#szimpatikus-%C3%B6sszetev%C5%91k-k)
+- [Színek, fények (Ö)](#sz%C3%ADnek-f%C3%A9nyek-%C3%B6)
+- [Természeti jelenség (Ö)](#term%C3%A9szeti-jelens%C3%A9g-%C3%B6)
 
 ---
-## Karma Háttér összhang
-
-- [Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
-- [Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
-
-
-<br />
-
----
-## Természeti jelenség összhang
-
-Vihar, aszály, szivárvány, napfény, holdfény
-
-Példák:
-- Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
-- Viharban könnyebb villámmágiát.
-
-<br />
-
----
-## Idő, időszak összhang
-
-- Napszak: Napkelte, Dél, Napnyugta, Éjfél
-- Évszak: Tavasz, Nyár, Ősz, Tél
-- Holdciklus(ok): Újhold, telihold, napfogyatkozás, holdfogyatkozás
-
-<br />
-
----
-## Őselem sűrű jelenléte mint összhang
-
-Nagy mocsár (víz), vulkán (tűz)
-
-- Őselemekhez érzelmek hozzáfűzése
-  - esőben szomorúságot könnyebb
-  - tűznél haragot könnyebb
-- xyz
-
-<br />
-
----
-## Csillag együttállás összhangja
-
-- történelmi esemény: államalapításkor aktuális csillagállással azonos együttállás
-- misztikus együttállás
-
-<br />
-
----
-## Evilági lény - összhang és komponens
-
-- jelenléte: szellemlény, uralkodó ház tagja, főpap
-- testrésze: bőre, vére, szőre, karma, nyála, stb.
-- áldozása: emberáldozat, állatáldozat, természetszellem
-
-<br />
-
----
-## Túlvilági lény - összhang és komponens
-
-- jelenléte: élőhalott szellem, démon
-- testrésze: bőre, vére, szőre, karma, nyála, stb.
-- áldozása: élőhalott szellem, démon
-
-<br />
-
----
-## Álom - összhang és komponens
+## Álom (Ö, K)
 
 Álombeli helyszínek, álmokban megjelenő lények.
 
@@ -28879,7 +28782,34 @@ Nagy mocsár (víz), vulkán (tűz)
 <br />
 
 ---
-## Érzelem, hangulat - összhang és komponens
+## Csillag együttállás (Ö)
+
+- történelmi esemény: államalapításkor aktuális csillagállással azonos együttállás
+- misztikus együttállás
+
+<br />
+
+---
+## Esemény (Ö, K)
+
+Összhang
+- gyerek születése
+- házasság
+- bosszú beteljesülének pillanata
+- fontos művészeti műtárgy befejezése
+- koronázás
+- megvilágosodás
+- orgazmus
+- születés: gyógyítás könnyebb
+
+Komponens
+- kivégzés: életerő manipulációra bónusz
+- halál: az alkalmazó maradék életerejét mágiává formázza
+
+<br />
+
+---
+## Érzelem, hangulat (Ö, K)
 
 Szeretet, félelem, gyűlölet
 
@@ -28900,7 +28830,38 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 <br />
 
 ---
-## Helyszín jellege összhang
+## Fizikai összetevők (K)
+
+### Természetes
+
+- békaháj (1)
+- denevérháj
+- medvekarom
+- medvekoponya (2)
+- unikornisszarv (3)
+- ásványok, arany, ezüst
+
+### Mágikus
+
+- mithrill, lunír
+- varázstárgyak
+- ritka ereklye
+- mágikus pecsétek
+
+<br />
+
+
+---
+## Fontos helyszín (Ö)
+
+- történelmi: a legvidámabb esküvő volt itt 1000 éve - itt könnyebb gyógyítani, pozitív asztrális varázslatok
+- földrajzi: Hegytető, monolitok, szakadék alja, óceán mélye, barlangi tó, ősöreg fák
+- misztikus földrajzi: szent liget, szent fa
+
+<br />
+
+---
+## Helyszín jellege (Ö)
 
 - föld alatt
 - levegőben
@@ -28913,16 +28874,67 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 <br />
 
 ---
-## Fontos helyszín összhang
+## Idő, időszak (Ö)
 
-- történelmi: a legvidámabb esküvő volt itt 1000 éve - itt könnyebb gyógyítani, pozitív asztrális varázslatok
-- földrajzi: Hegytető, monolitok, szakadék alja, óceán mélye, barlangi tó, ősöreg fák
-- misztikus földrajzi: szent liget, szent fa
+- Napszak: Napkelte, Dél, Napnyugta, Éjfél
+- Évszak: Tavasz, Nyár, Ősz, Tél
+- Holdciklus(ok): Újhold, telihold, napfogyatkozás, holdfogyatkozás
 
 <br />
 
 ---
-## Színek, fények összhang
+## Karma Háttér (Ö)
+
+- [Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
+- [Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
+
+
+<br />
+
+---
+## Lény: evilági (Ö, K)
+
+- jelenléte: szellemlény, uralkodó ház tagja, főpap
+- testrésze: bőre, vére, szőre, karma, nyála, stb.
+- áldozása: emberáldozat, állatáldozat, természetszellem
+
+<br />
+
+---
+## Lény: túlvilági (Ö, K)
+
+- jelenléte: élőhalott szellem, démon
+- testrésze: bőre, vére, szőre, karma, nyála, stb.
+- áldozása: élőhalott szellem, démon
+
+<br />
+
+---
+## Őselem sűrű jelenléte (Ö)
+
+Nagy mocsár (víz), vulkán (tűz)
+
+- Őselemekhez érzelmek hozzáfűzése
+  - esőben szomorúságot könnyebb
+  - tűznél haragot könnyebb
+- xyz
+
+<br />
+
+---
+## Szimpatikus összetevők (K)
+
+⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, eőrsebb a kapocs a személlyeél, annál erősebb a híd.
+
+- fizikai: áldozat egy személyes tárgya, áldozat egy testrésze (haj, stb), testvér, iker
+- elvont: szerelem, gyűlölet mint szimpatikus híd (ez jellemzően papi mágia legyen)
+
+⭕Mit lehet min keresztül.⭕ Pl. asztrál/mentál hatást szerelmen keresztül. Betegséget, életerő manipuláció véren keresztül.
+
+<br />
+
+---
+## Színek, fények (Ö)
 
 - konkrét fények
 - gyertyafény
@@ -28930,21 +28942,13 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 <br />
 
 ---
-## Esemény - összhang és komponens
+## Természeti jelenség (Ö)
 
-Összhang
-- gyerek születése
-- házasság
-- bosszú beteljesülének pillanata
-- fontos művészeti műtárgy befejezése
-- koronázás
-- megvilágosodás
-- orgazmus
-- születés: gyógyítás könnyebb
+Vihar, aszály, szivárvány, napfény, holdfény
 
-Komponens
-- kivégzés: életerő manipulációra bónusz
-- halál: az alkalmazó maradék életerejét mágiává formázza
+Példák:
+- Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
+- Viharban könnyebb villámmágiát.
 
 ---
 
@@ -29089,9 +29093,7 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 ---
 ## ⚜️ Mágia Szféra
 
-### Aura
-
-- azonos az 🔵 [Aurafejlesztés](kepzettsegek.primer.misztikus/aurafejlesztes.md) képzettséggel
+### [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 
 ### [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md)
 
@@ -29211,7 +29213,7 @@ Az egyes varázslatoknál jelezzük, hogy a varázslás ideje melyik kategóriá
 ---
 ### Papi Mágia Akarata
 
-Hasonlatos az [Aura Átütésnél leírtakhoz](103_aura_magia_akarata_magiaellenallas.md), de az Aura Alapra itt nem Aurafejlesztés képzettséggel dobunk, hanem a [Papi Mágia Tradíció](110_papimagia.md) képzettség szintjét vesszük alapul, a "dobást" pedig fixen `6`-nak vesszük. Ez azért van, mert a Pap csak biztos tudásból varázsolhat, nincs lehetősége Rizikó varázslásra.
+Hasonlatos az [Aura Átütésnél leírtakhoz](103_aura_magia_akarata_magiaellenallas.md), de az Aura Alapra itt nem Aurahangolás képzettséggel dobunk, hanem a [Papi Mágia Tradíció](110_papimagia.md) képzettség szintjét vesszük alapul, a "dobást" pedig fixen `6`-nak vesszük. Ez azért van, mert a Pap csak biztos tudásból varázsolhat, nincs lehetősége Rizikó varázslásra.
 
 Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a Mágiallenállás ⭕LINK⭕.
 
