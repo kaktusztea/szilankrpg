@@ -104,12 +104,16 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 #### Emberfeletti (21) 🎲
 
 - Egy kis cérnából és egy falevélből álcát készíteni.
-- Más testfelépítésű lénnyé válni.
+- Más testfelépítésű lénnyé válni, akár állattá is.
 
 <br />
 
 ---
 ### Célszám módosító körülmények
+
+```
+Kiemelt archetípusod: -2
+```
 
 ```
 +3: Gyors átöltözés
