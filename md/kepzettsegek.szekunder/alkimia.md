@@ -22,6 +22,8 @@ Intelligencia, Emlékezet
 
 ### Normál kiterjesztés
 
+Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
+
 - [Tájtípus: barlangi](../fortelyok.szabad/tajtipus_barlangi.md)
 - [Tájtípus: dzsungel](../fortelyok.szabad/tajtipus_dzsungel.md)
 - [Tájtípus: erdős](../fortelyok.szabad/tajtipus_erdos.md)
@@ -30,7 +32,6 @@ Intelligencia, Emlékezet
 - [Tájtípus: mocsaras](../fortelyok.szabad/tajtipus_mocsaras.md)
 - [Tájtípus: puszta](../fortelyok.szabad/tajtipus_puszta.md)
 - [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)\
-(szervetlen alapanyagok felkutatása mindegyik tájtípusnál)
 
 <br />
 
@@ -61,7 +62,6 @@ Intelligencia, Emlékezet
 - Növényből egyszerű kivonat főzése.
 - Illatszer vagy alap festék előállítása.
 - Felületes vizsgálattal megállapítani az alapvető anyagokat (lúg, sav, szerves–szervetlen).
-
 
 #### Átlagos (9) 🎲
 

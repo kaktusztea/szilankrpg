@@ -39,8 +39,9 @@ Játék előtt konzultálj a KM-eddel és sorold el, milyen kidolgozott archetí
 ```
 1 archetípus felszerelés
 
- == közepes felszerelés tárgy //
- == nagy felszerelés tárgy
+ = közepes felszerelés tárgy
+   VAGY
+ = nagy felszerelés tárgy
 ```
 
 ## Archetípus és kultúrkörök
@@ -82,8 +83,8 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 
 - Izzadást gátló szereket, tartósabb ragasztókat kotyvasztani. Összetételük ismeretében beszerezni a hozzájuk való alapanyagokat.
 - `1` perc alatt összeválogatni magadnak egy álcára valót az eléd kerülő rengeteg ruhából, kellékből (a felvétel persze már más tészta).
-- Olyan álcát készíteni, amely karbantartás nélkül akár 2-3 napot is kibír.
-- 20 évnél nagyobb korkülönbséget hitelesen megjeleníteni.
+- Olyan álcát készíteni, amely karbantartás nélkül akár `2-3` napot is kibír.
+- `20` évnél nagyobb korkülönbséget hitelesen megjeleníteni.
 - Más nemű, hasonló korú személlyé átvedleni.
 
 #### Nagyon nehéz (15) 🎲
@@ -97,7 +98,7 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 
 - Más magasságú, nemű, teljesen más karakterű másik személlyé átváltozni.
 - Más fajú (de hasonló testfelépítésű) lénnyé átalakulni.
-- Olyan álcát készíteni, amely karbantartást sem igényel.Sminked mintha második bőröd lenne.
+- Olyan álcát készíteni, amely karbantartást sem igényel. Sminked mintha második bőröd lenne.
 - "Előbb a szakács fia volt, most épp a báróné!"
 
 #### Emberfeletti (21) 🎲
