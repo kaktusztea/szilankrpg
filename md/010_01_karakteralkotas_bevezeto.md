@@ -52,7 +52,7 @@ A [Karakteralkotó Pontjaid](010_07_kp.md) (`KP`) adnak lehetőséget a különb
 [0; 15] szint
 ```
 
-Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd elkezdhetsz `KP`-kat költeni rájuk. Az egyes képzettségszintek exponenciálisan [egyre drágábbak](030_05_kepzettsegszintek_kp_igenye.md), ahogy a `0-15`-ös skálán haladsz felfelé. A `3.szint` itt is a "nullpontot" jelképezi, alatta inkább levonás jár. Sok képzettségnek van - jellemzően - Tulajdonság-követelménye, ezeket lásd az adott képzettségek leírásában. A csatákban használt [Harcmodorok](030_01_kepzettseglista.md#harci-képzettségek-🅿️), a [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md) és a varázslásban alkalmazott [Mágikus Szférák és Arkánumok](106_magikus_szferak_arkanumok.md) is ilyen képzettségek. Szintén képzettségek a mágikus és papi [Tradíciók](050_tradiciok.md).
+Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd elkezdhetsz `KP`-kat költeni rájuk. Az egyes képzettségszintek exponenciálisan [egyre drágábbak](030_05_kepzettsegszintek_kp_igenye.md), ahogy a `0-15`-ös skálán haladsz felfelé. A `3.szint` itt is a "nullpontot" jelképezi, alatta inkább levonás jár. Sok képzettségnek van - jellemzően - Tulajdonság-követelménye, ezeket lásd az adott képzettségek leírásában. A csatákban használt [Harcmodorok](030_01_kepzettseglista.md#harci-képzettségek-🅿️), a [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md) és a varázslásban alkalmazott [Mágikus Szférák és Arkánumok](102_02_magikus_szferak_arkanumok.md) is ilyen képzettségek. Szintén képzettségek a mágikus és papi [Tradíciók](050_tradiciok.md).
 
 <br />
 
@@ -114,7 +114,7 @@ Használjunk egy "fa" hasonlatot.
 
 A "törzs", az **alapozás** egy [Mágia Tradíció](051_00_magia_tradiciok.md) képzettség felvétele, amely meghatározza, milyen jellegű mágiát fog használni, milyen "tradíciót" követ karaktered.
 
-A fa "ágai" a [Mágikus Szférák vagy  Arkánum](106_magikus_szferak_arkanumok.md) képzettségek. Ezek a mágiaiskolák, amelyeket az adott Tradíció alatt karaktered megtanult és annak kontextusában használni is képes. Lehet a tanult Arkánum neve ugyanaz, ám egy "Asztrálmágia Arkánum" más-más formulákat tartalmaz a [Magasmágia](051_01_magasmagia.md) és másokat például a [Vulgármágia](051_02_vulgarmagia.md) alatt.
+A fa "ágai" a [Mágikus Szférák vagy  Arkánum](102_02_magikus_szferak_arkanumok.md) képzettségek. Ezek a mágiaiskolák, amelyeket az adott Tradíció alatt karaktered megtanult és annak kontextusában használni is képes. Lehet a tanult Arkánum neve ugyanaz, ám egy "Asztrálmágia Arkánum" más-más formulákat tartalmaz a [Magasmágia](051_01_magasmagia.md) és másokat például a [Vulgármágia](051_02_vulgarmagia.md) alatt.
 
 Jöjjenek végül a [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) amelyek a "levelek" a fa ágain. Ide tartoznak a [Mágia metódusok](104_magia_metodusok.md) és más misztikus, színesítő, specializálódó ismeretek.
 

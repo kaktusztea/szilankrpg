@@ -2,7 +2,7 @@
 
 A Papi Tradíciót követő mágiatudó csak biztos tudásból varázsolhat.
 
-Mágiaiskolaként teljes [Szférákat](106_magikus_szferak_arkanumok.md) vehet fel képzettségként.
+Mágiaiskolaként teljes [Szférákat](102_02_magikus_szferak_arkanumok.md) vehet fel képzettségként.
 
 Minden varázslatnak van, vannak Szféra követelménye(i). Amennyiben minden Szféra követelmény megvan, a pap elvileg képes az adott varázslatot megidézni. Egyes varázslatoknak lehetnek egyedi követelményei is, amelyeket teljesíteni kell, ezek külön említésre kerülnek az adott varázslatok leírásában.
 
@@ -38,7 +38,7 @@ Az egyes varázslatoknál jelezzük, hogy a varázslás ideje melyik kategóriá
 ---
 ### Papi Mágia Akarata
 
-Hasonlatos az [Aura Átütésnél leírtakhoz](103_aura_magia_akarata_magiaellenallas.md), de az Aura Alapra itt nem Aurahangolás képzettséggel dobunk, hanem a [Papi Mágia Tradíció](110_papimagia.md) képzettség szintjét vesszük alapul, a "dobást" pedig fixen `6`-nak vesszük. Ez azért van, mert a Pap csak biztos tudásból varázsolhat, nincs lehetősége Rizikó varázslásra.
+Hasonlatos az [Aura Átütésnél leírtakhoz](103_00_aura.md), de az Aura Alapra itt nem Aurahangolás képzettséggel dobunk, hanem a [Papi Mágia Tradíció](110_papimagia.md) képzettség szintjét vesszük alapul, a "dobást" pedig fixen `6`-nak vesszük. Ez azért van, mert a Pap csak biztos tudásból varázsolhat, nincs lehetősége Rizikó varázslásra.
 
 Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a Mágiallenállás ⭕LINK⭕.
 

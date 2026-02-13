@@ -17,6 +17,6 @@
 
 ---
 
-🔗 [Aura, Mágia Átütése, Mágiaellenállás](103_aura_magia_akarata_magiaellenallas.md) →
+🔗 [Aura, Mágia Átütése, Mágiaellenállás](103_00_aura.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

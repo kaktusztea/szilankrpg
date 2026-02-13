@@ -147,4 +147,6 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 
 ---
 
+🔗 [Varázslások száma](102_03_varazslasok_szama.md) →
+
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

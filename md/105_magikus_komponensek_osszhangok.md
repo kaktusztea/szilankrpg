@@ -203,9 +203,11 @@ Vihar, aszály, szivárvány, napfény, holdfény
 Példák:
 - Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
 - Viharban könnyebb villámmágiát.
+⭕TODO⭕
+
 
 ---
 
-🔗 [Mágikus szférák, arkánumaik listája](106_magikus_szferak_arkanumok.md)→
+🔗 [Misztikus fortélyok](106_misztikus_fortelyok.md)  →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
