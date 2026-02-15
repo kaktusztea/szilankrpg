@@ -7,14 +7,10 @@ Kapcsolódik: [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#s
 ---
 ### 1. fok
 
-🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/magikus_celzas.md) - `6.szint` ⭕TODO: ez jó követelmény?
-
 🌟 **Hatás**: [Komplexitás - Mozgatás](../kepzettsegek.primer.arkanumok/elemi_magia.md#komplexit%C3%A1s---mozgat%C3%A1s) esetén `-3` Nehézség könnyítést kapsz
 
 ---
 ### 2. fok
-
-🔒 **Követelmény**: [Mágikus célzás](../kepzettsegek.primer.harci/magikus_celzas.md) - `9.szint` ⭕TODO: ez jó követelmény?
 
 🌟 **Hatás**: [Komplexitás - Mozgatásra](../kepzettsegek.primer.arkanumok/elemi_magia.md#komplexit%C3%A1s---mozgat%C3%A1s) esetén `-6` Nehézség könnyítést kapsz
 

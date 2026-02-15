@@ -1,18 +1,17 @@
 ## 🟣 Gyors varázsló (2)
 
-Jobban össze tudod sűríteni a varázslatodat, így egy körben nagyobbak a lehetőségeid.
+Jobban össze tudod sűríteni mágiád energiáit, így gyorsabb vagy varázsláskor.
 
 ### 1. fok
 
-🔒 **Követelmény**: Mágia Tradíció - `6.szint` ⭕TODO: ez jó követelmény?
+🌟 `KÉ:+2` bónusz jár varázsláskor
 
-🌟 **Hatás**: [Varázskeret](../063_05_tamadasok_szama_varazslaskor.md#varázskeret) értéked `+2`-vel nő.
-
----
 ### 2. fok
 
-🔒 **Követelmény**: Mágia Tradíció - `9.szint` ⭕TODO: ez jó követelmény?
+🌟 `KÉ:+4` bónusz jár varázsláskor
 
-🌟 **Hatás**: [Varázskeret](../063_05_tamadasok_szama_varazslaskor.md#varázskeret) értéked `+4`-el nő (összesen).
+### 3. fok
+
+🌟 `KÉ:+6` bónusz jár varázsláskor
 
 ---

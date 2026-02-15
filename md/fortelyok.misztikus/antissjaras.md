@@ -3,8 +3,6 @@
 Képes vagy az álomsíkon közlekedni.
 ### 1. fok
 
-🔒 **Követelmény**: ⭕???⭕
-
 🌟 **Hatás**: ⭕???⭕
 
 ---

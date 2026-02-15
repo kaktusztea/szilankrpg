@@ -20,10 +20,6 @@ A belső síkok túlvilági teremtményeinek ismerete. Alapos, előtörténettel
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- Előtörténet
-- [Lexikum](../kepzettsegek.szekunder/lexikum.md) - `6.szint`
-
 🌟 **Hatás**:  Dobhatsz [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettségpróbát egyes lények ismeretére.
 
 
