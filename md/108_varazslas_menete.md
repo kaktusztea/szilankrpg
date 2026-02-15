@@ -8,5 +8,5 @@
 - Auraérintés, Aurapárbaj (behivatkozni)
 - Erősség meghatározása, rekesz felhasználása (hivatkozás itt is)
 - Komplexitás-próba (opcionális) (hivatkozás)
-- Mágia időtartam kitolása ([ADR](ADR.magia.idotartam.kitolasa))
-- Mágia sebzése ([ADR](ADR.magia.sebzese))
+- Mágia időtartam kitolása ([ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.idotartam.kitolasa))
+- Mágia sebzése ([ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.sebzese))
