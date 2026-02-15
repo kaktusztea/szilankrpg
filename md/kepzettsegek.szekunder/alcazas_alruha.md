@@ -48,6 +48,14 @@ Játék előtt konzultálj a KM-eddel és sorold el, milyen kidolgozott archetí
 
 Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkövetelheti az adott [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) ismeretét is - de ne legyen túl szigorú.
 
+## Kiemelt archetípus
+
+Mindenkinek - aki legalább `3.szinten` bírja ezt a képzettséget -, van egy választható archetípusa, amely egész élete során megmarad.
+
+Erre az `1 db` archetípusra mindig `-3` kedvezményt kapsz képzettségpróbád Nehézségére.
+
+Nem számszerűsítjük, de olyan archetípust választhatsz, amelyet jellemzően gyakran, visszatérően használsz.
+
 <br />
 
 ### Mesterbónuszok
@@ -112,7 +120,7 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 ### Célszám módosító körülmények
 
 ```
-Kiemelt archetípusod: -2
+Kiemelt archetípusod: -3
 ```
 
 ```

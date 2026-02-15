@@ -30,7 +30,7 @@ Nincs ⭕
 
 ### Ajánlott fortélyok
 
-- [Pszí alkalmazás](../fortelyok.misztikus/pszi_kiterjesztes.md)
+- ⭕TODO⭕ Pszí Telekinézis, Pszí Telepátia
 
 ### Ajánlott képzettségek
 

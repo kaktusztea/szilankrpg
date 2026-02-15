@@ -2,11 +2,11 @@
 
 Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekben, varázslat hosszas fenntartásakor. Olyan helyzetekben, amelyek a külvilág kizárását igénylik. Normál, nyugodt helyzetben nem kell használni! A diszciplínák alkalmazásainak szintje nem függ ezen képzettségtől.
+A mágikus ismeretek és a Pszí-Telekinézis, Pszí-Telepátia alkalmazása nehéz körülmények között, rázós helyzetekben, varázslat hosszas fenntartásakor sokszor kihívásokkal teli olyan helyzetekben, amelyek a külvilág kizárását igénylik. Nyugodt, alaphelyzetben nem szükséges használni.
 
 ### Domináns Tulajdonságok
 
-⭕TODO⭕
+Önuralom, Intelligencia
 
 ### Kapcsolódik
 
@@ -15,25 +15,6 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 ### Szituációk
 
 ⭕TODO⭕ Ha van kapcsolódó szituáció, akkor itt linkelni.
-
-### Követelmény
-
-⭕ ha ez egy fortély, akkor tegyük az "Erős kiterjesztés" szekcióba.⭕
-⭕ ((ha nincs, törölni))
-
-### Normál kiterjesztés
-
-⭕TODO. Ha nincs, törölni⭕
-
-### Erős kiterjesztés
-
-⭕TODO. Ha nincs, törölni.
-
-### Bónuszok
-
-⭕TODO⭕
-
-<br />
 
 ### Mesterbónuszok
 

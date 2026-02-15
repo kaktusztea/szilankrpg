@@ -184,8 +184,6 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Összpontosítás](kepzettsegek.primer.misztikus/osszpontositas.md)
 
-🔵 [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md)
-
 🔵 [Tradíció](kepzettsegek.primer.misztikus/tradicio.md)
 
 ---

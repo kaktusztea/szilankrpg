@@ -5,8 +5,7 @@
 ### Követelmények
 
 - **NEM** követelmény a tisztavérű dzsenn származás (mint a hatalomszavak alkalmazásánál)
-- Pszí kiterjesztés fortély: `1. fok`⭕(2?)
-- [Pszí használat](../kepzettsegek.primer.misztikus/pszi_hasznalat.md) képzettség (Primer) felvétele, amelynek szintje nem lehet alacsonyabb, mint a "**Faj: misztérium: Dzsenn**" képzettség
+- Pszí ⭕? 
 - az egyes dzsenn különleges képességeknek nincs olyan változata, amelyek e képzettség nélkül működnének
 
 ---

@@ -52,7 +52,7 @@ A [Karakteralkotó Pontjaid](010_07_kp.md) (`KP`) adnak lehetőséget a különb
 [0; 15] szint
 ```
 
-Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd elkezdhetsz `KP`-kat költeni rájuk. Az egyes képzettségszintek exponenciálisan [egyre drágábbak](030_05_kepzettsegszintek_kp_igenye.md), ahogy a `0-15`-ös skálán haladsz felfelé. A `3.szint` itt is a "nullpontot" jelképezi, alatta inkább levonás jár. Sok képzettségnek van - jellemzően - Tulajdonság-követelménye, ezeket lásd az adott képzettségek leírásában. A csatákban használt [Harcmodorok](030_01_kepzettseglista.md#harci-képzettségek-🅿️), a [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md) és a varázslásban alkalmazott [Mágikus Szférák és Arkánumok](102_02_magikus_szferak_arkanumok.md) is ilyen képzettségek. Szintén képzettségek a mágikus és papi [Tradíciók](050_tradiciok.md).
+Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd elkezdhetsz `KP`-kat költeni rájuk. Az egyes képzettségszintek exponenciálisan [egyre drágábbak](030_05_kepzettsegszintek_kp_igenye.md), ahogy a `0-15`-ös skálán haladsz felfelé. A `3.szint` itt is a "nullpontot" jelképezi, alatta inkább levonás jár. Sok képzettségnek van - jellemzően - Tulajdonság-követelménye, ezeket lásd az adott képzettségek leírásában. A csatákban használt [Harcmodorok](030_01_kepzettseglista.md#harci-képzettségek-🅿️), és a varázslásban alkalmazott [Mágikus Szférák és Arkánumok](102_02_magikus_szferak_arkanumok.md) is ilyen képzettségek. Szintén képzettségek a mágikus és papi [Tradíciók](050_tradiciok.md).
 
 <br />
 
@@ -69,7 +69,7 @@ A [Kiemelt Fortélyok](041_kiemelt_fortelyok.md) három egyedi ismeretet adnak, 
 
 A [Szabad Fortélyok](042_szabad_fortelyok.md) - melyekből Tapasztalati Szintenként `1 db` **ingyen jár** - specializált, egy, vagy több képzettséget [kiterjesztő](030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) ismeretek.
 
-A [Pszí alkalmazás](fortelyok.misztikus/pszi_kiterjesztes.md) is a Fortélyok közt található.
+A "Pszí Telekinézis" és "Pszí Telepátia" Fortélyok közt található.
 
 Fontos kiemelni a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) harci fortélyt amely egy konkrét fegyver hatékonyabb használatát foglalja magában.
 
