@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Gyertyamágia (1)
+## 🟣 💫 Mágia metódus: Gyertyamágia (3)
 
 Gyertyába foglalsz mágikus hatást, vagy komponensként használod.
 

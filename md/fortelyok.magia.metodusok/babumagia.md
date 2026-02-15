@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Bábúmágia (1)
+## 🟣 💫 Mágia metódus: Bábúmágia (3)
 
 Kézzel készített bábúkkal távolról hatsz áldozatodra.
 

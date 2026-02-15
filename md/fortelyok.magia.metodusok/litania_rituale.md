@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Litánia/Rituálé (1)
+## 🟣 💫 Mágia metódus: Litánia/Rituálé (3)
 
 Képes vagy szakrális Litániák és Rituálék formájában mágikus hatást létrehozni.
 

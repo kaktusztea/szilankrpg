@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Kártyavetés (1)
+## 🟣 💫 Mágia metódus: Kártyavetés (3)
 
 Fizikai kártyákkal való sorsvetés.
 

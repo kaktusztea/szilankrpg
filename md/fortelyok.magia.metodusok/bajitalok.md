@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Bájitalok (1)
+## 🟣 💫 Mágia metódus: Bájitalok (3)
 
 Bájitalokba foglalhatsz mágikus hatásokat.
 

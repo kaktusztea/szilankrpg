@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Megkötés (1)
+## 🟣 💫 Mágia metódus: Megkötés (3)
 
 Képes vagy megkötni valamiben a mágikus hatást.
 

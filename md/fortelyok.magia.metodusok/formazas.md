@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Formázás (1)
+## 🟣 💫 Mágia metódus: Formázás (3)
 
 Képes vagy formázni a létrehozott mágiát.
 

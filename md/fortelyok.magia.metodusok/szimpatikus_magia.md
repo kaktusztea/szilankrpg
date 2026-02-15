@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Szimpatikus mágia (1)
+## 🟣 💫 Mágia metódus: Szimpatikus mágia (3)
 
 A tárgyak, lények, események közti kapcsolati hídon keresztül küldesz át mágikus hatást.
 
@@ -10,9 +10,13 @@ A tárgyak, lények, események közti kapcsolati hídon keresztül küldesz át
 
 ### Kínált lehetőség: Mágia átküldése az alábbi szimpatikus hidakon
 
-- Vér: +0
-- Kardművész kardja: +2
-- Kedvenc kiskanál: +9
+```
+Erősség igény plusz
+
++0: Vér
++2: Kardművész kardja
++9: Kedvenc kiskanál
+```
 
 ### Megnyílt lehetőséget az alábbi összhangokra
 

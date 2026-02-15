@@ -1,4 +1,4 @@
-## 🟣 💫 Mágia metódus: Jelmágia, Rúnamágia (1)
+## 🟣 💫 Mágia metódus: Jelmágia, Rúnamágia (3)
 
 Képes vagy mágikus szimbólumokba mágikus hatást zárni, vagy rúnákkal felvértezett tárgyakat mágikus hatással felruházni.
 
