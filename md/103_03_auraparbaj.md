@@ -51,7 +51,7 @@ Aura Alap
 ```
 
 ---
-## Párbaj: Varázsló akarata vs Mágiaellenállás
+## Aurapárbaj: Varázsló akarata vs Mágiaellenállás
 
 ⭕TODO: szöveg
 
