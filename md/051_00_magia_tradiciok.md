@@ -7,11 +7,15 @@
   - [Vulgármágia](051_02_vulgarmagia.md)
   - [Ordani Tűzmágia](051_03_ordani_tuzmagia.md)
   - [Bárdmágia](051_04_bardmagia.md)
+  - [Illuzionista](051_05_illuzionista.md)
   - [Természeti mágia](051_06_termeszeti_magia.md)
   - [Sámánmágia](051_07_samanmagia.md)
   - [Drágakőmágia](051_08_dragakomagia.md)
 
+
 ### Metamágia Arkánum
+
+⭕Ez még mindig? ⭕
 
 ```
 Metamágia Arkánum szint
