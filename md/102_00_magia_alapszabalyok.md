@@ -1,19 +1,18 @@
 # Mágia alapszabályok
 
-## Tradíciók
+## [Mágia Tradíciók](app://obsidian.md/102_01_magia_tradiciok.md)
 
-- [STUDY: Mágia Tradíciók egyedi jellemzői](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.tradiciok.jellemzoi) ⭕
-- [ADR: Mágia Tradíciók működése](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.tradiciok.mukodese) ⭕
+## [Mágikus Szférák és Arkánumaik](app://obsidian.md/102_02_magikus_szferak_arkanumok.md)
 
----
-## Arkánumok (Mágiaskolák)
+## [Varázslások száma](app://obsidian.md/102_03_varazslasok_szama.md)
 
-- [ADR: Mágia Arkánumok működése](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.arkanumok.mukodese) ⭕
+## [Varázslat Erőssége](app://obsidian.md/102_04_varazslat_erossege.md)
 
----
-### Varázslások száma
+## [Varázslat Komplexitása](app://obsidian.md/102_05_varazslat_komplexitasa.md)
 
-- [ADR: Varázslatok száma / kör](https://github.com/kaktusztea/szilankrpg/wiki/adr.varazslatok.szama.per.kor) ⭕
+## [Példa Erősség és Kompexitás értékeire és viszonyára](app://obsidian.md/102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)⚡
+
+## [Példa Arkánum és Metódus viszonyára](app://obsidian.md/102_07_pelda_arkanum_es_motodues_viszonyara.md)⚡
 
 ---
 

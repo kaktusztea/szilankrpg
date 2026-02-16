@@ -1,5 +1,8 @@
 # Mágikus Szférák és arkánumaik listája
 
+→ [ADR: Mágia Arkánumok működése](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.arkanumok.mukodese) ⭕
+
+
 ⭕TODO⭕: Bevezető, legenda, utalás mágiaelméletre.
 
 ⭕TODO⭕: Az egyes Szférák rövid leírása mindegyik alatt.
