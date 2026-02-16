@@ -1,6 +1,6 @@
 # Mágia akarata
 
-⭕TODO: szöveg
+⭕TODO: bevezető szöveg
 
 ```
 Aura Alap  =  2x (TSz + Önuralom)
