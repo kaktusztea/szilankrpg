@@ -1140,7 +1140,7 @@ A [Karakteralkotó Pontjaid](010_07_kp.md) (`KP`) adnak lehetőséget a különb
 [0; 15] szint
 ```
 
-Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd elkezdhetsz `KP`-kat költeni rájuk. Az egyes képzettségszintek exponenciálisan [egyre drágábbak](030_05_kepzettsegszintek_kp_igenye.md), ahogy a `0-15`-ös skálán haladsz felfelé. A `3.szint` itt is a "nullpontot" jelképezi, alatta inkább levonás jár. Sok képzettségnek van - jellemzően - Tulajdonság-követelménye, ezeket lásd az adott képzettségek leírásában. A csatákban használt [Harcmodorok](030_01_kepzettseglista.md#harci-képzettségek-🅿️), a [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md) és a varázslásban alkalmazott [Mágikus Szférák és Arkánumok](102_02_magikus_szferak_arkanumok.md) is ilyen képzettségek. Szintén képzettségek a mágikus és papi [Tradíciók](050_tradiciok.md).
+Most a [Képzettségek listáját](030_01_kepzettseglista.md) tekintsd át, majd elkezdhetsz `KP`-kat költeni rájuk. Az egyes képzettségszintek exponenciálisan [egyre drágábbak](030_05_kepzettsegszintek_kp_igenye.md), ahogy a `0-15`-ös skálán haladsz felfelé. A `3.szint` itt is a "nullpontot" jelképezi, alatta inkább levonás jár. Sok képzettségnek van - jellemzően - Tulajdonság-követelménye, ezeket lásd az adott képzettségek leírásában. A csatákban használt [Harcmodorok](030_01_kepzettseglista.md#harci-képzettségek-🅿️), és a varázslásban alkalmazott [Mágikus Szférák és Arkánumok](102_02_magikus_szferak_arkanumok.md) is ilyen képzettségek. Szintén képzettségek a mágikus és papi [Tradíciók](050_tradiciok.md).
 
 <br />
 
@@ -1157,7 +1157,7 @@ A [Kiemelt Fortélyok](041_kiemelt_fortelyok.md) három egyedi ismeretet adnak, 
 
 A [Szabad Fortélyok](042_szabad_fortelyok.md) - melyekből Tapasztalati Szintenként `1 db` **ingyen jár** - specializált, egy, vagy több képzettséget [kiterjesztő](030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) ismeretek.
 
-A [Pszí alkalmazás](fortelyok.misztikus/pszi_kiterjesztes.md) is a Fortélyok közt található.
+A "Pszí Telekinézis" és "Pszí Telepátia" Fortélyok közt található.
 
 Fontos kiemelni a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) harci fortélyt amely egy konkrét fegyver hatékonyabb használatát foglalja magában.
 
@@ -3179,7 +3179,7 @@ Nincs ⭕
 
 ### Ajánlott fortélyok
 
-- [Pszí alkalmazás](../fortelyok.misztikus/pszi_kiterjesztes.md)
+- ⭕TODO⭕ Pszí Telekinézis, Pszí Telepátia
 
 ### Ajánlott képzettségek
 
@@ -4771,8 +4771,6 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Összpontosítás](kepzettsegek.primer.misztikus/osszpontositas.md)
 
-🔵 [Pszí használat](kepzettsegek.primer.misztikus/pszi_hasznalat.md)
-
 🔵 [Tradíció](kepzettsegek.primer.misztikus/tradicio.md)
 
 ---
@@ -5019,8 +5017,7 @@ Nagymester (12) 📖
 ### Követelmények
 
 - **NEM** követelmény a tisztavérű dzsenn származás (mint a hatalomszavak alkalmazásánál)
-- Pszí kiterjesztés fortély: `1. fok`⭕(2?)
-- [Pszí használat](../kepzettsegek.primer.misztikus/pszi_hasznalat.md) képzettség (Primer) felvétele, amelynek szintje nem lehet alacsonyabb, mint a "**Faj: misztérium: Dzsenn**" képzettség
+- Pszí ⭕? 
 - az egyes dzsenn különleges képességeknek nincs olyan változata, amelyek e képzettség nélkül működnének
 
 ---
@@ -8241,11 +8238,11 @@ Emlékezet
 
 Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekben, varázslat hosszas fenntartásakor. Olyan helyzetekben, amelyek a külvilág kizárását igénylik. Normál, nyugodt helyzetben nem kell használni! A diszciplínák alkalmazásainak szintje nem függ ezen képzettségtől.
+A mágikus ismeretek és a Pszí-Telekinézis, Pszí-Telepátia alkalmazása nehéz körülmények között, rázós helyzetekben, varázslat hosszas fenntartásakor sokszor kihívásokkal teli olyan helyzetekben, amelyek a külvilág kizárását igénylik. Nyugodt, alaphelyzetben nem szükséges használni.
 
 ### Domináns Tulajdonságok
 
-⭕TODO⭕
+Önuralom, Intelligencia
 
 ### Kapcsolódik
 
@@ -8254,25 +8251,6 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 ### Szituációk
 
 ⭕TODO⭕ Ha van kapcsolódó szituáció, akkor itt linkelni.
-
-### Követelmény
-
-⭕ ha ez egy fortély, akkor tegyük az "Erős kiterjesztés" szekcióba.⭕
-⭕ ((ha nincs, törölni))
-
-### Normál kiterjesztés
-
-⭕TODO. Ha nincs, törölni⭕
-
-### Erős kiterjesztés
-
-⭕TODO. Ha nincs, törölni.
-
-### Bónuszok
-
-⭕TODO⭕
-
-<br />
 
 ### Mesterbónuszok
 
@@ -8323,21 +8301,6 @@ Pszí és mágia alkalmazása nehéz körülmények között, rázós helyzetekb
 ### Célszám módosító körülmények
 
 - ⭕TODO⭕
-
-
----
----
-## File: md/kepzettsegek.primer.misztikus/pszi_hasznalat.md
-
-## 🔵 Pszí használat
-
-### Kapcsolódó oldalak
-
-- [Pszí főfejezet](../090_pszi.md)
-
-### Kapcsolódik
-
-- [Pszí kiterjesztés](../fortelyok.misztikus/pszi_kiterjesztes.md) fortély
 
 
 ---
@@ -8415,6 +8378,14 @@ Játék előtt konzultálj a KM-eddel és sorold el, milyen kidolgozott archetí
 
 Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkövetelheti az adott [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) ismeretét is - de ne legyen túl szigorú.
 
+## Kiemelt archetípus
+
+Mindenkinek - aki legalább `3.szinten` bírja ezt a képzettséget -, van egy választható archetípusa, amely egész élete során megmarad.
+
+Erre az `1 db` archetípusra mindig `-3` kedvezményt kapsz képzettségpróbád Nehézségére.
+
+Nem számszerűsítjük, de olyan archetípust választhatsz, amelyet jellemzően gyakran, visszatérően használsz.
+
 <br />
 
 ### Mesterbónuszok
@@ -8479,7 +8450,7 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 ### Célszám módosító körülmények
 
 ```
-Kiemelt archetípusod: -2
+Kiemelt archetípusod: -3
 ```
 
 ```
@@ -16123,7 +16094,7 @@ Vak karakter indítása esetén a karakter **látás** érzékére permanens [É
 
 ## File: md/fortelyok.magia.metodusok/aldas.md
 
-## 🟣 💫 Mágia metódus: Áldás (1)
+## 🟣 💫 Mágia metódus: Áldás (3)
 
 Személyeket, vagy tárgyakat áldhatsz meg, különleges képességekkel felruházva, vagy valamely tulajdonságát erősítve.
 
@@ -16143,7 +16114,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/atok.md
 
-## 🟣 💫 Mágia metódus: Átok (1)
+## 🟣 💫 Mágia metódus: Átok (3)
 
 Személyeket, vagy tárgyakat átkozhatsz meg, betegséggel, balszerencsével, balsorssal felruházva, vagy valamely tulajdonságát gyengítve.
 
@@ -16164,7 +16135,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/babumagia.md
 
-## 🟣 💫 Mágia metódus: Bábúmágia (1)
+## 🟣 💫 Mágia metódus: Bábúmágia (3)
 
 Kézzel készített bábúkkal távolról hatsz áldozatodra.
 
@@ -16184,7 +16155,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/bajitalok.md
 
-## 🟣 💫 Mágia metódus: Bájitalok (1)
+## 🟣 💫 Mágia metódus: Bájitalok (3)
 
 Bájitalokba foglalhatsz mágikus hatásokat.
 
@@ -16204,7 +16175,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/ceremonialis.md
 
-## 🟣 💫 Mágia metódus: Ceremoniális mágia (1)
+## 🟣 💫 Mágia metódus: Ceremoniális mágia (3)
 
 Képes vagy nagy, hosszú, ceremoniális mágiák formájában mágikus hatást létrehozni.
 
@@ -16227,7 +16198,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/dalmagia.md
 
-## 🟣 💫 Mágia metódus: Dalmágia (1)
+## 🟣 💫 Mágia metódus: Dalmágia (3)
 
 Képes vagy dalba ágyazni a mágikus hatást.
 
@@ -16246,7 +16217,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/fokuszok_emitterek.md
 
-## 🟣 💫 Mágia metódus: Fókuszok, Emitterek (1)
+## 🟣 💫 Mágia metódus: Fókuszok, Emitterek (3)
 
 Képes vagy mágikus fókuszt, vagy emittert létrehozni.
 
@@ -16279,7 +16250,7 @@ Ehhez vagy kelljen külön elosztó/generátor/manafókusz/varázskör (hívjuk 
 ---
 ## File: md/fortelyok.magia.metodusok/formazas.md
 
-## 🟣 💫 Mágia metódus: Formázás (1)
+## 🟣 💫 Mágia metódus: Formázás (3)
 
 Képes vagy formázni a létrehozott mágiát.
 
@@ -16299,7 +16270,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/gyertyamagia.md
 
-## 🟣 💫 Mágia metódus: Gyertyamágia (1)
+## 🟣 💫 Mágia metódus: Gyertyamágia (3)
 
 Gyertyába foglalsz mágikus hatást, vagy komponensként használod.
 
@@ -16320,7 +16291,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/jelmagia_runamagia.md
 
-## 🟣 💫 Mágia metódus: Jelmágia, Rúnamágia (1)
+## 🟣 💫 Mágia metódus: Jelmágia, Rúnamágia (3)
 
 Képes vagy mágikus szimbólumokba mágikus hatást zárni, vagy rúnákkal felvértezett tárgyakat mágikus hatással felruházni.
 
@@ -16339,9 +16310,57 @@ xyz
 
 ---
 ---
+## File: md/fortelyok.magia.metodusok/kartyavetes.md
+
+## 🟣 💫 Mágia metódus: Kártyavetés (3)
+
+Fizikai kártyákkal való sorsvetés.
+
+### Tradíció felveheti
+
+- [Vulgármágia](../051_02_vulgarmagia.md)
+- ⭕ ???
+
+### Arkánum kapcsolatok
+
+- [Sors érzékelés](../kepzettsegek.primer.arkanumok/sors_erzekeles.md)
+- [Sors befolyásolás](../kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
+
+### Leírás
+
+Az isteneken kívülálló különleges "Sors" entitással egyedi kapcsolatot alakíthatsz ki. Érdekesség, hogy a Jelhordozók a Sors idővonalán kívüli élnek.
+
+A kártyavetéstől függ, milyen hatás következik be, vagy látsz bele az ismeretlenbe.
+
+
+### Példa varázstudó: Jósnő
+
+⭕TODO: fogalmazás, formázás⭕
+
+Ezeket határozhatod meg a kártyavetéskor (varázsláskor):
+- "Jót / Rosszat akarok". Hogy mi fog történni, arra nincs ráhatásod, az a kártyahúzástól függ.
+- Erősség
+- Komplexitás:
+  -  `3`: valaki (random, hogy ki)
+  - `6`: "X legyen a célpont."
+  - `9`: "Adott teremen belül" (mindenkire rászakad a plafon).
+  - `12`: Csak rájuk, DE ránk ne
+
+#### Karakteralkotás
+
+- [Vulgármágia](../051_02_vulgarmagia.md) tradíció képzettség
+- [Sors érzékelés](../kepzettsegek.primer.arkanumok/sors_erzekeles.md) Arkánum képzettség (ez a jóslásos arkánum)
+- [Sors befolyásolás](../kepzettsegek.primer.arkanumok/sors_befolyasolas.md) Arkánum képzettség (imagináció, tehát "hatás". Igazából csak "meglovagolja" a Sorsot. Amit "akar" az már megtörtén(t))
+- [Kártyavetés](kartyavetes.md) Metódus fortély
+
+---
+
+
+---
+---
 ## File: md/fortelyok.magia.metodusok/litania_rituale.md
 
-## 🟣 💫 Mágia metódus: Litánia/Rituálé (1)
+## 🟣 💫 Mágia metódus: Litánia/Rituálé (3)
 
 Képes vagy szakrális Litániák és Rituálék formájában mágikus hatást létrehozni.
 
@@ -16361,7 +16380,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/maszkmagia.md
 
-## 🟣 💫 Mágia metódus: Maszkmágia (1)
+## 🟣 💫 Mágia metódus: Maszkmágia (3)
 
 Kézzel készített maszkot - szerves, vagy szervetlen anyagból - készítesz, azt nemesíted át mágikus hatással.
 
@@ -16381,7 +16400,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/megkotes.md
 
-## 🟣 💫 Mágia metódus: Megkötés (1)
+## 🟣 💫 Mágia metódus: Megkötés (3)
 
 Képes vagy megkötni valamiben a mágikus hatást.
 
@@ -16401,7 +16420,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/ritualis_tanc.md
 
-## 🟣 💫 Mágia metódus: Rituális / Táncmágia (1)
+## 🟣 💫 Mágia metódus: Rituális / Táncmágia (3)
 
 Képes vagy szakrális Tánc, vagy nem-szakrális Rituálé formájában mágikus hatást létrehozni.
 
@@ -16424,7 +16443,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/szexualmagia.md
 
-## 🟣 💫 Mágia metódus: Szexuálmágia (1)
+## 🟣 💫 Mágia metódus: Szexuálmágia (3)
 
 Intim együttlét során hozod létre a mágikus hatást.
 
@@ -16448,7 +16467,7 @@ xyz
 ---
 ## File: md/fortelyok.magia.metodusok/szimpatikus_magia.md
 
-## 🟣 💫 Mágia metódus: Szimpatikus mágia (1)
+## 🟣 💫 Mágia metódus: Szimpatikus mágia (3)
 
 A tárgyak, lények, események közti kapcsolati hídon keresztül küldesz át mágikus hatást.
 
@@ -16460,9 +16479,13 @@ A tárgyak, lények, események közti kapcsolati hídon keresztül küldesz át
 
 ### Kínált lehetőség: Mágia átküldése az alábbi szimpatikus hidakon
 
-- Vér: +0
-- Kardművész kardja: +2
-- Kedvenc kiskanál: +9
+```
+Erősség igény plusz
+
++0: Vér
++2: Kardművész kardja
++9: Kedvenc kiskanál
+```
 
 ### Megnyílt lehetőséget az alábbi összhangokra
 
@@ -29239,7 +29262,7 @@ Aura Alap
 ```
 
 ---
-## Párbaj: Varázsló akarata vs Mágiaellenállás
+## Aurapárbaj: Varázsló akarata vs Mágiaellenállás
 
 ⭕TODO: szöveg
 
@@ -29618,8 +29641,8 @@ Példák:
 - Auraérintés, Aurapárbaj (behivatkozni)
 - Erősség meghatározása, rekesz felhasználása (hivatkozás itt is)
 - Komplexitás-próba (opcionális) (hivatkozás)
-- Mágia időtartam kitolása ([ADR](ADR.magia.idotartam.kitolasa))
-- Mágia sebzése ([ADR](ADR.magia.sebzese))
+- Mágia időtartam kitolása ([ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.idotartam.kitolasa))
+- Mágia sebzése ([ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.sebzese))
 
 
 ---
