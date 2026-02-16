@@ -1,6 +1,6 @@
 ## 🟣 Pszí Telekinézis (3)
 
-Egy lassú, andalogva sétáló ember sebességével vagy képes tárgyakat szellemi akaratoddal mozgatni. Az ismeretet jellemzően felsőoktatásban oktatják, mint amilyen a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeret.
+Egy lassú, andalogva sétáló ember sebességével vagy képes tárgyakat szellemi akaratoddal mozgatni.
 
 A Telekinézis valós erejű alkalmazása a **Természetes Anyagok Mágiája** Arkánummal valósul meg, mikor a mágiatudó Étert köt a célpontban meg. Ez a pszionikus alkalmazás e varázslat nagyságrendekkel leegyszerűsítettebb, jelentősen gyengébb módja.
 

@@ -1,8 +1,10 @@
 # 🌀Pszí
 
-Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.pszi) fejlesztjük. Amint ott elkészül, bemásolni ide.
+Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint amilyen a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeret - amely fortélyként tanulható.
 
-### [Pszí diszciplínák](091_pszi_diszciplinak.md)
+## [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md) (3)
+
+## [Pszí Telepátia](fortelyok.misztikus/pszi_telepatia.md) (3)
 
 ---
 

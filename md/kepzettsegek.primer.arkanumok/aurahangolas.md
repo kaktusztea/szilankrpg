@@ -1,12 +1,12 @@
 ## 🔵 Aurahangolás
 
+A személyes Aura speciális alkalmazásai tartoznak ide.
 
 ## Formulák
 
 - Auraerősítés
-- [Aurarejtés](STUDY.pszi.diszciplinak): fortély legyen az Aurahangolás arkánum alá, vagy sima Formula?
+- Aurarejtés
 - Aurahamisítás
-
 
 ### Domináns Tulajdonságok
 
