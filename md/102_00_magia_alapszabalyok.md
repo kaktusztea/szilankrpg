@@ -1,18 +1,18 @@
 # Mágia alapszabályok
 
-## [Mágia Tradíciók](app://obsidian.md/102_01_magia_tradiciok.md)
+## [Mágia Tradíciók](102_01_magia_tradiciok.md)
 
-## [Mágikus Szférák és Arkánumaik](app://obsidian.md/102_02_magikus_szferak_arkanumok.md)
+## [Mágikus Szférák és Arkánumaik](102_02_magikus_szferak_arkanumok.md)
 
-## [Varázslások száma](app://obsidian.md/102_03_varazslasok_szama.md)
+## [Varázslások száma](102_03_varazslasok_szama.md)
 
-## [Varázslat Erőssége](app://obsidian.md/102_04_varazslat_erossege.md)
+## [Varázslat Erőssége](102_04_varazslat_erossege.md)
 
-## [Varázslat Komplexitása](app://obsidian.md/102_05_varazslat_komplexitasa.md)
+## [Varázslat Komplexitása](102_05_varazslat_komplexitasa.md)
 
-## [Példa Erősség és Kompexitás értékeire és viszonyára](app://obsidian.md/102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)⚡
+## [Példa Erősség és Kompexitás értékeire és viszonyára](102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)⚡
 
-## [Példa Arkánum és Metódus viszonyára](app://obsidian.md/102_07_pelda_arkanum_es_motodues_viszonyara.md)⚡
+## [Példa Arkánum és Metódus viszonyára](102_07_pelda_arkanum_es_motodues_viszonyara.md)⚡
 
 ---
 
