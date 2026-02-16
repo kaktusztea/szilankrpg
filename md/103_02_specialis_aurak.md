@@ -46,6 +46,6 @@
 
 ---
 
-🔗 [Aurapárbaj](103_03_auraparbaj.md) →
+🔗 [Aurapárbaj](103_05_auraparbaj.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

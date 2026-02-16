@@ -16,9 +16,9 @@
 
   - [Aura jellemzői](103_01_aura_jellemzoi.md)
   - [Speciális Aurák](103_02_specialis_aurak.md)
-  - [Aurapárbaj](103_03_auraparbaj.md)
-  - [Varázshasználó Aura képességei](103_04_varazshasznalo_aura_kepessegei.md)
-  - [Aura megkötése varázstárgyakban](103_05_aura_megkotese_varazstargyakban.md)
+  - [Aurapárbaj](103_05_auraparbaj.md)
+  - [Varázshasználó Aura képességei](103_06_varazshasznalo_aura_kepessegei.md)
+  - [Aura megkötése varázstárgyakban](103_07_aura_megkotese_varazstargyakban.md)
 
 ### [Mágia metódusok](104_magia_metodusok.md)
 

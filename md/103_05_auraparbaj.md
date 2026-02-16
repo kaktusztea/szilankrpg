@@ -20,35 +20,6 @@ Aura alap
 ```
 
 
----
-## Mágiaellenállás
-
-⭕TODO: szöveg
-
-```
-Aura alap
-+ 10
-+ módosítók
-  Amulettek, varázstárgyak
-  Litániák, versek mormolása
-  Képzettségek másodlagos hatásai 
-```
-
-<br />
-
----
-##  Mágia akarata
-
-⭕TODO: szöveg
-
-```
-Aura Alap
-+ módosítók
-  Aurakiterjesztés (szellemkéz, zóna)
-  Auraerősítés formula bónusza
-  Metódus 3. foka
-  Szituáció, összhang
-```
 
 ---
 ## Aurapárbaj: Varázsló akarata vs Mágiaellenállás
@@ -88,6 +59,6 @@ Mágiaellenállás
 
 ---
 
-🔗 [Varázshasználó Aura képességei](103_04_varazshasznalo_aura_kepessegei.md) →
+🔗 [Varázshasználó Aura képességei](103_06_varazshasznalo_aura_kepessegei.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

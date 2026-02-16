@@ -1,7 +1,5 @@
 ## 🔵 Aurahangolás
 
-Lásd: [ADR: Aura](https://github.com/kaktusztea/szilankrpg/wiki/ADR.aura#%EF%B8%8Fmodell-a-aura-alap--dob%C3%A1s-aura-c%C3%A9lsz%C3%A1mra)
-
 
 ## Formulák
 

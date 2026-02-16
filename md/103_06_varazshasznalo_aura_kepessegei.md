@@ -97,6 +97,6 @@ Ha a varázsló odafigyel ennek elrejtésére (lásd fenn: Aurarejtés), akkor a
 
 ---
 
-🔗 [Aura megkötése varázstárgyakban](103_05_aura_megkotese_varazstargyakban.md) →
+🔗 [Aura megkötése varázstárgyakban](103_07_aura_megkotese_varazstargyakban.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
