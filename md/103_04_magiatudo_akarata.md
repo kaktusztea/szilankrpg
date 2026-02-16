@@ -1,15 +1,15 @@
-# Mágia akarata
-
+# Mágiatudó akarata
 
 ⭕TODO: szöveg
 
 ```
-Aura Alap
-+ módosítók
-  → Aurakiterjesztés (szellemkéz, zóna)
-  → Auraerősítés formula bónusza
-  → Metódus 3. foka
-  → Szituáció, összhang
+Aura Alap  =  2x (TSz + Önuralom)
+ + k20
+ + Aurakiterjesztés (szellemkéz, zóna)
+ + Auraerősítés formula bónusza
+ + Metódus 3. foka
+ + Szituáció, összhang
+ + Képzettségek másodlagos hatásai 
 ```
 
 ---
@@ -42,7 +42,7 @@ Csatatér
 - **Erősség**: `1`
 - **Komplexitás**: választható
 
-Ez egy opcionális, bármely varázsláskor ingyen alkalmazható formula, amely az alkalmazó által választott Komplexitásra végezhető - ő dönti el, mekkora rizikót vállal.
+Ez egy opcionális, bármely varázsláskor ingyen alkalmazható formula, amely az alkalmazó által választott **Komplexitásra** végezhető - ő dönti el, mekkora rizikót vállal.
 
 ```
 Próbadobás támadó
@@ -63,18 +63,23 @@ Komplexitás  Bónusz
 30    →       +15
 ```
 
+### Sikeres Auraerősítés próba
 
 ```
-Sikeres próba
- + Aura bónusz a táblázatból
-   az adott varázslatra (csak)
++ Aura bónusz a táblázatból
+  az adott varázslatra (csak)
+```
 
-Sikertelen próba:
- → Aura Alap levonás: -2
-   azonnal érvényesül
- → Regeneráció: 1 / óra
- → NEM okoz automatikus
-   varázslat kudarcot 
+### Sikertelen Auraerősítés próba
+
+```
+→ Aura Alap levonás: -2
+  azonnal érvényesül
+
+→ Regeneráció: 1 / óra
+
+→ NEM okoz automatikus
+  varázslat kudarcot 
 ```
 
 🔆 Az ideiglenes Aura Alap csökkenés a varázstárgyakban megkötött Aurát nem érinti.
@@ -89,7 +94,9 @@ Metódus 3.foka esetén
  +2 Mágikus Akaratra
 ```
 
-Amennyiben az épp használt
+Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, akkor `+2` bóuszt kapsz Mágikus akaratodra.
+
+<br />
 
 ---
 ## Szituáció, összhang
@@ -128,3 +135,26 @@ Amennyiben az épp használt
 
 +2: Áldozat érzelmi sokkban
 ```
+
+<br />
+
+---
+## Képzettségek másodlagos hatásai
+
+⭕TODO: formázás, fogalmazás⭕
+
+
+
+- Őrület varázslása viharos tengeren
+- Védelem: a hajóskapitányra nyugodt tengeren nehezebb rá őrületet varázsolni
+
+✅ Agóra:
+Képzettségszinttől függ. Aura TÉ/VÉ
+
+```
++1: 3.szint
+...
++5: 15.szint
+```
+
+---

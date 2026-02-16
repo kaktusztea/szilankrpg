@@ -1,8 +1,8 @@
-## Mágia metódusok
+# Mágia metódusok
 
 ⭕TODO: Kiegészíteni⭕
 
-→ [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)
+→ [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
 
 Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a világba hozza. Változó, hogy melyik Mágikus Tradíció mely Mágia metódusok ismer.
 
