@@ -1,6 +1,6 @@
 # Varázslás menete
 
-⭕TODO⭕ [ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslas.menete) feldolgozása, migrálás ide
+⭕TODO⭕ [ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslas.menete) feldolgozása, migrálás ide.
 
 ⭕TODO⭕ Ezt az oldal lehet, hogy csak tartalomjegyzék az korábbi oldalakra??
 
