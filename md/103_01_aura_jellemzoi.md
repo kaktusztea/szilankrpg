@@ -72,6 +72,21 @@ Aurabontásnál
   = 12 (?⭕TODO)
 ```
 
+<br />
+
+---
+##  0 értékű Auránál
+
+⭕Aurabontás⭕ formula, vagy más mágikus/környezeti hatás előidezhet olyan szituációt, hogy Aura értéked `0`-ra csökken. Ekkor az alábbi állapotba kerülsz:
+
+- [Zavar (1) Kizökkent](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-zavar-1-kiz%C3%B6kkent) Státusz - ✅ Agóra
+- magabiztosságod elszáll, zavarodottság vesz úrrá rajtad
+- Emberismeret képzettségpróbádra: `Hátrány-2` (Befolyásolások ellen)
+
+Példa: gazdag özvegy, akinek csak [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md) Arkánuma van és bálokon ledominál más nemeseket, amjd befolyása alá vonja őket.
+
+<br />
+
 ---
 
 🔗 [Speciális Aurák](103_02_specialis_aurak.md) →

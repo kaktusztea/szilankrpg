@@ -2,6 +2,8 @@
 
 ⭕TODO: Kiegészíteni⭕
 
+→ [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)
+
 Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a világba hozza. Változó, hogy melyik Mágikus Tradíció mely Mágia metódusok ismer.
 
 Áldás, Átok, Bábúmágia, Bájitalok, Ceremoniális mágiák, Dalmágia, Fókuszok, Emitterek, Formázás, Gyertyamágia, Jelmágia, Rúnamágia, Litánia, Rituálé, Maszkmágia, Megkötés, Rituális/Tánc mágia, Szexuálmágia, Szimpatikus mágia, Hívás/Idézés, Űzés, Írányítás, Hang, Fény

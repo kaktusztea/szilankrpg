@@ -1,6 +1,6 @@
 # Misztikus Fortélyok
 
-⭕TODO⭕ [ADR](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) alól ide migrálni.
+⭕TODO⭕ [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) alól ide migrálni.
 
 ---
 
