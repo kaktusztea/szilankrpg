@@ -1,9 +1,8 @@
-# Példa Erősség és Kompexitás értékeire és viszonyára
-
-
-**Óriást átalakítani lepkévé**
+# ⚡Példa Erősség és Kompexitás értékeire és viszonyára
 
 ```
+Óriást átalakítani lepkévé
+
 Magas Erősség  (E=12)
   Sok anyag
 

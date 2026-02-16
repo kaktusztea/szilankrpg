@@ -1,6 +1,6 @@
 # Aurapárbaj
 
-Mikor egy mágiatudó varázsol, az ő, vagy a mágikus hatást kifejtő tárgy, esetleg terület **aktuális** Aurája, [Mágikus akarata](103_04_magia_akarata.md) feszül szembe a célpont [Mágiaellenállásával](103_03_magiaellenallas.md) (ha van). Ez az **Aurapárbaj**.
+Mikor egy mágiatudó varázsol, az ő, vagy a mágikus hatást kifejtő tárgy, esetleg terület **aktuális** Aurája, [Mágikus akarata](103_04_magia_akarata.md) feszül szembe a célpont [Mágiaellenállásával](103_03_magiaellenallas.md) (ha van). Ehhez Auraérintés szükséges. Ez az **Aurapárbaj**.
 
 Amennyiben a varázsló dobott értéke eléri, vagy meghaladja a védekező fél Mágiaellenállását, a mágia átjutott annak védelmén és kifejti rá hatását az alsóbb síkokon.
 

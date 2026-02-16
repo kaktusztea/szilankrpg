@@ -15,6 +15,10 @@ Aura Alap  =  2x (TSz + Önuralom)
 ---
 ## Módosító: Aurakiterjesztés
 
+Az Auraérintéshez a varázsló kiterjeszti az Auráját **Szellemkézzel** vagy **Zónában** és úgy éri el a célpontot.
+
+Ekkor az aktuális Aurája gyengül. Ennek léptékeit itt találhatjuk:
+
 ```
 Érintés / szemkontaktus
   szellemkéz: 0

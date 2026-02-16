@@ -8,11 +8,7 @@
 
 ⭕TODO⭕ Átfogalmazni, formázás
 
-Az Auraérintéshez a varázsló kiterjeszti az Auráját és úgy éri el a célpontot.
-
-Kiterjesztheti
-- szellemkézzel
-- zónában
+Az Auraérintéshez a varázsló kiterjeszti az Auráját **Szellemkézzel** vagy **Zónában** és úgy éri el a célpontot.
 
 Ekkor az aktuális Aurája gyengül. Ennek léptékeit itt találhatjuk:
 
