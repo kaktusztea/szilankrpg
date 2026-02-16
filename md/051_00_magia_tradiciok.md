@@ -1,6 +1,7 @@
 ## Mágia Tradíciók
 
-→ [STUDY: Tradíciók](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.tradiciok)
+→ [STUDY: Tradíciók jellemzők](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.tradiciok.jellemzoi)⭕\
+→ [ADR: Tradíciók működésük](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.tradiciok.mukodese)⭕
 
   - [Magasmágia (mozaikmágia)](051_01_magasmagia.md)
   - [Vulgármágia](051_02_vulgarmagia.md)

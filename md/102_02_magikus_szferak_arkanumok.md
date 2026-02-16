@@ -4,6 +4,22 @@
 
 ⭕TODO⭕: Az egyes Szférák rövid leírása mindegyik alatt.
 
+Az Arkánumok (mágiaiskolák) képzettségek.
+
+A mágiaiskolák első `2` szinten csak elméleti tudást adnak, az alájuk tartozó varázslatokat csak a képzettség `3.` szintjétől alkalmazhatja a mágiatudó!
+
+Az egyes kiemelt szinteknek követelményei vannak, mint a „sima” képzettségeknél. Ezek iskolánként eltérőek.
+
+A mágiaiskolák egyes kiemelt szinjei (jellemzően magasabb szinteken) adjanak kis extrákat. Például pár MP-ért vizualizálni a varázslatot (pl.: betegség varázslat közben kis döglegyek képe kőröz az áldozat körül). 🔆Kérdés: a megjelent mellékeffekt a varázsló, vagy az áldozat képzeletvilágától függjön?
+
+🔆Egyes mágiaiskolák bizonyos mozaikjai magas nehézségűek legyenek alaperősítésen is. Így egy iskola alacsony szinten való megtanulásával csak annak egyszerűbb formuláit lehet megcsinálni.
+
+### Mágiaismeret
+
+Ha van **Tradíció** képzettség `3` és `6`. szint között, akkor lehet mágiaiskolákat tanulni, de legfeljebb `1.` és `2.` szinten. Ez csak nagyon elméleti alaptudást nyújt.
+
+
+
 Minden szféra alá 2 Arkánum (mágiaiskola) tartozik.
 
 Minden Szféra / Arkánum egy ősi nyelvnek felel meg.

@@ -6,8 +6,33 @@
 ---
 ## Aurakiterjesztés, Varázslók hatótávja
 
-  - Szellemkéz és  Zóna⭕
-  - Lépték szerinti csökkenés, hatótáv kategóriák⭕
+⭕TODO⭕ Átfogalmazni, formázás
+
+Az Auraérintéshez a varázsló kiterjeszti az Auráját és úgy éri el a célpontot.
+
+Kiterjesztheti
+- szellemkézzel
+- zónában
+
+Ekkor az aktuális Aurája gyengül. Ennek léptékeit itt találhatjuk:
+
+```
+Érintés / szemkontaktus
+  szellemkéz: 0
+  zóna: 0
+Szoba
+  szellemkéz: 0
+  zóna: -3
+Terem
+  szellemkéz: -3
+  zóna: -6
+Mező
+  szellemkéz: -6
+  zóna: -9
+Csatatér
+  szellemkéz: -9
+  zóna: -15
+```
 
 <br />
 
