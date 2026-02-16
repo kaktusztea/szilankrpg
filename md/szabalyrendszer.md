@@ -255,7 +255,7 @@
   - [Aura jellemzői](103_01_aura_jellemzoi.md)
   - [Speciális Aurák](103_02_specialis_aurak.md)
   - [Mágiaellenállás](103_03_magiaellenallas.md)
-  - [Mágiatudó akarata](103_04_magiatudo_akarata.md)
+  - [Mágia akarata](103_04_magia_akarata.md)
   - [Aurapárbaj](103_05_auraparbaj.md)
   - [Varázshasználó Aura képességei](103_06_varazshasznalo_aura_kepessegei.md)
   - [Aura megkötése varázstárgyakban](103_07_aura_megkotese_varazstargyakban.md)

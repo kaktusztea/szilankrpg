@@ -1,4 +1,4 @@
-# Mágiatudó akarata
+# Mágia akarata
 
 ⭕TODO: szöveg
 

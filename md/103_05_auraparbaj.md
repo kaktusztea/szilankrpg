@@ -1,51 +1,16 @@
 # Aurapárbaj
 
-⭕TODO Átfogalmazni
+Mikor egy mágiatudó varázsol, az ő, vagy a mágikus hatást kifejtő tárgy, esetleg terület **aktuális** Aurája, [Mágikus akarata](103_04_magia_akarata.md) feszül szembe a célpont [Mágiaellenállásával](103_03_magiaellenallas.md) (ha van). Ez az **Aurapárbaj**.
 
-Mikor egy mágiatudó varázsol, az ő, vagy a mágikus hatást kifejtő tárgy, terület **aktuális** Aurája [Mágikus akarata](103_04_magiatudo_akarata.md) feszül szembe a célpont Aurájával (ha van). A varázsló aktuális Aurája nyilván alacsonyabb lehet ha kinyúl Szellemkezével, vagy Zónában kiterjeszti akaratát. Amennyiben a varázsló dobott értéke eléri, vagy meghaladja a védekező félét, a mágia átjutott annak védelmén és kifejti rá hatását az alsóbb síkokon.
+Amennyiben a varázsló dobott értéke eléri, vagy meghaladja a védekező fél Mágiaellenállását, a mágia átjutott annak védelmén és kifejti rá hatását az alsóbb síkokon.
 
-Varázsláskor a varázsló és a védekező fél is meghatározza **Aura** értékékét és ezeket vetik össze. A támadónál ezt **Mágia Akaratának**, a védekezőnél **Mágiaellenállásnak** nevezzük.
+A Mágiaellenállás egysége, mivel az **Aura** mind az **Asztrál**, **Mentál** és **Fizikai** síkon érkező befolyásoló/változtató hatás ellen védelmet nyújt. Egyes hatásokkal szemben alkalmanként gyengébb/erősebb lehet.
 
-Ha a **Mágia Akarata** eléri, vagy meghaladja a **Mágiellenállás** értékét, akkor a mágia átjutott a védelmen és kifejti hatását.
+### [Mágia akarata](103_04_magia_akarata.md)  vs  [Mágiaellenállás](103_03_magiaellenallas.md)
 
-A Mágiaellenállás egységes, nincs külön asztrál/mentál ellenállás, vagy "pajzs". Az **Aura** mind az **Asztrál**, **Mentál** és **Fizikai** síkon érkező befolyásoló/változtató hatás ellen védelmet nyújt. Egyes hatásokkal szemben alkalmanként gyengébb/erősebb lehet.
+🔆 Előbbinél dobásra is szükség van (`k20`), utóbbinál nem.
 
-
-<br />
-
----
-## Aurapárbaj: Varázsló akarata vs Mágiaellenállás
-
-⭕TODO: szöveg
-
-```
-Mágia akarata + k20
-      vs
-Mágiaellenállás
-```
-
-<br />
-
-
----
-## Mágia akarata módosítói Aurapárbaj során
-
-⭕TODO
-
-- Auraerősítés formula hatása
-- Metódus 3. foka
-- Szituáció, összhang
-
-<br />
-
----
-## Mágiaellenállás módosítói Aurapárbaj során
-
-⭕TODO
-
-- Amulett, varázstárgy, ereklye
-- Litániák, versek (fortély kell!)
-- képzettségek másodlagos hatásai
+🔆 Az egyes Módosítókat lásd a fenti linkek alatt.
 
 ---
 
