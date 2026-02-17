@@ -422,8 +422,6 @@ https://github.com/kaktusztea/szilankrpg/
 ---
 ### 9. [Pszí](090_pszi.md) 🌀
 
-#### 9.1 [Pszi diszciplínák](091_pszi_diszciplinak.md) 🌀
-
 ---
 ### 10. [Mágiarendszer](100_magiarendszer.md) ✨
 
@@ -439,9 +437,11 @@ https://github.com/kaktusztea/szilankrpg/
 - [Aura](103_00_aura.md)
   - [Aura jellemzői](103_01_aura_jellemzoi.md)
   - [Speciális Aurák](103_02_specialis_aurak.md)
-  - [Aurapárbaj](103_03_auraparbaj.md)
-  - [Varázshasználó Aura képességei](103_04_varazshasznalo_aura_kepessegei.md)
-  - [Aura megkötése varázstárgyakban](103_05_aura_megkotese_varazstargyakban.md)
+  - [Mágiaellenállás](103_03_magiaellenallas.md)
+  - [Mágia akarata](103_04_magia_akarata.md)
+  - [Aurapárbaj](103_05_auraparbaj.md)
+  - [Varázshasználó Aura képességei](103_06_varazshasznalo_aura_kepessegei.md)
+  - [Aura megkötése varázstárgyakban](103_07_aura_megkotese_varazstargyakban.md)
 - [Mágia metódusok](104_magia_metodusok.md)
 - [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)
 - [Misztikus fortélyok](106_misztikus_fortelyok.md)
@@ -7085,7 +7085,13 @@ xyz
 
 ## 🔵 Aurahangolás
 
-Lásd: [ADR: Aura](https://github.com/kaktusztea/szilankrpg/wiki/ADR.aura#%EF%B8%8Fmodell-a-aura-alap--dob%C3%A1s-aura-c%C3%A9lsz%C3%A1mra)
+A személyes Aura speciális alkalmazásai tartoznak ide.
+
+## Formulák
+
+- Auraerősítés
+- Aurarejtés
+- Aurahamisítás
 
 ### Domináns Tulajdonságok
 
@@ -18012,17 +18018,22 @@ Az adott Tradíciók követelményeit lásd azok leírásában.
 
 ## Mágia Tradíciók
 
-→ [STUDY: Tradíciók](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.tradiciok)
+→ [STUDY: Tradíciók jellemzők](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.tradiciok.jellemzoi)⭕\
+→ [ADR: Tradíciók működésük](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.tradiciok.mukodese)⭕
 
   - [Magasmágia (mozaikmágia)](051_01_magasmagia.md)
   - [Vulgármágia](051_02_vulgarmagia.md)
   - [Ordani Tűzmágia](051_03_ordani_tuzmagia.md)
   - [Bárdmágia](051_04_bardmagia.md)
+  - [Illuzionista](051_05_illuzionista.md)
   - [Természeti mágia](051_06_termeszeti_magia.md)
   - [Sámánmágia](051_07_samanmagia.md)
   - [Drágakőmágia](051_08_dragakomagia.md)
 
+
 ### Metamágia Arkánum
+
+⭕Ez még mindig? ⭕
 
 ```
 Metamágia Arkánum szint
@@ -28659,22 +28670,11 @@ Leírásukat lásd a Mágiarendszer [Mágikus Státuszok](107_magikus_statuszok.
 
 # 🌀Pszí
 
-Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.pszi) fejlesztjük. Amint ott elkészül, bemásolni ide.
+Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint amilyen a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeret - amely fortélyként tanulható.
 
-### [Pszí diszciplínák](091_pszi_diszciplinak.md)
+## [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md) (3)
 
----
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#9-pszí-)
-
-
----
----
-## File: md/091_pszi_diszciplinak.md
-
-## 🌀 Pszí diszciplínák
-
-→ [STUDY doksi](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.pszi.diszciplinak)
+## [Pszí Telepátia](fortelyok.misztikus/pszi_telepatia.md) (3)
 
 ---
 
@@ -28691,15 +28691,51 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 ### [Mágia alapszabályok](102_00_magia_alapszabalyok.md)
 
-### [Aura, Mágikus Átütés, Mágiaellenállás](103_00_aura.md)
+- [Mágia Tradíciók](102_01_magia_tradiciok.md)
+- [Mágikus Szférák és Arkánumaik](102_02_magikus_szferak_arkanumok.md)
+- [Varázslások száma](102_03_varazslasok_szama.md)
+- [Varázslat Erőssége](102_04_varazslat_erossege.md)
+- [Varázslat Komplexitása](102_05_varazslat_komplexitasa.md)
+- [Példa Erősség és Kompexitás értékeire és viszonyára](102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)
+- [Példa Arkánum és Metódus viszonyára](102_07_pelda_arkanum_es_motodues_viszonyara.md)
+
+### [Aura](103_00_aura.md)
+
+  - [Aura jellemzői](103_01_aura_jellemzoi.md)
+  - [Speciális Aurák](103_02_specialis_aurak.md)
+  - [Mágiaellenállás](103_03_magiaellenallas.md)
+  - [Mágia akarata](103_04_magia_akarata.md)
+  - [Aurapárbaj](103_05_auraparbaj.md)
+  - [Varázshasználó Aura képességei](103_06_varazshasznalo_aura_kepessegei.md)
+  - [Aura megkötése varázstárgyakban](103_07_aura_megkotese_varazstargyakban.md)
 
 ### [Mágia metódusok](104_magia_metodusok.md)
 
 ### [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md)
 
-### [Mágikus szférák, arkánumok](102_02_magikus_szferak_arkanumok.md)
+### [Misztikus fortélyok](106_misztikus_fortelyok.md)
 
 ### [Mágikus Státuszok](107_magikus_statuszok.md)
+
+### [Varázslás menete](108_varazslas_menete.md)
+
+### **Arkánumok listája**
+- [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
+- [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
+- [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
+- [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
+- [Életerő manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
+- [Időmágia](kepzettsegek.primer.arkanumok/idomagia.md)
+- [Illúziók](kepzettsegek.primer.arkanumok/illuziok.md)
+- [Külső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md)
+- [Mentálmágia](kepzettsegek.primer.arkanumok/mentalmagia.md)
+- [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md)
+- [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)
+- [Sors befolyásolás](kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
+- [Sors érzékelés](kepzettsegek.primer.arkanumok/sors_erzekeles.md)
+- [Térmágia](kepzettsegek.primer.arkanumok/termagia.md)
+- [Természetes anyagok mágiája](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md)
+- [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
 
 ---
 
@@ -28727,20 +28763,19 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 # Mágia alapszabályok
 
-## Tradíciók
+## [Mágia Tradíciók](102_01_magia_tradiciok.md)
 
-- [STUDY: Mágia Tradíciók egyedi jellemzői](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.tradiciok.jellemzoi) ⭕
-- [ADR: Mágia Tradíciók működése](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.tradiciok.mukodese) ⭕
+## [Mágikus Szférák és Arkánumaik](102_02_magikus_szferak_arkanumok.md)
 
----
-## Arkánumok (Mágiaskolák)
+## [Varázslások száma](102_03_varazslasok_szama.md)
 
-- [ADR: Mágia Arkánumok működése](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.arkanumok.mukodese) ⭕
+## [Varázslat Erőssége](102_04_varazslat_erossege.md)
 
----
-### Varázslások száma
+## [Varázslat Komplexitása](102_05_varazslat_komplexitasa.md)
 
-- [ADR: Varázslatok száma / kör](https://github.com/kaktusztea/szilankrpg/wiki/adr.varazslatok.szama.per.kor) ⭕
+## [Példa Erősség és Kompexitás értékeire és viszonyára](102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)⚡
+
+## [Példa Arkánum és Metódus viszonyára](102_07_pelda_arkanum_es_motodues_viszonyara.md)⚡
 
 ---
 
@@ -28757,6 +28792,11 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 Lásd a [Mágia tradíciók](051_00_magia_tradiciok.md) fejezetet!
 
+→ [STUDY: Tradíciók jellemzők](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.tradiciok.jellemzoi)⭕\
+→ [ADR: Tradíciók működésük](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.tradiciok.mukodese)⭕
+
+Magasmágia, Vulgármágia, Ordani Tűzmágia, Bárdmágia, Illuzionista, Természeti mágia, Sámánmágia, Drágakőmágia
+
 ---
 
 🔗 [Mágikus Szférák, Arkánumok](102_02_magikus_szferak_arkanumok.md)] →
@@ -28769,9 +28809,28 @@ Lásd a [Mágia tradíciók](051_00_magia_tradiciok.md) fejezetet!
 
 # Mágikus Szférák és arkánumaik listája
 
+→ [ADR: Mágia Arkánumok működése](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.arkanumok.mukodese) ⭕
+
+
 ⭕TODO⭕: Bevezető, legenda, utalás mágiaelméletre.
 
 ⭕TODO⭕: Az egyes Szférák rövid leírása mindegyik alatt.
+
+Az Arkánumok (mágiaiskolák) képzettségek.
+
+A mágiaiskolák első `2` szinten csak elméleti tudást adnak, az alájuk tartozó varázslatokat csak a képzettség `3.` szintjétől alkalmazhatja a mágiatudó!
+
+Az egyes kiemelt szinteknek követelményei vannak, mint a „sima” képzettségeknél. Ezek iskolánként eltérőek.
+
+A mágiaiskolák egyes kiemelt szinjei (jellemzően magasabb szinteken) adjanak kis extrákat. Például pár MP-ért vizualizálni a varázslatot (pl.: betegség varázslat közben kis döglegyek képe kőröz az áldozat körül). 🔆Kérdés: a megjelent mellékeffekt a varázsló, vagy az áldozat képzeletvilágától függjön?
+
+🔆Egyes mágiaiskolák bizonyos mozaikjai magas nehézségűek legyenek alaperősítésen is. Így egy iskola alacsony szinten való megtanulásával csak annak egyszerűbb formuláit lehet megcsinálni.
+
+### Mágiaismeret
+
+Ha van **Tradíció** képzettség `3` és `6`. szint között, akkor lehet mágiaiskolákat tanulni, de legfeljebb `1.` és `2.` szinten. Ez csak nagyon elméleti alaptudást nyújt.
+
+
 
 Minden szféra alá 2 Arkánum (mágiaiskola) tartozik.
 
@@ -28927,8 +28986,47 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 
 # Varázslások száma
 
-⭕TODO⭕: [ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslatok.szama.per.kor) alól ide migrálni.
+Harcban körönként `1 db` varázslatot indíthatsz.
 
+```
+1 varázslás / kör
+
+Általános KÉ dobás
+  dönt, mikor jössz
+```
+
+<br />
+
+---
+## "Plusz célpont" Aurahangolás-arkánum formula
+
+Az alábbiak akkor érvényeek, ha a mágiatudó szellemkézzel, vagy kiterjesztés nélkül próbál célpontjára varázsolni.
+
+```
+Azonos varázslatra
+
++3 Komplexitás / + célpont
+  minden használt Arkánumra
+```
+
+```
+Rekesz igény
+
+Minden célpont 1 db
+ választott Rekeszt elhasznál
+```
+
+Ugyan egy körben csak egyszer varázsolhatsz, de dönthetsz úgy, hogy **az adott konkrét varázslatnak** több célpontja legyen. Ekkor varázslatodban használt Arkánumok komplexitása (Célszáma) fixen `+3 / célpont` értékkel nő.
+
+Fontos, hogy minden újabb célpont elhasznál egy rekeszt Mágiakeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
+
+A számolás szempontjából mindegy, hogy **Szellemkézzel** kinyúlt Aurával, vagy kinyúlás nélkül varázsolsz. Zónában kiterjesztett Aura esetén nyilván nincs értelme a formulának, mivel akkor az `1 db` mindenkire hat a zónán belül.
+
+Szellemkéz kinyúlás esetén az esetleges Aura csökkenés számolásánál a legtávolabbi célpont a mérvadó.
+
+Ne feledd: ha célzást fgénylő mágiát használsz, mindegyik lövedéknél Célzó dobást kell tenned - Mágikus lövészet képzettség segítségével.
+
+Zónában kiterjesztett Aura esetén **nincs** lehetőség Plusz célpont formula használatára.
 
 ---
 
@@ -28945,9 +29043,92 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 
 ⭕TODO⭕: ezek alól ide migrálni.
 
-- [ADR: Erősség](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.erossege)
-- [ADR: Kimerülés](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.erosseg.tulvallalasos.kimerules.modell)
-- [Fullos sum oldal #4. pont](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.mechanika.full)
+- [ADR: Mágia Erőssége](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erossege)
+- [ADR: Mágia Erősség Túlvállalás, Kimerülés modell](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erosseg.tulvallalasos.kimerules.modell)
+
+
+A változtatás "energiaigényét", nagyságát szimbolizálja.
+
+<br />
+
+## Max Erősség
+
+A **Mágia tradíció képzettség** szintje limitálja a mágia Erősséget.
+
+```
+Max varázslat Erősség
+ = Mágia Tradíció képzettség
+```
+
+## Varázslat szükséges Erőssége
+
+```
+- vagy az adott varázslat leírásában szerepel
+- vagy te számolod ki / mondod meg mekkorát
+  akarsz (ha skálázható mint pl. egy tűznyíl)
+- vagy a KM mond egy 1-15 közötti értéket
+  a leírt kívánt hatás alapján, amit leírsz neki
+```
+
+<br />
+
+---
+## Mágiakeret, rekeszek
+
+Karaktered egy Mágiakeretet kap, amely meghatározza, hogy az adott **jelenetben** (egy teljes harc) hány darab, mekkora erősségű (`E`) varázslatot lőhetsz el. A jelenet a zavartalan nyugalmi pillanatig tart (mikor a `VÉ` csökkenések hatása is elmúlik). A felső `3 db` rekesz ekkor "töltődik vissza".
+
+```
+Max E:   1 db
+Max E-1: 1 db
+Max E-2: 1 db
+1 ... (Max E-3): bármennyit
+```
+
+Példa: Vulgármágia Tradíció: `7.szint`
+
+```
+7 E:   1 db
+6 E:   1 db
+5 E:   1 db
+1..4 E: bármennyit
+```
+
+🔆 Magasabb `E` varázslat rekeszt is felhasználhatsz alacsonyabb **E** céljára - ha valamiért ezt akarnád. Például ha már elhasználtad `6E` varázslatodat, akkor még meglevő `7E` slotodat felhasználhatod `6E` formájában is.
+
+🔆 Erősségre hathatnak az Összhangok
+
+<br />
+
+---
+## 🔆 Összetett próba varázslás Erősségnél
+
+Nagyobb, hosszabb varázslatoknál a KM előírhat összetett próbát. Példa:
+
+```
+1 db 7E
+1 db 6E
++ tovább tart a varázslás
+```
+
+<br />
+
+---
+## Mágikus összhangok hatása Erősségre
+
+Rekesz Erősséget módosítanak.
+
+```
+[-3; +3]
+```
+
+Példa: Tűzvarázslat
+- 4-es Slotot lövök el, de 7E-vel hat (+3) vulkán mellett.
+- 7-es Slotot lövök el, de 4E-vel hat (-3) tó mellett.
+
+---
+## Mágia slot regeneráció
+
+→ [ADR: Varázslat túlvállalás](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erosseg.tulvallalasos.kimerules.modell) ⭕
 
 ---
 
@@ -28975,12 +29156,11 @@ Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
 ---
 ## File: md/102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md
 
-# Példa Erősség és Kompexitás értékeire és viszonyára
-
-
-**Óriást átalakítani lepkévé**
+# ⚡Példa Erősség és Kompexitás értékeire és viszonyára
 
 ```
+Óriást átalakítani lepkévé
+
 Magas Erősség  (E=12)
   Sok anyag
 
@@ -29050,10 +29230,21 @@ Auraérintés és Aurapárbaj szükséges.
 ---
 ## File: md/103_00_aura.md
 
-## Aura
+# Aura
 
-→ [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/ADR.aura)
+## [Aura jellemzői](103_01_aura_jellemzoi.md)
 
+## [Speciális Aurák](103_02_specialis_aurak.md)
+
+## [Mágiaellenállás](103_03_magiaellenallas.md)
+
+## [Mágia akarata](103_04_magia_akarata.md)
+
+## [Aurapárbaj](103_05_auraparbaj.md)
+
+## [Varázshasználó Aura képességei](103_06_varazshasznalo_aura_kepessegei.md)
+
+## [Aura megkötése varázstárgyakban](103_07_aura_megkotese_varazstargyakban.md)
 
 ---
 
@@ -29068,8 +29259,6 @@ Auraérintés és Aurapárbaj szükséges.
 
 # Aura jellemzői
 
-## Leírás
-
 ⭕TODO: kifejteni ezeket, ha van szöveges anyag, bemásolni
 
 - Mágiallenállást adja
@@ -29077,19 +29266,26 @@ Auraérintés és Aurapárbaj szükséges.
 
 Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján öleli körbe, védelmezi a lelket. Az Aura a karakterek aktív mágikus akarata és egyben Mágiaellenállása is (Asztrál, Mentál, Fizikai).
 
-Az **Aura Alap** az Aura része, annak "bázisa", ami mindig jelen van. Egy karakter élete során megedződik, sokat tapasztal. Az **Aura Alap** értéke ebből a tapasztalásból származik, nem igényel semmilyen tanult képzettséget - értéke a **Tapasztalati Szint** (TSz) emelkedésével automatikusan nő.
+---
+## Aura Alap
 
 ```
 Aura alap
   2x (TSz + Önuralom)
 ```
 
+Az **Aura Alap** maga az Aura "bázisa", amely mindig jelen van, bár értéke változhat a körülményektől függően.
+
+Egy karakter élete során megedződik, sokat tapasztal. Az **Aura Alap** értéke ebből a tapasztalásból származik, nem igényel semmilyen tanult képzettséget - értéke a **Tapasztalati Szint** (TSz) emelkedésével automatikusan nő.
+
+<br />
+
 ---
 ## Mi ellen véd az Aura?
 
 ⭕TODO: fogalmazás, kifejtés
 
-Az Aurára ható varázslatok
+Az Aurára ható varázslatok ellen véd személyes Aurád. Ellenük [Mágiaellenállásod](103_03_magiaellenallas.md) érvényesül.
 
 ### `1.`Ezeknél az áldozat Aurája véd
 
@@ -29112,17 +29308,19 @@ Az Aurára ható varázslatok
 ---
 ## Aura általános képességei
 
-Az alábbiak mindenkire vonatkoznak, nem kell hozzá mágiatudónak lenni.
+Az alábbiakat bárki elvégezheti, nem szükséges hozzá mágiatudónak lenni.
 
 ### Aura "leengedése"
 
 ✅ Agóra
 
-Akarattal lejjebb vihető az Aura értéke tetszőleges mértékben, de csak kényszer hatása nélkül.
+Pusztán akarattal lejjebb vihető az Aura értéke - tetszőleges mértékben, de fontos, hogy csak kényszer hatása nélkül!
 
 ### Auraérintés érzékelése
 
 ✅ Agóra
+
+⭕TODO: szöveg
 
 ```
 Képzettségpróba
@@ -29139,6 +29337,21 @@ Varázslatnál
 Aurabontásnál
   = 12 (?⭕TODO)
 ```
+
+<br />
+
+---
+##  `0` értékű Aura hatása
+
+⭕Aurabontás⭕ formula, vagy más mágikus/környezeti hatás előidezhet olyan szituációt, hogy Aura értéked `0`-ra zuhan. Ekkor az alábbi állapotba kerülsz:
+
+- [Zavar (1) Kizökkent](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-zavar-1-kiz%C3%B6kkent) Státusz - ✅ Agóra
+- magabiztosságod elszáll, zavarodottság vesz úrrá rajtad
+- Emberismeret képzettségpróbádra: `Hátrány-2` (Befolyásolások ellen)
+
+⚡Példa: gazdag özvegy, akinek csak [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md) Arkánuma van és bálokon ledominál más nemeseket, amjd befolyása alá vonja őket.
+
+<br />
 
 ---
 
@@ -29200,136 +29413,419 @@ Aurabontásnál
 
 ---
 
-🔗 [Aurapárbaj](103_03_auraparbaj.md) →
+🔗 [Aurapárbaj](103_05_auraparbaj.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
 
 
 ---
 ---
-## File: md/103_03_auraparbaj.md
+## File: md/103_03_magiaellenallas.md
+
+# Mágiaellenállás
+
+⭕TODO: szöveg
+
+```
+Aura alap  =  2x (TSz + Önuralom)
++ 10
++ Amulett, varázstárgy, ereklye
++ Litániák, versek mormolása
++ Képzettségek másodlagos hatásai 
+```
+
+---
+## Módosító: Amulett, varázstárgy, ereklye
+
+⭕TODO: formázás, fogalmazás⭕
+
+- nagyon konkrét esetekben, helyzetben valami/valaki ellen véd: ⚡Példa: csak idős nők bájolása ellen véd :)
+- átlagos amulettek max 10% extrát adnak
+- de vannak epikus erejű varázstárgyak, mágikus ereklyék
+- ne feledjük, hogy saját Aurát kell megkötni bennük!
+
+✅ Agóra:
+
+`1.` Átlagos "piacos" amulett.
+- széles körű `+1` (általános asztrál / mentál)
+- nagyon szűk: `+3`
+  - idős nők bájolása ellen
+  - Szellemtől védő amulettek
+  - Élőholttól védő amulettek
+  - mindentől védő is van (Ranagoltól védő)
+
+`2.` Komponenses
+- ezt is mindenre lehet csinálni, de sokkal erősebb, mert van benne egy darab mágikus eredetű anyag
+- Démoni amulett démontestből cafattal
+- Aquir amulett
+
+<br />
+
+---
+## Módosító: Litániák, versek
+
+⭕TODO: formázás, fogalmazás⭕
+
+Mormolásuk védhet.
+
+✅ Agóra:
+- mint az amulettek, amíg mormolja
+  - általános, széles (asztrál/mentál/fizikai): `+1`
+  - konkrétabb: `+2`
+  - nagyon konkrét: `+3`
+- harc közben nem
+
+### Fortély felvétele szükséges hozzá
+
+- Asztrálmantra - `1.fok`
+- Mentálmantra - `1 fokú`
+- Fizikai mantra - `1 fokú`
+
+
+Választhatsz, hogyan használod (mint az amuletteknél)
+
+#### `1.` Általánosan minden ellen: `+1 ME`
+
+"minden Asztrálmágia / Mentálmágia / Fizikai ellen"
+
+#### `2.` Metódus + Arkánum kombó: `+2 ME`
+
+Példa: "Bájital + Asztrálmágia"
+
+#### `3.` Nagyon konkrét szitura: `+3 ME`
+
+- "Öreg nénik betegségmágiája ellen"
+- "Kört rajzolok a szívem fölé, ami megvéd a szellemektől"
+
+A játékos választja ki, hogy melyik fokot használja és azt is, hogy mi ellen.
+
+### Lore
+
+- Jellemzően papoktól tanulható. A paraszt is imát mond, amit tőle tanult - az ad neki némi védelmet.
+- A papoknak NEM kell ezeket felvenni, benne van a Tradíciójukban.
+
+---
+## Képzettségek másodlagos hatásai
+
+⭕TODO: formázás, fogalmazás⭕
+
+Pl. Hajózás: nyílt vízen védhet.
+
+- Őrület varázslása viharos tengeren
+- Védelem: a hajóskapitányra nyugodt tengeren nehezebb rá őrületet varázsolni
+
+✅ Agóra:
+Képzettségszinttől függ. Aura TÉ/VÉ
+
+```
++1: 3.szint
+...
++5: 15.szint
+```
+
+
+---
+---
+## File: md/103_04_magia_akarata.md
+
+# Mágia akarata
+
+⭕TODO: bevezető szöveg
+
+```
+Aura Alap  =  2x (TSz + Önuralom)
+ + k20
+ + Aurakiterjesztés (szellemkéz, zóna)
+ + Auraerősítés formula bónusza
+ + Metódus 3. foka
+ + Szituáció, összhang
+ + Képzettségek másodlagos hatásai 
+```
+
+---
+## Módosító: Aurakiterjesztés
+
+Az Auraérintéshez a varázsló kiterjeszti az Auráját **Szellemkézzel** vagy **Zónában** és úgy éri el a célpontot.
+
+Ekkor az aktuális Aurája gyengül. Ennek léptékeit itt találhatjuk:
+
+```
+Érintés / szemkontaktus
+  szellemkéz: 0
+  zóna: 0
+Szoba
+  szellemkéz: 0
+  zóna: -3
+Terem
+  szellemkéz: -3
+  zóna: -6
+Mező
+  szellemkéz: -6
+  zóna: -9
+Csatatér
+  szellemkéz: -9
+  zóna: -15
+```
+
+<br />
+
+---
+## Módosító: Auraerősítés formula bónusza
+
+- **Arkánum**: Aurahangolás
+- **Erősség**: `1`
+- **Komplexitás**: választható
+
+Ez egy opcionális, bármely varázsláskor ingyen alkalmazható formula, amely az alkalmazó által választott **Komplexitásra** végezhető - ő dönti el, mekkora rizikót vállal.
+
+```
+Próbadobás támadó
+ varázsló oldalán (opcionális)
+ 
+Aurahangolás + Önuralom +k10
+```
+
+```
+Komplexitás  Bónusz
+9     →       +1
+12    →       +3
+15    →       +5
+18    →       +7
+21    →       +9
+24    →       +11
+27    →       +13
+30    →       +15
+```
+
+### Sikeres Auraerősítés próba
+
+```
++ Aura bónusz a táblázatból
+  az adott varázslatra (csak)
+```
+
+### Sikertelen Auraerősítés próba
+
+```
+→ Aura Alap levonás: -2
+  azonnal érvényesül
+
+→ Regeneráció: 1 / óra
+
+→ NEM okoz automatikus
+  varázslat kudarcot 
+```
+
+🔆 Az ideiglenes Aura Alap csökkenés a varázstárgyakban megkötött Aurát nem érinti.
+
+<br />
+
+---
+## Módosító: Metódus 3. foka
+
+```
+Metódus 3.foka esetén
+ +2 Mágikus Akaratra
+```
+
+Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, akkor `+2` bóuszt kapsz Mágikus akaratodra.
+
+<br />
+
+---
+## Szituáció, összhang
+
+### Varázsló állapota
+
+```
+ Előny-Hátrány skálán eltolás (k10)
+
+-2: Erős koncentrálás másra
+    + Összpontosítás próba: 15
+
+-1: Koncentrálás másra
+    + Összpontosítás próba: 12
+```
+
+### Áldozat állapota
+
+```
+ Előny-Hátrány skálán eltolás (k10)
+
+-2: Papi védő áldás II.
+     (adott arkánum ellen)
+    Isteni kegy
+
+-1: Friss szerelmes érzelmét elorozni (nehezebb)
+      (Asztrálmágia ellen)
+    Áldozat kiégett érzelmileg (Asztrálmágia ellen)
+    Harci láz (Asztrál/Mentálmágia ellen)
+    Papi védő áldás I.
+     (adott arkánum ellen)
+    Védőszellem
+
++1: frissen összetört szívű fiatal
+    ficsúrt asztrálmágiával elbájolni (könnyebb)
+
++2: Áldozat érzelmi sokkban
+```
+
+<br />
+
+---
+## Képzettségek másodlagos hatásai
+
+⭕TODO: formázás, fogalmazás⭕
+
+
+
+- Őrület varázslása viharos tengeren
+- Védelem: a hajóskapitányra nyugodt tengeren nehezebb rá őrületet varázsolni
+
+✅ Agóra:
+Képzettségszinttől függ. Aura TÉ/VÉ
+
+```
++1: 3.szint
+...
++5: 15.szint
+```
+
+---
+
+
+---
+---
+## File: md/103_05_auraparbaj.md
 
 # Aurapárbaj
 
-⭕TODO Átfogalmazni
+Mikor egy mágiatudó varázsol, az ő, vagy a mágikus hatást kifejtő tárgy, esetleg terület **aktuális** Aurája, [Mágikus akarata](103_04_magia_akarata.md) feszül szembe a célpont [Mágiaellenállásával](103_03_magiaellenallas.md) (ha van). Ehhez Auraérintés szükséges. Ez az **Aurapárbaj**.
 
-Mikor egy mágiatudó varázsol, az ő, vagy a mágikus hatást kifejtő tárgy, terület **aktuális** Aurája **Mágikus akarata** feszül szembe a célpont Aurájával (ha van). A varázsló aktuális Aurája nyilván alacsonyabb lehet ha kinyúl Szellemkezével, vagy Zónában kiterjeszti akaratát. Amennyiben a varázsló dobott értéke eléri, vagy meghaladja a védekező félét, a mágia átjutott annak védelmén és kifejti rá hatását az alsóbb síkokon.
+Amennyiben a varázsló dobott értéke eléri, vagy meghaladja a védekező fél Mágiaellenállását, a mágia átjutott annak védelmén és kifejti rá hatását az alsóbb síkokon.
 
-Varázsláskor a varázsló és a védekező fél is meghatározza **Aura** értékékét és ezeket vetik össze. A támadónál ezt **Mágia Akaratának**, a védekezőnél **Mágiaellenállásnak** nevezzük.
+A Mágiaellenállás egysége, mivel az **Aura** mind az **Asztrál**, **Mentál** és **Fizikai** síkon érkező befolyásoló/változtató hatás ellen védelmet nyújt. Egyes hatásokkal szemben alkalmanként gyengébb/erősebb lehet.
 
-Ha a **Mágia Akarata** eléri, vagy meghaladja a **Mágiellenállás** értékét, akkor a mágia átjutott a védelmen és kifejti hatását.
+### [Mágia akarata](103_04_magia_akarata.md)  vs  [Mágiaellenállás](103_03_magiaellenallas.md)
 
-A Mágiaellenállás egységes, nincs külön asztrál/mentál ellenállás, vagy "pajzs". Az **Aura** mind az **Asztrál**, **Mentál** és **Fizikai** síkon érkező befolyásoló/változtató hatás ellen védelmet nyújt. Egyes hatásokkal szemben alkalmanként gyengébb/erősebb lehet.
+🔆 Előbbinél dobásra is szükség van (`k20`), utóbbinál nem.
 
-## Aura alap számítása
-
-[ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.aura.szamitasa.magiaellenallas) - ✅ Agóra
-
-```
-Aura alap
-  2x (TSz + Önuralom)
-```
-
-
----
-## Mágiaellenállás
-
-⭕TODO: szöveg
-
-```
-Aura alap
-+ 10
-+ módosítók
-  Amulettek, varázstárgyak
-  Litániák, versek mormolása
-  Képzettségek másodlagos hatásai 
-```
-
-<br />
-
----
-##  Mágia akarata
-
-⭕TODO: szöveg
-
-```
-Aura Alap
-+ módosítók
-  Aurakiterjesztés (szellemkéz, zóna)
-  Auraerősítés formula bónusza
-  Metódus 3. foka
-  Szituáció, összhang
-```
-
----
-## Aurapárbaj: Varázsló akarata vs Mágiaellenállás
-
-⭕TODO: szöveg
-
-```
-Mágia akarata + k20
-      vs
-Mágiaellenállás
-```
-
-<br />
-
-
-⭕⭕KÉRDÉS: a módosítókat itt fejtsük ki??⭕⭕
-
----
-## Mágia akarata módosítói Aurapárbaj során
-
-⭕TODO
-
-- Auraerősítés formula hatása
-- Metódus 3. foka
-- Szituáció, összhang
-
-<br />
-
----
-## Mágiaellenállás módosítói Aurapárbaj során
-
-⭕TODO
-
-- Amulett, varázstárgy, ereklye
-- Litániák, versek (fortély kell!)
-- képzettségek másodlagos hatásai
+🔆 Az egyes Módosítókat lásd a fenti linkek alatt.
 
 ---
 
-🔗 [Varázshasználó Aura képességei](103_04_varazshasznalo_aura_kepessegei.md) →
+🔗 [Varázshasználó Aura képességei](103_06_varazshasznalo_aura_kepessegei.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
 
 
 ---
 ---
-## File: md/103_04_varazshasznalo_aura_kepessegei.md
+## File: md/103_06_varazshasznalo_aura_kepessegei.md
 
 # Varázshasználó Aura képességei
 
-⭕TODO⭕
+⭕TODO⭕ Ezek igazából az Aurahangolás-arkánum formulái. Link oda??
 
-- Ezek igazából az Aurahangolás-arkánum formulái. Link oda??
-- Aurakiterjesztés, Varázslók hatótávja: Lépték szerinti csökkenés
-  - Szellemkéz és  Zóna - hatótáv kategóriák
-- Aurabontás
-  - 0 értékű Auránál
-  - Sötétben kinyúlás Aurával, másik Aura keresgélése
-- Varázsló aura jellege  (ide??)
+
+---
+## Aurakiterjesztés, Varázslók hatótávja
+
+⭕TODO⭕ Átfogalmazni, formázás
+
+Az Auraérintéshez a varázsló kiterjeszti az Auráját **Szellemkézzel** vagy **Zónában** és úgy éri el a célpontot.
+
+Ekkor az aktuális Aurája gyengül. Ennek léptékeit itt találhatjuk:
+
+```
+Érintés / szemkontaktus
+  szellemkéz: 0
+  zóna: 0
+Szoba
+  szellemkéz: 0
+  zóna: -3
+Terem
+  szellemkéz: -3
+  zóna: -6
+Mező
+  szellemkéz: -6
+  zóna: -9
+Csatatér
+  szellemkéz: -9
+  zóna: -15
+```
+
+<br />
+
+---
+## Aurabontás
+
+- [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md) Arkánum egy Formulája. Teljes leírását lásd ott.
+- Komplexitás: `6`
+
+⭕TODO⭕Itt csak tömören összefoglalni és hivatkozni rá. A kibontás az Aurahangolás Arkánumnál
+- (⭕megcsinálni ott: "mint a `VÉ` csökkentés, de inkább magasabb szintű ellenfelek ellen érdemes"
+
+🌟**Hatás**:
+
+```
+Lebontasz -2 Aura pontot
+  célpontod Aurájából
+```
+
+### Elvesztett Aura pontok visszatérése az áldozatnál
+
+```
+Magától
+
+1 / óra
+ → mint 1 rekesz
+ → mint 1 FP
+```
+
+```
+1 körös visszanyerés próba
+
+⭕⭕1 körös visszanyerés próba, ugyanaz a táblázat⭕
+
+Siker:
+  visszanyersz választott Aurát
+
+Rontás:
+ → Elveszítesz további Aurát
+ → Annyit, amennyit visszanyertél volna
+ → Óránként `1x` próbálkozhat
+```
+
+<br />
+
+---
+## Sötétben kinyúlás Aurával, másik Aura keresgélése
+
+⭕TODO⭕Észlelés próba??
+
+<br />
+
+---
+## Varázsló aura jellege
+
+⭕TODO⭕ (ide??)
+
+A varázsló személyiségétől, aurájától függően mást és mást érezhet az áldozat, ha a mágia aktiválódik rajta.
+
+Ha a varázsló odafigyel ennek elrejtésére (lásd fenn: Aurarejtés), akkor az áldozat nem érzi ezt.
+
 
 ---
 
-🔗 [Aura megkötése varázstárgyakban](103_05_aura_megkotese_varazstargyakban.md) →
+🔗 [Aura megkötése varázstárgyakban](103_07_aura_megkotese_varazstargyakban.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
 
 
 ---
 ---
-## File: md/103_05_aura_megkotese_varazstargyakban.md
+## File: md/103_07_aura_megkotese_varazstargyakban.md
 
 # Aura megkötése varázstárgyakban
 
@@ -29349,9 +29845,11 @@ Mágiaellenállás
 ---
 ## File: md/104_magia_metodusok.md
 
-## Mágia metódusok
+# Mágia metódusok
 
 ⭕TODO: Kiegészíteni⭕
+
+→ [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
 
 Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a világba hozza. Változó, hogy melyik Mágikus Tradíció mely Mágia metódusok ismer.
 
@@ -29605,7 +30103,7 @@ Példák:
 
 # Misztikus Fortélyok
 
-⭕TODO⭕ [ADR](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) alól ide migrálni.
+⭕TODO⭕ [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) alól ide migrálni.
 
 ---
 
@@ -29619,7 +30117,7 @@ Példák:
 
 ## Mágikus Státuszok ✴️✨
 
-→ [TODO: Mágikus Státuszok](https://github.com/kaktusztea/szilankrpg/wiki/TODO.hatasok.statuszok#m%C3%A1gikus-st%C3%A1tuszok) ⭕
+→ [STUDY: Mágikus Hatások, Státuszok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.hatasok.statuszok) ⭕
 
 ---
 
@@ -29633,7 +30131,7 @@ Példák:
 
 # Varázslás menete
 
-⭕TODO⭕ [ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslas.menete) feldolgozása, migrálás ide
+⭕TODO⭕ [ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslas.menete) feldolgozása, migrálás ide.
 
 ⭕TODO⭕ Ezt az oldal lehet, hogy csak tartalomjegyzék az korábbi oldalakra??
 
