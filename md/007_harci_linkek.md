@@ -38,7 +38,7 @@
 ---
 ### Tám/kör, Mozgás
 
-[Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md)
+[Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md)
 
 [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
 

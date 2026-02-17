@@ -47,8 +47,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 ### Mágia
 
 `1.`
-- Varázskeret
-- Mágikus akarat (Aura vs Aura)
+- Mágikus akarat vs Mágiaellenállás (Aura vs Aura)
 - Mágikus célzás
 
 `2.`

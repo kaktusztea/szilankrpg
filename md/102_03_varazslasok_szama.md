@@ -30,17 +30,29 @@ Minden célpont 1 db
  választott Rekeszt elhasznál
 ```
 
-Ugyan egy körben csak egyszer varázsolhatsz, de dönthetsz úgy, hogy **az adott konkrét varázslatnak** több célpontja legyen. Ekkor varázslatodban használt Arkánumok komplexitása (Célszáma) fixen `+3 / célpont` értékkel nő.
+Ugyan egy körben csak egyszer varázsolhatsz, de dönthetsz úgy, hogy **az adott konkrét varázslatnak** több célpontja legyen. Ekkor varázslatodban használt Arkánumok **Komplexitása** (Célszáma) fixen `+3 / célpont` értékkel nő.
 
-Fontos, hogy minden újabb célpont elhasznál egy rekeszt Mágiakeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
+### Rekesz igény
 
-A számolás szempontjából mindegy, hogy **Szellemkézzel** kinyúlt Aurával, vagy kinyúlás nélkül varázsolsz. Zónában kiterjesztett Aura esetén nyilván nincs értelme a formulának, mivel akkor az `1 db` mindenkire hat a zónán belül.
+🔆Fontos, hogy minden újabb célpont elhasznál egy rekeszt Mágiakeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
 
-Szellemkéz kinyúlás esetén az esetleges Aura csökkenés számolásánál a legtávolabbi célpont a mérvadó.
+🔆Ha lehetséges különböző Erősséggel alkalmazni a mágiát (például Tűznyíl), akkor különböző Rekeszeket használhatsz.
 
-Ne feledd: ha célzást fgénylő mágiát használsz, mindegyik lövedéknél Célzó dobást kell tenned - Mágikus lövészet képzettség segítségével.
+🔆Ha NEM lehetséges különböző Erősséggel alkalmazni a mágiát (például mindenkit kacsává változtatnál), akkor az magasabb Rekeszeidből kell elhasználnod (elvesztegetned).
 
-Zónában kiterjesztett Aura esetén **nincs** lehetőség Plusz célpont formula használatára.
+### Komplexitás
+
+A számolás szempontjából mindegy, hogy **Szellemkézzel** kinyúlt Aurával, vagy kinyúlás nélkül varázsolsz.
+
+### Aura változásai
+
+🔆 Szellemkéz kinyúlás esetén az esetleges Aura csökkenés számolásánál a legtávolabbi célpont a mérvadó.
+
+❌ Zónában kiterjesztett Aura esetén **nincs** lehetőség a "Plusz célpont" formula használatára és értelme sincs, mivel akkor az alkalmazott varázslat amúgy is mindenkire hat a zónán belül.
+
+### Célzás
+
+❗Ne feledd: ha célzást igénylő mágiát használsz, mindegyik lövedéknél Célzó dobást kell tenned - Mágikus lövészet képzettség segítségével.
 
 ---
 
