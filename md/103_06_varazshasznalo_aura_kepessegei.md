@@ -54,7 +54,6 @@ Komplexitás  Visszanyerés
 30    →       +15
 ```
 
-
 ```
 Siker:
   visszanyersz választott mennyiségű Aurát
@@ -75,9 +74,9 @@ Rontás:
 <br />
 
 ---
-## Varázsló aura jellege
+## Varázsló Auraérzete varázslatban
 
-⭕TODO⭕ (ide??)
+⭕TODO⭕ Auraérzet fogalom bevezetése az "Aura jellemzői" oldalon. Itt behivatkozni, hogy ez varázsláskor érezhető⭕
 
 A varázsló személyiségétől, aurájától függően mást és mást érezhet az áldozat, ha a mágia aktiválódik rajta.
 
