@@ -318,7 +318,7 @@
         "Átütés": "0",
         "Íves": "1",
         "MK": "0",
-        "KF": "D6",
+        "KF": "0",
         "Kategória": "kardvívó",
         "Speciális": ""
     },
@@ -663,7 +663,7 @@
         "MK": "0",
         "KF": "S6",
         "Kategória": "kardvívó",
-        "Speciális": "Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül. [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban KÉ:+5 bónuszt kap (csak kétkezes forgatási módban)."
+        "Speciális": "Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül. [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban további KÉ:+5 bónuszt kap (csak kétkezes forgatási módban)."
     },
     {
         "Fegyver": "Kard, Slan csatakard",
@@ -899,7 +899,7 @@
         "Átütés": "0",
         "Íves": "1",
         "MK": "0",
-        "KF": "A3",
+        "KF": "0",
         "Kategória": "kardvívó",
         "Speciális": "Ugyan nem íves fegyver, de kialakítása miatt érvényesek rá annak extrái. SFÉ duplán számít ellene"
     },
