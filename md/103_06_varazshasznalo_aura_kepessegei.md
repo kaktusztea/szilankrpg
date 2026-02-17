@@ -4,31 +4,9 @@
 
 
 ---
-## Aurakiterjesztés, Varázslók hatótávja
+## Aurakiterjesztés
 
-⭕TODO⭕ Átfogalmazni, formázás
-
-Az Auraérintéshez a varázsló kiterjeszti az Auráját **Szellemkézzel** vagy **Zónában** és úgy éri el a célpontot.
-
-Ekkor az aktuális Aurája gyengül. Ennek léptékeit itt találhatjuk:
-
-```
-Érintés / szemkontaktus
-  szellemkéz: 0
-  zóna: 0
-Szoba
-  szellemkéz: 0
-  zóna: -3
-Terem
-  szellemkéz: -3
-  zóna: -6
-Mező
-  szellemkéz: -6
-  zóna: -9
-Csatatér
-  szellemkéz: -9
-  zóna: -15
-```
+Lásd [Mágia akarata - Módosító: Aurakiterjesztés](103_04_magia_akarata.md#m%C3%B3dos%C3%ADt%C3%B3-aurakiterjeszt%C3%A9s) bekezdést.
 
 <br />
 
@@ -58,18 +36,33 @@ Magától
  → mint 1 FP
 ```
 
+#### 1 körös visszanyerés próba
+
 ```
-1 körös visszanyerés próba
+Aurahangolás + ⭕Önuralom +k10
+```
 
-⭕⭕1 körös visszanyerés próba, ugyanaz a táblázat⭕
+```
+Komplexitás  Visszanyerés
+9     →       +1
+12    →       +3
+15    →       +5
+18    →       +7
+21    →       +9
+24    →       +11
+27    →       +13
+30    →       +15
+```
 
+
+```
 Siker:
-  visszanyersz választott Aurát
+  visszanyersz választott mennyiségű Aurát
 
 Rontás:
  → Elveszítesz további Aurát
  → Annyit, amennyit visszanyertél volna
- → Óránként `1x` próbálkozhat
+ → Óránként 1x próbálkozhat
 ```
 
 <br />

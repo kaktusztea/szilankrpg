@@ -32,7 +32,8 @@
 
 ### [Varázslás menete](108_varazslas_menete.md)
 
-### **Arkánumok listája**
+### Arkánumok listája
+
 - [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
 - [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 - [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
