@@ -1,31 +1,25 @@
 ## 🟣 Pszí Telepátia (3)
 
-Egy lassú, andalogva sétáló ember sebességével vagy képes tárgyakat szellemi akaratoddal mozgatni. Az ismeretet jellemzően felsőoktatásban oktatják, mint amilyen a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeret.
+Képes vagy elméd segítségével üzenetet küldeni valakinek, amennyiben az illető képes azt fogadni.\
+**A diszciplínához látnod kell az illetőt, sőt kifejezetten rá kell nézned.**
 
-A Telepátia valós erejű alkalmazása a **Mentálmágia** Arkánummal valósul meg, mikor a mágiatudó járatlan, vagy nagyobb számú személyekkel is képes kapcsolódni, sőt már nem csak szöveget, hanem illatot, képet, komplex információka is küldhetsz. Leírását bővebben a Mentálmágia Arkánum alatt találod.
+Az itt leírt pszionikus diszciplína a Mentálmágia formulájának nagyságrendekkel egyszerűbb, jelentősen gyengébb módja, amely megtalálta útját a felsőoktatáson át a kevésbé avatott elmék felé is. 
 
-Az itt leírt pszionikus alkalmazás a Mentálmágia formulájának nagyságrendekkel egyszerűbb, jelentősen gyengébb módja, amely megtalálta útját a kevésbé avatott elmék felé. 
+Tehát a Telepátia valós erejű alkalmazása a **Mentálmágia** Arkánummal valósul meg, mikor a mágiatudó járatlan, vagy nagyobb számú személyekkel is képes kapcsolódni, sőt már nem csak szöveget, hanem illatot, képet, komplex információka is küldhetsz. Leírását bővebben a [Mentálmágia](../kepzettsegek.primer.arkanumok/mentalmagia.md) Arkánum alatt találod.
 
 ### 1. fok
 
-🌟 Üzenetet képes vagy fogadni
+🌟 Képes vagy üzenetet fogadni
 
 ### 2. fok
 
-🌟 Képes vagy üzenetet küldeni valakinek, aki képes azt fogadni (`min 1.fok`)
+🌟 Képes vagy üzenetet küldeni valakinek, aki képes azt fogadni (tehát minimum `1.fokon` jártas Telepátiában)
 
 ### 3. fok
 
 🌟 Harc közben is képes vagy üzenni valakinek - Akció elhasználása nélkül (`1x/kör`).
 
+---
+## Mentálfonál fortély hatása ⭕ TODO: link ⭕
 
-## Mentálfonál
-
-
-- 1 fokú fortély (6 KP) / másik személy
-- ha mindkét fél felveszi **egymásra**, akkor működik
-- Ilyenkor bármekkora távolságból lehet üzenni a másiknak
-- A kapcsolat kiépítése 2 módon történhet:
-  - Legalább 1 hónap "összehangolódás"
-  - Varázsló is megkötheti köztük 1 gyors varázslattal -a KP-t ilyenkor is ki kell fizetni
-TODO: még kidolgozni jobban.
+Amennyiben mindkét személy számára ki lett építve oda-vissza, egymás felé egy Mentálfonál (személyenként felvehető fortély), akkor nem szükséges látnium egymást - az üzenetváltás korlátlan távolságból megvalósítható.
