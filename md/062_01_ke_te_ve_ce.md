@@ -32,7 +32,7 @@ Az `1.` Tapasztalati szinten minden karakter egységes, konstans értékeket kap
 ```
   0: KÉ konstans
   7: TÉ konstans
- 30: VÉ konstans
+ 24: VÉ konstans
 -15: CÉ konstans
 ```
 

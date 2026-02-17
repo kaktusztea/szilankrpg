@@ -94,7 +94,7 @@ Harckeret: +1
 
 ```
 SUM Pengeméret
-  1.5 = 1 + 0.5
+  1 = 1 + 0
 ```
 
 ---
