@@ -309,8 +309,8 @@ https://github.com/kaktusztea/szilankrpg/
 - [Akció fogalma](063_02_akcio_fogalma.md)
 - [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
 - [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
-- [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
-- [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
+- [Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
+- [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md) 📊
 
 ### 6.4 [Harc menete](064_00_harc_menete.md)
 
@@ -797,8 +797,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 ### Mágia
 
 `1.`
-- Varázskeret
-- Mágikus akarat (Aura vs Aura)
+- Mágikus akarat vs Mágiaellenállás (Aura vs Aura)
 - Mágikus célzás
 
 `2.`
@@ -989,7 +988,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 ---
 ### Tám/kör, Mozgás
 
-[Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md)
+[Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md)
 
 [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
 
@@ -19064,8 +19063,8 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Akció fogalma](063_02_akcio_fogalma.md)
 - [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
 - [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
-- [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
-- [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
+- [Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
+- [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md) 📊
 
 ## 6.4 [Harc menete](064_00_harc_menete.md)
 
@@ -19983,9 +19982,9 @@ A `HM` és `CM` nem keverhetőek, tehát a `CM`-re költhető max pontok nem „
 
 ### [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
 
-### [Varázskeret, Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
+### [Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
 
-### [Támadások száma - ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) 📊
+### [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md) 📊
 
 ---
 
@@ -20203,66 +20202,27 @@ A `3.` támadást `14`-es, a `4.` támadást pedig `21`-es **Harckeret** érték
 
 ## Támadások száma varázsláskor / kör
 
-### Varázskeret
-
 ```
- Varázskeret =
-      Tapasztalati Szint
-    + Mágia Tradíció szint
-    + Összpontosítás szint
+1 varázslás / kör
 
-    + Gyors varázsló fortély bónusza
+Általános KÉ dobás
+  dönt, mikor jössz
 ```
 
-Varázslásnál nagyjából ez felel meg a **Harckeretnek**.
-
-### Formula Sebesség
-
-```
-Formula-Sebesség =
-     Max Erősség
-   + Max Komplexitás
-   + Formula Extra
-```
-
-A varázslatban használt összes formula közül a legmagasabb **Komplexitás** értéket és a legmagasabb **Erősség** értéket kell összeadnunk, opcionálisan adott Formulák hozzáadhatnak Extra értéket.
-
-Varázslásnál ez felel meg a **Fegyver Sebességnek**, értéke minél magasabb, annál lassabban jön létre a varázslat.
-
-Látható, hogy az apró, egyszerű, kis változtató erejű mágiákból többet jóval könnyebben el lehet varázsolni, mint a nagyobb hatalmú varázslatokból.
-
-### Varázskeret csökkentése varázsláskor
-
-```
-Varázskeret =
-   Varázskeret - "Formula Sebesség"
-
-Következő körbe átcsúszó varázslatot
-csak a kör elején lehet megkezdeni!
-```
-
-A **Varázskeret** minden kör elején eredeti értékére "töltődik vissza".
-
-Kör elején azt kell megvizsgálni, hogy a **"Formula-Sebesség"** eléri-e a **Varázskeretet**.
-
-`1.` Ha egyenlő, vagy alatta van, akkor az aktuális **"Formula-Sebesség"** értékét levonjuk a **Varázskeretből**. A karakter a maradék keretből gazdálkodhat még a kör hátralevő részében.
-
-`2.` Ha felette van, akkor a kört teljes egészében varázslással tölti a mágiatudó, a varázslat "átcsúszik" a következő körre és rögtön annyival csökkenti a következő kör **Varázskeretét**, amennyivel alatta volt.
-
-Egy nagy, hosszú varázslat akár sok körön át is "csúszhat", ez idő alatt a varázstudó mozdulatlanul állhat, vagy legfeljebb lassú, egyenletes sétát végezhet.
+Bővebben lásd a [Mágia rendszer - Varázslások száma](102_03_varazslasok_szama.md) fejezetet.
 
 ---
 
-🔗 [Támadások száma ábra](063_06_harc_es_varazskeret_tamadasok_szama_abra.md) →
+🔗 [Támadások száma ábra](063_06_harckeret_tamadasok_szama_abra.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 
 ---
 ---
-## File: md/063_06_harc_es_varazskeret_tamadasok_szama_abra.md
+## File: md/063_06_harckeret_tamadasok_szama_abra.md
 
-## Harckeret, Varázskeret, Támadások száma - ábra
+## Harckeret, Támadások száma - ábra
 
 ![](images/06_keretek.sebesseg.png)
 
@@ -29016,17 +28976,29 @@ Minden célpont 1 db
  választott Rekeszt elhasznál
 ```
 
-Ugyan egy körben csak egyszer varázsolhatsz, de dönthetsz úgy, hogy **az adott konkrét varázslatnak** több célpontja legyen. Ekkor varázslatodban használt Arkánumok komplexitása (Célszáma) fixen `+3 / célpont` értékkel nő.
+Ugyan egy körben csak egyszer varázsolhatsz, de dönthetsz úgy, hogy **az adott konkrét varázslatnak** több célpontja legyen. Ekkor varázslatodban használt Arkánumok **Komplexitása** (Célszáma) fixen `+3 / célpont` értékkel nő.
 
-Fontos, hogy minden újabb célpont elhasznál egy rekeszt Mágiakeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
+### Rekesz igény
 
-A számolás szempontjából mindegy, hogy **Szellemkézzel** kinyúlt Aurával, vagy kinyúlás nélkül varázsolsz. Zónában kiterjesztett Aura esetén nyilván nincs értelme a formulának, mivel akkor az `1 db` mindenkire hat a zónán belül.
+🔆Fontos, hogy minden újabb célpont elhasznál egy rekeszt Mágiakeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
 
-Szellemkéz kinyúlás esetén az esetleges Aura csökkenés számolásánál a legtávolabbi célpont a mérvadó.
+🔆Ha lehetséges különböző Erősséggel alkalmazni a mágiát (például Tűznyíl), akkor különböző Rekeszeket használhatsz.
 
-Ne feledd: ha célzást fgénylő mágiát használsz, mindegyik lövedéknél Célzó dobást kell tenned - Mágikus lövészet képzettség segítségével.
+🔆Ha NEM lehetséges különböző Erősséggel alkalmazni a mágiát (például mindenkit kacsává változtatnál), akkor az magasabb Rekeszeidből kell elhasználnod (elvesztegetned).
 
-Zónában kiterjesztett Aura esetén **nincs** lehetőség Plusz célpont formula használatára.
+### Komplexitás
+
+A számolás szempontjából mindegy, hogy **Szellemkézzel** kinyúlt Aurával, vagy kinyúlás nélkül varázsolsz.
+
+### Aura változásai
+
+🔆 Szellemkéz kinyúlás esetén az esetleges Aura csökkenés számolásánál a legtávolabbi célpont a mérvadó.
+
+❌ Zónában kiterjesztett Aura esetén **nincs** lehetőség a "Plusz célpont" formula használatára és értelme sincs, mivel akkor az alkalmazott varázslat amúgy is mindenkire hat a zónán belül.
+
+### Célzás
+
+❗Ne feledd: ha célzást igénylő mágiát használsz, mindegyik lövedéknél Célzó dobást kell tenned - Mágikus lövészet képzettség segítségével.
 
 ---
 
