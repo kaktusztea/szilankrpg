@@ -3,7 +3,7 @@
 ⭕TODO: bevezető szöveg
 
 ```
-Aura Alap  =  2x (TSz + Önuralom)
+Aura  =  2x (TSz + Önuralom)
  + k20
  + Aurakiterjesztés (szellemkéz, zóna)
  + Auraerősítés formula bónusza
@@ -77,7 +77,7 @@ Komplexitás  Bónusz
 ### Sikertelen Auraerősítés próba
 
 ```
-→ Aura Alap levonás: -2
+→ Aura levonás: -2
   azonnal érvényesül
 
 → Regeneráció: 1 / óra
@@ -86,7 +86,7 @@ Komplexitás  Bónusz
   varázslat kudarcot 
 ```
 
-🔆 Az ideiglenes Aura Alap csökkenés a varázstárgyakban megkötött Aurát nem érinti.
+🔆 Az ideiglenes Aura csökkenés a varázstárgyakban megkötött Aura pontokat nem érinti.
 
 <br />
 

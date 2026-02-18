@@ -3,9 +3,9 @@
 Képes vagy elméd segítségével üzenetet küldeni valakinek, amennyiben az illető képes azt fogadni.\
 **A diszciplínához látnod kell az illetőt, sőt kifejezetten rá kell nézned.**
 
-Az itt leírt pszionikus diszciplína a Mentálmágia formulájának nagyságrendekkel egyszerűbb, jelentősen gyengébb módja, amely megtalálta útját a felsőoktatáson át a kevésbé avatott elmék felé is. 
+Az itt leírt pszionikus diszciplína a Mentálmágia formulájának nagyságrendekkel egyszerűbb, jelentősen gyengébb módja, amely megtalálta útját a felsőoktatáson át a kevésbé avatott elmék felé is.
 
-Tehát a Telepátia valós erejű alkalmazása a **Mentálmágia** Arkánummal valósul meg, mikor a mágiatudó járatlan, vagy nagyobb számú személyekkel is képes kapcsolódni, sőt már nem csak szöveget, hanem illatot, képet, komplex információka is küldhetsz. Leírását bővebben a [Mentálmágia](../kepzettsegek.primer.arkanumok/mentalmagia.md) Arkánum alatt találod.
+Tehát a Telepátia valós erejű alkalmazása a **Mentálmágia** Arkánummal valósul meg, mikor a mágiatudó járatlan, vagy nagyobb számú személyekkel is képes kapcsolódni, sőt már nem csak szöveget, hanem illatot, képet, komplex információkat, emlékképeket, emlékfolyamot, jeleneteket, érzelmeket, gondolatokat küldhet. Magas szinten: eggyélényegülés is megtörténhet. Leírását bővebben a [Mentálmágia](../kepzettsegek.primer.arkanumok/mentalmagia.md) Arkánum alatt találod.
 
 ### 1. fok
 

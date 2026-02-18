@@ -10,7 +10,6 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - minden harci képzettség
 - minden misztikus, mágikus, szakrális, pszí, slan képzettség
 - Akrobatika
-- Aurahangolás
 - Befolyásolás
 - Emberismeret
 - Észlelés
@@ -177,8 +176,6 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 ---
 ### Misztikus képzettségek 🅿️
-
-🔵 [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 
 🔵 [Ősi nyelv ismerete](kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) 🔁
 

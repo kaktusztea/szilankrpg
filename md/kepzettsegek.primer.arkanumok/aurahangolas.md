@@ -4,9 +4,13 @@ A személyes Aura speciális alkalmazásai tartoznak ide.
 
 ## Formulák
 
+⭕TODO⭕ Legyenek kiterjesztő fortélyok vagy simán legyenek benne az Arkánumban Formulaként?
+
 - Auraerősítés
+- Auraérzékelés
 - Aurarejtés
 - Aurahamisítás
+
 
 ### Domináns Tulajdonságok
 

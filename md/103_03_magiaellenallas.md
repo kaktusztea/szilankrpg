@@ -3,7 +3,7 @@
 ⭕TODO: szöveg
 
 ```
-Aura alap  =  2x (TSz + Önuralom)
+Aura  =  2x (TSz + Önuralom)
 + 10
 + Amulett, varázstárgy, ereklye
 + Litániák, versek mormolása

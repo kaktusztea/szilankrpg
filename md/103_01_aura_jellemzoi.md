@@ -8,16 +8,16 @@
 Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján öleli körbe, védelmezi a lelket. Az Aura a karakterek aktív mágikus akarata és egyben Mágiaellenállása is (Asztrál, Mentál, Fizikai).
 
 ---
-## Aura Alap
+## Aura
 
 ```
-Aura alap
+Aura
   2x (TSz + Önuralom)
 ```
 
-Az **Aura Alap** maga az Aura "bázisa", amely mindig jelen van, bár értéke változhat a körülményektől függően.
+Az **Aura** a lelked kisugárzása, a fizikai és egyéb síkokon téged óvó energiamező, amely mindig jelen van - bár értéke változhat a körülményektől függően.
 
-Egy karakter élete során megedződik, sokat tapasztal. Az **Aura Alap** értéke ebből a tapasztalásból származik, nem igényel semmilyen tanult képzettséget - értéke a **Tapasztalati Szint** (TSz) emelkedésével automatikusan nő.
+Egy karakter élete során megedződik, sokat tapasztal. Az **Aura** értéke ebből a tapasztalásból származik, nem igényel semmilyen tanult képzettséget - értéke a **Tapasztalati Szint** (TSz) emelkedésével automatikusan nő.
 
 <br />
 
