@@ -5,14 +5,16 @@
 A varázstárgyakat az alábbi kategóriára bonthatjuk:
 
 - [Rúnamágiával felruházott tárgyak](#r%C3%BAnam%C3%A1gi%C3%A1val-felruh%C3%A1zott-t%C3%A1rgyak)
+    - [Mágikus fegyverek](#mágikus-fegyverek)
 - [Ereklyék, Mágikus emitterek](#erekly%C3%A9k-m%C3%A1gikus-emitterek)
 - [Szellem által megszállt tárgyak](#szellem-%C3%A1ltal-megsz%C3%A1llt-t%C3%A1rgyak)
-- Amulettek
+- [Amulettek](#amulettek)
 
 ---
 ## Rúnamágiával felruházott tárgyak
 
 Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező tárgyá váltak.
+
 ⭕TODO: folytatni⭕
 
 ### Mágikus fegyverek
@@ -22,13 +24,28 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
   - `1.` Átütést adnak - ez az élőholtak ellen is jó, mert az ő különféle fegyverekkel szembeni ellenállásukat [virtuális SFÉ használatával](064_02_08_sebzodes_hatasa.md#élőholtak-sebződése) modellezzük
   - `2.` `TÉ/VÉ/SP` értékek erősebb mágiánál
 
+<br />
+
+---
 ## Ereklyék, Mágikus emitterek
 
-xyz
+⭕TODO⭕
 
+<br />
+
+---
 ## Szellem által megszállt tárgyak
 
-xyz2
+⭕TODO⭕
+
+<br />
+
+---
+## Amulettek
+
+⭕TODO⭕
+
+<br />
 
 ---
 
