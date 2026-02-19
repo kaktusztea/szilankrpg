@@ -4596,7 +4596,6 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - minden harci képzettség
 - minden misztikus, mágikus, szakrális, pszí, slan képzettség
 - Akrobatika
-- Aurahangolás
 - Befolyásolás
 - Emberismeret
 - Észlelés
@@ -4763,8 +4762,6 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 ---
 ### Misztikus képzettségek 🅿️
-
-🔵 [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
 
 🔵 [Ősi nyelv ismerete](kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) 🔁
 
@@ -7088,9 +7085,13 @@ A személyes Aura speciális alkalmazásai tartoznak ide.
 
 ## Formulák
 
+⭕TODO⭕ Legyenek kiterjesztő fortélyok vagy simán legyenek benne az Arkánumban Formulaként?
+
 - Auraerősítés
+- Auraérzékelés
 - Aurarejtés
 - Aurahamisítás
+
 
 ### Domináns Tulajdonságok
 
@@ -16220,33 +16221,27 @@ xyz
 
 ---
 ---
-## File: md/fortelyok.magia.metodusok/fokuszok_emitterek.md
+## File: md/fortelyok.magia.metodusok/fokuszok_emitterek_alkotasa.md
 
-## 🟣 💫 Mágia metódus: Fókuszok, Emitterek (3)
+## 🟣 💫 Mágia metódus: Fókuszok, Emitterek alkotása (3)
 
 Képes vagy mágikus fókuszt, vagy emittert létrehozni.
 
 Lásd még: [Ereklyék, mágikus emitterek](../130_varazstargyak.md#ereklyék-mágikus-emitterek)
 
-### Tradíció felveheti
+## Tradíció felveheti
 
 - [Illuzionista](../051_05_illuzionista.md)
 - [Magasmágia](../051_01_magasmagia.md)
 - [Papi mágia](../110_papimagia.md)
 - ⭕???⭕
 
+### Fókusz megalkotása
+
+⭕TODO⭕
 ### Mágikus emitter
 
 ⭕TODO⭕
-Ötlet: lehetnének mágikusan helyhez kötött varázstárgyak. Pl. egy erődhöz (annak mágikus "aurájához") kötött tárgyak, amik ha kikerülnek a "tápláló" területről, akkor elveszítik mágikus hatásukat.
-
-Ehhez vagy kelljen külön elosztó/generátor/manafókusz/varázskör (hívjuk Emitternek) jellegű valami (jellemzően a pincében :), vagy egy "egyedi azonosítóval" rendelkező mágikus kisugárzás, ami aktiválja a mágikus hatást a tárgyakban (bocs, ha a megfogalmazás kissé profán). Ha ez a kisugárzás nem éri el őket (váron kívül pl), akkor közönséges tárgyként viselkednek.
-
-⚡Első példa: a mágikus erőd védőinek kardjaiban ott munkálna a hely mágiája, de ha kimennek a kapun és eltávolodnak, akkor már nem.
-
-⚡Második példa: egy ősi nép sírja, amelyet az elhalt régiek, lidércként ott kódorgó lelkei népesítenek be a nem látható világban. A belőlük áradó túlvilági szomorúság lengi be az egész kriptát. Amíg ez az asztrális hatás tart, addig az élőholt védők fegyvereiben aktív a mágia. Amint megbékéltek a lelkek, a fegyverek nem mágikusak többé, feladatukat betöltötték és senki más halandó nem bitorolhatja őket, hogy varázshatásukat másra fordítsa. Sőt, esetleg a védő csontikat is ez "tartja aktívan" (jó, ez már nem fegyver topik téma), és a "megnyugvás" után ők se mozdulnak többé. Ebben a példában a kisugárzó források (emitterek) maguk a lelkek, de más esetben lehet akár természeti hatás is.
-
-⚡Harmadik példa: Harcoló kyr alakulat (anno). Az alakzat közepén halad az emitter varázstárgy, ami aktívvá teszi a fegyvereket X méter sugarú körben és amit az őt hordozó varázslónak/mágiahasználónak egy állandó enyhe koncentrációval kell működtetnie. Ha az ellen esetleg elzsákmányolja a fegyvereket, a mágia kialszik. Sőt az emitterrel se mennek semmire, mert nem tudják használni.
 
 ---
 
@@ -29290,16 +29285,16 @@ Auraérintés és Aurapárbaj szükséges.
 Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján öleli körbe, védelmezi a lelket. Az Aura a karakterek aktív mágikus akarata és egyben Mágiaellenállása is (Asztrál, Mentál, Fizikai).
 
 ---
-## Aura Alap
+## Aura
 
 ```
-Aura alap
+Aura
   2x (TSz + Önuralom)
 ```
 
-Az **Aura Alap** maga az Aura "bázisa", amely mindig jelen van, bár értéke változhat a körülményektől függően.
+Az **Aura** a lelked kisugárzása, a fizikai és egyéb síkokon téged óvó energiamező, amely mindig jelen van - bár értéke változhat a körülményektől függően.
 
-Egy karakter élete során megedződik, sokat tapasztal. Az **Aura Alap** értéke ebből a tapasztalásból származik, nem igényel semmilyen tanult képzettséget - értéke a **Tapasztalati Szint** (TSz) emelkedésével automatikusan nő.
+Egy karakter élete során megedződik, sokat tapasztal. Az **Aura** értéke ebből a tapasztalásból származik, nem igényel semmilyen tanult képzettséget - értéke a **Tapasztalati Szint** (TSz) emelkedésével automatikusan nő.
 
 <br />
 
@@ -29450,7 +29445,7 @@ Aurabontásnál
 ⭕TODO: szöveg
 
 ```
-Aura alap  =  2x (TSz + Önuralom)
+Aura  =  2x (TSz + Önuralom)
 + 10
 + Amulett, varázstárgy, ereklye
 + Litániák, versek mormolása
@@ -29556,7 +29551,7 @@ Képzettségszinttől függ. Aura TÉ/VÉ
 ⭕TODO: bevezető szöveg
 
 ```
-Aura Alap  =  2x (TSz + Önuralom)
+Aura  =  2x (TSz + Önuralom)
  + k20
  + Aurakiterjesztés (szellemkéz, zóna)
  + Auraerősítés formula bónusza
@@ -29630,7 +29625,7 @@ Komplexitás  Bónusz
 ### Sikertelen Auraerősítés próba
 
 ```
-→ Aura Alap levonás: -2
+→ Aura levonás: -2
   azonnal érvényesül
 
 → Regeneráció: 1 / óra
@@ -29639,7 +29634,7 @@ Komplexitás  Bónusz
   varázslat kudarcot 
 ```
 
-🔆 Az ideiglenes Aura Alap csökkenés a varázstárgyakban megkötött Aurát nem érinti.
+🔆 Az ideiglenes Aura csökkenés a varázstárgyakban megkötött Aura pontokat nem érinti.
 
 <br />
 
@@ -29754,35 +29749,7 @@ A Mágiaellenállás egysége, mivel az **Aura** mind az **Asztrál**, **Mentál
 ---
 ## Aurakiterjesztés
 
-<<<<<<< Updated upstream
 Lásd [Mágia akarata - Módosító: Aurakiterjesztés](103_04_magia_akarata.md#m%C3%B3dos%C3%ADt%C3%B3-aurakiterjeszt%C3%A9s) bekezdést.
-=======
-⭕TODO⭕ Átfogalmazni, formázás
-
-⭕TODO⭕ Aurahangolás Komplexitás meghatározása kell? Valszeg nem, mert a levonás már korlátoz.
-
-Az Auraérintéshez a varázsló kiterjeszti az Auráját **Szellemkézzel** vagy **Zónában** és úgy éri el a célpontot.
-
-Ekkor az aktuális Aurája gyengül. Ennek léptékeit itt találhatjuk:
-
-```
-Érintés / szemkontaktus
-  szellemkéz: 0
-  zóna: 0
-Szoba
-  szellemkéz: 0
-  zóna: -3
-Terem
-  szellemkéz: -3
-  zóna: -6
-Mező
-  szellemkéz: -6
-  zóna: -9
-Csatatér
-  szellemkéz: -9
-  zóna: -15
-```
->>>>>>> Stashed changes
 
 <br />
 
@@ -29890,13 +29857,17 @@ Ha a varázsló odafigyel ennek elrejtésére (lásd fenn: Aurarejtés), akkor a
 
 # Mágia metódusok
 
+```
+3 fokú fortélyok
+```
+
 ⭕TODO: Kiegészíteni⭕
 
 → [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
 
 Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a világba hozza. Változó, hogy melyik Mágikus Tradíció mely Mágia metódusok ismer.
 
-Áldás, Átok, Bábúmágia, Bájitalok, Ceremoniális mágiák, Dalmágia, Fókuszok, Emitterek, Formázás, Gyertyamágia, Jelmágia, Rúnamágia, Litánia, Rituálé, Maszkmágia, Megkötés, Rituális/Tánc mágia, Szexuálmágia, Szimpatikus mágia, Hívás/Idézés, Űzés, Írányítás, Hang, Fény
+Áldás, Átok, Bábúmágia, Bájitalok, Ceremoniális mágiák, Dalmágia, Fókuszok, Emitterek alkotása, Formázás, Gyertyamágia, Jelmágia, Rúnamágia, Litánia, Rituálé, Maszkmágia, Megkötés, Rituális/Tánc mágia, Szexuálmágia, Szimpatikus mágia, Hívás/Idézés, Űzés, Írányítás, Hang, Fény
 
 Részletesen lásd a [Mágia metódusok](045_misztikus_magia_fortelyok.md#mágia-metódusok) listáját, melyek mind mágikus fortélyként vehetőek fel.
 
@@ -30473,15 +30444,19 @@ TODO
 
 → [STUDY: Varázstárgyak](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazstargyak)
 
-A varázstárgyakat három kategóriára bonthatjuk:
+A varázstárgyakat az alábbi kategóriára bonthatjuk:
+
 - [Rúnamágiával felruházott tárgyak](#r%C3%BAnam%C3%A1gi%C3%A1val-felruh%C3%A1zott-t%C3%A1rgyak)
+    - [Mágikus fegyverek](#mágikus-fegyverek)
 - [Ereklyék, Mágikus emitterek](#erekly%C3%A9k-m%C3%A1gikus-emitterek)
 - [Szellem által megszállt tárgyak](#szellem-%C3%A1ltal-megsz%C3%A1llt-t%C3%A1rgyak)
+- [Amulettek](#amulettek)
 
 ---
 ## Rúnamágiával felruházott tárgyak
 
 Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező tárgyá váltak.
+
 ⭕TODO: folytatni⭕
 
 ### Mágikus fegyverek
@@ -30491,13 +30466,28 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
   - `1.` Átütést adnak - ez az élőholtak ellen is jó, mert az ő különféle fegyverekkel szembeni ellenállásukat [virtuális SFÉ használatával](064_02_08_sebzodes_hatasa.md#élőholtak-sebződése) modellezzük
   - `2.` `TÉ/VÉ/SP` értékek erősebb mágiánál
 
+<br />
+
+---
 ## Ereklyék, Mágikus emitterek
 
-xyz
+⭕TODO⭕
 
+<br />
+
+---
 ## Szellem által megszállt tárgyak
 
-xyz2
+⭕TODO⭕
+
+<br />
+
+---
+## Amulettek
+
+⭕TODO⭕
+
+<br />
 
 ---
 
