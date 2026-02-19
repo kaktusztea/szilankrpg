@@ -6,17 +6,18 @@ A Telekinézis valós erejű alkalmazása a **Természetes Anyagok Mágiája** A
 
 ### 1. fok
 
-🌟 Apró tárgyak lassú mozgatása.
+🌟 Apró tárgyak lassú mozgatása
 
 ### 2. fok
 
-🌟 Kard, sisak méretű tárgyak lassú mozgatása.
+🌟 Kard, sisak méretű tárgyak lassú mozgatása
 
 ### 3. fok
 
-🌟 Láda méretű tárgyak lassú mozgatása.
+🌟 Láda méretű tárgyak lassú mozgatása
 
-### Megemelhető súly nagysága
+---
+### Megemelhető súly nagysága 💪
 
 "Meg tudom emelni?"
 
@@ -25,14 +26,18 @@ A Telekinézis valós erejű alkalmazása a **Természetes Anyagok Mágiája** A
 (mintha Erő lenne)
 ```
 
-Hogy a tárgy megemelésekor mekkora súlyt vagy képes mozgatni, az az Önuralom Tulajdonságodtól függ, amelyet úgy veszünk, mintha Erő Tulajdonság lenne. Ez tehát az elme "Erőpróbája" (Tulajdonságpróbája) szó szerint.
+Hogy a tárgy megemelésekor mekkora súlyt vagy képes mozgatni, az az **Önuralom** Tulajdonságodtól függ, amelyet úgy veszünk, mintha **Erő** Tulajdonság lenne. Ez tehát az elme "Erőpróbája" (Tulajdonságpróbája) szó szerint.
 
-A KM határozzon meg egy Erő Tulajdonságpróba Nehézéget, amit a játékos az Önuralom Tulajdonságával dob. Tanács: ne mélyedjetek el a kilogrammok részleteiben, érzésre határozzátok meg a Nehézséget.
+A KM határozzon meg egy Erő Tulajdonságpróba Nehézséget, amit a játékos az **Önuralom** Tulajdonságával dob.
 
+**Tanács**: ne mélyedjetek el a kilogrammok részleteiben, érzésre határozzátok meg a Nehézséget.
+
+---
 ### Mozgó tárgyak ❌
 
 Ha egy célpont egy andalgó ember sebességénél gyorsabban mozog, akkor az már nem lehet Pszí alapú Telekinézis tárgya, mert védi a lendülete.
 
+---
 ### Élőlények mozgatása ❌
 
 ```
@@ -44,6 +49,7 @@ Az élőlényeket a Telekinézis ellen is védi személyes Aurájuk és így **M
 
 Amennyiben az áldozat meg tud kapaszkodni, akkor `Önuralom vs Erő` Tulajdonságpróba következik, hogy képes -e tartani magát, vagy a mágiatudó varázslata sikerrel "elvonszolja".
 
+---
 ### Speciális szituáció: Lopás
 
 A [Lopás](../kepzettsegek.szekunder/lopas.md) képzettséget Telekinézis használatával is használhatod - ugyanúgy Lopás képzettségpróbát kell dobnod. Amennyiben a helyzet indokolja, a KM kérhet [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) képzettségpróbát.
