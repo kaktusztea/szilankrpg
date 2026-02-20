@@ -203,8 +203,8 @@ Vihar, aszály, szivárvány, napfény, holdfény
 Példák:
 - Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
 - Viharban könnyebb villámmágiát.
-⭕TODO⭕
 
+⭕TODO⭕
 
 ---
 
