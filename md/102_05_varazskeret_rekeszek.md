@@ -1,8 +1,6 @@
 # Varázskeret, Rekeszek
 
-Karaktered egy Varázskeretet kap, amely úgynevezett **Rekeszekből** Ezen Rekeszek [Erősség](102_04_varazslat_erossege.md) értékei mutatják meg, mennyire hatalmas varázslatokat formázhatsz meg ha tudásod maximumát, vagy annak határát próbálod súrolni. Ezek a Rekeszek az adott Erősségű varázslat használatakor kiürülnek - ez a mágikus kifáradást szimbolizálja.
-
-
+Karaktered egy **Varázskeretet** kap, amely úgynevezett **Rekeszekből** áll. Ezen Rekeszek [Erősség](102_04_varazslat_erossege.md) értékeikhez vannak rendelve és azt mutatják meg, mennyire hatalmas varázslatokat formázhatsz meg ha tudásod maximumát, vagy annak határát próbálod súrolni. Ezek a **Rekeszek** az adott Erősségű varázslat használatakor kiürülnek - ez modellezi a mágikus kifáradást.
 
 ```
 Max E:   1 db
@@ -11,7 +9,7 @@ Max E-2: 1 db
 1 ... (Max E-3): bármennyit
 ```
 
-A Szilánk rendszerében a `3` legnagyobb Erősséget kezeljük Rekeszként, látható, hogy a további, gyengébb varázslatokra nincs megkötés, azokból bármennyit elvarázsolhatsz. Ezzel modellezzük egyre növekvő hatalmadat, ahogy **Tradíció** képzettségedben is fejlődsz.
+A Szilánk rendszerében a `3` legnagyobb Erősséget kezeljük **Rekeszként**, - látható, hogy a további, gyengébb varázslatokra nincs megkötés, azokból bármennyit elvarázsolhatsz. Ezzel a módszerrel modellezzük egyre növekvő hatalmadat, ahogy Misztikus **Tradíció** képzettségedben is fejlődsz.
 
 ### ⚡Példa: Vulgármágia Tradíció: `7.szint`
 
@@ -28,9 +26,8 @@ A Szilánk rendszerében a `3` legnagyobb Erősséget kezeljük Rekeszként, lá
 
 <br />
 
-
 ---
-## Mágia rekesz regeneráció
+## Mágia rekesz regeneráció (automatikus)
 
 ```
 Passzívan
@@ -39,6 +36,11 @@ Passzívan
 
 Alapesetben `1 db` Rekesz töltődik vissza óránként. Ehhez a varázstudónak nem kell semmit csinálnia. A sorrend: először a legalacsonyabb Erősségű Rekesz, majd felfele sorban a többi regenerálódik.
 
+## Mágia rekesz regeneráció (aktív visszanyerés)
+
+→ [STUDY: Varázskeret, Rekesz regeneráció](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazskeret.rekesz.regeneracio) ⭕TODO⭕
+
+<br />
 
 ---
 ## 🔆 Erősség túlvállalás
