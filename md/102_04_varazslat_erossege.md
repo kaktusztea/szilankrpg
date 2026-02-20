@@ -1,6 +1,6 @@
 # Varázslat Erőssége
 
-A változtatás "energiaigényét", nagyságát szimbolizálja. Például egy bolhából elefántot csinálni nagy Erősségű varázslat, egy emberből elfet jelentősen kisebb (viszont nagy Komplexitású).
+A változtatás "energiaigényét", nagyságát szimbolizálja. Például egy bolhából óriásbolhát csinálni nagy Erősségű varázslat (de kis Komplexitású), egy emberből elfet jelentősen kisebb Erősségű (viszont nagy Komplexitású).
 
 <br />
 
