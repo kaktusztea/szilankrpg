@@ -15,10 +15,6 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
 
 ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
@@ -26,28 +22,20 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -82,10 +70,6 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 <br />
 
-
-### Célszám módosító körülmények
-
-- ⭕xyz
 
 ---
 ### Tűz Metamágia arkánum

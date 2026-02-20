@@ -12,10 +12,9 @@
   - [Sámánmágia](051_07_samanmagia.md)
   - [Drágakőmágia](051_08_dragakomagia.md)
 
-
 ### Metamágia Arkánum
 
-⭕Ez még mindig? ⭕
+⭕TODO: Ez még mindig így van? ⭕
 
 ```
 Metamágia Arkánum szint

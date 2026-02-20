@@ -11,7 +11,19 @@ Max E-2: 1 db
 
 A Szilánk rendszerében a `3` legnagyobb Erősséget kezeljük **Rekeszként**, - látható, hogy a további, gyengébb varázslatokra nincs megkötés, azokból bármennyit elvarázsolhatsz. Ezzel a módszerrel modellezzük egyre növekvő hatalmadat, ahogy Misztikus **Tradíció** képzettségedben is fejlődsz.
 
-### ⚡Példa: Vulgármágia Tradíció: `7.szint`
+### Rekesz elhasználása
+
+Amennyiben varázslatod Erősség egy Rekesz alá tartozik, húzd ki / ikszeld ki az adott Rekeszt. A regenerációig ilyen Erősségű varázslatot már nem használhatsz.
+
+Nyilván Magasabb `E` varázslat Rekeszt is felhasználhatsz alacsonyabb **E** céljára - ha valamilyen speciális okból ezt akarnád. Például ha már elhasználtad `6E` varázslatodat, akkor a még meglevő `7E` Rekeszt felhasználhatod `6E` formájában is.
+
+### Minden Rekesz üres
+
+Amennyiben minden Rekeszed kiürült, akkor is képes vagy Szabad varázslatok alkalmazására a továbbiakban.
+
+### ⚡Példa Rekeszekre
+
+**Vulgármágia Tradíció**: `7.szint`
 
 ```
 7 E:   1 db
@@ -20,23 +32,39 @@ A Szilánk rendszerében a `3` legnagyobb Erősséget kezeljük **Rekeszként**,
 1..4 E: bármennyit
 ```
 
-### Speciális eset
+### Szabad varázslatok
 
-🔆 Magasabb `E` varázslat rekeszt is felhasználhatsz alacsonyabb **E** céljára - ha valamiért ezt akarnád. Például ha már elhasználtad `6E` varázslatodat, akkor a még meglevő `7E` Rekeszt felhasználhatod `6E` formájában is.
+✅ Agóra
+
+A gyengébb, **nem** Rekesz Erősségek alá tartozó varázslatok neve: **Szabad varázslat**. Ezekből nagyjából bármennyit elhasználhatsz.
+
+```
+Opcionális:
+  Edzettség Tulajdonságpróba
+
+Rontás < 3   → 1 FP
+Rontás >= 3  → 3 FP
+```
+
+Ha folyamatosan, kiugróan sokat alkalmazol Szabad varázslatokat, akkor a KM - az adott szituáció függvényében dönthet úgy, hogy **Edzettség Tulajdonságpróbát** kell dobnod - az általa megadott Nehézség ellen.
+
+Ha a próba sikertelen és rontásod kisebb, mint `3`, akkor `1 FP` büntetést kapsz. Ha rontásod `3` vagy annál nagyobb, akkor pedig `3 FP` a penzium.
 
 <br />
 
 ---
-## Mágia rekesz regeneráció (automatikus)
+## Varázskeret, Rekesz regeneráció - automatikus
+
+✅ Agóra
 
 ```
 Passzívan
- 1 rekesz / óra
+ 1 Rekesz / óra
 ```
 
 Alapesetben `1 db` Rekesz töltődik vissza óránként. Ehhez a varázstudónak nem kell semmit csinálnia. A sorrend: először a legalacsonyabb Erősségű Rekesz, majd felfele sorban a többi regenerálódik.
 
-## Mágia rekesz regeneráció (aktív visszanyerés)
+## Varázskeret, Rekesz regeneráció - aktív visszanyerés
 
 → [STUDY: Varázskeret, Rekesz regeneráció](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazskeret.rekesz.regeneracio) ⭕TODO⭕
 
@@ -53,9 +81,11 @@ Alapesetben `1 db` Rekesz töltődik vissza óránként. Ehhez a varázstudónak
 Nagyobb, hosszabb varázslatoknál a KM előírhat összetett próbát. Példa:
 
 ```
-1 db 7E
-1 db 6E
-+ tovább tart a varázslás
+E igény
+
+1 db 7E Rekesz
+1 db 6E Rekesz
++ tovább tarthat a varázslás
 ```
 
 <br />

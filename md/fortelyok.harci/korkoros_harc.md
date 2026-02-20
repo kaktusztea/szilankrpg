@@ -4,13 +4,11 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 
 ### 1. fok
 
-🔒 **Követelmény**:
-- [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) - `6.szint`
-- Sikeres **Észlelés** próba **minden kör elején**
+🔒 **Követelmény**: Sikeres **Észlelés** próba **minden kör elején**
 
 ```
-Nehézség
-10 + (plusz támadók száma x 2)
+Észlelés próba Célszám
+ 10 + (plusz támadók száma x 2)
 ```
 
 🌟 **Hatás**:
