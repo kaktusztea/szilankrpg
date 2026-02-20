@@ -34,7 +34,7 @@ Ugyan egy körben csak egyszer varázsolhatsz, de dönthetsz úgy, hogy **az ado
 
 ### Rekesz igény
 
-🔆Fontos, hogy minden újabb célpont elhasznál egy rekeszt Mágiakeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
+🔆Fontos, hogy minden újabb célpont elhasznál egy Rekeszt Varázskeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
 
 🔆Ha lehetséges különböző Erősséggel alkalmazni a mágiát (például Tűznyíl), akkor különböző Rekeszeket használhatsz.
 
