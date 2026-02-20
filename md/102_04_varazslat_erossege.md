@@ -36,6 +36,6 @@ Ha ott kész, migrálni ide.
 
 ---
 
-🔗 [Rekeszek](102_05_varazskeret_rekeszek.md) →
+🔗 [Varázskeret, Rekeszek](102_05_varazskeret_rekeszek.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
