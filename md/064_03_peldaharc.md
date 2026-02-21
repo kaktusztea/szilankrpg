@@ -264,15 +264,17 @@ Lord Gustav VÉ: 34
 ---
 ### A gyilkos veszte
 
-Tetves nyeri a kezdeményezést, viszont **Támadó dobása** csak `3` (összesen: `38`!), ami még így is bőven talál (!) (tekintve, hogy a lovag `VÉ`-je csak `34` a Támadó taktika miatt), viszont sebzésnek `2`-t dob `k20`-on.
+Tetves nyeri a kezdeményezést, viszont **Támadó dobása** csak `4` (összesen: `39`!), ami még így is bőven talál (!) (tekintve, hogy a lovag `VÉ`-je csak `34` a Támadó taktika miatt).
 
-Mivel még így is `4`-gyel többel ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+3 SP` jár, így a vége: `7 SP`... amit Gustav láncinge (`Szúró SFÉ:8`) pont teljesen felfog (**páncéldobása** sikeres (`3`) volt)!
+Sebzésnek `5`-t dob `k20`-on.
+
+Mivel a Támadó dobásnál a `4`-es dobás ellenére még így is `5`-gyel többel ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+2 SP` jár, így a vége: `8 SP`... amit Gustav láncinge (`Szúró SFÉ:8`) teljesen felfog (**páncéldobása** sikeres (`3`) volt)!
 
 ```
-TÉ = 38 (35+3)
+TÉ = 39 (35+4)
 Tetves Sebzés dobás:
- → k20(2) + 1(tőr) + 4
- → 7 SP
+ → k20(5) + 1(tőr) + 2(bónusz)
+ → 8 SP
 ```
 
 Tetves kardja lecsusszan a felé dobogó lovag vértjéről, aki visszatámadva... `15`-öt dob támadására. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `40`, de most ugye neki is `-6` büntetése van erre (Támadó taktika miatt `40-6=33`)

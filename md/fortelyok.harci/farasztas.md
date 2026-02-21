@@ -13,8 +13,8 @@ A fortély nagy ismerői a bajvívók és harcosok.
 - Sikeres és sikertelen támadás esetén is
 
 ---
-### Megkötés
+### Pengehátrányban nem alkalmazható
 
-🔆 Figyelj a **pengehátrány megkötésre** a [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
+🔆 Figyelj a [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány) megkötésre a [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
 
 ---

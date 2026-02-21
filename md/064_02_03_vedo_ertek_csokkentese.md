@@ -10,11 +10,16 @@ Az, hogy milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyv
 
 A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
 
-Az aktuális fegyverméretek különbségét Harci helyzetekkel (harci státuszokkal) modellezzük.
+Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_01_04_fegyver_harci_helyzetek.md) (harci státuszokkal) modellezzük.
+
+### ⚜️ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
+
+- Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
 
 ### ⚜️ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
-- Fegyverméret-különbség kisebb `1 pengehossznál`
+- A felek fegyverméreteinek különbsége kisebb `1 pengehossznál`
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
 
 ### ⚜️ [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)

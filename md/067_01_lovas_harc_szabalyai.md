@@ -26,6 +26,8 @@ Fegyverméretre +1 penge bónusz
 Minimum pengeméret: 1
 ```
 
+A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel harcolnál.
+
 🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély
 
 ❌ [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet NEM jár!
