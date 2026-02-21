@@ -23,12 +23,12 @@ Fegyver kategóriáját a KM határozza meg.
 
 ### `1.1` Eset: Fegyverrántó elveszíti a kezdeményezést
 
-Nem sikerül előrántanod a fegyvert, elhasználtál egy támadás akciót és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled támadását.
+Nem sikerül előrántanod a fegyvert, elhasználtál egy támadás akciót és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled első támadását. Ha ezt túlélted, visszatámadás helyett `1 akció` elhasználásával előhúzhatod fegyveredet - bármilyen próbadobás nélkül - amennyiben így döntesz.
 
 ### `1.2` Eset: Fegyverrántó nyeri a kezdeményezést
 
 Sikerült előrántanod fegyvered, és teljes, fegyveres `VÉ` harcértéked érvényesül.\
-Ellenfeled dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadásodat felemésztő cselekedet.
+Ellenfeled dobhat támadást azonnal. A fegyverrántás tehát `1 db` Akciódat (ez esetben támadásodat) felemésztő cselekedet.
 
 ### `1.3` Eset: Fegyverrántó nyeri a kezdeményezést `+3` túldobással
 
