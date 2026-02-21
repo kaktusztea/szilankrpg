@@ -156,7 +156,7 @@ Tetves Sebzés dobás: 9 és 13
   → -3 VÉ
 ```
 
-A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre) alapján `3 ÉP` (❗) sebet jelent. Továbbá a szokásos (`-3 VÉ`) csökkenés jár.
+A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre) alapján `3 ÉP` (❗) sebet jelent. Továbbá a szokásos (`-3 VÉ`) csökkenés jár.
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
