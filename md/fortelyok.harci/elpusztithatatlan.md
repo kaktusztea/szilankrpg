@@ -2,7 +2,7 @@
 
 Mikor már mindenki azt hiszi, lekaszaboltak, hirtelen felülsz a vértócsában és elbotorkálsz..
 
-A fortély segítségével minden fegyver okozta, bekapott `ÉP` sebből "átalakíthatsz" pár `ÉP` pontot `FP` ponttá.
+A fortély segítségével mikor sebet kapsz néhány `ÉP` "átalakul" `FP` ponttá.
 
 ### 1. fok
 
@@ -19,8 +19,19 @@ A fortély segítségével minden fegyver okozta, bekapott `ÉP` sebből "átala
 🌟 `2 ÉP` forgatható át `FP` ponttá.
 
 ---
-### `ÉP` vs `FP`
+### `ÉP` vs `FP` ❗
 
 Ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! [Bővebben](../061_02_faradsag_pont.md#val%C3%B3s-%C3%A9p-seb-elszenved%C3%A9se-fp-ut%C3%A1n).
 
 ---
+### Példa
+
+```
+Elpusztíthatatlan: 2.fok
+Seb: 11 ÉP
+
+A fenti 11 ÉP átalakul:
+→ ÉP: 9
+→ FP: 2
+```
+
