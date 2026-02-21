@@ -1,29 +1,39 @@
-## Szilánk
+# Szilánk
 
 Korábban, a [Kalandozók](010_03_00_karakter_jellemzoi.md) bemutatásánál említett, lélekben szunnyadó **Szilánk** a játékmenetben is megjelenik. Valóságformáló hatása a játékosok számára konkrét előnyökkel jár.
 
-A Szilánk a szabályrendszerben egy pontérték, amelyet csak és kizárólag Kalandozók kapnak, NJK nem - kivéve, ha ő is Kalandozó.
+A Szilánk a szabályrendszerben egy pontérték, amelyet csak és kizárólag Kalandozók kapnak - ez az NJK-kra is vonatkozik.
+
+## Csapat Szilánk
+
+A csapat is kap külön Szilánk pontot, amelynek elköltésének módját a csapat határozza meg a kaland elején: egyszerű többséggel dönt, mikor, hogyan használják fel, esetleg teljes egyetértéssel - ebbe nem szólunk bele, döntsenek a játékosok.
 
 <br />
 
-### Mire jó?
+## Mire jó?
 
 Egy **Szilánk** (pont) elhasználásával a játékos képes lesz a kalandban narratív események módosítására, akár kockadobás "megkerülésére" is.
 
-Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, csak egy lehetőséget teremt, amivel vagy képes élni a játékos, vagy nem.
+Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, csak egy lehetőséget teremt, amivel vagy képes élni a játékos/csapat, vagy nem.
 
 <br />
 
-### Javadalmazás
+---
+## Javadalmazás
 
 ```
-- Kaland elején: 1 Szilánk / JK
-- Max: 3 Szilánk
-- Következő Kaland elején 1
-  értékre áll vissza
+Kaland elején:
+  1 Szilánk / JK
+  1 Szilánk / Csapat
+
+Max: 3 Szilánk / JK
+Max: 3 Szilánk / csapat
+
+Következő Kaland elején mind
+  1 értékre áll vissza
 ```
 
-Minden kaland elején a Szilánk értéke visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét - az ellenfelek lemészárlása **nem** tartozik ide. A fenti lehet konzisztens alakítás, de csúcsjeleneletek, fontos pillanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
+Minden kaland elején a JK Szilánk és a Csapat Szilánk értéke is visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét - az ellenfelek lemészárlása **nem** tartozik ide. A fenti lehet konzisztens alakítás, de csúcsjeleneletek, fontos pillanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
 
 Egy kaland során
 - `1` új Szilánkot szerezni nagy dolognak számít
@@ -32,7 +42,9 @@ Egy kaland során
 <br />
 
 ---
-### 🔆 Használata: Átlagos belenyúlás a történetbe: `1 Szilánk`
+## Szilánk használatának módjai
+
+### 🔆 Átlagos belenyúlás a történetbe: `1 Szilánk`
 
 Egy (`1`) Szilánkért átlagos változtatásokat eszközölhetsz a történetben.
 
@@ -46,7 +58,7 @@ Példák:
 
 <br />
 
-### 🔆 Használata: Jelentős belenyúlás a történetbe: `2 Szilánk`
+### 🔆 Jelentős belenyúlás a történetbe: `2 Szilánk`
 
 Fontos: a `2` Szilánk költség NEM adható össze két külön karakter pontjaiból, egy személynek kell fedeznie a teljes költséget!
 
@@ -57,22 +69,38 @@ Példák:
 
 <br />
 
-### 🔆 Használata: 1x Újradobás: `1 Szilánk`
+## 🔆 `1x` Újradobás: `1 Szilánk`
 
 Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz `1 db` Szilánkot egy dobásod megismétlésére. Ilyenkor a másodiknak dobott érték számít - akkor is, ha az kedvezőtlenebb lett, mint az első.
 
 <br />
 
+## 🔆 `3 ÉP` visszatér: `1 Szilánk`
+
+Ezzel narratív irányba terelheted a harc folyását, végzetes helyzetekben visszakaphatsz `3 ÉP`-t  `1` Szilánkért cserébe.
+
+<br />
+
 ---
-### ⚜️ Szilánk gyűjtésének módja: `1.` Kaland közben
+# Szilánk gyűjtése
 
-#### Mikor szerezhető Szilánk kaland közben?
+A kalandot megelőző áttekintő beszélgetésen a csapat eldöntheti, hogy melyik modellt szeretné követni a lent bemutatott két lehetőségből..
 
-- `1.` a KM felajánlhatja, hogy ez egy kiemelt szituáció, ahol Szilánkot gyűjthet a játékos. Ez a Karakter számára egy hátrányos fordulat, amiben nehéz helyzetbe kerül, de bizonyíthatja rátermettségét. Ha a Játékos elfogadja, akkor a fordulat megtörténik, ő pedig kap egy Szilánkot.
-- `2.` a JK veti fel, hogy egy általa felvázolt nehéz fordulat, szituáció lép fel. Ilyenkor a KM dönt, hogy elfogadja-e a játékos felvetését és ezáltal a Szilánk-szerzést.
-- `3.` a JK magától csinál egy kiemelt szituációt - nem feltétlenül Szilánk szerzése céljából - ilyenkor a KM utólag jutalmazhatja Szilánkkal
+Az `1.` modell a heroikus fantasyt jutalmazza, a `2.` a szerepjátékozást.
 
-#### Milyen szituációkban járhat **Szilánk**?
+Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onnantól a kaland végéig a választott modellt kell kövessék.
+
+## ⚜️`1.` mód: Kaland közben
+
+### Mikor szerezhető Szilánk kaland közben?
+
+`1.` a KM felajánlhatja, hogy ez egy kiemelt szituáció, ahol Szilánkot gyűjthet a játékos. Ez a Karakter számára egy hátrányos fordulat, amiben nehéz helyzetbe kerül, de bizonyíthatja rátermettségét. Ha a Játékos elfogadja, akkor a fordulat megtörténik, ő pedig kap egy Szilánkot.
+
+`2.` a JK veti fel, hogy egy általa felvázolt nehéz fordulat, szituáció lép fel. Ilyenkor a KM dönt, hogy elfogadja-e a játékos felvetését és ezáltal a Szilánk-szerzést.
+
+`3.` a JK magától csinál egy kiemelt szituációt - nem feltétlenül Szilánk szerzése céljából - ilyenkor a KM utólag jutalmazhatja Szilánkkal
+
+### Milyen szituációkban járhat **Szilánk**?
 
 - Tökéletesen kijátszod a jellemed ÉS emiatt nehéz helyzetbe kerülsz. Fontos, hogy ez **rád**, az általad játszott karakterre vonatkozik, nem a csapat egészére. Ezt azért fontos kiemelni, mert azzal nem lehet Szilánkot felhalmozni, hogy önző módon kibabrálsz a parti egészével.
 - Kiemelkedő, epikus momentum. Kalandonként jellemzően `1` ilyen fordul elő egy konkrét Játékos Karakterrel.
@@ -89,8 +117,7 @@ Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz `1 db` Szil
 
 <br />
 
----
-### ⚜️ Szilánk gyűjtésének módja: `2.` Játék végén, utólag
+## ⚜️ `2.` mód: Játék végén, utólag
 
 A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról, ahol `5` percben megbeszélik, ki volt az, aki karaktere személyiségét, faját, leíró háttereit, tradícióját, jellemét legjobban kijátszotta. Ez alapján a játékos karaktere kap `1` Szilánkot a következő játékalom kezdetekor (a kalandon belül).
 
@@ -101,19 +128,6 @@ A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról,
  **Lehet hátránya is**, mert nem jutalmazza a heroikus, epikus fantasy momentumokat.
 
  **Lehet azért is hátránya**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` mód előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
-
-<br />
-
----
-### A csapat döntése kaland elején: melyik modellt használják? `1.; 2.`
-
-A kalandot megelőző áttekintő beszélgetésen a csapat eldöntheti, melyik modellt szeretné követni.
-
-Az `1.` modell a heroikus fantasyt jutalmazza, a `2.` a szerepjátékozást.
-
-Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onnantól a kaland végéig a választott modellt kell kövessék.
-
-<br />
 
 ---
 
