@@ -26,7 +26,7 @@ Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellem
 ---
 ### Próbadobás menete
 
-Lásd [Lopás/Kirablás](../szituaciok/lopas_kirablas.md) szituáció leírását.
+Lásd az [Ellopni valamit, kirabolni valakit](../szituaciok/lopas_kirablas.md) szituáció leírását.
 
 #### Csoportos szellemi képzettségpróba ellenpróbánál
 

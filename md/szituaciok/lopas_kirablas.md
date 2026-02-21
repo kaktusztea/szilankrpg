@@ -24,13 +24,15 @@ Lopás + Ügyesség
 - Lopás próba (rejtett!): **Nagyon nehéz** (`15`). Erről a JK nem tud.
 
 ⭕TODO: ellenpróbás szituációvá alakítani ⭕
+
 `b.)` A tolvaj tud a testőr jelenlétéről:
 - Észrevenni a testőrt: KM dob JK-nak rejtett **Észlelés** próbát
 - Lopás próba: **Nehéz** (`12`)
 
 ⭕TODO: ellenpróbás szituációvá alakítani ⭕
+
 `c.)` Tárgyaló kofánál a nemeshölgyet meglopni (testőr nélkül):
   - Lopás próba: **Átlagos** nehézség (`9`)
   - A kofának egy **Nehéz** (12)  **Észlelés** (mert nem figyel oda)
 
-<br />
+---
