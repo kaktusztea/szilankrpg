@@ -9,7 +9,7 @@ Itt tárgyaljuk a személyhez kötött Harci helyzeteket.
 ```
 Láthatatlan Támadó
   Előny+1 Támadó dobásra
-  VÉ csökkentés: fixen 3
+  VÉ csökkentés: fixen 2
 ```
 
 ```
@@ -23,7 +23,7 @@ Védő
 ```
 Láthatatlan Támadó
   Előny+2 Támadó dobásra
-  VÉ csökkentés: fixen 3
+  VÉ csökkentés: fixen 2
 ```
 
 ```
