@@ -1,12 +1,12 @@
 # Mágia metódusok
 
-```
-3 fokú fortélyok
-```
+→ [STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
 
 ⭕TODO: Kiegészíteni⭕
 
-→ [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
+```
+3 fokú fortélyok
+```
 
 Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a világba hozza. Változó, hogy melyik Mágikus Tradíció mely Mágia metódusok ismer.
 

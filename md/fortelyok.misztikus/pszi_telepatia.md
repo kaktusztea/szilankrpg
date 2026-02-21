@@ -13,13 +13,15 @@ Tehát a Telepátia valós erejű alkalmazása a **Mentálmágia** Arkánummal v
 
 ### 2. fok
 
-🌟 Képes vagy üzenetet küldeni valakinek, aki képes azt fogadni (tehát minimum `1.fokon` jártas Telepátiában)
+🌟 Képes vagy üzenetet küldeni valakinek, aki képes azt fogadni (tehát minimum `1.fokon` jártas Telepátiában). Harcban nem alkalmazható.
 
 ### 3. fok
 
 🌟 Harc közben is képes vagy üzenni valakinek - Akció elhasználása nélkül (`1x/kör`).
 
 ---
-## Mentálfonál fortély hatása ⭕ TODO: link ⭕
+## [Mentálfonál](mentalfonal.md) fortély hatása
 
-Amennyiben mindkét személy számára ki lett építve oda-vissza, egymás felé egy Mentálfonál (személyenként felvehető fortély), akkor nem szükséges látnium egymást - az üzenetváltás korlátlan távolságból megvalósítható.
+Amennyiben mindkét személy számára ki lett építve oda-vissza, egymás felé egy Mentálfonál (személyenként felvehető fortély), akkor nem szükséges látniuk egymást - az üzenetváltás korlátlan távolságból megvalósítható.
+
+---
