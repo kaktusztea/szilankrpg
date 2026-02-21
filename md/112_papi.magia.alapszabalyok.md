@@ -38,32 +38,18 @@ Az egyes varázslatoknál jelezzük, hogy a varázslás ideje melyik kategóriá
 ---
 ### Papi Mágia Akarata
 
-Hasonlatos az [Aura Átütésnél leírtakhoz](103_00_aura.md), de az Aura Alapra itt nem Aurahangolás képzettséggel dobunk, hanem a [Papi Mágia Tradíció](110_papimagia.md) képzettség szintjét vesszük alapul, a "dobást" pedig fixen `6`-nak vesszük. Ez azért van, mert a Pap csak biztos tudásból varázsolhat, nincs lehetősége Rizikó varázslásra.
+Hasonlatos az [Mágia akaratánál leírtakhoz](103_04_magia_akarata.md), de az Auraerősítés formulát **nem** használhatja.
+Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a [Mágiallenállás](103_03_magiaellenallas.md).
 
-Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a Mágiallenállás ⭕LINK⭕.
-
-#### Aura számítása
-
-Itt is az Aura táblázatot ⭕LINK⭕ használjuk, de nincs dobás, a számolást `1x` kell csak elvégezni - minden Tapasztalati Szint lépésekor.
-
-Az, hogy melyik Tulajdonságot kell az Aura meghatározásakor beleszámolni, az az adott isten, vagy vallás jellegétől függ. Minden isten papjainak leírásában megadjuk, hogy melyik is ez a Tulajdonság.
-
-```
-Aura számítása:
-   Papi tradíció szint
-   + Tulajdonság
-   + 6
-
-   → Érték kikeresése
-```
-
-#### Mágia Akarata számítása
 ```
 Papi Mágia Akarata
  = Aura
+ + 3 / Kegy pont
+ + Módosítók
 ```
 
 #### Kegy pontok
+
 ```
 1 Kegy pont
   → +3 Átütés az adott varázslatra
