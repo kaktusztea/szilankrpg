@@ -431,9 +431,10 @@ https://github.com/kaktusztea/szilankrpg/
   - [Mágikus Szférák és Arkánumaik](102_02_magikus_szferak_arkanumok.md)
   - [Varázslások száma](102_03_varazslasok_szama.md)
   - [Varázslat Erőssége](102_04_varazslat_erossege.md)
-  - [Varázslat Komplexitása](102_05_varazslat_komplexitasa.md)
-  - [Példa Erősség és Kompexitás értékeire és viszonyára](102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)
-  - [Példa Arkánum és Metódus viszonyára](102_07_pelda_arkanum_es_motodues_viszonyara.md)
+  - [Varázskeret, Rekeszek](102_05_varazskeret_rekeszek.md)
+  - [Varázslat Komplexitása](102_06_varazslat_komplexitasa.md)
+  - [Példa Erősség és Kompexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)
+  - [Példa Arkánum és Metódus viszonyára](102_08_pelda_arkanum_es_motodues_viszonyara.md)
 - [Aura](103_00_aura.md)
   - [Aura jellemzői](103_01_aura_jellemzoi.md)
   - [Speciális Aurák](103_02_specialis_aurak.md)
@@ -776,7 +777,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Harcérték/Célzóérték Módosító (`HM, CM`)
 - (`Harckeret / Fegyver Sebesség) + 1` → Támadások száma körönként
 - Kétkezes harc
-- Fegyverméret kategóriák: pengehossz →  pengeelőny, pengehátrány
+- Fegyverméret kategóriák, Pengeelőny
 - Védő Érték csökkentése (pengeelőny/hátrány függő)
 - Páncélmodell
   - páncél generátor: `4` féle `SFÉ`; `MGT`; Ár
@@ -14014,7 +14015,7 @@ A fortély nagy ismerői a bajvívók és harcosok.
 ---
 ### Megkötés
 
-🔆 Figyelj a **pengehátrány megkötésre** a Fárasztó taktika leírásánál!
+🔆 Figyelj a **pengehátrány megkötésre** a [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
 
 ---
 
@@ -14448,21 +14449,21 @@ Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyve
 ---
 ## File: md/fortelyok.harci/harcos_elme.md
 
-## 🟣 Harcos elme (4)
+## 🟣 Harcos elme (3)
 
 A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc szellemileg.
 
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint` (nem-távolsági)
+- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
+- Harcmodor - `6.szint` (nem-távolsági)
 
 🌟 **Hatás**: Minden kör elején
 
 ```
 Visszanyersz: 1 VÉ
- Kivéve ami sebesülésből
+  Kivéve ami sebesülésből
 ```
 
 <br />
@@ -14470,50 +14471,42 @@ Visszanyersz: 1 VÉ
 ### 2. fok
 
 🔒 **Követelmény**:
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
-- Harcmodor - `7.szint` (nem-távolsági)
+- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `8.szint`
+- Harcmodor - `9.szint` (nem-távolsági)
 
 🌟 **Hatás**: Minden kör elején
 
 ```
 Visszanyersz: 2 VÉ
- Kivéve ami sebesülésből
-```
-
-<br />
-
-### 3. fok
-
-🔒 **Követelmény**:
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `9.szint`
-- Harcmodor - `10.szint` (nem-távolsági)
-
-🌟 **Hatás**: Minden kör elején
-
-```
-Visszanyersz: 3 VÉ
- Kivéve ami sebesülésből
+  Kivéve ami sebesülésből
 ```
 
 ---
-### 4. fok
+### 3. fok
 
 🔒 **Követelmény**:
 - Összpontosítás - `12.szint`
 - Harcmodor - `12.szint` (nem-távolsági)
 - [Teljes Védekezés Taktika](../065_02_harci_taktikak.md#teljes-védekezés-taktika) alkalmazása folyamatosan
 
-🌟 **Hatás**: Minden kör elején
+🌟 **Hatás**: Minden kör elején **Összpontosítás próba**
 
 ```
-Visszanyersz: 3 VÉ
- Kivéve ami sebesülésből
+Célszám:
+  15 + ellenfelek száma
+```
 
-Összpontosítás próba:
-→ 15 + ellenfelek száma
-→ Sikeres próba: Visszanyersz
-   minden előző harci kör
-   során elvesztett VÉ-t is
+```
+Sikeres próba:
+  Visszanyersz: 2 VÉ
+  + minden előző harci kör
+    során elvesztett VÉ-t is
+```
+
+```
+Sikertelen próba:
+  → Visszanyersz: 2 VÉ
+  → Kivéve ami sebesülésből
 ```
 
 ---
@@ -14787,13 +14780,11 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 
 ### 1. fok
 
-🔒 **Követelmény**:
-- [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) - `6.szint`
-- Sikeres **Észlelés** próba **minden kör elején**
+🔒 **Követelmény**: Sikeres **Észlelés** próba **minden kör elején**
 
 ```
-Nehézség
-10 + (plusz támadók száma x 2)
+Észlelés próba Célszám
+ 10 + (plusz támadók száma x 2)
 ```
 
 🌟 **Hatás**:
@@ -18024,10 +18015,9 @@ Az adott Tradíciók követelményeit lásd azok leírásában.
   - [Sámánmágia](051_07_samanmagia.md)
   - [Drágakőmágia](051_08_dragakomagia.md)
 
-
 ### Metamágia Arkánum
 
-⭕Ez még mindig? ⭕
+⭕TODO: Ez még mindig így van? ⭕
 
 ```
 Metamágia Arkánum szint
@@ -18063,7 +18053,7 @@ Minden Tradíció szintjeinek lehetnek követelményei, amelyek biztosítják, h
 
 ## Magasmágia tradíció / Metamágia arkánum
 
-<sub>→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.magasmagia)</sub>
+→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.magasmagia)⭕
 
 <br />
 
@@ -18078,10 +18068,6 @@ Most lássuk a **Magasmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
 
 ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
@@ -18089,28 +18075,20 @@ Most lássuk a **Magasmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -18145,10 +18123,6 @@ Most lássuk a **Magasmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 
 <br />
 
-
-### Célszám módosító körülmények
-
-- ⭕xyz
 
 ---
 ### Metamágia arkánum
@@ -18175,7 +18149,7 @@ A haladóbb formulák leírását alább.
 
 ## Vulgármágia tradíció / Vulgár Metamágia arkánum
 
- <sub>→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.vulgarmagia)</sub>
+→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.vulgarmagia)
 
 <br />
 
@@ -18190,10 +18164,6 @@ Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzők
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
 
 ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
@@ -18201,28 +18171,20 @@ Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzők
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -18257,10 +18219,6 @@ Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzők
 
 <br />
 
-
-### Célszám módosító körülmények
-
-- ⭕xyz
 
 
 ---
@@ -18303,10 +18261,6 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
 
 ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
@@ -18314,28 +18268,20 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -18370,10 +18316,6 @@ Most lássuk a **Tűzmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 <br />
 
-
-### Célszám módosító körülmények
-
-- ⭕xyz
 
 ---
 ### Tűz Metamágia arkánum
@@ -18415,39 +18357,25 @@ Most lássuk a **Bárdmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
-
-⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Kismester (6) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -18481,11 +18409,6 @@ Most lássuk a **Bárdmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 ⭕TODO⭕
 
 <br />
-
-
-### Célszám módosító körülmények
-
-- ⭕xyz
 
 ---
 ### Bárd Metamágia arkánum
@@ -18527,39 +18450,25 @@ Most lássuk a **Bárdmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
-
-⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Kismester (6) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -18594,10 +18503,6 @@ Most lássuk a **Bárdmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 
 <br />
 
-
-### Célszám módosító körülmények
-
-- ⭕xyz
 
 ---
 ### Illuzionista Metamágia arkánum
@@ -18647,39 +18552,25 @@ Most lássuk a **Természeti Tradíció** egyes szintjeihez rendelt jellemzőket
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
-
-⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Kismester (6) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -18713,12 +18604,6 @@ Most lássuk a **Természeti Tradíció** egyes szintjeihez rendelt jellemzőket
 ⭕TODO⭕
 
 <br />
-
-
-### Célszám módosító körülmények
-
-- ⭕xyz
-
 
 ---
 ### Természeti Metamágia arkánum
@@ -18760,39 +18645,25 @@ Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzők
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
-
-⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Kismester (6) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -18826,11 +18697,6 @@ Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzők
 ⭕TODO⭕
 
 <br />
-
-
-### Célszám módosító körülmények
-
-- ⭕xyz
 
 ---
 ### Sámán Metamágia arkánum
@@ -18872,10 +18738,6 @@ Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzők
 
 #### Novícius (3) 📖
 
-🔒 Követelmény:
-- ⭕Tulajdonság⭕: ⭕`+1`⭕
-- ⭕Képzettség⭕ - ⭕`1.szint`⭕
-
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
 
 ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
@@ -18883,28 +18745,20 @@ Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzők
 ---
 #### Kismester (6) 📖
 
-🔒 Követelmény: ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Mester (9) 📖
-
-🔒 Követelmény: ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Nagymester (12) 📖
 
-🔒 Követelmény:  ⭕TODO⭕
-
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Élő legenda (15) 📖
-
-🔒 Követelmény:  ⭕TODO⭕
 
 🌟 Hatás: ⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
@@ -18938,11 +18792,6 @@ Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzők
 ⭕TODO⭕
 
 <br />
-
-
-### Célszám módosító körülmények
-
-- ⭕xyz
 
 ---
 ### Drágakő Metamágia arkánum
@@ -20330,17 +20179,17 @@ Minden újabb támadás a körben:
 
 ```
 Sebzés jellege
-→ Elsődleges sebzési forma
-  az alapértelmezett
-→ Másodlagos támadási formával
-  TÉ:-2 módosító
+ → Elsődleges sebzési forma
+   az alapértelmezett
+ → Másodlagos támadási formával
+   TÉ:-2 módosító
 
 ```
 
 ```
-"Fegyverméret ..."
-  harci helyzetek határozzák
-  meg a VÉ csökkentést
+"Fegyverméret különbség
+  határozza meg a
+  VÉ csökkentést
 ```
 
 <br />
@@ -20352,37 +20201,23 @@ Sebzés jellege
 "k20T" rövidítés == k20 tízes része
 
 Példák:
-5  → 0
-16 → 1
-20 → 2
+   5  → 0
+  16  → 1
+  20  → 2
 ```
 
-#### [Fegyverméret - pengehátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány)
-
-```
-VÉ csökkentés
-  1 + k20T
-```
-
-#### [Fegyverméret - Azonos](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---azonos)
+#### [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-vé-csökkentés)
 
 ```
 Mindkét fél csökkentése
-  2 + k20T
+  1 + k20T
 ```
 
-#### [Fegyverméret - 1 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---1-pengés-előny)
-
-```
-VÉ csökkentés
-  2 + k20T
-```
-
-#### [Fegyverméret - 2 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---2-pengés-előny)
+#### [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
 
 ```
 VÉ csökkentés
-  3 + k20T
+  2 + k20T
 ```
 
 <br />
@@ -20402,9 +20237,9 @@ Módosítók
 
 ```
 Többszörös találat bónusza
-  TÉ >= VÉ + 4    SP:+3
-  TÉ >= VÉ + 8    SP:+6
-  TÉ >= VÉ + 12   SP:+9
+  TÉ >= VÉ + 5    SP:+2
+  TÉ >= VÉ + 10   SP:+4
+  TÉ >= VÉ + 15   SP:+6
 ```
 
 <br />
@@ -20435,7 +20270,7 @@ VÉ csökkentés sebzés esetén
   • SP → VÉ átváltás Sebzés táblázatban
   • Fárasztó taktika alkalmazásakor:
     • nincs Sebzés
-    • 4 + k20T VÉ csökkentés
+    • 3 + k20T VÉ csökkentés
 ```
 
 Lásd: [Sebzés táblázat](064_02_07_sebzes.md)
@@ -20621,37 +20456,27 @@ Amennyiben a támadónak több támadása van az adott körben, akkor a `2.` tá
 
 Harcban sikertelennek számít támadásod, ha a **Támadó dobásod** végső értéke nem éri el ellenfeled **Védő Értékét**.
 
-Ebben az esetben viszont ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva, hiszen a harc, a védekezés komolyan igénybe veszik az védekező figyelmét, szellemi képességeit és állóképességét. Minél tovább tart a harc, annál veszélyesebbé válik a harc a folyamatosan csökkenő `VÉ` csökkenés miatt. Egy tapasztalt harcos magasabb `Védő Értékkel` indul, így ő tovább képes magas szinten teljesíteni, de például több ellenfél ellen ő is hamar kifulladhat - mindenki folyamatosan csökkent rajta Védő Értéket - és váratlan vereséget szenvedhet.
+Ebben az esetben viszont ideiglenesen **csökkented ellenfeled Védő Értékét** - a fáradást szimulálva, hiszen a harc, a védekezés komolyan igénybe veszik az védekező figyelmét, szellemi képességeit és állóképességét. Minél tovább tart a harc, annál veszélyesebbé válik a harc a folyamatosan csökkenő `VÉ` csökkenés miatt.
 
-Hogy konkrétan milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező fél van előnyben. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
+Egy tapasztalt harcos magasabb `Védő Értékkel` indul, így ő tovább képes magas szinten teljesíteni, de például több ellenfél ellen ő is hamar kifulladhat - mindenki folyamatosan csökkent rajta Védő Értéket - és váratlan vereséget szenvedhet.
+
+Az, hogy milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyvereitek pengehossz-különbségétől függ. Értelemszerűen a nagyobb pengehosszal rendelkező előnyben van. A fegyverméretekről bővebben [itt olvashatsz](068_01_00_fegyverek_altalanos_szabalyai.md).
 
 A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
 
 Az aktuális fegyverméretek különbségét Harci helyzetekkel (harci státuszokkal) modellezzük.
 
-### ⚜️ [Fegyverméret - pengehátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány)
+### ⚜️ [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-vé-csökkentés)
 
-- Fegyverméret különbség legalább `(-1)` pengehossz
--  [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
+- Fegyverméret-különbség kisebb `1 pengehossznál`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
 
-### ⚜️ [Fegyverméret - Azonos](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---azonos)
+### ⚜️ [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
 
-- Fegyverméret különbség kisebb `1 pengehossznál`
-- mindkét fél [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`
-
-### ⚜️ [Fegyverméret - 1 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---1-pengés-előny)
-
-- Fegyverméret különbség legalább `+1` pengehossz
+- Fegyverméret-különbség legalább `+1` pengehossz
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `2 + k20T`
-- Példa: **Hosszú kard**  vs. **Tőr**
-- Példa: **Alabárd** vs **Hosszú kard**
-
-### ⚜️ [Fegyverméret - 2 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---2-pengés-előny)
-
-- Fegyverméret különbség legalább `+2` pengehossz
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `3 + k20T`
-- Példa: **Kétkezes kard** vs **Tőr**
-- Példa: **Lándzsa** vs **Rövidkard**
+- ⚡ Példa: **Hosszú kard**  vs. **Tőr**
+- ⚡ Példa: **Alabárd** vs **Hosszú kard**
 
 ---
 ### Több támadó és harci taktikák jelentősége - a VÉ csökkentés fényében
@@ -20692,12 +20517,13 @@ Találatnak nevezzük azt a támadást, amelynek értéke eléri, vagy meghaladj
 ```
 TÉ >= VÉ különbség
 
-  +4  →  +3 SP
-  +8  →  +6 SP
- +12  →  +9 SP (max)
+  +5  →  +2 SP
+ +10  →  +4 SP
+ +15  →  +6 SP
+ ...
 ```
 
-Amennyiben a találat olyan sikeres lett, hogy további `4`-gyel nagyobb az ellenfél Védő értékénél, akkor a támadó `+3 SP` bónuszt (**nem** `ÉP`!) kap. Ez ismétlődhet, tehát minden további `+4` után jár a `+3 SP`. A **Többszörös találat** által adható maximum sebzésbónusz: `+9`.
+Amennyiben a találat olyan sikeres lett, hogy további `5`-tel nagyobb az ellenfél Védő értékénél, akkor a támadó `+2 SP` bónuszt (**nem** `ÉP`!) kap. Ez ismétlődhet, tehát minden további `+5` után jár a `+2 SP`, nincs felső limit.
 
 #### ⚡Példa többszörös találatra
 
@@ -20707,7 +20533,7 @@ TÉ dobás = 60
 VÉ = 49
 ```
 
-Ekkor `53`-nál és `57`-nél kap bónuszt a támadó, tehát `+6 SP` extra jár sebzésére.
+Ekkor `54`-nál és `59`-nél kap bónuszt a támadó, tehát `+4 SP` extra jár sebzésére.
 
 ---
 ### Páncéldobás
@@ -20970,23 +20796,28 @@ Ha a **Páncéldobás** szerint véd a páncél, akkor a támadás [sebzés jell
 Az esetleges páncél `SFÉ` levonása után megnézzük, hogy a maradék `SP` érték milyen `ÉP` sérülést és `VÉ` csökkenést okozott az áldozatnál.
 
 ```
-SP        ÉP        VÉ
-0      →  0 ÉP   VÉ:-4
-1-5    →  1 ÉP   VÉ:-4
-6-10   →  3 ÉP   VÉ:-4
-11-15  →  5 ÉP   VÉ:-6
-16-20  →  8 ÉP   VÉ:-6
-21-25  → 11 ÉP   VÉ:-6
-26-30  → 15 ÉP   VÉ:-6
-31-35  → 19 ÉP   VÉ:-6
-36-40  → 24 ÉP   VÉ:-6
-41-45  → 29 ÉP   VÉ:-6
-46-50  → 35 ÉP   VÉ:-6
+SP        ÉP
+0      →  0 ÉP
+1-5    →  1 ÉP
+6-10   →  3 ÉP
+11-15  →  5 ÉP
+16-20  →  8 ÉP
+21-25  → 11 ÉP
+26-30  → 15 ÉP
+31-35  → 19 ÉP
+36-40  → 24 ÉP
+41-45  → 29 ÉP
+46-50  → 35 ÉP
 ```
 
-🔆 A `VÉ` csökkentés sebzés esetén kizárólag a fenti táblázatban található érték lesz.
+```
+-3: VÉ csökkentés
+    találatnál
+```
 
-🔆 Ha az `SP` érték a páncél `SFÉ` levonása után `0` értékre csökken, a `VÉ` csökkentés akkor is fixen `VÉ:-4`.
+🔆 A `VÉ` csökkentés Sebzés esetén kizárólag a fenti érték lesz.
+
+🔆 Ha az `SP` érték a páncél `SFÉ` levonása után `0` értékre csökken, a `VÉ` csökkentés akkor is fixen `-3`.
 
 <br />
 
@@ -21020,7 +20851,7 @@ Rühes Sebzése
  +4 SP (Kard+Erő)
 
 15 SP  → 5 ÉP
-       → 6 VÉ veszteség
+       → 3 VÉ veszteség
 ```
 
 ### ⚡Példa 2 - páncél nélküli ellenfélre
@@ -21185,15 +21016,15 @@ Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Érték
 
 Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerejen valamennyit Védő Értékéből.
 
-#### ⚜️Győzelmi szabály
+#### ⚜️ Győzelmi szabály
 
 ha a karakter végzett **egy nagyjából hasonló tudású, vagy erősebb** ellenfelével (úgy hiszi, legyőzte), akkor **Védő Értékéhez** visszatér `+3 pont`. Ez a siker hatása a szervezetre kiegészítve némi heroizmussal. Persze itt is lehetnek kivételek, mint mondjuk egy barát megölése.
 
-#### ⚜️[Harcos elme](fortelyok.harci/harcos_elme.md) fortély
+#### ⚜️ [Harcos elme](fortelyok.harci/harcos_elme.md) fortély
 
 Lásd a fortély leírását.
 
-#### ⚜️Papi varázslat
+#### ⚜️ Papi varázslat
 
 ⭕TODO⭕
 - van narratív követelménye
@@ -21413,8 +21244,8 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 
 ### 🔆Pengeméret
 
-- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Pengeméret - Azonos](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---azonos) harci helyzetben vannak.
-- Tehát sikertelen (nem sebző) támadások esetén `2 + k20T` értékkel csökkentik egymás **Védő Értékét**.
+- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-ve-csökkentés) harci helyzetben vannak.
+- Tehát sikertelen (nem sebző) támadások esetén `1 + k20T` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />
 
@@ -21458,12 +21289,12 @@ Tetves Sebzés dobás: 9 és 13
 #### ⚜️Végső SP és az ÉP sebesülés
 
 ```
-15-8 = 7 SP
+7 SP = 15 - 8
   → -3 ÉP
-  → -4 VÉ
+  → -3 VÉ
 ```
 
-A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre) alapján `3 ÉP` (❗) sebet és (`-4 VÉ`) csökkenést jelent.
+A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre) alapján `3 ÉP` (❗) sebet jelent. Továbbá a szokásos (`-3 VÉ`) csökkenés jár.
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
@@ -21579,14 +21410,14 @@ Tetves Sebzés dobás:
 Tetves kardja lecsusszan a felé dobogó lovag vértjéről, aki visszatámadva... `15`-öt dob támadására. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `40`, de most ugye neki is `-6` büntetése van erre (Támadó taktika miatt `40-6=33`)
 
 ```
-Gustav támadása: 34+19 = 53
-  → többszörös találat: 3x3= +9 SP
-  → 3x3 a lehetséges maximum
+40 = Tetves VÉ
+53 = Gustav támadása (34+19)
+   → +4 SP: többszörös találat (2x2)
 ```
 
 ```
 Gustav sebzése:
-  → k20(7) + 5 + 9
+  → k20(12) + 5 + 4
   → 21 SP
 ```
 
@@ -21908,7 +21739,7 @@ Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni,
 Támadó
 → Megnyert KÉ
 → Előny+1 TÉ dobásra
-→ VÉ csökkentés: 3 + k20T
+→ VÉ csökkentés: 2 + k20T
 
 Védő
 → Többszörös támadás elvesztése
@@ -22039,19 +21870,19 @@ Előny+2 TÉ dobásra
 ---
 ## Közrefogás
 
-Ha valakit két oldalról sikerül közrefogni, az `1 pengényi` hátrányt semlegesít annak pengeelőnyéből.
+Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Pengeelőny** harci helyzetét.
 
-#### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
+### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
 
 A hosszú kardos
-- "Fegyverméret - 1 pengés" helyzetből
-- "**Fegyverméret - Azonos**" helyzetbe kerül
+- "Pengeelőny" helyzetből
+- "Alap `VÉ` csökkentés" helyzetbe kerül
 
-#### ⚡Példa: Két tőrös közrefog egy lándzsást
+### ⚡Példa: Két tőrös közrefog egy lándzsást
 
 A lándzsás
-- "Fegyverméret - 2 pengés" előnyből
-- "**Fegyverméret - 1 pengés**" helyzetbe kerül
+- "Pengeelőny" helyzetből
+- "Alap `VÉ` csökkentés" helyzetbe kerül
 
 <br />
 
@@ -22122,48 +21953,27 @@ VÉ veszteség duplázódik
 
 Ide jönnek a fegyver-specifikus harci helyzetek/státuszok.
 
-# Fegyverméret
-## Fegyverméret - pengehátrány
+## Alap `VÉ` csökkentés
 
-Fegyvered legalább `1 pengével` rövidebb ellenfeledénél.
-
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
-
-```
-1 + k20 tízes része (0;1;2)
-```
-
----
-## Fegyverméret - Azonos
-
-Fegyvered és ellenfeled fegyverméret különbsége kisebb, mint `1 penge`.
+Ha fegyvered **nem** hosszabb legalább `1 pengével` ellenfeledénél.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-2 + k20 tízes része (0;1;2)
+1 + k20 tízes része (1;2)
 ```
 
+<br />
+
 ---
-## Fegyverméret - 1 pengés előny
+## Pengeelőny
 
 Fegyvered legalább `1 pengével` hosszabb ellenfeledénél.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-2 + k20 tízes része (0;1;2)
-```
-
----
-## Fegyverméret - 2 pengés előny
-
-Fegyvered legalább `2 pengével` hosszabb ellenfeledénél.
-
-Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
-
-```
-3 + k20 tízes része (0;1;2)
+2 + k20 tízes része (2;3)
 ```
 
 <br />
@@ -22602,7 +22412,7 @@ Ha nincs találat
 
 ```
 Sebzés helyett:
-  VÉ csökkentés: 4 + k20T
+  VÉ csökkentés: 3 + k20T
 ```
 
 ❌ Más taktikával együtt
@@ -23141,9 +22951,9 @@ Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok 
 TÉ:+3 / VÉ:-6: Támadó taktika (fix)
 VÉ:+4 / TÉ:-8: Védő taktika (fix)
 TÉ:+4, VÉ:-8 : Roham taktika
-+2 VÉ csökkentés:
++1 VÉ csökkentés:
   Fárasztó taktika, nincs találat
-+5 VÉ csökkentés:
++4 VÉ csökkentés:
   Fárasztó taktika, lenne találat
 
 ```
@@ -23758,7 +23568,7 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 
 **Követelmény**
 - csak azokra támadhatsz így, akik mind közvetlenül ellened harcolnak
-- [Fegyverméret - Azonos](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---azonos): fegyvered pengehossza nem lehet kisebb, mint ellenfeleid közül a leghosszabb fegyverrel harcolóé
+- egyik ellenfeled sem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
 
 <br />
 
@@ -23819,7 +23629,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelmény:
-  - ❌ [Fegyverméret - pengehátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány) harci helyzetben nem alkalmazható
+  - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
   - Aktuális harcmodor: - `5.szint`
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
@@ -24042,7 +23852,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás*  Ellenpróba`
 - Követelmény:
-    - [Fegyverméret - 1 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---1-pengés-előny)
+    - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
     - Harcmodor - `5.szint`
 
 **Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
@@ -24664,7 +24474,7 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
 - Fázisok: `(M)egakasztás, (E)llenpróba`
 - Végbevitel követelménye:
   - szúró szálfegyver használata
-  - Minimum [Fegyverméret - 1 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---1-pengés-előny) helyzet fegyverhosszban a lovashoz képest
+  - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) a lovashoz képest
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően -  továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
 
 <br />
@@ -24912,7 +24722,8 @@ Jelölése: KF
 Tradíció követelmény
   S: Slan
   F: Fejvadász
-Mf: 2.fok követelmény
+
+Követelmény: Mf - 2.fok
 ```
 
 Egyes – speciális – fegyvereknél van megemlítve ez a szabály. Jelentése: a táblázatban leírt harcértékek csak akkor érvényesek, ha speciális iskolában, vagy onnan származó mestertől megtanulta a karakter a fegyver speciális fogásait.
@@ -27817,6 +27628,7 @@ Védő Érték csökkentésedhez `1`-től `2`-ig terjedő bónuszt kapsz.
 
 Ellenfeled Védő Értékét csökkented `X` értékkel.
 
+<br />
 
 ---
 ### 🔥 Vérzés - gyenge
@@ -28700,9 +28512,10 @@ Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint amilyen a P
 - [Mágikus Szférák és Arkánumaik](102_02_magikus_szferak_arkanumok.md)
 - [Varázslások száma](102_03_varazslasok_szama.md)
 - [Varázslat Erőssége](102_04_varazslat_erossege.md)
-- [Varázslat Komplexitása](102_05_varazslat_komplexitasa.md)
-- [Példa Erősség és Kompexitás értékeire és viszonyára](102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)
-- [Példa Arkánum és Metódus viszonyára](102_07_pelda_arkanum_es_motodues_viszonyara.md)
+- [Varázskeret, Rekeszek](102_05_varazskeret_rekeszek.md)
+- [Varázslat Komplexitása](102_06_varazslat_komplexitasa.md)
+- [Példa Erősség és Kompexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)
+- [Példa Arkánum és Metódus viszonyára](102_08_pelda_arkanum_es_motodues_viszonyara.md)
 
 ### [Aura](103_00_aura.md)
 
@@ -28777,11 +28590,13 @@ Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki
 
 ## [Varázslat Erőssége](102_04_varazslat_erossege.md)
 
-## [Varázslat Komplexitása](102_05_varazslat_komplexitasa.md)
+## [Varázskeret, Rekeszek](102_05_varazskeret_rekeszek.md)
 
-## [Példa Erősség és Kompexitás értékeire és viszonyára](102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)⚡
+## [Varázslat Komplexitása](102_06_varazslat_komplexitasa.md)
 
-## [Példa Arkánum és Metódus viszonyára](102_07_pelda_arkanum_es_motodues_viszonyara.md)⚡
+## [Példa Erősség és Kompexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)⚡
+
+## [Példa Arkánum és Metódus viszonyára](102_08_pelda_arkanum_es_motodues_viszonyara.md)⚡
 
 ---
 
@@ -28815,36 +28630,7 @@ Magasmágia, Vulgármágia, Ordani Tűzmágia, Bárdmágia, Illuzionista, Termé
 
 # Mágikus Szférák és arkánumaik listája
 
-→ [ADR: Mágia Arkánumok működése](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.arkanumok.mukodese) ⭕
-
-
-⭕TODO⭕: Bevezető, legenda, utalás mágiaelméletre.
-
-⭕TODO⭕: Az egyes Szférák rövid leírása mindegyik alatt.
-
-Az Arkánumok (mágiaiskolák) képzettségek.
-
-A mágiaiskolák első `2` szinten csak elméleti tudást adnak, az alájuk tartozó varázslatokat csak a képzettség `3.` szintjétől alkalmazhatja a mágiatudó!
-
-Az egyes kiemelt szinteknek követelményei vannak, mint a „sima” képzettségeknél. Ezek iskolánként eltérőek.
-
-A mágiaiskolák egyes kiemelt szinjei (jellemzően magasabb szinteken) adjanak kis extrákat. Például pár MP-ért vizualizálni a varázslatot (pl.: betegség varázslat közben kis döglegyek képe kőröz az áldozat körül). 🔆Kérdés: a megjelent mellékeffekt a varázsló, vagy az áldozat képzeletvilágától függjön?
-
-🔆Egyes mágiaiskolák bizonyos mozaikjai magas nehézségűek legyenek alaperősítésen is. Így egy iskola alacsony szinten való megtanulásával csak annak egyszerűbb formuláit lehet megcsinálni.
-
-### Mágiaismeret
-
-Ha van **Tradíció** képzettség `3` és `6`. szint között, akkor lehet mágiaiskolákat tanulni, de legfeljebb `1.` és `2.` szinten. Ez csak nagyon elméleti alaptudást nyújt.
-
-
-
-Minden szféra alá 2 Arkánum (mágiaiskola) tartozik.
-
-Minden Szféra / Arkánum egy ősi nyelvnek felel meg.
-
-Annyi ősi nyelv van, ahány mágiaiskola. Anyag szféra ősi nyelve: Aquir
-
-Ősi nyelvek még: kyr, óelf
+→ [ADR: Mágia Arkánumok szabályai](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.arkanumok.szabalyai) ⭕
 
 ---
 ## ⚜️ Anyag szféra
@@ -29026,7 +28812,7 @@ Ugyan egy körben csak egyszer varázsolhatsz, de dönthetsz úgy, hogy **az ado
 
 ### Rekesz igény
 
-🔆Fontos, hogy minden újabb célpont elhasznál egy rekeszt Mágiakeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
+🔆Fontos, hogy minden újabb célpont elhasznál egy Rekeszt Varázskeretedből, ezért sokszor érdemes az "ingyenes", alacsonyabb Erősségű keretből varázsolni.
 
 🔆Ha lehetséges különböző Erősséggel alkalmazni a mágiát (például Tűznyíl), akkor különböző Rekeszeket használhatsz.
 
@@ -29059,13 +28845,7 @@ A számolás szempontjából mindegy, hogy **Szellemkézzel** kinyúlt Aurával,
 
 # Varázslat Erőssége
 
-⭕TODO⭕: ezek alól ide migrálni.
-
-- [ADR: Mágia Erőssége](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erossege)
-- [ADR: Mágia Erősség Túlvállalás, Kimerülés modell](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erosseg.tulvallalasos.kimerules.modell)
-
-
-A változtatás "energiaigényét", nagyságát szimbolizálja.
+A változtatás "energiaigényét", nagyságát szimbolizálja. Például egy bolhából óriásbolhát csinálni nagy Erősségű varázslat (de kis Komplexitású), egy emberből elfet jelentősen kisebb Erősségű (viszont nagy Komplexitású).
 
 <br />
 
@@ -29078,22 +28858,41 @@ Max varázslat Erősség
  = Mágia Tradíció képzettség
 ```
 
+---
 ## Varázslat szükséges Erőssége
 
-```
-- vagy az adott varázslat leírásában szerepel
-- vagy te számolod ki / mondod meg mekkorát
-  akarsz (ha skálázható mint pl. egy tűznyíl)
-- vagy a KM mond egy 1-15 közötti értéket
-  a leírt kívánt hatás alapján, amit leírsz neki
-```
+Több eset lehetséges adott varázslatod Erősségének megállapítására.
+
+`1.` Az adott varázslat leírásában szerepel egy fix érték.
+
+`2.` Te számolod ki / mondod meg, hogy mekkora Erősségű varázslatot szeretnél alkalmazni - amennyiben a Formula skálázható, mint példul egy tűznyíl.
+
+`3.` A KM mond egy `1-15` közötti értéket az általad szóban leírt, kívánt hatás alapján.
 
 <br />
 
 ---
-## Mágiakeret, rekeszek
+## Túlvállalás Erősségre
 
-Karaktered egy Mágiakeretet kap, amely meghatározza, hogy az adott **jelenetben** (egy teljes harc) hány darab, mekkora erősségű (`E`) varázslatot lőhetsz el. A jelenet a zavartalan nyugalmi pillanatig tart (mikor a `VÉ` csökkenések hatása is elmúlik). A felső `3 db` rekesz ekkor "töltődik vissza".
+⭕TODO⭕: [ADR: Mágia Erősség Túlvállalás, Kimerülés modell](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erosseg.tulvallalasos.kimerules.modell)
+
+Ha ott kész, migrálni ide.
+
+
+---
+
+🔗 [Varázskeret, Rekeszek](102_05_varazskeret_rekeszek.md) →
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
+
+
+---
+---
+## File: md/102_05_varazskeret_rekeszek.md
+
+# Varázskeret, Rekeszek
+
+Karaktered egy **Varázskeretet** kap, amely úgynevezett **Rekeszekből** áll. Ezen Rekeszek [Erősség](102_04_varazslat_erossege.md) értékeikhez vannak rendelve és azt mutatják meg, mennyire hatalmas varázslatokat formázhatsz meg ha tudásod maximumát, vagy annak határát próbálod súrolni. Ezek a **Rekeszek** az adott Erősségű varázslat használatakor kiürülnek - ez modellezi a mágikus kifáradást.
 
 ```
 Max E:   1 db
@@ -29102,7 +28901,21 @@ Max E-2: 1 db
 1 ... (Max E-3): bármennyit
 ```
 
-Példa: Vulgármágia Tradíció: `7.szint`
+A Szilánk rendszerében a `3` legnagyobb Erősséget kezeljük **Rekeszként**, - látható, hogy a további, gyengébb varázslatokra nincs megkötés, azokból bármennyit elvarázsolhatsz. Ezzel a módszerrel modellezzük egyre növekvő hatalmadat, ahogy Misztikus **Tradíció** képzettségedben is fejlődsz.
+
+### Rekesz elhasználása
+
+Amennyiben varázslatod Erősség egy Rekesz alá tartozik, húzd ki / ikszeld ki az adott Rekeszt. A regenerációig ilyen Erősségű varázslatot már nem használhatsz.
+
+Nyilván Magasabb `E` varázslat Rekeszt is felhasználhatsz alacsonyabb **E** céljára - ha valamilyen speciális okból ezt akarnád. Például ha már elhasználtad `6E` varázslatodat, akkor a még meglevő `7E` Rekeszt felhasználhatod `6E` formájában is.
+
+### Minden Rekesz üres
+
+Amennyiben minden Rekeszed kiürült, akkor is képes vagy Szabad varázslatok alkalmazására a továbbiakban.
+
+### ⚡Példa Rekeszekre
+
+**Vulgármágia Tradíció**: `7.szint`
 
 ```
 7 E:   1 db
@@ -29111,11 +28924,48 @@ Példa: Vulgármágia Tradíció: `7.szint`
 1..4 E: bármennyit
 ```
 
-🔆 Magasabb `E` varázslat rekeszt is felhasználhatsz alacsonyabb **E** céljára - ha valamiért ezt akarnád. Például ha már elhasználtad `6E` varázslatodat, akkor még meglevő `7E` slotodat felhasználhatod `6E` formájában is.
+### Szabad varázslatok
 
-🔆 Erősségre hathatnak az Összhangok
+✅ Agóra
+
+A gyengébb, **nem** Rekesz Erősségek alá tartozó varázslatok neve: **Szabad varázslat**. Ezekből nagyjából bármennyit elhasználhatsz.
+
+```
+Opcionális:
+  Edzettség Tulajdonságpróba
+
+Rontás < 3   → 1 FP
+Rontás >= 3  → 3 FP
+```
+
+Ha folyamatosan, kiugróan sokat alkalmazol Szabad varázslatokat, akkor a KM - az adott szituáció függvényében dönthet úgy, hogy **Edzettség Tulajdonságpróbát** kell dobnod - az általa megadott Nehézség ellen.
+
+Ha a próba sikertelen és rontásod kisebb, mint `3`, akkor `1 FP` büntetést kapsz. Ha rontásod `3` vagy annál nagyobb, akkor pedig `3 FP` a penzium.
 
 <br />
+
+---
+## Varázskeret, Rekesz regeneráció - automatikus
+
+✅ Agóra
+
+```
+Passzívan
+ 1 Rekesz / óra
+```
+
+Alapesetben `1 db` Rekesz töltődik vissza óránként. Ehhez a varázstudónak nem kell semmit csinálnia. A sorrend: először a legalacsonyabb Erősségű Rekesz, majd felfele sorban a többi regenerálódik.
+
+## Varázskeret, Rekesz regeneráció - aktív visszanyerés
+
+→ [STUDY: Varázskeret, Rekesz regeneráció](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.varazskeret.rekesz.regeneracio) ⭕TODO⭕
+
+<br />
+
+---
+## 🔆 Erősség túlvállalás
+
+→ [ADR: Varázslat túlvállalás](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erosseg.tulvallalasos.kimerules.modell) ⭕TODO⭕
 
 ---
 ## 🔆 Összetett próba varázslás Erősségnél
@@ -29123,15 +28973,20 @@ Példa: Vulgármágia Tradíció: `7.szint`
 Nagyobb, hosszabb varázslatoknál a KM előírhat összetett próbát. Példa:
 
 ```
-1 db 7E
-1 db 6E
-+ tovább tart a varázslás
+E igény
+
+1 db 7E Rekesz
+1 db 6E Rekesz
++ tovább tarthat a varázslás
 ```
 
 <br />
 
 ---
-## Mágikus összhangok hatása Erősségre
+## 🔆 Mágikus összhangok hatása Erősségre
+
+→ [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md) ⭕TODO⭕
+→ [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕TODO⭕
 
 Rekesz Erősséget módosítanak.
 
@@ -29139,40 +28994,59 @@ Rekesz Erősséget módosítanak.
 [-3; +3]
 ```
 
-Példa: Tűzvarázslat
-- 4-es Slotot lövök el, de 7E-vel hat (+3) vulkán mellett.
-- 7-es Slotot lövök el, de 4E-vel hat (-3) tó mellett.
+#### ⚡Példa: Tűzvarázslat
 
----
-## Mágia slot regeneráció
-
-→ [ADR: Varázslat túlvállalás](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.erosseg.tulvallalasos.kimerules.modell) ⭕
+- `4`-es Rekeszt használok el, de `7E`-vel hat (`+3`) vulkán mellett.
+- `7`-es Rekeszt használok el, de `4E`-vel hat (`-3`) tó mellett.
 
 ---
 
-🔗 [Varázslat Komplexitása](102_05_varazslat_komplexitasa.md) →
+🔗 [Varázslat Komplexitása](102_06_varazslat_komplexitasa.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
 
 
 ---
 ---
-## File: md/102_05_varazslat_komplexitasa.md
+## File: md/102_06_varazslat_komplexitasa.md
 
 # Varázslat Komplexitása
 
-⭕TODO⭕: [ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.formulak.komplexitasa) alól ide migrálni, ha végleges.
+→ [ADR: Varázslat Komplexitása](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslat.komplexitasa) alól ide migrálni, ha végleges. ⭕TODO⭕
+
+```
+k10 dobás Előny-Hátrány skáláján eltolás
+    Intervallum: [-2;+2]
+
+-1: Spontán mágia
+    Nem létezik a formula, rögtönzés.
++0: Formulából varázsolt. Ez az alap módszer.
++1: Varázskönyvből/tekercsből felolvasott
+
++0: Harci
++1: Nyugalmi
++2: Rituális
+
+Metódus fortély foka
+-1: 1.fok
++0: 2.fok
++1: 3.fok
+
+-1: minden további Arkánum (db)
+```
+
+Magasmágia esetén minél több az **Arkánum db**, annál veszélyesebb - intelligens démonná válhat a varázslat, főleg ha Mentálmágia is szerepel benne.
 
 ---
 
-🔗 [Példa Erősség és Kompexitás értékeire és viszonyára](102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md) →
+🔗 [Példa Erősség és Kompexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
 
 
 ---
 ---
-## File: md/102_06_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md
+## File: md/102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md
 
 # ⚡Példa Erősség és Kompexitás értékeire és viszonyára
 
@@ -29190,14 +29064,14 @@ Magas Komplexitás (K=18)
 
 ---
 
-🔗 [Példa Arkánum és Metódus viszonyára](102_07_pelda_arkanum_es_motodues_viszonyara.md) →
+🔗 [Példa Arkánum és Metódus viszonyára](102_08_pelda_arkanum_es_motodues_viszonyara.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
 
 
 ---
 ---
-## File: md/102_07_pelda_arkanum_es_motodues_viszonyara.md
+## File: md/102_08_pelda_arkanum_es_motodues_viszonyara.md
 
 # Példa Arkánum és Metódus viszonyára
 
@@ -30101,8 +29975,8 @@ Vihar, aszály, szivárvány, napfény, holdfény
 Példák:
 - Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
 - Viharban könnyebb villámmágiát.
-⭕TODO⭕
 
+⭕TODO⭕
 
 ---
 
@@ -30214,7 +30088,7 @@ A Papi Tradíciót követő mágiatudó csak biztos tudásból varázsolhat.
 
 Mágiaiskolaként teljes [Szférákat](102_02_magikus_szferak_arkanumok.md) vehet fel képzettségként.
 
-Minden varázslatnak van, vannak Szféra követelménye(i). Amennyiben minden Szféra követelmény megvan, a pap elvileg képes az adott varázslatot megidézni. Egyes varázslatoknak lehetnek egyedi követelményei is, amelyeket teljesíteni kell, ezek külön említésre kerülnek az adott varázslatok leírásában.
+Minden varázslatnak van, vannak Szféra követelménye(i). Amennyiben minden Szféra követelmény megvan, a pap elvileg képes az adott varázslatot megidézni. Egyes varázslatoknak lehetnek egyedi követelményei is, amelyeket teljesíteni kell, ezek külön említésre kerülnek az adott varázslatok leírásaiban.
 
 ---
 ### Kisszféra
