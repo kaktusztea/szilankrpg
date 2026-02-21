@@ -26,7 +26,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Harcérték/Célzóérték Módosító (`HM, CM`)
 - (`Harckeret / Fegyver Sebesség) + 1` → Támadások száma körönként
 - Kétkezes harc
-- Fegyverméret kategóriák: pengehossz →  pengeelőny, pengehátrány
+- Fegyverméret kategóriák, Pengeelőny
 - Védő Érték csökkentése (pengeelőny/hátrány függő)
 - Páncélmodell
   - páncél generátor: `4` féle `SFÉ`; `MGT`; Ár

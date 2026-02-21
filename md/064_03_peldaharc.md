@@ -106,8 +106,8 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 
 ### 🔆Pengeméret
 
-- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Pengeméret - Azonos](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---azonos) harci helyzetben vannak.
-- Tehát sikertelen (nem sebző) támadások esetén `2 + k20T` értékkel csökkentik egymás **Védő Értékét**.
+- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-ve-csökkentés) harci helyzetben vannak.
+- Tehát sikertelen (nem sebző) támadások esetén `1 + k20T` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />
 
@@ -151,12 +151,12 @@ Tetves Sebzés dobás: 9 és 13
 #### ⚜️Végső SP és az ÉP sebesülés
 
 ```
-15-8 = 7 SP
+7 SP = 15 - 8
   → -3 ÉP
-  → -4 VÉ
+  → -3 VÉ
 ```
 
-A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre) alapján `3 ÉP` (❗) sebet és (`-4 VÉ`) csökkenést jelent.
+A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre) alapján `3 ÉP` (❗) sebet jelent. Továbbá a szokásos (`-3 VÉ`) csökkenés jár.
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
@@ -272,14 +272,14 @@ Tetves Sebzés dobás:
 Tetves kardja lecsusszan a felé dobogó lovag vértjéről, aki visszatámadva... `15`-öt dob támadására. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `40`, de most ugye neki is `-6` büntetése van erre (Támadó taktika miatt `40-6=33`)
 
 ```
-Gustav támadása: 34+19 = 53
-  → többszörös találat: 3x3= +9 SP
-  → 3x3 a lehetséges maximum
+40 = Tetves VÉ
+53 = Gustav támadása (34+19)
+   → +4 SP: többszörös találat (2x2)
 ```
 
 ```
 Gustav sebzése:
-  → k20(7) + 5 + 9
+  → k20(12) + 5 + 4
   → 21 SP
 ```
 

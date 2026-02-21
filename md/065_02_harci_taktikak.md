@@ -55,7 +55,7 @@ Ha nincs találat
 
 ```
 Sebzés helyett:
-  VÉ csökkentés: 4 + k20T
+  VÉ csökkentés: 3 + k20T
 ```
 
 ❌ Más taktikával együtt

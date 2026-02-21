@@ -43,7 +43,7 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
 - Fázisok: `(M)egakasztás, (E)llenpróba`
 - Végbevitel követelménye:
   - szúró szálfegyver használata
-  - Minimum [Fegyverméret - 1 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---1-pengés-előny) helyzet fegyverhosszban a lovashoz képest
+  - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) a lovashoz képest
 - Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően -  továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
 
 <br />

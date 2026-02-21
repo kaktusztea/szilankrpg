@@ -69,17 +69,17 @@ Minden újabb támadás a körben:
 
 ```
 Sebzés jellege
-→ Elsődleges sebzési forma
-  az alapértelmezett
-→ Másodlagos támadási formával
-  TÉ:-2 módosító
+ → Elsődleges sebzési forma
+   az alapértelmezett
+ → Másodlagos támadási formával
+   TÉ:-2 módosító
 
 ```
 
 ```
-"Fegyverméret ..."
-  harci helyzetek határozzák
-  meg a VÉ csökkentést
+"Fegyverméret különbség
+  határozza meg a
+  VÉ csökkentést
 ```
 
 <br />
@@ -91,37 +91,23 @@ Sebzés jellege
 "k20T" rövidítés == k20 tízes része
 
 Példák:
-5  → 0
-16 → 1
-20 → 2
+   5  → 0
+  16  → 1
+  20  → 2
 ```
 
-#### [Fegyverméret - pengehátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány)
-
-```
-VÉ csökkentés
-  1 + k20T
-```
-
-#### [Fegyverméret - Azonos](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---azonos)
+#### [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-vé-csökkentés)
 
 ```
 Mindkét fél csökkentése
-  2 + k20T
+  1 + k20T
 ```
 
-#### [Fegyverméret - 1 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---1-pengés-előny)
-
-```
-VÉ csökkentés
-  2 + k20T
-```
-
-#### [Fegyverméret - 2 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---2-pengés-előny)
+#### [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
 
 ```
 VÉ csökkentés
-  3 + k20T
+  2 + k20T
 ```
 
 <br />
@@ -141,9 +127,9 @@ Módosítók
 
 ```
 Többszörös találat bónusza
-  TÉ >= VÉ + 4    SP:+3
-  TÉ >= VÉ + 8    SP:+6
-  TÉ >= VÉ + 12   SP:+9
+  TÉ >= VÉ + 5    SP:+2
+  TÉ >= VÉ + 10   SP:+4
+  TÉ >= VÉ + 15   SP:+6
 ```
 
 <br />
@@ -174,7 +160,7 @@ VÉ csökkentés sebzés esetén
   • SP → VÉ átváltás Sebzés táblázatban
   • Fárasztó taktika alkalmazásakor:
     • nincs Sebzés
-    • 4 + k20T VÉ csökkentés
+    • 3 + k20T VÉ csökkentés
 ```
 
 Lásd: [Sebzés táblázat](064_02_07_sebzes.md)

@@ -6,7 +6,8 @@ Jelölése: KF
 Tradíció követelmény
   S: Slan
   F: Fejvadász
-Mf: 2.fok követelmény
+
+Követelmény: Mf - 2.fok
 ```
 
 Egyes – speciális – fegyvereknél van megemlítve ez a szabály. Jelentése: a táblázatban leírt harcértékek csak akkor érvényesek, ha speciális iskolában, vagy onnan származó mestertől megtanulta a karakter a fegyver speciális fogásait.

@@ -15,6 +15,6 @@ A fortély nagy ismerői a bajvívók és harcosok.
 ---
 ### Megkötés
 
-🔆 Figyelj a **pengehátrány megkötésre** a Fárasztó taktika leírásánál!
+🔆 Figyelj a **pengehátrány megkötésre** a [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
 
 ---

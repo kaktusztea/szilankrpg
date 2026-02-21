@@ -242,6 +242,7 @@ Védő Érték csökkentésedhez `1`-től `2`-ig terjedő bónuszt kapsz.
 
 Ellenfeled Védő Értékét csökkented `X` értékkel.
 
+<br />
 
 ---
 ### 🔥 Vérzés - gyenge

@@ -8,7 +8,7 @@ Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni,
 Támadó
 → Megnyert KÉ
 → Előny+1 TÉ dobásra
-→ VÉ csökkentés: 3 + k20T
+→ VÉ csökkentés: 2 + k20T
 
 Védő
 → Többszörös támadás elvesztése
@@ -139,19 +139,19 @@ Előny+2 TÉ dobásra
 ---
 ## Közrefogás
 
-Ha valakit két oldalról sikerül közrefogni, az `1 pengényi` hátrányt semlegesít annak pengeelőnyéből.
+Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Pengeelőny** harci helyzetét.
 
-#### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
+### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
 
 A hosszú kardos
-- "Fegyverméret - 1 pengés" helyzetből
-- "**Fegyverméret - Azonos**" helyzetbe kerül
+- "Pengeelőny" helyzetből
+- "Alap `VÉ` csökkentés" helyzetbe kerül
 
-#### ⚡Példa: Két tőrös közrefog egy lándzsást
+### ⚡Példa: Két tőrös közrefog egy lándzsást
 
 A lándzsás
-- "Fegyverméret - 2 pengés" előnyből
-- "**Fegyverméret - 1 pengés**" helyzetbe kerül
+- "Pengeelőny" helyzetből
+- "Alap `VÉ` csökkentés" helyzetbe kerül
 
 <br />
 

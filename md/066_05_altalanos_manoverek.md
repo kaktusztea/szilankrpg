@@ -89,7 +89,7 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 
 **Követelmény**
 - csak azokra támadhatsz így, akik mind közvetlenül ellened harcolnak
-- [Fegyverméret - Azonos](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---azonos): fegyvered pengehossza nem lehet kisebb, mint ellenfeleid közül a leghosszabb fegyverrel harcolóé
+- egyik ellenfeled sem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
 
 <br />
 
@@ -150,7 +150,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelmény:
-  - ❌ [Fegyverméret - pengehátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány) harci helyzetben nem alkalmazható
+  - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
   - Aktuális harcmodor: - `5.szint`
 
 **Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
@@ -373,7 +373,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás*  Ellenpróba`
 - Követelmény:
-    - [Fegyverméret - 1 pengés előny](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---1-pengés-előny)
+    - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
     - Harcmodor - `5.szint`
 
 **Hatás**: leadhatsz `TÉ:+4`-gyel egy Megszakító támadást (speciális eset, mert itt TE alkalmazhatod ezt a fázist). Ha a támadás sikeres, akkor nem okozol sebzést, de ellenfeled elveszíti következő támadását.
