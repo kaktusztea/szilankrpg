@@ -5,6 +5,8 @@ Kapcsolódó képzettségek
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md)
 - [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md)
 
+Eltulajdonítani valamit úgy, hogy akitől, vagy aki elől elemeljük, az ne vegye észre:
+
 ```
 Lopás + Ügyesség
      vs
