@@ -106,7 +106,7 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 
 ### 🔆Pengeméret
 
-- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-ve-csökkentés) harci helyzetben vannak.
+- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) harci helyzetben vannak.
 - Tehát sikertelen (nem sebző) támadások esetén `1 + k20T` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />
@@ -187,7 +187,7 @@ Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad t�
 ```
 Tetves Sebzés dobás:
 k20+2 → 11 SP (Szúró)
-  → -5 ÉP, -6 VÉ
+  → -5 ÉP, -3 VÉ
 ```
 
 Az újabb sebbel Gustav bőven átkerült az `S2` egészség-kategóriába, ahol - magas Fájdalomtűrésének köszönhetően még mindig nincs `TÉ` büntetése.
@@ -216,15 +216,21 @@ VÉ: 40
 ---
 ### Gustav harmadik sebe  (`S3` kategória)
 
-Bár sikerül sebet ejtenie támadóján (sajnos csak `3 ÉP`-t, ritka szerencsétlen Sebzés dobás volt). A sors nem kedvez a lovagnak, a gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás hatalmas (`14 SP`), de a láncing rengeteget (`8`) felfog.
+Bár sikerül sebet ejtenie  támadóján (sajnos csak `3 ÉP`-t, ritka szerencsétlen Sebzés dobás volt). A sors nem kedvez a lovagnak, a gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás hatalmas (`14 SP`), de a láncing rengeteget (`8`) felfog.
 
 ```
 Tetves Sebzés dobás:
-SP: 14(dobás) - 8(SFÉ) = 6 SP
-    → -3 ÉP, -4 VÉ
+6 SP = 14 (dobás)
+       -8 (SFÉ)
+
+Hatás:
+  -3 ÉP
+  -3 VÉ
 ```
 
-Gustavnak `6 ÉP`-je marad és `S3`-as kategóriába zuhan (itt már `-3 TÉ` büntetés jár), valamint elveszít még `4 VÉ`-t. Eddig összesen `12 ÉP`-t vesztett!
+Gustavnak `6 ÉP`-je marad és `S3`-as kategóriába zuhan, ahol már `-3 TÉ` büntetés jár.\
+Ezen túl elveszíti még a sebesüléskor szokásos `3 VÉ`-t.\
+Eddig összesen `12 ÉP`-t vesztett!
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
@@ -283,7 +289,7 @@ Gustav sebzése:
   → 21 SP
 ```
 
-Tetvesnek nincs vértje, ezért a `21 SP` teljesen beszámít → `11 ÉP` és `-6 VÉ`.\
+Tetvesnek nincs vértje, ezért a `21 SP` teljesen beszámít → `11 ÉP` és `-3 VÉ`.\
 A gyilkos pont `0 ÉP`-re zuhan - majdnem kettészelték!
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |

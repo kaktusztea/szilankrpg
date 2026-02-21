@@ -96,10 +96,10 @@ Példák:
   20  → 2
 ```
 
-#### [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-vé-csökkentés)
+#### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 ```
-Mindkét fél csökkentése
+VÉ csökkentés
   1 + k20T
 ```
 

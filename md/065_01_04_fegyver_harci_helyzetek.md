@@ -2,9 +2,11 @@
 
 Ide jönnek a fegyver-specifikus harci helyzetek/státuszok.
 
-## Alap `VÉ` csökkentés
+## Alappenge
 
-Ha fegyvered **nem** hosszabb legalább `1 pengével` ellenfeledénél.
+Fegyvered **nem** hosszabb legalább `1 pengével` ellenfeledénél.  
+Ide tartozik, ha fegyvered azonos hosszúságú az ellenfélével, **vagy** ha annál rövidebb.
+
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
@@ -95,9 +97,9 @@ Hátrány-1 TÉ dobásra
 <br />
 
 ---
-# Sebzéstípusok
+## Sebzéstípusok
 
-## Sebzéstípus: elsődleges
+### Sebzéstípus: elsődleges
 
 ```
 Sima Sebzésdobás
@@ -105,8 +107,7 @@ Sima Sebzésdobás
 
 Fegyvered elsődleges sebzési típusával támadsz. Például "Hosszú kard: Vágás".
 
----
-## Sebzéstípus: másodlagos
+### Sebzéstípus: másodlagos
 
 Fegyvered másodlagos sebzési típusával támadsz. Például "Hosszú kard: Szúrás".
 
@@ -114,8 +115,7 @@ Fegyvered másodlagos sebzési típusával támadsz. Például "Hosszú kard: Sz
 Hátrány-1 Sebzésdobásra
 ```
 
----
-## Sebzéstípus: alkalmatlan
+### Sebzéstípus: alkalmatlan
 
 ```
 Hátrány-2 Sebzésdobásra

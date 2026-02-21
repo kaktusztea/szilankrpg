@@ -12,7 +12,7 @@ A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában vi
 
 Az aktuális fegyverméretek különbségét Harci helyzetekkel (harci státuszokkal) modellezzük.
 
-### ⚜️ [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-vé-csökkentés)
+### ⚜️ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 - Fegyverméret-különbség kisebb `1 pengehossznál`
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`

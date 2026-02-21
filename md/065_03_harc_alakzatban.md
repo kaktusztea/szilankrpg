@@ -192,11 +192,9 @@ Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix ért
 ### Alakzat VÉ csökkentése (fix értékek)
 
 ```
-1 VÉ: -2 penge különbség (alakzaté)
-2 VÉ: -1 penge különbség (alakzaté)
+2 VÉ: Alakzat Pengehátrányban
 3 VÉ: Azonos pengehossznál
-4 VÉ: +1 penge különbség (alakzaté)
-5 VÉ: +2 penge különbség (alakzaté)
+4 VÉ: Alakzat Pengeelőnyben
 ```
 
 ### Túlerő módosítója
@@ -204,11 +202,11 @@ Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix ért
 ```
 VÉ csökkentés
 
-+0 VÉ: 3 fő (legkisebb Alakzat)
-+1 VÉ: 5+ fő
++0 VÉ: 3 főnél (legkisebb Alakzat)
++1 VÉ: 5+ főnél (nem additív)
 ```
 
-Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-6 VÉ csökkenést` szenved el.
+Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-5 VÉ csökkenést` szenved el.
 
 <br />
 

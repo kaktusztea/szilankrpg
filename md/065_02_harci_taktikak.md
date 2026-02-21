@@ -151,7 +151,7 @@ A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem
 ```
 +1 támadás a körben
 
--4 VÉ csökkenést
+-3 VÉ csökkenést
 szenvedsz el azonnal
 ```
 
