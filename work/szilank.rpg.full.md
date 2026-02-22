@@ -957,7 +957,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 [Státuszok](082_statuszok.md)
 
-[Sebzés táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre)
+[Sebzés táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre)
 
 [Harc menete (tömör verzió)](064_01_harc_menete_osszefoglalas.md)
 
@@ -2410,32 +2410,42 @@ Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába kategóri
 ---
 ## File: md/010_06_szilank.md
 
-## Szilánk
+# Szilánk
 
 Korábban, a [Kalandozók](010_03_00_karakter_jellemzoi.md) bemutatásánál említett, lélekben szunnyadó **Szilánk** a játékmenetben is megjelenik. Valóságformáló hatása a játékosok számára konkrét előnyökkel jár.
 
-A Szilánk a szabályrendszerben egy pontérték, amelyet csak és kizárólag Kalandozók kapnak, NJK nem - kivéve, ha ő is Kalandozó.
+A Szilánk a szabályrendszerben egy pontérték, amelyet csak és kizárólag Kalandozók kapnak - ez az NJK-kra is vonatkozik.
+
+## Csapat Szilánk
+
+A csapat is kap külön Szilánk pontot, amelynek elköltésének módját a csapat határozza meg a kaland elején: egyszerű többséggel dönt, mikor, hogyan használják fel, esetleg teljes egyetértéssel - ebbe nem szólunk bele, döntsenek a játékosok.
 
 <br />
 
-### Mire jó?
+## Mire jó?
 
 Egy **Szilánk** (pont) elhasználásával a játékos képes lesz a kalandban narratív események módosítására, akár kockadobás "megkerülésére" is.
 
-Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, csak egy lehetőséget teremt, amivel vagy képes élni a játékos, vagy nem.
+Sokszor az ilyen narratív módosítás a kalandban nem hoz automatikus sikert, csak egy lehetőséget teremt, amivel vagy képes élni a játékos/csapat, vagy nem.
 
 <br />
 
-### Javadalmazás
+---
+## Javadalmazás
 
 ```
-- Kaland elején: 1 Szilánk / JK
-- Max: 3 Szilánk
-- Következő Kaland elején 1
-  értékre áll vissza
+Kaland elején:
+  1 Szilánk / JK
+  1 Szilánk / Csapat
+
+Max: 3 Szilánk / JK
+Max: 3 Szilánk / csapat
+
+Következő Kaland elején mind
+  1 értékre áll vissza
 ```
 
-Minden kaland elején a Szilánk értéke visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét - az ellenfelek lemészárlása **nem** tartozik ide. A fenti lehet konzisztens alakítás, de csúcsjeleneletek, fontos pillanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
+Minden kaland elején a JK Szilánk és a Csapat Szilánk értéke is visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét - az ellenfelek lemészárlása **nem** tartozik ide. A fenti lehet konzisztens alakítás, de csúcsjeleneletek, fontos pillanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
 
 Egy kaland során
 - `1` új Szilánkot szerezni nagy dolognak számít
@@ -2444,7 +2454,9 @@ Egy kaland során
 <br />
 
 ---
-### 🔆 Használata: Átlagos belenyúlás a történetbe: `1 Szilánk`
+## Szilánk használatának módjai
+
+### 🔆 Átlagos belenyúlás a történetbe: `1 Szilánk`
 
 Egy (`1`) Szilánkért átlagos változtatásokat eszközölhetsz a történetben.
 
@@ -2458,7 +2470,7 @@ Példák:
 
 <br />
 
-### 🔆 Használata: Jelentős belenyúlás a történetbe: `2 Szilánk`
+### 🔆 Jelentős belenyúlás a történetbe: `2 Szilánk`
 
 Fontos: a `2` Szilánk költség NEM adható össze két külön karakter pontjaiból, egy személynek kell fedeznie a teljes költséget!
 
@@ -2469,22 +2481,38 @@ Példák:
 
 <br />
 
-### 🔆 Használata: 1x Újradobás: `1 Szilánk`
+## 🔆 `1x` Újradobás: `1 Szilánk`
 
 Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz `1 db` Szilánkot egy dobásod megismétlésére. Ilyenkor a másodiknak dobott érték számít - akkor is, ha az kedvezőtlenebb lett, mint az első.
 
 <br />
 
+## 🔆 `3 ÉP` visszatér: `1 Szilánk`
+
+Ezzel narratív irányba terelheted a harc folyását, végzetes helyzetekben visszakaphatsz `3 ÉP`-t  `1` Szilánkért cserébe.
+
+<br />
+
 ---
-### ⚜️ Szilánk gyűjtésének módja: `1.` Kaland közben
+# Szilánk gyűjtése
 
-#### Mikor szerezhető Szilánk kaland közben?
+A kalandot megelőző áttekintő beszélgetésen a csapat eldöntheti, hogy melyik modellt szeretné követni a lent bemutatott két lehetőségből..
 
-- `1.` a KM felajánlhatja, hogy ez egy kiemelt szituáció, ahol Szilánkot gyűjthet a játékos. Ez a Karakter számára egy hátrányos fordulat, amiben nehéz helyzetbe kerül, de bizonyíthatja rátermettségét. Ha a Játékos elfogadja, akkor a fordulat megtörténik, ő pedig kap egy Szilánkot.
-- `2.` a JK veti fel, hogy egy általa felvázolt nehéz fordulat, szituáció lép fel. Ilyenkor a KM dönt, hogy elfogadja-e a játékos felvetését és ezáltal a Szilánk-szerzést.
-- `3.` a JK magától csinál egy kiemelt szituációt - nem feltétlenül Szilánk szerzése céljából - ilyenkor a KM utólag jutalmazhatja Szilánkkal
+Az `1.` modell a heroikus fantasyt jutalmazza, a `2.` a szerepjátékozást.
 
-#### Milyen szituációkban járhat **Szilánk**?
+Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onnantól a kaland végéig a választott modellt kell kövessék.
+
+## ⚜️`1.` mód: Kaland közben
+
+### Mikor szerezhető Szilánk kaland közben?
+
+`1.` a KM felajánlhatja, hogy ez egy kiemelt szituáció, ahol Szilánkot gyűjthet a játékos. Ez a Karakter számára egy hátrányos fordulat, amiben nehéz helyzetbe kerül, de bizonyíthatja rátermettségét. Ha a Játékos elfogadja, akkor a fordulat megtörténik, ő pedig kap egy Szilánkot.
+
+`2.` a JK veti fel, hogy egy általa felvázolt nehéz fordulat, szituáció lép fel. Ilyenkor a KM dönt, hogy elfogadja-e a játékos felvetését és ezáltal a Szilánk-szerzést.
+
+`3.` a JK magától csinál egy kiemelt szituációt - nem feltétlenül Szilánk szerzése céljából - ilyenkor a KM utólag jutalmazhatja Szilánkkal
+
+### Milyen szituációkban járhat **Szilánk**?
 
 - Tökéletesen kijátszod a jellemed ÉS emiatt nehéz helyzetbe kerülsz. Fontos, hogy ez **rád**, az általad játszott karakterre vonatkozik, nem a csapat egészére. Ezt azért fontos kiemelni, mert azzal nem lehet Szilánkot felhalmozni, hogy önző módon kibabrálsz a parti egészével.
 - Kiemelkedő, epikus momentum. Kalandonként jellemzően `1` ilyen fordul elő egy konkrét Játékos Karakterrel.
@@ -2501,8 +2529,7 @@ Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz `1 db` Szil
 
 <br />
 
----
-### ⚜️ Szilánk gyűjtésének módja: `2.` Játék végén, utólag
+## ⚜️ `2.` mód: Játék végén, utólag
 
 A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról, ahol `5` percben megbeszélik, ki volt az, aki karaktere személyiségét, faját, leíró háttereit, tradícióját, jellemét legjobban kijátszotta. Ez alapján a játékos karaktere kap `1` Szilánkot a következő játékalom kezdetekor (a kalandon belül).
 
@@ -2513,19 +2540,6 @@ A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról,
  **Lehet hátránya is**, mert nem jutalmazza a heroikus, epikus fantasy momentumokat.
 
  **Lehet azért is hátránya**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` mód előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
-
-<br />
-
----
-### A csapat döntése kaland elején: melyik modellt használják? `1.; 2.`
-
-A kalandot megelőző áttekintő beszélgetésen a csapat eldöntheti, melyik modellt szeretné követni.
-
-Az `1.` modell a heroikus fantasyt jutalmazza, a `2.` a szerepjátékozást.
-
-Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onnantól a kaland végéig a választott modellt kell kövessék.
-
-<br />
 
 ---
 
@@ -9672,13 +9686,7 @@ Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellem
 ---
 ### Próbadobás menete
 
-Eltulajdonítani valamit úgy, hogy akitől, vagy aki elől elemeljük, az ne vegye észre:
-
-```
-Lopás + Ügyesség
-     vs
-Észlelés + Érzékenység/Intelligencia
-```
+Lásd az [Ellopni valamit, kirabolni valakit](../szituaciok/lopas_kirablas.md) szituáció leírását.
 
 #### Csoportos szellemi képzettségpróba ellenpróbánál
 
@@ -12131,15 +12139,51 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 ---
 ## File: md/045_misztikus_magia_fortelyok.md
 
-## Misztikus és mágia fortélyok
+# Misztikus és mágia fortélyok
 
 <!-- tag: misztikus__fortely -->
 
 → [STUDY: Misztikus Fortélyok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.misztikus.fortelyok) ⭕
 
-### Mágia metódusok
+## Általános mágia fortélyok
 
-→ [STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)
+- [Antissjárás](fortelyok.misztikus/antissjaras.md):  ⭕ képzettség v fortély? ⭕
+- [Belső síkok lényeinek ismerete](fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md) 🔁
+- [Külső síkok lényeinek ismerete](fortelyok.misztikus/kulso_sikok_lenyeinek_ismerete.md) 🔁
+- [Gyors varázsló](fortelyok.misztikus/gyors_varazslo.md)
+- [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md)
+- [Mágikus lövedék gyorsítása](fortelyok.misztikus/magikus_lovedek_gyorsitasa.md)
+- [Mentálfonál](fortelyok.misztikus/mentalfonal.md)
+- [Mozgó cél mestere mágiához](fortelyok.misztikus/mozgo_cel_mestere_magiahoz.md)
+- [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md)
+- [Pszí Telepátia](fortelyok.misztikus/pszi_telepatia.md)
+
+## Mágia metódusok
+
+→ ⭕[STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕ Ott dolgozni ki őket. Ha kész, másolható ezek alá:
+
+- [Áldás](fortelyok.magia.metodusok/aldas.md)
+- [Átok](fortelyok.magia.metodusok/atok.md)
+- [Bábúmágia](fortelyok.magia.metodusok/babumagia.md)
+- [Bájitalok](fortelyok.magia.metodusok/bajitalok.md)
+- [Ceremoniális](fortelyok.magia.metodusok/ceremonialis.md)
+- [Dalmágia](fortelyok.magia.metodusok/dalmagia.md)
+- [Fókuszok, Emitterek alkotása](fortelyok.magia.metodusok/fokuszok_emitterek_alkotasa.md)
+- [Formázás](fortelyok.magia.metodusok/formazas.md)
+- [Gyertyamágia](fortelyok.magia.metodusok/gyertyamagia.md)
+- [Jelmágia, Rúnamágia](fortelyok.magia.metodusok/jelmagia_runamagia.md)
+- [Kártyavetés](fortelyok.magia.metodusok/kartyavetes.md)
+- [Litánia, Rituálé](fortelyok.magia.metodusok/litania_rituale.md)
+- [Maszkmágia](fortelyok.magia.metodusok/maszkmagia.md)
+- [Megkötés](fortelyok.magia.metodusok/megkotes.md)
+- [Rituális tánc](fortelyok.magia.metodusok/ritualis_tanc.md)
+- [Szexuálmágia](fortelyok.magia.metodusok/szexualmagia.md)
+- [Szimpatikus mágia](fortelyok.magia.metodusok/szimpatikus_magia.md)
+-  ⭕ Hívás/Idézés ?
+-  ⭕ Űzés ?
+-  ⭕ Írányítás ?
+-  ⭕ Hang (?)
+-  ⭕ Fény (?): Így pl. az **Illúziók** arkánum is felbontható, nem tudna mindent az alkalmazó egyben rögtön.
 
 ---
 
@@ -13939,7 +13983,7 @@ Minden [újabb támadásod](../063_04_tamadasok_szama_fegyverrel.md#té-levonás
 
 Mikor már mindenki azt hiszi, lekaszaboltak, hirtelen felülsz a vértócsában és elbotorkálsz..
 
-A fortély segítségével minden fegyver okozta, bekapott `ÉP` sebből "átalakíthatsz" pár `ÉP` pontot `FP` ponttá.
+A fortély segítségével mikor sebet kapsz néhány `ÉP` "átalakul" `FP` ponttá.
 
 ### 1. fok
 
@@ -13956,11 +14000,22 @@ A fortély segítségével minden fegyver okozta, bekapott `ÉP` sebből "átala
 🌟 `2 ÉP` forgatható át `FP` ponttá.
 
 ---
-### `ÉP` vs `FP`
+### `ÉP` vs `FP` ❗
 
 Ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! [Bővebben](../061_02_faradsag_pont.md#val%C3%B3s-%C3%A9p-seb-elszenved%C3%A9se-fp-ut%C3%A1n).
 
 ---
+### Példa
+
+```
+Elpusztíthatatlan: 2.fok
+Seb: 11 ÉP
+
+A fenti 11 ÉP átalakul:
+→ ÉP: 9
+→ FP: 2
+```
+
 
 
 ---
@@ -14013,9 +14068,9 @@ A fortély nagy ismerői a bajvívók és harcosok.
 - Sikeres és sikertelen támadás esetén is
 
 ---
-### Megkötés
+### Pengehátrányban nem alkalmazható
 
-🔆 Figyelj a **pengehátrány megkötésre** a [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
+🔆 Figyelj a [Pengehátrány](../065_01_04_fegyver_harci_helyzetek.md#pengehátrány) megkötésre a [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-) leírásánál!
 
 ---
 
@@ -20206,10 +20261,10 @@ Példák:
   20  → 2
 ```
 
-#### [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-vé-csökkentés)
+#### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 ```
-Mindkét fél csökkentése
+VÉ csökkentés
   1 + k20T
 ```
 
@@ -20464,11 +20519,16 @@ Az, hogy milyen mértékben csökkented ellenfeled `Védő Értékét`, az fegyv
 
 A fentiek adminisztrálása elsőre plusz teherként tűnhet fel, valójában viszont a csökkenő `VÉ` rövidebb harcokat eredményez - főleg több ellenfél ellen küzdve, ami gyors vereséghez vezethet.
 
-Az aktuális fegyverméretek különbségét Harci helyzetekkel (harci státuszokkal) modellezzük.
+Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_01_04_fegyver_harci_helyzetek.md) (harci státuszokkal) modellezzük.
 
-### ⚜️ [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-vé-csökkentés)
+### ⚜️ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
 
-- Fegyverméret-különbség kisebb `1 pengehossznál`
+- Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
+
+### ⚜️ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
+
+- A felek fegyverméreteinek különbsége kisebb `1 pengehossznál`
 - [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
 
 ### ⚜️ [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
@@ -20791,7 +20851,7 @@ SFÉ: páncéltól, támadási típustól
 Ha a **Páncéldobás** szerint véd a páncél, akkor a támadás [sebzés jellegével](064_02_05_fegyver_sebzes_jellege_tipusa.md) (pl. szúrás) azonos jellegű páncél `SFÉ` értékét ("szúrás" elleni) kell levonni a sebzés `SP` értékéből.
 
 ---
-### SP átváltása ÉP sebzésre és VÉ csökkentésre
+### SP átváltása ÉP sebzésre
 
 Az esetleges páncél `SFÉ` levonása után megnézzük, hogy a maradék `SP` érték milyen `ÉP` sérülést és `VÉ` csökkenést okozott az áldozatnál.
 
@@ -20810,14 +20870,13 @@ SP        ÉP
 46-50  → 35 ÉP
 ```
 
+### VÉ csökkenés találatnál
+
 ```
--3: VÉ csökkentés
-    találatnál
+VÉ: -3
 ```
 
-🔆 A `VÉ` csökkentés Sebzés esetén kizárólag a fenti érték lesz.
-
-🔆 Ha az `SP` érték a páncél `SFÉ` levonása után `0` értékre csökken, a `VÉ` csökkentés akkor is fixen `-3`.
+Akkor is, ha volt `ÉP` seb és akkor is ha nem, mert a páncél felfogott mindent `SP`-t.
 
 <br />
 
@@ -20850,8 +20909,7 @@ Rühes Sebzése
  11 SP: 🎲k20 (Előny+1): 7, 11
  +4 SP (Kard+Erő)
 
-15 SP  → 5 ÉP
-       → 3 VÉ veszteség
+15 SP  → -5 ÉP, -3 VÉ
 ```
 
 ### ⚡Példa 2 - páncél nélküli ellenfélre
@@ -20861,7 +20919,7 @@ Cobaq
   Erő: +5
   Kétkezes kard: +8 SP
 
-Minimum SP: 14  (k20 +13)
+Minimum SP: 14  (k20(1) + 13)
  → Minimum ÉP seb: 5
 ```
 
@@ -20901,8 +20959,7 @@ Rühes Szúró SFÉ: 10
 ```
 Végső SP = 14 SP - 10 SFÉ
 
-4 SP  → 1 ÉP
-      → 3 VÉ veszteség
+4 SP →  -1 ÉP, -3 VÉ
 ```
 
 Látható, hogy a láncing szinte az egész sebzést felfogta, ha ez nincs, akkor Rühesnek `5 ÉP` sebet kellett volna elszenvednie.
@@ -21244,7 +21301,7 @@ Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos
 
 ### 🔆Pengeméret
 
-- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alap VÉ csökkentés](065_01_04_fegyver_harci_helyzetek.md#alap-ve-csökkentés) harci helyzetben vannak.
+- Mivel kettőjük fegyverének mérete közt nincs meg az `1 penge` méretkülönbség, ezért mindketten [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) harci helyzetben vannak.
 - Tehát sikertelen (nem sebző) támadások esetén `1 + k20T` értékkel csökkentik egymás **Védő Értékét**.
 
 <br />
@@ -21294,7 +21351,7 @@ Tetves Sebzés dobás: 9 és 13
   → -3 VÉ
 ```
 
-A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre) alapján `3 ÉP` (❗) sebet jelent. Továbbá a szokásos (`-3 VÉ`) csökkenés jár.
+A `7 SP` a [Sebzés-táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre) alapján `3 ÉP` (❗) sebet jelent. Továbbá a szokásos (`-3 VÉ`) csökkenés jár.
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
@@ -21325,7 +21382,7 @@ Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad t�
 ```
 Tetves Sebzés dobás:
 k20+2 → 11 SP (Szúró)
-  → -5 ÉP, -6 VÉ
+  → -5 ÉP, -3 VÉ
 ```
 
 Az újabb sebbel Gustav bőven átkerült az `S2` egészség-kategóriába, ahol - magas Fájdalomtűrésének köszönhetően még mindig nincs `TÉ` büntetése.
@@ -21354,15 +21411,21 @@ VÉ: 40
 ---
 ### Gustav harmadik sebe  (`S3` kategória)
 
-Bár sikerül sebet ejtenie támadóján (sajnos csak `3 ÉP`-t, ritka szerencsétlen Sebzés dobás volt). A sors nem kedvez a lovagnak, a gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás hatalmas (`14 SP`), de a láncing rengeteget (`8`) felfog.
+Bár sikerül sebet ejtenie  támadóján (sajnos csak `3 ÉP`-t, ritka szerencsétlen Sebzés dobás volt). A sors nem kedvez a lovagnak, a gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás hatalmas (`14 SP`), de a láncing rengeteget (`8`) felfog.
 
 ```
 Tetves Sebzés dobás:
-SP: 14(dobás) - 8(SFÉ) = 6 SP
-    → -3 ÉP, -4 VÉ
+6 SP = 14 (dobás)
+       -8 (SFÉ)
+
+Hatás:
+  -3 ÉP
+  -3 VÉ
 ```
 
-Gustavnak `6 ÉP`-je marad és `S3`-as kategóriába zuhan (itt már `-3 TÉ` büntetés jár), valamint elveszít még `4 VÉ`-t. Eddig összesen `12 ÉP`-t vesztett!
+Gustavnak `6 ÉP`-je marad és `S3`-as kategóriába zuhan, ahol már `-3 TÉ` büntetés jár.\
+Ezen túl elveszíti még a sebesüléskor szokásos `3 VÉ`-t.\
+Eddig összesen `12 ÉP`-t vesztett!
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
@@ -21396,15 +21459,17 @@ Lord Gustav VÉ: 34
 ---
 ### A gyilkos veszte
 
-Tetves nyeri a kezdeményezést, viszont **Támadó dobása** csak `3` (összesen: `38`!), ami még így is bőven talál (!) (tekintve, hogy a lovag `VÉ`-je csak `34` a Támadó taktika miatt), viszont sebzésnek `2`-t dob `k20`-on.
+Tetves nyeri a kezdeményezést, viszont **Támadó dobása** csak `4` (összesen: `39`!), ami még így is bőven talál (!) (tekintve, hogy a lovag `VÉ`-je csak `34` a Támadó taktika miatt).
 
-Mivel még így is `4`-gyel többel ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+3 SP` jár, így a vége: `7 SP`... amit Gustav láncinge (`Szúró SFÉ:8`) pont teljesen felfog (**páncéldobása** sikeres (`3`) volt)!
+Sebzésnek `5`-t dob `k20`-on.
+
+Mivel a Támadó dobásnál a `4`-es dobás ellenére még így is `5`-gyel többel ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+2 SP` jár, így a vége: `8 SP`... amit Gustav láncinge (`Szúró SFÉ:8`) teljesen felfog (**páncéldobása** sikeres (`3`) volt)!
 
 ```
-TÉ = 38 (35+3)
+TÉ = 39 (35+4)
 Tetves Sebzés dobás:
- → k20(2) + 1(tőr) + 4
- → 7 SP
+ → k20(5) + 1(tőr) + 2(bónusz)
+ → 8 SP
 ```
 
 Tetves kardja lecsusszan a felé dobogó lovag vértjéről, aki visszatámadva... `15`-öt dob támadására. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `40`, de most ugye neki is `-6` büntetése van erre (Támadó taktika miatt `40-6=33`)
@@ -21421,7 +21486,7 @@ Gustav sebzése:
   → 21 SP
 ```
 
-Tetvesnek nincs vértje, ezért a `21 SP` teljesen beszámít → `11 ÉP` és `-6 VÉ`.\
+Tetvesnek nincs vértje, ezért a `21 SP` teljesen beszámít → `11 ÉP` és `-3 VÉ`.\
 A gyilkos pont `0 ÉP`-re zuhan - majdnem kettészelték!
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
@@ -21627,12 +21692,12 @@ Fegyver kategóriáját a KM határozza meg.
 
 ### `1.1` Eset: Fegyverrántó elveszíti a kezdeményezést
 
-Nem sikerül előrántanod a fegyvert, elhasználtál egy támadás akciót és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled támadását.
+Nem sikerül előrántanod a fegyvert, elhasználtál egy támadás akciót és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled első támadását. Ha ezt túlélted, visszatámadás helyett `1 akció` elhasználásával előhúzhatod fegyveredet - bármilyen próbadobás nélkül - amennyiben így döntesz.
 
 ### `1.2` Eset: Fegyverrántó nyeri a kezdeményezést
 
 Sikerült előrántanod fegyvered, és teljes, fegyveres `VÉ` harcértéked érvényesül.\
-Ellenfeled dobhat támadást azonnal. A fegyverrántás tehát **1 db** támadásodat felemésztő cselekedet.
+Ellenfeled dobhat támadást azonnal. A fegyverrántás tehát `1 db` Akciódat (ez esetben támadásodat) felemésztő cselekedet.
 
 ### `1.3` Eset: Fegyverrántó nyeri a kezdeményezést `+3` túldobással
 
@@ -21953,9 +22018,24 @@ VÉ veszteség duplázódik
 
 Ide jönnek a fegyver-specifikus harci helyzetek/státuszok.
 
-## Alap `VÉ` csökkentés
+## Fegyverméret
 
-Ha fegyvered **nem** hosszabb legalább `1 pengével` ellenfeledénél.
+A felek által forgatott fegyverek méretének viszonya meghatározza, hogy melyik fél hogyan csökkent Védő Értéket.
+
+### Pengehátrány
+
+Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél.
+A `VÉ` csökkentést tekintve nem tér el a lenti **Alappengétől**, viszont vannak szituációk, mint például a [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-), ahol korlátozó tényező lehet.
+
+Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
+
+```
+1 + k20 tízes része (2;3)
+```
+
+### Alappenge
+
+Fegyvered azonos hosszú, vagy **nem** hosszabb legalább `1 pengével` ellenfeledénél.  
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
@@ -21963,12 +22043,9 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 1 + k20 tízes része (1;2)
 ```
 
-<br />
+### Pengeelőny
 
----
-## Pengeelőny
-
-Fegyvered legalább `1 pengével` hosszabb ellenfeledénél.
+Fegyvered mérete legalább `1 pengével` hosszabb ellenfeledénél.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
@@ -22046,9 +22123,9 @@ Hátrány-1 TÉ dobásra
 <br />
 
 ---
-# Sebzéstípusok
+## Sebzéstípusok
 
-## Sebzéstípus: elsődleges
+### Sebzéstípus: elsődleges
 
 ```
 Sima Sebzésdobás
@@ -22056,8 +22133,7 @@ Sima Sebzésdobás
 
 Fegyvered elsődleges sebzési típusával támadsz. Például "Hosszú kard: Vágás".
 
----
-## Sebzéstípus: másodlagos
+### Sebzéstípus: másodlagos
 
 Fegyvered másodlagos sebzési típusával támadsz. Például "Hosszú kard: Szúrás".
 
@@ -22065,8 +22141,7 @@ Fegyvered másodlagos sebzési típusával támadsz. Például "Hosszú kard: Sz
 Hátrány-1 Sebzésdobásra
 ```
 
----
-## Sebzéstípus: alkalmatlan
+### Sebzéstípus: alkalmatlan
 
 ```
 Hátrány-2 Sebzésdobásra
@@ -22153,7 +22228,7 @@ Itt tárgyaljuk a személyhez kötött Harci helyzeteket.
 ```
 Láthatatlan Támadó
   Előny+1 Támadó dobásra
-  VÉ csökkentés: fixen 3
+  VÉ csökkentés: fixen 2
 ```
 
 ```
@@ -22167,7 +22242,7 @@ Védő
 ```
 Láthatatlan Támadó
   Előny+2 Támadó dobásra
-  VÉ csökkentés: fixen 3
+  VÉ csökkentés: fixen 2
 ```
 
 ```
@@ -22419,7 +22494,7 @@ Sebzés helyett:
 
 ❌ [Láthatatlan](065_01_06_szemelyhez_kotott.md#láthatatlanul) ellenfél ellen
 
-❌ [Fegyverméret - pengehátrány](065_01_04_fegyver_harci_helyzetek.md#fegyverméret---pengehátrány) harci helyzetből **NEM** alkalmazható.
+❌ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány) harci helyzetből **NEM** alkalmazható.
 
 ✅ [Levegőből támadás](065_01_03_harci_poziciok.md#levegőből-támadás) harci helyzetben
 
@@ -22508,7 +22583,7 @@ A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem
 ```
 +1 támadás a körben
 
--4 VÉ csökkenést
+-3 VÉ csökkenést
 szenvedsz el azonnal
 ```
 
@@ -22882,11 +22957,9 @@ Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix ért
 ### Alakzat VÉ csökkentése (fix értékek)
 
 ```
-1 VÉ: -2 penge különbség (alakzaté)
-2 VÉ: -1 penge különbség (alakzaté)
-3 VÉ: Azonos pengehossznál
-4 VÉ: +1 penge különbség (alakzaté)
-5 VÉ: +2 penge különbség (alakzaté)
+3 VÉ: Alakzat Pengehátrányban
+3 VÉ: Alakzat Alappengénél
+4 VÉ: Alakzat Pengeelőnyben
 ```
 
 ### Túlerő módosítója
@@ -22894,11 +22967,11 @@ Az Alakzat sikertelen támadásai által okozott `VÉ` csökkentés egy fix ért
 ```
 VÉ csökkentés
 
-+0 VÉ: 3 fő (legkisebb Alakzat)
-+1 VÉ: 5+ fő
++0 VÉ: 3 főnél (legkisebb Alakzat)
++1 VÉ: 5+ főnél (nem additív)
 ```
 
-Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-6 VÉ csökkenést` szenved el.
+Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-5 VÉ csökkenést` szenved el.
 
 <br />
 
@@ -24298,6 +24371,8 @@ Fegyverméretre +1 penge bónusz
 Minimum pengeméret: 1
 ```
 
+A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel harcolnál.
+
 🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély
 
 ❌ [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet NEM jár!
@@ -25520,7 +25595,7 @@ Erő
 
 Minden páncél rendelkezik **négy** úgynevezett **Sebzés Felfogó Értékkel** (`SFÉ`), amely a páncél nyújtotta védelmet hivatott szimulálni.
 
-Az `SFÉ` értéke sebzéskor levonódik a támadás `SP` értékéből (NEM a Sebzésből!), így jó eséllyel csökkenti a [Sebzés ÉP kategóriáját](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre-és-vé-csökkentésre).
+Az `SFÉ` értéke sebzéskor levonódik a támadás `SP` értékéből (NEM a Sebzésből!), így jó eséllyel csökkenti a [Sebzés ÉP kategóriáját](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre).
 
 Egy páncélnak **4 fajta SFÉ értéke van**, a támadás jellegétől függ, hogy melyiket kell figyelembe venni, a csapással szembeállítani:
 
@@ -29731,13 +29806,13 @@ Ha a varázsló odafigyel ennek elrejtésére (lásd fenn: Aurarejtés), akkor a
 
 # Mágia metódusok
 
-```
-3 fokú fortélyok
-```
+→ [STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
 
 ⭕TODO: Kiegészíteni⭕
 
-→ [STUDY](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
+```
+3 fokú fortélyok
+```
 
 Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a világba hozza. Változó, hogy melyik Mágikus Tradíció mely Mágia metódusok ismer.
 
@@ -30122,32 +30197,18 @@ Az egyes varázslatoknál jelezzük, hogy a varázslás ideje melyik kategóriá
 ---
 ### Papi Mágia Akarata
 
-Hasonlatos az [Aura Átütésnél leírtakhoz](103_00_aura.md), de az Aura Alapra itt nem Aurahangolás képzettséggel dobunk, hanem a [Papi Mágia Tradíció](110_papimagia.md) képzettség szintjét vesszük alapul, a "dobást" pedig fixen `6`-nak vesszük. Ez azért van, mert a Pap csak biztos tudásból varázsolhat, nincs lehetősége Rizikó varázslásra.
+Hasonlatos az [Mágia akaratánál leírtakhoz](103_04_magia_akarata.md), de az Auraerősítés formulát **nem** használhatja.
+Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a [Mágiallenállás](103_03_magiaellenallas.md).
 
-Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a Mágiallenállás ⭕LINK⭕.
-
-#### Aura számítása
-
-Itt is az Aura táblázatot ⭕LINK⭕ használjuk, de nincs dobás, a számolást `1x` kell csak elvégezni - minden Tapasztalati Szint lépésekor.
-
-Az, hogy melyik Tulajdonságot kell az Aura meghatározásakor beleszámolni, az az adott isten, vagy vallás jellegétől függ. Minden isten papjainak leírásában megadjuk, hogy melyik is ez a Tulajdonság.
-
-```
-Aura számítása:
-   Papi tradíció szint
-   + Tulajdonság
-   + 6
-
-   → Érték kikeresése
-```
-
-#### Mágia Akarata számítása
 ```
 Papi Mágia Akarata
  = Aura
+ + 3 / Kegy pont
+ + Módosítók
 ```
 
 #### Kegy pontok
+
 ```
 1 Kegy pont
   → +3 Átütés az adott varázslatra
@@ -31855,6 +31916,8 @@ Kapcsolódó képzettségek
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md)
 - [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md)
 
+Eltulajdonítani valamit úgy, hogy akitől, vagy aki elől elemeljük, az ne vegye észre:
+
 ```
 Lopás + Ügyesség
      vs
@@ -31872,16 +31935,18 @@ Lopás + Ügyesség
 - Lopás próba (rejtett!): **Nagyon nehéz** (`15`). Erről a JK nem tud.
 
 ⭕TODO: ellenpróbás szituációvá alakítani ⭕
+
 `b.)` A tolvaj tud a testőr jelenlétéről:
 - Észrevenni a testőrt: KM dob JK-nak rejtett **Észlelés** próbát
 - Lopás próba: **Nehéz** (`12`)
 
 ⭕TODO: ellenpróbás szituációvá alakítani ⭕
+
 `c.)` Tárgyaló kofánál a nemeshölgyet meglopni (testőr nélkül):
   - Lopás próba: **Átlagos** nehézség (`9`)
   - A kofának egy **Nehéz** (12)  **Észlelés** (mert nem figyel oda)
 
-<br />
+---
 
 
 ---
