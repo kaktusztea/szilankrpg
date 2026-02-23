@@ -19,7 +19,7 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ### Alappenge
 
-Fegyvered azonos hosszú, vagy **nem** hosszabb legalább `1 pengével` ellenfeledénél.  
+Fegyvered azonos hosszú, vagy **nem** hosszabb legalább `1 pengével` ellenfeledénél. Ha egy karakter Alappenge helyzetben van, akkor nyilván ellenfele is csak abban lehet.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
@@ -29,7 +29,7 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ### Pengeelőny
 
-Fegyvered mérete legalább `1 pengével` hosszabb ellenfeledénél.
+Fegyvered mérete legalább `1 pengével` hosszabb ellenfeledénél. **Csak akkor** kerül valaki Pengeelőnybe - és így a másik Pengehátrányba - ha ez a pengeméret különbség megvan.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
