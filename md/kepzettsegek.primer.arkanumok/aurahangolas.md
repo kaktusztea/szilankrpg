@@ -1,6 +1,6 @@
 ## 🔵 Aurahangolás
 
-A személyes Aura speciális alkalmazásai tartoznak ide.
+A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíció alá lehet felvenni.
 
 ## Formulák
 
