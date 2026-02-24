@@ -1,6 +1,7 @@
 ## 🟣 Pszí Telepátia (3)
 
-Képes vagy elméd segítségével üzenetet küldeni valakinek, amennyiben az illető képes azt fogadni.\
+Képes vagy elméd segítségével üzenetet küldeni valakinek, amennyiben az illető képes azt fogadni.
+
 **A diszciplínához látnod kell az illetőt, sőt kifejezetten rá kell nézned.**
 
 Az itt leírt pszionikus diszciplína a Mentálmágia formulájának nagyságrendekkel egyszerűbb, jelentősen gyengébb módja, amely megtalálta útját a felsőoktatáson át a kevésbé avatott elmék felé is.
