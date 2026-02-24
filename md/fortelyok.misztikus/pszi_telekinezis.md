@@ -1,4 +1,4 @@
-## 🟣 Pszí Telekinézis (3)
+## 🟣🌀 Pszí Telekinézis (3)
 
 Egy lassú, andalogva sétáló ember sebességével vagy képes tárgyakat szellemi akaratoddal mozgatni.
 

@@ -1,4 +1,4 @@
-## 🟣 Pszí Telepátia (3)
+## 🟣🌀 Pszí Telepátia (3)
 
 Képes vagy elméd segítségével üzenetet küldeni valakinek, amennyiben az illető képes azt fogadni.
 
