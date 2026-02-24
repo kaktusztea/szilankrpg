@@ -2,7 +2,6 @@
 
 ⭕TODO⭕ Ezek igazából az Aurahangolás-arkánum formulái. Link oda??
 
-
 ---
 ## Aurakiterjesztés
 
@@ -81,7 +80,6 @@ Rontás:
 A varázsló személyiségétől, aurájától függően mást és mást érezhet az áldozat, ha a mágia aktiválódik rajta.
 
 Ha a varázsló odafigyel ennek elrejtésére (lásd fenn: Aurarejtés), akkor az áldozat nem érzi ezt.
-
 
 ---
 
