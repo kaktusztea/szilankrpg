@@ -2,7 +2,9 @@
 
 Klasszikus szociális helyzetek, melyekben az egyik fél különböző verbális, non-verbális eszközökkel megpróbálja befolyásolni a másikat.
 
-### 🔆 Átverés, hazudozás
+🔆 Tartsuk észben, hogy ez egy **szerep-játék**, nem pedig társasjáték, így nem kell mindent a kocka döntsön el. A KM dönthet úgy, hogy a játékos meggyőző, - vagy ellenkezőleg - rendkívül bugyuta próbálkozása miatt egyáltalán nincs szükség dobásra. Ilyenkor automatikus siker és automatikus kudarc is megtörténhet.
+
+### ⚜️ Átverés, hazudozás
 
 Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a játékos is tisztában van, de karaktere egyáltalán nem biztos!\
 „Elhittem, amit mondott?” - hangzik el sokszor.
@@ -21,7 +23,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 <br />
 
 ---
-### 🔆 Csábítás: Erős, izmos barbár csábít
+### ⚜️ Csábítás: Erős, izmos barbár csábít
 
 [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Erő
@@ -36,7 +38,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 <br />
 
 ---
-### 🔆 Csábítás: igéző huri táncos bájolása
+### ⚜️ Csábítás: igéző huri táncos bájolása
 
 [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Érzékenység
@@ -52,7 +54,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 <br />
 
 ---
-### 🔆 Megfélemlítés szituáció
+### ⚜️ Megfélemlítés szituáció
 
 [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Intelligencia vagy Érzékenység
