@@ -7,3 +7,4 @@ ignorePatterns:
   - pattern: 'https://groups\.oasis-open\.org/.*'
   - pattern: 'https://progress-bar\.xyz/.*'
   - pattern: 'https://lfg.hu/.*'
+  - pattern: 'https://magus\.fandom\.com/.*'
