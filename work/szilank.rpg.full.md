@@ -907,7 +907,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 🗡️ Harci taktika, Harci szituáció vagy Manőver
 
-`k20T`: `k20` dobás tízes része (`5 → 0`, `16 → 1`, `20 → 2`)
+`k20T`: `k20` dobás tízes része (`5 → 0,  16 → 1,  20 → 2`)
 
 ✨ Mágia
 
@@ -7096,7 +7096,7 @@ xyz
 
 ## 🔵 Aurahangolás
 
-A személyes Aura speciális alkalmazásai tartoznak ide.
+A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíció alá lehet felvenni.
 
 ## Formulák
 
@@ -18397,7 +18397,7 @@ A haladóbb formulák leírását alább.
 
 ## Bárdmágia tradíció / Bárd Metamágia arkánum
 
-<sub>→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.bardmagia)</sub>
+→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.bardmagia)
 
 <br />
 
@@ -29694,7 +29694,6 @@ A Mágiaellenállás egysége, mivel az **Aura** mind az **Asztrál**, **Mentál
 
 ⭕TODO⭕ Ezek igazából az Aurahangolás-arkánum formulái. Link oda??
 
-
 ---
 ## Aurakiterjesztés
 
@@ -29773,7 +29772,6 @@ Rontás:
 A varázsló személyiségétől, aurájától függően mást és mást érezhet az áldozat, ha a mágia aktiválódik rajta.
 
 Ha a varázsló odafigyel ennek elrejtésére (lásd fenn: Aurarejtés), akkor az áldozat nem érzi ezt.
-
 
 ---
 
@@ -30096,15 +30094,10 @@ Példák:
 
 ⭕TODO⭕ [ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.varazslas.menete) feldolgozása, migrálás ide.
 
-⭕TODO⭕ Ezt az oldal lehet, hogy csak tartalomjegyzék az korábbi oldalakra??
 
-- Varázslatok száma / kör (behivatkozni)
-- Auraérintés, Aurapárbaj (behivatkozni)
-- Erősség meghatározása, rekesz felhasználása (hivatkozás itt is)
-- Komplexitás-próba (opcionális) (hivatkozás)
-- Mágia időtartam kitolása ([ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.idotartam.kitolasa))
-- Mágia sebzése ([ADR](https://github.com/kaktusztea/szilankrpg/wiki/ADR.magia.sebzese))
+---
 
+⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)
 
 ---
 ---
@@ -31006,7 +30999,9 @@ Idomítást, állatokat, bestiákat kontrolláló szituációban a lenti próba 
 
 Klasszikus szociális helyzetek, melyekben az egyik fél különböző verbális, non-verbális eszközökkel megpróbálja befolyásolni a másikat.
 
-### 🔆 Átverés, hazudozás
+🔆 Tartsuk észben, hogy ez egy **szerep-játék**, nem pedig társasjáték, így nem kell mindent a kocka döntsön el. A KM dönthet úgy, hogy a játékos meggyőző, - vagy ellenkezőleg - rendkívül bugyuta próbálkozása miatt egyáltalán nincs szükség dobásra. Ilyenkor automatikus siker és automatikus kudarc is megtörténhet.
+
+### ⚜️ Átverés, hazudozás
 
 Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a játékos is tisztában van, de karaktere egyáltalán nem biztos!\
 „Elhittem, amit mondott?” - hangzik el sokszor.
@@ -31025,7 +31020,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 <br />
 
 ---
-### 🔆 Csábítás: Erős, izmos barbár csábít
+### ⚜️ Csábítás: Erős, izmos barbár csábít
 
 [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Erő
@@ -31040,7 +31035,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 <br />
 
 ---
-### 🔆 Csábítás: igéző huri táncos bájolása
+### ⚜️ Csábítás: igéző huri táncos bájolása
 
 [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Érzékenység
@@ -31056,7 +31051,7 @@ Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a ját
 <br />
 
 ---
-### 🔆 Megfélemlítés szituáció
+### ⚜️ Megfélemlítés szituáció
 
 [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Intelligencia vagy Érzékenység
@@ -31664,7 +31659,7 @@ Kihallgatott: [Emberismeret](../kepzettsegek.primer.altalanos/emberismeret.md) k
 
 #### Bónuszok
 
-Gyakran kombinálják a [Megfélemlítés](befolyasolas_modszerei.md#-megfélemlítés-szituáció) szituációval, amely ha sikeres, akkor `+2` Bónusz jár a fenti Kihallgatás szituációra.
+Gyakran kombinálják a [Megfélemlítés](befolyasolas_modszerei.md#%EF%B8%8F-megf%C3%A9leml%C3%ADt%C3%A9s-szitu%C3%A1ci%C3%B3) szituációval, amely ha sikeres, akkor `+2` Bónusz jár a fenti Kihallgatás szituációra.
 
 #### Összetett próba
 
@@ -31673,7 +31668,7 @@ Jellemző a kihallgatásnál, hogy nem `1 db` dobás dönt el mindent, mivel a k
 ---
 ### 🔆 Megvezetés, hazudozás
 
-A Befolyásolásos szituációknál említett [Átverés, Hazudozás](befolyasolas_modszerei.md#-átverés-hazudozás) technika is használható sokszor információ szerzésre.
+A Befolyásolásos szituációknál említett [Átverés, Hazudozás](befolyasolas_modszerei.md#%EF%B8%8F-%C3%A1tver%C3%A9s-hazudoz%C3%A1s) technika is használható sokszor információ szerzésre.
 
 ---
 
