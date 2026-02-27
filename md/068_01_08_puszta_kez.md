@@ -5,7 +5,8 @@ A Puszta kéz kiemelt „fegyver", hiszen mindenki birtokában ott van. Puszta k
 Ezért a Puszta kéz alap harcértékei mindenkinél a következők:
 
 ```
-TÉ:-3,  VÉ:-3
+TÉ: -3
+VÉ: -3
 SP: -5 + k20
 ```
 
