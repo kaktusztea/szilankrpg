@@ -1,4 +1,4 @@
-## 🟣 Daráló (1)
+## 🟣 Daráló (2)
 
 Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkentheted a körön belüli újabb támadások során kapott `TÉ` büntetést.
 
