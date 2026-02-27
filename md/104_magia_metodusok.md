@@ -1,4 +1,4 @@
-# Mágia metódusok
+# 💫 Mágia metódusok
 
 → [STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
 

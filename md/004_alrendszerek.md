@@ -55,7 +55,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Szférák/Arkánum képzettségek
 - Formulák (egyes varázslatok Arkánumok alatt)
 - Komponensek, összhangok
-- Mágia metódusok  (misztikus fortélyok)
+- Mágia Metódusok  (misztikus fortélyok)
   - Kínált "feature" lehetőség (lista)
   - Megnyít lehetőséget Összhangokra  (lista)
 - Varázstárgyak:

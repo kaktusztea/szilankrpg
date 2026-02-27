@@ -17,7 +17,7 @@
 - [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md)
 - [Pszí Telepátia](fortelyok.misztikus/pszi_telepatia.md)
 
-## Mágia metódusok
+## 💫 Mágia metódusok
 
 → ⭕[STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕ Ott dolgozni ki őket. Ha kész, másolható ezek alá:
 
