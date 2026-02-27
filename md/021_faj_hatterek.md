@@ -83,7 +83,7 @@ A fent említett Arkánum adja a faj - eredetében gyökerező - misztikus képe
 
 Az egyes szinteknek lehetnek követelményei.
 
-⭕TODO⭕ `1 db` [Mágia metódust](045_misztikus_magia_fortelyok.md#mágia-metódusok) fel kell venni egy adott "Mágia metódus pool-ból".
+⭕TODO⭕ `1 db` [Mágia metódust](045_misztikus_magia_fortelyok.md#-m%C3%A1gia-met%C3%B3dusok) fel kell venni egy adott "Mágia metódus pool-ból".
 
 ---
 ## `5.` Faji fortélyok
