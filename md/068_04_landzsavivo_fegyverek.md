@@ -11,7 +11,8 @@ A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](0
 | Alabárd S+V            | `10` | `10` | `+4`  |   `9`    |    `V/S`     |    `3`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Szúró és Vágó módban                                             |
 | Alabárd Z              | `7`  | `10` | `+4`  |   `9`    |     `Z`      |    `3`     |    kétkezes    |      `99`       |  `5`   | `0`  | `0` | `0` | lándzsavívó | Zúzó módban. Talán a legjobb a páncélok ellen az Átütéssel.      |
 | Bot, hosszú            | `6`  | `8`  | `+1`  |   `7`    |     `Z`      |    `2`     |    kétkezes    |       `2`       |  `0`   | `0`  | `0` | `0` | lándzsavívó |                                                                  |
-| Kopja                  | `13` | `13` | `+10` |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `+5`  | `0`  | `0` | `0` | lándzsavívó | Csak lovon használható.<br>Lándzsavívás harcmodorban forgatandó. |
+| Kopja, harci           | `13` | `13` | `+10` |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `+5`  | `0`  | `0` | `0` | lándzsavívó | Csak lovon használható.<br>Lándzsavívás harcmodorban forgatandó. |
+| Kopja, torna           | `13` | `13` | `-3`  |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Puhafa, lovagi tornákra való                                     |
 | Lándzsa, keskeny hegyű | `12` | `13` | `+2`  |   `7`    |     `S`      |    `4`     |    kétkezes    |      `99`       |  `4`   | `0`  | `0` | `0` | lándzsavívó | Kis területet roncsol, de páncélokat jól üti át                  |
 | Lándzsa, széles hegyű  | `12` | `13` | `+4`  |   `7`    |     `S`      |    `4`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Nagy területet roncsol, de nehezebben megy át a páncélokon       |
 | Pika, keskeny hegyű    | `16` | `16` | `+2`  |   `10`   |     `S`      |    `5`     |    kétkezes    |       `3`       |  `4`   | `0`  | `0` | `0` | lándzsavívó | Kis területet roncsol, de páncélokat jól üti át                  |
@@ -25,11 +26,11 @@ A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](0
 
 Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó ellen `0` harcértékűnek számít.
 
-### Kopja használata
+### Kopja lovas rohamban
 
-Csak [Lovas rohamból](067_03_lovas_harci_taktikak.md#lovas-roham--léglovas-roham) használató.
+[Lovas roham](067_03_lovas_harci_taktikak.md#lovas-roham--léglovas-roham) esetén a Kopja alap Sebzéséhez a `+10 SP` bónusz még hozzáadódik. Harci és tornakopja esetén is.
 
-A ló lendülete mint **Erőbónusz** már beszámításra került a kopja Sebzés értékébe. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (`0`).
+**Erőbónusz**: a ló lendülete már beszámításra került a fegyver Sebzés értékébe. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (`0`).
 
 ---
 

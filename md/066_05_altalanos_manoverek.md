@@ -313,7 +313,22 @@ Szándékosan rongálod ellenfeled pajzsát, csökkentve annak Védő Értékét
 - Követelmény: Aktuális harcmodor - `6.szint`, `Erő: +1`, Zúzó- vagy kétkezes fegyver használata.
 - Speciális: Ez ellen a manőver ellen nem számít a pajzs adta Védő Érték!
 
-**Hatás**: Sebzést dobsz. Zúzó- és kétkezes fegyverek sebzése (SP) `1:1`-ben csökkenti ellenfeled pajzsának **Védő Értékét** (véglegesen).
+**Hatás**: Sebzést dobsz. Zúzó- és kétkezes fegyverek sebzése (`SP`) csökkenti ellenfeled pajzsának **Védő Értékét** (véglegesen).
+- Zúzó: `1:2 SP`
+- Vágó: `1:4 SP`
+
+🔆 Fontos: legalább azonos alapanyagú fegyverrel tudod megrongálni az adott pajzsot.
+
+```
+Anyagok erőssége
+
+↑ Lunír
+↑ Mithrill
+↑ Abbitacél
+↑ Acél
+↑ Bronz
+↑ Fa
+```
 
 <br />
 
