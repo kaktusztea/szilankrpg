@@ -11,8 +11,9 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 
 ### Bekerülés Harci lázba
 
-- `ÉP` seb elszenvedése szükséges az adott harci szituációban. Lehet önsebzés is.
-- Vagy egy hosszú hergelős rituálé. Elérhető mágiával és bódító szerekkel.
+`1.` Egy `ÉP` seb elszenvedése szükséges az adott harci szituációban, ami lehet önsebzés is. A sebesülés után az `1.` körben a fortély `1.foka` érvényesülhet, `2.` körtől lehet a `2.fokot` érvényesíteni (nyilván csak ha az is megvan).
+
+`2.` Vagy egy hosszú hergelős rituálé. Elérhető mágiával és bódító szerekkel.
 
 <br />
 
