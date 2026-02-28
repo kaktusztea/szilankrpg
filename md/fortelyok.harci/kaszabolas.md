@@ -20,6 +20,6 @@ A győzelem mámora megacélozza izmaid és akaratod.
 🔒 Harcmodor  **-** `8.szint`\
 (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 Mint az `1.fok`, de akárhányszor alkalmazhatod egy körben.
+🌟 Mint az `1.fok`, de legfeljebb `2x` használhatod egy körben.
 
 ---
