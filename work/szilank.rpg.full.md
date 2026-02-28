@@ -181,7 +181,7 @@ https://github.com/kaktusztea/szilankrpg/
 ---
 ## File: md/szabalyrendszer.md
 
-### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.3.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
+### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.4.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
 **[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [Kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [Kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
@@ -806,7 +806,7 @@ Mielőtt a részletekbe ugranánk, hasznos lehet egy tömör áttekintő strukt�
 - Szférák/Arkánum képzettségek
 - Formulák (egyes varázslatok Arkánumok alatt)
 - Komponensek, összhangok
-- Mágia metódusok  (misztikus fortélyok)
+- Mágia Metódusok  (misztikus fortélyok)
   - Kínált "feature" lehetőség (lista)
   - Megnyít lehetőséget Összhangokra  (lista)
 - Varázstárgyak:
@@ -911,7 +911,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 ✨ Mágia
 
-💫 Varázsút
+💫 Mágikus Metódus
 
 🌀 Pszí / Pszí diszciplína
 
@@ -2997,7 +2997,7 @@ A fent említett Arkánum adja a faj - eredetében gyökerező - misztikus képe
 
 Az egyes szinteknek lehetnek követelményei.
 
-⭕TODO⭕ `1 db` [Mágia metódust](045_misztikus_magia_fortelyok.md#mágia-metódusok) fel kell venni egy adott "Mágia metódus pool-ból".
+⭕TODO⭕ `1 db` [Mágia metódust](045_misztikus_magia_fortelyok.md#-m%C3%A1gia-met%C3%B3dusok) fel kell venni egy adott "Mágia metódus pool-ból".
 
 ---
 ## `5.` Faji fortélyok
@@ -12158,7 +12158,7 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 - [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md)
 - [Pszí Telepátia](fortelyok.misztikus/pszi_telepatia.md)
 
-## Mágia metódusok
+## 💫 Mágia metódusok
 
 → ⭕[STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕ Ott dolgozni ki őket. Ha kész, másolható ezek alá:
 
@@ -13934,7 +13934,7 @@ Ezek változását szintén a Harcrendszer fejezet [Harci helyzet: Belharci szit
 ---
 ## File: md/fortelyok.harci/daralo.md
 
-## 🟣 Daráló (1)
+## 🟣 Daráló (2)
 
 Harc során végig fenn tudod tartani támadásaid kimunkáltságát. Csökkentheted a körön belüli újabb támadások során kapott `TÉ` büntetést.
 
@@ -20261,6 +20261,13 @@ Példák:
   20  → 2
 ```
 
+#### [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
+
+```
+VÉ csökkentés
+  1 + k20T
+```
+
 #### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 ```
@@ -24869,7 +24876,8 @@ A Puszta kéz kiemelt „fegyver", hiszen mindenki birtokában ott van. Puszta k
 Ezért a Puszta kéz alap harcértékei mindenkinél a következők:
 
 ```
-TÉ:-3,  VÉ:-3
+TÉ: -3
+VÉ: -3
 SP: -5 + k20
 ```
 
@@ -29226,7 +29234,7 @@ Auraérintés és Aurapárbaj szükséges.
 
 # Aura jellemzői
 
-⭕TODO: kifejteni ezeket, ha van szöveges anyag, bemásolni
+⭕TODO: kifejteni ezeket, ha van szöveges anyag, bemásolni.
 
 - Mágiallenállást adja
 - Mágikus akaratot adja támadó oldalon
@@ -29870,7 +29878,7 @@ Ha a varázsló odafigyel ennek elrejtésére (lásd fenn: Aurarejtés), akkor a
 ---
 ## File: md/104_magia_metodusok.md
 
-# Mágia metódusok
+# 💫 Mágia metódusok
 
 → [STUDY: Mágia metódusok](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magia.metodusok)⭕
 
@@ -29884,7 +29892,7 @@ Számos út, módszer van rá, hogy a varázstudó a mágikus hatást ebbe a vil
 
 Áldás, Átok, Bábúmágia, Bájitalok, Ceremoniális mágiák, Dalmágia, Fókuszok, Emitterek alkotása, Formázás, Gyertyamágia, Jelmágia, Rúnamágia, Litánia, Rituálé, Maszkmágia, Megkötés, Rituális/Tánc mágia, Szexuálmágia, Szimpatikus mágia, Hívás/Idézés, Űzés, Írányítás, Hang, Fény
 
-Részletesen lásd a [Mágia metódusok](045_misztikus_magia_fortelyok.md#mágia-metódusok) listáját, melyek mind mágikus fortélyként vehetőek fel.
+Részletesen lásd a [Mágia metódusok](045_misztikus_magia_fortelyok.md#-m%C3%A1gia-met%C3%B3dusok) listáját, melyek mind mágikus fortélyként vehetőek fel.
 
 ---
 ## Fortély fokainak hatása Komplexitás próbára
