@@ -77,7 +77,7 @@ Sebzés jellege
 ```
 
 ```
-"Fegyverméret különbség
+ Fegyverméret különbség
   határozza meg a
   VÉ csökkentést
 ```
