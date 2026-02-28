@@ -734,7 +734,7 @@
         "Speciális": "-"
     },
     {
-        "Fegyver": "Kopja",
+        "Fegyver": "Kopja, harci",
         "TÉ": "13",
         "VÉ": "13",
         "SP": "+10",
@@ -749,6 +749,23 @@
         "KF": "0",
         "Kategória": "lándzsavívó",
         "Speciális": "Csak lovon használható. Lándzsavívás harcmodorban forgatandó."
+    },
+    {
+        "Fegyver": "Kopja, torna",
+        "TÉ": "13",
+        "VÉ": "13",
+        "SP": "-3",
+        "Sebesség": "99",
+        "Sebzés módja": "S",
+        "Pengehossz": "4",
+        "Forgatás módja": "kétkezes",
+        "Erőbónusz limit": "0",
+        "Átütés": "0",
+        "Íves": "0",
+        "MK": "0",
+        "KF": "0",
+        "Kategória": "lándzsavívó",
+        "Speciális": "Puhafa, lovagi tornákra való"
     },
     {
         "Fegyver": "Korbács",
