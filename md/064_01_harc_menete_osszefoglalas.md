@@ -96,6 +96,13 @@ Példák:
   20  → 2
 ```
 
+#### [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
+
+```
+VÉ csökkentés
+  1 + k20T
+```
+
 #### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 
 ```
