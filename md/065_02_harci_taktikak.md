@@ -18,7 +18,7 @@ A Harci taktikák egy adott kör során a **harci jelleg** általános eltolás�
 
 ### 🔆 Taktika bejelentése
 
-A taktikák használatát **kör elején, kezdeményezés előtt** kell bejelenteni.\
+A taktikák használatát ❗**Kör elején, Kezdeményezés előtt** kell bejelenteni.\
 Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a `⇄` jellel megjelölt taktikákat (azokat igen).
 
 ### 🔆 Ökölszabály Védő Érték eltolásra
