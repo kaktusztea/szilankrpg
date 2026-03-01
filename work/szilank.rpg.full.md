@@ -14363,8 +14363,9 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 
 ### Bekerülés Harci lázba
 
-- `ÉP` seb elszenvedése szükséges az adott harci szituációban. Lehet önsebzés is.
-- Vagy egy hosszú hergelős rituálé. Elérhető mágiával és bódító szerekkel.
+`1.` Egy `ÉP` seb elszenvedése szükséges az adott harci szituációban, ami lehet önsebzés is. A sebesülés után az `1.` körben a fortély `1.foka` érvényesülhet, `2.` körtől lehet a `2.fokot` érvényesíteni (nyilván csak ha az is megvan).
+
+`2.` Vagy egy hosszú hergelős rituálé. Elérhető mágiával és bódító szerekkel.
 
 <br />
 
@@ -14628,7 +14629,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 🔒 Harcmodor  **-** `8.szint`\
 (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 Mint az `1.fok`, de akárhányszor alkalmazhatod egy körben.
+🌟 Mint az `1.fok`, de legfeljebb `2x` használhatod egy körben.
 
 ---
 
@@ -20242,7 +20243,7 @@ Sebzés jellege
 ```
 
 ```
-"Fegyverméret különbség
+ Fegyverméret különbség
   határozza meg a
   VÉ csökkentést
 ```
@@ -20450,6 +20451,13 @@ A játékosok mind külön-külön tesznek karakterük számára Kezdeményező 
 
 - A KÉ dobás **NEM** foglalja magában a harci dominanciát, a harc irányítását.
 - A fenti mechanika **minden** cselekvéstípusra érvényes: harc, varázslás, egyéb cselekedetek.
+
+---
+### Hátrasorolódás
+
+Igény szerint átengedheted másnak a Kezdeményezést: hátrébb sorolhatod magad 1-2-3, stb. hellyel a cselekvési sorban, vagy akár utolsó helyre téve magad.
+
+Amennyiben más is ezt tenné, az cselekszik előbb, akinek magasabb volt a Kezdeményezése.
 
 ---
 ### KM kezdeményezése NJK csapata számára
@@ -22457,7 +22465,7 @@ A Harci taktikák egy adott kör során a **harci jelleg** általános eltolás�
 
 ### 🔆 Taktika bejelentése
 
-A taktikák használatát **kör elején, kezdeményezés előtt** kell bejelenteni.\
+A taktikák használatát ❗**Kör elején, Kezdeményezés előtt** kell bejelenteni.\
 Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a `⇄` jellel megjelölt taktikákat (azokat igen).
 
 ### 🔆 Ökölszabály Védő Érték eltolásra
@@ -23872,7 +23880,22 @@ Szándékosan rongálod ellenfeled pajzsát, csökkentve annak Védő Értékét
 - Követelmény: Aktuális harcmodor - `6.szint`, `Erő: +1`, Zúzó- vagy kétkezes fegyver használata.
 - Speciális: Ez ellen a manőver ellen nem számít a pajzs adta Védő Érték!
 
-**Hatás**: Sebzést dobsz. Zúzó- és kétkezes fegyverek sebzése (SP) `1:1`-ben csökkenti ellenfeled pajzsának **Védő Értékét** (véglegesen).
+**Hatás**: Sebzést dobsz. Zúzó- és kétkezes fegyverek sebzése (`SP`) csökkenti ellenfeled pajzsának **Védő Értékét** (véglegesen).
+- Zúzó: `1:2 SP`
+- Vágó: `1:4 SP`
+
+🔆 Fontos: legalább azonos alapanyagú fegyverrel tudod megrongálni az adott pajzsot.
+
+```
+Anyagok erőssége
+
+↑ Lunír
+↑ Mithrill
+↑ Abbitacél
+↑ Acél
+↑ Bronz
+↑ Fa
+```
 
 <br />
 
@@ -25215,7 +25238,8 @@ A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](0
 | Alabárd S+V            | `10` | `10` | `+4`  |   `9`    |    `V/S`     |    `3`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Szúró és Vágó módban                                             |
 | Alabárd Z              | `7`  | `10` | `+4`  |   `9`    |     `Z`      |    `3`     |    kétkezes    |      `99`       |  `5`   | `0`  | `0` | `0` | lándzsavívó | Zúzó módban. Talán a legjobb a páncélok ellen az Átütéssel.      |
 | Bot, hosszú            | `6`  | `8`  | `+1`  |   `7`    |     `Z`      |    `2`     |    kétkezes    |       `2`       |  `0`   | `0`  | `0` | `0` | lándzsavívó |                                                                  |
-| Kopja                  | `13` | `13` | `+10` |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `+5`  | `0`  | `0` | `0` | lándzsavívó | Csak lovon használható.<br>Lándzsavívás harcmodorban forgatandó. |
+| Kopja, harci           | `13` | `13` | `+10` |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `+5`  | `0`  | `0` | `0` | lándzsavívó | Csak lovon használható.<br>Lándzsavívás harcmodorban forgatandó. |
+| Kopja, torna           | `13` | `13` | `-3`  |   `99`   |     `S`      |    `4`     |    kétkezes    |       `0`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Puhafa, lovagi tornákra való                                     |
 | Lándzsa, keskeny hegyű | `12` | `13` | `+2`  |   `7`    |     `S`      |    `4`     |    kétkezes    |      `99`       |  `4`   | `0`  | `0` | `0` | lándzsavívó | Kis területet roncsol, de páncélokat jól üti át                  |
 | Lándzsa, széles hegyű  | `12` | `13` | `+4`  |   `7`    |     `S`      |    `4`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0` | lándzsavívó | Nagy területet roncsol, de nehezebben megy át a páncélokon       |
 | Pika, keskeny hegyű    | `16` | `16` | `+2`  |   `10`   |     `S`      |    `5`     |    kétkezes    |       `3`       |  `4`   | `0`  | `0` | `0` | lándzsavívó | Kis területet roncsol, de páncélokat jól üti át                  |
@@ -25229,11 +25253,11 @@ A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](0
 
 Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó ellen `0` harcértékűnek számít.
 
-### Kopja használata
+### Kopja lovas rohamban
 
-Csak [Lovas rohamból](067_03_lovas_harci_taktikak.md#lovas-roham--léglovas-roham) használató.
+[Lovas roham](067_03_lovas_harci_taktikak.md#lovas-roham--léglovas-roham) esetén a Kopja alap Sebzéséhez a `+10 SP` bónusz még hozzáadódik. Harci és tornakopja esetén is.
 
-A ló lendülete mint **Erőbónusz** már beszámításra került a kopja Sebzés értékébe. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (`0`).
+**Erőbónusz**: a ló lendülete már beszámításra került a fegyver Sebzés értékébe. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (`0`).
 
 ---
 
@@ -28570,7 +28594,7 @@ Leírásukat lásd a Mágiarendszer [Mágikus Státuszok](107_magikus_statuszok.
 
 # 🌀Pszí
 
-Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint amilyen a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeret - amely fortélyként tanulható.
+Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint például a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeret - amely fortélyként tanulható.
 
 ## [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md) (3)
 
