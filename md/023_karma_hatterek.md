@@ -11,7 +11,7 @@ Két forrásból juthatunk Karmához:
 
 A lenti Karmák nem feltétlenül fednek le mindent, a KM ha úgy érzi az adott kaland hangulatához illene egy új, általa kitalált Karma, akkor nyugodtan megadhatja, de legyen tekintettel az erőviszonyokra: Karmaként csak valamilyen színesítő ismeretet adjon, ne számszerű előnyöket.
 
-A Karmák lehetnek önmagukban, vagy %-kal jellemezhetőek.
+A Karmák lehetnek önmagukban, vagy `%`-kal jellemezhetőek.
 
 Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg a KM a játékossal való egyeztetés után!
 
@@ -271,7 +271,7 @@ Mágikus karma.
 - „A cipőfűzőjét is mágiával köti be”. Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
 - Papi mágiára nem alkalmazható
 
-### Pro Hatás 
+### Pro Hatás
 
 Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk.
 
