@@ -1,6 +1,6 @@
 # 🌀Pszí
 
-Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint például a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeret - amely fortélyként tanulható.
+Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint például a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeretek - amelyek fortélyként tanulhatóak.
 
 ## [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md) (3)
 
