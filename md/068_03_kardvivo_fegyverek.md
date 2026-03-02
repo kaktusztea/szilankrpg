@@ -51,9 +51,8 @@ KF: Különleges fegyver
 Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.
 
 - Áldozat Páncéldobás: `-1` büntetés
-- [Területre/pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver: Ellenpróba: `-2`
-- Ha ellenfél is tőrkardos, mindketten: VÉ csökkentés: 1 + k20T.
-- Könnyebb ellene a [Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
+- [Területre/pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) Manőver → Nehézség: `-2`
+- Könnyebb **ellene** a [Lefegyverzés/Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
 - Zúzó fegyverek ellen: `VÉ` veszteség duplázódik
 
 ---
