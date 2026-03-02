@@ -3,8 +3,14 @@ files:
 dirs:
   - md
 ignorePatterns:
-  - pattern: 'https://www\.libreoffice\.org/.*'
+  - pattern: 'https://(?:www\.)?libreoffice\.org/.*'
+  - pattern: 'https://(?:www\.)?kalandozok\.hu/.*'
   - pattern: 'https://groups\.oasis-open\.org/.*'
   - pattern: 'https://progress-bar\.xyz/.*'
-  - pattern: 'https://lfg.hu/.*'
+  - pattern: 'https://lfg\.hu/.*'
+  - pattern: 'https://creativecommons\.org/*'
+  - pattern: 'https://pandas\.pydata\.org/*'
+  - pattern: 'https://www\.sbzsystems\.com/*'
+  - pattern: 'https://libretranslate\.com/*'
+  - pattern: 'https?://[^/]*gamespot\.com/.*'
   - pattern: 'https://magus\.fandom\.com/.*'
