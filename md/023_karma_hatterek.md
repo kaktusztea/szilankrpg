@@ -46,7 +46,7 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 
 ## 🟡 Áldott személy
 
-Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha nem leplezett, meglátszik az Aurádon.
+Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha az áldás nem leplezett, akkor meglátszik az Aurádon.
 
 Megkapod az [Áldott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státuszt.
 
