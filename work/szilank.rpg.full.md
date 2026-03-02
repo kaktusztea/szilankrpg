@@ -22523,8 +22523,9 @@ Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy se
 ### Kezdeményező taktika
 
 ```
-KÉ:+1, VÉ:-2
-KÉ:+2, VÉ:-4
+KÉ:+1, VÉ:-1
+...
+KÉ:+5, VÉ:-5
 ```
 
 ✅ **Támadó taktikával** együtt, de ügyelj a [Védő Érték eltolás ökölszabályra](#-%C3%B6k%C3%B6lszab%C3%A1ly-v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-eltol%C3%A1sra)!
@@ -22733,8 +22734,8 @@ VÉ:+6, folyamatos hátrálás
 
 Nem támadhatsz, nem varázsolhatsz
 
-Ellenfeled max (1 + k20T)
-  értékkel csökkenthet rajtad VÉ-t
+Ellenfél VÉ csökkentés: (1 + k20T)
+  + "Fárasztó taktika" bónuszuk megmarad
 ```
 
 ❌ Más taktikával együtt
@@ -29975,7 +29976,10 @@ K: Komponens
 
 Álombeli helyszínek, álmokban megjelenő lények.
 
-- megléte
+Összhang
+- jelenléte
+
+Komponens
 - feláldozása
 
 <br />
@@ -29983,7 +29987,8 @@ K: Komponens
 ---
 ## Csillag együttállás (Ö)
 
-- történelmi esemény: államalapításkor aktuális csillagállással azonos együttállás
+Összhang
+- történelmi esemény: államalapítással azonos aktuális csillagállás (együttállás)
 - misztikus együttállás
 
 <br />
@@ -29999,10 +30004,10 @@ K: Komponens
 - koronázás
 - megvilágosodás
 - orgazmus
-- születés: gyógyítás könnyebb
+- születés: ilyenkor könnyebb a gyógyítás
 
 Komponens
-- kivégzés: életerő manipulációra bónusz
+- kivégzés: bónusz életerő manipulációra 
 - halál: az alkalmazó maradék életerejét mágiává formázza
 
 <br />
@@ -30011,6 +30016,8 @@ Komponens
 ## Érzelem, hangulat (Ö, K)
 
 Szeretet, félelem, gyűlölet
+
+⭕ TODO: csoportosítani (Összhang, Komponens)
 
 Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 
@@ -30031,7 +30038,7 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 ---
 ## Fizikai összetevők (K)
 
-### Természetes
+Komponens (természetes)
 
 - békaháj (1)
 - denevérháj
@@ -30040,7 +30047,7 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 - unikornisszarv (3)
 - ásványok, arany, ezüst
 
-### Mágikus
+Komponens (Mágikus)
 
 - mithrill, lunír
 - varázstárgyak
@@ -30053,7 +30060,9 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 ---
 ## Fontos helyszín (Ö)
 
-- történelmi: a legvidámabb esküvő volt itt 1000 éve - itt könnyebb gyógyítani, pozitív asztrális varázslatok
+Összhang
+
+- történelmi: a legvidámabb esküvő volt itt `1000` éve - itt könnyebb gyógyítani, pozitív asztrális varázslatok
 - földrajzi: Hegytető, monolitok, szakadék alja, óceán mélye, barlangi tó, ősöreg fák
 - misztikus földrajzi: szent liget, szent fa
 
@@ -30061,6 +30070,8 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 
 ---
 ## Helyszín jellege (Ö)
+
+Összhang
 
 - föld alatt
 - levegőben
@@ -30075,6 +30086,8 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 ---
 ## Idő, időszak (Ö)
 
+Összhang
+
 - Napszak: Napkelte, Dél, Napnyugta, Éjfél
 - Évszak: Tavasz, Nyár, Ősz, Tél
 - Holdciklus(ok): Újhold, telihold, napfogyatkozás, holdfogyatkozás
@@ -30083,6 +30096,8 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 
 ---
 ## Karma Háttér (Ö)
+
+Összhang
 
 - [Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
 - [Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
@@ -30093,7 +30108,12 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 ---
 ## Lény: evilági (Ö, K)
 
+Összhang
+
 - jelenléte: szellemlény, uralkodó ház tagja, főpap
+
+Komponens
+
 - testrésze: bőre, vére, szőre, karma, nyála, stb.
 - áldozása: emberáldozat, állatáldozat, természetszellem
 
@@ -30102,7 +30122,12 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 ---
 ## Lény: túlvilági (Ö, K)
 
+Összhang
+
 - jelenléte: élőhalott szellem, démon
+
+Komponens
+
 - testrésze: bőre, vére, szőre, karma, nyála, stb.
 - áldozása: élőhalott szellem, démon
 
@@ -30112,6 +30137,8 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
 ## Őselem sűrű jelenléte (Ö)
 
 Nagy mocsár (víz), vulkán (tűz)
+
+Összhang
 
 - Őselemekhez érzelmek hozzáfűzése
   - esőben szomorúságot könnyebb
@@ -30123,7 +30150,9 @@ Nagy mocsár (víz), vulkán (tűz)
 ---
 ## Szimpatikus összetevők (K)
 
-⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, eőrsebb a kapocs a személlyeél, annál erősebb a híd.
+Komponens
+
+⭕ TODO: ⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, eőrsebb a kapocs a személlyeél, annál erősebb a híd.
 
 - fizikai: áldozat egy személyes tárgya, áldozat egy testrésze (haj, stb), testvér, iker
 - elvont: szerelem, gyűlölet mint szimpatikus híd (ez jellemzően papi mágia legyen)
@@ -30135,6 +30164,8 @@ Nagy mocsár (víz), vulkán (tűz)
 ---
 ## Színek, fények (Ö)
 
+Összhang
+
 - konkrét fények
 - gyertyafény
 
@@ -30143,7 +30174,12 @@ Nagy mocsár (víz), vulkán (tűz)
 ---
 ## Természeti jelenség (Ö)
 
-Vihar, aszály, szivárvány, napfény, holdfény
+Összhang
+- Vihar
+- Aszály
+- Szivárvány
+- Napfény
+- Holdfény
 
 Példák:
 - Viharban nehezebb asztrális nyugalmat, de könnyebb felkorbácsolni.
