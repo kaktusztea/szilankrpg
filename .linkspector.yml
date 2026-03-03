@@ -4,7 +4,7 @@ dirs:
   - md
 ignorePatterns:
   - pattern: 'https://(?:www\.)?libreoffice\.org/.*'
-  - pattern: 'https://(?:www\.)?kalandozok\.hu/.*'
+  - pattern: 'https?://[^/]kalandozok\.hu(?:/.)?'
   - pattern: 'https://groups\.oasis-open\.org/.*'
   - pattern: 'https://progress-bar\.xyz/.*'
   - pattern: 'https://lfg\.hu/.*'
