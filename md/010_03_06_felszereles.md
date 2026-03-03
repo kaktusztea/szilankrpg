@@ -16,9 +16,9 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
 
 ```
 -1 pont: közepes tárgy
-  → rövidkard, 20m kötél ..
+  → rövidkard, Közepes pajzs, 20m kötél ..
 -2 pont: nagy tárgy
-  → alabárd, nagy pajzs ..
+  → alabárd, Nagy pajzs ..
 ```
 
 Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként az alábbi hatást okozza:

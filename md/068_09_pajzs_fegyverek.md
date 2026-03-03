@@ -1,8 +1,27 @@
 ## Pajzs fegyverek
 
-Kapcsolódik
+Kapcsolódik:
 - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md) fejezet
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
+
+### Pajzsok Felszerelés pontjai → MGT hatása
+
+- Bővebben: [Felszerelés fejezetet](010_03_06_felszereles.md)
+- Státusz: [Fegyver / Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
+
+```
+Felszerelés pont
+
+1: Közepes pajzs
+2: Nagy pajzs
+```
+
+```
+-1 TÉ / MGT
+-1 Harckeret / MGT
+```
+
+<br />
 
 <!-- tag: md_table_pajzs_start -->
 
