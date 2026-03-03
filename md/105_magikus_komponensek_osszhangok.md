@@ -55,13 +55,14 @@ Komponens
 - házasság
 - bosszú beteljesülének pillanata
 - fontos művészeti műtárgy befejezése
+- ünnepnap
 - koronázás
 - megvilágosodás
 - orgazmus
 - születés: ilyenkor könnyebb a gyógyítás
 
 Komponens
-- kivégzés: bónusz életerő manipulációra 
+- kivégzés: bónusz életerő manipulációra
 - halál: az alkalmazó maradék életerejét mágiává formázza
 
 <br />
