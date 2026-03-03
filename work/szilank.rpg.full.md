@@ -4290,7 +4290,7 @@ Két forrásból juthatunk Karmához:
 
 A lenti Karmák nem feltétlenül fednek le mindent, a KM ha úgy érzi az adott kaland hangulatához illene egy új, általa kitalált Karma, akkor nyugodtan megadhatja, de legyen tekintettel az erőviszonyokra: Karmaként csak valamilyen színesítő ismeretet adjon, ne számszerű előnyöket.
 
-A Karmák lehetnek önmagukban, vagy %-kal jellemezhetőek.
+A Karmák lehetnek önmagukban, vagy `%`-kal jellemezhetőek.
 
 Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg a KM a játékossal való egyeztetés után!
 
@@ -4325,7 +4325,7 @@ Versenyeken, klubokban csak és kizárólag az itt leírt Karmákat adhatja meg 
 
 ## 🟡 Áldott személy
 
-Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha nem leplezett, meglátszik az Aurádon.
+Egy isteni entitás vagy szent hely áldását kaptad meg valamilyen hőstettedért. Ha az áldás nem leplezett, akkor meglátszik az Aurádon.
 
 Megkapod az [Áldott](082_statuszok.md#%EF%B8%8F-%C3%A1ldott--%C3%A1tkozott-12-tulajdons%C3%A1g) Státuszt.
 
@@ -4550,7 +4550,7 @@ Mágikus karma.
 - „A cipőfűzőjét is mágiával köti be”. Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
 - Papi mágiára nem alkalmazható
 
-### Pro Hatás 
+### Pro Hatás
 
 Az apró, kis Erősségű (max `3`) varázslatokat `-3` Komplexitással dobhatod, annyira megszokottá, begyakorolttá vált a használatuk.
 
@@ -25196,9 +25196,8 @@ KF: Különleges fegyver
 Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bír, részben a szűk utcákban, sikátorokban könnyen forgatható tulajdonságában emelkedik ki.
 
 - Áldozat Páncéldobás: `-1` büntetés
-- [Területre/pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver: Ellenpróba: `-2`
-- Ha ellenfél is tőrkardos, mindketten: VÉ csökkentés: 1 + k20T.
-- Könnyebb ellene a [Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
+- [Területre/pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) Manőver → Nehézség: `-2`
+- Könnyebb **ellene** a [Lefegyverzés/Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
 - Zúzó fegyverek ellen: `VÉ` veszteség duplázódik
 
 ---
@@ -28595,7 +28594,7 @@ Leírásukat lásd a Mágiarendszer [Mágikus Státuszok](107_magikus_statuszok.
 
 # 🌀Pszí
 
-Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint például a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeret - amely fortélyként tanulható.
+Az alábbi ismereteket jellemzően felsőoktatásban oktatják, mint például a Py4rroni egyetem, ahol módosabb polgárok számára is elérhető ismeretek - amelyek fortélyként tanulhatóak.
 
 ## [Pszí Telekinézis](fortelyok.misztikus/pszi_telekinezis.md) (3)
 
