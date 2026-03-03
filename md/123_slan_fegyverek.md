@@ -2,6 +2,8 @@
 
 → [STUDY link](https://github.com/kaktusztea/szilankrpg/wiki/ADR.slan.vilagkep#slan-fegyverek)
 
+⭕ TODO ⭕
+
 ---
 
 🔗 [Slan főoldal](120_slan.md) ↑

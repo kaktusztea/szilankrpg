@@ -1,6 +1,8 @@
 ## Chi Harc
 
-TODO
+→ [STUDY link](https://github.com/kaktusztea/szilankrpg/wiki/ADR.slan.vilagkep)
+
+⭕ TODO ⭕
 
 ---
 
