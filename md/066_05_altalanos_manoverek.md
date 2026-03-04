@@ -8,7 +8,7 @@
 - [Kibontakozás](#kibontakoz%C3%A1s)
 - [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
 - [Lábkirántás szálfegyverrel](#l%C3%A1bkir%C3%A1nt%C3%A1s-sz%C3%A1lfegyverrel)
-- [Lábsöprés / Öklelés](#l%C3%A1bs%C3%B6pr%C3%A9s--%C3%B6klel%C3%A9s)
+- [Lábsöprés / Felöklelés](#l%C3%A1bs%C3%B6pr%C3%A9s--%C3%B6klel%C3%A9s)
 - [Lánccsapda](#l%C3%A1nccsapda)
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
 - [Lefegyverzés / Fegyvertörés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s)
@@ -17,7 +17,7 @@
 - [Mesterjel](#mesterjel)
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
 - [Orvtámadás](#orvt%C3%A1mad%C3%A1s)
-- [Pajzzsal öklelés](#pajzzsal-%C3%B6klel%C3%A9s)
+- [Pajzzsal felöklelés](#pajzzsal-%C3%B6klel%C3%A9s)
 - [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
 - [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Területre / Pontra támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s)
@@ -128,7 +128,7 @@ Természetesen az esetleges „kiegészítők”, mint *vaskesztyű*, *szegecsek
 ---
 ### Lábkirántás szálfegyverrel
 
-Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél **Ökleléssel** kell próbálkoznod.
+Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél **Felökleléssel** kell próbálkoznod.
 
 - Nehézség: `6`
 	- `-2`: Kifejezetten lábkirántásra alkalmas fegyverrel
@@ -143,11 +143,12 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 <br />
 
 ---
-### Lábsöprés / Öklelés
+### Lábsöprés / Felöklelés
 
 Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
 
 - Nehézség: `8`
+  - ± **Erő** különbség
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelmény:
   - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
@@ -288,7 +289,7 @@ Ha sikeres **Lopakodás/rejtőzés** `vs.` **Észlelés + Érzékenység** ellen
 <br />
 
 ---
-### Pajzzsal öklelés
+### Pajzzsal felöklelés
 
 - Nehézség: `7`
     - ± **Erő** különbség
@@ -384,7 +385,6 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
 Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezében, akkor megpróbálhatod távoltartani őt, így nem tudja leadni támadását.
 
 - Nehézség: `5`
-- Nehézség módosítók:
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás*  Ellenpróba`
 - Követelmény:

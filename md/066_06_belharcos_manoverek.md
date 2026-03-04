@@ -123,7 +123,7 @@ Amennyiben a támadó lény akár csak `1` kategóriával is kisebb, mint ellenf
 - [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 - Felállás: sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával
 
-Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Ökleléssel](066_05_altalanos_manoverek.md#lábsöprés--öklelés) kell próbálkoznod.
+Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Felökleléssel](066_05_altalanos_manoverek.md#lábsöprés--felöklelés) kell próbálkoznod.
 
 <br />
 
