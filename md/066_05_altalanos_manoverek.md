@@ -29,7 +29,8 @@
 
 Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett elsiklani a harcérintkezés elkerülése végett.
 
-- Nehézség: `6 ± 2` (fegyverméretek és harcolók számától függ, KM döntése)
+- Nehézség: `6`
+  - ± `2` (fegyverméretek és harcolók számától függ, KM döntése)
 - Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
 - Fázisok: `Ellenpróba (Megakasztás*)`
 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
@@ -56,7 +57,7 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 ---
 ### Ellenfél elfogása
 
-  - Nehézség: 10
+  - Nehézség: `10`
   - Fázisok: `Végrehajtás, Ellenpróba`
   - **Végrehajtás** fázisra **NEM JÁR** a `TÉ:+4` módosító
 
