@@ -14365,7 +14365,7 @@ Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem
 
 `1.` Egy `ÉP` seb elszenvedése szükséges az adott harci szituációban, ami lehet önsebzés is. A sebesülés után az `1.` körben a fortély `1.foka` érvényesülhet, `2.` körtől lehet a `2.fokot` érvényesíteni (nyilván csak ha az is megvan).
 
-`2.` Vagy egy hosszú hergelős rituálé. Elérhető mágiával és bódító szerekkel.
+`2.` Vagy egy pár perces hergelős rituálé. Elérhető mágiával és bódító szerekkel. Ezzel elérhető a `2.fok` hatása is még összecsapás előtt.
 
 <br />
 
@@ -14379,19 +14379,23 @@ Harcmodor: 4.szint
 (nem-távolsági)
 ```
 
-🌟 **Hatás**:
+🌟 **Harci Hatás**:
 
 ```
 Max Támadó taktika kötelező
   TÉ:+3; VÉ:-6
 
+1x Roham taktika helyett
+   Öngyilkos roham taktika
+```
+
+🌟 **Próba Hatás**:
+
+```
 Előny+1
   S4 Fájdalomtűrés próbára
   Mágiaellenállás dobásra
     Asztrál/Mentál hatás esetén
-
- Roham helyett Öngyilkos roham
-   taktikát kell használnod
 ```
 
 →  [S4 Fájdalomtűrés próba](../061_04_fajdalomtures_sebesuleskor.md#s4-kateg%C3%B3ri%C3%A1s-f%C3%A1jdalomt%C5%B1r%C3%A9s)\
@@ -14408,8 +14412,7 @@ Harcmodor: 6.szint
 (nem-távolsági)
 ```
 
-
-🌟 **Hatás**:
+🌟 **Harci Hatás**:
 
 ```
 Max Támadó taktika kötelező
@@ -14419,13 +14422,17 @@ Előny+1
   TÉ dobás
   Sebzés dobás
 
+1x Roham taktika helyett
+   Öngyilkos roham taktika
+```
+
+🌟 **Próba Hatás**:
+
+```
 Előny+2
   S4 Fájdalomtűrés próbára
   Mágiaellenállás dobásra
     Asztrál/Mentál hatás esetén
-
-Roham helyett Öngyilkos roham
-   taktikát kell használnod
 ```
 
 <br />
@@ -14437,29 +14444,33 @@ Roham helyett Öngyilkos roham
 - 🔆Speciális, nem vehető fel `KP`-ból, mert ez különleges állapot.
 - Csak mágiával érhető el, például ork ereklye hatása, vagy Arel áldása.
 
-🌟 **Hatás**:
+🌟 **Harci Hatás**:
 
 ```
 Max Támadó taktika kötelező
   TÉ:+3; VÉ:-6
 
-Csak 0 ÉP esetén hagyod
-  abba a támadást
-
 Előny+2
   TÉ dobás
   Sebzés dobás
+
+1x Roham taktika helyett
+   Öngyilkos roham taktika
+
+Csak 0 ÉP esetén hagyod
+  abba a támadást
+```
+
+🌟 **Próba Hatás**:
+
+```
+Előny+2
   Mágiaellenállás dobásra
     Asztrál/Mentál hatás esetén
 
 Automatikus siker
   S4 Fájdalomtűrés próbára
-
-Roham helyett Öngyilkos roham
-   taktikát kell használnod
 ```
-
----
 
 
 ---
@@ -23584,7 +23595,7 @@ A sikertelen Manőver `0` **VÉ csökkentést** okoz.
 - [Kibontakozás](#kibontakoz%C3%A1s)
 - [Kiegészítő támadás](#kieg%C3%A9sz%C3%ADt%C5%91-t%C3%A1mad%C3%A1s)
 - [Lábkirántás szálfegyverrel](#l%C3%A1bkir%C3%A1nt%C3%A1s-sz%C3%A1lfegyverrel)
-- [Lábsöprés / Öklelés](#l%C3%A1bs%C3%B6pr%C3%A9s--%C3%B6klel%C3%A9s)
+- [Lábsöprés / Felöklelés](#l%C3%A1bs%C3%B6pr%C3%A9s--fel%C3%B6klel%C3%A9s)
 - [Lánccsapda](#l%C3%A1nccsapda)
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
 - [Lefegyverzés / Fegyvertörés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s)
@@ -23593,7 +23604,7 @@ A sikertelen Manőver `0` **VÉ csökkentést** okoz.
 - [Mesterjel](#mesterjel)
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
 - [Orvtámadás](#orvt%C3%A1mad%C3%A1s)
-- [Pajzzsal öklelés](#pajzzsal-%C3%B6klel%C3%A9s)
+- [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
 - [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Területre / Pontra támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s)
@@ -23605,7 +23616,8 @@ A sikertelen Manőver `0` **VÉ csökkentést** okoz.
 
 Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett elsiklani a harcérintkezés elkerülése végett.
 
-- Nehézség: `6 ± 2` (fegyverméretek és harcolók számától függ, KM döntése)
+- Nehézség: `6`
+  - ± `2` (fegyverméretek és harcolók számától függ, KM döntése)
 - Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
 - Fázisok: `Ellenpróba (Megakasztás*)`
 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
@@ -23632,7 +23644,7 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 ---
 ### Ellenfél elfogása
 
-  - Nehézség: 10
+  - Nehézség: `10`
   - Fázisok: `Végrehajtás, Ellenpróba`
   - **Végrehajtás** fázisra **NEM JÁR** a `TÉ:+4` módosító
 
@@ -23704,7 +23716,7 @@ Természetesen az esetleges „kiegészítők”, mint *vaskesztyű*, *szegecsek
 ---
 ### Lábkirántás szálfegyverrel
 
-Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél **Ökleléssel** kell próbálkoznod.
+Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenfélnél **Felökleléssel** kell próbálkoznod.
 
 - Nehézség: `6`
 	- `-2`: Kifejezetten lábkirántásra alkalmas fegyverrel
@@ -23719,11 +23731,12 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 <br />
 
 ---
-### Lábsöprés / Öklelés
+### Lábsöprés / Felöklelés
 
 Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hatás ugyanaz.
 
 - Nehézség: `8`
+  - ± **Erő** különbség
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelmény:
   - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
@@ -23864,7 +23877,7 @@ Ha sikeres **Lopakodás/rejtőzés** `vs.` **Észlelés + Érzékenység** ellen
 <br />
 
 ---
-### Pajzzsal öklelés
+### Pajzzsal felöklelés
 
 - Nehézség: `7`
     - ± **Erő** különbség
@@ -23960,7 +23973,6 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
 Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezében, akkor megpróbálhatod távoltartani őt, így nem tudja leadni támadását.
 
 - Nehézség: `5`
-- Nehézség módosítók:
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
 - Fázisok: `Megakasztás*  Ellenpróba`
 - Követelmény:
@@ -24126,7 +24138,7 @@ Amennyiben a támadó lény akár csak `1` kategóriával is kisebb, mint ellenf
 - [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 - Felállás: sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával
 
-Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Ökleléssel](066_05_altalanos_manoverek.md#lábsöprés--öklelés) kell próbálkoznod.
+Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Felökleléssel](066_05_altalanos_manoverek.md#lábsöprés--felöklelés) kell próbálkoznod.
 
 <br />
 
