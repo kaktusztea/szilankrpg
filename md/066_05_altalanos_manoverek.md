@@ -107,6 +107,8 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 - csak azokra támadhatsz így, akik mind közvetlenül ellened harcolnak
 - egyik ellenfeled sem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
 
+🔆 Hátülütője: az így végrehajtott támadások NEM okoznak `VÉ` csökkentést.
+
 <br />
 
 ---
