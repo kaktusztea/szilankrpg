@@ -33,9 +33,9 @@ Ha a karakter a `Max mozgás` távolságnál mindenképpen nagyobb távot akar m
 Extra Mozgás == összes akció
 ```
 
-Amennyiben nem elégszel meg az ingyenes Mozgás kereteddel a körödben, akkor mikor **először** (!) rád kerül a sor a Kezdeményezésben
+Amennyiben nem elégszel meg az ingyenes Mozgás kereteddel a körödben, akkor mikor rád kerül a sor a Kezdeményezésben
 
-- **összes Akciód** (Támadás, Varázslás, Manőver) feladásáért cserébe
+- **Akciódat** (Támadás, Varázslás, Manőver) feladásáért cserébe
 - további `Max Mozgás` értékednek megfelelő távot mozoghatsz.
 
 ---
