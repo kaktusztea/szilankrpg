@@ -9,7 +9,6 @@
 - [Antissjárás](fortelyok.misztikus/antissjaras.md):  ⭕ képzettség v fortély? ⭕
 - [Belső síkok lényeinek ismerete](fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md) 🔁
 - [Külső síkok lényeinek ismerete](fortelyok.misztikus/kulso_sikok_lenyeinek_ismerete.md) 🔁
-- [Gyors varázsló](fortelyok.misztikus/gyors_varazslo.md)
 - [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md)
 - [Mágikus lövedék gyorsítása](fortelyok.misztikus/magikus_lovedek_gyorsitasa.md)
 - [Mentálfonál](fortelyok.misztikus/mentalfonal.md)

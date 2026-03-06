@@ -23,7 +23,11 @@ Manővert végző teszi. `Próbadobás vs Célszám`
 A Megakasztás az első fázis a Manőver végrehajtása során.\
 Megelőző támadási forma, melyre **az Ellenfél** jogosult teljes, fegyveres `TÉ` harcértékével. Ez egy soron kívüli extra támadás, nincs rá támadások számából adódó levonás sem. Csak akkor szükséges, ha az adott típusú manőver fázisai között ez (`M`) szerepel.
 
-Ha az így érkező támadás találat (nem kell, hogy valós sebzést is okozzon), akkor a Manőver nem sikerült. Tipikus példája a [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés).
+Ha a Megakasztás találatot ér el (nem kell, hogy valós sebzést is okozzon), akkor **a Manőver nem sikerült**. Tipikus példa manőver a [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés).
+
+🔆 Ez a támadás is képes Sebzést okozni.
+
+🔆 Ha a Megakasztás sikertelen, **NEM** okoz `VÉ` csökkentést (mint egy sima sikertelen támadás).
 
 <br />
 
