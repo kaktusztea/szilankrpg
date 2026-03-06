@@ -1,6 +1,7 @@
 ## Általános manőverek listája
 
 - [Átsiklás](#%C3%A1tsikl%C3%A1s)
+- [Áttörés](#átt%C3%B6r%C3%A9s)
 - [Csonkolás](#csonkol%C3%A1s)
 - [Ellenfél elfogása](#ellenf%C3%A9l-elfog%C3%A1sa)
 - [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
@@ -46,13 +47,11 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 
 - Nehézség: `5`
   - ± Erő különbség
-  - pajzs ellen: `+[1-2]` (Közepes, Nagy)
+  - pajzsos ellenfél: `+[1-2]` (Közepes, Nagy)
 - Ellenpróba célszámba a választott ellenfél **Manőver Alap** értéke számít be
-- Fázisok: `Végrehajtás, Ellenpróba, Megakasztás`
-- x
+- Fázisok: `Megakasztás, Végrehajtás, Ellenpróba`
 
-
-**Hatás**: Áttörtél
+**Hatás**: Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket már eléred.
 
 <br />
 
