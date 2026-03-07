@@ -61,6 +61,6 @@ Sikertelen próba:
 ---
 ### NJK ismeretként
 
-NJK szereplők, szörnyek, természeti lények is rendelkezhetnek ezzel a fortéllyal technikailag azonos képességgel.
+NJK szereplők, sőt szörnyek, természeti lények is rendelkezhetnek ezzel a fortéllyal technikailag azonos képességgel.
 
 ---
