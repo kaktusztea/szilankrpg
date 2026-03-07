@@ -16,7 +16,6 @@ Egy karakter [harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettség-sz
 
 Ez adja a **Manőver Pontok** mennyiségét - felfelé ↑ kerekítve. Látható, hogy a pontok értékének fenntartásához - a Tapasztalati Szint növekedésével - folyamatosan kell növelni a harcmodor képzettségeket. A Manőver pontok értéke így mindig `[0-5]` tartományban mozog.
 
-
 ---
 ### Felhasználása, Hatása
 
