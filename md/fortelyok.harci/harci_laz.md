@@ -37,7 +37,7 @@ Max Támadó taktika kötelező
    Öngyilkos roham taktika
 ```
 
-🌟 **Próba Hatás**:
+🌟 **Próbákra Hatás**:
 
 ```
 Előny+1
@@ -74,7 +74,7 @@ Előny+1
    Öngyilkos roham taktika
 ```
 
-🌟 **Próba Hatás**:
+🌟 **Próbákra Hatás**:
 
 ```
 Előny+2
@@ -109,7 +109,7 @@ Csak 0 ÉP esetén hagyod
   abba a támadást
 ```
 
-🌟 **Próba Hatás**:
+🌟 **Próbákra Hatás**:
 
 ```
 Előny+2
