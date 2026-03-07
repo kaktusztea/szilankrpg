@@ -21,6 +21,7 @@ Ha valaki látja és van ideje felkészülni a rá leadott **lövésre/hajítás
 
 ```
 Nem alkalmas tárgyak,
+Mágiatáv I
 Gyors mozgatás (EM)
 
   18:  1m
@@ -31,10 +32,23 @@ Gyors mozgatás (EM)
    4:  6m
 ```
 
+
+```
+Korlátosan alkalmas fegyverek
+Mágiatáv II
+
+  21:  ⭕m - m
+  18:  ⭕m - m
+  15:  ⭕m - m
+  12:  ⭕m - m
+   x:  Testközelben
+```
+
 ```
 Dobófegyverek,
+Mágiatáv III
 Sebes mozgatás (EM)
-  21:  1m - 3m
+  21:  1m - 3m⭕
   18:  4m - 6m
   15:  7m - 9m
   12:  10m - 12m
@@ -43,8 +57,9 @@ Sebes mozgatás (EM)
 
 ```
 Íjak,
+Mágiatáv IV
 Villámgyors mozgatás (EM)
-  21:  0m - 5m
+  21:  0m - 5m⭕
   18:  6m - 10m
   15:  11m - 15m
   12:  16m - 20m

@@ -28,22 +28,22 @@ A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy tá
 ```
 Mágiatáv I
  CÉ:+1
- Osztó: 0.5
+ Osztó: 1
 
 Mágiatáv II
  CÉ:+2
- Osztó: 1
+ Osztó: 2
 
 Mágiatáv III
  CÉ:+3
- Osztó: 2
+ Osztó: 3
 
 Mágiatáv IV
  CÉ:+4
- Osztó: 3
+ Osztó: 4
 ```
 
-A **Mágiatáv `I-IV`** valójában `1 db` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) fegyverválasztójában azt a verzióját használd, amely megfelel a **Mágiatáv növelés** fortélyod fokának.
+A **Mágiatáv `I-IV`** valójában `1 db` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) fegyverválasztójában a fortély fokának megfelelő verzióját használd.
 
 A **Mágiatáv** szimulálja a (mágikus) távolsági "fegyver" kategóriákat ("tárgy, hajító, nyíl, nyílpuska").
 
@@ -63,7 +63,6 @@ Távolbahatás módja: Lövedék
 +0 CÉ: Zápor
        Max sebzés: ⭕??
 ```
-
 
 ```
 Távolbahatás módja: Területmágia

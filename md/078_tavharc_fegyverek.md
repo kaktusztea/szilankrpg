@@ -16,7 +16,7 @@ Az alábbiak az általános arányokat mutatják be, a konkrét fegyverek érté
 ```
 Nem hajításra alkotott tárgyak 🔆
   CÉ: +0
-  Osztó: 0.5
+  Osztó: 1
   Példa fegyverek:
     Kard, zsámoly, söröskorsó
     Mágiatáv I
@@ -26,7 +26,7 @@ Nem hajításra alkotott tárgyak 🔆
 ```
 Korlátosan alkalmas fegyverek
   CÉ: +2
-  Osztó: 1
+  Osztó: 2
   Példa fegyverek:
     Tőr, kő, bola
     Mágiatáv II
@@ -35,7 +35,7 @@ Korlátosan alkalmas fegyverek
 ```
 Apró hajítófegyverek, szálfegyverek
   CÉ: +3/+4
-  Osztó: 2
+  Osztó: 3
   Példa fegyverek:
     Hajítótőr, hajítóbárd, dárda
     Mágiatáv III
@@ -44,7 +44,7 @@ Apró hajítófegyverek, szálfegyverek
 ```
 Íjak
   CÉ: +5/6
-  Osztó: 3
+  Osztó: 4
   Példa fegyverek:
     Rövid, hosszú íj, Kézi nyílpuska
     Mágiatáv IV
@@ -55,7 +55,7 @@ Apró hajítófegyverek, szálfegyverek
 ```
 Nyílpuskák
   CÉ: +8
-  Osztó: 4
+  Osztó: 5
   Példa fegyverek:
     Nyílpuskák, kivéve Kézi, Kh4rei
   Kézi nyílpuskától felfelé Páncéltörőek
