@@ -181,7 +181,7 @@ https://github.com/kaktusztea/szilankrpg/
 ---
 ## File: md/szabalyrendszer.md
 
-### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.4.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
+### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.2.5.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
 **[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [Kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [Kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
@@ -12150,7 +12150,6 @@ A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci é
 - [Antissjárás](fortelyok.misztikus/antissjaras.md):  ⭕ képzettség v fortély? ⭕
 - [Belső síkok lényeinek ismerete](fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md) 🔁
 - [Külső síkok lényeinek ismerete](fortelyok.misztikus/kulso_sikok_lenyeinek_ismerete.md) 🔁
-- [Gyors varázsló](fortelyok.misztikus/gyors_varazslo.md)
 - [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md)
 - [Mágikus lövedék gyorsítása](fortelyok.misztikus/magikus_lovedek_gyorsitasa.md)
 - [Mentálfonál](fortelyok.misztikus/mentalfonal.md)
@@ -19997,9 +19996,9 @@ Ha a karakter a `Max mozgás` távolságnál mindenképpen nagyobb távot akar m
 Extra Mozgás == összes akció
 ```
 
-Amennyiben nem elégszel meg az ingyenes Mozgás kereteddel a körödben, akkor mikor **először** (!) rád kerül a sor a Kezdeményezésben
+Amennyiben nem elégszel meg az ingyenes Mozgás kereteddel a körödben, akkor mikor rád kerül a sor a Kezdeményezésben
 
-- **összes Akciód** (Támadás, Varázslás, Manőver) feladásáért cserébe
+- **Akciódat** (Támadás, Varázslás, Manőver) feladásáért cserébe
 - további `Max Mozgás` értékednek megfelelő távot mozoghatsz.
 
 ---
@@ -23269,7 +23268,7 @@ Egy-két jó példa többet mond a száraz szabályleírásoknál.
 ## Manőver Alap
 
 ```
-Manőver Alap = (HM / 3) ↑
+Manőver Alap = (HM / 10) ↑
 ```
 
 A karakter által felvett `HM` pontok tizede - felfele ↑ kerekítve.
@@ -23475,7 +23474,11 @@ Manővert végző teszi. `Próbadobás vs Célszám`
 A Megakasztás az első fázis a Manőver végrehajtása során.\
 Megelőző támadási forma, melyre **az Ellenfél** jogosult teljes, fegyveres `TÉ` harcértékével. Ez egy soron kívüli extra támadás, nincs rá támadások számából adódó levonás sem. Csak akkor szükséges, ha az adott típusú manőver fázisai között ez (`M`) szerepel.
 
-Ha az így érkező támadás találat (nem kell, hogy valós sebzést is okozzon), akkor a Manőver nem sikerült. Tipikus példája a [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés).
+Ha a Megakasztás találatot ér el (nem kell, hogy valós sebzést is okozzon), akkor **a Manőver nem sikerült**. Tipikus példa manőver a [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés).
+
+🔆 Ez a támadás is képes Sebzést okozni.
+
+🔆 Ha a Megakasztás sikertelen, **NEM** okoz `VÉ` csökkentést (mint egy sima sikertelen támadás).
 
 <br />
 
@@ -23588,6 +23591,7 @@ A sikertelen Manőver `0` **VÉ csökkentést** okoz.
 ## Általános manőverek listája
 
 - [Átsiklás](#%C3%A1tsikl%C3%A1s)
+- [Áttörés](#átt%C3%B6r%C3%A9s)
 - [Csonkolás](#csonkol%C3%A1s)
 - [Ellenfél elfogása](#ellenf%C3%A9l-elfog%C3%A1sa)
 - [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l)
@@ -23619,11 +23623,25 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 - Nehézség: `6`
   - ± `2` (fegyverméretek és harcolók számától függ, KM döntése)
 - Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
+- Ha legalább `2` pajzsos blokkolna téged, akkor ezt a manővert nem használhatod. Áttöréssel próbálkozhatsz.
 - Fázisok: `Ellenpróba (Megakasztás*)`
 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
 	- **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
 
 **Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás: támadóddal **Gyorsaság** ellenpróba. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) módosítóival.
+
+<br />
+
+---
+### Áttörés
+
+- Nehézség: `5`
+  - ± Erő különbség
+  - pajzsos ellenfél: `+[1-2]` (Közepes, Nagy)
+- Ellenpróba célszámba a választott ellenfél **Manőver Alap** értéke számít be
+- Fázisok: `Megakasztás, Végrehajtás, Ellenpróba`
+
+**Hatás**: Áttörtél egy előtted álló, általad választott ellenfeleden, sikeresen félrelökted. A mögötte álló ellenfeleket már eléred.
 
 <br />
 
@@ -23678,6 +23696,8 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 **Követelmény**
 - csak azokra támadhatsz így, akik mind közvetlenül ellened harcolnak
 - egyik ellenfeled sem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
+
+🔆 Hátülütője: az így végrehajtott támadások NEM okoznak `VÉ` csökkentést.
 
 <br />
 
