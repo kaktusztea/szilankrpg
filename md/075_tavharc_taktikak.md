@@ -49,10 +49,10 @@ Dobófegyverek,
 Mágiatáv III
 Sebes mozgatás (EM)
   21:  1m - 3m⭕
-  18:  4m - 6m
-  15:  7m - 9m
-  12:  10m - 12m
-   9:  Testközelben
+  18:  4m - 6m⭕
+  15:  7m - 9m⭕
+  12:  10m - 12m⭕
+   9:  Testközelben⭕
 ```
 
 ```
