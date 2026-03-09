@@ -96,7 +96,7 @@ E igény
 → [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md) ⭕TODO⭕
 → [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕TODO⭕
 
-Rekesz Erősséget módosítanak.
+Rekesz Erősséget módosítanak:
 
 ```
 [-3; +3]
