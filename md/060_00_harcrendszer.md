@@ -24,9 +24,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 ## 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 
-- [Harci kör](063_01_harci_kor.md)
-- [Akció fogalma](063_02_akcio_fogalma.md)
-- [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+- [Harci kör: Mozgás, Akció](063_01_harci_kor.md)
 - [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
 - [Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
 - [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md) 📊

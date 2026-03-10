@@ -165,7 +165,7 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 ---
 ### 🔥 Mozgás - feleződik
 
-- [Mozgás](063_03_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
+- [Mozgás](063_01_harci_kor.md#2-mozgás) értéked feleződik ↑ - harcon belül
 - Felére csökken a megtehető távolságod - harcon kívül
 
 ---

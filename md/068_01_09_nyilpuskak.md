@@ -3,7 +3,7 @@
 Ugyan veszélyes fegyverek, de a újratöltésük körülményes:
 
 - Nincs Sebesség értékük (`-1`)
-- Csak minden `2.körben` lehetséges velük lőni. Ilyenkor az újratöltésen kívül mást nem cselekedhetsz, de [Mozgásodat](063_03_mozgas_harc_kozben.md) elhasználhatod, - ebben nincs megkötés.
+- Csak minden `2.körben` lehetséges velük lőni. Ilyenkor az újratöltésen kívül mást nem cselekedhetsz, de [Mozgásodat](063_01_harci_kor.md#2-mozgás) elhasználhatod, - ebben nincs megkötés.
 
 🔆 [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md) fortély enyhít a fentieken.
 

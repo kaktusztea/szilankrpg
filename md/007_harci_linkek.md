@@ -40,7 +40,7 @@
 
 [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md)
 
-[Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+[Harci kör: Mozgás, Akció](063_01_harci_kor.md)
 
 ---
 ### Páncélok, Fegyverek

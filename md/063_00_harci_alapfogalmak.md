@@ -1,10 +1,6 @@
 ## Harci alapfogalmak
 
-### [Harci kör](063_01_harci_kor.md)
-
-### [Akció fogalma](063_02_akcio_fogalma.md)
-
-### [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+### [Harci kör: Mozgás, Akció](063_01_harci_kor.md)
 
 ### [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
 
