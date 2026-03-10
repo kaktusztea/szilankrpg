@@ -18,7 +18,7 @@ Tehát a Telepátia valós erejű alkalmazása a **Mentálmágia** Arkánummal v
 
 ### 3. fok
 
-🌟 Harc közben is képes vagy üzenni valakinek - [Szabad cselekedetként](063_01_harci_kor.md#1-szabad-cselekedetek) (`1x/kör`).
+🌟 Harc közben is képes vagy üzenni valakinek - [Szabad cselekedetként](../063_01_harci_kor.md#1-szabad-cselekedetek) (`1x/kör`).
 
 ---
 ## [Mentálfonál](mentalfonal.md) fortély hatása
