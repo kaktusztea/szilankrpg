@@ -50,7 +50,7 @@ Minden 5.FP → 1 ÉP
 
 → [Beszorított helyzet (2) Erősen](065_01_03_harci_poziciok.md#beszoritott-helyzet-2-erősen) harci helyzet `+` [Sebzés csökkentett](081_hatasok.md#-sebz%C3%A9s-cs%C3%B6kkentett) Hatás
 
-A `0` pengehossznál nagyobb fegyver forgatója **Akció elhasználása nélkül** elejtheti fegyverét.\
+A `0` pengehossznál nagyobb fegyver forgatója **támadás elhasználása nélkül** elejtheti fegyverét.\
 Ekkor a fenti **Puszta kéz** harcértékeivel küzdhet tovább.
 
 <br />

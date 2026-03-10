@@ -1,9 +1,9 @@
 ## Nyílpuskák
 
-Ugyan veszélyes fegyverek, de a újratöltésük körülményes:
+Ugyan veszélyes fegyverek, de újratöltésük körülményes:
 
 - Nincs Sebesség értékük (`-1`)
-- Csak minden `2.körben` lehetséges velük lőni. Ilyenkor az újratöltésen kívül mást nem cselekedhetsz, de [Mozgásodat](063_01_harci_kor.md#2-mozgás) elhasználhatod, - ebben nincs megkötés.
+- Csak minden `2.körben` lehetséges velük lőni. Ilyenkor a lövés utáni körben az [Akciód](063_01_harci_kor.md#3-akció) kizárólag az újratöltésben merül ki, mást nem cselekedhetsz. [Mozgásodat](063_01_harci_kor.md#2-mozgás) viszont továbbra is elhasználhatod - ebben nincs megkötés.
 
 🔆 [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md) fortély enyhít a fentieken.
 

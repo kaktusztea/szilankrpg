@@ -1,6 +1,6 @@
 ## ⚜️ Általános szabályok manőverekre
 
-Egy Manőver végrehajtása `1 támadást` / `1 akciót` emészt fel, nem szükséges hozzá nyert kezdeményezés.
+Egy Manőver végrehajtása `1 támadást` emészt fel, nem szükséges hozzá nyert kezdeményezés.
 
 Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
 

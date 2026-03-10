@@ -4,7 +4,7 @@ A harcot körökre osztjuk, ebben cselekedhet mindenki a később tárgyalt [kez
 
 Egy körben az alábbi három féle cselekedetet végezheted el - tetszés szerinti sorrendben mind a hármat.
 
-### `1.` Szabad cselekvések
+### `1.` Szabad cselekedetek
 
 Ezek - az ésszerűség határain belül - nem igényelnek semmilyen feltételt.
 
@@ -34,9 +34,11 @@ Cselekedetek
 
 Minden karakternek **`1 db`** Akciója van körönként összesen, amely az alábbiakat jelentheti (vagy-vagy):
 
-- [Leadom az összes támadásom](063_04_tamadasok_szama_fegyverrel.md)
-- [Leadom az 1 db varázslatom](063_05_tamadasok_szama_varazslaskor.md)
-- Képzettséget használok - például felmászok a fára.
+- [Leadod az összes támadásod](063_04_tamadasok_szama_fegyverrel.md)
+- [Leadod az 1 db varázslatod](063_05_tamadasok_szama_varazslaskor.md)
+- Nyílpuskával lősz `1`-et
+- Újratöltöd a nyílpuskát
+- Képzettséget használsz - például felmászol egy fára.
 
 🔆 Maga az `1 db` **teljes Akció** átváltható `+1` extra Max Mozgásra, de `1-1` szeparált támadás **NEM** váltható át - csak egyben az összes.
 
