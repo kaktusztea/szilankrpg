@@ -305,9 +305,7 @@ https://github.com/kaktusztea/szilankrpg/
 
 ### 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 
-- [Harci kör](063_01_harci_kor.md)
-- [Akció fogalma](063_02_akcio_fogalma.md)
-- [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+- [Harci kör: Mozgás, Akció](063_01_harci_kor.md)
 - [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
 - [Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
 - [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md) 📊
@@ -991,7 +989,7 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md)
 
-[Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+[Harci kör: Mozgás, Akció](063_01_harci_kor.md)
 
 ---
 ### Páncélok, Fegyverek
@@ -14001,7 +13999,9 @@ A fortély segítségével mikor sebet kapsz néhány `ÉP` "átalakul" `FP` pon
 ---
 ### `ÉP` vs `FP` ❗
 
-Ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! [Bővebben](../061_02_faradsag_pont.md#val%C3%B3s-%C3%A9p-seb-elszenved%C3%A9se-fp-ut%C3%A1n).
+🔆 Ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! [Bővebben](../061_02_faradsag_pont.md#val%C3%B3s-%C3%A9p-seb-elszenved%C3%A9se-fp-ut%C3%A1n).
+
+🔆 Ha az kidobott Sebesülés pont `1 ÉP` lenne, akkor az valós sebként bemegy, a fortély `3 ÉP`-től kezdve használható.
 
 ---
 ### Példa
@@ -17811,7 +17811,7 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpus
 
 🌟 **Hatás**:
 - A kilőtt nyílpuskád újratöltéséhez szükséges idő lecsökken.
-- Körönként maximum egyszer tudsz lőni - ha az újratöltésen kívül mást nem cselekszel (de [Mozgásodat](../063_03_mozgas_harc_kozben.md) továbbra elhasználhatod).
+- Körönként maximum egyszer tudsz lőni - ha az újratöltésen kívül mást nem cselekszel ([Mozgásodat](../063_01_harci_kor.md#2-mozgás) továbbra elhasználhatod).
 
 ---
 
@@ -18969,9 +18969,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 ## 6.3 [Harci alapfogalmak](063_00_harci_alapfogalmak.md)
 
-- [Harci kör](063_01_harci_kor.md)
-- [Akció fogalma](063_02_akcio_fogalma.md)
-- [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+- [Harci kör: Mozgás, Akció](063_01_harci_kor.md)
 - [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
 - [Támadások száma mágiával](063_05_tamadasok_szama_varazslaskor.md)
 - [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md) 📊
@@ -19892,11 +19890,7 @@ A `HM` és `CM` nem keverhetőek, tehát a `CM`-re költhető max pontok nem „
 
 ## Harci alapfogalmak
 
-### [Harci kör](063_01_harci_kor.md)
-
-### [Akció fogalma](063_02_akcio_fogalma.md)
-
-### [Mozgás harc közben](063_03_mozgas_harc_kozben.md)
+### [Harci kör: Mozgás, Akció](063_01_harci_kor.md)
 
 ### [Harckeret, Támadások száma fegyverrel](063_04_tamadasok_szama_fegyverrel.md)
 
@@ -19917,89 +19911,62 @@ A `HM` és `CM` nem keverhetőek, tehát a `CM`-re költhető max pontok nem „
 
 A harcot körökre osztjuk, ebben cselekedhet mindenki a később tárgyalt [kezdeményezés](064_02_01_kezdemenyezes.md) által meghatározott sorrendben.
 
-Mindenki leadja `1.` támadását, aztán ugyanebben a sorrendben a több támadással rendelkező karakterek a `2.` támadást, és így tovább - egészen addig, amíg már nincs senkinek hátralevő támadása.
+Egy körben az alábbi három féle cselekedetet végezheted el - tetszés szerinti sorrendben mind a hármat.
 
-🔆 Fontos: A harci kör egy narratív egység, **nincs másodpercben megadott hossza**, szituációtól függően terjedhet `5` másodperctől akár `1` percig is. Ha az adott helyzetben kiemelten fontos, hogy meddig tart, akkor a KM kimondhatja például, hogy "ideiglenesen, **ebben** a szituációban most `10` másodperc lesz egy kör".
+### `1.` Szabad cselekedetek
 
----
+Ezek - az ésszerűség határain belül - nem igényelnek semmilyen feltételt.
 
-🔗 [Akció fogalma](063_02_akcio_fogalma.md) →
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
+- Odaszólni valakinek, kiáltani egyet
+- Koncentrálást fenntartani
 
 ---
----
-## File: md/063_02_akcio_fogalma.md
+### `2.` Mozgás
 
-## Akció fogalma
-
-Az Akció a harcban megtett elemi cselekedet. Hogy hány akciód van, azt a [Támadások száma (fegyverrel)](063_04_tamadasok_szama_fegyverrel.md) és [Támadások száma (varázsláskor)](063_05_tamadasok_szama_varazslaskor.md) oldalakon részletezzük.
-
-Vannak olyan cselekedetek, amelyek `0` akciót igényelnek, például odakiáltani a társadnak.
-
-`1` Akció az alábbi cselekedetekkel egyenértékű:
-
-- `1` Harci támadás
-- `1` Manőver
-- `1` Varázslás
-- `1` extra [Mozgás](063_03_mozgas_harc_kozben.md)
-- Kinyitni egy ajtót
-- Használni egy tárgyat
-- Fedezékbe húzódni
-
-Fontos, hogy egy harci körben legfeljebb `1` támadásodat válthatod át valamilyen egyéb - nem harci - cselekedetre.
-
----
-
-🔗 [Mozgás harc közben](063_03_mozgas_harc_kozben.md) →
-
-⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
-
-
----
----
-## File: md/063_03_mozgas_harc_kozben.md
-
-## Mozgás harcban, mozgás hatása támadások számára
-
-Harc közben nem ugyanazon a pár négyzetméteres területen mozog a karakter, sokszor át kell rohannia segíteni másnak, vagy épp visszavonulnia (már ha sikerült kibontakoznia). A harci körben való mozgás az alábbiak szerint lehetséges.
-
----
-### Maximum mozgás, maximum támadással
+Egy körön belül szabadon mozghatsz a lenti korlátok között és/vagy pár alapvető cselekedetet is végezhetsz. A KM dönt, hogy ha cselekszel is, mennyivel kevesebbet mozoghatsz.
 
 ```
 Max Mozgás egy körben =
    (5 + Gyorsaság) méter
+
+Cselekedetek
+  Ajtót kinyitni
+  Használni egy tárgyat
+  Fedezékbe ugrani
 ```
 
-Egy karakter egy harci körön belül szabadon mozoghat maximum (`5 + Gyorsaság Tulajdonság`) mennyiségű métert anélkül, hogy elveszítene egyet is támadásaiból.
+🔆Ha a kört mozgással kezded, akkor utolsó helyre csúszol a [Kezdeményezésben](064_02_00_harc_menete_reszletes.md#kezdeményezés).
+
 
 ---
-### Mozgás a kör elején
+### `3.` Akció
 
-Ha a kört mozgással kezded, akkor utolsó helyre csúszol a [Kezdeményezésben](064_02_00_harc_menete_reszletes.md#kezdeményezés).
+Minden karakternek **`1 db`** Akciója van körönként összesen, amely az alábbiakat jelentheti (vagy-vagy):
 
----
-### Száguldás rohammal
+- [Leadod az összes támadásod](063_04_tamadasok_szama_fegyverrel.md)
+- [Leadod az 1 db varázslatod](063_05_tamadasok_szama_varazslaskor.md)
+- Nyílpuskával lősz `1`-et
+- Újratöltöd a nyílpuskát
+- Képzettséget használsz - például felmászol egy fára.
 
-Ha a karakter a `Max mozgás` távolságnál mindenképpen nagyobb távot akar megtenni egy körben és még `1 db` támadást le is akar adni, akkor azt megteheti az alábbi megkötésekkel:
+🔆 Maga az `1 db` **teljes Akció** átváltható `+1` extra Max Mozgásra, de `1-1` szeparált támadás **NEM** váltható át - csak egyben az összes.
 
-- A körben nem lehet/lehetett ezen kívül más támadása
-- Csak [Roham](065_02_harci_taktikak.md#roham-taktika) vagy [Öngyilkos Roham](065_02_harci_taktikak.md#%C3%B6ngyilkos-roham-taktika) Harci taktikával végezhető a támadás
-- Maximum megtehető táv: `Max mozgás x 2` (méterben)
-
----
-### Extra mozgás a körben
+Tehát ha **Akció** helyett **is** mozogsz, akkor ez a maximálisan megtehető távolság:
 
 ```
-Extra Mozgás == összes akció
+2x (5 + Gyorsaság) méter
 ```
 
-Amennyiben nem elégszel meg az ingyenes Mozgás kereteddel a körödben, akkor mikor rád kerül a sor a Kezdeményezésben
+<br />
 
-- **Akciódat** (Támadás, Varázslás, Manőver) feladásáért cserébe
-- további `Max Mozgás` értékednek megfelelő távot mozoghatsz.
+---
+### Támadások sorrendje
+
+Mindenki leadja `1.` támadását, aztán ugyanebben a sorrendben a több támadással rendelkező karakterek a `2.` támadást, és így tovább - egészen addig, amíg már nincs senkinek hátralevő támadása.
+
+### Kör hossza
+
+A harci kör egy narratív egység, **nincs másodpercben megadott hossza**, szituációtól függően terjedhet `5` másodperctől akár `1` percig is. Ha az adott helyzetben kiemelten fontos, hogy meddig tart, akkor a KM kimondhatja például, hogy "ideiglenesen, **ebben** a szituációban most `10` másodpercnek veszünk egy kört".
 
 ---
 
@@ -21674,7 +21641,7 @@ Minden 5.FP → 1 ÉP
 
 → [Beszorított helyzet (2) Erősen](065_01_03_harci_poziciok.md#beszoritott-helyzet-2-erősen) harci helyzet `+` [Sebzés csökkentett](081_hatasok.md#-sebz%C3%A9s-cs%C3%B6kkentett) Hatás
 
-A `0` pengehossznál nagyobb fegyver forgatója **Akció elhasználása nélkül** elejtheti fegyverét.\
+A `0` pengehossznál nagyobb fegyver forgatója **támadás elhasználása nélkül** elejtheti fegyverét.\
 Ekkor a fenti **Puszta kéz** harcértékeivel küzdhet tovább.
 
 <br />
@@ -21727,12 +21694,12 @@ Fegyver kategóriáját a KM határozza meg.
 
 ### `1.1` Eset: Fegyverrántó elveszíti a kezdeményezést
 
-Nem sikerül előrántanod a fegyvert, elhasználtál egy támadás akciót és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled első támadását. Ha ezt túlélted, visszatámadás helyett `1 akció` elhasználásával előhúzhatod fegyveredet - bármilyen próbadobás nélkül - amennyiben így döntesz.
+Nem sikerül előrántanod a fegyvert, elhasználtál egy támadást és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled első támadását. Ha ezt túlélted, visszatámadás helyett `1 támadás` elhasználásával előhúzhatod fegyveredet - bármilyen próbadobás nélkül - amennyiben így döntesz.
 
 ### `1.2` Eset: Fegyverrántó nyeri a kezdeményezést
 
 Sikerült előrántanod fegyvered, és teljes, fegyveres `VÉ` harcértéked érvényesül.\
-Ellenfeled dobhat támadást azonnal. A fegyverrántás tehát `1 db` Akciódat (ez esetben támadásodat) felemésztő cselekedet.
+Ellenfeled dobhat támadást azonnal. Utána te jössz, nem veszítesz támadást.
 
 ### `1.3` Eset: Fegyverrántó nyeri a kezdeményezést `+3` túldobással
 
@@ -23359,7 +23326,7 @@ A komolyabb, kidolgozottabb Nem Játékos Karakter ellenfelek viszont egy külö
 
 ## ⚜️ Általános szabályok manőverekre
 
-Egy Manőver végrehajtása `1 támadást` / `1 akciót` emészt fel, nem szükséges hozzá nyert kezdeményezés.
+Egy Manőver végrehajtása `1 támadást` emészt fel, nem szükséges hozzá nyert kezdeményezés.
 
 Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
 
@@ -24958,10 +24925,10 @@ SP: -5 + k20
 
 ## Nyílpuskák
 
-Ugyan veszélyes fegyverek, de a újratöltésük körülményes:
+Ugyan veszélyes fegyverek, de újratöltésük körülményes:
 
 - Nincs Sebesség értékük (`-1`)
-- Csak minden `2.körben` lehetséges velük lőni. Ilyenkor az újratöltésen kívül mást nem cselekedhetsz, de [Mozgásodat](063_03_mozgas_harc_kozben.md) elhasználhatod, - ebben nincs megkötés.
+- Csak minden `2.körben` lehetséges velük lőni. Ilyenkor a lövés utáni körben az [Akciód](063_01_harci_kor.md#3-akció) kizárólag az újratöltésben merül ki, mást nem cselekedhetsz. [Mozgásodat](063_01_harci_kor.md#2-mozgás) viszont továbbra is elhasználhatod - ebben nincs megkötés.
 
 🔆 [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md) fortély enyhít a fentieken.
 
@@ -27731,7 +27698,7 @@ Az `S1` ÉS `S2` Egészség kategóriák összes rubrikája feltöltődik új [F
 ---
 ### 🔥 Mozgás - feleződik
 
-- [Mozgás](063_03_mozgas_harc_kozben.md) értéked feleződik ↑ - harcon belül
+- [Mozgás](063_01_harci_kor.md#2-mozgás) értéked feleződik ↑ - harcon belül
 - Felére csökken a megtehető távolságod - harcon kívül
 
 ---
