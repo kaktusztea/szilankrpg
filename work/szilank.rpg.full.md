@@ -20853,7 +20853,9 @@ Módosítók:
 
 Bónuszok:
    → Többszörös találat
+     +5 túldobás  →  +2 SP
    → Roham
+     +5 SP
 ```
 
 A `k20` dobás eredményéhez hozzáadódik a fegyver sebzés értéke, a fent részletezett módosítók, bónuszok, és egyes fortélyokból adódó extra értékek.
@@ -29166,7 +29168,7 @@ E igény
 → [Mágikus komponensek, összhangok](105_magikus_komponensek_osszhangok.md) ⭕TODO⭕
 → [STUDY oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magikus.komponensek.osszhangok) ⭕TODO⭕
 
-Rekesz Erősséget módosítanak.
+Rekesz Erősséget módosítanak:
 
 ```
 [-3; +3]
