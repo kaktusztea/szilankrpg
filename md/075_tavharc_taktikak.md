@@ -24,54 +24,51 @@ Nem alkalmas tárgyak,
 Mágiatáv I
 Gyors mozgatás (EM)
 
-  18:  1m
-  15:  2m
-  12:  3m
-   9:  Testközelben
-   6:  5m
-   4:  6m
+  15:  1m
+  12:  2m
+   9:  3m, Testközelben
 ```
-
 
 ```
 Korlátosan alkalmas fegyverek
 Mágiatáv II
 
-  21:  ⭕m - m
-  18:  ⭕m - m
-  15:  ⭕m - m
-  12:  ⭕m - m
-   x:  Testközelben
+  18:  1m
+  15:  2m
+  12:  3m
+   9:  4m, Testközelben
 ```
 
 ```
 Dobófegyverek,
 Mágiatáv III
 Sebes mozgatás (EM)
-  21:  1m - 3m⭕
-  18:  4m - 6m⭕
-  15:  7m - 9m⭕
-  12:  10m - 12m⭕
-   9:  Testközelben⭕
+  21:  1m - 2m
+  18:  3m - 4m
+  15:  5m - 6m
+  12:  7m - 8m
+   9:  9m - 10m, Testközelben
 ```
 
 ```
 Íjak,
 Mágiatáv IV
 Villámgyors mozgatás (EM)
-  21:  0m - 5m⭕
+  21:  1m - 5m
   18:  6m - 10m
   15:  11m - 15m
   12:  16m - 20m
+   9:  21m - 25m, Testközelben
 ```
 
 ```
 Nyílpuskák,
 Leggyorsabb mozgatás (EM)
-  21:  0m - 10m
+  21:  1m - 10m
   18:  11m - 20m
   15:  21m - 30m
   12:  31m - 40m
+   9:  40m - 50m, Testközelben
 ```
 
 🔆 Ha a próba sikeres, a célpont elugrott a lövedék elől, a lövész már nem is tehet **Célzó dobást**.
