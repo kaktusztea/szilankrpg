@@ -10,7 +10,6 @@ Kiemelt fejezetet szenteltünk a [Szituációknak](160_szituaciok.md), hogy ne m
 
 A rendszer jól adaptálható nem-fantasy, modern világokra is új, ad-hoc [Szabad fortélyok](042_szabad_fortelyok.md) meghatározásával a képzettségek kiterjesztéseként és a [Távharc Osztó](072_tavharc_ve_oszto_cella.md) meghatározásával lőfegyverekre (Távcsöves puska: `10`).
 
-
 A szabályrendszer eredeti, hiteles forrása ezen URL alatt található:\
 https://github.com/kaktusztea/szilankrpg/
 
