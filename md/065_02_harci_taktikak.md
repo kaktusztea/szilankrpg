@@ -5,10 +5,10 @@
 - [Kezdeményező taktika](#kezdem%C3%A9nyez%C5%91-taktika)
 - [Kiváró taktika](#kiv%C3%A1r%C3%B3-taktika)
 - [Öngyilkos roham taktika](#%C3%B6ngyilkos-roham-taktika)
-- [Plusz támadás taktika](#plusz-t%C3%A1mad%C3%A1s-taktika)
+- [Plusz támadás taktika](#plusz-t%C3%A1mad%C3%A1s-taktika) 🔻
 - [Roham taktika](#roham-taktika)
 - [Sűrű taktika](#s%C5%B1r%C5%B1-taktika)
-- [Támadás erőből taktika](#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika)
+- [Támadás erőből taktika](#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) 🔻
 - [Támadó taktika](#t%C3%A1mad%C3%B3-taktika)
 - [Védő taktika](#v%C3%A9d%C5%91-taktika)
 - [Teljes Védekezés taktika](#teljes-v%C3%A9dekez%C3%A9s-taktika)
@@ -149,6 +149,8 @@ A roham vehemensebb (és őrültebb) verziója. A harcos ekkor szinte semmit nem
 ---
 ### Plusz támadás taktika
 
+🔻Ehhez a **[Gyorsabb támadás](fortelyok.harci/gyorsabb_tamadas.md)** fortély legalább `1.fokát` ismerned kell.
+
 ```
 +1 támadás a körben
 
@@ -164,7 +166,7 @@ szenvedsz el azonnal
 
 Felpörögsz, cserébe azonnal `VÉ:-4` csökkenést szenvedsz el - mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc.
 
-🔆 Tipp: ha fix plusz támadást szeretnél, a **[Harckeret növelés](fortelyok.harci/harckeret_noveles.md)** fortély felvétele segíthet.
+🔆 Tipp: ha fix plusz támadást szeretnél, a **[Gyorsabb támadás](fortelyok.harci/gyorsabb_tamadas.md)** fortély felvétele segíthet.
 
 ---
 ### Roham taktika
@@ -234,7 +236,7 @@ Első oda-vissza csapásnál:
 ---
 ### Támadás erőből taktika
 
-Erre a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortélyt használhatod.
+🔻Erre a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortélyt használhatod.
 
 ✅ **Kiváró taktikával** együtt
 
