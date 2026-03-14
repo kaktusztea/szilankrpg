@@ -35,8 +35,6 @@ Tulajdonságok elvárt értékei, képzettségek elvárt szintje, esetleg más f
 
 Az adott fortély - leírásában található - egyedi bónuszt szolgáltat.
 
-Az egyes fokoknál leírt bónuszok az összesített értéket képviselik, tehát **NEM** hozzáadódnak a megelőző fok bónuszaihoz❗
-
 <br />
 
 ---
