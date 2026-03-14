@@ -38,24 +38,12 @@ Visszanyersz: 2 VÉ
 - Harcmodor - `12.szint` (nem-távolsági)
 - [Teljes Védekezés Taktika](../065_02_harci_taktikak.md#teljes-védekezés-taktika) alkalmazása folyamatosan
 
-🌟 **Hatás**: Minden kör elején **Összpontosítás próba**
+🌟 **Hatás**: 
 
 ```
-Célszám:
-  15 + ellenfelek száma
-```
-
-```
-Sikeres próba:
-  Visszanyersz: 2 VÉ
+Visszanyersz: 2 VÉ
   + minden előző harci kör
     során elvesztett VÉ-t is
-```
-
-```
-Sikertelen próba:
-  → Visszanyersz: 2 VÉ
-  → Kivéve ami sebesülésből
 ```
 
 ---
