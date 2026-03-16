@@ -17,6 +17,8 @@ Felszerelés pont
 ```
 
 ```
+Túlcsordulás esetén
+
 -1 TÉ / MGT
 -1 Harckeret / MGT
 ```

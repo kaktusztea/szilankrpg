@@ -21,9 +21,11 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
   → alabárd, Nagy pajzs ..
 ```
 
-Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként az alábbi hatást okozza:
+Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `1 MGT` hatást okoz az alábbiak szerint:
 
 ```
+Túlcsorduló pont == 1 MGT
+
 -1 TÉ / MGT
 -1 Harckeret / MGT
 ```
