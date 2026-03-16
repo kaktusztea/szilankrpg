@@ -2,7 +2,7 @@
 
 Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
 
-## ⚜️ `1.`Pusztakezes fegyvert ránt harc közben
+## ⚜️ `1.`Pusztakezes fegyvert ránt kör elején
 
 Mikor egy fegyvertelen karakter harc közben próbálja előkapni fegyverét, fegyveres ellenfelével szemben.
 
@@ -21,6 +21,10 @@ Csatabárd méretű:
 
 Fegyver kategóriáját a KM határozza meg.
 
+### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
+
+`KÉ` dobás `[Hátrány-2; Előny+2]` skálán ugrassz feljebb. Lásd a fortélyt.
+
 ### `1.1` Eset: Fegyverrántó elveszíti a kezdeményezést
 
 Nem sikerül előrántanod a fegyvert, elhasználtál egy támadást és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled első támadását. Ha ezt túlélted, visszatámadás helyett `1 támadás` elhasználásával előhúzhatod fegyveredet - bármilyen próbadobás nélkül - amennyiben így döntesz.
@@ -34,6 +38,24 @@ Ellenfeled dobhat támadást azonnal. Utána te jössz, nem veszítesz támadás
 
 A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is. A harc innen a megszokott módon folytatódik.
 
+## ⚜️ `2.` Kör közben, Akció után
+
+ [Akciód](063_01_harci_kor.md#3-akci%C3%B3) után rögtön kardot húznál. Ekkor az alábbi sikeres képzettségpróba után teljes fegyveres harcértékeddel állsz készen. Ha sikertelen, akkor [Pusztakezes harcértékeiddel](068_01_08_puszta_kez.md) kell harcolnod. Újra próbálkozhatsz a következő kör elején (lásd fenn).
+
+```
+Harcmodor képzettségpróba
+ Célszám: 12
+
+Fegyver
+ Tőr méretű: -
+
+ Kard méretű:
+   Hátrány-1 dobásra
+
+ Csatabárd méretű:
+   Hátrány-2 dobásra
+```
+
 ### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
 
 `KÉ` dobás `[Hátrány-2; Előny+2]` skálán ugrassz feljebb. Lásd a fortélyt.
@@ -41,7 +63,7 @@ A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, te
 <br />
 
 ---
-## ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
+## ⚜️ `3.`Mindkét fél fegyverrántást alkalmaz
 
 Mindkét félre érvényesek az `1.` pontnál leírt módosítók.
 
@@ -51,7 +73,7 @@ Mindkét félre érvényesek az `1.` pontnál leírt módosítók.
 <br />
 
 ---
-##  ⚜️ `3.`Meglepetésből, vagy észrevétlen fegyverrántás
+##  ⚜️ `4.`Meglepetésből, vagy észrevétlen fegyverrántás
 
 Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 
