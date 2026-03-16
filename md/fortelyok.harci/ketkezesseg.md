@@ -22,3 +22,6 @@ Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások s
 - [Páros, kétkezes hajítás](../075_tavharc_taktikak.md#páros-kétkezes-hajítás) harci szituációban csak az egyik `CÉ` dobásra jár a `Hátrány-1` büntetés.
 
 ---
+## Fegyver + Pajzs eset
+
+Ha egy fegyver mellé simán pajzsot fogsz a másik kezedbe az **nem kétkezes szituáció**, ezért ekkor **nem** kapod meg a fenti Harckeret bónuszt ❌
