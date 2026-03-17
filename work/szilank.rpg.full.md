@@ -1408,9 +1408,11 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
   → alabárd, Nagy pajzs ..
 ```
 
-Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként az alábbi hatást okozza:
+Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `1 MGT` hatást okoz az alábbiak szerint:
 
 ```
+Túlcsorduló pont == 1 MGT
+
 -1 TÉ / MGT
 -1 Harckeret / MGT
 ```
@@ -14760,6 +14762,9 @@ Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások s
 - [Páros, kétkezes hajítás](../075_tavharc_taktikak.md#páros-kétkezes-hajítás) harci szituációban csak az egyik `CÉ` dobásra jár a `Hátrány-1` büntetés.
 
 ---
+## Fegyver + Pajzs eset
+
+Ha egy fegyver mellé simán pajzsot fogsz a másik kezedbe az **nem kétkezes szituáció**, ezért ekkor **nem** kapod meg a fenti Harckeret bónuszt ❌
 
 
 ---
@@ -17783,7 +17788,7 @@ Lövéseidet íjjal kivételesen gyorsan tudod leadni.
 ---
 ## File: md/fortelyok.tavharc/gyors_ujratoltes.md
 
-## 🟣 Gyors újratöltés (1)
+## 🟣 Gyors újratöltés (2)
 
 Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpuskádat.
 
@@ -17794,11 +17799,20 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpus
 ---
 ### 1. fok
 
-🔒 Lövészet  **-** `8.szint`
+🔒 Lövészet  **-** `6.szint`
+
+🌟 **Hatás**:
+- Már minden körben tudsz (`1x`) lőni, ha [Mozgásodat](../063_01_harci_kor.md#2-mozgás) "becseréled" az újratöltésre
+- Ekkor nem tudsz mozgást végezni
+
+### 2. fok
+
+🔒 Lövészet  **-** `9.szint`
 
 🌟 **Hatás**:
 - A kilőtt nyílpuskád újratöltéséhez szükséges idő lecsökken.
-- Körönként maximum egyszer tudsz lőni - ha az újratöltésen kívül mást nem cselekszel ([Mozgásodat](../063_01_harci_kor.md#2-mozgás) továbbra is elhasználhatod).
+- Már minden körben tudsz (`1x`) lőni
+- [Mozgásodat](../063_01_harci_kor.md#2-mozgás) ezúttal már szabadon elhasználhatod mellette
 
 ---
 
@@ -21660,7 +21674,7 @@ Belharcban az áldozat abban a harcmodorban harcol, amiben előtte is. Például
 
 Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
 
-## ⚜️ `1.`Pusztakezes fegyvert ránt harc közben
+## ⚜️ `1.`Pusztakezes fegyvert ránt kör elején
 
 Mikor egy fegyvertelen karakter harc közben próbálja előkapni fegyverét, fegyveres ellenfelével szemben.
 
@@ -21679,6 +21693,10 @@ Csatabárd méretű:
 
 Fegyver kategóriáját a KM határozza meg.
 
+### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
+
+`KÉ` dobás `[Hátrány-2; Előny+2]` skálán ugrassz feljebb. Lásd a fortélyt.
+
 ### `1.1` Eset: Fegyverrántó elveszíti a kezdeményezést
 
 Nem sikerül előrántanod a fegyvert, elhasználtál egy támadást és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled első támadását. Ha ezt túlélted, visszatámadás helyett `1 támadás` elhasználásával előhúzhatod fegyveredet - bármilyen próbadobás nélkül - amennyiben így döntesz.
@@ -21692,6 +21710,24 @@ Ellenfeled dobhat támadást azonnal. Utána te jössz, nem veszítesz támadás
 
 A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is. A harc innen a megszokott módon folytatódik.
 
+## ⚜️ `2.` Kör közben, Akció után
+
+ [Akciód](063_01_harci_kor.md#3-akci%C3%B3) után rögtön kardot húznál. Ekkor az alábbi sikeres képzettségpróba után teljes fegyveres harcértékeddel állsz készen. Ha sikertelen, akkor [Pusztakezes harcértékeiddel](068_01_08_puszta_kez.md) kell harcolnod. Újra próbálkozhatsz a következő kör elején (lásd fenn).
+
+```
+Harcmodor képzettségpróba
+ Célszám: 12
+
+Fegyver
+ Tőr méretű: -
+
+ Kard méretű:
+   Hátrány-1 dobásra
+
+ Csatabárd méretű:
+   Hátrány-2 dobásra
+```
+
 ### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
 
 `KÉ` dobás `[Hátrány-2; Előny+2]` skálán ugrassz feljebb. Lásd a fortélyt.
@@ -21699,7 +21735,7 @@ A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, te
 <br />
 
 ---
-## ⚜️ `2.`Mindkét fél fegyverrántást alkalmaz
+## ⚜️ `3.`Mindkét fél fegyverrántást alkalmaz
 
 Mindkét félre érvényesek az `1.` pontnál leírt módosítók.
 
@@ -21709,7 +21745,7 @@ Mindkét félre érvényesek az `1.` pontnál leírt módosítók.
 <br />
 
 ---
-##  ⚜️ `3.`Meglepetésből, vagy észrevétlen fegyverrántás
+##  ⚜️ `4.`Meglepetésből, vagy észrevétlen fegyverrántás
 
 Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
 
@@ -25469,6 +25505,8 @@ Felszerelés pont
 ```
 
 ```
+Túlcsordulás esetén
+
 -1 TÉ / MGT
 -1 Harckeret / MGT
 ```
