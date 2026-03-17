@@ -12,6 +12,7 @@
 - [Támadó taktika](#t%C3%A1mad%C3%B3-taktika)
 - [Védő taktika](#v%C3%A9d%C5%91-taktika)
 - [Teljes Védekezés taktika](#teljes-v%C3%A9dekez%C3%A9s-taktika)
+- [Tettetés](#tettetés)
 - [Visszafogott taktika](#visszafogott-taktika-)
 
 A Harci taktikák egy adott kör során a **harci jelleg** általános eltolását valósítják meg egy adott irányba. Ez az eltolás tudatos, egy tendenciát modellez, ezért is térnek el a **Harci taktikák** és a [Harci helyzetek](065_01_00_harci_helyzetek.md) (amelyeket harci **Státuszokként** értelmezünk).
@@ -298,6 +299,30 @@ A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. 
 🔆 A [lények méretkülönbségéből](065_01_07_lenyek.md) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
+
+---
+## Tettetés
+
+Eljátszod, hogy képzetlenebb vagy a valóságosnál, átverve ellenfeled - ezzel esetleg meggondolatlanabb taktikákra kényszeríted ellenfeled. Persze csak akkor működik, ha még nem láttak harcolni eddig valós tudásod szerint.
+
+- Megadod, mennyivel alacsonyabb `TÉ` értékkel harcolsz
+- Kevesebbet támadhatsz - igény szerint
+- `VÉ` értéked megmarad, de igény szerint úgy tűnik `1-1` beérkező támadásnál, mintha épp csak szerencse hatására hárítottál
+
+**Ellepróba** szükséges a csel elhitetésére:
+
+```
+Te:
+Harcmodor képzettség + Ügyesség
+              vs
+Ellenfél:
+Harcmodor képzettség + Érzékenység
+```
+
+
+✅ **Kiváró, Visszafogott taktikával** együtt
+
+❌ Más taktikával együtt
 
 ---
 ### Visszafogott taktika ⇄
