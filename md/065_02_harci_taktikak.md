@@ -305,9 +305,9 @@ A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. 
 
 Eljátszod, hogy képzetlenebb vagy a valóságosnál, átverve ellenfeled - ezzel esetleg meggondolatlanabb taktikákra kényszeríted ellenfeled. Persze csak akkor működik, ha még nem láttak harcolni eddig valós tudásod szerint.
 
-- Megadod, mennyivel alacsonyabb `TÉ` értékkel harcolsz
+- Megadod, mennyivel alacsonyabb `TÉ` értékkel harcolsz. Opcionálisan ugyanennyivel csökkentheted `VÉ` értékedet **is** - bár ez kockázatosabb.
 - Kevesebbet támadhatsz - igény szerint
-- `VÉ` értéked megmarad, de igény szerint úgy tűnik `1-1` beérkező támadásnál, mintha épp csak szerencse hatására hárítottál
+- `VÉ` értékedet megtarthatod eredeti értékén, de igény szerint úgy tűnhet `1-1` beérkező támadásnál, mintha épp csak szerencse hatására hárítottál volna
 
 **Ellepróba** szükséges a csel elhitetésére:
 
@@ -318,7 +318,6 @@ Harcmodor képzettség + Ügyesség
 Ellenfél:
 Harcmodor képzettség + Érzékenység
 ```
-
 
 ✅ **Kiváró, Visszafogott taktikával** együtt
 
