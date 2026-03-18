@@ -133,4 +133,4 @@ Minden repo alatti elemre a `Creative Commons` licenc feltételei érvényesek a
 **Szilánk RPG**: Szerepjáték szabályrendszer fantasy világokra\
 **Kapcsolat**: `szilankrpg _kukac_ protonmail _pont_ com`
 
-Ailtas, Kaktusztea, 2005-2025 ([CC](LICENSE))
+Ailtas, Kaktusztea, 2005-2026 ([CC](LICENSE))
