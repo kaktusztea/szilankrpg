@@ -8,6 +8,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Hátbaszúrás szituációig észrevétlenül lopakodva eljutni - hátulról, látótéren kívülről](szituaciok/lopakodas_rejtozes_es_eszlelese.md#️-hátbaszúrás-szituációig-észrevétlenül-lopakodva-eljutni---hátulról-látótéren-kívülről)
 - [Hajítás alkalmatlan fegyverrel](szituaciok/hajitas_alkalmatlan_fegyverrel.md)
 - [Hajítás nem dobásra készített tárgyakkal](szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md)
+- [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)
 - [Hátbaszúrni harcolót](szituaciok/hatbaszurni_harcolot.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
 - [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról)
