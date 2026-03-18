@@ -62,9 +62,9 @@ Alább néhány alap módosítót látunk, az összes szituációt befolyásoló
 #### Dobás
 
 ```
-Lopakodás/rejtőzés (-6)
+Lopakodás/rejtőzés (-6) + Ügyesség
         vs
-Észlelés (palotaőr)
+Észlelés + Érzékenység
 ```
 
 ---
