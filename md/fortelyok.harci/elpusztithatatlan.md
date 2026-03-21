@@ -23,7 +23,7 @@ A fortély segítségével mikor sebet kapsz néhány `ÉP` "átalakul" `FP` pon
 
 🔆 Ne feledjük, a következő seb `ÉP` pontjai "felülírják" az `FP` pontokat! [Bővebben](../061_02_faradsag_pont.md#val%C3%B3s-%C3%A9p-seb-elszenved%C3%A9se-fp-ut%C3%A1n).
 
-🔆 Ha az kidobott Sebesülés pont `1 ÉP` lenne, akkor az valós sebként bemegy, a fortély `3 ÉP`-től kezdve használható.
+🔆 Ha a kidobott Sebesülés pont `1 ÉP` lenne, akkor az valós sebként bemegy, a fortély `3 ÉP`-től kezdve használható.
 
 ---
 ### Példa
