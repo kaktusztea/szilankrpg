@@ -412,7 +412,7 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 
 **Hatás**: arra tereli az ellenfelet, amerre akarja. Hátrálásnál nem kell használni, az megy magától!
 
-**Kapcsolódó szituáció:** [Hátbaszúrás](szituaciok/hatbaszuras.md)
+**Kapcsolódó szituáció:** [Hátbaszúrás](szituaciok/hatbaszuras_harcon_kivul.md)
 
 <br/>
 

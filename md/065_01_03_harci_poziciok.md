@@ -103,7 +103,7 @@ Lopakodás/rejtőzés
   határozza meg, ha a
   Lopakodás sikeres
 
-+5 SP
++5 SP alapból
 +2 SP / Harci anatómia
         fortély fok
 ```
