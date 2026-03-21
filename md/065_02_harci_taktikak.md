@@ -305,19 +305,20 @@ A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. 
 
 Eljátszod, hogy képzetlenebb vagy a valóságosnál, átverve ellenfeled - ezzel esetleg meggondolatlanabb taktikákra kényszeríted ellenfeled. Persze csak akkor működik, ha még nem láttak harcolni eddig valós tudásod szerint.
 
-- Megadod, mennyivel alacsonyabb `TÉ` értékkel harcolsz. Opcionálisan ugyanennyivel csökkentheted `VÉ` értékedet **is** - bár ez kockázatosabb.
-- Kevesebbet támadhatsz - igény szerint
-- `VÉ` értékedet megtarthatod eredeti értékén, de igény szerint úgy tűnhet `1-1` beérkező támadásnál, mintha épp csak szerencse hatására hárítottál volna
+### Képzettségpróba
 
-**Ellepróba** szükséges a csel elhitetésére:
+Harc legelején dobnod kell egy képzettségpróbát, hogy képes vagy-e mozgásodat úgy megváltoztatni, hogy képzetlenebbnek nézz ki:
 
 ```
-Te:
 Harcmodor képzettség + Ügyesség
-              vs
-Ellenfél:
-Harcmodor képzettség + Érzékenység
+           vs 15
 ```
+
+🔆 Hatás: Sebzés esetén dönthetsz úgy, hogy nem sebzel, "mellé csaptál".
+
+🔆 KM tanács: ilyenkor nem tudod bemondani a kidobott Támadó Értéket, mert akkor lebuknál a megtámadott játékosnál. Ilyenkor inkább kérdezz rá a játékos `Védő Értékére`, majd jelezd, hogy "csak VÉ csökkentés".
+
+Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci jártasság felmérését](https://github.com/kaktusztea/szilankrpg/blob/master/md/szituaciok/harci_jartassag_felmerese.md) végezhet, amely nem vesz el Akciót, nem jár semmilyen hátránnyal.
 
 ✅ **Kiváró, Visszafogott taktikával** együtt
 
