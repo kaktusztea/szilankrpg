@@ -4,7 +4,7 @@
 
 ## ⚜️ `1.`Harci kör elején
 
-Fegyvertelenül, harc közben próbálod fegyvered előkapni, fegyveres ellenféllel szemben.
+Fegyvertelenül, harc közben, kör elején próbálod fegyvered előkapni, fegyveres ellenféllel szemben.
 
 **Kezdeményezésed** fegyverméret módosítókkal (KM dönt):
 
