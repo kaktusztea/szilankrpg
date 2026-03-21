@@ -1,95 +1,98 @@
 # Fegyverrántás váratlanul
 
-Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
+→ Kapcsolódik: [Fegyverrántás](fortelyok.harci/fegyverrantas.md) harci fortély
 
-## ⚜️ `1.`Pusztakezes fegyvert ránt kör elején
+## ⚜️ `1.`Harci kör elején
 
-Mikor egy fegyvertelen karakter harc közben próbálja előkapni fegyverét, fegyveres ellenfelével szemben.
+Fegyvertelenül, harc közben próbálod fegyvered előkapni, fegyveres ellenféllel szemben.
 
-Fegyverrántásnál pengemérettől függ a `KÉ` módosító:
+**Kezdeményezésed** fegyverméret módosítókkal (KM dönt):
 
 ```
-Tőr méretű:
-  nincs KÉ dobás módosító
+KÉ dobás
 
-Kard méretű:
-  Hátrány-1 KÉ dobásra
-
-Csatabárd méretű:
-  Hátrány-2 KÉ dobásra
+alapdobás: Tőr méretű
+Hátrány-1: Kard méretű
+Hátrány-2: Csatabárd méretű
 ```
 
-Fegyver kategóriáját a KM határozza meg.
+🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
 
-### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
+### ⚜️ Ha elveszíted a kezdeményezést
 
-`KÉ` dobás `[Hátrány-2; Előny+2]` skálán ugrassz feljebb. Lásd a fortélyt.
+- Nem sikerül előrántanod fegyvered
+-  [Pusztakezes harcértékeddel](068_01_08_puszta_kez.md) küzdesz a kör végéig ellenfeled első támadását
+- Visszatámadás helyett, `1 támadás` elhasználásával fegyvert húzhatsz - próbadobás nélkül
 
-### `1.1` Eset: Fegyverrántó elveszíti a kezdeményezést
+### ⚜️ Ha megnyered a kezdeményezést
 
-Nem sikerül előrántanod a fegyvert, elhasználtál egy támadást és fegyvertelen `VÉ` harcértékékeddel várod ellenfeled első támadását. Ha ezt túlélted, visszatámadás helyett `1 támadás` elhasználásával előhúzhatod fegyveredet - bármilyen próbadobás nélkül - amennyiben így döntesz.
+- Előrántottad fegyvered, teljes, fegyveres harcértéked érvényesül
+- Ellenfeled támad azonnal
+- Utána visszatámadhatsz, nem veszítesz támadást
 
-### `1.2` Eset: Fegyverrántó nyeri a kezdeményezést
+###  ⚜️ Ha megnyered a kezdeményezést `+3` túldobással
 
-Sikerült előrántanod fegyvered, és teljes, fegyveres `VÉ` harcértéked érvényesül.\
-Ellenfeled dobhat támadást azonnal. Utána te jössz, nem veszítesz támadást.
+- Előrántottad fegyvered, teljes, fegyveres harcértéked érvényesül
+- TE támadsz azonnal - annyira gyors voltál (lehet [Manőver](066_00_manoverek.md) is persze)
 
-### `1.3` Eset: Fegyverrántó nyeri a kezdeményezést `+3` túldobással
+<br />
 
-A fegyverrántó annyira gyors volt, hogy már ő támadhat elsőnek azonnal, teljes harcértékével - egy soron kívüli támadással. Az ilyen támadás lehet természetesen [Manőver](066_00_manoverek.md) is. A harc innen a megszokott módon folytatódik.
-
+---
 ## ⚜️ `2.` Kör közben, Akció után
 
- [Akciód](063_01_harci_kor.md#3-akci%C3%B3) után rögtön kardot húznál. Ekkor az alábbi sikeres képzettségpróba után teljes fegyveres harcértékeddel állsz készen. Ha sikertelen, akkor [Pusztakezes harcértékeiddel](068_01_08_puszta_kez.md) kell harcolnod. Újra próbálkozhatsz a következő kör elején (lásd fenn).
-
+ [Akciód](063_01_harci_kor.md#3-akci%C3%B3) után rögtön fegyvert húznál.\
+ **Harcmodor képzettségpróbát** dobsz fegyverméret módosítókkal (KM dönt).
+ 
+ - Sikeres: előhúztad fegyvered, teljes harcértékeddel védekezhetsz
+ - Sikertelen: [Pusztakezes harcértékeiddel](068_01_08_puszta_kez.md) védekezel a kör végéig - akkor elő tudod húzni büntetés nélkül.
+ 
 ```
 Harcmodor képzettségpróba
  Célszám: 12
 
-Fegyver
- Tőr méretű: -
-
- Kard méretű:
-   Hátrány-1 dobásra
-
- Csatabárd méretű:
-   Hátrány-2 dobásra
+alapdobás: Tőr méretű
+Hátrány-1: Kard méretű
+Hátrány-2: Csatabárd méretű
 ```
 
-### 🔆  [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély bónuszai
-
-`KÉ` dobás `[Hátrány-2; Előny+2]` skálán ugrassz feljebb. Lásd a fortélyt.
+🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
 
 <br />
 
 ---
 ## ⚜️ `3.`Mindkét fél fegyverrántást alkalmaz
 
-Mindkét félre érvényesek az `1.` pontnál leírt módosítók.
+Kezdeményezés, mindkét félre érvényesek az `1.` pontnál leírt módosítók.
 
-- Aki nyeri a Kezdeményezést: fegyveres harcértékkel támad azonnal
-- Aki vesztett: Pusztakezes `VÉ`-vel védekezhet és képtelen előkapni fegyverét. Következő kör elején, `1` támadást feláldozva próbálkozhat újra fegyverrántással.
+- KÉ nyert: fegyveres harcértékkel támad azonnal
+- KÉ vesztett: [Pusztakezes harcértékeivel](068_01_08_puszta_kez.md) harcolhat kör végéig, de `1` támadást feláldozva fegyvert húzhat.
+
+**Kezdeményezés** fegyverméret módosítókkal (KM dönt):
+
+```
+KÉ dobás
+
+alapdobás: Tőr méretű
+Hátrány-1: Kard méretű
+Hátrány-2: Csatabárd méretű
+```
+
+🔆 [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortély: `[Hátrány-2; Előny+2]` skálán ugrassz feljebb
 
 <br />
 
 ---
 ##  ⚜️ `4.`Meglepetésből, vagy észrevétlen fegyverrántás
 
-Beszélgetek valakivel, váratlanul fegyvert rántok és megszúrom.
+Beszélgetsz valakivel, váratlanul fegyvert rántasz és megszúrod.
 
-[Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) próba áldozat részéről (aktív/passzív észlelés számít)
+```
+Előny+1 KÉ
+```
 
-#### `3.1` Sikertelen Észlelés áldozattól
+Nyert Kezdeményezés esetén [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) bónuszait kapod.
 
-[Orvtámadás manővernek](066_05_altalanos_manoverek.md#orvt%C3%A1mad%C3%A1s) minősül a támadás támadó részéről.
-
-#### `3.2` Sikeres Észlelés áldozattól
-
-Támadó: `Előny+1 KÉ` dobásra
-
-- Támadó nyert `KÉ`: [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) bónuszait kapja
-- Megtámadott nyert `KÉ`: még így is ő támadhat elsőnek!\
-  Mindketten aktuális harcértékeikkel és fegyvereikkel
+Mindketten aktuális harcértékeikkel és fegyvereikkel harcolnak.
 
 <br />
 
@@ -107,9 +110,8 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy ké
 
 ```
 KÉ dobás
-→ Tőr: nincs büntetés
-→ Fegyverrántás: 2.fok
-  Előny+2 bónusz
+→ - (Tőr)
+→ Előny+2 (Fegyverrántás: 2.fok)
 
 SUM: Előny+2 KÉ dobásra
 ```
@@ -118,9 +120,8 @@ SUM: Előny+2 KÉ dobásra
 
 ```
 KÉ dobás
-→ Kard: Hátrány-1
-→ Fegyverrántás: 2.fok
-  Előny+2 bónusz
+→ Hátrány-1 (Kard)
+→ Előny+2 (Fegyverrántás: 2.fok)
 
 SUM: Előny+1 KÉ dobásra
 ```
@@ -129,9 +130,8 @@ SUM: Előny+1 KÉ dobásra
 
 ```
 KÉ dobás
-→ KK csatabárd: Hátrány-2
-→ Fegyverrántás: 2.fok
-  Előny+2 bónusz
+→ Hátrány-2 (KK csatabárd)
+→ Előny+2 (Fegyverrántás: 2.fok)
 
 SUM: sima KÉ dobás
 ```

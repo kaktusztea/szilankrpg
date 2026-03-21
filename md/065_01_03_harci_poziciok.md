@@ -114,7 +114,7 @@ Lopakodás/rejtőzés
 
 🔆 Támadó más `TÉ` bónuszt nem kaphat
 
-🔆 **Észrevétlen támadás** több Manőver követelménye, mint például az [Orvtámadás](066_05_altalanos_manoverek.md#orvtámadás)
+🔆 **Észrevétlen támadás** több Manőver követelménye, mint például az [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), vagy a [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról).
 
 <br />
 

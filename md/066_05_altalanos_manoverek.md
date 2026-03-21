@@ -17,7 +17,6 @@
 - [Lovas, léglovas akasztása](#lovas-l%C3%A9glovas-akaszt%C3%A1sa)
 - [Mesterjel](#mesterjel)
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
-- [Orvtámadás](#orvt%C3%A1mad%C3%A1s)
 - [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
 - [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
@@ -232,7 +231,7 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, vagy kiütve kezéből, vagy 
 ---
 ### Leütés hátulról
 
-Hasonlatos az Orvtámadáshoz, de itt nem a minél nagyobb sebzés, hanem az ájulás a cél. A **Nehézség** a [Területre támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) Manőverből származtatott, könnyített érték.
+Célod ellenfeled ájulása. A **Nehézség** a [Területre támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) Manőverből származtatott, könnyített érték.
 
 - Nehézség: `6`
     - `-2`: [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka után
@@ -288,21 +287,6 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 
 - **Követelmény**: a környezetnek, harctérnek alkalmasnak kell lennie a hátbakerülésre. Ha nincs elég hely, a KM megtagadhatja a Manőver használatát.
 - **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról**, vagy a [Félhátulról támadás](065_01_03_harci_poziciok.md#félhátulról-támadás) bónuszait - attól függően, hogy milyen pozícióban van.
-
-<br />
-
----
-### Orvtámadás
-
-Ha sikeres **Lopakodás/rejtőzés** `vs.` **Észlelés + Érzékenység** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálhatsz így végezni vele.
-
-- Nehézség: [Területre támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver adott Nehézsége `-4`. Az ott leírt lehetséges célterületekből választhatsz.
-- Fázisok: `Végrehajtás, Ellenpróba`
-  - `Végrehajtás` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás))
-- Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
-- **Hatás**:
-  - a választott helyre támadsz anélkül, hogy ellenfeled ennek tudatában lenne
-  - Sebezz, ahogy a fegyvered sebez + a [Harci Anatómia](fortelyok.harci/harci_anatomia.md) is bónuszait megkapod
 
 <br />
 
