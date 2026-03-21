@@ -27,6 +27,8 @@ Támadó          Célpont
 CÉ + k20   vs   VÉ
 ```
 
+🔆 Fontos: Célzó dobás esetén **nincs** ❗ `-4` levonás az egy körön belül végzett újabb támadásokra, mint sima fegyveres harcnál. Minden dobás ugyanazzal a `CÉ` értékkel történik.
+
 ---
 ## CÉ, VÉ számítása
 

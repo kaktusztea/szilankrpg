@@ -27,7 +27,7 @@ Ha a Megakasztás találatot ér el (nem kell, hogy valós sebzést is okozzon),
 
 🔆 Ez a támadás is képes Sebzést okozni.
 
-🔆 Ha a Megakasztás sikertelen, **NEM** okoz `VÉ` csökkentést (mint egy sima sikertelen támadás).
+🔆 Ha a Megakasztás sikertelen, **NEM** ❗ okoz `VÉ` csökkentést (mint egy sima sikertelen támadás).
 
 <br />
 
@@ -122,7 +122,7 @@ A KM a körülményektől és szituációtól függően adhat pozitív/negatív 
 ---
 ## Sikertelen Manőver és VÉ csökkentés
 
-A sikertelen Manőver `0` **VÉ csökkentést** okoz.
+A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mintha egy sima sikertelen támadás történt volna.
 
 <br />
 

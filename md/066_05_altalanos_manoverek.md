@@ -219,8 +219,8 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, vagy kiütve kezéből, vagy 
 ❌ Karmok és szarvak ellen nem használható a Manőver, ott **Csonkolás** szükséges.
 
 - Nehézség: `10`
-	- `+2`: fegyvertörés. Nehezebb, mint a lefegyverzés.
-	- `+0`:  fából készült szálfegyverek törése (könnyebb, mint az alap fegyvertörés)
+	- `+2`: fegyvertörés: alaphelyzet. Nehezebb, mint a lefegyverzés.
+	- `-2`: fegyvertörés: fából készült szálfegyverekre (sokkal könnyebb, mint az alap fegyvertörés)
 	- `[-2;+2]`: a használt fegyver mennyire alkalmas a másik fegyver elvételére. KM dönt.
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Követelmény: Harcmodor – `5.szint`
