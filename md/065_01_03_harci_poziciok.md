@@ -102,6 +102,10 @@ Lopakodás/rejtőzés
   áldozat mozgási jellege
   határozza meg, ha a
   Lopakodás sikeres
+
++5 SP
++2 SP / Harci anatómia
+        fortély fok
 ```
 
 → [VÉ: Mozgási jelleg és méret](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint)
