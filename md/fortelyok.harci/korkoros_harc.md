@@ -12,7 +12,7 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 ```
 
 🌟 **Hatás**:
-- Nem alkalmazhatnak ellened [Hátbaszúrást](../szituaciok/hatbaszuras.md#hátbaszúrni-harcolót)
+- Nem alkalmazhatnak ellened [Hátbaszúrást](../szituaciok/hatbaszuras.md#%EF%B8%8F-h%C3%A1tbasz%C3%BArni-harcol%C3%B3t)
 - Nem kapják meg a 🗡️[Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás)
 - Nem kapják meg a 🗡️[Félhátulról támadás](../065_01_03_harci_poziciok.md#félhátulról-támadás) módosítóit
 
