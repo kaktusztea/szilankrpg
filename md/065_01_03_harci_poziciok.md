@@ -207,7 +207,7 @@ Többszörös támadás elvesztése
 VÉ veszteség duplázódik
 ```
 
-🔆 Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
+Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
 
 🔆 A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
 
