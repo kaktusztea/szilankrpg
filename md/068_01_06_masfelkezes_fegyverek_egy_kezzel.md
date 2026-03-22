@@ -5,11 +5,11 @@ Ha egy kézzel forgatod az alapvetően két kézre tervezett másfélkezes fegyv
 ```
 Jelölése: MK
 
-- TÉ:-2,  VÉ:-2
-- Átütés megszűnik (ha volt)
-- Erőbónusz limit csökken
+→ TÉ:-2,  VÉ:-2
+→ Átütés megszűnik (ha volt)
+→ Erőbónusz limit csökken
   (általában 2-re)
-- Sebesség marad
+→ Sebesség marad
 ```
 
 ---
