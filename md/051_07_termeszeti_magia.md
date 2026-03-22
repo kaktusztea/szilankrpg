@@ -1,12 +1,20 @@
-## Illuzionista tradíció / Illuzionista Metamágia arkánum
+## Természeti mágia tradíció / Természeti mágia Metamágia arkánum
 
-<sub>→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.bardmagia)</sub>
+<sub>→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.samanmagia)</sub>
 
 <br />
 
-A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Illuzionista Metamágia Arkánum](#illuzionista-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
+A Természeti mágia tradíció alá az alábbiak tartoznak:
+- szellemmágia
+  - szellemektől kapott képzettségek
+  - szellem által átvitt mágikus hatás
+  - idézés, űzés, stb. (⭕Grimoire)
+- ...
 
-Most lássuk a **Bárdmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
+---
+A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű Metamágia Arkánum, aminek nehezebb formulái magasabb szinten érhetőek el.
+
+Most lássuk a **Természeti Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 <br />
 
@@ -68,11 +76,10 @@ Most lássuk a **Bárdmágia Tradíció** egyes szintjeihez rendelt jellemzőket
 
 <br />
 
-
 ---
-### Illuzionista Metamágia arkánum
+### Természeti Metamágia arkánum
 
-`6.` szinten az alábbi formulák érhetőek el Bárd Metamágia Arkánumban:
+`6.` szinten az alábbi formulák érhetőek el Természeti Metamágia Arkánumban:
 - ⭕Leplezés⭕ - itt is legyen?
 - ⭕Fürkészés⭕ - itt is legyen?
 - ⭕Destrukció⭕ - itt is legyen?
@@ -83,6 +90,6 @@ A haladóbb formulák leírását alább.
 
 ---
 
-🔗 [Természeti Mágia Tradíció](051_06_termeszeti_magia.md) →
+🔗 [Sámánmágia Tradíció](051_08_samanmagia.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#5-tradíciók)

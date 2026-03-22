@@ -1,12 +1,12 @@
-## Vulgármágia tradíció / Vulgár Metamágia arkánum
+## Illuzionista tradíció / Illuzionista Metamágia arkánum
 
-→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.vulgarmagia)
+<sub>→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.bardmagia)</sub>
 
 <br />
 
-A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Vulár-Metamágia Arkánum](#vulg%C3%A1r-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
+A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Illuzionista Metamágia Arkánum](#illuzionista-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
 
-Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzőket:
+Most lássuk a **Bárdmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 <br />
 
@@ -16,8 +16,6 @@ Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzők
 #### Novícius (3) 📖
 
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
-
-⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Kismester (6) 📖
@@ -71,11 +69,10 @@ Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzők
 <br />
 
 
-
 ---
-### Vulgár Metamágia arkánum
+### Illuzionista Metamágia arkánum
 
-`6.` szinten az alábbi formulák érhetőek el Vulgár Metamágia Arkánumban:
+`6.` szinten az alábbi formulák érhetőek el Bárd Metamágia Arkánumban:
 - ⭕Leplezés⭕ - itt is legyen?
 - ⭕Fürkészés⭕ - itt is legyen?
 - ⭕Destrukció⭕ - itt is legyen?
@@ -86,6 +83,6 @@ A haladóbb formulák leírását alább.
 
 ---
 
-🔗 [Orvgyilkos Mágia Tradíció](051_03_orvgyilkos_magia.md) →
+🔗 [Természeti Mágia Tradíció](051_07_termeszeti_magia.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#5-tradíciók)

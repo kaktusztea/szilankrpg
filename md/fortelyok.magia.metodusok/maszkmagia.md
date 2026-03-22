@@ -4,7 +4,7 @@ Kézzel készített maszkot - szerves, vagy szervetlen anyagból - készítesz, 
 
 ### Tradíció felveheti
 
-- [Sámánmágia](../051_07_samanmagia.md)
+- [Sámánmágia](../051_08_samanmagia.md)
 - [Vulgármágia](../051_02_vulgarmagia.md)
 
 ### Leírás

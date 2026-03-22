@@ -4,7 +4,7 @@ Képes vagy dalba ágyazni a mágikus hatást.
 
 ### Tradíció felveheti
 
-- [Bárdmágia](../051_04_bardmagia.md)
+- [Bárdmágia](../051_05_bardmagia.md)
 
 ### Leírás
 

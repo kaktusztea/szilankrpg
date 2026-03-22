@@ -5,12 +5,13 @@
 
   - [Magasmágia (mozaikmágia)](051_01_magasmagia.md)
   - [Vulgármágia](051_02_vulgarmagia.md)
-  - [Ordani Tűzmágia](051_03_ordani_tuzmagia.md)
-  - [Bárdmágia](051_04_bardmagia.md)
-  - [Illuzionista](051_05_illuzionista.md)
-  - [Természeti mágia](051_06_termeszeti_magia.md)
-  - [Sámánmágia](051_07_samanmagia.md)
-  - [Drágakőmágia](051_08_dragakomagia.md)
+  - [Orvgyilkos mágia](051_03_orvgyilkos_magia.md)
+  - [Ordani Tűzmágia](051_04_ordani_tuzmagia.md)
+  - [Bárdmágia](051_05_bardmagia.md)
+  - [Illuzionista](051_06_illuzionista.md)
+  - [Természeti mágia](051_07_termeszeti_magia.md)
+  - [Sámánmágia](051_08_samanmagia.md)
+  - [Drágakőmágia](051_09_dragakomagia.md)
 
 ### Metamágia Arkánum
 

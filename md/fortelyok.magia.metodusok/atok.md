@@ -4,7 +4,7 @@ Személyeket, vagy tárgyakat átkozhatsz meg, betegséggel, balszerencsével, b
 
 ### Tradíció felveheti
 
-- [Sámánmágia](../051_07_samanmagia.md)
+- [Sámánmágia](../051_08_samanmagia.md)
 - [Papi mágia](../110_papimagia.md)
 - [Vulgármágia](../051_02_vulgarmagia.md)
 

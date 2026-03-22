@@ -82,6 +82,6 @@ A haladóbb formulák leírását alább.
 
 ---
 
-🔗 [Illuzionista tradíció ](051_05_illuzionista.md) →
+🔗 [Illuzionista tradíció ](051_06_illuzionista.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#5-tradíciók)

@@ -6,7 +6,7 @@ Lásd még: [Ereklyék, mágikus emitterek](../130_varazstargyak.md#ereklyék-m�
 
 ## Tradíció felveheti
 
-- [Illuzionista](../051_05_illuzionista.md)
+- [Illuzionista](../051_06_illuzionista.md)
 - [Magasmágia](../051_01_magasmagia.md)
 - [Papi mágia](../110_papimagia.md)
 - ⭕???⭕

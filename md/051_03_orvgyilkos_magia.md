@@ -1,12 +1,12 @@
-## Sámánmágia tradíció / Sámán Metamágia arkánum
+## Orvgyilkos tradíció / Orvgyilkos Metamágia arkánum
 
-<sub>→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.samanmagia)</sub>
+→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.orvgyilkos)
 
 <br />
 
-A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Sámán Metamágia Arkánum](#s%C3%A1m%C3%A1n-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
+A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Orvgyilkos-Metamágia Arkánum](#orvgyilkos-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
 
-Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzőket:
+Most lássuk a **Orvgyilkos Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 <br />
 
@@ -16,6 +16,8 @@ Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzők
 #### Novícius (3) 📖
 
 🌟 Hatás: Ettől a szinttől képes a mágiahasználó Arkánumokat (mágiaiskola képzettségeket) alkalmazni, ez alatt a tudás csak elméleti.
+
+⭕TODO: ((Speciális, tanulható fortély, különleges képesség is ide jön))⭕
 
 ---
 #### Kismester (6) 📖
@@ -68,10 +70,11 @@ Most lássuk a **Sámánmágia Tradíció** egyes szintjeihez rendelt jellemzők
 
 <br />
 
----
-### Sámán Metamágia arkánum
 
-`6.` szinten az alábbi formulák érhetőek el Sámán Metamágia Arkánumban:
+---
+### Orvgyilkos Metamágia arkánum
+
+`6.` szinten az alábbi formulák érhetőek el Orvgyilkos Metamágia Arkánumban:
 - ⭕Leplezés⭕ - itt is legyen?
 - ⭕Fürkészés⭕ - itt is legyen?
 - ⭕Destrukció⭕ - itt is legyen?
@@ -82,6 +85,6 @@ A haladóbb formulák leírását alább.
 
 ---
 
-🔗 [Drágakőmágia Tradíció](051_08_dragakomagia.md) →
+🔗 [Ordani Tűzmágia Tradíció](051_04_ordani_tuzmagia.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#5-tradíciók)

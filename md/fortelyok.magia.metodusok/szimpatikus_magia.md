@@ -5,7 +5,7 @@ A tárgyak, lények, események közti kapcsolati hídon keresztül küldesz át
 ### Tradíció felveheti
 
 - [Magasmágia](../051_01_magasmagia.md)
-- [Sámánmágia](../051_07_samanmagia.md)
+- [Sámánmágia](../051_08_samanmagia.md)
 - [Vulgármágia](../051_02_vulgarmagia.md)
 
 ### Kínált lehetőség: Mágia átküldése az alábbi szimpatikus hidakon

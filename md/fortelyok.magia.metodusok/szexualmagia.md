@@ -4,7 +4,7 @@ Intim együttlét során hozod létre a mágikus hatást.
 
 ### Tradíció felveheti
 
-- [Sámánmágia](../051_07_samanmagia.md)
+- [Sámánmágia](../051_08_samanmagia.md)
 - [Vulgármágia](../051_02_vulgarmagia.md)
 
 ### Megnyílt lehetőséget az alábbi összhangokra

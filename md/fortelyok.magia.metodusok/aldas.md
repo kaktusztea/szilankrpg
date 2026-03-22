@@ -5,7 +5,7 @@ Személyeket, vagy tárgyakat áldhatsz meg, különleges képességekkel felruh
 ### Tradíció felveheti
 
 - [Papi mágia](../110_papimagia.md)
-- [Természeti mágia](../051_06_termeszeti_magia.md)
+- [Természeti mágia](../051_07_termeszeti_magia.md)
 
 ### Leírás
 
