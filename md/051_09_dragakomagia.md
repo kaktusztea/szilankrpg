@@ -1,6 +1,6 @@
 ## Drágakőmágia tradíció / Drágakőmágia Metamágia arkánum
 
-<sub>→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.samanmagia)</sub>
+→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.samanmagia)
 
 <br />
 

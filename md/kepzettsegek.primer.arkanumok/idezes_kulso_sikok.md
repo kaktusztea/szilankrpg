@@ -27,17 +27,60 @@ Az **Idézés** szféra alá tartozó arkánum.
 - síkkaput nyit
 - alkudozni kezd a démonnal
 
-
-
 ⭕Demonológiából átmozgatott anyag:
 
-| Képzettség szint | Szintek, Speciális <br /><sub>(tanulható fortély, különleges  képesség)</sub>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |                                         Követelmény                                         |
-|:---------------- |:---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |:-------------------------------------------------------------------------------------------:|
-| Novícius (3)     | Birtokában van a démoni világ alapvető elméleti ismereteinek.<br />(1) Démoni síkok felépítése, démonok hierarchiája. Képes megmondani egy lényről, hogy az démon-e.<br />(2), Ismeri az általános démoni tulajdonságokat<br />(3) Felismer a démonidézésre felkészített helyszíneket, tárgyakat.<br />**Példa**: Inkvizítor                                                                                                                                                                                                                                                       |                                        Emlékezet +1                                         |
-| Kismester (6)    | Elkezdi a konkrét fajok tanulmányozását<br />(4) Az ismertebb démonok (lásd Bestiárium) nevének és főbb jellemzőinek ismerete (pl. vadász-, harcművész-, csábító-, tűzdémon stb.)<br />(5) Megismeri a fontosabb démoni síkok felépítését, azok urait, hercegeit<br />(6) Tudása kezd kiterjedni a kevésbé ismert fajokra és síkokra is<br />**Példa**: Démonikus varázsló                                                                                                                                                                                                         |                                        Emlékezet +2                                         |
-| Mester (9)       | Megismeri a démonok gondolkodását, és innentől kezdve képessé válik megdézésükre mágia igénybevétele nélkül is.<br />(7) Ismeri a gyengéit, erősségeit, mágikus és egyéb képességeit az ismertebb fajoknak<br />(8) Ismeri az alacsony intelligenciájú démonok gondolkodását, meg tudja mondani, mennyire veszélyes egy démon (kb. hányadik szintű karakternek felel meg)<br />(9) Alsórendű démonok idézése, urak és hercegek képességeinek ismerete. Innentől lehetőséges megpróbálni a démonokra való varázslást mentál és asztrálmágia formájában.<br />**Példa**: Nomád sámán | Érzékenység&nbsp;0<br />Intelligencia&nbsp;+1<br />Önuralom&nbsp;+1<br />Emlékezet&nbsp;+2  |
-| Nagymester (12)  | (10) Az összes yn3viek által ismert démon nevét és főbb jellemzőit tudja<br />(11) Közrendű démonok idézése, érti az átlagos intelligenciájú démonok logikáját<br />(12) Kapuk nyitása démoni síkokra<br />**Példa**: Démonikus mágus                                                                                                                                                                                                                                                                                                                                              | Érzékenység&nbsp;+1<br />Intelligencia&nbsp;+2<br />Önuralom&nbsp;+2<br />Emlékezet&nbsp;+3 |
-| Élő legenda (15) | (13) Démonurak idézése, alacsonyrendű démon állandó megkötése<br />(14) minden adatod tud az összes ismert démonról, érti az intelligens démonok gondolkodásának logikáját<br />(15) Démonhercegek idézése, közrendű démon állandó megkötése<br />**Példa**: Démonimádó szekta nagymestere                                                                                                                                                                                                                                                                                         | Érzékenység&nbsp;+2<br />Intelligencia&nbsp;+3<br />Önuralom&nbsp;+3<br />Emlékezet&nbsp;+3 |
+```
+Novícius (3)
+Követelmény: Emlékezet +1
+Példa: Inkvizítor
+
+Birtokában van a démoni világ alapvető elméleti ismereteinek.
+(1) Démoni síkok felépítése, démonok hierarchiája. Képes megmondani egy lényről, hogy az démon-e.
+(2) Ismeri az általános démoni tulajdonságokat.
+(3) Felismer a démonidézésre felkészített helyszíneket, tárgyakat.
+```
+
+```
+Kismester (6)
+Követelmény: Emlékezet +2
+Példa: Démonikus varázsló
+
+Elkezdi a konkrét fajok tanulmányozását.
+(4) Az ismertebb démonok (lásd Bestiárium) nevének és főbb jellemzőinek ismerete (pl. vadász-, harcművész-, csábító-, tűzdémon stb.)
+(5) Megismeri a fontosabb démoni síkok felépítését, azok urait, hercegeit.
+(6) Tudása kezd kiterjedni a kevésbé ismert fajokra és síkokra is.
+```
+
+```
+Mester (9)
+Követelmény: Érzékenység 0, Intelligencia +1, Önuralom +1, Emlékezet +2
+Példa: Nomád sámán
+
+Megismeri a démonok gondolkodását, és innentől kezdve képessé válik megidézésükre mágia igénybevétele nélkül is.
+(7) Ismeri a gyengéit, erősségeit, mágikus és egyéb képességeit az ismertebb fajoknak.
+(8) Ismeri az alacsony intelligenciájú démonok gondolkodását, meg tudja mondani, mennyire veszélyes egy démon (kb. hányadik szintű karakternek felel meg).
+(9) Alsórendű démonok idézése, urak és hercegek képességeinek ismerete. Innentől lehetséges megpróbálni a démonokra való varázslást mentál és asztrálmágia formájában.
+```
+
+```
+Nagymester (12)
+Követelmény: Érzékenység +1, Intelligencia +2, Önuralom +2, Emlékezet +3
+Példa: Démonikus mágus
+
+(10) Az összes yneviek által ismert démon nevét és főbb jellemzőit tudja.
+(11) Közrendű démonok idézése, érti az átlagos intelligenciájú démonok logikáját.
+(12) Kapuk nyitása démoni síkokra.
+```
+
+```
+Élő legenda (15)
+Követelmény: Érzékenység +2, Intelligencia +3, Önuralom +3, Emlékezet +3
+Példa: Démonimádó szekta nagymestere
+
+(13) Démonurak idézése, alacsonyrendű démon állandó megkötése.
+(14) Minden adatot tud az összes ismert démonról, érti az intelligens démonok gondolkodásának logikáját.
+(15) Démonhercegek idézése, közrendű démon állandó megkötése.
+```
 
 <br />
 
