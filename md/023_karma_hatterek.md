@@ -168,7 +168,7 @@ Az ilyen karma lemoshatatlan, Aurán jól látható mocskos szégyenfolt. Tört�
 
 #### Követelmény
 
-Minimum 100 sikeres orvgyilkosság.
+Minimum 100 sikeres orgyilkosság.
 
 #### Hatás
 

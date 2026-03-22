@@ -1,12 +1,12 @@
-## Orvgyilkos tradíció / Orvgyilkos Metamágia arkánum
+## Orgyilkos tradíció / Orgyilkos Metamágia arkánum
 
-→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.orvgyilkos)
+→ [STUDY fejlesztő oldal](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiatradicio.orgyilkos)
 
 <br />
 
-A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Orvgyilkos-Metamágia Arkánum](#orvgyilkos-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
+A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Orgyilkos-Metamágia Arkánum](#orgyilkos-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
 
-Most lássuk a **Orvgyilkos Tradíció** egyes szintjeihez rendelt jellemzőket:
+Most lássuk a **Orgyilkos Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 <br />
 
@@ -72,9 +72,9 @@ Most lássuk a **Orvgyilkos Tradíció** egyes szintjeihez rendelt jellemzőket:
 
 
 ---
-### Orvgyilkos Metamágia arkánum
+### Orgyilkos Metamágia arkánum
 
-`6.` szinten az alábbi formulák érhetőek el Orvgyilkos Metamágia Arkánumban:
+`6.` szinten az alábbi formulák érhetőek el Orgyilkos Metamágia Arkánumban:
 - ⭕Leplezés⭕ - itt is legyen?
 - ⭕Fürkészés⭕ - itt is legyen?
 - ⭕Destrukció⭕ - itt is legyen?

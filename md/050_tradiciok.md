@@ -19,7 +19,7 @@ Milyen Tradíciókat ismer a `Szilánk` rendszere?
 
 - [Magasmágia](051_01_magasmagia.md)
 - [Vulgármágia](051_02_vulgarmagia.md)
-- [Orvgyilkos mágia](051_03_orvgyilkos_magia.md)
+- [Orgyilkos mágia](051_03_orgyilkos_magia.md)
 - [Ordani Tűzmágia](051_04_ordani_tuzmagia.md)
 - [Bárdmágia](051_05_bardmagia.md)
   - Csepürágó

@@ -86,6 +86,6 @@ A haladóbb formulák leírását alább.
 
 ---
 
-🔗 [Orvgyilkos Mágia Tradíció](051_03_orvgyilkos_magia.md) →
+🔗 [Orgyilkos Mágia Tradíció](051_03_orgyilkos_magia.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#5-tradíciók)
