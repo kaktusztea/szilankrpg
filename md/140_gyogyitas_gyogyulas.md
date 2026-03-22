@@ -45,8 +45,6 @@ Alacsony szinten a betegségek és sebek kezelését gyógyszerekkel, kencékkel
 Isteni energiákkal, pusztán kézrátéttellel és a pap hitével való gyógyítás.
 - [Sebgyógyítás formula](magia.papi.varazslatok/sebgyogyitas.md)
 
-<br />
-
 ---
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#14-gyógyítás-gyógyulás)
