@@ -1,12 +1,14 @@
 ## Méregkeverés szabályai
 
 A mérgeket jelleg szerint négy csoportra bontjuk:
+
 - Étel és italmérgek
 - Légimérgek
 - Kontaktmérgek
 - Fegyvermérgek
 
 A mérgeket összetevő szerint csoportosítva pedig szintén három kategóriába sorolhatjuk:
+
 - állati
 - növényi
 - ásványi (szervetlen)
