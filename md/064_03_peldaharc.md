@@ -129,7 +129,7 @@ Teljes TÉ
  → 35 + 3 + 17 = 55
 ```
 
-A `TÉ: 55` pont meghaladja a lovag `Védő Értékét (54)`: **Talált**!\
+A `TÉ: 55` pont meghaladja a lovag `Védő Értékét (54)`: **Talált**!
 
 #### ⚜️Tetves a Sebzésdobása
 
