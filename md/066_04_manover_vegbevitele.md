@@ -124,8 +124,6 @@ A KM a körülményektől és szituációtól függően adhat pozitív/negatív 
 
 A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mintha egy sima sikertelen támadás történt volna.
 
-<br />
-
 ---
 
 🔗 [Általános Manőverek listája](066_05_altalanos_manoverek.md) →
