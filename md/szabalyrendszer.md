@@ -317,6 +317,9 @@
 ### 16. [Szituációk](160_szituaciok.md)
 
 ---
+### 17. [Példa karakterek](170_pelda_karakterek.md)
+
+---
 ## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧
 
 ---
