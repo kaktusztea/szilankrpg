@@ -111,7 +111,6 @@ Komponens (Mágikus)
 
 <br />
 
-
 ---
 ## Fontos helyszín (Ö)
 
