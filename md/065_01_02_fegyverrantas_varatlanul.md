@@ -42,10 +42,10 @@ Hátrány-2: Csatabárd méretű
 
  [Akciód](063_01_harci_kor.md#3-akci%C3%B3) után rögtön fegyvert húznál.\
  **Harcmodor képzettségpróbát** dobsz fegyverméret módosítókkal (KM dönt).
- 
+
  - Sikeres: előhúztad fegyvered, teljes harcértékeddel védekezhetsz
  - Sikertelen: [Pusztakezes harcértékeiddel](068_01_08_puszta_kez.md) védekezel a kör végéig - akkor elő tudod húzni büntetés nélkül.
- 
+
 ```
 Harcmodor képzettségpróba
  Célszám: 12
@@ -110,8 +110,8 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás, hiszen vagy ké
 
 ```
 KÉ dobás
-→ - (Tőr)
-→ Előny+2 (Fegyverrántás: 2.fok)
++ 0 (Tőr)
++ Előny+2 (Fegyverrántás: 2.fok)
 
 SUM: Előny+2 KÉ dobásra
 ```
@@ -120,8 +120,8 @@ SUM: Előny+2 KÉ dobásra
 
 ```
 KÉ dobás
-→ Hátrány-1 (Kard)
-→ Előny+2 (Fegyverrántás: 2.fok)
++ Hátrány-1 (Kard)
++ Előny+2 (Fegyverrántás: 2.fok)
 
 SUM: Előny+1 KÉ dobásra
 ```
@@ -130,8 +130,8 @@ SUM: Előny+1 KÉ dobásra
 
 ```
 KÉ dobás
-→ Hátrány-2 (KK csatabárd)
-→ Előny+2 (Fegyverrántás: 2.fok)
++ Hátrány-2 (KK csatabárd)
++ Előny+2 (Fegyverrántás: 2.fok)
 
 SUM: sima KÉ dobás
 ```
