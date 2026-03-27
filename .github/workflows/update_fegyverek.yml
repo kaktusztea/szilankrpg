@@ -3,6 +3,8 @@ name: Update Fegyverek json
 on:
   push:
     branches: [ master ]
+    paths-ignore:
+      - 'segedlet/*'
   pull_request:
     branches: [ master ]
 

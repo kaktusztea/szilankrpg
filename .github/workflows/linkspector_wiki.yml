@@ -2,6 +2,8 @@ name: Linkspector wiki
 on:
   push:
     branches: [ "master" ]
+    paths-ignore:
+      - 'segedlet/*'
   workflow_dispatch:  # Optional: allows manual triggering
 
 jobs:

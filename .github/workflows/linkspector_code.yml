@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "master" ]
     paths-ignore:
-      - 'segedlet/karakteralkoto*beta*'
+      - 'segedlet/*'
   workflow_dispatch:  # Optional: allows manual triggering
 
 jobs:
