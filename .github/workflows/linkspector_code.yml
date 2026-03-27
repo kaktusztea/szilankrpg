@@ -2,6 +2,8 @@ name: Linkspector code
 on:
   push:
     branches: [ "master" ]
+    paths-ignore:
+      - 'segedlet/karakteralkoto*beta*'
   workflow_dispatch:  # Optional: allows manual triggering
 
 jobs:
