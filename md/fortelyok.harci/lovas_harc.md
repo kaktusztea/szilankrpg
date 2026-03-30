@@ -4,8 +4,8 @@ Hátason ülve sem esel kétségbe, ha harcolni kell.
 
 ### Kapcsolódik
 
-- [Harc lóhátról fejezet](../067_00_harc_hatasrol.md): itt tárgyaljuk a **Léglovaglás** részleteit is.
-- [Léglovaglás](../kepzettsegek.szekunder/leglovaglas.md) képzettség
+- [Harc lóhátról fejezet](../067_00_harc_hatasrol.md)
+- [Lovaglás](../kepzettsegek.szekunder/lovaglas.md) képzettség
 
 <br />
 
@@ -20,7 +20,7 @@ TÉ/VÉ: -9
 
 ### 1. fok
 
-🔒 Lovaglás/Léglovaglás - `6.szint`
+🔒 Lovaglás - `6.szint`
 
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3` lovas bónusz
@@ -30,7 +30,7 @@ TÉ/VÉ: -9
 
 ### 2. fok
 
-🔒 Lovaglás/Léglovaglás  - `9.szint`
+🔒 Lovaglás  - `9.szint`
 
 🌟 **Hatás**:
 - `TÉ:+6, VÉ:+6` lovas bónusz
@@ -40,7 +40,7 @@ TÉ/VÉ: -9
 
 ### 3. fok
 
-🔒 Lovaglás/Léglovaglás  - `12.szint`
+🔒 Lovaglás  - `12.szint`
 
 🌟 **Hatás**:
 - `TÉ:+9, VÉ:+9` lovas bónusz
