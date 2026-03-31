@@ -134,9 +134,9 @@ Módosítók
 
 ```
 Többszörös találat bónusza
-  TÉ >= VÉ + 5    SP:+2
-  TÉ >= VÉ + 10   SP:+4
-  TÉ >= VÉ + 15   SP:+6
+  TÉ >= VÉ + 5    SP:+3
+  TÉ >= VÉ + 10   SP:+6
+  TÉ >= VÉ + 15   SP:+9
 ```
 
 <br />
@@ -147,30 +147,29 @@ Többszörös találat bónusza
 ```
 Páncéldobás: áldozat dob k10 (%)
    • 0 SFÉ
-   • van SFÉ (szúró, vágó, zúzó).
+   • van fizikai SFÉ
      Fegyver Átütés csökkenti SFÉ
      aktuális értékét.
 ```
 
 ```
-SP = Fegyver SP
+ÉP = Fegyver SP
    + módosítók
    + bónuszok
    – aktuális SFÉ
 ```
 
 ```
-ÉP seb
-  • SP → ÉP átváltás Sebzés táblázatban
-
 VÉ csökkentés sebzés esetén
-  • SP → VÉ átváltás Sebzés táblázatban
+  • -3 VÉ
   • Fárasztó taktika alkalmazásakor:
     • nincs Sebzés
     • 3 + k20T VÉ csökkentés
 ```
 
 Lásd: [Sebzés táblázat](064_02_07_sebzes.md)
+
+Lásd: [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-)
 
 <br />
 
@@ -218,15 +217,11 @@ Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#mozgás
 Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a játékot. Ilyenkor a következő – opcionális – szabályt javasoljuk:
 
 ```
-• TÉ: +7 mindenkinek
+• TÉ: +7 extra mindenkinek
+• SP: +5 extra mindenkinek
 • Nincs VÉ csökkentés
 • Nincs páncéldobás
 • Nincs Manőver használat
-• Erősített sebzés:
-  1-10:   6 ÉP
-  11-20: 12 ÉP
-  21-30: 20 ÉP
-  31-től halál
 ```
 
 ---

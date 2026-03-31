@@ -6,7 +6,7 @@
 
 [Státuszok](082_statuszok.md)
 
-[Sebzés táblázat](064_02_07_sebzes.md#sp-átváltása-ép-sebzésre)
+[Sebzés](064_02_07_sebzes.md)
 
 [Harc menete (tömör verzió)](064_01_harc_menete_osszefoglalas.md)
 
