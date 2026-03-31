@@ -12,7 +12,7 @@ Zúzó, Szúró, Vágó, Vágó+Íves.  Az egyes [vért típusok](069_02_SFE.md)
 
 ```
 Zúzó:      +3 SP fém vértek ellen
-Szúró:     +2 SP láncing és alatta
+Szúró:     +3 SP láncing és alatta
 Vágó:      +1 SP vért nélkül és bőrvért alatt
 Vágó+Íves: +2 SP vért nélküli ellen
 ```
