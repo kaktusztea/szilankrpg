@@ -9,7 +9,9 @@ Egy fegyver egy, vagy többféleképpen tud sebet ejteni jelleg szerint.
 ⚜️ Energia (E)
 ```
 
-Amiért ez fontos, az a Páncélok SFÉ értéke, amely szintén e `4` kategória szerint kap mind eltérő értékeket, tehát egyes páncélok ellen a szúró, míg mások ellen mondjuk a zúzó fegyverek hatásosak. Sőt páncél nélküli ellenfélnél egyes vágó fegyverek kerülnek előnybe.
+Amiért ez fontos, az, hogy egyes Páncélok típusok ellen, más-más jellegű támadások nyújtanak bónuszokat - tehát egyes páncélok ellen a szúró, míg mások ellen mondjuk a zúzó fegyverek hatásosak. Sőt páncél nélküli ellenfélnél egyes vágó fegyverek kerülnek előnybe.
+
+Bővebben lásd a [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md) oldalt.
 
 ### Fegyverek többféle sebzés jelleggel
 

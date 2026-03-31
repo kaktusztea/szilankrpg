@@ -28,6 +28,6 @@ pika
 
 ---
 
-🔗 [Sebzéstípusok](068_01_04_sebzestipusok.md) →
+🔗 [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

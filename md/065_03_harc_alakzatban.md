@@ -237,9 +237,9 @@ Példa
 
 Összesített `ÉP` értéke van, tehát az alakzatban levő összes ember `ÉP` értékét egybe vesszük egy "masszába".
 
-Minden ember `10 ÉP`-nek számít. Minden `10. ÉP` elvesztésénél `1` fővel csökken az Alakzat száma. Ez kihat a `VÉ` csökkentésre és harcértékekre is.
+Minden ember `28 ÉP`-nek számít. Minden `28. ÉP` elvesztésénél `1` fővel csökken az Alakzat száma. Ez kihat a `VÉ` csökkentésre és harcértékekre is.
 
-Egyes lényeknél eltérhet ez a szám. Pl. orkok esetén vehetjük `15 ÉP` értékűnek az `1` személyt.
+Egyes lényeknél eltérhet ez a szám. Pl. orkok esetén vehetjük `40 ÉP` értékűnek az `1` személyt.
 
 <br />
 

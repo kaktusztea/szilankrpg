@@ -7,7 +7,7 @@ Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fe
 - [Fegyverméretek, általános fegyver-harcértékek](068_01_01_fegyvermeretek_altalanos_harcertekek.md)
 - [Fegyverméret elnevezések](068_01_02_fegyvermeret_elnevezesek.md)
 - [Jellemző pengehosszok](068_01_03_jellemzo_pengehosszok.md)
-- [Sebzéstípusok](068_01_04_sebzestipusok.md)
+- [Fegyverek sebzése](068_01_04_fegyverek_sebzese.md)
 - [KF: Különleges fegyver szabály](068_01_05_kulonleges_fegyver_szabaly.md)
 - [MK: Másfélkezes fegyverek egy kézzel forgatva](068_01_06_masfelkezes_fegyverek_egy_kezzel.md)
 - [Íves fegyver](068_01_07_ives_fegyver.md)

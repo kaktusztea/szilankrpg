@@ -11,18 +11,18 @@ Három tagot látsz: mellvért-darabot, felkar-tagot, alkar-tagot. Méretben pas
 
 A lehető legátlagosabb sodronying, fejen (sisak) és lábszárakon **kívül** mindent beborít.
 
-Tehát a lefedettség `80%`: mellkas (`50%`), felkar (`10%`), alkar (`10%`), combok (`10%`).
+Tehát a lefedettség `80%`: mellkas (`50%`), felkar (`10%`), alkar (`10%`), combok (`10%`). Most csak a Fizikai SFÉ értékét nézzük.
 
-### SFÉ: `8` / `13` / `5` / `15`
+### SFÉ: `10`
 
 ```
 Struktúra: Sodronying
 
-Alap SFÉ: 8 / 13 / 5 / 15
+Alap SFÉ: 10
 +0 SFÉ: Anyagminőség átlagos
 +0 SFÉ: Fémalapanyag: Acél
 
-Végső SFÉ: 8 / 13 / 5 / 15
+Végső SFÉ: 10
 ```
 
 ### MGT: `9`
@@ -74,22 +74,22 @@ Azaz egy átlagos bőr torzódarab `16`-szorosába kerül a fenti teljes páncé
 
 Mindent lefed (`100%`).
 
-### SFÉ: `10` / `13` / `5` / `15`
+### SFÉ: `12`
 
 ```
-→ Struktúra: Lemezpáncél
-→ Alap SFÉ: 15 / 18 / 10 / 20
-→ Anyagminőség leggyengébb: SFÉ:-2
-→ Fémalapanyag: Bronz: SFÉ:-3
+Struktúra: Lemezpáncél
+ +20: Alap SFÉ
+  -3: Anyagminőség leggyengébb
+  -5: Fémalapanyag: Bronz
 ```
 
 ### MGT: `26`
 
 ```
-Védett terület:
-  torzó +
+Védett terület: 100%
+  torzó (50%) +
   felkar, alkarok, combok,
-  lábszárak, fej (5)
+  lábszárak, fej (5x10%)
 ```
 
 ```

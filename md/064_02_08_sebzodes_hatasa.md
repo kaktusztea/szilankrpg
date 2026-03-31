@@ -52,7 +52,7 @@ ilyen és egyéb nem harci fizikai sérülések esetén a KM meghatároz egy seb
 Példa: k20+5
 ```
 
-Az `SFÉ` ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelten.akkor is leginkább a `zúzó SFÉ` értéket használjuk - de KM dönt, mivel ahány eset, annyi féle.
+Az `SFÉ` ilyen esetekben legtöbbször nem számít, vagy csak igen mérsékelten. KM dönt, mivel ahány eset, annyi féle.
 
 ---
 ### Mágikus sebzések
@@ -65,13 +65,11 @@ Természetesen nem csak fegyverek okozhatnak sérülést, hanem egy mágikus tű
 A különböző támadási módok ellen az élőholtak különféleképpen ellenállóak, ezt virtuális [SFÉ](069_02_SFE.md)-vel szimuláljuk:
 
 ```
-16: Szúró SFÉ
- 8: Vágó SFÉ
- 0: Zúzó SFÉ
- 4: Energia SFÉ
+Zúzó:    +0 SP
+Vágó:   -10 SP
+Szúró:  -20 SP 
 
--4: Tűz SFÉ (spec)
-    (extra SP)
+Tűz: +4 SP
 ```
 
 ---

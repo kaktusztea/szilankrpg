@@ -17,7 +17,6 @@ Ez a mellvért tag ára egyedül.
   0.1x: Posztó/Bunda
   0.5x: Fegyverkabát
   1x  : Bőrpáncél
-  3x  : Brigantin bőrpáncél
  10x  : Lánc/Sodrony
  50x  : Pikkely fémpáncél
 100x  : Lemezpáncél
