@@ -259,11 +259,7 @@ Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok 
 TÉ:+3 / VÉ:-6: Támadó taktika (fix)
 VÉ:+4 / TÉ:-8: Védő taktika (fix)
 TÉ:+4, VÉ:-8 : Roham taktika
-+1 VÉ csökkentés:
-  Fárasztó taktika, nincs találat
-+4 VÉ csökkentés:
-  Fárasztó taktika, lenne találat
-
++2 VÉ csökkentés: Fárasztó taktika (fix)
 ```
 
 Manőverek használata alakzatban nem lehetséges.

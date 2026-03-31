@@ -50,14 +50,12 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 ### Fárasztó taktika ⇄
 
 ```
-Ha nincs találat
-  VÉ csökkentés extra: +1
+2 VÉ: Fárasztás taktika
+  +1: Fárasztás fortély
+  +1: Pengeelőnyben
 ```
 
-```
-Sebzés helyett:
-  VÉ csökkentés: 3 + k20T
-```
+❌ Nem kell támadást dobni
 
 ❌ Más taktikával együtt
 
@@ -65,13 +63,13 @@ Sebzés helyett:
 
 ❌ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány) harci helyzetből **NEM** alkalmazható.
 
+✅ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) és [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) harci helyzetben csak
+
 ✅ [Levegőből támadás](065_01_03_harci_poziciok.md#levegőből-támadás) harci helyzetben
 
 🔗 Kapcsolódik: **[Fárasztás](fortelyok.harci/farasztas.md)** harci fortély
 
 Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta. Leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a „vadat”, míg vezetőjük felkészül.
-
-🔆 A Többszörös találat **NEM** növeli tovább a `VÉ` csökkentést.
 
 ---
 ### Kezdeményező taktika

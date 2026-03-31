@@ -160,14 +160,14 @@ Páncéldobás: áldozat dob k10 (%)
 ```
 
 ```
-VÉ csökkentés sebzés esetén
-  • -3 VÉ
-  • Fárasztó taktika alkalmazásakor:
-    • nincs Sebzés
-    • 3 + k20T VÉ csökkentés
+Fárasztó taktika alkalmazásakor:
+• nincs támadó dobás, nincs Sebzés
+• 2 VÉ csökkentés
+   +1: Fárasztás fortély
+   +1: Pengeelőnyben
 ```
 
-Lásd: [Sebzés táblázat](064_02_07_sebzes.md)
+Lásd: [Sebzés](064_02_07_sebzes.md)
 
 Lásd: [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-)
 
