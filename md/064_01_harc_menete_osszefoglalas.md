@@ -169,7 +169,7 @@ VÉ csökkentés sebzés esetén
 
 Lásd: [Sebzés táblázat](064_02_07_sebzes.md)
 
-Lásd: [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-)
+Lásd: [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-)
 
 <br />
 
