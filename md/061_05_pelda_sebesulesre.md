@@ -3,7 +3,7 @@
 Lássuk Lord Gustav – Domvik lovagjának – egészség kategóriáit.
 
 ```
-ÉP: 40
+ÉP: 40 (28 + 3 x 4(Edzettség))
 Fájdalomtűrés - 10.szint
 
 S2: -0 TÉ
