@@ -119,7 +119,7 @@ Minden csapat meghatározhatja a maga preferenciáját, melyiket szeretné. Onna
 
 ## ⚜️ `2.` mód: Játék végén, utólag
 
-A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról, ahol `5` percben megbeszélik, ki volt az, aki karaktere személyiségét, faját, leíró háttereit, tradícióját, jellemét legjobban kijátszotta. Ez alapján a játékos karaktere kap `1` Szilánkot a következő játékalom kezdetekor (a kalandon belül).
+A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról, ahol `5` percben megbeszélik, ki volt az, aki karaktere személyiségét, faját, leíró háttereit, tradícióját, jellemét legjobban kijátszotta. Ez alapján a játékos karaktere kap `1` Szilánkot a következő játékalkalom kezdetekor (a kalandon belül).
 
 ### 🌀 Előnyei, hátrányai
 

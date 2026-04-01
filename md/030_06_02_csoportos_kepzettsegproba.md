@@ -79,6 +79,6 @@ Ezt követően a parti "összedobja, amije van", minden részfeladatra jelentkez
 
 ---
 
-🔗 [Csoportosan végezthető képzettségek](030_06_03_csoportosan_vegezheto_kepzettsegek.md) →
+🔗 [Csoportosan végezhető képzettségek](030_06_03_csoportosan_vegezheto_kepzettsegek.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#3-képzettségrendszer-)

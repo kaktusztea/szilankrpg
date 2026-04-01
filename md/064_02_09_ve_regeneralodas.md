@@ -7,7 +7,7 @@ Ha például üldözik és ő megbújik egy kis beugróban, akkor Védő Érték
 ---
 ### Játékos karakterek VÉ regenerációja harc közben
 
-Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerejen valamennyit Védő Értékéből.
+Több módszer létezik arra, hogy egy játékos karakter harc közben is visszanyerjen valamennyit Védő Értékéből.
 
 #### ⚜️ Győzelmi szabály
 
