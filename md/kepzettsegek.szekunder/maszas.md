@@ -10,7 +10,8 @@ Sokszor fordul elő, hogy fel kell jutni olyan helyekre, ahova egy átlagember n
 - Intelligencia (felmérni a mászandó terepet, helyeket)
 
 ### Pihenés
-Ha a terep (próba) nehézsége nem nagyobb a a Mászás képzettségnél, akkor azon a terepen a mászó bárhol képes megállva kipihenni magát.
+
+Ha a terep (próba) nehézsége nem nagyobb a Mászás képzettségnél, akkor azon a terepen a mászó bárhol képes megállva kipihenni magát.
 
 ### Kapcsolódik
 

@@ -8,7 +8,7 @@ Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyo
 "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 
 **[Észlelés](../kepzettsegek.primer.altalanos/eszleles.md)** képzettségpróba
-- **Nehézség**: a nyom észrevételének bonyolultságának megfelelő megfelelő szint ellen
+- **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
 - **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
 
 <br />

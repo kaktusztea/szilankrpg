@@ -71,7 +71,7 @@ Intelligencia, Önuralom
 
 - Legendás bonyolultságú csapda állítása, amely hónapokig működőképes, és önjavító funkciókat is tartalmaz.
 - Mágiaérzékkel szőtt „élő” csapda, amely reagál arra, ha a közelében járnak (összetett próba).
-- Egyetlen pillantásból megérzed, hogyan funkcionál egy egy nagyon komplex csapda és képes vagy beavatkozni, akár a saját életed kockáztatása nélkül.
+- Egyetlen pillantásból megérzed, hogyan funkcionál egy nagyon komplex csapda és képes vagy beavatkozni, akár a saját életed kockáztatása nélkül.
 
 <br />
 

@@ -24,7 +24,7 @@ Tartós sérültségért
 Ha a karakter története során meggyógyul a fenti tartós sérülésből akár isteni csoda, akár más kaland eseménye által, akkor a fenti `KP` javadalmazást azonnal, vagy - ha nincs elegendő `KP`-ja rá akkor - következő szintlépéskor vissza kell "fizetnie".
 
 ---
-### Hatása fizikai fizikai Tulajdonságokra
+### Hatása fizikai Tulajdonságokra
 
 A rokkantság sokszor csökkentheti a karakter fizikai Tulajdonságait is. Erre végképp nem adnánk képletet, hiszen attól is függ, hogy az adott cselekedet során okoz-e hátrányt a sérülés, vagy sem. A fentiek mértékét és alkalmazását a KM-re bízzuk.
 
