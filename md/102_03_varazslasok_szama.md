@@ -14,7 +14,7 @@ Harcban körönként `1 db` varázslatot indíthatsz.
 ---
 ## "Plusz célpont" Aurahangolás-arkánum formula
 
-Az alábbiak akkor érvényeek, ha a mágiatudó szellemkézzel, vagy kiterjesztés nélkül próbál célpontjára varázsolni.
+Az alábbiak akkor érvényesek, ha a mágiatudó szellemkézzel, vagy kiterjesztés nélkül próbál célpontjára varázsolni.
 
 ```
 Azonos varázslatra
