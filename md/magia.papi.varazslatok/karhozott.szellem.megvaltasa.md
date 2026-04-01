@@ -23,7 +23,7 @@
 ---
 #### Hatás
 
-Megőrült/kárhozott szellem megváltása. A mentális, vagy érzelmil lelki sebek okozta őrület elmúlik az ittragadt szellemen, észhez tér, őrült fájdalma semmivé lesz.
+Megőrült/kárhozott szellem megváltása. A mentális, vagy érzelmi, lelki sebek okozta őrület elmúlik az ittragadt szellemen, észhez tér, őrült fájdalma semmivé lesz.
 
 A pap "elbeszélget" a szellemmel. Lassan megismeri, amit az látni enged magából, megérti személyiségének torzulását, majd "érvekkel" - hangulatokkal, gondolatokkal -, valamint istene gyógyító energiájával próbálja meg a szellemet lecsillapítani, azt észhez téríteni.
 

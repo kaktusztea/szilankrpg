@@ -8,7 +8,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 - A fortély alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára.
 - [Különleges faj boncolása (faj neve)](../fortelyok.szabad/kulonleges_faj_boncolasa.md) Szabad Fortélyhoz juthatsz, ha új, nem elfszabású lények anatómiáját akarod megismerni ([Élettan](../fortelyok.altalanos/elettan.md) követelmény).
 - Csatabárdokkal, buzogányokkal, kétkezes fegyverekkel a fortély nem alkalmazható.
-- A fortély átal leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
+- A fortély által leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
 
 ### Extra bónuszok
 

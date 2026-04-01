@@ -206,7 +206,7 @@ Nagy mocsár (víz), vulkán (tűz)
 
 Komponens
 
-⭕ TODO: ⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, eőrsebb a kapocs a személlyeél, annál erősebb a híd.
+⭕ TODO: ⭕legyen szimpatikus-híd, ami X Erősségű mágiát át tud vinni (CX)⭕ Minél személyesebb, erősebb a kapocs a személlyel, annál erősebb a híd.
 
 - fizikai: áldozat egy személyes tárgya, áldozat egy testrésze (haj, stb), testvér, iker
 - elvont: szerelem, gyűlölet mint szimpatikus híd (ez jellemzően papi mágia legyen)

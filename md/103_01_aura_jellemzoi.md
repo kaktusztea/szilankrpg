@@ -90,7 +90,7 @@ Aurabontásnál
 - magabiztosságod elszáll, zavarodottság vesz úrrá rajtad
 - Emberismeret képzettségpróbádra: `Hátrány-2` (Befolyásolások ellen)
 
-⚡Példa: gazdag özvegy, akinek csak [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md) Arkánuma van és bálokon ledominál más nemeseket, amjd befolyása alá vonja őket.
+⚡Példa: gazdag özvegy, akinek csak [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md) Arkánuma van és bálokon ledominál más nemeseket, majd befolyása alá vonja őket.
 
 <br />
 
