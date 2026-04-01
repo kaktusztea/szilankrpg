@@ -9,14 +9,14 @@ KÉ = 0
    + Tapasztalati szint
    + Gyors kezdeményezés fortély bónusza
 
-TÉ = 7
+TÉ = 10
    + Erő + Ügyesség + Gyorsaság
    + TÉ HM
    + Harcmodor bónusz
    + Mf bónusz
    + Fegyver TÉ
 
-VÉ = 24
+VÉ = 30
    + Ügyesség + Gyorsaság
    + VÉ HM
    + Harcmodor bónusz
