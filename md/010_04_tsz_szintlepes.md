@@ -1,12 +1,13 @@
 ## Tapasztalati szint, szintlépés
 
 ```
+Min tapasztalati szint: 3
 Max tapasztalati szint: 21
 ```
 
 Egy karakter „fejlettségét" az abszolút szubjektív „**Tapasztalati szint**" értékkel jellemezzük. Minél magasabb szintű valaki, annál több időt fordíthatott tanulásra, annál többet tapasztalt.
 
-Az első `2` tapasztalati szint az előtörténet részének tekinthető, amennyiben ezt nem akarja lejátszani a parti, akkor ajánlott a `3.szinten` való kezdés - más rendszerekkel ellentétben itt ez adja a "kezdő kalandozó" élettapasztalatot. Ennek további előnye, hogy így könnyebb `1.` és `2.` szintű **Nem Játékos Karakterek** (NJK) alacsonyabb képességeit rendszerben megjeleníteni.
+Az első `2` tapasztalati szint az előtörténet részének tekinthető, a kalandozás a `3.szinten` kezdődik - más rendszerekkel ellentétben itt ez adja a "zöldfülü kalandozó" élettapasztalatot. Ennek további előnye, hogy így könnyebb `1.` és `2.` szintű **Nem Játékos Karakterek** (NJK) alacsonyabb képességeit rendszerben megjeleníteni.
 
 A karakter fejlődése - kalandjai során megélt tapasztalatoknak köszönhetően - természetesen folyamatos, de az adminisztráció megkönnyítése érdekében alkalmazzuk a „Szintlépés" fogalmát. Szintlépés olyankor következik be, amikor a KM úgy ítéli, a karakter jelentősen fejlődött, sokat tapasztalt és ennek ideje lenne értékeiben is megmutatkoznia - ekkor bejelenti annak szintlépését.
 
@@ -19,9 +20,6 @@ A `Szilánk` rendszerében maximum a `21.tapasztalati szint` érhető el.
 Irányelvek karakter szintekre:
 
 ```
-1.szint
-  Tapasztalatlan mesterlegény
-  vándorlása megkezdésekor
 3.szint
   Novícius. Más rendszereknél
   ez az 1.szint
