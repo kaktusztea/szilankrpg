@@ -105,7 +105,7 @@ Ezzel már `14 db` rubrika lett bejelölve a lovag Életerő táblázatában. To
 
 Szerencséjére a testőr elégnek találja a megtorlást és felzárkózik gazdája mellé. Cravignon kivonszolja magát a kocsma mellé és lerogy a lépcsőre.
 
-Összesen `12 FP` és `2 ÉP` sebet szenvedett el. A `12 FP` szerencsére `12` óra múlva magától, alvással pedig már `6` óra alatt elmúlik. A `2 ÉP` seb viszont csak `2` nap alatt tűnik el.
+Összesen `12 FP` és `2 ÉP` sebet szenvedett el. A `12 FP` szerencsére `6` óra múlva magától, alvással pedig már `3` óra alatt elmúlik. A `2 ÉP` seb viszont csak `1` nap alatt tűnik el.
 
 ---
 
