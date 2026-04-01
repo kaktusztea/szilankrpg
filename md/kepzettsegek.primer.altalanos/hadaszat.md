@@ -57,7 +57,7 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 - Nyers ránézésre megbecsülni, mekkora veszteséggel törhet át a lándzsás alakzat egy zárt lovas ék ellen.
 - Megmondani, egy híd védéséhez a jelenlegi erőkből hány ember szükséges.
 - Egy kisebb manővert (pl. szárnytámadás vagy fedezőtűz) gyorsan lemodellezni, és felismerni, működőképes-e.
-- Megmondani, hogy egy felállított tábor szerkezetében van‑e komoly gyenge pont (pl. rossz kerítés, túl széles bejárat).
+- Megmondani, hogy egy felállított tábor szerkezetében van-e komoly gyenge pont (pl. rossz kerítés, túl széles bejárat).
 
 #### Nehéz (12) 🎲
 
