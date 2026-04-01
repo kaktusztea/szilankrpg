@@ -80,34 +80,37 @@ Cravignon rossz napja kezdetén rossz embernek, az elöljáró élénkítőszere
 
 ```
 Cravignon
-  ÉP: 14
+  Edzettség: +1
+  ÉP: 32
 
 Testőr
   Erő: +2
   Puszta kéz sebzése:
-    k20 - 5 FP + 2 (Erőbónusz)
+    k20 - 5 + 2 (Erőbónusz) → FP
 ```
 
 ```
 1. Sebzés
-  k20 dobás: 19
-  19-5+2 = 14 SP
-  14 SP → 5 "ÉP"
-  (azaz 4 FP és 1 ÉP)
+  k20 dobás: 12
+  12-5+2 = 9 FP
+  Minden 5. FP → 1 ÉP:
+  9 FP → 8 FP + 1 ÉP = 9 rubrika
 ```
 
 Ezzel Cravignon máris `S2` kategóriába került. Csillagokat lát a vállába hasító tompa, de brutális ütéstől. Lustán előrekaszál, de elvéti és ellenfele ismét betalál. Ezúttal gyomorszájon találják. Sziszegve szökik ki száján a levegő.
 
 ```
 2. Sebzés
-  9 SP → 3 FP
+  k20 dobás: 8
+  8-5+2 = 5 FP
+  5 FP → 4 FP + 1 ÉP = 5 rubrika
 ```
 
-Ezzel már `8 db` rubrika lett bejelölve a lovag Életerő táblázatában. `S3` kategóriában van. Még `2` rubrika és `S4`-be kerül.
+Ezzel már `14 db` rubrika lett bejelölve a lovag Életerő táblázatában. Továbbra is `S2` kategóriában van, de már csak `2` rubrika és `S3`-ba kerül.
 
 Szerencséjére a testőr elégnek találja a megtorlást és felzárkózik gazdája mellé. Cravignon kivonszolja magát a kocsma mellé és lerogy a lépcsőre.
 
-Összesen `7 FP` és `1 ÉP` sebet szenvedett el. A `7 FP` szerencsére `7` óra múlva magától, alvással pedig már `4` óra alatt elmúlik. Az `1 ÉP` seb viszont csak `1` nap alatt tűnik el - ahogy máskor is.
+Összesen `12 FP` és `2 ÉP` sebet szenvedett el. A `12 FP` szerencsére `12` óra múlva magától, alvással pedig már `6` óra alatt elmúlik. A `2 ÉP` seb viszont csak `2` nap alatt tűnik el.
 
 ---
 
