@@ -9,7 +9,7 @@ Mikor a karaktert sebesülés éri, elkezdi bejelölni a korábban már bemutato
 
 ### Sebek jellegének jelölései
 
-Hasznos segítség lehet, ha sérüléskor nem simán beikszeljük az egyes négyzeteket, hanem a sebesülés jellegét (`S,V,Z == Szúró,Vágó,Zúzó`) és „sorszámát” (hányadik seb a harc során)  írjuk beléjük.
+Hasznos segítség lehet, ha sérüléskor nem simán beikszeljük az egyes négyzeteket, hanem a sebesülés jellegét (`S,V,Z == Szúró,Vágó,Zúzó`) és „sorszámát” (hányadik seb a harc során) írjuk beléjük.
 
 Ezzel megkönnyítjük a dolgunkat, hiszen rögtön látjuk, hány és mekkora sebünk van.
 

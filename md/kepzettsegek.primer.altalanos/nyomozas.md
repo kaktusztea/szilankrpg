@@ -10,7 +10,7 @@ Egy helyszín átvizsgálásakor rengeteg nyom van, amit értelmezni kell, illet
 - Mikor járt itt utoljára valaki?
 - Az asztalon heverő rengeteg iratban találni valami fontosat, összekötni a "pontokat" a most talált és a korábban talált információk alapján.
 - Vérnyomok elemzése: alvadás, jelleg. Állati vér, vagy emberi? (Ez utóbbiban a [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség segíthet).
-- Holttest vizsgálata: mitől halt meg? Apró tűnyom kiszúrása. Mérgezés? Milyen méreg lehetett?  (Ez utóbbiban a [Méregkeverés](meregkeveres.md) képzettség segíthet).
+- Holttest vizsgálata: mitől halt meg? Apró tűnyom kiszúrása. Mérgezés? Milyen méreg lehetett? (Ez utóbbiban a [Méregkeverés](meregkeveres.md) képzettség segíthet).
 - Kit érdemes kikérdezni a helyszínen
 - KM kis segítsége: "Valamit még nem kérdeztél meg"
 
@@ -27,7 +27,7 @@ Intelligencia, Emlékezet
 
 - ❗ [Helyismeret](../fortelyok.kiemelt/helyismeret.md): ha a KM szerint indokolt, akkor ez lehet követelmény a lentiekre
 - [Építészet](../fortelyok.altalanos/epiteszet.md): "Az a fal sokkal vastagabb, mint a másik!"
-- [Hazudozás](../fortelyok.altalanos/hazudozas.md): "Sokat  pislog, kerüli a tekintetem, hazudik..."
+- [Hazudozás](../fortelyok.altalanos/hazudozas.md): "Sokat pislog, kerüli a tekintetem, hazudik..."
 - [Heraldika](../fortelyok.szabad/heraldika.md): "A famor címerében levő lombok vérszínűek, akárcsak az - állítólagos - ellenséges házéban."
 - [Kihallgatás](../fortelyok.szabad/kihallgatas.md): "Hol rejtegetitek az ereklyét? A társaid már mindent bevallottak."
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md): "A szimbólumok által jelképezett átjáró az kandalló feletti festményre utal!"

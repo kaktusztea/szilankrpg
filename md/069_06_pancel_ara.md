@@ -92,7 +92,7 @@ Anyagminőség Ár
      átlagos bőr mellvért ára
 ```
 
-Az SFÉ táblázatban nem véletlenül _szorzó_ értékek szerepelnek arany, vagy más fizetőeszköz helyett.  Itt ugyan `1x = 1 arany` arányszámot vázoltunk, de tájegységtől függően más-más lehet a vértek ára.
+Az SFÉ táblázatban nem véletlenül _szorzó_ értékek szerepelnek arany, vagy más fizetőeszköz helyett. Itt ugyan `1x = 1 arany` arányszámot vázoltunk, de tájegységtől függően más-más lehet a vértek ára.
 
 Természetesen ebbe is bele lehet kötni, hogy pl. egy adott országban nem pont ezek az arányok, de ennyire részletes bontásba véleményünk szerint értelmetlen belemenni – felesleges bonyolítás lenne.
 

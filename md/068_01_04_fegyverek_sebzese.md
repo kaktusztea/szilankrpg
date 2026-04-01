@@ -8,7 +8,7 @@
 
 ### Jelleg szerint
 
-Zúzó, Szúró, Vágó, Vágó+Íves.  Az egyes [vért típusok](069_02_SFE.md) ellen különböző bónuszokat nyújtanak ezek a támadás típusok.
+Zúzó, Szúró, Vágó, Vágó+Íves. Az egyes [vért típusok](069_02_SFE.md) ellen különböző bónuszokat nyújtanak ezek a támadás típusok.
 
 ```
 Zúzó:      +3 SP fém vértek ellen

@@ -110,7 +110,7 @@ Eredeti Nehézség +3
 Mentő Mászás dobásnál
 ```
 
-Az **Erő** Tulajdonság bevethető rontás utáni  Mentő Mászás képzettségpróbánál. ilyenkor **Erő** Tulajdonságból pontokat tehetünk a próbába. Ennek hatására az **Erő** Tulajdonság - a költés mértékével - ideiglenesen lecsökken. Korlát: `+0` értékig csökkenthetjük így a Tulajdonságot.
+Az **Erő** Tulajdonság bevethető rontás utáni Mentő Mászás képzettségpróbánál. ilyenkor **Erő** Tulajdonságból pontokat tehetünk a próbába. Ennek hatására az **Erő** Tulajdonság - a költés mértékével - ideiglenesen lecsökken. Korlát: `+0` értékig csökkenthetjük így a Tulajdonságot.
 
 Az elköltött **Erő** pontok az aktuális mászó szituáció végéig nem térnek vissza. Pihenésben `1 pont / perc` tér vissza.
 
@@ -120,7 +120,7 @@ Előfordul, hogy egy **rontott** Mászás képzettségpróba dobás után meg ke
 
 Ehhez 2 próbának kell meglennie **biztos tudásból**:
 - Edzettség tulajdonságpróba (a fenti körülményektől függ)
-- Mászás képzettségpróba  (a fenti körülményektől függ)
+- Mászás képzettségpróba (a fenti körülményektől függ)
 
 A Nehézség a körülményektől függ, de jellemzően alacsonyabb, mint az eredeti próba. Az alábbi tényezők adhatnak bónuszt:
 - van-e kikötés valahova

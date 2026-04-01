@@ -1,6 +1,6 @@
 ## ⚡Példa Manőver alkalmazására: Lefegyverzés
 
-Lássunk egy  gyakorlati alkalmazást!
+Lássunk egy gyakorlati alkalmazást!
 
 **Rühes** megpróbálja lefegyverezni ellenfelét. Mindkettőjüknél hosszú kard van, Rühes kicsivel jobb vívó.
 
@@ -42,7 +42,7 @@ Ez nagyobb mint az ellenfél VÉ
 ```
 
 
-**2. Ellenpróba**  (`E`)
+**2. Ellenpróba** (`E`)
 
 ```
 Rühes dobása:
@@ -60,7 +60,7 @@ A próbadobás így
 (4 + k10)  vs.  13
 ```
 
-Tehát ha Rühes legalább  `9`-et dob  `k10`-en, akkor az **Ellenpróba** is sikeres és így az egész manőver is, ellenfele kardja kihullik annak kezéből. Látható, hogy a **Lefegyverzés** a [Manőver Pontok](066_02_manover_pontok.md) használata nélkül nagyjából azonos tudású ellenfelek között nem könnyű művelet.
+Tehát ha Rühes legalább `9`-et dob `k10`-en, akkor az **Ellenpróba** is sikeres és így az egész manőver is, ellenfele kardja kihullik annak kezéből. Látható, hogy a **Lefegyverzés** a [Manőver Pontok](066_02_manover_pontok.md) használata nélkül nagyjából azonos tudású ellenfelek között nem könnyű művelet.
 
 Ha Rühes `2` Manőver Pontot költött volna el, akkor már `+4` járna a próbadobására ( `8+k10`) és így már `5`-ös dobással is sikert érhetne el. Ha viszont ellenfele is elköltött volna `1` pontot, akkor az ő `+2` bónusza mérsékelné Rühes `+4`-es bónuszát és ismét csak a `7`-es dobással(vagy felette) lenne eredményes.
 

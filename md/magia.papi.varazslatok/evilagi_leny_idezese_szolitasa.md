@@ -11,7 +11,7 @@
 #### Kisszféra
 
 **3.szint:**
-- kis lények (madár, rágcsálók, denevér  (max 1 csoportnyi)).
+- kis lények (madár, rágcsálók, denevér (max 1 csoportnyi)).
 - Ha konkrét állat fajtát akarok, akkor
   - `+3` szint szükséges
   - állati komponens kell. Pl. medvéhez egy medvefog.

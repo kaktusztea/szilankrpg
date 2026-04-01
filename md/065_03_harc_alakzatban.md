@@ -4,7 +4,7 @@ Mikor összehangoltan, csoportban mozognak harcosok, akkor komoly előnyt képes
 
 Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összeszokottság. Nem készítünk külön szabályokat az összeszokottság mértékének módosítóira - egy heroikus rendszerben valószínűleg összeszokott csapat indít csak csoportos támadást. A fentiket az **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettség tanulásával lehet elsajátítani.
 
-Egy alakzat minimum létszáma `3` **fő** (mert `2` fő legfeljebb  [Páros harcot](fortelyok.harci/paros_harc.md) végezhet).
+Egy alakzat minimum létszáma `3` **fő** (mert `2` fő legfeljebb [Páros harcot](fortelyok.harci/paros_harc.md) végezhet).
 
 ---
 ## Mozgástér
@@ -70,7 +70,7 @@ A lenti értékeket célszerű játékalkalom **előtt** kiszámítani, így nem
 
 🔆 **Megjegyzés**
 - [Lovaglás bónuszai](067_01_lovas_harc_szabalyai.md#lovasléglovas-harcértékek-kiszámítása) is beszámítanak az alapértékekbe, ha hátasokon harcol az alakzat
-- Íjászok/Lövészek esetén `TÉ` helyett a `CÉ` az, amelyre  a harcmodorból adódó bónusz jár
+- Íjászok/Lövészek esetén `TÉ` helyett a `CÉ` az, amelyre a harcmodorból adódó bónusz jár
 
 <br />
 
@@ -206,7 +206,7 @@ VÉ csökkentés
 +1 VÉ: 5+ főnél (nem additív)
 ```
 
-Tehát az egyén, - a  számára legrosszabb esetben - minden körben `-5 VÉ csökkenést` szenved el.
+Tehát az egyén, - a számára legrosszabb esetben - minden körben `-5 VÉ csökkenést` szenved el.
 
 <br />
 

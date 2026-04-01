@@ -1,6 +1,6 @@
 # Hátasról leesés
 
-Kapcsolódik:  [Lovas Harc](../067_01_lovas_harc_szabalyai.md) fejezet
+Kapcsolódik: [Lovas Harc](../067_01_lovas_harc_szabalyai.md) fejezet
 
 ## Sebesüléskor leesés kockázata
 
@@ -20,7 +20,7 @@ Ha sikertelen, leesik. Ekkor jön a [Lóról, hátasról leesés](hatasrol_leese
 ---
 ## Leeséskor: Akrobatika próba és Sérülés
 
-Ha leesel a lóról, [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében.  Egy szénaboglya például sokat könnyíthet.
+Ha leesel a lóról, [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében. Egy szénaboglya például sokat könnyíthet.
 
 ### ⚜️Akrobatika képzettségpróba Nehézsége a ló mozgása alapján
 

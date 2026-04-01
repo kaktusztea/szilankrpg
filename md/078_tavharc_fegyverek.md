@@ -2,7 +2,7 @@
 
 ### Távolsági fegyver kategóriák, Fegyverek Célzó Értéke
 
-A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy általánosságban mennyire könnyű kezelni őket, mennyire alkalmasak messzi célok leküzdésére. Ezek szerint az alábbi módosítók járulnak **minden** karakter `Célzó Értékéhez`, aki a felsorolt fegyverek valamelyikét kezébe veszi. A konkrét fegyverek  `Célzó Értéke` és egyedi jellemzőik az alábbi linkeken találhatóak.
+A távolsági fegyverek több kategóriába sorolhatóak attól függően, hogy általánosságban mennyire könnyű kezelni őket, mennyire alkalmasak messzi célok leküzdésére. Ezek szerint az alábbi módosítók járulnak **minden** karakter `Célzó Értékéhez`, aki a felsorolt fegyverek valamelyikét kezébe veszi. A konkrét fegyverek `Célzó Értéke` és egyedi jellemzőik az alábbi linkeken találhatóak.
 
 ### → [Hajítófegyverek táblázata](068_07_hajitofegyverek.md)
 

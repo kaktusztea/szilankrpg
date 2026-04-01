@@ -12,7 +12,7 @@ Fém ötvözetekből kalapálsz páncélokat. Fegyvereket NEM.
 
 ### Kapcsolódik
 
-- [Mechanika](mechanika.md) fortély: mechanikus komponensekkel bővített páncélokhoz (gépszolga,  k4r élő páncél)
+- [Mechanika](mechanika.md) fortély: mechanikus komponensekkel bővített páncélokhoz (gépszolga, k4r élő páncél)
 - [Fegyverkovács](kezmuves_fegyverkovacs.md) fortély mint hasonló fortély
 
 ---

@@ -33,6 +33,6 @@ Lopás + Ügyesség
 
 `c.)` Tárgyaló kofánál a nemeshölgyet meglopni (testőr nélkül):
   - Lopás próba: **Átlagos** nehézség (`9`)
-  - A kofának egy **Nehéz** (12)  **Észlelés** (mert nem figyel oda)
+  - A kofának egy **Nehéz** (12) **Észlelés** (mert nem figyel oda)
 
 ---

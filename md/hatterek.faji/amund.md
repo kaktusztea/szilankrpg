@@ -33,7 +33,7 @@ A Pszít nem képesek elsajátítani.
 
 ### Ajánlott fortélyok
 
-- [Kinokozás](../fortelyok.harci/kinokozas.md)  (ha amund kultúrában nevelkedett)
+- [Kinokozás](../fortelyok.harci/kinokozas.md) (ha amund kultúrában nevelkedett)
 
 ### Ajánlott képzettségek
 

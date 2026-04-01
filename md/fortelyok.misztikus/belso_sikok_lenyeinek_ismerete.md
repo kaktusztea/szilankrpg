@@ -20,7 +20,7 @@ A belső síkok túlvilági teremtményeinek ismerete. Alapos, előtörténettel
 ---
 ### 1. fok
 
-🌟 **Hatás**:  Dobhatsz [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettségpróbát egyes lények ismeretére.
+🌟 **Hatás**: Dobhatsz [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettségpróbát egyes lények ismeretére.
 
 
 ---

@@ -32,10 +32,10 @@ Méregmágia (1X)      : 45%
 Élettan, Herbalizmus : 50%
 ```
 
-Alacsony szinten képes pl. egyes növények mérgező mivoltának ideáját felfedezni és felruházni vele mondjuk egy folyadékot. Magasabb szinten (90% körül) pedig rájön a HALÁL „ideájára” és képes  már bármit felruházni vele.
+Alacsony szinten képes pl. egyes növények mérgező mivoltának ideáját felfedezni és felruházni vele mondjuk egy folyadékot. Magasabb szinten (90% körül) pedig rájön a HALÁL „ideájára” és képes már bármit felruházni vele.
 
 > _"Közelgett a menyegző, s én nem akartam, hogy fiam ahhoz a cafkához kösse hitvány életét. Kertem a feketemestert: szőjön kelmét: finomat, szépet, halálosat. El is készült a ruha a menyegzőre, jókívánságaimmal egybefűzve küldettem el az arának..._
-> _Büszkén lépdelt a pár a díszes embertömeg között, majd megálltak,  hogy az isteni szentség előtt is összekössék életüket. De jajj! A leány megtántorodott! Arca akár a hegyekben esett hó, lélegzete akadozik! Haszontalan fiam karjaiba hanyatlik. Micsoda tragédia! Rohanok, könnyes szemmel vigasztalom fiamat."_
+> _Büszkén lépdelt a pár a díszes embertömeg között, majd megálltak, hogy az isteni szentség előtt is összekössék életüket. De jajj! A leány megtántorodott! Arca akár a hegyekben esett hó, lélegzete akadozik! Haszontalan fiam karjaiba hanyatlik. Micsoda tragédia! Rohanok, könnyes szemmel vigasztalom fiamat."_
 
 Ebben az esetben a ruha akkor fejtette ki hatását, amikor fő ideája (hogy viseljek) beteljesedett (plusz meg egy kis időzítés).
 

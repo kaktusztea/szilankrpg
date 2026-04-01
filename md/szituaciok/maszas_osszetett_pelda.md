@@ -69,7 +69,7 @@ Ez **2 biztos tudást** igényel, hogy meg tudja-e tartani magát tartósan. Ebb
 2️⃣ **Mászás** képzettségpróba - Átlagos (`9`) → megvan biztos tudásból ✅
 - Ék: `-6` Nehézség
 - Perem: `-3` Nehézség
-- Nagyon Nehéz (`18`) helyett `9` lett a Nehézség.  Könnyebb biztosítás. Sokkal könnyebb lesz elrugaszkodni is.
+- Nagyon Nehéz (`18`) helyett `9` lett a Nehézség. Könnyebb biztosítás. Sokkal könnyebb lesz elrugaszkodni is.
 
 Az ék és a perem együtt ad annyit ami már rég biztos tudásból megvan, lehet pihenni, 2 perc múlva visszatér az eredeti **Erő** Tulajdonság értéke (`+2`).
 

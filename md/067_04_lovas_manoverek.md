@@ -23,7 +23,7 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 
 Megpróbálsz áttörni az ellenfél sorain, lendületét és hátasod erejét használva.
 
-- Nehézség: `[4-8]`  (ellenfelek száma és fegyverzete függvénye)
+- Nehézség: `[4-8]` (ellenfelek száma és fegyverzete függvénye)
 - Fázisok: `(V)égrehajtás, (E)llenpróba`
 - Követelménye: galopp vagy gyorsabb tempó
 - Hatás: Az áttörési kísérlet sikeres esetén az ellenfelek szétszóródnak, és hátrányt szenvednek a következő körben.
@@ -44,7 +44,7 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
 - Végbevitel követelménye:
   - szúró szálfegyver használata
   - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) a lovashoz képest
-- Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően -  továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
+- Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
 
 <br />
 
@@ -55,7 +55,7 @@ Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye
 
 Megpróbálod lerántani lovas ellenfeled a nyergéből.
 
-- Nehézség: `[6-12]`  (hátas mozgása, lovas hova figyel)
+- Nehézség: `[6-12]` (hátas mozgása, lovas hova figyel)
 - Fázisok: `(M)egakasztás, (V)égrehajtás, (E)llenpróba`
 - Végbevitel követelménye: Csak közvetlen harcérintkezés alatt
 - Hatás: Sikeres próbálkozás esetén a lovas a földre kerül.

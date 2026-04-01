@@ -19,7 +19,7 @@ Természetesen nem mindegy, melyik kultúrkörben kell a társasági kihívások
 
 - [Szertartás](../fortelyok.szabad/szertartas.md): Amely Kultúrköröket ismersz, azok egyes speciális szertartásait **Etikett** képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó szertartásokat. Példa: teaszertartás.
 - [Tánc: speciális/belső stílus](../fortelyok.szabad/tanc_belso_stilus.md): "A vérnász során egyre több pengét kell elkerülni, a hetedik után hátulról is jöhet egy meglepetés."
-- [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md):  "A véráldozat után két perc ima, utána indul minden fejvadász a küldetésre. Most nem szabad megszólalnom."
+- [Titkos szervezet](../fortelyok.szabad/titkos_szervezet.md): "A véráldozat után két perc ima, utána indul minden fejvadász a küldetésre. Most nem szabad megszólalnom."
 
 ### Szituációk
 
@@ -60,7 +60,7 @@ Saját kultúrán belül mindenkivel rangjához illő formulákkal, szófordulat
 
 #### Nagyon nehéz (15) 🎲
 
-Idegen kultúrába csöppenve elkerülni a sértéseket. Nemesi bálon hárítani a szóbeli rejtett  támadásokat. Szándékos párbaj provokációt presztízsveszteség nélkül hárítani.
+Idegen kultúrába csöppenve elkerülni a sértéseket. Nemesi bálon hárítani a szóbeli rejtett támadásokat. Szándékos párbaj provokációt presztízsveszteség nélkül hárítani.
 
 #### Rendkívül nehéz (18) 🎲
 

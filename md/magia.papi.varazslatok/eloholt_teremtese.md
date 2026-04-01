@@ -40,4 +40,4 @@ A lélek legfeljebb `1` napig marad az árnyékvilágban.
 
 Az isten ugyanazt a lelket nem küldi újra.
 
-A varázslat Feketemágia -  csak Darton, Ranagol és halál jellemű istenek papjai alkalmazhatják.
+A varázslat Feketemágia - csak Darton, Ranagol és halál jellemű istenek papjai alkalmazhatják.

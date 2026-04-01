@@ -15,7 +15,7 @@ Emlékezet, Intelligencia, Érzékenység
 - ❗ [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md): Ha érintett az adott ősi kultúrkör. Ekkor enélkül érvényes a levonás mindegyik meglevő művészeti ágra.
 - [Hamisítás](../fortelyok.altalanos/hamisitas.md): Felismered, hogy a mű hamisítvány
 - [Éneklés](../fortelyok.szabad/enekles.md): felismered a híres dalnokokat, dallamaikat, slágereiket.
-- [Építészet](../fortelyok.altalanos/epiteszet.md):  "Shad0ni hatást érzek azon az oszlopfőn..."
+- [Építészet](../fortelyok.altalanos/epiteszet.md): "Shad0ni hatást érzek azon az oszlopfőn..."
 - [Festészet](../fortelyok.szabad/festeszet.md): Ismered, felismered adott [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) festőit, műveiket, történetüket, stílusukat.
 - [Irodalom](../fortelyok.szabad/irodalom.md): Ismered adott [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) neves irodalmárait, íróit, költőit és stílusukat, műveiket.
 - [Kalligráfia](../fortelyok.szabad/kalligrafia.md): "A kezdőbetű bezártsága alkotójának szomorú sorsát jelzi, a belekényszerített házasság szimbolikája."

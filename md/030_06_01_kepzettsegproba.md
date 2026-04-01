@@ -296,7 +296,7 @@ A helyettesítő képzettség(ek) értelemszerűen legfeljebb `5.szintű` helyet
 A karakter egy bűntény helyszínén gyanús személyekkel találkozik. Kikérezné őket, **Nyomozás** képzettségpróbát kéne dobnia. Mivel **Nyomozás** képzettsége csak `2.szintű`, ezért egy kapcsolódó képzettsége segítségére támaszkodik, amiben sokkal járatosabb és le is fedi az aktuális szituációban szükséges ismeretet. A KM az adott helyzetben ezt jól megindokoltnak látja, így engedélyezi.
 
 - Nyomozás `2.szint`
-- Emberismeret: `9.szint`  (Nyomozás képzettség helyettesítése)
+- Emberismeret: `9.szint` (Nyomozás képzettség helyettesítése)
 
 Ebben az esetben az **Emberismeret** képzettség az, amely helyettesítő képzettségként működik, ezért annak `1/3`-a működhet **Nyomozás** képzettségként (a próba idejére): `9/3 = 3`
 

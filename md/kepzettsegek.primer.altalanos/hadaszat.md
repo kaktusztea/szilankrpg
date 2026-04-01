@@ -22,7 +22,7 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 
 ### Erős kiterjesztés
 
-- [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md):  Ismered a régi háborúk hadászati emlékeit. "A IX. Zászlóháború idején P.sz. 2885-ben Siren4rban felbukkant Nyolcadik Vörös lobogó hordozója, Unn4m4li4r vyvern-lovasai alkalmazták először az alacsonyan repülő, mélységi beszivárgás módszerét."
+- [Történelemismeret](../fortelyok.altalanos/tortenelemismeret.md): Ismered a régi háborúk hadászati emlékeit. "A IX. Zászlóháború idején P.sz. 2885-ben Siren4rban felbukkant Nyolcadik Vörös lobogó hordozója, Unn4m4li4r vyvern-lovasai alkalmazták először az alacsonyan repülő, mélységi beszivárgás módszerét."
 
 <br />
 

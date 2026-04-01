@@ -27,7 +27,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
 
 🌟 **Hatás**:
-- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén:  `SP:+2` (csak vértmentes ponton)
+- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén: `SP:+2` (csak vértmentes ponton)
 - [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) harci helyzet esetén `SP:+2` (csak vértmentes ponton)
 <br />
 
@@ -39,7 +39,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
-- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén:  `SP:+4` (csak vértmentes ponton)
+- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén: `SP:+4` (csak vértmentes ponton)
 - [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) harci helyzet esetén `SP:+4` (csak vértmentes ponton)
 <br />
 

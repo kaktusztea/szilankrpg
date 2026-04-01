@@ -24,7 +24,7 @@ Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése.
   - [Heraldika](../fortelyok.szabad/heraldika.md)
   - [Jogismeret](../fortelyok.szabad/jogismeret.md)
   - [Pénzügyek](../fortelyok.szabad/penzugyek.md)
-  - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md)  (ennél használható a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)) képzettség is
+  - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md) (ennél használható a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)) képzettség is
 
 Példákhoz lásd a fenti, kapcsolódó fortélyok **Nyomozás** képzettséghez kapcsolódó leírásait.
 

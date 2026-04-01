@@ -77,7 +77,7 @@ Egy játékalkalom alatt `1x`, tehát egyetlen alkalommal költhetsz `1 db` Szil
 
 ## 🔆 `3 ÉP` visszatér: `1 Szilánk`
 
-Ezzel narratív irányba terelheted a harc folyását, végzetes helyzetekben visszakaphatsz `3 ÉP`-t  `1` Szilánkért cserébe.
+Ezzel narratív irányba terelheted a harc folyását, végzetes helyzetekben visszakaphatsz `3 ÉP`-t `1` Szilánkért cserébe.
 
 <br />
 

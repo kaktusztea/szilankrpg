@@ -11,6 +11,6 @@ Hogy az adott kultúrkörben képes legyél aktívan művelni (írni, előadni) 
 - [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) - adott kultúra ismerete (`E`)
 - [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - adott nyelv Udvari foka
 
-A passzív fogyasztásra (Művészetismeret) csak a  "[Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - Udvari fok" a követelmény.
+A passzív fogyasztásra (Művészetismeret) csak a "[Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) - Udvari fok" a követelmény.
 
 ---

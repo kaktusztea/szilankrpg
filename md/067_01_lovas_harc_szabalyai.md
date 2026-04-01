@@ -11,7 +11,7 @@ Lenti bónuszok
 nem járnak
 ```
 
-Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) / [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. Ilyen képzetlen helyzetben a fenti `TÉ/VÉ` büntetésen felül  semmilyen lent leírt bónusz sem jár.
+Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) / [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. Ilyen képzetlen helyzetben a fenti `TÉ/VÉ` büntetésen felül semmilyen lent leírt bónusz sem jár.
 
 ---
 ## Lovas/Léglovas harcértékek kiszámítása

@@ -215,7 +215,7 @@ Láncos fegyverrel foglyul ejtett fegyveredet kiszabadítod.
 ---
 ### Lefegyverzés / Fegyvertörés
 
-Ha meg akarod fosztani ellenfeledet fegyverétől, vagy kiütve kezéből, vagy annak eltörésével, akkor lefegyverezés manővert kell alkalmaznod. Azokra a Harcmodorokra és fegyverre kapod meg az adott szint bónuszát, amelyek követelményeit teljesíted.  Hogy fegyvercsellel, végtagsebzéssel, vagy fegyvertöréssel fosztja meg ellenfelét a karakter, arról a KM dönt és az esetleges módosítókat is ő határozza meg.
+Ha meg akarod fosztani ellenfeledet fegyverétől, vagy kiütve kezéből, vagy annak eltörésével, akkor lefegyverezés manővert kell alkalmaznod. Azokra a Harcmodorokra és fegyverre kapod meg az adott szint bónuszát, amelyek követelményeit teljesíted. Hogy fegyvercsellel, végtagsebzéssel, vagy fegyvertöréssel fosztja meg ellenfelét a karakter, arról a KM dönt és az esetleges módosítókat is ő határozza meg.
 
 ❌ Karmok és szarvak ellen nem használható a Manőver, ott **Csonkolás** szükséges.
 
@@ -249,7 +249,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Területre támadás](#ter%C3%B
 
 **Hatás**:
 - Ha a sebzés eléri az áldozat `Max ÉP / 4 ↓` értéket, akkor az az eszméletét veszti.
-- Ha nem éri el, akkor az áldozat eszméletén marad, de ✴️  [Eszmélet (2) Bódultság](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g) Státuszt kap és annak módosítóival harcol tovább. A **Hátulról támadás** szituáció megszűnik.
+- Ha nem éri el, akkor az áldozat eszméletén marad, de ✴️ [Eszmélet (2) Bódultság](082_statuszok.md#%EF%B8%8F-eszm%C3%A9let-1-b%C3%B3dults%C3%A1g) Státuszt kap és annak módosítóival harcol tovább. A **Hátulról támadás** szituáció megszűnik.
 - A sebzés `FP` sebesülésként jelenik meg mindkét esetben.
 
 **Megjegyezés**: a **Fegyver markolat** sebzése: `k20 + 0 SP + Erőbónusz` (Zúzó)
@@ -345,7 +345,7 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpr
 - Nehézség: `6`
 - Fázisok:
   - Észrevétlen támadás esetén: `Ellenpróba`
-  - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba`  (`V`: standard, fegyveres VÉ ellen)
+  - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
 - Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
 
 **Hatás**:
@@ -390,7 +390,7 @@ Ha kezedben legalább `1` pengével nagyobb fegyver forog, mint Ellenfeled kezé
 
 - Nehézség: `5`
 	- `[-3; 0]`: Harci alakzatban használva. Az alakzatok méretét, jellemzőit ismerve a KM dönt.
-- Fázisok: `Megakasztás*  Ellenpróba`
+- Fázisok: `Megakasztás* Ellenpróba`
 - Követelmény:
     - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny)
     - Harcmodor - `5.szint`

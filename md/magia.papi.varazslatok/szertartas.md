@@ -10,7 +10,7 @@
 
 #### Kisszféra
 
-**3.szint:**  Szentelés, Áldozat, Áldás, Névadás, Összeesketés, Temetés
+**3.szint:** Szentelés, Áldozat, Áldás, Névadás, Összeesketés, Temetés
 
 **5.szint:** föld, termény megáldása: csökkenti a természeti katasztrófák, vagy a rossz termés esélyét
 

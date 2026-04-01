@@ -235,7 +235,7 @@ VÉ: 40
 ---
 ### Gustav harmadik sebe  (`S4` kategória)
 
-Bár sikerül sebet ejtenie  támadóján (`8 ÉP`-t). A sors nem kedvez a lovagnak, a gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás hatalmas (`21 SP`), de a láncing rengeteget (`10`) felfog.
+Bár sikerül sebet ejtenie támadóján (`8 ÉP`-t). A sors nem kedvez a lovagnak, a gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás hatalmas (`21 SP`), de a láncing rengeteget (`10`) felfog.
 
 ```
 Tetves Sebzés dobás:

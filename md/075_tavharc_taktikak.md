@@ -84,7 +84,7 @@ Egyszerre két kézzel `1-1` fegyvert elhajítani. Ebben a szituációban `2`db 
 
 A fegyver méretének az **Erő** Tulajdonság és a KM józan esze szab határt.
 
-[Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély megléte esetén csak az egyik `CÉ` dobást sújtja a  `Hátrány-1` büntetés.
+[Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély megléte esetén csak az egyik `CÉ` dobást sújtja a `Hátrány-1` büntetés.
 
 ---
 

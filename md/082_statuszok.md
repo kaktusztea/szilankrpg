@@ -379,7 +379,7 @@ Automatikus kudarc
   (nincs harcérték bónusz)
 ```
 
-Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély,  [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
+Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély, [Harci akrobatika](fortelyok.harci/harci_akrobatika.md) fortély
 
 ⚡ Példa: éhhalál szélén tengődés
 

@@ -253,7 +253,7 @@ Előtörténet, eddigi kalandok.
 ### Hatás: Mágikus karmához jutsz.
 
 - Esőben varázsló (`30 %`): esőben hatékonyabban varázsol, viszont például sivatagban büntetést kap.
-- Tömegben varázsló (`20 %`):  a nagy embertömeg „tuningolja”, ott könnyebben alkalmaz mágiát. Egy kihalt területen viszont büntetés sújtja.
+- Tömegben varázsló (`20 %`): a nagy embertömeg „tuningolja”, ott könnyebben alkalmaz mágiát. Egy kihalt területen viszont büntetés sújtja.
 - Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
 - stb
 

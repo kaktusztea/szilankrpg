@@ -27,7 +27,7 @@ Csapda komplexitásától függő **Nehézség** (maximum: a készítő által m
 
 [Lexikum](../kepzettsegek.szekunder/lexikum.md) + Intelligencia/Ügyesség/Emlékezet (KM dönt)
 
-- **Erős kiterjesztés**:  [Mechanika](../fortelyok.altalanos/mechanika.md) (`2.foktól` ugye bónusz is jár)
+- **Erős kiterjesztés**: [Mechanika](../fortelyok.altalanos/mechanika.md) (`2.foktól` ugye bónusz is jár)
 
 ---
 

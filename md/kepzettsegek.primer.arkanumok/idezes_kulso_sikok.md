@@ -139,7 +139,7 @@ Alacsonyrendű és közrendű démonokat lehetséges megkötni, rabszolgává te
 ---
 ##### SFÉ irányelv
 
-A démonoknak  van egy elég nagy SFÉ-je sima fegyver ellen, de nem sebezhetetlenek. Ez az SFÉ nem számít mágikus, vagy áldott fegyver ellen.
+A démonoknak van egy elég nagy SFÉ-je sima fegyver ellen, de nem sebezhetetlenek. Ez az SFÉ nem számít mágikus, vagy áldott fegyver ellen.
 
 ---
 ##### Gyertya

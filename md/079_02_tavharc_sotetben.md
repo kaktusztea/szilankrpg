@@ -40,7 +40,7 @@ CÉ = – 15(konstans)
 ```
 Érzékenység: +2
 ```
-A játékos először is dob `k10`-el:  ha az eredmény nagyobb, vagy egyenlő `(10-2)=8` értékkel, amire `30%` esély van, akkor dobhat Célzást, egyébként automatikusan célt téveszt.
+A játékos először is dob `k10`-el: ha az eredmény nagyobb, vagy egyenlő `(10-2)=8` értékkel, amire `30%` esély van, akkor dobhat Célzást, egyébként automatikusan célt téveszt.
 
 ---
 ### `I/3` A célpont Védő Értéke vaksötétben
