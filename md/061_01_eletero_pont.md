@@ -17,9 +17,9 @@ A fenti ábra 32 ÉP
   elosztását mutatja be
 ```
 
-Az állapot romlásának hatásait a már említett a [Sebesülés](061_03_sebesules.md) fejezetben ismertetjük.
+🔆 Az állapot romlásának hatásait a már említett a [Sebesülés](061_03_sebesules.md) fejezetben ismertetjük.
 
- A maradékot balról jobbra osztjuk el az oszlopok között.
+🔆 A Játékos Karakterek összes `ÉP` értéke `4`-gyel osztható. Amennyiben olyan **Nem Játékos Karakterek**, vagy lények/szörnyek értékeit kell kiszámolni, amelyek `ÉP` értéke nem osztható néggyel, akkor a maradék pontokat balról jobbra osztjuk el az oszlopok között.
 
 ---
 
