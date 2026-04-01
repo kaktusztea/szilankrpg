@@ -22,6 +22,6 @@ Az állapot romlásának hatásait a már említett a [Sebesülés](061_03_sebes
 
 ---
 
-🔗 [Fáradság Pont](061_02_faradsag_pont.md) →
+🔗 [Fáradtság Pont](061_02_faradtsag_pont.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)

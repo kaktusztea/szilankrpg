@@ -69,7 +69,7 @@ A [Kiemelt Fortélyok](041_kiemelt_fortelyok.md) három egyedi ismeretet adnak, 
 
 A [Szabad Fortélyok](042_szabad_fortelyok.md) - melyekből Tapasztalati Szintenként `1 db` **ingyen jár** - specializált, egy, vagy több képzettséget [kiterjesztő](030_08_01_kepzettsegek_fortelyok_kapcsolata.md#2-k%C3%A9pzetts%C3%A9gek-kiterjeszt%C3%A9se-fort%C3%A9lyokkal) ismeretek.
 
-A "Pszí Telekinézis" és "Pszí Telepátia" Fortélyok közt található.
+A "Pszí Telekinézis" és "Pszí Telepátia" ismeretek is a Fortélyok közt találhatóak.
 
 Fontos kiemelni a [Mesterfegyver](fortelyok.harci/mesterfegyver.md) harci fortélyt amely egy konkrét fegyver hatékonyabb használatát foglalja magában.
 
@@ -98,8 +98,8 @@ A [Hátterek](020_hattererek.md) számos érdekes aspektussal ruházhatják fel 
 
 Jöhetnek a [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md) kiszámításai. Ezek a jellemzők nem kerülnek külön pontba, a karakter meglevő ismereteinek értékeiből számoljuk ki őket:
 
-- [Életerő Pont és Fáradság Pont](010_10_01_ep_fp.md)
-- [Manőver Pontok](066_02_manover_pontok.md)
+- [Életerő Pont és Fáradtság Pont](010_10_01_ep_fp.md)
+- [Manőver Pontok](010_10_03_manover_pontok_99.md)
 - [Mágiaellenállás](010_10_04_magiaellenallas.md)
 - [Méregellenállás](010_10_05_meregellenallas.md)
 

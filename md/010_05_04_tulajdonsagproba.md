@@ -162,7 +162,7 @@ Ha az eredmények azonosak, akkor patthelyzet alakul ki, a KM belátása szerint
 ---
 ### Sérülés hatása tulajdonságpróbára
 
-Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják a tulajdonságpróbáit.
+Ha megsérül a karakter és `S3`, vagy `S4` sebesülés-kategóriába került, akkor ["Sérült" Státuszt](082_statuszok.md#%EF%B8%8F-s%C3%A9r%C3%BClt-1-s3) kap és az ott leírtak szerinti hatások sújtják a tulajdonságpróbáit.
 
 ---
 

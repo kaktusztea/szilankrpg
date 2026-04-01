@@ -11,7 +11,7 @@ VÉ: Védő Érték
 CÉ: Célzó Érték
 ```
 
-A fenti értékek öt jellemzőből épülnek fel:
+A fenti értékek hat jellemzőből épülnek fel:
 
 ```
 → Harcérték Alap
@@ -22,7 +22,7 @@ A fenti értékek öt jellemzőből épülnek fel:
 → Fegyver harcértékei
 ```
 
-Az alábbiakban részletesen kifejtjük a `4` hacrérték kiszámítási módját, valamint hogy mi és hogyan képes még módosítani őket.
+Az alábbiakban részletesen kifejtjük a `4` harcérték kiszámítási módját, valamint hogy mi és hogyan képes még módosítani őket.
 
 ---
 ### Harcérték Alapok
@@ -112,7 +112,7 @@ A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott f
 ---
 ### Védő Érték (`VÉ`)
 
-A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képességét, hogy mennyire hatásosan képes elhárítani, elkerülni az ellene intézett csapásokat. Értéke nem mondható állandónak, hisz a harci helyzettől függően változik, ráadásul kihat rá a testi, szellemi fáradság (lásd [VÉ csökkenés](064_02_03_vedo_ertek_csokkentese.md)) és persze a [sebesülés](061_03_sebesules.md) is.
+A Védő Érték szimbolizálja a karakter közelharcban nyújtott azon képességét, hogy mennyire hatásosan képes elhárítani, elkerülni az ellene intézett csapásokat. Értéke nem mondható állandónak, hisz a harci helyzettől függően változik, ráadásul kihat rá a testi, szellemi fáradtság (lásd [VÉ csökkenés](064_02_03_vedo_ertek_csokkentese.md)) és persze a [sebesülés](061_03_sebesules.md) is.
 
 ```
 🗡️ Védő Érték meghatározása

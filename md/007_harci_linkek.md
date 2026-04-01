@@ -29,7 +29,7 @@
 ---
 ### Egészség
 
-[Fáradtság Pont](061_02_faradsag_pont.md)
+[Fáradtság Pont](061_02_faradtsag_pont.md)
 
 [Sebesülés](061_03_sebesules.md)
 

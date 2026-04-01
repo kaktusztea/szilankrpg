@@ -4,7 +4,7 @@ Itt tárgyaljuk a karakter életerővel, sebesüléssel kapcsolatos értékeit, 
 
 ### [Életerő Pont (ÉP)](061_01_eletero_pont.md)
 
-### [Fáradság Pont (FP)](061_02_faradsag_pont.md)
+### [Fáradtság Pont (FP)](061_02_faradtsag_pont.md)
 
 ### [Sebesülés](061_03_sebesules.md)
 

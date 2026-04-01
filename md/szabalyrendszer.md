@@ -37,7 +37,7 @@
   - [Fortélyok](010_08_03_fortelyok_99.md)
 - [Primer és Szekunder ismeretek](010_09_primer_szekunder_ismeretek.md)
 - [Származtatott értékek](010_10_00_szarmaztatott_ertekek.md)
-  - [Életerő Pont (ÉP), Fáradság Pont (FP)](010_10_01_ep_fp.md)
+  - [Életerő Pont (ÉP), Fáradtság Pont (FP)](010_10_01_ep_fp.md)
   - [Harcértékek](010_10_02_harcertekek_99.md)
   - [Manőver Pontok (MP)](010_10_03_manover_pontok_99.md)
   - [Mágiaellenállás](010_10_04_magiaellenallas.md) 🎲
@@ -108,7 +108,7 @@
 ### 6.1 [Életerő, Sebesülés](061_00_eletero.md)
 
 - [Életerő Pont (ÉP)](061_01_eletero_pont.md)
-- [Fáradság Pont (FP)](061_02_faradsag_pont.md)
+- [Fáradtság Pont (FP)](061_02_faradtsag_pont.md)
 - [Sebesülés](061_03_sebesules.md)
 - [Fájdalomtűrés sebesüléskor](061_04_fajdalomtures_sebesuleskor.md)
 - [Példa sebesülésre](061_05_pelda_sebesulesre.md)
