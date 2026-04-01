@@ -143,7 +143,7 @@ Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehe
 
 ⚜️ Ha `6` vagy annál nagyobb különbséggel (`2` tudás fok) dobtál sikert, akkor kiemelten jól sikerült a próba.
 
-A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje el. Például különösen jól sikert a hamisítás és egy játékostársa némi előnyhöz juthat a Meggyőzés próbája során. Ha a KM-nek nem tetszik a játékos ötlete, felülbíráhatja.
+A fenti kudarcnak/sikernek narratív hatása van, ezt maga a játékos mesélje el. Például különösen jól sikerült a hamisítás és egy játékostársa némi előnyhöz juthat a Meggyőzés próbája során. Ha a KM-nek nem tetszik a játékos ötlete, felülbírálhatja.
 
 <br />
 

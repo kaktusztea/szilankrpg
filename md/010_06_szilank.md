@@ -33,7 +33,7 @@ Következő Kaland elején mind
   1 értékre áll vissza
 ```
 
-Minden kaland elején a JK Szilánk és a Csapat Szilánk értéke is visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét - az ellenfelek lemészárlása **nem** tartozik ide. A fenti lehet konzisztens alakítás, de csúcsjeleneletek, fontos pillanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
+Minden kaland elején a JK Szilánk és a Csapat Szilánk értéke is visszaáll `1`-re. A kaland során szerezhető Szilánk, ha a KM úgy ítéli a játékos hűen játssza ki karaktere személyiségét - az ellenfelek lemészárlása **nem** tartozik ide. A fenti lehet konzisztens alakítás, de csúcsjelenetek, fontos pillanatok is, ahol - akár a parti érdekeivel ellentétesen is -, de karaktere jellemének megfelelően hoz fontos döntést a játékos.
 
 Egy kaland során
 - `1` új Szilánkot szerezni nagy dolognak számít

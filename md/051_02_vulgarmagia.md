@@ -4,7 +4,7 @@
 
 <br />
 
-A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Vulár-Metamágia Arkánum](#vulg%C3%A1r-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
+A karakter dönthet úgy, hogy megáll `6.` szinten a Tradícióban, ez nem korlátozza semmiben. Amiért mégis megérheti, az az azonos szintű [Vulgár-Metamágia Arkánum](#vulg%C3%A1r-metam%C3%A1gia-ark%C3%A1num), aminek nehezebb formulái magasabb szinten érhetőek el.
 
 Most lássuk a **Vulgármágia Tradíció** egyes szintjeihez rendelt jellemzőket:
 

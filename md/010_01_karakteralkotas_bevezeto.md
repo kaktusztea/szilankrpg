@@ -4,7 +4,7 @@ Milyen jellegűek a Szilánk karakterei?
 
 Fontos különbség más, hagyományos rendszerekhez képest, hogy a Szilánk karaktereinek **nincs kasztja**, sem alap tudáskészlete, így minden jellemzőjét neked kell meghatároznod nulláról - viszont ez sokkal nagyobb szabadságot is ad, még ha több számolással is jár. Ez utóbbiban nyújt hatalmas segítséget az automatizált [Karakteralkotó](010_02_karakteralkoto_ods.md).
 
-Mikor karaktert alkotsz, először fejben elképzeled a küllemét, a jellemét, a származását, hogy mihez ért, miben jó, milyen ismereteket tanult eddigi pályafutása során, majd jöhetnek a számokkal ennek megfeletetett, modellezett jellemzői.
+Mikor karaktert alkotsz, először fejben elképzeled a küllemét, a jellemét, a származását, hogy mihez ért, miben jó, milyen ismereteket tanult eddigi pályafutása során, majd jöhetnek a számokkal ennek megfeleltetett, modellezett jellemzői.
 
 Ha egyből fejest ugranál a közepébe, a [Példakarakter megalkotása](010_12_peldakarakter_megalkotasa.md) fejezetben lépésről lépésre bemutatjuk a folyamatot. Mindazonáltal érdemes lehet előbb elolvasni a megelőző fejezeteket is.
 
@@ -34,7 +34,7 @@ Hogy a KM hányadik szintet engedélyez kezdésnek, az csak rajta és a parti j�
 [-5; 5]
 ```
 
-Folytatásként a `8 db` egyedi [Tulajdonságod](010_05_01_00_tulajdonsagok_listaja.md) értékét kell meghatároznod `[-5; 5]` intervallumban **Tulajdonságpontok** elosztásával. A fenti intervallumot a [Fajok](021_faj_hatterek.md) egyedi jellmzői módosíthatják.
+Folytatásként a `8 db` egyedi [Tulajdonságod](010_05_01_00_tulajdonsagok_listaja.md) értékét kell meghatároznod `[-5; 5]` intervallumban **Tulajdonságpontok** elosztásával. A fenti intervallumot a [Fajok](021_faj_hatterek.md) egyedi jellemzői módosíthatják.
 
 <br />
 
@@ -127,7 +127,7 @@ A lenti folyamat leginkább karakterközpontú játékosok számára ajánlott, 
 
 Az elvont és színesítő ismeretek felől haladunk a "tápos" irányba. A harci, misztikus ismeretek meghatározása történik a folyamat legvégén.
 
-- `1.` Karakter előtörténeténetének kidolgozása - számok nélkül
+- `1.` Karakter előtörténetének kidolgozása - számok nélkül
 - `2.` Karakter jelleme, személyiségének meghatározása
 - `3.` Szabad Fortélyok kiválasztása
 - `4.` Szekunder KP elköltése

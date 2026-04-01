@@ -249,7 +249,7 @@
   - [Varázslat Erőssége](102_04_varazslat_erossege.md)
   - [Varázskeret, Rekeszek](102_05_varazskeret_rekeszek.md)
   - [Varázslat Komplexitása](102_06_varazslat_komplexitasa.md)
-  - [Példa Erősség és Kompexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)
+  - [Példa Erősség és Komplexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)
   - [Példa Arkánum és Metódus viszonyára](102_08_pelda_arkanum_es_motodues_viszonyara.md)
 - [Aura](103_00_aura.md)
   - [Aura jellemzői](103_01_aura_jellemzoi.md)

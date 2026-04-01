@@ -71,7 +71,7 @@ CÉ = 3 + 6 = 9
 
 Lássunk egy bonyolultabb esetet.
 
-Tetves ezúttal ősi nemezisét Rühest, a cingár, aprótermetű tolvajt próbája rövid íjával eltaláni, miközben az az enyhe ködben, a tetőkön oson. Rühes lassú, egyenletes mozgással üget végig egy tetőgerincen `12` méter távolságra.
+Tetves ezúttal ősi nemezisét Rühest, a cingár, aprótermetű tolvajt próbálja rövid íjával eltalálni, miközben az az enyhe ködben, a tetőkön oson. Rühes lassú, egyenletes mozgással üget végig egy tetőgerincen `12` méter távolságra.
 
 Tetves a szomszédos balkonon áll, de rövid íját megfeszítve, lassan sétálnia kell, hogy Rühes ne kerüljön ki a látóteréből. Balszerencséjére enyhe szél is fúj, így a célzás tovább nehezedik. Az észlelést továbbá enyhe köd és sötét bonyolítja - csak az épületek lámpafénye és a Vörös Hold segíti a látást.
 

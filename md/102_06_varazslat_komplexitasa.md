@@ -27,6 +27,6 @@ Magasmágia esetén minél több az **Arkánum db**, annál veszélyesebb - inte
 
 ---
 
-🔗 [Példa Erősség és Kompexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md) →
+🔗 [Példa Erősség és Komplexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#10-mágiarendszer-)

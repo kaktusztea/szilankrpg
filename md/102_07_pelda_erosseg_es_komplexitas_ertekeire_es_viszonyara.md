@@ -1,4 +1,4 @@
-# ⚡Példa Erősség és Kompexitás értékeire és viszonyára
+# ⚡Példa Erősség és Komplexitás értékeire és viszonyára
 
 ```
 Óriást átalakítani lepkévé

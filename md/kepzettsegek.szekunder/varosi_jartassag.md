@@ -92,7 +92,7 @@ Példa: keresek egy koldust, aki járatos a piac pletykáiban.
 
 - Titkos társaság szokásait kiismerni.
 - Feltérképezni egy alvilági informátorhálózatot (összetett próba).
-- Létező előljáró botrányát kideríteni a köznép szóbeszéde alapján.
+- Létező elöljáró botrányát kideríteni a köznép szóbeszéde alapján.
 
 #### Emberfeletti (21) 🎲
 

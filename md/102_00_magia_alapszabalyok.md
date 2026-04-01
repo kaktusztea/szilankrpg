@@ -12,7 +12,7 @@
 
 ## [Varázslat Komplexitása](102_06_varazslat_komplexitasa.md)
 
-## [Példa Erősség és Kompexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)⚡
+## [Példa Erősség és Komplexitás értékeire és viszonyára](102_07_pelda_erosseg_es_komplexitas_ertekeire_es_viszonyara.md)⚡
 
 ## [Példa Arkánum és Metódus viszonyára](102_08_pelda_arkanum_es_motodues_viszonyara.md)⚡
 
