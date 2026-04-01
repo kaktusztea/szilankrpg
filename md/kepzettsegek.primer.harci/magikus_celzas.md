@@ -11,7 +11,7 @@ Ez egy [Primer (harci) képzettség](../010_09_primer_szekunder_ismeretek.md). E
 
 ### Kapcsolódik
 
-- [Tácolsági harc csatamágia esetén](../076_tavharc_csatamagia_eseten.md) fejezet
+- [Távolsági harc csatamágia esetén](../076_tavharc_csatamagia_eseten.md) fejezet
 - [Harcmodor](harcmodor.md) képzettség
 - [Távolsági harcmodor](tavolsagi_harcmodor.md) képzettség
 - [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) fortély egyes fokainak követelménye

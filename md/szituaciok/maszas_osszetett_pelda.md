@@ -43,7 +43,7 @@ A lépést elérte, de nem bírja már a testsúlyát rendesen áthelyezni, a vi
 ⚙️ `+2`-es **Erő** bevetése: az aktuális mászás során a játékos elhasználhat pontokat karaktere `Erő` Tulajdonságából (maximum `0` értékre mehet le), amiből utána percenként `1` pont tér vissza (bővebben lásd a [Mászás képzettség leírását](../kepzettsegek.szekunder/maszas.md#erő-bevetése-rontott-mászás-utáni-mentő-képzettségpróba-dobásnál)). Tetves felhasználja mind a két **Erő** pontját.
 
 ⚙️ Mászás képzettségpróba: fel tudja-e húzni magát a kitett helyzetből - erőtartalékai bevetésével?\
-⚙️ A Nehézség `+3` az eredetihez képesz, így `15+3 = 18`, azaz Rendkívül nehéz próba
+⚙️ A Nehézség `+3` az eredetihez képest, így `15+3 = 18`, azaz Rendkívül nehéz próba
 
 `Mászás(7)+Ügyesség(3)+Erő(2) = 12 + k10`
 

@@ -22,7 +22,7 @@ Emberi látás, sötétben nem látsz hőképeket.
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 2.fok**, mint felvehető Érzék-fortély
 
-🌟 Ha van a hőképben eltérés, látod a sötétben - legyenek akár élőlények, akár tárgyak. Amenyiben ez teljesül, a harcban nem jár számodra levonás.
+🌟 Ha van a hőképben eltérés, látod a sötétben - legyenek akár élőlények, akár tárgyak. Amennyiben ez teljesül, a harcban nem jár számodra levonás.
 
 ---
 ### Egyedi jellemzők

@@ -30,7 +30,7 @@ Lásd az [Ellopni valamit, kirabolni valakit](../szituaciok/lopas_kirablas.md) s
 
 #### Csoportos szellemi képzettségpróba ellenpróbánál
 
-Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módon a Lopás képzettségedre dobsz, a megfigyelők pedig a [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szabályai szerint Észlelés képzettsépróbát.
+Ha többen is lebuktathatnak, akkor az **ellenpróba** során te szokásos módon a Lopás képzettségedre dobsz, a megfigyelők pedig a [csoportos szellemi képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-2-csoportos-szellemi-képzettségpróba) szabályai szerint Észlelés képzettségpróbát.
 
 <br />
 

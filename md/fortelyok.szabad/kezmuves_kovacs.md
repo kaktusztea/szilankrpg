@@ -10,7 +10,7 @@ Alap kovácsmesterség. Fémből kalapálsz ki lópatkókat, kapákat, ásókat,
 
 ### Kapcsolódik
 
-- [Kézművés: Fegyverkovács](../fortelyok.altalanos/kezmuves_fegyverkovacs.md) fortély
+- [Kézműves: Fegyverkovács](../fortelyok.altalanos/kezmuves_fegyverkovacs.md) fortély
 - [Kézműves: Páncélkovács](../fortelyok.altalanos/kezmuves_pancelkovacs.md) fortély
 
 ---
