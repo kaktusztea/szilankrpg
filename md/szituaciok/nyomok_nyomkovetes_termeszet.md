@@ -8,7 +8,7 @@ Klasszikus szituáció mikor a természetben kell nyomokat észrevenni, értelme
 "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 
 [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) képzettségpróba
-- **Nehézség**: a nyom észrevételének bonyolultságának megfelelő megfelelő szint ellen
+- **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
 - **Normál Kiterjesztés egyszerre mindkettőre**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) ÉS [Tájtípus](../042_szabad_fortelyok.md#tanulható-szabad-fortélyok-listája) (aktuális tájra) fortély
 
 <br />
