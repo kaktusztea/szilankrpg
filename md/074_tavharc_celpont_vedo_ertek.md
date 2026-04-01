@@ -46,7 +46,7 @@ Célpont VÉ =
 
 → A képlet majdnem ugyanaz, de nem szorzás, hanem **összeadás** történik.
 
-→ Ha a Szorzó értéke éppen `0`, a cépont `Védő Értéke` akkor is kiszámolható a fenti képlettel.
+→ Ha a Szorzó értéke éppen `0`, a célpont `Védő Értéke` akkor is kiszámolható a fenti képlettel.
 
 ---
 

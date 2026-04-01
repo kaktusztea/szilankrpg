@@ -14,7 +14,7 @@ Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyo
 <br />
 
 ---
-### Nyomok értelmezése városi környzetben 🏠
+### Nyomok értelmezése városi környezetben 🏠
 
 Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése. Felfedezett titkosírás elemzése.
 

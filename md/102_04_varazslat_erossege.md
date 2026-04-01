@@ -20,7 +20,7 @@ Több eset lehetséges adott varázslatod Erősségének megállapítására.
 
 `1.` Az adott varázslat leírásában szerepel egy fix érték.
 
-`2.` Te számolod ki / mondod meg, hogy mekkora Erősségű varázslatot szeretnél alkalmazni - amennyiben a Formula skálázható, mint példul egy tűznyíl.
+`2.` Te számolod ki / mondod meg, hogy mekkora Erősségű varázslatot szeretnél alkalmazni - amennyiben a Formula skálázható, mint például egy tűznyíl.
 
 `3.` A KM mond egy `1-15` közötti értéket az általad szóban leírt, kívánt hatás alapján.
 

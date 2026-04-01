@@ -377,7 +377,7 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
 	- Végrehajtás során **❗ nem kapod meg a +4 TÉ módosítót ❗**, sima támadást dobsz! Ha a Végrehajtás sikeres, dobhatod az Ellenpróbát.
 - Követelmény: Aktuális harcmodor - `6.szint`
 
-**Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület eseténa [Harci Anatómia](fortelyok.harci/harci_anatomia.md) **SP** bónusz érvényesül.
+**Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén a [Harci Anatómia](fortelyok.harci/harci_anatomia.md) **SP** bónusz érvényesül.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély.
 

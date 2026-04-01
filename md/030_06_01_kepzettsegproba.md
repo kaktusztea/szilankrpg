@@ -263,7 +263,7 @@ Különleges eset az ilyen. Olyankor fordulhat elő, mikor hosszabb, összetette
 
 ### ⚡Konkrét példa
 
-Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kihozzák hátasukból a maximumot, figyelnek a pihenésre, etetésre, a fenntartható maximális tempóra. Az ellepróba azt dönti el, utoléri-e az üldöző áldozatát.
+Hősünket napokon át üldözi egy felbérelt zsoldos lóháton. Mindketten kihozzák hátasukból a maximumot, figyelnek a pihenésre, etetésre, a fenntartható maximális tempóra. Az ellenpróba azt dönti el, utoléri-e az üldöző áldozatát.
 
 ### Narratív eszköz
 

@@ -9,7 +9,7 @@ Két típusú próba dobható egymás után ugyanannál az egy próbánál. Ha b
 ---
 ### 1. Méregkeverés próba
 
-Ez a próba csak akkor dobható, ha a karakter rendelkezik [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md) képzettségel legalább `3.szinten`.
+Ez a próba csak akkor dobható, ha a karakter rendelkezik [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md) képzettséggel legalább `3.szinten`.
 
 ```
 Méregkeverés + Érzékenység

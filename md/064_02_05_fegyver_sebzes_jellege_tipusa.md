@@ -47,7 +47,7 @@ Ez egy **Harci helyzet** (státusz).
 
 Minden fegyver rendelkezik egy **elsődleges sebzési típussal**. ⚡Példa: "szúrás".
 
-Ha emellett más jelegű támadásra is alkalmas, akkor van másodlagos sebzéstípusa is (lásd lenn). Amennyiben a karakter nem jelenti be, hogy milyen típusú sebzést akar okozni majd sebzéskor, akkor mindig ezt az **elsődleges** sebzési típust vesszük alapértelmezettnek.
+Ha emellett más jellegű támadásra is alkalmas, akkor van másodlagos sebzéstípusa is (lásd lenn). Amennyiben a karakter nem jelenti be, hogy milyen típusú sebzést akar okozni majd sebzéskor, akkor mindig ezt az **elsődleges** sebzési típust vesszük alapértelmezettnek.
 
 #### ⚡Példa: Hosszú kard 2 sebzés jellege
 

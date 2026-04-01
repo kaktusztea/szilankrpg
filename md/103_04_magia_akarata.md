@@ -98,7 +98,7 @@ Metódus 3.foka esetén
  +2 Mágikus Akaratra
 ```
 
-Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, akkor `+2` bóuszt kapsz Mágikus akaratodra.
+Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, akkor `+2` bónuszt kapsz Mágikus akaratodra.
 
 <br />
 

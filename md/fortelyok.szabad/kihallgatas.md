@@ -1,6 +1,6 @@
 ## 🟣 Kihallgatás
 
-Magában fogalja a kihallgatási technikákat (nem kínzást!), a beszédtechnikát és jól bevált keresztkérdéseket, amellyel az ellentmondások felfedhetők. A fentieken kívül a kihallgatott érzelmi világát is hangolja az alkalmazó, kooperatív viselkedésre sarkallva őt.
+Magában foglalja a kihallgatási technikákat (nem kínzást!), a beszédtechnikát és jól bevált keresztkérdéseket, amellyel az ellentmondások felfedhetők. A fentieken kívül a kihallgatott érzelmi világát is hangolja az alkalmazó, kooperatív viselkedésre sarkallva őt.
 
 ### Kiterjeszti ezeket
 
