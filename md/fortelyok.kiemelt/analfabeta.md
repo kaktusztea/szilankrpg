@@ -14,6 +14,6 @@ Ez a fortély speciális, mert nincs `KP` költsége, sőt, felvételéért cser
 
 ### Kései tanulás
 
-Amennyiben karaktered később mégis megtanulnál írni/olvani,, töröld ezt a fortélyt és vonj le `6 KP` aktuális Karakteralkotó Pontjaidból.
+Amennyiben karaktered később mégis megtanulnál írni/olvasni, töröld ezt a fortélyt és vonj le `6 KP` aktuális Karakteralkotó Pontjaidból.
 
 ---

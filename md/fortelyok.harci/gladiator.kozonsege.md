@@ -13,6 +13,6 @@ Ha éltető, nagyszámú (20+) közönség előtt harcolsz, az extázis megacél
 ---
 ### Megjegyzések
 
-Valódi aréna hangulat szükséges. A szükséges konkrét létszámot, környezetet nem specifikáljuk, a KM szava dönt.
+Valódi aréna hangulat szükséges. A minumum konkrét létszámot, környezetet nem specifikáljuk, a KM szava dönt.
 
 ---
