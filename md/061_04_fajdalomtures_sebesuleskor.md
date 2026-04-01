@@ -51,7 +51,7 @@ Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fáj
 Sikertelen próba esetén a karakter elájul.\
 Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
 
-🔆 A [Harci láz](fortelyok.harci/harci_laz.md) fortély egyes fokai előnyt adnak a fenti próbára.
+🔆 A [Harci láz](kepzettsegek.primer.harci/harci_laz.md) képzettség bizonyos fokozatai felett szükségtelenné válik a fenti próba.
 
 ---
 ### ⚡ Példa Fájdalomtűrés `TÉ` módosítóira

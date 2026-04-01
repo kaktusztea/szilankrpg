@@ -6,9 +6,9 @@ A távolsági harcmodorok a távolból ható fegyverek forgatásának képesség
 
 Alább összesen 4 különálló ilyen harcmodor képzettség általános leírását találjuk:
 - Hajítás
-- Íjászat
-- Lövészet
-- Ostromlövészet
+- Íjászat 🤝
+- Lövészet 🤝
+- Ostromlövészet 🤝
 
 <br />
 

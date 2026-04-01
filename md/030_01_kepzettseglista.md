@@ -34,13 +34,15 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 ---
 ### Harci képzettségek 🅿️
 
-🔵 [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) (Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc) 🔁
+🔵 [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) 🤝
 
-🔵 [Távolsági harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) (Hajítás, Íjászat🤝, Lövészet🤝, Ostromlövészet🤝) 🔁
+🔵 [Harci láz](kepzettsegek.primer.harci/harci_laz.md)
+
+🔵 [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) 🔁
 
 🔵 [Mágikus célzás](kepzettsegek.primer.harci/magikus_celzas.md)
 
-🔵 [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) 🤝
+🔵 [Távolsági harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 🔁
 
 ---
 ### Fizikai képzettségek
