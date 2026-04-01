@@ -388,7 +388,7 @@ Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély, [Harci 
 ---
 ### ✴️ Hangulat (1) Fogékony
 
-A nem-mágikus érzékszervi, vagy érzelmi ingerek jobban hatnak rád. érzelmileg jobban megnyílsz - pozitív/negatív értelemben is.
+A nem-mágikus érzékszervi, vagy érzelmi ingerek fokozottabban hatnak rád. Érzelmileg jobban megnyílsz - pozitív és negatív értelemben is.
 
 A KM adhat valamire `Előny+1`, vagy `Hátrány-1` módosítót - hogy mire, az szituáció függő.
 
