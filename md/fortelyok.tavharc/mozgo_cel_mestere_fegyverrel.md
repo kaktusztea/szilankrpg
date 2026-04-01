@@ -11,7 +11,7 @@
 
 ### 1. fok
 
-🔒 Távolsági Harcmodor  **-** `5.szint`\
+🔒 Távolsági Harcmodor - `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 
 🌟 **Hatás**:

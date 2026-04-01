@@ -5,7 +5,7 @@ Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.
 ### 1. fok
 
 🔒 **Követelmény**:
-- Harcmodor  **-** `4.szint`
+- Harcmodor - `4.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Rombolás** vagy **Lándzsavívás**)
 - [Roham](../065_02_harci_taktikak.md#roham-taktika) taktika
 

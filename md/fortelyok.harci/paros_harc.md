@@ -7,7 +7,7 @@ Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mi
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)  **-** `3.szint` (mindkét félnek)
+- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)  - `3.szint` (mindkét félnek)
 - Két jól összeszokott társ.
 - A konkrét partnert nevesíteni kell.
 
@@ -25,7 +25,7 @@ TÉ, VÉ :+2
 ### 2. fok
 
 🔒 **Követelmény**:
-- Harcmodor  **-** `6.szint` (mindkét félnek)
+- Harcmodor - `6.szint` (mindkét félnek)
 - Két jól összeszokott társ.
 
 🌟 **Hatás**:
@@ -42,7 +42,7 @@ TÉ, VÉ :+4
 ### 3. fok
 
 🔒 **Követelmény**:
-- Harcmodor  **-** `9.szint` (mindkét félnek)
+- Harcmodor  - `9.szint` (mindkét félnek)
 - Egypetéjű ikrek, harmonikus kapcsolattal a felek között. Bővebben lásd lenn ("Ikerharc").
 
 🌟 **Hatás**:

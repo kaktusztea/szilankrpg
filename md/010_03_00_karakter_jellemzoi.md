@@ -9,6 +9,6 @@
 
 ---
 
-🔗 [Tapasztalati szint, szintlépés](010_04_tsz_szintlepes.md)  →
+🔗 [Tapasztalati szint, szintlépés](010_04_tsz_szintlepes.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)

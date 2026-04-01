@@ -39,7 +39,7 @@
 - [Szimpatikus mágia](fortelyok.magia.metodusok/szimpatikus_magia.md)
 -  ⭕ Hívás/Idézés ?
 -  ⭕ Űzés ?
--  ⭕ Írányítás ?
+-  ⭕ Irányítás ?
 -  ⭕ Hang (?)
 -  ⭕ Fény (?): Így pl. az **Illúziók** arkánum is felbontható, nem tudna mindent az alkalmazó egyben rögtön.
 

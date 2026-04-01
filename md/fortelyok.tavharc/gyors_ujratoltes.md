@@ -9,7 +9,7 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpus
 ---
 ### 1. fok
 
-🔒 Lövészet  **-** `6.szint`
+🔒 Lövészet - `6.szint`
 
 🌟 **Hatás**:
 - Már minden körben tudsz (`1x`) lőni, ha [Mozgásodat](../063_01_harci_kor.md#2-mozgás) "becseréled" az újratöltésre
@@ -17,7 +17,7 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpus
 
 ### 2. fok
 
-🔒 Lövészet  **-** `9.szint`
+🔒 Lövészet - `9.szint`
 
 🌟 **Hatás**:
 - A kilőtt nyílpuskád újratöltéséhez szükséges idő lecsökken.

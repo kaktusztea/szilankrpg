@@ -76,7 +76,7 @@ Vajákosság szint követelmény: `Gyógyítandó ÉP / 2`
 
 #### 🌟 `12.szint`
 
-⭕TODO⭕  Innen prübálkozhatsz a fizikai komponens nélküli, tisztán kézrátételes gyógyítással.
+⭕TODO⭕  Innen próbálkozhatsz a fizikai komponens nélküli, tisztán kézrátételes gyógyítással.
 
 #### 🌟 `15.szint`
 

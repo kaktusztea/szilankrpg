@@ -22,4 +22,4 @@ A mágia Asztrális befolyást végez, az mágiaellenállás így értelmezhető
 
 A varázslat átütése a játékos szóbeli meggyőzésének színvonala, hatásossága szerint további `+1-5` bónusz kaphat, mert egy jó érvelés csökkentheti az alanyok ellenállását, titkon lehet, hogy beleegyeznének amúgy is. Ha a szituáció miatt a játékosnak sikerül egyszerűen érvekkel is meggyőzni az alanyokat, a mágia akkor is létrejön, de nincs ellene mágiaellenállás - egyfajta lelki megerősítést ad csak, hogy helyesen cselekedtek.
 
-Ha a segítségre szoruló agresszíven viselkedik, az alanyokról lefoszlik az együttérzés és szabadon dönthetnek .
+Ha a segítségre szoruló agresszíven viselkedik, az alanyokról lefoszlik az együttérzés és szabadon dönthetnek.

@@ -5,7 +5,7 @@ A fortély nagy ismerői a bajvívók és harcosok.
 ### 1. fok
 
 🔒 **Követelmény**:
-- Harcmodor  **-** `6.szint`
+- Harcmodor - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 **Hatás**: [Fárasztó taktika](../065_02_harci_taktikak.md#fárasztó-taktika-) alkalmazása esetén extra `+1 VÉ` csökkentés bónuszt kapsz

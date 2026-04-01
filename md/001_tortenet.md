@@ -79,7 +79,7 @@ Eddig tartott az aktív fejlesztés. Ekkor már elég előrehaladott állapotban
 
 <br />
 
-⏸️  13,5 év szünet ⏸️
+⏸️ 13,5 év szünet ⏸️
 
 <br />
 

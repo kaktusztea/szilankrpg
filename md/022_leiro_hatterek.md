@@ -1,4 +1,4 @@
-##  Leíró Hátterek
+## Leíró Hátterek
 
 Ide tartoznak a karakter Származását, Jellemét, Küllemét leíró Hátterek.
 
