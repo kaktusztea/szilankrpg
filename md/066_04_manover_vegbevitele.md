@@ -9,7 +9,7 @@ Egy Manőver alkalmazása – jellegétől függően – legfeljebb az alábbi h
 <br />
 
 ⚜️`1.` **Megakasztás**\
-Az **Ellenfél** teszi. Sima (extra) támadás, ha sikeres, a Manőver rögtön sikertelen.
+Az **Ellenfél** teszi. Sima (extra) támadás, ami ha talál, a Manőver automatikusan sikertelen.
 
 ⚜️`2.` **Végrehajtás**\
 Manővert végző teszi. Sikeréhez sebzést érő támadás szükséges `TÉ:+4` módosítóval, de nem okoz sebet. Aktuális, fegyveres `TÉ` számít. Ha sikertelen, a Manőver rögtön sikertelen. Azért dobjuk ezt előbb, mert ez ad gyorsabban eredményt 🔆

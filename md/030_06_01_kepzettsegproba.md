@@ -63,7 +63,7 @@ Tulajdonságonként viszont eltér(het)
 - megvalósítás módja, hossza
 - rontás hatása
 
-⚡ Példa: **Ügyesség** segítségével a határoló falakon ide-oda pattogva feljutni valahova, vagy helyből **Erő** segítségével ugrani egyet felfelé. Lehet, hogy a különböző megvalósítások különböző Nehézséget eredményznek.
+⚡ Példa: **Ügyesség** segítségével a határoló falakon ide-oda pattogva feljutni valahova, vagy helyből **Erő** segítségével ugrani egyet felfelé. Lehet, hogy a különböző megvalósítások különböző Nehézséget eredményeznek.
 
 <br />
 

@@ -13,13 +13,13 @@ A Sebesülés modellel már megismerkedtünk a harcrendszer [Életerő - Sebesü
 ## ⚜️ Természetes gyógyulás
 
 ```
-1 ÉP / nap
-1 FP / óra
-2 ÉP / nap nyugodt pihenésben, alvásban
-2 FP / óra alvásban
+2 ÉP / nap
+2 FP / óra
+4 ÉP / nap nyugodt pihenésben, alvásban
+4 FP / óra alvásban
 ```
 
-Amennyiben a vérzést sikerült valamilyen módon elállítani, a sebesült karakter sebeiből `1 ÉP` 1 nap alatt, `1 FP` 1 óra alatt gyógyul meg összesen.
+Amennyiben a vérzést sikerült valamilyen módon elállítani, a sebesült karakter a fentieknek megfelelő sebességgel kezd gyógyulni.
 
 A fentiek a [Kalandozókra vonatkozó gyorsabb gyógyulás](010_03_01_kalandozok.md#gyorsabb-gyógyulás) modelljét mutatják.
 

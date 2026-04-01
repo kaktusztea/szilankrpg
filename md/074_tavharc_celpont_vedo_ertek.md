@@ -22,7 +22,7 @@ Célpont VÉ =
 ---
 ## Célzó dobás vs távolsági Védő Érték
 
-A célpont `Védő értéke` reprezentálja a célpont eltalálásának nehézségét. Ugyanolyan célszámként viselkedik, mint a rendes `Védő érték`, azaz, ha a lövést/hajítást végző karakter `Célzó Értékkel` együtt számított **Célzó dobása** eléri, vagy meghaladja ezen értéket, akkor találatról beszélünk. Amennyiben az érték alatta marad, a támadás célt téveszt.
+A célpont `Védő értéke` reprezentálja eltalálásának nehézségét. Ugyanolyan célszámként viselkedik, mint a rendes `Védő érték`, azaz, ha a lövést/hajítást végző karakter `Célzó Értékkel` együtt számított **Célzó dobása** eléri, vagy meghaladja ezen értéket, akkor találatról beszélünk. Amennyiben az érték alatta marad, a támadás célt téveszt.
 
 ```
 Támadó          Célpont

@@ -52,7 +52,7 @@ Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 ---
 ### Tartós rosszullét
 
-Ha a karakter például méregnek „köszönhetően” tartósan gyengélkedik, akkor tartósan alkalmazhatjuk az `FP`-ket, azaz a rosszullét idejére ezek megmaradnak, vagy lassabban tűnnek el.
+Ha a karakter például méregnek „köszönhetően” tartósan gyengélkedik, akkor folyamatosan alkalmazhatjuk az `FP`-ket, azaz a rosszullét idejére ezek megmaradnak, vagy lassabban tűnnek el.
 
 ---
 ### Verekedés, Kocsmai bunyó és `FP`
