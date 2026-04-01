@@ -10,7 +10,7 @@ Ez egy speciális képzettség, mert nem adott nyelvre veszed fel, hanem ez jelk
 Minden nyelv ismeretét `2` fokra osztjuk:
 
 - `1: Alap`: Képes vagy egy közember szintjén beszélni a nyelvet. Ha nem anyanyelved, akcentussal beszéled.
-- `2: Udvari`: Akcentus nélkül beszéled a nyelvet, az arosztokrácia szókincsével is rendelkezel, protokolláris kifejezéseket is ismersz.
+- `2: Udvari`: Akcentus nélkül beszéled a nyelvet, az arisztokrácia szókincsével is rendelkezel, protokolláris kifejezéseket is ismersz.
 
 ⚡ Példa: "Gorviki - Udvari"
 
