@@ -28,7 +28,7 @@ TÉ levonás
 
 🔒 Harcmodor: `3.szint`
 
-🌟 Teljes pajzs `VÉ` akítv
+🌟 Teljes pajzs `VÉ` aktív
 
 ```
 TÉ levonás
@@ -43,7 +43,7 @@ TÉ levonás
 
 🔒 Harcmodor: `5.szint`
 
-🌟 Teljes pajzs `VÉ` akítv
+🌟 Teljes pajzs `VÉ` aktív
 
 ```
 TÉ levonás
@@ -61,7 +61,7 @@ TÉ levonás
 
 🔒 Harcmodor: `8.szint`
 
-🌟 Teljes pajzs `VÉ` akítv
+🌟 Teljes pajzs `VÉ` aktív
 
 ```
 TÉ levonás nincs

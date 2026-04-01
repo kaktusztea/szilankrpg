@@ -77,7 +77,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 - Bonyolultabb titkosírás megfejtése (pl. többsoros transzpozíció).
 - Közepes szerkezet megtervezése (csiga-rendszer, daru, vízimalom).
 - Bonyolult pénzügyi trükk (adócsalás vagy nagykereskedelmi árkalkuláció) leleplezése.
-- Harcászati tékép olvasása ([Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md)) Szabad fortély kiterjesztheti (`N`).
+- Harcászati térkép olvasása ([Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md)) Szabad fortély kiterjesztheti (`N`).
 
 #### Nagyon nehéz (15) 🎲
 
