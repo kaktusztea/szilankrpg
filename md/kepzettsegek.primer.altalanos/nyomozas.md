@@ -44,7 +44,7 @@ Intelligencia, Emlékezet
 
 - [Információ szerzés valakitől](../szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
-- [Nyomok értelmezése, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md#nyomok-értelmezése-városi-környzetben-)
+- [Nyomok értelmezése, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md#nyomok-értelmezése-városi-környezetben-)
 
 <br />
 
