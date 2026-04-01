@@ -11,7 +11,7 @@ Minden varázslatnak van, vannak Szféra követelménye(i). Amennyiben minden Sz
 
 Az adott varázslathoz szükséges Szférák közül a karakter képzettségei közül az alacsonyabb szintű értéke.
 
-Példa: a varázslat "Lélek" és "Idézés" Szférákat igenyel, papunk az elsőt `5.`, a másodikat `7.` szinten vette fel. Ekkor a **Kisszféra** értéke `5`, ezen a szinten tudja a varázslatot használni.
+Példa: a varázslat "Lélek" és "Idézés" Szférákat igényel, papunk az elsőt `5.`, a másodikat `7.` szinten vette fel. Ekkor a **Kisszféra** értéke `5`, ezen a szinten tudja a varázslatot használni.
 
 ---
 ### Varázslat Hatótávja

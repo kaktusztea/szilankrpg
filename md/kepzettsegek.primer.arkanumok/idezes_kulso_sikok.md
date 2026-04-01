@@ -16,8 +16,8 @@ Az **Idézés** szféra alá tartozó arkánum.
 ### Varázsló Demonológia
 ⭕TODO⭕
 - átteleportálják a démont
-- asztral/mentallal kényszeríteni kell
-- asztral: 10
+- asztrál/mentallal kényszeríteni kell
+- asztrál: 10
 - demonologia: 7
 - ekkor max olyan demonra tud asztralmagiazni, amire 7-es Asztralmagiaval hatni tudna
 
