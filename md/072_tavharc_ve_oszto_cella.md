@@ -25,7 +25,7 @@ A távolsági fegyverek kategóriáinak átlagos **Osztó** értékét a [Távha
 
 Az egyes távolsági fegyverek konkrét **Osztó** értékét azok adatlapján találod:
 - [Hajítófegyverek](068_07_hajitofegyverek.md)
-- [Lőfegyerek](068_08_lofegyverek.md)
+- [Lőfegyverek](068_08_lofegyverek.md)
 
 ---
 ### Cella
