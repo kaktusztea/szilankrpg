@@ -8,7 +8,7 @@ Az ősi kultúrák történelmének ismerete a Történelemismeret fortély foka
 
 ### Kapcsolódik
 
-- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) fortély: Ha erre a konkrét kultúrkörön belül vagy kíváncsi valamire, akkor ez a fortély is kiterjeszt a **Lexikum** képzettsépróbánál (`N`).
+- [Kultúrkör](../fortelyok.kiemelt/kulturkor.md) fortély: Ha erre a konkrét kultúrkörön belül vagy kíváncsi valamire, akkor ez a fortély is kiterjeszt a **Lexikum** képzettségpróbánál (`N`).
 - [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md) fortély: Ha érintett az adott ősi kultúrkör, akkor ez a fortély is kiterjeszt a **Lexikum** képzettsépróbánál (`N`).
 
 ### Kiterjeszti ezeket

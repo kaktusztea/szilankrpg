@@ -33,7 +33,7 @@ Tulajdonság  |  Költség
 
 `Minden második` karakterszinten kapsz `+1` bónusz pontot, melyet szintén a fenti táblázat alapján fordíthatsz Tulajdonságaid növelésére.
 
-Figyelem! Nem egy Tulajdonság értékét növelheted egyel, hanem ennyi pontot kapsz, amelyből kigazdálkodhatsz egy Tulajdonság növelést. Az így kapott bónusz pontokat „tartalékolhatod” is.
+Figyelem! Nem egy Tulajdonság értékét növelheted eggyel, hanem ennyi pontot kapsz, amelyből kigazdálkodhatsz egy Tulajdonság növelést. Az így kapott bónusz pontokat „tartalékolhatod” is.
 
 Például egy `+3`-ról `+4`-re való növelés költsége `4 pont`, amely bónuszra `8` Tapasztalati szint fejlődés során tehetsz szert.
 
