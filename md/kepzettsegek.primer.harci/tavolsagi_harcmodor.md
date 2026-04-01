@@ -42,6 +42,6 @@ Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../068_0
 #### 🌟 `15.szint`
 
 - Ha nálad alacsonyabb szintű ellenfelet megsebzel, az azonnal teljesen harcképtelen lesz.
-- Választhatsz: `0 ÉP`-re kerül, vagy tetsződleges végtagját használhatatlanná teszed (össz ÉP `1/4`-ét elveszíti).
+- Választhatsz: `0 ÉP`-re kerül, vagy tetszőleges végtagját használhatatlanná teszed (össz ÉP `1/4`-ét elveszíti).
 
 ---
