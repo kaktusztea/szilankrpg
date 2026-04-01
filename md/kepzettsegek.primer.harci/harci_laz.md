@@ -15,9 +15,9 @@ Nincsenek.
 
 ### Őrjöngés fokozatai
 
-Az őrjöngésednek fokozatai vannak, az optimális a `3.fokozat`, ekkor a legnagyobb a harcérték nyereség és még nem támadsz rá szövetségeseidre sem. A `4.fokozat` már a teljes elszabadulás, csak akkor állsz le, ha nincs a közvetlen közeledben élő személy.
+Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozatokkal modellezhető. Optimálisnak a `3.fokozatot` mondanánk - ekkor a legnagyobb a harcérték nyereség, de még nem támadsz rá szövetségeseidre. A `4.fokozat` már a teljes elszabadulás, csak akkor állsz le, ha nincs a közvetlen közeledben élő személy, barátaid is életveszélyben vannak tőled, talán a legjobb ha elmenekülnek...
 
-Érthető, hogy a `2.` és `3.` fokozat közti egyensúlyozás művészete ez: úgy tartani fenn a lázat, hogy nem esel át véglegesen a vérgőzös őrületbe (`4.fokozat`).
+Érthető, hogy a `2.` és `3.` fokozat közti egyensúlyozás művészete ez: úgy tartani fenn a lázat, hogy ne ess át véglegesen a vérgőzös őrületbe (`4.fokozat`).
 
 ```
 1.fokozat: fél bónusz
