@@ -49,7 +49,7 @@
 ### [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
 
 - Időjárásbefolyásolás
-- Villámmmágia
+- Villámmágia
 
 
 ---

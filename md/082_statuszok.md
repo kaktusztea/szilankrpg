@@ -633,7 +633,7 @@ Varázslás képesség elvesztése
 
 ```
 Hátrány-1
-  Észlelés képzettségróba
+  Észlelés képzettségpróba
 ```
 
 ### ✴️ Szellemi (2) Eltompultság

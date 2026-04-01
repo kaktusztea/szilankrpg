@@ -10,6 +10,6 @@ Az **Jelenségek** szféra alá tartozó arkánum.
 xyz
 
 
-### Villámmmágia
+### Villámmágia
 
 xyz

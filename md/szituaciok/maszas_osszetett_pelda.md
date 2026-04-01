@@ -17,7 +17,7 @@ Erő: +2
 
 A mászás elején Tetves [Mászás](../kepzettsegek.szekunder/maszas.md) képzettségpróbát dob. A terep `Nehézség: 15` (nagyon nehéz).
 
-A táv miatt a KM [összetett képzettségróbát](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) ír elő `+1 db` próbával, így Tetvesnek egy `15`-ös és egy `12`-es próbát kell dobnia.
+A táv miatt a KM [összetett képzettségpróbát](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) ír elő `+1 db` próbával, így Tetvesnek egy `15`-ös és egy `12`-es próbát kell dobnia.
 
 🔆 "Az áthajláson kell  már csak átjutnom, ott akár félseggel ki is ülhetek arra a pici párkányra és az adna egy kis szuszt. Ááá, csak ez a buzi áthajlás... de itt már kurvára alig bírom... na csak odáig még, azt jó lesz... ehehhheee,  ott a kis lépésem is.. kicsit messze, de ez van. Na lássuk..."
 
