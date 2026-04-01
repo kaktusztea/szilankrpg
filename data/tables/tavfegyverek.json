@@ -38,7 +38,7 @@
         "Átütés": "3",
         "Hatótáv": "5m + (Erő x 3)",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "Követelmény: Erő +0. Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
+        "Speciális / Megjegyzés": "Követelmény: Erő +0. Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
     },
     {
         "Fegyver": "Dobócsillag",
@@ -122,7 +122,7 @@
         "Átütés": "0",
         "Hatótáv": "20m + (Erő x 4)",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
+        "Speciális / Megjegyzés": "Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
     },
     {
         "Fegyver": "Hajítótőr",
