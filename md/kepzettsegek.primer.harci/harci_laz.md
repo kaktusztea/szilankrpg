@@ -19,18 +19,20 @@ Hogy mennyire veszi át a hatalmat elméd felett a tombolás, az a lenti fokozat
 
 Érthető, hogy a `2.` és `3.` fokozat közti egyensúlyozás művészete ez: úgy tartani fenn a lázat, hogy ne ess át véglegesen a vérgőzös őrületbe (`4.fokozat`).
 
+⭕TODO: hangolni ezeket az értékeket
+
 ```
-1.fokozat: fél bónusz
-           +TÉ,SP: +5   ⭕virtuális ÉP ⭕X
-2.fokozat: teljes harc bónusz
-           +TÉ,SP: +10
-3.fokozat: teljes harc bónusz, Sebzés Előny+1,
+1.fokozat: ⭕fél bónusz
+           ⭕+TÉ,SP: +5   ⭕virtuális ÉP ⭕X
+2.fokozat: ⭕teljes harc bónusz
+           ⭕+TÉ,SP: +10
+3.fokozat: ⭕teljes harc bónusz, Sebzés Előny+1,
            bárki ellenfelet megtámadsz
-           +TÉ,SP: +15
-4.fokozat: teljes harc bónusz, Sebzés Előny+1,
+           ⭕+TÉ,SP: +15
+4.fokozat: ⭕teljes harc bónusz, Sebzés Előny+1,
            berserk, bárkit (barátot is) támadsz,
            aki legközelebb van
-           +TÉ,SP: +20
+           ⭕+TÉ,SP: +20
 ```
 
 ---
