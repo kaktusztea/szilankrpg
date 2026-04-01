@@ -2,7 +2,7 @@
 
 Nem valami hevenyészett papírfecnire gondoljunk, hanem valós, méréseken, földrajzi ismereten alapuló térkép készítésére.
 
-A térkép olvasása is ide tartozik, a lenti képzettséggel dobjuk. Nyilván egy egyszerű "kalóztérkép" olvasának Nehézsége rendkívül alacsony - még képzetlenül is menni fog.
+A térkép olvasása is ide tartozik, a lenti képzettséggel dobjuk. Nyilván egy egyszerű "kalóztérkép" olvasásának Nehézsége rendkívül alacsony - még képzetlenül is menni fog.
 
 [Kvantikum](../kepzettsegek.szekunder/kvantikum.md) képzettségpróba
 - **Nehézség**: a térkép bonyolultsága és részletessége alapján megállapított szint

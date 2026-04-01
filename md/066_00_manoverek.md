@@ -32,7 +32,7 @@ Három kategóriába csoportosítottuk a `Szilánk` által ismert Manővereket. 
 Egy-két jó példa többet mond a száraz szabályleírásoknál.
 
 - [Példa Manőver alkalmazására: Lefegyverzés](066_08_01_pelda_manover_lefegyverzes.md) ⚡
-- [Példa Manőver alkalmazására:  Lábsöprés](066_08_02_pelda_manover_lapsopres.md) ⚡
+- [Példa Manőver alkalmazására:  Lábsöprés](066_08_02_pelda_manover_labsopres.md) ⚡
 
 ---
 

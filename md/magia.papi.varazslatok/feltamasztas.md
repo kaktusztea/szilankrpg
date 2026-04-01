@@ -23,7 +23,7 @@ A Pap egy hosszú rituálé keretében visszahívja a halott lelket a kárpiton 
 Az ilyen hatalmas varázslatnak sok követekménye van: ⭕
 - A Papnak bírnia kell istene kegyét, ha konkrét rosszallásással viseltet felé ura, a varázslat biztos nem jön létre.
 - A Papnak nagyhatalmú ereklyét kell feláldoznia, amely hatalma módot az istennek, hogy "csaljon" és visszaengedjen egy már eltávozott lelket annak testébe.
-- Minél "öregebb", tapasztaltabb lélekről van szó, annál hatalmasabb ereklyére van szükség, tehát a neves, történelmi szempontból hatalmasabb személyeket sokkkal nehezebb visszarángatni, mint mondjuk egy egyszerű napszámost.
+- Minél "öregebb", tapasztaltabb lélekről van szó, annál hatalmasabb ereklyére van szükség, tehát a neves, történelmi szempontból hatalmasabb személyeket sokkal nehezebb visszarángatni, mint mondjuk egy egyszerű napszámost.
 - A kívánt ereklyét a pap egy misztikus álomban látja meg. Ha ez nem történik meg, az isten így jelzi, hogy nem akar segíteni a feltámasztásban. Az adott személyt a Pap nem lesz képes újra az életbe visszahozni.
 - A halott csak eredeti testébe idézhető vissza, amely test "gyógyítható" állapotban kell legyen.
 - Minél régebb óta halott az illető, annál nehezebben támasztható fel.
