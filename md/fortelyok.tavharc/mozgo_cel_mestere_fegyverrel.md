@@ -1,6 +1,6 @@
 ## 🟣 Mozgó cél mestere fegyverrel (1)
 
-Összevissza mozgó ellenfélre is gyakorlottan célzol. Kapcsolódó 🗡️[Szorzó](../073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont)  módosítók lecsökkennek.
+Összevissza mozgó ellenfélre is gyakorlottan célzol. Kapcsolódó 🗡️[Szorzó](../073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont)  módosítók lecsökkennek.
 
 ### Alapeset
 

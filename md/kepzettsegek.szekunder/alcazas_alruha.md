@@ -18,7 +18,7 @@ Próba dobható. Alapesetben ellenpróbával megy, a másik fél [Észlelés](..
 
 Az álcázás nagy előny, főleg ha vadásznak rád. Megfelelő maszk, smink, ruha felvétele - ezek elengedhetetlenek. Egy jó bajusz csodákat tehet, csak le ne essen a kritikus pillanatban.
 
-Az Álcázás/álruha képzettséggel megváltoztathatod külsődet, tudásodtól függ, hogy mennyire és milyen hitelesen. A képzettség segítségével úgynevezett archetípusokat, álcákat alkothat a karakter. Például: „pap", „nemes", „paraszt", "városőr", stb.
+Az Álcázás/álruha képzettséggel megváltoztathatod külsődet, tudásodtól függ, hogy mennyire és milyen hitelesen. A képzettség segítségével úgynevezett archetípusokat, álcákat alkothat a karakter. Például: "pap", "nemes", "paraszt", "városőr", stb.
 
 Ezek egy-egy ilyen álca a külső megváltoztatásához szükséges kellékeket ÉS alapvető viselkedési sablonokat fed, melyek segítségével például elhitetheti a karakter a szemlélőkkel, hogy ő tényleg pap. Az archetípusok megvalósítása magában foglalja a jellegzetes testtartások átvételét, mozgási jellegeket, viselkedési mintákat is. Ez nem konkrét színészet, inkább hosszasan begyakorolt gyakorlati tudás. Úgy is mondhatjuk, hogy "az első megszólalásig" tart a képzettség, onnan már a [Színjátszás](../fortelyok.szabad/szinjatszas.md) veszi át a szerepet.
 
@@ -50,7 +50,7 @@ Egyes komplikáltabb álcák, például "Th4rr pap" megalkotásához a KM megkö
 
 ## Kiemelt archetípus
 
-Mindenkinek - aki legalább `3.szinten` bírja ezt a képzettséget -, van egy választható archetípusa, amely egész élete során megmarad.
+Mindenkinek - aki legalább `3.szinten` bírja ezt a képzettséget -, van egy választható archetípusa, amely egész élete során megmarad.
 
 Erre az `1 db` archetípusra mindig `-3` kedvezményt kapsz képzettségpróbád Nehézségére.
 

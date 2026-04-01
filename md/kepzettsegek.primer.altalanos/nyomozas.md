@@ -99,5 +99,5 @@ Intelligencia, Emlékezet
 
 #### Emberfeletti (21) 🎲
 
-- Évek múltán, egy felújított szobában is érzed: „itt gyilkosság történt.”
+- Évek múltán, egy felújított szobában is érzed: "itt gyilkosság történt."
 - Töredékjegyzetekből és szétszórt dokumentumokból képes vagy rekonstruálni egy teljes összeesküvés történetét.

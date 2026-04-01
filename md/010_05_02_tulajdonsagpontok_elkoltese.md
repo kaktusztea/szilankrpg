@@ -33,7 +33,7 @@ Tulajdonság  |  Költség
 
 `Minden második` karakterszinten kapsz `+1` bónusz pontot, melyet szintén a fenti táblázat alapján fordíthatsz Tulajdonságaid növelésére.
 
-Figyelem! Nem egy Tulajdonság értékét növelheted eggyel, hanem ennyi pontot kapsz, amelyből kigazdálkodhatsz egy Tulajdonság növelést. Az így kapott bónusz pontokat „tartalékolhatod” is.
+Figyelem! Nem egy Tulajdonság értékét növelheted eggyel, hanem ennyi pontot kapsz, amelyből kigazdálkodhatsz egy Tulajdonság növelést. Az így kapott bónusz pontokat "tartalékolhatod" is.
 
 Például egy `+3`-ról `+4`-re való növelés költsége `4 pont`, amely bónuszra `8` Tapasztalati szint fejlődés során tehetsz szert.
 
@@ -47,7 +47,7 @@ A fenti határokon a [Faj Hátterek jellemzői](021_faj_hatterek.md), illetve es
 ---
 ## Kinézet, érzelmi jellemzők
 
-A kinézetre és érzelmi „felépítésre" vonatkozó jellemzőket a játékosra bízzuk, nem rendelünk hozzá további értékeket - dolgozza ki ő karakteralkotáskor, a KM-el egyeztetve és használja ehhez bátran a [Leíró Háttereket](022_leiro_hatterek.md).
+A kinézetre és érzelmi "felépítésre" vonatkozó jellemzőket a játékosra bízzuk, nem rendelünk hozzá további értékeket - dolgozza ki ő karakteralkotáskor, a KM-el egyeztetve és használja ehhez bátran a [Leíró Háttereket](022_leiro_hatterek.md).
 
 Hisszük, hogy nem kell minden jellemzőt számszerűsíteni és a fentiek részben szabadon meghatározható jellemzők, így főleg a játékos beleélőképességén múlik, hogy milyen hatással vannak más karakterekre.
 

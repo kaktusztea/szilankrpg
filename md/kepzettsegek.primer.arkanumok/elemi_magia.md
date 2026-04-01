@@ -25,7 +25,7 @@ Képzettség
   A varázsló képes kommunikálni
     egy választott sík lényeivel.*
  Külön fortély felvehető:
-   „Elemi sík nyelve”
+   "Elemi sík nyelve"
    (plusz választott nyelv)⭕
 
 12.szint
@@ -198,7 +198,7 @@ Ha ez értelmezhető, akkor a formák méreténél a legnagyobb átmérőre vona
 
 ⭕(a Manamentes modellhez)⭕
 
-A fenti példánál az ez `3`, mert annyira „nyújtja ki” a varázsló.
+A fenti példánál az ez `3`, mert annyira "nyújtja ki" a varázsló.
 
 ### Sebződés
 

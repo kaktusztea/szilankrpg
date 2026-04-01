@@ -26,7 +26,7 @@ Intelligencia, Önuralom
 
 #### 🌟 `12.szint`
 
-⭕TODO⭕ Idegen csapdánál pusztán a szerkezet sziluettjéből megérzed, melyik elem az „éles”, melyik a biztosító – még mielőtt hozzányúlnál.
+⭕TODO⭕ Idegen csapdánál pusztán a szerkezet sziluettjéből megérzed, melyik elem az "éles", melyik a biztosító – még mielőtt hozzányúlnál.
 
 #### 🌟 `15.szint`
 
@@ -59,7 +59,7 @@ Intelligencia, Önuralom
 
 - Olyan csapda létrehozása, amely több részből áll, és a sorrend számít (pl. először egy álcázó fénycsapda, majd a valódi gyilkos szerkezet).
 - Egy komplikált idegen mechanikus csapda csendben történő hatástalanítása.
-- Komplex szerkezetben észrevenni és beazonosítani a „csalikapcsolót”.
+- Komplex szerkezetben észrevenni és beazonosítani a "csalikapcsolót".
 
 #### Rendkívül nehéz (18) 🎲
 
@@ -70,7 +70,7 @@ Intelligencia, Önuralom
 #### Emberfeletti (21) 🎲
 
 - Legendás bonyolultságú csapda állítása, amely hónapokig működőképes, és önjavító funkciókat is tartalmaz.
-- Mágiaérzékkel szőtt „élő” csapda, amely reagál arra, ha a közelében járnak (összetett próba).
+- Mágiaérzékkel szőtt "élő" csapda, amely reagál arra, ha a közelében járnak (összetett próba).
 - Egyetlen pillantásból megérzed, hogyan funkcionál egy nagyon komplex csapda és képes vagy beavatkozni, akár a saját életed kockáztatása nélkül.
 
 <br />

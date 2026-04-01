@@ -1,6 +1,6 @@
 # Kétkezes harc szabályai
 
-„_Két fegyver jobb, mint egy_.”
+"_Két fegyver jobb, mint egy_."
 
 <br />
 
@@ -26,7 +26,7 @@ Max: 2 x 1 penge
 SUM 2 penge felett
   fegyverek harcértéke: 0
 
-„rövid” fegyverek
+"rövid" fegyverek
   0 pengének számítanak
 ```
 

@@ -16,7 +16,7 @@ Ez részben előtörténet követelmény és kapcsolódó [Harci iskola](fortely
 
 Bánjunk a fenti követelményekkel szigorúan! Ha ezek nincsenek meg, a KM dönt, hogy milyen – alacsonyabb – harcértékekkel forgathatja a karakter a fegyvert – már ha egyáltalán...
 
-A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) `2.foka` az adott fegyverre. Ezen speciális fogásokat fortélyok formájában tanulhatja meg a harcos. Leírásukat lásd a [harci fortélyoknál](044_harci_fortelyok.md). Azok a fegyverek számítanak „Speciálisnak", amelyek komment mezőjében szerepel a `KF` jelölés.
+A fegyverek egyedi fogásaihoz viszont követelmény a [Mesterfegyver fortély](fortelyok.harci/mesterfegyver.md) `2.foka` az adott fegyverre. Ezen speciális fogásokat fortélyok formájában tanulhatja meg a harcos. Leírásukat lásd a [harci fortélyoknál](044_harci_fortelyok.md). Azok a fegyverek számítanak "Speciálisnak", amelyek komment mezőjében szerepel a `KF` jelölés.
 
 ---
 

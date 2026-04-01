@@ -47,7 +47,7 @@ Hány Sebesség pontonként kap +1
 ---
 ### Plusz támadások száma (fegyverrel)
 
-Az alap `1` támadáson felül kapott **plusz** támadások számát úgy kapjuk meg, hogy megvizsgáljuk, a fegyver `Sebesség` értéke hányszor van meg a karakter aktuális „**Harckeret**” értékében (lefelé kerekítve).
+Az alap `1` támadáson felül kapott **plusz** támadások számát úgy kapjuk meg, hogy megvizsgáljuk, a fegyver `Sebesség` értéke hányszor van meg a karakter aktuális "**Harckeret**" értékében (lefelé kerekítve).
 
 ```
 Plusz támadások (db) =

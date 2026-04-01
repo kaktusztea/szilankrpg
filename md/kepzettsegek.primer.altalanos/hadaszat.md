@@ -34,11 +34,11 @@ Reguláris haderővel kapcsolatos ismeretek. Stratégiai tervezés, logisztika, 
 
 #### 🌟 `12.szint`
 
-„Stratégiai zseni”. Félmágikus érzékkel megérzi, melyik hadtest vagy alakulat rogyhat meg először nyomás alatt – és azt is, kik fogják tartani a pozíciót.
+"Stratégiai zseni". Félmágikus érzékkel megérzi, melyik hadtest vagy alakulat rogyhat meg először nyomás alatt – és azt is, kik fogják tartani a pozíciót.
 
 #### 🌟 `15.szint`
 
-Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmények között sem. Egy összképből (hadállások, erődítések, tábor) tudja, hogy „ez a hadjárat győzelem vagy vereség felé halad”.
+Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmények között sem. Egy összképből (hadállások, erődítések, tábor) tudja, hogy "ez a hadjárat győzelem vagy vereség felé halad".
 
 <br />
 
@@ -68,7 +68,7 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 #### Nagyon nehéz (15) 🎲
 
 - Hadnagyok, parancsnokok kvalitásait felismerni pusztán a mozdulataikból és szervezési ütemükből.
-- Megérezni, hogy az ellenség „túl könnyen enged” → rejtett csapdát készít.
+- Megérezni, hogy az ellenség "túl könnyen enged" → rejtett csapdát készít.
 - Órák alatt átlátni egy **többfrontos hadjárat logisztikáját**, és előre megmondani, hogy két hét múlva hol fognak tartani.
 - Széttöredezett információból (részseregek helyzete, szállítások, hírek) összerakni az ellenséges főhaditerv körvonalait.
 
@@ -76,11 +76,11 @@ Katonáid jelenlétedben soha nem esnek pánikba, még a legcudarabb körülmén
 
 - Pusztán néhány zászlójel és porfelhő alapján felismerni egy hadtest valódi nagyságát és mozgásirányát.
 - Több ezer fő csapatmozgásaiban **előre látni, hol omlik össze a front** – órákkal vagy napokkal az esemény előtt.
-- A saját hadjáratban: kiszúrni, ha túlzottan „tökéletes” a helyzet, és az egész a vesztükre játszik.
+- A saját hadjáratban: kiszúrni, ha túlzottan "tökéletes" a helyzet, és az egész a vesztükre játszik.
 
 #### Emberfeletti (21) 🎲
 
-- Egyetlen rövid jelentésből (pl. „két falu elhagyva, erdőben porfelhő”) **helyesen kitalálni az ellenség főhaditervét**.
+- Egyetlen rövid jelentésből (pl. "két falu elhagyva, erdőben porfelhő") **helyesen kitalálni az ellenség főhaditervét**.
 - Ránézésre tudni, hogy egy hadjárat **vesztésre vagy győzelemre van ítélve**, még a fő csapásmérés előtt.
 - Az ellenség taktikáját napokkal korábban **átérezni**, szinte úgy, mintha a fejében járna.
 - Saját csapatai számára a jelenlétével azonnali hadrendfegyelmet és morált biztosítani

@@ -41,7 +41,7 @@ Az `1.` Tapasztalati szinten minden karakter egységes, konstans értékeket kap
 ---
 ### Kezdeményező érték (`KÉ`)
 
-A Kezdeményező Érték (`KÉ`) szerepe a harcban, hogy meghatározza, ki „mozdul először” a harcban. Nem jelent harci dominanciát, csak azt, hogy ki a gyorsabb, ki cselekedhet előbb. A kezdeményezés műveletéről bővebben lásd a [Harc menete - Kezdeményezés](064_02_01_kezdemenyezes.md) fejezetet!
+A Kezdeményező Érték (`KÉ`) szerepe a harcban, hogy meghatározza, ki "mozdul először" a harcban. Nem jelent harci dominanciát, csak azt, hogy ki a gyorsabb, ki cselekedhet előbb. A kezdeményezés műveletéről bővebben lásd a [Harc menete - Kezdeményezés](064_02_01_kezdemenyezes.md) fejezetet!
 
 A `KÉ` egy darab, konkrét érték, ezt használjuk **minden** típusú cselekedet esetén. Nem tér el harcban, vagy varázslásban, az egyes fegyvereknek **sincs** saját Kezdeményező Értékük! A következőképpen kerül kiszámításra:
 

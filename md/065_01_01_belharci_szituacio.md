@@ -1,6 +1,6 @@
 # Belharci szituáció
 
-Ha a képzett harcosnak sikerül ellenfele fegyvere „mögé”, testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
+Ha a képzett harcosnak sikerül ellenfele fegyvere "mögé", testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
 
 ## Kapcsolódik
 

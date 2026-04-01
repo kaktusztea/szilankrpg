@@ -64,7 +64,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 #### Nagyon nehéz (15) 🎲
 
 - Tömegben harcolni (levegőben).
-- Erősen sérült hátassal rossz időben navigálni. Egyensúlyból kibillent hátast „rendezni”.
+- Erősen sérült hátassal rossz időben navigálni. Egyensúlyból kibillent hátast "rendezni".
 - Harc és rossz idő együtt: villámló ég, szakadó eső.
 
 #### Rendkívül nehéz (18) 🎲

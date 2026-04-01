@@ -18,7 +18,7 @@ Dobás:
  MIN( képzettség + Tulajdonság )
 ```
 
-Ez a csoportos kooperáció nehezebb formája, itt a “leggyengébb láncszem” határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb.
+Ez a csoportos kooperáció nehezebb formája, itt a "leggyengébb láncszem" határozza meg a próbadobást, azaz aki a csapatban legképzetlenebb.
 
 A csapat a tagjai közül a legalacsonyabb `(képzettség szint + Tulajdonság)` értékével dobja a próbát
 - egyéni fortély bónuszok is beleszámítanak

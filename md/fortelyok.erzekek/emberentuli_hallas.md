@@ -13,7 +13,7 @@ Emberi hallás
 ---
 ### 1. fok
 
-🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli hallás**, mint felvehető Érzék-fortély
+🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli hallás**, mint felvehető Érzék-fortély
 
 🌟**Hatás**:
 

@@ -39,7 +39,7 @@ A holttest állapotától függő módosítók:
 |         +1         | Foszló hús maradványai találhatók csak meg rajta |
 |         +2         | Csontváz                                         |
 
-Ha nem komplett testre, hanem kisebb – akár önálló – testrészekre (darabokra) akar hatni a nekromanta, akkor szintén „kedvezményekben” részesül:
+Ha nem komplett testre, hanem kisebb – akár önálló – testrészekre (darabokra) akar hatni a nekromanta, akkor szintén "kedvezményekben" részesül:
 
 | **Szint módosító** | **Testrész**     |
 |:------------------:| ---------------- |

@@ -9,7 +9,7 @@ Az **Idézés** szféra alá tartozó arkánum.
 - Demonológia
 - Theurgia
 - Goécia
-- [Szeráfok, szerafisták](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#szer%C3%A1fi-m%C3%A1gi%C3%A1k) ?
+- [Szeráfok, szerafisták](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#szer%C3%A1fi-m%C3%A1gi%C3%A1k) ?
 - Isteni síkra távozott lelkek visszahívása (ez feketemágia)
 
 

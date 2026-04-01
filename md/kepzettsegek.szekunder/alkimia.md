@@ -88,7 +88,7 @@ Szervetlen alapanyagok felkutatása mindegyik tájtípusnál:
 - Prima Materia előállítása (összetett próbával).
 - Mindent oldó szer előállítása (összetett próbával).
 - A világ szövetét érintő transzmutációs kísérletek (pl. kőből kenyér, vízből vér).
-- Saját auráddal felruházott alkimista anyagok létrehozása, amelyek „élő szubsztanciaként” viselkednek (összetett próbával).
+- Saját auráddal felruházott alkimista anyagok létrehozása, amelyek "élő szubsztanciaként" viselkednek (összetett próbával).
 
 <br />
 

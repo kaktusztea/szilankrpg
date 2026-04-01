@@ -14,7 +14,7 @@ Idomítást, állatokat, bestiákat kontrolláló szituációban a lenti próba 
 
 #### Könnyű (6) 🎲
 
-- Alap parancs betanítása („Ülj!”, „Fekszik!”, „Állj!”).
+- Alap parancs betanítása ("Ülj!", "Fekszik!", "Állj!").
 - Vad vagy félénk állat bizalmának első megnyerése.
 - Kisállat (kutya, macska, lócsikó) kézből etetése, odahívása.
 

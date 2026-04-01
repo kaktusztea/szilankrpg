@@ -9,7 +9,7 @@ Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyo
 
 **[Észlelés](../kepzettsegek.primer.altalanos/eszleles.md)** képzettségpróba
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
-- **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
+- **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
 
 <br />
 

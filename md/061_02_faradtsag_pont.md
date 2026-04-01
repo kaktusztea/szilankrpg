@@ -1,6 +1,6 @@
 ## Fáradtság Pont (`FP`)
 
-A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapota között, amely a pillanatnyi ájulástól való „távolságát” meghatározza. Ez utóbbiban vállal szerepet a **Fáradtság Pont** (`FP`).
+A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapota között, amely a pillanatnyi ájulástól való "távolságát" meghatározza. Ez utóbbiban vállal szerepet a **Fáradtság Pont** (`FP`).
 
 🔆 Az `FP` értékének semmi köze nincs a **Fájdalomtűrés** képzettséghez, tőle teljesen független fogalom.
 
@@ -17,7 +17,7 @@ A rendszer különbséget tesz a fizikai sérülés és a karakter azon állapot
 - másnaposság
 - pánikroham hatása
 
-Az `FP`-nek nincs kezdeti értéke, csak a fenti hatások valamelyike következtében jöhet létre. Tehát ebből a szempontból jegyzése az `ÉP`-vel ellentétes. Mikor valaki olyan „sebesülést” szenved el, hogy `FP`-t „szerez”, a hatás megegyezik azzal, mint amit valós sebesülés esetén tapasztal, de nem jár strukturális károsodással (valódi `ÉP` sebbel), vagy halállal, legfeljebb ájulással.
+Az `FP`-nek nincs kezdeti értéke, csak a fenti hatások valamelyike következtében jöhet létre. Tehát ebből a szempontból jegyzése az `ÉP`-vel ellentétes. Mikor valaki olyan "sebesülést" szenved el, hogy `FP`-t "szerez", a hatás megegyezik azzal, mint amit valós sebesülés esetén tapasztal, de nem jár strukturális károsodással (valódi `ÉP` sebbel), vagy halállal, legfeljebb ájulással.
 
 Tipikus esete az `FP` sebesülésnek, mikor valakit alaposan fejbe kólintanak. Ez – szándéktól függően – okozhat valós sebesülést is, de ezen kívül `Fáradtság Pontokat` is szül. Másik példa lehet, mikor a karakter rosszullétet okozó mérget iszik.
 
@@ -36,7 +36,7 @@ Amennyiben az életerő táblázat "betelt" és van benne `FP`, akkor a "túlcso
 ---
 ### FP gyógyulása
 
-Az elszenvedett `FP` pontok a [Természetes gyógyulásnál](140_gyogyitas_gyogyulas.md#%EF%B8%8F-term%C3%A9szetes-gy%C3%B3gyul%C3%A1s) leírt sebességgel tűnnek el - és mivel nem valós sebesülés okozta, gyorsabban „gyógyul”, mint a valós `ÉP` seb.
+Az elszenvedett `FP` pontok a [Természetes gyógyulásnál](140_gyogyitas_gyogyulas.md#%EF%B8%8F-term%C3%A9szetes-gy%C3%B3gyul%C3%A1s) leírt sebességgel tűnnek el - és mivel nem valós sebesülés okozta, gyorsabban "gyógyul", mint a valós `ÉP` seb.
 
 Fizikai behatás esetén szép lassan eltűnnek az `FP` pontok.
 
@@ -47,7 +47,7 @@ Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 ---
 ### Tartós rosszullét
 
-Ha a karakter például méregnek „köszönhetően” tartósan gyengélkedik, akkor folyamatosan alkalmazhatjuk az `FP`-ket, azaz a rosszullét idejére ezek megmaradnak, vagy lassabban tűnnek el.
+Ha a karakter például méregnek "köszönhetően" tartósan gyengélkedik, akkor folyamatosan alkalmazhatjuk az `FP`-ket, azaz a rosszullét idejére ezek megmaradnak, vagy lassabban tűnnek el.
 
 ---
 ### Verekedés, Kocsmai bunyó és `FP`
@@ -57,7 +57,7 @@ Bunyóban minden 5. FP
  1 ÉP sebet okoz
 ```
 
-Az `FP` kiválóan alkalmas kocsmai verekedések, kisebb – nem „vérre menő” – összetűzések szimulálására is. Mint ahogy azt a „Fegyverek” fejezetben láthatjuk, a Puszta kéz sebzése mindig `FP` (kivéve egyes harcművész stílusokat).
+Az `FP` kiválóan alkalmas kocsmai verekedések, kisebb – nem "vérre menő" – összetűzések szimulálására is. Mint ahogy azt a "Fegyverek" fejezetben láthatjuk, a Puszta kéz sebzése mindig `FP` (kivéve egyes harcművész stílusokat).
 
 **Minden `5. FP` okoz csak `1 ÉP` valós sebesülést: `4 FP, 1 ÉP`**
 

@@ -78,7 +78,7 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
 ⭕TODO⭕
 - Termékeid túlmutatnak a köznapin: egész városok, birodalmak jegyzik meg a neved.
 - Egy kezed alól kikerült fegyver, páncél, építmény vagy műtárgy örökségként él tovább.
-- Amit készítesz, arról ismeretlen országokban is tudják: „Ez bizony Brocco műhelyéből való.”
+- Amit készítesz, arról ismeretlen országokban is tudják: "Ez bizony Brocco műhelyéből való."
 
 ⭕TODO⭕
 - Egyáltalán nem fog rajta az enyészet.

@@ -1,6 +1,6 @@
 ## 🟣 Harci akrobatika (3)
 
-„Pattog, mint a nikkelbolha” - mondják, ha harcolni látnak.
+"Pattog, mint a nikkelbolha" - mondják, ha harcolni látnak.
 
 Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen...
 

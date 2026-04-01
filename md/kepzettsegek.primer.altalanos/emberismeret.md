@@ -25,9 +25,9 @@ Az alábbi Fortélyok a képzettség `3.szintjének` elérésekor vehetőek csak
 
 - [Befolyásolás módszerei (Befolyásolás vs. Emberismeret)](../szituaciok/befolyasolas_modszerei.md)
 
-**Leírás**: Más emberek viselkedésének, hangulatának feltérképezését, belső motivációinak kiismerését célzó „tudomány". Ennek az ismeretnek az elsajátítását leginkább a nagybetűs ÉLET egyengeti. Sok-sok beszélgetés, néha keserű tapasztalat.
+**Leírás**: Más emberek viselkedésének, hangulatának feltérképezését, belső motivációinak kiismerését célzó "tudomány". Ennek az ismeretnek az elsajátítását leginkább a nagybetűs ÉLET egyengeti. Sok-sok beszélgetés, néha keserű tapasztalat.
 
-A képzettség annyiban speciális, hogy a (harcmodorokhoz hasonlóan) a `3.szint` adja az „alapszintet", azaz egy felnőtt átlagember ekkora emberismerettel rendelkezik. Az ez alatti értékkel rendelkezők köznyelven a „szerencsétlen balek" és a „palimadár" kategóriába tartoznak..
+A képzettség annyiban speciális, hogy a (harcmodorokhoz hasonlóan) a `3.szint` adja az "alapszintet", azaz egy felnőtt átlagember ekkora emberismerettel rendelkezik. Az ez alatti értékkel rendelkezők köznyelven a "szerencsétlen balek" és a "palimadár" kategóriába tartoznak..
 
 Magasabb szinteken terápiás hatásokat is gyakorolhatsz mentális problémák enyhítésére.
 
@@ -72,7 +72,7 @@ Bővebben lásd: [Szituációk: Befolyásolás vs Emberismeret](../szituaciok/be
 ---
 ### Aktív próbák 🎲
 
-Ilyenkor az Emberismeret egyfajta „radarként” működik, megpróbál a különböző jelek alapján következtetésekre jutni. Ez lehet tudatos, vagy tudatlan vizsgálódás, lényeg, hogy nem az alkalmazót, vagy személyiségét éri külső behatás más által (lásd Passzív próbáknál), hanem ő érzékel bizonyos jeleket.
+Ilyenkor az Emberismeret egyfajta "radarként" működik, megpróbál a különböző jelek alapján következtetésekre jutni. Ez lehet tudatos, vagy tudatlan vizsgálódás, lényeg, hogy nem az alkalmazót, vagy személyiségét éri külső behatás más által (lásd Passzív próbáknál), hanem ő érzékel bizonyos jeleket.
 
 🔆 **Speciális**: a nehézséghez hozzáadódik (negatívnál levonódik) a célszemély `Önuralom` tulajdonsága!
 
@@ -89,7 +89,7 @@ Alapvető nem leplezett személyiségvonások felismerése.
 #### Nehéz (12) 🎲
 
 - Nyitott partner esetén annak mélyebb személyiségvonásait, lelki torzulásait felismeri.
-- Csapatdinamikát összevontan képes vagy megállapítani egy darab dobással. Érzed, hogy ki a „hangadó”, kinek a véleményét kell elsősorban befolyásolnod.
+- Csapatdinamikát összevontan képes vagy megállapítani egy darab dobással. Érzed, hogy ki a "hangadó", kinek a véleményét kell elsősorban befolyásolnod.
 - Érzelemkitörések előszelét megérezni.
 
 #### Nagyon nehéz (15) 🎲
@@ -105,7 +105,7 @@ Alapvető nem leplezett személyiségvonások felismerése.
 
 - ⭕TODO⭕ Mágia kidolgozásakor visszatérni.
 - ⭕Ráérezni, hogy a másik fél személyisége valószínűleg túlvilági lény befolyása alatt áll.
-- ⭕„Magzat megrontása” vulgármágikus varázslatot felismerni.
+- ⭕"Magzat megrontása" vulgármágikus varázslatot felismerni.
 
 <br />
 

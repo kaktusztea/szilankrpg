@@ -119,7 +119,7 @@ Emlékezet, Érzékenység.
 
 #### Emberfeletti (21) 🎲
 
-- „Elfeledett, isteni nyelv” töredékének megértése.
+- "Elfeledett, isteni nyelv" töredékének megértése.
 - Azonnali tolmácsolás teljesen új nyelvről közösre.
 - Nyelvi mintázatból előre megérezni a kulturális hátteret, társadalmi berendezkedést.
 

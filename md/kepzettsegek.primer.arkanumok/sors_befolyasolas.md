@@ -35,7 +35,7 @@ Az alább következő mozaikok kivétel nélkül igen nagy nehézségűek, sőt 
 | Minden méretváltozás (aranyban)                              |           | ⭕+5 MP |      +1      |
 
 #### Például
-> Egy várban, a fáklyákkal megvilágított folyóson egy őr járkál fel és alá. Árnyéka jól látható a falon, éles kontúrokkal körülhatárolt, (1. kategória) viszont elég közel van a fényforráshoz. Ezenkívül a fal - melyre árnyékot vet - viszonylag távol van tőle, így árnyéka jóval nagyobbnak látszik (mondjuk 3-szoros) : `+3x5Mp / +3x3 Nehézség`
+> Egy várban, a fáklyákkal megvilágított folyóson egy őr járkál fel és alá. Árnyéka jól látható a falon, éles kontúrokkal körülhatárolt, (1. kategória) viszont elég közel van a fényforráshoz. Ezenkívül a fal - melyre árnyékot vet - viszonylag távol van tőle, így árnyéka jóval nagyobbnak látszik (mondjuk 3-szoros) : `+3x5Mp / +3x3 Nehézség`
 
 Tehát:
 

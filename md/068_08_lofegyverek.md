@@ -1,10 +1,10 @@
 ## Lőfegyverek harcértékei
 
-A Lőfegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez másként van, ott az adott fegyver leírásánál a „**Speciális/Megjegyzés**” oszlopban ezt külön feltüntetjük.
+A Lőfegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez másként van, ott az adott fegyver leírásánál a "**Speciális/Megjegyzés**" oszlopban ezt külön feltüntetjük.
 
 Az **Erőbónusz** beszámítása fegyverenként eltérő, a **Speciális/Megjegyzés** mezőt nézzük. Alapból az Erőbónusz **nem** adódik hozzá az íjász lőfegyverek **SP** értékéhez.
 
-Egy helyen rögzített „lengő” anyagok könnyen megfoghatják az íjász lövedékeket (pl. száradó ruha).
+Egy helyen rögzített "lengő" anyagok könnyen megfoghatják az íjász lövedékeket (pl. száradó ruha).
 
 ### Íjász lőfegyverek
 

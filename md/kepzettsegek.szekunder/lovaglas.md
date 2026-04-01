@@ -63,7 +63,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 #### Nagyon nehéz (15) 🎲
 
 - Tömegben, pánikoló hátasok között is irányítani a lovat.
-- Durván kitört hátast „rendezni”.
+- Durván kitört hátast "rendezni".
 
 #### Rendkívül nehéz (18) 🎲
 
@@ -73,7 +73,7 @@ Magasabb szinteken már olyan magas fokú kapcsolat jön létre ember és állat
 #### Emberfeletti (21) 🎲
 
 - Tomboló viharban egy vágtázó hátason egy lábon állva fél percig megmaradni.
-- [Állat testvér] esetén: telepatikus, nem begyakorolt komplex parancsok (pl. „vidd biztonságba a társamat, majd térj vissza értem”).
+- [Állat testvér] esetén: telepatikus, nem begyakorolt komplex parancsok (pl. "vidd biztonságba a társamat, majd térj vissza értem").
 
 <br />
 

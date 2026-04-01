@@ -69,7 +69,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 
 🔗 Kapcsolódik: **[Fárasztás](fortelyok.harci/farasztas.md)** harci fortély
 
-Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta. Leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a „vadat”, míg vezetőjük felkészül.
+Fárasztani kívánod ellenfeledet, ellenállását megtörni anélkül, hogy sebet ejtenél rajta. Leginkább körbevett ellenfél esetén van értelme: a pribékek kifáraszthatják a "vadat", míg vezetőjük felkészül.
 
 ---
 ### Kezdeményező taktika

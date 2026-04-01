@@ -18,7 +18,7 @@ Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer.harci/tavols
 
 ### 1. fok
 
-A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Távolsági harcmodor** értéket egy jó parancsnok képes koordinálásával megemelni.
+A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **Távolsági harcmodor** értéket egy jó parancsnok képes koordinálásával megemelni.
 
 🔒 **Követelmény**:
 - Íjászat/Lövészet/Ostromlövészet - `6.szint`

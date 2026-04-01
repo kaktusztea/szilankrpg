@@ -13,7 +13,7 @@ Emberi szaglás
 ---
 ### 1. fok
 
-🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli szaglás**, mint felvehető Érzék-fortély
+🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli szaglás**, mint felvehető Érzék-fortély
 
 🌟 **Hatás**:
 - A szaglást érintő Tulajdonságpróbákra `+2` bónuszt kapsz

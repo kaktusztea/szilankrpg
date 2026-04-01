@@ -52,7 +52,7 @@ Harcművész nagymester, mágus.
     - ⭕Mentálszem?
     - ⭕Veszély?
     - ⭕infra, ultra?
-- Ha a környezetedben bármi torzul, „nem a természetes rend szerint van” - pl. láthatatlan lény jelenléte, szellem, titkos ajtó mögül áramló energia. Nem mindig tudod megmagyarázni, de biztosan érzed: „valami nincs rendben”.
+- Ha a környezetedben bármi torzul, "nem a természetes rend szerint van" - pl. láthatatlan lény jelenléte, szellem, titkos ajtó mögül áramló energia. Nem mindig tudod megmagyarázni, de biztosan érzed: "valami nincs rendben".
 - Akkor is képes vagy veszélyt megérezni, ha nincs semmi hallható/érezhető jel – gyakorlatilag megelőző intuíciót jelent.
 
 <br />

@@ -1,10 +1,10 @@
 ## Példa egy páncél leírására
 
-**JK**: „Milyen a páncélja?”
+**JK**: "Milyen a páncélja?"
 
-**KM**: „Ez egy Sodrony páncél. Fémalapanyaga acél, Anyagminősége (`-1 SFÉ`), Kidolgozottsága Pocsék.
+**KM**: "Ez egy Sodrony páncél. Fémalapanyaga acél, Anyagminősége (`-1 SFÉ`), Kidolgozottsága Pocsék.
 
-Három tagot látsz: mellvért-darabot, felkar-tagot, alkar-tagot. Méretben passzol rád, nem kapsz extra büntetést.”
+Három tagot látsz: mellvért-darabot, felkar-tagot, alkar-tagot. Méretben passzol rád, nem kapsz extra büntetést."
 
 ---
 ## ⚡Példa 1: Átlagos páncél
@@ -54,7 +54,7 @@ Csatolt tagok ára: 6x ár
 
   1/5x
   10x (Torzó ár)
-   1x (Kidolgozottság „átlagos”)
+   1x (Kidolgozottság "átlagos")
    3x (Csatolt tagok db)
 ```
 
@@ -118,7 +118,7 @@ Csatolt tagok ára: 2,5x
 
 x 1/5
 x 5   (Torzó ár)
-x 0,5 (Kidolgozottság „pocsék”)
+x 0,5 (Kidolgozottság "pocsék")
 x 5   (Csatolt tagok db)
 ```
 

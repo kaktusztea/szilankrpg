@@ -70,12 +70,12 @@ A (**Kvantikum** képzettség + **Mechanika** fortély) kombináció **NEM** vá
 #### Rendkívül nehéz (18) 🎲
 
 - Ritka, mániákusan túlbonyolított szerkezet kinyitása.
-- Hamar „átlátni” a zárszerkezet működését.
+- Hamar "átlátni" a zárszerkezet működését.
 
 #### Emberfeletti (21) 🎲
 
 - Legendás, egyedi mestermunka-zárak megnyitása.
-- Zár kinyitása szinte pusztán a „tapasztalati érzékelésből”, eszköz nélkül.
+- Zár kinyitása szinte pusztán a "tapasztalati érzékelésből", eszköz nélkül.
 - Mágikus erő nélkül, fizikai módon kinyitni egy félig misztikus zárat.
 
 <br />

@@ -5,7 +5,7 @@ Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellem
 ### Általános ismeretek
 
 Összefoglalva a képzettség az alábbi ismereteket nyújtja:
-- ujjak finom koordinációja, csendes „simítás” az árú felett
+- ujjak finom koordinációja, csendes "simítás" az árú felett
 - zsebből/asztalról apróság elemelése anélkül, hogy feltűnne
 - tárgy, kulcs, erszény láthatatlan megszerzése
 - spontán és természetes testbeszéd a mozdulathoz
@@ -78,7 +78,7 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 
 #### Emberfeletti (21) 🎲
 
-- Bármi elvétele úgy, hogy a mozdulat „észlelhetetlen” → ellenfél még utólag sem mindig biztos benne, hogy történt valami.
+- Bármi elvétele úgy, hogy a mozdulat "észlelhetetlen" → ellenfél még utólag sem mindig biztos benne, hogy történt valami.
 - Teljes csoport / tömeg közepén természetesen kivitelezett észrevétlen mozdulat miközben a figyelem rád szegeződik.
 
 <br />

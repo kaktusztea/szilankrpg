@@ -86,7 +86,7 @@ Ezt a [Páncél akadályoztatása](082_statuszok.md#️-páncél-akadályoztatá
 ---
 ## Vállalás és Kritikus hiba
 
-A Vállalás azt jelenti, hogy (ha a KM is beleegyezik) képzettségpróba esetén kaphatsz `[+1; +3]` bónuszt a próbára - te döntöd el mennyit. Minél többet vállalsz, annál nagyobb veszélynek teszed ki magad. Ugyanis a próba előtt „Vállalás próbát" kell dobni:
+A Vállalás azt jelenti, hogy (ha a KM is beleegyezik) képzettségpróba esetén kaphatsz `[+1; +3]` bónuszt a próbára - te döntöd el mennyit. Minél többet vállalsz, annál nagyobb veszélynek teszed ki magad. Ugyanis a próba előtt "Vállalás próbát" kell dobni:
 
 ```
 k6 vs. (a vállalás értéke)
@@ -132,7 +132,7 @@ Látható, hogy a vállalás sokat dob az esélyeken, de megvan a rizikója is: 
 ---
 ## Próba biztos tudásból
 
-Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehetőség képzettségpróba dobására. Tipikusan a „Tudok-e valamit róla?"-jellegű határozottan eldönthető esetekben. Ilyenkor a KM dönti el, hogy az adott képzettségszinttel az adott feladat megoldható, avagy sem.
+Bizonyos képzettségeket csak biztos tudásból lehet megpróbálni, nincs lehetőség képzettségpróba dobására. Tipikusan a "Tudok-e valamit róla?"-jellegű határozottan eldönthető esetekben. Ilyenkor a KM dönti el, hogy az adott képzettségszinttel az adott feladat megoldható, avagy sem.
 
 <br />
 
@@ -183,11 +183,11 @@ Célszám: 12 (Nehéz)
 2 db próba
 ```
 
- Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
+ Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot "véletlenül" megcsinálhasson.
 
 ### Lépcsőzetes Célszámok módszere
 
-Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat „milyen hosszú", mennyire „többlépcsős". Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal (Célszámra: `-6` ) alacsonyabb nehézségre is dobathatunk akár teljesen folyamatos lefutással is:
+Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat "milyen hosszú", mennyire "többlépcsős". Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal (Célszámra: `-6` ) alacsonyabb nehézségre is dobathatunk akár teljesen folyamatos lefutással is:
 
 ```
 Dobások Célszáma

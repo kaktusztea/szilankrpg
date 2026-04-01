@@ -93,7 +93,7 @@ Közepes seb (max `6 ÉP`) vérzésének elállítása
 
 #### Átlagos (9) 🎲
 
-Gyógyulási sebesség szorzó: `x2`
+Gyógyulási sebesség szorzó: `x2`
 
 #### Nehéz (12) 🎲
 

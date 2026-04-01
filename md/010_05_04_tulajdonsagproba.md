@@ -62,7 +62,7 @@ Ha a karakternek egy olyan összetett próbát kell tennie, ami nem intézhető 
 `1.` A játékos dob egy próbát az indokolt maximális nehézségre.
 
 ```
-Példa: „Nagyon nehéz"
+Példa: "Nagyon nehéz"
   → Célszám: 6
 ```
 
@@ -73,9 +73,9 @@ Például 2 db "Nehéz" próbát
   → Célszám: 5
 ```
 
-Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot „véletlenül" megcsinálhasson.
+Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot "véletlenül" megcsinálhasson.
 
-Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat „milyen hosszú", mennyire „többlépcsős".
+Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat "milyen hosszú", mennyire "többlépcsős".
 
 Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal alacsonyabb nehézségre is dobathatunk akár így is:
 
@@ -96,7 +96,7 @@ Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal alacsonyabb nehézs
 
 ```
 Ügyesség: +2
-Próba: „Nagyon nehéz" (6)
+Próba: "Nagyon nehéz" (6)
 ```
 
 Mivel a feladat elég komplex és időben is elhúzódhat, ezért nem intézhető el a dolog `1 db` dobással. A KM `1 db` Másodlagos próbát ír elő.
@@ -134,7 +134,7 @@ A fenti szám nincs kőbe vésve! Ha a KM a másodlagos Tulajdonság szerepét m
 
 #### ⚡Példa
 
-Továbbra is az első példánál maradva: ha a feladat „Nagyon nehéz" (`6`) és a KM az adott szituációban az **Erő** Tulajdonságot ítéli **elsődlegesnek**, akkor a dobandó próbák a következőek lesznek:
+Továbbra is az első példánál maradva: ha a feladat "Nagyon nehéz" (`6`) és a KM az adott szituációban az **Erő** Tulajdonságot ítéli **elsődlegesnek**, akkor a dobandó próbák a következőek lesznek:
 
 ```
 Erőpróba: Nagyon nehéz (6)
@@ -142,7 +142,7 @@ Erőpróba: Nagyon nehéz (6)
 ```
 
 🔆Megjegyzés:\
-Ha a KM szerint ebben az esetben az Ügyességpróba csak „apró kiegészítő", akkor az arra dobandó próba lehet „Átlagos" (`4`), vagy „Könnyű" (`3`) is.
+Ha a KM szerint ebben az esetben az Ügyességpróba csak "apró kiegészítő", akkor az arra dobandó próba lehet "Átlagos" (`4`), vagy "Könnyű" (`3`) is.
 
 ---
 ### Tulajdonság ellenpróba

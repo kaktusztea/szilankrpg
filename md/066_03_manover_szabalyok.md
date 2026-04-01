@@ -6,7 +6,7 @@ Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablako
 
 Egy Manőver 3 opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
 
-Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver „Hatás” részénél leírtak következnek be.
+Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver "Hatás" részénél leírtak következnek be.
 
 Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 
@@ -78,7 +78,7 @@ Manőver nehézség
 12: Emberfeletti
 ```
 
-Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](010_10_03_manover_pontok_99.md) felhasználása szükséges a Nehézség mérsékléséhez és máris meglesz az „ára”, ha valaki eséllyel alkalmazni akarja.
+Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](010_10_03_manover_pontok_99.md) felhasználása szükséges a Nehézség mérsékléséhez és máris meglesz az "ára", ha valaki eséllyel alkalmazni akarja.
 
 ---
 

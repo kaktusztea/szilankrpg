@@ -127,7 +127,7 @@ A Kaland végén a KM és a játékosok tartanak egy áttekintést a kalandról,
 
  **Lehet hátránya is**, mert nem jutalmazza a heroikus, epikus fantasy momentumokat.
 
- **Lehet azért is hátránya**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` mód előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
+ **Lehet azért is hátránya**, mert nem a narratív beleszólási hatalmat jutalmazza. Az `1.` mód előnye, hogy nemcsak a Szilánk elköltése teszi lehetővé, hogy befolyásolja a játékos a narratívát, hanem már a **megszerzése** is.
 
 ---
 

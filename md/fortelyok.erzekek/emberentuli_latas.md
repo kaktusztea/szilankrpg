@@ -18,7 +18,7 @@ Emberi látás
 ---
 ### 1. fok
 
-🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli látás**, mint felvehető Érzék-fortély
+🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel a **Emberentúli látás**, mint felvehető Érzék-fortély
 
 🌟 **Hatás**:
 

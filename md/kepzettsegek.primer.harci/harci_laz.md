@@ -2,7 +2,7 @@
 
 Ez egy [Primer (harci) képzettség](../010_09_primer_szekunder_ismeretek.md).
 
-Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem gondolsz. A fokozatok között a harc során „lépdelsz" - képzettségpróbáiddal irányítod, mennyire engeded el magad.
+Harci extázisba esel, melyből nagyon nehéz kizökkenteni. A menekülésre nem gondolsz. A fokozatok között a harc során "lépdelsz" - képzettségpróbáiddal irányítod, mennyire engeded el magad.
 
 ### Mesterbónuszok
 

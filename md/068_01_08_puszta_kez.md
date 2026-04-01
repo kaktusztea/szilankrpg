@@ -1,6 +1,6 @@
 ## Puszta kéz
 
-A Puszta kéz kiemelt „fegyver", hiszen mindenki birtokában ott van. Puszta kézzel viszont bármilyen fegyver ellen meglehetősen kellemetlen harcolni, hiszen nincs mivel távol tartani, fenyegetni az ellenfelet.
+A Puszta kéz kiemelt "fegyver", hiszen mindenki birtokában ott van. Puszta kézzel viszont bármilyen fegyver ellen meglehetősen kellemetlen harcolni, hiszen nincs mivel távol tartani, fenyegetni az ellenfelet.
 
 Ezért a Puszta kéz alap harcértékei mindenkinél a következők:
 

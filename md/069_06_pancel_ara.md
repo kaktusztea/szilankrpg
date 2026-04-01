@@ -84,7 +84,7 @@ Anyagminőség Ár
 ```
 
 ---
-### Miért szorzó érték az „Ár”?
+### Miért szorzó érték az "Ár"?
 
 ```
 1x = 1 arany

@@ -36,7 +36,7 @@ Hamisíthatsz is - ebben segíthet a [Hamisítás](../fortelyok.altalanos/hamisi
 
 #### 🌟 `9.szint`
 
-⭕TODO⭕ Hamisítvány esetén van rá esély, hogy nagyon enyhén, de megérzed, hogy hiányzik belőle az „ihlet”.
+⭕TODO⭕ Hamisítvány esetén van rá esély, hogy nagyon enyhén, de megérzed, hogy hiányzik belőle az "ihlet".
 
 #### 🌟 `12.szint`
 

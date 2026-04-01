@@ -49,8 +49,8 @@ Emlékezet, Intelligencia, Érzékenység
 #### 🌟 `15.szint`
 
 ⭕TODO⭕
-- Olyan szinten értesz a művészethez, hogy időnként prófétikus meglátásaid támadnak egy alkotásról (pl. „Ez a szobor egy pusztulásra ítélt birodalom végső kétségbeesése”).
-- Misztikus módon képes vagy „beleérezni” egy műbe: megérzed az alkotó érzelmeit, szándékát, vagy a kort, amelyben létrejött.
+- Olyan szinten értesz a művészethez, hogy időnként prófétikus meglátásaid támadnak egy alkotásról (pl. "Ez a szobor egy pusztulásra ítélt birodalom végső kétségbeesése").
+- Misztikus módon képes vagy "beleérezni" egy műbe: megérzed az alkotó érzelmeit, szándékát, vagy a kort, amelyben létrejött.
 
 <br />
 
@@ -89,7 +89,7 @@ Ha egy passzív próbánál (például: "Mi ez a zene?, Ki festette ezt a képet
 
 #### Emberfeletti (21) 🎲
 
-- Egy mű „lelki lenyomatához” kapcsolódni: megérezni az alkotó érzelmeit.
+- Egy mű "lelki lenyomatához" kapcsolódni: megérezni az alkotó érzelmeit.
 - Történelmi-társadalmi próféciává kibontani a mű jelentését.
 - Olyan rejtett, kódolt üzeneteket megfejteni, amit az alkotó szándékosan rejtett el.
 

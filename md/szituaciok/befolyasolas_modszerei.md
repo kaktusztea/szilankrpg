@@ -7,7 +7,7 @@ Klasszikus szociális helyzetek, melyekben az egyik fél különböző verbális
 ### ⚜️ Átverés, hazudozás
 
 Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a játékos is tisztában van, de karaktere egyáltalán nem biztos!\
-„Elhittem, amit mondott?” - hangzik el sokszor.
+"Elhittem, amit mondott?" - hangzik el sokszor.
 
 [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
 - Tulajdonság: Intelligencia

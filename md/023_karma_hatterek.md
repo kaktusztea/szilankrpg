@@ -2,7 +2,7 @@
 
 <!-- tag: karma__fortely -->
 
-A Karma Hátterek speciális jellemvonások, melyek követelményei nem számszerűek, hanem valamely esemény, különleges cselekedet, rendszeres szokás ismétlése. Így Karmákat csak kalandok során lehet „megszerezni”. Hatásuk a karakter Auráján is megjelenik. Minden esetben a KM adja őket, a játékos nem veheti fel önként, valamint nem követelheti azt a KM-en.
+A Karma Hátterek speciális jellemvonások, melyek követelményei nem számszerűek, hanem valamely esemény, különleges cselekedet, rendszeres szokás ismétlése. Így Karmákat csak kalandok során lehet "megszerezni". Hatásuk a karakter Auráján is megjelenik. Minden esetben a KM adja őket, a játékos nem veheti fel önként, valamint nem követelheti azt a KM-en.
 
 Két forrásból juthatunk Karmához:
 
@@ -119,7 +119,7 @@ Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevét
 
 #### Követelmény
 
-Hasonlít a hősre, de nem feltétlenül kell jónak, nemesnek lenned. Hőstetteid egyetlen csoportra korlátozódnak. Te vagy a csoport hőse, egymagad hozol dicsőséget / védelmezed meg / viszed győzelemre a csoportot. Példa: Akhilleusz.
+Hasonlít a hősre, de nem feltétlenül kell jónak, nemesnek lenned. Hőstetteid egyetlen csoportra korlátozódnak. Te vagy a csoport hőse, egymagad hozol dicsőséget / védelmezed meg / viszed győzelemre a csoportot. Példa: Akhilleusz.
 
 #### Hatás
 
@@ -253,7 +253,7 @@ Előtörténet, eddigi kalandok.
 ### Hatás: Mágikus karmához jutsz.
 
 - Esőben varázsló (`30 %`): esőben hatékonyabban varázsol, viszont például sivatagban büntetést kap.
-- Tömegben varázsló (`20 %`): a nagy embertömeg „tuningolja”, ott könnyebben alkalmaz mágiát. Egy kihalt területen viszont büntetés sújtja.
+- Tömegben varázsló (`20 %`): a nagy embertömeg "tuningolja", ott könnyebben alkalmaz mágiát. Egy kihalt területen viszont büntetés sújtja.
 - Sötétben varázsló (`100 %`) - egy titkos, elkorcsosult szekta, melynek tagjai vakok és csak sötétben képesek varázsolni
 - stb
 
@@ -268,7 +268,7 @@ Mágikus karma.
 
 ### Követelmény
 
-- „A cipőfűzőjét is mágiával köti be”. Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
+- "A cipőfűzőjét is mágiával köti be". Minden apró piszlicsáré ügyet mágiával intéz, csak megmozdulni ne kelljen 🙂
 - Papi mágiára nem alkalmazható
 
 ### Pro Hatás

@@ -140,7 +140,7 @@ Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 
 **Hatás**: Harc közben egy támadásod helyett valamilyen csalafinta, alattomos húzást vetsz be ellenfeled ellen. Ilyen lehet például, hogy öklöddel váratlanul az arcába csapsz, vagy térden rúgod, esetleg a vállába bokszolsz, stb. Ennek a támadásodnak a sebzése `k20+0`.
 
-Természetesen az esetleges „kiegészítők”, mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. Ha a sebzés legalább `5`, akkor a fentieken kívül ellenfeled elveszíti következő támadását.
+Természetesen az esetleges "kiegészítők", mint *vaskesztyű*, *szegecsek* és az **Erőbónusz** szintén beleszámítanak a sebzésbe. Ha a sebzés legalább `5`, akkor a fentieken kívül ellenfeled elveszíti következő támadását.
 
 <br />
 
