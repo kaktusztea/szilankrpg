@@ -20,9 +20,9 @@ Z: Zúzott seb
 F: FP
 ```
 
-⚡ Példa: `Z2` jelölés `4 db` rubrikával
-- ez a karakter második sebe
-- egy `4 ÉP`nagyságú, Zúzott sebet jelöl
+⚡ Példa: `Z2` jelölések `8 db` rubrikával
+- ez a karakter **második** sebe
+- egy `8 ÉP`nagyságú, Zúzott sebet jelöl
 
 ![](images/02_eletero_tablazat_harcertek_levonassal.png)
 
@@ -37,9 +37,9 @@ Először jelöljük be a valós sebesülés okozta `ÉP`-ket, majd utána az `F
 
 ```
 2 db valós seb
- → 3 ÉP Vágott
- → 5 ÉP Zúzott
-3 FP
+ → 6 ÉP Vágott
+ → 8 ÉP Zúzott
+4 FP
 ```
 
 ![](images/06_fp.png)
