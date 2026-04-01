@@ -36,16 +36,11 @@ Amennyiben az életerő táblázat "betelt" és van benne `FP`, akkor a "túlcso
 ---
 ### FP gyógyulása
 
-```
-1 FP: ébren óránként
-2 FP: alvásban óránként
-```
+Az elszenvedett `FP` pontok a [Természetes gyógyulásnál](140_gyogyitas_gyogyulas.md#%EF%B8%8F-term%C3%A9szetes-gy%C3%B3gyul%C3%A1s) leírt sebességgel tűnnek el - és mivel nem valós sebesülés okozta, gyorsabban „gyógyul”, mint a valós `ÉP` seb.
 
-Az `FP`, mivel nem valós sebesülés okozta, gyorsabban „gyógyul”, mint a valós `ÉP` seb.
+Fizikai behatás esetén szép lassan eltűnnek az `FP` pontok.
 
-Fizikai behatás esetén kb. **óránként 1 pont „tűnik el”**, és így szép lassan „visszaolvad” a valós sebzésbe.
-
-Mérgezés, betegség esetén a hatás tartósabb is lehet, itt a KM dönt. **Alvás közben** a gyógyulási sebesség duplázódik, tehát `2 FP / óra`. Ha a KM úgy látja indokoltnak eltérhet a fenti számoktól.
+Mérgezés, betegség esetén a hatás tartósabb is lehet, itt a KM dönt. Ha a KM úgy látja indokoltnak eltérhet a fenti számoktól.
 
 Kapcsolódik: [Szívósság](fortelyok.altalanos/szivossag.md) fortély
 
