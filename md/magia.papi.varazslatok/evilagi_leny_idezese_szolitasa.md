@@ -21,7 +21,7 @@
 - 2 farkas, 1 medve, 3 róka, 2 delfin, 1 bálna (csak tengeren), 1 ocsány
 - Ha konkrét állat fajtát akarok, akkor
   - `+3` szint Kisszférára
-  - állati komponens szükséges. Pédául medvéhez egy medvefog.
+  - állati komponens szükséges. Például medvéhez egy medvefog.
 
 **9.szint:** gyengébb szörny (medvehéja, Panthal-massza, Káosz-lények, Kr4ni harcikutya)
 
