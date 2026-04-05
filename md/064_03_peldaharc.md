@@ -220,9 +220,11 @@ Gustav aktuális VÉ: 46
 
 #### `2.` Ellenpróba
 
+Tetves `1 Manőver Pontot` költ előre, hogy növelje esélyeit (`+2` a dobásához).
+
 ```
 Tetves dobása:
-  Manőver Alap(3) + k10(7) = 10
+  Manőver Alap(3) + k10(7) + MP(2) = 12
 
   vs
 
@@ -230,7 +232,7 @@ Célszám:
   Manőver Alap ellenfél(3) + Nehézség(8) = 11
 ```
 
-Tetves `1 Manőver Pontot` költ → `+2` a dobásához → `12 vs 11`: **Sikeres!**
+`12 vs 11`: **Sikeres!**
 
 #### ⚜️Tetves Sebzésdobása
 
