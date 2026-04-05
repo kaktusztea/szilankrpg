@@ -13,6 +13,8 @@ A Kiemelt Fortélyok alá három, egyedi ismeret tartozik, amelyek nem sorolhat�
 ---
 #### [Analfabéta](fortelyok.kiemelt/analfabeta.md)
 
+#### [Apró méret](fortelyok.kiemelt/apro_meret.md)
+
 #### [Süketség](fortelyok.kiemelt/suketseg.md)
 
 #### [Tartós sérültség](fortelyok.kiemelt/tartos_serultseg.md)
