@@ -1,8 +1,10 @@
-## 🟣 Apró méret (1)
+## 🟣 Apró méretű lény (1)
 
 Apró termetű lények, - mint például az Erdőpille - számára `1.` Tapasztalati Szinten kötelező fortély. Később nem is vehető fel.
 
 Az apró méret, alacsonyabb Életerőt is jelent, ezért karaktered `ÉP` értéke alaphelyezetben is jelentősen alacsonyabb. Kompenzációként karakteralkotáskor bónusz `KP` javadalmazásban részesülsz - `1.` Tapasztalati szinten.
+
+Nyilvánvalóan csak olyan lény veheti fel, amelynek [Faj Hátterénél](../template/faj_hatter.md) ez szerepel.
 
 ### KP bónusz
 
