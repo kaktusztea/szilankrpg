@@ -1224,7 +1224,7 @@
         "MK": "0",
         "KF": "0",
         "Kategória": "közelharci",
-        "Speciális": "Áldozat földön van, Belharci szituáció, akkor automatikus \"Pontra támadás\" Manőver Ellenpróba siker. Ilyenkor az SFÉ ellene 0, mert beszúr a rések közt."
+        "Speciális": "Áldozat földön van, Belharci szituáció, akkor automatikus \"Precíz támadás\" Manőver Ellenpróba siker. Ilyenkor az SFÉ ellene 0, mert beszúr a rések közt."
     },
     {
         "Fegyver": "Tőr, Slan",
