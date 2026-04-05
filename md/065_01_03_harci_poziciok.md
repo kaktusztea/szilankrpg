@@ -8,7 +8,7 @@ Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni,
 Támadó
 → Megnyert KÉ
 → Előny+1 TÉ dobásra
-→ VÉ csökkentés: 2 + k20T
+→ VÉ csökkentés: 3
 
 Védő
 → Többszörös támadás elvesztése
