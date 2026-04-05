@@ -6,7 +6,7 @@
 
 ### [Mozgásgátló Tényező (MGT)](069_03_MGT.md)
 
-### [Védett terület, Páncéldobás](069_04_vedett_terulet_panceldobas.md)
+### [Védett terület](069_04_vedett_terulet.md)
 
 ### [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
 

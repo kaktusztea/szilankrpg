@@ -9,6 +9,7 @@ KÉ: 12  TÉ: 37  VÉ: 54
 ÉP: 40
 Erő: +3
 Edzettség: +3
+Manőver Alap: 3
 ```
 
 ```
@@ -66,6 +67,7 @@ S4:  -6 TÉ
 KÉ: 10  TÉ: 35  VÉ: 52
 ÉP: 32
 Edzettség: +1
+Manőver Alap: 3
 ```
 
 ```
@@ -74,6 +76,10 @@ Sebzés: k20+2 (V/S)
 
 Fájdalomtűrés (6)
  → 2 könnyítés a TÉ levonásokra
+
+Harcmodor: 6.szint
+ → Területre támadás manőver
+   alkalmazható
 ```
 
 ```
@@ -101,7 +107,7 @@ TÉ levonás összes
 (2 könnyítéssel)
 
 S1:    -
-S2:    -
+S2:  -1 TÉ
 S3:  -4 TÉ
 S4:  -7 TÉ
 ```
@@ -112,7 +118,7 @@ S4:  -7 TÉ
 ---
 ## Lord Gustav és Tetves részletes összecsapása
 
-Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezedeményezést - kapja meg.
+Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
 
 ### 🔆Pengeméret
 
@@ -141,7 +147,7 @@ Teljes TÉ
 
 A `TÉ: 55` pont meghaladja a lovag `Védő Értékét (54)`: **Talált**!
 
-#### ⚜️Tetves a Sebzésdobása
+#### ⚜️Tetves Sebzésdobása
 
 Erre is `Előny+1` bónusz jár, mert Támadó dobása `16` és `19` között volt.
 
@@ -152,31 +158,26 @@ Tetves Sebzés dobás: 9 és 14
   → 18 SP
 ```
 
-#### ⚜️Gustav Páncéldobást végez
-
-- Teste `80%`-ban van befedve a láncing anyagával,
-- Ha `k10`-en `1-8`-ig dob, akkor a csapás védett területet ért.
-- Gustav dob: `6`, így a páncél **SFÉ**-je beszámít.
-- Gustav páncéljának `SFÉ` értéke: `10`
-
 #### ⚜️Végső SP és az ÉP sebesülés
 
+Gustav láncinge `SFÉ: 10` értékkel védi.
+
 ```
-8 SP = 18 - 10
+8 SP = 18 - 10 (SFÉ)
   → -8 ÉP
   → -3 VÉ
 ```
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
-| `1V`           | .              | .              | .              |
-| `1V`           | .              | .              | .              |
-| `1V`           | .              | .              | .              |
-| `1V`           | .              | .              | .              |
-| `1V`           | .              | .              | .              |
-| `1V`           | .              | .              | .              |
-| `1V`           | .              | .              | .              |
-| `1V`           | .              | .              | .              |
+| `1S`           | .              | .              | .              |
+| `1S`           | .              | .              | .              |
+| `1S`           | .              | .              | .              |
+| `1S`           | .              | .              | .              |
+| `1S`           | .              | .              | .              |
+| `1S`           | .              | .              | .              |
+| `1S`           | .              | .              | .              |
+| `1S`           | .              | .              | .              |
 | .              | .              | .              | .              |
 | .              | .              | .              | .              |
 
@@ -194,32 +195,77 @@ VÉ: 51
 <br />
 
 ---
-### Gustav második sebe  (`S3` kategória)
+### Gustav második sebe – Területre támadás  (`S3` kategória)
 
-Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-ra. Rosszul mozdul és bekap egy újabb sebet. **Páncéldobása** (`9`) ezúttal sikertelen, a csapás fedetlen területet ért (mondjuk alkar), így az `SFÉ`-je ezúttal nem számít!
+Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-ra. Tetves felméri a helyzetet: a láncing túl jól védi a lovagot. Elhatározza, hogy a vért által **nem fedett** területet veszi célba – a lovag lábszárát, amelyet nem borít láncing. Bejelenti a [Területre / Pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manővert.
+
+#### ⚜️Területre támadás manőver
+
+Gustav vértjének lefedettsége `80%`, tehát a fedetlen területre támadás **Nehézsége**: `8`.
+
+A manőver fázisai: `Végrehajtás, Ellenpróba`.
+
+#### `1.` Végrehajtás
+
+Tetves sima támadást dob (a Területre támadás manővernél ❗**nem jár** a szokásos `TÉ:+4` manőver bónusz❗):
 
 ```
-Tetves Sebzés dobás:
-k20(10) + 2 + 2(Szúró) → 14 SP
-  → -14 ÉP, -3 VÉ
+Tetves TÉ dobás: k20 → 15
+Teljes TÉ: 35 + 15 = 50
+  vs
+Gustav aktuális VÉ: 46
+
+50 >= 46 → Végrehajtás sikeres!
 ```
 
-Az újabb sebbel Gustav egyből az `S3` egészség-kategóriába zuhan (összesen `22 ÉP`-t vesztett)! Magas Fájdalomtűrésének köszönhetően a `TÉ` büntetése "csak" `-3`.
+#### `2.` Ellenpróba
+
+```
+Tetves dobása:
+  Manőver Alap(3) + k10(7) = 10
+
+  vs
+
+Célszám:
+  Manőver Alap ellenfél(3) + Nehézség(8) = 11
+```
+
+Tetves `1 Manőver Pontot` költ → `+2` a dobásához → `12 vs 11`: **Sikeres!**
+
+#### ⚜️Tetves Sebzésdobása
+
+A manőver sikeres, a csapás fedetlen területet ért – az `SFÉ` **nem számít**!
+
+```
+Tetves Sebzés dobás: k20 → 15
+  15 + 2(fegyver) + 2(Szúró)
+  → 19 SP
+
+SFÉ nem érvényesül (fedetlen terület)!
+  → 19 SP = 19 ÉP seb
+  → -3 VÉ
+```
+
+#### ⚜️Hatás
+
+Ez brutális! A láncinget megkerülő szúrás a lovag fedetlen lábszárába hatol. Gustav egyből az `S3` egészség-kategóriába zuhan (összesen `27 ÉP`-t vesztett)!
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
-| `1V`           | `2V`           | `2V`           | .              |
-| `1V`           | `2V`           | `2V`           | .              |
-| `1V`           | `2V`           | .              | .              |
-| `1V`           | `2V`           | .              | .              |
-| `1V`           | `2V`           | .              | .              |
-| `1V`           | `2V`           | .              | .              |
-| `1V`           | `2V`           | .              | .              |
-| `1V`           | `2V`           | .              | .              |
-| `2V`           | `2V`           | .              | .              |
-| `2V`           | `2V`           | .              | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | .              | .              |
+| `2S`           | `2S`           | .              | .              |
+| `2S`           | `2S`           | .              | .              |
 
-A helyzet komoly: a lovag elvesztett sokat **Védő Értékéből** és **Életerő Pontjainak** több mint felét.
+Magas Fájdalomtűrésének köszönhetően a `TÉ` büntetése "csak" `-3`.
+
+Látható, hogy a **Területre támadás** manőver milyen veszélyes: a láncing `SFÉ: 10` értéke teljesen kikerülhető, ha a támadó elég ügyes hozzá! Ugyanez a csapás a láncing ellen csak `19 - 10 = 9 SP` lett volna.
 
 ```
 Lord Gustav
@@ -227,7 +273,7 @@ aktuális állapot
 
 TÉ: 34
 VÉ: 40
-ÉP: 18
+ÉP: 13
 ```
 
 <br />
@@ -235,34 +281,35 @@ VÉ: 40
 ---
 ### Gustav harmadik sebe  (`S4` kategória)
 
-Bár sikerül sebet ejtenie támadóján (`8 ÉP`-t). A sors nem kedvez a lovagnak, a gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás hatalmas (`21 SP`), de a láncing rengeteget (`10`) felfog.
+Gustav helyzete komoly. Bár sikerül sebet ejtenie támadóján (`8 ÉP`-t), a sors nem kedvez a lovagnak. A gyilkos válaszul belevág az oldalába a láncingen keresztül, borda hasad. A csapás erős (`15 SP`), de a láncing sokat (`10`) felfog.
 
 ```
 Tetves Sebzés dobás:
-  k20 Előny+1: (8, 17) → 17
-  17 + 2(fegyver) + 2(Szúró) = 21 SP
-  21 - 10 (SFÉ) = 11 SP
+  k20 → 11
+  11 + 2(fegyver) + 2(Szúró)
+  → 15 SP
+  15 - 10 (SFÉ) = 5 SP
 
 Hatás:
-  -11 ÉP
+  -5 ÉP
   -3 VÉ
 ```
 
-Gustavnak `7 ÉP`-je marad és `S4`-es kategóriába zuhan, ahol már `-6 TÉ` büntetés jár!\
-Eddig összesen `33 ÉP`-t vesztett!
+Gustavnak `8 ÉP`-je marad és `S4`-es kategóriába zuhan, ahol már `-6 TÉ` büntetés jár!\
+Eddig összesen `32 ÉP`-t vesztett!
 
 | **\_\_S1\_\_** | **\_\_S2\_\_** | **\_\_S3\_\_** | **\_\_S4\_\_** |
 | -------------- | -------------- | -------------- | -------------- |
-| `1V`           | `2V`           | `2V`           | `3V`           |
-| `1V`           | `2V`           | `2V`           | `3V`           |
-| `1V`           | `2V`           | `3V`           | `3V`           |
-| `1V`           | `2V`           | `3V`           | .              |
-| `1V`           | `2V`           | `3V`           | .              |
-| `1V`           | `2V`           | `3V`           | .              |
-| `1V`           | `2V`           | `3V`           | .              |
-| `1V`           | `2V`           | `3V`           | .              |
-| `2V`           | `2V`           | `3V`           | .              |
-| `2V`           | `2V`           | `3V`           | .              |
+| `1S`           | `2S`           | `2S`           | `3V`           |
+| `1S`           | `2S`           | `2S`           | `3V`           |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `2S`           | .              |
+| `1S`           | `2S`           | `3V`           | .              |
+| `2S`           | `2S`           | `3V`           | .              |
+| `2S`           | `2S`           | `3V`           | .              |
 
 Mivel `S4` kategóriába került, azonnal jön az automatikus **Fájdalomtűrés** próba `12` (Nehéz) ellen **Edzettség** Tulajdonsággal. Gustav `11`-et dob – magas Edzettségével (`+3`) ez `14`: sikerült! A lovag talpon marad puszta akaraterejéből.
 
@@ -271,8 +318,8 @@ Lord Gustav
 aktuális állapot
 
 TÉ: 31
-VÉ: 33
-ÉP: 7
+VÉ: 34
+ÉP: 8
 ```
 
 Gustav helyzete reménytelen, támolyog, alig áll a lábán. A játékos bejelenti, hogy utolsó esélyként Gustav teljes **támadó taktikát** (`+3 TÉ; -6 VÉ`) alkalmaz, ha meg kell halni, tegye azt lovagként!
@@ -280,8 +327,8 @@ Gustav helyzete reménytelen, támolyog, alig áll a lábán. A játékos bejele
 Nem tudja, de ellenfele – látva elcsigázottságát –, szintén teljes támadó taktikát alkalmaz, hogy következő csapása biztos a túlvilágra küldje prédáját és gyorsan eltűnhessen az éjszakában. Az elgondolás jó... de az istenek ma máshogy akarták.
 
 ```
-Lord Gustav VÉ: 27
-  (33 - 6 Támadó taktika)
+Lord Gustav VÉ: 28
+  (34 - 6 Támadó taktika)
 ```
 
 <br />
@@ -289,26 +336,29 @@ Lord Gustav VÉ: 27
 ---
 ### A gyilkos veszte
 
-Tetves nyeri a kezdeményezést, viszont **Támadó dobása** csak `3` (összesen: `41`!), ami bőven talál (tekintve, hogy a lovag `VÉ`-je csak `27` a Támadó taktika miatt).
+Tetves nyeri a kezdeményezést, viszont **Támadó dobása** csak `4` (összesen: `41`!), ami bőven talál (tekintve, hogy a lovag `VÉ`-je csak `28` a Támadó taktika miatt).
 
-Sebzésnek `2`-t dob `k20`-on.
+Sebzésnek `1`-et dob `k20`-on – a lehető legrosszabbat.
 
-Mivel a Támadó dobásnál `10`-zel ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+6 SP` jár (`+5`-nél, `+10`-nél).
+Mivel a Támadó dobásnál `13`-mal ütötte túl ellenfelét, ezért a **Többszörös találatból** további `+6 SP` jár (`+5`-nél, `+10`-nél).
 
 ```
-TÉ = 42 (35+3+4)
+TÉ = 41 (35-1+3+4)
+  vs VÉ = 28
+  → túldobás: 13 → +6 SP (2x3)
+
 Tetves Sebzés dobás:
- → k20(2) + 2(fegyver) + 2(Szúró) + 6(bónusz)
- → 12 SP - 10 SFÉ = 2 SP
- → -2 ÉP, -3 VÉ
+ → k20(1) + 2(fegyver) + 2(Szúró) + 6(bónusz)
+ → 11 SP - 10 SFÉ = 1 SP
+ → -1 ÉP, -3 VÉ
 ```
 
-Gustav `5 ÉP`-re zuhan, de a láncing megint felfogta a csapás javát. Tetves csapásának java lecsusszan a felé dobogó lovag vértjéről, aki visszatámadva... `18`-at dob támadására. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `40`, de most ugye neki is `-6` büntetése van erre (Támadó taktika miatt `40-6=34`).
+Gustav `7 ÉP`-re zuhan, de a láncing szinte mindent felfogott! Tetves csapásának java lecsusszan a felé dobogó lovag vértjéről, aki visszatámadva... `18`-at dob támadására. Tetves is elveszített már **Védő Értékéből** a harc során, alaphelyzetben aktuális `VÉ`-je `40`, de most ugye neki is `-6` büntetése van erre (Támadó taktika miatt `40-6=34`).
 
 ```
 34 = Tetves VÉ
 52 = Gustav támadása (31+3+18)
-   → +6 SP: többszörös találat (2x3)
+   → túldobás: 18 → +9 SP (3x3)
 ```
 
 A `18`-as Támadó dobás `Előny+1`-et ad a Sebzésdobásra is!
@@ -334,9 +384,9 @@ A gyilkos összesen `40 ÉP`-t vesztett (a korábbi `8 ÉP`-vel együtt) – tú
 | `2V`           | `2V`           | `2V`           | `2V`           |
 | `2V`           | `2V`           | `2V`           | `2V`           |
 
-Míg Gustav `3 db` sebet (`33 ÉP`) is elviselt és talpon maradt, addig a gyengébb fizikumú Tetves ennyitől elvesztette minden `ÉP`-jét. Eszméletlenül rogy össze, miután értetlenül bámul a hasából kimeredő kardra. Ha nem látják el, szép lassan elvérzik.
+Míg Gustav `3 db` sebet (`32 ÉP`) és egy utolsó karcolást (`1 ÉP`) is elviselt és talpon maradt `7 ÉP`-vel, addig a gyengébb fizikumú Tetves ennyitől elvesztette minden `ÉP`-jét. Eszméletlenül rogy össze, miután értetlenül bámul a hasából kimeredő kardra. Ha nem látják el, szép lassan elvérzik.
 
-A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmentette az életét. A háttérben vasalt csizmák csattogása hallatszik, az őrjárat érkezik futva - jó érzékkel későn -, de sok dolguk már nem akad...
+A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmentette az életét – bár a fedetlen lábszárán kapott szúrás emlékeztetni fogja, hogy a legjobb vért sem véd mindenhol. A háttérben vasalt csizmák csattogása hallatszik, az őrjárat érkezik futva - jó érzékkel későn -, de sok dolguk már nem akad...
 
 ---
 

@@ -145,18 +145,19 @@ Többszörös találat bónusza
 ### 💥 Találat, Sebzés ( TÉ >= VÉ )
 
 ```
-Páncéldobás: áldozat dob k10 (%)
-   • 0 SFÉ
-   • van fizikai SFÉ
-     Fegyver Átütés csökkenti SFÉ
-     aktuális értékét.
+SFÉ mindig érvényesül
+  Fegyver Átütés csökkenti SFÉ
+  aktuális értékét.
+
+Fedetlen terület célzásához:
+  → Területre / Pontra támadás manőver
 ```
 
 ```
 ÉP = Fegyver SP
    + módosítók
    + bónuszok
-   – aktuális SFÉ
+   – SFÉ
 ```
 
 ```
@@ -220,7 +221,6 @@ Nagy tömegjelenetben a sok statisztika kezelése drasztikusan lelassíthatja a 
 • TÉ: +7 extra mindenkinek
 • SP: +5 extra mindenkinek
 • Nincs VÉ csökkentés
-• Nincs páncéldobás
 • Nincs Manőver használat
 ```
 

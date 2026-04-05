@@ -40,7 +40,7 @@ Nincs sebzés
 
 ❌ Más taktikával együtt
 
-Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiálhatod (arra a [Területre támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) Manőver használható), de a [Páncéldobás](069_04_vedett_terulet_panceldobas.md#p%C3%A1nc%C3%A9ldob%C3%A1s) nyilván megadja, vérttel fedett vagy nem fedett területet találtál el.
+Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiálhatod (arra a [Területre támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) Manőver használható).
 
 🔆 Puszta kézre és fegyverre egyaránt vonatkozik
 
