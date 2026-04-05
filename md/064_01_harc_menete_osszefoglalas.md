@@ -208,7 +208,7 @@ Lásd: [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) és [Fegyvere
 ---
 ### 🚷 Mozgásgátló Tényező (MGT)
 
-Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#mozgásgátló-tényező-mgt).
+Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#vért-mgt).
 
 <br />
 

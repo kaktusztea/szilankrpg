@@ -4,7 +4,7 @@
 
 ### [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
 
-### [Mozgásgátló Tényező (MGT)](069_03_MGT.md)
+### [Vért MGT](069_03_MGT.md)
 
 ### [Védett terület](069_04_vedett_terulet.md)
 

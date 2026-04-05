@@ -557,7 +557,7 @@ Merevvértviselet fortély MGT csökkentő
 
 #### Kapcsolódik
 
-- [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet
+- [Vért MGT](069_03_MGT.md) fejezet
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély
 
 <br />
