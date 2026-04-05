@@ -19,8 +19,8 @@
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
 - [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
-- [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s)
+- [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Távoltartás](#t%C3%A1voltart%C3%A1s)
 - [Terelés](#terel%C3%A9s)
 
@@ -338,24 +338,6 @@ Anyagok erőssége
 <br />
 
 ---
-### Rávetődés hátulról
-
-Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
-
-- Nehézség: `6`
-- Fázisok:
-  - Észrevétlen támadás esetén: `Ellenpróba`
-  - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
-- Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
-
-**Hatás**:
-- Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
-- [Belharci szituáció](065_01_01_belharci_szituacio.md)
-- [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
-
-<br />
-
----
 ### Precíz támadás
 
 Meglepetés esetén is kell **Ellenpróbát** dobni
@@ -380,6 +362,24 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén a [Harci Anatómia](fortelyok.harci/harci_anatomia.md) **SP** bónusz érvényesül.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély.
+
+<br />
+
+---
+### Rávetődés hátulról
+
+Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
+
+- Nehézség: `6`
+- Fázisok:
+  - Észrevétlen támadás esetén: `Ellenpróba`
+  - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
+- Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
+
+**Hatás**:
+- Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
+- [Belharci szituáció](065_01_01_belharci_szituacio.md)
+- [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
 
 <br />
 
