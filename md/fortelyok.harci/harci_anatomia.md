@@ -27,7 +27,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
 
 🌟 **Hatás**:
-- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén: `SP:+2` (csak vértmentes ponton)
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `SP:+2` (csak vértmentes ponton)
 - [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) harci helyzet esetén `SP:+2` (csak vértmentes ponton)
 <br />
 
@@ -39,7 +39,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
-- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén: `SP:+4` (csak vértmentes ponton)
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `SP:+4` (csak vértmentes ponton)
 - [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) harci helyzet esetén `SP:+4` (csak vértmentes ponton)
 <br />
 
@@ -51,9 +51,9 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
-- [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver esetén: `SP:+6` (csak vértmentes ponton)
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `SP:+6` (csak vértmentes ponton)
 - [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) harci helyzet esetén `SP:+6` (csak vértmentes ponton)
 - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
-- Szemgolyót szedhet ki harc közben: Sikeres [Területre / Pontra Támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
+- Szemgolyót szedhet ki harc közben: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
 
 ---

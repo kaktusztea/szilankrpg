@@ -12,7 +12,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Hátbaszúrás - harcolót](szituaciok/hatbaszuras_harcolot.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
 - [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról)
-- [Meglepetésből pontra támadás max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
+- [Meglepetésből Precíz támadás max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
 
 ## Távharc szituációk
 

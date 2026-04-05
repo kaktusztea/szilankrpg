@@ -20,7 +20,7 @@
 - [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
 - [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
-- [Területre / Pontra támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s)
+- [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s)
 - [Távoltartás](#t%C3%A1voltart%C3%A1s)
 - [Terelés](#terel%C3%A9s)
 
@@ -59,7 +59,7 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 
 Nehézség: `8` (kéz), `10` (láb)
 
-Ha le akarod vágni ellenfeled valamely végtagját (kéz, láb), akkor sikeres: [Területre támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manővert kell dobnod a fenti Nehézséggel.
+Ha le akarod vágni ellenfeled valamely végtagját (kéz, láb), akkor sikeres: [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert kell dobnod a fenti Nehézséggel.
 
 Továbbá megfelelő mennyiségű `ÉP` sebzést kell okoznod.
 
@@ -233,7 +233,7 @@ Ha meg akarod fosztani ellenfeledet fegyverétől, vagy kiütve kezéből, vagy 
 ---
 ### Leütés hátulról
 
-Célod ellenfeled ájulása. A **Nehézség** a [Területre támadás](#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) Manőverből származtatott, könnyített érték.
+Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőverből származtatott, könnyített érték.
 
 - Nehézség: `6`
     - `-2`: [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély minden foka után
@@ -356,7 +356,7 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpr
 <br />
 
 ---
-### Területre / Pontra támadás
+### Precíz támadás
 
 Meglepetés esetén is kell **Ellenpróbát** dobni
 

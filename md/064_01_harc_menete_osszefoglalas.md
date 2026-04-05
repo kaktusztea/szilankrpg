@@ -150,7 +150,7 @@ SFÉ mindig érvényesül
   aktuális értékét.
 
 Fedetlen terület célzásához:
-  → Területre / Pontra támadás manőver
+  → Precíz támadás manőver
 ```
 
 ```

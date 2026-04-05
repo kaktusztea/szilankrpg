@@ -78,7 +78,7 @@ Fájdalomtűrés (6)
  → 2 könnyítés a TÉ levonásokra
 
 Harcmodor: 6.szint
- → Területre támadás manőver
+ → Precíz támadás manőver
    alkalmazható
 ```
 
@@ -195,11 +195,11 @@ VÉ: 51
 <br />
 
 ---
-### Gustav második sebe – Területre támadás  (`S3` kategória)
+### Gustav második sebe – Precíz támadás  (`S3` kategória)
 
-Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-ra. Tetves felméri a helyzetet: a láncing túl jól védi a lovagot. Elhatározza, hogy a vért által **nem fedett** területet veszi célba – a lovag lábszárát, amelyet nem borít láncing. Bejelenti a [Területre / Pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manővert.
+Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-ra. Tetves felméri a helyzetet: a láncing túl jól védi a lovagot. Elhatározza, hogy a vért által **nem fedett** területet veszi célba – a lovag lábszárát, amelyet nem borít láncing. Bejelenti a [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert.
 
-#### ⚜️Területre támadás manőver
+#### ⚜️Precíz támadás manőver
 
 Gustav vértjének lefedettsége `80%`, tehát a fedetlen területre támadás **Nehézsége**: `8`.
 
@@ -207,7 +207,7 @@ A manőver fázisai: `Végrehajtás, Ellenpróba`.
 
 #### `1.` Végrehajtás
 
-Tetves sima támadást dob (a Területre támadás manővernél ❗**nem jár** a szokásos `TÉ:+4` manőver bónusz❗):
+Tetves sima támadást dob (a Precíz támadás manővernél ❗**nem jár** a szokásos `TÉ:+4` manőver bónusz❗):
 
 ```
 Tetves TÉ dobás: k20 → 15
@@ -267,7 +267,7 @@ Ez brutális! A láncinget megkerülő szúrás a lovag fedetlen lábszárába h
 
 Magas Fájdalomtűrésének köszönhetően a `TÉ` büntetése "csak" `-3`.
 
-Látható, hogy a **Területre támadás** manőver milyen veszélyes: a láncing `SFÉ: 10` értéke teljesen kikerülhető, ha a támadó elég ügyes hozzá! Ugyanez a csapás a láncing ellen csak `19 - 10 = 9 SP` lett volna.
+Látható, hogy a **Precíz támadás** manőver milyen veszélyes: a láncing `SFÉ: 10` értéke teljesen kikerülhető, ha a támadó elég ügyes hozzá! Ugyanez a csapás a láncing ellen csak `19 - 10 = 9 SP` lett volna.
 
 ```
 Lord Gustav

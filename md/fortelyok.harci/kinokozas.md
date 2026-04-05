@@ -11,7 +11,7 @@ Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 - Csak egykezes szúró-vágó-ostor fegyverrel, amellyel lehetséges pontra támadni
 - Harci anatómia: `1.fok` ([megkötései](harci_anatomia.md#megk%C3%B6t%C3%A9sek) számítanak)
 - Csak vértmentes pontot támadhatsz
-- Sikeres [Területre/Pontra támadás](../066_05_altalanos_manoverek.md#területre--pontra-támadás) manőver
+- Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver
 
 🌟 **Hatás**: Eltaláltad a kiszemelt fájdalmas pontot ellenfeled testén
 

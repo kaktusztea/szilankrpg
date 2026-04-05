@@ -40,7 +40,7 @@ Nincs sebzés
 
 ❌ Más taktikával együtt
 
-Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiálhatod (arra a [Területre támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) Manőver használható).
+Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiálhatod (arra a [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőver használható).
 
 🔆 Puszta kézre és fegyverre egyaránt vonatkozik
 

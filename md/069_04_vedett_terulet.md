@@ -28,7 +28,7 @@ combok, lábszárak
 
 A páncél lefedettségi százaléka (`%`) azt jelzi, hogy a test mekkora részét védi a vért. Ezt a fenti táblázatból lehet kiszámolni.
 
-A páncél `SFÉ` értéke **mindig érvényesül** minden találatnál – feltéve, hogy a támadó nem használja sikeresen a [Területre / Pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manővert, amellyel célzottan fedetlen területet választhat.
+A páncél `SFÉ` értéke **mindig érvényesül** minden találatnál – feltéve, hogy a támadó nem használja sikeresen a [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert, amellyel célzottan fedetlen területet választhat.
 
 ---
 ### ⚡Példa
@@ -39,7 +39,7 @@ Torzót, felkart és alkart védő páncél a test `70%`-át védi:
 70 = 50 + 10 + 10
 ```
 
-A lefedettség százalék a [Területre / Pontra támadás](066_05_altalanos_manoverek.md#ter%C3%BCletre--pontra-t%C3%A1mad%C3%A1s) manőver **Nehézségét** határozza meg, ha az ellenfél fedetlen területet akar eltalálni.
+A lefedettség százalék a [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver **Nehézségét** határozza meg, ha az ellenfél fedetlen területet akar eltalálni.
 
 ---
 
