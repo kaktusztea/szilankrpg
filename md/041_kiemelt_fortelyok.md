@@ -15,7 +15,7 @@ A Kiemelt Fortélyok alá három, egyedi ismeret tartozik, amelyek nem sorolhat�
 
 #### [Apró méretű lény](fortelyok.kiemelt/apro_meretu_leny.md)
 
-#### [Nagy méretű lény](fortelyok.kiemelt/nagy_meretu_leny.md) 🔁
+#### [Nagy méretű lény](fortelyok.kiemelt/nagy_meretu_leny.md)
 
 #### [Süketség](fortelyok.kiemelt/suketseg.md)
 
