@@ -1,6 +1,6 @@
 ## 🟣 Nagy méretű lény (3)
 
-Nagy termetű lények, - mint például egyes Óriások - számára `1.` Tapasztalati Szinten kötelező fortély. Később nem is vehető fel. A lény méretétől függően `1-3` fokozata van.
+Nagy termetű lények, - mint például az Óriások különféle alfajai - számára `1.` Tapasztalati Szinten kötelező fortély. Később nem vehető fel, a lény méretétől függően `3` fokra osztottuk.
 
 A nagy méret, magasabb Életerőt is jelent, ezért karaktered `ÉP` értéke alaphelyezetben is jelentősen magasabb. Nyilvánvalóan csak olyan lény veheti fel, amelynek [Faj Hátterénél](../template/faj_hatter.md) ez szerepel.
 
