@@ -390,7 +390,7 @@ https://github.com/kaktusztea/szilankrpg/
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Mozgásgátló Tényező (MGT)](069_03_MGT.md)
+- [Vért MGT](069_03_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
@@ -14985,12 +14985,12 @@ A merevvértek helyes viselése is ismereteket igényel, különben csak csetles
 
 **Merevvértek**: Pikkely fémpáncél, Lemezvért
 
-Merevvért büntetés Hatásairól a [Mozgásgátló Tényező (MGT)](../069_03_MGT.md) oldalon olvashatsz.
+Merevvért büntetés Hatásairól a [Vért MGT](../069_03_MGT.md) oldalon olvashatsz.
 
 ### Kapcsolódik
 
 - [Vértek, Páncélok](../069_00_vertek_pancelok.md) fejezet
-- [Mozgásgátló Tényező (MGT)](../069_03_MGT.md) fejezet
+- [Vért MGT](../069_03_MGT.md) fejezet
 - [Páncél akadályoztatása](../082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) Státusz
 
 ---
@@ -15822,9 +15822,9 @@ Amennyiben karaktered később mégis megtanulnál írni/olvasni, töröld ezt a
 
 ## 🟣 Apró méretű lény (1)
 
-Apró termetű lények, - mint például az Erdőpille - számára `1.` Tapasztalati Szinten kötelező fortély. Később nem is vehető fel.
+Apró termetű lények - mint például az Erdőpille - számára `1.` Tapasztalati Szinten kötelező fortély. Később nem is vehető fel.
 
-Az apró méret, alacsonyabb Életerőt is jelent, ezért karaktered `ÉP` értéke alaphelyezetben is jelentősen alacsonyabb. Kompenzációként karakteralkotáskor bónusz `KP` javadalmazásban részesülsz - `1.` Tapasztalati szinten.
+Az apró méret, alacsonyabb Életerőt is jelent, ezért karaktered `ÉP` értéke alaphelyezetben is jelentősen alacsonyabb. Kompenzációként karakteralkotáskor bónusz `KP` javadalmazásban részesülsz.
 
 Nyilvánvalóan csak olyan lény veheti fel, amelynek [Faj Hátterénél](../template/faj_hatter.md) ez szerepel.
 
@@ -16051,7 +16051,7 @@ Lexikum képzettségpróba
 
 ## 🟣 Nagy méretű lény (3)
 
-Nagy termetű lények, - mint például egyes Óriások - számára `1.` Tapasztalati Szinten kötelező fortély. Később nem is vehető fel. A lény méretétől függően `1-3` fokozata van.
+Nagy termetű lények, - mint például az Óriások különféle alfajai - számára `1.` Tapasztalati Szinten kötelező fortély. Később nem vehető fel, a lény méretétől függően `3` fokra osztottuk.
 
 A nagy méret, magasabb Életerőt is jelent, ezért karaktered `ÉP` értéke alaphelyezetben is jelentősen magasabb. Nyilvánvalóan csak olyan lény veheti fel, amelynek [Faj Hátterénél](../template/faj_hatter.md) ez szerepel.
 
@@ -19266,7 +19266,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 
 - [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
-- [Mozgásgátló Tényező (MGT)](069_03_MGT.md)
+- [Vért MGT](069_03_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
 - [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
@@ -20004,7 +20004,7 @@ Harc és mozgás során a vértekek, Pajzsok és a Felszerelés különböző m�
 
 ### Vértek, páncélok MGT értéke
 
-- Bővebben: [Harcrendszer: Vértek, Páncélok - MGT](069_03_MGT.md)
+- Bővebben: [Harcrendszer: Vért MGT](069_03_MGT.md)
 - Státusz: [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt)
 
 ### Felszerelés, Pajzsok okozta MGT
@@ -20564,7 +20564,7 @@ Lásd: [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) és [Fegyvere
 ---
 ### 🚷 Mozgásgátló Tényező (MGT)
 
-Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#mozgásgátló-tényező-mgt).
+Lásd a [Vértek, Páncélok - MGT fejezetét](069_00_vertek_pancelok.md#vért-mgt).
 
 <br />
 
@@ -23878,8 +23878,8 @@ A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mint
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
 - [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
 - [Pajzsrongálás](#pajzsrong%C3%A1l%C3%A1s)
-- [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Precíz támadás](#prec%C3%ADz-t%C3%A1mad%C3%A1s)
+- [Rávetődés hátulról](#r%C3%A1vet%C5%91d%C3%A9s-h%C3%A1tulr%C3%B3l)
 - [Távoltartás](#t%C3%A1voltart%C3%A1s)
 - [Terelés](#terel%C3%A9s)
 
@@ -24197,24 +24197,6 @@ Anyagok erőssége
 <br />
 
 ---
-### Rávetődés hátulról
-
-Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
-
-- Nehézség: `6`
-- Fázisok:
-  - Észrevétlen támadás esetén: `Ellenpróba`
-  - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
-- Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
-
-**Hatás**:
-- Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
-- [Belharci szituáció](065_01_01_belharci_szituacio.md)
-- [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
-
-<br />
-
----
 ### Precíz támadás
 
 Meglepetés esetén is kell **Ellenpróbát** dobni
@@ -24239,6 +24221,24 @@ Meglepetés esetén is kell **Ellenpróbát** dobni
 **Hatás**: Az általad kiszemelt területre sikerül leadnod a támadásod, sebezz, ahogy szoktál. Érme méretű, páncéllal nem fedett terület esetén a [Harci Anatómia](fortelyok.harci/harci_anatomia.md) **SP** bónusz érvényesül.
 
 **Kapcsolódik**: [Kínokozás](fortelyok.harci/kinokozas.md) fortély.
+
+<br />
+
+---
+### Rávetődés hátulról
+
+Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés** ellenpróbát dobtál és sikerült észrevétlenül ellenfeled mögé kerülni, megpróbálkozhatsz a nyakába/hátára ugrani.
+
+- Nehézség: `6`
+- Fázisok:
+  - Észrevétlen támadás esetén: `Ellenpróba`
+  - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
+- Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
+
+**Hatás**:
+- Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
+- [Belharci szituáció](065_01_01_belharci_szituacio.md)
+- [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait folyamatosan megkapod, amíg ellenfeled a [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverét meg nem dobja `+2` Nehézséggel.
 
 <br />
 
@@ -25824,7 +25824,7 @@ Túlcsordulás esetén
 
 ### [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
 
-### [Mozgásgátló Tényező (MGT)](069_03_MGT.md)
+### [Vért MGT](069_03_MGT.md)
 
 ### [Védett terület](069_04_vedett_terulet.md)
 
@@ -26071,7 +26071,7 @@ Fém páncélok
 
 ---
 
-🔗 [Mozgásgátló tényező (MGT)](069_03_MGT.md) →
+🔗 [Vért MGT](069_03_MGT.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
@@ -26080,9 +26080,9 @@ Fém páncélok
 ---
 ## File: md/069_03_MGT.md
 
-## Mozgásgátló Tényező (MGT)
+## Vért MGT
 
-Harc és mozgás során a vértek korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**.
+Harc és mozgás során a vértek korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**. Ez az oldal a vértek és páncélok MGT értékeivel foglalkozik. Az MGT összefoglaló oldalát lásd: [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md).
 
 ---
 ## MGT hatása
@@ -28650,7 +28650,7 @@ Merevvértviselet fortély MGT csökkentő
 
 #### Kapcsolódik
 
-- [Mozgásgátló Tényező (MGT)](069_03_MGT.md) fejezet
+- [Vért MGT](069_03_MGT.md) fejezet
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély
 
 <br />
