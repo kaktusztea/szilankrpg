@@ -8,6 +8,13 @@ K: Komponens
 ```
 
 ---
+## Jelleg szerint
+
+- együttállás (ideiglenes, alkalmi)
+- elhasználás / feláldozás (pecsét, ami megsemmisül; érzelmet feláldoz)
+- folyamatos (pl. egy ereklye kisugárzása)
+
+---
 
 - [Álom (Ö, K)](#%C3%A1lom-%C3%B6-k)
 - [Csillag együttállás (Ö)](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6)
@@ -98,7 +105,7 @@ Komponens (természetes)
 
 - békaháj (1)
 - denevérháj
-- medvekarom
+- medvekarom: Erő megnöveléséhez
 - medvekoponya (2)
 - unikornisszarv (3)
 - ásványok, arany, ezüst
@@ -192,12 +199,16 @@ Komponens
 
 Nagy mocsár (víz), vulkán (tűz)
 
-Összhang
+Összhang pozitív
 
 - Őselemekhez érzelmek hozzáfűzése
   - esőben szomorúságot könnyebb
   - tűznél haragot könnyebb
-- xyz
+- vulkán mellett tüzet varázsolni
+
+Összhang negatív
+- tóvidéken tüzet varázsolni
+- Elátkozott vidéken gyógyítani
 
 <br />
 
