@@ -34,7 +34,7 @@ K: Komponens
 - jelenléte
 
 Komponens
-- feláldozása
+- feláldozása (soha többet nem álmodsz erről)
 
 <br />
 
@@ -81,9 +81,9 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
   - Példa-1: feláldozza a gátlásait:
     - gonoszabbá teszi magát a varázsló
     - ideiglenes
-    - nincs gátlás, DE Önuralom -1
+    - nincs gátlás, DE `Önuralomra -1`
   - Példa-2: Dreina pap tárgyalás előtt feláldozza az érzelmeit
-    - Fogékonyság: -1/-2,....
+    - `Fogékonyság: -1/-2,....`
     - FONTOS: NE legyen a `CÉL==ESZKÖZ`. Hanem hátrányt adjon.
   - Példa-3: Életerő áldozása
   - Példa-4: Vidámság áldozása
@@ -155,7 +155,6 @@ Komponens (Mágikus)
 
 - [Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
 - [Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
-
 
 <br />
 
