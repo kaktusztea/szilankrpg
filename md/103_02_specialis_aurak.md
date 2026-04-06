@@ -7,6 +7,9 @@
 ---
 ## Szakrális lény / tárgy
 
+- angyal
+- szentek felszentelt szobrai
+
 ⭕TODO⭕
 
 ---
@@ -16,6 +19,9 @@
 
 ---
 ## Szellemlény
+
+- természetszellem
+- halott szelleme
 
 ⭕TODO⭕
 
@@ -27,6 +33,11 @@
 ---
 ## Ereklye
 
+- angyali
+- démonikus
+- ősfaj
+- szentek testrészei
+
 ⭕TODO⭕
 
 ---
@@ -36,8 +47,10 @@
 
 ⭕TODO⭕
 
-(a fentiek beágyazása mind alkothat Tegumentumot)
+Forrása
+- a fenti kategóriák beágyazása mind alkothat Tegumentumot
 
+Típusa
 - lehet általános
 - lehet speciális hatásokat tiltó, engedélyező
 
