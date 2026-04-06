@@ -5,11 +5,11 @@ Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellem
 ### Általános ismeretek
 
 Összefoglalva a képzettség az alábbi ismereteket nyújtja:
-- ujjak finom koordinációja, csendes "simítás" az árú felett
+- ujjak finom koordinációja, "simító" mozulat az árú felett
 - zsebből/asztalról apróság elemelése anélkül, hogy feltűnne
-- tárgy, kulcs, erszény láthatatlan megszerzése
+- tárgy, kulcs, erszény észrevétlen megszerzése
 - spontán és természetes testbeszéd a mozdulathoz
-- figyelemelterelő viselkedés a környezetben
+- figyelemelterelő viselkedés a környezethez igazodva
 
 ### Domináns Tulajdonságok
 
@@ -21,7 +21,7 @@ Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellem
 
 ### Normál kiterjesztés
 
-- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a füle mögül húzom ki ((majdnem ugyanazt)) az aranyórát."
+- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki ((majdnem ugyanazt)) az aranyórát."
 
 ---
 ### Próbadobás menete
@@ -88,6 +88,7 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 
 - Kapkodni kell: `+3`
 - Nincs meg a testközeli távolság, csak pár lépés: `+3`
+- Több tárgy manipulálása szinte egy időben: `+3`
 - Zajos, zsibongó környezet: `-3`
 
 ---
