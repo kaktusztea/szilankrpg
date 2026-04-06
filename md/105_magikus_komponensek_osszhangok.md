@@ -32,6 +32,7 @@ K: Komponens
 - [Szimpatikus összetevők (K)](#szimpatikus-%C3%B6sszetev%C5%91k-k)
 - [Színek, fények (Ö)](#sz%C3%ADnek-f%C3%A9nyek-%C3%B6)
 - [Természeti jelenség (Ö)](#term%C3%A9szeti-jelens%C3%A9g-%C3%B6)
+- [Varázsló jellemzői (Ö)](#varázsló-jellemzői)
 
 ---
 ## Álom (Ö, K)
@@ -135,11 +136,19 @@ Komponens (Mágikus)
 
 Összhang
 
+- környezet
+  - barlangi
+  - dzsungel
+  - erdős
+  - jégmezők
+  - magaslati
+  - mocsaras
+  - puszta
+  - sivatagi
+  - tengerek
 - föld alatt
 - levegőben
 - városban
-- vadonban, erdős környezet
-- hegyi környezet
 - embertömegben
 - egyedül
 
@@ -263,6 +272,12 @@ Példák:
 - Viharban könnyebb villámmágiát.
 
 ⭕TODO⭕
+
+---
+## Varázsló jellemzői
+
+- lelkiállapot, hangulat
+- szimpatikus viszony a célponttal
 
 ---
 
