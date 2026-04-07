@@ -147,8 +147,6 @@ Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, a
 
 ⭕TODO: formázás, fogalmazás⭕
 
-
-
 - Őrület varázslása viharos tengeren
 - Védelem: a hajóskapitányra nyugodt tengeren nehezebb rá őrületet varázsolni
 
