@@ -181,7 +181,7 @@ https://github.com/kaktusztea/szilankrpg/
 ---
 ## File: md/szabalyrendszer.md
 
-### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.3.0.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
+### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.3.1.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
 
 **[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [Kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [Kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
@@ -9797,11 +9797,11 @@ Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellem
 ### Általános ismeretek
 
 Összefoglalva a képzettség az alábbi ismereteket nyújtja:
-- ujjak finom koordinációja, csendes "simítás" az árú felett
+- ujjak finom koordinációja, "simító" mozulat az árú felett
 - zsebből/asztalról apróság elemelése anélkül, hogy feltűnne
-- tárgy, kulcs, erszény láthatatlan megszerzése
+- tárgy, kulcs, erszény észrevétlen megszerzése
 - spontán és természetes testbeszéd a mozdulathoz
-- figyelemelterelő viselkedés a környezetben
+- figyelemelterelő viselkedés a környezethez igazodva
 
 ### Domináns Tulajdonságok
 
@@ -9813,7 +9813,7 @@ Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellem
 
 ### Normál kiterjesztés
 
-- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a füle mögül húzom ki ((majdnem ugyanazt)) az aranyórát."
+- [Bűvészet](../fortelyok.szabad/buveszet.md): "Kettőt pördítek ezen a kis ketyegőn és hopp, a bájos hölgy füle mögül húzom ki ((majdnem ugyanazt)) az aranyórát."
 
 ---
 ### Próbadobás menete
@@ -9880,6 +9880,7 @@ Könnyen kezelhető ékszer mozdítása elejtés nélkül.
 
 - Kapkodni kell: `+3`
 - Nincs meg a testközeli távolság, csak pár lépés: `+3`
+- Több tárgy manipulálása szinte egy időben: `+3`
 - Zajos, zsibongó környezet: `-3`
 
 ---
@@ -25960,7 +25961,7 @@ Minden páncél rendelkezik úgynevezett **Sebzés Felfogó Értékkel** (`SFÉ`
 
 Az `SFÉ` értéke sebzéskor levonódik a támadás `SP` értékéből, így csökkenti a [Sebzést](064_02_07_sebzes.md).
 
-Egy páncélnak **2 fajta SFÉ értéke van**, a támadás jellegétől függ, hogy melyiket kell figyelembe venni, a csapással szembeállítani:
+Egy páncélnak **2 fajta SFÉ értéke van**, a támadás jellegétől függ, hogy melyiket kell figyelembe venni:
 
 - `Fizikai SFÉ`: fegyverek okozta sebzés ellen
 - `Energia SFÉ`: Villám, Tűz, Fagy támadás tartozik ide
@@ -29694,6 +29695,9 @@ Aurabontásnál
 ---
 ## Szakrális lény / tárgy
 
+- angyal
+- szentek felszentelt szobrai
+
 ⭕TODO⭕
 
 ---
@@ -29703,6 +29707,9 @@ Aurabontásnál
 
 ---
 ## Szellemlény
+
+- természetszellem
+- halott szelleme
 
 ⭕TODO⭕
 
@@ -29714,6 +29721,11 @@ Aurabontásnál
 ---
 ## Ereklye
 
+- angyali
+- démonikus
+- ősfaj
+- szentek testrészei
+
 ⭕TODO⭕
 
 ---
@@ -29723,8 +29735,10 @@ Aurabontásnál
 
 ⭕TODO⭕
 
-(a fentiek beágyazása mind alkothat Tegumentumot)
+Forrása
+- a fenti kategóriák beágyazása mind alkothat Tegumentumot
 
+Típusa
 - lehet általános
 - lehet speciális hatásokat tiltó, engedélyező
 
@@ -30274,6 +30288,13 @@ K: Komponens
 ```
 
 ---
+## Jelleg szerint
+
+- együttállás (ideiglenes, alkalmi)
+- elhasználás / feláldozás (pecsét, ami megsemmisül; érzelmet feláldoz)
+- folyamatos (pl. egy ereklye kisugárzása)
+
+---
 
 - [Álom (Ö, K)](#%C3%A1lom-%C3%B6-k)
 - [Csillag együttállás (Ö)](#csillag-egy%C3%BCtt%C3%A1ll%C3%A1s-%C3%B6)
@@ -30287,9 +30308,11 @@ K: Komponens
 - [Lény: evilági (Ö, K)](#l%C3%A9ny-evil%C3%A1gi-%C3%B6-k)
 - [Lény: túlvilági (Ö, K)](#l%C3%A9ny-t%C3%BAlvil%C3%A1gi-%C3%B6-k)
 - [Őselem sűrű jelenléte (Ö)](#%C5%91selem-s%C5%B1r%C5%B1-jelenl%C3%A9te-%C3%B6)
+- [Szakrális hatás](#szakr%C3%A1lis-hat%C3%A1s)
 - [Szimpatikus összetevők (K)](#szimpatikus-%C3%B6sszetev%C5%91k-k)
 - [Színek, fények (Ö)](#sz%C3%ADnek-f%C3%A9nyek-%C3%B6)
 - [Természeti jelenség (Ö)](#term%C3%A9szeti-jelens%C3%A9g-%C3%B6)
+- [Varázsló jellemzői (Ö)](#varázsló-jellemzői)
 
 ---
 ## Álom (Ö, K)
@@ -30300,7 +30323,7 @@ K: Komponens
 - jelenléte
 
 Komponens
-- feláldozása
+- feláldozása (soha többet nem álmodsz erről)
 
 <br />
 
@@ -30347,9 +30370,9 @@ Tudatalatti: mély félelmek, vágyak, rejtett gondolatok
   - Példa-1: feláldozza a gátlásait:
     - gonoszabbá teszi magát a varázsló
     - ideiglenes
-    - nincs gátlás, DE Önuralom -1
+    - nincs gátlás, DE `Önuralomra -1`
   - Példa-2: Dreina pap tárgyalás előtt feláldozza az érzelmeit
-    - Fogékonyság: -1/-2,....
+    - `Fogékonyság: -1/-2,....`
     - FONTOS: NE legyen a `CÉL==ESZKÖZ`. Hanem hátrányt adjon.
   - Példa-3: Életerő áldozása
   - Példa-4: Vidámság áldozása
@@ -30363,7 +30386,7 @@ Komponens (természetes)
 
 - békaháj (1)
 - denevérháj
-- medvekarom
+- medvekarom: Erő megnöveléséhez
 - medvekoponya (2)
 - unikornisszarv (3)
 - ásványok, arany, ezüst
@@ -30393,11 +30416,19 @@ Komponens (Mágikus)
 
 Összhang
 
+- környezet
+  - barlangi
+  - dzsungel
+  - erdős
+  - jégmezők
+  - magaslati
+  - mocsaras
+  - puszta
+  - sivatagi
+  - tengerek
 - föld alatt
 - levegőben
 - városban
-- vadonban, erdős környezet
-- hegyi környezet
 - embertömegben
 - egyedül
 
@@ -30421,7 +30452,6 @@ Komponens (Mágikus)
 
 - [Auraösszhang](023_karma_hatterek.md#-m%C3%A1gia-aura%C3%B6sszhang) által adott hatás.
 - [Profán](023_karma_hatterek.md#-m%C3%A1gia-prof%C3%A1n) által adott hatás.
-
 
 <br />
 
@@ -30458,12 +30488,28 @@ Komponens
 
 Nagy mocsár (víz), vulkán (tűz)
 
-Összhang
+Összhang pozitív
 
 - Őselemekhez érzelmek hozzáfűzése
   - esőben szomorúságot könnyebb
   - tűznél haragot könnyebb
-- xyz
+- vulkán mellett tüzet varázsolni
+
+Összhang negatív
+- tóvidéken tüzet varázsolni
+- Elátkozott vidéken gyógyítani
+
+<br />
+
+---
+## Szakrális hatás
+
+Összhang
+
+- jelenléte: szentek szobrai
+
+Komponens
+- áldozása: 
 
 <br />
 
@@ -30506,6 +30552,12 @@ Példák:
 - Viharban könnyebb villámmágiát.
 
 ⭕TODO⭕
+
+---
+## Varázsló jellemzői
+
+- lelkiállapot, hangulat
+- szimpatikus viszony a célponttal
 
 ---
 
