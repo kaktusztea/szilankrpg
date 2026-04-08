@@ -1,5 +1,9 @@
 ## Faj misztérium: Feenhar
 
+### Faj-Arkánum
+
+[Feenhar arkánum](../magia.faj.arkanumok/feenhar_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

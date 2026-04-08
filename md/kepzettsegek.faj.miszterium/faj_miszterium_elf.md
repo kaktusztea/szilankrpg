@@ -1,5 +1,9 @@
 ## Faj misztérium: Elf
 
+### Faj-Arkánum
+
+[Elf arkánum: Időmágia](../magia.faj.arkanumok/elf_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

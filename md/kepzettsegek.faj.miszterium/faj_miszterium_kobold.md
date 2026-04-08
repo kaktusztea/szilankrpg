@@ -1,5 +1,9 @@
 ## Faj misztérium: Kobold
 
+### Faj-Arkánum
+
+[Kobold arkánum](../magia.faj.arkanumok/kobold_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

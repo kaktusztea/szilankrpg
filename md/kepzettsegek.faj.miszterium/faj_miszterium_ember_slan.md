@@ -4,7 +4,7 @@
 
 ### Faj-Arkánum
 
-[Ember (Slan) arkánum: Aurahangolás](faj_miszterium_ember_slan.md)
+[Ember (Slan) arkánum: Aurahangolás](../magia.faj.arkanumok/ember-slan_aurahangolas.md)
 
 ### Követelmények
 

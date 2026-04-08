@@ -1,5 +1,9 @@
 ## Faj misztérium: Gyíklény
 
+### Faj-Arkánum
+
+[Gyíklény arkánum](../magia.faj.arkanumok/gyikleny_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

@@ -1,5 +1,9 @@
 ## Faj misztérium: Ember (déli)
 
+### Faj-Arkánum
+
+[Ember (déli) arkánum](../magia.faj.arkanumok/ember-deli_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

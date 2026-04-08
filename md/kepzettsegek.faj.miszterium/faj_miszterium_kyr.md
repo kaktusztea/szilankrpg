@@ -1,5 +1,9 @@
 ## Faj misztérium: Kyr
 
+### Faj-Arkánum
+
+[Kyr arkánum](../magia.faj.arkanumok/kyr_arkanum.md)
+
 <--- Leírás ide jön --->
 
 

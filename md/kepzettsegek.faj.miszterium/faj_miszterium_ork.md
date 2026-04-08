@@ -1,5 +1,9 @@
 ## Faj misztérium: Ork
 
+### Faj-Arkánum
+
+[Ork arkánum: Nekromancia](../magia.faj.arkanumok/ork_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

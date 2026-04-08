@@ -1,5 +1,9 @@
 ## Faj misztérium: Dzsenn
 
+### Faj-Arkánum
+
+[Dzsenn arkánum](../magia.faj.arkanumok/dzsenn_arkanum.md)
+
 <--- Leírás ide jön --->
 
 ### Követelmények

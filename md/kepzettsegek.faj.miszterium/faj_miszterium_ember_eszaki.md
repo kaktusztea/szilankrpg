@@ -1,5 +1,9 @@
 ## Faj misztérium: Ember (Északi)
 
+### Faj-Arkánum
+
+[Ember (északi) arkánum](../magia.faj.arkanumok/ember-eszaki_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

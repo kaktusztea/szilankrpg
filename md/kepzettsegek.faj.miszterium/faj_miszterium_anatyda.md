@@ -1,5 +1,9 @@
 ## Faj misztérium: Anatyda
 
+### Faj-Arkánum
+
+[Anatyda arkánum: Természetes anyagok mágiája](../magia.faj.arkanumok/anatyda_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

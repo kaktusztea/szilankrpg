@@ -1,5 +1,9 @@
 ## Faj misztérium: Sáskaharcos
 
+### Faj-Arkánum
+
+[Sáskaharcos arkánum](../magia.faj.arkanumok/saskaharcos_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**

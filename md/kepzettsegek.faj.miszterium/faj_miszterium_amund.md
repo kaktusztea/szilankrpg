@@ -1,5 +1,9 @@
 ## Faj misztérium: Amund
 
+### Faj-Arkánum
+
+[Amund arkánum](../magia.faj.arkanumok/amund_arkanum.md)
+
 <--- Leírás ide jön --->
 
 ⭕TODO⭕

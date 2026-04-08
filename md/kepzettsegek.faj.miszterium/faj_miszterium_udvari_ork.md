@@ -1,5 +1,9 @@
 ## Faj misztérium: Udvari ork
 
+### Faj-Arkánum
+
+[Udvari ork arkánum](../magia.faj.arkanumok/udvari-ork_arkanum.md)
+
 <--- Leírás ide jön --->
 
 

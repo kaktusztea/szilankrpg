@@ -1,5 +1,9 @@
 ## Faj misztérium: Homoki elf
 
+### Faj-Arkánum
+
+[Homoki elf arkánum](../magia.faj.arkanumok/homoki-elf_arkanum.md)
+
 <--- Leírás ide jön --->
 
 **RAW**
