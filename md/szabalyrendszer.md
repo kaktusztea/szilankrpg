@@ -99,7 +99,7 @@
 
 ### 5.3 [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
 
-- [Slan Tradíció](053_02_slan_tradicio.md)- [Slan Tradíció](053_02_slan_tradicio.md)
+- [Slan Tradíció](053_02_slan_tradicio.md)
 
 ---
 ### 6. [Harcrendszer](060_00_harcrendszer.md) 🗡️
