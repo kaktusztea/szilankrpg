@@ -21,7 +21,7 @@ A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
 
 🔒 **Követelmény**:
 - Lopakodás/rejtőzés - `6.szint`
-- Tradíció: Fejvadász - `6.szint`
+- Tradíció: Orgyilkos - `6.szint`
 - Összeszokott tagokat igényleg
 
 🌟 `+2` bónusz csoportos **Lopakodás/rejtőzés** értékre
@@ -32,7 +32,7 @@ A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md
 
 🔒 **Követelmény**:
 - Lopakodás/rejtőzés - `9.szint`
-- Tradíció: Fejvadász - `9.szint`
+- Tradíció: Orgyilkos - `9.szint`
 - Összeszokott tagokat igényleg
 
 🌟 `+4` bónusz csoportos **Lopakodás/rejtőzés** értékre

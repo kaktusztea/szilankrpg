@@ -5,7 +5,7 @@ Jelölése: KF
 
 Tradíció követelmény
   S: Slan
-  F: Fejvadász
+  O: Orgyilkos
 
 Követelmény: Mf - 2.fok
 ```
