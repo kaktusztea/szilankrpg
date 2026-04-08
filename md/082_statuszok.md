@@ -518,7 +518,7 @@ Alkoholizmus (1,2,3) ("Igyak piát?")
 ---
 ### ✴️ Mérgezés
 
-Lásd a [Méregrendszer](150_meregrendszer.md) fejezetben a mérgek **hatásait**.
+Lásd a [Méregrendszer](140_meregrendszer.md) fejezetben a mérgek **hatásait**.
 
 <br />
 

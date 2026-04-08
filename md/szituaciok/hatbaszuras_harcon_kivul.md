@@ -43,6 +43,6 @@ Sikertelen Lopakodás ↑ esetén: [Hátulról támadás](../065_01_03_harci_poz
 
 ---
 
-🔗 [Szituációk](../160_szituaciok.md) ↑
+🔗 [Szituációk](../150_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)

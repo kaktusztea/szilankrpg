@@ -60,6 +60,6 @@ Lásd: a [saját oldalát](lopakodas_rejtozes_es_eszlelese.md)!
 
 ---
 
-🔗 [Szituációk](../160_szituaciok.md) ↑
+🔗 [Szituációk](../150_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)

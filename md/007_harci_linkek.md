@@ -24,8 +24,6 @@
 
 [Harci fortélyok](044_harci_fortelyok.md)
 
-[Slan fortélyok](046_slan_fortelyok.md)
-
 ---
 ### Egészség
 

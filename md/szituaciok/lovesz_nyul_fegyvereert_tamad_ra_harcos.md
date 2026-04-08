@@ -22,6 +22,6 @@ A levonás a lőfegyver méretétől függ. Minél nagyobb, annál nagyobb a lev
 
 ---
 
-🔗 [Szituációk](../160_szituaciok.md) ↑
+🔗 [Szituációk](../150_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)

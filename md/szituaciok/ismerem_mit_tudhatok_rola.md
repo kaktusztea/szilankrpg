@@ -47,6 +47,6 @@ Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismer
 
 ---
 
-🔗 [Szituációk](../160_szituaciok.md) ↑
+🔗 [Szituációk](../150_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)

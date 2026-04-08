@@ -49,4 +49,4 @@ Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező 
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#13-varázstárgyak)
+⚜️ [Nyitóoldal](szabalyrendszer.md#12-varázstárgyak)

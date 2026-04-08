@@ -36,7 +36,7 @@ Amennyiben az életerő táblázat "betelt" és van benne `FP`, akkor a "túlcso
 ---
 ### FP gyógyulása
 
-Az elszenvedett `FP` pontok a [Természetes gyógyulásnál](140_gyogyitas_gyogyulas.md#%EF%B8%8F-term%C3%A9szetes-gy%C3%B3gyul%C3%A1s) leírt sebességgel tűnnek el - és mivel nem valós sebesülés okozta, gyorsabban "gyógyul", mint a valós `ÉP` seb.
+Az elszenvedett `FP` pontok a [Természetes gyógyulásnál](130_gyogyitas_gyogyulas.md#%EF%B8%8F-term%C3%A9szetes-gy%C3%B3gyul%C3%A1s) leírt sebességgel tűnnek el - és mivel nem valós sebesülés okozta, gyorsabban "gyógyul", mint a valós `ÉP` seb.
 
 Fizikai behatás esetén szép lassan eltűnnek az `FP` pontok.
 

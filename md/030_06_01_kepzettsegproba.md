@@ -47,7 +47,7 @@ A **Célszám** `21` fölé is mehet, arra is lehetséges próbát tenni. Ilyen 
 
 Példák `21` feletti célszámokra:
 - Aktuális Aura számításánál Aurahangolás képzettségpróba ⭕LINK⭕
-- [Méreg komplexitása](151_meregkeveres_szabalyai.md#a-méreg-komplexitása) Méregkeverésnél
+- [Méreg komplexitása](141_meregkeveres_szabalyai.md#a-méreg-komplexitása) Méregkeverésnél
 
 <br />
 

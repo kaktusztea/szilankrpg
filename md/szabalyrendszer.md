@@ -78,7 +78,6 @@
   - [Általános: Érzék, Alvilági és Fizikai fortélyok](043_altalanos_fortelyok.md)
   - [Harci, Távharc és Lovas fortélyok](044_harci_fortelyok.md)
   - [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md)
-  - [Slan fortélyok](046_slan_fortelyok.md)
 
 ---
 ### 5. [Tradíciók](050_tradiciok.md)
@@ -98,8 +97,6 @@
 ### 5.2 [Papi tradíció](052_papi_tradicio.md)
 
 ### 5.3 [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
-
-- [Slan Tradíció](053_02_slan_tradicio.md)
 
 ---
 ### 6. [Harcrendszer](060_00_harcrendszer.md) 🗡️
@@ -289,34 +286,43 @@
 - [Papi varázslatok](113_papi.varazslatok.md) ✨
 
 ---
-### 12. [Slan misztérium](120_slan.md)
-
- - [Slan Tradíció](053_02_slan_tradicio.md)
- - [Slan fortélyok](046_slan_fortelyok.md)
- - [Slan diszciplínák](121_slan_diszciplinak.md)
- - [Chi harc képzettségei](122_chi_harc.md)
- - [Slan fegyverek](123_slan_fegyverek.md)
+### 12. [Varázstárgyak](120_varazstargyak.md)
 
 ---
-### 13. [Varázstárgyak](130_varazstargyak.md)
-
----
-### 14. [Gyógyítás, gyógyulás](140_gyogyitas_gyogyulas.md)
+### 13. [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md)
 
 ---
 
-### 15. [Méregrendszer, Mérgek](150_meregrendszer.md)
+### 14. [Méregrendszer, Mérgek](140_meregrendszer.md)
 
-- [Méregkeverés szabályai](151_meregkeveres_szabalyai.md)
-- [Méregellenállás próba](152_meregellenallas.md)
-- [Méregérzékelés](153_meregerzekeles.md)
-- [Példamérgek](154_peldamergek.md) ⚡
-
----
-### 16. [Szituációk](160_szituaciok.md)
+- [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
+- [Méregellenállás próba](142_meregellenallas.md)
+- [Méregérzékelés](143_meregerzekeles.md)
+- [Példamérgek](144_peldamergek.md) ⚡
 
 ---
-### 17. [Példa karakterek](170_pelda_karakterek.md)
+### 15. [Szituációk](150_szituaciok.md)
+
+---
+### 16. [Példa karakterek](160_pelda_karakterek.md)### 12. [Varázstárgyak](120_varazstargyak.md)
+
+---
+### 13. [Gyógyítás, gyógyulás](130_gyogyitas_gyogyulas.md)
+
+---
+
+### 14. [Méregrendszer, Mérgek](140_meregrendszer.md)
+
+- [Méregkeverés szabályai](141_meregkeveres_szabalyai.md)
+- [Méregellenállás próba](142_meregellenallas.md)
+- [Méregérzékelés](143_meregerzekeles.md)
+- [Példamérgek](144_peldamergek.md) ⚡
+
+---
+### 15. [Szituációk](150_szituaciok.md)
+
+---
+### 16. [Példa karakterek](160_pelda_karakterek.md)
 
 ---
 ## 🚧 [Fejlesztő portál](https://github.com/kaktusztea/szilankrpg/wiki) 🚧

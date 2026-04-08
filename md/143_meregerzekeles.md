@@ -40,6 +40,6 @@ Szagtalan: +1
 
 ---
 
-🔗 [Példamérgek](154_peldamergek.md) →
+🔗 [Példamérgek](144_peldamergek.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#15-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)

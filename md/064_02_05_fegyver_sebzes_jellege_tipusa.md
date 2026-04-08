@@ -102,7 +102,7 @@ A legtöbb fegyver **Átütés** értéke: `0`
 ---
 ## Mágikus fegyverek sebzése
 
-Lásd [Rúnamágiával felruházott tárgyak](130_varazstargyak.md#r%C3%BAnam%C3%A1gi%C3%A1val-felruh%C3%A1zott-t%C3%A1rgyak) fejezete.
+Lásd [Rúnamágiával felruházott tárgyak](120_varazstargyak.md#r%C3%BAnam%C3%A1gi%C3%A1val-felruh%C3%A1zott-t%C3%A1rgyak) fejezete.
 
 ---
 

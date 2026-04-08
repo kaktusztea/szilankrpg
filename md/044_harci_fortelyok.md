@@ -69,11 +69,6 @@
 - [Mozgó cél mestere fegyverrel](fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md)
 
 ---
-### Slan harci fortélyok
-
-A Slan misztérium alá többfajta fortély is tartozik. Ezek közül a harci érintettségűek (is) a [Slan fortélyok](046_slan_fortelyok.md#harci-slan-fortélyok) oldal alatt találhatóak.
-
----
 
 🔗 [Misztikus és Mágia fortélyok](045_misztikus_magia_fortelyok.md) →
 

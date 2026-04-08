@@ -2,7 +2,7 @@
 
 Képes vagy mágikus fókuszt, vagy emittert létrehozni.
 
-Lásd még: [Ereklyék, mágikus emitterek](../130_varazstargyak.md#ereklyék-mágikus-emitterek)
+Lásd még: [Ereklyék, mágikus emitterek](../120_varazstargyak.md#ereklyék-mágikus-emitterek)
 
 ## Tradíció felveheti
 

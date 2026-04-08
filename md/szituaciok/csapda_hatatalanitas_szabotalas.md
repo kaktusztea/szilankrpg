@@ -31,6 +31,6 @@ Csapda komplexitásától függő **Nehézség** (maximum: a készítő által m
 
 ---
 
-🔗 [Szituációk](../160_szituaciok.md) ↑
+🔗 [Szituációk](../150_szituaciok.md) ↑
 
-⚜️ [Nyitóoldal](../szabalyrendszer.md#16-szituációk)
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)

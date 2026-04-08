@@ -3,7 +3,7 @@
 ⭕TODO⭕
 
  - leírás a hogyanról ÉS
- - link a [Varázstárgyak](130_varazstargyak.md) fejezetre
+ - link a [Varázstárgyak](120_varazstargyak.md) fejezetre
 
 ---
 

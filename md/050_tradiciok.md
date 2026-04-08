@@ -36,7 +36,6 @@ Milyen Tradíciókat ismer a `Szilánk` rendszere?
 
 ### [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
 
-- [Slan Tradíció](053_02_slan_tradicio.md)
 
 ### Nem Játszható Tradíciók
 

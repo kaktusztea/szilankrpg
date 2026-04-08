@@ -45,8 +45,6 @@
 
 ---
 
-🔗 [Slan fortélyok](046_slan_fortelyok.md) →
-
 🔗 [Fortélyok főoldal](040_fortelyok.md) ↑
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#4-fortélyok-)

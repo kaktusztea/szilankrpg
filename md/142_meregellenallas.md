@@ -12,6 +12,6 @@ A Méregellenállás próba egyszerű [Tulajdonságpróba](010_05_04_tulajdonsag
 
 ---
 
-🔗 [Méregérzékelés](153_meregerzekeles.md) →
+🔗 [Méregérzékelés](143_meregerzekeles.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#15-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)

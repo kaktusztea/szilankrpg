@@ -176,6 +176,6 @@ Amennyiben nem hagyományos, ritka fajról van szó, akkor ahhoz a [Különleges
 
 ---
 
-🔗 [Méregellenállás próba](152_meregellenallas.md) →
+🔗 [Méregellenállás próba](142_meregellenallas.md) →
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#15-méregrendszer-mérgek)
+⚜️ [Nyitóoldal](szabalyrendszer.md#14-méregrendszer-mérgek)
