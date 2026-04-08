@@ -144,6 +144,8 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Faj misztérium: Ember (északi)](kepzettsegek.faj.miszterium/faj_miszterium_ember_eszaki.md)
 
+🔵 [Faj misztérium: Ember (Slan)](kepzettsegek.faj.miszterium/faj_miszterium_ember_slan.md)
+
 🔵 [Faj misztérium: Erdőpille](kepzettsegek.faj.miszterium/faj_miszterium_erdopille.md)
 
 🔵 [Faj misztérium: Feenhar](kepzettsegek.faj.miszterium/faj_miszterium_feenhar.md)

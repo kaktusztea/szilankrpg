@@ -17,6 +17,7 @@ Az alábbiakban a játszható fajok bemutatását egyedi jellemzőiket találjuk
 - [Elf](hatterek.faji/elf.md)
 - [Ember (Déli)](hatterek.faji/ember_deli.md)
 - [Ember (Északi)](hatterek.faji/ember_eszaki.md)
+- [Ember (Slan)](hatterek.faji/ember_slan.md)
 - [Erdőpille](hatterek.faji/erdopille.md)
 - [Feenhar](hatterek.faji/feenhar.md)
 - [Gnóm](hatterek.faji/gnom.md)
