@@ -1,10 +1,14 @@
 ## Faj misztérium: Ember (Slan)
 
-<--- Leírás ide jön --->
+→ [STUDY: Faj misztérium: Ember (Slan) ](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.faj.miszterium.ember.slan) ⭕
 
-**RAW**
+### Faj-Arkánum
 
-- ⭕TODO⭕
+[Ember (Slan) arkánum: Aurahangolás](faj_miszterium_ember_slan.md)
+
+### Követelmények
+
+[Háttér: Ember (Slan)](../hatterek.faji/ember_slan.md)
 
 ---
 ### Szintek

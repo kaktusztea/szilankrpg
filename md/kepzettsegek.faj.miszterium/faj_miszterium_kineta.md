@@ -38,4 +38,3 @@ Nagymester (12) 📖
 
 ⭕TODO⭕
 ```
-x

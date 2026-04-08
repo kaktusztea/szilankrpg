@@ -34,9 +34,6 @@ Milyen Tradíciókat ismer a `Szilánk` rendszere?
 
 ### [Papi tradíció](052_papi_tradicio.md)
 
-### [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
-
-
 ### Nem Játszható Tradíciók
 
 - Aquir eredetű

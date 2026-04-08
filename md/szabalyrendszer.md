@@ -96,8 +96,6 @@
 
 ### 5.2 [Papi tradíció](052_papi_tradicio.md)
 
-### 5.3 [Szellemi Tradíciók](053_00_szellemi_tradiciok.md)
-
 ---
 ### 6. [Harcrendszer](060_00_harcrendszer.md) 🗡️
 
