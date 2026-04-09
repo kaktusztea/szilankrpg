@@ -1,6 +1,6 @@
 ## Képzettség neve
 
-<--- Leírás ide jön --->
+⭕ Leírás ide jön
 
 ### ⭕ Próba / Próba speciális
 

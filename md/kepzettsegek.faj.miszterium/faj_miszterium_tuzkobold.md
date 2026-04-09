@@ -4,8 +4,6 @@
 
 [Tűzkobold arkánum](../magia.faj.arkanumok/tuzkobold_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz

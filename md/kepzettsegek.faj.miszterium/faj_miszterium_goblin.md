@@ -4,8 +4,6 @@
 
 [Goblin arkánum](../magia.faj.arkanumok/goblin_arkanum.md)
 
-<--- Leírás ide jön --->
-
 
 ---
 ### Szintek

@@ -4,8 +4,6 @@
 
 [Dzsenn arkánum](../magia.faj.arkanumok/dzsenn_arkanum.md)
 
-<--- Leírás ide jön --->
-
 ### Követelmények
 
 - **NEM** követelmény a tisztavérű dzsenn származás (mint a hatalomszavak alkalmazásánál)

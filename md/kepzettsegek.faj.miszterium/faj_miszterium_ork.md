@@ -4,8 +4,6 @@
 
 [Ork arkánum: Nekromancia](../magia.faj.arkanumok/ork_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - Természetes fegyver

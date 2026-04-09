@@ -4,8 +4,6 @@
 
 [Kineta arkánum](../magia.faj.arkanumok/kineta_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz

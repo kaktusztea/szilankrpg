@@ -4,8 +4,6 @@
 
 [Törpe arkánum: Természetes anyagok mágiája](../magia.faj.arkanumok/torpe_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - Természetes anyagok mágiája

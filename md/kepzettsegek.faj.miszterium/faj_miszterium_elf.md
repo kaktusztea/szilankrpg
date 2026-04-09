@@ -4,8 +4,6 @@
 
 [Elf arkánum: Időmágia](../magia.faj.arkanumok/elf_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 - Időmágia
 - Bár elsőre a természet adná magát, de az elfeknek az idővel is sajátos kapcsolata van. A faji arkánumuk lehetne az időmágia.

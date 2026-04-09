@@ -4,8 +4,6 @@
 
 [Erdőpille arkánum](../magia.faj.arkanumok/erdopille_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - kisállatok megidézése / hívása

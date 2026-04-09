@@ -4,8 +4,6 @@
 
 [Khál arkánum](../magia.faj.arkanumok/khal_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz

@@ -4,8 +4,6 @@
 
 [Elar arkánum](../magia.faj.arkanumok/elar_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz

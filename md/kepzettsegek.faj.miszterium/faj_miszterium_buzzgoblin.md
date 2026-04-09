@@ -4,7 +4,6 @@
 
 [Buzzgoblin arkánum](../magia.faj.arkanumok/buzzgoblin_arkanum.md)
 
-<--- Leírás ide jön --->
 
 **RAW**
 

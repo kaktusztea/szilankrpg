@@ -4,7 +4,6 @@
 
 [Hómanó arkánum](../magia.faj.arkanumok/homano_arkanum.md)
 
-<--- Leírás ide jön --->
 
 **RAW**
 

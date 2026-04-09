@@ -4,8 +4,6 @@
 
 [Ember (északi) arkánum](../magia.faj.arkanumok/ember-eszaki_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - TODO: egy újfajta érzék fortélyokat kitalálni

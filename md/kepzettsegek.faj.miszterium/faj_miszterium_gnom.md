@@ -4,8 +4,6 @@
 
 [Gnóm arkánum: Természetes anyagok mágiája](../magia.faj.arkanumok/gnom_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia Mágia metódussal), vagy Teremtés arkánuma (ősibb nép, mint az elfek)

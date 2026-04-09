@@ -4,9 +4,6 @@
 
 [Kyr arkánum](../magia.faj.arkanumok/kyr_arkanum.md)
 
-<--- Leírás ide jön --->
-
-
 ---
 ### Szintek
 
