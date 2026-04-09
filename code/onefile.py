@@ -71,8 +71,8 @@ if not os.path.isdir(path_rootdir):
 inject_points = {
     '021_faj_hatterek.md': 'hatterek.faji',
     '030_01_kepzettseglista.md': 'kepzettsegek',
-    '046_slan_fortelyok.md': 'fortelyok',
-    '160_szituaciok.md': 'szituaciok'
+    '045_misztikus_magia_fortelyok.md': 'fortelyok',
+    '150_szituaciok.md': 'szituaciok'
     }
 
 blacklist=['views', 'template', 'images', '.obsidian', 'diszciplinak.pszi', 'fortelyok.misztikus', 'magia.papi.varazslatok']
