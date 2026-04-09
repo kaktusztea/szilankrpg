@@ -233,7 +233,15 @@ Első oda-vissza csapásnál:
 ---
 ### Támadás erőből taktika
 
-Erre a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortélyt használhatod.
+Tudod használni a [Támadás erőből](../065_02_harci_taktikak.md#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) harci helyzetet.\
+Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `2`-ig.
+
+```
+TÉ:-1, SP:+1
+TÉ:-2, SP:+2
+```
+
+A fenti limit a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortéllyal növelhető.
 
 ✅ **Kiváró taktikával** együtt
 
