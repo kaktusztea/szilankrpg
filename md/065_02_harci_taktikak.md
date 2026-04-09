@@ -233,7 +233,6 @@ Első oda-vissza csapásnál:
 ---
 ### Támadás erőből taktika
 
-Tudod használni a [Támadás erőből](../065_02_harci_taktikak.md#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) harci helyzetet.\
 Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `2`-ig.
 
 ```
