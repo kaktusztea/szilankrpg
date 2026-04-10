@@ -4916,7 +4916,7 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 [Amund arkánum](../magia.faj.arkanumok/amund_arkanum.md)
 
-<--- Leírás ide jön --->
+
 
 ⭕TODO⭕
 
@@ -4989,7 +4989,6 @@ Nagymester (12) 📖
 
 [Anatyda arkánum: Természetes anyagok mágiája](../magia.faj.arkanumok/anatyda_arkanum.md)
 
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5040,7 +5039,6 @@ Nagymester (12) 📖
 
 [Buzzgoblin arkánum](../magia.faj.arkanumok/buzzgoblin_arkanum.md)
 
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5089,8 +5087,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Dzsenn arkánum](../magia.faj.arkanumok/dzsenn_arkanum.md)
-
-<--- Leírás ide jön --->
 
 ### Követelmények
 
@@ -5179,8 +5175,6 @@ Nagymester (12) 📖
 
 [Elar arkánum](../magia.faj.arkanumok/elar_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz
@@ -5228,8 +5222,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Elf arkánum: Időmágia](../magia.faj.arkanumok/elf_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 - Időmágia
@@ -5279,8 +5271,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Ember (déli) arkánum](../magia.faj.arkanumok/ember-deli_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5333,8 +5323,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Ember (északi) arkánum](../magia.faj.arkanumok/ember-eszaki_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5438,8 +5426,6 @@ Nagymester (12) 📖
 
 [Erdőpille arkánum](../magia.faj.arkanumok/erdopille_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - kisállatok megidézése / hívása
@@ -5487,8 +5473,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Feenhar arkánum](../magia.faj.arkanumok/feenhar_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5538,8 +5522,6 @@ Nagymester (12) 📖
 
 [Gnóm arkánum: Természetes anyagok mágiája](../magia.faj.arkanumok/gnom_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - Természetes anyagok mágiája: mozgatás varázsjelek (Jelmágia Mágia metódussal), vagy Teremtés arkánuma (ősibb nép, mint az elfek)
@@ -5588,8 +5570,6 @@ Nagymester (12) 📖
 
 [Goblin arkánum](../magia.faj.arkanumok/goblin_arkanum.md)
 
-<--- Leírás ide jön --->
-
 
 ---
 ### Szintek
@@ -5634,8 +5614,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Gyíklény arkánum](../magia.faj.arkanumok/gyikleny_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5685,7 +5663,6 @@ Nagymester (12) 📖
 
 [Hómanó arkánum](../magia.faj.arkanumok/homano_arkanum.md)
 
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5735,8 +5712,6 @@ Nagymester (12) 📖
 
 [Homoki elf arkánum](../magia.faj.arkanumok/homoki-elf_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz
@@ -5784,8 +5759,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Khál arkánum](../magia.faj.arkanumok/khal_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5835,8 +5808,6 @@ Nagymester (12) 📖
 
 [Kineta arkánum](../magia.faj.arkanumok/kineta_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz
@@ -5884,8 +5855,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Kobold arkánum](../magia.faj.arkanumok/kobold_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -5935,9 +5904,6 @@ Nagymester (12) 📖
 
 [Kyr arkánum](../magia.faj.arkanumok/kyr_arkanum.md)
 
-<--- Leírás ide jön --->
-
-
 ---
 ### Szintek
 
@@ -5981,8 +5947,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Ork arkánum: Nekromancia](../magia.faj.arkanumok/ork_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -6033,8 +5997,6 @@ Nagymester (12) 📖
 
 [Sáskaharcos arkánum](../magia.faj.arkanumok/saskaharcos_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz
@@ -6082,8 +6044,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Törpe arkánum: Természetes anyagok mágiája](../magia.faj.arkanumok/torpe_arkanum.md)
-
-<--- Leírás ide jön --->
 
 **RAW**
 
@@ -6134,8 +6094,6 @@ Nagymester (12) 📖
 
 [Tűzkobold arkánum](../magia.faj.arkanumok/tuzkobold_arkanum.md)
 
-<--- Leírás ide jön --->
-
 **RAW**
 
 - xyz
@@ -6183,8 +6141,6 @@ Nagymester (12) 📖
 ### Faj-Arkánum
 
 [Udvari ork arkánum](../magia.faj.arkanumok/udvari-ork_arkanum.md)
-
-<--- Leírás ide jön --->
 
 
 ---
@@ -15396,20 +15352,19 @@ TÉ, VÉ :+6
 
 ## 🟣 Támadás erőből (2)
 
-Tudod használni a [Támadás erőből](../065_02_harci_taktikak.md#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) harci helyzetet.\
-Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal.
-
-```
-TÉ:-1, SP:+1
-...
-TÉ:-6, SP:+6
-```
+Jobban tudod kihasználni a [Támadás erőből](../065_02_harci_taktikak.md#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika) harci helyzetet.
 
 ### 1. fok
 
 🔒 [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
 
-🌟 Legfeljebb `+3 SP` (`TÉ:-3`) pakolható át
+🌟 Legfeljebb `+4 SP` (`TÉ:-4`) pakolható át
+
+```
+TÉ:-1, SP:+1
+...
+TÉ:-4, SP:+4
+```
 
 <br />
 
@@ -15418,6 +15373,12 @@ TÉ:-6, SP:+6
 🔒 Harcmodor - `6.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
 
 🌟 Legfeljebb `+6 SP` (`TÉ:-6`) pakolható át
+
+```
+TÉ:-1, SP:+1
+...
+TÉ:-6, SP:+6
+```
 
 ---
 ### Harcmodor korlátozás
@@ -23050,7 +23011,14 @@ Első oda-vissza csapásnál:
 ---
 ### Támadás erőből taktika
 
-Erre a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortélyt használhatod.
+Lassabbat, de nagyobbat ütsz. `TÉ`-ből átrakhatsz `SP` értékedre `1:1` váltószámmal maximum `2`-ig.
+
+```
+TÉ:-1, SP:+1
+TÉ:-2, SP:+2
+```
+
+A fenti limit a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortéllyal növelhető.
 
 ✅ **Kiváró taktikával** együtt
 
@@ -23432,7 +23400,7 @@ Az Alakzat számára kizárólag az alábbi taktikák engedélyezettek és azok 
 ```
 TÉ:+3 / VÉ:-6: Támadó taktika (fix)
 VÉ:+4 / TÉ:-8: Védő taktika (fix)
-TÉ:+4, VÉ:-8 : Roham taktika
+TÉ:+4 / VÉ:-8: Roham taktika
 +2 VÉ csökkentés: Fárasztó taktika (fix)
 ```
 
