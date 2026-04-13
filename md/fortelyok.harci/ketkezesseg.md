@@ -25,3 +25,5 @@ Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások s
 ## Fegyver + Pajzs eset
 
 Ha egy fegyver mellé simán pajzsot fogsz a másik kezedbe az **nem kétkezes szituáció**, ezért ekkor **nem** kapod meg a fenti Harckeret bónuszt ❌
+
+---
