@@ -14612,7 +14612,9 @@ Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyve
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 `+1` Harckeret
+🌟 **Hatás**:
+- `+1` Harckeret
+- `+1 KÉ`
 
 <br />
 
@@ -14622,7 +14624,9 @@ Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyve
 - Harcmodor - `9.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 `+2` Harckeret
+🌟 **Hatás**:
+- `+2` Harckeret
+- `+2 KÉ`
 
 <br />
 
@@ -14632,7 +14636,9 @@ Támadásaid számát növelheted a [Harckeret](../063_04_tamadasok_szama_fegyve
 - Harcmodor - `12.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
-🌟 `+3` Harckeret
+🌟 **Hatás**:
+- `+3` Harckeret
+- `+3 KÉ`
 
 ---
 
@@ -14890,6 +14896,8 @@ Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások s
 ## Fegyver + Pajzs eset
 
 Ha egy fegyver mellé simán pajzsot fogsz a másik kezedbe az **nem kétkezes szituáció**, ezért ekkor **nem** kapod meg a fenti Harckeret bónuszt ❌
+
+---
 
 
 ---
