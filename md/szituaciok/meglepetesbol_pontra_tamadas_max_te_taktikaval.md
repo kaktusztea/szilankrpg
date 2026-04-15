@@ -12,11 +12,11 @@ A fenti Manővernek [**Végrehajtás** és **Ellenpróba**](../066_04_manover_ve
 
 ### Manőver **Ellenpróba** fázisa
 
-Itt nem jár bónusz, de lehet Manőver Pontot (`MP`) bőven beletenni (maximum `2` pontot, ami `+4` bónuszt ad)
+Itt nem jár bónusz, de lehet Manőver Pontot (`MP`) bőven beletenni (maximum `4 MP` támadó oldalon ).
 
 ### Ellenfél visszatámadásnál
 
-A Támadó taktika kapcsán `VÉ:-6` büntetés jár a precíz támadást végző karakternek - ellenfele első visszatámadására.
+A manőver után, az ellenfél visszatámadása során a manővert végző `VÉ:-6` büntetéssel védekezik - a Támadó Taktika fonákja ekkor érvényesül.
 
 ---
 

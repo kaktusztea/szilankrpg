@@ -4,41 +4,42 @@ A Manőverek [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B
 
 ```
 Manőver Pontok =
- ( Közelharc
- + Kardvívás
- + Rombolás
- + Lándzsavívás
- + Ostorharc )
+ 2x ( Közelharc
+    + Kardvívás
+    + Rombolás
+    + Lándzsavívás
+    + Ostorharc )
      / TSz  ↑
 ```
 
-Egy karakter [harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettség-szintjeinek összegét osztjuk el a **Tapasztalati Szinttel**.
+Egy karakter [harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettség-szintjeinek összegét osztjuk el a **Tapasztalati Szinttel** (felfelé ↑ kerekítve), majd szorozzuk `2`-vel.
 
-Ez adja a **Manőver Pontok** mennyiségét - felfelé ↑ kerekítve. Látható, hogy a pontok értékének fenntartásához - a Tapasztalati Szint növekedésével - folyamatosan kell növelni a harcmodor képzettségeket. A Manőver pontok értéke így mindig `[0-5]` tartományban mozog.
+Ez adja a **Manőver Pontok** mennyiségét. Látható, hogy a pontok értékének fenntartásához - a Tapasztalati Szint növekedésével - folyamatosan kell növelni a harcmodor képzettségeket. A Manőver pontok értéke így mindig `[0-10]` tartományban mozog.
 
 ---
 ### Felhasználása, Hatása
 
 ```
 1 Manőver Pont:
-   +2 módosítót ad a Manőver
+   +1 módosítót ad a Manőver
    "Ellenpróba" fázisánál
+   mindkét oldalon
 ```
 
 A fenti pont keretet `1` harci jelenet során használhatja fel a karakter - megtámogatva egyes elvégzett Manővereit. A [Védő Érték regenerálódásakor](064_02_09_ve_regeneralodas.md) ez a keret is "visszatöltődik". A Manőver Pontokat a Manőver dobásainak megkezdése **előtt** kell beletenni, így megvan a rizikója, hogy kudarc esetén elvesznek.
 
-Egyszerre legfeljebb `2` pont használható fel (`+4` bónusz). Bővebben lásd: Manőver [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) fázisa.
+Egy manőver során legfeljebb `4 MP` használható fel. Bővebben lásd: Manőver [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) fázisa.
 
 ---
 ### Ellenfelhasználás
 
 ```
-Max 1 MP / manőver
+Max 2 MP / manőver
 ```
 
-Angol nyelvű szerepjátékokban a "counter" jellegű felhasználásra gondolunk.
+Itt az angol nyelvű szerepjátékokban előforduló "counter" jellegű felhasználásra gondolunk.
 
-Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni, akkor ő is beletehet maximum `1 MP = +2 Nehézség` értékkel a dobás Nehézségébe.
+Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni, akkor ő is beletehet maximum `2 MP` bónuszt a dobás Nehézségébe.
 
 **Fontos**: ezt a szándékát még a dobás **előtt** kell megtenni, így ha amúgy sem sikerült volna a Manőver, akkor feleslegesen használta el a beáldozott pontot.
 

@@ -63,14 +63,11 @@ Manőver Célszám =
 ### 🔆Ellenpróba Dobás extra módosítói
 
 ```
-+2 / Manőver pont
-  (max 2 költhető)
++1 / Manőver pont
+  (max 4 költhető)
 
 +2 / Belharc fortély fok
   (csak belharcos manővereknél)
-
--3: Manőver követelményei
-    nem teljesülnek
 
 [-2; +2] Testméret különbség
 [-2; +2] Páncél különbség
@@ -84,7 +81,8 @@ Hátrány-2
 ### 🔆Manőver Célszám extra módosítói
 
 ```
-+2 / Manőver Pont (ellenfél)
++1 / Manőver Pont (ellenfél)
+  (max 2 költhető)
 
 +2 / Belharc fortély fok (ellenfél)
   (csak belharcos manővereknél)
@@ -95,6 +93,9 @@ Hátrány-2
 [-5;+5]
   KM által megadott +/- érték.
   Körülmény függő könnyítés / nehezítés.
+
++3: Manőver követelményei
+    nem teljesülnek támadó számára
 ```
 
 Az Ellenpróba dobása nem mást fed, mint hogy a karakter képes-e megteremteni maga számára a lehetőséget, úgymond "megágyazni magának", hogy egyáltalán megkísérelhesse a **Manővert**. A harcban ez helyezkedést, "pozícióba kerülést" jelent, amelynek sikere függ a karakter és ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van olyan fázis).
@@ -105,10 +106,11 @@ Ha csak az **Ellenpróba** az adott Manőver követelménye, akkor annak sikere 
 
 #### Manőver Pontok
 
-Opcionális felhasználásukkal mindkét fél növelheti esélyeit, a támadó a dobásához adhat `+2` bónuszt pontonként, a védekező a Manőver Célszámát növelheti ugyanígy. Egyszerre maximum `2 MP` használható fel és előre be kell jelenteni még dobások előtt.
+Opcionális felhasználásukkal mindkét fél növelheti esélyeit: a támadó fél az Ellenpróba dobásához adhat bónusz pontokat, a védekező a Manőver Célszámát növelheti ugyanígy. Támadó oldalán egy manőverre maximum `4 MP`, védő oldalon `2 MP` használható fel és ezt előre be kell jelenteniük - még a dobások előtt.
 
 #### Végbevitel-követelménye
-A Manőverek végrehajtásával bárki próbálkozhat, akkor is, ha az adott Manővernél leírt **Végbevitel-követelményeket** nem teljesíti. Ilyenkor `+2` jár a Célszámra.
+
+A Manőverek végrehajtásával bárki próbálkozhat, akkor is, ha az adott Manővernél leírt **Végbevitel-követelményeket** nem teljesíti. Ilyenkor `+3` büntetés jár a Célszámra.
 
 #### Újrapróbálkozás
 

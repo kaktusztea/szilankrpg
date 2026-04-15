@@ -1,6 +1,6 @@
 ## ⚡Példa Manőver alkalmazására: Lábsöprés
 
-Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr és elkölt `1` **Manőver Pontot**.
+Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr és elkölt `2` **Manőver Pontot**.
 
 ```
 Tetves értékei
@@ -46,7 +46,7 @@ TÉ = 50
 ```
 Tetves dobása
  + 4 (Manőver alap)
- + 2 (1 Manőver Pont bónusza)
+ + 2 (2 Manőver Pont bónusza)
  + k10
 
 Célszám: 11

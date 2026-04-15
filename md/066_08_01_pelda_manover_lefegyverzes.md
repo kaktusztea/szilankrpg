@@ -62,7 +62,7 @@ A próbadobás így
 
 Tehát ha Rühes legalább `9`-et dob `k10`-en, akkor az **Ellenpróba** is sikeres és így az egész manőver is, ellenfele kardja kihullik annak kezéből. Látható, hogy a **Lefegyverzés** a [Manőver Pontok](066_02_manover_pontok.md) használata nélkül nagyjából azonos tudású ellenfelek között nem könnyű művelet.
 
-Ha Rühes `2` Manőver Pontot költött volna el, akkor már `+4` járna a próbadobására ( `8+k10`) és így már `5`-ös dobással is sikert érhetne el. Ha viszont ellenfele is elköltött volna `1` pontot, akkor az ő `+2` bónusza mérsékelné Rühes `+4`-es bónuszát és ismét csak a `7`-es dobással(vagy felette) lenne eredményes.
+Ha Rühes `4` Manőver Pontot költött volna el, akkor már `+4` járna a próbadobására ( `8+k10`) és így már `5`-ös dobással is sikert érhetne el. Ha viszont ellenfele is elköltött volna `2` pontot, akkor az ő `+2` bónusza mérsékelné Rühes `+4`-es bónuszát és ismét csak a `7`-es dobással(vagy felette) lenne eredményes.
 
 ---
 
