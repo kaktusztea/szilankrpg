@@ -30,17 +30,16 @@ Tulajdonságok:
 ## Ugrás távolba
 
 ```
-Akrobatika próba Nehézség:
-2m: 6
-4m: 9
-6m: 12
-8m: 15
-9m: 18 (földi világcsúcs)
-11m: 21
+Akrobatika próba Célszám
+  2m: 64m: 9
+  6m: 12
+  8m: 15
+  9m: 18 (földi világcsúcs)
+ 11m: 21
 
-Tulajdonságok:
-- Ügyesség
-- Edzettség
+Tulajdonságok
+  Ügyesség
+  Edzettség
 ```
 
 ### Módosítók

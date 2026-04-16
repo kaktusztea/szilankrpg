@@ -105,7 +105,7 @@ Amennyiben a támadó lény akár csak `1` kategóriával is kisebb, mint ellenf
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Extra képzettségpróba követelmény:
-    - Fájdalomtűrés + Önuralom. Nehézség: `15`
+    - Fájdalomtűrés + Önuralom. Célszám: `15`
     - Körönként dobandó. Kudarc esetén az áldozat képtelen visszatámadni és mágiát, pszít használni.
 
 **Hatás**: Sikeresen kijöttél a leszorításból. A [Belharci szituáció](065_01_01_belharci_szituacio.md) megmarad.

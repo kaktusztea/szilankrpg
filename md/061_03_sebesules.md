@@ -63,7 +63,7 @@ Ilyenkor a karakter `2` percenként `Edzettség` Tulajdonságpróbát dob `Átla
 Sebgyógyítás vagy Gyógyítás
  képzettségpróba
 
-Nehézség: 9
+Nehézség: 9 (Átlagos)
 ```
 
 Ha egy karaktert stabilizáltak, akkor nem kell `Edzettség` próbát dobnia, de továbbra is igaz rá, hogy minden további sebzés azonnal végez vele.

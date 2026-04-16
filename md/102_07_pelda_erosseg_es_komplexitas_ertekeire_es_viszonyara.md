@@ -10,6 +10,7 @@ Magas Komplexitás (K=18)
   Nagyon más a felépítésük
   → Arkánum: Természetes anyagok mágiája
   → Képzettségpróba Nehézség: 18
+                    (Rendkívül nehéz)
 ```
 
 ---

@@ -64,6 +64,7 @@ Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, akkor leg
 Lovaglás/Léglovaglás képzettségpróba
 
 Nehézség: 12-15 között
+          (Nehéz, Nagyon nehéz)
 ```
 
 <br />

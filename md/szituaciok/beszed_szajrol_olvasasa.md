@@ -5,7 +5,7 @@ Ha nem hallod a beszédet, csak a beszélő szájmozgását látod, úgy is megp
 ### Érzékenység Tulajdonságpróba
 
 ```
-7: Alap Nehézség
+Alap Célszám: 7
    → átlagos táv
    → jó látási viszonyok
    (célpont szájára)

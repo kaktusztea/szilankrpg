@@ -66,11 +66,10 @@ Tetves elvéti Mászás képzettségpróbáját és a [mentődobást](../kepzett
 Tetves könnyű bőrvértet visel, ezért a KM `+2` büntetést ad az esés során dobott Akrobatika próbára.
 
 ```
-Nehézség:
+Célszám: 8
   9 (magasság: 4 méter)
 - 3 (susnyásba)
 + 2 (könnyű bőrvért)
-= 8
 ```
 
 ---
