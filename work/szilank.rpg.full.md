@@ -7160,7 +7160,8 @@ Vajákosság szint követelmény: `Betegség szintje / 2`
 ### Sebek kezelése gyógyszerekkel, kencékkel
 
 ```
-Próbadobás Nehézség: Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korelláció⭕
+Próbadobás Célszám:
+  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korelláció⭕
 ```
 
 A gyógyszerek, hegesedést fokozó, gyógyulás serkentő kencék kikeveréséhez szükség van alapanyagokra, amelyeket szintén a [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.
@@ -19596,7 +19597,7 @@ Ilyenkor a karakter `2` percenként `Edzettség` Tulajdonságpróbát dob `Átla
 Sebgyógyítás vagy Gyógyítás
  képzettségpróba
 
-Nehézség: 9
+Nehézség: 9 (Átlagos)
 ```
 
 Ha egy karaktert stabilizáltak, akkor nem kell `Edzettség` próbát dobnia, de továbbra is igaz rá, hogy minden további sebzés azonnal végez vele.
@@ -24476,7 +24477,7 @@ Amennyiben a támadó lény akár csak `1` kategóriával is kisebb, mint ellenf
 - Nehézség: `8`
 - Fázisok: `Végrehajtás, Ellenpróba`
 - Extra képzettségpróba követelmény:
-    - Fájdalomtűrés + Önuralom. Nehézség: `15`
+    - Fájdalomtűrés + Önuralom. Célszám: `15`
     - Körönként dobandó. Kudarc esetén az áldozat képtelen visszatámadni és mágiát, pszít használni.
 
 **Hatás**: Sikeresen kijöttél a leszorításból. A [Belharci szituáció](065_01_01_belharci_szituacio.md) megmarad.
@@ -24814,6 +24815,7 @@ Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, akkor leg
 Lovaglás/Léglovaglás képzettségpróba
 
 Nehézség: 12-15 között
+          (Nehéz, Nagyon nehéz)
 ```
 
 <br />
@@ -29569,6 +29571,7 @@ Magas Komplexitás (K=18)
   Nagyon más a felépítésük
   → Arkánum: Természetes anyagok mágiája
   → Képzettségpróba Nehézség: 18
+                    (Rendkívül nehéz)
 ```
 
 ---
@@ -31593,7 +31596,7 @@ Ha nem hallod a beszédet, csak a beszélő szájmozgását látod, úgy is megp
 ### Érzékenység Tulajdonságpróba
 
 ```
-7: Alap Nehézség
+Alap Célszám: 7
    → átlagos táv
    → jó látási viszonyok
    (célpont szájára)
@@ -31853,11 +31856,10 @@ Tetves elvéti Mászás képzettségpróbáját és a [mentődobást](../kepzett
 Tetves könnyű bőrvértet visel, ezért a KM `+2` büntetést ad az esés során dobott Akrobatika próbára.
 
 ```
-Nehézség:
+Célszám: 8
   9 (magasság: 4 méter)
 - 3 (susnyásba)
 + 2 (könnyű bőrvért)
-= 8
 ```
 
 ---
@@ -32586,7 +32588,7 @@ Erő: +2
 
 ### ⚙️ Kezdés
 
-A mászás elején Tetves [Mászás](../kepzettsegek.szekunder/maszas.md) képzettségpróbát dob. A terep `Nehézség: 15` (nagyon nehéz).
+A mászás elején Tetves [Mászás](../kepzettsegek.szekunder/maszas.md) képzettségpróbát dob. A terep **Nagyon nehéz** → Célszám: `15`
 
 A táv miatt a KM [összetett képzettségpróbát](../030_06_01_kepzettsegproba.md#összetett-képzettségpróba) ír elő `+1 db` próbával, így Tetvesnek egy `15`-ös és egy `12`-es próbát kell dobnia.
 
@@ -32928,17 +32930,16 @@ Tulajdonságok:
 ## Ugrás távolba
 
 ```
-Akrobatika próba Nehézség:
-2m: 6
-4m: 9
-6m: 12
-8m: 15
-9m: 18 (földi világcsúcs)
-11m: 21
+Akrobatika próba Célszám
+  2m: 64m: 9
+  6m: 12
+  8m: 15
+  9m: 18 (földi világcsúcs)
+ 11m: 21
 
-Tulajdonságok:
-- Ügyesség
-- Edzettség
+Tulajdonságok
+  Ügyesség
+  Edzettség
 ```
 
 ### Módosítók
