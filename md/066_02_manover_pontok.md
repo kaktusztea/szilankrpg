@@ -50,7 +50,7 @@ Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni,
 NJK: 0 MP
 
 Erős, Kalandozó, Őrszem NJK:
-  annyi MP, mint egy JK
+  annyi MP, mint egy JK esetén
 ```
 
 A **Nem Játékos Karakterek** alapból **nem kapnak** `MP` javadalmazást.
