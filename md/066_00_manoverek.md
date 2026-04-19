@@ -21,7 +21,7 @@ A Manőverek végrehajtója ezekkel az értékekkel próbálkozhat a Manőver **
 
 ### 🔆Manőver kategóriák
 
-Három kategóriába csoportosítottuk a `Szilánk` által ismert Manővereket. Listájukat és leírásukat itt találhatod:
+Három kategóriába csoportosítottuk a `Szilánk` által ismert Manővereket:
 
 - [Általános Manőverek](066_05_altalanos_manoverek.md) 🎲
 - [Belharcos Manőverek](066_06_belharcos_manoverek.md) 🎲

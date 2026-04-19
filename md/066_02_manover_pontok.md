@@ -41,7 +41,7 @@ Itt az angol nyelvű szerepjátékokban előforduló "counter" jellegű felhaszn
 
 Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni, akkor ő is beletehet maximum `2 MP` bónuszt a dobás Nehézségébe.
 
-**Fontos**: ezt a szándékát még a dobás **előtt** kell megtenni, így ha amúgy sem sikerült volna a Manőver, akkor feleslegesen használta el a beáldozott pontot.
+**Fontos**: ezt a szándékát még a dobás **előtt** kell megtenni, így ha végül nem sikerül ellene a Manőver, akkor feleslegesen használta el a beáldozott pontot.
 
 ---
 ### NJK Manőver Pontok
@@ -50,7 +50,7 @@ Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni,
 NJK: 0 MP
 
 Erős, Kalandozó, Őrszem NJK:
-  MP, mint egy JK
+  annyi MP, mint egy JK
 ```
 
 A **Nem Játékos Karakterek** alapból **nem kapnak** `MP` javadalmazást.
