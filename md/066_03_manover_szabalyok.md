@@ -4,7 +4,7 @@ Egy Manőver végrehajtása `1 támadást` emészt fel, nem szükséges hozzá n
 
 Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
 
-Egy Manőver 3 opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
+Egy Manőver `3` opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
 
 Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver "Hatás" részénél leírtak következnek be.
 
@@ -16,10 +16,10 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 ## ⚜️ Harci helyzetek és Manőverek - Meglepetés
 
 [Meglepett](065_01_03_harci_poziciok.md#meglepetés) / [Készületlen](065_01_03_harci_poziciok.md#készületlenség) az Ellenfél:
-- Kimarad a **Megakasztás** (`M`) fázis (ha van) a védő oldalán
-- **Végrehajtás** dobásnál továbbra is `TÉ:+4`, de a **Meglepetés** miatt ugye `Előny+1` is jár erre a dobásra.
-- Támadó tehet bele `Manőver Pontot`.
-- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`.
+- Kimarad a **Megakasztás** (`M`) fázis a védő oldalán (ha van)
+- **Végrehajtás** dobásnál továbbra is `TÉ:+4` + `Előny+1` a dobásra
+- Támadó tehet bele `Manőver Pontot`
+- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`
 
 ## ⚜️ Harci helyzetek és Manőverek - Észrevétlen támadás
 
@@ -27,15 +27,15 @@ Vannak Manőverek, amelyek [Észrevétlen támadást](065_01_03_harci_poziciok.m
 
 Kérdés, hogy ilyenkor miért dobunk mégis **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik - nem véletlen, hogy az elköltött `HM` pontokon alapszik, amelyek az általános harci tapasztalatot szimbolizálják.
 
-- Támadó tehet bele `Manőver Pontot`.
-- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`.
+- Támadó tehet bele `Manőver Pontot`
+- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`
 
 <br />
 
 ---
 ## ⚜️ Harci taktikák és Manőverek
 
-Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika) alkalmazható, illetve [Roham](065_02_harci_taktikak.md#roham-taktika) taktika amelyik Manővernél ez külön meg van említve - más Harci taktika nem.
+Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika) alkalmazható, illetve [Roham](065_02_harci_taktikak.md#roham-taktika) taktika egyes Manővernél, ahol ez külön meg van említve - más Harci taktika nem.
 
 <br />
 
