@@ -37,7 +37,7 @@ Ha az egyik fél szándékosan energiát fektet bele, hogy rejtse nyomait, vagy 
 
 ```
 Észlelés + Érzékenység   🔆kereső
-                vs
+            vs
 Észlelés + Intelligencia 🔆rejtő
 
 Kiterjesztés
