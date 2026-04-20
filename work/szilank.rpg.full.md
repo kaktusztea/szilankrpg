@@ -23167,21 +23167,22 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 
 ### Vezető fortélyok
 
-Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónuszt ad a lenti Támadószint, Védekezőszint számításánál.
+Ha van a csoportban olyan, aki a lentiek közül valamelyikkel bír - és elvállaja a vezetést -, az bónuszt ad a lenti Támadószint, Védekezőszint számításánál:
+
   - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)  (gyalogos alakzat esetén)
   - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)  (íjász/lövész alakzat esetén)
   - [Vezető: Lovaskapitány](fortelyok.harci/vezeto_lovaskapitany.md)  (lovas alakzat esetén)
-  - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)  (lovas alakzat esetén)
+  - [Vezető: Léglovaskapitány](fortelyok.harci/vezeto_leglovaskapitany.md)  (léglovas alakzat esetén)
 
 ### ⚜️Támadószint
 
 ```
 + MIN( Alakzatharc képzettség )
 + 2 / Vezető fortély bónusz fok
-+ MIN(Támadó-alakzat fortély fok) x 2
++ MIN( Támadó-alakzat fortély fok ) x 2
 ```
 
-- Csapattagok **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** ([csoportos fizikai képzettségpróba](030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint).
+- Csapattagok **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** - [csoportos fizikai képzettségpróba](030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint.
 - Csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
 
 ### ⚜️Védekezőszint
@@ -23189,7 +23190,7 @@ Ha van a csoportban olyan, aki ezzel bír és elvállaja a vezetést, az bónusz
 ```
 + MIN( Alakzatharc képzettség )
 + 2 / Vezető fortély bónusz fok
-+ MIN(Védekező-alakzat fortély fok) x 2
++ MIN( Védekező-alakzat fortély fok ) x 2
 ```
 
 Tehát a csapattagok közül a legalacsonyabb [Védekező-alakzat](fortelyok.harci/alakzat_vedekezo.md) fortély foka `2` bónusz szintet ad fokonként.
@@ -23233,11 +23234,11 @@ A lenti értékeket célszerű játékalkalom **előtt** kiszámítani, így nem
    (max 10)
 ```
 
-A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy szuper harcos nem ad hozzá túl sokat az alakzathoz, ha képzetlen az alakzatharcban.
+A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy kiemelkedően jó harcos nem ad hozzá túl sokat az alakzathoz, ha az alakzatharcban képzetlen.
 
 Miért csak `VÉ` bónuszt ad?
 - mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.
-- az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) ((és ugye a durvább `VÉ-csökkentést`)) adja.
+- az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) - és a megemelt `VÉ-csökkentést` - adja (lád később).
 
 <br />
 
@@ -23319,15 +23320,17 @@ Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
 ## VÉ csökkenés alakzat ellen alacsonyabb
 
 ```
--2: Alapból gyengébb
--3: Alakzat Teljes Védekezésben
+Ennyi jön le VÉ csökkentésedből
+
+-2: alaphelyzetben
+-3: az Alakzat Teljes Védekezésben
 ```
 
 Az alakzat ellen harcoló **egyén** ugyanúgy csökkent `Védő Értéket`, mint normál harc esetében - pengeméret különbségtől függően, viszont:
 
 Az alakzat **ellen** leadott minden `VÉ` csökkentésből, tehát az alakzat által elszenvedett `VÉ` csökkenésből mindig `-2` levonandó, mivel egy alakzat nem úgy fárad, mint egy egyedül harcoló lény, sokkal nehezebb a "kifulladására" játszani.
 
-Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-védekezés-taktika) taktikába áll be, akkor a fenti csökkentés `-3` értékre módosul.
+Amennyiben az Alakzat [Teljes Védekezés](065_02_harci_taktikak.md#teljes-védekezés-taktika) taktikába áll be, akkor a fenti mérséklő hatás `-3` értékre módosul.
 
 **Tipp**: ezen hatás ellen megfontolandó lehet a [Plusz támadás taktika](065_02_harci_taktikak.md#plusz-támadás-taktika).
 
@@ -23375,10 +23378,11 @@ Max 1:1 támadás = Alakzat létszáma
 ```
 
 ```
-Példa
+Példa: 4 fő alakzat
 
-1 emberre: 1 támadás
-3 emberre: 1:1-et mindenkire
+→ 1 egyénre: 1 támadás
+→ 3 egyénre: 1:1-et mindháromra
+→ 5 egyénre: 1:1 támadás _4_ egyén ellen
 ```
 
 <br />
@@ -23591,7 +23595,7 @@ A Manőverek végrehajtója ezekkel az értékekkel próbálkozhat a Manőver **
 
 ### 🔆Manőver kategóriák
 
-Három kategóriába csoportosítottuk a `Szilánk` által ismert Manővereket. Listájukat és leírásukat itt találhatod:
+Három kategóriába csoportosítottuk a `Szilánk` által ismert Manővereket:
 
 - [Általános Manőverek](066_05_altalanos_manoverek.md) 🎲
 - [Belharcos Manőverek](066_06_belharcos_manoverek.md) 🎲
@@ -23677,7 +23681,7 @@ Itt az angol nyelvű szerepjátékokban előforduló "counter" jellegű felhaszn
 
 Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni, akkor ő is beletehet maximum `2 MP` bónuszt a dobás Nehézségébe.
 
-**Fontos**: ezt a szándékát még a dobás **előtt** kell megtenni, így ha amúgy sem sikerült volna a Manőver, akkor feleslegesen használta el a beáldozott pontot.
+**Fontos**: ezt a szándékát még a dobás **előtt** kell megtenni, így ha végül nem sikerül ellene a Manőver, akkor feleslegesen használta el a beáldozott pontot.
 
 ---
 ### NJK Manőver Pontok
@@ -23686,7 +23690,7 @@ Amennyiben a karakter szeretne egy ellene irányuló Manővert nehezebbé tenni,
 NJK: 0 MP
 
 Erős, Kalandozó, Őrszem NJK:
-  MP, mint egy JK
+  annyi MP, mint egy JK esetén
 ```
 
 A **Nem Játékos Karakterek** alapból **nem kapnak** `MP` javadalmazást.
@@ -23710,7 +23714,7 @@ Egy Manőver végrehajtása `1 támadást` emészt fel, nem szükséges hozzá n
 
 Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
 
-Egy Manőver 3 opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
+Egy Manőver `3` opcionális fázisból épülhet fel (`M V E`). Bővebben a [Manőver végbevitele](066_04_manover_vegbevitele.md) oldalon.
 
 Ha minden kötelező fázisa sikeres a végrehajtó szempontjából (`V E`) és sikertelen a védekező szempontjából (`M`), akkor az adott Manőver "Hatás" részénél leírtak következnek be.
 
@@ -23722,10 +23726,10 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 ## ⚜️ Harci helyzetek és Manőverek - Meglepetés
 
 [Meglepett](065_01_03_harci_poziciok.md#meglepetés) / [Készületlen](065_01_03_harci_poziciok.md#készületlenség) az Ellenfél:
-- Kimarad a **Megakasztás** (`M`) fázis (ha van) a védő oldalán
-- **Végrehajtás** dobásnál továbbra is `TÉ:+4`, de a **Meglepetés** miatt ugye `Előny+1` is jár erre a dobásra.
-- Támadó tehet bele `Manőver Pontot`.
-- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`.
+- Kimarad a **Megakasztás** (`M`) fázis a védő oldalán (ha van)
+- **Végrehajtás** dobásnál továbbra is `TÉ:+4` + `Előny+1` a dobásra
+- Támadó tehet bele `Manőver Pontot`
+- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`
 
 ## ⚜️ Harci helyzetek és Manőverek - Észrevétlen támadás
 
@@ -23733,15 +23737,15 @@ Vannak Manőverek, amelyek [Észrevétlen támadást](065_01_03_harci_poziciok.m
 
 Kérdés, hogy ilyenkor miért dobunk mégis **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik - nem véletlen, hogy az elköltött `HM` pontokon alapszik, amelyek az általános harci tapasztalatot szimbolizálják.
 
-- Támadó tehet bele `Manőver Pontot`.
-- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`.
+- Támadó tehet bele `Manőver Pontot`
+- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`
 
 <br />
 
 ---
 ## ⚜️ Harci taktikák és Manőverek
 
-Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika) alkalmazható, illetve [Roham](065_02_harci_taktikak.md#roham-taktika) taktika amelyik Manővernél ez külön meg van említve - más Harci taktika nem.
+Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika) alkalmazható, illetve [Roham](065_02_harci_taktikak.md#roham-taktika) taktika egyes Manővernél, ahol ez külön meg van említve - más Harci taktika nem.
 
 <br />
 
@@ -23827,7 +23831,7 @@ Megelőző támadási forma, melyre **az Ellenfél** jogosult teljes, fegyveres 
 
 Ha a Megakasztás találatot ér el (nem kell, hogy valós sebzést is okozzon), akkor **a Manőver nem sikerült**. Tipikus példa manőver a [Belharcba kerülés](066_06_belharcos_manoverek.md#belharcba-kerülés).
 
-🔆 Ez a támadás is képes Sebzést okozni.
+🔆 Ez a támadás a hagyományos módon sebezni is képes.
 
 🔆 Ha a Megakasztás sikertelen, **NEM** ❗ okoz `VÉ` csökkentést (mint egy sima sikertelen támadás).
 
@@ -23859,7 +23863,7 @@ Manőver Célszám =
  + Manőver Nehézség
 ```
 
-### 🔆Ellenpróba Dobás extra módosítói
+### 🔆 Ellenpróba Dobás extra módosítói
 
 ```
 +1 / Manőver pont
@@ -23897,7 +23901,7 @@ Hátrány-2
     nem teljesülnek támadó számára
 ```
 
-Az Ellenpróba dobása nem mást fed, mint hogy a karakter képes-e megteremteni maga számára a lehetőséget, úgymond "megágyazni magának", hogy egyáltalán megkísérelhesse a **Manővert**. A harcban ez helyezkedést, "pozícióba kerülést" jelent, amelynek sikere függ a karakter és ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van olyan fázis).
+Az **Ellenpróba** azt modellezi, hogy a karakter képes-e megteremteni maga számára a lehetőséget, úgymond "megágyazni magának", hogy megkísérelhesse a **Manővert**. A harcban ez helyezkedést, "pozícióba kerülést" jelent, amelynek sikere függ a karakter és ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van).
 
 Az **Ellenpróba** dobása során a KM meghatározza a próba **Célszámát**, a játékos, pedig veszi [Manőver Alapját](066_01_manover_alap.md), esetlegesen felhasznál [Manőver Pontokat](066_02_manover_pontok.md), majd dob hozzá `k10`-el. Ha a végső érték eléri a célszámot, akkor az **Ellenpróba** **sikeres volt.**
 
