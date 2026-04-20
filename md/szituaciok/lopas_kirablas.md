@@ -15,7 +15,7 @@ Lopás + Ügyesség
 
 ### ⚡ Példa szituáció 1:  Nemeshölgy testőrrel
 
-⭕TODO: ellenpróbás szituációvá alakítani ⭕
+⭕TODO: ellenpróbás szituációvá alakítani. ⭕
 
 ⭕TODO: csoportos szellemi képzettségpróbává alakítani ⭕
 
