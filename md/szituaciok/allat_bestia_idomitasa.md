@@ -49,3 +49,8 @@ Idomítást, állatokat, bestiákat kontrolláló szituációban a lenti próba 
 - Olyan kötelék létrehozása, amely egyszerre mágikus és lelki.
 
 ---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
+

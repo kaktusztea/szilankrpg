@@ -1,4 +1,4 @@
-## Ellopni valamit, kirabolni valakit
+## Meglopni, kirabolni valakit
 
 Kapcsolódó képzettségek
 - [Lopás](../kepzettsegek.szekunder/lopas.md)
@@ -15,24 +15,46 @@ Lopás + Ügyesség
 
 ### ⚡ Példa szituáció 1:  Nemeshölgy testőrrel
 
-⭕TODO: ellenpróbás szituációvá alakítani. ⭕
+A nemeshölgy a piac forgatagában válogat, tőle pár méterrel, civil ruhában lépdel testőre.
 
-⭕TODO: csoportos szellemi képzettségpróbává alakítani ⭕
+Tetves a tolvaj gyanítja, hogy a hölgy nem egyedül jött a vásárba, így [aktív Észleléssel](szituaciok/erzekeles_eszleles_aktiv_passziv.md) keresi a védelmező alakot. A testőr nem játszik szerepet, így nem végez **Lopakodás/rejtőzést**, ami kapcsolódó ellenpróbát igényelne - így Tetves sima Észlelés próbát dob a körülményektől függő Nehézségre.
 
-`a.)` Nem tudja a tolvaj, hogy ott a testőr: Két **Lopás** próba
-- Lopás próba: **Könnyű** (`6`)
-- Lopás próba (rejtett!): **Nagyon nehéz** (`15`). Erről a JK nem tud.
+#### `1.` 🎲 Észlelés próba: Tetves észreveszi -e a testőrt
 
-⭕TODO: ellenpróbás szituációvá alakítani ⭕
+```
+Tetves dobás módosítói: +3
+ +3: aktív Észlelés
 
-`b.)` A tolvaj tud a testőr jelenlétéről:
-- Észrevenni a testőrt: KM dob JK-nak rejtett **Észlelés** próbát
-- Lopás próba: **Nehéz** (`12`)
+Célszám alap: 12 (Nehéz)
+ → A testőr nem lopakodik, de nem is feltűnő
+ → Civil ruhában van (nem egyértelmű a szerepe)
+ → Piacon sok ember van általában
 
-⭕TODO: ellenpróbás szituációvá alakítani ⭕
+Célszám módosítók: 0
+ +3: Zsúfolt piac: +3
+ -3: Testőr katonás tartása árulkodó
+     (KM becslése)
+```
 
-`c.)` Tárgyaló kofánál a nemeshölgyet meglopni (testőr nélkül):
-  - Lopás próba: **Átlagos** nehézség (`9`)
-  - A kofának egy **Nehéz** (12) **Észlelés** (mert nem figyel oda)
+❌ **Lopakodás/rejtőzés** vs **Észlelés** ellenpróba ez esetben **nem** szükséges, mert a közelkerülés még nem kelt gyanút, lehet Tetves egy sima vásárló is...
+
+Függetlenül attól, hogy Tetves észrevette-e a testőrt, ha úgy dönt, hogy megpróbálkozik, akkor a páros mindkét tagja dobhat:
+
+#### `2.` 🎲 Ellenpróbák
+
+```
+Lopás + Ügyesség
+  Tetves: +3: (zsúfolt piac)
+ 
+     vs
+
+Észlelés + Érzékenység/Intelligencia
+  Testőr: +3 (aktív Észlelés)
+  Nemeshölgy: +0 (passzív Észlelés)
+```
 
 ---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)

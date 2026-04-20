@@ -24,3 +24,9 @@ E fölött lehetetlen.
 ```
 
 Lásd: [Szájról olvasás](../fortelyok.altalanos/szajrol_olvasas.md) fortély.
+
+---
+
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)

@@ -104,4 +104,6 @@ Célzó dobás-2
 
 ---
 
-⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)
+🔗 [Szituációk](../150_szituaciok.md) ↑
+
+⚜️ [Nyitóoldal](../szabalyrendszer.md#15-szituációk)
