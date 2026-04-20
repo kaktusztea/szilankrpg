@@ -17,7 +17,7 @@ Lopás + Ügyesség
 
 A nemeshölgy a piac forgatagában válogat, tőle pár méterrel, civil ruhában lépdel testőre.
 
-Tetves a tolvaj gyanítja, hogy a hölgy nem egyedül jött a vásárba, így [aktív Észleléssel](szituaciok/erzekeles_eszleles_aktiv_passziv.md) keresi a védelmező alakot. A testőr nem játszik szerepet, így nem végez **Lopakodás/rejtőzést**, ami kapcsolódó ellenpróbát igényelne - így Tetves sima Észlelés próbát dob a körülményektől függő Nehézségre.
+Tetves a tolvaj gyanítja, hogy a hölgy nem egyedül jött a vásárba, így [aktív Észleléssel](erzekeles_eszleles_aktiv_passziv.md) keresi a védelmező alakot. A testőr nem játszik szerepet, így nem végez **Lopakodás/rejtőzést**, ami kapcsolódó ellenpróbát igényelne - így Tetves sima Észlelés próbát dob a körülményektől függő Nehézségre.
 
 #### `1.` 🎲 Észlelés próba: Tetves észreveszi -e a testőrt
 
