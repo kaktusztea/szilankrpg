@@ -8,7 +8,7 @@ Lásd a [Harcrendszer](060_00_harcrendszer.md) fejezetet.
 
 ### [SFÉ](069_02_SFE.md)
 
-### [MGT](069_03_MGT.md)
+### [MGT](069_03_vert_MGT.md)
 
 ---
 

@@ -21,7 +21,7 @@ Ez egy sima ⚪ **Gyorsaság** [Tulajdonság ellenpróba](../010_05_04_tulajdons
 
 🔆 Bónuszt ad: [Sprint](../fortelyok.altalanos/sprint.md) fortély
 
-🔆 [MGT hatása a próbára](../069_03_MGT.md): KM dönt a helyzet ismeretében
+🔆 [MGT hatása a próbára](../069_03_vert_MGT.md): KM dönt a helyzet ismeretében
 
 ---
 
