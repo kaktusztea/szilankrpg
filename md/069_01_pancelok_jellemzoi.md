@@ -1,8 +1,16 @@
 ## Páncélok jellemzői
 
-A rendszer páncéljai jellegben és fejlettségben a földi világ **XVI. századának** megfelelő szinten vannak. Ez a színvonal jelképezi a "csúcskategóriát", ennél - elmaradottabb helyeken - természetesen lehetnek fejletlenebb vértek is a "csúcsmodellek között".
+A rendszer páncéljai jellegben és fejlettségben a földi világ **XVI. századának** megfelelő szinten vannak. Ez a színvonal jelképezi a "csúcskategóriát". Elmaradottabb térségekben természetesen taláhatunk ennél alacsonyabb nívót is.
 
-Egy páncélt három jellemző ír le: a Sebzésfelfogó Érték (**SFÉ**), a Mozgásgátló tényező (**MGT**) és az **Ár**. Ezeket az alábbi jellemzők befolyásolják:
+Egy páncélt három jellemző ír le:
+
+```
+Sebzésfelfogó Érték (SFÉ)
+Mozgásgátló tényező (MGT)
+Ár
+```
+
+Az egyes jellemzőket az alábbi páncél-paraméterek befolyásolják:
 
 ### SFÉ
 
