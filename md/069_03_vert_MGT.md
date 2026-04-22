@@ -43,7 +43,6 @@ TÉ büntetést csökkenti
 <br />
 
 ---
----
 ## MGT Alap: Vért Torzó struktúra
 
 Az egyes vért struktúráknak eltérő alap `MGT` értéke van.
@@ -64,7 +63,6 @@ Merevvért, fém
 
 <br />
 
----
 ## MGT módosító: Alapanyag MGT ±
 
 A különböző fém ötvözetek alapanyagai változtathatnak az `MGT` értékén. Csak fém struktúráknál releváns.
@@ -80,7 +78,6 @@ Alapanyag MGT
 
 <br />
 
----
 ## MGT módosító: Kidolgozottság és Csatolt tagok száma
 
 A torzó mellé pluszban csatolt tagok illesztéseinek minősége határozza meg, hogy egy-egy plusz tag mennyi `MGT`-t ad a vérthez.
@@ -137,7 +134,6 @@ Csatolt MGT = tag MGT × tagok száma
 
 <br />
 
----
 ## MGT módosító: Rossz méretű vért
 
 ```
@@ -148,7 +144,6 @@ Csatolt MGT = tag MGT × tagok száma
 
 <br />
 
----
 ## MGT módosító: Erő Tulajdonság
 
 ```
@@ -160,15 +155,13 @@ Aki erősebb, azt kevésbé korlátozza egy nehezebb páncél.
 
 <br />
 
-## Felszerelés túlsúly MGT
+## MGT módosító: Felszerelés túlsúly
 
 [Felszerelés keretedet](010_03_06_felszereles.md) ha túlléped, pontonként `+1 MGT` és `-1 TÉ` büntetést szenvedsz el
 
 <br />
 
 ---
----
-
 ## ⚡ Példa Vért MGT
 
 ```
@@ -186,9 +179,7 @@ Lord Gustav full páncél MGT: 12
 <br />
 
 ---
-## Sérült vért
-
-### Javítás
+## Sérült vért javítása
 
 Ha megsérül a vért, azt javítani kell és ez bizony nem olcsó mulatság fém vértek esetén.
 
@@ -203,14 +194,14 @@ Javítás ára:
   Vért teljes ára  x  Vért sérülés %
 ```
 
-### Sérült vért MGT módosító hatása (opcionális)
+## Sérült vért MGT módosító hatása (opcionális)
 
 Ha megsérül a vért, az bizony előbb-utóbb akadályozni fog a mozgásban.
 
 ```
 MGT növekedés:
   az eredeti MGT annyi %-kal nő,
-  amennyi a vért Sérülés jellemzője
+  amennyi a 'Vért sérülés' jellemzője ↓
 ```
 
 ---
