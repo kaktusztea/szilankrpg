@@ -41,7 +41,7 @@ Ha a Megakasztás találatot ér el (nem kell, hogy valós sebzést is okozzon),
 (TÉ +4 + k10)  vs  VÉ
 ```
 
-Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékkel, melyhez `TÉ:+4` módosító járul. Ha ez a támadás sikeres, akkor jöhet még az Ellenpróba fázis (ha szükséges). Ha minden fázis sikeres, akkor a Manőver is sikeres. Ne feledjük, hogy a `TÉ` értékébe beleszámít az esetleges több támadás levonása is (`-4` támadásonként)!
+Nem más, mint egy támadás az aktuális, **fegyveres TÉ** értékkel, melyhez `TÉ:+4` módosító járul. Ha ez a támadás sikeres, akkor jöhet még az Ellenpróba fázis (ha szükséges). Ha minden fázis sikeres, akkor a Manőver is sikeres. Ne feledjük, hogy a `TÉ` értékébe beleszámít az esetleges több támadás levonás is (`-4`), amennyiben nem az első támadás!
 
 Ha a **Végrehajtás** sikertelen, akkor a helyzet talán megvolt, de nem sikerült kihasználni.
 
