@@ -50,7 +50,7 @@ Kidolgozottság
 ```
 
 ---
-### Fémalapanyag Ár szorzó
+### Alapanyag Ár szorzó
 
 A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
 
@@ -65,12 +65,12 @@ A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
 ```
 
 ---
-### Anyagminőség Ár szorzó
+### Idea Ár szorzó
 
-A jobb anyagminőség nagyon megdobhatja a vért árát:
+A jobb Idea nagyon megdobhatja a vért árát:
 
 ```
-Anyagminőség Ár
+Idea Ár
 
 +SFÉ       Ár
  -4      1/10 x

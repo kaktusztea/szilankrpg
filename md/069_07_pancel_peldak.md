@@ -2,7 +2,7 @@
 
 **JK**: "Milyen a páncélja?"
 
-**KM**: "Ez egy Sodrony páncél. Fémalapanyaga acél, Anyagminősége (`-1 SFÉ`), Kidolgozottsága Pocsék.
+**KM**: "Ez egy Sodrony páncél. Alapanyaga acél, Ideája (`-1 SFÉ`), Kidolgozottsága Pocsék.
 
 Három tagot látsz: mellvért-darabot, felkar-tagot, alkar-tagot. Méretben passzol rád, nem kapsz extra büntetést."
 
@@ -19,8 +19,8 @@ Tehát a lefedettség `80%`: mellkas (`50%`), felkar (`10%`), alkar (`10%`), com
 Struktúra: Sodronying
 
 Alap SFÉ: 10
-+0 SFÉ: Anyagminőség átlagos
-+0 SFÉ: Fémalapanyag: Acél
++0 SFÉ: Idea átlagos
++0 SFÉ: Alapanyag: Acél
 
 Végső SFÉ: 10
 ```
@@ -45,8 +45,8 @@ MGT: 9
 ```
 Torzó: 10x ár
   10x (Struktúra Sodrony)
-  1x (Fémalapanyag: Acél)
-  1x (Anyagminőség: Átlagos)
+  1x (Alapanyag: Acél)
+  1x (Idea: Átlagos)
 ```
 
 ```
@@ -70,7 +70,7 @@ Azaz egy átlagos bőr torzódarab `16`-szorosába kerül a fenti teljes páncé
 ---
 ## ⚡Példa 2: Legvacakabb teljes lemezvért
 
-... amiben a lehető legnehezebb mozogni (Fémalapanyaga: bronz; Anyagminősége a legvacakabb és még a tagok Kidolgozottsága: pocsék).
+... amiben a lehető legnehezebb mozogni (Alapanyaga: bronz; Ideája a legvacakabb és még a tagok Kidolgozottsága: pocsék).
 
 Mindent lefed (`100%`).
 
@@ -79,8 +79,8 @@ Mindent lefed (`100%`).
 ```
 Struktúra: Lemezpáncél
  +20: Alap SFÉ
-  -3: Anyagminőség leggyengébb
-  -5: Fémalapanyag: Bronz
+  -3: Idea leggyengébb
+  -5: Alapanyag: Bronz
 ```
 
 ### MGT: `26`
@@ -107,8 +107,8 @@ MGT: 26
 Torzó: 5x ár
 
 → 100x (Struktúra Lemez)
-→ 0,5x (Fémalapanyag: Bronz)
-→ 0,1x (Anyagminőség vacak)
+→ 0,5x (Alapanyag: Bronz)
+→ 0,1x (Idea vacak)
 
 (100x x 0,5x x 0,1)
 ```

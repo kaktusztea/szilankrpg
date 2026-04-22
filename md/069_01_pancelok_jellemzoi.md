@@ -18,11 +18,11 @@ Az egyes jellemzőket az alábbi páncél-paraméterek befolyásolják:
 Struktúra
    bőr, lánc, lemez, stb
 
-Anyagminőség (±)
+Idea (±)
    alapanyag minősége, hajtogatás,
    ötvözet minősége
 
-Fémalapanyag
+Alapanyag
    ha fém: milyenből készült?
 ```
 
@@ -32,7 +32,7 @@ Fémalapanyag
 Struktúra
    bőr, lánc, lemez, stb
 
-Fémalapanyag
+Alapanyag
    ha fém: milyenből készült?
 
 Csatolt elemek száma és minősége
@@ -60,10 +60,10 @@ Csatolt tagok ára
 Kidolgozottság
    illesztések minősége
 
-Fémalapanyag
+Alapanyag
    ha fém: milyenből készült?
 
-Anyagminőség
+Idea
    alapanyag, hajtogatás,
    ötvözet minősége
 ```
@@ -80,7 +80,7 @@ Struktúra
 ```
 
 ```
-Fémalapanyag
+Alapanyag
   → acél, abbit, mithrill
   → Hat erre: SFÉ, MGT, Ár
 ```
@@ -91,7 +91,7 @@ Csatolt elemek száma, minősége
 ```
 
 ```
-Anyagminőség
+Idea
   → Hat erre: SFÉ, Ár
 ```
 
