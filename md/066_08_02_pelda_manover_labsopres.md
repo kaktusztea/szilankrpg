@@ -50,8 +50,8 @@ Tetves dobása
  + k10
 
 Célszám: 11
- +3: Rühes Manőver Alap
- +8: Gáncsolás nehézsége
+ + 3: Rühes Manőver Alap
+ + 8: Gáncsolás nehézsége
 ```
 
 ```
