@@ -35,14 +35,14 @@ Kérdés, hogy ilyenkor miért dobunk mégis **Ellenpróbát**? Az ilyen helyzet
 ---
 ## ⚜️ Harci taktikák és Manőverek
 
-Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika) alkalmazható, illetve [Roham](065_02_harci_taktikak.md#roham-taktika) taktika egyes Manővernél, ahol ez külön meg van említve - más Harci taktika nem.
+Manőver alkalmazásával együtt kizárólag [Támadó taktika](065_02_harci_taktikak.md#támadó-taktika) alkalmazható, illetve [Roham](065_02_harci_taktikak.md#roham-taktika) taktika egyes Manővereknél, ahol ez külön meg van említve - más Harci taktika nem.
 
 <br />
 
 ---
 ## ⚜️ Manőverek nehézsége
 
-A Manőver **Nehézségét** egy `[2;12]` intervallumból vett számértékkel jellemezzük - ezzel szerepel az [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) dobásban a Célszám megállapításánál.
+A Manőver **Nehézségét** egy `[2;12]` intervallumból vett számértékkel jellemezzük - ezzel vesz részt az [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) dobásban a Célszám megállapításánál.
 
 A `Szilánk` Manővereinek Nehézsége azok adatlapján szerepel - lásd: [Általános](066_05_altalanos_manoverek.md), [Belharcos](066_06_belharcos_manoverek.md) és [Lovas/Léglovas](066_07_lovas_manoverek.md) Manőverek.
 
@@ -51,7 +51,7 @@ A `Szilánk` Manővereinek Nehézsége azok adatlapján szerepel - lásd: [Álta
 ---
 ## ⚜️ Fegyverméret-kategóriák
 
-A Fegyverméret-kategóriák adta különbségek az **Ellenpróbánál** (`E`) módosítóként **nem** szükségesek amennyiben a Manőverben van kötelező (**M**)egakasztás, vagy (**V**)égrehajtás fázis, mert ezt a hatást a résztvevők harcértékeibe már belefoglaltuk.
+A Fegyverméret-kategóriák adta különbségek az **Ellenpróbánál** (`E`) **NEM** mérvadóak, mert ezt a hatást a résztvevők harcértékeibe már belefoglaltuk.
 
 <br />
 
@@ -78,7 +78,7 @@ Manőver nehézség
 12: Emberfeletti
 ```
 
-Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](010_10_03_manover_pontok_99.md) felhasználása szükséges a Nehézség mérsékléséhez és máris meglesz az "ára", ha valaki eséllyel alkalmazni akarja.
+Ha úgy érzed, az adott manőver túl tápos, emeld meg a **Nehézségét**, így több [Manőver Pont](010_10_03_manover_pontok_99.md) felhasználása szükséges az esélyek növeléséhez és máris meglesz az "ára", ha valaki eséllyel alkalmazni akarja.
 
 ---
 
