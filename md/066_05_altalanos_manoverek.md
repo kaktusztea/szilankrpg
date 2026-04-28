@@ -31,13 +31,13 @@ Harcoló felek között, vagy akár veled harcolni vágyó ellenfél mellett els
 
 - Nehézség: `6`
   - ± `2` (fegyverméretek és harcolók számától függ, KM döntése)
-- Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
-- Ha legalább `2` pajzsos blokkolna téged, akkor ezt a manővert nem használhatod. Áttöréssel próbálkozhatsz.
+- ⚙️ Ellenpróba célszámba a legmagasabb ellenfél **Manőver Alap** érték számít be
+- ❌ Ha legalább `2` pajzsos blokkolna téged, akkor ezt a manővert nem használhatod. Áttöréssel próbálkozhatsz.
 - Fázisok: `Ellenpróba (Megakasztás*)`
 	- **Ellenpróba** sikeres: átsiklottál a fegyveresek között. A próba kreatív figyelemeltereléssel is megúszható, KM dönt.
 	- **Ellenpróba** sikertelen: átsiklottál, **DE** ellenfeleid leadhatnak fejenként egy **Megakasztás** támadást rád.
 
-**Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás: támadóddal **Gyorsaság** ellenpróba. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) módosítóival.
+**Hatás**: Sikerül átsiklanod fegyveres, esetleg harcoló ellenfeled/ellenfeleid mellett/között. Ha üldöznek, futás jön: támadóddal **Gyorsaság** ellenpróbát dobtok. Ha megnyerted, leléptél, ha üldöződ nyerte, akkor utolért és leadhat egy extra támadást rád [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) módosítóival.
 
 <br />
 
