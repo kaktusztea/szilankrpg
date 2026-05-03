@@ -27,7 +27,6 @@ Nehézsége: 10
 Fázisai:
   Végrehajtás (V)
   Ellenpróba (E)
-
 ```
 
 ### `1.` Végrehajtás (`V`)
@@ -41,8 +40,7 @@ Ez nagyobb mint az ellenfél VÉ
 → Sikeres Végrehajtás
 ```
 
-
-**2. Ellenpróba** (`E`)
+### 2. Ellenpróba (`E`)
 
 ```
 Rühes dobása:
@@ -50,8 +48,8 @@ Rühes dobása:
 4 (Manőver Alap) + k10
 
 Célszám: 13 (3 + 10)
- → ellenfél Manőver Alap (3)
- → Lefegyverzés Nehézsége (10)
+  +3: Ellenfél Manőver Alap
+ +10: Lefegyverzés Nehézsége
 ```
 
 ```
@@ -60,9 +58,9 @@ A próbadobás így
 (4 + k10)  vs.  13
 ```
 
-Tehát ha Rühes legalább `9`-et dob `k10`-en, akkor az **Ellenpróba** is sikeres és így az egész manőver is, ellenfele kardja kihullik annak kezéből. Látható, hogy a **Lefegyverzés** a [Manőver Pontok](066_02_manover_pontok.md) használata nélkül nagyjából azonos tudású ellenfelek között nem könnyű művelet.
+Tehát ha Rühes `9`-et dob `k10`-en, akkor az **Ellenpróba** fázis is sikeres és ezzel az egész manőver szintén: ellenfele kardja kihullik annak kezéből. Látható, hogy a **Lefegyverzés** a [Manőver Pontok](066_02_manover_pontok.md) használata nélkül nagyjából azonos tudású ellenfelek között nem könnyű művelet.
 
-Ha Rühes `4` Manőver Pontot költött volna el, akkor már `+4` járna a próbadobására ( `8+k10`) és így már `5`-ös dobással is sikert érhetne el. Ha viszont ellenfele is elköltött volna `2` pontot, akkor az ő `+2` bónusza mérsékelné Rühes `+4`-es bónuszát és ismét csak a `7`-es dobással(vagy felette) lenne eredményes.
+Ha Rühes `4` Manőver Pontot költött volna el, akkor már `+4` járna a próbadobására ( `8+k10`) és így már `5`-ös dobással is sikert érhetne el. Ha viszont ellenfele is elköltött volna `2` pontot, akkor az ő `+2` bónusza mérsékelné Rühes `+4`-es bónuszát és ismét csak a `7`-es dobással (vagy felette) lenne csak eredményes kedvenc tolvajunk.
 
 ---
 
