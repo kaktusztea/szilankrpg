@@ -24,7 +24,7 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 **[Belharc](fortelyok.harci/belharc.md) fortély** ismerete bónuszt ad - támadó és védekező számára is az Ellenpróba fázisnál. Ettől függetlenül Belharci szituációban mindenki, képzetlenül is megpróbálhatja mindegyik Manővert.
 
 ```
-+2 / fok Belharc fortély
++2 / Belharc fortély foka
   Támadó és Védekező számára
 
 [-3; +3]
