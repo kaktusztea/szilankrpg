@@ -1,6 +1,6 @@
 ## ⚡Példa Manőver alkalmazására: Lábsöprés
 
-Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr és elkölt `2` **Manőver Pontot**.
+Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr. Hogy növelje esélyeit, elkölt `2` **Manőver Pontot**.
 
 ```
 Tetves értékei
@@ -29,7 +29,7 @@ Fázisai
   (E)llenpróba
 ```
 
-**1. Végrehajtás**
+### 1. Végrehajtás
 
 ```
 Tetves támad TÉ:+4 bónusszal
@@ -41,7 +41,7 @@ TÉ = 50
 → Sikeres Végrehajtás
 ```
 
-**2. Ellenpróba**
+### 2. Ellenpróba
 
 ```
 Tetves dobása

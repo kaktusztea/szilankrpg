@@ -1,4 +1,4 @@
-## Harc lóhátról, légi hátasról
+## Harc hátasról, légi hátasról
 
 Aki hátasról harcol, az előnyben van, részben a magasabb pozíció, részben az állat állandó mozgása, fenyegetése miatt.
 
