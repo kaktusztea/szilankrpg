@@ -24668,7 +24668,7 @@ Ha Rühes `4` Manőver Pontot költött volna el, akkor már `+4` járna a prób
 
 ## ⚡Példa Manőver alkalmazására: Lábsöprés
 
-Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr és elkölt `2` **Manőver Pontot**.
+Tetves **Lábsöprést** akar alkalmazni. Ellenfelénél kard van, nála pedig tőr. Hogy növelje esélyeit, elkölt `2` **Manőver Pontot**.
 
 ```
 Tetves értékei
@@ -24697,7 +24697,7 @@ Fázisai
   (E)llenpróba
 ```
 
-**1. Végrehajtás**
+### 1. Végrehajtás
 
 ```
 Tetves támad TÉ:+4 bónusszal
@@ -24709,7 +24709,7 @@ TÉ = 50
 → Sikeres Végrehajtás
 ```
 
-**2. Ellenpróba**
+### 2. Ellenpróba
 
 ```
 Tetves dobása
@@ -24739,7 +24739,7 @@ Tehát ha Tetves legalább `5`-öt dob `k10`-en, akkor az **Ellenpróba** (`E`) 
 ---
 ## File: md/067_00_harc_hatasrol.md
 
-## Harc lóhátról, légi hátasról
+## Harc hátasról, légi hátasról
 
 Aki hátasról harcol, az előnyben van, részben a magasabb pozíció, részben az állat állandó mozgása, fenyegetése miatt.
 
