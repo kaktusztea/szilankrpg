@@ -13,7 +13,7 @@ Lopás + Ügyesség
 Észlelés + Érzékenység/Intelligencia
 ```
 
-### ⚡ Példa szituáció 1:  Nemeshölgy testőrrel
+### ⚡ Példa szituáció: Nemeshölgy testőrrel
 
 A nemeshölgy a piac forgatagában válogat, tőle pár méterrel, civil ruhában lépdel testőre.
 
