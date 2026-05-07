@@ -97,9 +97,6 @@ A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott f
 + Speciális
   - Fortélyokból adódó módosítók
   - Harci helyzetből adódó módosítók
-  - Fegyver minőségéből adódó módosító
-    - TÉ: -3
-    - TÉ: +3
   - Szituációkból adódó módosítók
   - Mágikus fegyver módosítói
   - Mágia hatására kapott módosító
