@@ -5,7 +5,7 @@ Mikor lóra szállsz, számos előnyhöz juthatsz, amennyiben képzett lovas vag
 ## Lovas harc - fortély nélkül
 
 ```
-TÉ/VÉ -9
+TÉ/VÉ: -9
 
 Lenti bónuszok
 nem járnak
