@@ -24760,7 +24760,7 @@ Mikor lóra szállsz, számos előnyhöz juthatsz, amennyiben képzett lovas vag
 ## Lovas harc - fortély nélkül
 
 ```
-TÉ/VÉ -9
+TÉ/VÉ: -9
 
 Lenti bónuszok
 nem járnak
@@ -24792,7 +24792,7 @@ A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel h
 ---
 ## Lövés hátasról
 
-[Lövés hátasról](fortelyok.tavharc/loves_hatasrol.md) fortély szükséges hozzá. Nélküle a fortély Alapeseténél leírt büntetések érvényesek. Földi és légi hátasokra is érvényes.
+[Lövés hátasról](fortelyok.tavharc/loves_hatasrol.md) fortély szükséges hozzá. Nélküle a fortély Alapeseténél leírt büntetések érvényesek. Földi és légi hátasokra is érvényes, tehát csak `1x` kell/lehet felvenni.
 
 <br />
 
