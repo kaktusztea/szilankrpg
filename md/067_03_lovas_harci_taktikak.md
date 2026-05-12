@@ -1,24 +1,27 @@
 ## Lovas, léglovas harci taktikák
 
-Ahogy a gyalogos küzdelemben is alkalmazhatóak [Harci taktikák](065_02_harci_taktikak.md), úgy hátason ülve is kapsz néhány új lehetőséget.
+Ahogy a gyalogos küzdelemben, itt is alkalmazhatóak a [Harci taktikák](065_02_harci_taktikak.md), plusz hátason ülve kapsz néhány új lehetőséget is.
 
 ### Lovas roham / Léglovas roham
 
 ```
-TÉ: +6
-SP: +10
-1 támadó csapás lehetséges
-1 visszacsapás lehetséges
+(Lég)Lovaglás képzettségpróba
+  Célszám: 12
+
+Ha megvan:
+ TÉ: +6
+ SP: +10
+ 1 támadó csapás lehetséges
+ 1 visszacsapás lehetséges
 ```
 
-Nincs elsöprőbb, mint egy lovas roham! Persze megfelelő feltételek szükségesek hozzá. Amennyiben ezek megvannak, a rohamozó komoly előnyhöz jut.\
-❗Az alább leírtak a levegőből indított **Léglovas rohamra** is érvényesek.
+Kiváltja a hagyományos "Roham" taktikát.
 
-Ilyen támadásnál összesen 1-1 oda- és visszatámadásra van lehetőség, utána a támadó továbbrobog.
+Nincs elsöprőbb, mint egy (lég)lovas roham! Persze megfelelő feltételek szükségesek hozzá. Amennyiben ezek megvannak, a rohamozó komoly előnyhöz jut.
 
-Követelmények:
-- **Lovaglás** képzettségpróba `12` célszám ellen
-- Megfelelő mennyiségű és dőlésszögű hely a begyorsuláshoz. A KM dönt, hogy az adott terepen, az adott lóval a karakter el tudja-e érni a rohamhoz szükséges sebességet. Itt a fentieken túl kalkulálja be a ló állapotát, erejét, illetve a súlyt is, amit cipel. Ha sikerül elegendően begyorsulni, akkor a megkapja a fenti módosítókat.
+Ilyen támadásnál összesen `1-1` oda- és visszatámadásra van lehetőség, utána a támadó továbbrobog.
+
+Követelmény a megfelelő mennyiségű és dőlésszögű hely a begyorsuláshoz. A KM dönt, hogy az adott terepen, az adott hátassal a karakter el tudja-e érni a rohamhoz szükséges sebességet. Itt a fentieken túl kalkulálja be az állat állapotát, erejét, illetve a súlyt is, amit cipel. Ha sikerül elegendően begyorsulni, akkor a megkapja a fenti módosítókat.
 
 <br />
 
