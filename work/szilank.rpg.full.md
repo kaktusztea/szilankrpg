@@ -965,7 +965,6 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 [Harc menete (tömör verzió)](064_01_harc_menete_osszefoglalas.md)
 
----
 ### Manőverek
 
 [Általános manőverek](066_05_altalanos_manoverek.md)
@@ -974,12 +973,10 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 [Manőver végbevitele](066_04_manover_vegbevitele.md)
 
----
 ### Fortélyok
 
 [Harci fortélyok](044_harci_fortelyok.md)
 
----
 ### Egészség
 
 [Fáradtság Pont](061_02_faradtsag_pont.md)
@@ -988,14 +985,12 @@ A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk j
 
 [Gyógyulás](061_06_gyogyulas.md)
 
----
 ### Tám/kör, Mozgás
 
 [Támadások száma - ábra](063_06_harckeret_tamadasok_szama_abra.md)
 
 [Harci kör: Mozgás, Akció](063_01_harci_kor.md)
 
----
 ### Páncélok, Fegyverek
 
 [Vértek, Páncélok](069_00_vertek_pancelok.md)
