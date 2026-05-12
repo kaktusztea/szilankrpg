@@ -2,7 +2,7 @@
 
 Mikor lóra szállsz, számos előnyhöz juthatsz, amennyiben képzett lovas vagy.
 
-## Lovas harc - fortély nélkül
+## Lovas harc fortély nélküli értékei
 
 ```
 TÉ/VÉ: -9
@@ -11,7 +11,7 @@ Lenti bónuszok
 nem járnak
 ```
 
-Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) / [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. Ilyen képzetlen helyzetben a fenti `TÉ/VÉ` büntetésen felül semmilyen lent leírt bónusz sem jár.
+Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) / [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. Ilyen - képzetlen - helyzetben a fenti `TÉ/VÉ` büntetések járnak, továbbá semmilyen lent leírt bónusz sem jár.
 
 ---
 ## Lovas/Léglovas harcértékek kiszámítása
@@ -28,7 +28,7 @@ Minimum pengeméret: 1
 
 A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel harcolnál.
 
-🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély
+🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély határozza meg a bónuszokat
 
 ❌ [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet NEM jár!
 
@@ -58,16 +58,18 @@ Itt a [Harci helyzetek](065_01_03_harci_poziciok.md#félhátulról-támadás) fe
 ---
 ## Idomítatlan hátas
 
-Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, akkor legfeljebb küzdeni tudsz, hogy nehogy ledobjon a megriadt állat. Harcolni **nem** tudsz.
+Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, akkor legfeljebb küzdeni tudsz, hogy nehogy ledobjon a megriadt állat. Támadni **nem** tudsz, védekezni is rosszul, továbbá körönként képzettségpróbát dobsz, hogy fenn tudsz -e maradni a hátason.
 
 ```
+TÉ: nem támadhatsz
+VÉ: -10
+
 Lovaglás/Léglovaglás képzettségpróba
+(körönként)
 
 Nehézség: 12-15 között
           (Nehéz, Nagyon nehéz)
 ```
-
-<br />
 
 ---
 
