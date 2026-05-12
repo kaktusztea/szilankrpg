@@ -1,6 +1,6 @@
 ## Lovas, léglovas harci taktikák
 
-Ahogy a gyalogos küzdelemben, itt is alkalmazhatóak a [Harci taktikák](065_02_harci_taktikak.md), plusz hátason ülve kapsz néhány új lehetőséget is.
+Ahogy a gyalogos küzdelemben, itt is alkalmazhatóak a hagyományos [Harci taktikák](065_02_harci_taktikak.md), plusz hátason ülve kapsz néhány új lehetőséget is. A "Roham" és "Öngyilkos roham" taktikákat kiváltja a lenti "Lovas roham / Léglovas roham".
 
 ### Lovas roham / Léglovas roham
 
@@ -29,30 +29,21 @@ Követelmény a megfelelő mennyiségű és dőlésszögű hely a begyorsulásho
 ### Lovas támadás galoppból
 
 ```
-TÉ: +3
-SP: +5
-1 támadó csapás lehetséges
-1 visszacsapás lehetséges
+(Lég)Lovaglás képzettségpróba
+  Célszám: 9
+
+Ha megvan:
+ TÉ: +3
+ SP: +5
+ 1 támadó csapás lehetséges
+ 1 visszacsapás lehetséges
 ```
 
 Nem mindig sikerül elérni a rohamhoz szükséges sebességet, viszont ha a karakter képes galoppra fogni a lovát és úgy támadni, akkor is több előnyhöz jut, mintha csak egy helyben táncoltatna.
 
-Ilyen támadásnál során a támadó dönthet, hogy támadása leadása (és ellenfele visszatámadása) után továbbgaloppozik, vagy megáll ellenfele mellett és állva/táncoltatva folytatja a harcot.
+A támadás leadása (és az ellenfél visszatámadása) után a karakter továbbgaloppozhat, vagy pedig megállhat ellenfele mellett és állva/táncoltatva folytathatja a harcot.
 
-Követelmények:
-- Lovaglás képzettségpróba `9` célszám ellen
-- Megfelelő mennyiségű hely a begyorsuláshoz (KM dönt)
-
-<br />
-
----
-### Hagyományos taktikák
-
-Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal.
-
-🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--léglovas-roham) bekezdést!
-
-<br />
+Követelmény a megfelelő mennyiségű hely a begyorsuláshoz (KM dönt).
 
 ---
 
