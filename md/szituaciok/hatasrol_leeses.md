@@ -38,7 +38,7 @@ Módosítók:
 → Levegőből: lásd lenn
 ```
 
-🔆 Ha légi hátasról zuhansz le, akkor a fenti Nehézség és az [Esés magasból](eses_magasbol.md) szituációnál a magasságból adódó Nehézség értékek közül a **nagyobbik** számít, továbbá a Sebesülést (`SP`) a [Zuhanásnál](064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) leírtak szerint számoljuk.
+🔆 Ha légi hátasról zuhansz le, akkor a fenti Nehézség és az [Esés magasból](eses_magasbol.md) szituációnál a magasságból adódó Nehézség értékek közül a **nagyobbik** számít, továbbá a Sebesülést (`SP`) a [Zuhanásnál](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) leírtak szerint számoljuk.
 
 <br />
 
