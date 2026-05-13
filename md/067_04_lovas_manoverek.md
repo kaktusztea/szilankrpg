@@ -33,18 +33,17 @@ Megpróbálsz áttörni az ellenfél sorain, lendületét és hátasod erejét h
 ---
 ### ⚜️ Lovas, léglovas akasztása
 
-❗Nem a lovas, hanem a **védekező gyalogos**, szálfegyverrel végezheti!
+Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd haladó lovas felé mutat.
 
-❗Az alább leírtak a levegőből indított **Léglovas rohamra** is érvényesek.
-
-Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd haladó lovas felé mutat. Megelőző támadásodnál támadódat a "Lovas roham" / "Lovas támadás galoppból" és egyéb harci taktikákból adódó `VÉ` levonások természetesen sújtják, így extrém veszélyes egy ilyen pikába hátassal belefutni.
+❗Nem a lovas, hanem a **védekező gyalogos**, szálfegyverrel végezheti!\
+❗Az alább leírtak a levegőből indított **Léglovas roham** akasztására is érvényesek.
 
 - Nehézség: `4`
 - Fázisok: `(M)egakasztás, (E)llenpróba`
 - Végbevitel követelménye:
-  - szúró szálfegyver használata
+  - Szúró szálfegyver használata
   - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) a lovashoz képest
-- Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
+- Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba). Sikertelen manőver esetén a lovas zavartalanul leadhatja rád rohamozó támadását.
 
 <br />
 
