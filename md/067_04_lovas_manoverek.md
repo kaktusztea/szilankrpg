@@ -67,7 +67,7 @@ Megjegyzés: A `(M)egakasztás` lépés csak akkor jön a lovastól, ha a látó
 ---
 ## Léglovas manőverek
 
-Nem tartottuk fontosnak az ilyen részletes kidolgozást. Természetesen ha felmerül rá igény, a KM együttműködésével kitalálható, vagy alkalmazható ilyen Manőver is.
+Nem tartottuk fontosnak az ilyen részletes kidolgozást. Természetesen ha felmerül rá igény, a KM együttműködésével kitalálhatóak ilyen Manőverek is.
 
 ---
 
