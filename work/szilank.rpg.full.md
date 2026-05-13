@@ -24753,7 +24753,7 @@ Aki hátasról harcol, az előnyben van, részben a magasabb pozíció, részben
 
 Mikor lóra szállsz, számos előnyhöz juthatsz, amennyiben képzett lovas vagy.
 
-## Lovas harc - fortély nélkül
+## Lovas harc fortély nélküli értékei
 
 ```
 TÉ/VÉ: -9
@@ -24762,7 +24762,7 @@ Lenti bónuszok
 nem járnak
 ```
 
-Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) / [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. Ilyen képzetlen helyzetben a fenti `TÉ/VÉ` büntetésen felül semmilyen lent leírt bónusz sem jár.
+Hiába van **Lovaglás/Léglovaglás** képzettséged magas szinten, a [Lovas harc](fortelyok.harci/lovas_harc.md) / [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély nélkül képzetlen vagy a lovas harcban. Ilyen - képzetlen - helyzetben a fenti `TÉ/VÉ` büntetések járnak, továbbá semmilyen lent leírt bónusz sem jár.
 
 ---
 ## Lovas/Léglovas harcértékek kiszámítása
@@ -24779,7 +24779,7 @@ Minimum pengeméret: 1
 
 A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel harcolnál.
 
-🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély
+🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély határozza meg a bónuszokat
 
 ❌ [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet NEM jár!
 
@@ -24809,16 +24809,18 @@ Itt a [Harci helyzetek](065_01_03_harci_poziciok.md#félhátulról-támadás) fe
 ---
 ## Idomítatlan hátas
 
-Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, akkor legfeljebb küzdeni tudsz, hogy nehogy ledobjon a megriadt állat. Harcolni **nem** tudsz.
+Ha olyan hátason próbálsz harcolni, amely nem lett erre kiképezve, akkor legfeljebb küzdeni tudsz, hogy nehogy ledobjon a megriadt állat. Támadni **nem** tudsz, védekezni is rosszul, továbbá körönként képzettségpróbát dobsz, hogy fenn tudsz -e maradni a hátason.
 
 ```
+TÉ: nem támadhatsz
+VÉ: -10
+
 Lovaglás/Léglovaglás képzettségpróba
+(körönként)
 
 Nehézség: 12-15 között
           (Nehéz, Nagyon nehéz)
 ```
-
-<br />
 
 ---
 
@@ -24833,8 +24835,9 @@ Nehézség: 12-15 között
 
 ## Lovas és Léglovas fortélyok
 
-A Lovas és Léglovas harchoz szükséges, vagy azt érintő fortélyok rövid listáját a Harci fortélyok oldalán találhatjuk:
-#### [Lovas, Léglovas fortélyok listája](044_harci_fortelyok.md#lovas-harci-fort%C3%A9lyok)
+A Lovas és Léglovas harchoz szükséges, vagy azt érintő fortélyok rövid listáját a Harci fortélyok oldalán találhatod:
+
+[Lovas, Léglovas fortélyok listája](044_harci_fortelyok.md#lovas-harci-fort%C3%A9lyok)
 
 ---
 
@@ -24849,25 +24852,28 @@ A Lovas és Léglovas harchoz szükséges, vagy azt érintő fortélyok rövid l
 
 ## Lovas, léglovas harci taktikák
 
-Ahogy a gyalogos küzdelemben is alkalmazhatóak [Harci taktikák](065_02_harci_taktikak.md), úgy hátason ülve is kapsz néhány új lehetőséget.
+Ahogy a gyalogos küzdelemben, itt is alkalmazhatóak a hagyományos [Harci taktikák](065_02_harci_taktikak.md), plusz hátason ülve kapsz néhány új lehetőséget is. A "Roham" és "Öngyilkos roham" taktikákat kiváltja a lenti "Lovas roham / Léglovas roham".
 
 ### Lovas roham / Léglovas roham
 
 ```
-TÉ: +6
-SP: +10
-1 támadó csapás lehetséges
-1 visszacsapás lehetséges
+(Lég)Lovaglás képzettségpróba
+  Célszám: 12
+
+Ha megvan:
+ TÉ: +6
+ SP: +10
+ 1 támadó csapás lehetséges
+ 1 visszacsapás lehetséges
 ```
 
-Nincs elsöprőbb, mint egy lovas roham! Persze megfelelő feltételek szükségesek hozzá. Amennyiben ezek megvannak, a rohamozó komoly előnyhöz jut.\
-❗Az alább leírtak a levegőből indított **Léglovas rohamra** is érvényesek.
+Kiváltja a hagyományos "Roham" taktikát.
 
-Ilyen támadásnál összesen 1-1 oda- és visszatámadásra van lehetőség, utána a támadó továbbrobog.
+Nincs elsöprőbb, mint egy (lég)lovas roham! Persze megfelelő feltételek szükségesek hozzá. Amennyiben ezek megvannak, a rohamozó komoly előnyhöz jut.
 
-Követelmények:
-- **Lovaglás** képzettségpróba `12` célszám ellen
-- Megfelelő mennyiségű és dőlésszögű hely a begyorsuláshoz. A KM dönt, hogy az adott terepen, az adott lóval a karakter el tudja-e érni a rohamhoz szükséges sebességet. Itt a fentieken túl kalkulálja be a ló állapotát, erejét, illetve a súlyt is, amit cipel. Ha sikerül elegendően begyorsulni, akkor a megkapja a fenti módosítókat.
+Ilyen támadásnál összesen `1-1` oda- és visszatámadásra van lehetőség, utána a támadó továbbrobog.
+
+Követelmény a megfelelő mennyiségű és dőlésszögű hely a begyorsuláshoz. A KM dönt, hogy az adott terepen, az adott hátassal a karakter el tudja-e érni a rohamhoz szükséges sebességet. Itt a fentieken túl kalkulálja be az állat állapotát, erejét, illetve a súlyt is, amit cipel. Ha sikerül elegendően begyorsulni, akkor a megkapja a fenti módosítókat.
 
 <br />
 
@@ -24875,30 +24881,21 @@ Követelmények:
 ### Lovas támadás galoppból
 
 ```
-TÉ: +3
-SP: +5
-1 támadó csapás lehetséges
-1 visszacsapás lehetséges
+(Lég)Lovaglás képzettségpróba
+  Célszám: 9
+
+Ha megvan:
+ TÉ: +3
+ SP: +5
+ 1 támadó csapás lehetséges
+ 1 visszacsapás lehetséges
 ```
 
 Nem mindig sikerül elérni a rohamhoz szükséges sebességet, viszont ha a karakter képes galoppra fogni a lovát és úgy támadni, akkor is több előnyhöz jut, mintha csak egy helyben táncoltatna.
 
-Ilyen támadásnál során a támadó dönthet, hogy támadása leadása (és ellenfele visszatámadása) után továbbgaloppozik, vagy megáll ellenfele mellett és állva/táncoltatva folytatja a harcot.
+A támadás leadása (és az ellenfél visszatámadása) után a karakter továbbgaloppozhat, vagy pedig megállhat ellenfele mellett és állva/táncoltatva folytathatja a harcot.
 
-Követelmények:
-- Lovaglás képzettségpróba `9` célszám ellen
-- Megfelelő mennyiségű hely a begyorsuláshoz (KM dönt)
-
-<br />
-
----
-### Hagyományos taktikák
-
-Megegyezik a [Harci taktikák](065_02_harci_taktikak.md) alatt leírtakkal.
-
-🔆Roham és Öngyilkos roham **helyett** lásd fenn a [Lovas roham / Léglovas roham](#lovas-roham--léglovas-roham) bekezdést!
-
-<br />
+Követelmény a megfelelő mennyiségű hely a begyorsuláshoz (KM dönt).
 
 ---
 
@@ -31394,6 +31391,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Hajítás alkalmatlan fegyverrel](szituaciok/hajitas_alkalmatlan_fegyverrel.md)
 - [Hajítás nem dobásra készített tárgyakkal](szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md)
 - [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)
+- [Hátasról leesés](szituaciok/hatasrol_leeses.md)
 - [Hátbaszúrás - harcon kívül](szituaciok/hatbaszuras_harcon_kivul.md)
 - [Hátbaszúrás - harcolót](szituaciok/hatbaszuras_harcolot.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
@@ -32143,44 +32141,49 @@ Seb       Nehézség
 15+ ÉP       15
 ```
 
-Ha sikertelen, leesik. Ekkor jön a [Lóról, hátasról leesés](hatasrol_leeses.md) szituáció.
+Ha sikertelen, leesik. Ekkor jön a lenti Akrobatika próba.
 
 <br />
 
 ---
 ## Leeséskor: Akrobatika próba és Sérülés
 
-Ha leesel a lóról, [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében. Egy szénaboglya például sokat könnyíthet.
+Ha leesel hátasodról, [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében. Egy szénaboglya például sokat könnyíthet.
 
-### ⚜️Akrobatika képzettségpróba Nehézsége a ló mozgása alapján
+### ⚜️Eséskor: Akrobatika képzettségpróba
+
+A próba **Nehézsége** a hátas mozgásától függ.
 
 ```
-Hátas      Nehézség
-Áll,lassú     9
-Üget         15
-Vágtázik     18
+Hátas       Nehézség
+ Áll,lassú     9
+ Üget         15
+ Vágtázik     18
 
 Módosítók:
 → Terep Nehézség: [-6; +3]
 → Páncélban: [+1; 6]
+→ Levegőből: lásd lenn
 ```
+
+🔆 Ha légi hátasról zuhansz le, akkor a fenti Nehézség és az [Esés magasból](eses_magasbol.md) szituációnál a magasságból adódó Nehézség értékek közül a **nagyobbik** számít, továbbá a Sebesülést (`SP`) a [Zuhanásnál](../064_02_08_sebzodes_hatasa.md#zuhan%C3%A1s) leírtak szerint számoljuk.
 
 <br />
 
-### ⚜️ Esésből sebződés: Akrobatika-próba sikertelen
+### ⚜️ Esésből sebződés: Sikertelen Akrobatika-próba után
 
 Ha elvétetted az Akrobatika (esés) próbát, a hátas mozgásától függően kapsz zuhanásból adódó sebzést.
 
 ```
-Hátas           SP
-Áll, Lassú   k20 +0 SP
-Üget         k20 +5 SP
-Vágtázik     k20+15 SP
+Hátas            SP
+ Áll, Lassú   k20 +0 SP
+ Üget         k20 +5 SP
+ Vágtázik     k20+15 SP
 ```
 
 <br />
 
-### ⚜️ Esésből sebződés:  Akrobatika-próba sikeres
+### ⚜️ Esésből sebződés: Sikeres Akrobatika-próba után
 
 Ha sikeres volt a próba, akkor is fennáll az esésből sebződés veszélye, de jelentősen kisebb mértékű:
 
