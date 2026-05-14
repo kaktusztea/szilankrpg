@@ -24923,7 +24923,7 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 - Végbevitel követelménye: [Lovas_harc](fortelyok.harci/lovas_harc.md) - `2.fok`
 - Hatás:
   - Soron kívüli megelőző `(M)egakasztást` dobhatsz **minden** veled harcérintkezésben levő ellenfeled ellen.
-  - Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így sebezni nem tudsz, de a feléd irányuló támadásokat elháríthatod.
+  - Ha a támadás sikeres, az ellenfél elveszíti a támadást, de nem sebződik. Látható, hogy így főleg a feléd irányuló támadásokat háríthatod el.
   - Távolsági Védő Értéked számításánál a [Szorzó - Mozgás módosítód](073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont) **Kiszámíthatatlan** (`6x`) lesz.
 
 <br />
@@ -24931,9 +24931,9 @@ Hátasoddal vadul forgolódsz, amely ki-kirúg ide-oda, borzasztó nehéz közel
 ---
 ### ⚜️ Lovas áttörés
 
-Megpróbálsz áttörni az ellenfél sorain, lendületét és hátasod erejét használva.
+Megpróbálsz áttörni az ellenfél sorain, lendületed és hátasod erejét kihasználva.
 
-- Nehézség: `[4-8]` (ellenfelek száma és fegyverzete függvénye)
+- Nehézség: `[4-10]` (ellenfelek száma és fegyverzete függvénye)
 - Fázisok: `(V)égrehajtás, (E)llenpróba`
 - Követelménye: galopp vagy gyorsabb tempó
 - Hatás: Az áttörési kísérlet sikeres esetén az ellenfelek szétszóródnak, és hátrányt szenvednek a következő körben.
@@ -24943,41 +24943,40 @@ Megpróbálsz áttörni az ellenfél sorain, lendületét és hátasod erejét h
 ---
 ### ⚜️ Lovas, léglovas akasztása
 
-❗Nem a lovas, hanem a **védekező gyalogos**, szálfegyverrel végezheti!
+Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd haladó lovas felé mutat.
 
-❗Az alább leírtak a levegőből indított **Léglovas rohamra** is érvényesek.
-
-Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd haladó lovas felé mutat. Megelőző támadásodnál támadódat a "Lovas roham" / "Lovas támadás galoppból" és egyéb harci taktikákból adódó `VÉ` levonások természetesen sújtják, így extrém veszélyes egy ilyen pikába hátassal belefutni.
+❗Nem a lovas, hanem a **védekező gyalogos**, szálfegyverrel végezheti!\
+❗Az alább leírtak a levegőből indított **Léglovas roham** akasztására is érvényesek.
 
 - Nehézség: `4`
 - Fázisok: `(M)egakasztás, (E)llenpróba`
 - Végbevitel követelménye:
-  - szúró szálfegyver használata
+  - Szúró szálfegyver használata
   - [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) a lovashoz képest
-- Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed eredményétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba).
+- Hatás: Sebző dobást teszel a lovasra mielőtt az lecsaphatna rád. A lovas elveszíti támadását és - döfésed effektív sebzésétől függően - továbbrobog, megtorpan, esetleg kiesik a nyeregből ([Lovaglás](kepzettsegek.szekunder/lovaglas.md)/[Léglovaglás](kepzettsegek.szekunder/leglovaglas.md) képzettségpróba). Sikertelen manőver esetén a lovas zavartalanul leadhatja rád rohamozó támadását.
 
 <br />
 
 ---
 ### ⚜️ Lóhátról lerántás
 
-❗Nem a lovas, hanem **gyalogos ellenfele** végezheti!
-
 Megpróbálod lerántani lovas ellenfeled a nyergéből.
 
-- Nehézség: `[6-12]` (hátas mozgása, lovas hova figyel)
+❗Nem a lovas, hanem **gyalogos ellenfele** végezheti!
+
+- Nehézség: `[6-12]` (függ attól, hogy milyen a hátas mozgása, a lovas hova figyel)
 - Fázisok: `(M)egakasztás, (V)égrehajtás, (E)llenpróba`
-- Végbevitel követelménye: Csak közvetlen harcérintkezés alatt
+- Végbevitel követelménye: Csak közvetlen harcérintkezés alatt végezhető
 - Hatás: Sikeres próbálkozás esetén a lovas a földre kerül.
 
-Megjegyzés: A `(M)egakasztás` lépés csak akkor jön a lovastól, ha a látóterében vagy.
+Megjegyzés: A `(M)egakasztás` lépés csak akkor történik a lovas részéről, ha a látóterében vagy.
 
 <br />
 
 ---
 ## Léglovas manőverek
 
-Nem tartottuk fontosnak az ilyen részletes kidolgozást. Természetesen ha felmerül rá igény, a KM együttműködésével kitalálható, vagy alkalmazható ilyen Manőver is.
+Nem tartottuk fontosnak az ilyen részletes kidolgozást. Természetesen ha felmerül rá igény, a KM együttműködésével kitalálhatóak ilyen Manőverek is.
 
 ---
 
@@ -24990,7 +24989,7 @@ Nem tartottuk fontosnak az ilyen részletes kidolgozást. Természetesen ha felm
 
 ## Fegyverek
 
-Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fegyverek leírását találhatjuk. Speciális jellemzőiknek fontos szerep juthat egyedi szituációkban. Okos felhasználásukkal előnybe kerülhet a ravasz alkalmazó.
+Ebben a fejezetben a játékos- és nem játékos karakterek által forgatott fegyverek leírását találhatjuk. Speciális jellemzőiknek fontos szerep juthat egyedi szituációkban - okos felhasználásukkal előnybe kerülhet a ravasz alkalmazó.
 
 ### [Fegyverek általános szabályai](068_01_00_fegyverek_altalanos_szabalyai.md)
 
@@ -25124,7 +25123,7 @@ rövid (0)
 
 ```
 rövid:     0,3 méterig
-0.5 penge: 0,4 - 0,7 méter
+0.5 penge: 0,4 - 0,7 méterig
 1 penge:   0,8 méter
 2 penge:   1,6 méter
 ```
