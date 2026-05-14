@@ -56,7 +56,7 @@ Szabadulás a hurokból:
   - [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
   - Nehézség: `9` (magasabb)
 
-A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítókat szenved el
+A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítókat szenved el.
 
 <br />
 

@@ -52,7 +52,7 @@ Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bí
 
 - [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőver → Nehézség: `-2`
 - Könnyebb **ellene** a [Lefegyverzés/Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
-- Zúzó fegyverek ellen: `VÉ` veszteség duplázódik
+- Zúzó fegyverek ellen: `VÉ` veszteség duplázódik a tőrkardos oldalán
 
 ---
 ## Kardívó hárítófegyverek
