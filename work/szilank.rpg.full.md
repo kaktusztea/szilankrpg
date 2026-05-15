@@ -25366,11 +25366,11 @@ Ha a cél csupán az ellenfél megérintése – nem sebzés –, akkor ezt kön
 
 ## Fegyver mozgásgátló hatása
 
-A fegyverekre nem vonatkozik az [MGT](069_03_vert_MGT.md) pontrendszer, amelyet vértekre alkalmazunk.
+❌ Fegyverekre **nem** a vértekre alkalmazott [MGT](069_03_vert_MGT.md) pontrendszert használjuk.
 
-[Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejti ki hatását egy kézben tartott fegyver.
+Kézben tartott fegyverek a [Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejtik ki hatásukat.
 
-Hatása [Felszerelésre](010_03_06_felszereles.md):
+Hatásauk [Felszerelésre](010_03_06_felszereles.md):
 
 ```
 1 pont: Közepes tárgy
@@ -25496,7 +25496,7 @@ Szabadulás a hurokból:
   - [Belharcból kibontakozás](066_06_belharcos_manoverek.md#belharcb%C3%B3l-kibontakoz%C3%A1s) manőverrel
   - Nehézség: `9` (magasabb)
 
-A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítókat szenved el
+A Garott használója is kiszolgáltatott külső támadó ellen: [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítókat szenved el.
 
 <br />
 
@@ -25588,7 +25588,7 @@ Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bí
 
 - [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) Manőver → Nehézség: `-2`
 - Könnyebb **ellene** a [Lefegyverzés/Fegyvertörés](066_05_altalanos_manoverek.md#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver → Nehézség:`-2`
-- Zúzó fegyverek ellen: `VÉ` veszteség duplázódik
+- Zúzó fegyverek ellen: `VÉ` veszteség duplázódik a tőrkardos oldalán
 
 ---
 ## Kardívó hárítófegyverek
