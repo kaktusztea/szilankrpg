@@ -1,6 +1,6 @@
 ## Lándzsavívó fegyverek
 
-❕A lándzsavívó, szálfegyverek használatához helyre van szükség. Amint beszűkült téren kell forgatni, harcértékük `0`-ra zuhan! A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve, egy adott irányba végzi a harcot (folyósón egy irányba küzdeni).
+❕A lándzsavívó harcmodorban forgatott szálfegyverek használatához jelentős helyre van szükség. Amint beszűkült téren kell forgatni őket, harcértékük `0`-ra zuhan! A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve végzi a harcot (folyósón előre/hátra küzdeni).
 
 A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md).
 
@@ -28,7 +28,7 @@ Ha pikával harcolsz és közrefognak, a fegyver az egyik (választott) támadó
 
 ### Kopja lovas rohamban
 
-[Lovas roham](067_03_lovas_harci_taktikak.md#lovas-roham--léglovas-roham) esetén a Kopja alap Sebzéséhez a `+10 SP` bónusz még hozzáadódik. Harci és tornakopja esetén is.
+[Lovas roham](067_03_lovas_harci_taktikak.md#lovas-roham--léglovas-roham) esetén a Kopja alap Sebzéséhez a `+10 SP` bónuszként még hozzáadódik. Harci és tornakopja esetén is.
 
 **Erőbónusz**: a ló lendülete már beszámításra került a fegyver Sebzés értékébe. A fegyver rögzített volta miatt a személyes Erőbónusz nem számít (`0`).
 

@@ -4,7 +4,7 @@ Ezeknél a fegyvereknél a **Hajítás** harcmodort használjuk.
 
 A Hajítófegyverek sebzése általánosságban **Szúró** jellegű. Ahol ez másként van, ott az adott fegyver leírásánál a "Speciális/Megjegyzés" oszlopban ezt külön feltüntetjük.
 
- Az [Erőbónusz](064_02_06_erobonusz_erolimit.md) és [Erőbónusz limit](064_02_06_erobonusz_erolimit.md#er%C5%91b%C3%B3nusz-limit) a szokásos módon működik hajítófegyverek esetén is.
+ Az [Erőbónusz](064_02_06_erobonusz_erolimit.md) és [Erőbónusz limit](064_02_06_erobonusz_erolimit.md#er%C5%91b%C3%B3nusz-limit) hajítófegyverek esetén is a szokásos módon működik.
 
 <!-- tag: md_table_tavfegyver_start -->
 
@@ -34,7 +34,6 @@ A harcértékek a tárgy jellegétől függnek, de a táblázatban található �
 `CÉ: mindig 0`
 
 Kapcsolódó fortély: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
-
 
 ---
 

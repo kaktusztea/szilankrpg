@@ -4,7 +4,7 @@ Kapcsolódik:
 - [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md) fejezet
 - [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 
-### Pajzsok Felszerelés pontjai → MGT hatása
+### Pajzsok Felszerelés pontjai
 
 - Bővebben: [Felszerelés fejezetet](010_03_06_felszereles.md)
 - Státusz: [Fegyver / Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2)
@@ -18,6 +18,7 @@ Felszerelés pont
 
 ```
 Túlcsordulás esetén
+(Felszerelés szabály)
 
 -1 TÉ / MGT
 -1 Harckeret / MGT
@@ -37,7 +38,7 @@ Túlcsordulás esetén
 
 🔆 A pajzs `TÉ` értéke kizárólag akkor használatos, ha kifejezetten a pajzzsal akarunk harcolni, mert mondjuk nincs főfegyver a másik kezünkben.
 
-🔆 Nagy pajzs: emberméretű tárgy, nem kalandozófelszerelés, lovon sem vihető, legfeljebb szekéren.
+🔆 Nagy pajzs: emberméretű tárgy, nem kalandozófelszerelés, lovon sem szállítható, legfeljebb szekéren. Sűrű erdőben radikálisan lelassítja a haladást.
 
 ---
 

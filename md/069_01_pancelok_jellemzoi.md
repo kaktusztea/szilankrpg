@@ -5,8 +5,8 @@ A rendszer páncéljai jellegben és fejlettségben a földi világ **XVI. száz
 Egy páncélt három jellemző ír le:
 
 ```
-Sebzésfelfogó Érték (SFÉ)
-Mozgásgátló tényező (MGT)
+SFÉ: Sebzésfelfogó Érték
+MGT: Mozgásgátló tényező
 Ár
 ```
 
@@ -36,7 +36,7 @@ Alapanyag
    ha fém: milyenből készült?
 
 Csatolt elemek száma és minősége
-   érték x darab
+    darab x érték
 
 Mennyire passzol?
    vértviselő testére
@@ -63,7 +63,7 @@ Kidolgozottság
 Alapanyag
    ha fém: milyenből készült?
 
-Idea
+Idea (±)
    alapanyag, hajtogatás,
    ötvözet minősége
 ```
@@ -91,7 +91,7 @@ Csatolt elemek száma, minősége
 ```
 
 ```
-Idea
+Idea (±)
   → Hat erre: SFÉ, Ár
 ```
 
