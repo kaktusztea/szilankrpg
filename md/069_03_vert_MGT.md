@@ -31,7 +31,7 @@ TÉ büntetést csökkenti
 Σ MGT =
  + Alap: Vért Torzó struktúra MGT
  ± Alapanyag MGT
- + Csatolt tagok MGT
+ + Csatolt MGT
    (Kidolgozottság × tagok száma)
  + Rossz méretű vért MGT
  - Erő Tulajdonság
@@ -75,9 +75,16 @@ Alapanyag MGT
 
 <br />
 
-## ⚜️ MGT módosító: Kidolgozottság és Csatolt tagok száma
+## ⚜️ MGT módosító: Csatolt MGT
 
-A torzó mellé pluszban csatolt tagok illesztéseinek minősége határozza meg, hogy egy-egy plusz tag mennyi `MGT`-t ad a vérthez.
+```
+Csatolt MGT =
+ + 1.tag MGT
+ + 2.tag MGT
+ ...
+```
+
+A torzó mellé pluszban csatolt tagok illesztéseinek minősége (**Kidolgozottság**) határozza meg, hogy egy-egy plusz tag mennyi `MGT`-t ad a vérthez.
 
 A vért tagok kapcsolódásainak jó **Kidolgozottsága** alapvető fontosságú a gördülékeny mozgáshoz. Egy rossz illesztékekkel készített vértezet rettenetesen nehezíti a mozgást viselője számára, nem minden a nagy `SFÉ`. Kiváló alapanyagból is lehet hitványul megformált munkát készíteni, fontos tehát a jó készítő mester is. Ha jó a **Kidolgozottság**, a plusz tagok `MGT` értéke is alacsonyabb. Ha rossz, nyilván magasabb.
 
@@ -117,10 +124,6 @@ Merevvért, fém
   3:    Pocsék
   2:    Átlagos
   1:    Mestermunka
-```
-
-```
-Csatolt MGT = tag MGT × tagok száma
 ```
 
 ```

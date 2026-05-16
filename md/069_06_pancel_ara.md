@@ -25,13 +25,12 @@ Ez a mellvért tag ára egyedül.
 ---
 ### Csatolt tagok ára, Kidolgozottság
 
-A plusz csatolt tagok egyenként a torzó-darab árának `1/5`-ét érik, azaz egy teljes vért a torzó-darab árának pont a kétszerese.
+A plusz csatolt tagok egyenként a torzó-darab árának `1/5`-ét érik, így egy teljes (100%) vért a torzó-darab árának pont a kétszerese.
 
 ```
 1 csatolt tag ára
      = 1/5
      x (Torzó ár)
-     x (Csatolt tagok db)
      x Kidolgozottság
 
 Csatolt tagok (max 5 db)
@@ -70,8 +69,6 @@ A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
 A jobb Idea nagyon megdobhatja a vért árát:
 
 ```
-Idea Ár
-
 +SFÉ       Ár
  -4      1/10 x
  -3       1/7 x

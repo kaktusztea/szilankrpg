@@ -1,8 +1,8 @@
 ## Merevvértviselet fortély bónuszai
 
-Ennek a fortélynak az ismerete csökkenti a merevvért `MGT` értéke okozta `TÉ` levonások hatását.
+Ismerete csökkenti a merevvért `MGT` értéke okozta `TÉ` levonások hatását.
 
-A teljes szabályt lásd a fortély leírásánál: **[Merevvértviselet](fortelyok.harci/merevvertviselet.md)**
+Teljes szabály: **[Merevvértviselet](fortelyok.harci/merevvertviselet.md)** fortély
 
 ---
 

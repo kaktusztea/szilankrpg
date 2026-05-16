@@ -1,8 +1,8 @@
 ## Példa egy páncél leírására
 
-**JK**: "Milyen a páncélja?"
+**JK**: "Milyen a talált páncél?"
 
-**KM**: "Ez egy Sodrony páncél. Alapanyaga acél, Ideája (`-1 SFÉ`), Kidolgozottsága Pocsék.
+**KM**: "Ez egy Sodrony páncél. Alapanyaga acél, Ideája `-1 (SFÉ)`, Kidolgozottsága Pocsék.
 
 Három tagot látsz: mellvért-darabot, felkar-tagot, alkar-tagot. Méretben passzol rád, nem kapsz extra büntetést."
 
@@ -11,33 +11,32 @@ Három tagot látsz: mellvért-darabot, felkar-tagot, alkar-tagot. Méretben pas
 
 A lehető legátlagosabb sodronying, fejen (sisak) és lábszárakon **kívül** mindent beborít.
 
-Tehát a lefedettség `80%`: mellkas (`50%`), felkar (`10%`), alkar (`10%`), combok (`10%`). Most csak a Fizikai SFÉ értékét nézzük.
+Tehát a lefedettség `80%`: mellkas (`50%`), felkar (`10%`), alkar (`10%`), combok (`10%`). A példában most csak a `Fizikai SFÉ` értékét számoljuk.
 
 ### SFÉ: `10`
 
 ```
 Struktúra: Sodronying
 
-Alap SFÉ: 10
-+0 SFÉ: Idea átlagos
-+0 SFÉ: Alapanyag: Acél
-
-Végső SFÉ: 10
+10: Alap
++0: Idea átlagos
++0: Acél Alapanyag
 ```
 
 ### MGT: `9`
 
 ```
-Védett terület:
-  torzó +
-  felkar, alkarok, combok (3)
+Védett terület: 80%
+  +50%: torzó
+  +30%: felkar, alkarok, combok
+        (3 x 10%)
 ```
 
 ```
 MGT: 9
-+8: Sodronying
-+3 (+1 MGT / tag) (pocsék)
--2: Erő MGT csökkentése
+ +8: Sodronying
+ +3 (+1 MGT / tag) (átlagos)
+ -2: Erő MGT csökkentése
 ```
 
 ### Ár: `16x`
@@ -51,11 +50,10 @@ Torzó: 10x ár
 
 ```
 Csatolt tagok ára: 6x ár
-
-  1/5x
-  10x (Torzó ár)
-   1x (Kidolgozottság "átlagos")
-   3x (Csatolt tagok db)
+  1/5x (1db alap szorzója)
+  10x  (Torzó ár)
+   1x  (Kidolgozottság "átlagos")
+   3x  (Csatolt tagok db)
 ```
 
 ```
@@ -63,7 +61,7 @@ Végleges ár: 13x
   10x + 6x
 ```
 
-Azaz egy átlagos bőr torzódarab `16`-szorosába kerül a fenti teljes páncélkombó.
+Azaz egy átlagos bőr torzódarab `16`-szorosába kerül a fenti teljes sodrony páncélszett.
 
 <br />
 
