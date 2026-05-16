@@ -1,6 +1,6 @@
 ## Vért MGT
 
-Harc és mozgás során a vértek korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**. Ez az oldal a vértek és páncélok MGT értékeivel foglalkozik. Az MGT összefoglaló oldalát lásd: [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md).
+Harc és mozgás során a vértek korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**. Ez az oldal a kimondottan a vértek és páncélok MGT értékeivel foglalkozik. Az általános MGT összefoglaló oldalt lásd: [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md).
 
 ---
 ## Vért MGT hatása
@@ -20,9 +20,7 @@ TÉ büntetést csökkenti
 
 🔆 [Páncél akadályoztatása](082_statuszok.md#%EF%B8%8F-p%C3%A1nc%C3%A9l-akad%C3%A1lyoztat%C3%A1sa-1-mgt-%EF%B8%8F-mgt) **Státusz**: az `MGT` ennek formájában fejti ki hatását
 
-🔆 [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély: a merevvértek `TÉ-büntetés` hatását csökkenti
-
-🔆 [Felszerelés keretedet](010_03_06_felszereles.md) ha túlléped, pontonként `+1 MGT` és `-1 TÉ` büntetést szenvedsz el
+🔆 [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély: a **merevvértek** `TÉ-büntetés` hatását csökkenti
 
 <br />
 
@@ -31,19 +29,18 @@ TÉ büntetést csökkenti
 
 ```
 Σ MGT =
- + Vért Torzó struktúra MGT
+ + Alap: Vért Torzó struktúra MGT
  ± Alapanyag MGT
  + Csatolt tagok MGT
    (Kidolgozottság × tagok száma)
  + Rossz méretű vért MGT
  - Erő Tulajdonság
- + Felszerelés túlsúly MGT
 ```
 
 <br />
 
 ---
-## MGT Alap: Vért Torzó struktúra
+## ⚜️ MGT Alap: Vért Torzó struktúra
 
 Az egyes vért struktúráknak eltérő alap `MGT` értéke van.
 
@@ -63,7 +60,7 @@ Merevvért, fém
 
 <br />
 
-## MGT módosító: Alapanyag MGT ±
+## ⚜️ MGT módosító: Alapanyag MGT ±
 
 A különböző fém ötvözetek alapanyagai változtathatnak az `MGT` értékén. Csak fém struktúráknál releváns.
 
@@ -78,7 +75,7 @@ Alapanyag MGT
 
 <br />
 
-## MGT módosító: Kidolgozottság és Csatolt tagok száma
+## ⚜️ MGT módosító: Kidolgozottság és Csatolt tagok száma
 
 A torzó mellé pluszban csatolt tagok illesztéseinek minősége határozza meg, hogy egy-egy plusz tag mennyi `MGT`-t ad a vérthez.
 
@@ -134,7 +131,7 @@ Csatolt MGT = tag MGT × tagok száma
 
 <br />
 
-## MGT módosító: Rossz méretű vért
+## ⚜️ MGT módosító: Rossz méretű vért
 
 ```
 +0: passzol a méret
@@ -144,20 +141,14 @@ Csatolt MGT = tag MGT × tagok száma
 
 <br />
 
-## MGT módosító: Erő Tulajdonság
+## ⚜️ MGT módosító: Erő Tulajdonság
 
 ```
 Erő Tulajdonság
-  Növeli/csökkenti az MGT értékét.
+  Növeli/csökkenti az MGT értékét
 ```
 
 Aki erősebb, azt kevésbé korlátozza egy nehezebb páncél.
-
-<br />
-
-## MGT módosító: Felszerelés túlsúly
-
-[Felszerelés keretedet](010_03_06_felszereles.md) ha túlléped, pontonként `+1 MGT` és `-1 TÉ` büntetést szenvedsz el
 
 <br />
 
@@ -203,6 +194,10 @@ MGT növekedés:
   az eredeti MGT annyi %-kal nő,
   amennyi a 'Vért sérülés' jellemzője ↓
 ```
+
+## Felszerelés MGT
+
+A vért MGT mellett említsük meg a kapcsolódó [Felszerelés MGT](010_03_06_felszereles.md) fogalmát is, amely szintén harcot korlátozó tényező. Részleteit lásd az utóbbi linken.
 
 ---
 

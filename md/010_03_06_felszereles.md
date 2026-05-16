@@ -1,4 +1,4 @@
-## Felszerelés
+## Felszerelés, Felszerelés MGT
 
 ```
 Felszerelés keret:
@@ -21,13 +21,14 @@ Ebből a keretből vonnak le a **közepes** és **nagy** hordozott tárgyak az a
   → alabárd, Nagy pajzs ..
 ```
 
-Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `1 MGT` hatást okoz az alábbiak szerint:
+Minden túlcsorduló pont, amely a **Felszerelés keretet** negatívba viszi, pontonként `1 Felszerelés MGT` hatást okoz az alábbiak szerint:
 
 ```
-Túlcsorduló pont == 1 MGT
+Túlcsorduló pont == 1 Felszerelés MGT
 
--1 TÉ / MGT
--1 Harckeret / MGT
+1 Felszerelés MGT
+  → -1 TÉ
+  → -1 Harckeret
 ```
 
 🔆 A viselt vértezet NEM számít be a fenti felszerelési tárgyak levonásai alá - arra a páncélok MGT értékét használjuk.
