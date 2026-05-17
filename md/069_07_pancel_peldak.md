@@ -44,8 +44,8 @@ MGT: 9
 ```
 Torzó: 10x ár
   10x (Struktúra Sodrony)
-  1x (Alapanyag: Acél)
-  1x (Idea: Átlagos)
+   1x (Alapanyag: Acél)
+   1x (Idea: Átlagos)
 ```
 
 ```
@@ -61,16 +61,18 @@ Végleges ár: 13x
   10x + 6x
 ```
 
-Azaz egy átlagos bőr torzódarab `16`-szorosába kerül a fenti teljes sodrony páncélszett.
+Azaz egy átlagos bőr torzódarab `16`-szeresének megfelelő pénzbe kerül a fenti teljes sodrony páncélszett.
 
 <br />
 
 ---
 ## ⚡Példa 2: Legvacakabb teljes lemezvért
 
-... amiben a lehető legnehezebb mozogni (Alapanyaga: bronz; Ideája a legvacakabb és még a tagok Kidolgozottsága: pocsék).
+... amiben a lehető legnehezebb mozogni (Alapanyaga: bronz; Ideája a legvacakabb és még a tagok Kidolgozottsága is: pocsék).
 
-Mindent lefed (`100%`).
+```
+Lefedettség: 100%
+```
 
 ### SFÉ: `12`
 
@@ -85,17 +87,17 @@ Struktúra: Lemezpáncél
 
 ```
 Védett terület: 100%
-  torzó (50%) +
-  felkar, alkarok, combok,
-  lábszárak, fej (5x10%)
+  +50%: torzó
+  +50%: felkar, alkarok, combok,
+        lábszárak, fej
+        (5 x 10%)
 ```
 
 ```
 MGT: 26
 +10: Lemez
  +2: Bronz
-+15 (+3 MGT / tag)
-   Kidolgozottság pocsék
++15 (+3 MGT / tag) (pocsék)
  -1: Erő MGT csökkentése
 ```
 
@@ -103,21 +105,19 @@ MGT: 26
 
 ```
 Torzó: 5x ár
-
-→ 100x (Struktúra Lemez)
-→ 0,5x (Alapanyag: Bronz)
-→ 0,1x (Idea vacak)
+  100x (Struktúra Lemez)
+  0,5x (Alapanyag: Bronz)
+  0,1x (Idea vacak)
 
 (100x x 0,5x x 0,1)
 ```
 
 ```
 Csatolt tagok ára: 2,5x
-
-x 1/5
-x 5   (Torzó ár)
-x 0,5 (Kidolgozottság "pocsék")
-x 5   (Csatolt tagok db)
+  1/5x (1db alap szorzója)
+  5x   (Torzó ár)
+  0,5x (Kidolgozottság "pocsék")
+  5x   (Csatolt tagok db)
 ```
 
 ```
@@ -125,7 +125,7 @@ Végleges ár: 7,5x
   (5x + 2,5x)
 ```
 
- Azaz egy átlagos bőr mellvért árának `7,5`-szeresének megfelelő pénzbe kerül a fenti **teljes** gyatra páncél-kombó.
+ Azaz egy átlagos bőr mellvért árának `7,5`-szeresének megfelelő pénzbe kerül a fenti teljes gyatra páncélszett.
 
 ---
 
