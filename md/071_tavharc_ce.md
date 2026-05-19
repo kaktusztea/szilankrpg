@@ -11,12 +11,12 @@ A `Célzó Érték` kiszámolása a következőképpen történik - még karakte
 
 ```
 Támadó CÉ =
-    -15
-    + CM
-    + Harcmodor CÉ
-    + Önuralom
-    + Fegyver CÉ
-    + Mf-bónusz
+  -15
+  + CM
+  + Harcmodor CÉ
+  + Önuralom
+  + Fegyver CÉ
+  + Mf-bónusz
 ```
 
 ```
