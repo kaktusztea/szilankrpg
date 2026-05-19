@@ -1,6 +1,6 @@
 # Távolsági harcrendszer
 
-A távolsági lő- és hajítófegyverekkel végzett harc során az alábbi **Harcmodor képzettségek** vesznek részt a támadó oldalán:\
+A távolsági lő- és hajítófegyvereket az alábbi **harcmodor képzettségekkel** kezelheted:\
 [Hajítás](kepzettsegek.primer.harci/harcmodor.md), [Íjászat](kepzettsegek.primer.harci/harcmodor.md), [Lövészet](kepzettsegek.primer.harci/harcmodor.md), [Ostromlövészet](kepzettsegek.primer.harci/harcmodor.md), [Mágikus lövészet](kepzettsegek.primer.harci/harcmodor.md)
 
 ## Befolyásoló jellemzők
@@ -20,14 +20,14 @@ A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem
 ---
 ## Célzó dobás
 
-A lövés/hajítás során ugyanúgy támadó dobás történik az egyedileg meghatározott Célpont `Védő Érték` ellen.
+A lövés/hajítás során Célzó Értékedre dobsz rá és ezt állítod szembe a Célpont `Védő Értékével`.
 
 ```
 Támadó          Célpont
 CÉ + k20   vs   VÉ
 ```
 
-🔆 Fontos: Célzó dobás esetén **nincs** ❗ `-4` levonás az egy körön belül végzett újabb támadásokra, mint sima fegyveres harcnál. Minden dobás ugyanazzal a `CÉ` értékkel történik.
+🔆 Fontos: Célzó dobás esetén **nincs** ❗ `-4` levonás az egy körön belül végzett újabb támadásokra, mint sima fegyveres harcnál. Minden dobás ugyanazzal az eredeti `CÉ` értékkel történik.
 
 ---
 ## CÉ, VÉ számítása
