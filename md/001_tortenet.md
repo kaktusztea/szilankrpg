@@ -44,7 +44,7 @@ A rendszer új neve`km100` lett - a harcrendszerben ekkor tértünk át a `k100`
 
 Ebben a hónapban indult el a [km100 Google Groups](https://groups.google.com/g/km100) fejlesztői csoport
 
-**Ezidőtájt a fejlesztés státuszának főbb jellemzői:**
+**Ez idő tájt a fejlesztés státuszának főbb jellemzői:**
 
   - Hagyományos kasztrendszer megmarad
   - Tulajdonságok és az elosztási rendszer kész
