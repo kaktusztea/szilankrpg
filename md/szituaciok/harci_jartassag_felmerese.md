@@ -8,7 +8,7 @@ Sokszor előfordul, hogy kíváncsi vagy, milyen ellenféllel állsz szemben. Ha
  9: Jobb/gyengébb nálam?
  9: Sebesült az ellenfél?
 12: Ki a gyenge láncszem a másik csapatban?
-12: Mennyire képzett az ellenfé?
+12: Mennyire képzett az ellenfél?
 12: Kezében tartott fegyverre van
     Mesterfegyver fortélya?
 15: Harci fortélyok meglétének felmérése

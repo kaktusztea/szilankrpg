@@ -14,7 +14,7 @@ Intelligencia, Önuralom
 
 ### Szituációk
 
-- [Csapda hatástalanítás, mechanikus szerkezet szabotásása](../szituaciok/csapda_hatatalanitas_szabotalas.md)
+- [Csapda hatástalanítás, mechanikus szerkezet szabotálása](../szituaciok/csapda_hatatalanitas_szabotalas.md)
 
 <br />
 

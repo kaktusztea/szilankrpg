@@ -34,15 +34,15 @@
 ---
 #### Hatás
 
-A pap kézrátétellel - isteni csodaként - gyógyitja a sebeket.
+A pap kézrátétellel - isteni csodaként - gyógyítja a sebeket.
 
 ---
 #### Szabályok
 
-- A gyógyitást nem lehet újrapróbálni többször egymás után azonos személyen, csak akkor, ha az illető új ÉP sebet kap és akkor is csak az új sebekre vonatkozik a mágia.
+- A gyógyítást nem lehet újrapróbálni többször egymás után azonos személyen, csak akkor, ha az illető új ÉP sebet kap és akkor is csak az új sebekre vonatkozik a mágia.
 - ⭕0 ÉP-ről visszahozás után a karakter a kaland (nem játékalkalom!) végéig 1 ÉP-vel kevesebbel rendelkezik
   - ⭕vagy S4-ből visszahozásnál is?
-- ⭕Gyógyitás ideje:
+- ⭕Gyógyítás ideje:
   - S1-ből: pár perc
   - S2-ből: 10 perc
   - S3-ból: 20 perc

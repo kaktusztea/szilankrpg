@@ -6,7 +6,7 @@ Ha a KM úgy látja jónak, megtilthatja adott szituációban a Manőver alkalma
 
 Minden **Manővernek** lehetnek egyéni, speciális követelményei, ezek a saját leírásuknál találhatóak meg.
 
-Egy Manőver alkalmazása az alábbi három - opcionális - alapfázisból állhat. Hogy melyikre van szükség, azt az adott Manőver leírásánál találjuk. Ha minden szükséfes fázis sikeres, akkor a Manőver is sikeres. Végrehajtásuk sorrendjében:
+Egy Manőver alkalmazása az alábbi három - opcionális - alapfázisból állhat. Hogy melyikre van szükség, azt az adott Manőver leírásánál találjuk. Ha minden szükséges fázis sikeres, akkor a Manőver is sikeres. Végrehajtásuk sorrendjében:
 
 <br />
 

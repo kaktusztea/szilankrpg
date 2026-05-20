@@ -19,7 +19,7 @@ Alább egy rövid idővonalon haladhatunk végig, jelölve a rendszer fejleszté
 
 ### 2005.05.31 - 2005.12.31
 
-2005 júniusa 🔆 volt az időszak, amikor - bő egy hónap alatt - megszületett a `VÉ` csökkentés, a sebesülés kategóriák és a távolsági harcrendszer strukúrája.
+2005 júniusa 🔆 volt az időszak, amikor - bő egy hónap alatt - megszületett a `VÉ` csökkentés, a sebesülés kategóriák és a távolsági harcrendszer struktúrája.
 
 Állapotok ebből az időszakból:
 

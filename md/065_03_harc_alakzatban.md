@@ -16,7 +16,7 @@ Alakzatharchoz jelentős helyre van szükség. Épületen belül, csatornában, 
 
 ### Vezető fortélyok
 
-Ha van a csoportban olyan, aki a lentiek közül valamelyikkel bír - és elvállaja a vezetést -, az bónuszt ad a lenti Támadószint, Védekezőszint számításánál:
+Ha van a csoportban olyan, aki a lentiek közül valamelyikkel bír - és elvállalja a vezetést -, az bónuszt ad a lenti Támadószint, Védekezőszint számításánál:
 
   - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)  (gyalogos alakzat esetén)
   - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)  (íjász/lövész alakzat esetén)
@@ -161,7 +161,7 @@ Csámpa
 ---
 ## Kezdeményezés szabályai
 
-Mindig az alakzat nyeri a kezdeményzést a személyekkel szemben.
+Mindig az alakzat nyeri a kezdeményezést a személyekkel szemben.
 
 <br />
 

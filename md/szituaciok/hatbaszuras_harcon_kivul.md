@@ -8,7 +8,7 @@
 
 A helyszíntől, távolságtól, jelenlevőktől függően akár [összetett ellenpróbák](../030_06_01_kepzettsegproba.md#%C3%B6sszetett-ellenpr%C3%B3ba) is indokoltak lehetnek - KM dönt.
 
-⚡ Példa: Tegyük fel, hogy az éjjeli, csendes palota folyósóján az őr mögé akarsz lopakodni, majd hátbaszúrni.
+⚡ Példa: Tegyük fel, hogy az éjjeli, csendes palota folyosóján az őr mögé akarsz lopakodni, majd hátbaszúrni.
 
 ### Lopakodás/rejtőzés releváns módosítói - testközelben
 

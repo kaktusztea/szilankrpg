@@ -78,7 +78,7 @@ Példa: [Faj misztérium: Törpe](kepzettsegek.faj.miszterium/faj_miszterium_tor
 
 Szintén primer 🅿️ és opcionálisan felvehető képzettség, követelménye a Faj misztérium képzettség.
 
-Minden 4nevi faj egy konkrét mágikus [Arkánumhoz](102_02_magikus_szferak_arkanumok.md) kapcsolódik (pl. Amund: Asztrálmágia). Több faj is kapcsolódhat ugyahhoz az Arkánumhoz - de más képességek formájában.
+Minden 4nevi faj egy konkrét mágikus [Arkánumhoz](102_02_magikus_szferak_arkanumok.md) kapcsolódik (pl. Amund: Asztrálmágia). Több faj is kapcsolódhat ugyanahhoz az Arkánumhoz - de más képességek formájában.
 
 A fent említett Arkánum adja a faj - eredetében gyökerező - misztikus képességeit. Minél magasabb a faj Arkánum szintje, annál közelebb kerül ősi eredetéhez a faj adott egyede.
 

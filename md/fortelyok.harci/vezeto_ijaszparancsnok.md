@@ -22,7 +22,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **T
 
 🔒 **Követelmény**:
 - Íjászat/Lövészet/Ostromlövészet - `6.szint`
-- Összeszokott tagokat igényleg
+- Összeszokott tagokat igényel
 
 🌟 `+2` bónusz az **Alakzatszintre**
 
@@ -32,7 +32,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **T
 
 🔒 **Követelmény**:
 - Íjászat/Lövészet/Ostromlövészet - `9.szint`
-- Összeszokott tagokat igényleg
+- Összeszokott tagokat igényel
 
 🌟 `+4` bónusz az **Alakzatszintre**
 

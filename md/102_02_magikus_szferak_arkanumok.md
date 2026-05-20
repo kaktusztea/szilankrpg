@@ -92,8 +92,8 @@
   - állatok (alacsony szintű)
   - szörnyek (kicsit magasabb)
   - elementálok
-  - ⭕Nekromancia: kísértetek (ember lelkek / lelkekbol lehasadt szellemek) idézése
-  - ember lelkek / lelkekbol lehasadt szellemek
+  - ⭕Nekromancia: kísértetek (ember lelkek / lelkekből lehasadt szellemek) idézése
+  - ember lelkek / lelkekből lehasadt szellemek
   - természeti szellemek
 
 ### [Külső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md)

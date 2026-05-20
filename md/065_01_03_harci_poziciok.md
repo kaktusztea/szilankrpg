@@ -46,7 +46,7 @@ Ha harcos helyhiány miatt nem képes fegyverének technikáit maradéktalanul a
 
 Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való védettség (falak) folytán szinte lehetetlen hozzáférni, ha egy irányból közelítenek. Ekkor nincs Beszorított helyzet, sőt a KM Előnyt is adhat a `TÉ` dobásra.
 
-### Beszoritott helyzet (1) Enyhén
+### Beszorított helyzet (1) Enyhén
 
 ```
 Ellenfél
@@ -60,7 +60,7 @@ Beszorított karakter
   Mozgás - feleződik
 ```
 
-### Beszoritott helyzet (2) Erősen
+### Beszorított helyzet (2) Erősen
 
 "A kamrában pallossal, vagy alabárddal"
 

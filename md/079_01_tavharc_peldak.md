@@ -132,7 +132,7 @@ VÉ = 7 x 3 = 21
 3 + k20  vs  21
 ```
 
-azaz ha Tetvesnek minum`18`-as dobásra van szüksége `k20`-on, hogy célt találjon. Nehéz próba.
+azaz ha Tetvesnek minimum`18`-as dobásra van szüksége `k20`-on, hogy célt találjon. Nehéz próba.
 
 ```
 k20 Célzó dobás: 15

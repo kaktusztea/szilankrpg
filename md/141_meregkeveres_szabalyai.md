@@ -20,7 +20,7 @@ A **[Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md)** külön k�
 
 A mérgeket elkészítésük bonyolultsága szerint egy ún. Komplexitással jellemezzük.
 
-A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos.
+A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos.
 
 ```
 Méreg komplexitása =

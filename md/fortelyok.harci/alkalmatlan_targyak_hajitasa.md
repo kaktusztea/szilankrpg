@@ -1,4 +1,4 @@
-## 🟣 Alkalmatlan tárgyak hajítasa (2)
+## 🟣 Alkalmatlan tárgyak hajítása (2)
 
 Nem jössz zavarba, ha nem dobásra készített tárgyakat kell ellenfeleid fejéhez hajigálnod - például sámlit, borospalacot, tyúkot...
 

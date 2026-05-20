@@ -20,7 +20,7 @@ A Pap egy hosszú rituálé keretében visszahívja a halott lelket a kárpiton 
 ---
 #### Szabályok
 
-Az ilyen hatalmas varázslatnak sok követekménye van: ⭕
+Az ilyen hatalmas varázslatnak sok következménye van: ⭕
 - A Papnak bírnia kell istene kegyét, ha konkrét rosszallással viseltet felé ura, a varázslat biztos nem jön létre.
 - A Papnak nagyhatalmú ereklyét kell feláldoznia, amely hatalma módot az istennek, hogy "csaljon" és visszaengedjen egy már eltávozott lelket annak testébe.
 - Minél "öregebb", tapasztaltabb lélekről van szó, annál hatalmasabb ereklyére van szükség, tehát a neves, történelmi szempontból hatalmasabb személyeket sokkal nehezebb visszarángatni, mint mondjuk egy egyszerű napszámost.

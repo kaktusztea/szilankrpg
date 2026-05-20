@@ -1,6 +1,6 @@
 ## 🟣 Vezető: Léglovaskapitány (2)
 
-Egy légi hátasokkal küzdő egység parancsnokakként koordinálod annak harcát.
+Egy légi hátasokkal küzdő egység parancsnokaként koordinálod annak harcát.
 
 ### Kiterjeszti ezeket
 
@@ -24,7 +24,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 🔒 **Követelmény**:
 - Léglovaglás - `6.szint` (léglovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
-- Összeszokott tagokat igényleg
+- Összeszokott tagokat igényel
 
 🌟 `+2` bónusz az **Alakzatszintre**
 
@@ -35,7 +35,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 🔒 **Követelmény**:
 - Léglovaglás - `9.szint` (léglovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
-- Összeszokott tagokat igényleg
+- Összeszokott tagokat igényel
 
 🌟 `+4` bónusz az **Alakzatszintre**
 

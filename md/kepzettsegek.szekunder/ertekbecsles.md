@@ -72,7 +72,7 @@ Emlékezet, Intelligencia
 - Legendás ereklyék, több száz éves tárgyak, koronák, szimbolikus relikviák pontos felbecslése.
 - Egy korokon átnyúló hamisítvány (pl. több száz év alatt többször átdolgozott tárgy) felismerése.
 - Egy ismeretlen, de nyilvánvalóan fontos tárgyról pontosan tudni, miért értékes.
-- Egy legendás történelmi alak által használt műremekből llátomáson keresztül a legenda újraélése - nem a valós történetet, hanem a belőle formálódott (akár már elfeledett) mítoszt.
+- Egy legendás történelmi alak által használt műremekből látomáson keresztül a legenda újraélése - nem a valós történetet, hanem a belőle formálódott (akár már elfeledett) mítoszt.
 
 #### Emberfeletti (21) 🎲
 

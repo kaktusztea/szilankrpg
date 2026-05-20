@@ -4,7 +4,7 @@ Ez egy [Primer (harci) képzettség](../010_09_primer_szekunder_ismeretek.md). P
 
 ###  [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet
 
-Ez írjale a képzettség használatát.
+Ez írja le a képzettség használatát.
 
 <br />
 

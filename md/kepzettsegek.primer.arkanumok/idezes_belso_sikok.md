@@ -5,5 +5,5 @@
 Az **Idézés** szféra alá tartozó arkánum.
 
 - elementálok
-- ember lelkek / lelkekbol lehasadt szellemek
+- ember lelkek / lelkekből lehasadt szellemek
 - természeti szellemek

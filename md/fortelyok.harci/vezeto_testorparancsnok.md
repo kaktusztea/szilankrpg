@@ -5,7 +5,7 @@ Testőred egy entitásként védelmeznek személyeket, területet vagy építmé
 ### Kiterjeszti ezeket
 
 - [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md)
-  - Testőrsapat egyben tartása, tagjainak elhelyezésére, feladatok kiosztására.
+  - Testőrcsapat egyben tartása, tagjainak elhelyezésére, feladatok kiosztására.
   - Járatos vagy az általad ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) megfelelő testőri protokolljaiban.
   - ⚡ "A kalmár kísérői nagyon bő ruhában vannak, belépéskor alapos motozás. Urunk a konyhán át távozzon, előtte, mögötte két ember."
 
@@ -24,7 +24,7 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 🔒 **Követelmény**:
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 - [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) - `6.szint`
-- Összeszokott tagokat igényleg
+- Összeszokott tagokat igényel
 
 🌟 `+2` bónusz az **Észlelés** képzettségre
 
@@ -35,7 +35,7 @@ A fentiek szerint kiszámolt **Észlelés** értéket egy jó testőrparancsnok 
 🔒 **Követelmény**:
 - Alakzatharc - `9.szint`
 - Befolyásolás - `3.szint`
-- Összeszokott tagokat igényleg
+- Összeszokott tagokat igényel
 
 🌟 `+4` bónusz az **Észlelés** képzettségre
 

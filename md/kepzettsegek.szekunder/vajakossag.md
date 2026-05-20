@@ -4,9 +4,9 @@ A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segé
 
 Képes vagy kikeverni és tartós állapotban tárolni a végső gyógyhatású matériát.
 
-[Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes gyógyhatású, tudatmódositó, bódító és afrodiziákum készítmények előállítására.
+[Orvoslás](../kepzettsegek.primer.altalanos/orvoslas.md) képzettséggel rendelkező karaktertől kapott konkrét recept alapján képes gyógyhatású, tudatmódosító, bódító és afrodiziákum készítmények előállítására.
 
-Egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önnálóan **NEM** vagy képes készíteni.
+Egy Vulgármágiát gyakorló boszorkány alacsonyabb szinten ért ugyanahhoz, mint egy önmagában levő Vajákosság képzettséggel bíró karakter. Mágikus gyógyitalt önállóan **NEM** vagy képes készíteni.
 
 Fontos, hogy a **Vajákosság** nem fedi le az Orvoslás képzettséget, viszont igen gyakori, hogy az adott karakter mindkét ismerettel rendelkezik.
 

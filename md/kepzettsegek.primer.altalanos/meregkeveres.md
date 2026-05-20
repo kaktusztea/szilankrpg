@@ -45,7 +45,7 @@ A mérgek [elállásának, kiürülésének, hatóidejének meghatározása](../
 ---
 ### Próbák 🎲
 
-A méreg kikeverése **Méregkeverés** képzettpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos. A **Méreg komplexitásának** számítása a [Méregrendszer](../140_meregrendszer.md) fejezetben található.
+A méreg kikeverése **Méregkeverés** képzettségpróbához kötött, amelynek célszáma a **Méreg komplexitásával** azonos. A **Méreg komplexitásának** számítása a [Méregrendszer](../140_meregrendszer.md) fejezetben található.
 
 ### Méreg azonosítása tünetek, környezeti hatás alapján
 

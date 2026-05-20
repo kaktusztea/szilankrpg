@@ -16,7 +16,7 @@ A személyes Aura speciális alkalmazásai tartoznak ide, csak misztikus Tradíc
 
 Önuralom, Intelligencia, Érzékenység
 
-### Kapcsolódódik
+### Kapcsolódik
 
 ⭕TODO⭕
 

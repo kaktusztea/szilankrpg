@@ -82,7 +82,7 @@ Az egyes kézművek szakmák ismeretéhez kötelezően szükségesek a kapcsoló
 
 ⭕TODO⭕
 - Egyáltalán nem fog rajta az enyészet.
-- képes vagy ereklyét alkotni (max 1). Kpes saját lelkét belefoglalni élete művébe. Esetleg egy készletet (tárgy készlet).
+- képes vagy ereklyét alkotni (max 1). Képes saját lelkét belefoglalni élete művébe. Esetleg egy készletet (tárgy készlet).
     - lélek
     - isteni entitás
     - démonhercegi

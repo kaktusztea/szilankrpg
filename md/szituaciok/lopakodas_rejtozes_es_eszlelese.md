@@ -38,7 +38,7 @@ Ha az észlelő odafigyel, számít a támadásra: `+3` jár [Észlelés](../kep
 
 A csoport tagjai közül a legmagasabb **Észlelés** képzettséggel rendelkező dob.
 
-Észelés próba bónusz: `+3`
+Észlelés próba bónusz: `+3`
 
 ---
 

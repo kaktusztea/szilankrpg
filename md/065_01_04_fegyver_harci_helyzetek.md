@@ -62,7 +62,7 @@ Fegyver CÉ = 0
 
 🔆 Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
 
-🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély
+🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély
 
 <br />
 

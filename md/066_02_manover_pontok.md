@@ -55,7 +55,7 @@ Erős, Kalandozó, Őrszem NJK:
 
 A **Nem Játékos Karakterek** alapból **nem kapnak** `MP` javadalmazást.
 
-A komolyabb, kidolgozottabb Nem Játékos Karakter ellenfelek viszont egy különleges esetben ugyannyi `MP` mennyiséggel rendelkeznek, mint egy **Játékos Karakter**: mégpedig akkor, amennyiben ők is [**Kalandozók**](010_03_00_karakter_jellemzoi.md), vagy **[Őrszemek](010_03_02_orszem_karakterek.md)**.
+A komolyabb, kidolgozottabb Nem Játékos Karakter ellenfelek viszont egy különleges esetben ugyanannyi `MP` mennyiséggel rendelkeznek, mint egy **Játékos Karakter**: mégpedig akkor, amennyiben ők is [**Kalandozók**](010_03_00_karakter_jellemzoi.md), vagy **[Őrszemek](010_03_02_orszem_karakterek.md)**.
 
 ---
 

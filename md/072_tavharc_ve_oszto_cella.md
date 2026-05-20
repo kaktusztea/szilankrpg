@@ -1,6 +1,6 @@
 ## Fegyver Osztó és Cella értéke a távolsági Védő Értékben
 
-A Célpont `Védő Értékének` kiszámításában játzik szerepet az alábbi két jellemző.
+A Célpont `Védő Értékének` kiszámításában játszik szerepet az alábbi két jellemző.
 
 ### Fegyver Osztó
 

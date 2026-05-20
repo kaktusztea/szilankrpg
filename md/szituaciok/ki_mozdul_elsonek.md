@@ -20,7 +20,7 @@ A próbát módosíthatja, ha valaki közelebb van az elérni kívánt célhoz, 
 
 ### 🔆 Vegyes eset
 
-Előfordul, hogy valaki nem akar résztvenni a harcban és úgy akar mozgást végezni.
+Előfordul, hogy valaki nem akar részt venni a harcban és úgy akar mozgást végezni.
 
 Ebben az esetben viszont **neki is** [Kezdeményezést](../064_02_01_kezdemenyezes.md) kell dobnia, mivel így kezelhetőek csak a cselekedetek egységes keretben.
 

@@ -29,7 +29,7 @@ Kaland végén kaphatóak belőle
 
 A Helyismeret forrása az előtörténet és az átélt kalandok. Az alábbi ismereteket foglalja magában:
 
-- tájékozkodás
+- tájékozódás
 - helyi látványosság, politika
 - konkrét, híres személyek ismerete
 - helyi kocsmák ismerete

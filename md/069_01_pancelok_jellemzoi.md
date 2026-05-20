@@ -1,6 +1,6 @@
 ## Páncélok jellemzői
 
-A rendszer páncéljai jellegben és fejlettségben a földi világ **XVI. századának** megfelelő szinten vannak. Ez a színvonal jelképezi a "csúcskategóriát". Elmaradottabb térségekben természetesen taláhatunk ennél alacsonyabb nívót is.
+A rendszer páncéljai jellegben és fejlettségben a földi világ **XVI. századának** megfelelő szinten vannak. Ez a színvonal jelképezi a "csúcskategóriát". Elmaradottabb térségekben természetesen találhatunk ennél alacsonyabb nívót is.
 
 Egy páncélt három jellemző ír le:
 

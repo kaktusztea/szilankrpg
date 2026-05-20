@@ -5,7 +5,7 @@ Próba dobható. Tipikusan ellenpróbás képesség - sokszor [csoportos szellem
 ### Általános ismeretek
 
 Összefoglalva a képzettség az alábbi ismereteket nyújtja:
-- ujjak finom koordinációja, "simító" mozulat az árú felett
+- ujjak finom koordinációja, "simító" mozdulat az árú felett
 - zsebből/asztalról apróság elemelése anélkül, hogy feltűnne
 - tárgy, kulcs, erszény észrevétlen megszerzése
 - spontán és természetes testbeszéd a mozdulathoz

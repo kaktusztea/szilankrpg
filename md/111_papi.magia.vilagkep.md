@@ -4,7 +4,7 @@
 
 a.) Az isten "leküldi" a varázslatot
 
-b.) Belédfoglalja a varázslatot, beavatáskor, amit aztán használhatsz
+b.) Belefoglalja a varázslatot, beavatáskor, amit aztán használhatsz
 
 c.) Ideák az istenek is. Te varázsolsz. Ahogy hasonlatossá válsz az istenhez, egyre jobban tudsz varázsolni.
 

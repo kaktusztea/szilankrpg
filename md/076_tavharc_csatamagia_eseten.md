@@ -135,7 +135,7 @@ nyíl, ... ⭕
 
 → Mellékhatás: mágiatudó és cél közt
   Auraszál látható míg a mana gyűlik.
-  Hha nincs leplezve. Könnyű kitérni.
+  Ha nincs leplezve. Könnyű kitérni.
 
 → Lassabb létrehozás
 

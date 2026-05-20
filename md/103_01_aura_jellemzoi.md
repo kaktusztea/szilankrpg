@@ -2,7 +2,7 @@
 
 ⭕TODO: kifejteni ezeket, ha van szöveges anyag, bemásolni.
 
-- Mágiallenállást adja
+- Mágiaellenállást adja
 - Mágikus akaratot adja támadó oldalon
 
 Minden lélekkel rendelkező lény rendelkezik Aurával, amely az Erők Síkján öleli körbe, védelmezi a lelket. Az Aura a karakterek aktív mágikus akarata és egyben Mágiaellenállása is (Asztrál, Mentál, Fizikai).
@@ -84,7 +84,7 @@ Aurabontásnál
 ---
 ##  `0` értékű Aura hatása
 
-⭕Aurabontás⭕ formula, vagy más mágikus/környezeti hatás előidezhet olyan szituációt, hogy Aura értéked `0`-ra zuhan. Ekkor az alábbi állapotba kerülsz:
+⭕Aurabontás⭕ formula, vagy más mágikus/környezeti hatás előidézhet olyan szituációt, hogy Aura értéked `0`-ra zuhan. Ekkor az alábbi állapotba kerülsz:
 
 - [Zavar (1) Kizökkent](https://github.com/kaktusztea/szilankrpg/blob/master/md/082_statuszok.md#%EF%B8%8F-zavar-1-kiz%C3%B6kkent) Státusz - ✅ Agóra
 - magabiztosságod elszáll, zavarodottság vesz úrrá rajtad

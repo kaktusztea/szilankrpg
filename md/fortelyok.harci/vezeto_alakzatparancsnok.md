@@ -8,7 +8,7 @@ Egy jó vezető csodákat tehet egy fegyveres alakzattal.
     - Megfelelő alakzat felvétele, adaptálódás
     - Alakzat egyben tartása változó harci környezetben
     - ⚡"Lándzsások vonalba, megakasztásra készülj!"
-    - ⚡"A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lőssz, Rühes, tied a kocsis."
+    - ⚡"A szokásos füstbomba a hátsó kettőre, Foltos, te a fáról lősz, Rühes, tied a kocsis."
 
 ---
 ### Alapeset

@@ -22,7 +22,7 @@ xyz
 🚧 Ez csak kiforratlan ötlet még🚧
 
 Külön szemita, amolyan specializáció.
-Mondjuk van egy sötét lelkű feketemester az uraság szolgáltában, aki a magiáját csak mérgekkel kapcsolatban használja. Ilyenkor mondjuk van neki "Méregmágia" szemitája, ami az Ideamágia és a Titkos Alkímia idevágó részeinek rendkívül részletes ismeretét fedi. (Nem árt hozzá az Élettan fortély meg a Vajákosság képzettség sem :) Viszont a többi - nem idevágó - mágiaformulát nem ismeri, vagy ha akarja, akkor külön meg kell tanulnia őket (pl. Titkos Alkímiát 1X-es nehézségért)
+Mondjuk van egy sötét lelkű feketemester az uraság szolgálatában, aki a magiáját csak mérgekkel kapcsolatban használja. Ilyenkor mondjuk van neki "Méregmágia" szemitája, ami az Ideamágia és a Titkos Alkímia idevágó részeinek rendkívül részletes ismeretét fedi. (Nem árt hozzá az Élettan fortély meg a Vajákosság képzettség sem :) Viszont a többi - nem idevágó - mágiaformulát nem ismeri, vagy ha akarja, akkor külön meg kell tanulnia őket (pl. Titkos Alkímiát 1X-es nehézségért)
 
 Szabályokban valahogy így nézne ki mondjuk:
 

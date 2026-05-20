@@ -1,6 +1,6 @@
 ## 🟣 Vezető: Lovaskapitány (2)
 
-Egy földi hátasokkal küzdő egység parancsnokakként koordinálod annak harcát.
+Egy földi hátasokkal küzdő egység parancsnokaként koordinálod annak harcát.
 
 ### Kiterjeszti ezeket
 
@@ -23,7 +23,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 🔒 **Követelmény**:
 - Lovaglás - `6.szint` (nehézlovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
-- Összeszokott tagokat igényleg
+- Összeszokott tagokat igényel
 
 🌟 `+2` bónusz az **Alakzatszintre**
 
@@ -34,7 +34,7 @@ A [Harc alakzatban](../065_03_harc_alakzatban.md) fejezet szerint kiszámolt **A
 🔒 **Követelmény**:
 - Lovaglás - `9.szint` (nehézlovaglásra alkalmas hátas fajra)
 - Befolyásolás - `3.szint`
-- Összeszokott tagokat igényleg
+- Összeszokott tagokat igényel
 
 🌟 `+4` bónusz az **Alakzatszintre**
 

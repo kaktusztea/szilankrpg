@@ -33,7 +33,7 @@ A harcértékek a tárgy jellegétől függnek, de a táblázatban található �
 
 `CÉ: mindig 0`
 
-Kapcsolódó fortély: [Alkalmatlan tárgyak hajítasa](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
+Kapcsolódó fortély: [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
 
 ---
 

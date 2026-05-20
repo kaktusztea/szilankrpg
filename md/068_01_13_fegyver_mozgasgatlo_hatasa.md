@@ -4,7 +4,7 @@
 
 Kézben tartott fegyverek a [Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejtik ki hatásukat.
 
-Hatásauk [Felszerelésre](010_03_06_felszereles.md):
+Hatásuk [Felszerelésre](010_03_06_felszereles.md):
 
 ```
 1 pont: Közepes tárgy

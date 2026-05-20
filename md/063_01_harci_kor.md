@@ -14,7 +14,7 @@ Ezek - az ésszerűség határain belül - nem igényelnek semmilyen feltételt.
 ---
 ### `2.` Mozgás
 
-Egy körön belül szabadon mozghatsz a lenti korlátok között és/vagy pár alapvető cselekedetet is végezhetsz. A KM dönt, hogy ha cselekszel is, mennyivel kevesebbet mozoghatsz.
+Egy körön belül szabadon mozoghatsz a lenti korlátok között és/vagy pár alapvető cselekedetet is végezhetsz. A KM dönt, hogy ha cselekszel is, mennyivel kevesebbet mozoghatsz.
 
 ```
 Max Mozgás egy körben =

@@ -17,7 +17,7 @@ Célszám =
 
 ```
 Pajzs lövészek felé tartva
- +3: Kis pjazs
+ +3: Kis pajzs
  +6: Közepes pajzs
  +9: nagy pajzs
 ```

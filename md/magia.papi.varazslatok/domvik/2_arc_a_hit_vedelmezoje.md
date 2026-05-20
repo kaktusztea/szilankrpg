@@ -16,7 +16,7 @@
 
 **9.szint:** magára +1 további személyre alkalmazhatja
 
-**11.szint:** egész kis csoportra alkalmazhatja (magát is beleéértve)
+**11.szint:** egész kis csoportra alkalmazhatja (magát is beleértve)
 
 
 ---

@@ -29,7 +29,7 @@ Fázisai
   (E)llenpróba
 ```
 
-### 1. Végrehajtás
+### 1. VVégrehajtás
 
 ```
 Tetves támad TÉ:+4 bónusszal

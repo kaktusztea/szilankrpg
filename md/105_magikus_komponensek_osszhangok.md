@@ -62,7 +62,7 @@ Komponens
 Összhang
 - gyerek születése
 - házasság
-- bosszú beteljesülének pillanata
+- bosszú beteljesülésének pillanata
 - fontos művészeti műtárgy befejezése
 - ünnepnap
 - koronázás

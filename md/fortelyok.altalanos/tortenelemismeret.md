@@ -32,6 +32,6 @@ A fortély nélkül történelmi témában nem dobhatsz próbát [Lexikum](../ke
 🌟 **Hatás**:
 - A [Lexikum](../kepzettsegek.szekunder/lexikum.md) próbát `+2` bónusszal dobhatod történelmi témában.
 - Magában foglalja az ősi kultúrák ismeretét is, de **csak a történelmüket** és legendáikat!
-- FONTOS: Ha az ősi kultúrák egyéb aspektusaira is kiváncsi vagy, akkor a Történelemismeret mellett az [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md) fortélyra IS szükséged van a **Lexikum** képzettség kiterjesztésénél (`E`).
+- FONTOS: Ha az ősi kultúrák egyéb aspektusaira is kíváncsi vagy, akkor a Történelemismeret mellett az [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md) fortélyra IS szükséged van a **Lexikum** képzettség kiterjesztésénél (`E`).
 
 ---

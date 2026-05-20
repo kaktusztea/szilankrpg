@@ -1,6 +1,6 @@
 ## Szimbólumok, jelzők
 
-A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk jelzőknek, melyek megkönnyítik az olvasást, értelemezést.
+A szabályrendszer dokumentumaiban speciális unicode karaktereket használunk jelzőknek, melyek megkönnyítik az olvasást, értelmezést.
 
 ### Aktív jelzők
 

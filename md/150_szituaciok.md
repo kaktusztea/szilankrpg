@@ -54,7 +54,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ## Tudás szituációk
 
-- [Csapda hatástalanítás, mechanikus szerkezet szabotásása](szituaciok/csapda_hatatalanitas_szabotalas.md)
+- [Csapda hatástalanítás, mechanikus szerkezet szabotálása](szituaciok/csapda_hatatalanitas_szabotalas.md)
 - [Hamisítás és felismerése](szituaciok/hamisitas_es_felismerese.md)
 - [Térkép készítése, értelmezése](szituaciok/terkep_keszitese_ertelmezes.md)
 

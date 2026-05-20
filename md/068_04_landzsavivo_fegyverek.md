@@ -1,6 +1,6 @@
 ## Lándzsavívó fegyverek
 
-❕A lándzsavívó harcmodorban forgatott szálfegyverek használatához jelentős helyre van szükség. Amint beszűkült téren kell forgatni őket, harcértékük `0`-ra zuhan! A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve végzi a harcot (folyósón előre/hátra küzdeni).
+❕A lándzsavívó harcmodorban forgatott szálfegyverek használatához jelentős helyre van szükség. Amint beszűkült téren kell forgatni őket, harcértékük `0`-ra zuhan! A fenti alól kivétel, ha két oldalról természetes, vagy épített kordonnal határolva áll a fegyveres és oldalról nem fenyegetve végzi a harcot (folyosón előre/hátra küzdeni).
 
 A nagyobb szálfegyvereknél jelentkezhet a [Fegyverek mozgásgátló hatása](068_01_13_fegyver_mozgasgatlo_hatasa.md).
 
