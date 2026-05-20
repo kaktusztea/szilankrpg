@@ -22,7 +22,7 @@ Milyen Tradíciókat ismer a `Szilánk` rendszere?
 - [Orgyilkos mágia](051_03_orgyilkos_magia.md)
 - [Ordani Tűzmágia](051_04_ordani_tuzmagia.md)
 - [Bárdmágia](051_05_bardmagia.md)
-  - Csepürágó
+  - Csepűrágó
   - Ork Énekmondó
 - [Illuzionista](051_06_illuzionista.md)
 - [Természeti mágia](051_07_termeszeti_magia.md)

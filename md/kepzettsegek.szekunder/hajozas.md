@@ -74,7 +74,7 @@ Nagyon gyakori eset Hajózás képzettség esetén, mikor **Másodlagos próbado
 #### Emberfeletti (21) 🎲
 
 - Navigáció orkánban, özönvízszerű esőben, jéghegyek vagy sziklás szorosok közt.
-- Egy flotilla teljes viharon átkormányzása, veszteség nélkül.
+- Egy flottilla teljes viharon átkormányzása, veszteség nélkül.
 - Misztikus ráérzéssel ismeretlen vizeken is megtalálod a biztonságos utat: mintha a csillagok és szelek is neked súgnának.
 
 <br />

@@ -102,7 +102,7 @@ Hátrány-2
 
 Az **Ellenpróba** azt modellezi, hogy a karakter képes-e megteremteni maga számára a lehetőséget, úgymond "megágyazni magának", hogy megkísérelhesse a **Manővert**. A harcban ez helyezkedést, "pozícióba kerülést" jelent, amelynek sikere függ a karakter és ellenfelének **Manőver Alapjától**, a Manőver **Nehézségétől** és egyéb módosító körülményektől. A játékban logikailag az **Ellenpróbának** kéne előbb jönnie, de mivel a **Végrehajtás** gyorsabban számolható, azt dobjuk előbb (ha van).
 
-Az **Ellenpróba** dobása során a KM meghatározza a próba **Célszámát**, a játékos, pedig veszi [Manőver Alapját](066_01_manover_alap.md), esetlegesen felhasznál [Manőver Pontokat](066_02_manover_pontok.md), majd dob hozzá `k10`-el. Ha a végső érték eléri a célszámot, akkor az **Ellenpróba** **sikeres volt.**
+Az **Ellenpróba** dobása során a KM meghatározza a próba **Célszámát**, a játékos, pedig veszi [Manőver Alapját](066_01_manover_alap.md), esetlegesen felhasznál [Manőver Pontokat](066_02_manover_pontok.md), majd dob hozzá `k10`-zel. Ha a végső érték eléri a célszámot, akkor az **Ellenpróba** **sikeres volt.**
 
 Ha csak az **Ellenpróba** az adott Manőver követelménye, akkor annak sikere esetén az egész **Manőver** automatikusan sikeresnek tekinthető.
 

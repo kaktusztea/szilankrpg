@@ -126,7 +126,7 @@ Az összetett próbákhoz hasonlóak a Kombinált próbák: adódhat olyan helyz
 
 Ilyenkor a KM határozza meg a feladat nehézségét és jelölje ki az **elsődleges** Tulajdonságot, azaz, hogy az adott szituációban melyik a dominánsabb, fontosabb. Tehát a fenti példánál maradva inkább az **Erőre**, vagy az **Ügyességre** van nagyobb szükség.
 
-Ezután a kiválasztott elsődleges Tulajdonságra dobjon próbát a karakter a KM által előzően meghatározott nehézségre, majd pedig egy másik próbát a **másodlagos** Tulajdonságra, a fenti nehézségnél `1`-el könnyebb fokozattal.
+Ezután a kiválasztott elsődleges Tulajdonságra dobjon próbát a karakter a KM által előzően meghatározott nehézségre, majd pedig egy másik próbát a **másodlagos** Tulajdonságra, a fenti nehézségnél `1`-gyel könnyebb fokozattal.
 
 #### Fontos❗
 

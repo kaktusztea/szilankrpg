@@ -34,7 +34,7 @@ Idomítást, állatokat, bestiákat kontrolláló szituációban a lenti próba 
 
 - Állat irányítása veszélyhelyzetben (pl. roham közben nem fut el, hanem kitart).
 - Több állat koordinált idomítása egyszerre.
-- Exotikus, intelligensebb állatokhoz való alkalmazkodás. Pl. 0csány.
+- Exotikus, intelligensebb állatokhoz való alkalmazkodás. Pl. ocsány.
 
 #### Rendkívül nehéz (18) 🎲
 

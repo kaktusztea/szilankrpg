@@ -25,7 +25,7 @@ Betegségek gyógyítása, illetve öregség okozta betegségek, mint rossz íz�
 
 A Betegségeknél a Mérgek modelljét használjuk.
 
-Méreg által okozott hatás, a betegség gyógyítása. A mérget nem távolítja el, így annak hatása újra életbe lép "nulláról", amennyiben mét tart annak hatása.
+Méreg által okozott hatás, a betegség gyógyítása. A mérget nem távolítja el, így annak hatása újra életbe lép "nulláról", amennyiben még tart annak hatása.
 
 ---
 #### Szabályok

@@ -28,7 +28,7 @@ A fentiek a [Kalandozókra vonatkozó gyorsabb gyógyulás](010_03_01_kalandozok
 ---
 ## ⚜️ [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettség, gyógyitalok
 
-A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. **Gyógyításra NEM képes**, de a gyógyszerek előállításához szükséges növényi és állati alapanyagokat be tudja szerezni. Minél magasabb a képzettsége, annál ritkábbakat.
+A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lóti-futi segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. **Gyógyításra NEM képes**, de a gyógyszerek előállításához szükséges növényi és állati alapanyagokat be tudja szerezni. Minél magasabb a képzettsége, annál ritkábbakat.
 
 <br />
 

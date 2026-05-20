@@ -17,7 +17,7 @@
 ---
 #### Hatás
 
-A pap segít az éhezőkön. Vízet fakaszt, élelmet teremt - látszólag a semmiből.
+A pap segít az éhezőkön. Vizet fakaszt, élelmet teremt - látszólag a semmiből.
 
 
 ---

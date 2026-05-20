@@ -123,7 +123,7 @@ Nem minden fegyver egyformán jó minőségű, valamelyik igazi mestermunka, pon
 
 A távolsági fegyverek minősége azok **CÉ**-jét javítja, vagy éppen rontja. Például egy átlagos könnyű nyílpuska `8`-as **CÉ**-vel bír. Egy kiváló nyílpuska, amely mestermunka, akár `12`-t is elérhet, ugyanakkor egy ócskavasnál nem lehet meglepő az `4`-es érték sem.
 
-Szélsőséges esetben a fegyver **Osztó** értéke is módosulhat, de ökölszabályként kimondható, hogy az **Osztó** – minőségtől függően - **legfeljebb** `±1`-el változhat az alapértékhez képest, továbbá ez csak lőfegyverekre vonatkozik, **hajítófegyverekre nem**.
+Szélsőséges esetben a fegyver **Osztó** értéke is módosulhat, de ökölszabályként kimondható, hogy az **Osztó** – minőségtől függően - **legfeljebb** `±1`-gyel változhat az alapértékhez képest, továbbá ez csak lőfegyverekre vonatkozik, **hajítófegyverekre nem**.
 
 Egy hajítófegyvernél legfeljebb akkor elképzelhető a **Osztó** változása, ha annyira rossz minőségű, hogy átkerül például a `2`-esből a `1`-es kategóriába. Pozitív irányba nem módosulhat.
 

@@ -58,7 +58,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 
 **Hatás**: Sikeresen bekerültél belharcba, innentől a **[Belharci szituációnál](065_01_01_belharci_szituacio.md)** leírt módosítók érvényesülnek.
 
-🔆 **Nagy siker**: `4`-el túldobott Ellenpróbánál még sebző **Megakasztás** támadást elszenvedve is bekerülsz belharci szituációba, szóval mindenképp dobjatok Ellenpróbát.
+🔆 **Nagy siker**: `4`-gyel túldobott Ellenpróbánál még sebző **Megakasztás** támadást elszenvedve is bekerülsz belharci szituációba, szóval mindenképp dobjatok Ellenpróbát.
 
 🔆 Ha az ellenfél úgy dönt, hogy szándékosan beenged belharcba, akkor nincs szükség a Manőverre.
 

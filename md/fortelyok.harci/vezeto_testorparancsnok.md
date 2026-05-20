@@ -1,6 +1,6 @@
 ## 🟣 Vezető: Testőrparancsnok
 
-Testőred egy entitásként védelmeznek személyeket, területet vagy építményeket.
+Testőreid egy entitásként védelmeznek személyeket, területet vagy építményeket.
 
 ### Kiterjeszti ezeket
 

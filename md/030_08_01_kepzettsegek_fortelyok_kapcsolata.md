@@ -36,7 +36,7 @@ Amennyiben nincs olyan fortély, amely az adott próba esetén szükséges lenne
 
 ### 🟩 `2.1` Normál kiterjesztés
 
-Ebben a kapcsolatban a Fortély megléte nem követelmény, de hiánya esetén levonással dobhat a játékos, mivel a törzstudás (a képzettség maga) nem nyújt az adott területen teljeskörű ismeretet.
+Ebben a kapcsolatban a Fortély megléte nem követelmény, de hiánya esetén levonással dobhat a játékos, mivel a törzstudás (a képzettség maga) nem nyújt az adott területen teljes körű ismeretet.
 
 ```
 Fortély foka és

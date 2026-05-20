@@ -26,7 +26,7 @@
 
 A nagyjából félnapos ceremónia során a pap hatalmas máglyát rak válogatott fákból és növényekből, majd a beteg, sebesült illetőt ráhelyezi. Ez után áldásával meggyújtja a halmot.
 
-A máglyán fekvő illetőt különös módon nem bántja a tűz, sőt. Esetleges vérzése azonnal elál, állapota stabilizálódik, majd óránként a Kisszféránál megadott mennyiségű `ÉP` visszatér testébe.
+A máglyán fekvő illetőt különös módon nem bántja a tűz, sőt. Esetleges vérzése azonnal eláll, állapota stabilizálódik, majd óránként a Kisszféránál megadott mennyiségű `ÉP` visszatér testébe.
 
 A varázslat betegségeket is képes "kiégetni" a szervezetéből. A betegség Erősségétől függően ⭕`1 óra / E` szükséges.
 

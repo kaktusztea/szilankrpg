@@ -41,7 +41,7 @@ Képzettség
 
 ⭕TODO
 
-Tűzvarázslat előtt lehül a levegő (a hőt kivonja a környezetből)
+Tűzvarázslat előtt lehűl a levegő (a hőt kivonja a környezetből)
 
 ---
 ## Formulák

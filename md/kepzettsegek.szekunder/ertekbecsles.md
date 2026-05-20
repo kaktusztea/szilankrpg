@@ -2,7 +2,7 @@
 
 Próba dobható.
 
-Bármilyen vagyontárgy értékének felbecslése, legyenek akár fegyverek, ékszerek, festmények, szobrok, híres műalkotások, legendás relikviák, ősi ereklyék a hatodkorból, ötödkorból, negyedkorból, harmadkorból.
+Bármilyen vagyontárgy értékének felbecsülése, legyenek akár fegyverek, ékszerek, festmények, szobrok, híres műalkotások, legendás relikviák, ősi ereklyék a hatodkorból, ötödkorból, negyedkorból, harmadkorból.
 
 Híres ereklyék ismeretét is magában foglalja. Minél ritkább egy tárgy annál nehezebb a próba.
 
@@ -69,7 +69,7 @@ Emlékezet, Intelligencia
 
 #### Rendkívül nehéz (18) 🎲
 
-- Legendás ereklyék, több száz éves tárgyak, koronák, szimbolikus relikviák pontos felbecslése.
+- Legendás ereklyék, több száz éves tárgyak, koronák, szimbolikus relikviák pontos felbecsülése.
 - Egy korokon átnyúló hamisítvány (pl. több száz év alatt többször átdolgozott tárgy) felismerése.
 - Egy ismeretlen, de nyilvánvalóan fontos tárgyról pontosan tudni, miért értékes.
 - Egy legendás történelmi alak által használt műremekből látomáson keresztül a legenda újraélése - nem a valós történetet, hanem a belőle formálódott (akár már elfeledett) mítoszt.
