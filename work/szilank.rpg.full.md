@@ -26721,7 +26721,7 @@ Végleges ár: 7,5x
 
 # Távolsági harcrendszer
 
-A távolsági lő- és hajítófegyverekkel végzett harc során az alábbi **Harcmodor képzettségek** vesznek részt a támadó oldalán:\
+A távolsági lő- és hajítófegyvereket az alábbi **harcmodor képzettségekkel** kezelheted:\
 [Hajítás](kepzettsegek.primer.harci/harcmodor.md), [Íjászat](kepzettsegek.primer.harci/harcmodor.md), [Lövészet](kepzettsegek.primer.harci/harcmodor.md), [Ostromlövészet](kepzettsegek.primer.harci/harcmodor.md), [Mágikus lövészet](kepzettsegek.primer.harci/harcmodor.md)
 
 ## Befolyásoló jellemzők
@@ -26741,46 +26741,46 @@ A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem
 ---
 ## Célzó dobás
 
-A lövés/hajítás során ugyanúgy támadó dobás történik az egyedileg meghatározott Célpont `Védő Érték` ellen.
+A lövés/hajítás során Célzó Értékedre dobsz rá és ezt állítod szembe a Célpont `Védő Értékével`.
 
 ```
 Támadó          Célpont
 CÉ + k20   vs   VÉ
 ```
 
-🔆 Fontos: Célzó dobás esetén **nincs** ❗ `-4` levonás az egy körön belül végzett újabb támadásokra, mint sima fegyveres harcnál. Minden dobás ugyanazzal a `CÉ` értékkel történik.
+🔆 Fontos: Célzó dobás esetén **nincs** ❗ `-4` levonás az egy körön belül végzett újabb támadásokra, mint sima fegyveres harcnál. Minden dobás ugyanazzal az eredeti `CÉ` értékkel történik.
 
 ---
 ## CÉ, VÉ számítása
 
 A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekre az alábbi fejezetekben fejtjük ki.
 
-#### [Célzó Érték (CÉ) számítása](071_tavharc_ce.md)
+### [Célzó Érték (CÉ) számítása](071_tavharc_ce.md)
 
-#### [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md)
+### [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md)
 
-#### [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
+### [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
 
-#### [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
+### [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
 
 
 ---
 ## Taktikák, mágikus lövedékek, fegyverek
 
-#### [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
+### [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
 
-#### [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
+### [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
 
 ### [Területlövés](077_teruletloves.md)
 
-#### [Távolsági fegyverek](078_tavharc_fegyverek.md)
+### [Távolsági fegyverek](078_tavharc_fegyverek.md)
 
 ---
 ## Példák
 
-#### [Példalövészet](079_01_tavharc_peldak.md) ⚡
+### [Példalövészet](079_01_tavharc_peldak.md) ⚡
 
-#### [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
+### [Távharc sötétben](079_02_tavharc_sotetben.md) ⚡
 
 ---
 
@@ -26804,12 +26804,12 @@ A `Célzó Érték` kiszámolása a következőképpen történik - még karakte
 
 ```
 Támadó CÉ =
-    -15
-    + CM
-    + Harcmodor CÉ
-    + Önuralom
-    + Fegyver CÉ
-    + Mf-bónusz
+  -15
+  + CM
+  + Harcmodor CÉ
+  + Önuralom
+  + Fegyver CÉ
+  + Mf-bónusz
 ```
 
 ```
