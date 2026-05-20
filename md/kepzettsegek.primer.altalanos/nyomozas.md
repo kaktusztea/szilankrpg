@@ -38,7 +38,7 @@ Intelligencia, Emlékezet
 
 - [Élettan](../fortelyok.altalanos/elettan.md) (boncoláshoz)
 - [Jogismeret](../fortelyok.szabad/jogismeret.md): "Az anyai ági öröklés miatt a féltestvér is részesül az örökségből a gyászév leteltével! Tehát neki is volt indítéka."
-- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "A legfoglalt iratokból egyből kiviláglik: Kamarás uram kettős könyvelést vezetett."
+- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "A lefoglalt iratokból egyből kiviláglik: Kamarás uram kettős könyvelést vezetett."
 
 ### Szituáció
 

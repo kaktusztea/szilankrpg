@@ -293,7 +293,7 @@ A helyettesítő képzettség(ek) értelemszerűen legfeljebb `5.szintű` helyet
 
 ### ⚡Példa: Nyomozás helyettesítéssel
 
-A karakter egy bűntény helyszínén gyanús személyekkel találkozik. Kikérezné őket, **Nyomozás** képzettségpróbát kéne dobnia. Mivel **Nyomozás** képzettsége csak `2.szintű`, ezért egy kapcsolódó képzettsége segítségére támaszkodik, amiben sokkal járatosabb és le is fedi az aktuális szituációban szükséges ismeretet. A KM az adott helyzetben ezt jól megindokoltnak látja, így engedélyezi.
+A karakter egy bűntény helyszínén gyanús személyekkel találkozik. Kikérdezné őket, **Nyomozás** képzettségpróbát kéne dobnia. Mivel **Nyomozás** képzettsége csak `2.szintű`, ezért egy kapcsolódó képzettsége segítségére támaszkodik, amiben sokkal járatosabb és le is fedi az aktuális szituációban szükséges ismeretet. A KM az adott helyzetben ezt jól megindokoltnak látja, így engedélyezi.
 
 - Nyomozás `2.szint`
 - Emberismeret: `9.szint` (Nyomozás képzettség helyettesítése)
@@ -325,7 +325,7 @@ Ha a karakter megsérül és `S3`, vagy `S4` [Sebesülés-kategóriába](061_03_
 
 Előfordulhat olyan furcsa helyzet, hogy a KM véleménye szerint egy szituációban az egyik fél a Tulajdonságát, a másik egy képzettségét használná.
 
-Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbálja vagy Tulajdonság ellenpróbába, vagy Képzettség ellepróbába fordítani a szituációt. Ne bonyolítsunk feleslegesen.
+Ekkor azt javasoljuk, hogy - akár a realizmus feláldozásával is - de próbálja vagy Tulajdonság ellenpróbába, vagy Képzettség ellenpróbába fordítani a szituációt. Ne bonyolítsunk feleslegesen.
 
 ---
 

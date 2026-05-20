@@ -17,7 +17,7 @@ Példa
   ...
 ```
 
-Harcban, támadáskor a játékos dob `k20`-al, majd a kapott értéket hozzáadja aktuális **Támadó Értékéhez**. Ennek értéke lesz a **Támadó dobás**.
+Harcban, támadáskor a játékos dob `k20`-szal, majd a kapott értéket hozzáadja aktuális **Támadó Értékéhez**. Ennek értéke lesz a **Támadó dobás**.
 
 Amennyiben a támadónak több támadása van az adott körben, akkor a `2.` támadástól kezdődően minden egyes plusz támadás fixen `TÉ:-4` módosítóval történik, amely levonás **NEM** halmozódik.
 

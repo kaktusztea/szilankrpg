@@ -77,7 +77,7 @@ Folyamatosan gyanakszol másokra,
 és nehezen bízol meg bárkiben
 ```
 
-#### ⚡ Példa: Irígy
+#### ⚡ Példa: Irigy
 ```
 Nehezen tűröd, ha másnak több
 van, és hajlamos vagy emiatt
@@ -730,7 +730,7 @@ Mozgás - lecövekelt
 Beszéd - zavart
 ```
 
-Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az [Érzékevesztés](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart) (több érzékszervre is akár)).
+Példa: becsapó villámvarázs (ez okozhat más Státuszt is mint például az [Érzékvesztés](#%EF%B8%8F-%C3%A9rz%C3%A9kveszt%C3%A9s-1-zavart) (több érzékszervre is akár)).
 
 ### ✴️ Zavar (3) Sokk
 

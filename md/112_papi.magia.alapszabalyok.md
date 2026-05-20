@@ -39,7 +39,7 @@ Az egyes varázslatoknál jelezzük, hogy a varázslás ideje melyik kategóriá
 ### Papi Mágia Akarata
 
 Hasonlatos az [Mágia akaratánál leírtakhoz](103_04_magia_akarata.md), de az Auraerősítés formulát **nem** használhatja.
-Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a [Mágiallenállás](103_03_magiaellenallas.md).
+Így tehát a papi mágia esetén a **Mágia Akarata** fix érték, ezzel szegül szembe a [Mágiaellenállás](103_03_magiaellenallas.md).
 
 ```
 Papi Mágia Akarata
@@ -55,14 +55,14 @@ Papi Mágia Akarata
   → +3 Átütés az adott varázslatra
 ```
 
-Kaland során lehet gyűjteni ilyen pontokat, értékük a kaland (nem játékalkalom!) elején nullázódik. Ha a pap istenének tetsző, kiemelkedő cselekedetet tesz, kap egy ilyen pontot. Ez lehet csak egy nagyon hangulatos, szerepjátékban kiemelkedő jelenet, de konkrét cselekedet is, amely elnyeri a játékos istenének tetszését. Bánjunk ezzel csínyján KM-ként, ne dobáljuk csak úgy, legyen meg a súlya.
+Kaland során lehet gyűjteni ilyen pontokat, értékük a kaland (nem játékalkalom!) elején nullázódik. Ha a pap istenének tetsző, kiemelkedő cselekedetet tesz, kap egy ilyen pontot. Ez lehet csak egy nagyon hangulatos, szerepjátékban kiemelkedő jelenet, de konkrét cselekedet is, amely elnyeri a játékos istenének tetszését. Bánjunk ezzel csínján KM-ként, ne dobáljuk csak úgy, legyen meg a súlya.
 
 A Kegy pontokat a varázslatok **Átütésének** egyszeri erősítésére lehet felhasználni - varázslatonként maximum 1 pontot.
 
 ---
 ### Papi mágia kísérőjelenségei
 
-Általánosságban elmondható, hogy minél magasabb a varázslat Erőssége (Kisszféra), annál erősebben jelenik meg random kísérőjelenség, amely a varázslat jellegétől, a pap egyházának szimbólumaitól, illetve a pap hangulatától, jellemétől is függhet. Ebben a KM és a játékos teljes szabad kezet kapnak, de tartsák észben, hogy ezek csak szinesítő hatások, nem okozhatnak konkrét előnyöket, hátrányokat. A fentiek lehetnek fény és hangjelenségek, látványos hatás növényekre, állatokra és így tovább.
+Általánosságban elmondható, hogy minél magasabb a varázslat Erőssége (Kisszféra), annál erősebben jelenik meg random kísérőjelenség, amely a varázslat jellegétől, a pap egyházának szimbólumaitól, illetve a pap hangulatától, jellemétől is függhet. Ebben a KM és a játékos teljes szabad kezet kapnak, de tartsák észben, hogy ezek csak színesítő hatások, nem okozhatnak konkrét előnyöket, hátrányokat. A fentiek lehetnek fény és hangjelenségek, látványos hatás növényekre, állatokra és így tovább.
 
 ---
 

@@ -4,7 +4,7 @@
 
 Kiemelt speciális fortély, **nem** `KP`-ból tanulható, minden nyelvhez külön kell felvenni a lentiek szerint.
 
-A [Nyelvtanulás](../kepzettsegek.szekunder/nyelvtanulas.md) képzettség által kapott speciális pontokból vehetsz fel `1` pontért `1` fokot egyes nyelvekre. A nyelvek listáját lásd [lenn](#emberi-nyelvek-list%C3%A1ja). Amennyiben nem rendelkezel a kívánt Nyelvismeret fortéllyal, akkor - ha van kapcsolódó [Kultúrkör](kulturkor.md) Hátterred, akkor nagyon alap szavakat ismersz azért, amivel - plusz kézzel-lábbal - meg tudod értetni magad ("kő", "tűz", "vesz", "kenyér", stb)
+A [Nyelvtanulás](../kepzettsegek.szekunder/nyelvtanulas.md) képzettség által kapott speciális pontokból vehetsz fel `1` pontért `1` fokot egyes nyelvekre. A nyelvek listáját lásd [lenn](#emberi-nyelvek-list%C3%A1ja). Amennyiben nem rendelkezel a kívánt Nyelvismeret fortéllyal, akkor - ha van kapcsolódó [Kultúrkör](kulturkor.md) Háttered, akkor nagyon alap szavakat ismersz azért, amivel - plusz kézzel-lábbal - meg tudod értetni magad ("kő", "tűz", "vesz", "kenyér", stb)
 
 A Nyelvismeret fortélynak `2` foka van, amelyeket kivételesen nevesítünk is.
 

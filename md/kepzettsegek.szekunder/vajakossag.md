@@ -1,6 +1,6 @@
 ## 🔵 Vajákosság
 
-A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Jártatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, kristályokból, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
+A "gyógyszerész". Akár a lápi boszorkány, akár mágiatudó lótifuti segédje, aki napokig járja az erdőt és a vadont ritka alapanyagok után kutatva. Járatos vagy növényi alapanyagokból, állatokból, ritka szörnyetegek testrészeiből, kristályokból, vagy még ritkább növények hajtásaiból hatóanyagot kinyerni, tartósítani - akár mágikusat is.
 
 Képes vagy kikeverni és tartós állapotban tárolni a végső gyógyhatású matériát.
 

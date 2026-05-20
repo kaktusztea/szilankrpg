@@ -13,7 +13,7 @@ A varázstárgyakat az alábbi kategóriára bonthatjuk:
 ---
 ## Rúnamágiával felruházott tárgyak
 
-Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező tárgyá váltak.
+Ezen varázstárgyak a beléjük foglalt mágia hatására Aurával rendelkező tárgyakká váltak.
 
 ⭕TODO: folytatni⭕
 

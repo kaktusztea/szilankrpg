@@ -22,7 +22,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 - [Asztrológia](../fortelyok.szabad/asztrologia.md): "Kiszámoltam: **Diss tüzének** idejében vagyunk. Nem jó idő ez a gyógyításra."
 - [Gazdálkodás](../fortelyok.szabad/gazdalkodas.md): "A birtok idén már nyereséges volt köszönhetően a 12 marhának, amit tavaly vettünk a Szőlőshegyi özvegytől."
-- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az ehavi beszedett többletadók elegek lesznek a kölcsön törlesztésére."
+- [Pénzügyek](../fortelyok.szabad/penzugyek.md): "Ha ennyi aranyat egyben eladnánk, az leverné az árakat az egész megyében; Az e havi beszedett többletadók elegek lesznek a kölcsön törlesztésére."
 - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md)
   - "Nem volt könnyű, de megfejtettem a titkosírást. Ez egy üzenet a tábornoknak, amiben a csapatokat a hágó elhagyására utasítja."
   - "Megírtam az üzenetet uram, alkalmaztam a titkosírást, ha rossz kezekbe kerül, se tudják elolvasni."
@@ -83,7 +83,7 @@ Igazi potenciálját a **kiterjesztését** megvalósító lenti Fortélyokkal �
 
 - Építészeti, mechanikai rendszer hibátlan megtervezése (torony, híd).
 - Többszintű titkosírás feltörése rövid idő alatt.
-- Pontos előrejelzést adni egyes árúk, javak árainak mozgásáról.
+- Pontos előrejelzést adni egyes áruk, javak árainak mozgásáról.
 
 #### Rendkívül nehéz (18) 🎲
 

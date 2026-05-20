@@ -50,7 +50,7 @@ Takarásban, zajkeltés nélkül odaosonni helyekre, átsiklani őrök között,
 ---
 ### Próbák 🎲
 
-Ennek a képzettségnek a próbadobásai jellemzően ellepróbák az [Észlelés](eszleles.md) képzettséggel. Bővebben lásd a [Lopakodás/rejtőzés és észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációt.
+Ennek a képzettségnek a próbadobásai jellemzően ellenpróbák az [Észlelés](eszleles.md) képzettséggel. Bővebben lásd a [Lopakodás/rejtőzés és észlelése](../szituaciok/lopakodas_rejtozes_es_eszlelese.md) szituációt.
 
 Nem ellenpróbás szituációban tapasztalati ismeretekre támaszkodik az alkalmazó:
 
@@ -99,7 +99,7 @@ Lásd [Vakharc fortély- Bónusz: harci ösztön](../fortelyok.harci/vakharc.md#
 +6 Világosban, éles kontúrral válsz el a háttértől
 +3: Világosban, háttértől elütő ruházatban
 +0: Átlagos nappali fény, ruhád nem üt el a háttértől
--3: Szürkület, félhomány
+-3: Szürkület, félhomály
 -6: Vaksötét. Szabad szemmel csak
     Infra- vagy Ultralátással vagy észlelhető
 -6: a lopakodó Láthatatlan

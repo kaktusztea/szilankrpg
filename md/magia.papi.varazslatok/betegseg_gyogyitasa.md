@@ -21,7 +21,7 @@
 ---
 #### Hatás
 
-Betegségek gyógyítása, illetve öregség okozta betegségek, mint rossz izület, öreg problémák is ide jönnek.
+Betegségek gyógyítása, illetve öregség okozta betegségek, mint rossz ízület, öreg problémák is ide jönnek.
 
 A Betegségeknél a Mérgek modelljét használjuk.
 

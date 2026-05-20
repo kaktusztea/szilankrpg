@@ -36,7 +36,7 @@ A Metamágia Arkánumok tradíciók szerint eltérnek!
 ---
 ### Tradíciók követelményei
 
-Minden Tradíció szintjeinek lehetnek követelményei, amelyek biztosítják, hogy csak tálentummal megáldott személyek tanulhassák az adott ismereteket.
+Minden Tradíció szintjeinek lehetnek követelményei, amelyek biztosítják, hogy csak talentummal megáldott személyek tanulhassák az adott ismereteket.
 
 ---
 

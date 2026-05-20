@@ -7,7 +7,7 @@ Max tapasztalati szint: 21
 
 Egy karakter "fejlettségét" az abszolút szubjektív "**Tapasztalati szint**" értékkel jellemezzük. Minél magasabb szintű valaki, annál több időt fordíthatott tanulásra, annál többet tapasztalt.
 
-Az első `2` tapasztalati szint az előtörténet részének tekinthető, a kalandozás a `3.szinten` kezdődik - más rendszerekkel ellentétben itt ez adja a "zöldfülü kalandozó" élettapasztalatot. Ennek további előnye, hogy így könnyebb `1.` és `2.` szintű **Nem Játékos Karakterek** (NJK) alacsonyabb képességeit rendszerben megjeleníteni.
+Az első `2` tapasztalati szint az előtörténet részének tekinthető, a kalandozás a `3.szinten` kezdődik - más rendszerekkel ellentétben itt ez adja a "zöldfülű kalandozó" élettapasztalatot. Ennek további előnye, hogy így könnyebb `1.` és `2.` szintű **Nem Játékos Karakterek** (NJK) alacsonyabb képességeit rendszerben megjeleníteni.
 
 A karakter fejlődése - kalandjai során megélt tapasztalatoknak köszönhetően - természetesen folyamatos, de az adminisztráció megkönnyítése érdekében alkalmazzuk a "Szintlépés" fogalmát. Szintlépés olyankor következik be, amikor a KM úgy ítéli, a karakter jelentősen fejlődött, sokat tapasztalt és ennek ideje lenne értékeiben is megmutatkoznia - ekkor bejelenti annak szintlépését.
 

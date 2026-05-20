@@ -48,8 +48,8 @@ Az `1`-es a leggyengébb, a `10`-es a legerősebb mérgek jellemzője, de tartsu
 Ha a normális adagnál kisebb, vagy nagyobb mennyiséget használunk fel, csökkenhet/megnőhet a méreg erőssége (KM dönt).
 
 **Erősség változása**:
-- Kis adag: Erősség `50%`-al csökken (lefele kerekítünk)
-- Nagy adag: Erősség: `50%`-al nő (lefele kerekítünk)
+- Kis adag: Erősség `50%`-kal csökken (lefele kerekítünk)
+- Nagy adag: Erősség: `50%`-kal nő (lefele kerekítünk)
 
 Vegyük figyelembe viszont, hogy a hordozó közeg (levegő, fegyver pengéje, stb) legfeljebb mekkora adagot képes tárolni, valamint egyéb nehezítő körülményeket is: például az italméregben nagyobb mennyiségnél nagyon feltűnő lehet a megváltozott íz, stb.
 

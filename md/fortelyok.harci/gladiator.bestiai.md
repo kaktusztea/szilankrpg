@@ -1,6 +1,6 @@
 ## 🟣 Gladiátor bestiái (1)
 
-Ha nem emberekkel, hanem nem-elfszabásű szörnyetegekkel szállsz szembe, előnyben vagy társaidhoz képest, hiszen számos efféle lénnyel találkoztál már az arénában.
+Ha nem emberekkel, hanem nem-elfszabású szörnyetegekkel szállsz szembe, előnyben vagy társaidhoz képest, hiszen számos efféle lénnyel találkoztál már az arénában.
 
 ### 1. fok
 

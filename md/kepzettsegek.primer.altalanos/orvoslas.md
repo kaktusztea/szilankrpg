@@ -58,7 +58,7 @@ Vajákosság szint követelmény: `Betegség szintje / 2`
 
 ```
 Próbadobás Célszám:
-  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korelláció⭕
+  Legnagyobb seb (ÉP táblázatból) - ⭕TODO: nehézség korreláció⭕
 ```
 
 A gyógyszerek, hegesedést fokozó, gyógyulás serkentő kencék kikeveréséhez szükség van alapanyagokra, amelyeket szintén a [Vajákosság](../kepzettsegek.szekunder/vajakossag.md) képzettség segítségével lehet beszerezni.

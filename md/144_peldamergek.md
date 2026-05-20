@@ -22,7 +22,7 @@ A méregellenállást `10` ellen (**méreg erőssége**) kell dobni, még egy ki
 <br />
 
 ---
-### ⚡ **Könycsepp a pengén (halálos fegyverméreg)**
+### ⚡ **Könnycsepp a pengén (halálos fegyverméreg)**
 
 ```
 → Erősség: 6
@@ -67,7 +67,7 @@ Ez már tényleg művészet. Ha a méregkeverő irodalommal foglalkozna ilyen sz
 
 A nyári virág leszakajtása után az uralkodó este elfogyasztotta bőséges vacsoráját és borral öblítette le, mint mindig. Álma békés volt, olyannyira, hogy reggel már fel sem ébredt... "Öreg volt, szépen ment el" - mondták a szolgálók. Ételét átvizsgálva az udvari vajákosok és a varázsló semmit nem találtak. "Eljött az ideje." - mondták ők is.
 
-Fia nem lévén, unokaöccse lépett helyébe, ki - úgy mondják - már nagyon türelmetlen volt. Asszott, vén tudósa Taba el Ibarából mindig mellette ólálkodott - azt mondják életelixírt készít a hercegnek..."
+Fia nem lévén, unokaöccse lépett helyébe, ki - úgy mondják - már nagyon türelmetlen volt. Aszott, vén tudósa Taba el Ibarából mindig mellette ólálkodott - azt mondják életelixírt készít a hercegnek..."
 
 <br />
 

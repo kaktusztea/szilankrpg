@@ -87,7 +87,7 @@ A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix
 
 Miért csak `VÉ` bónuszt ad?
 - mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.
-- az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) - és a megemelt `VÉ-csökkentést` - adja (lád később).
+- az alakzat tagjainak nagyobb száma inkább a nehezebb megtámadhatóságot (`VÉ` bónusz) - és a megemelt `VÉ-csökkentést` - adja (lásd később).
 
 <br />
 
