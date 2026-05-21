@@ -28,6 +28,8 @@ Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése.
 
 Példákhoz lásd a fenti, kapcsolódó fortélyok **Nyomozás** képzettséghez kapcsolódó leírásait.
 
+🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer.altalanos/nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
 <br />
 
 ---

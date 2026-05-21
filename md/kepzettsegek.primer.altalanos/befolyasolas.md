@@ -51,6 +51,8 @@ A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az
 
 Például a játékos nem feccöl bele túl sok energiát sem a karaktere megszemélyesítésébe, sem az ötletbe, amivel át akarja verni a másik felet, tehát valami nagyon átlátszó hazugságot akar megetetni, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
 
+Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
 <br />
 
 ---
