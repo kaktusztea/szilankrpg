@@ -12,9 +12,9 @@ A `Célzó Érték` kiszámolása a következőképpen történik - még karakte
 ```
 Támadó CÉ =
   -15
+  + Önuralom
   + CM
   + Harcmodor CÉ
-  + Önuralom
   + Fegyver CÉ
   + Mf-bónusz
 ```
@@ -28,6 +28,8 @@ Támadó CÉ =
   meggyorsítása miatt átkerült ide
   negatív előjellel.
 
++ Önuralom Tulajdonság: 1:1 beszámít
+
 + CM: Célzóérték Módosító
    Tapasztalati Szintenként legfeljebb
    2 pont vehető fel. 1 CM = 6 KP
@@ -35,8 +37,6 @@ Támadó CÉ =
 + Harcmodor CÉ
    Harcmodor képzettség szint bónusza
    (lásd a Harcmodor képzettségeket!)
-
-+ Önuralom Tulajdonság: 1:1 beszámít
 
 + Fegyver CÉ
    fegyverkategóriák különbsége:
