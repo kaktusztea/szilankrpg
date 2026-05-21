@@ -1,6 +1,6 @@
 ## Célzó Érték számítása
 
-Mikor a **támadó** lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A **Célzott Támadó dobás** így néz ki:
+Mikor a **támadó** fél lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A **Célzott Támadó dobás** így néz ki:
 
 ```
 Támadó          Célpont
