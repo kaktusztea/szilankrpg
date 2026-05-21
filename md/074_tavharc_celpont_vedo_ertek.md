@@ -26,7 +26,7 @@ A célpont `Védő értéke` reprezentálja eltalálásának nehézségét. Ugya
 
 ```
 Támadó          Célpont
-CÉ + k20   vs   VÉ
+CÉ + k20   vs   Távolsági VÉ
 ```
 
 <br />
