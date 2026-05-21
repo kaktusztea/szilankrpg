@@ -4,7 +4,7 @@ Mikor a **támadó** fél lövést, vagy hajítást végez, a `Célzó Értéké
 
 ```
 Támadó          Célpont
-CÉ + k20   vs   VÉ
+CÉ + k20   vs   Távolsági VÉ
 ```
 
 A `Célzó Érték` kiszámolása a következőképpen történik - még karakteralkotási időben:
@@ -21,12 +21,8 @@ Támadó CÉ =
 
 ```
 -15: Konstans
-  Ez az érték gyakorlatilag a célpont
-  Védő Érték alapját adná, de mivel
-  itt csak egyszer (karakteralkotáskor)
-  kell vele számolni, ezért a számolás
-  meggyorsítása miatt átkerült ide
-  negatív előjellel.
+  Védő Érték Alap, ami gyorsításként
+  került át a CÉ alá, negatív előjellel.
 
 + Önuralom Tulajdonság: 1:1 beszámít
 
@@ -39,21 +35,19 @@ Támadó CÉ =
    (lásd a Harcmodor képzettségeket!)
 
 + Fegyver CÉ
-   fegyverkategóriák különbsége:
-   alapesetben milyen könnyű a találat
+   Egyedi fegyver érték.
    Irányszámok:
-   +0 → Nem hajításra alkalmas tárgyak
+   +0   → Nem hajításra alkalmas tárgyak
    +1-2 → Apró, alkalmas fegyverek
    +2-3 → Hajító szálfegyverek
    +2-3 → Apró hajítófegyverek
    +5-6 → Íjak
    +5-8 → Nyílpuskák
    (+15 → Távcsöves puska)
-   (Hajító / Lőfegyverek harcértékei)
 
 + Mesterfegyver fortély (max 3 fok)
    CÉ: +1 / fok bónusz
-   adott távolsági fegyverre
+   Konkrét távolsági fegyverre
 ```
 
 Lásd bővebben:
@@ -66,26 +60,27 @@ Lásd bővebben:
 ---
 ## CÉ Módosítók
 
-→ [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
+→ [Távolsági fortélyok](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 
 ```
-+3: 1 célzással eltöltött
-    kör után (nem additív) 🔆
-+7: Kitartott célzás fortéllyal
-    1 célzással eltöltött
-    kör után (nem additív) 🔆
++3: 1 célzással eltöltött kör után
+   (nem additív) 🔆
+
++7: 1 célzással eltöltött kör után
+    "Kitartott célzás" fortéllyal
+    (nem additív) 🔆
 
 -7: Hirtelen lövés
 -0: Hirtelen lövés
-    Lövés reflexből fortéllyal
+    "Lövés reflexből" fortéllyal
 ```
 
 🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
 
-### Bővebben
+### Kapcsolódik
 
+- [Távolsági fortélyok](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 - [Fegyver minősége](068_01_14_fegyverek_minosege_ideaja.md)
-- [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 - [Távolsági Harcmodor képzettség](kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
 
 ---
