@@ -1,4 +1,4 @@
-﻿Észlelés, érzékelés changelog
+Észlelés, érzékelés changelog
 -----------------------------
 
 v0.1.2 - 2008.07.24

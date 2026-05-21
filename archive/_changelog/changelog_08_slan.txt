@@ -1,4 +1,4 @@
-﻿Slan changelog
+Slan changelog
 ----------------------
 
 v0.2.3 - 2008.04.13

@@ -1,4 +1,4 @@
-﻿Pszí changelog
+Pszí changelog
 --------------
 
 v0.3.6 - 2008.04.13

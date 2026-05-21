@@ -1,4 +1,4 @@
-﻿Magasmágia changelog
+Magasmágia changelog
 --------------------
 
 v0.0.1 - 2008.09.18
