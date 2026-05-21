@@ -4,7 +4,7 @@ A Célpont `Védő Értékének` kiszámításában játszik szerepet az alábbi
 
 ### Fegyver Osztó
 
-A fegyver **Osztó** egy méterben megadott távolságérték és fegyverenként egyedi számérték. Azt mutatja meg, hogy hány méterenként nő **az adott fegyverrel szemben** a célpont **Védő Értéke**. Gyakorlatilag azt befolyásolja, hogy a cél távolságának növekedésével milyen ütemben romlik találati esélyünk.
+A fegyver **Osztó** egy méterben megadott, fegyverenként egyedi távolság-számérték. Megadja, hogy hány méterenként nő **az adott fegyverrel szemben** a célpont távolsági **Védő Értéke**. Gyakorlatilag azt befolyásolja, hogy a cél távolságának növekedésével milyen ütemben romlik találati esélyünk.
 
 Érthető, hogy egy nyílpuska **Osztója** nagyobb, mint egy hajítótőré, hiszen az előbbivel jó eséllyel támadhatunk akár `30-40` méterre levő célpontot is, míg egy hajítótőr esetében ez már a lehetetlen kategóriába tartozik.
 
