@@ -20,7 +20,9 @@ TÉ/VÉ: -9
 
 ### 1. fok
 
-🔒 Lovaglás - `6.szint`
+🔒 **Követelmény**:
+- Harcmodor - `6.szint`
+- Lovaglás - `6.szint`
 
 🌟 **Hatás**:
 - `TÉ:+3, VÉ:+3` lovas bónusz
@@ -30,7 +32,9 @@ TÉ/VÉ: -9
 
 ### 2. fok
 
-🔒 Lovaglás  - `9.szint`
+🔒 **Követelmény**:
+- Harcmodor - `9.szint`
+- Lovaglás - `9.szint`
 
 🌟 **Hatás**:
 - `TÉ:+6, VÉ:+6` lovas bónusz
@@ -40,7 +44,9 @@ TÉ/VÉ: -9
 
 ### 3. fok
 
-🔒 Lovaglás  - `12.szint`
+🔒 **Követelmény**:
+- Harcmodor - `12.szint`
+- Lovaglás - `12.szint`
 
 🌟 **Hatás**:
 - `TÉ:+9, VÉ:+9` lovas bónusz
