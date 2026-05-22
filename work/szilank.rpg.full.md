@@ -6318,6 +6318,8 @@ A játékos élőszóban előadja, eljátssza a befolyásolási kísérletet. Az
 
 Például a játékos nem feccöl bele túl sok energiát sem a karaktere megszemélyesítésébe, sem az ötletbe, amivel át akarja verni a másik felet, tehát valami nagyon átlátszó hazugságot akar megetetni, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
 
+Lásd még: [Nyomozás képzettség → Szerepjátékos módosító](nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
 <br />
 
 ---
@@ -7035,6 +7037,16 @@ Intelligencia, Emlékezet
 - [Információ szerzés valakitől](../szituaciok/informacioszerzes_valakitol.md)
 - [Ismerem azt a nevet? Mit tudhatok róla?](../szituaciok/ismerem_mit_tudhatok_rola.md)
 - [Nyomok értelmezése, Nyomkövetés - városi környezetben](../szituaciok/nyomok_nyomkovetes_varos.md#nyomok-értelmezése-városi-környezetben-)
+
+### 🔆 Szerepjátékos módosító
+
+A parti dönti el a játék kezdetekor, hogy alkalmazza-e ezt a paramétert.
+
+A játékos élőszóban elmondja, hogy mit vizsgál át a nyomozás helyszínén. Az ötletek, kreativitás minőségétől függően a KM ad egy módosítót `[-3;+3]` tartományban és a játékos ezt hozzáadja a **Nyomozás** képzettségpróbájához.
+
+Például a játékos nem feccöl bele túl sok energiát a fontos nyomok megtalálásába, akkor nyugodtan kaphat `-3` büntetést is a dobásra.
+
+Lásd még: [Befolyásolás képzettség → Szerepjátékos módosító](befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
 
 <br />
 
@@ -26793,11 +26805,11 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 ## Célzó Érték számítása
 
-Mikor a **támadó** lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A **Célzott Támadó dobás** így néz ki:
+Mikor a **támadó** fél lövést, vagy hajítást végez, a `Célzó Értékét` állítja szembe a célpont távolsági `Védő Értékével`. A **Célzott Támadó dobás** így néz ki:
 
 ```
 Támadó          Célpont
-CÉ + k20   vs   VÉ
+CÉ + k20   vs   Távolsági VÉ
 ```
 
 A `Célzó Érték` kiszámolása a következőképpen történik - még karakteralkotási időben:
@@ -26805,21 +26817,19 @@ A `Célzó Érték` kiszámolása a következőképpen történik - még karakte
 ```
 Támadó CÉ =
   -15
+  + Önuralom
   + CM
   + Harcmodor CÉ
-  + Önuralom
   + Fegyver CÉ
   + Mf-bónusz
 ```
 
 ```
 -15: Konstans
-  Ez az érték gyakorlatilag a célpont
-  Védő Érték alapját adná, de mivel
-  itt csak egyszer (karakteralkotáskor)
-  kell vele számolni, ezért a számolás
-  meggyorsítása miatt átkerült ide
-  negatív előjellel.
+  Védő Érték Alap, ami gyorsításként
+  került át a CÉ alá, negatív előjellel.
+
++ Önuralom Tulajdonság: 1:1 beszámít
 
 + CM: Célzóérték Módosító
    Tapasztalati Szintenként legfeljebb
@@ -26829,24 +26839,20 @@ Támadó CÉ =
    Harcmodor képzettség szint bónusza
    (lásd a Harcmodor képzettségeket!)
 
-+ Önuralom Tulajdonság: 1:1 beszámít
-
 + Fegyver CÉ
-   fegyverkategóriák különbsége:
-   alapesetben milyen könnyű a találat
+   Egyedi fegyver érték.
    Irányszámok:
-   +0 → Nem hajításra alkalmas tárgyak
+   +0   → Nem hajításra alkalmas tárgyak
    +1-2 → Apró, alkalmas fegyverek
    +2-3 → Hajító szálfegyverek
    +2-3 → Apró hajítófegyverek
    +5-6 → Íjak
    +5-8 → Nyílpuskák
    (+15 → Távcsöves puska)
-   (Hajító / Lőfegyverek harcértékei)
 
 + Mesterfegyver fortély (max 3 fok)
    CÉ: +1 / fok bónusz
-   adott távolsági fegyverre
+   Konkrét távolsági fegyverre
 ```
 
 Lásd bővebben:
@@ -26859,26 +26865,27 @@ Lásd bővebben:
 ---
 ## CÉ Módosítók
 
-→ [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
+→ [Távolsági fortélyok](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 
 ```
-+3: 1 célzással eltöltött
-    kör után (nem additív) 🔆
-+7: Kitartott célzás fortéllyal
-    1 célzással eltöltött
-    kör után (nem additív) 🔆
++3: 1 célzással eltöltött kör után
+   (nem additív) 🔆
+
++7: 1 célzással eltöltött kör után
+    "Kitartott célzás" fortéllyal
+    (nem additív) 🔆
 
 -7: Hirtelen lövés
 -0: Hirtelen lövés
-    Lövés reflexből fortéllyal
+    "Lövés reflexből" fortéllyal
 ```
 
 🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
 
-### Bővebben
+### Kapcsolódik
 
+- [Távolsági fortélyok](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 - [Fegyver minősége](068_01_14_fegyverek_minosege_ideaja.md)
-- [Távolsági fortélyok bónuszai](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 - [Távolsági Harcmodor képzettség](kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
 
 ---
@@ -26898,7 +26905,7 @@ A Célpont `Védő Értékének` kiszámításában játszik szerepet az alábbi
 
 ### Fegyver Osztó
 
-A fegyver **Osztó** egy méterben megadott távolságérték és fegyverenként egyedi számérték. Azt mutatja meg, hogy hány méterenként nő **az adott fegyverrel szemben** a célpont **Védő Értéke**. Gyakorlatilag azt befolyásolja, hogy a cél távolságának növekedésével milyen ütemben romlik találati esélyünk.
+A fegyver **Osztó** egy méterben megadott, fegyverenként egyedi távolság-számérték. Megadja, hogy hány méterenként nő **az adott fegyverrel szemben** a célpont távolsági **Védő Értéke**. Gyakorlatilag azt befolyásolja, hogy a cél távolságának növekedésével milyen ütemben romlik találati esélyünk.
 
 Érthető, hogy egy nyílpuska **Osztója** nagyobb, mint egy hajítótőré, hiszen az előbbivel jó eséllyel támadhatunk akár `30-40` méterre levő célpontot is, míg egy hajítótőr esetében ez már a lehetetlen kategóriába tartozik.
 
@@ -27128,7 +27135,7 @@ A célpont `Védő értéke` reprezentálja eltalálásának nehézségét. Ugya
 
 ```
 Támadó          Célpont
-CÉ + k20   vs   VÉ
+CÉ + k20   vs   Távolsági VÉ
 ```
 
 <br />
@@ -31558,6 +31565,8 @@ Klasszikus szociális helyzetek, melyekben az egyik fél különböző verbális
 
 🔆 Tartsuk észben, hogy ez egy **szerep-játék**, nem pedig társasjáték, így nem kell mindent a kocka döntsön el. A KM dönthet úgy, hogy a játékos meggyőző, - vagy ellenkezőleg - rendkívül bugyuta próbálkozása miatt egyáltalán nincs szükség dobásra. Ilyenkor automatikus siker és automatikus kudarc is megtörténhet.
 
+🔆 Opcionális befolyásoló tényező: [Befolyásolás képzettség → Szerepjátékos módosító](../kepzettsegek.primer.altalanos/befolyasolas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
 ### ⚜️ Átverés, hazudozás
 
 Gyakori eset, hogy a karaktert át akarják verni. Lehet, hogy ezzel még a játékos is tisztában van, de karaktere egyáltalán nem biztos!\
@@ -32318,6 +32327,8 @@ Sikertelen Lopakodás ↑ esetén: [Hátulról támadás](../065_01_03_harci_poz
 
 Sokszor futunk bele karakterekbe, akikből megpróbálunk kihúzni némi információt. Nyilván nem mindenkit ejtettek a fejére, gyakran nem akarnak választ adni holmi jöttment idegeneknek. Ilyenkor jön jól a **Kihallgatás** fortély.
 
+🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer.altalanos/nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+
 ---
 ### 🔆 Kihallgatás szituáció
 
@@ -32904,6 +32915,8 @@ Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése.
   - [Rejtjelfejtő](../fortelyok.szabad/rejtjelfejto.md) (ennél használható a [Kvantikum](../kepzettsegek.szekunder/kvantikum.md)) képzettség is
 
 Példákhoz lásd a fenti, kapcsolódó fortélyok **Nyomozás** képzettséghez kapcsolódó leírásait.
+
+🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer.altalanos/nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
 
 <br />
 
