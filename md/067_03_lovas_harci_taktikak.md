@@ -15,9 +15,11 @@ Ha megvan:
  1 visszacsapás lehetséges
 ```
 
-Kiváltja a hagyományos "Roham" taktikát.
-
 Nincs elsöprőbb, mint egy (lég)lovas roham! Persze megfelelő feltételek szükségesek hozzá. Amennyiben ezek megvannak, a rohamozó komoly előnyhöz jut.
+
+🔆 Kiváltja a hagyományos "Roham" taktikát.
+
+🔆 Nagy előny, hogy a lovas rohamozáskor **NEM** kap `VÉ` büntetést - ellenben a gyalogos rohammal.
 
 Ilyen támadásnál összesen `1-1` oda- és visszatámadásra van lehetőség, utána a támadó továbbrobog.
 

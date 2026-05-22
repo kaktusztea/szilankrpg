@@ -1,25 +1,28 @@
 ## Támadó dobás
 
 ```
-Támadó Érték + k20
+TÉ (Támadó Érték) + k20
 ```
 
 ```
-TÉ:-4
-  2.támadástól kezdődően
-  minden további támadásnál.
-  NEM Additív.
+Ha legalább 2 támadásod van:
+  fix TÉ:-3 minden támadásra
+  (az 1. támadásra is)
 
-Példa
-  2.tám: TÉ:-4
-  3.tám: TÉ:-4
-  4.tám: TÉ:-4
-  ...
+A levonás NEM additív.
 ```
 
-Harcban, támadáskor a játékos dob `k20`-szal, majd a kapott értéket hozzáadja aktuális **Támadó Értékéhez**. Ennek értéke lesz a **Támadó dobás**.
+```
+Példa: TÉ=34
 
-Amennyiben a támadónak több támadása van az adott körben, akkor a `2.` támadástól kezdődően minden egyes plusz támadás fixen `TÉ:-4` módosítóval történik, amely levonás **NEM** halmozódik.
+Max 1 támadás
+  1.támadás: TÉ:34
+
+Max 3 támadás
+  1.támadás: TÉ:31
+  2.támadás: TÉ:31
+  3.támadás: TÉ:31
+```
 
 ---
 

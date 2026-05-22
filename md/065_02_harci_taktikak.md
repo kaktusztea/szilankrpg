@@ -1,5 +1,6 @@
 ## Harci taktikák
 
+- [1 támadás taktika](#1-t%C3%A1mad%C3%A1s-taktika)
 - [Érintő taktika](#%C3%A9rint%C5%91-taktika-)
 - [Fárasztó taktika](#f%C3%A1raszt%C3%B3-taktika-)
 - [Kezdeményező taktika](#kezdem%C3%A9nyez%C5%91-taktika)
@@ -7,7 +8,6 @@
 - [Öngyilkos roham taktika](#%C3%B6ngyilkos-roham-taktika)
 - [Plusz támadás taktika](#plusz-t%C3%A1mad%C3%A1s-taktika)
 - [Roham taktika](#roham-taktika)
-- [Sűrű taktika](#s%C5%B1r%C5%B1-taktika)
 - [Támadás erőből taktika](#t%C3%A1mad%C3%A1s-er%C5%91b%C5%91l-taktika)
 - [Támadó taktika](#t%C3%A1mad%C3%B3-taktika)
 - [Védő taktika](#v%C3%A9d%C5%91-taktika)
@@ -27,6 +27,22 @@ Hatásuk a kör végéig tart és nem lehet kör közben módosítani, kivéve a
 **Védő Értékedet** legfeljebb `-10/+10` értékkel tolhatod el (taktikák kombinálása esetén is).
 
 <br />
+
+---
+### 1 támadás taktika
+
+```
+Csak 1 támadást adsz le a körben:
+  több-támadás TÉ levonás (-3) nem érvényesül
+```
+
+❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés taktikával együtt
+
+✅ Minden **más** taktikával együtt
+
+Ha **legalább** `2 db` támadásod van, de úgy döntesz, hogy csak `1 db`-ot adsz le a körben, azt az eredeti (levonás nélküli) `TÉ`-vel teheted meg. Ez a több-támadásos modellhez képest `TÉ:+3` bónuszt jelent.
+
+Lásd még: [TÉ levonás támadásonként](063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt)
 
 ---
 ### Érintő taktika ⇄
@@ -161,7 +177,7 @@ szenvedsz el azonnal
 
 ✅ Több ellenféllel való harc esetén
 
-Felpörögsz, cserébe azonnal `VÉ:-4` csökkenést szenvedsz el - mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc.
+Felpörögsz, cserébe azonnal `VÉ:-3` csökkenést szenvedsz el - mivel rendkívül fárasztó az ilyen felfokozott ritmusú harc.
 
 🔆 Tipp: ha fix plusz támadást szeretnél, a **[Harckeret növelés](fortelyok.harci/harckeret_noveles.md)** fortély felvétele segíthet.
 
@@ -191,44 +207,6 @@ Első oda-vissza csapásnál:
 🔆 **Körön belüli** további támadások már normál harcértékekkel történnek, harci taktika is választható
 
 🔆 Rohamhoz min `5-10m` nekifutás szükséges (terepviszony, felszerelés súly függő)
-
----
-### Sűrű taktika
-
-```
--1 támadás
-
-1 db (TÉ:-4) támadásod
-  alap TÉ-vel megy
-```
-
-✅ **Támadó, Érintő, Fárasztó, Kezdeményező, Plusz támadás, Támadás erőből taktika**
-
-❌ Más taktikával együtt
-
-`-1` támadásért cserébe `1 db` "másodlagos" támadásodat, ami már `TÉ:-4` [levonással menne](063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt), továbbra is alap `TÉ`-vel dobhatod. Akkor tudod csak alkalmazni, ha már **legalább** `3` támadásod van a körben.
-
-⚡Példa: `3` támadásod van, `1` támadást beáldozol:
-
-```
-1.támadás: Alap TÉ
-2.támadás: Alap TÉ
-```
-
-⚡ Példa: `4` támadásod van, `1` támadást beáldozol:
-```
-1.támadás: Alap TÉ
-2.támadás: Alap TÉ
-3.támadás: TÉ:-4
-```
-
-⚡ Példa: `5` támadásod van, `2` támadást beáldozol:
-
-```
-1.támadás: Alap TÉ
-2.támadás: Alap TÉ
-3.támadás: Alap TÉ
-```
 
 ---
 ### Támadás erőből taktika

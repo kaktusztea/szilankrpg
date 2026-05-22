@@ -90,10 +90,9 @@ A Támadó Érték szimbolizálja a harcos azon tulajdonságát, hogy az adott f
 + HM
     A TÉ-re költött (KP-ból felvett)
     Harcérték módosító
-+ Plusz támadás levonása
-    A 2. támadástól kezdve minden támadás
-    fixen TÉ:-4 levonással történik
-    (nem halmozódik!)
++ Több-támadás levonása
+    Ha legalább 2 támadásod van:
+    fix TÉ:-3 minden támadásra (1.-re is)
 + Speciális
   - Fortélyokból adódó módosítók
   - Harci helyzetből adódó módosítók

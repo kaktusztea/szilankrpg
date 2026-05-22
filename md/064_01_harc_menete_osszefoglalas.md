@@ -57,14 +57,17 @@ Kezdeményező dobás: KÉ + k20
 Támadó dobás: TÉ + k20
 
 k20 dobás
-    1: NEM kiemelkedő kudarc
+    1: NEM számít kudarcnak
 16-19: Sebzésdobásra Előny+1
    20: Sebzésdobásra Előny+2
 ```
 
 ```
-Minden újabb támadás a körben:
-  TÉ:-4 (NEM additív!)
+Ha legalább 2 támadásod van:
+  fix TÉ:-3 minden támadásra
+  (az 1. támadásra is)
+
+A levonás NEM additív.
 ```
 
 ```

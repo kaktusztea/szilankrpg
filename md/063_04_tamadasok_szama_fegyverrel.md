@@ -60,20 +60,28 @@ Plusz támadások (db) =
 ### TÉ levonás támadásonként
 
 ```
-TÉ:-4
+Ha legalább 2 támadásod van:
+  fix TÉ:-3 minden támadásra
+  (az 1. támadásra is)
 
-2.támadástól kezdődően
-  minden további támadásra.
-  NEM Additív!
+NEM additív.
 ```
 
 ```
-Második támadás: TÉ:-4
-Harmadik támadás: TÉ:-4
-...
+Példa: TÉ=34
+
+Max 1 támadás
+  1.támadás: TÉ:34
+
+Max 3 támadás
+  1.támadás: TÉ:31
+  2.támadás: TÉ:31
+  3.támadás: TÉ:31
 ```
 
-A fenti módosítónak matematikai oka van: így kerüljük el a plusz kapott támadás okozta radikális ugrást az `1` körön belül leadott támadások potenciális sikeressége kapcsán. Ne feledjük: legrosszabb esetben még így is **Védő Érték csökkenést** okoz minden támadás, így a plusz támadások ereje már önmagában is elég hangsúlyos.
+A levonás oka: így kerüljük el a plusz kapott támadások okozta radikális ugrást, ami a sikeres találatok esélyét illeti. Ne feledjük: legrosszabb esetben (nincs találat) még így is **Védő Érték csökkenést** okoz minden támadás, így a plusz támadások ereje már önmagában is elég hangsúlyos.
+
+🔆 Ha csak `1` támadást szeretnél leadni a körben **levonás nélkül**, lásd: [1 támadás taktika](065_02_harci_taktikak.md#1-támadás-taktika).
 
 <br />
 

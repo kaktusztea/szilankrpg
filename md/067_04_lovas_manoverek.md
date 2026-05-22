@@ -33,7 +33,7 @@ Megpróbálsz áttörni az ellenfél sorain, lendületed és hátasod erejét ki
 ---
 ### ⚜️ Lovas, léglovas akasztása
 
-Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd haladó lovas felé mutat.
+Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd [rohamozó lovas](067_03_lovas_harci_taktikak.md#lovas-roham--l%C3%A9glovas-roham) felé mutat.
 
 ❗Nem a lovas, hanem a **védekező gyalogos**, szálfegyverrel végezheti!\
 ❗Az alább leírtak a levegőből indított **Léglovas roham** akasztására is érvényesek.

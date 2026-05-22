@@ -9,7 +9,6 @@
 - [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) 🔁
 - [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
 - [Belharc](fortelyok.harci/belharc.md)
-- [Daráló](fortelyok.harci/daralo.md)
 - [Elpusztíthatatlan](fortelyok.harci/elpusztithatatlan.md)
 - [Elsöprő roham](fortelyok.harci/elsopro_roham.md)
 - [Fárasztás](fortelyok.harci/farasztas.md)

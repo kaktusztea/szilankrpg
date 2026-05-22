@@ -4,7 +4,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 
 ### Megkötések
 
-- A plusz támadásra mindig a szokásos `TÉ:-4` módosító vonatkozik
+- A plusz támadásra mindig a szokásos `TÉ:-3` módosító [vonatkozik](../063_04_tamadasok_szama_fegyverrel.md#t%C3%A9-levon%C3%A1s-t%C3%A1mad%C3%A1sonk%C3%A9nt)
 - Lő- és hajítófegyvereknél nem alkalmazható
 
 ---
