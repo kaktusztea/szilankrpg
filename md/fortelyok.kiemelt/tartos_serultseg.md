@@ -1,6 +1,6 @@
 ## 🟣 Tartós sérültség (3)
 
-A testileg tartósan sérült (rokkant) karakter komoly hátrányokkal jár, ezért kompenzációként `1.` tapasztalati szinten bónusz `KP` javadalmazásban részesül. A sérültség fokától (`1-3`) függően a KM "árazza be" a bónuszt.
+A testileg tartósan sérült (rokkant) karakter komoly hátrányokkal jár, ezért kompenzációként bónusz `KP` javadalmazásban részesül. A sérültség fokától (`1-3`) függően a KM "árazza be" a bónuszt.
 
 ```
 Tartós sérültségért
@@ -14,6 +14,12 @@ Tartós sérültségért
 +18 KP  - 3 fokú
  ⚡ Teljes rokkantság
 ```
+
+🔆 Speciális fortély, mert nincs `KP` költsége, sőt, felvételéért cserébe **kapsz** `KP`-kat!
+
+🔆 Csak `1.` tapasztalati szinten vehető fel
+
+🔆 Az így kapott KP [primer ismeretekre](../010_09_primer_szekunder_ismeretek.md) is fordítható.
 
 ### Sérülés magasabb tapasztalati szinten
 

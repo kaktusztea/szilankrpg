@@ -12,6 +12,8 @@ A Szilánk karakterei alapból tudnak írni/olvasni. Amennyiben olyan karaktert 
 
 Ez a fortély speciális, mert nincs `KP` költsége, sőt, felvételéért cserébe **kapsz** `6 KP` bónuszt!
 
+🔆 Az így kapott KP [primer ismeretekre](../010_09_primer_szekunder_ismeretek.md) is fordítható.
+
 ### Kései tanulás
 
 Amennyiben karaktered később mégis megtanulnál írni/olvasni, töröld ezt a fortélyt és vonj le `6 KP` aktuális Karakteralkotó Pontjaidból.
