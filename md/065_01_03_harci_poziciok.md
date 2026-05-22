@@ -79,7 +79,6 @@ Beszorított karakter
   (0 + k20 SP)
 ```
 
-
 ✅ **Támadó- és Védő** taktikák továbbra is használhatóak
 
 🔆 Két Beszorított helyzetű harcos: mindkettőre érvényesek a büntetések
