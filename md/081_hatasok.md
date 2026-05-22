@@ -30,7 +30,7 @@ Mágiaellenállás dobás
 
 🔆 Halmozódásuk esetén is az alábbi alsó és felső korlátuk érvényes: `[-2, +2]`.
 
-🔆 A fenti Előny/Hátrány modell **Státuszok** esetén alkalmazandó. Ezzel szemben a Fortélyok és Harci taktikák esetén konstans, statikus módosítókat alkalmazunk.
+🔆 A fenti Előny/Hátrány modell **Státuszok** és **képzettség-kiterjesztések** esetén alkalmazandó. Ezzel szemben a Fortélyok fix bónuszai és Harci taktikák esetén konstans, statikus módosítókat alkalmazunk.
 
 ### 🔥 Előny+1
 

@@ -36,24 +36,17 @@ Amennyiben nincs olyan fortély, amely az adott próba esetén szükséges lenne
 
 ### 🟩 `2.1` Normál kiterjesztés
 
-Ebben a kapcsolatban a Fortély megléte nem követelmény, de hiánya esetén levonással dobhat a játékos, mivel a törzstudás (a képzettség maga) nem nyújt az adott területen teljes körű ismeretet.
+Ebben a kapcsolatban a fortély megléte nem követelmény, de hiánya esetén hátrány dobással próbálkozhat a játékos, mivel a törzstudás (a képzettség maga) nem nyújt az adott területen teljes körű ismeretet.
 
 ```
 Fortély foka és
  hatása képzettségpróbára
 
-0.fok: -3
-1.fok: +0
-2.fok: +2
-3.fok: +4
-...
+0.fok: Hátrány-2 a dobásra
+1.fok: 0 (sima dobás)
+2.fok: Előny+1 a dobásra
+3.fok: Előny+2 a dobásra
 ```
-
-`0.fok:` ha nincs meg a Fortély, akkor `-3` módosítóval dobjuk a képzettségpróbát
-
-`1.fok:` ekkor simán, alapértékkel dobjuk a képzettségpróbát
-
-`2+.fok`: ha több fokú a fortély, akkor minden további foka `+2` bónuszt ad a próbára
 
 ### 🟥 `2.2` Erős kiterjesztés
 
@@ -63,18 +56,11 @@ Ekkor a kapcsolat olyan erős a két ismeret között, hogy a fortély követelm
 Fortély foka és
  hatása képzettségpróbára
 
-0.fok: letilt
-1.fok: +0
-2.fok: +2
-3.fok: +4
-...
+0.fok: kudarc, nem is dobhatsz
+1.fok: 0 (sima dobás)
+2.fok: Előny+1
+3.fok: Előny+2
 ```
-
-`0.fok:` ha nincs meg a Fortély, akkor az adott próba nem is dobható, automatikusan sikertelen
-
-`1.fok`: ekkor simán, alapértékkel dobjuk a képzettségpróbát
-
-`2+.fok`: ha több fokú a fortély, akkor minden további foka `+2` bónuszt ad a próbára
 
 <br />
 
@@ -85,7 +71,7 @@ Van, hogy egy képzettségpróba esetén nem csak egy, hanem több fortély is s
 
 #### • Több Normál kiterjesztés hiányzik
 
-A Normál kiterjesztések `-3` büntetései **NEM** additívak. Ha több (Normál kiterjesztésű) fortély kapcsolódik a képzettségpróbához és egyik sincs meg, a büntetés akkor is összesen `-3`-ban maximálódik.
+A Normál kiterjesztések `Hátrány-2` büntetése **NEM** halmozódik. Ha több (Normál kiterjesztésű) fortély kapcsolódik a képzettségpróbához és egyik sincs meg, a büntetés akkor is `Hátrány-2` marad.
 
 #### • Legalább 1 Erős kiterjesztés hiányzik
 
@@ -95,13 +81,13 @@ Ha több fortély terjeszt ki egy képzettséget a próba során és **legalább
 
 ### 🔆 Speciális: Több fortély bónusza
 
-Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít. Kivéve, ha az alacsonyabb elérte a maximum fokát. Ilyenkor a magasabb bónusza az irányadó.
+Amennyiben a fentiek szerint egy szituációban több fortély terjeszt ki egy képzettséget, akkor az esetleges Előny bónuszok (`2.foktól kezdődően`) közül a legalacsonyabb számít. Kivéve, ha az alacsonyabb elérte a maximum fokát. Ilyenkor a magasabb bónusza az irányadó.
 
 Tehát ha például egy képzettséget egy szituációban a KM szerint kiterjeszt
 - `A` fortély - `2.fok`
 - `B` fortély - `3.fok`
 
-... akkor csak `+2` jár a képzettségpróbára, mivel a `2.fok` (alacsonyabb) bónusza határozza meg a plusz értéket.
+... akkor csak `Előny+1` jár a képzettségpróbára, mivel a `2.fok` (alacsonyabb) bónusza határozza meg az Előny fokozatát.
 
 <br />
 
@@ -116,15 +102,15 @@ Johanius Krad pap egy címert vizsgál a bálterem tükrös falán.
 
 \- JK: "Nincs. A Lexikum képzettségem amúgy `8.szintű`."
 
-\- KM: "A Heraldika fortély **Normál kiterjesztésben** van a Lexikummal, így - bár nincs meg a Heraldika Szabad Fortélyod - így is dobhatsz képzettségpróbát, de csak `-3`-mal. A próbánál az **Emlékezet** Tulajdonságodat használd."
+\- KM: "A Heraldika fortély **Normál kiterjesztésben** van a Lexikummal, így - bár nincs meg a Heraldika Szabad Fortélyod - így is dobhatsz képzettségpróbát, de `Hátrány-2`-vel. A próbánál az **Emlékezet** Tulajdonságodat használd."
 
-\- JK: "Jó, akkor `+2` (Emlékezet) + `8-3` (Lexikum -3) + `k10`  vs. `12`"
+\- JK: "Jó, akkor `+2` (Emlékezet) + `8` (Lexikum) + `k10` (`Hátrány-2`)  vs. `12`"
 
 ```
-7 + k10  vs  12
+10 + k10 (Hátrány-2)  vs  12
 ```
 
-  → Tehát ha legalább `5`-öt dobok `k10`-en, akkor sikerül a próba.
+  → Tehát `k10`-zel háromszor dobok és a legkisebb számít.
 
 <br />
 
@@ -139,13 +125,14 @@ Ez a klasszikus [Nyomok követése természetben](szituaciok/nyomok_nyomkovetes_
 
 \- JK: "Természetjárás: `6.szint`, Érzékenység: `+1`"
 
-\- KM: "Ehhez a szituációhoz a **Természetjárás** képzettséghez **két** kiterjesztő **Szabad Fortély** kapcsolódik. Ezekkel hogy állsz? Ha nincs meg bármelyik, akkor is dobhatsz, de csak `-3` büntetéssel."
+\- KM: "Ehhez a szituációhoz a **Természetjárás** képzettséghez **két** kiterjesztő **Szabad Fortély** kapcsolódik. Ezekkel hogy állsz? Ha nincs meg bármelyik, akkor is dobhatsz, de `Hátrány-2`-vel."
 - [Nyomolvasás/eltűntetés](fortelyok.altalanos/nyomolvasas_eltuntetes.md)
 - [Tájtípus: erdős](fortelyok.szabad/tajtipus_erdos.md)
 
 \- JK: "Nyomolvasás: `2.fok`, Tájtípus: erdős: `1.fok`, kimaxoltam."
 
-\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `+2` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`." A "Tájtípus: erdős" nem korlátozza le a Nyomolvasás/eltűntetés bónuszát, mert nincs magasabb foka, mint `1`. Összetett képzettségpróba lesz, mert hosszan kell követni a nyomokat. Két próbát kell dobnod:
+\- KM: "Remek, mindkét kiterjesztés megvan és kapsz `Előny+1` bónuszt, mert a Nyomolvasás/eltűntetés fortélyod nem `1.`, hanem `2.fokú`." A "Tájtípus: erdős" nem korlátozza le a Nyomolvasás/eltűntetés bónuszát, mert nincs magasabb foka, mint `1`.\
+Összetett képzettségpróba lesz, mert hosszan kell követni a nyomokat. Két próbát kell dobnod:
 
 ```
 Nehéz: 12
@@ -155,9 +142,10 @@ Nehéz: 12
 \- JK: "OK, az **Átlagos (9)** így már dobás nélkül is megvan. A **Nehéz (12)**-re dobok... megvan!
 
 ```
-Alap: 6 + 1 + 2(bónusz)
+Alap: 6 + 1 = 7
 
-9 + k10 → 14
+7 + k10 (Előny+1)  vs  12
+→ k10-zel kétszer dobok, nagyobb számít
 ```
 
 \- KM: "Rendben, meglátod a következő csizmanyomot, aztán pár letört ágat, némi szőrcsomóval, ami beleakadt. Észak felé, a hegyek irányába haladtok..."
