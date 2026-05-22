@@ -5,7 +5,6 @@ A harc ritmusát fenntartva, elméd erejének hála kevésbé merít ki a harc s
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
 - Harcmodor - `6.szint` (nem-távolsági)
 
 🌟 **Hatás**: Minden kör elején
@@ -20,7 +19,6 @@ Visszanyersz: 1 VÉ
 ### 2. fok
 
 🔒 **Követelmény**:
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `8.szint`
 - Harcmodor - `9.szint` (nem-távolsági)
 
 🌟 **Hatás**: Minden kör elején
@@ -34,7 +32,6 @@ Visszanyersz: 2 VÉ
 ### 3. fok
 
 🔒 **Követelmény**:
-- Összpontosítás - `12.szint`
 - Harcmodor - `12.szint` (nem-távolsági)
 - [Teljes Védekezés Taktika](../065_02_harci_taktikak.md#teljes-védekezés-taktika) alkalmazása folyamatosan
 

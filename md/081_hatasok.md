@@ -104,7 +104,7 @@ Ami másnak automatikus siker, az neked sima próbadobás.
 ### 🔥 Beszéd - zavart
 
 - Nehezen tudsz szavakat formálni
-- Varázslásnál: Extra Összpontosítás próba (Nehéz). Ha megvan, sikerül a hang komponenst kimondani
+- Varázslásnál: Extra Önuralom tulajdonságpróba (Nehéz). Ha megvan, sikerül a hang komponenst kimondani
 
 ### 🔥 Beszéd - némult
 

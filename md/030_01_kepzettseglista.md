@@ -20,7 +20,6 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 - Nyomozás
 - Orvoslás
 - Ősi nyelv ismerete
-- Összpontosítás
 - Tradíció
 
 → **Szekunder képzettségek**: minden más képzettség
@@ -182,8 +181,6 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 ### Misztikus képzettségek 🅿️
 
 🔵 [Ősi nyelv ismerete](kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) 🔁
-
-🔵 [Összpontosítás](kepzettsegek.primer.misztikus/osszpontositas.md)
 
 🔵 [Tradíció](kepzettsegek.primer.misztikus/tradicio.md)
 

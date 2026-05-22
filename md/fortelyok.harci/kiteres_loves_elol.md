@@ -10,8 +10,6 @@ Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt löv
 
 ### 1. fok
 
-🔒 Összpontosítás - `6.szint`
-
 🌟 [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) szituációban **Akrobatika** képzettségpróbádra `+2` bónuszt kapsz
 
 ---

@@ -137,7 +137,7 @@ Méret átmérő növelés
   Ettől a sebzés nem csökken.
 ```
 
-⭕Összpontosítás próba nehézsége is nő, nem csak a Komplexitás⭕
+⭕Önuralom próba nehézsége is nő, nem csak a Komplexitás⭕
 
 <br />
 
@@ -228,7 +228,7 @@ Komplexitás = 18
 TÉ=30
 ```
 
-A sárkány irányításához **Összpontosítás** próba is dobatható (KM határozza meg a célszámot)
+A sárkány irányításához **Önuralom** tulajdonságpróba is dobatható (KM határozza meg a célszámot)
 
 ---
 ### ⚡Lecsapó tűzkígyó

@@ -9,8 +9,6 @@ Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány ok
 ---
 ### 1. fok
 
-🔒 [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `3.szint`
-
 🌟 **Hatás**: Érzék(látás) Tulajdonságpróba büntetés `1` fokot enyhül
 
 ```
@@ -32,8 +30,6 @@ Láthatatlan ellenfélnél
 
 ### 2. fok
 
-🔒 Összpontosítás - `6.szint`
-
 🌟 **Hatás**: Érzék(látás) Tulajdonságpróba büntetés `2` fokot enyhül
 
 ```
@@ -52,8 +48,6 @@ Láthatatlan ellenfélnél
 <br />
 
 ### 3. fok
-
-🔒 Összpontosítás - `9.szint`
 
 🌟 **Hatás**: Érzék(látás) Tulajdonságpróba büntetés `3` fokot enyhül
 

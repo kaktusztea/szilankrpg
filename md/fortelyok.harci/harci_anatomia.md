@@ -24,7 +24,6 @@ Távharcos harcmodorokra NEM alkalmazható.
 
 🔒 **Követelmény**:
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
 
 🌟 **Hatás**:
 - [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `SP:+2` (csak vértmentes ponton)
@@ -35,7 +34,6 @@ Távharcos harcmodorokra NEM alkalmazható.
 
 🔒 **Követelmény**:
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `9.szint`
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
@@ -47,7 +45,6 @@ Távharcos harcmodorokra NEM alkalmazható.
 
 🔒 **Követelmény**:
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `12.szint`
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `12.szint`
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:

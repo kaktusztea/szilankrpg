@@ -111,10 +111,7 @@ Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, a
  Előny-Hátrány skálán eltolás (k10)
 
 -2: Erős koncentrálás másra
-    + Összpontosítás próba: 15
-
 -1: Koncentrálás másra
-    + Összpontosítás próba: 12
 ```
 
 ### Áldozat állapota

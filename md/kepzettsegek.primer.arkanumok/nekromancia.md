@@ -13,7 +13,7 @@ Az **Életerő** szféra alá tartozó arkánum.
 
 ### Kontroll
 
-Ezzel a formulával a varázsló közvetlenül irányíthatja holttesteket pusztán a mágia erejével. Minél kevesebb az ép izomzat a testen, annál több energiát kell befektetni, hogy a test megmozduljon. Mivel nem lélek, vagy szellemlény nem lakja a testet, ezért folyamatos koncentráció szükséges az irányításhoz. Bonyolultabb cselekvéssorozatnál **Összpontosítás**-, vagy beleélés-próba (**Érzékenység** tulajdonsággal) dobandó.
+Ezzel a formulával a varázsló közvetlenül irányíthatja holttesteket pusztán a mágia erejével. Minél kevesebb az ép izomzat a testen, annál több energiát kell befektetni, hogy a test megmozduljon. Mivel nem lélek, vagy szellemlény nem lakja a testet, ezért folyamatos koncentráció szükséges az irányításhoz. Bonyolultabb cselekvéssorozatnál **Önuralom** tulajdonságpróba, vagy beleélés-próba (**Érzékenység** tulajdonsággal) dobandó.
 
 A ✨**Mentálmágia Érzékelés** formulája itt nem alkalmazható, hisz a halott nem lát. Erre viszont létezik egy külön formula a nekromancián belül.
 

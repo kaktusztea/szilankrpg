@@ -10,7 +10,6 @@ Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Összpontosítás](../kepzettsegek.primer.misztikus/osszpontositas.md) - `6.szint`
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
@@ -21,7 +20,6 @@ Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak
 ### 2. fok
 
 🔒 **Követelmény**:
-- Összpontosítás - `9.szint`
 - Harcmodor - `9.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
