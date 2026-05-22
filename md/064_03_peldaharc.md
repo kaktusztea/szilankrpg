@@ -21,7 +21,7 @@ Fájdalomtűrés (8)
 ```
 
 ```
-Vért (80% lefedettség)
+Páncél (80% lefedettség)
 • Láncing torzó (MGT:8)
   +3 tag: felkarok, combok, lábszár
 • Átlagos minőség (1 MGT / tag)
@@ -83,7 +83,7 @@ Harcmodor: 6.szint
 ```
 
 ```
-Vért: -
+Páncél: -
 SFÉ: -
 ```
 
@@ -197,7 +197,7 @@ VÉ: 51
 ---
 ### Gustav második sebe – Precíz támadás  (`S3` kategória)
 
-Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-ra. Tetves felméri a helyzetet: a láncing túl jól védi a lovagot. Elhatározza, hogy a vért által **nem fedett** területet veszi célba – a lovag lábszárát, amelyet nem borít láncing. Bejelenti a [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert.
+Folytatódik a harc, több sikertelen oda-vissza támadás, Gustav nem támad túl jókat és `VÉ`-je közben lecsökken `46`-ra. Tetves felméri a helyzetet: a láncing túl jól védi a lovagot. Elhatározza, hogy a páncél által **nem fedett** területet veszi célba – a lovag lábszárát, amelyet nem borít láncing. Bejelenti a [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manővert.
 
 #### ⚜️Precíz támadás manőver
 
@@ -388,7 +388,7 @@ A gyilkos összesen `40 ÉP`-t vesztett (a korábbi `8 ÉP`-vel együtt) – tú
 
 Míg Gustav `3 db` sebet (`32 ÉP`) és egy utolsó karcolást (`1 ÉP`) is elviselt és talpon maradt `7 ÉP`-vel, addig a gyengébb fizikumú Tetves ennyitől elvesztette minden `ÉP`-jét. Eszméletlenül rogy össze, miután értetlenül bámul a hasából kimeredő kardra. Ha nem látják el, szép lassan elvérzik.
 
-A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmentette az életét – bár a fedetlen lábszárán kapott szúrás emlékeztetni fogja, hogy a legjobb vért sem véd mindenhol. A háttérben vasalt csizmák csattogása hallatszik, az őrjárat érkezik futva - jó érzékkel későn -, de sok dolguk már nem akad...
+A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmentette az életét – bár a fedetlen lábszárán kapott szúrás emlékeztetni fogja, hogy a legjobb páncél sem véd mindenhol. A háttérben vasalt csizmák csattogása hallatszik, az őrjárat érkezik futva - jó érzékkel későn -, de sok dolguk már nem akad...
 
 ---
 

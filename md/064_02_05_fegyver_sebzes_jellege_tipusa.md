@@ -90,14 +90,14 @@ Ha a karakter olyan sebzési típussal szeretne betalálni, amire fegyvere nem l
 
 ```
 Aktuális SFÉ =
-  Vért SFÉ - Átütés
+  Páncél SFÉ - Átütés
 ```
 
-Sokszor fontos szerep jut azoknak a fegyvereknek is, amelyek rendelkeznek **Átütés** értékkel, mivel a támadott vért megfelelő `SFÉ`-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a vért végleges aktuális `SFÉ`-jét.
+Sokszor fontos szerep jut azoknak a fegyvereknek is, amelyek rendelkeznek **Átütés** értékkel, mivel a támadott páncél megfelelő `SFÉ`-jének kiválasztása után annak értékéből még le kell vonni az **Átütést** is, így kapjuk meg a páncél végleges aktuális `SFÉ`-jét.
 
 A legtöbb fegyver **Átütés** értéke: `0`
 
-Átütéssel olyan fegyverek rendelkeznek, amelyek kifejezetten alkalmasak vértek átlyukasztására legtöbbször azon okból, hogy kis területre koncentrálnak nagy erőt. ⚡Példa: Csákány
+Átütéssel olyan fegyverek rendelkeznek, amelyek kifejezetten alkalmasak páncélok átlyukasztására legtöbbször azon okból, hogy kis területre koncentrálnak nagy erőt. ⚡Példa: Csákány
 
 ---
 ## Mágikus fegyverek sebzése

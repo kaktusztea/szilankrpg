@@ -1,9 +1,9 @@
-## Vért MGT
+## Páncél MGT
 
-Harc és mozgás során a vértek korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**. Ez az oldal a kimondottan a vértek és páncélok MGT értékeivel foglalkozik. Az általános MGT összefoglaló oldalt lásd: [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md).
+Harc és mozgás során a páncélok korlátozhatják a karakterek mozgását. Ennek szimulálására használjuk a **Mozgásgátló Tényezőt**. Ez az oldal a kimondottan a páncélok MGT értékeivel foglalkozik. Az általános MGT összefoglaló oldalt lásd: [Mozgásgátló Tényező (MGT)](062_03_MGT_99.md).
 
 ---
-## Vért MGT hatása
+## Páncél MGT hatása
 
 ```
 Hajlékonyvértek
@@ -25,24 +25,24 @@ TÉ büntetést csökkenti
 <br />
 
 ---
-## Vért MGT számítása
+## Páncél MGT számítása
 
 ```
 Σ MGT =
- + Alap: Vért Torzó struktúra MGT
+ + Alap: Páncél Torzó struktúra MGT
  ± Alapanyag MGT
  + Csatolt MGT
    (Kidolgozottság × tagok száma)
- + Rossz méretű vért MGT
+ + Rossz méretű páncél MGT
  - Erő Tulajdonság
 ```
 
 <br />
 
 ---
-## ⚜️ MGT Alap: Vért Torzó struktúra
+## ⚜️ MGT Alap: Páncél Torzó struktúra
 
-Az egyes vért struktúráknak eltérő alap `MGT` értéke van.
+Az egyes páncél struktúráknak eltérő alap `MGT` értéke van.
 
 ```
 Hajlékonyvért, nem fém
@@ -84,9 +84,9 @@ Csatolt MGT =
  ...
 ```
 
-A torzó mellé pluszban csatolt tagok illesztéseinek minősége (**Kidolgozottság**) határozza meg, hogy egy-egy plusz tag mennyi `MGT`-t ad a vérthez.
+A torzó mellé pluszban csatolt tagok illesztéseinek minősége (**Kidolgozottság**) határozza meg, hogy egy-egy plusz tag mennyi `MGT`-t ad a páncélhoz.
 
-A vért tagok kapcsolódásainak jó **Kidolgozottsága** alapvető fontosságú a gördülékeny mozgáshoz. Egy rossz illesztékekkel készített vértezet rettenetesen nehezíti a mozgást viselője számára, nem minden a nagy `SFÉ`. Kiváló alapanyagból is lehet hitványul megformált munkát készíteni, fontos tehát a jó készítő mester is. Ha jó a **Kidolgozottság**, a plusz tagok `MGT` értéke is alacsonyabb. Ha rossz, nyilván magasabb.
+A páncél tagok kapcsolódásainak jó **Kidolgozottsága** alapvető fontosságú a gördülékeny mozgáshoz. Egy rossz illesztékekkel készített vértezet rettenetesen nehezíti a mozgást viselője számára, nem minden a nagy `SFÉ`. Kiváló alapanyagból is lehet hitványul megformált munkát készíteni, fontos tehát a jó készítő mester is. Ha jó a **Kidolgozottság**, a plusz tagok `MGT` értéke is alacsonyabb. Ha rossz, nyilván magasabb.
 
 ```
 Kidolgozottság kategóriái
@@ -134,7 +134,7 @@ Merevvért, fém
 
 <br />
 
-## ⚜️ MGT módosító: Rossz méretű vért
+## ⚜️ MGT módosító: Rossz méretű páncél
 
 ```
 +0: passzol a méret
@@ -156,7 +156,7 @@ Aki erősebb, azt kevésbé korlátozza egy nehezebb páncél.
 <br />
 
 ---
-## ⚡ Példa Vért MGT
+## ⚡ Példa Páncél MGT
 
 ```
 Lord Gustav full páncél MGT: 12
@@ -173,34 +173,34 @@ Lord Gustav full páncél MGT: 12
 <br />
 
 ---
-## Sérült vért javítása
+## Sérült páncél javítása
 
-Ha megsérül a vért, azt javítani kell és ez bizony nem olcsó mulatság fém vértek esetén.
+Ha megsérül a páncél, azt javítani kell és ez bizony nem olcsó mulatság fém páncélok esetén.
 
 Az elszenvedett csapások alapján a KM meghatároz egy az **egész vértre** vonatkoztatott sérülést:
 
 ```
-Vért sérülése: x %
+Páncél sérülése: x %
 ```
 
 ```
 Javítás ára:
-  Vért teljes ára  x  Vért sérülés %
+  Páncél teljes ára  x  Páncél sérülés %
 ```
 
-## Sérült vért MGT módosító hatása (opcionális)
+## Sérült páncél MGT módosító hatása (opcionális)
 
-Ha megsérül a vért, az bizony előbb-utóbb akadályozni fog a mozgásban.
+Ha megsérül a páncél, az bizony előbb-utóbb akadályozni fog a mozgásban.
 
 ```
 MGT növekedés:
   az eredeti MGT annyi %-kal nő,
-  amennyi a 'Vért sérülés' jellemzője ↓
+  amennyi a 'Páncél sérülés' jellemzője ↓
 ```
 
 ## Felszerelés MGT
 
-A vért MGT mellett említsük meg a kapcsolódó [Felszerelés MGT](010_03_06_felszereles.md) fogalmát is, amely szintén harcot korlátozó tényező. Részleteit lásd az utóbbi linken.
+A páncél MGT mellett említsük meg a kapcsolódó [Felszerelés MGT](010_03_06_felszereles.md) fogalmát is, amely szintén harcot korlátozó tényező. Részleteit lásd az utóbbi linken.
 
 ---
 

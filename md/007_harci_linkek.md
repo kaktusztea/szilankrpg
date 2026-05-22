@@ -38,7 +38,7 @@
 
 ### Páncélok, Fegyverek
 
-[Vértek, Páncélok](069_00_vertek_pancelok.md)
+[Páncélok](069_00_vertek_pancelok.md)
 
 [Fegyverek, pajzsok](068_00_fegyverek.md)
 

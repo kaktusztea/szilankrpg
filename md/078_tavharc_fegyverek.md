@@ -59,8 +59,8 @@ Nyílpuskák
   Példa fegyverek:
     Nyílpuskák, kivéve Kézi, Kh4rei
   Kézi nyílpuskától felfelé Páncéltörőek
-    SFÉ = a vért rétegeinek száma
-    (mágikus vértek esetén a KM dönt)
+    SFÉ = a páncél rétegeinek száma
+    (mágikus páncélok esetén a KM dönt)
 ```
 
 ```

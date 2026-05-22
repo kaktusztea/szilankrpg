@@ -557,7 +557,7 @@ Merevvértviselet fortély MGT csökkentő
 
 #### Kapcsolódik
 
-- [Vért MGT](069_03_vert_MGT.md) fejezet
+- [Páncél MGT](069_03_pancel_MGT.md) fejezet
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md) fortély
 
 <br />

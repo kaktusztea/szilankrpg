@@ -15,12 +15,12 @@ Néhány kivételnél ez kevesebb. Lásd a [Fegyver](068_00_fegyverek.md) tábl�
 Harckeret =
     aktuális Harcmodor szint
   + Gyorsaság tulajdonság
-  - Vért MGT
+  - Páncél MGT
 ```
 
-Egy karakter plusz támadásainak száma attól függ, hogy mennyire képzett az adott fegyver harcmodorában, mennyire fürge (`Gyorsaság` tulajdonság) és milyen vértet visel.
+Egy karakter plusz támadásainak száma attól függ, hogy mennyire képzett az adott fegyver harcmodorában, mennyire fürge (`Gyorsaság` tulajdonság) és milyen páncélt visel.
 
-Számszerűen: az aktuális fegyverhez tartozó harcmodor-képzettség szintje és a Gyorsaság tulajdonság összege határozzák meg az ún. **Harckeret** értéket, melyet a viselt vért `MGT` értéke mérsékel. A Harckeret tehát harcmodoronként egyedi érték. Mivel a vértek `MGT` értéke lejön a Harckeretből, így érdemes megfontolni: a több támadás, vagy a nagyobb védelem a fontosabb.
+Számszerűen: az aktuális fegyverhez tartozó harcmodor-képzettség szintje és a Gyorsaság tulajdonság összege határozzák meg az ún. **Harckeret** értéket, melyet a viselt páncél `MGT` értéke mérsékel. A Harckeret tehát harcmodoronként egyedi érték. Mivel a páncélok `MGT` értéke lejön a Harckeretből, így érdemes megfontolni: a több támadás, vagy a nagyobb védelem a fontosabb.
 
 A **Harckeret** értéke a [Harckeret növelés](fortelyok.harci/harckeret_noveles.md) és [Kétkezes harc](fortelyok.harci/ketkezes_harc.md) fortélyok segítségével emelhető tovább.
 

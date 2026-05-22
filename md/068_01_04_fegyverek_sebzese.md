@@ -8,13 +8,13 @@
 
 ### Jelleg szerint
 
-Zúzó, Szúró, Vágó, Vágó+Íves. Az egyes [vért típusok](069_02_SFE.md) ellen különböző bónuszokat nyújtanak ezek a támadás típusok.
+Zúzó, Szúró, Vágó, Vágó+Íves. Az egyes [páncél típusok](069_02_SFE.md) ellen különböző bónuszokat nyújtanak ezek a támadás típusok.
 
 ```
-Zúzó:      +3 SP fém vértek ellen
+Zúzó:      +3 SP fém páncélok ellen
 Szúró:     +3 SP láncing és alatta
-Vágó:      +1 SP vért nélkül és bőrvért alatt
-Vágó+Íves: +2 SP vért nélküli ellen
+Vágó:      +1 SP páncél nélkül és bőrvért alatt
+Vágó+Íves: +2 SP páncél nélküli ellen
 ```
 
 ---

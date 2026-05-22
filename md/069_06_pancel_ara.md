@@ -25,7 +25,7 @@ Ez a mellvért tag ára egyedül.
 ---
 ### Csatolt tagok ára, Kidolgozottság
 
-A plusz csatolt tagok egyenként a torzó-darab árának `1/5`-ét érik, így egy teljes (100%) vért a torzó-darab árának pont a kétszerese.
+A plusz csatolt tagok egyenként a torzó-darab árának `1/5`-ét érik, így egy teljes (100%) páncél a torzó-darab árának pont a kétszerese.
 
 ```
 1 csatolt tag ára
@@ -66,7 +66,7 @@ A különböző fém ötvözetek alapanyagai változtathatnak az `Ár` szorzón.
 ---
 ### Idea Ár szorzó
 
-A jobb Idea nagyon megdobhatja a vért árát:
+A jobb Idea nagyon megdobhatja a páncél árát:
 
 ```
 +SFÉ       Ár
@@ -89,7 +89,7 @@ A jobb Idea nagyon megdobhatja a vért árát:
      átlagos bőr mellvért ára
 ```
 
-Az SFÉ táblázatban nem véletlenül _szorzó_ értékek szerepelnek arany, vagy más fizetőeszköz helyett. Itt ugyan `1x = 1 arany` arányszámot vázoltunk, de tájegységtől függően más-más lehet a vértek ára.
+Az SFÉ táblázatban nem véletlenül _szorzó_ értékek szerepelnek arany, vagy más fizetőeszköz helyett. Itt ugyan `1x = 1 arany` arányszámot vázoltunk, de tájegységtől függően más-más lehet a páncélok ára.
 
 Természetesen ebbe is bele lehet kötni, hogy pl. egy adott országban nem pont ezek az arányok, de ennyire részletes bontásba véleményünk szerint értelmetlen belemenni – felesleges bonyolítás lenne.
 

@@ -1,6 +1,6 @@
 ## Fegyver mozgásgátló hatása
 
-❌ Fegyverekre **nem** a vértekre alkalmazott [MGT](069_03_vert_MGT.md) pontrendszert használjuk.
+❌ Fegyverekre **nem** a páncélokra alkalmazott [MGT](069_03_pancel_MGT.md) pontrendszert használjuk.
 
 Kézben tartott fegyverek a [Fegyver/Pajzs akadályoztatása](082_statuszok.md#%EF%B8%8F-fegyverpajzs-akad%C3%A1lyoztat%C3%A1sa-1-2) Státusz formájában fejtik ki hatásukat.
 

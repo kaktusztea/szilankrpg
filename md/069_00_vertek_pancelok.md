@@ -1,10 +1,10 @@
-## Vértek, Páncélok
+## Páncélok
 
 ### [Páncélok jellemzői](069_01_pancelok_jellemzoi.md)
 
 ### [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
 
-### [Vért MGT](069_03_vert_MGT.md)
+### [Páncél MGT](069_03_pancel_MGT.md)
 
 ### [Védett terület](069_04_vedett_terulet.md)
 
