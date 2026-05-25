@@ -52,7 +52,7 @@ Mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
 
 ## Megkötések
 
-🔆 [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) manőver (harc közben) után **NEM** lehet hátbaszúrni, csak sima [Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzet alakítható ki
+🔆 [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) manőver (harc közben) után **NEM** lehet hátbaszúrni, csak sima [Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzet alakítható ki.
 
 🔆 [Körkörös harc](../fortelyok.harci/korkoros_harc.md) fortély megléte esetén **harc közben egyáltalán nem** alkalmazhatnak ellened Hátbaszúrást.
 
