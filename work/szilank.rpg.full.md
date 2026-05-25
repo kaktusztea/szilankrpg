@@ -14862,7 +14862,7 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 ```
 
 🌟 **Hatás**:
-- Nem alkalmazhatnak ellened [Hátbaszúrást harc közben](../szituaciok/hatbaszuras_harcolot.md)
+- Nem alkalmazhatnak ellened [Hátbaszúrást harc közben](../szituaciok/hatbaszuras_harcolo_ellenfelet.md)
 - Nem kapják meg a 🗡️[Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás)
 - Nem kapják meg a 🗡️[Félhátulról támadás](../065_01_03_harci_poziciok.md#félhátulról-támadás) módosítóit
 
@@ -19866,14 +19866,16 @@ Van olyan helyzet, mikor a karakter képtelen a védekezésre, például valamil
 ```
 VÉ (ellenfél mozgásának jellege)
 
- 7 - Álló helyzet
-10 - Lassú egyenletes
+ 7: Álló helyzet
+10: Lassú egyenletes
      (séta)
-17 - Egyenletes kocogás
-27 - Sprint egyenes vonalon
-17 - Lassú kiszámíthatatlan
-27 - Közepesen gyors, kiszámíthatatlan
-37 - Gyors, kiszámíthatatlan
+17: Egyenletes kocogás
+27: Sprint egyenes vonalon
+17: Lassú kiszámíthatatlan
+27: Közepesen gyors, kiszámíthatatlan
+37: Nagyon gyors, kiszámíthatatlan
+
+(Akt.VÉ - 15): Harcoló ellenfél
 ```
 
 ```
@@ -22148,32 +22150,34 @@ Beszorított karakter
 ---
 ## Észrevétlen támadás
 
-Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
+Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud és egyáltalán nem képes rá reagálni.
 
 ```
-Lopakodás/rejtőzés
-   vs
-Észlelés
+Sikeres próba kell:
+ Lopakodás/rejtőzés vs. Észlelés
 ```
 
+
+
 ```
-Áldozat VÉ
-  áldozat mozgási jellege
-  határozza meg, ha a
-  Lopakodás sikeres
++5 SP bónusz
 
-+5 SP alapból
-+2 SP / Harci anatómia
-        fortély fok
+Áldozat VÉ:
+  mozgási jelleg és méret
+  határozza meg
 ```
 
-→ [VÉ: Mozgási jelleg és méret](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint)
+🔆 [Mozgási jelleg VÉ](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint) ↑
 
-→ [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---észrevétlen-támadás)
+→ ❌ Támadó más `TÉ` bónuszt nem kaphat
 
-🔆 Támadó más `TÉ` bónuszt nem kaphat
+→ ❌ Harci taktikák NEM használhatóak
 
-🔆 **Észrevétlen támadás** több Manőver követelménye, mint például az [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), vagy a [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról).
+→ ✅ Alkalmazható [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver: nincs `SFÉ`; `+2 SP` / [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély fok
+
+→ [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---észrevétlen-támadás)\
+
+→ **Észrevétlen támadás** több Manőver követelménye: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról)
 
 <br />
 
@@ -23623,12 +23627,16 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 
 ## ⚜️ Harci helyzetek és Manőverek - Észrevétlen támadás
 
-Vannak Manőverek, amelyek [Észrevétlen támadást](065_01_03_harci_poziciok.md#észrevétlen-támadás) igényelnek.
+Vannak Manőverek, amelyek [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás) harci helyzetet igényelnek.
 
-Kérdés, hogy ilyenkor miért dobunk mégis **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik - nem véletlen, hogy az elköltött `HM` pontokon alapszik, amelyek az általános harci tapasztalatot szimbolizálják.
+```
+(E)llenpróba dobás csak
+```
 
-- Támadó tehet bele `Manőver Pontot`
-- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`
+Miért dobunk ilyenkor **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik, amely az általános harci tapasztalatot szimbolizálja (nem véletlen, hogy az elköltött `HM` pontokon alapszik).
+
+- ✅ Támadó tehet bele `Manőver Pontot`
+- ❌ Áldozat **NEM** tehet bele "ellen" `Manőver Pontot`
 
 <br />
 
@@ -24255,7 +24263,7 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 
 **Hatás**: arra tereli az ellenfelet, amerre akarja. Hátrálásnál nem kell használni, az megy magától!
 
-**Kapcsolódó szituáció:** [Hátbaszúrás](szituaciok/hatbaszuras_harcon_kivul.md)
+**Kapcsolódó szituáció:** [Hátbaszúrás](szituaciok/hatbaszuras_bekes_ellenfelet.md)
 
 <br/>
 
@@ -26649,7 +26657,7 @@ A lövés/hajítás során Célzó Értékedre dobsz rá és ezt állítod szemb
 
 ```
 Támadó          Célpont
-CÉ + k20   vs   VÉ
+CÉ + k20   vs   távolsági VÉ
 ```
 
 🔆 Fontos: Célzó dobás esetén **nincs** ❗ `-4` levonás az egy körön belül végzett újabb támadásokra, mint sima fegyveres harcnál. Minden dobás ugyanazzal az eredeti `CÉ` értékkel történik.
@@ -27010,7 +27018,7 @@ Cella =
 
 ```
 Célpont VÉ =
-  Szorzó  x  Cella
+  Szorzó  ×  Cella
 ```
 
 - [Szorzó leírása](073_tavharc_ve_szorzo.md)
@@ -27587,7 +27595,7 @@ Szorzó: 2
 ```
 
 ```
-VÉ = 8  (2 x 4)
+VÉ = 8  (2 × 4)
 ```
 
 ---
@@ -27666,7 +27674,7 @@ Rövid íj Osztó: 4
 
 ```
 VÉ = Szorzó x Cella
-VÉ = 7 x 3 = 21
+VÉ = 7 × 3 = 21
 ```
 
 ---
@@ -27766,7 +27774,7 @@ Szorzó: 7
 ```
 
 ```
-VÉ = 14  (7 x 2)
+VÉ = 14  (7 × 2)
 VÉ = Szorzó x Cella
 ```
 
@@ -27794,7 +27802,7 @@ Szorzó: 6
 ```
 
 ```
-VÉ = 12  (6 x 2)
+VÉ = 12  (6 × 2)
 ```
 
 ```
@@ -31301,18 +31309,21 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 ## Harci szituációk
 
 - [Ajtóstul nekirontani az túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
-- [Hajítás alkalmatlan fegyverrel](szituaciok/hajitas_alkalmatlan_fegyverrel.md)
-- [Hajítás nem dobásra készített tárgyakkal](szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md)
 - [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)
 - [Hátasról leesés](szituaciok/hatasrol_leeses.md)
-- [Hátbaszúrás - harcon kívül](szituaciok/hatbaszuras_harcon_kivul.md)
-- [Hátbaszúrás - harcolót](szituaciok/hatbaszuras_harcolot.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
+
+## Sunyi támadások
+
+- [Hátbaszúrás - békés ellenfelet](szituaciok/hatbaszuras_bekes_ellenfelet.md)
+- [Hátbaszúrás - harcoló ellenfelet](szituaciok/hatbaszuras_harcolo_ellenfelet.md)
 - [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról)
-- [Meglepetésből Precíz támadás max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
+- [Precíz támadás, Meglepetésből, max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
 
 ## Távharc szituációk
 
+- [Hajítás alkalmatlan fegyverrel](szituaciok/hajitas_alkalmatlan_fegyverrel.md)
+- [Hajítás nem dobásra készített tárgyakkal](szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md)
 - [Harcoló tömegbe lövés - egy konkrét célra](szituaciok/harcolo_tomegbe_loves__egy_konkret_celra.md)
 - [Harcoló tömegbe lövés - bárki jó találatnak](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md)
 - [Szándékos kitérés lövés elől próba](szituaciok/szandekos_kiteres_loves_elol.md)
@@ -32115,37 +32126,77 @@ Ha sikeres volt a próba, akkor is fennáll az esésből sebződés veszélye, d
 
 ---
 ---
-## File: md/szituaciok/hatbaszuras_harcolot.md
+## File: md/szituaciok/hatbaszuras_bekes_ellenfelet.md
 
-## Hátbaszúrás: harcolót
+## Hátbaszúrás: harcon kívül
 
-A harcoló karakter folyamatos mozgásban, forgásban van, így komplex szituáció megteremtése szükséges a hátbaszúráshoz:
+Észrevétlenül lopakodva eljutni a célpont háta mögé - annak látótéren kívülről indulva, majd lecsapni.
 
-### Követelmények
+## `I.` Lopakodás célpont háta mögé
 
-- Célpont nem tud a jelenlétedről, eddig nem látott a harc során
-- Célpont látóterén kívül vagy
-- [Terelés manőver](../066_05_altalanos_manoverek.md#terel%C3%A9s) sikeres egy társ részéről - leköti és "irányban tartja" az áldozatot
-- Lopakodás/rejtőzés `vs` Észlelés ellenpróba sikeres ([Észlelés Aktív](erzekeles_eszleles_aktiv_passziv.md#aktív-észlelés))
+### Több Lopakodás/rejtőzés vs Észlelés ellenpróba
 
-### Hatás
+Az összes módosítót a [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md#%EF%B8%8F-alapeset-lopakod%C3%A1srejt%C5%91z%C3%A9s-vs-%C3%A9szlel%C3%A9s-ellenpr%C3%B3b%C3%A1hoz) képzettség leírásában találod.\
+A helyszíntől, távolságtól, jelenlevőktől függően akár [összetett ellenpróbák](../030_06_01_kepzettsegproba.md#%C3%B6sszetett-ellenpr%C3%B3ba) is indokoltak lehetnek - KM dönt.
 
-[Észrevétlen támadás](../065_01_03_harci_poziciok.md#észrevétlen-támadás) harci helyzetet alakítottál ki → [fix VÉ](../062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint)
+### ⚡ Példa
+
+Tegyük fel, hogy az éjjeli, csendes palota folyosóján az őr mögé akarsz lopakodni, majd hátbaszúrni. **Lopakodás/rejtőzés** releváns módosítói - testközelben:
 
 ```
-Célpont VÉ: 37 fixen
- (gyors, kiszámíthatatlan)
-
-+5 SP alapból
-+2 SP / Harci anatómia
-        fortély fok
+-3: Környezeti zajok: süket csend
++6: Lopakodó helyzete: mozgás a látótéren kívül
+-9: Távolság: Testközelbe kerülni
 ```
 
-### Megkötések
+### Ellenpróba dobás
 
-🔆 [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) manőver (harc közben) után **NEM** lehet hátbaszúrni, csak sima [Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzet alakítható ki
+```
+Lopakodás/rejtőzés (-6) + Ügyesség
+        vs
+Észlelés + Érzékenység
+  +0: Passzív Észlelés
+```
 
-🔆 [Körkörös harc](../fortelyok.harci/korkoros_harc.md) fortély megléte esetén **harc közben egyáltalán nem** alkalmazhatnak ellened Hátbaszúrást.
+<br />
+
+---
+## `II.a` Sikeres Lopakodás → Hátbaszúrás
+
+#### `1.` [Hátulról](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) és [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) bónuszai járnak
+
+```
+→ Célpont VÉ = ellenfél mozgás
+               jellegétől függ
+→ Hátulról támadás: Előny+2 TÉ dobásra
+→ +5 SP bónusz
+```
+
+[Ellenfél VÉ mozgási jellegétől függ](../062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint) ↑
+
+#### `2.` Opcionális: [Precíz támadás](../066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver kombó - sima támadás helyett
+
+```
+Ha sikeres, extra bónuszok:
+→ Nincs SFÉ ellenfélnek
+→ +2 SP / Harci anatómia fortély fok
+```
+
+<br />
+
+## `II.b` Sikertelen Lopakodás testközelben
+
+[Hátulról támadás](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) bónuszait kapod csak meg:
+
+```
+Előny+2 TÉ dobásra
+```
+
+<br />
+
+## `II.c` Sikertelen Lopakodás/rejtőzés távolabb
+
+Mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
 
 ---
 
@@ -32156,33 +32207,19 @@ Célpont VÉ: 37 fixen
 
 ---
 ---
-## File: md/szituaciok/hatbaszuras_harcon_kivul.md
+## File: md/szituaciok/hatbaszuras_harcolo_ellenfelet.md
 
-## Hátbaszúrás: harcon kívül
+## Hátbaszúrás: harcoló ellenfelet
 
-Észrevétlenül lopakodva eljutni a célpont háta mögé - annak látótéren kívülről indulva, majd lecsapni.
+A harcoló karakter folyamatos mozgásban, forgásban van, így komplex szituáció megteremtése szükséges a hátbaszúráshoz:
 
-## `1.` Lopakodás célpont háta mögé
+### Követelmények
 
-### Több Lopakodás/rejtőzés vs Észlelés ellenpróba
+- Célpont nem tud a jelenlétedről, eddig nem látott a harc során
+- Célpont látóterén kívül vagy
+- [Terelés manőver](../066_05_altalanos_manoverek.md#terel%C3%A9s) sikeres egy társ részéről - leköti és "irányban tartja" az áldozatot
 
-A helyszíntől, távolságtól, jelenlevőktől függően akár [összetett ellenpróbák](../030_06_01_kepzettsegproba.md#%C3%B6sszetett-ellenpr%C3%B3ba) is indokoltak lehetnek - KM dönt.
-
-⚡ Példa: Tegyük fel, hogy az éjjeli, csendes palota folyosóján az őr mögé akarsz lopakodni, majd hátbaszúrni.
-
-### Lopakodás/rejtőzés releváns módosítói - testközelben
-
-Az összes módosítót a [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md#%EF%B8%8F-alapeset-lopakod%C3%A1srejt%C5%91z%C3%A9s-vs-%C3%A9szlel%C3%A9s-ellenpr%C3%B3b%C3%A1hoz) képzettség leírásában találod.
-
-- `-3`: Környezeti zajok: süket csend
-- `+6`: Lopakodó helyzete: mozgás a látótéren kívül
-- `-9`: Távolság: Testközelbe kerülni
-
-### Észlelés módosítói
-
-```
-+0: Passzív Észlelés
-```
+## `I.` Lopakodás célpont háta mögé
 
 ### Ellenpróba dobás
 
@@ -32190,16 +32227,45 @@ Az összes módosítót a [Lopakodás/rejtőzés](../kepzettsegek.primer.altalan
 Lopakodás/rejtőzés (-6) + Ügyesség
         vs
 Észlelés + Érzékenység
+  +3: Aktív Észlelés
 ```
 
 <br />
 
----
-## `2.` Hátbaszúrás
+## `II.` Sikeres Lopakodás → Hátbaszúrás
 
-Sikeres Lopakodás ↑ esetén: [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) bónuszai
+#### `1.` [Hátulról](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) és [Észrevétlen támadás](../065_01_03_harci_poziciok.md#észrevétlen-támadás) bónuszai járnak
 
-Sikertelen Lopakodás ↑ esetén: [Hátulról támadás](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) bónuszai
+```
+→ Célpont VÉ = Akt.VÉ - 15
+  (mozgás jellege VÉ)
+→ Hátulról támadás: Előny+2 TÉ dobásra
+→ +5 SP bónusz
+```
+
+<br />
+
+#### `2.` Opcionális: [Precíz támadás](../066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver kombó - sima támadás helyett
+
+```
+Ha sikeres, extra bónuszok:
+→ Nincs SFÉ ellenfélnek
+→ +2 SP / Harci anatómia fortély fok
+```
+
+<br />
+
+## `III.` Sikertelen Lopakodás
+
+Mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
+
+<br />
+
+## Megkötések
+
+🔆 [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) manőver (harc közben) után **NEM** lehet hátbaszúrni, csak sima [Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzet alakítható ki.
+
+🔆 [Körkörös harc](../fortelyok.harci/korkoros_harc.md) fortély megléte esetén **harc közben egyáltalán nem** alkalmazhatnak ellened Hátbaszúrást.
 
 ---
 
