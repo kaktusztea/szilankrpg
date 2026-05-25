@@ -33,7 +33,7 @@ Lopakodás/rejtőzés (-6) + Ügyesség
 ---
 ## `II.a` Sikeres Lopakodás → Hátbaszúrás
 
-#### `1.` [Hátulról](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) és [Észrevétlen támadás](../065_01_03_harci_poziciok.md#észrevétlen-támadás) bónuszai járnak
+#### `1.` [Hátulról](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) és [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) bónuszai járnak
 
 ```
 → Célpont VÉ = ellenfél mozgás
@@ -44,7 +44,7 @@ Lopakodás/rejtőzés (-6) + Ügyesség
 
 [Ellenfél VÉ mozgási jellegétől függ](../062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint) ↑
 
-#### `2.` Opcionális: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver kombó - sima támadás helyett
+#### `2.` Opcionális: [Precíz támadás](../066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver kombó - sima támadás helyett
 
 ```
 Ha sikeres, extra bónuszok:

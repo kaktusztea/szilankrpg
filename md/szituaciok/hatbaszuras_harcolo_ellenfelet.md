@@ -34,7 +34,7 @@ Lopakodás/rejtőzés (-6) + Ügyesség
 
 <br />
 
-#### `2.` Opcionális: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver kombó - sima támadás helyett
+#### `2.` Opcionális: [Precíz támadás](../066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver kombó - sima támadás helyett
 
 ```
 Ha sikeres, extra bónuszok:
