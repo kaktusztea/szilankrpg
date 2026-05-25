@@ -159,14 +159,16 @@ Van olyan helyzet, mikor a karakter képtelen a védekezésre, például valamil
 ```
 VÉ (ellenfél mozgásának jellege)
 
- 7 - Álló helyzet
-10 - Lassú egyenletes
+ 7: Álló helyzet
+10: Lassú egyenletes
      (séta)
-17 - Egyenletes kocogás
-27 - Sprint egyenes vonalon
-17 - Lassú kiszámíthatatlan
-27 - Közepesen gyors, kiszámíthatatlan
-37 - Gyors, kiszámíthatatlan
+17: Egyenletes kocogás
+27: Sprint egyenes vonalon
+17: Lassú kiszámíthatatlan
+27: Közepesen gyors, kiszámíthatatlan
+37: Nagyon gyors, kiszámíthatatlan
+
+(Akt.VÉ - 15): Harcoló ellenfél
 ```
 
 ```

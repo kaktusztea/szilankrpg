@@ -88,32 +88,34 @@ Beszorított karakter
 ---
 ## Észrevétlen támadás
 
-Ha valaki úgy képes támadást leadni, hogy ellenfele erről az utolsó pillanatig nem tud, tehát egyáltalán nem képes rá reagálni, akkor **Észrevétlen támadásról** beszélünk.
+Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud és egyáltalán nem képes rá reagálni.
 
 ```
-Lopakodás/rejtőzés
-   vs
-Észlelés
+Sikeres próba kell:
+ Lopakodás/rejtőzés vs. Észlelés
 ```
 
+
+
 ```
-Áldozat VÉ
-  áldozat mozgási jellege
-  határozza meg, ha a
-  Lopakodás sikeres
++5 SP bónusz
 
-+5 SP alapból
-+2 SP / Harci anatómia
-        fortély fok
+Áldozat VÉ:
+  mozgási jelleg és méret
+  határozza meg
 ```
 
-→ [VÉ: Mozgási jelleg és méret](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint)
+🔆 [Mozgási jelleg VÉ](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint) ↑
 
-→ [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---észrevétlen-támadás)
+→ ❌ Támadó más `TÉ` bónuszt nem kaphat
 
-🔆 Támadó más `TÉ` bónuszt nem kaphat
+→ ❌ Harci taktikák NEM használhatóak
 
-🔆 **Észrevétlen támadás** több Manőver követelménye, mint például az [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), vagy a [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról).
+→ ✅ Alkalmazható [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver: nincs `SFÉ`; `+2 SP` / [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély fok
+
+→ [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---észrevétlen-támadás)\
+
+→ **Észrevétlen támadás** több Manőver követelménye: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról)
 
 <br />
 

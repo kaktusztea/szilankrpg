@@ -5,18 +5,21 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 ## Harci szituációk
 
 - [Ajtóstul nekirontani az túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
-- [Hajítás alkalmatlan fegyverrel](szituaciok/hajitas_alkalmatlan_fegyverrel.md)
-- [Hajítás nem dobásra készített tárgyakkal](szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md)
 - [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)
 - [Hátasról leesés](szituaciok/hatasrol_leeses.md)
-- [Hátbaszúrás - harcon kívül](szituaciok/hatbaszuras_harcon_kivul.md)
-- [Hátbaszúrás - harcolót](szituaciok/hatbaszuras_harcolot.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)
+
+## Sunyi támadások
+
+- [Hátbaszúrás - békés ellenfelet](szituaciok/hatbaszuras_bekes_ellenfelet.md)
+- [Hátbaszúrás - harcoló ellenfelet](szituaciok/hatbaszuras_harcolo_ellenfelet.md)
 - [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról)
-- [Meglepetésből Precíz támadás max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
+- [Precíz támadás, Meglepetésből, max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
 
 ## Távharc szituációk
 
+- [Hajítás alkalmatlan fegyverrel](szituaciok/hajitas_alkalmatlan_fegyverrel.md)
+- [Hajítás nem dobásra készített tárgyakkal](szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md)
 - [Harcoló tömegbe lövés - egy konkrét célra](szituaciok/harcolo_tomegbe_loves__egy_konkret_celra.md)
 - [Harcoló tömegbe lövés - bárki jó találatnak](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md)
 - [Szándékos kitérés lövés elől próba](szituaciok/szandekos_kiteres_loves_elol.md)

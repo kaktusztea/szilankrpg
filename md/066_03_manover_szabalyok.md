@@ -23,12 +23,16 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 
 ## ⚜️ Harci helyzetek és Manőverek - Észrevétlen támadás
 
-Vannak Manőverek, amelyek [Észrevétlen támadást](065_01_03_harci_poziciok.md#észrevétlen-támadás) igényelnek.
+Vannak Manőverek, amelyek [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás) harci helyzetet igényelnek.
 
-Kérdés, hogy ilyenkor miért dobunk mégis **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik - nem véletlen, hogy az elköltött `HM` pontokon alapszik, amelyek az általános harci tapasztalatot szimbolizálják.
+```
+(E)llenpróba dobás csak
+```
 
-- Támadó tehet bele `Manőver Pontot`
-- Áldozat **nem** tehet bele "ellen" `Manőver Pontot`
+Miért dobunk ilyenkor **Ellenpróbát**? Az ilyen helyzetben a **Manőver Alap** egyfajta harci ösztönként működik, amely az általános harci tapasztalatot szimbolizálja (nem véletlen, hogy az elköltött `HM` pontokon alapszik).
+
+- ✅ Támadó tehet bele `Manőver Pontot`
+- ❌ Áldozat **NEM** tehet bele "ellen" `Manőver Pontot`
 
 <br />
 

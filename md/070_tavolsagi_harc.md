@@ -24,7 +24,7 @@ A lövés/hajítás során Célzó Értékedre dobsz rá és ezt állítod szemb
 
 ```
 Támadó          Célpont
-CÉ + k20   vs   VÉ
+CÉ + k20   vs   távolsági VÉ
 ```
 
 🔆 Fontos: Célzó dobás esetén **nincs** ❗ `-4` levonás az egy körön belül végzett újabb támadásokra, mint sima fegyveres harcnál. Minden dobás ugyanazzal az eredeti `CÉ` értékkel történik.

@@ -9,7 +9,7 @@ Cella =
 
 ```
 Célpont VÉ =
-  Szorzó  x  Cella
+  Szorzó  ×  Cella
 ```
 
 - [Szorzó leírása](073_tavharc_ve_szorzo.md)
