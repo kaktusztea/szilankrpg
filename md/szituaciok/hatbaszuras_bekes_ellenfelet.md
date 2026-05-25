@@ -38,7 +38,7 @@ Lopakodás/rejtőzés (-6) + Ügyesség
 ```
 → Célpont VÉ = ellenfél mozgás
                jellegétől függ
-→ Hátulról támadás: Előny+2 TÉ dobásra
+→ Előny+2 TÉ dobásra (Hátulról támadás)
 → +5 SP bónusz
 ```
 
