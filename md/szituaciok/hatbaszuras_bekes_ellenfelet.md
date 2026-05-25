@@ -42,7 +42,7 @@ Lopakodás/rejtőzés (-6) + Ügyesség
 → +5 SP bónusz
 ```
 
-[Ellenfél VÉ mozgási jellegétől függ](app://obsidian.md/062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint) ↑
+[Ellenfél VÉ mozgási jellegétől függ](../062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint) ↑
 
 #### `2.` Opcionális: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver kombó - sima támadás helyett
 
