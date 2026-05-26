@@ -112,7 +112,7 @@ Az egyes fegyverek **Sebesség** értékét lásd a **Harcrendszer** [Fegyverek]
 
 Minden távolba ható fegyvernek van **Hatótávja**, amely értelemszerűen az adott fegyverrel elérhető legnagyobb lőtávolságot jelenti. Ezt minden fegyvernél számon tarjuk, értékét méterben jelezzük. A játékos nem lőhet/dobhat a fegyver hatótávján túl (illetve hajítás esetén még szerepet játszhat a támadó Ereje, de erről később).
 
-⚡Példa: a Könnyű nyílpuska **Hatótávja** `50`, tehát maximálisan `50` méterre lehet vele ellőni.
+⚡Példa: a Nyílpuska **Hatótávja** `50`, tehát maximálisan `50` méterre lehet vele ellőni.
 
 <br />
 
@@ -121,7 +121,7 @@ Minden távolba ható fegyvernek van **Hatótávja**, amely értelemszerűen az 
 
 Nem minden fegyver egyformán jó minőségű, valamelyik igazi mestermunka, pontos, megbízható, mások pedig olyan hitványul vannak összeeszkábálva, hogy még egy öt méterre álló gólemet se talál el vele az ember.
 
-A távolsági fegyverek minősége azok **CÉ**-jét javítja, vagy éppen rontja. Például egy átlagos könnyű nyílpuska `8`-as **CÉ**-vel bír. Egy kiváló nyílpuska, amely mestermunka, akár `12`-t is elérhet, ugyanakkor egy ócskavasnál nem lehet meglepő az `4`-es érték sem.
+A távolsági fegyverek minősége azok **CÉ**-jét javítja, vagy éppen rontja. Például egy átlagos Nyílpuska `5`-as **CÉ**-vel bír. Egy kiváló nyílpuska, amely mestermunka, akár `8`-at is elérhet, ugyanakkor egy ócskavasnál nem lehet meglepő az `2`-es érték sem.
 
 Szélsőséges esetben a fegyver **Osztó** értéke is módosulhat, de ökölszabályként kimondható, hogy az **Osztó** – minőségtől függően - **legfeljebb** `±1`-gyel változhat az alapértékhez képest, továbbá ez csak lőfegyverekre vonatkozik, **hajítófegyverekre nem**.
 

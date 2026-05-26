@@ -2,7 +2,7 @@
 
 Tetves, a tolvaj-bérgyilkos egy raktár ablakából les nyílpuskával a sikátorban hazafelé battyogó tehetős kalmárra.
 
-A könnyű nyílpuska **Osztója:** `5`
+A Nyílpuska **Osztója:** `5`
 
 ### `I/1` Tetves Célzó Értéke
 
