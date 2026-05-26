@@ -1,6 +1,16 @@
 ## Fegyver Osztó és Cella értéke a távolsági Védő Értékben
 
-A Célpont `Védő Értékének` kiszámításában játszik szerepet az alábbi két jellemző.
+Előzetes összefoglaló a Célpont `Védő Értékéről`:
+
+```
+Cella =
+  (Távolság (m) / Fegyver Osztó) ↑
+
+Célpont VÉ =
+  Szorzó  ×  Cella
+```
+
+A fent kiemelt jellemzők magyarázatát alább találod.
 
 ### Fegyver Osztó
 
