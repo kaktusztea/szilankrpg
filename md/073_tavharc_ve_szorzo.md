@@ -3,10 +3,10 @@
 A **Szorzó** a célpont egyedi jellemzőit, illetve a környezet hatásait szimulálja. Az alábbi módosítók **összege** adja meg értékét:
 
 ```
-+ Mozgás módosító - célponté
-+ Mozgás módosító - lövészé❕
-+ Méret módosító - célponté
-+ Észlelhetőség - célponté
++ Mozgás módosító (lövészé)❕
++ Mozgás módosító (célponté)
++ Méret módosító  (célponté)
++ Észlelhetőség   (célponté)
 + Szél ereje
 ```
 
