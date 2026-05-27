@@ -26801,9 +26801,25 @@ Lásd bővebben:
 
 ## Fegyver Osztó és Cella értéke a távolsági Védő Értékben
 
-A Célpont `Védő Értékének` kiszámításában játszik szerepet az alábbi két jellemző.
+Előzetes összefoglaló a Célpont `Védő Értékéről`:
+
+```
+Cella =
+  (Távolság (m) / Fegyver Osztó) ↑
+
+Célpont VÉ =
+  Szorzó  ×  Cella
+```
+
+A fent kiemelt jellemzők magyarázatát alább találod.
 
 ### Fegyver Osztó
+
+```
+[1; 6] közötti érték
+
+A nagyobb jobb
+```
 
 A fegyver **Osztó** egy méterben megadott, fegyverenként egyedi távolság-számérték. Megadja, hogy hány méterenként nő **az adott fegyverrel szemben** a célpont távolsági **Védő Értéke**. Gyakorlatilag azt befolyásolja, hogy a cél távolságának növekedésével milyen ütemben romlik találati esélyünk.
 
@@ -26812,7 +26828,7 @@ A fegyver **Osztó** egy méterben megadott, fegyverenként egyedi távolság-sz
 #### ⚡ Osztó példa
 
 ```
-Könnyű nyílpuska
+Nyílpuska
   Osztó: 5
 ```
 
@@ -26879,10 +26895,10 @@ Javasoljuk a KM-nek, hogy ha esetleg mágikus, vagy kifejezetten jó minőségű
 A **Szorzó** a célpont egyedi jellemzőit, illetve a környezet hatásait szimulálja. Az alábbi módosítók **összege** adja meg értékét:
 
 ```
-+ Mozgás módosító - célponté
-+ Mozgás módosító - lövészé❕
-+ Méret módosító - célponté
-+ Észlelhetőség - célponté
++ Mozgás módosító (lövészé)❕
++ Mozgás módosító (célponté)
++ Méret módosító  (célponté)
++ Észlelhetőség   (célponté)
 + Szél ereje
 ```
 
@@ -27524,7 +27540,7 @@ Az egyes fegyverek **Sebesség** értékét lásd a **Harcrendszer** [Fegyverek]
 
 Minden távolba ható fegyvernek van **Hatótávja**, amely értelemszerűen az adott fegyverrel elérhető legnagyobb lőtávolságot jelenti. Ezt minden fegyvernél számon tarjuk, értékét méterben jelezzük. A játékos nem lőhet/dobhat a fegyver hatótávján túl (illetve hajítás esetén még szerepet játszhat a támadó Ereje, de erről később).
 
-⚡Példa: a Könnyű nyílpuska **Hatótávja** `50`, tehát maximálisan `50` méterre lehet vele ellőni.
+⚡Példa: a Nyílpuska **Hatótávja** `50`, tehát maximálisan `50` méterre lehet vele ellőni.
 
 <br />
 
@@ -27533,7 +27549,7 @@ Minden távolba ható fegyvernek van **Hatótávja**, amely értelemszerűen az 
 
 Nem minden fegyver egyformán jó minőségű, valamelyik igazi mestermunka, pontos, megbízható, mások pedig olyan hitványul vannak összeeszkábálva, hogy még egy öt méterre álló gólemet se talál el vele az ember.
 
-A távolsági fegyverek minősége azok **CÉ**-jét javítja, vagy éppen rontja. Például egy átlagos könnyű nyílpuska `8`-as **CÉ**-vel bír. Egy kiváló nyílpuska, amely mestermunka, akár `12`-t is elérhet, ugyanakkor egy ócskavasnál nem lehet meglepő az `4`-es érték sem.
+A távolsági fegyverek minősége azok **CÉ**-jét javítja, vagy éppen rontja. Például egy átlagos Nyílpuska `5`-as **CÉ**-vel bír. Egy kiváló nyílpuska, amely mestermunka, akár `8`-at is elérhet, ugyanakkor egy ócskavasnál nem lehet meglepő az `2`-es érték sem.
 
 Szélsőséges esetben a fegyver **Osztó** értéke is módosulhat, de ökölszabályként kimondható, hogy az **Osztó** – minőségtől függően - **legfeljebb** `±1`-gyel változhat az alapértékhez képest, továbbá ez csak lőfegyverekre vonatkozik, **hajítófegyverekre nem**.
 
@@ -27554,7 +27570,7 @@ Egy hajítófegyvernél legfeljebb akkor elképzelhető a **Osztó** változása
 
 Tetves, a tolvaj-bérgyilkos egy raktár ablakából les nyílpuskával a sikátorban hazafelé battyogó tehetős kalmárra.
 
-A könnyű nyílpuska **Osztója:** `5`
+A Nyílpuska **Osztója:** `5`
 
 ### `I/1` Tetves Célzó Értéke
 
