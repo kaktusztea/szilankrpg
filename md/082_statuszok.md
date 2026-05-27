@@ -345,7 +345,7 @@ Hátrány-1
 
 - napok óta napja nem aludtál
 - Edzettségedhez mérten elfáradtál hegymászás során
-- Egy hete óta nem ettél
+- Egy hete nem ettél
 
 ### ✴️ Fizikai (2) Kimerültség
 

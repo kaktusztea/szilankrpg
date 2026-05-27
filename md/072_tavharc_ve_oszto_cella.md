@@ -51,9 +51,7 @@ Cella =
   (Távolság (m) / Fegyver Osztó) ↑
 ```
 
-Ez a hányados (felfelé kerekítve) adja meg, hogy a fegyver **Osztójához** viszonyítva hányadik **"távolság-cellában"** található a célpont.
-
-A `Védő Érték` végső számításánál ezzel a számmal lesz majd beszorozva a célpont **Szorzója**, amelyet a [következő oldalon](073_tavharc_ve_szorzo.md) tárgyalunk.
+Ez a hányados (felfelé kerekítve) adja meg, hogy hányadik **"távolság-cellában"** található a célpont. A `Védő Érték` végső kalkulációjakor ezzel a számmal lesz majd beszorozva a célpont **Szorzója**, amelyet a [következő oldalon](073_tavharc_ve_szorzo.md) tárgyalunk.
 
 #### ⚡ Cella példa
 
@@ -67,16 +65,17 @@ Cella értéke
   3 = 7/3 ↑
 ```
 
-Ha egy Hajítótőrrel (melynek **Osztója** `3`) lövünk egy `7` méterre levő célra, akkor a hányados: `3`.
+Ha egy `7` méter távolságra levő célra dobsz Hajítótőrrel (**Osztó:** `3`), akkor a **Cella** értéke `3` lesz, mert ez a két érték hányadosa - felfelé kerekítve.
 
 Álljon itt egy ábra, melyről megérthetőek a fentiek:
 
 ![](images/06_cellaszam.png)
 
-Ha a fegyver Osztója nem `3`, hanem mondjuk `2` lenne, akkor következésképpen a célpont a `4.` "cellában" lenne (`7/2`). Látható, hogy minél pontosabb egy fegyver, annál nagyobb az **Osztó** értéke.
+Ha a fegyver Osztója nem `3`, hanem mondjuk `2` lenne, akkor következésképpen a célpont a `4.` "cellában" lenne (`7/2`). Látható, hogy minél nagyobb távot képes átfogni egy fegyver, annál nagyobb az **Osztó** értéke.
 
-🔆 **Mágikus, minőségi bónuszok**:\
-Javasoljuk a KM-nek, hogy ha esetleg mágikus, vagy kifejezetten jó minőségű fegyver értékeit akarja az alapértékhez képest módosítani, akkor az **Osztó** értékét lehetőleg **NE** módosítsa, inkább a fegyver **Célzó Értékét** változtassa.
+#### 🔆 **Mágikus, minőségi bónuszok (ajánlás)**
+
+Ha a KM esetleg mágikus, vagy kifejezetten jó minőségű fegyver értékeit akarja az alapértékhez képest módosítani, akkor az **Osztó** értékét lehetőleg **NE** módosítsa, inkább a fegyver **Célzó Értékét** változtassa.
 
 ---
 
