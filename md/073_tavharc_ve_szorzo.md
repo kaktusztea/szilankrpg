@@ -1,8 +1,16 @@
 ## Szorzó értéke a távolsági Védő Értékben
 
+Emlékeztetőül:
+
+```
+Célpont VÉ =
+  Szorzó  ×  Cella
+```
+
 A **Szorzó** a célpont egyedi jellemzőit, illetve a környezet hatásait szimulálja. Az alábbi módosítók **összege** adja meg értékét:
 
 ```
+Szorzó =
 + Mozgás módosító (lövészé)❕
 + Mozgás módosító (célponté)
 + Méret módosító  (célponté)
@@ -32,9 +40,10 @@ Célpont mozgás jellege
 2x: Harcoló csoport (bárki jó találatnak)
     Ezt is a Méret módosító
     értékénél szimuláljuk
-3x: Sikertelenül szándékosan kitérő célpont
-    Rontott Célpont-Gyorsaságpróba után
+3x: Szándékosan kitérő célpont
+    Rontott Akrobatikapróbája után
     a Lövész Célzó dobást tesz
+    ezzel a Mozgás módosítóval
 ```
 
 - **Harcoló csoport**: Harcoló tömegbe lövést jelent, ahol **bármelyik** fél eltalálása megfelel.
@@ -49,7 +58,7 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 ```
 Lövész mozgása
 
-0x: Mozdulatlan, álló
+0x: Mozdulatlanul áll
 1x: Lassan egyenletesen sétál
 2x: Lassan fut
 3x: Rohan
@@ -78,37 +87,37 @@ Méret módosító
 ---
 ### Szorzó - Észlelhetőség módosító
 
-A látási viszonyok erősen meghatározzák a távolsági harcot, hiszen például félhomályban sokkal nehezebb eltalálni valakit, mint fényes nappal. Viszont... könnyebb valakit eltalálni sötétben, ha zajt ad ki., mintha csendben lapulna. Egyszóval a fenti körülmények is módosítják a **Szorzó** értékét:
+A látási viszonyok erősen meghatározzák a távolsági harcot, hiszen például félhomályban sokkal nehezebb eltalálni valakit, mint fényes nappal. Viszont... könnyebb valakit eltalálni sötétben, ha zajt ad ki, mintha csendben lapulna. Egyszóval a fenti körülmények is módosítják a **Szorzó** értékét:
 
 ```
 Célpont láthatósága és hangossága
 
-0x: Jól kivehető kontúr
-    Nappali célpont; napnyugtakor
-    háztetőn álldogáló célpont
-1x: Szürkületben
-1x: Homályos kontúr
-    Félhomályban mozgó alaké
-    Testközelben levő célpont sötétben
-2x: Éppen kivehető kontúr (zajos)
-    Sötétben moccanó, neszező árnyak
-5x: Éppen kivehető kontúr (csendes)
-    Sötétben, csendben lapuló árnyak
-5x: Háttérrel egybeolvadó kontúr (zajos)
-*   Vaksötétben harcoló ellenfél
++0x: Jól kivehető kontúr
+     Nappali célpont; Napnyugtakor
+     háztetőn álldogáló célpont
++1x: Szürkületben
++1x: Homályos kontúr
+     Félhomályban mozgó alaké
+     Testközelben levő célpont sötétben
++2x: Éppen kivehető kontúr (zajos)
+     Sötétben moccanó, neszező árnyak
++5x: Éppen kivehető kontúr (csendes)
+     Sötétben, csendben lapuló árnyak
++5x: Háttérrel egybeolvadó kontúr (zajos)
+*    Vaksötétben harcoló ellenfél
 
-99x: Háttérrel egybeolvadó kontúr (csendes)
-     Lehetetlen.
-     Nem látható, lopakodó,
-     némán osonó fejvadász
++99x: Háttérrel egybeolvadó kontúr (csendes)
+      Lehetetlen.
+      Nem látható, lopakodó,
+      némán osonó fejvadász
+
+* csak speciális mentális gyakorlat segítségével
 ```
-
-\* csak speciális mentális gyakorlat segítségével
 
 ---
 ### Szorzó - Szél hatása
 
-Amennyiben erős szél fúj, akkor az is módosíthatja a célpont Védő Értékét, mivel az erős széllökések eltéríthetik a lövedéket. Orkán erejű szélben a lövés/hajítás lehetetlen, mindig célt téveszt.
+Az erős szél eltérítheti a lövedéket. Orkán erejű szélben a lövés/hajítás lehetetlen, mindig célt téveszt.
 
 ```
 Szél ereje
