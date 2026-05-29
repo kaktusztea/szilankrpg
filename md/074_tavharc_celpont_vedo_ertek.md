@@ -31,7 +31,6 @@ CÉ + k20   vs   Távolsági VÉ
 
 <br />
 
----
 #### 🔆 Speciális eset: Szorzó értéke `1` alá kerülne
 
 Ritkán fordul elő ez az eset, főleg álldogáló, nagy méretű célok esetén. Ilyenkor a `Védő Érték` negatív értéket is felvehet a negatív **Szorzó** miatt. Ez nem gond, hiszen a `CÉ` alap `-15` alappal indul, viszont a célpont `VÉ` számítása módosul:
