@@ -15,7 +15,7 @@ Célpont VÉ =
 - [Szorzó leírása](073_tavharc_ve_szorzo.md)
 - [Osztó, Cella leírása](072_tavharc_ve_oszto_cella.md)
 
-🔆 A fenti számítások automatizálva lettek a [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) "**Harcértékek**" fülének tetején, így játék közben könnyen tudod kalkulálni a célpont Védő Értékét.
+🔆 A fenti számítások automatizálva lettek a [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) "**Harc**" fülén, így játék közben könnyen tudod kalkulálni a célpont Védő Értékét.
 
 <br />
 
