@@ -1,6 +1,6 @@
 ## Távolsági Harc taktikák
 
-Néhány speciális húzással beleszólhatunk az ilyen szituációkba.
+Néhány egyedi taktika itt is előfordul.
 
 ---
 ### Szándékos kitérés lövés elől
@@ -13,11 +13,22 @@ Akrobatika képzettségpróba
    harci fortéllyal
 ```
 
-Ha valaki látja és van ideje felkészülni a rá leadott **lövésre/hajításra**, valamint rendelkezik elegendő hellyel a kitérésre ÉS bejelenti, hogy megpróbálja elkerülni végzetét, akkor **[Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát** kell dobnia **Gyorsaság** Tulajdonsággal, melynek nehézsége függ a lövést leadó személy távolságától, valamint az általa használt fegyvertől.
+→ [Kitérés lövés elől](fortelyok.harci/kiteres_loves_elol.md) harci fortély
 
-🔆 **Bónusz**: A próbához `+2` járul, ha a karakter rendelkezik [Kitérés lövés elől](fortelyok.harci/kiteres_loves_elol.md) harci fortéllyal.
+#### Követelmények célpont számára
 
-🔆 Kapcsolódik: [Elemi mágia - Mozgatás](kepzettsegek.primer.arkanumok/elemi_magia.md#komplexit%C3%A1s---mozgat%C3%A1s) (EM)
+- észleli a rá leadott lövést/hajítást
+- van elég hely kitérnie
+- bejelenti a szándékos kitérést
+
+#### Akrobatika képzettségpróba Nehézsége függ
+
+- támadótól való távolságtól
+- támadó által használt fegyvertől
+
+
+
+🔆 Kapcsolódik: [Elemi mágia - Mozgatás](kepzettsegek.primer.arkanumok/elemi_magia.md#komplexit%C3%A1s---mozgat%C3%A1s) (`EM`)
 
 ```
 Nem alkalmas tárgyak,
@@ -71,20 +82,20 @@ Leggyorsabb mozgatás (EM)
    9:  40m - 50m, Testközelben
 ```
 
-🔆 Ha a próba sikeres, a célpont elugrott a lövedék elől, a lövész már nem is tehet **Célzó dobást**.
+🔆 Ha a próba sikeres, sikerült elugrani a lövedék elől, a támadó automatikusan elvesztette a támadását - már nem is tehet **Célzó dobást**.
 
-🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy talál-e. Ennek módosítóiról: [Kitérés lövés elől sikertelen](szituaciok/kiteres_loves_elol_sikertelen.md).
+🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy betalál-e. Ennek módosítóiról itt: [Kitérés lövés elől sikertelen](szituaciok/kiteres_loves_elol_sikertelen.md).
 
 <br />
 
 ---
 ### Páros, kétkezes hajítás
 
-Egyszerre két kézzel `1-1` fegyvert elhajítani. Ebben a szituációban `2`db célzó dobást tesz a karakter mindkettőt `Hátrány-1` büntetéssel. Természetesen ha mindkettő talál, mindkettő sebez is.
+Egyszerre két kézzel `1-1 db` fegyvert elhajítani. Ebben a szituációban `2 db` (!) Célzó dobást tesz a karakter, mindkettőt `Hátrány-1` büntetéssel. Természetesen minden találat külön-külön sebez (ha betalál).
 
-A fegyver méretének az **Erő** Tulajdonság és a KM józan esze szab határt.
-
-[Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély megléte esetén csak az egyik `CÉ` dobást sújtja a `Hátrány-1` büntetés.
+→ `1 db` támadásnak számít.\
+→ A fegyver méretének az **Erő** Tulajdonság és a KM józan esze szab határt.\
+→ [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély megléte esetén csak az egyik `CÉ` dobást sújtja a `Hátrány-1` büntetés.
 
 ---
 

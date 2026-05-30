@@ -1,14 +1,14 @@
 ## Területlövés
 
-Ha több lövés, íjász próbál nem direktben célzott lövés leadni, hanem egy területet megszórni, akkor egyszerűsített játékmechanikát alkalmazunk.
+Ha több íjász próbál egy területet megszórni, tehát nem direkt célzott lövést leadni, akkor egyszerűsített játékmechanikát alkalmazunk. Csak íjakkal alkalmazható, nyílpuskával **nem**.
 
 ```
 K: lövészek átlagos
-   Távolsági harc képzettsége
+   Távolsági harcmodor képzettsége
 ```
 
 ```
-Célszám =
+Célszám (VÉ) =
    + 10
    + (Távolság / 20) ↓
    - (K / 3) ↓
@@ -23,17 +23,17 @@ Pajzs lövészek felé tartva
 ```
 
 ```
-Dobás:
+Célpont dob!
 k20  vs  Célszám
 ```
 
-A célpont dob `k20` kockával: amennyiben dobása eléri a Célszámot, akkor eltalálja egy lövedék.
+⚜️ Minden területen tartózkodó **Célpont** dob `k20` kockával egyénlieg: amennyiben dobása eléri a Célszámot, akkor eltalálja egy lövedék.
 
 ### Több találat
 
 ```
 Minden +3-mal túldobott Célszám:
-  +1 találat
+  +1 találatot kap az adott célpont
 ```
 
 ---

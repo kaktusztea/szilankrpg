@@ -2,7 +2,7 @@
 
 A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy távolabbi pontból indítanak különféle mágikus támadást ellenfeleik felé, amely fizikai sebesülést okoz. De hogyan történik ilyenkor a célzás, milyen sebességgel halad a lövedék, milyen nehéz a kontroll? Erre adunk választ az alábbiakban.
 
-[Mágikus Célzás](kepzettsegek.primer.harci/magikus_celzas.md) **harcmodor**: ennek felvétele szükséges célzott mágikus hatások létrehozásához.
+→ [Mágikus Célzás](kepzettsegek.primer.harci/magikus_celzas.md) **harcmodor**: ennek felvétele szükséges célzott mágikus hatások létrehozásához.
 
 **Kapcsolódik**
 
@@ -15,8 +15,9 @@ A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy tá
 ## Célzó érték, Osztó
 
 ```
-+ CÉ Alap
-  (TSz + Gyorsaság + Intelligencia)
+CÉ =
+- 15 (CÉ Alap)
++ (TSz + Gyorsaság + Intelligencia)
 + CHM
 + CÉ: (1-4) Mágiatáv I-IV
 + CÉ: (0-3) Mesterfegyver (Mágiatáv) foka
@@ -43,7 +44,7 @@ Mágiatáv IV
  Osztó: 4
 ```
 
-A **Mágiatáv `I-IV`** valójában `1 db` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) fegyverválasztójában a fortély fokának megfelelő verzióját használd.
+A **Mágiatáv `I-IV`** valójában `1-1` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) fegyverválasztójában a fortély fokának megfelelő verzióját használd.
 
 A **Mágiatáv** szimulálja a (mágikus) távolsági "fegyver" kategóriákat ("tárgy, hajító, nyíl, nyílpuska").
 
@@ -82,9 +83,8 @@ Távolbahatás módja: Területmágia
 → Erősség távolsággal gyengül
   -1E / 5 méter
 
-→ Mellékhatás: mágiatudó körül
-  látható csak lövésig. Alacsonyabb
-  észlelhetőség.
+→ Mellékhatás: mágiatudótól, Auratestből
+    csap ki; alacsonyabb észlelhetőség.
 
 → Ellen Észleléspróba harc közben:
   Átlagos nehézség (9)
@@ -94,7 +94,7 @@ Távolbahatás módja: Területmágia
 
 #### `1.` Auratestből
 
-Varázslótól indul. Nincs Célzásnál Szorzó nehezítés.
+Varázslótól indul. Célzásnál nincs **Szorzó nehezítés**.
 
 #### `2.` Aurával kinyúlva máshonnan, vagy más szögből indítani
 
@@ -164,7 +164,7 @@ kitörés, fal, ...⭕
 ---
 ### [Mesterfegyver](fortelyok.harci/mesterfegyver.md) fortély és mágikus fegyverek
 
-Ez a fortély a **Mágiatáv** "fegyverre" is felvehető, akár bármely más fegyverre.
+Ez a fortély a **Mágiatáv** "fegyverre" is felvehető, ahogy bármely más fegyverre.
 
 ```
 +1 CÉ / fok
