@@ -26891,9 +26891,17 @@ Ha a KM esetleg mágikus, vagy kifejezetten jó minőségű fegyver értékeit a
 
 ## Szorzó értéke a távolsági Védő Értékben
 
+Emlékeztetőül:
+
+```
+Célpont VÉ =
+  Szorzó  ×  Cella
+```
+
 A **Szorzó** a célpont egyedi jellemzőit, illetve a környezet hatásait szimulálja. Az alábbi módosítók **összege** adja meg értékét:
 
 ```
+Szorzó =
 + Mozgás módosító (lövészé)❕
 + Mozgás módosító (célponté)
 + Méret módosító  (célponté)
@@ -26923,9 +26931,10 @@ Célpont mozgás jellege
 2x: Harcoló csoport (bárki jó találatnak)
     Ezt is a Méret módosító
     értékénél szimuláljuk
-3x: Sikertelenül szándékosan kitérő célpont
-    Rontott Célpont-Gyorsaságpróba után
+3x: Szándékosan kitérő célpont
+    Rontott Akrobatikapróbája után
     a Lövész Célzó dobást tesz
+    ezzel a Mozgás módosítóval
 ```
 
 - **Harcoló csoport**: Harcoló tömegbe lövést jelent, ahol **bármelyik** fél eltalálása megfelel.
@@ -26940,7 +26949,7 @@ Természetesen a lövést végző személy mozgása is befolyásolja a találati
 ```
 Lövész mozgása
 
-0x: Mozdulatlan, álló
+0x: Mozdulatlanul áll
 1x: Lassan egyenletesen sétál
 2x: Lassan fut
 3x: Rohan
@@ -26969,37 +26978,37 @@ Méret módosító
 ---
 ### Szorzó - Észlelhetőség módosító
 
-A látási viszonyok erősen meghatározzák a távolsági harcot, hiszen például félhomályban sokkal nehezebb eltalálni valakit, mint fényes nappal. Viszont... könnyebb valakit eltalálni sötétben, ha zajt ad ki., mintha csendben lapulna. Egyszóval a fenti körülmények is módosítják a **Szorzó** értékét:
+A látási viszonyok erősen meghatározzák a távolsági harcot, hiszen például félhomályban sokkal nehezebb eltalálni valakit, mint fényes nappal. Viszont... könnyebb valakit eltalálni sötétben, ha zajt ad ki, mintha csendben lapulna. Egyszóval a fenti körülmények is módosítják a **Szorzó** értékét:
 
 ```
 Célpont láthatósága és hangossága
 
-0x: Jól kivehető kontúr
-    Nappali célpont; napnyugtakor
-    háztetőn álldogáló célpont
-1x: Szürkületben
-1x: Homályos kontúr
-    Félhomályban mozgó alaké
-    Testközelben levő célpont sötétben
-2x: Éppen kivehető kontúr (zajos)
-    Sötétben moccanó, neszező árnyak
-5x: Éppen kivehető kontúr (csendes)
-    Sötétben, csendben lapuló árnyak
-5x: Háttérrel egybeolvadó kontúr (zajos)
-*   Vaksötétben harcoló ellenfél
++0x: Jól kivehető kontúr
+     Nappali célpont; Napnyugtakor
+     háztetőn álldogáló célpont
++1x: Szürkületben
++1x: Homályos kontúr
+     Félhomályban mozgó alaké
+     Testközelben levő célpont sötétben
++2x: Éppen kivehető kontúr (zajos)
+     Sötétben moccanó, neszező árnyak
++5x: Éppen kivehető kontúr (csendes)
+     Sötétben, csendben lapuló árnyak
++5x: Háttérrel egybeolvadó kontúr (zajos)
+*    Vaksötétben harcoló ellenfél
 
-99x: Háttérrel egybeolvadó kontúr (csendes)
-     Lehetetlen.
-     Nem látható, lopakodó,
-     némán osonó fejvadász
++99x: Háttérrel egybeolvadó kontúr (csendes)
+      Lehetetlen.
+      Nem látható, lopakodó,
+      némán osonó fejvadász
+
+* csak speciális mentális gyakorlat segítségével
 ```
-
-\* csak speciális mentális gyakorlat segítségével
 
 ---
 ### Szorzó - Szél hatása
 
-Amennyiben erős szél fúj, akkor az is módosíthatja a célpont Védő Értékét, mivel az erős széllökések eltéríthetik a lövedéket. Orkán erejű szélben a lövés/hajítás lehetetlen, mindig célt téveszt.
+Az erős szél eltérítheti a lövedéket. Orkán erejű szélben a lövés/hajítás lehetetlen, mindig célt téveszt.
 
 ```
 Szél ereje
@@ -27039,7 +27048,7 @@ Célpont VÉ =
 - [Szorzó leírása](073_tavharc_ve_szorzo.md)
 - [Osztó, Cella leírása](072_tavharc_ve_oszto_cella.md)
 
-🔆 A fenti számítások automatizálva lettek a [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) "**Harcértékek**" fülének tetején, így játék közben könnyen tudod kalkulálni a célpont Védő Értékét.
+🔆 A fenti számítások automatizálva lettek a [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) "**Harc**" fülén, így játék közben könnyen tudod kalkulálni a célpont Védő Értékét.
 
 <br />
 
@@ -27055,7 +27064,6 @@ CÉ + k20   vs   Távolsági VÉ
 
 <br />
 
----
 #### 🔆 Speciális eset: Szorzó értéke `1` alá kerülne
 
 Ritkán fordul elő ez az eset, főleg álldogáló, nagy méretű célok esetén. Ilyenkor a `Védő Érték` negatív értéket is felvehet a negatív **Szorzó** miatt. Ez nem gond, hiszen a `CÉ` alap `-15` alappal indul, viszont a célpont `VÉ` számítása módosul:
@@ -27172,7 +27180,7 @@ A fegyver méretének az **Erő** Tulajdonság és a KM józan esze szab határt
 
 ---
 
-🔗 [Távharc fegyverek](078_tavharc_fegyverek.md) →
+🔗 [Távolsági harc csatamagia esetén](076_tavharc_csatamagia_eseten.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)
 
@@ -32440,7 +32448,7 @@ Ilyenkor a lövész rendesen **Célzó Dobást** tesz.
 ### Célpont Védő Érték kiszámítása
 
 Szokásos módon, de\
-`3x`: [Sikertelenül szándékosan kitérő célpont](../073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont) Szorzó - Mozgás módosítóval
+`3x`: [Sikertelenül szándékosan kitérő célpont](../073_tavharc_ve_szorzo.md#szorz%C3%B3---mozg%C3%A1s-m%C3%B3dos%C3%ADt%C3%B3-c%C3%A9lpont) Szorzó-Mozgás módosítóval
 
 ---
 
