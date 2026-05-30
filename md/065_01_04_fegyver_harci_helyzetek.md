@@ -45,9 +45,13 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 ```
 Hátrány-2 Sebzésdobásra
 Hátrány-2 CÉ dobásra
+Fegyver CÉ = 0
+SP: fegyver eredeti sebzése - 5
 ```
 
-Kapcsolódik: [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) fortély.
+⚡ Példa: hosszú kard hajítása
+
+🔆 Mérsékelheti: [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) fortély
 
 ---
 ## Hajítás nem dobásra készített tárgyakkal
@@ -56,6 +60,7 @@ Kapcsolódik: [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyv
 Hátrány-1 Sebzésdobásra
 Hátrány-1 CÉ dobásra
 Fegyver CÉ = 0
+SP: -5 + k20 (FP vagy ÉP: KM dönt)
 ```
 
 ⚡ Példa: sámli hajítása

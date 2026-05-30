@@ -59,8 +59,6 @@ Nyílpuskák
   Példa fegyverek:
     Nyílpuskák, kivéve Kézi, Kh4rei
   Kézi nyílpuskától felfelé Páncéltörőek
-    SFÉ = a páncél rétegeinek száma
-    (mágikus páncélok esetén a KM dönt)
 ```
 
 ```
@@ -69,41 +67,53 @@ Modern, nagy hatótávú fegyver
   Osztó: 12
   Példa fegyverek:
     Távcsöves mesterlövész puska
-  Hogy látszódjon, ez a távolsági
+  Példa, hogy ez a távolsági
   harcrendszer kiválóan adaptálható
   modern szerepjáték világokra is.
-
 ```
 
-🔆 Amennyiben valaki **hajításra nem alkalmas fegyvert** akar dobni, akkor az adott fegyver harcmodorában kismesteri, azaz `6`.szinten jártasnak kell lennie. Ez alatt képzetlen fegyverhasználat büntetéseivel történhet a dobás.
+### Hajítás alkalmatlan fegyverrel
+
+Például hosszú kard hajítása. Alapesetben jelentős büntetésekkel végezhető:
+
+→ [Hajítás alkalmatlan fegyverrel](065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet
+
+⚜️ [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) 🔁 fortély tanulásával (fegyverenként) a büntetések mérsékelhetőek.
+
+<br />
+
+---
+### Hajítás nem dobásra készített tárgyakkal
+
+Például sámli hajítása. Alapesetben büntetésekkel végezhető:
+
+→ [Hajítás nem dobásra készített tárgyakkal](https://github.com/kaktusztea/szilankrpg/blob/master/md/065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgyakkal) harci helyzet
+
+⚜️ [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) fortély tanulásával a büntetések mérsékelhetőek.
 
 <br />
 
 ---
 ### Sebzés bónusz hiánya
 
-Távolsági fegyverek esetén NINCS **Többszörös találatból** adódó plusz sebzés.
+❌ Távolsági fegyverek esetén **NINCS** [Többszörös találatból](064_02_07_sebzes.md#sebz%C3%A9sdob%C3%A1s) adódó plusz sebzés.
 
 <br />
 
 ---
-### Harckeret, Támadások száma (Íjászat, Hajítás)
+### Harckeret, Támadások száma, Sebesség (Íjászat, Hajítás)
 
 ```
 Harckeret =
-    aktuális Harcmodor szint
+    kapcsolódó távolsági Harcmodor szint
   + Gyorsaság tulajdonság
 ```
 
-Ugyanúgy, ahogy a kétkezi fegyverek esetén itt is ugyanúgy a [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) rendszert használjuk.
+✅ [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) rendszert használjuk
 
-Az íjász/hajigász támadásainak száma attól függ, hogy milyen képzett az adott fegyver használatában, vagy annak Harcmodorában, illetve fürge. Ezt a kapcsolódó harci képzettség foka és a **Gyorsaság** Tulajdonság határozzák meg a fentiek szerint.
+❌ [Nyílpuskáknak](068_01_09_nyilpuskak.md) nincs **Sebesség** értéke. Ezt mérsékelheti a [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md) harci fortély.
 
-Távolsági fegyverek esetén - szemben a kétkezi fegyverekkel - nem mindegyiknek van **Sebesség** értéke, mivel újratöltésük annyi időt vesz igénybe, hogy nem lehetséges velük egy körben többször támadni (pl. nyílpuskák).
-
-Ebben az esetben lehet hasznos a [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md) harci fortély.
-
-Az egyes fegyverek **Sebesség** értékét lásd a **Harcrendszer** [Fegyverek](068_00_fegyverek.md) alfejezetében (táblázat)!
+→ Távolsági fegyverek **Sebesség** értékeit lásd itt: [Hajítófegyverek táblázata](068_07_hajitofegyverek.md), [Lőfegyverek táblázata](068_08_lofegyverek.md)
 
 <br />
 
