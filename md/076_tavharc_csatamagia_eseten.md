@@ -18,7 +18,7 @@ A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy tá
 CÉ =
 - 15 (CÉ Alap)
 + (TSz + Gyorsaság + Intelligencia)
-+ CHM
++ CM
 + CÉ: (1-4) Mágiatáv I-IV
 + CÉ: (0-3) Mesterfegyver (Mágiatáv) foka
 + CÉ: (0-3) Forma egyedi értéke

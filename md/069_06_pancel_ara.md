@@ -74,6 +74,7 @@ A jobb Idea nagyon megdobhatja a páncél árát:
  -3       1/7 x
  -2       1/4 x
  -1       1/2 x
+  0        1x
  +1        2x
  +2        4x
  +3        7x
