@@ -4,7 +4,7 @@ code:
 - képzettség: 2
 - fortély: 3
 - tradíció: 4
-- KÉ: 51                # harcértékek
+- KÉ: 51                 # harcértékek
 - TÉ: 52
 - VÉ: 53
 - CÉ: 54
@@ -12,166 +12,206 @@ code:
 - osztó: 56
 - harcmodor: 57
 - sebesség: 58
-- MFP: 59
 
 - átütés: 511            # fegyverek
-- sebzés.mód: 512        # S, V, Z (szúró / vágó / zúzó)
-- íves.fegyver: 513
+- sebzés_mód: 512        # S, V, Z (szúró / vágó / zúzó)
+- íves_fegyver: 513
 - másfélkezes: 514
 - pengehossz: 515
 - sebesség.fegyver: 516
 - erőbónusz: 517
 
-- sikeres.támadás: 552   # akciók
-- sebző.támadás: 553
-- sikeres.manőver: 554   # esemény
+akció:
+- sikeres_támadás: 552   # akciók
+- sebző_támadás: 553
+- sikeres_manőver: 554   # esemény
 - manőver: 555           # egy konkrét manőverre vonatkozó érték dobásnál
-- támadás.szám: 556
+- támadás_szám: 556
 
-- pszipont: 71
-- manapont: 81
+harcérték_konstans:      # harcérték alap konstansai
+- ké: 0
+- té: 10
+- vé: 30
+- cé: -15
 
-harcérték.konstans:      # harcérték alap konstansai
-- ké: 10
-- té: 20
-- vé: 120
-- cé: -30
+páncél:
+- struktúra: "posztó"
+  leírás: "Posztó vagy bunda"
+  fém: false
+  merev: false
+  mgt: 2
+  sfé_fizikai: 2
+  sfé_energia: 4
+  ar_szorzó: 0.1
+  idea_plusz_minusz: 0
+- struktúra: "fegyverkabát"
+  leírás: "Fegyverkabát"
+  fém: false
+  merev: false
+  mgt: 3
+  sfé_fizikai: 3
+  sfé_energia: 5
+  ar_szorzó: 0.5
+  idea_plusz_minusz: 0
+- struktúra: "bőr"
+  leírás: "Bőrpáncél"
+  fém: false
+  merev: false
+  mgt: 5
+  sfé_fizikai: 7
+  sfé_energia: 10
+  ar_szorzó: 1
+  idea_plusz_minusz: 1
+- struktúra: "lánc/sodrony"
+  leírás: "Lánc vagy sodrony"
+  fém: true
+  merev: false
+  mgt: 8
+  sfé_fizikai: 10
+  sfé_energia: 10
+  ar_szorzó: 10
+  idea_plusz_minusz: 1
+- struktúra: "pikkely"
+  leírás: "Pikkely fémpáncél"
+  fém: true
+  merev: true
+  mgt: 8
+  sfé_fizikai: 15
+  sfé_energia: 10
+  ar_szorzó: 50
+  idea_plusz_minusz: 2
+- struktúra: "lemez"
+  leírás: "Lemezpáncél"
+  fém: true
+  merev: true
+  mgt: 10
+  sfé_fizikai: 20
+  sfé_energia: 8
+  ar_szorzó: 100
+  idea_plusz_minusz: 3
 
-vértek:
-  védett.terület:
-  - torzó: 50       # ennyi % védettségek ad
-  - sisak: 10
-  - végtagok: 10    # felkarok; alkarok; combok; lábszárak - tagonként ennyi % védettséget adnak
-  tenyérnyi.erősítés:
-  - MGT: [3,6]      # E két érték között, alak és súlyfüggő   # ⭕
-    SFÉ: [3,18]     # anyagfüggő (lásd lenn)
-  mgt:              # mozgásgátló tényező
-  - posztó: 3
-  - fegyverkabát: 3
-  - bőr: 8
-  - brigantin: 11
-  - lánc/sodrony: 13
-  - pikkely: 17
-  - lemez: 18
-  mgt.szorzók:
-  - nem.merev.nem.fém: [4,2,1,0.5,-1]   # pocsék, gyenge, átlagos, jó, mestermunka. A -1 az 'undef' jelölése.
-  - nem.merev.fém: [4,3,2,1,0.5]
-  - merev.fém: [5,4,3,2,1]
-  fémalapanyagok:
-  - anyag: "acél"
-    sfé.bónusz: 0
-    alap.MGT: 0
-    ár.szorzó: 1
-  - anyag: "bronz"
-    sfé.bónusz: -5
-    alap.MGT: 6             # ⭕
-    ár.szorzó: 0.5
-  - anyag: "abbitacél"
-    sfé.bónusz: 5
-    alap.MGT: -5
-    ár.szorzó: 10
-  - anyag: "mithrill"
-    sfé.bónusz: 10
-    alap.MGT: -10           # ⭕
-    ár.szorzó: 100
-  - anyag: "lunír"
-    sfé.bónusz: 15          # ⭕
-    alap.MGT: -15           # ⭕
-    ár.szorzó: 100000
-  ár.szorzók:
-  - pocsék: 0.1
-  - gyenge: 0.5
+páncél_védett_terület:
+- torzó: 50       # ennyi % védettséget ad
+- sisak: 10       # ennyi % védettséget ad
+- végtagok: 10    # felkarok; alkarok; combok; lábszárak - tagonként ennyi % védettséget adnak
+
+páncél_csatolt_tag_mgt:
+- hajlékonyvért_nem_fem:
+  - pocsék: 1
+  - átlagos: 0.5
+  - mestermunka: 0
+- hajlékonyvért_fem:
+  - pocsék: 2
   - átlagos: 1
-  - jó: 10
-  - mestermunka: 100
-  struktúrák:
-  - struktúra: "posztó/bunda"
-    SFÉ.szúró: 0
-    SFÉ.vágó: 2
-    SFÉ.zúzó: 2
-  - struktúra: "fegyverkabát"
-    SFÉ.szúró: 3
-    SFÉ.vágó: 3
-    SFÉ.zúzó: 2
-  - struktúra: "bőrpáncél"
-    SFÉ.szúró: 2
-    SFÉ.vágó: 4
-    SFÉ.zúzó: 2
-  - struktúra: "brigantin bőrpáncél"
-    SFÉ.szúró: 10
-    SFÉ.vágó: 12
-    SFÉ.zúzó: 7
-  - struktúra: "lánc/sodrony"
-    SFÉ.szúró: 8
-    SFÉ.vágó: 13
-    SFÉ.zúzó: 5
-  - struktúra: "pikkely fémpáncél"
-    SFÉ.szúró: 12
-    SFÉ.vágó: 13
-    SFÉ.zúzó: 6
-  - struktúra: "lemez"
-    SFÉ.szúró: 15
-    SFÉ.vágó: 18
-    SFÉ.zúzó: 10
+  - mestermunka: 0.25
+- merevvért_fem:
+  - pocsék: 3
+  - átlagos: 2
+  - mestermunka: 1
+
+páncél_fémalapanyagok:
+- anyag: "acél"
+  sfé_bónusz: 0
+  mgt_alap: 0
+  ár_szorzó: 1
+- anyag: "bronz"
+  sfé_bónusz: -5
+  mgt_alap: 2
+  ár_szorzó: 0.5
+- anyag: "abbitacél"
+  sfé_bónusz: 5
+  mgt_alap: -2
+  ár_szorzó: 10
+- anyag: "mithrill"
+  sfé_bónusz: 10
+  mgt_alap: -4
+  ár_szorzó: 100
+- anyag: "lunír"
+  sfé_bónusz: 10;20    # több fajta lunír van, különböző bónuszokkal
+  mgt_alap: -6
+  ár_szorzó: 100000
+
+páncél_ár_szorzók:
+- pocsék: 0.1
+- gyenge: 0.5
+- átlagos: 1
+- jó: 10
+- mestermunka: 100
+
+páncél_ár_szorzó_kidolgozottság:
+- pocsék: 0.5
+- átlagos: 1
+- mestermunka: 100
+
+páncél_ár_szorzó_idea:
+- idea: -4
+  ár_szorzó: 0.1
+- idea: -3
+  ár_szorzó: 1/7
+- idea: -2
+  ár_szorzó: 0.25
+- idea: -1
+  ár_szorzó: 0.5
+- idea: 0
+  ár_szorzó: 1
+- idea: 1
+  ár_szorzó: 2
+- idea: 2
+  ár_szorzó: 4
+- idea: 3
+  ár_szorzó: 7
+- idea: 4
+  ár_szorzó: 10
 
 kp:
-- alap: 150
-- perszint: 70
-  leírás: "Szintenként ennyi plusz KP illeti a karaktert"
-- kiegeszito.per.szint: 20
-  leírás: "kiegészítő KP / szint (csak nem-harci és nem-mágikus célra költhető)"
-- fortély:	15
-- hm: 4
-- chm: 4
-- mana: 3
-- pszipont: 2
-- tradíció: 50
-- céltradíció: 25
-- intuíció: 10
-- látás: 7
-- hallás: 7
-- ízlelés.szaglás.tapintás: 7
+- perszint: 50
+  leírás: "Szintenként ennyi KP illeti a karaktert"
+- szekunder.perszint: 20
+  leírás: "Szekunder KP / szint (csak nem-harci és nem-mágikus célra költhető)"
+- fortély: 6
+  leírás: "Fortély KP költsége fokonként"
+- hm: 6
+  leírás: "Harcérték Módosító KP költsége"
+- chm: 6
+  leírás: "Célzóérték Módosító KP költsége"
 - vakság: 45
+  leírás: "Bónuszként kapott KP vakság esetén"
 - süketség: 35
-- tartós.sérülés.per.fok: 10
-
-maxperszint:
-- hm: 8
-- chm: 4
-- mana: 10
-- pszipont: 4
+  leírás: "Bónuszként kapott KP süketség esetén"
+- tartós_sérülés_per_fok: 6
+  leírás: "Tartós sérülés fokaiként ennyi KP jár. 1-3 fokozat van, 3 a legsúlyosabb."
+- analfabeta: 6
+  leírás: "Bónuszként kapott KP analfabetizmus esetén"
+- apro_meretu_leny: 18
+  leírás: "Bónuszként kapott KP apró méretű lény esetén"
+- süketség: 12
+  leírás: "Bónuszként kapott KP süketség esetén"
+- vakság: 18
+  leírás: "Bónuszként kapott KP vakság esetén"
 
 arányok:
-- mfp.per.manőver: 3
-  leírás: "Egy darab Manőver felvételéhez ennyi Manőverfejlesztő Pont (MFP) szükséges"
-- egyik.hm.nagyobb.lehet: 3
-  leírás: "Ennyivel lehet többet tenni TÉ-re és VÉ-re egymáshoz képest egy szintlépés alkalmával"
-- sp.íves.fegyver.bónusz: 2
-  leírás: "Íves fegyverek sebzésbónusza vértnélküli ellenfél esetén"
-- pszi.fortély.max.fok: 4
-- képzettség.max.szint.plusz: 8
-  leírás: "Ennyivel lehet nagyobb egy képzettség szintje, mint a karakter szintje"
-- harci.miszt.képz.szint.plusz: 3
-  leírás: "Ennyivel lehet nagyobb egy harci/misztikus képzettség szintje, mint a karakter szintje"
+- max_té_ve_hm_diff_szintlépésenként: 0.5
+  kerekítés: "↓"
+  leírás: "Ennyivel lehet nagyobb a TÉ vagy HM érték, mint a karakter szintje, szintlépésenként. Kerekítés: lefelé."
+- képzettség_nemprimer_max_szint_plusz: 3
+  leírás: "Ennyivel lehet nagyobb egy nem-primer képzettség szintje, mint a karakter tapasztalati szintje"
 
 egészség.kategória.levonás:
 - szint: S1
 - szint: S2
   bünti:
-  - érték: -10
+  - érték: -3
     típus: 52     # TÉ
 - szint: S3
   bünti:
-  - érték: -20
+  - érték: -6
     típus: 52    # TÉ
 - szint: S3
   bünti:
-  - érték: -30
+  - érték: -9
     típus: 52    # TÉ
 
-hátter.csoportok: [faj, leíró, karma]
-fortély.csoportok: [kiemelt, szabad, érzék, alvilági, tudományos, befolyástól_védő, harci, távharc, lovas, misztikus_mágia, slan, titkos]
-képzettség.csoportok: [harci, fizikai, világi, alvilági, művészeti, tudományos, misztikus, szakrális]
-
-kalk:        # Kalkulált értékek ⭕TODO: kell ez ide? Inkább külön kalkulalt_ertekek file képletekkel.
-- erőbónusz: 0
+hátter_csoportok: [faj, leíró, karma]
+fortély_csoportok: [általános, érzekek, harci, kiemelt, mágia.metódusok, misztikus, szabad, távharc]
+képzettség_csoportok: [harci, fizikai, világi, alvilági, művészeti, tudományos, faj misztériumok, misztikus, mágikus szférák és arkánumaik, papi mágia]
+képzettség_kategóriák: [primer, szekunder]

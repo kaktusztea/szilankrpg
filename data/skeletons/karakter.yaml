@@ -19,7 +19,9 @@ tulajdonságok:
     fogékonyság: 0
 
 fortélyok:
-  - tartós_sérülés: 0   # max: 5
+  - analfabéta: false
+  - apro_meretu_leny: false
+  - tartós_sérülés: 0   # max: 3
   - vakság: 0           # max: 1
   - süketség: 0         # max: 1
 

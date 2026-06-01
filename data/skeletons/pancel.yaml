@@ -1,17 +1,17 @@
 - vért: xyz
   version: 1           # a vertezet séma verziója
   stage: ""            # alpha, beta, prod // alpha: változhat struktúrálisan, beta: kész, de még nem mehet prod-ba
-  struktúra: ""        # posztó/bunda, fegyverkabát, bőrpáncél, brigantin bőrpáncél, lánc/sodrony, pikkely fémpáncél, lemez
+  struktúra: ""        # posztó, fegyverkabát, bőrpáncél, lánc/sodrony, pikkely fémpáncél, lemez
   fémalapanyag: ""     # acél, bronz, abbitacél, mithrill, lunír -- csak ha valamilyen fémből van, egyébként üres: ""
   anyagminőség: 0      # 1: rossz, 2: átlagos, 3: jó
   kidolgozottság: 0    # 1: pocsék, 2: gyenge, 3: átlagos, 4: jó, 5: mestermunka
-  mellvért: True       # Van benne mellvért tag? (50% védelem)
-  sisak: False         # Van benne sisak tag?    (10% védelem)
+  mellvért: true       # Van benne mellvért tag? (50% védelem)
+  sisak: false         # Van benne sisak tag?    (10% védelem)
   végtagvédettség: 0   # 1-4 (felkarok; alkarok; combok; lábszárak -- tagonként 10%)
-  SFÉ:
-  - szúró: 0
-  - vágó: 0
-  - zúzó: 0
+  sfé:                 # a páncél SebzésFelfogó Értékei
+  - fizikai: 0         # a páncél által adott fizikai SFÉ
+  - energia: 0         # a páncél által adott energia SFÉ
   - rongálódás: 0      # ennyivel csökken az SFÉ a páncél megrongálódott állapota miatt
-  ár: 0                # a páncél ára ezüstben
+  mgt: 0               # a páncél Mozgásgátló Tényezője
+  ár: 0                # a páncél ár szorzó
   megjegyzes: ""       # honnan származik, egyedi jellemzők
