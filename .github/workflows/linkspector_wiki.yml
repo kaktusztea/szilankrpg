@@ -16,6 +16,8 @@ jobs:
           repository: ${{github.repository}}.wiki
       - name: Install Chrome
         uses: browser-actions/setup-chrome@latest
+      - name: Install Puppeteer Chrome
+        run: npx puppeteer browsers install chrome
       - name: Run linkspector wiki
         uses: umbrelladocs/action-linkspector@v1
         with:
