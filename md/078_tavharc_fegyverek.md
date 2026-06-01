@@ -120,7 +120,7 @@ Harckeret =
 ---
 ### Hatótáv
 
-Minden távolba ható fegyvernek van **Hatótávja**, amely értelemszerűen az adott fegyverrel elérhető legnagyobb lőtávolságot jelenti. Ezt minden fegyvernél számon tartjuk, értékét méterben jelezzük. A játékos nem lőhet/dobhat a fegyver hatótávján túl (illetve hajítás esetén még szerepet játszhat a támadó Ereje, de erről később).
+A fegyver méterben megadott, elérhető legnagyobb lőtávolságát jelenti. Hajítás esetén még szerepet játszhat a támadó Erő tulajdonsága.
 
 ⚡Példa: a Nyílpuska **Hatótávja** `50`, tehát maximálisan `50` méterre lehet vele ellőni
 
