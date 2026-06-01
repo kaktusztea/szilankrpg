@@ -2,7 +2,6 @@
 név: ""
 skeleton_version: 1        # a kepzettseg séma (skeleton) verziója
 stage: ""                  # alpha, beta, prod // alpha: változhat struktúrálisan, beta: kész, de még nem mehet prod-ba
-csoport: ""                # lásd konstansok.yaml / képzettség.csoportok
+primer: false              # false: szekunder; true: primer képzettség
 leírás: ""                 # rövid, egy mondatos leírás
-primer: false              # true, ha ez a képzettség egy primer képzettség
-kategória: ""              # lásd konstansok.yaml / képzettség_csoportok
+csoport: ""                # harci, fizikai, világi, alvilági, művészeti, tudományos, faj misztériumok, misztikus, mágikus szférák és arkánumaik, papi mágia

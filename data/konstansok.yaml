@@ -214,4 +214,3 @@ egészség.kategória.levonás:
 hátter_csoportok: [faj, leíró, karma]
 fortély_csoportok: [általános, érzekek, harci, kiemelt, mágia.metódusok, misztikus, szabad, távharc]
 képzettség_csoportok: [harci, fizikai, világi, alvilági, művészeti, tudományos, faj misztériumok, misztikus, mágikus szférák és arkánumaik, papi mágia]
-képzettség_kategóriák: [primer, szekunder]

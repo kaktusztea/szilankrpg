@@ -1,54 +1,63 @@
 ---
 név: ""
-skeleton_version: 1         # a karakter séma (skeleton) verziója
-faj: ""
-vallás: ""
-személyiségjegyek: ""
-kommunikáció_szociális_érzék: ""
+skeleton_version: 1      # karakter séma (skeleton) verziója
 
 tapasztalati_szint: 1
+leírás: ""                 # freetext leírás
+kor: 0
+vallás: ""
 
 tulajdonságok:
   - erő: 0
-    edzettség: 0
-    ügyesség: 0
-    gyorsaság: 0
-    intelligencia: 0
-    emlékezet: 0
-    önuralom: 0
-    fogékonyság: 0
+  - edzettség: 0
+  - ügyesség: 0
+  - gyorsaság: 0
+  - intelligencia: 0
+  - emlékezet: 0
+  - önuralom: 0
+  - fogékonyság: 0
 
-fortélyok:
+fortélyok_speciális:
   - analfabéta: false
   - apro_meretu_leny: false
-  - tartós_sérülés: 0   # max: 3
-  - vakság: 0           # max: 1
-  - süketség: 0         # max: 1
+  - tartós_sérülés_fok: 0   # max: 3
+  - vakság: false
+  - süketség: false
+
+kulturkörök:            # Ingyen jár TSz/2 ↑ db kulturkör
+  - név: ""
+  - név: ""
+  - név: ""
+
+helyismeret:           # Ingyen jár TSz/2 ↑ db helyismeret
+  - helynév: ""
+  - helynév: ""
+  - helynév: ""
+
+szabad_fortélyok:      # Ingyen jár TSz db szabad fortély
+  - név: ""
+  - név: ""
+  - név: ""
 
 képzettségek:
-  helyismeret:
-    - spec: 10
-      helység: "saját város"
-    - spec: 0
-      helység: "másik hely"
-  történelemismeret:
-    - spec: 3
-      helység: "saját állam"
-    - átlagos: 0
-      régió: ""         # Táblázatban összeállítható: {képzettségnév} ({régió})
-    - átfogó: 0
-      terület: "Ynev"
-      unique: true      # Nem lehet több "átfogó" típusú. Csekkoláshoz kell ez a flag
-  vallásismeret:
-    - spec: 3                # TODO: ez tuti spec?
-      vallás: "saját vallás"
-    - átlagos: 0
-      hitvilág: ""
-    - átfogó: 0
-      terület: "általános"
-      unique: true
-  nyelvismeret:
-    - spec: 9
-      nyelv: "saját nyelv"
-    - spec: 6
-      nyelv: "közös nyelv"
+  - név: ""
+    szint: 0
+  - név: ""
+    szint: 0
+
+fortélyok:
+  - név: ""
+    fok: 0
+  - név: ""
+    fok: 0
+
+hátterek:
+  - faj: ""
+  - leíró:
+      - elem: ""
+      - elem: ""
+      - elem: ""
+  - karma:
+      - elem: ""
+      - elem: ""
+      - elem: ""
