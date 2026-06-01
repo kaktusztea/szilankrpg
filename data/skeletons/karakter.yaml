@@ -17,6 +17,29 @@ tulajdonságok:
   - önuralom: 0
   - fogékonyság: 0
 
+képzettségek:
+  - név: ""
+    szint: 0
+  - név: ""
+    szint: 0
+
+fortélyok_kiemelt:
+  kulturkörök:            # Ingyen jár TSz/2 ↑ db kulturkör
+   - név: ""
+   - név: ""
+   - név: ""
+  helyismeret:            # Ingyen jár TSz/2 ↑ db helyismeret
+   - helynév: ""
+   - helynév: ""
+   - helynév: ""
+  nyelvismeret:           # 4. képzettség szinttől kezdve minden szinten 3 pontot kapsz, amiből Nyelvismeret fortély fokokat tudsz felvenni. 1 fok = 1 pont, max 3 fok egy nyelvből. 2 fok van: alap és udvari. Ezek 1-1 fokot igényelnek.
+   - nyelv: ""
+     fok: alap            # alap, udvari
+   - nyelv: ""
+     fok: alap
+   - nyelv: ""
+     fok: alap
+
 fortélyok_speciális:
   - analfabéta: false
   - apro_meretu_leny: false
@@ -24,26 +47,10 @@ fortélyok_speciális:
   - vakság: false
   - süketség: false
 
-kulturkörök:            # Ingyen jár TSz/2 ↑ db kulturkör
+fortélyok_szabad:      # Ingyen jár TSz db szabad fortély
   - név: ""
   - név: ""
   - név: ""
-
-helyismeret:           # Ingyen jár TSz/2 ↑ db helyismeret
-  - helynév: ""
-  - helynév: ""
-  - helynév: ""
-
-szabad_fortélyok:      # Ingyen jár TSz db szabad fortély
-  - név: ""
-  - név: ""
-  - név: ""
-
-képzettségek:
-  - név: ""
-    szint: 0
-  - név: ""
-    szint: 0
 
 fortélyok:
   - név: ""
