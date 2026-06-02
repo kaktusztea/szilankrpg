@@ -1,6 +1,6 @@
 név: "fárasztás"
 névkomment: ""
-skeleton_version: 3
+skeleton_version: 4
 stage: "beta"
 maxfok: 1
 többszörösség:
@@ -22,11 +22,6 @@ fokok:
         enabled: True
         érték: 6
         típus: 2              # harcmodor ⭕ vagy inkább képzettség?
-        text: ""
-      - név: "ügyesség"
-        enabled: True
-        érték: 1
-        típus: 1              # tulajdonság
         text: ""
     hatástext:
       - text: "Ha a **Fárasztás** harci taktikát alkalmazod akkor további `+3 VÉ`-t csökkentesz ellenfeleden támadáskor."

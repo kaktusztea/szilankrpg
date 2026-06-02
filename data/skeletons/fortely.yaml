@@ -1,57 +1,56 @@
 ---
 név: ""
 névkomment: ""                # a név melletti opcionális kiegészítő szöveg
-skeleton_version: 3           # a fortely séma (skeleton) verziója
-stage: ""                     # alpha, beta, prod // alpha: változhat struktúrálisan, beta: kész, de még nem mehet prod-ba
+skeleton_version: 4           # a fortely séma (skeleton) verziója
+stage: ""                     # alpha, beta, prod
 maxfok: 2                     # Legfeljebb hány foka lehet a fortélynak
 többszörösség:
-  - enabled: ""               # true / false: Engedélyezett -e a fortély többszöri felvétele
-    jellemzőtípus: ""         # Milyen jellemzőlista elemei szerint vehető fel többször. Pl: "harci alakzat"
-    jellemzőlista: ""         # Lista: Pl: "lovas ék; testudo; ..."  (harci alakzatok listája)
-csoport: ""                   # lásd konstansok.yaml / fortély.csoportok
+  - enabled: ""               # true / false
+    jellemzőtípus: ""         # Pl: "harci alakzat"
+    jellemzőlista: ""         # Pl: "lovas ék; testudo; ..."
+csoport: ""                   # lásd konstansok.yaml / fortély_csoportok
 leírások:
-  - text: ""                  # Ebből lehet több entry, üres sor (dupla sortörés) lesz közöttük.
+  - text: ""
 megjegyzések:
-  - text: ""                  # Ebből lehet több entry
+  - text: ""
 fokok:
   - fok: 0                    # 0 == alapeset
-    status:                   # ⭕/✅ fejlesztéhez segítség: az adott fok kidolgozottsági állapotát jelzi. piros kör: fékész, zöld pipa: kész
-    követelménytext: ""       # Sima, szöveges követemény mező. Nem lesz kalkuláció alapja.
-    követelmények:            # Alapesetnél is lehet követelmény. Bővebb kifejtése az 1. foknál lejjebb.
+    status:                   # ⭕/✅
+    követelménytext: ""       # Szöveges követelmény (nem kalkuláció alapja)
+    követelmények: ""         # Lehet üres (""). Megengedett típusok: 2 (képzettség/harcmodor), 3 (kizárólag "mesterfegyver" fortély)
     hatástext:
-      - text: ""              # Ebből lehet több entry. sima szöveges hatás mező.
-    hatások: ""               #  Alapesetnél is lehet hatás. Bővebb kifejtése az 1. foknál lejjebb.
+      - text: ""
+    hatások: ""
     kombihatások: ""
   - fok: 1
     status:
-    követelménytext: ""       # Általános szöveges követelmény erre a fokra. Lehet előtörténeti jellegű is.
-    követelmények:
-      - név: "xxx"            # ebből több entry lehet.
-        enabled: True         # Ez a követelmény aktív, itt letiltható (akár csak ideiglenesen, tesztelési céllal). Normál állapot: True
-        érték: 0
-        típus: 0              # lásd: konstansok.yaml
+    követelménytext: ""
+    követelmények:            # Megengedett típusok: 2 (képzettség/harcmodor), 3 (kizárólag "mesterfegyver" fortély)
+      - név: "harcmodor_neve" # ebből több entry lehet. _ == VAGY kapcsolat.
+        enabled: True
+        érték: 0              # képzettségszint
+        típus: 2              # 2: képzettség/harcmodor
         text: ""
-      - név: "abc_def_ghi"    # _ == VAGY kapcsolat, pl: "hajítás VAGY íjászat VAGY lövészet". ÉS kapcsolat nincs, arra csináljunk egy új rekordot.
-        enabled: True         # Ez a követelmény aktív, itt letiltható (akár csak ideiglenesen, tesztelési céllal). Normál állapot: True
-        érték: 0
-        típus: 0              # lásd: konstansok.yaml
+      - név: "mesterfegyver"  # opcionális; CSAK "mesterfegyver" fortélyra hivatkozhat
+        enabled: True
+        érték: 0              # fok
+        típus: 3              # 3: fortély (kizárólag mesterfegyver!)
         text: ""
     hatástext:
       - text: ""
-    hatások:                  # Ha nem számszerűsíthetőek, akkor csak a 'hatástext' mezőt töltsd ki, a 'hatások' legyen üres így: ""
-      - név: "xyxy"           # ebből több entry lehet
-        enabled: True         # ez a hatás aktív, itt letiltható (akár csak ideiglenesen, tesztelési céllal)
+    hatások:                  # Ha nem számszerűsíthető → üres ("")
+      - név: ""
+        enabled: True
         érték: 0              # bónusz
         típus: 0              # lásd: konstansok.yaml
-        text: ""              # az adott hatás szöveges leírása (ha szükséges)
-    kombihatások:             # Kombinált hatások. Egyik érték valamilyen aránya ad bónuszt egy másikra. Lehet üres ("").
-      - forrásnév: "efg"      # A jellemző, ami a bónusz alapja. Ebből is több entry lehet
-        enabled: True         # ez a hatás aktív, itt letiltható (akár csak ideiglenesen, tesztelési céllal)
+        text: ""
+    kombihatások:             # Kombinált hatások. Lehet üres ("").
+      - forrásnév: ""
+        enabled: True
         típus: 0              # lásd: konstansok.yaml
-        bónuszarány: 0        # A forrás-jellemző mekkora része képzi a bónuszt. Pl. 0.5, 1, 2, -1
-        célnév: "bnm"         # A jellemző, amihez a bónusz hozzáadódik.
+        bónuszarány: 0
+        célnév: ""
         céltípus: 0           # lásd: konstansok.yaml
-        text: ""              # az adott kombinált hatás szöveges leírása (ha szükséges)
-todo:                           # Ha a forrás és cél ugyanaz, akkor 'bónuszarány:1' a jellemző duplázását jelenti.
-  - text: "⭕"
-  - text: "⭕"
+        text: ""
+todo:
+  - text: ""

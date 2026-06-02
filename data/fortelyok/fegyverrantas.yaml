@@ -1,6 +1,6 @@
 név: "fegyverrántás"
 névkomment: ""
-skeleton_version: 3
+skeleton_version: 4
 stage: "beta"
 maxfok: 2
 többszörösség:
@@ -17,12 +17,7 @@ fokok:
   - fok: 1
     status:
     követelménytext: ""       # Általános szöveges követelmény erre a fokra. Lehet előtörténeti jellegű is.
-    követelmények:
-      - név: "gyorsaság"
-        enabled: True
-        érték: 1
-        típus: 1              # tulajdonság
-        text: ""
+    követelmények: ""
     hatástext:
       - text: ""
     hatások:
@@ -34,12 +29,7 @@ fokok:
   - fok: 2
     status:
     követelménytext: ""
-    követelmények:
-      - név: "gyorsaság"
-        enabled: True
-        érték: 2
-        típus: 1              # tulajdonság
-        text: ""
+    követelmények: ""
     hatástext:
       - text: ""
     hatások:

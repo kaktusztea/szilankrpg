@@ -1,7 +1,7 @@
 ---
 név: "belharc"
 névkomment: "adott fegyverre"
-skeleton_version: 3
+skeleton_version: 4
 stage: "beta"
 maxfok: 2
 többszörösség:
@@ -20,16 +20,6 @@ fokok:
     status: ✅
     követelménytext: ""
     követelmények:
-      - név: "ügyesség"
-        enabled: True
-        érték: 1
-        típus: 1
-        text: ""
-      - név: "gyorsaság"
-        enabled: True
-        érték: 1
-        típus: 1
-        text: ""
       - név: "közelharc"
         enabled: True
         érték: 6
@@ -58,16 +48,6 @@ fokok:
     status: ✅
     követelménytext: ""
     követelmények:
-      - név: "ügyesség"
-        enabled: True
-        érték: 2
-        típus: 1
-        text: ""
-      - név: "gyorsaság"
-        enabled: True
-        érték: 2
-        típus: 1
-        text: ""
       - név: "közelharc"
         enabled: True
         érték: 9

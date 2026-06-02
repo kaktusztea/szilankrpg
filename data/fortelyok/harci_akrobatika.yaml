@@ -1,7 +1,7 @@
 ---
 név: "harci akrobatika"
 névkomment: ""
-skeleton_version: 3
+skeleton_version: 4
 stage: "beta"
 maxfok: 2
 többszörösség:
@@ -22,16 +22,6 @@ fokok:
     status: ✅
     követelménytext: ""
     követelmények:
-      - név: "ügyesség"
-        enabled: True
-        érték: 2
-        típus: 1
-        text: ""
-      - név: "gyorsaság"
-        enabled: True
-        érték: 2
-        típus: 1
-        text: ""
       - név: "akrobatika"
         enabled: True
         érték: 4
@@ -64,16 +54,6 @@ fokok:
     status: ✅
     követelménytext: ""
     követelmények:
-      - név: "ügyesség"
-        enabled: True
-        érték: 4
-        típus: 1
-        text: ""
-      - név: "gyorsaság"
-        enabled: True
-        érték: 3
-        típus: 1
-        text: ""
       - név: "akrobatika"
         enabled: True
         érték: 8

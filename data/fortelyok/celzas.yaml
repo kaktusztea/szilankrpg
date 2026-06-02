@@ -1,7 +1,7 @@
 ---
 név: "célzás"
 névkomment: ""
-skeleton_version: 3
+skeleton_version: 4
 stage: "beta"
 maxfok: 1
 többszörösség:
@@ -27,11 +27,6 @@ fokok:
     status: ✅
     követelménytext: ""
     követelmények:
-      - név: "önuralom"
-        enabled: True
-        érték: 1
-        típus: 1
-        text: ""
       - név: "íjászat_lövészet"  # VAGY kapcsolat
         enabled: True
         érték: 5
