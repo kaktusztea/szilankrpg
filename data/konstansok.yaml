@@ -6,7 +6,7 @@ version: 2
 # ============================================================
 
 # Követelmény típusok (fortélyoknál)
-követelmény_típusok:
+fortély_követelmény_típusok:
   - képzettség           # harcmodor képzettségek is ide tartoznak
   - mesterfegyver        # egyetlen megengedett fortély-követelmény
 
@@ -38,7 +38,7 @@ harcérték_alap:
 kp:
   perszint: 50
   szekunder_perszint: 20
-  fortély_per_fok: 6
+  fortélyfok: 6
   hm: 6
   cm: 6
 
@@ -110,7 +110,7 @@ páncél_struktúrák:
     ár_szorzó: 1
     idea_plusz_minusz: 1
   - struktúra: "lánc/sodrony"
-    leírás: "Lánc vagy sodrony"
+    leírás: "Láncing / sodronying"
     fém: true
     merev: false
     mgt: 8
@@ -137,7 +137,7 @@ páncél_struktúrák:
     ár_szorzó: 100
     idea_plusz_minusz: 3
 
-páncél_védett_terület:
+páncél_védett_terület:      # százalékban
   torzó: 50
   sisak: 10
   végtagok: 10              # felkarok; alkarok; combok; lábszárak - tagonként
@@ -187,7 +187,7 @@ páncél_ár_szorzó_idea:
   - idea: -4
     ár_szorzó: 0.1
   - idea: -3
-    ár_szorzó: 0.143
+    ár_szorzó: 0.15
   - idea: -2
     ár_szorzó: 0.25
   - idea: -1

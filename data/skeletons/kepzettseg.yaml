@@ -1,9 +1,10 @@
 ---
-név: ""
-skeleton_version: 2             # a kepzettseg séma (skeleton) verziója
+skeleton_version: 2             # a képzettség séma (skeleton) verziója
 stage: ""                       # alpha, beta, prod
-primer: false                   # true: primer, false: szekunder
+
+név: ""
 leírás: ""                      # rövid, egy mondatos leírás
+primer: false                   # true: primer, false: szekunder
 csoport: ""                     # lásd konstansok.yaml / képzettség_csoportok
 többszörös: false               # 🔁 Többször felvehető-e (pl. Harcmodor, Tradíció)
 csoportos: false                # 🤝 Csoportos képzettségpróba alkalmazható-e
