@@ -37,6 +37,6 @@ A lefedettség százalék a [Precíz támadás](066_05_altalanos_manoverek.md#pr
 
 ---
 
-🔗 [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md) →
+🔗 [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
