@@ -1,70 +1,58 @@
 ---
 név: ""
-skeleton_version: 1      # karakter séma (skeleton) verziója
+skeleton_version: 2           # karakter séma (skeleton) verziója
 
-tapasztalati_szint: 1
-leírás: ""                 # freetext leírás
+tapasztalati_szint: 3
+leírás: ""
 kor: 0
 vallás: ""
 
 tulajdonságok:
-  - erő: 0
-  - edzettség: 0
-  - ügyesség: 0
-  - gyorsaság: 0
-  - intelligencia: 0
-  - emlékezet: 0
-  - önuralom: 0
-  - fogékonyság: 0
+  erő: 0
+  edzettség: 0
+  ügyesség: 0
+  gyorsaság: 0
+  intelligencia: 0
+  emlékezet: 0
+  önuralom: 0
+  érzékenység: 0
+
+származtatott:
+  ÉP: 0                      # 28 + (Edzettség × 4)
+  HM: 0                      # KP-ból vásárolt
+  CM: 0                      # KP-ból vásárolt
+  szilánk: 1                 # kalandonként max 3
 
 képzettségek:
   - név: ""
     szint: 0
-  - név: ""
-    szint: 0
 
 fortélyok_kiemelt:
-  kulturkörök:            # Ingyen jár TSz/2 ↑ db kulturkör
-   - név: ""
-   - név: ""
-   - név: ""
-  helyismeret:            # Ingyen jár TSz/2 ↑ db helyismeret
-   - helynév: ""
-   - helynév: ""
-   - helynév: ""
-  nyelvismeret:           # 4. képzettség szinttől kezdve minden szinten 3 pontot kapsz, amiből Nyelvismeret fortély fokokat tudsz felvenni. 1 fok = 1 pont, max 3 fok egy nyelvből. 2 fok van: alap és udvari. Ezek 1-1 fokot igényelnek.
-   - nyelv: ""
-     fok: alap            # alap, udvari
-   - nyelv: ""
-     fok: alap
-   - nyelv: ""
-     fok: alap
+  kulturkörök:
+    - név: ""
+  helyismeret:
+    - helynév: ""
+  nyelvismeret:
+    - nyelv: ""
+      fok: 0                  # 1-3
 
-fortélyok_speciális:
-  - analfabéta: false
-  - apro_meretu_leny: false
-  - tartós_sérülés_fok: 0   # max: 3
-  - vakság: false
-  - süketség: false
+fortélyok_speciális:          # Kiemelt Fortélyok (KP bónuszt adók)
+  analfabéta: false
+  apró_méretű_lény: false
+  tartós_sérülés_fok: 0       # 0-3
+  vakság: false
+  süketség: false
 
-fortélyok_szabad:      # Ingyen jár TSz db szabad fortély
-  - név: ""
-  - név: ""
+fortélyok_szabad:
   - név: ""
 
 fortélyok:
   - név: ""
     fok: 0
-  - név: ""
-    fok: 0
 
 hátterek:
-  - faj: ""
-  - leíró:
-      - elem: ""
-      - elem: ""
-      - elem: ""
-  - karma:
-      - elem: ""
-      - elem: ""
-      - elem: ""
+  faj: ""
+  leíró:
+    - ""
+  karma:
+    - ""

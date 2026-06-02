@@ -1,7 +1,21 @@
 ---
 név: ""
-skeleton_version: 1        # a kepzettseg séma (skeleton) verziója
-stage: ""                  # alpha, beta, prod // alpha: változhat struktúrálisan, beta: kész, de még nem mehet prod-ba
-primer: false              # false: szekunder; true: primer képzettség
-leírás: ""                 # rövid, egy mondatos leírás
-csoport: ""                # harci, fizikai, világi, alvilági, művészeti, tudományos, faj misztériumok, misztikus, mágikus szférák és arkánumaik, papi mágia
+skeleton_version: 2             # a kepzettseg séma (skeleton) verziója
+stage: ""                       # alpha, beta, prod
+primer: false                   # true: primer, false: szekunder
+leírás: ""                      # rövid, egy mondatos leírás
+csoport: ""                     # lásd konstansok.yaml / képzettség_csoportok
+többszörös: false               # 🔁 Többször felvehető-e (pl. Harcmodor, Tradíció)
+csoportos: false                # 🤝 Csoportos képzettségpróba alkalmazható-e
+próba: ""                       # "nincs" / "dobható" / "ellenpróba"
+domináns_tulajdonságok: []      # pl: ["Ügyesség", "Gyorsaság"]
+kiterjesztések:
+  normál: []                    # normál kiterjesztés fortélyok nevei
+  erős: []                      # erős kiterjesztés fortélyok nevei
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""
