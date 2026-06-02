@@ -32,7 +32,7 @@ fokok:
     status: "✅"
     követelménytext: ""
     követelmények:
-      - név: "íjászat_lövészet"
+      - név: ["íjászat", "lövészet"]
         érték: 5
         típus: "képzettség"
       - név: "összpontosítás"

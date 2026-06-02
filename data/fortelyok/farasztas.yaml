@@ -19,7 +19,7 @@ fokok:
     status: ""
     követelménytext: ""
     követelmények:
-      - név: "közelharc_kardvívás_lándzsavívás"
+      - név: ["közelharc", "kardvívás", "lándzsavívás"]
         érték: 6
         típus: "képzettség"
     hatástext:

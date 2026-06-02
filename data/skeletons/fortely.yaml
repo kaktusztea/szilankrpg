@@ -25,7 +25,7 @@ fokok:
     status: ""
     követelménytext: ""
     követelmények:            # Opcionális lista. Üres ("") ha nincs követelmény.
-      - név: "harcmodor_neve" # _ == VAGY kapcsolat. Pl: "közelharc_kardvívás_lándzsavívás"
+      - név: "harcmodor_neve" # string VAGY lista. Lista = VAGY kapcsolat, pl: ["közelharc", "kardvívás"]
         érték: 0              # képzettség szint
         típus: "képzettség"
       - név: "mesterfegyver"  # Opcionális; CSAK mesterfegyver fortélyra hivatkozhat
