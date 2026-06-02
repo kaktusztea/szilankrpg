@@ -26479,6 +26479,7 @@ A jobb Idea nagyon megdobhatja a páncél árát:
  -3       1/7 x
  -2       1/4 x
  -1       1/2 x
+  0        1x
  +1        2x
  +2        4x
  +3        7x
@@ -27235,7 +27236,7 @@ A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy tá
 CÉ =
 - 15 (CÉ Alap)
 + (TSz + Gyorsaság + Intelligencia)
-+ CHM
++ CM
 + CÉ: (1-4) Mágiatáv I-IV
 + CÉ: (0-3) Mesterfegyver (Mágiatáv) foka
 + CÉ: (0-3) Forma egyedi értéke
@@ -27581,7 +27582,7 @@ Harckeret =
 ---
 ### Hatótáv
 
-Minden távolba ható fegyvernek van **Hatótávja**, amely értelemszerűen az adott fegyverrel elérhető legnagyobb lőtávolságot jelenti. Ezt minden fegyvernél számon tartjuk, értékét méterben jelezzük. A játékos nem lőhet/dobhat a fegyver hatótávján túl (illetve hajítás esetén még szerepet játszhat a támadó Ereje, de erről később).
+A fegyver méterben megadott, elérhető legnagyobb lőtávolságát jelenti. Hajítás esetén még szerepet játszhat a támadó Erő tulajdonsága.
 
 ⚡Példa: a Nyílpuska **Hatótávja** `50`, tehát maximálisan `50` méterre lehet vele ellőni
 
