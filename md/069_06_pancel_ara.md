@@ -70,10 +70,10 @@ A jobb Idea nagyon megdobhatja a páncél árát:
 
 ```
 +SFÉ       Ár
- -4      1/10 x
- -3       1/7 x
- -2       1/4 x
- -1       1/2 x
+ -4        0.1x
+ -3        0.15x
+ -2        0.25x
+ -1        0.5x
   0        1x
  +1        2x
  +2        4x
