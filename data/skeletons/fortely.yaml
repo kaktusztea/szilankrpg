@@ -1,56 +1,44 @@
 ---
 név: ""
 névkomment: ""                # a név melletti opcionális kiegészítő szöveg
-skeleton_version: 4           # a fortely séma (skeleton) verziója
+skeleton_version: 5           # a fortely séma (skeleton) verziója
 stage: ""                     # alpha, beta, prod
 maxfok: 2                     # Legfeljebb hány foka lehet a fortélynak
 többszörösség:
-  - enabled: ""               # true / false
-    jellemzőtípus: ""         # Pl: "harci alakzat"
-    jellemzőlista: ""         # Pl: "lovas ék; testudo; ..."
+  enabled: false              # Engedélyezett-e a fortély többszöri felvétele
+  jellemzőtípus: ""           # Pl: "harci alakzat", "fegyver"
+  jellemzőlista: ""           # Pl: "lovas ék; testudo; ..."
 csoport: ""                   # lásd konstansok.yaml / fortély_csoportok
 leírások:
   - text: ""
 megjegyzések:
   - text: ""
 fokok:
-  - fok: 0                    # 0 == alapeset
-    status:                   # ⭕/✅
+  - fok: 0                    # 0 == alapeset (ha van)
+    status: ""                # ⭕/✅
     követelménytext: ""       # Szöveges követelmény (nem kalkuláció alapja)
-    követelmények: ""         # Lehet üres (""). Megengedett típusok: 2 (képzettség/harcmodor), 3 (kizárólag "mesterfegyver" fortély)
-    hatástext:
+    követelmények: ""         # Megengedett: "képzettség", "mesterfegyver". Üres ha nincs.
+    hatástext:                # Nem-gépesíthető, narratív hatások szövege
       - text: ""
-    hatások: ""
-    kombihatások: ""
+    módosítók: ""             # Gépesíthető hatások listája. Üres ("") ha nincs.
   - fok: 1
-    status:
+    status: ""
     követelménytext: ""
-    követelmények:            # Megengedett típusok: 2 (képzettség/harcmodor), 3 (kizárólag "mesterfegyver" fortély)
-      - név: "harcmodor_neve" # ebből több entry lehet. _ == VAGY kapcsolat.
-        enabled: True
-        érték: 0              # képzettségszint
-        típus: 2              # 2: képzettség/harcmodor
-        text: ""
-      - név: "mesterfegyver"  # opcionális; CSAK "mesterfegyver" fortélyra hivatkozhat
-        enabled: True
+    követelmények:            # Opcionális lista. Üres ("") ha nincs követelmény.
+      - név: "harcmodor_neve" # _ == VAGY kapcsolat. Pl: "közelharc_kardvívás_lándzsavívás"
+        érték: 0              # képzettség szint
+        típus: "képzettség"
+      - név: "mesterfegyver"  # Opcionális; CSAK mesterfegyver fortélyra hivatkozhat
         érték: 0              # fok
-        típus: 3              # 3: fortély (kizárólag mesterfegyver!)
-        text: ""
+        típus: "mesterfegyver"
     hatástext:
       - text: ""
-    hatások:                  # Ha nem számszerűsíthető → üres ("")
-      - név: ""
-        enabled: True
-        érték: 0              # bónusz
-        típus: 0              # lásd: konstansok.yaml
-        text: ""
-    kombihatások:             # Kombinált hatások. Lehet üres ("").
-      - forrásnév: ""
-        enabled: True
-        típus: 0              # lásd: konstansok.yaml
-        bónuszarány: 0
-        célnév: ""
-        céltípus: 0           # lásd: konstansok.yaml
-        text: ""
+    módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.
+      - cél: ""              # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / harckeret / manőver:név / MGT_TÉ_büntetés
+        érték: 0             # Fix bónusz (flat mód esetén)
+        mód: "flat"          # "flat": fix érték. "arányos": forrás × arány
+        forrás: ""           # Arányos módnál: melyik értékből (képzettség neve, stb.)
+        arány: 0             # Arányos módnál: szorzó (pl. 0.5, 1)
+        feltétel: ""         # Mikor aktív: "" = MINDIG (karakter lapra számítandó). Egyébként szituáció neve.
 todo:
   - text: ""

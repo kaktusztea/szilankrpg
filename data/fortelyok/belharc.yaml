@@ -1,80 +1,77 @@
 ---
 név: "belharc"
 névkomment: "adott fegyverre"
-skeleton_version: 4
+skeleton_version: 5
 stage: "beta"
 maxfok: 2
 többszörösség:
-  - enabled: False
-    jellemzőtípus: ""
-    jellemzőlista: ""
+  enabled: false
+  jellemzőtípus: "fegyver"
+  jellemzőlista: ""
 csoport: "harci"
 leírások:
   - text: "Testközelben érzed igazában elemedben magad."
   - text: "Sikeres 🗡️Belharcba kerülés🗡️ manőver esetén 🗡️Belharci szituációba🗡️ kerülsz és harcértékeidre - csak **Közelharc** harcmodor esetén - a lent leírt pluszok járnak."
 megjegyzések:
   - text: "**Fontos**: Ezt a fortélyt konkrét fegyverre (Puszta kéz is ide tartozik) kell felvenni, csak annak használatakor járnak a bónuszok. A Belharcot így többször is fel lehet venni - különböző fegyverekre."
-  - text: "Az ellenfél módosítóinak változását lásd a Harcrendszer fejezet ⭕„Belharc” harci taktika leírásánál!"
+  - text: 'Az ellenfél módosítóinak változását lásd a Harcrendszer fejezet ⭕„Belharc" harci taktika leírásánál!'
 fokok:
   - fok: 1
-    status: ✅
+    status: "✅"
     követelménytext: ""
     követelmények:
       - név: "közelharc"
-        enabled: True
         érték: 6
-        típus: 2   # képzettség
-        text: ""
-    hatástext:
-      - text: ""
-    hatások:
-      - név: "KÉ"
-        enabled: True
-        érték: 2
-        típus: 51  # KÉ
-        text: ""
-      - név: "TÉ"
-        enabled: True
-        érték: 3
-        típus: 52  # TÉ
-        text: ""
-      - név: "VÉ"
-        enabled: True
-        érték: 3
-        típus: 53  # VÉ
-        text: ""
-    kombihatások: ""
-  - fok: 2
-    status: ✅
-    követelménytext: ""
-    követelmények:
-      - név: "közelharc"
-        enabled: True
-        érték: 9
-        típus: 2
-        text: ""
-      - név: "mesterfegyver"
-        enabled: True
-        érték: 1
-        típus: 3  # fortély
-        text: "használt fegyverre"
+        típus: "képzettség"
     hatástext: ""
-    hatások:
-      - név: "KÉ"
-        enabled: True
+    módosítók:
+      - cél: "KÉ"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "belharc"
+      - cél: "TÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "belharc"
+      - cél: "VÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "belharc"
+  - fok: 2
+    status: "✅"
+    követelménytext: ""
+    követelmények:
+      - név: "közelharc"
+        érték: 9
+        típus: "képzettség"
+      - név: "mesterfegyver"
+        érték: 1
+        típus: "mesterfegyver"
+    hatástext: ""
+    módosítók:
+      - cél: "KÉ"
         érték: 4
-        típus: 51  # KÉ
-        text: ""
-      - név: "TÉ"
-        enabled: True
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "belharc"
+      - cél: "TÉ"
         érték: 6
-        típus: 52  # TÉ
-        text: ""
-      - név: "VÉ"
-        enabled: True
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "belharc"
+      - cél: "VÉ"
         érték: 6
-        típus: 53  # VÉ
-        text: ""
-    kombihatások: ""
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "belharc"
 todo:
   - text: ""

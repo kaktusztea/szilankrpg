@@ -1,12 +1,13 @@
+---
 név: "elsöprő roham"
 névkomment: ""
-skeleton_version: 4
+skeleton_version: 5
 stage: "alpha"
 maxfok: 1
 többszörösség:
-  - enabled: False
-    jellemzőtípus: ""
-    jellemzőlista: ""
+  enabled: false
+  jellemzőtípus: ""
+  jellemzőlista: ""
 csoport: "harci"
 leírások:
   - text: "Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból."
@@ -14,30 +15,26 @@ megjegyzések:
   - text: "Öngyilkos roham esetén a fentiek nem használhatóak."
 fokok:
   - fok: 1
-    status:
+    status: ""
     követelménytext: ""
     követelmények:
-      - név: "közelharc_kardvívás_lándzsavívás_zúzás"  # ⭕
-        enabled: True
+      - név: "közelharc_kardvívás_lándzsavívás_zúzás"
         érték: 4
-        típus: 2              # harcmodor ⭕ vagy inkább képzettség?
-        text: ""
+        típus: "képzettség"
     hatástext:
-      - text: "Roham esetén:"
-    hatások:
-      - név: "KÉ"
-        enabled: True
-        érték: 5   # KÉ bónusz
-        típus: 51
-        text: ""
-    kombihatások:
-      - forrásnév: "erőbónusz"
-        enabled: True
-        típus: 517         # erőbónusz
-        bónuszarány: 1     # 1:1-ben hozzáadódik, tehát 2x szorzó
-        célnév: "erőbónusz"
-        céltípus: 517      # erőbónusz
-        text: "duplázódik"
+      - text: "Roham esetén az erőbónusz duplázódik."
+    módosítók:
+      - cél: "KÉ"
+        érték: 5
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "roham"
+      - cél: "SP"
+        érték: 0
+        mód: "arányos"
+        forrás: "erőbónusz"
+        arány: 1
+        feltétel: "roham"
 todo:
-  - text: "⭕ harcmodort lekezelni a követelményeknél."
-  - text: "⭕ esetleg közelharc_kardvívás_zúzás_... formában?"
+  - text: ""

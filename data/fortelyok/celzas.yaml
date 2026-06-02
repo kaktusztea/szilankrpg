@@ -1,13 +1,13 @@
 ---
 név: "célzás"
 névkomment: ""
-skeleton_version: 4
+skeleton_version: 5
 stage: "beta"
 maxfok: 1
 többszörösség:
-  - enabled: False
-    jellemzőtípus: ""
-    jellemzőlista: ""
+  enabled: false
+  jellemzőtípus: ""
+  jellemzőlista: ""
 csoport: "harci"
 leírások:
   - text: "Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót, ami lövésedet segíti, vagy gátolja - mikor kitartod célzással lövésedet."
@@ -16,30 +16,36 @@ megjegyzések:
   - text: "Íjat legfeljebb `1` körig tarthatsz ki, utána minden további kör nemhogy javít, de ront a találati esélyeken (körönként ugyanennyit)."
 fokok:
   - fok: 0
-    status: ✅
+    status: "✅"
     követelménytext: ""
     követelmények: ""
     hatástext:
       - text: "`1` célzással eltöltött kör után `+10 CÉ` módosítót kapsz."
-    hatások: ""
-    kombihatások: ""
+    módosítók:
+      - cél: "CÉ"
+        érték: 10
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "célzás"
   - fok: 1
-    status: ✅
+    status: "✅"
     követelménytext: ""
     követelmények:
-      - név: "íjászat_lövészet"  # VAGY kapcsolat
-        enabled: True
+      - név: "íjászat_lövészet"
         érték: 5
-        típus: 2
-        text: ""
+        típus: "képzettség"
       - név: "összpontosítás"
-        enabled: True
         érték: 4
-        típus: 2
-        text: ""
+        típus: "képzettség"
     hatástext:
       - text: "`1` célzással eltöltött kör után ⭕`+20 CÉ`⭕ módosítót kapsz. Nem additív."
-    hatások: ""
-    kombihatások: ""
+    módosítók:
+      - cél: "CÉ"
+        érték: 20
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "célzás"
 todo:
   - text: ""

@@ -1,12 +1,13 @@
+---
 név: "alakzatharc"
 névkomment: "spec."
-skeleton_version: 4
+skeleton_version: 5
 stage: "alpha"
 maxfok: 2
 többszörösség:
-  - enabled: True
-    jellemzőtípus: "harci alakzatok"
-    jellemzőlista: "lovas ék; ⭕Lista ide⭕"
+  enabled: true
+  jellemzőtípus: "harci alakzatok"
+  jellemzőlista: "lovas ék; ⭕Lista ide⭕"
 csoport: "harci"
 leírások:
   - text: "Sok féle alakzat létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok."
@@ -16,21 +17,19 @@ megjegyzések:
   - text: "A választható alakzatok (kicsi, nagy, lovas) listáját, módosítóit, alkalmazását lásd a Harcrendszer fejezet [Harci alakzatok](../057_harci_alakzatok.md) fejezetében."
 fokok:
   - fok: 1
-    status: ⭕
-    követelménytext: "A társak is ismerjék az adott alakzatot<br />+<br />Alakzat függő, lásd azok leírását!"
+    status: "⭕"
+    követelménytext: "A társak is ismerjék az adott alakzatot + Alakzat függő, lásd azok leírását!"
     követelmények: ""
     hatástext:
       - text: "Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2` olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod."
-    hatások: ""
-    kombihatások: ""
+    módosítók: ""
   - fok: 2
-    status: ⭕
-    követelménytext: "A társak is ismerjék az adott alakzatot<br />+<br />Alakzat függő, lásd azok leírását!"
+    status: "⭕"
+    követelménytext: "A társak is ismerjék az adott alakzatot + Alakzat függő, lásd azok leírását!"
     követelmények: ""
     hatástext:
       - text: "Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2` olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod."
-    hatások: ""
-    kombihatások: ""
+    módosítók: ""
 todo:
   - text: "⭕ Hányadik fok a max? 2?"
   - text: "⭕ Fokok leírása, mik a különbségek."

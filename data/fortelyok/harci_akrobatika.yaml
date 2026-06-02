@@ -1,16 +1,16 @@
 ---
 név: "harci akrobatika"
 névkomment: ""
-skeleton_version: 4
+skeleton_version: 5
 stage: "beta"
 maxfok: 2
 többszörösség:
-  - enabled: False
-    jellemzőtípus: ""
-    jellemzőlista: ""
+  enabled: false
+  jellemzőtípus: ""
+  jellemzőlista: ""
 csoport: "harci"
 leírások:
-  - text: "„Pattog, mint a nikkelbolha” - mondják, ha harcolni látnak."
+  - text: '„Pattog, mint a nikkelbolha" - mondják, ha harcolni látnak.'
   - text: "Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen..."
 megjegyzések:
   - text: "**Fegyverek**: A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például 1db hosszú kard, vagy 2db rövidkard), továbbá súlyuk is fontos tényező (KM dönt)."
@@ -19,69 +19,61 @@ megjegyzések:
   - text: "**Helyigény**: a KM dönt, hogy van-e elég hely az alkalmazáshoz, de ne legyen túl szigorú; egy közepes szobában is alkalmazható (falra ugrás, elrugaszkodás, stb)."
 fokok:
   - fok: 1
-    status: ✅
+    status: "✅"
     követelménytext: ""
     követelmények:
       - név: "akrobatika"
-        enabled: True
         érték: 4
-        típus: 2     # képzettség
-        text: ""
+        típus: "képzettség"
     hatástext:
       - text: "Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
-    hatások:
-      - név: "Kibontakozás/Átsiklás"
-        enabled: True
-        érték: 1         # dobás bónusz
-        típus: 555       # manőver
-        text: ""
-    kombihatások:
-      - forrásnév: "akrobatika"
-        enabled: True
-        típus: 2         # képzettség
-        bónuszarány: 0.5
-        célnév: "TÉ"     # Harcérték esetén a 'céltípus' számít, ilyenkor ez csak text
-        céltípus: 52     # TÉ
-        text: ""
-      - forrásnév: "akrobatika"
-        enabled: True
-        típus: 2
-        bónuszarány: 0.5
-        célnév: "VÉ"     # Harcérték esetén a 'céltípus' számít, ilyenkor ez csak text
-        céltípus: 53     # VÉ
-        text: ""
+    módosítók:
+      - cél: "TÉ"
+        érték: 0
+        mód: "arányos"
+        forrás: "akrobatika"
+        arány: 0.5
+        feltétel: ""
+      - cél: "VÉ"
+        érték: 0
+        mód: "arányos"
+        forrás: "akrobatika"
+        arány: 0.5
+        feltétel: ""
+      - cél: "manőver:kibontakozás"
+        érték: 1
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
   - fok: 2
-    status: ✅
+    status: "✅"
     követelménytext: ""
     követelmények:
       - név: "akrobatika"
-        enabled: True
         érték: 8
-        típus: 2
-        text: ""
+        típus: "képzettség"
     hatástext:
-    - text: "Az **Akrobatika** képzettségedet `1:1` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
-    - text: "🗡️ **Kibontakozás/Átsiklás** manőverre `+3` bónuszt kapsz."
-    hatások:
-      - név: "Kibontakozás/Átsiklás"
-        enabled: True
-        érték: 3         # dobás bónusz
-        típus: 555       # manőver
-        text: ""
-    kombihatások:
-      - forrásnév: "akrobatika"
-        enabled: True
-        típus: 2         # képzettség
-        bónuszarány: 1
-        célnév: "TÉ"     # Harcérték esetén a 'céltípus' számít, ilyenkor ez csak text
-        céltípus: 52     # TÉ
-        text: ""
-      - forrásnév: "akrobatika"
-        enabled: True
-        típus: 2
-        bónuszarány: 1
-        célnév: "VÉ"     # Harcérték esetén a 'céltípus' számít, ilyenkor ez csak text
-        céltípus: 53     # VÉ
-        text: ""
+      - text: "Az **Akrobatika** képzettségedet `1:1` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
+      - text: "🗡️ **Kibontakozás/Átsiklás** manőverre `+3` bónuszt kapsz."
+    módosítók:
+      - cél: "TÉ"
+        érték: 0
+        mód: "arányos"
+        forrás: "akrobatika"
+        arány: 1
+        feltétel: ""
+      - cél: "VÉ"
+        érték: 0
+        mód: "arányos"
+        forrás: "akrobatika"
+        arány: 1
+        feltétel: ""
+      - cél: "manőver:kibontakozás"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
 todo:
   - text: ""
