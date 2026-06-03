@@ -30,18 +30,18 @@ output: összes_szekunder_kp
 ```
 input:  karakter.képzettségek[].szint, karakter.fortélyok[].fok, karakter.HM_TÉ, karakter.HM_VÉ, karakter.CM
 source: tables/kepzettseg_kp.json, schemas/kepzettseg.yaml (primer flag),
-        konstansok.yaml → kp.fortályfok, kp.hm, kp.cm
+        konstansok.yaml → kp.fortélyfok, kp.hm, kp.cm
 
 formula:
   kp_képzettségek = SUM( lookup(képzettség.szint → kepzettseg_kp.json) )
-  kp_fortélyok    = SUM( fortély.fok ) × kp.fortályfok
+  kp_fortélyok    = SUM( fortély.fok ) × kp.fortélyfok
   kp_hm           = (HM_TÉ + HM_VÉ) × kp.hm
   kp_cm           = CM × kp.cm
   elköltött_kp    = kp_képzettségek + kp_fortélyok + kp_hm + kp_cm
 
   // Szekunder ismeretekre költött KP (szekunder képzettségek + nem-harci/nem-misztikus fortélyok)
   kp_szekunder_költött = SUM( szekunder képzettségek KP-ja )
-                       + SUM( szekunder fortélyok fok × kp.fortályfok )
+                       + SUM( szekunder fortélyok fok × kp.fortélyfok )
 
   maradék_kp = (összes_kp + spec_kp + összes_szekunder_kp) - elköltött_kp
 
@@ -177,9 +177,6 @@ output: VÉ (per fegyver)
 note: A végső VÉ-hez hozzáadódik a pajzs VÉ bónusz (lásd §13) ha van pajzs.
 ```
 
-output: VÉ
-```
-
 ---
 
 ## 7. Célzó Érték (CÉ) — fegyverenként
@@ -235,7 +232,7 @@ input:  fegyver.sebesség, harcmodor_szint (a fegyver kategóriájához tartozó
 source: konstansok.yaml → kétkezes_harc_bónuszok (ha kétkezes harc aktív)
 
 formula:  // ismételve minden egyes fegyverre
-  harckeret = harcmodor_szint + gyorsaság - MGT
+  harckeret = harcmodor_szint + gyorsaság - páncél_MGT - felszerelés_mgt
   harckeret += SUM( fortély_módosítók(cél="harckeret", feltétel="") )
   harckeret = MAX(0, harckeret)
 
