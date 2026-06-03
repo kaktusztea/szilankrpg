@@ -9,12 +9,12 @@ többszörösség:
   spec_lista: []
 csoport: "szabad"
 leírások:
-  - text: ""
+  - text: "- [Lexikum](../kepzettsegek.szekunder/lexikum.md): 'Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdé..."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Lexikum", "Nyomozás"]
   erős: []
 
 fokok:
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""
 
 todo:

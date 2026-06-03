@@ -9,12 +9,12 @@ többszörösség:
   spec_lista: []
 csoport: "szabad"
 leírások:
-  - text: ""
+  - text: "Édességek készítése, amely nem is olyan könnyű, mint hiszed. A pontos arányok, körülmények betartása nagyon fontos."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Kézművesség"]
   erős: []
 
 fokok:
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""
 
 todo:

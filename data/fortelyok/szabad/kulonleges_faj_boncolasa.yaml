@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "szabad"
 leírások:
-  - text: ""
+  - text: "Többször felvehető - egyedi fajonként."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""
 
 todo:

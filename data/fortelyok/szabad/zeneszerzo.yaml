@@ -9,12 +9,12 @@ többszörösség:
   spec_lista: []
 csoport: "szabad"
 leírások:
-  - text: ""
+  - text: "Nem csak eljátszani tudsz dalokat, zenei műveket, hanem komponálni is."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Előadóművészet"]
   erős: []
 
 fokok:
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""
 
 todo:

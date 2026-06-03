@@ -9,12 +9,12 @@ többszörösség:
   spec_lista: []
 csoport: "szabad"
 leírások:
-  - text: ""
+  - text: "- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): Versek, novellák, regények, históriák, színdarabok í..."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Előadóművészet", "Művészetismeret", "Kultúrkör"]
   erős: []
 
 fokok:
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""
 
 todo:

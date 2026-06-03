@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "szabad"
 leírások:
-  - text: ""
+  - text: "Speciális harci iskola tagja vagy, ahol egyes csoportos ismeretek tanulására van lehetőséged, illetve egyedi szociáli..."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""
 
 todo:
