@@ -9,20 +9,38 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Földi hátasokkal küzdő egység koordinálása."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Hadászat"]
   erős: []
 
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Lovaglás"
+        érték: 6
+        típus: "képzettség"
+      - név: "Befolyásolás"
+        érték: 3
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "+2 bónusz az Alakzatszintre."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Lovaglás"
+        érték: 9
+        típus: "képzettség"
+      - név: "Befolyásolás"
+        érték: 3
+        típus: "képzettség"
+    hatástext:
+      - text: "+4 bónusz az Alakzatszintre."
     módosítók: ""
 
 todo:

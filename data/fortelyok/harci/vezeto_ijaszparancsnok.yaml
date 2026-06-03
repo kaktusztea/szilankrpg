@@ -9,20 +9,32 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Íjász/lövész alakzat koordinálása."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Hadászat"]
   erős: []
 
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["íjászat", "lövészet"]
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "+2 bónusz az Alakzatszintre."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["íjászat", "lövészet"]
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "+4 bónusz az Alakzatszintre."
     módosítók: ""
 
 todo:

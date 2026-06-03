@@ -3,26 +3,44 @@ schema_version: 1
 
 név: "Vezető: Testőrparancsnok"
 névkomment: ""
-maxfok: 1
+maxfok: 2
 többszörösség:
   spec_típus: ""
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Testőrcsapat koordinálása, védelem és észlelés."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Hadászat"]
   erős: []
 
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 6
+        típus: "képzettség"
+      - név: "Észlelés"
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "+2 bónusz csoportos Észlelés értékre."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Alakzatharc"
+        érték: 9
+        típus: "képzettség"
+      - név: "Befolyásolás"
+        érték: 3
+        típus: "képzettség"
+    hatástext:
+      - text: "+4 bónusz csoportos Észlelés értékre."
     módosítók: ""
 
 todo:

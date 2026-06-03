@@ -9,20 +9,32 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Fejvadász alakulat észrevétlen mozgásának koordinálása."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Hadászat"]
   erős: []
 
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Lopakodás/rejtőzés"
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "+2 bónusz csoportos Lopakodás/rejtőzés értékre."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Lopakodás/rejtőzés"
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "+4 bónusz csoportos Lopakodás/rejtőzés értékre."
     módosítók: ""
 
 todo:
