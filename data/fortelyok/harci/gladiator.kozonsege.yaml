@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Éltető közönség előtt harcolva extázisba esel."
 megjegyzések:
   - text: ""
 
@@ -20,10 +20,19 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "TÉ:+3 bónusz a harc idejére nagyszámú (20+) közönség előtt."
+    módosítók:
+      - cél: "TÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:közönség_előtt"
 
 todo:
   - text: ""

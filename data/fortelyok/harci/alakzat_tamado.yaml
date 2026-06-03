@@ -9,9 +9,9 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Alakzatharc támadó jellegét erősítő fortély."
 megjegyzések:
-  - text: ""
+  - text: "Részletek a Harc alakzatban fejezetben."
 
 kiterjeszti:
   normál: []
@@ -20,9 +20,21 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Alakzat támadó bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "Alakzat támadó bónuszai 2.fokon. Lásd Harc alakzatban fejezet."
     módosítók: ""
 
 todo:

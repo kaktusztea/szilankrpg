@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Sebesüléskor néhány ÉP átalakul FP ponttá."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,21 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Fájdalomtűrés"
+        érték: 7
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "1 ÉP forgatható át FP ponttá sebesüléskor."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Fájdalomtűrés"
+        érték: 10
+        típus: "képzettség"
+    hatástext:
+      - text: "2 ÉP forgatható át FP ponttá sebesüléskor."
     módosítók: ""
 
 todo:

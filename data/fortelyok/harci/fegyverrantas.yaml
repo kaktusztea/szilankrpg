@@ -26,7 +26,7 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: fegyverrántás
+    feltétel: "szituáció:fegyverrántás"
 - fok: 2
   követelménytext: ''
   követelmények: ''
@@ -37,6 +37,6 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: fegyverrántás
+    feltétel: "szituáció:fegyverrántás"
 todo:
 - text: ''

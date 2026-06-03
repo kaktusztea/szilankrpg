@@ -35,19 +35,19 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: belharc
+    feltétel: "szituáció:belharc"
   - cél: TÉ
     érték: 3
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: belharc
+    feltétel: "szituáció:belharc"
   - cél: VÉ
     érték: 3
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: belharc
+    feltétel: "szituáció:belharc"
 - fok: 2
   követelménytext: ''
   követelmények:
@@ -64,18 +64,18 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: belharc
+    feltétel: "szituáció:belharc"
   - cél: TÉ
     érték: 6
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: belharc
+    feltétel: "szituáció:belharc"
   - cél: VÉ
     érték: 6
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: belharc
+    feltétel: "szituáció:belharc"
 todo:
 - text: ''

@@ -29,7 +29,7 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: célzás
+    feltétel: "szituáció:célzás"
 - fok: 1
   követelménytext: ''
   követelmények:
@@ -47,6 +47,6 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: célzás
+    feltétel: "szituáció:célzás"
 todo:
 - text: ''

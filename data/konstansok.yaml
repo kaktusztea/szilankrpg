@@ -21,6 +21,17 @@ módosító_célok:
   - manőver              # "manőver:név" formátumban használandó, pl. "manőver:kibontakozás"
   - MGT_TÉ_büntetés      # merevvért TÉ büntetés csökkentése
 
+# Feltétel prefixek (módosítók feltétel mezőjében)
+# "" = mindig aktív. Egyébként "prefix:érték" formátum.
+feltétel_prefixek:
+  - "szituáció"           # pl. "szituáció:belharc", "szituáció:roham"
+  - "harci_helyzet"       # pl. "harci_helyzet:meglepetés", "harci_helyzet:hátulról_támadás"
+  - "taktika"             # pl. "taktika:fárasztás", "taktika:visszafogott"
+  - "fegyver"             # pl. "fegyver:kard, hosszú" — konkrét fegyverre vonatkozik
+  - "fegyver_kategória"   # pl. "fegyver_kategória:kardvívó"
+  - "manőver"             # pl. "manőver:kibontakozás"
+  - "státusz"             # pl. "státusz:bénultság"
+
 # ============================================================
 # Harcérték konstansok
 # ============================================================

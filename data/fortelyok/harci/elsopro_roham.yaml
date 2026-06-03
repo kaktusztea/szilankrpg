@@ -30,12 +30,12 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: roham
+    feltétel: "szituáció:roham"
   - cél: SP
     érték: 0
     mód: arányos
     forrás: erőbónusz
     arány: 1
-    feltétel: roham
+    feltétel: "szituáció:roham"
 todo:
 - text: ''

@@ -31,6 +31,6 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: fárasztás_taktika
+    feltétel: "szituáció:fárasztás_taktika"
 todo:
 - text: ''

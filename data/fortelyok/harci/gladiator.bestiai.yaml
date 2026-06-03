@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Nem-elfszabású szörnyetegek elleni harci tapasztalat az arénából."
 megjegyzések:
   - text: ""
 
@@ -20,10 +20,19 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "VÉ:+3 bónusz a harc idejére nem-elfszabású szörnyeteg ellen."
+    módosítók:
+      - cél: "VÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:szörnyeteg_elleni_harc"
 
 todo:
   - text: ""

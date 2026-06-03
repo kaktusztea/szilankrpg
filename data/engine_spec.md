@@ -388,7 +388,10 @@ logic:
           harcérték[mod.cél] += FLOOR(forrás_érték × mod.arány)
 
 output: módosított harcértékek
-note: feltétel != "" esetén a módosító csak szituációsan aktív (UI toggle)
+note: feltétel == "" → mindig aktív (karakterlap számolja).
+      feltétel == "prefix:érték" → feltételesen aktív (UI toggle / automatikus).
+      Prefixek (lásd konstansok.yaml → feltétel_prefixek):
+        szituáció, harci_helyzet, taktika, fegyver, fegyver_kategória, manőver, státusz
 impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexével.
       Sok fortélynál nincs fok:0 (alapeset), csak fok:1-től indul.
       A lookup tehát: fortély_def.fokok.find(f → f.fok == kf.fok), NEM fokok[kf.fok].
