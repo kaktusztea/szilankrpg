@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "A harc ritmusát fenntartva kevésbé merít ki a harc szellemileg."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,30 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Minden kör elején visszanyersz: 1 VÉ (kivéve ami sebesülésből)."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "Minden kör elején visszanyersz: 2 VÉ (kivéve ami sebesülésből)."
+    módosítók: ""
+  - fok: 3
+    követelménytext: "Teljes Védekezés Taktika alkalmazása folyamatosan."
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 12
+        típus: "képzettség"
+    hatástext:
+      - text: "Visszanyersz: 2 VÉ + minden előző harci körben elvesztett VÉ-t is."
     módosítók: ""
 
 todo:

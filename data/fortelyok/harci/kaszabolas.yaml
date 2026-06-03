@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Harcképtelenné tett ellenfél után soron kívüli bónusz támadás."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,22 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 4
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen."
+      - text: "Egy körben legfeljebb 1x alkalmazható."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 8
+        típus: "képzettség"
+    hatástext:
+      - text: "Mint az 1.fok, de legfeljebb 2x használhatod egy körben."
     módosítók: ""
 
 todo:

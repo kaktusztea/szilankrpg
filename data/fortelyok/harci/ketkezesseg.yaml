@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Kétkezes vagy, bármelyik kezeddel levonás nélkül harcolsz."
 megjegyzések:
   - text: ""
 
@@ -22,8 +22,16 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "Bármelyik kezeddel levonás nélkül harcolsz (1 fegyverrel)."
+      - text: "Harckeret: +1 bónusz ha kétkezes harcban vagy (min. 1.fok Kétkezes harc + két fegyver)."
+      - text: "Páros kétkezes hajításnál csak az egyik CÉ dobásra jár Hátrány-1."
+    módosítók:
+      - cél: "harckeret"
+        érték: 1
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:kétkezes_harc"
 
 todo:
   - text: ""

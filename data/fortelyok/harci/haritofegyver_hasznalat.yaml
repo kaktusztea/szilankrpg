@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Képes vagy hárítófegyvert használni a nem-forgató kezedben."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,9 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Megkapod a gyengébb kezedben forgatott hárítófegyver VÉ értékét pluszban."
+      - text: "Mesterfegyver fortély VÉ bónusza is beszámít."
+      - text: "A hárítófegyverrel nem támadhatsz."
     módosítók: ""
 
 todo:
