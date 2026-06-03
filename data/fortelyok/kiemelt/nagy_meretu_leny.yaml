@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "kiemelt"
 leírások:
-  - text: ""
+  - text: "Nagy termetű lények kötelező fortélya. Magasabb ÉP."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,19 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "ÉP = 48 + (Edzettség x 6)."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "ÉP = 68 + (Edzettség x 8)."
+    módosítók: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "ÉP = 88 + (Edzettség x 10)."
     módosítók: ""
 
 todo:

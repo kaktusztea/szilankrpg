@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "kiemelt"
 leírások:
-  - text: ""
+  - text: "Vak karakter. Speciális: +18 KP bónusz."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,9 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Látás érzékre permanens Érzékvesztés - teljes Státusz."
+      - text: "Csak 1. TSz-en vehető fel."
+      - text: "+18 KP bónusz (primer ismeretekre is fordítható)."
     módosítók: ""
 
 todo:

@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "kiemelt"
 leírások:
-  - text: ""
+  - text: "Nem tudsz írni és olvasni. Speciális: +6 KP bónusz jár érte."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,9 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Nem tudsz írni/olvasni."
+      - text: "Csak 1. TSz-en vehető fel."
+      - text: "+6 KP bónusz (primer ismeretekre is fordítható)."
     módosítók: ""
 
 todo:

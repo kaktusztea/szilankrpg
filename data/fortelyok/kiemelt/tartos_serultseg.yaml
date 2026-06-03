@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "kiemelt"
 leírások:
-  - text: ""
+  - text: "Testileg tartósan sérült (rokkant) karakter. KP bónusz fokonként."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,19 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "+6 KP bónusz. Pl: 1 kar használhatatlan."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "+12 KP bónusz. Pl: erősen korlátozott járás."
+    módosítók: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "+18 KP bónusz. Pl: teljes rokkantság."
     módosítók: ""
 
 todo:

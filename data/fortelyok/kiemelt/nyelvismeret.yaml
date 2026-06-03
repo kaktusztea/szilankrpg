@@ -1,15 +1,15 @@
 ---
 schema_version: 1
 
-név: "Nyelvismeret (2)"
+név: "Nyelvismeret"
 névkomment: ""
-maxfok: 1
+maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: "nyelv"
   spec_lista: []
 csoport: "kiemelt"
 leírások:
-  - text: ""
+  - text: "Egy adott nyelv ismerete. Nem KP-ból tanulható, a Nyelvtanulás képzettség pontjaiból."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,14 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Alap szint: hétköznapi beszéd. Írás/olvasás (ha nem analfabéta)."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Udvari szint: nemesi, egyházi, hivatali, művészi beszéd."
+      - text: "Előadóművészet és irodalom számára követelmény."
     módosítók: ""
 
 todo:

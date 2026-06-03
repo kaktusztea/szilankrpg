@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "kiemelt"
 leírások:
-  - text: ""
+  - text: "Apró termetű lények kötelező fortélya. Speciális: +18 KP bónusz."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,9 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Csak 1. TSz-en vehető fel, kötelező az érintett fajoknak."
+      - text: "+18 KP bónusz."
+      - text: "ÉP Alap: -20, Edzettség szorzó: x2. Képlet: ÉP = 8 + (Edzettség x 2)."
     módosítók: ""
 
 todo:
