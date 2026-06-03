@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Kitartó, hosszas futás során is jól osztod be az erődet."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,15 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Hosszútávfutáskor Edzettség próbára: +1."
+      - text: "Rövidtávfutásnál Gyorsaság próbára: +1."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Hosszútávfutáskor Edzettség próbára: +2."
+      - text: "Rövidtávfutásnál Gyorsaság próbára: +2."
     módosítók: ""
 
 todo:

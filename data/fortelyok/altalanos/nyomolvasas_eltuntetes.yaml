@@ -9,12 +9,12 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Nyomok értelmezése, követése, eltűntetése városon kívül és belül."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Természetjárás"]
   erős: []
 
 fokok:
@@ -22,7 +22,13 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Kiterjeszti a Természetjárás képzettséget nyomolvasás témában 1.fokon."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Kiterjeszti a Természetjárás képzettséget nyomolvasás témában 2.fokon."
     módosítók: ""
 
 todo:

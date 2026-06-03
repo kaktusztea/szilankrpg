@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Gyorsabban tudsz lopózni."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,12 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Lopakodás/rejtőzés"
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "A gyors lopakodás Mozgás célszám levonása rád nem érvényes."
     módosítók: ""
 
 todo:

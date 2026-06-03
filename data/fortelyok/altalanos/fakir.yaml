@@ -3,13 +3,13 @@ schema_version: 1
 
 név: "Fakír"
 névkomment: ""
-maxfok: 1
+maxfok: 2
 többszörösség:
   spec_típus: ""
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Kínzás esetén pluszt kapsz Fájdalomtűrés próbádra."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,13 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Fájdalomtűrés próbára: +2"
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Fájdalomtűrés próbára: +4"
     módosítók: ""
 
 todo:

@@ -9,20 +9,32 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Titkos rejtekajtók, zugok, rejtett tárgyak felkutatása és elrejtése."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Észlelés", "Természetjárás"]
   erős: []
 
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Észlelés"
+        érték: 3
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Kiterjeszti az Észlelés és Természetjárás képzettségeket 1.fokon."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Észlelés"
+        érték: 3
+        típus: "képzettség"
+    hatástext:
+      - text: "Kiterjeszti az Észlelés és Természetjárás képzettségeket 2.fokon."
     módosítók: ""
 
 todo:

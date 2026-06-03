@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "A víz mélye a te közeged, ritkábban kell feljönnöd levegőért."
 megjegyzések:
   - text: ""
 
@@ -18,11 +18,17 @@ kiterjeszti:
   erős: []
 
 fokok:
+  - fok: 0
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "1 + Edzettség perc ideig bírod a víz alatt."
+    módosítók: ""
   - fok: 1
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "1 + (2x Edzettség) perc ideig bírod a víz alatt."
     módosítók: ""
 
 todo:

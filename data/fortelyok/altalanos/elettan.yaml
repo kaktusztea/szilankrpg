@@ -9,12 +9,12 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Magába foglalja az összes közismert faj ismeretét, anatómiáját és boncolását."
 megjegyzések:
-  - text: ""
+  - text: "Speciálisabb fajokhoz külön Szabad Fortély kell: Különleges faj boncolása."
 
 kiterjeszti:
-  normál: []
+  normál: ["Nyomozás", "Nekromancia", "Lexikum"]
   erős: []
 
 fokok:
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Ismered a boncolás tudományát. Méregkeverés képzettségre: +2 bónusz."
     módosítók: ""
 
 todo:

@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Gyorsabban tudsz keresni, kutatni vagy nyomokat elrejteni."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,12 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Észlelés"
+        érték: 3
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Villámgyors keresés kapkodós helyzetekben nullázza az alapeset -3 büntetését."
     módosítók: ""
 
 todo:

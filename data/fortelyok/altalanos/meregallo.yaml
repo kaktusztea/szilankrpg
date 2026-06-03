@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Szervezeted ellenállóbb a mérgekkel."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,19 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Méregellenállás dobásakor Edzettség próbára: +1."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Méregellenállás dobásakor Edzettség próbára: +2."
+    módosítók: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Méregellenállás dobásakor Edzettség próbára: +3."
     módosítók: ""
 
 todo:

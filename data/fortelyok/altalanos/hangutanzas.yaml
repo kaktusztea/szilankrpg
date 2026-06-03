@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Emberi hangok megtévesztő utánzása."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,13 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott hangot."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Csendes körülmények között is megtévesztően utánzol."
     módosítók: ""
 
 todo:

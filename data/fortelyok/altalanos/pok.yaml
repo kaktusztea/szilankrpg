@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Gyorsabban tudsz mászni."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,12 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Mászás"
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: 'A "Gyorsan mászni" Célszám módosító büntetése rád nem vonatkozik.'
     módosítók: ""
 
 todo:

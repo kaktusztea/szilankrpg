@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Kemény vagy mint egy rozsomák."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Hosszútávú úszás, futás vagy tartós igénybevételnél Edzettség próbára: +1."
     módosítók: ""
 
 todo:

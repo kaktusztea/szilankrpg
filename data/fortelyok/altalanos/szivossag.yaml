@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Olyan edzett vagy, hogy szinte a jég hátán is megélsz."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,9 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Fizikai Státuszok nálad 1 fokkal enyhülnek."
+      - text: "Bármilyen áldatlan körülmények között is alszol, ugyanúgy ki tudod pihenni magad."
+      - text: "Edzettség x 5 napig bírod élelem nélkül (víz nélkül nem)."
     módosítók: ""
 
 todo:

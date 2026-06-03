@@ -1,20 +1,20 @@
 ---
 schema_version: 1
 
-név: "Ősi kultúrkör (adott kultúrkör) (1)"
+név: "Ősi kultúrkör"
 névkomment: ""
 maxfok: 1
 többszörösség:
-  spec_típus: ""
+  spec_típus: "kultúrkör"
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Egy adott kihalt, ősi kultúra specializált ismerete."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Értékbecslés", "Lexikum"]
   erős: []
 
 fokok:
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Kiterjeszt képzettségeket az adott ősi kultúrkörre vonatkozóan."
     módosítók: ""
 
 todo:

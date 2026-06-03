@@ -9,12 +9,12 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Műkincsek, műtárgyak megtévesztő másolása, vagy hamisítvány felismerése."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Értékbecslés", "Képzőművészet", "Művészetismeret", "Kézművesség"]
   erős: []
 
 fokok:
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
     módosítók: ""
 
 todo:

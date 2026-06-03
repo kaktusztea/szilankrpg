@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Gyorsabban nyitsz zárakat büntetés nélkül."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,12 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Zárnyitás"
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Sietős zárnyitás esetén sem emelkedik a célszám."
     módosítók: ""
 
 todo:

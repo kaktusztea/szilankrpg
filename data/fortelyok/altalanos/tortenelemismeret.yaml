@@ -9,20 +9,28 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "A történelem írott részének, múlt eseményeinek, legendáinak ismerete."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
   normál: []
-  erős: []
+  erős: ["Hadászat", "Lexikum"]
 
 fokok:
   - fok: 1
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Már dobhatsz Lexikum próbát történelmi témában."
+      - text: "Ősi kultúrák nélkül a világtörténelem ismerete."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "A Lexikum próbát +2 bónusszal dobhatod történelmi témában."
+      - text: "Magában foglalja az ősi kultúrák ismeretét is (csak történelmüket és legendáikat)."
     módosítók: ""
 
 todo:

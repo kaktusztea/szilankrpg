@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Koordinálod az alád tartozó nyomozók munkáját."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,21 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Nyomozás"
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "+2 bónusz csoportos Nyomozás értékre."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Nyomozás"
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "+4 bónusz csoportos Nyomozás értékre."
     módosítók: ""
 
 todo:

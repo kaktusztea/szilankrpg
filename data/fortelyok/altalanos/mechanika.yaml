@@ -9,20 +9,28 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Mechanikus szerkezetek ismerete."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
-  erős: []
+  normál: ["Csapdaállítás", "Kézművesség"]
+  erős: ["Kvantikum"]
 
 fokok:
   - fok: 1
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Zárnyitás képzettségre: +2."
+      - text: "A kapcsolódó, kiterjesztett képzettségek követelményeként megszünteti a kiterjesztés-büntetést."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Zárnyitás képzettségre: +4."
+      - text: "A kapcsolódó képzettségek kiterjesztésekor már Előny+1 bónuszt is ad."
     módosítók: ""
 
 todo:

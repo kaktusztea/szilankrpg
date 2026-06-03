@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Könnyebben felriadsz gyanús zajokra."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Alvás közben dobott Észlelés próbádra +2 bónusz jár."
     módosítók: ""
 
 todo:

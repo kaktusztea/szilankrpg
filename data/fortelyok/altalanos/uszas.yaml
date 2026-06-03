@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Nem merülsz el, mint egy kő."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,14 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Tudsz úszni."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Tudsz úszni."
+      - text: "Hosszú távú úszás esetén Edzettség próbára: +2."
     módosítók: ""
 
 todo:

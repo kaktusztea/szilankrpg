@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Rögtönzött kellékekből is képes vagy álruhát barkácsolni, gyorsan átváltozni."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,21 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Álcázás/Álruha"
+        érték: 4
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Gyors átöltözés és szegényes felszerelés büntetéseit 3-mal csökkentheted."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Álcázás/Álruha"
+        érték: 8
+        típus: "képzettség"
+    hatástext:
+      - text: "Gyors átöltözés és szegényes felszerelés büntetéseit 6-tal csökkentheted."
     módosítók: ""
 
 todo:

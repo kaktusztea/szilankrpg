@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Jól delegálod a kézműves munkafolyamatokat, gyorsabb és hatékonyabb termelés."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,15 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Kézművesség"
+        érték: 9
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Kézműves termék előállítása jelentősen rövidebb idő alatt, munkások irányításával."
+      - text: "Az egyes alfolyamatokat jó érzékkel bontod szét, munkásaid magas szinten hozzák létre a termékeket."
+      - text: "NEM csoportos képzettségpróba — csak a te szinted számít."
+      - text: "Tudásodnak megfelelő Ideájú tárgyak gyárthatóak gyorsabban, nagyobb mennyiségben."
     módosítók: ""
 
 todo:

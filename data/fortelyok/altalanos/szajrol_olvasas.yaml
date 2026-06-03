@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások:
-  - text: ""
+  - text: "Beszéd leolvasása a célszemély szájáról."
 megjegyzések:
   - text: ""
 
@@ -19,10 +19,10 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája."
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Beszéd szájról olvasása szituációban az Érzékenység Tulajdonságpróba Célszámára -3 módosítót kapsz."
     módosítók: ""
 
 todo:

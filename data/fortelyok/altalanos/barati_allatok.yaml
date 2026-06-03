@@ -11,7 +11,7 @@ csoport: "általános"
 leírások:
   - text: ""
 megjegyzések:
-  - text: ""
+  - text: "Az ismeret vadállatokra / bestiákra vonatkozik, amelyek állatnak számítanak."
 
 kiterjeszti:
   normál: []
@@ -22,7 +22,8 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Az állatok, állati intelligenciájú élőlények alapból enyhe rokonszenvvel viseltetnek irányodban. Nem provokálva békén hagynak."
+      - text: "Az ismeret vadállatokra / bestiákra vonatkozik, amelyek állatnak számítanak. Pl. farkas, 5 fejű skorpió."
     módosítók: ""
 
 todo:
