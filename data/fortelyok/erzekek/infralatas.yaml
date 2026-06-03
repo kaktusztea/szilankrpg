@@ -9,9 +9,9 @@ többszörösség:
   spec_lista: []
 csoport: "érzékek"
 leírások:
-  - text: ""
+  - text: "Fajhoz felvehető Érzék-fortély. Sötétben hőképek alapján tájékozódsz."
 megjegyzések:
-  - text: ""
+  - text: "Csak karakteralkotáskor vehető fel, vagy mágia hatására."
 
 kiterjeszti:
   normál: []
@@ -19,10 +19,16 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Mintha félhomályban tájékozódnál. Sötét: Félhomály módosítóival harcolsz."
+    módosítók: ""
+  - fok: 2
+    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelmények: ""
+    hatástext:
+      - text: "Ha van hőkép-eltérés, látod a sötétben. Harcban nem jár levonás."
     módosítók: ""
 
 todo:

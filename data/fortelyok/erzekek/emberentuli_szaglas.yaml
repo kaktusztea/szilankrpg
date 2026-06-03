@@ -9,9 +9,9 @@ többszörösség:
   spec_lista: []
 csoport: "érzékek"
 leírások:
-  - text: ""
+  - text: "Fajhoz felvehető Érzék-fortély. Különlegesen jó a szaglásod."
 megjegyzések:
-  - text: ""
+  - text: "Csak karakteralkotáskor vehető fel, vagy mágia hatására."
 
 kiterjeszti:
   normál: []
@@ -19,10 +19,13 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "+2 szaglás Tulajdonságpróbákra."
+      - text: "2x messzebbről megérzel szagokat."
+      - text: "Olyan próbákat dobhatsz, amelyeket átlag ember nem."
+      - text: "Egyszerre több szagot képes érezni."
     módosítók: ""
 
 todo:

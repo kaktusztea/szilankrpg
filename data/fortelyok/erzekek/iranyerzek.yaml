@@ -9,9 +9,9 @@ többszörösség:
   spec_lista: []
 csoport: "érzékek"
 leírások:
-  - text: ""
+  - text: "Fajhoz felvehető Érzék-fortély. Mindig tudod, merre van észak."
 megjegyzések:
-  - text: ""
+  - text: "Csak karakteralkotáskor vehető fel, vagy mágia hatására."
 
 kiterjeszti:
   normál: []
@@ -19,10 +19,11 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Mindig tudod, érzed, merre van észak."
+      - text: "Magassági tájékozódásra nem alkalmas (fel/le)."
     módosítók: ""
 
 todo:

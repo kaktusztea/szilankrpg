@@ -9,9 +9,9 @@ többszörösség:
   spec_lista: []
 csoport: "érzékek"
 leírások:
-  - text: ""
+  - text: "Fajhoz felvehető Érzék-fortély. Teljes sötétben is képes vagy tájékozódni."
 megjegyzések:
-  - text: ""
+  - text: "Csak karakteralkotáskor vehető fel, vagy mágia hatására."
 
 kiterjeszti:
   normál: []
@@ -19,10 +19,25 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Mintha telihold fényénél tájékozódnál vaksötétben."
+      - text: "Sötét: Félhomály módosítóival harcolhatsz."
+    módosítók: ""
+  - fok: 2
+    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelmények: ""
+    hatástext:
+      - text: "Harcban nem jár levonás. Mintha szürkületkor tájékozódnál."
+      - text: "Vaksötétben tudsz olvasni, de lassan."
+    módosítók: ""
+  - fok: 3
+    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelmények: ""
+    hatástext:
+      - text: "Tökéletesen látsz, mintha nappal lenne."
+      - text: "Úgy tudsz olvasni, mint napvilágnál."
     módosítók: ""
 
 todo:
