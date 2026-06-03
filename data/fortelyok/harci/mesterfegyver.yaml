@@ -5,11 +5,11 @@ név: "Mesterfegyver"
 névkomment: ""
 maxfok: 3
 többszörösség:
-  spec_típus: ""
+  spec_típus: "fegyver"
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Egy konkrét fegyver harcértékeit növeled."
 megjegyzések:
   - text: ""
 
@@ -20,10 +20,103 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc", "hajítás", "íjászat", "lövészet", "mágikus célzás"]
+        érték: 4
+        típus: "képzettség"
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "Adott fegyverre TÉ/CÉ, VÉ, SP: +1."
+    módosítók:
+      - cél: "TÉ"
+        érték: 1
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "CÉ"
+        érték: 1
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "VÉ"
+        érték: 1
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "SP"
+        érték: 1
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc", "hajítás", "íjászat", "lövészet", "mágikus célzás"]
+        érték: 8
+        típus: "képzettség"
+    hatástext:
+      - text: "Adott fegyverre TÉ/CÉ, VÉ, SP: +2."
+    módosítók:
+      - cél: "TÉ"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "CÉ"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "VÉ"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "SP"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+  - fok: 3
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc", "hajítás", "íjászat", "lövészet", "mágikus célzás"]
+        érték: 12
+        típus: "képzettség"
+    hatástext:
+      - text: "Adott fegyverre TÉ/CÉ, VÉ, SP: +3."
+    módosítók:
+      - cél: "TÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "CÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "VÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
+      - cél: "SP"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:"
 
 todo:
   - text: ""

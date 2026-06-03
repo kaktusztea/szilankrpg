@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Pajzsok hatékony használata, TÉ büntetés csökkentése."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,35 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 3
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "Teljes pajzs VÉ aktív."
+      - text: "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 5
+        típus: "képzettség"
+    hatástext:
+      - text: "Teljes pajzs VÉ aktív."
+      - text: "TÉ levonás: Kis:-0, Közepes:-0, Nagy:-3."
+      - text: "Fegyverrel VAGY pajzzsal külön támadhatsz."
+    módosítók: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 8
+        típus: "képzettség"
+    hatástext:
+      - text: "Teljes pajzs VÉ aktív, TÉ levonás nincs."
+      - text: "VÉ:+2 minden pajzshoz."
+      - text: "Fegyverrel VAGY pajzzsal külön támadhatsz."
     módosítók: ""
 
 todo:

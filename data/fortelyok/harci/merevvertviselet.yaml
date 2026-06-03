@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Merevvértek helyes viselése, TÉ büntetés csökkentése."
 megjegyzések:
   - text: ""
 
@@ -20,10 +20,56 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["kardvívás", "rombolás", "lándzsavívás"]
+        érték: 3
+        típus: "képzettség"
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "Merevvérted TÉ büntetése ennyivel enyhül: -5."
+    módosítók:
+      - cél: "MGT_TÉ_büntetés"
+        érték: -5
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["kardvívás", "rombolás", "lándzsavívás"]
+        érték: 3
+        típus: "képzettség"
+    hatástext:
+      - text: "Merevvérted TÉ büntetése ennyivel enyhül: -10."
+    módosítók:
+      - cél: "MGT_TÉ_büntetés"
+        érték: -10
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények:
+      - név: ["kardvívás", "rombolás", "lándzsavívás"]
+        érték: 3
+        típus: "képzettség"
+    hatástext:
+      - text: "Merevvérted TÉ büntetése ennyivel enyhül: -15."
+      - text: "Merevvért viselése esetén VÉ:+3 (ha lefedettség min. 70%)."
+    módosítók:
+      - cél: "MGT_TÉ_büntetés"
+        érték: -15
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+      - cél: "VÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:merevvért_70%"
 
 todo:
   - text: ""
