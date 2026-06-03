@@ -397,6 +397,9 @@ note: feltétel == "" → mindig aktív (karakterlap számolja).
 impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexével.
       Sok fortélynál nincs fok:0 (alapeset), csak fok:1-től indul.
       A lookup tehát: fortély_def.fokok.find(f → f.fok == kf.fok), NEM fokok[kf.fok].
+      Követelmények logika:
+        - A követelmények lista elemei ÉS kapcsolatban vannak (mindegyiknek teljesülnie kell).
+        - Ha egy elem "név" mezője lista (pl. ["közelharc", "kardvívás"]), az VAGY kapcsolat: bármelyik teljesíti.
 ```
 
 ---

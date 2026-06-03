@@ -26,7 +26,7 @@ fokok:
     módosítók: ""             # Gépesíthető hatások listája. Üres ("") ha nincs.
   - fok: 1
     követelménytext: ""
-    követelmények:            # Opcionális lista. Üres ("") ha nincs követelmény.
+    követelmények:            # Lista elemei ÉS kapcsolatban. Egy elem "név" mezője ha lista: VAGY kapcsolat (bármelyik teljesíti).
       - név: "harcmodor_neve" # string VAGY lista. Lista = VAGY kapcsolat, pl: ["közelharc", "kardvívás"]
         érték: 0              # képzettség szint
         típus: "képzettség"
