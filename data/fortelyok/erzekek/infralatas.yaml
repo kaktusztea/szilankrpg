@@ -1,0 +1,29 @@
+---
+schema_version: 1
+
+név: "Infralátás"
+névkomment: ""
+maxfok: 2
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "érzékek"
+leírások:
+  - text: ""
+megjegyzések:
+  - text: ""
+
+kiterjeszti:
+  normál: []
+  erős: []
+
+fokok:
+  - fok: 1
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: ""
+    módosítók: ""
+
+todo:
+  - text: ""

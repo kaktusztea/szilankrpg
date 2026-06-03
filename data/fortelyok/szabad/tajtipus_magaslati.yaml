@@ -1,0 +1,29 @@
+---
+schema_version: 1
+
+név: "Tájtípus - magaslati"
+névkomment: ""
+maxfok: 1
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "szabad"
+leírások:
+  - text: ""
+megjegyzések:
+  - text: ""
+
+kiterjeszti:
+  normál: []
+  erős: []
+
+fokok:
+  - fok: 1
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: ""
+    módosítók: ""
+
+todo:
+  - text: ""

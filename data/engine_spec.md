@@ -372,10 +372,10 @@ note: Hatása pontonként: -1 TÉ, -1 Harckeret. A viselt páncél NEM számít 
 ## 16. Fortély módosítók alkalmazása
 
 ```
-input:  karakter.fortélyok[], data/fortelyok/*.yaml
+input:  karakter.fortélyok[], data/fortelyok/**/*.yaml
 logic:
   FOR EACH karakter.fortélyok as kf:
-    fortély_def = lookup(kf.név → fortelyok/*.yaml)
+    fortély_def = lookup(kf.név → fortelyok/**/*.yaml)
     aktív_fok = fortély_def.fokok[kf.fok]
 
     FOR EACH aktív_fok.módosítók as mod:
