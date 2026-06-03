@@ -10,7 +10,7 @@ Lásd: [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 VÉ: +3 - Kis pajzs
 VÉ:+10 - Közepes pajzs
          Erő: min +1
-VÉ:+17 - Nagy pajzs
+VÉ:+16 - Nagy pajzs
          Erő: min +2
 ```
 
