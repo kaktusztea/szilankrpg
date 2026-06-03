@@ -2,12 +2,11 @@
 név: "elsöprő roham"
 névkomment: ""
 schema_version: 5
-stage: "alpha"
 maxfok: 1
 többszörösség:
   enabled: false
-  jellemzőtípus: ""
-  jellemzőlista: ""
+  spec_típus: ""
+  spec_lista: ""
 csoport: "harci"
 leírások:
   - text: "Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból."

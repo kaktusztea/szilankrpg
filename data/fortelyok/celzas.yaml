@@ -2,12 +2,11 @@
 név: "célzás"
 névkomment: ""
 schema_version: 5
-stage: "beta"
 maxfok: 1
 többszörösség:
   enabled: false
-  jellemzőtípus: ""
-  jellemzőlista: ""
+  spec_típus: ""
+  spec_lista: ""
 csoport: "harci"
 leírások:
   - text: "Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót, ami lövésedet segíti, vagy gátolja - mikor kitartod célzással lövésedet."

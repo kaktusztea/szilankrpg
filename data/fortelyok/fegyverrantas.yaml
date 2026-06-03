@@ -2,12 +2,11 @@
 név: "fegyverrántás"
 névkomment: ""
 schema_version: 5
-stage: "beta"
 maxfok: 2
 többszörösség:
   enabled: false
-  jellemzőtípus: ""
-  jellemzőlista: ""
+  spec_típus: ""
+  spec_lista: ""
 csoport: "harci"
 leírások:
   - text: "Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél."

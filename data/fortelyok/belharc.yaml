@@ -2,12 +2,11 @@
 név: "belharc"
 névkomment: "adott fegyverre"
 schema_version: 5
-stage: "beta"
 maxfok: 2
 többszörösség:
   enabled: false
-  jellemzőtípus: "fegyver"
-  jellemzőlista: ""
+  spec_típus: "fegyver"
+  spec_lista: ""
 csoport: "harci"
 leírások:
   - text: "Testközelben érzed igazában elemedben magad."

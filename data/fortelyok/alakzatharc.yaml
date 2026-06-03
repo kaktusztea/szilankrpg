@@ -2,12 +2,11 @@
 név: "alakzatharc"
 névkomment: "spec."
 schema_version: 5
-stage: "alpha"
 maxfok: 2
 többszörösség:
   enabled: true
-  jellemzőtípus: "harci alakzatok"
-  jellemzőlista: "lovas ék; ⭕Lista ide⭕"
+  spec_típus: "harci alakzatok"
+  spec_lista: "lovas ék; ⭕Lista ide⭕"
 csoport: "harci"
 leírások:
   - text: "Sok féle alakzat létezik. Gyalogos, kisebb létszámra, nagy, csatatéri formációkra tervezett, valamint lovas alakzatok."

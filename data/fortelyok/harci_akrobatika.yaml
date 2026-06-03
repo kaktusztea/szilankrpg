@@ -2,12 +2,11 @@
 név: "harci akrobatika"
 névkomment: ""
 schema_version: 5
-stage: "beta"
 maxfok: 2
 többszörösség:
   enabled: false
-  jellemzőtípus: ""
-  jellemzőlista: ""
+  spec_típus: ""
+  spec_lista: ""
 csoport: "harci"
 leírások:
   - text: '„Pattog, mint a nikkelbolha" - mondják, ha harcolni látnak.'

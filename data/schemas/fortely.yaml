@@ -3,12 +3,10 @@ schema_version: 1           # a fortely séma verziója
 
 név: ""
 névkomment: ""                # a név melletti opcionális kiegészítő szöveg
-stage: ""                     # alpha, beta, prod
 maxfok: 0                     # [0;3] Legfeljebb hány foka lehet a fortélynak
 többszörösség:
-  enabled: false              # Engedélyezett-e a fortély többszöri felvétele
-  jellemzőtípus: ""           # Pl: "harci alakzat", "fegyver"
-  jellemzőlista: ""           # Pl: "lovas ék; testudo; ..."
+  spec_típus: ""              # Pl: "fegyver", "alakzat". Üres = nem többszörös.
+  spec_lista: ""              # Megengedett értékek. Pl: ["lovas ék", "testudo"]
 csoport: ""                   # lásd konstansok.yaml / fortély_csoportok
 leírások:
   - text: ""
