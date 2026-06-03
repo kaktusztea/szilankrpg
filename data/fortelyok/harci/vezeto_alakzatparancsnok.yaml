@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Fegyveres alakzat koordinálása, Alakzatszint emelése."
 megjegyzések:
   - text: ""
 
@@ -20,9 +20,27 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Alakzatharc"
+        érték: 6
+        típus: "képzettség"
+      - név: "Befolyásolás"
+        érték: 3
+        típus: "képzettség"
     hatástext:
-      - text: ""
+      - text: "+2 bónusz az Alakzatszintre."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Alakzatharc"
+        érték: 9
+        típus: "képzettség"
+      - név: "Befolyásolás"
+        érték: 3
+        típus: "képzettség"
+    hatástext:
+      - text: "+4 bónusz az Alakzatszintre."
     módosítók: ""
 
 todo:

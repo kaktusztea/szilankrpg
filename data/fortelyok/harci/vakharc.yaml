@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Sötétben apró neszek, megérzések csökkentik a látáshiány hatását."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,23 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Érzék(látás) büntetés 1 fokot enyhül."
+      - text: "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Érzék(látás) büntetés 2 fokot enyhül."
+      - text: "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból + Támadó TÉ Előnyből."
+    módosítók: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Érzék(látás) büntetés 3 fokot enyhül (auto-kudarc is megszűnik)."
+      - text: "Láthatatlan ellenfélnél: mindent megszüntet."
+      - text: "Túlterhelt érzékek esetén is működik."
     módosítók: ""
 
 todo:

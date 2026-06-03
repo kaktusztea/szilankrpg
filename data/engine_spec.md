@@ -386,6 +386,8 @@ logic:
         elif mod.mód == "arányos":
           forrás_érték = lookup(mod.forrás → képzettség szint vagy egyéb)
           harcérték[mod.cél] += FLOOR(forrás_érték × mod.arány)
+        elif mod.mód == "override":
+          harcérték[mod.cél] = mod.érték      // felülírja az alapértéket
 
 output: módosított harcértékek
 note: feltétel == "" → mindig aktív (karakterlap számolja).

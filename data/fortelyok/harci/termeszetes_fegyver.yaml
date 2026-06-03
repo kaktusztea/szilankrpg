@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Faji végtagok/harapás fegyvernek minősül."
 megjegyzések:
   - text: ""
 
@@ -19,11 +19,17 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Faj Háttér ahol ajánlott a Természetes fegyver."
     követelmények: ""
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "Puszta kéz sebzése: 1+k20 (az alap -5+k20 helyett)."
+    módosítók:
+      - cél: "SP"
+        érték: 1
+        mód: "override"
+        forrás: ""
+        arány: 0
+        feltétel: "fegyver:puszta kéz"
 
 todo:
   - text: ""

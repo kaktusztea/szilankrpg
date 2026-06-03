@@ -17,6 +17,7 @@ módosító_célok:
   - VÉ
   - CÉ
   - SP
+  - SFÉ
   - harckeret
   - manőver              # "manőver:név" formátumban használandó, pl. "manőver:kibontakozás"
   - MGT_TÉ_büntetés      # merevvért TÉ büntetés csökkentése

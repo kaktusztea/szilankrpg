@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Faji bőr/héj páncélnak minősül."
 megjegyzések:
   - text: ""
 
@@ -19,11 +19,41 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Faj Háttér ahol ajánlott a Természetes páncél min. 1.fok."
     követelmények: ""
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "SFÉ: +3"
+    módosítók:
+      - cél: "SFÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+  - fok: 2
+    követelménytext: "Faj Háttér ahol ajánlott a Természetes páncél min. 2.fok."
+    követelmények: ""
+    hatástext:
+      - text: "SFÉ: +6"
+    módosítók:
+      - cél: "SFÉ"
+        érték: 6
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+  - fok: 3
+    követelménytext: "Faj Háttér ahol ajánlott a Természetes páncél min. 3.fok."
+    követelmények: ""
+    hatástext:
+      - text: "SFÉ: +9"
+    módosítók:
+      - cél: "SFÉ"
+        érték: 9
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
 
 todo:
   - text: ""
