@@ -47,8 +47,9 @@ formula:
 
 output: elköltött_kp, maradék_kp
 validate:
+  primer_limit = összes_kp + spec_kp                         // primer célra CSAK ebből költhető
   maradék_kp ≥ 0
-  (elköltött_kp - kp_szekunder_költött) ≤ (összes_kp + spec_kp)  // nem-szekunder csak normál KP-ból
+  (elköltött_kp - kp_szekunder_költött) ≤ primer_limit       // primer költés nem lépi túl
 ```
 
 ### 1.4 Speciális KP bónusz
