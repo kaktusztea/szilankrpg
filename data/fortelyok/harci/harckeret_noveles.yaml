@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Támadásaid számát növeled a Harckeret értékének növelésével."
 megjegyzések:
   - text: ""
 
@@ -20,10 +20,70 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "+1 Harckeret."
+      - text: "+1 KÉ."
+    módosítók:
+      - cél: "harckeret"
+        érték: 1
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+      - cél: "KÉ"
+        érték: 1
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "+2 Harckeret."
+      - text: "+2 KÉ."
+    módosítók:
+      - cél: "harckeret"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+      - cél: "KÉ"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 12
+        típus: "képzettség"
+    hatástext:
+      - text: "+3 Harckeret."
+      - text: "+3 KÉ."
+    módosítók:
+      - cél: "harckeret"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+      - cél: "KÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
 
 todo:
   - text: ""

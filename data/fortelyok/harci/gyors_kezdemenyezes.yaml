@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Kivételesen gyorsan mozdulsz a harcban."
 megjegyzések:
   - text: ""
 
@@ -22,8 +22,38 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "KÉ:+2 bónusz."
+    módosítók:
+      - cél: "KÉ"
+        érték: 2
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "KÉ:+4 bónusz."
+    módosítók:
+      - cél: "KÉ"
+        érték: 4
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "KÉ:+6 bónusz."
+    módosítók:
+      - cél: "KÉ"
+        érték: 6
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: ""
 
 todo:
   - text: ""

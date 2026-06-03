@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Harci szekerek és nagy fogatok kezelése harcban."
 megjegyzések:
   - text: ""
 
@@ -20,10 +20,48 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Lovaglás"
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "TÉ/VÉ: +8 harci szekéren."
+      - text: "Harci taktikák használhatóak."
+    módosítók:
+      - cél: "TÉ"
+        érték: 8
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:harci_szekér"
+      - cél: "VÉ"
+        érték: 8
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:harci_szekér"
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Lovaglás"
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "TÉ/VÉ: +12 harci szekéren."
+      - text: "Harci taktikák használhatóak."
+    módosítók:
+      - cél: "TÉ"
+        érték: 12
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:harci_szekér"
+      - cél: "VÉ"
+        érték: 12
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:harci_szekér"
 
 todo:
   - text: ""
