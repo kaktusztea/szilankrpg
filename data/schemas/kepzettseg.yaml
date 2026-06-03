@@ -1,6 +1,5 @@
 ---
-skeleton_version: 2             # a képzettség séma (skeleton) verziója
-stage: ""                       # alpha, beta, prod
+schema_version: 1             # a képzettség séma verziója
 
 név: ""
 leírás: ""                      # rövid, egy mondatos leírás

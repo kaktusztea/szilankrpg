@@ -1,0 +1,13 @@
+[
+    { "név": "Magasmágia", "típus": "mágikus" },
+    { "név": "Vulgármágia", "típus": "mágikus" },
+    { "név": "Ordani Tűzmágia", "típus": "mágikus" },
+    { "név": "Bárdmágia", "típus": "mágikus" },
+    { "név": "Illuzionista", "típus": "mágikus" },
+    { "név": "Természeti mágia", "típus": "mágikus" },
+    { "név": "Sámánmágia", "típus": "mágikus" },
+    { "név": "Drágakőmágia", "típus": "mágikus" },
+    { "név": "Szakrális (papi)", "típus": "szakrális" },
+    { "név": "Slan", "típus": "szellemi" },
+    { "név": "Fejvadász", "típus": "szellemi" }
+]

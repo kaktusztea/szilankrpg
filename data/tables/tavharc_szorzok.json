@@ -1,0 +1,61 @@
+{
+    "célpont_mozgás": [
+        { "id": 1, "leírás": "Álló cél", "szorzó": 1 },
+        { "id": 2, "leírás": "Lassú, egyenletes mozgás", "szorzó": 2 },
+        { "id": 3, "leírás": "Gyors, egyenletes mozgás", "szorzó": 3 },
+        { "id": 4, "leírás": "Kiszámíthatatlan mozgás", "szorzó": 4 },
+        { "id": 5, "leírás": "Harcoló célpont – csak ő jó", "szorzó": 5 },
+        { "id": 6, "leírás": "Harcoló csoport – bárki jó", "szorzó": 6 },
+        { "id": 7, "leírás": "Sikertelenül szándékosan kitérő cél", "szorzó": 7 }
+    ],
+    "lövész_mozgás": [
+        { "id": 10, "leírás": "Mozdulatlan/álló lövész", "szorzó": 0 },
+        { "id": 12, "leírás": "A lövész lassan egyenletesen sétál", "szorzó": 1 },
+        { "id": 14, "leírás": "A lövész lassan fut", "szorzó": 2 },
+        { "id": 15, "leírás": "A lövész rohan", "szorzó": 3 }
+    ],
+    "célpont_méret": [
+        { "id": 1, "leírás": "Ló méretű", "szorzó": -1 },
+        { "id": 2, "leírás": "Átlagos ember/elf méretű", "szorzó": 0 },
+        { "id": 3, "leírás": "Kisebb termetű (törpe, gyerek)", "szorzó": 1 },
+        { "id": 4, "leírás": "Apró (kobold, kutya)", "szorzó": 2 }
+    ],
+    "észlelhetőség": [
+        { "id": 0, "leírás": "Jól kivehető kontúr", "szorzó": 0 },
+        { "id": 1, "leírás": "Szürkületben", "szorzó": 1 },
+        { "id": 2, "leírás": "Homályos kontúr", "szorzó": 1 },
+        { "id": 3, "leírás": "Éppen kivehető kontúr – zajos", "szorzó": 2 },
+        { "id": 4, "leírás": "Éppen kivehető kontúr – csendes", "szorzó": 5 },
+        { "id": 5, "leírás": "Háttérrel egybeolvadó kontúr – zajos", "szorzó": 5 },
+        { "id": 6, "leírás": "Háttérrel egybeolvadó kontúr – csendes", "szorzó": 99 }
+    ],
+    "szél": [
+        { "id": 0, "leírás": "Szélcsend", "szorzó": 0 },
+        { "id": 1, "leírás": "Enyhe szél", "szorzó": 1 },
+        { "id": 2, "leírás": "Erős szél", "szorzó": 2 },
+        { "id": 3, "leírás": "Viharos szél", "szorzó": 3 },
+        { "id": 4, "leírás": "Orkán erejű szél", "szorzó": 99 }
+    ],
+    "távolság_osztó": [
+        { "méter": 10, "osztó": 1 },
+        { "méter": 20, "osztó": 2 },
+        { "méter": 30, "osztó": 3 },
+        { "méter": 40, "osztó": 4 },
+        { "méter": 50, "osztó": 5 },
+        { "méter": 60, "osztó": 6 },
+        { "méter": 70, "osztó": 7 },
+        { "méter": 80, "osztó": 8 },
+        { "méter": 90, "osztó": 9 },
+        { "méter": 100, "osztó": 10 },
+        { "méter": 110, "osztó": 11 },
+        { "méter": 120, "osztó": 12 },
+        { "méter": 130, "osztó": 13 },
+        { "méter": 140, "osztó": 14 },
+        { "méter": 150, "osztó": 15 },
+        { "méter": 160, "osztó": 16 },
+        { "méter": 170, "osztó": 17 },
+        { "méter": 180, "osztó": 18 },
+        { "méter": 190, "osztó": 19 },
+        { "méter": 200, "osztó": 20 }
+    ]
+}

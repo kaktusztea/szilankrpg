@@ -1,0 +1,78 @@
+---
+schema_version: 1         # karakter séma verziója
+
+név: ""
+tsz: 3                      # Tapasztalati szint (1-21)
+leírás: ""
+kor: 0
+vallás: ""
+
+tulajdonságok:
+  erő: 0
+  edzettség: 0
+  ügyesség: 0
+  gyorsaság: 0
+  intelligencia: 0
+  emlékezet: 0
+  önuralom: 0
+  érzékenység: 0
+
+HM: 0                       # KP-ból vásárolt Harcérték Módosító
+CM: 0                       # KP-ból vásárolt Célzóérték Módosító
+
+képzettségek:
+  - név: ""
+    szint: 0
+
+fortélyok_kiemelt:
+  kulturkörök:
+    - név: ""
+  helyismeret:
+    - helynév: ""
+  nyelvismeret:
+    - nyelv: ""
+      fok: 0                # 1-3
+
+fortélyok_speciális:        # Kiemelt Fortélyok (KP bónuszt adók)
+  analfabéta: false
+  apró_méretű_lény: false
+  tartós_sérülés_fok: 0     # 0-3
+  vakság: false
+  süketség: false
+
+fortélyok_szabad:
+  - név: ""
+
+fortélyok:
+  - név: ""
+    fok: 0
+    spec: ""                  # többszörös fortélyoknál: mire vonatkozik (fegyver, alakzat, stb.)
+
+hátterek:
+  faj: ""
+  leíró:
+    - ""
+  karma:
+    - ""
+
+származtatott:
+  ÉP: 0                      # 28 + (Edzettség × 4)
+  szilánk: 1                 # [0; 3]
+
+fegyverek:
+  - alap: ""                  # alaptípus neve (lookup kulcs → fegyverek.json)
+    név: ""                   # opcionális egyedi név (pl. "Vérvörös Penge")
+    anyag: "acél"             # acél, bronz, abbitacél, mithrill, lunír
+    idea: 0                   # -2..+4 (fegyver Idea bónusz/büntetés)
+    mesterfegyver_fok: 0      # 0-3
+    módosítók: ""             # egyedi módosítók listája (mágikus stb.), üres ("") ha nincs
+
+páncél:
+  alap: ""                    # alaptípus neve (lookup kulcs → konstansok.yaml páncél_struktúrák)
+  név: ""                     # opcionális egyedi név
+  fémalapanyag: ""            # acél, bronz, abbitacél, mithrill, lunír
+  idea: 0                     # -4..+4
+  kidolgozottság: ""          # pocsék, átlagos, mestermunka
+  sisak: false
+  végtagvédettség: 0          # 0-4
+  méret_illeszkedés: ""       # passzoló, közepesen_más, nagyon_más

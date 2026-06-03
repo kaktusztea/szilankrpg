@@ -1,7 +1,7 @@
 ---
+schema_version: 1           # a pancel séma (skeleton) verziója
+
 név: ""
-skeleton_version: 2           # a pancel séma (skeleton) verziója
-stage: ""                     # alpha, beta, prod
 struktúra: ""                 # posztó, fegyverkabát, bőr, lánc/sodrony, pikkely, lemez
 fém: false                    # fém alapú páncél-e
 merev: false                  # merevvért-e (TÉ büntetés jár érte)

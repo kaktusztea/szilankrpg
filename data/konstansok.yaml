@@ -42,6 +42,8 @@ kp:
   hm: 6
   cm: 6
 
+
+
 kp_bónusz:                    # Kiemelt Fortélyok után járó extra KP
   analfabéta: 6
   apró_méretű_lény: 18
@@ -56,6 +58,9 @@ kp_bónusz:                    # Kiemelt Fortélyok után járó extra KP
 arányok:
   max_hm_diff_szintlépésenként: 0.5       # kerekítés: lefelé
   képzettség_nemprimer_max_szint_plusz: 3
+  tulajdonság_pont_alap: 64                # alap tulajdonság pont keret
+  tulajdonság_pont_tsz_bónusz: 0.5         # TSz × ez (kerekítés lefelé) adódik hozzá
+  max_cm_perszint: 2            # max ennyi CM vehető fel szintenként
 
 # ============================================================
 # Egészség kategória levonások
@@ -202,6 +207,161 @@ páncél_ár_szorzó_idea:
     ár_szorzó: 7
   - idea: 4
     ár_szorzó: 10
+
+# ============================================================
+# Tulajdonságok
+# ============================================================
+
+tulajdonság_pontok:              # érték → pont költség
+  -5: 0
+  -4: 1
+  -3: 2
+  -2: 3
+  -1: 4
+  0: 5
+  1: 6
+  2: 8
+  3: 11
+  4: 15
+  5: 20
+
+# ============================================================
+# Harcmodorok
+# ============================================================
+
+harcmodorok:
+  közelharci: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+  távolsági: ["hajítás", "íjászat", "lövészet", "ostromlövészet", "mágikus célzás"]
+
+# ============================================================
+# Mesterfegyver fortély bónuszai
+# ============================================================
+
+mesterfegyver_bónuszok:
+  - fok: 1
+    TÉ: 1
+    VÉ: 1
+    SP: 1
+  - fok: 2
+    TÉ: 2
+    VÉ: 2
+    SP: 2
+  - fok: 3
+    TÉ: 3
+    VÉ: 3
+    SP: 3
+
+# ============================================================
+# Kétkezes harc bónuszai
+# ============================================================
+
+kétkezes_harc_bónuszok:
+  - fok: 0
+    harckeret: 1
+    TÉ: -3
+    VÉ: -3
+  - fok: 1
+    harckeret: 2
+    TÉ: 0
+    VÉ: 0
+  - fok: 2
+    harckeret: 3
+    TÉ: 0
+    VÉ: 0
+  - fok: 3
+    harckeret: 4
+    TÉ: 0
+    VÉ: 0
+
+# ============================================================
+# Merevvértviselet fortély bónuszai
+# ============================================================
+
+merevvértviselet_bónuszok:
+  - fok: 0
+    TÉ_büntetés_csökkentés: 0
+  - fok: 1
+    TÉ_büntetés_csökkentés: 5
+  - fok: 2
+    TÉ_büntetés_csökkentés: 10
+  - fok: 3
+    TÉ_büntetés_csökkentés: 15
+
+# ============================================================
+# Pajzshasználat TÉ büntetés (pajzs × fok mátrix)
+# ============================================================
+
+pajzshasználat_TÉ_büntetés:
+  - pajzs: "nincs"
+    fokok: [0, 0, 0, 0]
+  - pajzs: "kis pajzs"
+    fokok: [-3, 0, 0, 0]
+  - pajzs: "közepes pajzs"
+    fokok: [-6, -3, 0, 0]
+  - pajzs: "nagy pajzs"
+    fokok: [-9, -6, -3, 0]
+
+# ============================================================
+# Aura bónusz tábla
+# ============================================================
+
+aura_bónusz:
+  - nehézség: 9
+    bónusz: 1
+  - nehézség: 12
+    bónusz: 3
+  - nehézség: 15
+    bónusz: 5
+  - nehézség: 18
+    bónusz: 7
+  - nehézség: 21
+    bónusz: 9
+  - nehézség: 24
+    bónusz: 11
+  - nehézség: 27
+    bónusz: 13
+  - nehézség: 30
+    bónusz: 15
+
+# ============================================================
+# Nyelvek
+# ============================================================
+
+nyelvek:
+  - "pyarroni / közös nyelv"
+  - "syburri"
+  - "aszisz"
+  - "emr"
+  - "erv"
+  - "dwoon"
+  - "dzsadal"
+  - "dzsad/dzsenn"
+  - "dzsad/fayumi"
+  - "gre"
+  - "sin"
+  - "dol"
+  - "eno"
+  - "lup"
+  - "dakh"
+  - "kra"
+  - "nia"
+  - "tia"
+  - "yanna'an"
+  - "cra"
+  - "ang"
+  - "amu"
+  - "aquir"
+  - "csaska"
+  - "elf"
+  - "gnóm"
+  - "ork"
+  - "törpe"
+  - "van"
+  - "sni"
+  - "kyr"
+  - "gdr"
+  - "ryeki"
+  - "tor"
 
 # ============================================================
 # Csoportok

@@ -1,7 +1,7 @@
 ---
 név: "alakzatharc"
 névkomment: "spec."
-skeleton_version: 5
+schema_version: 5
 stage: "alpha"
 maxfok: 2
 többszörösség:

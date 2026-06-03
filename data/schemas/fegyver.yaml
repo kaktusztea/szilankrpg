@@ -1,0 +1,18 @@
+---
+schema_version: 1           # a fegyver séma verziója
+
+név: ""                       # Fegyver neve. Pl: "kard, hosszú"
+TÉ: 0                         # fegyver Támadó Értéke
+VÉ: 0                         # fegyver Védő Értéke
+SP: 0                         # Sebzés Pont
+sebesség: 0                   # fegyver sebessége (harckeret számításhoz)
+sebzésmód: ""                 # S / V / Z (lehet kombinált: "S/V")
+pengehossz: 0                 # 0; 0.5; 1; 1.5; 2; 3
+forgatás: ""                  # egykezes / kétkezes
+erőbónusz_limit: 0            # max erőbónusz amit a fegyver elbír (99 = korlátlan)
+átütés: 0                     # 0: nincs, >0: ennyi SFÉ-t ignorál
+íves: false                   # íves fegyver-e
+másfélkezes: false            # MK: másfélkezes-e
+KF: false                     # Különleges fegyver szabály érvényes-e
+kategória: ""                 # közelharc / kardvívó / lándzsavívó / romboló / ostorharc
+speciális: ""                 # szöveges megjegyzés

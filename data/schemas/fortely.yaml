@@ -1,9 +1,10 @@
 ---
+schema_version: 1           # a fortely séma verziója
+
 név: ""
 névkomment: ""                # a név melletti opcionális kiegészítő szöveg
-skeleton_version: 5           # a fortely séma (skeleton) verziója
 stage: ""                     # alpha, beta, prod
-maxfok: 2                     # Legfeljebb hány foka lehet a fortélynak
+maxfok: 0                     # [0;3] Legfeljebb hány foka lehet a fortélynak
 többszörösség:
   enabled: false              # Engedélyezett-e a fortély többszöri felvétele
   jellemzőtípus: ""           # Pl: "harci alakzat", "fegyver"
@@ -13,6 +14,11 @@ leírások:
   - text: ""
 megjegyzések:
   - text: ""
+
+kiterjeszti:
+  normál: []                  # normál módban terjeszti ki ezeket a képzettségeket
+  erős: []                    # erős módban terjeszti ki ezeket a képzettségeket
+
 fokok:
   - fok: 0                    # 0 == alapeset (ha van)
     status: ""                # ⭕/✅
@@ -40,8 +46,6 @@ fokok:
         forrás: ""            # Arányos módnál: melyik értékből (képzettség neve, stb.)
         arány: 0              # Arányos módnál: szorzó (pl. 0.5, 1)
         feltétel: ""          # Mikor aktív: "" = MINDIG (karakter lapra számítandó). Egyébként szituáció neve.
-kiterjeszti:
-  normál: []                  # normál módban terjeszti ki ezeke a képzettségeket
-  erős: []                    # erős módban terjeszti ki ezeke a képzettségeket
+
 todo:
   - text: ""

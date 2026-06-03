@@ -1,7 +1,7 @@
 ---
 név: "harci akrobatika"
 névkomment: ""
-skeleton_version: 5
+schema_version: 5
 stage: "beta"
 maxfok: 2
 többszörösség:
