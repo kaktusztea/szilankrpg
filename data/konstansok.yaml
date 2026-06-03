@@ -56,8 +56,10 @@ kp_bónusz:                    # Kiemelt Fortélyok után járó extra KP
 # ============================================================
 
 arányok:
+  max_tsz: 21
   max_hm_diff_szintlépésenként: 0.5       # kerekítés: lefelé
   képzettség_nemprimer_max_szint_plusz: 3
+  képzettség_max_szint: 15
   tulajdonság_pont_alap: 64                # alap tulajdonság pont keret
   tulajdonság_pont_tsz_bónusz: 0.5         # TSz × ez (kerekítés lefelé) adódik hozzá
   max_cm_perszint: 2            # max ennyi CM vehető fel szintenként
@@ -224,6 +226,8 @@ tulajdonság_pontok:              # érték → pont költség
   3: 11
   4: 15
   5: 20
+  6: 26                           # csak faji/mágikus módosítóval
+  7: 33                           # csak faji/mágikus módosítóval
 
 # ============================================================
 # Harcmodorok

@@ -17,7 +17,8 @@ tulajdonságok:
   önuralom: 0
   érzékenység: 0
 
-HM: 0                       # KP-ból vásárolt Harcérték Módosító
+HM_TÉ: 0                     # KP-ból vásárolt Harcérték Módosító → TÉ-re
+HM_VÉ: 0                     # KP-ból vásárolt Harcérték Módosító → VÉ-re
 CM: 0                       # KP-ból vásárolt Célzóérték Módosító
 
 képzettségek:
