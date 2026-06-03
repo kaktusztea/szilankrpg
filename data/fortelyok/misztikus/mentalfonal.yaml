@@ -1,15 +1,15 @@
 ---
 schema_version: 1
 
-név: "Mentálfonál (1)"
+név: "Mentálfonál"
 névkomment: ""
 maxfok: 1
 többszörösség:
-  spec_típus: ""
+  spec_típus: "személy"
   spec_lista: []
 csoport: "misztikus"
 leírások:
-  - text: ""
+  - text: "Láthatatlan mentális kötelék egy konkrét személy felé."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,8 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Egy konkrét személy felé kiépített Mentálfonál."
+      - text: "Telepátia alkalmazásakor nem szükséges látniuk egymást — korlátlan távolság."
     módosítók: ""
 
 todo:

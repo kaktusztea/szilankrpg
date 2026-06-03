@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 
-név: "🌀 Pszí Telekinézis"
+név: "Pszí Telekinézis"
 névkomment: ""
 maxfok: 3
 többszörösség:
@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "misztikus"
 leírások:
-  - text: ""
+  - text: "Tárgyak szellemi akarattal való lassú mozgatása."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,19 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Apró tárgyak lassú mozgatása."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Kard, sisak méretű tárgyak lassú mozgatása."
+    módosítók: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Láda méretű tárgyak lassú mozgatása."
     módosítók: ""
 
 todo:

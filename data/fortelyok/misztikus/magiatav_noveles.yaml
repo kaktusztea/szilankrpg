@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "misztikus"
 leírások:
-  - text: ""
+  - text: "Távolba direktben ható mágiákra specializálódtál."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,19 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Mágiatáv II jellemzőivel tudsz távolba ható mágiát végezni."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Mágiatáv III jellemzőivel tudsz távolba ható mágiát végezni."
+    módosítók: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Mágiatáv IV jellemzőivel tudsz távolba ható mágiát végezni."
     módosítók: ""
 
 todo:

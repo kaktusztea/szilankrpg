@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "misztikus"
 leírások:
-  - text: ""
+  - text: "Kiszámíthatatlanul mozgó ellenfélre lőtt mágikus lövedék Szorzó csökkentése."
 megjegyzések:
   - text: ""
 
@@ -18,11 +18,17 @@ kiterjeszti:
   erős: []
 
 fokok:
+  - fok: 0
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Kiszámíthatatlan Szorzó: 4x. Harcoló Szorzó: 5x."
+    módosítók: ""
   - fok: 1
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Kiszámíthatatlan Szorzó: 3x. Harcoló Szorzó: 4x."
     módosítók: ""
 
 todo:

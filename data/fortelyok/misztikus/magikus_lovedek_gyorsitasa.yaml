@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "misztikus"
 leírások:
-  - text: ""
+  - text: "Kihegyezted magad a lövedékek gyorsítására."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,13 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Komplexitás - Mozgatás esetén -3 Nehézség könnyítés."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Komplexitás - Mozgatás esetén -6 Nehézség könnyítés."
     módosítók: ""
 
 todo:

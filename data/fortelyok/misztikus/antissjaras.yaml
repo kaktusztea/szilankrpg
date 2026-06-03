@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 
-név: "Antissjárás (⭕1?)"
+név: "Antissjárás"
 névkomment: ""
 maxfok: 1
 többszörösség:
@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "misztikus"
 leírások:
-  - text: ""
+  - text: "Képes vagy az álomsíkon közlekedni."
 megjegyzések:
   - text: ""
 
@@ -22,8 +22,8 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "⭕TODO: Hatás kidolgozandó."
     módosítók: ""
 
 todo:
-  - text: ""
+  - text: "⭕Még kidolgozandóak a hatások"

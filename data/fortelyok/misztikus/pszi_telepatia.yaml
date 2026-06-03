@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 
-név: "🌀 Pszí Telepátia"
+név: "Pszí Telepátia"
 névkomment: ""
 maxfok: 3
 többszörösség:
@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "misztikus"
 leírások:
-  - text: ""
+  - text: "Szellemi üzenetküldés, amennyiben a fogadó fél képes rá."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,20 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Képes vagy üzenetet fogadni."
+    módosítók: ""
+  - fok: 2
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Képes vagy üzenetet küldeni (fogadónak min. 1.fok kell)."
+      - text: "Harcban nem alkalmazható."
+    módosítók: ""
+  - fok: 3
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Harc közben is képes vagy üzenni (Szabad cselekedettként, 1x/kör)."
     módosítók: ""
 
 todo:

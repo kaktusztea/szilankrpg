@@ -1,20 +1,20 @@
 ---
 schema_version: 1
 
-név: "Külső síkok lényeinek ismerete (1)"
+név: "Külső síkok lényeinek ismerete"
 névkomment: ""
 maxfok: 1
 többszörösség:
-  spec_típus: ""
+  spec_típus: "lénycsoport"
   spec_lista: []
 csoport: "misztikus"
 leírások:
-  - text: ""
+  - text: "A külső síkok túlvilági teremtményeinek ismerete."
 megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: []
+  normál: ["Lexikum"]
   erős: []
 
 fokok:
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Dobhatsz Lexikum képzettségpróbát egyes lények ismeretére."
     módosítók: ""
 
 todo:
