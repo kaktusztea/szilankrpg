@@ -10,9 +10,6 @@ többszörös: false               # 🔁 Többször felvehető-e (pl. Harcmodor
 csoportos: false                # 🤝 Csoportos képzettségpróba alkalmazható-e
 próba: ""                       # "nincs" / "dobható" / "ellenpróba"
 domináns_tulajdonságok: []      # pl: ["Ügyesség", "Gyorsaság"]
-kiterjesztések:
-  normál: []                    # normál kiterjesztés fortélyok nevei
-  erős: []                      # erős kiterjesztés fortélyok nevei
 mesterbónuszok:
   - szint: 9
     leírás: ""

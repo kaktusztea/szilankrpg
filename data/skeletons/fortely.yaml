@@ -34,11 +34,14 @@ fokok:
     hatástext:
       - text: ""
     módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.
-      - cél: ""              # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / harckeret / manőver:név / MGT_TÉ_büntetés
-        érték: 0             # Fix bónusz (flat mód esetén)
-        mód: "flat"          # "flat": fix érték. "arányos": forrás × arány
-        forrás: ""           # Arányos módnál: melyik értékből (képzettség neve, stb.)
-        arány: 0             # Arányos módnál: szorzó (pl. 0.5, 1)
-        feltétel: ""         # Mikor aktív: "" = MINDIG (karakter lapra számítandó). Egyébként szituáció neve.
+      - cél: ""               # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / harckeret / manőver:név / MGT_TÉ_büntetés
+        érték: 0              # Fix bónusz (flat mód esetén)
+        mód: "flat"           # "flat": fix érték. "arányos": forrás × arány
+        forrás: ""            # Arányos módnál: melyik értékből (képzettség neve, stb.)
+        arány: 0              # Arányos módnál: szorzó (pl. 0.5, 1)
+        feltétel: ""          # Mikor aktív: "" = MINDIG (karakter lapra számítandó). Egyébként szituáció neve.
+kiterjeszti:
+  normál: []                  # normál módban terjeszti ki ezeke a képzettségeket
+  erős: []                    # erős módban terjeszti ki ezeke a képzettségeket
 todo:
   - text: ""
