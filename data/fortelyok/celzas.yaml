@@ -1,50 +1,52 @@
 ---
-név: "célzás"
-névkomment: ""
-schema_version: 5
+schema_version: 1
+név: célzás
+névkomment: ''
 maxfok: 1
 többszörösség:
-  enabled: false
   spec_típus: ""
-  spec_lista: ""
-csoport: "harci"
+  spec_lista: []
+csoport: harci
 leírások:
-  - text: "Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót, ami lövésedet segíti, vagy gátolja - mikor kitartod célzással lövésedet."
+- text: Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót, ami
+    lövésedet segíti, vagy gátolja - mikor kitartod célzással lövésedet.
 megjegyzések:
-  - text: "A **Célzás** csak kiszámíthatóan mozgó cél ellen alkalmazható."
-  - text: "Íjat legfeljebb `1` körig tarthatsz ki, utána minden további kör nemhogy javít, de ront a találati esélyeken (körönként ugyanennyit)."
+- text: 'A **Célzás** csak kiszámíthatóan mozgó cél ellen alkalmazható.'
+- text: Íjat legfeljebb `1` körig tarthatsz ki, utána minden további kör nemhogy javít,
+    de ront a találati esélyeken (körönként ugyanennyit).
+kiterjeszti:
+  normál: []
+  erős: []
 fokok:
-  - fok: 0
-    status: "✅"
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "`1` célzással eltöltött kör után `+10 CÉ` módosítót kapsz."
-    módosítók:
-      - cél: "CÉ"
-        érték: 10
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "célzás"
-  - fok: 1
-    status: "✅"
-    követelménytext: ""
-    követelmények:
-      - név: ["íjászat", "lövészet"]
-        érték: 5
-        típus: "képzettség"
-      - név: "összpontosítás"
-        érték: 4
-        típus: "képzettség"
-    hatástext:
-      - text: "`1` célzással eltöltött kör után ⭕`+20 CÉ`⭕ módosítót kapsz. Nem additív."
-    módosítók:
-      - cél: "CÉ"
-        érték: 20
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "célzás"
+- fok: 0
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: '`1` célzással eltöltött kör után `+10 CÉ` módosítót kapsz.'
+  módosítók:
+  - cél: CÉ
+    érték: 10
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: célzás
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név: ["íjászat", "lövészet"]
+    érték: 5
+    típus: "képzettség"
+  - név: "összpontosítás"
+    érték: 4
+    típus: "képzettség"
+  hatástext:
+  - text: '`1` célzással eltöltött kör után ⭕`+20 CÉ`⭕ módosítót kapsz. Nem additív.'
+  módosítók:
+  - cél: CÉ
+    érték: 20
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: célzás
 todo:
-  - text: ""
+- text: ''

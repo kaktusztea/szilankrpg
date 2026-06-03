@@ -19,14 +19,12 @@ kiterjeszti:
 
 fokok:
   - fok: 0                    # 0 == alapeset (ha van)
-    status: ""                # ⭕/✅
     követelménytext: ""       # Szöveges követelmény (nem kalkuláció alapja)
     követelmények: ""         # Megengedett: "képzettség", "mesterfegyver". Üres ha nincs.
     hatástext:                # Nem-gépesíthető, narratív hatások szövege
       - text: ""
     módosítók: ""             # Gépesíthető hatások listája. Üres ("") ha nincs.
   - fok: 1
-    status: ""
     követelménytext: ""
     követelmények:            # Opcionális lista. Üres ("") ha nincs követelmény.
       - név: "harcmodor_neve" # string VAGY lista. Lista = VAGY kapcsolat, pl: ["közelharc", "kardvívás"]

@@ -1,78 +1,88 @@
 ---
-név: "harci akrobatika"
-névkomment: ""
-schema_version: 5
+schema_version: 1
+név: harci akrobatika
+névkomment: ''
 maxfok: 2
 többszörösség:
-  enabled: false
   spec_típus: ""
-  spec_lista: ""
-csoport: "harci"
+  spec_lista: []
+csoport: harci
 leírások:
-  - text: '„Pattog, mint a nikkelbolha" - mondják, ha harcolni látnak.'
-  - text: "Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen..."
+- text: '"Pattog, mint a nikkelbolha" - mondják, ha harcolni látnak.'
+- text: Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket
+    - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen...
 megjegyzések:
-  - text: "**Fegyverek**: A forgatott fegyverek össz pengehossza nem lehet nagyobb, mint `1 penge` (Például 1db hosszú kard, vagy 2db rövidkard), továbbá súlyuk is fontos tényező (KM dönt)."
-  - text: "**Vértek**: a fortély csak olyan hajlékony, könnyű, nem-fém vértben használható, melynek nem nagyobb MGT-je ⭕X⭕-nél."
-  - text: "**Alkalmazás**:  ha olyan a szituáció, hogy az alkalmazó nem képes, vagy nem akarja alkalmazni harca közben ezt a stílust (pl. túl feltűnő lenne az ugrabugrálása), akkor nem kapja meg a leírt bónuszokat."
-  - text: "**Helyigény**: a KM dönt, hogy van-e elég hely az alkalmazáshoz, de ne legyen túl szigorú; egy közepes szobában is alkalmazható (falra ugrás, elrugaszkodás, stb)."
+- text: '**Fegyverek**: A forgatott fegyverek össz pengehossza nem lehet nagyobb,
+    mint `1 penge` (Például 1db hosszú kard, vagy 2db rövidkard), továbbá súlyuk is
+    fontos tényező (KM dönt).'
+- text: '**Vértek**: a fortély csak olyan hajlékony, könnyű, nem-fém vértben használható,
+    melynek nem nagyobb MGT-je ⭕X⭕-nél.'
+- text: '**Alkalmazás**:  ha olyan a szituáció, hogy az alkalmazó nem képes, vagy
+    nem akarja alkalmazni harca közben ezt a stílust (pl. túl feltűnő lenne az ugrabugrálása),
+    akkor nem kapja meg a leírt bónuszokat.'
+- text: '**Helyigény**: a KM dönt, hogy van-e elég hely az alkalmazáshoz, de ne legyen
+    túl szigorú; egy közepes szobában is alkalmazható (falra ugrás, elrugaszkodás,
+    stb).'
+kiterjeszti:
+  normál: []
+  erős: []
 fokok:
-  - fok: 1
-    status: "✅"
-    követelménytext: ""
-    követelmények:
-      - név: "akrobatika"
-        érték: 4
-        típus: "képzettség"
-    hatástext:
-      - text: "Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
-    módosítók:
-      - cél: "TÉ"
-        érték: 0
-        mód: "arányos"
-        forrás: "akrobatika"
-        arány: 0.5
-        feltétel: ""
-      - cél: "VÉ"
-        érték: 0
-        mód: "arányos"
-        forrás: "akrobatika"
-        arány: 0.5
-        feltétel: ""
-      - cél: "manőver:kibontakozás"
-        érték: 1
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-  - fok: 2
-    status: "✅"
-    követelménytext: ""
-    követelmények:
-      - név: "akrobatika"
-        érték: 8
-        típus: "képzettség"
-    hatástext:
-      - text: "Az **Akrobatika** képzettségedet `1:1` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
-      - text: "🗡️ **Kibontakozás/Átsiklás** manőverre `+3` bónuszt kapsz."
-    módosítók:
-      - cél: "TÉ"
-        érték: 0
-        mód: "arányos"
-        forrás: "akrobatika"
-        arány: 1
-        feltétel: ""
-      - cél: "VÉ"
-        érték: 0
-        mód: "arányos"
-        forrás: "akrobatika"
-        arány: 1
-        feltétel: ""
-      - cél: "manőver:kibontakozás"
-        érték: 3
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név: akrobatika
+    érték: 4
+    típus: képzettség
+  hatástext:
+  - text: 'Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ`
+      értékeidhez.'
+  módosítók:
+  - cél: TÉ
+    érték: 0
+    mód: arányos
+    forrás: akrobatika
+    arány: 0.5
+    feltétel: ''
+  - cél: VÉ
+    érték: 0
+    mód: arányos
+    forrás: akrobatika
+    arány: 0.5
+    feltétel: ''
+  - cél: 'manőver:kibontakozás'
+    érték: 1
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név: akrobatika
+    érték: 8
+    típus: képzettség
+  hatástext:
+  - text: 'Az **Akrobatika** képzettségedet `1:1` hozzáadhatod bónuszként `TÉ/VÉ`
+      értékeidhez.'
+  - text: '🗡️ **Kibontakozás/Átsiklás** manőverre `+3` bónuszt kapsz.'
+  módosítók:
+  - cél: TÉ
+    érték: 0
+    mód: arányos
+    forrás: akrobatika
+    arány: 1
+    feltétel: ''
+  - cél: VÉ
+    érték: 0
+    mód: arányos
+    forrás: akrobatika
+    arány: 1
+    feltétel: ''
+  - cél: 'manőver:kibontakozás'
+    érték: 3
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
 todo:
-  - text: ""
+- text: ''

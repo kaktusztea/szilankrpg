@@ -1,42 +1,42 @@
 ---
-név: "fegyverrántás"
-névkomment: ""
-schema_version: 5
+schema_version: 1
+név: fegyverrántás
+névkomment: ''
 maxfok: 2
 többszörösség:
-  enabled: false
   spec_típus: ""
-  spec_lista: ""
-csoport: "harci"
+  spec_lista: []
+csoport: harci
 leírások:
-  - text: "Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél."
-  - text: "Bónuszok 🗡️**Fegyverrántás-szituációban** (az alkalmazó oldalán):"
+- text: Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél.
+- text: 'Bónuszok 🗡️**Fegyverrántás-szituációban** (az alkalmazó oldalán):'
 megjegyzések:
-  - text: "Bővebben lásd a **Harcrendszer** fejezet ⭕🗡️ **Fegyverrántás** alfejezetét!"
+- text: 'Bővebben lásd a **Harcrendszer** fejezet ⭕🗡️ **Fegyverrántás** alfejezetét!'
+kiterjeszti:
+  normál: []
+  erős: []
 fokok:
-  - fok: 1
-    status: ""
-    követelménytext: ""
-    követelmények: ""
-    hatástext: ""
-    módosítók:
-      - cél: "KÉ"
-        érték: 5
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "fegyverrántás"
-  - fok: 2
-    status: ""
-    követelménytext: ""
-    követelmények: ""
-    hatástext: ""
-    módosítók:
-      - cél: "KÉ"
-        érték: 10
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "fegyverrántás"
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext: ''
+  módosítók:
+  - cél: KÉ
+    érték: 5
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: fegyverrántás
+- fok: 2
+  követelménytext: ''
+  követelmények: ''
+  hatástext: ''
+  módosítók:
+  - cél: KÉ
+    érték: 10
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: fegyverrántás
 todo:
-  - text: ""
+- text: ''

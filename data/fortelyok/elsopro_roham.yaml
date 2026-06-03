@@ -1,39 +1,41 @@
 ---
-név: "elsöprő roham"
-névkomment: ""
-schema_version: 5
+schema_version: 1
+név: elsöprő roham
+névkomment: ''
 maxfok: 1
 többszörösség:
-  enabled: false
   spec_típus: ""
-  spec_lista: ""
-csoport: "harci"
+  spec_lista: []
+csoport: harci
 leírások:
-  - text: "Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból."
+- text: Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.
 megjegyzések:
-  - text: "Öngyilkos roham esetén a fentiek nem használhatóak."
+- text: Öngyilkos roham esetén a fentiek nem használhatóak.
+kiterjeszti:
+  normál: []
+  erős: []
 fokok:
-  - fok: 1
-    status: ""
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás", "lándzsavívás", "zúzás"]
-        érték: 4
-        típus: "képzettség"
-    hatástext:
-      - text: "Roham esetén az erőbónusz duplázódik."
-    módosítók:
-      - cél: "KÉ"
-        érték: 5
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "roham"
-      - cél: "SP"
-        érték: 0
-        mód: "arányos"
-        forrás: "erőbónusz"
-        arány: 1
-        feltétel: "roham"
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név: ["közelharc", "kardvívás", "lándzsavívás", "zúzás"]
+    érték: 4
+    típus: "képzettség"
+    típus: képzettség
+  hatástext:
+  - text: Roham esetén az erőbónusz duplázódik.
+  módosítók:
+  - cél: KÉ
+    érték: 5
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: roham
+  - cél: SP
+    érték: 0
+    mód: arányos
+    forrás: erőbónusz
+    arány: 1
+    feltétel: roham
 todo:
-  - text: ""
+- text: ''
