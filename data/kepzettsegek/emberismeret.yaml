@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Emberismeret"
+leírás: "Mások szándékainak, érzelmeinek felismerése."
+primer: true
+csoport: "világi"
+többszörös: false
+csoportos: false
+próba: "ellenpróba"
+domináns_tulajdonságok: ["Érzékenység", "Intelligencia"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

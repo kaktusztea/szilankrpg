@@ -24,6 +24,7 @@ CM: 0                       # KP-ból vásárolt Célzóérték Módosító
 képzettségek:
   - név: ""
     szint: 0
+    spec: ""                  # többszörös vagy egyedi identitású képzettségeknél (pl. Tradíció: "Magasmágia", Harcmodor: "Kardvívás")
 
 fortélyok_kiemelt:
   kulturkörök:

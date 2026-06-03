@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Lopakodás/Rejtőzés"
+leírás: "Észrevétlen mozgás és elrejtőzés."
+primer: true
+csoport: "alvilági"
+többszörös: false
+csoportos: true
+próba: "ellenpróba"
+domináns_tulajdonságok: ["Ügyesség", "Önuralom"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Szerencsejáték"
+leírás: "Kártyajátékok, kockajátékok, fogadások ismerete és csalás."
+primer: false
+csoport: "alvilági"
+többszörös: false
+csoportos: false
+próba: "dobható"
+domináns_tulajdonságok: ["Önuralom", "Intelligencia"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Harcmodor"
+leírás: "Közelharci fegyverforgatás képessége egy adott harcmodor-kategóriában."
+primer: true
+csoport: "harci"
+többszörös: true
+csoportos: false
+próba: "nincs"
+domináns_tulajdonságok: []
+mesterbónuszok:
+  - szint: 9
+    leírás: "Fegyver Ideájának érzékelése, leplezetlen mágia érzékelése kézbe véve."
+  - szint: 12
+    leírás: "Fegyver sebzése mágikus lesz. Sebzéstípus másodlagos/alkalmatlan büntetés -1."
+  - szint: 15
+    leírás: "Sebzéstípus büntetések megszűnnek. Alacsonyabb szintű ellenfél azonnali harcképtelenné tétele sebzéskor."

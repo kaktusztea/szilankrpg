@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Mágikus célzás"
+leírás: "Mágikus lövedékek és csatamágia célzásának harcmodora."
+primer: true
+csoport: "harci"
+többszörös: false
+csoportos: false
+próba: "nincs"
+domináns_tulajdonságok: []
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Befolyásolás"
+leírás: "Mások meggyőzése, szándékainknak megfelelő cselekedetek elérése."
+primer: true
+csoport: "világi"
+többszörös: false
+csoportos: false
+próba: "ellenpróba"
+domináns_tulajdonságok: ["Intelligencia", "Érzékenység"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

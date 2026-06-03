@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Nyomozás"
+leírás: "Nyomok értelmezése, logikai következtetés, nyomkövetés."
+primer: true
+csoport: "világi"
+többszörös: false
+csoportos: true
+próba: "dobható"
+domináns_tulajdonságok: ["Intelligencia", "Emlékezet"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

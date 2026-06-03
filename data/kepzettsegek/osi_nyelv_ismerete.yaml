@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Ősi nyelv ismerete"
+leírás: "Ősi, holt nyelvek ismerete. Nyelvenként külön felveendő."
+primer: true
+csoport: "misztikus"
+többszörös: true
+csoportos: false
+próba: "dobható"
+domináns_tulajdonságok: ["Emlékezet"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

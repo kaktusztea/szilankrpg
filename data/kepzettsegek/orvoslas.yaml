@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Orvoslás"
+leírás: "Sebek ellátása, betegségek kezelése, gyógyítás."
+primer: true
+csoport: "tudományos"
+többszörös: false
+csoportos: true
+próba: "dobható"
+domináns_tulajdonságok: ["Érzékenység", "Intelligencia"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

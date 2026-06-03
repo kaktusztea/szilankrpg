@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Mászás"
+leírás: "Falak, sziklák, épületek megmászása."
+primer: false
+csoport: "fizikai"
+többszörös: false
+csoportos: false
+próba: "dobható"
+domináns_tulajdonságok: ["Ügyesség", "Edzettség"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

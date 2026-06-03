@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Kézművesség"
+leírás: "Kétkezi mesterségek ismerete és gyakorlása."
+primer: false
+csoport: "világi"
+többszörös: true
+csoportos: true
+próba: "dobható"
+domináns_tulajdonságok: ["Ügyesség", "Intelligencia"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

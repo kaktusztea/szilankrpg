@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Távolsági harcmodor"
+leírás: "Lő- és hajítófegyverek használatának képessége egy adott kategóriában."
+primer: true
+csoport: "harci"
+többszörös: true
+csoportos: true
+próba: "nincs"
+domináns_tulajdonságok: []
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

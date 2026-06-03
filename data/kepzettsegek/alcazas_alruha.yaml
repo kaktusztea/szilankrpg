@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Álcázás/Álruha"
+leírás: "Külső megváltoztatása, más személynek való kiadás."
+primer: false
+csoport: "alvilági"
+többszörös: false
+csoportos: false
+próba: "dobható"
+domináns_tulajdonságok: ["Ügyesség", "Intelligencia", "Önuralom", "Érzékenység"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

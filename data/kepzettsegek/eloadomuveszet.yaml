@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Előadóművészet"
+leírás: "Aktív előadást igénylő művészetek: ének, zene, színészet, tánc."
+primer: false
+csoport: "művészeti"
+többszörös: false
+csoportos: true
+próba: "dobható"
+domináns_tulajdonságok: ["Érzékenység", "Emlékezet"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

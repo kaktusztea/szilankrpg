@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Észlelés"
+leírás: "Dolgok, személyek, események észrevétele."
+primer: true
+csoport: "világi"
+többszörös: false
+csoportos: true
+próba: "dobható"
+domináns_tulajdonságok: ["Érzékenység", "Intelligencia"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""

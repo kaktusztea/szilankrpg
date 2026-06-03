@@ -1,0 +1,18 @@
+---
+schema_version: 1
+
+név: "Hajózás"
+leírás: "Hajók, legénység kezelése, irányítása és tengeri navigáció."
+primer: false
+csoport: "világi"
+többszörös: false
+csoportos: true
+próba: "dobható"
+domináns_tulajdonságok: ["Érzékenység", "Intelligencia", "Emlékezet", "Ügyesség"]
+mesterbónuszok:
+  - szint: 9
+    leírás: ""
+  - szint: 12
+    leírás: ""
+  - szint: 15
+    leírás: ""
