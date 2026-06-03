@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Különösen fájdalmas pontokat támadsz, kibillentheted ellenfeledet."
 megjegyzések:
   - text: ""
 
@@ -19,10 +19,12 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Egykezes szúró-vágó-ostor fegyver. Harci anatómia: 1.fok. Sikeres Precíz támadás manőver."
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Sebzésed: 1 ÉP."
+      - text: "Áldozat: Fájdalomtűrés + Önuralom próba (Célszám: Harci anatómia fokától függ: 9/12/15)."
+      - text: "Rontott próba: Indulat(1) Harag vagy Félelem(1) Szorongás Státusz."
     módosítók: ""
 
 todo:

@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Hátason ülve harcolsz."
 megjegyzések:
   - text: ""
 
@@ -20,10 +20,79 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 6
+        típus: "képzettség"
+      - név: "Lovaglás"
+        érték: 6
+        típus: "képzettség"
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "TÉ:+3, VÉ:+3 lovas bónusz."
+      - text: "Lovas Manővereket végezhetsz."
+    módosítók:
+      - cél: "TÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:lovas_harc"
+      - cél: "VÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:lovas_harc"
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 9
+        típus: "képzettség"
+      - név: "Lovaglás"
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "TÉ:+6, VÉ:+6 lovas bónusz."
+      - text: "Lovas Manővereket végezhetsz."
+    módosítók:
+      - cél: "TÉ"
+        érték: 6
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:lovas_harc"
+      - cél: "VÉ"
+        érték: 6
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:lovas_harc"
+  - fok: 3
+    követelménytext: ""
+    követelmények:
+      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
+        érték: 12
+        típus: "képzettség"
+      - név: "Lovaglás"
+        érték: 12
+        típus: "képzettség"
+    hatástext:
+      - text: "TÉ:+9, VÉ:+9 lovas bónusz."
+      - text: "Lovas Manővereket végezhetsz."
+    módosítók:
+      - cél: "TÉ"
+        érték: 9
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:lovas_harc"
+      - cél: "VÉ"
+        érték: 9
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:lovas_harc"
 
 todo:
   - text: ""

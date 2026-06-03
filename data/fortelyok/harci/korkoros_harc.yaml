@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben zárnak körbe."
 megjegyzések:
   - text: ""
 
@@ -19,10 +19,11 @@ kiterjeszti:
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2)."
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Nem alkalmazhatnak ellened Hátbaszúrást harc közben."
+      - text: "Nem kapják meg a Hátulról/Félhátulról támadás módosítóit."
     módosítók: ""
 
 todo:

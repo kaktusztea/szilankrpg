@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Repülő hátason ülve harcolsz."
 megjegyzések:
   - text: ""
 
@@ -20,10 +20,70 @@ kiterjeszti:
 fokok:
   - fok: 1
     követelménytext: ""
-    követelmények: ""
+    követelmények:
+      - név: "Léglovaglás"
+        érték: 3
+        típus: "képzettség"
     hatástext:
-      - text: ""
-    módosítók: ""
+      - text: "TÉ:+3, VÉ:+3 léglovas bónusz."
+      - text: "Léglovas Manővereket végezhetsz."
+    módosítók:
+      - cél: "TÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:léglovas_harc"
+      - cél: "VÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:léglovas_harc"
+  - fok: 2
+    követelménytext: ""
+    követelmények:
+      - név: "Léglovaglás"
+        érték: 6
+        típus: "képzettség"
+    hatástext:
+      - text: "TÉ:+6, VÉ:+6 léglovas bónusz."
+      - text: "Léglovas Manővereket végezhetsz."
+    módosítók:
+      - cél: "TÉ"
+        érték: 6
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:léglovas_harc"
+      - cél: "VÉ"
+        érték: 6
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:léglovas_harc"
+  - fok: 3
+    követelménytext: ""
+    követelmények:
+      - név: "Léglovaglás"
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "TÉ:+9, VÉ:+9 léglovas bónusz."
+      - text: "Léglovas Manővereket végezhetsz."
+    módosítók:
+      - cél: "TÉ"
+        érték: 9
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:léglovas_harc"
+      - cél: "VÉ"
+        érték: 9
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "szituáció:léglovas_harc"
 
 todo:
   - text: ""

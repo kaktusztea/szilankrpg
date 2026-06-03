@@ -9,7 +9,7 @@ többszörösség:
   spec_lista: []
 csoport: "harci"
 leírások:
-  - text: ""
+  - text: "Kimondottan jó vagy a rád kilőtt lövedékek elől való kitérésben."
 megjegyzések:
   - text: ""
 
@@ -22,7 +22,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: ""
+      - text: "Szándékos kitérés lövés elől szituációban Akrobatika próbára +2 bónusz."
     módosítók: ""
 
 todo:
