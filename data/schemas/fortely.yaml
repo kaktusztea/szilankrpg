@@ -38,7 +38,7 @@ fokok:
     módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.
       - cél: ""               # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / harckeret / manőver:név / MGT_TÉ_büntetés
         érték: 0              # Fix bónusz (flat mód esetén)
-        mód: "flat"           # "flat": fix érték. "arányos": forrás × arány. "override": felülírja az alapértéket.
+        mód: "flat"           # "flat": fix érték. "scaled": forrás × arány. "override": felülírja az alapértéket.
         forrás: ""            # Arányos módnál: melyik értékből (képzettség neve, stb.)
         arány: 0              # Arányos módnál: szorzó (pl. 0.5, 1)
         feltétel: ""          # Mikor aktív: "" = MINDIG (karakter lapra számítandó). Egyébként szituáció neve.

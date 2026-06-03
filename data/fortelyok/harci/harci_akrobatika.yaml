@@ -39,13 +39,13 @@ fokok:
   módosítók:
   - cél: TÉ
     érték: 0
-    mód: arányos
+    mód: scaled
     forrás: akrobatika
     arány: 0.5
     feltétel: ''
   - cél: VÉ
     érték: 0
-    mód: arányos
+    mód: scaled
     forrás: akrobatika
     arány: 0.5
     feltétel: ''
@@ -68,13 +68,13 @@ fokok:
   módosítók:
   - cél: TÉ
     érték: 0
-    mód: arányos
+    mód: scaled
     forrás: akrobatika
     arány: 1
     feltétel: ''
   - cél: VÉ
     érték: 0
-    mód: arányos
+    mód: scaled
     forrás: akrobatika
     arány: 1
     feltétel: ''

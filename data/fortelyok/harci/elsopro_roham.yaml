@@ -33,7 +33,7 @@ fokok:
     feltétel: "szituáció:roham"
   - cél: SP
     érték: 0
-    mód: arányos
+    mód: scaled
     forrás: erőbónusz
     arány: 1
     feltétel: "szituáció:roham"

@@ -383,7 +383,7 @@ logic:
       if mod.feltétel == "":  // MINDIG aktív
         if mod.mód == "flat":
           harcérték[mod.cél] += mod.érték
-        elif mod.mód == "arányos":
+        elif mod.mód == "scaled":
           forrás_érték = lookup(mod.forrás → képzettség szint vagy egyéb)
           harcérték[mod.cél] += FLOOR(forrás_érték × mod.arány)
         elif mod.mód == "override":
