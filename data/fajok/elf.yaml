@@ -1,0 +1,26 @@
+---
+schema_version: 1
+
+név: "Elf"
+leírás: ""
+tulajdonság_keretek:
+  erő: [-5, 4]
+  edzettség: [-5, 4]
+  ügyesség: [-2, 6]
+  gyorsaság: [-2, 6]
+  intelligencia: [-5, 5]
+  emlékezet: [-5, 5]
+  önuralom: [-5, 5]
+  érzékenység: [-5, 5]
+érzék_fortélyok:
+  - név: "Emberentúli látás"
+    max_fok: 1
+  - név: "Infralátás"
+    max_fok: 2
+faj_misztérium: "Elf"
+kötelező_fortélyok: []
+faji_fortélyok: []
+ajánlott_fortélyok: ["Baráti állatok", "Kitartás"]
+ajánlott_képzettségek: ["Természetjárás", "Lovaglás"]
+tiltott_képzettségek: []
+tiltott_fortélyok: []

@@ -1,0 +1,28 @@
+---
+schema_version: 1
+
+név: "Khál"
+leírás: ""
+tulajdonság_keretek:
+  erő: [-5, 5]
+  edzettség: [-5, 5]
+  ügyesség: [-5, 5]
+  gyorsaság: [-5, 5]
+  intelligencia: [-5, 2]
+  emlékezet: [-5, 5]
+  önuralom: [-5, 2]
+  érzékenység: [-5, 5]
+érzék_fortélyok:
+  - név: "Emberentúli látás"
+    max_fok: 1
+  - név: "Emberentúli hallás"
+    max_fok: 1
+  - név: "Emberentúli szaglás"
+    max_fok: 1
+faj_misztérium: "Khál"
+kötelező_fortélyok: []
+faji_fortélyok: []
+ajánlott_fortélyok: ["Természetes fegyver", "Kétkezes Harc", "Kitartás"]
+ajánlott_képzettségek: ["Mászás", "Akrobatika"]
+tiltott_képzettségek: []
+tiltott_fortélyok: []

@@ -1,0 +1,26 @@
+---
+schema_version: 1
+
+név: "Udvari ork"
+leírás: ""
+tulajdonság_keretek:
+  erő: [-1, 6]
+  edzettség: [-1, 5]
+  ügyesség: [-5, 5]
+  gyorsaság: [-5, 5]
+  intelligencia: [-5, 3]
+  emlékezet: [-5, 5]
+  önuralom: [-5, 5]
+  érzékenység: [-5, 5]
+érzék_fortélyok:
+  - név: "Infralátás"
+    max_fok: 1
+  - név: "Emberentúli szaglás"
+    max_fok: 1
+faj_misztérium: "Udvari ork"
+kötelező_fortélyok: []
+faji_fortélyok: []
+ajánlott_fortélyok: []
+ajánlott_képzettségek: ["Etikett"]
+tiltott_képzettségek: []
+tiltott_fortélyok: []

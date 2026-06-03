@@ -1,0 +1,28 @@
+---
+schema_version: 1
+
+név: "Gnóm"
+leírás: ""
+tulajdonság_keretek:
+  erő: [-5, 2]
+  edzettség: [-5, 3]
+  ügyesség: [-2, 5]
+  gyorsaság: [-5, 5]
+  intelligencia: [-5, 5]
+  emlékezet: [-5, 5]
+  önuralom: [-5, 5]
+  érzékenység: [-5, 5]
+érzék_fortélyok:
+  - név: "Ultralátás"
+    max_fok: 3
+  - név: "Infralátás"
+    max_fok: 2
+  - név: "Irányérzék"
+    max_fok: 1
+faj_misztérium: "Gnóm"
+kötelező_fortélyok: []
+faji_fortélyok: []
+ajánlott_fortélyok: ["Építészet", "Mechanika", "Zártörő"]
+ajánlott_képzettségek: ["Kvantikum", "Térképészet"]
+tiltott_képzettségek: []
+tiltott_fortélyok: []

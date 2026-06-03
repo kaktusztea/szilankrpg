@@ -1,0 +1,28 @@
+---
+schema_version: 1
+
+név: "Goblin"
+leírás: ""
+tulajdonság_keretek:
+  erő: [-5, 2]
+  edzettség: [-2, 3]
+  ügyesség: [-5, 6]
+  gyorsaság: [-5, 5]
+  intelligencia: [-5, 2]
+  emlékezet: [-5, 5]
+  önuralom: [-5, 5]
+  érzékenység: [-5, 5]
+érzék_fortélyok:
+  - név: "Emberentúli szaglás"
+    max_fok: 1
+  - név: "Infralátás"
+    max_fok: 1
+  - név: "Irányérzék"
+    max_fok: 1
+faj_misztérium: "Goblin"
+kötelező_fortélyok: []
+faji_fortélyok: []
+ajánlott_fortélyok: ["Hazudozás", "Suhanó árnyék"]
+ajánlott_képzettségek: ["alvilági képzettségek"]
+tiltott_képzettségek: []
+tiltott_fortélyok: []

@@ -1,0 +1,22 @@
+---
+schema_version: 1
+
+név: "Hómanó"
+leírás: ""
+tulajdonság_keretek:
+  erő: [-5, 5]
+  edzettség: [-5, 5]
+  ügyesség: [-5, 5]
+  gyorsaság: [-5, 5]
+  intelligencia: [-5, 5]
+  emlékezet: [-5, 5]
+  önuralom: [-5, 5]
+  érzékenység: [-5, 5]
+érzék_fortélyok: []
+faj_misztérium: "Hómanó"
+kötelező_fortélyok: []
+faji_fortélyok: []
+ajánlott_fortélyok: []
+ajánlott_képzettségek: []
+tiltott_képzettségek: []
+tiltott_fortélyok: []
