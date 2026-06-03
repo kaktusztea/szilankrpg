@@ -386,7 +386,7 @@ https://github.com/kaktusztea/szilankrpg/
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
 - [Páncél MGT](069_03_pancel_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
-- [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
+- [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
 - [Páncél példák](069_07_pancel_peldak.md) ⚡
 
@@ -19247,7 +19247,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
 - [Sebzésfelfogó Érték (SFÉ)](069_02_SFE.md)
 - [Páncél MGT](069_03_pancel_MGT.md)
 - [Védett terület](069_04_vedett_terulet.md)
-- [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
+- [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 - [Páncél ára](069_06_pancel_ara.md)
 - [Páncél példák](069_07_pancel_peldak.md) ⚡
 
@@ -25836,7 +25836,7 @@ Túlcsordulás esetén
 
 ### [Védett terület](069_04_vedett_terulet.md)
 
-### [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md)
+### [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md)
 
 ### [Páncél ára](069_06_pancel_ara.md)
 
@@ -26377,14 +26377,14 @@ A lefedettség százalék a [Precíz támadás](066_05_altalanos_manoverek.md#pr
 
 ---
 
-🔗 [Merevvértviselet fortély bónuszai](069_05_vertviselet_fortely_bonuszai.md) →
+🔗 [Merevvértviselet fortély bónuszai](069_05_merevvertviselet_fortely_bonuszai.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 
 ---
 ---
-## File: md/069_05_vertviselet_fortely_bonuszai.md
+## File: md/069_05_merevvertviselet_fortely_bonuszai.md
 
 ## Merevvértviselet fortély bónuszai
 
@@ -26475,10 +26475,10 @@ A jobb Idea nagyon megdobhatja a páncél árát:
 
 ```
 +SFÉ       Ár
- -4      1/10 x
- -3       1/7 x
- -2       1/4 x
- -1       1/2 x
+ -4        0.1x
+ -3        0.15x
+ -2        0.25x
+ -1        0.5x
   0        1x
  +1        2x
  +2        4x
