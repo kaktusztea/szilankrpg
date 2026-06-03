@@ -464,3 +464,39 @@ formula:
 output: max_képzettség_szint
 note: Abszolút maximum: 15.szint. Szintlépésenként max 2 szinttel növelhető egy képzettség.
 ```
+
+
+---
+
+## 20. Faj háttér és tulajdonság keretek
+
+```
+input:  karakter.hátterek.faj, data/fajok/*.yaml
+source: schemas/faj.yaml
+
+kapcsolat:
+  karakter.hátterek.faj → lookup(faj.név → data/fajok/*.yaml) → faj_def
+
+validáció:
+  // Tulajdonság keretek: minden tulajdonság a faj által megengedett [min; max] tartományban
+  FOR EACH tulajdonság in karakter.tulajdonságok:
+    faj_def.tulajdonság_keretek[tulajdonság].min ≤ érték ≤ faj_def.tulajdonság_keretek[tulajdonság].max
+
+  // Érzék fortélyok: csak a faj által engedélyezettek vehetők fel, max fokig
+  FOR EACH éf in karakter érzék-fortélyai:
+    éf.név MUST BE IN faj_def.érzék_fortélyok[].név
+    éf.fok ≤ faj_def.érzék_fortélyok[].max_fok
+
+  // Kötelező fortélyok: a karakter MUST HAVE mindegyiket
+  FOR EACH kf in faj_def.kötelező_fortélyok:
+    kf MUST BE IN karakter.fortélyok[].név OR karakter.fortélyok_speciális
+
+  // Tiltások
+  FOR EACH tk in faj_def.tiltott_képzettségek:
+    tk MUST NOT BE IN karakter.képzettségek[].név
+  FOR EACH tf in faj_def.tiltott_fortélyok:
+    tf MUST NOT BE IN karakter.fortélyok[].név
+
+output: validációs eredmény (pass/fail + hibák listája)
+note: A faj_misztérium mező megmondja, melyik Faj Misztérium képzettséget veheti fel a karakter.
+```

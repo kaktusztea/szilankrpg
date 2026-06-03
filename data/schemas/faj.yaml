@@ -1,0 +1,24 @@
+---
+schema_version: 1
+
+név: ""
+leírás: ""
+tulajdonság_keretek:
+  erő: [-5, 5]
+  edzettség: [-5, 5]
+  ügyesség: [-5, 5]
+  gyorsaság: [-5, 5]
+  intelligencia: [-5, 5]
+  emlékezet: [-5, 5]
+  önuralom: [-5, 5]
+  érzékenység: [-5, 5]
+érzék_fortélyok:                # felvehető érzék-fortélyok és max fokuk
+  - név: ""
+    max_fok: 0
+faj_misztérium: ""              # kapcsolódó faj misztérium képzettség neve
+kötelező_fortélyok: []          # pl: ["Apró méretű lény"]
+faji_fortélyok: []              # fajhoz kötött egyedi fortélyok
+ajánlott_fortélyok: []          # pl: ["Baráti állatok", "Kitartás"]
+ajánlott_képzettségek: []       # pl: ["Természetjárás", "Lovaglás"]
+tiltott_képzettségek: []        # Pl. "lovaglás"
+tiltott_fortélyok: []           # Pl. "úszás"
