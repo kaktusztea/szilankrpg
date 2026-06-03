@@ -76,3 +76,9 @@ páncél:
   sisak: false
   végtagvédettség: 0          # 0-4
   méret_illeszkedés: ""       # passzoló, közepesen_más, nagyon_más
+  rongálódás: 0               # SFÉ csökkenés sérülés miatt
+
+felszerelés:
+  nagy_tárgyak:
+    - név: ""
+      MGT: 0
