@@ -1,0 +1,410 @@
+import { useState, useRef, useCallback } from 'react';
+import { createPortal } from 'react-dom';
+import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
+import type { Tulajdonsagok } from '../engine/types';
+import { testKarakter8 } from '../testdata';
+import './TulajdonsagokScreen.css';
+
+const TULAJDONSAG_NEVEK: (keyof Tulajdonsagok)[] = [
+  'erő', 'edzettség', 'ügyesség', 'gyorsaság',
+  'intelligencia', 'emlékezet', 'önuralom', 'érzékenység',
+];
+
+const CSOPORT_SORREND = ['harci', 'misztikus', 'fizikai', 'világi', 'alvilági', 'művészeti', 'tudományos'];
+const CSOPORT_LABEL: Record<string, string> = {
+  harci: '⚔️ Harci', misztikus: '✨ Misztikus', fizikai: '🏃 Fizikai',
+  világi: '🌍 Világi', alvilági: '🗡️ Alvilági', művészeti: '🎨 Művészeti', tudományos: '📚 Tudományos',
+};
+
+interface KepzettsegSlot {
+  név: string;
+  szint: number;
+}
+
+interface Props {
+  data: GameData;
+  gameMode: boolean;
+}
+
+export function TulajdonsagokScreen({ data, gameMode }: Props) {
+  const [tulajdonságok, setTulajdonságok] = useState<Tulajdonsagok>({ ...testKarakter8.tulajdonságok });
+  const [képzettségek, setKépzettségek] = useState<KepzettsegSlot[]>(
+    testKarakter8.képzettségek.map(k => ({ név: k.név, szint: k.szint }))
+  );
+
+  // Game mode: adatlap megjelenítés
+  const [infoTarget, setInfoTarget] = useState<string | null>(null);
+
+  const defsByGroup = new Map<string, KepzettsegDef[]>();
+  for (const d of data.kepzettsegDefs) {
+    const arr = defsByGroup.get(d.csoport) || [];
+    arr.push(d);
+    defsByGroup.set(d.csoport, arr);
+  }
+
+  function setTul(key: keyof Tulajdonsagok, val: number) {
+    setTulajdonságok(prev => ({ ...prev, [key]: Math.max(-5, Math.min(7, val)) }));
+  }
+
+  function setKepSzint(idx: number, szint: number) {
+    setKépzettségek(prev => prev.map((k, i) => i === idx ? { ...k, szint } : k));
+  }
+
+  function setKepNév(idx: number, név: string) {
+    setKépzettségek(prev => prev.map((k, i) => i === idx ? { ...k, név } : k));
+  }
+
+  // Szabad szöveges többszörös: custom dialógus
+  const [promptState, setPromptState] = useState<{ alapNév: string } | null>(null);
+  const [promptValue, setPromptValue] = useState('');
+
+  function addKepzettseg(_csoport: string, név: string) {
+    if (név.startsWith('__prompt:')) {
+      const alapNév = név.slice('__prompt:'.length);
+      setPromptState({ alapNév });
+      setPromptValue('');
+      return;
+    }
+    setKépzettségek(prev => [...prev, { név, szint: 0 }]);
+  }
+
+  function confirmPrompt() {
+    if (!promptState || !promptValue.trim()) return;
+    setKépzettségek(prev => [...prev, { név: `${promptState.alapNév}: ${promptValue.trim()}`, szint: 0 }]);
+    setPromptState(null);
+  }
+
+  // Megjelenítési név: többszörös képzettségeknél "AlapNév: AlNév" formátum
+  function getDisplayName(név: string): string {
+    for (const d of data.kepzettsegDefs) {
+      if (d.többszörös.length === 0) continue;
+      if (d.többszörös[0] === '*') {
+        // Szabad szöveges: "AlapNév: xyz" formátum már a névben van
+        if (név.startsWith(d.név + ':')) return név;
+      } else {
+        if (d.többszörös.includes(név)) return `${d.név}: ${név}`;
+      }
+    }
+    return név;
+  }
+
+  // A def lookup többszörös képzettségeknél az alap def-et adja vissza
+  function findDef(név: string): KepzettsegDef | undefined {
+    for (const d of data.kepzettsegDefs) {
+      if (d.többszörös.length === 0) continue;
+      if (d.többszörös[0] === '*' && név.startsWith(d.név + ':')) return d;
+      if (d.többszörös.includes(név)) return d;
+    }
+    return data.kepzettsegDefs.find(d => d.név === név);
+  }
+
+  // Minden csoport elérhető neveinek generálása (többszörös kibontva)
+  function getAvailableNames(csoport: string, usedNames: string[]): { label: string; value: string }[] {
+    const csoportDefs = defsByGroup.get(csoport) || [];
+    const options: { label: string; value: string }[] = [];
+    for (const d of csoportDefs) {
+      if (d.többszörös.length > 0) {
+        if (d.többszörös[0] === '*') {
+          // Szabad szöveges — mindig elérhető
+          options.push({ label: `${d.név} (új)`, value: `__prompt:${d.név}` });
+        } else {
+          for (const sub of d.többszörös) {
+            if (!usedNames.includes(sub)) {
+              options.push({ label: `${d.név}: ${sub}`, value: sub });
+            }
+          }
+        }
+      } else {
+        if (!usedNames.includes(d.név)) {
+          options.push({ label: d.név, value: d.név });
+        }
+      }
+    }
+    return options;
+  }
+
+  function getKepzettsegekForCsoport(csoport: string): KepzettsegSlot[] {
+    const csoportDefs = defsByGroup.get(csoport) || [];
+    const allValidNames = new Set<string>();
+    const freeTextPrefixes: string[] = [];
+    for (const d of csoportDefs) {
+      if (d.többszörös.length > 0) {
+        if (d.többszörös[0] === '*') {
+          freeTextPrefixes.push(d.név + ':');
+        } else {
+          for (const sub of d.többszörös) allValidNames.add(sub);
+        }
+      } else {
+        allValidNames.add(d.név);
+      }
+    }
+    return képzettségek.filter(k =>
+      allValidNames.has(k.név) || freeTextPrefixes.some(p => k.név.startsWith(p))
+    );
+  }
+
+  return (
+    <div className="screen tul-screen">
+      {/* Tulajdonságok */}
+      <div className="tul-grid">
+        {TULAJDONSAG_NEVEK.map(key => (
+          <TulajdonsagCell
+            key={key}
+            név={key}
+            érték={tulajdonságok[key]}
+            gameMode={gameMode}
+            onChange={v => setTul(key, v)}
+          />
+        ))}
+      </div>
+
+      {/* Képzettségek */}
+      <div className="kep-section">
+        {CSOPORT_SORREND.map(csoport => {
+          const csoportDefs = defsByGroup.get(csoport) || [];
+          const slotok = getKepzettsegekForCsoport(csoport);
+          const usedNames = slotok.map(s => s.név);
+          const available = getAvailableNames(csoport, usedNames);
+
+          return (
+            <div key={csoport} className="kep-csoport">
+              <h3 className="kep-csoport-label">{CSOPORT_LABEL[csoport]}</h3>
+              {slotok.map((slot, i) => {
+                const globalIdx = képzettségek.findIndex(k => k === slot);
+                return (
+                  <KepzettsegRow
+                    key={`${csoport}-${i}`}
+                    slot={slot}
+                    csoportDefs={csoportDefs}
+                    usedNames={usedNames.filter(n => n !== slot.név)}
+                    gameMode={gameMode}
+                    onNévChange={név => setKepNév(globalIdx, név)}
+                    onSzintChange={szint => setKepSzint(globalIdx, szint)}
+                    onRemove={() => setKépzettségek(prev => prev.filter((_, i2) => i2 !== globalIdx))}
+                    kiterjesztesek={data.kiterjesztesek}
+                    infoOpen={infoTarget === `${globalIdx}`}
+                    onInfoToggle={() => setInfoTarget(infoTarget === `${globalIdx}` ? null : `${globalIdx}`)}
+                    displayName={getDisplayName(slot.név)}
+                    findDef={findDef}
+                  />
+                );
+              })}
+              {/* Szerkesztő módban: üres dropdown új képzettség felvételéhez */}
+              {!gameMode && available.length > 0 && (
+                <div className="kep-row kep-row-new">
+                  <select
+                    className="kep-select"
+                    value=""
+                    onChange={e => { if (e.target.value) addKepzettseg(csoport, e.target.value); }}
+                  >
+                    <option value="">+ Új képzettség...</option>
+                    {available.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
+                  </select>
+                </div>
+              )}
+            </div>
+          );
+        })}
+      </div>
+
+      {promptState && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>{promptState.alapNév} — alnév:</label>
+            <input
+              autoFocus
+              maxLength={20}
+              value={promptValue}
+              onChange={e => setPromptValue(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') confirmPrompt(); if (e.key === 'Escape') setPromptState(null); }}
+            />
+            <div className="kep-prompt-btns">
+              <button onClick={confirmPrompt} disabled={!promptValue.trim()}>OK</button>
+              <button onClick={() => setPromptState(null)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </div>
+  );
+}
+
+/* --- Tulajdonság cella --- */
+function TulajdonsagCell({ név, érték, gameMode, onChange }: {
+  név: string; érték: number; gameMode: boolean; onChange: (v: number) => void;
+}) {
+  const [sliding, setSliding] = useState(false);
+  const [tempVal, setTempVal] = useState(érték);
+  const startX = useRef(0);
+  const startVal = useRef(érték);
+
+  const handlePointerDown = useCallback((e: React.PointerEvent) => {
+    if (gameMode) return;
+    (e.target as HTMLElement).setPointerCapture(e.pointerId);
+    setSliding(true);
+    setTempVal(érték);
+    startX.current = e.clientX;
+    startVal.current = érték;
+  }, [gameMode, érték]);
+
+  const handlePointerMove = useCallback((e: React.PointerEvent) => {
+    if (!sliding) return;
+    const dx = e.clientX - startX.current;
+    const step = Math.round(dx / 25);
+    setTempVal(Math.max(-5, Math.min(7, startVal.current + step)));
+  }, [sliding]);
+
+  const handlePointerUp = useCallback(() => {
+    if (!sliding) return;
+    setSliding(false);
+    onChange(tempVal);
+  }, [sliding, tempVal, onChange]);
+
+  const displayVal = sliding ? tempVal : érték;
+  const label = név.charAt(0).toUpperCase() + név.slice(1);
+
+  return (
+    <div
+      className={`tul-cell ${sliding ? 'sliding' : ''} ${!gameMode ? 'editable' : ''}`}
+      onPointerDown={handlePointerDown}
+      onPointerMove={handlePointerMove}
+      onPointerUp={handlePointerUp}
+      onPointerCancel={handlePointerUp}
+      onTouchStart={e => { if (!gameMode) e.stopPropagation(); }}
+      onTouchEnd={e => { if (!gameMode) e.stopPropagation(); }}
+    >
+      <span className="tul-label">{label}:</span>
+      <span className="tul-value">{displayVal}</span>
+      {sliding && <div className="tul-slider-track"><div className="tul-slider-fill" style={{ width: `${((tempVal + 5) / 12) * 100}%` }} /></div>}
+    </div>
+  );
+}
+
+/* --- Képzettség sor --- */
+function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef }: {
+  slot: KepzettsegSlot;
+  csoportDefs: KepzettsegDef[];
+  usedNames: string[];
+  gameMode: boolean;
+  onNévChange: (név: string) => void;
+  onSzintChange: (szint: number) => void;
+  onRemove: () => void;
+  kiterjesztesek: Record<string, KiterjesztesEntry[]>;
+  infoOpen: boolean;
+  onInfoToggle: () => void;
+  displayName: string;
+  findDef: (név: string) => KepzettsegDef | undefined;
+}) {
+  const [editing, setEditing] = useState(false);
+  const [sliding, setSliding] = useState(false);
+  const [tempSzint, setTempSzint] = useState(slot.szint);
+  const startX = useRef(0);
+  const startVal = useRef(slot.szint);
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const available = csoportDefs.filter(d => !usedNames.includes(d.név));
+
+  // Szerkesztő mód: rövid kopp → dropdown, hosszú nyomás → szint csúszka
+  function handlePointerDown(e: React.PointerEvent) {
+    if (gameMode) return;
+    longPressTimer.current = setTimeout(() => {
+      longPressTimer.current = null;
+      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      setSliding(true);
+      setTempSzint(slot.szint);
+      startX.current = e.clientX;
+      startVal.current = slot.szint;
+    }, 400);
+  }
+
+  function handlePointerMove(e: React.PointerEvent) {
+    if (!sliding) return;
+    const dx = e.clientX - startX.current;
+    const step = Math.round(dx / 20);
+    setTempSzint(Math.max(0, Math.min(15, startVal.current + step)));
+  }
+
+  function handlePointerUp() {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current);
+      longPressTimer.current = null;
+      // Rövid kopp
+      if (gameMode) {
+        onInfoToggle();
+      } else {
+        setEditing(true);
+      }
+    }
+    if (sliding) {
+      setSliding(false);
+      onSzintChange(tempSzint);
+    }
+  }
+
+  function handleClick() {
+    if (gameMode) {
+      onInfoToggle();
+    }
+  }
+
+  const def = findDef(slot.név);
+  const kit = kiterjesztesek[slot.név] || [];
+
+  return (
+    <div className="kep-row-wrapper">
+      <div
+        className={`kep-row ${sliding ? 'sliding' : ''}`}
+        onPointerDown={!gameMode ? handlePointerDown : undefined}
+        onPointerMove={!gameMode ? handlePointerMove : undefined}
+        onPointerUp={!gameMode ? handlePointerUp : undefined}
+        onPointerCancel={!gameMode ? handlePointerUp : undefined}
+        onTouchStart={e => { if (!gameMode) e.stopPropagation(); }}
+        onTouchEnd={e => { if (!gameMode) e.stopPropagation(); }}
+        onClick={gameMode ? handleClick : undefined}
+      >
+        {editing && !gameMode ? (
+          <select
+            className="kep-select"
+            value={slot.név}
+            autoFocus
+            onChange={e => { onNévChange(e.target.value); setEditing(false); }}
+            onBlur={() => setEditing(false)}
+          >
+            <option value={slot.név}>{slot.név}</option>
+            {available.map(d => <option key={d.név} value={d.név}>{d.név}</option>)}
+          </select>
+        ) : (
+          <span className="kep-név">{displayName}</span>
+        )}
+        <span className="kep-right">
+          {!gameMode && !sliding && (
+            <button className="kep-delete" onClick={e => {
+              e.stopPropagation();
+              if (slot.szint === 0 || confirm(`Törlöd: ${slot.név} (szint: ${slot.szint})?`)) onRemove();
+            }}>✕</button>
+          )}
+          <span className="kep-szint">{sliding ? tempSzint : slot.szint}</span>
+        </span>
+        {sliding && (
+          <div className="kep-slider-track"><div className="kep-slider-fill" style={{ width: `${(tempSzint / 15) * 100}%` }} /></div>
+        )}
+      </div>
+      {/* Game mód: adatlap */}
+      {gameMode && infoOpen && def && (
+        <div className="kep-info">
+          <div className="kep-info-row"><span className="kep-info-label">Próba:</span> {def.próba}</div>
+          {def.domináns_tulajdonságok.length > 0 && (
+            <div className="kep-info-row"><span className="kep-info-label">Domináns:</span> {def.domináns_tulajdonságok.join(', ')}</div>
+          )}
+          {kit.length > 0 && (
+            <div className="kep-info-row">
+              <span className="kep-info-label">Kiterjeszti:</span>
+              <span className="kep-info-kit">{kit.map(k => `${k.fortély}${k.típus === 'erős' ? ' (erős)' : ''}`).join(', ')}</span>
+            </div>
+          )}
+        </div>
+      )}
+    </div>
+  );
+}

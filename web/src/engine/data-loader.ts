@@ -45,6 +45,22 @@ interface HarcmodorBonuszEntry {
   'CÉ': string;
 }
 
+// --- Képzettség definíció ---
+export interface KepzettsegDef {
+  név: string;
+  csoport: string;
+  primer: boolean;
+  többszörös: string[];
+  próba: string;
+  domináns_tulajdonságok: string[];
+}
+
+// --- Kiterjesztés entry ---
+export interface KiterjesztesEntry {
+  fortély: string;
+  típus: 'normál' | 'erős';
+}
+
 // --- Betöltött adat ---
 export interface GameData {
   konstansok: KonstansokRaw;
@@ -53,16 +69,20 @@ export interface GameData {
   pajzsok: { Pajzs: string; TÉ: string; VÉ: string; Sebesség: string }[];
   kepzettsegKp: { szint: number; kp: number }[];
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number; CÉ: number }[];
+  kepzettsegDefs: KepzettsegDef[];
+  kiterjesztesek: Record<string, KiterjesztesEntry[]>;
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek] = await Promise.all([
     fetchYaml<KonstansokRaw>('konstansok.yaml'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
     fetchJson<{ Pajzs: string; TÉ: string; VÉ: string; Sebesség: string }[]>('tables/pajzsok.json'),
     fetchJson<KepzettsegKpEntry[]>('tables/kepzettseg_kp.json'),
     fetchJson<HarcmodorBonuszEntry[]>('tables/harcmodor_kepzettsegek_bonuszok.json'),
+    fetchJson<KepzettsegDef[]>('tables/kepzettsegek.json'),
+    fetchJson<Record<string, KiterjesztesEntry[]>>('tables/kiterjesztesek.json'),
   ]);
 
   const kepzettsegKp = kepzettsegKpRaw.map(e => ({
@@ -77,5 +97,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz };
+  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek };
 }

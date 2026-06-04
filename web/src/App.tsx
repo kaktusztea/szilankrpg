@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, TouchEvent } from 'react';
 import { loadGameData } from './engine/data-loader';
 import type { GameData } from './engine/data-loader';
 import { HarcScreen } from './components/HarcScreen';
+import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
 import './App.css';
 
 const ALL_TABS = [
@@ -99,7 +100,7 @@ function TabContent({ tab, data, gameMode, setActiveTab }: { tab: string; data: 
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
-    case 'tulajdonsagok': return <div className="screen"><h2>🔵 Tulajdonságok & Képzettségek</h2><p>{gameMode ? 'Read-only mód' : 'Szerkesztő mód'}</p></div>;
+    case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} />;
     case 'fortelyok': return <div className="screen"><h2>🟣 Fortélyok</h2><p>{gameMode ? 'Read-only mód' : 'Szerkesztő mód'}</p></div>;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <div className="screen"><h2>🛡️ Harcértékek</h2><p>HM/CM, Harcmodor bónuszok, Fegyverek, Páncél beállítás (TODO)</p></div>;
