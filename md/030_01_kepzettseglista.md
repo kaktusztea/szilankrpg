@@ -75,7 +75,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 
 🔵 [Nyelvtanulás](kepzettsegek.szekunder/nyelvtanulas.md)
 
-🔵 [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) 🤝 🔁
+🔵 [Kézművesség](kepzettsegek.szekunder/kezmuvesseg.md) 🤝
 
 🔵 [Természetjárás](kepzettsegek.szekunder/termeszetjaras.md)
 
