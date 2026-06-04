@@ -15068,7 +15068,7 @@ A fegyver alap harcértékei számítanak (egyéb bónuszokkal).
 
 🔒 Harcmodor - `4.szint`
 
-🌟 adott fegyverre `TÉ, VÉ, SP: +1`
+🌟 adott fegyverre `TÉ/CÉ, VÉ, SP: +1`
 
 <br />
 
@@ -15076,7 +15076,7 @@ A fegyver alap harcértékei számítanak (egyéb bónuszokkal).
 
 🔒 Harcmodor - `8.szint`
 
-🌟 adott fegyverre `TÉ, VÉ, SP: +2`
+🌟 adott fegyverre `TÉ/CÉ, VÉ, SP: +2`
 
 <br />
 
@@ -15084,7 +15084,7 @@ A fegyver alap harcértékei számítanak (egyéb bónuszokkal).
 
 🔒 Harcmodor - `12.szint`
 
-🌟 adott fegyverre `TÉ, VÉ, SP: +3`
+🌟 adott fegyverre `TÉ/CÉ, VÉ, SP: +3`
 
 ---
 ### Manőverek
@@ -20003,12 +20003,13 @@ Ahogy fejlődik, megjár sok harci helyzetet, a karakter általános harci tapas
 ---
 ### Harcérték Módosító (HM)
 
-A `HM` pontok a [Támadó Érték](062_01_ke_te_ve_ce.md#t%C3%A1mad%C3%B3-%C3%A9rt%C3%A9k-t%C3%A9) (`TÉ`) és [Védő Érték](062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9) (`VÉ`) harcértékek általános növelésére fordíthatóak, tehát nem függnek [Harcmodortól](kepzettsegek.primer.harci/harcmodor.md).
+A `HM` pontok vagy a [Támadó Érték](062_01_ke_te_ve_ce.md#t%C3%A1mad%C3%B3-%C3%A9rt%C3%A9k-t%C3%A9) (`TÉ`) vagy a [Védő Érték](062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9) (`VÉ`) harcértékek általános növelésére fordíthatóak, tehát nem függnek [Harcmodortól](kepzettsegek.primer.harci/harcmodor.md).
 
 ```
 1 HM = 6 KP
 
 1 HM → 1 TÉ növelés
+      VAGY
 1 HM → 1 VÉ növelés
 ```
 
@@ -21294,7 +21295,7 @@ Lásd: [Pajzs fegyverek](068_09_pajzs_fegyverek.md) táblázat
 VÉ: +3 - Kis pajzs
 VÉ:+10 - Közepes pajzs
          Erő: min +1
-VÉ:+17 - Nagy pajzs
+VÉ:+16 - Nagy pajzs
          Erő: min +2
 ```
 
