@@ -251,6 +251,7 @@
   align-items: center;
   justify-content: center;
   z-index: 100;
+  touch-action: none;
 }
 
 .kep-prompt {
@@ -262,6 +263,7 @@
   flex-direction: column;
   gap: 10px;
   min-width: 250px;
+  touch-action: auto;
 }
 
 .kep-prompt label {

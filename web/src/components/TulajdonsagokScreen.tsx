@@ -1,4 +1,4 @@
-import { useState, useRef, useCallback } from 'react';
+import { useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import type { Tulajdonsagok } from '../engine/types';
@@ -404,57 +404,44 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
 function TulajdonsagCell({ név, érték, gameMode, onChange }: {
   név: string; érték: number; gameMode: boolean; onChange: (v: number) => void;
 }) {
-  const [sliding, setSliding] = useState(false);
+  const [editing, setEditing] = useState(false);
   const [tempVal, setTempVal] = useState(érték);
-  const cellRef = useRef<HTMLDivElement>(null);
-  const rangeMin = -5;
-  const rangeMax = 7;
-  const rangeSize = rangeMax - rangeMin; // 12
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  function valFromPointer(clientX: number) {
-    const rect = cellRef.current!.getBoundingClientRect();
-    const margin = rect.width * 0.125; // 12.5% each side → 75% usable
-    const x = Math.max(0, Math.min(1, (clientX - rect.left - margin) / (rect.width - 2 * margin)));
-    return Math.round(rangeMin + x * rangeSize);
-  }
-
-  const handlePointerDown = useCallback((e: React.PointerEvent) => {
-    if (gameMode) return;
-    (e.target as HTMLElement).setPointerCapture(e.pointerId);
-    setSliding(true);
-    setTempVal(valFromPointer(e.clientX));
-  }, [gameMode]);
-
-  const handlePointerMove = useCallback((e: React.PointerEvent) => {
-    if (!sliding) return;
-    setTempVal(valFromPointer(e.clientX));
-  }, [sliding]);
-
-  const handlePointerUp = useCallback(() => {
-    if (!sliding) return;
-    setSliding(false);
-    onChange(tempVal);
-  }, [sliding, tempVal, onChange]);
-
-  const displayVal = sliding ? tempVal : érték;
   const label = név.charAt(0).toUpperCase() + név.slice(1);
-  const fillPct = ((displayVal - rangeMin) / rangeSize) * 100;
 
   return (
-    <div
-      ref={cellRef}
-      className={`tul-cell ${sliding ? 'sliding' : ''} ${!gameMode ? 'editable' : ''}`}
-      onPointerDown={handlePointerDown}
-      onPointerMove={handlePointerMove}
-      onPointerUp={handlePointerUp}
-      onPointerCancel={handlePointerUp}
-      onTouchStart={e => { if (!gameMode) e.stopPropagation(); }}
-      onTouchEnd={e => { if (!gameMode) e.stopPropagation(); }}
-    >
-      <span className="tul-label">{label}:</span>
-      <span className="tul-value">{displayVal}</span>
-      {sliding && <div className="tul-slider-track"><div className="tul-slider-fill" style={{ width: `${fillPct}%` }} /></div>}
-    </div>
+    <>
+      <div
+        className={`tul-cell ${!gameMode ? 'editable' : ''}`}
+        onPointerDown={() => { if (!gameMode) longPressTimer.current = setTimeout(() => { longPressTimer.current = null; setTempVal(érték); setEditing(true); }, 400); }}
+        onPointerUp={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
+        onPointerCancel={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
+      >
+        <span className="tul-label">{label}:</span>
+        <span className="tul-value">{érték}</span>
+      </div>
+      {editing && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>{label}: <strong>{tempVal}</strong></label>
+            <input
+              type="range"
+              min={-5}
+              max={7}
+              value={tempVal}
+              onChange={e => setTempVal(Number(e.target.value))}
+              className="tsz-slider"
+            />
+            <div className="kep-prompt-btns">
+              <button onClick={() => { onChange(tempVal); setEditing(false); }}>OK</button>
+              <button onClick={() => setEditing(false)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </>
   );
 }
 

@@ -36,11 +36,14 @@ function App() {
   }, []);
 
   function handleTouchStart(e: TouchEvent) {
+    const target = e.target as HTMLElement;
+    if (target.closest('.kep-prompt-overlay')) { touchStart.current = 0; touchY.current = 0; return; }
     touchStart.current = e.touches[0].clientX;
     touchY.current = e.touches[0].clientY;
   }
 
   function handleTouchEnd(e: TouchEvent) {
+    if (!touchStart.current && !touchY.current) return;
     const dx = e.changedTouches[0].clientX - touchStart.current;
     const dy = e.changedTouches[0].clientY - touchY.current;
     if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) {
