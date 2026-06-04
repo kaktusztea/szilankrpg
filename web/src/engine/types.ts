@@ -1,0 +1,255 @@
+// ============================================================
+// Karakter
+// ============================================================
+
+export interface Tulajdonsagok {
+  erő: number;
+  edzettség: number;
+  ügyesség: number;
+  gyorsaság: number;
+  intelligencia: number;
+  emlékezet: number;
+  önuralom: number;
+  érzékenység: number;
+}
+
+export interface Kepzettseg {
+  név: string;
+  szint: number;
+  spec: string;
+}
+
+export interface Fortely {
+  név: string;
+  fok: number;
+  spec: string;
+}
+
+export interface FortelyokKiemelt {
+  kulturkörök: { név: string }[];
+  helyismeret: { helynév: string }[];
+  nyelvismeret: { nyelv: string; fok: number }[];
+}
+
+export interface FortelyokSpecialis {
+  analfabéta: boolean;
+  apró_méretű_lény: boolean;
+  tartós_sérülés_fok: number;
+  vakság: boolean;
+  süketség: boolean;
+}
+
+export interface FegyverPeldany {
+  alap: string;
+  név: string;
+  anyag: string;
+  idea: number;
+  mesterfegyver_fok: number;
+  módosítók: Modosito[] | '';
+}
+
+export interface PancelPeldany {
+  alap: string;
+  név: string;
+  fémalapanyag: string;
+  idea: number;
+  kidolgozottság: string;
+  sisak: boolean;
+  végtagvédettség: number;
+  méret_illeszkedés: string;
+  rongálódás: number;
+}
+
+export interface NagyTargy {
+  név: string;
+  MGT: number;
+}
+
+export interface Karakter {
+  schema_version: number;
+  név: string;
+  tsz: number;
+  leírás: string;
+  kor: number;
+  vallás: string;
+  tulajdonságok: Tulajdonsagok;
+  HM_TÉ: number;
+  HM_VÉ: number;
+  CM: number;
+  képzettségek: Kepzettseg[];
+  fortélyok_kiemelt: FortelyokKiemelt;
+  fortélyok_speciális: FortelyokSpecialis;
+  fortélyok_szabad: { név: string }[];
+  fortélyok: Fortely[];
+  hátterek: { faj: string; leíró: string[]; karma: string[] };
+  származtatott: { ÉP: number; szilánk: number };
+  fegyverek: FegyverPeldany[];
+  páncél: PancelPeldany;
+  felszerelés: { nagy_tárgyak: NagyTargy[] };
+}
+
+// ============================================================
+// Fortély definíció (schema)
+// ============================================================
+
+export type ModMode = 'flat' | 'scaled' | 'override';
+
+export interface Modosito {
+  cél: string;
+  érték: number;
+  mód: ModMode;
+  forrás: string;
+  arány: number;
+  feltétel: string;
+}
+
+export interface FortelyKovetelmeny {
+  név: string | string[];
+  érték: number;
+  típus: string;
+}
+
+export interface FortelyFok {
+  fok: number;
+  követelménytext: string;
+  követelmények: FortelyKovetelmeny[] | '';
+  hatástext: { text: string }[];
+  módosítók: Modosito[] | '';
+}
+
+export interface FortelyDef {
+  schema_version: number;
+  név: string;
+  névkomment: string;
+  maxfok: number;
+  többszörösség: { spec_típus: string; spec_lista: string[] };
+  csoport: string;
+  leírások: { text: string }[];
+  megjegyzések: { text: string }[];
+  kiterjeszti: { normál: string[]; erős: string[] };
+  fokok: FortelyFok[];
+  todo: { text: string }[];
+}
+
+// ============================================================
+// Fegyver (alaptípus, fegyverek.json)
+// ============================================================
+
+export interface FegyverAlap {
+  Fegyver: string;
+  TÉ: string;
+  VÉ: string;
+  SP: string;
+  Sebesség: string;
+  'Sebzés módja': string;
+  Pengehossz: string;
+  'Forgatás módja': string;
+  'Erőbónusz limit': string;
+  Átütés: string;
+  Íves: string;
+  MK: string;
+  KF: string;
+  Kategória: string;
+  Speciális?: string;
+}
+
+// ============================================================
+// Konstansok
+// ============================================================
+
+export interface HarcertekAlap {
+  KÉ: number;
+  TÉ: number;
+  VÉ: number;
+  CÉ: number;
+}
+
+export interface MesterfegyverBonusz {
+  fok: number;
+  TÉ: number;
+  VÉ: number;
+  SP: number;
+}
+
+export interface PancelStruktura {
+  struktúra: string;
+  leírás: string;
+  fém: boolean;
+  merev: boolean;
+  mgt: number;
+  sfé_fizikai: number;
+  sfé_energia: number;
+  ár_szorzó: number;
+  idea_plusz_minusz: number;
+}
+
+export interface PancelFemalapanyag {
+  anyag: string;
+  sfé_bónusz: number;
+  mgt: number;
+  ár_szorzó: number;
+}
+
+export interface KpConfig {
+  perszint: number;
+  szekunder_perszint: number;
+  fortélyfok: number;
+  hm: number;
+  cm: number;
+  max_cm_perszint: number;
+}
+
+export interface Aranyok {
+  max_tsz: number;
+  max_hm_diff_szintlépésenként: number;
+  képzettség_nemprimer_max_szint_plusz: number;
+  képzettség_max_szint: number;
+  tulajdonság_pont_alap: number;
+  tulajdonság_pont_tsz_bónusz: number;
+  max_cm_perszint: number;
+}
+
+// ============================================================
+// Származtatott értékek (engine output)
+// ============================================================
+
+export interface FegyverHarcertekek {
+  fegyver_név: string;
+  TÉ: number;
+  VÉ: number;
+  CÉ: number;
+  SP: number;
+  támadások: number;
+  pengehossz: number;
+  sebzésmód: string;
+}
+
+export interface PancelErtekek {
+  sfé_fizikai: number;
+  sfé_energia: number;
+  MGT: number;
+  merevvért_TÉ_büntetés: number;
+  lefedettség: number;
+}
+
+export interface SzarmaztatottErtekek {
+  ÉP: number;
+  S1_max: number;
+  S2_max: number;
+  S3_max: number;
+  S4_max: number;
+  KÉ: number;
+  összes_kp: number;
+  összes_szekunder_kp: number;
+  spec_kp: number;
+  elköltött_kp: number;
+  maradék_kp: number;
+  tulajdonság_pont_keret: number;
+  tulajdonság_pont_maradék: number;
+  manőver_pont: number;
+  felszerelés_mgt: number;
+  fegyverek: FegyverHarcertekek[];
+  páncél: PancelErtekek;
+  max_HM: number;
+  max_CM: number;
+}

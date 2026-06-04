@@ -9,3 +9,5 @@ Untitled*
 Excalidraw
 .makemd
 .space
+node_modules
+web/dist
