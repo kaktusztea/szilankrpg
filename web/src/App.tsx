@@ -82,12 +82,29 @@ function App() {
       </main>
 
       {!gameMode && data && (() => {
-        const primerKepz = new Set(data.kepzettsegDefs.filter(d => d.primer).map(d => d.név));
-        const primerFortGroups = new Set(['harci', 'misztikus']);
+        const primerKepz = new Set<string>();
+        const primerPrefixes: string[] = [];
+        for (const d of data.kepzettsegDefs) {
+          if (!d.primer) continue;
+          if (d.többszörös.length > 0) {
+            if (d.többszörös[0] === '*') {
+              primerPrefixes.push(d.név + ':');
+            } else {
+              for (const sub of d.többszörös) primerKepz.add(sub);
+            }
+          } else {
+            primerKepz.add(d.név);
+          }
+        }
+        // Add actual slot names that match free-text primer prefixes
+        for (const k of képzettségek) {
+          if (primerPrefixes.some(p => k.név.startsWith(p))) primerKepz.add(k.név);
+        }
+        const primerFortGroups = new Set(data.primerFortelyok);
         const karakter = { ...testKarakter8, képzettségek: képzettségek.map(k => ({ ...k, spec: '' })) };
         const kpResult = calcKp(karakter, data.konstansok.kp, data.konstansok.kp_bónusz, data.kepzettsegKp, primerKepz, primerFortGroups);
-        const maradékSzekunder = kpResult.összes_szekunder_kp - kpResult.kp_szekunder_költött;
-        const isNeg = kpResult.maradék_kp < 0 || maradékSzekunder < 0;
+        const maradékSzekunder = Math.max(0, kpResult.összes_szekunder_kp - kpResult.kp_szekunder_költött);
+        const isNeg = kpResult.maradék_kp < 0;
         return (
           <div className={`kp-bar ${isNeg ? 'kp-bar-neg' : ''}`}>
             <span>Maradt KP: {kpResult.maradék_kp}</span>

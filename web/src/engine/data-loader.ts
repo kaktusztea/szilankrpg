@@ -72,10 +72,11 @@ export interface GameData {
   kepzettsegDefs: KepzettsegDef[];
   kiterjesztesek: Record<string, KiterjesztesEntry[]>;
   fajNevek: string[];
+  primerFortelyok: string[];
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok] = await Promise.all([
     fetchYaml<KonstansokRaw>('konstansok.yaml'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
@@ -85,6 +86,7 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<KepzettsegDef[]>('tables/kepzettsegek.json'),
     fetchJson<Record<string, KiterjesztesEntry[]>>('tables/kiterjesztesek.json'),
     fetchJson<string[]>('tables/fajok.json'),
+    fetchJson<string[]>('tables/primer_fortelyok.json'),
   ]);
 
   const kepzettsegKp = kepzettsegKpRaw.map(e => ({
@@ -99,5 +101,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek };
+  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok };
 }
