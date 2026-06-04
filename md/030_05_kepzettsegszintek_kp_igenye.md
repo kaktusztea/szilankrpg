@@ -7,21 +7,21 @@ Az egyes képzettségszintek `KP` igénye az alábbi táblázatban található:
 <!-- tag: md_codeblock_kepzettsegkp_start -->
 
 ```
- 1.szint:   6 KP   (+6KP)
- 2.szint:  10 KP   (+4KP)
- 3.szint:  16 KP   (+6KP)  (Novícius)
- 4.szint:  24 KP   (+8KP)
- 5.szint:  34 KP   (+10KP)
- 6.szint:  46 KP   (+12KP) (Kismester)
- 7.szint:  60 KP   (+14KP)
- 8.szint:  76 KP   (+16KP)
- 9.szint:  94 KP   (+18KP) (Mester)
-10.szint: 114 KP   (+20KP)
-11.szint: 136 KP   (+22KP)
-12.szint: 160 KP   (+24KP) (Nagymester)
-13.szint: 186 KP   (+26KP)
-14.szint: 214 KP   (+28KP)
-15.szint: 244 KP   (+30KP) (Legenda)
+ 1.szint:   3 KP   (+3KP)
+ 2.szint:   4 KP   (+1KP)
+ 3.szint:   6 KP   (+2KP)  (Novícius)
+ 4.szint:   9 KP   (+3KP)
+ 5.szint:  13 KP   (+4KP)
+ 6.szint:  18 KP   (+5KP)  (Kismester)
+ 7.szint:  24 KP   (+6KP)
+ 8.szint:  31 KP   (+7KP)
+ 9.szint:  38 KP   (+7KP)  (Mester)
+10.szint:  46 KP   (+8KP)
+11.szint:  55 KP   (+9KP)
+12.szint:  65 KP   (+10KP) (Nagymester)
+13.szint:  76 KP   (+11KP)
+14.szint:  88 KP   (+12KP)
+15.szint: 101 KP   (+13KP) (Legenda)
 ```
 
 <!-- tag: md_codeblock_kepzettsegkp_end -->
