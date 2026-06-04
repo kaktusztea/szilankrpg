@@ -503,7 +503,9 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
 
   function handlePointerMove(e: React.PointerEvent) {
     if (!sliding) return;
-    setTempSzint(szintFromPointer(e.clientX));
+    const val = szintFromPointer(e.clientX);
+    setTempSzint(val);
+    onSzintChange(val);
   }
 
   function handlePointerUp() {
