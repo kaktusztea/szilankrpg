@@ -23,7 +23,7 @@ const ALL_TABS = [
 function App() {
   const [data, setData] = useState<GameData | null>(null);
   const [error, setError] = useState('');
-  const [activeTab, setActiveTab] = useState(0);
+  const [activeTab, setActiveTab] = useState(2);
   const [gameMode, setGameMode] = useState(false);
   const [képzettségek, setKépzettségek] = useState(testKarakter8.képzettségek.map(k => ({ név: k.név, szint: k.szint })));
   const touchStart = useRef<number>(0);
