@@ -27,5 +27,8 @@ function serveDataPlugin(): Plugin {
 export default defineConfig({
   plugins: [react(), serveDataPlugin()],
   base: '/szilankrpg/',
-  server: { host: true },
+  server: {
+    host: true,
+    watch: { usePolling: true, interval: 500 },
+  },
 });

@@ -95,7 +95,7 @@ export function HarcScreen({ data }: { data: GameData }) {
       <h3>Teljes harcértékek</h3>
       <table className="harc-table">
         <thead>
-          <tr><th>Fegyver</th><th>Tám</th><th>TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>
+          <tr><th>Fegyver</th><th>Tám</th><th className="te-col">TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>
         </thead>
         <tbody>
           {fegyverResults.map((r, i) => r && (

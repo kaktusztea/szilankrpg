@@ -1,9 +1,16 @@
 .harc-screen h3 { margin: 12px 0 6px; font-size: 15px; }
 
 .harc-header {
-  display: flex;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: auto 1fr auto auto;
+  gap: 8px;
   margin-bottom: 12px;
+}
+
+@media (max-width: 480px) {
+  .harc-header {
+    grid-template-columns: auto 1fr;
+  }
 }
 
 .ke-box, .sfe-box {
@@ -52,7 +59,7 @@
 .sfe-line { font-size: 14px; }
 .sfe-line strong { font-size: 16px; }
 
-.ke-box .value { font-size: 28px; font-weight: bold; color: var(--accent); }
+.ke-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
 .ke-box .label, .sfe-box .label { font-size: 14px; font-weight: bold; color: var(--text); text-transform: uppercase; }
 
 .harc-table {
@@ -69,6 +76,7 @@
 }
 
 .harc-table th { background: var(--primary); font-size: 11px; }
+.harc-table th.te-col { color: var(--accent); }
 .harc-table th.ve-col { color: var(--warning); }
 .harc-table td:first-child { text-align: left; }
 

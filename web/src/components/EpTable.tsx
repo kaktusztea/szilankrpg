@@ -19,14 +19,20 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
   const [rubrikák, setRubrikák] = useState<Rubrika[]>(
     Array.from({ length: összRubrika }, () => ({ típus: '', sorszám: 0 }))
   );
-  const [sebSorszám, setSebSorszám] = useState(0);
+
+  function getNextSorszám(currentRubrikák: Rubrika[]): number {
+    // Keressük a legkisebb pozitív egész számot ami nincs használatban
+    const usedSorszámok = new Set(currentRubrikák.filter(r => r.típus !== '').map(r => r.sorszám));
+    for (let i = 1; ; i++) {
+      if (!usedSorszámok.has(i)) return i;
+    }
+  }
   const [showSebDialog, setShowSebDialog] = useState(false);
   const [showGyógyDialog, setShowGyógyDialog] = useState(false);
 
   function sebesülés(típus: SebTípus, érték: number) {
-    const újSorszám = sebSorszám + 1;
-    setSebSorszám(újSorszám);
     const újRubrikák = [...rubrikák];
+    const újSorszám = getNextSorszám(újRubrikák);
     let maradék = érték;
 
     if (típus !== 'FP') {
@@ -53,7 +59,7 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
   function gyógyulás(típusSzűrő: 'FP' | 'ÉP', érték: number) {
     const újRubrikák = [...rubrikák];
     let maradék = érték;
-    // Hátulról előre töröljük
+    // Hátulról előre töröljük a megadott típusú rubrikákat
     for (let i = újRubrikák.length - 1; i >= 0 && maradék > 0; i--) {
       if (típusSzűrő === 'FP' && újRubrikák[i].típus === 'FP') {
         újRubrikák[i] = { típus: '', sorszám: 0 };
@@ -63,13 +69,17 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
         maradék--;
       }
     }
+    // Compaction: kitöltött rubrikák tömörítése felülre (üres lyukak eltüntetése)
+    const filled = újRubrikák.filter(r => r.típus !== '');
+    for (let i = 0; i < újRubrikák.length; i++) {
+      újRubrikák[i] = i < filled.length ? filled[i] : { típus: '', sorszám: 0 };
+    }
     setRubrikák(újRubrikák);
     setShowGyógyDialog(false);
   }
 
   function reset() {
     setRubrikák(Array.from({ length: összRubrika }, () => ({ típus: '', sorszám: 0 })));
-    setSebSorszám(0);
   }
 
   // Aktuális sebesülés kategória

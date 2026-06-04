@@ -63,11 +63,19 @@ function App() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        <TabContent tab={TABS[activeTab].id} data={data} gameMode={gameMode} />
+        <div className="screen-slider" style={{ transform: `translateX(-${activeTab * 100}%)` }}>
+          {TABS.map((tab, i) => (
+            <div key={tab.id} className="screen-slide">
+              {Math.abs(i - activeTab) <= 1 && (
+                <TabContent tab={tab.id} data={data} gameMode={gameMode} />
+              )}
+            </div>
+          ))}
+        </div>
       </main>
 
       <nav className="tab-bar">
-        {TABS.slice(0, 5).map((tab, i) => (
+        {TABS.map((tab, i) => (
           <button
             key={tab.id}
             className={`tab-btn ${activeTab === i ? 'active' : ''}`}
@@ -76,16 +84,6 @@ function App() {
             {tab.label}
           </button>
         ))}
-        <div className="tab-more">
-          <button className="tab-btn">⋯</button>
-          <div className="tab-more-menu">
-            {TABS.slice(5).map((tab, i) => (
-              <button key={tab.id} onClick={() => setActiveTab(i + 5)}>
-                {tab.label}
-              </button>
-            ))}
-          </div>
-        </div>
       </nav>
     </div>
   );
