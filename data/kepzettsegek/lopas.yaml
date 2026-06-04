@@ -5,7 +5,7 @@ név: "Lopás"
 leírás: "Tárgyak észrevétlen eltulajdonítása."
 primer: false
 csoport: "alvilági"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "ellenpróba"
 domináns_tulajdonságok: ["Ügyesség", "Önuralom"]

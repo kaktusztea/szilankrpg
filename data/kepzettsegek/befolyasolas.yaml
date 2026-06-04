@@ -5,7 +5,7 @@ név: "Befolyásolás"
 leírás: "Mások meggyőzése, szándékainknak megfelelő cselekedetek elérése."
 primer: true
 csoport: "világi"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "ellenpróba"
 domináns_tulajdonságok: ["Intelligencia", "Érzékenység"]

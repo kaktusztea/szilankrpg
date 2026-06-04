@@ -5,7 +5,7 @@ név: "Kézművesség"
 leírás: "Kétkezi mesterségek ismerete és gyakorlása."
 primer: false
 csoport: "világi"
-többszörös: true
+többszörös: []
 csoportos: true
 próba: "dobható"
 domináns_tulajdonságok: ["Ügyesség", "Intelligencia"]

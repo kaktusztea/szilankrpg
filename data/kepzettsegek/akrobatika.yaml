@@ -5,7 +5,7 @@ név: "Akrobatika"
 leírás: "Esés, ugrás, kötéltánc és akrobatikus mozgásformák."
 primer: true
 csoport: "fizikai"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Ügyesség", "Gyorsaság"]

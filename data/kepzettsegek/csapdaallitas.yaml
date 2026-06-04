@@ -5,7 +5,7 @@ név: "Csapdaállítás"
 leírás: "Mechanikus és egyéb csapdák készítése, felismerése, hatástalanítása."
 primer: false
 csoport: "alvilági"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Intelligencia", "Önuralom"]

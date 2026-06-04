@@ -5,7 +5,7 @@ név: "Alakzatharc"
 leírás: "Harci alakzatok ismerete és alkalmazása csapatban."
 primer: true
 csoport: "harci"
-többszörös: false
+többszörös: []
 csoportos: true
 próba: "nincs"
 domináns_tulajdonságok: []

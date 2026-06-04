@@ -5,7 +5,7 @@ név: "Nyelvtanulás"
 leírás: "Idegen nyelvek elsajátításának képessége."
 primer: false
 csoport: "világi"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Emlékezet", "Érzékenység"]

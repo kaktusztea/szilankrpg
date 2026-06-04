@@ -5,7 +5,7 @@ név: "Mágikus célzás"
 leírás: "Mágikus lövedékek és csatamágia célzásának harcmodora."
 primer: true
 csoport: "harci"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "nincs"
 domináns_tulajdonságok: []

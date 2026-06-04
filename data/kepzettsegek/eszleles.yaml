@@ -5,7 +5,7 @@ név: "Észlelés"
 leírás: "Dolgok, személyek, események észrevétele."
 primer: true
 csoport: "világi"
-többszörös: false
+többszörös: []
 csoportos: true
 próba: "dobható"
 domináns_tulajdonságok: ["Érzékenység", "Intelligencia"]

@@ -5,7 +5,7 @@ név: "Mászás"
 leírás: "Falak, sziklák, épületek megmászása."
 primer: false
 csoport: "fizikai"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Ügyesség", "Edzettség"]

@@ -5,7 +5,7 @@ név: "Hadászat"
 leírás: "Hadvezetés, stratégia, taktika, erődítések ismerete."
 primer: true
 csoport: "tudományos"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Intelligencia"]

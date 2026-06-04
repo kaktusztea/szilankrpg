@@ -5,7 +5,7 @@ név: "Természetjárás"
 leírás: "Táj- és környezetismeret, tájékozódás, vadászat vadonban."
 primer: false
 csoport: "világi"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Érzékenység", "Intelligencia"]

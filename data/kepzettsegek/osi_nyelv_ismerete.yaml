@@ -5,7 +5,7 @@ név: "Ősi nyelv ismerete"
 leírás: "Ősi, holt nyelvek ismerete. Nyelvenként külön felveendő."
 primer: true
 csoport: "misztikus"
-többszörös: true
+többszörös: ["*"]               # "*" = szabad szöveges alnév (prompt kéri)
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Emlékezet"]

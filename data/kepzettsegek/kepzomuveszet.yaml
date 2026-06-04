@@ -5,7 +5,7 @@ név: "Képzőművészet"
 leírás: "Belső művészetek alkotói folyamatai: festés, szobrászat, ötvösség."
 primer: false
 csoport: "művészeti"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Érzékenység", "Ügyesség"]

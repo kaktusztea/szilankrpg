@@ -5,7 +5,7 @@ név: "Előadóművészet"
 leírás: "Aktív előadást igénylő művészetek: ének, zene, színészet, tánc."
 primer: false
 csoport: "művészeti"
-többszörös: false
+többszörös: []
 csoportos: true
 próba: "dobható"
 domináns_tulajdonságok: ["Érzékenység", "Emlékezet"]

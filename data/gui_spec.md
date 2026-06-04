@@ -110,17 +110,38 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ## 3. Tulajdonságok + Képzettségek fül/screen
 
-### Tulajdonságok (felül, kompakt)
-- 8 tulajdonság: név + érték egymás mellett (2×4 grid vagy 1×8 sor)
-- Koppintás értékre: szám módosító (-5..+7)
-- Alatta: Tulajdonság pont keret / elköltött / maradék
+### Tulajdonságok (felül)
+- 8 tulajdonság fix 2 oszlop × 4 sor grid-ben (fentről lefelé, aztán következő oszlop)
+- Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
+- Nem reszponzív, fix layout
+- Szerkesztő módban: hosszú nyomás + vízszintes húzás → csúszka (-5..+7). Felengedéskor élesedik az érték.
+- Game módban: read-only
 
 ### Képzettségek (alatta, csoport-bontásban)
 - Csoportok sorrendje: Harci → Misztikus → Fizikai → Világi → Alvilági → Művészeti → Tudományos
-- Minden képzettség: név + szint (0-15)
-- **Hosszú nyomás** a névre: képzettség-választó lista (új felvétel/csere)
-- **Koppintás** a szint értékre: érték állítás (0-15)
-- Alatta: KP összesítés (összes / szekunder / elköltött / maradék)
+- Minden képzettség: név + szint (0-15) + ✕ törlés gomb (jobb oldalon, szint mellett balra)
+- Csoportonként 1 db dropdown választó (Szerkesztő módban): új képzettség felvétele. Kiválasztás után újabb jelenik meg.
+- Törlés (✕ gomb): szint=0 esetén azonnal töröl, szint>0 esetén confirm() megerősítést kér.
+
+#### Többszörös képzettségek
+- A `többszörös` mező a képzettség YAML-ban **string lista** (nem boolean):
+  - `[]` → egyszer felvehető, normál viselkedés
+  - `["Közelharc", "Kardvívás", ...]` → fix lista, dropdown-ban `"AlapNév: AlNév"` formátumban jelenik meg
+  - `["*"]` → szabad szöveges, felvételkor custom dialógus kéri az alnevet (max 20 karakter, `maxLength` input), `"AlapNév: alnév"` formátumban tárolódik
+- Megjelenítés a listában is prefixes: pl. `"Harcmodor: Közelharc"`, `"Táv. harcmodor: Íjászat"`, `"Ősi nyelv ismerete: Enoszukei"`
+- Belső tárolás: fix listásoknál az alnév önmagában (pl. `"Közelharc"`), szabad szövegesnél `"AlapNév: xyz"` formátumban
+
+#### Viselkedés Szerkesztő módban
+- Rövid koppintás: dropdown választó lista a képzettség nevekkel (meglévőnél az aktuális a default)
+- Hosszú nyomás + húzás: szint állítás vízszintes csúszkával (0-15). Felengedésnél élesedik.
+- Touch event stopPropagation: slide közben nem triggerelődik a tab swipe
+
+#### Viselkedés Game módban
+- Rövid vagy hosszú koppintás (mindegy): lenyílik egy accordion adatlap:
+  - **Próba**: dobható / nem dobható / ellenpróba
+  - **Domináns tulajdonságok**: pl. "Ügyesség, Gyorsaság"
+  - **Kiterjeszti**: fortélyok listája amelyek kiterjesztik ezt a képzettséget (normál/erős jelzéssel)
+- A kiterjesztés adatok a `tables/kiterjesztesek.json` inverz mappingből jönnek
 
 ---
 

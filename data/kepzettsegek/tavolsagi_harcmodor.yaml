@@ -5,7 +5,7 @@ név: "Távolsági harcmodor"
 leírás: "Lő- és hajítófegyverek használatának képessége egy adott kategóriában."
 primer: true
 csoport: "harci"
-többszörös: true
+többszörös: ["Hajítás", "Íjászat", "Lövészet", "Ostromlövészet", "Mágikus célzás"]
 csoportos: true
 próba: "nincs"
 domináns_tulajdonságok: []

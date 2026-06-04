@@ -5,7 +5,7 @@ név: "Alkímia"
 leírás: "Anyagok átalakítása, kémiai folyamatok ismerete és alkalmazása."
 primer: false
 csoport: "tudományos"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Intelligencia", "Emlékezet"]

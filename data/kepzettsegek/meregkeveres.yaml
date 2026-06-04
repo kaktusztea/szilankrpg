@@ -5,7 +5,7 @@ név: "Méregkeverés"
 leírás: "Mérgek előállítása, hatásaik ismerete."
 primer: true
 csoport: "tudományos"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Emlékezet", "Önuralom", "Intelligencia"]

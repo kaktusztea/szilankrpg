@@ -5,7 +5,7 @@ név: "Értékbecslés"
 leírás: "Tárgyak, műtárgyak, nyersanyagok értékének felmérése."
 primer: false
 csoport: "világi"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Emlékezet", "Intelligencia"]

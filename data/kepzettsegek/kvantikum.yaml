@@ -5,7 +5,7 @@ név: "Kvantikum"
 leírás: "Számokkal dolgozó tudományok: matematika, mértan, csillagászat."
 primer: false
 csoport: "tudományos"
-többszörös: false
+többszörös: []
 csoportos: true
 próba: "dobható"
 domináns_tulajdonságok: ["Intelligencia", "Emlékezet"]

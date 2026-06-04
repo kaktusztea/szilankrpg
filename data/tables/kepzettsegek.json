@@ -1,0 +1,437 @@
+[
+  {
+    "név": "Akrobatika",
+    "csoport": "fizikai",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Gyorsaság"
+    ]
+  },
+  {
+    "név": "Alakzatharc",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Álcázás/Álruha",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Intelligencia",
+      "Önuralom",
+      "Érzékenység"
+    ]
+  },
+  {
+    "név": "Alkímia",
+    "csoport": "tudományos",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Emlékezet"
+    ]
+  },
+  {
+    "név": "Befolyásolás",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Érzékenység"
+    ]
+  },
+  {
+    "név": "Csapdaállítás",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Önuralom"
+    ]
+  },
+  {
+    "név": "Előadóművészet",
+    "csoport": "művészeti",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Emlékezet"
+    ]
+  },
+  {
+    "név": "Emberismeret",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Értékbecslés",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Észlelés",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Etikett",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia",
+      "Önuralom",
+      "Emlékezet"
+    ]
+  },
+  {
+    "név": "Fájdalomtűrés",
+    "csoport": "fizikai",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom"
+    ]
+  },
+  {
+    "név": "Hadászat",
+    "csoport": "tudományos",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Hajózás",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia",
+      "Emlékezet",
+      "Ügyesség"
+    ]
+  },
+  {
+    "név": "Harci láz",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Edzettség"
+    ]
+  },
+  {
+    "név": "Harcmodor",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [
+      "Közelharc",
+      "Kardvívás",
+      "Rombolás",
+      "Lándzsavívás",
+      "Ostorharc"
+    ],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Képzőművészet",
+    "csoport": "művészeti",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Ügyesség"
+    ]
+  },
+  {
+    "név": "Kézművesség",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Kvantikum",
+    "csoport": "tudományos",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Emlékezet"
+    ]
+  },
+  {
+    "név": "Léglovaglás",
+    "csoport": "fizikai",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Ügyesség",
+      "Gyorsaság"
+    ]
+  },
+  {
+    "név": "Lexikum",
+    "csoport": "tudományos",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Lopakodás/Rejtőzés",
+    "csoport": "alvilági",
+    "primer": true,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Önuralom"
+    ]
+  },
+  {
+    "név": "Lopás",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Önuralom"
+    ]
+  },
+  {
+    "név": "Lovaglás",
+    "csoport": "fizikai",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Ügyesség",
+      "Gyorsaság"
+    ]
+  },
+  {
+    "név": "Mágikus célzás",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Mászás",
+    "csoport": "fizikai",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Edzettség"
+    ]
+  },
+  {
+    "név": "Méregkeverés",
+    "csoport": "tudományos",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Önuralom",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Művészetismeret",
+    "csoport": "művészeti",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia",
+      "Érzékenység"
+    ]
+  },
+  {
+    "név": "Nyelvtanulás",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Érzékenység"
+    ]
+  },
+  {
+    "név": "Nyomozás",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Emlékezet"
+    ]
+  },
+  {
+    "név": "Orvoslás",
+    "csoport": "tudományos",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Ősi nyelv ismerete",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [
+      "*"
+    ],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet"
+    ]
+  },
+  {
+    "név": "Szerencsejáték",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Távolsági harcmodor",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [
+      "Hajítás",
+      "Íjászat",
+      "Lövészet",
+      "Ostromlövészet",
+      "Mágikus célzás"
+    ],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Természetjárás",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Tradíció",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Vajákosság",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Városi jártasság",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Zárnyitás",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Önuralom"
+    ]
+  }
+]

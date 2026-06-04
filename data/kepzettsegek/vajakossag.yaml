@@ -5,7 +5,7 @@ név: "Vajákosság"
 leírás: "Növényi, állati alapanyagokból hatóanyag kinyerése, tartósítása."
 primer: false
 csoport: "világi"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Emlékezet", "Intelligencia"]

@@ -5,7 +5,7 @@ név: "Léglovaglás"
 leírás: "Légi hátasok (pteropták, wyvernek, racklák) megülése és irányítása."
 primer: false
 csoport: "fizikai"
-többszörös: false
+többszörös: []
 csoportos: true
 próba: "dobható"
 domináns_tulajdonságok: ["Önuralom", "Ügyesség", "Gyorsaság"]

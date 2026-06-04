@@ -5,7 +5,7 @@ név: "Etikett"
 leírás: "Udvari, nemesi környezetben való viselkedés ismerete."
 primer: false
 csoport: "világi"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Érzékenység", "Intelligencia", "Önuralom", "Emlékezet"]

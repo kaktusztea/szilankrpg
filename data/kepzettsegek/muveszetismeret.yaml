@@ -5,7 +5,7 @@ név: "Művészetismeret"
 leírás: "Passzív művészeti ismeretek: stílusok, korszakok, alkotók felismerése."
 primer: false
 csoport: "művészeti"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Emlékezet", "Intelligencia", "Érzékenység"]

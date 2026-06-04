@@ -5,7 +5,7 @@ név: "Fájdalomtűrés"
 leírás: "Sebesülés okozta fájdalom és sokk elviselése."
 primer: true
 csoport: "fizikai"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Önuralom"]

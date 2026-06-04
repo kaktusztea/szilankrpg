@@ -5,7 +5,7 @@ név: "Harci láz"
 leírás: "Harci extázis irányítása, fokozatai között lépdelés."
 primer: true
 csoport: "harci"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "dobható"
 domináns_tulajdonságok: ["Önuralom", "Edzettség"]

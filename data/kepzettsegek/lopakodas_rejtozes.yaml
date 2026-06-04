@@ -5,7 +5,7 @@ név: "Lopakodás/Rejtőzés"
 leírás: "Észrevétlen mozgás és elrejtőzés."
 primer: true
 csoport: "alvilági"
-többszörös: false
+többszörös: []
 csoportos: true
 próba: "ellenpróba"
 domináns_tulajdonságok: ["Ügyesség", "Önuralom"]

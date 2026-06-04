@@ -5,7 +5,7 @@ név: "Nyomozás"
 leírás: "Nyomok értelmezése, logikai következtetés, nyomkövetés."
 primer: true
 csoport: "világi"
-többszörös: false
+többszörös: []
 csoportos: true
 próba: "dobható"
 domináns_tulajdonságok: ["Intelligencia", "Emlékezet"]

@@ -5,7 +5,7 @@ név: "Orvoslás"
 leírás: "Sebek ellátása, betegségek kezelése, gyógyítás."
 primer: true
 csoport: "tudományos"
-többszörös: false
+többszörös: []
 csoportos: true
 próba: "dobható"
 domináns_tulajdonságok: ["Érzékenység", "Intelligencia"]

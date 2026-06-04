@@ -5,7 +5,7 @@ név: "Harcmodor"
 leírás: "Közelharci fegyverforgatás képessége egy adott harcmodor-kategóriában."
 primer: true
 csoport: "harci"
-többszörös: true
+többszörös: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
 csoportos: false
 próba: "nincs"
 domináns_tulajdonságok: []

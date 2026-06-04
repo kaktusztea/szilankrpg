@@ -5,7 +5,7 @@ név: ""
 leírás: ""                      # rövid, egy mondatos leírás
 primer: false                   # true: primer, false: szekunder
 csoport: ""                     # lásd konstansok.yaml / képzettség_csoportok
-többszörös: false               # 🔁 Többször felvehető-e (pl. Harcmodor, Tradíció)
+többszörös: []                  # 🔁 Többször felvehető-e. Üres lista = nem. Ha lista elemei vannak: az alnevek (pl. ["Közelharc", "Kardvívás"])
 csoportos: false                # 🤝 Csoportos képzettségpróba alkalmazható-e
 próba: ""                       # "nincs" / "dobható" / "ellenpróba"
 domináns_tulajdonságok: []      # pl: ["Ügyesség", "Gyorsaság"]

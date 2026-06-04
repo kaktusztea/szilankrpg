@@ -5,7 +5,7 @@ név: "Tradíció"
 leírás: "Egy mágikus vagy szellemi tradíció ismerete és gyakorlása."
 primer: true
 csoport: "misztikus"
-többszörös: false
+többszörös: []
 csoportos: false
 próba: "nincs"
 domináns_tulajdonságok: []
