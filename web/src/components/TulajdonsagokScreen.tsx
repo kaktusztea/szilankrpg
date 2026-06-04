@@ -24,13 +24,15 @@ interface KepzettsegSlot {
 interface Props {
   data: GameData;
   gameMode: boolean;
+  képzettségek: KepzettsegSlot[];
+  setKépzettségek: React.Dispatch<React.SetStateAction<KepzettsegSlot[]>>;
 }
 
-export function TulajdonsagokScreen({ data, gameMode }: Props) {
+export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzettségek }: Props) {
   const [tulajdonságok, setTulajdonságok] = useState<Tulajdonsagok>({ ...testKarakter8.tulajdonságok });
-  const [képzettségek, setKépzettségek] = useState<KepzettsegSlot[]>(
-    testKarakter8.képzettségek.map(k => ({ név: k.név, szint: k.szint }))
-  );
+  const [név, setNév] = useState(testKarakter8.név);
+  const [editingNév, setEditingNév] = useState(false);
+  const [tempNév, setTempNév] = useState('');
 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
@@ -57,6 +59,8 @@ export function TulajdonsagokScreen({ data, gameMode }: Props) {
   // Szabad szöveges többszörös: custom dialógus
   const [promptState, setPromptState] = useState<{ alapNév: string } | null>(null);
   const [promptValue, setPromptValue] = useState('');
+  // Törlés megerősítés dialógus
+  const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; szint: number } | null>(null);
 
   function addKepzettseg(_csoport: string, név: string) {
     if (név.startsWith('__prompt:')) {
@@ -65,7 +69,20 @@ export function TulajdonsagokScreen({ data, gameMode }: Props) {
       setPromptValue('');
       return;
     }
-    setKépzettségek(prev => [...prev, { név, szint: 0 }]);
+    setKépzettségek(prev => {
+      // Ha többszörös alnév: csoportosítva szúrjuk be a testvérei mellé
+      const parentDef = data.kepzettsegDefs.find(d =>
+        d.többszörös.length > 0 && d.többszörös[0] !== '*' && d.többszörös.includes(név)
+      );
+      if (parentDef) {
+        const siblings = new Set(parentDef.többszörös);
+        const lastIdx = prev.reduce((acc, k, i) => siblings.has(k.név) ? i : acc, -1);
+        const newArr = [...prev];
+        newArr.splice(lastIdx + 1, 0, { név, szint: 0 });
+        return newArr;
+      }
+      return [...prev, { név, szint: 0 }];
+    });
   }
 
   function confirmPrompt() {
@@ -145,6 +162,16 @@ export function TulajdonsagokScreen({ data, gameMode }: Props) {
 
   return (
     <div className="screen tul-screen">
+      {/* Fejléc: Név + Szint */}
+      <div className="tul-header">
+        <div className="tul-header-box tul-header-név" onClick={() => { if (!gameMode) { setTempNév(név); setEditingNév(true); } }}>
+          <span className="tul-header-label">Név:</span> <strong>{név}</strong>
+        </div>
+        <div className="tul-header-box">
+          <span className="tul-header-label">Szint:</span> <strong>{testKarakter8.tsz}</strong>
+        </div>
+      </div>
+
       {/* Tulajdonságok */}
       <div className="tul-grid">
         {TULAJDONSAG_NEVEK.map(key => (
@@ -180,7 +207,13 @@ export function TulajdonsagokScreen({ data, gameMode }: Props) {
                     gameMode={gameMode}
                     onNévChange={név => setKepNév(globalIdx, név)}
                     onSzintChange={szint => setKepSzint(globalIdx, szint)}
-                    onRemove={() => setKépzettségek(prev => prev.filter((_, i2) => i2 !== globalIdx))}
+                    onRemove={() => {
+                      if (slot.szint === 0) {
+                        setKépzettségek(prev => prev.filter((_, i2) => i2 !== globalIdx));
+                      } else {
+                        setDeleteTarget({ idx: globalIdx, név: getDisplayName(slot.név), szint: slot.szint });
+                      }
+                    }}
                     kiterjesztesek={data.kiterjesztesek}
                     infoOpen={infoTarget === `${globalIdx}`}
                     onInfoToggle={() => setInfoTarget(infoTarget === `${globalIdx}` ? null : `${globalIdx}`)}
@@ -226,6 +259,39 @@ export function TulajdonsagokScreen({ data, gameMode }: Props) {
         </div>,
         document.body
       )}
+
+      {deleteTarget && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Törlöd: {deleteTarget.név} (szint: {deleteTarget.szint})?</label>
+            <div className="kep-prompt-btns">
+              <button onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Törlés</button>
+              <button onClick={() => setDeleteTarget(null)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {editingNév && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Karakter neve:</label>
+            <input
+              autoFocus
+              maxLength={40}
+              value={tempNév}
+              onChange={e => setTempNév(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter' && tempNév.trim()) { setNév(tempNév.trim()); setEditingNév(false); } if (e.key === 'Escape') setEditingNév(false); }}
+            />
+            <div className="kep-prompt-btns">
+              <button onClick={() => { setNév(tempNév.trim()); setEditingNév(false); }} disabled={!tempNév.trim()}>OK</button>
+              <button onClick={() => setEditingNév(false)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
@@ -236,23 +302,28 @@ function TulajdonsagCell({ név, érték, gameMode, onChange }: {
 }) {
   const [sliding, setSliding] = useState(false);
   const [tempVal, setTempVal] = useState(érték);
-  const startX = useRef(0);
-  const startVal = useRef(érték);
+  const cellRef = useRef<HTMLDivElement>(null);
+  const rangeMin = -5;
+  const rangeMax = 7;
+  const rangeSize = rangeMax - rangeMin; // 12
+
+  function valFromPointer(clientX: number) {
+    const rect = cellRef.current!.getBoundingClientRect();
+    const margin = rect.width * 0.125; // 12.5% each side → 75% usable
+    const x = Math.max(0, Math.min(1, (clientX - rect.left - margin) / (rect.width - 2 * margin)));
+    return Math.round(rangeMin + x * rangeSize);
+  }
 
   const handlePointerDown = useCallback((e: React.PointerEvent) => {
     if (gameMode) return;
     (e.target as HTMLElement).setPointerCapture(e.pointerId);
     setSliding(true);
-    setTempVal(érték);
-    startX.current = e.clientX;
-    startVal.current = érték;
-  }, [gameMode, érték]);
+    setTempVal(valFromPointer(e.clientX));
+  }, [gameMode]);
 
   const handlePointerMove = useCallback((e: React.PointerEvent) => {
     if (!sliding) return;
-    const dx = e.clientX - startX.current;
-    const step = Math.round(dx / 25);
-    setTempVal(Math.max(-5, Math.min(7, startVal.current + step)));
+    setTempVal(valFromPointer(e.clientX));
   }, [sliding]);
 
   const handlePointerUp = useCallback(() => {
@@ -263,9 +334,11 @@ function TulajdonsagCell({ név, érték, gameMode, onChange }: {
 
   const displayVal = sliding ? tempVal : érték;
   const label = név.charAt(0).toUpperCase() + név.slice(1);
+  const fillPct = ((displayVal - rangeMin) / rangeSize) * 100;
 
   return (
     <div
+      ref={cellRef}
       className={`tul-cell ${sliding ? 'sliding' : ''} ${!gameMode ? 'editable' : ''}`}
       onPointerDown={handlePointerDown}
       onPointerMove={handlePointerMove}
@@ -276,7 +349,7 @@ function TulajdonsagCell({ név, érték, gameMode, onChange }: {
     >
       <span className="tul-label">{label}:</span>
       <span className="tul-value">{displayVal}</span>
-      {sliding && <div className="tul-slider-track"><div className="tul-slider-fill" style={{ width: `${((tempVal + 5) / 12) * 100}%` }} /></div>}
+      {sliding && <div className="tul-slider-track"><div className="tul-slider-fill" style={{ width: `${fillPct}%` }} /></div>}
     </div>
   );
 }
@@ -299,30 +372,34 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
   const [editing, setEditing] = useState(false);
   const [sliding, setSliding] = useState(false);
   const [tempSzint, setTempSzint] = useState(slot.szint);
-  const startX = useRef(0);
-  const startVal = useRef(slot.szint);
+  const rowRef = useRef<HTMLDivElement>(null);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const available = csoportDefs.filter(d => !usedNames.includes(d.név));
 
+  function szintFromPointer(clientX: number) {
+    const rect = rowRef.current!.getBoundingClientRect();
+    const margin = rect.width * 0.125;
+    const x = Math.max(0, Math.min(1, (clientX - rect.left - margin) / (rect.width - 2 * margin)));
+    return Math.round(x * 15);
+  }
+
   // Szerkesztő mód: rövid kopp → dropdown, hosszú nyomás → szint csúszka
   function handlePointerDown(e: React.PointerEvent) {
     if (gameMode) return;
+    const pointerId = e.pointerId;
+    const target = e.target as HTMLElement;
     longPressTimer.current = setTimeout(() => {
       longPressTimer.current = null;
-      (e.target as HTMLElement).setPointerCapture(e.pointerId);
+      target.setPointerCapture(pointerId);
       setSliding(true);
-      setTempSzint(slot.szint);
-      startX.current = e.clientX;
-      startVal.current = slot.szint;
+      setTempSzint(szintFromPointer(e.clientX));
     }, 400);
   }
 
   function handlePointerMove(e: React.PointerEvent) {
     if (!sliding) return;
-    const dx = e.clientX - startX.current;
-    const step = Math.round(dx / 20);
-    setTempSzint(Math.max(0, Math.min(15, startVal.current + step)));
+    setTempSzint(szintFromPointer(e.clientX));
   }
 
   function handlePointerUp() {
@@ -354,6 +431,7 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
   return (
     <div className="kep-row-wrapper">
       <div
+        ref={rowRef}
         className={`kep-row ${sliding ? 'sliding' : ''}`}
         onPointerDown={!gameMode ? handlePointerDown : undefined}
         onPointerMove={!gameMode ? handlePointerMove : undefined}
@@ -381,7 +459,7 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
           {!gameMode && !sliding && (
             <button className="kep-delete" onClick={e => {
               e.stopPropagation();
-              if (slot.szint === 0 || confirm(`Törlöd: ${slot.név} (szint: ${slot.szint})?`)) onRemove();
+              onRemove();
             }}>✕</button>
           )}
           <span className="kep-szint">{sliding ? tempSzint : slot.szint}</span>

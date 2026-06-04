@@ -2,6 +2,38 @@
   padding-bottom: 20px;
 }
 
+.tul-header {
+  display: flex;
+  gap: 0;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.tul-header-box {
+  background: var(--surface);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+.tul-header-név {
+  flex: 1;
+  cursor: pointer;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-right: none;
+}
+
+.tul-header-box:last-child {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.tul-header-label {
+  color: var(--text-dim);
+}
+
 /* --- Tulajdonságok grid --- */
 .tul-grid {
   display: grid;
@@ -56,8 +88,8 @@
 .tul-slider-track {
   position: absolute;
   bottom: 3px;
-  left: 6px;
-  right: 6px;
+  left: 12.5%;
+  right: 12.5%;
   height: 4px;
   background: #333;
   border-radius: 2px;
@@ -154,8 +186,8 @@
 .kep-slider-track {
   position: absolute;
   bottom: 2px;
-  left: 8px;
-  right: 8px;
+  left: 12.5%;
+  right: 12.5%;
   height: 3px;
   background: #333;
   border-radius: 2px;
