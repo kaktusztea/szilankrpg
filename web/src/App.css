@@ -1,0 +1,138 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --primary: #0f3460;
+  --accent: #e94560;
+  --text: #eee;
+  --text-dim: #999;
+  --input-bg: #2a2a4a;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  overflow: hidden;
+  height: 100dvh;
+}
+
+#root { height: 100%; }
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 12px;
+  background: var(--primary);
+  border-bottom: 1px solid #333;
+}
+
+.title { font-weight: bold; font-size: 16px; }
+
+.mode-toggle {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.screen h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+}
+
+.tab-bar {
+  display: flex;
+  background: var(--surface);
+  border-top: 1px solid #333;
+  padding: 4px 0;
+}
+
+.tab-btn {
+  flex: 1;
+  background: none;
+  border: none;
+  color: var(--text-dim);
+  font-size: 11px;
+  padding: 6px 2px;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.tab-btn.active {
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.tab-more {
+  position: relative;
+  flex: 1;
+}
+
+.tab-more-menu {
+  display: none;
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  background: var(--surface);
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 4px;
+  z-index: 100;
+}
+
+.tab-more:hover .tab-more-menu,
+.tab-more:focus-within .tab-more-menu {
+  display: flex;
+  flex-direction: column;
+}
+
+.tab-more-menu button {
+  background: none;
+  border: none;
+  color: var(--text);
+  padding: 8px 12px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.tab-more-menu button:hover {
+  background: var(--primary);
+}
+
+.loading, .error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-size: 18px;
+}
+
+.error { color: var(--error); }

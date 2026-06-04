@@ -1,0 +1,96 @@
+.harc-screen h3 { margin: 12px 0 6px; font-size: 15px; }
+
+.harc-header {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.ke-box, .sfe-box {
+  background: var(--surface);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sfe-box { flex: 1; }
+
+.ke-box .value { font-size: 28px; font-weight: bold; color: var(--accent); }
+.ke-box .label, .sfe-box .label { font-size: 14px; font-weight: bold; color: var(--text); text-transform: uppercase; }
+
+.harc-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.harc-table th, .harc-table td {
+  padding: 4px 6px;
+  border: 1px solid #444;
+  text-align: center;
+}
+
+.harc-table th { background: var(--primary); font-size: 11px; }
+.harc-table td:first-child { text-align: left; }
+
+.harc-section {
+  background: var(--surface);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+
+.ve-csokk { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.ve-csokk button {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.ep-bar {
+  display: flex;
+  gap: 2px;
+  margin: 6px 0;
+}
+
+.ep-segment {
+  flex: 1;
+  text-align: center;
+  padding: 6px 4px;
+  border-radius: 3px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.ep-segment .te-lev {
+  font-size: 11px;
+  font-weight: normal;
+  margin-top: 2px;
+  opacity: 0.9;
+}
+
+.ep-segment.s1 { background: #4caf50; color: #000; }
+.ep-segment.s2 { background: #ff9800; color: #000; }
+.ep-segment.s3 { background: #f44336; color: #fff; }
+.ep-segment.s4 { background: #880000; color: #fff; }
+
+.manover { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+.manover button {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+
+.dim { font-size: 11px; color: var(--text-dim); }

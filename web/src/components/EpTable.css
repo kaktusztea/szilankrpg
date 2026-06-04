@@ -1,0 +1,126 @@
+.ep-table-wrapper { margin-bottom: 8px; }
+
+.ep-table-header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+  font-size: 13px;
+}
+
+.ep-grid {
+  display: flex;
+  gap: 2px;
+}
+
+.ep-column {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
+
+.ep-col-header {
+  text-align: center;
+  font-weight: bold;
+  font-size: 12px;
+  padding: 3px;
+  background: var(--primary);
+  border-radius: 3px 3px 0 0;
+}
+
+.ep-col-footer {
+  text-align: center;
+  font-size: 11px;
+  padding: 2px;
+  color: var(--accent);
+  font-weight: bold;
+}
+
+.ep-cell {
+  height: 22px;
+  border: 1px solid #444;
+  border-radius: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: bold;
+  background: var(--input-bg);
+}
+
+.ep-cell.filled {
+  color: #fff;
+}
+
+.ep-buttons {
+  display: flex;
+  gap: 6px;
+  margin-top: 8px;
+}
+
+.ep-buttons button {
+  padding: 6px 12px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  background: var(--input-bg);
+  color: var(--text);
+}
+
+.btn-seb { border-color: #c0392b !important; }
+.btn-heal { border-color: #27ae60 !important; }
+.btn-reset { border-color: #666 !important; }
+
+.ep-dialog {
+  background: var(--surface);
+  border: 2px solid #555;
+  border-radius: 8px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+.ep-dialog h4 { margin-bottom: 8px; }
+
+.ep-dialog-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.ep-dialog-row label { font-size: 13px; min-width: 50px; }
+
+.ep-dialog-row button {
+  padding: 4px 10px;
+  border: 1px solid #555;
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--text);
+  cursor: pointer;
+  font-size: 13px;
+}
+
+.ep-dialog-row button.active {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.ep-dialog-row input {
+  width: 60px;
+  padding: 4px 8px;
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.btn-confirm {
+  background: var(--accent) !important;
+  color: #fff !important;
+  border-color: var(--accent) !important;
+}
