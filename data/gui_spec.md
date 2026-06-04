@@ -71,14 +71,18 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ### Tartalom
 
-- **Felső box-sor** (egy sorban, egymás mellett, gap: 12px):
-  - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, accent szín)
+- **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 2×2 grid):
+  - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, fehér)
   - **SFÉ box** (balra rendezve): fejléc label `SFÉ (X%)` (14px, bold, fehér, uppercase), alatta `Fizikai: X` és `Energia: X` egymás alatt (14px, érték: 16px bold)
   - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
   - **MP box**: label `MP` (14px, bold, fehér, uppercase), érték `X/Y` (20px, bold, success/zöld szín), alatta gombok: -1, ⟲ (12px). Default: max.
   - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
 - **Teljes harcértékek** tábla (fegyverenként):
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
+  - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
+  - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
+  - TÉ értékek: dinamikusan csökkennek sebesülés kategória TÉ levonással
+  - VÉ értékek: dinamikusan csökkennek VÉ csökkenés értékkel
 - **VÉ csökkenés**: aktuális érték + gombok: +1, +2, +3, -1, ⟲ (reset)
 - **ÉP táblázat**:
   - 4 oszlop (S1-S4), mindegyikben ÉP/4 db rubrika
@@ -90,13 +94,15 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - Kitöltött rubrikák: típus+sorszám jelölés (V1, Z2, FP3)
   - Szín: ÉP sebek pirosas-narancs árnyalatok (sorszámonként enyhén eltérő), FP sebek lila
   - FP utáni ÉP seb: fentről lefelé felülírja a meglévő FP rubrikákat, majd üres helyeket tölt
+  - Gyógyulás utáni compaction: kitöltött rubrikák tömörítődnek felülre (nincs lyuk középen, FP felcsúszik ÉP mögé)
+  - Sorszám újrahasználat: ha egy seb összes rubrikája begyógyult, a száma felszabadul
   - TÉ levonás dinamikusan vonódik le a Teljes harcértékek TÉ oszlopából (sebesülés kategória alapján)
   - **⚔️ Sebesülés gomb**: típus (S/V/Z/FP) + érték választó. Default: S (Szúró).
   - **💚 Gyógyulás gomb**: disabled ha nincs seb. Megnyitja a Gyógyulás dialógust:
-    - ÉP / FP választó gombok. Default: ÉP. Ha az adott típusból nincs seb → disabled, a másik auto-select.
+    - ÉP / FP választó gombok. Default: ÉP (első). Ha az adott típusból nincs seb → disabled + auto-select a másik.
     - Gombokon jelzi a max-ot: `ÉP (X)` / `FP (X)`
     - Érték input: max = az adott típusú sebek száma. Mellette `/ X` jelzés.
-    - Hátulról töröl.
+    - Hátulról töröl, utána compaction.
   - **⟲ Reset**: mindent töröl
 - **Manőver Pont**: Manőver Alap + aktuális/max MP + gombok (+1, -1). Default: max.
 
@@ -176,21 +182,26 @@ Fortélyok listája csoport szerint (Harci → Általános → Érzékek → Sza
 
 ---
 
-## Tab bar sorrend (alul)
+## Tab bar
 
-Elsődleges (mindig látható):
-1. ⚔️ Aktív
-2. 🗡️ Harc
-3. 📊 Tulajdonságok/Képzettségek
-4. 🟣 Fortélyok
-5. ⋯ Több
+- Alul fix, horizontálisan scrollozható szalag (mint a 2016-os Macbook Touch Bar)
+- Minden tab egymás mellett, `flex-shrink: 0`, `nowrap`
+- Ha nem fér ki mind → ujjal/egérrel húzva scrollozható
+- Scrollbar rejtett (`scrollbar-width: none`)
+- Nincs "..." menü — minden tab közvetlenül elérhető
+- Aktív tab: accent szín, bold
+- Tab betűméret: 12px, padding: 8px 14px
+- Háttér: surface szín, border-top: 1px solid #333
 
-"Több" menü:
-- Misztikus
-- Hátterek
-- Taktikák
-- Helyzetek
-- Manőverek
+---
+
+## Screen váltás animáció
+
+- CSS transition: `transform 0.15s ease-out`
+- Screen-ek horizontálisan egymás mellett (`display: flex`)
+- Aktív screen: `translateX(-N * 100%)`
+- Csak szomszédos screen-ek renderelődnek (teljesítmény)
+- Swipe gesztus mobilon, tab kattintás desktop-on — mindkettő animált
 
 ---
 
