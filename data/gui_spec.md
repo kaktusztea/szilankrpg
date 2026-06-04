@@ -90,8 +90,13 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - Kitöltött rubrikák: típus+sorszám jelölés (V1, Z2, FP3)
   - Szín: ÉP sebek pirosas-narancs árnyalatok (sorszámonként enyhén eltérő), FP sebek lila
   - FP utáni ÉP seb: fentről lefelé felülírja a meglévő FP rubrikákat, majd üres helyeket tölt
+  - TÉ levonás dinamikusan vonódik le a Teljes harcértékek TÉ oszlopából (sebesülés kategória alapján)
   - **⚔️ Sebesülés gomb**: típus (S/V/Z/FP) + érték választó. Default: S (Szúró).
-  - **💚 Gyógyulás gomb**: FP vagy ÉP választás + mennyit. Hátulról töröl.
+  - **💚 Gyógyulás gomb**: disabled ha nincs seb. Megnyitja a Gyógyulás dialógust:
+    - ÉP / FP választó gombok. Default: ÉP. Ha az adott típusból nincs seb → disabled, a másik auto-select.
+    - Gombokon jelzi a max-ot: `ÉP (X)` / `FP (X)`
+    - Érték input: max = az adott típusú sebek száma. Mellette `/ X` jelzés.
+    - Hátulról töröl.
   - **⟲ Reset**: mindent töröl
 - **Manőver Pont**: Manőver Alap + aktuális/max MP + gombok (+1, -1). Default: max.
 
