@@ -39,9 +39,18 @@
   border: 1px solid #444;
   border-radius: 6px;
   padding: 6px 12px;
-  margin-bottom: 10px;
   font-size: 14px;
   cursor: pointer;
+}
+
+.tul-faj-kor-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tul-faj-kor-row .tul-faj-row:first-child {
+  flex: 1;
 }
 
 /* --- Tulajdonságok grid --- */

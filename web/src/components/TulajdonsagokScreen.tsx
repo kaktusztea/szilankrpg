@@ -41,6 +41,10 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
   const [faj, setFaj] = useState(testKarakter8.hátterek.faj);
   const [editingFaj, setEditingFaj] = useState(false);
   const fajLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [kor, setKor] = useState(testKarakter8.kor);
+  const [editingKor, setEditingKor] = useState(false);
+  const [tempKor, setTempKor] = useState(testKarakter8.kor);
+  const korLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
@@ -177,7 +181,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
           onPointerUp={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
           onPointerCancel={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
         >
-          <span className="tul-header-label">Név:</span> <strong>{gameMode ? `${név} (${faj})` : név}</strong>
+          <span className="tul-header-label">Név:</span> <strong>{gameMode ? `${név} (${faj}, ${kor})` : név}</strong>
         </div>
         <div
           className="tul-header-box"
@@ -189,14 +193,23 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
         </div>
       </div>
 
-      {/* Faj választó - csak szerkesztő módban */}
+      {/* Faj + Kor - csak szerkesztő módban */}
       {!gameMode && (
-        <div className="tul-faj-row"
-          onPointerDown={() => { fajLongPress.current = setTimeout(() => { fajLongPress.current = null; setEditingFaj(true); }, 400); }}
-          onPointerUp={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
-          onPointerCancel={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
-        >
-          <span className="tul-header-label">Faj:</span> <strong>{faj}</strong>
+        <div className="tul-faj-kor-row">
+          <div className="tul-faj-row"
+            onPointerDown={() => { fajLongPress.current = setTimeout(() => { fajLongPress.current = null; setEditingFaj(true); }, 400); }}
+            onPointerUp={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
+            onPointerCancel={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
+          >
+            <span className="tul-header-label">Faj:</span> <strong>{faj}</strong>
+          </div>
+          <div className="tul-faj-row"
+            onPointerDown={() => { korLongPress.current = setTimeout(() => { korLongPress.current = null; setTempKor(kor); setEditingKor(true); }, 400); }}
+            onPointerUp={() => { if (korLongPress.current) { clearTimeout(korLongPress.current); korLongPress.current = null; } }}
+            onPointerCancel={() => { if (korLongPress.current) { clearTimeout(korLongPress.current); korLongPress.current = null; } }}
+          >
+            <span className="tul-header-label">Kor:</span> <strong>{kor}</strong>
+          </div>
         </div>
       )}
 
@@ -356,6 +369,28 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
             </select>
             <div className="kep-prompt-btns">
               <button onClick={() => setEditingFaj(false)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {editingKor && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Kor: <strong>{tempKor}</strong></label>
+            <input
+              type="range"
+              min={5}
+              max={500}
+              step={5}
+              value={tempKor}
+              onChange={e => setTempKor(Number(e.target.value))}
+              className="tsz-slider"
+            />
+            <div className="kep-prompt-btns">
+              <button onClick={() => { setKor(tempKor); setEditingKor(false); }}>OK</button>
+              <button onClick={() => setEditingKor(false)}>Mégse</button>
             </div>
           </div>
         </div>,
