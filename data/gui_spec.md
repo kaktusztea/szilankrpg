@@ -71,16 +71,25 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ### Tartalom
 
+- **KÉ** (nagy kiemelt szám, bal oldalt)
+- **SFÉ box** (jobb oldalt, széles):
+  - Fizikai: X (teljes szó)
+  - Energia: X (teljes szó)
+  - Lefedettség: X%
 - **Teljes harcértékek** tábla (fegyverenként):
-  - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz | Jegyzet
-- **KÉ** (egy érték)
-- **SFÉ**: Fegyver ellen / Energia ellen / Lefedettség %
-- **ÉP táblázat**: S1-S4 sávok vizuálisan, TÉ levonások jelzéssel
-- **VÉ csökkenés**: aktuális érték + **[+]** gomb (szám-választó felugrik: mennyi VÉ csökkenés)
-- **Manőver Alap** / **Max Manőver Pont** / **Aktuális Manőver Pont**
-- **Távharc VÉ kalkulátor** (opcionális, lenyitható szekció):
-  - Távolság, Fegyver, Célpont mozgás, Lövész mozgás, Méret, Észlelhetőség, Szél
-  - Eredmény: Szorzó, Cella, Cél VÉ, Találati esély %
+  - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
+- **VÉ csökkenés**: aktuális érték + gombok: +1, +2, +3, -1, ⟲ (reset)
+- **ÉP táblázat**:
+  - 4 oszlop (S1-S4), mindegyikben ÉP/4 db rubrika
+  - Fejléc: ÉP összérték | Seb: X/Y | Kategória: SX | TÉ levonás
+  - Oszlop footer: TÉ levonás értékek (—, -2, -5, -8)
+  - Rubrikák fentről lefelé töltődnek S1→S2→S3→S4 sorrendben
+  - Kitöltött rubrikák: típus+sorszám jelölés (V1, Z2, FP3)
+  - Szín: ÉP sebek pirosas-narancs árnyalatok (sorszámonként enyhén eltérő), FP sebek lila
+  - **⚔️ Sebesülés gomb**: típus (S/V/Z/FP) + érték választó. Default: S (Szúró).
+  - **💚 Gyógyulás gomb**: FP vagy ÉP választás + mennyit. Hátulról töröl.
+  - **⟲ Reset**: mindent töröl
+- **Manőver Pont**: Manőver Alap + aktuális/max MP + gombok (+1, -1). Default: max.
 
 ---
 
