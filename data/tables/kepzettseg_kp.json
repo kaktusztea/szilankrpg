@@ -1,77 +1,77 @@
 [
     {
         "Képzettség Szint": "1",
-        "KP igény": "6",
-        "Diff": "+6KP"
+        "KP igény": "3",
+        "Diff": "+3KP"
     },
     {
         "Képzettség Szint": "2",
-        "KP igény": "10",
-        "Diff": "+4KP"
+        "KP igény": "4",
+        "Diff": "+1KP"
     },
     {
         "Képzettség Szint": "3",
-        "KP igény": "16",
-        "Diff": "+6KP"
+        "KP igény": "6",
+        "Diff": "+2KP"
     },
     {
         "Képzettség Szint": "4",
-        "KP igény": "24",
-        "Diff": "+8KP"
+        "KP igény": "9",
+        "Diff": "+3KP"
     },
     {
         "Képzettség Szint": "5",
-        "KP igény": "34",
-        "Diff": "+10KP"
+        "KP igény": "13",
+        "Diff": "+4KP"
     },
     {
         "Képzettség Szint": "6",
-        "KP igény": "46",
-        "Diff": "+12KP"
+        "KP igény": "18",
+        "Diff": "+5KP"
     },
     {
         "Képzettség Szint": "7",
-        "KP igény": "60",
-        "Diff": "+14KP"
+        "KP igény": "24",
+        "Diff": "+6KP"
     },
     {
         "Képzettség Szint": "8",
-        "KP igény": "76",
-        "Diff": "+16KP"
+        "KP igény": "31",
+        "Diff": "+7KP"
     },
     {
         "Képzettség Szint": "9",
-        "KP igény": "94",
-        "Diff": "+18KP"
+        "KP igény": "38",
+        "Diff": "+7KP"
     },
     {
         "Képzettség Szint": "10",
-        "KP igény": "114",
-        "Diff": "+20KP"
+        "KP igény": "46",
+        "Diff": "+8KP"
     },
     {
         "Képzettség Szint": "11",
-        "KP igény": "136",
-        "Diff": "+22KP"
+        "KP igény": "55",
+        "Diff": "+9KP"
     },
     {
         "Képzettség Szint": "12",
-        "KP igény": "160",
-        "Diff": "+24KP"
+        "KP igény": "65",
+        "Diff": "+10KP"
     },
     {
         "Képzettség Szint": "13",
-        "KP igény": "186",
-        "Diff": "+26KP"
+        "KP igény": "76",
+        "Diff": "+11KP"
     },
     {
         "Képzettség Szint": "14",
-        "KP igény": "214",
-        "Diff": "+28KP"
+        "KP igény": "88",
+        "Diff": "+12KP"
     },
     {
         "Képzettség Szint": "15",
-        "KP igény": "244",
-        "Diff": "+30KP"
+        "KP igény": "101",
+        "Diff": "+13KP"
     }
 ]
