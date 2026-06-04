@@ -61,7 +61,7 @@ function App() {
       8, // Kardvívás szint
       { TÉ: kardvívásB.TÉ, VÉ: kardvívásB.VÉ },
       kardLovag,
-      3, // Mesterfegyver 3.fok
+      2, // Mesterfegyver 2.fok (kard, lovag-ra)
       mfBonuszok,
       konstansok.harcérték_alap,
       0, // fortély TÉ (Harci akrobatika nincs)
@@ -72,7 +72,7 @@ function App() {
       0, // felszerelés MGT
     );
     kardTÉ = result.TÉ;
-    kardVÉ = result.VÉ;
+    kardVÉ = result.VÉ + 10; // + Közepes pajzs VÉ (Pajzshasználat 2.fok: teljes VÉ aktív)
     kardTám = result.támadások;
   }
 
@@ -94,7 +94,7 @@ function App() {
   const felszMgt = calcFelszerelésMgt(k.felszerelés.nagy_tárgyak.map(t => t.MGT), k.tulajdonságok.erő);
 
   // §18 HM/CM
-  const összFortelyFok = k.fortélyok.filter(f => primerFort.has(f.név)).reduce((s, f) => s + f.fok, 0);
+  const összFortelyFok = k.fortélyok.filter(f => primerFort.has(f.név) && f.név !== "Mesterfegyver").reduce((s, f) => s + f.fok, 0);
   const összHarcmodorSzint = [6, 8, 4, 0, 0]; // Közelharc, Kardvívás, Rombolás, Lándzsa, Ostor
   const alakzatharcSzint = 0;
   const maxHM = calcMaxHM(összFortelyFok, összHarcmodorSzint, alakzatharcSzint);

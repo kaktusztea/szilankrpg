@@ -99,8 +99,8 @@ export const testKarakter8: Karakter = {
   },
   származtatott: { ÉP: 0, szilánk: 1 },
   fegyverek: [
-    { alap: "kard, lovag", név: "", anyag: "acél", idea: 0, mesterfegyver_fok: 3, módosítók: '' },
-    { alap: "tőr", név: "", anyag: "acél", idea: 0, mesterfegyver_fok: 0, módosítók: '' },
+    { alap: "kard, lovag", név: "", anyag: "acél", idea: 0, mesterfegyver_fok: 2, módosítók: '' },
+    { alap: "tőr", név: "", anyag: "acél", idea: 0, mesterfegyver_fok: 1, módosítók: '' },
   ],
   páncél: {
     alap: "bőr",
@@ -128,14 +128,14 @@ export const expected8 = {
   maradt_kp: 2,
   tulajdonság_pont_keret: 68, // 64 + floor(8/2)
   tulajdonság_pont_maradék: 0,
-  max_HM: 34,              // fortély fokok: 25 + harcmodor szintek: 6+8+4+0+0 = 18 + alakzatharc: 0... ellenőrizni!
+  max_HM: 34,              // harci fortély fokok (Mf nélkül): 16 + harcmodor szintek: 18 + alakzatharc: 0
   max_CM: 16,              // 8 × 2
   manőver_alap: 4,         // képernyőkép: Manőver Alap = 4
   max_manőver_pont: 5,
   // Kardvívás fegyver: Kard, lovag
   kard_lovag: {
     TÉ: 47,  // Harc lap: Teljes harcértékek
-    VÉ: 77,
+    VÉ: 74,  // 64 (alap+harcmodor+fegyver+MF) + 10 (Közepes pajzs, Pajzshasználat 2.fok)
     SP: "11 V/S +1Á",
     támadások: 2,
   },

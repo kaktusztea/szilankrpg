@@ -3,7 +3,7 @@ import type { Aranyok } from './types';
 // §14: Manőver Pont
 export function calcManoverPont(harcmodorSzintek: number[], tsz: number): number {
   const összeg = harcmodorSzintek.reduce((s, v) => s + v, 0);
-  return 2 * Math.ceil(összeg / tsz);
+  return Math.ceil((összeg * 2) / tsz);
 }
 
 // §15: Felszerelés MGT

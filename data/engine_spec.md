@@ -175,7 +175,8 @@ formula:  // ismételve minden egyes fegyverre
   VÉ = VÉ_alap + VÉ_harcmodor + VÉ_fegyver + VÉ_mesterfegyver + VÉ_fortély
 
 output: VÉ (per fegyver)
-note: A végső VÉ-hez hozzáadódik a pajzs VÉ bónusz (lásd §13) ha van pajzs.
+note: A végső VÉ-hez hozzáadódik a pajzs VÉ bónusz (lásd §13) ha van pajzs és van szabad kéz.
+      A Teljes harcértékek táblázatban a VÉ = fegyver VÉ + pajzs VÉ (ha aktív).
 ```
 
 ---
@@ -346,7 +347,7 @@ input:  közelharci harcmodor szintek (közelharc, kardvívás, rombolás, lánd
 
 formula:
   harcmodor_összeg = SUM(közelharc, kardvívás, rombolás, lándzsavívás, ostorharc)
-  manőver_pont = 2 × CEIL(harcmodor_összeg / tsz)
+  manőver_pont = CEIL(harcmodor_összeg × 2 / tsz)
 
 output: manőver_pont
 note: Értéke [0; 10] tartományban mozog. Egy harci jelenet alatt használható fel, VÉ regenerálódáskor visszatöltődik.
@@ -444,7 +445,7 @@ input:  karakter.HM_TÉ, karakter.HM_VÉ, karakter.CM, karakter.tsz,
 source: konstansok.yaml → arányok
 
 formula:
-  max_HM = SUM(harci_fortély_fokok) + SUM(5_közelharci_harcmodor_szint + alakzatharc_szint)
+  max_HM = SUM(harci_fortély_fokok, Mesterfegyver nélkül) + SUM(5_közelharci_harcmodor_szint + alakzatharc_szint)
   max_CM = tsz × arányok.max_cm_perszint
 
   // HM elosztás: 1 HM → VAGY 1 TÉ, VAGY 1 VÉ (nem mindkettő!)
