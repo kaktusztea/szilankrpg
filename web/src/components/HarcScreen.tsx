@@ -56,17 +56,37 @@ export function HarcScreen({ data }: { data: GameData }) {
       <div className="harc-header">
         <div className="ke-box"><span className="label">KÉ</span><span className="value">{ké}</span></div>
         <div className="sfe-box">
-          <span className="label">SFÉ</span>
-          <span>Fizikai: {pancel.sfé_fizikai}</span>
-          <span>Energia: {pancel.sfé_energia}</span>
-          <span className="dim">Lefedettség: {pancel.lefedettség}%</span>
+          <span className="label">SFÉ ({pancel.lefedettség}%)</span>
+          <div className="sfe-values">
+            <span className="sfe-line">Fizikai: <strong>{pancel.sfé_fizikai}</strong></span>
+            <span className="sfe-line">Energia: <strong>{pancel.sfé_energia}</strong></span>
+          </div>
+        </div>
+        <div className="ve-csokk-box">
+          <span className="label">VÉ csökk.</span>
+          <span className="value">{véCsökkenés}</span>
+          <div className="ve-btns">
+            <button onClick={() => setVéCsökkenés(véCsökkenés + 1)}>+1</button>
+            <button onClick={() => setVéCsökkenés(véCsökkenés + 2)}>+2</button>
+            <button onClick={() => setVéCsökkenés(véCsökkenés + 3)}>+3</button>
+            <button onClick={() => setVéCsökkenés(Math.max(0, véCsökkenés - 1))}>-1</button>
+            <button onClick={() => setVéCsökkenés(0)}>⟲</button>
+          </div>
+        </div>
+        <div className="mp-box">
+          <span className="label">MP</span>
+          <span className="value">{Math.min(aktManöverPont, manöverPont)}/{manöverPont}</span>
+          <div className="ve-btns">
+            <button onClick={() => setAktManöverPont(Math.max(0, Math.min(aktManöverPont, manöverPont) - 1))}>-1</button>
+            <button onClick={() => setAktManöverPont(manöverPont)}>⟲</button>
+          </div>
         </div>
       </div>
 
       <h3>Teljes harcértékek</h3>
       <table className="harc-table">
         <thead>
-          <tr><th>Fegyver</th><th>Tám</th><th>TÉ</th><th>VÉ</th><th>SP</th><th>Ph</th></tr>
+          <tr><th>Fegyver</th><th>Tám</th><th>TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>
         </thead>
         <tbody>
           {fegyverResults.map((r, i) => r && (
@@ -74,7 +94,7 @@ export function HarcScreen({ data }: { data: GameData }) {
               <td>{r.fegyver_név}</td>
               <td>{r.támadások}</td>
               <td>{r.TÉ}</td>
-              <td>{r.VÉ + pajzsVÉ}</td>
+              <td>{r.VÉ + pajzsVÉ - véCsökkenés}</td>
               <td>{r.SP} {r.sebzésmód}</td>
               <td>{r.pengehossz}</td>
             </tr>
@@ -83,26 +103,9 @@ export function HarcScreen({ data }: { data: GameData }) {
       </table>
 
       <div className="harc-section">
-        <div className="ve-csokk">
-          <span>VÉ csökkenés: <strong>{véCsökkenés}</strong></span>
-          <button onClick={() => setVéCsökkenés(véCsökkenés + 1)}>+1</button>
-          <button onClick={() => setVéCsökkenés(véCsökkenés + 2)}>+2</button>
-          <button onClick={() => setVéCsökkenés(véCsökkenés + 3)}>+3</button>
-          <button onClick={() => setVéCsökkenés(Math.max(0, véCsökkenés - 1))}>-1</button>
-          <button onClick={() => setVéCsökkenés(0)}>⟲</button>
-        </div>
-      </div>
-
-      <div className="harc-section">
         <EpTable ÉP={ep.ÉP} />
       </div>
 
-      <div className="harc-section manover">
-        <span>Manőver Alap: {manöverPont}</span>
-        <span>MP: <strong>{Math.min(aktManöverPont, manöverPont)}</strong>/{manöverPont}</span>
-        <button onClick={() => setAktManöverPont(Math.min(manöverPont, aktManöverPont + 1))}>+1</button>
-        <button onClick={() => setAktManöverPont(Math.max(0, Math.min(aktManöverPont, manöverPont) - 1))}>-1</button>
-      </div>
     </div>
   );
 }

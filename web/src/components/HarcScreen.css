@@ -16,7 +16,41 @@
   align-items: center;
 }
 
-.sfe-box { flex: 1; }
+.sfe-box { align-items: flex-start !important; }
+
+.ve-csokk-box, .mp-box {
+  background: var(--surface);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ve-csokk-box .value { font-size: 24px; font-weight: bold; color: var(--warning); }
+.mp-box .value { font-size: 20px; font-weight: bold; color: var(--success); }
+
+.ve-btns { display: flex; gap: 4px; margin-top: 4px; }
+.ve-btns button {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #555;
+  border-radius: 3px;
+  padding: 2px 7px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.sfe-values {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-top: 4px;
+}
+
+.sfe-line { font-size: 14px; }
+.sfe-line strong { font-size: 16px; }
 
 .ke-box .value { font-size: 28px; font-weight: bold; color: var(--accent); }
 .ke-box .label, .sfe-box .label { font-size: 14px; font-weight: bold; color: var(--text); text-transform: uppercase; }
@@ -35,6 +69,7 @@
 }
 
 .harc-table th { background: var(--primary); font-size: 11px; }
+.harc-table th.ve-col { color: var(--warning); }
 .harc-table td:first-child { text-align: left; }
 
 .harc-section {
