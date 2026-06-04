@@ -279,3 +279,9 @@
   opacity: 0.4;
   cursor: default;
 }
+
+/* --- TSZ slider --- */
+.tsz-slider {
+  width: 100%;
+  accent-color: var(--accent);
+}

@@ -33,6 +33,11 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
   const [név, setNév] = useState(testKarakter8.név);
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
+  const [tsz, setTsz] = useState(testKarakter8.tsz);
+  const [editingTsz, setEditingTsz] = useState(false);
+  const [tempTsz, setTempTsz] = useState(testKarakter8.tsz);
+  const tszLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const névLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
@@ -164,11 +169,20 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
     <div className="screen tul-screen">
       {/* Fejléc: Név + Szint */}
       <div className="tul-header">
-        <div className="tul-header-box tul-header-név" onClick={() => { if (!gameMode) { setTempNév(név); setEditingNév(true); } }}>
+        <div className="tul-header-box tul-header-név"
+          onPointerDown={() => { if (!gameMode) névLongPress.current = setTimeout(() => { névLongPress.current = null; setTempNév(név); setEditingNév(true); }, 400); }}
+          onPointerUp={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
+          onPointerCancel={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
+        >
           <span className="tul-header-label">Név:</span> <strong>{név}</strong>
         </div>
-        <div className="tul-header-box">
-          <span className="tul-header-label">Szint:</span> <strong>{testKarakter8.tsz}</strong>
+        <div
+          className="tul-header-box"
+          onPointerDown={() => { if (!gameMode) tszLongPress.current = setTimeout(() => { tszLongPress.current = null; setTempTsz(tsz); setEditingTsz(true); }, 400); }}
+          onPointerUp={() => { if (tszLongPress.current) { clearTimeout(tszLongPress.current); tszLongPress.current = null; } }}
+          onPointerCancel={() => { if (tszLongPress.current) { clearTimeout(tszLongPress.current); tszLongPress.current = null; } }}
+        >
+          <span className="tul-header-label">Szint:</span> <strong>{tsz}</strong>
         </div>
       </div>
 
@@ -287,6 +301,27 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
             <div className="kep-prompt-btns">
               <button onClick={() => { setNév(tempNév.trim()); setEditingNév(false); }} disabled={!tempNév.trim()}>OK</button>
               <button onClick={() => setEditingNév(false)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {editingTsz && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Tapasztalati szint: <strong>{tempTsz}</strong></label>
+            <input
+              type="range"
+              min={1}
+              max={data.konstansok.arányok.max_tsz}
+              value={tempTsz}
+              onChange={e => setTempTsz(Number(e.target.value))}
+              className="tsz-slider"
+            />
+            <div className="kep-prompt-btns">
+              <button onClick={() => { setTsz(tempTsz); setEditingTsz(false); }}>OK</button>
+              <button onClick={() => setEditingTsz(false)}>Mégse</button>
             </div>
           </div>
         </div>,
