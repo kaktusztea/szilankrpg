@@ -77,6 +77,11 @@
   color: var(--text);
 }
 
+.ep-buttons button:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
 .btn-seb { border-color: #c0392b !important; }
 .btn-heal { border-color: #27ae60 !important; }
 .btn-reset { border-color: #666 !important; }

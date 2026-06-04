@@ -51,6 +51,15 @@ export function HarcScreen({ data }: { data: GameData }) {
   // Pajzs VÉ (Közepes pajzs, 2.fok)
   const pajzsVÉ = 10;
 
+  // ÉP alapú TÉ levonás (sebesülés kategória)
+  const oszlopMéret = ep.ÉP / 4;
+  const téLevonások = [0, -3, -6, -9];
+  // aktKategória kell a sebesülés tracking-hez — egyelőre 0 (nincs seb state itt, EpTable kezeli)
+  // TODO: EpTable-ből felbubble-olni a kitöltött rubrikák számát
+  const [sebCount, setSebCount] = useState(0);
+  const aktKat = sebCount === 0 ? 0 : Math.min(3, Math.ceil(sebCount / oszlopMéret) - 1);
+  const téLevonás = téLevonások[aktKat];
+
   return (
     <div className="screen harc-screen">
       <div className="harc-header">
@@ -93,7 +102,7 @@ export function HarcScreen({ data }: { data: GameData }) {
             <tr key={i}>
               <td>{r.fegyver_név}</td>
               <td>{r.támadások}</td>
-              <td>{r.TÉ}</td>
+              <td>{r.TÉ + téLevonás}</td>
               <td>{r.VÉ + pajzsVÉ - véCsökkenés}</td>
               <td>{r.SP} {r.sebzésmód}</td>
               <td>{r.pengehossz}</td>
@@ -103,7 +112,7 @@ export function HarcScreen({ data }: { data: GameData }) {
       </table>
 
       <div className="harc-section">
-        <EpTable ÉP={ep.ÉP} />
+        <EpTable ÉP={ep.ÉP} onSebCountChange={setSebCount} />
       </div>
 
     </div>
