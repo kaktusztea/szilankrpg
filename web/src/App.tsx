@@ -4,16 +4,17 @@ import type { GameData } from './engine/data-loader';
 import { HarcScreen } from './components/HarcScreen';
 import './App.css';
 
-const TABS = [
-  { id: 'aktiv', label: '⚔️ Aktív' },
-  { id: 'harc', label: '🗡️ Harc' },
-  { id: 'tulajdonsagok', label: '📊 Tul/Képz' },
-  { id: 'fortelyok', label: '🟣 Fortélyok' },
-  { id: 'misztikus', label: '✨ Misztikus' },
-  { id: 'hatterek', label: '📜 Hátterek' },
-  { id: 'taktikak', label: '📖 Taktikák' },
-  { id: 'helyzetek', label: '📖 Helyzetek' },
-  { id: 'manoverek', label: '📖 Manőverek' },
+const ALL_TABS = [
+  { id: 'aktiv', label: '❎ Aktív', editOnly: false },
+  { id: 'harc', label: '🗡️ Harc', editOnly: false },
+  { id: 'tulajdonsagok', label: '🔵 Tul/Képz', editOnly: false },
+  { id: 'fortelyok', label: '🟣 Fortélyok', editOnly: false },
+  { id: 'misztikus', label: '✨ Misztikus', editOnly: false },
+  { id: 'harcertekek', label: '🛡️ Harcértékek', editOnly: true },
+  { id: 'hatterek', label: '📜 Hátterek', editOnly: false },
+  { id: 'taktikak', label: '🎯 Taktikák', editOnly: false },
+  { id: 'helyzetek', label: '🎯 Helyzetek', editOnly: false },
+  { id: 'manoverek', label: '🎯 Manőverek', editOnly: false },
 ];
 
 function App() {
@@ -23,6 +24,8 @@ function App() {
   const [gameMode, setGameMode] = useState(false);
   const touchStart = useRef<number>(0);
   const touchY = useRef<number>(0);
+
+  const TABS = ALL_TABS.filter(t => !t.editOnly || !gameMode);
 
   useEffect(() => {
     loadGameData().then(setData).catch(e => setError(String(e)));
@@ -67,14 +70,14 @@ function App() {
           {TABS.map((tab, i) => (
             <div key={tab.id} className="screen-slide">
               {Math.abs(i - activeTab) <= 1 && (
-                <TabContent tab={tab.id} data={data} gameMode={gameMode} />
+                <TabContent tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab} />
               )}
             </div>
           ))}
         </div>
       </main>
 
-      <nav className="tab-bar">
+      <nav className="tab-bar" onWheel={e => { e.currentTarget.scrollLeft += e.deltaY; }}>
         {TABS.map((tab, i) => (
           <button
             key={tab.id}
@@ -89,17 +92,21 @@ function App() {
   );
 }
 
-function TabContent({ tab, data, gameMode }: { tab: string; data: GameData; gameMode: boolean }) {
+function TabContent({ tab, data, gameMode, setActiveTab }: { tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void }) {
   switch (tab) {
-    case 'aktiv': return <div className="screen"><h2>⚔️ Aktív</h2><p>Szituáció beállítás (TODO)</p></div>;
-    case 'harc': return <HarcScreen data={data} />;
-    case 'tulajdonsagok': return <div className="screen"><h2>📊 Tulajdonságok & Képzettségek</h2><p>{gameMode ? 'Read-only mód' : 'Szerkesztő mód'}</p></div>;
+    case 'aktiv': return <div className="screen"><h2>❎ Aktív</h2><p>Szituáció beállítás (TODO)</p></div>;
+    case 'harc': return <HarcScreen data={data} onNavigate={(id) => {
+      const idx = ALL_TABS.findIndex(t => t.id === id);
+      if (idx >= 0) setActiveTab(idx);
+    }} />;
+    case 'tulajdonsagok': return <div className="screen"><h2>🔵 Tulajdonságok & Képzettségek</h2><p>{gameMode ? 'Read-only mód' : 'Szerkesztő mód'}</p></div>;
     case 'fortelyok': return <div className="screen"><h2>🟣 Fortélyok</h2><p>{gameMode ? 'Read-only mód' : 'Szerkesztő mód'}</p></div>;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
+    case 'harcertekek': return <div className="screen"><h2>🛡️ Harcértékek</h2><p>HM/CM, Harcmodor bónuszok, Fegyverek, Páncél beállítás (TODO)</p></div>;
     case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;
-    case 'taktikak': return <div className="screen"><h2>📖 Harci taktikák</h2></div>;
-    case 'helyzetek': return <div className="screen"><h2>📖 Harci helyzetek</h2></div>;
-    case 'manoverek': return <div className="screen"><h2>📖 Manőverek</h2></div>;
+    case 'taktikak': return <div className="screen"><h2>🎯 Harci taktikák</h2></div>;
+    case 'helyzetek': return <div className="screen"><h2>🎯 Harci helyzetek</h2></div>;
+    case 'manoverek': return <div className="screen"><h2>🎯 Manőverek</h2></div>;
     default: return null;
   }
 }
