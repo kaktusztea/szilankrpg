@@ -71,21 +71,25 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ### Tartalom
 
-- **KÉ** (nagy kiemelt szám, bal oldalt)
-- **SFÉ box** (jobb oldalt, széles):
-  - Fizikai: X (teljes szó)
-  - Energia: X (teljes szó)
-  - Lefedettség: X%
+- **Felső box-sor** (egy sorban, egymás mellett, gap: 12px):
+  - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, accent szín)
+  - **SFÉ box** (balra rendezve): fejléc label `SFÉ (X%)` (14px, bold, fehér, uppercase), alatta `Fizikai: X` és `Energia: X` egymás alatt (14px, érték: 16px bold)
+  - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
+  - **MP box**: label `MP` (14px, bold, fehér, uppercase), érték `X/Y` (20px, bold, success/zöld szín), alatta gombok: -1, ⟲ (12px). Default: max.
+  - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
 - **Teljes harcértékek** tábla (fegyverenként):
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
 - **VÉ csökkenés**: aktuális érték + gombok: +1, +2, +3, -1, ⟲ (reset)
 - **ÉP táblázat**:
   - 4 oszlop (S1-S4), mindegyikben ÉP/4 db rubrika
-  - Fejléc: ÉP összérték | Seb: X/Y | Kategória: SX | TÉ levonás
-  - Oszlop footer: TÉ levonás értékek (—, -2, -5, -8)
+  - Fejléc: ÉP összérték | Seb: X/Y
+  - Oszlop footer: TÉ levonás értékek (`TÉ: 0`, `TÉ: -3`, `TÉ: -6`, `TÉ: -9`)
+  - Az aktuális sebesülés-kategória TÉ levonás footere invertált színnel kiemelve (0 sebnél is: S1 aktív)
+  - Spacing az utolsó rubrika-sor és a TÉ footer között (kicsi, 4px)
   - Rubrikák fentről lefelé töltődnek S1→S2→S3→S4 sorrendben
   - Kitöltött rubrikák: típus+sorszám jelölés (V1, Z2, FP3)
   - Szín: ÉP sebek pirosas-narancs árnyalatok (sorszámonként enyhén eltérő), FP sebek lila
+  - FP utáni ÉP seb: fentről lefelé felülírja a meglévő FP rubrikákat, majd üres helyeket tölt
   - **⚔️ Sebesülés gomb**: típus (S/V/Z/FP) + érték választó. Default: S (Szúró).
   - **💚 Gyógyulás gomb**: FP vagy ÉP választás + mennyit. Hátulról töröl.
   - **⟲ Reset**: mindent töröl

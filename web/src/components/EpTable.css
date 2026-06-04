@@ -33,9 +33,16 @@
 .ep-col-footer {
   text-align: center;
   font-size: 11px;
-  padding: 2px;
+  padding: 3px;
+  margin-top: 4px;
   color: var(--accent);
   font-weight: bold;
+  border-radius: 3px;
+}
+
+.ep-col-footer.active-cat {
+  background: var(--accent);
+  color: #000;
 }
 
 .ep-cell {

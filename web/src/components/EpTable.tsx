@@ -27,6 +27,18 @@ export function EpTable({ ÉP }: Props) {
     setSebSorszám(újSorszám);
     const újRubrikák = [...rubrikák];
     let maradék = érték;
+
+    if (típus !== 'FP') {
+      // ÉP seb: először felülírja a meglévő FP rubrikákat (fentről lefelé)
+      for (let i = 0; i < újRubrikák.length && maradék > 0; i++) {
+        if (újRubrikák[i].típus === 'FP') {
+          újRubrikák[i] = { típus, sorszám: újSorszám };
+          maradék--;
+        }
+      }
+    }
+
+    // Maradék üres rubrikákat tölt
     for (let i = 0; i < újRubrikák.length && maradék > 0; i++) {
       if (újRubrikák[i].típus === '') {
         újRubrikák[i] = { típus, sorszám: újSorszám };
@@ -61,16 +73,14 @@ export function EpTable({ ÉP }: Props) {
 
   // Aktuális sebesülés kategória
   const kitöltött = rubrikák.filter(r => r.típus !== '').length;
-  const aktKategória = Math.min(4, Math.ceil(kitöltött / oszlopMéret)) || 0;
-  const téLevonások = [0, 0, -2, -5, -8];
+  const aktKategória = kitöltött === 0 ? 1 : Math.min(4, Math.ceil(kitöltött / oszlopMéret));
+  const téLevonások = ['TÉ: 0', 'TÉ: -3', 'TÉ: -6', 'TÉ: -9'];
 
   return (
     <div className="ep-table-wrapper">
       <div className="ep-table-header">
         <span><strong>ÉP: {ÉP}</strong></span>
         <span>Seb: {kitöltött}/{ÉP}</span>
-        <span>Kategória: S{aktKategória || '—'}</span>
-        <span>TÉ: {téLevonások[aktKategória]}</span>
       </div>
 
       <div className="ep-grid">
@@ -90,7 +100,7 @@ export function EpTable({ ÉP }: Props) {
                 </div>
               );
             })}
-            <div className="ep-col-footer">{téLevonások[oszlop + 1]}</div>
+            <div className={`ep-col-footer ${aktKategória === oszlop + 1 ? 'active-cat' : ''}`}>{téLevonások[oszlop]}</div>
           </div>
         ))}
       </div>
