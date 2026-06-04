@@ -123,7 +123,7 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 - 8 tulajdonság fix 2 oszlop × 4 sor grid-ben (fentről lefelé, aztán következő oszlop)
 - Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
 - Nem reszponzív, fix layout
-- Szerkesztő módban: nyomás + vízszintes húzás → csúszka (-5..+7), box 75%-a a teljes range, pointer-pozíció alapú
+- Szerkesztő módban: hosszú nyomás (400ms) → popup overlay slider (-5..+7), OK/Mégse gombokkal (konzisztens a Szint/Kor szerkesztéssel)
 - Game módban: read-only
 
 ### Képzettségek (alatta, csoport-bontásban)
@@ -242,6 +242,9 @@ Fortélyok listája csoport szerint (Harci → Általános → Érzékek → Sza
 - Aktív screen: `translateX(-N * 100%)`
 - Csak szomszédos screen-ek renderelődnek (teljesítmény)
 - Swipe gesztus mobilon, tab kattintás desktop-on — mindkettő animált
+- **Swipe isolation**: popup overlay nyitva → swipe letiltva (`.kep-prompt-overlay` closest check)
+- **Képzettség inline slide**: `onTouchStart/End stopPropagation` a kep-row-on (szerkesztő módban)
+- **Default tab**: `Tul/Képz` (index 2)
 
 ---
 

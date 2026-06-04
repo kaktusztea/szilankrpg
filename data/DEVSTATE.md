@@ -65,7 +65,7 @@
   - Fejléc: Név (hosszú nyomás → szerkesztő popup) + Szint (hosszú nyomás → slider popup, max: konstansok.arányok.max_tsz)
   - Faj box (szerkesztő mód, hosszú nyomás → dropdown, 26 faj tables/fajok.json-ból) + Kor box (hosszú nyomás → slider 5-500/5)
   - Game módban Faj+Kor a Név mellé konkatenálódik: "Dorek (Ember (Északi), 32)"
-  - Tulajdonságok: fix 2×4 grid, teljes nevek, pointer-pozíció alapú csúszka (-5..+7), 75% box szélességen
+  - Tulajdonságok: fix 2×4 grid, teljes nevek, hosszú nyomás → popup overlay slider (-5..+7), OK/Mégse (konzisztens Szint/Kor-ral)
   - Képzettségek: 7 csoportban, dropdown választó, ✕ törlés (custom overlay dialógus megerősítéssel), hosszú nyomás szint-csúszka (0-15)
   - Többszörös képzettségek: generikus `többszörös` lista mező (fix alnév lista VAGY `["*"]` szabad szöveges max 20 kar)
   - Többszörös felvételkor csoportosítva a testvéreik mellé kerülnek
@@ -117,10 +117,14 @@
   - `["*"]` = szabad szöveges alnév (prompt, max 20 karakter)
 - Többszörös képzettség belső tárolás: fix listánál alnév önmagában (pl. `"Közelharc"`), szabad szövegesnél `"AlapNév: xyz"`
 - Generált JSON-ok: `tables/kepzettsegek.json`, `tables/kiterjesztesek.json`, `tables/fajok.json`, `tables/primer_fortelyok.json` — python3 scripttel a yaml-okból
-- Touch event isolation: slide kontrollok `onTouchStart/End` stopPropagation-nel védve a tab swipe ellen
-- Slider mechanika: pointer-pozíció alapú (box 75%-a = teljes range), track CSS left/right: 12.5%, fill% szinkronban
+- Touch event isolation: képzettség kep-row-on `onTouchStart/End stopPropagation` (inline slide védi a swipe-ot)
+- Swipe isolation popup overlay-eknél: App.tsx `handleTouchStart` `.closest('.kep-prompt-overlay')` check → swipe letiltva
+- Slider mechanika (képzettség inline): pointer-pozíció alapú (box 75%-a = teljes range), track CSS left/right: 12.5%, fill% szinkronban
+- Slider mechanika (popup): natív `<input type="range">`, overlay-ben OK/Mégse gombokkal
+- Tulajdonságok, Szint, Kor: popup slider modell (hosszú nyomás → overlay → slider → OK/Mégse)
 - KP modell: szekunder KP-ból VAGY primer KP-ból is fizethető szekunder ismeret; "Maradt Szekunder KP" = max(0, szek_kp - szek_költött)
 - Primer fortély meghatározás: harci + misztikus csoport = primer (tables/primer_fortelyok.json)
 - Primer képzettség: a yaml `primer: true` mező + többszörös alnevek is primernek számítanak
 - Popup dialógusok: createPortal(document.body) — kiszöknek a screen-slide overflow kontextusból
-- Hosszú nyomás: 400ms timeout → popup megnyitás (Név, Szint, Faj, Kor)
+- Hosszú nyomás: 400ms timeout → popup megnyitás (Név, Szint, Faj, Kor, Tulajdonságok)
+- Default tab induláskor: Tul/Képz (index 2)
