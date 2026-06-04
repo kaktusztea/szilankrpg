@@ -110,18 +110,28 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ## 3. Tulajdonságok + Képzettségek fül/screen
 
-### Tulajdonságok (felül)
+### Fejléc (legfelül)
+- **Név + Szint** sor: két összeérő box
+  - Név box (flex:1): `Név: Dorek a Toroni` — hosszú nyomásra szerkeszthető (popup dialógus, max 40 karakter)
+  - Szint box: `Szint: 8` — hosszú nyomásra szerkeszthető (popup slider, range 1..konstansok.arányok.max_tsz)
+- **Faj + Kor** sor (CSAK szerkesztő módban):
+  - Faj box (flex:1): `Faj: Ember (Északi)` — hosszú nyomásra dropdown popup (26 faj a tables/fajok.json-ból)
+  - Kor box: `Kor: 32` — hosszú nyomásra slider popup (5-500, lépésköz 5)
+- **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"Dorek a Toroni (Ember (Északi), 32)"`
+
+### Tulajdonságok
 - 8 tulajdonság fix 2 oszlop × 4 sor grid-ben (fentről lefelé, aztán következő oszlop)
 - Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
 - Nem reszponzív, fix layout
-- Szerkesztő módban: hosszú nyomás + vízszintes húzás → csúszka (-5..+7). Felengedéskor élesedik az érték.
+- Szerkesztő módban: nyomás + vízszintes húzás → csúszka (-5..+7), box 75%-a a teljes range, pointer-pozíció alapú
 - Game módban: read-only
 
 ### Képzettségek (alatta, csoport-bontásban)
 - Csoportok sorrendje: Harci → Misztikus → Fizikai → Világi → Alvilági → Művészeti → Tudományos
-- Minden képzettség: név + szint (0-15) + ✕ törlés gomb (jobb oldalon, szint mellett balra)
+- Minden képzettség: név + szint (0-15) + ✕ törlés gomb (jobb oldalon, szint mellett balra, világoskék)
 - Csoportonként 1 db dropdown választó (Szerkesztő módban): új képzettség felvétele. Kiválasztás után újabb jelenik meg.
-- Törlés (✕ gomb): szint=0 esetén azonnal töröl, szint>0 esetén confirm() megerősítést kér.
+- Törlés (✕ gomb): szint=0 esetén azonnal töröl, szint>0 esetén custom megerősítő dialógus (portál overlay)
+- Többszörös képzettségek felvételkor csoportosítva a testvéreik mellé kerülnek
 
 #### Többszörös képzettségek
 - A `többszörös` mező a képzettség YAML-ban **string lista** (nem boolean):
@@ -133,7 +143,8 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 #### Viselkedés Szerkesztő módban
 - Rövid koppintás: dropdown választó lista a képzettség nevekkel (meglévőnél az aktuális a default)
-- Hosszú nyomás + húzás: szint állítás vízszintes csúszkával (0-15). Felengedésnél élesedik.
+- Hosszú nyomás + húzás: szint állítás vízszintes csúszkával (0-15), box 75%-a a teljes range, pointer-pozíció alapú
+- Slide közben a KP sáv értékei is valós időben frissülnek
 - Touch event stopPropagation: slide közben nem triggerelődik a tab swipe
 
 #### Viselkedés Game módban
@@ -142,6 +153,14 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - **Domináns tulajdonságok**: pl. "Ügyesség, Gyorsaság"
   - **Kiterjeszti**: fortélyok listája amelyek kiterjesztik ezt a képzettséget (normál/erős jelzéssel)
 - A kiterjesztés adatok a `tables/kiterjesztesek.json` inverz mappingből jönnek
+
+### KP sáv (Szerkesztő módban, minden fülön)
+- Fix sáv a tab-bar felett, némi spacing-gel
+- Tartalom: `Maradt KP: X    Maradt Szekunder KP: Y`
+- Háttérszín: zöld (normál), piros (ha Maradt KP < 0)
+- Szekunder KP maradék: `max(0, szekunder_kp - szekunder_költött)` — sosem negatív (primer KP-ból is fizethető szekunder)
+- Képzettség szint módosítás közben (slide) is valós időben frissül
+- Game módban eltűnik
 
 ---
 

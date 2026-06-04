@@ -15,7 +15,7 @@
 │   │   └── misztikus/         (9 db, mind részletes)
 │   ├── kepzettsegek/          ← Képzettség adatfájlok (39 db)
 │   ├── fajok/                 ← Faj hátterek (26 db)
-│   ├── tables/                ← Generált JSON táblák (fegyverek, távfegyverek, pajzsok, KP, harcmodor bónusz, távharc szorzók, tradíciók, képzettségek, kiterjesztések)
+│   ├── tables/                ← Generált JSON táblák (fegyverek, távfegyverek, pajzsok, KP, harcmodor bónusz, távharc szorzók, tradíciók, képzettségek, kiterjesztések, fajok, primer fortélyok)
 │   ├── konstansok.yaml        ← Központi konstansok (KP, arányok, páncél, harcmodorok, nyelvek, stb.)
 │   ├── engine_spec.md         ← Engine kalkuláció spec (§1-§20, minden formula)
 │   └── gui_spec.md            ← GUI spec (9 screen, viselkedés, formázás)
@@ -31,7 +31,7 @@
 │   │   │   ├── modifiers.ts   ← Fortély módosítók (flat/scaled/override)
 │   │   │   ├── limits.ts      ← Manőver, Felszerelés, HM/CM, Képzettség limitek
 │   │   │   ├── tavharc.ts     ← Távharc VÉ kalkulátor
-│   │   │   ├── data-loader.ts ← YAML/JSON betöltés runtime (konstansok, fegyverek, pajzsok, KP, harcmodor, képzettségDefs, kiterjesztések)
+│   │   │   ├── data-loader.ts ← YAML/JSON betöltés runtime (konstansok, fegyverek, pajzsok, KP, harcmodor, képzettségDefs, kiterjesztések, fajNevek, primerFortelyok)
 │   │   │   └── index.ts       ← Barrel export
 │   │   ├── components/
 │   │   │   ├── HarcScreen.tsx  ← Harc fül (KÉSZ: KÉ, SFÉ, VÉ csökk, MP, fegyvertábla, ÉP táblázat)
@@ -62,13 +62,26 @@
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
 - ✅ 168 fortély yaml, 39 képzettség yaml, 26 faj yaml
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
-  - Tulajdonságok: fix 2×4 grid, teljes nevek, húzásos csúszka (-5..+7)
-  - Képzettségek: 7 csoportban, dropdown választó, ✕ törlés, hosszú nyomás szint-csúszka (0-15)
-  - Többszörös képzettségek: generikus `többszörös` lista mező (fix alnév lista VAGY `["*"]` szabad szöveges)
+  - Fejléc: Név (hosszú nyomás → szerkesztő popup) + Szint (hosszú nyomás → slider popup, max: konstansok.arányok.max_tsz)
+  - Faj box (szerkesztő mód, hosszú nyomás → dropdown, 26 faj tables/fajok.json-ból) + Kor box (hosszú nyomás → slider 5-500/5)
+  - Game módban Faj+Kor a Név mellé konkatenálódik: "Dorek (Ember (Északi), 32)"
+  - Tulajdonságok: fix 2×4 grid, teljes nevek, pointer-pozíció alapú csúszka (-5..+7), 75% box szélességen
+  - Képzettségek: 7 csoportban, dropdown választó, ✕ törlés (custom overlay dialógus megerősítéssel), hosszú nyomás szint-csúszka (0-15)
+  - Többszörös képzettségek: generikus `többszörös` lista mező (fix alnév lista VAGY `["*"]` szabad szöveges max 20 kar)
+  - Többszörös felvételkor csoportosítva a testvéreik mellé kerülnek
   - Game mód adatlap: próba, domináns tulajdonságok, kiterjesztő fortélyok
   - Touch event isolation: slide közben nem triggerelődik a tab swipe
+  - Slider vizuál: track CSS 12.5% margin mindkét oldalon = 75% hasznos terület, pointer-pozíció és fill szinkronban
+- ✅ KP sáv (szerkesztő mód, minden fülön, tab-bar felett)
+  - Maradt KP + Maradt Szekunder KP kijelzés
+  - Zöld háttér (normál), piros (ha Maradt KP < 0)
+  - Szekunder maradék: max(0, ...) — sosem negatív
+  - Dinamikus: képzettség hozzáadás/törlés/szint módosítás (slide közben is) azonnal frissíti
+  - Képzettségek state az App szintjén (lifted state)
 - ✅ tables/kepzettsegek.json: 39 képzettség def (név, csoport, primer, többszörös, próba, domináns_tulajdonságok)
 - ✅ tables/kiterjesztesek.json: inverz mapping (képzettség → kiterjesztő fortélyok, 27 képzettségre)
+- ✅ tables/fajok.json: 26 faj neve
+- ✅ tables/primer_fortelyok.json: 53 harci+misztikus fortély neve (primer KP osztályozáshoz)
 
 ## Következő lépések
 1. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
@@ -103,5 +116,11 @@
   - `["Közelharc", "Kardvívás", ...]` = fix alnevek listája
   - `["*"]` = szabad szöveges alnév (prompt, max 20 karakter)
 - Többszörös képzettség belső tárolás: fix listánál alnév önmagában (pl. `"Közelharc"`), szabad szövegesnél `"AlapNév: xyz"`
-- Generált JSON-ok: `tables/kepzettsegek.json` és `tables/kiterjesztesek.json` — python3 scripttel a yaml-okból (lásd DEVSTATE történet)
+- Generált JSON-ok: `tables/kepzettsegek.json`, `tables/kiterjesztesek.json`, `tables/fajok.json`, `tables/primer_fortelyok.json` — python3 scripttel a yaml-okból
 - Touch event isolation: slide kontrollok `onTouchStart/End` stopPropagation-nel védve a tab swipe ellen
+- Slider mechanika: pointer-pozíció alapú (box 75%-a = teljes range), track CSS left/right: 12.5%, fill% szinkronban
+- KP modell: szekunder KP-ból VAGY primer KP-ból is fizethető szekunder ismeret; "Maradt Szekunder KP" = max(0, szek_kp - szek_költött)
+- Primer fortély meghatározás: harci + misztikus csoport = primer (tables/primer_fortelyok.json)
+- Primer képzettség: a yaml `primer: true` mező + többszörös alnevek is primernek számítanak
+- Popup dialógusok: createPortal(document.body) — kiszöknek a screen-slide overflow kontextusból
+- Hosszú nyomás: 400ms timeout → popup megnyitás (Név, Szint, Faj, Kor)
