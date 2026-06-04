@@ -38,6 +38,9 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
   const [tempTsz, setTempTsz] = useState(testKarakter8.tsz);
   const tszLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
   const névLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [faj, setFaj] = useState(testKarakter8.hátterek.faj);
+  const [editingFaj, setEditingFaj] = useState(false);
+  const fajLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
@@ -174,7 +177,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
           onPointerUp={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
           onPointerCancel={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
         >
-          <span className="tul-header-label">Név:</span> <strong>{név}</strong>
+          <span className="tul-header-label">Név:</span> <strong>{gameMode ? `${név} (${faj})` : név}</strong>
         </div>
         <div
           className="tul-header-box"
@@ -185,6 +188,17 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
           <span className="tul-header-label">Szint:</span> <strong>{tsz}</strong>
         </div>
       </div>
+
+      {/* Faj választó - csak szerkesztő módban */}
+      {!gameMode && (
+        <div className="tul-faj-row"
+          onPointerDown={() => { fajLongPress.current = setTimeout(() => { fajLongPress.current = null; setEditingFaj(true); }, 400); }}
+          onPointerUp={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
+          onPointerCancel={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
+        >
+          <span className="tul-header-label">Faj:</span> <strong>{faj}</strong>
+        </div>
+      )}
 
       {/* Tulajdonságok */}
       <div className="tul-grid">
@@ -322,6 +336,26 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
             <div className="kep-prompt-btns">
               <button onClick={() => { setTsz(tempTsz); setEditingTsz(false); }}>OK</button>
               <button onClick={() => setEditingTsz(false)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {editingFaj && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Faj:</label>
+            <select
+              className="kep-select"
+              value={faj}
+              autoFocus
+              onChange={e => { setFaj(e.target.value); setEditingFaj(false); }}
+            >
+              {data.fajNevek.map(f => <option key={f} value={f}>{f}</option>)}
+            </select>
+            <div className="kep-prompt-btns">
+              <button onClick={() => setEditingFaj(false)}>Mégse</button>
             </div>
           </div>
         </div>,
