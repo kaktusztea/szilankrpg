@@ -59,8 +59,12 @@
   font-size: 14px;
   font-weight: bold;
   color: var(--warning);
-  min-width: 30px;
+  min-width: 20px;
   text-align: right;
+}
+
+.fort-fok.fort-fok-max {
+  color: var(--success);
 }
 
 .fort-delete {

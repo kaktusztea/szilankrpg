@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, FortelySummary } from '../engine/data-loader';
 import { testKarakter8 } from '../testdata';
@@ -27,6 +27,18 @@ export function FortelyokScreen({ data, gameMode }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; fok: number } | null>(null);
+  const [pendingFortIdx, setPendingFortIdx] = useState<number | null>(null);
+
+  // Escape bezárja az aktív popup-ot
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setDeleteTarget(null); setPendingFortIdx(null);
+      }
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
 
   const defsByGroup = new Map<string, FortelySummary[]>();
   for (const d of data.fortelySummaries) {
@@ -40,7 +52,10 @@ export function FortelyokScreen({ data, gameMode }: Props) {
   }
 
   function addFortely(név: string) {
-    setFortélyok(prev => [...prev, { név, fok: 1 }]);
+    setFortélyok(prev => {
+      setPendingFortIdx(prev.length);
+      return [...prev, { név, fok: 1 }];
+    });
   }
 
   function getFortelyokForCsoport(csoport: string): FortelySlot[] {
@@ -110,13 +125,33 @@ export function FortelyokScreen({ data, gameMode }: Props) {
           <div className="kep-prompt">
             <label>Törlöd: {deleteTarget.név} (fok: {deleteTarget.fok})?</label>
             <div className="kep-prompt-btns">
-              <button onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Törlés</button>
+              <button className="btn-del-confirm" onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Törlés</button>
               <button onClick={() => setDeleteTarget(null)}>Mégse</button>
             </div>
           </div>
         </div>,
         document.body
       )}
+
+      {pendingFortIdx !== null && (() => {
+        const pSlot = fortélyok[pendingFortIdx];
+        const pDef = data.fortelySummaries.find(d => d.név === pSlot?.név);
+        const pMaxfok = pDef?.maxfok ?? 1;
+        return createPortal(
+          <div className="kep-prompt-overlay">
+            <div className="kep-prompt">
+              <label>{pSlot?.név} — fok:</label>
+              <div className="fort-fok-radios">
+                <button className="fort-fok-btn fort-fok-del" onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== pendingFortIdx)); setPendingFortIdx(null); }}>✕</button>
+                {Array.from({ length: pMaxfok }, (_, i) => i + 1).map(f => (
+                  <button key={f} className={`fort-fok-btn ${pSlot?.fok === f ? 'active' : ''}`} onClick={() => { setFortélyok(prev => prev.map((ft, i) => i === pendingFortIdx ? { ...ft, fok: f } : ft)); setPendingFortIdx(null); }}>{f}</button>
+                ))}
+              </div>
+            </div>
+          </div>,
+          document.body
+        );
+      })()}
     </div>
   );
 }
@@ -132,14 +167,19 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
 }) {
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [editing, setEditing] = useState(false);
-  const [tempFok, setTempFok] = useState(slot.fok);
   const maxfok = def?.maxfok ?? 1;
+
+  useEffect(() => {
+    if (!editing) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setEditing(false); }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [editing]);
 
   function handlePointerDown() {
     if (gameMode) return;
     longPressTimer.current = setTimeout(() => {
       longPressTimer.current = null;
-      setTempFok(slot.fok);
       setEditing(true);
     }, 400);
   }
@@ -169,7 +209,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
           {!gameMode && (
             <button className="fort-delete" onPointerDown={e => e.stopPropagation()} onPointerUp={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className="fort-fok">{slot.fok}/{maxfok}</span>
+          <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}`}>{slot.fok}</span>
         </span>
       </div>
       {isOpen && def && (
@@ -199,12 +239,8 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
             <div className="fort-fok-radios">
               <button className="fort-fok-btn fort-fok-del" onClick={() => { onRemove(); setEditing(false); }}>✕</button>
               {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
-                <button key={f} className={`fort-fok-btn ${tempFok === f ? 'active' : ''}`} onClick={() => setTempFok(f)}>{f}</button>
+                <button key={f} className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}`} onClick={() => { onFokChange(f); setEditing(false); }}>{f}</button>
               ))}
-            </div>
-            <div className="kep-prompt-btns">
-              <button onClick={() => { onFokChange(tempFok); setEditing(false); }}>OK</button>
-              <button onClick={() => setEditing(false)}>Mégse</button>
             </div>
           </div>
         </div>,

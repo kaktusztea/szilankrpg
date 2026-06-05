@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import type { Tulajdonsagok } from '../engine/types';
@@ -50,6 +50,19 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
 
+  // Escape bezárja az aktív popup-ot
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setEditingNév(false); setEditingTsz(false); setEditingFaj(false);
+        setEditingKor(false); setDeleteTarget(null); setPendingEditIdx(null);
+        setPromptState(null);
+      }
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, []);
+
   const defsByGroup = new Map<string, KepzettsegDef[]>();
   for (const d of data.kepzettsegDefs) {
     const arr = defsByGroup.get(d.csoport) || [];
@@ -74,6 +87,8 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
   const [promptValue, setPromptValue] = useState('');
   // Törlés megerősítés dialógus
   const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; szint: number } | null>(null);
+  // Új képzettség felvétele után automatikusan megnyíló szint popup
+  const [pendingEditIdx, setPendingEditIdx] = useState<number | null>(null);
 
   function addKepzettseg(_csoport: string, név: string) {
     if (név.startsWith('__prompt:')) {
@@ -91,9 +106,12 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
         const siblings = new Set(parentDef.többszörös);
         const lastIdx = prev.reduce((acc, k, i) => siblings.has(k.név) ? i : acc, -1);
         const newArr = [...prev];
-        newArr.splice(lastIdx + 1, 0, { név, szint: 0 });
+        const insertAt = lastIdx + 1;
+        newArr.splice(insertAt, 0, { név, szint: 0 });
+        setPendingEditIdx(insertAt);
         return newArr;
       }
+      setPendingEditIdx(prev.length);
       return [...prev, { név, szint: 0 }];
     });
   }
@@ -313,8 +331,23 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
           <div className="kep-prompt">
             <label>Törlöd: {deleteTarget.név} (szint: {deleteTarget.szint})?</label>
             <div className="kep-prompt-btns">
-              <button onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Törlés</button>
+              <button className="btn-del-confirm" onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Törlés</button>
               <button onClick={() => setDeleteTarget(null)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {pendingEditIdx !== null && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>{getDisplayName(képzettségek[pendingEditIdx]?.név ?? '')} — szint:</label>
+            <div className="kep-szint-grid">
+              <button className="fort-fok-btn fort-fok-del" onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== pendingEditIdx)); setPendingEditIdx(null); }}>✕</button>
+              {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
+                <button key={n} className={`fort-fok-btn ${képzettségek[pendingEditIdx!]?.szint === n ? 'active' : ''}`} onClick={() => { setKépzettségek(prev => prev.map((k, i) => i === pendingEditIdx ? { ...k, szint: n } : k)); setPendingEditIdx(null); }}>{n}</button>
+              ))}
             </div>
           </div>
         </div>,
@@ -416,6 +449,13 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
   const [showWarning, setShowWarning] = useState(false);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
+  useEffect(() => {
+    if (!editing) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setEditing(false); }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [editing]);
+
   const label = név.charAt(0).toUpperCase() + név.slice(1);
   const overLimit = fajMax !== undefined && érték > fajMax;
   const underLimit = fajMin !== undefined && érték < fajMin;
@@ -476,9 +516,15 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
 }) {
   const [editing, setEditing] = useState(false);
   const [szintEditing, setSzintEditing] = useState(false);
-  const [tempSzintPopup, setTempSzintPopup] = useState(slot.szint);
   const rowRef = useRef<HTMLDivElement>(null);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => {
+    if (!szintEditing) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setSzintEditing(false); }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [szintEditing]);
 
   const available = csoportDefs.filter(d => !usedNames.includes(d.név));
 
@@ -487,7 +533,6 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
     if (gameMode) return;
     longPressTimer.current = setTimeout(() => {
       longPressTimer.current = null;
-      setTempSzintPopup(slot.szint);
       setSzintEditing(true);
     }, 400);
   }
@@ -544,7 +589,7 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
           {!gameMode && (
             <button className="kep-delete" onPointerDown={e => e.stopPropagation()} onPointerUp={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className="kep-szint">{slot.szint}</span>
+          <span className={`kep-szint ${slot.szint === 0 ? 'kep-szint-zero' : slot.szint >= 9 ? 'kep-szint-high' : ''}`}>{slot.szint}</span>
         </span>
       </div>
       {/* Game mód: adatlap */}
@@ -569,12 +614,8 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
             <div className="kep-szint-grid">
               <button className={`fort-fok-btn fort-fok-del`} onClick={() => { onRemove(); setSzintEditing(false); }}>✕</button>
               {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
-                <button key={n} className={`fort-fok-btn ${tempSzintPopup === n ? 'active' : ''}`} onClick={() => setTempSzintPopup(n)}>{n}</button>
+                <button key={n} className={`fort-fok-btn ${slot.szint === n ? 'active' : ''}`} onClick={() => { onSzintChange(n); setSzintEditing(false); }}>{n}</button>
               ))}
-            </div>
-            <div className="kep-prompt-btns">
-              <button onClick={() => { onSzintChange(tempSzintPopup); setSzintEditing(false); }}>OK</button>
-              <button onClick={() => setSzintEditing(false)}>Mégse</button>
             </div>
           </div>
         </div>,

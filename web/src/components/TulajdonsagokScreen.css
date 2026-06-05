@@ -199,6 +199,14 @@
   text-align: right;
 }
 
+.kep-szint-zero {
+  color: var(--error);
+}
+
+.kep-szint-high {
+  color: var(--success);
+}
+
 .kep-right {
   display: flex;
   align-items: center;
@@ -336,6 +344,12 @@
 .kep-prompt-btns button:disabled {
   opacity: 0.4;
   cursor: default;
+}
+
+.btn-del-confirm {
+  background: var(--error) !important;
+  color: #fff !important;
+  border-color: var(--error) !important;
 }
 
 /* --- TSZ slider --- */
