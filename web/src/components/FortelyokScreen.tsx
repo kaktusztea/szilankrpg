@@ -50,24 +50,33 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
     setFortélyok(prev => prev.map((f, i) => i === idx ? { ...f, fok } : f));
   }
 
-  // Többször felvehető fortélyok: Kultúrkör választó
-  const [showKulturkorPicker, setShowKulturkorPicker] = useState(false);
+  // Többször felvehető fortélyok: generikus kezelés többszörös_típus alapján
+  const [multiPickerDef, setMultiPickerDef] = useState<FortelySummary | null>(null);
+  const [freetextValue, setFreetextValue] = useState('');
 
   function addFortely(név: string) {
-    if (név === 'Kultúrkör') {
-      setShowKulturkorPicker(true);
+    const def = data.fortelySummaries.find(d => d.név === név);
+    if (def && def.többszörös_típus) {
+      if (def.többszörös_lista.length > 0) {
+        // Fix lista → dropdown picker
+        setMultiPickerDef(def);
+      } else {
+        // Freetext
+        setFreetextValue('');
+        setMultiPickerDef(def);
+      }
       return;
     }
-    const def = data.fortelySummaries.find(d => d.név === név);
     setFortélyok(prev => {
       if (def && def.maxfok > 1) setPendingFortIdx(prev.length);
       return [...prev, { név, fok: 1 }];
     });
   }
 
-  function addKulturkor(kulturkor: string) {
-    setFortélyok(prev => [...prev, { név: `Kultúrkör - ${kulturkor}`, fok: 1 }]);
-    setShowKulturkorPicker(false);
+  function addMultiInstance(subName: string) {
+    if (!multiPickerDef) return;
+    setFortélyok(prev => [...prev, { név: `${multiPickerDef.név} - ${subName}`, fok: 1 }]);
+    setMultiPickerDef(null);
   }
 
   function getFortelyokForCsoport(csoport: string): FortelySlot[] {
@@ -82,8 +91,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
           const csoportDefs = defsByGroup.get(csoport) || [];
           const slotok = getFortelyokForCsoport(csoport);
           const usedNames = slotok.map(s => s.név);
-          const TOBBSZOROS_FORTELYOK = new Set(['Kultúrkör', 'Helyismeret', 'Nyelvismeret']);
-          const available = csoportDefs.filter(d => !usedNames.includes(d.név) || TOBBSZOROS_FORTELYOK.has(d.név));
+          const többszörösNevek = new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név));
+          const available = csoportDefs.filter(d => !usedNames.includes(d.név) || többszörösNevek.has(d.név));
           const collapsed = collapsedGroups.has(csoport);
 
           return (
@@ -170,29 +179,54 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
         );
       })()}
 
-      {showKulturkorPicker && (() => {
-        const usedKulturkorok = new Set(fortélyok.filter(f => f.név.startsWith('Kultúrkör - ')).map(f => f.név.slice('Kultúrkör - '.length)));
-        const availableKk = data.kulturkorLista.filter(k => !usedKulturkorok.has(k));
-        return createPortal(
-          <div className="kep-prompt-overlay">
-            <div className="kep-prompt">
-              <label>Kultúrkör választás:</label>
-              <select
-                className="fort-select"
-                autoFocus
-                value=""
-                onChange={e => { if (e.target.value) addKulturkor(e.target.value); }}
-              >
-                <option value="">Válassz...</option>
-                {availableKk.map(k => <option key={k} value={k}>{k}</option>)}
-              </select>
-              <div className="kep-prompt-btns">
-                <button onClick={() => setShowKulturkorPicker(false)}>Mégse</button>
+      {multiPickerDef && (() => {
+        const def = multiPickerDef;
+        if (def.többszörös_lista.length > 0) {
+          // Fix lista dropdown
+          const usedSubs = new Set(fortélyok.filter(f => f.név.startsWith(def.név + ' - ')).map(f => f.név.slice(def.név.length + 3)));
+          const availSubs = def.többszörös_lista.filter(s => !usedSubs.has(s));
+          return createPortal(
+            <div className="kep-prompt-overlay">
+              <div className="kep-prompt">
+                <label>{def.név} — {def.többszörös_típus}:</label>
+                <select
+                  className="fort-select"
+                  autoFocus
+                  value=""
+                  onChange={e => { if (e.target.value) addMultiInstance(e.target.value); }}
+                >
+                  <option value="">Válassz...</option>
+                  {availSubs.map(k => <option key={k} value={k}>{k}</option>)}
+                </select>
+                <div className="kep-prompt-btns">
+                  <button onClick={() => setMultiPickerDef(null)}>Mégse</button>
+                </div>
               </div>
-            </div>
-          </div>,
-          document.body
-        );
+            </div>,
+            document.body
+          );
+        } else {
+          // Freetext
+          return createPortal(
+            <div className="kep-prompt-overlay">
+              <div className="kep-prompt">
+                <label>{def.név} — {def.többszörös_típus}:</label>
+                <input
+                  autoFocus
+                  maxLength={20}
+                  value={freetextValue}
+                  onChange={e => setFreetextValue(e.target.value)}
+                  onKeyDown={e => { if (e.key === 'Enter' && freetextValue.trim()) addMultiInstance(freetextValue.trim()); if (e.key === 'Escape') setMultiPickerDef(null); }}
+                />
+                <div className="kep-prompt-btns">
+                  <button onClick={() => { if (freetextValue.trim()) addMultiInstance(freetextValue.trim()); }} disabled={!freetextValue.trim()}>OK</button>
+                  <button onClick={() => setMultiPickerDef(null)}>Mégse</button>
+                </div>
+              </div>
+            </div>,
+            document.body
+          );
+        }
       })()}
     </div>
   );

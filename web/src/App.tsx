@@ -30,6 +30,7 @@ function App() {
   const [fortélyok, setFortélyok] = useState(() => [
     ...testKarakter8.fortélyok.map(f => ({ név: f.név, fok: f.fok })),
     ...testKarakter8.fortélyok_kiemelt.kulturkörök.map(k => ({ név: `Kultúrkör - ${k.név}`, fok: 1 })),
+    ...testKarakter8.fortélyok_kiemelt.helyismeret.map(h => ({ név: `Helyismeret - ${h.helynév}`, fok: 1 })),
   ]);
   const touchStart = useRef<number>(0);
   const touchY = useRef<number>(0);

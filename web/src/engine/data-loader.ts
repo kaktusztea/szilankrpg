@@ -67,6 +67,8 @@ export interface FortelySummary {
   maxfok: number;
   kp_perfok: number;
   ingyenes_perszint: number;
+  többszörös_típus: string;
+  többszörös_lista: string[];
   leírás: string;
   kiterjeszti_normál: string[];
   kiterjeszti_erős: string[];
@@ -87,11 +89,10 @@ export interface GameData {
   fajKeretek: Record<string, Record<string, [number, number]>>;
   primerFortelyok: string[];
   fortelySummaries: FortelySummary[];
-  kulturkorLista: string[];
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, kulturkorLista] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries] = await Promise.all([
     fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
@@ -104,7 +105,6 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<string[]>('tables/primer_fortelyok.json'),
     fetchJson<Record<string, Record<string, [number, number]>>>('tables/faj_tulajdonsag_keretek.json'),
     fetchJson<FortelySummary[]>('tables/fortelyok.json'),
-    fetchJson<string[]>('tables/kulturkor_lista.json'),
   ]);
 
   const kepzettsegKp = kepzettsegKpRaw.map(e => ({
@@ -119,5 +119,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, kulturkorLista };
+  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries };
 }
