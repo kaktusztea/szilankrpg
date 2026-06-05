@@ -1,0 +1,484 @@
+{
+  "version": 2,
+  "fortély_követelmény_típusok": [
+    "képzettség",
+    "mesterfegyver"
+  ],
+  "módosító_célok": [
+    "KÉ",
+    "TÉ",
+    "VÉ",
+    "CÉ",
+    "SP",
+    "SFÉ",
+    "harckeret",
+    "manőver",
+    "MGT_TÉ_büntetés"
+  ],
+  "feltétel_prefixek": [
+    "szituáció",
+    "harci_helyzet",
+    "taktika",
+    "fegyver",
+    "fegyver_kategória",
+    "manőver",
+    "státusz"
+  ],
+  "harcérték_alap": {
+    "KÉ": 0,
+    "TÉ": 10,
+    "VÉ": 30,
+    "CÉ": -15
+  },
+  "kp": {
+    "perszint": 50,
+    "szekunder_perszint": 20,
+    "fortélyfok": 6,
+    "hm": 6,
+    "cm": 6
+  },
+  "kp_bónusz": {
+    "analfabéta": 6,
+    "apró_méretű_lény": 18,
+    "süketség": 12,
+    "vakság": 18,
+    "tartós_sérülés_per_fok": 6
+  },
+  "arányok": {
+    "max_tsz": 21,
+    "max_hm_diff_szintlépésenként": 0.5,
+    "képzettség_nemprimer_max_szint_plusz": 3,
+    "képzettség_max_szint": 15,
+    "tulajdonság_pont_alap": 64,
+    "tulajdonság_pont_tsz_bónusz": 0.5,
+    "max_cm_perszint": 2
+  },
+  "egészség_kategória_levonás": [
+    {
+      "szint": "S1",
+      "módosítók": []
+    },
+    {
+      "szint": "S2",
+      "módosítók": [
+        {
+          "cél": "TÉ",
+          "érték": -3
+        }
+      ]
+    },
+    {
+      "szint": "S3",
+      "módosítók": [
+        {
+          "cél": "TÉ",
+          "érték": -6
+        }
+      ]
+    },
+    {
+      "szint": "S4",
+      "módosítók": [
+        {
+          "cél": "TÉ",
+          "érték": -9
+        }
+      ]
+    }
+  ],
+  "páncél_struktúrák": [
+    {
+      "struktúra": "posztó",
+      "leírás": "Posztó vagy bunda",
+      "fém": false,
+      "merev": false,
+      "mgt": 2,
+      "sfé_fizikai": 2,
+      "sfé_energia": 4,
+      "ár_szorzó": 0.1,
+      "idea_plusz_minusz": 0
+    },
+    {
+      "struktúra": "fegyverkabát",
+      "leírás": "Fegyverkabát",
+      "fém": false,
+      "merev": false,
+      "mgt": 3,
+      "sfé_fizikai": 3,
+      "sfé_energia": 5,
+      "ár_szorzó": 0.5,
+      "idea_plusz_minusz": 0
+    },
+    {
+      "struktúra": "bőr",
+      "leírás": "Bőrpáncél",
+      "fém": false,
+      "merev": false,
+      "mgt": 5,
+      "sfé_fizikai": 7,
+      "sfé_energia": 10,
+      "ár_szorzó": 1,
+      "idea_plusz_minusz": 1
+    },
+    {
+      "struktúra": "lánc/sodrony",
+      "leírás": "Láncing / sodronying",
+      "fém": true,
+      "merev": false,
+      "mgt": 8,
+      "sfé_fizikai": 10,
+      "sfé_energia": 10,
+      "ár_szorzó": 10,
+      "idea_plusz_minusz": 1
+    },
+    {
+      "struktúra": "pikkely",
+      "leírás": "Pikkely fémpáncél",
+      "fém": true,
+      "merev": true,
+      "mgt": 8,
+      "sfé_fizikai": 15,
+      "sfé_energia": 10,
+      "ár_szorzó": 50,
+      "idea_plusz_minusz": 2
+    },
+    {
+      "struktúra": "lemez",
+      "leírás": "Lemezpáncél",
+      "fém": true,
+      "merev": true,
+      "mgt": 10,
+      "sfé_fizikai": 20,
+      "sfé_energia": 8,
+      "ár_szorzó": 100,
+      "idea_plusz_minusz": 3
+    }
+  ],
+  "páncél_védett_terület": {
+    "torzó": 50,
+    "sisak": 10,
+    "végtagok": 10
+  },
+  "páncél_csatolt_tag_mgt": {
+    "hajlékonyvért_nem_fém": {
+      "pocsék": 1,
+      "átlagos": 0.5,
+      "mestermunka": 0
+    },
+    "hajlékonyvért_fém": {
+      "pocsék": 2,
+      "átlagos": 1,
+      "mestermunka": 0.25
+    },
+    "merevvért_fém": {
+      "pocsék": 3,
+      "átlagos": 2,
+      "mestermunka": 1
+    }
+  },
+  "páncél_fémalapanyagok": [
+    {
+      "anyag": "acél",
+      "sfé_bónusz": 0,
+      "mgt": 0,
+      "ár_szorzó": 1
+    },
+    {
+      "anyag": "bronz",
+      "sfé_bónusz": -5,
+      "mgt": 2,
+      "ár_szorzó": 0.5
+    },
+    {
+      "anyag": "abbitacél",
+      "sfé_bónusz": 5,
+      "mgt": -2,
+      "ár_szorzó": 10
+    },
+    {
+      "anyag": "mithrill",
+      "sfé_bónusz": 10,
+      "mgt": -4,
+      "ár_szorzó": 100
+    },
+    {
+      "anyag": "lunír",
+      "sfé_bónusz": "10-20",
+      "mgt": -6,
+      "ár_szorzó": 100000
+    }
+  ],
+  "páncél_ár_szorzó_kidolgozottság": {
+    "pocsék": 0.5,
+    "átlagos": 1,
+    "mestermunka": 100
+  },
+  "páncél_ár_szorzó_idea": [
+    {
+      "idea": -4,
+      "ár_szorzó": 0.1
+    },
+    {
+      "idea": -3,
+      "ár_szorzó": 0.15
+    },
+    {
+      "idea": -2,
+      "ár_szorzó": 0.25
+    },
+    {
+      "idea": -1,
+      "ár_szorzó": 0.5
+    },
+    {
+      "idea": 0,
+      "ár_szorzó": 1
+    },
+    {
+      "idea": 1,
+      "ár_szorzó": 2
+    },
+    {
+      "idea": 2,
+      "ár_szorzó": 4
+    },
+    {
+      "idea": 3,
+      "ár_szorzó": 7
+    },
+    {
+      "idea": 4,
+      "ár_szorzó": 10
+    }
+  ],
+  "tulajdonság_pontok": {
+    "-5": 0,
+    "-4": 1,
+    "-3": 2,
+    "-2": 3,
+    "-1": 4,
+    "0": 5,
+    "1": 6,
+    "2": 8,
+    "3": 11,
+    "4": 15,
+    "5": 20,
+    "6": 26,
+    "7": 33
+  },
+  "harcmodorok": {
+    "közelharci": [
+      "közelharc",
+      "kardvívás",
+      "rombolás",
+      "lándzsavívás",
+      "ostorharc"
+    ],
+    "távolsági": [
+      "hajítás",
+      "íjászat",
+      "lövészet",
+      "ostromlövészet",
+      "mágikus célzás"
+    ]
+  },
+  "mesterfegyver_bónuszok": [
+    {
+      "fok": 1,
+      "TÉ": 1,
+      "VÉ": 1,
+      "SP": 1
+    },
+    {
+      "fok": 2,
+      "TÉ": 2,
+      "VÉ": 2,
+      "SP": 2
+    },
+    {
+      "fok": 3,
+      "TÉ": 3,
+      "VÉ": 3,
+      "SP": 3
+    }
+  ],
+  "kétkezes_harc_bónuszok": [
+    {
+      "fok": 0,
+      "harckeret": 1,
+      "TÉ": -3,
+      "VÉ": -3
+    },
+    {
+      "fok": 1,
+      "harckeret": 2,
+      "TÉ": 0,
+      "VÉ": 0
+    },
+    {
+      "fok": 2,
+      "harckeret": 3,
+      "TÉ": 0,
+      "VÉ": 0
+    },
+    {
+      "fok": 3,
+      "harckeret": 4,
+      "TÉ": 0,
+      "VÉ": 0
+    }
+  ],
+  "merevvértviselet_bónuszok": [
+    {
+      "fok": 0,
+      "TÉ_büntetés_csökkentés": 0
+    },
+    {
+      "fok": 1,
+      "TÉ_büntetés_csökkentés": 5
+    },
+    {
+      "fok": 2,
+      "TÉ_büntetés_csökkentés": 10
+    },
+    {
+      "fok": 3,
+      "TÉ_büntetés_csökkentés": 15
+    }
+  ],
+  "pajzshasználat_TÉ_büntetés": [
+    {
+      "pajzs": "nincs",
+      "fokok": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "pajzs": "kis pajzs",
+      "fokok": [
+        -3,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "pajzs": "közepes pajzs",
+      "fokok": [
+        -6,
+        -3,
+        0,
+        0
+      ]
+    },
+    {
+      "pajzs": "nagy pajzs",
+      "fokok": [
+        -9,
+        -6,
+        -3,
+        0
+      ]
+    }
+  ],
+  "aura_bónusz": [
+    {
+      "nehézség": 9,
+      "bónusz": 1
+    },
+    {
+      "nehézség": 12,
+      "bónusz": 3
+    },
+    {
+      "nehézség": 15,
+      "bónusz": 5
+    },
+    {
+      "nehézség": 18,
+      "bónusz": 7
+    },
+    {
+      "nehézség": 21,
+      "bónusz": 9
+    },
+    {
+      "nehézség": 24,
+      "bónusz": 11
+    },
+    {
+      "nehézség": 27,
+      "bónusz": 13
+    },
+    {
+      "nehézség": 30,
+      "bónusz": 15
+    }
+  ],
+  "nyelvek": [
+    "pyarroni / közös nyelv",
+    "syburri",
+    "aszisz",
+    "emr",
+    "erv",
+    "dwoon",
+    "dzsadal",
+    "dzsad/dzsenn",
+    "dzsad/fayumi",
+    "gre",
+    "sin",
+    "dol",
+    "eno",
+    "lup",
+    "dakh",
+    "kra",
+    "nia",
+    "tia",
+    "yanna'an",
+    "cra",
+    "ang",
+    "amu",
+    "aquir",
+    "csaska",
+    "elf",
+    "gnóm",
+    "ork",
+    "törpe",
+    "van",
+    "sni",
+    "kyr",
+    "gdr",
+    "ryeki",
+    "tor"
+  ],
+  "háttér_csoportok": [
+    "faj",
+    "leíró",
+    "karma"
+  ],
+  "fortély_csoportok": [
+    "általános",
+    "érzékek",
+    "harci",
+    "kiemelt",
+    "mágia.metódusok",
+    "misztikus",
+    "szabad",
+    "távharc"
+  ],
+  "képzettség_csoportok": [
+    "harci",
+    "fizikai",
+    "világi",
+    "alvilági",
+    "művészeti",
+    "tudományos",
+    "faj misztériumok",
+    "misztikus",
+    "mágikus szférák és arkánumaik",
+    "papi mágia"
+  ]
+}

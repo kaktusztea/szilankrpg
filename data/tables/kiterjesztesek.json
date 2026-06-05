@@ -1,38 +1,4 @@
 {
-  "Alkímia": [
-    {
-      "fortély": "Tájtípus - barlangi",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - dzsungel",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - erdős",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - jégmezők",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - magaslati",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - mocsaras",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - puszta",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - sivatagi",
-      "típus": "normál"
-    }
-  ],
   "Befolyásolás": [
     {
       "fortély": "Csábítás",
@@ -67,62 +33,6 @@
       "típus": "normál"
     }
   ],
-  "Csapdaállítás": [
-    {
-      "fortély": "Mechanika",
-      "típus": "normál"
-    }
-  ],
-  "Előadóművészet": [
-    {
-      "fortély": "Kultúrkör",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Bűvészet",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Éneklés",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Irodalom",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Színjátszás",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tánc",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tánc: speciális/belső stílus",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Zenélés: fúvós hangszerek",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Zenélés: húros hangszerek",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Zenélés: ütős hangszerek",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Zeneszerző",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Zsonglőrködés",
-      "típus": "normál"
-    }
-  ],
   "Emberismeret": [
     {
       "fortély": "Csábítás",
@@ -149,7 +59,71 @@
       "típus": "normál"
     }
   ],
-  "Etikett": [
+  "Nyomozás": [
+    {
+      "fortély": "Élettan",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Építészet",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Hazudozás",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Helyismeret",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Heraldika",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Jogismeret",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Kihallgatás",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Pénzügyek",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Rejtjelfejtő",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Térképészet",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Titkos szervezet: (szervezet neve)",
+      "típus": "normál"
+    }
+  ],
+  "Nekromancia": [
+    {
+      "fortély": "Élettan",
+      "típus": "normál"
+    }
+  ],
+  "Lexikum": [
+    {
+      "fortély": "Élettan",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Ősi kultúrkör",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Történelemismeret",
+      "típus": "erős"
+    },
     {
       "fortély": "Helyismeret",
       "típus": "normál"
@@ -159,61 +133,81 @@
       "típus": "normál"
     },
     {
-      "fortély": "Szertartás",
+      "fortély": "Belső síkok lényeinek ismerete",
       "típus": "normál"
     },
     {
-      "fortély": "Tánc: speciális/belső stílus",
+      "fortély": "Külső síkok lényeinek ismerete",
       "típus": "normál"
     },
     {
-      "fortély": "Titkos szervezet: (szervezet neve)",
-      "típus": "normál"
-    }
-  ],
-  "Hadászat": [
-    {
-      "fortély": "Történelemismeret",
-      "típus": "erős"
-    },
-    {
-      "fortély": "Vezető: Fejvadász strategis",
+      "fortély": "Heraldika",
       "típus": "normál"
     },
     {
-      "fortély": "Vezető: Íjászparancsnok",
+      "fortély": "Hivatalnok",
       "típus": "normál"
     },
     {
-      "fortély": "Vezető: Léglovaskapitány",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Vezető: Lovaskapitány",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Vezető: Testőrparancsnok",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Hadtáp",
+      "fortély": "Jogismeret",
       "típus": "normál"
     },
     {
       "fortély": "Stratégia",
       "típus": "normál"
-    }
-  ],
-  "Hajózás": [
+    },
     {
-      "fortély": "Térképészet",
+      "fortély": "Tájtípus - barlangi",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - dzsungel",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - erdős",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - jégmezők",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - magaslati",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - mocsaras",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - puszta",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - sivatagi",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - tengerek",
       "típus": "normál"
     }
   ],
-  "Kultúrkör": [
+  "Művészetismeret": [
     {
-      "fortély": "Festészet",
+      "fortély": "Építészet",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Hamisítás",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Kultúrkör",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Éneklés",
       "típus": "normál"
     },
     {
@@ -223,11 +217,9 @@
     {
       "fortély": "Irodalom",
       "típus": "normál"
-    }
-  ],
-  "Kultúrkörnek": [
+    },
     {
-      "fortély": "Színjátszás",
+      "fortély": "Kalligráfia",
       "típus": "normál"
     },
     {
@@ -239,17 +231,23 @@
       "típus": "normál"
     },
     {
-      "fortély": "Szobrászat",
+      "fortély": "Tánc",
       "típus": "normál"
     },
     {
-      "fortély": "Szobrászat",
+      "fortély": "Tánc: speciális/belső stílus",
       "típus": "normál"
-    }
-  ],
-  "Kultúrkörök": [
+    },
     {
-      "fortély": "Szertartás",
+      "fortély": "Zenélés: fúvós hangszerek",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Zenélés: húros hangszerek",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Zenélés: ütős hangszerek",
       "típus": "normál"
     }
   ],
@@ -280,6 +278,24 @@
     },
     {
       "fortély": "Térképészet",
+      "típus": "normál"
+    }
+  ],
+  "Értékbecslés": [
+    {
+      "fortély": "Hamisítás",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Ősi kultúrkör",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Festészet",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Szobrászat",
       "típus": "normál"
     }
   ],
@@ -387,247 +403,9 @@
       "típus": "normál"
     }
   ],
-  "Lexikum": [
+  "Észlelés": [
     {
-      "fortély": "Élettan",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Ősi kultúrkör",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Történelemismeret",
-      "típus": "erős"
-    },
-    {
-      "fortély": "Helyismeret",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Kultúrkör",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Belső síkok lényeinek ismerete",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Külső síkok lényeinek ismerete",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Heraldika",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Hivatalnok",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Jogismeret",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Stratégia",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - barlangi",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - dzsungel",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - erdős",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - jégmezők",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - magaslati",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - mocsaras",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - puszta",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - sivatagi",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - tengerek",
-      "típus": "normál"
-    }
-  ],
-  "Lopakodás/rejtőzés": [
-    {
-      "fortély": "Tájtípus - barlangi",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - dzsungel",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - erdős",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - jégmezők",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - magaslati",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - mocsaras",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - puszta",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tájtípus - sivatagi",
-      "típus": "normál"
-    }
-  ],
-  "Lopás": [
-    {
-      "fortély": "Bűvészet",
-      "típus": "normál"
-    }
-  ],
-  "Lovaglás": [
-    {
-      "fortély": "Hátas (faj neve)",
-      "típus": "normál"
-    }
-  ],
-  "Léglovaglás": [
-    {
-      "fortély": "Hátas (faj neve)",
-      "típus": "normál"
-    }
-  ],
-  "Művészetismeret": [
-    {
-      "fortély": "Építészet",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Hamisítás",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Kultúrkör",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Éneklés",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Festészet",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Irodalom",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Kalligráfia",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Színjátszás",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Szobrászat",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tánc",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Tánc: speciális/belső stílus",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Zenélés: fúvós hangszerek",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Zenélés: húros hangszerek",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Zenélés: ütős hangszerek",
-      "típus": "normál"
-    }
-  ],
-  "Nekromancia": [
-    {
-      "fortély": "Élettan",
-      "típus": "normál"
-    }
-  ],
-  "Nyomozás": [
-    {
-      "fortély": "Élettan",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Építészet",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Hazudozás",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Helyismeret",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Heraldika",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Jogismeret",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Kihallgatás",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Pénzügyek",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Rejtjelfejtő",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Térképészet",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Titkos szervezet: (szervezet neve)",
+      "fortély": "Keresés/rejtés",
       "típus": "normál"
     }
   ],
@@ -677,6 +455,260 @@
       "típus": "normál"
     }
   ],
+  "Csapdaállítás": [
+    {
+      "fortély": "Mechanika",
+      "típus": "normál"
+    }
+  ],
+  "Hadászat": [
+    {
+      "fortély": "Történelemismeret",
+      "típus": "erős"
+    },
+    {
+      "fortély": "Vezető: Fejvadász strategis",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Vezető: Íjászparancsnok",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Vezető: Léglovaskapitány",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Vezető: Lovaskapitány",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Vezető: Testőrparancsnok",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Hadtáp",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Stratégia",
+      "típus": "normál"
+    }
+  ],
+  "Városi jártasság": [
+    {
+      "fortély": "Helyismeret",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Kultúrkör",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Titkos szervezet: (szervezet neve)",
+      "típus": "normál"
+    }
+  ],
+  "Etikett": [
+    {
+      "fortély": "Helyismeret",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Kultúrkör",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Szertartás",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tánc: speciális/belső stílus",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Titkos szervezet: (szervezet neve)",
+      "típus": "normál"
+    }
+  ],
+  "Előadóművészet": [
+    {
+      "fortély": "Kultúrkör",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Bűvészet",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Éneklés",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Irodalom",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Színjátszás",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tánc",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tánc: speciális/belső stílus",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Zenélés: fúvós hangszerek",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Zenélés: húros hangszerek",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Zenélés: ütős hangszerek",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Zeneszerző",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Zsonglőrködés",
+      "típus": "normál"
+    }
+  ],
+  "Lopás": [
+    {
+      "fortély": "Bűvészet",
+      "típus": "normál"
+    }
+  ],
+  "Kultúrkör": [
+    {
+      "fortély": "Festészet",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Festészet",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Irodalom",
+      "típus": "normál"
+    }
+  ],
+  "Lovaglás": [
+    {
+      "fortély": "Hátas (faj neve)",
+      "típus": "normál"
+    }
+  ],
+  "Léglovaglás": [
+    {
+      "fortély": "Hátas (faj neve)",
+      "típus": "normál"
+    }
+  ],
+  "Kultúrkörök": [
+    {
+      "fortély": "Szertartás",
+      "típus": "normál"
+    }
+  ],
+  "Kultúrkörnek": [
+    {
+      "fortély": "Színjátszás",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Színjátszás",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Szobrászat",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Szobrászat",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Szobrászat",
+      "típus": "normál"
+    }
+  ],
+  "Alkímia": [
+    {
+      "fortély": "Tájtípus - barlangi",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - dzsungel",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - erdős",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - jégmezők",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - magaslati",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - mocsaras",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - puszta",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - sivatagi",
+      "típus": "normál"
+    }
+  ],
+  "Lopakodás/rejtőzés": [
+    {
+      "fortély": "Tájtípus - barlangi",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - dzsungel",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - erdős",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - jégmezők",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - magaslati",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - mocsaras",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - puszta",
+      "típus": "normál"
+    },
+    {
+      "fortély": "Tájtípus - sivatagi",
+      "típus": "normál"
+    }
+  ],
   "Vajákosság": [
     {
       "fortély": "Tájtípus - barlangi",
@@ -715,41 +747,9 @@
       "típus": "normál"
     }
   ],
-  "Városi jártasság": [
+  "Hajózás": [
     {
-      "fortély": "Helyismeret",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Kultúrkör",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Titkos szervezet: (szervezet neve)",
-      "típus": "normál"
-    }
-  ],
-  "Értékbecslés": [
-    {
-      "fortély": "Hamisítás",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Ősi kultúrkör",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Festészet",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Szobrászat",
-      "típus": "normál"
-    }
-  ],
-  "Észlelés": [
-    {
-      "fortély": "Keresés/rejtés",
+      "fortély": "Térképészet",
       "típus": "normál"
     }
   ]
