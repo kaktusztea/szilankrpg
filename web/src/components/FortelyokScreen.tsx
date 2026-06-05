@@ -4,9 +4,9 @@ import type { GameData, FortelySummary } from '../engine/data-loader';
 import { testKarakter8 } from '../testdata';
 import './FortelyokScreen.css';
 
-const CSOPORT_SORREND = ['harci', 'altalanos', 'erzekek', 'szabad', 'kiemelt', 'misztikus'];
+const CSOPORT_SORREND = ['harci', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'];
 const CSOPORT_LABEL: Record<string, string> = {
-  harci: '⚔️ Harci', altalanos: '🔧 Általános', erzekek: '👁️ Érzékek',
+  harci: '⚔️ Harci', általános: '🔧 Általános', érzékek: '👁️ Érzékek',
   szabad: '🆓 Szabad', kiemelt: '⭐ Kiemelt', misztikus: '✨ Misztikus',
 };
 
