@@ -48,6 +48,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
+  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
 
   const defsByGroup = new Map<string, KepzettsegDef[]>();
   for (const d of data.kepzettsegDefs) {
@@ -236,7 +237,10 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
 
           return (
             <div key={csoport} className="kep-csoport">
-              <h3 className="kep-csoport-label">{CSOPORT_LABEL[csoport]}</h3>
+              <h3 className="kep-csoport-label" onClick={() => setCollapsedGroups(prev => { const n = new Set(prev); if (n.has(csoport)) n.delete(csoport); else n.add(csoport); return n; })}>
+                <span className="kep-csoport-arrow">{collapsedGroups.has(csoport) ? '▸' : '▾'}</span> {CSOPORT_LABEL[csoport]} <span className="dim">({slotok.length})</span>
+              </h3>
+              {!collapsedGroups.has(csoport) && (<>
               {slotok.map((slot, i) => {
                 const globalIdx = képzettségek.findIndex(k => k === slot);
                 return (
@@ -276,6 +280,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
                   </select>
                 </div>
               )}
+              </>)}
             </div>
           );
         })}

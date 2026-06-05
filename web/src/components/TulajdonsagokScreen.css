@@ -135,6 +135,13 @@
   margin-bottom: 4px;
   padding-bottom: 2px;
   border-bottom: 1px solid #333;
+  cursor: pointer;
+  user-select: none;
+}
+
+.kep-csoport-arrow {
+  font-size: 11px;
+  margin-right: 2px;
 }
 
 .kep-row-wrapper {
