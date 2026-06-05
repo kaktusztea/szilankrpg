@@ -137,7 +137,19 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
                       onChange={e => { if (e.target.value) addFortely(e.target.value); }}
                     >
                       <option value="">+ Új fortély...</option>
-                      {available.map(d => <option key={d.név} value={d.név}>{d.név} (max {d.maxfok})</option>)}
+                      {available.map(d => {
+                        let label = `${d.név} (max ${d.maxfok})`;
+                        if (d.ingyenes_perszint > 0) {
+                          const ingyenesDb = Math.floor((testKarakter8.tsz + 1) / d.ingyenes_perszint);
+                          const felvettDb = fortélyok.filter(f => f.név === d.név || f.név.startsWith(d.név + ' - ')).length;
+                          const maradtIngyenes = Math.max(0, ingyenesDb - felvettDb);
+                          if (maradtIngyenes > 0) label += ` 🎁${maradtIngyenes}`;
+                        } else if (d.kp_perfok < 0) {
+                          const vals = Array.from({ length: d.maxfok }, (_, i) => Math.abs(d.kp_perfok) * (i + 1));
+                          label += ` ➕${vals.join('-')}KP`;
+                        }
+                        return <option key={d.név} value={d.név}>{label}</option>;
+                      })}
                     </select>
                   </div>
                 )}

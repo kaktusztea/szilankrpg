@@ -61,7 +61,9 @@ export function calcKp(
   let kp_fortélyok = 0;
   let kp_szekunder_fortélyok = 0;
   for (const f of karakter.fortélyok) {
-    const perFok = fortelyKpMap?.get(f.név) ?? kpConfig.fortélyfok;
+    // Multi-instance fortélyok: "Kultúrkör - elar" → lookup "Kultúrkör"
+    const baseName = f.név.includes(' - ') ? f.név.split(' - ')[0] : f.név;
+    const perFok = fortelyKpMap?.get(f.név) ?? fortelyKpMap?.get(baseName) ?? kpConfig.fortélyfok;
     const cost = f.fok * perFok;
     if (cost <= 0) continue; // ingyenes vagy KP-t adó fortélyok nem számítanak költésbe
     kp_fortélyok += cost;
