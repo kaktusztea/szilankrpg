@@ -15,8 +15,9 @@
 │   │   └── misztikus/         (9 db, mind részletes)
 │   ├── kepzettsegek/          ← Képzettség adatfájlok (39 db)
 │   ├── fajok/                 ← Faj hátterek (26 db)
-│   ├── tables/                ← Generált JSON táblák (fegyverek, távfegyverek, pajzsok, KP, harcmodor bónusz, távharc szorzók, tradíciók, képzettségek, kiterjesztések, fajok, primer fortélyok)
-│   ├── konstansok.yaml        ← Központi konstansok (KP, arányok, páncél, harcmodorok, nyelvek, stb.)
+│   ├── tables/                ← Generált JSON táblák (generate_tables.py által: konstansok, fegyverek, távfegyverek, pajzsok, KP, harcmodor bónusz, távharc szorzók, tradíciók, képzettségek, kiterjesztések, fajok, faj keretek, primer fortélyok, fortélyok)
+│   ├── generate_tables.py    ← YAML→JSON generáló script (Vite plugin és prebuild futtatja)
+│   ├── konstansok.yaml        ← Központi konstansok (forrás, JSON-ba generálódik)
 │   ├── engine_spec.md         ← Engine kalkuláció spec (§1-§20, minden formula)
 │   └── gui_spec.md            ← GUI spec (9 screen, viselkedés, formázás)
 ├── web/                       ← React + Vite + TypeScript webes app
@@ -31,15 +32,17 @@
 │   │   │   ├── modifiers.ts   ← Fortély módosítók (flat/scaled/override)
 │   │   │   ├── limits.ts      ← Manőver, Felszerelés, HM/CM, Képzettség limitek
 │   │   │   ├── tavharc.ts     ← Távharc VÉ kalkulátor
-│   │   │   ├── data-loader.ts ← YAML/JSON betöltés runtime (konstansok, fegyverek, pajzsok, KP, harcmodor, képzettségDefs, kiterjesztések, fajNevek, primerFortelyok)
+│   │   │   ├── data-loader.ts ← YAML/JSON betöltés runtime (konstansok, fegyverek, pajzsok, KP, harcmodor, képzettségDefs, kiterjesztések, fajNevek, fajKeretek, primerFortelyok, fortelySummaries)
 │   │   │   └── index.ts       ← Barrel export
 │   │   ├── components/
-│   │   │   ├── HarcScreen.tsx  ← Harc fül (KÉSZ: KÉ, SFÉ, VÉ csökk, MP, fegyvertábla, ÉP táblázat)
+│   │   │   ├── HarcScreen.tsx  ← Harc fül (KÉSZ)
 │   │   │   ├── HarcScreen.css
-│   │   │   ├── EpTable.tsx     ← ÉP rubrika táblázat (sebesülés/gyógyulás/compaction)
+│   │   │   ├── EpTable.tsx     ← ÉP rubrika táblázat
 │   │   │   ├── EpTable.css
 │   │   │   ├── TulajdonsagokScreen.tsx  ← Tulajdonságok + Képzettségek fül (KÉSZ)
-│   │   │   └── TulajdonsagokScreen.css
+│   │   │   ├── TulajdonsagokScreen.css
+│   │   │   ├── FortelyokScreen.tsx      ← Fortélyok fül (KÉSZ)
+│   │   │   └── FortelyokScreen.css
 │   │   ├── App.tsx             ← Tab shell + swipe + animáció + Szerk/Game mód
 │   │   ├── App.css             ← Globális stílusok, dark theme
 │   │   └── testdata.ts         ← 8. szintű teszt karakter + elvárt értékek
@@ -65,31 +68,44 @@
   - Fejléc: Név (hosszú nyomás → szerkesztő popup) + Szint (hosszú nyomás → slider popup, max: konstansok.arányok.max_tsz)
   - Faj box (szerkesztő mód, hosszú nyomás → dropdown, 26 faj tables/fajok.json-ból) + Kor box (hosszú nyomás → slider 5-500/5)
   - Game módban Faj+Kor a Név mellé konkatenálódik: "Dorek (Ember (Északi), 32)"
-  - Tulajdonságok: fix 2×4 grid, teljes nevek, hosszú nyomás → popup overlay slider (-5..+7), OK/Mégse (konzisztens Szint/Kor-ral)
-  - Képzettségek: 7 csoportban, dropdown választó, ✕ törlés (custom overlay dialógus megerősítéssel), hosszú nyomás szint-csúszka (0-15)
+  - Tulajdonságok: fix 2×4 grid, teljes nevek, hosszú nyomás → popup overlay slider (-5..+7), OK/Mégse
+  - Faj limit warning: sárga szín + koppintásra lenyíló "Faj max/min: X" ha túllépés
+  - Képzettségek: 7 csoportban (összecsukható), dropdown + azonnali szint popup, ✕ törlés (piros megerősítés)
+  - Szint választó: popup gombok 1-15 grid (5×3+2), aktív=zöld, érték választás bezárja
+  - Szint színkód: 0=piros, 1-8=sárga, 9+=zöld
   - Többszörös képzettségek: generikus `többszörös` lista mező (fix alnév lista VAGY `["*"]` szabad szöveges max 20 kar)
   - Többszörös felvételkor csoportosítva a testvéreik mellé kerülnek
   - Game mód adatlap: próba, domináns tulajdonságok, kiterjesztő fortélyok
-  - Touch event isolation: slide közben nem triggerelődik a tab swipe
-  - Slider vizuál: track CSS 12.5% margin mindkét oldalon = 75% hasznos terület, pointer-pozíció és fill szinkronban
+  - Rövid koppintás szerkesztő módban: nem csinál semmit (csak hosszú nyomás)
+- ✅ Fortélyok fül: teljes UI (szerkesztő + game mód)
+  - 6 csoport (Harci → Általános → Érzékek → Szabad → Kiemelt → Misztikus), összecsukható
+  - Fok kijelzés: szám, szín: sárga (nem max), zöld (max)
+  - Dropdown + azonnali fok popup, ✕ törlés (piros megerősítés ha fok>1)
+  - Fok választó: kerek radio gombok (1..maxfok), aktív=zöld, érték választás bezárja
+  - Game mód: koppintás → accordion info (leírás, hatás, követelmény, kiterjesztések)
+  - Rövid koppintás szerkesztő módban: nem csinál semmit (csak hosszú nyomás)
 - ✅ KP sáv (szerkesztő mód, minden fülön, tab-bar felett)
   - Maradt KP + Maradt Szekunder KP kijelzés
   - Zöld háttér (normál), piros (ha Maradt KP < 0)
   - Szekunder maradék: max(0, ...) — sosem negatív
-  - Dinamikus: képzettség hozzáadás/törlés/szint módosítás (slide közben is) azonnal frissíti
+  - Dinamikus: képzettség módosítás azonnal frissíti
   - Képzettségek state az App szintjén (lifted state)
-- ✅ tables/kepzettsegek.json: 39 képzettség def (név, csoport, primer, többszörös, próba, domináns_tulajdonságok)
-- ✅ tables/kiterjesztesek.json: inverz mapping (képzettség → kiterjesztő fortélyok, 27 képzettségre)
-- ✅ tables/fajok.json: 26 faj neve
-- ✅ tables/primer_fortelyok.json: 53 harci+misztikus fortély neve (primer KP osztályozáshoz)
+- ✅ Build pipeline: YAML → JSON generálás automatizálva
+  - `data/generate_tables.py`: központi script (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
+  - Vite plugin: dev szerver indulásakor automatikusan futtatja a generálást
+  - `prebuild` script: `npm run build` előtt automatikusan fut
+  - `js-yaml` runtime dependency eltávolítva → bundle ~43KB-val kisebb (232KB vs 275KB)
+  - Minden adat `tables/*.json`-ból töltődik (fetchJson), nincs runtime YAML parse
+- ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
+- ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
+- ✅ Escape gomb: minden popup overlay bezárható Escape-pel
 
 ## Következő lépések
 1. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
-2. **Fortélyok fül** — accordion lista
-3. **Harcértékek fül** — HM/CM, fegyver/páncél konfigurátor (csak Szerkesztő módban)
-4. **Karakter mentés/betöltés** — JSON export/import
-5. **GitHub Pages deploy** workflow
-6. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
+2. **Harcértékek fül** — HM/CM, fegyver/páncél konfigurátor (csak Szerkesztő módban)
+3. **Karakter mentés/betöltés** — JSON export/import
+4. **GitHub Pages deploy** workflow
+5. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/DEVSTATE.md` (ez a fájl)
@@ -100,6 +116,7 @@
 - `/mnt/c/repo/szilank.code/web/src/App.tsx` — fő app komponens (tab rendszer, mód toggle)
 - `/mnt/c/repo/szilank.code/web/src/components/HarcScreen.tsx` — Harc fül implementáció
 - `/mnt/c/repo/szilank.code/web/src/components/TulajdonsagokScreen.tsx` — Tulajdonságok + Képzettségek fül
+- `/mnt/c/repo/szilank.code/web/src/components/FortelyokScreen.tsx` — Fortélyok fül
 - `/mnt/c/repo/szilank.code/web/src/engine/` — engine modulok (types, data-loader, harcertek, pancel, ep, kp, modifiers, limits, tavharc)
 
 ## Fontos konvenciók
@@ -116,15 +133,18 @@
   - `["Közelharc", "Kardvívás", ...]` = fix alnevek listája
   - `["*"]` = szabad szöveges alnév (prompt, max 20 karakter)
 - Többszörös képzettség belső tárolás: fix listánál alnév önmagában (pl. `"Közelharc"`), szabad szövegesnél `"AlapNév: xyz"`
-- Generált JSON-ok: `tables/kepzettsegek.json`, `tables/kiterjesztesek.json`, `tables/fajok.json`, `tables/primer_fortelyok.json` — python3 scripttel a yaml-okból
-- Touch event isolation: képzettség kep-row-on `onTouchStart/End stopPropagation` (inline slide védi a swipe-ot)
+- Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
+- Vite plugin: dev szerver indulásakor automatikusan futtatja a generate_tables.py-t; nincs per-request regenerálás
+- Runtime: minden adat `tables/*.json`-ból fetchJson-nel, nincs YAML parse, nincs js-yaml dependency
+- Touch event isolation: kep-row-on `onTouchStart/End stopPropagation` (szerkesztő módban, védi a véletlen lapozást)
 - Swipe isolation popup overlay-eknél: App.tsx `handleTouchStart` `.closest('.kep-prompt-overlay')` check → swipe letiltva
-- Slider mechanika (képzettség inline): pointer-pozíció alapú (box 75%-a = teljes range), track CSS left/right: 12.5%, fill% szinkronban
-- Slider mechanika (popup): natív `<input type="range">`, overlay-ben OK/Mégse gombokkal
-- Tulajdonságok, Szint, Kor: popup slider modell (hosszú nyomás → overlay → slider → OK/Mégse)
-- KP modell: szekunder KP-ból VAGY primer KP-ból is fizethető szekunder ismeret; "Maradt Szekunder KP" = max(0, szek_kp - szek_költött)
-- Primer fortély meghatározás: harci + misztikus csoport = primer (tables/primer_fortelyok.json)
-- Primer képzettség: a yaml `primer: true` mező + többszörös alnevek is primernek számítanak
+- Context menu prevention: `onContextMenu preventDefault` + `-webkit-touch-callout: none` + `user-select: none`
+- Értékválasztó popup-ok: érték kiválasztása azonnal bezárja (nincs OK/Mégse gomb), Escape bezárja módosítás nélkül
+- Szint választó (képzettségek): gombok 1-15 grid (5 oszlop), aktív=zöld
+- Fok választó (fortélyok): kerek radio gombok (1..maxfok), aktív=zöld
 - Popup dialógusok: createPortal(document.body) — kiszöknek a screen-slide overflow kontextusból
-- Hosszú nyomás: 400ms timeout → popup megnyitás (Név, Szint, Faj, Kor, Tulajdonságok)
+- Hosszú nyomás: 400ms timeout → popup megnyitás (Név, Szint, Faj, Kor, Tulajdonságok, Képzettségek, Fortélyok)
+- Rövid koppintás szerkesztő módban: nem csinál semmit (képzettségek, fortélyok)
+- Rövid koppintás Game módban: accordion info toggle
+- Törlés megerősítő dialógus: piros "Törlés" gomb
 - Default tab induláskor: Tul/Képz (index 2)
