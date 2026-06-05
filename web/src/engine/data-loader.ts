@@ -1,4 +1,3 @@
-import yaml from 'js-yaml';
 import type { FegyverAlap, PancelStruktura, PancelFemalapanyag, MesterfegyverBonusz, HarcertekAlap, KpConfig, Aranyok } from './types';
 
 const BASE = import.meta.env.BASE_URL + 'data/';
@@ -6,12 +5,6 @@ const BASE = import.meta.env.BASE_URL + 'data/';
 async function fetchJson<T>(path: string): Promise<T> {
   const res = await fetch(BASE + path);
   return res.json();
-}
-
-async function fetchYaml<T>(path: string): Promise<T> {
-  const res = await fetch(BASE + path);
-  const text = await res.text();
-  return yaml.load(text) as T;
 }
 
 // --- Konstansok YAML struktúra ---
@@ -96,7 +89,7 @@ export interface GameData {
 
 export async function loadGameData(): Promise<GameData> {
   const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries] = await Promise.all([
-    fetchYaml<KonstansokRaw>('konstansok.yaml'),
+    fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
     fetchJson<{ Pajzs: string; TÉ: string; VÉ: string; Sebesség: string }[]>('tables/pajzsok.json'),

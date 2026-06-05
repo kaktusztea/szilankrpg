@@ -78,9 +78,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
     setKépzettségek(prev => prev.map((k, i) => i === idx ? { ...k, szint } : k));
   }
 
-  function setKepNév(idx: number, név: string) {
-    setKépzettségek(prev => prev.map((k, i) => i === idx ? { ...k, név } : k));
-  }
+
 
   // Szabad szöveges többszörös: custom dialógus
   const [promptState, setPromptState] = useState<{ alapNév: string } | null>(null);
@@ -250,7 +248,6 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
       {/* Képzettségek */}
       <div className="kep-section">
         {CSOPORT_SORREND.map(csoport => {
-          const csoportDefs = defsByGroup.get(csoport) || [];
           const slotok = getKepzettsegekForCsoport(csoport);
           const usedNames = slotok.map(s => s.név);
           const available = getAvailableNames(csoport, usedNames);
@@ -267,10 +264,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
                   <KepzettsegRow
                     key={`${csoport}-${i}`}
                     slot={slot}
-                    csoportDefs={csoportDefs}
-                    usedNames={usedNames.filter(n => n !== slot.név)}
                     gameMode={gameMode}
-                    onNévChange={név => setKepNév(globalIdx, név)}
                     onSzintChange={szint => setKepSzint(globalIdx, szint)}
                     onRemove={() => {
                       if (slot.szint === 0) {
@@ -344,7 +338,6 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
           <div className="kep-prompt">
             <label>{getDisplayName(képzettségek[pendingEditIdx]?.név ?? '')} — szint:</label>
             <div className="kep-szint-grid">
-              <button className="fort-fok-btn fort-fok-del" onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== pendingEditIdx)); setPendingEditIdx(null); }}>✕</button>
               {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
                 <button key={n} className={`fort-fok-btn ${képzettségek[pendingEditIdx!]?.szint === n ? 'active' : ''}`} onClick={() => { setKépzettségek(prev => prev.map((k, i) => i === pendingEditIdx ? { ...k, szint: n } : k)); setPendingEditIdx(null); }}>{n}</button>
               ))}
@@ -500,12 +493,9 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
 }
 
 /* --- Képzettség sor --- */
-function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef }: {
+function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef }: {
   slot: KepzettsegSlot;
-  csoportDefs: KepzettsegDef[];
-  usedNames: string[];
   gameMode: boolean;
-  onNévChange: (név: string) => void;
   onSzintChange: (szint: number) => void;
   onRemove: () => void;
   kiterjesztesek: Record<string, KiterjesztesEntry[]>;
@@ -514,7 +504,6 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
   displayName: string;
   findDef: (név: string) => KepzettsegDef | undefined;
 }) {
-  const [editing, setEditing] = useState(false);
   const [szintEditing, setSzintEditing] = useState(false);
   const rowRef = useRef<HTMLDivElement>(null);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -526,9 +515,7 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
     return () => document.removeEventListener('keydown', onKey);
   }, [szintEditing]);
 
-  const available = csoportDefs.filter(d => !usedNames.includes(d.név));
-
-  // Szerkesztő mód: rövid kopp → dropdown, hosszú nyomás → szint popup
+  // Szerkesztő mód: hosszú nyomás → szint popup
   function handlePointerDown(_e: React.PointerEvent) {
     if (gameMode) return;
     longPressTimer.current = setTimeout(() => {
@@ -541,11 +528,8 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
     if (longPressTimer.current) {
       clearTimeout(longPressTimer.current);
       longPressTimer.current = null;
-      // Rövid kopp
       if (gameMode) {
         onInfoToggle();
-      } else {
-        setEditing(true);
       }
     }
   }
@@ -571,20 +555,7 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
         onTouchEnd={e => { if (!gameMode) e.stopPropagation(); }}
         onClick={gameMode ? handleClick : undefined}
       >
-        {editing && !gameMode ? (
-          <select
-            className="kep-select"
-            value={slot.név}
-            autoFocus
-            onChange={e => { onNévChange(e.target.value); setEditing(false); }}
-            onBlur={() => setEditing(false)}
-          >
-            <option value={slot.név}>{slot.név}</option>
-            {available.map(d => <option key={d.név} value={d.név}>{d.név}</option>)}
-          </select>
-        ) : (
-          <span className="kep-név">{displayName}</span>
-        )}
+        <span className="kep-név">{displayName}</span>
         <span className="kep-right">
           {!gameMode && (
             <button className="kep-delete" onPointerDown={e => e.stopPropagation()} onPointerUp={e => { e.stopPropagation(); onRemove(); }}>✕</button>
@@ -612,7 +583,6 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
           <div className="kep-prompt">
             <label>{displayName} — szint:</label>
             <div className="kep-szint-grid">
-              <button className={`fort-fok-btn fort-fok-del`} onClick={() => { onRemove(); setSzintEditing(false); }}>✕</button>
               {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
                 <button key={n} className={`fort-fok-btn ${slot.szint === n ? 'active' : ''}`} onClick={() => { onSzintChange(n); setSzintEditing(false); }}>{n}</button>
               ))}

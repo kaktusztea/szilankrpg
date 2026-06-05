@@ -2,12 +2,22 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
 import { createReadStream, existsSync } from 'fs';
+import { execSync } from 'child_process';
 import type { Plugin } from 'vite';
 
 function serveDataPlugin(): Plugin {
   const dataDir = path.resolve(__dirname, '../data');
+  const generateScript = path.join(dataDir, 'generate_tables.py');
+
   return {
     name: 'serve-data',
+    buildStart() {
+      // Regenerate tables once on dev server start / build start
+      if (existsSync(generateScript)) {
+        console.log('[serve-data] Generating tables from YAML sources...');
+        execSync(`python3 "${generateScript}"`, { cwd: dataDir, stdio: 'inherit' });
+      }
+    },
     configureServer(server) {
       server.middlewares.use('/szilankrpg/data', (req, res, next) => {
         const filePath = path.join(dataDir, req.url ?? '');

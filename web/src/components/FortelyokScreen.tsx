@@ -142,7 +142,6 @@ export function FortelyokScreen({ data, gameMode }: Props) {
             <div className="kep-prompt">
               <label>{pSlot?.név} — fok:</label>
               <div className="fort-fok-radios">
-                <button className="fort-fok-btn fort-fok-del" onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== pendingFortIdx)); setPendingFortIdx(null); }}>✕</button>
                 {Array.from({ length: pMaxfok }, (_, i) => i + 1).map(f => (
                   <button key={f} className={`fort-fok-btn ${pSlot?.fok === f ? 'active' : ''}`} onClick={() => { setFortélyok(prev => prev.map((ft, i) => i === pendingFortIdx ? { ...ft, fok: f } : ft)); setPendingFortIdx(null); }}>{f}</button>
                 ))}
@@ -237,7 +236,6 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
           <div className="kep-prompt">
             <label>{slot.név} — fok:</label>
             <div className="fort-fok-radios">
-              <button className="fort-fok-btn fort-fok-del" onClick={() => { onRemove(); setEditing(false); }}>✕</button>
               {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
                 <button key={f} className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}`} onClick={() => { onFokChange(f); setEditing(false); }}>{f}</button>
               ))}
