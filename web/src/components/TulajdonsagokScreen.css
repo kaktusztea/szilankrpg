@@ -265,6 +265,20 @@
   color: var(--success);
 }
 
+/* --- Szint grid buttons --- */
+.kep-szint-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 36px);
+  gap: 6px;
+  justify-content: center;
+}
+
+.kep-szint-grid .fort-fok-btn.active {
+  border-color: var(--success);
+  background: var(--success);
+  color: #000;
+}
+
 /* --- Szabad szöveges prompt --- */
 .kep-prompt-overlay {
   position: fixed;

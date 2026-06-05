@@ -475,38 +475,21 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
   findDef: (név: string) => KepzettsegDef | undefined;
 }) {
   const [editing, setEditing] = useState(false);
-  const [sliding, setSliding] = useState(false);
-  const [tempSzint, setTempSzint] = useState(slot.szint);
+  const [szintEditing, setSzintEditing] = useState(false);
+  const [tempSzintPopup, setTempSzintPopup] = useState(slot.szint);
   const rowRef = useRef<HTMLDivElement>(null);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const available = csoportDefs.filter(d => !usedNames.includes(d.név));
 
-  function szintFromPointer(clientX: number) {
-    const rect = rowRef.current!.getBoundingClientRect();
-    const margin = rect.width * 0.125;
-    const x = Math.max(0, Math.min(1, (clientX - rect.left - margin) / (rect.width - 2 * margin)));
-    return Math.round(x * 15);
-  }
-
-  // Szerkesztő mód: rövid kopp → dropdown, hosszú nyomás → szint csúszka
-  function handlePointerDown(e: React.PointerEvent) {
+  // Szerkesztő mód: rövid kopp → dropdown, hosszú nyomás → szint popup
+  function handlePointerDown(_e: React.PointerEvent) {
     if (gameMode) return;
-    const pointerId = e.pointerId;
-    const target = e.target as HTMLElement;
     longPressTimer.current = setTimeout(() => {
       longPressTimer.current = null;
-      target.setPointerCapture(pointerId);
-      setSliding(true);
-      setTempSzint(szintFromPointer(e.clientX));
+      setTempSzintPopup(slot.szint);
+      setSzintEditing(true);
     }, 400);
-  }
-
-  function handlePointerMove(e: React.PointerEvent) {
-    if (!sliding) return;
-    const val = szintFromPointer(e.clientX);
-    setTempSzint(val);
-    onSzintChange(val);
   }
 
   function handlePointerUp() {
@@ -519,10 +502,6 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
       } else {
         setEditing(true);
       }
-    }
-    if (sliding) {
-      setSliding(false);
-      onSzintChange(tempSzint);
     }
   }
 
@@ -539,9 +518,8 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
     <div className="kep-row-wrapper">
       <div
         ref={rowRef}
-        className={`kep-row ${sliding ? 'sliding' : ''}`}
+        className="kep-row"
         onPointerDown={!gameMode ? handlePointerDown : undefined}
-        onPointerMove={!gameMode ? handlePointerMove : undefined}
         onPointerUp={!gameMode ? handlePointerUp : undefined}
         onPointerCancel={!gameMode ? handlePointerUp : undefined}
         onTouchStart={e => { if (!gameMode) e.stopPropagation(); }}
@@ -563,14 +541,11 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
           <span className="kep-név">{displayName}</span>
         )}
         <span className="kep-right">
-          {!gameMode && !sliding && (
+          {!gameMode && (
             <button className="kep-delete" onPointerDown={e => e.stopPropagation()} onPointerUp={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className="kep-szint">{sliding ? tempSzint : slot.szint}</span>
+          <span className="kep-szint">{slot.szint}</span>
         </span>
-        {sliding && (
-          <div className="kep-slider-track"><div className="kep-slider-fill" style={{ width: `${(tempSzint / 15) * 100}%` }} /></div>
-        )}
       </div>
       {/* Game mód: adatlap */}
       {gameMode && infoOpen && def && (
@@ -586,6 +561,24 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
             </div>
           )}
         </div>
+      )}
+      {szintEditing && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>{displayName} — szint:</label>
+            <div className="kep-szint-grid">
+              <button className={`fort-fok-btn fort-fok-del`} onClick={() => { onRemove(); setSzintEditing(false); }}>✕</button>
+              {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
+                <button key={n} className={`fort-fok-btn ${tempSzintPopup === n ? 'active' : ''}`} onClick={() => setTempSzintPopup(n)}>{n}</button>
+              ))}
+            </div>
+            <div className="kep-prompt-btns">
+              <button onClick={() => { onSzintChange(tempSzintPopup); setSzintEditing(false); }}>OK</button>
+              <button onClick={() => setSzintEditing(false)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
       )}
     </div>
   );
