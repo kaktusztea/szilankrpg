@@ -70,12 +70,15 @@ def generate_fortelyok():
             kiterjeszti = data.get('kiterjeszti', {})
             kit_norm = kiterjeszti.get('normál', []) if kiterjeszti else []
             kit_eros = kiterjeszti.get('erős', []) if kiterjeszti else []
+            tobbszorosseg = data.get('többszörösség', {})
             result.append({
                 'név': data['név'],
                 'csoport': data.get('csoport', ''),
                 'maxfok': data.get('maxfok', 1),
                 'kp_perfok': data.get('kp_perfok', 6),
                 'ingyenes_perszint': data.get('ingyenes_perszint', 0),
+                'többszörös_típus': tobbszorosseg.get('spec_típus', '') if tobbszorosseg else '',
+                'többszörös_lista': tobbszorosseg.get('spec_lista', []) if tobbszorosseg else [],
                 'leírás': leírás,
                 'kiterjeszti_normál': kit_norm,
                 'kiterjeszti_erős': kit_eros,

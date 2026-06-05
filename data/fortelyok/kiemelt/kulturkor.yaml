@@ -1,34 +1,64 @@
----
 schema_version: 1
-
-név: "Kultúrkör"
-névkomment: ""
+név: Kultúrkör
+névkomment: ''
 maxfok: 1
 többszörösség:
-  spec_típus: "kultúrkör"
-  spec_lista: []
-csoport: "kiemelt"
+  spec_típus: kultúrkör
+  spec_lista:
+  - 4mund
+  - asz1sz
+  - barbár
+  - bukán
+  - dw00n
+  - dzs4d
+  - elar
+  - elf
+  - en0szukei
+  - erv
+  - gohr
+  - gorv1ki
+  - il4nori
+  - khál
+  - kr4ni
+  - mawini
+  - ni4rei
+  - nomád
+  - pier
+  - predoci, edorli
+  - py4r
+  - ragnaroki
+  - sh4doni
+  - syburri
+  - tarran
+  - ti4dlani
+  - tongoriai
+  - t0r0ni
+  - törpe
+csoport: kiemelt
 leírások:
-  - text: "Egy adott kultúrkör ismerete."
+- text: Egy adott kultúrkör ismerete.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
-  normál: ["Előadóművészet", "Etikett", "Képzőművészet", "Művészetismeret", "Lexikum", "Városi jártasság"]
+  normál:
+  - Előadóművészet
+  - Etikett
+  - Képzőművészet
+  - Művészetismeret
+  - Lexikum
+  - Városi jártasság
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 2
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Akcentus, dialektus, zenék, ünnepek, ételek, szokások, babonák, vallásismeret, szleng, hírességek."
-      - text: "Minden 2. TSz-en kapsz egyet ingyen (1, 3, 5, 7...)."
-      - text: "Kiterjesztett képzettségekre nincs levonás az adott kultúrkörben."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Akcentus, dialektus, zenék, ünnepek, ételek, szokások, babonák, vallásismeret,
+      szleng, hírességek.
+  - text: Minden 2. TSz-en kapsz egyet ingyen (1, 3, 5, 7...).
+  - text: Kiterjesztett képzettségekre nincs levonás az adott kultúrkörben.
+  módosítók: ''
 todo:
-  - text: ""
+- text: ''
