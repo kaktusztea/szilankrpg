@@ -80,8 +80,15 @@
 - ✅ Fortélyok fül: teljes UI (szerkesztő + game mód)
   - 6 csoport (Harci → Általános → Érzékek → Szabad → Kiemelt → Misztikus), összecsukható
   - Fok kijelzés: szám, szín: sárga (nem max), zöld (max)
-  - Dropdown + azonnali fok popup, ✕ törlés (piros megerősítés ha fok>1)
-  - Fok választó: kerek radio gombok (1..maxfok), aktív=zöld, érték választás bezárja
+  - Dropdown: `"Név (max X)"`, ingyenes kerettel: `🎁N`, KP-t adó: `➕6-12-18KP`
+  - Többszörös fortélyok: generikus `többszörösség` yaml mező alapján
+    - `spec_típus` + `spec_lista: [...]` → fix lista dropdown (szűri a már felvetteket)
+    - `spec_típus` + `spec_lista: []` → freetext popup (max 20 kar)
+    - Példányok neve: `"AlapNév - alnév"` formátum
+  - Fok választó: kerek radio gombok (1..maxfok), aktív=zöld, maxfok=1 → nincs popup
+  - Ingyenes keret: `floor((TSz+1)/ingyenes_perszint)` db, 🎁 jel az ingyeseknél
+  - KP logika: `kp_perfok` per fortély, base name lookup többszörös fortélyoknál
+  - Törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
   - Game mód: koppintás → accordion info (leírás, hatás, követelmény, kiterjesztések)
   - Rövid koppintás szerkesztő módban: nem csinál semmit (csak hosszú nyomás)
 - ✅ KP sáv (szerkesztő mód, minden fülön, tab-bar felett)
@@ -89,7 +96,7 @@
   - Zöld háttér (normál), piros (ha Maradt KP < 0)
   - Szekunder maradék: max(0, ...) — sosem negatív
   - Dinamikus: képzettség módosítás azonnal frissíti
-  - Képzettségek state az App szintjén (lifted state)
+  - Képzettségek és Fortélyok state az App szintjén (lifted state)
 - ✅ Build pipeline: YAML → JSON generálás automatizálva
   - `data/generate_tables.py`: központi script (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
   - Vite plugin: dev szerver indulásakor automatikusan futtatja a generálást
@@ -99,13 +106,16 @@
 - ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
 - ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
 - ✅ Escape gomb: minden popup overlay bezárható Escape-pel
+- ✅ GitHub Pages deploy workflow (`.github/workflows/deploy_webapp.yml`)
+  - Trigger: push master (web/ vagy data/ változás) + workflow_dispatch
+  - Python 3.13 + Node 20 + generate_tables.py + npm ci + build + postbuild (data copy) + deploy
+  - URL: `https://kaktusztea.github.io/szilankrpg/`
 
 ## Következő lépések
 1. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
 2. **Harcértékek fül** — HM/CM, fegyver/páncél konfigurátor (csak Szerkesztő módban)
 3. **Karakter mentés/betöltés** — JSON export/import
-4. **GitHub Pages deploy** workflow
-5. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
+4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/DEVSTATE.md` (ez a fájl)
@@ -133,6 +143,10 @@
   - `["Közelharc", "Kardvívás", ...]` = fix alnevek listája
   - `["*"]` = szabad szöveges alnév (prompt, max 20 karakter)
 - Többszörös képzettség belső tárolás: fix listánál alnév önmagában (pl. `"Közelharc"`), szabad szövegesnél `"AlapNév: xyz"`
+- Fortély yaml mezők: `kp_perfok` (KP/fok), `ingyenes_perszint` (0=nincs, 2=minden 2.TSz 1 db), `többszörösség.spec_típus`+`spec_lista`
+- Többszörös fortély belső tárolás: `"AlapNév - alnév"` (pl. `"Kultúrkör - erv"`, `"Helyismeret - Erion"`)
+- Többszörös fortély KP lookup: base name (`f.név.split(' - ')[0]`) → fortelyKpMap
+- Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
 - Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
 - Vite plugin: dev szerver indulásakor automatikusan futtatja a generate_tables.py-t; nincs per-request regenerálás
 - Runtime: minden adat `tables/*.json`-ból fetchJson-nel, nincs YAML parse, nincs js-yaml dependency

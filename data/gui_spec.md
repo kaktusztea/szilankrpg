@@ -216,13 +216,35 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 ### Megjelenés
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
 - Kompakt lista: név + fok (szám). Fok szín: sárga ha fok < maxfok, zöld ha fok = maxfok
+- Ingyenes keret alatti többszörös fortélyoknál 🎁 jel a név mellett
 - ✕ törlés gomb minden fortélynál (szerkesztő módban)
-- Csoportonként 1 db dropdown (szerkesztő módban): új fortély felvétele → azonnal felugrik a fok választó popup
+- Csoportonként 1 db dropdown (szerkesztő módban): új fortély felvétele
+
+### Dropdown lista jelölések
+- Normál: `"FortélyNév (max X)"`
+- Ingyenes kerettel (Kultúrkör, Helyismeret): `"Név (max 1) 🎁N"` ahol N a maradék ingyenes keret
+- KP-t adó (Vakság, stb.): `"Név (max X) ➕6KP"` vagy több foknál: `"Név (max 3) ➕6-12-18KP"`
+- Többszörösen felvehető fortélyok mindig láthatóak a dropdown-ban (nem szűrődnek ki)
+
+### Többszörös fortélyok (generikus, `többszörösség` yaml mező alapján)
+- `spec_típus: ""` → normál, egyszer felvehető
+- `spec_típus` nem üres + `spec_lista: [...]` → fix lista dropdown (pl. Kultúrkör: 29 elem). Már felvett elemek kiszűrődnek.
+- `spec_típus` nem üres + `spec_lista: []` → freetext popup (max 20 karakter) (pl. Helyismeret, Alkalmatlan fegyver hajítása)
+- Felvett példányok neve: `"AlapNév - alnév"` formátum (pl. `"Kultúrkör - erv"`, `"Helyismeret - Erion"`)
+
+### KP logika (fortélyok)
+- `kp_perfok` yaml mező: `6` (normál), `0` (ingyenes/kiemelt), negatív (KP-t ad)
+- `ingyenes_perszint` yaml mező: `0` (nincs ingyenes), `2` (minden 2. TSz-en 1 db ingyenes, kezdve 1.TSz)
+- Ingyenes keret képlet: `floor((TSz + 1) / ingyenes_perszint)`
+- Az ingyenes keret feletti példányok `kp_perfok` KP-ba kerülnek
+- Többszörös fortélyok KP számítása a base name alapján (`"Kultúrkör - erv"` → lookup `"Kultúrkör"`)
 
 ### Viselkedés Szerkesztő módban
 - Rövid koppintás: nem csinál semmit
 - Hosszú nyomás (400ms): fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
-- ✕ törlés: fok≤1 → azonnal töröl, fok>1 → piros "Törlés" gombot tartalmazó megerősítő dialógus
+  - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se hosszú nyomásra)
+- Felvételkor (dropdown): maxfok>1 → azonnal fok popup; többszörös → megfelelő picker popup
+- ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
 - Escape: popup bezárás
 
 ### Viselkedés Game módban
@@ -363,6 +385,8 @@ Minden adat `tables/*.json`-ból, `fetchJson`-nel:
 
 ### Karakter state struktúra (App szintjén)
 - `képzettségek: { név: string; szint: number }[]` — lifted state, KP kalkuláció inputja
+- `fortélyok: { név: string; fok: number }[]` — lifted state, KP kalkuláció inputja (tartalmazza a többszörös példányokat is `"AlapNév - alnév"` formátumban)
+- Inicializálás: `testKarakter8.fortélyok` + `fortélyok_kiemelt.kulturkörök` + `fortélyok_kiemelt.helyismeret` → egységes tömbbe
 - A többi karakter adat egyelőre `testKarakter8`-ból jön (statikus)
 
 A Tulajdonságok/Képzettségek/Fortélyok fülek **szerkesztő** jellegűek (a karakter adatait módosítják).
