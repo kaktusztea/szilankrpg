@@ -37,6 +37,7 @@ export function calcKp(
   kepzettsegKpTable: { szint: number; kp: number }[],
   primerKepzettsegek: Set<string>,
   primerFortelyGroups: Set<string>,
+  fortelyKpMap?: Map<string, number>,
 ): KpResult {
   const { tsz, tulajdonságok } = karakter;
 
@@ -60,7 +61,9 @@ export function calcKp(
   let kp_fortélyok = 0;
   let kp_szekunder_fortélyok = 0;
   for (const f of karakter.fortélyok) {
-    const cost = f.fok * kpConfig.fortélyfok;
+    const perFok = fortelyKpMap?.get(f.név) ?? kpConfig.fortélyfok;
+    const cost = f.fok * perFok;
+    if (cost <= 0) continue; // ingyenes vagy KP-t adó fortélyok nem számítanak költésbe
     kp_fortélyok += cost;
     if (!primerFortelyGroups.has(f.név)) {
       kp_szekunder_fortélyok += cost;

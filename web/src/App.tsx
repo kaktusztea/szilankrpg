@@ -27,6 +27,10 @@ function App() {
   const [activeTab, setActiveTab] = useState(2);
   const [gameMode, setGameMode] = useState(false);
   const [képzettségek, setKépzettségek] = useState(testKarakter8.képzettségek.map(k => ({ név: k.név, szint: k.szint })));
+  const [fortélyok, setFortélyok] = useState(() => [
+    ...testKarakter8.fortélyok.map(f => ({ név: f.név, fok: f.fok })),
+    ...testKarakter8.fortélyok_kiemelt.kulturkörök.map(k => ({ név: `Kultúrkör - ${k.név}`, fok: 1 })),
+  ]);
   const touchStart = useRef<number>(0);
   const touchY = useRef<number>(0);
 
@@ -78,7 +82,7 @@ function App() {
           {TABS.map((tab, i) => (
             <div key={tab.id} className="screen-slide">
               {Math.abs(i - activeTab) <= 1 && (
-                <TabContent tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab} képzettségek={képzettségek} setKépzettségek={setKépzettségek} />
+                <TabContent tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab} képzettségek={képzettségek} setKépzettségek={setKépzettségek} fortélyok={fortélyok} setFortélyok={setFortélyok} />
               )}
             </div>
           ))}
@@ -105,13 +109,27 @@ function App() {
           if (primerPrefixes.some(p => k.név.startsWith(p))) primerKepz.add(k.név);
         }
         const primerFortGroups = new Set(data.primerFortelyok);
-        const karakter = { ...testKarakter8, képzettségek: képzettségek.map(k => ({ ...k, spec: '' })) };
-        const kpResult = calcKp(karakter, data.konstansok.kp, data.konstansok.kp_bónusz, data.kepzettsegKp, primerKepz, primerFortGroups);
+        const fortelyKpMap = new Map(data.fortelySummaries.map(d => [d.név, d.ingyenes_perszint > 0 ? 0 : d.kp_perfok]));
+        const karakter = { ...testKarakter8, képzettségek: képzettségek.map(k => ({ ...k, spec: '' })), fortélyok: fortélyok.map(f => ({ ...f, spec: '' })) };
+        const kpResult = calcKp(karakter, data.konstansok.kp, data.konstansok.kp_bónusz, data.kepzettsegKp, primerKepz, primerFortGroups, fortelyKpMap);
+
+        // Kiemelt fortélyok KP költése (Kultúrkör, Helyismeret): ingyenesek feletti példányok
+        const tsz = testKarakter8.tsz;
+        let kiemeltKp = 0;
+        for (const d of data.fortelySummaries) {
+          if (d.ingyenes_perszint <= 0) continue;
+          const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
+          const felvettDb = fortélyok.filter(f => f.név === d.név || f.név.startsWith(d.név + ' - ')).reduce((s, f) => s + f.fok, 0);
+          const fizetősDb = Math.max(0, felvettDb - ingyenesDb);
+          kiemeltKp += fizetősDb * d.kp_perfok;
+        }
+
+        const maradékKp = kpResult.maradék_kp - kiemeltKp;
         const maradékSzekunder = Math.max(0, kpResult.összes_szekunder_kp - kpResult.kp_szekunder_költött);
-        const isNeg = kpResult.maradék_kp < 0;
+        const isNeg = maradékKp < 0;
         return (
           <div className={`kp-bar ${isNeg ? 'kp-bar-neg' : ''}`}>
-            <span>Maradt KP: {kpResult.maradék_kp}</span>
+            <span>Maradt KP: {maradékKp}</span>
             <span>Maradt Szekunder KP: {maradékSzekunder}</span>
           </div>
         );
@@ -132,7 +150,7 @@ function App() {
   );
 }
 
-function TabContent({ tab, data, gameMode, setActiveTab, képzettségek, setKépzettségek }: { tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void; képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>> }) {
+function TabContent({ tab, data, gameMode, setActiveTab, képzettségek, setKépzettségek, fortélyok, setFortélyok }: { tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void; képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>; fortélyok: { név: string; fok: number }[]; setFortélyok: React.Dispatch<React.SetStateAction<{ név: string; fok: number }[]>> }) {
   switch (tab) {
     case 'aktiv': return <div className="screen"><h2>❎ Aktív</h2><p>Szituáció beállítás (TODO)</p></div>;
     case 'harc': return <HarcScreen data={data} onNavigate={(id) => {
@@ -140,7 +158,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, képzettségek, setKép
       if (idx >= 0) setActiveTab(idx);
     }} />;
     case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} képzettségek={képzettségek} setKépzettségek={setKépzettségek} />;
-    case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} />;
+    case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} />;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <div className="screen"><h2>🛡️ Harcértékek</h2><p>HM/CM, Harcmodor bónuszok, Fegyverek, Páncél beállítás (TODO)</p></div>;
     case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;

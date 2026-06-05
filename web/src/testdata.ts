@@ -43,7 +43,7 @@ export const testKarakter8: Karakter = {
     { név: "Természetjárás", szint: 5, spec: "" },
   ],
   fortélyok_kiemelt: {
-    kulturkörök: [{ név: "dwoon" }, { név: "erv" }, { név: "pyar" }, { név: "dzsad" }],
+    kulturkörök: [{ név: "dw00n" }, { név: "erv" }, { név: "py4r" }, { név: "dzs4d" }],
     helyismeret: [{ helynév: "Erion" }, { helynév: "Pyarron" }, { helynév: "Haonwell" }, { helynév: "Shulur" }],
     nyelvismeret: [
       { nyelv: "pyarroni / közös nyelv", fok: 2 },
