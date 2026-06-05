@@ -17,6 +17,8 @@ kiterjeszti:
   normál: []
   erős: []
 
+kp_perfok: 6
+
 fokok:
   - fok: 1
     követelménytext: "Faj Háttér ahol ajánlott a Természetes páncél min. 1.fok."

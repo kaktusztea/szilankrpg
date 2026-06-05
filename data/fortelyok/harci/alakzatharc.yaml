@@ -21,6 +21,8 @@ megjegyzések:
 kiterjeszti:
   normál: []
   erős: []
+kp_perfok: 6
+
 fokok:
 - fok: 1
   követelménytext: 'A társak is ismerjék az adott alakzatot + Alakzat függő, lásd

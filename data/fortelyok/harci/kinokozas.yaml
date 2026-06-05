@@ -17,6 +17,8 @@ kiterjeszti:
   normál: []
   erős: []
 
+kp_perfok: 6
+
 fokok:
   - fok: 1
     követelménytext: "Egykezes szúró-vágó-ostor fegyver. Harci anatómia: 1.fok. Sikeres Precíz támadás manőver."

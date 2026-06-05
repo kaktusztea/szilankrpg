@@ -17,6 +17,8 @@ kiterjeszti:
   normál: []
   erős: []
 
+kp_perfok: 6
+
 fokok:
   - fok: 1
     követelménytext: "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája."

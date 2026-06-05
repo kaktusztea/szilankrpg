@@ -17,6 +17,8 @@ kiterjeszti:
   normál: ["Alkímia", "Lexikum", "Lopakodás/rejtőzés", "Természetjárás", "Vajákosság"]
   erős: []
 
+kp_perfok: 0
+
 fokok:
   - fok: 1
     követelménytext: ""

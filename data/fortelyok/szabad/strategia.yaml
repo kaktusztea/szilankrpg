@@ -17,6 +17,8 @@ kiterjeszti:
   normál: ["Hadászat", "Lexikum"]
   erős: []
 
+kp_perfok: 0
+
 fokok:
   - fok: 1
     követelménytext: ""

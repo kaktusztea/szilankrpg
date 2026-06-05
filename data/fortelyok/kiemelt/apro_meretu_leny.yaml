@@ -17,6 +17,8 @@ kiterjeszti:
   normál: []
   erős: []
 
+kp_perfok: -18
+
 fokok:
   - fok: 1
     követelménytext: ""

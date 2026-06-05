@@ -17,6 +17,8 @@ kiterjeszti:
   normál: ["Értékbecslés", "Kultúrkör", "Képzőművészet", "Művészetismeret", "Kultúrkör"]
   erős: []
 
+kp_perfok: 0
+
 fokok:
   - fok: 1
     követelménytext: ""

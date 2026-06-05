@@ -17,6 +17,8 @@ kiterjeszti:
   normál: ["Befolyásolás", "Előadóművészet", "Lopás"]
   erős: []
 
+kp_perfok: 0
+
 fokok:
   - fok: 1
     követelménytext: ""

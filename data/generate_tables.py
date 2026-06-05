@@ -74,6 +74,8 @@ def generate_fortelyok():
                 'név': data['név'],
                 'csoport': data.get('csoport', ''),
                 'maxfok': data.get('maxfok', 1),
+                'kp_perfok': data.get('kp_perfok', 6),
+                'ingyenes_perszint': data.get('ingyenes_perszint', 0),
                 'leírás': leírás,
                 'kiterjeszti_normál': kit_norm,
                 'kiterjeszti_erős': kit_eros,

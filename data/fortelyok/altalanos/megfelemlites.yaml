@@ -17,6 +17,8 @@ kiterjeszti:
   normál: ["Befolyásolás", "Emberismeret"]
   erős: []
 
+kp_perfok: 6
+
 fokok:
   - fok: 1
     követelménytext: ""
