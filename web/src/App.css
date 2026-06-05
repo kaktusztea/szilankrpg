@@ -20,6 +20,7 @@ body {
   font-size: 14px;
   overflow: hidden;
   height: 100dvh;
+  -webkit-touch-callout: none;
 }
 
 #root { height: 100%; }
@@ -30,6 +31,8 @@ body {
   height: 100%;
   max-width: 600px;
   margin: 0 auto;
+  -webkit-user-select: none;
+  user-select: none;
 }
 
 .header {

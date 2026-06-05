@@ -77,6 +77,7 @@
   padding: 6px 10px;
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   gap: 4px;
   user-select: none;
@@ -85,7 +86,22 @@
 }
 
 .tul-cell.editable {
-  cursor: grab;
+  cursor: pointer;
+}
+
+.tul-cell.tul-warn {
+  border-color: var(--warning);
+}
+
+.tul-value-warn {
+  color: var(--warning) !important;
+}
+
+.tul-warn-info {
+  font-size: 10px;
+  color: var(--warning);
+  width: 100%;
+  text-align: left;
 }
 
 .tul-cell.sliding {

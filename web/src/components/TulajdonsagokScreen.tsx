@@ -223,6 +223,8 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
             érték={tulajdonságok[key]}
             gameMode={gameMode}
             onChange={v => setTul(key, v)}
+            fajMax={data.fajKeretek[faj]?.[key]?.[1]}
+            fajMin={data.fajKeretek[faj]?.[key]?.[0]}
           />
         ))}
       </div>
@@ -406,25 +408,32 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
 }
 
 /* --- Tulajdonság cella --- */
-function TulajdonsagCell({ név, érték, gameMode, onChange }: {
-  név: string; érték: number; gameMode: boolean; onChange: (v: number) => void;
+function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: {
+  név: string; érték: number; gameMode: boolean; onChange: (v: number) => void; fajMin?: number; fajMax?: number;
 }) {
   const [editing, setEditing] = useState(false);
   const [tempVal, setTempVal] = useState(érték);
+  const [showWarning, setShowWarning] = useState(false);
   const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   const label = név.charAt(0).toUpperCase() + név.slice(1);
+  const overLimit = fajMax !== undefined && érték > fajMax;
+  const underLimit = fajMin !== undefined && érték < fajMin;
+  const hasWarning = overLimit || underLimit;
 
   return (
     <>
       <div
-        className={`tul-cell ${!gameMode ? 'editable' : ''}`}
+        className={`tul-cell ${!gameMode ? 'editable' : ''} ${hasWarning ? 'tul-warn' : ''}`}
         onPointerDown={() => { if (!gameMode) longPressTimer.current = setTimeout(() => { longPressTimer.current = null; setTempVal(érték); setEditing(true); }, 400); }}
-        onPointerUp={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
+        onPointerUp={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; if (hasWarning) setShowWarning(!showWarning); } }}
         onPointerCancel={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
       >
         <span className="tul-label">{label}:</span>
-        <span className="tul-value">{érték}</span>
+        <span className={`tul-value ${hasWarning ? 'tul-value-warn' : ''}`}>{érték}</span>
+        {hasWarning && showWarning && (
+          <div className="tul-warn-info">{overLimit ? `Faj max: ${fajMax}` : `Faj min: ${fajMin}`}</div>
+        )}
       </div>
       {editing && createPortal(
         <div className="kep-prompt-overlay">
@@ -555,10 +564,7 @@ function KepzettsegRow({ slot, csoportDefs, usedNames, gameMode, onNévChange, o
         )}
         <span className="kep-right">
           {!gameMode && !sliding && (
-            <button className="kep-delete" onClick={e => {
-              e.stopPropagation();
-              onRemove();
-            }}>✕</button>
+            <button className="kep-delete" onPointerDown={e => e.stopPropagation()} onPointerUp={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className="kep-szint">{sliding ? tempSzint : slot.szint}</span>
         </span>

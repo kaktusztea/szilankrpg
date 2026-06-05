@@ -1,0 +1,886 @@
+{
+  "Amund": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      3
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      3
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Anatyda": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Buzzgoblin": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Dzsenn": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Elar": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Elf": {
+    "erő": [
+      -5,
+      4
+    ],
+    "edzettség": [
+      -5,
+      4
+    ],
+    "ügyesség": [
+      -2,
+      6
+    ],
+    "gyorsaság": [
+      -2,
+      6
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Ember (Déli)": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Ember (Északi)": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Ember-Slan": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Erdőpille": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Feenhar": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Gnóm": {
+    "erő": [
+      -5,
+      2
+    ],
+    "edzettség": [
+      -5,
+      3
+    ],
+    "ügyesség": [
+      -2,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Goblin": {
+    "erő": [
+      -5,
+      2
+    ],
+    "edzettség": [
+      -2,
+      3
+    ],
+    "ügyesség": [
+      -5,
+      6
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      2
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Gyíklény (snil)": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Hómanó": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Homoki elf": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Kevert fajú": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Khál": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      2
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      2
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Kineta": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Kobold": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Kyr": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      4
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -3,
+      6
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Ork": {
+    "erő": [
+      -1,
+      6
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      2
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Sáskaharcos": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Törpe": {
+    "erő": [
+      -1,
+      5
+    ],
+    "edzettség": [
+      -2,
+      6
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      4
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      6
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Tűzkobold": {
+    "erő": [
+      -5,
+      5
+    ],
+    "edzettség": [
+      -5,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      5
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  },
+  "Udvari ork": {
+    "erő": [
+      -1,
+      6
+    ],
+    "edzettség": [
+      -1,
+      5
+    ],
+    "ügyesség": [
+      -5,
+      5
+    ],
+    "gyorsaság": [
+      -5,
+      5
+    ],
+    "intelligencia": [
+      -5,
+      3
+    ],
+    "emlékezet": [
+      -5,
+      5
+    ],
+    "önuralom": [
+      -5,
+      5
+    ],
+    "érzékenység": [
+      -5,
+      5
+    ]
+  }
+}

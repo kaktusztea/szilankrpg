@@ -1,0 +1,143 @@
+.fort-screen {
+  padding-bottom: 20px;
+}
+
+.fort-section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.fort-csoport-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #333;
+  cursor: pointer;
+  user-select: none;
+}
+
+.fort-csoport-arrow {
+  font-size: 11px;
+  margin-right: 2px;
+}
+
+.fort-row-wrapper {
+  margin-bottom: 1px;
+}
+
+.fort-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: var(--surface);
+  border: 1px solid #3a3a5a;
+  border-radius: 4px;
+  user-select: none;
+  cursor: pointer;
+}
+
+.fort-row-new {
+  opacity: 0.7;
+}
+
+.fort-név {
+  font-size: 13px;
+  color: var(--text);
+}
+
+.fort-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fort-fok {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--warning);
+  min-width: 30px;
+  text-align: right;
+}
+
+.fort-delete {
+  background: none;
+  border: none;
+  color: #6ec6ff;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+.fort-select {
+  flex: 1;
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 13px;
+  width: 100%;
+}
+
+.fort-info {
+  background: #1a1a3a;
+  border: 1px solid #444;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 6px 10px;
+  font-size: 12px;
+}
+
+.fort-info-desc {
+  color: var(--text-dim);
+  margin-bottom: 4px;
+  font-style: italic;
+}
+
+.fort-info-row {
+  margin-bottom: 3px;
+}
+
+.fort-info-label {
+  color: var(--text-dim);
+  margin-right: 4px;
+}
+
+.fort-info-kit {
+  color: var(--success);
+}
+
+/* --- Fok radio buttons --- */
+.fort-fok-radios {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+}
+
+.fort-fok-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #555;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.fort-fok-btn.active {
+  border-color: var(--success);
+  background: var(--success);
+  color: #000;
+}
+
+.fort-fok-btn.fort-fok-del {
+  border-color: var(--error);
+  color: var(--error);
+}

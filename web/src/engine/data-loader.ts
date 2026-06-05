@@ -61,6 +61,23 @@ export interface KiterjesztesEntry {
   típus: 'normál' | 'erős';
 }
 
+// --- Fortély összefoglaló (UI-hoz) ---
+export interface FortelyFokSummary {
+  fok: number;
+  hatás: string[];
+  követelmény: string;
+}
+
+export interface FortelySummary {
+  név: string;
+  csoport: string;
+  maxfok: number;
+  leírás: string;
+  kiterjeszti_normál: string[];
+  kiterjeszti_erős: string[];
+  fokok: FortelyFokSummary[];
+}
+
 // --- Betöltött adat ---
 export interface GameData {
   konstansok: KonstansokRaw;
@@ -72,11 +89,13 @@ export interface GameData {
   kepzettsegDefs: KepzettsegDef[];
   kiterjesztesek: Record<string, KiterjesztesEntry[]>;
   fajNevek: string[];
+  fajKeretek: Record<string, Record<string, [number, number]>>;
   primerFortelyok: string[];
+  fortelySummaries: FortelySummary[];
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries] = await Promise.all([
     fetchYaml<KonstansokRaw>('konstansok.yaml'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
@@ -87,6 +106,8 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<Record<string, KiterjesztesEntry[]>>('tables/kiterjesztesek.json'),
     fetchJson<string[]>('tables/fajok.json'),
     fetchJson<string[]>('tables/primer_fortelyok.json'),
+    fetchJson<Record<string, Record<string, [number, number]>>>('tables/faj_tulajdonsag_keretek.json'),
+    fetchJson<FortelySummary[]>('tables/fortelyok.json'),
   ]);
 
   const kepzettsegKp = kepzettsegKpRaw.map(e => ({
@@ -101,5 +122,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok };
+  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries };
 }

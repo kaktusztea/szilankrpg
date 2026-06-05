@@ -3,6 +3,7 @@ import { loadGameData } from './engine/data-loader';
 import type { GameData } from './engine/data-loader';
 import { HarcScreen } from './components/HarcScreen';
 import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
+import { FortelyokScreen } from './components/FortelyokScreen';
 import { calcKp } from './engine/kp';
 import { testKarakter8 } from './testdata';
 import './App.css';
@@ -56,7 +57,7 @@ function App() {
   if (!data) return <div className="loading">Betöltés...</div>;
 
   return (
-    <div className="app">
+    <div className="app" onContextMenu={e => e.preventDefault()}>
       <header className="header">
         <span className="title">Szilánk RPG</span>
         <button
@@ -139,7 +140,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, képzettségek, setKép
       if (idx >= 0) setActiveTab(idx);
     }} />;
     case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} képzettségek={képzettségek} setKépzettségek={setKépzettségek} />;
-    case 'fortelyok': return <div className="screen"><h2>🟣 Fortélyok</h2><p>{gameMode ? 'Read-only mód' : 'Szerkesztő mód'}</p></div>;
+    case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} />;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <div className="screen"><h2>🛡️ Harcértékek</h2><p>HM/CM, Harcmodor bónuszok, Fegyverek, Páncél beállítás (TODO)</p></div>;
     case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;

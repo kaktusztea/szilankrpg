@@ -1,0 +1,215 @@
+import { useState, useRef } from 'react';
+import { createPortal } from 'react-dom';
+import type { GameData, FortelySummary } from '../engine/data-loader';
+import { testKarakter8 } from '../testdata';
+import './FortelyokScreen.css';
+
+const CSOPORT_SORREND = ['harci', 'altalanos', 'erzekek', 'szabad', 'kiemelt', 'misztikus'];
+const CSOPORT_LABEL: Record<string, string> = {
+  harci: '⚔️ Harci', altalanos: '🔧 Általános', erzekek: '👁️ Érzékek',
+  szabad: '🆓 Szabad', kiemelt: '⭐ Kiemelt', misztikus: '✨ Misztikus',
+};
+
+interface FortelySlot {
+  név: string;
+  fok: number;
+}
+
+interface Props {
+  data: GameData;
+  gameMode: boolean;
+}
+
+export function FortelyokScreen({ data, gameMode }: Props) {
+  const [fortélyok, setFortélyok] = useState<FortelySlot[]>(
+    testKarakter8.fortélyok.map(f => ({ név: f.név, fok: f.fok }))
+  );
+  const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+  const [infoTarget, setInfoTarget] = useState<string | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; fok: number } | null>(null);
+
+  const defsByGroup = new Map<string, FortelySummary[]>();
+  for (const d of data.fortelySummaries) {
+    const arr = defsByGroup.get(d.csoport) || [];
+    arr.push(d);
+    defsByGroup.set(d.csoport, arr);
+  }
+
+  function setFok(idx: number, fok: number) {
+    setFortélyok(prev => prev.map((f, i) => i === idx ? { ...f, fok } : f));
+  }
+
+  function addFortely(név: string) {
+    setFortélyok(prev => [...prev, { név, fok: 1 }]);
+  }
+
+  function getFortelyokForCsoport(csoport: string): FortelySlot[] {
+    const csoportNevek = (defsByGroup.get(csoport) || []).map(d => d.név);
+    return fortélyok.filter(f => csoportNevek.includes(f.név));
+  }
+
+  return (
+    <div className="screen fort-screen">
+      <div className="fort-section">
+        {CSOPORT_SORREND.map(csoport => {
+          const csoportDefs = defsByGroup.get(csoport) || [];
+          const slotok = getFortelyokForCsoport(csoport);
+          const usedNames = slotok.map(s => s.név);
+          const available = csoportDefs.filter(d => !usedNames.includes(d.név));
+          const collapsed = collapsedGroups.has(csoport);
+
+          return (
+            <div key={csoport} className="fort-csoport">
+              <h3 className="fort-csoport-label" onClick={() => setCollapsedGroups(prev => { const n = new Set(prev); if (n.has(csoport)) n.delete(csoport); else n.add(csoport); return n; })}>
+                <span className="fort-csoport-arrow">{collapsed ? '▸' : '▾'}</span> {CSOPORT_LABEL[csoport]} <span className="dim">({slotok.length})</span>
+              </h3>
+              {!collapsed && (<>
+                {slotok.map((slot, i) => {
+                  const globalIdx = fortélyok.findIndex(f => f === slot);
+                  const def = csoportDefs.find(d => d.név === slot.név);
+                  const isOpen = infoTarget === `${globalIdx}`;
+                  return (
+                    <FortelyRow
+                      key={`${csoport}-${i}`}
+                      slot={slot}
+                      def={def}
+                      gameMode={gameMode}
+                      isOpen={isOpen}
+                      onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
+                      onFokChange={fok => setFok(globalIdx, fok)}
+                      onRemove={() => {
+                        if (slot.fok <= 1) {
+                          setFortélyok(prev => prev.filter((_, i2) => i2 !== globalIdx));
+                        } else {
+                          setDeleteTarget({ idx: globalIdx, név: slot.név, fok: slot.fok });
+                        }
+                      }}
+                    />
+                  );
+                })}
+                {!gameMode && available.length > 0 && (
+                  <div className="fort-row fort-row-new">
+                    <select
+                      className="fort-select"
+                      value=""
+                      onChange={e => { if (e.target.value) addFortely(e.target.value); }}
+                    >
+                      <option value="">+ Új fortély...</option>
+                      {available.map(d => <option key={d.név} value={d.név}>{d.név} (max {d.maxfok})</option>)}
+                    </select>
+                  </div>
+                )}
+              </>)}
+            </div>
+          );
+        })}
+      </div>
+
+      {deleteTarget && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Törlöd: {deleteTarget.név} (fok: {deleteTarget.fok})?</label>
+            <div className="kep-prompt-btns">
+              <button onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Törlés</button>
+              <button onClick={() => setDeleteTarget(null)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </div>
+  );
+}
+
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove }: {
+  slot: FortelySlot;
+  def?: FortelySummary;
+  gameMode: boolean;
+  isOpen: boolean;
+  onToggleInfo: () => void;
+  onFokChange: (fok: number) => void;
+  onRemove: () => void;
+}) {
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [editing, setEditing] = useState(false);
+  const [tempFok, setTempFok] = useState(slot.fok);
+  const maxfok = def?.maxfok ?? 1;
+
+  function handlePointerDown() {
+    if (gameMode) return;
+    longPressTimer.current = setTimeout(() => {
+      longPressTimer.current = null;
+      setTempFok(slot.fok);
+      setEditing(true);
+    }, 400);
+  }
+
+  function handlePointerUp() {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current);
+      longPressTimer.current = null;
+      // Rövid kopp: szerkesztő módban NEM nyit infót, csak Game módban
+      if (gameMode) onToggleInfo();
+    }
+  }
+
+  const fokDef = def?.fokok.find(f => f.fok === slot.fok);
+
+  return (
+    <div className="fort-row-wrapper">
+      <div
+        className="fort-row"
+        onPointerDown={handlePointerDown}
+        onPointerUp={handlePointerUp}
+        onPointerCancel={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
+        onClick={gameMode ? onToggleInfo : undefined}
+      >
+        <span className="fort-név">{slot.név}</span>
+        <span className="fort-right">
+          {!gameMode && (
+            <button className="fort-delete" onPointerDown={e => e.stopPropagation()} onPointerUp={e => { e.stopPropagation(); onRemove(); }}>✕</button>
+          )}
+          <span className="fort-fok">{slot.fok}/{maxfok}</span>
+        </span>
+      </div>
+      {isOpen && def && (
+        <div className="fort-info">
+          {def.leírás && <div className="fort-info-desc">{def.leírás}</div>}
+          {fokDef && fokDef.hatás.length > 0 && (
+            <div className="fort-info-row"><span className="fort-info-label">Hatás:</span> {fokDef.hatás.join(' ')}</div>
+          )}
+          {fokDef && fokDef.követelmény && (
+            <div className="fort-info-row"><span className="fort-info-label">Követelmény:</span> {fokDef.követelmény}</div>
+          )}
+          {(def.kiterjeszti_normál.length > 0 || def.kiterjeszti_erős.length > 0) && (
+            <div className="fort-info-row">
+              <span className="fort-info-label">Kiterjeszti:</span>{' '}
+              <span className="fort-info-kit">
+                {def.kiterjeszti_normál.join(', ')}
+                {def.kiterjeszti_erős.length > 0 && ` | Erős: ${def.kiterjeszti_erős.join(', ')}`}
+              </span>
+            </div>
+          )}
+        </div>
+      )}
+      {editing && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>{slot.név} — fok:</label>
+            <div className="fort-fok-radios">
+              <button className="fort-fok-btn fort-fok-del" onClick={() => { onRemove(); setEditing(false); }}>✕</button>
+              {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
+                <button key={f} className={`fort-fok-btn ${tempFok === f ? 'active' : ''}`} onClick={() => setTempFok(f)}>{f}</button>
+              ))}
+            </div>
+            <div className="kep-prompt-btns">
+              <button onClick={() => { onFokChange(tempFok); setEditing(false); }}>OK</button>
+              <button onClick={() => setEditing(false)}>Mégse</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+    </div>
+  );
+}
