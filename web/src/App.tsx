@@ -62,7 +62,7 @@ function App() {
   if (!data) return <div className="loading">Betöltés...</div>;
 
   return (
-    <div className="app" onContextMenu={e => e.preventDefault()}>
+    <div className="app" onContextMenu={e => e.preventDefault()} onSelect={e => e.preventDefault()}>
       <header className="header">
         <span className="title">Szilánk RPG</span>
         <button
