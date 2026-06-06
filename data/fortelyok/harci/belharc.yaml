@@ -5,7 +5,7 @@ név: "Belharc"
 névkomment: adott fegyverre
 maxfok: 2
 többszörösség:
-  spec_típus: "fegyver"
+  spec_típus: ""
   spec_lista: []
 csoport: harci
 leírások:

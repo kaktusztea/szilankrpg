@@ -1294,7 +1294,7 @@
     ]
   },
   {
-    "név": "alakzatharc",
+    "név": "Alakzatharc",
     "csoport": "harci",
     "maxfok": 2,
     "kp_perfok": 6,
@@ -1389,7 +1389,7 @@
     "maxfok": 2,
     "kp_perfok": 6,
     "ingyenes_perszint": 0,
-    "többszörös_típus": "fegyver",
+    "többszörös_típus": "",
     "többszörös_lista": [],
     "leírás": "Testközelben érzed igazában elemedben magad. Sikeres 🗡️Belharcba kerülés🗡️ manőver esetén 🗡️Belharci szituációba🗡️ kerülsz és harcértékeidre - csak **Közelharc** harcmodor esetén - a lent leírt pluszok járnak.",
     "kiterjeszti_normál": [],
@@ -1408,7 +1408,7 @@
     ]
   },
   {
-    "név": "célzás",
+    "név": "Célzás",
     "csoport": "harci",
     "maxfok": 1,
     "kp_perfok": 6,
@@ -1464,7 +1464,7 @@
     ]
   },
   {
-    "név": "elsöprő roham",
+    "név": "Elsöprő roham",
     "csoport": "harci",
     "maxfok": 1,
     "kp_perfok": 6,
@@ -1485,7 +1485,7 @@
     ]
   },
   {
-    "név": "fárasztás",
+    "név": "Fárasztás",
     "csoport": "harci",
     "maxfok": 1,
     "kp_perfok": 6,
@@ -1506,7 +1506,7 @@
     ]
   },
   {
-    "név": "fegyverrántás",
+    "név": "Fegyverrántás",
     "csoport": "harci",
     "maxfok": 2,
     "kp_perfok": 6,

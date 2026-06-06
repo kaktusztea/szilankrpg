@@ -1,12 +1,17 @@
 [
   "Alakzat: támadó",
   "Alakzat: védekező",
+  "Alakzatharc",
   "Alkalmatlan fegyver hajítása",
   "Alkalmatlan tárgyak hajítása",
   "Antissjárás",
   "Belharc",
   "Belső síkok lényeinek ismerete",
+  "Célzás",
   "Elpusztíthatatlan",
+  "Elsöprő roham",
+  "Fegyverrántás",
+  "Fárasztás",
   "Gladiátor bestiái",
   "Gladiátor közönsége",
   "Gyors kezdeményezés",
@@ -46,10 +51,5 @@
   "Vezető: Léglovaskapitány",
   "Vezető: Testőrparancsnok",
   "Vezető: Íjászparancsnok",
-  "alakzatharc",
-  "célzás",
-  "elsöprő roham",
-  "fegyverrántás",
-  "fárasztás",
   "harci akrobatika"
 ]
