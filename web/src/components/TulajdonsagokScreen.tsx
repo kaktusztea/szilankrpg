@@ -313,11 +313,9 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
 
       {deleteTarget && createPortal(
         <div className="kep-prompt-overlay">
-          <div className="kep-prompt">
-            <label>"{deleteTarget.név}" képzettség</label>
-            <div className="kep-prompt-btns">
-              <button className="btn-del-confirm" onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Törlés</button>
-            </div>
+          <div className="kep-prompt" style={{ alignItems: 'center' }}>
+            <label>{deleteTarget.név}</label>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Képzettség törlése</button>
           </div>
         </div>,
         document.body

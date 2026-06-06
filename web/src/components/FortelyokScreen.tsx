@@ -172,11 +172,9 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
 
       {deleteTarget && createPortal(
         <div className="kep-prompt-overlay">
-          <div className="kep-prompt">
-            <label>"{deleteTarget.név}" fortély</label>
-            <div className="kep-prompt-btns">
-              <button className="btn-del-confirm" onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Törlés</button>
-            </div>
+          <div className="kep-prompt" style={{ alignItems: 'center' }}>
+            <label>{deleteTarget.név}</label>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Fortély törlése</button>
           </div>
         </div>,
         document.body

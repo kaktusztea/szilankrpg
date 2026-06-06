@@ -30,15 +30,16 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
   }
   const [showSebDialog, setShowSebDialog] = useState(false);
   const [showGyógyDialog, setShowGyógyDialog] = useState(false);
+  const [showResetConfirm, setShowResetConfirm] = useState(false);
 
   useEffect(() => {
-    if (!showSebDialog && !showGyógyDialog) return;
+    if (!showSebDialog && !showGyógyDialog && !showResetConfirm) return;
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') { setShowSebDialog(false); setShowGyógyDialog(false); }
+      if (e.key === 'Escape') { setShowSebDialog(false); setShowGyógyDialog(false); setShowResetConfirm(false); }
     }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showSebDialog, showGyógyDialog]);
+  }, [showSebDialog, showGyógyDialog, showResetConfirm]);
 
   function sebesülés(típus: SebTípus, érték: number) {
     const újRubrikák = [...rubrikák];
@@ -104,8 +105,8 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
   return (
     <div className="ep-table-wrapper">
       <div className="ep-table-header">
-        <span><strong>ÉP: {ÉP}</strong></span>
-        <span>Seb: {kitöltött}/{ÉP}</span>
+        <span><strong>ÉP: {ÉP}({ÉP - kitöltött})</strong></span>
+        <button className="btn-reset" disabled={kitöltött === 0} onClick={() => setShowResetConfirm(true)}>⟲ ÉP reset</button>
         <button className="btn-seb" onClick={() => setShowSebDialog(true)}>⚔️ Seb</button>
         <button className="btn-heal" disabled={kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógy</button>
       </div>
@@ -132,9 +133,6 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
         ))}
       </div>
 
-      <div className="ep-buttons">
-        <button className="btn-reset" onClick={reset}>⟲ Reset</button>
-      </div>
 
       {showSebDialog && createPortal(
         <div className="kep-prompt-overlay">
@@ -150,6 +148,14 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
             onConfirm={gyógyulás}
             onCancel={() => setShowGyógyDialog(false)}
           />
+        </div>,
+        document.body
+      )}
+      {showResetConfirm && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={() => { reset(); setShowResetConfirm(false); }}>ÉP Reset</button>
+          </div>
         </div>,
         document.body
       )}

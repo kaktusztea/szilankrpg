@@ -10,7 +10,8 @@
 }
 
 .ep-table-header .btn-seb,
-.ep-table-header .btn-heal {
+.ep-table-header .btn-heal,
+.ep-table-header .btn-reset {
   padding: 4px 6px;
   border-radius: 4px;
   border: 1px solid #555;
@@ -29,7 +30,15 @@
   color: #000;
 }
 
-.ep-table-header .btn-heal:disabled {
+.ep-table-header .btn-reset {
+  background: var(--input-bg);
+  color: var(--text);
+  max-width: 70%;
+  justify-self: center;
+}
+
+.ep-table-header .btn-heal:disabled,
+.ep-table-header .btn-reset:disabled {
   opacity: 0.4;
   cursor: default;
 }

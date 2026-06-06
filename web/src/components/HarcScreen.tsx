@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import { testKarakter8 } from '../testdata';
 import { calcEp } from '../engine/ep';
@@ -11,6 +12,14 @@ import './HarcScreen.css';
 export function HarcScreen({ data, onNavigate }: { data: GameData; onNavigate?: (tabId: string) => void }) {
   const [véCsökkenés, setVéCsökkenés] = useState(0);
   const [aktManöverPont, setAktManöverPont] = useState(99);
+  const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
+
+  useEffect(() => {
+    if (!showVéResetConfirm) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setShowVéResetConfirm(false); }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [showVéResetConfirm]);
 
   const k = testKarakter8;
   const { konstansok, harcmodorBonusz } = data;
@@ -72,14 +81,14 @@ export function HarcScreen({ data, onNavigate }: { data: GameData; onNavigate?: 
           </div>
         </div>
         <div className="ve-csokk-box">
-          <span className="label">VÉ csökk.</span>
+          <span className="label">VÉ csökkent</span>
           <span className="value">{véCsökkenés}</span>
           <div className="ve-btns">
             <button onClick={() => setVéCsökkenés(véCsökkenés + 1)}>+1</button>
             <button onClick={() => setVéCsökkenés(véCsökkenés + 2)}>+2</button>
             <button onClick={() => setVéCsökkenés(véCsökkenés + 3)}>+3</button>
             <button onClick={() => setVéCsökkenés(Math.max(0, véCsökkenés - 1))}>-1</button>
-            <button onClick={() => setVéCsökkenés(0)}>⟲</button>
+            <button disabled={véCsökkenés === 0} onClick={() => setShowVéResetConfirm(true)}>⟲</button>
           </div>
         </div>
         <div className="mp-box">
@@ -119,6 +128,14 @@ export function HarcScreen({ data, onNavigate }: { data: GameData; onNavigate?: 
         <EpTable ÉP={ep.ÉP} onSebCountChange={setSebCount} />
       </div>
 
+      {showVéResetConfirm && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={() => { setVéCsökkenés(0); setShowVéResetConfirm(false); }}>VÉ Reset</button>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
