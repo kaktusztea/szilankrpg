@@ -194,6 +194,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
       {/* Fejléc: Név + Szint */}
       <div className="tul-header">
         <div className="tul-header-box tul-header-név"
+          onTouchStart={e => { if (!gameMode) e.preventDefault(); }}
           onPointerDown={() => { if (!gameMode) névLongPress.current = setTimeout(() => { névLongPress.current = null; setTempNév(név); setEditingNév(true); }, 400); }}
           onPointerUp={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
           onPointerCancel={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
@@ -202,6 +203,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
         </div>
         <div
           className="tul-header-box"
+          onTouchStart={e => { if (!gameMode) e.preventDefault(); }}
           onPointerDown={() => { if (!gameMode) tszLongPress.current = setTimeout(() => { tszLongPress.current = null; setTempTsz(tsz); setEditingTsz(true); }, 400); }}
           onPointerUp={() => { if (tszLongPress.current) { clearTimeout(tszLongPress.current); tszLongPress.current = null; } }}
           onPointerCancel={() => { if (tszLongPress.current) { clearTimeout(tszLongPress.current); tszLongPress.current = null; } }}
@@ -214,6 +216,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
       {!gameMode && (
         <div className="tul-faj-kor-row">
           <div className="tul-faj-row"
+            onTouchStart={e => e.preventDefault()}
             onPointerDown={() => { fajLongPress.current = setTimeout(() => { fajLongPress.current = null; setEditingFaj(true); }, 400); }}
             onPointerUp={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
             onPointerCancel={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
@@ -221,6 +224,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
             <span className="tul-header-label">Faj:</span> <strong>{faj}</strong>
           </div>
           <div className="tul-faj-row"
+            onTouchStart={e => e.preventDefault()}
             onPointerDown={() => { korLongPress.current = setTimeout(() => { korLongPress.current = null; setTempKor(kor); setEditingKor(true); }, 400); }}
             onPointerUp={() => { if (korLongPress.current) { clearTimeout(korLongPress.current); korLongPress.current = null; } }}
             onPointerCancel={() => { if (korLongPress.current) { clearTimeout(korLongPress.current); korLongPress.current = null; } }}
@@ -458,6 +462,7 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
     <>
       <div
         className={`tul-cell ${!gameMode ? 'editable' : ''} ${hasWarning ? 'tul-warn' : ''}`}
+        onTouchStart={e => { if (!gameMode) e.preventDefault(); }}
         onPointerDown={() => { if (!gameMode) longPressTimer.current = setTimeout(() => { longPressTimer.current = null; setTempVal(érték); setEditing(true); }, 400); }}
         onPointerUp={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; if (hasWarning) setShowWarning(!showWarning); } }}
         onPointerCancel={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
@@ -551,7 +556,7 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
         onPointerDown={!gameMode ? handlePointerDown : undefined}
         onPointerUp={!gameMode ? handlePointerUp : undefined}
         onPointerCancel={!gameMode ? handlePointerUp : undefined}
-        onTouchStart={e => { if (!gameMode) e.stopPropagation(); }}
+        onTouchStart={e => { if (!gameMode) { e.preventDefault(); e.stopPropagation(); } }}
         onTouchEnd={e => { if (!gameMode) e.stopPropagation(); }}
         onClick={gameMode ? handleClick : undefined}
       >

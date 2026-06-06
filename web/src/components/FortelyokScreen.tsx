@@ -288,6 +288,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
     <div className="fort-row-wrapper">
       <div
         className="fort-row"
+        onTouchStart={e => { if (!gameMode) e.preventDefault(); }}
         onPointerDown={handlePointerDown}
         onPointerUp={handlePointerUp}
         onPointerCancel={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
