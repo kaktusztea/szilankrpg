@@ -41,6 +41,19 @@ function App() {
     loadGameData().then(setData).catch(e => setError(String(e)));
   }, []);
 
+  // Click on overlay backdrop closes any popup
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      const el = e.target as HTMLElement;
+      if (el.classList.contains('kep-prompt-overlay')) {
+        // Simulate Escape to close whatever is open
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+      }
+    }
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, []);
+
   function handleTouchStart(e: TouchEvent) {
     const target = e.target as HTMLElement;
     if (target.closest('.kep-prompt-overlay')) { touchStart.current = 0; touchY.current = 0; return; }
