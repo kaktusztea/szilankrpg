@@ -36,15 +36,15 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
   const [tsz, setTsz] = useState(testKarakter8.tsz);
   const [editingTsz, setEditingTsz] = useState(false);
   const [tempTsz, setTempTsz] = useState(testKarakter8.tsz);
-  const tszLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const névLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastTapNév = useRef(0);
+  const lastTapTsz = useRef(0);
   const [faj, setFaj] = useState(testKarakter8.hátterek.faj);
   const [editingFaj, setEditingFaj] = useState(false);
-  const fajLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastTapFaj = useRef(0);
   const [kor, setKor] = useState(testKarakter8.kor);
   const [editingKor, setEditingKor] = useState(false);
   const [tempKor, setTempKor] = useState(testKarakter8.kor);
-  const korLongPress = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastTapKor = useRef(0);
 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
@@ -194,19 +194,13 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
       {/* Fejléc: Név + Szint */}
       <div className="tul-header">
         <div className="tul-header-box tul-header-név"
-          onTouchStart={e => { if (!gameMode) e.preventDefault(); }}
-          onPointerDown={() => { if (!gameMode) névLongPress.current = setTimeout(() => { névLongPress.current = null; setTempNév(név); setEditingNév(true); }, 400); }}
-          onPointerUp={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
-          onPointerCancel={() => { if (névLongPress.current) { clearTimeout(névLongPress.current); névLongPress.current = null; } }}
+          onClick={() => { if (gameMode) return; const now = Date.now(); if (now - lastTapNév.current < 350) { setTempNév(név); setEditingNév(true); lastTapNév.current = 0; } else { lastTapNév.current = now; } }}
         >
           <span className="tul-header-label">Név:</span> <strong>{gameMode ? `${név} (${faj}, ${kor})` : név}</strong>
         </div>
         <div
           className="tul-header-box"
-          onTouchStart={e => { if (!gameMode) e.preventDefault(); }}
-          onPointerDown={() => { if (!gameMode) tszLongPress.current = setTimeout(() => { tszLongPress.current = null; setTempTsz(tsz); setEditingTsz(true); }, 400); }}
-          onPointerUp={() => { if (tszLongPress.current) { clearTimeout(tszLongPress.current); tszLongPress.current = null; } }}
-          onPointerCancel={() => { if (tszLongPress.current) { clearTimeout(tszLongPress.current); tszLongPress.current = null; } }}
+          onClick={() => { if (gameMode) return; const now = Date.now(); if (now - lastTapTsz.current < 350) { setTempTsz(tsz); setEditingTsz(true); lastTapTsz.current = 0; } else { lastTapTsz.current = now; } }}
         >
           <span className="tul-header-label">Szint:</span> <strong>{tsz}</strong>
         </div>
@@ -216,18 +210,12 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
       {!gameMode && (
         <div className="tul-faj-kor-row">
           <div className="tul-faj-row"
-            onTouchStart={e => e.preventDefault()}
-            onPointerDown={() => { fajLongPress.current = setTimeout(() => { fajLongPress.current = null; setEditingFaj(true); }, 400); }}
-            onPointerUp={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
-            onPointerCancel={() => { if (fajLongPress.current) { clearTimeout(fajLongPress.current); fajLongPress.current = null; } }}
+            onClick={() => { const now = Date.now(); if (now - lastTapFaj.current < 350) { setEditingFaj(true); lastTapFaj.current = 0; } else { lastTapFaj.current = now; } }}
           >
             <span className="tul-header-label">Faj:</span> <strong>{faj}</strong>
           </div>
           <div className="tul-faj-row"
-            onTouchStart={e => e.preventDefault()}
-            onPointerDown={() => { korLongPress.current = setTimeout(() => { korLongPress.current = null; setTempKor(kor); setEditingKor(true); }, 400); }}
-            onPointerUp={() => { if (korLongPress.current) { clearTimeout(korLongPress.current); korLongPress.current = null; } }}
-            onPointerCancel={() => { if (korLongPress.current) { clearTimeout(korLongPress.current); korLongPress.current = null; } }}
+            onClick={() => { const now = Date.now(); if (now - lastTapKor.current < 350) { setTempKor(kor); setEditingKor(true); lastTapKor.current = 0; } else { lastTapKor.current = now; } }}
           >
             <span className="tul-header-label">Kor:</span> <strong>{kor}</strong>
           </div>
@@ -444,7 +432,7 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
   const [editing, setEditing] = useState(false);
   const [tempVal, setTempVal] = useState(érték);
   const [showWarning, setShowWarning] = useState(false);
-  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastTap = useRef(0);
 
   useEffect(() => {
     if (!editing) return;
@@ -458,14 +446,24 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
   const underLimit = fajMin !== undefined && érték < fajMin;
   const hasWarning = overLimit || underLimit;
 
+  function handleTap() {
+    const now = Date.now();
+    if (now - lastTap.current < 350) {
+      // Double tap
+      if (!gameMode) { setTempVal(érték); setEditing(true); }
+      lastTap.current = 0;
+    } else {
+      lastTap.current = now;
+      // Single tap: toggle warning
+      if (hasWarning) setShowWarning(!showWarning);
+    }
+  }
+
   return (
     <>
       <div
         className={`tul-cell ${!gameMode ? 'editable' : ''} ${hasWarning ? 'tul-warn' : ''}`}
-        onTouchStart={e => { if (!gameMode) e.preventDefault(); }}
-        onPointerDown={() => { if (!gameMode) longPressTimer.current = setTimeout(() => { longPressTimer.current = null; setTempVal(érték); setEditing(true); }, 400); }}
-        onPointerUp={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; if (hasWarning) setShowWarning(!showWarning); } }}
-        onPointerCancel={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
+        onClick={handleTap}
       >
         <span className="tul-label">{label}:</span>
         <span className={`tul-value ${hasWarning ? 'tul-value-warn' : ''}`}>{érték}</span>
@@ -510,8 +508,7 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
   findDef: (név: string) => KepzettsegDef | undefined;
 }) {
   const [szintEditing, setSzintEditing] = useState(false);
-  const rowRef = useRef<HTMLDivElement>(null);
-  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastTap = useRef(0);
 
   useEffect(() => {
     if (!szintEditing) return;
@@ -520,28 +517,14 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
     return () => document.removeEventListener('keydown', onKey);
   }, [szintEditing]);
 
-  // Szerkesztő mód: hosszú nyomás → szint popup
-  function handlePointerDown(_e: React.PointerEvent) {
-    if (gameMode) return;
-    longPressTimer.current = setTimeout(() => {
-      longPressTimer.current = null;
+  function handleTap() {
+    if (gameMode) { onInfoToggle(); return; }
+    const now = Date.now();
+    if (now - lastTap.current < 350) {
       setSzintEditing(true);
-    }, 400);
-  }
-
-  function handlePointerUp() {
-    if (longPressTimer.current) {
-      clearTimeout(longPressTimer.current);
-      longPressTimer.current = null;
-      if (gameMode) {
-        onInfoToggle();
-      }
-    }
-  }
-
-  function handleClick() {
-    if (gameMode) {
-      onInfoToggle();
+      lastTap.current = 0;
+    } else {
+      lastTap.current = now;
     }
   }
 
@@ -551,19 +534,13 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
   return (
     <div className="kep-row-wrapper">
       <div
-        ref={rowRef}
         className="kep-row"
-        onPointerDown={!gameMode ? handlePointerDown : undefined}
-        onPointerUp={!gameMode ? handlePointerUp : undefined}
-        onPointerCancel={!gameMode ? handlePointerUp : undefined}
-        onTouchStart={e => { if (!gameMode) { e.preventDefault(); e.stopPropagation(); } }}
-        onTouchEnd={e => { if (!gameMode) e.stopPropagation(); }}
-        onClick={gameMode ? handleClick : undefined}
+        onClick={handleTap}
       >
         <span className="kep-név">{displayName}</span>
         <span className="kep-right">
           {!gameMode && (
-            <button className="kep-delete" onPointerDown={e => e.stopPropagation()} onPointerUp={e => { e.stopPropagation(); onRemove(); }}>✕</button>
+            <button className="kep-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className={`kep-szint ${slot.szint === 0 ? 'kep-szint-zero' : slot.szint >= 9 ? 'kep-szint-high' : ''}`}>{slot.szint}</span>
         </span>

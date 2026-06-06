@@ -254,9 +254,9 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   onFokChange: (fok: number) => void;
   onRemove: () => void;
 }) {
-  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
+  const lastTap = useRef(0);
 
   useEffect(() => {
     if (!editing) return;
@@ -265,20 +265,15 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
     return () => document.removeEventListener('keydown', onKey);
   }, [editing]);
 
-  function handlePointerDown() {
-    if (gameMode || maxfok <= 1) return;
-    longPressTimer.current = setTimeout(() => {
-      longPressTimer.current = null;
+  function handleTap() {
+    if (gameMode) { onToggleInfo(); return; }
+    if (maxfok <= 1) return;
+    const now = Date.now();
+    if (now - lastTap.current < 350) {
       setEditing(true);
-    }, 400);
-  }
-
-  function handlePointerUp() {
-    if (longPressTimer.current) {
-      clearTimeout(longPressTimer.current);
-      longPressTimer.current = null;
-      // Rövid kopp: szerkesztő módban NEM nyit infót, csak Game módban
-      if (gameMode) onToggleInfo();
+      lastTap.current = 0;
+    } else {
+      lastTap.current = now;
     }
   }
 
@@ -288,16 +283,12 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
     <div className="fort-row-wrapper">
       <div
         className="fort-row"
-        onTouchStart={e => { if (!gameMode) e.preventDefault(); }}
-        onPointerDown={handlePointerDown}
-        onPointerUp={handlePointerUp}
-        onPointerCancel={() => { if (longPressTimer.current) { clearTimeout(longPressTimer.current); longPressTimer.current = null; } }}
-        onClick={gameMode ? onToggleInfo : undefined}
+        onClick={handleTap}
       >
         <span className="fort-név">{slot.név}{isIngyenes ? ' 🎁' : ''}</span>
         <span className="fort-right">
           {!gameMode && (
-            <button className="fort-delete" onPointerDown={e => e.stopPropagation()} onPointerUp={e => { e.stopPropagation(); onRemove(); }}>✕</button>
+            <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}`}>{slot.fok}</span>
         </span>

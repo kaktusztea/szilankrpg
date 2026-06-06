@@ -1,6 +1,7 @@
 ---
 schema_version: 1
-név: belharc
+
+név: "Belharc"
 névkomment: adott fegyverre
 maxfok: 2
 többszörösség:
@@ -18,9 +19,11 @@ megjegyzések:
     is fel lehet venni - különböző fegyverekre.'
 - text: 'Az ellenfél módosítóinak változását lásd a Harcrendszer fejezet ⭕"Belharc"
     harci taktika leírásánál!'
+
 kiterjeszti:
   normál: []
   erős: []
+
 kp_perfok: 6
 
 fokok:
