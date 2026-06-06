@@ -148,3 +148,17 @@
   border-color: var(--error);
   color: var(--error);
 }
+
+/* --- Hint bar --- */
+.fort-hint {
+  position: sticky;
+  bottom: 0;
+  background: var(--warning);
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 8px;
+}

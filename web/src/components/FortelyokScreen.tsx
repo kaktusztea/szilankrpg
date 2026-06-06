@@ -24,6 +24,14 @@ interface Props {
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+  const [hint, setHint] = useState('');
+  const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function showHint(msg: string) {
+    setHint(msg);
+    if (hintTimer.current) clearTimeout(hintTimer.current);
+    hintTimer.current = setTimeout(() => setHint(''), 2000);
+  }
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; fok: number } | null>(null);
   const [pendingFortIdx, setPendingFortIdx] = useState<number | null>(null);
@@ -123,6 +131,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
                       isOpen={isOpen}
                       onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
                       onFokChange={fok => setFok(globalIdx, fok)}
+                      onHint={showHint}
                       onRemove={() => {
                         setDeleteTarget({ idx: globalIdx, név: slot.név, fok: slot.fok });
                       }}
@@ -158,6 +167,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
           );
         })}
       </div>
+
+      {hint && <div className="fort-hint">{hint}</div>}
 
       {deleteTarget && createPortal(
         <div className="kep-prompt-overlay">
@@ -243,7 +254,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, onHint }: {
   slot: FortelySlot;
   def?: FortelySummary;
   gameMode: boolean;
@@ -252,6 +263,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
   onRemove: () => void;
+  onHint: (msg: string) => void;
 }) {
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
@@ -266,10 +278,10 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
 
   function handleTap() {
     if (gameMode) { onToggleInfo(); return; }
-    if (maxfok <= 1) return;
     const now = Date.now();
     if (now - lastTap.current < 350) {
-      setEditing(true);
+      if (maxfok <= 1) { onHint('1 fok a maximum'); }
+      else { setEditing(true); }
       lastTap.current = 0;
     } else {
       lastTap.current = now;
