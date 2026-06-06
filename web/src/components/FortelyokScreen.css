@@ -9,7 +9,7 @@
 }
 
 .fort-csoport-label {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: bold;
   color: var(--text-dim);
   margin-bottom: 4px;
@@ -20,7 +20,7 @@
 }
 
 .fort-csoport-arrow {
-  font-size: 11px;
+  font-size: 15px;
   margin-right: 2px;
 }
 
@@ -48,7 +48,7 @@
 }
 
 .fort-név {
-  font-size: 13px;
+  font-size: 15px;
   color: var(--text);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .fort-fok {
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   color: var(--warning);
   min-width: 20px;
@@ -74,7 +74,7 @@
   background: none;
   border: none;
   color: #6ec6ff;
-  font-size: 14px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
   padding: 0;
@@ -87,7 +87,7 @@
   border: 1px solid #555;
   border-radius: 4px;
   padding: 4px 8px;
-  font-size: 13px;
+  font-size: 15px;
   width: 100%;
 }
 
@@ -97,7 +97,7 @@
   border-top: none;
   border-radius: 0 0 4px 4px;
   padding: 6px 10px;
-  font-size: 12px;
+  font-size: 18px;
 }
 
 .fort-info-desc {
@@ -133,7 +133,7 @@
   border: 2px solid #555;
   background: var(--input-bg);
   color: var(--text);
-  font-size: 16px;
+  font-size: 18px;
   font-weight: bold;
   cursor: pointer;
 }
@@ -157,7 +157,7 @@
   color: #000;
   text-align: center;
   padding: 6px;
-  font-size: 12px;
+  font-size: 18px;
   font-weight: bold;
   border-radius: 4px;
   margin-top: 8px;
