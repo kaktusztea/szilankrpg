@@ -17,6 +17,7 @@
 │   ├── fajok/                 ← Faj hátterek (26 db)
 │   ├── tables/                ← Generált JSON táblák (generate_tables.py által: konstansok, fegyverek, távfegyverek, pajzsok, KP, harcmodor bónusz, távharc szorzók, tradíciók, képzettségek, kiterjesztések, fajok, faj keretek, primer fortélyok, fortélyok)
 │   ├── generate_tables.py    ← YAML→JSON generáló script (Vite plugin és prebuild futtatja)
+│   ├── rules.json             ← Reactive engine szabályok (19 deklaratív képlet/aggregáció)
 │   ├── konstansok.yaml        ← Központi konstansok (forrás, JSON-ba generálódik)
 │   ├── engine_spec.md         ← Engine kalkuláció spec (§1-§20, minden formula)
 │   └── gui_spec.md            ← GUI spec (9 screen, viselkedés, formázás)
@@ -32,7 +33,8 @@
 │   │   │   ├── modifiers.ts   ← Fortély módosítók (flat/scaled/override)
 │   │   │   ├── limits.ts      ← Manőver, Felszerelés, HM/CM, Képzettség limitek
 │   │   │   ├── tavharc.ts     ← Távharc VÉ kalkulátor
-│   │   │   ├── data-loader.ts ← YAML/JSON betöltés runtime (konstansok, fegyverek, pajzsok, KP, harcmodor, képzettségDefs, kiterjesztések, fajNevek, fajKeretek, primerFortelyok, fortelySummaries)
+│   │   │   ├── data-loader.ts ← JSON betöltés runtime (konstansok, fegyverek, pajzsok, KP, harcmodor, képzettségDefs, kiterjesztések, fajNevek, fajKeretek, primerFortelyok, fortelySummaries, rules)
+│   │   │   ├── reactive.ts   ← Reactive rule engine (evaluate, buildContext, buildArrayContext)
 │   │   │   └── index.ts       ← Barrel export
 │   │   ├── components/
 │   │   │   ├── HarcScreen.tsx  ← Harc fül (KÉSZ)
@@ -112,6 +114,14 @@
   - `prebuild` script: `npm run build` előtt automatikusan fut
   - `js-yaml` runtime dependency eltávolítva → bundle ~43KB-val kisebb (232KB vs 275KB)
   - Minden adat `tables/*.json`-ból töltődik (fetchJson), nincs runtime YAML parse
+- ✅ Reactive Engine (`data/rules.json` + `web/src/engine/reactive.ts`)
+  - Deklaratív dependency graph: 19 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc, manőver pont, felszerelés, stb.)
+  - Skaláris képletek + aggregáló függvények: `sum()`, `sum_lookup()`, `count()`
+  - Topológiai sorrend: automatikus dependency resolution
+  - Context: `buildContext()` (skalárok) + `buildArrayContext()` (tömbök: képzettségek, fortélyok, kp_tábla)
+  - HarcScreen: ÉP, KÉ, manőver pont reactive engine-ből
+  - App KP sáv: teljes KP lánc reactive engine-ből (calcKp modul kiváltva)
+  - TS-ben marad: spec_kp, kiemelt_kp, fegyver iteráció, fortély módosítók, Fájdalomtűrés enyhítés
 - ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
 - ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
 - ✅ Escape gomb: minden popup overlay bezárható Escape-pel
@@ -136,7 +146,8 @@
 - `/mnt/c/repo/szilank.code/web/src/components/HarcScreen.tsx` — Harc fül implementáció
 - `/mnt/c/repo/szilank.code/web/src/components/TulajdonsagokScreen.tsx` — Tulajdonságok + Képzettségek fül
 - `/mnt/c/repo/szilank.code/web/src/components/FortelyokScreen.tsx` — Fortélyok fül
-- `/mnt/c/repo/szilank.code/web/src/engine/` — engine modulok (types, data-loader, harcertek, pancel, ep, kp, modifiers, limits, tavharc)
+- `/mnt/c/repo/szilank.code/web/src/engine/` — engine modulok (types, data-loader, reactive, harcertek, pancel, ep, kp, modifiers, limits, tavharc)
+- `/mnt/c/repo/szilank.code/data/rules.json` — reactive engine deklaratív szabályok
 
 ## Fontos konvenciók
 - Módosító módok: `flat`, `scaled`, `override`

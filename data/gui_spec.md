@@ -372,13 +372,53 @@ YAML források (data/konstansok.yaml, kepzettsegek/, fortelyok/, fajok/)
      ↓  generate_tables.py (automatikus: Vite buildStart + prebuild)
 tables/*.json (runtime adat)
      ↓  fetchJson (data-loader.ts)
-GameData (memória)
+GameData (memória) + rules.json
+     ↓
+Reactive Engine (evaluate) → computed values
      ↓
 React komponensek
 ```
 
+### Reactive Engine (`data/rules.json` + `engine/reactive.ts`)
+Deklaratív számítási szabályok dependency graph-ban:
+- **Skaláris képletek**: `+`, `-`, `*`, `/`, `floor()`, `ceil()`, `min()`, `max()`
+- **Aggregáló függvények**: `sum(tömb, mező)`, `sum_lookup(tömb, mező, tábla, kulcs, érték)`, `count(tömb)`
+- **Topológiai sorrend**: automatikus dependency resolution (inputs mező alapján)
+- **Context**: `buildContext()` — skaláris értékek (tulajdonságok, tsz, konstansok, HM, CM, stb.)
+- **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla)
+
+#### Jelenlegi rules.json szabályok (19 db):
+| ID | Formula típus | Leírás |
+|----|--------------|--------|
+| ÉP | képlet | 28 + edzettség × 4 |
+| S1_max, S2_max, S3_max | képlet | ÉP/4, ÉP/2, ÉP×3/4 |
+| KÉ | képlet | alap + gyorsaság + intelligencia + tsz + fortélyMod |
+| TÉ_alap | képlet | alap + erő + ügyesség + gyorsaság + HM_TÉ |
+| VÉ_alap | képlet | alap + gyorsaság + ügyesség + HM_VÉ |
+| CÉ_alap | képlet | alap + önuralom + CM |
+| összes_kp | képlet | tsz × (perszint + intelligencia) |
+| összes_szekunder_kp | képlet | tsz × (szekunder_perszint + emlékezet) |
+| tulajdonság_pont_keret | képlet | alap + floor(tsz/2) |
+| manőver_pont | képlet | ceil(harcmodor_összeg × 2 / tsz) |
+| felszerelés_keret | képlet | 2 + erő |
+| felszerelés_mgt | képlet | max(0, terhelés - keret) |
+| max_CM | képlet | tsz × max_cm_perszint |
+| kp_képzettségek | sum_lookup | képzettség szintek → KP tábla lookup → összeg |
+| kp_fortélyok | sum | fortély fokok összege × fortélyfok konstans |
+| kp_hm | képlet | (HM_TÉ + HM_VÉ) × kp.hm |
+| kp_cm | képlet | CM × kp.cm |
+| elköltött_kp | képlet | kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp |
+| maradék_kp | képlet | összes_kp + spec_kp + összes_szekunder_kp - elköltött_kp |
+
+#### TS-ben maradó logika (nem deklaratív):
+- `spec_kp`: feltételes boolean flag-ek (Analfabéta, Vakság, stb.)
+- `kiemelt_kp`: iteráció ingyenes keret számítással (Kultúrkör, Helyismeret)
+- Fegyverenként TÉ/VÉ/SP/Harckeret (parametrikus iteráció + lookup)
+- Fortély módosítók összegyűjtése (feltételes iteráció)
+- Fájdalomtűrés enyhítés (küszöb-tábla lookup)
+
 ### Runtime adatbetöltés (GameData)
-Minden adat `tables/*.json`-ból, `fetchJson`-nel:
+Minden adat `fetchJson`-nel:
 - `tables/konstansok.json` — központi konstansok
 - `tables/fegyverek.json`, `tavfegyverek.json`, `pajzsok.json` — fegyver/pajzs adatok
 - `tables/kepzettseg_kp.json` — KP költség tábla szintenként
@@ -388,11 +428,13 @@ Minden adat `tables/*.json`-ból, `fetchJson`-nel:
 - `tables/fajok.json` — 26 faj neve
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
 - `tables/primer_fortelyok.json` — 53 harci+misztikus fortély neve
-- `tables/fortelyok.json` — 168 fortély összefoglaló (név, csoport, maxfok, leírás, fokok, kiterjesztések)
+- `tables/fortelyok.json` — 168 fortély összefoglaló
+- `data/rules.json` — reactive engine szabályok (19 db)
 
 ### Karakter state struktúra (App szintjén)
-- `képzettségek: { név: string; szint: number }[]` — lifted state, KP kalkuláció inputja
-- `fortélyok: { név: string; fok: number }[]` — lifted state, KP kalkuláció inputja (tartalmazza a többszörös példányokat is `"AlapNév - alnév"` formátumban)
+- `tulajdonságok: Tulajdonsagok` — lifted state, reactive engine inputja
+- `képzettségek: { név: string; szint: number }[]` — lifted state, reactive engine ArrayContext
+- `fortélyok: { név: string; fok: number }[]` — lifted state, reactive engine ArrayContext
 - Inicializálás: `testKarakter8.fortélyok` + `fortélyok_kiemelt.kulturkörök` + `fortélyok_kiemelt.helyismeret` → egységes tömbbe
 - A többi karakter adat egyelőre `testKarakter8`-ból jön (statikus)
 
