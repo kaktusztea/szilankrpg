@@ -2,7 +2,7 @@
 schema_version: 1
 
 név: "Elsöprő roham"
-névkomment: ''
+névkomment: ""
 maxfok: 1
 többszörösség:
   spec_típus: ""
@@ -16,10 +16,11 @@ kiterjeszti:
   normál: []
   erős: []
 kp_perfok: 6
+ingyenes_perszint: 0
 
 fokok:
 - fok: 1
-  követelménytext: ''
+  követelménytext: ""
   követelmények:
   - név: ["közelharc", "kardvívás", "lándzsavívás", "zúzás"]
     érték: 4

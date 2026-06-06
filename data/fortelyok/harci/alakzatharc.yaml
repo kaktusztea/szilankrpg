@@ -25,24 +25,25 @@ kiterjeszti:
   erős: []
 
 kp_perfok: 6
+ingyenes_perszint: 0
 
 fokok:
 - fok: 1
   követelménytext: 'A társak is ismerjék az adott alakzatot + Alakzat függő, lásd
     azok leírását!'
-  követelmények: ''
+  követelmények: ""
   hatástext:
   - text: Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2`
       olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod.
-  módosítók: ''
+  módosítók: ""
 - fok: 2
   követelménytext: 'A társak is ismerjék az adott alakzatot + Alakzat függő, lásd
     azok leírását!'
-  követelmények: ''
+  követelmények: ""
   hatástext:
   - text: Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2`
       olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod.
-  módosítók: ''
+  módosítók: ""
 
 todo:
 - text: ⭕ Hányadik fok a max? 2?

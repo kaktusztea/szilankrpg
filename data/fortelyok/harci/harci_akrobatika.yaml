@@ -1,7 +1,7 @@
 ---
 schema_version: 1
-név: harci akrobatika
-névkomment: ''
+név: "harci akrobatika"
+névkomment: ""
 maxfok: 2
 többszörösség:
   spec_típus: ""
@@ -27,10 +27,11 @@ kiterjeszti:
   normál: []
   erős: []
 kp_perfok: 6
+ingyenes_perszint: 0
 
 fokok:
 - fok: 1
-  követelménytext: ''
+  követelménytext: ""
   követelmények:
   - név: akrobatika
     érték: 4
@@ -58,7 +59,7 @@ fokok:
     arány: 0
     feltétel: ''
 - fok: 2
-  követelménytext: ''
+  követelménytext: ""
   követelmények:
   - név: akrobatika
     érték: 8

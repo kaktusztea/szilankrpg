@@ -17,6 +17,9 @@ kiterjeszti:
   normál: []                  # normál módban terjeszti ki ezeket a képzettségeket
   erős: []                    # erős módban terjeszti ki ezeket a képzettségeket
 
+kp_perfok: 6
+ingyenes_perszint: 0
+
 fokok:
   - fok: 0                    # 0 == alapeset (ha van)
     követelménytext: ""       # Szöveges követelmény (nem kalkuláció alapja)

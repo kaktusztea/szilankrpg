@@ -2,7 +2,7 @@
 schema_version: 1
 
 név: "Fegyverrántás"
-névkomment: ''
+névkomment: ""
 maxfok: 2
 többszörösség:
   spec_típus: ""
@@ -19,11 +19,12 @@ kiterjeszti:
   erős: []
 
 kp_perfok: 6
+ingyenes_perszint: 0
 
 fokok:
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
+  követelménytext: ""
+  követelmények: ""
   hatástext: ''
   módosítók:
   - cél: KÉ
@@ -33,8 +34,8 @@ fokok:
     arány: 0
     feltétel: "szituáció:fegyverrántás"
 - fok: 2
-  követelménytext: ''
-  követelmények: ''
+  követelménytext: ""
+  követelmények: ""
   hatástext: ''
   módosítók:
   - cél: KÉ

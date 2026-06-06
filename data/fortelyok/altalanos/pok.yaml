@@ -18,6 +18,7 @@ kiterjeszti:
   erős: []
 
 kp_perfok: 6
+ingyenes_perszint: 0
 
 fokok:
   - fok: 1
