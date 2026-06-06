@@ -45,6 +45,7 @@ function App() {
   useEffect(() => {
     function handler(e: Event) {
       const el = e.target as HTMLElement;
+      if (el.tagName === 'SELECT' || el.tagName === 'OPTION' || el.closest('.kep-row-new, .fort-row-new')) return;
       if (el.closest('.tul-cell, .kep-row, .fort-row, .tul-header-box, .tul-faj-row')) {
         e.preventDefault();
       }
