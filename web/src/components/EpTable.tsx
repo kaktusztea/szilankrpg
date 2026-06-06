@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import './EpTable.css';
 
 type SebTípus = 'S' | 'V' | 'Z' | 'FP' | '';
@@ -29,6 +30,15 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
   }
   const [showSebDialog, setShowSebDialog] = useState(false);
   const [showGyógyDialog, setShowGyógyDialog] = useState(false);
+
+  useEffect(() => {
+    if (!showSebDialog && !showGyógyDialog) return;
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') { setShowSebDialog(false); setShowGyógyDialog(false); }
+    }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [showSebDialog, showGyógyDialog]);
 
   function sebesülés(típus: SebTípus, érték: number) {
     const újRubrikák = [...rubrikák];
@@ -96,6 +106,8 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
       <div className="ep-table-header">
         <span><strong>ÉP: {ÉP}</strong></span>
         <span>Seb: {kitöltött}/{ÉP}</span>
+        <button className="btn-seb" onClick={() => setShowSebDialog(true)}>⚔️ Seb</button>
+        <button className="btn-heal" disabled={kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógy</button>
       </div>
 
       <div className="ep-grid">
@@ -121,70 +133,82 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
       </div>
 
       <div className="ep-buttons">
-        <button className="btn-seb" onClick={() => setShowSebDialog(true)}>⚔️ Sebesülés</button>
-        <button className="btn-heal" disabled={kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógyulás</button>
-        <button className="btn-reset" onClick={reset}>⟲</button>
+        <button className="btn-reset" onClick={reset}>⟲ Reset</button>
       </div>
 
-      {showSebDialog && <SebDialog onConfirm={sebesülés} onCancel={() => setShowSebDialog(false)} />}
-      {showGyógyDialog && <GyógyDialog
-        maxÉP={rubrikák.filter(r => r.típus !== '' && r.típus !== 'FP').length}
-        maxFP={rubrikák.filter(r => r.típus === 'FP').length}
-        onConfirm={gyógyulás}
-        onCancel={() => setShowGyógyDialog(false)}
-      />}
+      {showSebDialog && createPortal(
+        <div className="kep-prompt-overlay">
+          <SebDialog onConfirm={sebesülés} onCancel={() => setShowSebDialog(false)} />
+        </div>,
+        document.body
+      )}
+      {showGyógyDialog && createPortal(
+        <div className="kep-prompt-overlay">
+          <GyógyDialog
+            maxÉP={rubrikák.filter(r => r.típus !== '' && r.típus !== 'FP').length}
+            maxFP={rubrikák.filter(r => r.típus === 'FP').length}
+            onConfirm={gyógyulás}
+            onCancel={() => setShowGyógyDialog(false)}
+          />
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
 
-function SebDialog({ onConfirm, onCancel }: { onConfirm: (t: SebTípus, v: number) => void; onCancel: () => void }) {
-  const [típus, setTípus] = useState<SebTípus>('S');
-  const [érték, setÉrték] = useState(3);
+function SebDialog({ onConfirm, onCancel: _onCancel }: { onConfirm: (t: SebTípus, v: number) => void; onCancel: () => void }) {
+  const [típus, setTípus] = useState<SebTípus | ''>('');
+  const [érték, setÉrték] = useState<number | null>(null);
+
+  useEffect(() => {
+    if (típus && érték) {
+      onConfirm(típus as SebTípus, érték);
+    }
+  }, [típus, érték]);
 
   return (
-    <div className="ep-dialog">
-      <h4>Sebesülés</h4>
+    <div className="kep-prompt">
+      <label>Sebesülés</label>
       <div className="ep-dialog-row">
-        <label>Típus:</label>
         {(['S', 'V', 'Z', 'FP'] as SebTípus[]).map(t => (
-          <button key={t} className={típus === t ? 'active' : ''} onClick={() => setTípus(t)}>{t}</button>
+          <button key={t} className={`fort-fok-btn ${típus === t ? 'active' : ''}`} onClick={() => setTípus(t)}>{t}</button>
         ))}
       </div>
-      <div className="ep-dialog-row">
-        <label>Érték:</label>
-        <input type="number" min={1} max={40} value={érték} onChange={e => setÉrték(Number(e.target.value))} />
-      </div>
-      <div className="ep-dialog-row">
-        <button className="btn-confirm" onClick={() => onConfirm(típus, érték)}>OK</button>
-        <button onClick={onCancel}>Mégse</button>
+      <div className="kep-szint-grid">
+        {Array.from({ length: 20 }, (_, i) => i + 1).map(n => (
+          <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => setÉrték(n)}>{n}</button>
+        ))}
       </div>
     </div>
   );
 }
 
-function GyógyDialog({ maxÉP, maxFP, onConfirm, onCancel }: { maxÉP: number; maxFP: number; onConfirm: (t: 'FP' | 'ÉP', v: number) => void; onCancel: () => void }) {
-  const defaultTípus = maxÉP > 0 ? 'ÉP' : 'FP';
-  const [típus, setTípus] = useState<'FP' | 'ÉP'>(defaultTípus);
-  const [érték, setÉrték] = useState(1);
-  const max = típus === 'ÉP' ? maxÉP : maxFP;
+function GyógyDialog({ maxÉP, maxFP, onConfirm, onCancel: _onCancel }: { maxÉP: number; maxFP: number; onConfirm: (t: 'FP' | 'ÉP', v: number) => void; onCancel: () => void }) {
+  const [típus, setTípus] = useState<'FP' | 'ÉP' | ''>('');
+  const [érték, setÉrték] = useState<number | null>(null);
+  const max = típus === 'ÉP' ? maxÉP : típus === 'FP' ? maxFP : Math.max(maxÉP, maxFP);
+
+  useEffect(() => {
+    if (típus && érték) {
+      onConfirm(típus as 'FP' | 'ÉP', érték);
+    }
+  }, [típus, érték]);
 
   return (
-    <div className="ep-dialog">
-      <h4>Gyógyulás</h4>
+    <div className="kep-prompt">
+      <label>Gyógyulás</label>
       <div className="ep-dialog-row">
-        <label>Mit:</label>
-        <button disabled={maxÉP === 0} className={típus === 'ÉP' ? 'active' : ''} onClick={() => { setTípus('ÉP'); setÉrték(1); }}>ÉP ({maxÉP})</button>
-        <button disabled={maxFP === 0} className={típus === 'FP' ? 'active' : ''} onClick={() => { setTípus('FP'); setÉrték(1); }}>FP ({maxFP})</button>
+        <button disabled={maxÉP === 0} className={`fort-fok-btn ${típus === 'ÉP' ? 'active' : ''}`} onClick={() => { setTípus('ÉP'); setÉrték(null); }}>ÉP</button>
+        <button disabled={maxFP === 0} className={`fort-fok-btn ${típus === 'FP' ? 'active' : ''}`} onClick={() => { setTípus('FP'); setÉrték(null); }}>FP</button>
       </div>
-      <div className="ep-dialog-row">
-        <label>Mennyit:</label>
-        <input type="number" min={1} max={max} value={Math.min(érték, max)} onChange={e => setÉrték(Math.min(Number(e.target.value), max))} />
-        <span className="dim">/ {max}</span>
-      </div>
-      <div className="ep-dialog-row">
-        <button className="btn-confirm" onClick={() => onConfirm(típus, érték)}>OK</button>
-        <button onClick={onCancel}>Mégse</button>
-      </div>
+      {típus && (
+        <div className="kep-szint-grid">
+          {Array.from({ length: max }, (_, i) => i + 1).map(n => (
+            <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => setÉrték(n)}>{n}</button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }

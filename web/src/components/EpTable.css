@@ -1,12 +1,37 @@
 .ep-table-wrapper { margin-bottom: 8px; }
 
 .ep-table-header {
-  display: flex;
-  gap: 12px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap: 2px;
   align-items: center;
   margin-bottom: 6px;
-  flex-wrap: wrap;
   font-size: 15px;
+}
+
+.ep-table-header .btn-seb,
+.ep-table-header .btn-heal {
+  padding: 4px 6px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  font-size: 13px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.ep-table-header .btn-seb {
+  background: var(--accent);
+  color: #fff;
+}
+
+.ep-table-header .btn-heal {
+  background: var(--success);
+  color: #000;
+}
+
+.ep-table-header .btn-heal:disabled {
+  opacity: 0.4;
+  cursor: default;
 }
 
 .ep-grid {

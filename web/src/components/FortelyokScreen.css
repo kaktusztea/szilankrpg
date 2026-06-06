@@ -149,6 +149,11 @@
   color: var(--error);
 }
 
+.fort-fok-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
 /* --- Hint bar --- */
 .fort-hint {
   position: sticky;
