@@ -386,3 +386,27 @@ nyelvek:
 háttér_csoportok: [faj, leíró, karma]
 fortély_csoportok: [általános, érzékek, harci, kiemelt, mágia.metódusok, misztikus, szabad, távharc]
 képzettség_csoportok: [harci, fizikai, világi, alvilági, művészeti, tudományos, faj misztériumok, misztikus, mágikus szférák és arkánumaik, papi mágia]
+
+# ============================================================
+# Fájdalomtűrés TÉ enyhítés küszöbök
+# ============================================================
+
+fájdalomtűrés_enyhítés:
+  - szint: 4
+    enyhítés: 1
+  - szint: 6
+    enyhítés: 2
+  - szint: 8
+    enyhítés: 3
+  - szint: 10
+    enyhítés: 4
+  - szint: 11
+    enyhítés: 5
+  - szint: 12
+    enyhítés: 6
+  - szint: 13
+    enyhítés: 7
+  - szint: 14
+    enyhítés: 8
+  - szint: 15
+    enyhítés: 9

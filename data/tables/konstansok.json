@@ -480,5 +480,43 @@
     "misztikus",
     "mágikus szférák és arkánumaik",
     "papi mágia"
+  ],
+  "fájdalomtűrés_enyhítés": [
+    {
+      "szint": 4,
+      "enyhítés": 1
+    },
+    {
+      "szint": 6,
+      "enyhítés": 2
+    },
+    {
+      "szint": 8,
+      "enyhítés": 3
+    },
+    {
+      "szint": 10,
+      "enyhítés": 4
+    },
+    {
+      "szint": 11,
+      "enyhítés": 5
+    },
+    {
+      "szint": 12,
+      "enyhítés": 6
+    },
+    {
+      "szint": 13,
+      "enyhítés": 7
+    },
+    {
+      "szint": 14,
+      "enyhítés": 8
+    },
+    {
+      "szint": 15,
+      "enyhítés": 9
+    }
   ]
 }
