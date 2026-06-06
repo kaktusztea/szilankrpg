@@ -24,12 +24,13 @@ interface KepzettsegSlot {
 interface Props {
   data: GameData;
   gameMode: boolean;
+  tulajdonságok: Tulajdonsagok;
+  setTulajdonságok: React.Dispatch<React.SetStateAction<Tulajdonsagok>>;
   képzettségek: KepzettsegSlot[];
   setKépzettségek: React.Dispatch<React.SetStateAction<KepzettsegSlot[]>>;
 }
 
-export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzettségek }: Props) {
-  const [tulajdonságok, setTulajdonságok] = useState<Tulajdonsagok>({ ...testKarakter8.tulajdonságok });
+export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek }: Props) {
   const [név, setNév] = useState(testKarakter8.név);
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');

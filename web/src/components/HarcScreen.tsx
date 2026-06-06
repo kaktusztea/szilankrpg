@@ -18,7 +18,7 @@ function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftT
   return enyhítés;
 }
 
-export function HarcScreen({ data, képzettségek, onNavigate }: { data: GameData; képzettségek: { név: string; szint: number }[]; onNavigate?: (tabId: string) => void }) {
+export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }: { data: GameData; tulajdonságok: any; képzettségek: { név: string; szint: number }[]; onNavigate?: (tabId: string) => void }) {
   const [véCsökkenés, setVéCsökkenés] = useState(0);
   const [aktManöverPont, setAktManöverPont] = useState(99);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
@@ -34,7 +34,7 @@ export function HarcScreen({ data, képzettségek, onNavigate }: { data: GameDat
   const { konstansok, harcmodorBonusz } = data;
 
   // ÉP
-  const ep = calcEp(k.tulajdonságok.edzettség);
+  const ep = calcEp(tulajdonságok.edzettség);
 
   // KÉ
   const fortelyKE = 4 + 1; // Gyors kezdeményezés 2.fok + Harckeret növelés 1.fok

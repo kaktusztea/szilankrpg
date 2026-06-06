@@ -26,6 +26,7 @@ function App() {
   const [error, setError] = useState('');
   const [activeTab, setActiveTab] = useState(2);
   const [gameMode, setGameMode] = useState(false);
+  const [tulajdonságok, setTulajdonságok] = useState({ ...testKarakter8.tulajdonságok });
   const [képzettségek, setKépzettségek] = useState(testKarakter8.képzettségek.map(k => ({ név: k.név, szint: k.szint })));
   const [fortélyok, setFortélyok] = useState(() => [
     ...testKarakter8.fortélyok.map(f => ({ név: f.név, fok: f.fok })),
@@ -96,7 +97,7 @@ function App() {
           {TABS.map((tab, i) => (
             <div key={tab.id} className="screen-slide">
               {Math.abs(i - activeTab) <= 1 && (
-                <TabContent tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab} képzettségek={képzettségek} setKépzettségek={setKépzettségek} fortélyok={fortélyok} setFortélyok={setFortélyok} />
+                <TabContent tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} fortélyok={fortélyok} setFortélyok={setFortélyok} />
               )}
             </div>
           ))}
@@ -164,14 +165,14 @@ function App() {
   );
 }
 
-function TabContent({ tab, data, gameMode, setActiveTab, képzettségek, setKépzettségek, fortélyok, setFortélyok }: { tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void; képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>; fortélyok: { név: string; fok: number }[]; setFortélyok: React.Dispatch<React.SetStateAction<{ név: string; fok: number }[]>> }) {
+function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok }: { tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void; tulajdonságok: any; setTulajdonságok: any; képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>; fortélyok: { név: string; fok: number }[]; setFortélyok: React.Dispatch<React.SetStateAction<{ név: string; fok: number }[]>> }) {
   switch (tab) {
     case 'aktiv': return <div className="screen"><h2>❎ Aktív</h2><p>Szituáció beállítás (TODO)</p></div>;
-    case 'harc': return <HarcScreen data={data} képzettségek={képzettségek} onNavigate={(id) => {
+    case 'harc': return <HarcScreen data={data} tulajdonságok={tulajdonságok} képzettségek={képzettségek} onNavigate={(id) => {
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
-    case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} képzettségek={képzettségek} setKépzettségek={setKépzettségek} />;
+    case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} />;
     case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} />;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <div className="screen"><h2>🛡️ Harcértékek</h2><p>HM/CM, Harcmodor bónuszok, Fegyverek, Páncél beállítás (TODO)</p></div>;
