@@ -43,6 +43,16 @@
   cursor: pointer;
 }
 
+.faj-select {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 13px;
+  margin-left: 4px;
+}
+
 .tul-faj-kor-row {
   display: flex;
   gap: 6px;

@@ -39,8 +39,6 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
   const lastTapNév = useRef(0);
   const lastTapTsz = useRef(0);
   const [faj, setFaj] = useState(testKarakter8.hátterek.faj);
-  const [editingFaj, setEditingFaj] = useState(false);
-  const lastTapFaj = useRef(0);
   const [kor, setKor] = useState(testKarakter8.kor);
   const [editingKor, setEditingKor] = useState(false);
   const [tempKor, setTempKor] = useState(testKarakter8.kor);
@@ -54,7 +52,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setEditingNév(false); setEditingTsz(false); setEditingFaj(false);
+        setEditingNév(false); setEditingTsz(false);
         setEditingKor(false); setDeleteTarget(null); setPendingEditIdx(null);
         setPromptState(null);
       }
@@ -209,10 +207,11 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
       {/* Faj + Kor - csak szerkesztő módban */}
       {!gameMode && (
         <div className="tul-faj-kor-row">
-          <div className="tul-faj-row"
-            onClick={() => { const now = Date.now(); if (now - lastTapFaj.current < 350) { setEditingFaj(true); lastTapFaj.current = 0; } else { lastTapFaj.current = now; } }}
-          >
-            <span className="tul-header-label">Faj:</span> <strong>{faj}</strong>
+          <div className="tul-faj-row">
+            <span className="tul-header-label">Faj:</span>
+            <select className="faj-select" value={faj} onChange={e => setFaj(e.target.value)}>
+              {data.fajNevek.map(f => <option key={f} value={f}>{f}</option>)}
+            </select>
           </div>
           <div className="tul-faj-row"
             onClick={() => { const now = Date.now(); if (now - lastTapKor.current < 350) { setTempKor(kor); setEditingKor(true); lastTapKor.current = 0; } else { lastTapKor.current = now; } }}
@@ -379,25 +378,7 @@ export function TulajdonsagokScreen({ data, gameMode, képzettségek, setKépzet
         document.body
       )}
 
-      {editingFaj && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt">
-            <label>Faj:</label>
-            <select
-              className="kep-select"
-              value={faj}
-              autoFocus
-              onChange={e => { setFaj(e.target.value); setEditingFaj(false); }}
-            >
-              {data.fajNevek.map(f => <option key={f} value={f}>{f}</option>)}
-            </select>
-            <div className="kep-prompt-btns">
-              <button onClick={() => setEditingFaj(false)}>Mégse</button>
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
+
 
       {editingKor && createPortal(
         <div className="kep-prompt-overlay">
