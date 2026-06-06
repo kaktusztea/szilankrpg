@@ -48,7 +48,7 @@
 }
 
 .fort-név {
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text);
 }
 
@@ -59,7 +59,7 @@
 }
 
 .fort-fok {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bold;
   color: var(--warning);
   min-width: 20px;

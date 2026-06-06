@@ -109,7 +109,7 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }:
     <div className="ep-table-wrapper">
       <div className="ep-table-header">
         <span><strong>ÉP: {ÉP}({ÉP - kitöltött})</strong></span>
-        <button className="btn-reset" disabled={kitöltött === 0} onClick={() => setShowResetConfirm(true)}>⟲ ÉP reset</button>
+        <button className="btn-reset" disabled={kitöltött === 0} onClick={() => setShowResetConfirm(true)}>ÉP reset</button>
         <button className="btn-seb" onClick={() => setShowSebDialog(true)}>⚔️ Seb</button>
         <button className="btn-heal" disabled={kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógy</button>
       </div>
