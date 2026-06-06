@@ -86,7 +86,7 @@ export function HarcScreen({ data, képzettségek, onNavigate }: { data: GameDat
           <span className="label">SFÉ ({pancel.lefedettség}%)</span>
           <div className="sfe-values">
             <span className="sfe-line">Fizikai: <strong>{pancel.sfé_fizikai}</strong></span>
-            <span className="sfe-line">Energia: <strong>{pancel.sfé_energia}</strong></span>
+            <span className="sfe-line" style={{ color: '#aaa' }}>Energia: <strong>{pancel.sfé_energia}</strong></span>
           </div>
         </div>
         <div className="ve-csokk-box">
