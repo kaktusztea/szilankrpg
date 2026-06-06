@@ -41,6 +41,18 @@ function App() {
     loadGameData().then(setData).catch(e => setError(String(e)));
   }, []);
 
+  // Prevent iOS text selection on long-press for interactive elements
+  useEffect(() => {
+    function handler(e: Event) {
+      const el = e.target as HTMLElement;
+      if (el.closest('.tul-cell, .kep-row, .fort-row, .tul-header-box, .tul-faj-row')) {
+        e.preventDefault();
+      }
+    }
+    document.addEventListener('touchstart', handler, { passive: false });
+    return () => document.removeEventListener('touchstart', handler);
+  }, []);
+
   function handleTouchStart(e: TouchEvent) {
     const target = e.target as HTMLElement;
     if (target.closest('.kep-prompt-overlay')) { touchStart.current = 0; touchY.current = 0; return; }
