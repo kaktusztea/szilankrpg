@@ -52,7 +52,7 @@ jobs:
       - name: Copy data to dist
         run: mkdir -p web/dist/data/tables && cp data/tables/*.json web/dist/data/tables/
 
-      - uses: actions/configure-pages@v4
+      - uses: actions/configure-pages@v6
 
       - uses: actions/upload-pages-artifact@v3
         with:
