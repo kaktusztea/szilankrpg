@@ -12,9 +12,10 @@ interface Rubrika {
 interface Props {
   ÉP: number;
   onSebCountChange?: (count: number) => void;
+  ftEnyhítés?: number;
 }
 
-export function EpTable({ ÉP, onSebCountChange }: Props) {
+export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0 }: Props) {
   const oszlopMéret = ÉP / 4;
   const összRubrika = ÉP;
   const [rubrikák, setRubrikák] = useState<Rubrika[]>(
@@ -96,7 +97,7 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
   // Aktuális sebesülés kategória
   const kitöltött = rubrikák.filter(r => r.típus !== '').length;
   const aktKategória = kitöltött === 0 ? 1 : Math.min(4, Math.ceil(kitöltött / oszlopMéret));
-  const téLevonások = ['TÉ: 0', 'TÉ: -3', 'TÉ: -6', 'TÉ: -9'];
+  const téLevonások = [0, -3, -6, -9].map(v => v === 0 ? 'TÉ: 0' : `TÉ: ${Math.min(0, v + ftEnyhítés)}`);
 
   useEffect(() => {
     onSebCountChange?.(kitöltött);

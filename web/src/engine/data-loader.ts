@@ -22,6 +22,7 @@ interface KonstansokRaw {
   pajzshasználat_TÉ_büntetés: { pajzs: string; fokok: number[] }[];
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   nyelvek: string[];
+  fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
 }
 
 // --- KP tábla JSON struktúra ---

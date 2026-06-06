@@ -167,7 +167,7 @@ function App() {
 function TabContent({ tab, data, gameMode, setActiveTab, képzettségek, setKépzettségek, fortélyok, setFortélyok }: { tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void; képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>; fortélyok: { név: string; fok: number }[]; setFortélyok: React.Dispatch<React.SetStateAction<{ név: string; fok: number }[]>> }) {
   switch (tab) {
     case 'aktiv': return <div className="screen"><h2>❎ Aktív</h2><p>Szituáció beállítás (TODO)</p></div>;
-    case 'harc': return <HarcScreen data={data} onNavigate={(id) => {
+    case 'harc': return <HarcScreen data={data} képzettségek={képzettségek} onNavigate={(id) => {
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;

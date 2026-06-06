@@ -9,7 +9,16 @@ import { calcManoverPont } from '../engine/limits';
 import { EpTable } from './EpTable';
 import './HarcScreen.css';
 
-export function HarcScreen({ data, onNavigate }: { data: GameData; onNavigate?: (tabId: string) => void }) {
+function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftTable: { szint: number; enyhítés: number }[]): number {
+  const ftSzint = képzettségek.find(kp => kp.név === 'Fájdalomtűrés')?.szint ?? 0;
+  let enyhítés = 0;
+  for (const row of ftTable) {
+    if (ftSzint >= row.szint) enyhítés = row.enyhítés;
+  }
+  return enyhítés;
+}
+
+export function HarcScreen({ data, képzettségek, onNavigate }: { data: GameData; képzettségek: { név: string; szint: number }[]; onNavigate?: (tabId: string) => void }) {
   const [véCsökkenés, setVéCsökkenés] = useState(0);
   const [aktManöverPont, setAktManöverPont] = useState(99);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
@@ -125,7 +134,7 @@ export function HarcScreen({ data, onNavigate }: { data: GameData; onNavigate?: 
       </table>
 
       <div className="harc-section">
-        <EpTable ÉP={ep.ÉP} onSebCountChange={setSebCount} />
+        <EpTable ÉP={ep.ÉP} onSebCountChange={setSebCount} ftEnyhítés={calcFtEnyhítés(képzettségek, data.konstansok.fájdalomtűrés_enyhítés)} />
       </div>
 
       {showVéResetConfirm && createPortal(
