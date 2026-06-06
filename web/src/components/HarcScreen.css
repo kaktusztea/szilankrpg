@@ -1,4 +1,4 @@
-.harc-screen h3 { margin: 12px 0 6px; font-size: 15px; }
+.harc-screen h3 { margin: 12px 0 6px; font-size: 17px; }
 
 .harc-nav-btns {
   display: flex;
@@ -13,7 +13,7 @@
   color: var(--text);
   border: 1px solid #444;
   border-radius: 4px;
-  font-size: 12px;
+  font-size: 16px;
   cursor: pointer;
 }
 
@@ -63,7 +63,7 @@
   border-radius: 3px;
   padding: 2px 7px;
   cursor: pointer;
-  font-size: 12px;
+  font-size: 16px;
 }
 
 .sfe-values {
@@ -73,16 +73,16 @@
   margin-top: 4px;
 }
 
-.sfe-line { font-size: 14px; }
+.sfe-line { font-size: 16px; }
 .sfe-line strong { font-size: 16px; }
 
 .ke-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
-.ke-box .label, .sfe-box .label { font-size: 14px; font-weight: bold; color: var(--text); text-transform: uppercase; }
+.ke-box .label, .sfe-box .label { font-size: 16px; font-weight: bold; color: var(--text); text-transform: uppercase; }
 
 .harc-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 13px;
+  font-size: 17px;
   margin-bottom: 12px;
 }
 
@@ -92,7 +92,7 @@
   text-align: center;
 }
 
-.harc-table th { background: var(--primary); font-size: 11px; }
+.harc-table th { background: var(--primary); font-size: 17px; }
 .harc-table th.te-col { color: var(--accent); }
 .harc-table th.ve-col { color: var(--warning); }
 .harc-table td:first-child { text-align: left; }
@@ -113,7 +113,7 @@
   border-radius: 4px;
   padding: 4px 10px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 17px;
 }
 
 .ep-bar {
@@ -127,12 +127,12 @@
   text-align: center;
   padding: 6px 4px;
   border-radius: 3px;
-  font-size: 13px;
+  font-size: 17px;
   font-weight: bold;
 }
 
 .ep-segment .te-lev {
-  font-size: 11px;
+  font-size: 17px;
   font-weight: normal;
   margin-top: 2px;
   opacity: 0.9;
@@ -153,4 +153,4 @@
   cursor: pointer;
 }
 
-.dim { font-size: 11px; color: var(--text-dim); }
+.dim { font-size: 17px; color: var(--text-dim); }

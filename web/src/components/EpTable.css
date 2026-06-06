@@ -6,7 +6,7 @@
   align-items: center;
   margin-bottom: 6px;
   flex-wrap: wrap;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .ep-grid {
@@ -24,7 +24,7 @@
 .ep-col-header {
   text-align: center;
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
   padding: 3px;
   background: var(--primary);
   border-radius: 3px 3px 0 0;
@@ -32,7 +32,7 @@
 
 .ep-col-footer {
   text-align: center;
-  font-size: 11px;
+  font-size: 15px;
   padding: 3px;
   margin-top: 4px;
   color: var(--accent);
@@ -52,7 +52,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 10px;
+  font-size: 16px;
   font-weight: bold;
   background: var(--input-bg);
 }
@@ -72,7 +72,7 @@
   border: 1px solid #555;
   border-radius: 4px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
   background: var(--input-bg);
   color: var(--text);
 }
@@ -103,7 +103,7 @@
   margin-bottom: 8px;
 }
 
-.ep-dialog-row label { font-size: 13px; min-width: 50px; }
+.ep-dialog-row label { font-size: 15px; min-width: 50px; }
 
 .ep-dialog-row button {
   padding: 4px 10px;
@@ -112,7 +112,7 @@
   background: var(--input-bg);
   color: var(--text);
   cursor: pointer;
-  font-size: 13px;
+  font-size: 15px;
 }
 
 .ep-dialog-row button.active {
@@ -128,7 +128,7 @@
   border: 1px solid #555;
   border-radius: 4px;
   color: var(--text);
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .btn-confirm {
