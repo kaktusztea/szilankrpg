@@ -166,6 +166,7 @@ export function EpTable({ ÉP, onSebCountChange }: Props) {
 function SebDialog({ onConfirm, onCancel: _onCancel }: { onConfirm: (t: SebTípus, v: number) => void; onCancel: () => void }) {
   const [típus, setTípus] = useState<SebTípus | ''>('');
   const [érték, setÉrték] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     if (típus && érték) {
@@ -182,18 +183,27 @@ function SebDialog({ onConfirm, onCancel: _onCancel }: { onConfirm: (t: SebTípu
         ))}
       </div>
       <div className="kep-szint-grid">
-        {Array.from({ length: 20 }, (_, i) => i + 1).map(n => (
+        {Array.from({ length: 15 }, (_, i) => i + 1).map(n => (
           <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => setÉrték(n)}>{n}</button>
         ))}
       </div>
+      {!expanded && <div className="ep-expand-btn" onClick={() => setExpanded(true)}>▾</div>}
+      {expanded && (
+        <div className="kep-szint-grid">
+          {Array.from({ length: 25 }, (_, i) => i + 16).map(n => (
+            <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => setÉrték(n)}>{n}</button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
 
 function GyógyDialog({ maxÉP, maxFP, onConfirm, onCancel: _onCancel }: { maxÉP: number; maxFP: number; onConfirm: (t: 'FP' | 'ÉP', v: number) => void; onCancel: () => void }) {
-  const [típus, setTípus] = useState<'FP' | 'ÉP' | ''>('');
+  const autoType = maxÉP > 0 && maxFP === 0 ? 'ÉP' : maxFP > 0 && maxÉP === 0 ? 'FP' : '';
+  const [típus, setTípus] = useState<'FP' | 'ÉP' | ''>(autoType);
   const [érték, setÉrték] = useState<number | null>(null);
-  const max = típus === 'ÉP' ? maxÉP : típus === 'FP' ? maxFP : Math.max(maxÉP, maxFP);
+  const max = típus === 'ÉP' ? maxÉP : típus === 'FP' ? maxFP : 0;
 
   useEffect(() => {
     if (típus && érték) {

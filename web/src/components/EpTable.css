@@ -170,3 +170,11 @@
   color: #fff !important;
   border-color: var(--accent) !important;
 }
+
+.ep-expand-btn {
+  text-align: center;
+  color: var(--text-dim);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 2px 0;
+}
