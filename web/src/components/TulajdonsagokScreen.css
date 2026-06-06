@@ -295,6 +295,10 @@
   justify-content: center;
 }
 
+.tul-val-grid {
+  grid-template-columns: repeat(5, 40px);
+}
+
 .kep-szint-grid .fort-fok-btn.active {
   border-color: var(--success);
   background: var(--success);

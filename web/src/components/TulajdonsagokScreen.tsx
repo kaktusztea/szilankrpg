@@ -410,7 +410,6 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
   név: string; érték: number; gameMode: boolean; onChange: (v: number) => void; fajMin?: number; fajMax?: number;
 }) {
   const [editing, setEditing] = useState(false);
-  const [tempVal, setTempVal] = useState(érték);
   const [showWarning, setShowWarning] = useState(false);
   const lastTap = useRef(0);
 
@@ -430,7 +429,7 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
     const now = Date.now();
     if (now - lastTap.current < 350) {
       // Double tap
-      if (!gameMode) { setTempVal(érték); setEditing(true); }
+      if (!gameMode) { setEditing(true); }
       lastTap.current = 0;
     } else {
       lastTap.current = now;
@@ -454,18 +453,11 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
       {editing && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
-            <label>{label}: <strong>{tempVal}</strong></label>
-            <input
-              type="range"
-              min={-5}
-              max={7}
-              value={tempVal}
-              onChange={e => setTempVal(Number(e.target.value))}
-              className="tsz-slider"
-            />
-            <div className="kep-prompt-btns">
-              <button onClick={() => { onChange(tempVal); setEditing(false); }}>OK</button>
-              <button onClick={() => setEditing(false)}>Mégse</button>
+            <label>{label}</label>
+            <div className="kep-szint-grid tul-val-grid">
+              {[-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7].map(n => (
+                <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => { onChange(n); setEditing(false); }}>{n}</button>
+              ))}
             </div>
           </div>
         </div>,
