@@ -4,7 +4,7 @@ import type { GameData } from './engine/data-loader';
 import { HarcScreen } from './components/HarcScreen';
 import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
 import { FortelyokScreen } from './components/FortelyokScreen';
-import { calcKp } from './engine/kp';
+import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
 import { testKarakter8 } from './testdata';
 import './App.css';
 
@@ -105,42 +105,44 @@ function App() {
       </main>
 
       {!gameMode && data && (() => {
-        const primerKepz = new Set<string>();
-        const primerPrefixes: string[] = [];
-        for (const d of data.kepzettsegDefs) {
-          if (!d.primer) continue;
-          if (d.többszörös.length > 0) {
-            if (d.többszörös[0] === '*') {
-              primerPrefixes.push(d.név + ':');
-            } else {
-              for (const sub of d.többszörös) primerKepz.add(sub);
-            }
-          } else {
-            primerKepz.add(d.név);
-          }
-        }
-        // Add actual slot names that match free-text primer prefixes
-        for (const k of képzettségek) {
-          if (primerPrefixes.some(p => k.név.startsWith(p))) primerKepz.add(k.név);
-        }
-        const primerFortGroups = new Set(data.primerFortelyok);
-        const fortelyKpMap = new Map(data.fortelySummaries.map(d => [d.név, d.ingyenes_perszint > 0 ? 0 : d.kp_perfok]));
-        const karakter = { ...testKarakter8, képzettségek: képzettségek.map(k => ({ ...k, spec: '' })), fortélyok: fortélyok.map(f => ({ ...f, spec: '' })) };
-        const kpResult = calcKp(karakter, data.konstansok.kp, data.konstansok.kp_bónusz, data.kepzettsegKp, primerKepz, primerFortGroups, fortelyKpMap);
+        // spec_kp (feltételes, marad TS-ben)
+        const spec = testKarakter8.fortélyok_speciális;
+        const bónusz = data.konstansok.kp_bónusz;
+        let spec_kp = 0;
+        if (spec.analfabéta) spec_kp += bónusz.analfabéta;
+        if (spec.apró_méretű_lény) spec_kp += bónusz.apró_méretű_lény;
+        if (spec.süketség) spec_kp += bónusz.süketség;
+        if (spec.vakság) spec_kp += bónusz.vakság;
+        spec_kp += spec.tartós_sérülés_fok * bónusz.tartós_sérülés_per_fok;
 
-        // Kiemelt fortélyok KP költése (Kultúrkör, Helyismeret): ingyenesek feletti példányok
+        // kiemelt_kp (iteráció + ingyenes keret, marad TS-ben)
         const tsz = testKarakter8.tsz;
-        let kiemeltKp = 0;
+        let kiemelt_kp = 0;
         for (const d of data.fortelySummaries) {
           if (d.ingyenes_perszint <= 0) continue;
           const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
           const felvettDb = fortélyok.filter(f => f.név === d.név || f.név.startsWith(d.név + ' - ')).reduce((s, f) => s + f.fok, 0);
           const fizetősDb = Math.max(0, felvettDb - ingyenesDb);
-          kiemeltKp += fizetősDb * d.kp_perfok;
+          kiemelt_kp += fizetősDb * d.kp_perfok;
         }
 
-        const maradékKp = kpResult.maradék_kp - kiemeltKp;
-        const maradékSzekunder = Math.max(0, kpResult.összes_szekunder_kp - kpResult.kp_szekunder_költött);
+        // Reactive engine: everything else
+        const kpCtx = buildContext(tulajdonságok, tsz, data.konstansok as any, {
+          spec_kp,
+          kiemelt_kp,
+          HM_TÉ: testKarakter8.HM_TÉ,
+          HM_VÉ: testKarakter8.HM_VÉ,
+          CM: testKarakter8.CM,
+          fortélyMod_KÉ: 0,
+          harcmodor_összeg: 0,
+          felszerelés_terhelés: 0,
+        });
+        const fortelyKpMap = new Map(data.fortelySummaries.map(d => [d.név, d.ingyenes_perszint > 0 ? 0 : d.kp_perfok]));
+        const arrays = buildArrayContext(képzettségek, fortélyok, data.kepzettsegKp, fortelyKpMap);
+        const kpComputed = evaluate(data.rules, kpCtx, arrays);
+
+        const maradékKp = kpComputed.get('maradék_kp') ?? 0;
+        const maradékSzekunder = Math.max(0, (kpComputed.get('összes_szekunder_kp') ?? 0) - (kpComputed.get('kp_képzettségek') ?? 0));
         const isNeg = maradékKp < 0;
         return (
           <div className={`kp-bar ${isNeg ? 'kp-bar-neg' : ''}`}>

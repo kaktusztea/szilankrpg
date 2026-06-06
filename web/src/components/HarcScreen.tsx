@@ -2,10 +2,9 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import { testKarakter8 } from '../testdata';
-import { calcEp } from '../engine/ep';
-import { calcKE, calcFegyverHarcertekek } from '../engine/harcertek';
+import { calcFegyverHarcertekek } from '../engine/harcertek';
 import { calcPancel } from '../engine/pancel';
-import { calcManoverPont } from '../engine/limits';
+import { evaluate, buildContext } from '../engine/reactive';
 import { EpTable } from './EpTable';
 import './HarcScreen.css';
 
@@ -33,21 +32,26 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
   const k = testKarakter8;
   const { konstansok, harcmodorBonusz } = data;
 
-  // ÉP
-  const ep = calcEp(tulajdonságok.edzettség);
-
-  // KÉ
+  // Reactive engine: ÉP, KÉ, TÉ_alap, VÉ_alap, CÉ_alap, Manőver pont, felszerelés
   const fortelyKE = 4 + 1; // Gyors kezdeményezés 2.fok + Harckeret növelés 1.fok
-  const ké = calcKE(k.tulajdonságok, k.tsz, konstansok.harcérték_alap, fortelyKE);
+  const harcmodorÖsszeg = [6, 8, 4, 0, 0].reduce((a, b) => a + b, 0);
+  const ctx = buildContext(tulajdonságok, k.tsz, konstansok as any, {
+    fortélyMod_KÉ: fortelyKE,
+    harcmodor_összeg: harcmodorÖsszeg,
+    HM_TÉ: k.HM_TÉ,
+    HM_VÉ: k.HM_VÉ,
+    CM: k.CM,
+    felszerelés_terhelés: 0,
+  });
+  const computed = evaluate(data.rules, ctx);
 
-  // Páncél
+  const épValue = computed.get('ÉP') ?? 40;
+  const ké = computed.get('KÉ') ?? 0;
+  const manöverPont = computed.get('manőver_pont') ?? 0;
   const pancel = calcPancel(
     k.páncél, konstansok.páncél_struktúrák, konstansok.páncél_fémalapanyagok,
     konstansok.páncél_csatolt_tag_mgt, 3, konstansok.merevvértviselet_bónuszok, k.tulajdonságok.erő,
   );
-
-  // Manőver
-  const manöverPont = calcManoverPont([6, 8, 4, 0, 0], k.tsz);
 
   // Fegyverek
   const fegyverNevek = ['Puszta kéz', 'Kard, lovag'];
@@ -70,7 +74,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
   const pajzsVÉ = 10;
 
   // ÉP alapú TÉ levonás (sebesülés kategória)
-  const oszlopMéret = ep.ÉP / 4;
+  const oszlopMéret = épValue / 4;
   const téLevonások = [0, -3, -6, -9];
   // aktKategória kell a sebesülés tracking-hez — egyelőre 0 (nincs seb state itt, EpTable kezeli)
   // TODO: EpTable-ből felbubble-olni a kitöltött rubrikák számát
@@ -134,7 +138,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
       </table>
 
       <div className="harc-section">
-        <EpTable ÉP={ep.ÉP} onSebCountChange={setSebCount} ftEnyhítés={calcFtEnyhítés(képzettségek, data.konstansok.fájdalomtűrés_enyhítés)} onNavigate={képzettségek.some(k => k.név === 'Fájdalomtűrés') ? () => { onNavigate?.('tulajdonsagok'); setTimeout(() => { document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 200); } : undefined} />
+        <EpTable ÉP={épValue} onSebCountChange={setSebCount} ftEnyhítés={calcFtEnyhítés(képzettségek, data.konstansok.fájdalomtűrés_enyhítés)} onNavigate={képzettségek.some(k => k.név === 'Fájdalomtűrés') ? () => { onNavigate?.('tulajdonsagok'); setTimeout(() => { document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 200); } : undefined} />
       </div>
 
       {showVéResetConfirm && createPortal(
