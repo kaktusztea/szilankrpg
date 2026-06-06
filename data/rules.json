@@ -1,0 +1,110 @@
+{
+  "version": 1,
+  "rules": [
+    {
+      "id": "ÉP",
+      "formula": "28 + tulajdonságok.edzettség * 4",
+      "inputs": ["tulajdonságok.edzettség"]
+    },
+    {
+      "id": "S1_max",
+      "formula": "ÉP / 4",
+      "inputs": ["ÉP"]
+    },
+    {
+      "id": "S2_max",
+      "formula": "ÉP / 2",
+      "inputs": ["ÉP"]
+    },
+    {
+      "id": "S3_max",
+      "formula": "ÉP * 3 / 4",
+      "inputs": ["ÉP"]
+    },
+    {
+      "id": "KÉ",
+      "formula": "konstansok.harcérték_alap.KÉ + tulajdonságok.gyorsaság + tulajdonságok.intelligencia + tsz + fortélyMod_KÉ",
+      "inputs": ["konstansok.harcérték_alap.KÉ", "tulajdonságok.gyorsaság", "tulajdonságok.intelligencia", "tsz", "fortélyMod_KÉ"]
+    },
+    {
+      "id": "TÉ_alap",
+      "formula": "konstansok.harcérték_alap.TÉ + tulajdonságok.erő + tulajdonságok.ügyesség + tulajdonságok.gyorsaság + HM_TÉ",
+      "inputs": ["konstansok.harcérték_alap.TÉ", "tulajdonságok.erő", "tulajdonságok.ügyesség", "tulajdonságok.gyorsaság", "HM_TÉ"]
+    },
+    {
+      "id": "VÉ_alap",
+      "formula": "konstansok.harcérték_alap.VÉ + tulajdonságok.gyorsaság + tulajdonságok.ügyesség + HM_VÉ",
+      "inputs": ["konstansok.harcérték_alap.VÉ", "tulajdonságok.gyorsaság", "tulajdonságok.ügyesség", "HM_VÉ"]
+    },
+    {
+      "id": "CÉ_alap",
+      "formula": "konstansok.harcérték_alap.CÉ + tulajdonságok.önuralom + CM",
+      "inputs": ["konstansok.harcérték_alap.CÉ", "tulajdonságok.önuralom", "CM"]
+    },
+    {
+      "id": "összes_kp",
+      "formula": "tsz * (konstansok.kp.perszint + tulajdonságok.intelligencia)",
+      "inputs": ["tsz", "konstansok.kp.perszint", "tulajdonságok.intelligencia"]
+    },
+    {
+      "id": "összes_szekunder_kp",
+      "formula": "tsz * (konstansok.kp.szekunder_perszint + tulajdonságok.emlékezet)",
+      "inputs": ["tsz", "konstansok.kp.szekunder_perszint", "tulajdonságok.emlékezet"]
+    },
+    {
+      "id": "tulajdonság_pont_keret",
+      "formula": "konstansok.arányok.tulajdonság_pont_alap + floor(tsz / 2)",
+      "inputs": ["konstansok.arányok.tulajdonság_pont_alap", "tsz"]
+    },
+    {
+      "id": "manőver_pont",
+      "formula": "ceil(harcmodor_összeg * 2 / tsz)",
+      "inputs": ["harcmodor_összeg", "tsz"]
+    },
+    {
+      "id": "felszerelés_keret",
+      "formula": "2 + tulajdonságok.erő",
+      "inputs": ["tulajdonságok.erő"]
+    },
+    {
+      "id": "felszerelés_mgt",
+      "formula": "max(0, felszerelés_terhelés - felszerelés_keret)",
+      "inputs": ["felszerelés_terhelés", "felszerelés_keret"]
+    },
+    {
+      "id": "max_CM",
+      "formula": "tsz * konstansok.arányok.max_cm_perszint",
+      "inputs": ["tsz", "konstansok.arányok.max_cm_perszint"]
+    },
+    {
+      "id": "maradék_kp",
+      "formula": "összes_kp + spec_kp + összes_szekunder_kp - elköltött_kp",
+      "inputs": ["összes_kp", "spec_kp", "összes_szekunder_kp", "elköltött_kp"]
+    },
+    {
+      "id": "kp_képzettségek",
+      "formula": "sum_lookup(képzettségek, szint, kp_tábla, szint, kp)",
+      "inputs": ["képzettségek"]
+    },
+    {
+      "id": "kp_fortélyok",
+      "formula": "sum(fortélyok, fok) * konstansok.kp.fortélyfok",
+      "inputs": ["fortélyok", "konstansok.kp.fortélyfok"]
+    },
+    {
+      "id": "kp_hm",
+      "formula": "(HM_TÉ + HM_VÉ) * konstansok.kp.hm",
+      "inputs": ["HM_TÉ", "HM_VÉ", "konstansok.kp.hm"]
+    },
+    {
+      "id": "kp_cm",
+      "formula": "CM * konstansok.kp.cm",
+      "inputs": ["CM", "konstansok.kp.cm"]
+    },
+    {
+      "id": "elköltött_kp",
+      "formula": "kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp",
+      "inputs": ["kp_képzettségek", "kp_fortélyok", "kp_hm", "kp_cm", "kiemelt_kp"]
+    }
+  ]
+}
