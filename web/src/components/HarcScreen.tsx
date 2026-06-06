@@ -134,7 +134,7 @@ export function HarcScreen({ data, képzettségek, onNavigate }: { data: GameDat
       </table>
 
       <div className="harc-section">
-        <EpTable ÉP={ep.ÉP} onSebCountChange={setSebCount} ftEnyhítés={calcFtEnyhítés(képzettségek, data.konstansok.fájdalomtűrés_enyhítés)} />
+        <EpTable ÉP={ep.ÉP} onSebCountChange={setSebCount} ftEnyhítés={calcFtEnyhítés(képzettségek, data.konstansok.fájdalomtűrés_enyhítés)} onNavigate={képzettségek.some(k => k.név === 'Fájdalomtűrés') ? () => { onNavigate?.('tulajdonsagok'); setTimeout(() => { document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 200); } : undefined} />
       </div>
 
       {showVéResetConfirm && createPortal(

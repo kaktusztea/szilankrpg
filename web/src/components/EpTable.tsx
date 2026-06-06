@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import './EpTable.css';
 
@@ -13,11 +13,13 @@ interface Props {
   ÉP: number;
   onSebCountChange?: (count: number) => void;
   ftEnyhítés?: number;
+  onNavigate?: () => void;
 }
 
-export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0 }: Props) {
+export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }: Props) {
   const oszlopMéret = ÉP / 4;
   const összRubrika = ÉP;
+  const lastTapFooter = useRef(0);
   const [rubrikák, setRubrikák] = useState<Rubrika[]>(
     Array.from({ length: összRubrika }, () => ({ típus: '', sorszám: 0 }))
   );
@@ -129,7 +131,12 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0 }: Props) {
                 </div>
               );
             })}
-            <div className={`ep-col-footer ${aktKategória === oszlop + 1 ? 'active-cat' : ''}`}>{téLevonások[oszlop]}</div>
+            <div className={`ep-col-footer ${aktKategória === oszlop + 1 ? 'active-cat' : ''}`} onClick={() => {
+              if (!onNavigate) return;
+              const now = Date.now();
+              if (now - lastTapFooter.current < 350) { onNavigate(); lastTapFooter.current = 0; }
+              else { lastTapFooter.current = now; }
+            }}>{téLevonások[oszlop]}</div>
           </div>
         ))}
       </div>

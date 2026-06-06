@@ -505,6 +505,7 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
     <div className="kep-row-wrapper">
       <div
         className="kep-row"
+        data-kep={slot.név}
         onClick={handleTap}
       >
         <span className="kep-név">{displayName}</span>
