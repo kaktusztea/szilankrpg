@@ -1,6 +1,7 @@
 ---
 schema_version: 1
-név: alakzatharc
+
+név: "Alakzatharc"
 névkomment: spec.
 maxfok: 2
 többszörösség:
@@ -18,9 +19,11 @@ megjegyzések:
     alakzatot, akkor mindenkire az alacsonyabb bónuszok érvényesek.
 - text: 'A választható alakzatok (kicsi, nagy, lovas) listáját, módosítóit, alkalmazását
     lásd a Harcrendszer fejezet [Harci alakzatok](../057_harci_alakzatok.md) fejezetében.'
+
 kiterjeszti:
   normál: []
   erős: []
+
 kp_perfok: 6
 
 fokok:
@@ -40,6 +43,7 @@ fokok:
   - text: Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2`
       olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod.
   módosítók: ''
+
 todo:
 - text: ⭕ Hányadik fok a max? 2?
 - text: ⭕ Fokok leírása, mik a különbségek.

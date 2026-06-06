@@ -1,6 +1,7 @@
 ---
 schema_version: 1
-név: fegyverrántás
+
+név: "Fegyverrántás"
 névkomment: ''
 maxfok: 2
 többszörösség:
@@ -12,9 +13,11 @@ leírások:
 - text: 'Bónuszok 🗡️**Fegyverrántás-szituációban** (az alkalmazó oldalán):'
 megjegyzések:
 - text: 'Bővebben lásd a **Harcrendszer** fejezet ⭕🗡️ **Fegyverrántás** alfejezetét!'
+
 kiterjeszti:
   normál: []
   erős: []
+
 kp_perfok: 6
 
 fokok:
@@ -40,5 +43,6 @@ fokok:
     forrás: ''
     arány: 0
     feltétel: "szituáció:fegyverrántás"
+
 todo:
 - text: ''

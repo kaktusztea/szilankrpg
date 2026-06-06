@@ -1,6 +1,7 @@
 ---
 schema_version: 1
-név: fárasztás
+
+név: "Fárasztás"
 névkomment: ''
 maxfok: 1
 többszörösség:
@@ -12,9 +13,11 @@ leírások:
 megjegyzések:
 - text: Zúzásban nem alkalmazható
 - text: Közelharc harcmodorban csak szintén Közelharcban küzdő ellenfél ellen alkalmazható
+
 kiterjeszti:
   normál: []
   erős: []
+
 kp_perfok: 6
 
 fokok:
@@ -34,5 +37,6 @@ fokok:
     forrás: ''
     arány: 0
     feltétel: "szituáció:fárasztás_taktika"
+
 todo:
 - text: ''

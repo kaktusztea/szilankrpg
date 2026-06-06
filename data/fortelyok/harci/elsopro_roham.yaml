@@ -1,6 +1,7 @@
 ---
 schema_version: 1
-név: elsöprő roham
+
+név: "Elsöprő roham"
 névkomment: ''
 maxfok: 1
 többszörösség:
