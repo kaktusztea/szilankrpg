@@ -43,7 +43,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - **Tab navigáció**: alul fix tab bar, horizontálisan scrollozható (minden tab közvetlenül elérhető, nincs "..." menü)
 - **Screen váltás**: jobb-bal swipe gesztussal (mobilon, threshold: 30px), desktop-on tab kattintás
 - **Swipe**: csak horizontális, `Math.abs(dx) > Math.abs(dy)` check
-- **Long press**: 400ms timeout minden szerkesztő interakcióhoz
+- **Double-tap**: 350ms threshold minden szerkesztő interakcióhoz (Tulajdonságok, Képzettségek, Fortélyok, Név, Szint, Kor)
 - **Popup overlay-ek**: `createPortal(document.body)`, `.kep-prompt-overlay` osztály, `position: fixed; inset: 0; z-index: 100`
 - **Escape**: minden popup overlay bezárható
 - **Accordion/collapse**: elemek lenyithatók koppintásra (Game mód), másik koppintás becsukja
@@ -127,27 +127,34 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
   - TÉ értékek: dinamikusan csökkennek sebesülés kategória TÉ levonással
   - VÉ értékek: dinamikusan csökkennek VÉ csökkenés értékkel
-- **VÉ csökkenés**: aktuális érték + gombok: +1, +2, +3, -1, ⟲ (reset)
+- **VÉ csökkent box**: label `VÉ csökkent` (bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (reset — megerősítő popup: piros "VÉ Reset" gomb, disabled ha érték=0). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
 - **ÉP táblázat**:
+  - **Fejléc sor** (4 oszlopos grid, S1-S4-hez igazítva):
+    - S1 pozíció: `ÉP: X(Y)` — X=max ÉP, Y=megmaradt ÉP
+    - S2 pozíció: `⟲ ÉP reset` gomb (centered, max-width 70%, disabled ha nincs seb, megerősítő popup: piros "ÉP Reset" gomb)
+    - S3 pozíció: `⚔️ Seb` gomb (overlay popup)
+    - S4 pozíció: `💚 Gyógy` gomb (overlay popup, disabled ha nincs seb)
   - 4 oszlop (S1-S4), mindegyikben ÉP/4 db rubrika
-  - Fejléc: ÉP összérték | Seb: X/Y
-  - Oszlop footer: TÉ levonás értékek (`TÉ: 0`, `TÉ: -3`, `TÉ: -6`, `TÉ: -9`)
+  - Oszlop footer: TÉ levonás értékek — **Fájdalomtűrés képzettség szint alapján enyhítve** (konstansok.fájdalomtűrés_enyhítés táblából)
+    - Dupla kopp a TÉ footer-en → navigál a Tul/Képz fülre, scroll a Fájdalomtűrés képzettséghez (ha felvéve)
   - Az aktuális sebesülés-kategória TÉ levonás footere invertált színnel kiemelve (0 sebnél is: S1 aktív)
-  - Spacing az utolsó rubrika-sor és a TÉ footer között (kicsi, 4px)
   - Rubrikák fentről lefelé töltődnek S1→S2→S3→S4 sorrendben
   - Kitöltött rubrikák: típus+sorszám jelölés (V1, Z2, FP3)
   - Szín: ÉP sebek pirosas-narancs árnyalatok (sorszámonként enyhén eltérő), FP sebek lila
   - FP utáni ÉP seb: fentről lefelé felülírja a meglévő FP rubrikákat, majd üres helyeket tölt
-  - Gyógyulás utáni compaction: kitöltött rubrikák tömörítődnek felülre (nincs lyuk középen, FP felcsúszik ÉP mögé)
+  - Gyógyulás utáni compaction: kitöltött rubrikák tömörítődnek felülre
   - Sorszám újrahasználat: ha egy seb összes rubrikája begyógyult, a száma felszabadul
   - TÉ levonás dinamikusan vonódik le a Teljes harcértékek TÉ oszlopából (sebesülés kategória alapján)
-  - **⚔️ Sebesülés gomb**: típus (S/V/Z/FP) + érték választó. Default: S (Szúró).
-  - **💚 Gyógyulás gomb**: disabled ha nincs seb. Megnyitja a Gyógyulás dialógust:
-    - ÉP / FP választó gombok. Default: ÉP (első). Ha az adott típusból nincs seb → disabled + auto-select a másik.
-    - Gombokon jelzi a max-ot: `ÉP (X)` / `FP (X)`
-    - Érték input: max = az adott típusú sebek száma. Mellette `/ X` jelzés.
-    - Hátulról töröl, utána compaction.
-  - **⟲ Reset**: mindent töröl
+  - **⚔️ Sebesülés overlay popup**:
+    - Típus gombok: S, V, Z, FP (kerek, aktív=zöld) — kezdetben egyik sincs kiválasztva
+    - Érték gombok: 1-15 (alapból látható, 5 oszlop grid) + ▾ lenyitó → 16-40 (rejtett)
+    - Mindkettő kiválasztva → azonnal bezárul és érvényre lép. Nincs OK/Mégse.
+  - **💚 Gyógyulás overlay popup**:
+    - Típus gombok: ÉP, FP (kerek, aktív=zöld, disabled ha az adott típusból nincs seb)
+    - Ha csak egy típusú seb van → auto-select (nem kell választani)
+    - Típus után: érték gombok (1..max, 5 oszlop grid)
+    - Mindkettő kiválasztva → azonnal bezárul. Nincs OK/Mégse.
+  - Mellé koppintás (overlay háttér) = cancel mindkét popup-nál
 - **Manőver Pont**: Manőver Alap + aktuális/max MP + gombok (+1, -1). Default: max.
 
 ---
@@ -156,18 +163,18 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ### Fejléc (legfelül)
 - **Név + Szint** sor: két összeérő box
-  - Név box (flex:1): `Név: Dorek a Toroni` — hosszú nyomásra szerkeszthető (popup dialógus, max 40 karakter)
-  - Szint box: `Szint: 8` — hosszú nyomásra szerkeszthető (popup slider, range 1..konstansok.arányok.max_tsz)
+  - Név box (flex:1): `Név: Dorek a Toroni` — double-tap → szerkesztő popup (max 40 karakter)
+  - Szint box: `Szint: 8` — double-tap → slider popup (range 1..konstansok.arányok.max_tsz)
 - **Faj + Kor** sor (CSAK szerkesztő módban):
-  - Faj box (flex:1): `Faj: Ember (Északi)` — hosszú nyomásra dropdown popup (26 faj a tables/fajok.json-ból)
-  - Kor box: `Kor: 32` — hosszú nyomásra slider popup (5-500, lépésköz 5)
+  - Faj box (flex:1): inline `<select>` dropdown (26 faj a tables/fajok.json-ból, közvetlenül koppintható)
+  - Kor box: `Kor: 32` — double-tap → slider popup (5-500, lépésköz 5)
 - **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"Dorek a Toroni (Ember (Északi), 32)"`
 
 ### Tulajdonságok
 - 8 tulajdonság fix 2 oszlop × 4 sor grid-ben (fentről lefelé, aztán következő oszlop)
 - Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
 - Nem reszponzív, fix layout
-- Szerkesztő módban: hosszú nyomás (400ms) → popup overlay slider (-5..+7), OK/Mégse gombokkal
+- Szerkesztő módban: double-tap (350ms) → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
 - Game módban: read-only
 - **Faj limit warning**: ha az érték meghaladja/alulmúlja a kiválasztott faj min/max keretét → sárga szín + koppintásra lenyíló info (`Faj max: X` vagy `Faj min: X`)
 
@@ -190,7 +197,7 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 #### Viselkedés Szerkesztő módban
 - Rövid koppintás: nem csinál semmit
-- Hosszú nyomás (400ms): szint választó popup (gombok 1-15 grid, 5×3+2 elrendezés, aktív=zöld), érték választás azonnal bezárja
+- Double-tap (350ms): szint választó popup (gombok 1-15 grid, 5×3 elrendezés, aktív=zöld), érték választás azonnal bezárja
 - Escape: popup bezárás
 
 #### Viselkedés Game módban
@@ -241,8 +248,8 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 
 ### Viselkedés Szerkesztő módban
 - Rövid koppintás: nem csinál semmit
-- Hosszú nyomás (400ms): fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
-  - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se hosszú nyomásra)
+- Double-tap (350ms): fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
+  - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se double-tap-re) — ehelyett "1 fok a maximum" hint (2s)
 - Felvételkor (dropdown): maxfok>1 → azonnal fok popup; többszörös → megfelelő picker popup
 - ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
 - Escape: popup bezárás

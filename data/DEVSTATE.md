@@ -60,23 +60,32 @@
 - ✅ Engine core: TypeScript implementáció, tesztelve 8.szintű karakter ellen (15/18 ✅, maradék 3 javítva)
 - ✅ GUI spec: 9+1 screen leírás, formázás, viselkedés
 - ✅ Harc fül UI: KÉ/SFÉ/VÉ csökk/MP boxok, fegyvertábla, ÉP rubrika táblázat (sebesülés/gyógyulás/compaction/TÉ levonás)
+  - VÉ csökkent: reset gomb → megerősítő popup ("VÉ Reset"), disabled ha 0
+  - ÉP táblázat fejléc: 4 oszlopos grid (ÉP érték, ÉP reset gomb, Seb gomb, Gyógy gomb)
+  - Sebesülés/Gyógyulás: overlay popup (típus+érték gombok, auto-close mindkettő kiválasztva)
+  - Sebesülés: 1-15 látható + ▾ lenyitó 16-40
+  - Gyógyulás: auto-select ha csak 1 típusú seb van
+  - ÉP Reset: megerősítő popup, disabled ha nincs seb
+  - TÉ levonás: Fájdalomtűrés enyhítés (konstansok.fájdalomtűrés_enyhítés), dinamikus
+  - TÉ footer double-tap: navigál Tul/Képz → scroll Fájdalomtűrés-hez
+  - képzettségek prop: lifted state, Fájdalomtűrés szint módosítás azonnal hat
 - ✅ Tab rendszer: swipe + animáció (0.15s) + scrollozható tab bar
 - ✅ Szerkesztő/Game mód toggle
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
 - ✅ 168 fortély yaml, 39 képzettség yaml, 26 faj yaml
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
-  - Fejléc: Név (hosszú nyomás → szerkesztő popup) + Szint (hosszú nyomás → slider popup, max: konstansok.arányok.max_tsz)
-  - Faj box (szerkesztő mód, hosszú nyomás → dropdown, 26 faj tables/fajok.json-ból) + Kor box (hosszú nyomás → slider 5-500/5)
+  - Fejléc: Név (double-tap → szerkesztő popup) + Szint (double-tap → slider popup, max: konstansok.arányok.max_tsz)
+  - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (double-tap → slider 5-500/5)
   - Game módban Faj+Kor a Név mellé konkatenálódik: "Dorek (Ember (Északi), 32)"
-  - Tulajdonságok: fix 2×4 grid, teljes nevek, hosszú nyomás → popup overlay slider (-5..+7), OK/Mégse
+  - Tulajdonságok: fix 2×4 grid, teljes nevek, double-tap → popup gomb-grid (-5..+7), érték választás bezárja
   - Faj limit warning: sárga szín + koppintásra lenyíló "Faj max/min: X" ha túllépés
   - Képzettségek: 7 csoportban (összecsukható), dropdown + azonnali szint popup, ✕ törlés (piros megerősítés)
-  - Szint választó: popup gombok 1-15 grid (5×3+2), aktív=zöld, érték választás bezárja
+  - Szint választó: popup gombok 1-15 grid (5×3), aktív=zöld, érték választás bezárja (double-tap triggereli)
   - Szint színkód: 0=piros, 1-8=sárga, 9+=zöld
   - Többszörös képzettségek: generikus `többszörös` lista mező (fix alnév lista VAGY `["*"]` szabad szöveges max 20 kar)
   - Többszörös felvételkor csoportosítva a testvéreik mellé kerülnek
   - Game mód adatlap: próba, domináns tulajdonságok, kiterjesztő fortélyok
-  - Rövid koppintás szerkesztő módban: nem csinál semmit (csak hosszú nyomás)
+  - Rövid koppintás szerkesztő módban: nem csinál semmit (csak double-tap)
 - ✅ Fortélyok fül: teljes UI (szerkesztő + game mód)
   - 6 csoport (Harci → Általános → Érzékek → Szabad → Kiemelt → Misztikus), összecsukható
   - Fok kijelzés: szám, szín: sárga (nem max), zöld (max)
@@ -85,12 +94,12 @@
     - `spec_típus` + `spec_lista: [...]` → fix lista dropdown (szűri a már felvetteket)
     - `spec_típus` + `spec_lista: []` → freetext popup (max 20 kar)
     - Példányok neve: `"AlapNév - alnév"` formátum
-  - Fok választó: kerek radio gombok (1..maxfok), aktív=zöld, maxfok=1 → nincs popup
+  - Fok választó: kerek radio gombok (1..maxfok), aktív=zöld, maxfok=1 → "1 fok a maximum" hint (2s, warning szín)
   - Ingyenes keret: `floor((TSz+1)/ingyenes_perszint)` db, 🎁 jel az ingyeseknél
   - KP logika: `kp_perfok` per fortély, base name lookup többszörös fortélyoknál
   - Törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
   - Game mód: koppintás → accordion info (leírás, hatás, követelmény, kiterjesztések)
-  - Rövid koppintás szerkesztő módban: nem csinál semmit (csak hosszú nyomás)
+  - Rövid koppintás szerkesztő módban: nem csinál semmit (csak double-tap)
 - ✅ KP sáv (szerkesztő mód, minden fülön, tab-bar felett)
   - Maradt KP + Maradt Szekunder KP kijelzés
   - Zöld háttér (normál), piros (ha Maradt KP < 0)
@@ -157,8 +166,16 @@
 - Szint választó (képzettségek): gombok 1-15 grid (5 oszlop), aktív=zöld
 - Fok választó (fortélyok): kerek radio gombok (1..maxfok), aktív=zöld
 - Popup dialógusok: createPortal(document.body) — kiszöknek a screen-slide overflow kontextusból
-- Hosszú nyomás: 400ms timeout → popup megnyitás (Név, Szint, Faj, Kor, Tulajdonságok, Képzettségek, Fortélyok)
+- Double-tap: 350ms threshold → popup megnyitás (Név, Szint, Kor, Tulajdonságok, Képzettségek, Fortélyok, ÉP TÉ footer→navigáció)
+- Faj: inline `<select>` (nincs popup, közvetlenül koppintható szerkesztő módban)
 - Rövid koppintás szerkesztő módban: nem csinál semmit (képzettségek, fortélyok)
 - Rövid koppintás Game módban: accordion info toggle
-- Törlés megerősítő dialógus: piros "Törlés" gomb
+- Törlés megerősítő dialógus: centered név + piros gomb ("Képzettség törlése" / "Fortély törlése")
+- Reset megerősítő dialógus: piros centered gomb ("ÉP Reset" / "VÉ Reset"), disabled ha nincs mit resetelni
 - Default tab induláskor: Tul/Képz (index 2)
+- Fájdalomtűrés enyhítés: konstansok.fájdalomtűrés_enyhítés táblából, dinamikusan frissül szint módosításkor
+- ÉP TÉ footer double-tap: navigál Tul/Képz fülre + scroll Fájdalomtűrés képzettséghez (data-kep attribútum)
+- Sebesülés popup: típus+érték gombok, mindkettő kiválasztva → auto-close, 1-15 látható + ▾ lenyitó (16-40)
+- Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
+- Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
+- iOS kompatibilitás: double-tap modell (nem long-press), nincs touchstart preventDefault hack, `touch-action: manipulation` CSS
