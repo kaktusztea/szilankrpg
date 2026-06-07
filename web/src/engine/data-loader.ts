@@ -4,6 +4,7 @@ const BASE = import.meta.env.BASE_URL + 'data/';
 
 async function fetchJson<T>(path: string): Promise<T> {
   const res = await fetch(BASE + path);
+  if (!res.ok) throw new Error(`${path}: HTTP ${res.status}`);
   return res.json();
 }
 
@@ -77,6 +78,7 @@ export interface FortelySummary {
 }
 
 import type { Rule } from './reactive';
+import type { Karakter } from './types';
 
 // --- Betöltött adat ---
 export interface GameData {
@@ -93,10 +95,11 @@ export interface GameData {
   primerFortelyok: string[];
   fortelySummaries: FortelySummary[];
   rules: Rule[];
+  emptyKarakter: Karakter;
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, rulesFile] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, rulesFile, emptyKarakter] = await Promise.all([
     fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
@@ -110,6 +113,7 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<Record<string, Record<string, [number, number]>>>('tables/faj_tulajdonsag_keretek.json'),
     fetchJson<FortelySummary[]>('tables/fortelyok.json'),
     fetchJson<{ rules: Rule[] }>('rules.json'),
+    fetchJson<Karakter>('empty_karakter.json'),
   ]);
 
   const kepzettsegKp = kepzettsegKpRaw.map(e => ({
@@ -124,5 +128,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, rules: rulesFile.rules };
+  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, rules: rulesFile.rules, emptyKarakter };
 }

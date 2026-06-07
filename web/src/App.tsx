@@ -48,28 +48,33 @@ function App() {
   const [gameMode, setGameMode] = useState(false);
 
   // --- Karakter state (egyben mentendő) ---
-  const [karakter, setKarakter] = useState<Karakter>(testKarakter8);
+  const [karakter, setKarakter] = useState<Karakter | null>(null);
 
-  // Convenience setters (derived from karakter)
-  const tulajdonságok = karakter.tulajdonságok;
-  const képzettségek = karakter.képzettségek;
-  const fortélyok = karakter.fortélyok;
-  const session = karakter.session;
-
-  const setTulajdonságok = useCallback((val: typeof karakter.tulajdonságok | ((prev: typeof karakter.tulajdonságok) => typeof karakter.tulajdonságok)) => {
-    setKarakter(prev => ({ ...prev, tulajdonságok: typeof val === 'function' ? val(prev.tulajdonságok) : val }));
+  useEffect(() => {
+    loadGameData().then(d => {
+      setData(d);
+      if (!validateKarakter(d.emptyKarakter)) {
+        setError('Az empty_karakter.json érvénytelen (schema_version !== 2 vagy hiányzó mezők). Ellenőrizd a data/empty_karakter.json fájlt.');
+        return;
+      }
+      setKarakter(d.emptyKarakter);
+    }).catch(e => setError(`Betöltési hiba: ${String(e)}`));
   }, []);
 
-  const setKépzettségek = useCallback((val: typeof karakter.képzettségek | ((prev: typeof karakter.képzettségek) => typeof karakter.képzettségek)) => {
-    setKarakter(prev => ({ ...prev, képzettségek: typeof val === 'function' ? val(prev.képzettségek) : val }));
+  const setTulajdonságok = useCallback((val: any) => {
+    setKarakter(prev => prev ? { ...prev, tulajdonságok: typeof val === 'function' ? val(prev.tulajdonságok) : val } : prev);
   }, []);
 
-  const setFortélyok = useCallback((val: typeof karakter.fortélyok | ((prev: typeof karakter.fortélyok) => typeof karakter.fortélyok)) => {
-    setKarakter(prev => ({ ...prev, fortélyok: typeof val === 'function' ? val(prev.fortélyok) : val }));
+  const setKépzettségek = useCallback((val: any) => {
+    setKarakter(prev => prev ? { ...prev, képzettségek: typeof val === 'function' ? val(prev.képzettségek) : val } : prev);
+  }, []);
+
+  const setFortélyok = useCallback((val: any) => {
+    setKarakter(prev => prev ? { ...prev, fortélyok: typeof val === 'function' ? val(prev.fortélyok) : val } : prev);
   }, []);
 
   const setSession = useCallback((val: Session | ((prev: Session) => Session)) => {
-    setKarakter(prev => ({ ...prev, session: typeof val === 'function' ? val(prev.session) : val }));
+    setKarakter(prev => prev ? { ...prev, session: typeof val === 'function' ? val(prev.session) : val } : prev);
   }, []);
 
   // --- Touch / swipe ---
@@ -77,10 +82,6 @@ function App() {
   const touchY = useRef<number>(0);
 
   const TABS = ALL_TABS.filter(t => !t.editOnly || !gameMode);
-
-  useEffect(() => {
-    loadGameData().then(setData).catch(e => setError(String(e)));
-  }, []);
 
   useEffect(() => {
     function handler(e: MouseEvent) {
@@ -112,6 +113,7 @@ function App() {
 
   // --- Save / Load ---
   function saveKarakter() {
+    if (!karakter) return;
     const json = JSON.stringify(karakter, null, 2);
     const blob = new Blob([json], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -150,13 +152,16 @@ function App() {
   }
 
   if (error) return <div className="error">Hiba: {error}</div>;
-  if (!data) return <div className="loading">Betöltés...</div>;
+  if (!data || !karakter) return <div className="loading">Betöltés...</div>;
+
+  const { tulajdonságok, képzettségek, fortélyok, session } = karakter;
 
   return (
     <div className="app" onContextMenu={e => e.preventDefault()} onSelect={e => e.preventDefault()}>
       <header className="header">
         <span className="title">Szilánk RPG</span>
         <div className="header-btns">
+          <button className="test-btn" onClick={() => setKarakter(testKarakter8)} title="Teszt karakter betöltése">🧪</button>
           <button className="save-btn" onClick={saveKarakter} title="Mentés">💾</button>
           <button className="load-btn" onClick={loadKarakter} title="Betöltés">📂</button>
           <button
