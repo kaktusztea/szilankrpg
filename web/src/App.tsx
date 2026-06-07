@@ -150,13 +150,14 @@ function App() {
   const touchY = useRef<number>(0);
   const [showNewConfirm, setShowNewConfirm] = useState(false);
   const [showTestConfirm, setShowTestConfirm] = useState(false);
+  const [loadError, setLoadError] = useState('');
   const [versionHint, setVersionHint] = useState('');
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTapTitle = useRef(0);
 
   useEffect(() => {
-    if (!showNewConfirm && !showTestConfirm) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); } }
+    if (!showNewConfirm && !showTestConfirm && !loadError) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setLoadError(''); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [showNewConfirm, showTestConfirm]);
@@ -228,19 +229,19 @@ function App() {
         try {
           const obj = JSON.parse(reader.result as string);
           if (!validateKarakter(obj)) {
-            alert('Érvénytelen karakter fájl (schema_version !== 2 vagy hiányzó mezők).');
+            setLoadError('Érvénytelen karakter json állomány.');
             return;
           }
           const refErr = validateKarakterData(obj, data!);
           if (refErr) {
-            alert(`Referencia hiba: ${refErr}`);
+            setLoadError(`Referencia hiba: ${refErr}`);
             return;
           }
           // Ensure session exists (backward compat)
           if (!obj.session) obj.session = { ...DEFAULT_SESSION };
           setKarakter(obj);
         } catch {
-          alert('Nem sikerült betölteni a fájlt.');
+          setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
         }
       };
       reader.readAsText(file);
@@ -395,6 +396,17 @@ function App() {
             <label style={{ fontWeight: 'bold' }}>Teszt karakter betöltése?</label>
             <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(testKarakter8); setShowTestConfirm(false); }}>Betöltés</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {loadError && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '320px' }}>
+            <label style={{ fontWeight: 'bold', color: 'var(--error)' }}>Betöltési hiba</label>
+            <span style={{ fontSize: '13px', color: 'var(--text)', textAlign: 'center' }}>{loadError}</span>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => setLoadError('')}>OK</button>
           </div>
         </div>,
         document.body
