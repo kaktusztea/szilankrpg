@@ -1,14 +1,5 @@
 import type { Tulajdonsagok, FegyverAlap, HarcertekAlap, MesterfegyverBonusz, FegyverHarcertekek } from './types';
 
-export function calcKE(
-  tul: Tulajdonsagok,
-  tsz: number,
-  alap: HarcertekAlap,
-  fortelyKE: number,
-): number {
-  return alap.KÉ + tul.gyorsaság + tul.intelligencia + tsz + fortelyKE;
-}
-
 export function calcFegyverHarcertekek(
   tul: Tulajdonsagok,
   hmTÉ: number,
@@ -46,25 +37,10 @@ export function calcFegyverHarcertekek(
     fegyver_név: fegyver.Fegyver,
     TÉ,
     VÉ,
-    CÉ: 0, // közelharci fegyvernél nem releváns
+    CÉ: 0,
     SP,
     támadások,
     pengehossz: parseFloat(fegyver.Pengehossz) || 0,
     sebzésmód: fegyver['Sebzés módja'],
   };
-}
-
-export function calcCE(
-  tul: Tulajdonsagok,
-  cm: number,
-  harcmodorBonusz: number,
-  fegyverCÉ: number,
-  mfFok: number,
-  mfBonuszok: MesterfegyverBonusz[],
-  alap: HarcertekAlap,
-  fortélyCÉ: number,
-): number {
-  const mf = mfBonuszok.find(b => b.fok === mfFok);
-  const mfCÉ = mf ? mf.TÉ : 0; // MF CÉ-re is a TÉ értékét adja
-  return alap.CÉ + tul.önuralom + cm + harcmodorBonusz + fegyverCÉ + mfCÉ + fortélyCÉ;
 }

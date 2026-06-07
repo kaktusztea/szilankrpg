@@ -318,6 +318,10 @@ function App() {
           kiemelt_kp += fizetősDb * d.kp_perfok;
         }
 
+        const harcmodorÖsszeg = ['Közelharc', 'Kardvívás', 'Rombolás', 'Lándzsavívás', 'Ostorharc']
+          .reduce((s, n) => s + (képzettségek.find(k => k.név === n)?.szint ?? 0), 0);
+        const alakzatharcSzint = képzettségek.find(k => k.név === 'Alakzatharc')?.szint ?? 0;
+
         const kpCtx = buildContext(tulajdonságok, tsz, data.konstansok as any, {
           spec_kp,
           kiemelt_kp,
@@ -325,11 +329,20 @@ function App() {
           HM_VÉ: karakter.HM_VÉ,
           CM: karakter.CM,
           fortélyMod_KÉ: 0,
-          harcmodor_összeg: 0,
+          harcmodor_összeg: harcmodorÖsszeg,
+          alakzatharc_szint: alakzatharcSzint,
           felszerelés_terhelés: 0,
+          // Páncél MGT inputs (pre-computed from karakter.páncél)
+          páncél_struktúra_mgt: 0,
+          páncél_alapanyag_mgt: 0,
+          páncél_csatolt_mgt: 0,
+          páncél_méret_mgt: 0,
+          páncél_merev: 0,
+          merevvért_csökkentés: 0,
         });
         const fortelyKpMap = new Map(data.fortelySummaries.map(d => [d.név, d.ingyenes_perszint > 0 ? 0 : d.kp_perfok]));
-        const arrays = buildArrayContext(képzettségek, fortélyok, data.kepzettsegKp, fortelyKpMap);
+        const harciFortelyNevek = new Set(data.fortelySummaries.filter(d => d.csoport === 'harci').map(d => d.név));
+        const arrays = buildArrayContext(képzettségek, fortélyok, data.kepzettsegKp, fortelyKpMap, harciFortelyNevek);
         const kpComputed = evaluate(data.rules, kpCtx, arrays);
 
         const maradékKp = kpComputed.get('maradék_kp') ?? 0;

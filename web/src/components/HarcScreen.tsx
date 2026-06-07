@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session } from '../engine/types';
 import { calcFegyverHarcertekek } from '../engine/harcertek';
-import { calcPancel } from '../engine/pancel';
+import { calcPancelInputs } from '../engine/pancel';
 import { evaluate, buildContext } from '../engine/reactive';
 import { EpTable } from './EpTable';
 import type { SebzésRubrika } from '../engine/types';
@@ -79,6 +79,13 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     k.képzettségek.find(kp => kp.név === 'Ostorharc')?.szint ?? 0,
   ].reduce((a, b) => a + b, 0);
 
+  // Páncél: compute inputs for reactive engine
+  const merevvértFok = k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
+  const pancelInputs = calcPancelInputs(
+    k.páncél, konstansok.páncél_struktúrák, konstansok.páncél_fémalapanyagok,
+    konstansok.páncél_csatolt_tag_mgt, merevvértFok, konstansok.merevvértviselet_bónuszok,
+  );
+
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
     fortélyMod_KÉ: fortelyKE,
     harcmodor_összeg: harcmodorÖsszeg,
@@ -86,16 +93,17 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     HM_VÉ: k.HM_VÉ,
     CM: k.CM,
     felszerelés_terhelés: 0,
+    alakzatharc_szint: 0,
+    ...pancelInputs,
   });
   const computed = evaluate(data.rules, ctx);
 
   const épValue = computed.get('ÉP') ?? 40;
   const ké = computed.get('KÉ') ?? 0;
   const manöverPont = computed.get('manőver_pont') ?? 0;
-  const pancel = calcPancel(
-    k.páncél, konstansok.páncél_struktúrák, konstansok.páncél_fémalapanyagok,
-    konstansok.páncél_csatolt_tag_mgt, 3, konstansok.merevvértviselet_bónuszok, k.tulajdonságok.erő,
-  );
+  const pancelMGT = computed.get('páncél_MGT') ?? 0;
+  const sfé_fizikai = computed.get('sfé_fizikai') ?? 0;
+  const sfé_energia = computed.get('sfé_energia') ?? 0;
 
   // Fegyverek
   const fegyverNevek = ['Puszta kéz', 'Kard, lovag'];
@@ -110,7 +118,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       k.tulajdonságok, k.HM_TÉ, k.HM_VÉ, harcmodorSzint,
       { TÉ: hb?.TÉ ?? 0, VÉ: hb?.VÉ ?? 0 }, fDef, mfFok,
       konstansok.mesterfegyver_bónuszok, konstansok.harcérték_alap,
-      0, 0, 0, 1, pancel.MGT, 0,
+      0, 0, 0, 1, pancelMGT, 0,
     );
   });
 
@@ -135,10 +143,10 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       <div className="harc-header">
         <div className="ke-box"><span className="label">KÉ</span><span className="value">{ké}</span></div>
         <div className="sfe-box">
-          <span className="label">SFÉ ({pancel.lefedettség}%)</span>
+          <span className="label">SFÉ ({pancelInputs.páncél_lefedettség}%)</span>
           <div className="sfe-values">
-            <span className="sfe-line">Fizikai: <strong>{pancel.sfé_fizikai}</strong></span>
-            <span className="sfe-line" style={{ color: '#aaa' }}>Energia: <strong>{pancel.sfé_energia}</strong></span>
+            <span className="sfe-line">Fizikai: <strong>{sfé_fizikai}</strong></span>
+            <span className="sfe-line" style={{ color: '#aaa' }}>Energia: <strong>{sfé_energia}</strong></span>
           </div>
         </div>
         <div className="ve-csokk-box">

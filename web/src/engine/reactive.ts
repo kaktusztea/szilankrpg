@@ -46,11 +46,13 @@ export function evaluate(rules: Rule[], ctx: Context, arrays?: ArrayContext): Ma
 
 /**
  * Evaluate a formula string.
- * Supports: arithmetic, floor/ceil/min/max, and aggregate functions:
+ * Supports: arithmetic, floor/ceil/min/max/abs, and aggregate functions:
  *   sum_lookup(arrayName, field, lookupTable, lookupKey, lookupValue)
  *   sum(arrayName, field)
+ *   sum_where(arrayName, sumField, filterField, filterValue)
  *   count(arrayName)
- *   count_where(arrayName, field, op, value)
+ *   lookup(arrayName, keyField, keyValue, valueField)
+ *   if(condition, thenValue, elseValue)
  */
 function evalFormula(formula: string, ctx: Context, results: Map<string, number>, arrays: ArrayContext): number {
   // Process aggregate functions first
@@ -72,6 +74,17 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
     }
   );
 
+  // sum_where(arrayName, sumField, filterField, filterValue)
+  processed = processed.replace(
+    /sum_where\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_0-9.]+)\)/g,
+    (_match, arrayName, sumField, filterField, filterValue) => {
+      const arr = arrays.get(arrayName) ?? [];
+      const fv = Number(filterValue);
+      const filtered = arr.filter(item => item[filterField] === fv);
+      return String(filtered.reduce((s, item) => s + (item[sumField] ?? 0), 0));
+    }
+  );
+
   // sum(arrayName, field)
   processed = processed.replace(
     /sum\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+)\)/g,
@@ -89,16 +102,32 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
     }
   );
 
-  // Replace remaining identifiers with their values
+  // lookup(arrayName, keyField, keyValue, valueField)
+  processed = processed.replace(
+    /lookup\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_0-9.]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+)\)/g,
+    (_match, arrayName, keyField, keyValue, valueField) => {
+      const arr = arrays.get(arrayName) ?? [];
+      const kv = Number(keyValue) || 0;
+      const row = arr.find(r => r[keyField] === kv);
+      return String(row ? (row[valueField] ?? 0) : 0);
+    }
+  );
+
+  // Replace remaining identifiers with their values (before if() processing)
   const resolved = processed.replace(/[a-záéíóöőúüűA-ZÁÉÍÓÖŐÚÜŰ_][a-záéíóöőúüűA-ZÁÉÍÓÖŐÚÜŰ0-9_.]*/g, (match) => {
-    if (match === 'floor' || match === 'ceil' || match === 'min' || match === 'max') return match;
+    if (match === 'floor' || match === 'ceil' || match === 'min' || match === 'max' || match === 'abs') return match;
     const val = results.get(match) ?? ctx.get(match) ?? 0;
     return String(val);
   });
 
   try {
-    const fn = new Function('floor', 'ceil', 'min', 'max', `return (${resolved});`);
-    return fn(Math.floor, Math.ceil, Math.min, Math.max);
+    // Support if(cond, then, else) as ternary
+    const withIf = resolved.replace(
+      /if\(([^,]+),\s*([^,]+),\s*([^)]+)\)/g,
+      '(($1) ? ($2) : ($3))'
+    );
+    const fn = new Function('floor', 'ceil', 'min', 'max', 'abs', `return (${withIf});`);
+    return fn(Math.floor, Math.ceil, Math.min, Math.max, Math.abs);
   } catch {
     return 0;
   }
@@ -148,6 +177,7 @@ export function buildArrayContext(
   fortélyok: readonly { név: string; fok: number }[],
   kepzettsegKpTable: { szint: number; kp: number }[],
   fortelyKpMap?: Map<string, number>,
+  harciFortelyNevek?: Set<string>,
 ): ArrayContext {
   const arrays: ArrayContext = new Map();
 
@@ -162,6 +192,12 @@ export function buildArrayContext(
   arrays.set('fortélyok', kpFortélyok.map(f => ({ fok: f.fok })));
 
   arrays.set('kp_tábla', kepzettsegKpTable.map(e => ({ szint: e.szint, kp: e.kp })));
+
+  // harci_fortélyok: for max_HM calculation (is_mesterfegyver: 1 if Mesterfegyver, 0 otherwise)
+  if (harciFortelyNevek) {
+    const harci = fortélyok.filter(f => harciFortelyNevek.has(f.név));
+    arrays.set('harci_fortélyok', harci.map(f => ({ fok: f.fok, is_mesterfegyver: f.név === 'Mesterfegyver' ? 1 : 0 })));
+  }
 
   return arrays;
 }

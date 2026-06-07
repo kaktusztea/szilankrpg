@@ -1,4 +1,4 @@
-import type { PancelPeldany, PancelStruktura, PancelFemalapanyag, PancelErtekek } from './types';
+import type { PancelPeldany, PancelStruktura, PancelFemalapanyag } from './types';
 
 export interface CsatoltTagMgt {
   hajlékonyvért_nem_fém: Record<string, number>;
@@ -6,27 +6,37 @@ export interface CsatoltTagMgt {
   merevvért_fém: Record<string, number>;
 }
 
-export function calcPancel(
+/** Intermediate páncél values for reactive engine context */
+export interface PancelContextInputs {
+  páncél_struktúra_mgt: number;
+  páncél_alapanyag_mgt: number;
+  páncél_csatolt_mgt: number;
+  páncél_méret_mgt: number;
+  páncél_merev: number;
+  merevvért_csökkentés: number;
+  páncél_struktúra_sfé_fizikai: number;
+  páncél_struktúra_sfé_energia: number;
+  páncél_alapanyag_sfé_bónusz: number;
+  páncél_idea: number;
+  páncél_rongálódás: number;
+  páncél_lefedettség: number;
+}
+
+export function calcPancelInputs(
   páncél: PancelPeldany,
   struktúrák: PancelStruktura[],
   fémalapanyagok: PancelFemalapanyag[],
   csatoltTagMgt: CsatoltTagMgt,
   merevvértvisFok: number,
   merevvértvisBonuszok: { fok: number; TÉ_büntetés_csökkentés: number }[],
-  erő: number,
-): PancelErtekek {
+): PancelContextInputs {
   const struktúra = struktúrák.find(s => s.struktúra === páncél.alap);
-  if (!struktúra) return { sfé_fizikai: 0, sfé_energia: 0, MGT: 0, merevvért_TÉ_büntetés: 0, lefedettség: 50 };
+  if (!struktúra) return { páncél_struktúra_mgt: 0, páncél_alapanyag_mgt: 0, páncél_csatolt_mgt: 0, páncél_méret_mgt: 0, páncél_merev: 0, merevvért_csökkentés: 0, páncél_struktúra_sfé_fizikai: 0, páncél_struktúra_sfé_energia: 0, páncél_alapanyag_sfé_bónusz: 0, páncél_idea: 0, páncél_rongálódás: 0, páncél_lefedettség: 50 };
 
   const alapanyag = fémalapanyagok.find(a => a.anyag === páncél.fémalapanyag);
-  const sfé_bónusz = alapanyag?.sfé_bónusz ?? 0;
   const alapanyag_mgt = alapanyag?.mgt ?? 0;
+  const sfé_bónusz = alapanyag?.sfé_bónusz ?? 0;
 
-  // SFÉ
-  const sfé_fizikai = struktúra.sfé_fizikai + sfé_bónusz + páncél.idea - páncél.rongálódás;
-  const sfé_energia = struktúra.sfé_energia + sfé_bónusz + páncél.idea - páncél.rongálódás;
-
-  // MGT
   let tagMgtPerDb: number;
   if (struktúra.merev) {
     tagMgtPerDb = csatoltTagMgt.merevvért_fém[páncél.kidolgozottság] ?? 2;
@@ -37,22 +47,22 @@ export function calcPancel(
   }
 
   const csatoltDb = páncél.végtagvédettség + (páncél.sisak ? 1 : 0);
-  const csatoltMgt = csatoltDb * tagMgtPerDb;
-
   const méretMgt: Record<string, number> = { passzoló: 0, közepesen_más: 3, nagyon_más: 6 };
-  const méret = méretMgt[páncél.méret_illeszkedés] ?? 0;
 
-  const MGT = Math.max(0, struktúra.mgt + alapanyag_mgt + csatoltMgt + méret - erő);
+  const csökkentés = merevvértvisBonuszok.find(b => b.fok === merevvértvisFok)?.TÉ_büntetés_csökkentés ?? 0;
 
-  // Merevvért TÉ büntetés
-  let merevvért_TÉ_büntetés = 0;
-  if (struktúra.merev) {
-    const csökkentés = merevvértvisBonuszok.find(b => b.fok === merevvértvisFok)?.TÉ_büntetés_csökkentés ?? 0;
-    merevvért_TÉ_büntetés = Math.max(0, MGT - csökkentés);
-  }
-
-  // Lefedettség
-  const lefedettség = 50 + páncél.végtagvédettség * 10 + (páncél.sisak ? 10 : 0);
-
-  return { sfé_fizikai, sfé_energia, MGT, merevvért_TÉ_büntetés, lefedettség };
+  return {
+    páncél_struktúra_mgt: struktúra.mgt,
+    páncél_alapanyag_mgt: alapanyag_mgt,
+    páncél_csatolt_mgt: csatoltDb * tagMgtPerDb,
+    páncél_méret_mgt: méretMgt[páncél.méret_illeszkedés] ?? 0,
+    páncél_merev: struktúra.merev ? 1 : 0,
+    merevvért_csökkentés: csökkentés,
+    páncél_struktúra_sfé_fizikai: struktúra.sfé_fizikai,
+    páncél_struktúra_sfé_energia: struktúra.sfé_energia,
+    páncél_alapanyag_sfé_bónusz: sfé_bónusz,
+    páncél_idea: páncél.idea,
+    páncél_rongálódás: páncél.rongálódás,
+    páncél_lefedettség: 50 + páncél.végtagvédettség * 10 + (páncél.sisak ? 10 : 0),
+  };
 }
