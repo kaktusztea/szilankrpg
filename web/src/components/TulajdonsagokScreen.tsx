@@ -44,7 +44,6 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
   const lastTapNév = useRef(0);
   const lastTapTsz = useRef(0);
   const [editingKor, setEditingKor] = useState(false);
-  const [tempKor, setTempKor] = useState(kor);
   const lastTapKor = useRef(0);
 
   // Game mode: adatlap megjelenítés
@@ -217,7 +216,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
             </select>
           </div>
           <div className="tul-faj-row"
-            onClick={() => { const now = Date.now(); if (now - lastTapKor.current < 350) { setTempKor(kor); setEditingKor(true); lastTapKor.current = 0; } else { lastTapKor.current = now; } }}
+            onClick={() => { const now = Date.now(); if (now - lastTapKor.current < 350) { setEditingKor(true); lastTapKor.current = 0; } else { lastTapKor.current = now; } }}
           >
             <span className="tul-header-label">Kor:</span> <strong>{kor}</strong>
           </div>
@@ -376,22 +375,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
 
       {editingKor && createPortal(
         <div className="kep-prompt-overlay">
-          <div className="kep-prompt">
-            <label>Kor: <strong>{tempKor}</strong></label>
-            <input
-              type="range"
-              min={5}
-              max={500}
-              step={5}
-              value={tempKor}
-              onChange={e => setTempKor(Number(e.target.value))}
-              className="tsz-slider"
-            />
-            <div className="kep-prompt-btns">
-              <button onClick={() => { setKor(tempKor); setEditingKor(false); }}>OK</button>
-              <button onClick={() => setEditingKor(false)}>Mégse</button>
-            </div>
-          </div>
+          <KorPicker kor={kor} onSelect={v => { setKor(v); setEditingKor(false); }} />
         </div>,
         document.body
       )}
@@ -540,6 +524,41 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
         </div>,
         document.body
       )}
+    </div>
+  );
+}
+
+const KOR_RANGES = [
+  { label: '10–100', values: Array.from({ length: 46 }, (_, i) => 10 + i * 2) },
+  { label: '100–200', values: Array.from({ length: 21 }, (_, i) => 100 + i * 5) },
+  { label: '200–1000', values: Array.from({ length: 17 }, (_, i) => 200 + i * 50) },
+];
+
+function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => void }) {
+  const [rangeIdx, setRangeIdx] = useState<number | null>(null);
+
+  if (rangeIdx === null) {
+    return (
+      <div className="kep-prompt">
+        <label>Kor: <strong>{kor}</strong> — tartomány:</label>
+        <div className="kep-szint-grid" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+          {KOR_RANGES.map((r, i) => (
+            <button key={i} className="fort-fok-btn" style={{ width: 'auto', padding: '8px 16px', borderRadius: '6px' }} onClick={() => setRangeIdx(i)}>{r.label}</button>
+          ))}
+        </div>
+      </div>
+    );
+  }
+
+  const range = KOR_RANGES[rangeIdx];
+  return (
+    <div className="kep-prompt">
+      <label>Kor ({range.label})</label>
+      <div className="kep-szint-grid" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '6px', maxWidth: `${5 * 42 + 4 * 6}px`, margin: '0 auto' }}>
+        {range.values.map(n => (
+          <button key={n} className={`fort-fok-btn ${kor === n ? 'active' : ''}`} style={{ width: '42px', height: '36px', fontSize: '13px' }} onClick={() => onSelect(n)}>{n}</button>
+        ))}
+      </div>
     </div>
   );
 }
