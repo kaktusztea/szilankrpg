@@ -154,3 +154,12 @@
 }
 
 .dim { font-size: 17px; color: var(--text-dim); }
+
+.ve-flash {
+  animation: ve-pulse 1s ease-out;
+}
+
+@keyframes ve-pulse {
+  0% { background: var(--warning); color: #000; }
+  100% { background: transparent; color: inherit; }
+}

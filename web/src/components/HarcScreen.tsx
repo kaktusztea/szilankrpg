@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import { testKarakter8 } from '../testdata';
@@ -19,6 +19,19 @@ function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftT
 
 export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }: { data: GameData; tulajdonságok: any; képzettségek: { név: string; szint: number }[]; onNavigate?: (tabId: string) => void }) {
   const [véCsökkenés, setVéCsökkenés] = useState(0);
+  const [véFlash, setVéFlash] = useState(false);
+  const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function triggerVéFlash() {
+    setVéFlash(true);
+    if (véFlashTimer.current) clearTimeout(véFlashTimer.current);
+    véFlashTimer.current = setTimeout(() => setVéFlash(false), 1000);
+  }
+
+  function changeVé(newVal: number) {
+    setVéCsökkenés(newVal);
+    triggerVéFlash();
+  }
   const [aktManöverPont, setAktManöverPont] = useState(99);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
 
@@ -97,10 +110,10 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
           <span className="label">VÉ csökkent</span>
           <span className="value">{véCsökkenés}</span>
           <div className="ve-btns">
-            <button onClick={() => setVéCsökkenés(véCsökkenés + 1)}>+1</button>
-            <button onClick={() => setVéCsökkenés(véCsökkenés + 2)}>+2</button>
-            <button onClick={() => setVéCsökkenés(véCsökkenés + 3)}>+3</button>
-            <button onClick={() => setVéCsökkenés(Math.max(0, véCsökkenés - 1))}>-1</button>
+            <button onClick={() => changeVé(véCsökkenés + 1)}>+1</button>
+            <button onClick={() => changeVé(véCsökkenés + 2)}>+2</button>
+            <button onClick={() => changeVé(véCsökkenés + 3)}>+3</button>
+            <button onClick={() => changeVé(Math.max(0, véCsökkenés - 1))}>-1</button>
             <button disabled={véCsökkenés === 0} onClick={() => setShowVéResetConfirm(true)}>⟲</button>
           </div>
         </div>
@@ -129,7 +142,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
               <td>{r.fegyver_név}</td>
               <td>{r.támadások}</td>
               <td>{r.TÉ + téLevonás}</td>
-              <td>{r.VÉ + pajzsVÉ - véCsökkenés}</td>
+              <td className={véFlash ? 've-flash' : ''}>{r.VÉ + pajzsVÉ - véCsökkenés}</td>
               <td>{r.SP} {r.sebzésmód}</td>
               <td>{r.pengehossz}</td>
             </tr>
@@ -144,7 +157,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
       {showVéResetConfirm && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={() => { setVéCsökkenés(0); setShowVéResetConfirm(false); }}>VÉ Reset</button>
+            <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={() => { changeVé(0); setShowVéResetConfirm(false); }}>VÉ Reset</button>
           </div>
         </div>,
         document.body
