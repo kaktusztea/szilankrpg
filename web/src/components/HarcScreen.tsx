@@ -21,6 +21,9 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
   const [véCsökkenés, setVéCsökkenés] = useState(0);
   const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
   const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [véHistory, setVéHistory] = useState<number[]>([]);
+  const [showVéHistory, setShowVéHistory] = useState(false);
+  const lastTapVéLabel = useRef(0);
 
   function triggerVéFlash(dir: 'down' | 'up') {
     setVéFlash(dir);
@@ -29,19 +32,36 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
   }
 
   function changeVé(newVal: number) {
-    const dir = newVal > véCsökkenés ? 'down' : 'up';
+    const diff = newVal - véCsökkenés;
+    const dir = diff > 0 ? 'down' : 'up';
+    if (newVal === 0) {
+      setVéHistory([]);
+    } else {
+      setVéHistory(prev => [...prev, diff > 0 ? -diff : Math.abs(diff)]);
+    }
     setVéCsökkenés(newVal);
     triggerVéFlash(dir);
+  }
+
+  function handleVéLabelTap() {
+    if (véCsökkenés === 0) return;
+    const now = Date.now();
+    if (now - lastTapVéLabel.current < 350) {
+      setShowVéHistory(true);
+      lastTapVéLabel.current = 0;
+    } else {
+      lastTapVéLabel.current = now;
+    }
   }
   const [aktManöverPont, setAktManöverPont] = useState(99);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
 
   useEffect(() => {
-    if (!showVéResetConfirm) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setShowVéResetConfirm(false); }
+    if (!showVéResetConfirm && !showVéHistory) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowVéResetConfirm(false); setShowVéHistory(false); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showVéResetConfirm]);
+  }, [showVéResetConfirm, showVéHistory]);
 
   const k = testKarakter8;
   const { konstansok, harcmodorBonusz } = data;
@@ -111,8 +131,8 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
           </div>
         </div>
         <div className="ve-csokk-box">
-          <span className="label">VÉ csökkenés</span>
-          <span className="value">{véCsökkenés === 0 ? 0 : -véCsökkenés}</span>
+          <span className="label" onClick={handleVéLabelTap}>VÉ csökkenés</span>
+          <span className="value" onClick={handleVéLabelTap}>{véCsökkenés === 0 ? 0 : -véCsökkenés}</span>
           <div className="ve-btns">
             <button disabled={véCsökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(véCsökkenés + 1, maxVéCsökk))}>-1</button>
             <button disabled={véCsökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(véCsökkenés + 2, maxVéCsökk))}>-2</button>
@@ -162,6 +182,18 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={() => { changeVé(0); setShowVéResetConfirm(false); }}>VÉ Reset</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {showVéHistory && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label style={{ fontWeight: 'bold' }}>VÉ csökkenés történet</label>
+            <div style={{ fontSize: '15px', color: 'var(--text)' }}>
+              {véHistory.length === 0 ? '—' : véHistory.map(v => (v > 0 ? `+${v}` : String(v))).join('; ')}
+            </div>
           </div>
         </div>,
         document.body

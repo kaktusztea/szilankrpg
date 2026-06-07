@@ -125,7 +125,12 @@ export const expected8 = {
   összes_kp: 408,           // 8 × (50+1)
   összes_szekunder_kp: 160, // 8 × (20+0)
   összesen_kapott_kp: 568,  // 408 + 160
-  maradt_kp: 2,
+  kp_képzettségek: 224,     // sum_lookup(szintek → kp_tábla)
+  kp_fortélyok: 150,        // sum(fokok) × 6 (csak kp_perfok>0 fortélyok)
+  kp_hm: 192,              // (15+17) × 6
+  kp_cm: 0,                // 0 × 6
+  elköltött_kp: 566,        // 224 + 150 + 192 + 0 + 0 (kiemelt)
+  maradt_kp: 2,             // 568 - 566
   tulajdonság_pont_keret: 68, // 64 + floor(8/2)
   tulajdonság_pont_maradék: 0,
   max_HM: 34,              // harci fortély fokok (Mf nélkül): 16 + harcmodor szintek: 18 + alakzatharc: 0
