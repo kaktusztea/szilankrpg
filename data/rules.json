@@ -105,6 +105,36 @@
       "id": "elköltött_kp",
       "formula": "kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp",
       "inputs": ["kp_képzettségek", "kp_fortélyok", "kp_hm", "kp_cm", "kiemelt_kp"]
+    },
+    {
+      "id": "sfé_fizikai",
+      "formula": "páncél_struktúra_sfé_fizikai + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás",
+      "inputs": ["páncél_struktúra_sfé_fizikai", "páncél_alapanyag_sfé_bónusz", "páncél_idea", "páncél_rongálódás"]
+    },
+    {
+      "id": "sfé_energia",
+      "formula": "páncél_struktúra_sfé_energia + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás",
+      "inputs": ["páncél_struktúra_sfé_energia", "páncél_alapanyag_sfé_bónusz", "páncél_idea", "páncél_rongálódás"]
+    },
+    {
+      "id": "távharc_cella",
+      "formula": "ceil(távharc_távolság / távharc_osztó)",
+      "inputs": ["távharc_távolság", "távharc_osztó"]
+    },
+    {
+      "id": "távharc_cél_VÉ",
+      "formula": "max(távharc_szorzó, 1) * távharc_cella + min(távharc_szorzó, 0)",
+      "inputs": ["távharc_szorzó", "távharc_cella"]
+    },
+    {
+      "id": "képzettség_max_szint_primer",
+      "formula": "min(konstansok.arányok.képzettség_max_szint, tsz)",
+      "inputs": ["konstansok.arányok.képzettség_max_szint", "tsz"]
+    },
+    {
+      "id": "képzettség_max_szint_szekunder",
+      "formula": "min(konstansok.arányok.képzettség_max_szint, tsz + konstansok.arányok.képzettség_nemprimer_max_szint_plusz)",
+      "inputs": ["konstansok.arányok.képzettség_max_szint", "tsz", "konstansok.arányok.képzettség_nemprimer_max_szint_plusz"]
     }
   ]
 }
