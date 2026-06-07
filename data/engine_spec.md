@@ -401,6 +401,11 @@ impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexév
       Követelmények logika:
         - A követelmények lista elemei ÉS kapcsolatban vannak (mindegyiknek teljesülnie kell).
         - Ha egy elem "név" mezője lista (pl. ["közelharc", "kardvívás"]), az VAGY kapcsolat: bármelyik teljesíti.
+      Többszörös fortélyok (karakter séma v2):
+        - kf.név = mindig az alapnév (megegyezik a fortely yaml "név" mezőjével)
+        - kf.spec_típus = megegyezik fortély_def.többszörösség.spec_típus-ával ("" ha nem többszörös)
+        - kf.spec_elem = a konkrét választott példány (pl. "erv", "kard, lovag")
+        - Lookup: kf.név alapján (nem kf.spec_elem!)
 ```
 
 ---

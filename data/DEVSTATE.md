@@ -136,6 +136,17 @@
   - Trigger: push master (web/ vagy data/ változás) + workflow_dispatch
   - Python 3.13 + Node 20 + generate_tables.py + npm ci + build + postbuild (data copy) + deploy
   - URL: `https://kaktusztea.github.io/szilankrpg/`
+- ✅ Karakter séma v2 (`data/schemas/karakter.yaml`)
+  - Egységes `fortélyok[]` tömb (harci, általános, érzék, szabad, kiemelt többszörösök — mind `{név, fok}`)
+  - Eltávolítva: `fortélyok_kiemelt`, `fortélyok_szabad`, `származtatott` szekciók
+  - `session` szekció: runtime állapot (vé_csökkenés, vé_history, manőver_pont_használt, sebzések, aktív_fegyver_index, aktív_pajzs/páncél/taktika/helyzet/manőver/státuszok)
+  - Nem tárol származtatott/számított értékeket (ÉP, KÉ, TÉ, VÉ, SP, KP, SFÉ, MGT)
+  - Validáció: `schema_version === 2` + kötelező mezők ellenőrzés betöltéskor
+- ✅ Karakter mentés/betöltés (JSON export/import)
+  - 💾 Mentés gomb: `karakter.név.json` letöltés
+  - 📂 Betöltés gomb: file picker, schema validáció, hiányzó session pótlás (DEFAULT_SESSION)
+  - Session state lifted: VÉ csökkenés, MP használat, ÉP rubrikák (sebzések) mind az App-szintű karakter objektumban
+  - EpTable: sebzések prop-on keresztül kapja/adja vissza (nem lokális state)
 
 ## Következő lépések
 1. **Reactive Engine bővítés** — minden számítási mechanika migrálása a rules.json-ba, amit csak lehet:
@@ -149,8 +160,7 @@
    - Cél: a TS engine modulok (ep.ts, kp.ts, harcertek.ts, pancel.ts, limits.ts) fokozatos kiváltása
 2. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
 3. **Harcértékek fül** — HM/CM, fegyver/páncél konfigurátor (csak Szerkesztő módban)
-4. **Karakter mentés/betöltés** — JSON export/import
-5. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
+4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/DEVSTATE.md` (ez a fájl)
@@ -180,8 +190,14 @@
   - `["*"]` = szabad szöveges alnév (prompt, max 20 karakter)
 - Többszörös képzettség belső tárolás: fix listánál alnév önmagában (pl. `"Közelharc"`), szabad szövegesnél `"AlapNév: xyz"`
 - Fortély yaml mezők: `kp_perfok` (KP/fok), `ingyenes_perszint` (0=nincs, 2=minden 2.TSz 1 db), `többszörösség.spec_típus`+`spec_lista`
-- Többszörös fortély belső tárolás: `"AlapNév - alnév"` (pl. `"Kultúrkör - erv"`, `"Helyismeret - Erion"`)
-- Többszörös fortély KP lookup: base name (`f.név.split(' - ')[0]`) → fortelyKpMap
+- Többszörös fortély belső tárolás: `{ név: "Kultúrkör", fok: 1, spec_típus: "kultúrkör", spec_elem: "erv" }` — név mindig az alapnév
+- Többszörös fortély KP lookup: `f.név` → fortelyKpMap (név = alapnév, nem kell split)
+- Többszörös fortély display name: `f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név`
+- Karakter séma: v2 (`data/schemas/karakter.yaml`), egységes `fortélyok[]` tömb, `session` szekció runtime state-nek
+- Karakter mentés formátum: egyetlen `.json` fájl (karakter + session), NEM tartalmaz származtatott értékeket
+- Teszt karakter: `data/test_karakter.json` a single source of truth; `web/src/testdata.ts` ebből szinkronban tartandó compile-time default
+- Validáló script: `web/validate_karakter.py` — ellenőrzi a test_karakter.json konzisztenciáját (yaml defs, KP, faj, session)
+- Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
 - Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
 - Vite plugin: dev szerver indulásakor automatikusan futtatja a generate_tables.py-t; nincs per-request regenerálás

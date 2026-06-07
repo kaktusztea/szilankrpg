@@ -1,14 +1,17 @@
 ---
-schema_version: 1         # karakter séma verziója
+# Szilánk RPG — Karakter séma (mentett példány validációja)
+# A mentett .json fájlnak ehhez kell validálnia.
+# NEM tároljuk a származtatott/számított értékeket (ÉP, KÉ, TÉ, VÉ, SP, KP, SFÉ, MGT, stb.)
+schema_version: 2
 
-név: ""
-tsz: 3                      # Tapasztalati szint (1-21)
+név: ""                       # max 40 karakter
+tsz: 1                        # Tapasztalati szint (1-21)
 leírás: ""
-kor: 0
+kor: 20                       # 5-500
 vallás: ""
 
 tulajdonságok:
-  erő: 0
+  erő: 0                      # -5..+7
   edzettség: 0
   ügyesség: 0
   gyorsaság: 0
@@ -19,68 +22,71 @@ tulajdonságok:
 
 HM_TÉ: 0                     # KP-ból vásárolt Harcérték Módosító → TÉ-re
 HM_VÉ: 0                     # KP-ból vásárolt Harcérték Módosító → VÉ-re
-CM: 0                       # KP-ból vásárolt Célzóérték Módosító
+CM: 0                         # KP-ból vásárolt Célzóérték Módosító
 
-képzettségek:
-  - név: ""
-    szint: 0
-    spec: ""                  # többszörös vagy egyedi identitású képzettségeknél (pl. Tradíció: "Magasmágia", Harcmodor: "Kardvívás")
+szilánk: 1                    # 0-3 (nem származtatott, kiosztott)
 
-fortélyok_kiemelt:
-  kulturkörök:
-    - név: ""
-  helyismeret:
-    - helynév: ""
-  nyelvismeret:
-    - nyelv: ""
-      fok: 0                # 1-3
+képzettségek:                 # Egységes lista (nincs külön primer/szekunder/harcmodor)
+  - név: ""                   # Képzettség neve VAGY "AlapNév: AlNév" többszöröseknél
+    szint: 0                  # 0-15
 
-fortélyok_speciális:        # Kiemelt Fortélyok (KP bónuszt adók)
+fortélyok:                    # Egységes lista (harci, általános, érzék, szabad, kiemelt többszörösök)
+  - név: ""                   # Fortély alap neve (megegyezik a fortely yaml "név" mezőjével)
+    fok: 1                    # 1-maxfok (szabad fortélyoknál mindig 1)
+    spec_típus: ""            # Többszöröseknél: megegyezik a fortely.yaml többszörösség.spec_típus-ával. Üres ha nem többszörös.
+    spec_elem: ""             # Többszöröseknél: a konkrét választott elem (pl. "erv", "Erion", "kard, lovag"). Üres ha nem többszörös.
+
+fortélyok_speciális:          # KP bónuszt adó speciális jellemzők (nem normál fortélyok)
   analfabéta: false
   apró_méretű_lény: false
-  tartós_sérülés_fok: 0     # 0-3
+  tartós_sérülés_fok: 0       # 0-3
   vakság: false
   süketség: false
 
-fortélyok_szabad:
-  - név: ""
-
-fortélyok:
-  - név: ""
-    fok: 0
-    spec: ""                  # többszörös fortélyoknál: mire vonatkozik (fegyver, alakzat, stb.)
-
 hátterek:
-  faj: ""
+  faj: ""                     # Faj neve (lookup kulcs → fajok.json)
   leíró:
     - ""
   karma:
     - ""
 
-származtatott:
-  ÉP: 0                      # 28 + (Edzettség × 4)
-  szilánk: 1                 # [0; 3]
-
 fegyverek:
-  - alap: ""                  # alaptípus neve (lookup kulcs → fegyverek.json)
-    név: ""                   # opcionális egyedi név (pl. "Vérvörös Penge")
+  - alap: ""                  # Alaptípus neve (lookup kulcs → fegyverek.json)
+    név: ""                   # Opcionális egyedi név (pl. "Vérvörös Penge")
     anyag: "acél"             # acél, bronz, abbitacél, mithrill, lunír
-    idea: 0                   # -2..+4 (fegyver Idea bónusz/büntetés)
+    idea: 0                   # -2..+4
     mesterfegyver_fok: 0      # 0-3
-    módosítók: ""             # egyedi módosítók listája (mágikus stb.), üres ("") ha nincs
 
 páncél:
-  alap: ""                    # alaptípus neve (lookup kulcs → konstansok.yaml páncél_struktúrák)
-  név: ""                     # opcionális egyedi név
-  fémalapanyag: ""            # acél, bronz, abbitacél, mithrill, lunír
+  alap: ""                    # Alaptípus neve (lookup kulcs → konstansok.yaml páncél_struktúrák)
+  név: ""                     # Opcionális egyedi név
+  fémalapanyag: ""            # acél, bronz, abbitacél, mithrill, lunír, "" (nem fém)
   idea: 0                     # -4..+4
-  kidolgozottság: ""          # pocsék, átlagos, mestermunka
+  kidolgozottság: "átlagos"   # pocsék, átlagos, mestermunka
   sisak: false
   végtagvédettség: 0          # 0-4
-  méret_illeszkedés: ""       # passzoló, közepesen_más, nagyon_más
-  rongálódás: 0               # SFÉ csökkenés sérülés miatt
+  méret_illeszkedés: "passzoló"  # passzoló, közepesen_más, nagyon_más
+  rongálódás: 0               # SFÉ csökkenés
 
 felszerelés:
   nagy_tárgyak:
     - név: ""
-      MGT: 0
+      MGT: 0                  # 1=közepes, 2=nagy
+
+# ============================================================
+# Session (runtime állapot — Game módban változó értékek)
+# Ugyanabban a fájlban, szeparált szekcióban.
+# Mentéskor mindig belekerül, betöltéskor hiánya = default értékek.
+# ============================================================
+session:
+  vé_csökkenés: 0
+  vé_history: []              # number[] — VÉ csökkenés történet
+  manőver_pont_használt: 0
+  sebzések: []                # { típus: "S"|"V"|"Z"|"FP", sorszám: number }[] — ÉP rubrikák állapota
+  aktív_fegyver_index: 0      # Kiválasztott fegyver indexe a fegyverek[] tömbben
+  aktív_pajzs: false
+  aktív_páncél: true
+  aktív_taktika: ""
+  aktív_helyzet: ""
+  aktív_manőver: ""
+  aktív_státuszok: []         # string[]
