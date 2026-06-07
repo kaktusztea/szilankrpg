@@ -1,9 +1,9 @@
 {
   "schema_version": 2,
   "név": "",
-  "tsz": 1,
+  "tsz": 3,
   "leírás": "",
-  "kor": 20,
+  "kor": 25,
   "vallás": "",
   "tulajdonságok": {
     "erő": 0,
