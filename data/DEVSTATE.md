@@ -62,6 +62,12 @@
 - ✅ Engine core: TypeScript implementáció, tesztelve 8.szintű karakter ellen (15/18 ✅, maradék 3 javítva)
 - ✅ GUI spec: 9+1 screen leírás, formázás, viselkedés
 - ✅ Harc fül UI: KÉ/SFÉ/VÉ csökk/MP boxok, fegyvertábla, ÉP rubrika táblázat (sebesülés/gyógyulás/compaction/TÉ levonás)
+  - VÉ csökkenés: label "VÉ csökkenés", negált kijelzés (-3, -5...), gombok: -1/-2/-3/+1/⟲
+    - VÉ tábla flash: sárga (csökkenéskor), zöld (+1 visszaadáskor), 1s fade-out
+    - -1/-2/-3 gombok disabled ha minden fegyver VÉ = 0; +1 disabled ha csökkenés = 0
+    - ⟲ reset: disabled ha 0, megerősítő popup ("VÉ Reset")
+    - VÉ értékek nem mennek 0 alá (Math.max(0,...) clamp)
+    - Double-tap label/értékre: VÉ csökkenés történet popup (pl. "-3; -2; -2; +1"), mellé kopp bezárja
   - VÉ csökkent: reset gomb → megerősítő popup ("VÉ Reset"), disabled ha 0
   - ÉP táblázat fejléc: 4 oszlopos grid (ÉP érték, ÉP reset gomb, Seb gomb, Gyógy gomb)
   - Sebesülés/Gyógyulás: overlay popup (típus+érték gombok, auto-close mindkettő kiválasztva)
@@ -115,13 +121,14 @@
   - `js-yaml` runtime dependency eltávolítva → bundle ~43KB-val kisebb (232KB vs 275KB)
   - Minden adat `tables/*.json`-ból töltődik (fetchJson), nincs runtime YAML parse
 - ✅ Reactive Engine (`data/rules.json` + `web/src/engine/reactive.ts`)
-  - Deklaratív dependency graph: 19 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc, manőver pont, felszerelés, stb.)
+  - Deklaratív dependency graph: 25 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc, SFÉ, távharc VÉ, képzettség limitek, manőver pont, felszerelés, stb.)
   - Skaláris képletek + aggregáló függvények: `sum()`, `sum_lookup()`, `count()`
-  - Topológiai sorrend: automatikus dependency resolution
-  - Context: `buildContext()` (skalárok) + `buildArrayContext()` (tömbök: képzettségek, fortélyok, kp_tábla)
+  - Topológiai sorrend: automatikus dependency resolution (skaláris Context + ArrayContext)
   - HarcScreen: ÉP, KÉ, manőver pont reactive engine-ből
   - App KP sáv: teljes KP lánc reactive engine-ből (calcKp modul kiváltva)
-  - TS-ben marad: spec_kp, kiemelt_kp, fegyver iteráció, fortély módosítók, Fájdalomtűrés enyhítés
+  - Validálva: 25/25 szabály helyes az engine_spec.md és a szabályrendszer md alapján
+  - testdata.ts expected8: frissítve teljes KP bontással (kp_képzettségek:224, kp_fortélyok:150, kp_hm:192, elköltött:566, maradt:2)
+  - TS-ben marad: spec_kp, kiemelt_kp, fegyver iteráció, fortély módosítók, Fájdalomtűrés enyhítés, páncél MGT
 - ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
 - ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
 - ✅ Escape gomb: minden popup overlay bezárható Escape-pel
@@ -131,10 +138,19 @@
   - URL: `https://kaktusztea.github.io/szilankrpg/`
 
 ## Következő lépések
-1. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
-2. **Harcértékek fül** — HM/CM, fegyver/páncél konfigurátor (csak Szerkesztő módban)
-3. **Karakter mentés/betöltés** — JSON export/import
-4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
+1. **Reactive Engine bővítés** — minden számítási mechanika migrálása a rules.json-ba, amit csak lehet:
+   - §11 Páncél MGT (feltételes lookup struktúra típus alapján)
+   - §12 Merevvért TÉ büntetés (feltételes: if merev → MGT - lookup)
+   - §13 Pajzs VÉ/TÉ (lookup + feltételes fok logika)
+   - §5-9 Fegyverenként TÉ/VÉ/SP/Harckeret (parametrikus szabályok / template-ek)
+   - §16 Fortély módosítók (iteráció + feltétel dispatch → esetleg deklaratív filter+sum)
+   - §18 max_HM (sum harci fortélyok + harcmodorok)
+   - spec_kp, kiemelt_kp (feltételes logika → esetleg lookup-tábla + sum)
+   - Cél: a TS engine modulok (ep.ts, kp.ts, harcertek.ts, pancel.ts, limits.ts) fokozatos kiváltása
+2. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
+3. **Harcértékek fül** — HM/CM, fegyver/páncél konfigurátor (csak Szerkesztő módban)
+4. **Karakter mentés/betöltés** — JSON export/import
+5. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/DEVSTATE.md` (ez a fájl)
@@ -190,3 +206,4 @@
 - Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
 - iOS kompatibilitás: double-tap modell (nem long-press), nincs touchstart preventDefault hack, `touch-action: manipulation` CSS
+- **Reactive Engine irányelv**: minden számítási mechanikát a `data/rules.json`-ba kell migrálni, amit csak lehet. A TS engine modulok (ep.ts, kp.ts, harcertek.ts, pancel.ts, limits.ts) fokozatosan kiváltandóak. Cél: a szabályrendszer képletei egy helyen, deklaratívan, nem szétszórva TypeScript fájlokban.

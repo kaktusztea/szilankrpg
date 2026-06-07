@@ -127,7 +127,13 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
   - TÉ értékek: dinamikusan csökkennek sebesülés kategória TÉ levonással
   - VÉ értékek: dinamikusan csökkennek VÉ csökkenés értékkel
-- **VÉ csökkent box**: label `VÉ csökkent` (bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (reset — megerősítő popup: piros "VÉ Reset" gomb, disabled ha érték=0). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
+- **VÉ csökkenés box**: label `VÉ csökkenés` (bold, fehér, uppercase), érték negálva kijelezve (pl. -3, -5), alatta gombok: -1, -2, -3, +1, ⟲ (reset).
+  - -1/-2/-3: VÉ csökkentés (disabled ha minden fegyver VÉ = 0 a táblázatban)
+  - +1: VÉ visszaadás (disabled ha csökkenés = 0)
+  - ⟲: reset (disabled ha 0, megerősítő popup: piros "VÉ Reset" gomb)
+  - VÉ oszlop flash: sárga animáció csökkenéskor, zöld animáció +1-nél (1s fade-out)
+  - Double-tap a label-re vagy értékre: VÉ csökkenés történet popup (pl. "-3; -2; +1"), mellé kopp bezárja
+  - Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát (Math.max(0,...) clamp).
 - **ÉP táblázat**:
   - **Fejléc sor** (4 oszlopos grid, S1-S4-hez igazítva):
     - S1 pozíció: `ÉP: X(Y)` — X=max ÉP, Y=megmaradt ÉP
@@ -387,7 +393,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 - **Context**: `buildContext()` — skaláris értékek (tulajdonságok, tsz, konstansok, HM, CM, stb.)
 - **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla)
 
-#### Jelenlegi rules.json szabályok (19 db):
+#### Jelenlegi rules.json szabályok (25 db):
 | ID | Formula típus | Leírás |
 |----|--------------|--------|
 | ÉP | képlet | 28 + edzettség × 4 |
@@ -409,6 +415,12 @@ Deklaratív számítási szabályok dependency graph-ban:
 | kp_cm | képlet | CM × kp.cm |
 | elköltött_kp | képlet | kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp |
 | maradék_kp | képlet | összes_kp + spec_kp + összes_szekunder_kp - elköltött_kp |
+| sfé_fizikai | képlet | struktúra + alapanyag + idea - rongálódás |
+| sfé_energia | képlet | struktúra + alapanyag + idea - rongálódás |
+| távharc_cella | képlet | ceil(távolság / osztó) |
+| távharc_cél_VÉ | képlet | max(szorzó,1)×cella + min(szorzó,0) |
+| képzettség_max_szint_primer | képlet | min(max_szint, tsz) |
+| képzettség_max_szint_szekunder | képlet | min(max_szint, tsz + plusz) |
 
 #### TS-ben maradó logika (nem deklaratív):
 - `spec_kp`: feltételes boolean flag-ek (Analfabéta, Vakság, stb.)
