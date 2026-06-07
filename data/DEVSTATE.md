@@ -24,16 +24,11 @@
 ├── web/                       ← React + Vite + TypeScript webes app
 │   ├── src/
 │   │   ├── engine/            ← Kalkulációs engine modulok
-│   │   │   ├── types.ts       ← Típusdefiníciók
-│   │   │   ├── kp.ts          ← KP számítás
-│   │   │   ├── tulajdonsag.ts ← Tulajdonság pont-buy
-│   │   │   ├── ep.ts          ← ÉP + S1-S4
-│   │   │   ├── harcertek.ts   ← KÉ, TÉ, VÉ, CÉ, SP, Harckeret
-│   │   │   ├── pancel.ts      ← SFÉ, MGT, Merevvért büntetés
-│   │   │   ├── modifiers.ts   ← Fortély módosítók (flat/scaled/override)
-│   │   │   ├── limits.ts      ← Manőver, Felszerelés, HM/CM, Képzettség limitek
-│   │   │   ├── tavharc.ts     ← Távharc VÉ kalkulátor
-│   │   │   ├── data-loader.ts ← JSON betöltés runtime (konstansok, fegyverek, pajzsok, KP, harcmodor, képzettségDefs, kiterjesztések, fajNevek, fajKeretek, primerFortelyok, fortelySummaries, rules)
+│   │   │   ├── types.ts       ← Típusdefiníciók (Karakter v2, Session, Fortely, stb.)
+│   │   │   ├── kp.ts          ← KP számítás (backup/referencia)
+│   │   │   ├── harcertek.ts   ← calcFegyverHarcertekek (fegyverenkénti iteráció)
+│   │   │   ├── pancel.ts      ← calcPancelInputs (lookup-ok reactive context-hez)
+│   │   │   ├── data-loader.ts ← JSON betöltés runtime
 │   │   │   ├── reactive.ts   ← Reactive rule engine (evaluate, buildContext, buildArrayContext)
 │   │   │   └── index.ts       ← Barrel export
 │   │   ├── components/
@@ -44,7 +39,9 @@
 │   │   │   ├── TulajdonsagokScreen.tsx  ← Tulajdonságok + Képzettségek fül (KÉSZ)
 │   │   │   ├── TulajdonsagokScreen.css
 │   │   │   ├── FortelyokScreen.tsx      ← Fortélyok fül (KÉSZ)
-│   │   │   └── FortelyokScreen.css
+│   │   │   ├── FortelyokScreen.css
+│   │   │   ├── HarcertekekScreen.tsx    ← Harcértékek fül (KÉSZ)
+│   │   │   └── HarcertekekScreen.css
 │   │   ├── App.tsx             ← Tab shell + swipe + animáció + Szerk/Game mód
 │   │   ├── App.css             ← Globális stílusok, dark theme
 │   │   └── testdata.ts         ← 8. szintű teszt karakter + elvárt értékek
@@ -162,19 +159,31 @@
   - Napi build counter: `.build_counter` fájl (nem repo része)
   - Compile-time injection: `__APP_VERSION__` via Vite `define`
   - Double-tap "Szilánk RPG" fejléc → sárga info sáv (5s): `Szilánk RPG build: X.Y.Z`
+- ✅ Reactive Engine bővítés (2. kör)
+  - Új engine funkciók: `sum_where(tömb, összegMező, szűrőMező, szűrőÉrték)`, `lookup(tömb, kulcsMező, kulcsÉrték, értékMező)`, `if(feltétel, then, else)`, `abs()`
+  - `max_HM` szabály: `sum_where(harci_fortélyok, fok, is_mesterfegyver, 0) + harcmodor_összeg + alakzatharc_szint`
+  - `max_HM_aszimmetria` szabály: `floor(tsz / 2)`
+  - `páncél_MGT` szabály: `max(0, struktúra_mgt + alapanyag_mgt + csatolt_mgt + méret_mgt - erő)`
+  - `merevvért_TÉ_büntetés` szabály: `if(páncél_merev, max(0, páncél_MGT - merevvért_csökkentés), 0)`
+  - `calcPancelInputs()`: lookup-ok TS-ben, köztes értékek a reactive context-be
+  - Eltávolítva: `ep.ts`, `tulajdonsag.ts`, `limits.ts`, `tavharc.ts`, `modifiers.ts`, `calcPancel()`, `calcKE()`, `calcCE()`
+  - Megmaradt TS: `calcFegyverHarcertekek` (fegyverenkénti iteráció), `calcPancelInputs` (lookup-ok), `kp.ts` (backup)
+- ✅ Harcértékek fül (🛡️, szerkesztő módban, Fortélyok fül mellett)
+  - HM/CM vásárlás: +/- gombok, validálás (max_HM, aszimmetria, max_CM)
+  - Harcmodorok: read-only lista (Tul/Képz fülről szinkronizálva)
+  - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown), MF fok, Idea popup, anyag
+  - Páncél: struktúra/fémalapanyag/kidolgozottság/méret/sisak/végtagvédettség/idea/rongálódás
+- ✅ Jegyzetek fül (📝): teljes képernyős textarea, mindkét módban elérhető, mentődik karakter fájlba
 
 ## Következő lépések
-1. **Reactive Engine bővítés** — minden számítási mechanika migrálása a rules.json-ba, amit csak lehet:
-   - §11 Páncél MGT (feltételes lookup struktúra típus alapján)
-   - §12 Merevvért TÉ büntetés (feltételes: if merev → MGT - lookup)
+1. **Reactive Engine bővítés** — további migrálás a rules.json-ba:
    - §13 Pajzs VÉ/TÉ (lookup + feltételes fok logika)
    - §5-9 Fegyverenként TÉ/VÉ/SP/Harckeret (parametrikus szabályok / template-ek)
    - §16 Fortély módosítók (iteráció + feltétel dispatch → esetleg deklaratív filter+sum)
-   - §18 max_HM (sum harci fortélyok + harcmodorok)
    - spec_kp, kiemelt_kp (feltételes logika → esetleg lookup-tábla + sum)
-   - Cél: a TS engine modulok (ep.ts, kp.ts, harcertek.ts, pancel.ts, limits.ts) fokozatos kiváltása
+   - Cél: a TS engine modulok (kp.ts, harcertek.ts) fokozatos kiváltása
 2. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
-3. **Harcértékek fül** — HM/CM, fegyver/páncél konfigurátor (csak Szerkesztő módban)
+3. **Harcértékek fül GUI finomítás** — +/- gombok kiváltása (más widget), MF szinkron Fortélyokkal
 4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
 
 ## Új chat nyitásakor olvasd be ezeket

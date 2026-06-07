@@ -321,9 +321,10 @@ Alul fix, horizontálisan scrollozható szalag.
 | harc | 🗡️ Harc | false |
 | tulajdonsagok | 🔵 Tul/Képz | false |
 | fortelyok | 🟣 Fortélyok | false |
-| misztikus | ✨ Misztikus | false |
 | harcertekek | 🛡️ Harcértékek | true |
+| misztikus | ✨ Misztikus | false |
 | hatterek | 📜 Hátterek | false |
+| jegyzetek | 📝 Jegyzetek | false |
 | taktikak | 🎯 Taktikák | false |
 | helyzetek | 🎯 Helyzetek | false |
 | manoverek | 🎯 Manőverek | false |
@@ -387,13 +388,15 @@ React komponensek
 
 ### Reactive Engine (`data/rules.json` + `engine/reactive.ts`)
 Deklaratív számítási szabályok dependency graph-ban:
-- **Skaláris képletek**: `+`, `-`, `*`, `/`, `floor()`, `ceil()`, `min()`, `max()`
-- **Aggregáló függvények**: `sum(tömb, mező)`, `sum_lookup(tömb, mező, tábla, kulcs, érték)`, `count(tömb)`
+- **Skaláris képletek**: `+`, `-`, `*`, `/`, `floor()`, `ceil()`, `min()`, `max()`, `abs()`
+- **Aggregáló függvények**: `sum(tömb, mező)`, `sum_lookup(tömb, mező, tábla, kulcs, érték)`, `sum_where(tömb, összegMező, szűrőMező, szűrőÉrték)`, `count(tömb)`
+- **Lookup**: `lookup(tömb, kulcsMező, kulcsÉrték, értékMező)`
+- **Feltételes**: `if(feltétel, then, else)` — ternary kifejezés
 - **Topológiai sorrend**: automatikus dependency resolution (inputs mező alapján)
-- **Context**: `buildContext()` — skaláris értékek (tulajdonságok, tsz, konstansok, HM, CM, stb.)
-- **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla)
+- **Context**: `buildContext()` — skaláris értékek (tulajdonságok, tsz, konstansok, HM, CM, páncél inputok, stb.)
+- **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla, harci_fortélyok)
 
-#### Jelenlegi rules.json szabályok (25 db):
+#### Jelenlegi rules.json szabályok (29 db):
 | ID | Formula típus | Leírás |
 |----|--------------|--------|
 | ÉP | képlet | 28 + edzettség × 4 |
@@ -409,6 +412,8 @@ Deklaratív számítási szabályok dependency graph-ban:
 | felszerelés_keret | képlet | 2 + erő |
 | felszerelés_mgt | képlet | max(0, terhelés - keret) |
 | max_CM | képlet | tsz × max_cm_perszint |
+| max_HM | sum_where | harci fortélyok (MF nélkül) + harcmodorok + alakzatharc |
+| max_HM_aszimmetria | képlet | floor(tsz / 2) |
 | kp_képzettségek | sum_lookup | képzettség szintek → KP tábla lookup → összeg |
 | kp_fortélyok | sum | fortély fokok összege × fortélyfok konstans |
 | kp_hm | képlet | (HM_TÉ + HM_VÉ) × kp.hm |
@@ -417,6 +422,8 @@ Deklaratív számítási szabályok dependency graph-ban:
 | maradék_kp | képlet | összes_kp + spec_kp + összes_szekunder_kp - elköltött_kp |
 | sfé_fizikai | képlet | struktúra + alapanyag + idea - rongálódás |
 | sfé_energia | képlet | struktúra + alapanyag + idea - rongálódás |
+| páncél_MGT | képlet | max(0, struktúra_mgt + alapanyag_mgt + csatolt_mgt + méret_mgt - erő) |
+| merevvért_TÉ_büntetés | if | if(merev, max(0, MGT - csökkentés), 0) |
 | távharc_cella | képlet | ceil(távolság / osztó) |
 | távharc_cél_VÉ | képlet | max(szorzó,1)×cella + min(szorzó,0) |
 | képzettség_max_szint_primer | képlet | min(max_szint, tsz) |
@@ -425,7 +432,8 @@ Deklaratív számítási szabályok dependency graph-ban:
 #### TS-ben maradó logika (nem deklaratív):
 - `spec_kp`: feltételes boolean flag-ek (Analfabéta, Vakság, stb.)
 - `kiemelt_kp`: iteráció ingyenes keret számítással (Kultúrkör, Helyismeret)
-- Fegyverenként TÉ/VÉ/SP/Harckeret (parametrikus iteráció + lookup)
+- `calcFegyverHarcertekek`: fegyverenkénti TÉ/VÉ/SP/Harckeret (parametrikus iteráció + lookup)
+- `calcPancelInputs`: páncél lookup-ok → köztes értékek a reactive context-hez
 - Fortély módosítók összegyűjtése (feltételes iteráció)
 - Fájdalomtűrés enyhítés (küszöb-tábla lookup)
 
