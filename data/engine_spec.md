@@ -48,8 +48,15 @@ formula:
 output: elköltött_kp, maradék_kp
 validate:
   primer_limit = összes_kp + spec_kp                         // primer célra CSAK ebből költhető
+  primer_költés = SUM( primer képzettségek KP-ja )
+                + SUM( primer fortélyok fok × kp.fortélyfok )
+                + kp_hm + kp_cm
   maradék_kp ≥ 0
-  (elköltött_kp - kp_szekunder_költött) ≤ primer_limit       // primer költés nem lépi túl
+  primer_költés ≤ primer_limit                               // primer költés nem lépi túl
+
+UI kijelzés (KP sáv, szerkesztő módban):
+  Bal fél:  "Maradt KP: {maradék_kp}"           // piros háttér ha < 0
+  Jobb fél: "Primer keret: {primer_limit - primer_költés}"  // piros háttér ha < 0
 ```
 
 ### 1.4 Speciális KP bónusz

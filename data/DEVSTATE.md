@@ -109,10 +109,8 @@
   - Game mód: koppintás → accordion info (leírás, hatás, követelmény, kiterjesztések)
   - Rövid koppintás szerkesztő módban: nem csinál semmit (csak double-tap)
 - ✅ KP sáv (szerkesztő mód, minden fülön, tab-bar felett)
-  - Maradt KP + Maradt Szekunder KP kijelzés
-  - Zöld háttér (normál), piros (ha Maradt KP < 0)
-  - Szekunder maradék: max(0, ...) — sosem negatív
-  - Dinamikus: képzettség módosítás azonnal frissíti
+  - Két szekció: "Maradt KP: X" (bal, piros ha <0) + "Primer keret: Y" (jobb, piros ha <0)
+  - Dinamikus: képzettség/fortély módosítás azonnal frissíti
   - Képzettségek és Fortélyok state az App szintjén (lifted state)
 - ✅ Build pipeline: YAML → JSON generálás automatizálva
   - `data/generate_tables.py`: központi script (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
@@ -145,8 +143,25 @@
 - ✅ Karakter mentés/betöltés (JSON export/import)
   - 💾 Mentés gomb: `karakter.név.json` letöltés
   - 📂 Betöltés gomb: file picker, schema validáció, hiányzó session pótlás (DEFAULT_SESSION)
+  - 📄 Új karakter gomb: megerősítő popup, `data/empty_karakter.json`-ból tölti
+  - 🧪 Teszt karakter gomb: megerősítő popup, `testdata.ts`-ből tölti
+  - Validáció betöltéskor: schema struktúra + referenciális integritás (faj, fortélyok, képzettségek, páncél enum-ok, fegyver anyag/alaptípus)
   - Session state lifted: VÉ csökkenés, MP használat, ÉP rubrikák (sebzések) mind az App-szintű karakter objektumban
   - EpTable: sebzések prop-on keresztül kapja/adja vissza (nem lokális state)
+  - Név/Szint/Kor/Faj: lifted state (App → TulajdonsagokScreen props)
+- ✅ KP sáv (szerkesztő mód, minden fülön, tab-bar felett)
+  - Két szekció: "Maradt KP: X" (bal) + "Primer keret: Y" (jobb)
+  - Bal: piros háttér ha maradék < 0
+  - Jobb: piros háttér ha primer túlléptük (primer költés > primer limit)
+  - Primer költés = primer képzettségek + primer fortélyok + HM + CM
+  - Primer limit = összes_kp + spec_kp
+- ✅ Szint választó: gombgrid 3-21 (5 oszlop, utolsó sor középre)
+- ✅ Kor választó: két lépéses (tartomány → érték), 10-100/2, 100-200/5, 200-1000/50
+- ✅ Build metadata (`web/generate_metadata.py` → `public/metadata.json`)
+  - Verzió formátum: `ÉV.ÉVNAPJA.napibuild` (pl. `26.158.4`)
+  - Napi build counter: `.build_counter` fájl (nem repo része)
+  - Compile-time injection: `__APP_VERSION__` via Vite `define`
+  - Double-tap "Szilánk RPG" fejléc → sárga info sáv (5s): `Szilánk RPG build: X.Y.Z`
 
 ## Következő lépések
 1. **Reactive Engine bővítés** — minden számítási mechanika migrálása a rules.json-ba, amit csak lehet:
