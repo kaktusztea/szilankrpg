@@ -1,0 +1,164 @@
+.harcertekek-screen {
+  padding: 12px;
+}
+
+.he-section {
+  margin-bottom: 16px;
+}
+
+.he-section h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  color: var(--text);
+  border-bottom: 1px solid #444;
+  padding-bottom: 4px;
+}
+
+.he-hm-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.he-hm-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.he-hm-row span {
+  width: 60px;
+  font-size: 14px;
+}
+
+.he-hm-row button {
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px solid #555;
+  background: var(--primary);
+  color: var(--text);
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.he-hm-row strong {
+  width: 30px;
+  text-align: center;
+  font-size: 16px;
+}
+
+.he-error {
+  color: var(--error);
+}
+
+.he-error strong {
+  color: var(--error);
+}
+
+.he-hm-info {
+  display: flex;
+  gap: 12px;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.he-harcmodor-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  font-size: 14px;
+}
+
+.he-harcmodor-item strong {
+  color: var(--success);
+}
+
+.he-fegyver-card {
+  background: var(--surface);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 8px;
+}
+
+.he-fegyver-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.he-fegyver-fields {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 12px;
+  font-size: 14px;
+}
+
+.he-fegyver-fields label {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.he-fegyver-fields select {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: var(--text);
+  padding: 2px 6px;
+  font-size: 14px;
+}
+
+.he-idea-btn {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: var(--text);
+  padding: 2px 10px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 36px;
+  text-align: center;
+}
+
+.he-add-select {
+  width: 100%;
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.he-pancel-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.he-pancel-fields label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.he-pancel-fields select {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: var(--text);
+  padding: 2px 6px;
+  font-size: 14px;
+  flex: 1;
+}
+
+.he-toggle input {
+  width: 18px;
+  height: 18px;
+}

@@ -5,6 +5,7 @@ import type { GameData } from './engine/data-loader';
 import { HarcScreen } from './components/HarcScreen';
 import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
 import { FortelyokScreen } from './components/FortelyokScreen';
+import { HarcertekekScreen } from './components/HarcertekekScreen';
 import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
 import type { Karakter, Session, Fortely } from './engine/types';
 import { DEFAULT_SESSION } from './engine/types';
@@ -16,8 +17,8 @@ const ALL_TABS = [
   { id: 'harc', label: '🗡️ Harc', editOnly: false },
   { id: 'tulajdonsagok', label: '🔵 Tul/Képz', editOnly: false },
   { id: 'fortelyok', label: '🟣 Fortélyok', editOnly: false },
-  { id: 'misztikus', label: '✨ Misztikus', editOnly: false },
   { id: 'harcertekek', label: '🛡️ Harcértékek', editOnly: true },
+  { id: 'misztikus', label: '✨ Misztikus', editOnly: false },
   { id: 'hatterek', label: '📜 Hátterek', editOnly: false },
   { id: 'taktikak', label: '🎯 Taktikák', editOnly: false },
   { id: 'helyzetek', label: '🎯 Helyzetek', editOnly: false },
@@ -447,7 +448,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
     case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} név={karakter.név} setNév={v => setKarakter(prev => prev ? { ...prev, név: v } : prev)} tsz={karakter.tsz} setTsz={v => setKarakter(prev => prev ? { ...prev, tsz: v } : prev)} kor={karakter.kor} setKor={v => setKarakter(prev => prev ? { ...prev, kor: v } : prev)} faj={karakter.hátterek.faj} setFaj={v => setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev)} />;
     case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} />;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
-    case 'harcertekek': return <div className="screen"><h2>🛡️ Harcértékek</h2><p>HM/CM, Harcmodor bónuszok, Fegyverek, Páncél beállítás (TODO)</p></div>;
+    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={setKarakter} />;
     case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;
     case 'taktikak': return <div className="screen"><h2>🎯 Harci taktikák</h2></div>;
     case 'helyzetek': return <div className="screen"><h2>🎯 Harci helyzetek</h2></div>;
