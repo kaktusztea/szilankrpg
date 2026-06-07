@@ -11,3 +11,5 @@ Excalidraw
 .space
 node_modules
 web/dist
+web/public/metadata.json
+web/.build_counter

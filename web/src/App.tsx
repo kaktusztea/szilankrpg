@@ -150,6 +150,9 @@ function App() {
   const touchY = useRef<number>(0);
   const [showNewConfirm, setShowNewConfirm] = useState(false);
   const [showTestConfirm, setShowTestConfirm] = useState(false);
+  const [versionHint, setVersionHint] = useState('');
+  const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const lastTapTitle = useRef(0);
 
   useEffect(() => {
     if (!showNewConfirm && !showTestConfirm) return;
@@ -157,6 +160,18 @@ function App() {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [showNewConfirm, showTestConfirm]);
+
+  function handleTitleTap() {
+    const now = Date.now();
+    if (now - lastTapTitle.current < 350) {
+      lastTapTitle.current = 0;
+      setVersionHint(`Szilánk RPG build: ${__APP_VERSION__}`);
+      if (versionHintTimer.current) clearTimeout(versionHintTimer.current);
+      versionHintTimer.current = setTimeout(() => setVersionHint(''), 5000);
+    } else {
+      lastTapTitle.current = now;
+    }
+  }
 
   const TABS = ALL_TABS.filter(t => !t.editOnly || !gameMode);
 
@@ -241,7 +256,7 @@ function App() {
   return (
     <div className="app" onContextMenu={e => e.preventDefault()} onSelect={e => e.preventDefault()}>
       <header className="header">
-        <span className="title">Szilánk RPG</span>
+        <span className="title" onClick={handleTitleTap}>Szilánk RPG</span>
         <div className="header-btns">
           <button className="test-btn" onClick={() => setShowTestConfirm(true)} title="Teszt karakter betöltése">🧪</button>
           <button className="new-btn" onClick={() => setShowNewConfirm(true)} title="Új karakter">📄</button>
@@ -279,6 +294,8 @@ function App() {
           ))}
         </div>
       </main>
+
+      {versionHint && <div className="version-hint" style={{ background: '#ff9800', color: '#000', textAlign: 'center', padding: '6px 12px', fontSize: '14px', fontWeight: 'bold', borderRadius: '4px', margin: '0 8px 4px' }}>{versionHint}</div>}
 
       {!gameMode && data && (() => {
         const spec = karakter.fortélyok_speciális;
@@ -382,6 +399,7 @@ function App() {
         </div>,
         document.body
       )}
+
     </div>
   );
 }
