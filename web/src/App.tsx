@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, TouchEvent, useCallback } from 'react';
+import { createPortal } from 'react-dom';
 import { loadGameData } from './engine/data-loader';
 import type { GameData } from './engine/data-loader';
 import { HarcScreen } from './components/HarcScreen';
@@ -41,6 +42,68 @@ function validateKarakter(obj: unknown): obj is Karakter {
   );
 }
 
+/** Validate referential integrity against loaded tables. Returns error message or null. */
+function validateKarakterData(k: Karakter, data: GameData): string | null {
+  const errors: string[] = [];
+
+  // Faj
+  if (k.hátterek.faj && !data.fajNevek.includes(k.hátterek.faj)) {
+    errors.push(`Ismeretlen faj: "${k.hátterek.faj}"`);
+  }
+
+  // Fortélyok
+  const fortelyNevek = new Set(data.fortelySummaries.map(d => d.név));
+  for (const f of k.fortélyok) {
+    if (!fortelyNevek.has(f.név)) {
+      errors.push(`Ismeretlen fortély: "${f.név}"`);
+    }
+  }
+
+  // Képzettségek (including többszörös alnevek)
+  const validKepNames = new Set(data.kepzettsegDefs.map(d => d.név));
+  for (const d of data.kepzettsegDefs) {
+    if (d.többszörös) for (const alnév of d.többszörös) validKepNames.add(alnév);
+  }
+  for (const kep of k.képzettségek) {
+    if (!validKepNames.has(kep.név)) {
+      errors.push(`Ismeretlen képzettség: "${kep.név}"`);
+    }
+  }
+
+  // Páncél enum értékek
+  const validKidolgozottság = new Set(Object.keys(data.konstansok.páncél_csatolt_tag_mgt.merevvért_fém));
+  const validMéret = new Set(['passzoló', 'közepesen_más', 'nagyon_más']);
+  const validAnyag = new Set(['', ...data.konstansok.páncél_fémalapanyagok.map(a => a.anyag)]);
+  const validStruktúra = new Set(['', ...data.konstansok.páncél_struktúrák.map(s => s.struktúra)]);
+
+  if (k.páncél.alap && !validStruktúra.has(k.páncél.alap)) {
+    errors.push(`Ismeretlen páncél struktúra: "${k.páncél.alap}"`);
+  }
+  if (k.páncél.kidolgozottság && !validKidolgozottság.has(k.páncél.kidolgozottság)) {
+    errors.push(`Ismeretlen kidolgozottság: "${k.páncél.kidolgozottság}"`);
+  }
+  if (k.páncél.méret_illeszkedés && !validMéret.has(k.páncél.méret_illeszkedés)) {
+    errors.push(`Ismeretlen méret_illeszkedés: "${k.páncél.méret_illeszkedés}"`);
+  }
+  if (k.páncél.fémalapanyag && !validAnyag.has(k.páncél.fémalapanyag)) {
+    errors.push(`Ismeretlen fémalapanyag: "${k.páncél.fémalapanyag}"`);
+  }
+
+  // Fegyverek anyag
+  const validFegyverAnyag = new Set(['acél', 'bronz', 'abbitacél', 'mithrill', 'lunír']);
+  for (const f of k.fegyverek) {
+    if (f.anyag && !validFegyverAnyag.has(f.anyag)) {
+      errors.push(`Ismeretlen fegyver anyag: "${f.anyag}"`);
+    }
+    if (f.alap) {
+      const found = data.fegyverek.some(fd => fd.Fegyver.toLowerCase() === f.alap.toLowerCase());
+      if (!found) errors.push(`Ismeretlen fegyver alaptípus: "${f.alap}"`);
+    }
+  }
+
+  return errors.length > 0 ? errors.join('; ') : null;
+}
+
 function App() {
   const [data, setData] = useState<GameData | null>(null);
   const [error, setError] = useState('');
@@ -55,6 +118,11 @@ function App() {
       setData(d);
       if (!validateKarakter(d.emptyKarakter)) {
         setError('Az empty_karakter.json érvénytelen (schema_version !== 2 vagy hiányzó mezők). Ellenőrizd a data/empty_karakter.json fájlt.');
+        return;
+      }
+      const refErr = validateKarakterData(d.emptyKarakter, d);
+      if (refErr) {
+        setError(`empty_karakter.json referencia hiba: ${refErr}`);
         return;
       }
       setKarakter(d.emptyKarakter);
@@ -80,6 +148,15 @@ function App() {
   // --- Touch / swipe ---
   const touchStart = useRef<number>(0);
   const touchY = useRef<number>(0);
+  const [showNewConfirm, setShowNewConfirm] = useState(false);
+  const [showTestConfirm, setShowTestConfirm] = useState(false);
+
+  useEffect(() => {
+    if (!showNewConfirm && !showTestConfirm) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); } }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [showNewConfirm, showTestConfirm]);
 
   const TABS = ALL_TABS.filter(t => !t.editOnly || !gameMode);
 
@@ -139,6 +216,11 @@ function App() {
             alert('Érvénytelen karakter fájl (schema_version !== 2 vagy hiányzó mezők).');
             return;
           }
+          const refErr = validateKarakterData(obj, data!);
+          if (refErr) {
+            alert(`Referencia hiba: ${refErr}`);
+            return;
+          }
           // Ensure session exists (backward compat)
           if (!obj.session) obj.session = { ...DEFAULT_SESSION };
           setKarakter(obj);
@@ -161,7 +243,8 @@ function App() {
       <header className="header">
         <span className="title">Szilánk RPG</span>
         <div className="header-btns">
-          <button className="test-btn" onClick={() => setKarakter(testKarakter8)} title="Teszt karakter betöltése">🧪</button>
+          <button className="test-btn" onClick={() => setShowTestConfirm(true)} title="Teszt karakter betöltése">🧪</button>
+          <button className="new-btn" onClick={() => setShowNewConfirm(true)} title="Új karakter">📄</button>
           <button className="save-btn" onClick={saveKarakter} title="Mentés">💾</button>
           <button className="load-btn" onClick={loadKarakter} title="Betöltés">📂</button>
           <button
@@ -189,7 +272,7 @@ function App() {
                   képzettségek={képzettségek} setKépzettségek={setKépzettségek}
                   fortélyok={fortélyok} setFortélyok={setFortélyok}
                   session={session} setSession={setSession}
-                  karakter={karakter}
+                  karakter={karakter} setKarakter={setKarakter}
                 />
               )}
             </div>
@@ -253,17 +336,40 @@ function App() {
           </button>
         ))}
       </nav>
+
+      {showNewConfirm && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
+            <label style={{ fontWeight: 'bold' }}>Új karakter?</label>
+            <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(data.emptyKarakter); setShowNewConfirm(false); }}>Új karakter</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {showTestConfirm && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
+            <label style={{ fontWeight: 'bold' }}>Teszt karakter betöltése?</label>
+            <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(testKarakter8); setShowTestConfirm(false); }}>Betöltés</button>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
 
-function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession, karakter }: {
+function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession, karakter, setKarakter }: {
   tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void;
   tulajdonságok: any; setTulajdonságok: any;
   képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
   fortélyok: Fortely[]; setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
   session: Session; setSession: React.Dispatch<React.SetStateAction<Session>>;
   karakter: Karakter;
+  setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
 }) {
   switch (tab) {
     case 'aktiv': return <div className="screen"><h2>❎ Aktív</h2><p>Szituáció beállítás (TODO)</p></div>;
@@ -271,7 +377,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
-    case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} />;
+    case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} név={karakter.név} setNév={v => setKarakter(prev => prev ? { ...prev, név: v } : prev)} tsz={karakter.tsz} setTsz={v => setKarakter(prev => prev ? { ...prev, tsz: v } : prev)} kor={karakter.kor} setKor={v => setKarakter(prev => prev ? { ...prev, kor: v } : prev)} faj={karakter.hátterek.faj} setFaj={v => setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev)} />;
     case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} />;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <div className="screen"><h2>🛡️ Harcértékek</h2><p>HM/CM, Harcmodor bónuszok, Fegyverek, Páncél beállítás (TODO)</p></div>;

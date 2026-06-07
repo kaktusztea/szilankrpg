@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import type { Tulajdonsagok } from '../engine/types';
-import { testKarakter8 } from '../testdata';
 import './TulajdonsagokScreen.css';
 
 const TULAJDONSAG_NEVEK: (keyof Tulajdonsagok)[] = [
@@ -28,21 +27,25 @@ interface Props {
   setTulajdonságok: React.Dispatch<React.SetStateAction<Tulajdonsagok>>;
   képzettségek: KepzettsegSlot[];
   setKépzettségek: React.Dispatch<React.SetStateAction<KepzettsegSlot[]>>;
+  név: string;
+  setNév: (v: string) => void;
+  tsz: number;
+  setTsz: (v: number) => void;
+  kor: number;
+  setKor: (v: number) => void;
+  faj: string;
+  setFaj: (v: string) => void;
 }
 
-export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek }: Props) {
-  const [név, setNév] = useState(testKarakter8.név);
+export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, tsz, setTsz, kor, setKor, faj, setFaj }: Props) {
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
-  const [tsz, setTsz] = useState(testKarakter8.tsz);
   const [editingTsz, setEditingTsz] = useState(false);
-  const [tempTsz, setTempTsz] = useState(testKarakter8.tsz);
+  const [tempTsz, setTempTsz] = useState(tsz);
   const lastTapNév = useRef(0);
   const lastTapTsz = useRef(0);
-  const [faj, setFaj] = useState(testKarakter8.hátterek.faj);
-  const [kor, setKor] = useState(testKarakter8.kor);
   const [editingKor, setEditingKor] = useState(false);
-  const [tempKor, setTempKor] = useState(testKarakter8.kor);
+  const [tempKor, setTempKor] = useState(kor);
   const lastTapKor = useRef(0);
 
   // Game mode: adatlap megjelenítés

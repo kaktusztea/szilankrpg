@@ -55,7 +55,7 @@ body {
   align-items: center;
 }
 
-.save-btn, .load-btn, .test-btn {
+.save-btn, .load-btn, .test-btn, .new-btn {
   background: var(--input-bg);
   border: 1px solid #555;
   border-radius: 4px;
