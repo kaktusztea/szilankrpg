@@ -66,6 +66,11 @@
   font-size: 16px;
 }
 
+.ve-btns button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
 .sfe-values {
   display: flex;
   flex-direction: column;
@@ -155,11 +160,20 @@
 
 .dim { font-size: 17px; color: var(--text-dim); }
 
-.ve-flash {
-  animation: ve-pulse 1s ease-out;
+.ve-flash-down {
+  animation: ve-pulse-down 1s ease-out;
 }
 
-@keyframes ve-pulse {
+.ve-flash-up {
+  animation: ve-pulse-up 1s ease-out;
+}
+
+@keyframes ve-pulse-down {
   0% { background: var(--warning); color: #000; }
+  100% { background: transparent; color: inherit; }
+}
+
+@keyframes ve-pulse-up {
+  0% { background: var(--success); color: #000; }
   100% { background: transparent; color: inherit; }
 }

@@ -19,18 +19,19 @@ function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftT
 
 export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }: { data: GameData; tulajdonságok: any; képzettségek: { név: string; szint: number }[]; onNavigate?: (tabId: string) => void }) {
   const [véCsökkenés, setVéCsökkenés] = useState(0);
-  const [véFlash, setVéFlash] = useState(false);
+  const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
   const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  function triggerVéFlash() {
-    setVéFlash(true);
+  function triggerVéFlash(dir: 'down' | 'up') {
+    setVéFlash(dir);
     if (véFlashTimer.current) clearTimeout(véFlashTimer.current);
-    véFlashTimer.current = setTimeout(() => setVéFlash(false), 1000);
+    véFlashTimer.current = setTimeout(() => setVéFlash(''), 1000);
   }
 
   function changeVé(newVal: number) {
+    const dir = newVal > véCsökkenés ? 'down' : 'up';
     setVéCsökkenés(newVal);
-    triggerVéFlash();
+    triggerVéFlash(dir);
   }
   const [aktManöverPont, setAktManöverPont] = useState(99);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
@@ -95,6 +96,9 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
   const aktKat = sebCount === 0 ? 0 : Math.min(3, Math.ceil(sebCount / oszlopMéret) - 1);
   const téLevonás = téLevonások[aktKat];
 
+  // Max VÉ csökkenés: a legnagyobb fegyver VÉ + pajzs (amíg MIND el nem éri a 0-t)
+  const maxVéCsökk = Math.max(...fegyverResults.filter(Boolean).map(r => r!.VÉ + pajzsVÉ));
+
   return (
     <div className="screen harc-screen">
       <div className="harc-header">
@@ -107,13 +111,13 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
           </div>
         </div>
         <div className="ve-csokk-box">
-          <span className="label">VÉ csökkent</span>
-          <span className="value">{véCsökkenés}</span>
+          <span className="label">VÉ csökkenés</span>
+          <span className="value">{véCsökkenés === 0 ? 0 : -véCsökkenés}</span>
           <div className="ve-btns">
-            <button onClick={() => changeVé(véCsökkenés + 1)}>+1</button>
-            <button onClick={() => changeVé(véCsökkenés + 2)}>+2</button>
-            <button onClick={() => changeVé(véCsökkenés + 3)}>+3</button>
-            <button onClick={() => changeVé(Math.max(0, véCsökkenés - 1))}>-1</button>
+            <button disabled={véCsökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(véCsökkenés + 1, maxVéCsökk))}>-1</button>
+            <button disabled={véCsökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(véCsökkenés + 2, maxVéCsökk))}>-2</button>
+            <button disabled={véCsökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(véCsökkenés + 3, maxVéCsökk))}>-3</button>
+            <button disabled={véCsökkenés === 0} onClick={() => changeVé(Math.max(0, véCsökkenés - 1))}>+1</button>
             <button disabled={véCsökkenés === 0} onClick={() => setShowVéResetConfirm(true)}>⟲</button>
           </div>
         </div>
@@ -122,7 +126,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
           <span className="value">{Math.min(aktManöverPont, manöverPont)}/{manöverPont}</span>
           <div className="ve-btns">
             <button onClick={() => setAktManöverPont(Math.max(0, Math.min(aktManöverPont, manöverPont) - 1))}>-1</button>
-            <button onClick={() => setAktManöverPont(manöverPont)}>⟲</button>
+            <button disabled={Math.min(aktManöverPont, manöverPont) === manöverPont} onClick={() => setAktManöverPont(manöverPont)}>⟲</button>
           </div>
         </div>
       </div>
@@ -142,7 +146,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
               <td>{r.fegyver_név}</td>
               <td>{r.támadások}</td>
               <td>{r.TÉ + téLevonás}</td>
-              <td className={véFlash ? 've-flash' : ''}>{r.VÉ + pajzsVÉ - véCsökkenés}</td>
+              <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + pajzsVÉ - véCsökkenés)}</td>
               <td>{r.SP} {r.sebzésmód}</td>
               <td>{r.pengehossz}</td>
             </tr>
