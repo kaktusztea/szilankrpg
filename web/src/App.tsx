@@ -338,12 +338,13 @@ function App() {
         primerKöltés += (kpComputed.get('kp_hm') ?? 0) + (kpComputed.get('kp_cm') ?? 0);
 
         const primerLimit = (kpComputed.get('összes_kp') ?? 0) + spec_kp;
-        const primerTúllépés = primerKöltés > primerLimit;
+        const primerMaradt = primerLimit - primerKöltés;
+        const primerTúllépés = primerMaradt < 0;
 
         return (
           <div className="kp-bar">
             <span className={maradékKp < 0 ? 'kp-section-neg' : 'kp-section-ok'}>Maradt KP: {maradékKp}</span>
-            <span className={primerTúllépés ? 'kp-section-neg' : 'kp-section-ok'}>Primer KP: {primerKöltés}/{primerLimit}</span>
+            <span className={primerTúllépés ? 'kp-section-neg' : 'kp-section-ok'}>Primer keret: {primerMaradt}</span>
           </div>
         );
       })()}

@@ -41,7 +41,6 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
   const [editingTsz, setEditingTsz] = useState(false);
-  const [tempTsz, setTempTsz] = useState(tsz);
   const lastTapNév = useRef(0);
   const lastTapTsz = useRef(0);
   const [editingKor, setEditingKor] = useState(false);
@@ -202,7 +201,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
         </div>
         <div
           className="tul-header-box"
-          onClick={() => { if (gameMode) return; const now = Date.now(); if (now - lastTapTsz.current < 350) { setTempTsz(tsz); setEditingTsz(true); lastTapTsz.current = 0; } else { lastTapTsz.current = now; } }}
+          onClick={() => { if (gameMode) return; const now = Date.now(); if (now - lastTapTsz.current < 350) { setEditingTsz(true); lastTapTsz.current = 0; } else { lastTapTsz.current = now; } }}
         >
           <span className="tul-header-label">Szint:</span> <strong>{tsz}</strong>
         </div>
@@ -362,18 +361,11 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       {editingTsz && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
-            <label>Tapasztalati szint: <strong>{tempTsz}</strong></label>
-            <input
-              type="range"
-              min={1}
-              max={data.konstansok.arányok.max_tsz}
-              value={tempTsz}
-              onChange={e => setTempTsz(Number(e.target.value))}
-              className="tsz-slider"
-            />
-            <div className="kep-prompt-btns">
-              <button onClick={() => { setTsz(tempTsz); setEditingTsz(false); }}>OK</button>
-              <button onClick={() => setEditingTsz(false)}>Mégse</button>
+            <label>Tapasztalati szint</label>
+            <div className="kep-szint-grid" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '6px', maxWidth: `${5 * 36 + 4 * 6}px`, margin: '0 auto' }}>
+              {Array.from({ length: data.konstansok.arányok.max_tsz - 2 }, (_, i) => i + 3).map(n => (
+                <button key={n} className={`fort-fok-btn ${tsz === n ? 'active' : ''}`} style={{ width: '36px', height: '36px' }} onClick={() => { setTsz(n); setEditingTsz(false); }}>{n}</button>
+              ))}
             </div>
           </div>
         </div>,
