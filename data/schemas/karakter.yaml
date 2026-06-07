@@ -73,6 +73,8 @@ felszerelés:
     - név: ""
       MGT: 0                  # 1=közepes, 2=nagy
 
+jegyzetek: ""                   # Szabad szöveges jegyzetmező
+
 # ============================================================
 # Session (runtime állapot — Game módban változó értékek)
 # Ugyanabban a fájlban, szeparált szekcióban.
