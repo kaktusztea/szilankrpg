@@ -1,0 +1,64 @@
+{
+  "schema_version": 2,
+  "név": "",
+  "tsz": 1,
+  "leírás": "",
+  "kor": 20,
+  "vallás": "",
+  "tulajdonságok": {
+    "erő": 0,
+    "edzettség": 0,
+    "ügyesség": 0,
+    "gyorsaság": 0,
+    "intelligencia": 0,
+    "emlékezet": 0,
+    "önuralom": 0,
+    "érzékenység": 0
+  },
+  "HM_TÉ": 0,
+  "HM_VÉ": 0,
+  "CM": 0,
+  "szilánk": 1,
+  "képzettségek": [],
+  "fortélyok": [],
+  "fortélyok_speciális": {
+    "analfabéta": false,
+    "apró_méretű_lény": false,
+    "tartós_sérülés_fok": 0,
+    "vakság": false,
+    "süketség": false
+  },
+  "hátterek": {
+    "faj": "Ember (Északi)",
+    "leíró": [],
+    "karma": []
+  },
+  "fegyverek": [],
+  "páncél": {
+    "alap": "",
+    "név": "",
+    "fémalapanyag": "",
+    "idea": 0,
+    "kidolgozottság": "átlagos",
+    "sisak": false,
+    "végtagvédettség": 0,
+    "méret_illeszkedés": "passzoló",
+    "rongálódás": 0
+  },
+  "felszerelés": {
+    "nagy_tárgyak": []
+  },
+  "session": {
+    "vé_csökkenés": 0,
+    "vé_history": [],
+    "manőver_pont_használt": 0,
+    "sebzések": [],
+    "aktív_fegyver_index": 0,
+    "aktív_pajzs": false,
+    "aktív_páncél": true,
+    "aktív_taktika": "",
+    "aktív_helyzet": "",
+    "aktív_manőver": "",
+    "aktív_státuszok": []
+  }
+}
