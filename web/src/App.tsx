@@ -20,6 +20,7 @@ const ALL_TABS = [
   { id: 'harcertekek', label: '🛡️ Harcértékek', editOnly: true },
   { id: 'misztikus', label: '✨ Misztikus', editOnly: false },
   { id: 'hatterek', label: '📜 Hátterek', editOnly: false },
+  { id: 'jegyzetek', label: '📝 Jegyzetek', editOnly: false },
   { id: 'taktikak', label: '🎯 Taktikák', editOnly: false },
   { id: 'helyzetek', label: '🎯 Helyzetek', editOnly: false },
   { id: 'manoverek', label: '🎯 Manőverek', editOnly: false },
@@ -450,6 +451,16 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={setKarakter} />;
     case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;
+    case 'jegyzetek': return (
+      <div className="screen" style={{ padding: '12px', display: 'flex', flexDirection: 'column', height: '100%' }}>
+        <textarea
+          style={{ flex: 1, width: '100%', background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid #555', borderRadius: '6px', padding: '10px', fontSize: '14px', resize: 'none', fontFamily: 'inherit' }}
+          value={karakter.jegyzetek}
+          onChange={e => setKarakter(prev => prev ? { ...prev, jegyzetek: e.target.value } : prev)}
+          placeholder="Szabad jegyzetek..."
+        />
+      </div>
+    );
     case 'taktikak': return <div className="screen"><h2>🎯 Harci taktikák</h2></div>;
     case 'helyzetek': return <div className="screen"><h2>🎯 Harci helyzetek</h2></div>;
     case 'manoverek': return <div className="screen"><h2>🎯 Manőverek</h2></div>;

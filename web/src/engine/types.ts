@@ -96,6 +96,7 @@ export interface Karakter {
   fegyverek: FegyverPeldany[];
   páncél: PancelPeldany;
   felszerelés: { nagy_tárgyak: NagyTargy[] };
+  jegyzetek: string;
   session: Session;
 }
 

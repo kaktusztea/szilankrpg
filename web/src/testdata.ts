@@ -107,6 +107,7 @@ export const testKarakter8: Karakter = {
     rongálódás: 0,
   },
   felszerelés: { nagy_tárgyak: [] },
+  jegyzetek: '',
   session: { ...DEFAULT_SESSION, aktív_páncél: true },
 };
 
