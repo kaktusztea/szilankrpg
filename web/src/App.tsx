@@ -315,12 +315,35 @@ function App() {
         const kpComputed = evaluate(data.rules, kpCtx, arrays);
 
         const maradékKp = kpComputed.get('maradék_kp') ?? 0;
-        const maradékSzekunder = Math.max(0, (kpComputed.get('összes_szekunder_kp') ?? 0) - (kpComputed.get('kp_képzettségek') ?? 0));
-        const isNeg = maradékKp < 0;
+
+        // Primer költés: primer képzettségek + primer fortélyok + HM + CM
+        const primerKepSet = new Set(data.kepzettsegDefs.filter(d => d.primer).map(d => d.név));
+        const harcmodorDef = data.kepzettsegDefs.find(d => d.név === 'Harcmodor');
+        if (harcmodorDef?.többszörös) for (const a of harcmodorDef.többszörös) primerKepSet.add(a);
+
+        let primerKöltés = 0;
+        for (const kep of képzettségek) {
+          if (primerKepSet.has(kep.név)) {
+            const entry = data.kepzettsegKp.find(e => e.szint === kep.szint);
+            primerKöltés += entry?.kp ?? 0;
+          }
+        }
+        const primerFortSet = new Set(data.primerFortelyok);
+        for (const f of fortélyok) {
+          if (primerFortSet.has(f.név)) {
+            const perFok = fortelyKpMap.get(f.név) ?? 6;
+            if (perFok > 0) primerKöltés += f.fok * perFok;
+          }
+        }
+        primerKöltés += (kpComputed.get('kp_hm') ?? 0) + (kpComputed.get('kp_cm') ?? 0);
+
+        const primerLimit = (kpComputed.get('összes_kp') ?? 0) + spec_kp;
+        const primerTúllépés = primerKöltés > primerLimit;
+
         return (
-          <div className={`kp-bar ${isNeg ? 'kp-bar-neg' : ''}`}>
-            <span>Maradt KP: {maradékKp}</span>
-            <span>Maradt Szekunder KP: {maradékSzekunder}</span>
+          <div className="kp-bar">
+            <span className={maradékKp < 0 ? 'kp-section-neg' : 'kp-section-ok'}>Maradt KP: {maradékKp}</span>
+            <span className={primerTúllépés ? 'kp-section-neg' : 'kp-section-ok'}>Primer KP: {primerKöltés}/{primerLimit}</span>
           </div>
         );
       })()}

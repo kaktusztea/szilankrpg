@@ -131,21 +131,37 @@ body {
 
 .kp-bar {
   display: flex;
-  justify-content: space-around;
   align-items: center;
-  padding: 4px 12px;
-  margin-bottom: 4px;
-  background: #2e7d32;
-  color: #fff;
+  padding: 0;
+  margin: 0 8px 4px;
+  border-radius: 4px;
+  overflow: hidden;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 4px;
-  margin-left: 8px;
-  margin-right: 8px;
+}
+
+.kp-section-ok {
+  flex: 1;
+  text-align: center;
+  padding: 4px 12px;
+  background: #2e7d32;
+  color: #fff;
+}
+
+.kp-section-neg {
+  flex: 1;
+  text-align: center;
+  padding: 4px 12px;
+  background: #c62828;
+  color: #fff;
 }
 
 .kp-bar-neg {
   background: #c62828;
+}
+
+.kp-primer-over {
+  color: #ffcdd2;
 }
 
 .loading, .error {
