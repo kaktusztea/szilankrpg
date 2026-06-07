@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
+import type { SebzésRubrika } from '../engine/types';
 import './EpTable.css';
 
 type SebTípus = 'S' | 'V' | 'Z' | 'FP' | '';
@@ -14,23 +15,39 @@ interface Props {
   onSebCountChange?: (count: number) => void;
   ftEnyhítés?: number;
   onNavigate?: () => void;
+  sebzések: SebzésRubrika[];
+  onSebzésekChange: (sebzések: SebzésRubrika[]) => void;
 }
 
-export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }: Props) {
+function buildRubrikák(sebzések: SebzésRubrika[], összRubrika: number): Rubrika[] {
+  const rubrikák: Rubrika[] = Array.from({ length: összRubrika }, () => ({ típus: '', sorszám: 0 }));
+  for (let i = 0; i < sebzések.length && i < összRubrika; i++) {
+    rubrikák[i] = { típus: sebzések[i].típus, sorszám: sebzések[i].sorszám };
+  }
+  return rubrikák;
+}
+
+function toSebzések(rubrikák: Rubrika[]): SebzésRubrika[] {
+  return rubrikák
+    .filter(r => r.típus !== '')
+    .map(r => ({ típus: r.típus as SebzésRubrika['típus'], sorszám: r.sorszám }));
+}
+
+export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate, sebzések, onSebzésekChange }: Props) {
   const oszlopMéret = ÉP / 4;
   const összRubrika = ÉP;
   const lastTapFooter = useRef(0);
-  const [rubrikák, setRubrikák] = useState<Rubrika[]>(
-    Array.from({ length: összRubrika }, () => ({ típus: '', sorszám: 0 }))
-  );
+
+  // Build rubrikák from session sebzések
+  const rubrikák = buildRubrikák(sebzések, összRubrika);
 
   function getNextSorszám(currentRubrikák: Rubrika[]): number {
-    // Keressük a legkisebb pozitív egész számot ami nincs használatban
     const usedSorszámok = new Set(currentRubrikák.filter(r => r.típus !== '').map(r => r.sorszám));
     for (let i = 1; ; i++) {
       if (!usedSorszámok.has(i)) return i;
     }
   }
+
   const [showSebDialog, setShowSebDialog] = useState(false);
   const [showGyógyDialog, setShowGyógyDialog] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
@@ -50,7 +67,6 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }:
     let maradék = érték;
 
     if (típus !== 'FP') {
-      // ÉP seb: először felülírja a meglévő FP rubrikákat (fentről lefelé)
       for (let i = 0; i < újRubrikák.length && maradék > 0; i++) {
         if (újRubrikák[i].típus === 'FP') {
           újRubrikák[i] = { típus, sorszám: újSorszám };
@@ -59,21 +75,19 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }:
       }
     }
 
-    // Maradék üres rubrikákat tölt
     for (let i = 0; i < újRubrikák.length && maradék > 0; i++) {
       if (újRubrikák[i].típus === '') {
         újRubrikák[i] = { típus, sorszám: újSorszám };
         maradék--;
       }
     }
-    setRubrikák(újRubrikák);
+    onSebzésekChange(toSebzések(újRubrikák));
     setShowSebDialog(false);
   }
 
   function gyógyulás(típusSzűrő: 'FP' | 'ÉP', érték: number) {
     const újRubrikák = [...rubrikák];
     let maradék = érték;
-    // Hátulról előre töröljük a megadott típusú rubrikákat
     for (let i = újRubrikák.length - 1; i >= 0 && maradék > 0; i--) {
       if (típusSzűrő === 'FP' && újRubrikák[i].típus === 'FP') {
         újRubrikák[i] = { típus: '', sorszám: 0 };
@@ -83,20 +97,20 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }:
         maradék--;
       }
     }
-    // Compaction: kitöltött rubrikák tömörítése felülre (üres lyukak eltüntetése)
+    // Compaction
     const filled = újRubrikák.filter(r => r.típus !== '');
     for (let i = 0; i < újRubrikák.length; i++) {
       újRubrikák[i] = i < filled.length ? filled[i] : { típus: '', sorszám: 0 };
     }
-    setRubrikák(újRubrikák);
+    onSebzésekChange(toSebzések(újRubrikák));
     setShowGyógyDialog(false);
   }
 
   function reset() {
-    setRubrikák(Array.from({ length: összRubrika }, () => ({ típus: '', sorszám: 0 })));
+    onSebzésekChange([]);
+    setShowResetConfirm(false);
   }
 
-  // Aktuális sebesülés kategória
   const kitöltött = rubrikák.filter(r => r.típus !== '').length;
   const aktKategória = kitöltött === 0 ? 1 : Math.min(4, Math.ceil(kitöltött / oszlopMéret));
   const téLevonások = [0, -3, -6, -9].map(v => v === 0 ? 'TÉ: 0' : `TÉ: ${Math.min(0, v + ftEnyhítés)}`);
@@ -121,8 +135,8 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }:
             {Array.from({ length: oszlopMéret }, (_, sor) => {
               const idx = oszlop * oszlopMéret + sor;
               const r = rubrikák[idx];
-              const hue = r.sorszám ? (r.sorszám * 17) % 30 : 0; // 0-30 tartomány (piros-narancs)
-              const bgColor = r.típus === 'FP' ? `hsl(280, 50%, ${35 + (r.sorszám * 5) % 15}%)` 
+              const hue = r.sorszám ? (r.sorszám * 17) % 30 : 0;
+              const bgColor = r.típus === 'FP' ? `hsl(280, 50%, ${35 + (r.sorszám * 5) % 15}%)`
                             : r.típus ? `hsl(${hue}, 70%, ${35 + (r.sorszám * 3) % 10}%)`
                             : '';
               return (
@@ -140,7 +154,6 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }:
           </div>
         ))}
       </div>
-
 
       {showSebDialog && createPortal(
         <div className="kep-prompt-overlay">
@@ -162,7 +175,7 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate }:
       {showResetConfirm && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={() => { reset(); setShowResetConfirm(false); }}>ÉP Reset</button>
+            <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={reset}>ÉP Reset</button>
           </div>
         </div>,
         document.body

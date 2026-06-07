@@ -1,8 +1,9 @@
 import type { Karakter } from './engine/types';
+import { DEFAULT_SESSION } from './engine/types';
 
 /** 8. szintű teszt karakter az ODS karakteralkotó referencia alapján */
 export const testKarakter8: Karakter = {
-  schema_version: 1,
+  schema_version: 2,
   név: "Dorek a Toroni",
   tsz: 8,
   leírás: "Toroni zsoldos lovag",
@@ -21,40 +22,63 @@ export const testKarakter8: Karakter = {
   HM_TÉ: 15,
   HM_VÉ: 17,
   CM: 0,
+  szilánk: 1,
   képzettségek: [
-    // Primer harci
-    { név: "Közelharc", szint: 6, spec: "" },
-    { név: "Kardvívás", szint: 8, spec: "" },
-    { név: "Rombolás", szint: 4, spec: "" },
-    // Primer általános
-    { név: "Akrobatika", szint: 3, spec: "" },
-    { név: "Fájdalomtűrés", szint: 5, spec: "" },
-    { név: "Észlelés", szint: 6, spec: "" },
-    // Szekunder
-    { név: "Nyelvtanulás", szint: 6, spec: "" },
-    { név: "Lovaglás", szint: 4, spec: "" },
-    { név: "Mászás", szint: 5, spec: "" },
-    { név: "Kvantikum", szint: 5, spec: "" },
-    { név: "Előadóművészet", szint: 5, spec: "" },
-    { név: "Etikett", szint: 5, spec: "" },
-    { név: "Értékbecslés", szint: 3, spec: "" },
-    { név: "Művészetismeret", szint: 5, spec: "" },
-    { név: "Városi jártasság", szint: 6, spec: "" },
-    { név: "Természetjárás", szint: 5, spec: "" },
+    { név: "Közelharc", szint: 6 },
+    { név: "Kardvívás", szint: 8 },
+    { név: "Rombolás", szint: 4 },
+    { név: "Akrobatika", szint: 3 },
+    { név: "Fájdalomtűrés", szint: 5 },
+    { név: "Észlelés", szint: 6 },
+    { név: "Nyelvtanulás", szint: 6 },
+    { név: "Lovaglás", szint: 4 },
+    { név: "Mászás", szint: 5 },
+    { név: "Kvantikum", szint: 5 },
+    { név: "Előadóművészet", szint: 5 },
+    { név: "Etikett", szint: 5 },
+    { név: "Értékbecslés", szint: 3 },
+    { név: "Művészetismeret", szint: 5 },
+    { név: "Városi jártasság", szint: 6 },
+    { név: "Természetjárás", szint: 5 },
   ],
-  fortélyok_kiemelt: {
-    kulturkörök: [{ név: "dw00n" }, { név: "erv" }, { név: "py4r" }, { név: "dzs4d" }],
-    helyismeret: [{ helynév: "Erion" }, { helynév: "Pyarron" }, { helynév: "Haonwell" }, { helynév: "Shulur" }],
-    nyelvismeret: [
-      { nyelv: "pyarroni / közös nyelv", fok: 2 },
-      { nyelv: "erv", fok: 2 },
-      { nyelv: "dwoon", fok: 2 },
-      { nyelv: "dzsad/dzsenn", fok: 2 },
-      { nyelv: "aszisz", fok: 1 },
-      { nyelv: "köztoroni", fok: 1 },
-      { nyelv: "niarei", fok: 1 },
-    ],
-  },
+  fortélyok: [
+    // Harci
+    { név: "Merevvértviselet", fok: 3, spec_típus: "", spec_elem: "" },
+    { név: "Harcos elme", fok: 2, spec_típus: "", spec_elem: "" },
+    { név: "Gyors kezdeményezés", fok: 2, spec_típus: "", spec_elem: "" },
+    { név: "Pajzshasználat", fok: 2, spec_típus: "", spec_elem: "" },
+    { név: "Harckeret növelés", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Elpusztíthatatlan", fok: 2, spec_típus: "", spec_elem: "" },
+    { név: "Kaszabolás", fok: 2, spec_típus: "", spec_elem: "" },
+    { név: "Támadás erőből", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Fárasztás", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Mesterfegyver", fok: 3, spec_típus: "fegyver", spec_elem: "kard, lovag" },
+    // Általános
+    { név: "Építészet", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Futás", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Szájról olvasás", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Éber alvó", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Kocsihajtás", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Keresés/rejtés", fok: 1, spec_típus: "", spec_elem: "" },
+    // Kiemelt (többszörös)
+    { név: "Kultúrkör", fok: 1, spec_típus: "kultúrkör", spec_elem: "dw00n" },
+    { név: "Kultúrkör", fok: 1, spec_típus: "kultúrkör", spec_elem: "erv" },
+    { név: "Kultúrkör", fok: 1, spec_típus: "kultúrkör", spec_elem: "py4r" },
+    { név: "Kultúrkör", fok: 1, spec_típus: "kultúrkör", spec_elem: "dzs4d" },
+    { név: "Helyismeret", fok: 1, spec_típus: "település", spec_elem: "Erion" },
+    { név: "Helyismeret", fok: 1, spec_típus: "település", spec_elem: "Pyarron" },
+    { név: "Helyismeret", fok: 1, spec_típus: "település", spec_elem: "Haonwell" },
+    { név: "Helyismeret", fok: 1, spec_típus: "település", spec_elem: "Shulur" },
+    // Szabad
+    { név: "Gazdálkodás", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Kézműves: Lakatos", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Kihallgatás", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Színjátszás", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Éneklés", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Bűvészet", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Alkudozás", fok: 1, spec_típus: "", spec_elem: "" },
+    { név: "Térképészet", fok: 1, spec_típus: "", spec_elem: "" },
+  ],
   fortélyok_speciális: {
     analfabéta: false,
     apró_méretű_lény: false,
@@ -62,45 +86,14 @@ export const testKarakter8: Karakter = {
     vakság: false,
     süketség: false,
   },
-  fortélyok_szabad: [
-    { név: "Gazdálkodás" },
-    { név: "Kézműves: Lakatos" },
-    { név: "Kihallgatás" },
-    { név: "Színjátszás" },
-    { név: "Éneklés" },
-    { név: "Bűvészet" },
-    { név: "Alkudozás" },
-    { név: "Térképészet" },
-  ],
-  fortélyok: [
-    // Harci
-    { név: "Merevvértviselet", fok: 3, spec: "" },
-    { név: "Harcos elme", fok: 2, spec: "" },
-    { név: "Gyors kezdeményezés", fok: 2, spec: "" },
-    { név: "Pajzshasználat", fok: 2, spec: "" },
-    { név: "Harckeret növelés", fok: 1, spec: "" },
-    { név: "Elpusztíthatatlan", fok: 2, spec: "" },
-    { név: "Kaszabolás", fok: 2, spec: "" },
-    { név: "Támadás erőből", fok: 1, spec: "" },
-    { név: "Fárasztás", fok: 1, spec: "" },
-    { név: "Mesterfegyver", fok: 3, spec: "kard, lovag" },
-    // Általános
-    { név: "Építészet", fok: 1, spec: "" },
-    { név: "Futás", fok: 1, spec: "" },
-    { név: "Szájról olvasás", fok: 1, spec: "" },
-    { név: "Éber alvó", fok: 1, spec: "" },
-    { név: "Kocsihajtás", fok: 1, spec: "" },
-    { név: "Keresés/rejtés", fok: 1, spec: "" },
-  ],
   hátterek: {
     faj: "Ember (Északi)",
     leíró: [],
     karma: [],
   },
-  származtatott: { ÉP: 0, szilánk: 1 },
   fegyverek: [
-    { alap: "kard, lovag", név: "", anyag: "acél", idea: 0, mesterfegyver_fok: 2, módosítók: '' },
-    { alap: "tőr", név: "", anyag: "acél", idea: 0, mesterfegyver_fok: 1, módosítók: '' },
+    { alap: "kard, lovag", név: "", anyag: "acél", idea: 0, mesterfegyver_fok: 2 },
+    { alap: "tőr", név: "", anyag: "acél", idea: 0, mesterfegyver_fok: 1 },
   ],
   páncél: {
     alap: "bőr",
@@ -114,6 +107,7 @@ export const testKarakter8: Karakter = {
     rongálódás: 0,
   },
   felszerelés: { nagy_tárgyak: [] },
+  session: { ...DEFAULT_SESSION, aktív_páncél: true },
 };
 
 /**
@@ -122,25 +116,24 @@ export const testKarakter8: Karakter = {
 export const expected8 = {
   ÉP: 40,
   KÉ: 17,
-  összes_kp: 408,           // 8 × (50+1)
-  összes_szekunder_kp: 160, // 8 × (20+0)
-  összesen_kapott_kp: 568,  // 408 + 160
-  kp_képzettségek: 224,     // sum_lookup(szintek → kp_tábla)
-  kp_fortélyok: 150,        // sum(fokok) × 6 (csak kp_perfok>0 fortélyok)
-  kp_hm: 192,              // (15+17) × 6
-  kp_cm: 0,                // 0 × 6
-  elköltött_kp: 566,        // 224 + 150 + 192 + 0 + 0 (kiemelt)
-  maradt_kp: 2,             // 568 - 566
-  tulajdonság_pont_keret: 68, // 64 + floor(8/2)
+  összes_kp: 408,
+  összes_szekunder_kp: 160,
+  összesen_kapott_kp: 568,
+  kp_képzettségek: 224,
+  kp_fortélyok: 150,
+  kp_hm: 192,
+  kp_cm: 0,
+  elköltött_kp: 566,
+  maradt_kp: 2,
+  tulajdonság_pont_keret: 68,
   tulajdonság_pont_maradék: 0,
-  max_HM: 34,              // harci fortély fokok (Mf nélkül): 16 + harcmodor szintek: 18 + alakzatharc: 0
-  max_CM: 16,              // 8 × 2
-  manőver_alap: 4,         // képernyőkép: Manőver Alap = 4
+  max_HM: 34,
+  max_CM: 16,
+  manőver_alap: 4,
   max_manőver_pont: 5,
-  // Kardvívás fegyver: Kard, lovag
   kard_lovag: {
-    TÉ: 47,  // Harc lap: Teljes harcértékek
-    VÉ: 74,  // 64 (alap+harcmodor+fegyver+MF) + 10 (Közepes pajzs, Pajzshasználat 2.fok)
+    TÉ: 47,
+    VÉ: 74,
     SP: "11 V/S +1Á",
     támadások: 2,
   },

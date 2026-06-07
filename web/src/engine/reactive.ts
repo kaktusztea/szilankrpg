@@ -108,7 +108,7 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
  * Build a flat context map from the character state and konstansok.
  */
 export function buildContext(
-  tulajdonságok: Record<string, number>,
+  tulajdonságok: Record<string, number> | object,
   tsz: number,
   konstansok: { harcérték_alap: Record<string, number>; kp: Record<string, number>; arányok: Record<string, number> },
   extras?: Record<string, number>,
@@ -145,7 +145,7 @@ export function buildContext(
  */
 export function buildArrayContext(
   képzettségek: { név: string; szint: number }[],
-  fortélyok: { név: string; fok: number }[],
+  fortélyok: readonly { név: string; fok: number }[],
   kepzettsegKpTable: { szint: number; kp: number }[],
   fortelyKpMap?: Map<string, number>,
 ): ArrayContext {
@@ -156,8 +156,7 @@ export function buildArrayContext(
   // Only include fortélyok that cost KP (kp_perfok > 0), using base name lookup
   const kpFortélyok = fortélyok.filter(f => {
     if (!fortelyKpMap) return true;
-    const baseName = f.név.includes(' - ') ? f.név.split(' - ')[0] : f.név;
-    const perFok = fortelyKpMap.get(f.név) ?? fortelyKpMap.get(baseName) ?? 6;
+    const perFok = fortelyKpMap.get(f.név) ?? 6;
     return perFok > 0;
   });
   arrays.set('fortélyok', kpFortélyok.map(f => ({ fok: f.fok })));

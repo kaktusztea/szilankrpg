@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, FortelySummary } from '../engine/data-loader';
+import type { Fortely } from '../engine/types';
 import { testKarakter8 } from '../testdata';
 import './FortelyokScreen.css';
 
@@ -10,16 +11,16 @@ const CSOPORT_LABEL: Record<string, string> = {
   szabad: '🆓 Szabad', kiemelt: '⭐ Kiemelt', misztikus: '✨ Misztikus',
 };
 
-interface FortelySlot {
-  név: string;
-  fok: number;
+/** Display name: "Kultúrkör - erv" if spec_elem, otherwise just név */
+function displayName(f: Fortely): string {
+  return f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
 }
 
 interface Props {
   data: GameData;
   gameMode: boolean;
-  fortélyok: FortelySlot[];
-  setFortélyok: React.Dispatch<React.SetStateAction<FortelySlot[]>>;
+  fortélyok: Fortely[];
+  setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
 }
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: Props) {
@@ -36,7 +37,6 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
   const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; fok: number } | null>(null);
   const [pendingFortIdx, setPendingFortIdx] = useState<number | null>(null);
 
-  // Escape bezárja az aktív popup-ot
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
@@ -58,7 +58,6 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
     setFortélyok(prev => prev.map((f, i) => i === idx ? { ...f, fok } : f));
   }
 
-  // Többször felvehető fortélyok: generikus kezelés többszörös_típus alapján
   const [multiPickerDef, setMultiPickerDef] = useState<FortelySummary | null>(null);
   const [freetextValue, setFreetextValue] = useState('');
 
@@ -66,10 +65,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
     const def = data.fortelySummaries.find(d => d.név === név);
     if (def && def.többszörös_típus) {
       if (def.többszörös_lista.length > 0) {
-        // Fix lista → dropdown picker
         setMultiPickerDef(def);
       } else {
-        // Freetext
         setFreetextValue('');
         setMultiPickerDef(def);
       }
@@ -77,19 +74,19 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
     }
     setFortélyok(prev => {
       if (def && def.maxfok > 1) setPendingFortIdx(prev.length);
-      return [...prev, { név, fok: 1 }];
+      return [...prev, { név, fok: 1, spec_típus: '', spec_elem: '' }];
     });
   }
 
   function addMultiInstance(subName: string) {
     if (!multiPickerDef) return;
-    setFortélyok(prev => [...prev, { név: `${multiPickerDef.név} - ${subName}`, fok: 1 }]);
+    setFortélyok(prev => [...prev, { név: multiPickerDef.név, fok: 1, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName }]);
     setMultiPickerDef(null);
   }
 
-  function getFortelyokForCsoport(csoport: string): FortelySlot[] {
-    const csoportNevek = (defsByGroup.get(csoport) || []).map(d => d.név);
-    return fortélyok.filter(f => csoportNevek.includes(f.név) || csoportNevek.some(n => f.név.startsWith(n + ' - ')));
+  function getFortelyokForCsoport(csoport: string): Fortely[] {
+    const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
+    return fortélyok.filter(f => csoportNevek.has(f.név));
   }
 
   return (
@@ -98,9 +95,10 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
         {CSOPORT_SORREND.map(csoport => {
           const csoportDefs = defsByGroup.get(csoport) || [];
           const slotok = getFortelyokForCsoport(csoport);
-          const usedNames = slotok.map(s => s.név);
+          // A nem-többszörös fortélyok egyszer vehetők fel; többszörösök mindig elérhetők
+          const usedNonMulti = new Set(slotok.filter(f => !f.spec_típus).map(f => f.név));
           const többszörösNevek = new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név));
-          const available = csoportDefs.filter(d => !usedNames.includes(d.név) || többszörösNevek.has(d.név));
+          const available = csoportDefs.filter(d => !usedNonMulti.has(d.név) || többszörösNevek.has(d.név));
           const collapsed = collapsedGroups.has(csoport);
 
           return (
@@ -110,14 +108,13 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
               </h3>
               {!collapsed && (<>
                 {slotok.map((slot, i) => {
-                  const globalIdx = fortélyok.findIndex(f => f === slot);
-                  const def = csoportDefs.find(d => d.név === slot.név || slot.név.startsWith(d.név + ' - '));
+                  const globalIdx = fortélyok.indexOf(slot);
+                  const def = csoportDefs.find(d => d.név === slot.név);
                   const isOpen = infoTarget === `${globalIdx}`;
-                  // Ingyenes jelölés: többszörös fortélyoknál az első N db ingyenes
                   let isIngyenes = false;
                   if (def && def.ingyenes_perszint > 0) {
                     const ingyenesDb = Math.floor((testKarakter8.tsz + 1) / def.ingyenes_perszint);
-                    const sameTypeSlots = slotok.filter(s => s.név === def.név || s.név.startsWith(def.név + ' - '));
+                    const sameTypeSlots = slotok.filter(s => s.név === def.név);
                     const posInType = sameTypeSlots.indexOf(slot);
                     isIngyenes = posInType < ingyenesDb;
                   }
@@ -133,7 +130,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
                       onFokChange={fok => setFok(globalIdx, fok)}
                       onHint={showHint}
                       onRemove={() => {
-                        setDeleteTarget({ idx: globalIdx, név: slot.név, fok: slot.fok });
+                        setDeleteTarget({ idx: globalIdx, név: displayName(slot), fok: slot.fok });
                       }}
                     />
                   );
@@ -150,7 +147,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
                         let label = `${d.név} (max ${d.maxfok})`;
                         if (d.ingyenes_perszint > 0) {
                           const ingyenesDb = Math.floor((testKarakter8.tsz + 1) / d.ingyenes_perszint);
-                          const felvettDb = fortélyok.filter(f => f.név === d.név || f.név.startsWith(d.név + ' - ')).length;
+                          const felvettDb = fortélyok.filter(f => f.név === d.név).length;
                           const maradtIngyenes = Math.max(0, ingyenesDb - felvettDb);
                           if (maradtIngyenes > 0) label += ` 🎁${maradtIngyenes}`;
                         } else if (d.kp_perfok < 0) {
@@ -202,8 +199,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
       {multiPickerDef && (() => {
         const def = multiPickerDef;
         if (def.többszörös_lista.length > 0) {
-          // Fix lista dropdown
-          const usedSubs = new Set(fortélyok.filter(f => f.név.startsWith(def.név + ' - ')).map(f => f.név.slice(def.név.length + 3)));
+          const usedSubs = new Set(fortélyok.filter(f => f.név === def.név).map(f => f.spec_elem));
           const availSubs = def.többszörös_lista.filter(s => !usedSubs.has(s));
           return createPortal(
             <div className="kep-prompt-overlay">
@@ -226,7 +222,6 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
             document.body
           );
         } else {
-          // Freetext
           return createPortal(
             <div className="kep-prompt-overlay">
               <div className="kep-prompt">
@@ -253,7 +248,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
 }
 
 function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, onHint }: {
-  slot: FortelySlot;
+  slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
   isOpen: boolean;
@@ -287,6 +282,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   }
 
   const fokDef = def?.fokok.find(f => f.fok === slot.fok);
+  const label = displayName(slot);
 
   return (
     <div className="fort-row-wrapper">
@@ -294,7 +290,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
         className="fort-row"
         onClick={handleTap}
       >
-        <span className="fort-név">{slot.név}{isIngyenes ? ' 🎁' : ''}</span>
+        <span className="fort-név">{label}{isIngyenes ? ' 🎁' : ''}</span>
         <span className="fort-right">
           {!gameMode && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
@@ -325,7 +321,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
       {editing && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
-            <label>{slot.név} — fok:</label>
+            <label>{label} — fok:</label>
             <div className="fort-fok-radios">
               {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
                 <button key={f} className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}`} onClick={() => { onFokChange(f); setEditing(false); }}>{f}</button>

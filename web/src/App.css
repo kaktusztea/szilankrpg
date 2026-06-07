@@ -49,6 +49,21 @@ body {
 
 .title { font-weight: bold; font-size: 16px; }
 
+.header-btns {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.save-btn, .load-btn {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
 .mode-toggle {
   background: var(--input-bg);
   color: var(--text);

@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef, TouchEvent } from 'react';
+import { useState, useEffect, useRef, TouchEvent, useCallback } from 'react';
 import { loadGameData } from './engine/data-loader';
 import type { GameData } from './engine/data-loader';
 import { HarcScreen } from './components/HarcScreen';
 import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
 import { FortelyokScreen } from './components/FortelyokScreen';
 import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
+import type { Karakter, Session, Fortely } from './engine/types';
+import { DEFAULT_SESSION } from './engine/types';
 import { testKarakter8 } from './testdata';
 import './App.css';
 
@@ -21,18 +23,56 @@ const ALL_TABS = [
   { id: 'manoverek', label: '🎯 Manőverek', editOnly: false },
 ];
 
+/** Validate minimal schema compliance */
+function validateKarakter(obj: unknown): obj is Karakter {
+  if (!obj || typeof obj !== 'object') return false;
+  const k = obj as Record<string, unknown>;
+  return (
+    k.schema_version === 2 &&
+    typeof k.név === 'string' &&
+    typeof k.tsz === 'number' &&
+    typeof k.tulajdonságok === 'object' &&
+    Array.isArray(k.képzettségek) &&
+    Array.isArray(k.fortélyok) &&
+    typeof k.fortélyok_speciális === 'object' &&
+    typeof k.hátterek === 'object' &&
+    Array.isArray(k.fegyverek) &&
+    typeof k.páncél === 'object'
+  );
+}
+
 function App() {
   const [data, setData] = useState<GameData | null>(null);
   const [error, setError] = useState('');
   const [activeTab, setActiveTab] = useState(2);
   const [gameMode, setGameMode] = useState(false);
-  const [tulajdonságok, setTulajdonságok] = useState({ ...testKarakter8.tulajdonságok });
-  const [képzettségek, setKépzettségek] = useState(testKarakter8.képzettségek.map(k => ({ név: k.név, szint: k.szint })));
-  const [fortélyok, setFortélyok] = useState(() => [
-    ...testKarakter8.fortélyok.map(f => ({ név: f.név, fok: f.fok })),
-    ...testKarakter8.fortélyok_kiemelt.kulturkörök.map(k => ({ név: `Kultúrkör - ${k.név}`, fok: 1 })),
-    ...testKarakter8.fortélyok_kiemelt.helyismeret.map(h => ({ név: `Helyismeret - ${h.helynév}`, fok: 1 })),
-  ]);
+
+  // --- Karakter state (egyben mentendő) ---
+  const [karakter, setKarakter] = useState<Karakter>(testKarakter8);
+
+  // Convenience setters (derived from karakter)
+  const tulajdonságok = karakter.tulajdonságok;
+  const képzettségek = karakter.képzettségek;
+  const fortélyok = karakter.fortélyok;
+  const session = karakter.session;
+
+  const setTulajdonságok = useCallback((val: typeof karakter.tulajdonságok | ((prev: typeof karakter.tulajdonságok) => typeof karakter.tulajdonságok)) => {
+    setKarakter(prev => ({ ...prev, tulajdonságok: typeof val === 'function' ? val(prev.tulajdonságok) : val }));
+  }, []);
+
+  const setKépzettségek = useCallback((val: typeof karakter.képzettségek | ((prev: typeof karakter.képzettségek) => typeof karakter.képzettségek)) => {
+    setKarakter(prev => ({ ...prev, képzettségek: typeof val === 'function' ? val(prev.képzettségek) : val }));
+  }, []);
+
+  const setFortélyok = useCallback((val: typeof karakter.fortélyok | ((prev: typeof karakter.fortélyok) => typeof karakter.fortélyok)) => {
+    setKarakter(prev => ({ ...prev, fortélyok: typeof val === 'function' ? val(prev.fortélyok) : val }));
+  }, []);
+
+  const setSession = useCallback((val: Session | ((prev: Session) => Session)) => {
+    setKarakter(prev => ({ ...prev, session: typeof val === 'function' ? val(prev.session) : val }));
+  }, []);
+
+  // --- Touch / swipe ---
   const touchStart = useRef<number>(0);
   const touchY = useRef<number>(0);
 
@@ -42,12 +82,10 @@ function App() {
     loadGameData().then(setData).catch(e => setError(String(e)));
   }, []);
 
-  // Click on overlay backdrop closes any popup
   useEffect(() => {
     function handler(e: MouseEvent) {
       const el = e.target as HTMLElement;
       if (el.classList.contains('kep-prompt-overlay')) {
-        // Simulate Escape to close whatever is open
         document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
       }
     }
@@ -72,6 +110,45 @@ function App() {
     }
   }
 
+  // --- Save / Load ---
+  function saveKarakter() {
+    const json = JSON.stringify(karakter, null, 2);
+    const blob = new Blob([json], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = `${karakter.név || 'karakter'}.json`;
+    a.click();
+    URL.revokeObjectURL(url);
+  }
+
+  function loadKarakter() {
+    const input = document.createElement('input');
+    input.type = 'file';
+    input.accept = '.json';
+    input.onchange = () => {
+      const file = input.files?.[0];
+      if (!file) return;
+      const reader = new FileReader();
+      reader.onload = () => {
+        try {
+          const obj = JSON.parse(reader.result as string);
+          if (!validateKarakter(obj)) {
+            alert('Érvénytelen karakter fájl (schema_version !== 2 vagy hiányzó mezők).');
+            return;
+          }
+          // Ensure session exists (backward compat)
+          if (!obj.session) obj.session = { ...DEFAULT_SESSION };
+          setKarakter(obj);
+        } catch {
+          alert('Nem sikerült betölteni a fájlt.');
+        }
+      };
+      reader.readAsText(file);
+    };
+    input.click();
+  }
+
   if (error) return <div className="error">Hiba: {error}</div>;
   if (!data) return <div className="loading">Betöltés...</div>;
 
@@ -79,13 +156,17 @@ function App() {
     <div className="app" onContextMenu={e => e.preventDefault()} onSelect={e => e.preventDefault()}>
       <header className="header">
         <span className="title">Szilánk RPG</span>
-        <button
-          className="mode-toggle"
-          style={{ background: gameMode ? '#4caf50' : '#ff9800', color: '#000' }}
-          onClick={() => setGameMode(!gameMode)}
-        >
-          {gameMode ? '🎮 Game mód' : '🔧 Szerkesztés'}
-        </button>
+        <div className="header-btns">
+          <button className="save-btn" onClick={saveKarakter} title="Mentés">💾</button>
+          <button className="load-btn" onClick={loadKarakter} title="Betöltés">📂</button>
+          <button
+            className="mode-toggle"
+            style={{ background: gameMode ? '#4caf50' : '#ff9800', color: '#000' }}
+            onClick={() => setGameMode(!gameMode)}
+          >
+            {gameMode ? '🎮 Game' : '🔧 Szerk'}
+          </button>
+        </div>
       </header>
 
       <main
@@ -97,7 +178,14 @@ function App() {
           {TABS.map((tab, i) => (
             <div key={tab.id} className="screen-slide">
               {Math.abs(i - activeTab) <= 1 && (
-                <TabContent tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} fortélyok={fortélyok} setFortélyok={setFortélyok} />
+                <TabContent
+                  tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab}
+                  tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok}
+                  képzettségek={képzettségek} setKépzettségek={setKépzettségek}
+                  fortélyok={fortélyok} setFortélyok={setFortélyok}
+                  session={session} setSession={setSession}
+                  karakter={karakter}
+                />
               )}
             </div>
           ))}
@@ -105,8 +193,7 @@ function App() {
       </main>
 
       {!gameMode && data && (() => {
-        // spec_kp (feltételes, marad TS-ben)
-        const spec = testKarakter8.fortélyok_speciális;
+        const spec = karakter.fortélyok_speciális;
         const bónusz = data.konstansok.kp_bónusz;
         let spec_kp = 0;
         if (spec.analfabéta) spec_kp += bónusz.analfabéta;
@@ -115,24 +202,22 @@ function App() {
         if (spec.vakság) spec_kp += bónusz.vakság;
         spec_kp += spec.tartós_sérülés_fok * bónusz.tartós_sérülés_per_fok;
 
-        // kiemelt_kp (iteráció + ingyenes keret, marad TS-ben)
-        const tsz = testKarakter8.tsz;
+        const tsz = karakter.tsz;
         let kiemelt_kp = 0;
         for (const d of data.fortelySummaries) {
           if (d.ingyenes_perszint <= 0) continue;
           const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
-          const felvettDb = fortélyok.filter(f => f.név === d.név || f.név.startsWith(d.név + ' - ')).reduce((s, f) => s + f.fok, 0);
+          const felvettDb = fortélyok.filter(f => f.név === d.név).reduce((s, f) => s + f.fok, 0);
           const fizetősDb = Math.max(0, felvettDb - ingyenesDb);
           kiemelt_kp += fizetősDb * d.kp_perfok;
         }
 
-        // Reactive engine: everything else
         const kpCtx = buildContext(tulajdonságok, tsz, data.konstansok as any, {
           spec_kp,
           kiemelt_kp,
-          HM_TÉ: testKarakter8.HM_TÉ,
-          HM_VÉ: testKarakter8.HM_VÉ,
-          CM: testKarakter8.CM,
+          HM_TÉ: karakter.HM_TÉ,
+          HM_VÉ: karakter.HM_VÉ,
+          CM: karakter.CM,
           fortélyMod_KÉ: 0,
           harcmodor_összeg: 0,
           felszerelés_terhelés: 0,
@@ -167,10 +252,17 @@ function App() {
   );
 }
 
-function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok }: { tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void; tulajdonságok: any; setTulajdonságok: any; képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>; fortélyok: { név: string; fok: number }[]; setFortélyok: React.Dispatch<React.SetStateAction<{ név: string; fok: number }[]>> }) {
+function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession, karakter }: {
+  tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void;
+  tulajdonságok: any; setTulajdonságok: any;
+  képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
+  fortélyok: Fortely[]; setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
+  session: Session; setSession: React.Dispatch<React.SetStateAction<Session>>;
+  karakter: Karakter;
+}) {
   switch (tab) {
     case 'aktiv': return <div className="screen"><h2>❎ Aktív</h2><p>Szituáció beállítás (TODO)</p></div>;
-    case 'harc': return <HarcScreen data={data} tulajdonságok={tulajdonságok} képzettségek={képzettségek} onNavigate={(id) => {
+    case 'harc': return <HarcScreen data={data} karakter={karakter} session={session} setSession={setSession} onNavigate={(id) => {
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;

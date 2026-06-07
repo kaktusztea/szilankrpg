@@ -1,11 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
-import { testKarakter8 } from '../testdata';
+import type { Karakter, Session } from '../engine/types';
 import { calcFegyverHarcertekek } from '../engine/harcertek';
 import { calcPancel } from '../engine/pancel';
 import { evaluate, buildContext } from '../engine/reactive';
 import { EpTable } from './EpTable';
+import type { SebzésRubrika } from '../engine/types';
 import './HarcScreen.css';
 
 function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftTable: { szint: number; enyhítés: number }[]): number {
@@ -17,13 +18,18 @@ function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftT
   return enyhítés;
 }
 
-export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }: { data: GameData; tulajdonságok: any; képzettségek: { név: string; szint: number }[]; onNavigate?: (tabId: string) => void }) {
-  const [véCsökkenés, setVéCsökkenés] = useState(0);
+export function HarcScreen({ data, karakter, session, setSession, onNavigate }: {
+  data: GameData;
+  karakter: Karakter;
+  session: Session;
+  setSession: React.Dispatch<React.SetStateAction<Session>>;
+  onNavigate?: (tabId: string) => void;
+}) {
   const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
   const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const [véHistory, setVéHistory] = useState<number[]>([]);
   const [showVéHistory, setShowVéHistory] = useState(false);
   const lastTapVéLabel = useRef(0);
+  const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
 
   function triggerVéFlash(dir: 'down' | 'up') {
     setVéFlash(dir);
@@ -32,19 +38,18 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
   }
 
   function changeVé(newVal: number) {
-    const diff = newVal - véCsökkenés;
+    const diff = newVal - session.vé_csökkenés;
     const dir = diff > 0 ? 'down' : 'up';
-    if (newVal === 0) {
-      setVéHistory([]);
-    } else {
-      setVéHistory(prev => [...prev, diff > 0 ? -diff : Math.abs(diff)]);
-    }
-    setVéCsökkenés(newVal);
+    setSession(prev => ({
+      ...prev,
+      vé_csökkenés: newVal,
+      vé_history: newVal === 0 ? [] : [...prev.vé_history, diff > 0 ? -diff : Math.abs(diff)],
+    }));
     triggerVéFlash(dir);
   }
 
   function handleVéLabelTap() {
-    if (véCsökkenés === 0) return;
+    if (session.vé_csökkenés === 0) return;
     const now = Date.now();
     if (now - lastTapVéLabel.current < 350) {
       setShowVéHistory(true);
@@ -53,8 +58,6 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
       lastTapVéLabel.current = now;
     }
   }
-  const [aktManöverPont, setAktManöverPont] = useState(99);
-  const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
 
   useEffect(() => {
     if (!showVéResetConfirm && !showVéHistory) return;
@@ -63,13 +66,20 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
     return () => document.removeEventListener('keydown', onKey);
   }, [showVéResetConfirm, showVéHistory]);
 
-  const k = testKarakter8;
+  const k = karakter;
   const { konstansok, harcmodorBonusz } = data;
 
-  // Reactive engine: ÉP, KÉ, TÉ_alap, VÉ_alap, CÉ_alap, Manőver pont, felszerelés
+  // Reactive engine
   const fortelyKE = 4 + 1; // Gyors kezdeményezés 2.fok + Harckeret növelés 1.fok
-  const harcmodorÖsszeg = [6, 8, 4, 0, 0].reduce((a, b) => a + b, 0);
-  const ctx = buildContext(tulajdonságok, k.tsz, konstansok as any, {
+  const harcmodorÖsszeg = [
+    k.képzettségek.find(kp => kp.név === 'Közelharc')?.szint ?? 0,
+    k.képzettségek.find(kp => kp.név === 'Kardvívás')?.szint ?? 0,
+    k.képzettségek.find(kp => kp.név === 'Rombolás')?.szint ?? 0,
+    k.képzettségek.find(kp => kp.név === 'Lándzsavívás')?.szint ?? 0,
+    k.képzettségek.find(kp => kp.név === 'Ostorharc')?.szint ?? 0,
+  ].reduce((a, b) => a + b, 0);
+
+  const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
     fortélyMod_KÉ: fortelyKE,
     harcmodor_összeg: harcmodorÖsszeg,
     HM_TÉ: k.HM_TÉ,
@@ -93,7 +103,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
     const fDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === név.toLowerCase());
     if (!fDef) return null;
     const isFegyver = név !== 'Puszta kéz';
-    const harcmodorSzint = isFegyver ? 8 : 6; // Kardvívás 8 / Közelharc 6
+    const harcmodorSzint = isFegyver ? 8 : 6;
     const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
     const mfFok = isFegyver ? 2 : 0;
     return calcFegyverHarcertekek(
@@ -104,20 +114,21 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
     );
   });
 
-  // Pajzs VÉ (Közepes pajzs, 2.fok)
+  // Pajzs VÉ
   const pajzsVÉ = 10;
 
-  // ÉP alapú TÉ levonás (sebesülés kategória)
+  // ÉP TÉ levonás
   const oszlopMéret = épValue / 4;
   const téLevonások = [0, -3, -6, -9];
-  // aktKategória kell a sebesülés tracking-hez — egyelőre 0 (nincs seb state itt, EpTable kezeli)
-  // TODO: EpTable-ből felbubble-olni a kitöltött rubrikák számát
   const [sebCount, setSebCount] = useState(0);
   const aktKat = sebCount === 0 ? 0 : Math.min(3, Math.ceil(sebCount / oszlopMéret) - 1);
   const téLevonás = téLevonások[aktKat];
 
-  // Max VÉ csökkenés: a legnagyobb fegyver VÉ + pajzs (amíg MIND el nem éri a 0-t)
+  // Max VÉ csökkenés
   const maxVéCsökk = Math.max(...fegyverResults.filter(Boolean).map(r => r!.VÉ + pajzsVÉ));
+
+  // MP
+  const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
 
   return (
     <div className="screen harc-screen">
@@ -132,21 +143,21 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
         </div>
         <div className="ve-csokk-box">
           <span className="label" onClick={handleVéLabelTap}>VÉ csökkenés</span>
-          <span className="value" onClick={handleVéLabelTap}>{véCsökkenés === 0 ? 0 : -véCsökkenés}</span>
+          <span className="value" onClick={handleVéLabelTap}>{session.vé_csökkenés === 0 ? 0 : -session.vé_csökkenés}</span>
           <div className="ve-btns">
-            <button disabled={véCsökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(véCsökkenés + 1, maxVéCsökk))}>-1</button>
-            <button disabled={véCsökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(véCsökkenés + 2, maxVéCsökk))}>-2</button>
-            <button disabled={véCsökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(véCsökkenés + 3, maxVéCsökk))}>-3</button>
-            <button disabled={véCsökkenés === 0} onClick={() => changeVé(Math.max(0, véCsökkenés - 1))}>+1</button>
-            <button disabled={véCsökkenés === 0} onClick={() => setShowVéResetConfirm(true)}>⟲</button>
+            <button disabled={session.vé_csökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(session.vé_csökkenés + 1, maxVéCsökk))}>-1</button>
+            <button disabled={session.vé_csökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(session.vé_csökkenés + 2, maxVéCsökk))}>-2</button>
+            <button disabled={session.vé_csökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(session.vé_csökkenés + 3, maxVéCsökk))}>-3</button>
+            <button disabled={session.vé_csökkenés === 0} onClick={() => changeVé(Math.max(0, session.vé_csökkenés - 1))}>+1</button>
+            <button disabled={session.vé_csökkenés === 0} onClick={() => setShowVéResetConfirm(true)}>⟲</button>
           </div>
         </div>
         <div className="mp-box">
           <span className="label">MP</span>
-          <span className="value">{Math.min(aktManöverPont, manöverPont)}/{manöverPont}</span>
+          <span className="value">{aktMP}/{manöverPont}</span>
           <div className="ve-btns">
-            <button onClick={() => setAktManöverPont(Math.max(0, Math.min(aktManöverPont, manöverPont) - 1))}>-1</button>
-            <button disabled={Math.min(aktManöverPont, manöverPont) === manöverPont} onClick={() => setAktManöverPont(manöverPont)}>⟲</button>
+            <button disabled={aktMP === 0} onClick={() => setSession(prev => ({ ...prev, manőver_pont_használt: prev.manőver_pont_használt + 1 }))}>-1</button>
+            <button disabled={session.manőver_pont_használt === 0} onClick={() => setSession(prev => ({ ...prev, manőver_pont_használt: 0 }))}>⟲</button>
           </div>
         </div>
       </div>
@@ -166,7 +177,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
               <td>{r.fegyver_név}</td>
               <td>{r.támadások}</td>
               <td>{r.TÉ + téLevonás}</td>
-              <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + pajzsVÉ - véCsökkenés)}</td>
+              <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + pajzsVÉ - session.vé_csökkenés)}</td>
               <td>{r.SP} {r.sebzésmód}</td>
               <td>{r.pengehossz}</td>
             </tr>
@@ -175,7 +186,14 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
       </table>
 
       <div className="harc-section">
-        <EpTable ÉP={épValue} onSebCountChange={setSebCount} ftEnyhítés={calcFtEnyhítés(képzettségek, data.konstansok.fájdalomtűrés_enyhítés)} onNavigate={képzettségek.some(k => k.név === 'Fájdalomtűrés') ? () => { onNavigate?.('tulajdonsagok'); setTimeout(() => { document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 200); } : undefined} />
+        <EpTable
+          ÉP={épValue}
+          onSebCountChange={setSebCount}
+          ftEnyhítés={calcFtEnyhítés(k.képzettségek, data.konstansok.fájdalomtűrés_enyhítés)}
+          onNavigate={k.képzettségek.some(kp => kp.név === 'Fájdalomtűrés') ? () => { onNavigate?.('tulajdonsagok'); setTimeout(() => { document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 200); } : undefined}
+          sebzések={session.sebzések}
+          onSebzésekChange={(sebzések: SebzésRubrika[]) => setSession(prev => ({ ...prev, sebzések }))}
+        />
       </div>
 
       {showVéResetConfirm && createPortal(
@@ -192,7 +210,7 @@ export function HarcScreen({ data, tulajdonságok, képzettségek, onNavigate }:
           <div className="kep-prompt">
             <label style={{ fontWeight: 'bold' }}>VÉ csökkenés történet</label>
             <div style={{ fontSize: '15px', color: 'var(--text)' }}>
-              {véHistory.length === 0 ? '—' : véHistory.map(v => (v > 0 ? `+${v}` : String(v))).join('; ')}
+              {session.vé_history.length === 0 ? '—' : session.vé_history.map(v => (v > 0 ? `+${v}` : String(v))).join('; ')}
             </div>
           </div>
         </div>,

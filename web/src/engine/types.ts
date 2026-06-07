@@ -1,5 +1,5 @@
 // ============================================================
-// Karakter
+// Karakter (mentett példány — megfelel data/schemas/karakter.yaml v2)
 // ============================================================
 
 export interface Tulajdonsagok {
@@ -16,19 +16,13 @@ export interface Tulajdonsagok {
 export interface Kepzettseg {
   név: string;
   szint: number;
-  spec: string;
 }
 
 export interface Fortely {
   név: string;
   fok: number;
-  spec: string;
-}
-
-export interface FortelyokKiemelt {
-  kulturkörök: { név: string }[];
-  helyismeret: { helynév: string }[];
-  nyelvismeret: { nyelv: string; fok: number }[];
+  spec_típus: string;
+  spec_elem: string;
 }
 
 export interface FortelyokSpecialis {
@@ -45,7 +39,6 @@ export interface FegyverPeldany {
   anyag: string;
   idea: number;
   mesterfegyver_fok: number;
-  módosítók: Modosito[] | '';
 }
 
 export interface PancelPeldany {
@@ -65,6 +58,25 @@ export interface NagyTargy {
   MGT: number;
 }
 
+export interface SebzésRubrika {
+  típus: 'S' | 'V' | 'Z' | 'FP';
+  sorszám: number;
+}
+
+export interface Session {
+  vé_csökkenés: number;
+  vé_history: number[];
+  manőver_pont_használt: number;
+  sebzések: SebzésRubrika[];
+  aktív_fegyver_index: number;
+  aktív_pajzs: boolean;
+  aktív_páncél: boolean;
+  aktív_taktika: string;
+  aktív_helyzet: string;
+  aktív_manőver: string;
+  aktív_státuszok: string[];
+}
+
 export interface Karakter {
   schema_version: number;
   név: string;
@@ -76,20 +88,37 @@ export interface Karakter {
   HM_TÉ: number;
   HM_VÉ: number;
   CM: number;
+  szilánk: number;
   képzettségek: Kepzettseg[];
-  fortélyok_kiemelt: FortelyokKiemelt;
-  fortélyok_speciális: FortelyokSpecialis;
-  fortélyok_szabad: { név: string }[];
   fortélyok: Fortely[];
+  fortélyok_speciális: FortelyokSpecialis;
   hátterek: { faj: string; leíró: string[]; karma: string[] };
-  származtatott: { ÉP: number; szilánk: number };
   fegyverek: FegyverPeldany[];
   páncél: PancelPeldany;
   felszerelés: { nagy_tárgyak: NagyTargy[] };
+  session: Session;
 }
 
 // ============================================================
-// Fortély definíció (schema)
+// Default session (betöltéskor hiányzó session pótlása)
+// ============================================================
+
+export const DEFAULT_SESSION: Session = {
+  vé_csökkenés: 0,
+  vé_history: [],
+  manőver_pont_használt: 0,
+  sebzések: [],
+  aktív_fegyver_index: 0,
+  aktív_pajzs: false,
+  aktív_páncél: true,
+  aktív_taktika: '',
+  aktív_helyzet: '',
+  aktív_manőver: '',
+  aktív_státuszok: [],
+};
+
+// ============================================================
+// Fortély definíció (schema — yaml forrásból)
 // ============================================================
 
 export type ModMode = 'flat' | 'scaled' | 'override';
@@ -210,7 +239,7 @@ export interface Aranyok {
 }
 
 // ============================================================
-// Származtatott értékek (engine output)
+// Származtatott értékek (engine output — NEM mentjük)
 // ============================================================
 
 export interface FegyverHarcertekek {
