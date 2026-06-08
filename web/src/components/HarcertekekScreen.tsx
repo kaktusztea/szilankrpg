@@ -174,9 +174,9 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         ))}
         <select className="he-add-select" value="" onChange={e => { if (e.target.value) addFegyver(e.target.value); }}>
           <option value="">+ Új fegyver...</option>
-          {[...fegyverByKat.entries()].map(([kat, items]) => (
+          {['kardvívó', 'közelharci', 'romboló', 'lándzsavívó', 'ostorharc'].filter(kat => fegyverByKat.has(kat)).map(kat => (
             <optgroup key={kat} label={kat}>
-              {items.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}
+              {fegyverByKat.get(kat)!.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}
             </optgroup>
           ))}
         </select>
