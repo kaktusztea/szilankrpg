@@ -13,12 +13,14 @@ interface Props {
 export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const k = karakter;
   const { konstansok } = data;
-  const lastTap = useRef(0);
 
-  function doubleTap(action: () => void) {
+  // Per-element double-tap tracking
+  const tapTimers = useRef<Map<string, number>>(new Map());
+  function handleDoubleTap(key: string, action: () => void) {
     const now = Date.now();
-    if (now - lastTap.current < 350) { action(); lastTap.current = 0; }
-    else { lastTap.current = now; }
+    const last = tapTimers.current.get(key) ?? 0;
+    if (now - last < 350) { action(); tapTimers.current.set(key, 0); }
+    else { tapTimers.current.set(key, now); }
   }
 
   // Harcmodor szintek (read-only, Tul/Képz fülről jönnek)
@@ -160,10 +162,10 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
             </div>
             <div className="he-fegyver-fields">
               <label>MF fok:
-                <button className="he-idea-btn" onClick={() => doubleTap(() => setMfTarget(i))}>{f.mesterfegyver_fok}</button>
+                <button className="he-idea-btn" onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>{f.mesterfegyver_fok}</button>
               </label>
               <label>Idea:
-                <button className="he-idea-btn" onClick={() => doubleTap(() => setIdeaTarget({ type: 'fegyver', idx: i }))}>{f.idea}</button>
+                <button className="he-idea-btn" onClick={() => handleDoubleTap(`idea-f-${i}`, () => setIdeaTarget({ type: 'fegyver', idx: i }))}>{f.idea}</button>
               </label>
               <label>Anyag:
                 <select value={f.anyag} onChange={e => updateFegyver(i, { anyag: e.target.value })}>
@@ -218,7 +220,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
             </select>
           </label>
           <label>Idea:
-            <button className="he-idea-btn" onClick={() => doubleTap(() => setIdeaTarget({ type: 'páncél', idx: 0 }))}>{k.páncél.idea}</button>
+            <button className="he-idea-btn" onClick={() => handleDoubleTap('idea-p', () => setIdeaTarget({ type: 'páncél', idx: 0 }))}>{k.páncél.idea}</button>
           </label>
           <label>Rongálódás:
             <select value={k.páncél.rongálódás} onChange={e => updatePancel({ rongálódás: Number(e.target.value) })}>
