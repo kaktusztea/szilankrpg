@@ -162,15 +162,9 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
               <button className="fort-delete" onClick={() => removeFegyver(i)}>✕</button>
             </div>
             <div className="he-fegyver-fields">
-              <label>MF fok:
-                <button className="he-idea-btn" onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>{f.mesterfegyver_fok}</button>
-              </label>
-              <label>Idea:
-                <button className="he-idea-btn" onClick={() => handleDoubleTap(`idea-f-${i}`, () => setIdeaTarget({ type: 'fegyver', idx: i }))}>{f.idea}</button>
-              </label>
-              <label>Anyag:
-                <button className="he-idea-btn" onClick={() => handleDoubleTap(`anyag-${i}`, () => setAnyagTarget(i))}>{f.anyag}</button>
-              </label>
+              <button className="he-field-btn" onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>MF fok: <strong>{f.mesterfegyver_fok}</strong></button>
+              <button className="he-field-btn" onClick={() => handleDoubleTap(`idea-f-${i}`, () => setIdeaTarget({ type: 'fegyver', idx: i }))}>Idea: <strong>{f.idea}</strong></button>
+              <button className="he-field-btn" onClick={() => handleDoubleTap(`anyag-${i}`, () => setAnyagTarget(i))}>Anyag: <strong>{f.anyag}</strong></button>
             </div>
           </div>
         ))}

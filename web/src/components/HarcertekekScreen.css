@@ -125,6 +125,22 @@
   text-align: center;
 }
 
+.he-field-btn {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: var(--text);
+  padding: 4px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.he-field-btn strong {
+  color: var(--success);
+  margin-left: 4px;
+}
+
 .he-add-select {
   width: 100%;
   background: var(--input-bg);
