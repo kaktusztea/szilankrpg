@@ -83,11 +83,12 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
     setKarakter(prev => prev ? { ...prev, páncél: { ...prev.páncél, ...patch } } : prev);
   }
 
-  // Fegyver dropdown: csoportosítva kategóriánként
-  const fegyverByKat = new Map<string, string[]>();
+  // Fegyver dropdown: csoportosítva kategóriánként (MK 2K variánsok kiszűrve)
+  const fegyverByKat = new Map<string, { id: string; label: string }[]>();
   for (const f of data.fegyverek) {
+    if (f.MK_pár && f['Forgatás módja'] === 'kétkezes') continue; // skip 2K of MK pairs
     const arr = fegyverByKat.get(f.Kategória) || [];
-    arr.push(f.Fegyver);
+    arr.push({ id: f.Fegyver, label: f.Alapnév || f.Fegyver });
     fegyverByKat.set(f.Kategória, arr);
   }
 
@@ -159,7 +160,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         {k.fegyverek.map((f, i) => (
           <div key={i} className="he-fegyver-card">
             <div className="he-fegyver-header">
-              <strong>{f.alap}</strong>
+              <strong>{f.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
               <button className="fort-delete" onClick={() => removeFegyver(i)}>✕</button>
             </div>
             <div className="he-fegyver-fields">
@@ -171,9 +172,9 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         ))}
         <select className="he-add-select" value="" onChange={e => { if (e.target.value) addFegyver(e.target.value); }}>
           <option value="">+ Új fegyver...</option>
-          {[...fegyverByKat.entries()].map(([kat, nevek]) => (
+          {[...fegyverByKat.entries()].map(([kat, items]) => (
             <optgroup key={kat} label={kat}>
-              {nevek.map(n => <option key={n} value={n}>{n}</option>)}
+              {items.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}
             </optgroup>
           ))}
         </select>

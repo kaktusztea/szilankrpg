@@ -105,15 +105,29 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const sfé_fizikai = computed.get('sfé_fizikai') ?? 0;
   const sfé_energia = computed.get('sfé_energia') ?? 0;
 
-  // Fegyverek
-  const fegyverNevek = ['Puszta kéz', 'Kard, lovag'];
-  const fegyverResults = fegyverNevek.map(név => {
-    const fDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === név.toLowerCase());
-    if (!fDef) return null;
-    const isFegyver = név !== 'Puszta kéz';
-    const harcmodorSzint = isFegyver ? 8 : 6;
+  // Fegyverek — build from karakter.fegyverek, expand MK pairs
+  const fegyverRows: { név: string; fDef: typeof data.fegyverek[0]; mfFok: number }[] = [];
+  // Always include Puszta kéz
+  const pusztaKez = data.fegyverek.find(f => f.Fegyver.toLowerCase() === 'puszta kéz');
+  if (pusztaKez) fegyverRows.push({ név: pusztaKez.Fegyver, fDef: pusztaKez, mfFok: 0 });
+  // Karakter fegyverek
+  for (const fp of k.fegyverek) {
+    const fDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+    if (!fDef) continue;
+    fegyverRows.push({ név: fDef.Fegyver, fDef, mfFok: fp.mesterfegyver_fok });
+    // If MK pair exists, add 2K row with same MF/idea
+    if (fDef.MK_pár) {
+      const párDef = data.fegyverek.find(f => f.Fegyver === fDef.MK_pár);
+      if (párDef) fegyverRows.push({ név: párDef.Fegyver, fDef: párDef, mfFok: fp.mesterfegyver_fok });
+    }
+  }
+
+  const fegyverResults = fegyverRows.map(({ fDef, mfFok }) => {
+    const kat = fDef.Kategória;
+    // Lookup harcmodor szint from képzettségek based on kategória
+    const harcmodorNév = kat === 'közelharci' ? 'Közelharc' : kat === 'kardvívó' ? 'Kardvívás' : kat === 'romboló' ? 'Rombolás' : kat === 'lándzsavívó' ? 'Lándzsavívás' : kat === 'ostorharc' ? 'Ostorharc' : 'Közelharc';
+    const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
     const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
-    const mfFok = isFegyver ? 2 : 0;
     return calcFegyverHarcertekek(
       k.tulajdonságok, k.HM_TÉ, k.HM_VÉ, harcmodorSzint,
       { TÉ: hb?.TÉ ?? 0, VÉ: hb?.VÉ ?? 0 }, fDef, mfFok,
@@ -133,7 +147,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const téLevonás = téLevonások[aktKat];
 
   // Max VÉ csökkenés
-  const maxVéCsökk = Math.max(...fegyverResults.filter(Boolean).map(r => r!.VÉ + pajzsVÉ));
+  const maxVéCsökk = Math.max(0, ...fegyverResults.map(r => r.VÉ + pajzsVÉ));
 
   // MP
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
@@ -180,7 +194,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
           <tr><th>Fegyver</th><th>Tám</th><th className="te-col">TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>
         </thead>
         <tbody>
-          {fegyverResults.map((r, i) => r && (
+          {fegyverResults.map((r, i) => (
             <tr key={i}>
               <td>{r.fegyver_név}</td>
               <td>{r.támadások}</td>

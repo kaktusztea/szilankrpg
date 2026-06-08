@@ -31,7 +31,7 @@ export function calcPancelInputs(
   merevvértvisBonuszok: { fok: number; TÉ_büntetés_csökkentés: number }[],
 ): PancelContextInputs {
   const struktúra = struktúrák.find(s => s.struktúra === páncél.alap);
-  if (!struktúra) return { páncél_struktúra_mgt: 0, páncél_alapanyag_mgt: 0, páncél_csatolt_mgt: 0, páncél_méret_mgt: 0, páncél_merev: 0, merevvért_csökkentés: 0, páncél_struktúra_sfé_fizikai: 0, páncél_struktúra_sfé_energia: 0, páncél_alapanyag_sfé_bónusz: 0, páncél_idea: 0, páncél_rongálódás: 0, páncél_lefedettség: 50 };
+  if (!struktúra) return { páncél_struktúra_mgt: 0, páncél_alapanyag_mgt: 0, páncél_csatolt_mgt: 0, páncél_méret_mgt: 0, páncél_merev: 0, merevvért_csökkentés: 0, páncél_struktúra_sfé_fizikai: 0, páncél_struktúra_sfé_energia: 0, páncél_alapanyag_sfé_bónusz: 0, páncél_idea: 0, páncél_rongálódás: 0, páncél_lefedettség: 0 };
 
   const alapanyag = fémalapanyagok.find(a => a.anyag === páncél.fémalapanyag);
   const alapanyag_mgt = alapanyag?.mgt ?? 0;

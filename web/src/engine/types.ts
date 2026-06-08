@@ -181,6 +181,8 @@ export interface FegyverAlap {
   KF: string;
   Kategória: string;
   Speciális?: string;
+  MK_pár: string;
+  Alapnév: string;
 }
 
 // ============================================================
