@@ -47,12 +47,14 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
 
   // Fegyverek — with Mesterfegyver fortély sync
   function syncMfFortelyok(fegyverek: FegyverPeldany[], fortélyok: typeof k.fortélyok) {
-    // Remove all existing Mesterfegyver fortélyok
     const filtered = fortélyok.filter(f => f.név !== 'Mesterfegyver');
-    // Add one per fegyver that has mesterfegyver_fok > 0
     const mfEntries = fegyverek
       .filter(f => f.mesterfegyver_fok > 0)
-      .map(f => ({ név: 'Mesterfegyver', fok: f.mesterfegyver_fok, spec_típus: 'fegyver', spec_elem: f.alap }));
+      .map(f => {
+        const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === f.alap.toLowerCase());
+        const displayName = fDef?.Alapnév || f.alap;
+        return { név: 'Mesterfegyver', fok: f.mesterfegyver_fok, spec_típus: 'fegyver', spec_elem: displayName };
+      });
     return [...mfEntries, ...filtered];
   }
 
