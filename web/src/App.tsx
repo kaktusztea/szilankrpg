@@ -161,7 +161,7 @@ function App() {
     function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setLoadError(''); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showTestConfirm]);
+  }, [showNewConfirm, showTestConfirm, loadError]);
 
   function handleTitleTap() {
     const now = Date.now();
