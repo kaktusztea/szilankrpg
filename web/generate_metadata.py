@@ -1,7 +1,6 @@
 #!/usr/bin/env python3
 """Generate metadata.json with app name and version (YY.DAYOFYEAR.DAILYBUILD)."""
 import json
-import os
 from datetime import datetime
 from pathlib import Path
 
