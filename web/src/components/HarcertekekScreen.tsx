@@ -150,7 +150,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
       <section className="he-section">
         <h3>Harcmodorok</h3>
         <div className="he-harcmodor-list">
-          {harcmodorSzintek.map(h => (
+          {harcmodorSzintek.filter(h => h.szint > 0).map(h => (
             <span key={h.név} className="he-harcmodor-item">{h.név}: <strong>{h.szint}</strong></span>
           ))}
         </div>
