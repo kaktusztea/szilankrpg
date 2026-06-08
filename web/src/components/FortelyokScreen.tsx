@@ -2,7 +2,6 @@ import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, FortelySummary } from '../engine/data-loader';
 import type { Fortely } from '../engine/types';
-import { testKarakter8 } from '../testdata';
 import './FortelyokScreen.css';
 
 const CSOPORT_SORREND = ['harci', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'];
@@ -21,9 +20,10 @@ interface Props {
   gameMode: boolean;
   fortélyok: Fortely[];
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
+  tsz: number;
 }
 
-export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: Props) {
+export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -116,7 +116,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
                   const isOpen = infoTarget === `${globalIdx}`;
                   let isIngyenes = false;
                   if (def && def.ingyenes_perszint > 0) {
-                    const ingyenesDb = Math.floor((testKarakter8.tsz + 1) / def.ingyenes_perszint);
+                    const ingyenesDb = Math.floor((tsz + 1) / def.ingyenes_perszint);
                     const sameTypeSlots = slotok.filter(s => s.név === def.név);
                     const posInType = sameTypeSlots.indexOf(slot);
                     isIngyenes = posInType < ingyenesDb;
@@ -150,7 +150,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
                       {available.map(d => {
                         let label = `${d.név} (max ${d.maxfok})`;
                         if (d.ingyenes_perszint > 0) {
-                          const ingyenesDb = Math.floor((testKarakter8.tsz + 1) / d.ingyenes_perszint);
+                          const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
                           const felvettDb = fortélyok.filter(f => f.név === d.név).length;
                           const maradtIngyenes = Math.max(0, ingyenesDb - felvettDb);
                           if (maradtIngyenes > 0) label += ` 🎁${maradtIngyenes}`;

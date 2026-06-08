@@ -331,12 +331,12 @@ function App() {
           harcmodor_összeg: harcmodorÖsszeg,
           alakzatharc_szint: alakzatharcSzint,
           felszerelés_terhelés: 0,
-          // Páncél MGT inputs (pre-computed from karakter.páncél)
           páncél_struktúra_mgt: 0,
           páncél_alapanyag_mgt: 0,
-          páncél_csatolt_mgt: 0,
+          páncél_csatolt_db: 0,
           páncél_méret_mgt: 0,
           páncél_merev: 0,
+          páncél_fém: 0,
           merevvért_csökkentés: 0,
         });
         const fortelyKpMap = new Map(data.fortelySummaries.map(d => [d.név, d.ingyenes_perszint > 0 ? 0 : d.kp_perfok]));
@@ -444,7 +444,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       if (idx >= 0) setActiveTab(idx);
     }} />;
     case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} név={karakter.név} setNév={v => setKarakter(prev => prev ? { ...prev, név: v } : prev)} tsz={karakter.tsz} setTsz={v => setKarakter(prev => prev ? { ...prev, tsz: v } : prev)} kor={karakter.kor} setKor={v => setKarakter(prev => prev ? { ...prev, kor: v } : prev)} faj={karakter.hátterek.faj} setFaj={v => setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev)} />;
-    case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} />;
+    case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} tsz={karakter.tsz} />;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={setKarakter} />;
     case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;

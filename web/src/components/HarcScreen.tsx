@@ -68,8 +68,13 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const k = karakter;
   const { konstansok, harcmodorBonusz } = data;
 
-  // Reactive engine
-  const fortelyKE = 4 + 1; // Gyors kezdeményezés 2.fok + Harckeret növelés 1.fok
+  // Reactive engine — fortély KÉ módosítók (TODO: full §16 fortély modifier system)
+  // For now: sum always-active KÉ modifiers from known fortélyok
+  let fortelyKE = 0;
+  const gkFok = k.fortélyok.find(f => f.név === 'Gyors kezdeményezés')?.fok ?? 0;
+  fortelyKE += gkFok * 2; // Gyors kezdeményezés: +2 KÉ/fok
+  const hknFok = k.fortélyok.find(f => f.név === 'Harckeret növelés')?.fok ?? 0;
+  fortelyKE += hknFok; // Harckeret növelés: +1 KÉ/fok
   const harcmodorÖsszeg = [
     k.képzettségek.find(kp => kp.név === 'Közelharc')?.szint ?? 0,
     k.képzettségek.find(kp => kp.név === 'Kardvívás')?.szint ?? 0,
@@ -133,7 +138,8 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
   const fegyverResults = fegyverRows.map(({ fDef, mfFok }) => {
     const kat = fDef.Kategória;
-    const harcmodorNév = kat === 'közelharci' ? 'Közelharc' : kat === 'kardvívó' ? 'Kardvívás' : kat === 'romboló' ? 'Rombolás' : kat === 'lándzsavívó' ? 'Lándzsavívás' : kat === 'ostorharc' ? 'Ostorharc' : 'Közelharc';
+    const KATEGÓRIA_HARCMODOR: Record<string, string> = { közelharci: 'Közelharc', kardvívó: 'Kardvívás', romboló: 'Rombolás', lándzsavívó: 'Lándzsavívás', ostorharc: 'Ostorharc' };
+    const harcmodorNév = KATEGÓRIA_HARCMODOR[kat] ?? 'Közelharc';
     const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
     const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
     const mf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
@@ -158,7 +164,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       fegyver_fortély_TÉ: 0,
       fegyver_fortély_VÉ: 0,
       fegyver_fortély_SP: 0,
-      fegyver_fortély_harckeret: 1, // Harckeret növelés fortély (TODO: dynamic)
+      fegyver_fortély_harckeret: hknFok, // Harckeret növelés fortély
       fortélyMod_KÉ: fortelyKE,
       harcmodor_összeg: harcmodorÖsszeg,
       alakzatharc_szint: 0,
