@@ -39,4 +39,28 @@ if __name__ == "__main__":
 
         # Write output file
         path_json=os.path.join(dir_data, 'tables', d['output'])
+
+        # Post-process: add MK_pár and Alapnév for másfélkezes weapons
+        if d['output'] == 'fegyverek.json':
+            pairs = {}
+            for entry in full_json:
+                name = entry['Fegyver']
+                if name.endswith(' (1K)') or name.endswith(' 1K'):
+                    base = name.replace(' (1K)', '').replace(' 1K', '')
+                    pairs.setdefault(base, {})['1K'] = name
+                elif name.endswith(' (2K)') or name.endswith(' 2K'):
+                    base = name.replace(' (2K)', '').replace(' 2K', '')
+                    pairs.setdefault(base, {})['2K'] = name
+            pair_map = {}
+            for base, p in pairs.items():
+                if '1K' in p and '2K' in p:
+                    pair_map[p['1K']] = p['2K']
+                    pair_map[p['2K']] = p['1K']
+            for entry in full_json:
+                entry['MK_pár'] = pair_map.get(entry['Fegyver'], '')
+                if entry['MK_pár'] and entry.get('Forgatás módja') == 'egykezes':
+                    entry['Alapnév'] = entry['Fegyver'].replace(' (1K)', '').replace(' 1K', '')
+                else:
+                    entry['Alapnév'] = ''
+
         write_list_of_dicts_to_jsonfile(path_json, full_json)
