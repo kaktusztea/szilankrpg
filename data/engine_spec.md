@@ -265,7 +265,7 @@ formula:  // ismételve minden egyes fegyverre
 output: össz_támadás (támadások száma / kör)
 note: Ha össz_támadás >= 2, minden támadásra TÉ:-3 levonás jár (az elsőre is).
 impl: páncél_MGT a reactive engine `páncél_MGT` szabályából jön.
-      A calcFegyverHarcertekek() TS függvény kapja paraméterként.
+      A `fegyver_harckeret` reactive rule használja inputként.
 ```
 
 ---
@@ -327,10 +327,11 @@ formula:
 output: MGT
 
 reactive rules.json:
-  páncél_MGT: max(0, páncél_struktúra_mgt + páncél_alapanyag_mgt + páncél_csatolt_mgt + páncél_méret_mgt - tulajdonságok.erő)
+  páncél_MGT: max(0, struktúra_mgt + alapanyag_mgt + csatolt_db * if(merev, lookup(merev_tábla,...), if(fém, lookup(fém_tábla,...), lookup(nemfém_tábla,...))) + méret_mgt - erő)
 
-impl: A köztes inputok (struktúra_mgt, alapanyag_mgt, csatolt_mgt, méret_mgt) a calcPancelInputs()-ből jönnek.
-      A feltételes logika (merev/fém/nem-fém → tag_mgt_per_db) TS-ben marad.
+impl: calcPancelInputs() adja a raw inputokat (struktúra_mgt, alapanyag_mgt, csatolt_db, méret_mgt, merev, fém).
+      A feltételes lookup (kidolgozottság → tag_mgt_per_db) a rules.json-ban van nested if() + lookup() + StringContext-tel.
+      A 3 csatolt_mgt tábla (merev/fém/nemfém) ArrayContext-ben.
 ```
 
 ---

@@ -454,9 +454,10 @@ Deklaratív számítási szabályok dependency graph-ban:
 - **Feltételes**: `if(feltétel, then, else)` — ternary kifejezés
 - **Topológiai sorrend**: automatikus dependency resolution (inputs mező alapján)
 - **Context**: `buildContext()` — skaláris értékek (tulajdonságok, tsz, konstansok, HM, CM, páncél inputok, stb.)
-- **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla, harci_fortélyok)
+- **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla, harci_fortélyok, csatolt_mgt táblák)
+- **StringContext**: string-keyed lookup-okhoz (pl. páncél_kidolgozottság → csatolt_mgt tábla kulcs)
 
-#### Jelenlegi rules.json szabályok (29 db):
+#### Jelenlegi rules.json szabályok (36 db):
 | ID | Formula típus | Leírás |
 |----|--------------|--------|
 | ÉP | képlet | 28 + edzettség × 4 |
@@ -488,13 +489,17 @@ Deklaratív számítási szabályok dependency graph-ban:
 | távharc_cél_VÉ | képlet | max(szorzó,1)×cella + min(szorzó,0) |
 | képzettség_max_szint_primer | képlet | min(max_szint, tsz) |
 | képzettség_max_szint_szekunder | képlet | min(max_szint, tsz + plusz) |
+| fegyver_TÉ | képlet | alap + erő + ügy + gyor + HM + harcmodor + fegyver + MF + fortély |
+| fegyver_VÉ | képlet | alap + gyor + ügy + HM + harcmodor + fegyver + MF + fortély |
+| fegyver_SP | képlet | fegyver + min(erő, limit) + MF + fortély |
+| fegyver_harckeret | képlet | max(0, harcmodor + gyor - MGT - felszMGT + fortély) |
+| fegyver_támadások | képlet | 1 + floor(harckeret / sebesség) |
 
 #### TS-ben maradó logika (nem deklaratív):
 - `spec_kp`: feltételes boolean flag-ek (Analfabéta, Vakság, stb.)
 - `kiemelt_kp`: iteráció ingyenes keret számítással (Kultúrkör, Helyismeret)
-- `calcFegyverHarcertekek`: fegyverenkénti TÉ/VÉ/SP/Harckeret (parametrikus iteráció + lookup)
-- `calcPancelInputs`: páncél lookup-ok → köztes értékek a reactive context-hez
-- Fortély módosítók összegyűjtése (feltételes iteráció)
+- `calcPancelInputs`: páncél raw lookup-ok (struktúra, alapanyag, méret) → context extras
+- Fortély módosítók összegyűjtése (feltételes iteráció — egyelőre hardcoded 0, TODO §16)
 - Fájdalomtűrés enyhítés (küszöb-tábla lookup)
 
 ### Runtime adatbetöltés (GameData)
@@ -510,7 +515,7 @@ Minden adat `fetchJson`-nel:
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
 - `tables/primer_fortelyok.json` — 53 harci+misztikus fortély neve
 - `tables/fortelyok.json` — 168 fortély összefoglaló
-- `data/rules.json` — reactive engine szabályok (29 db)
+- `data/rules.json` — reactive engine szabályok (36 db)
 - `data/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
 
 ### Karakter state struktúra (App szintjén)
