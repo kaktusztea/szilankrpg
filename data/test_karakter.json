@@ -315,12 +315,13 @@
     "kidolgozottság": "átlagos",
     "sisak": false,
     "végtagvédettség": 0,
-    "méret_illeszkedés": "passzoló",
+    "méret_illeszkedés": "passzol",
     "rongálódás": 0
   },
   "felszerelés": {
     "nagy_tárgyak": []
   },
+  "jegyzetek": "",
   "session": {
     "vé_csökkenés": 0,
     "vé_history": [],

@@ -239,8 +239,9 @@ function App() {
             setLoadError(`Referencia hiba: ${refErr}`);
             return;
           }
-          // Ensure session exists (backward compat)
+          // Ensure session and jegyzetek exist (backward compat)
           if (!obj.session) obj.session = { ...DEFAULT_SESSION };
+          if (obj.jegyzetek === undefined) obj.jegyzetek = '';
           setKarakter(obj);
         } catch {
           setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');

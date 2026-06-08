@@ -127,9 +127,10 @@ karakter = {
     "páncél": {
         "alap": "bőr", "név": "", "fémalapanyag": "", "idea": 0,
         "kidolgozottság": "átlagos", "sisak": False, "végtagvédettség": 0,
-        "méret_illeszkedés": "passzoló", "rongálódás": 0,
+        "méret_illeszkedés": "passzol", "rongálódás": 0,
     },
     "felszerelés": {"nagy_tárgyak": []},
+    "jegyzetek": "",
     "session": {
         "vé_csökkenés": 0, "vé_history": [], "manőver_pont_használt": 0,
         "sebzések": [], "aktív_fegyver_index": 0, "aktív_pajzs": False,
