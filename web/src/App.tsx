@@ -8,7 +8,6 @@ import { FortelyokScreen } from './components/FortelyokScreen';
 import { HarcertekekScreen } from './components/HarcertekekScreen';
 import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
 import type { Karakter, Session, Fortely } from './engine/types';
-import { DEFAULT_SESSION } from './engine/types';
 import { testKarakter8 } from './testdata';
 import './App.css';
 
@@ -239,9 +238,6 @@ function App() {
             setLoadError(`Referencia hiba: ${refErr}`);
             return;
           }
-          // Ensure session and jegyzetek exist (backward compat)
-          if (!obj.session) obj.session = { ...DEFAULT_SESSION };
-          if (obj.jegyzetek === undefined) obj.jegyzetek = '';
           setKarakter(obj);
         } catch {
           setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
