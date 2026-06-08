@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session } from '../engine/types';
-import { calcPancelInputs } from '../engine/pancel';
 import { evaluate, buildContext } from '../engine/reactive';
 import { EpTable } from './EpTable';
 import type { SebzésRubrika } from '../engine/types';
@@ -83,22 +82,24 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     k.képzettségek.find(kp => kp.név === 'Ostorharc')?.szint ?? 0,
   ].reduce((a, b) => a + b, 0);
 
-  // Páncél: compute inputs for reactive engine
+  // Páncél + lookup tables — all logic now in rules.json
   const merevvértFok = k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
-  const pancelResult = calcPancelInputs(
-    k.páncél, konstansok.páncél_struktúrák, konstansok.páncél_fémalapanyagok,
-    merevvértFok, konstansok.merevvértviselet_bónuszok,
-  );
-
-  // Build lookup tables for csatolt_mgt (string-keyed)
   const csatoltMgt = konstansok.páncél_csatolt_tag_mgt;
-  const csatoltArrays = new Map<string, Record<string, number | string>[]>();
-  csatoltArrays.set('csatolt_mgt_merev', Object.entries(csatoltMgt.merevvért_fém).map(([k, v]) => ({ név: k, érték: v })));
-  csatoltArrays.set('csatolt_mgt_fém', Object.entries(csatoltMgt.hajlékonyvért_fém).map(([k, v]) => ({ név: k, érték: v })));
-  csatoltArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([k, v]) => ({ név: k, érték: v })));
+
+  const lookupArrays = new Map<string, Record<string, number | string>[]>();
+  lookupArrays.set('csatolt_mgt_merev', Object.entries(csatoltMgt.merevvért_fém).map(([n, v]) => ({ név: n, érték: v })));
+  lookupArrays.set('csatolt_mgt_fém', Object.entries(csatoltMgt.hajlékonyvért_fém).map(([n, v]) => ({ név: n, érték: v })));
+  lookupArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([n, v]) => ({ név: n, érték: v })));
+  lookupArrays.set('struktúrák', konstansok.páncél_struktúrák.map(s => ({ név: s.struktúra, mgt: s.mgt, sfé_fizikai: s.sfé_fizikai, sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0 })));
+  lookupArrays.set('fémalapanyagok', konstansok.páncél_fémalapanyagok.map(a => ({ anyag: a.anyag, mgt: a.mgt, sfé_bónusz: a.sfé_bónusz })));
+  lookupArrays.set('méret_tábla', [{ név: 'passzol', érték: 0 }, { név: 'nem passzol', érték: 3 }, { név: 'borzalmas', érték: 6 }]);
+  lookupArrays.set('merevvért_tábla', konstansok.merevvértviselet_bónuszok.map(b => ({ fok: b.fok, csökkentés: b.TÉ_büntetés_csökkentés })));
 
   const stringCtx = new Map<string, string>();
-  stringCtx.set('páncél_kidolgozottság', pancelResult.strings.páncél_kidolgozottság);
+  stringCtx.set('páncél_alap', k.páncél.alap);
+  stringCtx.set('páncél_fémalapanyag', k.páncél.fémalapanyag);
+  stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
+  stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
 
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
     fortélyMod_KÉ: fortelyKE,
@@ -108,16 +109,20 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     CM: k.CM,
     felszerelés_terhelés: 0,
     alakzatharc_szint: 0,
-    ...pancelResult.numeric,
+    merevvért_fok: merevvértFok,
+    páncél_végtagvédettség: k.páncél.végtagvédettség,
+    páncél_sisak: k.páncél.sisak ? 1 : 0,
+    páncél_idea: k.páncél.idea,
+    páncél_rongálódás: k.páncél.rongálódás,
   });
-  const baseArrays = new Map([...csatoltArrays]);
-  const computed = evaluate(data.rules, ctx, baseArrays, stringCtx);
+  const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 
   const épValue = computed.get('ÉP') ?? 40;
   const ké = computed.get('KÉ') ?? 0;
   const manöverPont = computed.get('manőver_pont') ?? 0;
   const sfé_fizikai = computed.get('sfé_fizikai') ?? 0;
   const sfé_energia = computed.get('sfé_energia') ?? 0;
+  const páncélLefedettség = computed.get('páncél_lefedettség') ?? 0;
 
   // Fegyverek — build from karakter.fegyverek, expand MK pairs
   const fegyverRows: { név: string; fDef: typeof data.fegyverek[0]; mfFok: number }[] = [];
@@ -146,10 +151,14 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
     // Evaluate reactive rules with weapon-specific context
     const fCtx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
-      ...pancelResult.numeric,
       HM_TÉ: k.HM_TÉ,
       HM_VÉ: k.HM_VÉ,
       felszerelés_mgt: 0,
+      merevvért_fok: merevvértFok,
+      páncél_végtagvédettség: k.páncél.végtagvédettség,
+      páncél_sisak: k.páncél.sisak ? 1 : 0,
+      páncél_idea: k.páncél.idea,
+      páncél_rongálódás: k.páncél.rongálódás,
       fegyver_harcmodor_TÉ: hb?.TÉ ?? 0,
       fegyver_harcmodor_VÉ: hb?.VÉ ?? 0,
       fegyver_harcmodor_szint: harcmodorSzint,
@@ -169,7 +178,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       harcmodor_összeg: harcmodorÖsszeg,
       alakzatharc_szint: 0,
     });
-    const fComp = evaluate(data.rules, fCtx, baseArrays, stringCtx);
+    const fComp = evaluate(data.rules, fCtx, lookupArrays, stringCtx);
 
     return {
       fegyver_név: fDef.Fegyver,
@@ -203,7 +212,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       <div className="harc-header">
         <div className="ke-box"><span className="label">KÉ</span><span className="value">{ké}</span></div>
         <div className="sfe-box">
-          <span className="label">SFÉ ({pancelResult.numeric.páncél_lefedettség}%)</span>
+          <span className="label">SFÉ ({páncélLefedettség}%)</span>
           <div className="sfe-values">
             <span className="sfe-line">Fizikai: <strong>{sfé_fizikai}</strong></span>
             <span className="sfe-line" style={{ color: '#aaa' }}>Energia: <strong>{sfé_energia}</strong></span>

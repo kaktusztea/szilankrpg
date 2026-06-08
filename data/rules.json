@@ -147,6 +147,61 @@
       "inputs": ["tsz"]
     },
     {
+      "id": "páncél_struktúra_mgt",
+      "formula": "lookup(struktúrák, név, páncél_alap, mgt)",
+      "inputs": ["struktúrák", "páncél_alap"]
+    },
+    {
+      "id": "páncél_struktúra_sfé_fizikai",
+      "formula": "lookup(struktúrák, név, páncél_alap, sfé_fizikai)",
+      "inputs": ["struktúrák", "páncél_alap"]
+    },
+    {
+      "id": "páncél_struktúra_sfé_energia",
+      "formula": "lookup(struktúrák, név, páncél_alap, sfé_energia)",
+      "inputs": ["struktúrák", "páncél_alap"]
+    },
+    {
+      "id": "páncél_merev",
+      "formula": "lookup(struktúrák, név, páncél_alap, merev)",
+      "inputs": ["struktúrák", "páncél_alap"]
+    },
+    {
+      "id": "páncél_fém",
+      "formula": "lookup(struktúrák, név, páncél_alap, fém)",
+      "inputs": ["struktúrák", "páncél_alap"]
+    },
+    {
+      "id": "páncél_alapanyag_mgt",
+      "formula": "lookup(fémalapanyagok, anyag, páncél_fémalapanyag, mgt)",
+      "inputs": ["fémalapanyagok", "páncél_fémalapanyag"]
+    },
+    {
+      "id": "páncél_alapanyag_sfé_bónusz",
+      "formula": "lookup(fémalapanyagok, anyag, páncél_fémalapanyag, sfé_bónusz)",
+      "inputs": ["fémalapanyagok", "páncél_fémalapanyag"]
+    },
+    {
+      "id": "páncél_méret_mgt",
+      "formula": "lookup(méret_tábla, név, páncél_méret_illeszkedés, érték)",
+      "inputs": ["méret_tábla", "páncél_méret_illeszkedés"]
+    },
+    {
+      "id": "merevvért_csökkentés",
+      "formula": "lookup(merevvért_tábla, fok, merevvért_fok, csökkentés)",
+      "inputs": ["merevvért_tábla", "merevvért_fok"]
+    },
+    {
+      "id": "páncél_csatolt_db",
+      "formula": "páncél_végtagvédettség + páncél_sisak",
+      "inputs": ["páncél_végtagvédettség", "páncél_sisak"]
+    },
+    {
+      "id": "páncél_lefedettség",
+      "formula": "if(páncél_struktúra_mgt + páncél_struktúra_sfé_fizikai, 50 + páncél_végtagvédettség * 10 + páncél_sisak * 10, 0)",
+      "inputs": ["páncél_struktúra_mgt", "páncél_struktúra_sfé_fizikai", "páncél_végtagvédettség", "páncél_sisak"]
+    },
+    {
       "id": "páncél_MGT",
       "formula": "max(0, páncél_struktúra_mgt + páncél_alapanyag_mgt + páncél_csatolt_db * if(páncél_merev, lookup(csatolt_mgt_merev, név, páncél_kidolgozottság, érték), if(páncél_fém, lookup(csatolt_mgt_fém, név, páncél_kidolgozottság, érték), lookup(csatolt_mgt_nemfém, név, páncél_kidolgozottság, érték))) + páncél_méret_mgt - tulajdonságok.erő)",
       "inputs": ["páncél_struktúra_mgt", "páncél_alapanyag_mgt", "páncél_csatolt_db", "páncél_merev", "páncél_fém", "páncél_kidolgozottság", "csatolt_mgt_merev", "csatolt_mgt_fém", "csatolt_mgt_nemfém", "páncél_méret_mgt", "tulajdonságok.erő"]
