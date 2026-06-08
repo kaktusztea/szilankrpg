@@ -99,15 +99,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   // Idea popup
   const [ideaTarget, setIdeaTarget] = useState<{ type: 'fegyver' | 'páncél'; idx: number } | null>(null);
   const [mfTarget, setMfTarget] = useState<number | null>(null);
+  const [anyagTarget, setAnyagTarget] = useState<number | null>(null);
   const ideaMin = ideaTarget?.type === 'fegyver' ? -5 : -4;
   const ideaMax = ideaTarget?.type === 'fegyver' ? 5 : 4;
 
   useEffect(() => {
-    if (!ideaTarget && mfTarget === null) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); } }
+    if (!ideaTarget && mfTarget === null && anyagTarget === null) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [ideaTarget, mfTarget]);
+  }, [ideaTarget, mfTarget, anyagTarget]);
 
   return (
     <div className="screen harcertekek-screen">
@@ -168,9 +169,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
                 <button className="he-idea-btn" onClick={() => handleDoubleTap(`idea-f-${i}`, () => setIdeaTarget({ type: 'fegyver', idx: i }))}>{f.idea}</button>
               </label>
               <label>Anyag:
-                <select value={f.anyag} onChange={e => updateFegyver(i, { anyag: e.target.value })}>
-                  {['acél', 'bronz', 'abbitacél', 'mithrill', 'lunír'].map(a => <option key={a} value={a}>{a}</option>)}
-                </select>
+                <button className="he-idea-btn" onClick={() => handleDoubleTap(`anyag-${i}`, () => setAnyagTarget(i))}>{f.anyag}</button>
               </label>
             </div>
           </div>
@@ -235,18 +234,24 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
             <label>Idea érték</label>
-            <div className="kep-szint-grid" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '6px', maxWidth: `${5 * 42 + 4 * 6}px`, margin: '0 auto' }}>
-              {Array.from({ length: ideaMax - ideaMin + 1 }, (_, i) => ideaMin + i).map(n => {
-                const current = ideaTarget.type === 'fegyver' ? k.fegyverek[ideaTarget.idx]?.idea : k.páncél.idea;
-                return (
-                  <button key={n} className={`fort-fok-btn ${current === n ? 'active' : ''}`} style={{ width: '42px', height: '36px', fontSize: '14px' }} onClick={() => {
-                    if (ideaTarget.type === 'fegyver') updateFegyver(ideaTarget.idx, { idea: n });
-                    else updatePancel({ idea: n });
-                    setIdeaTarget(null);
-                  }}>{n > 0 ? `+${n}` : n}</button>
-                );
-              })}
-            </div>
+            {(() => {
+              const current = ideaTarget.type === 'fegyver' ? k.fegyverek[ideaTarget.idx]?.idea : k.páncél.idea;
+              const selectIdea = (n: number) => { if (ideaTarget.type === 'fegyver') updateFegyver(ideaTarget.idx, { idea: n }); else updatePancel({ idea: n }); setIdeaTarget(null); };
+              const btn = (n: number) => <button key={n} className={`fort-fok-btn ${current === n ? 'active' : ''}`} style={{ width: '36px', height: '36px', fontSize: '13px' }} onClick={() => selectIdea(n)}>{n > 0 ? `+${n}` : n}</button>;
+              return (
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    {Array.from({ length: -ideaMin }, (_, i) => ideaMin + i).map(btn)}
+                  </div>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    {btn(0)}
+                  </div>
+                  <div style={{ display: 'flex', gap: '6px' }}>
+                    {Array.from({ length: ideaMax }, (_, i) => i + 1).map(btn)}
+                  </div>
+                </div>
+              );
+            })()}
           </div>
         </div>,
         document.body
@@ -259,6 +264,19 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
             <div className="fort-fok-radios">
               {[0, 1, 2, 3].map(n => (
                 <button key={n} className={`fort-fok-btn ${k.fegyverek[mfTarget]?.mesterfegyver_fok === n ? 'active' : ''}`} onClick={() => { updateFegyver(mfTarget, { mesterfegyver_fok: n }); setMfTarget(null); }}>{n}</button>
+              ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {anyagTarget !== null && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+              {['acél', 'bronz', 'abbitacél', 'mithrill', 'lunír'].map(a => (
+                <button key={a} className={`fort-fok-btn ${k.fegyverek[anyagTarget]?.anyag === a ? 'active' : ''}`} style={{ width: 'auto', minWidth: '120px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updateFegyver(anyagTarget, { anyag: a }); setAnyagTarget(null); }}>{a}</button>
               ))}
             </div>
           </div>
