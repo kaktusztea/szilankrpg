@@ -104,7 +104,7 @@ export const testKarakter8: Karakter = {
     kidolgozottság: "átlagos",
     sisak: false,
     végtagvédettség: 0,
-    méret_illeszkedés: "passzoló",
+    méret_illeszkedés: "passzol",
     rongálódás: 0,
   },
   felszerelés: { nagy_tárgyak: [] },

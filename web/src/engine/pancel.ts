@@ -47,7 +47,7 @@ export function calcPancelInputs(
   }
 
   const csatoltDb = páncél.végtagvédettség + (páncél.sisak ? 1 : 0);
-  const méretMgt: Record<string, number> = { passzoló: 0, közepesen_más: 3, nagyon_más: 6 };
+  const méretMgt: Record<string, number> = { 'passzol': 0, 'nem passzol': 3, 'borzalmas': 6 };
 
   const csökkentés = merevvértvisBonuszok.find(b => b.fok === merevvértvisFok)?.TÉ_büntetés_csökkentés ?? 0;
 

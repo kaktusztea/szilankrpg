@@ -100,15 +100,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const [ideaTarget, setIdeaTarget] = useState<{ type: 'fegyver' | 'páncél'; idx: number } | null>(null);
   const [mfTarget, setMfTarget] = useState<number | null>(null);
   const [anyagTarget, setAnyagTarget] = useState<number | null>(null);
+  const [pancelPopup, setPancelPopup] = useState<string | null>(null);
   const ideaMin = ideaTarget?.type === 'fegyver' ? -5 : -4;
   const ideaMax = ideaTarget?.type === 'fegyver' ? 5 : 4;
 
   useEffect(() => {
-    if (!ideaTarget && mfTarget === null && anyagTarget === null) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); } }
+    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [ideaTarget, mfTarget, anyagTarget]);
+  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup]);
 
   return (
     <div className="screen harcertekek-screen">
@@ -181,45 +182,17 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
       {/* Páncél */}
       <section className="he-section">
         <h3>Páncél</h3>
-        <div className="he-pancel-fields">
-          <label>Struktúra:
-            <select value={k.páncél.alap} onChange={e => updatePancel({ alap: e.target.value, fémalapanyag: '' })}>
-              <option value="">— nincs —</option>
-              {struktúrák.map(s => <option key={s.struktúra} value={s.struktúra}>{s.struktúra} ({s.leírás})</option>)}
-            </select>
-          </label>
+        <div className="he-fegyver-fields" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-struk', () => setPancelPopup('struktúra'))}>Struktúra: <strong>{k.páncél.alap || '—'}</strong></button>
           {aktStruktúra?.fém && (
-            <label>Fémalapanyag:
-              <select value={k.páncél.fémalapanyag} onChange={e => updatePancel({ fémalapanyag: e.target.value })}>
-                <option value="">acél (alap)</option>
-                {fémalapanyagok.map(a => <option key={a.anyag} value={a.anyag}>{a.anyag}</option>)}
-              </select>
-            </label>
+            <button className="he-field-btn" onClick={() => handleDoubleTap('p-fem', () => setPancelPopup('fémalapanyag'))}>Fémalapanyag: <strong>{k.páncél.fémalapanyag || 'acél'}</strong></button>
           )}
-          <label>Kidolgozottság:
-            <select value={k.páncél.kidolgozottság} onChange={e => updatePancel({ kidolgozottság: e.target.value })}>
-              {['pocsék', 'átlagos', 'mestermunka'].map(v => <option key={v} value={v}>{v}</option>)}
-            </select>
-          </label>
-          <label>Méret:
-            <select value={k.páncél.méret_illeszkedés} onChange={e => updatePancel({ méret_illeszkedés: e.target.value })}>
-              {['passzoló', 'közepesen_más', 'nagyon_más'].map(v => <option key={v} value={v}>{v}</option>)}
-            </select>
-          </label>
-          <label className="he-toggle">Sisak: <input type="checkbox" checked={k.páncél.sisak} onChange={e => updatePancel({ sisak: e.target.checked })} /></label>
-          <label>Végtagvédettség:
-            <select value={k.páncél.végtagvédettség} onChange={e => updatePancel({ végtagvédettség: Number(e.target.value) })}>
-              {[0, 1, 2, 3, 4].map(n => <option key={n} value={n}>{n}</option>)}
-            </select>
-          </label>
-          <label>Idea:
-            <button className="he-idea-btn" onClick={() => handleDoubleTap('idea-p', () => setIdeaTarget({ type: 'páncél', idx: 0 }))}>{k.páncél.idea}</button>
-          </label>
-          <label>Rongálódás:
-            <select value={k.páncél.rongálódás} onChange={e => updatePancel({ rongálódás: Number(e.target.value) })}>
-              {[0, 1, 2, 3, 4, 5].map(n => <option key={n} value={n}>{n}</option>)}
-            </select>
-          </label>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-kid', () => setPancelPopup('kidolgozottság'))}>Kidolgozottság: <strong>{k.páncél.kidolgozottság}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-mer', () => setPancelPopup('méret'))}>Méret: <strong>{k.páncél.méret_illeszkedés}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-sis', () => updatePancel({ sisak: !k.páncél.sisak }))}>Sisak: <strong>{k.páncél.sisak ? 'igen' : 'nem'}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-veg', () => setPancelPopup('végtagvédettség'))}>Végtagvédettség: <strong>{k.páncél.végtagvédettség}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-idea', () => setIdeaTarget({ type: 'páncél', idx: 0 }))}>Idea: <strong>{k.páncél.idea}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-rong', () => setPancelPopup('rongálódás'))}>Rongálódás: <strong>{k.páncél.rongálódás}</strong></button>
         </div>
       </section>
 
@@ -272,6 +245,48 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
               {['acél', 'bronz', 'abbitacél', 'mithrill', 'lunír'].map(a => (
                 <button key={a} className={`fort-fok-btn ${k.fegyverek[anyagTarget]?.anyag === a ? 'active' : ''}`} style={{ width: 'auto', minWidth: '120px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updateFegyver(anyagTarget, { anyag: a }); setAnyagTarget(null); }}>{a}</button>
               ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {pancelPopup && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+              {pancelPopup === 'struktúra' && <>
+                <button className={`fort-fok-btn ${!k.páncél.alap ? 'active' : ''}`} style={{ width: 'auto', minWidth: '140px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePancel({ alap: '', fémalapanyag: '' }); setPancelPopup(null); }}>— nincs —</button>
+                {struktúrák.map(s => (
+                  <button key={s.struktúra} className={`fort-fok-btn ${k.páncél.alap === s.struktúra ? 'active' : ''}`} style={{ width: 'auto', minWidth: '140px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePancel({ alap: s.struktúra, fémalapanyag: '' }); setPancelPopup(null); }}>{s.struktúra}</button>
+                ))}
+              </>}
+              {pancelPopup === 'fémalapanyag' && <>
+                <button className={`fort-fok-btn ${!k.páncél.fémalapanyag ? 'active' : ''}`} style={{ width: 'auto', minWidth: '120px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePancel({ fémalapanyag: '' }); setPancelPopup(null); }}>acél (alap)</button>
+                {fémalapanyagok.map(a => (
+                  <button key={a.anyag} className={`fort-fok-btn ${k.páncél.fémalapanyag === a.anyag ? 'active' : ''}`} style={{ width: 'auto', minWidth: '120px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePancel({ fémalapanyag: a.anyag }); setPancelPopup(null); }}>{a.anyag}</button>
+                ))}
+              </>}
+              {pancelPopup === 'kidolgozottság' && ['pocsék', 'átlagos', 'mestermunka'].map(v => (
+                <button key={v} className={`fort-fok-btn ${k.páncél.kidolgozottság === v ? 'active' : ''}`} style={{ width: 'auto', minWidth: '120px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePancel({ kidolgozottság: v }); setPancelPopup(null); }}>{v}</button>
+              ))}
+              {pancelPopup === 'méret' && ['passzol', 'nem passzol', 'borzalmas'].map(v => (
+                <button key={v} className={`fort-fok-btn ${k.páncél.méret_illeszkedés === v ? 'active' : ''}`} style={{ width: 'auto', minWidth: '140px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePancel({ méret_illeszkedés: v }); setPancelPopup(null); }}>{v}</button>
+              ))}
+              {pancelPopup === 'végtagvédettség' && (
+                <div className="fort-fok-radios">
+                  {[0, 1, 2, 3, 4].map(n => (
+                    <button key={n} className={`fort-fok-btn ${k.páncél.végtagvédettség === n ? 'active' : ''}`} onClick={() => { updatePancel({ végtagvédettség: n }); setPancelPopup(null); }}>{n}</button>
+                  ))}
+                </div>
+              )}
+              {pancelPopup === 'rongálódás' && (
+                <div className="fort-fok-radios">
+                  {[0, 1, 2, 3, 4, 5].map(n => (
+                    <button key={n} className={`fort-fok-btn ${k.páncél.rongálódás === n ? 'active' : ''}`} onClick={() => { updatePancel({ rongálódás: n }); setPancelPopup(null); }}>{n}</button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>,

@@ -74,7 +74,7 @@ function validateKarakterData(k: Karakter, data: GameData): string | null {
 
   // Páncél enum értékek
   const validKidolgozottság = new Set(Object.keys(data.konstansok.páncél_csatolt_tag_mgt.merevvért_fém));
-  const validMéret = new Set(['passzoló', 'közepesen_más', 'nagyon_más']);
+  const validMéret = new Set(['passzol', 'nem passzol', 'borzalmas']);
   const validAnyag = new Set(['', ...data.konstansok.páncél_fémalapanyagok.map(a => a.anyag)]);
   const validStruktúra = new Set(['', ...data.konstansok.páncél_struktúrák.map(s => s.struktúra)]);
 
