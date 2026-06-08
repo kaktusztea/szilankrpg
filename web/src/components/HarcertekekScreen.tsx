@@ -104,15 +104,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const [mfTarget, setMfTarget] = useState<number | null>(null);
   const [anyagTarget, setAnyagTarget] = useState<number | null>(null);
   const [pancelPopup, setPancelPopup] = useState<string | null>(null);
+  const [deleteTarget, setDeleteTarget] = useState<number | null>(null);
   const ideaMin = ideaTarget?.type === 'fegyver' ? -5 : -4;
   const ideaMax = ideaTarget?.type === 'fegyver' ? 5 : 4;
 
   useEffect(() => {
-    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); } }
+    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && deleteTarget === null) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setDeleteTarget(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup]);
+  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, deleteTarget]);
 
   return (
     <div className="screen harcertekek-screen">
@@ -163,7 +164,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
           <div key={i} className="he-fegyver-card">
             <div className="he-fegyver-header">
               <strong>{f.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
-              <button className="fort-delete" onClick={() => removeFegyver(i)}>✕</button>
+              <button className="fort-delete" onClick={() => setDeleteTarget(i)}>✕</button>
             </div>
             <div className="he-fegyver-fields">
               <button className="he-field-btn" onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>MF fok: <strong>{f.mesterfegyver_fok}</strong></button>
@@ -291,6 +292,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
                 </div>
               )}
             </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {deleteTarget !== null && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
+            <label style={{ fontWeight: 'bold' }}>{k.fegyverek[deleteTarget]?.alap.replace(/ \(1K\)$| 1K$/, '')}</label>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { removeFegyver(deleteTarget); setDeleteTarget(null); }}>Fegyver törlése</button>
           </div>
         </div>,
         document.body
