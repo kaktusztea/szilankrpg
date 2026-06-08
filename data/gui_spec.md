@@ -54,11 +54,16 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 ## App fejléc (header)
 
 - `padding: 8px 12px`, háttér: `--primary`, `border-bottom: 1px solid #333`
-- Bal: "Szilánk RPG" (`font-weight: bold, 16px`)
-- Jobb: mód toggle gomb
-  - Szerkesztő: háttér `#ff9800`, szöveg `🔧 Szerkesztés`
-  - Game: háttér `#4caf50`, szöveg `🎮 Game mód`
-  - Szöveg szín mindkettőben: `#000`
+- Bal: "Szilánk RPG" (`font-weight: bold, 16px`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
+- Jobb: gombok (`header-btns`, `gap: 6px`):
+  - 🧪 Teszt: teszt karakter betöltés (megerősítő popup)
+  - 📄 Új: üres karakter (megerősítő popup, `data/empty_karakter.json`)
+  - 💾 Mentés: karakter JSON letöltés (`karakter.név.json`)
+  - 📂 Betöltés: file picker + schema + referenciális validáció
+  - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px
+  - Gombok stílusa: `background: --input-bg; border: 1px solid #555; border-radius: 4px; padding: 4px 8px; font-size: 16px`
+- Megerősítő popup-ok: overlay, centered, label (bold) + dim szöveg + piros gomb
+- Betöltési hiba popup: piros "Betöltési hiba" label + hibaüzenet + OK gomb
 
 ---
 
@@ -69,11 +74,13 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 | Tulajdonságok            | szerkeszthető | read-only                  |
 | Képzettségek             | szerkeszthető (szint, felvétel) | read-only    |
 | Fortélyok                | szerkeszthető (fok, felvétel)   | read-only    |
+| Harcértékek              | szerkeszthető | **nem látszik** (editOnly) |
 | Fegyverek, Páncél        | szerkeszthető | read-only                  |
 | Hátterek                 | szerkeszthető | read-only                  |
 | **Aktív fül**            | szerkeszthető | **szerkeszthető** ✅        |
 | **ÉP / VÉ csökkenés**   | szerkeszthető | **szerkeszthető** ✅        |
 | **Manőver Pont használat** | szerkeszthető | **szerkeszthető** ✅      |
+| **Jegyzetek**            | szerkeszthető | **szerkeszthető** ✅        |
 | Szabályleírás fülek      | read-only     | read-only                  |
 
 ### Viselkedés
@@ -170,10 +177,10 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 ### Fejléc (legfelül)
 - **Név + Szint** sor: két összeérő box
   - Név box (flex:1): `Név: Dorek a Toroni` — double-tap → szerkesztő popup (max 40 karakter)
-  - Szint box: `Szint: 8` — double-tap → slider popup (range 1..konstansok.arányok.max_tsz)
+  - Szint box: `Szint: 8` — double-tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
 - **Faj + Kor** sor (CSAK szerkesztő módban):
   - Faj box (flex:1): inline `<select>` dropdown (26 faj a tables/fajok.json-ból, közvetlenül koppintható)
-  - Kor box: `Kor: 32` — double-tap → slider popup (5-500, lépésköz 5)
+  - Kor box: `Kor: 32` — double-tap → két lépéses popup (tartomány: 10–100/100–200/200–1000, majd érték gombok: 2/5/50-es lépésekkel)
 - **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"Dorek a Toroni (Ember (Északi), 32)"`
 
 ### Tulajdonságok
@@ -213,11 +220,13 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - **Kiterjeszti**: fortélyok listája (normál/erős jelzéssel)
 
 ### KP sáv (Szerkesztő módban, minden fülön)
-- Fix sáv a tab-bar felett
-- Tartalom: `Maradt KP: X    Maradt Szekunder KP: Y`
-- Háttérszín: zöld (normál), piros (ha Maradt KP < 0)
-- Szekunder maradék: `max(0, szekunder_kp - szekunder_költött)`
-- Dinamikusan frissül minden képzettség módosításnál
+- Fix sáv a tab-bar felett, két szekció (bal/jobb, független háttérszín)
+- Bal: `Maradt KP: X` — zöld háttér (normál), piros ha X < 0
+- Jobb: `Primer keret: Y` — zöld háttér (normál), piros ha Y < 0 (primer túllépés)
+- Primer keret = primer_limit - primer_költés
+- Primer költés = primer képzettségek KP + primer fortélyok KP + kp_hm + kp_cm
+- Primer limit = összes_kp + spec_kp
+- Dinamikusan frissül minden módosításnál
 - Game módban eltűnik
 
 ---
@@ -256,8 +265,11 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 - Rövid koppintás: nem csinál semmit
 - Double-tap (350ms): fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
   - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se double-tap-re) — ehelyett "1 fok a maximum" hint (2s)
+  - Mesterfegyver (locked): double-tap → "Mesterfegyver fortélyokat a Harcértékek fülön kezeld!" hint (3s)
 - Felvételkor (dropdown): maxfok>1 → azonnal fok popup; többszörös → megfelelő picker popup
-- ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
+- Mesterfegyver NEM jelenik meg a harci fortély dropdown-ban
+- Mesterfegyver bejegyzések: locked (nem szerkeszthető, nem törölhető), lista tetején, szinkronizálva fegyver példányokból
+- ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb) — locked elemeknél nincs ✕
 - Escape: popup bezárás
 
 ### Viselkedés Game módban
@@ -266,6 +278,45 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
   - Hatás (aktuális fok hatás szövege)
   - Követelmény (ha van)
   - Kiterjeszti (normál + erős képzettség lista, zöld szín)
+
+---
+
+## 4b. Harcértékek fül/screen (editOnly: true — Game módban nem látszik)
+
+HM/CM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban elérhető.
+
+### HM / CM szekció
+- HM TÉ, HM VÉ: +/- gombok + érték
+- CM: +/- gombok + érték
+- Validáció: HM összeg ≤ max_HM, aszimmetria ≤ max_HM_aszimmetria, CM ≤ max_CM
+- Info sor: `HM: X/Y  Aszimmetria: X/Y  CM: X/Y`
+- Piros szín ha túllépés
+
+### Harcmodorok (read-only)
+- Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc szintek
+- A Tul/Képz fülről szinkronizálva
+
+### Fegyverek
+- Fegyver példány kártyák listája
+- Fejléc: fegyver neve (MK fegyvereknél suffix nélkül, `Alapnév` mezőből) + ✕ törlés
+- Mezők (`he-field-btn` stílus, dupla katt → overlay popup):
+  - MF fok: kerek gombok 0-3
+  - Idea: 3 soros popup (-5..-1 / 0 / +1..+5)
+  - Anyag: 1 oszlopos popup (acél, bronz, abbitacél, mithrill, lunír)
+- \+ Új fegyver dropdown: kategóriánként csoportosítva (MK 2K variáns kiszűrve)
+- MK (másfélkezes) fegyverek: 1 kártya a Harcértékek fülön, 2 sor a Harc fülön (1K + 2K)
+- Mesterfegyver szinkron: MF fok módosítás → `syncMfFortelyok` frissíti a fortélyok tömböt
+
+### Páncél
+- Mezők (`he-field-btn` stílus, dupla katt → overlay popup):
+  - Struktúra: lista (konstansok.páncél_struktúrák) + "— nincs —"
+  - Fémalapanyag: csak fém struktúránál látszik
+  - Kidolgozottság: pocsék / átlagos / mestermunka
+  - Méret: passzol / nem passzol / borzalmas
+  - Sisak: toggle (dupla katt negálja, igen/nem)
+  - Végtagvédettség: kerek gombok 0-4
+  - Idea: 3 soros popup (-4..-1 / 0 / +1..+4)
+  - Rongálódás: kerek gombok 0-5
 
 ---
 
@@ -283,6 +334,15 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 
 - Leíró Hátterek: szabad szöveges lista
 - Karma Hátterek: szabad szöveges lista (név + jellemzők/körülmények)
+
+---
+
+## 6b. Jegyzetek fül/screen
+
+- Teljes képernyős `<textarea>` — szabad szöveges jegyzetmező
+- Mindkét módban (szerkesztő + game) elérhető és szerkeszthető
+- Tartalom a karakter fájlba mentődik (`jegyzetek` mező)
+- Placeholder: "Szabad jegyzetek..."
 
 ---
 
@@ -368,7 +428,7 @@ Alul fix, horizontálisan scrollozható szalag.
   - Törlő (`.fort-fok-del`): `border-color: --error; color: --error`
 - Szint grid (képzettségek): `grid-template-columns: repeat(5, 36px); gap: 6px`
 - Fok radios (fortélyok): `flex; gap: 8px; justify-content: center`
-- Értékválasztás azonnal bezárja a popup-ot (nincs OK/Mégse, kivéve Tulajdonság/Szint/Kor slider ahol van)
+- Értékválasztás azonnal bezárja a popup-ot (nincs OK/Mégse gomb)
 
 ---
 
@@ -440,7 +500,8 @@ Deklaratív számítási szabályok dependency graph-ban:
 ### Runtime adatbetöltés (GameData)
 Minden adat `fetchJson`-nel:
 - `tables/konstansok.json` — központi konstansok
-- `tables/fegyverek.json`, `tavfegyverek.json`, `pajzsok.json` — fegyver/pajzs adatok
+- `tables/fegyverek.json` — fegyver adatok (MK_pár, Alapnév mezőkkel)
+- `tables/tavfegyverek.json`, `tables/pajzsok.json` — távfegyver/pajzs adatok
 - `tables/kepzettseg_kp.json` — KP költség tábla szintenként
 - `tables/harcmodor_kepzettsegek_bonuszok.json` — harcmodor bónuszok szintenként
 - `tables/kepzettsegek.json` — 39 képzettség definíció
@@ -449,15 +510,18 @@ Minden adat `fetchJson`-nel:
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
 - `tables/primer_fortelyok.json` — 53 harci+misztikus fortély neve
 - `tables/fortelyok.json` — 168 fortély összefoglaló
-- `data/rules.json` — reactive engine szabályok (19 db)
+- `data/rules.json` — reactive engine szabályok (29 db)
+- `data/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
 
 ### Karakter state struktúra (App szintjén)
-- `tulajdonságok: Tulajdonsagok` — lifted state, reactive engine inputja
-- `képzettségek: { név: string; szint: number }[]` — lifted state, reactive engine ArrayContext
-- `fortélyok: { név: string; fok: number }[]` — lifted state, reactive engine ArrayContext
-- Inicializálás: `testKarakter8.fortélyok` + `fortélyok_kiemelt.kulturkörök` + `fortélyok_kiemelt.helyismeret` → egységes tömbbe
-- A többi karakter adat egyelőre `testKarakter8`-ból jön (statikus)
+- `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
+- Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
+- Derived getterek (early return utáni destructuring): `tulajdonságok`, `képzettségek`, `fortélyok`, `session`
+- Inicializálás: `data.emptyKarakter` betöltéskor (validated)
+- Mentés/betöltés: teljes `karakter` objektum JSON-ként (session-nel együtt)
+- Név/TSz/Kor/Faj: lifted props → TulajdonsagokScreen
 
-A Tulajdonságok/Képzettségek/Fortélyok fülek **szerkesztő** jellegűek (a karakter adatait módosítják).
+A Tulajdonságok/Képzettségek/Fortélyok/Harcértékek fülek **szerkesztő** jellegűek.
 Az Aktív és Harc fülek **runtime** jellegűek (a harc közbeni állapotot kezelik).
+A Jegyzetek fül mindkét módban írható.
 A Szabályleírás fülek **read-only** referenciák.

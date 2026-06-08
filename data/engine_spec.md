@@ -141,6 +141,14 @@ output: KÉ
 note: Másfélkezes (MK) fegyverek: a fegyverek.json-ban két entry van (1K és 2K variáns, 
       eltérő harcértékekkel). A karakter példányban 1 fegyver példány (az 1K nevet tárolja),
       de a Harc fülön mindkét variáns megjelenik. Az MK_pár mező azonosítja a párt.
+      Az Alapnév mező a suffix nélküli display név (pl. "Kard, másfélkezes").
+      
+      Fegyver kategória → harcmodor képzettség mapping:
+        közelharci → Közelharc
+        kardvívó → Kardvívás
+        romboló → Rombolás
+        lándzsavívó → Lándzsavívás
+        ostorharc → Ostorharc
 ```
 
 ```
@@ -256,6 +264,8 @@ formula:  // ismételve minden egyes fegyverre
 
 output: össz_támadás (támadások száma / kör)
 note: Ha össz_támadás >= 2, minden támadásra TÉ:-3 levonás jár (az elsőre is).
+impl: páncél_MGT a reactive engine `páncél_MGT` szabályából jön.
+      A calcFegyverHarcertekek() TS függvény kapja paraméterként.
 ```
 
 ---
@@ -274,6 +284,14 @@ formula:
   sfé_energia = struktúra.sfé_energia + alapanyag.sfé_bónusz + páncél.idea - páncél.rongálódás
 
 output: sfé_fizikai, sfé_energia
+
+reactive rules.json:
+  sfé_fizikai: páncél_struktúra_sfé_fizikai + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás
+  sfé_energia: páncél_struktúra_sfé_energia + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás
+
+impl: A köztes értékek (struktúra SFÉ, alapanyag bónusz, stb.) a calcPancelInputs() TS függvényben
+      számolódnak ki (lookup-ok), és a reactive engine context extras-ként kapja őket.
+      Ha nincs struktúra kiválasztva → minden 0, lefedettség = 0%.
 ```
 
 ---
@@ -307,6 +325,12 @@ formula:
   MGT = MAX(0, MGT)  // nem lehet negatív
 
 output: MGT
+
+reactive rules.json:
+  páncél_MGT: max(0, páncél_struktúra_mgt + páncél_alapanyag_mgt + páncél_csatolt_mgt + páncél_méret_mgt - tulajdonságok.erő)
+
+impl: A köztes inputok (struktúra_mgt, alapanyag_mgt, csatolt_mgt, méret_mgt) a calcPancelInputs()-ből jönnek.
+      A feltételes logika (merev/fém/nem-fém → tag_mgt_per_db) TS-ben marad.
 ```
 
 ---
@@ -326,6 +350,11 @@ formula:
     TÉ_büntetés = 0
 
 output: merevvért_TÉ_büntetés (levonandó a végső TÉ-ből)
+
+reactive rules.json:
+  merevvért_TÉ_büntetés: if(páncél_merev, max(0, páncél_MGT - merevvért_csökkentés), 0)
+
+impl: páncél_merev (0/1) és merevvért_csökkentés a calcPancelInputs()-ből jönnek a context-be.
 ```
 
 ---
@@ -469,10 +498,18 @@ formula:
   // HM elosztás: 1 HM → VAGY 1 TÉ, VAGY 1 VÉ (nem mindkettő!)
   // HM_TÉ + HM_VÉ = HM (összesen)
   // TÉ/VÉ aszimmetria limit:
-  max_diff = FLOOR(tsz / 2)
-  validate: ABS(HM_TÉ - HM_VÉ) ≤ max_diff
+  max_HM_aszimmetria = FLOOR(tsz / 2)
+  validate: ABS(HM_TÉ - HM_VÉ) ≤ max_HM_aszimmetria
 
-output: max_HM, max_CM, max_diff
+output: max_HM, max_CM, max_HM_aszimmetria
+
+reactive rules.json:
+  max_HM: sum_where(harci_fortélyok, fok, is_mesterfegyver, 0) + harcmodor_összeg + alakzatharc_szint
+  max_HM_aszimmetria: floor(tsz / 2)
+  max_CM: tsz * konstansok.arányok.max_cm_perszint
+
+note: A Mesterfegyver fortély fokai NEM számítanak a max_HM-be.
+      A harci_fortélyok ArrayContext-ben {fok, is_mesterfegyver} record-ok vannak.
 ```
 
 ---

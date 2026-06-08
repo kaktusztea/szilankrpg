@@ -17,10 +17,12 @@
 │   ├── fajok/                 ← Faj hátterek (26 db)
 │   ├── tables/                ← Generált JSON táblák (generate_tables.py által: konstansok, fegyverek, távfegyverek, pajzsok, KP, harcmodor bónusz, távharc szorzók, tradíciók, képzettségek, kiterjesztések, fajok, faj keretek, primer fortélyok, fortélyok)
 │   ├── generate_tables.py    ← YAML→JSON generáló script (Vite plugin és prebuild futtatja)
-│   ├── rules.json             ← Reactive engine szabályok (19 deklaratív képlet/aggregáció)
+│   ├── rules.json             ← Reactive engine szabályok (29 deklaratív képlet/aggregáció)
 │   ├── konstansok.yaml        ← Központi konstansok (forrás, JSON-ba generálódik)
+│   ├── empty_karakter.json    ← Üres karakter template (induláskor betöltődik)
+│   ├── test_karakter.json     ← Teszt karakter (single source of truth)
 │   ├── engine_spec.md         ← Engine kalkuláció spec (§1-§20, minden formula)
-│   └── gui_spec.md            ← GUI spec (9 screen, viselkedés, formázás)
+│   └── gui_spec.md            ← GUI spec (11 screen, viselkedés, formázás)
 ├── web/                       ← React + Vite + TypeScript webes app
 │   ├── src/
 │   │   ├── engine/            ← Kalkulációs engine modulok
@@ -45,10 +47,13 @@
 │   │   ├── App.tsx             ← Tab shell + swipe + animáció + Szerk/Game mód
 │   │   ├── App.css             ← Globális stílusok, dark theme
 │   │   └── testdata.ts         ← 8. szintű teszt karakter + elvárt értékek
-│   ├── vite.config.ts          ← Vite config (serveDataPlugin, polling, host)
+│   ├── vite.config.ts          ← Vite config (serveDataPlugin, metadata generation, polling, host)
+│   ├── generate_metadata.py   ← Build metadata generátor (verzió: ÉV.ÉVNAPJA.napibuild)
+│   ├── validate_karakter.py   ← Teszt karakter validáló script
 │   ├── package.json
 │   └── tsconfig.json
 ├── .github/workflows/          ← CI/CD (linkspector, fegyverek, KP, harcmodor, onefile)
+├── code/                       ← Python scriptek (process_fegyverek.py + lib/)
 └── segedlet/                   ← ODS karakteralkotó (v9.3.2)
 ```
 
@@ -79,8 +84,8 @@
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
 - ✅ 168 fortély yaml, 39 képzettség yaml, 26 faj yaml
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
-  - Fejléc: Név (double-tap → szerkesztő popup) + Szint (double-tap → slider popup, max: konstansok.arányok.max_tsz)
-  - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (double-tap → slider 5-500/5)
+  - Fejléc: Név (double-tap → szerkesztő popup) + Szint (double-tap → gombgrid 3-21, 5 oszlop, utolsó sor középre)
+  - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (double-tap → két lépéses popup: tartomány → érték)
   - Game módban Faj+Kor a Név mellé konkatenálódik: "Dorek (Ember (Északi), 32)"
   - Tulajdonságok: fix 2×4 grid, teljes nevek, double-tap → popup gomb-grid (-5..+7), érték választás bezárja
   - Faj limit warning: sárga szín + koppintásra lenyíló "Faj max/min: X" ha túllépés
@@ -116,14 +121,13 @@
   - `js-yaml` runtime dependency eltávolítva → bundle ~43KB-val kisebb (232KB vs 275KB)
   - Minden adat `tables/*.json`-ból töltődik (fetchJson), nincs runtime YAML parse
 - ✅ Reactive Engine (`data/rules.json` + `web/src/engine/reactive.ts`)
-  - Deklaratív dependency graph: 25 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc, SFÉ, távharc VÉ, képzettség limitek, manőver pont, felszerelés, stb.)
-  - Skaláris képletek + aggregáló függvények: `sum()`, `sum_lookup()`, `count()`
+  - Deklaratív dependency graph: 29 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc, SFÉ, MGT, merevvért, távharc VÉ, képzettség limitek, manőver pont, felszerelés, max_HM, max_HM_aszimmetria, stb.)
+  - Skaláris képletek + aggregáló: `sum()`, `sum_lookup()`, `sum_where()`, `count()`, `lookup()`, `if()`
   - Topológiai sorrend: automatikus dependency resolution (skaláris Context + ArrayContext)
-  - HarcScreen: ÉP, KÉ, manőver pont reactive engine-ből
-  - App KP sáv: teljes KP lánc reactive engine-ből (calcKp modul kiváltva)
-  - Validálva: 25/25 szabály helyes az engine_spec.md és a szabályrendszer md alapján
+  - HarcScreen: ÉP, KÉ, manőver pont, SFÉ, páncél_MGT reactive engine-ből
+  - App KP sáv: teljes KP lánc reactive engine-ből
   - testdata.ts expected8: frissítve teljes KP bontással (kp_képzettségek:224, kp_fortélyok:150, kp_hm:192, elköltött:566, maradt:2)
-  - TS-ben marad: spec_kp, kiemelt_kp, fegyver iteráció, fortély módosítók, Fájdalomtűrés enyhítés, páncél MGT
+  - TS-ben marad: spec_kp, kiemelt_kp, calcFegyverHarcertekek (fegyver iteráció), calcPancelInputs (lookup-ok), fortély módosítók, Fájdalomtűrés enyhítés
 - ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
 - ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
 - ✅ Escape gomb: minden popup overlay bezárható Escape-pel
@@ -171,9 +175,22 @@
 - ✅ Harcértékek fül (🛡️, szerkesztő módban, Fortélyok fül mellett)
   - HM/CM vásárlás: +/- gombok, validálás (max_HM, aszimmetria, max_CM)
   - Harcmodorok: read-only lista (Tul/Képz fülről szinkronizálva)
-  - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown), MF fok, Idea popup, anyag
-  - Páncél: struktúra/fémalapanyag/kidolgozottság/méret/sisak/végtagvédettség/idea/rongálódás
+  - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown)
+    - Mezők: MF fok, Idea, Anyag — `he-field-btn` stílus, dupla katt → overlay popup
+    - Per-element double-tap: `tapTimers` Map (key-per-gomb, nincs interferencia)
+    - MK fegyverek: dropdown-ban csak 1K variáns, `Alapnév` mező mint display name (suffix nélkül)
+    - MK 2K variáns: automatikusan megjelenik a Harc fülön mint külön sor
+    - `MK_pár` + `Alapnév` mezők a `fegyverek.json`-ban (process_fegyverek.py generálja)
+  - Páncél: `he-field-btn` stílus, dupla katt → overlay popup
+    - Struktúra, Fémalapanyag (csak fém struktúránál), Kidolgozottság, Méret, Sisak (toggle), Végtagvédettség, Idea, Rongálódás
+    - méret_illeszkedés értékek: `passzol`, `nem passzol`, `borzalmas`
+  - Mesterfegyver fortély szinkronizáció:
+    - Fegyver MF fok módosítás → automatikusan létrehozza/frissíti a Mesterfegyver fortélyt
+    - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején
+    - Dupla katt locked elemre → hint: "Mesterfegyver fortélyokat a Harcértékek fülön kezeld!" (3s)
+    - Mesterfegyver NEM jelenik meg a Fortélyok fül dropdown-jában
 - ✅ Jegyzetek fül (📝): teljes képernyős textarea, mindkét módban elérhető, mentődik karakter fájlba
+- ✅ Harc fül fegyver tábla: dinamikus (karakter.fegyverek-ből), MK párok kibontva, kategória→harcmodor lookup
 
 ## Következő lépések
 1. **Reactive Engine bővítés** — további migrálás a rules.json-ba:
@@ -196,7 +213,8 @@
 - `/mnt/c/repo/szilank.code/web/src/components/HarcScreen.tsx` — Harc fül implementáció
 - `/mnt/c/repo/szilank.code/web/src/components/TulajdonsagokScreen.tsx` — Tulajdonságok + Képzettségek fül
 - `/mnt/c/repo/szilank.code/web/src/components/FortelyokScreen.tsx` — Fortélyok fül
-- `/mnt/c/repo/szilank.code/web/src/engine/` — engine modulok (types, data-loader, reactive, harcertek, pancel, ep, kp, modifiers, limits, tavharc)
+- `/mnt/c/repo/szilank.code/web/src/components/HarcertekekScreen.tsx` — Harcértékek fül
+- `/mnt/c/repo/szilank.code/web/src/engine/` — engine modulok (types, data-loader, reactive, harcertek, pancel, kp)
 - `/mnt/c/repo/szilank.code/data/rules.json` — reactive engine deklaratív szabályok
 
 ## Fontos konvenciók
@@ -234,6 +252,10 @@
 - Fok választó (fortélyok): kerek radio gombok (1..maxfok), aktív=zöld
 - Popup dialógusok: createPortal(document.body) — kiszöknek a screen-slide overflow kontextusból
 - Double-tap: 350ms threshold → popup megnyitás (Név, Szint, Kor, Tulajdonságok, Képzettségek, Fortélyok, ÉP TÉ footer→navigáció)
+- Double-tap Harcértékek fülön: per-element `tapTimers` Map (key: `mf-{i}`, `idea-f-{i}`, `anyag-{i}`, `p-struk`, stb.)
+- Mesterfegyver fortély: locked a Fortélyok fülön (nem törölhető/szerkeszthető), szinkronizálva fegyver.mesterfegyver_fok-ból
+- MK fegyverek: `fegyverek.json` MK_pár (pár másik tagja) + Alapnév (display name suffix nélkül); process_fegyverek.py generálja
+- méret_illeszkedés értékek: `passzol`, `nem passzol`, `borzalmas` (MGT: 0, 3, 6)
 - Faj: inline `<select>` (nincs popup, közvetlenül koppintható szerkesztő módban)
 - Rövid koppintás szerkesztő módban: nem csinál semmit (képzettségek, fortélyok)
 - Rövid koppintás Game módban: accordion info toggle
@@ -246,4 +268,4 @@
 - Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
 - iOS kompatibilitás: double-tap modell (nem long-press), nincs touchstart preventDefault hack, `touch-action: manipulation` CSS
-- **Reactive Engine irányelv**: minden számítási mechanikát a `data/rules.json`-ba kell migrálni, amit csak lehet. A TS engine modulok (ep.ts, kp.ts, harcertek.ts, pancel.ts, limits.ts) fokozatosan kiváltandóak. Cél: a szabályrendszer képletei egy helyen, deklaratívan, nem szétszórva TypeScript fájlokban.
+- **Reactive Engine irányelv**: minden számítási mechanikát a `data/rules.json`-ba kell migrálni, amit csak lehet. A megmaradt TS modulok (kp.ts, harcertek.ts, pancel.ts) fokozatosan kiváltandóak. Cél: a szabályrendszer képletei egy helyen, deklaratívan, nem szétszórva TypeScript fájlokban.
