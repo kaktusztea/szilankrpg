@@ -224,6 +224,17 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       )}
 
       {/* Tulajdonságok */}
+      {!gameMode && (() => {
+        const pontTábla = data.konstansok.tulajdonság_pontok as Record<string, number>;
+        const keret = (data.konstansok.arányok as any).tulajdonság_pont_alap + Math.floor(tsz / 2);
+        const elköltött = TULAJDONSAG_NEVEK.reduce((s, key) => s + (pontTábla[String(tulajdonságok[key])] ?? 0), 0);
+        const maradék = keret - elköltött;
+        return (
+          <div className="tul-pont-bar" style={{ padding: '4px 8px', fontSize: '13px', color: maradék < 0 ? 'var(--error)' : 'var(--text-dim)' }}>
+            <span>Tulajdonság pontok: {elköltött}/{keret}</span>
+          </div>
+        );
+      })()}
       <div className="tul-grid">
         {TULAJDONSAG_NEVEK.map(key => (
           <TulajdonsagCell
