@@ -155,6 +155,31 @@
       "id": "merevvért_TÉ_büntetés",
       "formula": "if(páncél_merev, max(0, páncél_MGT - merevvért_csökkentés), 0)",
       "inputs": ["páncél_merev", "páncél_MGT", "merevvért_csökkentés"]
+    },
+    {
+      "id": "fegyver_TÉ",
+      "formula": "konstansok.harcérték_alap.TÉ + tulajdonságok.erő + tulajdonságok.ügyesség + tulajdonságok.gyorsaság + HM_TÉ + fegyver_harcmodor_TÉ + fegyver_alap_TÉ + fegyver_mf_TÉ + fegyver_fortély_TÉ",
+      "inputs": ["konstansok.harcérték_alap.TÉ", "tulajdonságok.erő", "tulajdonságok.ügyesség", "tulajdonságok.gyorsaság", "HM_TÉ", "fegyver_harcmodor_TÉ", "fegyver_alap_TÉ", "fegyver_mf_TÉ", "fegyver_fortély_TÉ"]
+    },
+    {
+      "id": "fegyver_VÉ",
+      "formula": "konstansok.harcérték_alap.VÉ + tulajdonságok.gyorsaság + tulajdonságok.ügyesség + HM_VÉ + fegyver_harcmodor_VÉ + fegyver_alap_VÉ + fegyver_mf_VÉ + fegyver_fortély_VÉ",
+      "inputs": ["konstansok.harcérték_alap.VÉ", "tulajdonságok.gyorsaság", "tulajdonságok.ügyesség", "HM_VÉ", "fegyver_harcmodor_VÉ", "fegyver_alap_VÉ", "fegyver_mf_VÉ", "fegyver_fortély_VÉ"]
+    },
+    {
+      "id": "fegyver_SP",
+      "formula": "fegyver_alap_SP + min(tulajdonságok.erő, fegyver_erőbónusz_limit) + fegyver_mf_SP + fegyver_fortély_SP",
+      "inputs": ["fegyver_alap_SP", "tulajdonságok.erő", "fegyver_erőbónusz_limit", "fegyver_mf_SP", "fegyver_fortély_SP"]
+    },
+    {
+      "id": "fegyver_harckeret",
+      "formula": "max(0, fegyver_harcmodor_szint + tulajdonságok.gyorsaság - páncél_MGT - felszerelés_mgt + fegyver_fortély_harckeret)",
+      "inputs": ["fegyver_harcmodor_szint", "tulajdonságok.gyorsaság", "páncél_MGT", "felszerelés_mgt", "fegyver_fortély_harckeret"]
+    },
+    {
+      "id": "fegyver_támadások",
+      "formula": "1 + floor(fegyver_harckeret / fegyver_sebesség)",
+      "inputs": ["fegyver_harckeret", "fegyver_sebesség"]
     }
   ]
 }
