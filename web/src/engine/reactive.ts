@@ -154,7 +154,7 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
 export function buildContext(
   tulajdonságok: Record<string, number> | object,
   tsz: number,
-  konstansok: { harcérték_alap: Record<string, number>; kp: Record<string, number>; arányok: Record<string, number> },
+  konstansok: { harcérték_alap: Record<string, number>; kp: Record<string, number>; arányok: Record<string, number>; kp_bónusz?: Record<string, number> },
   extras?: Record<string, number>,
 ): Context {
   const ctx: Context = new Map();
@@ -173,6 +173,11 @@ export function buildContext(
   }
   for (const [key, val] of Object.entries(konstansok.arányok)) {
     ctx.set(`konstansok.arányok.${key}`, val as number);
+  }
+  if (konstansok.kp_bónusz) {
+    for (const [key, val] of Object.entries(konstansok.kp_bónusz)) {
+      ctx.set(`konstansok.kp_bónusz.${key}`, val as number);
+    }
   }
 
   if (extras) {
@@ -193,6 +198,12 @@ export function buildArrayContext(
   kepzettsegKpTable: { szint: number; kp: number }[],
   fortelyKpMap?: Map<string, number>,
   harciFortelyNevek?: Set<string>,
+  opts?: {
+    tsz?: number;
+    ingyenesFortelyok?: { név: string; ingyenes_perszint: number; kp_perfok: number }[];
+    primerKepNevek?: Set<string>;
+    primerFortNevek?: Set<string>;
+  },
 ): ArrayContext {
   const arrays: ArrayContext = new Map();
 
@@ -206,12 +217,56 @@ export function buildArrayContext(
   });
   arrays.set('fortélyok', kpFortélyok.map(f => ({ fok: f.fok })));
 
+  // kp_bónusz_fortélyok: fortélyok with negative kp_perfok (they GIVE KP)
+  if (fortelyKpMap) {
+    const bónusz: Record<string, number | string>[] = [];
+    for (const f of fortélyok) {
+      const perFok = fortelyKpMap.get(f.név) ?? 6;
+      if (perFok < 0) {
+        bónusz.push({ bónusz_kp: f.fok * Math.abs(perFok) });
+      }
+    }
+    arrays.set('kp_bónusz_fortélyok', bónusz);
+  }
+
   arrays.set('kp_tábla', kepzettsegKpTable.map(e => ({ szint: e.szint, kp: e.kp })));
 
-  // harci_fortélyok: for max_HM calculation (is_mesterfegyver: 1 if Mesterfegyver, 0 otherwise)
+  // harci_fortélyok: for max_HM calculation
   if (harciFortelyNevek) {
     const harci = fortélyok.filter(f => harciFortelyNevek.has(f.név));
     arrays.set('harci_fortélyok', harci.map(f => ({ fok: f.fok, is_mesterfegyver: f.név === 'Mesterfegyver' ? 1 : 0 })));
+  }
+
+  // kiemelt_fortélyok: for kiemelt_kp calculation (ingyenes keret felettiek)
+  if (opts?.ingyenesFortelyok && opts.tsz !== undefined) {
+    const kiemelt: Record<string, number | string>[] = [];
+    for (const d of opts.ingyenesFortelyok) {
+      const ingyenesDb = Math.floor((opts.tsz + 1) / d.ingyenes_perszint);
+      const felvettDb = fortélyok.filter(f => f.név === d.név).reduce((s, f) => s + f.fok, 0);
+      const fizetősDb = Math.max(0, felvettDb - ingyenesDb);
+      if (fizetősDb > 0) {
+        kiemelt.push({ fizetős_kp: fizetősDb * d.kp_perfok });
+      }
+    }
+    arrays.set('kiemelt_fortélyok', kiemelt);
+  }
+
+  // primer_képzettségek: for primer költés calculation
+  if (opts?.primerKepNevek) {
+    const primer = képzettségek.filter(k => opts.primerKepNevek!.has(k.név));
+    arrays.set('primer_képzettségek', primer.map(k => ({ szint: k.szint })));
+  }
+
+  // primer_fortélyok: for primer költés calculation (fok * kp_perfok)
+  if (opts?.primerFortNevek && fortelyKpMap) {
+    const primerFort: Record<string, number | string>[] = [];
+    for (const f of fortélyok) {
+      if (opts.primerFortNevek.has(f.név)) {
+        const perFok = fortelyKpMap.get(f.név) ?? 6;
+        if (perFok > 0) primerFort.push({ kp: f.fok * perFok });
+      }
+    }
+    arrays.set('primer_fortélyok', primerFort);
   }
 
   return arrays;

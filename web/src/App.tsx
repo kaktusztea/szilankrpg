@@ -299,31 +299,14 @@ function App() {
 
       {!gameMode && data && (() => {
         const spec = karakter.fortélyok_speciális;
-        const bónusz = data.konstansok.kp_bónusz;
-        let spec_kp = 0;
-        if (spec.analfabéta) spec_kp += bónusz.analfabéta;
-        if (spec.apró_méretű_lény) spec_kp += bónusz.apró_méretű_lény;
-        if (spec.süketség) spec_kp += bónusz.süketség;
-        if (spec.vakság) spec_kp += bónusz.vakság;
-        spec_kp += spec.tartós_sérülés_fok * bónusz.tartós_sérülés_per_fok;
-
         const tsz = karakter.tsz;
-        let kiemelt_kp = 0;
-        for (const d of data.fortelySummaries) {
-          if (d.ingyenes_perszint <= 0) continue;
-          const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
-          const felvettDb = fortélyok.filter(f => f.név === d.név).reduce((s, f) => s + f.fok, 0);
-          const fizetősDb = Math.max(0, felvettDb - ingyenesDb);
-          kiemelt_kp += fizetősDb * d.kp_perfok;
-        }
 
         const harcmodorÖsszeg = ['Közelharc', 'Kardvívás', 'Rombolás', 'Lándzsavívás', 'Ostorharc']
           .reduce((s, n) => s + (képzettségek.find(k => k.név === n)?.szint ?? 0), 0);
         const alakzatharcSzint = képzettségek.find(k => k.név === 'Alakzatharc')?.szint ?? 0;
 
         const kpCtx = buildContext(tulajdonságok, tsz, data.konstansok as any, {
-          spec_kp,
-          kiemelt_kp,
+          spec_tartós_sérülés_fok: spec.tartós_sérülés_fok,
           HM_TÉ: karakter.HM_TÉ,
           HM_VÉ: karakter.HM_VÉ,
           CM: karakter.CM,
@@ -331,44 +314,35 @@ function App() {
           harcmodor_összeg: harcmodorÖsszeg,
           alakzatharc_szint: alakzatharcSzint,
           felszerelés_terhelés: 0,
-          páncél_struktúra_mgt: 0,
-          páncél_alapanyag_mgt: 0,
-          páncél_csatolt_db: 0,
-          páncél_méret_mgt: 0,
-          páncél_merev: 0,
-          páncél_fém: 0,
-          merevvért_csökkentés: 0,
+          páncél_van: 0,
+          páncél_végtagvédettség: 0,
+          páncél_sisak: 0,
+          páncél_idea: 0,
+          páncél_rongálódás: 0,
+          merevvért_fok: 0,
         });
+
         const fortelyKpMap = new Map(data.fortelySummaries.map(d => [d.név, d.ingyenes_perszint > 0 ? 0 : d.kp_perfok]));
         const harciFortelyNevek = new Set(data.fortelySummaries.filter(d => d.csoport === 'harci').map(d => d.név));
-        const arrays = buildArrayContext(képzettségek, fortélyok, data.kepzettsegKp, fortelyKpMap, harciFortelyNevek);
+
+        // Primer képzettség nevek
+        const primerKepNevek = new Set(data.kepzettsegDefs.filter(d => d.primer).map(d => d.név));
+        const harcmodorDef = data.kepzettsegDefs.find(d => d.név === 'Harcmodor');
+        if (harcmodorDef?.többszörös) for (const a of harcmodorDef.többszörös) primerKepNevek.add(a);
+
+        // Ingyenes fortélyok (kiemelt_kp-hoz)
+        const ingyenesFortelyok = data.fortelySummaries.filter(d => d.ingyenes_perszint > 0);
+
+        const arrays = buildArrayContext(képzettségek, fortélyok, data.kepzettsegKp, fortelyKpMap, harciFortelyNevek, {
+          tsz,
+          ingyenesFortelyok,
+          primerKepNevek,
+          primerFortNevek: new Set(data.primerFortelyok),
+        });
         const kpComputed = evaluate(data.rules, kpCtx, arrays);
 
         const maradékKp = kpComputed.get('maradék_kp') ?? 0;
-
-        // Primer költés: primer képzettségek + primer fortélyok + HM + CM
-        const primerKepSet = new Set(data.kepzettsegDefs.filter(d => d.primer).map(d => d.név));
-        const harcmodorDef = data.kepzettsegDefs.find(d => d.név === 'Harcmodor');
-        if (harcmodorDef?.többszörös) for (const a of harcmodorDef.többszörös) primerKepSet.add(a);
-
-        let primerKöltés = 0;
-        for (const kep of képzettségek) {
-          if (primerKepSet.has(kep.név)) {
-            const entry = data.kepzettsegKp.find(e => e.szint === kep.szint);
-            primerKöltés += entry?.kp ?? 0;
-          }
-        }
-        const primerFortSet = new Set(data.primerFortelyok);
-        for (const f of fortélyok) {
-          if (primerFortSet.has(f.név)) {
-            const perFok = fortelyKpMap.get(f.név) ?? 6;
-            if (perFok > 0) primerKöltés += f.fok * perFok;
-          }
-        }
-        primerKöltés += (kpComputed.get('kp_hm') ?? 0) + (kpComputed.get('kp_cm') ?? 0);
-
-        const primerLimit = (kpComputed.get('összes_kp') ?? 0) + spec_kp;
-        const primerMaradt = primerLimit - primerKöltés;
+        const primerMaradt = kpComputed.get('primer_keret') ?? 0;
         const primerTúllépés = primerMaradt < 0;
 
         return (

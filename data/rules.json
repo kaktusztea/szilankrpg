@@ -102,6 +102,36 @@
       "inputs": ["CM", "konstansok.kp.cm"]
     },
     {
+      "id": "spec_kp",
+      "formula": "sum(kp_bónusz_fortélyok, bónusz_kp) + spec_tartós_sérülés_fok * konstansok.kp_bónusz.tartós_sérülés_per_fok",
+      "inputs": ["kp_bónusz_fortélyok", "spec_tartós_sérülés_fok", "konstansok.kp_bónusz.tartós_sérülés_per_fok"]
+    },
+    {
+      "id": "kiemelt_kp",
+      "formula": "sum(kiemelt_fortélyok, fizetős_kp)",
+      "inputs": ["kiemelt_fortélyok"]
+    },
+    {
+      "id": "kp_primer_képzettségek",
+      "formula": "sum_lookup(primer_képzettségek, szint, kp_tábla, szint, kp)",
+      "inputs": ["primer_képzettségek", "kp_tábla"]
+    },
+    {
+      "id": "kp_primer_fortélyok",
+      "formula": "sum(primer_fortélyok, kp)",
+      "inputs": ["primer_fortélyok"]
+    },
+    {
+      "id": "primer_költés",
+      "formula": "kp_primer_képzettségek + kp_primer_fortélyok + kp_hm + kp_cm",
+      "inputs": ["kp_primer_képzettségek", "kp_primer_fortélyok", "kp_hm", "kp_cm"]
+    },
+    {
+      "id": "primer_keret",
+      "formula": "összes_kp + spec_kp - primer_költés",
+      "inputs": ["összes_kp", "spec_kp", "primer_költés"]
+    },
+    {
       "id": "elköltött_kp",
       "formula": "kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp",
       "inputs": ["kp_képzettségek", "kp_fortélyok", "kp_hm", "kp_cm", "kiemelt_kp"]

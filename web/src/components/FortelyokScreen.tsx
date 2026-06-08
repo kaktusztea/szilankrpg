@@ -87,8 +87,12 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   function getFortelyokForCsoport(csoport: string): Fortely[] {
     const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
     const items = fortélyok.filter(f => csoportNevek.has(f.név));
-    // Mesterfegyver items always on top
-    items.sort((a, b) => (a.név === 'Mesterfegyver' ? 0 : 1) - (b.név === 'Mesterfegyver' ? 0 : 1));
+    // Group by név (identical names together), Mesterfegyver always first
+    items.sort((a, b) => {
+      if (a.név === 'Mesterfegyver' && b.név !== 'Mesterfegyver') return -1;
+      if (b.név === 'Mesterfegyver' && a.név !== 'Mesterfegyver') return 1;
+      return a.név.localeCompare(b.név);
+    });
     return items;
   }
 
