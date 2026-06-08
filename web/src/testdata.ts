@@ -52,7 +52,8 @@ export const testKarakter8: Karakter = {
     { név: "Kaszabolás", fok: 2, spec_típus: "", spec_elem: "" },
     { név: "Támadás erőből", fok: 1, spec_típus: "", spec_elem: "" },
     { név: "Fárasztás", fok: 1, spec_típus: "", spec_elem: "" },
-    { név: "Mesterfegyver", fok: 3, spec_típus: "fegyver", spec_elem: "kard, lovag" },
+    { név: "Mesterfegyver", fok: 2, spec_típus: "fegyver", spec_elem: "kard, lovag" },
+    { név: "Mesterfegyver", fok: 1, spec_típus: "fegyver", spec_elem: "tőr" },
     // Általános
     { név: "Építészet", fok: 1, spec_típus: "", spec_elem: "" },
     { név: "Futás", fok: 1, spec_típus: "", spec_elem: "" },

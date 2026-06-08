@@ -28,10 +28,10 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  function showHint(msg: string) {
+  function showHint(msg: string, duration = 2000) {
     setHint(msg);
     if (hintTimer.current) clearTimeout(hintTimer.current);
-    hintTimer.current = setTimeout(() => setHint(''), 2000);
+    hintTimer.current = setTimeout(() => setHint(''), duration);
   }
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; fok: number } | null>(null);
@@ -86,7 +86,10 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
 
   function getFortelyokForCsoport(csoport: string): Fortely[] {
     const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
-    return fortélyok.filter(f => csoportNevek.has(f.név));
+    const items = fortélyok.filter(f => csoportNevek.has(f.név));
+    // Mesterfegyver items always on top
+    items.sort((a, b) => (a.név === 'Mesterfegyver' ? 0 : 1) - (b.név === 'Mesterfegyver' ? 0 : 1));
+    return items;
   }
 
   return (
@@ -98,7 +101,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
           // A nem-többszörös fortélyok egyszer vehetők fel; többszörösök mindig elérhetők
           const usedNonMulti = new Set(slotok.filter(f => !f.spec_típus).map(f => f.név));
           const többszörösNevek = new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név));
-          const available = csoportDefs.filter(d => !usedNonMulti.has(d.név) || többszörösNevek.has(d.név));
+          const available = csoportDefs.filter(d => (!usedNonMulti.has(d.név) || többszörösNevek.has(d.név)) && d.név !== 'Mesterfegyver');
           const collapsed = collapsedGroups.has(csoport);
 
           return (
@@ -124,6 +127,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
                       slot={slot}
                       def={def}
                       isIngyenes={isIngyenes}
+                      locked={slot.név === 'Mesterfegyver'}
                       gameMode={gameMode}
                       isOpen={isOpen}
                       onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
@@ -247,16 +251,17 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok }: P
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, onHint }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint }: {
   slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
   isOpen: boolean;
   isIngyenes: boolean;
+  locked: boolean;
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
   onRemove: () => void;
-  onHint: (msg: string) => void;
+  onHint: (msg: string, duration?: number) => void;
 }) {
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
@@ -273,7 +278,8 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
     if (gameMode) { onToggleInfo(); return; }
     const now = Date.now();
     if (now - lastTap.current < 350) {
-      if (maxfok <= 1) { onHint('1 fok a maximum'); }
+      if (locked) { onHint('Mesterfegyver fortélyokat a Harcértékek fülön kezeld!', 3000); }
+      else if (maxfok <= 1) { onHint('1 fok a maximum'); }
       else { setEditing(true); }
       lastTap.current = 0;
     } else {
@@ -292,7 +298,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
       >
         <span className="fort-név">{label}{isIngyenes ? ' 🎁' : ''}</span>
         <span className="fort-right">
-          {!gameMode && (
+          {!gameMode && !locked && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}`}>{slot.fok}</span>

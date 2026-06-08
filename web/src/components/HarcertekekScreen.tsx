@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, FegyverPeldany, PancelPeldany } from '../engine/types';
@@ -13,6 +13,13 @@ interface Props {
 export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const k = karakter;
   const { konstansok } = data;
+  const lastTap = useRef(0);
+
+  function doubleTap(action: () => void) {
+    const now = Date.now();
+    if (now - lastTap.current < 350) { action(); lastTap.current = 0; }
+    else { lastTap.current = now; }
+  }
 
   // Harcmodor szintek (read-only, Tul/Képz fülről jönnek)
   const harcmodorok = ['Közelharc', 'Kardvívás', 'Rombolás', 'Lándzsavívás', 'Ostorharc'];
@@ -36,13 +43,37 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   function setHM_VÉ(v: number) { setKarakter(prev => prev ? { ...prev, HM_VÉ: Math.max(0, v) } : prev); }
   function setCM(v: number) { setKarakter(prev => prev ? { ...prev, CM: Math.max(0, v) } : prev); }
 
-  // Fegyverek
-  function addFegyver(alap: string) {
-    setKarakter(prev => prev ? { ...prev, fegyverek: [...prev.fegyverek, { alap, név: '', anyag: 'acél', idea: 0, mesterfegyver_fok: 0 }] } : prev);
+  // Fegyverek — with Mesterfegyver fortély sync
+  function syncMfFortelyok(fegyverek: FegyverPeldany[], fortélyok: typeof k.fortélyok) {
+    // Remove all existing Mesterfegyver fortélyok
+    const filtered = fortélyok.filter(f => f.név !== 'Mesterfegyver');
+    // Add one per fegyver that has mesterfegyver_fok > 0
+    const mfEntries = fegyverek
+      .filter(f => f.mesterfegyver_fok > 0)
+      .map(f => ({ név: 'Mesterfegyver', fok: f.mesterfegyver_fok, spec_típus: 'fegyver', spec_elem: f.alap }));
+    return [...mfEntries, ...filtered];
   }
-  function removeFegyver(idx: number) { setKarakter(prev => prev ? { ...prev, fegyverek: prev.fegyverek.filter((_, i) => i !== idx) } : prev); }
+
+  function addFegyver(alap: string) {
+    setKarakter(prev => {
+      if (!prev) return prev;
+      const fegyverek = [...prev.fegyverek, { alap, név: '', anyag: 'acél', idea: 0, mesterfegyver_fok: 0 }];
+      return { ...prev, fegyverek };
+    });
+  }
+  function removeFegyver(idx: number) {
+    setKarakter(prev => {
+      if (!prev) return prev;
+      const fegyverek = prev.fegyverek.filter((_, i) => i !== idx);
+      return { ...prev, fegyverek, fortélyok: syncMfFortelyok(fegyverek, prev.fortélyok) };
+    });
+  }
   function updateFegyver(idx: number, patch: Partial<FegyverPeldany>) {
-    setKarakter(prev => prev ? { ...prev, fegyverek: prev.fegyverek.map((f, i) => i === idx ? { ...f, ...patch } : f) } : prev);
+    setKarakter(prev => {
+      if (!prev) return prev;
+      const fegyverek = prev.fegyverek.map((f, i) => i === idx ? { ...f, ...patch } : f);
+      return { ...prev, fegyverek, fortélyok: syncMfFortelyok(fegyverek, prev.fortélyok) };
+    });
   }
 
   // Páncél
@@ -65,15 +96,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
 
   // Idea popup
   const [ideaTarget, setIdeaTarget] = useState<{ type: 'fegyver' | 'páncél'; idx: number } | null>(null);
+  const [mfTarget, setMfTarget] = useState<number | null>(null);
   const ideaMin = ideaTarget?.type === 'fegyver' ? -5 : -4;
   const ideaMax = ideaTarget?.type === 'fegyver' ? 5 : 4;
 
   useEffect(() => {
-    if (!ideaTarget) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setIdeaTarget(null); }
+    if (!ideaTarget && mfTarget === null) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [ideaTarget]);
+  }, [ideaTarget, mfTarget]);
 
   return (
     <div className="screen harcertekek-screen">
@@ -128,12 +160,10 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
             </div>
             <div className="he-fegyver-fields">
               <label>MF fok:
-                <select value={f.mesterfegyver_fok} onChange={e => updateFegyver(i, { mesterfegyver_fok: Number(e.target.value) })}>
-                  {[0, 1, 2, 3].map(n => <option key={n} value={n}>{n}</option>)}
-                </select>
+                <button className="he-idea-btn" onClick={() => doubleTap(() => setMfTarget(i))}>{f.mesterfegyver_fok}</button>
               </label>
               <label>Idea:
-                <button className="he-idea-btn" onClick={() => setIdeaTarget({ type: 'fegyver', idx: i })}>{f.idea}</button>
+                <button className="he-idea-btn" onClick={() => doubleTap(() => setIdeaTarget({ type: 'fegyver', idx: i }))}>{f.idea}</button>
               </label>
               <label>Anyag:
                 <select value={f.anyag} onChange={e => updateFegyver(i, { anyag: e.target.value })}>
@@ -188,7 +218,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
             </select>
           </label>
           <label>Idea:
-            <button className="he-idea-btn" onClick={() => setIdeaTarget({ type: 'páncél', idx: 0 })}>{k.páncél.idea}</button>
+            <button className="he-idea-btn" onClick={() => doubleTap(() => setIdeaTarget({ type: 'páncél', idx: 0 }))}>{k.páncél.idea}</button>
           </label>
           <label>Rongálódás:
             <select value={k.páncél.rongálódás} onChange={e => updatePancel({ rongálódás: Number(e.target.value) })}>
@@ -214,6 +244,20 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
                   }}>{n > 0 ? `+${n}` : n}</button>
                 );
               })}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {mfTarget !== null && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Mesterfegyver fok</label>
+            <div className="fort-fok-radios">
+              {[0, 1, 2, 3].map(n => (
+                <button key={n} className={`fort-fok-btn ${k.fegyverek[mfTarget]?.mesterfegyver_fok === n ? 'active' : ''}`} onClick={() => { updateFegyver(mfTarget, { mesterfegyver_fok: n }); setMfTarget(null); }}>{n}</button>
+              ))}
             </div>
           </div>
         </div>,
