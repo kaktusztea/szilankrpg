@@ -15,14 +15,16 @@ export interface RulesFile {
 }
 
 export type Context = Map<string, number>;
-export type ArrayContext = Map<string, Record<string, number>[]>;
+export type StringContext = Map<string, string>;
+export type ArrayContext = Map<string, Record<string, number | string>[]>;
 
 /**
  * Evaluate all rules in topological order.
  */
-export function evaluate(rules: Rule[], ctx: Context, arrays?: ArrayContext): Map<string, number> {
+export function evaluate(rules: Rule[], ctx: Context, arrays?: ArrayContext, stringCtx?: StringContext): Map<string, number> {
   const results = new Map<string, number>();
   const arrCtx = arrays ?? new Map();
+  const strCtx = stringCtx ?? new Map();
 
   const pending = [...rules];
   const maxIterations = pending.length * 2;
@@ -31,12 +33,12 @@ export function evaluate(rules: Rule[], ctx: Context, arrays?: ArrayContext): Ma
   while (pending.length > 0 && iterations < maxIterations) {
     iterations++;
     const idx = pending.findIndex(r =>
-      r.inputs.every(inp => ctx.has(inp) || results.has(inp) || arrCtx.has(inp))
+      r.inputs.every(inp => ctx.has(inp) || results.has(inp) || arrCtx.has(inp) || strCtx.has(inp))
     );
     if (idx === -1) break;
 
     const rule = pending.splice(idx, 1)[0];
-    const value = evalFormula(rule.formula, ctx, results, arrCtx);
+    const value = evalFormula(rule.formula, ctx, results, arrCtx, strCtx);
     results.set(rule.id, value);
     ctx.set(rule.id, value);
   }
@@ -54,7 +56,7 @@ export function evaluate(rules: Rule[], ctx: Context, arrays?: ArrayContext): Ma
  *   lookup(arrayName, keyField, keyValue, valueField)
  *   if(condition, thenValue, elseValue)
  */
-function evalFormula(formula: string, ctx: Context, results: Map<string, number>, arrays: ArrayContext): number {
+function evalFormula(formula: string, ctx: Context, results: Map<string, number>, arrays: ArrayContext, stringCtx: StringContext): number {
   // Process aggregate functions first
   let processed = formula;
 
@@ -68,7 +70,7 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
       for (const item of arr) {
         const key = item[field] ?? 0;
         const row = table.find(r => r[keyField] === key);
-        sum += row ? (row[valueField] ?? 0) : 0;
+        sum += Number(row ? (row[valueField] ?? 0) : 0);
       }
       return String(sum);
     }
@@ -81,7 +83,7 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
       const arr = arrays.get(arrayName) ?? [];
       const fv = Number(filterValue);
       const filtered = arr.filter(item => item[filterField] === fv);
-      return String(filtered.reduce((s, item) => s + (item[sumField] ?? 0), 0));
+      return String(filtered.reduce((s, item) => s + Number(item[sumField] ?? 0), 0));
     }
   );
 
@@ -90,7 +92,7 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
     /sum\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+)\)/g,
     (_match, arrayName, field) => {
       const arr = arrays.get(arrayName) ?? [];
-      return String(arr.reduce((s, item) => s + (item[field] ?? 0), 0));
+      return String(arr.reduce((s, item) => s + Number(item[field] ?? 0), 0));
     }
   );
 
@@ -102,14 +104,27 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
     }
   );
 
-  // lookup(arrayName, keyField, keyValue, valueField)
+  // lookup(arrayName, keyField, keyValue, valueField) — keyValue resolved from context
   processed = processed.replace(
     /lookup\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_0-9.]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+)\)/g,
     (_match, arrayName, keyField, keyValue, valueField) => {
       const arr = arrays.get(arrayName) ?? [];
-      const kv = Number(keyValue) || 0;
+      // Resolve keyValue: check if it's a context variable name or a literal number
+      let kv: number | string;
+      const ctxVal = ctx.get(keyValue) ?? results.get(keyValue);
+      if (ctxVal !== undefined) {
+        kv = ctxVal; // numeric from context
+      } else {
+        kv = Number(keyValue) || 0;
+      }
+      // Check string context for string-keyed lookups
+      const strCtxVal = stringCtx.get(keyValue);
+      if (strCtxVal !== undefined) {
+        const row = arr.find(r => r[keyField] === strCtxVal);
+        return String(Number(row ? (row[valueField] ?? 0) : 0));
+      }
       const row = arr.find(r => r[keyField] === kv);
-      return String(row ? (row[valueField] ?? 0) : 0);
+      return String(Number(row ? (row[valueField] ?? 0) : 0));
     }
   );
 

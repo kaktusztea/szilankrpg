@@ -80,10 +80,20 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
   // Páncél: compute inputs for reactive engine
   const merevvértFok = k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
-  const pancelInputs = calcPancelInputs(
+  const pancelResult = calcPancelInputs(
     k.páncél, konstansok.páncél_struktúrák, konstansok.páncél_fémalapanyagok,
-    konstansok.páncél_csatolt_tag_mgt, merevvértFok, konstansok.merevvértviselet_bónuszok,
+    merevvértFok, konstansok.merevvértviselet_bónuszok,
   );
+
+  // Build lookup tables for csatolt_mgt (string-keyed)
+  const csatoltMgt = konstansok.páncél_csatolt_tag_mgt;
+  const csatoltArrays = new Map<string, Record<string, number | string>[]>();
+  csatoltArrays.set('csatolt_mgt_merev', Object.entries(csatoltMgt.merevvért_fém).map(([k, v]) => ({ név: k, érték: v })));
+  csatoltArrays.set('csatolt_mgt_fém', Object.entries(csatoltMgt.hajlékonyvért_fém).map(([k, v]) => ({ név: k, érték: v })));
+  csatoltArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([k, v]) => ({ név: k, érték: v })));
+
+  const stringCtx = new Map<string, string>();
+  stringCtx.set('páncél_kidolgozottság', pancelResult.strings.páncél_kidolgozottság);
 
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
     fortélyMod_KÉ: fortelyKE,
@@ -93,9 +103,10 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     CM: k.CM,
     felszerelés_terhelés: 0,
     alakzatharc_szint: 0,
-    ...pancelInputs,
+    ...pancelResult.numeric,
   });
-  const computed = evaluate(data.rules, ctx);
+  const baseArrays = new Map([...csatoltArrays]);
+  const computed = evaluate(data.rules, ctx, baseArrays, stringCtx);
 
   const épValue = computed.get('ÉP') ?? 40;
   const ké = computed.get('KÉ') ?? 0;
@@ -129,7 +140,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
     // Evaluate reactive rules with weapon-specific context
     const fCtx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
-      ...pancelInputs,
+      ...pancelResult.numeric,
       HM_TÉ: k.HM_TÉ,
       HM_VÉ: k.HM_VÉ,
       felszerelés_mgt: 0,
@@ -152,7 +163,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       harcmodor_összeg: harcmodorÖsszeg,
       alakzatharc_szint: 0,
     });
-    const fComp = evaluate(data.rules, fCtx);
+    const fComp = evaluate(data.rules, fCtx, baseArrays, stringCtx);
 
     return {
       fegyver_név: fDef.Fegyver,
@@ -186,7 +197,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       <div className="harc-header">
         <div className="ke-box"><span className="label">KÉ</span><span className="value">{ké}</span></div>
         <div className="sfe-box">
-          <span className="label">SFÉ ({pancelInputs.páncél_lefedettség}%)</span>
+          <span className="label">SFÉ ({pancelResult.numeric.páncél_lefedettség}%)</span>
           <div className="sfe-values">
             <span className="sfe-line">Fizikai: <strong>{sfé_fizikai}</strong></span>
             <span className="sfe-line" style={{ color: '#aaa' }}>Energia: <strong>{sfé_energia}</strong></span>
