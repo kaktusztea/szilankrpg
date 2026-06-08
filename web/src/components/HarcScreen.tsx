@@ -2,7 +2,6 @@ import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session } from '../engine/types';
-import { calcFegyverHarcertekek } from '../engine/harcertek';
 import { calcPancelInputs } from '../engine/pancel';
 import { evaluate, buildContext } from '../engine/reactive';
 import { EpTable } from './EpTable';
@@ -101,7 +100,6 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const épValue = computed.get('ÉP') ?? 40;
   const ké = computed.get('KÉ') ?? 0;
   const manöverPont = computed.get('manőver_pont') ?? 0;
-  const pancelMGT = computed.get('páncél_MGT') ?? 0;
   const sfé_fizikai = computed.get('sfé_fizikai') ?? 0;
   const sfé_energia = computed.get('sfé_energia') ?? 0;
 
@@ -124,16 +122,47 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
   const fegyverResults = fegyverRows.map(({ fDef, mfFok }) => {
     const kat = fDef.Kategória;
-    // Lookup harcmodor szint from képzettségek based on kategória
     const harcmodorNév = kat === 'közelharci' ? 'Közelharc' : kat === 'kardvívó' ? 'Kardvívás' : kat === 'romboló' ? 'Rombolás' : kat === 'lándzsavívó' ? 'Lándzsavívás' : kat === 'ostorharc' ? 'Ostorharc' : 'Közelharc';
     const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
     const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
-    return calcFegyverHarcertekek(
-      k.tulajdonságok, k.HM_TÉ, k.HM_VÉ, harcmodorSzint,
-      { TÉ: hb?.TÉ ?? 0, VÉ: hb?.VÉ ?? 0 }, fDef, mfFok,
-      konstansok.mesterfegyver_bónuszok, konstansok.harcérték_alap,
-      0, 0, 0, 1, pancelMGT, 0,
-    );
+    const mf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
+
+    // Evaluate reactive rules with weapon-specific context
+    const fCtx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
+      ...pancelInputs,
+      HM_TÉ: k.HM_TÉ,
+      HM_VÉ: k.HM_VÉ,
+      felszerelés_mgt: 0,
+      fegyver_harcmodor_TÉ: hb?.TÉ ?? 0,
+      fegyver_harcmodor_VÉ: hb?.VÉ ?? 0,
+      fegyver_harcmodor_szint: harcmodorSzint,
+      fegyver_alap_TÉ: parseInt(fDef.TÉ) || 0,
+      fegyver_alap_VÉ: parseInt(fDef.VÉ) || 0,
+      fegyver_alap_SP: parseInt(fDef.SP) || 0,
+      fegyver_erőbónusz_limit: parseInt(fDef['Erőbónusz limit']) || 99,
+      fegyver_sebesség: parseInt(fDef.Sebesség) || 6,
+      fegyver_mf_TÉ: mf.TÉ,
+      fegyver_mf_VÉ: mf.VÉ,
+      fegyver_mf_SP: mf.SP,
+      fegyver_fortély_TÉ: 0,
+      fegyver_fortély_VÉ: 0,
+      fegyver_fortély_SP: 0,
+      fegyver_fortély_harckeret: 1, // Harckeret növelés fortély (TODO: dynamic)
+      fortélyMod_KÉ: fortelyKE,
+      harcmodor_összeg: harcmodorÖsszeg,
+      alakzatharc_szint: 0,
+    });
+    const fComp = evaluate(data.rules, fCtx);
+
+    return {
+      fegyver_név: fDef.Fegyver,
+      TÉ: fComp.get('fegyver_TÉ') ?? 0,
+      VÉ: fComp.get('fegyver_VÉ') ?? 0,
+      SP: fComp.get('fegyver_SP') ?? 0,
+      támadások: fComp.get('fegyver_támadások') ?? 1,
+      pengehossz: parseFloat(fDef.Pengehossz) || 0,
+      sebzésmód: fDef['Sebzés módja'],
+    };
   });
 
   // Pajzs VÉ
