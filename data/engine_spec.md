@@ -138,6 +138,12 @@ output: KÉ
 ## 5. Támadó Érték (TÉ) — fegyverenként
 
 ```
+note: Másfélkezes (MK) fegyverek: a fegyverek.json-ban két entry van (1K és 2K variáns, 
+      eltérő harcértékekkel). A karakter példányban 1 fegyver példány (az 1K nevet tárolja),
+      de a Harc fülön mindkét variáns megjelenik. Az MK_pár mező azonosítja a párt.
+```
+
+```
 input:  karakter.tulajdonságok.erő, karakter.tulajdonságok.ügyesség,
         karakter.tulajdonságok.gyorsaság,
         karakter.HM_TÉ,
