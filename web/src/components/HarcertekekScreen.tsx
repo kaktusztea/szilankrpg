@@ -148,6 +148,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
       </section>
 
       {/* Harcmodorok (read-only) */}
+      {harcmodorSzintek.some(h => h.szint > 0) && (
       <section className="he-section">
         <h3>Harcmodorok</h3>
         <div className="he-harcmodor-list">
@@ -156,6 +157,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
           ))}
         </div>
       </section>
+      )}
 
       {/* Fegyverek */}
       <section className="he-section">
