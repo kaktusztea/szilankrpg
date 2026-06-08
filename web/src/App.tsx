@@ -260,7 +260,7 @@ function App() {
   const { tulajdonságok, képzettségek, fortélyok, session } = karakter;
 
   return (
-    <div className="app" onContextMenu={e => e.preventDefault()} onSelect={e => e.preventDefault()}>
+    <div className="app" onContextMenu={e => e.preventDefault()}>
       <header className="header">
         <span className="title" onClick={handleTitleTap}>Szilánk RPG</span>
         <div className="header-btns">
