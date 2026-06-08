@@ -29,6 +29,8 @@ interface Props {
   setKépzettségek: React.Dispatch<React.SetStateAction<KepzettsegSlot[]>>;
   név: string;
   setNév: (v: string) => void;
+  játékos: string;
+  setJátékos: (v: string) => void;
   tsz: number;
   setTsz: (v: number) => void;
   kor: number;
@@ -37,7 +39,7 @@ interface Props {
   setFaj: (v: string) => void;
 }
 
-export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, tsz, setTsz, kor, setKor, faj, setFaj }: Props) {
+export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj }: Props) {
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
   const [editingTsz, setEditingTsz] = useState(false);
@@ -45,6 +47,9 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
   const lastTapTsz = useRef(0);
   const [editingKor, setEditingKor] = useState(false);
   const lastTapKor = useRef(0);
+  const [editingJátékos, setEditingJátékos] = useState(false);
+  const [tempJátékos, setTempJátékos] = useState('');
+  const lastTapJátékos = useRef(0);
 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
@@ -55,7 +60,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
         setEditingNév(false); setEditingTsz(false);
-        setEditingKor(false); setDeleteTarget(null); setPendingEditIdx(null);
+        setEditingKor(false); setEditingJátékos(false); setDeleteTarget(null); setPendingEditIdx(null);
         setPromptState(null);
       }
     }
@@ -207,7 +212,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       </div>
 
       {/* Faj + Kor - csak szerkesztő módban */}
-      {!gameMode && (
+      {!gameMode && (<>
         <div className="tul-faj-kor-row">
           <div className="tul-faj-row">
             <span className="tul-header-label">Faj:</span>
@@ -221,7 +226,12 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
             <span className="tul-header-label">Kor:</span> <strong>{kor}</strong>
           </div>
         </div>
-      )}
+        <div className="tul-header-box"
+          onClick={() => { const now = Date.now(); if (now - lastTapJátékos.current < 350) { setEditingJátékos(true); setTempJátékos(játékos); lastTapJátékos.current = 0; } else { lastTapJátékos.current = now; } }}
+        >
+          <span className="tul-header-label">Játékos:</span> <strong>{játékos || '—'}</strong>
+        </div>
+      </>)}
 
       {/* Tulajdonságok */}
       {!gameMode && (() => {
@@ -387,6 +397,19 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       {editingKor && createPortal(
         <div className="kep-prompt-overlay">
           <KorPicker kor={kor} onSelect={v => { setKor(v); setEditingKor(false); }} />
+        </div>,
+        document.body
+      )}
+
+      {editingJátékos && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Játékos neve</label>
+            <input autoFocus maxLength={40} value={tempJátékos} onChange={e => setTempJátékos(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') { setJátékos(tempJátékos); setEditingJátékos(false); } }} />
+            <div className="kep-prompt-btns">
+              <button onClick={() => { setJátékos(tempJátékos); setEditingJátékos(false); }}>OK</button>
+            </div>
+          </div>
         </div>,
         document.body
       )}

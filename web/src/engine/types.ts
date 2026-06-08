@@ -80,6 +80,7 @@ export interface Session {
 export interface Karakter {
   schema_version: number;
   név: string;
+  játékos: string;
   tsz: number;
   leírás: string;
   kor: number;

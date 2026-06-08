@@ -5,6 +5,7 @@ import { DEFAULT_SESSION } from './engine/types';
 export const testKarakter8: Karakter = {
   schema_version: 2,
   név: "Dorek a Toroni",
+  játékos: "",
   tsz: 8,
   leírás: "Toroni zsoldos lovag",
   kor: 32,
