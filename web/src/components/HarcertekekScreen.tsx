@@ -183,17 +183,17 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
       {/* Páncél */}
       <section className="he-section">
         <h3>Páncél</h3>
-        <div className="he-fegyver-fields" style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
+        <div className="he-fegyver-fields">
           <button className="he-field-btn" onClick={() => handleDoubleTap('p-struk', () => setPancelPopup('struktúra'))}>Struktúra: <strong>{k.páncél.alap || '—'}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-idea', () => setIdeaTarget({ type: 'páncél', idx: 0 }))}>Idea: <strong>{k.páncél.idea}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-kid', () => setPancelPopup('kidolgozottság'))}>Kidolgozottság: <strong>{k.páncél.kidolgozottság}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-sis', () => updatePancel({ sisak: !k.páncél.sisak }))}>Sisak: <strong>{k.páncél.sisak ? 'igen' : 'nem'}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-veg', () => setPancelPopup('végtagvédettség'))}>Végtagvédettség: <strong>{k.páncél.végtagvédettség}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-mer', () => setPancelPopup('méret'))}>Méret: <strong>{k.páncél.méret_illeszkedés}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('p-rong', () => setPancelPopup('rongálódás'))}>Rongálódás: <strong>{k.páncél.rongálódás}</strong></button>
           {aktStruktúra?.fém && (
             <button className="he-field-btn" onClick={() => handleDoubleTap('p-fem', () => setPancelPopup('fémalapanyag'))}>Fémalapanyag: <strong>{k.páncél.fémalapanyag || 'acél'}</strong></button>
           )}
-          <button className="he-field-btn" onClick={() => handleDoubleTap('p-kid', () => setPancelPopup('kidolgozottság'))}>Kidolgozottság: <strong>{k.páncél.kidolgozottság}</strong></button>
-          <button className="he-field-btn" onClick={() => handleDoubleTap('p-mer', () => setPancelPopup('méret'))}>Méret: <strong>{k.páncél.méret_illeszkedés}</strong></button>
-          <button className="he-field-btn" onClick={() => handleDoubleTap('p-sis', () => updatePancel({ sisak: !k.páncél.sisak }))}>Sisak: <strong>{k.páncél.sisak ? 'igen' : 'nem'}</strong></button>
-          <button className="he-field-btn" onClick={() => handleDoubleTap('p-veg', () => setPancelPopup('végtagvédettség'))}>Végtagvédettség: <strong>{k.páncél.végtagvédettség}</strong></button>
-          <button className="he-field-btn" onClick={() => handleDoubleTap('p-idea', () => setIdeaTarget({ type: 'páncél', idx: 0 }))}>Idea: <strong>{k.páncél.idea}</strong></button>
-          <button className="he-field-btn" onClick={() => handleDoubleTap('p-rong', () => setPancelPopup('rongálódás'))}>Rongálódás: <strong>{k.páncél.rongálódás}</strong></button>
         </div>
       </section>
 
