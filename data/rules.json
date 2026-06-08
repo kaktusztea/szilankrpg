@@ -198,8 +198,8 @@
     },
     {
       "id": "páncél_lefedettség",
-      "formula": "if(páncél_struktúra_mgt + páncél_struktúra_sfé_fizikai, 50 + páncél_végtagvédettség * 10 + páncél_sisak * 10, 0)",
-      "inputs": ["páncél_struktúra_mgt", "páncél_struktúra_sfé_fizikai", "páncél_végtagvédettség", "páncél_sisak"]
+      "formula": "if(páncél_van, 50 + páncél_végtagvédettség * 10 + páncél_sisak * 10, 0)",
+      "inputs": ["páncél_van", "páncél_végtagvédettség", "páncél_sisak"]
     },
     {
       "id": "páncél_MGT",

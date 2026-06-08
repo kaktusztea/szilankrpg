@@ -130,7 +130,7 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
 
   // Replace remaining identifiers with their values (before if() processing)
   const resolved = processed.replace(/[a-záéíóöőúüűA-ZÁÉÍÓÖŐÚÜŰ_][a-záéíóöőúüűA-ZÁÉÍÓÖŐÚÜŰ0-9_.]*/g, (match) => {
-    if (match === 'floor' || match === 'ceil' || match === 'min' || match === 'max' || match === 'abs') return match;
+    if (match === 'floor' || match === 'ceil' || match === 'min' || match === 'max' || match === 'abs' || match === 'if') return match;
     const val = results.get(match) ?? ctx.get(match) ?? 0;
     return String(val);
   });
