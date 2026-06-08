@@ -65,7 +65,7 @@ páncél:
   kidolgozottság: "átlagos"   # pocsék, átlagos, mestermunka
   sisak: false
   végtagvédettség: 0          # 0-4
-  méret_illeszkedés: "passzoló"  # passzoló, közepesen_más, nagyon_más
+  méret_illeszkedés: "passzol"  # passzol, nem passzol, borzalmas
   rongálódás: 0               # SFÉ csökkenés
 
 felszerelés:

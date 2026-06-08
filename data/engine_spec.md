@@ -295,7 +295,7 @@ formula:
   csatolt_db = végtagvédettség + (1 if sisak else 0)
   csatolt_mgt = csatolt_db × tag_mgt_per_db
 
-  méret_mgt = { "passzoló": 0, "közepesen_más": 3, "nagyon_más": 6 }[méret_illeszkedés]
+  méret_mgt = { "passzol": 0, "nem passzol": 3, "borzalmas": 6 }[méret_illeszkedés]
 
   MGT = struktúra.mgt + alapanyag_mgt + csatolt_mgt + méret_mgt - erő
   MGT = MAX(0, MGT)  // nem lehet negatív

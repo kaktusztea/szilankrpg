@@ -10,7 +10,7 @@ idea: 0                       # SFÉ bónusz/büntetés [-4; +4]
 kidolgozottság: ""            # pocsék, átlagos, mestermunka
 sisak: false                  # Van-e sisak tag (10% védelem)
 végtagvédettség: 0            # 0-4 (felkarok, alkarok, combok, lábszárak — tagonként 10%)
-méret_illeszkedés: ""         # passzoló, közepesen_más, nagyon_más
+méret_illeszkedés: ""         # passzol, nem passzol, borzalmas
 sfé:
   fizikai: 0
   energia: 0
