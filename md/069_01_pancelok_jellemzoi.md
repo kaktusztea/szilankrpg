@@ -97,6 +97,7 @@ Idea (±)
 
 ```
 Mennyire passzol?
+  → passzol, nem-passzol, borzalmas
   → vértviselő testére
   → Hat erre: MGT
 ```

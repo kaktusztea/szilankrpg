@@ -137,9 +137,9 @@ Merevvért, fém
 ## ⚜️ MGT módosító: Rossz méretű páncél
 
 ```
-+0: passzol a méret
-+3: közepesen más méret
-+6: nagyon más méret
++0: passzol
++3: nem passzol
++6: borzalmas
 ```
 
 <br />
