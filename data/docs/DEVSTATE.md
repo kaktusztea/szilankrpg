@@ -5,24 +5,29 @@
 /mnt/c/repo/szilank.code/
 ├── md/                        ← Éles szabályrendszer (markdown)
 ├── data/                      ← Adatfájlok
+│   ├── docs/                  ← Specifikációk, fejlesztői doksik
+│   │   ├── DEVSTATE.md        ← Fejlesztési állapot (ez a fájl)
+│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§20)
+│   │   └── gui_spec.md        ← GUI spec (screen-ek, viselkedés, formázás)
+│   ├── sources/               ← YAML forrásadatok (amiből generálunk)
+│   │   ├── konstansok.yaml    ← Központi konstansok (forrás, JSON-ba generálódik)
+│   │   ├── harcihelyzetek.yaml
+│   │   ├── kepzettsegek/      ← Képzettség adatfájlok (39 db)
+│   │   ├── fortelyok/         ← Fortély adatfájlok (168 db, csoportonként alkönyvtár)
+│   │   │   ├── harci/         (44 db)
+│   │   │   ├── altalanos/     (41 db)
+│   │   │   ├── szabad/        (59 db)
+│   │   │   ├── erzekek/       (6 db)
+│   │   │   ├── kiemelt/       (9 db)
+│   │   │   └── misztikus/     (9 db)
+│   │   └── fajok/             ← Faj hátterek (26 db)
 │   ├── schemas/               ← YAML sémák (fortely, kepzettseg, karakter, pancel, fegyver, faj)
-│   ├── fortelyok/             ← Fortély adatfájlok (168 db, csoportonként alkönyvtár)
-│   │   ├── harci/             (44 db, mind részletes)
-│   │   ├── altalanos/         (41 db, mind részletes)
-│   │   ├── szabad/            (59 db, alap kitöltés)
-│   │   ├── erzekek/           (6 db, mind részletes)
-│   │   ├── kiemelt/           (9 db, mind részletes)
-│   │   └── misztikus/         (9 db, mind részletes)
-│   ├── kepzettsegek/          ← Képzettség adatfájlok (39 db)
-│   ├── fajok/                 ← Faj hátterek (26 db)
-│   ├── tables/                ← Generált JSON táblák (generate_tables.py által: konstansok, fegyverek, távfegyverek, pajzsok, KP, harcmodor bónusz, távharc szorzók, tradíciók, képzettségek, kiterjesztések, fajok, faj keretek, primer fortélyok, fortélyok)
-│   ├── generate_tables.py    ← YAML→JSON generáló script (Vite plugin és prebuild futtatja)
+│   ├── tables/                ← Generált + statikus JSON táblák (runtime)
+│   ├── karakter/              ← Karakter template-ek
+│   │   ├── empty_karakter.json  ← Üres karakter template
+│   │   └── test_karakter.json   ← Teszt karakter (single source of truth)
 │   ├── rules.json             ← Reactive engine szabályok (53 deklaratív képlet/aggregáció)
-│   ├── konstansok.yaml        ← Központi konstansok (forrás, JSON-ba generálódik)
-│   ├── empty_karakter.json    ← Üres karakter template (induláskor betöltődik)
-│   ├── test_karakter.json     ← Teszt karakter (single source of truth)
-│   ├── engine_spec.md         ← Engine kalkuláció spec (§1-§20, minden formula)
-│   └── gui_spec.md            ← GUI spec (11 screen, viselkedés, formázás)
+│   └── generate_tables.py     ← YAML→JSON generáló script (Vite plugin és prebuild futtatja)
 ├── web/                       ← React + Vite + TypeScript webes app
 │   ├── src/
 │   │   ├── engine/            ← Kalkulációs engine modulok
@@ -41,15 +46,14 @@
 │   │   │   ├── FortelyokScreen.css
 │   │   │   ├── HarcertekekScreen.tsx    ← Harcértékek fül (KÉSZ)
 │   │   │   └── HarcertekekScreen.css
-│   │   ├── App.tsx             ← Tab shell + swipe + animáció + Szerk/Game mód
-│   │   ├── App.css             ← Globális stílusok, dark theme
-│   │   └── testdata.ts         ← 8. szintű teszt karakter + elvárt értékek
+│   │   ├── App.tsx             ← Tab shell + swipe + animáció + Szerk/Game mód + Napló
+│   │   └── App.css             ← Globális stílusok, dark theme
 │   ├── vite.config.ts          ← Vite config (serveDataPlugin, metadata generation, polling, host)
 │   ├── generate_metadata.py   ← Build metadata generátor (verzió: ÉV.ÉVNAPJA.napibuild)
 │   ├── validate_karakter.py   ← Teszt karakter validáló script
 │   ├── package.json
 │   └── tsconfig.json
-├── .github/workflows/          ← CI/CD (linkspector, fegyverek, KP, harcmodor, onefile)
+├── .github/workflows/          ← CI/CD (linkspector, fegyverek, KP, harcmodor, onefile, deploy)
 ├── code/                       ← Python scriptek (process_fegyverek.py + lib/)
 └── segedlet/                   ← ODS karakteralkotó (v9.3.2)
 ```
@@ -141,8 +145,8 @@
 - ✅ Karakter mentés/betöltés (JSON export/import)
   - 💾 Mentés gomb: `karakter.név.json` letöltés + `mentés_dátum` timestamp
   - 📂 Betöltés gomb: file picker, schema validáció (incl. napló tömb)
-  - 📄 Új karakter gomb: megerősítő popup, `data/empty_karakter.json`-ból tölti
-  - 🧪 Teszt karakter gomb: megerősítő popup, `data/test_karakter.json` runtime fetch + referenciális validáció
+  - 📄 Új karakter gomb: megerősítő popup, `data/karakter/empty_karakter.json`-ból tölti
+  - 🧪 Teszt karakter gomb: megerősítő popup, `data/karakter/test_karakter.json` runtime fetch + referenciális validáció
   - Validáció betöltéskor: schema struktúra + referenciális integritás (faj, fortélyok, képzettségek, páncél enum-ok, fegyver anyag/alaptípus)
   - Session state lifted: VÉ csökkenés, MP használat, ÉP rubrikák (sebzések) mind az App-szintű karakter objektumban
   - EpTable: sebzések prop-on keresztül kapja/adja vissza (nem lokális state)
@@ -204,10 +208,10 @@
 ## Következő lépések
 
 ## Új chat nyitásakor olvasd be ezeket
-- `/mnt/c/repo/szilank.code/data/DEVSTATE.md` (ez a fájl)
-- `/mnt/c/repo/szilank.code/data/engine_spec.md` — engine kalkulációk specifikációja
-- `/mnt/c/repo/szilank.code/data/gui_spec.md` — GUI specifikáció (screen-ek, viselkedés, formázás)
-- `/mnt/c/repo/szilank.code/data/konstansok.yaml` — központi konstansok
+- `/mnt/c/repo/szilank.code/data/docs/DEVSTATE.md` (ez a fájl)
+- `/mnt/c/repo/szilank.code/data/docs/engine_spec.md` — engine kalkulációk specifikációja
+- `/mnt/c/repo/szilank.code/data/docs/gui_spec.md` — GUI specifikáció (screen-ek, viselkedés, formázás)
+- `/mnt/c/repo/szilank.code/data/sources/konstansok.yaml` — központi konstansok
 - `/mnt/c/repo/szilank.code/data/schemas/` — összes schema (fortely, kepzettseg, karakter, pancel, fegyver, faj)
 - `/mnt/c/repo/szilank.code/web/src/App.tsx` — fő app komponens (tab rendszer, mód toggle)
 - `/mnt/c/repo/szilank.code/web/src/components/HarcScreen.tsx` — Harc fül implementáció
@@ -237,7 +241,7 @@
 - Többszörös fortély display name: `f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név`
 - Karakter séma: v2 (`data/schemas/karakter.yaml`), egységes `fortélyok[]` tömb, `session` szekció runtime state-nek
 - Karakter mentés formátum: egyetlen `.json` fájl (karakter + session), NEM tartalmaz származtatott értékeket
-- Teszt karakter: `data/test_karakter.json` a single source of truth; runtime fetch (nincs testdata.ts)
+- Teszt karakter: `data/karakter/test_karakter.json` a single source of truth; runtime fetch (nincs testdata.ts)
 - Validáló script: `web/validate_karakter.py` — ellenőrzi a test_karakter.json konzisztenciáját (yaml defs, KP, faj, session)
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re

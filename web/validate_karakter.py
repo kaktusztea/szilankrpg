@@ -380,7 +380,7 @@ if not any("struktúra" in e.lower() or "mező hiányzik" in e for e in errors):
 print("\n" + "=" * 60)
 
 # Generate test JSON
-output_path = BASE / "test_karakter.json"
+output_path = BASE / "karakter" / "test_karakter.json"
 with open(output_path, "w", encoding="utf-8") as f:
     json.dump(karakter, f, ensure_ascii=False, indent=2)
 print(f"\n📄 Teszt JSON generálva: {output_path}")

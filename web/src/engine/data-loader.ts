@@ -137,8 +137,8 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<TradicioEntry[]>('tables/tradiciok.json'),
     fetchJson<NyelvEntry[]>('tables/nyelvek.json'),
     fetchJson<{ rules: Rule[] }>('rules.json'),
-    fetchJson<Karakter>('empty_karakter.json'),
-    fetchJson<Karakter>('test_karakter.json'),
+    fetchJson<Karakter>('karakter/empty_karakter.json'),
+    fetchJson<Karakter>('karakter/test_karakter.json'),
   ]);
 
   const kepzettsegKp = kepzettsegKpRaw.map(e => ({

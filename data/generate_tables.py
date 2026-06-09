@@ -10,6 +10,7 @@ import yaml, json, os, sys
 # Resolve data directory
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = SCRIPT_DIR
+SOURCES_DIR = os.path.join(DATA_DIR, 'sources')
 TABLES_DIR = os.path.join(DATA_DIR, 'tables')
 
 os.makedirs(TABLES_DIR, exist_ok=True)
@@ -29,13 +30,13 @@ def load_yaml(path):
 
 def generate_konstansok():
     """konstansok.yaml → konstansok.json"""
-    data = load_yaml(os.path.join(DATA_DIR, 'konstansok.yaml'))
+    data = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
     write_json('konstansok.json', data)
 
 
 def generate_kepzettsegek():
     """kepzettsegek/*.yaml → kepzettsegek.json"""
-    kdir = os.path.join(DATA_DIR, 'kepzettsegek')
+    kdir = os.path.join(SOURCES_DIR, 'kepzettsegek')
     result = []
     for f in sorted(os.listdir(kdir)):
         if not f.endswith('.yaml'):
@@ -54,7 +55,7 @@ def generate_kepzettsegek():
 
 def generate_fortelyok():
     """fortelyok/**/*.yaml → fortelyok.json"""
-    fdir = os.path.join(DATA_DIR, 'fortelyok')
+    fdir = os.path.join(SOURCES_DIR, 'fortelyok')
     result = []
     for root, dirs, files in os.walk(fdir):
         for f in sorted(files):
@@ -90,7 +91,7 @@ def generate_fortelyok():
 
 def generate_kiterjesztesek():
     """fortelyok/**/*.yaml kiterjeszti → kiterjesztesek.json (inverz mapping)"""
-    fdir = os.path.join(DATA_DIR, 'fortelyok')
+    fdir = os.path.join(SOURCES_DIR, 'fortelyok')
     mapping = {}
     for root, dirs, files in os.walk(fdir):
         for f in files:
@@ -110,7 +111,7 @@ def generate_kiterjesztesek():
 
 def generate_primer_fortelyok():
     """fortelyok/**/*.yaml → primer_fortelyok.json (harci+misztikus nevek)"""
-    fdir = os.path.join(DATA_DIR, 'fortelyok')
+    fdir = os.path.join(SOURCES_DIR, 'fortelyok')
     primer_names = []
     for root, dirs, files in os.walk(fdir):
         for f in files:
@@ -125,7 +126,7 @@ def generate_primer_fortelyok():
 
 def generate_fajok():
     """fajok/*.yaml → fajok.json (nevek) + faj_tulajdonsag_keretek.json"""
-    fdir = os.path.join(DATA_DIR, 'fajok')
+    fdir = os.path.join(SOURCES_DIR, 'fajok')
     names = []
     keretek = {}
     for f in sorted(os.listdir(fdir)):

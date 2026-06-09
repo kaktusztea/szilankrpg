@@ -126,7 +126,7 @@ function App() {
     loadGameData().then(d => {
       setData(d);
       if (!validateKarakter(d.emptyKarakter)) {
-        setError('Az empty_karakter.json érvénytelen (schema_version !== 2 vagy hiányzó mezők). Ellenőrizd a data/empty_karakter.json fájlt.');
+        setError('Az empty_karakter.json érvénytelen (schema_version !== 2 vagy hiányzó mezők). Ellenőrizd a data/karakter/empty_karakter.json fájlt.');
         return;
       }
       const refErr = validateKarakterData(d.emptyKarakter, d);

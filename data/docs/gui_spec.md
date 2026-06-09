@@ -57,7 +57,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - Bal: "Szilánk RPG" (`font-weight: bold, 16px`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
 - Jobb: gombok (`header-btns`, `gap: 6px`):
   - 🧪 Teszt: teszt karakter betöltés (megerősítő popup)
-  - 📄 Új: üres karakter (megerősítő popup, `data/empty_karakter.json`)
+  - 📄 Új: üres karakter (megerősítő popup, `data/karakter/empty_karakter.json`)
   - 💾 Mentés: karakter JSON letöltés (`karakter.név.json`)
   - 📂 Betöltés: file picker + schema + referenciális validáció
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px
@@ -451,7 +451,7 @@ Alul fix, horizontálisan scrollozható szalag.
 ## Adatfolyam
 
 ```
-YAML források (data/konstansok.yaml, kepzettsegek/, fortelyok/, fajok/)
+YAML források (data/sources/konstansok.yaml, sources/kepzettsegek/, sources/fortelyok/, sources/fajok/)
      ↓  generate_tables.py (automatikus: Vite buildStart + prebuild)
 tables/*.json (runtime adat)
      ↓  fetchJson (data-loader.ts)
@@ -543,7 +543,7 @@ Minden adat `fetchJson`-nel:
 - `tables/primer_fortelyok.json` — 53 harci+misztikus fortély neve
 - `tables/fortelyok.json` — 168 fortély összefoglaló
 - `data/rules.json` — reactive engine szabályok (53 db)
-- `data/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
+- `data/karakter/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
 
 ### Karakter state struktúra (App szintjén)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)

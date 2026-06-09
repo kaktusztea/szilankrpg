@@ -50,7 +50,7 @@ jobs:
         working-directory: web
 
       - name: Copy data to dist
-        run: mkdir -p web/dist/data/tables && cp data/tables/*.json web/dist/data/tables/
+        run: mkdir -p web/dist/data/tables web/dist/data/karakter && cp data/tables/*.json web/dist/data/tables/ && cp data/rules.json web/dist/data/ && cp data/karakter/*.json web/dist/data/karakter/
 
       - uses: actions/configure-pages@v6
 
