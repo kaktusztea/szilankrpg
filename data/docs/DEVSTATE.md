@@ -87,7 +87,7 @@
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
   - Fejléc: Név (double-tap → szerkesztő popup) + Szint (double-tap → gombgrid 3-21, 5 oszlop, utolsó sor középre)
   - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (double-tap → két lépéses popup: tartomány → érték)
-  - Game módban Faj+Kor a Név mellé konkatenálódik: "Dorek (Ember (Északi), 32)"
+  - Game módban Faj+Kor a Név mellé konkatenálódik: "von Agabor (Ember (Északi), 32)"
   - Tulajdonságok: fix 2×4 grid, teljes nevek, double-tap → popup gomb-grid (-5..+7), érték választás bezárja
   - Faj limit warning: sárga szín + koppintásra lenyíló "Faj max/min: X" ha túllépés
   - Képzettségek: 7 csoportban (összecsukható), dropdown + azonnali szint popup, ✕ törlés (piros megerősítés)

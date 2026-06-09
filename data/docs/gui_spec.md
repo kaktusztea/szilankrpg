@@ -189,12 +189,12 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
 
 ### Fejléc (legfelül)
 - **Név + Szint** sor: két összeérő box
-  - Név box (flex:1): `Név: Dorek a Toroni` — double-tap → szerkesztő popup (max 40 karakter)
+  - Név box (flex:1): `Név: von Agabor` — double-tap → szerkesztő popup (max 40 karakter)
   - Szint box: `Szint: 8` — double-tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
 - **Faj + Kor** sor (CSAK szerkesztő módban):
   - Faj box (flex:1): inline `<select>` dropdown (26 faj a tables/fajok.json-ból, közvetlenül koppintható)
   - Kor box: `Kor: 32` — double-tap → két lépéses popup (tartomány: 10–100/100–200/200–1000, majd érték gombok: 2/5/50-es lépésekkel)
-- **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"Dorek a Toroni (Ember (Északi), 32)"`
+- **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"von Agabor (Ember (Északi), 32)"`
 - **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` — double-tap → szerkesztő popup (max 40 kar)
   - Mentés fájlnévben: `karakternév_játékosnév_Xtsz.json` (ha ki van töltve)
 
