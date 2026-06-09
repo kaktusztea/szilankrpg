@@ -2,7 +2,7 @@
 schema_version: 1
 
 név: "Fájdalomtűrés"
-leírás: "Sebesülés okozta fájdalom és sokk elviselése."
+leírás: "Sebesülés okozta fájdalom és sokk elviselése. Kiemelt szintjei Sebesülés kategóriák TÉ levonást enyhítik."
 primer: true
 csoport: "fizikai"
 többszörös: []

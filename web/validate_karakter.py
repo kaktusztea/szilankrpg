@@ -261,6 +261,8 @@ else:
 
 # kp_fortélyok (only fortélyok with kp_perfok > 0)
 kp_fort = 0
+szabad_count = 0
+szabad_ingyenes_db = karakter["tsz"]
 for f in karakter["fortélyok"]:
     ddef = fortelyok_defs.get(f["név"])
     if not ddef:
@@ -271,6 +273,11 @@ for f in karakter["fortélyok"]:
     if ingyenes_perszint > 0:
         # Skip — kiemelt kp logika külön (0 KP a base)
         perfok = 0
+    # Szabad fortélyok: csoport-szintű ingyenes keret (TSz db)
+    if ddef.get("csoport") == "szabad" and not f.get("kiérdemelt") and perfok > 0:
+        if szabad_count < szabad_ingyenes_db:
+            szabad_count += 1
+            perfok = 0
     if perfok > 0:
         kp_fort += f["fok"] * perfok
 

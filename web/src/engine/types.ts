@@ -82,6 +82,7 @@ export interface Karakter {
   schema_version: number;
   név: string;
   játékos: string;
+  mentés_dátum: string;
   tsz: number;
   leírás: string;
   kor: number;

@@ -65,8 +65,14 @@ function validateKarakterData(k: Karakter, data: GameData): string | null {
   for (const d of data.kepzettsegDefs) {
     if (d.többszörös) for (const alnév of d.többszörös) validKepNames.add(alnév);
   }
+  // Prefixes for special képzettségek (e.g. "Tradíció: ...", "Ősi nyelv ismerete: ...")
+  const validKepPrefixes = data.kepzettsegDefs.filter(d => d.többszörös.length === 0 && d.csoport === 'misztikus').map(d => d.név + ': ');
+  // Also free-text többszörös prefixes
+  for (const d of data.kepzettsegDefs) {
+    if (d.többszörös.length > 0 && d.többszörös[0] === '*') validKepPrefixes.push(d.név + ': ');
+  }
   for (const kep of k.képzettségek) {
-    if (!validKepNames.has(kep.név)) {
+    if (!validKepNames.has(kep.név) && !validKepPrefixes.some(p => kep.név.startsWith(p))) {
       errors.push(`Ismeretlen képzettség: "${kep.név}"`);
     }
   }
@@ -208,7 +214,10 @@ function App() {
   // --- Save / Load ---
   function saveKarakter() {
     if (!karakter) return;
-    const json = JSON.stringify(karakter, null, 2);
+    const now = new Date();
+    const dátum = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
+    const saved = { ...karakter, mentés_dátum: dátum };
+    const json = JSON.stringify(saved, null, 2);
     const blob = new Blob([json], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');

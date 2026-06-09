@@ -6,6 +6,7 @@ export const testKarakter8: Karakter = {
   schema_version: 2,
   név: "Dorek a Toroni",
   játékos: "",
+  mentés_dátum: "",
   tsz: 8,
   leírás: "Toroni zsoldos lovag",
   kor: 32,
