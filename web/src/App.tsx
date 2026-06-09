@@ -406,7 +406,11 @@ function App() {
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>Teszt karakter betöltése?</label>
             <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(testKarakter8); setShowTestConfirm(false); }}>Betöltés</button>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
+              const refErr = validateKarakterData(testKarakter8, data);
+              if (refErr) { setShowTestConfirm(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
+              setKarakter(testKarakter8); setShowTestConfirm(false);
+            }}>Betöltés</button>
           </div>
         </div>,
         document.body
