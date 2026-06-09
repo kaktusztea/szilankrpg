@@ -7,7 +7,7 @@
     { "név": "Természeti mágia", "típus": "mágikus" },
     { "név": "Sámánmágia", "típus": "mágikus" },
     { "név": "Drágakőmágia", "típus": "mágikus" },
-    { "név": "Szakrális (papi)", "típus": "szakrális" },
+    { "név": "Szakrális", "típus": "szakrális" },
     { "név": "Slan", "típus": "szellemi" },
     { "név": "Fejvadász", "típus": "szellemi" }
 ]
