@@ -178,6 +178,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       gameMode={gameMode}
                       isOpen={isOpen}
                       overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}
+                      nyelvPontKeret={slot.név === 'Nyelvismeret' ? nyelvPontKeret : undefined}
                       onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
                       onFokChange={fok => setFok(globalIdx, fok)}
                       onHint={showHint}
@@ -212,11 +213,14 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                           label += ` ➕${vals.join('-')}KP`;
                         }
                         const fegyverDisabled = d.többszörös_típus === 'fegyver' && (fegyverNevek.length === 0 || fegyverNevek.every(n => fortélyok.some(f => f.név === d.név && f.spec_elem === n)));
-                        const nyelvDisabled = d.név === 'Nyelvismeret' && (() => {
+                        let nyelvDisabled = false;
+                        if (d.név === 'Nyelvismeret') {
                           const keret = Math.max(0, (nyelvtanulásSzint - 3) * 3);
                           const used = fortélyok.filter(f => f.név === 'Nyelvismeret').reduce((s, f) => s + f.fok, 0);
-                          return used >= keret;
-                        })();
+                          const maradt = keret - used;
+                          if (maradt > 0) label += ` 🌏${maradt}`;
+                          nyelvDisabled = maradt <= 0;
+                        }
                         return <option key={d.név} value={d.név} disabled={fegyverDisabled || nyelvDisabled}>{label}</option>;
                       })}
                     </select>
@@ -387,7 +391,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret }: {
   slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
@@ -395,6 +399,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   isIngyenes: boolean;
   locked: boolean;
   overLimit: boolean;
+  nyelvPontKeret?: number;
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
   onRemove: () => void;
@@ -413,6 +418,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
 
   function handleTap() {
     if (gameMode) { onToggleInfo(); return; }
+    if (overLimit) { onToggleInfo(); return; }
     const now = Date.now();
     if (now - lastTap.current < 350) {
       if (locked) { onHint('Mesterfegyver fortélyokat a Harcértékek fülön kezeld!', 3000); }
@@ -459,6 +465,11 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
               </span>
             </div>
           )}
+        </div>
+      )}
+      {overLimit && isOpen && (
+        <div className="fort-info" style={{ color: 'var(--error)' }}>
+          A felvehető Nyelvismeret fokok száma a Nyelvtanulás képzettség szintjétől függ. Túllépted a keretet! Max tanulható fok: {nyelvPontKeret ?? 0}
         </div>
       )}
       {editing && createPortal(
