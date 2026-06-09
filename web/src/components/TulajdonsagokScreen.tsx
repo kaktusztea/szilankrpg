@@ -293,6 +293,8 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
               {!collapsedGroups.has(csoport) && (<>
               {slotok.map((slot, i) => {
                 const globalIdx = képzettségek.findIndex(k => k === slot);
+                const kepDef = findDef(slot.név);
+                const maxSzint = kepDef?.primer ? tsz : tsz + 3;
                 return (
                   <KepzettsegRow
                     key={`${csoport}-${i}`}
@@ -311,6 +313,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
                     onInfoToggle={() => setInfoTarget(infoTarget === `${globalIdx}` ? null : `${globalIdx}`)}
                     displayName={getDisplayName(slot.név)}
                     findDef={findDef}
+                    overLimit={slot.szint > maxSzint}
                   />
                 );
               })}
@@ -571,7 +574,7 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
 }
 
 /* --- Képzettség sor --- */
-function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef }: {
+function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef, overLimit }: {
   slot: KepzettsegSlot;
   gameMode: boolean;
   onSzintChange: (szint: number) => void;
@@ -581,6 +584,7 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
   onInfoToggle: () => void;
   displayName: string;
   findDef: (név: string) => KepzettsegDef | undefined;
+  overLimit: boolean;
 }) {
   const [szintEditing, setSzintEditing] = useState(false);
   const lastTap = useRef(0);
@@ -613,12 +617,12 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
         data-kep={slot.név}
         onClick={handleTap}
       >
-        <span className="kep-név">{displayName}</span>
+        <span className={`kep-név${overLimit ? ' kep-over' : ''}`}>{displayName}</span>
         <span className="kep-right">
           {!gameMode && (
             <button className="kep-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className={`kep-szint ${slot.szint === 0 ? 'kep-szint-zero' : slot.szint >= 9 ? 'kep-szint-high' : ''}`}>{slot.szint}</span>
+          <span className={`kep-szint ${slot.szint === 0 ? 'kep-szint-zero' : slot.szint >= 9 ? 'kep-szint-high' : ''}${overLimit ? ' kep-over' : ''}`}>{slot.szint}</span>
         </span>
       </div>
       {/* Game mód: adatlap */}
