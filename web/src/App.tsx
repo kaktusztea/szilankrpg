@@ -335,6 +335,15 @@ function App() {
         const primerKepNevek = new Set(data.kepzettsegDefs.filter(d => d.primer).map(d => d.név));
         const harcmodorDef = data.kepzettsegDefs.find(d => d.név === 'Harcmodor');
         if (harcmodorDef?.többszörös) for (const a of harcmodorDef.többszörös) primerKepNevek.add(a);
+        // Tradíció és egyéb prefix-alapú primer képzettségek: ha a karakter képzettség neve
+        // "AlapNév: ..." formátumú és az alapnév primer, azt is primernek tekintjük
+        for (const k of képzettségek) {
+          const colonIdx = k.név.indexOf(':');
+          if (colonIdx > 0) {
+            const base = k.név.slice(0, colonIdx).trim();
+            if (primerKepNevek.has(base)) primerKepNevek.add(k.név);
+          }
+        }
 
         // Ingyenes fortélyok (kiemelt_kp-hoz)
         const ingyenesFortelyok = data.fortelySummaries.filter(d => d.ingyenes_perszint > 0);

@@ -80,16 +80,17 @@ export interface FortelySummary {
 import type { Rule } from './reactive';
 import type { Karakter } from './types';
 
-// --- Tradíció és Szakrális ---
+// --- Tradíció ---
+export interface TradicioAltipus {
+  név: string;
+  pantheon?: string;
+  leírás?: string;
+}
+
 export interface TradicioEntry {
   név: string;
   típus: string;
-}
-
-export interface SzakralisEntry {
-  név: string;
-  pantheon: string;
-  leírás: string;
+  altípusok: TradicioAltipus[];
 }
 
 // --- Betöltött adat ---
@@ -107,13 +108,12 @@ export interface GameData {
   primerFortelyok: string[];
   fortelySummaries: FortelySummary[];
   tradiciok: TradicioEntry[];
-  szakralis: SzakralisEntry[];
   rules: Rule[];
   emptyKarakter: Karakter;
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, szakralis, rulesFile, emptyKarakter] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, rulesFile, emptyKarakter] = await Promise.all([
     fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
@@ -127,7 +127,6 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<Record<string, Record<string, [number, number]>>>('tables/faj_tulajdonsag_keretek.json'),
     fetchJson<FortelySummary[]>('tables/fortelyok.json'),
     fetchJson<TradicioEntry[]>('tables/tradiciok.json'),
-    fetchJson<SzakralisEntry[]>('tables/szakralis.json'),
     fetchJson<{ rules: Rule[] }>('rules.json'),
     fetchJson<Karakter>('empty_karakter.json'),
   ]);
@@ -144,5 +143,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, szakralis, rules: rulesFile.rules, emptyKarakter };
+  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, rules: rulesFile.rules, emptyKarakter };
 }
