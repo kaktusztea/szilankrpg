@@ -182,8 +182,11 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - Faj box (flex:1): inline `<select>` dropdown (26 faj a tables/fajok.json-ból, közvetlenül koppintható)
   - Kor box: `Kor: 32` — double-tap → két lépéses popup (tartomány: 10–100/100–200/200–1000, majd érték gombok: 2/5/50-es lépésekkel)
 - **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"Dorek a Toroni (Ember (Északi), 32)"`
+- **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` — double-tap → szerkesztő popup (max 40 kar)
+  - Mentés fájlnévben: `karakternév_játékosnév_Xtsz.json` (ha ki van töltve)
 
 ### Tulajdonságok
+- Tulajdonság pontok kijelzés (szerkesztő mód): `Tulajdonság pontok: X/Y` (piros ha túllépés)
 - 8 tulajdonság fix 2 oszlop × 4 sor grid-ben (fentről lefelé, aztán következő oszlop)
 - Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
 - Nem reszponzív, fix layout
@@ -457,7 +460,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 - **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla, harci_fortélyok, csatolt_mgt táblák)
 - **StringContext**: string-keyed lookup-okhoz (pl. páncél_kidolgozottság → csatolt_mgt tábla kulcs)
 
-#### Jelenlegi rules.json szabályok (36 db):
+#### Jelenlegi rules.json szabályok (53 db):
 | ID | Formula típus | Leírás |
 |----|--------------|--------|
 | ÉP | képlet | 28 + edzettség × 4 |
@@ -494,11 +497,22 @@ Deklaratív számítási szabályok dependency graph-ban:
 | fegyver_SP | képlet | fegyver + min(erő, limit) + MF + fortély |
 | fegyver_harckeret | képlet | max(0, harcmodor + gyor - MGT - felszMGT + fortély) |
 | fegyver_támadások | képlet | 1 + floor(harckeret / sebesség) |
+| spec_kp | sum + képlet | KP bónusz fortélyok (negatív kp_perfok) + tartós_sérülés |
+| kiemelt_kp | sum | ingyenes keret feletti kiemelt fortélyok KP-ja |
+| kp_primer_képzettségek | sum_lookup | primer képzettség szintek → KP tábla |
+| kp_primer_fortélyok | sum | primer fortélyok fok × kp_perfok |
+| primer_költés | képlet | kp_primer_képzettségek + kp_primer_fortélyok + kp_hm + kp_cm |
+| primer_keret | képlet | összes_kp + spec_kp - primer_költés |
+| páncél_struktúra_mgt | lookup | struktúrák tábla → mgt |
+| páncél_struktúra_sfé_* | lookup | struktúrák tábla → sfé_fizikai/energia |
+| páncél_merev, páncél_fém | lookup | struktúrák tábla → merev/fém flag |
+| páncél_alapanyag_* | lookup | fémalapanyagok tábla → mgt/sfé_bónusz |
+| páncél_méret_mgt | lookup | méret tábla → érték |
+| merevvért_csökkentés | lookup | merevvért_tábla → csökkentés |
+| páncél_csatolt_db | képlet | végtagvédettség + sisak |
+| páncél_lefedettség | if | if(van, 50 + végtag×10 + sisak×10, 0) |
 
 #### TS-ben maradó logika (nem deklaratív):
-- `spec_kp`: feltételes boolean flag-ek (Analfabéta, Vakság, stb.)
-- `kiemelt_kp`: iteráció ingyenes keret számítással (Kultúrkör, Helyismeret)
-- `calcPancelInputs`: páncél raw lookup-ok (struktúra, alapanyag, méret) → context extras
 - Fortély módosítók összegyűjtése (feltételes iteráció — egyelőre hardcoded 0, TODO §16)
 - Fájdalomtűrés enyhítés (küszöb-tábla lookup)
 
@@ -515,7 +529,7 @@ Minden adat `fetchJson`-nel:
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
 - `tables/primer_fortelyok.json` — 53 harci+misztikus fortély neve
 - `tables/fortelyok.json` — 168 fortély összefoglaló
-- `data/rules.json` — reactive engine szabályok (36 db)
+- `data/rules.json` — reactive engine szabályok (53 db)
 - `data/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
 
 ### Karakter state struktúra (App szintjén)

@@ -289,8 +289,8 @@ reactive rules.json:
   sfé_fizikai: páncél_struktúra_sfé_fizikai + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás
   sfé_energia: páncél_struktúra_sfé_energia + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás
 
-impl: A köztes értékek (struktúra SFÉ, alapanyag bónusz, stb.) a calcPancelInputs() TS függvényben
-      számolódnak ki (lookup-ok), és a reactive engine context extras-ként kapja őket.
+impl: A struktúra és alapanyag értékek string-keyed lookup szabályokból jönnek (rules.json).
+      A HarcScreen közvetlenül a karakter adatokból építi a context-et + lookup táblákat.
       Ha nincs struktúra kiválasztva → minden 0, lefedettség = 0%.
 ```
 
@@ -329,7 +329,7 @@ output: MGT
 reactive rules.json:
   páncél_MGT: max(0, struktúra_mgt + alapanyag_mgt + csatolt_db * if(merev, lookup(merev_tábla,...), if(fém, lookup(fém_tábla,...), lookup(nemfém_tábla,...))) + méret_mgt - erő)
 
-impl: calcPancelInputs() adja a raw inputokat (struktúra_mgt, alapanyag_mgt, csatolt_db, méret_mgt, merev, fém).
+impl: A raw inputok (struktúra_mgt, alapanyag_mgt, csatolt_db, méret_mgt, merev, fém) lookup szabályokból jönnek.
       A feltételes lookup (kidolgozottság → tag_mgt_per_db) a rules.json-ban van nested if() + lookup() + StringContext-tel.
       A 3 csatolt_mgt tábla (merev/fém/nemfém) ArrayContext-ben.
 ```
@@ -355,7 +355,7 @@ output: merevvért_TÉ_büntetés (levonandó a végső TÉ-ből)
 reactive rules.json:
   merevvért_TÉ_büntetés: if(páncél_merev, max(0, páncél_MGT - merevvért_csökkentés), 0)
 
-impl: páncél_merev (0/1) és merevvért_csökkentés a calcPancelInputs()-ből jönnek a context-be.
+impl: páncél_merev (0/1) és merevvért_csökkentés lookup szabályokból jönnek (struktúrák tábla + merevvért_tábla).
 ```
 
 ---

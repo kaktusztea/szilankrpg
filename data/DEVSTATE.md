@@ -17,7 +17,7 @@
 │   ├── fajok/                 ← Faj hátterek (26 db)
 │   ├── tables/                ← Generált JSON táblák (generate_tables.py által: konstansok, fegyverek, távfegyverek, pajzsok, KP, harcmodor bónusz, távharc szorzók, tradíciók, képzettségek, kiterjesztések, fajok, faj keretek, primer fortélyok, fortélyok)
 │   ├── generate_tables.py    ← YAML→JSON generáló script (Vite plugin és prebuild futtatja)
-│   ├── rules.json             ← Reactive engine szabályok (36 deklaratív képlet/aggregáció)
+│   ├── rules.json             ← Reactive engine szabályok (53 deklaratív képlet/aggregáció)
 │   ├── konstansok.yaml        ← Központi konstansok (forrás, JSON-ba generálódik)
 │   ├── empty_karakter.json    ← Üres karakter template (induláskor betöltődik)
 │   ├── test_karakter.json     ← Teszt karakter (single source of truth)
@@ -27,7 +27,6 @@
 │   ├── src/
 │   │   ├── engine/            ← Kalkulációs engine modulok
 │   │   │   ├── types.ts       ← Típusdefiníciók (Karakter v2, Session, Fortely, stb.)
-│   │   │   ├── pancel.ts      ← calcPancelInputs (raw lookup-ok: struktúra, alapanyag, méret → context extras)
 │   │   │   ├── data-loader.ts ← JSON betöltés runtime
 │   │   │   ├── reactive.ts   ← Reactive rule engine (evaluate, buildContext, buildArrayContext)
 │   │   │   └── index.ts       ← Barrel export
@@ -119,13 +118,13 @@
   - `js-yaml` runtime dependency eltávolítva → bundle ~43KB-val kisebb (232KB vs 275KB)
   - Minden adat `tables/*.json`-ból töltődik (fetchJson), nincs runtime YAML parse
 - ✅ Reactive Engine (`data/rules.json` + `web/src/engine/reactive.ts`)
-  - Deklaratív dependency graph: 36 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc, SFÉ, MGT, merevvért, távharc VÉ, képzettség limitek, manőver pont, felszerelés, max_HM, max_HM_aszimmetria, fegyver TÉ/VÉ/SP/harckeret/támadások)
+  - Deklaratív dependency graph: 53 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc incl. spec_kp/kiemelt_kp/primer, SFÉ, MGT, merevvért, távharc VÉ, képzettség limitek, manőver pont, felszerelés, max_HM, max_HM_aszimmetria, fegyver TÉ/VÉ/SP/harckeret/támadások, páncél lookup-ok, lefedettség)
   - Skaláris képletek + aggregáló: `sum()`, `sum_lookup()`, `sum_where()`, `count()`, `lookup()`, `if()`
   - Topológiai sorrend: automatikus dependency resolution (skaláris Context + ArrayContext)
   - HarcScreen: ÉP, KÉ, manőver pont, SFÉ, páncél_MGT, fegyver TÉ/VÉ/SP/támadások — mind reactive engine-ből
   - App KP sáv: teljes KP lánc reactive engine-ből
   - testdata.ts expected8: frissítve teljes KP bontással (kp_képzettségek:224, kp_fortélyok:150, kp_hm:192, elköltött:566, maradt:2)
-  - TS-ben marad: spec_kp, kiemelt_kp, calcPancelInputs (raw lookup-ok), fortély módosítók, Fájdalomtűrés enyhítés
+  - TS-ben marad: fortély módosítók (§16, TODO), Fájdalomtűrés enyhítés (küszöb-tábla lookup)
 - ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
 - ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
 - ✅ Escape gomb: minden popup overlay bezárható Escape-pel
@@ -167,9 +166,9 @@
   - `max_HM_aszimmetria` szabály: `floor(tsz / 2)`
   - `páncél_MGT` szabály: `max(0, struktúra_mgt + alapanyag_mgt + csatolt_mgt + méret_mgt - erő)`
   - `merevvért_TÉ_büntetés` szabály: `if(páncél_merev, max(0, páncél_MGT - merevvért_csökkentés), 0)`
-  - `calcPancelInputs()`: lookup-ok TS-ben, köztes értékek a reactive context-be
-  - Eltávolítva: `ep.ts`, `tulajdonsag.ts`, `limits.ts`, `tavharc.ts`, `modifiers.ts`, `calcPancel()`, `calcKE()`, `calcCE()`, `kp.ts`, `harcertek.ts`
-  - Megmaradt TS: `calcPancelInputs` (raw lookup-ok: struktúra, alapanyag, méret), `data-loader.ts` (fetch/parse)
+  - `calcPancelInputs()`: lookup-ok TS-ben → később teljes migrálás rules.json-ba (3. kör)
+  - Eltávolítva: `ep.ts`, `tulajdonsag.ts`, `limits.ts`, `tavharc.ts`, `modifiers.ts`, `calcPancel()`, `calcKE()`, `calcCE()`, `kp.ts`, `harcertek.ts`, `pancel.ts`
+  - Megmaradt TS engine modul: NINCS — minden kalkuláció a rules.json-ban vagy inline context-építés
 - ✅ Harcértékek fül (🛡️, szerkesztő módban, Fortélyok fül mellett)
   - HM/CM vásárlás: +/- gombok, validálás (max_HM, aszimmetria, max_CM)
   - Harcmodorok: read-only lista (Tul/Képz fülről szinkronizálva)
@@ -189,13 +188,23 @@
     - Mesterfegyver NEM jelenik meg a Fortélyok fül dropdown-jában
 - ✅ Jegyzetek fül (📝): teljes képernyős textarea, mindkét módban elérhető, mentődik karakter fájlba
 - ✅ Harc fül fegyver tábla: dinamikus (karakter.fegyverek-ből), MK párok kibontva, kategória→harcmodor lookup
+- ✅ Reactive Engine migráció: TELJES (pancel.ts, kp.ts, harcertek.ts mind törölve)
+  - spec_kp: sum(kp_bónusz_fortélyok) + tartós_sérülés (negatív kp_perfok fortélyokból automatikus)
+  - kiemelt_kp: sum(kiemelt_fortélyok, fizetős_kp) — ingyenes keret feletti többlet
+  - primer_költés + primer_keret: deklaratív (primer_képzettségek + primer_fortélyok + HM + CM)
+  - Páncél lookup-ok: 11 szabály (struktúra/alapanyag/méret/merevvért StringContext lookup-okkal)
+  - `if` keyword fix: hozzáadva az identifier exclusion listához
+- ✅ Tulajdonság pontok kijelzés: `Tulajdonság pontok: X/Y` (szerkesztő módban, piros ha túllépés)
+- ✅ Játékos neve mező: double-tap szerkesztő popup, mentés fájlnévben (`karakter_játékos_Xtsz.json`)
+- ✅ `onSelect preventDefault` eltávolítva (okozta az input karakter-elvesztés bugot iOS-en)
+- ✅ Mentés fájlnév: `kisbetű_éktelenítve_Xtsz.json` formátum (első név max 20 kar, ASCII only)
 
 ## Következő lépések
 1. **Reactive Engine bővítés** — további migrálás a rules.json-ba:
    - §13 Pajzs VÉ/TÉ (lookup + feltételes fok logika)
    - §16 Fortély módosítók (iteráció + feltétel dispatch → deklaratív filter+sum)
    - spec_kp, kiemelt_kp (feltételes logika → esetleg lookup-tábla + sum)
-   - Cél: calcPancelInputs raw lookup-ok esetleges további egyszerűsítése
+   - Cél: fortély módosítók (§16) implementálása az Aktív fül részeként
 2. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
 3. **Harcértékek fül GUI finomítás** — +/- gombok kiváltása (más widget)
 4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
@@ -211,7 +220,7 @@
 - `/mnt/c/repo/szilank.code/web/src/components/TulajdonsagokScreen.tsx` — Tulajdonságok + Képzettségek fül
 - `/mnt/c/repo/szilank.code/web/src/components/FortelyokScreen.tsx` — Fortélyok fül
 - `/mnt/c/repo/szilank.code/web/src/components/HarcertekekScreen.tsx` — Harcértékek fül
-- `/mnt/c/repo/szilank.code/web/src/engine/` — engine modulok (types, data-loader, reactive, pancel)
+- `/mnt/c/repo/szilank.code/web/src/engine/` — engine modulok (types, data-loader, reactive)
 - `/mnt/c/repo/szilank.code/data/rules.json` — reactive engine deklaratív szabályok
 
 ## Fontos konvenciók
@@ -265,4 +274,4 @@
 - Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
 - iOS kompatibilitás: double-tap modell (nem long-press), nincs touchstart preventDefault hack, `touch-action: manipulation` CSS
-- **Reactive Engine irányelv**: minden számítási mechanikát a `data/rules.json`-ba kell migrálni, amit csak lehet. Megmaradt TS: `pancel.ts` (calcPancelInputs — raw lookup-ok: struktúra, alapanyag, méret). A feltételes csatolt_mgt lookup a rules.json-ban van (nested if + StringContext lookup). Cél: a szabályrendszer képletei egy helyen, deklaratívan.
+- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Egyetlen maradék TS inline logika: fortély módosítók (§16, TODO) és Fájdalomtűrés enyhítés.
