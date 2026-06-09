@@ -28,6 +28,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const [showVéHistory, setShowVéHistory] = useState(false);
   const lastTapVéLabel = useRef(0);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
+  const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number } | null>(null);
 
   function triggerVéFlash(dir: 'down' | 'up') {
     setVéFlash(dir);
@@ -58,11 +59,11 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   }
 
   useEffect(() => {
-    if (!showVéResetConfirm && !showVéHistory) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowVéResetConfirm(false); setShowVéHistory(false); } }
+    if (!showVéResetConfirm && !showVéHistory && !támInfo) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowVéResetConfirm(false); setShowVéHistory(false); setTámInfo(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showVéResetConfirm, showVéHistory]);
+  }, [showVéResetConfirm, showVéHistory, támInfo]);
 
   const k = karakter;
   const { konstansok, harcmodorBonusz } = data;
@@ -188,6 +189,8 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       VÉ: fComp.get('fegyver_VÉ') ?? 0,
       SP: fComp.get('fegyver_SP') ?? 0,
       támadások: fComp.get('fegyver_támadások') ?? 1,
+      harckeret: fComp.get('fegyver_harckeret') ?? 0,
+      sebesség: parseInt(fDef.Sebesség) || 6,
       pengehossz: parseFloat(fDef.Pengehossz) || 0,
       sebzésmód: fDef['Sebzés módja'],
     };
@@ -254,7 +257,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
           {fegyverResults.map((r, i) => (
             <tr key={i}>
               <td>{r.fegyver_név}</td>
-              <td>{r.támadások}</td>
+              <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
               <td>{r.TÉ + téLevonás}</td>
               <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + pajzsVÉ - session.vé_csökkenés)}</td>
               <td>{r.SP} {r.sebzésmód}</td>
@@ -290,6 +293,19 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
             <label style={{ fontWeight: 'bold' }}>VÉ csökkenés történet</label>
             <div style={{ fontSize: '15px', color: 'var(--text)' }}>
               {session.vé_history.length === 0 ? '—' : session.vé_history.map(v => (v > 0 ? `+${v}` : String(v))).join('; ')}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {támInfo && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label style={{ fontWeight: 'bold' }}>{támInfo.név}</label>
+            <div style={{ fontSize: '15px', color: 'var(--text)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+              <span>Sebesség: {támInfo.sebesség}</span>
+              <span>Harckeret: {támInfo.harckeret}</span>
             </div>
           </div>
         </div>,
