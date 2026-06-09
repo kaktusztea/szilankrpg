@@ -37,6 +37,7 @@
   justify-self: center;
 }
 
+.ep-table-header .btn-seb:disabled,
 .ep-table-header .btn-heal:disabled,
 .ep-table-header .btn-reset:disabled {
   opacity: 0.4;
