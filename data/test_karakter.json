@@ -1,6 +1,8 @@
 {
   "schema_version": 2,
   "név": "Dorek a Toroni",
+  "játékos": "",
+  "mentés_dátum": "",
   "tsz": 8,
   "leírás": "Toroni zsoldos lovag",
   "kor": 32,
@@ -18,7 +20,6 @@
   "HM_TÉ": 15,
   "HM_VÉ": 17,
   "CM": 0,
-  "szilánk": 1,
   "képzettségek": [
     {
       "név": "Közelharc",
@@ -322,7 +323,9 @@
     "nagy_tárgyak": []
   },
   "jegyzetek": "",
+  "napló": [],
   "session": {
+    "szilánk": 1,
     "vé_csökkenés": 0,
     "vé_history": [],
     "manőver_pont_használt": 0,

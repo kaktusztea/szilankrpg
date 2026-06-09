@@ -139,10 +139,10 @@
   - Nem tárol származtatott/számított értékeket (ÉP, KÉ, TÉ, VÉ, SP, KP, SFÉ, MGT)
   - Validáció: `schema_version === 2` + kötelező mezők ellenőrzés betöltéskor
 - ✅ Karakter mentés/betöltés (JSON export/import)
-  - 💾 Mentés gomb: `karakter.név.json` letöltés
-  - 📂 Betöltés gomb: file picker, schema validáció, hiányzó session pótlás (DEFAULT_SESSION)
+  - 💾 Mentés gomb: `karakter.név.json` letöltés + `mentés_dátum` timestamp
+  - 📂 Betöltés gomb: file picker, schema validáció (incl. napló tömb)
   - 📄 Új karakter gomb: megerősítő popup, `data/empty_karakter.json`-ból tölti
-  - 🧪 Teszt karakter gomb: megerősítő popup, `testdata.ts`-ből tölti
+  - 🧪 Teszt karakter gomb: megerősítő popup, `data/test_karakter.json` runtime fetch + referenciális validáció
   - Validáció betöltéskor: schema struktúra + referenciális integritás (faj, fortélyok, képzettségek, páncél enum-ok, fegyver anyag/alaptípus)
   - Session state lifted: VÉ csökkenés, MP használat, ÉP rubrikák (sebzések) mind az App-szintű karakter objektumban
   - EpTable: sebzések prop-on keresztül kapja/adja vissza (nem lokális state)
@@ -187,6 +187,8 @@
     - Dupla katt locked elemre → hint: "Mesterfegyver fortélyokat a Harcértékek fülön kezeld!" (3s)
     - Mesterfegyver NEM jelenik meg a Fortélyok fül dropdown-jában
 - ✅ Jegyzetek fül (📝): teljes képernyős textarea, mindkét módban elérhető, mentődik karakter fájlba
+- ✅ Napló fül (📖): bejegyzés lista (dátum, KM, kaland, események), szerkesztés/törlés, accordion, editOnly
+- ✅ Távharc fül (🏹): skeleton (TODO: távharc kalkulátor)
 - ✅ Harc fül fegyver tábla: dinamikus (karakter.fegyverek-ből), MK párok kibontva, kategória→harcmodor lookup
 - ✅ Reactive Engine migráció: TELJES (pancel.ts, kp.ts, harcertek.ts mind törölve)
   - spec_kp: sum(kp_bónusz_fortélyok) + tartós_sérülés (negatív kp_perfok fortélyokból automatikus)
@@ -200,14 +202,6 @@
 - ✅ Mentés fájlnév: `kisbetű_éktelenítve_Xtsz.json` formátum (első név max 20 kar, ASCII only)
 
 ## Következő lépések
-1. **Reactive Engine bővítés** — további migrálás a rules.json-ba:
-   - §13 Pajzs VÉ/TÉ (lookup + feltételes fok logika)
-   - §16 Fortély módosítók (iteráció + feltétel dispatch → deklaratív filter+sum)
-   - spec_kp, kiemelt_kp (feltételes logika → esetleg lookup-tábla + sum)
-   - Cél: fortély módosítók (§16) implementálása az Aktív fül részeként
-2. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
-3. **Harcértékek fül GUI finomítás** — +/- gombok kiváltása (más widget)
-4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/DEVSTATE.md` (ez a fájl)
@@ -243,7 +237,7 @@
 - Többszörös fortély display name: `f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név`
 - Karakter séma: v2 (`data/schemas/karakter.yaml`), egységes `fortélyok[]` tömb, `session` szekció runtime state-nek
 - Karakter mentés formátum: egyetlen `.json` fájl (karakter + session), NEM tartalmaz származtatott értékeket
-- Teszt karakter: `data/test_karakter.json` a single source of truth; `web/src/testdata.ts` ebből szinkronban tartandó compile-time default
+- Teszt karakter: `data/test_karakter.json` a single source of truth; runtime fetch (nincs testdata.ts)
 - Validáló script: `web/validate_karakter.py` — ellenőrzi a test_karakter.json konzisztenciáját (yaml defs, KP, faj, session)
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
@@ -267,7 +261,7 @@
 - Rövid koppintás Game módban: accordion info toggle
 - Törlés megerősítő dialógus: centered név + piros gomb ("Képzettség törlése" / "Fortély törlése")
 - Reset megerősítő dialógus: piros centered gomb ("ÉP Reset" / "VÉ Reset"), disabled ha nincs mit resetelni
-- Default tab induláskor: Tul/Képz (index 2)
+- Default tab induláskor: Tul/Képz (index 3)
 - Fájdalomtűrés enyhítés: konstansok.fájdalomtűrés_enyhítés táblából, dinamikusan frissül szint módosításkor
 - ÉP TÉ footer double-tap: navigál Tul/Képz fülre + scroll Fájdalomtűrés képzettséghez (data-kep attribútum)
 - Sebesülés popup: típus+érték gombok, mindkettő kiválasztva → auto-close, 1-15 látható + ▾ lenyitó (16-40)
@@ -275,3 +269,14 @@
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
 - iOS kompatibilitás: double-tap modell (nem long-press), nincs touchstart preventDefault hack, `touch-action: manipulation` CSS
 - **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Egyetlen maradék TS inline logika: fortély módosítók (§16, TODO) és Fájdalomtűrés enyhítés.
+- Tradíció képzettség: `"Tradíció: Vulgármágia"` formátum (nem `többszörös` yaml mező!), tradiciok.json-ból picker; Szakrális altípusoknál isten választó (pantheon csoportosítva)
+- `tables/tradiciok.json`: egységes struktúra `{ név, típus, altípusok[] }` — altípusok lehetnek egyszerű (Bárdmágia) vagy pantheon-csoportosított (Szakrális/istenek)
+- `tables/nyelvek.json`: 37 nyelv `{ név, csoport }` — Nyelvismeret fortély picker ebből kínál csoportosított dropdown-t
+- Szabad fortélyok: `kp_perfok: 6`, csoport-szintű ingyenes keret = TSz db; kiérdemelt fortélyok (`kiérdemelt: true`) nem fogyasztják se a keretet se a KP-t
+- Fortély `kiérdemelt?: boolean` mező: opcionális, szabad fortélyoknál felvételkor "Felvett/⭐ Kiérdemelt" picker
+- Nyelvismeret fortély: pont keret = `max(0, (nyelvtanulás_szint - 3) * 3)`, dropdown disabled ha keret elfogyott, piros jelzés túllépésnél (hátulról)
+- Alkalmatlan fegyver hajítása: `spec_típus: "fegyver"` → dropdown a karakter fegyvereiből (nem freetext)
+- Képzettség limitek: primer max = TSz, szekunder max = TSz+3; túllépés → piros név + szint (`kep-over` class)
+- `mentés_dátum`: karakter JSON-ba mentéskor YYYY-MM-DD HH:MM formátumban
+- `szilánk`: session alá került (nem top-level karakter mező)
+- Napló fül (📖 editOnly): bejegyzések (dátum, KM, kaland, események), accordion lista, szerkesztés/törlés, `karakter.napló[]` tömb

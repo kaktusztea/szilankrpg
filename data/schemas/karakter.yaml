@@ -26,8 +26,6 @@ HM_TÉ: 0                     # KP-ból vásárolt Harcérték Módosító → T
 HM_VÉ: 0                     # KP-ból vásárolt Harcérték Módosító → VÉ-re
 CM: 0                         # KP-ból vásárolt Célzóérték Módosító
 
-szilánk: 1                    # 0-3 (nem származtatott, kiosztott)
-
 képzettségek:                 # Egységes lista (nincs külön primer/szekunder/harcmodor)
   - név: ""                   # Képzettség neve VAGY "AlapNév: AlNév" többszöröseknél
     szint: 0                  # 0-15
@@ -83,6 +81,7 @@ jegyzetek: ""                   # Szabad szöveges jegyzetmező
 # Mentéskor mindig belekerül, betöltéskor hiánya = default értékek.
 # ============================================================
 session:
+  szilánk: 1                  # 0-3 (nem származtatott, kiosztott)
   vé_csökkenés: 0
   vé_history: []              # number[] — VÉ csökkenés történet
   manőver_pont_használt: 0

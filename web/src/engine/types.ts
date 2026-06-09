@@ -59,12 +59,20 @@ export interface NagyTargy {
   MGT: number;
 }
 
+export interface NaploBejegyzes {
+  dátum: string;
+  km: string;
+  kaland: string;
+  események: string;
+}
+
 export interface SebzésRubrika {
   típus: 'S' | 'V' | 'Z' | 'FP';
   sorszám: number;
 }
 
 export interface Session {
+  szilánk: number;
   vé_csökkenés: number;
   vé_history: number[];
   manőver_pont_használt: number;
@@ -91,7 +99,6 @@ export interface Karakter {
   HM_TÉ: number;
   HM_VÉ: number;
   CM: number;
-  szilánk: number;
   képzettségek: Kepzettseg[];
   fortélyok: Fortely[];
   fortélyok_speciális: FortelyokSpecialis;
@@ -100,6 +107,7 @@ export interface Karakter {
   páncél: PancelPeldany;
   felszerelés: { nagy_tárgyak: NagyTargy[] };
   jegyzetek: string;
+  napló: NaploBejegyzes[];
   session: Session;
 }
 
@@ -108,6 +116,7 @@ export interface Karakter {
 // ============================================================
 
 export const DEFAULT_SESSION: Session = {
+  szilánk: 1,
   vé_csökkenés: 0,
   vé_history: [],
   manőver_pont_használt: 0,

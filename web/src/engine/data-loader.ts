@@ -117,10 +117,11 @@ export interface GameData {
   nyelvek: NyelvEntry[];
   rules: Rule[];
   emptyKarakter: Karakter;
+  testKarakter: Karakter;
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, rulesFile, emptyKarakter] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, rulesFile, emptyKarakter, testKarakter] = await Promise.all([
     fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
@@ -137,6 +138,7 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<NyelvEntry[]>('tables/nyelvek.json'),
     fetchJson<{ rules: Rule[] }>('rules.json'),
     fetchJson<Karakter>('empty_karakter.json'),
+    fetchJson<Karakter>('test_karakter.json'),
   ]);
 
   const kepzettsegKp = kepzettsegKpRaw.map(e => ({
@@ -151,5 +153,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, rules: rulesFile.rules, emptyKarakter };
+  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, rules: rulesFile.rules, emptyKarakter, testKarakter };
 }

@@ -35,6 +35,9 @@ source: tables/kepzettseg_kp.json, schemas/kepzettseg.yaml (primer flag),
 formula:
   kp_képzettségek = SUM( lookup(képzettség.szint → kepzettseg_kp.json) )
   kp_fortélyok    = SUM( fortély.fok ) × kp.fortélyfok
+                    // kivéve: kiérdemelt fortélyok (kiérdemelt=true → 0 KP)
+                    // kivéve: szabad fortélyok ingyenes kerete (első TSz db → 0 KP)
+                    // kivéve: ingyenes_perszint > 0 fortélyok (Kultúrkör, Helyismeret → 0 KP)
   kp_hm           = (HM_TÉ + HM_VÉ) × kp.hm
   kp_cm           = CM × kp.cm
   elköltött_kp    = kp_képzettségek + kp_fortélyok + kp_hm + kp_cm

@@ -20,7 +20,6 @@
   "HM_TÉ": 0,
   "HM_VÉ": 0,
   "CM": 0,
-  "szilánk": 1,
   "képzettségek": [],
   "fortélyok": [],
   "fortélyok_speciális": {
@@ -51,7 +50,9 @@
     "nagy_tárgyak": []
   },
   "jegyzetek": "",
+  "napló": [],
   "session": {
+    "szilánk": 1,
     "vé_csökkenés": 0,
     "vé_history": [],
     "manőver_pont_használt": 0,

@@ -51,6 +51,8 @@ with open(TABLES / "faj_tulajdonsag_keretek.json") as f:
 karakter = {
     "schema_version": 2,
     "név": "Dorek a Toroni",
+    "játékos": "",
+    "mentés_dátum": "",
     "tsz": 8,
     "leírás": "Toroni zsoldos lovag",
     "kor": 32,
@@ -62,7 +64,6 @@ karakter = {
     "HM_TÉ": 15,
     "HM_VÉ": 17,
     "CM": 0,
-    "szilánk": 1,
     "képzettségek": [
         {"név": "Közelharc", "szint": 6},
         {"név": "Kardvívás", "szint": 8},
@@ -131,7 +132,9 @@ karakter = {
     },
     "felszerelés": {"nagy_tárgyak": []},
     "jegyzetek": "",
+    "napló": [],
     "session": {
+        "szilánk": 1,
         "vé_csökkenés": 0, "vé_history": [], "manőver_pont_használt": 0,
         "sebzések": [], "aktív_fegyver_index": 0, "aktív_pajzs": False,
         "aktív_páncél": True, "aktív_taktika": "", "aktív_helyzet": "",
@@ -340,7 +343,7 @@ else:
 print("\n--- 5. Session validáció ---")
 
 session = karakter["session"]
-required_session_keys = ["vé_csökkenés", "vé_history", "manőver_pont_használt", 
+required_session_keys = ["szilánk", "vé_csökkenés", "vé_history", "manőver_pont_használt", 
                          "sebzések", "aktív_fegyver_index", "aktív_pajzs",
                          "aktív_páncél", "aktív_taktika", "aktív_helyzet",
                          "aktív_manőver", "aktív_státuszok"]
@@ -355,9 +358,9 @@ if not any("Session" in e for e in errors):
 # ============================================================
 print("\n--- 6. Schema struktúra validáció ---")
 
-required_top = ["schema_version", "név", "tsz", "tulajdonságok", "HM_TÉ", "HM_VÉ", "CM",
-                "szilánk", "képzettségek", "fortélyok", "fortélyok_speciális",
-                "hátterek", "fegyverek", "páncél", "felszerelés", "session"]
+required_top = ["schema_version", "név", "játékos", "mentés_dátum", "tsz", "tulajdonságok", "HM_TÉ", "HM_VÉ", "CM",
+                "képzettségek", "fortélyok", "fortélyok_speciális",
+                "hátterek", "fegyverek", "páncél", "felszerelés", "napló", "session"]
 for k in required_top:
     if k not in karakter:
         err(f"Top-level mező hiányzik: '{k}'")
