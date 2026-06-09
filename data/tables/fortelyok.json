@@ -2686,7 +2686,7 @@
     "név": "Nagy méretű lény",
     "csoport": "kiemelt",
     "maxfok": 3,
-    "kp_perfok": 0,
+    "kp_perfok": 6,
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
