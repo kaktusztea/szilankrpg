@@ -203,17 +203,30 @@ export function buildArrayContext(
     ingyenesFortelyok?: { név: string; ingyenes_perszint: number; kp_perfok: number }[];
     primerKepNevek?: Set<string>;
     primerFortNevek?: Set<string>;
+    szabadFortelyNevek?: Set<string>;
   },
 ): ArrayContext {
   const arrays: ArrayContext = new Map();
 
   arrays.set('képzettségek', képzettségek.map(k => ({ szint: k.szint })));
 
+  // Szabad fortélyok ingyenes kerete: TSz db összesen
+  const szabadIngyenesDb = (opts?.szabadFortelyNevek && opts.tsz) ? opts.tsz : 0;
+  let szabadCount = 0;
+
   // Only include fortélyok that cost KP (kp_perfok > 0), using base name lookup
+  // Kiérdemelt fortélyok: soha nem kerülnek KP-ba
+  // Szabad fortélyok: az első TSz db ingyenes (nem kerül be a KP összegbe)
   const kpFortélyok = fortélyok.filter(f => {
+    if ((f as any).kiérdemelt) return false;
     if (!fortelyKpMap) return true;
     const perFok = fortelyKpMap.get(f.név) ?? 6;
-    return perFok > 0;
+    if (perFok <= 0) return false;
+    if (opts?.szabadFortelyNevek?.has(f.név) && !(f as any).kiérdemelt && szabadCount < szabadIngyenesDb) {
+      szabadCount++;
+      return false;
+    }
+    return true;
   });
   arrays.set('fortélyok', kpFortélyok.map(f => ({ fok: f.fok })));
 

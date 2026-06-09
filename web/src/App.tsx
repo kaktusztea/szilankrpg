@@ -353,6 +353,7 @@ function App() {
           ingyenesFortelyok,
           primerKepNevek,
           primerFortNevek: new Set(data.primerFortelyok),
+          szabadFortelyNevek: new Set(data.fortelySummaries.filter(d => d.csoport === 'szabad').map(d => d.név)),
         });
         const kpComputed = evaluate(data.rules, kpCtx, arrays);
 
@@ -433,7 +434,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       if (idx >= 0) setActiveTab(idx);
     }} />;
     case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} név={karakter.név} setNév={v => setKarakter(prev => prev ? { ...prev, név: v } : prev)} játékos={karakter.játékos} setJátékos={v => setKarakter(prev => prev ? { ...prev, játékos: v } : prev)} tsz={karakter.tsz} setTsz={v => setKarakter(prev => prev ? { ...prev, tsz: v } : prev)} kor={karakter.kor} setKor={v => setKarakter(prev => prev ? { ...prev, kor: v } : prev)} faj={karakter.hátterek.faj} setFaj={v => setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev)} />;
-    case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} tsz={karakter.tsz} />;
+    case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} tsz={karakter.tsz} fegyverNevek={karakter.fegyverek.map(f => { const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase()); return fd?.Alapnév || f.alap; })} />;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={setKarakter} />;
     case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;

@@ -23,6 +23,7 @@ export interface Fortely {
   fok: number;
   spec_típus: string;
   spec_elem: string;
+  kiérdemelt?: boolean;
 }
 
 export interface FortelyokSpecialis {

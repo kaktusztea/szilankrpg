@@ -12,7 +12,8 @@ const CSOPORT_LABEL: Record<string, string> = {
 
 /** Display name: "Kultúrkör - erv" if spec_elem, otherwise just név */
 function displayName(f: Fortely): string {
-  return f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
+  const base = f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
+  return f.kiérdemelt ? `${base} ⭐` : base;
 }
 
 interface Props {
@@ -21,9 +22,10 @@ interface Props {
   fortélyok: Fortely[];
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
   tsz: number;
+  fegyverNevek: string[];
 }
 
-export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz }: Props) {
+export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -36,11 +38,12 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; fok: number } | null>(null);
   const [pendingFortIdx, setPendingFortIdx] = useState<number | null>(null);
+  const [szabadTypePicker, setSzabadTypePicker] = useState<{ név: string; spec_típus: string; spec_elem: string } | null>(null);
 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setDeleteTarget(null); setPendingFortIdx(null);
+        setDeleteTarget(null); setPendingFortIdx(null); setSzabadTypePicker(null);
       }
     }
     document.addEventListener('keydown', onKey);
@@ -63,6 +66,20 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
 
   function addFortely(név: string) {
     const def = data.fortelySummaries.find(d => d.név === név);
+    // Szabad fortély: kérdezzük meg Felvett/Kiérdemelt
+    if (def && def.csoport === 'szabad') {
+      if (def.többszörös_típus) {
+        if (def.többszörös_lista.length > 0) {
+          setMultiPickerDef(def);
+        } else {
+          setFreetextValue('');
+          setMultiPickerDef(def);
+        }
+        return;
+      }
+      setSzabadTypePicker({ név, spec_típus: '', spec_elem: '' });
+      return;
+    }
     if (def && def.többszörös_típus) {
       if (def.többszörös_lista.length > 0) {
         setMultiPickerDef(def);
@@ -80,6 +97,11 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
 
   function addMultiInstance(subName: string) {
     if (!multiPickerDef) return;
+    if (multiPickerDef.csoport === 'szabad') {
+      setSzabadTypePicker({ név: multiPickerDef.név, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName });
+      setMultiPickerDef(null);
+      return;
+    }
     setFortélyok(prev => [...prev, { név: multiPickerDef.név, fok: 1, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName }]);
     setMultiPickerDef(null);
   }
@@ -119,7 +141,14 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                   const def = csoportDefs.find(d => d.név === slot.név);
                   const isOpen = infoTarget === `${globalIdx}`;
                   let isIngyenes = false;
-                  if (def && def.ingyenes_perszint > 0) {
+                  if (csoport === 'szabad') {
+                    if (slot.kiérdemelt) {
+                      isIngyenes = true;
+                    } else {
+                      const nonKierdemeltIdx = slotok.filter(s => !s.kiérdemelt).indexOf(slot);
+                      isIngyenes = nonKierdemeltIdx < tsz;
+                    }
+                  } else if (def && def.ingyenes_perszint > 0) {
                     const ingyenesDb = Math.floor((tsz + 1) / def.ingyenes_perszint);
                     const sameTypeSlots = slotok.filter(s => s.név === def.név);
                     const posInType = sameTypeSlots.indexOf(slot);
@@ -153,7 +182,11 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       <option value="">+ Új fortély...</option>
                       {available.map(d => {
                         let label = `${d.név} (max ${d.maxfok})`;
-                        if (d.ingyenes_perszint > 0) {
+                        if (csoport === 'szabad') {
+                          const nonKierdemelt = slotok.filter(s => !s.kiérdemelt).length;
+                          const maradtIngyenes = Math.max(0, tsz - nonKierdemelt);
+                          if (maradtIngyenes > 0) label += ` 🎁${maradtIngyenes}`;
+                        } else if (d.ingyenes_perszint > 0) {
                           const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
                           const felvettDb = fortélyok.filter(f => f.név === d.név).length;
                           const maradtIngyenes = Math.max(0, ingyenesDb - felvettDb);
@@ -162,7 +195,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                           const vals = Array.from({ length: d.maxfok }, (_, i) => Math.abs(d.kp_perfok) * (i + 1));
                           label += ` ➕${vals.join('-')}KP`;
                         }
-                        return <option key={d.név} value={d.név}>{label}</option>;
+                        const fegyverDisabled = d.többszörös_típus === 'fegyver' && (fegyverNevek.length === 0 || fegyverNevek.every(n => fortélyok.some(f => f.név === d.név && f.spec_elem === n)));
+                        return <option key={d.név} value={d.név} disabled={fegyverDisabled}>{label}</option>;
                       })}
                     </select>
                   </div>
@@ -229,6 +263,29 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
             </div>,
             document.body
           );
+        } else if (def.többszörös_típus === 'fegyver') {
+          const usedSubs = new Set(fortélyok.filter(f => f.név === def.név).map(f => f.spec_elem));
+          const availFegyverek = fegyverNevek.filter(n => !usedSubs.has(n));
+          return createPortal(
+            <div className="kep-prompt-overlay">
+              <div className="kep-prompt">
+                <label>{def.név} — fegyver:</label>
+                <select
+                  className="fort-select"
+                  autoFocus
+                  value=""
+                  onChange={e => { if (e.target.value) addMultiInstance(e.target.value); }}
+                >
+                  <option value="">Válassz fegyvert...</option>
+                  {availFegyverek.map(k => <option key={k} value={k}>{k}</option>)}
+                </select>
+                <div className="kep-prompt-btns">
+                  <button onClick={() => setMultiPickerDef(null)}>Mégse</button>
+                </div>
+              </div>
+            </div>,
+            document.body
+          );
         } else {
           return createPortal(
             <div className="kep-prompt-overlay">
@@ -251,6 +308,27 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
           );
         }
       })()}
+
+      {szabadTypePicker && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
+            <label style={{ fontWeight: 'bold' }}>{szabadTypePicker.spec_elem ? `${szabadTypePicker.név} - ${szabadTypePicker.spec_elem}` : szabadTypePicker.név}</label>
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <button className="he-field-btn" style={{ padding: '10px 16px', fontSize: '16px' }} onClick={() => {
+                const p = szabadTypePicker;
+                setFortélyok(prev => [...prev, { név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem }]);
+                setSzabadTypePicker(null);
+              }}>6/0 Felvett</button>
+              <button className="he-field-btn" style={{ padding: '10px 16px', fontSize: '16px' }} onClick={() => {
+                const p = szabadTypePicker;
+                setFortélyok(prev => [...prev, { név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem, kiérdemelt: true }]);
+                setSzabadTypePicker(null);
+              }}>⭐ Kiérdemelt</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
     </div>
   );
 }
