@@ -1,5 +1,6 @@
 .harcertekek-screen {
   padding: 12px;
+  font-size: 16px;
 }
 
 .he-section {
@@ -8,7 +9,7 @@
 
 .he-section h3 {
   margin: 0 0 8px;
-  font-size: 15px;
+  font-size: 17px;
   color: var(--text);
   border-bottom: 1px solid #444;
   padding-bottom: 4px;
@@ -28,7 +29,7 @@
 
 .he-hm-row span {
   width: 60px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .he-hm-row button {
@@ -60,7 +61,7 @@
   display: flex;
   gap: 12px;
   margin-top: 6px;
-  font-size: 13px;
+  font-size: 14px;
   color: var(--text-dim);
 }
 
@@ -68,7 +69,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px 16px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .he-harcmodor-item strong {
@@ -94,7 +95,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px 12px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .he-fegyver-fields label {
@@ -109,7 +110,7 @@
   border-radius: 4px;
   color: var(--text);
   padding: 2px 6px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .he-idea-btn {
@@ -118,7 +119,7 @@
   border-radius: 4px;
   color: var(--text);
   padding: 2px 10px;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bold;
   cursor: pointer;
   min-width: 36px;
@@ -131,7 +132,7 @@
   border-radius: 4px;
   color: var(--text);
   padding: 4px 12px;
-  font-size: 14px;
+  font-size: 16px;
   cursor: pointer;
   text-align: left;
 }
@@ -148,14 +149,14 @@
   border-radius: 4px;
   color: var(--text);
   padding: 6px 10px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .he-pancel-fields {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  font-size: 14px;
+  font-size: 16px;
 }
 
 .he-pancel-fields label {
@@ -170,7 +171,7 @@
   border-radius: 4px;
   color: var(--text);
   padding: 2px 6px;
-  font-size: 14px;
+  font-size: 16px;
   flex: 1;
 }
 
