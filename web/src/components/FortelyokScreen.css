@@ -167,3 +167,7 @@
   border-radius: 4px;
   margin-top: 8px;
 }
+
+.fort-over {
+  color: var(--error) !important;
+}

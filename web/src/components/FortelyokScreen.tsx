@@ -23,9 +23,10 @@ interface Props {
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
   tsz: number;
   fegyverNevek: string[];
+  nyelvtanulásSzint: number;
 }
 
-export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek }: Props) {
+export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, nyelvtanulásSzint }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -136,7 +137,20 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                 <span className="fort-csoport-arrow">{collapsed ? '▸' : '▾'}</span> {CSOPORT_LABEL[csoport]} <span className="dim">({slotok.length})</span>
               </h3>
               {!collapsed && (<>
-                {slotok.map((slot, i) => {
+                {(() => {
+                  // Nyelvismeret pont keret és túllépés számítás
+                  const nyelvPontKeret = Math.max(0, (nyelvtanulásSzint - 3) * 3);
+                  const nyelvismeretSlotok = slotok.filter(s => s.név === 'Nyelvismeret');
+                  const nyelvÖsszFok = nyelvismeretSlotok.reduce((s, f) => s + f.fok, 0);
+                  const nyelvTúllépés = Math.max(0, nyelvÖsszFok - nyelvPontKeret);
+                  // Mark last N foks as over (from end)
+                  let maradékTúl = nyelvTúllépés;
+                  const nyelvOverSet = new Set<Fortely>();
+                  for (let j = nyelvismeretSlotok.length - 1; j >= 0 && maradékTúl > 0; j--) {
+                    nyelvOverSet.add(nyelvismeretSlotok[j]);
+                    maradékTúl -= nyelvismeretSlotok[j].fok;
+                  }
+                  return slotok.map((slot, i) => {
                   const globalIdx = fortélyok.indexOf(slot);
                   const def = csoportDefs.find(d => d.név === slot.név);
                   const isOpen = infoTarget === `${globalIdx}`;
@@ -163,6 +177,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       locked={slot.név === 'Mesterfegyver'}
                       gameMode={gameMode}
                       isOpen={isOpen}
+                      overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}
                       onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
                       onFokChange={fok => setFok(globalIdx, fok)}
                       onHint={showHint}
@@ -171,7 +186,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       }}
                     />
                   );
-                })}
+                });
+                })()}
                 {!gameMode && available.length > 0 && (
                   <div className="fort-row fort-row-new">
                     <select
@@ -196,7 +212,12 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                           label += ` ➕${vals.join('-')}KP`;
                         }
                         const fegyverDisabled = d.többszörös_típus === 'fegyver' && (fegyverNevek.length === 0 || fegyverNevek.every(n => fortélyok.some(f => f.név === d.név && f.spec_elem === n)));
-                        return <option key={d.név} value={d.név} disabled={fegyverDisabled}>{label}</option>;
+                        const nyelvDisabled = d.név === 'Nyelvismeret' && (() => {
+                          const keret = Math.max(0, (nyelvtanulásSzint - 3) * 3);
+                          const used = fortélyok.filter(f => f.név === 'Nyelvismeret').reduce((s, f) => s + f.fok, 0);
+                          return used >= keret;
+                        })();
+                        return <option key={d.név} value={d.név} disabled={fegyverDisabled || nyelvDisabled}>{label}</option>;
                       })}
                     </select>
                   </div>
@@ -286,6 +307,39 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
             </div>,
             document.body
           );
+        } else if (def.többszörös_típus === 'nyelv') {
+          const usedSubs = new Set(fortélyok.filter(f => f.név === def.név).map(f => f.spec_elem));
+          const availNyelvek = data.nyelvek.filter(n => !usedSubs.has(n.név));
+          const byGroup = new Map<string, typeof availNyelvek>();
+          for (const n of availNyelvek) {
+            const arr = byGroup.get(n.csoport) || [];
+            arr.push(n);
+            byGroup.set(n.csoport, arr);
+          }
+          return createPortal(
+            <div className="kep-prompt-overlay">
+              <div className="kep-prompt">
+                <label>{def.név} — nyelv:</label>
+                <select
+                  className="fort-select"
+                  autoFocus
+                  value=""
+                  onChange={e => { if (e.target.value) addMultiInstance(e.target.value); }}
+                >
+                  <option value="">Válassz nyelvet...</option>
+                  {[...byGroup.entries()].map(([group, langs]) => (
+                    <optgroup key={group} label={group}>
+                      {langs.map(l => <option key={l.név} value={l.név}>{l.név}</option>)}
+                    </optgroup>
+                  ))}
+                </select>
+                <div className="kep-prompt-btns">
+                  <button onClick={() => setMultiPickerDef(null)}>Mégse</button>
+                </div>
+              </div>
+            </div>,
+            document.body
+          );
         } else {
           return createPortal(
             <div className="kep-prompt-overlay">
@@ -333,13 +387,14 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit }: {
   slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
   isOpen: boolean;
   isIngyenes: boolean;
   locked: boolean;
+  overLimit: boolean;
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
   onRemove: () => void;
@@ -378,12 +433,12 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
         className="fort-row"
         onClick={handleTap}
       >
-        <span className="fort-név">{label}{isIngyenes ? ' 🎁' : ''}</span>
+        <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes ? ' 🎁' : ''}</span>
         <span className="fort-right">
           {!gameMode && !locked && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}`}>{slot.fok}</span>
+          <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}${overLimit ? ' fort-over' : ''}`}>{slot.fok}</span>
         </span>
       </div>
       {isOpen && def && (
