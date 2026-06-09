@@ -14,6 +14,7 @@ import './App.css';
 const ALL_TABS = [
   { id: 'aktiv', label: '❎ Aktív', editOnly: false },
   { id: 'harc', label: '🗡️ Harc', editOnly: false },
+  { id: 'tavharc', label: '🏹 Távharc', editOnly: false },
   { id: 'tulajdonsagok', label: '🔵 Tul/Képz', editOnly: false },
   { id: 'fortelyok', label: '🟣 Fortélyok', editOnly: false },
   { id: 'harcertekek', label: '🛡️ Harcértékek', editOnly: true },
@@ -114,7 +115,7 @@ function validateKarakterData(k: Karakter, data: GameData): string | null {
 function App() {
   const [data, setData] = useState<GameData | null>(null);
   const [error, setError] = useState('');
-  const [activeTab, setActiveTab] = useState(2);
+  const [activeTab, setActiveTab] = useState(3);
   const [gameMode, setGameMode] = useState(false);
 
   // --- Karakter state (egyben mentendő) ---
@@ -446,6 +447,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
+    case 'tavharc': return <div className="screen"><h2>🏹 Távharc</h2><p>Távharc kalkulátor (TODO)</p></div>;
     case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} név={karakter.név} setNév={v => setKarakter(prev => prev ? { ...prev, név: v } : prev)} játékos={karakter.játékos} setJátékos={v => setKarakter(prev => prev ? { ...prev, játékos: v } : prev)} tsz={karakter.tsz} setTsz={v => setKarakter(prev => prev ? { ...prev, tsz: v } : prev)} kor={karakter.kor} setKor={v => setKarakter(prev => prev ? { ...prev, kor: v } : prev)} faj={karakter.hátterek.faj} setFaj={v => setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev)} />;
     case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} tsz={karakter.tsz} fegyverNevek={karakter.fegyverek.map(f => { const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase()); return fd?.Alapnév || f.alap; })} nyelvtanulásSzint={karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0} />;
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;

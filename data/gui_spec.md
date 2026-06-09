@@ -172,6 +172,18 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ---
 
+## 2b. Távharc fül/screen
+
+Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec alapján.
+
+### Terv
+- Távharc VÉ kalkulátor (távolság, szorzók, cella)
+- Érintett fortélyok:
+  - Mozgó cél mestere
+  - Mágikus lövedék gyorsítása
+
+---
+
 ## 3. Tulajdonságok + Képzettségek fül/screen
 
 ### Fejléc (legfelül)
@@ -382,6 +394,7 @@ Alul fix, horizontálisan scrollozható szalag.
 |----|-------|----------|
 | aktiv | ❎ Aktív | false |
 | harc | 🗡️ Harc | false |
+| tavharc | 🏹 Távharc | false |
 | tulajdonsagok | 🔵 Tul/Képz | false |
 | fortelyok | 🟣 Fortélyok | false |
 | harcertekek | 🛡️ Harcértékek | true |
@@ -393,7 +406,7 @@ Alul fix, horizontálisan scrollozható szalag.
 | manoverek | 🎯 Manőverek | false |
 
 - `editOnly: true` → Game módban a tab eltűnik
-- Default aktív tab induláskor: index 2 (`tulajdonsagok`)
+- Default aktív tab induláskor: index 3 (`tulajdonsagok`)
 
 ### Stílus
 - `flex-shrink: 0`, `white-space: nowrap`, `overflow-x: auto`, scrollbar rejtett
