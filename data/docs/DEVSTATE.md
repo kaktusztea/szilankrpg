@@ -74,7 +74,7 @@
   - VÉ csökkent: reset gomb → megerősítő popup ("VÉ Reset"), disabled ha 0
   - ÉP táblázat fejléc: 4 oszlopos grid (ÉP érték, ÉP reset gomb, Seb gomb, Gyógy gomb)
   - Sebesülés/Gyógyulás: overlay popup (típus+érték gombok, auto-close mindkettő kiválasztva)
-  - Sebesülés: 1-15 látható + ▾ lenyitó 16-40
+  - Sebesülés: 1-15 látható + ▾ lenyitó 16-40; Seb gomb disabled ha minden rubrika ÉP (nincs hely)
   - Gyógyulás: auto-select ha csak 1 típusú seb van
   - ÉP Reset: megerősítő popup, disabled ha nincs seb
   - TÉ levonás: Fájdalomtűrés enyhítés (konstansok.fájdalomtűrés_enyhítés), dinamikus
@@ -194,6 +194,7 @@
 - ✅ Napló fül (📖): bejegyzés lista (dátum, KM, kaland, események), szerkesztés/törlés, accordion, editOnly
 - ✅ Távharc fül (🏹): skeleton (TODO: távharc kalkulátor)
 - ✅ Harc fül fegyver tábla: dinamikus (karakter.fegyverek-ből), MK párok kibontva, kategória→harcmodor lookup
+  - Tám cella kattintható (Game mód): info popup (fegyver név, sebesség, harckeret)
 - ✅ Reactive Engine migráció: TELJES (pancel.ts, kp.ts, harcertek.ts mind törölve)
   - spec_kp: sum(kp_bónusz_fortélyok) + tartós_sérülés (negatív kp_perfok fortélyokból automatikus)
   - kiemelt_kp: sum(kiemelt_fortélyok, fizetős_kp) — ingyenes keret feletti többlet
@@ -206,6 +207,10 @@
 - ✅ Mentés fájlnév: `kisbetű_éktelenítve_Xtsz.json` formátum (első név max 20 kar, ASCII only)
 
 ## Következő lépések
+1. **Reactive Engine bővítés** — §16 Fortély módosítók (iteráció + feltétel dispatch → deklaratív filter+sum)
+2. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
+3. **Távharc fül** — VÉ kalkulátor implementáció (§17)
+4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/docs/DEVSTATE.md` (ez a fájl)

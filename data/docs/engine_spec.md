@@ -38,6 +38,7 @@ formula:
                     // kivéve: kiérdemelt fortélyok (kiérdemelt=true → 0 KP)
                     // kivéve: szabad fortélyok ingyenes kerete (első TSz db → 0 KP)
                     // kivéve: ingyenes_perszint > 0 fortélyok (Kultúrkör, Helyismeret → 0 KP)
+                    // szabad fortélyok keret feletti KP: szekunder KP-ból fizetendő (nem primer)
   kp_hm           = (HM_TÉ + HM_VÉ) × kp.hm
   kp_cm           = CM × kp.cm
   elköltött_kp    = kp_képzettségek + kp_fortélyok + kp_hm + kp_cm
@@ -56,6 +57,8 @@ validate:
                 + kp_hm + kp_cm
   maradék_kp ≥ 0
   primer_költés ≤ primer_limit                               // primer költés nem lépi túl
+
+note: Primer képzettség matching: exact név VAGY prefix match ("Tradíció: ..." → primer, mert "Tradíció" primer).
 
 UI kijelzés (KP sáv, szerkesztő módban):
   Bal fél:  "Maradt KP: {maradék_kp}"           // piros háttér ha < 0
@@ -269,6 +272,7 @@ output: össz_támadás (támadások száma / kör)
 note: Ha össz_támadás >= 2, minden támadásra TÉ:-3 levonás jár (az elsőre is).
 impl: páncél_MGT a reactive engine `páncél_MGT` szabályából jön.
       A `fegyver_harckeret` reactive rule használja inputként.
+      Harc fül Tám cella: kattintásra info popup (fegyver név, sebesség, harckeret).
 ```
 
 ---
@@ -532,6 +536,21 @@ formula:
 
 output: max_képzettség_szint
 note: Abszolút maximum: 15.szint. Szintlépésenként max 2 szinttel növelhető egy képzettség.
+```
+
+### 19b. Nyelvismeret pont keret (UI validáció, nem rules.json)
+
+```
+input:  Nyelvtanulás képzettség szint
+formula:
+  nyelv_pont_keret = MAX(0, (nyelvtanulás_szint - 3) × 3)
+  nyelv_összfok = SUM( Nyelvismeret fortélyok foka )
+  túllépés = MAX(0, nyelv_összfok - nyelv_pont_keret)
+
+validate: nyelv_összfok ≤ nyelv_pont_keret
+UI: túllépés > 0 → utolsó N Nyelvismeret sor pirosra vált, dropdown disabled
+note: Nem rules.json szabály — inline számítás a FortelyokScreen-ben.
+      Nyelvismeret kp_perfok: 0 (nem KP-ból, hanem Nyelvtanulás pontokból vehető fel).
 ```
 
 
