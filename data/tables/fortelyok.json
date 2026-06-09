@@ -1391,7 +1391,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Testközelben érzed igazában elemedben magad. Sikeres 🗡️Belharcba kerülés🗡️ manőver esetén 🗡️Belharci szituációba🗡️ kerülsz és harcértékeidre - csak **Közelharc** harcmodor esetén - a lent leírt pluszok járnak.",
+    "leírás": "Testközelben érzed igazában elemedben magad. Sikeres 🗡️Belharcba kerülés🗡️ manőver esetén 🗡️Belharci szituációba🗡️ kerülsz és harcértékeidre - csak Közelharc harcmodor esetén - a lent leírt pluszok járnak.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -1513,7 +1513,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél. Bónuszok 🗡️**Fegyverrántás-szituációban** (az alkalmazó oldalán):",
+    "leírás": "Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél. Bónuszok 🗡️Fegyverrántás-szituációban (az alkalmazó oldalán):",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -3276,7 +3276,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Földi hátas esetén a **Lovaglás**, légi hátasnál pedig a **Léglovaglás** képzettséget terjeszti ki.",
+    "leírás": "Földi hátas esetén a Lovaglás, légi hátasnál pedig a Léglovaglás képzettséget terjeszti ki.",
     "kiterjeszti_normál": [
       "Lovaglás",
       "Léglovaglás"
@@ -4271,7 +4271,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) táncai **Előadóművészet** képzettséged szintjének megfelel...",
+    "leírás": "Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) táncai Előadóművészet képzettséged szintjének megfelel...",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"
@@ -4393,7 +4393,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Képes vagy fúvós hangszereket megszólaltatni. Az ismert **Kultúrkörök** zenéit **Előadóművészet** képzettséged szintj...",
+    "leírás": "Képes vagy fúvós hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintj...",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"
@@ -4417,7 +4417,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Képes vagy húros hangszereket megszólaltatni. Az ismert **Kultúrkörök** zenéit **Előadóművészet** képzettséged szintj...",
+    "leírás": "Képes vagy húros hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintj...",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"
@@ -4441,7 +4441,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Képes vagy ütős hangszereket megszólaltatni. Az ismert **Kultúrkörök** zenéit **Előadóművészet** képzettséged szintjé...",
+    "leírás": "Képes vagy ütős hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjé...",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"

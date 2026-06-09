@@ -67,6 +67,7 @@ def generate_fortelyok():
                 köv = fok.get('követelménytext', '')
                 fokok_summary.append({'fok': fok['fok'], 'hatás': hatás, 'követelmény': köv})
             leírás = ' '.join([l['text'] for l in (data.get('leírások') or []) if l.get('text')])
+            leírás = leírás.replace('**', '').replace('`', '')
             kiterjeszti = data.get('kiterjeszti', {})
             kit_norm = kiterjeszti.get('normál', []) if kiterjeszti else []
             kit_eros = kiterjeszti.get('erős', []) if kiterjeszti else []
