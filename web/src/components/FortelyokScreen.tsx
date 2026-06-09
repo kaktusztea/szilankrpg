@@ -197,7 +197,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                     >
                       <option value="">+ Új fortély...</option>
                       {available.map(d => {
-                        let label = `${d.név} (max ${d.maxfok})`;
+                        let label = `${d.név} (${d.maxfok})`;
                         if (csoport === 'szabad') {
                           const nonKierdemelt = slotok.filter(s => !s.kiérdemelt).length;
                           const maradtIngyenes = Math.max(0, tsz - nonKierdemelt);
