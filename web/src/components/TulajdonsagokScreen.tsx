@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import type { Tulajdonsagok } from '../engine/types';
@@ -61,7 +61,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       if (e.key === 'Escape') {
         setEditingNév(false); setEditingTsz(false);
         setEditingKor(false); setEditingJátékos(false); setDeleteTarget(null); setPendingEditIdx(null);
-        setPromptState(null);
+        setPromptState(null); setTradícióPicker(false); setTradícióIstenPicker(false);
       }
     }
     document.addEventListener('keydown', onKey);
@@ -92,8 +92,15 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
   const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; szint: number } | null>(null);
   // Új képzettség felvétele után automatikusan megnyíló szint popup
   const [pendingEditIdx, setPendingEditIdx] = useState<number | null>(null);
+  // Tradíció picker
+  const [tradícióPicker, setTradícióPicker] = useState(false);
+  const [tradícióIstenPicker, setTradícióIstenPicker] = useState(false);
 
   function addKepzettseg(_csoport: string, név: string) {
+    if (név === '__tradicio') {
+      setTradícióPicker(true);
+      return;
+    }
     if (név.startsWith('__prompt:')) {
       const alapNév = név.slice('__prompt:'.length);
       setPromptState({ alapNév });
@@ -127,6 +134,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
 
   // Megjelenítési név: többszörös képzettségeknél "AlapNév: AlNév" formátum
   function getDisplayName(név: string): string {
+    if (név.startsWith('Tradíció: ')) return név;
     for (const d of data.kepzettsegDefs) {
       if (d.többszörös.length === 0) continue;
       if (d.többszörös[0] === '*') {
@@ -141,6 +149,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
 
   // A def lookup többszörös képzettségeknél az alap def-et adja vissza
   function findDef(név: string): KepzettsegDef | undefined {
+    if (név.startsWith('Tradíció: ')) return data.kepzettsegDefs.find(d => d.név === 'Tradíció');
     for (const d of data.kepzettsegDefs) {
       if (d.többszörös.length === 0) continue;
       if (d.többszörös[0] === '*' && név.startsWith(d.név + ':')) return d;
@@ -154,6 +163,12 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
     const csoportDefs = defsByGroup.get(csoport) || [];
     const options: { label: string; value: string }[] = [];
     for (const d of csoportDefs) {
+      if (d.név === 'Tradíció') {
+        // Tradíció: speciális — ha bármelyik "Tradíció: ..." már felvéve, nem jelenik meg
+        const hasTradicio = usedNames.some(n => n.startsWith('Tradíció: '));
+        if (!hasTradicio) options.push({ label: 'Tradíció', value: '__tradicio' });
+        continue;
+      }
       if (d.többszörös.length > 0) {
         if (d.többszörös[0] === '*') {
           // Szabad szöveges — mindig elérhető
@@ -179,6 +194,10 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
     const allValidNames = new Set<string>();
     const freeTextPrefixes: string[] = [];
     for (const d of csoportDefs) {
+      if (d.név === 'Tradíció') {
+        freeTextPrefixes.push('Tradíció: ');
+        continue;
+      }
       if (d.többszörös.length > 0) {
         if (d.többszörös[0] === '*') {
           freeTextPrefixes.push(d.név + ':');
@@ -408,6 +427,64 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
             <input autoFocus maxLength={40} value={tempJátékos} onChange={e => setTempJátékos(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') { setJátékos(tempJátékos); setEditingJátékos(false); } }} />
             <div className="kep-prompt-btns">
               <button onClick={() => { setJátékos(tempJátékos); setEditingJátékos(false); }}>OK</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {tradícióPicker && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label style={{ fontWeight: 'bold', marginBottom: '8px' }}>Tradíció választás</label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '60vh', overflowY: 'auto' }}>
+              {data.tradiciok.map(t => (
+                <button key={t.név} className="he-field-btn" onClick={() => {
+                  if (t.név === 'Szakrális') {
+                    setTradícióPicker(false);
+                    setTradícióIstenPicker(true);
+                  } else {
+                    const fullName = `Tradíció: ${t.név}`;
+                    setKépzettségek(prev => [...prev, { név: fullName, szint: 0 }]);
+                    setPendingEditIdx(képzettségek.length);
+                    setTradícióPicker(false);
+                  }
+                }}>{t.név} <span style={{ color: 'var(--text-dim)', fontSize: '13px' }}>({t.típus})</span></button>
+              ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {tradícióIstenPicker && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label style={{ fontWeight: 'bold', marginBottom: '8px' }}>Szakrális — Isten választás</label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '60vh', overflowY: 'auto' }}>
+              {(() => {
+                const byPantheon = new Map<string, typeof data.szakralis>();
+                for (const s of data.szakralis) {
+                  const arr = byPantheon.get(s.pantheon) || [];
+                  arr.push(s);
+                  byPantheon.set(s.pantheon, arr);
+                }
+                const elements: ReactNode[] = [];
+                for (const [pantheon, istenek] of byPantheon) {
+                  elements.push(<div key={`h-${pantheon}`} style={{ fontSize: '13px', color: 'var(--text-dim)', marginTop: '6px', borderBottom: '1px solid #444', paddingBottom: '2px' }}>{pantheon}</div>);
+                  for (const ist of istenek) {
+                    elements.push(
+                      <button key={ist.név} className="he-field-btn" onClick={() => {
+                        const fullName = `Tradíció: Szakrális (${ist.név})`;
+                        setKépzettségek(prev => [...prev, { név: fullName, szint: 0 }]);
+                        setPendingEditIdx(képzettségek.length);
+                        setTradícióIstenPicker(false);
+                      }}>{ist.név} <span style={{ color: 'var(--text-dim)', fontSize: '12px' }}>— {ist.leírás}</span></button>
+                    );
+                  }
+                }
+                return elements;
+              })()}
             </div>
           </div>
         </div>,
