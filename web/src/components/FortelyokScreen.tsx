@@ -125,6 +125,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
 
   return (
     <div className="screen fort-screen">
+      <h2>🟣 Fortélyok</h2>
       <div className="fort-section">
         {CSOPORT_SORREND.map(csoport => {
           const csoportDefs = defsByGroup.get(csoport) || [];

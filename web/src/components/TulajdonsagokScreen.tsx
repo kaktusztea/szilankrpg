@@ -215,6 +215,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
 
   return (
     <div className="screen tul-screen">
+      <h2>🔵 Tulajdonságok / Képzettségek</h2>
       {/* Fejléc: Név + Szint */}
       <div className="tul-header">
         <div className="tul-header-box tul-header-név"

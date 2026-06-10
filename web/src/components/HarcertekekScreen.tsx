@@ -144,6 +144,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
 
   return (
     <div className="screen harcertekek-screen">
+      <h2>🛡️ Harcértékek</h2>
       {/* HM/CM */}
       <section className="he-section">
         <h3>HM / CM</h3>
