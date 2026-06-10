@@ -37,9 +37,11 @@ interface Props {
   setKor: (v: number) => void;
   faj: string;
   setFaj: (v: string) => void;
+  anyanyelv: string;
+  setAnyanyelv: (v: string) => void;
 }
 
-export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj }: Props) {
+export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv }: Props) {
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
   const [editingTsz, setEditingTsz] = useState(false);
@@ -245,6 +247,12 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
           >
             <span className="tul-header-label">Kor:</span> <strong>{kor}</strong>
           </div>
+        </div>
+        <div className="tul-faj-row">
+          <span className="tul-header-label">Anyanyelv:</span>
+          <select className="faj-select" value={anyanyelv} onChange={e => setAnyanyelv(e.target.value)}>
+            {data.nyelvek.map(n => <option key={n.név} value={n.név}>{n.név}</option>)}
+          </select>
         </div>
         <div className="tul-header-box"
           onClick={() => { const now = Date.now(); if (now - lastTapJátékos.current < 350) { setEditingJátékos(true); setTempJátékos(játékos); lastTapJátékos.current = 0; } else { lastTapJátékos.current = now; } }}

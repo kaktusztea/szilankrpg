@@ -56,6 +56,7 @@ karakter = {
     "tsz": 8,
     "leírás": "Toroni zsoldos lovag",
     "kor": 32,
+    "anyanyelv": "Toroni",
     "vallás": "",
     "tulajdonságok": {
         "erő": 3, "edzettség": 3, "ügyesség": 3, "gyorsaság": 3,
@@ -115,6 +116,8 @@ karakter = {
         {"név": "Bűvészet", "fok": 1, "spec_típus": "", "spec_elem": ""},
         {"név": "Alkudozás", "fok": 1, "spec_típus": "", "spec_elem": ""},
         {"név": "Térképészet", "fok": 1, "spec_típus": "", "spec_elem": ""},
+        {"név": "Nyelvismeret", "fok": 1, "spec_típus": "nyelv", "spec_elem": "Közös (pyarroni)", "kiérdemelt": True},
+        {"név": "Nyelvismeret", "fok": 1, "spec_típus": "nyelv", "spec_elem": "Toroni", "kiérdemelt": True},
     ],
     "fortélyok_speciális": {
         "analfabéta": False, "apró_méretű_lény": False,

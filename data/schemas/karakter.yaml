@@ -10,6 +10,7 @@ mentés_dátum: ""              # YYYY-MM-DD HH:MM
 tsz: 1                        # Tapasztalati szint (1-21)
 leírás: ""
 kor: 20                       # 5-500
+anyanyelv: ""                 # nyelvek.json-ból választható
 vallás: ""
 
 tulajdonságok:

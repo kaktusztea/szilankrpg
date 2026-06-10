@@ -99,6 +99,7 @@ export interface Karakter {
   tsz: number;
   leírás: string;
   kor: number;
+  anyanyelv: string;
   vallás: string;
   tulajdonságok: Tulajdonsagok;
   HM_TÉ: number;

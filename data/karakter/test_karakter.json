@@ -6,6 +6,7 @@
   "tsz": 8,
   "leírás": "Toroni zsoldos lovag",
   "kor": 32,
+  "anyanyelv": "Toroni",
   "vallás": "",
   "tulajdonságok": {
     "erő": 3,
@@ -278,6 +279,20 @@
       "fok": 1,
       "spec_típus": "",
       "spec_elem": ""
+    },
+    {
+      "név": "Nyelvismeret",
+      "fok": 1,
+      "spec_típus": "nyelv",
+      "spec_elem": "Közös (pyarroni)",
+      "kiérdemelt": true
+    },
+    {
+      "név": "Nyelvismeret",
+      "fok": 1,
+      "spec_típus": "nyelv",
+      "spec_elem": "Toroni",
+      "kiérdemelt": true
     }
   ],
   "fortélyok_speciális": {
