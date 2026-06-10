@@ -16,6 +16,8 @@ function displayName(f: Fortely): string {
   return f.kiérdemelt ? `${base} ⭐` : base;
 }
 
+const NYELV_FOK_LABELS: Record<number, string> = { 1: 'Alap', 2: 'Udvari' };
+
 interface Props {
   data: GameData;
   gameMode: boolean;
@@ -250,13 +252,14 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
         const pSlot = fortélyok[pendingFortIdx];
         const pDef = data.fortelySummaries.find(d => d.név === pSlot?.név);
         const pMaxfok = pDef?.maxfok ?? 1;
+        const isNyelv = pSlot?.név === 'Nyelvismeret';
         return createPortal(
           <div className="kep-prompt-overlay">
             <div className="kep-prompt">
-              <label>{pSlot?.név} — fok:</label>
+              <label>{isNyelv ? displayName(pSlot) : `${pSlot?.név} — fok:`}</label>
               <div className="fort-fok-radios">
                 {Array.from({ length: pMaxfok }, (_, i) => i + 1).map(f => (
-                  <button key={f} className={`fort-fok-btn ${pSlot?.fok === f ? 'active' : ''}`} onClick={() => { setFortélyok(prev => prev.map((ft, i) => i === pendingFortIdx ? { ...ft, fok: f } : ft)); setPendingFortIdx(null); }}>{f}</button>
+                  <button key={f} className={`fort-fok-btn ${pSlot?.fok === f ? 'active' : ''}`} style={isNyelv ? { width: 'auto', padding: '6px 14px', borderRadius: '6px' } : undefined} onClick={() => { setFortélyok(prev => prev.map((ft, i) => i === pendingFortIdx ? { ...ft, fok: f } : ft)); setPendingFortIdx(null); }}>{isNyelv ? NYELV_FOK_LABELS[f] ?? f : f}</button>
                 ))}
               </div>
             </div>
@@ -325,23 +328,19 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
           return createPortal(
             <div className="kep-prompt-overlay">
               <div className="kep-prompt">
-                <label>{def.név} — nyelv:</label>
                 <select
                   className="fort-select"
                   autoFocus
+                  size={12}
                   value=""
                   onChange={e => { if (e.target.value) addMultiInstance(e.target.value); }}
                 >
-                  <option value="">Válassz nyelvet...</option>
                   {[...byGroup.entries()].map(([group, langs]) => (
                     <optgroup key={group} label={group}>
                       {langs.map(l => <option key={l.név} value={l.név}>{l.név}</option>)}
                     </optgroup>
                   ))}
                 </select>
-                <div className="kep-prompt-btns">
-                  <button onClick={() => setMultiPickerDef(null)}>Mégse</button>
-                </div>
               </div>
             </div>,
             document.body
@@ -446,7 +445,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
           {!gameMode && !locked && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}${overLimit ? ' fort-over' : ''}`}>{slot.fok}</span>
+          <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}${overLimit ? ' fort-over' : ''}`}>{slot.név === 'Nyelvismeret' ? NYELV_FOK_LABELS[slot.fok] ?? slot.fok : slot.fok}</span>
         </span>
       </div>
       {isOpen && def && (
@@ -477,10 +476,10 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
       {editing && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
-            <label>{label} — fok:</label>
+            <label style={slot.név === 'Nyelvismeret' ? { textAlign: 'center', width: '100%' } : undefined}>{slot.név === 'Nyelvismeret' ? label : `${label} — fok:`}</label>
             <div className="fort-fok-radios">
               {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
-                <button key={f} className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}`} onClick={() => { onFokChange(f); setEditing(false); }}>{f}</button>
+                <button key={f} className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}`} style={slot.név === 'Nyelvismeret' ? { width: 'auto', padding: '6px 14px', borderRadius: '6px' } : undefined} onClick={() => { onFokChange(f); setEditing(false); }}>{slot.név === 'Nyelvismeret' ? NYELV_FOK_LABELS[f] ?? f : f}</button>
               ))}
             </div>
           </div>
