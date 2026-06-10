@@ -7,11 +7,15 @@
   margin-bottom: 20px;
 }
 
+.he-section + .he-section {
+  border-top: 1px solid #333;
+  padding-top: 16px;
+}
+
 .he-section h3 {
   margin: 0 0 8px;
   font-size: 17px;
   color: var(--text);
-  border-bottom: 1px solid #444;
   padding-bottom: 4px;
 }
 
