@@ -46,6 +46,10 @@
     "méret_illeszkedés": "passzol",
     "rongálódás": 0
   },
+  "pajzs": {
+    "méret": "",
+    "pajzshasználat_fok": 0
+  },
   "felszerelés": {
     "nagy_tárgyak": []
   },

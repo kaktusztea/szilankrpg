@@ -110,10 +110,12 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   function getFortelyokForCsoport(csoport: string): Fortely[] {
     const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
     const items = fortélyok.filter(f => csoportNevek.has(f.név));
-    // Group by név (identical names together), Mesterfegyver always first
+    // Group by név (identical names together), Mesterfegyver/Pajzshasználat always first
     items.sort((a, b) => {
-      if (a.név === 'Mesterfegyver' && b.név !== 'Mesterfegyver') return -1;
-      if (b.név === 'Mesterfegyver' && a.név !== 'Mesterfegyver') return 1;
+      const aLocked = a.név === 'Mesterfegyver' || a.név === 'Pajzshasználat';
+      const bLocked = b.név === 'Mesterfegyver' || b.név === 'Pajzshasználat';
+      if (aLocked && !bLocked) return -1;
+      if (bLocked && !aLocked) return 1;
       return a.név.localeCompare(b.név);
     });
     return items;
@@ -128,7 +130,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
           // A nem-többszörös fortélyok egyszer vehetők fel; többszörösök mindig elérhetők
           const usedNonMulti = new Set(slotok.filter(f => !f.spec_típus).map(f => f.név));
           const többszörösNevek = new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név));
-          const available = csoportDefs.filter(d => (!usedNonMulti.has(d.név) || többszörösNevek.has(d.név)) && d.név !== 'Mesterfegyver');
+          const available = csoportDefs.filter(d => (!usedNonMulti.has(d.név) || többszörösNevek.has(d.név)) && d.név !== 'Mesterfegyver' && d.név !== 'Pajzshasználat');
           const collapsed = collapsedGroups.has(csoport);
 
           return (
@@ -174,7 +176,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       slot={slot}
                       def={def}
                       isIngyenes={isIngyenes}
-                      locked={slot.név === 'Mesterfegyver'}
+                      locked={slot.név === 'Mesterfegyver' || slot.név === 'Pajzshasználat'}
                       gameMode={gameMode}
                       isOpen={isOpen}
                       overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}
@@ -421,7 +423,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
     if (overLimit) { onToggleInfo(); return; }
     const now = Date.now();
     if (now - lastTap.current < 350) {
-      if (locked) { onHint('Mesterfegyver fortélyokat a Harcértékek fülön kezeld!', 3000); }
+      if (locked) { onHint('Ezt a fortélyt a Harcértékek fülön kezeld!', 3000); }
       else if (maxfok <= 1) { onHint('1 fok a maximum'); }
       else { setEditing(true); }
       lastTap.current = 0;

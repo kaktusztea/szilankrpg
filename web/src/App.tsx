@@ -7,8 +7,20 @@ import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
 import { FortelyokScreen } from './components/FortelyokScreen';
 import { HarcertekekScreen } from './components/HarcertekekScreen';
 import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
-import type { Karakter, Session, Fortely } from './engine/types';
+import type { Karakter, Session, Fortely, PajzsPeldany } from './engine/types';
 import './App.css';
+
+const DEFAULT_PAJZS: PajzsPeldany = { méret: '', pajzshasználat_fok: 0 };
+
+function patchPajzs(k: Karakter): Karakter {
+  const pajzs = k.pajzs ?? DEFAULT_PAJZS;
+  const pjFortely = k.fortélyok.find(f => f.név === 'Pajzshasználat');
+  const fok = pjFortely?.fok ?? 0;
+  if (pajzs.pajzshasználat_fok !== fok) {
+    return { ...k, pajzs: { ...pajzs, pajzshasználat_fok: fok } };
+  }
+  return { ...k, pajzs };
+}
 
 const ALL_TABS = [
   { id: 'aktiv', label: '❎ Aktív', editOnly: false },
@@ -255,7 +267,7 @@ function App() {
             setLoadError(`Referencia hiba: ${refErr}`);
             return;
           }
-          setKarakter(obj);
+          setKarakter(patchPajzs(obj));
         } catch {
           setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
         }
@@ -411,7 +423,7 @@ function App() {
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
               const refErr = validateKarakterData(data.testKarakter, data);
               if (refErr) { setShowTestConfirm(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
-              setKarakter(data.testKarakter); setShowTestConfirm(false);
+              setKarakter(patchPajzs(data.testKarakter)); setShowTestConfirm(false);
             }}>Betöltés</button>
           </div>
         </div>,

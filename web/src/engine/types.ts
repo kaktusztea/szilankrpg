@@ -54,6 +54,11 @@ export interface PancelPeldany {
   rongálódás: number;
 }
 
+export interface PajzsPeldany {
+  méret: string;  // 'kis' | 'közepes' | 'nagy' | ''
+  pajzshasználat_fok: number;  // 0-3
+}
+
 export interface NagyTargy {
   név: string;
   MGT: number;
@@ -105,6 +110,7 @@ export interface Karakter {
   hátterek: { faj: string; leíró: string[]; karma: string[] };
   fegyverek: FegyverPeldany[];
   páncél: PancelPeldany;
+  pajzs: PajzsPeldany;
   felszerelés: { nagy_tárgyak: NagyTargy[] };
   jegyzetek: string;
   napló: NaploBejegyzes[];

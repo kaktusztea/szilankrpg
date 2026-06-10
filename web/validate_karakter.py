@@ -50,7 +50,7 @@ with open(TABLES / "faj_tulajdonsag_keretek.json") as f:
 # --- Define test karakter (matching testdata.ts) ---
 karakter = {
     "schema_version": 2,
-    "név": "Dorek a Toroni",
+    "név": "von Agabor",
     "játékos": "",
     "mentés_dátum": "",
     "tsz": 8,
@@ -174,17 +174,17 @@ for f in karakter["fortélyok"]:
     yaml_spec = ddef.get("többszörös_típus", "")
     if f["spec_típus"] != yaml_spec:
         err(f"Fortély '{f['név']}': spec_típus mismatch: karakter='{f['spec_típus']}', yaml='{yaml_spec}'")
-    
+
     # Ha többszörös és van fix lista, ellenőrizzük hogy spec_elem benne van
     if yaml_spec and f["spec_elem"]:
         yaml_lista = ddef.get("többszörös_lista", [])
         if yaml_lista and f["spec_elem"] not in yaml_lista:
             err(f"Fortély '{f['név']}' spec_elem='{f['spec_elem']}' nincs a spec_listában: {yaml_lista[:5]}...")
-    
+
     # Ha NEM többszörös, spec_elem üres kell legyen
     if not yaml_spec and f["spec_elem"]:
         err(f"Fortély '{f['név']}': nem többszörös, de spec_elem='{f['spec_elem']}' nem üres")
-    
+
     # fok max ellenőrzés
     if f["fok"] > ddef["maxfok"]:
         err(f"Fortély '{f['név']}': fok={f['fok']} > maxfok={ddef['maxfok']}")
@@ -343,7 +343,7 @@ else:
 print("\n--- 5. Session validáció ---")
 
 session = karakter["session"]
-required_session_keys = ["szilánk", "vé_csökkenés", "vé_history", "manőver_pont_használt", 
+required_session_keys = ["szilánk", "vé_csökkenés", "vé_history", "manőver_pont_használt",
                          "sebzések", "aktív_fegyver_index", "aktív_pajzs",
                          "aktív_páncél", "aktív_taktika", "aktív_helyzet",
                          "aktív_manőver", "aktív_státuszok"]
@@ -364,7 +364,7 @@ required_top = ["schema_version", "név", "játékos", "mentés_dátum", "tsz", 
 for k in required_top:
     if k not in karakter:
         err(f"Top-level mező hiányzik: '{k}'")
-    
+
 # NEM szabad származtatott/számított érték
 forbidden = ["származtatott", "ÉP", "KÉ", "TÉ", "VÉ", "SFÉ", "MGT"]
 for k in forbidden:

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
-import type { Karakter, FegyverPeldany, PancelPeldany } from '../engine/types';
+import type { Karakter, FegyverPeldany, PancelPeldany, PajzsPeldany } from '../engine/types';
 import './HarcertekekScreen.css';
 
 interface Props {
@@ -13,6 +13,15 @@ interface Props {
 export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const k = karakter;
   const { konstansok } = data;
+
+  // Hint sáv
+  const [hint, setHint] = useState('');
+  const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  function showHint(msg: string, duration = 3000) {
+    setHint(msg);
+    if (hintTimer.current) clearTimeout(hintTimer.current);
+    hintTimer.current = setTimeout(() => setHint(''), duration);
+  }
 
   // Per-element double-tap tracking
   const tapTimers = useRef<Map<string, number>>(new Map());
@@ -85,6 +94,23 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
     setKarakter(prev => prev ? { ...prev, páncél: { ...prev.páncél, ...patch } } : prev);
   }
 
+  // Pajzs — with Pajzshasználat fortély sync
+  function syncPajzsFortelyok(pajzs: PajzsPeldany, fortélyok: typeof k.fortélyok) {
+    const filtered = fortélyok.filter(f => f.név !== 'Pajzshasználat');
+    if (pajzs.pajzshasználat_fok > 0) {
+      return [{ név: 'Pajzshasználat', fok: pajzs.pajzshasználat_fok, spec_típus: '', spec_elem: '' }, ...filtered];
+    }
+    return filtered;
+  }
+
+  function updatePajzs(patch: Partial<PajzsPeldany>) {
+    setKarakter(prev => {
+      if (!prev) return prev;
+      const pajzs = { ...prev.pajzs, ...patch };
+      return { ...prev, pajzs, fortélyok: syncPajzsFortelyok(pajzs, prev.fortélyok) };
+    });
+  }
+
   // Fegyver dropdown: csoportosítva kategóriánként (MK 2K variánsok kiszűrve)
   const fegyverByKat = new Map<string, { id: string; label: string }[]>();
   for (const f of data.fegyverek) {
@@ -104,16 +130,17 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const [mfTarget, setMfTarget] = useState<number | null>(null);
   const [anyagTarget, setAnyagTarget] = useState<number | null>(null);
   const [pancelPopup, setPancelPopup] = useState<string | null>(null);
+  const [pajzsPopup, setPajzsPopup] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<number | null>(null);
   const ideaMin = ideaTarget?.type === 'fegyver' ? -5 : -4;
   const ideaMax = ideaTarget?.type === 'fegyver' ? 5 : 4;
 
   useEffect(() => {
-    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && deleteTarget === null) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setDeleteTarget(null); } }
+    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && !pajzsPopup && deleteTarget === null) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, deleteTarget]);
+  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget]);
 
   return (
     <div className="screen harcertekek-screen">
@@ -199,6 +226,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
           {aktStruktúra?.fém && (
             <button className="he-field-btn" onClick={() => handleDoubleTap('p-fem', () => setPancelPopup('fémalapanyag'))}>Fémalapanyag: <strong>{k.páncél.fémalapanyag || 'acél'}</strong></button>
           )}
+        </div>
+      </section>
+
+      {/* Pajzs */}
+      <section className="he-section">
+        <h3>Pajzs</h3>
+        <div className="he-fegyver-fields">
+          <button className="he-field-btn" onClick={() => handleDoubleTap('pj-mer', () => setPajzsPopup('méret'))}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('pj-fok', () => setPajzsPopup('pajzshasználat'))}>Pajzshasználat fok: <strong>{k.pajzs.pajzshasználat_fok}</strong></button>
+          <span className="he-field-btn he-field-indicator" onClick={() => showHint('A pajzs kézben állapotot az Aktív fülön állíthatod!')}>Kézben: <strong>{k.session.aktív_pajzs ? 'igen' : 'nem'}</strong></span>
         </div>
       </section>
 
@@ -299,6 +336,29 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         document.body
       )}
 
+      {pajzsPopup && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+              {pajzsPopup === 'méret' && <>
+                <button className={`fort-fok-btn ${!k.pajzs.méret ? 'active' : ''}`} style={{ width: 'auto', minWidth: '140px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePajzs({ méret: '' }); setPajzsPopup(null); }}>— nincs —</button>
+                {['kis', 'közepes', 'nagy'].map(v => (
+                  <button key={v} className={`fort-fok-btn ${k.pajzs.méret === v ? 'active' : ''}`} style={{ width: 'auto', minWidth: '140px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePajzs({ méret: v }); setPajzsPopup(null); }}>{v}</button>
+                ))}
+              </>}
+              {pajzsPopup === 'pajzshasználat' && (
+                <div className="fort-fok-radios">
+                  {[0, 1, 2, 3].map(n => (
+                    <button key={n} className={`fort-fok-btn ${k.pajzs.pajzshasználat_fok === n ? 'active' : ''}`} onClick={() => { updatePajzs({ pajzshasználat_fok: n }); setPajzsPopup(null); }}>{n}</button>
+                  ))}
+                </div>
+              )}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
       {deleteTarget !== null && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
@@ -308,6 +368,8 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         </div>,
         document.body
       )}
+
+      {hint && <div className="he-hint">{hint}</div>}
     </div>
   );
 }

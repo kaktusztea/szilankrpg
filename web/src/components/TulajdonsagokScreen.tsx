@@ -665,6 +665,7 @@ const KOR_RANGES = [
 
 function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => void }) {
   const [rangeIdx, setRangeIdx] = useState<number | null>(null);
+  const [expanded, setExpanded] = useState(false);
 
   if (rangeIdx === null) {
     return (
@@ -672,7 +673,7 @@ function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => vo
         <label>Kor: <strong>{kor}</strong> — tartomány:</label>
         <div className="kep-szint-grid" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
           {KOR_RANGES.map((r, i) => (
-            <button key={i} className="fort-fok-btn" style={{ width: 'auto', padding: '8px 16px', borderRadius: '6px' }} onClick={() => setRangeIdx(i)}>{r.label}</button>
+            <button key={i} className="fort-fok-btn" style={{ width: 'auto', padding: '8px 16px', borderRadius: '6px' }} onClick={() => { setRangeIdx(i); setExpanded(false); }}>{r.label}</button>
           ))}
         </div>
       </div>
@@ -680,14 +681,20 @@ function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => vo
   }
 
   const range = KOR_RANGES[rangeIdx];
+  const values = rangeIdx === 0 ? (expanded ? range.values.filter(v => v >= 60) : range.values.filter(v => v <= 58)) : range.values;
   return (
     <div className="kep-prompt">
       <label>Kor ({range.label})</label>
       <div className="kep-szint-grid" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '6px', maxWidth: `${5 * 42 + 4 * 6}px`, margin: '0 auto' }}>
-        {range.values.map(n => (
-          <button key={n} className={`fort-fok-btn ${kor === n ? 'active' : ''}`} style={{ width: '42px', height: '36px', fontSize: '13px' }} onClick={() => onSelect(n)}>{n}</button>
+        {values.map(n => (
+          <button key={n} className={`fort-fok-btn ${kor === n ? 'active' : ''}`} style={{ width: '42px', height: '42px', fontSize: '13px' }} onClick={() => onSelect(n)}>{n}</button>
         ))}
       </div>
+      {rangeIdx === 0 && (
+        <div style={{ textAlign: 'center', marginTop: '8px' }}>
+          <button className="fort-fok-btn" style={{ width: 'auto', padding: '4px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => setExpanded(!expanded)}>{expanded ? '▴ 10–58' : '▾ 60–100'}</button>
+        </div>
+      )}
     </div>
   );
 }

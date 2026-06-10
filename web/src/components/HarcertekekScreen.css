@@ -179,3 +179,21 @@
   width: 18px;
   height: 18px;
 }
+
+.he-field-indicator {
+  cursor: default;
+  opacity: 0.7;
+}
+
+.he-hint {
+  position: sticky;
+  bottom: 0;
+  background: var(--warning);
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 8px;
+}
