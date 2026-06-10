@@ -1,0 +1,8 @@
+---
+# Schema: harci_helyzetek.yaml
+# Gyökér: harci_helyzetek (lista)
+
+harci_helyzetek:
+  - név: ""                    # kötelező, string
+    feltétel_kulcs: ""         # kötelező, "harci_helyzet:xyz" formátum
+    infó: ""                   # kötelező, string (rövid hatás leírás)

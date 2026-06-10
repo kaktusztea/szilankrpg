@@ -1,0 +1,20 @@
+---
+# Schema: taktikak.yaml
+# Gyökér: taktikák (lista)
+
+taktikák:
+  - név: ""                    # kötelező, string
+    feltétel_kulcs: ""         # kötelező, "taktika:xyz" formátum
+    fokozatos: false           # kötelező, boolean
+    # Ha fokozatos: false → módosítók dict (opcionális, TÉ/VÉ/KÉ/SP kulcsok)
+    módosítók:
+      TÉ: 0
+      VÉ: 0
+      KÉ: 0
+      SP: 0
+    # Ha fokozatos: true → fokok lista (mindegyik fok+módosítók)
+    fokok:
+      - { fok: 1, TÉ: 0, VÉ: 0, KÉ: 0, SP: 0 }
+    megjegyzés: ""             # opcionális, string
+    kombó_mód: "whitelist"     # kötelező, enum: "whitelist" | "blacklist"
+    kombó_lista: []            # kötelező, string lista (taktika nevek)

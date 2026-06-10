@@ -142,19 +142,61 @@ def generate_fajok():
     write_json('faj_tulajdonsag_keretek.json', keretek)
 
 
+def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
+    """Validate aktív fül YAML sources against schemas."""
+    errors = []
+    # Taktikák
+    for i, t in enumerate(taktikak):
+        ctx = f"taktikák[{i}] ({t.get('név', '?')})"
+        if not t.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if not t.get('feltétel_kulcs'): errors.append(f"{ctx}: hiányzó 'feltétel_kulcs'")
+        if not isinstance(t.get('fokozatos'), bool): errors.append(f"{ctx}: 'fokozatos' nem boolean")
+        km = t.get('kombó_mód', '')
+        if km not in ('whitelist', 'blacklist'): errors.append(f"{ctx}: 'kombó_mód' invalid: '{km}'")
+        if not isinstance(t.get('kombó_lista'), list): errors.append(f"{ctx}: 'kombó_lista' nem lista")
+        if t.get('fokozatos') and not t.get('fokok'): errors.append(f"{ctx}: fokozatos de nincs 'fokok'")
+        if not t.get('fokozatos') and not isinstance(t.get('módosítók', {}), dict): errors.append(f"{ctx}: 'módosítók' nem dict")
+    # Harci helyzetek
+    for i, h in enumerate(helyzetek):
+        ctx = f"harci_helyzetek[{i}] ({h.get('név', '?')})"
+        if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if not h.get('feltétel_kulcs'): errors.append(f"{ctx}: hiányzó 'feltétel_kulcs'")
+        if not h.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
+    # Szituációk
+    for i, s in enumerate(szituaciok):
+        ctx = f"szituációk[{i}] ({s.get('név', '?')})"
+        if not s.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if not s.get('feltétel_kulcs'): errors.append(f"{ctx}: hiányzó 'feltétel_kulcs'")
+        if not s.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
+    # Manőverek
+    valid_tipus = {'általános', 'belharcos'}
+    for i, m in enumerate(manoverek):
+        ctx = f"manőverek[{i}] ({m.get('név', '?')})"
+        if not m.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if m.get('típus') not in valid_tipus: errors.append(f"{ctx}: 'típus' invalid: '{m.get('típus')}'")
+        if not isinstance(m.get('nehézség'), (int, float)): errors.append(f"{ctx}: 'nehézség' nem szám")
+        if not m.get('fázisok'): errors.append(f"{ctx}: hiányzó 'fázisok'")
+        if not m.get('hatás'): errors.append(f"{ctx}: hiányzó 'hatás'")
+    if errors:
+        print("  ❌ Aktív fül validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
+
+
 def generate_aktiv_ful():
     """taktikak.yaml, harci_helyzetek.yaml, szituaciok.yaml, manoverek.yaml → JSON"""
-    taktikak = load_yaml(os.path.join(SOURCES_DIR, 'taktikak.yaml'))
-    write_json('taktikak.json', taktikak['taktikák'])
+    taktikak = load_yaml(os.path.join(SOURCES_DIR, 'taktikak.yaml'))['taktikák']
+    helyzetek = load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))['harci_helyzetek']
+    szituaciok = load_yaml(os.path.join(SOURCES_DIR, 'szituaciok.yaml'))['szituációk']
+    manoverek = load_yaml(os.path.join(SOURCES_DIR, 'manoverek.yaml'))['manőverek']
 
-    helyzetek = load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))
-    write_json('harci_helyzetek.json', helyzetek['harci_helyzetek'])
+    validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek)
 
-    szituaciok = load_yaml(os.path.join(SOURCES_DIR, 'szituaciok.yaml'))
-    write_json('szituaciok.json', szituaciok['szituációk'])
-
-    manoverek = load_yaml(os.path.join(SOURCES_DIR, 'manoverek.yaml'))
-    write_json('manoverek.json', manoverek['manőverek'])
+    write_json('taktikak.json', taktikak)
+    write_json('harci_helyzetek.json', helyzetek)
+    write_json('szituaciok.json', szituaciok)
+    write_json('manoverek.json', manoverek)
 
 
 if __name__ == '__main__':

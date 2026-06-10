@@ -1,0 +1,10 @@
+---
+# Schema: manoverek.yaml
+# Gyökér: manőverek (lista)
+
+manőverek:
+  - név: ""                    # kötelező, string
+    típus: ""                  # kötelező, enum: "általános" | "belharcos"
+    nehézség: 0                # kötelező, number [0;12]
+    fázisok: ""                # kötelező, string (pl. "V,E", "M,E", "E (M*)")
+    hatás: ""                  # kötelező, string (rövid hatás leírás)
