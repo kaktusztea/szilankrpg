@@ -13,7 +13,7 @@ const CSOPORT_LABEL: Record<string, string> = {
 /** Display name: "Kultúrkör - erv" if spec_elem, otherwise just név */
 function displayName(f: Fortely): string {
   const base = f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
-  if (f.kiérdemelt) return f.fok > 1 ? `${base} ⭐➕` : `${base} ⭐`;
+  if (f.kiérdemelt) return f.fok > 1 ? `${base} 🎁➕` : `${base} 🎁`;
   return base;
 }
 
@@ -228,7 +228,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                           const used = fortélyok.filter(f => f.név === 'Nyelvismeret' && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0)
                             + fortélyok.filter(f => f.név === 'Nyelvismeret' && f.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
                           const maradt = keret - used;
-                          if (maradt > 0) label += ` 🌏${maradt}`;
+                          if (maradt > 0) label += ` 🎁${maradt}`;
                           nyelvDisabled = maradt <= 0;
                         }
                         return <option key={d.név} value={d.név} disabled={fegyverDisabled || nyelvDisabled}>{label}</option>;
