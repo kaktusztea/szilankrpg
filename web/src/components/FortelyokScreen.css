@@ -171,3 +171,37 @@
 .fort-over {
   color: var(--error) !important;
 }
+
+.nyelv-picker {
+  max-height: 70vh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.nyelv-csoport-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--warning);
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid #444;
+}
+
+.nyelv-csoport {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nyelv-btn {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 15px;
+  color: var(--text);
+  text-align: left;
+  cursor: pointer;
+}

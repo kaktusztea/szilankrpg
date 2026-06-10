@@ -13,7 +13,8 @@ const CSOPORT_LABEL: Record<string, string> = {
 /** Display name: "Kultúrkör - erv" if spec_elem, otherwise just név */
 function displayName(f: Fortely): string {
   const base = f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
-  return f.kiérdemelt ? `${base} ⭐` : base;
+  if (f.kiérdemelt) return f.fok > 1 ? `${base} ⭐➕` : `${base} ⭐`;
+  return base;
 }
 
 const NYELV_FOK_LABELS: Record<number, string> = { 1: 'Alap', 2: 'Udvari' };
@@ -46,7 +47,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setDeleteTarget(null); setPendingFortIdx(null); setSzabadTypePicker(null);
+        setMultiPickerDef(null); setDeleteTarget(null); setPendingFortIdx(null); setSzabadTypePicker(null);
       }
     }
     document.addEventListener('keydown', onKey);
@@ -146,14 +147,16 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                   // Nyelvismeret pont keret és túllépés számítás
                   const nyelvPontKeret = Math.max(0, (nyelvtanulásSzint - 3) * 3);
                   const nyelvismeretSlotok = slotok.filter(s => s.név === 'Nyelvismeret');
-                  const nyelvÖsszFok = nyelvismeretSlotok.reduce((s, f) => s + f.fok, 0);
+                  const nyelvÖsszFok = nyelvismeretSlotok.filter(s => !s.kiérdemelt).reduce((s, f) => s + f.fok, 0)
+                    + nyelvismeretSlotok.filter(s => !!s.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
                   const nyelvTúllépés = Math.max(0, nyelvÖsszFok - nyelvPontKeret);
-                  // Mark last N foks as over (from end)
+                  // Mark last N foks as over (from end — includes kiérdemelt with fok>1)
                   let maradékTúl = nyelvTúllépés;
                   const nyelvOverSet = new Set<Fortely>();
-                  for (let j = nyelvismeretSlotok.length - 1; j >= 0 && maradékTúl > 0; j--) {
-                    nyelvOverSet.add(nyelvismeretSlotok[j]);
-                    maradékTúl -= nyelvismeretSlotok[j].fok;
+                  const fizetősNyelvek = nyelvismeretSlotok.filter(s => !s.kiérdemelt || s.fok > 1);
+                  for (let j = fizetősNyelvek.length - 1; j >= 0 && maradékTúl > 0; j--) {
+                    nyelvOverSet.add(fizetősNyelvek[j]);
+                    maradékTúl -= fizetősNyelvek[j].kiérdemelt ? fizetősNyelvek[j].fok - 1 : fizetősNyelvek[j].fok;
                   }
                   return slotok.map((slot, i) => {
                   const globalIdx = fortélyok.indexOf(slot);
@@ -221,7 +224,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                         let nyelvDisabled = false;
                         if (d.név === 'Nyelvismeret') {
                           const keret = Math.max(0, (nyelvtanulásSzint - 3) * 3);
-                          const used = fortélyok.filter(f => f.név === 'Nyelvismeret').reduce((s, f) => s + f.fok, 0);
+                          const used = fortélyok.filter(f => f.név === 'Nyelvismeret' && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0)
+                            + fortélyok.filter(f => f.név === 'Nyelvismeret' && f.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
                           const maradt = keret - used;
                           if (maradt > 0) label += ` 🌏${maradt}`;
                           nyelvDisabled = maradt <= 0;
@@ -328,20 +332,15 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
           }
           return createPortal(
             <div className="kep-prompt-overlay">
-              <div className="kep-prompt">
-                <select
-                  className="fort-select"
-                  autoFocus
-                  size={12}
-                  value=""
-                  onChange={e => { if (e.target.value) addMultiInstance(e.target.value); }}
-                >
-                  {[...byGroup.entries()].map(([group, langs]) => (
-                    <optgroup key={group} label={group}>
-                      {langs.map(l => <option key={l.név} value={l.név}>{l.név}</option>)}
-                    </optgroup>
-                  ))}
-                </select>
+              <div className="kep-prompt nyelv-picker">
+                {[...byGroup.entries()].map(([group, langs]) => (
+                  <div key={group} className="nyelv-csoport">
+                    <div className="nyelv-csoport-label">{group}</div>
+                    {langs.map(l => (
+                      <button key={l.név} className="nyelv-btn" onClick={() => addMultiInstance(l.név)}>{l.név}</button>
+                    ))}
+                  </div>
+                ))}
               </div>
             </div>,
             document.body
@@ -420,7 +419,6 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
 
   function handleTap() {
     if (gameMode) { onToggleInfo(); return; }
-    if (overLimit) { onToggleInfo(); return; }
     const now = Date.now();
     if (now - lastTap.current < 350) {
       if (locked) { onHint('Ezt a fortélyt a Harcértékek fülön kezeld!', 3000); }
