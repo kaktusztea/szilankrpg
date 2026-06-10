@@ -11,14 +11,14 @@ import type { Karakter, Session, Fortely } from './engine/types';
 import './App.css';
 
 const ALL_TABS = [
-  { id: 'aktiv', label: '❎ Aktív', editOnly: false },
-  { id: 'harc', label: '🗡️ Harc', editOnly: false },
-  { id: 'tavharc', label: '🏹 Távharc', editOnly: false },
-  { id: 'tulajdonsagok', label: '🔵 Tul/Képz', editOnly: false },
-  { id: 'fortelyok', label: '🟣 Fortélyok', editOnly: false },
-  { id: 'harcertekek', label: '🛡️ Harcértékek', editOnly: true },
-  { id: 'misztikus', label: '✨ Misztikus', editOnly: false },
-  { id: 'hatterek', label: '📜 Hátterek', editOnly: false },
+  { id: 'aktiv', label: '❎', editOnly: false },
+  { id: 'harc', label: '🗡️', editOnly: false },
+  { id: 'tavharc', label: '🏹', editOnly: false },
+  { id: 'tulajdonsagok', label: '🔵', editOnly: false },
+  { id: 'fortelyok', label: '🟣', editOnly: false },
+  { id: 'harcertekek', label: '🛡️', editOnly: true },
+  { id: 'misztikus', label: '✨', editOnly: false },
+  { id: 'hatterek', label: '📜', editOnly: false },
   { id: 'jegyzetek', label: '📝 Jegyzetek', editOnly: false },
   { id: 'naplo', label: '📖 Napló', editOnly: true },
   { id: 'taktikak', label: '🎯 Taktikák', editOnly: false },
