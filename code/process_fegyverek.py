@@ -13,9 +13,9 @@ if __name__ == "__main__":
     dir_code = os.path.dirname(os.path.abspath(__file__))
     dir_md = os.path.join(Path(dir_code).parent, 'md')
     dir_data = os.path.join(Path(dir_code).parent, 'data')
-    dir_patterns = os.path.join(Path(dir_code).parent, 'data/patterns')
+    dir_patterns = os.path.join(Path(dir_code).parent, 'data/tables')
 
-    pattern_files = os.listdir(dir_patterns)
+    pattern_files = [f for f in os.listdir(dir_patterns) if f.endswith('_pattern.json')]
     data = []
 
     for pfile in pattern_files:
