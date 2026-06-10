@@ -57,10 +57,20 @@ export interface KiterjesztesEntry {
 }
 
 // --- Fortély összefoglaló (UI-hoz) ---
+export interface FortelyModosito {
+  cél: string;
+  érték: number;
+  mód: string;
+  forrás: string;
+  arány: number;
+  feltétel: string;
+}
+
 export interface FortelyFokSummary {
   fok: number;
   hatás: string[];
   követelmény: string;
+  módosítók: FortelyModosito[];
 }
 
 export interface FortelySummary {

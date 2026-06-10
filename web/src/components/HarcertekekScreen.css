@@ -189,6 +189,11 @@
   opacity: 0.7;
 }
 
+.he-field-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
 .he-hint {
   position: sticky;
   bottom: 0;

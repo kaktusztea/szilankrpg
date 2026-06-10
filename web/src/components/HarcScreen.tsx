@@ -68,13 +68,25 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const k = karakter;
   const { konstansok, harcmodorBonusz } = data;
 
-  // Reactive engine — fortély KÉ módosítók (TODO: full §16 fortély modifier system)
-  // For now: sum always-active KÉ modifiers from known fortélyok
-  let fortelyKE = 0;
-  const gkFok = k.fortélyok.find(f => f.név === 'Gyors kezdeményezés')?.fok ?? 0;
-  fortelyKE += gkFok * 2; // Gyors kezdeményezés: +2 KÉ/fok
-  const hknFok = k.fortélyok.find(f => f.név === 'Harckeret növelés')?.fok ?? 0;
-  fortelyKE += hknFok; // Harckeret növelés: +1 KÉ/fok
+  // §16: Fortély módosítók — mindig aktív (feltétel="")
+  const fortelyMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0 };
+  for (const kf of k.fortélyok) {
+    const def = data.fortelySummaries.find(d => d.név === kf.név);
+    if (!def) continue;
+    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
+    if (!fokDef?.módosítók) continue;
+    for (const mod of fokDef.módosítók) {
+      if (mod.feltétel !== '') continue; // only always-active
+      if (mod.mód === 'flat') {
+        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
+      } else if (mod.mód === 'scaled' && mod.forrás) {
+        const forrásÉrték = k.képzettségek.find(kp => kp.név.toLowerCase() === mod.forrás)?.szint ?? 0;
+        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + Math.floor(forrásÉrték * mod.arány);
+      }
+    }
+  }
+  const fortelyKE = fortelyMods['KÉ'];
+
   const harcmodorÖsszeg = [
     k.képzettségek.find(kp => kp.név === 'Közelharc')?.szint ?? 0,
     k.képzettségek.find(kp => kp.név === 'Kardvívás')?.szint ?? 0,
@@ -122,8 +134,8 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const épValue = computed.get('ÉP') ?? 40;
   const ké = computed.get('KÉ') ?? 0;
   const manöverPont = computed.get('manőver_pont') ?? 0;
-  const sfé_fizikai = computed.get('sfé_fizikai') ?? 0;
-  const sfé_energia = computed.get('sfé_energia') ?? 0;
+  const sfé_fizikai = (computed.get('sfé_fizikai') ?? 0) + fortelyMods['SFÉ'];
+  const sfé_energia = (computed.get('sfé_energia') ?? 0) + fortelyMods['SFÉ'];
   const páncélLefedettség = computed.get('páncél_lefedettség') ?? 0;
 
   // Fegyverek — build from karakter.fegyverek, expand MK pairs
@@ -173,10 +185,10 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       fegyver_mf_TÉ: mf.TÉ,
       fegyver_mf_VÉ: mf.VÉ,
       fegyver_mf_SP: mf.SP,
-      fegyver_fortély_TÉ: 0,
-      fegyver_fortély_VÉ: 0,
-      fegyver_fortély_SP: 0,
-      fegyver_fortély_harckeret: hknFok, // Harckeret növelés fortély
+      fegyver_fortély_TÉ: fortelyMods['TÉ'],
+      fegyver_fortély_VÉ: fortelyMods['VÉ'],
+      fegyver_fortély_SP: fortelyMods['SP'],
+      fegyver_fortély_harckeret: fortelyMods['harckeret'],
       fortélyMod_KÉ: fortelyKE,
       harcmodor_összeg: harcmodorÖsszeg,
       alakzatharc_szint: 0,

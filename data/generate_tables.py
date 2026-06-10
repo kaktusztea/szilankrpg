@@ -66,7 +66,10 @@ def generate_fortelyok():
             for fok in (data.get('fokok') or []):
                 hatás = [h['text'] for h in (fok.get('hatástext') or []) if h.get('text')]
                 köv = fok.get('követelménytext', '')
-                fokok_summary.append({'fok': fok['fok'], 'hatás': hatás, 'követelmény': köv})
+                mods = fok.get('módosítók') or []
+                if mods == '':
+                    mods = []
+                fokok_summary.append({'fok': fok['fok'], 'hatás': hatás, 'követelmény': köv, 'módosítók': mods})
             leírás = ' '.join([l['text'] for l in (data.get('leírások') or []) if l.get('text')])
             leírás = leírás.replace('**', '').replace('`', '')
             kiterjeszti = data.get('kiterjeszti', {})
