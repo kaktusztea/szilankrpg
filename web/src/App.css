@@ -127,7 +127,7 @@ body {
   border: none;
   color: var(--text-dim);
   font-size: 14px;
-  padding: 8px 14px;
+  padding: 8px 8px;
   cursor: pointer;
   white-space: nowrap;
   flex-shrink: 0;
