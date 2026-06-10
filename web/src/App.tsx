@@ -476,20 +476,41 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       if (idx >= 0) setActiveTab(idx);
     }} />;
     case 'tavharc': return <div className="screen"><h2>🏹 Távharc</h2><p>Távharc kalkulátor (TODO)</p></div>;
-    case 'tulajdonsagok': return <TulajdonsagokScreen data={data} gameMode={gameMode} tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok} képzettségek={képzettségek} setKépzettségek={setKépzettségek} név={karakter.név} setNév={v => setKarakter(prev => prev ? { ...prev, név: v } : prev)} játékos={karakter.játékos} setJátékos={v => setKarakter(prev => prev ? { ...prev, játékos: v } : prev)} tsz={karakter.tsz} setTsz={v => setKarakter(prev => prev ? { ...prev, tsz: v } : prev)} kor={karakter.kor} setKor={v => setKarakter(prev => prev ? { ...prev, kor: v } : prev)} faj={karakter.hátterek.faj} setFaj={v => setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev)} anyanyelv={karakter.anyanyelv} setAnyanyelv={(v: string) => setKarakter(prev => {
+    case 'tulajdonsagok': {
+      const setAnyanyelv = (v: string) => setKarakter(prev => {
         if (!prev) return prev;
-        // Sync ingyenes nyelvismeret fortélyok
         const közös = 'Közös (pyarroni)';
         const filtered = prev.fortélyok.filter(f => !(f.név === 'Nyelvismeret' && f.kiérdemelt));
-        const ingyenesek: typeof prev.fortélyok = [
+        const ingyenesek: Fortely[] = [
           { név: 'Nyelvismeret', fok: 1, spec_típus: 'nyelv', spec_elem: közös, kiérdemelt: true },
         ];
         if (v && v !== közös) {
           ingyenesek.push({ név: 'Nyelvismeret', fok: 1, spec_típus: 'nyelv', spec_elem: v, kiérdemelt: true });
         }
         return { ...prev, anyanyelv: v, fortélyok: [...ingyenesek, ...filtered] };
-      })} />;
-    case 'fortelyok': return <FortelyokScreen data={data} gameMode={gameMode} fortélyok={fortélyok} setFortélyok={setFortélyok} tsz={karakter.tsz} fegyverNevek={karakter.fegyverek.map(f => { const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase()); return fd?.Alapnév || f.alap; })} nyelvtanulásSzint={karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0} />;
+      });
+      return <TulajdonsagokScreen data={data} gameMode={gameMode}
+        tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok}
+        képzettségek={képzettségek} setKépzettségek={setKépzettségek}
+        név={karakter.név} setNév={v => setKarakter(prev => prev ? { ...prev, név: v } : prev)}
+        játékos={karakter.játékos} setJátékos={v => setKarakter(prev => prev ? { ...prev, játékos: v } : prev)}
+        tsz={karakter.tsz} setTsz={v => setKarakter(prev => prev ? { ...prev, tsz: v } : prev)}
+        kor={karakter.kor} setKor={v => setKarakter(prev => prev ? { ...prev, kor: v } : prev)}
+        faj={karakter.hátterek.faj} setFaj={v => setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev)}
+        anyanyelv={karakter.anyanyelv} setAnyanyelv={setAnyanyelv}
+      />;
+    }
+    case 'fortelyok': {
+      const fegyverNevek = karakter.fegyverek.map(f => {
+        const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase());
+        return fd?.Alapnév || f.alap;
+      });
+      const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;
+      return <FortelyokScreen data={data} gameMode={gameMode}
+        fortélyok={fortélyok} setFortélyok={setFortélyok}
+        tsz={karakter.tsz} fegyverNevek={fegyverNevek} nyelvtanulásSzint={nyelvtanulásSzint}
+      />;
+    }
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={setKarakter} />;
     case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;
