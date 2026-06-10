@@ -2,7 +2,7 @@
 
 Ez egy [Primer képzettség](../010_09_primer_szekunder_ismeretek.md). Próba dobható.
 
-A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási okokból - statikus módon került beszámításra. Részleteket lásd a Harcrendszer [Sebesülés](../061_04_fajdalomtures_sebesuleskor.md) fejezetében.
+A harc során elszenvedett sebek okozta fájdalmak elviselése - gyorsítási okokból - statikus módon került beszámításra. A sebesülés okozta `TÉ` büntetések hatását ez a képzettség a Harcrendszer [Sebesülés](../061_04_fajdalomtures_sebesuleskor.md) fejezetében leírtak szerint mérsékeli.
 
 Ezt a képzettségedet használod váratlan fájdalmak kiállásakor, illetve kínzás elviselésénél is.
 
