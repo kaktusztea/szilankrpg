@@ -268,6 +268,7 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 ### Megjelenés
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
 - Kompakt lista: név + fok (szám). Fok szín: sárga ha fok < maxfok, zöld ha fok = maxfok
+  - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok
 - Ingyenes keret alatti többszörös fortélyoknál 🎁 jel a név mellett
 - ✕ törlés gomb minden fortélynál (szerkesztő módban)
 - Csoportonként 1 db dropdown (szerkesztő módban): új fortély felvétele
@@ -286,7 +287,7 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 - `spec_típus: ""` → normál, egyszer felvehető
 - `spec_típus` nem üres + `spec_lista: [...]` → fix lista dropdown (pl. Kultúrkör: 29 elem). Már felvett elemek kiszűrődnek.
 - `spec_típus: "fegyver"` + `spec_lista: []` → dropdown a karakter fegyvereiből (Harcértékek fülről). Disabled ha nincs fegyver / mindhez felvéve.
-- `spec_típus: "nyelv"` + `spec_lista: []` → csoportosított (`<optgroup>`) dropdown a `tables/nyelvek.json`-ból. Már felvett nyelvek kiszűrődnek.
+- `spec_típus: "nyelv"` + `spec_lista: []` → közvetlen `<select size=12>` lista overlay-ben (csoportosított `<optgroup>`, `tables/nyelvek.json`-ból). Nincs label, nincs Mégse — mellé katt cancel. Már felvett nyelvek kiszűrődnek.
 - `spec_típus` egyéb + `spec_lista: []` → freetext popup (max 20 karakter) (pl. Helyismeret, Páros harc)
 - Felvett példányok neve: `"AlapNév - alnév"` formátum (pl. `"Kultúrkör - erv"`, `"Helyismeret - Erion"`)
 
@@ -369,6 +370,17 @@ HM/CM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban
   - Végtagvédettség: kerek gombok 0-4
   - Idea: 3 soros popup (-4..-1 / 0 / +1..+4)
   - Rongálódás: kerek gombok 0-5
+
+### Pajzs
+- Mezők (`he-field-btn` stílus, dupla katt → overlay popup):
+  - Méret: — nincs — / kis / közepes / nagy
+  - Pajzshasználat fok: kerek gombok 0-3 (szinkronizálja a Pajzshasználat fortélyt a Fortélyok fülön)
+  - Kézben: read-only indikátor (`session.aktív_pajzs`), kattintás → sárga hint ("A pajzs kézben állapotot az Aktív fülön állíthatod!")
+- Pajzshasználat fortély szinkronizáció:
+  - Pajzs fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
+  - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején
+  - Dupla katt locked elemre → hint: "Ezt a fortélyt a Harcértékek fülön kezeld!" (3s)
+  - Pajzshasználat NEM jelenik meg a Fortélyok fül dropdown-jában
 
 ---
 

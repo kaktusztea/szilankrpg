@@ -130,6 +130,9 @@ karakter = {
         "kidolgozottság": "átlagos", "sisak": False, "végtagvédettség": 0,
         "méret_illeszkedés": "passzol", "rongálódás": 0,
     },
+    "pajzs": {
+        "méret": "közepes", "pajzshasználat_fok": 2,
+    },
     "felszerelés": {"nagy_tárgyak": []},
     "jegyzetek": "",
     "napló": [],

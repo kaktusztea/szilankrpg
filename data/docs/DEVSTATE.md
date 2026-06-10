@@ -205,6 +205,19 @@
 - ✅ Játékos neve mező: double-tap szerkesztő popup, mentés fájlnévben (`karakter_játékos_Xtsz.json`)
 - ✅ `onSelect preventDefault` eltávolítva (okozta az input karakter-elvesztés bugot iOS-en)
 - ✅ Mentés fájlnév: `kisbetű_éktelenítve_Xtsz.json` formátum (első név max 20 kar, ASCII only)
+- ✅ Pajzs szekció a Harcértékek fülön
+  - `PajzsPeldany` típus: `{ méret: string, pajzshasználat_fok: number }`
+  - Karakter top-level `pajzs` mező (karakter.yaml séma v2 bővítve)
+  - Méret: double-tap → popup (— nincs — / kis / közepes / nagy)
+  - Pajzshasználat fok: double-tap → kerek gombok 0-3, szinkronizálja a Pajzshasználat fortélyt
+  - Kézben: read-only indikátor (`session.aktív_pajzs` alapján), kattintás → sárga hint
+  - Pajzshasználat fortély: locked a Fortélyok fülön (Mesterfegyver mintára, nem szerkeszthető/törölhető, nem jelenik meg dropdown-ban)
+  - `syncPajzsFortelyok`: fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
+- ✅ Nyelvismeret fok UI: "Alap"/"Udvari" label (szám helyett), lekerekített téglalap gombok, centered fejléc
+  - Nyelv picker: közvetlen `<select size=12>` lista (nincs köztes popup wrapper, nincs Mégse gomb)
+- ✅ Kor választó javítások: szabályos kör gombok (42×42px), 10–58 / 60–100 toggle split (cserélődő tartalom)
+- ✅ Harcértékek fül szekció elválasztók: `.he-section + .he-section { border-top: 1px solid #333 }`, h3 border-bottom eltávolítva
+- ✅ process_fegyverek.py fix: `data/patterns` → `data/tables` + `_pattern.json` szűrő
 
 ## Következő lépések
 1. **Reactive Engine bővítés** — §16 Fortély módosítók (iteráció + feltétel dispatch → deklaratív filter+sum)
@@ -289,3 +302,10 @@
 - `mentés_dátum`: karakter JSON-ba mentéskor YYYY-MM-DD HH:MM formátumban
 - `szilánk`: session alá került (nem top-level karakter mező)
 - Napló fül (📖 editOnly): bejegyzések (dátum, KM, kaland, események), accordion lista, szerkesztés/törlés, `karakter.napló[]` tömb
+- Pajzs adatmodell: `karakter.pajzs: { méret: string, pajzshasználat_fok: number }` — top-level mező (mint páncél)
+- Pajzshasználat fortély: locked a Fortélyok fülön (Mesterfegyver mintára), szinkronizálva `pajzs.pajzshasználat_fok`-ból
+- Nyelvismeret fok megjelenítés: "Alap" (fok:1), "Udvari" (fok:2) — `NYELV_FOK_LABELS` konstans a FortelyokScreen-ben
+- Nyelvismeret felvétel: közvetlen `<select size=12>` lista overlay-ben (nincs label, nincs Mégse — mellé katt cancel)
+- Kor választó: 10–58 / 60–100 toggle split (cserélődő tartalom, nem append), 42×42px kerek gombok
+- Harcértékek fül szekció elválasztó: `.he-section + .he-section { border-top }`, h3-on nincs border-bottom
+- process_fegyverek.py: pattern fájlok helye `data/tables/*_pattern.json` (nem `data/patterns/`)

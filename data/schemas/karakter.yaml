@@ -68,6 +68,10 @@ páncél:
   méret_illeszkedés: "passzol"  # passzol, nem passzol, borzalmas
   rongálódás: 0               # SFÉ csökkenés
 
+pajzs:
+  méret: ""                   # kis, közepes, nagy, "" (nincs)
+  pajzshasználat_fok: 0       # 0-3
+
 felszerelés:
   nagy_tárgyak:
     - név: ""
