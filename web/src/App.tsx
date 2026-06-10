@@ -168,7 +168,7 @@ function App() {
 
   useEffect(() => {
     if (tabBarRef.current) tabBarRef.current.scrollLeft = tabBarRef.current.scrollWidth;
-  }, []);
+  }, [data, gameMode]);
 
   useEffect(() => {
     if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError) return;
