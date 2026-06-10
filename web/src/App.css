@@ -59,7 +59,7 @@ body {
   background: var(--input-bg);
   border: 1px solid #555;
   border-radius: 4px;
-  padding: 4px 8px;
+  padding: 4px 20px;
   font-size: 16px;
   cursor: pointer;
 }
