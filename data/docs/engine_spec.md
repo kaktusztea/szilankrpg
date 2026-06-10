@@ -615,6 +615,18 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 
 ### Implementációs illeszkedés
 
+Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
+- `data/sources/taktikak.yaml` → `tables/taktikak.json` (13 taktika: módosítók, fokok, kombó szabályok)
+- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (14 helyzet: feltétel_kulcs, infó)
+- `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (9 szituáció: feltétel_kulcs, infó)
+- `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: nehézség, fázisok, hatás)
+
+Taktika kombó logika (`kombó_mód` + `kombó_lista`):
+- `"whitelist"` + lista: CSAK ezekkel kombinálható (üres = semmivel)
+- `"blacklist"` + lista: mindennel KIVÉVE ezeket
+
+Fokozatos taktikák: `fokozatos: true` → `fokok[]` tömb (pl. Támadó fok:1..3, mindegyik más TÉ/VÉ)
+
 Session state bővítés (types.ts Session interface):
 - `aktív_taktikák: { név: string, fok?: number }[]` (több kombó, fokozatos taktikáknál fok)
 - `aktív_helyzetek: string[]` (több helyzet egyszerre)
@@ -622,13 +634,13 @@ Session state bővítés (types.ts Session interface):
 - `aktív_manőver: string` (max 1, marad)
 
 Kalkuláció két rétege:
-1. **Taktika módosítók** — direkt numerikus: TÉ/VÉ/KÉ/SP/harckeret módosítók a Harc fülön számolva
+1. **Taktika módosítók** — direkt numerikus: TÉ/VÉ/KÉ/SP módosítók a Harc fülön számolva
    (hasonlóan a fortélyMod_* context mezőkhöz, pl. `taktikaMod_TÉ`, `taktikaMod_VÉ`)
 2. **§16 feltételes fortély módosítók** — a HarcScreen fortély loop-jában a `mod.feltétel` check:
    `feltétel.split(':')` → prefix (taktika/harci_helyzet/szituáció/fegyver) → session tömbben keresés
 
-Harci helyzetek: NEM kalkuláltak (komplex hatások) — informatív jelzés + §16 feltétel dispatch.
-Manőverek: NEM adnak statikus módosítókat — informatív (MP, Nehézség megjelenítés).
+Harci helyzetek: NEM kalkuláltak (komplex hatások) — informatív jelzés (infó mező) + §16 feltétel dispatch.
+Manőverek: NEM adnak statikus módosítókat — informatív (nehézség, fázisok, hatás megjelenítés).
 
 ### 21.1 Harci Taktikák
 

@@ -142,6 +142,21 @@ def generate_fajok():
     write_json('faj_tulajdonsag_keretek.json', keretek)
 
 
+def generate_aktiv_ful():
+    """taktikak.yaml, harci_helyzetek.yaml, szituaciok.yaml, manoverek.yaml → JSON"""
+    taktikak = load_yaml(os.path.join(SOURCES_DIR, 'taktikak.yaml'))
+    write_json('taktikak.json', taktikak['taktikák'])
+
+    helyzetek = load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))
+    write_json('harci_helyzetek.json', helyzetek['harci_helyzetek'])
+
+    szituaciok = load_yaml(os.path.join(SOURCES_DIR, 'szituaciok.yaml'))
+    write_json('szituaciok.json', szituaciok['szituációk'])
+
+    manoverek = load_yaml(os.path.join(SOURCES_DIR, 'manoverek.yaml'))
+    write_json('manoverek.json', manoverek['manőverek'])
+
+
 if __name__ == '__main__':
     print("Generating tables...")
     generate_konstansok()
@@ -150,4 +165,5 @@ if __name__ == '__main__':
     generate_kiterjesztesek()
     generate_primer_fortelyok()
     generate_fajok()
+    generate_aktiv_ful()
     print("Done.")

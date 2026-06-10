@@ -1,0 +1,61 @@
+---
+# Harci helyzetek — Aktív fül dropdown forrás
+# Forrás: md/065_01_*.md
+# Komplex hatások → informatív megjelenítés + §16 feltétel dispatch
+
+harci_helyzetek:
+  - név: "Belharci szituáció"
+    feltétel_kulcs: "harci_helyzet:belharci_szituáció"
+    infó: "Rövid fegyverek előnye, hosszú fegyverek hátránya. Külön szabályrendszer."
+
+  - név: "Fegyverrántás váratlanul"
+    feltétel_kulcs: "harci_helyzet:fegyverrántás"
+    infó: "Megnyert KÉ + Előny+1 TÉ dobásra (első csapás)."
+
+  - név: "Meglepetés"
+    feltétel_kulcs: "harci_helyzet:meglepetés"
+    infó: "Támadó: megnyert KÉ, Előny+1 TÉ, VÉ csökk:3. Védő: többsz. tám. elvesztés, utolsó."
+
+  - név: "Készületlenség"
+    feltétel_kulcs: "harci_helyzet:készületlenség"
+    infó: "= Meglepetés hatásai."
+
+  - név: "Beszorított helyzet"
+    feltétel_kulcs: "harci_helyzet:beszorított"
+    infó: "Ellenfél Előny+1 TÉ. Beszorított: Hátrány-1 KÉ/TÉ, 1 támadás elvesztés, mozgás feleződik."
+
+  - név: "Észrevétlen támadás"
+    feltétel_kulcs: "harci_helyzet:észrevétlen_támadás"
+    infó: "Csak Ellenpróba fázis. Harci anatómia SP bónusz aktív."
+
+  - név: "Félhátulról támadás"
+    feltétel_kulcs: "harci_helyzet:félhátulról"
+    infó: "Támadó: Előny+1 TÉ. Pajzs VÉ csak pajzs-oldali támadásnál."
+
+  - név: "Hátulról támadás"
+    feltétel_kulcs: "harci_helyzet:hátulról"
+    infó: "Támadó: Előny+2 TÉ. Pajzs VÉ nem számít."
+
+  - név: "Közrefogás"
+    feltétel_kulcs: "harci_helyzet:közrefogás"
+    infó: "+1 TÉ per extra támadó (max +4). Manőver Ellenpróba: legmagasabb MA számít."
+
+  - név: "Levegőből támadás"
+    feltétel_kulcs: "harci_helyzet:levegőből"
+    infó: "Repülő→földi: Előny+1 TÉ, Előny+1 VÉ."
+
+  - név: "Magasabbról"
+    feltétel_kulcs: "harci_helyzet:magasabbról"
+    infó: "Előny+1 TÉ dobásra."
+
+  - név: "Védekező takarásban"
+    feltétel_kulcs: "harci_helyzet:takarásban"
+    infó: "VÉ:+10 (takarás mértékétől függ, KM dönt)."
+
+  - név: "Pengeelőny"
+    feltétel_kulcs: "harci_helyzet:pengeelőny"
+    infó: "VÉ:+1..+4 (per 0.5 penge különbség)."
+
+  - név: "Pengehátrány"
+    feltétel_kulcs: "harci_helyzet:pengehátrány"
+    infó: "VÉ:-1..-4 (per 0.5 penge különbség)."

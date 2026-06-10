@@ -1,0 +1,250 @@
+[
+  {
+    "név": "1 támadás",
+    "feltétel_kulcs": "taktika:1_támadás",
+    "fokozatos": false,
+    "módosítók": {
+      "TÉ": 3
+    },
+    "megjegyzés": "Több-támadás TÉ levonás nem érvényesül. Csak ha ≥2 támadás van.",
+    "kombó_mód": "blacklist",
+    "kombó_lista": [
+      "Roham",
+      "Öngyilkos roham",
+      "Plusz támadás",
+      "Teljes Védekezés"
+    ]
+  },
+  {
+    "név": "Érintő",
+    "feltétel_kulcs": "taktika:érintő",
+    "fokozatos": false,
+    "módosítók": {
+      "TÉ": 3
+    },
+    "megjegyzés": "Sebzés: 0. Csak megérintés.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": [
+      "Támadó",
+      "Védő",
+      "Kezdeményező",
+      "Kiváró"
+    ]
+  },
+  {
+    "név": "Fárasztás",
+    "feltétel_kulcs": "taktika:fárasztás",
+    "fokozatos": false,
+    "módosítók": {},
+    "megjegyzés": "VÉ csökkentés: 2/kör. Nem támad. Fortély+pengeelőny bónusz.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": []
+  },
+  {
+    "név": "Kezdeményező",
+    "feltétel_kulcs": "taktika:kezdeményező",
+    "fokozatos": true,
+    "fokok": [
+      {
+        "fok": 1,
+        "KÉ": 1,
+        "VÉ": -1
+      },
+      {
+        "fok": 2,
+        "KÉ": 2,
+        "VÉ": -2
+      },
+      {
+        "fok": 3,
+        "KÉ": 3,
+        "VÉ": -3
+      },
+      {
+        "fok": 4,
+        "KÉ": 4,
+        "VÉ": -4
+      },
+      {
+        "fok": 5,
+        "KÉ": 5,
+        "VÉ": -5
+      }
+    ],
+    "kombó_mód": "whitelist",
+    "kombó_lista": [
+      "Támadó",
+      "Érintő",
+      "Visszafogott"
+    ]
+  },
+  {
+    "név": "Kiváró",
+    "feltétel_kulcs": "taktika:kiváró",
+    "fokozatos": false,
+    "módosítók": {
+      "TÉ": 2
+    },
+    "megjegyzés": "KÉ átengedett. TÉ:+2 visszacsapásra, ha nem kap sebet.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": [
+      "Támadó",
+      "Érintő",
+      "Visszafogott",
+      "Támadás erőből"
+    ]
+  },
+  {
+    "név": "Öngyilkos roham",
+    "feltétel_kulcs": "taktika:öngyilkos_roham",
+    "fokozatos": false,
+    "módosítók": {
+      "TÉ": 5,
+      "VÉ": -10,
+      "SP": 7
+    },
+    "megjegyzés": "Max 1×/küzdelem. Első oda-vissza csapás. VÉ csökk 2×.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": []
+  },
+  {
+    "név": "Plusz támadás",
+    "feltétel_kulcs": "taktika:plusz_támadás",
+    "fokozatos": false,
+    "módosítók": {},
+    "megjegyzés": "+1 támadás. VÉ:-3 azonnal (VÉ csökkenés).",
+    "kombó_mód": "whitelist",
+    "kombó_lista": [
+      "Támadó",
+      "Érintő",
+      "Támadás erőből"
+    ]
+  },
+  {
+    "név": "Roham",
+    "feltétel_kulcs": "taktika:roham",
+    "fokozatos": false,
+    "módosítók": {
+      "TÉ": 4,
+      "VÉ": -8,
+      "SP": 5
+    },
+    "megjegyzés": "Első oda-vissza csapás. VÉ csökk 2×.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": []
+  },
+  {
+    "név": "Támadás erőből",
+    "feltétel_kulcs": "taktika:támadás_erőből",
+    "fokozatos": true,
+    "fokok": [
+      {
+        "fok": 1,
+        "TÉ": -1,
+        "SP": 1
+      },
+      {
+        "fok": 2,
+        "TÉ": -2,
+        "SP": 2
+      }
+    ],
+    "megjegyzés": "Fortéllyal növelhető limit.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": [
+      "Kiváró"
+    ]
+  },
+  {
+    "név": "Támadó",
+    "feltétel_kulcs": "taktika:támadó",
+    "fokozatos": true,
+    "fokok": [
+      {
+        "fok": 1,
+        "TÉ": 1,
+        "VÉ": -2
+      },
+      {
+        "fok": 2,
+        "TÉ": 2,
+        "VÉ": -4
+      },
+      {
+        "fok": 3,
+        "TÉ": 3,
+        "VÉ": -6
+      }
+    ],
+    "kombó_mód": "whitelist",
+    "kombó_lista": [
+      "Kezdeményező",
+      "Kiváró"
+    ]
+  },
+  {
+    "név": "Védő",
+    "feltétel_kulcs": "taktika:védő",
+    "fokozatos": true,
+    "fokok": [
+      {
+        "fok": 1,
+        "VÉ": 1,
+        "TÉ": -2
+      },
+      {
+        "fok": 2,
+        "VÉ": 2,
+        "TÉ": -4
+      },
+      {
+        "fok": 3,
+        "VÉ": 3,
+        "TÉ": -6
+      },
+      {
+        "fok": 4,
+        "VÉ": 4,
+        "TÉ": -8
+      }
+    ],
+    "kombó_mód": "whitelist",
+    "kombó_lista": []
+  },
+  {
+    "név": "Teljes Védekezés",
+    "feltétel_kulcs": "taktika:teljes_védekezés",
+    "fokozatos": false,
+    "módosítók": {
+      "VÉ": 6
+    },
+    "megjegyzés": "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20T.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": []
+  },
+  {
+    "név": "Visszafogott",
+    "feltétel_kulcs": "taktika:visszafogott",
+    "fokozatos": true,
+    "fokok": [
+      {
+        "fok": 1,
+        "TÉ": -3
+      },
+      {
+        "fok": 2,
+        "TÉ": -6
+      },
+      {
+        "fok": 3,
+        "TÉ": -9
+      }
+    ],
+    "megjegyzés": "Sebzéskocka: k10/k6/nincs. Harci anatómia csökkenti TÉ büntetést.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": [
+      "Kezdeményező",
+      "Kiváró"
+    ]
+  }
+]

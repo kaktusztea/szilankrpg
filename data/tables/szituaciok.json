@@ -1,0 +1,47 @@
+[
+  {
+    "név": "Kétkezes harc",
+    "feltétel_kulcs": "szituáció:kétkezes_harc",
+    "infó": "Két fegyver forgatása egyidejűleg."
+  },
+  {
+    "név": "Lovas harc",
+    "feltétel_kulcs": "szituáció:lovas_harc",
+    "infó": "Lóhátról harcolás."
+  },
+  {
+    "név": "Léglovas harc",
+    "feltétel_kulcs": "szituáció:léglovas_harc",
+    "infó": "Repülő hátas hátáról harcolás."
+  },
+  {
+    "név": "Harci szekér",
+    "feltétel_kulcs": "szituáció:harci_szekér",
+    "infó": "Szekérről harcolás."
+  },
+  {
+    "név": "Páros harc",
+    "feltétel_kulcs": "szituáció:páros_harc",
+    "infó": "Koordinált 2 fős harc (Páros harc fortély)."
+  },
+  {
+    "név": "Közönség előtt",
+    "feltétel_kulcs": "szituáció:közönség_előtt",
+    "infó": "Gladiátori harc közönség előtt."
+  },
+  {
+    "név": "Szörnyeteg elleni harc",
+    "feltétel_kulcs": "szituáció:szörnyeteg_elleni_harc",
+    "infó": "Bestia/szörny elleni küzdelem."
+  },
+  {
+    "név": "Merevvért 70%",
+    "feltétel_kulcs": "szituáció:merevvért_70%",
+    "infó": "SFÉ 70%-ban érvényesül (speciális vértezet szituáció)."
+  },
+  {
+    "név": "Célzás",
+    "feltétel_kulcs": "szituáció:célzás",
+    "infó": "Távharc célzás szituáció."
+  }
+]
