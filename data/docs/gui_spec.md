@@ -90,26 +90,38 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 ## 1. Aktív fül/screen
 
 A harc közbeni szituáció beállítása. Minden itt kiválasztott elem befolyásolja a "Harc" fülön megjelenő értékeket.
+Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
-### Fejléc (mindig látható)
-- Név, Faj, Kor, Tapasztalati szint, Aura (max/aktuális)
+### Tartalom (fentről lefelé)
 
-### Aktív elemek
+| Elem | Típus | Leírás |
+|------|-------|--------|
+| Szilánk | kijelzés | Aktuális szilánk érték |
+| Aktív fegyver | single-select dropdown | Karakter fegyver-példányai + "Puszta kéz" |
+| Pajzs kézben | toggle gomb (Igen/Nem) | Pajzs aktív-e |
+| Páncél viselve | toggle gomb (Igen/Nem) | Páncél aktív-e |
+| Taktikák | multi-select (dropdown + chip + ✕) | `tables/taktikak.json`, kombó validáció, fokozatos fok választó |
+| Harci helyzetek | multi-select (dropdown + chip + ✕) | `tables/harci_helyzetek.json` |
+| Szituációk | multi-select (dropdown + chip + ✕) | `tables/szituaciok.json` |
+| Manőver | single-select dropdown | `tables/manoverek.json`, nehézség jelzéssel |
+| Státuszok | chip lista + ✕ | Aktív státuszok |
 
-| Elem                          | Típus                  | Leírás                                                        |
-|-------------------------------|------------------------|---------------------------------------------------------------|
-| Aktív fegyver                 | single-select lista    | Karakter fegyver-példányai. Default: "Puszta kéz"            |
-| Aktív pajzs                   | boolean toggle         | Pajzs viselve igen/nem                                        |
-| Aktív páncél                  | boolean toggle         | Páncél viselve igen/nem                                       |
-| Harci akrobatika aktív        | boolean toggle         | Ha fortély megvan, bónuszt ad TÉ/VÉ-re                       |
-| Aktív manőver                 | single-select dropdown | Manőverek listájából                                          |
-| Aktív harci taktika           | single-select dropdown | Harci taktikák listájából                                     |
-| Aktív harci helyzet           | single-select dropdown | Harci helyzetek listájából                                    |
-| Aktív státuszok               | multi-select toggle    | Koppintás negál. Pl: Áldott 1/2, Átkozott 1/2, Bénultság 1/2 |
+### Taktika kombó szabályok
+- Dropdown csak a kompatibilis taktikákat kínálja (whitelist/blacklist szűrés a már aktívak ellen)
+- Fokozatos taktikáknál (Támadó, Védő, Kezdeményező, stb.) chip mellett fok választó select
+- `kombó_mód: "whitelist"` + `kombó_lista` = CSAK ezekkel; `"blacklist"` = KIVÉVE ezeket
+
+### Stílus
+- `.aktiv-row`: flex, space-between, border-bottom
+- `.aktiv-toggle`: gomb, `.on` = zöld háttér
+- `.aktiv-chip`: inline-flex, primary háttér, ✕ piros
+- `.aktiv-select`: standard input-bg dropdown
 
 ### Viselkedés
-- Dropdown-ok mellett **X** gomb: default állapotba állít vissza
-- Az állapotválasztók módosítókat vezérelnek → Harc fül értékei azonnal frissülnek
+- Minden módosítás azonnal frissíti a session-t → Harc fül értékei reagálnak
+- TODO: taktika módosítók beépítése a Harc fül kalkulációba
+- TODO: §16 feltételes fortély módosítók dispatch (session toggle-ök alapján)
+- TODO: infó box helyzeteknél/manővereknél (hatás leírás)
 
 ---
 

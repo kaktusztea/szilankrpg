@@ -230,16 +230,41 @@
   - `validateKarakterData`: anyanyelv referenciális validáció (nyelvek.json ellen)
 - ✅ Game módban üres fortély/képzettség csoportok elrejtése
 - ✅ Nyelvismeret dropdown: 🌏 → 🎁 ikon (egységes "ingyenes keret" jelzés)
+- ✅ §16 Fortély módosítók (mindig-aktív, feltétel="") implementálva
+  - `generate_tables.py`: fokok[].módosítók mező hozzáadva a fortelyok.json-hoz
+  - `data-loader.ts`: FortelyModosito interface + FortelyFokSummary.módosítók
+  - `HarcScreen.tsx`: generikus iteráció (flat + scaled mód), fortelyMods Record
+  - Érintett: Gyors kezdeményezés (KÉ), Harckeret növelés (harckeret+KÉ), Harci akrobatika (TÉ/VÉ scaled), Természetes páncél (SFÉ)
+  - Harci akrobatika yaml fix: "harci akrobatika" → "Harci akrobatika" (nagybetű)
+- ✅ Páncél gombok: disabled + szürke ha nincs struktúra kiválasztva (`.he-field-disabled`)
+- ✅ Feltétel prefix javítások fortély yaml-okban:
+  - `szituáció:belharc` → `harci_helyzet:belharci_szituáció`
+  - `szituáció:fárasztás_taktika` → `taktika:fárasztás`
+  - `szituáció:fegyverrántás` → `harci_helyzet:fegyverrántás`
+  - `szituáció:roham` → `taktika:roham`
+- ✅ Aktív fül adatforrások (YAML → JSON):
+  - `data/sources/taktikak.yaml` → `tables/taktikak.json` (13 taktika, kombó_mód/lista, fokozatos)
+  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (14 helyzet, feltétel_kulcs, infó)
+  - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (9 szituáció)
+  - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
+  - Schema validáció beépítve a `generate_tables.py`-be (`validate_aktiv_ful()`)
+  - Régi `harcihelyzetek.yaml` törölve
+- ✅ Aktív fül UI (AktivScreen.tsx) — alapverzió
+  - Szilánk kijelzés, fegyver/pajzs/páncél toggle-ök
+  - Taktikák: multi-select dropdown + chip + ✕, kombó validáció (whitelist/blacklist), fokozat választó
+  - Harci helyzetek: multi-select dropdown + chip + ✕
+  - Szituációk: multi-select dropdown + chip + ✕
+  - Manőver: single-select dropdown (nehézség jelzéssel)
+  - Státuszok: chip lista
+- ✅ Session séma bővítés: `aktív_taktika/helyzet` → `aktív_taktikák[]/helyzetek[]/szituációk[]`
+  - `AktívTaktika` interface: `{ név, fok? }`
 
 ## Következő lépések
-1. **§16 Fortély módosítók implementáció** — mindig-aktív (feltétel="") módosítók alkalmazása KÉ/TÉ/VÉ/SP/harckeret/SFÉ célokra
-   - `flat`: fix érték hozzáadás (Gyors kezdeményezés KÉ, Harckeret növelés, Természetes páncél SFÉ)
-   - `scaled`: `floor(forrás × arány)` (Harci akrobatika: akrobatika szint × arány → TÉ/VÉ)
-   - Forrás lookup: képzettség név → szint, vagy "erőbónusz" → számított érték
-   - Feltételes módosítók (szituáció:, fegyver:, harci_helyzet:) → Aktív fül toggle-ökkel (2. lépés)
-2. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
-3. **Távharc fül** — VÉ kalkulátor implementáció (§17)
-4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
+1. **Taktika módosítók → Harc fül** — aktív taktikák TÉ/VÉ/KÉ/SP módosítóinak beépítése a harcérték kalkulációba
+2. **§16 feltételes fortély módosítók** — session toggle-ök alapján (taktika:X, harci_helyzet:Y → fortély mod dispatch)
+3. **Aktív fül finomhangolás** — infó box helyzeteknél/manővereknél, státusz dropdown feltöltés
+4. **Távharc fül** — VÉ kalkulátor implementáció (§17)
+5. **Szabályleírás fülek** — md tartalom renderelés
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/docs/DEVSTATE.md` (ez a fájl)
@@ -332,3 +357,10 @@
 - Kiérdemelt Nyelvismeret: `kiérdemelt: true`, fok emelhető, pont számítás: `max(0, fok-1)` fizetős; 🎁 / 🎁➕ jelölés
 - Ingyenes jelölés egységesítés: minden "ingyen kapott" fortély 🎁 jellel (Kultúrkör, Helyismeret, Szabad keret, kiérdemelt Nyelvismeret)
 - Game mód: üres képzettség/fortély csoportok elrejtve
+- §16 fortély módosítók (mindig-aktív): `fortelyMods` Record a HarcScreen-ben, generikus iteráció fokok[].módosítók-ból. Flat + scaled mód. `fortelyok.json` tartalmazza a módosítókat.
+- Páncél gombok: disabled + `.he-field-disabled` ha nincs struktúra (`!k.páncél.alap`)
+- Feltétel kulcs prefixek (javított): `taktika:`, `harci_helyzet:`, `szituáció:`, `fegyver:`, `fegyver_kategória:`, `manőver:`, `státusz:`
+- Aktív fül adatforrások: `taktikak.json`, `harci_helyzetek.json`, `szituaciok.json`, `manoverek.json` — generate_tables.py + validate_aktiv_ful()
+- Taktika kombó: `kombó_mód: "whitelist"|"blacklist"` + `kombó_lista: string[]`
+- Session v2: `aktív_taktikák: AktívTaktika[]`, `aktív_helyzetek: string[]`, `aktív_szituációk: string[]` (régi `aktív_taktika`/`aktív_helyzet` string törölve)
+- AktivScreen.tsx: fegyver/pajzs/páncél toggle + taktikák (kombó validáció) + helyzetek + szituációk + manőver + státuszok
