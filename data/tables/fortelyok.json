@@ -1489,7 +1489,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:belharc"
+            "feltétel": "harci_helyzet:belharci_szituáció"
           },
           {
             "cél": "TÉ",
@@ -1497,7 +1497,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:belharc"
+            "feltétel": "harci_helyzet:belharci_szituáció"
           },
           {
             "cél": "VÉ",
@@ -1505,7 +1505,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:belharc"
+            "feltétel": "harci_helyzet:belharci_szituáció"
           }
         ]
       },
@@ -1520,7 +1520,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:belharc"
+            "feltétel": "harci_helyzet:belharci_szituáció"
           },
           {
             "cél": "TÉ",
@@ -1528,7 +1528,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:belharc"
+            "feltétel": "harci_helyzet:belharci_szituáció"
           },
           {
             "cél": "VÉ",
@@ -1536,7 +1536,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:belharc"
+            "feltétel": "harci_helyzet:belharci_szituáció"
           }
         ]
       }
@@ -1645,7 +1645,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:roham"
+            "feltétel": "taktika:roham"
           },
           {
             "cél": "SP",
@@ -1653,7 +1653,7 @@
             "mód": "scaled",
             "forrás": "erőbónusz",
             "arány": 1,
-            "feltétel": "szituáció:roham"
+            "feltétel": "taktika:roham"
           }
         ]
       }
@@ -1684,7 +1684,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:fárasztás_taktika"
+            "feltétel": "taktika:fárasztás"
           }
         ]
       }
@@ -1713,7 +1713,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:fegyverrántás"
+            "feltétel": "harci_helyzet:fegyverrántás"
           }
         ]
       },
@@ -1728,7 +1728,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:fegyverrántás"
+            "feltétel": "harci_helyzet:fegyverrántás"
           }
         ]
       }

@@ -41,19 +41,19 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "szituáció:belharc"
+    feltétel: "harci_helyzet:belharci_szituáció"
   - cél: TÉ
     érték: 3
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "szituáció:belharc"
+    feltétel: "harci_helyzet:belharci_szituáció"
   - cél: VÉ
     érték: 3
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "szituáció:belharc"
+    feltétel: "harci_helyzet:belharci_szituáció"
 - fok: 2
   követelménytext: ""
   követelmények:
@@ -70,19 +70,19 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "szituáció:belharc"
+    feltétel: "harci_helyzet:belharci_szituáció"
   - cél: TÉ
     érték: 6
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "szituáció:belharc"
+    feltétel: "harci_helyzet:belharci_szituáció"
   - cél: VÉ
     érték: 6
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "szituáció:belharc"
+    feltétel: "harci_helyzet:belharci_szituáció"
 
 todo:
 - text: ''
