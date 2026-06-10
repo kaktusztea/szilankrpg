@@ -613,6 +613,23 @@ note: A faj_misztérium mező megmondja, melyik Faj Misztérium képzettséget v
 Az Aktív fülön választható elemek és módosítóik összefoglalása.
 A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "taktika:roham"` stb.
 
+### Implementációs illeszkedés
+
+Session state bővítés (types.ts Session interface):
+- `aktív_taktikák: { név: string, fok?: number }[]` (több kombó, fokozatos taktikáknál fok)
+- `aktív_helyzetek: string[]` (több helyzet egyszerre)
+- `aktív_szituációk: string[]` (új mező)
+- `aktív_manőver: string` (max 1, marad)
+
+Kalkuláció két rétege:
+1. **Taktika módosítók** — direkt numerikus: TÉ/VÉ/KÉ/SP/harckeret módosítók a Harc fülön számolva
+   (hasonlóan a fortélyMod_* context mezőkhöz, pl. `taktikaMod_TÉ`, `taktikaMod_VÉ`)
+2. **§16 feltételes fortély módosítók** — a HarcScreen fortély loop-jában a `mod.feltétel` check:
+   `feltétel.split(':')` → prefix (taktika/harci_helyzet/szituáció/fegyver) → session tömbben keresés
+
+Harci helyzetek: NEM kalkuláltak (komplex hatások) — informatív jelzés + §16 feltétel dispatch.
+Manőverek: NEM adnak statikus módosítókat — informatív (MP, Nehézség megjelenítés).
+
 ### 21.1 Harci Taktikák
 
 Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
@@ -639,24 +656,32 @@ note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Akt
 
 ### 21.2 Harci Helyzetek
 
-Harci helyzetek amik a szituációból adódnak. Feltétel kulcs: `harci_helyzet:név`.
+Harci helyzetek speciális Státuszok, amelyek Hatásokat okoznak (080_hatasok_es_statuszok.md).
+Feltétel kulcs: `harci_helyzet:név`. Az Aktív fülön kiválaszthatók (toggle lista).
 
-| Helyzet | feltétel kulcs | Módosítók | Megjegyzés |
-|---------|---------------|-----------|------------|
-| Belharci szituáció | `harci_helyzet:belharci_szituáció` | speciális (rövid fegyverek előnye) | külön szabályrendszer |
-| Fegyverrántás váratlanul | `harci_helyzet:fegyverrántás` | KÉ:+10 (első csapás) | |
-| Meglepetés | `harci_helyzet:meglepetés` | KÉ:+20 | 1 teljes kör támadás |
-| Készületlenség | `harci_helyzet:készületlenség` | = Meglepetés | |
-| Beszorított helyzet | `harci_helyzet:beszorított` | TÉ:-3 | mozgástér hiánya |
-| Észrevétlen támadás | `harci_helyzet:észrevétlen_támadás` | TÉ:+20, +k6 SP | Harci anatómia bónusz |
-| Félhátulról támadás | `harci_helyzet:félhátulról` | TÉ:+10 | pajzs VÉ feltételes |
-| Hátulról támadás | `harci_helyzet:hátulról` | TÉ:+20 | pajzs VÉ nem számít |
-| Közrefogás | `harci_helyzet:közrefogás` | +1 TÉ/extra támadó (max +4) | |
-| Levegőből támadás | `harci_helyzet:levegőből` | TÉ:+5, VÉ:+5 | repülő → földi |
-| Magasabbról | `harci_helyzet:magasabbról` | TÉ:+2 | |
-| Védekező takarásban | `harci_helyzet:takarásban` | VÉ:+10 | |
-| Pengeelőny | `harci_helyzet:pengeelőny` | VÉ:+1..+4 | per 0.5 penge |
-| Pengehátrány | `harci_helyzet:pengehátrány` | VÉ:-1..-4 | |
+A helyzetek NEM egyszerű numerikus módosítók — komplex hatáscsomagok (Előny/Hátrány dobásra,
+támadás elvesztés, VÉ csökkentés, pajzs feltételek, stb.). Részletes leírás: 065_01_*.md.
+
+| Helyzet | feltétel kulcs | Hivatkozott szabály |
+|---------|---------------|---------------------|
+| Belharci szituáció | `harci_helyzet:belharci_szituáció` | 065_01_01 |
+| Fegyverrántás váratlanul | `harci_helyzet:fegyverrántás` | 065_01_02 |
+| Meglepetés | `harci_helyzet:meglepetés` | 065_01_03 |
+| Készületlenség | `harci_helyzet:készületlenség` | 065_01_03 (= Meglepetés) |
+| Beszorított helyzet | `harci_helyzet:beszorított` | 065_01_03 |
+| Észrevétlen támadás | `harci_helyzet:észrevétlen_támadás` | 065_01_03 |
+| Félhátulról támadás | `harci_helyzet:félhátulról` | 065_01_03 |
+| Hátulról támadás | `harci_helyzet:hátulról` | 065_01_03 |
+| Közrefogás | `harci_helyzet:közrefogás` | 065_01_03 |
+| Levegőből támadás | `harci_helyzet:levegőből` | 065_01_03 |
+| Magasabbról | `harci_helyzet:magasabbról` | 065_01_03 |
+| Védekező takarásban | `harci_helyzet:takarásban` | 065_01_03 |
+| Pengeelőny | `harci_helyzet:pengeelőny` | 065_01_04 |
+| Pengehátrány | `harci_helyzet:pengehátrány` | 065_01_04 |
+
+note: A webapp Aktív fülön ezek toggle-ök. A pontos hatásaikat a karakterlap NEM kalkulálja
+      automatikusan (túl komplex: Előny/Hátrány dobásra, támadás elvesztés, stb.).
+      Funkciójuk az Aktív fülön: feltételes fortély módosítók dispatch-éhez (§16) + informatív jelzés.
 
 ### 21.3 Szituációk
 
