@@ -80,7 +80,7 @@
   - TÉ levonás: Fájdalomtűrés enyhítés (konstansok.fájdalomtűrés_enyhítés), dinamikus
   - TÉ footer double-tap: navigál Tul/Képz → scroll Fájdalomtűrés-hez
   - képzettségek prop: lifted state, Fájdalomtűrés szint módosítás azonnal hat
-- ✅ Tab rendszer: swipe + animáció (0.15s) + scrollozható tab bar
+- ✅ Tab rendszer: swipe + animáció (0.15s) + tükrözött tab bar (jobb→bal, 18px ikon-only + szöveges fülek)
 - ✅ Szerkesztő/Game mód toggle
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
 - ✅ 168 fortély yaml, 39 képzettség yaml, 26 faj yaml
@@ -111,10 +111,6 @@
   - Törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
   - Game mód: koppintás → accordion info (leírás, hatás, követelmény, kiterjesztések)
   - Rövid koppintás szerkesztő módban: nem csinál semmit (csak double-tap)
-- ✅ KP sáv (szerkesztő mód, minden fülön, tab-bar felett)
-  - Két szekció: "Maradt KP: X" (bal, piros ha <0) + "Primer keret: Y" (jobb, piros ha <0)
-  - Dinamikus: képzettség/fortély módosítás azonnal frissíti
-  - Képzettségek és Fortélyok state az App szintjén (lifted state)
 - ✅ Build pipeline: YAML → JSON generálás automatizálva
   - `data/generate_tables.py`: központi script (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
   - Vite plugin: dev szerver indulásakor automatikusan futtatja a generálást
@@ -127,8 +123,7 @@
   - Topológiai sorrend: automatikus dependency resolution (skaláris Context + ArrayContext)
   - HarcScreen: ÉP, KÉ, manőver pont, SFÉ, páncél_MGT, fegyver TÉ/VÉ/SP/támadások — mind reactive engine-ből
   - App KP sáv: teljes KP lánc reactive engine-ből
-  - testdata.ts expected8: frissítve teljes KP bontással (kp_képzettségek:224, kp_fortélyok:150, kp_hm:192, elköltött:566, maradt:2)
-  - TS-ben marad: fortély módosítók (§16, TODO), Fájdalomtűrés enyhítés (küszöb-tábla lookup)
+  - TS-ben marad (TODO): fortély módosítók (§16 — jelenleg hardcoded 0), Fájdalomtűrés enyhítés (küszöb-tábla lookup)
 - ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
 - ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
 - ✅ Escape gomb: minden popup overlay bezárható Escape-pel
@@ -143,11 +138,12 @@
   - Nem tárol származtatott/számított értékeket (ÉP, KÉ, TÉ, VÉ, SP, KP, SFÉ, MGT)
   - Validáció: `schema_version === 2` + kötelező mezők ellenőrzés betöltéskor
 - ✅ Karakter mentés/betöltés (JSON export/import)
-  - 💾 Mentés gomb: `karakter.név.json` letöltés + `mentés_dátum` timestamp
-  - 📂 Betöltés gomb: file picker, schema validáció (incl. napló tömb)
-  - 📄 Új karakter gomb: megerősítő popup, `data/karakter/empty_karakter.json`-ból tölti
-  - 🧪 Teszt karakter gomb: megerősítő popup, `data/karakter/test_karakter.json` runtime fetch + referenciális validáció
-  - Validáció betöltéskor: schema struktúra + referenciális integritás (faj, fortélyok, képzettségek, páncél enum-ok, fegyver anyag/alaptípus)
+  - ⚙️ menü: Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter
+  - Mentés: `karakter.név.json` letöltés + `mentés_dátum` timestamp
+  - Betöltés: file picker, schema validáció (incl. napló tömb)
+  - Új karakter: megerősítő popup, `data/karakter/empty_karakter.json`-ból tölti
+  - Teszt karakter: megerősítő popup, `data/karakter/test_karakter.json` runtime fetch + referenciális validáció
+  - Validáció betöltéskor: schema struktúra + referenciális integritás (faj, anyanyelv, fortélyok, képzettségek, páncél enum-ok, fegyver anyag/alaptípus)
   - Session state lifted: VÉ csökkenés, MP használat, ÉP rubrikák (sebzések) mind az App-szintű karakter objektumban
   - EpTable: sebzések prop-on keresztül kapja/adja vissza (nem lokális state)
   - Név/Szint/Kor/Faj: lifted state (App → TulajdonsagokScreen props)
@@ -158,7 +154,7 @@
   - Primer költés = primer képzettségek + primer fortélyok + HM + CM
   - Primer limit = összes_kp + spec_kp
 - ✅ Szint választó: gombgrid 3-21 (5 oszlop, utolsó sor középre)
-- ✅ Kor választó: két lépéses (tartomány → érték), 10-100/2, 100-200/5, 200-1000/50
+- ✅ Kor választó: két lépéses (tartomány → érték), 10–58/60–100 toggle, 100-200/5, 200-1000/50, 42×42px kerek gombok
 - ✅ Build metadata (`web/generate_metadata.py` → `public/metadata.json`)
   - Verzió formátum: `ÉV.ÉVNAPJA.napibuild` (pl. `26.158.4`)
   - Napi build counter: `.build_counter` fájl (nem repo része)
@@ -188,8 +184,8 @@
   - Mesterfegyver fortély szinkronizáció:
     - Fegyver MF fok módosítás → automatikusan létrehozza/frissíti a Mesterfegyver fortélyt
     - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején
-    - Dupla katt locked elemre → hint: "Mesterfegyver fortélyokat a Harcértékek fülön kezeld!" (3s)
-    - Mesterfegyver NEM jelenik meg a Fortélyok fül dropdown-jában
+    - Dupla katt locked elemre → hint: "Ezt a fortélyt a Harcértékek fülön kezeld!" (3s)
+    - Mesterfegyver és Pajzshasználat NEM jelenik meg a Fortélyok fül dropdown-jában
 - ✅ Jegyzetek fül (📝): teljes képernyős textarea, mindkét módban elérhető, mentődik karakter fájlba
 - ✅ Napló fül (📖): bejegyzés lista (dátum, KM, kaland, események), szerkesztés/törlés, accordion, editOnly
 - ✅ Távharc fül (🏹): skeleton (TODO: távharc kalkulátor)
@@ -214,13 +210,33 @@
   - Pajzshasználat fortély: locked a Fortélyok fülön (Mesterfegyver mintára, nem szerkeszthető/törölhető, nem jelenik meg dropdown-ban)
   - `syncPajzsFortelyok`: fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
 - ✅ Nyelvismeret fok UI: "Alap"/"Udvari" label (szám helyett), lekerekített téglalap gombok, centered fejléc
-  - Nyelv picker: közvetlen `<select size=12>` lista (nincs köztes popup wrapper, nincs Mégse gomb)
+  - Nyelv picker: custom styled gomb-lista csoportonként (narancssárga fejléc + elválasztó vonal), scrollozható (max 70vh)
 - ✅ Kor választó javítások: szabályos kör gombok (42×42px), 10–58 / 60–100 toggle split (cserélődő tartalom)
 - ✅ Harcértékek fül szekció elválasztók: `.he-section + .he-section { border-top: 1px solid #333 }`, h3 border-bottom eltávolítva
 - ✅ process_fegyverek.py fix: `data/patterns` → `data/tables` + `_pattern.json` szűrő
+- ✅ Fejléc ⚙️ menü: Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter (overlay popup)
+  - Régi ikon gombok (🧪📄💾📂) eltávolítva a fejlécből
+- ✅ Tab bar tükrözés: jobbról balra sorrend (Aktív jobb szélre), induláskor jobbra scrollozva
+  - Screen slider és swipe irány is tükrözve
+  - Ikon-only tab-ok: ❎🗡️🏹🔵🟣🛡️✨📜 (szöveges: Jegyzetek, Napló, Taktikák, Helyzetek, Manőverek)
+  - Tab font-size: 18px, padding: 8px
+- ✅ Screen címek: h2 hozzáadva (Tul/Képz, Fortélyok, Harcértékek)
+- ✅ Anyanyelv mező + ingyenes Nyelvismeret fortélyok
+  - `karakter.anyanyelv: string` top-level mező (nyelvek.json-ból)
+  - Tul/Képz fül: inline `<select>` dropdown (szerkesztő módban, Faj/Kor alatt)
+  - Anyanyelv módosítás → szinkronizálja kiérdemelt Nyelvismeret fortélyokat (Közös + anyanyelv, fok:1)
+  - Kiérdemelt Nyelvismeret: 🎁 jelölés, fok emelhető (Udvari), fizetős rész = fok-1 pont
+  - 🎁➕ jelölés ha kiérdemelt és fok > 1 (ingyenes alap + ráköltöttünk)
+  - `validateKarakterData`: anyanyelv referenciális validáció (nyelvek.json ellen)
+- ✅ Game módban üres fortély/képzettség csoportok elrejtése
+- ✅ Nyelvismeret dropdown: 🌏 → 🎁 ikon (egységes "ingyenes keret" jelzés)
 
 ## Következő lépések
-1. **Reactive Engine bővítés** — §16 Fortély módosítók (iteráció + feltétel dispatch → deklaratív filter+sum)
+1. **§16 Fortély módosítók implementáció** — mindig-aktív (feltétel="") módosítók alkalmazása KÉ/TÉ/VÉ/SP/harckeret/SFÉ célokra
+   - `flat`: fix érték hozzáadás (Gyors kezdeményezés KÉ, Harckeret növelés, Természetes páncél SFÉ)
+   - `scaled`: `floor(forrás × arány)` (Harci akrobatika: akrobatika szint × arány → TÉ/VÉ)
+   - Forrás lookup: képzettség név → szint, vagy "erőbónusz" → számított érték
+   - Feltételes módosítók (szituáció:, fegyver:, harci_helyzet:) → Aktív fül toggle-ökkel (2. lépés)
 2. **Aktív fül UI** — szituáció toggle-ök (fegyver, pajzs, páncél, taktika, helyzet, manőver, státuszok)
 3. **Távharc fül** — VÉ kalkulátor implementáció (§17)
 4. **Szabályleírás fülek** — md tartalom renderelés (taktikák, helyzetek, manőverek)
@@ -259,7 +275,7 @@
 - Többszörös fortély display name: `f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név`
 - Karakter séma: v2 (`data/schemas/karakter.yaml`), egységes `fortélyok[]` tömb, `session` szekció runtime state-nek
 - Karakter mentés formátum: egyetlen `.json` fájl (karakter + session), NEM tartalmaz származtatott értékeket
-- Teszt karakter: `data/karakter/test_karakter.json` a single source of truth; runtime fetch (nincs testdata.ts)
+- Teszt karakter: `data/karakter/test_karakter.json` a single source of truth; runtime fetch
 - Validáló script: `web/validate_karakter.py` — ellenőrzi a test_karakter.json konzisztenciáját (yaml defs, KP, faj, session)
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
@@ -290,13 +306,13 @@
 - Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
 - iOS kompatibilitás: double-tap modell (nem long-press), nincs touchstart preventDefault hack, `touch-action: manipulation` CSS
-- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Egyetlen maradék TS inline logika: fortély módosítók (§16, TODO) és Fájdalomtűrés enyhítés.
+- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Maradék TS inline logika (TODO §16): fortély módosítók (jelenleg hardcoded 0 a `fortélyMod_*` context mezőkben) és Fájdalomtűrés enyhítés (küszöb-tábla lookup). Érintett fortélyok: Gyors kezdeményezés (KÉ), Harckeret növelés (harckeret+KÉ), Harci akrobatika (TÉ/VÉ scaled), Természetes páncél (SFÉ), Merevvértviselet (MGT_TÉ_büntetés — ez már implementálva rules.json-ban).
 - Tradíció képzettség: `"Tradíció: Vulgármágia"` formátum (nem `többszörös` yaml mező!), tradiciok.json-ból picker; Szakrális altípusoknál isten választó (pantheon csoportosítva)
 - `tables/tradiciok.json`: egységes struktúra `{ név, típus, altípusok[] }` — altípusok lehetnek egyszerű (Bárdmágia) vagy pantheon-csoportosított (Szakrális/istenek)
 - `tables/nyelvek.json`: 37 nyelv `{ név, csoport }` — Nyelvismeret fortély picker ebből kínál csoportosított dropdown-t
 - Szabad fortélyok: `kp_perfok: 6`, csoport-szintű ingyenes keret = TSz db; kiérdemelt fortélyok (`kiérdemelt: true`) nem fogyasztják se a keretet se a KP-t
 - Fortély `kiérdemelt?: boolean` mező: opcionális, szabad fortélyoknál felvételkor "Felvett/⭐ Kiérdemelt" picker
-- Nyelvismeret fortély: pont keret = `max(0, (nyelvtanulás_szint - 3) * 3)`, dropdown disabled ha keret elfogyott, piros jelzés túllépésnél (hátulról)
+- Nyelvismeret fortély: pont keret = `max(0, (nyelvtanulás_szint - 3) * 3)`, dropdown disabled ha keret elfogyott, piros jelzés túllépésnél (hátulról). Kiérdemelt Nyelvismeret: fizetős fok = `max(0, fok - 1)` (első fok ingyenes).
 - Alkalmatlan fegyver hajítása: `spec_típus: "fegyver"` → dropdown a karakter fegyvereiből (nem freetext)
 - Képzettség limitek: primer max = TSz, szekunder max = TSz+3; túllépés → piros név + szint (`kep-over` class)
 - `mentés_dátum`: karakter JSON-ba mentéskor YYYY-MM-DD HH:MM formátumban
@@ -305,7 +321,14 @@
 - Pajzs adatmodell: `karakter.pajzs: { méret: string, pajzshasználat_fok: number }` — top-level mező (mint páncél)
 - Pajzshasználat fortély: locked a Fortélyok fülön (Mesterfegyver mintára), szinkronizálva `pajzs.pajzshasználat_fok`-ból
 - Nyelvismeret fok megjelenítés: "Alap" (fok:1), "Udvari" (fok:2) — `NYELV_FOK_LABELS` konstans a FortelyokScreen-ben
-- Nyelvismeret felvétel: közvetlen `<select size=12>` lista overlay-ben (nincs label, nincs Mégse — mellé katt cancel)
+- Nyelvismeret felvétel: custom styled gomb-lista overlay (`.nyelv-picker`, `.nyelv-csoport`, `.nyelv-btn`), mellé katt/Escape cancel
 - Kor választó: 10–58 / 60–100 toggle split (cserélődő tartalom, nem append), 42×42px kerek gombok
 - Harcértékek fül szekció elválasztó: `.he-section + .he-section { border-top }`, h3-on nincs border-bottom
 - process_fegyverek.py: pattern fájlok helye `data/tables/*_pattern.json` (nem `data/patterns/`)
+- Fejléc: ⚙️ menü gomb (overlay popup: Karakter betöltése/mentése, Új/Teszt karakter) + 🔧/🎮 mód toggle
+- Tab bar: tükrözött (jobb→bal), induláskor `scrollLeft = scrollWidth`, ikon-only fülek, 18px font
+- Screen slider: tükrözött (`TABS.length-1-activeTab`), swipe irány invertált
+- `karakter.anyanyelv`: top-level string mező, nyelvek.json-ból választható, szinkronizálja kiérdemelt Nyelvismeret fortélyokat
+- Kiérdemelt Nyelvismeret: `kiérdemelt: true`, fok emelhető, pont számítás: `max(0, fok-1)` fizetős; 🎁 / 🎁➕ jelölés
+- Ingyenes jelölés egységesítés: minden "ingyen kapott" fortély 🎁 jellel (Kultúrkör, Helyismeret, Szabad keret, kiérdemelt Nyelvismeret)
+- Game mód: üres képzettség/fortély csoportok elrejtve

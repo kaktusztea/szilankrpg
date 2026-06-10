@@ -56,13 +56,10 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - `padding: 8px 12px`, háttér: `--primary`, `border-bottom: 1px solid #333`
 - Bal: "Szilánk RPG" (`font-weight: bold, 16px`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
 - Jobb: gombok (`header-btns`, `gap: 6px`):
-  - 🧪 Teszt: teszt karakter betöltés (megerősítő popup)
-  - 📄 Új: üres karakter (megerősítő popup, `data/karakter/empty_karakter.json`)
-  - 💾 Mentés: karakter JSON letöltés (`karakter.név.json`), `mentés_dátum` automatikusan kitöltve (YYYY-MM-DD HH:MM)
-  - 📂 Betöltés: file picker + schema + referenciális validáció
+  - ⚙️ Menü gomb: overlay popup (Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter)
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px
-  - Gombok stílusa: `background: --input-bg; border: 1px solid #555; border-radius: 4px; padding: 4px 8px; font-size: 16px`
-- Megerősítő popup-ok: overlay, centered, label (bold) + dim szöveg + piros gomb
+- ⚙️ menü popup: `.menu-item` gombok (centered szöveg, `padding: 10px 16px`)
+- Megerősítő popup-ok (Új/Teszt): overlay, centered, label (bold) + dim szöveg + piros gomb
 - Betöltési hiba popup: piros "Betöltési hiba" label + hibaüzenet + OK gomb
 
 ---
@@ -195,6 +192,8 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
   - Faj box (flex:1): inline `<select>` dropdown (26 faj a tables/fajok.json-ból, közvetlenül koppintható)
   - Kor box: `Kor: 32` — double-tap → két lépéses popup (tartomány: 10–100/100–200/200–1000, majd érték gombok: 2/5/50-es lépésekkel)
 - **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"von Agabor (Ember (Északi), 32)"`
+- **Anyanyelv** (CSAK szerkesztő módban): inline `<select>` dropdown (`tables/nyelvek.json`-ból)
+  - Módosítás → szinkronizálja kiérdemelt Nyelvismeret fortélyokat (Közös Alap + anyanyelv Alap, `kiérdemelt: true`)
 - **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` — double-tap → szerkesztő popup (max 40 kar)
   - Mentés fájlnévben: `karakternév_játékosnév_Xtsz.json` (ha ki van töltve)
 
@@ -210,6 +209,7 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
 ### Képzettségek (alatta, csoport-bontásban)
 - Csoportok sorrendje: Harci → Misztikus → Fizikai → Világi → Alvilági → Művészeti → Tudományos
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
+- Game módban: üres csoportok elrejtve
 - Minden képzettség: név + szint (0-15) + ✕ törlés gomb
 - Szint színkód: 0=piros, 1-8=sárga, 9+=zöld
 - Csoportonként 1 db dropdown választó (Szerkesztő módban): új képzettség felvétele → azonnal felugrik a szint választó popup
@@ -267,6 +267,7 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 
 ### Megjelenés
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
+- Game módban: üres csoportok elrejtve
 - Kompakt lista: név + fok (szám). Fok szín: sárga ha fok < maxfok, zöld ha fok = maxfok
   - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok
 - Ingyenes keret alatti többszörös fortélyoknál 🎁 jel a név mellett
@@ -277,7 +278,7 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 - Normál: `"FortélyNév (X)"` ahol X a maxfok
 - Ingyenes kerettel (Kultúrkör, Helyismeret): `"Név (1) 🎁N"` ahol N a maradék ingyenes keret
 - Szabad fortélyok: `"Név (1) 🎁N"` ha van szabad ingyenes keret (TSz db összesen a csoportból)
-- Nyelvismeret: `"Nyelvismeret (2) 🌏N"` ahol N a maradék nyelvtanulás pont
+- Nyelvismeret: `"Nyelvismeret (2) 🎁N"` ahol N a maradék nyelvtanulás pont
 - KP-t adó (Vakság, stb.): `"Név (X) ➕6KP"` vagy több foknál: `"Név (3) ➕6-12-18KP"`
 - `spec_típus: "fegyver"`: disabled ha nincs fegyver a karakteren vagy mindhez felvéve
 - `spec_típus: "nyelv"` (Nyelvismeret): disabled ha pont keret elfogyott
@@ -287,7 +288,7 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 - `spec_típus: ""` → normál, egyszer felvehető
 - `spec_típus` nem üres + `spec_lista: [...]` → fix lista dropdown (pl. Kultúrkör: 29 elem). Már felvett elemek kiszűrődnek.
 - `spec_típus: "fegyver"` + `spec_lista: []` → dropdown a karakter fegyvereiből (Harcértékek fülről). Disabled ha nincs fegyver / mindhez felvéve.
-- `spec_típus: "nyelv"` + `spec_lista: []` → közvetlen `<select size=12>` lista overlay-ben (csoportosított `<optgroup>`, `tables/nyelvek.json`-ból). Nincs label, nincs Mégse — mellé katt cancel. Már felvett nyelvek kiszűrődnek.
+- `spec_típus: "nyelv"` + `spec_lista: []` → custom styled gomb-lista overlay (`.nyelv-picker`, csoportonként narancssárga fejléc + `.nyelv-btn` gombok, `tables/nyelvek.json`-ból, max 70vh scrollozható). Mellé katt/Escape cancel. Már felvett nyelvek kiszűrődnek.
 - `spec_típus` egyéb + `spec_lista: []` → freetext popup (max 20 karakter) (pl. Helyismeret, Páros harc)
 - Felvett példányok neve: `"AlapNév - alnév"` formátum (pl. `"Kultúrkör - erv"`, `"Helyismeret - Erion"`)
 
@@ -295,13 +296,14 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 - Csoport-szintű ingyenes keret: TSz db (az egész szabad csoportból összesen)
 - Ingyenes keretbe eső fortélyok: 🎁 jelölés a soron
 - Keret felett: 6 KP/db (szekunder KP-ból)
-- Kiérdemelt fortélyok (`kiérdemelt: true`): ⭐ jelölés, nem fogyasztják se a keretet se a KP-t
+- Kiérdemelt fortélyok (`kiérdemelt: true`): 🎁 jelölés, nem fogyasztják se a keretet se a KP-t
 - Felvételkor popup: "6/0 Felvett" / "⭐ Kiérdemelt" választó
 
 ### Nyelvismeret pont keret
 - Nyelvtanulás képzettség 4. szinttől: `(szint - 3) × 3` pont
-- Nyelvismeret fortélyok össz-foka ≤ pont keret
-- Túllépés: utolsó N sor piros (név + fok), kattintásra info accordion (piros szöveg)
+- Fizetős fok számítás: nem-kiérdemelt teljes foka + kiérdemelt `max(0, fok-1)` (első fok ingyenes)
+- Nyelvismeret fizetős össz-fok ≤ pont keret
+- Túllépés: utolsó N fizetős sor piros (név + fok), incl. kiérdemelt ha fok>1
 - Dropdown disabled ha keret elfogyott
 
 ### KP logika (fortélyok)
@@ -312,10 +314,10 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 - Többszörös fortélyok KP számítása a base name alapján (`"Kultúrkör - erv"` → lookup `"Kultúrkör"`)
 
 ### Viselkedés Szerkesztő módban
-- Rövid koppintás: nem csinál semmit (kivéve overLimit Nyelvismeret → accordion info toggle)
+- Rövid koppintás: nem csinál semmit
 - Double-tap (350ms): fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
   - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se double-tap-re) — ehelyett "1 fok a maximum" hint (2s)
-  - Mesterfegyver (locked): double-tap → "Mesterfegyver fortélyokat a Harcértékek fülön kezeld!" hint (3s)
+  - Mesterfegyver (locked): double-tap → "Ezt a fortélyt a Harcértékek fülön kezeld!" hint (3s)
 - Felvételkor (dropdown): maxfok>1 → azonnal fok popup; többszörös → megfelelő picker popup
 - Mesterfegyver NEM jelenik meg a harci fortély dropdown-ban
 - Mesterfegyver bejegyzések: locked (nem szerkeszthető, nem törölhető), lista tetején, szinkronizálva fegyver példányokból
@@ -489,14 +491,14 @@ Alul fix, horizontálisan scrollozható szalag.
 ### Tab lista (sorrend)
 | ID | Label | editOnly |
 |----|-------|----------|
-| aktiv | ❎ Aktív | false |
-| harc | 🗡️ Harc | false |
-| tavharc | 🏹 Távharc | false |
-| tulajdonsagok | 🔵 Tul/Képz | false |
-| fortelyok | 🟣 Fortélyok | false |
-| harcertekek | 🛡️ Harcértékek | true |
-| misztikus | ✨ Misztikus | false |
-| hatterek | 📜 Hátterek | false |
+| aktiv | ❎ | false |
+| harc | 🗡️ | false |
+| tavharc | 🏹 | false |
+| tulajdonsagok | 🔵 | false |
+| fortelyok | 🟣 | false |
+| harcertekek | 🛡️ | true |
+| misztikus | ✨ | false |
+| hatterek | 📜 | false |
 | jegyzetek | 📝 Jegyzetek | false |
 | naplo | 📖 Napló | true |
 | taktikak | 🎯 Taktikák | false |
@@ -505,10 +507,12 @@ Alul fix, horizontálisan scrollozható szalag.
 
 - `editOnly: true` → Game módban a tab eltűnik
 - Default aktív tab induláskor: index 3 (`tulajdonsagok`)
+- **Tükrözött sorrend**: jobb→bal (Aktív jobb szélre), induláskor `scrollLeft = scrollWidth`
+- Screen slider is tükrözve: `translateX(-(TABS.length-1-activeTab)*100%)`, swipe irány invertált
 
 ### Stílus
 - `flex-shrink: 0`, `white-space: nowrap`, `overflow-x: auto`, scrollbar rejtett
-- Tab betűméret: 12px, padding: 8px 14px
+- Tab betűméret: 18px, padding: 8px
 - Inaktív szín: `--text-dim` (#999)
 - Aktív tab: `--accent` szín (#e94560), bold
 - Háttér: `--surface`, `border-top: 1px solid #333`, padding: 4px 0
@@ -519,10 +523,10 @@ Alul fix, horizontálisan scrollozható szalag.
 ## Screen váltás animáció
 
 - CSS transition: `transform 0.15s ease-out`
-- Screen-ek horizontálisan egymás mellett (`display: flex`)
-- Aktív screen: `translateX(-${activeTab * 100}%)`
+- Screen-ek horizontálisan egymás mellett (`display: flex`), **tükrözött sorrendben** renderelve
+- Aktív screen: `translateX(-${(TABS.length - 1 - activeTab) * 100}%)`
 - Csak szomszédos screen-ek renderelődnek: `Math.abs(i - activeTab) <= 1`
-- Swipe gesztus: `onTouchStart`/`onTouchEnd` a `<main>` elemen
+- Swipe gesztus: `onTouchStart`/`onTouchEnd` a `<main>` elemen, **invertált irány** (jobbra swipe = nagyobb index)
 - **Swipe isolation**: `handleTouchStart` ellenőrzi `.closest('.kep-prompt-overlay')` → ha overlay nyitva, swipe letiltva
 - **Kep-row védelem**: `onTouchStart/End stopPropagation` a kep-row elemeken (szerkesztő módban)
 - **Screen slide padding**: 12px
@@ -648,7 +652,7 @@ Minden adat `fetchJson`-nel:
 
 ### Karakter state struktúra (App szintjén)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
-- Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `páncél`, `felszerelés`, `jegyzetek`, `napló`, `session`
+- Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
 - `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktika`, `aktív_helyzet`, `aktív_manőver`, `aktív_státuszok`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
