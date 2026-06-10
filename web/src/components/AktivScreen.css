@@ -1,0 +1,93 @@
+.aktiv-screen {
+  padding: 12px;
+}
+
+.aktiv-screen h2 {
+  margin: 0 0 12px;
+}
+
+.aktiv-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #333;
+}
+
+.aktiv-label {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.aktiv-value {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--success);
+}
+
+.aktiv-select {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: var(--text);
+  padding: 6px 10px;
+  font-size: 14px;
+}
+
+.aktiv-toggle {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 14px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.aktiv-toggle.on {
+  background: var(--success);
+  color: #000;
+  border-color: var(--success);
+}
+
+.aktiv-section {
+  padding: 10px 0;
+  border-bottom: 1px solid #333;
+}
+
+.aktiv-section .aktiv-label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.aktiv-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: var(--primary);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 4px 8px;
+  margin: 2px 4px 2px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.aktiv-chip-x {
+  background: none;
+  border: none;
+  color: var(--error);
+  font-size: 14px;
+  cursor: pointer;
+  padding: 0 2px;
+}
+
+.aktiv-fok-select {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 3px;
+  color: var(--text);
+  padding: 2px 4px;
+  font-size: 13px;
+}

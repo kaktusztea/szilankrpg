@@ -109,6 +109,37 @@ export interface NyelvEntry {
   csoport: string;
 }
 
+export interface TaktikaEntry {
+  név: string;
+  feltétel_kulcs: string;
+  fokozatos: boolean;
+  módosítók?: Record<string, number>;
+  fokok?: { fok: number; TÉ?: number; VÉ?: number; KÉ?: number; SP?: number }[];
+  megjegyzés?: string;
+  kombó_mód: string;
+  kombó_lista: string[];
+}
+
+export interface HarciHelyzetEntry {
+  név: string;
+  feltétel_kulcs: string;
+  infó: string;
+}
+
+export interface SzituacioEntry {
+  név: string;
+  feltétel_kulcs: string;
+  infó: string;
+}
+
+export interface ManoverEntry {
+  név: string;
+  típus: string;
+  nehézség: number;
+  fázisok: string;
+  hatás: string;
+}
+
 // --- Betöltött adat ---
 export interface GameData {
   konstansok: KonstansokRaw;
@@ -125,13 +156,17 @@ export interface GameData {
   fortelySummaries: FortelySummary[];
   tradiciok: TradicioEntry[];
   nyelvek: NyelvEntry[];
+  taktikak: TaktikaEntry[];
+  harciHelyzetek: HarciHelyzetEntry[];
+  szituaciok: SzituacioEntry[];
+  manoverek: ManoverEntry[];
   rules: Rule[];
   emptyKarakter: Karakter;
   testKarakter: Karakter;
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, rulesFile, emptyKarakter, testKarakter] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, szituaciok, manoverek, rulesFile, emptyKarakter, testKarakter] = await Promise.all([
     fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
     fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
@@ -146,6 +181,10 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<FortelySummary[]>('tables/fortelyok.json'),
     fetchJson<TradicioEntry[]>('tables/tradiciok.json'),
     fetchJson<NyelvEntry[]>('tables/nyelvek.json'),
+    fetchJson<TaktikaEntry[]>('tables/taktikak.json'),
+    fetchJson<HarciHelyzetEntry[]>('tables/harci_helyzetek.json'),
+    fetchJson<SzituacioEntry[]>('tables/szituaciok.json'),
+    fetchJson<ManoverEntry[]>('tables/manoverek.json'),
     fetchJson<{ rules: Rule[] }>('rules.json'),
     fetchJson<Karakter>('karakter/empty_karakter.json'),
     fetchJson<Karakter>('karakter/test_karakter.json'),
@@ -163,5 +202,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, rules: rulesFile.rules, emptyKarakter, testKarakter };
+  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, szituaciok, manoverek, rules: rulesFile.rules, emptyKarakter, testKarakter };
 }

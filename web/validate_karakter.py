@@ -143,8 +143,8 @@ karakter = {
         "szilánk": 1,
         "vé_csökkenés": 0, "vé_history": [], "manőver_pont_használt": 0,
         "sebzések": [], "aktív_fegyver_index": 0, "aktív_pajzs": False,
-        "aktív_páncél": True, "aktív_taktika": "", "aktív_helyzet": "",
-        "aktív_manőver": "", "aktív_státuszok": [],
+        "aktív_páncél": True, "aktív_taktikák": [], "aktív_helyzetek": [],
+        "aktív_szituációk": [], "aktív_manőver": "", "aktív_státuszok": [],
     },
 }
 
@@ -351,8 +351,8 @@ print("\n--- 5. Session validáció ---")
 session = karakter["session"]
 required_session_keys = ["szilánk", "vé_csökkenés", "vé_history", "manőver_pont_használt",
                          "sebzések", "aktív_fegyver_index", "aktív_pajzs",
-                         "aktív_páncél", "aktív_taktika", "aktív_helyzet",
-                         "aktív_manőver", "aktív_státuszok"]
+                         "aktív_páncél", "aktív_taktikák", "aktív_helyzetek",
+                         "aktív_szituációk", "aktív_manőver", "aktív_státuszok"]
 for k in required_session_keys:
     if k not in session:
         err(f"Session mező hiányzik: '{k}'")

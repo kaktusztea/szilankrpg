@@ -352,8 +352,9 @@
     "aktív_fegyver_index": 0,
     "aktív_pajzs": false,
     "aktív_páncél": true,
-    "aktív_taktika": "",
-    "aktív_helyzet": "",
+    "aktív_taktikák": [],
+    "aktív_helyzetek": [],
+    "aktív_szituációk": [],
     "aktív_manőver": "",
     "aktív_státuszok": []
   }

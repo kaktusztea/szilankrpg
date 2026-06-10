@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, TouchEvent, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import { loadGameData } from './engine/data-loader';
 import type { GameData } from './engine/data-loader';
+import { AktivScreen } from './components/AktivScreen';
 import { HarcScreen } from './components/HarcScreen';
 import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
 import { FortelyokScreen } from './components/FortelyokScreen';
@@ -470,7 +471,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
 }) {
   switch (tab) {
-    case 'aktiv': return <div className="screen"><h2>❎ Aktív</h2><p>Szituáció beállítás (TODO)</p></div>;
+    case 'aktiv': return <AktivScreen data={data} karakter={karakter} session={session} setSession={setSession} />;
     case 'harc': return <HarcScreen data={data} karakter={karakter} session={session} setSession={setSession} onNavigate={(id) => {
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);

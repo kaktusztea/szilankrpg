@@ -76,6 +76,11 @@ export interface SebzésRubrika {
   sorszám: number;
 }
 
+export interface AktívTaktika {
+  név: string;
+  fok?: number;
+}
+
 export interface Session {
   szilánk: number;
   vé_csökkenés: number;
@@ -85,8 +90,9 @@ export interface Session {
   aktív_fegyver_index: number;
   aktív_pajzs: boolean;
   aktív_páncél: boolean;
-  aktív_taktika: string;
-  aktív_helyzet: string;
+  aktív_taktikák: AktívTaktika[];
+  aktív_helyzetek: string[];
+  aktív_szituációk: string[];
   aktív_manőver: string;
   aktív_státuszok: string[];
 }
@@ -131,8 +137,9 @@ export const DEFAULT_SESSION: Session = {
   aktív_fegyver_index: 0,
   aktív_pajzs: false,
   aktív_páncél: true,
-  aktív_taktika: '',
-  aktív_helyzet: '',
+  aktív_taktikák: [],
+  aktív_helyzetek: [],
+  aktív_szituációk: [],
   aktív_manőver: '',
   aktív_státuszok: [],
 };
