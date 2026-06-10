@@ -159,17 +159,18 @@ function App() {
   const touchY = useRef<number>(0);
   const [showNewConfirm, setShowNewConfirm] = useState(false);
   const [showTestConfirm, setShowTestConfirm] = useState(false);
+  const [showMenu, setShowMenu] = useState(false);
   const [loadError, setLoadError] = useState('');
   const [versionHint, setVersionHint] = useState('');
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTapTitle = useRef(0);
 
   useEffect(() => {
-    if (!showNewConfirm && !showTestConfirm && !loadError) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setLoadError(''); } }
+    if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setShowMenu(false); setLoadError(''); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showTestConfirm, loadError]);
+  }, [showNewConfirm, showTestConfirm, showMenu, loadError]);
 
   function handleTitleTap() {
     const now = Date.now();
@@ -275,10 +276,7 @@ function App() {
       <header className="header">
         <span className="title" onClick={handleTitleTap}>Szilánk RPG</span>
         <div className="header-btns">
-          <button className="test-btn" onClick={() => setShowTestConfirm(true)} title="Teszt karakter betöltése">🧪</button>
-          <button className="new-btn" onClick={() => setShowNewConfirm(true)} title="Új karakter">📄</button>
-          <button className="save-btn" onClick={saveKarakter} title="Mentés">💾</button>
-          <button className="load-btn" onClick={loadKarakter} title="Betöltés">📂</button>
+          <button className="gear-btn" onClick={() => setShowMenu(true)}>⚙️</button>
           <button
             className="mode-toggle"
             style={{ background: gameMode ? '#4caf50' : '#ff9800', color: '#000' }}
@@ -391,6 +389,18 @@ function App() {
           </button>
         ))}
       </nav>
+
+      {showMenu && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '6px', minWidth: '200px' }}>
+            <button className="menu-item" onClick={() => { setShowMenu(false); loadKarakter(); }}>Karakter betöltése</button>
+            <button className="menu-item" onClick={() => { setShowMenu(false); saveKarakter(); }}>Karakter mentése</button>
+            <button className="menu-item" onClick={() => { setShowMenu(false); setShowNewConfirm(true); }}>Új karakter</button>
+            <button className="menu-item" onClick={() => { setShowMenu(false); setShowTestConfirm(true); }}>Teszt karakter</button>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {showNewConfirm && createPortal(
         <div className="kep-prompt-overlay">

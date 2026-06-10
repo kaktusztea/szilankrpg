@@ -55,13 +55,24 @@ body {
   align-items: center;
 }
 
-.save-btn, .load-btn, .test-btn, .new-btn {
+.gear-btn {
   background: var(--input-bg);
   border: 1px solid #555;
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 16px;
   cursor: pointer;
+}
+
+.menu-item {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 10px 16px;
+  font-size: 16px;
+  color: var(--text);
+  cursor: pointer;
+  text-align: center;
 }
 
 .mode-toggle {
