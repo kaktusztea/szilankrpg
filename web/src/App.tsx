@@ -214,8 +214,8 @@ function App() {
     const dx = e.changedTouches[0].clientX - touchStart.current;
     const dy = e.changedTouches[0].clientY - touchY.current;
     if (Math.abs(dx) > 30 && Math.abs(dx) > Math.abs(dy)) {
-      if (dx < 0 && activeTab < TABS.length - 1) setActiveTab(activeTab + 1);
-      if (dx > 0 && activeTab > 0) setActiveTab(activeTab - 1);
+      if (dx > 0 && activeTab < TABS.length - 1) setActiveTab(activeTab + 1);
+      if (dx < 0 && activeTab > 0) setActiveTab(activeTab - 1);
     }
   }
 
@@ -297,8 +297,10 @@ function App() {
         onTouchStart={handleTouchStart}
         onTouchEnd={handleTouchEnd}
       >
-        <div className="screen-slider" style={{ transform: `translateX(-${activeTab * 100}%)` }}>
-          {TABS.map((tab, i) => (
+        <div className="screen-slider" style={{ transform: `translateX(-${(TABS.length - 1 - activeTab) * 100}%)` }}>
+          {[...TABS].reverse().map((tab, vi) => {
+            const i = TABS.length - 1 - vi;
+            return (
             <div key={tab.id} className="screen-slide">
               {Math.abs(i - activeTab) <= 1 && (
                 <TabContent
@@ -311,7 +313,8 @@ function App() {
                 />
               )}
             </div>
-          ))}
+            );
+          })}
         </div>
       </main>
 
