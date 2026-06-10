@@ -604,3 +604,125 @@ validáció:
 output: validációs eredmény (pass/fail + hibák listája)
 note: A faj_misztérium mező megmondja, melyik Faj Misztérium képzettséget veheti fel a karakter.
 ```
+
+
+---
+
+## 21. Aktív fül — Taktikák, Helyzetek, Szituációk, Manőverek
+
+Az Aktív fülön választható elemek és módosítóik összefoglalása.
+A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "taktika:roham"` stb.
+
+### 21.1 Harci Taktikák
+
+Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
+
+| Taktika | Módosítók | Kombó ✅ | Kombó ❌ |
+|---------|-----------|---------|---------|
+| 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd |
+| Érintő | TÉ:+3, sebzés:0 | Támadó, Védő, Kezdeményező, Kiváró | más |
+| Fárasztás | VÉ csökk: 2/kör (+fortély+pengeelőny) | — (nem támad) | más |
+| Kezdeményező | KÉ:+1..+5, VÉ:-1..-5 | Támadó, Érintő, Visszafogott | más |
+| Kiváró | KÉ:átengedett, TÉ:+2 (visszacsapás) | Támadó, Érintő, Visszafogott, Tám.erőből | más |
+| Öngyilkos roham | TÉ:+5, VÉ:-10, SP:+7, VÉcsökk 2× | — | más (max 1×/küzdelem) |
+| Plusz támadás | +1 támadás, VÉ:-3 azonnal | Támadó, Érintő, Tám.erőből | más |
+| Roham | TÉ:+4, VÉ:-8, SP:+5, VÉcsökk 2× | — | más |
+| Támadás erőből | TÉ:-1..-2, SP:+1..+2 | Kiváró | más |
+| Támadó | TÉ:+1..+3, VÉ:-2..-6 | Kezdeményező, Kiváró | más |
+| Védő | VÉ:+1..+4, TÉ:-2..-8 | — | más |
+| Teljes Védekezés | VÉ:+6, nem támad, hátrál | — | más |
+| Visszafogott | TÉ:-3/-6/-9, sebzéskocka: k10/k6/— | Kezdeményező, Kiváró | más |
+
+note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.
+      Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
+      Fárasztás: nem támadás, nem kombinálható mással.
+
+### 21.2 Harci Helyzetek
+
+Harci helyzetek amik a szituációból adódnak. Feltétel kulcs: `harci_helyzet:név`.
+
+| Helyzet | feltétel kulcs | Módosítók | Megjegyzés |
+|---------|---------------|-----------|------------|
+| Belharci szituáció | `harci_helyzet:belharci_szituáció` | speciális (rövid fegyverek előnye) | külön szabályrendszer |
+| Fegyverrántás váratlanul | `harci_helyzet:fegyverrántás` | KÉ:+10 (első csapás) | |
+| Meglepetés | `harci_helyzet:meglepetés` | KÉ:+20 | 1 teljes kör támadás |
+| Készületlenség | `harci_helyzet:készületlenség` | = Meglepetés | |
+| Beszorított helyzet | `harci_helyzet:beszorított` | TÉ:-3 | mozgástér hiánya |
+| Észrevétlen támadás | `harci_helyzet:észrevétlen_támadás` | TÉ:+20, +k6 SP | Harci anatómia bónusz |
+| Félhátulról támadás | `harci_helyzet:félhátulról` | TÉ:+10 | pajzs VÉ feltételes |
+| Hátulról támadás | `harci_helyzet:hátulról` | TÉ:+20 | pajzs VÉ nem számít |
+| Közrefogás | `harci_helyzet:közrefogás` | +1 TÉ/extra támadó (max +4) | |
+| Levegőből támadás | `harci_helyzet:levegőből` | TÉ:+5, VÉ:+5 | repülő → földi |
+| Magasabbról | `harci_helyzet:magasabbról` | TÉ:+2 | |
+| Védekező takarásban | `harci_helyzet:takarásban` | VÉ:+10 | |
+| Pengeelőny | `harci_helyzet:pengeelőny` | VÉ:+1..+4 | per 0.5 penge |
+| Pengehátrány | `harci_helyzet:pengehátrány` | VÉ:-1..-4 | |
+
+### 21.3 Szituációk
+
+Általános szituációk amik a harc kontextusát adják.
+
+| Szituáció              | feltétel kulcs                     | Megjegyzés            |
+| ---------------------- | ---------------------------------- | --------------------- |
+| Kétkezes harc          | `szituáció:kétkezes_harc`          | két fegyver forgatása |
+| Lovas harc             | `szituáció:lovas_harc`             | lóhátról              |
+| Léglovas harc          | `szituáció:léglovas_harc`          | repülő hátasról       |
+| Harci szekér           | `szituáció:harci_szekér`           | szekérről             |
+| Páros harc             | `szituáció:páros_harc`             | koordinált 2 fős harc |
+| Közönség előtt         | `szituáció:közönség_előtt`         | gladiátor             |
+| Szörnyeteg elleni harc | `szituáció:szörnyeteg_elleni_harc` | bestia                |
+| Merevvért 70%          | `szituáció:merevvért_70%`          | SFÉ 70% érvényesül    |
+| Célzás                 | `szituáció:célzás`                 | távharc               |
+
+### 21.4 Manőverek
+
+Egy körben max 1 aktív manőver. MP költséggel hajtható végre. Nehézség [2;12].
+Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
+
+#### Általános manőverek
+
+| Manőver                     | Nehézség                        | Fázisok      | Követelmények                                     | Hatás                                      |
+| --------------------------- | ------------------------------- | ------------ | ------------------------------------------------- | ------------------------------------------ |
+| Átsiklás                    | 6 (±2)                          | E (M*)       | —                                                 | Átsiklás harcolók között                   |
+| Áttörés                     | 5 (±erő)                        | M,V,E        | —                                                 | Átlökés egy ellenfélen                     |
+| Csonkolás                   | 8(kéz)/10(láb)                  | V,E          | Precíz támadás                                    | Végtaglevágás (ÉP/3↑ ill. ÉP/2↑ sebzés)    |
+| Ellenfél elfogása           | 10                              | V,E          | —                                                 | Kiszolgáltatott pozícióba kényszerítés     |
+| Felállás földről            | 6 (-akro/3)                     | M,E          | —                                                 | Felkelés földről                           |
+| Forgószél támadás           | 7+ellenfél                      | V,E          | —                                                 | Köríves támadás több ellenfélre            |
+| Kibontakozás                | 5 (±2/penge, +2/extra ellenfél) | E (M*)       | —                                                 | Kilépés a harcból                          |
+| Kiegészítő támadás          | 7                               | V,E          | Közelharc 4, MF 1                                 | Alattomos ütés (k20+0 SP)                  |
+| Lábkirántás szálfegyverrel  | 6                               | V,E          | Lándzsavívás 6, szálfegyver                       | Ellenfél földre kerül                      |
+| Lábsöprés / Felöklelés      | 8 (±erő)                        | V,E          | Harcmodor 5                                       | Ellenfél földre kerül                      |
+| Lánccsapda                  | 9                               | V,E          | MF 1, láncos fegyver                              | Ellenfél fegyverének foglyul ejtése        |
+| Lánccsapdából szabadítás    | 7                               | E            | —                                                 | Fegyver kiszabadítás                       |
+| Lefegyverzés / Fegyvertörés | 10 (±2)                         | V,E          | Harcmodor 5                                       | Fegyver kiesik/eltörik                     |
+| Leütés hátulról             | 6 (-2/Harci anat. fok)          | V,E          | Észrevétlen+Hátulról, zúzó/puszta kéz             | Ájulás (ÉP/4↓ sebzésnél)                   |
+| Lovas akasztása             | —                               | —            | Lásd lovas manőverek                              | —                                          |
+| Mesterjel                   | 10-12                           | V,E          | MF 2, hegyes szúrófegyver                         | Jel belekarcolása (1 ÉP)                   |
+| Mögékerülés                 | 8/6/4 (túlerő)                  | E            | —                                                 | Hátulról támadás pozíció                   |
+| Pajzzsal felöklelés         | 7 (±erő)                        | V,E          | Harcmodor 5, Pajzshasználat 2, közepes/nagy pajzs | Ellenfél földre kerül                      |
+| Pajzsrongálás               | 6                               | V,E          | Harcmodor 6, Erő+1, zúzó/kétkezes                 | Pajzs VÉ csökkentés (SP/2 zúzó, SP/4 vágó) |
+| Precíz támadás              | 1-12 (terület)                  | V,E          | Harcmodor 6                                       | Adott területre támadás                    |
+| Rávetődés hátulról          | 6                               | E (vagy V,E) | Észrevétlen+Hátulról                              | Rácsimpaszkodás → belharc                  |
+| Távoltartás                 | 5                               | M*,E         | Pengeelőny, Harcmodor 5                           | Ellenfél támadás elvesztése                |
+| Terelés                     | 8                               | E            | Harcmodor 6                                       | Ellenfél terelése                          |
+
+#### Belharcos manőverek
+
+| Manőver                 | Nehézség        | Fázisok | Követelmények                | Hatás                      |
+| ----------------------- | --------------- | ------- | ---------------------------- | -------------------------- |
+| Belharcba kerülés       | 9 (háttal:5)    | M,E     | Közelharc, belharcos fegyver | Belharci szituáció         |
+| Belharcból kibontakozás | 5               | M,E     | —                            | Kilépés belharcból         |
+| Átdobás                 | 7               | V,E     | —                            | Ellenfél földre kerül      |
+| Feszítés, Leszorítás    | 8               | V,E     | —                            | TÉ/VÉ:-7, KÉ elvesztés     |
+| Feszítésből kijövetel   | 8               | V,E     | —                            | Kilépés feszítésből        |
+| Gáncsolás               | 7               | V,E     | Közelharc 5                  | Ellenfél földre kerül      |
+| Kéztörés                | 9               | V,E     | —                            | 7 ÉP sebzés                |
+| Lábtörés                | 10              | V,E     | —                            | 9 ÉP sebzés                |
+| Lefejelés               | 7               | V,E     | —                            | 5 ÉP sebzés                |
+| Leforgatás/Irányítás    | 10 (feszítve:6) | V,E     | —                            | Ellenfél terelése (max 5m) |
+| Nyaktörés               | 12              | V,E     | Megelőző Feszítés            | Azonnali halál             |
+
+note: A manőverek nem adnak statikus harcérték módosítókat — ellenpróba alapúak (Manőver Alap + MP + k10 vs Nehézség + ellenfél Manőver Alap).
+      Kivétel: fortélyok amik manőver bónuszt adnak (pl. Harci akrobatika → manőver:kibontakozás +1/+3).
+      Belharcos manőverek: Belharci szituáció szükséges (kivéve Belharcba kerülés).
