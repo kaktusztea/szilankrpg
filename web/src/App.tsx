@@ -164,6 +164,11 @@ function App() {
   const [versionHint, setVersionHint] = useState('');
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTapTitle = useRef(0);
+  const tabBarRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    if (tabBarRef.current) tabBarRef.current.scrollLeft = tabBarRef.current.scrollWidth;
+  }, []);
 
   useEffect(() => {
     if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError) return;
@@ -378,8 +383,10 @@ function App() {
         );
       })()}
 
-      <nav className="tab-bar" onWheel={e => { e.currentTarget.scrollLeft += e.deltaY; }}>
-        {TABS.map((tab, i) => (
+      <nav className="tab-bar" ref={tabBarRef} onWheel={e => { e.currentTarget.scrollLeft += e.deltaY; }}>
+        {[...TABS].reverse().map((tab, _i) => {
+          const i = TABS.indexOf(tab);
+          return (
           <button
             key={tab.id}
             className={`tab-btn ${activeTab === i ? 'active' : ''}`}
@@ -387,7 +394,8 @@ function App() {
           >
             {tab.label}
           </button>
-        ))}
+          );
+        })}
       </nav>
 
       {showMenu && createPortal(
