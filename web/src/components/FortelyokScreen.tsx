@@ -131,6 +131,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
         {CSOPORT_SORREND.map(csoport => {
           const csoportDefs = defsByGroup.get(csoport) || [];
           const slotok = getFortelyokForCsoport(csoport);
+          if (gameMode && slotok.length === 0) return null;
           // A nem-többszörös fortélyok egyszer vehetők fel; többszörösök mindig elérhetők
           const usedNonMulti = new Set(slotok.filter(f => !f.spec_típus).map(f => f.név));
           const többszörösNevek = new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név));

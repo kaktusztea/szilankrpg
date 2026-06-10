@@ -291,6 +291,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       <div className="kep-section">
         {CSOPORT_SORREND.map(csoport => {
           const slotok = getKepzettsegekForCsoport(csoport);
+          if (gameMode && slotok.length === 0) return null;
           const usedNames = slotok.map(s => s.név);
           const available = getAvailableNames(csoport, usedNames);
 
