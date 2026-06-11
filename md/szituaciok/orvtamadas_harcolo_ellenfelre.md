@@ -37,7 +37,7 @@ Mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
 
 🔆 [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) manőver (harc közben) után **NEM** lehet orvtámadást végezni, csak sima [Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzet alakítható ki.
 
-🔆 [Körkörös harc](../fortelyok.harci/korkoros_harc.md) fortély megléte esetén **harc közben egyáltalán nem** alkalmazhatnak ellened [Orvtámadást](065_01_03_harci_poziciok.md#orvtámadás).
+🔆 [Körkörös harc](../fortelyok.harci/korkoros_harc.md) fortély megléte esetén **harc közben egyáltalán nem** alkalmazhatnak ellened [Orvtámadást](../065_01_03_harci_poziciok.md#orvtámadás).
 
 ---
 
