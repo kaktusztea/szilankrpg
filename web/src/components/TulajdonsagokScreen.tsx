@@ -667,44 +667,31 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
   );
 }
 
-const KOR_RANGES = [
-  { label: '10–100', values: Array.from({ length: 46 }, (_, i) => 10 + i * 2) },
-  { label: '100–200', values: Array.from({ length: 21 }, (_, i) => 100 + i * 5) },
-  { label: '200–1000', values: Array.from({ length: 17 }, (_, i) => 200 + i * 50) },
-];
 
-function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => void }) {
-  const [rangeIdx, setRangeIdx] = useState<number | null>(null);
-  const [expanded, setExpanded] = useState(false);
+function KorPicker({ onSelect }: { kor: number; onSelect: (v: number) => void }) {
+  const [hundreds, setHundreds] = useState(0);
+  const [tens, setTens] = useState<number | null>(null);
+  const [ones, setOnes] = useState<number | null>(null);
+  const value = tens !== null && ones !== null ? hundreds * 100 + tens * 10 + ones : null;
 
-  if (rangeIdx === null) {
-    return (
-      <div className="kep-prompt">
-        <label>Kor: <strong>{kor}</strong> — tartomány:</label>
-        <div className="kep-szint-grid" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          {KOR_RANGES.map((r, i) => (
-            <button key={i} className="fort-fok-btn" style={{ width: 'auto', padding: '8px 16px', borderRadius: '6px' }} onClick={() => { setRangeIdx(i); setExpanded(false); }}>{r.label}</button>
-          ))}
-        </div>
-      </div>
-    );
-  }
+  useEffect(() => {
+    if (value !== null) { setTimeout(() => onSelect(value), 500); }
+  }, [value]);
 
-  const range = KOR_RANGES[rangeIdx];
-  const values = rangeIdx === 0 ? (expanded ? range.values.filter(v => v >= 60) : range.values.filter(v => v <= 58)) : range.values;
   return (
-    <div className="kep-prompt">
-      <label>Kor ({range.label})</label>
-      <div className="kep-szint-grid" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '6px', maxWidth: `${5 * 42 + 4 * 6}px`, margin: '0 auto' }}>
-        {values.map(n => (
-          <button key={n} className={`fort-fok-btn ${kor === n ? 'active' : ''}`} style={{ width: '42px', height: '42px', fontSize: '13px' }} onClick={() => onSelect(n)}>{n}</button>
+    <div className="kep-prompt" style={{ alignItems: 'center', gap: 'min(10px, 1.5vh)' }}>
+      <label>Kor: <strong>{value ?? '—'}</strong></label>
+      <div style={{ display: 'grid', gridTemplateRows: 'repeat(10, 1fr)', gridTemplateColumns: '1fr 1fr 1fr', gridAutoFlow: 'column', gap: 'min(6px, 0.8vh)' }}>
+        {Array.from({ length: 10 }, (_, d) => (
+          <button key={`h${d}`} className={`fort-fok-btn ${hundreds === d ? 'active' : ''}`} style={{ width: 'min(42px, 6vh)', height: 'min(42px, 6vh)', fontSize: 'min(16px, 2vh)' }} onClick={() => setHundreds(d)}>{d}</button>
+        ))}
+        {Array.from({ length: 10 }, (_, d) => (
+          <button key={`t${d}`} className={`fort-fok-btn ${tens === d ? 'active' : ''}`} style={{ width: 'min(42px, 6vh)', height: 'min(42px, 6vh)', fontSize: 'min(16px, 2vh)' }} onClick={() => setTens(d)}>{d}</button>
+        ))}
+        {Array.from({ length: 10 }, (_, d) => (
+          <button key={`o${d}`} className={`fort-fok-btn ${ones === d ? 'active' : ''}`} style={{ width: 'min(42px, 6vh)', height: 'min(42px, 6vh)', fontSize: 'min(16px, 2vh)' }} onClick={() => setOnes(d)}>{d}</button>
         ))}
       </div>
-      {rangeIdx === 0 && (
-        <div style={{ textAlign: 'center', marginTop: '8px' }}>
-          <button className="fort-fok-btn" style={{ width: 'auto', padding: '4px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => setExpanded(!expanded)}>{expanded ? '▴ 10–58' : '▾ 60–100'}</button>
-        </div>
-      )}
     </div>
   );
 }
