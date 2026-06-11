@@ -119,8 +119,6 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Viselkedés
 - Minden módosítás azonnal frissíti a session-t → Harc fül értékei reagálnak
-- TODO: taktika módosítók beépítése a Harc fül kalkulációba
-- TODO: §16 feltételes fortély módosítók dispatch (session toggle-ök alapján)
 - TODO: infó box helyzeteknél/manővereknél (hatás leírás)
 
 ---
@@ -201,7 +199,7 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
   - Név box (flex:1): `Név: von Agabor` — double-tap → szerkesztő popup (max 40 karakter)
   - Szint box: `Szint: 8` — double-tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
 - **Faj + Kor** sor (CSAK szerkesztő módban):
-  - Faj box (flex:1): inline `<select>` dropdown (26 faj a tables/fajok.json-ból, közvetlenül koppintható)
+  - Faj box (flex:1): inline `<select>` dropdown (27 faj a tables/fajok.json-ból, közvetlenül koppintható)
   - Kor box: `Kor: 32` — double-tap → két lépéses popup (tartomány: 10–100/100–200/200–1000, majd érték gombok: 2/5/50-es lépésekkel)
 - **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"von Agabor (Ember (Északi), 32)"`
 - **Anyanyelv** (CSAK szerkesztő módban): inline `<select>` dropdown (`tables/nyelvek.json`-ból)
@@ -640,7 +638,6 @@ Deklaratív számítási szabályok dependency graph-ban:
 | páncél_lefedettség | if | if(van, 50 + végtag×10 + sisak×10, 0) |
 
 #### TS-ben maradó logika (nem deklaratív):
-- Fortély módosítók összegyűjtése (feltételes iteráció — egyelőre hardcoded 0, TODO §16)
 - Fájdalomtűrés enyhítés (küszöb-tábla lookup)
 
 ### Runtime adatbetöltés (GameData)
@@ -652,10 +649,10 @@ Minden adat `fetchJson`-nel:
 - `tables/harcmodor_kepzettsegek_bonuszok.json` — harcmodor bónuszok szintenként
 - `tables/kepzettsegek.json` — 39 képzettség definíció
 - `tables/kiterjesztesek.json` — képzettség→fortély inverz mapping
-- `tables/fajok.json` — 26 faj neve
+- `tables/fajok.json` — 27 faj neve
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
 - `tables/primer_fortelyok.json` — 53 harci+misztikus fortély neve
-- `tables/fortelyok.json` — 168 fortély összefoglaló
+- `tables/fortelyok.json` — 169 fortély összefoglaló
 - `tables/tradiciok.json` — tradíciók (altípusokkal, Szakrális istenekkel)
 - `tables/nyelvek.json` — 37 nyelv (csoportosítva)
 - `data/rules.json` — reactive engine szabályok (53 db)

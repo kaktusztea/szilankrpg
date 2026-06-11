@@ -11,16 +11,19 @@
 │   │   └── gui_spec.md        ← GUI spec (screen-ek, viselkedés, formázás)
 │   ├── sources/               ← YAML forrásadatok (amiből generálunk)
 │   │   ├── konstansok.yaml    ← Központi konstansok (forrás, JSON-ba generálódik)
-│   │   ├── harcihelyzetek.yaml
+│   │   ├── harci_helyzetek.yaml
+│   │   ├── taktikak.yaml
+│   │   ├── szituaciok.yaml
+│   │   ├── manoverek.yaml
 │   │   ├── kepzettsegek/      ← Képzettség adatfájlok (39 db)
-│   │   ├── fortelyok/         ← Fortély adatfájlok (168 db, csoportonként alkönyvtár)
-│   │   │   ├── harci/         (44 db)
+│   │   ├── fortelyok/         ← Fortély adatfájlok (169 db, csoportonként alkönyvtár)
+│   │   │   ├── harci/         (45 db)
 │   │   │   ├── altalanos/     (41 db)
 │   │   │   ├── szabad/        (59 db)
 │   │   │   ├── erzekek/       (6 db)
 │   │   │   ├── kiemelt/       (9 db)
 │   │   │   └── misztikus/     (9 db)
-│   │   └── fajok/             ← Faj hátterek (26 db)
+│   │   └── fajok/             ← Faj hátterek (27 db)
 │   ├── schemas/               ← YAML sémák (fortely, kepzettseg, karakter, pancel, fegyver, faj)
 │   ├── tables/                ← Generált + statikus JSON táblák (runtime)
 │   ├── karakter/              ← Karakter template-ek
@@ -83,7 +86,7 @@
 - ✅ Tab rendszer: swipe + animáció (0.15s) + tükrözött tab bar (jobb→bal, 18px ikon-only + szöveges fülek)
 - ✅ Szerkesztő/Game mód toggle
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
-- ✅ 168 fortély yaml, 39 képzettség yaml, 26 faj yaml
+- ✅ 169 fortély yaml, 39 képzettség yaml, 27 faj yaml
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
   - Fejléc: Név (double-tap → szerkesztő popup) + Szint (double-tap → gombgrid 3-21, 5 oszlop, utolsó sor középre)
   - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (double-tap → két lépéses popup: tartomány → érték)
@@ -123,7 +126,7 @@
   - Topológiai sorrend: automatikus dependency resolution (skaláris Context + ArrayContext)
   - HarcScreen: ÉP, KÉ, manőver pont, SFÉ, páncél_MGT, fegyver TÉ/VÉ/SP/támadások — mind reactive engine-ből
   - App KP sáv: teljes KP lánc reactive engine-ből
-  - TS-ben marad (TODO): fortély módosítók (§16 — jelenleg hardcoded 0), Fájdalomtűrés enyhítés (küszöb-tábla lookup)
+  - TS-ben marad (TODO): Fájdalomtűrés enyhítés (küszöb-tábla lookup)
 - ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
 - ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
 - ✅ Escape gomb: minden popup overlay bezárható Escape-pel
@@ -244,7 +247,7 @@
   - `szituáció:roham` → `taktika:roham`
 - ✅ Aktív fül adatforrások (YAML → JSON):
   - `data/sources/taktikak.yaml` → `tables/taktikak.json` (13 taktika, kombó_mód/lista, fokozatos)
-  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (14 helyzet, feltétel_kulcs, infó)
+  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (13 helyzet, feltétel_kulcs, infó)
   - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (9 szituáció)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
   - Schema validáció beépítve a `generate_tables.py`-be (`validate_aktiv_ful()`)
@@ -339,7 +342,7 @@
 - Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
 - iOS kompatibilitás: double-tap modell (nem long-press), nincs touchstart preventDefault hack, `touch-action: manipulation` CSS
-- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Maradék TS inline logika (TODO §16): fortély módosítók (jelenleg hardcoded 0 a `fortélyMod_*` context mezőkben) és Fájdalomtűrés enyhítés (küszöb-tábla lookup). Érintett fortélyok: Gyors kezdeményezés (KÉ), Harckeret növelés (harckeret+KÉ), Harci akrobatika (TÉ/VÉ scaled), Természetes páncél (SFÉ), Merevvértviselet (MGT_TÉ_büntetés — ez már implementálva rules.json-ban).
+- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Maradék TS inline logika: Fájdalomtűrés enyhítés (küszöb-tábla lookup). §16 fortély módosítók (mindig-aktív + feltételes) és taktika módosítók implementálva a HarcScreen-ben (iteráció fortelyok + session aktív taktikák/helyzetek/szituációk felett).
 - Tradíció képzettség: `"Tradíció: Vulgármágia"` formátum (nem `többszörös` yaml mező!), tradiciok.json-ból picker; Szakrális altípusoknál isten választó (pantheon csoportosítva)
 - `tables/tradiciok.json`: egységes struktúra `{ név, típus, altípusok[] }` — altípusok lehetnek egyszerű (Bárdmágia) vagy pantheon-csoportosított (Szakrális/istenek)
 - `tables/nyelvek.json`: 37 nyelv `{ név, csoport }` — Nyelvismeret fortély picker ebből kínál csoportosított dropdown-t
