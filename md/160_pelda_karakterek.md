@@ -9,17 +9,17 @@
 ### Ninja, aki Slan is
 
 - Mágiatradíció: Orgyilkos
-- Faj-misztérium: Ember-Slan
+- Faj-misztérium: Ember (Slan)
 
 ### Slan, aki boszorkánymester is
 
 - Mágiatradíció: Vulgármágia (vajákos)
-- Faj-misztérium: Ember-Slan
+- Faj-misztérium: Ember (Slan)
 
 ## Harcművész pap
 
 - Szakrális tradíció (pap)
-- Faj-misztérium: Ember-Slan
+- Faj-misztérium: Ember (Slan)
 
 ---
 

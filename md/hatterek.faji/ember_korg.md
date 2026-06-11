@@ -1,38 +1,38 @@
-## Ember (Slan)
+## Ember (korg)
 
 bevezető ⭕
 
 ### ⚜️Tulajdonság keretek
 
 ```
-⭕TODO⭕
+[-5; +5] a határ minden Tulajdonságra
 ```
 
 ### ⚜️Felvehető Érzék-Fortélyok maximuma
 
-⭕TODO⭕
+Nincs speciális felvehető érzék fortély.
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Ember (Slan)](../kepzettsegek.faj.miszterium/faj_miszterium_ember_slan.md)
+[Faj misztérium: Ember (korg)](../kepzettsegek.faj.miszterium/faj_miszterium_ember_korg.md)
 
 ### ⚜️Faji fortélyok
 
-⭕TODO⭕
+TODO ⭕
 
 <br />
 
 ---
 ### Tiltott ismeretek, korlátok
 
-⭕TODO⭕
+TODO ⭕
 
 ### Ajánlott fortélyok
 
-⭕TODO⭕
+TODO ⭕
 
 ### Ajánlott képzettségek
 
-⭕TODO⭕
+TODO ⭕
 
 ---

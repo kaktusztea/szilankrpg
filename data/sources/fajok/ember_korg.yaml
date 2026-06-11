@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 
-név: "Ember (Slan)"
+név: "Ember (korg)"
 leírás: ""
 tulajdonság_keretek:
   erő: [-5, 5]
@@ -13,7 +13,7 @@ tulajdonság_keretek:
   önuralom: [-5, 5]
   érzékenység: [-5, 5]
 érzék_fortélyok: []
-faj_misztérium: "Ember (Slan)"
+faj_misztérium: "Ember (korg)"
 kötelező_fortélyok: []
 faji_fortélyok: []
 ajánlott_fortélyok: []
