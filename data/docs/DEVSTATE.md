@@ -256,15 +256,23 @@
   - Szituációk: multi-select dropdown + chip + ✕
   - Manőver: single-select dropdown (nehézség jelzéssel)
   - Státuszok: chip lista
+- ✅ Taktika módosítók → Harc fül
+  - Aktív taktikák TÉ/VÉ/KÉ/SP módosítói beépítve a harcérték kalkulációba
+  - Fokozatos taktikáknál (Támadó, Védő, Kezdeményező, stb.) a kiválasztott fok értékeit használja
+  - Nem-fokozatos taktikáknál a `módosítók` mezőből olvas
+  - KÉ box, fegyvertábla TÉ/VÉ/SP és VÉ max csökkenés mind reagál
+- ✅ §16 feltételes fortély módosítók
+  - Session aktív taktikák/helyzetek/szituációk feltétel kulcsai alapján aktiválódnak
+  - `aktívFeltételek` Set: összegyűjti az aktív `feltétel_kulcs` értékeket (taktika, harci_helyzet, szituáció)
+  - Fortély módosítók ahol `feltétel` egyezik → bekerülnek a harcérték kalkulációba
+  - Érintett fortélyok: Belharc, Elsöprő roham, Fárasztás, Fegyverrántás, Gladiátor (Bestiái/Közönsége), Célzás
 - ✅ Session séma bővítés: `aktív_taktika/helyzet` → `aktív_taktikák[]/helyzetek[]/szituációk[]`
   - `AktívTaktika` interface: `{ név, fok? }`
 
 ## Következő lépések
-1. **Taktika módosítók → Harc fül** — aktív taktikák TÉ/VÉ/KÉ/SP módosítóinak beépítése a harcérték kalkulációba
-2. **§16 feltételes fortély módosítók** — session toggle-ök alapján (taktika:X, harci_helyzet:Y → fortély mod dispatch)
-3. **Aktív fül finomhangolás** — infó box helyzeteknél/manővereknél, státusz dropdown feltöltés
-4. **Távharc fül** — VÉ kalkulátor implementáció (§17)
-5. **Szabályleírás fülek** — md tartalom renderelés
+1. **Aktív fül finomhangolás** — infó box helyzeteknél/manővereknél, státusz dropdown feltöltés
+2. **Távharc fül** — VÉ kalkulátor implementáció (§17)
+3. **Szabályleírás fülek** — md tartalom renderelés
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/docs/DEVSTATE.md` (ez a fájl)

@@ -68,7 +68,21 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const k = karakter;
   const { konstansok, harcmodorBonusz } = data;
 
-  // §16: Fortély módosítók — mindig aktív (feltétel="")
+  // §16: Fortély módosítók — mindig aktív (feltétel="") + feltételes (aktív taktika/helyzet/szituáció)
+  const aktívFeltételek = new Set<string>();
+  for (const at of session.aktív_taktikák) {
+    const def = data.taktikak.find(t => t.név === at.név);
+    if (def) aktívFeltételek.add(def.feltétel_kulcs);
+  }
+  for (const h of session.aktív_helyzetek) {
+    const def = data.harciHelyzetek.find(d => d.név === h);
+    if (def) aktívFeltételek.add(def.feltétel_kulcs);
+  }
+  for (const sz of session.aktív_szituációk) {
+    const def = data.szituaciok.find(d => d.név === sz);
+    if (def) aktívFeltételek.add(def.feltétel_kulcs);
+  }
+
   const fortelyMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0 };
   for (const kf of k.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);
@@ -76,7 +90,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef?.módosítók) continue;
     for (const mod of fokDef.módosítók) {
-      if (mod.feltétel !== '') continue; // only always-active
+      if (mod.feltétel !== '' && !aktívFeltételek.has(mod.feltétel)) continue;
       if (mod.mód === 'flat') {
         fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
       } else if (mod.mód === 'scaled' && mod.forrás) {
@@ -86,6 +100,27 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     }
   }
   const fortelyKE = fortelyMods['KÉ'];
+
+  // Taktika módosítók kiszámítása az aktív taktikákból
+  const taktikaMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0 };
+  for (const at of session.aktív_taktikák) {
+    const def = data.taktikak.find(t => t.név === at.név);
+    if (!def) continue;
+    if (def.fokozatos && def.fokok && at.fok != null) {
+      const fokDef = def.fokok.find(f => f.fok === at.fok);
+      if (fokDef) {
+        if (fokDef.TÉ) taktikaMods['TÉ'] += fokDef.TÉ;
+        if (fokDef.VÉ) taktikaMods['VÉ'] += fokDef.VÉ;
+        if (fokDef.KÉ) taktikaMods['KÉ'] += fokDef.KÉ;
+        if (fokDef.SP) taktikaMods['SP'] += fokDef.SP;
+      }
+    } else if (def.módosítók) {
+      if (def.módosítók.TÉ) taktikaMods['TÉ'] += def.módosítók.TÉ;
+      if (def.módosítók.VÉ) taktikaMods['VÉ'] += def.módosítók.VÉ;
+      if (def.módosítók.KÉ) taktikaMods['KÉ'] += def.módosítók.KÉ;
+      if (def.módosítók.SP) taktikaMods['SP'] += def.módosítók.SP;
+    }
+  }
 
   const harcmodorÖsszeg = [
     k.képzettségek.find(kp => kp.név === 'Közelharc')?.szint ?? 0,
@@ -132,7 +167,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 
   const épValue = computed.get('ÉP') ?? 40;
-  const ké = computed.get('KÉ') ?? 0;
+  const ké = (computed.get('KÉ') ?? 0) + taktikaMods['KÉ'];
   const manöverPont = computed.get('manőver_pont') ?? 0;
   const sfé_fizikai = (computed.get('sfé_fizikai') ?? 0) + fortelyMods['SFÉ'];
   const sfé_energia = (computed.get('sfé_energia') ?? 0) + fortelyMods['SFÉ'];
@@ -219,7 +254,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const téLevonás = téLevonások[aktKat];
 
   // Max VÉ csökkenés
-  const maxVéCsökk = Math.max(0, ...fegyverResults.map(r => r.VÉ + pajzsVÉ));
+  const maxVéCsökk = Math.max(0, ...fegyverResults.map(r => r.VÉ + pajzsVÉ + taktikaMods['VÉ']));
 
   // MP
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
@@ -270,9 +305,9 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
             <tr key={i}>
               <td>{r.fegyver_név}</td>
               <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
-              <td>{r.TÉ + téLevonás}</td>
-              <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + pajzsVÉ - session.vé_csökkenés)}</td>
-              <td>{r.SP} {r.sebzésmód}</td>
+              <td>{r.TÉ + téLevonás + taktikaMods['TÉ']}</td>
+              <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + pajzsVÉ + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
+              <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
               <td>{r.pengehossz}</td>
             </tr>
           ))}
