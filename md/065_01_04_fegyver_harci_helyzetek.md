@@ -1,6 +1,6 @@
 # Fegyverrel kapcsolatos helyzetek
 
-Ide jönnek a fegyver-specifikus harci helyzetek/státuszok.
+Fegyver-specifikus harci helyzetek (státuszok).
 
 ## Fegyverméret
 
