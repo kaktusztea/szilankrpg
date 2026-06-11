@@ -29,7 +29,7 @@ fokok:
         típus: "képzettség"
     hatástext:
       - text: "Precíz támadás Manőver esetén: SP:+2 (vértmentes ponton)."
-      - text: "Észrevétlen támadás harci helyzet esetén SP:+2 (vértmentes ponton)."
+      - text: "Orvtámadás harci helyzet esetén SP:+2 (vértmentes ponton)."
       - text: "Leütés hátulról Manőver Nehézség: -2."
       - text: "Visszafogott taktika TÉ büntetés: -3."
     módosítók:
@@ -38,7 +38,7 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "harci_helyzet:észrevétlen_támadás"
+        feltétel: "harci_helyzet:orvtámadás"
   - fok: 2
     követelménytext: ""
     követelmények:
@@ -47,7 +47,7 @@ fokok:
         típus: "képzettség"
     hatástext:
       - text: "Precíz támadás Manőver esetén: SP:+4 (vértmentes ponton)."
-      - text: "Észrevétlen támadás harci helyzet esetén SP:+4 (vértmentes ponton)."
+      - text: "Orvtámadás harci helyzet esetén SP:+4 (vértmentes ponton)."
       - text: "Leütés hátulról Manőver Nehézség: -4."
       - text: "Visszafogott taktika TÉ büntetés: -6."
     módosítók:
@@ -56,7 +56,7 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "harci_helyzet:észrevétlen_támadás"
+        feltétel: "harci_helyzet:orvtámadás"
   - fok: 3
     követelménytext: ""
     követelmények:
@@ -65,7 +65,7 @@ fokok:
         típus: "képzettség"
     hatástext:
       - text: "Precíz támadás Manőver esetén: SP:+6 (vértmentes ponton)."
-      - text: "Észrevétlen támadás harci helyzet esetén SP:+6 (vértmentes ponton)."
+      - text: "Orvtámadás harci helyzet esetén SP:+6 (vértmentes ponton)."
       - text: "Leütés hátulról Manőver Nehézség: -6."
       - text: "Visszafogott taktika TÉ büntetés: -9."
       - text: "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
@@ -75,7 +75,7 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "harci_helyzet:észrevétlen_támadás"
+        feltétel: "harci_helyzet:orvtámadás"
 
 todo:
   - text: ""

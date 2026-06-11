@@ -24,17 +24,13 @@ harci_helyzetek:
     feltétel_kulcs: "harci_helyzet:beszorított"
     infó: "Ellenfél Előny+1 TÉ. Beszorított: Hátrány-1 KÉ/TÉ, 1 támadás elvesztés, mozgás feleződik."
 
-  - név: "Észrevétlen támadás"
-    feltétel_kulcs: "harci_helyzet:észrevétlen_támadás"
-    infó: "Csak Ellenpróba fázis. Harci anatómia SP bónusz aktív."
-
-  - név: "Félhátulról támadás"
-    feltétel_kulcs: "harci_helyzet:félhátulról"
-    infó: "Támadó: Előny+1 TÉ. Pajzs VÉ csak pajzs-oldali támadásnál."
+  - név: "Orvtámadás"
+    feltétel_kulcs: "harci_helyzet:orvtámadás"
+    infó: "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ. Harci anatómia SP bónusz aktív. Orgyilkos fortély bónusz aktív. Taktikák/egyéb TÉ bónusz NEM."
 
   - név: "Hátulról támadás"
     feltétel_kulcs: "harci_helyzet:hátulról"
-    infó: "Támadó: Előny+2 TÉ. Pajzs VÉ nem számít."
+    infó: "Támadó: Előny+1 TÉ. Pajzs VÉ nem számít."
 
   - név: "Közrefogás"
     feltétel_kulcs: "harci_helyzet:közrefogás"
