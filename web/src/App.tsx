@@ -12,19 +12,14 @@ import type { Karakter, Session, Fortely } from './engine/types';
 import './App.css';
 
 const ALL_TABS = [
+  { id: 'harcertekek', label: '🛡️', editOnly: true },
   { id: 'aktiv', label: '❎', editOnly: false },
   { id: 'harc', label: '🗡️', editOnly: false },
   { id: 'tavharc', label: '🏹', editOnly: false },
+  { id: 'misztikus', label: '✨', editOnly: false },
   { id: 'tulajdonsagok', label: '🔵', editOnly: false },
   { id: 'fortelyok', label: '🟣', editOnly: false },
-  { id: 'harcertekek', label: '🛡️', editOnly: true },
-  { id: 'misztikus', label: '✨', editOnly: false },
-  { id: 'hatterek', label: '📜', editOnly: false },
-  { id: 'jegyzetek', label: '📝 Jegyzetek', editOnly: false },
-  { id: 'naplo', label: '📖 Napló', editOnly: true },
-  { id: 'taktikak', label: '🎯 Taktikák', editOnly: false },
-  { id: 'helyzetek', label: '🎯 Helyzetek', editOnly: false },
-  { id: 'manoverek', label: '🎯 Manőverek', editOnly: false },
+  { id: 'hatterek', label: '🟡', editOnly: false },
 ];
 
 /** Validate minimal schema compliance */
@@ -123,7 +118,7 @@ function validateKarakterData(k: Karakter, data: GameData): string | null {
 function App() {
   const [data, setData] = useState<GameData | null>(null);
   const [error, setError] = useState('');
-  const [activeTab, setActiveTab] = useState(3);
+  const [activeTab, setActiveTab] = useState(5);
   const [gameMode, setGameMode] = useState(false);
 
   // --- Karakter state (egyben mentendő) ---
@@ -169,20 +164,17 @@ function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [loadError, setLoadError] = useState('');
   const [versionHint, setVersionHint] = useState('');
+  const [overlayScreen, setOverlayScreen] = useState<'jegyzetek' | 'naplo' | null>(null);
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTapTitle = useRef(0);
   const tabBarRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (tabBarRef.current) tabBarRef.current.scrollLeft = tabBarRef.current.scrollWidth;
-  }, [data, gameMode]);
-
-  useEffect(() => {
-    if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setShowMenu(false); setLoadError(''); } }
+    if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError && !overlayScreen) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setShowMenu(false); setLoadError(''); setOverlayScreen(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showTestConfirm, showMenu, loadError]);
+  }, [showNewConfirm, showTestConfirm, showMenu, loadError, overlayScreen]);
 
   function handleTitleTap() {
     const now = Date.now();
@@ -197,6 +189,18 @@ function App() {
   }
 
   const TABS = ALL_TABS.filter(t => !t.editOnly || !gameMode);
+
+  // Korrekció: gameMode váltáskor az editOnly tab kiszűrése/visszakerülése miatt index eltolódik
+  const prevGameMode = useRef(gameMode);
+  useEffect(() => {
+    if (prevGameMode.current !== gameMode) {
+      const currentId = (prevGameMode.current ? ALL_TABS.filter(t => !t.editOnly) : ALL_TABS)[activeTab]?.id;
+      const newTabs = gameMode ? ALL_TABS.filter(t => !t.editOnly) : ALL_TABS;
+      const newIdx = newTabs.findIndex(t => t.id === currentId);
+      if (newIdx >= 0 && newIdx !== activeTab) setActiveTab(newIdx);
+      prevGameMode.current = gameMode;
+    }
+  }, [gameMode, activeTab]);
 
   useEffect(() => {
     function handler(e: MouseEvent) {
@@ -288,6 +292,8 @@ function App() {
       <header className="header">
         <span className="title" onClick={handleTitleTap}>Szilánk RPG</span>
         <div className="header-btns">
+          {!gameMode && <button className="gear-btn" onClick={() => setOverlayScreen('naplo')}>📅</button>}
+          <button className="gear-btn" onClick={() => setOverlayScreen('jegyzetek')}>✏️</button>
           <button className="gear-btn" onClick={() => setShowMenu(true)}>⚙️</button>
           <button
             className="mode-toggle"
@@ -393,7 +399,7 @@ function App() {
         );
       })()}
 
-      <nav className="tab-bar" ref={tabBarRef} onWheel={e => { e.currentTarget.scrollLeft += e.deltaY; }}>
+      <nav className="tab-bar" ref={tabBarRef} style={{ '--tab-count': TABS.length } as React.CSSProperties}>
         {[...TABS].reverse().map((tab, _i) => {
           const i = TABS.indexOf(tab);
           return (
@@ -457,6 +463,29 @@ function App() {
         document.body
       )}
 
+      {overlayScreen && karakter && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setOverlayScreen(null); }}>
+          <div style={{ position: 'fixed', inset: 0, display: 'flex', flexDirection: 'column', background: 'var(--bg)', zIndex: 101 }}>
+            <div style={{ display: 'flex', alignItems: 'center', padding: '8px 12px', borderBottom: '1px solid #333', background: 'var(--primary)' }}>
+              <button style={{ background: 'none', border: 'none', color: 'var(--text)', fontSize: '18px', cursor: 'pointer' }} onClick={() => setOverlayScreen(null)}>✕</button>
+              <span style={{ marginLeft: '10px', fontWeight: 'bold', color: 'var(--text)' }}>{overlayScreen === 'jegyzetek' ? '✏️ Jegyzetek' : '📅 Napló'}</span>
+            </div>
+            <div style={{ flex: 1, overflow: 'auto', padding: '12px' }}>
+              {overlayScreen === 'jegyzetek' && (
+                <textarea
+                  style={{ width: '100%', height: '100%', minHeight: 'calc(100vh - 80px)', background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid #555', borderRadius: '6px', padding: '10px', fontSize: '14px', resize: 'none', fontFamily: 'inherit' }}
+                  value={karakter.jegyzetek}
+                  onChange={e => setKarakter(prev => prev ? { ...prev, jegyzetek: e.target.value } : prev)}
+                  placeholder="Szabad jegyzetek..."
+                />
+              )}
+              {overlayScreen === 'naplo' && <NaploTab karakter={karakter} setKarakter={setKarakter} />}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
     </div>
   );
 }
@@ -514,21 +543,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
     }
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={setKarakter} />;
-    case 'hatterek': return <div className="screen"><h2>📜 Hátterek</h2></div>;
-    case 'jegyzetek': return (
-      <div className="screen" style={{ padding: '12px', display: 'flex', flexDirection: 'column', height: '100%' }}>
-        <textarea
-          style={{ flex: 1, width: '100%', background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid #555', borderRadius: '6px', padding: '10px', fontSize: '14px', resize: 'none', fontFamily: 'inherit' }}
-          value={karakter.jegyzetek}
-          onChange={e => setKarakter(prev => prev ? { ...prev, jegyzetek: e.target.value } : prev)}
-          placeholder="Szabad jegyzetek..."
-        />
-      </div>
-    );
-    case 'taktikak': return <div className="screen"><h2>🎯 Harci taktikák</h2></div>;
-    case 'naplo': return <NaploTab karakter={karakter} setKarakter={setKarakter} />;
-    case 'helyzetek': return <div className="screen"><h2>🎯 Harci helyzetek</h2></div>;
-    case 'manoverek': return <div className="screen"><h2>🎯 Manőverek</h2></div>;
+    case 'hatterek': return <div className="screen"><h2>🟡 Hátterek</h2></div>;
     default: return null;
   }
 }
@@ -563,7 +578,7 @@ function NaploTab({ karakter, setKarakter }: { karakter: Karakter; setKarakter: 
   return (
     <div className="screen" style={{ padding: '12px', minHeight: '100%' }} onClick={e => { if (editIdx !== null) return; if ((e.target as HTMLElement).closest('[data-naplo-entry]')) return; setOpenIdx(null); }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-        <h2 style={{ margin: 0 }}>📖 Napló</h2>
+        <h2 style={{ margin: 0 }}>📅 Napló</h2>
         <button style={{ background: 'var(--primary)', border: '1px solid #555', borderRadius: '4px', padding: '6px 12px', color: 'var(--text)', fontSize: '14px' }} onClick={() => { setAdding(true); setForm({ dátum: today, km: '', kaland: '', események: '' }); }}>+ Új bejegyzés</button>
       </div>
 

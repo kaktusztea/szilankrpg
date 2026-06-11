@@ -111,13 +111,11 @@ body {
 
 .tab-bar {
   display: flex;
+  justify-content: flex-end;
   background: var(--surface);
   border-top: 1px solid #333;
   padding: 4px 0;
-  overflow-x: auto;
-  overflow-y: hidden;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: none;
+  overflow: hidden;
 }
 
 .tab-bar::-webkit-scrollbar { display: none; }
@@ -126,11 +124,12 @@ body {
   background: none;
   border: none;
   color: var(--text-dim);
-  font-size: 18px;
-  padding: 8px 8px;
+  font-size: min(18px, calc(100vw / var(--tab-count) - 8px));
+  padding: 8px;
   cursor: pointer;
   white-space: nowrap;
-  flex-shrink: 0;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .tab-btn.active {

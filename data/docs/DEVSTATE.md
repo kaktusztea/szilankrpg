@@ -268,7 +268,7 @@
   - Session aktív taktikák/helyzetek/szituációk feltétel kulcsai alapján aktiválódnak
   - `aktívFeltételek` Set: összegyűjti az aktív `feltétel_kulcs` értékeket (taktika, harci_helyzet, szituáció)
   - Fortély módosítók ahol `feltétel` egyezik → bekerülnek a harcérték kalkulációba
-  - Érintett fortélyok: Belharc, Elsöprő roham, Fárasztás, Fegyverrántás, Gladiátor (Bestiái/Közönsége), Célzás
+  - Érintett fortélyok: Belharc, Elsöprő roham, Fárasztás, Fegyverrántás, Gladiátor (Bestiái/Közönsége), Célzás, Harci anatómia (orvtámadás)
 - ✅ Session séma bővítés: `aktív_taktika/helyzet` → `aktív_taktikák[]/helyzetek[]/szituációk[]`
   - `AktívTaktika` interface: `{ név, fok? }`
 
