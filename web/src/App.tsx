@@ -478,7 +478,7 @@ function App() {
             <label style={{ fontWeight: 'bold' }}>Teljes képernyő</label>
             <span style={{ fontSize: '13px', color: 'var(--text)', textAlign: 'center' }}>
               {/iPad|iPhone|iPod/.test(navigator.userAgent)
-                ? 'Megosztás ikon (⬆️) → Kezdőképernyőre'
+                ? 'Megosztás ikon (⬆️) → Főképernyőhöz adás'
                 : '⋮ menü → Telepítés / Hozzáadás a kezdőképernyőhöz'}
             </span>
             <button className="menu-item" style={{ padding: '6px 15px' }} onClick={() => setShowFullscreenHint(false)}>OK</button>
