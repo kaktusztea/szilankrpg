@@ -182,11 +182,14 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   for (const fp of k.fegyverek) {
     const fDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === fp.alap.toLowerCase());
     if (!fDef) continue;
-    fegyverRows.push({ név: fDef.Fegyver, fDef, mfFok: fp.mesterfegyver_fok });
+    const displayName = fDef.Alapnév || fDef.Fegyver;
+    const mfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fp.alap));
+    const mfFok = mfEntry?.fok ?? 0;
+    fegyverRows.push({ név: fDef.Fegyver, fDef, mfFok });
     // If MK pair exists, add 2K row with same MF/idea
     if (fDef.MK_pár) {
       const párDef = data.fegyverek.find(f => f.Fegyver === fDef.MK_pár);
-      if (párDef) fegyverRows.push({ név: párDef.Fegyver, fDef: párDef, mfFok: fp.mesterfegyver_fok });
+      if (párDef) fegyverRows.push({ név: párDef.Fegyver, fDef: párDef, mfFok });
     }
   }
 

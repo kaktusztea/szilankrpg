@@ -312,15 +312,13 @@
       "alap": "kard, lovag",
       "név": "",
       "anyag": "acél",
-      "idea": 0,
-      "mesterfegyver_fok": 2
+      "idea": 0
     },
     {
       "alap": "tőr",
       "név": "",
       "anyag": "acél",
-      "idea": 0,
-      "mesterfegyver_fok": 1
+      "idea": 0
     }
   ],
   "páncél": {
@@ -335,8 +333,7 @@
     "rongálódás": 0
   },
   "pajzs": {
-    "méret": "közepes",
-    "pajzshasználat_fok": 2
+    "méret": "közepes"
   },
   "felszerelés": {
     "nagy_tárgyak": []

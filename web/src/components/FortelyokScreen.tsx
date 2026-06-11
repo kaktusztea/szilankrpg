@@ -113,12 +113,13 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   function getFortelyokForCsoport(csoport: string): Fortely[] {
     const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
     const items = fortélyok.filter(f => csoportNevek.has(f.név));
-    // Group by név (identical names together), Mesterfegyver/Pajzshasználat always first
+    // Group by név (identical names together), Mesterfegyver/Pajzshasználat/Merevvértviselet always first, then by fok desc
     items.sort((a, b) => {
-      const aLocked = a.név === 'Mesterfegyver' || a.név === 'Pajzshasználat';
-      const bLocked = b.név === 'Mesterfegyver' || b.név === 'Pajzshasználat';
+      const aLocked = a.név === 'Mesterfegyver' || a.név === 'Pajzshasználat' || a.név === 'Merevvértviselet';
+      const bLocked = b.név === 'Mesterfegyver' || b.név === 'Pajzshasználat' || b.név === 'Merevvértviselet';
       if (aLocked && !bLocked) return -1;
       if (bLocked && !aLocked) return 1;
+      if (a.fok !== b.fok) return b.fok - a.fok;
       return a.név.localeCompare(b.név);
     });
     return items;
@@ -135,7 +136,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
           // A nem-többszörös fortélyok egyszer vehetők fel; többszörösök mindig elérhetők
           const usedNonMulti = new Set(slotok.filter(f => !f.spec_típus).map(f => f.név));
           const többszörösNevek = new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név));
-          const available = csoportDefs.filter(d => (!usedNonMulti.has(d.név) || többszörösNevek.has(d.név)) && d.név !== 'Mesterfegyver' && d.név !== 'Pajzshasználat');
+          const available = csoportDefs.filter(d => (!usedNonMulti.has(d.név) || többszörösNevek.has(d.név)) && d.név !== 'Mesterfegyver' && d.név !== 'Pajzshasználat' && d.név !== 'Merevvértviselet');
           const collapsed = collapsedGroups.has(csoport);
 
           return (
@@ -183,7 +184,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       slot={slot}
                       def={def}
                       isIngyenes={isIngyenes}
-                      locked={slot.név === 'Mesterfegyver' || slot.név === 'Pajzshasználat'}
+                      locked={slot.név === 'Mesterfegyver' || slot.név === 'Pajzshasználat' || slot.név === 'Merevvértviselet'}
                       gameMode={gameMode}
                       isOpen={isOpen}
                       overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}

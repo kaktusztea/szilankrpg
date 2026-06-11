@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
-import type { Karakter, FegyverPeldany, PancelPeldany, PajzsPeldany } from '../engine/types';
+import type { Karakter, FegyverPeldany, PancelPeldany } from '../engine/types';
 import './HarcertekekScreen.css';
 
 interface Props {
@@ -54,38 +54,83 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   function setHM_VÉ(v: number) { setKarakter(prev => prev ? { ...prev, HM_VÉ: Math.max(0, v) } : prev); }
   function setCM(v: number) { setKarakter(prev => prev ? { ...prev, CM: Math.max(0, v) } : prev); }
 
-  // Fegyverek — with Mesterfegyver fortély sync
-  function syncMfFortelyok(fegyverek: FegyverPeldany[], fortélyok: typeof k.fortélyok) {
-    const filtered = fortélyok.filter(f => f.név !== 'Mesterfegyver');
-    const mfEntries = fegyverek
-      .filter(f => f.mesterfegyver_fok > 0)
-      .map(f => {
-        const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === f.alap.toLowerCase());
-        const displayName = fDef?.Alapnév || f.alap;
-        return { név: 'Mesterfegyver', fok: f.mesterfegyver_fok, spec_típus: 'fegyver', spec_elem: displayName };
-      });
-    return [...mfEntries, ...filtered];
+  // Mesterfegyver fok lookup: fortélyok tömbből, spec_elem === fegyver.alap (vagy Alapnév)
+  function getMfFok(fegyverAlap: string): number {
+    const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
+    const displayName = fDef?.Alapnév || fegyverAlap;
+    const entry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fegyverAlap));
+    return entry?.fok ?? 0;
+  }
+
+  function setMfFok(fegyverAlap: string, fok: number) {
+    const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
+    const displayName = fDef?.Alapnév || fegyverAlap;
+    setKarakter(prev => {
+      if (!prev) return prev;
+      let fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fegyverAlap)));
+      if (fok > 0) {
+        fortélyok = [{ név: 'Mesterfegyver', fok, spec_típus: 'fegyver', spec_elem: displayName }, ...fortélyok];
+      }
+      return { ...prev, fortélyok };
+    });
+  }
+
+  // Pajzshasználat fok lookup: fortélyok tömbből
+  function getPajzsFok(): number {
+    return k.fortélyok.find(f => f.név === 'Pajzshasználat')?.fok ?? 0;
+  }
+
+  function setPajzsFok(fok: number) {
+    setKarakter(prev => {
+      if (!prev) return prev;
+      let fortélyok = prev.fortélyok.filter(f => f.név !== 'Pajzshasználat');
+      if (fok > 0) {
+        fortélyok = [{ név: 'Pajzshasználat', fok, spec_típus: '', spec_elem: '' }, ...fortélyok];
+      }
+      return { ...prev, fortélyok };
+    });
+  }
+
+  // Merevvértviselet fok lookup: fortélyok tömbből
+  function getMerevvertFok(): number {
+    return k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
+  }
+
+  function setMerevvertFok(fok: number) {
+    setKarakter(prev => {
+      if (!prev) return prev;
+      let fortélyok = prev.fortélyok.filter(f => f.név !== 'Merevvértviselet');
+      if (fok > 0) {
+        fortélyok = [{ név: 'Merevvértviselet', fok, spec_típus: '', spec_elem: '' }, ...fortélyok];
+      }
+      return { ...prev, fortélyok };
+    });
   }
 
   function addFegyver(alap: string) {
     setKarakter(prev => {
       if (!prev) return prev;
-      const fegyverek = [...prev.fegyverek, { alap, név: '', anyag: 'acél', idea: 0, mesterfegyver_fok: 0 }];
+      const fegyverek = [...prev.fegyverek, { alap, név: '', anyag: 'acél', idea: 0 }];
       return { ...prev, fegyverek };
     });
   }
   function removeFegyver(idx: number) {
     setKarakter(prev => {
       if (!prev) return prev;
+      const removed = prev.fegyverek[idx];
       const fegyverek = prev.fegyverek.filter((_, i) => i !== idx);
-      return { ...prev, fegyverek, fortélyok: syncMfFortelyok(fegyverek, prev.fortélyok) };
+      // Töröljük a Mesterfegyver fortélyt is ha a fegyverhez tartozott
+      const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === removed.alap.toLowerCase());
+      const displayName = fDef?.Alapnév || removed.alap;
+      const fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === removed.alap)));
+      return { ...prev, fegyverek, fortélyok };
     });
   }
   function updateFegyver(idx: number, patch: Partial<FegyverPeldany>) {
     setKarakter(prev => {
       if (!prev) return prev;
       const fegyverek = prev.fegyverek.map((f, i) => i === idx ? { ...f, ...patch } : f);
-      return { ...prev, fegyverek, fortélyok: syncMfFortelyok(fegyverek, prev.fortélyok) };
+      return { ...prev, fegyverek };
     });
   }
 
@@ -94,20 +139,10 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
     setKarakter(prev => prev ? { ...prev, páncél: { ...prev.páncél, ...patch } } : prev);
   }
 
-  // Pajzs — with Pajzshasználat fortély sync
-  function syncPajzsFortelyok(pajzs: PajzsPeldany, fortélyok: typeof k.fortélyok) {
-    const filtered = fortélyok.filter(f => f.név !== 'Pajzshasználat');
-    if (pajzs.pajzshasználat_fok > 0) {
-      return [{ név: 'Pajzshasználat', fok: pajzs.pajzshasználat_fok, spec_típus: '', spec_elem: '' }, ...filtered];
-    }
-    return filtered;
-  }
-
-  function updatePajzs(patch: Partial<PajzsPeldany>) {
+  function updatePajzs(patch: Partial<{ méret: string }>) {
     setKarakter(prev => {
       if (!prev) return prev;
-      const pajzs = { ...prev.pajzs, ...patch };
-      return { ...prev, pajzs, fortélyok: syncPajzsFortelyok(pajzs, prev.fortélyok) };
+      return { ...prev, pajzs: { ...prev.pajzs, ...patch } };
     });
   }
 
@@ -197,7 +232,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
               <button className="fort-delete" onClick={() => setDeleteTarget(i)}>✕</button>
             </div>
             <div className="he-fegyver-fields">
-              <button className="he-field-btn" onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>MF fok: <strong>{f.mesterfegyver_fok}</strong></button>
+              <button className="he-field-btn" onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>MF fok: <strong>{getMfFok(f.alap)}</strong></button>
               <button className="he-field-btn" onClick={() => handleDoubleTap(`idea-f-${i}`, () => setIdeaTarget({ type: 'fegyver', idx: i }))}>Idea: <strong>{f.idea}</strong></button>
               <button className="he-field-btn" onClick={() => handleDoubleTap(`anyag-${i}`, () => setAnyagTarget(i))}>Anyag: <strong>{f.anyag}</strong></button>
             </div>
@@ -218,6 +253,9 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         <h3>Páncél</h3>
         <div className="he-fegyver-fields">
           <button className="he-field-btn" onClick={() => handleDoubleTap('p-struk', () => setPancelPopup('struktúra'))}>Struktúra: <strong>{k.páncél.alap || '—'}</strong></button>
+          {aktStruktúra?.merev && (
+            <button className="he-field-btn" onClick={() => handleDoubleTap('p-merevvert', () => setPancelPopup('merevvért'))}>Merevvért fok: <strong>{getMerevvertFok()}</strong></button>
+          )}
           <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-idea', () => setIdeaTarget({ type: 'páncél', idx: 0 }))}>Idea: <strong>{k.páncél.idea}</strong></button>
           <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-kid', () => setPancelPopup('kidolgozottság'))}>Kidolgozottság: <strong>{k.páncél.kidolgozottság}</strong></button>
           <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-sis', () => updatePancel({ sisak: !k.páncél.sisak }))}>Sisak: <strong>{k.páncél.sisak ? 'igen' : 'nem'}</strong></button>
@@ -235,7 +273,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         <h3>Pajzs</h3>
         <div className="he-fegyver-fields">
           <button className="he-field-btn" onClick={() => handleDoubleTap('pj-mer', () => setPajzsPopup('méret'))}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
-          <button className="he-field-btn" onClick={() => handleDoubleTap('pj-fok', () => setPajzsPopup('pajzshasználat'))}>Pajzshasználat fok: <strong>{k.pajzs.pajzshasználat_fok}</strong></button>
+          <button className="he-field-btn" onClick={() => handleDoubleTap('pj-fok', () => setPajzsPopup('pajzshasználat'))}>Pajzshasználat fok: <strong>{getPajzsFok()}</strong></button>
           <span className="he-field-btn he-field-indicator" onClick={() => showHint('A pajzs kézben állapotot az Aktív fülön állíthatod!')}>Kézben: <strong>{k.session.aktív_pajzs ? 'igen' : 'nem'}</strong></span>
         </div>
       </section>
@@ -274,7 +312,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
             <label>Mesterfegyver fok</label>
             <div className="fort-fok-radios">
               {[0, 1, 2, 3].map(n => (
-                <button key={n} className={`fort-fok-btn ${k.fegyverek[mfTarget]?.mesterfegyver_fok === n ? 'active' : ''}`} onClick={() => { updateFegyver(mfTarget, { mesterfegyver_fok: n }); setMfTarget(null); }}>{n}</button>
+                <button key={n} className={`fort-fok-btn ${getMfFok(k.fegyverek[mfTarget]?.alap ?? '') === n ? 'active' : ''}`} onClick={() => { setMfFok(k.fegyverek[mfTarget]?.alap ?? '', n); setMfTarget(null); }}>{n}</button>
               ))}
             </div>
           </div>
@@ -331,6 +369,13 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
                   ))}
                 </div>
               )}
+              {pancelPopup === 'merevvért' && (
+                <div className="fort-fok-radios">
+                  {[0, 1, 2, 3].map(n => (
+                    <button key={n} className={`fort-fok-btn ${getMerevvertFok() === n ? 'active' : ''}`} onClick={() => { setMerevvertFok(n); setPancelPopup(null); }}>{n}</button>
+                  ))}
+                </div>
+              )}
             </div>
           </div>
         </div>,
@@ -350,7 +395,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
               {pajzsPopup === 'pajzshasználat' && (
                 <div className="fort-fok-radios">
                   {[0, 1, 2, 3].map(n => (
-                    <button key={n} className={`fort-fok-btn ${k.pajzs.pajzshasználat_fok === n ? 'active' : ''}`} onClick={() => { updatePajzs({ pajzshasználat_fok: n }); setPajzsPopup(null); }}>{n}</button>
+                    <button key={n} className={`fort-fok-btn ${getPajzsFok() === n ? 'active' : ''}`} onClick={() => { setPajzsFok(n); setPajzsPopup(null); }}>{n}</button>
                   ))}
                 </div>
               )}

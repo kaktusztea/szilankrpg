@@ -290,7 +290,13 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       {/* Képzettségek */}
       <div className="kep-section">
         {CSOPORT_SORREND.map(csoport => {
-          const slotok = getKepzettsegekForCsoport(csoport);
+          const slotok = getKepzettsegekForCsoport(csoport).slice().sort((a, b) => {
+            const aHm = a.név.startsWith('Harcmodor:');
+            const bHm = b.név.startsWith('Harcmodor:');
+            if (aHm && !bHm) return -1;
+            if (bHm && !aHm) return 1;
+            return b.szint - a.szint;
+          });
           if (gameMode && slotok.length === 0) return null;
           const usedNames = slotok.map(s => s.név);
           const available = getAvailableNames(csoport, usedNames);

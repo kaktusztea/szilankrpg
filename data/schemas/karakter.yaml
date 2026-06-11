@@ -56,7 +56,6 @@ fegyverek:
     név: ""                   # Opcionális egyedi név (pl. "Vérvörös Penge")
     anyag: "acél"             # acél, bronz, abbitacél, mithrill, lunír
     idea: 0                   # -2..+4
-    mesterfegyver_fok: 0      # 0-3
 
 páncél:
   alap: ""                    # Alaptípus neve (lookup kulcs → konstansok.yaml páncél_struktúrák)
@@ -71,7 +70,6 @@ páncél:
 
 pajzs:
   méret: ""                   # kis, közepes, nagy, "" (nincs)
-  pajzshasználat_fok: 0       # 0-3
 
 felszerelés:
   nagy_tárgyak:

@@ -39,7 +39,6 @@ export interface FegyverPeldany {
   név: string;
   anyag: string;
   idea: number;
-  mesterfegyver_fok: number;
 }
 
 export interface PancelPeldany {
@@ -56,7 +55,6 @@ export interface PancelPeldany {
 
 export interface PajzsPeldany {
   méret: string;  // 'kis' | 'közepes' | 'nagy' | ''
-  pajzshasználat_fok: number;  // 0-3
 }
 
 export interface NagyTargy {

@@ -125,8 +125,8 @@ karakter = {
     },
     "hátterek": {"faj": "Ember (Északi)", "leíró": [], "karma": []},
     "fegyverek": [
-        {"alap": "kard, lovag", "név": "", "anyag": "acél", "idea": 0, "mesterfegyver_fok": 2},
-        {"alap": "tőr", "név": "", "anyag": "acél", "idea": 0, "mesterfegyver_fok": 1},
+        {"alap": "kard, lovag", "név": "", "anyag": "acél", "idea": 0},
+        {"alap": "tőr", "név": "", "anyag": "acél", "idea": 0},
     ],
     "páncél": {
         "alap": "bőr", "név": "", "fémalapanyag": "", "idea": 0,
@@ -134,7 +134,7 @@ karakter = {
         "méret_illeszkedés": "passzol", "rongálódás": 0,
     },
     "pajzs": {
-        "méret": "közepes", "pajzshasználat_fok": 2,
+        "méret": "közepes",
     },
     "felszerelés": {"nagy_tárgyak": []},
     "jegyzetek": "",
