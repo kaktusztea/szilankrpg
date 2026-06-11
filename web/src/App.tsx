@@ -421,6 +421,11 @@ function App() {
             <button className="menu-item" onClick={() => { setShowMenu(false); saveKarakter(); }}>Karakter mentése</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowNewConfirm(true); }}>Új karakter</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowTestConfirm(true); }}>Teszt karakter</button>
+            {document.fullscreenEnabled && (
+              <button className="menu-item" onClick={() => { setShowMenu(false); if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }}>
+                {document.fullscreenElement ? 'Kilépés teljes képernyőből' : 'Teljes képernyő'}
+              </button>
+            )}
           </div>
         </div>,
         document.body
