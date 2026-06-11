@@ -163,6 +163,7 @@ function App() {
   const [showTestConfirm, setShowTestConfirm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [loadError, setLoadError] = useState('');
+  const [showFullscreenHint, setShowFullscreenHint] = useState(false);
   const [versionHint, setVersionHint] = useState('');
   const [overlayScreen, setOverlayScreen] = useState<'jegyzetek' | 'naplo' | null>(null);
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -170,11 +171,11 @@ function App() {
   const tabBarRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError && !overlayScreen) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setShowMenu(false); setLoadError(''); setOverlayScreen(null); } }
+    if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError && !overlayScreen && !showFullscreenHint) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setShowMenu(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showTestConfirm, showMenu, loadError, overlayScreen]);
+  }, [showNewConfirm, showTestConfirm, showMenu, loadError, overlayScreen, showFullscreenHint]);
 
   function handleTitleTap() {
     const now = Date.now();
@@ -426,6 +427,9 @@ function App() {
                 {document.fullscreenElement ? 'Kilépés teljes képernyőből' : 'Teljes képernyő'}
               </button>
             )}
+            {!document.fullscreenEnabled && !window.matchMedia('(display-mode: standalone)').matches && (
+              <button className="menu-item" onClick={() => { setShowMenu(false); setShowFullscreenHint(true); }}>Teljes képernyő</button>
+            )}
           </div>
         </div>,
         document.body
@@ -463,6 +467,21 @@ function App() {
             <label style={{ fontWeight: 'bold', color: 'var(--error)' }}>Betöltési hiba</label>
             <span style={{ fontSize: '13px', color: 'var(--text)', textAlign: 'center' }}>{loadError}</span>
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => setLoadError('')}>OK</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {showFullscreenHint && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '320px' }}>
+            <label style={{ fontWeight: 'bold' }}>Teljes képernyő</label>
+            <span style={{ fontSize: '13px', color: 'var(--text)', textAlign: 'center' }}>
+              {/iPad|iPhone|iPod/.test(navigator.userAgent)
+                ? 'Megosztás ikon (⬆️) → Kezdőképernyőre'
+                : '⋮ menü → Telepítés / Hozzáadás a kezdőképernyőhöz'}
+            </span>
+            <button className="menu-item" style={{ padding: '6px 15px' }} onClick={() => setShowFullscreenHint(false)}>OK</button>
           </div>
         </div>,
         document.body
