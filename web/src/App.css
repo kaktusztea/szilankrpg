@@ -113,7 +113,7 @@ body {
 
 .tab-bar {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   background: var(--surface);
   border-top: 1px solid #333;
   padding: 4px 0;
