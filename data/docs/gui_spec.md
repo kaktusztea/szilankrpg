@@ -54,11 +54,14 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 ## App fejléc (header)
 
 - `padding: 8px 12px`, háttér: `--primary`, `border-bottom: 1px solid #333`
-- Bal: "Szilánk RPG" (`font-weight: bold, 16px`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
-- Jobb: gombok (`header-btns`, `gap: 6px`):
-  - ⚙️ Menü gomb: overlay popup (Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter)
-  - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px
+- Bal: "Szilánk RPG" (`font-weight: bold, 16px, white-space: nowrap`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
+- Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`):
+  - 📅 Napló overlay gomb (mindkét mód)
+  - ✏️ Jegyzetek overlay gomb (mindkét mód)
+  - ⚙️ Menü gomb: overlay popup (Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter / Teljes képernyő)
+  - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`
 - ⚙️ menü popup: `.menu-item` gombok (centered szöveg, `padding: 10px 16px`)
+  - Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup (iOS/Android specifikus szöveg)
 - Megerősítő popup-ok (Új/Teszt): overlay, centered, label (bold) + dim szöveg + piros gomb
 - Betöltési hiba popup: piros "Betöltési hiba" label + hibaüzenet + OK gomb
 
@@ -413,16 +416,20 @@ HM/CM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban
 
 ---
 
-## 6b. Jegyzetek fül/screen
+## 6b. Jegyzetek overlay (✏️)
 
+- Fejléc gombbal nyitható fullscreen overlay (nem tab)
 - Teljes képernyős `<textarea>` — szabad szöveges jegyzetmező
 - Mindkét módban (szerkesztő + game) elérhető és szerkeszthető
+- ✕ gomb vagy Escape bezárja
 - Tartalom a karakter fájlba mentődik (`jegyzetek` mező)
 - Placeholder: "Szabad jegyzetek..."
 
 ---
 
-## 6c. Napló fül/screen (editOnly: true — Game módban nem látszik)
+## 6c. Napló overlay (📅)
+
+Fejléc gombbal nyitható fullscreen overlay (nem tab). Mindkét módban elérhető. ✕ gomb vagy Escape bezárja.
 
 Játék session bejegyzések naplója.
 
@@ -498,30 +505,33 @@ Játék session bejegyzések naplója.
 
 Alul fix, horizontálisan scrollozható szalag.
 
-### Tab lista (sorrend)
+### Tab lista (sorrend — megjelenítés balról jobbra)
 | ID | Label | editOnly |
 |----|-------|----------|
-| aktiv | ❎ | false |
-| harc | 🗡️ | false |
-| tavharc | 🏹 | false |
-| tulajdonsagok | 🔵 | false |
+| hatterek | 🟡 | false |
 | fortelyok | 🟣 | false |
-| harcertekek | 🛡️ | true |
+| tulajdonsagok | 🔵 | false |
 | misztikus | ✨ | false |
-| hatterek | 📜 | false |
-| jegyzetek | 📝 Jegyzetek | false |
-| naplo | 📖 Napló | true |
-| taktikak | 🎯 Taktikák | false |
-| helyzetek | 🎯 Helyzetek | false |
-| manoverek | 🎯 Manőverek | false |
+| tavharc | 🏹 | false |
+| harc | 🗡️ | false |
+| aktiv | ❎ | false |
+| harcertekek | 🛡️ | true |
 
-- `editOnly: true` → Game módban a tab eltűnik
-- Default aktív tab induláskor: index 3 (`tulajdonsagok`)
-- **Tükrözött sorrend**: jobb→bal (Aktív jobb szélre), induláskor `scrollLeft = scrollWidth`
+Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
+| ID | Fejléc ikon | Elérhetőség |
+|----|-------------|-------------|
+| jegyzetek | ✏️ | mindkét mód |
+| naplo | 📅 | mindkét mód |
+
+- `editOnly: true` → Game módban a tab eltűnik (🛡️ jobb szélről, többi fix)
+- Default aktív tab induláskor: `tulajdonsagok` (index 5 az ALL_TABS-ban)
+- **Tükrözött sorrend**: reverse() renderelés → a tömb utolsó eleme jelenik meg balra
 - Screen slider is tükrözve: `translateX(-(TABS.length-1-activeTab)*100%)`, swipe irány invertált
+- Mód váltás korrekció: `prevGameMode` ref → ID alapú index újraszámítás
 
 ### Stílus
-- `flex-shrink: 0`, `white-space: nowrap`, `overflow-x: auto`, scrollbar rejtett
+- `justify-content: center`, `overflow: hidden` (nem scrollozható)
+- Gombméret: `font-size: min(18px, calc(100vw / var(--tab-count) - 8px))`, `flex-shrink: 1`
 - Tab betűméret: 18px, padding: 8px
 - Inaktív szín: `--text-dim` (#999)
 - Aktív tab: `--accent` szín (#e94560), bold

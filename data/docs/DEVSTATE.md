@@ -210,8 +210,8 @@
   - Méret: double-tap → popup (— nincs — / kis / közepes / nagy)
   - Pajzshasználat fok: double-tap → kerek gombok 0-3, szinkronizálja a Pajzshasználat fortélyt
   - Kézben: read-only indikátor (`session.aktív_pajzs` alapján), kattintás → sárga hint
-  - Pajzshasználat fortély: locked a Fortélyok fülön (Mesterfegyver mintára, nem szerkeszthető/törölhető, nem jelenik meg dropdown-ban)
-  - `syncPajzsFortelyok`: fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
+  - Pajzshasználat fortély: locked a Fortélyok fülön (nem szerkeszthető/törölhető, nem jelenik meg dropdown-ban)
+  - `setPajzsFok()`: fortélyok tömbben közvetlenül módosítja a Pajzshasználat fortélyt
 - ✅ Nyelvismeret fok UI: "Alap"/"Udvari" label (szám helyett), lekerekített téglalap gombok, centered fejléc
   - Nyelv picker: custom styled gomb-lista csoportonként (narancssárga fejléc + elválasztó vonal), scrollozható (max 70vh)
 - ✅ Kor választó javítások: szabályos kör gombok (42×42px), 10–58 / 60–100 toggle split (cserélődő tartalom)
@@ -271,11 +271,36 @@
   - Érintett fortélyok: Belharc, Elsöprő roham, Fárasztás, Fegyverrántás, Gladiátor (Bestiái/Közönsége), Célzás, Harci anatómia (orvtámadás)
 - ✅ Session séma bővítés: `aktív_taktika/helyzet` → `aktív_taktikák[]/helyzetek[]/szituációk[]`
   - `AktívTaktika` interface: `{ név, fok? }`
+- ✅ Tab bar átrendezés: sorrend 🟡🟣🔵✨🏹🗡️❎🛡️ (középre rendezve, reszponzív méret)
+  - Game módban 🛡️ eltűnik a jobb szélről (többi fix marad)
+  - Tab váltás mód-korrekció: `prevGameMode` ref → index újraszámítás mód váltáskor
+- ✅ Jegyzetek (✏️) és Napló (📅) overlay-re költöztetve
+  - Felső sáv gombok (fejlécben ⚙️ mellé): ✏️ és 📅, kattintásra fullscreen overlay nyílik
+  - Overlay: ✕ bezáró gomb + fejléc + teljes képernyős tartalom
+  - Escape bezárja
+  - Alsó tab bar-ból eltávolítva (nem swipe-olható)
+- ✅ PWA manifest + Fullscreen
+  - `web/public/manifest.json` (display: standalone)
+  - ⚙️ menüben "Teljes képernyő" gomb: desktop → requestFullscreen(), mobil → platform-specifikus hint overlay
+- ✅ Ctrl+S → karakter mentés (preventDefault a böngésző mentés helyett)
+- ✅ Kor választó egyszerűsítés: 3 oszlopos digit picker (százas/tízes/egyes), 500ms delay bezáródás előtt, reszponzív gombméret (min(42px, 6vh))
+- ✅ Képzettségek/Fortélyok sorrendezés: csökkenő (szint/fok szerint)
+  - Kiemelt elemek a csoport tetején: Harcmodor képzettségek, Mesterfegyver, Pajzshasználat, Merevvértviselet
+- ✅ Duplikáció feloldás: Mesterfegyver/Pajzshasználat/Merevvértviselet
+  - Egyetlen source of truth: `fortélyok[]` tömb
+  - `mesterfegyver_fok` eltávolítva a `FegyverPeldany` típusból
+  - `pajzshasználat_fok` eltávolítva a `PajzsPeldany` típusból
+  - Összekötés: `fortélyok[Mesterfegyver].spec_elem` === `fegyverek[].alap` (Alapnév)
+  - Harcértékek fül: `getMfFok()` / `setMfFok()` / `getPajzsFok()` / `setPajzsFok()` / `getMerevvertFok()` / `setMerevvertFok()` helperek
+  - HarcScreen: MF fok lookup fortélyokból (`k.fortélyok.find(...)`)
+  - Merevvértviselet: Harcértékek fül Páncél szekció, Struktúra melletti gomb (csak merev páncélnál)
+  - Mind a három locked a Fortélyok fülön (nem szerkeszthető, dropdown-ból kiszűrve)
 
 ## Következő lépések
-1. **Aktív fül finomhangolás** — infó box helyzeteknél/manővereknél, státusz dropdown feltöltés
-2. **Távharc fül** — VÉ kalkulátor implementáció (§17)
-3. **Szabályleírás fülek** — md tartalom renderelés
+1. **Taktika kombó inkonzisztencia feloldása** — 13 aszimmetrikus pár a doksiban (065_02_harci_taktikak.md) és yaml-ban egyaránt; szabálytervezői döntés szükséges
+2. **Aktív fül finomhangolás** — infó box helyzeteknél/manővereknél, státusz dropdown feltöltés
+3. **Távharc fül** — VÉ kalkulátor implementáció (§17)
+4. **Szabályleírás fülek** — md tartalom renderelés
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/docs/DEVSTATE.md` (ez a fájl)
@@ -327,7 +352,7 @@
 - Popup dialógusok: createPortal(document.body) — kiszöknek a screen-slide overflow kontextusból
 - Double-tap: 350ms threshold → popup megnyitás (Név, Szint, Kor, Tulajdonságok, Képzettségek, Fortélyok, ÉP TÉ footer→navigáció)
 - Double-tap Harcértékek fülön: per-element `tapTimers` Map (key: `mf-{i}`, `idea-f-{i}`, `anyag-{i}`, `p-struk`, stb.)
-- Mesterfegyver fortély: locked a Fortélyok fülön (nem törölhető/szerkeszthető), szinkronizálva fegyver.mesterfegyver_fok-ból
+- Mesterfegyver fortély: locked a Fortélyok fülön (nem törölhető/szerkeszthető), source of truth a `fortélyok[]` tömb, spec_elem köti a fegyver.alap-hoz
 - MK fegyverek: `fegyverek.json` MK_pár (pár másik tagja) + Alapnév (display name suffix nélkül); process_fegyverek.py generálja
 - méret_illeszkedés értékek: `passzol`, `nem passzol`, `borzalmas` (MGT: 0, 3, 6)
 - Faj: inline `<select>` (nincs popup, közvetlenül koppintható szerkesztő módban)
@@ -354,8 +379,8 @@
 - `mentés_dátum`: karakter JSON-ba mentéskor YYYY-MM-DD HH:MM formátumban
 - `szilánk`: session alá került (nem top-level karakter mező)
 - Napló fül (📖 editOnly): bejegyzések (dátum, KM, kaland, események), accordion lista, szerkesztés/törlés, `karakter.napló[]` tömb
-- Pajzs adatmodell: `karakter.pajzs: { méret: string, pajzshasználat_fok: number }` — top-level mező (mint páncél)
-- Pajzshasználat fortély: locked a Fortélyok fülön (Mesterfegyver mintára), szinkronizálva `pajzs.pajzshasználat_fok`-ból
+- Pajzs adatmodell: `karakter.pajzs: { méret: string }` — top-level mező (mint páncél)
+- Pajzshasználat fortély: locked a Fortélyok fülön, source of truth a `fortélyok[]` tömb
 - Nyelvismeret fok megjelenítés: "Alap" (fok:1), "Udvari" (fok:2) — `NYELV_FOK_LABELS` konstans a FortelyokScreen-ben
 - Nyelvismeret felvétel: custom styled gomb-lista overlay (`.nyelv-picker`, `.nyelv-csoport`, `.nyelv-btn`), mellé katt/Escape cancel
 - Kor választó: 10–58 / 60–100 toggle split (cserélődő tartalom, nem append), 42×42px kerek gombok
