@@ -2867,6 +2867,38 @@
     ]
   },
   {
+    "név": "Orgyilkos",
+    "csoport": "harci",
+    "maxfok": 2,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Orvtámadás során kihasználod az ellenfél védtelenségét, sebezhetőbb pontokra célzol.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Orvtámadáskor Előny+1 Sebzés dobásra.",
+          "Precíz támadás manőverre: +2 (nincs SFÉ)."
+        ],
+        "követelmény": "",
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Orvtámadáskor Előny+2 Sebzés dobásra.",
+          "Precíz támadás manőverre: +4 (nincs SFÉ)."
+        ],
+        "követelmény": "",
+        "módosítók": []
+      }
+    ]
+  },
+  {
     "név": "Pajzshasználat",
     "csoport": "harci",
     "maxfok": 3,
