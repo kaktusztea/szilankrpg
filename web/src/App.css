@@ -47,19 +47,20 @@ body {
   border-bottom: 1px solid #333;
 }
 
-.title { font-weight: bold; font-size: 16px; }
+.title { font-weight: bold; font-size: 16px; white-space: nowrap; }
 
 .header-btns {
   display: flex;
   gap: 6px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 .gear-btn {
   background: var(--input-bg);
   border: 1px solid #555;
   border-radius: 4px;
-  padding: 4px 20px;
+  padding: 4px 8px;
   font-size: 16px;
   cursor: pointer;
 }
@@ -83,6 +84,7 @@ body {
   padding: 4px 10px;
   font-size: 15px;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .content {
