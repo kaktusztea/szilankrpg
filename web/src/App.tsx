@@ -177,6 +177,14 @@ function App() {
     return () => document.removeEventListener('keydown', onKey);
   }, [showNewConfirm, showTestConfirm, showMenu, loadError, overlayScreen, showFullscreenHint]);
 
+  useEffect(() => {
+    function onKeyDown(e: KeyboardEvent) {
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); saveKarakter(); }
+    }
+    document.addEventListener('keydown', onKeyDown);
+    return () => document.removeEventListener('keydown', onKeyDown);
+  });
+
   function handleTitleTap() {
     const now = Date.now();
     if (now - lastTapTitle.current < 350) {
