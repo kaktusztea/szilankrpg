@@ -293,7 +293,7 @@ function App() {
       <header className="header">
         <span className="title" onClick={handleTitleTap}>Szilánk RPG</span>
         <div className="header-btns">
-          {!gameMode && <button className="gear-btn" onClick={() => setOverlayScreen('naplo')}>📅</button>}
+                    <button className="gear-btn" onClick={() => setOverlayScreen('naplo')}>📅</button>
           <button className="gear-btn" onClick={() => setOverlayScreen('jegyzetek')}>✏️</button>
           <button className="gear-btn" onClick={() => setShowMenu(true)}>⚙️</button>
           <button
