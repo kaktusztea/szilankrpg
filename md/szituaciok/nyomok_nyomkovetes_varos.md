@@ -2,6 +2,15 @@
 
 Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyomokat kiszúrni, értelmezni. A nyomok *követése* városi környezetben nem értelmezhető - kivéve az olyan egyértelmű jeleket, mint például a vérnyomok, de ezeket bárki képes követni.
 
+### Általános célszám módosítók 🎲
+
+```
++3: Kapkodós, időnyomás alatt
++0: némi idő után abba kell hagynod,
+    mert feltűnne a hiányod
+-3: rérős, nincs időnyomás
+```
+
 ---
 ### Nyomok észrevétele városi környezetben 🏠
 

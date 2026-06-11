@@ -21,7 +21,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🌟**Hatás**:
 - Mintha telihold fényénél tájékozódnál vaksötétben.
-- [Sötét: Félhomály](../065_01_06_szemelyhez_kotott.md#sötétben-félhomály) módosítóival harcolhatsz.
+- [Sötét: Félhomály](../065_01_05_fizikai_es_kornyezeti_helyzetek.md#sötétben-félhomály) módosítóival harcolhatsz.
 
 <br />
 

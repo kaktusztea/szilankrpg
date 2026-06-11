@@ -14,7 +14,7 @@ Emberi látás, sötétben nem látsz hőképeket.
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_01_06_szemelyhez_kotott.md#sötétben-félhomály) módosítóival folyik számodra.
+🌟 Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_01_05_fizikai_es_kornyezeti_helyzetek.md#sötétben-félhomály) módosítóival folyik számodra.
 
 <br />
 

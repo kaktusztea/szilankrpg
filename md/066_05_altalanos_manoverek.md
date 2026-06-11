@@ -157,7 +157,7 @@ Csak kétlábú ellenfelek ellen alkalmazható, több lábbal rendelkező ellenf
 	- Szálfegyver használata
 	- Súlyos / nehézpáncélos ellenfélnél opcionális Erő ellenpróba (KM dönt). Ez a tényező kevésbé hangsúlyos, mint a sima **Gáncsolásnál**.
 
-**Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+**Hatás**: Sikeresen kihúztad szálfegyvereddel ellenfeled lábát, aki a földre zuhan. Felállnia csak sikeres [Felállás földről](#fel%C3%A1ll%C3%A1s-f%C3%B6ldr%C5%91l) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 <br />
 
@@ -173,7 +173,7 @@ Harc közben kirúgod ellenfeled lábát, vagy nekifutásból felökleled. A hat
   - Ellenfeled nem lehet [Pengeelőnyben](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) veled szemben ❌
   - Aktuális harcmodor - `5.szint`
 
-**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+**Hatás**: Sikeresen földre vitted ellenfeled - vagy kirúgtad a lábát, vagy felöklelted. Földre zuhan, felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet. A továbbiakban a [Földön fekve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 
 <br />
 
@@ -192,7 +192,7 @@ Láncos fegyverekkel hajthatod végre.
 - Láncos fegyvereddel foglyul ejted ellenfeled pengéjét, melyet a továbbiakban nem tud használni, amíg ki nem szabadítja azt.
 - Ha ellenfeled elengedi fegyverét, akkor gyakorlatilag sikeres [Lefegyverzéssé](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) változik a Manőver
 - Ha továbbra is kezében tartja:
-  - [Harc helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve) módosítói sújtják
+  - [Harc helyhez kötve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#helyhez-kötve) módosítói sújtják
   - Ha másik keze üres, akkor [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc) harcértékekkel harcol
   - Kétkezes harc esetén a továbbiakban a másik kezében tartott fegyver harcértékeivel küzd.
 - a foglyul ejtett fegyverre a [Lefegyverezés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s) Manőver csak `5`-ös Nehézségű
@@ -240,9 +240,9 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
     - `+0`: Sisak nélküli célpont
     - `+3`: Sisakos célpont, ha tarkón ütés lehetséges
 - Fázisok: `Végrehajtás, Ellenpróba`
-    - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás))
+    - `V` fázisban: `Célpont VÉ = Mozgás jellegétől függő érték` (lásd [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás))
 - Követelmény:
-  - [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás) harci helyzet → e nélkül csak sima [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzet lenne
+  - [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás) harci helyzet → e nélkül csak sima [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzet lenne
   - [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzet
   - Célpont elfszabású anatómiával
   - Zúzófegyver (akár fegyver markolat), vagy Puszta kéz mint támadó fegyver
@@ -288,7 +288,7 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
 - Fázisok: `E`
 
 - **Követelmény**: a környezetnek, harctérnek alkalmasnak kell lennie a hátbakerülésre. Ha nincs elég hely, a KM megtagadhatja a Manőver használatát.
-- **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról**, vagy a [Félhátulról támadás](065_01_03_harci_poziciok.md#félhátulról-támadás) bónuszait - attól függően, hogy milyen pozícióban van.
+- **Hatás**: sikerült ellenfeled hátába kerülnöd, következő támadásodra megkapod a [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) bónuszait. Ellenfeled dönthet úgy, hogy mostantól inkább veled foglalkozik, de ekkor azon szövetségesed, akivel eddig harcolt, kapja meg a **Támadás hátulról** bónuszait - attól függően, hogy milyen pozícióban van.
 
 <br />
 
@@ -304,7 +304,7 @@ Megpróbálsz ellenfeled mögé kerülni. Nem titokban, sunnyogva, lopakodva, ha
   - Pajzshasználat – `2.fok`
   - Nagy és Közepes pajzzsal lehetséges csak
 
-**Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
+**Hatás**: Pajzsoddal sikeresen feldöntötted ellenfeled, aki ettől kezdve a [Harc földön fekve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#földön-fekve) helyzet módosítóival harcol. Felállnia csak sikeres [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver alkalmazásával sikerülhet.
 
 <br />
 
@@ -372,9 +372,9 @@ Ha sikeres **Észlelés + Érzékenység** vs. **Lopakodás/rejtőzés + Ügyess
 
 - Nehézség: `6`
 - Fázisok:
-  - Észrevétlen támadás esetén: `Ellenpróba`
-  - Nincs Észrevétlen támadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
-- Követelmény: [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
+  - Orvtámadás esetén: `Ellenpróba`
+  - Nincs Orvtámadás: `Végrehajtás, Ellenpróba` (`V`: standard, fegyveres VÉ ellen)
+- Követelmény: [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás), [Hátulról támadás](065_01_03_harci_poziciok.md#hátulról-támadás) harci helyzetek
 
 **Hatás**:
 - Ellenfeledre vetetted magad, rácsimpaszkodsz a hátára.
@@ -414,7 +414,7 @@ Alkalmazható egyszerre, csoportosan is. Csoportot terelni nehezebb. Ilyenkor em
 
 **Hatás**: arra tereli az ellenfelet, amerre akarja. Hátrálásnál nem kell használni, az megy magától!
 
-**Kapcsolódó szituáció:** [Hátbaszúrás](szituaciok/hatbaszuras_harcon_kivul.md)
+**Kapcsolódó szituáció:** [Orvtámadás](szituaciok/orvtamadas_harcon_kivul.md)
 
 <br/>
 

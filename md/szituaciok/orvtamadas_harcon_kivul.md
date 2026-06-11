@@ -1,4 +1,4 @@
-## Hátbaszúrás: harcon kívül
+## Orvtámadás: harcon kívül
 
 Észrevétlenül lopakodva eljutni a célpont háta mögé - annak látótéren kívülről indulva, majd lecsapni.
 
@@ -31,26 +31,9 @@ Lopakodás/rejtőzés (-6) + Ügyesség
 <br />
 
 ---
-## `II.a` Sikeres Lopakodás → Hátbaszúrás
+## `II.a` Sikeres Lopakodás → Orvtámadás
 
-#### `1.` [Hátulról](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) és [Észrevétlen támadás](../065_01_03_harci_poziciok.md#%C3%A9szrev%C3%A9tlen-t%C3%A1mad%C3%A1s) bónuszai járnak
-
-```
-→ Célpont VÉ = ellenfél mozgás
-               jellegétől függ
-→ Előny+2 TÉ dobásra (Hátulról támadás)
-→ +5 SP bónusz
-```
-
-[Ellenfél VÉ mozgási jellegétől függ](../062_01_ke_te_ve_ce.md#v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-v%C3%A9---mozg%C3%A1s-jellege-%C3%A9s-m%C3%A9rete-szerint) ↑
-
-#### `2.` Opcionális: [Precíz támadás](../066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver kombó - sima támadás helyett
-
-```
-Ha sikeres, extra bónuszok:
-→ Nincs SFÉ ellenfélnek
-→ +2 SP / Harci anatómia fortély fok
-```
+ [Orvtámadás](../065_01_03_harci_poziciok.md#orvt%C3%A1mad%C3%A1s) harci helyzet bónuszai járnak.
 
 <br />
 
@@ -59,7 +42,7 @@ Ha sikeres, extra bónuszok:
 [Hátulról támadás](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) bónuszait kapod csak meg:
 
 ```
-Előny+2 TÉ dobásra
+Előny+1 TÉ dobásra
 ```
 
 <br />

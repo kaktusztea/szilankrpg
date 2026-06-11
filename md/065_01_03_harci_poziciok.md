@@ -86,55 +86,10 @@ Beszorított karakter
 <br />
 
 ---
-## Észrevétlen támadás
-
-Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud és egyáltalán nem képes rá reagálni.
-
-```
-Sikeres próba kell:
- Lopakodás/rejtőzés vs. Észlelés
-```
-
-
-
-```
-+5 SP bónusz
-
-Áldozat VÉ:
-  mozgási jelleg és méret
-  határozza meg
-```
-
-🔆 [Mozgási jelleg VÉ](062_01_ke_te_ve_ce.md#védő-érték-vé---mozgás-jellege-és-mérete-szerint) ↑
-
-→ ❌ Támadó más `TÉ` bónuszt nem kaphat
-
-→ ❌ Harci taktikák NEM használhatóak
-
-→ ✅ Alkalmazható [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver: nincs `SFÉ`; `+2 SP` / [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély fok
-
-→ [Észrevétlen támadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---észrevétlen-támadás)\
-
-→ **Észrevétlen támadás** több Manőver követelménye: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról)
-
-<br />
-
----
-## Félhátulról támadás
-
-```
-Előny+1 TÉ dobásra
-```
-
-🔆 Védekező Pajzs `VÉ` csak akkor számít, ha a tartó kéz felőli oldalról jön a csapás
-
-<br />
-
----
 ## Hátulról támadás
 
 ```
-Előny+2 TÉ dobásra
+Előny+1 TÉ dobásra
 ```
 
 🔆 Védekező pajzs `VÉ` értéke **NEM** számít
@@ -185,6 +140,50 @@ Előny+1 TÉ dobásra
 <br />
 
 ---
+## Orvtámadás
+
+Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud és egyáltalán nem képes rá reagálni.
+
+```
+Sikeres próba kell:
+ Lopakodás/rejtőzés vs. Észlelés
+```
+
+```
+Áldozat VÉ: Közelharc, Puszta kézzel
+
+Előny+2 Támadó dobásra
+
+Harci anatómia fortély
+  1.fok: +2 SP
+  2.fok: +4 SP
+  3.fok: +6 SP
+
+Orgyilkos fortély
+  1.fok:
+    Előny+1 Sebzés dobásra
+    Precíz támadás manőverre: +2 (nincs SFÉ)
+  2.fok:
+    Előny+2 Sebzés dobásra
+    Precíz támadás manőverre: +4 (nincs SFÉ)
+```
+
+→ ❌ **Hátulról** és **Meglepetés** harci helyzetek **nem** adhatóak hozzá\
+→ ❌ Egyéb `TÉ` bónusz nincs\
+→ ❌ Harci taktikák NEM használhatóak
+
+→ ✅ [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver\
+→ ✅ [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély
+
+→ [Orvtámadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás)\
+→ **Orvtámadás** több Manőver követelménye: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról)
+
+→ [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md) szituáció
+→ [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md) szituáció
+
+<br />
+
+---
 ## Védekező takarásban
 
 ```
@@ -196,7 +195,7 @@ Támadó és Védekező:
 
 🔆 Ha a harcos mozgásában korlátozottá válik pl. tereptárgyaktól, akkor már egy más helyzet (KM dönt) vonatkozik rá:
 - [Beszorított helyzet](#beszorított-helyzet)
-- [Helyhez kötve](065_01_05_fizikai_helyzetek.md#helyhez-kötve)
+- [Helyhez kötve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#helyhez-kötve)
 
 <br />
 

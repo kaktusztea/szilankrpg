@@ -33,7 +33,7 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
   említett körülmények összegzett értékére
 ```
 
-## [Lények méret különbsége](065_01_07_lenyek.md)
+## [Lények méret különbsége](065_01_05_fizikai_es_kornyezeti_helyzetek.md#lények-méret-különbsége-06)
 
 Amennyiben a lények között akár csak `1` kategória méret különbség is van, akkor ha...
 
@@ -85,7 +85,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 
 **Hatás**:
 - Belharc közben fogást találsz ellenfeleden és átdobod a vállad felett, aki ezáltal földre kerül.
-- Innentől ellenfeled a [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói szerint harcol.
+- Innentől ellenfeled a [Harc földön fekve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#földön-fekve) módosítói szerint harcol.
 
 <br />
 
@@ -125,7 +125,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 - Követelménye: Közelharc - `5.szint`
 
 **Hatás**: Sikeresen kigáncsoltad ellenfeled lábát, aki a földre zuhan.
-- [Harc földön fekve](065_01_05_fizikai_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
+- [Harc földön fekve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#földön-fekve) módosítói vonatkoznak rá.
 - [Felállás földről](066_05_altalanos_manoverek.md#felállás-földről) manőver sikeres alkalmazásával kelhet fel
 
 Körülmények: súlyos, soklábú ellenfélnél inkább [Lábsöpréssel / Felökleléssel](066_05_altalanos_manoverek.md#lábsöprés--felöklelés) kell próbálkoznod.

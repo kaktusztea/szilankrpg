@@ -11,8 +11,8 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 
 ## Sunyi támadások
 
-- [Hátbaszúrás - harcon kívül](szituaciok/hatbaszuras_harcon_kivul.md)
-- [Hátbaszúrás - harcoló ellenfelet](szituaciok/hatbaszuras_harcolo_ellenfelet.md)
+- [Orvtámadás - harcon kívül](szituaciok/orvtamadas_harcon_kivul.md)
+- [Orvtámadás - harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md)
 - [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról)
 - [Precíz támadás, Meglepetésből, max TÉ taktikával](szituaciok/meglepetesbol_pontra_tamadas_max_te_taktikaval.md)
 

@@ -105,7 +105,7 @@ Lásd [Vakharc fortély- Bónusz: harci ösztön](../fortelyok.harci/vakharc.md#
 -6: a lopakodó Láthatatlan
 ```
 
-Kapcsolódik: [Láthatatlan](../065_01_06_szemelyhez_kotott.md#láthatatlanul)
+Kapcsolódik: [Láthatatlan](../065_01_05_fizikai_es_kornyezeti_helyzetek.md#láthatatlanul)
 
 ### ⚜️ Látótér célszám módosító (lopakodó)
 
@@ -151,7 +151,7 @@ Kapcsolódik: [Láthatatlan](../065_01_06_szemelyhez_kotott.md#láthatatlanul)
 ### ⚜️ Távolság rejtekhely módosító, Harci szituáció megteremtése (lopakodó)
 
 ```
-+9: Testközelbe kerülni; Észrevétlen támadás
++9: Testközelbe kerülni; Orvtámadás
 +6: 1 - 5 méter; Meglepetésből támadás
 +3: 6 - 9 méter
 +0: 10 - 15 méter 🔆

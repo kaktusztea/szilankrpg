@@ -49,9 +49,9 @@ Lásd a [szituáció leírását](szituaciok/hatasrol_leeses.md)!
 <br />
 
 ---
-## Félhátulról, hátulról jövő támadások
+## Hátulról jövő támadások
 
-Itt a [Harci helyzetek](065_01_03_harci_poziciok.md#félhátulról-támadás) fejezetben leírt módosítók érvényesek.
+Itt a [Harci helyzetek](065_01_03_harci_poziciok.md#hátulról-támadás) fejezetben leírt módosítók érvényesek.
 
 <br />
 

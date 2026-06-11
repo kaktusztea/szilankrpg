@@ -75,7 +75,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 
 ❌ Más taktikával együtt
 
-❌ [Láthatatlan](065_01_06_szemelyhez_kotott.md#láthatatlanul) ellenfél ellen
+❌ [Láthatatlan](065_01_05_fizikai_es_kornyezeti_helyzetek.md#láthatatlanul) ellenfél ellen
 
 ❌ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány) harci helyzetből **NEM** alkalmazható.
 
@@ -237,7 +237,7 @@ TÉ:+3, VÉ:-6
 
 ✅ [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) szituációban
 
-❌ [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás) szituációban
+❌ [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás) szituációban
 
 ✅ **Kezdeményező, Kiváró taktikával** együtt
 
@@ -257,7 +257,7 @@ VÉ:+4, TÉ:-8
 
 ❌ [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) szituációban
 
-❌ [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás) szituációban
+❌ [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás) szituációban
 
 ❌ Más taktikával együtt
 
@@ -279,7 +279,7 @@ Ellenfél VÉ csökkentés: (1 + k20T)
 
 A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. A kör közben nem változtathatsz a taktikádon és csak a következő körben támadhatsz újra.
 
-🔆 A [lények méretkülönbségéből](065_01_07_lenyek.md) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
+🔆 A [lények méretkülönbségéből](065_01_05_fizikai_es_kornyezeti_helyzetek.md#lények-méret-különbsége-06) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 

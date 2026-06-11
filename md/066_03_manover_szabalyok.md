@@ -21,9 +21,9 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 - Támadó tehet bele `Manőver Pontot`
 - Áldozat **nem** tehet bele "ellen" `Manőver Pontot`
 
-## ⚜️ Harci helyzetek és Manőverek - Észrevétlen támadás
+## ⚜️ Harci helyzetek és Manőverek - Orvtámadás
 
-Vannak Manőverek, amelyek [Észrevétlen támadás](065_01_03_harci_poziciok.md#észrevétlen-támadás) harci helyzetet igényelnek.
+Vannak Manőverek, amelyek [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás) harci helyzetet igényelnek.
 
 ```
 (E)llenpróba dobás csak
