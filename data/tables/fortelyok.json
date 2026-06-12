@@ -2228,7 +2228,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Testközelben érzed igazában elemedben magad. Sikeres 🗡️Belharcba kerülés🗡️ manőver esetén 🗡️Belharci szituációba🗡️ kerülsz és harcértékeidre - csak Közelharc harcmodor esetén - a lent leírt pluszok járnak.",
+    "leírás": "Testközelben érzed igazában elemedben magad. Sikeres Belharcba kerülés maanőver esetén Belharci szituációba kkerülsz és harcértékeidre - csak Közelharc harcmodor esetén - a lent leírt pluszok járnak.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -2521,7 +2521,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél. Bónuszok 🗡️Fegyverrántás-szituációban (az alkalmazó oldalán):",
+    "leírás": "Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél. Bónuszok Fegyverrántás-szituációban (az alkalmazó oldalán):",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -2803,7 +2803,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "\"Pattog, mint a nikkelbolha\" - mondják, ha harcolni látnak. Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen...",
+    "leírás": "Pattog, mint a nikkelbolha - mondják, ha harcolni látnak. Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen...",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -2850,8 +2850,8 @@
       {
         "fok": 2,
         "hatás": [
-          "Az **Akrobatika** képzettségedet `1:1` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez.",
-          "🗡️ **Kibontakozás/Átsiklás** manőverre `+3` bónuszt kapsz."
+          "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez.",
+          "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
         ],
         "követelmény": "",
         "követelmények": [

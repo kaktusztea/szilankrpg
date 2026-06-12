@@ -41,6 +41,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
     hintTimer.current = setTimeout(() => setHint(''), duration);
   }
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
+  useEffect(() => { setInfoTarget(null); }, [gameMode]);
   const [deleteTarget, setDeleteTarget] = useState<{ idx: number; név: string; fok: number } | null>(null);
   const [pendingFortIdx, setPendingFortIdx] = useState<number | null>(null);
   const [szabadTypePicker, setSzabadTypePicker] = useState<{ név: string; spec_típus: string; spec_elem: string } | null>(null);
