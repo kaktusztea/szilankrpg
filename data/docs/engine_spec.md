@@ -655,19 +655,19 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 
 | Taktika | Módosítók | Kombó ✅ | Kombó ❌ |
 |---------|-----------|---------|---------|
-| 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd |
-| Érintő | TÉ:+3, sebzés:0 | Támadó, Védő, Kezdeményező, Kiváró | más |
-| Fárasztás | VÉ csökk: 2/kör (+fortély+pengeelőny) | — (nem támad) | más |
-| Kezdeményező | KÉ:+1..+5, VÉ:-1..-5 | Támadó, Érintő, Visszafogott | más |
-| Kiváró | KÉ:átengedett, TÉ:+2 (visszacsapás) | Támadó, Érintő, Visszafogott, Tám.erőből | más |
+| 1 támadás | TÉ:+3 (több-tám levonás nem érvényesül) | minden más | Roham, Ö.roham, Plusz tám, Teljes Véd, Fárasztás |
+| Érintő | TÉ:+3, sebzés:0 | Támadó, Védő, Kezdeményező, Kiváró, 1 tám, Plusz tám | más |
+| Fárasztás | VÉ csökk: 2/kör (+fortély+pengeelőny) | — | más |
+| Kezdeményező | KÉ:+1..+5, VÉ:-1..-5 | Támadó, Érintő, Visszafogott, 1 tám | más |
+| Kiváró | KÉ:átengedett, TÉ:+2 (visszacsapás) | Támadó, Érintő, Visszafogott, Tám.erőből, 1 tám | más |
 | Öngyilkos roham | TÉ:+5, VÉ:-10, SP:+7, VÉcsökk 2x | — | más (max 1x/küzdelem) |
 | Plusz támadás | +1 támadás, VÉ:-3 azonnal | Támadó, Érintő, Tám.erőből | más |
 | Roham | TÉ:+4, VÉ:-8, SP:+5, VÉcsökk 2x | — | más |
-| Támadás erőből | TÉ:-1..-2, SP:+1..+2 | Kiváró | más |
-| Támadó | TÉ:+1..+3, VÉ:-2..-6 | Kezdeményező, Kiváró | más |
-| Védő | VÉ:+1..+4, TÉ:-2..-8 | — | más |
+| Támadás erőből | TÉ:-1..-2, SP:+1..+2 | Kiváró, Plusz tám, 1 tám | más |
+| Támadó | TÉ:+1..+3, VÉ:-2..-6 | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
+| Védő | VÉ:+1..+4, TÉ:-2..-8 | Érintő, 1 tám | más |
 | Teljes Védekezés | VÉ:+6, nem támad, hátrál | — | más |
-| Visszafogott | TÉ:-3/-6/-9, sebzéskocka: k10/k6/— | Kezdeményező, Kiváró | más |
+| Visszafogott | TÉ:-3/-6/-9, sebzéskocka: k10/k6/— | Kezdeményező, Kiváró, 1 tám | más |
 
 note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.

@@ -288,7 +288,15 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               <button className="aktiv-chip-x" onClick={() => { setShowTaktikaPicker(false); setTaktikaFokválasztó(null); }}>✕</button>
             </div>
             <div className="manover-picker-list">
-              {!taktikaFokválasztó && data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(t => (
+              {!taktikaFokválasztó && data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).sort((a, b) => {
+                const pinned = ['Támadó', 'Védő', 'Teljes Védekezés'];
+                const aPin = pinned.indexOf(a.név);
+                const bPin = pinned.indexOf(b.név);
+                if (aPin >= 0 && bPin >= 0) return aPin - bPin;
+                if (aPin >= 0) return -1;
+                if (bPin >= 0) return 1;
+                return a.név.localeCompare(b.név, 'hu');
+              }).map(t => (
                 <div key={t.név} className="manover-card" onClick={() => {
                   if (t.fokozatos) {
                     setTaktikaFokválasztó(t.név);

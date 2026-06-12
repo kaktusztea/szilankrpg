@@ -13,7 +13,7 @@ taktikák:
     megkötések:
       - { típus: "támadások", mód: "min", érték: 2 }
     kombó_mód: "blacklist"
-    kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés", "Fárasztás"]
+    kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés", "Fárasztás", "Tettetés"]
 
   - név: "Érintő"
     feltétel_kulcs: "taktika:érintő"
@@ -55,7 +55,7 @@ taktikák:
     megkötések:
       - { típus: "többes_harc", mód: "tiltott" }
     kombó_mód: "whitelist"
-    kombó_lista: ["Támadó", "Érintő", "Visszafogott", "Támadás erőből", "1 támadás"]
+    kombó_lista: ["Támadó", "Érintő", "Visszafogott", "Támadás erőből", "1 támadás", "Tettetés"]
 
   - név: "Öngyilkos roham"
     feltétel_kulcs: "taktika:öngyilkos_roham"
@@ -148,4 +148,12 @@ taktikák:
       - { fok: 3, TÉ: -9 }
     megjegyzés: "Sebzéskocka: k10/k6/nincs. Harci anatómia csökkenti TÉ büntetést."
     kombó_mód: "whitelist"
-    kombó_lista: ["Kezdeményező", "Kiváró", "1 támadás"]
+    kombó_lista: ["Kezdeményező", "Kiváró", "1 támadás", "Tettetés"]
+
+  - név: "Tettetés"
+    feltétel_kulcs: "taktika:tettetés"
+    fokozatos: false
+    módosítók: {}
+    megjegyzés: "Képzetlenebbnek tetteted magad. Harcmodor+Ügyesség vs 15 próba. Kiváró, Visszafogott taktikával együtt."
+    kombó_mód: "whitelist"
+    kombó_lista: ["Kiváró", "Visszafogott"]

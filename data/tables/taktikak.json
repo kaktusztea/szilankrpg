@@ -20,7 +20,8 @@
       "Öngyilkos roham",
       "Plusz támadás",
       "Teljes Védekezés",
-      "Fárasztás"
+      "Fárasztás",
+      "Tettetés"
     ]
   },
   {
@@ -116,7 +117,8 @@
       "Érintő",
       "Visszafogott",
       "Támadás erőből",
-      "1 támadás"
+      "1 támadás",
+      "Tettetés"
     ]
   },
   {
@@ -323,7 +325,20 @@
     "kombó_lista": [
       "Kezdeményező",
       "Kiváró",
-      "1 támadás"
+      "1 támadás",
+      "Tettetés"
+    ]
+  },
+  {
+    "név": "Tettetés",
+    "feltétel_kulcs": "taktika:tettetés",
+    "fokozatos": false,
+    "módosítók": {},
+    "megjegyzés": "Képzetlenebbnek tetteted magad. Harcmodor+Ügyesség vs 15 próba. Kiváró, Visszafogott taktikával együtt.",
+    "kombó_mód": "whitelist",
+    "kombó_lista": [
+      "Kiváró",
+      "Visszafogott"
     ]
   }
 ]
