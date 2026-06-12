@@ -239,52 +239,6 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         </div>
       )}
 
-      {/* Fegyverek sor */}
-      <div className="aktiv-fegyver-row">
-        <div className="aktiv-field-btn">
-          <span className="aktiv-field-label">Jobb</span>
-          <select className="aktiv-field-select" value={session.aktív_fegyver_index} onChange={e => {
-            const idx = parseInt(e.target.value);
-            setSession(s => ({ ...s, aktív_fegyver_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_bal_index !== -1 ? s.kétkezes_harc : false }));
-          }}>
-            {fegyverOpciók.map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
-          </select>
-        </div>
-        <div className="aktiv-field-btn">
-          <span className="aktiv-field-label">Bal</span>
-          <select className="aktiv-field-select" value={session.aktív_fegyver_bal_index} onChange={e => {
-            const idx = parseInt(e.target.value);
-            setSession(s => ({ ...s, aktív_fegyver_bal_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_index >= 0 }));
-          }}>
-            {fegyverOpciók.map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
-          </select>
-        </div>
-        {(() => {
-          const enabled = session.aktív_fegyver_index !== -1 && session.aktív_fegyver_bal_index !== -1;
-          return (
-            <div className={`aktiv-field-btn aktiv-field-toggle ${session.kétkezes_harc && enabled ? 'on' : ''} ${!enabled ? 'disabled' : ''}`}
-              onClick={() => { if (enabled) setSession(s => ({ ...s, kétkezes_harc: !s.kétkezes_harc })); }}>
-              <span className="aktiv-field-label">2 kezes</span>
-              <strong>{session.kétkezes_harc && enabled ? 'Igen' : 'Nem'}</strong>
-            </div>
-          );
-        })()}
-      </div>
-
-      {/* Pajzs + Páncél sor */}
-      <div className="aktiv-fegyver-row">
-        <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_pajzs ? 'on' : ''}`}
-          onClick={() => setSession(s => ({ ...s, aktív_pajzs: !s.aktív_pajzs }))}>
-          <span className="aktiv-field-label">Pajzs kézben</span>
-          <strong>{session.aktív_pajzs ? 'Igen' : 'Nem'}</strong>
-        </div>
-        <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_páncél ? 'on' : ''}`}
-          onClick={() => setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél }))}>
-          <span className="aktiv-field-label">Páncél viselve</span>
-          <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>
-        </div>
-      </div>
-
       {/* Taktikák */}
       <div className="aktiv-section">
         <span className="aktiv-label">Taktikák</span>
@@ -437,6 +391,52 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             textEl.value = '';
             valEl.value = '';
           }}>+</button>
+        </div>
+      </div>
+
+      {/* Fegyverek sor — alul */}
+      <div className="aktiv-bottom-section">
+        <div className="aktiv-fegyver-row">
+          <div className="aktiv-field-btn">
+            <span className="aktiv-field-label">Jobb</span>
+            <select className="aktiv-field-select" value={session.aktív_fegyver_index} onChange={e => {
+              const idx = parseInt(e.target.value);
+              setSession(s => ({ ...s, aktív_fegyver_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_bal_index !== -1 ? s.kétkezes_harc : false }));
+            }}>
+              {fegyverOpciók.map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
+            </select>
+          </div>
+          <div className="aktiv-field-btn">
+            <span className="aktiv-field-label">Bal</span>
+            <select className="aktiv-field-select" value={session.aktív_fegyver_bal_index} onChange={e => {
+              const idx = parseInt(e.target.value);
+              setSession(s => ({ ...s, aktív_fegyver_bal_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_index >= 0 }));
+            }}>
+              {fegyverOpciók.map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
+            </select>
+          </div>
+          {(() => {
+            const enabled = session.aktív_fegyver_index !== -1 && session.aktív_fegyver_bal_index !== -1;
+            return (
+              <div className={`aktiv-field-btn aktiv-field-toggle ${session.kétkezes_harc && enabled ? 'on' : ''} ${!enabled ? 'disabled' : ''}`}
+                onClick={() => { if (enabled) setSession(s => ({ ...s, kétkezes_harc: !s.kétkezes_harc })); }}>
+                <span className="aktiv-field-label">2 kezes</span>
+                <strong>{session.kétkezes_harc && enabled ? 'Igen' : 'Nem'}</strong>
+              </div>
+            );
+          })()}
+        </div>
+        <div className="aktiv-fegyver-row">
+          <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_pajzs ? 'on' : ''}`}
+            onClick={() => setSession(s => ({ ...s, aktív_pajzs: !s.aktív_pajzs }))}>
+            <span className="aktiv-field-label">Pajzs kézben</span>
+            <strong>{session.aktív_pajzs ? 'Igen' : 'Nem'}</strong>
+          </div>
+          <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_páncél ? 'on' : ''}`}
+            onClick={() => setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél }))}>
+            <span className="aktiv-field-label">Páncél viselve</span>
+            <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>
+          </div>
         </div>
       </div>
     </div>
