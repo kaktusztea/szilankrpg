@@ -328,13 +328,51 @@
   - Merevvértviselet: Harcértékek fül Páncél szekció, Struktúra melletti gomb (csak merev páncélnál)
   - Mind a három locked a Fortélyok fülön (nem szerkeszthető, dropdown-ból kiszűrve)
 
-## Következő lépések
-1. **Taktika kombó inkonzisztencia** — ✅ KÉSZ (szimmetrizálva, megkötések felvíve)
-2. **Aktív fül** — ✅ KÉSZ (taktika/helyzet/szituáció/manőver/státusz picker, Hatás pool, narratív módosítók, fegyver jobb/bal/kétkezes)
-3. **Hátterek fül** — ✅ KÉSZ (szövegfelhő, data layer-ből)
-4. **Fortély követelmény ellenőrzés** — ✅ KÉSZ (§25 engine_spec, yaml-ok kitöltve, UI: piros jelzés + info)
-5. **Távharc fül** — VÉ kalkulátor implementáció (§17)
-6. **Távharc fortélyok yaml** — 10 db hiányzik (Gyors hajítás, Gyors lövés, Mesterlövész, stb.)
+## Elkészült mérföldkövek
+1. ✅ Taktika kombó inkonzisztencia (szimmetrizálva, megkötések felvíve)
+2. ✅ Aktív fül (taktika/helyzet/szituáció/manőver/státusz picker, Hatás pool, narratív módosítók, fegyver jobb/bal/kétkezes)
+3. ✅ Hátterek fül (szövegfelhő, data layer-ből)
+4. ✅ Fortély követelmény ellenőrzés (§25 engine_spec, yaml-ok kitöltve, UI: piros jelzés + info)
+
+## TODO Backlog
+
+### Karakteralkotó — általános
+- VÉ eltolás ökölszabály: max ±10 (taktikák kombinálása esetén is) — validáció
+- Harci helyzetek kombinálása: szabályok tisztázása
+- Láthatatlan ellenfél taktika: kiszedve a yaml-ból, státuszként kezelni?
+- Ember (Szigetvilági) faj háttér hozzáadása (slan helyett)
+- Undo gomb + undo stack (navigálható)
+- ODS checker-ek implementálása (KP, limitek, stb.)
+- Faj misztérium képzettségek → Mágia fülre
+
+### Aktív fül
+- Harci alakzat 🚧 (Alakzatharc kidolgozása szükséges)
+- Kétkezes harc 🚧 (pengehossz limit, szituáció kérdés, fegyver harcértékek összeadódás, mindkét MF számít)
+- Harci akrobatika: boolean toggle (Aktív fülre) + TÉ/VÉ hatás + manőver bónusz bevezetése (fortély→manőver bónusz rendszer)
+- Belharc / Belharci szituáció — külön rendszer
+- Páros harc szituáció
+
+### Fortélyok — hiányzó számszerűsítések
+- Harci anatómia: manőver bónuszok (jelenleg csak hatástext) → manőver bónusz rendszer
+- Hárítófegyver használat: módosítók alkalmazása (jelenleg csak hatástext)
+- Kaszabolás: fortély emlékeztetők közé (minden harci hatást ide?)
+- Kitérés lövés elől: számszerűsítés
+- Orgyilkos: számszerűsítés
+- Pajzshasználat: számszerűsítés
+- Támadás erőből: számszerűsítés
+- Természetes fegyver: ellenőrzés (puszta kéz esetén!)
+- Természetes páncél: ellenőrzés
+- Vezető XY fortélyok: számszerűsítés (Alakzatharc kidolgozása előfeltétel)
+- Helyismeretek: ???
+- Szabad fortélyok felvételénél: mutassa rögtön a kiterjesztéseket
+
+### Távharc fül
+- Távharc kalkulátor (CÉ és VÉ) — §17
+- Távharc fortélyok yaml elkészítése
+
+### Harc fül
+- Kétkezes harc aktív: 2 fegyver egymás alatt, lila keretben
+- Lovas harc
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/docs/DEVSTATE.md` (ez a fájl)
@@ -378,7 +416,7 @@
 - Validáló script: `web/validate_karakter.py` — ellenőrzi a test_karakter.json konzisztenciáját (yaml defs, KP, faj, session)
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
-- Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
+- Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek, taktikák, harci helyzetek, szituációk, manőverek, státuszok, hatások, események, hátterek)
 - Vite plugin: dev szerver indulásakor automatikusan futtatja a generate_tables.py-t; nincs per-request regenerálás
 - Runtime: minden adat `tables/*.json`-ból fetchJson-nel, nincs YAML parse, nincs js-yaml dependency
 - Touch event isolation: kep-row-on `onTouchStart/End stopPropagation` (szerkesztő módban, védi a véletlen lapozást)
@@ -398,7 +436,7 @@
 - Rövid koppintás Game módban: accordion info toggle
 - Törlés megerősítő dialógus: centered név + piros gomb ("Képzettség törlése" / "Fortély törlése")
 - Reset megerősítő dialógus: piros centered gomb ("ÉP Reset" / "VÉ Reset"), disabled ha nincs mit resetelni
-- Default tab induláskor: Tul/Képz (index 3)
+- Default tab induláskor: Tul/Képz (index 5 az ALL_TABS-ban)
 - Fájdalomtűrés enyhítés: konstansok.fájdalomtűrés_enyhítés táblából, dinamikusan frissül szint módosításkor
 - ÉP TÉ footer double-tap: navigál Tul/Képz fülre + scroll Fájdalomtűrés képzettséghez (data-kep attribútum)
 - Sebesülés popup: típus+érték gombok, mindkettő kiválasztva → auto-close, 1-15 látható + ▾ lenyitó (16-40)
