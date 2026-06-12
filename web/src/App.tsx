@@ -358,7 +358,6 @@ function App() {
           HM_TÉ: karakter.HM_TÉ,
           HM_VÉ: karakter.HM_VÉ,
           CM: karakter.CM,
-          fortélyMod_KÉ: 0,
           harcmodor_összeg: harcmodorÖsszeg,
           alakzatharc_szint: alakzatharcSzint,
           felszerelés_terhelés: 0,

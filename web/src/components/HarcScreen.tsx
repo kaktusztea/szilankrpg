@@ -124,22 +124,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
   stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
 
-  // Mindig-aktív fortély KÉ (feltétel='') — szükséges a ctx-hez (computed ELŐTT)
-  let fortelyKE_alap = 0;
-  for (const kf of k.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
-    if (!def) continue;
-    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
-    if (!fokDef?.módosítók) continue;
-    for (const mod of fokDef.módosítók) {
-      if (mod.cél === 'KÉ' && mod.mód === 'flat' && (!mod.feltétel || mod.feltétel === '')) {
-        fortelyKE_alap += mod.érték;
-      }
-    }
-  }
-
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
-    fortélyMod_KÉ: fortelyKE_alap,
     harcmodor_összeg: harcmodorÖsszeg,
     HM_TÉ: k.HM_TÉ,
     HM_VÉ: k.HM_VÉ,
@@ -202,7 +187,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       }
     }
   }
-  const fortelyKE = fortelyMods['KÉ'] - fortelyKE_alap; // feltételes KÉ (alap már a reactive engine-ben)
+  const fortelyKE = fortelyMods['KÉ'];
 
   const épValue = computed.get('ÉP') ?? 40;
   const ké = (computed.get('KÉ') ?? 0) + taktikaMods['KÉ'] + fortelyKE;
@@ -264,7 +249,6 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       fegyver_fortély_VÉ: fortelyMods['VÉ'],
       fegyver_fortély_SP: fortelyMods['SP'],
       fegyver_fortély_harckeret: fortelyMods['harckeret'],
-      fortélyMod_KÉ: fortelyKE_alap,
       harcmodor_összeg: harcmodorÖsszeg,
       alakzatharc_szint: 0,
     });

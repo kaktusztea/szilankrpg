@@ -4,267 +4,473 @@
     {
       "id": "ÉP",
       "formula": "28 + tulajdonságok.edzettség * 4",
-      "inputs": ["tulajdonságok.edzettség"]
+      "inputs": [
+        "tulajdonságok.edzettség"
+      ]
     },
     {
       "id": "S1_max",
       "formula": "ÉP / 4",
-      "inputs": ["ÉP"]
+      "inputs": [
+        "ÉP"
+      ]
     },
     {
       "id": "S2_max",
       "formula": "ÉP / 2",
-      "inputs": ["ÉP"]
+      "inputs": [
+        "ÉP"
+      ]
     },
     {
       "id": "S3_max",
       "formula": "ÉP * 3 / 4",
-      "inputs": ["ÉP"]
+      "inputs": [
+        "ÉP"
+      ]
     },
     {
       "id": "KÉ",
-      "formula": "konstansok.harcérték_alap.KÉ + tulajdonságok.gyorsaság + tulajdonságok.intelligencia + tsz + fortélyMod_KÉ",
-      "inputs": ["konstansok.harcérték_alap.KÉ", "tulajdonságok.gyorsaság", "tulajdonságok.intelligencia", "tsz", "fortélyMod_KÉ"]
+      "formula": "konstansok.harcérték_alap.KÉ + tulajdonságok.gyorsaság + tulajdonságok.intelligencia + tsz",
+      "inputs": [
+        "konstansok.harcérték_alap.KÉ",
+        "tulajdonságok.gyorsaság",
+        "tulajdonságok.intelligencia",
+        "tsz"
+      ]
     },
     {
       "id": "TÉ_alap",
       "formula": "konstansok.harcérték_alap.TÉ + tulajdonságok.erő + tulajdonságok.ügyesség + tulajdonságok.gyorsaság + HM_TÉ",
-      "inputs": ["konstansok.harcérték_alap.TÉ", "tulajdonságok.erő", "tulajdonságok.ügyesség", "tulajdonságok.gyorsaság", "HM_TÉ"]
+      "inputs": [
+        "konstansok.harcérték_alap.TÉ",
+        "tulajdonságok.erő",
+        "tulajdonságok.ügyesség",
+        "tulajdonságok.gyorsaság",
+        "HM_TÉ"
+      ]
     },
     {
       "id": "VÉ_alap",
       "formula": "konstansok.harcérték_alap.VÉ + tulajdonságok.gyorsaság + tulajdonságok.ügyesség + HM_VÉ",
-      "inputs": ["konstansok.harcérték_alap.VÉ", "tulajdonságok.gyorsaság", "tulajdonságok.ügyesség", "HM_VÉ"]
+      "inputs": [
+        "konstansok.harcérték_alap.VÉ",
+        "tulajdonságok.gyorsaság",
+        "tulajdonságok.ügyesség",
+        "HM_VÉ"
+      ]
     },
     {
       "id": "CÉ_alap",
       "formula": "konstansok.harcérték_alap.CÉ + tulajdonságok.önuralom + CM",
-      "inputs": ["konstansok.harcérték_alap.CÉ", "tulajdonságok.önuralom", "CM"]
+      "inputs": [
+        "konstansok.harcérték_alap.CÉ",
+        "tulajdonságok.önuralom",
+        "CM"
+      ]
     },
     {
       "id": "összes_kp",
       "formula": "tsz * (konstansok.kp.perszint + tulajdonságok.intelligencia)",
-      "inputs": ["tsz", "konstansok.kp.perszint", "tulajdonságok.intelligencia"]
+      "inputs": [
+        "tsz",
+        "konstansok.kp.perszint",
+        "tulajdonságok.intelligencia"
+      ]
     },
     {
       "id": "összes_szekunder_kp",
       "formula": "tsz * (konstansok.kp.szekunder_perszint + tulajdonságok.emlékezet)",
-      "inputs": ["tsz", "konstansok.kp.szekunder_perszint", "tulajdonságok.emlékezet"]
+      "inputs": [
+        "tsz",
+        "konstansok.kp.szekunder_perszint",
+        "tulajdonságok.emlékezet"
+      ]
     },
     {
       "id": "tulajdonság_pont_keret",
       "formula": "konstansok.arányok.tulajdonság_pont_alap + floor(tsz / 2)",
-      "inputs": ["konstansok.arányok.tulajdonság_pont_alap", "tsz"]
+      "inputs": [
+        "konstansok.arányok.tulajdonság_pont_alap",
+        "tsz"
+      ]
     },
     {
       "id": "manőver_pont",
       "formula": "ceil(harcmodor_összeg * 2 / tsz)",
-      "inputs": ["harcmodor_összeg", "tsz"]
+      "inputs": [
+        "harcmodor_összeg",
+        "tsz"
+      ]
     },
     {
       "id": "felszerelés_keret",
       "formula": "2 + tulajdonságok.erő",
-      "inputs": ["tulajdonságok.erő"]
+      "inputs": [
+        "tulajdonságok.erő"
+      ]
     },
     {
       "id": "felszerelés_mgt",
       "formula": "max(0, felszerelés_terhelés - felszerelés_keret)",
-      "inputs": ["felszerelés_terhelés", "felszerelés_keret"]
+      "inputs": [
+        "felszerelés_terhelés",
+        "felszerelés_keret"
+      ]
     },
     {
       "id": "max_CM",
       "formula": "tsz * konstansok.arányok.max_cm_perszint",
-      "inputs": ["tsz", "konstansok.arányok.max_cm_perszint"]
+      "inputs": [
+        "tsz",
+        "konstansok.arányok.max_cm_perszint"
+      ]
     },
     {
       "id": "maradék_kp",
       "formula": "összes_kp + spec_kp + összes_szekunder_kp - elköltött_kp",
-      "inputs": ["összes_kp", "spec_kp", "összes_szekunder_kp", "elköltött_kp"]
+      "inputs": [
+        "összes_kp",
+        "spec_kp",
+        "összes_szekunder_kp",
+        "elköltött_kp"
+      ]
     },
     {
       "id": "kp_képzettségek",
       "formula": "sum_lookup(képzettségek, szint, kp_tábla, szint, kp)",
-      "inputs": ["képzettségek"]
+      "inputs": [
+        "képzettségek"
+      ]
     },
     {
       "id": "kp_fortélyok",
       "formula": "sum(fortélyok, fok) * konstansok.kp.fortélyfok",
-      "inputs": ["fortélyok", "konstansok.kp.fortélyfok"]
+      "inputs": [
+        "fortélyok",
+        "konstansok.kp.fortélyfok"
+      ]
     },
     {
       "id": "kp_hm",
       "formula": "(HM_TÉ + HM_VÉ) * konstansok.kp.hm",
-      "inputs": ["HM_TÉ", "HM_VÉ", "konstansok.kp.hm"]
+      "inputs": [
+        "HM_TÉ",
+        "HM_VÉ",
+        "konstansok.kp.hm"
+      ]
     },
     {
       "id": "kp_cm",
       "formula": "CM * konstansok.kp.cm",
-      "inputs": ["CM", "konstansok.kp.cm"]
+      "inputs": [
+        "CM",
+        "konstansok.kp.cm"
+      ]
     },
     {
       "id": "spec_kp",
       "formula": "sum(kp_bónusz_fortélyok, bónusz_kp) + spec_tartós_sérülés_fok * konstansok.kp_bónusz.tartós_sérülés_per_fok",
-      "inputs": ["kp_bónusz_fortélyok", "spec_tartós_sérülés_fok", "konstansok.kp_bónusz.tartós_sérülés_per_fok"]
+      "inputs": [
+        "kp_bónusz_fortélyok",
+        "spec_tartós_sérülés_fok",
+        "konstansok.kp_bónusz.tartós_sérülés_per_fok"
+      ]
     },
     {
       "id": "kiemelt_kp",
       "formula": "sum(kiemelt_fortélyok, fizetős_kp)",
-      "inputs": ["kiemelt_fortélyok"]
+      "inputs": [
+        "kiemelt_fortélyok"
+      ]
     },
     {
       "id": "kp_primer_képzettségek",
       "formula": "sum_lookup(primer_képzettségek, szint, kp_tábla, szint, kp)",
-      "inputs": ["primer_képzettségek", "kp_tábla"]
+      "inputs": [
+        "primer_képzettségek",
+        "kp_tábla"
+      ]
     },
     {
       "id": "kp_primer_fortélyok",
       "formula": "sum(primer_fortélyok, kp)",
-      "inputs": ["primer_fortélyok"]
+      "inputs": [
+        "primer_fortélyok"
+      ]
     },
     {
       "id": "primer_költés",
       "formula": "kp_primer_képzettségek + kp_primer_fortélyok + kp_hm + kp_cm",
-      "inputs": ["kp_primer_képzettségek", "kp_primer_fortélyok", "kp_hm", "kp_cm"]
+      "inputs": [
+        "kp_primer_képzettségek",
+        "kp_primer_fortélyok",
+        "kp_hm",
+        "kp_cm"
+      ]
     },
     {
       "id": "primer_keret",
       "formula": "összes_kp + spec_kp - primer_költés",
-      "inputs": ["összes_kp", "spec_kp", "primer_költés"]
+      "inputs": [
+        "összes_kp",
+        "spec_kp",
+        "primer_költés"
+      ]
     },
     {
       "id": "elköltött_kp",
       "formula": "kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp",
-      "inputs": ["kp_képzettségek", "kp_fortélyok", "kp_hm", "kp_cm", "kiemelt_kp"]
+      "inputs": [
+        "kp_képzettségek",
+        "kp_fortélyok",
+        "kp_hm",
+        "kp_cm",
+        "kiemelt_kp"
+      ]
     },
     {
       "id": "sfé_fizikai",
       "formula": "páncél_struktúra_sfé_fizikai + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás",
-      "inputs": ["páncél_struktúra_sfé_fizikai", "páncél_alapanyag_sfé_bónusz", "páncél_idea", "páncél_rongálódás"]
+      "inputs": [
+        "páncél_struktúra_sfé_fizikai",
+        "páncél_alapanyag_sfé_bónusz",
+        "páncél_idea",
+        "páncél_rongálódás"
+      ]
     },
     {
       "id": "sfé_energia",
       "formula": "páncél_struktúra_sfé_energia + páncél_alapanyag_sfé_bónusz + páncél_idea - páncél_rongálódás",
-      "inputs": ["páncél_struktúra_sfé_energia", "páncél_alapanyag_sfé_bónusz", "páncél_idea", "páncél_rongálódás"]
+      "inputs": [
+        "páncél_struktúra_sfé_energia",
+        "páncél_alapanyag_sfé_bónusz",
+        "páncél_idea",
+        "páncél_rongálódás"
+      ]
     },
     {
       "id": "távharc_cella",
       "formula": "ceil(távharc_távolság / távharc_osztó)",
-      "inputs": ["távharc_távolság", "távharc_osztó"]
+      "inputs": [
+        "távharc_távolság",
+        "távharc_osztó"
+      ]
     },
     {
       "id": "távharc_cél_VÉ",
       "formula": "max(távharc_szorzó, 1) * távharc_cella + min(távharc_szorzó, 0)",
-      "inputs": ["távharc_szorzó", "távharc_cella"]
+      "inputs": [
+        "távharc_szorzó",
+        "távharc_cella"
+      ]
     },
     {
       "id": "képzettség_max_szint_primer",
       "formula": "min(konstansok.arányok.képzettség_max_szint, tsz)",
-      "inputs": ["konstansok.arányok.képzettség_max_szint", "tsz"]
+      "inputs": [
+        "konstansok.arányok.képzettség_max_szint",
+        "tsz"
+      ]
     },
     {
       "id": "képzettség_max_szint_szekunder",
       "formula": "min(konstansok.arányok.képzettség_max_szint, tsz + konstansok.arányok.képzettség_nemprimer_max_szint_plusz)",
-      "inputs": ["konstansok.arányok.képzettség_max_szint", "tsz", "konstansok.arányok.képzettség_nemprimer_max_szint_plusz"]
+      "inputs": [
+        "konstansok.arányok.képzettség_max_szint",
+        "tsz",
+        "konstansok.arányok.képzettség_nemprimer_max_szint_plusz"
+      ]
     },
     {
       "id": "max_HM",
       "formula": "sum_where(harci_fortélyok, fok, is_mesterfegyver, 0) + harcmodor_összeg + alakzatharc_szint",
-      "inputs": ["harci_fortélyok", "harcmodor_összeg", "alakzatharc_szint"]
+      "inputs": [
+        "harci_fortélyok",
+        "harcmodor_összeg",
+        "alakzatharc_szint"
+      ]
     },
     {
       "id": "max_HM_aszimmetria",
       "formula": "floor(tsz / 2)",
-      "inputs": ["tsz"]
+      "inputs": [
+        "tsz"
+      ]
     },
     {
       "id": "páncél_struktúra_mgt",
       "formula": "lookup(struktúrák, név, páncél_alap, mgt)",
-      "inputs": ["struktúrák", "páncél_alap"]
+      "inputs": [
+        "struktúrák",
+        "páncél_alap"
+      ]
     },
     {
       "id": "páncél_struktúra_sfé_fizikai",
       "formula": "lookup(struktúrák, név, páncél_alap, sfé_fizikai)",
-      "inputs": ["struktúrák", "páncél_alap"]
+      "inputs": [
+        "struktúrák",
+        "páncél_alap"
+      ]
     },
     {
       "id": "páncél_struktúra_sfé_energia",
       "formula": "lookup(struktúrák, név, páncél_alap, sfé_energia)",
-      "inputs": ["struktúrák", "páncél_alap"]
+      "inputs": [
+        "struktúrák",
+        "páncél_alap"
+      ]
     },
     {
       "id": "páncél_merev",
       "formula": "lookup(struktúrák, név, páncél_alap, merev)",
-      "inputs": ["struktúrák", "páncél_alap"]
+      "inputs": [
+        "struktúrák",
+        "páncél_alap"
+      ]
     },
     {
       "id": "páncél_fém",
       "formula": "lookup(struktúrák, név, páncél_alap, fém)",
-      "inputs": ["struktúrák", "páncél_alap"]
+      "inputs": [
+        "struktúrák",
+        "páncél_alap"
+      ]
     },
     {
       "id": "páncél_alapanyag_mgt",
       "formula": "lookup(fémalapanyagok, anyag, páncél_fémalapanyag, mgt)",
-      "inputs": ["fémalapanyagok", "páncél_fémalapanyag"]
+      "inputs": [
+        "fémalapanyagok",
+        "páncél_fémalapanyag"
+      ]
     },
     {
       "id": "páncél_alapanyag_sfé_bónusz",
       "formula": "lookup(fémalapanyagok, anyag, páncél_fémalapanyag, sfé_bónusz)",
-      "inputs": ["fémalapanyagok", "páncél_fémalapanyag"]
+      "inputs": [
+        "fémalapanyagok",
+        "páncél_fémalapanyag"
+      ]
     },
     {
       "id": "páncél_méret_mgt",
       "formula": "lookup(méret_tábla, név, páncél_méret_illeszkedés, érték)",
-      "inputs": ["méret_tábla", "páncél_méret_illeszkedés"]
+      "inputs": [
+        "méret_tábla",
+        "páncél_méret_illeszkedés"
+      ]
     },
     {
       "id": "merevvért_csökkentés",
       "formula": "lookup(merevvért_tábla, fok, merevvért_fok, csökkentés)",
-      "inputs": ["merevvért_tábla", "merevvért_fok"]
+      "inputs": [
+        "merevvért_tábla",
+        "merevvért_fok"
+      ]
     },
     {
       "id": "páncél_csatolt_db",
       "formula": "páncél_végtagvédettség + páncél_sisak",
-      "inputs": ["páncél_végtagvédettség", "páncél_sisak"]
+      "inputs": [
+        "páncél_végtagvédettség",
+        "páncél_sisak"
+      ]
     },
     {
       "id": "páncél_lefedettség",
       "formula": "if(páncél_van, 50 + páncél_végtagvédettség * 10 + páncél_sisak * 10, 0)",
-      "inputs": ["páncél_van", "páncél_végtagvédettség", "páncél_sisak"]
+      "inputs": [
+        "páncél_van",
+        "páncél_végtagvédettség",
+        "páncél_sisak"
+      ]
     },
     {
       "id": "páncél_MGT",
       "formula": "max(0, páncél_struktúra_mgt + páncél_alapanyag_mgt + páncél_csatolt_db * if(páncél_merev, lookup(csatolt_mgt_merev, név, páncél_kidolgozottság, érték), if(páncél_fém, lookup(csatolt_mgt_fém, név, páncél_kidolgozottság, érték), lookup(csatolt_mgt_nemfém, név, páncél_kidolgozottság, érték))) + páncél_méret_mgt - tulajdonságok.erő)",
-      "inputs": ["páncél_struktúra_mgt", "páncél_alapanyag_mgt", "páncél_csatolt_db", "páncél_merev", "páncél_fém", "páncél_kidolgozottság", "csatolt_mgt_merev", "csatolt_mgt_fém", "csatolt_mgt_nemfém", "páncél_méret_mgt", "tulajdonságok.erő"]
+      "inputs": [
+        "páncél_struktúra_mgt",
+        "páncél_alapanyag_mgt",
+        "páncél_csatolt_db",
+        "páncél_merev",
+        "páncél_fém",
+        "páncél_kidolgozottság",
+        "csatolt_mgt_merev",
+        "csatolt_mgt_fém",
+        "csatolt_mgt_nemfém",
+        "páncél_méret_mgt",
+        "tulajdonságok.erő"
+      ]
     },
     {
       "id": "merevvért_TÉ_büntetés",
       "formula": "if(páncél_merev, max(0, páncél_MGT - merevvért_csökkentés), 0)",
-      "inputs": ["páncél_merev", "páncél_MGT", "merevvért_csökkentés"]
+      "inputs": [
+        "páncél_merev",
+        "páncél_MGT",
+        "merevvért_csökkentés"
+      ]
     },
     {
       "id": "fegyver_TÉ",
       "formula": "konstansok.harcérték_alap.TÉ + tulajdonságok.erő + tulajdonságok.ügyesség + tulajdonságok.gyorsaság + HM_TÉ + fegyver_harcmodor_TÉ + fegyver_alap_TÉ + fegyver_mf_TÉ + fegyver_fortély_TÉ",
-      "inputs": ["konstansok.harcérték_alap.TÉ", "tulajdonságok.erő", "tulajdonságok.ügyesség", "tulajdonságok.gyorsaság", "HM_TÉ", "fegyver_harcmodor_TÉ", "fegyver_alap_TÉ", "fegyver_mf_TÉ", "fegyver_fortély_TÉ"]
+      "inputs": [
+        "konstansok.harcérték_alap.TÉ",
+        "tulajdonságok.erő",
+        "tulajdonságok.ügyesség",
+        "tulajdonságok.gyorsaság",
+        "HM_TÉ",
+        "fegyver_harcmodor_TÉ",
+        "fegyver_alap_TÉ",
+        "fegyver_mf_TÉ",
+        "fegyver_fortély_TÉ"
+      ]
     },
     {
       "id": "fegyver_VÉ",
       "formula": "konstansok.harcérték_alap.VÉ + tulajdonságok.gyorsaság + tulajdonságok.ügyesség + HM_VÉ + fegyver_harcmodor_VÉ + fegyver_alap_VÉ + fegyver_mf_VÉ + fegyver_fortély_VÉ",
-      "inputs": ["konstansok.harcérték_alap.VÉ", "tulajdonságok.gyorsaság", "tulajdonságok.ügyesség", "HM_VÉ", "fegyver_harcmodor_VÉ", "fegyver_alap_VÉ", "fegyver_mf_VÉ", "fegyver_fortély_VÉ"]
+      "inputs": [
+        "konstansok.harcérték_alap.VÉ",
+        "tulajdonságok.gyorsaság",
+        "tulajdonságok.ügyesség",
+        "HM_VÉ",
+        "fegyver_harcmodor_VÉ",
+        "fegyver_alap_VÉ",
+        "fegyver_mf_VÉ",
+        "fegyver_fortély_VÉ"
+      ]
     },
     {
       "id": "fegyver_SP",
       "formula": "fegyver_alap_SP + min(tulajdonságok.erő, fegyver_erőbónusz_limit) + fegyver_mf_SP + fegyver_fortély_SP",
-      "inputs": ["fegyver_alap_SP", "tulajdonságok.erő", "fegyver_erőbónusz_limit", "fegyver_mf_SP", "fegyver_fortély_SP"]
+      "inputs": [
+        "fegyver_alap_SP",
+        "tulajdonságok.erő",
+        "fegyver_erőbónusz_limit",
+        "fegyver_mf_SP",
+        "fegyver_fortély_SP"
+      ]
     },
     {
       "id": "fegyver_harckeret",
       "formula": "max(0, fegyver_harcmodor_szint + tulajdonságok.gyorsaság - páncél_MGT - felszerelés_mgt + fegyver_fortély_harckeret)",
-      "inputs": ["fegyver_harcmodor_szint", "tulajdonságok.gyorsaság", "páncél_MGT", "felszerelés_mgt", "fegyver_fortély_harckeret"]
+      "inputs": [
+        "fegyver_harcmodor_szint",
+        "tulajdonságok.gyorsaság",
+        "páncél_MGT",
+        "felszerelés_mgt",
+        "fegyver_fortély_harckeret"
+      ]
     },
     {
       "id": "fegyver_támadások",
       "formula": "1 + floor(fegyver_harckeret / fegyver_sebesség)",
-      "inputs": ["fegyver_harckeret", "fegyver_sebesség"]
+      "inputs": [
+        "fegyver_harckeret",
+        "fegyver_sebesség"
+      ]
     }
   ]
 }
