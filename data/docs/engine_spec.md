@@ -919,11 +919,15 @@ Source of truth a fortélyok yaml `követelmények` mezőjéhez.
 
 Típusok:
 - `képzettség` — karakter képzettség szintje ≥ érték
-- `fortély` — karakter felvett fortély fokszáma ≥ érték
+- `fortély` — karakter felvett fortély fokszáma ≥ érték (többszörös fortélynál bármely példány teljesítheti, pl. Nyelvismeret)
 - `faj_háttér` — karakter faj háttere engedélyezi (szöveges, nem gépi)
 - `tulajdonság` — karakter tulajdonság ≥ érték
 - `háttér` — karakter leíró háttere tartalmazza (szöveges)
 - `szöveges` — nem gépileg ellenőrizhető (infó)
+
+Ellenőrzés logika:
+- `képzettség`: `karakter.képzettségek.some(k => k.név == név && k.szint >= érték)` — lista típusnál bármelyik egyezés elég (OR)
+- `fortély`: `karakter.fortélyok.some(f => f.név == név && f.fok >= érték)` — többszörös fortélynál (pl. Nyelvismeret) bármely példány teljesítheti
 
 ### Általános fortélyok
 
