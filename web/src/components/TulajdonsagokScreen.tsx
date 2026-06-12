@@ -532,7 +532,6 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
   név: string; érték: number; gameMode: boolean; onChange: (v: number) => void; fajMin?: number; fajMax?: number;
 }) {
   const [editing, setEditing] = useState(false);
-  const [showWarning, setShowWarning] = useState(false);
   const lastTap = useRef(0);
 
   useEffect(() => {
@@ -555,8 +554,6 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
       lastTap.current = 0;
     } else {
       lastTap.current = now;
-      // Single tap: toggle warning
-      if (hasWarning) setShowWarning(!showWarning);
     }
   }
 
@@ -568,7 +565,7 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
       >
         <span className="tul-label">{label}:</span>
         <span className={`tul-value ${hasWarning ? 'tul-value-warn' : ''}`}>{érték}</span>
-        {hasWarning && showWarning && (
+        {hasWarning && (
           <div className="tul-warn-info">{overLimit ? `Faj max: ${fajMax}` : `Faj min: ${fajMin}`}</div>
         )}
       </div>

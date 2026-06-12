@@ -467,9 +467,11 @@ impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexév
         - Képzettség név (kisbetű): pl. "akrobatika" → a karakter képzettség szintje
         - Számított érték: pl. "erőbónusz" → min(erő, fegyver.erőbónusz_limit)
         - A forrás-értéket `floor(érték x arány)` adja a bónuszt.
-      Követelmények logika:
+      Követelmények logika (részletes tábla: §25):
         - A követelmények lista elemei ÉS kapcsolatban vannak (mindegyiknek teljesülnie kell).
-        - Ha egy elem "név" mezője lista (pl. ["közelharc", "kardvívás"]), az VAGY kapcsolat: bármelyik teljesíti.
+        - Ha egy elem "név" mezője lista (pl. ["Közelharc", "Kardvívás"]), az VAGY kapcsolat: bármelyik teljesíti.
+        - Típusok: képzettség (szint ≥ érték), fortély (fok ≥ érték, többszörösnél bármelyik példány)
+        - UI: nem teljesülő követelmény → piros jelzés (FortelyokScreen), case-insensitive
       Többszörös fortélyok (karakter séma v2):
         - kf.név = mindig az alapnév (megegyezik a fortely yaml "név" mezőjével)
         - kf.spec_típus = megegyezik fortély_def.többszörösség.spec_típus-ával ("" ha nem többszörös)
@@ -615,15 +617,16 @@ note: A faj_misztérium mező megmondja, melyik Faj Misztérium képzettséget v
 
 ---
 
-## 21. Aktív fül — Taktikák, Helyzetek, Szituációk, Manőverek
+## 21. Aktív fül — Taktikák, Manőverek, Helyzetek, Szituációk
 
 Az Aktív fülön választható elemek és módosítóik összefoglalása.
+UI szekció sorrend: Taktikák → Manőver → Harci helyzetek → Státuszok → Szituációk → Narratív.
 A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "taktika:roham"` stb.
 
 ### Implementációs illeszkedés
 
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
-- `data/sources/taktikak.yaml` → `tables/taktikak.json` (13 taktika: módosítók, fokok, kombó szabályok)
+- `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika: módosítók, fokok, kombó szabályok)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (13 helyzet: feltétel_kulcs, infó)
 - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (9 szituáció: feltétel_kulcs, infó)
 - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: nehézség, fázisok, hatás)
@@ -668,6 +671,7 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 | Védő | VÉ:+1..+4, TÉ:-2..-8 | Érintő, 1 tám | más |
 | Teljes Védekezés | VÉ:+6, nem támad, hátrál | — | más |
 | Visszafogott | TÉ:-3/-6/-9, sebzéskocka: k10/k6/— | Kezdeményező, Kiváró, 1 tám | más |
+| Tettetés | — (informatív) | — | más |
 
 note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
@@ -717,7 +721,6 @@ note: A webapp Aktív fülön ezek toggle-ök. A pontos hatásaikat a karakterla
 
 note: "Kétkezes harc" és "Merevvért 70%" eltávolítva a szituáció dropdown-ból — automatikusan kezeltek
       (session.kétkezes_harc toggle ill. kalkulált feltétel a fortély módosítóban).
-| Célzás                 | `szituáció:célzás`                 | távharc               |
 
 ### 21.4 Manőverek
 
@@ -787,7 +790,7 @@ Forrás: md/080_hatasok_es_statuszok.md, md/081_hatasok.md, md/082_statuszok.md
 | **Státuszok** | `statuszok.yaml` | Állapotok fokozatokkal, strukturált hatáslistával (19 db) |
 
 A Státuszok hatásai strukturáltak és gépileg kumulálhatók a Hatás poolba.
-A webapp feladata: informatív kijelzés + jövőbeli Hatás pool aggregálás.
+A webapp feladata: informatív kijelzés + Hatás pool aggregálás (implementálva: AktivScreen).
 
 ### 22.2 Hatás operátorok (hatasok.yaml)
 
@@ -916,6 +919,9 @@ Boolean↔number normalizálás: `true` = 1, `false` = 0 (reactive engine number
 ## §25 Fortély követelmények
 
 Source of truth a fortélyok yaml `követelmények` mezőjéhez.
+
+Generálás: `generate_tables.py` → `fortelyok.json` (fokok[].követelmények lista átpasszolva).
+UI validáció: `FortelyokScreen.tsx` → `FortelyRow` komponens (runtime ellenőrzés karakter adatok ellen).
 
 Típusok:
 - `képzettség` — karakter képzettség szintje ≥ érték

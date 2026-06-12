@@ -110,11 +110,11 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Elem | Típus | Leírás |
 |------|-------|--------|
 | Hatás pool box | info szekció (felül) | 4 alszekció: Harcérték módosítók, Aktív Hatások, Fortély emlékeztetők, Narratív módosítók |
-| Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás |
+| Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
+| Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
 | Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend |
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus |
 | Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
-| Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, kiválasztott infó kijelzés |
 | Narratív módosítók | input + dropdown + gomb | Szabad szöveg + Előny/Hátrány érték |
 | Fegyver jobb/bal | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" |
 | Kétkezes harc | field-btn toggle | Csak ha mindkét kézben fegyver, kézi be/kikapcsolás |
@@ -142,7 +142,6 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Viselkedés
 - Minden módosítás azonnal frissíti a session-t → Harc fül értékei reagálnak
-- TODO: infó box helyzeteknél/manővereknél (hatás leírás)
 
 ---
 
@@ -237,7 +236,7 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
 - Nem reszponzív, fix layout
 - Szerkesztő módban: double-tap (350ms) → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
 - Game módban: read-only
-- **Faj limit warning**: ha az érték meghaladja/alulmúlja a kiválasztott faj min/max keretét → sárga szín + koppintásra lenyíló info (`Faj max: X` vagy `Faj min: X`)
+- **Faj limit warning**: ha az érték meghaladja/alulmúlja a kiválasztott faj min/max keretét → sárga szín + automatikusan megjelenő info box (`Faj max: X` vagy `Faj min: X`), nem zárható kattintással
 
 ### Képzettségek (alatta, csoport-bontásban)
 - Csoportok sorrendje: Harci → Misztikus → Fizikai → Világi → Alvilági → Művészeti → Tudományos
@@ -364,6 +363,18 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
   - Követelmény (ha van)
   - Kiterjeszti (normál + erős képzettség lista, zöld szín)
 
+### Követelmény ellenőrzés
+- Gépileg ellenőrizhető típusok: `képzettség` (szint), `fortély` (fok)
+- Nem teljesülő követelmény: piros bal border (`.fort-kov-hiba`) + automatikus piros info sor ("⚠ Követelmény: X ≥ Y")
+- OR lista (név tömbben): bármelyik egyezés elegendő
+- Harcmodor összevonás: ha a követelmény lista összes eleme harcmodor → "Harcmodor ≥ X" (rövidített)
+- Többszörös fortély követelmény (pl. Nyelvismeret): bármelyik példány teljesítheti
+- Case-insensitive összehasonlítás mindkét típusnál
+- Rendezés: locked fortélyok előre → azonos nevűek együtt (ABC) → azon belül fok desc
+
+### Mód váltás
+- Game → Szerkesztő váltáskor: info accordion resetelődik (nyitott panel bezáródik)
+
 ---
 
 ## 4b. Harcértékek fül/screen (editOnly: true — Game módban nem látszik)
@@ -434,6 +445,7 @@ HM/CM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban
 Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 ### Tartalom
+- **Faj háttér**: read-only chip (karakter.hátterek.faj), kattintásra navigál Tulajdonságok fülre
 - **Leíró hátterek**: kategóriánként (Származás, Jellem, Küllem, Fóbia) — szövegfelhő, dupla katt toggle
 - **Karma hátterek**: egyetlen csoport — szövegfelhő, dupla katt toggle
 

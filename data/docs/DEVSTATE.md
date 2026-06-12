@@ -7,7 +7,7 @@
 ├── data/                      ← Adatfájlok
 │   ├── docs/                  ← Specifikációk, fejlesztői doksik
 │   │   ├── DEVSTATE.md        ← Fejlesztési állapot (ez a fájl)
-│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§20)
+│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§25)
 │   │   └── gui_spec.md        ← GUI spec (screen-ek, viselkedés, formázás)
 │   ├── sources/               ← YAML forrásadatok (amiből generálunk)
 │   │   ├── konstansok.yaml    ← Központi konstansok (forrás, JSON-ba generálódik)
@@ -71,10 +71,10 @@
 
 ## Elkészült
 - ✅ Adatmodell: 5 schema (fortely, kepzettseg, karakter, pancel, fegyver, faj)
-- ✅ Konstansok: teljes (KP, arányok, páncél, harcmodorok, mesterfegyver, kétkezes harc, merevvért, pajzs, aura, nyelvek, feltétel prefixek)
-- ✅ Engine spec: 20 szekció, validálva a szabályrendszer + ODS ellen
+- ✅ Konstansok: teljes (KP, arányok, páncél, harcmodorok, mesterfegyver, kétkezes harc, merevvért, pajzs, aura, feltétel prefixek, fegyver_kategória_harcmodor, több_támadás_TÉ_levonás)
+- ✅ Engine spec: 25 szekció (§1-§25), validálva a szabályrendszer + ODS ellen
 - ✅ Engine core: TypeScript implementáció, tesztelve 8.szintű karakter ellen (15/18 ✅, maradék 3 javítva)
-- ✅ GUI spec: 9+1 screen leírás, formázás, viselkedés
+- ✅ GUI spec: 8 screen + 2 overlay leírás, formázás, viselkedés
 - ✅ Harc fül UI: KÉ/SFÉ/VÉ csökk/MP boxok, fegyvertábla, ÉP rubrika táblázat (sebesülés/gyógyulás/compaction/TÉ levonás)
   - VÉ csökkenés: label "VÉ csökkenés", negált kijelzés (-3, -5...), gombok: -1/-2/-3/+1/⟲
     - VÉ tábla flash: sárga (csökkenéskor), zöld (+1 visszaadáskor), 1s fade-out
@@ -121,6 +121,11 @@
   - KP logika: `kp_perfok` per fortély, base name lookup többszörös fortélyoknál
   - Törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
   - Game mód: koppintás → accordion info (leírás, hatás, követelmény, kiterjesztések)
+  - Követelmény ellenőrzés: piros bal border + "⚠ Követelmény:" info (automatikusan jelenik meg)
+    - Típusok: képzettség (szint ellenőrzés, OR lista bármelyik elég), fortély (fok ellenőrzés, többszörös bármelyik példány)
+    - Harcmodor lista összevonás: ha mind harcmodor → "Harcmodor ≥ X" (lista `data.konstansok.harcmodorok`-ból)
+  - Rendezés: locked fortélyok előre → azonos nevűek együtt (ABC) → azon belül fok desc
+  - Game mód váltáskor info accordion resetelődik
   - Rövid koppintás szerkesztő módban: nem csinál semmit (csak double-tap)
 - ✅ Build pipeline: YAML → JSON generálás automatizálva
   - `data/generate_tables.py`: központi script (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
@@ -134,7 +139,7 @@
   - Topológiai sorrend: automatikus dependency resolution (skaláris Context + ArrayContext)
   - HarcScreen: ÉP, KÉ, manőver pont, SFÉ, páncél_MGT, fegyver TÉ/VÉ/SP/támadások — mind reactive engine-ből
   - App KP sáv: teljes KP lánc reactive engine-ből
-  - TS-ben marad (TODO): Fájdalomtűrés enyhítés (küszöb-tábla lookup)
+  - Fájdalomtűrés enyhítés: TS-ben (küszöb-tábla lookup konstansokból, HarcScreen inline)
 - ✅ tables/kepzettsegek.json, kiterjesztesek.json, fajok.json, faj_tulajdonsag_keretek.json, primer_fortelyok.json, fortelyok.json, konstansok.json
 - ✅ Context menu prevention (onContextMenu preventDefault + CSS touch-callout + user-select)
 - ✅ Escape gomb: minden popup overlay bezárható Escape-pel
@@ -254,12 +259,12 @@
   - `szituáció:fegyverrántás` → `harci_helyzet:fegyverrántás`
   - `szituáció:roham` → `taktika:roham`
 - ✅ Aktív fül adatforrások (YAML → JSON):
-  - `data/sources/taktikak.yaml` → `tables/taktikak.json` (13 taktika, kombó_mód/lista, fokozatos, megkötések)
+  - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika, kombó_mód/lista, fokozatos, megkötések)
   - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (13 helyzet, feltétel_kulcs, infó)
   - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (9 szituáció)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
   - `data/sources/statuszok.yaml` → `tables/statuszok.json` (19 státusz, kategória, fokok+alcím+strukturált hatások)
-  - `data/sources/hatasok.yaml` → `tables/hatasok.json` (7 hatás operátor: előny, hátrány, arányos, duplázás, letilt, max_limit, szöveges)
+  - `data/sources/hatasok.yaml` → `tables/hatasok.json` (8 hatás operátor: előny, hátrány, arányos, duplázás, letilt, max_limit, szöveges, enyhít)
   - `data/sources/esemenyek.yaml` → `tables/esemenyek.json` (21 esemény/célpont: harci, próba, fizikai, képesség csoportok)
   - Schema validáció beépítve a `generate_tables.py`-be (`validate_aktiv_ful()`, `validate_hatasok()`, `validate_esemenyek()`, `validate_statuszok()`)
   - Referenciális integritás: státusz hatás.operátor → hatasok id, hatás.cél → esemenyek id
@@ -269,16 +274,19 @@
   - Fegyver jobb/bal: inline field-btn dropdown, kétkezes harc toggle (csak ha mindkét kézben fegyver)
   - Pajzs kézben / Páncél viselve: field-btn toggle-ök (hatással a Harc fül SFÉ-re és VÉ-re)
   - Taktikák: overlay picker (ABC, fokozatos: 📶 jelzés, két lépéses fokválasztó), chip katt → fok módosító picker
+  - Taktika chip: kétsoros (felül név+fok bold, alul módosítók szürkén pl. "TÉ:+2 VÉ:-4")
   - Taktika megkötések: harci_helyzet/tiltott, harcmodor/tiltott, támadások/min runtime validáció
+  - Manőver: overlay picker (Általános/Belharci kategóriák, nehézség+fázisok+hatás), infó a box-ban (Nehézség+fázisok | hatás)
+  - Szekció sorrend: Taktikák → Manőver → Harci helyzetek → Státuszok → Szituációk → Narratív módosítók
   - Harci helyzetek: overlay picker (név + infó, ABC)
   - Szituációk: overlay picker (név + infó, ABC)
-  - Manőver: overlay picker (Általános/Belharci kategóriák, nehézség+fázisok+hatás), kiválasztott infó kijelzés
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
   - Hatás pool box (felül, 4 szekció): Harcérték módosítók | Aktív Hatások | Fortély emlékeztetők | Narratív módosítók
   - Narratív módosítók: szabad szöveg input + Előny/Hátrány választó + törlés
   - Több támadás TÉ levonás: konstansokból (`több_támadás_TÉ_levonás`), generikusan (taktika +3 kioltja)
   - Minden picker: Escape + mellé katt bezárja
 - ✅ Hátterek fül (HatterekScreen.tsx)
+  - Faj háttér: read-only chip (karakter.hátterek.faj), kattintásra navigál Tulajdonságok fülre
   - Szövegfelhő: Leíró hátterek (Származás/Jellem/Küllem/Fóbia) + Karma hátterek
   - Adatforrás: `data/sources/hatterek.yaml` → `tables/hatterek.json`
   - Dupla katt toggle (aktív ↔ inaktív), kijelöltek előre + ABC sorrend
@@ -324,7 +332,9 @@
 1. **Taktika kombó inkonzisztencia** — ✅ KÉSZ (szimmetrizálva, megkötések felvíve)
 2. **Aktív fül** — ✅ KÉSZ (taktika/helyzet/szituáció/manőver/státusz picker, Hatás pool, narratív módosítók, fegyver jobb/bal/kétkezes)
 3. **Hátterek fül** — ✅ KÉSZ (szövegfelhő, data layer-ből)
-4. **Távharc fül** — VÉ kalkulátor implementáció (§17)
+4. **Fortély követelmény ellenőrzés** — ✅ KÉSZ (§25 engine_spec, yaml-ok kitöltve, UI: piros jelzés + info)
+5. **Távharc fül** — VÉ kalkulátor implementáció (§17)
+6. **Távharc fortélyok yaml** — 10 db hiányzik (Gyors hajítás, Gyors lövés, Mesterlövész, stb.)
 
 ## Új chat nyitásakor olvasd be ezeket
 - `/mnt/c/repo/szilank.code/data/docs/DEVSTATE.md` (ez a fájl)
