@@ -1,38 +1,41 @@
----
 schema_version: 1
-
-név: "Kézműves: Páncélkovács"
-névkomment: ""
+név: 'Kézműves: Páncélkovács'
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "általános"
+csoport: általános
 leírások:
-  - text: "Fém ötvözetekből páncélok kovácsolása."
+- text: Fém ötvözetekből páncélok kovácsolása.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
-  normál: ["Kézművesség"]
+  normál:
+  - Kézművesség
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Dobhatsz alap szinten Kézművesség képzettségre páncél kovácsolásakor."
-    módosítók: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "+2 bónusszal dobhatsz Kézművesség képzettségre páncél kovácsolásakor."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Dobhatsz alap szinten Kézművesség képzettségre páncél kovácsolásakor.
+  módosítók: ''
+- fok: 2
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: +2 bónusszal dobhatsz Kézművesség képzettségre páncél kovácsolásakor.
+  módosítók:
+  - cél: képzettségpróba
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Kézművesség (páncél kovácsolás)
+    alcél: Kézművesség
 todo:
-  - text: ""
+- text: ''

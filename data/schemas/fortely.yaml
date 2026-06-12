@@ -39,12 +39,14 @@ fokok:
     hatástext:
       - text: ""
     módosítók:                # Gépesíthető hatások. Üres ("") ha nincs, vagy nem gépesíthető.
-      - cél: ""               # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / harckeret / manőver:név / MGT_TÉ_büntetés
+      - cél: ""               # Mit módosít: KÉ / TÉ / VÉ / CÉ / SP / SFÉ / harckeret / manőver:név / MGT_TÉ_büntetés / tulajdonságpróba / képzettségpróba / érzék_próba
+        alcél: ""             # Opcionális: konkrét tulajdonság/képzettség neve (pl. "Edzettség", "Zárnyitás", "Látás")
         érték: 0              # Fix bónusz (flat mód esetén)
-        mód: "flat"           # "flat": fix érték. "scaled": forrás x arány. "override": felülírja az alapértéket.
+        mód: "flat"           # "flat": fix érték. "scaled": forrás x arány. "override": felülírja. "enyhít": Hatás fok csökkentés.
         forrás: ""            # Arányos módnál: melyik értékből (képzettség neve, stb.)
         arány: 0              # Arányos módnál: szorzó (pl. 0.5, 1)
-        feltétel: ""          # Mikor aktív: "" = MINDIG (karakter lapra számítandó). Egyébként szituáció neve.
+        feltétel: ""          # Mikor aktív: "" = MINDIG. Egyébként "prefix:érték" formátum.
+        megjegyzés: ""        # Opcionális: emberi olvasásra (pl. "méregellenállás dobásakor")
 
 todo:
   - text: ""

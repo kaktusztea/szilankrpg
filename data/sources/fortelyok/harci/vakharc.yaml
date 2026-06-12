@@ -1,66 +1,63 @@
----
 schema_version: 1
-
-név: "Vakharc"
-névkomment: ""
+név: Vakharc
+névkomment: ''
 maxfok: 3
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Sötétben apró neszek, megérzések csökkentik a látáshiány hatását."
+- text: Sötétben apró neszek, megérzések csökkentik a látáshiány hatását.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Érzék(látás) büntetés 1 fokot enyhül."
-      - text: "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból."
-    módosítók:
-      - cél: "érzék_próba"
-        érték: 1
-        mód: "enyhít"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Érzék(látás) büntetés 2 fokot enyhül."
-      - text: "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból + Támadó TÉ Előnyből."
-    módosítók:
-      - cél: "érzék_próba"
-        érték: 2
-        mód: "enyhít"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-  - fok: 3
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Érzék(látás) büntetés 3 fokot enyhül (auto-kudarc is megszűnik)."
-      - text: "Láthatatlan ellenfélnél: mindent megszüntet."
-      - text: "Túlterhelt érzékek esetén is működik."
-    módosítók:
-      - cél: "érzék_próba"
-        érték: 3
-        mód: "enyhít"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Érzék(látás) büntetés 1 fokot enyhül.
+  - text: 'Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból.'
+  módosítók:
+  - cél: érzék_próba
+    érték: 1
+    mód: enyhít
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    alcél: Látás
+- fok: 2
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Érzék(látás) büntetés 2 fokot enyhül.
+  - text: 'Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból + Támadó TÉ Előnyből.'
+  módosítók:
+  - cél: érzék_próba
+    érték: 2
+    mód: enyhít
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    alcél: Látás
+- fok: 3
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Érzék(látás) büntetés 3 fokot enyhül (auto-kudarc is megszűnik).
+  - text: 'Láthatatlan ellenfélnél: mindent megszüntet.'
+  - text: Túlterhelt érzékek esetén is működik.
+  módosítók:
+  - cél: érzék_próba
+    érték: 3
+    mód: enyhít
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    alcél: Látás
 todo:
-  - text: ""
+- text: ''

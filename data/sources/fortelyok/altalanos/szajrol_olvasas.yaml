@@ -1,32 +1,34 @@
----
 schema_version: 1
-
-név: "Szájról olvasás"
-névkomment: ""
+név: Szájról olvasás
+névkomment: ''
 maxfok: 1
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "általános"
+csoport: általános
 leírások:
-  - text: "Beszéd leolvasása a célszemély szájáról."
+- text: Beszéd leolvasása a célszemély szájáról.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája."
-    követelmények: ""
-    hatástext:
-      - text: "Beszéd szájról olvasása szituációban az Érzékenység Tulajdonságpróba Célszámára -3 módosítót kapsz."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája.
+  követelmények: ''
+  hatástext:
+  - text: Beszéd szájról olvasása szituációban az Érzékenység Tulajdonságpróba Célszámára -3 módosítót kapsz.
+  módosítók:
+  - cél: tulajdonságpróba
+    érték: 3
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Érzékenység próba célszám csökkentés (szájról olvasás)
+    alcél: Érzékenység
 todo:
-  - text: ""
+- text: ''

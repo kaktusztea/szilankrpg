@@ -1,44 +1,62 @@
----
 schema_version: 1
-
-név: "Méregálló"
-névkomment: ""
+név: Méregálló
+névkomment: ''
 maxfok: 3
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "általános"
+csoport: általános
 leírások:
-  - text: "Szervezeted ellenállóbb a mérgekkel."
+- text: Szervezeted ellenállóbb a mérgekkel.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Méregellenállás dobásakor Edzettség próbára: +1."
-    módosítók: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Méregellenállás dobásakor Edzettség próbára: +2."
-    módosítók: ""
-  - fok: 3
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Méregellenállás dobásakor Edzettség próbára: +3."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: 'Méregellenállás dobásakor Edzettség próbára: +1.'
+  módosítók:
+  - cél: tulajdonságpróba
+    érték: 1
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Edzettség (méregellenállás)
+    alcél: Edzettség
+- fok: 2
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: 'Méregellenállás dobásakor Edzettség próbára: +2.'
+  módosítók:
+  - cél: tulajdonságpróba
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Edzettség (méregellenállás)
+    alcél: Edzettség
+- fok: 3
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: 'Méregellenállás dobásakor Edzettség próbára: +3.'
+  módosítók:
+  - cél: tulajdonságpróba
+    érték: 3
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Edzettség (méregellenállás)
+    alcél: Edzettség
 todo:
-  - text: ""
+- text: ''

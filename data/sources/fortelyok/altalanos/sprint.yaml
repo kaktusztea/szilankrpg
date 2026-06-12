@@ -1,32 +1,34 @@
----
 schema_version: 1
-
-név: "Sprint"
-névkomment: ""
+név: Sprint
+névkomment: ''
 maxfok: 1
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "általános"
+csoport: általános
 leírások:
-  - text: "Rövidtávú futásban nincs párod."
+- text: Rövidtávú futásban nincs párod.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Rövid távú futásnál Gyorsaság próbára +2 bónusz jár."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Rövid távú futásnál Gyorsaság próbára +2 bónusz jár.
+  módosítók:
+  - cél: tulajdonságpróba
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Gyorsaság próba rövid távú futásnál
+    alcél: Gyorsaság
 todo:
-  - text: ""
+- text: ''

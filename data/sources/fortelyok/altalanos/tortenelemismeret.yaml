@@ -1,40 +1,44 @@
----
 schema_version: 1
-
-név: "Történelemismeret"
-névkomment: ""
+név: Történelemismeret
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "általános"
+csoport: általános
 leírások:
-  - text: "A történelem írott részének, múlt eseményeinek, legendáinak ismerete."
+- text: A történelem írott részének, múlt eseményeinek, legendáinak ismerete.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
-  erős: ["Hadászat", "Lexikum"]
-
+  erős:
+  - Hadászat
+  - Lexikum
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Már dobhatsz Lexikum próbát történelmi témában."
-      - text: "Ősi kultúrák nélkül a világtörténelem ismerete."
-    módosítók: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "A Lexikum próbát +2 bónusszal dobhatod történelmi témában."
-      - text: "Magában foglalja az ősi kultúrák ismeretét is (csak történelmüket és legendáikat)."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Már dobhatsz Lexikum próbát történelmi témában.
+  - text: Ősi kultúrák nélkül a világtörténelem ismerete.
+  módosítók: ''
+- fok: 2
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: A Lexikum próbát +2 bónusszal dobhatod történelmi témában.
+  - text: Magában foglalja az ősi kultúrák ismeretét is (csak történelmüket és legendáikat).
+  módosítók:
+  - cél: képzettségpróba
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Lexikum próba történelmi témában
+    alcél: Lexikum
 todo:
-  - text: ""
+- text: ''

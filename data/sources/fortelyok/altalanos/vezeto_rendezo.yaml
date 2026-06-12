@@ -1,44 +1,54 @@
----
 schema_version: 1
-
-név: "Vezető: Rendező"
-névkomment: ""
+név: 'Vezető: Rendező'
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "általános"
+csoport: általános
 leírások:
-  - text: "Színtársulat vezetése, koordinálása."
+- text: Színtársulat vezetése, koordinálása.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: "Előadóművészet"
-        érték: 6
-        típus: "képzettség"
-    hatástext:
-      - text: "+2 bónusz csoportos Előadóművészet értékre."
-    módosítók: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények:
-      - név: "Előadóművészet"
-        érték: 9
-        típus: "képzettség"
-    hatástext:
-      - text: "+4 bónusz csoportos Előadóművészet értékre."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név: Előadóművészet
+    érték: 6
+    típus: képzettség
+  hatástext:
+  - text: +2 bónusz csoportos Előadóművészet értékre.
+  módosítók:
+  - cél: képzettségpróba
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: csoportos Előadóművészet értékre
+    alcél: Előadóművészet
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név: Előadóművészet
+    érték: 9
+    típus: képzettség
+  hatástext:
+  - text: +4 bónusz csoportos Előadóművészet értékre.
+  módosítók:
+  - cél: képzettségpróba
+    érték: 4
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: csoportos Előadóművészet értékre
+    alcél: Előadóművészet
 todo:
-  - text: ""
+- text: ''

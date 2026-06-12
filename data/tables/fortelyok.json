@@ -88,7 +88,18 @@
           "Különleges csomók ismerete."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Ügyesség ellenpróba (csomózás)",
+            "alcél": "Ügyesség"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -97,7 +108,18 @@
           "Mestercsomók ismerete."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Ügyesség ellenpróba (csomózás)",
+            "alcél": "Ügyesség"
+          }
+        ]
       }
     ]
   },
@@ -119,7 +141,18 @@
           "Alvás közben dobott Észlelés próbádra +2 bónusz jár."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Észlelés próba alvás közben",
+            "alcél": "Észlelés"
+          }
+        ]
       }
     ]
   },
@@ -145,7 +178,18 @@
           "Ismered a boncolás tudományát. Méregkeverés képzettségre: +2 bónusz."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Méregkeverés képzettségre",
+            "alcél": "Méregkeverés"
+          }
+        ]
       }
     ]
   },
@@ -202,7 +246,18 @@
           "Fájdalomtűrés próbára: +2"
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Fájdalomtűrés próba",
+            "alcél": "Fájdalomtűrés"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -210,7 +265,18 @@
           "Fájdalomtűrés próbára: +4"
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Fájdalomtűrés próba",
+            "alcél": "Fájdalomtűrés"
+          }
+        ]
       }
     ]
   },
@@ -233,7 +299,18 @@
           "Rövidtávfutásnál Gyorsaság próbára: +1."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Edzettség próba hosszútávfutáskor",
+            "alcél": "Edzettség"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -242,7 +319,18 @@
           "Rövidtávfutásnál Gyorsaság próbára: +2."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Edzettség próba hosszútávfutáskor",
+            "alcél": "Edzettség"
+          }
+        ]
       }
     ]
   },
@@ -420,7 +508,18 @@
           "+2 bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Kézművesség (fegyver kovácsolás)",
+            "alcél": "Kézművesség"
+          }
+        ]
       }
     ]
   },
@@ -452,7 +551,18 @@
           "+2 bónusszal dobhatsz Kézművesség képzettségre páncél kovácsolásakor."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Kézművesség (páncél kovácsolás)",
+            "alcél": "Kézművesség"
+          }
+        ]
       }
     ]
   },
@@ -474,7 +584,18 @@
           "Hosszútávú úszás, futás vagy tartós igénybevételnél Edzettség próbára: +1."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Edzettség próba tartós igénybevételnél",
+            "alcél": "Edzettség"
+          }
+        ]
       }
     ]
   },
@@ -518,7 +639,18 @@
           "Ügyesség ellenpróbához: +2"
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Ügyesség ellenpróba (szabadulás)",
+            "alcél": "Ügyesség"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -526,7 +658,18 @@
           "Ügyesség ellenpróbához: +4"
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Ügyesség ellenpróba (szabadulás)",
+            "alcél": "Ügyesség"
+          }
+        ]
       }
     ]
   },
@@ -554,7 +697,18 @@
           "A kapcsolódó, kiterjesztett képzettségek követelményeként megszünteti a kiterjesztés-büntetést."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Zárnyitás képzettségre",
+            "alcél": "Zárnyitás"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -563,7 +717,18 @@
           "A kapcsolódó képzettségek kiterjesztésekor már Előny+1 bónuszt is ad."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Zárnyitás képzettségre",
+            "alcél": "Zárnyitás"
+          }
+        ]
       }
     ]
   },
@@ -610,7 +775,18 @@
           "Méregellenállás dobásakor Edzettség próbára: +1."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Edzettség (méregellenállás)",
+            "alcél": "Edzettség"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -618,7 +794,18 @@
           "Méregellenállás dobásakor Edzettség próbára: +2."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Edzettség (méregellenállás)",
+            "alcél": "Edzettség"
+          }
+        ]
       },
       {
         "fok": 3,
@@ -626,7 +813,18 @@
           "Méregellenállás dobásakor Edzettség próbára: +3."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Edzettség (méregellenállás)",
+            "alcél": "Edzettség"
+          }
+        ]
       }
     ]
   },
@@ -752,7 +950,18 @@
           "Rövid távú futásnál Gyorsaság próbára +2 bónusz jár."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Gyorsaság próba rövid távú futásnál",
+            "alcél": "Gyorsaság"
+          }
+        ]
       }
     ]
   },
@@ -796,7 +1005,18 @@
           "Beszéd szájról olvasása szituációban az Érzékenység Tulajdonságpróba Célszámára -3 módosítót kapsz."
         ],
         "követelmény": "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája.",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Érzékenység próba célszám csökkentés (szájról olvasás)",
+            "alcél": "Érzékenység"
+          }
+        ]
       }
     ]
   },
@@ -885,7 +1105,18 @@
           "Magában foglalja az ősi kultúrák ismeretét is (csak történelmüket és legendáikat)."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Lexikum próba történelmi témában",
+            "alcél": "Lexikum"
+          }
+        ]
       }
     ]
   },
@@ -916,7 +1147,18 @@
           "Hosszú távú úszás esetén Edzettség próbára: +2."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Edzettség próba hosszú távú úszásnál",
+            "alcél": "Edzettség"
+          }
+        ]
       }
     ]
   },
@@ -938,7 +1180,18 @@
           "+2 bónusz csoportos Lexikum értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Lexikum értékre",
+            "alcél": "Lexikum"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -946,7 +1199,18 @@
           "+4 bónusz csoportos Lexikum értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Lexikum értékre",
+            "alcél": "Lexikum"
+          }
+        ]
       }
     ]
   },
@@ -968,7 +1232,18 @@
           "+2 bónusz csoportos Hajózás értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Hajózás értékre",
+            "alcél": "Hajózás"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -976,7 +1251,18 @@
           "+4 bónusz csoportos Hajózás értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Hajózás értékre",
+            "alcél": "Hajózás"
+          }
+        ]
       }
     ]
   },
@@ -998,7 +1284,18 @@
           "+2 bónusz csoportos Nyomozás értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Nyomozás értékre",
+            "alcél": "Nyomozás"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -1006,7 +1303,18 @@
           "+4 bónusz csoportos Nyomozás értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Nyomozás értékre",
+            "alcél": "Nyomozás"
+          }
+        ]
       }
     ]
   },
@@ -1028,7 +1336,18 @@
           "+2 bónusz csoportos Orvoslás értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Orvoslás értékre",
+            "alcél": "Orvoslás"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -1036,7 +1355,18 @@
           "+4 bónusz csoportos Orvoslás értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Orvoslás értékre",
+            "alcél": "Orvoslás"
+          }
+        ]
       }
     ]
   },
@@ -1058,7 +1388,18 @@
           "+2 bónusz csoportos Előadóművészet értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Előadóművészet értékre",
+            "alcél": "Előadóművészet"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -1066,7 +1407,18 @@
           "+4 bónusz csoportos Előadóművészet értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Előadóművészet értékre",
+            "alcél": "Előadóművészet"
+          }
+        ]
       }
     ]
   },
@@ -1088,7 +1440,18 @@
           "+2 bónusz csoportos Kvantikum értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Kvantikum értékre",
+            "alcél": "Kvantikum"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -1096,7 +1459,18 @@
           "+4 bónusz csoportos Kvantikum értékre."
         ],
         "követelmény": "",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "képzettségpróba",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "csoportos Kvantikum értékre",
+            "alcél": "Kvantikum"
+          }
+        ]
       }
     ]
   },
@@ -1163,7 +1537,18 @@
           "2x messzebbről meghallasz bármit, mint egy átlagos ember."
         ],
         "követelmény": "Kapcsolódó Faj Háttér szükséges.",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "érzék_próba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Hallás Tulajdonságpróba",
+            "alcél": "Hallás"
+          }
+        ]
       }
     ]
   },
@@ -1187,7 +1572,18 @@
           "Infralátásra és Ultralátásra is vonatkozik."
         ],
         "követelmény": "Kapcsolódó Faj Háttér szükséges.",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "érzék_próba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Látás Tulajdonságpróba",
+            "alcél": "Látás"
+          }
+        ]
       }
     ]
   },
@@ -1212,7 +1608,18 @@
           "Egyszerre több szagot képes érezni."
         ],
         "követelmény": "Kapcsolódó Faj Háttér szükséges.",
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "érzék_próba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Szaglás Tulajdonságpróba",
+            "alcél": "Szaglás"
+          }
+        ]
       }
     ]
   },
@@ -3240,7 +3647,8 @@
             "mód": "enyhít",
             "forrás": "",
             "arány": 0,
-            "feltétel": ""
+            "feltétel": "",
+            "alcél": "Látás"
           }
         ]
       },
@@ -3258,7 +3666,8 @@
             "mód": "enyhít",
             "forrás": "",
             "arány": 0,
-            "feltétel": ""
+            "feltétel": "",
+            "alcél": "Látás"
           }
         ]
       },
@@ -3277,7 +3686,8 @@
             "mód": "enyhít",
             "forrás": "",
             "arány": 0,
-            "feltétel": ""
+            "feltétel": "",
+            "alcél": "Látás"
           }
         ]
       }

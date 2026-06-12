@@ -1,32 +1,34 @@
----
 schema_version: 1
-
-név: "Kitartás"
-névkomment: ""
+név: Kitartás
+névkomment: ''
 maxfok: 1
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "általános"
+csoport: általános
 leírások:
-  - text: "Kemény vagy mint egy rozsomák."
+- text: Kemény vagy mint egy rozsomák.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Hosszútávú úszás, futás vagy tartós igénybevételnél Edzettség próbára: +1."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: 'Hosszútávú úszás, futás vagy tartós igénybevételnél Edzettség próbára: +1.'
+  módosítók:
+  - cél: tulajdonságpróba
+    érték: 1
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Edzettség próba tartós igénybevételnél
+    alcél: Edzettség
 todo:
-  - text: ""
+- text: ''

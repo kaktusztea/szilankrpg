@@ -215,7 +215,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               <span className="hatas-pool-title">Fortély emlékeztetők</span>
               <div className="hatas-pool-items">
                 {fortélyEmlékeztetők.map((fe, i) => (
-                  <span key={i} className="hatas-pool-item"><strong className="fortely-nev">{fe.név}:</strong> {fe.hatás}</span>
+                  <span key={i} className="hatas-pool-item"><strong className="fortely-nev">{fe.név} ({fe.fok}):</strong> {fe.hatás}</span>
                 ))}
               </div>
             </div>

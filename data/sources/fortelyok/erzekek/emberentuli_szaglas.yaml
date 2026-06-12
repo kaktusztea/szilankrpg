@@ -1,35 +1,37 @@
----
 schema_version: 1
-
-név: "Emberentúli szaglás"
-névkomment: ""
+név: Emberentúli szaglás
+névkomment: ''
 maxfok: 1
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "érzékek"
+csoport: érzékek
 leírások:
-  - text: "Fajhoz felvehető Érzék-fortély. Különlegesen jó a szaglásod."
+- text: Fajhoz felvehető Érzék-fortély. Különlegesen jó a szaglásod.
 megjegyzések:
-  - text: "Csak karakteralkotáskor vehető fel, vagy mágia hatására."
-
+- text: Csak karakteralkotáskor vehető fel, vagy mágia hatására.
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: "Kapcsolódó Faj Háttér szükséges."
-    követelmények: ""
-    hatástext:
-      - text: "+2 szaglás Tulajdonságpróbákra."
-      - text: "2x messzebbről megérzel szagokat."
-      - text: "Olyan próbákat dobhatsz, amelyeket átlag ember nem."
-      - text: "Egyszerre több szagot képes érezni."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: Kapcsolódó Faj Háttér szükséges.
+  követelmények: ''
+  hatástext:
+  - text: +2 szaglás Tulajdonságpróbákra.
+  - text: 2x messzebbről megérzel szagokat.
+  - text: Olyan próbákat dobhatsz, amelyeket átlag ember nem.
+  - text: Egyszerre több szagot képes érezni.
+  módosítók:
+  - cél: érzék_próba
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: Szaglás Tulajdonságpróba
+    alcél: Szaglás
 todo:
-  - text: ""
+- text: ''

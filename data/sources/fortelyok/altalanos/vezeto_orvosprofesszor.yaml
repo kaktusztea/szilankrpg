@@ -1,44 +1,54 @@
----
 schema_version: 1
-
-név: "Vezető: Orvosprofesszor"
-névkomment: ""
+név: 'Vezető: Orvosprofesszor'
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "általános"
+csoport: általános
 leírások:
-  - text: "Koordinálod az alád tartozó orvosok, gyógyítók munkáját."
+- text: Koordinálod az alád tartozó orvosok, gyógyítók munkáját.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: "Orvoslás"
-        érték: 6
-        típus: "képzettség"
-    hatástext:
-      - text: "+2 bónusz csoportos Orvoslás értékre."
-    módosítók: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények:
-      - név: "Orvoslás"
-        érték: 9
-        típus: "képzettség"
-    hatástext:
-      - text: "+4 bónusz csoportos Orvoslás értékre."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név: Orvoslás
+    érték: 6
+    típus: képzettség
+  hatástext:
+  - text: +2 bónusz csoportos Orvoslás értékre.
+  módosítók:
+  - cél: képzettségpróba
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: csoportos Orvoslás értékre
+    alcél: Orvoslás
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név: Orvoslás
+    érték: 9
+    típus: képzettség
+  hatástext:
+  - text: +4 bónusz csoportos Orvoslás értékre.
+  módosítók:
+  - cél: képzettségpróba
+    érték: 4
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+    megjegyzés: csoportos Orvoslás értékre
+    alcél: Orvoslás
 todo:
-  - text: ""
+- text: ''
