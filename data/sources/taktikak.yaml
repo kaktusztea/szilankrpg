@@ -13,7 +13,7 @@ taktikák:
     megkötések:
       - { típus: "támadások", mód: "min", érték: 2 }
     kombó_mód: "blacklist"
-    kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés"]
+    kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés", "Fárasztás"]
 
   - név: "Érintő"
     feltétel_kulcs: "taktika:érintő"
@@ -32,7 +32,7 @@ taktikák:
     megkötések:
       - { típus: "harci_helyzet", mód: "tiltott", érték: "Pengehátrány" }
     kombó_mód: "whitelist"
-    kombó_lista: ["1 támadás"]
+    kombó_lista: []
 
   - név: "Kezdeményező"
     feltétel_kulcs: "taktika:kezdeményező"

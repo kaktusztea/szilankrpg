@@ -29,6 +29,16 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 --error: #f44336
 ```
 
+### Egyedi színek (nem CSS változók)
+| Szín | Kód | Használat |
+|------|-----|-----------|
+| Narancssárga | `#e0a050` | Fortély nevek, kategória fejlécek (Hatás pool, Manőver picker, Státusz picker, Karma hátterek) |
+| Világoskék | `#7eb8da` | Háttér alkategória labelek (Származás, Jellem, stb.) |
+| Sötét box háttér | `#1a1a2e` | Hatás pool box háttér |
+| Kártya háttér | `#2a2a3e` | Hatás pool item, hatter-tag |
+| Elválasztó | `#444` | Szekció vonalak, picker keret |
+| Elválasztó (belső) | `#333` | Szekció border-bottom |
+
 ## KP sáv színek
 - Normál háttér: `#2e7d32`
 - Negatív háttér: `#c62828`

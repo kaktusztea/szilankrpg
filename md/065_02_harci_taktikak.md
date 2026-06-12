@@ -36,7 +36,7 @@ Csak 1 támadást adsz le a körben:
   több-támadás TÉ levonás (-3) nem érvényesül
 ```
 
-❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés taktikával együtt
+❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés, Fárasztás taktikával együtt
 
 ✅ Minden **más** taktikával együtt
 

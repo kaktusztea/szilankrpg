@@ -19,7 +19,8 @@
       "Roham",
       "Öngyilkos roham",
       "Plusz támadás",
-      "Teljes Védekezés"
+      "Teljes Védekezés",
+      "Fárasztás"
     ]
   },
   {
@@ -54,9 +55,7 @@
       }
     ],
     "kombó_mód": "whitelist",
-    "kombó_lista": [
-      "1 támadás"
-    ]
+    "kombó_lista": []
   },
   {
     "név": "Kezdeményező",
