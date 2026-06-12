@@ -62,12 +62,15 @@
     "manőver_pont_használt": 0,
     "sebzések": [],
     "aktív_fegyver_index": 0,
+    "aktív_fegyver_bal_index": -1,
+    "kétkezes_harc": false,
     "aktív_pajzs": false,
     "aktív_páncél": true,
     "aktív_taktikák": [],
     "aktív_helyzetek": [],
     "aktív_szituációk": [],
     "aktív_manőver": "",
-    "aktív_státuszok": []
+    "aktív_státuszok": [],
+    "narratív_módosítók": []
   }
 }

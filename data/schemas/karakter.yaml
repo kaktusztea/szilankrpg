@@ -95,7 +95,9 @@ session:
   vé_history: []              # number[] — VÉ csökkenés történet
   manőver_pont_használt: 0
   sebzések: []                # { típus: "S"|"V"|"Z"|"FP", sorszám: number }[] — ÉP rubrikák állapota
-  aktív_fegyver_index: 0      # Kiválasztott fegyver indexe a fegyverek[] tömbben
+  aktív_fegyver_index: 0      # Kiválasztott fegyver indexe a fegyverek[] tömbben (jobb kéz)
+  aktív_fegyver_bal_index: -1 # Bal kéz fegyver indexe (-1 = nincs)
+  kétkezes_harc: false        # Mindkét kézben fegyver + aktívan kétkezes harc
   aktív_pajzs: false
   aktív_páncél: true
   aktív_taktikák: []          # { név: string, fok?: number }[] — aktívan alkalmazott taktikák
@@ -103,3 +105,4 @@ session:
   aktív_szituációk: []        # string[] — aktív szituációk nevei
   aktív_manőver: ""
   aktív_státuszok: []         # string[]
+  narratív_módosítók: []      # { szöveg: string, érték?: number }[] — KM által hozzáadott

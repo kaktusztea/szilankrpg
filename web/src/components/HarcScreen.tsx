@@ -162,9 +162,9 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const épValue = computed.get('ÉP') ?? 40;
   const ké = (computed.get('KÉ') ?? 0) + taktikaMods['KÉ'];
   const manöverPont = computed.get('manőver_pont') ?? 0;
-  const sfé_fizikai = (computed.get('sfé_fizikai') ?? 0) + fortelyMods['SFÉ'];
-  const sfé_energia = (computed.get('sfé_energia') ?? 0) + fortelyMods['SFÉ'];
-  const páncélLefedettség = computed.get('páncél_lefedettség') ?? 0;
+  const sfé_fizikai = (session.aktív_páncél ? (computed.get('sfé_fizikai') ?? 0) : 0) + fortelyMods['SFÉ'];
+  const sfé_energia = (session.aktív_páncél ? (computed.get('sfé_energia') ?? 0) : 0) + fortelyMods['SFÉ'];
+  const páncélLefedettség = session.aktív_páncél ? (computed.get('páncél_lefedettség') ?? 0) : 0;
 
   // Fegyverek — build from karakter.fegyverek, expand MK pairs
   const fegyverRows: { név: string; fDef: typeof data.fegyverek[0]; mfFok: number }[] = [];
@@ -240,7 +240,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   });
 
   // Pajzs VÉ
-  const pajzsVÉ = 10;
+  const pajzsVÉ = session.aktív_pajzs ? 10 : 0;
 
   // ÉP TÉ levonás
   const oszlopMéret = épValue / 4;

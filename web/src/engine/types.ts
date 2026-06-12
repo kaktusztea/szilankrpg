@@ -86,6 +86,8 @@ export interface Session {
   manőver_pont_használt: number;
   sebzések: SebzésRubrika[];
   aktív_fegyver_index: number;
+  aktív_fegyver_bal_index: number;
+  kétkezes_harc: boolean;
   aktív_pajzs: boolean;
   aktív_páncél: boolean;
   aktív_taktikák: AktívTaktika[];
@@ -93,6 +95,12 @@ export interface Session {
   aktív_szituációk: string[];
   aktív_manőver: string;
   aktív_státuszok: string[];
+  narratív_módosítók: NarratívMódosító[];
+}
+
+export interface NarratívMódosító {
+  szöveg: string;
+  érték?: number;  // opcionális: Előny/Hátrány (-2..+2)
 }
 
 export interface Karakter {
@@ -133,6 +141,8 @@ export const DEFAULT_SESSION: Session = {
   manőver_pont_használt: 0,
   sebzések: [],
   aktív_fegyver_index: 0,
+  aktív_fegyver_bal_index: -1,
+  kétkezes_harc: false,
   aktív_pajzs: false,
   aktív_páncél: true,
   aktív_taktikák: [],
@@ -140,6 +150,7 @@ export const DEFAULT_SESSION: Session = {
   aktív_szituációk: [],
   aktív_manőver: '',
   aktív_státuszok: [],
+  narratív_módosítók: [],
 };
 
 // ============================================================

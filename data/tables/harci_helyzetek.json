@@ -7,32 +7,115 @@
   {
     "név": "Fegyverrántás váratlanul",
     "feltétel_kulcs": "harci_helyzet:fegyverrántás",
-    "infó": "Megnyert KÉ + Előny+1 TÉ dobásra (első csapás)."
+    "infó": "Megnyert KÉ + Előny+1 TÉ dobásra (első csapás).",
+    "hatások": [
+      {
+        "hatás": "előny",
+        "érték": 1,
+        "cél": "té_dobás",
+        "megjegyzés": "első csapás"
+      }
+    ]
   },
   {
     "név": "Meglepetés",
     "feltétel_kulcs": "harci_helyzet:meglepetés",
-    "infó": "Támadó: megnyert KÉ, Előny+1 TÉ, VÉ csökk:3. Védő: többsz. tám. elvesztés, utolsó."
+    "infó": "Támadó: megnyert KÉ, Előny+1 TÉ, VÉ csökk:3. Védő: többsz. tám. elvesztés, utolsó.",
+    "hatások": [
+      {
+        "hatás": "előny",
+        "érték": 1,
+        "cél": "té_dobás"
+      },
+      {
+        "hatás": "szöveges",
+        "cél": "vé_veszteség",
+        "megjegyzés": "VÉ csökk: 3"
+      },
+      {
+        "hatás": "szöveges",
+        "cél": "támadások_száma",
+        "megjegyzés": "Védő: többszörös tám. elvesztés"
+      }
+    ]
   },
   {
     "név": "Készületlenség",
     "feltétel_kulcs": "harci_helyzet:készületlenség",
-    "infó": "= Meglepetés hatásai."
+    "infó": "= Meglepetés hatásai.",
+    "hatások": [
+      {
+        "hatás": "előny",
+        "érték": 1,
+        "cél": "té_dobás"
+      },
+      {
+        "hatás": "szöveges",
+        "cél": "vé_veszteség",
+        "megjegyzés": "VÉ csökk: 3"
+      },
+      {
+        "hatás": "szöveges",
+        "cél": "támadások_száma",
+        "megjegyzés": "Védő: többszörös tám. elvesztés"
+      }
+    ]
   },
   {
     "név": "Beszorított helyzet",
     "feltétel_kulcs": "harci_helyzet:beszorított",
-    "infó": "Ellenfél Előny+1 TÉ. Beszorított: Hátrány-1 KÉ/TÉ, 1 támadás elvesztés, mozgás feleződik."
+    "infó": "Ellenfél Előny+1 TÉ. Beszorított: Hátrány-1 KÉ/TÉ, 1 támadás elvesztés, mozgás feleződik.",
+    "hatások": [
+      {
+        "hatás": "hátrány",
+        "érték": -1,
+        "cél": "ké_dobás"
+      },
+      {
+        "hatás": "hátrány",
+        "érték": -1,
+        "cél": "té_dobás"
+      },
+      {
+        "hatás": "szöveges",
+        "cél": "támadások_száma",
+        "megjegyzés": "-1 támadás"
+      },
+      {
+        "hatás": "arányos",
+        "érték": 0.5,
+        "cél": "mozgás"
+      }
+    ]
   },
   {
     "név": "Orvtámadás",
     "feltétel_kulcs": "harci_helyzet:orvtámadás",
-    "infó": "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ. Harci anatómia SP bónusz aktív. Orgyilkos fortély bónusz aktív. Taktikák/egyéb TÉ bónusz NEM."
+    "infó": "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ. Harci anatómia SP bónusz aktív.",
+    "hatások": [
+      {
+        "hatás": "előny",
+        "érték": 2,
+        "cél": "té_dobás"
+      }
+    ]
   },
   {
     "név": "Hátulról támadás",
     "feltétel_kulcs": "harci_helyzet:hátulról",
-    "infó": "Támadó: Előny+1 TÉ. Pajzs VÉ nem számít."
+    "infó": "Támadó: Előny+1 TÉ. Pajzs VÉ nem számít.",
+    "hatások": [
+      {
+        "hatás": "előny",
+        "érték": 1,
+        "cél": "té_dobás"
+      },
+      {
+        "hatás": "szöveges",
+        "cél": "vé_veszteség",
+        "megjegyzés": "Pajzs VÉ nem számít"
+      }
+    ]
   },
   {
     "név": "Közrefogás",
@@ -42,12 +125,26 @@
   {
     "név": "Levegőből támadás",
     "feltétel_kulcs": "harci_helyzet:levegőből",
-    "infó": "Repülő→földi: Előny+1 TÉ, Előny+1 VÉ."
+    "infó": "Repülő→földi: Előny+1 TÉ, Előny+1 VÉ.",
+    "hatások": [
+      {
+        "hatás": "előny",
+        "érték": 1,
+        "cél": "té_dobás"
+      }
+    ]
   },
   {
     "név": "Magasabbról",
     "feltétel_kulcs": "harci_helyzet:magasabbról",
-    "infó": "Előny+1 TÉ dobásra."
+    "infó": "Előny+1 TÉ dobásra.",
+    "hatások": [
+      {
+        "hatás": "előny",
+        "érték": 1,
+        "cél": "té_dobás"
+      }
+    ]
   },
   {
     "név": "Védekező takarásban",

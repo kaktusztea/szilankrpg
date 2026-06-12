@@ -29,3 +29,6 @@ hatás_operátorok:
   - id: "szöveges"
     név: "Szöveges"
     mód: "szöveges"
+  - id: "enyhít"
+    név: "Enyhít"
+    mód: "enyhít"

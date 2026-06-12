@@ -131,6 +131,7 @@ export interface HarciHelyzetEntry {
   név: string;
   feltétel_kulcs: string;
   infó: string;
+  hatások?: StatuszHatas[];
 }
 
 export interface SzituacioEntry {

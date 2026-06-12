@@ -261,7 +261,7 @@ def generate_aktiv_ful():
 def validate_hatasok(hatasok):
     """Validate hatasok.yaml hatás_operátorok."""
     errors = []
-    valid_mod = {'előny_hátrány', 'szorzó', 'letilt', 'max_limit', 'szöveges'}
+    valid_mod = {'előny_hátrány', 'szorzó', 'letilt', 'max_limit', 'szöveges', 'enyhít'}
     ids_seen = set()
     for i, h in enumerate(hatasok):
         ctx = f"hatás_operátorok[{i}] ({h.get('id', '?')})"
