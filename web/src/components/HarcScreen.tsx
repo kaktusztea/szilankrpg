@@ -26,7 +26,6 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
   const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [showVéHistory, setShowVéHistory] = useState(false);
-  const lastTapVéLabel = useRef(0);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number } | null>(null);
 
@@ -49,13 +48,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
   function handleVéLabelTap() {
     if (session.vé_csökkenés === 0) return;
-    const now = Date.now();
-    if (now - lastTapVéLabel.current < 350) {
-      setShowVéHistory(true);
-      lastTapVéLabel.current = 0;
-    } else {
-      lastTapVéLabel.current = now;
-    }
+    setShowVéHistory(true);
   }
 
   useEffect(() => {
