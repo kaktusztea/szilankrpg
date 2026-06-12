@@ -40,7 +40,6 @@ body {
 
 .header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 8px 12px;
   background: var(--primary);
@@ -49,11 +48,24 @@ body {
 
 .title { font-weight: bold; font-size: 16px; white-space: nowrap; }
 
+.header-szilank {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 2px 8px;
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--success);
+  cursor: pointer;
+  margin-left: 8px;
+}
+
 .header-btns {
   display: flex;
   gap: 6px;
   align-items: center;
   flex-shrink: 0;
+  margin-left: auto;
 }
 
 .gear-btn {

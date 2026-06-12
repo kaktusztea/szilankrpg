@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../engine/types';
 import './AktivScreen.css';
@@ -10,6 +12,7 @@ interface Props {
 }
 
 export function AktivScreen({ data, karakter, session, setSession }: Props) {
+  const [showManőverPicker, setShowManőverPicker] = useState(false);
 
   // Fegyver nevek
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
@@ -236,12 +239,6 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         </div>
       )}
 
-      {/* Szilánk */}
-      <div className="aktiv-row">
-        <span className="aktiv-label">Szilánk</span>
-        <span className="aktiv-value">{session.szilánk}</span>
-      </div>
-
       {/* Fegyverek sor */}
       <div className="aktiv-fegyver-row">
         <div className="aktiv-field-btn">
@@ -348,13 +345,46 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
       </div>
 
       {/* Manőver */}
-      <div className="aktiv-row">
-        <span className="aktiv-label">Manőver</span>
-        <select className="aktiv-select" value={session.aktív_manőver} onChange={e => setSession(s => ({ ...s, aktív_manőver: e.target.value }))}>
-          <option value="">— nincs —</option>
-          {data.manoverek.map(m => <option key={m.név} value={m.név}>{m.név} ({m.nehézség})</option>)}
-        </select>
+      <div className="aktiv-row" style={{ flexDirection: 'column', alignItems: 'stretch', gap: '4px' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }}>
+          <div className="aktiv-field-btn" style={{ flex: 1 }} onClick={() => setShowManőverPicker(true)}>
+            <span className="aktiv-field-label">Manőver</span>
+            <strong style={{ color: session.aktív_manőver ? 'var(--success)' : 'var(--text-dim)', fontSize: '14px' }}>{session.aktív_manőver || '— nincs —'}</strong>
+          </div>
+          {session.aktív_manőver && <button className="aktiv-chip-x" style={{ marginLeft: '6px' }} onClick={() => setSession(s => ({ ...s, aktív_manőver: '' }))}>✕</button>}
+        </div>
+        {session.aktív_manőver && (() => {
+          const m = data.manoverek.find(d => d.név === session.aktív_manőver);
+          if (!m) return null;
+          return (
+            <div className="manover-info">
+              <span>Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
+              <span>{m.hatás}</span>
+            </div>
+          );
+        })()}
       </div>
+
+      {showManőverPicker && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowManőverPicker(false); }}>
+          <div className="manover-picker">
+            <div className="manover-picker-header">
+              <label>Manőver választó</label>
+              <button className="aktiv-chip-x" onClick={() => setShowManőverPicker(false)}>✕</button>
+            </div>
+            <div className="manover-picker-list">
+              {data.manoverek.map(m => (
+                <div key={m.név} className={`manover-card ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
+                  <span className="manover-card-name">{m.név}</span>
+                  <span className="manover-card-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
+                  <span className="manover-card-hatas">{m.hatás}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {/* Státuszok */}
       <div className="aktiv-section">

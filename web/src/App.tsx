@@ -162,6 +162,7 @@ function App() {
   const [showNewConfirm, setShowNewConfirm] = useState(false);
   const [showTestConfirm, setShowTestConfirm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
   const [loadError, setLoadError] = useState('');
   const [showFullscreenHint, setShowFullscreenHint] = useState(false);
   const [versionHint, setVersionHint] = useState('');
@@ -171,11 +172,11 @@ function App() {
   const tabBarRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError && !overlayScreen && !showFullscreenHint) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setShowMenu(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); } }
+    if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setShowMenu(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); setShowSzilánkPicker(false); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showTestConfirm, showMenu, loadError, overlayScreen, showFullscreenHint]);
+  }, [showNewConfirm, showTestConfirm, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -300,6 +301,7 @@ function App() {
     <div className="app" onContextMenu={e => e.preventDefault()}>
       <header className="header">
         <span className="title" onClick={handleTitleTap}>Szilánk RPG</span>
+        <span className="header-szilank" onClick={() => setShowSzilánkPicker(true)}>{session.szilánk}</span>
         <div className="header-btns">
                     <button className="gear-btn" onClick={() => setOverlayScreen('naplo')}>📅</button>
           <button className="gear-btn" onClick={() => setOverlayScreen('jegyzetek')}>✏️</button>
@@ -438,6 +440,20 @@ function App() {
             {!document.fullscreenEnabled && !window.matchMedia('(display-mode: standalone)').matches && (
               <button className="menu-item" onClick={() => { setShowMenu(false); setShowFullscreenHint(true); }}>Teljes képernyő</button>
             )}
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {showSzilánkPicker && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '8px' }}>
+            <label style={{ fontWeight: 'bold' }}>Szilánk</label>
+            <div style={{ display: 'flex', gap: '8px' }}>
+              {[0, 1, 2, 3].map(v => (
+                <button key={v} className={`fort-fok-btn ${session.szilánk === v ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, szilánk: v })); setShowSzilánkPicker(false); }}>{v}</button>
+              ))}
+            </div>
           </div>
         </div>,
         document.body
