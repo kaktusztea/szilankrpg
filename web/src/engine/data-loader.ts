@@ -22,7 +22,7 @@ interface KonstansokRaw {
   merevvértviselet_bónuszok: { fok: number; TÉ_büntetés_csökkentés: number }[];
   pajzshasználat_TÉ_büntetés: { pajzs: string; fokok: number[] }[];
   harcmodorok: { közelharci: string[]; távolsági: string[] };
-  nyelvek: string[];
+  egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];
   fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
 }
 

@@ -340,46 +340,6 @@ aura_bónusz:
     bónusz: 15
 
 # ============================================================
-# Nyelvek
-# ============================================================
-
-nyelvek:
-  - "pyarroni / közös nyelv"
-  - "syburri"
-  - "aszisz"
-  - "emr"
-  - "erv"
-  - "dwoon"
-  - "dzsadal"
-  - "dzsad/dzsenn"
-  - "dzsad/fayumi"
-  - "gre"
-  - "sin"
-  - "dol"
-  - "eno"
-  - "lup"
-  - "dakh"
-  - "kra"
-  - "nia"
-  - "tia"
-  - "yanna'an"
-  - "cra"
-  - "ang"
-  - "amu"
-  - "aquir"
-  - "csaska"
-  - "elf"
-  - "gnóm"
-  - "ork"
-  - "törpe"
-  - "van"
-  - "sni"
-  - "kyr"
-  - "gdr"
-  - "ryeki"
-  - "tor"
-
-# ============================================================
 # Csoportok
 # ============================================================
 

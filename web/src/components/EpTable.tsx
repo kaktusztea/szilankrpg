@@ -14,6 +14,7 @@ interface Props {
   ÉP: number;
   onSebCountChange?: (count: number) => void;
   ftEnyhítés?: number;
+  téLevonások: number[];
   onNavigate?: () => void;
   sebzések: SebzésRubrika[];
   onSebzésekChange: (sebzések: SebzésRubrika[]) => void;
@@ -33,7 +34,7 @@ function toSebzések(rubrikák: Rubrika[]): SebzésRubrika[] {
     .map(r => ({ típus: r.típus as SebzésRubrika['típus'], sorszám: r.sorszám }));
 }
 
-export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate, sebzések, onSebzésekChange }: Props) {
+export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, téLevonások, onNavigate, sebzések, onSebzésekChange }: Props) {
   const oszlopMéret = ÉP / 4;
   const összRubrika = ÉP;
   const lastTapFooter = useRef(0);
@@ -113,7 +114,7 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate, s
 
   const kitöltött = rubrikák.filter(r => r.típus !== '').length;
   const aktKategória = kitöltött === 0 ? 1 : Math.min(4, Math.ceil(kitöltött / oszlopMéret));
-  const téLevonások = [0, -3, -6, -9].map(v => v === 0 ? 'TÉ: 0' : `TÉ: ${Math.min(0, v + ftEnyhítés)}`);
+  const téLevonásLabels = téLevonások.map(v => v === 0 ? 'TÉ: 0' : `TÉ: ${Math.min(0, v + ftEnyhítés)}`);
 
   useEffect(() => {
     onSebCountChange?.(kitöltött);
@@ -150,7 +151,7 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, onNavigate, s
               const now = Date.now();
               if (now - lastTapFooter.current < 350) { onNavigate(); lastTapFooter.current = 0; }
               else { lastTapFooter.current = now; }
-            }}>{téLevonások[oszlop]}</div>
+            }}>{téLevonásLabels[oszlop]}</div>
           </div>
         ))}
       </div>

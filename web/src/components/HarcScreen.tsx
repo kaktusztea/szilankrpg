@@ -244,7 +244,11 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
   // ÉP TÉ levonás
   const oszlopMéret = épValue / 4;
-  const téLevonások = [0, -3, -6, -9];
+  const téLevonások = (konstansok.egészség_kategória_levonás as { szint: string; módosítók: { cél: string; érték: number }[] }[])
+    .map(ek => {
+      const téMod = ek.módosítók.find(m => m.cél === 'TÉ');
+      return téMod?.érték ?? 0;
+    });
   const [sebCount, setSebCount] = useState(0);
   const aktKat = sebCount === 0 ? 0 : Math.min(3, Math.ceil(sebCount / oszlopMéret) - 1);
   const téLevonás = téLevonások[aktKat];
@@ -315,6 +319,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
           ÉP={épValue}
           onSebCountChange={setSebCount}
           ftEnyhítés={calcFtEnyhítés(k.képzettségek, data.konstansok.fájdalomtűrés_enyhítés)}
+          téLevonások={téLevonások}
           onNavigate={k.képzettségek.some(kp => kp.név === 'Fájdalomtűrés') ? () => { onNavigate?.('tulajdonsagok'); setTimeout(() => { document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 200); } : undefined}
           sebzések={session.sebzések}
           onSebzésekChange={(sebzések: SebzésRubrika[]) => setSession(prev => ({ ...prev, sebzések }))}
