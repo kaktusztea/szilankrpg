@@ -1,31 +1,29 @@
 schema_version: 1
-név: Kocsihajtás
-névkomment: ''
+név: "Kocsihajtás"
+névkomment: ""
 maxfok: 1
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Ló vagy más igásállat által húzott kocsik, szekerek vezetése.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "általános"
+leírások: 
+- text: "Ló vagy más igásállat által húzott kocsik, szekerek vezetése."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Lovaglás
-    - Léglovaglás
+  követelménytext: ""
+  követelmények: 
+  - név: ["Lovaglás", "Léglovaglás"]
     érték: 3
-    típus: képzettség
-  hatástext:
-  - text: Lovasszekér, ökrösszekér, postakocsi elvezetése.
-  módosítók: ''
-todo:
-- text: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Lovasszekér, ökrösszekér, postakocsi elvezetése."
+  módosítók: ""
+todo: 
+- text: ""

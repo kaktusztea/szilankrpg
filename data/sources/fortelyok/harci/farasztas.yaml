@@ -1,16 +1,16 @@
 schema_version: 1
-név: Fárasztás
-névkomment: ''
+név: "Fárasztás"
+névkomment: ""
 maxfok: 1
 többszörösség:
-  spec_típus: ''
+  spec_típus: ""
   spec_lista: []
-csoport: harci
+csoport: "harci"
 leírások:
-- text: A fortély nagy ismerői a bajvívók és harcosok.
+- text: "A fortély nagy ismerői a bajvívók és harcosok."
 megjegyzések:
-- text: Zúzásban nem alkalmazható
-- text: Közelharc harcmodorban csak szintén Közelharcban küzdő ellenfél ellen alkalmazható
+- text: "Zúzásban nem alkalmazható"
+- text: "Közelharc harcmodorban csak szintén Közelharcban küzdő ellenfél ellen alkalmazható"
 kiterjeszti:
   normál: []
   erős: []
@@ -18,25 +18,19 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 1
-  követelménytext: ''
+  követelménytext: ""
   követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Lándzsavívás
-    - Rombolás
-    - Ostorharc
+  - név: ["Közelharc", "Kardvívás", "Lándzsavívás", "Rombolás", "Ostorharc"]
     érték: 6
-    típus: képzettség
+    típus: "képzettség"
   hatástext:
-  - text: Ha a **Fárasztás** harci taktikát alkalmazod akkor további `+3 VÉ`-t csökkentesz
-      ellenfeleden támadáskor.
+  - text: "Ha a **Fárasztás** harci taktikát alkalmazod akkor további `+3 VÉ`-t csökkentesz ellenfeleden támadáskor."
   módosítók:
-  - cél: VÉ
+  - cél: "VÉ"
     érték: -3
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: taktika:fárasztás
+    feltétel: "taktika:fárasztás"
 todo:
-- text: ''
+- text: ""

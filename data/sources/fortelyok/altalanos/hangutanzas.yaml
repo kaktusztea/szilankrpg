@@ -1,35 +1,35 @@
 schema_version: 1
-név: Hangutánzás
-névkomment: ''
+név: "Hangutánzás"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Emberi hangok megtévesztő utánzása.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "általános"
+leírások: 
+- text: "Emberi hangok megtévesztő utánzása."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott hangot.
-  módosítók: ''
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott hangot."
+  módosítók: ""
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név: Nyelvismeret
+  követelménytext: ""
+  követelmények: 
+  - név: "Nyelvismeret"
     érték: 1
-    típus: fortély
-  hatástext:
-  - text: Csendes körülmények között is megtévesztően utánzol.
-  módosítók: ''
-todo:
-- text: ''
+    típus: "fortély"
+  hatástext: 
+  - text: "Csendes körülmények között is megtévesztően utánzol."
+  módosítók: ""
+todo: 
+- text: ""

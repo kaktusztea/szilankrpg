@@ -1,50 +1,50 @@
 schema_version: 1
-név: Futás
-névkomment: ''
+név: "Futás"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Kitartó, hosszas futás során is jól osztod be az erődet.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "általános"
+leírások: 
+- text: "Kitartó, hosszas futás során is jól osztod be az erődet."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: 'Hosszútávfutáskor Edzettség próbára: +1.'
-  - text: 'Rövidtávfutásnál Gyorsaság próbára: +1.'
-  módosítók:
-  - cél: tulajdonságpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Hosszútávfutáskor Edzettség próbára: +1."
+  - text: "Rövidtávfutásnál Gyorsaság próbára: +1."
+  módosítók: 
+  - cél: "tulajdonságpróba"
     érték: 1
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Edzettség próba hosszútávfutáskor
-    alcél: Edzettség
+    feltétel: ""
+    megjegyzés: "Edzettség próba hosszútávfutáskor"
+    alcél: "Edzettség"
 - fok: 2
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: 'Hosszútávfutáskor Edzettség próbára: +2.'
-  - text: 'Rövidtávfutásnál Gyorsaság próbára: +2.'
-  módosítók:
-  - cél: tulajdonságpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Hosszútávfutáskor Edzettség próbára: +2."
+  - text: "Rövidtávfutásnál Gyorsaság próbára: +2."
+  módosítók: 
+  - cél: "tulajdonságpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Edzettség próba hosszútávfutáskor
-    alcél: Edzettség
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "Edzettség próba hosszútávfutáskor"
+    alcél: "Edzettség"
+todo: 
+- text: ""

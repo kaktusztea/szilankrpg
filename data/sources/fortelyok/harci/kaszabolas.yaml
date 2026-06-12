@@ -1,15 +1,15 @@
 schema_version: 1
-név: Kaszabolás
-névkomment: ''
+név: "Kaszabolás"
+névkomment: ""
 maxfok: 2
 többszörösség:
-  spec_típus: ''
+  spec_típus: ""
   spec_lista: []
-csoport: harci
+csoport: "harci"
 leírások:
-- text: Harcképtelenné tett ellenfél után soron kívüli bónusz támadás.
+- text: "Harcképtelenné tett ellenfél után soron kívüli bónusz támadás."
 megjegyzések:
-- text: ''
+- text: ""
 kiterjeszti:
   normál: []
   erős: []
@@ -17,34 +17,23 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 1
-  követelménytext: ''
+  követelménytext: ""
   követelmények:
-  - név:
-    - közelharc
-    - kardvívás
-    - rombolás
-    - lándzsavívás
-    - ostorharc
+  - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
     érték: 4
-    típus: képzettség
+    típus: "képzettség"
   hatástext:
-  - text: 'Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli
-      ellenfél ellen.'
-  - text: Egy körben legfeljebb 1x alkalmazható.
-  módosítók: ''
+  - text: "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen."
+  - text: "Egy körben legfeljebb 1x alkalmazható."
+  módosítók: ""
 - fok: 2
-  követelménytext: ''
+  követelménytext: ""
   követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 8
-    típus: képzettség
+    típus: "képzettség"
   hatástext:
-  - text: Mint az 1.fok, de legfeljebb 2x használhatod egy körben.
-  módosítók: ''
+  - text: "Mint az 1.fok, de legfeljebb 2x használhatod egy körben."
+  módosítók: ""
 todo:
-- text: ''
+- text: ""

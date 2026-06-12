@@ -1,48 +1,48 @@
 schema_version: 1
-név: Fakír
-névkomment: ''
+név: "Fakír"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Kínzás esetén pluszt kapsz Fájdalomtűrés próbádra.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "általános"
+leírások: 
+- text: "Kínzás esetén pluszt kapsz Fájdalomtűrés próbádra."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: 'Fájdalomtűrés próbára: +2'
-  módosítók:
-  - cél: képzettségpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Fájdalomtűrés próbára: +2"
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Fájdalomtűrés próba
-    alcél: Fájdalomtűrés
+    feltétel: ""
+    megjegyzés: "Fájdalomtűrés próba"
+    alcél: "Fájdalomtűrés"
 - fok: 2
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: 'Fájdalomtűrés próbára: +4'
-  módosítók:
-  - cél: képzettségpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Fájdalomtűrés próbára: +4"
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 4
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Fájdalomtűrés próba
-    alcél: Fájdalomtűrés
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "Fájdalomtűrés próba"
+    alcél: "Fájdalomtűrés"
+todo: 
+- text: ""

@@ -1,41 +1,35 @@
----
 schema_version: 1
-
 név: "Gladiátor közönsége"
 névkomment: ""
 maxfok: 1
-többszörösség:
+többszörösség: 
   spec_típus: ""
   spec_lista: []
 csoport: "harci"
-leírások:
-  - text: "Éltető közönség előtt harcolva extázisba esel."
-megjegyzések:
-  - text: ""
-
-kiterjeszti:
+leírások: 
+- text: "Éltető közönség előtt harcolva extázisba esel."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
-fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
-        érték: 6
-        típus: "képzettség"
-    hatástext:
-      - text: "TÉ:+3 bónusz a harc idejére nagyszámú (20+) közönség előtt."
-    módosítók:
-      - cél: "TÉ"
-        érték: 3
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: "szituáció:közönség_előtt"
-
-todo:
-  - text: ""
+fokok: 
+- fok: 1
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+    érték: 6
+    típus: "képzettség"
+  hatástext: 
+  - text: "TÉ:+3 bónusz a harc idejére nagyszámú (20+) közönség előtt."
+  módosítók: 
+  - cél: "TÉ"
+    érték: 3
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "szituáció:közönség_előtt"
+todo: 
+- text: ""

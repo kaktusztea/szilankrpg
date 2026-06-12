@@ -1,54 +1,54 @@
 schema_version: 1
-név: 'Vezető: Hajóskapitány'
-névkomment: ''
+név: "Vezető: Hajóskapitány"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Hajó legénységének egyben tartása változó környezetben.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "általános"
+leírások: 
+- text: "Hajó legénységének egyben tartása változó környezetben."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név: Hajózás
+  követelménytext: ""
+  követelmények: 
+  - név: "Hajózás"
     érték: 6
-    típus: képzettség
-  hatástext:
-  - text: +2 bónusz csoportos Hajózás értékre.
-  módosítók:
-  - cél: képzettségpróba
+    típus: "képzettség"
+  hatástext: 
+  - text: "+2 bónusz csoportos Hajózás értékre."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: csoportos Hajózás értékre
-    alcél: Hajózás
+    feltétel: ""
+    megjegyzés: "csoportos Hajózás értékre"
+    alcél: "Hajózás"
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név: Hajózás
+  követelménytext: ""
+  követelmények: 
+  - név: "Hajózás"
     érték: 9
-    típus: képzettség
-  hatástext:
-  - text: +4 bónusz csoportos Hajózás értékre.
-  módosítók:
-  - cél: képzettségpróba
+    típus: "képzettség"
+  hatástext: 
+  - text: "+4 bónusz csoportos Hajózás értékre."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 4
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: csoportos Hajózás értékre
-    alcél: Hajózás
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "csoportos Hajózás értékre"
+    alcél: "Hajózás"
+todo: 
+- text: ""

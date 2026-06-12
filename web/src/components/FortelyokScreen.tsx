@@ -454,7 +454,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
         }
       } else if (kov.típus === 'fortély') {
         const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
-        const megvan = fortélyok.some(f => f.név === név && f.fok >= kov.érték);
+        const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
         if (!megvan) hiányzóKöv.push(`${név} fortély ≥ ${kov.érték}. fok`);
       }
     }

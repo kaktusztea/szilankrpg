@@ -1,74 +1,70 @@
 schema_version: 1
-név: Harci kocsihajtás
-névkomment: ''
+név: "Harci kocsihajtás"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: harci
-leírások:
-- text: Harci szekerek és nagy fogatok kezelése harcban.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "harci"
+leírások: 
+- text: "Harci szekerek és nagy fogatok kezelése harcban."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név: Kocsihajtás
+  követelménytext: ""
+  követelmények: 
+  - név: "Kocsihajtás"
     érték: 1
-    típus: fortély
-  - név:
-    - Lovaglás
-    - Léglovaglás
+    típus: "fortély"
+  - név: ["Lovaglás", "Léglovaglás"]
     érték: 6
-    típus: képzettség
-  hatástext:
-  - text: 'TÉ/VÉ: +8 harci szekéren.'
-  - text: Harci taktikák használhatóak.
-  módosítók:
-  - cél: TÉ
+    típus: "képzettség"
+  hatástext: 
+  - text: "TÉ/VÉ: +8 harci szekéren."
+  - text: "Harci taktikák használhatóak."
+  módosítók: 
+  - cél: "TÉ"
     érték: 8
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:harci_szekér
-  - cél: VÉ
+    feltétel: "szituáció:harci_szekér"
+  - cél: "VÉ"
     érték: 8
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:harci_szekér
+    feltétel: "szituáció:harci_szekér"
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név: Kocsihajtás
+  követelménytext: ""
+  követelmények: 
+  - név: "Kocsihajtás"
     érték: 1
-    típus: fortély
-  - név:
-    - Lovaglás
-    - Léglovaglás
+    típus: "fortély"
+  - név: ["Lovaglás", "Léglovaglás"]
     érték: 9
-    típus: képzettség
-  hatástext:
-  - text: 'TÉ/VÉ: +12 harci szekéren.'
-  - text: Harci taktikák használhatóak.
-  módosítók:
-  - cél: TÉ
+    típus: "képzettség"
+  hatástext: 
+  - text: "TÉ/VÉ: +12 harci szekéren."
+  - text: "Harci taktikák használhatóak."
+  módosítók: 
+  - cél: "TÉ"
     érték: 12
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:harci_szekér
-  - cél: VÉ
+    feltétel: "szituáció:harci_szekér"
+  - cél: "VÉ"
     érték: 12
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:harci_szekér
-todo:
-- text: ''
+    feltétel: "szituáció:harci_szekér"
+todo: 
+- text: ""

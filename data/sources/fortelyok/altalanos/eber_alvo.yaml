@@ -1,34 +1,34 @@
 schema_version: 1
-név: Éber alvó
-névkomment: ''
+név: "Éber alvó"
+névkomment: ""
 maxfok: 1
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Könnyebben felriadsz gyanús zajokra.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "általános"
+leírások: 
+- text: "Könnyebben felriadsz gyanús zajokra."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: Alvás közben dobott Észlelés próbádra +2 bónusz jár.
-  módosítók:
-  - cél: képzettségpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Alvás közben dobott Észlelés próbádra +2 bónusz jár."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Észlelés próba alvás közben
-    alcél: Észlelés
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "Észlelés próba alvás közben"
+    alcél: "Észlelés"
+todo: 
+- text: ""

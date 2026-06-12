@@ -1,22 +1,19 @@
 schema_version: 1
-név: Belharc
-névkomment: adott fegyverre
+név: "Belharc"
+névkomment: "adott fegyverre"
 maxfok: 2
 többszörösség:
-  spec_típus: ''
+  spec_típus: ""
   spec_lista: []
-csoport: harci
+csoport: "harci"
 leírások:
-- text: Testközelben érzed igazában elemedben magad.
-- text: Sikeres 🗡️Belharcba kerülés🗡️ manőver esetén 🗡️Belharci szituációba🗡️ kerülsz
-    és harcértékeidre - csak **Közelharc** harcmodor esetén - a lent leírt pluszok
-    járnak.
+- text: "Testközelben érzed igazában elemedben magad."
+- text: "Sikeres Belharcba kerülés maanőver esetén Belharci szituációba kkerülsz és harcértékeidre - csak Közelharc harcmodor esetén - a lent leírt pluszok járnak."
 megjegyzések:
-- text: '**Fontos**: Ezt a fortélyt konkrét fegyverre (Puszta kéz is ide tartozik)
-    kell felvenni, csak annak használatakor járnak a bónuszok. A Belharcot így többször
-    is fel lehet venni - különböző fegyverekre.'
-- text: Az ellenfél módosítóinak változását lásd a Harcrendszer fejezet ⭕"Belharc"
-    harci taktika leírásánál!
+- text: "**Fontos**: Ezt a fortélyt konkrét fegyverre (Puszta kéz is ide tartozik)\
+    \ kell felvenni, csak annak használatakor járnak a bónuszok. A Belharcot így többször\
+    \ is fel lehet venni - különböző fegyverekre."
+- text: "Az ellenfél módosítóinak változását lásd a Harcrendszer fejezet Belharc harci taktika leírásánál!"
 kiterjeszti:
   normál: []
   erős: []
@@ -24,56 +21,56 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 1
-  követelménytext: ''
+  követelménytext: ""
   követelmények:
-  - név: Közelharc
+  - név: "Közelharc"
     érték: 6
-    típus: képzettség
-  hatástext: ''
+    típus: "képzettség"
+  hatástext: ""
   módosítók:
-  - cél: KÉ
+  - cél: "KÉ"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: harci_helyzet:belharci_szituáció
-  - cél: TÉ
+    feltétel: "harci_helyzet:belharci_szituáció"
+  - cél: "TÉ"
     érték: 3
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: harci_helyzet:belharci_szituáció
-  - cél: VÉ
+    feltétel: "harci_helyzet:belharci_szituáció"
+  - cél: "VÉ"
     érték: 3
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: harci_helyzet:belharci_szituáció
+    feltétel: "harci_helyzet:belharci_szituáció"
 - fok: 2
-  követelménytext: ''
+  követelménytext: ""
   követelmények:
-  - név: Közelharc
+  - név: "Közelharc"
     érték: 9
-    típus: képzettség
-  hatástext: ''
+    típus: "képzettség"
+  hatástext: ""
   módosítók:
-  - cél: KÉ
+  - cél: "KÉ"
     érték: 4
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: harci_helyzet:belharci_szituáció
-  - cél: TÉ
+    feltétel: "harci_helyzet:belharci_szituáció"
+  - cél: "TÉ"
     érték: 6
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: harci_helyzet:belharci_szituáció
-  - cél: VÉ
+    feltétel: "harci_helyzet:belharci_szituáció"
+  - cél: "VÉ"
     érték: 6
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: harci_helyzet:belharci_szituáció
+    feltétel: "harci_helyzet:belharci_szituáció"
 todo:
-- text: ''
+- text: ""

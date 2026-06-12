@@ -1,41 +1,40 @@
 schema_version: 1
-név: 'Kézműves: Fegyverkovács'
-névkomment: ''
+név: "Kézműves: Fegyverkovács"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Fém ötvözetekből fegyverek kovácsolása.
-megjegyzések:
-- text: ''
-kiterjeszti:
-  normál:
-  - Kézművesség
+csoport: "általános"
+leírások: 
+- text: "Fém ötvözetekből fegyverek kovácsolása."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
+  normál: ["Kézművesség"]
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: Dobhatsz alap szinten Kézművesség képzettségre fegyver kovácsolásakor.
-  módosítók: ''
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Dobhatsz alap szinten Kézművesség képzettségre fegyver kovácsolásakor."
+  módosítók: ""
 - fok: 2
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: +2 bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor.
-  módosítók:
-  - cél: képzettségpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "+2 bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Kézművesség (fegyver kovácsolás)
-    alcél: Kézművesség
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "Kézművesség (fegyver kovácsolás)"
+    alcél: "Kézművesség"
+todo: 
+- text: ""

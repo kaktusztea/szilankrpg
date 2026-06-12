@@ -1,39 +1,39 @@
 schema_version: 1
-név: Alkalmatlan tárgyak hajítása
-névkomment: ''
+név: "Alkalmatlan tárgyak hajítása"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: harci
-leírások:
-- text: Nem dobásra készített tárgyak hajigálása (sámli, palack, stb.).
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "harci"
+leírások: 
+- text: "Nem dobásra készített tárgyak hajigálása (sámli, palack, stb.)."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név: Hajítás
+  követelménytext: ""
+  követelmények: 
+  - név: "Hajítás"
     érték: 6
-    típus: képzettség
-  hatástext:
-  - text: Nem sújtanak az alapeset levonásai alkalmi tárgy hajításakor.
-  - text: A tárgy harcértéke nem változik.
-  módosítók: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Nem sújtanak az alapeset levonásai alkalmi tárgy hajításakor."
+  - text: "A tárgy harcértéke nem változik."
+  módosítók: ""
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név: Hajítás
+  követelménytext: ""
+  követelmények: 
+  - név: "Hajítás"
     érték: 9
-    típus: képzettség
-  hatástext:
-  - text: Alkalmi fegyvereid Osztó értéke 2-re emelkedik.
-  módosítók: ''
-todo:
-- text: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
+  módosítók: ""
+todo: 
+- text: ""

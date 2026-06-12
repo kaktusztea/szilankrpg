@@ -1,54 +1,54 @@
 schema_version: 1
-név: 'Vezető: Tudósprofesszor'
-névkomment: ''
+név: "Vezető: Tudósprofesszor"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Koordinálod az alád tartozó tudósok munkáját.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "általános"
+leírások: 
+- text: "Koordinálod az alád tartozó tudósok munkáját."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név: Kvantikum
+  követelménytext: ""
+  követelmények: 
+  - név: "Kvantikum"
     érték: 6
-    típus: képzettség
-  hatástext:
-  - text: +2 bónusz csoportos Kvantikum értékre.
-  módosítók:
-  - cél: képzettségpróba
+    típus: "képzettség"
+  hatástext: 
+  - text: "+2 bónusz csoportos Kvantikum értékre."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: csoportos Kvantikum értékre
-    alcél: Kvantikum
+    feltétel: ""
+    megjegyzés: "csoportos Kvantikum értékre"
+    alcél: "Kvantikum"
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név: Kvantikum
+  követelménytext: ""
+  követelmények: 
+  - név: "Kvantikum"
     érték: 9
-    típus: képzettség
-  hatástext:
-  - text: +4 bónusz csoportos Kvantikum értékre.
-  módosítók:
-  - cél: képzettségpróba
+    típus: "képzettség"
+  hatástext: 
+  - text: "+4 bónusz csoportos Kvantikum értékre."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 4
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: csoportos Kvantikum értékre
-    alcél: Kvantikum
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "csoportos Kvantikum értékre"
+    alcél: "Kvantikum"
+todo: 
+- text: ""

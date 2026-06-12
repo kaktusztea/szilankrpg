@@ -2128,12 +2128,18 @@
         "követelmény": "",
         "követelmények": [
           {
-            "név": "fegyver harcmodora",
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
             "érték": 6,
             "típus": "képzettség"
           },
           {
-            "név": "hajítás",
+            "név": "Hajítás",
             "érték": 3,
             "típus": "képzettség"
           }
@@ -2149,12 +2155,18 @@
         "követelmény": "",
         "követelmények": [
           {
-            "név": "fegyver harcmodora",
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
             "érték": 9,
             "típus": "képzettség"
           },
           {
-            "név": "hajítás",
+            "név": "Hajítás",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -2592,11 +2604,11 @@
         "követelmények": [
           {
             "név": [
-              "közelharc",
-              "kardvívás",
-              "rombolás",
-              "lándzsavívás",
-              "ostorharc"
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"
@@ -2636,11 +2648,11 @@
         "követelmények": [
           {
             "név": [
-              "közelharc",
-              "kardvívás",
-              "rombolás",
-              "lándzsavívás",
-              "ostorharc"
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
             ],
             "érték": 6,
             "típus": "képzettség"

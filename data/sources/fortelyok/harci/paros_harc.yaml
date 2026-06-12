@@ -1,119 +1,104 @@
 schema_version: 1
-név: Páros harc
-névkomment: ''
+név: "Páros harc"
+névkomment: ""
 maxfok: 3
-többszörösség:
-  spec_típus: partner
+többszörösség: 
+  spec_típus: "partner"
   spec_lista: []
-csoport: harci
-leírások:
-- text: Összeszokott harcosok együtt eredményesebbek.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "harci"
+leírások: 
+- text: "Összeszokott harcosok együtt eredményesebbek."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 3
-    típus: képzettség
-  hatástext:
-  - text: 'TÉ, VÉ: +2.'
-  - text: 1:1 harcban KÉ:+1 (többnél nem jár).
-  módosítók:
-  - cél: TÉ
+    típus: "képzettség"
+  hatástext: 
+  - text: "TÉ, VÉ: +2."
+  - text: "1:1 harcban KÉ:+1 (többnél nem jár)."
+  módosítók: 
+  - cél: "TÉ"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
-  - cél: VÉ
+    feltétel: "szituáció:páros_harc"
+  - cél: "VÉ"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
-  - cél: KÉ
+    feltétel: "szituáció:páros_harc"
+  - cél: "KÉ"
     érték: 1
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
+    feltétel: "szituáció:páros_harc"
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
-    típus: képzettség
-  hatástext:
-  - text: 'TÉ, VÉ: +4.'
-  - text: 1:2 harcig KÉ:+1 (többnél nem jár).
-  módosítók:
-  - cél: TÉ
+    típus: "képzettség"
+  hatástext: 
+  - text: "TÉ, VÉ: +4."
+  - text: "1:2 harcig KÉ:+1 (többnél nem jár)."
+  módosítók: 
+  - cél: "TÉ"
     érték: 4
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
-  - cél: VÉ
+    feltétel: "szituáció:páros_harc"
+  - cél: "VÉ"
     érték: 4
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
-  - cél: KÉ
+    feltétel: "szituáció:páros_harc"
+  - cél: "KÉ"
     érték: 1
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
+    feltétel: "szituáció:páros_harc"
 - fok: 3
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9
-    típus: képzettség
-  hatástext:
-  - text: 'TÉ, VÉ: +6.'
-  - text: 1:3 harcig KÉ:+1 (többnél nem jár).
-  módosítók:
-  - cél: TÉ
+    típus: "képzettség"
+  hatástext: 
+  - text: "TÉ, VÉ: +6."
+  - text: "1:3 harcig KÉ:+1 (többnél nem jár)."
+  módosítók: 
+  - cél: "TÉ"
     érték: 6
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
-  - cél: VÉ
+    feltétel: "szituáció:páros_harc"
+  - cél: "VÉ"
     érték: 6
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
-  - cél: KÉ
+    feltétel: "szituáció:páros_harc"
+  - cél: "KÉ"
     érték: 1
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: szituáció:páros_harc
-todo:
-- text: ''
+    feltétel: "szituáció:páros_harc"
+todo: 
+- text: ""

@@ -1,37 +1,34 @@
 schema_version: 1
-név: Élettan
-névkomment: ''
+név: "Élettan"
+névkomment: ""
 maxfok: 1
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Magába foglalja az összes közismert faj ismeretét, anatómiáját és boncolását.
-megjegyzések:
-- text: 'Speciálisabb fajokhoz külön Szabad Fortély kell: Különleges faj boncolása.'
-kiterjeszti:
-  normál:
-  - Nyomozás
-  - Nekromancia
-  - Lexikum
+csoport: "általános"
+leírások: 
+- text: "Magába foglalja az összes közismert faj ismeretét, anatómiáját és boncolását."
+megjegyzések: 
+- text: "Speciálisabb fajokhoz külön Szabad Fortély kell: Különleges faj boncolása."
+kiterjeszti: 
+  normál: ["Nyomozás", "Nekromancia", "Lexikum"]
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: 'Ismered a boncolás tudományát. Méregkeverés képzettségre: +2 bónusz.'
-  módosítók:
-  - cél: képzettségpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Ismered a boncolás tudományát. Méregkeverés képzettségre: +2 bónusz."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Méregkeverés képzettségre
-    alcél: Méregkeverés
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "Méregkeverés képzettségre"
+    alcél: "Méregkeverés"
+todo: 
+- text: ""

@@ -1,53 +1,51 @@
 schema_version: 1
-név: Mechanika
-névkomment: ''
+név: "Mechanika"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Mechanikus szerkezetek ismerete.
-megjegyzések:
-- text: ''
-kiterjeszti:
-  normál:
-  - Csapdaállítás
-  - Kézművesség
-  erős:
-  - Kvantikum
+csoport: "általános"
+leírások: 
+- text: "Mechanikus szerkezetek ismerete."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
+  normál: ["Csapdaállítás", "Kézművesség"]
+  erős: ["Kvantikum"]
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: 'Zárnyitás képzettségre: +2.'
-  - text: A kapcsolódó, kiterjesztett képzettségek követelményeként megszünteti a kiterjesztés-büntetést.
-  módosítók:
-  - cél: képzettségpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Zárnyitás képzettségre: +2."
+  - text: "A kapcsolódó, kiterjesztett képzettségek követelményeként megszünteti\
+      \ a kiterjesztés-büntetést."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Zárnyitás képzettségre
-    alcél: Zárnyitás
+    feltétel: ""
+    megjegyzés: "Zárnyitás képzettségre"
+    alcél: "Zárnyitás"
 - fok: 2
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: 'Zárnyitás képzettségre: +4.'
-  - text: A kapcsolódó képzettségek kiterjesztésekor már Előny+1 bónuszt is ad.
-  módosítók:
-  - cél: képzettségpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Zárnyitás képzettségre: +4."
+  - text: "A kapcsolódó képzettségek kiterjesztésekor már Előny+1 bónuszt is ad."
+  módosítók: 
+  - cél: "képzettségpróba"
     érték: 4
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Zárnyitás képzettségre
-    alcél: Zárnyitás
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "Zárnyitás képzettségre"
+    alcél: "Zárnyitás"
+todo: 
+- text: ""

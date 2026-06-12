@@ -1,41 +1,41 @@
 schema_version: 1
-név: Úszás
-névkomment: ''
+név: "Úszás"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: általános
-leírások:
-- text: Nem merülsz el, mint egy kő.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "általános"
+leírások: 
+- text: "Nem merülsz el, mint egy kő."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: Tudsz úszni.
-  módosítók: ''
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Tudsz úszni."
+  módosítók: ""
 - fok: 2
-  követelménytext: ''
-  követelmények: ''
-  hatástext:
-  - text: Tudsz úszni.
-  - text: 'Hosszú távú úszás esetén Edzettség próbára: +2.'
-  módosítók:
-  - cél: tulajdonságpróba
+  követelménytext: ""
+  követelmények: ""
+  hatástext: 
+  - text: "Tudsz úszni."
+  - text: "Hosszú távú úszás esetén Edzettség próbára: +2."
+  módosítók: 
+  - cél: "tulajdonságpróba"
     érték: 2
-    mód: flat
-    forrás: ''
+    mód: "flat"
+    forrás: ""
     arány: 0
-    feltétel: ''
-    megjegyzés: Edzettség próba hosszú távú úszásnál
-    alcél: Edzettség
-todo:
-- text: ''
+    feltétel: ""
+    megjegyzés: "Edzettség próba hosszú távú úszásnál"
+    alcél: "Edzettség"
+todo: 
+- text: ""

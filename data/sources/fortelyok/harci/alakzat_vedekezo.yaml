@@ -1,48 +1,38 @@
 schema_version: 1
-név: 'Alakzat: védekező'
-névkomment: ''
+név: "Alakzat: védekező"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: harci
-leírások:
-- text: Alakzatharc védekező jellegét erősítő fortély.
-megjegyzések:
-- text: Részletek a Harc alakzatban fejezetben.
-kiterjeszti:
+csoport: "harci"
+leírások: 
+- text: "Alakzatharc védekező jellegét erősítő fortély."
+megjegyzések: 
+- text: "Részletek a Harc alakzatban fejezetben."
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
-    típus: képzettség
-  hatástext:
-  - text: Alakzat védekező bónuszai 1.fokon. Lásd Harc alakzatban fejezet.
-  módosítók: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Alakzat védekező bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
+  módosítók: ""
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9
-    típus: képzettség
-  hatástext:
-  - text: Alakzat védekező bónuszai 2.fokon. Lásd Harc alakzatban fejezet.
-  módosítók: ''
-todo:
-- text: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Alakzat védekező bónuszai 2.fokon. Lásd Harc alakzatban fejezet."
+  módosítók: ""
+todo: 
+- text: ""

@@ -1,62 +1,47 @@
 schema_version: 1
-név: Harcos elme
-névkomment: ''
+név: "Harcos elme"
+névkomment: ""
 maxfok: 3
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: harci
-leírások:
-- text: A harc ritmusát fenntartva kevésbé merít ki a harc szellemileg.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "harci"
+leírások: 
+- text: "A harc ritmusát fenntartva kevésbé merít ki a harc szellemileg."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
-    típus: képzettség
-  hatástext:
-  - text: 'Minden kör elején visszanyersz: 1 VÉ (kivéve ami sebesülésből).'
-  módosítók: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Minden kör elején visszanyersz: 1 VÉ (kivéve ami sebesülésből)."
+  módosítók: ""
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9
-    típus: képzettség
-  hatástext:
-  - text: 'Minden kör elején visszanyersz: 2 VÉ (kivéve ami sebesülésből).'
-  módosítók: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Minden kör elején visszanyersz: 2 VÉ (kivéve ami sebesülésből)."
+  módosítók: ""
 - fok: 3
-  követelménytext: Teljes Védekezés Taktika alkalmazása folyamatosan.
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: "Teljes Védekezés Taktika alkalmazása folyamatosan."
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 12
-    típus: képzettség
-  hatástext:
-  - text: 'Visszanyersz: 2 VÉ + minden előző harci körben elvesztett VÉ-t is.'
-  módosítók: ''
-todo:
-- text: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Visszanyersz: 2 VÉ + minden előző harci körben elvesztett VÉ-t is."
+  módosítók: ""
+todo: 
+- text: ""

@@ -1,48 +1,38 @@
 schema_version: 1
-név: Harc helyhez kötve
-névkomment: ''
+név: "Harc helyhez kötve"
+névkomment: ""
 maxfok: 2
-többszörösség:
-  spec_típus: ''
+többszörösség: 
+  spec_típus: ""
   spec_lista: []
-csoport: harci
-leírások:
-- text: Nem esel kétségbe kis helyen vagy kimozgás nélkül harcolva.
-megjegyzések:
-- text: ''
-kiterjeszti:
+csoport: "harci"
+leírások: 
+- text: "Nem esel kétségbe kis helyen vagy kimozgás nélkül harcolva."
+megjegyzések: 
+- text: ""
+kiterjeszti: 
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok:
+fokok: 
 - fok: 1
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 3
-    típus: képzettség
-  hatástext:
-  - text: VÉ veszteség duplázódás Hatás nem sújt helyhez kötve szituációban.
-  módosítók: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "VÉ veszteség duplázódás Hatás nem sújt helyhez kötve szituációban."
+  módosítók: ""
 - fok: 2
-  követelménytext: ''
-  követelmények:
-  - név:
-    - Közelharc
-    - Kardvívás
-    - Rombolás
-    - Lándzsavívás
-    - Ostorharc
+  követelménytext: ""
+  követelmények: 
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
-    típus: képzettség
-  hatástext:
-  - text: Hátrány-1 TÉ dobásra sem sújt.
-  módosítók: ''
-todo:
-- text: ''
+    típus: "képzettség"
+  hatástext: 
+  - text: "Hátrány-1 TÉ dobásra sem sújt."
+  módosítók: ""
+todo: 
+- text: ""
