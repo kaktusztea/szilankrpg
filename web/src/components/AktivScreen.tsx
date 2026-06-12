@@ -54,6 +54,18 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             }
           }
         }
+        if (mk.típus === 'támadások' && mk.mód === 'min') {
+          // Aktív fegyver támadásszáma ellenőrzés
+          const aktívFegyverIdx = session.aktív_fegyver_index;
+          const fp = aktívFegyverIdx >= 0 ? karakter.fegyverek[aktívFegyverIdx] : null;
+          const fd = fp ? data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase()) : null;
+          const sebesség = fd ? parseInt(fd.Sebesség) || 6 : 6;
+          const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] ?? 'Közelharc') : 'Közelharc';
+          const harcmodorSzint = karakter.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
+          const harckeret = harcmodorSzint * 2;
+          const támadások = 1 + Math.floor(harckeret / sebesség);
+          if (támadások < (mk.érték as number)) return false;
+        }
       }
     }
 

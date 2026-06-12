@@ -243,6 +243,7 @@ def generate_aktiv_ful():
     hatasok = load_yaml(os.path.join(SOURCES_DIR, 'hatasok.yaml'))['hatás_operátorok']
     esemenyek = load_yaml(os.path.join(SOURCES_DIR, 'esemenyek.yaml'))['események']
     statuszok = load_yaml(os.path.join(SOURCES_DIR, 'statuszok.yaml'))['státuszok']
+    hatterek = load_yaml(os.path.join(SOURCES_DIR, 'hatterek.yaml'))
 
     validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek)
     validate_hatasok(hatasok)
@@ -256,6 +257,7 @@ def generate_aktiv_ful():
     write_json('hatasok.json', hatasok)
     write_json('esemenyek.json', esemenyek)
     write_json('statuszok.json', statuszok)
+    write_json('hatterek.json', hatterek)
 
 
 def validate_hatasok(hatasok):

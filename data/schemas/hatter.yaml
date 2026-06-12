@@ -1,0 +1,8 @@
+---
+# Schema: hatterek.yaml
+
+leíró_hátterek:
+  - kategória: ""              # kötelező, string (csoportnév)
+    elemek: []                 # kötelező, string lista
+
+karma_hátterek: []             # kötelező, string lista

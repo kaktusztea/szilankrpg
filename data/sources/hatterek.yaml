@@ -1,0 +1,33 @@
+---
+# Leíró Hátterek — karakter szövegfelhő választó
+# Forrás: md/022_leiro_hatterek.md
+
+leíró_hátterek:
+  - kategória: "Származás"
+    elemek: ["Apród", "Árva", "Erdőlakó", "Fejvadász", "Gladiátor", "Harcművész", "Jobbágy", "Lovag", "Nemes", "Polgár", "Varázsló", "Városlakó"]
+  - kategória: "Jellem"
+    elemek: ["Élet", "Rend", "Halál", "Káosz", "Alattomos", "Alattvaló", "Álmodozó", "Autoriter", "Barátságos", "Cinikus", "Gondoskodó", "Gyanakvó", "Gyáva", "Gyűjtögető", "Hallgatag", "Hiszékeny", "Idealista", "Megfontolt", "Megbízhatatlan", "Megbízható", "Meggondolatlan", "Naív", "Nagyképű", "Nárcisztikus", "Precíz", "Szerény", "Talpnyaló", "Teszetosza", "Tiszteletreméltó", "Tudálékos", "Vezéralkat"]
+  - kategória: "Küllem"
+    elemek: ["Alacsony", "Albínó", "Divatos", "Jóképű", "Kövér", "Magas", "Mokány", "Rusnya", "Sánta", "Sebhelyes", "Tömzsi", "Vékony"]
+  - kategória: "Fóbia"
+    elemek: ["Kígyóiszonyos", "Pókiszonyos", "Tériszonyos"]
+
+karma_hátterek:
+  - "Áldott személy"
+  - "Áldáshordozó"
+  - "Átkozott személy"
+  - "Átokhordozó"
+  - "Alkoholista"
+  - "Árnyjáró"
+  - "Bajnok"
+  - "Bölcs Tanító"
+  - "Bukott gyógyító"
+  - "Gyerekgyilkos"
+  - "Gyilkos"
+  - "Hírhedt"
+  - "Hős"
+  - "Szolgalelkű"
+  - "Természet Gyermeke"
+  - "Világlátott"
+  - "Mágia: Auraösszhang"
+  - "Mágia: Profán"
