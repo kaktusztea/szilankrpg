@@ -190,7 +190,7 @@
   },
   {
     "név": "Blokkolt",
-    "kategória": "mágikus",
+    "kategória": "fizikai",
     "fokok": [
       {
         "fok": 1,
@@ -998,7 +998,7 @@
   },
   {
     "név": "Zavar",
-    "kategória": "harci",
+    "kategória": "fizikai",
     "fokok": [
       {
         "fok": 1,
