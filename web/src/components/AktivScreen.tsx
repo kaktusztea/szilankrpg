@@ -180,15 +180,27 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
       {/* Státuszok */}
       <div className="aktiv-section">
         <span className="aktiv-label">Státuszok</span>
-        {session.aktív_státuszok.map((st, i) => (
-          <div key={i} className="aktiv-chip">
-            <span>{st}</span>
-            <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }))}>✕</button>
-          </div>
-        ))}
+        {session.aktív_státuszok.map((st, i) => {
+          const match = st.match(/^(.+) \((\d+)\)$/);
+          const stNév = match?.[1] ?? st;
+          const stFok = match ? parseInt(match[2]) : 1;
+          const def = data.statuszok.find(s => s.név === stNév);
+          const maxFok = def?.fokok.length ?? 1;
+          const alcím = def?.fokok.find(f => f.fok === stFok)?.alcím;
+          return (
+            <div key={i} className="aktiv-chip">
+              <span onClick={() => {
+                if (maxFok <= 1) return;
+                const újFok = (stFok % maxFok) + 1;
+                setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
+              }} style={maxFok > 1 ? { cursor: 'pointer' } : undefined}>{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}</span>
+              <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }))}>✕</button>
+            </div>
+          );
+        })}
         <select className="aktiv-select" value="" onChange={e => { if (e.target.value) setSession(s => ({ ...s, aktív_státuszok: [...s.aktív_státuszok, e.target.value] })); }}>
           <option value="">+ Státusz...</option>
-          {data.statuszok.flatMap(s => s.fokok.map(f => ({ label: `${s.név} (${f.fok}) - ${f.alcím}`, value: `${s.név} (${f.fok})` }))).filter(o => !session.aktív_státuszok.includes(o.value)).map(o => (
+          {data.statuszok.flatMap(s => s.fokok.map(f => ({ label: `${s.név} (${f.fok}) - ${f.alcím}`, value: `${s.név} (${f.fok})`, név: s.név }))).filter(o => !session.aktív_státuszok.includes(o.value) && !session.aktív_státuszok.some(st => st.startsWith(o.név + ' ('))).map(o => (
             <option key={o.value} value={o.value}>{o.label}</option>
           ))}
         </select>
