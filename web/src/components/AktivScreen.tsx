@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../engine/types';
@@ -14,6 +14,14 @@ interface Props {
 export function AktivScreen({ data, karakter, session, setSession }: Props) {
   const [showManőverPicker, setShowManőverPicker] = useState(false);
   const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
+  const [showHelyzetPicker, setShowHelyzetPicker] = useState(false);
+
+  useEffect(() => {
+    if (!showManőverPicker && !showTaktikaPicker && !showHelyzetPicker) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowManőverPicker(false); setShowTaktikaPicker(false); setShowHelyzetPicker(false); } }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker]);
 
   // Fegyver nevek
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
@@ -291,13 +299,28 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }))}>✕</button>
           </div>
         ))}
-        <select className="aktiv-select" value="" onChange={e => { if (e.target.value) setSession(s => ({ ...s, aktív_helyzetek: [...s.aktív_helyzetek, e.target.value] })); }}>
-          <option value="">+ Helyzet...</option>
-          {data.harciHelyzetek.filter(h => !session.aktív_helyzetek.includes(h.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
-            <option key={h.név} value={h.név}>{h.név}</option>
-          ))}
-        </select>
+        <button className="aktiv-add-btn" onClick={() => setShowHelyzetPicker(true)}>+ Helyzet...</button>
       </div>
+
+      {showHelyzetPicker && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowHelyzetPicker(false); }}>
+          <div className="manover-picker">
+            <div className="manover-picker-header">
+              <label>Harci helyzet választó</label>
+              <button className="aktiv-chip-x" onClick={() => setShowHelyzetPicker(false)}>✕</button>
+            </div>
+            <div className="manover-picker-list">
+              {data.harciHelyzetek.filter(h => !session.aktív_helyzetek.includes(h.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
+                <div key={h.név} className="manover-card" onClick={() => { setSession(s => ({ ...s, aktív_helyzetek: [...s.aktív_helyzetek, h.név] })); setShowHelyzetPicker(false); }}>
+                  <span className="manover-card-name">{h.név}</span>
+                  <span className="manover-card-hatas">{h.infó}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {/* Szituációk */}
       <div className="aktiv-section">
