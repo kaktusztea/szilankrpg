@@ -16,5 +16,11 @@ taktikák:
     fokok:
       - { fok: 1, TÉ: 0, VÉ: 0, KÉ: 0, SP: 0 }
     megjegyzés: ""             # opcionális, string
+    # Megkötések: kontextuális feltételek a taktika alkalmazhatóságára
+    # típus: "harci_helyzet" | "harcmodor" | "szituáció" | "támadások" | "többes_harc" | "per_küzdelem"
+    # mód: "tiltott" | "szükséges" | "min" | "max"
+    # érték: string | string[] | number (opcionális, típus-függő)
+    megkötések:                # opcionális, lista
+      - { típus: "", mód: "", érték: "" }
     kombó_mód: "whitelist"     # kötelező, enum: "whitelist" | "blacklist"
     kombó_lista: []            # kötelező, string lista (taktika nevek)

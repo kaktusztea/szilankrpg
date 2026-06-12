@@ -10,6 +10,8 @@ taktikák:
     módosítók:
       TÉ: 3
     megjegyzés: "Több-támadás TÉ levonás nem érvényesül. Csak ha ≥2 támadás van."
+    megkötések:
+      - { típus: "támadások", mód: "min", érték: 2 }
     kombó_mód: "blacklist"
     kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés"]
 
@@ -20,15 +22,17 @@ taktikák:
       TÉ: 3
     megjegyzés: "Sebzés: 0. Csak megérintés."
     kombó_mód: "whitelist"
-    kombó_lista: ["Támadó", "Védő", "Kezdeményező", "Kiváró"]
+    kombó_lista: ["Támadó", "Védő", "Kezdeményező", "Kiváró", "1 támadás", "Plusz támadás"]
 
   - név: "Fárasztás"
     feltétel_kulcs: "taktika:fárasztás"
     fokozatos: false
     módosítók: {}
     megjegyzés: "VÉ csökkentés: 2/kör. Nem támad. Fortély+pengeelőny bónusz."
+    megkötések:
+      - { típus: "harci_helyzet", mód: "tiltott", érték: "Pengehátrány" }
     kombó_mód: "whitelist"
-    kombó_lista: []
+    kombó_lista: ["1 támadás"]
 
   - név: "Kezdeményező"
     feltétel_kulcs: "taktika:kezdeményező"
@@ -40,7 +44,7 @@ taktikák:
       - { fok: 4, KÉ: 4, VÉ: -4 }
       - { fok: 5, KÉ: 5, VÉ: -5 }
     kombó_mód: "whitelist"
-    kombó_lista: ["Támadó", "Érintő", "Visszafogott"]
+    kombó_lista: ["Támadó", "Érintő", "Visszafogott", "1 támadás"]
 
   - név: "Kiváró"
     feltétel_kulcs: "taktika:kiváró"
@@ -48,8 +52,10 @@ taktikák:
     módosítók:
       TÉ: 2
     megjegyzés: "KÉ átengedett. TÉ:+2 visszacsapásra, ha nem kap sebet."
+    megkötések:
+      - { típus: "többes_harc", mód: "tiltott" }
     kombó_mód: "whitelist"
-    kombó_lista: ["Támadó", "Érintő", "Visszafogott", "Támadás erőből"]
+    kombó_lista: ["Támadó", "Érintő", "Visszafogott", "Támadás erőből", "1 támadás"]
 
   - név: "Öngyilkos roham"
     feltétel_kulcs: "taktika:öngyilkos_roham"
@@ -59,6 +65,9 @@ taktikák:
       VÉ: -10
       SP: 7
     megjegyzés: "Max 1×/küzdelem. Első oda-vissza csapás. VÉ csökk 2×."
+    megkötések:
+      - { típus: "harcmodor", mód: "tiltott", érték: "Ostorharc" }
+      - { típus: "per_küzdelem", mód: "max", érték: 1 }
     kombó_mód: "whitelist"
     kombó_lista: []
 
@@ -78,6 +87,8 @@ taktikák:
       VÉ: -8
       SP: 5
     megjegyzés: "Első oda-vissza csapás. VÉ csökk 2×."
+    megkötések:
+      - { típus: "harcmodor", mód: "tiltott", érték: "Ostorharc" }
     kombó_mód: "whitelist"
     kombó_lista: []
 
@@ -88,8 +99,10 @@ taktikák:
       - { fok: 1, TÉ: -1, SP: 1 }
       - { fok: 2, TÉ: -2, SP: 2 }
     megjegyzés: "Fortéllyal növelhető limit."
+    megkötések:
+      - { típus: "harcmodor", mód: "tiltott", érték: "Ostorharc" }
     kombó_mód: "whitelist"
-    kombó_lista: ["Kiváró"]
+    kombó_lista: ["Kiváró", "Plusz támadás", "1 támadás"]
 
   - név: "Támadó"
     feltétel_kulcs: "taktika:támadó"
@@ -98,8 +111,10 @@ taktikák:
       - { fok: 1, TÉ: 1, VÉ: -2 }
       - { fok: 2, TÉ: 2, VÉ: -4 }
       - { fok: 3, TÉ: 3, VÉ: -6 }
+    megkötések:
+      - { típus: "harci_helyzet", mód: "tiltott", érték: "Orvtámadás" }
     kombó_mód: "whitelist"
-    kombó_lista: ["Kezdeményező", "Kiváró"]
+    kombó_lista: ["Kezdeményező", "Kiváró", "Érintő", "Plusz támadás", "1 támadás"]
 
   - név: "Védő"
     feltétel_kulcs: "taktika:védő"
@@ -109,8 +124,11 @@ taktikák:
       - { fok: 2, VÉ: 2, TÉ: -4 }
       - { fok: 3, VÉ: 3, TÉ: -6 }
       - { fok: 4, VÉ: 4, TÉ: -8 }
+    megkötések:
+      - { típus: "harci_helyzet", mód: "tiltott", érték: "Meglepetés" }
+      - { típus: "harci_helyzet", mód: "tiltott", érték: "Orvtámadás" }
     kombó_mód: "whitelist"
-    kombó_lista: []
+    kombó_lista: ["Érintő", "1 támadás"]
 
   - név: "Teljes Védekezés"
     feltétel_kulcs: "taktika:teljes_védekezés"
@@ -130,4 +148,4 @@ taktikák:
       - { fok: 3, TÉ: -9 }
     megjegyzés: "Sebzéskocka: k10/k6/nincs. Harci anatómia csökkenti TÉ büntetést."
     kombó_mód: "whitelist"
-    kombó_lista: ["Kezdeményező", "Kiváró"]
+    kombó_lista: ["Kezdeményező", "Kiváró", "1 támadás"]

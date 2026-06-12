@@ -17,18 +17,39 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
     return { név: fd?.Alapnév || f.alap, idx: i };
   })];
 
-  // Taktika kombó validáció
+  // Taktika kombó + megkötés validáció
   function isTaktikaAllowed(név: string): boolean {
-    if (session.aktív_taktikák.length === 0) return true;
     const def = data.taktikak.find(t => t.név === név);
     if (!def) return false;
+
+    // Megkötések ellenőrzése
+    if (def.megkötések) {
+      for (const mk of def.megkötések) {
+        if (mk.típus === 'harci_helyzet' && mk.mód === 'tiltott') {
+          if (session.aktív_helyzetek.includes(mk.érték as string)) return false;
+        }
+        if (mk.típus === 'harcmodor' && mk.mód === 'tiltott') {
+          const aktívFegyverIdx = session.aktív_fegyver_index;
+          if (aktívFegyverIdx >= 0) {
+            const fp = karakter.fegyverek[aktívFegyverIdx];
+            if (fp) {
+              const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+              const KATEGÓRIA_HARCMODOR: Record<string, string> = { közelharci: 'Közelharc', kardvívó: 'Kardvívás', romboló: 'Rombolás', lándzsavívó: 'Lándzsavívás', ostorharc: 'Ostorharc' };
+              if (fd && KATEGÓRIA_HARCMODOR[fd.Kategória] === mk.érték) return false;
+            }
+          }
+        }
+      }
+    }
+
+    // Kombó validáció
+    if (session.aktív_taktikák.length === 0) return true;
     for (const aktív of session.aktív_taktikák) {
       const aktívDef = data.taktikak.find(t => t.név === aktív.név);
       if (!aktívDef) continue;
       if (aktívDef.kombó_mód === 'whitelist' && !aktívDef.kombó_lista.includes(név)) return false;
       if (aktívDef.kombó_mód === 'blacklist' && aktívDef.kombó_lista.includes(név)) return false;
     }
-    // Check the new taktika's own combo rules
     if (def.kombó_mód === 'whitelist' && def.kombó_lista.length === 0 && session.aktív_taktikák.length > 0) return false;
     if (def.kombó_mód === 'whitelist') {
       for (const aktív of session.aktív_taktikák) {

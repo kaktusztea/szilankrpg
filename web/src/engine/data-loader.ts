@@ -109,6 +109,12 @@ export interface NyelvEntry {
   csoport: string;
 }
 
+export interface TaktikaMegkötés {
+  típus: string;
+  mód: string;
+  érték?: string | string[] | number;
+}
+
 export interface TaktikaEntry {
   név: string;
   feltétel_kulcs: string;
@@ -116,6 +122,7 @@ export interface TaktikaEntry {
   módosítók?: Record<string, number>;
   fokok?: { fok: number; TÉ?: number; VÉ?: number; KÉ?: number; SP?: number }[];
   megjegyzés?: string;
+  megkötések?: TaktikaMegkötés[];
   kombó_mód: string;
   kombó_lista: string[];
 }

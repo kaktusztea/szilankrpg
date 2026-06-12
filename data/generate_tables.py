@@ -38,10 +38,17 @@ def generate_kepzettsegek():
     """kepzettsegek/*.yaml → kepzettsegek.json"""
     kdir = os.path.join(SOURCES_DIR, 'kepzettsegek')
     result = []
+    errors = []
     for f in sorted(os.listdir(kdir)):
         if not f.endswith('.yaml'):
             continue
         data = load_yaml(os.path.join(kdir, f))
+        ctx = f"kepzettsegek/{f}"
+        if not data.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if not data.get('csoport'): errors.append(f"{ctx}: hiányzó 'csoport'")
+        if not isinstance(data.get('primer', False), bool): errors.append(f"{ctx}: 'primer' nem boolean")
+        if not isinstance(data.get('többszörös', []), list): errors.append(f"{ctx}: 'többszörös' nem lista")
+        if data.get('próba', 'nincs') not in ('nincs', 'dobható', 'ellenpróba'): errors.append(f"{ctx}: 'próba' invalid: '{data.get('próba')}'")
         result.append({
             'név': data['név'],
             'csoport': data['csoport'],
@@ -50,6 +57,11 @@ def generate_kepzettsegek():
             'próba': data.get('próba', 'nincs'),
             'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
         })
+    if errors:
+        print("  ❌ Képzettség validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
     write_json('kepzettsegek.json', result)
 
 
@@ -57,11 +69,18 @@ def generate_fortelyok():
     """fortelyok/**/*.yaml → fortelyok.json"""
     fdir = os.path.join(SOURCES_DIR, 'fortelyok')
     result = []
+    errors = []
+    valid_csoportok = {'harci', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'}
     for root, dirs, files in os.walk(fdir):
         for f in sorted(files):
             if not f.endswith('.yaml'):
                 continue
             data = load_yaml(os.path.join(root, f))
+            ctx = f"fortelyok/{os.path.relpath(os.path.join(root, f), fdir)}"
+            if not data.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+            if data.get('csoport', '') not in valid_csoportok: errors.append(f"{ctx}: 'csoport' invalid: '{data.get('csoport')}'")
+            if not isinstance(data.get('maxfok', 1), int): errors.append(f"{ctx}: 'maxfok' nem szám")
+            if not isinstance(data.get('kp_perfok', 6), int): errors.append(f"{ctx}: 'kp_perfok' nem szám")
             fokok_summary = []
             for fok in (data.get('fokok') or []):
                 hatás = [h['text'] for h in (fok.get('hatástext') or []) if h.get('text')]
@@ -89,6 +108,11 @@ def generate_fortelyok():
                 'kiterjeszti_erős': kit_eros,
                 'fokok': fokok_summary,
             })
+    if errors:
+        print("  ❌ Fortély validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
     write_json('fortelyok.json', result)
 
 
@@ -132,12 +156,26 @@ def generate_fajok():
     fdir = os.path.join(SOURCES_DIR, 'fajok')
     names = []
     keretek = {}
+    errors = []
+    required_tul = {'erő', 'edzettség', 'ügyesség', 'gyorsaság', 'intelligencia', 'emlékezet', 'önuralom', 'érzékenység'}
     for f in sorted(os.listdir(fdir)):
         if not f.endswith('.yaml'):
             continue
         data = load_yaml(os.path.join(fdir, f))
+        ctx = f"fajok/{f}"
+        if not data.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        tk = data.get('tulajdonság_keretek', {})
+        if not tk: errors.append(f"{ctx}: hiányzó 'tulajdonság_keretek'")
+        else:
+            missing = required_tul - set(tk.keys())
+            if missing: errors.append(f"{ctx}: hiányzó tulajdonság keretek: {missing}")
         names.append(data['név'])
-        keretek[data['név']] = data.get('tulajdonság_keretek', {})
+        keretek[data['név']] = tk
+    if errors:
+        print("  ❌ Faj validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
     write_json('fajok.json', names)
     write_json('faj_tulajdonsag_keretek.json', keretek)
 
@@ -146,6 +184,8 @@ def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
     """Validate aktív fül YAML sources against schemas."""
     errors = []
     # Taktikák
+    valid_megkotes_tipus = {'harci_helyzet', 'harcmodor', 'szituáció', 'támadások', 'többes_harc', 'per_küzdelem'}
+    valid_megkotes_mod = {'tiltott', 'szükséges', 'min', 'max'}
     for i, t in enumerate(taktikak):
         ctx = f"taktikák[{i}] ({t.get('név', '?')})"
         if not t.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
@@ -156,6 +196,16 @@ def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
         if not isinstance(t.get('kombó_lista'), list): errors.append(f"{ctx}: 'kombó_lista' nem lista")
         if t.get('fokozatos') and not t.get('fokok'): errors.append(f"{ctx}: fokozatos de nincs 'fokok'")
         if not t.get('fokozatos') and not isinstance(t.get('módosítók', {}), dict): errors.append(f"{ctx}: 'módosítók' nem dict")
+        # Megkötések validáció
+        for j, mk in enumerate(t.get('megkötések') or []):
+            mctx = f"{ctx} megkötések[{j}]"
+            if mk.get('típus') not in valid_megkotes_tipus:
+                errors.append(f"{mctx}: 'típus' invalid: '{mk.get('típus')}' (érvényes: {valid_megkotes_tipus})")
+            if mk.get('mód') not in valid_megkotes_mod:
+                errors.append(f"{mctx}: 'mód' invalid: '{mk.get('mód')}' (érvényes: {valid_megkotes_mod})")
+            # érték kötelező kivéve többes_harc
+            if mk.get('típus') != 'többes_harc' and 'érték' not in mk:
+                errors.append(f"{mctx}: hiányzó 'érték' (típus: {mk.get('típus')})")
     # Harci helyzetek
     for i, h in enumerate(helyzetek):
         ctx = f"harci_helyzetek[{i}] ({h.get('név', '?')})"

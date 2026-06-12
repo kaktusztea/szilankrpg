@@ -78,6 +78,12 @@ felszerelés:
 
 jegyzetek: ""                   # Szabad szöveges jegyzetmező
 
+napló:                          # Kaland bejegyzések listája
+  - dátum: ""                   # YYYY-MM-DD formátum
+    km: ""                      # Kalandmester neve
+    kaland: ""                  # Kaland neve
+    események: ""               # Szabad szöveges leírás
+
 # ============================================================
 # Session (runtime állapot — Game módban változó értékek)
 # Ugyanabban a fájlban, szeparált szekcióban.
@@ -92,7 +98,8 @@ session:
   aktív_fegyver_index: 0      # Kiválasztott fegyver indexe a fegyverek[] tömbben
   aktív_pajzs: false
   aktív_páncél: true
-  aktív_taktika: ""
-  aktív_helyzet: ""
+  aktív_taktikák: []          # { név: string, fok?: number }[] — aktívan alkalmazott taktikák
+  aktív_helyzetek: []         # string[] — aktív harci helyzetek nevei
+  aktív_szituációk: []        # string[] — aktív szituációk nevei
   aktív_manőver: ""
   aktív_státuszok: []         # string[]
