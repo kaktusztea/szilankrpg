@@ -72,7 +72,9 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:merevvért_70%"
+        feltétel:
+          - { forrás: "páncél_merev", operátor: "==", érték: true }
+          - { forrás: "páncél_lefedettség", operátor: ">=", érték: 70 }
 
 todo:
   - text: ""

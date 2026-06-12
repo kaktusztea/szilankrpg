@@ -34,7 +34,8 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:kétkezes_harc"
+        feltétel:
+          - { forrás: "kétkezes_harc", operátor: "==", érték: true }
   - fok: 2
     követelménytext: "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint."
     követelmények: ""
@@ -48,7 +49,8 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:kétkezes_harc"
+        feltétel:
+          - { forrás: "kétkezes_harc", operátor: "==", érték: true }
   - fok: 3
     követelménytext: "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint."
     követelmények: ""
@@ -62,7 +64,8 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:kétkezes_harc"
+        feltétel:
+          - { forrás: "kétkezes_harc", operátor: "==", érték: true }
 
 todo:
   - text: ""

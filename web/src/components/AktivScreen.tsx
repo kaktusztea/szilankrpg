@@ -37,8 +37,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             const fp = karakter.fegyverek[aktívFegyverIdx];
             if (fp) {
               const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
-              const KATEGÓRIA_HARCMODOR: Record<string, string> = { közelharci: 'Közelharc', kardvívó: 'Kardvívás', romboló: 'Rombolás', lándzsavívó: 'Lándzsavívás', ostorharc: 'Ostorharc' };
-              if (fd && KATEGÓRIA_HARCMODOR[fd.Kategória] === mk.érték) return false;
+              if (fd && data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] === mk.érték) return false;
             }
           }
         }

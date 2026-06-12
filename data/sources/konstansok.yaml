@@ -249,6 +249,13 @@ harcmodorok:
   közelharci: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
   távolsági: ["hajítás", "íjászat", "lövészet", "ostromlövészet", "mágikus célzás"]
 
+fegyver_kategória_harcmodor:
+  közelharci: "Közelharc"
+  kardvívó: "Kardvívás"
+  romboló: "Rombolás"
+  lándzsavívó: "Lándzsavívás"
+  ostorharc: "Ostorharc"
+
 # ============================================================
 # Mesterfegyver fortély bónuszai
 # ============================================================

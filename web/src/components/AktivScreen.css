@@ -168,11 +168,15 @@
 }
 
 .hatas-pool-section {
-  margin-bottom: 6px;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #444;
 }
 
 .hatas-pool-section:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .hatas-pool-title {

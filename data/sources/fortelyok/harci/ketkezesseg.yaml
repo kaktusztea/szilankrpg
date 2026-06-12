@@ -34,7 +34,8 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:kétkezes_harc"
+        feltétel:
+          - { forrás: "kétkezes_harc", operátor: "==", érték: true }
 
 todo:
   - text: ""

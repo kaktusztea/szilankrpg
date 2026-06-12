@@ -282,6 +282,13 @@
       "mágikus célzás"
     ]
   },
+  "fegyver_kategória_harcmodor": {
+    "közelharci": "Közelharc",
+    "kardvívó": "Kardvívás",
+    "romboló": "Rombolás",
+    "lándzsavívó": "Lándzsavívás",
+    "ostorharc": "Ostorharc"
+  },
   "mesterfegyver_bónuszok": [
     {
       "fok": 1,

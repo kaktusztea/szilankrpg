@@ -1,10 +1,5 @@
 [
   {
-    "név": "Kétkezes harc",
-    "feltétel_kulcs": "szituáció:kétkezes_harc",
-    "infó": "Két fegyver forgatása egyidejűleg."
-  },
-  {
     "név": "Lovas harc",
     "feltétel_kulcs": "szituáció:lovas_harc",
     "infó": "Lóhátról harcolás."
@@ -33,11 +28,6 @@
     "név": "Szörnyeteg elleni harc",
     "feltétel_kulcs": "szituáció:szörnyeteg_elleni_harc",
     "infó": "Bestia/szörny elleni küzdelem."
-  },
-  {
-    "név": "Merevvért 70%",
-    "feltétel_kulcs": "szituáció:merevvért_70%",
-    "infó": "SFÉ 70%-ban érvényesül (speciális vértezet szituáció)."
   },
   {
     "név": "Célzás",

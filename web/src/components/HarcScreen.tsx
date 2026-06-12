@@ -76,24 +76,6 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     if (def) aktívFeltételek.add(def.feltétel_kulcs);
   }
 
-  const fortelyMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0 };
-  for (const kf of k.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
-    if (!def) continue;
-    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
-    if (!fokDef?.módosítók) continue;
-    for (const mod of fokDef.módosítók) {
-      if (mod.feltétel !== '' && !aktívFeltételek.has(mod.feltétel)) continue;
-      if (mod.mód === 'flat') {
-        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
-      } else if (mod.mód === 'scaled' && mod.forrás) {
-        const forrásÉrték = k.képzettségek.find(kp => kp.név.toLowerCase() === mod.forrás)?.szint ?? 0;
-        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + Math.floor(forrásÉrték * mod.arány);
-      }
-    }
-  }
-  const fortelyKE = fortelyMods['KÉ'];
-
   // Taktika módosítók kiszámítása az aktív taktikákból
   const taktikaMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0 };
   for (const at of session.aktív_taktikák) {
@@ -142,8 +124,22 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
   stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
 
+  // Mindig-aktív fortély KÉ (feltétel='') — szükséges a ctx-hez (computed ELŐTT)
+  let fortelyKE_alap = 0;
+  for (const kf of k.fortélyok) {
+    const def = data.fortelySummaries.find(d => d.név === kf.név);
+    if (!def) continue;
+    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
+    if (!fokDef?.módosítók) continue;
+    for (const mod of fokDef.módosítók) {
+      if (mod.cél === 'KÉ' && mod.mód === 'flat' && (!mod.feltétel || mod.feltétel === '')) {
+        fortelyKE_alap += mod.érték;
+      }
+    }
+  }
+
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
-    fortélyMod_KÉ: fortelyKE,
+    fortélyMod_KÉ: fortelyKE_alap,
     harcmodor_összeg: harcmodorÖsszeg,
     HM_TÉ: k.HM_TÉ,
     HM_VÉ: k.HM_VÉ,
@@ -159,8 +155,57 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   });
   const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 
+  // Kalkulált feltétel kontextus — generikus: computed + session + ctx
+  function getFeltételÉrték(forrás: string): number | boolean | undefined {
+    if (forrás in session) return (session as unknown as Record<string, unknown>)[forrás] as number | boolean;
+    if (computed.has(forrás)) return computed.get(forrás)!;
+    if (ctx.has(forrás)) return ctx.get(forrás)!;
+    return undefined;
+  }
+
+  function feltételTeljesül(feltétel: unknown): boolean {
+    if (!feltétel || feltétel === '') return true;
+    if (typeof feltétel === 'string') return aktívFeltételek.has(feltétel);
+    if (Array.isArray(feltétel)) {
+      return feltétel.every((pred: { forrás: string; operátor: string; érték: unknown }) => {
+        const val = getFeltételÉrték(pred.forrás);
+        if (val === undefined) return false;
+        const normVal = typeof val === 'boolean' ? (val ? 1 : 0) : val;
+        const normExp = typeof pred.érték === 'boolean' ? (pred.érték ? 1 : 0) : pred.érték;
+        switch (pred.operátor) {
+          case '==': return normVal === normExp;
+          case '!=': return normVal !== normExp;
+          case '>=': return (normVal as number) >= (normExp as number);
+          case '<=': return (normVal as number) <= (normExp as number);
+          case '>': return (normVal as number) > (normExp as number);
+          case '<': return (normVal as number) < (normExp as number);
+          default: return false;
+        }
+      });
+    }
+    return false;
+  }
+
+  const fortelyMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0 };
+  for (const kf of k.fortélyok) {
+    const def = data.fortelySummaries.find(d => d.név === kf.név);
+    if (!def) continue;
+    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
+    if (!fokDef?.módosítók) continue;
+    for (const mod of fokDef.módosítók) {
+      if (!feltételTeljesül(mod.feltétel)) continue;
+      if (mod.mód === 'flat') {
+        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
+      } else if (mod.mód === 'scaled' && mod.forrás) {
+        const forrásÉrték = k.képzettségek.find(kp => kp.név.toLowerCase() === mod.forrás)?.szint ?? 0;
+        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + Math.floor(forrásÉrték * mod.arány);
+      }
+    }
+  }
+  const fortelyKE = fortelyMods['KÉ'] - fortelyKE_alap; // feltételes KÉ (alap már a reactive engine-ben)
+
   const épValue = computed.get('ÉP') ?? 40;
-  const ké = (computed.get('KÉ') ?? 0) + taktikaMods['KÉ'];
+  const ké = (computed.get('KÉ') ?? 0) + taktikaMods['KÉ'] + fortelyKE;
   const manöverPont = computed.get('manőver_pont') ?? 0;
   const sfé_fizikai = (session.aktív_páncél ? (computed.get('sfé_fizikai') ?? 0) : 0) + fortelyMods['SFÉ'];
   const sfé_energia = (session.aktív_páncél ? (computed.get('sfé_energia') ?? 0) : 0) + fortelyMods['SFÉ'];
@@ -188,8 +233,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
   const fegyverResults = fegyverRows.map(({ fDef, mfFok }) => {
     const kat = fDef.Kategória;
-    const KATEGÓRIA_HARCMODOR: Record<string, string> = { közelharci: 'Közelharc', kardvívó: 'Kardvívás', romboló: 'Rombolás', lándzsavívó: 'Lándzsavívás', ostorharc: 'Ostorharc' };
-    const harcmodorNév = KATEGÓRIA_HARCMODOR[kat] ?? 'Közelharc';
+    const harcmodorNév = konstansok.fegyver_kategória_harcmodor[kat] ?? 'Közelharc';
     const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
     const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
     const mf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
@@ -220,7 +264,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       fegyver_fortély_VÉ: fortelyMods['VÉ'],
       fegyver_fortély_SP: fortelyMods['SP'],
       fegyver_fortély_harckeret: fortelyMods['harckeret'],
-      fortélyMod_KÉ: fortelyKE,
+      fortélyMod_KÉ: fortelyKE_alap,
       harcmodor_összeg: harcmodorÖsszeg,
       alakzatharc_szint: 0,
     });
@@ -239,8 +283,10 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     };
   });
 
-  // Pajzs VÉ
-  const pajzsVÉ = session.aktív_pajzs ? 10 : 0;
+  // Pajzs VÉ — lookup méret alapján
+  const PAJZS_MÉRET_NÉV: Record<string, string> = { kis: 'Kis Pajzs', közepes: 'Közepes Pajzs', nagy: 'Nagy Pajzs' };
+  const pajzsDef = session.aktív_pajzs && k.pajzs.méret ? data.pajzsok.find(p => p.Pajzs === PAJZS_MÉRET_NÉV[k.pajzs.méret]) : null;
+  const pajzsVÉ = pajzsDef ? parseInt(pajzsDef.VÉ) || 0 : 0;
 
   // ÉP TÉ levonás
   const oszlopMéret = épValue / 4;

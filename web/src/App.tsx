@@ -9,6 +9,7 @@ import { FortelyokScreen } from './components/FortelyokScreen';
 import { HarcertekekScreen } from './components/HarcertekekScreen';
 import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
 import type { Karakter, Session, Fortely } from './engine/types';
+import { DEFAULT_SESSION } from './engine/types';
 import './App.css';
 
 const ALL_TABS = [
@@ -282,7 +283,7 @@ function App() {
             setLoadError(`Referencia hiba: ${refErr}`);
             return;
           }
-          setKarakter(obj);
+          setKarakter({ ...obj, session: { ...DEFAULT_SESSION, ...obj.session } });
         } catch {
           setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
         }
@@ -478,7 +479,7 @@ function App() {
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
               const refErr = validateKarakterData(data.testKarakter, data);
               if (refErr) { setShowTestConfirm(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
-              setKarakter(data.testKarakter); setShowTestConfirm(false);
+              setKarakter({ ...data.testKarakter, session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setShowTestConfirm(false);
             }}>Betöltés</button>
           </div>
         </div>,

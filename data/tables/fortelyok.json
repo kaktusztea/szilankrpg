@@ -2732,7 +2732,13 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:kétkezes_harc"
+            "feltétel": [
+              {
+                "forrás": "kétkezes_harc",
+                "operátor": "==",
+                "érték": true
+              }
+            ]
           }
         ]
       },
@@ -2751,7 +2757,13 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:kétkezes_harc"
+            "feltétel": [
+              {
+                "forrás": "kétkezes_harc",
+                "operátor": "==",
+                "érték": true
+              }
+            ]
           }
         ]
       },
@@ -2770,7 +2782,13 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:kétkezes_harc"
+            "feltétel": [
+              {
+                "forrás": "kétkezes_harc",
+                "operátor": "==",
+                "érték": true
+              }
+            ]
           }
         ]
       }
@@ -2803,7 +2821,13 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:kétkezes_harc"
+            "feltétel": [
+              {
+                "forrás": "kétkezes_harc",
+                "operátor": "==",
+                "érték": true
+              }
+            ]
           }
         ]
       }
@@ -3130,7 +3154,18 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:merevvért_70%"
+            "feltétel": [
+              {
+                "forrás": "páncél_merev",
+                "operátor": "==",
+                "érték": true
+              },
+              {
+                "forrás": "páncél_lefedettség",
+                "operátor": ">=",
+                "érték": 70
+              }
+            ]
           }
         ]
       }
