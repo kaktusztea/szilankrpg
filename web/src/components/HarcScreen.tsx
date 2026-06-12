@@ -321,11 +321,6 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
         </div>
       </div>
 
-      <div className="harc-nav-btns">
-        <button onClick={() => onNavigate?.('taktikak')}>Harci taktika</button>
-        <button onClick={() => onNavigate?.('helyzetek')}>Harci helyzet</button>
-        <button onClick={() => onNavigate?.('manoverek')}>Manőver</button>
-      </div>
       <table className="harc-table">
         <thead>
           <tr><th>Fegyver</th><th>Tám</th><th className="te-col">TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>

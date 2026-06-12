@@ -328,3 +328,23 @@
   padding-top: 12px;
   border-top: 1px solid #333;
 }
+
+.manover-category-label {
+  font-size: 13px;
+  font-weight: bold;
+  color: #e0a050;
+  padding: 8px 4px 4px;
+  border-bottom: 1px solid #444;
+  margin-bottom: 6px;
+}
+
+.aktiv-add-btn {
+  background: var(--input-bg);
+  border: 1px solid #555;
+  border-radius: 4px;
+  color: var(--text-dim);
+  padding: 6px 12px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 6px;
+}

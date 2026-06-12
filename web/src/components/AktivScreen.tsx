@@ -13,6 +13,7 @@ interface Props {
 
 export function AktivScreen({ data, karakter, session, setSession }: Props) {
   const [showManőverPicker, setShowManőverPicker] = useState(false);
+  const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
 
   // Fegyver nevek
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
@@ -255,13 +256,31 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             </div>
           );
         })}
-        <select className="aktiv-select" value="" onChange={e => { if (e.target.value) { addTaktika(e.target.value); } }}>
-          <option value="">+ Taktika...</option>
-          {data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(t => (
-            <option key={t.név} value={t.név}>{t.név}</option>
-          ))}
-        </select>
+        <button className="aktiv-add-btn" onClick={() => setShowTaktikaPicker(true)}>+ Taktika...</button>
       </div>
+
+      {showTaktikaPicker && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowTaktikaPicker(false); }}>
+          <div className="manover-picker">
+            <div className="manover-picker-header">
+              <label>Taktika választó</label>
+              <button className="aktiv-chip-x" onClick={() => setShowTaktikaPicker(false)}>✕</button>
+            </div>
+            <div className="manover-picker-list">
+              {data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(t => (
+                <div key={t.név} className="manover-card" onClick={() => { addTaktika(t.név); setShowTaktikaPicker(false); }}>
+                  <span className="manover-card-name">{t.név}{t.fokozatos ? ` 📶` : ''}</span>
+                  <span className="manover-card-details">
+                    {t.fokozatos && t.fokok ? t.fokok.map(f => `${f.fok}: ${Object.entries(f).filter(([k, v]) => k !== 'fok' && v !== 0).map(([k, v]) => `${k}:${v}`).join(', ')}`).join(' | ') : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${v > 0 ? '+' : ''}${v}`).join(', ') : ''}
+                  </span>
+                  {t.megjegyzés && <span className="manover-card-hatas">{t.megjegyzés}</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {/* Harci helyzetek */}
       <div className="aktiv-section">
@@ -274,7 +293,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         ))}
         <select className="aktiv-select" value="" onChange={e => { if (e.target.value) setSession(s => ({ ...s, aktív_helyzetek: [...s.aktív_helyzetek, e.target.value] })); }}>
           <option value="">+ Helyzet...</option>
-          {data.harciHelyzetek.filter(h => !session.aktív_helyzetek.includes(h.név)).map(h => (
+          {data.harciHelyzetek.filter(h => !session.aktív_helyzetek.includes(h.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
             <option key={h.név} value={h.név}>{h.név}</option>
           ))}
         </select>
@@ -291,7 +310,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         ))}
         <select className="aktiv-select" value="" onChange={e => { if (e.target.value) setSession(s => ({ ...s, aktív_szituációk: [...s.aktív_szituációk, e.target.value] })); }}>
           <option value="">+ Szituáció...</option>
-          {data.szituaciok.filter(s2 => !session.aktív_szituációk.includes(s2.név)).map(s2 => (
+          {data.szituaciok.filter(s2 => !session.aktív_szituációk.includes(s2.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(s2 => (
             <option key={s2.név} value={s2.név}>{s2.név}</option>
           ))}
         </select>
@@ -326,13 +345,22 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               <button className="aktiv-chip-x" onClick={() => setShowManőverPicker(false)}>✕</button>
             </div>
             <div className="manover-picker-list">
-              {data.manoverek.map(m => (
-                <div key={m.név} className={`manover-card ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
-                  <span className="manover-card-name">{m.név}</span>
-                  <span className="manover-card-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
-                  <span className="manover-card-hatas">{m.hatás}</span>
-                </div>
-              ))}
+              {['általános', 'belharcos'].map(tipus => {
+                const items = data.manoverek.filter(m => m.típus === tipus);
+                if (items.length === 0) return null;
+                return (
+                  <div key={tipus}>
+                    <div className="manover-category-label">{tipus === 'általános' ? 'Általános' : 'Belharci'}</div>
+                    {items.map(m => (
+                      <div key={m.név} className={`manover-card ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
+                        <span className="manover-card-name">{m.név}</span>
+                        <span className="manover-card-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
+                        <span className="manover-card-hatas">{m.hatás}</span>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>,
