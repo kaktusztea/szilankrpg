@@ -121,8 +121,9 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
       const bLocked = b.név === 'Mesterfegyver' || b.név === 'Pajzshasználat' || b.név === 'Merevvértviselet';
       if (aLocked && !bLocked) return -1;
       if (bLocked && !aLocked) return 1;
-      if (a.fok !== b.fok) return b.fok - a.fok;
-      return a.név.localeCompare(b.név);
+      const nameComp = a.név.localeCompare(b.név);
+      if (nameComp !== 0) return nameComp;
+      return b.fok - a.fok;
     });
     return items;
   }
