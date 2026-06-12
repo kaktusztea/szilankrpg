@@ -348,3 +348,14 @@
   cursor: pointer;
   margin-top: 6px;
 }
+
+.taktika-chip-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.taktika-chip-mods {
+  font-size: 11px;
+  color: #aaa;
+  margin-top: 1px;
+}

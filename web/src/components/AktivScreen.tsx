@@ -268,11 +268,19 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         <span className="aktiv-label">Taktikák</span>
         {session.aktív_taktikák.map((t, i) => {
           const def = data.taktikak.find(d => d.név === t.név);
+          let modStr = '';
+          if (def?.fokozatos && def.fokok && t.fok != null) {
+            const f = def.fokok.find(fk => fk.fok === t.fok);
+            if (f) modStr = Object.entries(f).filter(([k, v]) => k !== 'fok' && v !== 0).map(([k, v]) => `${k}:${(v as number) > 0 ? '+' : ''}${v}`).join(' ');
+          } else if (def?.módosítók) {
+            modStr = Object.entries(def.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}:${(v as number) > 0 ? '+' : ''}${v}`).join(' ');
+          }
           return (
-            <div key={i} className="aktiv-chip">
-              <span style={def?.fokozatos ? { cursor: 'pointer' } : undefined} onClick={() => {
-                if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); }
-              }}>{t.név}{t.fok != null ? ` (${t.fok})` : ''}</span>
+            <div key={i} className="aktiv-chip taktika-chip">
+              <div style={{ display: 'flex', flexDirection: 'column' }} onClick={() => { if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); } }} style-cursor={def?.fokozatos ? 'pointer' : undefined}>
+                <span className="taktika-chip-name" style={def?.fokozatos ? { cursor: 'pointer' } : undefined}>{t.név}{t.fok != null ? ` (${t.fok})` : ''}</span>
+                {modStr && <span className="taktika-chip-mods">{modStr}</span>}
+              </div>
               <button className="aktiv-chip-x" onClick={() => removeTaktika(i)}>✕</button>
             </div>
           );
@@ -331,6 +339,53 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   </div>
                 ));
               })()}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {/* Manőver */}
+      <div className="aktiv-section" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+        <div className="aktiv-field-btn" onClick={() => setShowManőverPicker(true)}>
+          <span className="aktiv-field-label">Manőver</span>
+          <strong style={{ color: session.aktív_manőver ? 'var(--success)' : 'var(--text-dim)', fontSize: '14px' }}>{session.aktív_manőver || '— nincs —'}</strong>
+          {session.aktív_manőver && (() => {
+            const m = data.manoverek.find(d => d.név === session.aktív_manőver);
+            if (!m) return null;
+            return (<>
+              <span className="taktika-chip-mods">Nehézség: {m.nehézség} • {m.fázisok}</span>
+              <span className="taktika-chip-mods">{m.hatás}</span>
+            </>);
+          })()}
+        </div>
+        {session.aktív_manőver && <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_manőver: '' }))}>✕</button>}
+      </div>
+
+      {showManőverPicker && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowManőverPicker(false); }}>
+          <div className="manover-picker">
+            <div className="manover-picker-header">
+              <label>Manőver választó</label>
+              <button className="aktiv-chip-x" onClick={() => setShowManőverPicker(false)}>✕</button>
+            </div>
+            <div className="manover-picker-list">
+              {['általános', 'belharcos'].map(tipus => {
+                const items = data.manoverek.filter(m => m.típus === tipus);
+                if (items.length === 0) return null;
+                return (
+                  <div key={tipus}>
+                    <div className="manover-category-label">{tipus === 'általános' ? 'Általános' : 'Belharci'}</div>
+                    {items.map(m => (
+                      <div key={m.név} className={`manover-card ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
+                        <span className="manover-card-name">{m.név}</span>
+                        <span className="manover-card-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
+                        <span className="manover-card-hatas">{m.hatás}</span>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </div>,
@@ -451,55 +506,6 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   </div>
                 ));
               })()}
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {/* Manőver */}
-      <div className="aktiv-section" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <div className="aktiv-field-btn" onClick={() => setShowManőverPicker(true)}>
-          <span className="aktiv-field-label">Manőver</span>
-          <strong style={{ color: session.aktív_manőver ? 'var(--success)' : 'var(--text-dim)', fontSize: '14px' }}>{session.aktív_manőver || '— nincs —'}</strong>
-        </div>
-        {session.aktív_manőver && <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_manőver: '' }))}>✕</button>}
-      </div>
-      {session.aktív_manőver && (() => {
-        const m = data.manoverek.find(d => d.név === session.aktív_manőver);
-        if (!m) return null;
-        return (
-          <div className="manover-info">
-            <span>Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
-            <span>{m.hatás}</span>
-          </div>
-        );
-      })()}
-
-      {showManőverPicker && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowManőverPicker(false); }}>
-          <div className="manover-picker">
-            <div className="manover-picker-header">
-              <label>Manőver választó</label>
-              <button className="aktiv-chip-x" onClick={() => setShowManőverPicker(false)}>✕</button>
-            </div>
-            <div className="manover-picker-list">
-              {['általános', 'belharcos'].map(tipus => {
-                const items = data.manoverek.filter(m => m.típus === tipus);
-                if (items.length === 0) return null;
-                return (
-                  <div key={tipus}>
-                    <div className="manover-category-label">{tipus === 'általános' ? 'Általános' : 'Belharci'}</div>
-                    {items.map(m => (
-                      <div key={m.név} className={`manover-card ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
-                        <span className="manover-card-name">{m.név}</span>
-                        <span className="manover-card-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
-                        <span className="manover-card-hatas">{m.hatás}</span>
-                      </div>
-                    ))}
-                  </div>
-                );
-              })}
             </div>
           </div>
         </div>,
