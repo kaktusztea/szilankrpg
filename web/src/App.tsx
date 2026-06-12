@@ -593,7 +593,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
     }
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={setKarakter} />;
-    case 'hatterek': return <HatterekScreen data={data} karakter={karakter} setKarakter={setKarakter} gameMode={gameMode} />;
+    case 'hatterek': return <HatterekScreen data={data} karakter={karakter} setKarakter={setKarakter} gameMode={gameMode} onNavigate={tab => { const idx = ALL_TABS.findIndex(t => t.id === tab); if (idx >= 0) setActiveTab(idx); }} />;
     default: return null;
   }
 }

@@ -277,7 +277,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
           }
           return (
             <div key={i} className="aktiv-chip taktika-chip">
-              <div style={{ display: 'flex', flexDirection: 'column' }} onClick={() => { if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); } }} style-cursor={def?.fokozatos ? 'pointer' : undefined}>
+              <div style={{ display: 'flex', flexDirection: 'column' }} onClick={() => { if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); } }}>
                 <span className="taktika-chip-name" style={def?.fokozatos ? { cursor: 'pointer' } : undefined}>{t.név}{t.fok != null ? ` (${t.fok})` : ''}</span>
                 {modStr && <span className="taktika-chip-mods">{modStr}</span>}
               </div>

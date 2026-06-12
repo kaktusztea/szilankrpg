@@ -8,9 +8,10 @@ interface Props {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   gameMode: boolean;
+  onNavigate?: (tab: string) => void;
 }
 
-export function HatterekScreen({ data, karakter, setKarakter, gameMode }: Props) {
+export function HatterekScreen({ data, karakter, setKarakter, gameMode, onNavigate }: Props) {
   const lastTap = useRef<Record<string, number>>({});
 
   function handleTap(item: string, típus: 'leíró' | 'karma') {
@@ -34,6 +35,13 @@ export function HatterekScreen({ data, karakter, setKarakter, gameMode }: Props)
   return (
     <div className="screen hatterek-screen">
       <h2>🟡 Hátterek</h2>
+
+      <div className="hatter-cloud-section">
+        <span className="hatter-cloud-title">Faj háttér</span>
+        <div className="hatter-cloud">
+          <span className="hatter-tag active" style={{ cursor: 'pointer' }} onClick={() => onNavigate?.('tulajdonsagok')}>{karakter.hátterek.faj || '— nincs —'}</span>
+        </div>
+      </div>
 
       <div className="hatter-cloud-section">
         <span className="hatter-cloud-title">Leíró hátterek</span>
