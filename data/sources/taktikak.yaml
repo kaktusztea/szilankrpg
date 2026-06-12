@@ -64,7 +64,7 @@ taktikák:
       TÉ: 5
       VÉ: -10
       SP: 7
-    megjegyzés: "Max 1×/küzdelem. Első oda-vissza csapás. VÉ csökk 2×."
+    megjegyzés: "Max 1x/küzdelem. Első oda-vissza csapás. VÉ csökk 2x."
     megkötések:
       - { típus: "harcmodor", mód: "tiltott", érték: "Ostorharc" }
       - { típus: "per_küzdelem", mód: "max", érték: 1 }
@@ -86,7 +86,7 @@ taktikák:
       TÉ: 4
       VÉ: -8
       SP: 5
-    megjegyzés: "Első oda-vissza csapás. VÉ csökk 2×."
+    megjegyzés: "Első oda-vissza csapás. VÉ csökk 2x."
     megkötések:
       - { típus: "harcmodor", mód: "tiltott", érték: "Ostorharc" }
     kombó_mód: "whitelist"

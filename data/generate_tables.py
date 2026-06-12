@@ -235,18 +235,97 @@ def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
 
 
 def generate_aktiv_ful():
-    """taktikak.yaml, harci_helyzetek.yaml, szituaciok.yaml, manoverek.yaml → JSON"""
+    """taktikak.yaml, harci_helyzetek.yaml, szituaciok.yaml, manoverek.yaml, statuszok.yaml, hatasok.yaml, esemenyek.yaml → JSON"""
     taktikak = load_yaml(os.path.join(SOURCES_DIR, 'taktikak.yaml'))['taktikák']
     helyzetek = load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))['harci_helyzetek']
     szituaciok = load_yaml(os.path.join(SOURCES_DIR, 'szituaciok.yaml'))['szituációk']
     manoverek = load_yaml(os.path.join(SOURCES_DIR, 'manoverek.yaml'))['manőverek']
+    hatasok = load_yaml(os.path.join(SOURCES_DIR, 'hatasok.yaml'))['hatás_operátorok']
+    esemenyek = load_yaml(os.path.join(SOURCES_DIR, 'esemenyek.yaml'))['események']
+    statuszok = load_yaml(os.path.join(SOURCES_DIR, 'statuszok.yaml'))['státuszok']
 
     validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek)
+    validate_hatasok(hatasok)
+    validate_esemenyek(esemenyek)
+    validate_statuszok(statuszok, hatasok, esemenyek)
 
     write_json('taktikak.json', taktikak)
     write_json('harci_helyzetek.json', helyzetek)
     write_json('szituaciok.json', szituaciok)
     write_json('manoverek.json', manoverek)
+    write_json('hatasok.json', hatasok)
+    write_json('esemenyek.json', esemenyek)
+    write_json('statuszok.json', statuszok)
+
+
+def validate_hatasok(hatasok):
+    """Validate hatasok.yaml hatás_operátorok."""
+    errors = []
+    valid_mod = {'előny_hátrány', 'szorzó', 'letilt', 'max_limit', 'szöveges'}
+    ids_seen = set()
+    for i, h in enumerate(hatasok):
+        ctx = f"hatás_operátorok[{i}] ({h.get('id', '?')})"
+        if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
+        if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if h.get('mód') not in valid_mod: errors.append(f"{ctx}: 'mód' invalid: '{h.get('mód')}'")
+        if h.get('id') in ids_seen: errors.append(f"{ctx}: duplikált id!")
+        ids_seen.add(h.get('id'))
+    if errors:
+        print("  ❌ Hatás validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
+
+
+def validate_esemenyek(esemenyek):
+    """Validate esemenyek.yaml."""
+    errors = []
+    valid_csoport = {'harci', 'próba', 'fizikai', 'képesség'}
+    ids_seen = set()
+    for i, e in enumerate(esemenyek):
+        ctx = f"események[{i}] ({e.get('id', '?')})"
+        if not e.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
+        if not e.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if e.get('csoport') not in valid_csoport: errors.append(f"{ctx}: 'csoport' invalid: '{e.get('csoport')}'")
+        if e.get('id') in ids_seen: errors.append(f"{ctx}: duplikált id!")
+        ids_seen.add(e.get('id'))
+    if errors:
+        print("  ❌ Esemény validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
+
+
+def validate_statuszok(statuszok, hatasok, esemenyek):
+    """Validate statuszok.yaml — struktúra + referenciális integritás."""
+    errors = []
+    valid_kategoria = {'fizikai', 'szellemi', 'harci', 'mágikus'}
+    valid_hatas_ids = {h['id'] for h in hatasok}
+    valid_esemeny_ids = {e['id'] for e in esemenyek}
+    for i, s in enumerate(statuszok):
+        ctx = f"státuszok[{i}] ({s.get('név', '?')})"
+        if not s.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if s.get('kategória') not in valid_kategoria: errors.append(f"{ctx}: 'kategória' invalid: '{s.get('kategória')}'")
+        fokok = s.get('fokok')
+        if not fokok or not isinstance(fokok, list): errors.append(f"{ctx}: hiányzó vagy üres 'fokok'")
+        else:
+            for j, f in enumerate(fokok):
+                fctx = f"{ctx} fokok[{j}]"
+                if not isinstance(f.get('fok'), int): errors.append(f"{fctx}: 'fok' nem szám")
+                if not f.get('alcím'): errors.append(f"{fctx}: hiányzó 'alcím'")
+                hatasok_lista = f.get('hatások')
+                if not hatasok_lista or not isinstance(hatasok_lista, list): errors.append(f"{fctx}: hiányzó vagy üres 'hatások'")
+                else:
+                    for k, h in enumerate(hatasok_lista):
+                        hctx = f"{fctx} hatások[{k}]"
+                        if not isinstance(h, dict): errors.append(f"{hctx}: nem objektum"); continue
+                        if h.get('hatás') not in valid_hatas_ids: errors.append(f"{hctx}: ismeretlen hatás operátor: '{h.get('hatás')}'")
+                        if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
+    if errors:
+        print("  ❌ Státusz validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
 
 
 if __name__ == '__main__':

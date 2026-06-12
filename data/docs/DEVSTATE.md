@@ -91,10 +91,10 @@
   - Fejléc: Név (double-tap → szerkesztő popup) + Szint (double-tap → gombgrid 3-21, 5 oszlop, utolsó sor középre)
   - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (double-tap → két lépéses popup: tartomány → érték)
   - Game módban Faj+Kor a Név mellé konkatenálódik: "von Agabor (Ember (Északi), 32)"
-  - Tulajdonságok: fix 2×4 grid, teljes nevek, double-tap → popup gomb-grid (-5..+7), érték választás bezárja
+  - Tulajdonságok: fix 2x4 grid, teljes nevek, double-tap → popup gomb-grid (-5..+7), érték választás bezárja
   - Faj limit warning: sárga szín + koppintásra lenyíló "Faj max/min: X" ha túllépés
   - Képzettségek: 7 csoportban (összecsukható), dropdown + azonnali szint popup, ✕ törlés (piros megerősítés)
-  - Szint választó: popup gombok 1-15 grid (5×3), aktív=zöld, érték választás bezárja (double-tap triggereli)
+  - Szint választó: popup gombok 1-15 grid (5x3), aktív=zöld, érték választás bezárja (double-tap triggereli)
   - Szint színkód: 0=piros, 1-8=sárga, 9+=zöld
   - Többszörös képzettségek: generikus `többszörös` lista mező (fix alnév lista VAGY `["*"]` szabad szöveges max 20 kar)
   - Többszörös felvételkor csoportosítva a testvéreik mellé kerülnek
@@ -157,7 +157,7 @@
   - Primer költés = primer képzettségek + primer fortélyok + HM + CM
   - Primer limit = összes_kp + spec_kp
 - ✅ Szint választó: gombgrid 3-21 (5 oszlop, utolsó sor középre)
-- ✅ Kor választó: két lépéses (tartomány → érték), 10–58/60–100 toggle, 100-200/5, 200-1000/50, 42×42px kerek gombok
+- ✅ Kor választó: két lépéses (tartomány → érték), 10–58/60–100 toggle, 100-200/5, 200-1000/50, 42x42px kerek gombok
 - ✅ Build metadata (`web/generate_metadata.py` → `public/metadata.json`)
   - Verzió formátum: `ÉV.ÉVNAPJA.napibuild` (pl. `26.158.4`)
   - Napi build counter: `.build_counter` fájl (nem repo része)
@@ -214,7 +214,7 @@
   - `setPajzsFok()`: fortélyok tömbben közvetlenül módosítja a Pajzshasználat fortélyt
 - ✅ Nyelvismeret fok UI: "Alap"/"Udvari" label (szám helyett), lekerekített téglalap gombok, centered fejléc
   - Nyelv picker: custom styled gomb-lista csoportonként (narancssárga fejléc + elválasztó vonal), scrollozható (max 70vh)
-- ✅ Kor választó javítások: szabályos kör gombok (42×42px), 10–58 / 60–100 toggle split (cserélődő tartalom)
+- ✅ Kor választó javítások: szabályos kör gombok (42x42px), 10–58 / 60–100 toggle split (cserélődő tartalom)
 - ✅ Harcértékek fül szekció elválasztók: `.he-section + .he-section { border-top: 1px solid #333 }`, h3 border-bottom eltávolítva
 - ✅ process_fegyverek.py fix: `data/patterns` → `data/tables` + `_pattern.json` szűrő
 - ✅ Fejléc ⚙️ menü: Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter (overlay popup)
@@ -246,19 +246,24 @@
   - `szituáció:fegyverrántás` → `harci_helyzet:fegyverrántás`
   - `szituáció:roham` → `taktika:roham`
 - ✅ Aktív fül adatforrások (YAML → JSON):
-  - `data/sources/taktikak.yaml` → `tables/taktikak.json` (13 taktika, kombó_mód/lista, fokozatos)
+  - `data/sources/taktikak.yaml` → `tables/taktikak.json` (13 taktika, kombó_mód/lista, fokozatos, megkötések)
   - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (13 helyzet, feltétel_kulcs, infó)
   - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (9 szituáció)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
-  - Schema validáció beépítve a `generate_tables.py`-be (`validate_aktiv_ful()`)
+  - `data/sources/statuszok.yaml` → `tables/statuszok.json` (19 státusz, kategória, fokok+alcím+strukturált hatások)
+  - `data/sources/hatasok.yaml` → `tables/hatasok.json` (7 hatás operátor: előny, hátrány, arányos, duplázás, letilt, max_limit, szöveges)
+  - `data/sources/esemenyek.yaml` → `tables/esemenyek.json` (21 esemény/célpont: harci, próba, fizikai, képesség csoportok)
+  - Schema validáció beépítve a `generate_tables.py`-be (`validate_aktiv_ful()`, `validate_hatasok()`, `validate_esemenyek()`, `validate_statuszok()`)
+  - Referenciális integritás: státusz hatás.operátor → hatasok id, hatás.cél → esemenyek id
   - Régi `harcihelyzetek.yaml` törölve
 - ✅ Aktív fül UI (AktivScreen.tsx) — alapverzió
   - Szilánk kijelzés, fegyver/pajzs/páncél toggle-ök
   - Taktikák: multi-select dropdown + chip + ✕, kombó validáció (whitelist/blacklist), fokozat választó
+  - Taktika megkötések: harci_helyzet/tiltott, harcmodor/tiltott runtime validáció
   - Harci helyzetek: multi-select dropdown + chip + ✕
   - Szituációk: multi-select dropdown + chip + ✕
   - Manőver: single-select dropdown (nehézség jelzéssel)
-  - Státuszok: chip lista
+  - Státuszok: multi-select dropdown (név + fok + alcím) + chip + ✕, 19 státusz a statuszok.json-ból
 - ✅ Taktika módosítók → Harc fül
   - Aktív taktikák TÉ/VÉ/KÉ/SP módosítói beépítve a harcérték kalkulációba
   - Fokozatos taktikáknál (Támadó, Védő, Kezdeményező, stb.) a kiválasztott fok értékeit használja
@@ -297,8 +302,8 @@
   - Mind a három locked a Fortélyok fülön (nem szerkeszthető, dropdown-ból kiszűrve)
 
 ## Következő lépések
-1. **Taktika kombó inkonzisztencia feloldása** — 13 aszimmetrikus pár a doksiban (065_02_harci_taktikak.md) és yaml-ban egyaránt; szabálytervezői döntés szükséges
-2. **Aktív fül finomhangolás** — infó box helyzeteknél/manővereknél, státusz dropdown feltöltés
+1. **Taktika kombó inkonzisztencia** — ✅ KÉSZ (szimmetrizálva, megkötések felvíve)
+2. **Aktív fül finomhangolás** — ✅ státusz dropdown kész; TODO: infó box helyzeteknél/manővereknél
 3. **Távharc fül** — VÉ kalkulátor implementáció (§17)
 4. **Szabályleírás fülek** — md tartalom renderelés
 
@@ -307,7 +312,7 @@
 - `/mnt/c/repo/szilank.code/data/docs/engine_spec.md` — engine kalkulációk specifikációja
 - `/mnt/c/repo/szilank.code/data/docs/gui_spec.md` — GUI specifikáció (screen-ek, viselkedés, formázás)
 - `/mnt/c/repo/szilank.code/data/sources/konstansok.yaml` — központi konstansok
-- `/mnt/c/repo/szilank.code/data/schemas/` — összes schema (fortely, kepzettseg, karakter, pancel, fegyver, faj)
+- `/mnt/c/repo/szilank.code/data/schemas/` — összes schema (karakter, fortely, kepzettseg, fegyver, pancel, faj, taktika, statusz, hatas, esemeny, harci_helyzet, szituacio, manover)
 - `/mnt/c/repo/szilank.code/web/src/App.tsx` — fő app komponens (tab rendszer, mód toggle)
 - `/mnt/c/repo/szilank.code/web/src/components/HarcScreen.tsx` — Harc fül implementáció
 - `/mnt/c/repo/szilank.code/web/src/components/TulajdonsagokScreen.tsx` — Tulajdonságok + Képzettségek fül
@@ -321,7 +326,7 @@
 - Feltétel prefixek: `szituáció:`, `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `manőver:`, `státusz:`
 - Követelmények: elemek között ÉS, egy elem név listája VAGY
 - Mesterfegyver NEM számít a max HM-be
-- Manőver Pont: `CEIL(harcmodor_összeg × 2 / tsz)`
+- Manőver Pont: `CEIL(harcmodor_összeg x 2 / tsz)`
 - KP tábla: v8.6.0 értékek (2.5-tel osztott)
 - WSL + NTFS: nincs symlink, Vite serveDataPlugin oldja meg
 - .obsidian/ könyvtár SOHA ne módosítandó
@@ -383,7 +388,7 @@
 - Pajzshasználat fortély: locked a Fortélyok fülön, source of truth a `fortélyok[]` tömb
 - Nyelvismeret fok megjelenítés: "Alap" (fok:1), "Udvari" (fok:2) — `NYELV_FOK_LABELS` konstans a FortelyokScreen-ben
 - Nyelvismeret felvétel: custom styled gomb-lista overlay (`.nyelv-picker`, `.nyelv-csoport`, `.nyelv-btn`), mellé katt/Escape cancel
-- Kor választó: 10–58 / 60–100 toggle split (cserélődő tartalom, nem append), 42×42px kerek gombok
+- Kor választó: 10–58 / 60–100 toggle split (cserélődő tartalom, nem append), 42x42px kerek gombok
 - Harcértékek fül szekció elválasztó: `.he-section + .he-section { border-top }`, h3-on nincs border-bottom
 - process_fegyverek.py: pattern fájlok helye `data/tables/*_pattern.json` (nem `data/patterns/`)
 - Fejléc: ⚙️ menü gomb (overlay popup: Karakter betöltése/mentése, Új/Teszt karakter) + 🔧/🎮 mód toggle

@@ -107,7 +107,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Harci helyzetek | multi-select (dropdown + chip + ✕) | `tables/harci_helyzetek.json` |
 | Szituációk | multi-select (dropdown + chip + ✕) | `tables/szituaciok.json` |
 | Manőver | single-select dropdown | `tables/manoverek.json`, nehézség jelzéssel |
-| Státuszok | chip lista + ✕ | Aktív státuszok |
+| Státuszok | multi-select (dropdown + chip + ✕) | `tables/statuszok.json`, név + fok + alcím |
 
 ### Taktika kombó szabályok
 - Dropdown csak a kompatibilis taktikákat kínálja (whitelist/blacklist szűrés a már aktívak ellen)
@@ -132,7 +132,7 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ### Tartalom
 
-- **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 2×2 grid):
+- **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 2x2 grid):
   - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, fehér)
   - **SFÉ box** (balra rendezve): fejléc label `SFÉ (X%)` (14px, bold, fehér, uppercase), alatta `Fizikai: X` és `Energia: X` egymás alatt (14px, érték: 16px bold)
   - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
@@ -212,7 +212,7 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
 
 ### Tulajdonságok
 - Tulajdonság pontok kijelzés (szerkesztő mód): `Tulajdonság pontok: X/Y` (piros ha túllépés)
-- 8 tulajdonság fix 2 oszlop × 4 sor grid-ben (fentről lefelé, aztán következő oszlop)
+- 8 tulajdonság fix 2 oszlop x 4 sor grid-ben (fentről lefelé, aztán következő oszlop)
 - Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
 - Nem reszponzív, fix layout
 - Szerkesztő módban: double-tap (350ms) → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
@@ -253,7 +253,7 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
 
 #### Viselkedés Szerkesztő módban
 - Rövid koppintás: nem csinál semmit
-- Double-tap (350ms): szint választó popup (gombok 1-15 grid, 5×3 elrendezés, aktív=zöld), érték választás azonnal bezárja
+- Double-tap (350ms): szint választó popup (gombok 1-15 grid, 5x3 elrendezés, aktív=zöld), érték választás azonnal bezárja
 - Escape: popup bezárás
 
 #### Viselkedés Game módban
@@ -313,7 +313,7 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 - Felvételkor popup: "6/0 Felvett" / "⭐ Kiérdemelt" választó
 
 ### Nyelvismeret pont keret
-- Nyelvtanulás képzettség 4. szinttől: `(szint - 3) × 3` pont
+- Nyelvtanulás képzettség 4. szinttől: `(szint - 3) x 3` pont
 - Fizetős fok számítás: nem-kiérdemelt teljes foka + kiérdemelt `max(0, fok-1)` (első fok ingyenes)
 - Nyelvismeret fizetős össz-fok ≤ pont keret
 - Túllépés: utolsó N fizetős sor piros (név + fok), incl. kiérdemelt ha fok>1
@@ -561,7 +561,7 @@ Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
 - Törlés gomb (`.btn-del-confirm`): `background: --error; color: #fff`
 - Input mezők: `background: --input-bg; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; font-size: 14px`
 - Slider (`<input type="range">`): `width: 100%; accent-color: --accent`
-- Szint grid gombok (`.fort-fok-btn`): `36px × 36px; border-radius: 50%; border: 2px solid #555; font-size: 16px; font-weight: bold`
+- Szint grid gombok (`.fort-fok-btn`): `36px x 36px; border-radius: 50%; border: 2px solid #555; font-size: 16px; font-weight: bold`
   - Aktív: `border-color: --success; background: --success; color: #000`
   - Törlő (`.fort-fok-del`): `border-color: --error; color: --error`
 - Szint grid (képzettségek): `grid-template-columns: repeat(5, 36px); gap: 6px`
@@ -598,25 +598,25 @@ Deklaratív számítási szabályok dependency graph-ban:
 #### Jelenlegi rules.json szabályok (53 db):
 | ID | Formula típus | Leírás |
 |----|--------------|--------|
-| ÉP | képlet | 28 + edzettség × 4 |
-| S1_max, S2_max, S3_max | képlet | ÉP/4, ÉP/2, ÉP×3/4 |
+| ÉP | képlet | 28 + edzettség x 4 |
+| S1_max, S2_max, S3_max | képlet | ÉP/4, ÉP/2, ÉPx3/4 |
 | KÉ | képlet | alap + gyorsaság + intelligencia + tsz + fortélyMod |
 | TÉ_alap | képlet | alap + erő + ügyesség + gyorsaság + HM_TÉ |
 | VÉ_alap | képlet | alap + gyorsaság + ügyesség + HM_VÉ |
 | CÉ_alap | képlet | alap + önuralom + CM |
-| összes_kp | képlet | tsz × (perszint + intelligencia) |
-| összes_szekunder_kp | képlet | tsz × (szekunder_perszint + emlékezet) |
+| összes_kp | képlet | tsz x (perszint + intelligencia) |
+| összes_szekunder_kp | képlet | tsz x (szekunder_perszint + emlékezet) |
 | tulajdonság_pont_keret | képlet | alap + floor(tsz/2) |
-| manőver_pont | képlet | ceil(harcmodor_összeg × 2 / tsz) |
+| manőver_pont | képlet | ceil(harcmodor_összeg x 2 / tsz) |
 | felszerelés_keret | képlet | 2 + erő |
 | felszerelés_mgt | képlet | max(0, terhelés - keret) |
-| max_CM | képlet | tsz × max_cm_perszint |
+| max_CM | képlet | tsz x max_cm_perszint |
 | max_HM | sum_where | harci fortélyok (MF nélkül) + harcmodorok + alakzatharc |
 | max_HM_aszimmetria | képlet | floor(tsz / 2) |
 | kp_képzettségek | sum_lookup | képzettség szintek → KP tábla lookup → összeg |
-| kp_fortélyok | sum | fortély fokok összege × fortélyfok konstans |
-| kp_hm | képlet | (HM_TÉ + HM_VÉ) × kp.hm |
-| kp_cm | képlet | CM × kp.cm |
+| kp_fortélyok | sum | fortély fokok összege x fortélyfok konstans |
+| kp_hm | képlet | (HM_TÉ + HM_VÉ) x kp.hm |
+| kp_cm | képlet | CM x kp.cm |
 | elköltött_kp | képlet | kp_képzettségek + kp_fortélyok + kp_hm + kp_cm + kiemelt_kp |
 | maradék_kp | képlet | összes_kp + spec_kp + összes_szekunder_kp - elköltött_kp |
 | sfé_fizikai | képlet | struktúra + alapanyag + idea - rongálódás |
@@ -624,7 +624,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 | páncél_MGT | képlet | max(0, struktúra_mgt + alapanyag_mgt + csatolt_mgt + méret_mgt - erő) |
 | merevvért_TÉ_büntetés | if | if(merev, max(0, MGT - csökkentés), 0) |
 | távharc_cella | képlet | ceil(távolság / osztó) |
-| távharc_cél_VÉ | képlet | max(szorzó,1)×cella + min(szorzó,0) |
+| távharc_cél_VÉ | képlet | max(szorzó,1)xcella + min(szorzó,0) |
 | képzettség_max_szint_primer | képlet | min(max_szint, tsz) |
 | képzettség_max_szint_szekunder | képlet | min(max_szint, tsz + plusz) |
 | fegyver_TÉ | képlet | alap + erő + ügy + gyor + HM + harcmodor + fegyver + MF + fortély |
@@ -635,7 +635,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 | spec_kp | sum + képlet | KP bónusz fortélyok (negatív kp_perfok) + tartós_sérülés |
 | kiemelt_kp | sum | ingyenes keret feletti kiemelt fortélyok KP-ja |
 | kp_primer_képzettségek | sum_lookup | primer képzettség szintek → KP tábla |
-| kp_primer_fortélyok | sum | primer fortélyok fok × kp_perfok |
+| kp_primer_fortélyok | sum | primer fortélyok fok x kp_perfok |
 | primer_költés | képlet | kp_primer_képzettségek + kp_primer_fortélyok + kp_hm + kp_cm |
 | primer_keret | képlet | összes_kp + spec_kp - primer_költés |
 | páncél_struktúra_mgt | lookup | struktúrák tábla → mgt |
@@ -645,7 +645,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 | páncél_méret_mgt | lookup | méret tábla → érték |
 | merevvért_csökkentés | lookup | merevvért_tábla → csökkentés |
 | páncél_csatolt_db | képlet | végtagvédettség + sisak |
-| páncél_lefedettség | if | if(van, 50 + végtag×10 + sisak×10, 0) |
+| páncél_lefedettség | if | if(van, 50 + végtagx10 + sisakx10, 0) |
 
 #### TS-ben maradó logika (nem deklaratív):
 - Fájdalomtűrés enyhítés (küszöb-tábla lookup)

@@ -186,6 +186,12 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }))}>✕</button>
           </div>
         ))}
+        <select className="aktiv-select" value="" onChange={e => { if (e.target.value) setSession(s => ({ ...s, aktív_státuszok: [...s.aktív_státuszok, e.target.value] })); }}>
+          <option value="">+ Státusz...</option>
+          {data.statuszok.flatMap(s => s.fokok.map(f => ({ label: `${s.név} (${f.fok}) - ${f.alcím}`, value: `${s.név} (${f.fok})` }))).filter(o => !session.aktív_státuszok.includes(o.value)).map(o => (
+            <option key={o.value} value={o.value}>{o.label}</option>
+          ))}
+        </select>
       </div>
     </div>
   );

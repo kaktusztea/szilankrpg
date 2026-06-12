@@ -1,0 +1,31 @@
+---
+# Hatás operátorok — a hatás mechanika típusai
+# mód: hogyan hat a célra
+#   "előny_hátrány" — kocka reroll (érték: -2..-1 / +1..+2, clamp [-2,+2])
+#   "szorzó" — arányos módosítás (érték: 0.5 = feleződik, 2 = duplázódik)
+#   "letilt" — boolean (képesség elvesztés, automatikus kudarc)
+#   "max" — felső korlát beállítás (érték: pl. 1 = max 1 támadás)
+#   "szöveges" — nem kumulálható, csak informatív
+
+hatás_operátorok:
+  - id: "előny"
+    név: "Előny"
+    mód: "előny_hátrány"
+  - id: "hátrány"
+    név: "Hátrány"
+    mód: "előny_hátrány"
+  - id: "arányos"
+    név: "Arányos"
+    mód: "szorzó"
+  - id: "duplázás"
+    név: "Duplázás"
+    mód: "szorzó"
+  - id: "letilt"
+    név: "Kioltás"
+    mód: "letilt"
+  - id: "max_limit"
+    név: "Maximum"
+    mód: "max_limit"
+  - id: "szöveges"
+    név: "Szöveges"
+    mód: "szöveges"

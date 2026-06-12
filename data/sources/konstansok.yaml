@@ -73,7 +73,7 @@ arányok:
   képzettség_nemprimer_max_szint_plusz: 3
   képzettség_max_szint: 15
   tulajdonság_pont_alap: 64                # alap tulajdonság pont keret
-  tulajdonság_pont_tsz_bónusz: 0.5         # TSz × ez (kerekítés lefelé) adódik hozzá
+  tulajdonság_pont_tsz_bónusz: 0.5         # TSz x ez (kerekítés lefelé) adódik hozzá
   max_cm_perszint: 2            # max ennyi CM vehető fel szintenként
 
 # ============================================================
@@ -304,7 +304,7 @@ merevvértviselet_bónuszok:
     TÉ_büntetés_csökkentés: 15
 
 # ============================================================
-# Pajzshasználat TÉ büntetés (pajzs × fok mátrix)
+# Pajzshasználat TÉ büntetés (pajzs x fok mátrix)
 # ============================================================
 
 pajzshasználat_TÉ_büntetés:

@@ -1,0 +1,77 @@
+---
+# Események/Célpontok — amire hatások vonatkozhatnak
+# A Hatás pool ezek szerint csoportosít és kumulál
+
+események:
+  # --- Harci dobások ---
+  - id: "ké_dobás"
+    név: "KÉ dobás"
+    csoport: "harci"
+  - id: "té_dobás"
+    név: "TÉ dobás"
+    csoport: "harci"
+  - id: "cé_dobás"
+    név: "CÉ dobás"
+    csoport: "harci"
+  - id: "manőver_ellenpróba"
+    név: "Manőver Ellenpróba dobás"
+    csoport: "harci"
+  - id: "sebzésdobás"
+    név: "Sebzésdobás"
+    csoport: "harci"
+
+  # --- Harci jellemzők ---
+  - id: "támadások_száma"
+    név: "Támadások száma"
+    csoport: "harci"
+  - id: "vé_veszteség"
+    név: "VÉ veszteség"
+    csoport: "harci"
+
+  # --- Próbák ---
+  - id: "tulajdonságpróba"
+    név: "Tulajdonságpróba"
+    csoport: "próba"
+  - id: "képzettségpróba"
+    név: "Képzettségpróba"
+    csoport: "próba"
+  - id: "szociális_próba"
+    név: "Szociális képzettségpróba"
+    csoport: "próba"
+  - id: "szellemi_próba"
+    név: "Szellemi képzettségpróba"
+    csoport: "próba"
+  - id: "fizikai_próba"
+    név: "Fizikai képzettség/tulajdonságpróba"
+    csoport: "próba"
+  - id: "érzék_próba"
+    név: "Érzék Tulajdonságpróba"
+    csoport: "próba"
+  - id: "mágiaellenállás"
+    név: "Mágiaellenállás dobás"
+    csoport: "próba"
+  - id: "mágia_akarata"
+    név: "Mágia Akarata"
+    csoport: "próba"
+
+  # --- Fizikai állapot ---
+  - id: "mozgás"
+    név: "Mozgás"
+    csoport: "fizikai"
+  - id: "beszéd"
+    név: "Beszéd"
+    csoport: "fizikai"
+
+  # --- Képességek ---
+  - id: "harci_képesség"
+    név: "Harci képesség"
+    csoport: "képesség"
+  - id: "varázslás"
+    név: "Varázslás képesség"
+    csoport: "képesség"
+  - id: "pszi"
+    név: "Pszi képesség"
+    csoport: "képesség"
+  - id: "antyssjárás"
+    név: "Antyssjárás képesség"
+    csoport: "képesség"

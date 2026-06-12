@@ -1,0 +1,15 @@
+---
+# Schema: statuszok.yaml
+# Gyökér: státuszok (lista)
+
+státuszok:
+  - név: ""                    # kötelező, string
+    kategória: ""              # kötelező, enum: "fizikai" | "szellemi" | "harci" | "mágikus"
+    fokok:                     # kötelező, lista (min 1 elem)
+      - fok: 1                 # kötelező, number (1-N)
+        alcím: ""              # kötelező, string (a fok elnevezése)
+        hatások:               # kötelező, lista (strukturált hatások)
+          - hatás: ""          # kötelező, hatás operátor id (hatasok.yaml)
+            érték: 0           # opcionális, szám (operátor-függő)
+            cél: ""            # kötelező, esemény id (esemenyek.yaml)
+            megjegyzés: ""     # opcionális, string (kontextuális kiegészítés)

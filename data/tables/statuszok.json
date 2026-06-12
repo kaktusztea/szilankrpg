@@ -1,0 +1,1117 @@
+[
+  {
+    "név": "Áldott Tulajdonság",
+    "kategória": "mágikus",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Előny+1",
+        "hatások": [
+          {
+            "hatás": "előny",
+            "érték": 1,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "adott Tulajdonságra, feltétel esetén"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Előny+2",
+        "hatások": [
+          {
+            "hatás": "előny",
+            "érték": 2,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "adott Tulajdonságra, feltétel esetén"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Átkozott Tulajdonság",
+    "kategória": "mágikus",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Hátrány-1",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "adott Tulajdonságra"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Hátrány-2",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "adott Tulajdonságra"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Áldott Képzettség",
+    "kategória": "mágikus",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Előny+1",
+        "hatások": [
+          {
+            "hatás": "előny",
+            "érték": 1,
+            "cél": "képzettségpróba",
+            "megjegyzés": "adott Képzettségre"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Előny+2",
+        "hatások": [
+          {
+            "hatás": "előny",
+            "érték": 2,
+            "cél": "képzettségpróba",
+            "megjegyzés": "adott Képzettségre"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Átkozott Képzettség",
+    "kategória": "mágikus",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Hátrány-1",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "képzettségpróba",
+            "megjegyzés": "adott Képzettségre"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Hátrány-2",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "képzettségpróba",
+            "megjegyzés": "adott Képzettségre"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Átkozott Viselkedés",
+    "kategória": "szellemi",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Hátrány-1",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "képzettségpróba",
+            "megjegyzés": "KM határozza meg"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Hátrány-2",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "képzettségpróba",
+            "megjegyzés": "KM határozza meg"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Bénultság",
+    "kategória": "fizikai",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Cselekvőképtelenség",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "harci_képesség"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "mozgás",
+            "megjegyzés": "nyaktól lefelé"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Paralízis",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "harci_képesség"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "mozgás"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "beszéd"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Blokkolt",
+    "kategória": "mágikus",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Közepesen",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "té_dobás"
+          },
+          {
+            "hatás": "arányos",
+            "érték": 0.5,
+            "cél": "mozgás"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Erősen",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "té_dobás"
+          },
+          {
+            "hatás": "arányos",
+            "érték": 0.5,
+            "cél": "mozgás"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Eszmélet",
+    "kategória": "fizikai",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Bódultság",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "té_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "manőver_ellenpróba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "képzettségpróba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "szociális_próba"
+          },
+          {
+            "hatás": "szöveges",
+            "cél": "támadások_száma",
+            "megjegyzés": "-1 támadás"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Kábultság",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "té_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "manőver_ellenpróba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "képzettségpróba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "tulajdonságpróba"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "szociális_próba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "max_limit",
+            "érték": 1,
+            "cél": "támadások_száma"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "varázslás"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Ájulás",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "harci_képesség"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "képzettségpróba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "mozgás"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "beszéd"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "pszi"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "varázslás"
+          }
+        ]
+      },
+      {
+        "fok": 4,
+        "alcím": "Kóma",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "harci_képesség"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "képzettségpróba"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "tulajdonságpróba"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "mozgás"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "beszéd"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "pszi"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "varázslás"
+          },
+          {
+            "hatás": "szöveges",
+            "cél": "antyssjárás",
+            "megjegyzés": "Antysson ragadsz"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Érzékvesztés",
+    "kategória": "fizikai",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Zavart",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "érzék_próba"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Részleges",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "érzék_próba"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Teljes",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "érzék_próba",
+            "megjegyzés": "automatikus kudarc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Félelem",
+    "kategória": "szellemi",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Szorongás",
+        "hatások": [
+          {
+            "hatás": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Max Védő taktika (VÉ:+15, TÉ:-30)"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "szociális_próba"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Rettegés",
+        "hatások": [
+          {
+            "hatás": "max_limit",
+            "érték": 1,
+            "cél": "támadások_száma"
+          },
+          {
+            "hatás": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Csak Teljes Védekezés (VÉ:+30)"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "szociális_próba",
+            "megjegyzés": "automatikus kudarc"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Bénító félelem",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "mozgás"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "harci_képesség"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "varázslás"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "pszi"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Fizikai",
+    "kategória": "fizikai",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Fáradtság",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "szellemi_próba"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Kimerültség",
+        "hatások": [
+          {
+            "hatás": "duplázás",
+            "érték": 2,
+            "cél": "vé_veszteség"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "szellemi_próba"
+          },
+          {
+            "hatás": "szöveges",
+            "cél": "támadások_száma",
+            "megjegyzés": "FP S1 feltöltődik"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Elcsigázottság",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "képzettségpróba",
+            "megjegyzés": "nem-harci"
+          },
+          {
+            "hatás": "max_limit",
+            "érték": 1,
+            "cél": "támadások_száma"
+          },
+          {
+            "hatás": "duplázás",
+            "érték": 2,
+            "cél": "vé_veszteség"
+          },
+          {
+            "hatás": "arányos",
+            "érték": 0.5,
+            "cél": "mozgás"
+          },
+          {
+            "hatás": "szöveges",
+            "cél": "képzettségpróba",
+            "megjegyzés": "FP S2; Automatikus kudarc Harci akrobatika"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Hangulat",
+    "kategória": "szellemi",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Fogékony",
+        "hatások": [
+          {
+            "hatás": "szöveges",
+            "cél": "képzettségpróba",
+            "megjegyzés": "KM adhat Előny+1 vagy Hátrány-1 szituáció függően"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Inspirált",
+        "hatások": [
+          {
+            "hatás": "előny",
+            "érték": 1,
+            "cél": "képzettségpróba",
+            "megjegyzés": "kreatív tevékenységekre"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "képzettségpróba",
+            "megjegyzés": "koncentrációt igénylő feladatokra"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Eufórikus",
+        "hatások": [
+          {
+            "hatás": "előny",
+            "érték": 1,
+            "cél": "képzettségpróba",
+            "megjegyzés": "kreatív tevékenységekre"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "képzettségpróba",
+            "megjegyzés": "koncentrációt igénylő feladatokra"
+          }
+        ]
+      },
+      {
+        "fok": 4,
+        "alcím": "Obszesszív",
+        "hatások": [
+          {
+            "hatás": "előny",
+            "érték": 1,
+            "cél": "képzettségpróba",
+            "megjegyzés": "obszesszió tárgyához kötődő"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "képzettségpróba",
+            "megjegyzés": "minden más"
+          },
+          {
+            "hatás": "szöveges",
+            "cél": "képzettségpróba",
+            "megjegyzés": "Automatikus kudarc (KM mondja meg mire)"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Indulat",
+    "kategória": "szellemi",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Harag",
+        "hatások": [
+          {
+            "hatás": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Kötelező max Támadó taktika (TÉ:+3, VÉ:-6); csak Kezdeményezővel kombinálható"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Gyűlölet",
+        "hatások": [
+          {
+            "hatás": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Kötelező Öngyilkos roham (1×), utána Roham; max Támadó taktika"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Őrjöngés",
+        "hatások": [
+          {
+            "hatás": "szöveges",
+            "cél": "harci_képesség",
+            "megjegyzés": "Mint Gyűlölet + mindenkit megtámad"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "szociális_próba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "szellemi_próba",
+            "megjegyzés": "automatikus kudarc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Késztetés",
+    "kategória": "szellemi",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Sugallat",
+        "hatások": [
+          {
+            "hatás": "szöveges",
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Automatikus Akaraterő próba (12)"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Vágy",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Akaraterő próbára"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Kényszer",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Akaraterő próbára"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Rosszullét",
+    "kategória": "fizikai",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Közepes",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "té_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "fizikai_próba"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Erős",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "té_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "fizikai_próba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "szociális_próba"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Sérült",
+    "kategória": "fizikai",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "S3",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "képzettségpróba"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "S4",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "tulajdonságpróba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "képzettségpróba"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Haldoklás",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "képzettségpróba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "harci_képesség"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "mozgás",
+            "megjegyzés": "lecövekelt"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "pszi"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "varázslás"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Szellemi",
+    "kategória": "szellemi",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Kialvatlanság",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "érzék_próba",
+            "megjegyzés": "Észlelés"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Eltompultság",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "pszi"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "szellemi_próba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "szociális_próba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "varázslás",
+            "megjegyzés": "random hatás esélye ↑"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Delírium",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "pszi"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "varázslás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "szellemi_próba",
+            "megjegyzés": "nem-mágikus"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "szociális_próba"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Trauma",
+    "kategória": "szellemi",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Lélekrepedés",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Önuralom"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Érzékenység"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "szociális_próba",
+            "megjegyzés": "Önuralom/Érzékenység használatakor"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Lélektörés",
+        "hatások": [
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Önuralom"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Érzékenység"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "szociális_próba",
+            "megjegyzés": "Önuralom/Érzékenység használatakor"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Zavar",
+    "kategória": "harci",
+    "fokok": [
+      {
+        "fok": 1,
+        "alcím": "Kizökkent",
+        "hatások": [
+          {
+            "hatás": "max_limit",
+            "érték": 1,
+            "cél": "támadások_száma"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -1,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Gyorsaság, Ügyesség"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "szellemi_próba"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "szociális_próba"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "alcím": "Megrendült",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "szellemi_próba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "szociális_próba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "ké_dobás"
+          },
+          {
+            "hatás": "hátrány",
+            "érték": -2,
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "Gyorsaság, Ügyesség"
+          },
+          {
+            "hatás": "max_limit",
+            "érték": 1,
+            "cél": "támadások_száma"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "mozgás",
+            "megjegyzés": "lecövekelt"
+          },
+          {
+            "hatás": "szöveges",
+            "cél": "beszéd",
+            "megjegyzés": "zavart"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "alcím": "Sokk",
+        "hatások": [
+          {
+            "hatás": "letilt",
+            "cél": "tulajdonságpróba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "képzettségpróba",
+            "megjegyzés": "automatikus kudarc"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "harci_képesség"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "mozgás",
+            "megjegyzés": "lecövekelt"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "pszi"
+          },
+          {
+            "hatás": "letilt",
+            "cél": "varázslás"
+          },
+          {
+            "hatás": "szöveges",
+            "cél": "beszéd",
+            "megjegyzés": "zavart vagy némult"
+          }
+        ]
+      }
+    ]
+  }
+]

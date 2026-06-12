@@ -1,0 +1,8 @@
+---
+# Schema: esemenyek.yaml
+# Gyökér: események (lista)
+
+események:
+  - id: ""                     # kötelező, egyedi string (hivatkozási kulcs)
+    név: ""                    # kötelező, string (megjelenítési név)
+    csoport: ""                # kötelező, enum: "harci" | "próba" | "fizikai" | "képesség"

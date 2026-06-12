@@ -1,0 +1,8 @@
+---
+# Schema: hatasok.yaml
+# Gyökér: hatás_operátorok (lista)
+
+hatás_operátorok:
+  - id: ""                     # kötelező, egyedi string
+    név: ""                    # kötelező, string (megjelenítési név)
+    mód: ""                    # kötelező, enum: "előny_hátrány" | "szorzó" | "letilt" | "max_limit" | "szöveges"
