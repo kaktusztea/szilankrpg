@@ -137,6 +137,8 @@ formula:
      + fortély_módosítók(cél="KÉ", feltétel="")
 
 output: KÉ
+note: A rules.json KÉ képlete NEM tartalmazza a fortély módosítókat (körkörös függőség miatt).
+      A HarcScreen utólag adja hozzá: computed.KÉ + taktikaMods.KÉ + fortelyMods.KÉ.
 ```
 
 ---
@@ -150,11 +152,7 @@ note: Másfélkezes (MK) fegyverek: a fegyverek.json-ban két entry van (1K és 
       Az Alapnév mező a suffix nélküli display név (pl. "Kard, másfélkezes").
 
       Fegyver kategória → harcmodor képzettség mapping:
-        közelharci → Közelharc
-        kardvívó → Kardvívás
-        romboló → Rombolás
-        lándzsavívó → Lándzsavívás
-        ostorharc → Ostorharc
+        source: konstansok.yaml → fegyver_kategória_harcmodor
 ```
 
 ```
@@ -202,7 +200,8 @@ formula:  // ismételve minden egyes fegyverre
   VÉ = VÉ_alap + VÉ_harcmodor + VÉ_fegyver + VÉ_mesterfegyver + VÉ_fortély
 
 output: VÉ (per fegyver)
-note: A végső VÉ-hez hozzáadódik a pajzs VÉ bónusz (lásd §13) ha van pajzs és van szabad kéz.
+note: A végső VÉ-hez hozzáadódik a pajzs VÉ bónusz (lásd §13) ha session.aktív_pajzs = true.
+      Pajzs VÉ: lookup(pajzs.méret → tables/pajzsok.json).VÉ (kis:3, közepes:10, nagy:16).
       A Teljes harcértékek táblázatban a VÉ = fegyver VÉ + pajzs VÉ (ha aktív).
 ```
 
@@ -299,6 +298,8 @@ reactive rules.json:
 impl: A struktúra és alapanyag értékek string-keyed lookup szabályokból jönnek (rules.json).
       A HarcScreen közvetlenül a karakter adatokból építi a context-et + lookup táblákat.
       Ha nincs struktúra kiválasztva → minden 0, lefedettség = 0%.
+      Végleges SFÉ a Harc fülön: (session.aktív_páncél ? computed.sfé : 0) + fortelyMods['SFÉ']
+      A fortély SFÉ (pl. Természetes páncél) mindig aktív, független a páncél viseléstől.
 ```
 
 ---
@@ -448,8 +449,14 @@ logic:
 output: módosított harcértékek
 note: feltétel == "" → mindig aktív (karakterlap számolja).
       feltétel == "prefix:érték" → feltételesen aktív (UI toggle / automatikus).
+      feltétel == [{forrás, operátor, érték}] → kalkulált feltétel (lásd §24).
       Prefixek (lásd konstansok.yaml → feltétel_prefixek):
         szituáció, harci_helyzet, taktika, fegyver, fegyver_kategória, manőver, státusz
+      Módok: flat, scaled, override, enyhít
+        - "enyhít": Hatás pool-ban csökkenti a célra vonatkozó negatív hatás fokát (§22.7)
+      Opcionális mezők:
+        - "alcél": konkrét tulajdonság/képzettség neve (pl. "Edzettség", "Zárnyitás", "Látás")
+        - "megjegyzés": emberi olvasásra (kontextuális info)
       Speciális feltétel esetek:
         - "fegyver:" (üres érték) → Mesterfegyver fortély: aktív ha az adott spec_elem fegyver van kiválasztva
         - "fegyver:puszta kéz" → csak puszta kéz harccal aktív
@@ -700,14 +707,16 @@ note: A webapp Aktív fülön ezek toggle-ök. A pontos hatásaikat a karakterla
 
 | Szituáció              | feltétel kulcs                     | Megjegyzés            |
 | ---------------------- | ---------------------------------- | --------------------- |
-| Kétkezes harc          | `szituáció:kétkezes_harc`          | két fegyver forgatása |
 | Lovas harc             | `szituáció:lovas_harc`             | lóhátról              |
 | Léglovas harc          | `szituáció:léglovas_harc`          | repülő hátasról       |
 | Harci szekér           | `szituáció:harci_szekér`           | szekérről             |
 | Páros harc             | `szituáció:páros_harc`             | koordinált 2 fős harc |
 | Közönség előtt         | `szituáció:közönség_előtt`         | gladiátor             |
 | Szörnyeteg elleni harc | `szituáció:szörnyeteg_elleni_harc` | bestia                |
-| Merevvért 70%          | `szituáció:merevvért_70%`          | SFÉ 70% érvényesül    |
+| Célzás                 | `szituáció:célzás`                 | távharc               |
+
+note: "Kétkezes harc" és "Merevvért 70%" eltávolítva a szituáció dropdown-ból — automatikusan kezeltek
+      (session.kétkezes_harc toggle ill. kalkulált feltétel a fortély módosítóban).
 | Célzás                 | `szituáció:célzás`                 | távharc               |
 
 ### 21.4 Manőverek
@@ -808,7 +817,7 @@ események:
 ```yaml
 státuszok:
   - név: "Blokkolt"
-    kategória: "mágikus"          # fizikai | szellemi | harci | mágikus
+    kategória: "mágikus"          # fizikai | szellemi | mágikus
     fokok:
       - fok: 1
         alcím: "Közepesen"
@@ -838,7 +847,7 @@ Hatás objektum mezői:
 - Chip megjelenítés: "Félelem (2) - Rettegés" + ✕ törlés
 - Koppintás (Game mód): hatások listája lenyílik (accordion)
 
-### 22.7 Hatás pool (jövőbeli feature)
+### 22.7 Hatás pool (Aktív fül)
 
 Az aktív státuszokból cél szerint kumulált hatás összesítő:
 1. Összegyűjtjük az aktív státuszok fokainak `hatások[]` listáit
@@ -858,3 +867,48 @@ Az aktív státuszokból cél szerint kumulált hatás összesítő:
 - `validate_statuszok()`: referenciális integritás (hatás → operátor id, cél → esemény id)
 
 note: `státusz:` feltétel prefix → §16 feltételes fortély módosítók aktiválása (jövőbeli).
+
+
+---
+
+## §23 Több támadás TÉ levonás
+
+Ha egy fegyverrel >1 támadás lehetséges (harckeret/sebesség alapján), minden támadásra fix TÉ levonás jár.
+
+```
+konstansok.több_támadás_TÉ_levonás: -3
+```
+
+Alkalmazás: `fegyver_támadások > 1` → TÉ + több_támadás_TÉ_levonás.
+Az "1 támadás" taktika `TÉ: +3` módosítója generikusan kioltja (taktikaMods-on keresztül).
+
+---
+
+## §24 Kalkulált feltételek (fortély módosítókban)
+
+A fortély módosítók `feltétel` mezője kétféle lehet:
+
+### String feltétel (session dispatch)
+```yaml
+feltétel: "taktika:roham"
+```
+Az aktív taktikák/helyzetek/szituációk `feltétel_kulcs` értékéből épül az `aktívFeltételek` Set.
+
+### Strukturált feltétel (kalkulált)
+```yaml
+feltétel:
+  - { forrás: "páncél_merev", operátor: "==", érték: true }
+  - { forrás: "páncél_lefedettség", operátor: ">=", érték: 70 }
+```
+Lista elemek ÉS kapcsolatban. Forrás lookup sorrend:
+1. `session` mezők (kétkezes_harc, aktív_pajzs, stb.)
+2. `computed` (reactive engine eredmények: páncél_merev, páncél_lefedettség, stb.)
+3. `ctx` (buildContext input értékek)
+
+Operátorok: `==`, `!=`, `>=`, `<=`, `>`, `<`
+Boolean↔number normalizálás: `true` = 1, `false` = 0 (reactive engine number-ként számol).
+
+Érintett fortélyok:
+- Merevvértviselet fok 3: `páncél_merev == true` ÉS `páncél_lefedettség >= 70`
+- Kétkezes harc 1-3: `kétkezes_harc == true`
+- Kétkezesség 1: `kétkezes_harc == true`

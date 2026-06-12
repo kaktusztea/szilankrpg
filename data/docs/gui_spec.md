@@ -55,7 +55,8 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 
 - `padding: 8px 12px`, háttér: `--primary`, `border-bottom: 1px solid #333`
 - Bal: "Szilánk RPG" (`font-weight: bold, 16px, white-space: nowrap`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
-- Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`):
+- Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → értékválasztó popup 0/1/2/3)
+- Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - 📅 Napló overlay gomb (mindkét mód)
   - ✏️ Jegyzetek overlay gomb (mindkét mód)
   - ⚙️ Menü gomb: overlay popup (Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter / Teljes képernyő)
@@ -81,7 +82,6 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 | **ÉP / VÉ csökkenés**   | szerkeszthető | **szerkeszthető** ✅        |
 | **Manőver Pont használat** | szerkeszthető | **szerkeszthető** ✅      |
 | **Jegyzetek**            | szerkeszthető | **szerkeszthető** ✅        |
-| Szabályleírás fülek      | read-only     | read-only                  |
 
 ### Viselkedés
 - **Toggle gomb** a fejlécben (pl. 🔧/🎮 ikon): váltás a két mód között
@@ -99,26 +99,36 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 | Elem | Típus | Leírás |
 |------|-------|--------|
-| Szilánk | kijelzés | Aktuális szilánk érték |
-| Aktív fegyver | single-select dropdown | Karakter fegyver-példányai + "Puszta kéz" |
-| Pajzs kézben | toggle gomb (Igen/Nem) | Pajzs aktív-e |
-| Páncél viselve | toggle gomb (Igen/Nem) | Páncél aktív-e |
-| Taktikák | multi-select (dropdown + chip + ✕) | `tables/taktikak.json`, kombó validáció, fokozatos fok választó |
-| Harci helyzetek | multi-select (dropdown + chip + ✕) | `tables/harci_helyzetek.json` |
-| Szituációk | multi-select (dropdown + chip + ✕) | `tables/szituaciok.json` |
-| Manőver | single-select dropdown | `tables/manoverek.json`, nehézség jelzéssel |
-| Státuszok | multi-select (dropdown + chip + ✕) | `tables/statuszok.json`, név + fok + alcím |
+| Hatás pool box | info szekció (felül) | 4 alszekció: Harcérték módosítók, Aktív Hatások, Fortély emlékeztetők, Narratív módosítók |
+| Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás |
+| Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend |
+| Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus |
+| Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
+| Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, kiválasztott infó kijelzés |
+| Narratív módosítók | input + dropdown + gomb | Szabad szöveg + Előny/Hátrány érték |
+| Fegyver jobb/bal | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" |
+| Kétkezes harc | field-btn toggle | Csak ha mindkét kézben fegyver, kézi be/kikapcsolás |
+| Pajzs kézben | field-btn toggle | Hatással a Harc fül VÉ-re (méret-függő lookup) |
+| Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 
 ### Taktika kombó szabályok
-- Dropdown csak a kompatibilis taktikákat kínálja (whitelist/blacklist szűrés a már aktívak ellen)
-- Fokozatos taktikáknál (Támadó, Védő, Kezdeményező, stb.) chip mellett fok választó select
-- `kombó_mód: "whitelist"` + `kombó_lista` = CSAK ezekkel; `"blacklist"` = KIVÉVE ezeket
+- Picker csak a kompatibilis taktikákat kínálja (whitelist/blacklist + megkötések szűrés)
+- Megkötések: `harci_helyzet/tiltott`, `harcmodor/tiltott`, `támadások/min`
+- Fokozatos taktikáknál két lépéses picker (taktika → fok)
+- Chip kattintás fokozatos taktikánál: fokválasztó picker újra felugrik
+
+### Hatás pool szekciók
+1. **Harcérték módosítók**: taktikák fix KÉ/TÉ/VÉ/SP összesítése
+2. **Aktív Hatások**: státuszok + harci helyzetek strukturált hatásai kumulálva (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít)
+3. **Fortély emlékeztetők**: harci fortélyok narratív hatásszövegei (nem kiterjesztés, nem kiemelt)
+4. **Narratív módosítók**: KM által hozzáadott szöveges + opcionális Előny/Hátrány
 
 ### Stílus
-- `.aktiv-row`: flex, space-between, border-bottom
-- `.aktiv-toggle`: gomb, `.on` = zöld háttér
-- `.aktiv-chip`: inline-flex, primary háttér, ✕ piros
-- `.aktiv-select`: standard input-bg dropdown
+- `.aktiv-field-btn`: keretezett label+érték (he-field-btn stílus)
+- `.aktiv-hatas-pool`: sötét háttér, keretes box, szekciók elválasztó vonallal
+- `.hatas-pool-item .fortely-nev`: narancssárga (#e0a050)
+- Overlay picker: `.manover-picker` (görgethető, 80vh max), `.manover-card` kártyák
+- `.manover-category-label`: narancssárga kategória fejléc
 
 ### Viselkedés
 - Minden módosítás azonnal frissíti a session-t → Harc fül értékei reagálnak
@@ -150,7 +160,7 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - +1: VÉ visszaadás (disabled ha csökkenés = 0)
   - ⟲: reset (disabled ha 0, megerősítő popup: piros "VÉ Reset" gomb)
   - VÉ oszlop flash: sárga animáció csökkenéskor, zöld animáció +1-nél (1s fade-out)
-  - Double-tap a label-re vagy értékre: VÉ csökkenés történet popup (pl. "-3; -2; +1"), mellé kopp bezárja
+  - Koppintás a label-re vagy értékre: VÉ csökkenés történet popup (pl. "-3; -2; +1"), mellé kopp bezárja
   - Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát (Math.max(0,...) clamp).
 - **ÉP táblázat**:
   - **Fejléc sor** (4 oszlopos grid, S1-S4-hez igazítva):
@@ -409,10 +419,24 @@ HM/CM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban
 
 ---
 
-## 6. Leíró + Karma Hátterek fül/screen
+## 6. Hátterek fül/screen (🟡)
 
-- Leíró Hátterek: szabad szöveges lista
-- Karma Hátterek: szabad szöveges lista (név + jellemzők/körülmények)
+Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
+
+### Tartalom
+- **Leíró hátterek**: kategóriánként (Származás, Jellem, Küllem, Fóbia) — szövegfelhő, dupla katt toggle
+- **Karma hátterek**: egyetlen csoport — szövegfelhő, dupla katt toggle
+
+### Viselkedés
+- Dupla katt: aktivál/deaktivál (toggle)
+- Aktív elemek: színes kijelölés (leíró = zöld, karma = narancs), sor elejére rendezés, ABC sorrend
+- Game módban: nem szerkeszthető (dupla katt nem reagál)
+- Kategória label: világoskék (#7eb8da), bold
+- Csoport fejléc (Leíró/Karma): narancssárga (#e0a050), uppercase
+
+### Stílus
+- `.hatter-tag`: lekerekített pill (border-radius: 12px), sötét háttér, szürke
+- `.hatter-tag.active`: zöld háttér+keret (leíró) / narancs háttér+keret (karma)
 
 ---
 
@@ -476,28 +500,6 @@ Játék session bejegyzések naplója.
 - Mentéskor a karakter JSON-ba kerül (💾 gombbal)
 
 ---
-
-## 7. Szabályleírás: Harci taktikák fül/screen
-
-- Harci taktikák listája (név)
-- Koppintás: accordion-szerűen lenyílik a leírás (markdown renderelve)
-- Read-only referencia oldal
-
----
-
-## 8. Szabályleírás: Harci helyzetek fül/screen
-
-- Harci helyzetek listája (név)
-- Koppintás: accordion lenyílik a leírás
-- Read-only referencia oldal
-
----
-
-## 9. Szabályleírás: Manőverek fül/screen
-
-- Manőverek listája (név)
-- Koppintás: accordion lenyílik a leírás
-- Read-only referencia oldal
 
 ---
 
@@ -672,7 +674,7 @@ Minden adat `fetchJson`-nel:
 ### Karakter state struktúra (App szintjén)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
 - Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
-- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_szituációk`, `aktív_manőver`, `aktív_státuszok`
+- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_szituációk`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
 - Derived getterek (early return utáni destructuring): `tulajdonságok`, `képzettségek`, `fortélyok`, `session`
@@ -683,4 +685,3 @@ Minden adat `fetchJson`-nel:
 A Tulajdonságok/Képzettségek/Fortélyok/Harcértékek fülek **szerkesztő** jellegűek.
 Az Aktív és Harc fülek **runtime** jellegűek (a harc közbeni állapotot kezelik).
 A Jegyzetek fül mindkét módban írható.
-A Szabályleírás fülek **read-only** referenciák.
