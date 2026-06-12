@@ -79,9 +79,91 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
     setSession(s => ({ ...s, aktív_taktikák: s.aktív_taktikák.map((t, i) => i === idx ? { ...t, fok } : t) }));
   }
 
+  // --- Hatás pool kalkuláció ---
+  // 1. Taktika harcérték módosítók
+  const taktikaMods: Record<string, number> = {};
+  for (const at of session.aktív_taktikák) {
+    const def = data.taktikak.find(t => t.név === at.név);
+    if (!def) continue;
+    if (def.fokozatos && def.fokok && at.fok != null) {
+      const fokDef = def.fokok.find(f => f.fok === at.fok);
+      if (fokDef) {
+        for (const [k, v] of Object.entries(fokDef)) {
+          if (k !== 'fok' && typeof v === 'number') taktikaMods[k] = (taktikaMods[k] ?? 0) + v;
+        }
+      }
+    } else if (def.módosítók) {
+      for (const [k, v] of Object.entries(def.módosítók)) {
+        if (typeof v === 'number') taktikaMods[k] = (taktikaMods[k] ?? 0) + v;
+      }
+    }
+  }
+
+  // 2. Státusz hatások kumulálása
+  const státuszHatások: { cél: string; hatás: string; érték?: number; megjegyzés?: string }[] = [];
+  for (const st of session.aktív_státuszok) {
+    const match = st.match(/^(.+) \((\d+)\)$/);
+    if (!match) continue;
+    const def = data.statuszok.find(s => s.név === match[1]);
+    const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
+    if (fokDef) {
+      for (const h of fokDef.hatások) {
+        státuszHatások.push(h);
+      }
+    }
+  }
+  // Csoportosítás cél szerint
+  const hatásPool = new Map<string, { előnyHátrány: number; letilt: boolean; maxLimit?: number; szorzó: number; szövegesek: string[] }>();
+  for (const h of státuszHatások) {
+    if (!hatásPool.has(h.cél)) hatásPool.set(h.cél, { előnyHátrány: 0, letilt: false, szorzó: 1, szövegesek: [] });
+    const entry = hatásPool.get(h.cél)!;
+    if (h.hatás === 'előny' || h.hatás === 'hátrány') entry.előnyHátrány = Math.max(-2, Math.min(2, entry.előnyHátrány + (h.érték ?? 0)));
+    else if (h.hatás === 'letilt') entry.letilt = true;
+    else if (h.hatás === 'max_limit') entry.maxLimit = entry.maxLimit != null ? Math.min(entry.maxLimit, h.érték ?? 99) : h.érték;
+    else if (h.hatás === 'arányos' || h.hatás === 'duplázás') entry.szorzó *= (h.érték ?? 1);
+    else if (h.hatás === 'szöveges') entry.szövegesek.push(h.megjegyzés ?? '');
+  }
+
+  const eseményNév = (id: string) => data.esemenyek.find(e => e.id === id)?.név ?? id;
+  const hasTaktikaMods = Object.values(taktikaMods).some(v => v !== 0);
+  const hasHatásPool = hatásPool.size > 0;
+
   return (
     <div className="screen aktiv-screen">
       <h2>❎ Aktív</h2>
+
+      {/* Hatás pool */}
+      {(hasTaktikaMods || hasHatásPool) && (
+        <div className="aktiv-hatas-pool">
+          {hasTaktikaMods && (
+            <div className="hatas-pool-section">
+              <span className="hatas-pool-title">Harcérték módosítók</span>
+              <div className="hatas-pool-items">
+                {Object.entries(taktikaMods).filter(([, v]) => v !== 0).map(([k, v]) => (
+                  <span key={k} className={`hatas-pool-item ${v > 0 ? 'positive' : 'negative'}`}>{k}: {v > 0 ? '+' : ''}{v}</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {hasHatásPool && (
+            <div className="hatas-pool-section">
+              <span className="hatas-pool-title">Státusz hatások</span>
+              <div className="hatas-pool-items">
+                {[...hatásPool.entries()].map(([cél, entry]) => {
+                  const parts: string[] = [];
+                  if (entry.letilt) parts.push('❌ Letiltva');
+                  if (entry.előnyHátrány !== 0) parts.push(entry.előnyHátrány > 0 ? `Előny+${entry.előnyHátrány}` : `Hátrány${entry.előnyHátrány}`);
+                  if (entry.szorzó !== 1) parts.push(`×${entry.szorzó}`);
+                  if (entry.maxLimit != null) parts.push(`max: ${entry.maxLimit}`);
+                  for (const sz of entry.szövegesek) { if (sz) parts.push(sz); }
+                  if (parts.length === 0) return null;
+                  return <span key={cél} className={`hatas-pool-item ${entry.letilt ? 'negative' : entry.előnyHátrány < 0 ? 'negative' : entry.előnyHátrány > 0 ? 'positive' : ''}`}>{eseményNév(cél)}: {parts.join(', ')}</span>;
+                })}
+              </div>
+            </div>
+          )}
+        </div>
+      )}
 
       {/* Szilánk */}
       <div className="aktiv-row">
@@ -128,7 +210,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         })}
         <select className="aktiv-select" value="" onChange={e => { if (e.target.value) { addTaktika(e.target.value); } }}>
           <option value="">+ Taktika...</option>
-          {data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).map(t => (
+          {data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(t => (
             <option key={t.név} value={t.név}>{t.név}</option>
           ))}
         </select>
