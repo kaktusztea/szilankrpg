@@ -449,38 +449,6 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         document.body
       )}
 
-      {/* Szituációk */}
-      <div className="aktiv-section">
-        <span className="aktiv-label">Szituációk</span>
-        {session.aktív_szituációk.map((s2, i) => (
-          <div key={i} className="aktiv-chip">
-            <span>{s2}</span>
-            <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_szituációk: s.aktív_szituációk.filter((_, j) => j !== i) }))}>✕</button>
-          </div>
-        ))}
-        <button className="aktiv-add-btn" onClick={() => setShowSzituácioPicker(true)}>+ Szituáció...</button>
-      </div>
-
-      {showSzituácioPicker && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSzituácioPicker(false); }}>
-          <div className="manover-picker">
-            <div className="manover-picker-header">
-              <label>Szituáció választó</label>
-              <button className="aktiv-chip-x" onClick={() => setShowSzituácioPicker(false)}>✕</button>
-            </div>
-            <div className="manover-picker-list">
-              {data.szituaciok.filter(s2 => !session.aktív_szituációk.includes(s2.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(s2 => (
-                <div key={s2.név} className="manover-card" onClick={() => { setSession(s => ({ ...s, aktív_szituációk: [...s.aktív_szituációk, s2.név] })); setShowSzituácioPicker(false); }}>
-                  <span className="manover-card-name">{s2.név}</span>
-                  <span className="manover-card-hatas">{s2.infó}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
-
       {/* Manőver */}
       <div className="aktiv-section" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
         <div className="aktiv-field-btn" onClick={() => setShowManőverPicker(true)}>
@@ -524,6 +492,38 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {/* Szituációk */}
+      <div className="aktiv-section">
+        <span className="aktiv-label">Szituációk</span>
+        {session.aktív_szituációk.map((s2, i) => (
+          <div key={i} className="aktiv-chip">
+            <span>{s2}</span>
+            <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_szituációk: s.aktív_szituációk.filter((_, j) => j !== i) }))}>✕</button>
+          </div>
+        ))}
+        <button className="aktiv-add-btn" onClick={() => setShowSzituácioPicker(true)}>+ Szituáció...</button>
+      </div>
+
+      {showSzituácioPicker && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSzituácioPicker(false); }}>
+          <div className="manover-picker">
+            <div className="manover-picker-header">
+              <label>Szituáció választó</label>
+              <button className="aktiv-chip-x" onClick={() => setShowSzituácioPicker(false)}>✕</button>
+            </div>
+            <div className="manover-picker-list">
+              {data.szituaciok.filter(s2 => !session.aktív_szituációk.includes(s2.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(s2 => (
+                <div key={s2.név} className="manover-card" onClick={() => { setSession(s => ({ ...s, aktív_szituációk: [...s.aktív_szituációk, s2.név] })); setShowSzituácioPicker(false); }}>
+                  <span className="manover-card-name">{s2.név}</span>
+                  <span className="manover-card-hatas">{s2.infó}</span>
+                </div>
+              ))}
             </div>
           </div>
         </div>,
