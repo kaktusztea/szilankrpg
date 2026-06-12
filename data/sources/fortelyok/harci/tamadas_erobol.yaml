@@ -1,44 +1,44 @@
----
 schema_version: 1
-
-név: "Támadás erőből"
-névkomment: ""
+név: Támadás erőből
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Jobban kihasználod a Támadás erőből harci taktikát."
+- text: Jobban kihasználod a Támadás erőből harci taktikát.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: ["kardvívás", "rombolás", "lándzsavívás"]
-        érték: 3
-        típus: "képzettség"
-    hatástext:
-      - text: "Legfeljebb +4 SP (TÉ:-4) pakolható át."
-    módosítók: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények:
-      - név: ["kardvívás", "rombolás", "lándzsavívás"]
-        érték: 6
-        típus: "képzettség"
-    hatástext:
-      - text: "Legfeljebb +6 SP (TÉ:-6) pakolható át."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Kardvívás
+    - Lándzsavívás
+    - Rombolás
+    érték: 3
+    típus: képzettség
+  hatástext:
+  - text: Legfeljebb +4 SP (TÉ:-4) pakolható át.
+  módosítók: ''
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Kardvívás
+    - Lándzsavívás
+    - Rombolás
+    érték: 6
+    típus: képzettség
+  hatástext:
+  - text: Legfeljebb +6 SP (TÉ:-6) pakolható át.
+  módosítók: ''
 todo:
-  - text: ""
+- text: ''

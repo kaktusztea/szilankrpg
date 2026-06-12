@@ -588,6 +588,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       return <FortelyokScreen data={data} gameMode={gameMode}
         fortélyok={fortélyok} setFortélyok={setFortélyok}
         tsz={karakter.tsz} fegyverNevek={fegyverNevek} nyelvtanulásSzint={nyelvtanulásSzint}
+        képzettségek={képzettségek}
       />;
     }
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;

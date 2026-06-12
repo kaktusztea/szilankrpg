@@ -1,30 +1,33 @@
----
 schema_version: 1
-
-név: "Fegyverrántás"
-névkomment: ""
+név: Fegyverrántás
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
 csoport: harci
 leírások:
 - text: Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél.
 - text: 'Bónuszok 🗡️**Fegyverrántás-szituációban** (az alkalmazó oldalán):'
 megjegyzések:
-- text: 'Bővebben lásd a **Harcrendszer** fejezet ⭕🗡️ **Fegyverrántás** alfejezetét!'
-
+- text: Bővebben lásd a **Harcrendszer** fejezet ⭕🗡️ **Fegyverrántás** alfejezetét!
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
 - fok: 1
-  követelménytext: ""
-  követelmények: ""
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Rombolás
+    - Lándzsavívás
+    - Ostorharc
+    érték: 4
+    típus: képzettség
   hatástext: ''
   módosítók:
   - cél: KÉ
@@ -32,10 +35,18 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "harci_helyzet:fegyverrántás"
+    feltétel: harci_helyzet:fegyverrántás
 - fok: 2
-  követelménytext: ""
-  követelmények: ""
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Rombolás
+    - Lándzsavívás
+    - Ostorharc
+    érték: 8
+    típus: képzettség
   hatástext: ''
   módosítók:
   - cél: KÉ
@@ -43,7 +54,6 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "harci_helyzet:fegyverrántás"
-
+    feltétel: harci_helyzet:fegyverrántás
 todo:
 - text: ''

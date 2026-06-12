@@ -1,46 +1,51 @@
----
 schema_version: 1
-
-név: "Orgyilkos"
-névkomment: ""
+név: Orgyilkos
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Orvtámadás során kihasználod az ellenfél védtelenségét, sebezhetőbb pontokra célzol."
+- text: Orvtámadás során kihasználod az ellenfél védtelenségét, sebezhetőbb pontokra
+    célzol.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás"]
-        érték: 6
-        típus: "képzettség"
-    hatástext:
-      - text: "Orvtámadáskor Előny+1 Sebzés dobásra."
-      - text: "Precíz támadás manőverre: +2 (nincs SFÉ)."
-    módosítók: ''
-  - fok: 2
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás"]
-        érték: 9
-        típus: "képzettség"
-    hatástext:
-      - text: "Orvtámadáskor Előny+2 Sebzés dobásra."
-      - text: "Precíz támadás manőverre: +4 (nincs SFÉ)."
-    módosítók: ''
-
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Rombolás
+    - Lándzsavívás
+    - Ostorharc
+    érték: 6
+    típus: képzettség
+  hatástext:
+  - text: Orvtámadáskor Előny+1 Sebzés dobásra.
+  - text: 'Precíz támadás manőverre: +2 (nincs SFÉ).'
+  módosítók: ''
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Rombolás
+    - Lándzsavívás
+    - Ostorharc
+    érték: 9
+    típus: képzettség
+  hatástext:
+  - text: Orvtámadáskor Előny+2 Sebzés dobásra.
+  - text: 'Precíz támadás manőverre: +4 (nincs SFÉ).'
+  módosítók: ''
 todo:
-  - text: ""
+- text: ''

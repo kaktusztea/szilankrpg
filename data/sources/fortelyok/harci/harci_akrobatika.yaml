@@ -1,10 +1,9 @@
----
 schema_version: 1
-név: "Harci akrobatika"
-névkomment: ""
+név: Harci akrobatika
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
 csoport: harci
 leírások:
@@ -28,17 +27,15 @@ kiterjeszti:
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
 - fok: 1
-  követelménytext: ""
+  követelménytext: ''
   követelmények:
-  - név: akrobatika
-    érték: 4
+  - név: Akrobatika
+    érték: 6
     típus: képzettség
   hatástext:
-  - text: 'Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ`
-      értékeidhez.'
+  - text: Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez.
   módosítók:
   - cél: TÉ
     érték: 0
@@ -52,22 +49,21 @@ fokok:
     forrás: akrobatika
     arány: 0.5
     feltétel: ''
-  - cél: 'manőver:kibontakozás'
+  - cél: manőver:kibontakozás
     érték: 1
     mód: flat
     forrás: ''
     arány: 0
     feltétel: ''
 - fok: 2
-  követelménytext: ""
+  követelménytext: ''
   követelmények:
-  - név: akrobatika
-    érték: 8
+  - név: Akrobatika
+    érték: 9
     típus: képzettség
   hatástext:
-  - text: 'Az **Akrobatika** képzettségedet `1:1` hozzáadhatod bónuszként `TÉ/VÉ`
-      értékeidhez.'
-  - text: '🗡️ **Kibontakozás/Átsiklás** manőverre `+3` bónuszt kapsz.'
+  - text: Az **Akrobatika** képzettségedet `1:1` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez.
+  - text: 🗡️ **Kibontakozás/Átsiklás** manőverre `+3` bónuszt kapsz.
   módosítók:
   - cél: TÉ
     érték: 0
@@ -81,7 +77,7 @@ fokok:
     forrás: akrobatika
     arány: 1
     feltétel: ''
-  - cél: 'manőver:kibontakozás'
+  - cél: manőver:kibontakozás
     érték: 3
     mód: flat
     forrás: ''

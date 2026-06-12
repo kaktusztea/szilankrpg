@@ -1,11 +1,9 @@
----
 schema_version: 1
-
-név: "Elsöprő roham"
-névkomment: ""
+név: Elsöprő roham
+névkomment: ''
 maxfok: 1
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
 csoport: harci
 leírások:
@@ -17,14 +15,16 @@ kiterjeszti:
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
 - fok: 1
-  követelménytext: ""
+  követelménytext: ''
   követelmények:
-  - név: ["közelharc", "kardvívás", "lándzsavívás", "zúzás"]
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Rombolás
+    - Lándzsavívás
     érték: 4
-    típus: "képzettség"
     típus: képzettség
   hatástext:
   - text: Roham esetén az erőbónusz duplázódik.
@@ -34,12 +34,12 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "taktika:roham"
+    feltétel: taktika:roham
   - cél: SP
     érték: 0
     mód: scaled
     forrás: erőbónusz
     arány: 1
-    feltétel: "taktika:roham"
+    feltétel: taktika:roham
 todo:
 - text: ''

@@ -1,80 +1,87 @@
----
 schema_version: 1
-
-név: "Merevvértviselet"
-névkomment: ""
+név: Merevvértviselet
+névkomment: ''
 maxfok: 3
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Merevvértek helyes viselése, TÉ büntetés csökkentése."
+- text: Merevvértek helyes viselése, TÉ büntetés csökkentése.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: ["kardvívás", "rombolás", "lándzsavívás"]
-        érték: 3
-        típus: "képzettség"
-    hatástext:
-      - text: "Merevvérted TÉ büntetése ennyivel enyhül: -5."
-    módosítók:
-      - cél: "MGT_TÉ_büntetés"
-        érték: -5
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények:
-      - név: ["kardvívás", "rombolás", "lándzsavívás"]
-        érték: 3
-        típus: "képzettség"
-    hatástext:
-      - text: "Merevvérted TÉ büntetése ennyivel enyhül: -10."
-    módosítók:
-      - cél: "MGT_TÉ_büntetés"
-        érték: -10
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-  - fok: 3
-    követelménytext: ""
-    követelmények:
-      - név: ["kardvívás", "rombolás", "lándzsavívás"]
-        érték: 3
-        típus: "képzettség"
-    hatástext:
-      - text: "Merevvérted TÉ büntetése ennyivel enyhül: -15."
-      - text: "Merevvért viselése esetén VÉ:+3 (ha lefedettség min. 70%)."
-    módosítók:
-      - cél: "MGT_TÉ_büntetés"
-        érték: -15
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-      - cél: "VÉ"
-        érték: 3
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel:
-          - { forrás: "páncél_merev", operátor: "==", érték: true }
-          - { forrás: "páncél_lefedettség", operátor: ">=", érték: 70 }
-
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Kardvívás
+    - Rombolás
+    - Lándzsavívás
+    érték: 3
+    típus: képzettség
+  hatástext:
+  - text: 'Merevvérted TÉ büntetése ennyivel enyhül: -5.'
+  módosítók:
+  - cél: MGT_TÉ_büntetés
+    érték: -5
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Kardvívás
+    - Rombolás
+    - Lándzsavívás
+    érték: 3
+    típus: képzettség
+  hatástext:
+  - text: 'Merevvérted TÉ büntetése ennyivel enyhül: -10.'
+  módosítók:
+  - cél: MGT_TÉ_büntetés
+    érték: -10
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+- fok: 3
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Kardvívás
+    - Rombolás
+    - Lándzsavívás
+    érték: 3
+    típus: képzettség
+  hatástext:
+  - text: 'Merevvérted TÉ büntetése ennyivel enyhül: -15.'
+  - text: Merevvért viselése esetén VÉ:+3 (ha lefedettség min. 70%).
+  módosítók:
+  - cél: MGT_TÉ_büntetés
+    érték: -15
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+  - cél: VÉ
+    érték: 3
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel:
+    - forrás: páncél_merev
+      operátor: ==
+      érték: true
+    - forrás: páncél_lefedettség
+      operátor: '>='
+      érték: 70
 todo:
-  - text: ""
+- text: ''

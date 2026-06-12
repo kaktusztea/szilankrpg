@@ -22,14 +22,20 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
-    követelmények: ""
+    követelménytext: "Úszás 1.fok"
+    követelmények:
+      - név: "Úszás"
+        érték: 1
+        típus: "fortély"
     hatástext:
       - text: "1 + Edzettség perc ideig bírod a víz alatt."
     módosítók: ""
   - fok: 1
-    követelménytext: ""
-    követelmények: ""
+    követelménytext: "Úszás 2.fok"
+    követelmények:
+      - név: "Úszás"
+        érték: 2
+        típus: "fortély"
     hatástext:
       - text: "1 + (2x Edzettség) perc ideig bírod a víz alatt."
     módosítók: ""

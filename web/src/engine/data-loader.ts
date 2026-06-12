@@ -72,6 +72,7 @@ export interface FortelyFokSummary {
   fok: number;
   hatás: string[];
   követelmény: string;
+  követelmények: { név: string | string[]; érték: number; típus: string }[];
   módosítók: FortelyModosito[];
 }
 

@@ -1,44 +1,43 @@
----
 schema_version: 1
-
-név: "Vezető: Íjászparancsnok"
-névkomment: ""
+név: 'Vezető: Íjászparancsnok'
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Íjász/lövész alakzat koordinálása."
+- text: Íjász/lövész alakzat koordinálása.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
-  normál: ["Hadászat"]
+  normál:
+  - Hadászat
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: ["íjászat", "lövészet"]
-        érték: 6
-        típus: "képzettség"
-    hatástext:
-      - text: "+2 bónusz az Alakzatszintre."
-    módosítók: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények:
-      - név: ["íjászat", "lövészet"]
-        érték: 9
-        típus: "képzettség"
-    hatástext:
-      - text: "+4 bónusz az Alakzatszintre."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Íjászat
+    - Lövészet
+    érték: 6
+    típus: képzettség
+  hatástext:
+  - text: +2 bónusz az Alakzatszintre.
+  módosítók: ''
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Íjászat
+    - Lövészet
+    érték: 9
+    típus: képzettség
+  hatástext:
+  - text: +4 bónusz az Alakzatszintre.
+  módosítók: ''
 todo:
-  - text: ""
+- text: ''

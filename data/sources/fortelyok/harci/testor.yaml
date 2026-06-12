@@ -1,45 +1,49 @@
----
 schema_version: 1
-
-név: "Testőr"
-névkomment: ""
+név: Testőr
+névkomment: ''
 maxfok: 2
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Védő Értékedet kiterjeszted egy másik személyre."
+- text: Védő Értékedet kiterjeszted egy másik személyre.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
-        érték: 6
-        típus: "képzettség"
-    hatástext:
-      - text: "VÉ veszteség duplázódás Hatás nem sújt VÉ kiterjesztésekor."
-    módosítók: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
-        érték: 9
-        típus: "képzettség"
-    hatástext:
-      - text: "Büntetések nélkül védheted pártfogoltad."
-      - text: "Többszörös támadás elvesztése Hatás sem sújt."
-    módosítók: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Lándzsavívás
+    - Rombolás
+    - Ostorharc
+    érték: 6
+    típus: képzettség
+  hatástext:
+  - text: VÉ veszteség duplázódás Hatás nem sújt VÉ kiterjesztésekor.
+  módosítók: ''
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Lándzsavívás
+    - Rombolás
+    - Ostorharc
+    érték: 9
+    típus: képzettség
+  hatástext:
+  - text: Büntetések nélkül védheted pártfogoltad.
+  - text: Többszörös támadás elvesztése Hatás sem sújt.
+  módosítók: ''
 todo:
-  - text: ""
+- text: ''

@@ -1,92 +1,101 @@
----
 schema_version: 1
-
-név: "Harckeret növelés"
-névkomment: ""
+név: Harckeret növelés
+névkomment: ''
 maxfok: 3
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Támadásaid számát növeled a Harckeret értékének növelésével."
+- text: Támadásaid számát növeled a Harckeret értékének növelésével.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
-        érték: 6
-        típus: "képzettség"
-    hatástext:
-      - text: "+1 Harckeret."
-      - text: "+1 KÉ."
-    módosítók:
-      - cél: "harckeret"
-        érték: 1
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-      - cél: "KÉ"
-        érték: 1
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-  - fok: 2
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
-        érték: 9
-        típus: "képzettség"
-    hatástext:
-      - text: "+2 Harckeret."
-      - text: "+2 KÉ."
-    módosítók:
-      - cél: "harckeret"
-        érték: 2
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-      - cél: "KÉ"
-        érték: 2
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-  - fok: 3
-    követelménytext: ""
-    követelmények:
-      - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
-        érték: 12
-        típus: "képzettség"
-    hatástext:
-      - text: "+3 Harckeret."
-      - text: "+3 KÉ."
-    módosítók:
-      - cél: "harckeret"
-        érték: 3
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-      - cél: "KÉ"
-        érték: 3
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel: ""
-
+- fok: 1
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Lándzsavívás
+    - Rombolás
+    - Ostorharc
+    érték: 6
+    típus: képzettség
+  hatástext:
+  - text: +1 Harckeret.
+  - text: +1 KÉ.
+  módosítók:
+  - cél: harckeret
+    érték: 1
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+  - cél: KÉ
+    érték: 1
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+- fok: 2
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Lándzsavívás
+    - Rombolás
+    - Ostorharc
+    érték: 9
+    típus: képzettség
+  hatástext:
+  - text: +2 Harckeret.
+  - text: +2 KÉ.
+  módosítók:
+  - cél: harckeret
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+  - cél: KÉ
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+- fok: 3
+  követelménytext: ''
+  követelmények:
+  - név:
+    - Közelharc
+    - Kardvívás
+    - Lándzsavívás
+    - Rombolás
+    - Ostorharc
+    érték: 12
+    típus: képzettség
+  hatástext:
+  - text: +3 Harckeret.
+  - text: +3 KÉ.
+  módosítók:
+  - cél: harckeret
+    érték: 3
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
+  - cél: KÉ
+    érték: 3
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: ''
 todo:
-  - text: ""
+- text: ''

@@ -912,3 +912,159 @@ Boolean↔number normalizálás: `true` = 1, `false` = 0 (reactive engine number
 - Merevvértviselet fok 3: `páncél_merev == true` ÉS `páncél_lefedettség >= 70`
 - Kétkezes harc 1-3: `kétkezes_harc == true`
 - Kétkezesség 1: `kétkezes_harc == true`
+
+## §25 Fortély követelmények
+
+Source of truth a fortélyok yaml `követelmények` mezőjéhez.
+
+Típusok:
+- `képzettség` — karakter képzettség szintje ≥ érték
+- `fortély` — karakter felvett fortély fokszáma ≥ érték
+- `faj_háttér` — karakter faj háttere engedélyezi (szöveges, nem gépi)
+- `tulajdonság` — karakter tulajdonság ≥ érték
+- `háttér` — karakter leíró háttere tartalmazza (szöveges)
+- `szöveges` — nem gépileg ellenőrizhető (infó)
+
+### Általános fortélyok
+
+| Fortély | Fok | Típus | Név | Érték |
+|---------|-----|-------|-----|-------|
+| Biztos kezű mászó | 1 | képzettség | Mászás | 6 |
+| Gyöngyhalász | 0 | fortély | Úszás | 1 |
+| Gyöngyhalász | 1 | fortély | Úszás | 2 |
+| Hangutánzás | 2 | fortély | Nyelvismeret | 1 |
+| Keresés/rejtés | 1 | képzettség | Észlelés | 3 |
+| Keresés/rejtés | 2 | képzettség | Észlelés | 3 |
+| Kocsihajtás | 1 | képzettség | Lovaglás/Léglovaglás | 3 |
+| Műhelymester | 1 | képzettség | Kézművesség | 9 |
+| Pók | 1 | képzettség | Mászás | 6 |
+| Suhanó árnyék | 1 | képzettség | Lopakodás/rejtőzés | 6 |
+| Szájról olvasás | 1 | fortély | Nyelvismeret | 2 |
+| Százarcú | 1 | képzettség | Álcázás/Álruha | 4 |
+| Százarcú | 2 | képzettség | Álcázás/Álruha | 8 |
+| Vezető: Bölcsészprofesszor | 1 | képzettség | Lexikum | 6 |
+| Vezető: Bölcsészprofesszor | 2 | képzettség | Lexikum | 9 |
+| Vezető: Hajóskapitány | 1 | képzettség | Hajózás | 6 |
+| Vezető: Hajóskapitány | 2 | képzettség | Hajózás | 9 |
+| Vezető: Nyomozó | 1 | képzettség | Nyomozás | 6 |
+| Vezető: Nyomozó | 2 | képzettség | Nyomozás | 9 |
+| Vezető: Orvosprofesszor | 1 | képzettség | Orvoslás | 6 |
+| Vezető: Orvosprofesszor | 2 | képzettség | Orvoslás | 9 |
+| Vezető: Rendező | 1 | képzettség | Előadóművészet | 6 |
+| Vezető: Rendező | 2 | képzettség | Előadóművészet | 9 |
+| Vezető: Tudósprofesszor | 1 | képzettség | Kvantikum | 6 |
+| Vezető: Tudósprofesszor | 2 | képzettség | Kvantikum | 9 |
+| Villámgyors keresés/rejtés | 1 | képzettség | Észlelés | 3 |
+| Villámgyors keresés/rejtés | 1 | fortély | Keresés/rejtés | 1 |
+| Zártörő | 1 | képzettség | Zárnyitás | 6 |
+
+### Érzék fortélyok
+
+| Fortély | Fok | Típus | Név | Érték |
+|---------|-----|-------|-----|-------|
+| Emberentúli hallás | 1 | faj_háttér | — | — |
+| Emberentúli látás | 1 | faj_háttér | — | — |
+| Emberentúli szaglás | 1 | faj_háttér | — | — |
+| Infralátás | 1 | faj_háttér | — | — |
+| Infralátás | 2 | faj_háttér | — | — |
+| Irányérzék | 1 | faj_háttér | — | — |
+| Ultralátás | 1 | faj_háttér | — | — |
+| Ultralátás | 2 | faj_háttér | — | — |
+| Ultralátás | 3 | faj_háttér | — | — |
+
+### Harci fortélyok
+
+| Fortély | Fok | Típus | Név | Érték | Megjegyzés |
+|---------|-----|-------|-----|-------|------------|
+| Alakzat: támadó | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
+| Alakzat: támadó | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
+| Alakzat: védekező | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
+| Alakzat: védekező | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
+| Alkalmatlan fegyver hajítása | 1 | képzettség | [adott fegyver harcmodora] | 6 | + Hajítás ≥ 3 |
+| Alkalmatlan fegyver hajítása | 2 | képzettség | [adott fegyver harcmodora] | 9 | + Hajítás ≥ 6 |
+| Alkalmatlan tárgyak hajítása | 1 | képzettség | Hajítás | 6 | |
+| Alkalmatlan tárgyak hajítása | 2 | képzettség | Hajítás | 9 | |
+| Belharc | 1 | képzettség | Közelharc | 6 | |
+| Belharc | 2 | képzettség | Közelharc | 9 | |
+| Elpusztíthatatlan | 1 | képzettség | Fájdalomtűrés | 7 | |
+| Elpusztíthatatlan | 2 | képzettség | Fájdalomtűrés | 10 | |
+| Elsöprő roham | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás] | 4 | + Roham taktika |
+| Fárasztás | 1 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 6 | |
+| Fegyverrántás | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 4 | |
+| Fegyverrántás | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | |
+| Gladiátor bestiái | 1 | háttér | Gladiátor | — | + Harcmodor ≥ 6 |
+| Gladiátor közönsége | 1 | háttér | Gladiátor | — | + Harcmodor ≥ 6 |
+| Harc helyhez kötve | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | |
+| Harc helyhez kötve | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
+| Harci akrobatika | 1 | képzettség | Akrobatika | 6 | Csak hajlékony vértben, MGT ≤ 10 |
+| Harci akrobatika | 2 | képzettség | Akrobatika | 9 | Csak hajlékony vértben, MGT ≤ 10 |
+| Harci akrobatika | 3 | képzettség | Akrobatika | 12 | Csak hajlékony vértben, MGT ≤ 10 |
+| Harci anatómia | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
+| Harci anatómia | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | + Élettan fortély ≥ 1 |
+| Harci anatómia | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | + Élettan fortély ≥ 1 |
+| Harci kocsihajtás | 1 | fortély | Kocsihajtás | 1 | + Lovaglás ≥ 6 |
+| Harci kocsihajtás | 2 | fortély | Kocsihajtás | 1 | + Lovaglás ≥ 9 |
+| Harckeret növelés | 1 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 6 | |
+| Harckeret növelés | 2 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 9 | |
+| Harckeret növelés | 3 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 12 | |
+| Harcos elme | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
+| Harcos elme | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
+| Harcos elme | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | + Teljes Védekezés taktika |
+| Kaszabolás | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | |
+| Kétkezes harc | 1 | képzettség | [nagyobb fegyver harcmodora] | 6 | + kisebb fegyver harcmodora ≥ 3 |
+| Kétkezes harc | 2 | képzettség | [nagyobb fegyver harcmodora] | 9 | + kisebb fegyver harcmodora ≥ 6 |
+| Kétkezes harc | 3 | képzettség | [nagyobb fegyver harcmodora] | 9 | + kisebb fegyver harcmodora ≥ 9 |
+| Léglovas harc | 1 | képzettség | Léglovaglás | 3 | |
+| Léglovas harc | 2 | képzettség | Léglovaglás | 6 | |
+| Léglovas harc | 3 | képzettség | Léglovaglás | 9 | |
+| Lovas harc | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | + Lovaglás ≥ 6 |
+| Lovas harc | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | + Lovaglás ≥ 9 |
+| Lovas harc | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | + Lovaglás ≥ 12 |
+| Merevvértviselet | 1 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
+| Merevvértviselet | 2 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
+| Merevvértviselet | 3 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
+| Mesterfegyver | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 4 | |
+| Mesterfegyver | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | |
+| Mesterfegyver | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | |
+| Orgyilkos | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
+| Orgyilkos | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
+| Pajzshasználat | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | |
+| Pajzshasználat | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 5 | |
+| Pajzshasználat | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | |
+| Páros harc | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | Összeszokott társ |
+| Páros harc | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | Összeszokott társ |
+| Páros harc | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | Egypetéjű ikrek |
+| Támadás erőből | 1 | képzettség | [Kardvívás, Lándzsavívás, Rombolás] | 3 | |
+| Támadás erőből | 2 | képzettség | [Kardvívás, Lándzsavívás, Rombolás] | 6 | |
+| Természetes fegyver | 1 | faj_háttér | — | — | |
+| Természetes páncél | 1 | faj_háttér | — | — | |
+| Természetes páncél | 2 | faj_háttér | — | — | |
+| Természetes páncél | 3 | faj_háttér | — | — | |
+| Testőr | 1 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 6 | |
+| Testőr | 2 | képzettség | [Közelharc, Kardvívás, Lándzsavívás, Rombolás, Ostorharc] | 9 | |
+| Vezető: Alakzatparancsnok | 1 | képzettség | Alakzatharc | 6 | + Befolyásolás ≥ 3 |
+| Vezető: Alakzatparancsnok | 2 | képzettség | Alakzatharc | 9 | + Befolyásolás ≥ 3 |
+| Vezető: Fejvadász strategis | 1 | képzettség | Lopakodás/rejtőzés | 6 | + Fejvadász háttér |
+| Vezető: Fejvadász strategis | 2 | képzettség | Lopakodás/rejtőzés | 9 | + Fejvadász háttér |
+| Vezető: Íjászparancsnok | 1 | képzettség | [Íjászat, Lövészet] | 6 | |
+| Vezető: Íjászparancsnok | 2 | képzettség | [Íjászat, Lövészet] | 9 | |
+| Vezető: Léglovaskapitány | 1 | képzettség | Léglovaglás | 6 | + Befolyásolás ≥ 3 |
+| Vezető: Léglovaskapitány | 2 | képzettség | Léglovaglás | 9 | + Befolyásolás ≥ 3 |
+| Vezető: Lovaskapitány | 1 | képzettség | Lovaglás | 6 | + Befolyásolás ≥ 3 |
+| Vezető: Lovaskapitány | 2 | képzettség | Lovaglás | 9 | + Befolyásolás ≥ 3 |
+
+### Távharc fortélyok
+
+| Fortély | Fok | Típus | Név | Érték | Megjegyzés |
+|---------|-----|-------|-----|-------|------------|
+| Gyors hajítás | 1 | képzettség | Hajítás | 5 | Csak hajítófegyverekkel |
+| Gyors lövés | 1 | képzettség | Íjászat | 5 | Csak íjjal |
+| Gyors újratöltés | 1 | képzettség | Lövészet | 6 | |
+| Gyors újratöltés | 2 | képzettség | Lövészet | 9 | |
+| Kitartott célzás | 1 | képzettség | [Íjászat, Lövészet] | 5 | |
+| Lövés futás közben | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
+| Lövés hátasról | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | + Lovaglás ≥ 6, Mesterfegyver ≥ 1, Lovas harc ≥ 2 |
+| Lövés hátasról | 2 | képzettség | [Íjászat, Lövészet, Hajítás] | 9 | + Lovaglás ≥ 9, Mesterfegyver ≥ 2, Lovas harc ≥ 3 |
+| Lövés reflexből | 1 | tulajdonság | Gyorsaság | 1 | + Távolsági harcmodor ≥ 5 |
+| Mesterlövész | 1 | képzettség | Lövészet | 5 | |
+| Mozgó cél mestere fegyverrel | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |

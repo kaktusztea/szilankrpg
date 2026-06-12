@@ -27,9 +27,10 @@ interface Props {
   tsz: number;
   fegyverNevek: string[];
   nyelvtanulásSzint: number;
+  képzettségek: { név: string; szint: number }[];
 }
 
-export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, nyelvtanulásSzint }: Props) {
+export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, nyelvtanulásSzint, képzettségek }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -189,6 +190,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       isOpen={isOpen}
                       overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}
                       nyelvPontKeret={slot.név === 'Nyelvismeret' ? nyelvPontKeret : undefined}
+                      képzettségek={képzettségek}
+                      fortélyok={fortélyok}
                       onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
                       onFokChange={fok => setFok(globalIdx, fok)}
                       onHint={showHint}
@@ -394,7 +397,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret, képzettségek, fortélyok }: {
   slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
@@ -403,6 +406,8 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   locked: boolean;
   overLimit: boolean;
   nyelvPontKeret?: number;
+  képzettségek: { név: string; szint: number }[];
+  fortélyok: Fortely[];
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
   onRemove: () => void;
@@ -435,10 +440,31 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   const fokDef = def?.fokok.find(f => f.fok === slot.fok);
   const label = displayName(slot);
 
+  // Követelmény ellenőrzés
+  const hiányzóKöv: string[] = [];
+  if (fokDef?.követelmények && fokDef.követelmények.length > 0) {
+    for (const kov of fokDef.követelmények) {
+      if (kov.típus === 'képzettség') {
+        const nevek = Array.isArray(kov.név) ? kov.név : [kov.név];
+        const teljesül = nevek.some(n => (képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték);
+        if (!teljesül) {
+          const harcmodorNevek = ['közelharc', 'kardvívás', 'rombolás', 'lándzsavívás', 'ostorharc', 'hajítás', 'íjászat', 'lövészet', 'mágikus célzás'];
+          const isHarcmodor = Array.isArray(kov.név) && kov.név.every(n => harcmodorNevek.includes(n.toLowerCase()));
+          hiányzóKöv.push(`${isHarcmodor ? 'Harcmodor' : (Array.isArray(kov.név) ? kov.név.join('/') : kov.név)} ≥ ${kov.érték}`);
+        }
+      } else if (kov.típus === 'fortély') {
+        const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
+        const megvan = fortélyok.some(f => f.név === név && f.fok >= kov.érték);
+        if (!megvan) hiányzóKöv.push(`${név} fortély ≥ ${kov.érték}. fok`);
+      }
+    }
+  }
+  const követelményHiba = hiányzóKöv.length > 0;
+
   return (
     <div className="fort-row-wrapper">
       <div
-        className="fort-row"
+        className={`fort-row${követelményHiba ? ' fort-kov-hiba' : ''}`}
         onClick={handleTap}
       >
         <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes ? ' 🎁' : ''}</span>
@@ -472,6 +498,11 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
       {overLimit && isOpen && (
         <div className="fort-info" style={{ color: 'var(--error)' }}>
           A felvehető Nyelvismeret fokok száma a Nyelvtanulás képzettség szintjétől függ. Túllépted a keretet! Max tanulható fok: {nyelvPontKeret ?? 0}
+        </div>
+      )}
+      {követelményHiba && (
+        <div className="fort-info" style={{ color: 'var(--error)' }}>
+          ⚠ Követelmény: {hiányzóKöv.join(', ')}
         </div>
       )}
       {editing && createPortal(
