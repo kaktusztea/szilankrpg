@@ -362,8 +362,7 @@
 - Támadás erőből: számszerűsítés
 - Természetes fegyver: ellenőrzés (puszta kéz esetén!)
 - Természetes páncél: ellenőrzés
-- Vezető XY fortélyok: számszerűsítés (Alakzatharc kidolgozása előfeltétel)
-- Helyismeretek: ???
+- "Vezető - XY" fortélyok: számszerűsítés (Alakzatharc kidolgozása előfeltétel)
 - Szabad fortélyok felvételénél: mutassa rögtön a kiterjesztéseket
 
 ### Távharc fül
