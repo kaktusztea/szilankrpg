@@ -144,6 +144,7 @@ export interface SzituacioEntry {
 }
 
 export interface ManoverEntry {
+  id: string;
   név: string;
   típus: string;
   nehézség: number;

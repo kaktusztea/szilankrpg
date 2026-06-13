@@ -192,6 +192,14 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
   // Fortély emlékeztetők: harci fortélyok amelyeknek van hatástext de nincs gépi módosító
   const fortélyEmlékeztetők: { név: string; fok: number; hatás: string }[] = [];
   const manőverBónuszok: { név: string; manőver: string; érték: number }[] = [];
+  const előnyHátrányMods: { név: string; cél: string; mód: string; érték: number }[] = [];
+
+  // Aktív feltételek (§16 feltételes módosítókhoz)
+  const aktívFeltételek = new Set<string>();
+  for (const at of session.aktív_taktikák) { const def = data.taktikak.find(t => t.név === at.név); if (def) aktívFeltételek.add(def.feltétel_kulcs); }
+  for (const h of session.aktív_helyzetek) { const def = data.harciHelyzetek.find(d => d.név === h); if (def) aktívFeltételek.add(def.feltétel_kulcs); }
+  for (const sz of session.aktív_szituációk) { const def = data.szituaciok.find(d => d.név === sz); if (def) aktívFeltételek.add(def.feltétel_kulcs); }
+
   for (const kf of karakter.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);
     if (!def || def.csoport !== 'harci') continue;
@@ -200,8 +208,12 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
     const hasMods = fokDef.módosítók && Array.isArray(fokDef.módosítók) && fokDef.módosítók.length > 0;
     if (hasMods) {
       for (const mod of fokDef.módosítók) {
+        if (mod.feltétel && mod.feltétel !== '' && !aktívFeltételek.has(mod.feltétel)) continue;
         if (typeof mod.cél === 'string' && mod.cél.startsWith('manőver:')) {
           manőverBónuszok.push({ név: kf.név, manőver: mod.cél.slice(8), érték: mod.érték });
+        }
+        if (mod.mód === 'előny' || mod.mód === 'hátrány') {
+          előnyHátrányMods.push({ név: kf.név, cél: mod.cél, mód: mod.mód, érték: mod.érték });
         }
       }
     }
@@ -215,7 +227,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
       <h2>❎ Aktív</h2>
 
       {/* Hatás pool */}
-      {(hasTaktikaMods || hasHatásPool || fortélyEmlékeztetők.length > 0 || manőverBónuszok.length > 0 || session.narratív_módosítók.length > 0) && (
+      {(hasTaktikaMods || hasHatásPool || fortélyEmlékeztetők.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
         <div className="aktiv-hatas-pool">
           {hasTaktikaMods && (
             <div className="hatas-pool-section">
@@ -250,7 +262,17 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               <span className="hatas-pool-title">Manőver bónuszok</span>
               <div className="hatas-pool-items">
                 {manőverBónuszok.map((mb, i) => (
-                  <span key={i} className="hatas-pool-item positive">{mb.manőver.replace(/_/g, ' ')}: +{mb.érték} ({mb.név})</span>
+                  <span key={i} className="hatas-pool-item positive">{data.manoverek.find(m => m.id === mb.manőver)?.név ?? mb.manőver.replace(/_/g, ' ')}: +{mb.érték} ({mb.név})</span>
+                ))}
+              </div>
+            </div>
+          )}
+          {előnyHátrányMods.length > 0 && (
+            <div className="hatas-pool-section">
+              <span className="hatas-pool-title">Előny / Hátrány</span>
+              <div className="hatas-pool-items">
+                {előnyHátrányMods.map((eh, i) => (
+                  <span key={i} className={`hatas-pool-item ${eh.mód === 'előny' ? 'positive' : 'negative'}`}>{eh.mód === 'előny' ? 'Előny' : 'Hátrány'}+{eh.érték} {eh.cél.replace(/_/g, ' ')} ({eh.név})</span>
                 ))}
               </div>
             </div>

@@ -1,37 +1,44 @@
 [
   {
     "név": "Lovas harc",
-    "feltétel_kulcs": "szituáció:lovas_harc",
-    "infó": "Lóhátról harcolás."
+    "infó": "Lóhátról harcolás.",
+    "id": "lovas_harc",
+    "feltétel_kulcs": "szituáció:lovas_harc"
   },
   {
     "név": "Léglovas harc",
-    "feltétel_kulcs": "szituáció:léglovas_harc",
-    "infó": "Repülő hátas hátáról harcolás."
+    "infó": "Repülő hátas hátáról harcolás.",
+    "id": "léglovas_harc",
+    "feltétel_kulcs": "szituáció:léglovas_harc"
   },
   {
     "név": "Harci szekér",
-    "feltétel_kulcs": "szituáció:harci_szekér",
-    "infó": "Szekérről harcolás."
+    "infó": "Szekérről harcolás.",
+    "id": "harci_szekér",
+    "feltétel_kulcs": "szituáció:harci_szekér"
   },
   {
     "név": "Páros harc",
-    "feltétel_kulcs": "szituáció:páros_harc",
-    "infó": "Koordinált 2 fős harc (Páros harc fortély)."
+    "infó": "Koordinált 2 fős harc (Páros harc fortély).",
+    "id": "páros_harc",
+    "feltétel_kulcs": "szituáció:páros_harc"
   },
   {
     "név": "Közönség előtt",
-    "feltétel_kulcs": "szituáció:közönség_előtt",
-    "infó": "Gladiátori harc közönség előtt."
+    "infó": "Gladiátori harc közönség előtt.",
+    "id": "közönség_előtt",
+    "feltétel_kulcs": "szituáció:közönség_előtt"
   },
   {
     "név": "Szörnyeteg elleni harc",
-    "feltétel_kulcs": "szituáció:szörnyeteg_elleni_harc",
-    "infó": "Bestia/szörny elleni küzdelem."
+    "infó": "Bestia/szörny elleni küzdelem.",
+    "id": "szörnyeteg_elleni_harc",
+    "feltétel_kulcs": "szituáció:szörnyeteg_elleni_harc"
   },
   {
     "név": "Célzás",
-    "feltétel_kulcs": "szituáció:célzás",
-    "infó": "Távharc célzás szituáció."
+    "infó": "Távharc célzás szituáció.",
+    "id": "célzás",
+    "feltétel_kulcs": "szituáció:célzás"
   }
 ]

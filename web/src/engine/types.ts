@@ -157,7 +157,7 @@ export const DEFAULT_SESSION: Session = {
 // Fortély definíció (schema — yaml forrásból)
 // ============================================================
 
-export type ModMode = 'flat' | 'scaled' | 'override';
+export type ModMode = 'flat' | 'scaled' | 'override' | 'előny' | 'hátrány';
 
 export interface Modosito {
   cél: string;

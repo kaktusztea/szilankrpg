@@ -5,21 +5,30 @@
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 
-🌟 **Hatás**:
-- Orvtámadáskor `Előny+1` Sebzés dobásra
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver Ellenpróba: `+2` (nincs SFÉ)
+🌟 **Hatás**: Orvtámadáskor
+- `Előny+1` Sebzés dobásra
+- `+1 SP`
+
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
+
+🌟 **Hatás**: Orvtámadáskor
+- `Előny+1` Sebzés dobásra
+- `+2 SP`
+
+<br />
+
+### 3. fok
+
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
 
 🌟 **Hatás**:
 - Orvtámadáskor `Előny+2` Sebzés dobásra
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver Ellenpróba: `+4` (nincs SFÉ)
+- `+3 SP`
 
 ---

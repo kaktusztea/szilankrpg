@@ -1,7 +1,7 @@
 schema_version: 1
 név: "Orgyilkos"
 névkomment: ""
-maxfok: 2
+maxfok: 3
 többszörösség:
   spec_típus: ""
   spec_lista: []
@@ -23,15 +23,20 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext:
-  - text: "Orvtámadáskor Előny+1 Sebzés dobásra."
-  - text: "Precíz támadás manőverre: +2 (nincs SFÉ)."
-  módosítók: 
-  - cél: "manőver:precíz_támadás"
-    érték: 2
+  - text: "Orvtámadáskor Előny+1 Sebzés dobásra, SP:+1."
+  módosítók:
+  - cél: "SP"
+    érték: 1
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: ""
+    feltétel: "harci_helyzet:orvtámadás"
+  - cél: "sebzésdobás"
+    érték: 1
+    mód: "előny"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:orvtámadás"
 - fok: 2
   követelménytext: ""
   követelmények:
@@ -39,14 +44,40 @@ fokok:
     érték: 9
     típus: "képzettség"
   hatástext:
-  - text: "Orvtámadáskor Előny+2 Sebzés dobásra."
-  - text: "Precíz támadás manőverre: +4 (nincs SFÉ)."
-  módosítók: 
-  - cél: "manőver:precíz_támadás"
-    érték: 4
+  - text: "Orvtámadáskor Előny+1 Sebzés dobásra, SP:+2."
+  módosítók:
+  - cél: "SP"
+    érték: 2
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: ""
+    feltétel: "harci_helyzet:orvtámadás"
+  - cél: "sebzésdobás"
+    érték: 1
+    mód: "előny"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:orvtámadás"
+- fok: 3
+  követelménytext: ""
+  követelmények:
+  - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
+    érték: 9
+    típus: "képzettség"
+  hatástext:
+  - text: "Orvtámadáskor Előny+2 Sebzés dobásra, SP:+3."
+  módosítók:
+  - cél: "SP"
+    érték: 3
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:orvtámadás"
+  - cél: "sebzésdobás"
+    érték: 2
+    mód: "előny"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:orvtámadás"
 todo:
 - text: ""

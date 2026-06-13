@@ -191,7 +191,7 @@ def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
     for i, t in enumerate(taktikak):
         ctx = f"taktikák[{i}] ({t.get('név', '?')})"
         if not t.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
-        if not t.get('feltétel_kulcs'): errors.append(f"{ctx}: hiányzó 'feltétel_kulcs'")
+        if not t.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
         if not isinstance(t.get('fokozatos'), bool): errors.append(f"{ctx}: 'fokozatos' nem boolean")
         km = t.get('kombó_mód', '')
         if km not in ('whitelist', 'blacklist'): errors.append(f"{ctx}: 'kombó_mód' invalid: '{km}'")
@@ -212,23 +212,31 @@ def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
     for i, h in enumerate(helyzetek):
         ctx = f"harci_helyzetek[{i}] ({h.get('név', '?')})"
         if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
-        if not h.get('feltétel_kulcs'): errors.append(f"{ctx}: hiányzó 'feltétel_kulcs'")
+        if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
         if not h.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
     # Szituációk
     for i, s in enumerate(szituaciok):
         ctx = f"szituációk[{i}] ({s.get('név', '?')})"
         if not s.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
-        if not s.get('feltétel_kulcs'): errors.append(f"{ctx}: hiányzó 'feltétel_kulcs'")
+        if not s.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
         if not s.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
     # Manőverek
     valid_tipus = {'általános', 'belharcos'}
     for i, m in enumerate(manoverek):
         ctx = f"manőverek[{i}] ({m.get('név', '?')})"
         if not m.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        if not m.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
         if m.get('típus') not in valid_tipus: errors.append(f"{ctx}: 'típus' invalid: '{m.get('típus')}'")
         if not isinstance(m.get('nehézség'), (int, float)): errors.append(f"{ctx}: 'nehézség' nem szám")
         if not m.get('fázisok'): errors.append(f"{ctx}: hiányzó 'fázisok'")
         if not m.get('hatás'): errors.append(f"{ctx}: hiányzó 'hatás'")
+    # ID egyediség
+    taktika_ids = [t.get('id') for t in taktikak if t.get('id')]
+    helyzet_ids = [h.get('id') for h in helyzetek if h.get('id')]
+    manover_ids = [m.get('id') for m in manoverek if m.get('id')]
+    for ids, label in [(taktika_ids, 'taktika'), (helyzet_ids, 'harci_helyzet'), (manover_ids, 'manőver')]:
+        dupes = [x for x in ids if ids.count(x) > 1]
+        if dupes: errors.append(f"{label} duplikált id-k: {set(dupes)}")
     if errors:
         print("  ❌ Aktív fül validációs hibák:")
         for e in errors:
@@ -251,6 +259,14 @@ def generate_aktiv_ful():
     validate_hatasok(hatasok)
     validate_esemenyek(esemenyek)
     validate_statuszok(statuszok, hatasok, esemenyek)
+
+    # feltétel_kulcs generálás id-ból (yaml-ban nincs, JSON-ban kell)
+    for t in taktikak:
+        t['feltétel_kulcs'] = f"taktika:{t['id']}"
+    for h in helyzetek:
+        h['feltétel_kulcs'] = f"harci_helyzet:{h['id']}"
+    for s in szituaciok:
+        s['feltétel_kulcs'] = f"szituáció:{s['id']}"
 
     write_json('taktikak.json', taktikak)
     write_json('harci_helyzetek.json', helyzetek)
@@ -341,4 +357,22 @@ if __name__ == '__main__':
     generate_primer_fortelyok()
     generate_fajok()
     generate_aktiv_ful()
+    # Post-hoc: fortély manőver cél validáció
+    import json
+    with open(os.path.join(TABLES_DIR, 'manoverek.json'), encoding='utf-8') as f:
+        manover_ids = set(m['id'] for m in json.load(f))
+    with open(os.path.join(TABLES_DIR, 'fortelyok.json'), encoding='utf-8') as f:
+        fortelyok = json.load(f)
+    errors = []
+    for fort in fortelyok:
+        for fok in fort.get('fokok', []):
+            for mod in (fok.get('módosítók') or []):
+                if isinstance(mod, dict) and isinstance(mod.get('cél'), str) and mod['cél'].startswith('manőver:'):
+                    mid = mod['cél'].split(':', 1)[1]
+                    if mid not in manover_ids:
+                        errors.append(f"{fort['név']} fok {fok['fok']}: ismeretlen manőver id: '{mid}'")
+    if errors:
+        print("  ❌ Fortély → manőver referenciális hibák:")
+        for e in errors: print(f"     {e}")
+        raise SystemExit(1)
     print("Done.")

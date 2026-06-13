@@ -142,7 +142,7 @@ Előny+1 TÉ dobásra
 ---
 ## Orvtámadás
 
-Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud és egyáltalán nem képes rá reagálni.
+Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud (nem követelmény a hátulról támadás).
 
 ```
 Sikeres próba kell:
@@ -150,30 +150,21 @@ Sikeres próba kell:
 ```
 
 ```
-Áldozat VÉ: Közelharc, Puszta kézzel
+Áldozat: Közelharci VÉ (Puszta kézzel)
 
 Előny+2 Támadó dobásra
 
-Harci anatómia fortély
-  1.fok: +2 SP
-  2.fok: +4 SP
-  3.fok: +6 SP
-
 Orgyilkos fortély
-  1.fok:
-    Előny+1 Sebzés dobásra
-    Precíz támadás manőverre: +2 (nincs SFÉ)
-  2.fok:
-    Előny+2 Sebzés dobásra
-    Precíz támadás manőverre: +4 (nincs SFÉ)
+  1.fok: Előny+1 Sebzés dobásra, +1 SP
+  2.fok: Előny+1 Sebzés dobásra, +2 SP
+  3.fok: Előny+2 Sebzés dobásra, +3 SP
 ```
 
 → ❌ **Hátulról** és **Meglepetés** harci helyzetek **nem** adhatóak hozzá\
 → ❌ Egyéb `TÉ` bónusz nincs\
 → ❌ Harci taktikák NEM használhatóak
 
-→ ✅ [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver\
-→ ✅ [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély
+→ ✅ [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver (páncél elkerüléséhez)
 
 → [Orvtámadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás)\
 → **Orvtámadás** több Manőver követelménye: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról)

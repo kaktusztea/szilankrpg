@@ -347,7 +347,8 @@
 
 ### Aktív fül
 - Harci alakzat 🚧 (Alakzatharc kidolgozása szükséges)
-- Kétkezes harc 🚧 (pengehossz limit, szituáció kérdés, fegyver harcértékek összeadódás, mindkét MF számít)
+  - kapcsolódó fortélyok bekötése
+- Kétkezes harc 🚧 (pengehossz limit, szituáció legyen??, fegyver harcértékek összeadódás, mindkét MF számít)
 - Harci akrobatika: boolean toggle (Aktív fülre) + TÉ/VÉ hatás + manőver bónusz bevezetése (fortély→manőver bónusz rendszer)
 - Belharc / Belharci szituáció — külön rendszer
 - Páros harc szituáció
@@ -391,7 +392,7 @@
 - `/mnt/c/repo/szilank.code/data/rules.json` — reactive engine deklaratív szabályok
 
 ## Fontos konvenciók
-- Módosító módok: `flat`, `scaled`, `override`, `enyhít`
+- Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`
 - Feltétel típusok: string (session dispatch: `"taktika:X"`, `"harci_helyzet:Y"`) VAGY lista (kalkulált: `[{forrás, operátor, érték}]`)
 - Feltétel prefixek (string): `szituáció:`, `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `manőver:`, `státusz:`
 - Kalkulált feltétel forrásai: session mezők + reactive engine computed + ctx (generikus lookup, nincs hardcode)

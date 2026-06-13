@@ -24,7 +24,13 @@ fokok:
     típus: "képzettség"
   hatástext: 
   - text: "VÉ veszteség duplázódás Hatás nem sújt helyhez kötve szituációban."
-  módosítók: ""
+  módosítók:
+  - cél: "vé_veszteség"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:helyhez_kötve"
 - fok: 2
   követelménytext: ""
   követelmények: 
@@ -33,6 +39,12 @@ fokok:
     típus: "képzettség"
   hatástext: 
   - text: "Hátrány-1 TÉ dobásra sem sújt."
-  módosítók: ""
+  módosítók:
+  - cél: "té_dobás"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:helyhez_kötve"
 todo: 
 - text: ""

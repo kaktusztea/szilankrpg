@@ -1,7 +1,6 @@
 [
   {
     "név": "1 támadás",
-    "feltétel_kulcs": "taktika:1_támadás",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 3
@@ -22,11 +21,12 @@
       "Teljes Védekezés",
       "Fárasztás",
       "Tettetés"
-    ]
+    ],
+    "id": "1_támadás",
+    "feltétel_kulcs": "taktika:1_támadás"
   },
   {
     "név": "Érintő",
-    "feltétel_kulcs": "taktika:érintő",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 3
@@ -40,11 +40,12 @@
       "Kiváró",
       "1 támadás",
       "Plusz támadás"
-    ]
+    ],
+    "id": "érintő",
+    "feltétel_kulcs": "taktika:érintő"
   },
   {
     "név": "Fárasztás",
-    "feltétel_kulcs": "taktika:fárasztás",
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "VÉ csökkentés: 2/kör. Nem támad. Fortély+pengeelőny bónusz.",
@@ -56,11 +57,12 @@
       }
     ],
     "kombó_mód": "whitelist",
-    "kombó_lista": []
+    "kombó_lista": [],
+    "id": "fárasztás",
+    "feltétel_kulcs": "taktika:fárasztás"
   },
   {
     "név": "Kezdeményező",
-    "feltétel_kulcs": "taktika:kezdeményező",
     "fokozatos": true,
     "fokok": [
       {
@@ -95,11 +97,12 @@
       "Érintő",
       "Visszafogott",
       "1 támadás"
-    ]
+    ],
+    "id": "kezdeményező",
+    "feltétel_kulcs": "taktika:kezdeményező"
   },
   {
     "név": "Kiváró",
-    "feltétel_kulcs": "taktika:kiváró",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 2
@@ -119,11 +122,12 @@
       "Támadás erőből",
       "1 támadás",
       "Tettetés"
-    ]
+    ],
+    "id": "kiváró",
+    "feltétel_kulcs": "taktika:kiváró"
   },
   {
     "név": "Öngyilkos roham",
-    "feltétel_kulcs": "taktika:öngyilkos_roham",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 5,
@@ -144,11 +148,12 @@
       }
     ],
     "kombó_mód": "whitelist",
-    "kombó_lista": []
+    "kombó_lista": [],
+    "id": "öngyilkos_roham",
+    "feltétel_kulcs": "taktika:öngyilkos_roham"
   },
   {
     "név": "Plusz támadás",
-    "feltétel_kulcs": "taktika:plusz_támadás",
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "+1 támadás. VÉ:-3 azonnal (VÉ csökkenés).",
@@ -157,11 +162,12 @@
       "Támadó",
       "Érintő",
       "Támadás erőből"
-    ]
+    ],
+    "id": "plusz_támadás",
+    "feltétel_kulcs": "taktika:plusz_támadás"
   },
   {
     "név": "Roham",
-    "feltétel_kulcs": "taktika:roham",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 4,
@@ -177,11 +183,12 @@
       }
     ],
     "kombó_mód": "whitelist",
-    "kombó_lista": []
+    "kombó_lista": [],
+    "id": "roham",
+    "feltétel_kulcs": "taktika:roham"
   },
   {
     "név": "Támadás erőből",
-    "feltétel_kulcs": "taktika:támadás_erőből",
     "fokozatos": true,
     "fokok": [
       {
@@ -208,11 +215,12 @@
       "Kiváró",
       "Plusz támadás",
       "1 támadás"
-    ]
+    ],
+    "id": "támadás_erőből",
+    "feltétel_kulcs": "taktika:támadás_erőből"
   },
   {
     "név": "Támadó",
-    "feltétel_kulcs": "taktika:támadó",
     "fokozatos": true,
     "fokok": [
       {
@@ -245,11 +253,12 @@
       "Érintő",
       "Plusz támadás",
       "1 támadás"
-    ]
+    ],
+    "id": "támadó",
+    "feltétel_kulcs": "taktika:támadó"
   },
   {
     "név": "Védő",
-    "feltétel_kulcs": "taktika:védő",
     "fokozatos": true,
     "fokok": [
       {
@@ -289,22 +298,24 @@
     "kombó_lista": [
       "Érintő",
       "1 támadás"
-    ]
+    ],
+    "id": "védő",
+    "feltétel_kulcs": "taktika:védő"
   },
   {
     "név": "Teljes Védekezés",
-    "feltétel_kulcs": "taktika:teljes_védekezés",
     "fokozatos": false,
     "módosítók": {
       "VÉ": 6
     },
     "megjegyzés": "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20T.",
     "kombó_mód": "whitelist",
-    "kombó_lista": []
+    "kombó_lista": [],
+    "id": "teljes_védekezés",
+    "feltétel_kulcs": "taktika:teljes_védekezés"
   },
   {
     "név": "Visszafogott",
-    "feltétel_kulcs": "taktika:visszafogott",
     "fokozatos": true,
     "fokok": [
       {
@@ -327,11 +338,12 @@
       "Kiváró",
       "1 támadás",
       "Tettetés"
-    ]
+    ],
+    "id": "visszafogott",
+    "feltétel_kulcs": "taktika:visszafogott"
   },
   {
     "név": "Tettetés",
-    "feltétel_kulcs": "taktika:tettetés",
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "Képzetlenebbnek tetteted magad. Harcmodor+Ügyesség vs 15 próba. Kiváró, Visszafogott taktikával együtt.",
@@ -339,6 +351,8 @@
     "kombó_lista": [
       "Kiváró",
       "Visszafogott"
-    ]
+    ],
+    "id": "tettetés",
+    "feltétel_kulcs": "taktika:tettetés"
   }
 ]

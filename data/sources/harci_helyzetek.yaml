@@ -4,79 +4,220 @@
 # Komplex hatások → informatív megjelenítés + §16 feltétel dispatch
 # hatások[]: opcionális, strukturált (Hatás pool-hoz), mint statuszok.yaml-ban
 
-harci_helyzetek:
-  - név: "Belharci szituáció"
-    feltétel_kulcs: "harci_helyzet:belharci_szituáció"
-    infó: "Rövid fegyverek előnye, hosszú fegyverek hátránya. Külön szabályrendszer."
-
-  - név: "Fegyverrántás váratlanul"
-    feltétel_kulcs: "harci_helyzet:fegyverrántás"
-    infó: "Megnyert KÉ + Előny+1 TÉ dobásra (első csapás)."
-    hatások:
-      - { hatás: "előny", érték: 1, cél: "té_dobás", megjegyzés: "első csapás" }
-
-  - név: "Meglepetés"
-    feltétel_kulcs: "harci_helyzet:meglepetés"
-    infó: "Támadó: megnyert KÉ, Előny+1 TÉ, VÉ csökk:3. Védő: többsz. tám. elvesztés, utolsó."
-    hatások:
-      - { hatás: "előny", érték: 1, cél: "té_dobás" }
-      - { hatás: "szöveges", cél: "vé_veszteség", megjegyzés: "VÉ csökk: 3" }
-      - { hatás: "szöveges", cél: "támadások_száma", megjegyzés: "Védő: többszörös tám. elvesztés" }
-
-  - név: "Készületlenség"
-    feltétel_kulcs: "harci_helyzet:készületlenség"
-    infó: "= Meglepetés hatásai."
-    hatások:
-      - { hatás: "előny", érték: 1, cél: "té_dobás" }
-      - { hatás: "szöveges", cél: "vé_veszteség", megjegyzés: "VÉ csökk: 3" }
-      - { hatás: "szöveges", cél: "támadások_száma", megjegyzés: "Védő: többszörös tám. elvesztés" }
-
-  - név: "Beszorított helyzet"
-    feltétel_kulcs: "harci_helyzet:beszorított"
-    infó: "Ellenfél Előny+1 TÉ. Beszorított: Hátrány-1 KÉ/TÉ, 1 támadás elvesztés, mozgás feleződik."
-    hatások:
-      - { hatás: "hátrány", érték: -1, cél: "ké_dobás" }
-      - { hatás: "hátrány", érték: -1, cél: "té_dobás" }
-      - { hatás: "szöveges", cél: "támadások_száma", megjegyzés: "-1 támadás" }
-      - { hatás: "arányos", érték: 0.5, cél: "mozgás" }
-
-  - név: "Orvtámadás"
-    feltétel_kulcs: "harci_helyzet:orvtámadás"
-    infó: "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ. Harci anatómia SP bónusz aktív."
-    hatások:
-      - { hatás: "előny", érték: 2, cél: "té_dobás" }
-
-  - név: "Hátulról támadás"
-    feltétel_kulcs: "harci_helyzet:hátulról"
-    infó: "Támadó: Előny+1 TÉ. Pajzs VÉ nem számít."
-    hatások:
-      - { hatás: "előny", érték: 1, cél: "té_dobás" }
-      - { hatás: "szöveges", cél: "vé_veszteség", megjegyzés: "Pajzs VÉ nem számít" }
-
-  - név: "Közrefogás"
-    feltétel_kulcs: "harci_helyzet:közrefogás"
-    infó: "+1 TÉ per extra támadó (max +4). Manőver Ellenpróba: legmagasabb MA számít."
-
-  - név: "Levegőből támadás"
-    feltétel_kulcs: "harci_helyzet:levegőből"
-    infó: "Repülő→földi: Előny+1 TÉ, Előny+1 VÉ."
-    hatások:
-      - { hatás: "előny", érték: 1, cél: "té_dobás" }
-
-  - név: "Magasabbról"
-    feltétel_kulcs: "harci_helyzet:magasabbról"
-    infó: "Előny+1 TÉ dobásra."
-    hatások:
-      - { hatás: "előny", érték: 1, cél: "té_dobás" }
-
-  - név: "Védekező takarásban"
-    feltétel_kulcs: "harci_helyzet:takarásban"
-    infó: "VÉ:+10 (takarás mértékétől függ, KM dönt)."
-
-  - név: "Pengeelőny"
-    feltétel_kulcs: "harci_helyzet:pengeelőny"
-    infó: "VÉ:+1..+4 (per 0.5 penge különbség)."
-
-  - név: "Pengehátrány"
-    feltétel_kulcs: "harci_helyzet:pengehátrány"
-    infó: "VÉ:-1..-4 (per 0.5 penge különbség)."
+harci_helyzetek: 
+- név: "Belharci szituáció"
+  infó: "Rövid fegyverek előnye, hosszú fegyverek hátránya. Külön szabályrendszer."
+  id: "belharci_szituáció"
+- név: "Beszorított helyzet"
+  infó: "Ellenfél Előny+1 TÉ. Beszorított: Hátrány-1 KÉ/TÉ, 1 támadás elvesztés, mozgás feleződik."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "ké_dobás"
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+  - hatás: "szöveges"
+    cél: "támadások_száma"
+    megjegyzés: "-1 támadás"
+  - hatás: "arányos"
+    érték: 0.5
+    cél: "mozgás"
+  id: "beszorított"
+- név: "Csúszós talaj"
+  infó: "Hátrány-1 TÉ dobásra."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+  id: "csúszós_talaj"
+- név: "Elvesztett egyensúly"
+  infó: "Hátrány-1 TÉ, többszörös támadás elvesztés, mozgás feleződik."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+  - hatás: "szöveges"
+    cél: "támadások_száma"
+    megjegyzés: "Többszörös támadás elvesztés"
+  - hatás: "arányos"
+    érték: 0.5
+    cél: "mozgás"
+  id: "elvesztett_egyensúly"
+- név: "Fegyverrántás váratlanul"
+  infó: "Megnyert KÉ + Előny+1 TÉ dobásra (első csapás)."
+  hatások: 
+  - hatás: "előny"
+    érték: 1
+    cél: "té_dobás"
+    megjegyzés: "első csapás"
+  id: "fegyverrántás"
+- név: "Földön fekve"
+  infó: "Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -2
+    cél: "té_dobás"
+  - hatás: "duplázás"
+    érték: 2
+    cél: "vé_veszteség"
+  id: "földön_fekve"
+- név: "Hajítás alkalmatlan fegyverrel"
+  infó: "Hátrány-2 Sebzésdobás, Hátrány-2 CÉ. Fegyver CÉ=0."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -2
+    cél: "sebzésdobás"
+  - hatás: "hátrány"
+    érték: -2
+    cél: "cé_dobás"
+  id: "hajítás_alkalmatlan_fegyverrel"
+- név: "Hajítás nem dobásra készített tárgyakkal"
+  infó: "Hátrány-1 Sebzésdobás, Hátrány-1 CÉ. Fegyver CÉ=0."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "sebzésdobás"
+  - hatás: "hátrány"
+    érték: -1
+    cél: "cé_dobás"
+  id: "hajítás_nem_dobásra_készített"
+- név: "Hátulról támadás"
+  infó: "Támadó: Előny+1 TÉ. Pajzs VÉ nem számít."
+  hatások: 
+  - hatás: "előny"
+    érték: 1
+    cél: "té_dobás"
+  - hatás: "szöveges"
+    cél: "vé_veszteség"
+    megjegyzés: "Pajzs VÉ nem számít"
+  id: "hátulról"
+- név: "Helyhez kötve"
+  infó: "Hátrány-1 TÉ dobásra, VÉ veszteség duplázódik."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+  - hatás: "duplázás"
+    érték: 2
+    cél: "vé_veszteség"
+  id: "helyhez_kötve"
+- név: "Képzetlen fegyverhasználat"
+  infó: "Harcmodor 3.szint alatti: lásd Harcmodor képzettség büntetések."
+  id: "képzetlen_fegyverhasználat"
+- név: "Készületlenség"
+  infó: "= Meglepetés hatásai."
+  hatások: 
+  - hatás: "előny"
+    érték: 1
+    cél: "té_dobás"
+  - hatás: "szöveges"
+    cél: "vé_veszteség"
+    megjegyzés: "VÉ csökk: 3"
+  - hatás: "szöveges"
+    cél: "támadások_száma"
+    megjegyzés: "Védő: többszörös tám. elvesztés"
+  id: "készületlenség"
+- név: "Közrefogás"
+  infó: "+1 TÉ per extra támadó (max +4). Manőver Ellenpróba: legmagasabb MA számít."
+  id: "közrefogás"
+- név: "Láthatatlanul"
+  infó: "Hallható: Előny+1 TÉ, VÉ csökk fixen 2. Csendes: Előny+2 TÉ, VÉ csökk fixen 5."
+  hatások: 
+  - hatás: "előny"
+    érték: 1
+    cél: "té_dobás"
+    megjegyzés: "hallható láthatatlan"
+  id: "láthatatlanul"
+- név: "Levegőből támadás"
+  infó: "Repülő→földi: Előny+1 TÉ, Előny+1 VÉ."
+  hatások: 
+  - hatás: "előny"
+    érték: 1
+    cél: "té_dobás"
+  id: "levegőből"
+- név: "Lények méret különbsége"
+  infó: "Méretkülönbség [0-6] fokozat. Kisebb lénynek TÉ bónusz, VÉ bónusz."
+  id: "méret_különbség"
+- név: "Magasabbról"
+  infó: "Előny+1 TÉ dobásra."
+  hatások: 
+  - hatás: "előny"
+    érték: 1
+    cél: "té_dobás"
+  id: "magasabbról"
+- név: "Meglepetés"
+  infó: "Támadó: megnyert KÉ, Előny+1 TÉ, VÉ csökk:3. Védő: többsz. tám. elvesztés, utolsó."
+  hatások: 
+  - hatás: "előny"
+    érték: 1
+    cél: "té_dobás"
+  - hatás: "szöveges"
+    cél: "vé_veszteség"
+    megjegyzés: "VÉ csökk: 3"
+  - hatás: "szöveges"
+    cél: "támadások_száma"
+    megjegyzés: "Védő: többszörös tám. elvesztés"
+  id: "meglepetés"
+- név: "Orvtámadás"
+  infó: "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ. Harci anatómia SP bónusz aktív."
+  hatások: 
+  - hatás: "előny"
+    érték: 2
+    cél: "té_dobás"
+  id: "orvtámadás"
+- név: "Pengeelőny"
+  infó: "VÉ:+1..+4 (per 0.5 penge különbség)."
+  id: "pengeelőny"
+- név: "Pengehátrány"
+  infó: "VÉ:-1..-4 (per 0.5 penge különbség)."
+  id: "pengehátrány"
+- név: "Pusztakezes harc"
+  infó: "Negatív fegyver harcértékek. Természetes fegyver fortély segít."
+  id: "pusztakezes_harc"
+- név: "Rosszabbik kézben tartott fegyver"
+  infó: "Hátrány-1 TÉ dobásra. Kétkezesség fortély kiküszöböli."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+  id: "rosszabbik_kéz"
+- név: "Sötétben"
+  infó: "Félhomály: Hátrány-1 TÉ. Teljes+zaj: Hátrány-2 TÉ. Teljes+csend: Hátrány-3 TÉ."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+    megjegyzés: "félhomály"
+  id: "sötétben"
+- név: "Tűz ruhán"
+  infó: "Ég: Hátrány-1 TÉ. Lángol: Hátrány-2 TÉ, 1 támadás elvesztés."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+    megjegyzés: "ég fokozat"
+  id: "tűz_ruhán"
+- név: "Vadállatok elleni harc"
+  infó: "Közelharc + Belharc harcmodor. Állat-specifikus."
+  id: "vadállatok"
+- név: "Védekező takarásban"
+  infó: "VÉ:+10 (takarás mértékétől függ, KM dönt)."
+  id: "takarásban"
+- név: "Védő Érték kiterjesztése másra"
+  infó: "Többszörös támadás elvesztés, VÉ veszteség duplázódik. Testőr fortély csökkenti."
+  hatások: 
+  - hatás: "szöveges"
+    cél: "támadások_száma"
+    megjegyzés: "Többszörös támadás elvesztés"
+  - hatás: "duplázás"
+    érték: 2
+    cél: "vé_veszteség"
+  id: "vé_kiterjesztés"
+- név: "Vér elvakít"
+  infó: "Hátrány-1 TÉ, Hátrány-1 Érzék(Látás)."
+  hatások: 
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+  id: "vér_elvakít"

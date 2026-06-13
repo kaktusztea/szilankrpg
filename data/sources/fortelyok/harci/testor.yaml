@@ -24,7 +24,13 @@ fokok:
     típus: "képzettség"
   hatástext: 
   - text: "VÉ veszteség duplázódás Hatás nem sújt VÉ kiterjesztésekor."
-  módosítók: ""
+  módosítók:
+  - cél: "vé_veszteség"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:vé_kiterjesztés"
 - fok: 2
   követelménytext: ""
   követelmények: 
@@ -34,6 +40,18 @@ fokok:
   hatástext: 
   - text: "Büntetések nélkül védheted pártfogoltad."
   - text: "Többszörös támadás elvesztése Hatás sem sújt."
-  módosítók: ""
+  módosítók:
+  - cél: "vé_veszteség"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:vé_kiterjesztés"
+  - cél: "támadások_száma"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:vé_kiterjesztés"
 todo: 
 - text: ""

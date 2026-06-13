@@ -25,7 +25,19 @@ fokok:
   hatástext: 
   - text: "Nem sújtanak az alapeset levonásai alkalmi tárgy hajításakor."
   - text: "A tárgy harcértéke nem változik."
-  módosítók: ""
+  módosítók:
+  - cél: "sebzésdobás"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:hajítás_nem_dobásra_készített"
+  - cél: "cé_dobás"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:hajítás_nem_dobásra_készített"
 - fok: 2
   követelménytext: ""
   követelmények: 

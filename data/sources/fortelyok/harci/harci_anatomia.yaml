@@ -24,16 +24,9 @@ fokok:
     típus: "képzettség"
   hatástext: 
   - text: "Leütés hátulról Manőver: +2 MP bónusz Ellenpróbánál."
-  - text: "Precíz támadás Manőver esetén: SP:+2 (vértmentes ponton)."
-  - text: "Orvtámadás harci helyzet esetén SP:+2 (vértmentes ponton)."
+  - text: "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál."
   - text: "Visszafogott taktika TÉ büntetés: 3-mal csökken."
   módosítók: 
-  - cél: "SP"
-    érték: 2
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "harci_helyzet:orvtámadás"
   - cél: "manőver:leütés_hátulról"
     érték: 2
     mód: "flat"
@@ -63,16 +56,9 @@ fokok:
     típus: "fortély"
   hatástext: 
   - text: "Leütés hátulról Manőver: +4 MP bónusz Ellenpróbánál."
-  - text: "Precíz támadás Manőver esetén: SP:+4 (vértmentes ponton)."
-  - text: "Orvtámadás harci helyzet esetén SP:+4 (vértmentes ponton)."
+  - text: "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál."
   - text: "Visszafogott taktika TÉ büntetés: 6-mal csökken."
   módosítók: 
-  - cél: "SP"
-    érték: 4
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "harci_helyzet:orvtámadás"
   - cél: "manőver:leütés_hátulról"
     érték: 4
     mód: "flat"
@@ -102,17 +88,10 @@ fokok:
     típus: "fortély"
   hatástext: 
   - text: "Leütés hátulról Manőver: +6 MP bónusz Ellenpróbánál."
-  - text: "Precíz támadás Manőver esetén: SP:+6 (vértmentes ponton)."
-  - text: "Orvtámadás harci helyzet esetén SP:+6 (vértmentes ponton)."
+  - text: "Precíz támadás Manőver: +6 MP bónusz Ellenpróbánál."
   - text: "Visszafogott taktika TÉ büntetés: 9-mal csökken."
   - text: "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
   módosítók: 
-  - cél: "SP"
-    érték: 6
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "harci_helyzet:orvtámadás"
   - cél: "manőver:leütés_hátulról"
     érték: 6
     mód: "flat"

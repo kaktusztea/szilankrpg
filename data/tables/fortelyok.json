@@ -2144,7 +2144,24 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
+          },
+          {
+            "cél": "cé_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -2171,7 +2188,24 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "sebzésdobás",
+            "érték": 2,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
+          },
+          {
+            "cél": "cé_dobás",
+            "érték": 2,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
+          }
+        ]
       }
     ]
   },
@@ -2201,7 +2235,24 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
+          },
+          {
+            "cél": "cé_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -2770,7 +2821,16 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:helyhez_kötve"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -2791,7 +2851,16 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "té_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:helyhez_kötve"
+          }
+        ]
       }
     ]
   },
@@ -2906,8 +2975,7 @@
         "fok": 1,
         "hatás": [
           "Leütés hátulról Manőver: +2 MP bónusz Ellenpróbánál.",
-          "Precíz támadás Manőver esetén: SP:+2 (vértmentes ponton).",
-          "Orvtámadás harci helyzet esetén SP:+2 (vértmentes ponton).",
+          "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 3-mal csökken."
         ],
         "követelmény": "",
@@ -2925,14 +2993,6 @@
           }
         ],
         "módosítók": [
-          {
-            "cél": "SP",
-            "érték": 2,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:orvtámadás"
-          },
           {
             "cél": "manőver:leütés_hátulról",
             "érték": 2,
@@ -2963,8 +3023,7 @@
         "fok": 2,
         "hatás": [
           "Leütés hátulról Manőver: +4 MP bónusz Ellenpróbánál.",
-          "Precíz támadás Manőver esetén: SP:+4 (vértmentes ponton).",
-          "Orvtámadás harci helyzet esetén SP:+4 (vértmentes ponton).",
+          "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 6-mal csökken."
         ],
         "követelmény": "",
@@ -2987,14 +3046,6 @@
           }
         ],
         "módosítók": [
-          {
-            "cél": "SP",
-            "érték": 4,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:orvtámadás"
-          },
           {
             "cél": "manőver:leütés_hátulról",
             "érték": 4,
@@ -3025,8 +3076,7 @@
         "fok": 3,
         "hatás": [
           "Leütés hátulról Manőver: +6 MP bónusz Ellenpróbánál.",
-          "Precíz támadás Manőver esetén: SP:+6 (vértmentes ponton).",
-          "Orvtámadás harci helyzet esetén SP:+6 (vértmentes ponton).",
+          "Precíz támadás Manőver: +6 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 9-mal csökken.",
           "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
         ],
@@ -3050,14 +3100,6 @@
           }
         ],
         "módosítók": [
-          {
-            "cél": "SP",
-            "érték": 6,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:orvtámadás"
-          },
           {
             "cél": "manőver:leütés_hátulról",
             "érték": 6,
@@ -4232,7 +4274,7 @@
   {
     "név": "Orgyilkos",
     "csoport": "harci",
-    "maxfok": 2,
+    "maxfok": 3,
     "kp_perfok": 6,
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
@@ -4244,8 +4286,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Orvtámadáskor Előny+1 Sebzés dobásra.",
-          "Precíz támadás manőverre: +2 (nincs SFÉ)."
+          "Orvtámadáskor Előny+1 Sebzés dobásra, SP:+1."
         ],
         "követelmény": "",
         "követelmények": [
@@ -4263,20 +4304,27 @@
         ],
         "módosítók": [
           {
-            "cél": "manőver:precíz_támadás",
-            "érték": 2,
+            "cél": "SP",
+            "érték": 1,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": ""
+            "feltétel": "harci_helyzet:orvtámadás"
+          },
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "előny",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
           }
         ]
       },
       {
         "fok": 2,
         "hatás": [
-          "Orvtámadáskor Előny+2 Sebzés dobásra.",
-          "Precíz támadás manőverre: +4 (nincs SFÉ)."
+          "Orvtámadáskor Előny+1 Sebzés dobásra, SP:+2."
         ],
         "követelmény": "",
         "követelmények": [
@@ -4294,12 +4342,58 @@
         ],
         "módosítók": [
           {
-            "cél": "manőver:precíz_támadás",
-            "érték": 4,
+            "cél": "SP",
+            "érték": 2,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": ""
+            "feltétel": "harci_helyzet:orvtámadás"
+          },
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "előny",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Orvtámadáskor Előny+2 Sebzés dobásra, SP:+3."
+        ],
+        "követelmény": "",
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "SP",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
+          },
+          {
+            "cél": "sebzésdobás",
+            "érték": 2,
+            "mód": "előny",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
           }
         ]
       }
@@ -4725,7 +4819,16 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:vé_kiterjesztés"
+          }
+        ]
       },
       {
         "fok": 2,
@@ -4747,7 +4850,24 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:vé_kiterjesztés"
+          },
+          {
+            "cél": "támadások_száma",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:vé_kiterjesztés"
+          }
+        ]
       }
     ]
   },
