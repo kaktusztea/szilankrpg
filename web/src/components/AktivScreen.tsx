@@ -191,12 +191,20 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
 
   // Fortély emlékeztetők: harci fortélyok amelyeknek van hatástext de nincs gépi módosító
   const fortélyEmlékeztetők: { név: string; fok: number; hatás: string }[] = [];
+  const manőverBónuszok: { név: string; manőver: string; érték: number }[] = [];
   for (const kf of karakter.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);
     if (!def || def.csoport !== 'harci') continue;
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef) continue;
     const hasMods = fokDef.módosítók && Array.isArray(fokDef.módosítók) && fokDef.módosítók.length > 0;
+    if (hasMods) {
+      for (const mod of fokDef.módosítók) {
+        if (typeof mod.cél === 'string' && mod.cél.startsWith('manőver:')) {
+          manőverBónuszok.push({ név: kf.név, manőver: mod.cél.slice(8), érték: mod.érték });
+        }
+      }
+    }
     if (!hasMods && fokDef.hatás && fokDef.hatás.length > 0) {
       fortélyEmlékeztetők.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' ') });
     }
@@ -207,7 +215,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
       <h2>❎ Aktív</h2>
 
       {/* Hatás pool */}
-      {(hasTaktikaMods || hasHatásPool || fortélyEmlékeztetők.length > 0 || session.narratív_módosítók.length > 0) && (
+      {(hasTaktikaMods || hasHatásPool || fortélyEmlékeztetők.length > 0 || manőverBónuszok.length > 0 || session.narratív_módosítók.length > 0) && (
         <div className="aktiv-hatas-pool">
           {hasTaktikaMods && (
             <div className="hatas-pool-section">
@@ -234,6 +242,16 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   if (parts.length === 0) return null;
                   return <span key={cél} className={`hatas-pool-item ${entry.letilt ? 'negative' : entry.előnyHátrány < 0 ? 'negative' : entry.előnyHátrány > 0 ? 'positive' : ''}`}>{eseményNév(cél)}: {parts.join(', ')}</span>;
                 })}
+              </div>
+            </div>
+          )}
+          {manőverBónuszok.length > 0 && (
+            <div className="hatas-pool-section">
+              <span className="hatas-pool-title">Manőver bónuszok</span>
+              <div className="hatas-pool-items">
+                {manőverBónuszok.map((mb, i) => (
+                  <span key={i} className="hatas-pool-item positive">{mb.manőver.replace(/_/g, ' ')}: +{mb.érték} ({mb.név})</span>
+                ))}
               </div>
             </div>
           )}

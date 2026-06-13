@@ -353,6 +353,7 @@
 - Páros harc szituáció
 
 ### Fortélyok — hiányzó számszerűsítések
+- "számszerűsítés" jelentése: a hatás rész még csak "hatástext", nincs "módosítók" modellre alkalmazva
 - Harci anatómia: manőver bónuszok (jelenleg csak hatástext) → manőver bónusz rendszer
 - Hárítófegyver használat: módosítók alkalmazása (jelenleg csak hatástext)
 - Kaszabolás: fortély emlékeztetők közé (minden harci hatást ide?)
