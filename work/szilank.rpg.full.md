@@ -22807,7 +22807,7 @@ Csak 1 támadást adsz le a körben:
   több-támadás TÉ levonás (-3) nem érvényesül
 ```
 
-❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés taktikával együtt
+❌ Roham, Öngyilkos roham, Plusz támadás, Teljes Védekezés, Fárasztás taktikával együtt
 
 ✅ Minden **más** taktikával együtt
 
@@ -22823,7 +22823,7 @@ TÉ:+3
 Nincs sebzés
 ```
 
-✅ **Támadó, Védő, Kezdeményező, Kiváró taktikával** együtt
+✅ **Támadó, Védő, Kezdeményező, Kiváró, 1 támadás, Plusz támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -22869,7 +22869,7 @@ KÉ:+5, VÉ:-5
 
 ✅ **Támadó taktikával** együtt, de ügyelj a [Védő Érték eltolás ökölszabályra](#-%C3%B6k%C3%B6lszab%C3%A1ly-v%C3%A9d%C5%91-%C3%A9rt%C3%A9k-eltol%C3%A1sra)!
 
-✅ **Érintő, Visszafogott taktikával** együtt
+✅ **Érintő, Visszafogott, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -22889,7 +22889,7 @@ TÉ:+2 első
   ha nem kaptál sebet
 ```
 
-✅ **Támadó, Érintő, Visszafogott, Támadás Erőből taktikával** együtt
+✅ **Támadó, Érintő, Visszafogott, Támadás Erőből, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -22991,7 +22991,7 @@ TÉ:-2, SP:+2
 
 A fenti limit a **[Támadás erőből](fortelyok.harci/tamadas_erobol.md)** fortéllyal növelhető.
 
-✅ **Kiváró taktikával** együtt
+✅ **Kiváró, Plusz támadás, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -23010,7 +23010,7 @@ TÉ:+3, VÉ:-6
 
 ❌ [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás) szituációban
 
-✅ **Kezdeményező, Kiváró taktikával** együtt
+✅ **Kezdeményező, Kiváró, Érintő, Plusz támadás, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -23029,6 +23029,8 @@ VÉ:+4, TÉ:-8
 ❌ [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) szituációban
 
 ❌ [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás) szituációban
+
+✅ **Érintő, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
@@ -23094,7 +23096,7 @@ TÉ:-9  →  nincs kockadobás
 
 🔗 **[Harci anatómia](fortelyok.harci/harci_anatomia.md)** fortély minden foka `3` ponttal csökkenti a `TÉ` büntetést.
 
-✅ **Kezdeményező, Kiváró taktikával** együtt
+✅ **Kezdeményező, Kiváró, 1 támadás taktikával** együtt
 
 ❌ Más taktikával együtt
 
