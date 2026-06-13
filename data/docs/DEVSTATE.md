@@ -348,24 +348,30 @@
 ### Aktív fül
 - Harci alakzat 🚧 (Alakzatharc kidolgozása szükséges)
   - kapcsolódó fortélyok bekötése
-- Kétkezes harc 🚧 (pengehossz limit, szituáció legyen??, fegyver harcértékek összeadódás, mindkét MF számít)
+- Kétkezes harc 🚧 (pengehossz limit, szituáció legyen??)
+  - Fegyver harcértékek összeadódnak    -- még nem számszerűsített
+  - Mf: mindkét fegyveré számít         -- még nem számszerűsített
+
 - Harci akrobatika: boolean toggle (Aktív fülre) + TÉ/VÉ hatás + manőver bónusz bevezetése (fortély→manőver bónusz rendszer)
 - Belharc / Belharci szituáció — külön rendszer
 - Páros harc szituáció
 
 ### Fortélyok — hiányzó számszerűsítések
-- "számszerűsítés" jelentése: a hatás rész még csak "hatástext", nincs "módosítók" modellre alkalmazva
-- Harci anatómia: manőver bónuszok (jelenleg csak hatástext) → manőver bónusz rendszer
-- Hárítófegyver használat: módosítók alkalmazása (jelenleg csak hatástext)
-- Kaszabolás: fortély emlékeztetők közé (minden harci hatást ide?)
-- Kitérés lövés elől: számszerűsítés
-- Orgyilkos: számszerűsítés
-- Pajzshasználat: számszerűsítés
-- Támadás erőből: számszerűsítés
-- Természetes fegyver: ellenőrzés (puszta kéz esetén!)
-- Természetes páncél: ellenőrzés
-- "Vezető - XY" fortélyok: számszerűsítés (Alakzatharc kidolgozása előfeltétel)
-- Szabad fortélyok felvételénél: mutassa rögtön a kiterjesztéseket
+- ✅ Harci anatómia: manőver bónusz (`manőver:leütés_hátulról`, `manőver:precíz_támadás`) + Visszafogott TÉ csökkentés (`feltétel: "taktika:visszafogott"`)
+- ✅ Orgyilkos: SP + Előny sebzésdobás (`feltétel: "harci_helyzet:orvtámadás"`)
+- ✅ Alkalmatlan fegyver hajítása: enyhít (`feltétel: "harci_helyzet:hajítás_alkalmatlan_fegyverrel"`)
+- ✅ Alkalmatlan tárgyak hajítása: enyhít (`feltétel: "harci_helyzet:hajítás_nem_dobásra_készített"`)
+- ✅ Harc helyhez kötve: vé_veszteség + té_dobás enyhít (`feltétel: "harci_helyzet:helyhez_kötve"`)
+- ✅ Testőr: vé_veszteség + támadások_száma enyhít (`feltétel: "harci_helyzet:vé_kiterjesztés"`)
+- ✅ Természetes fegyver: SP override, puszta kéz feltétel — már volt
+- ✅ Természetes páncél: SFÉ flat — már volt
+- ✅ Pajzshasználat: HarcScreen §13-ban implementálva (konstansok lookup)
+- Hárítófegyver használat: kétkezes harc kalkuláció bővítés szükséges (bal kéz VÉ hozzáadás)
+- Kaszabolás: runtime döntés — fortély emlékeztető elég
+- Kitérés lövés elől: próba bónusz — próba rendszer nincs implementálva
+- Támadás erőből: interaktív SP↔TÉ csere — nem automatikus módosító
+- Vezető XY: Alakzatszint bónusz — Alakzatharc rendszer előfeltétel
+- Szabad fortélyok felvételénél: mutassa rögtön a kiterjesztéseket (UI feature)
 
 ### Távharc fül
 - Távharc kalkulátor (CÉ és VÉ) — §17
