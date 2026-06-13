@@ -109,22 +109,27 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       setPromptValue('');
       return;
     }
+    // Többszörös prefixelt value: "AlapNév:AlNév" → tárolt név = "AlNév"
+    let actualNév = név;
+    if (név.includes(':') && !név.startsWith('__')) {
+      actualNév = név.split(':')[1];
+    }
     setKépzettségek(prev => {
       // Ha többszörös alnév: csoportosítva szúrjuk be a testvérei mellé
       const parentDef = data.kepzettsegDefs.find(d =>
-        d.többszörös.length > 0 && d.többszörös[0] !== '*' && d.többszörös.includes(név)
+        d.többszörös.length > 0 && d.többszörös[0] !== '*' && d.többszörös.includes(actualNév)
       );
       if (parentDef) {
         const siblings = new Set(parentDef.többszörös);
         const lastIdx = prev.reduce((acc, k, i) => siblings.has(k.név) ? i : acc, -1);
         const newArr = [...prev];
         const insertAt = lastIdx + 1;
-        newArr.splice(insertAt, 0, { név, szint: 0 });
+        newArr.splice(insertAt, 0, { név: actualNév, szint: 0 });
         setPendingEditIdx(insertAt);
         return newArr;
       }
       setPendingEditIdx(prev.length);
-      return [...prev, { név, szint: 0 }];
+      return [...prev, { név: actualNév, szint: 0 }];
     });
   }
 
@@ -178,7 +183,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
         } else {
           for (const sub of d.többszörös) {
             if (!usedNames.includes(sub)) {
-              options.push({ label: `${d.név}: ${sub}`, value: sub });
+              options.push({ label: `${d.név}: ${sub}`, value: `${d.név}:${sub}` });
             }
           }
         }
