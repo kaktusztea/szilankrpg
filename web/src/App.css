@@ -130,6 +130,16 @@ body {
   border-top: 1px solid #333;
   padding: 4px 0;
   overflow: hidden;
+  position: relative;
+}
+
+.tab-indicator {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  border-radius: 2px 2px 0 0;
 }
 
 .tab-bar::-webkit-scrollbar { display: none; }

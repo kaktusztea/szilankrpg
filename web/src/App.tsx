@@ -172,6 +172,7 @@ function App() {
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTapTitle = useRef(0);
   const tabBarRef = useRef<HTMLElement>(null);
+  const indicatorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
@@ -201,6 +202,22 @@ function App() {
   }
 
   const TABS = ALL_TABS.filter(t => !t.editOnly || !gameMode);
+
+  const indicatorInit = useRef(false);
+  const activeTabBtnRef = useRef<HTMLButtonElement | null>(null);
+  useEffect(() => {
+    const ind = indicatorRef.current;
+    const btn = activeTabBtnRef.current;
+    if (!ind || !btn) return;
+    ind.style.width = `${btn.offsetWidth}px`;
+    ind.style.transform = `translateX(${btn.offsetLeft}px)`;
+    if (!indicatorInit.current) {
+      requestAnimationFrame(() => {
+        if (ind) ind.style.transition = 'transform 0.2s ease-out, width 0.2s ease-out';
+        indicatorInit.current = true;
+      });
+    }
+  });
 
   // Korrekció: gameMode váltáskor az editOnly tab kiszűrése/visszakerülése miatt index eltolódik
   const prevGameMode = useRef(gameMode);
@@ -412,11 +429,13 @@ function App() {
       })()}
 
       <nav className="tab-bar" ref={tabBarRef} style={{ '--tab-count': TABS.length } as React.CSSProperties}>
+        <div className="tab-indicator" ref={indicatorRef} />
         {[...TABS].reverse().map((tab, _i) => {
           const i = TABS.indexOf(tab);
           return (
           <button
             key={tab.id}
+            ref={activeTab === i ? activeTabBtnRef : undefined}
             className={`tab-btn ${activeTab === i ? 'active' : ''}`}
             onClick={() => setActiveTab(i)}
           >
