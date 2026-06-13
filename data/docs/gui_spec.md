@@ -109,7 +109,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 | Elem | Típus | Leírás |
 |------|-------|--------|
-| Hatás pool box | info szekció (felül) | 4 alszekció: Harcérték módosítók, Aktív Hatások, Fortély emlékeztetők, Narratív módosítók |
+| Hatás pool box | info szekció (felül) | 6 alszekció: Harcérték módosítók, Aktív Hatások, Manőver bónuszok, Előny/Hátrány, Fortély emlékeztetők, Narratív módosítók |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
 | Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend |
@@ -130,8 +130,10 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 ### Hatás pool szekciók
 1. **Harcérték módosítók**: taktikák fix KÉ/TÉ/VÉ/SP összesítése
 2. **Aktív Hatások**: státuszok + harci helyzetek strukturált hatásai kumulálva (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít)
-3. **Fortély emlékeztetők**: harci fortélyok narratív hatásszövegei (nem kiterjesztés, nem kiemelt)
-4. **Narratív módosítók**: KM által hozzáadott szöveges + opcionális Előny/Hátrány
+3. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
+4. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes, pl. "Előny+1 sebzésdobás (Orgyilkos)")
+5. **Fortély emlékeztetők**: harci fortélyok narratív hatásszövegei (ha nincs gépi módosító)
+6. **Narratív módosítók**: KM által hozzáadott szöveges + opcionális Előny/Hátrány
 
 ### Stílus
 - `.aktiv-field-btn`: keretezett label+érték (he-field-btn stílus)
@@ -351,8 +353,8 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
   - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se double-tap-re) — ehelyett "1 fok a maximum" hint (2s)
   - Mesterfegyver (locked): double-tap → "Ezt a fortélyt a Harcértékek fülön kezeld!" hint (3s)
 - Felvételkor (dropdown): maxfok>1 → azonnal fok popup; többszörös → megfelelő picker popup
-- Mesterfegyver NEM jelenik meg a harci fortély dropdown-ban
-- Mesterfegyver bejegyzések: locked (nem szerkeszthető, nem törölhető), lista tetején, szinkronizálva fegyver példányokból
+- Locked fortélyok (konstansok.locked_fortélyok): NEM jelennek meg a dropdown-ban, nem szerkeszthetők/törölhetők, lista tetején
+- Mesterfegyver bejegyzések: szinkronizálva fegyver példányokból (Harcértékek fül)
 - ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb) — locked elemeknél nincs ✕
 - Escape: popup bezárás
 
@@ -559,6 +561,7 @@ Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
 - Tab betűméret: 18px, padding: 8px
 - Inaktív szín: `--text-dim` (#999)
 - Aktív tab: `--accent` szín (#e94560), bold
+- Aktív tab indikátor: 3px accent csík az aktív gomb alatt, slide animáció (0.2s ease-out), betöltéskor transition nélkül
 - Háttér: `--surface`, `border-top: 1px solid #333`, padding: 4px 0
 - Egér scroll: `onWheel` → `scrollLeft += deltaY`
 

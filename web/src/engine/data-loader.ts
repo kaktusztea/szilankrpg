@@ -24,6 +24,7 @@ interface KonstansokRaw {
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   fegyver_kategória_harcmodor: Record<string, string>;
   több_támadás_TÉ_levonás: number;
+  locked_fortélyok: string[];
   egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];
   fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
 }

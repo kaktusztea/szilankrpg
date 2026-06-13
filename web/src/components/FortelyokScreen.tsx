@@ -32,6 +32,7 @@ interface Props {
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, nyelvtanulásSzint, képzettségek }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+  const lockedSet = new Set(data.konstansok.locked_fortélyok);
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
@@ -115,10 +116,10 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   function getFortelyokForCsoport(csoport: string): Fortely[] {
     const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
     const items = fortélyok.filter(f => csoportNevek.has(f.név));
-    // Group by név (identical names together), Mesterfegyver/Pajzshasználat/Merevvértviselet always first, then by fok desc
+    // Group by név (identical names together), locked fortélyok always first, then by fok desc
     items.sort((a, b) => {
-      const aLocked = a.név === 'Mesterfegyver' || a.név === 'Pajzshasználat' || a.név === 'Merevvértviselet';
-      const bLocked = b.név === 'Mesterfegyver' || b.név === 'Pajzshasználat' || b.név === 'Merevvértviselet';
+      const aLocked = lockedSet.has(a.név);
+      const bLocked = lockedSet.has(b.név);
       if (aLocked && !bLocked) return -1;
       if (bLocked && !aLocked) return 1;
       const nameComp = a.név.localeCompare(b.név);
@@ -139,7 +140,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
           // A nem-többszörös fortélyok egyszer vehetők fel; többszörösök mindig elérhetők
           const usedNonMulti = new Set(slotok.filter(f => !f.spec_típus).map(f => f.név));
           const többszörösNevek = new Set(data.fortelySummaries.filter(d => d.többszörös_típus).map(d => d.név));
-          const available = csoportDefs.filter(d => (!usedNonMulti.has(d.név) || többszörösNevek.has(d.név)) && d.név !== 'Mesterfegyver' && d.név !== 'Pajzshasználat' && d.név !== 'Merevvértviselet');
+          const available = csoportDefs.filter(d => (!usedNonMulti.has(d.név) || többszörösNevek.has(d.név)) && !lockedSet.has(d.név));
           const collapsed = collapsedGroups.has(csoport);
 
           return (
@@ -187,7 +188,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       slot={slot}
                       def={def}
                       isIngyenes={isIngyenes}
-                      locked={slot.név === 'Mesterfegyver' || slot.név === 'Pajzshasználat' || slot.név === 'Merevvértviselet'}
+                      locked={lockedSet.has(slot.név)}
                       gameMode={gameMode}
                       isOpen={isOpen}
                       overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}

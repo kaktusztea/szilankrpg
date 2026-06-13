@@ -632,9 +632,16 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika: módosítók, fokok, kombó szabályok)
-- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (13 helyzet: feltétel_kulcs, infó)
-- `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (9 szituáció: feltétel_kulcs, infó)
-- `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: nehézség, fázisok, hatás)
+- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (29 helyzet: id, infó, hatások)
+- `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció: id, infó)
+- `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: id, nehézség, fázisok, hatás)
+
+ID és feltétel_kulcs konvenció:
+- YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)
+- JSON-ban: `id` + `feltétel_kulcs` (generált: `"{prefix}:{id}"`)
+- Prefixek: taktika → `"taktika:{id}"`, harci_helyzet → `"harci_helyzet:{id}"`, szituáció → `"szituáció:{id}"`
+- Manőverek: `id` mező (referencia fortély módosítók `manőver:{id}` céljához)
+- Validáció: id egyediség + fortély `manőver:X` → manőver id referenciális ellenőrzés (build-time)
 
 Taktika kombó logika (`kombó_mód` + `kombó_lista`):
 - `"whitelist"` + lista: CSAK ezekkel kombinálható (üres = semmivel)
@@ -814,7 +821,7 @@ Forrás: md/080_hatasok_es_statuszok.md, md/081_hatasok.md, md/082_statuszok.md
 
 | Réteg | Fájl | Leírás |
 |-------|------|--------|
-| **Hatás operátorok** | `hatasok.yaml` | A hatás mechanika típusai (7 db) |
+| **Hatás operátorok** | `hatasok.yaml` | A hatás mechanika típusai (8 db) |
 | **Események/Célpontok** | `esemenyek.yaml` | Amire hatások vonatkozhatnak (21 db) |
 | **Státuszok** | `statuszok.yaml` | Állapotok fokozatokkal, strukturált hatáslistával (19 db) |
 
@@ -832,6 +839,7 @@ hatás_operátorok:
   - id: "letilt"        # mód: letilt — boolean (képesség elvesztés, aut. kudarc)
   - id: "max_limit"     # mód: max_limit — felső korlát (pl. max 1 támadás)
   - id: "szöveges"      # mód: szöveges — nem kumulálható, csak informatív
+  - id: "enyhít"        # mód: enyhít — csökkenti másik hatás fokát (fortélyokból)
 ```
 
 ### 22.3 Események/Célpontok (esemenyek.yaml)

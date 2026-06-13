@@ -258,6 +258,12 @@ fegyver_kategória_harcmodor:
   lándzsavívó: "Lándzsavívás"
   ostorharc: "Ostorharc"
 
+# Fortélyok amelyeket a Harcértékek fül kezel (Fortélyok fülön locked)
+locked_fortélyok:
+  - "Mesterfegyver"
+  - "Pajzshasználat"
+  - "Merevvértviselet"
+
 # ============================================================
 # Mesterfegyver fortély bónuszai
 # ============================================================

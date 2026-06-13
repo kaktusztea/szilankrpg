@@ -71,7 +71,7 @@
 
 ## Elkészült
 - ✅ Adatmodell: 5 schema (fortely, kepzettseg, karakter, pancel, fegyver, faj)
-- ✅ Konstansok: teljes (KP, arányok, páncél, harcmodorok, mesterfegyver, kétkezes harc, merevvért, pajzs, aura, feltétel prefixek, fegyver_kategória_harcmodor, több_támadás_TÉ_levonás)
+- ✅ Konstansok: teljes (KP, arányok, páncél, harcmodorok, mesterfegyver, kétkezes harc, merevvért, pajzs, aura, feltétel prefixek, fegyver_kategória_harcmodor, több_támadás_TÉ_levonás, locked_fortélyok)
 - ✅ Engine spec: 25 szekció (§1-§25), validálva a szabályrendszer + ODS ellen
 - ✅ Engine core: TypeScript implementáció, tesztelve 8.szintű karakter ellen (15/18 ✅, maradék 3 javítva)
 - ✅ GUI spec: 8 screen + 2 overlay leírás, formázás, viselkedés
@@ -100,7 +100,7 @@
   - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (double-tap → két lépéses popup: tartomány → érték)
   - Game módban Faj+Kor a Név mellé konkatenálódik: "von Agabor (Ember (Északi), 32)"
   - Tulajdonságok: fix 2x4 grid, teljes nevek, double-tap → popup gomb-grid (-5..+7), érték választás bezárja
-  - Faj limit warning: sárga szín + koppintásra lenyíló "Faj max/min: X" ha túllépés
+  - Faj limit warning: sárga szín + automatikusan megjelenő "Faj max/min: X" info box (nem zárható)
   - Képzettségek: 7 csoportban (összecsukható), dropdown + azonnali szint popup, ✕ törlés (piros megerősítés)
   - Szint választó: popup gombok 1-15 grid (5x3), aktív=zöld, érték választás bezárja (double-tap triggereli)
   - Szint színkód: 0=piros, 1-8=sárga, 9+=zöld
@@ -260,8 +260,8 @@
   - `szituáció:roham` → `taktika:roham`
 - ✅ Aktív fül adatforrások (YAML → JSON):
   - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika, kombó_mód/lista, fokozatos, megkötések)
-  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (13 helyzet, feltétel_kulcs, infó)
-  - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (9 szituáció)
+  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (29 helyzet, id, infó, hatások)
+  - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
   - `data/sources/statuszok.yaml` → `tables/statuszok.json` (19 státusz, kategória, fokok+alcím+strukturált hatások)
   - `data/sources/hatasok.yaml` → `tables/hatasok.json` (8 hatás operátor: előny, hátrány, arányos, duplázás, letilt, max_limit, szöveges, enyhít)
@@ -281,7 +281,7 @@
   - Harci helyzetek: overlay picker (név + infó, ABC)
   - Szituációk: overlay picker (név + infó, ABC)
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
-  - Hatás pool box (felül, 4 szekció): Harcérték módosítók | Aktív Hatások | Fortély emlékeztetők | Narratív módosítók
+  - Hatás pool box (felül, 6 szekció): Harcérték módosítók | Aktív Hatások | Manőver bónuszok | Előny/Hátrány | Fortély emlékeztetők | Narratív módosítók
   - Narratív módosítók: szabad szöveg input + Előny/Hátrány választó + törlés
   - Több támadás TÉ levonás: konstansokból (`több_támadás_TÉ_levonás`), generikusan (taktika +3 kioltja)
   - Minden picker: Escape + mellé katt bezárja
@@ -401,6 +401,7 @@
 - Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`
 - Feltétel típusok: string (session dispatch: `"taktika:X"`, `"harci_helyzet:Y"`) VAGY lista (kalkulált: `[{forrás, operátor, érték}]`)
 - Feltétel prefixek (string): `szituáció:`, `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `manőver:`, `státusz:`
+- ID konvenció: YAML-ban `id` mező (snake_case, ékezetes). JSON-ban generált `feltétel_kulcs: "{prefix}:{id}"`. Manőver id: fortély `manőver:{id}` cél referencia.
 - Kalkulált feltétel forrásai: session mezők + reactive engine computed + ctx (generikus lookup, nincs hardcode)
 - Követelmények: elemek között ÉS, egy elem név listája VAGY
 - Mesterfegyver NEM számít a max HM-be
@@ -435,7 +436,7 @@
 - Popup dialógusok: createPortal(document.body) — kiszöknek a screen-slide overflow kontextusból
 - Double-tap: 350ms threshold → popup megnyitás (Név, Szint, Kor, Tulajdonságok, Képzettségek, Fortélyok, ÉP TÉ footer→navigáció)
 - Double-tap Harcértékek fülön: per-element `tapTimers` Map (key: `mf-{i}`, `idea-f-{i}`, `anyag-{i}`, `p-struk`, stb.)
-- Mesterfegyver fortély: locked a Fortélyok fülön (nem törölhető/szerkeszthető), source of truth a `fortélyok[]` tömb, spec_elem köti a fegyver.alap-hoz
+- Locked fortélyok (Harcértékek fülön kezeltek): `konstansok.yaml → locked_fortélyok` lista. Fortélyok fülön nem szerkeszthető/törölhető, dropdown-ból kiszűrve.
 - MK fegyverek: `fegyverek.json` MK_pár (pár másik tagja) + Alapnév (display name suffix nélkül); process_fegyverek.py generálja
 - méret_illeszkedés értékek: `passzol`, `nem passzol`, `borzalmas` (MGT: 0, 3, 6)
 - Faj: inline `<select>` (nincs popup, közvetlenül koppintható szerkesztő módban)
@@ -470,13 +471,13 @@
 - Harcértékek fül szekció elválasztó: `.he-section + .he-section { border-top }`, h3-on nincs border-bottom
 - process_fegyverek.py: pattern fájlok helye `data/tables/*_pattern.json` (nem `data/patterns/`)
 - Fejléc: ⚙️ menü gomb (overlay popup: Karakter betöltése/mentése, Új/Teszt karakter) + 🔧/🎮 mód toggle
-- Tab bar: tükrözött (jobb→bal), induláskor `scrollLeft = scrollWidth`, ikon-only fülek, 18px font
+- Tab bar: tükrözött (jobb→bal), induláskor `scrollLeft = scrollWidth`, ikon-only fülek, 18px font, aktív tab alatti 3px accent csík (slide animáció)
 - Screen slider: tükrözött (`TABS.length-1-activeTab`), swipe irány invertált
 - `karakter.anyanyelv`: top-level string mező, nyelvek.json-ból választható, szinkronizálja kiérdemelt Nyelvismeret fortélyokat
 - Kiérdemelt Nyelvismeret: `kiérdemelt: true`, fok emelhető, pont számítás: `max(0, fok-1)` fizetős; 🎁 / 🎁➕ jelölés
 - Ingyenes jelölés egységesítés: minden "ingyen kapott" fortély 🎁 jellel (Kultúrkör, Helyismeret, Szabad keret, kiérdemelt Nyelvismeret)
 - Game mód: üres képzettség/fortély csoportok elrejtve
-- §16 fortély módosítók (mindig-aktív): `fortelyMods` Record a HarcScreen-ben, generikus iteráció fokok[].módosítók-ból. Flat + scaled mód. `fortelyok.json` tartalmazza a módosítókat.
+- §16 fortély módosítók: `fortelyMods` Record a HarcScreen-ben, generikus iteráció fokok[].módosítók-ból. 6 mód (flat, scaled, override, enyhít, előny, hátrány). `fortelyok.json` tartalmazza a módosítókat. AktivScreen: manőver bónuszok + előny/hátrány szekció a Hatás pool-ban (feltétel szűréssel).
 - Páncél gombok: disabled + `.he-field-disabled` ha nincs struktúra (`!k.páncél.alap`)
 - Aktív fül adatforrások: `taktikak.json`, `harci_helyzetek.json`, `szituaciok.json`, `manoverek.json`, `statuszok.json`, `hatasok.json`, `esemenyek.json`, `hatterek.json` — generate_tables.py validáció
 - Taktika kombó: `kombó_mód: "whitelist"|"blacklist"` + `kombó_lista: string[]`
