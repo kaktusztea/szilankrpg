@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Kobold](../kepzettsegek.faj.miszterium/faj_miszterium_kobold.md)
+[Faj misztérium: Kobold](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kobold.md)
 
 ### ⚜️Faji fortélyok
 

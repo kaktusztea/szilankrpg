@@ -5,22 +5,22 @@
 ---
 ## ⚜️ Anyag szféra
 
-### [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
+### [Elemi mágia](kepzettsegek.primer/arkanumok/elemi_magia.md)
 
   - Őselem idézése
   - ...
 
-### [Természetes anyagok mágiája](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md)
+### [Természetes anyagok mágiája](kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md)
 
   - Ideamágia (CX)
-  - [Méregmágia](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md#méregmágia)
+  - [Méregmágia](kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md#méregmágia)
   - Méregmágia szemita (CX)
 
 
 ---
 ## ⚜️ Lélek szféra
 
-### [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
+### [Asztrálmágia](kepzettsegek.primer/arkanumok/asztralmagia.md)
 
 - Hangulatmágia
 - Asztrális befolyás
@@ -29,7 +29,7 @@
 - Szexuálmágia
 - Bájolások
 
-### [Mentálmágia](kepzettsegek.primer.arkanumok/mentalmagia.md)
+### [Mentálmágia](kepzettsegek.primer/arkanumok/mentalmagia.md)
 
 - ...
 - mentál-átkok
@@ -40,13 +40,13 @@
 
 ⭕CX Elemimágia formuláinak egy része ide jön⭕
 
-### [Illúziók](kepzettsegek.primer.arkanumok/illuziok.md)
+### [Illúziók](kepzettsegek.primer/arkanumok/illuziok.md)
 
 - Fénymágia, Szagmágia
 - Hangmágia / [Csendmágia](https://github.com/kaktusztea/szilankrpg/wiki/RAW.magia#csendmágia)
 - Szagmágia
 
-### [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
+### [Természeti jelenségek](kepzettsegek.primer/arkanumok/termeszeti_jelensegek.md)
 
 - Időjárásbefolyásolás
 - Villámmágia
@@ -55,15 +55,15 @@
 ---
 ## ⚜️ Téridő szféra
 
-### [Időmágia](kepzettsegek.primer.arkanumok/idomagia.md)
+### [Időmágia](kepzettsegek.primer/arkanumok/idomagia.md)
 
-### [Térmágia](kepzettsegek.primer.arkanumok/termagia.md)
+### [Térmágia](kepzettsegek.primer/arkanumok/termagia.md)
 
 
 ---
 ## ⚜️ Életerő szféra (élet-halál)
 
-### [Életerő manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
+### [Életerő manipulálása](kepzettsegek.primer/arkanumok/eletero_manipulalasa.md)
 
 - Gyógyítás
   - Sebgyógyítás
@@ -79,7 +79,7 @@
   - életerő szívása és átadása (holtnak és élőnek is)
 - Betegségek
 
-### [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)
+### [Nekromancia](kepzettsegek.primer/arkanumok/nekromancia.md)
 
 - Élőholtak manipulálása
 
@@ -87,7 +87,7 @@
 ---
 ## ⚜️ Idézés szféra
 
-### [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
+### [Belső síkok lényeinek idézése](kepzettsegek.primer/arkanumok/idezes_belso_sikok.md)
 
   - állatok (alacsony szintű)
   - szörnyek (kicsit magasabb)
@@ -96,7 +96,7 @@
   - ember lelkek / lelkekből lehasadt szellemek
   - természeti szellemek
 
-### [Külső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md)
+### [Külső síkok lényeinek idézése](kepzettsegek.primer/arkanumok/idezes_kulso_sikok.md)
 
 - Demonológia
 - Theurgia
@@ -108,11 +108,11 @@
 ---
 ## ⚜️ Sors szféra
 
-### [Sors Érzékelés](kepzettsegek.primer.arkanumok/sors_erzekeles.md)
+### [Sors Érzékelés](kepzettsegek.primer/arkanumok/sors_erzekeles.md)
 
 - jövendőmondás / múltbatekintés
 
-### [Sors Befolyásolás](kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
+### [Sors Befolyásolás](kepzettsegek.primer/arkanumok/sors_befolyasolas.md)
 
 - Árnyékra ható mágia
 - Lélekmágia (véletlenmágia) (CX)
@@ -120,9 +120,9 @@
 ---
 ## ⚜️ Mágia Szféra
 
-### [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
+### [Aurahangolás](kepzettsegek.primer/arkanumok/aurahangolas.md)
 
-### [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md)
+### [Metamágia](kepzettsegek.primer/arkanumok/metamagia.md)
 
 ---
 ## ⚜️ Titkos (Teremtés) Szféra

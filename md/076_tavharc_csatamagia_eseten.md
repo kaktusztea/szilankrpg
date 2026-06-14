@@ -2,7 +2,7 @@
 
 A mágiatudók gyakran távolból, saját Aurájukból kicsapva, máskor egy távolabbi pontból indítanak különféle mágikus támadást ellenfeleik felé, amely fizikai sebesülést okoz. De hogyan történik ilyenkor a célzás, milyen sebességgel halad a lövedék, milyen nehéz a kontroll? Erre adunk választ az alábbiakban.
 
-→ [Mágikus Célzás](kepzettsegek.primer.harci/magikus_celzas.md) **harcmodor**: ennek felvétele szükséges célzott mágikus hatások létrehozásához.
+→ [Mágikus Célzás](kepzettsegek.primer/harci/magikus_celzas.md) **harcmodor**: ennek felvétele szükséges célzott mágikus hatások létrehozásához.
 
 **Kapcsolódik**
 
@@ -180,7 +180,7 @@ Kapcsolódik: [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#sz%C
 ---
 ## Kapcsolódó Arkánumok
 
-[Elemi mágia - Formulák - Őselem idézése](kepzettsegek.primer.arkanumok/elemi_magia.md#őselem-idézése)
+[Elemi mágia - Formulák - Őselem idézése](kepzettsegek.primer/arkanumok/elemi_magia.md#őselem-idézése)
 
 ---
 

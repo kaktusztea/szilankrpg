@@ -5,7 +5,7 @@
 ---
 ### 1. fok
 
-🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**: Orvtámadáskor
 - `Előny+1` Sebzés dobásra
@@ -15,7 +15,7 @@
 
 ### 2. fok
 
-🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 
 🌟 **Hatás**: Orvtámadáskor
 - `Előny+1` Sebzés dobásra
@@ -25,7 +25,7 @@
 
 ### 3. fok
 
-🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 
 🌟 **Hatás**:
 - Orvtámadáskor `Előny+2` Sebzés dobásra

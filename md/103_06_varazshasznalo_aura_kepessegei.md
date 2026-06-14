@@ -12,7 +12,7 @@ Lásd [Mágia akarata - Módosító: Aurakiterjesztés](103_04_magia_akarata.md#
 ---
 ## Aurabontás
 
-- [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md) Arkánum egy Formulája. Teljes leírását lásd ott.
+- [Aurahangolás](kepzettsegek.primer/arkanumok/aurahangolas.md) Arkánum egy Formulája. Teljes leírását lásd ott.
 - Komplexitás: `6`
 
 ⭕TODO⭕Itt csak tömören összefoglalni és hivatkozni rá. A kibontás az Aurahangolás Arkánumnál

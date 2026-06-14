@@ -12,7 +12,7 @@ Manőver Pontok =
      / TSz  ↑
 ```
 
-Egy karakter [harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettség-szintjeinek összegét osztjuk el a **Tapasztalati Szinttel** (felfelé ↑ kerekítve), majd szorozzuk `2`-vel.
+Egy karakter [harcmodor](kepzettsegek.primer/harci/harcmodor.md) képzettség-szintjeinek összegét osztjuk el a **Tapasztalati Szinttel** (felfelé ↑ kerekítve), majd szorozzuk `2`-vel.
 
 Ez adja a **Manőver Pontok** mennyiségét. Látható, hogy a pontok értékének fenntartásához - a Tapasztalati Szint növekedésével - folyamatosan kell növelni a harcmodor képzettségeket. A Manőver pontok értéke így mindig `[0-10]` tartományban mozog.
 

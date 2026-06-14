@@ -15,7 +15,7 @@ Nincs speciális felvehető érzék fortély.
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Dzsenn](../kepzettsegek.faj.miszterium/faj_miszterium_dzsenn.md)
+[Faj misztérium: Dzsenn](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_dzsenn.md)
 
 ### ⚜️Faji fortélyok
 
@@ -34,7 +34,7 @@ Nincs ⭕
 
 ### Ajánlott képzettségek
 
-- [Ősi nyelv ismerete](../kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) (dzsenn)
-- [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md)
+- [Ősi nyelv ismerete](../kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md) (dzsenn)
+- [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md)
 
 ---

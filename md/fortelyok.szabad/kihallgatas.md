@@ -4,8 +4,8 @@ Magában foglalja a kihallgatási technikákat (nem kínzást!), a beszédtechni
 
 ### Kiterjeszti ezeket
 
-- [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md): "Hol rejtegetitek az ereklyét? A társaid már mindent bevallottak."
-- [Emberismeret](../kepzettsegek.primer.altalanos/emberismeret.md): "Kopjon le. Ilyen ócska trükköknek nem dőlök be."
+- [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md): "Hol rejtegetitek az ereklyét? A társaid már mindent bevallottak."
+- [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md): "Kopjon le. Ilyen ócska trükköknek nem dőlök be."
 
 ### Szituációk
 

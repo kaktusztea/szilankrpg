@@ -10,7 +10,7 @@ Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 - (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 A [VÉ veszteség duplázódik](../081_hatasok.md#-v%C3%A9-vesztes%C3%A9g-dupl%C3%A1z%C3%B3dik) Hatás már nem sújt.

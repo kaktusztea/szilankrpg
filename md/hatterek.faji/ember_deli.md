@@ -14,7 +14,7 @@ Nincs speciális felvehető érzék fortély.
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Déli Ember](../kepzettsegek.faj.miszterium/faj_miszterium_ember_deli.md)
+[Faj misztérium: Déli Ember](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_deli.md)
 
 ### ⚜️Faji fortélyok
 

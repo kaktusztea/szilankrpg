@@ -19,7 +19,7 @@ Kaland végén kaphatóak belőle
 
 ### Kiterjeszti ezeket
 
-- [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md): ha a KM szerint indokolt, akkor ez lehet követelmény
+- [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md): ha a KM szerint indokolt, akkor ez lehet követelmény
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): csak ha konkrétan helyi témával kapcsolatos ismeretről van szó, akkor szükséges. Ne legyünk túl szigorúak.
 - [Városi jártasság](../kepzettsegek.szekunder/varosi_jartassag.md): Az adott környék ismerete sokat segít, nélküle az általános tapasztalatok dominálnak inkább.
 - [Etikett](../kepzettsegek.szekunder/etikett.md): a helyi celebritások, nemesi körökben forgó emberek ismerete (nem mindig szükséges, ne legyünk szigorúak)

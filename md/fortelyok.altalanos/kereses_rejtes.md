@@ -14,7 +14,7 @@ Titkos rejtekajtók, zugok, rejtett tárgyak, rekeszek, természeti közegben me
 
 ### Kiterjeszti ezeket
 
-- [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md): Nyomok észrevétele városi környezetben. "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
+- [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md): Nyomok észrevétele városi környezetben. "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 - [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md): Nyomok észrevétele a természetben. "Itt egy csapás, levelekkel próbálták elfedni, de a fű még nem egyenesedett ki."
 
 ### 1. fok

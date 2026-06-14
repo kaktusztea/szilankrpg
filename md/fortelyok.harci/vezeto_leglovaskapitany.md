@@ -4,7 +4,7 @@ Egy légi hátasokkal küzdő egység parancsnokaként koordinálod annak harcá
 
 ### Kiterjeszti ezeket
 
-- [Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
+- [Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) képzettség
     - Repülő formációba fejlődni, együtt fordulni, alakzatot tartani, adaptálódás
     - Közösen lecsapni a magasból - harci körülmények között is.
     - Légi hátas alakzat egyben tartására változó harci környezetben.

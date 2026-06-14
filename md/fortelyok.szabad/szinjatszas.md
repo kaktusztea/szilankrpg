@@ -2,7 +2,7 @@
 
 Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a színházi világot. Bábszínház előadások ismerete, árnyjátékok ismerete is ide tartozik.
 
-🔆 **Nem használható hazudozásra**, mások becsapására. Arra lásd a [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettséget.
+🔆 **Nem használható hazudozásra**, mások becsapására. Arra lásd a [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettséget.
 
 ### Követelmény
 

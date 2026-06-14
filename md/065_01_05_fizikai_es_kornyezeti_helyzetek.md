@@ -20,7 +20,7 @@ Többszörös támadás elvesztése
 Mozgás - feleződik
 ```
 
-A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
+A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
 
 <br />
 

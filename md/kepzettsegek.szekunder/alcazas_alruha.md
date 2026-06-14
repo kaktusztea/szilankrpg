@@ -1,6 +1,6 @@
 ## 🔵 Álcázás/álruha
 
-Próba dobható. Alapesetben ellenpróbával megy, a másik fél [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettséggel dob.
+Próba dobható. Alapesetben ellenpróbával megy, a másik fél [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) képzettséggel dob.
 
 ### Domináns Tulajdonságok
 

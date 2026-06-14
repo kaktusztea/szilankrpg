@@ -109,8 +109,8 @@ Egy idő után már a viselkedéseden, küllemeden is meglátszik - ez szociáli
 
 Hosszú időt töltöttél rejtőzködve, árnyékban tevékenykedve, észrevétlenül mozogva.
 
-- Pro hatás: Könnyebben rejtőzködsz és lopakodsz, az árnyékok szinte a szövetségeseiddé válnak. [Lopakodás/rejtőzés](kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) teljes sötétben: `+3`
-- Kontra hatás: Az emberek nehezen bíznak meg benned, és gyakran gyanakodva tekintenek rád. Ha [Befolyásolás](kepzettsegek.primer.altalanos/befolyasolas.md) képzettségeddel pozitív hatást, érzelmet próbálnál elérni, dobásodra `-3` büntetést kapsz.
+- Pro hatás: Könnyebben rejtőzködsz és lopakodsz, az árnyékok szinte a szövetségeseiddé válnak. [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) teljes sötétben: `+3`
+- Kontra hatás: Az emberek nehezen bíznak meg benned, és gyakran gyanakodva tekintenek rád. Ha [Befolyásolás](kepzettsegek.primer/altalanos/befolyasolas.md) képzettségeddel pozitív hatást, érzelmet próbálnál elérni, dobásodra `-3` büntetést kapsz.
 
 <br />
 
@@ -174,7 +174,7 @@ Minimum 100 sikeres orgyilkosság.
 
 A rengeteg gyilkosság megmérgezte a lelkedet, ha nem leplezed, Aurádon jól láthatóak a sötét foltok, melyek beszennyezik.
 
-Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md), [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettségek felső, félmágikus hatásai sem működnek.
+Nem gyógyíthatsz mágikus úton, a világi [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md), [Vajákosság](kepzettsegek.szekunder/vajakossag.md) képzettségek felső, félmágikus hatásai sem működnek.
 
 <br />
 

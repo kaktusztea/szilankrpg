@@ -4,7 +4,7 @@
 
 ### Kiterjeszti ezeket
 
-[Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
+[Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) képzettség
 - Területlövés, fedezőtűz, előcsatározás és visszavonulás
 - Csapatban mozgás, megfelelő alakzat felvétele, annak tartása - harci körülmények között is.
 - ⚡ "Fedezőtüzet a visszavonuló lovasság mögé!"
@@ -12,7 +12,7 @@
 ---
 ### Alapeset
 
-Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén.
+Az [Íjászat, Lövészet, Ostromlövészet](../kepzettsegek.primer/harci/tavolsagi_harcmodor.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használjuk íjász/lövész alakzatok esetén.
 
 <br />
 

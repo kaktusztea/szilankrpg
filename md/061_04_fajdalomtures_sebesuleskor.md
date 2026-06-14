@@ -2,7 +2,7 @@
 
 ## Fájdalomtűrés
 
-A [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség fontos szerepet játszik a harcban elszenvedett sebek fájdalmának elnyomásában, illetve egyéb helyzetekben a kín elviselésében.
+A [Fájdalomtűrés](kepzettsegek.primer/altalanos/fajdalomtures.md) képzettség fontos szerepet játszik a harcban elszenvedett sebek fájdalmának elnyomásában, illetve egyéb helyzetekben a kín elviselésében.
 
 Különbséget teszünk harcon belüli és azon kívüli fájdalomtűrés között - részben játéktechnikai gyorsítás miatt, részben mert harc közben az adrenalin hatására nő a kín tűrése, valamint próbáltuk a harc heroizmusát is megőrizni.
 
@@ -20,7 +20,7 @@ S3:  -6 TÉ
 S4:  -9 TÉ
 ```
 
-Ennek értékét csökkentik statikusan a [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) képzettség egyes szintjei, így tehát a levonások értéke karakterenként változik.
+Ennek értékét csökkentik statikusan a [Fájdalomtűrés](kepzettsegek.primer/altalanos/fajdalomtures.md) képzettség egyes szintjei, így tehát a levonások értéke karakterenként változik.
 
 ```
 TÉ levonás enyhítése
@@ -46,12 +46,12 @@ Fájdalomtűrés (K) + Edzettség (T)
           12
 ```
 
-Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) + Edzettség)** képzettségpróbát kell dobnia **Nehéz** (`12`) célszám ellen.
+Ha a karakter az `S4` (Súlyosan sebesült) kategóriába ér, egyszeri **([Fájdalomtűrés](kepzettsegek.primer/altalanos/fajdalomtures.md) + Edzettség)** képzettségpróbát kell dobnia **Nehéz** (`12`) célszám ellen.
 
 Sikertelen próba esetén a karakter elájul.\
 Siker esetén ezt a próbát a következő sebesüléskor kell csak újradobnia.
 
-🔆 A [Harci láz](kepzettsegek.primer.harci/harci_laz.md) képzettség bizonyos fokozatai felett szükségtelenné válik a fenti próba.
+🔆 A [Harci láz](kepzettsegek.primer/harci/harci_laz.md) képzettség bizonyos fokozatai felett szükségtelenné válik a fenti próba.
 
 ---
 ### ⚡ Példa Fájdalomtűrés `TÉ` módosítóira

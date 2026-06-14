@@ -3,9 +3,9 @@
 A legtöbb esetben egy karakternek van egy (vagy több) konkrét fegyvere, amelyet előnyben részesít, gyakran forgat egy harcmodoron belül. Ezek harcértékeit tovább növelheted a fortély segítségével így elszakadva kicsit tudásban a harcmodor többi fegyverétől.
 
 "Harcmodor" alatt az alábbi képzettségekre hivatkozunk a Követelmények szekciókban:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)
-- [Mágikus célzás](../kepzettsegek.primer.harci/magikus_celzas.md)
-- [Távolsági harcmodor](../kepzettsegek.primer.harci/tavolsagi_harcmodor.md)
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md)
+- [Mágikus célzás](../kepzettsegek.primer/harci/magikus_celzas.md)
+- [Távolsági harcmodor](../kepzettsegek.primer/harci/tavolsagi_harcmodor.md)
 
 #### Alapeset
 

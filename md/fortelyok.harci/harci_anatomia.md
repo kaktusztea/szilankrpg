@@ -18,7 +18,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
 - [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
@@ -29,7 +29,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 ### 2. fok
 
 🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
@@ -41,7 +41,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 ### 3. fok
 
 🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `12.szint`
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `12.szint`
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:

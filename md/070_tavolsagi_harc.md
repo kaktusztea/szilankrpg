@@ -1,7 +1,7 @@
 # Távolsági harcrendszer
 
 A távolsági lő- és hajítófegyvereket az alábbi **harcmodor képzettségekkel** kezelheted:\
-[Hajítás](kepzettsegek.primer.harci/harcmodor.md), [Íjászat](kepzettsegek.primer.harci/harcmodor.md), [Lövészet](kepzettsegek.primer.harci/harcmodor.md), [Ostromlövészet](kepzettsegek.primer.harci/harcmodor.md), [Mágikus lövészet](kepzettsegek.primer.harci/harcmodor.md)
+[Hajítás](kepzettsegek.primer/harci/harcmodor.md), [Íjászat](kepzettsegek.primer/harci/harcmodor.md), [Lövészet](kepzettsegek.primer/harci/harcmodor.md), [Ostromlövészet](kepzettsegek.primer/harci/harcmodor.md), [Mágikus lövészet](kepzettsegek.primer/harci/harcmodor.md)
 
 ## Befolyásoló jellemzők
 

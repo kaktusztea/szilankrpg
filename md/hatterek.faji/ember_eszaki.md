@@ -14,7 +14,7 @@ Nincs speciális felvehető érzék fortély.
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Északi Ember](../kepzettsegek.faj.miszterium/faj_miszterium_ember_eszaki.md)
+[Faj misztérium: Északi Ember](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md)
 
 ### ⚜️Faji fortélyok
 

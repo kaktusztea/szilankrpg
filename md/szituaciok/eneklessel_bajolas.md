@@ -1,6 +1,6 @@
 ## Énekléssel bájolás
 
-Az Éneklés szabad fortély a [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettséget **NEM** terjeszti ki, csak egyes mágikus formulák esetében.
+Az Éneklés szabad fortély a [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettséget **NEM** terjeszti ki, csak egyes mágikus formulák esetében.
 
 `1.` **Énekkel elbájolni**: képzettségpróba, hogy sikerül-e az előadás
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md) képzettség
@@ -8,7 +8,7 @@ Az Éneklés szabad fortély a [Befolyásolás](../kepzettsegek.primer.altalanos
 - **Érzékenység** Tulajdonság
 
 `2.` **Csábítás**: képzettségpróba bájolásra - az ének ilyenkor csak a "közvetítő közeg".
-- [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség
+- [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség
 - [Csábítás](../fortelyok.altalanos/csabitas.md) (Normál kiterjesztés)
 - **Intelligencia** Tulajdonság
 

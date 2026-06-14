@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Ember (Slan)](../kepzettsegek.faj.miszterium/faj_miszterium_ember_slan.md)
+[Faj misztérium: Ember (Slan)](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md)
 
 ### ⚜️Faji fortélyok
 

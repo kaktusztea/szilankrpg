@@ -4,7 +4,7 @@ Jobban tudod kihasználni a [Támadás erőből](../065_02_harci_taktikak.md#t%C
 
 ### 1. fok
 
-🔒 [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
+🔒 [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `3.szint`<br /> (Kardvívás / Lándzsavívás / Rombolás)
 
 🌟 Legfeljebb `+4 SP` (`TÉ:-4`) pakolható át
 

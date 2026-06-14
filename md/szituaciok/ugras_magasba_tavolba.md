@@ -1,6 +1,6 @@
 ## Ugrás
 
-Magaslatra ugrással eljutni, vagy átugorni egy akadályt: a karakternek ilyen helyzetben (is) [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróbát kell dobnia. Alapesetben az ideális elrugaszkodást vesszük alapul, ami a szükséges nekifutást is magában foglalja.
+Magaslatra ugrással eljutni, vagy átugorni egy akadályt: a karakternek ilyen helyzetben (is) [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát kell dobnia. Alapesetben az ideális elrugaszkodást vesszük alapul, ami a szükséges nekifutást is magában foglalja.
 
 ---
 ## Ugrás magasba

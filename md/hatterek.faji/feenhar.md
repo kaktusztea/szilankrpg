@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Feenhar](../kepzettsegek.faj.miszterium/faj_miszterium_feenhar.md)
+[Faj misztérium: Feenhar](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_feenhar.md)
 
 ### ⚜️Faji fortélyok
 

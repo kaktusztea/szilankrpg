@@ -76,7 +76,7 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 
 → [Harcmodor képzettségek és Bónuszaik](062_02_harcmodor_kepzettsegek_es_bonuszaik.md)
 
-🔆 `3.szint` alatti kapcsolódó [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) képzettségnél
+🔆 `3.szint` alatti kapcsolódó [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) képzettségnél
 
 <br />
 

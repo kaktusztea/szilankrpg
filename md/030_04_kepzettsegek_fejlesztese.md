@@ -34,7 +34,7 @@ A másik felső korlát lehet az adott kultúra fejletlensége, vagy korlátai. 
 ---
 ### A 14. és 15. képzettségszint
 
-`14`-es és `15`-ös szintre csak úgy juthat el a karakter, ha a képzettséggel kapcsolatos, nagyon ritka titkos tudásra tesz szert. Ez kaland alapja is lehet! Például megszerezni a "*Gyógyító Érintés Tudományának Titkos Fóliását*" ([Orvosláshoz](kepzettsegek.primer.altalanos/orvoslas.md)).
+`14`-es és `15`-ös szintre csak úgy juthat el a karakter, ha a képzettséggel kapcsolatos, nagyon ritka titkos tudásra tesz szert. Ez kaland alapja is lehet! Például megszerezni a "*Gyógyító Érintés Tudományának Titkos Fóliását*" ([Orvosláshoz](kepzettsegek.primer/altalanos/orvoslas.md)).
 
 ---
 ### Képzettség Bónuszok

@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Sáskaharcos](../kepzettsegek.faj.miszterium/faj_miszterium_saskaharcos.md)
+[Faj misztérium: Sáskaharcos](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_saskaharcos.md)
 
 ### ⚜️Faji fortélyok
 

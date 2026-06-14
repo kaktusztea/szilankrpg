@@ -2,8 +2,8 @@
 
 Kapcsolódó képzettségek
 - [Lopás](../kepzettsegek.szekunder/lopas.md)
-- [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md)
-- [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md)
+- [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)
+- [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md)
 
 Eltulajdonítani valamit úgy, hogy akitől, vagy aki elől elemeljük, az ne vegye észre:
 

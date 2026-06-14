@@ -3,7 +3,7 @@
 Idomítást, állatokat, bestiákat kontrolláló szituációban a lenti próba dobandó. Hogy melyik Szabad Fortély követelmény hozzá, az attól függ, háziállatot, vagy vadállatot próbálsz irányítani. Ha nincs meg a kapcsolódó Szabad Fortély, nem dobhatsz (Erős kiterjesztés).
 
 ---
-### [Befolyásolás](../kepzettsegek.primer.altalanos/befolyasolas.md) képzettség + Érzékenység Tulajdonság
+### [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettség + Érzékenység Tulajdonság
 
  **Erős** kiterjesztéssel:
 - [Háziállatok idomítása](../fortelyok.szabad/haziallatok_idomitasa.md): "Morzsi, térülj... fordulj!"

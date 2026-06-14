@@ -18,7 +18,7 @@ A Taba el-Ibara holdkék szemű ősfaja.
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Amund](../kepzettsegek.faj.miszterium/faj_miszterium_amund.md)
+[Faj misztérium: Amund](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_amund.md)
 
 ### ⚜️Faji fortélyok
 
@@ -37,7 +37,7 @@ A Pszít nem képesek elsajátítani.
 
 ### Ajánlott képzettségek
 
-- [Ősi nyelv ismerete](../kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) (amund)
+- [Ősi nyelv ismerete](../kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md) (amund)
 - [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md) + [Tájtípus: sivatagi](../fortelyok.szabad/tajtipus_sivatagi.md)
 
 ---

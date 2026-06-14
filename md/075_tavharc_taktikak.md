@@ -28,7 +28,7 @@ Akrobatika képzettségpróba
 
 
 
-🔆 Kapcsolódik: [Elemi mágia - Mozgatás](kepzettsegek.primer.arkanumok/elemi_magia.md#komplexit%C3%A1s---mozgat%C3%A1s) (`EM`)
+🔆 Kapcsolódik: [Elemi mágia - Mozgatás](kepzettsegek.primer/arkanumok/elemi_magia.md#komplexitás---mozgatás) (`EM`)
 
 ```
 Nem alkalmas tárgyak,

@@ -15,7 +15,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: xyz](../kepzettsegek.faj.miszterium/faj_miszterium_elf.md)
+[Faj misztérium: xyz](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elf.md)
 
 ### ⚜️Faji fortélyok
 

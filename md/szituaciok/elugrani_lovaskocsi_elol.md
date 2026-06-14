@@ -1,6 +1,6 @@
 ## Elugrani egy feléd száguldó lovaskocsi elől
 
- **[Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md)** képzettségpróba **Gyorsaság** Tulajdonsággal, melynek nehézsége függ a lovaskocsi távolságától az észlelés pillanatában.
+ **[Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md)** képzettségpróba **Gyorsaság** Tulajdonsággal, melynek nehézsége függ a lovaskocsi távolságától az észlelés pillanatában.
 
 ```
 Nehézség távolság

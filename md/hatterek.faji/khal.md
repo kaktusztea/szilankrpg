@@ -23,7 +23,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Khál](../kepzettsegek.faj.miszterium/faj_miszterium_khal.md)
+[Faj misztérium: Khál](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_khal.md)
 
 <br />
 
@@ -41,6 +41,6 @@ TODO ⭕
 ### Ajánlott képzettségek
 
 - [Mászás](../kepzettsegek.szekunder/maszas.md)
-- [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md)
+- [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md)
 
 ---

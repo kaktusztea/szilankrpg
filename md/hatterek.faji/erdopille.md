@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Erdőpille](../kepzettsegek.faj.miszterium/faj_miszterium_erdopille.md)
+[Faj misztérium: Erdőpille](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_erdopille.md)
 
 ### ⚜️Faji fortélyok
 

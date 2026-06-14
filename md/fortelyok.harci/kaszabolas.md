@@ -10,7 +10,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 ---
 #### 1. fok
 
-🔒 [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `4.szint`\
+🔒 [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `4.szint`\
 (**Közelharc** vagy **Kardvívás** vagy **Lándzsavívás** vagy **Rombolás** vagy **Ostorharc**)
 
 🌟 Ha harcképtelenné teszel valakit, akkor azonnal kapsz `+1` soron kívüli bónusz támadást egy közeli ellenfél ellen. Ezt egy körben legfeljebb `1x` alkalmazhatod.

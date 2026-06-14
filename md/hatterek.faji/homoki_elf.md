@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Homoki elf](../kepzettsegek.faj.miszterium/faj_miszterium_homoki_elf.md)
+[Faj misztérium: Homoki elf](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homoki_elf.md)
 
 ### ⚜️Faji fortélyok
 

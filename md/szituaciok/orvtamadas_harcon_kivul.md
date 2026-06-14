@@ -6,7 +6,7 @@
 
 ### Több Lopakodás/rejtőzés vs Észlelés ellenpróba
 
-Az összes módosítót a [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md#%EF%B8%8F-alapeset-lopakod%C3%A1srejt%C5%91z%C3%A9s-vs-%C3%A9szlel%C3%A9s-ellenpr%C3%B3b%C3%A1hoz) képzettség leírásában találod.\
+Az összes módosítót a [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) képzettség leírásában találod.\
 A helyszíntől, távolságtól, jelenlevőktől függően akár [összetett ellenpróbák](../030_06_01_kepzettsegproba.md#%C3%B6sszetett-ellenpr%C3%B3ba) is indokoltak lehetnek - KM dönt.
 
 ### ⚡ Példa

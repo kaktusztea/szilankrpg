@@ -14,7 +14,7 @@ Nincs speciális felvehető érzék fortély.
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Ember (korg)](../kepzettsegek.faj.miszterium/faj_miszterium_ember_korg.md)
+[Faj misztérium: Ember (korg)](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_korg.md)
 
 ### ⚜️Faji fortélyok
 

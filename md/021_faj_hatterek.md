@@ -72,7 +72,7 @@ A játékos megkapja a lehetőséget egy sokféle különleges érzékkel megál
 
 Csak biztos tudásból adódó ismereteket nyújt, melyek magasabb szinteken egyre inkább félmágikus hatásokat eredeményeznek. Felvétele **opcionális**, nem kötelező.
 
-Példa: [Faj misztérium: Törpe](kepzettsegek.faj.miszterium/faj_miszterium_torpe.md)
+Példa: [Faj misztérium: Törpe](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_torpe.md)
 
 ---
 ## `4.` Faj Arkánum képzettség

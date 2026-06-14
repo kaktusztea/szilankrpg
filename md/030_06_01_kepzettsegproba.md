@@ -304,9 +304,9 @@ Tehát a próbát `3 + Érzékenység  vs  Próba célszám` értékekkel dobja.
 
 ### ⚡További Helyettesítés példák felsorolásszerűen
 
-- [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) ⇆ [Mászás](kepzettsegek.szekunder/maszas.md)
-- [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) ⇆ [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md)
-- [Alkímia](kepzettsegek.szekunder/alkimia.md) ⇆ [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md)
+- [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) ⇆ [Mászás](kepzettsegek.szekunder/maszas.md)
+- [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) ⇆ [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)
+- [Alkímia](kepzettsegek.szekunder/alkimia.md) ⇆ [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md)
 - [Vajákosság](kepzettsegek.szekunder/vajakossag.md) ⇆ [Természetjárás](kepzettsegek.szekunder/termeszetjaras.md)
 - [Lexikum](kepzettsegek.szekunder/lexikum.md) ⇆ [Művészetismeret](kepzettsegek.szekunder/muveszetismeret.md)
 - stb.

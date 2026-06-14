@@ -5,7 +5,7 @@ Sok féle [alakzat](../065_03_harc_alakzatban.md) létezik. Gyalogos, kisebb lé
 ### Kapcsolódik
 
 - **[Harc alakzatban](../065_03_harc_alakzatban.md)** fejezet
-- [Alakzatharc](../kepzettsegek.primer.harci/alakzatharc.md) képzettség
+- [Alakzatharc](../kepzettsegek.primer/harci/alakzatharc.md) képzettség
 - [Alakzat: támadó](alakzat_tamado.md) fortély
 - [Vezető: Alakzatparancsnok](vezeto_alakzatparancsnok.md) fortély
 

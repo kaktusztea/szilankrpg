@@ -16,7 +16,7 @@ Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyo
 
 "Az az asztal el lett mozdítva." / "Huzatos itt a fal mellett."
 
-**[Észlelés](../kepzettsegek.primer.altalanos/eszleles.md)** képzettségpróba
+**[Észlelés](../kepzettsegek.primer/altalanos/eszleles.md)** képzettségpróba
 - **Nehézség**: a nyom észrevételének bonyolultságának megfelelő szint ellen
 - **Normál Kiterjesztés**: [Keresés/rejtés (2)](../fortelyok.altalanos/kereses_rejtes.md) fortély
 
@@ -27,7 +27,7 @@ Szintén gyakori eset, hogy városban, vagy egyéb lakott településen kell nyo
 
 Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése. Felfedezett titkosírás elemzése.
 
-**[Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md)** képzettségpróba
+**[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md)** képzettségpróba
 - **Nehézség**: a felfedezett nyom értelmezésének bonyolultságától függő szint ellen
 - **Normál Kiterjesztés**: egyet válassz az aktuális szituációhoz passzolóan:
   - [Heraldika](../fortelyok.szabad/heraldika.md)
@@ -37,7 +37,7 @@ Például titkos iratok átböngészése. Egy felfedezett ősi címer elemzése.
 
 Példákhoz lásd a fenti, kapcsolódó fortélyok **Nyomozás** képzettséghez kapcsolódó leírásait.
 
-🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer.altalanos/nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#-szerepjátékos-módosító).
 
 <br />
 
@@ -60,7 +60,7 @@ Kiterjesztés
 A "szituációtól függő módosítókat" a KM adhatja, az eredeti [nyomok észrevétele képzettségpróbánál](#nyomok-%C3%A9szrev%C3%A9tele-v%C3%A1rosi-k%C3%B6rnyezetben-) leírt módon, a Nehézség függvényében. Például egy üres szobában nehezebb elrejteni valamit, mint egy 100 éves raktárban, ami plafonig van kacatokkal.
 
 Kapcsolódik:
-- [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettség
+- [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) képzettség
 - [Keresés/rejtés](../fortelyok.altalanos/kereses_rejtes.md) fortély
 
 ---

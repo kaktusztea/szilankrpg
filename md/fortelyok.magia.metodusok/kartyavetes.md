@@ -9,8 +9,8 @@ Fizikai kártyákkal való sorsvetés.
 
 ### Arkánum kapcsolatok
 
-- [Sors érzékelés](../kepzettsegek.primer.arkanumok/sors_erzekeles.md)
-- [Sors befolyásolás](../kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
+- [Sors érzékelés](../kepzettsegek.primer/arkanumok/sors_erzekeles.md)
+- [Sors befolyásolás](../kepzettsegek.primer/arkanumok/sors_befolyasolas.md)
 
 ### Leírás
 
@@ -35,8 +35,8 @@ Ezeket határozhatod meg a kártyavetéskor (varázsláskor):
 #### Karakteralkotás
 
 - [Vulgármágia](../051_02_vulgarmagia.md) tradíció képzettség
-- [Sors érzékelés](../kepzettsegek.primer.arkanumok/sors_erzekeles.md) Arkánum képzettség (ez a jóslásos arkánum)
-- [Sors befolyásolás](../kepzettsegek.primer.arkanumok/sors_befolyasolas.md) Arkánum képzettség (imagináció, tehát "hatás". Igazából csak "meglovagolja" a Sorsot. Amit "akar" az már megtörtén(t))
+- [Sors érzékelés](../kepzettsegek.primer/arkanumok/sors_erzekeles.md) Arkánum képzettség (ez a jóslásos arkánum)
+- [Sors befolyásolás](../kepzettsegek.primer/arkanumok/sors_befolyasolas.md) Arkánum képzettség (imagináció, tehát "hatás". Igazából csak "meglovagolja" a Sorsot. Amit "akar" az már megtörtén(t))
 - [Kártyavetés](kartyavetes.md) Metódus fortély
 
 ---

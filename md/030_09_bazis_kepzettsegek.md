@@ -14,8 +14,8 @@ Vannak bizonyos bázis képzettségek, amelyek alaptudását sok [Szabad Fortél
 
 ### Szociális
 
-- [Befolyásolás](kepzettsegek.primer.altalanos/befolyasolas.md): aktív, hatást kifejtő alap (🅿️ Primer ismeret)
-- [Emberismeret](kepzettsegek.primer.altalanos/emberismeret.md): passzív, hatást felismerő alap ( 🅿️Primer ismeret)
+- [Befolyásolás](kepzettsegek.primer/altalanos/befolyasolas.md): aktív, hatást kifejtő alap (🅿️ Primer ismeret)
+- [Emberismeret](kepzettsegek.primer/altalanos/emberismeret.md): passzív, hatást felismerő alap ( 🅿️Primer ismeret)
 
 ### Iparos
 
@@ -23,7 +23,7 @@ Vannak bizonyos bázis képzettségek, amelyek alaptudását sok [Szabad Fortél
 
 ### Hadi tudományok
 
-- [Hadászat](kepzettsegek.primer.altalanos/hadaszat.md): haditudományok alapja
+- [Hadászat](kepzettsegek.primer/altalanos/hadaszat.md): haditudományok alapja
 
 ---
 

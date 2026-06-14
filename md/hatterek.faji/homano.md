@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Hómanó](../kepzettsegek.faj.miszterium/faj_miszterium_homano.md)
+[Faj misztérium: Hómanó](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homano.md)
 
 ### ⚜️Faji fortélyok
 

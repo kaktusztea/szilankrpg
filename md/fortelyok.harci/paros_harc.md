@@ -7,7 +7,7 @@ Mindkét személynek fel kell vennie és a másik személyt kell nevesíteni, mi
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md)  - `3.szint` (mindkét félnek)
+- [Harcmodor](../kepzettsegek.primer/harci/harcmodor.md)  - `3.szint` (mindkét félnek)
 - Két jól összeszokott társ.
 - A konkrét partnert nevesíteni kell.
 

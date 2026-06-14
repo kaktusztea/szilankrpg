@@ -17,7 +17,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Udvari ork](../kepzettsegek.faj.miszterium/faj_miszterium_udvari_ork.md) ??? Vagy sima Ork?
+[Faj misztérium: Udvari ork](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_udvari_ork.md) ??? Vagy sima Ork?
 
 <br />
 

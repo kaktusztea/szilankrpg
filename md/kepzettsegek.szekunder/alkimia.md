@@ -9,7 +9,7 @@ A jól felszerelt, világi tudósok, királyi kegyeltek, buzgó kutatók szakter
 - arany transzmutáció (nagyon magas szinten - félmágikus hatás)
 - mágiához szükséges fizikai komponensek létrehozása, szakszerű tárolása, tartósítása
 - Prima Materia, Mindent Oldó Szer kutatása
-- Mérgek **alapanyagainak** előállítása (nem magának a méregnek!). Ez által speciális követelménye is a [Méregkeverés](../kepzettsegek.primer.altalanos/meregkeveres.md) képzettségnek!
+- Mérgek **alapanyagainak** előállítása (nem magának a méregnek!). Ez által speciális követelménye is a [Méregkeverés](../kepzettsegek.primer/altalanos/meregkeveres.md) képzettségnek!
 
 ### Domináns Tulajdonságok
 
@@ -18,7 +18,7 @@ Intelligencia, Emlékezet
 ### Kapcsolódik
 
 - [Álcázás/álruha](alcazas_alruha.md) képzettség
-- [Méregkeverés](../kepzettsegek.primer.altalanos/meregkeveres.md) képzettség
+- [Méregkeverés](../kepzettsegek.primer/altalanos/meregkeveres.md) képzettség
 
 ### Normál kiterjesztés
 

@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Elar](../kepzettsegek.faj.miszterium/faj_miszterium_elar.md)
+[Faj misztérium: Elar](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elar.md)
 
 ### ⚜️Faji fortélyok
 

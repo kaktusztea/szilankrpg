@@ -20,7 +20,7 @@ Ha sikertelen, leesik. Ekkor jön a lenti Akrobatika próba.
 ---
 ## Leeséskor: Akrobatika próba és Sérülés
 
-Ha leesel hátasodról, [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében. Egy szénaboglya például sokat könnyíthet.
+Ha leesel hátasodról, [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettség próbát kell dobnod (**esésre**), melynek nehézségét a KM határozza meg a körülmények ismeretében. Egy szénaboglya például sokat könnyíthet.
 
 ### ⚜️Eséskor: Akrobatika képzettségpróba
 

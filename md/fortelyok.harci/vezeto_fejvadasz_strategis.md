@@ -4,14 +4,14 @@ Egy entitásként, észrevétlenül suhantok át fejvadász alakulatoddal a véd
 
 ### Kiterjeszti ezeket
 
-[Hadászat](../kepzettsegek.primer.altalanos/hadaszat.md) képzettség
+[Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) képzettség
 - Fejvadász csapat rajtaütését megtervezni, vezetni.
 - ⚡ "Ketten a tetőre, magitor savfelhőt a teraszra. Mortel, indulj!"
 
 ---
 ### Alapeset
 
-A [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni.
+A [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) képzettséget [csoportos fizikai képzettségpróba](../030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szerint használja egy fejvadász alakulat, mikor együtt próbálnak észrevétlenül haladni.
 
 <br />
 

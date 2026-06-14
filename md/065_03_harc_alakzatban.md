@@ -2,7 +2,7 @@
 
 Mikor összehangoltan, csoportban mozognak harcosok, akkor komoly előnyt képesek kiépíteni. Az egyén feladata ellenük nagyon nehézzé válik, ilyenkor leginkább egy másik alakzat az, ami hatékonyan képes lehet vele felvenni a harcot.
 
-Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összeszokottság. Nem készítünk külön szabályokat az összeszokottság mértékének módosítóira - egy heroikus rendszerben valószínűleg összeszokott csapat indít csak csoportos támadást. A fentiket az **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettség tanulásával lehet elsajátítani.
+Az alakzat tagjai küzdhetnek különféle harcmodorokban - a lényeg az összeszokottság. Nem készítünk külön szabályokat az összeszokottság mértékének módosítóira - egy heroikus rendszerben valószínűleg összeszokott csapat indít csak csoportos támadást. A fentiket az **[Alakzatharc](kepzettsegek.primer/harci/alakzatharc.md)** képzettség tanulásával lehet elsajátítani.
 
 Egy alakzat minimum létszáma `3` **fő** (mert `2` fő legfeljebb [Páros harcot](fortelyok.harci/paros_harc.md) végezhet).
 
@@ -31,7 +31,7 @@ Ha van a csoportban olyan, aki a lentiek közül valamelyikkel bír - és elvál
 + MIN( Támadó-alakzat fortély fok ) x 2
 ```
 
-- Csapattagok **[Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** - [csoportos fizikai képzettségpróba](030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint.
+- Csapattagok **[Alakzatharc](kepzettsegek.primer/harci/alakzatharc.md)** képzettsége közül a **legalacsonyabb** - [csoportos fizikai képzettségpróba](030_06_02_csoportos_kepzettsegproba.md#️-1-csoportos-fizikai-képzettségpróba) szabályai szerint.
 - Csapattagok közül a legalacsonyabb [Támadó-alakzat](fortelyok.harci/alakzat_tamado.md) fortély foka `2` bónusz szintet ad fokonként.
 
 ### ⚜️Védekezőszint
@@ -83,7 +83,7 @@ A lenti értékeket célszerű játékalkalom **előtt** kiszámítani, így nem
    (max 10)
 ```
 
-A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy kiemelkedően jó harcos nem ad hozzá túl sokat az alakzathoz, ha az alakzatharcban képzetlen.
+A személyek száma is növeli az alakzat harcértékét. Egyszerűbb, ha ez fix érték, bár nyilván felmerül, hogy egy képzett harcosoknál ez többet kéne adjon, **viszont** ezt az [Alakzatharc](kepzettsegek.primer/harci/alakzatharc.md) képzettség-szintből [adódó bónuszokkal](062_02_harcmodor_kepzettsegek_es_bonuszaik.md) szimuláljuk. Belátható, hogy egy kiemelkedően jó harcos nem ad hozzá túl sokat az alakzathoz, ha az alakzatharcban képzetlen.
 
 Miért csak `VÉ` bónuszt ad?
 - mert a támadás bónuszok az **Alakzatharc képzettség-szintből** jönnek.

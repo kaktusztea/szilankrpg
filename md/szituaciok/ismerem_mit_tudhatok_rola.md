@@ -21,7 +21,7 @@ Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismer
 
 `VAGY`
 
-[Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettség
+[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md) képzettség
 - Tulajdonság: Emlékezet
 - Normál kiterjesztés: [Helyismeret](../fortelyok.kiemelt/helyismeret.md) (adott helység) fortély
 
@@ -34,7 +34,7 @@ Gyakori szituáció, mikor elhangzik egy név és szükség van a karakter ismer
 
 `VAGY`
 
-[Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettség
+[Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md) képzettség
 - Tulajdonság: Emlékezet
 - Normál kiterjesztés: ["Titkos szervezet"](../fortelyok.szabad/titkos_szervezet.md) (adott szervezetre) fortély
 

@@ -33,22 +33,22 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 ---
 ### Harci képzettségek 🅿️
 
-🔵 [Alakzatharc](kepzettsegek.primer.harci/alakzatharc.md) 🤝
+🔵 [Alakzatharc](kepzettsegek.primer/harci/alakzatharc.md) 🤝
 
-🔵 [Harci láz](kepzettsegek.primer.harci/harci_laz.md)
+🔵 [Harci láz](kepzettsegek.primer/harci/harci_laz.md)
 
-🔵 [Harcmodor](kepzettsegek.primer.harci/harcmodor.md) 🔁
+🔵 [Harcmodor](kepzettsegek.primer/harci/harcmodor.md) 🔁
 
-🔵 [Mágikus célzás](kepzettsegek.primer.harci/magikus_celzas.md)
+🔵 [Mágikus célzás](kepzettsegek.primer/harci/magikus_celzas.md)
 
-🔵 [Távolsági harcmodor](kepzettsegek.primer.harci/tavolsagi_harcmodor.md) 🔁
+🔵 [Távolsági harcmodor](kepzettsegek.primer/harci/tavolsagi_harcmodor.md) 🔁
 
 ---
 ### Fizikai képzettségek
 
-🔵 [Akrobatika](kepzettsegek.primer.altalanos/akrobatika.md) 🅿️
+🔵 [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) 🅿️
 
-🔵 [Fájdalomtűrés](kepzettsegek.primer.altalanos/fajdalomtures.md) 🅿️
+🔵 [Fájdalomtűrés](kepzettsegek.primer/altalanos/fajdalomtures.md) 🅿️
 
 🔵 [Mászás](kepzettsegek.szekunder/maszas.md)
 
@@ -59,11 +59,11 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 ---
 ### Világi képzettségek
 
-🔵 [Befolyásolás](kepzettsegek.primer.altalanos/befolyasolas.md) 🅿️
+🔵 [Befolyásolás](kepzettsegek.primer/altalanos/befolyasolas.md) 🅿️
 
-🔵 [Emberismeret](kepzettsegek.primer.altalanos/emberismeret.md) 🅿️
+🔵 [Emberismeret](kepzettsegek.primer/altalanos/emberismeret.md) 🅿️
 
-🔵 [Észlelés](kepzettsegek.primer.altalanos/eszleles.md) 🅿️ 🤝
+🔵 [Észlelés](kepzettsegek.primer/altalanos/eszleles.md) 🅿️ 🤝
 
 🔵 [Értékbecslés](kepzettsegek.szekunder/ertekbecsles.md)
 
@@ -71,7 +71,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 
 🔵 [Hajózás](kepzettsegek.szekunder/hajozas.md) 🤝
 
-🔵 [Nyomozás](kepzettsegek.primer.altalanos/nyomozas.md) 🅿️ 🤝
+🔵 [Nyomozás](kepzettsegek.primer/altalanos/nyomozas.md) 🅿️ 🤝
 
 🔵 [Nyelvtanulás](kepzettsegek.szekunder/nyelvtanulas.md)
 
@@ -90,7 +90,7 @@ Alább találod a `Szilánk` rendszerében felvehető összes képzettséget - j
 
 🔵 [Csapdaállítás](kepzettsegek.szekunder/csapdaallitas.md)
 
-🔵 [Lopakodás/Rejtőzés](kepzettsegek.primer.altalanos/lopakodas_rejtozes.md) 🅿️ 🤝
+🔵 [Lopakodás/Rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md) 🅿️ 🤝
 
 🔵 [Lopás](kepzettsegek.szekunder/lopas.md)
 
@@ -114,11 +114,11 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 
 🔵 [Alkímia](kepzettsegek.szekunder/alkimia.md)
 
-🔵 [Hadászat](kepzettsegek.primer.altalanos/hadaszat.md) 🅿️
+🔵 [Hadászat](kepzettsegek.primer/altalanos/hadaszat.md) 🅿️
 
-🔵 [Méregkeverés](kepzettsegek.primer.altalanos/meregkeveres.md) 🅿️
+🔵 [Méregkeverés](kepzettsegek.primer/altalanos/meregkeveres.md) 🅿️
 
-🔵 [Orvoslás](kepzettsegek.primer.altalanos/orvoslas.md) 🅿️🤝
+🔵 [Orvoslás](kepzettsegek.primer/altalanos/orvoslas.md) 🅿️🤝
 
 🔵 [Kvantikum](kepzettsegek.szekunder/kvantikum.md) 🤝
 
@@ -127,115 +127,115 @@ Az aktív előadást igénylő művészeteket szeparáltuk az **Előadóművész
 ---
 ### Faj misztériumok 🅿️
 
-🔵 [Faj misztérium: Amund](kepzettsegek.faj.miszterium/faj_miszterium_amund.md)
+🔵 [Faj misztérium: Amund](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_amund.md)
 
-🔵 [Faj misztérium: Anatyda](kepzettsegek.faj.miszterium/faj_miszterium_anatyda.md)
+🔵 [Faj misztérium: Anatyda](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_anatyda.md)
 
-🔵 [Faj misztérium: Buzzgoblin](kepzettsegek.faj.miszterium/faj_miszterium_buzzgoblin.md)
+🔵 [Faj misztérium: Buzzgoblin](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_buzzgoblin.md)
 
-🔵 [Faj misztérium: Dzsenn](kepzettsegek.faj.miszterium/faj_miszterium_dzsenn.md)
+🔵 [Faj misztérium: Dzsenn](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_dzsenn.md)
 
-🔵 [Faj misztérium: Elar](kepzettsegek.faj.miszterium/faj_miszterium_elar.md)
+🔵 [Faj misztérium: Elar](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elar.md)
 
-🔵 [Faj misztérium: Elf](kepzettsegek.faj.miszterium/faj_miszterium_elf.md)
+🔵 [Faj misztérium: Elf](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_elf.md)
 
-🔵 [Faj misztérium: Ember (déli)](kepzettsegek.faj.miszterium/faj_miszterium_ember_deli.md)
+🔵 [Faj misztérium: Ember (déli)](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_deli.md)
 
-🔵 [Faj misztérium: Ember (északi)](kepzettsegek.faj.miszterium/faj_miszterium_ember_eszaki.md)
+🔵 [Faj misztérium: Ember (északi)](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_eszaki.md)
 
-🔵 [Faj misztérium: Ember (korg)](kepzettsegek.faj.miszterium/faj_miszterium_ember_korg.md)
+🔵 [Faj misztérium: Ember (korg)](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_korg.md)
 
-🔵 [Faj misztérium: Ember (Slan)](kepzettsegek.faj.miszterium/faj_miszterium_ember_slan.md)
+🔵 [Faj misztérium: Ember (Slan)](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ember_slan.md)
 
-🔵 [Faj misztérium: Erdőpille](kepzettsegek.faj.miszterium/faj_miszterium_erdopille.md)
+🔵 [Faj misztérium: Erdőpille](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_erdopille.md)
 
-🔵 [Faj misztérium: Feenhar](kepzettsegek.faj.miszterium/faj_miszterium_feenhar.md)
+🔵 [Faj misztérium: Feenhar](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_feenhar.md)
 
-🔵 [Faj misztérium: Gnóm](kepzettsegek.faj.miszterium/faj_miszterium_gnom.md)
+🔵 [Faj misztérium: Gnóm](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gnom.md)
 
-🔵 [Faj misztérium: Goblin](kepzettsegek.faj.miszterium/faj_miszterium_goblin.md)
+🔵 [Faj misztérium: Goblin](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_goblin.md)
 
-🔵 [Faj misztérium: Gyíklény](kepzettsegek.faj.miszterium/faj_miszterium_gyikleny.md)
+🔵 [Faj misztérium: Gyíklény](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gyikleny.md)
 
-🔵 [Faj misztérium: Hómanó](kepzettsegek.faj.miszterium/faj_miszterium_homano.md)
+🔵 [Faj misztérium: Hómanó](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homano.md)
 
-🔵 [Faj misztérium: Homoki elf](kepzettsegek.faj.miszterium/faj_miszterium_homoki_elf.md)
+🔵 [Faj misztérium: Homoki elf](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_homoki_elf.md)
 
-🔵 [Faj misztérium: Khál](kepzettsegek.faj.miszterium/faj_miszterium_khal.md)
+🔵 [Faj misztérium: Khál](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_khal.md)
 
-🔵 [Faj misztérium: Kineta](kepzettsegek.faj.miszterium/faj_miszterium_kineta.md)
+🔵 [Faj misztérium: Kineta](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kineta.md)
 
-🔵 [Faj misztérium: Kobold](kepzettsegek.faj.miszterium/faj_miszterium_kobold.md)
+🔵 [Faj misztérium: Kobold](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kobold.md)
 
-🔵 [Faj misztérium: Kyr](kepzettsegek.faj.miszterium/faj_miszterium_kyr.md)
+🔵 [Faj misztérium: Kyr](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kyr.md)
 
-🔵 [Faj misztérium: Ork](kepzettsegek.faj.miszterium/faj_miszterium_ork.md)
+🔵 [Faj misztérium: Ork](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_ork.md)
 
-🔵 [Faj misztérium: Sáskaharcos](kepzettsegek.faj.miszterium/faj_miszterium_saskaharcos.md)
+🔵 [Faj misztérium: Sáskaharcos](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_saskaharcos.md)
 
-🔵 [Faj misztérium: Törpe](kepzettsegek.faj.miszterium/faj_miszterium_torpe.md)
+🔵 [Faj misztérium: Törpe](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_torpe.md)
 
-🔵 [Faj misztérium: Tűzkobold](kepzettsegek.faj.miszterium/faj_miszterium_tuzkobold.md)
+🔵 [Faj misztérium: Tűzkobold](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_tuzkobold.md)
 
-🔵 [Faj misztérium: Udvari ork](kepzettsegek.faj.miszterium/faj_miszterium_udvari_ork.md)
+🔵 [Faj misztérium: Udvari ork](kepzettsegek.primer/faj.miszteriumok/faj_miszterium_udvari_ork.md)
 
 ---
 ### Misztikus képzettségek 🅿️
 
-🔵 [Ősi nyelv ismerete](kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) 🔁
+🔵 [Ősi nyelv ismerete](kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md) 🔁
 
-🔵 [Tradíció](kepzettsegek.primer.misztikus/tradicio.md)
+🔵 [Tradíció](kepzettsegek.primer/misztikus/tradicio.md)
 
 ---
 ### Mágikus Szférák és Arkánumaik 🅿️
 
 #### Anyag szféra
 
-🔵 [Elemi mágia](kepzettsegek.primer.arkanumok/elemi_magia.md)
+🔵 [Elemi mágia](kepzettsegek.primer/arkanumok/elemi_magia.md)
 
-🔵 [Természetes anyagok mágiája](kepzettsegek.primer.arkanumok/termeszetes_anyagok_magiaja.md)
+🔵 [Természetes anyagok mágiája](kepzettsegek.primer/arkanumok/termeszetes_anyagok_magiaja.md)
 
 ####  Lélek szféra
 
-🔵 [Asztrálmágia](kepzettsegek.primer.arkanumok/asztralmagia.md)
+🔵 [Asztrálmágia](kepzettsegek.primer/arkanumok/asztralmagia.md)
 
-🔵 [Mentálmágia](kepzettsegek.primer.arkanumok/mentalmagia.md)
+🔵 [Mentálmágia](kepzettsegek.primer/arkanumok/mentalmagia.md)
 
 #### Jelenségek szféra
 
-🔵 [Illúziók](kepzettsegek.primer.arkanumok/illuziok.md)
+🔵 [Illúziók](kepzettsegek.primer/arkanumok/illuziok.md)
 
-🔵 [Természeti jelenségek](kepzettsegek.primer.arkanumok/termeszeti_jelensegek.md)
+🔵 [Természeti jelenségek](kepzettsegek.primer/arkanumok/termeszeti_jelensegek.md)
 
 #### Téridő szféra
 
-🔵 [Időmágia](kepzettsegek.primer.arkanumok/idomagia.md)
+🔵 [Időmágia](kepzettsegek.primer/arkanumok/idomagia.md)
 
-🔵 [Térmágia](kepzettsegek.primer.arkanumok/termagia.md)
+🔵 [Térmágia](kepzettsegek.primer/arkanumok/termagia.md)
 
 #### Életerő szféra
 
-🔵 [Életerő Manipulálása](kepzettsegek.primer.arkanumok/eletero_manipulalasa.md)
+🔵 [Életerő Manipulálása](kepzettsegek.primer/arkanumok/eletero_manipulalasa.md)
 
-🔵 [Nekromancia](kepzettsegek.primer.arkanumok/nekromancia.md)
+🔵 [Nekromancia](kepzettsegek.primer/arkanumok/nekromancia.md)
 
 #### Idézés szféra
 
-🔵 [Belső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_belso_sikok.md)
+🔵 [Belső síkok lényeinek idézése](kepzettsegek.primer/arkanumok/idezes_belso_sikok.md)
 
-🔵 [Külső síkok lényeinek idézése](kepzettsegek.primer.arkanumok/idezes_kulso_sikok.md)
+🔵 [Külső síkok lényeinek idézése](kepzettsegek.primer/arkanumok/idezes_kulso_sikok.md)
 
 #### Sors szféra
 
-🔵 [Sors Érzékelés](kepzettsegek.primer.arkanumok/sors_erzekeles.md)
+🔵 [Sors Érzékelés](kepzettsegek.primer/arkanumok/sors_erzekeles.md)
 
-🔵 [Sors Befolyásolás](kepzettsegek.primer.arkanumok/sors_befolyasolas.md)
+🔵 [Sors Befolyásolás](kepzettsegek.primer/arkanumok/sors_befolyasolas.md)
 
 #### Mágia Szféra
 
-🔵 [Aurahangolás](kepzettsegek.primer.arkanumok/aurahangolas.md)
+🔵 [Aurahangolás](kepzettsegek.primer/arkanumok/aurahangolas.md)
 
-→ [Metamágia](kepzettsegek.primer.arkanumok/metamagia.md) arkánum
+→ [Metamágia](kepzettsegek.primer/arkanumok/metamagia.md) arkánum
 
 #### Titkos (Teremtés) Szféra
 

@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Kineta](../kepzettsegek.faj.miszterium/faj_miszterium_kineta.md)
+[Faj misztérium: Kineta](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kineta.md)
 
 ### ⚜️Faji fortélyok
 

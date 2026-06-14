@@ -20,7 +20,7 @@ A fajok esetleges bónuszai felvehetőek Érzék-Fortélyként. Bővebben lásd 
 ---
 ### 🔆 Észlelés
 
-Idézet az [Észlelés](../kepzettsegek.primer.altalanos/eszleles.md) képzettség leírásából:
+Idézet az [Észlelés](../kepzettsegek.primer/altalanos/eszleles.md) képzettség leírásából:
 
 *"Az Észlelés valaminek az észrevételét takarja. Ez lehet egy villanó tőr, egy meglapuló merénylő a lombok közt, egy árulkodó súrlódó nesz. Fontos, hogy az Észlelés csak a momentum észrevételt jelenti, annak értelmezését nem! Az a játékos feladata, melyet esetleg megkönnyíthet például a **Nyomozás**, vagy a **Természetjárás** képzettség."*
 

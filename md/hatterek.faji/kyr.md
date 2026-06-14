@@ -15,7 +15,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Kyr](../kepzettsegek.faj.miszterium/faj_miszterium_kyr.md)
+[Faj misztérium: Kyr](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_kyr.md)
 
 <br />
 
@@ -31,6 +31,6 @@ TODO ⭕
 ### Ajánlott képzettségek
 
 - [Etikett](../kepzettsegek.szekunder/etikett.md) (Kyr kultúrkör)
-- [Ősi nyelv ismerete](../kepzettsegek.primer.misztikus/osi_nyelv_ismerete.md) (Kyr)
+- [Ősi nyelv ismerete](../kepzettsegek.primer/misztikus/osi_nyelv_ismerete.md) (Kyr)
 
 ---

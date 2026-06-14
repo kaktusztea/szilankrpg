@@ -2,7 +2,7 @@
 
 Végigegyensúlyozni egy kifeszített kötélen.
 
-Ez [Akrobatika](../kepzettsegek.primer.altalanos/akrobatika.md) képzettségpróba Átlagos (6) Nehézség ellen - bővebben a kötéltáncot lásd ott.
+Ez [Akrobatika](../kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróba Átlagos (6) Nehézség ellen - bővebben a kötéltáncot lásd ott.
 - **Önuralom** Tulajdonsággal elsődlegesen
 - **Ügyesség** Tulajdonsággal is lehet
 

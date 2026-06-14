@@ -14,7 +14,7 @@ TODO⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Buzzgoblin](../kepzettsegek.faj.miszterium/faj_miszterium_buzzgoblin.md)
+[Faj misztérium: Buzzgoblin](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_buzzgoblin.md)
 
 <br />
 

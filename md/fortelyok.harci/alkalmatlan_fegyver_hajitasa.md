@@ -6,7 +6,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 
 ### Kapcsolódik
 
--  [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) képzettség
+-  [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) képzettség
 
 ### Alapeset
 
@@ -16,8 +16,8 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Fegyver harcmodora](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
-- [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `3.szint`
+- [Fegyver harcmodora](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
+- [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `3.szint`
 
 🌟 **Hatás**:
 - [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései az adott fegyver dobásakor csökkennek:
@@ -30,8 +30,8 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 ### 2. fok
 
 🔒 **Követelmény**:
-- [Fegyver harcmodora](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
-- [Hajítás harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
+- [Fegyver harcmodora](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
+- [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
 - [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései **nem** sújtanak

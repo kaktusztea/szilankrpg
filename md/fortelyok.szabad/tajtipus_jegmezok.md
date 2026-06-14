@@ -6,7 +6,7 @@ Ismered a jégmezők kegyetlen világát.
 
 - [Alkímia](../kepzettsegek.szekunder/alkimia.md): Jégmezők mélyén található szervetlen alapanyagok felkutatása
 - [Lexikum](../kepzettsegek.szekunder/lexikum.md): adott tájtípusra jellemző élővilág, földrajz ismerete
-- [Lopakodás/rejtőzés](../kepzettsegek.primer.altalanos/lopakodas_rejtozes.md): Jégmezőn lopakodni. "Ne menj a világos jégre, jobban ropog!"
+- [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md): Jégmezőn lopakodni. "Ne menj a világos jégre, jobban ropog!"
 - [Természetjárás](../kepzettsegek.szekunder/termeszetjaras.md): Ismered a jégmezők ritkás növényeit, azok hatásait, az állatokat, azok viselkedési szokásait, továbbá a tájtípusnak megfelelő időjárást, egyedi jellemzőket - a Természetjárás képzettségnek megfelelő szinten. Nyomok követése az adott tájtípusban.
 - [Vajákosság](../kepzettsegek.szekunder/vajakossag.md): Ismered a jégmezőkön ritkásan növő növényeket, gyógyító, vagy ártó hatóanyagaikat.
 

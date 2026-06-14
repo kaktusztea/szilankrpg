@@ -14,7 +14,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Tűzkobold](../kepzettsegek.faj.miszterium/faj_miszterium_tuzkobold.md)
+[Faj misztérium: Tűzkobold](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_tuzkobold.md)
 
 ### ⚜️Faji fortélyok
 

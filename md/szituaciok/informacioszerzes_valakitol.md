@@ -2,18 +2,18 @@
 
 Sokszor futunk bele karakterekbe, akikből megpróbálunk kihúzni némi információt. Nyilván nem mindenkit ejtettek a fejére, gyakran nem akarnak választ adni holmi jöttment idegeneknek. Ilyenkor jön jól a **Kihallgatás** fortély.
 
-🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer.altalanos/nyomozas.md#-szerepj%C3%A1t%C3%A9kos-m%C3%B3dos%C3%ADt%C3%B3).
+🔆 Opcionális befolyásoló tényező: [Nyomozás képzettség → Szerepjátékos módosító](../kepzettsegek.primer/altalanos/nyomozas.md#-szerepjátékos-módosító).
 
 ---
 ### 🔆 Kihallgatás szituáció
 
-Kihallgató: [Nyomozás](../kepzettsegek.primer.altalanos/nyomozas.md) képzettség
+Kihallgató: [Nyomozás](../kepzettsegek.primer/altalanos/nyomozas.md) képzettség
 - Tulajdonság: Intelligencia vagy Érzékenység
 - Normál kiterjesztés: [Kihallgatás](../fortelyok.szabad/kihallgatas.md)
 
 `VS`
 
-Kihallgatott: [Emberismeret](../kepzettsegek.primer.altalanos/emberismeret.md) képzettség
+Kihallgatott: [Emberismeret](../kepzettsegek.primer/altalanos/emberismeret.md) képzettség
 - Tulajdonság: Önuralom
 - Normál kiterjesztés: [Kihallgatás](../fortelyok.szabad/kihallgatas.md)  VAGY  [Hazudozás](../fortelyok.altalanos/hazudozas.md) fortély
 

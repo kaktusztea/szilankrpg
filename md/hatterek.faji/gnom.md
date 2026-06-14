@@ -19,7 +19,7 @@ bevezető ⭕
 
 ### ⚜️Faj misztérium
 
-[Faj misztérium: Gnóm](../kepzettsegek.faj.miszterium/faj_miszterium_gnom.md)
+[Faj misztérium: Gnóm](../kepzettsegek.primer/faj.miszteriumok/faj_miszterium_gnom.md)
 
 <br />
 

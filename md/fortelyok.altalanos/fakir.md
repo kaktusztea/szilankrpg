@@ -1,6 +1,6 @@
 ## 🟣 Fakír (1)
 
-Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer.altalanos/fajdalomtures.md) próbádra.
+Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer/altalanos/fajdalomtures.md) próbádra.
 
 ### 1. fok
 
