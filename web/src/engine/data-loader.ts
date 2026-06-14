@@ -124,7 +124,7 @@ export interface TaktikaEntry {
   feltétel_kulcs: string;
   fokozatos: boolean;
   módosítók?: Record<string, number>;
-  fokok?: { fok: number; TÉ?: number; VÉ?: number; KÉ?: number; SP?: number }[];
+  fokok?: { fok: number; TÉ?: number; VÉ?: number; KÉ?: number; SP?: number; hatások?: { hatás: string; érték?: number; cél: string; megjegyzés?: string }[] }[];
   megjegyzés?: string;
   megkötések?: TaktikaMegkötés[];
   kombó_mód: string;

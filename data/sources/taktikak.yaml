@@ -179,11 +179,25 @@ taktikák:
   fokok:
   - fok: 1
     TÉ: -3
+    hatások:
+    - hatás: "hátrány"
+      érték: -1
+      cél: "té_dobás"
+      megjegyzés: "Sebzéskocka csökkentés"
   - fok: 2
     TÉ: -6
+    hatások:
+    - hatás: "hátrány"
+      érték: -2
+      cél: "té_dobás"
+      megjegyzés: "Sebzéskocka csökkentés"
   - fok: 3
     TÉ: -9
-  megjegyzés: "Sebzéskocka: k10/k6/nincs. Harci anatómia csökkenti TÉ büntetést."
+    hatások:
+    - hatás: "szöveges"
+      cél: "sebzésdobás"
+      megjegyzés: "Nincs kockadobás, csak fegyver alap sebzése"
+  megjegyzés: "TÉ levonásért kisebb sebzéskocka. Harci anatómia csökkenti TÉ büntetést."
   kombó_mód: "whitelist"
   kombó_lista: ["Kezdeményező", "Kiváró", "1 támadás", "Tettetés"]
   id: "visszafogott"

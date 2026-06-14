@@ -126,8 +126,16 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
     }
   }
 
-  // 2. Státusz + Harci helyzet hatások kumulálása
+  // 2. Státusz + Harci helyzet + Taktika hatások kumulálása
   const státuszHatások: { cél: string; hatás: string; érték?: number; megjegyzés?: string }[] = [];
+  for (const at of session.aktív_taktikák) {
+    const def = data.taktikak.find(t => t.név === at.név);
+    if (!def) continue;
+    if (def.fokozatos && def.fokok && at.fok != null) {
+      const fokDef = def.fokok.find(f => f.fok === at.fok);
+      if (fokDef?.hatások) for (const h of fokDef.hatások) státuszHatások.push(h);
+    }
+  }
   for (const st of session.aktív_státuszok) {
     const match = st.match(/^(.+) \((\d+)\)$/);
     if (!match) continue;
@@ -311,7 +319,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
           let modStr = '';
           if (def?.fokozatos && def.fokok && t.fok != null) {
             const f = def.fokok.find(fk => fk.fok === t.fok);
-            if (f) modStr = Object.entries(f).filter(([k, v]) => k !== 'fok' && v !== 0).map(([k, v]) => `${k}:${(v as number) > 0 ? '+' : ''}${v}`).join(' ');
+            if (f) modStr = Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}:${(v as number) > 0 ? '+' : ''}${v}`).join(' ');
           } else if (def?.módosítók) {
             modStr = Object.entries(def.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}:${(v as number) > 0 ? '+' : ''}${v}`).join(' ');
           }
@@ -355,7 +363,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 }}>
                   <span className="manover-card-name">{t.név}{t.fokozatos ? ` 📶` : ''}</span>
                   <span className="manover-card-details">
-                    {t.fokozatos && t.fokok ? t.fokok.map(f => `${f.fok}: ${Object.entries(f).filter(([k, v]) => k !== 'fok' && v !== 0).map(([k, v]) => `${k}:${v}`).join(', ')}`).join(' | ') : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${v > 0 ? '+' : ''}${v}`).join(', ') : ''}
+                    {t.fokozatos && t.fokok ? t.fokok.map(f => `${f.fok}: ${Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}:${v}`).join(', ')}`).join(' | ') : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${v > 0 ? '+' : ''}${v}`).join(', ') : ''}
                   </span>
                   {t.megjegyzés && <span className="manover-card-hatas">{t.megjegyzés}</span>}
                 </div>
@@ -375,7 +383,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                     setTaktikaFokválasztó(null);
                   }}>
                     <span className="manover-card-name">{f.fok}. fok</span>
-                    <span className="manover-card-details">{Object.entries(f).filter(([k, v]) => k !== 'fok' && v !== 0).map(([k, v]) => `${k}: ${v > 0 ? '+' : ''}${v}`).join(', ')}</span>
+                    <span className="manover-card-details">{Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ')}</span>
                   </div>
                 ));
               })()}

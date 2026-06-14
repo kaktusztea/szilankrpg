@@ -33,7 +33,7 @@ Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
   említett körülmények összegzett értékére
 ```
 
-## [Lények méret különbsége](065_01_05_fizikai_es_kornyezeti_helyzetek.md#lények-méret-különbsége-06)
+## [Lények méret különbsége](065_01_05_fizikai_es_kornyezeti_helyzetek.md#lények-méret-különbsége)
 
 Amennyiben a lények között akár csak `1` kategória méret különbség is van, akkor ha...
 

@@ -23,7 +23,7 @@ Távharcos harcmodorokra NEM alkalmazható.
 🌟 **Hatás**:
 - [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
 - [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2 MP` bónusz **Ellenpróbánál**
-- [Visszafogott ](../065_02_harci_taktikak.md#visszafogott-taktika-) **taktika** alkalmazásakor `3`-mal csökken a kapott `TÉ` büntetés
+- [Visszafogott](../065_02_harci_taktikak.md#visszafogott-taktika-) **taktika** alkalmazásakor `3`-mal csökken a kapott `TÉ` büntetés
 <br />
 
 ### 2. fok

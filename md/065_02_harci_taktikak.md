@@ -281,7 +281,7 @@ Ellenfél VÉ csökkentés: (1 + k20T)
 
 A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. A kör közben nem változtathatsz a taktikádon és csak a következő körben támadhatsz újra.
 
-🔆 A [lények méretkülönbségéből](065_01_05_fizikai_es_kornyezeti_helyzetek.md#lények-méret-különbsége-06) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
+🔆 A [lények méretkülönbségéből](065_01_05_fizikai_es_kornyezeti_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 
@@ -316,11 +316,11 @@ Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci járta
 TÉ levonásért cserébe
   kisebb Sebzéskocka
 
-TÉ:-3  →  k20 helyett k10
-TÉ:-6  →  k20 helyett k6
-TÉ:-9  →  nincs kockadobás
-          csak a fegyver
-          alap sebzése
+TÉ:-3  →  Hátrány-1 TÉ dobásra
+TÉ:-6  →  Hátrány-2 TÉ dobásra
+TÉ:-9  →  nincs kockadobás,
+           csak a fegyver
+           alap sebzése
 ```
 
 🔗 **[Harci anatómia](fortelyok.harci/harci_anatomia.md)** fortély minden foka `3` ponttal csökkenti a `TÉ` büntetést.
