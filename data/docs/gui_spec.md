@@ -161,6 +161,7 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
 - **Teljes harcértékek** tábla (fegyverenként):
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
+  - Kétkezes harc aktív: összevont sor felül (lila/purple keret `#9c27b0`), normál sorok halványítva (opacity: 0.4)
   - Tám cella kattintható (Game mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)

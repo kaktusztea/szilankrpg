@@ -354,7 +354,7 @@
 ### Aktív fül
 - Harci alakzat 🚧 (Alakzatharc kidolgozása szükséges)
   - kapcsolódó fortélyok bekötése
-- Kétkezes harc 🚧 (pengehossz limit, szituáció legyen??)
+- ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF)
   - Fegyver harcértékek összeadódnak    -- még nem számszerűsített
   - Mf: mindkét fegyveré számít         -- még nem számszerűsített
 
@@ -384,7 +384,7 @@
 - Távharc fortélyok yaml elkészítése
 
 ### Harc fül
-- Kétkezes harc aktív: 2 fegyver egymás alatt, lila keretben
+- ✅ Kétkezes harc aktív: összevont sor lila kerettel, normál sorok elhalványítva
 - Lovas harc
 
 ## Új chat nyitásakor olvasd be ezeket

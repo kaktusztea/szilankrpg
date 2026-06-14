@@ -639,18 +639,18 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               {fegyverOpciók.map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
             </select>
           </div>
+        </div>
+        <div className="aktiv-fegyver-row">
           {(() => {
             const enabled = session.aktív_fegyver_index !== -1 && session.aktív_fegyver_bal_index !== -1;
             return (
               <div className={`aktiv-field-btn aktiv-field-toggle ${session.kétkezes_harc && enabled ? 'on' : ''} ${!enabled ? 'disabled' : ''}`}
                 onClick={() => { if (enabled) setSession(s => ({ ...s, kétkezes_harc: !s.kétkezes_harc })); }}>
-                <span className="aktiv-field-label">2 kezes</span>
+                <span className="aktiv-field-label">2 kezes harc</span>
                 <strong>{session.kétkezes_harc && enabled ? 'Igen' : 'Nem'}</strong>
               </div>
             );
           })()}
-        </div>
-        <div className="aktiv-fegyver-row">
           <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_pajzs ? 'on' : ''}`}
             onClick={() => setSession(s => ({ ...s, aktív_pajzs: !s.aktív_pajzs }))}>
             <span className="aktiv-field-label">Pajzs kézben</span>

@@ -1115,3 +1115,108 @@ Ellenőrzés logika:
 | Lövés reflexből | 1 | tulajdonság | Gyorsaság | 1 | + Távolsági harcmodor ≥ 5 |
 | Mesterlövész | 1 | képzettség | Lövészet | 5 | |
 | Mozgó cél mestere fegyverrel | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
+
+---
+
+## §26 Kétkezes harc
+
+Forrás: md/065_04_ketkezes_harc_szabalyai.md, fortelyok.harci/ketkezes_harc.md, fortelyok.harci/ketkezesseg.md
+
+### 26.1 Alapfogalmak
+
+Kétkezes harc = mindkét kézben fegyver (session.kétkezes_harc = true).
+A "nagyobb fegyver" az, amelyiknek nagyobb a pengehossza. Egyenlő penge esetén bármelyik.
+
+### 26.2 Használt harcmodor
+
+A **nagyobb fegyver** harcmodora számít (képzettség szint lookup).
+
+### 26.3 Harcértékek
+
+| Kétkezes harc fok | TÉ/VÉ | Mesterfegyver | Megjegyzés |
+|---|---|---|---|
+| Alapeset (0. fok) | Csak nagyobb fegyver értékei. Kisebb=0. Hátrány-1 TÉ dobásra | Nem számít | Harckeret: +1 |
+| 1. fok | Mindkét fegyver TÉ/VÉ összeadódik | Nem számít | Harckeret: +2 |
+| 2. fok | Mindkét fegyver TÉ/VÉ összeadódik | Csak nagyobb fegyveré | Harckeret: +3 |
+| 3. fok | Mindkét fegyver TÉ/VÉ összeadódik | Mindkettőé | Harckeret: +4 |
+
+### 26.4 Pengeméret korlát
+
+```
+A két fegyver összpengehossza: max 2.0 (= max 2 db 1-pengés fegyver).
+Ha SUM pengehossz > 2.0 → fegyverek harcértéke: 0 (nem használható együtt kétkezes harcban).
+"Rövid" fegyverek (penge < 0.5): pengehossz 0-nak számít.
+Pengehossz értékek: fegyverek.json Pengehossz mező (0, 0.5, 1, 1.5, 2 egységekben).
+```
+
+### 26.5 Harckeret módosítás
+
+```
+input: Kétkezes harc fok, Kétkezesség fortély, fegyverek pengehossza (0.5 egységben)
+formula:
+  // Fortély bónusz
+  kh_bónusz = Kétkezes_harc_fok + 1  // 0.fok: +1, 1.fok: +2, 2.fok: +3, 3.fok: +4
+  if Kétkezesség fortély ÉS Kétkezes harc ≥ 1.fok:
+    kh_bónusz += 1
+
+  // Pengelevonás: a két fegyver tényleges pengehosszainak összege, osztva 0.5-tel
+  sum_pengehossz = fegyver_jobb.pengehossz + fegyver_bal.pengehossz
+  pengelevonás = FLOOR(sum_pengehossz / 0.5)
+
+  kétkezes_harckeret = kh_bónusz - pengelevonás
+
+note: A pengehossz a fegyverek.json-ból jön (0.5 egységekben, pl. tőr=0, rövidkard=0.5, szablya=1.5).
+      "Rövid" fegyverek (penge < 0.5): 0-nak számítanak a pengeméret kalkulációhoz.
+      A SUM Pengeméret (egész pengékben kerekítve) a Pengeelőny/hátrány rendszerhez kell — az más!
+      Max SUM = 2 penge (ha összpenge > 2 → kétkezes harc nem végezhető az adott kombóval).
+```
+
+### 26.6 Sebzés
+
+Mindig az ügyesebb kézben levő fegyver sebez (= jobb kéz fegyver, session.aktív_fegyver_index).
+Kivétel: ha szándékosan a rosszabbik kézben lévővel támad (Hátrány-1 TÉ dobás Kétkezesség nélkül).
+
+### 26.7 Session és UI
+
+- `session.kétkezes_harc: boolean` — Aktív fül toggle (csak ha mindkét kézben fegyver)
+- `session.aktív_fegyver_index` — jobb kéz fegyver
+- `session.aktív_fegyver_bal_index` — bal kéz fegyver
+- Aktív fül: toggle gomb, csak akkor engedélyezett ha mindkét kéz ki van töltve fegyverrel
+- Harc fül: kétkezes harc aktív → összevont harcértékek megjelenítése (lila keret, normál sorok halványítva)
+
+### 26.8 Fortély feltételek
+
+A Kétkezes harc fortély módosítói (yaml) kalkulált feltétellel aktiválódnak:
+```yaml
+feltétel:
+  - { forrás: "kétkezes_harc", operátor: "==", érték: true }
+```
+
+### 26.9 Kalkuláció összefoglalás
+
+```
+if session.kétkezes_harc:
+  nagyobb_fegyver = fegyver[jobb] if fegyver[jobb].pengehossz >= fegyver[bal].pengehossz else fegyver[bal]
+  kisebb_fegyver = a másik
+
+  harcmodor_szint = lookup(nagyobb_fegyver.kategória → harcmodor képzettség szint)
+
+  if kétkezes_harc_fok >= 1:
+    TÉ = TÉ_alap + nagyobb_fegyver.TÉ + kisebb_fegyver.TÉ + harcmodor_bónusz.TÉ + HM_TÉ + MF_bónusz
+    VÉ = VÉ_alap + nagyobb_fegyver.VÉ + kisebb_fegyver.VÉ + harcmodor_bónusz.VÉ + HM_VÉ + MF_bónusz
+  else:
+    TÉ = TÉ_alap + nagyobb_fegyver.TÉ + harcmodor_bónusz.TÉ + HM_TÉ  // kisebb=0, MF nem számít
+    VÉ = VÉ_alap + nagyobb_fegyver.VÉ + harcmodor_bónusz.VÉ + HM_VÉ
+    // + Hátrány-1 TÉ dobásra (Hatás pool)
+
+  MF_bónusz (TÉ/VÉ/SP):
+    if fok == 0: 0
+    if fok == 1: 0 (MF nem számít)
+    if fok == 2: lookup(MF_fok_nagyobb → mesterfegyver_bónuszok)  // TÉ+VÉ+SP
+    if fok == 3: lookup(MF_fok_nagyobb) + lookup(MF_fok_kisebb)   // mindkettő TÉ+VÉ+SP
+
+  SP = fegyver_jobb.SP + erőbónusz + MF_bónusz.SP  // az ügyesebb kéz (jobb) fegyvere sebez
+
+  harckeret = alap_harckeret + kétkezes_harckeret  // lásd §26.5
+  támadások = 1 + FLOOR(harckeret / nagyobb_fegyver.sebesség)  // nagyobb fegyver sebessége számít
+```
