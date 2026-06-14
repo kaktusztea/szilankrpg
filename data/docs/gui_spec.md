@@ -684,7 +684,7 @@ Minden adat `fetchJson`-nel:
 - `tables/tavfegyverek.json`, `tables/pajzsok.json` — távfegyver/pajzs adatok
 - `tables/kepzettseg_kp.json` — KP költség tábla szintenként
 - `tables/harcmodor_kepzettsegek_bonuszok.json` — harcmodor bónuszok szintenként
-- `tables/kepzettsegek.json` — 39 képzettség definíció
+- `tables/kepzettsegek.json` — 81 képzettség definíció
 - `tables/kiterjesztesek.json` — képzettség→fortély inverz mapping
 - `tables/fajok.json` — 27 faj neve
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
