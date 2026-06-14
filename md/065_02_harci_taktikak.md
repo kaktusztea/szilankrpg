@@ -316,8 +316,8 @@ Az ellenfélnek aktívan jeleznie kell, hogy gyanakszik. Ekkor egy [Harci járta
 TÉ levonásért cserébe
   kisebb Sebzéskocka
 
-TÉ:-3  →  Hátrány-1 TÉ dobásra
-TÉ:-6  →  Hátrány-2 TÉ dobásra
+TÉ:-3  →  Hátrány-1 Sebzés dobásra
+TÉ:-6  →  Hátrány-2 Sebzés dobásra
 TÉ:-9  →  nincs kockadobás,
            csak a fegyver
            alap sebzése

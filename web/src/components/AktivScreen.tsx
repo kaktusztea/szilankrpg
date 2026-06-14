@@ -384,6 +384,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   }}>
                     <span className="manover-card-name">{f.fok}. fok</span>
                     <span className="manover-card-details">{Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ')}</span>
+                    {f.hatások && f.hatások.length > 0 && <span className="manover-card-hatas">{f.hatások.map(h => h.megjegyzés || `${h.hatás} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
                   </div>
                 ));
               })()}

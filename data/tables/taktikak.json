@@ -325,8 +325,8 @@
           {
             "hatás": "hátrány",
             "érték": -1,
-            "cél": "té_dobás",
-            "megjegyzés": "Sebzéskocka csökkentés"
+            "cél": "sebzésdobás",
+            "megjegyzés": "Sebzésdobás: Hátrány-1"
           }
         ]
       },
@@ -337,8 +337,8 @@
           {
             "hatás": "hátrány",
             "érték": -2,
-            "cél": "té_dobás",
-            "megjegyzés": "Sebzéskocka csökkentés"
+            "cél": "sebzésdobás",
+            "megjegyzés": "Sebzésdobás: Hátrány-2"
           }
         ]
       },
@@ -349,7 +349,7 @@
           {
             "hatás": "szöveges",
             "cél": "sebzésdobás",
-            "megjegyzés": "Nincs kockadobás, csak fegyver alap sebzése"
+            "megjegyzés": "Nincs sebzésdobás, csak a fegyver alap statikus sebzése"
           }
         ]
       }
