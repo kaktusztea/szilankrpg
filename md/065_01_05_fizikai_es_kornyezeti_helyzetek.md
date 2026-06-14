@@ -186,7 +186,7 @@ Hátrány-1 Érzék (Látás)
 <br />
 
 ---
-## Lények méret különbsége `[0;+6]`
+## Lények méret különbsége
 
 Az egyes fajokat méret kategóriákba osztályozzuk.
 

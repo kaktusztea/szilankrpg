@@ -38,7 +38,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Tűz ruhán](065_01_05_fizikai_es_kornyezeti_helyzetek.md#t%C5%B1z-ruh%C3%A1n)
 - [Sötétben](065_01_05_fizikai_es_kornyezeti_helyzetek.md#s%C3%B6t%C3%A9tben)
 - [Vér elvakít](065_01_05_fizikai_es_kornyezeti_helyzetek.md#v%C3%A9r-elvak%C3%ADt)
-- [Lények méret különbsége [0;+6]](065_01_05_fizikai_es_kornyezeti_helyzetek.md#l%C3%A9nyek-m%C3%A9ret-k%C3%BCl%C3%B6nbs%C3%A9ge-06)
+- [Lények méret különbsége](065_01_05_fizikai_es_kornyezeti_helyzetek.md#l%C3%A9nyek-m%C3%A9ret-k%C3%BCl%C3%B6nbs%C3%A9ge)
 - [Vadállatok elleni harc](065_01_05_fizikai_es_kornyezeti_helyzetek.md#vad%C3%A1llatok-elleni-harc)
 
 ---
