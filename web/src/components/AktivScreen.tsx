@@ -627,7 +627,15 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               const idx = parseInt(e.target.value);
               setSession(s => ({ ...s, aktív_fegyver_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_bal_index !== -1 ? s.kétkezes_harc : false }));
             }}>
-              {fegyverOpciók.map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
+              {fegyverOpciók.filter(f => {
+                if (f.idx === -1) return true;
+                if (session.aktív_fegyver_bal_index === -1) return true;
+                const balFp = karakter.fegyverek[session.aktív_fegyver_bal_index];
+                if (!balFp) return true;
+                const balDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === balFp.alap.toLowerCase());
+                const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
+                return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(balDef?.Pengehossz ?? '0') || 0) <= 2.0;
+              }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
             </select>
           </div>
           <div className="aktiv-field-btn">
@@ -636,18 +644,39 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               const idx = parseInt(e.target.value);
               setSession(s => ({ ...s, aktív_fegyver_bal_index: idx, kétkezes_harc: idx === -1 ? false : s.kétkezes_harc }));
             }}>
-              {fegyverOpciók.map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
+              {fegyverOpciók.filter(f => {
+                if (f.idx === -1) return true;
+                if (session.aktív_fegyver_index === -1) return true;
+                const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
+                if (!jobbFp) return true;
+                const jobbDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase());
+                const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
+                return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(jobbDef?.Pengehossz ?? '0') || 0) <= 2.0;
+              }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
             </select>
           </div>
         </div>
         <div className="aktiv-fegyver-row">
           {(() => {
-            const enabled = session.aktív_fegyver_index !== -1 && session.aktív_fegyver_bal_index !== -1;
+            const hasBoth = session.aktív_fegyver_index !== -1 && session.aktív_fegyver_bal_index !== -1;
+            let overLimit = false;
+            if (hasBoth) {
+              const jFp = karakter.fegyverek[session.aktív_fegyver_index];
+              const bFp = karakter.fegyverek[session.aktív_fegyver_bal_index];
+              if (jFp && bFp) {
+                const jDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === jFp.alap.toLowerCase());
+                const bDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === bFp.alap.toLowerCase());
+                const sum = (parseFloat(jDef?.Pengehossz ?? '0') || 0) + (parseFloat(bDef?.Pengehossz ?? '0') || 0);
+                overLimit = sum > 2.0;
+              }
+            }
+            const enabled = hasBoth && !overLimit;
+            if (overLimit && session.kétkezes_harc) setSession(s => ({ ...s, kétkezes_harc: false }));
             return (
               <div className={`aktiv-field-btn aktiv-field-toggle ${session.kétkezes_harc && enabled ? 'on' : ''} ${!enabled ? 'disabled' : ''}`}
                 onClick={() => { if (enabled) setSession(s => ({ ...s, kétkezes_harc: !s.kétkezes_harc })); }}>
                 <span className="aktiv-field-label">2 kezes harc</span>
-                <strong>{session.kétkezes_harc && enabled ? 'Igen' : 'Nem'}</strong>
+                <strong style={overLimit ? { color: 'var(--error)' } : undefined}>{session.kétkezes_harc && enabled ? 'Igen' : 'Nem'}</strong>
               </div>
             );
           })()}

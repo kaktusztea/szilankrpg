@@ -123,7 +123,12 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
       const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === removed.alap.toLowerCase());
       const displayName = fDef?.Alapnév || removed.alap;
       const fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === removed.alap)));
-      return { ...prev, fegyverek, fortélyok };
+      // Session: fegyver indexek és kétkezes harc reset ha érintett
+      const session = { ...prev.session };
+      if (session.aktív_fegyver_index >= fegyverek.length) { session.aktív_fegyver_index = 0; session.kétkezes_harc = false; }
+      if (session.aktív_fegyver_bal_index >= fegyverek.length) { session.aktív_fegyver_bal_index = -1; session.kétkezes_harc = false; }
+      if (session.aktív_fegyver_index === session.aktív_fegyver_bal_index) { session.aktív_fegyver_bal_index = -1; session.kétkezes_harc = false; }
+      return { ...prev, fegyverek, fortélyok, session };
     });
   }
   function updateFegyver(idx: number, patch: Partial<FegyverPeldany>) {
