@@ -11,7 +11,7 @@ leírások:
 megjegyzések: 
 - text: "Speciálisabb fajokhoz külön Szabad Fortély kell: Különleges faj boncolása."
 kiterjeszti: 
-  normál: ["Nyomozás", "Nekromancia", "Lexikum"]
+  normál: ["Nyomozás", "Arkánum: Nekromancia", "Lexikum"]
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0

@@ -109,7 +109,7 @@
     ]
   },
   {
-    "név": "Asztrálmágia",
+    "név": "Arkánum: Asztrálmágia",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -117,7 +117,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Aurahangolás",
+    "név": "Arkánum: Aurahangolás",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -125,7 +125,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Elemi mágia",
+    "név": "Arkánum: Elemi mágia",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -133,7 +133,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Életerő Manipulálása",
+    "név": "Arkánum: Életerő Manipulálása",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -141,7 +141,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Belső síkok lényeinek idézése",
+    "név": "Arkánum: Belső síkok lényeinek idézése",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -149,7 +149,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Külső síkok lényeinek idézése",
+    "név": "Arkánum: Külső síkok lényeinek idézése",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -157,7 +157,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Időmágia",
+    "név": "Arkánum: Időmágia",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -165,7 +165,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Illúziók",
+    "név": "Arkánum: Illúziók",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -173,7 +173,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Mentálmágia",
+    "név": "Arkánum: Mentálmágia",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -181,7 +181,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Metamágia",
+    "név": "Arkánum: Metamágia",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -189,7 +189,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Nekromancia",
+    "név": "Arkánum: Nekromancia",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -197,7 +197,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Sors befolyásolás",
+    "név": "Arkánum: Sors befolyásolás",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -205,7 +205,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Sors érzékelése",
+    "név": "Arkánum: Sors érzékelése",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -213,7 +213,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Térmágia",
+    "név": "Arkánum: Térmágia",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -221,7 +221,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Természetes anyagok mágiája",
+    "név": "Arkánum: Természetes anyagok mágiája",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
@@ -229,7 +229,7 @@
     "domináns_tulajdonságok": []
   },
   {
-    "név": "Természeti jelenségek",
+    "név": "Arkánum: Természeti jelenségek",
     "csoport": "misztikus",
     "primer": true,
     "többszörös": [],

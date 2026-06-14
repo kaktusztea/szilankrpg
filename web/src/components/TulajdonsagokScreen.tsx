@@ -136,6 +136,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
   function confirmPrompt() {
     if (!promptState || !promptValue.trim()) return;
     setKépzettségek(prev => [...prev, { név: `${promptState.alapNév}: ${promptValue.trim()}`, szint: 0 }]);
+    setPendingEditIdx(képzettségek.length);
     setPromptState(null);
   }
 
@@ -193,7 +194,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
         }
       }
     }
-    return options;
+    return options.sort((a, b) => a.value === '__tradicio' ? -1 : b.value === '__tradicio' ? 1 : 0);
   }
 
   function getKepzettsegekForCsoport(csoport: string): KepzettsegSlot[] {
