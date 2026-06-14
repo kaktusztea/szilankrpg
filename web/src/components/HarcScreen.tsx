@@ -268,7 +268,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   });
 
   // Kétkezes harc összevont kalkuláció
-  let kétkezesResult: typeof fegyverResults[0] | null = null;
+  let kétkezesResult: (typeof fegyverResults[0] & { sumPengehossz: number }) | null = null;
   if (session.kétkezes_harc && session.aktív_fegyver_bal_index >= 0) {
     const jobbIdx = session.aktív_fegyver_index;
     const balIdx = session.aktív_fegyver_bal_index;
@@ -334,6 +334,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
             fegyver_név: `${nagyobb.Alapnév || nagyobb.Fegyver} + ${kisebb.Alapnév || kisebb.Fegyver}`,
             TÉ, VÉ, SP, támadások, harckeret: hk, sebesség,
             pengehossz: Math.max(jobbPenge, balPenge),
+            sumPengehossz: sumPenge,
             sebzésmód: jobbDef['Sebzés módja'],
           };
         }
@@ -407,7 +408,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
               <td>{kétkezesResult.TÉ + téLevonás + taktikaMods['TÉ'] + (kétkezesResult.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
               <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
               <td>{kétkezesResult.SP + taktikaMods['SP']} {kétkezesResult.sebzésmód}</td>
-              <td>{kétkezesResult.pengehossz}</td>
+              <td>{kétkezesResult.pengehossz}({kétkezesResult.sumPengehossz})</td>
             </tr>
           )}
           {fegyverResults.map((r, i) => (
