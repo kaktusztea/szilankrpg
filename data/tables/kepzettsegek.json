@@ -11,8 +11,509 @@
     ]
   },
   {
+    "név": "Befolyásolás",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Érzékenység"
+    ]
+  },
+  {
+    "név": "Emberismeret",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Észlelés",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Fájdalomtűrés",
+    "csoport": "fizikai",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom"
+    ]
+  },
+  {
+    "név": "Hadászat",
+    "csoport": "tudományos",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Lopakodás/Rejtőzés",
+    "csoport": "alvilági",
+    "primer": true,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Önuralom"
+    ]
+  },
+  {
+    "név": "Méregkeverés",
+    "csoport": "tudományos",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Önuralom",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Nyomozás",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Emlékezet"
+    ]
+  },
+  {
+    "név": "Orvoslás",
+    "csoport": "tudományos",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ]
+  },
+  {
+    "név": "Asztrálmágia",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Aurahangolás",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Elemi mágia",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Életerő Manipulálása",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Belső síkok lényeinek idézése",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Külső síkok lényeinek idézése",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Időmágia",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Illúziók",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Mentálmágia",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Metamágia",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Nekromancia",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Sors befolyásolás",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Sors érzékelése",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Térmágia",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Természetes anyagok mágiája",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Természeti jelenségek",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Amund",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Anatyda",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Buzzgoblin",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Dzsenn",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Elar",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Elf",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Ember (déli)",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Ember (Északi)",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Ember (korg)",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Ember (Slan)",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Erdőpille",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Feenhar",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Gnóm",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Goblin",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Gyíklény",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Hómanó",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Homoki elf",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Khál",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Kineta",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Kobold",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Kyr",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Ork",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Sáskaharcos",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Törpe",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Tűzkobold",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Faj misztérium: Udvari ork",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nem dobható",
+    "domináns_tulajdonságok": []
+  },
+  {
     "név": "Alakzatharc",
     "csoport": "harci",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Harci láz",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Edzettség"
+    ]
+  },
+  {
+    "név": "Harcmodor",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [
+      "Közelharc",
+      "Kardvívás",
+      "Rombolás",
+      "Lándzsavívás",
+      "Ostorharc"
+    ],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Mágikus célzás",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Távolsági harcmodor",
+    "csoport": "harci",
+    "primer": true,
+    "többszörös": [
+      "Hajítás",
+      "Íjászat",
+      "Lövészet",
+      "Ostromlövészet",
+      "Mágikus célzás"
+    ],
+    "próba": "nincs",
+    "domináns_tulajdonságok": []
+  },
+  {
+    "név": "Ősi nyelv ismerete",
+    "csoport": "misztikus",
+    "primer": true,
+    "többszörös": [
+      "*"
+    ],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet"
+    ]
+  },
+  {
+    "név": "Tradíció",
+    "csoport": "misztikus",
     "primer": true,
     "többszörös": [],
     "próba": "nincs",
@@ -43,17 +544,6 @@
     ]
   },
   {
-    "név": "Befolyásolás",
-    "csoport": "világi",
-    "primer": true,
-    "többszörös": [],
-    "próba": "ellenpróba",
-    "domináns_tulajdonságok": [
-      "Intelligencia",
-      "Érzékenység"
-    ]
-  },
-  {
     "név": "Csapdaállítás",
     "csoport": "alvilági",
     "primer": false,
@@ -76,17 +566,6 @@
     ]
   },
   {
-    "név": "Emberismeret",
-    "csoport": "világi",
-    "primer": true,
-    "többszörös": [],
-    "próba": "ellenpróba",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia"
-    ]
-  },
-  {
     "név": "Értékbecslés",
     "csoport": "világi",
     "primer": false,
@@ -94,17 +573,6 @@
     "próba": "dobható",
     "domináns_tulajdonságok": [
       "Emlékezet",
-      "Intelligencia"
-    ]
-  },
-  {
-    "név": "Észlelés",
-    "csoport": "világi",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
       "Intelligencia"
     ]
   },
@@ -122,26 +590,6 @@
     ]
   },
   {
-    "név": "Fájdalomtűrés",
-    "csoport": "fizikai",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Önuralom"
-    ]
-  },
-  {
-    "név": "Hadászat",
-    "csoport": "tudományos",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Intelligencia"
-    ]
-  },
-  {
     "név": "Hajózás",
     "csoport": "világi",
     "primer": false,
@@ -153,31 +601,6 @@
       "Emlékezet",
       "Ügyesség"
     ]
-  },
-  {
-    "név": "Harci láz",
-    "csoport": "harci",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Önuralom",
-      "Edzettség"
-    ]
-  },
-  {
-    "név": "Harcmodor",
-    "csoport": "harci",
-    "primer": true,
-    "többszörös": [
-      "Közelharc",
-      "Kardvívás",
-      "Rombolás",
-      "Lándzsavívás",
-      "Ostorharc"
-    ],
-    "próba": "nincs",
-    "domináns_tulajdonságok": []
   },
   {
     "név": "Képzőművészet",
@@ -236,17 +659,6 @@
     ]
   },
   {
-    "név": "Lopakodás/Rejtőzés",
-    "csoport": "alvilági",
-    "primer": true,
-    "többszörös": [],
-    "próba": "ellenpróba",
-    "domináns_tulajdonságok": [
-      "Ügyesség",
-      "Önuralom"
-    ]
-  },
-  {
     "név": "Lopás",
     "csoport": "alvilági",
     "primer": false,
@@ -270,14 +682,6 @@
     ]
   },
   {
-    "név": "Mágikus célzás",
-    "csoport": "harci",
-    "primer": true,
-    "többszörös": [],
-    "próba": "nincs",
-    "domináns_tulajdonságok": []
-  },
-  {
     "név": "Mászás",
     "csoport": "fizikai",
     "primer": false,
@@ -286,18 +690,6 @@
     "domináns_tulajdonságok": [
       "Ügyesség",
       "Edzettség"
-    ]
-  },
-  {
-    "név": "Méregkeverés",
-    "csoport": "tudományos",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet",
-      "Önuralom",
-      "Intelligencia"
     ]
   },
   {
@@ -324,40 +716,6 @@
     ]
   },
   {
-    "név": "Nyomozás",
-    "csoport": "világi",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Intelligencia",
-      "Emlékezet"
-    ]
-  },
-  {
-    "név": "Orvoslás",
-    "csoport": "tudományos",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia"
-    ]
-  },
-  {
-    "név": "Ősi nyelv ismerete",
-    "csoport": "misztikus",
-    "primer": true,
-    "többszörös": [
-      "*"
-    ],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet"
-    ]
-  },
-  {
     "név": "Szerencsejáték",
     "csoport": "alvilági",
     "primer": false,
@@ -369,20 +727,6 @@
     ]
   },
   {
-    "név": "Távolsági harcmodor",
-    "csoport": "harci",
-    "primer": true,
-    "többszörös": [
-      "Hajítás",
-      "Íjászat",
-      "Lövészet",
-      "Ostromlövészet",
-      "Mágikus célzás"
-    ],
-    "próba": "nincs",
-    "domináns_tulajdonságok": []
-  },
-  {
     "név": "Természetjárás",
     "csoport": "világi",
     "primer": false,
@@ -392,14 +736,6 @@
       "Érzékenység",
       "Intelligencia"
     ]
-  },
-  {
-    "név": "Tradíció",
-    "csoport": "misztikus",
-    "primer": true,
-    "többszörös": [],
-    "próba": "nincs",
-    "domináns_tulajdonságok": []
   },
   {
     "név": "Vajákosság",

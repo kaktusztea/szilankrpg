@@ -35,28 +35,29 @@ def generate_konstansok():
 
 
 def generate_kepzettsegek():
-    """kepzettsegek/*.yaml → kepzettsegek.json"""
+    """kepzettsegek/**/*.yaml → kepzettsegek.json"""
     kdir = os.path.join(SOURCES_DIR, 'kepzettsegek')
     result = []
     errors = []
-    for f in sorted(os.listdir(kdir)):
-        if not f.endswith('.yaml'):
-            continue
-        data = load_yaml(os.path.join(kdir, f))
-        ctx = f"kepzettsegek/{f}"
-        if not data.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
-        if not data.get('csoport'): errors.append(f"{ctx}: hiányzó 'csoport'")
-        if not isinstance(data.get('primer', False), bool): errors.append(f"{ctx}: 'primer' nem boolean")
-        if not isinstance(data.get('többszörös', []), list): errors.append(f"{ctx}: 'többszörös' nem lista")
-        if data.get('próba', 'nincs') not in ('nincs', 'dobható', 'ellenpróba'): errors.append(f"{ctx}: 'próba' invalid: '{data.get('próba')}'")
-        result.append({
-            'név': data['név'],
-            'csoport': data['csoport'],
-            'primer': data.get('primer', False),
-            'többszörös': data.get('többszörös', []),
-            'próba': data.get('próba', 'nincs'),
-            'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
-        })
+    for root, dirs, files in os.walk(kdir):
+        for f in sorted(files):
+            if not f.endswith('.yaml'):
+                continue
+            data = load_yaml(os.path.join(root, f))
+            ctx = f"kepzettsegek/{os.path.relpath(os.path.join(root, f), kdir)}"
+            if not data.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+            if not data.get('csoport'): errors.append(f"{ctx}: hiányzó 'csoport'")
+            if not isinstance(data.get('primer', False), bool): errors.append(f"{ctx}: 'primer' nem boolean")
+            if not isinstance(data.get('többszörös', []), list): errors.append(f"{ctx}: 'többszörös' nem lista")
+            if data.get('próba', 'nincs') not in ('nincs', 'dobható', 'ellenpróba', 'nem dobható'): errors.append(f"{ctx}: 'próba' invalid: '{data.get('próba')}'")
+            result.append({
+                'név': data['név'],
+                'csoport': data['csoport'],
+                'primer': data.get('primer', False),
+                'többszörös': data.get('többszörös', []),
+                'próba': data.get('próba', 'nincs'),
+                'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
+            })
     if errors:
         print("  ❌ Képzettség validációs hibák:")
         for e in errors:
