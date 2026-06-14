@@ -97,7 +97,10 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
       return;
     }
     setFortélyok(prev => {
-      if (def && def.maxfok > 1) setPendingFortIdx(prev.length);
+      if (def && def.maxfok > 1) {
+        setPendingFortIdx(prev.length);
+        return [...prev, { név, fok: 0, spec_típus: '', spec_elem: '' }];
+      }
       return [...prev, { név, fok: 1, spec_típus: '', spec_elem: '' }];
     });
   }
@@ -109,7 +112,11 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
       setMultiPickerDef(null);
       return;
     }
-    setFortélyok(prev => [...prev, { név: multiPickerDef.név, fok: 1, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName }]);
+    const maxfok = multiPickerDef.maxfok;
+    setFortélyok(prev => {
+      if (maxfok > 1) setPendingFortIdx(prev.length);
+      return [...prev, { név: multiPickerDef.név, fok: maxfok > 1 ? 0 : 1, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName }];
+    });
     setMultiPickerDef(null);
   }
 
