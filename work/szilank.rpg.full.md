@@ -14501,14 +14501,9 @@ Távharcos harcmodorokra NEM alkalmazható.
 - Csatabárdokkal, buzogányokkal, kétkezes fegyverekkel a fortély nem alkalmazható.
 - A fortély által leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
 
-### Extra bónuszok
+### Minek követelménye
 
-- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver (lásd lenn) alkalmazásakor
-    - a **Harci anatómia** fortély minden foka: `2`-vel csökkenti a **Manőver Ellenpróba** Nehézséget.
-- [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor
-    - A **Harci anatómia** fortély minden foka `3`-mal csökkenti a **Visszafogott taktika** esetén kapott `TÉ` büntetést.
-- [Kínokozás](kinokozas.md) fortély
-    - Alkalmazásához követelmény a **Harci anatómia**, melynek egyes fokai egyre erősebb hatáshoz vezetnek.
+[Kínokozás](kinokozas.md) fortély alkalmazásához követelmény
 
 ---
 ### 1. fok
@@ -14517,8 +14512,9 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `SP:+2` (csak vértmentes ponton)
-- [Orvtámadás](../065_01_03_harci_poziciok.md#orvt%C3%A1mad%C3%A1s) harci helyzet esetén `SP:+2` (csak vértmentes ponton)
+- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+2 MP` bónusz **Ellenpróbánál**
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+2 MP` bónusz **Ellenpróbánál**
+- [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor `3`-mal csökken a **Visszafogott taktika** esetén kapott `TÉ` büntetés
 <br />
 
 ### 2. fok
@@ -14528,8 +14524,9 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `SP:+4` (csak vértmentes ponton)
-- [Orvtámadás](../065_01_03_harci_poziciok.md#orvt%C3%A1mad%C3%A1s) harci helyzet esetén `SP:+4` (csak vértmentes ponton)
+- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+4 MP` bónusz **Ellenpróbánál**
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+4 MP` bónusz **Ellenpróbánál**
+- [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor `6`-mal csökken a **Visszafogott taktika** esetén kapott `TÉ` büntetés
 <br />
 
 ### 3. fok
@@ -14539,8 +14536,10 @@ Távharcos harcmodorokra NEM alkalmazható.
 - [Élettan](../fortelyok.altalanos/elettan.md) fortély: `1.fok`
 
 🌟 **Hatás**:
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `SP:+6` (csak vértmentes ponton)
-- [Orvtámadás](../065_01_03_harci_poziciok.md#orvt%C3%A1mad%C3%A1s) harci helyzet esetén `SP:+6` (csak vértmentes ponton)
+- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver esetén: `+6 MP` bónusz **Ellenpróbánál**
+- [Leütés hátulról](../066_05_altalanos_manoverek.md#leütés-hátulról) Manőver esetén `+6 MP` bónusz **Ellenpróbánál**
+
+- [Visszafogott taktika](../065_02_harci_taktikak.md#visszafogott-taktika-) alkalmazásakor `9`-mal csökken a **Visszafogott taktika** esetén kapott `TÉ` büntetés
 - Ismer olyan kényes pontokat, amelyekkel béníthat, görcsöt vagy kábulatot okozhat, és az ilyen technikával okozott ugyanilyen hatásokat szüntethet meg.
 - Szemgolyót szedhet ki harc közben: Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) Manőver (**Nehézség** alacsonyabb:`10`) Puszta kézzel.
 
@@ -15201,22 +15200,31 @@ Bizonyos [manőverek](../066_00_manoverek.md) végbevitelének követelménye le
 ---
 ### 1. fok
 
-🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `6.szint`
 
-🌟 **Hatás**:
-- Orvtámadáskor `Előny+1` Sebzés dobásra
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver Ellenpróba: `+2` (nincs SFÉ)
+🌟 **Hatás**: Orvtámadáskor
+- `Előny+1` Sebzés dobásra
+- `+1 SP`
+
 <br />
 
 ### 2. fok
 
-🔒 **Követelmény**:
-- [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
+
+🌟 **Hatás**: Orvtámadáskor
+- `Előny+1` Sebzés dobásra
+- `+2 SP`
+
+<br />
+
+### 3. fok
+
+🔒 **Követelmény**: [Harcmodor](../kepzettsegek.primer.harci/harcmodor.md) - `9.szint`
 
 🌟 **Hatás**:
 - Orvtámadáskor `Előny+2` Sebzés dobásra
-- [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver Ellenpróba: `+4` (nincs SFÉ)
+- `+3 SP`
 
 ---
 
@@ -22290,7 +22298,7 @@ Előny+1 TÉ dobásra
 ---
 ## Orvtámadás
 
-Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud és egyáltalán nem képes rá reagálni.
+Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud (nem követelmény a hátulról támadás).
 
 ```
 Sikeres próba kell:
@@ -22298,30 +22306,21 @@ Sikeres próba kell:
 ```
 
 ```
-Áldozat VÉ: Közelharc, Puszta kézzel
+Áldozat: Közelharci VÉ (Puszta kézzel)
 
 Előny+2 Támadó dobásra
 
-Harci anatómia fortély
-  1.fok: +2 SP
-  2.fok: +4 SP
-  3.fok: +6 SP
-
 Orgyilkos fortély
-  1.fok:
-    Előny+1 Sebzés dobásra
-    Precíz támadás manőverre: +2 (nincs SFÉ)
-  2.fok:
-    Előny+2 Sebzés dobásra
-    Precíz támadás manőverre: +4 (nincs SFÉ)
+  1.fok: Előny+1 Sebzés dobásra, +1 SP
+  2.fok: Előny+1 Sebzés dobásra, +2 SP
+  3.fok: Előny+2 Sebzés dobásra, +3 SP
 ```
 
 → ❌ **Hátulról** és **Meglepetés** harci helyzetek **nem** adhatóak hozzá\
 → ❌ Egyéb `TÉ` bónusz nincs\
 → ❌ Harci taktikák NEM használhatóak
 
-→ ✅ [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver\
-→ ✅ [Harci anatómia](fortelyok.harci/harci_anatomia.md) fortély
+→ ✅ [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver (páncél elkerüléséhez)
 
 → [Orvtámadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás)\
 → **Orvtámadás** több Manőver követelménye: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról)
