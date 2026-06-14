@@ -117,7 +117,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
 | Narratív módosítók | input + dropdown + gomb | Szabad szöveg + Előny/Hátrány érték |
 | Fegyver jobb/bal | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" |
-| Kétkezes harc | field-btn toggle | Csak ha mindkét kézben fegyver, kézi be/kikapcsolás |
+| Kétkezes harc | field-btn toggle | Csak ha mindkét kézben fegyver ÉS összpenge ≤ 2.0. Pengelimit felett: disabled + piros "Nem". Fegyver dropdown-ok szűrik a túl nagy pengéjű opciókat. |
 | Pajzs kézben | field-btn toggle | Hatással a Harc fül VÉ-re (méret-függő lookup) |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 
@@ -353,7 +353,7 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 - Double-tap (350ms): fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
   - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se double-tap-re) — ehelyett "1 fok a maximum" hint (2s)
   - Mesterfegyver (locked): double-tap → "Ezt a fortélyt a Harcértékek fülön kezeld!" hint (3s)
-- Felvételkor (dropdown): maxfok>1 → azonnal fok popup; többszörös → megfelelő picker popup
+- Felvételkor (dropdown): maxfok>1 → azonnal fok popup (egyik sem pre-selected, fok: 0-val kerül be); többszörös → megfelelő picker popup
 - Locked fortélyok (konstansok.locked_fortélyok): NEM jelennek meg a dropdown-ban, nem szerkeszthetők/törölhetők, lista tetején
 - Mesterfegyver bejegyzések: szinkronizálva fegyver példányokból (Harcértékek fül)
 - ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb) — locked elemeknél nincs ✕

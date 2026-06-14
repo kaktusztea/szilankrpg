@@ -7,7 +7,7 @@
 ├── data/                      ← Adatfájlok
 │   ├── docs/                  ← Specifikációk, fejlesztői doksik
 │   │   ├── DEVSTATE.md        ← Fejlesztési állapot (ez a fájl)
-│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§25)
+│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§26)
 │   │   └── gui_spec.md        ← GUI spec (screen-ek, viselkedés, formázás)
 │   ├── sources/               ← YAML forrásadatok (amiből generálunk)
 │   │   ├── konstansok.yaml    ← Központi konstansok (forrás, JSON-ba generálódik)
@@ -78,7 +78,7 @@
 ## Elkészült
 - ✅ Adatmodell: 5 schema (fortely, kepzettseg, karakter, pancel, fegyver, faj)
 - ✅ Konstansok: teljes (KP, arányok, páncél, harcmodorok, mesterfegyver, kétkezes harc, merevvért, pajzs, aura, feltétel prefixek, fegyver_kategória_harcmodor, több_támadás_TÉ_levonás, locked_fortélyok)
-- ✅ Engine spec: 25 szekció (§1-§25), validálva a szabályrendszer + ODS ellen
+- ✅ Engine spec: 26 szekció (§1-§26), validálva a szabályrendszer + ODS ellen
 - ✅ Engine core: TypeScript implementáció, tesztelve 8.szintű karakter ellen (15/18 ✅, maradék 3 javítva)
 - ✅ GUI spec: 8 screen + 2 overlay leírás, formázás, viselkedés
 - ✅ Harc fül UI: KÉ/SFÉ/VÉ csökk/MP boxok, fegyvertábla, ÉP rubrika táblázat (sebesülés/gyógyulás/compaction/TÉ levonás)
@@ -123,6 +123,7 @@
     - `spec_típus` + `spec_lista: []` → freetext popup (max 20 kar)
     - Példányok neve: `"AlapNév - alnév"` formátum
   - Fok választó: kerek radio gombok (1..maxfok), aktív=zöld, maxfok=1 → "1 fok a maximum" hint (2s, warning szín)
+  - Felvételkor maxfok>1: fok: 0-val kerül be (nincs pre-selected), popup felugrik, mellé katt → 0.fokon marad
   - Ingyenes keret: `floor((TSz+1)/ingyenes_perszint)` db, 🎁 jel az ingyeseknél
   - KP logika: `kp_perfok` per fortély, base name lookup többszörös fortélyoknál
   - Törlés: mindig megerősítő dialógus (piros "Törlés" gomb)
@@ -205,6 +206,7 @@
     - méret_illeszkedés értékek: `passzol`, `nem passzol`, `borzalmas`
   - Mesterfegyver fortély szinkronizáció:
     - Fegyver MF fok módosítás → automatikusan létrehozza/frissíti a Mesterfegyver fortélyt
+    - Fegyver törlés → session aktív_fegyver_index/bal_index és kétkezes_harc reset
     - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején
     - Dupla katt locked elemre → hint: "Ezt a fortélyt a Harcértékek fülön kezeld!" (3s)
     - Mesterfegyver és Pajzshasználat NEM jelenik meg a Fortélyok fül dropdown-jában
@@ -355,8 +357,6 @@
 - Harci alakzat 🚧 (Alakzatharc kidolgozása szükséges)
   - kapcsolódó fortélyok bekötése
 - ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF)
-  - Fegyver harcértékek összeadódnak    -- még nem számszerűsített
-  - Mf: mindkét fegyveré számít         -- még nem számszerűsített
 
 - Harci akrobatika: boolean toggle (Aktív fülre) + TÉ/VÉ hatás + manőver bónusz bevezetése (fortély→manőver bónusz rendszer)
 - Belharc / Belharci szituáció — külön rendszer
