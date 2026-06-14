@@ -682,7 +682,7 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 | Támadó | TÉ:+1..+3, VÉ:-2..-6 | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
 | Védő | VÉ:+1..+4, TÉ:-2..-8 | Érintő, 1 tám | más |
 | Teljes Védekezés | VÉ:+6, nem támad, hátrál | — | más |
-| Visszafogott | TÉ:-3/-6/-9, sebzéskocka: k10/k6/— | Kezdeményező, Kiváró, 1 tám | más |
+| Visszafogott | TÉ:-3/-6/-9, Hátrány-1/-2/— sebzésdobás | Kezdeményező, Kiváró, 1 tám | más |
 | Tettetés | — (informatív) | — | más |
 
 note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.

@@ -14,7 +14,7 @@ megjegyzések:
   - text: ""
 
 kiterjeszti:
-  normál: ["Értékbecslés", "Kultúrkör", "Képzőművészet", "Művészetismeret", "Kultúrkör"]
+  normál: ["Értékbecslés", "Képzőművészet", "Művészetismeret"]
   erős: []
 
 kp_perfok: 6

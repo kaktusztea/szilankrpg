@@ -24,7 +24,7 @@ fokok:
   - fok: 1
     követelménytext: ""
     követelmények:
-      - név: "Lopakodás/rejtőzés"
+      - név: "Lopakodás/Rejtőzés"
         érték: 6
         típus: "képzettség"
     hatástext:

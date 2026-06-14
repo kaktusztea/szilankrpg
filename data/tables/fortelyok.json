@@ -1083,7 +1083,7 @@
         "követelmény": "",
         "követelmények": [
           {
-            "név": "Lopakodás/rejtőzés",
+            "név": "Lopakodás/Rejtőzés",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -5017,12 +5017,12 @@
       {
         "fok": 1,
         "hatás": [
-          "+2 bónusz csoportos Lopakodás/rejtőzés értékre."
+          "+2 bónusz csoportos Lopakodás/Rejtőzés értékre."
         ],
         "követelmény": "",
         "követelmények": [
           {
-            "név": "Lopakodás/rejtőzés",
+            "név": "Lopakodás/Rejtőzés",
             "érték": 6,
             "típus": "képzettség"
           }
@@ -5032,12 +5032,12 @@
       {
         "fok": 2,
         "hatás": [
-          "+4 bónusz csoportos Lopakodás/rejtőzés értékre."
+          "+4 bónusz csoportos Lopakodás/Rejtőzés értékre."
         ],
         "követelmény": "",
         "követelmények": [
           {
-            "név": "Lopakodás/rejtőzés",
+            "név": "Lopakodás/Rejtőzés",
             "érték": 9,
             "típus": "képzettség"
           }
@@ -5979,10 +5979,8 @@
     "leírás": "Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz vászonra színes műveket. Vagy passzív tudásként ...",
     "kiterjeszti_normál": [
       "Értékbecslés",
-      "Kultúrkör",
       "Képzőművészet",
-      "Művészetismeret",
-      "Kultúrkör"
+      "Művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6183,8 +6181,7 @@
     "leírás": "- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): Versek, novellák, regények, históriák, színdarabok í...",
     "kiterjeszti_normál": [
       "Előadóművészet",
-      "Művészetismeret",
-      "Kultúrkör"
+      "Művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6788,8 +6785,7 @@
     "többszörös_lista": [],
     "leírás": "- [Etikett](../kepzettsegek.szekunder/etikett.md): Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) egyedi ...",
     "kiterjeszti_normál": [
-      "Etikett",
-      "Kultúrkörök"
+      "Etikett"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6815,9 +6811,7 @@
     "leírás": "Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a színházi világot. Bábszínház előadások ismeret...",
     "kiterjeszti_normál": [
       "Előadóművészet",
-      "Kultúrkörnek",
-      "Művészetismeret",
-      "Kultúrkörnek"
+      "Művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6843,11 +6837,8 @@
     "leírás": "Holt anyagból faragsz, hívsz életre alakokat az örökkévalóságnak.",
     "kiterjeszti_normál": [
       "Értékbecslés",
-      "Kultúrkörnek",
       "Képzőművészet",
-      "Kultúrkörnek",
-      "Művészetismeret",
-      "Kultúrkörnek"
+      "Művészetismeret"
     ],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6900,7 +6891,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/rejtőzés",
+      "Lopakodás/Rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -6929,7 +6920,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/rejtőzés",
+      "Lopakodás/Rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -6958,7 +6949,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/rejtőzés",
+      "Lopakodás/Rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -6987,7 +6978,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/rejtőzés",
+      "Lopakodás/Rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -7016,7 +7007,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/rejtőzés",
+      "Lopakodás/Rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -7045,7 +7036,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/rejtőzés",
+      "Lopakodás/Rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -7074,7 +7065,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/rejtőzés",
+      "Lopakodás/Rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],
@@ -7103,7 +7094,7 @@
     "kiterjeszti_normál": [
       "Alkímia",
       "Lexikum",
-      "Lopakodás/rejtőzés",
+      "Lopakodás/Rejtőzés",
       "Természetjárás",
       "Vajákosság"
     ],

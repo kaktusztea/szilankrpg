@@ -24,20 +24,20 @@ fokok:
   - fok: 1
     követelménytext: ""
     követelmények:
-      - név: "Lopakodás/rejtőzés"
+      - név: "Lopakodás/Rejtőzés"
         érték: 6
         típus: "képzettség"
     hatástext:
-      - text: "+2 bónusz csoportos Lopakodás/rejtőzés értékre."
+      - text: "+2 bónusz csoportos Lopakodás/Rejtőzés értékre."
     módosítók: ""
   - fok: 2
     követelménytext: ""
     követelmények:
-      - név: "Lopakodás/rejtőzés"
+      - név: "Lopakodás/Rejtőzés"
         érték: 9
         típus: "képzettség"
     hatástext:
-      - text: "+4 bónusz csoportos Lopakodás/rejtőzés értékre."
+      - text: "+4 bónusz csoportos Lopakodás/Rejtőzés értékre."
     módosítók: ""
 
 todo:

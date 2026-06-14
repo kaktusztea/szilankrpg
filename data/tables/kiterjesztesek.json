@@ -587,20 +587,6 @@
       "típus": "normál"
     }
   ],
-  "Kultúrkör": [
-    {
-      "fortély": "Festészet",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Festészet",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Irodalom",
-      "típus": "normál"
-    }
-  ],
   "Lovaglás": [
     {
       "fortély": "Hátas (faj neve)",
@@ -610,34 +596,6 @@
   "Léglovaglás": [
     {
       "fortély": "Hátas (faj neve)",
-      "típus": "normál"
-    }
-  ],
-  "Kultúrkörök": [
-    {
-      "fortély": "Szertartás",
-      "típus": "normál"
-    }
-  ],
-  "Kultúrkörnek": [
-    {
-      "fortély": "Színjátszás",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Színjátszás",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Szobrászat",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Szobrászat",
-      "típus": "normál"
-    },
-    {
-      "fortély": "Szobrászat",
       "típus": "normál"
     }
   ],
@@ -675,7 +633,7 @@
       "típus": "normál"
     }
   ],
-  "Lopakodás/rejtőzés": [
+  "Lopakodás/Rejtőzés": [
     {
       "fortély": "Tájtípus - barlangi",
       "típus": "normál"

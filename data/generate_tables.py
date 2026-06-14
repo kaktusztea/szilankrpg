@@ -115,6 +115,27 @@ def generate_fortelyok():
         for e in errors:
             print(f"     {e}")
         raise SystemExit(1)
+    # Kiterjesztett képzettségek referenciális validáció
+    kep_dir = os.path.join(SOURCES_DIR, 'kepzettsegek')
+    valid_kep_nevek = set()
+    for root, dirs, files in os.walk(kep_dir):
+        for kf in files:
+            if kf.endswith('.yaml'):
+                kd = load_yaml(os.path.join(root, kf))
+                valid_kep_nevek.add(kd['név'])
+    kit_errors = []
+    for fort in result:
+        for kn in fort.get('kiterjeszti_normál', []):
+            if kn not in valid_kep_nevek:
+                kit_errors.append(f"{fort['név']}: kiterjeszti_normál ismeretlen képzettség: '{kn}'")
+        for ke in fort.get('kiterjeszti_erős', []):
+            if ke not in valid_kep_nevek:
+                kit_errors.append(f"{fort['név']}: kiterjeszti_erős ismeretlen képzettség: '{ke}'")
+    if kit_errors:
+        print("  ❌ Fortély kiterjesztés referenciális hibák:")
+        for e in kit_errors:
+            print(f"     {e}")
+        raise SystemExit(1)
     write_json('fortelyok.json', result)
 
 
