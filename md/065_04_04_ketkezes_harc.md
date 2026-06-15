@@ -14,6 +14,8 @@ Nagyobb fegyver
   Harcmodora számít
 ```
 
+❌ Hárítófegyverrel **nem** lehet Kétkezes harcot végezni.
+
 <br />
 
 ## SUM [Pengeméretek](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret)

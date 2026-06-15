@@ -153,8 +153,10 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
 
   // Fegyver dropdown: csoportosítva kategóriánként (MK 2K variánsok kiszűrve)
   const fegyverByKat = new Map<string, { id: string; label: string }[]>();
+  const felvettFegyverek = new Set(k.fegyverek.map(fp => fp.alap.toLowerCase()));
   for (const f of data.fegyverek) {
     if (f.MK_pár && f['Forgatás módja'] === 'kétkezes') continue; // skip 2K of MK pairs
+    if (felvettFegyverek.has(f.Fegyver.toLowerCase())) continue; // már felvéve
     const arr = fegyverByKat.get(f.Kategória) || [];
     arr.push({ id: f.Fegyver, label: f.Alapnév || f.Fegyver });
     fegyverByKat.set(f.Kategória, arr);

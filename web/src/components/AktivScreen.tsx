@@ -687,6 +687,13 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 if (opt.id === 'kétkezes') {
                   if (kétkezes_fegyver) disabled = true;
                   if (karakter.fegyverek.length < 2) disabled = true;
+                  // Nem lehet hárítófegyverrel kétkezes harcot végezni
+                  const nemHáritóFegyverek = karakter.fegyverek.filter((fp, i) => {
+                    if (i === jobbIdx) return false;
+                    const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+                    return def?.Hárító !== '1';
+                  });
+                  if (nemHáritóFegyverek.length === 0) disabled = true;
                 }
                 if (kétkezes_fegyver && opt.id !== 'egyfegyveres') disabled = true;
                 const active = session.fegyverfogás === opt.id;
@@ -713,6 +720,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                       setShowFegyverfogás(false);
                     }}>
                     <span className="manover-card-name">{opt.név}</span>
+                    {disabled && opt.id === 'fegyver_hárító' && <span style={{ fontSize: '11px', color: '#888' }}>Vegyél fel legalább 1 hárítófegyvert és a Hárítófegyver használat fortélyt.</span>}
                   </div>
                 );
               })}
@@ -768,11 +776,12 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               }}>
                 {fegyverOpciók.filter(f => {
                   if (f.idx === -1) return false;
+                  const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
+                  if (fDef?.Hárító === '1') return false;
                   if (session.aktív_fegyver_index === -1) return true;
                   const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
                   if (!jobbFp) return true;
                   const jobbDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase());
-                  const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
                   return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(jobbDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
                 }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
               </select>
