@@ -19,6 +19,8 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
   const [showSzituácioPicker, setShowSzituácioPicker] = useState(false);
   const [showStátuszPicker, setShowStátuszPicker] = useState(false);
   const [státuszFokválasztó, setStátuszFokválasztó] = useState<string | null>(null);
+  const [narrativPopup, setNarrativPopup] = useState(false);
+  const [narrativÉrték, setNarrativÉrték] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     if (!showManőverPicker && !showTaktikaPicker && !showHelyzetPicker && !showSzituácioPicker && !showStátuszPicker) return;
@@ -596,27 +598,37 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
       {/* Narratív módosítók */}
       <div className="aktiv-section">
         <span className="aktiv-label">Narratív módosítók</span>
-        <div className="narrativ-add-row">
-          <input className="narrativ-input" placeholder="Leírás..." id="narrativ-text" maxLength={40} />
-          <select className="narrativ-select" id="narrativ-ertek">
-            <option value="">—</option>
-            <option value="2">Előny+2</option>
-            <option value="1">Előny+1</option>
-            <option value="-1">Hátrány-1</option>
-            <option value="-2">Hátrány-2</option>
-          </select>
-          <button className="narrativ-add-btn" onClick={() => {
-            const textEl = document.getElementById('narrativ-text') as HTMLInputElement;
-            const valEl = document.getElementById('narrativ-ertek') as HTMLSelectElement;
-            const szöveg = textEl.value.trim();
-            if (!szöveg) return;
-            const érték = valEl.value ? parseInt(valEl.value) : undefined;
-            setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték }] }));
-            textEl.value = '';
-            valEl.value = '';
-          }}>+</button>
-        </div>
+        <button className="narrativ-add-btn" onClick={() => { setNarrativÉrték(undefined); setNarrativPopup(true); }}>+ Új</button>
       </div>
+      {narrativPopup && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if (e.target === e.currentTarget) setNarrativPopup(false); }}>
+          <div className="kep-prompt" style={{ gap: '12px', minWidth: '260px' }}>
+            <label style={{ fontWeight: 'bold' }}>Narratív módosító</label>
+            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              {[{ v: -2, l: 'Hátrány-2' }, { v: -1, l: 'Hátrány-1' }, { v: 1, l: 'Előny+1' }, { v: 2, l: 'Előny+2' }].map(b => {
+                const sel = narrativÉrték === b.v;
+                const color = b.v > 0 ? '#4caf50' : 'var(--accent)';
+                return (
+                  <button key={b.v} onClick={() => setNarrativÉrték(b.v)}
+                    style={{ padding: '8px 12px', borderRadius: '6px', border: `2px solid ${sel ? color : 'rgba(255,255,255,0.3)'}`, background: sel ? color : 'var(--surface)', color: sel ? '#fff' : 'var(--text)', fontWeight: 'bold', cursor: 'pointer' }}>
+                    {b.l}
+                  </button>
+                );
+              })}
+            </div>
+            <input className="narrativ-input" placeholder="Leírás..." id="narrativ-popup-text" maxLength={40} style={{ width: '100%' }} onKeyDown={e => { if (e.key === 'Enter' && narrativÉrték !== undefined) { const textEl = e.target as HTMLInputElement; const szöveg = textEl.value.trim(); if (!szöveg) return; setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték: narrativÉrték }] })); setNarrativPopup(false); setNarrativÉrték(undefined); } }} />
+            <button className="narrativ-add-btn" style={{ alignSelf: 'center', padding: '8px 24px' }} disabled={narrativÉrték === undefined} onClick={() => {
+              const textEl = document.getElementById('narrativ-popup-text') as HTMLInputElement;
+              const szöveg = textEl.value.trim();
+              if (!szöveg) return;
+              setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték: narrativÉrték }] }));
+              setNarrativPopup(false);
+              setNarrativÉrték(undefined);
+            }}>OK</button>
+          </div>
+        </div>,
+        document.body
+      )}
 
       {/* Fegyverek sor — alul */}
       <div className="aktiv-bottom-section">
