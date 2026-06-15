@@ -438,7 +438,9 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
             </tr>
           )}
           {!kétkezesResult && fogásResult && (() => {
-            const r = fegyverResults.find((_, i) => i === session.aktív_fegyver_index) ?? fegyverResults[0];
+            const jobbFp = k.fegyverek[session.aktív_fegyver_index];
+            const jobbNév = jobbFp ? (data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase())?.Fegyver ?? '') : '';
+            const r = fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? fegyverResults[0];
             if (!r) return null;
             return (
               <tr style={{ border: '2px solid #9c27b0' }}>
@@ -456,7 +458,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
               <td>{r.fegyver_név}</td>
               <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
               <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
-              <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + pajzsVÉ + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
+              <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + (fogásResult ? 0 : pajzsVÉ) + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
               <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
               <td>{r.pengehossz}</td>
             </tr>
