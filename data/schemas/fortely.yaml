@@ -4,6 +4,7 @@ schema_version: 1           # a fortely séma verziója
 név: ""
 névkomment: ""                # a név melletti opcionális kiegészítő szöveg
 maxfok: 0                     # [0;3] Legfeljebb hány foka lehet a fortélynak
+session_toggle: false         # opcionális, boolean (default: false) — Aktív fülön toggle gomb, harcérték módosítók csak ha aktív
 többszörösség:
   spec_típus: ""              # Pl: "fegyver", "alakzat". Üres = nem többszörös.
   spec_lista: ""              # Megengedett értékek. Pl: ["lovas ék", "testudo"]

@@ -179,8 +179,8 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     if (!fokDef?.módosítók) continue;
     for (const mod of fokDef.módosítók) {
       if (!feltételTeljesül(mod.feltétel)) continue;
-      // Harci akrobatika TÉ/VÉ: csak ha session toggle aktív
-      if (kf.név === 'Harci akrobatika' && (mod.cél === 'TÉ' || mod.cél === 'VÉ') && !session.harci_akrobatika) continue;
+      // session_toggle fortélyok: TÉ/VÉ módosítók csak ha az aktív
+      if (def.session_toggle && (mod.cél === 'TÉ' || mod.cél === 'VÉ') && !(session as unknown as Record<string, unknown>)[kf.név.toLowerCase().replace(/ /g, '_')]) continue;
       if (mod.mód === 'flat') {
         fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
       } else if (mod.mód === 'scaled' && mod.forrás) {
@@ -285,7 +285,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
         const sumPenge = jobbPenge + balPenge;
         const khFortély = k.fortélyok.find(f => f.név === 'Kétkezes harc');
         const khFok = khFortély?.fok ?? 0;
-        if (sumPenge <= 2.0) {
+        if (sumPenge <= data.konstansok.kétkezes_harc_max_pengeméret) {
           const nagyobb = jobbPenge >= balPenge ? jobbDef : balDef;
           const kisebb = jobbPenge >= balPenge ? balDef : jobbDef;
           const nagyobbFp = jobbPenge >= balPenge ? jobbFp : balFp;

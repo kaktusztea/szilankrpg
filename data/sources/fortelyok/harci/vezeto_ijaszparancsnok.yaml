@@ -2,6 +2,7 @@ schema_version: 1
 név: "Vezető: Íjászparancsnok"
 névkomment: ""
 maxfok: 2
+session_toggle: false
 többszörösség: 
   spec_típus: ""
   spec_lista: []

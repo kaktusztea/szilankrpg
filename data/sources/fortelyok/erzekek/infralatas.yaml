@@ -4,6 +4,7 @@ schema_version: 1
 név: "Infralátás"
 névkomment: ""
 maxfok: 2
+session_toggle: false
 többszörösség:
   spec_típus: ""
   spec_lista: []

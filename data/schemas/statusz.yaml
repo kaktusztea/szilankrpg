@@ -5,6 +5,8 @@
 státuszok:
   - név: ""                    # kötelező, string
     kategória: ""              # kötelező, enum: "fizikai" | "szellemi" | "harci" | "mágikus"
+    többszörös: false          # opcionális, boolean (default: false) — többször felvehető alkategóriánként
+    alkategóriák: []           # opcionális, string lista — ha többszörös, az almenü opciói
     fokok:                     # kötelező, lista (min 1 elem)
       - fok: 1                 # kötelező, number (1-N)
         alcím: ""              # kötelező, string (a fok elnevezése)

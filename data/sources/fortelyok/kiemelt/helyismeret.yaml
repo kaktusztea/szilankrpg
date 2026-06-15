@@ -4,6 +4,7 @@ schema_version: 1
 név: "Helyismeret"
 névkomment: ""
 maxfok: 1
+session_toggle: false
 többszörösség:
   spec_típus: "település"
   spec_lista: []

@@ -286,6 +286,8 @@ mesterfegyver_bónuszok:
 # Kétkezes harc bónuszai
 # ============================================================
 
+kétkezes_harc_max_pengeméret: 2.0
+
 kétkezes_harc_bónuszok:
   - fok: 0
     harckeret: 1

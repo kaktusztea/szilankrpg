@@ -102,6 +102,7 @@ def generate_fortelyok():
                 'név': data['név'],
                 'csoport': data.get('csoport', ''),
                 'maxfok': data.get('maxfok', 1),
+                'session_toggle': data.get('session_toggle', False),
                 'kp_perfok': data.get('kp_perfok', 6),
                 'ingyenes_perszint': data.get('ingyenes_perszint', 0),
                 'többszörös_típus': tobbszorosseg.get('spec_típus', '') if tobbszorosseg else '',
@@ -296,6 +297,11 @@ def generate_aktiv_ful():
     write_json('manoverek.json', manoverek)
     write_json('hatasok.json', hatasok)
     write_json('esemenyek.json', esemenyek)
+    # Statuszok: default mezők biztosítása
+    for s in statuszok:
+        s.setdefault('többszörös', False)
+        s.setdefault('alkategóriák', [])
+
     write_json('statuszok.json', statuszok)
     write_json('hatterek.json', hatterek)
 

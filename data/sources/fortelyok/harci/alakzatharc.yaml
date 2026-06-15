@@ -4,6 +4,7 @@ schema_version: 1
 név: "Alakzatharc"
 névkomment: spec.
 maxfok: 2
+session_toggle: false
 többszörösség:
   spec_típus: "harci alakzatok"
   spec_lista: ["lovas ék", "testudo"]

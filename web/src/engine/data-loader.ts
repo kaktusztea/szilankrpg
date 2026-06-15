@@ -24,6 +24,7 @@ interface KonstansokRaw {
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   fegyver_kategória_harcmodor: Record<string, string>;
   több_támadás_TÉ_levonás: number;
+  kétkezes_harc_max_pengeméret: number;
   locked_fortélyok: string[];
   egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];
   fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
@@ -81,6 +82,7 @@ export interface FortelySummary {
   név: string;
   csoport: string;
   maxfok: number;
+  session_toggle: boolean;
   kp_perfok: number;
   ingyenes_perszint: number;
   többszörös_típus: string;
@@ -169,6 +171,8 @@ export interface StatuszFok {
 export interface StatuszEntry {
   név: string;
   kategória: string;
+  többszörös?: boolean;
+  alkategóriák?: string[];
   fokok: StatuszFok[];
 }
 

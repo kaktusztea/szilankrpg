@@ -2,6 +2,7 @@
   {
     "név": "Belharci szituáció",
     "infó": "Rövid fegyverek előnye, hosszú fegyverek hátránya. Külön szabályrendszer.",
+    "hatások": [],
     "id": "belharci_szituáció",
     "feltétel_kulcs": "harci_helyzet:belharci_szituáció"
   },
@@ -176,6 +177,7 @@
   {
     "név": "Képzetlen fegyverhasználat",
     "infó": "Harcmodor 3.szint alatti: lásd Harcmodor képzettség büntetések.",
+    "hatások": [],
     "id": "képzetlen_fegyverhasználat",
     "feltétel_kulcs": "harci_helyzet:képzetlen_fegyverhasználat"
   },
@@ -205,6 +207,7 @@
   {
     "név": "Közrefogás",
     "infó": "+1 TÉ per extra támadó (max +4). Manőver Ellenpróba: legmagasabb MA számít.",
+    "hatások": [],
     "id": "közrefogás",
     "feltétel_kulcs": "harci_helyzet:közrefogás"
   },
@@ -238,6 +241,7 @@
   {
     "név": "Lények méret különbsége",
     "infó": "Méretkülönbség [0-6] fokozat. Kisebb lénynek TÉ bónusz, VÉ bónusz.",
+    "hatások": [],
     "id": "méret_különbség",
     "feltétel_kulcs": "harci_helyzet:méret_különbség"
   },
@@ -293,18 +297,21 @@
   {
     "név": "Pengeelőny",
     "infó": "VÉ:+1..+4 (per 0.5 penge különbség).",
+    "hatások": [],
     "id": "pengeelőny",
     "feltétel_kulcs": "harci_helyzet:pengeelőny"
   },
   {
     "név": "Pengehátrány",
     "infó": "VÉ:-1..-4 (per 0.5 penge különbség).",
+    "hatások": [],
     "id": "pengehátrány",
     "feltétel_kulcs": "harci_helyzet:pengehátrány"
   },
   {
     "név": "Pusztakezes harc",
     "infó": "Negatív fegyver harcértékek. Természetes fegyver fortély segít.",
+    "hatások": [],
     "id": "pusztakezes_harc",
     "feltétel_kulcs": "harci_helyzet:pusztakezes_harc"
   },
@@ -352,12 +359,14 @@
   {
     "név": "Vadállatok elleni harc",
     "infó": "Közelharc + Belharc harcmodor. Állat-specifikus.",
+    "hatások": [],
     "id": "vadállatok",
     "feltétel_kulcs": "harci_helyzet:vadállatok"
   },
   {
     "név": "Védekező takarásban",
     "infó": "VÉ:+10 (takarás mértékétől függ, KM dönt).",
+    "hatások": [],
     "id": "takarásban",
     "feltétel_kulcs": "harci_helyzet:takarásban"
   },

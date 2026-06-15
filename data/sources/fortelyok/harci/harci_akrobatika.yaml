@@ -2,6 +2,7 @@ schema_version: 1
 név: "Harci akrobatika"
 névkomment: ""
 maxfok: 2
+session_toggle: true
 többszörösség:
   spec_típus: ""
   spec_lista: []

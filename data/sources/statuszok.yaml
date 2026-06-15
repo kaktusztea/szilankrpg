@@ -1,6 +1,8 @@
 státuszok:
 - név: Áldott Tulajdonság
   kategória: mágikus
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Előny+1
@@ -18,6 +20,8 @@ státuszok:
       megjegyzés: adott Tulajdonságra, feltétel esetén
 - név: Átkozott Tulajdonság
   kategória: mágikus
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Hátrány-1
@@ -35,6 +39,8 @@ státuszok:
       megjegyzés: adott Tulajdonságra
 - név: Áldott Képzettség
   kategória: mágikus
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Előny+1
@@ -52,6 +58,8 @@ státuszok:
       megjegyzés: adott Képzettségre
 - név: Átkozott Képzettség
   kategória: mágikus
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Hátrány-1
@@ -69,6 +77,8 @@ státuszok:
       megjegyzés: adott Képzettségre
 - név: Átkozott Viselkedés
   kategória: szellemi
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Hátrány-1
@@ -86,6 +96,8 @@ státuszok:
       megjegyzés: KM határozza meg
 - név: Bénultság
   kategória: fizikai
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Cselekvőképtelenség
@@ -106,6 +118,8 @@ státuszok:
       cél: beszéd
 - név: Blokkolt
   kategória: fizikai
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Közepesen
@@ -127,6 +141,8 @@ státuszok:
       cél: mozgás
 - név: Eszmélet
   kategória: fizikai
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Bódultság
@@ -219,6 +235,8 @@ státuszok:
       megjegyzés: Antysson ragadsz
 - név: Érzékvesztés
   kategória: fizikai
+  többszörös: true
+  alkategóriák: ["Látás", "Hallás", "Szaglás", "Tapintás", "Ízlelés"]
   fokok:
   - fok: 1
     alcím: Zavart
@@ -240,6 +258,8 @@ státuszok:
       megjegyzés: automatikus kudarc
 - név: Félelem
   kategória: szellemi
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Szorongás
@@ -275,6 +295,8 @@ státuszok:
       cél: pszi
 - név: Fizikai
   kategória: fizikai
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Fáradtság
@@ -324,6 +346,8 @@ státuszok:
       megjegyzés: FP S2; Automatikus kudarc Harci akrobatika
 - név: Hangulat
   kategória: szellemi
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Fogékony
@@ -369,6 +393,8 @@ státuszok:
       megjegyzés: Automatikus kudarc (KM mondja meg mire)
 - név: Indulat
   kategória: szellemi
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Harag
@@ -396,6 +422,8 @@ státuszok:
       megjegyzés: automatikus kudarc
 - név: Késztetés
   kategória: szellemi
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Sugallat
@@ -419,6 +447,8 @@ státuszok:
       megjegyzés: Akaraterő próbára
 - név: Rosszullét
   kategória: fizikai
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Közepes
@@ -449,6 +479,8 @@ státuszok:
       cél: szociális_próba
 - név: Sérült
   kategória: fizikai
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: S3
@@ -488,6 +520,8 @@ státuszok:
       cél: varázslás
 - név: Szellemi
   kategória: szellemi
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Kialvatlanság
@@ -528,6 +562,8 @@ státuszok:
       cél: szociális_próba
 - név: Trauma
   kategória: szellemi
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Lélekrepedés
@@ -561,6 +597,8 @@ státuszok:
       megjegyzés: Önuralom/Érzékenység használatakor
 - név: Zavar
   kategória: fizikai
+  többszörös: false
+  alkategóriák: []
   fokok:
   - fok: 1
     alcím: Kizökkent

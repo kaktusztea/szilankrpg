@@ -4,6 +4,7 @@ schema_version: 1
 név: "Természetes fegyver"
 névkomment: ""
 maxfok: 1
+session_toggle: false
 többszörösség:
   spec_típus: ""
   spec_lista: []

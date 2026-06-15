@@ -2,6 +2,7 @@ schema_version: 1
 név: "Emberentúli hallás"
 névkomment: ""
 maxfok: 1
+session_toggle: false
 többszörösség: 
   spec_típus: ""
   spec_lista: []

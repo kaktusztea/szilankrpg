@@ -4,6 +4,7 @@ schema_version: 1
 név: "Tartós sérültség"
 névkomment: ""
 maxfok: 3
+session_toggle: false
 többszörösség:
   spec_típus: ""
   spec_lista: []

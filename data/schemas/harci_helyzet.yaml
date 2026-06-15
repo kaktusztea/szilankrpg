@@ -4,5 +4,6 @@
 
 harci_helyzetek:
   - név: ""                    # kötelező, string
-    feltétel_kulcs: ""         # kötelező, "harci_helyzet:xyz" formátum
+    id: ""                     # kötelező, string (feltétel_kulcs generáláshoz)
     infó: ""                   # kötelező, string (rövid hatás leírás)
+    hatások: []                # kötelező, lista (strukturált hatások, üres ha nem gépesített)

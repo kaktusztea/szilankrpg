@@ -4,6 +4,7 @@ schema_version: 1
 név: "Külső síkok lényeinek ismerete"
 névkomment: ""
 maxfok: 1
+session_toggle: false
 többszörösség:
   spec_típus: "lénycsoport"
   spec_lista: []

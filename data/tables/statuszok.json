@@ -2,6 +2,8 @@
   {
     "név": "Áldott Tulajdonság",
     "kategória": "mágikus",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -32,6 +34,8 @@
   {
     "név": "Átkozott Tulajdonság",
     "kategória": "mágikus",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -62,6 +66,8 @@
   {
     "név": "Áldott Képzettség",
     "kategória": "mágikus",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -92,6 +98,8 @@
   {
     "név": "Átkozott Képzettség",
     "kategória": "mágikus",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -122,6 +130,8 @@
   {
     "név": "Átkozott Viselkedés",
     "kategória": "szellemi",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -152,6 +162,8 @@
   {
     "név": "Bénultság",
     "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -191,6 +203,8 @@
   {
     "név": "Blokkolt",
     "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -229,6 +243,8 @@
   {
     "név": "Eszmélet",
     "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -396,6 +412,14 @@
   {
     "név": "Érzékvesztés",
     "kategória": "fizikai",
+    "többszörös": true,
+    "alkategóriák": [
+      "Látás",
+      "Hallás",
+      "Szaglás",
+      "Tapintás",
+      "Ízlelés"
+    ],
     "fokok": [
       {
         "fok": 1,
@@ -435,6 +459,8 @@
   {
     "név": "Félelem",
     "kategória": "szellemi",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -500,6 +526,8 @@
   {
     "név": "Fizikai",
     "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -585,6 +613,8 @@
   {
     "név": "Hangulat",
     "kategória": "szellemi",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -661,6 +691,8 @@
   {
     "név": "Indulat",
     "kategória": "szellemi",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -710,6 +742,8 @@
   {
     "név": "Késztetés",
     "kategória": "szellemi",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -751,6 +785,8 @@
   {
     "név": "Rosszullét",
     "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -804,6 +840,8 @@
   {
     "név": "Sérült",
     "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -875,6 +913,8 @@
   {
     "név": "Szellemi",
     "kategória": "szellemi",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -945,6 +985,8 @@
   {
     "név": "Trauma",
     "kategória": "szellemi",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,
@@ -999,6 +1041,8 @@
   {
     "név": "Zavar",
     "kategória": "fizikai",
+    "többszörös": false,
+    "alkategóriák": [],
     "fokok": [
       {
         "fok": 1,

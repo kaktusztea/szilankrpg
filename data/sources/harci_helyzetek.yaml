@@ -7,6 +7,7 @@
 harci_helyzetek: 
 - név: "Belharci szituáció"
   infó: "Rövid fegyverek előnye, hosszú fegyverek hátránya. Külön szabályrendszer."
+  hatások: []
   id: "belharci_szituáció"
 - név: "Beszorított helyzet"
   infó: "Ellenfél Előny+1 TÉ. Beszorított: Hátrány-1 KÉ/TÉ, 1 támadás elvesztés, mozgás feleződik."
@@ -104,6 +105,7 @@ harci_helyzetek:
   id: "helyhez_kötve"
 - név: "Képzetlen fegyverhasználat"
   infó: "Harcmodor 3.szint alatti: lásd Harcmodor képzettség büntetések."
+  hatások: []
   id: "képzetlen_fegyverhasználat"
 - név: "Készületlenség"
   infó: "= Meglepetés hatásai."
@@ -120,6 +122,7 @@ harci_helyzetek:
   id: "készületlenség"
 - név: "Közrefogás"
   infó: "+1 TÉ per extra támadó (max +4). Manőver Ellenpróba: legmagasabb MA számít."
+  hatások: []
   id: "közrefogás"
 - név: "Láthatatlanul"
   infó: "Hallható: Előny+1 TÉ, VÉ csökk fixen 2. Csendes: Előny+2 TÉ, VÉ csökk fixen 5."
@@ -138,6 +141,7 @@ harci_helyzetek:
   id: "levegőből"
 - név: "Lények méret különbsége"
   infó: "Méretkülönbség [0-6] fokozat. Kisebb lénynek TÉ bónusz, VÉ bónusz."
+  hatások: []
   id: "méret_különbség"
 - név: "Magasabbról"
   infó: "Előny+1 TÉ dobásra."
@@ -168,12 +172,15 @@ harci_helyzetek:
   id: "orvtámadás"
 - név: "Pengeelőny"
   infó: "VÉ:+1..+4 (per 0.5 penge különbség)."
+  hatások: []
   id: "pengeelőny"
 - név: "Pengehátrány"
   infó: "VÉ:-1..-4 (per 0.5 penge különbség)."
+  hatások: []
   id: "pengehátrány"
 - név: "Pusztakezes harc"
   infó: "Negatív fegyver harcértékek. Természetes fegyver fortély segít."
+  hatások: []
   id: "pusztakezes_harc"
 - név: "Rosszabbik kézben tartott fegyver"
   infó: "Hátrány-1 TÉ dobásra. Kétkezesség fortély kiküszöböli."
@@ -200,9 +207,11 @@ harci_helyzetek:
   id: "tűz_ruhán"
 - név: "Vadállatok elleni harc"
   infó: "Közelharc + Belharc harcmodor. Állat-specifikus."
+  hatások: []
   id: "vadállatok"
 - név: "Védekező takarásban"
   infó: "VÉ:+10 (takarás mértékétől függ, KM dönt)."
+  hatások: []
   id: "takarásban"
 - név: "Védő Érték kiterjesztése másra"
   infó: "Többszörös támadás elvesztés, VÉ veszteség duplázódik. Testőr fortély csökkenti."
