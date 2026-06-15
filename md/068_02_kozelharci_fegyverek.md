@@ -26,6 +26,8 @@ KF: Különleges fegyver
 | Béltépő                 | `2`  | `0`  |    `+1`     |   `6`    |     `S`      |    `0`     |    egykezes    |       `2`       |  `0`   | `2`  | `0` | `0`  | közelharci | Ha minimum `11` SP sebzést elérsz, akkor további `+5 SP` jár.<br />Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />Páncéltalan esetén `K6` dobás:  `1` és `2` esetén a fegyver elakad a testben, ha volt sebzés. |
 | Dzsambia                | `2`  | `2`  |    `+0`     |   `6`    |   `V`/`S`    |    `0`     |    egykezes    |       `0`       |  `0`   | `1`  | `0` | `0`  | közelharci |                                                                                                                                                                                                                                             |
 | Garott                  | `0`  | `0`  | `+8` / `+4` |    -     |     `V`      |    `-1`    |    kétkezes    |       `5`       |  `0`   | `0`  | `0` | `0`  | közelharci | Lásd lenn a leírást.                                                                                                                                                                                                                        |
+| Hárító: Alkarvédő       | `0`  | `2`  |     `-`     |   `99`   |     `-`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | közelharci | Csak ≤1 pengés fegyver ellen                                                                                                                                                                                                                |
+| Hárító: Tonfa           | `0`  | `2`  |    `-3`     |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | közelharci | Csak ≤1 pengés fegyver ellen                                                                                                                                                                                                                |
 | Kés                     | `1`  | `1`  |    `+0`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
 | Kriszkés                | `2`  | `1`  |  `+3`/`0`   |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | Páncél nélküli ellenfélnél, szúrás esetén `SP:+3`.<br />Páncélszúrásra nem használható.                                                                                                                                                     |
 | Levéltőr                | `2`  | `3`  |    `+1`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
@@ -69,14 +71,9 @@ Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_haszn
 
 Ha mindkét karon/kézben az alábbi fegyverek vannak, akkor is **csak** a fenti harcértékek az irányadóak, további bónusz **nem** jár.
 
-<!-- tag: md_table_fegyver_start -->
-
-| Fegyver            | TÉ  | VÉ  |  SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória  | Speciális |
-| ----------------- | :-: | :-: | :--: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :--------: | --------- |
-| Hárító: Alkarvédő | `0` | `2` | `-`  |   `99`   |     `-`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci | Csak ≤1 pengés fegyver ellen |
-| Hárító: Tonfa     | `0` | `2` | `-3` |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci | Csak ≤1 pengés fegyver ellen |
-
-<!-- tag: md_table_fegyver_end -->
+A fenti listában ez a két hárítófegyver szerepel:
+- Hárító: Alkarvédő
+- Hárító: Tonfa
 
 ---
 

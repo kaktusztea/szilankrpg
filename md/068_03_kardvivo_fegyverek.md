@@ -43,6 +43,8 @@ KF: Különleges fegyver
 | Sequor                 | `4` | `3` | `+4` |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `F9` | kardvívó  |                                                                                                                                                                                                                                                                                         |
 | Vívóbot                | `4` | `4` | `-5` |   `7`    |     `Z`      |    `1`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Fából készült gyakorlófegyver.                                                                                                                                                                                                                                                          |
 | Tőrkard                | `4` | `4` | `+2` |   `6`    |   `S`/`V`    |    `1`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Lásd a leírást.                                                                                                                                                                                                                                                                         |
+| Hárító: Csatakesztyű   | `0` | `2` | `-`  |   `99`   |     `-`      |    `0`     |    egykezes    |       `-`       |  `0`   | `0`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
+| Hárító: Köpeny         | `0` | `3` | `-`  |   `99`   |     `-`      |    `0`     |    egykezes    |       `-`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Legfeljebb 1 penge hosszú fegyverek ellen                                                                                                                                                                                                                                               |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -59,14 +61,9 @@ Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bí
 
 A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) szabályai szerint. Nem támadhatsz velük.
 
-<!-- tag: md_table_fegyver_start -->
-
-| Fegyver              | TÉ  | VÉ  | SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória | Speciális                                 |
-| -------------------- | :-: | :-: | :-: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :-------: | ----------------------------------------- |
-| Hárító: Csatakesztyű | `0` | `2` | `-` |   `99`   |     `-`      |    `0`     |    egykezes    |       `-`       |  `0`   | `0`  | `0` | `0` | kardvívó  |                                           |
-| Hárító: Köpeny       | `0` | `3` | `-` |   `99`   |     `-`      |    `0`     |    egykezes    |       `-`       |  `0`   | `0`  | `0` | `0` | kardvívó  | Legfeljebb 1 penge hosszú fegyverek ellen |
-
-<!-- tag: md_table_fegyver_end -->
+A fenti listában ez a két hárítófegyver szerepel:
+- Hárító: Csatakesztyű
+- Hárító: Köpeny
 
 ---
 
