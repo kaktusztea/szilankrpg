@@ -5059,7 +5059,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Érzék(látás) büntetés 1 fokot enyhül.",
+          "Érzék(látás) Tulajdonságpróba büntetés 1 fokot enyhül.",
           "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból."
         ],
         "követelmény": "",
@@ -5079,7 +5079,7 @@
       {
         "fok": 2,
         "hatás": [
-          "Érzék(látás) büntetés 2 fokot enyhül.",
+          "Érzék(látás) Tulajdonságpróba büntetés 2 fokot enyhül.",
           "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból + Támadó TÉ Előnyből."
         ],
         "követelmény": "",
@@ -5099,7 +5099,7 @@
       {
         "fok": 3,
         "hatás": [
-          "Érzék(látás) büntetés 3 fokot enyhül (auto-kudarc is megszűnik).",
+          "Érzék(látás) Tulajdonságpróba büntetés 3 fokot enyhül (auto-kudarc is megszűnik).",
           "Láthatatlan ellenfélnél: mindent megszüntet.",
           "Túlterhelt érzékek esetén is működik."
         ],
