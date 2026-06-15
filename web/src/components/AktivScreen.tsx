@@ -274,7 +274,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   if (entry.enyhít > 0) parts.push(`⬆${entry.enyhít} enyhítés`);
                   for (const sz of entry.szövegesek) { if (sz) parts.push(sz); }
                   if (parts.length === 0) return null;
-                  return <span key={cél} className={`hatas-pool-item ${entry.letilt ? 'negative' : entry.előnyHátrány < 0 ? 'negative' : entry.előnyHátrány > 0 ? 'positive' : ''}`}>{eseményNév(cél)}: {parts.join(', ')}</span>;
+                  return <span key={cél} className={`hatas-pool-item ${entry.letilt ? 'negative' : entry.előnyHátrány < 0 ? 'negative' : entry.előnyHátrány > 0 ? 'positive' : ''}`}>{parts.join(', ')}: {eseményNév(cél)}</span>;
                 })}
               </div>
             </div>
@@ -294,7 +294,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               <span className="hatas-pool-title">Előny / Hátrány</span>
               <div className="hatas-pool-items">
                 {előnyHátrányMods.map((eh, i) => (
-                  <span key={i} className={`hatas-pool-item ${eh.mód === 'előny' ? 'positive' : 'negative'}`}>{eh.mód === 'előny' ? 'Előny' : 'Hátrány'}+{eh.érték} {eh.cél.replace(/_/g, ' ')} ({eh.név})</span>
+                  <span key={i} className={`hatas-pool-item ${eh.mód === 'előny' ? 'positive' : 'negative'}`}>{eh.mód === 'előny' ? `Előny+${eh.érték}` : `Hátrány${eh.érték}`}: {eh.cél.replace(/_/g, ' ').replace(/^./, c => c.toUpperCase())} ({eh.név})</span>
                 ))}
               </div>
             </div>
