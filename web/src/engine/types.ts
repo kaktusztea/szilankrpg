@@ -96,6 +96,7 @@ export interface Session {
   aktív_manőver: string;
   aktív_státuszok: string[];
   narratív_módosítók: NarratívMódosító[];
+  harci_akrobatika: boolean;
 }
 
 export interface NarratívMódosító {
@@ -151,6 +152,7 @@ export const DEFAULT_SESSION: Session = {
   aktív_manőver: '',
   aktív_státuszok: [],
   narratív_módosítók: [],
+  harci_akrobatika: false,
 };
 
 // ============================================================

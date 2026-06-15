@@ -179,6 +179,8 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     if (!fokDef?.módosítók) continue;
     for (const mod of fokDef.módosítók) {
       if (!feltételTeljesül(mod.feltétel)) continue;
+      // Harci akrobatika TÉ/VÉ: csak ha session toggle aktív
+      if (kf.név === 'Harci akrobatika' && (mod.cél === 'TÉ' || mod.cél === 'VÉ') && !session.harci_akrobatika) continue;
       if (mod.mód === 'flat') {
         fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
       } else if (mod.mód === 'scaled' && mod.forrás) {

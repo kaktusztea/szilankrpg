@@ -19,12 +19,13 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
   const [showSzituácioPicker, setShowSzituácioPicker] = useState(false);
   const [showStátuszPicker, setShowStátuszPicker] = useState(false);
   const [státuszFokválasztó, setStátuszFokválasztó] = useState<string | null>(null);
+  const [érzékválasztó, setÉrzékválasztó] = useState<string | null>(null);
   const [narrativPopup, setNarrativPopup] = useState(false);
   const [narrativÉrték, setNarrativÉrték] = useState<number | undefined>(undefined);
 
   useEffect(() => {
     if (!showManőverPicker && !showTaktikaPicker && !showHelyzetPicker && !showSzituácioPicker && !showStátuszPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowManőverPicker(false); setShowTaktikaPicker(false); setTaktikaFokválasztó(null); setShowHelyzetPicker(false); setShowSzituácioPicker(false); setShowStátuszPicker(false); setStátuszFokválasztó(null); } }
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowManőverPicker(false); setShowTaktikaPicker(false); setTaktikaFokválasztó(null); setShowHelyzetPicker(false); setShowSzituácioPicker(false); setShowStátuszPicker(false); setStátuszFokválasztó(null); setÉrzékválasztó(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker, showSzituácioPicker, showStátuszPicker]);
@@ -141,11 +142,18 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
   for (const st of session.aktív_státuszok) {
     const match = st.match(/^(.+) \((\d+)\)$/);
     if (!match) continue;
-    const def = data.statuszok.find(s => s.név === match[1]);
+    const stNév = match[1];
+    const baseName = stNév.includes(': ') ? stNév.split(': ')[0] : stNév;
+    const subName = stNév.includes(': ') ? stNév.split(': ')[1] : '';
+    const def = data.statuszok.find(s => s.név === baseName);
     const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
     if (fokDef) {
       for (const h of fokDef.hatások) {
-        státuszHatások.push(h);
+        if (subName) {
+          státuszHatások.push({ ...h, cél: `${h.cél} (${subName.toLowerCase()})` });
+        } else {
+          státuszHatások.push(h);
+        }
       }
     }
   }
@@ -195,7 +203,11 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
     }
   }
 
-  const eseményNév = (id: string) => data.esemenyek.find(e => e.id === id)?.név ?? id;
+  const eseményNév = (id: string) => {
+    const m = id.match(/^(.+?)( \(.+\))$/);
+    if (m) { const base = data.esemenyek.find(e => e.id === m[1])?.név ?? m[1]; return base + m[2]; }
+    return data.esemenyek.find(e => e.id === id)?.név ?? id;
+  };
   const hasTaktikaMods = Object.values(taktikaMods).some(v => v !== 0);
   const hasHatásPool = hatásPool.size > 0;
 
@@ -482,7 +494,8 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
           const match = st.match(/^(.+) \((\d+)\)$/);
           const stNév = match?.[1] ?? st;
           const stFok = match ? parseInt(match[2]) : 1;
-          const def = data.statuszok.find(s => s.név === stNév);
+          const baseName = stNév.includes(': ') ? stNév.split(': ')[0] : stNév;
+          const def = data.statuszok.find(s => s.név === baseName);
           const maxFok = def?.fokok.length ?? 1;
           const alcím = def?.fokok.find(f => f.fok === stFok)?.alcím;
           return (
@@ -507,10 +520,10 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               <button className="aktiv-chip-x" onClick={() => { setShowStátuszPicker(false); setStátuszFokválasztó(null); }}>✕</button>
             </div>
             <div className="manover-picker-list">
-              {!státuszFokválasztó && ['fizikai', 'szellemi', 'mágikus']
+              {!státuszFokválasztó && !érzékválasztó && ['fizikai', 'szellemi', 'mágikus']
                 .map(kat => {
                   const items = data.statuszok
-                    .filter(s => s.kategória === kat && !session.aktív_státuszok.some(st => st.startsWith(s.név + ' (')))
+                    .filter(s => s.kategória === kat && (s.név === 'Érzékvesztés' || !session.aktív_státuszok.some(st => st.startsWith(s.név + ' ('))))
                     .sort((a, b) => a.név.localeCompare(b.név, 'hu'));
                   if (items.length === 0) return null;
                   return (
@@ -518,7 +531,9 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                       <div className="manover-category-label">{kat.charAt(0).toUpperCase() + kat.slice(1)}</div>
                       {items.map(s => (
                         <div key={s.név} className="manover-card" onClick={() => {
-                          if (s.fokok.length === 1) {
+                          if (s.név === 'Érzékvesztés') {
+                            setÉrzékválasztó(s.név);
+                          } else if (s.fokok.length === 1) {
                             setSession(prev => ({ ...prev, aktív_státuszok: [...prev.aktív_státuszok, `${s.név} (1)`] }));
                             setShowStátuszPicker(false);
                           } else {
@@ -533,8 +548,19 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   );
                 })
               }
+              {érzékválasztó && !státuszFokválasztó && (
+                <div>
+                  <div className="manover-category-label">Érzék kiválasztása</div>
+                  {['Látás', 'Hallás', 'Szaglás', 'Tapintás', 'Ízlelés'].map(é => (
+                    <div key={é} className="manover-card" onClick={() => { setStátuszFokválasztó(`${érzékválasztó}: ${é}`); setÉrzékválasztó(null); }}>
+                      <span className="manover-card-name">{é}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
               {státuszFokválasztó && (() => {
-                const def = data.statuszok.find(s => s.név === státuszFokválasztó);
+                const baseName = státuszFokválasztó.includes(': ') ? státuszFokválasztó.split(': ')[0] : státuszFokválasztó;
+                const def = data.statuszok.find(s => s.név === baseName);
                 if (!def) return null;
                 return def.fokok.map(f => (
                   <div key={f.fok} className="manover-card" onClick={() => {
@@ -652,23 +678,43 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
           </div>
           <div className="aktiv-field-btn">
             <span className="aktiv-field-label">Bal</span>
-            <select className="aktiv-field-select" value={session.aktív_fegyver_bal_index} onChange={e => {
-              const idx = parseInt(e.target.value);
-              setSession(s => ({ ...s, aktív_fegyver_bal_index: idx, kétkezes_harc: idx === -1 ? false : s.kétkezes_harc }));
-            }}>
-              {fegyverOpciók.filter(f => {
-                if (f.idx === -1) return true;
-                if (session.aktív_fegyver_index === -1) return true;
-                const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
-                if (!jobbFp) return true;
-                const jobbDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase());
-                const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
-                return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(jobbDef?.Pengehossz ?? '0') || 0) <= 2.0;
-              }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
-            </select>
+            {session.aktív_pajzs ? (
+              <select className="aktiv-field-select" disabled><option>Pajzs</option></select>
+            ) : (
+              <select className="aktiv-field-select" value={session.aktív_fegyver_bal_index} onChange={e => {
+                const val = e.target.value;
+                if (val === 'pajzs') {
+                  setSession(s => ({ ...s, aktív_pajzs: true, aktív_fegyver_bal_index: -1, kétkezes_harc: false }));
+                } else {
+                  const idx = parseInt(val);
+                  setSession(s => ({ ...s, aktív_fegyver_bal_index: idx, kétkezes_harc: idx === -1 ? false : s.kétkezes_harc }));
+                }
+              }}>
+                {fegyverOpciók.filter(f => {
+                  if (f.idx === -1) return true;
+                  if (session.aktív_fegyver_index === -1) return true;
+                  const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
+                  if (!jobbFp) return true;
+                  const jobbDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase());
+                  const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
+                  return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(jobbDef?.Pengehossz ?? '0') || 0) <= 2.0;
+                }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
+                {karakter.pajzs?.méret && <option value="pajzs">Pajzs</option>}
+              </select>
+            )}
           </div>
         </div>
         <div className="aktiv-fegyver-row">
+          {(() => {
+            const hasHA = karakter.fortélyok.some(f => f.név === 'Harci akrobatika' && f.fok > 0);
+            return (
+              <div className={`aktiv-field-btn aktiv-field-toggle ${session.harci_akrobatika && hasHA ? 'on' : ''} ${!hasHA ? 'disabled' : ''}`}
+                onClick={() => { if (hasHA) setSession(s => ({ ...s, harci_akrobatika: !s.harci_akrobatika })); }}>
+                <span className="aktiv-field-label">H. akrobatika</span>
+                <strong>{session.harci_akrobatika && hasHA ? 'Igen' : 'Nem'}</strong>
+              </div>
+            );
+          })()}
           {(() => {
             const hasBoth = session.aktív_fegyver_index !== -1 && session.aktív_fegyver_bal_index !== -1;
             let overLimit = false;
@@ -692,11 +738,17 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               </div>
             );
           })()}
-          <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_pajzs ? 'on' : ''}`}
-            onClick={() => setSession(s => ({ ...s, aktív_pajzs: !s.aktív_pajzs }))}>
-            <span className="aktiv-field-label">Pajzs kézben</span>
-            <strong>{session.aktív_pajzs ? 'Igen' : 'Nem'}</strong>
-          </div>
+          {(() => {
+            const bothHands = session.aktív_fegyver_index !== -1 && session.aktív_fegyver_bal_index !== -1;
+            if (bothHands && session.aktív_pajzs) setSession(s => ({ ...s, aktív_pajzs: false }));
+            return (
+              <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_pajzs && !bothHands ? 'on' : ''} ${bothHands ? 'disabled' : ''}`}
+                onClick={() => { if (!bothHands) setSession(s => ({ ...s, aktív_pajzs: !s.aktív_pajzs })); }}>
+                <span className="aktiv-field-label">Pajzs kézben</span>
+                <strong>{session.aktív_pajzs && !bothHands ? 'Igen' : 'Nem'}</strong>
+              </div>
+            );
+          })()}
           <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_páncél ? 'on' : ''}`}
             onClick={() => setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél }))}>
             <span className="aktiv-field-label">Páncél viselve</span>
