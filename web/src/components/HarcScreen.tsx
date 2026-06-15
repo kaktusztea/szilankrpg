@@ -242,7 +242,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       fegyver_alap_TÉ: parseInt(fDef.TÉ) || 0,
       fegyver_alap_VÉ: parseInt(fDef.VÉ) || 0,
       fegyver_alap_SP: parseInt(fDef.SP) || 0,
-      fegyver_erőbónusz_limit: parseInt(fDef['Erőbónusz limit']) || 99,
+      fegyver_erőbónusz_limit: fDef['Erőbónusz limit'] !== '' ? parseInt(fDef['Erőbónusz limit']) : 99,
       fegyver_sebesség: parseInt(fDef.Sebesség) || 6,
       fegyver_mf_TÉ: mf.TÉ,
       fegyver_mf_VÉ: mf.VÉ,
@@ -321,7 +321,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
             + k.HM_VÉ + (hb?.VÉ ?? 0) + alapVÉ + mfVÉ + fortelyMods['VÉ'];
 
           // SP: jobb kéz sebez
-          const erőbónusz = Math.min(k.tulajdonságok.erő, parseInt(jobbDef['Erőbónusz limit']) || 99);
+          const erőbónusz = Math.min(k.tulajdonságok.erő, jobbDef['Erőbónusz limit'] !== '' ? parseInt(jobbDef['Erőbónusz limit']) : 99);
           const SP = (parseInt(jobbDef.SP) || 0) + erőbónusz + mfSP + fortelyMods['SP'];
 
           // Harckeret: pengelevonás (fortély bónuszt a fortelyMods['harckeret'] már tartalmazza)
