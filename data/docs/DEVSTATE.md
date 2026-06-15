@@ -280,7 +280,7 @@
 - ✅ Aktív fül UI (AktivScreen.tsx) — teljes
   - Szilánk: fejléc sávba költözött (kattintásra értékválasztó popup 0-3)
   - Fegyver jobb/bal: inline field-btn dropdown, kétkezes harc toggle (csak ha mindkét kézben fegyver)
-  - Pajzs kézben / Páncél viselve: field-btn toggle-ök (hatással a Harc fül SFÉ-re és VÉ-re)
+  - Pajzs kézben / Páncél viselve: field-btn toggle-ök. Pajzs: disabled ha mindkét kézben fegyver. Bal kézben "Pajzs" opció.
   - Taktikák: overlay picker (ABC, fokozatos: 📶 jelzés, két lépéses fokválasztó), chip katt → fok módosító picker
   - Taktika chip: kétsoros (felül név+fok bold, alul módosítók szürkén pl. "TÉ:+2 VÉ:-4")
   - Taktika megkötések: harci_helyzet/tiltott, harcmodor/tiltott, támadások/min runtime validáció
@@ -290,7 +290,7 @@
   - Szituációk: overlay picker (név + infó, ABC)
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
   - Hatás pool box (felül, 6 szekció): Harcérték módosítók | Aktív Hatások | Manőver bónuszok | Előny/Hátrány | Fortély emlékeztetők | Narratív módosítók
-  - Narratív módosítók: szabad szöveg input + Előny/Hátrány választó + törlés
+  - Narratív módosítók: "+ Új" gomb → overlay popup (Hátrány/Előny gombok + szöveg + OK, Enter = OK)
   - Több támadás TÉ levonás: konstansokból (`több_támadás_TÉ_levonás`), generikusan (taktika +3 kioltja)
   - Minden picker: Escape + mellé katt bezárja
 - ✅ Hátterek fül (HatterekScreen.tsx)
@@ -358,7 +358,7 @@
   - kapcsolódó fortélyok bekötése
 - ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF)
 
-- Harci akrobatika: boolean toggle (Aktív fülre) + TÉ/VÉ hatás + manőver bónusz bevezetése (fortély→manőver bónusz rendszer)
+- ✅ Harci akrobatika: session_toggle (yaml `session_toggle: true`) + TÉ/VÉ bekötés + manőver bónusz
 - Belharc / Belharci szituáció — külön rendszer
 - Páros harc szituáció
 
@@ -428,6 +428,10 @@
 - Karakter mentés formátum: egyetlen `.json` fájl (karakter + session), NEM tartalmaz származtatott értékeket
 - Teszt karakter: `data/karakter/test_karakter.json` a single source of truth; runtime fetch
 - Validáló script: `web/validate_karakter.py` — ellenőrzi a test_karakter.json konzisztenciáját (yaml defs, KP, faj, session)
+- Strict schema: minden YAML source fájlban explicit megvan minden séma-mező (nincs implicit default, `generate_tables.py` setdefault csak biztonsági háló)
+- Session toggle fortélyok: yaml `session_toggle: true` → Aktív fülön generikus toggle gomb, HarcScreen csak aktív toggle-nél alkalmazza TÉ/VÉ módosítókat
+- Pengelimit: `konstansok.kétkezes_harc_max_pengeméret` (nincs hardcode 2.0)
+- Többszörös státuszok: yaml `többszörös: true` + `alkategóriák: [...]` → generikus alkategória almenü picker
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
 - Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek, taktikák, harci helyzetek, szituációk, manőverek, státuszok, hatások, események, hátterek)

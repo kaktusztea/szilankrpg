@@ -113,12 +113,13 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
 | Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend |
-| Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus |
+| Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. |
 | Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
-| Narratív módosítók | input + dropdown + gomb | Szabad szöveg + Előny/Hátrány érték |
-| Fegyver jobb/bal | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" |
-| Kétkezes harc | field-btn toggle | Csak ha mindkét kézben fegyver ÉS összpenge ≤ 2.0. Pengelimit felett: disabled + piros "Nem". Fegyver dropdown-ok szűrik a túl nagy pengéjű opciókat. |
-| Pajzs kézben | field-btn toggle | Hatással a Harc fül VÉ-re (méret-függő lookup) |
+| Narratív módosítók | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
+| Fegyver jobb/bal | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz". Bal: + "Pajzs" opció (ha van pajzs). Dropdown szűr pengelimit szerint. |
+| Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
+| Kétkezes harc | field-btn toggle | Csak ha mindkét kézben fegyver ÉS összpenge ≤ konstansok.kétkezes_harc_max_pengeméret. Pengelimit felett: disabled + piros "Nem". |
+| Pajzs kézben | field-btn toggle | Hatással a Harc fül VÉ-re. Disabled ha mindkét kézben fegyver. Bal kézből "Pajzs" választás = aktiválja. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 
 ### Taktika kombó szabályok
@@ -129,7 +130,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Hatás pool szekciók
 1. **Harcérték módosítók**: taktikák fix KÉ/TÉ/VÉ/SP összesítése
-2. **Aktív Hatások**: státuszok + harci helyzetek strukturált hatásai kumulálva (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít)
+2. **Aktív Hatások**: státuszok + harci helyzetek strukturált hatásai kumulálva (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít). Elemek külön sorban (flex-direction: column).
 3. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
 4. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes, pl. "Előny+1 sebzésdobás (Orgyilkos)")
 5. **Fortély emlékeztetők**: harci fortélyok narratív hatásszövegei (ha nincs gépi módosító)
@@ -700,7 +701,7 @@ Minden adat `fetchJson`-nel:
 ### Karakter state struktúra (App szintjén)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
 - Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
-- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_szituációk`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`
+- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_szituációk`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
 - Derived getterek (early return utáni destructuring): `tulajdonságok`, `képzettségek`, `fortélyok`, `session`
