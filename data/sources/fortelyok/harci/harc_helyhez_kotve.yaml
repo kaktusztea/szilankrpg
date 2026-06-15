@@ -3,6 +3,7 @@ név: "Harc helyhez kötve"
 névkomment: ""
 maxfok: 2
 session_toggle: false
+emlékeztető: true
 többszörösség: 
   spec_típus: ""
   spec_lista: []

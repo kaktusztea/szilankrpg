@@ -3,6 +3,7 @@ név: "Alkalmatlan fegyver hajítása"
 névkomment: ""
 maxfok: 2
 session_toggle: false
+emlékeztető: true
 többszörösség: 
   spec_típus: "fegyver"
   spec_lista: []

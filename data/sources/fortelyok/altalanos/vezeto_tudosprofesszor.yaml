@@ -3,6 +3,7 @@ név: "Vezető: Tudósprofesszor"
 névkomment: ""
 maxfok: 2
 session_toggle: false
+emlékeztető: false
 többszörösség: 
   spec_típus: ""
   spec_lista: []

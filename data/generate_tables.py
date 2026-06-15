@@ -103,6 +103,7 @@ def generate_fortelyok():
                 'csoport': data.get('csoport', ''),
                 'maxfok': data.get('maxfok', 1),
                 'session_toggle': data.get('session_toggle', False),
+                'emlékeztető': data.get('emlékeztető', False),
                 'kp_perfok': data.get('kp_perfok', 6),
                 'ingyenes_perszint': data.get('ingyenes_perszint', 0),
                 'többszörös_típus': tobbszorosseg.get('spec_típus', '') if tobbszorosseg else '',

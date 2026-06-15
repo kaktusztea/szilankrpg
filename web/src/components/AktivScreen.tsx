@@ -239,7 +239,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         }
       }
     }
-    if (!hasMods && fokDef.hatás && fokDef.hatás.length > 0) {
+    if (def.emlékeztető && fokDef.hatás && fokDef.hatás.length > 0) {
       fortélyEmlékeztetők.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' ') });
     }
   }
@@ -347,7 +347,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             </div>
           );
         })}
-        <button className="aktiv-add-btn" onClick={() => setShowTaktikaPicker(true)}>+ Taktika...</button>
+        <button className="aktiv-add-btn" disabled={data.taktikak.every(t => session.aktív_taktikák.some(a => a.név === t.név) || !isTaktikaAllowed(t.név))} onClick={() => setShowTaktikaPicker(true)}>+ Taktika...</button>
       </div>
 
       {showTaktikaPicker && createPortal(
@@ -464,7 +464,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }))}>✕</button>
           </div>
         ))}
-        <button className="aktiv-add-btn" onClick={() => setShowHelyzetPicker(true)}>+ Helyzet...</button>
+        <button className="aktiv-add-btn" disabled={data.harciHelyzetek.every(h => session.aktív_helyzetek.includes(h.név))} onClick={() => setShowHelyzetPicker(true)}>+ Helyzet...</button>
       </div>
 
       {showHelyzetPicker && createPortal(
@@ -509,7 +509,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             </div>
           );
         })}
-        <button className="aktiv-add-btn" onClick={() => setShowStátuszPicker(true)}>+ Státusz...</button>
+        <button className="aktiv-add-btn" disabled={data.statuszok.every(s => s.többszörös || session.aktív_státuszok.some(st => st.startsWith(s.név + ' (')))} onClick={() => setShowStátuszPicker(true)}>+ Státusz...</button>
       </div>
 
       {showStátuszPicker && createPortal(
@@ -602,7 +602,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_szituációk: s.aktív_szituációk.filter((_, j) => j !== i) }))}>✕</button>
           </div>
         ))}
-        <button className="aktiv-add-btn" onClick={() => setShowSzituácioPicker(true)}>+ Szituáció...</button>
+        <button className="aktiv-add-btn" disabled={data.szituaciok.every(s2 => session.aktív_szituációk.includes(s2.név))} onClick={() => setShowSzituácioPicker(true)}>+ Szituáció...</button>
       </div>
 
       {showSzituácioPicker && createPortal(

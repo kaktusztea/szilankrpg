@@ -3,6 +3,7 @@ név: "Harci akrobatika"
 névkomment: ""
 maxfok: 2
 session_toggle: true
+emlékeztető: true
 többszörösség:
   spec_típus: ""
   spec_lista: []

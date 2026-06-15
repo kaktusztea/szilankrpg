@@ -83,6 +83,7 @@ export interface FortelySummary {
   csoport: string;
   maxfok: number;
   session_toggle: boolean;
+  emlékeztető: boolean;
   kp_perfok: number;
   ingyenes_perszint: number;
   többszörös_típus: string;

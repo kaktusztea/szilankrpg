@@ -5,6 +5,7 @@ név: "Körkörös harc"
 névkomment: ""
 maxfok: 1
 session_toggle: false
+emlékeztető: true
 többszörösség:
   spec_típus: ""
   spec_lista: []

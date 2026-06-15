@@ -3,6 +3,7 @@ név: "Vakharc"
 névkomment: ""
 maxfok: 3
 session_toggle: false
+emlékeztető: true
 többszörösség:
   spec_típus: ""
   spec_lista: []

@@ -5,6 +5,7 @@ név: "Különleges faj boncolása (faj neve)"
 névkomment: ""
 maxfok: 1
 session_toggle: false
+emlékeztető: false
 többszörösség:
   spec_típus: ""
   spec_lista: []

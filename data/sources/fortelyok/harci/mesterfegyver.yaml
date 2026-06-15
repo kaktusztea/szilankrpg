@@ -3,6 +3,7 @@ név: "Mesterfegyver"
 névkomment: ""
 maxfok: 3
 session_toggle: false
+emlékeztető: false
 többszörösség: 
   spec_típus: "fegyver"
   spec_lista: []

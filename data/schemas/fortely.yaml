@@ -5,6 +5,7 @@ név: ""
 névkomment: ""                # a név melletti opcionális kiegészítő szöveg
 maxfok: 0                     # [0;3] Legfeljebb hány foka lehet a fortélynak
 session_toggle: false         # opcionális, boolean (default: false) — Aktív fülön toggle gomb, harcérték módosítók csak ha aktív
+emlékeztető: false            # kötelező, boolean — Aktív fül Hatás pool "Fortély emlékeztetők" szekcióban megjelenik-e
 többszörösség:
   spec_típus: ""              # Pl: "fegyver", "alakzat". Üres = nem többszörös.
   spec_lista: ""              # Megengedett értékek. Pl: ["lovas ék", "testudo"]
