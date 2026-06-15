@@ -240,7 +240,7 @@ input:  fegyver.SP, mesterfegyver_fok (adott fegyverre),
 source: konstansok.yaml → mesterfegyver_bónuszok
 
 formula:  // ismételve minden egyes fegyverre
-  erőbónusz = MIN(erő, fegyver.erőbónusz_limit)  // negatív erő is számít, limit csak pozitívra
+  erőbónusz = MIN(erő, fegyver.erőbónusz_limit)  // limit=0 → nincs erőbónusz; üres/"" → limit=99 (korlátlan)
   SP_mesterfegyver = lookup(mesterfegyver_fok → mesterfegyver_bónuszok).SP
   SP_fortély = SUM( fortély_módosítók(cél="SP", feltétel="") )
 
@@ -1280,7 +1280,7 @@ Egyfegyveres:
 
 Fegyver + pajzs:
   Már implementálva (§13): pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő).
-  A pajzsVÉ a fegyver VÉ-jéhez adódik.
+  A pajzsVÉ CSAK a lila összesítő sorban jelenik meg (normál sorokból kiszűrve).
 
 Fegyver + hárítófegyver (RÉSZBEN IMPLEMENTÁLVA):
   hárítóVÉ = hárítófegyver.VÉ (fegyverek.json Hárító flag, ha van "Hárítófegyver használat" fortély, else 0)

@@ -286,7 +286,7 @@
   - Taktika chip: kétsoros (felül név+fok bold, alul módosítók szürkén pl. "TÉ:+2 VÉ:-4")
   - Taktika megkötések: harci_helyzet/tiltott, harcmodor/tiltott, támadások/min runtime validáció
   - Manőver: overlay picker (Általános/Belharci kategóriák, nehézség+fázisok+hatás), infó a box-ban (Nehézség+fázisok | hatás)
-  - Szekció sorrend: Taktikák → Manőver → Harci helyzetek → Státuszok → Szituációk → Narratív módosítók
+  - Szekció sorrend: Fegyver+Fogás (felül) → Hatás pool → Taktikák → Manőver → Harci helyzetek → Státuszok → Szituációk → Narratív módosítók
   - Harci helyzetek: overlay picker (név + infó, ABC)
   - Szituációk: overlay picker (név + infó, ABC)
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
@@ -386,7 +386,7 @@
 - Távharc fortélyok yaml elkészítése
 
 ### Harc fül
-- ✅ Kétkezes harc aktív: összevont sor lila kerettel, normál sorok elhalványítva
+- ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: lila összesítő sor (kétkezes/pajzs/hárító).
 - Lovas harc
 
 ## Új chat nyitásakor olvasd be ezeket
@@ -436,6 +436,7 @@
 - Többszörös státuszok: yaml `többszörös: true` + `alkategóriák: [...]` → generikus alkategória almenü picker
 - Fegyverfogás: `session.fegyverfogás` explicit mező (enum: egyfegyveres/fegyver_pajzs/fegyver_hárító/kétkezes), opciók `konstansok.fegyverfogás_opciók`-ból
 - Fegyver `Hárító` flag: `fegyverek.json`-ban `"1"/"0"` (process_fegyverek.py generálja: név prefix "Hárító:" / ", hárító" / Speciális "Hárítófegyverként")
+- Fegyver `Erőbónusz limit`: `"0"` = nincs erőbónusz, `"99"` = korlátlan. Kód: `parseInt(érték)` ha nem üres, else 99 (üres/NaN nem fordul elő strict schema-val).
 - Fortély `emlékeztető` flag: yaml `emlékeztető: true/false` → AktivScreen Hatás pool "Fortély emlékeztetők" szekció (19 fortélynál true)
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re

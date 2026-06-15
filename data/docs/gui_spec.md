@@ -109,18 +109,18 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 | Elem | Típus | Leírás |
 |------|-------|--------|
-| Hatás pool box | info szekció (felül) | 6 alszekció: Harcérték módosítók, Aktív Hatások, Manőver bónuszok, Előny/Hátrány, Fortély emlékeztetők, Narratív módosítók |
+| Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz". Mindig látható. |
+| Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
+| Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
+| Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Kiváltja a korábbi "2 kezes harc" és "Pajzs kézben" toggle-öket. |
+| Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
+| Hatás pool box | info szekció | 6 alszekció: Harcérték módosítók, Aktív Hatások, Manőver bónuszok, Előny/Hátrány, Fortély emlékeztetők, Narratív módosítók |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
 | Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend |
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. |
 | Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
 | Narratív módosítók | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
-| Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz". Mindig látható. |
-| Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
-| Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
-| Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Kiváltja a korábbi "2 kezes harc" és "Pajzs kézben" toggle-öket. |
-| Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 
 ### Taktika kombó szabályok
 - Picker csak a kompatibilis taktikákat kínálja (whitelist/blacklist + megkötések szűrés)
@@ -192,8 +192,9 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
   - Fegyverfogás ≠ Egyfegyveres: összesítő sor felül (lila/purple keret `#9c27b0`), normál sorok halványítva (opacity: 0.4)
     - Kétkezes: összevont harcértékek (§26)
-    - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz, név: "Fegyver + Pajzs"
+    - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz, név: "Fegyver + Pajzs". PajzsVÉ csak a lila sorban (normálból kiszűrve).
     - Fegyver+hárító: jobb kéz fegyver + hárítóVÉ bónusz, név: "Fegyver + Hárító: X"
+  - Egyfegyveres: csak az Ügyesebb kézben kiválasztott fegyver sora normál, többi halványítva (opacity: 0.4)
   - Tám cella kattintható (Game mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)

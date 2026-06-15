@@ -312,23 +312,25 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
             mfTÉ = mfN.TÉ; mfVÉ = mfN.VÉ; mfSP = mfN.SP;
           }
 
+          // Kétkezes harc fok-bónuszok: 0.fok konstansokból (nincs fortély), fok>=1 yaml fortélyból jön (fortelyMods-ban)
+          const khBónusz = konstansok.kétkezes_harc_bónuszok;
+          const khFokBónusz = khFok === 0 ? (khBónusz?.find(b => b.fok === 0) ?? { harckeret: 0, TÉ: 0, VÉ: 0 }) : { harckeret: 0, TÉ: 0, VÉ: 0 };
+
           // TÉ/VÉ
           const alapTÉ = (parseInt(nagyobb.TÉ) || 0) + (khFok >= 1 ? (parseInt(kisebb.TÉ) || 0) : 0);
           const alapVÉ = (parseInt(nagyobb.VÉ) || 0) + (khFok >= 1 ? (parseInt(kisebb.VÉ) || 0) : 0);
           const TÉ = konstansok.harcérték_alap.TÉ + k.tulajdonságok.erő + k.tulajdonságok.ügyesség + k.tulajdonságok.gyorsaság
-            + k.HM_TÉ + (hb?.TÉ ?? 0) + alapTÉ + mfTÉ + fortelyMods['TÉ'];
+            + k.HM_TÉ + (hb?.TÉ ?? 0) + alapTÉ + mfTÉ + fortelyMods['TÉ'] + khFokBónusz.TÉ;
           const VÉ = konstansok.harcérték_alap.VÉ + k.tulajdonságok.gyorsaság + k.tulajdonságok.ügyesség
-            + k.HM_VÉ + (hb?.VÉ ?? 0) + alapVÉ + mfVÉ + fortelyMods['VÉ'];
+            + k.HM_VÉ + (hb?.VÉ ?? 0) + alapVÉ + mfVÉ + fortelyMods['VÉ'] + khFokBónusz.VÉ;
 
           // SP: jobb kéz sebez
           const erőbónusz = Math.min(k.tulajdonságok.erő, jobbDef['Erőbónusz limit'] !== '' ? parseInt(jobbDef['Erőbónusz limit']) : 99);
           const SP = (parseInt(jobbDef.SP) || 0) + erőbónusz + mfSP + fortelyMods['SP'];
 
-          // Harckeret: pengelevonás (fortély bónuszt a fortelyMods['harckeret'] már tartalmazza)
+          // Harckeret: pengelevonás + konstans fok bónusz
           const pengelevonás = Math.floor(sumPenge / 0.5);
-          // Harckeret: fortélyMods['harckeret'] tartalmazza a kétkezes harc + kétkezesség bónuszokat (feltételes yaml-ból)
-          // Használjuk a reactive engine harckeret formuláját + kétkezes bónuszt
-          const hk = Math.max(0, harcmodorSzint + k.tulajdonságok.gyorsaság + fortelyMods['harckeret'] - pengelevonás);
+          const hk = Math.max(0, harcmodorSzint + k.tulajdonságok.gyorsaság + fortelyMods['harckeret'] + khFokBónusz.harckeret - pengelevonás);
           const sebesség = parseInt(nagyobb.Sebesség) || 6;
           const támadások = 1 + Math.floor(hk / sebesség);
 
