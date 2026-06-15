@@ -1146,7 +1146,7 @@ A **nagyobb fegyver** harcmodora számít (képzettség szint lookup).
 
 | Kétkezes harc fok | TÉ/VÉ | Mesterfegyver | Megjegyzés |
 |---|---|---|---|
-| Alapeset (0. fok) | Csak nagyobb fegyver értékei. Kisebb=0. Hátrány-1 TÉ dobásra | Nem számít | Harckeret: +1 |
+| Alapeset (0. fok) | Csak nagyobb fegyver értékei. Kisebb=0. TÉ/VÉ: konstansok.kétkezes_harc_bónuszok[0] (-3/-3) | Nem számít | Harckeret: +1 |
 | 1. fok | Mindkét fegyver TÉ/VÉ összeadódik | Nem számít | Harckeret: +2 |
 | 2. fok | Mindkét fegyver TÉ/VÉ összeadódik | Csak nagyobb fegyveré | Harckeret: +3 |
 | 3. fok | Mindkét fegyver TÉ/VÉ összeadódik | Mindkettőé | Harckeret: +4 |
@@ -1165,21 +1165,26 @@ Pengehossz értékek: fegyverek.json Pengehossz mező (0, 0.5, 1, 1.5, 2 egység
 ```
 input: Kétkezes harc fok, Kétkezesség fortély, fegyverek pengehossza (0.5 egységben)
 formula:
-  // Fortély bónusz
-  kh_bónusz = Kétkezes_harc_fok + 1  // 0.fok: +1, 1.fok: +2, 2.fok: +3, 3.fok: +4
-  if Kétkezesség fortély ÉS Kétkezes harc ≥ 1.fok:
-    kh_bónusz += 1
+  // Harckeret bónusz forrása:
+  //   0. fok (nincs fortély): konstansok.kétkezes_harc_bónuszok[0].harckeret (= +1)
+  //   1-3. fok: fortély yaml módosítók (feltételes, kétkezes_harc==true) → fortelyMods['harckeret']
+  //   Kétkezesség: +1 (fortély yaml, feltételes)
+
+  if fok == 0:
+    kh_harckeret_bónusz = konstansok.kétkezes_harc_bónuszok[0].harckeret  // +1
+  else:
+    kh_harckeret_bónusz = 0  // fortélyMods['harckeret']-ben már benne van
 
   // Pengelevonás: a két fegyver tényleges pengehosszainak összege, osztva 0.5-tel
   sum_pengehossz = fegyver_jobb.pengehossz + fegyver_bal.pengehossz
   pengelevonás = FLOOR(sum_pengehossz / 0.5)
 
-  kétkezes_harckeret = kh_bónusz - pengelevonás
+  harckeret = harcmodorSzint + gyorsaság + fortelyMods['harckeret'] + kh_harckeret_bónusz - pengelevonás
 
 note: A pengehossz a fegyverek.json-ból jön (0.5 egységekben, pl. tőr=0, rövidkard=0.5, szablya=1.5).
       "Rövid" fegyverek (penge < 0.5): 0-nak számítanak a pengeméret kalkulációhoz.
       A SUM Pengeméret (egész pengékben kerekítve) a Pengeelőny/hátrány rendszerhez kell — az más!
-      Max SUM = 2 penge (ha összpenge > 2 → kétkezes harc nem végezhető az adott kombóval).
+      Max SUM = konstansok.kétkezes_harc_max_pengeméret (ha összpenge > limit → nem végezhető).
 ```
 
 ### 26.6 Sebzés

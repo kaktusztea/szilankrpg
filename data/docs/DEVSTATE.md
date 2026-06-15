@@ -358,7 +358,7 @@
 ### Aktív fül
 - Harci alakzat 🚧 (Alakzatharc kidolgozása szükséges)
   - kapcsolódó fortélyok bekötése
-- ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF)
+- ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF, 0.fok TÉ/VÉ/harckeret konstansokból)
 
 - ✅ Harci akrobatika: session_toggle (yaml `session_toggle: true`) + TÉ/VÉ bekötés + manőver bónusz
 - Belharc / Belharci szituáció — külön rendszer
