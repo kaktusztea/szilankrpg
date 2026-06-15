@@ -67,6 +67,8 @@ Alapesetben hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverfo
 
 Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) fortélyt, akkor az ott leírtak szerint a gyengébb kezedben forgathatsz hárítófegyvert - de továbbra sem támadhatsz vele.
 
+Ha mindkét karon/kézben az alábbi fegyverek vannak, akkor is **csak** a fenti harcértékek az irányadóak, további bónusz **nem** jár.
+
 <!-- tag: md_table_fegyver_start -->
 
 | Fegyver            | TÉ  | VÉ  |  SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória  | Speciális |
@@ -75,11 +77,6 @@ Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_haszn
 | Hárító: Tonfa     | `0` | `2` | `-3` |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci | Csak ≤1 pengés fegyver ellen |
 
 <!-- tag: md_table_fegyver_end -->
-
-### Alkarvédő és Tonfa
-
-- Csak ≤1 pengés fegyver ellen jár a `VÉ` érték
-- Ha mindkét karon/kézben van, akkor is csak a fenti harcértékek az irányadóak, további bónusz nem jár.
 
 ---
 
