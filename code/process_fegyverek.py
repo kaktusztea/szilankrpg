@@ -57,10 +57,19 @@ if __name__ == "__main__":
                     pair_map[p['1K']] = p['2K']
                     pair_map[p['2K']] = p['1K']
             for entry in full_json:
-                entry['MK_pár'] = pair_map.get(entry['Fegyver'], '')
+                if 'MK_pár' not in entry:
+                    entry['MK_pár'] = pair_map.get(entry['Fegyver'], '')
+                elif not entry['MK_pár']:
+                    entry['MK_pár'] = pair_map.get(entry['Fegyver'], '')
+                if 'Alapnév' not in entry:
+                    entry['Alapnév'] = ''
                 if entry['MK_pár'] and entry.get('Forgatás módja') == 'egykezes':
                     entry['Alapnév'] = entry['Fegyver'].replace(' (1K)', '').replace(' 1K', '')
-                else:
-                    entry['Alapnév'] = ''
+                # Hárítófegyver flag (ha még nincs beállítva)
+                if 'Hárító' not in entry:
+                    name = entry['Fegyver']
+                    spec = entry.get('Speciális', '')
+                    spec_str = spec if isinstance(spec, str) else ''
+                    entry['Hárító'] = '1' if (name.startswith('Hárító:') or ', hárító' in name.lower() or 'hárítófegyverként' in spec_str.lower()) else '0'
 
         write_list_of_dicts_to_jsonfile(path_json, full_json)

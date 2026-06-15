@@ -356,6 +356,8 @@
     "aktív_szituációk": [],
     "aktív_manőver": "",
     "aktív_státuszok": [],
-    "narratív_módosítók": []
+    "narratív_módosítók": [],
+    "harci_akrobatika": false,
+    "fegyverfogás": "egyfegyveres"
   }
 }

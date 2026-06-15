@@ -97,6 +97,7 @@ export interface Session {
   aktív_státuszok: string[];
   narratív_módosítók: NarratívMódosító[];
   harci_akrobatika: boolean;
+  fegyverfogás: 'egyfegyveres' | 'fegyver_pajzs' | 'fegyver_hárító' | 'kétkezes';
 }
 
 export interface NarratívMódosító {
@@ -153,6 +154,7 @@ export const DEFAULT_SESSION: Session = {
   aktív_státuszok: [],
   narratív_módosítók: [],
   harci_akrobatika: false,
+  fegyverfogás: 'egyfegyveres',
 };
 
 // ============================================================
@@ -220,6 +222,7 @@ export interface FegyverAlap {
   Speciális?: string;
   MK_pár: string;
   Alapnév: string;
+  Hárító: string;
 }
 
 // ============================================================

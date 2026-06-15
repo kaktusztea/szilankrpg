@@ -148,6 +148,8 @@ karakter = {
         "aktív_páncél": True, "aktív_taktikák": [], "aktív_helyzetek": [],
         "aktív_szituációk": [], "aktív_manőver": "", "aktív_státuszok": [],
         "narratív_módosítók": [],
+        "harci_akrobatika": False,
+        "fegyverfogás": "egyfegyveres",
     },
 }
 
@@ -357,12 +359,15 @@ required_session_keys = ["szilánk", "vé_csökkenés", "vé_history", "manőver
                          "kétkezes_harc", "aktív_pajzs",
                          "aktív_páncél", "aktív_taktikák", "aktív_helyzetek",
                          "aktív_szituációk", "aktív_manőver", "aktív_státuszok",
-                         "narratív_módosítók"]
+                         "narratív_módosítók", "harci_akrobatika", "fegyverfogás"]
 for k in required_session_keys:
     if k not in session:
         err(f"Session mező hiányzik: '{k}'")
 if not any("Session" in e for e in errors):
     ok("Minden session mező megvan")
+valid_fegyverfogas = ["egyfegyveres", "fegyver_pajzs", "fegyver_hárító", "kétkezes"]
+if session.get("fegyverfogás") not in valid_fegyverfogas:
+    err(f"Session fegyverfogás érvénytelen: '{session.get('fegyverfogás')}' (megengedett: {valid_fegyverfogas})")
 
 # ============================================================
 # 6. Schema struktúra validáció

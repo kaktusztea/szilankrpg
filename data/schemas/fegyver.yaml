@@ -15,4 +15,5 @@ erőbónusz_limit: 0            # max erőbónusz amit a fegyver elbír (99 = ko
 másfélkezes: false            # MK: másfélkezes-e
 KF: false                     # Különleges fegyver szabály érvényes-e
 kategória: ""                 # közelharc / kardvívó / lándzsavívó / romboló / ostorharc
+hárító: false                 # kötelező, boolean — hárítófegyverként használható-e (Fegyverfogás: Fegyver+hárító)
 speciális: ""                 # szöveges megjegyzés

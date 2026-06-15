@@ -316,6 +316,24 @@
     }
   ],
   "kétkezes_harc_max_pengeméret": 2.0,
+  "fegyverfogás_opciók": [
+    {
+      "id": "egyfegyveres",
+      "név": "Egyfegyveres"
+    },
+    {
+      "id": "fegyver_pajzs",
+      "név": "Fegyver + pajzs"
+    },
+    {
+      "id": "fegyver_hárító",
+      "név": "Fegyver + hárítófegyver"
+    },
+    {
+      "id": "kétkezes",
+      "név": "Kétkezes harc"
+    }
+  ],
   "kétkezes_harc_bónuszok": [
     {
       "fok": 0,

@@ -107,3 +107,4 @@ session:
   aktív_státuszok: []         # string[]
   narratív_módosítók: []      # { szöveg: string, érték?: number }[] — KM által hozzáadott
   harci_akrobatika: false     # session_toggle fortély runtime állapota
+  fegyverfogás: "egyfegyveres"  # enum: egyfegyveres | fegyver_pajzs | fegyver_hárító | kétkezes

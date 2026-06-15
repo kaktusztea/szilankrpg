@@ -65,10 +65,12 @@
   gap: 6px;
   padding: 8px 0;
   border-bottom: 1px solid #333;
+  flex-wrap: wrap;
 }
 
 .aktiv-field-btn {
   flex: 1;
+  min-width: 0;
   background: var(--input-bg);
   border: 1px solid #555;
   border-radius: 4px;
@@ -76,14 +78,17 @@
   display: flex;
   flex-direction: column;
   gap: 2px;
+  overflow: hidden;
 }
 
 .aktiv-field-label {
   font-size: 11px;
   color: #888;
   text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
-
 .aktiv-field-select {
   background: transparent;
   border: none;
@@ -92,6 +97,8 @@
   font-weight: bold;
   padding: 0;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .aktiv-field-toggle {
