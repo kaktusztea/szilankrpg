@@ -6,13 +6,7 @@
       "TÉ": 3
     },
     "megjegyzés": "Több-támadás TÉ levonás nem érvényesül. Csak ha ≥2 támadás van.",
-    "megkötések": [
-      {
-        "típus": "támadások",
-        "mód": "min",
-        "érték": 2
-      }
-    ],
+    "megkötések": [],
     "kombó_mód": "blacklist",
     "kombó_lista": [
       "Roham",
@@ -41,6 +35,7 @@
       "1 támadás",
       "Plusz támadás"
     ],
+    "megkötések": [],
     "id": "érintő",
     "feltétel_kulcs": "taktika:érintő"
   },
@@ -49,13 +44,7 @@
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "VÉ csökkentés: 2/kör. Nem támad. Fortély+pengeelőny bónusz.",
-    "megkötések": [
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Pengehátrány"
-      }
-    ],
+    "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "id": "fárasztás",
@@ -98,6 +87,7 @@
       "Visszafogott",
       "1 támadás"
     ],
+    "megkötések": [],
     "id": "kezdeményező",
     "feltétel_kulcs": "taktika:kezdeményező"
   },
@@ -108,12 +98,7 @@
       "TÉ": 2
     },
     "megjegyzés": "KÉ átengedett. TÉ:+2 visszacsapásra, ha nem kap sebet.",
-    "megkötések": [
-      {
-        "típus": "többes_harc",
-        "mód": "tiltott"
-      }
-    ],
+    "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Támadó",
@@ -135,18 +120,7 @@
       "SP": 7
     },
     "megjegyzés": "Max 1x/küzdelem. Első oda-vissza csapás. VÉ csökk 2x.",
-    "megkötések": [
-      {
-        "típus": "harcmodor",
-        "mód": "tiltott",
-        "érték": "Ostorharc"
-      },
-      {
-        "típus": "per_küzdelem",
-        "mód": "max",
-        "érték": 1
-      }
-    ],
+    "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "id": "öngyilkos_roham",
@@ -163,6 +137,7 @@
       "Érintő",
       "Támadás erőből"
     ],
+    "megkötések": [],
     "id": "plusz_támadás",
     "feltétel_kulcs": "taktika:plusz_támadás"
   },
@@ -175,13 +150,7 @@
       "SP": 5
     },
     "megjegyzés": "Első oda-vissza csapás. VÉ csökk 2x.",
-    "megkötések": [
-      {
-        "típus": "harcmodor",
-        "mód": "tiltott",
-        "érték": "Ostorharc"
-      }
-    ],
+    "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "id": "roham",
@@ -203,13 +172,7 @@
       }
     ],
     "megjegyzés": "Fortéllyal növelhető limit.",
-    "megkötések": [
-      {
-        "típus": "harcmodor",
-        "mód": "tiltott",
-        "érték": "Ostorharc"
-      }
-    ],
+    "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Kiváró",
@@ -239,13 +202,7 @@
         "VÉ": -6
       }
     ],
-    "megkötések": [
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Orvtámadás"
-      }
-    ],
+    "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Kezdeményező",
@@ -282,18 +239,7 @@
         "TÉ": -8
       }
     ],
-    "megkötések": [
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Meglepetés"
-      },
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Orvtámadás"
-      }
-    ],
+    "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Érintő",
@@ -311,6 +257,7 @@
     "megjegyzés": "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20T.",
     "kombó_mód": "whitelist",
     "kombó_lista": [],
+    "megkötések": [],
     "id": "teljes_védekezés",
     "feltétel_kulcs": "taktika:teljes_védekezés"
   },
@@ -362,6 +309,7 @@
       "1 támadás",
       "Tettetés"
     ],
+    "megkötések": [],
     "id": "visszafogott",
     "feltétel_kulcs": "taktika:visszafogott"
   },
@@ -375,6 +323,7 @@
       "Kiváró",
       "Visszafogott"
     ],
+    "megkötések": [],
     "id": "tettetés",
     "feltétel_kulcs": "taktika:tettetés"
   }
