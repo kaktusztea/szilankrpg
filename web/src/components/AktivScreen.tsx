@@ -249,6 +249,105 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
     <div className="screen aktiv-screen">
       <h2>❎ Aktív</h2>
 
+      {/* Fegyverek + Fegyverfogás sor — felül */}
+      <div className="aktiv-bottom-section">
+        <div className="aktiv-fegyver-row">
+          <div className="aktiv-field-btn">
+            <span className="aktiv-field-label">Ügyesebb kéz</span>
+            <select className="aktiv-field-select" value={session.aktív_fegyver_index} onChange={e => {
+              const idx = parseInt(e.target.value);
+              setSession(s => ({ ...s, aktív_fegyver_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_bal_index !== -1 ? s.kétkezes_harc : false }));
+            }}>
+              {fegyverOpciók.filter(f => {
+                if (f.idx === -1) return true;
+                if (session.aktív_fegyver_bal_index === -1) return true;
+                const balFp = karakter.fegyverek[session.aktív_fegyver_bal_index];
+                if (!balFp) return true;
+                const balDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === balFp.alap.toLowerCase());
+                const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
+                return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(balDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
+              }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
+            </select>
+          </div>
+          {session.fegyverfogás !== 'egyfegyveres' && (
+          <div className="aktiv-field-btn">
+            <span className="aktiv-field-label">Gyengébb kéz</span>
+            {session.fegyverfogás === 'fegyver_pajzs' ? (
+              <select className="aktiv-field-select" disabled><option>Pajzs</option></select>
+            ) : session.fegyverfogás === 'fegyver_hárító' ? (() => {
+              const háritók = karakter.fegyverek.map((fp, i) => ({ i, fp })).filter(({ fp }) => {
+                const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+                return def?.Hárító === '1';
+              });
+              const selected = háritók.find(h => h.i === session.aktív_fegyver_bal_index) || háritók[0];
+              if (selected && session.aktív_fegyver_bal_index !== selected.i) {
+                setSession(s => ({ ...s, aktív_fegyver_bal_index: selected.i }));
+              }
+              return háritók.length <= 1
+                ? <select className="aktiv-field-select" disabled><option>{selected?.fp.alap ?? 'Hárítófegyver'}</option></select>
+                : <select className="aktiv-field-select" value={session.aktív_fegyver_bal_index} onChange={e => setSession(s => ({ ...s, aktív_fegyver_bal_index: parseInt(e.target.value) }))}>
+                    {háritók.map(h => <option key={h.i} value={h.i}>{h.fp.alap}</option>)}
+                  </select>;
+            })() : (
+              <select className="aktiv-field-select" value={session.aktív_fegyver_bal_index} onChange={e => {
+                const idx = parseInt(e.target.value);
+                setSession(s => ({ ...s, aktív_fegyver_bal_index: idx }));
+              }}>
+                {fegyverOpciók.filter(f => {
+                  if (f.idx === -1) return false;
+                  const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
+                  if (fDef?.Hárító === '1') return false;
+                  if (session.aktív_fegyver_index === -1) return true;
+                  const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
+                  if (!jobbFp) return true;
+                  const jobbDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase());
+                  return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(jobbDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
+                }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
+              </select>
+            )}
+          </div>
+          )}
+        </div>
+        <div className="aktiv-fegyver-row">
+          {(() => {
+            const toggleForts = data.fortelySummaries.filter(d => d.session_toggle);
+            return toggleForts.map(tf => {
+              const has = karakter.fortélyok.some(f => f.név === tf.név && f.fok > 0);
+              const key = tf.név;
+              const active = (session as unknown as Record<string, unknown>)[key.toLowerCase().replace(/ /g, '_')] as boolean ?? false;
+              return (
+                <div key={key} className={`aktiv-field-btn aktiv-field-toggle ${active && has ? 'on' : ''} ${!has ? 'disabled' : ''}`}
+                  onClick={() => { if (has) setSession(s => ({ ...s, [key.toLowerCase().replace(/ /g, '_')]: !active })); }}>
+                  <span className="aktiv-field-label">{tf.név.length > 14 ? tf.név.replace('Harci ', 'H. ') : tf.név}</span>
+                  <strong>{active && has ? 'Igen' : 'Nem'}</strong>
+                </div>
+              );
+            });
+          })()}
+          {(() => {
+            const opciók = data.konstansok.fegyverfogás_opciók as { id: string; név: string }[];
+            const aktív = session.fegyverfogás || 'egyfegyveres';
+            const aktívNév = opciók.find(o => o.id === aktív)?.név ?? 'Egyfegyveres';
+            const jobbIdx = session.aktív_fegyver_index;
+            const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
+            const pusztaKéz = !jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz';
+            const disabled = pusztaKéz;
+            return (
+              <div className={`aktiv-field-btn ${disabled ? 'disabled' : ''}`}
+                onClick={() => { if (!disabled) setShowFegyverfogás(true); }}>
+                <span className="aktiv-field-label">Fegyverfogás</span>
+                <strong>{aktívNév}</strong>
+              </div>
+            );
+          })()}
+          <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_páncél ? 'on' : ''}`}
+            onClick={() => setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél }))}>
+            <span className="aktiv-field-label">Páncél viselve</span>
+            <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>
+          </div>
+        </div>
+      </div>
+
       {/* Hatás pool */}
       {(hasTaktikaMods || hasHatásPool || fortélyEmlékeztetők.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
         <div className="aktiv-hatas-pool">
@@ -457,7 +556,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
       )}
 
       {/* Harci helyzetek */}
-      <div className="aktiv-section">
+      <div className="aktiv-section" style={{ borderBottom: 'none' }}>
         <span className="aktiv-label">Harci helyzetek</span>
         {session.aktív_helyzetek.map((h, i) => (
           <div key={i} className="aktiv-chip">
@@ -489,7 +588,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
       )}
 
       {/* Státuszok */}
-      <div className="aktiv-section">
+      <div className="aktiv-section" style={{ marginTop: '16px', borderTop: '1px solid #333', borderBottom: 'none', paddingTop: '16px' }}>
         <span className="aktiv-label">Státuszok</span>
         {session.aktív_státuszok.map((st, i) => {
           const match = st.match(/^(.+) \((\d+)\)$/);
@@ -729,105 +828,6 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         </div>,
         document.body
       )}
-
-      {/* Fegyverek sor — alul */}
-      <div className="aktiv-bottom-section">
-        <div className="aktiv-fegyver-row">
-          <div className="aktiv-field-btn">
-            <span className="aktiv-field-label">Ügyesebb kéz</span>
-            <select className="aktiv-field-select" value={session.aktív_fegyver_index} onChange={e => {
-              const idx = parseInt(e.target.value);
-              setSession(s => ({ ...s, aktív_fegyver_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_bal_index !== -1 ? s.kétkezes_harc : false }));
-            }}>
-              {fegyverOpciók.filter(f => {
-                if (f.idx === -1) return true;
-                if (session.aktív_fegyver_bal_index === -1) return true;
-                const balFp = karakter.fegyverek[session.aktív_fegyver_bal_index];
-                if (!balFp) return true;
-                const balDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === balFp.alap.toLowerCase());
-                const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
-                return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(balDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
-              }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
-            </select>
-          </div>
-          {session.fegyverfogás !== 'egyfegyveres' && (
-          <div className="aktiv-field-btn">
-            <span className="aktiv-field-label">Gyengébb kéz</span>
-            {session.fegyverfogás === 'fegyver_pajzs' ? (
-              <select className="aktiv-field-select" disabled><option>Pajzs</option></select>
-            ) : session.fegyverfogás === 'fegyver_hárító' ? (() => {
-              const háritók = karakter.fegyverek.map((fp, i) => ({ i, fp })).filter(({ fp }) => {
-                const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
-                return def?.Hárító === '1';
-              });
-              const selected = háritók.find(h => h.i === session.aktív_fegyver_bal_index) || háritók[0];
-              if (selected && session.aktív_fegyver_bal_index !== selected.i) {
-                setSession(s => ({ ...s, aktív_fegyver_bal_index: selected.i }));
-              }
-              return háritók.length <= 1
-                ? <select className="aktiv-field-select" disabled><option>{selected?.fp.alap ?? 'Hárítófegyver'}</option></select>
-                : <select className="aktiv-field-select" value={session.aktív_fegyver_bal_index} onChange={e => setSession(s => ({ ...s, aktív_fegyver_bal_index: parseInt(e.target.value) }))}>
-                    {háritók.map(h => <option key={h.i} value={h.i}>{h.fp.alap}</option>)}
-                  </select>;
-            })() : (
-              <select className="aktiv-field-select" value={session.aktív_fegyver_bal_index} onChange={e => {
-                const idx = parseInt(e.target.value);
-                setSession(s => ({ ...s, aktív_fegyver_bal_index: idx }));
-              }}>
-                {fegyverOpciók.filter(f => {
-                  if (f.idx === -1) return false;
-                  const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
-                  if (fDef?.Hárító === '1') return false;
-                  if (session.aktív_fegyver_index === -1) return true;
-                  const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
-                  if (!jobbFp) return true;
-                  const jobbDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase());
-                  return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(jobbDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
-                }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
-              </select>
-            )}
-          </div>
-          )}
-        </div>
-        <div className="aktiv-fegyver-row">
-          {(() => {
-            const toggleForts = data.fortelySummaries.filter(d => d.session_toggle);
-            return toggleForts.map(tf => {
-              const has = karakter.fortélyok.some(f => f.név === tf.név && f.fok > 0);
-              const key = tf.név;
-              const active = (session as unknown as Record<string, unknown>)[key.toLowerCase().replace(/ /g, '_')] as boolean ?? false;
-              return (
-                <div key={key} className={`aktiv-field-btn aktiv-field-toggle ${active && has ? 'on' : ''} ${!has ? 'disabled' : ''}`}
-                  onClick={() => { if (has) setSession(s => ({ ...s, [key.toLowerCase().replace(/ /g, '_')]: !active })); }}>
-                  <span className="aktiv-field-label">{tf.név.length > 14 ? tf.név.replace('Harci ', 'H. ') : tf.név}</span>
-                  <strong>{active && has ? 'Igen' : 'Nem'}</strong>
-                </div>
-              );
-            });
-          })()}
-          {(() => {
-            const opciók = data.konstansok.fegyverfogás_opciók as { id: string; név: string }[];
-            const aktív = session.fegyverfogás || 'egyfegyveres';
-            const aktívNév = opciók.find(o => o.id === aktív)?.név ?? 'Egyfegyveres';
-            const jobbIdx = session.aktív_fegyver_index;
-            const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
-            const pusztaKéz = !jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz';
-            const disabled = pusztaKéz;
-            return (
-              <div className={`aktiv-field-btn ${disabled ? 'disabled' : ''}`}
-                onClick={() => { if (!disabled) setShowFegyverfogás(true); }}>
-                <span className="aktiv-field-label">Fegyverfogás</span>
-                <strong>{aktívNév}</strong>
-              </div>
-            );
-          })()}
-          <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_páncél ? 'on' : ''}`}
-            onClick={() => setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél }))}>
-            <span className="aktiv-field-label">Páncél viselve</span>
-            <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>
-          </div>
-        </div>
-      </div>
     </div>
   );
 }

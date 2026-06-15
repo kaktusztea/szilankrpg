@@ -454,7 +454,13 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
             );
           })()}
           {fegyverResults.map((r, i) => (
-            <tr key={i} style={kétkezesResult || fogásResult ? { opacity: 0.4 } : undefined}>
+            <tr key={i} style={(() => {
+              if (kétkezesResult || fogásResult) return { opacity: 0.4 };
+              const jobbFp = k.fegyverek[session.aktív_fegyver_index];
+              const jobbNév = jobbFp ? (data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase())?.Fegyver ?? '') : 'Puszta kéz';
+              if (r.fegyver_név !== jobbNév) return { opacity: 0.4 };
+              return undefined;
+            })()}>
               <td>{r.fegyver_név}</td>
               <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
               <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
