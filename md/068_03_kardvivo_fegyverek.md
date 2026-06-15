@@ -59,14 +59,14 @@ Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bí
 
 A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) szabályai szerint. Nem támadhatsz velük.
 
-<!-- tag: md_table_haritofegyver_start -->
+<!-- tag: md_table_fegyver_start -->
 
-| Hárítófegyver        | TÉ  | VÉ  | SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória | Speciális                                 |
+| Fegyver              | TÉ  | VÉ  | SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória | Speciális                                 |
 | -------------------- | :-: | :-: | :-: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :-------: | ----------------------------------------- |
 | Hárító: Csatakesztyű | `0` | `2` | `-` |   `99`   |     `-`      |    `0`     |    egykezes    |       `-`       |  `0`   | `0`  | `0` | `0` | kardvívó  |                                           |
 | Hárító: Köpeny       | `0` | `3` | `-` |   `99`   |     `-`      |    `0`     |    egykezes    |       `-`       |  `0`   | `0`  | `0` | `0` | kardvívó  | Legfeljebb 1 penge hosszú fegyverek ellen |
 
-<!-- tag: md_table_haritofegyver_end -->
+<!-- tag: md_table_fegyver_end -->
 
 ---
 

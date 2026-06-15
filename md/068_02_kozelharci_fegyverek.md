@@ -67,20 +67,18 @@ Alapesetben hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverfo
 
 Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) fortélyt, akkor az ott leírtak szerint a gyengébb kezedben forgathatsz hárítófegyvert - de továbbra sem támadhatsz vele.
 
-<!-- tag: md_table_haritofegyver_start -->
+<!-- tag: md_table_fegyver_start -->
 
-| Hárítófegyver     | TÉ  |   VÉ    |  SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória  | Speciális |
-| ----------------- | :-: | :-----: | :--: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :--------: | --------- |
-| Hárító: Alkarvédő | `0` | `3/2/0` | `-`  |   `99`   |     `-`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci |           |
-| Hárító: Tonfa     | `0` | `3/2/0` | `-3` |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci |           |
+| Fegyver            | TÉ  | VÉ  |  SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória  | Speciális |
+| ----------------- | :-: | :-: | :--: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :--------: | --------- |
+| Hárító: Alkarvédő | `0` | `2` | `-`  |   `99`   |     `-`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci | Csak ≤1 pengés fegyver ellen |
+| Hárító: Tonfa     | `0` | `2` | `-3` |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci | Csak ≤1 pengés fegyver ellen |
 
-<!-- tag: md_table_haritofegyver_end -->
+<!-- tag: md_table_fegyver_end -->
 
 ### Alkarvédő és Tonfa
 
-- Közelharci fegyverek ellen `VÉ:+3`
-- Egykezes, pengefegyverek ellen `VÉ:+2`
-- Ennél nagyobb fegyverek ellen nem védenek.
+- Csak ≤1 pengés fegyver ellen jár a `VÉ` érték
 - Ha mindkét karon/kézben van, akkor is csak a fenti harcértékek az irányadóak, további bónusz nem jár.
 
 ---
