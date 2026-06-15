@@ -51,6 +51,8 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 ---
 ### Hátulütők
 
+🔆 Kétkezes fegyverek nem használhatóak pajzzsal.
+
 🔆 Nagy pajzsot cipelni hosszú távon igen kimerítő, ezért is viszik lovon, vagy fegyverhordozókkal a harcosok. Továbbá behatolásnál, szűk helyen, sűrű erdőben képtelenség cipelni.
 
 🔆 A **Paveze** típusú álló fedezékpajzsokat nem lehet kézben tartani és harcolni velük. Kizárólag statikus fedezékként múködhetnek.

@@ -140,15 +140,19 @@
 
 ### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
+- [Fegyverfogás](065_04_00_fegyverfogas.md)
+  - [Egyfegyveres](065_04_00_fegyverfogas.md#egyfegyveres)
+  - [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md)
+  - [Fegyver + pajzs](065_04_00_fegyverfogas.md#fegyver--pajzs)
+  - [Fegyver + hárítófegyver](065_04_00_fegyverfogas.md#fegyver--hárítófegyver)
+- [Harci taktikák](065_02_harci_taktikak.md)
+- [Harc alakzatban](065_03_harc_alakzatban.md)
 - [Harci helyzetek](065_01_00_harci_helyzetek.md)
   - [Belharci szituáció](065_01_01_belharci_szituacio.md)
   - [Fegyverrántás váratlanul](065_01_02_fegyverrantas_varatlanul.md)
   - [Harci pozíciók](065_01_03_harci_poziciok.md)
   - [Fegyverrel kapcsolatos helyzetek](065_01_04_fegyver_harci_helyzetek.md)
   - [Fizikai és környezeti helyzetek](065_01_05_fizikai_es_kornyezeti_helyzetek.md)
-- [Harci taktikák](065_02_harci_taktikak.md)
-- [Harc alakzatban](065_03_harc_alakzatban.md)
-- [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
 
 ### 6.6 [Manőverek](066_00_manoverek.md) 🎲
 

@@ -1,12 +1,14 @@
 ## Harcot módosító tényezők
 
-### [Harci helyzetek](065_01_00_harci_helyzetek.md)
+### [Fegyverfogás](065_04_00_fegyverfogas.md)
 
 ### [Harci taktikák](065_02_harci_taktikak.md)
 
+### [Harci helyzetek](065_01_00_harci_helyzetek.md)
+
 ### [Harc alakzatban](065_03_harc_alakzatban.md)
 
-### [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
+### [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
 
 ---
 

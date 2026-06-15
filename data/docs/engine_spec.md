@@ -1131,7 +1131,7 @@ Ellenőrzés logika:
 
 ## §26 Kétkezes harc
 
-Forrás: md/065_04_ketkezes_harc_szabalyai.md, fortelyok.harci/ketkezes_harc.md, fortelyok.harci/ketkezesseg.md
+Forrás: md/065_04_04_ketkezes_harc.md, fortelyok.harci/ketkezes_harc.md, fortelyok.harci/ketkezesseg.md
 
 ### 26.1 Alapfogalmak
 
