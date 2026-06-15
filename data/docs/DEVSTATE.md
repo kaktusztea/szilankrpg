@@ -7,7 +7,7 @@
 ├── data/                      ← Adatfájlok
 │   ├── docs/                  ← Specifikációk, fejlesztői doksik
 │   │   ├── DEVSTATE.md        ← Fejlesztési állapot (ez a fájl)
-│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§26)
+│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§27)
 │   │   └── gui_spec.md        ← GUI spec (screen-ek, viselkedés, formázás)
 │   ├── sources/               ← YAML forrásadatok (amiből generálunk)
 │   │   ├── konstansok.yaml    ← Központi konstansok (forrás, JSON-ba generálódik)
@@ -78,7 +78,7 @@
 ## Elkészült
 - ✅ Adatmodell: 5 schema (fortely, kepzettseg, karakter, pancel, fegyver, faj)
 - ✅ Konstansok: teljes (KP, arányok, páncél, harcmodorok, mesterfegyver, kétkezes harc, merevvért, pajzs, aura, feltétel prefixek, fegyver_kategória_harcmodor, több_támadás_TÉ_levonás, locked_fortélyok)
-- ✅ Engine spec: 26 szekció (§1-§26), validálva a szabályrendszer + ODS ellen
+- ✅ Engine spec: 27 szekció (§1-§27), validálva a szabályrendszer + ODS ellen
 - ✅ Engine core: TypeScript implementáció, tesztelve 8.szintű karakter ellen (15/18 ✅, maradék 3 javítva)
 - ✅ GUI spec: 8 screen + 2 overlay leírás, formázás, viselkedés
 - ✅ Harc fül UI: KÉ/SFÉ/VÉ csökk/MP boxok, fegyvertábla, ÉP rubrika táblázat (sebesülés/gyógyulás/compaction/TÉ levonás)
@@ -279,8 +279,9 @@
   - Régi `harcihelyzetek.yaml` törölve
 - ✅ Aktív fül UI (AktivScreen.tsx) — teljes
   - Szilánk: fejléc sávba költözött (kattintásra értékválasztó popup 0-3)
-  - Fegyver jobb/bal: inline field-btn dropdown, kétkezes harc toggle (csak ha mindkét kézben fegyver)
-  - Pajzs kézben / Páncél viselve: field-btn toggle-ök. Pajzs: disabled ha mindkét kézben fegyver. Bal kézben "Pajzs" opció.
+  - Fegyver (Ügyesebb kéz / Gyengébb kéz): inline field-btn dropdown. Gyengébb kéz feltételes (csak nem-egyfegyveres fogásnál).
+  - Fegyverfogás: overlay picker (4 opció, disabled logika, hint szöveg inaktívaknál)
+  - Páncél viselve: field-btn toggle (Pajzs kézben beolvadt a Fegyverfogás picker-be)
   - Taktikák: overlay picker (ABC, fokozatos: 📶 jelzés, két lépéses fokválasztó), chip katt → fok módosító picker
   - Taktika chip: kétsoros (felül név+fok bold, alul módosítók szürkén pl. "TÉ:+2 VÉ:-4")
   - Taktika megkötések: harci_helyzet/tiltott, harcmodor/tiltott, támadások/min runtime validáció
@@ -341,6 +342,7 @@
 2. ✅ Aktív fül (taktika/helyzet/szituáció/manőver/státusz picker, Hatás pool, narratív módosítók, fegyver jobb/bal/kétkezes)
 3. ✅ Hátterek fül (szövegfelhő, data layer-ből)
 4. ✅ Fortély követelmény ellenőrzés (§25 engine_spec, yaml-ok kitöltve, UI: piros jelzés + info)
+5. ✅ Fegyverfogás rendszer (§27: picker, hárítófegyver beolvasztás, lila összesítő sor, Fegyver schema Hárító flag)
 
 ## TODO Backlog
 
@@ -372,7 +374,7 @@
 - ✅ Természetes fegyver: SP override, puszta kéz feltétel — már volt
 - ✅ Természetes páncél: SFÉ flat — már volt
 - ✅ Pajzshasználat: HarcScreen §13-ban implementálva (konstansok lookup)
-- Hárítófegyver használat: kétkezes harc kalkuláció bővítés szükséges (bal kéz VÉ hozzáadás)
+- ✅ Hárítófegyver használat: Fegyverfogás picker + hárítóVÉ bekötés + fegyverek.json beolvasztás (TODO: MF VÉ bónusz)
 - Kaszabolás: runtime döntés — fortély emlékeztető elég
 - Kitérés lövés elől: próba bónusz — próba rendszer nincs implementálva
 - Támadás erőből: interaktív SP↔TÉ csere — nem automatikus módosító
@@ -432,6 +434,9 @@
 - Session toggle fortélyok: yaml `session_toggle: true` → Aktív fülön generikus toggle gomb, HarcScreen csak aktív toggle-nél alkalmazza TÉ/VÉ módosítókat
 - Pengelimit: `konstansok.kétkezes_harc_max_pengeméret` (nincs hardcode 2.0)
 - Többszörös státuszok: yaml `többszörös: true` + `alkategóriák: [...]` → generikus alkategória almenü picker
+- Fegyverfogás: `session.fegyverfogás` explicit mező (enum: egyfegyveres/fegyver_pajzs/fegyver_hárító/kétkezes), opciók `konstansok.fegyverfogás_opciók`-ból
+- Fegyver `Hárító` flag: `fegyverek.json`-ban `"1"/"0"` (process_fegyverek.py generálja: név prefix "Hárító:" / ", hárító" / Speciális "Hárítófegyverként")
+- Fortély `emlékeztető` flag: yaml `emlékeztető: true/false` → AktivScreen Hatás pool "Fortély emlékeztetők" szekció (19 fortélynál true)
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
 - Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek, taktikák, harci helyzetek, szituációk, manőverek, státuszok, hatások, események, hátterek)
@@ -447,7 +452,7 @@
 - Double-tap: 350ms threshold → popup megnyitás (Név, Szint, Kor, Tulajdonságok, Képzettségek, Fortélyok, ÉP TÉ footer→navigáció)
 - Double-tap Harcértékek fülön: per-element `tapTimers` Map (key: `mf-{i}`, `idea-f-{i}`, `anyag-{i}`, `p-struk`, stb.)
 - Locked fortélyok (Harcértékek fülön kezeltek): `konstansok.yaml → locked_fortélyok` lista. Fortélyok fülön nem szerkeszthető/törölhető, dropdown-ból kiszűrve.
-- MK fegyverek: `fegyverek.json` MK_pár (pár másik tagja) + Alapnév (display name suffix nélkül); process_fegyverek.py generálja
+- MK fegyverek: `fegyverek.json` MK_pár (pár másik tagja) + Alapnév (display name suffix nélkül) + Hárító flag; process_fegyverek.py generálja
 - méret_illeszkedés értékek: `passzol`, `nem passzol`, `borzalmas` (MGT: 0, 3, 6)
 - Faj: inline `<select>` (nincs popup, közvetlenül koppintható szerkesztő módban)
 - Rövid koppintás szerkesztő módban: nem csinál semmit (képzettségek, fortélyok)
@@ -479,7 +484,7 @@
 - Nyelvismeret felvétel: custom styled gomb-lista overlay (`.nyelv-picker`, `.nyelv-csoport`, `.nyelv-btn`), mellé katt/Escape cancel
 - Kor választó: 10–58 / 60–100 toggle split (cserélődő tartalom, nem append), 42x42px kerek gombok
 - Harcértékek fül szekció elválasztó: `.he-section + .he-section { border-top }`, h3-on nincs border-bottom
-- process_fegyverek.py: pattern fájlok helye `data/tables/*_pattern.json` (nem `data/patterns/`)
+- process_fegyverek.py: pattern fájlok helye `data/tables/*_pattern.json` (fegyver, tavfegyver, pajzs). Hárítófegyverek beolvasztva fegyverek.json-ba (md tag átnevezés).
 - Fejléc: ⚙️ menü gomb (overlay popup: Karakter betöltése/mentése, Új/Teszt karakter) + 🔧/🎮 mód toggle
 - Tab bar: tükrözött (jobb→bal), induláskor `scrollLeft = scrollWidth`, ikon-only fülek, 18px font, aktív tab alatti 3px accent csík (slide animáció)
 - Screen slider: tükrözött (`TABS.length-1-activeTab`), swipe irány invertált
@@ -492,4 +497,4 @@
 - Aktív fül adatforrások: `taktikak.json`, `harci_helyzetek.json`, `szituaciok.json`, `manoverek.json`, `statuszok.json`, `hatasok.json`, `esemenyek.json`, `hatterek.json` — generate_tables.py validáció
 - Taktika kombó: `kombó_mód: "whitelist"|"blacklist"` + `kombó_lista: string[]`
 - Session v2: `aktív_taktikák: AktívTaktika[]`, `aktív_helyzetek: string[]`, `aktív_szituációk: string[]` (régi `aktív_taktika`/`aktív_helyzet` string törölve)
-- AktivScreen.tsx: Hatás pool + taktikák/helyzetek/szituációk/státuszok overlay picker + manőver picker + fegyver jobb/bal + kétkezes harc + pajzs/páncél toggle + narratív módosítók
+- AktivScreen.tsx: Hatás pool + taktikák/helyzetek/szituációk/státuszok overlay picker + manőver picker + Fegyverfogás picker + fegyver Ügyesebb/Gyengébb kéz + páncél toggle + narratív módosítók

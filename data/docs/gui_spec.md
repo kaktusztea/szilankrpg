@@ -116,8 +116,8 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. |
 | Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
 | Narratív módosítók | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
-| Fegyver (jobb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz". Mindig látható. |
-| Fegyver (bal kéz) | field-btn dropdown | Csak ha Fegyverfogás = Kétkezes harc vagy Fegyver+hárító. Kétkezesnél: fegyverek (pengelimit szűrt). Hárítónál: hárítófegyverek. |
+| Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz". Mindig látható. |
+| Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
 | Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
 | Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Kiváltja a korábbi "2 kezes harc" és "Pajzs kézben" toggle-öket. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
@@ -130,10 +130,10 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Hatás pool szekciók
 1. **Harcérték módosítók**: taktikák fix KÉ/TÉ/VÉ/SP összesítése
-2. **Aktív Hatások**: státuszok + harci helyzetek strukturált hatásai kumulálva (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít). Elemek külön sorban (flex-direction: column).
+2. **Aktív Hatások**: státuszok + harci helyzetek strukturált hatásai kumulálva (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít). Elemek külön sorban (flex-direction: column). Formátum: `{hatás}: {cél}` (pl. "Előny+2: TÉ dobás").
 3. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
-4. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes, pl. "Előny+1 sebzésdobás (Orgyilkos)")
-5. **Fortély emlékeztetők**: harci fortélyok narratív hatásszövegei (ha nincs gépi módosító)
+4. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes). Formátum: `Előny+X: Cél (Fortély)` (pl. "Előny+2: Sebzésdobás (Orgyilkos)")
+5. **Fortély emlékeztetők**: harci fortélyok narratív hatásszövegei (yaml `emlékeztető: true` flag alapján)
 6. **Narratív módosítók**: KM által hozzáadott szöveges + opcionális Előny/Hátrány
 
 ### Stílus
@@ -146,7 +146,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 ### Viselkedés
 - Minden módosítás azonnal frissíti a session-t → Harc fül értékei reagálnak
 
-### Fegyverfogás megjelenítés (TERV)
+### Fegyverfogás választó
 
 A Fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc) dedikált választó az Aktív fülön.
 
@@ -162,17 +162,17 @@ A Fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes ha
 - **Kiváltja**: a "2 kezes harc" és "Pajzs kézben" toggle gombok eltűnnek (beleolvadnak a Fegyverfogás választóba)
 
 **Session hatás:**
-- Egyfegyveres → `kétkezes_harc: false`, `aktív_pajzs: false`, bal kéz dropdown eltűnik
-- Fegyver + pajzs → `aktív_pajzs: true`, `kétkezes_harc: false`, bal kéz dropdown eltűnik (auto: pajzs)
-- Fegyver + hárító → `aktív_pajzs: false`, `kétkezes_harc: false`, bal kéz dropdown megjelenik (hárítófegyverek)
-- Kétkezes harc → `kétkezes_harc: true`, `aktív_pajzs: false`, bal kéz dropdown megjelenik (fegyverek, pengelimit szűrt)
+- Egyfegyveres → `kétkezes_harc: false`, `aktív_pajzs: false`, Gyengébb kéz dropdown eltűnik
+- Fegyver + pajzs → `aktív_pajzs: true`, `kétkezes_harc: false`, Gyengébb kéz: disabled "Pajzs"
+- Fegyver + hárító → `aktív_pajzs: false`, `kétkezes_harc: false`, Gyengébb kéz: hárítófegyver választó (auto-select ha 1 db)
+- Kétkezes harc → `kétkezes_harc: true`, `aktív_pajzs: false`, Gyengébb kéz: fegyver választó (pengelimit szűrt, hárítók kiszűrve)
 
 **Inkompatibilitás (inaktív + szürke a popup-ban, nem elrejtve):**
 - Puszta kéz jobb kézben → Fegyverfogás választó disabled + szürke, fix "Egyfegyveres"
 - Kétkezes fegyver jobb kézben → csak "Egyfegyveres" aktív, többi szürke
 - Nincs pajzs a karakteren → "Fegyver + pajzs" szürke, disabled
-- Nincs hárítófegyver / nincs fortély → "Fegyver + hárítófegyver" szürke, disabled
-- Összpenge > limit vagy nincs bal kéz fegyver → "Kétkezes harc" szürke, disabled
+- Nincs hárítófegyver / nincs fortély → "Fegyver + hárítófegyver" szürke, disabled + hint szöveg alatta
+- Összpenge > limit vagy nincs nem-hárító fegyver bal kézhez → "Kétkezes harc" szürke, disabled
 
 ---
 
@@ -190,7 +190,10 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
 - **Teljes harcértékek** tábla (fegyverenként):
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
-  - Kétkezes harc aktív: összevont sor felül (lila/purple keret `#9c27b0`), normál sorok halványítva (opacity: 0.4)
+  - Fegyverfogás ≠ Egyfegyveres: összesítő sor felül (lila/purple keret `#9c27b0`), normál sorok halványítva (opacity: 0.4)
+    - Kétkezes: összevont harcértékek (§26)
+    - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz, név: "Fegyver + Pajzs"
+    - Fegyver+hárító: jobb kéz fegyver + hárítóVÉ bónusz, név: "Fegyver + Hárító: X"
   - Tám cella kattintható (Game mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
@@ -729,7 +732,7 @@ Minden adat `fetchJson`-nel:
 ### Karakter state struktúra (App szintjén)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
 - Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
-- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_szituációk`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`
+- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_szituációk`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
 - Derived getterek (early return utáni destructuring): `tulajdonságok`, `képzettségek`, `fortélyok`, `session`
