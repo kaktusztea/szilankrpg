@@ -116,10 +116,10 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. |
 | Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
 | Narratív módosítók | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
-| Fegyver jobb/bal | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz". Bal: + "Pajzs" opció (ha van pajzs). Dropdown szűr pengelimit szerint. |
+| Fegyver (jobb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz". Mindig látható. |
+| Fegyver (bal kéz) | field-btn dropdown | Csak ha Fegyverfogás = Kétkezes harc vagy Fegyver+hárító. Kétkezesnél: fegyverek (pengelimit szűrt). Hárítónál: hárítófegyverek. |
 | Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
-| Kétkezes harc | field-btn toggle | Csak ha mindkét kézben fegyver ÉS összpenge ≤ konstansok.kétkezes_harc_max_pengeméret. Pengelimit felett: disabled + piros "Nem". |
-| Pajzs kézben | field-btn toggle | Hatással a Harc fül VÉ-re. Disabled ha mindkét kézben fegyver. Bal kézből "Pajzs" választás = aktiválja. |
+| Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Kiváltja a korábbi "2 kezes harc" és "Pajzs kézben" toggle-öket. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 
 ### Taktika kombó szabályok
@@ -145,6 +145,34 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Viselkedés
 - Minden módosítás azonnal frissíti a session-t → Harc fül értékei reagálnak
+
+### Fegyverfogás megjelenítés (TERV)
+
+A Fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc) dedikált választó az Aktív fülön.
+
+**GUI terv:**
+- **Fegyverfogás field-btn**: kattintásra overlay popup nyílik (szokásos `.kep-prompt-overlay` + `.manover-picker` stílus)
+- **Popup tartalma**: egymás alatt a választható opciók (`.manover-card` stílus):
+  - Egyfegyveres (alap)
+  - Fegyver + pajzs (csak ha van pajzs a karakteren)
+  - Fegyver + hárítófegyver (csak ha van hárítófegyver + fortély)
+  - Kétkezes harc (csak ha mindkét kézben fegyver ÉS összpenge ≤ limit)
+- **Választás**: kattintás az opcióra → bezáródik, session frissül
+- **Aktuális megjelenítés**: a field-btn label mutatja az aktív fogást (pl. "Fegyverfogás: Kétkezes harc")
+- **Kiváltja**: a "2 kezes harc" és "Pajzs kézben" toggle gombok eltűnnek (beleolvadnak a Fegyverfogás választóba)
+
+**Session hatás:**
+- Egyfegyveres → `kétkezes_harc: false`, `aktív_pajzs: false`, bal kéz dropdown eltűnik
+- Fegyver + pajzs → `aktív_pajzs: true`, `kétkezes_harc: false`, bal kéz dropdown eltűnik (auto: pajzs)
+- Fegyver + hárító → `aktív_pajzs: false`, `kétkezes_harc: false`, bal kéz dropdown megjelenik (hárítófegyverek)
+- Kétkezes harc → `kétkezes_harc: true`, `aktív_pajzs: false`, bal kéz dropdown megjelenik (fegyverek, pengelimit szűrt)
+
+**Inkompatibilitás (inaktív + szürke a popup-ban, nem elrejtve):**
+- Puszta kéz jobb kézben → Fegyverfogás választó disabled + szürke, fix "Egyfegyveres"
+- Kétkezes fegyver jobb kézben → csak "Egyfegyveres" aktív, többi szürke
+- Nincs pajzs a karakteren → "Fegyver + pajzs" szürke, disabled
+- Nincs hárítófegyver / nincs fortély → "Fegyver + hárítófegyver" szürke, disabled
+- Összpenge > limit vagy nincs bal kéz fegyver → "Kétkezes harc" szürke, disabled
 
 ---
 

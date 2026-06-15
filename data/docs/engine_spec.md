@@ -1233,3 +1233,85 @@ if session.kétkezes_harc:
   harckeret = alap_harckeret + kétkezes_harckeret  // lásd §26.5
   támadások = 1 + FLOOR(harckeret / nagyobb_fegyver.sebesség)  // nagyobb fegyver sebessége számít
 ```
+
+## §27 Fegyverfogás (TERV)
+
+Forrás: md/065_04_00_fegyverfogas.md
+
+### 27.1 Koncepció
+
+A Fegyverfogás meghatározza a karakter kéz-konfigurációját a harcban. Négy lehetőség:
+- **Egyfegyveres** (alap) — egy fegyver, másik kéz üres (vagy kétkezes/másfélkezes fegyver)
+- **Fegyver + pajzs** — fő fegyver + pajzs a gyengébb kézben
+- **Fegyver + hárítófegyver** — fő fegyver + hárítófegyver a gyengébb kézben
+- **Kétkezes harc** — két külön fegyver (§26)
+
+### 27.2 Data layer terv
+
+```
+Új session mező:
+  session.fegyverfogás: "egyfegyveres" | "fegyver_pajzs" | "fegyver_hárító" | "kétkezes"
+
+A fegyverfogás EXPLICIT session mező — a felhasználó a Fegyverfogás picker-rel választja.
+A választás beállítja a kapcsolódó session mezőket is:
+  "egyfegyveres"   → kétkezes_harc: false, aktív_pajzs: false, bal kéz: -1
+  "fegyver_pajzs"  → kétkezes_harc: false, aktív_pajzs: true, bal kéz: -1
+  "fegyver_hárító" → kétkezes_harc: false, aktív_pajzs: false, bal kéz: hárítófegyver index
+  "kétkezes"       → kétkezes_harc: true, aktív_pajzs: false, bal kéz: fegyver index
+
+Picker elérhetőség:
+  - Puszta kéz jobb kézben → picker disabled, fix "egyfegyveres"
+  - Kétkezes fegyver jobb kézben → csak "egyfegyveres" aktív, többi disabled
+  - Nincs pajzs a karakteren → "fegyver_pajzs" disabled
+  - Nincs hárítófegyver / nincs "Hárítófegyver használat" fortély → "fegyver_hárító" disabled
+  - Összpenge > konstansok.kétkezes_harc_max_pengeméret → "kétkezes" disabled
+
+Bal kéz dropdown:
+  - Csak "kétkezes" és "fegyver_hárító" fogásnál jelenik meg
+  - "kétkezes": karakter fegyverek (pengelimit szűrt)
+  - "fegyver_hárító": hárítófegyverek listája
+```
+
+### 27.3 Harcérték hatások fegyverfogásonként
+
+```
+Egyfegyveres:
+  Standard kalkuláció (§7-§14). Nincs extra módosító.
+
+Fegyver + pajzs:
+  Már implementálva (§13): pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő).
+  A pajzsVÉ a fegyver VÉ-jéhez adódik.
+
+Fegyver + hárítófegyver (TODO):
+  hárítóVÉ = hárítófegyver.VÉ (ha van "Hárítófegyver használat" fortély, else 0)
+  hárítóMF_VÉ = MF_bónusz VÉ a hárítófegyverre (ha van MF a hárítóra)
+  Fegyver VÉ += hárítóVÉ + hárítóMF_VÉ
+  TÉ büntetés: nincs (a hárítófegyver nem TÉ büntetést ad, mint a pajzs)
+  Támadások: nem növeli (hárítófegyverrel nem támadsz)
+
+Kétkezes harc:
+  Lásd §26 (teljes implementáció).
+```
+
+### 27.4 Inkompatibilitás mátrix
+
+```
+                    Egyfegyveres  Fegyver+pajzs  Fegyver+hárító  Kétkezes
+Egyfegyveres           ✓              —              —             —
+Fegyver+pajzs          —              ✓              —             —
+Fegyver+hárító         —              —              ✓             —
+Kétkezes               —              —              —             ✓
+
+Kétkezes fegyver (lándzsa, stb.) → kizárólag "Egyfegyveres" fogás.
+```
+
+### 27.5 Implementációs lépések
+
+1. `session.fegyverfogás` mező hozzáadás (Session interface + DEFAULT_SESSION)
+2. AktivScreen: Fegyverfogás picker (overlay popup, 4 opció, disabled logika)
+3. AktivScreen: Bal kéz dropdown feltételes megjelenítés (csak kétkezes + hárító fogásnál)
+4. AktivScreen: "2 kezes harc" és "Pajzs kézben" toggle gombok eltávolítás (beolvad a picker-be)
+5. Fegyverek.json: `hárító: true` flag hárítófegyverekre (jelenleg nincsenek benne)
+6. HarcScreen: Hárítófegyver VÉ bekötés (ha fegyverfogás == "fegyver_hárító")
+7. karakter.yaml séma: `session.fegyverfogás` mező
+8. validate_karakter.py: fegyverfogás enum validáció
