@@ -62,6 +62,24 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
     return entry?.fok ?? 0;
   }
 
+  function mfKövetelményHiba(fegyverAlap: string): boolean {
+    const fok = getMfFok(fegyverAlap);
+    if (fok === 0) return false;
+    const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
+    const fokDef = mfDef?.fokok.find(f => f.fok === fok);
+    if (!fokDef?.követelmények?.length) return false;
+    for (const kov of fokDef.követelmények) {
+      if (kov.típus === 'képzettség') {
+        const nevek = Array.isArray(kov.név) ? kov.név : [kov.név];
+        if (!nevek.some(n => (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték)) return true;
+      } else if (kov.típus === 'fortély') {
+        const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
+        if (!k.fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték)) return true;
+      }
+    }
+    return false;
+  }
+
   function setMfFok(fegyverAlap: string, fok: number) {
     const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
     const displayName = fDef?.Alapnév || fegyverAlap;
@@ -239,7 +257,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
               <button className="fort-delete" onClick={() => setDeleteTarget(i)}>✕</button>
             </div>
             <div className="he-fegyver-fields">
-              <button className="he-field-btn" onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>MF fok: <strong>{getMfFok(f.alap)}</strong></button>
+              <button className="he-field-btn" style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined} onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>MF fok: <strong>{getMfFok(f.alap)}</strong></button>
               <button className="he-field-btn" onClick={() => handleDoubleTap(`idea-f-${i}`, () => setIdeaTarget({ type: 'fegyver', idx: i }))}>Idea: <strong>{f.idea}</strong></button>
               <button className="he-field-btn" onClick={() => handleDoubleTap(`anyag-${i}`, () => setAnyagTarget(i))}>Anyag: <strong>{f.anyag}</strong></button>
             </div>
