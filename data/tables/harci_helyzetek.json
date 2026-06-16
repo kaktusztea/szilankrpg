@@ -283,7 +283,7 @@
   },
   {
     "név": "Orvtámadás",
-    "infó": "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ. Harci anatómia SP bónusz aktív.",
+    "infó": "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ.",
     "hatások": [
       {
         "hatás": "előny",

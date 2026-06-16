@@ -48,122 +48,21 @@ with open(TABLES / "faj_tulajdonsag_keretek.json") as f:
     faj_keretek = json.load(f)
 
 # --- Define test karakter (matching testdata.ts) ---
-karakter = {
-    "schema_version": 2,
-    "név": "von Agabor",
-    "játékos": "",
-    "mentés_dátum": "",
-    "tsz": 8,
-    "leírás": "Toroni zsoldos lovag",
-    "kor": 32,
-    "anyanyelv": "Toroni",
-    "vallás": "",
-    "tulajdonságok": {
-        "erő": 3, "edzettség": 3, "ügyesség": 3, "gyorsaság": 3,
-        "intelligencia": 1, "emlékezet": 0, "önuralom": 2, "érzékenység": 0,
-    },
-    "HM_TÉ": 15,
-    "HM_VÉ": 17,
-    "CM": 0,
-    "képzettségek": [
-        {"név": "Közelharc", "szint": 6},
-        {"név": "Kardvívás", "szint": 8},
-        {"név": "Rombolás", "szint": 4},
-        {"név": "Akrobatika", "szint": 3},
-        {"név": "Fájdalomtűrés", "szint": 5},
-        {"név": "Észlelés", "szint": 6},
-        {"név": "Nyelvtanulás", "szint": 6},
-        {"név": "Lovaglás", "szint": 4},
-        {"név": "Mászás", "szint": 5},
-        {"név": "Kvantikum", "szint": 5},
-        {"név": "Előadóművészet", "szint": 5},
-        {"név": "Etikett", "szint": 5},
-        {"név": "Értékbecslés", "szint": 3},
-        {"név": "Művészetismeret", "szint": 5},
-        {"név": "Városi jártasság", "szint": 6},
-        {"név": "Természetjárás", "szint": 5},
-    ],
-    "fortélyok": [
-        {"név": "Merevvértviselet", "fok": 3, "spec_típus": "", "spec_elem": ""},
-        {"név": "Harcos elme", "fok": 2, "spec_típus": "", "spec_elem": ""},
-        {"név": "Gyors kezdeményezés", "fok": 2, "spec_típus": "", "spec_elem": ""},
-        {"név": "Pajzshasználat", "fok": 2, "spec_típus": "", "spec_elem": ""},
-        {"név": "Harckeret növelés", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Elpusztíthatatlan", "fok": 2, "spec_típus": "", "spec_elem": ""},
-        {"név": "Kaszabolás", "fok": 2, "spec_típus": "", "spec_elem": ""},
-        {"név": "Támadás erőből", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Fárasztás", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Mesterfegyver", "fok": 3, "spec_típus": "fegyver", "spec_elem": "kard, lovag"},
-        {"név": "Építészet", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Futás", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Szájról olvasás", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Éber alvó", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Kocsihajtás", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Keresés/rejtés", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Kultúrkör", "fok": 1, "spec_típus": "kultúrkör", "spec_elem": "dw00n"},
-        {"név": "Kultúrkör", "fok": 1, "spec_típus": "kultúrkör", "spec_elem": "erv"},
-        {"név": "Kultúrkör", "fok": 1, "spec_típus": "kultúrkör", "spec_elem": "py4r"},
-        {"név": "Kultúrkör", "fok": 1, "spec_típus": "kultúrkör", "spec_elem": "dzs4d"},
-        {"név": "Helyismeret", "fok": 1, "spec_típus": "település", "spec_elem": "Erion"},
-        {"név": "Helyismeret", "fok": 1, "spec_típus": "település", "spec_elem": "Pyarron"},
-        {"név": "Helyismeret", "fok": 1, "spec_típus": "település", "spec_elem": "Haonwell"},
-        {"név": "Helyismeret", "fok": 1, "spec_típus": "település", "spec_elem": "Shulur"},
-        {"név": "Gazdálkodás", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Kézműves: Lakatos", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Kihallgatás", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Színjátszás", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Éneklés", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Bűvészet", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Alkudozás", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Térképészet", "fok": 1, "spec_típus": "", "spec_elem": ""},
-        {"név": "Nyelvismeret", "fok": 1, "spec_típus": "nyelv", "spec_elem": "Közös (pyarroni)", "kiérdemelt": True},
-        {"név": "Nyelvismeret", "fok": 1, "spec_típus": "nyelv", "spec_elem": "Toroni", "kiérdemelt": True},
-    ],
-    "fortélyok_speciális": {
-        "analfabéta": False, "apró_méretű_lény": False,
-        "tartós_sérülés_fok": 0, "vakság": False, "süketség": False,
-    },
-    "hátterek": {"faj": "Ember (Északi)", "leíró": [], "karma": []},
-    "fegyverek": [
-        {"alap": "kard, lovag", "név": "", "anyag": "acél", "idea": 0},
-        {"alap": "tőr", "név": "", "anyag": "acél", "idea": 0},
-    ],
-    "páncél": {
-        "alap": "bőr", "név": "", "fémalapanyag": "", "idea": 0,
-        "kidolgozottság": "átlagos", "sisak": False, "végtagvédettség": 0,
-        "méret_illeszkedés": "passzol", "rongálódás": 0,
-    },
-    "pajzs": {
-        "méret": "közepes",
-    },
-    "felszerelés": {"nagy_tárgyak": []},
-    "jegyzetek": "",
-    "napló": [],
-    "session": {
-        "szilánk": 1,
-        "vé_csökkenés": 0, "vé_history": [], "manőver_pont_használt": 0,
-        "sebzések": [], "aktív_fegyver_index": 0, "aktív_fegyver_bal_index": -1,
-        "kétkezes_harc": False,
-        "aktív_pajzs": False,
-        "aktív_páncél": True, "aktív_taktikák": [], "aktív_helyzetek": [],
-        "aktív_szituációk": [], "aktív_manőver": "", "aktív_státuszok": [],
-        "narratív_módosítók": [],
-        "harci_akrobatika": False,
-        "fegyverfogás": "egyfegyveres",
-    },
-}
+karakter_path = BASE / "karakter" / "test_karakter.json"
+with open(karakter_path, "r", encoding="utf-8") as f:
+    karakter = json.load(f)
 
 # Expected values
 expected = {
     "ÉP": 40,
     "összes_kp": 408,
     "összes_szekunder_kp": 160,
-    "kp_képzettségek": 224,
+    "kp_képzettségek": 235,
     "kp_fortélyok": 150,
-    "kp_hm": 192,
+    "kp_hm": 180,
     "kp_cm": 0,
-    "elköltött_kp": 566,
-    "maradék_kp": 2,
+    "elköltött_kp": 565,
+    "maradék_kp": 3,
 }
 
 print("=" * 60)
@@ -394,12 +293,6 @@ if not any("struktúra" in e.lower() or "mező hiányzik" in e for e in errors):
 # Output
 # ============================================================
 print("\n" + "=" * 60)
-
-# Generate test JSON
-output_path = BASE / "karakter" / "test_karakter.json"
-with open(output_path, "w", encoding="utf-8") as f:
-    json.dump(karakter, f, ensure_ascii=False, indent=2)
-print(f"\n📄 Teszt JSON generálva: {output_path}")
 
 if errors:
     print(f"\n{'=' * 60}")
