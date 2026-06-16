@@ -229,9 +229,8 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
           </div>
         </div>
         <div className="he-hm-info">
-          <span>HM: {hmTotal} / {maxHM}</span>
-          <span>Aszimmetria: {Math.abs(k.HM_TÉ - k.HM_VÉ)} / {maxAszimmetria}</span>
-          <span>CM: {k.CM} / {maxCM}</span>
+          <span className={hmOverflow ? 'he-overflow' : ''}>HM keret: {maxHM - hmTotal}</span>
+          <span className={cmOverflow ? 'he-overflow' : ''}>CM keret: {maxCM - k.CM}</span>
         </div>
       </section>
 
