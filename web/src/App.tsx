@@ -367,7 +367,7 @@ function App() {
         const spec = karakter.fortélyok_speciális;
         const tsz = karakter.tsz;
 
-        const harcmodorÖsszeg = ['Közelharc', 'Kardvívás', 'Rombolás', 'Lándzsavívás', 'Ostorharc']
+        const harcmodorÖsszeg = (Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])
           .reduce((s, n) => s + (képzettségek.find(k => k.név === n)?.szint ?? 0), 0);
         const alakzatharcSzint = képzettségek.find(k => k.név === 'Alakzatharc')?.szint ?? 0;
 

@@ -304,18 +304,28 @@ kétkezes_harc_bónuszok:
     harckeret: 1
     TÉ: -3
     VÉ: -3
+    mindkét_fegyver_értékei: false
+    mf: "nincs"
   - fok: 1
     harckeret: 2
     TÉ: 0
     VÉ: 0
+    mindkét_fegyver_értékei: true
+    mf: "nincs"
   - fok: 2
     harckeret: 3
     TÉ: 0
     VÉ: 0
+    mindkét_fegyver_értékei: true
+    mf: "nagyobb"
   - fok: 3
     harckeret: 4
     TÉ: 0
     VÉ: 0
+    mindkét_fegyver_értékei: true
+    mf: "mindkettő"
+
+kétkezes_harc_pengelevonás_osztó: 0.5
 
 # ============================================================
 # Merevvértviselet fortély bónuszai

@@ -33,7 +33,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   }
 
   // Harcmodor szintek (read-only, Tul/Képz fülről jönnek)
-  const harcmodorok = ['Közelharc', 'Kardvívás', 'Rombolás', 'Lándzsavívás', 'Ostorharc'];
+  const harcmodorok = Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[];
   const harcmodorSzintek = harcmodorok.map(n => ({ név: n, szint: k.képzettségek.find(kp => kp.név === n)?.szint ?? 0 }));
 
   // max_HM (simplified calc here — same as reactive)

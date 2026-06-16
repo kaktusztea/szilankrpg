@@ -97,13 +97,8 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     }
   }
 
-  const harcmodorÖsszeg = [
-    k.képzettségek.find(kp => kp.név === 'Közelharc')?.szint ?? 0,
-    k.képzettségek.find(kp => kp.név === 'Kardvívás')?.szint ?? 0,
-    k.képzettségek.find(kp => kp.név === 'Rombolás')?.szint ?? 0,
-    k.képzettségek.find(kp => kp.név === 'Lándzsavívás')?.szint ?? 0,
-    k.képzettségek.find(kp => kp.név === 'Ostorharc')?.szint ?? 0,
-  ].reduce((a, b) => a + b, 0);
+  const harcmodorÖsszeg = Object.values(konstansok.fegyver_kategória_harcmodor).reduce((s: number, név: string) =>
+    s + (k.képzettségek.find(kp => kp.név === név)?.szint ?? 0), 0);
 
   // Páncél + lookup tables — all logic now in rules.json
   const merevvértFok = k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
@@ -302,23 +297,25 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
           const kisebbNév = kisebb.Alapnév || kisebb.Fegyver;
           const mfNagyobb = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === nagyobbNév || f.spec_elem === nagyobbFp.alap))?.fok ?? 0;
           const mfKisebb = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === kisebbNév || f.spec_elem === kisebbFp.alap))?.fok ?? 0;
+          // Kétkezes harc fok-bónuszok: 0.fok konstansokból (nincs fortély), fok>=1 yaml fortélyból jön (fortelyMods-ban)
+          const khBónusz = konstansok.kétkezes_harc_bónuszok;
+          const khFokEntry = khBónusz?.find(b => b.fok === khFok);
+          const khFokBónusz = khFok === 0 ? (khFokEntry ?? { harckeret: 0, TÉ: 0, VÉ: 0, mindkét_fegyver_értékei: false, mf: 'nincs' }) : { harckeret: 0, TÉ: 0, VÉ: 0, mindkét_fegyver_értékei: khFokEntry?.mindkét_fegyver_értékei ?? false, mf: khFokEntry?.mf ?? 'nincs' };
+
+          // MF: data-driven szabály
           let mfTÉ = 0, mfVÉ = 0, mfSP = 0;
-          if (khFok >= 3) {
+          if (khFokBónusz.mf === 'mindkettő') {
             const mfN = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfNagyobb) ?? { TÉ: 0, VÉ: 0, SP: 0 };
             const mfK = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfKisebb) ?? { TÉ: 0, VÉ: 0, SP: 0 };
             mfTÉ = mfN.TÉ + mfK.TÉ; mfVÉ = mfN.VÉ + mfK.VÉ; mfSP = mfN.SP + mfK.SP;
-          } else if (khFok >= 2) {
+          } else if (khFokBónusz.mf === 'nagyobb') {
             const mfN = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfNagyobb) ?? { TÉ: 0, VÉ: 0, SP: 0 };
             mfTÉ = mfN.TÉ; mfVÉ = mfN.VÉ; mfSP = mfN.SP;
           }
 
-          // Kétkezes harc fok-bónuszok: 0.fok konstansokból (nincs fortély), fok>=1 yaml fortélyból jön (fortelyMods-ban)
-          const khBónusz = konstansok.kétkezes_harc_bónuszok;
-          const khFokBónusz = khFok === 0 ? (khBónusz?.find(b => b.fok === 0) ?? { harckeret: 0, TÉ: 0, VÉ: 0 }) : { harckeret: 0, TÉ: 0, VÉ: 0 };
-
-          // TÉ/VÉ
-          const alapTÉ = (parseInt(nagyobb.TÉ) || 0) + (khFok >= 1 ? (parseInt(kisebb.TÉ) || 0) : 0);
-          const alapVÉ = (parseInt(nagyobb.VÉ) || 0) + (khFok >= 1 ? (parseInt(kisebb.VÉ) || 0) : 0);
+          // TÉ/VÉ: kisebb fegyver hozzáadása data-driven
+          const alapTÉ = (parseInt(nagyobb.TÉ) || 0) + (khFokBónusz.mindkét_fegyver_értékei ? (parseInt(kisebb.TÉ) || 0) : 0);
+          const alapVÉ = (parseInt(nagyobb.VÉ) || 0) + (khFokBónusz.mindkét_fegyver_értékei ? (parseInt(kisebb.VÉ) || 0) : 0);
           const TÉ = konstansok.harcérték_alap.TÉ + k.tulajdonságok.erő + k.tulajdonságok.ügyesség + k.tulajdonságok.gyorsaság
             + k.HM_TÉ + (hb?.TÉ ?? 0) + alapTÉ + mfTÉ + fortelyMods['TÉ'] + khFokBónusz.TÉ;
           const VÉ = konstansok.harcérték_alap.VÉ + k.tulajdonságok.gyorsaság + k.tulajdonságok.ügyesség
@@ -329,7 +326,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
           const SP = (parseInt(jobbDef.SP) || 0) + erőbónusz + mfSP + fortelyMods['SP'];
 
           // Harckeret: pengelevonás + konstans fok bónusz
-          const pengelevonás = Math.floor(sumPenge / 0.5);
+          const pengelevonás = Math.floor(sumPenge / konstansok.kétkezes_harc_pengelevonás_osztó);
           const hk = Math.max(0, harcmodorSzint + k.tulajdonságok.gyorsaság + fortelyMods['harckeret'] + khFokBónusz.harckeret - pengelevonás);
           const sebesség = parseInt(nagyobb.Sebesség) || 6;
           const támadások = 1 + Math.floor(hk / sebesség);
