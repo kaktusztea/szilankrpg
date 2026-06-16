@@ -44,7 +44,18 @@
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "VÉ csökkentés: 2/kör. Nem támad. Fortély+pengeelőny bónusz.",
-    "megkötések": [],
+    "megkötések": [
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Pengehátrány"
+      },
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Láthatatlanul"
+      }
+    ],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "id": "fárasztás",

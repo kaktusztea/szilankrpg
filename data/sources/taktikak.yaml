@@ -34,9 +34,11 @@ taktikák:
   - típus: "harci_helyzet"
     mód: "tiltott"
     érték: "Pengehátrány"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Láthatatlanul"
   kombó_mód: "whitelist"
   kombó_lista: []
-  megkötések: []
   id: "fárasztás"
 - név: "Kezdeményező"
   fokozatos: true

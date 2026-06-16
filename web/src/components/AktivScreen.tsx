@@ -39,6 +39,12 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
 
   // Taktika kombó + megkötés validáció
   function isTaktikaAllowed(név: string): boolean {
+    // Ha bármelyik aktív helyzet tiltja az összes taktikát
+    for (const h of session.aktív_helyzetek) {
+      const hDef = data.harciHelyzetek.find(d => d.név === h);
+      if ((hDef as any)?.tiltja_taktikákat) return false;
+    }
+
     const def = data.taktikak.find(t => t.név === név);
     if (!def) return false;
 
@@ -594,7 +600,14 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }))}>✕</button>
           </div>
         ))}
-        <button className="aktiv-add-btn" disabled={data.harciHelyzetek.every(h => session.aktív_helyzetek.includes(h.név))} onClick={() => setShowHelyzetPicker(true)}>+ Helyzet...</button>
+        <button className="aktiv-add-btn" disabled={data.harciHelyzetek.every(h => {
+          if (session.aktív_helyzetek.includes(h.név)) return true;
+          for (const ah of session.aktív_helyzetek) {
+            const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+            if ((ahDef as any)?.kizár_helyzetek?.includes(h.név)) return true;
+          }
+          return false;
+        })} onClick={() => setShowHelyzetPicker(true)}>+ Helyzet...</button>
       </div>
 
       {showHelyzetPicker && createPortal(
@@ -605,7 +618,15 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               <button className="aktiv-chip-x" onClick={() => setShowHelyzetPicker(false)}>✕</button>
             </div>
             <div className="manover-picker-list">
-              {data.harciHelyzetek.filter(h => !session.aktív_helyzetek.includes(h.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
+              {data.harciHelyzetek.filter(h => {
+                if (session.aktív_helyzetek.includes(h.név)) return false;
+                // Aktív helyzetek kizárják ezt?
+                for (const ah of session.aktív_helyzetek) {
+                  const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+                  if ((ahDef as any)?.kizár_helyzetek?.includes(h.név)) return false;
+                }
+                return true;
+              }).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
                 <div key={h.név} className="manover-card" onClick={() => { setSession(s => ({ ...s, aktív_helyzetek: [...s.aktív_helyzetek, h.név] })); setShowHelyzetPicker(false); }}>
                   <span className="manover-card-name">{h.név}</span>
                   <span className="manover-card-hatas">{h.infó}</span>

@@ -4,6 +4,8 @@
     "infó": "Rövid fegyverek előnye, hosszú fegyverek hátránya. Külön szabályrendszer.",
     "hatások": [],
     "id": "belharci_szituáció",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:belharci_szituáció"
   },
   {
@@ -32,6 +34,8 @@
       }
     ],
     "id": "beszorított",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:beszorított"
   },
   {
@@ -45,6 +49,8 @@
       }
     ],
     "id": "csúszós_talaj",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:csúszós_talaj"
   },
   {
@@ -68,6 +74,8 @@
       }
     ],
     "id": "elvesztett_egyensúly",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:elvesztett_egyensúly"
   },
   {
@@ -82,6 +90,8 @@
       }
     ],
     "id": "fegyverrántás",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:fegyverrántás"
   },
   {
@@ -100,6 +110,8 @@
       }
     ],
     "id": "földön_fekve",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:földön_fekve"
   },
   {
@@ -118,6 +130,8 @@
       }
     ],
     "id": "hajítás_alkalmatlan_fegyverrel",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
   },
   {
@@ -136,6 +150,8 @@
       }
     ],
     "id": "hajítás_nem_dobásra_készített",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:hajítás_nem_dobásra_készített"
   },
   {
@@ -154,6 +170,8 @@
       }
     ],
     "id": "hátulról",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:hátulról"
   },
   {
@@ -172,6 +190,8 @@
       }
     ],
     "id": "helyhez_kötve",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:helyhez_kötve"
   },
   {
@@ -179,6 +199,8 @@
     "infó": "Harcmodor 3.szint alatti: lásd Harcmodor képzettség büntetések.",
     "hatások": [],
     "id": "képzetlen_fegyverhasználat",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:képzetlen_fegyverhasználat"
   },
   {
@@ -202,6 +224,8 @@
       }
     ],
     "id": "készületlenség",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:készületlenség"
   },
   {
@@ -209,6 +233,8 @@
     "infó": "+1 TÉ per extra támadó (max +4). Manőver Ellenpróba: legmagasabb MA számít.",
     "hatások": [],
     "id": "közrefogás",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:közrefogás"
   },
   {
@@ -223,6 +249,8 @@
       }
     ],
     "id": "láthatatlanul",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:láthatatlanul"
   },
   {
@@ -236,6 +264,8 @@
       }
     ],
     "id": "levegőből",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:levegőből"
   },
   {
@@ -243,6 +273,8 @@
     "infó": "Méretkülönbség [0-6] fokozat. Kisebb lénynek TÉ bónusz, VÉ bónusz.",
     "hatások": [],
     "id": "méret_különbség",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:méret_különbség"
   },
   {
@@ -256,6 +288,8 @@
       }
     ],
     "id": "magasabbról",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:magasabbról"
   },
   {
@@ -270,15 +304,17 @@
       {
         "hatás": "szöveges",
         "cél": "vé_veszteség",
-        "megjegyzés": "VÉ csökk: 3"
+        "megjegyzés": "VÉ csökkentés: 3"
       },
       {
         "hatás": "szöveges",
         "cél": "támadások_száma",
-        "megjegyzés": "Védő: többszörös tám. elvesztés"
+        "megjegyzés": "Védő: Többszörös támadás elvesztése"
       }
     ],
     "id": "meglepetés",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:meglepetés"
   },
   {
@@ -291,6 +327,11 @@
         "cél": "té_dobás"
       }
     ],
+    "tiltja_taktikákat": true,
+    "kizár_helyzetek": [
+      "Hátulról támadás",
+      "Meglepetés"
+    ],
     "id": "orvtámadás",
     "feltétel_kulcs": "harci_helyzet:orvtámadás"
   },
@@ -299,6 +340,8 @@
     "infó": "VÉ:+1..+4 (per 0.5 penge különbség).",
     "hatások": [],
     "id": "pengeelőny",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:pengeelőny"
   },
   {
@@ -306,6 +349,8 @@
     "infó": "VÉ:-1..-4 (per 0.5 penge különbség).",
     "hatások": [],
     "id": "pengehátrány",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:pengehátrány"
   },
   {
@@ -313,6 +358,8 @@
     "infó": "Negatív fegyver harcértékek. Természetes fegyver fortély segít.",
     "hatások": [],
     "id": "pusztakezes_harc",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:pusztakezes_harc"
   },
   {
@@ -326,6 +373,8 @@
       }
     ],
     "id": "rosszabbik_kéz",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:rosszabbik_kéz"
   },
   {
@@ -340,6 +389,8 @@
       }
     ],
     "id": "sötétben",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:sötétben"
   },
   {
@@ -354,6 +405,8 @@
       }
     ],
     "id": "tűz_ruhán",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:tűz_ruhán"
   },
   {
@@ -361,6 +414,8 @@
     "infó": "Közelharc + Belharc harcmodor. Állat-specifikus.",
     "hatások": [],
     "id": "vadállatok",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:vadállatok"
   },
   {
@@ -368,6 +423,8 @@
     "infó": "VÉ:+10 (takarás mértékétől függ, KM dönt).",
     "hatások": [],
     "id": "takarásban",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:takarásban"
   },
   {
@@ -386,6 +443,8 @@
       }
     ],
     "id": "vé_kiterjesztés",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:vé_kiterjesztés"
   },
   {
@@ -399,6 +458,8 @@
       }
     ],
     "id": "vér_elvakít",
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
     "feltétel_kulcs": "harci_helyzet:vér_elvakít"
   }
 ]

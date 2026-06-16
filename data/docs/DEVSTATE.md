@@ -379,6 +379,55 @@
 - Támadás erőből: interaktív SP↔TÉ csere — nem automatikus módosító
 - Szabad fortélyok felvételénél: mutassa rögtön a kiterjesztéseket (UI feature)
 
+### Harci helyzetek — kombinálási/tiltási szabályok 🚧
+
+Az alábbi helyzeteknél a szabályrendszer explicit tiltásokat/engedélyezéseket ír elő, amelyeket a webapp-nak érvényesítenie kell.
+
+**Orvtámadás:**
+- ❌ Hátulról és Meglepetés harci helyzetek NEM adhatóak hozzá
+- ❌ Egyéb TÉ bónusz nincs
+- ❌ Harci taktikák NEM használhatóak
+- ✅ Precíz támadás manőver használható
+
+**Meglepetés:**
+- ✅ Támadó taktikával kombinálható
+- 🔆 Pajzs VÉ csak szemből/pajzs-oldalról számít (szituatív, KM dönt)
+
+**Beszorított helyzet:**
+- ✅ Támadó- és Védő taktikák használhatóak
+
+**Levegőből támadás:**
+- ✅ Roham taktika pluszban alkalmazható
+- ✅ Fárasztó taktika használható
+
+**Láthatatlanul:**
+- ❌ Fárasztó taktika NEM alkalmazható láthatatlan ellenfél ellen
+
+**Magasabbról:**
+- ❌ Harc hátasról helyzetben NEM jár pluszban
+
+**Közrefogás:**
+- Semlegesíti az ellenfél Pengeelőny helyzetét (Alappenge-re degradálja)
+
+**Pusztakezes harc:**
+- ❌ Puszta kéz NEM használható Kétkezes harcban
+
+**Belharci szituáció:**
+- ❌ Belharc fortély bónuszok CSAK Közelharc harcmodorban és max "rövid" (0) pengehosszú fegyverrel
+- 0-nál hosszabb fegyver: Beszorított helyzet (2) harci helyzetbe kerül
+- Puszta kéz értékei 0-ra emelkednek (nem negatív)
+
+**Rosszabbik kéz:**
+- ✅ Kétkezesség fortély kioltja (bármelyik kézzel levonás nélkül, de csak 1 fegyverrel)
+
+**TODO:**
+- [ ] Orvtámadás: aktív helyzet → összes taktika picker disabled + Hátulról/Meglepetés kizárás
+- [ ] Láthatatlanul: Fárasztó taktika tiltás (megkötés a taktikák yaml-ban)
+- [ ] Közrefogás: Pengeelőny semlegesítés logika (Harc fül VÉ csökkentés)
+- [ ] Magasabbról + Lovas harc: kizáró jelzés (ha lovas harc aktív, Magasabbról disabled)
+- [ ] Belharci szituáció: komplex rendszer (harcmodor + pengehossz feltételek, fegyver override)
+- [ ] Puszta kéz + Kétkezes harc: Fegyverfogás picker kizárás (ha mindkét kéz puszta kéz)
+
 ### Harc alakzatban 🚧
 
 Előfeltétel: Alakzatharc szabályrendszer kidolgozása (`md/065_03_harc_alakzatban.md`).
