@@ -372,25 +372,32 @@ impl: páncél_merev (0/1) és merevvért_csökkentés lookup szabályokból jö
 
 ```
 input:  karakter.pajzs.méret (kis/közepes/nagy/""),
-        karakter.pajzs.pajzshasználat_fok (0-3)
-source: konstansok.yaml → pajzshasználat_TÉ_büntetés, tables/pajzsok.json
+        session.fegyverfogás (fegyver_pajzs mód aktiválja),
+        fortélyok: Pajzshasználat fok (0-3)
+source: konstansok.yaml → pajzs_TÉ_büntetés, tables/pajzsok.json,
+        fortelyok/harci/pajzshasznalat.yaml → módosítók (pajzs_TÉ_mérséklés, VÉ)
 
 formula:
-  if pajzs.méret == "": nincs pajzs → VÉ_pajzs = 0, TÉ_büntetés_pajzs = 0
+  if fegyverfogás ≠ "fegyver_pajzs" VAGY pajzs.méret == "": → VÉ_pajzs = 0, TÉ_büntetés_pajzs = 0
 
   pajzs_data = lookup(pajzs.méret → pajzsok.json)  // "kis" → "Kis Pajzs", stb.
   VÉ_pajzs = pajzs_data.VÉ
-  if pajzshasználat_fok == 0:
-    VÉ_pajzs = FLOOR(VÉ_pajzs / 2)            // 0.fok: csak VÉ fele aktív
-  elif pajzshasználat_fok == 3:
-    VÉ_pajzs += 2                             // 3.fok: +2 VÉ extra minden pajzshoz
-  TÉ_büntetés_pajzs = lookup(pajzs.méret → pajzshasználat_TÉ_büntetés).fokok[pajzshasználat_fok]
 
-output: VÉ_pajzs, TÉ_büntetés_pajzs
-note: 0.fok esetén a pajzs VÉ-je felére csökken.
-      Pajzs csak ha van szabad kéz (egykezes fegyver mellett). Kétkezes fegyverrel vagy kétkezes harcban nem használható.
-      A pajzs "kézben" állapotot a session.aktív_pajzs toggle vezérli (Aktív fül).
-      Pajzshasználat fortély szinkronizálva: karakter.pajzs.pajzshasználat_fok ↔ fortélyok[Pajzshasználat].fok
+  // TÉ büntetés: egydimenziós konstans + fortély mérséklés
+  alap_büntetés = lookup(konstansok.pajzs_TÉ_büntetés, méret, pajzs.méret, büntetés)
+    // kis: -3, közepes: -6, nagy: -9
+  mérséklés = fortelyMods['pajzs_TÉ_mérséklés']
+    // Pajzshasználat fok 1: +3, fok 2: +6, fok 3: +9 (fortély yaml módosító, feltétel: fegyverfogás==fegyver_pajzs)
+  TÉ_büntetés_pajzs = MIN(0, alap_büntetés + mérséklés)
+
+  // VÉ bónusz: 3. fok +2 (fortély yaml módosító, feltétel: fegyverfogás==fegyver_pajzs)
+  // Ez a fortelyMods['VÉ']-be kerül → fegyver_fortély_VÉ → reactive engine fegyver_VÉ
+
+output: VÉ_pajzs (fogásResult lila sorban), TÉ_büntetés_pajzs (fogásResult lila sorban)
+note: Fegyver+pajzs mód automatikusan aktív_pajzs = true.
+      Pajzs csak fegyver_pajzs fegyverfogásban használható (nem kétkezes, nem hárító).
+      Pajzshasználat fok 0: nincs mérséklés → teljes büntetés érvényesül.
+      Pajzshasználat fok 3: VÉ+2 extra + teljes büntetés mérsékelve (TÉ: 0 minden pajzshoz).
 ```
 
 ---
@@ -398,11 +405,11 @@ note: 0.fok esetén a pajzs VÉ-je felére csökken.
 ## 14. Manőver Alap / Manőver Pont
 
 ```
-input:  közelharci harcmodor szintek (közelharc, kardvívás, rombolás, lándzsavívás, ostorharc),
+input:  közelharci harcmodor szintek (konstansok.fegyver_kategória_harcmodor values),
         karakter.tsz
 
 formula:
-  harcmodor_összeg = SUM(közelharc, kardvívás, rombolás, lándzsavívás, ostorharc)
+  harcmodor_összeg = SUM(konstansok.fegyver_kategória_harcmodor.values → képzettség szintek)
   manőver_pont = CEIL(harcmodor_összeg x 2 / tsz)
 
 output: manőver_pont
@@ -1146,10 +1153,10 @@ A **nagyobb fegyver** harcmodora számít (képzettség szint lookup).
 
 | Kétkezes harc fok | TÉ/VÉ | Mesterfegyver | Megjegyzés |
 |---|---|---|---|
-| Alapeset (0. fok) | Csak nagyobb fegyver értékei. Kisebb=0. TÉ/VÉ: konstansok.kétkezes_harc_bónuszok[0] (-3/-3) | Nem számít | Harckeret: +1 |
-| 1. fok | Mindkét fegyver TÉ/VÉ összeadódik | Nem számít | Harckeret: +2 |
-| 2. fok | Mindkét fegyver TÉ/VÉ összeadódik | Csak nagyobb fegyveré | Harckeret: +3 |
-| 3. fok | Mindkét fegyver TÉ/VÉ összeadódik | Mindkettőé | Harckeret: +4 |
+| Alapeset (0. fok) | Csak nagyobb fegyver értékei (mindkét_fegyver_értékei: false). TÉ/VÉ: konstansok.kétkezes_harc_bónuszok[0] (-3/-3) | mf: "nincs" | Harckeret: +1 |
+| 1. fok | Mindkét fegyver TÉ/VÉ összeadódik (mindkét_fegyver_értékei: true) | mf: "nincs" | Harckeret: +2 |
+| 2. fok | Mindkét fegyver TÉ/VÉ összeadódik | mf: "nagyobb" | Harckeret: +3 |
+| 3. fok | Mindkét fegyver TÉ/VÉ összeadódik | mf: "mindkettő" | Harckeret: +4 |
 
 ### 26.4 Pengeméret korlát
 
@@ -1177,7 +1184,7 @@ formula:
 
   // Pengelevonás: a két fegyver tényleges pengehosszainak összege, osztva 0.5-tel
   sum_pengehossz = fegyver_jobb.pengehossz + fegyver_bal.pengehossz
-  pengelevonás = FLOOR(sum_pengehossz / 0.5)
+  pengelevonás = FLOOR(sum_pengehossz / konstansok.kétkezes_harc_pengelevonás_osztó)
 
   harckeret = harcmodorSzint + gyorsaság + fortelyMods['harckeret'] + kh_harckeret_bónusz - pengelevonás
 
@@ -1219,24 +1226,27 @@ if session.kétkezes_harc:
 
   harcmodor_szint = lookup(nagyobb_fegyver.kategória → harcmodor képzettség szint)
 
-  if kétkezes_harc_fok >= 1:
-    TÉ = TÉ_alap + nagyobb_fegyver.TÉ + kisebb_fegyver.TÉ + harcmodor_bónusz.TÉ + HM_TÉ + MF_bónusz
-    VÉ = VÉ_alap + nagyobb_fegyver.VÉ + kisebb_fegyver.VÉ + harcmodor_bónusz.VÉ + HM_VÉ + MF_bónusz
+  khFokEntry = konstansok.kétkezes_harc_bónuszok[fok]
+
+  if khFokEntry.mindkét_fegyver_értékei:
+    TÉ = TÉ_alap + nagyobb.TÉ + kisebb.TÉ + harcmodor_bónusz.TÉ + HM_TÉ + MF_bónusz + fortelyMods['TÉ'] + khFokBónusz.TÉ
+    VÉ = VÉ_alap + nagyobb.VÉ + kisebb.VÉ + harcmodor_bónusz.VÉ + HM_VÉ + MF_bónusz + fortelyMods['VÉ'] + khFokBónusz.VÉ
   else:
-    TÉ = TÉ_alap + nagyobb_fegyver.TÉ + harcmodor_bónusz.TÉ + HM_TÉ  // kisebb=0, MF nem számít
-    VÉ = VÉ_alap + nagyobb_fegyver.VÉ + harcmodor_bónusz.VÉ + HM_VÉ
-    // + Hátrány-1 TÉ dobásra (Hatás pool)
+    TÉ = TÉ_alap + nagyobb.TÉ + harcmodor_bónusz.TÉ + HM_TÉ + fortelyMods['TÉ'] + khFokBónusz.TÉ
+    VÉ = VÉ_alap + nagyobb.VÉ + harcmodor_bónusz.VÉ + HM_VÉ + fortelyMods['VÉ'] + khFokBónusz.VÉ
 
-  MF_bónusz (TÉ/VÉ/SP):
-    if fok == 0: 0
-    if fok == 1: 0 (MF nem számít)
-    if fok == 2: lookup(MF_fok_nagyobb → mesterfegyver_bónuszok)  // TÉ+VÉ+SP
-    if fok == 3: lookup(MF_fok_nagyobb) + lookup(MF_fok_kisebb)   // mindkettő TÉ+VÉ+SP
+  // khFokBónusz: 0.fok → konstansokból (TÉ:-3, VÉ:-3), fok>=1 → {TÉ:0, VÉ:0} (yaml-ból fortelyMods-ban)
 
-  SP = fegyver_jobb.SP + erőbónusz + MF_bónusz.SP  // az ügyesebb kéz (jobb) fegyvere sebez
+  MF_bónusz (TÉ/VÉ/SP) — data-driven: khFokEntry.mf
+    if mf == "nincs": 0
+    if mf == "nagyobb": lookup(MF_fok_nagyobb → mesterfegyver_bónuszok)
+    if mf == "mindkettő": lookup(MF_fok_nagyobb) + lookup(MF_fok_kisebb)
 
-  harckeret = alap_harckeret + kétkezes_harckeret  // lásd §26.5
-  támadások = 1 + FLOOR(harckeret / nagyobb_fegyver.sebesség)  // nagyobb fegyver sebessége számít
+  SP = fegyver_jobb.SP + erőbónusz + MF_bónusz.SP + fortelyMods['SP']
+
+  harckeret = harcmodorSzint + gyorsaság + fortelyMods['harckeret'] + khFokBónusz.harckeret - pengelevonás
+  pengelevonás = FLOOR(sum_pengehossz / konstansok.kétkezes_harc_pengelevonás_osztó)
+  támadások = 1 + FLOOR(harckeret / nagyobb_fegyver.sebesség)
 ```
 
 ## §27 Fegyverfogás
@@ -1284,8 +1294,10 @@ Egyfegyveres:
   Standard kalkuláció (§7-§14). Nincs extra módosító.
 
 Fegyver + pajzs:
-  Már implementálva (§13): pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő).
-  A pajzsVÉ CSAK a lila összesítő sorban jelenik meg (normál sorokból kiszűrve).
+  Implementálva (§13): pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő).
+  TÉ büntetés = konstansok.pajzs_TÉ_büntetés[méret] + fortelyMods['pajzs_TÉ_mérséklés'] (min 0).
+  VÉ +2 (3. fok): fortély yaml módosító → fortelyMods['VÉ'] → fegyver_fortély_VÉ.
+  A pajzsVÉ és TÉ büntetés CSAK a lila összesítő sorban jelenik meg (normál sorokból kiszűrve).
 
 Fegyver + hárítófegyver (RÉSZBEN IMPLEMENTÁLVA):
   hárítóVÉ = hárítófegyver.VÉ (fegyverek.json Hárító flag, ha van "Hárítófegyver használat" fortély, else 0)
@@ -1322,3 +1334,113 @@ Kétkezes fegyver (lándzsa, stb.) → kizárólag "Egyfegyveres" fogás.
 7. ✅ karakter.yaml séma: `session.fegyverfogás` mező
 8. ✅ validate_karakter.py: fegyverfogás enum validáció
 9. TODO: Hárítófegyver MF VÉ bónusz (ha van Mesterfegyver a hárítóra)
+
+---
+
+## §28 Harc alakzatban (TERV — NEM IMPLEMENTÁLT)
+
+Forrás: md/065_03_harc_alakzatban.md
+
+### 28.1 Alapfogalmak
+
+- Alakzat: minimum 3 fő összehangolt csapat, max 20 fő (alakzat vs alakzat modellezéshez)
+- Alakzatharc képzettség: primer/harci, szintje beleszámít max_HM-be (már implementálva)
+- Vezető fortélyok: Alakzatparancsnok, Íjászparancsnok, Lovaskapitány, Léglovaskapitány
+
+### 28.2 Támadószint és Védekezőszint
+
+```
+Támadószint = MIN(csapat Alakzatharc szintek) + Vezető_bónusz + MIN(csapat Támadó-alakzat fok) x 2
+Védekezőszint = MIN(csapat Alakzatharc szintek) + Vezető_bónusz + MIN(csapat Védekező-alakzat fok) x 2
+
+Vezető_bónusz = Vezető fortély fok x 2
+```
+
+### 28.3 Alakzat harcértékek
+
+```
+Alakzat_TÉ = AVG(tagok fegyveres TÉ) + harcmodor_bónusz(Támadószint).TÉ
+Alakzat_VÉ = AVG(tagok fegyveres VÉ) + harcmodor_bónusz(Védekezőszint).VÉ + MIN(tagok_száma, 10)
+Alakzat_CÉ = AVG(tagok fegyveres CÉ) + harcmodor_bónusz(Támadószint).TÉ  // íjász/lövész alakzatnál
+
+note: A harcmodor_bónusz lookup ugyanaz a tábla mint a normál harcmodor szint bónuszok (062_02).
+      Személyek száma VÉ: +1/fő, max +10.
+```
+
+### 28.4 Kezdeményezés
+
+Az alakzat mindig nyeri a kezdeményezést egyének ellen.
+
+### 28.5 Támadások száma
+
+```
+Az alakzat 1 támadást kap minden egyéni ellenfélre (max = alakzat létszáma).
+```
+
+### 28.6 VÉ csökkentés alakzat ellen
+
+```
+Az alakzat ellen elszenvedett VÉ csökkentésből levonás:
+  -2: normál helyzetben
+  -3: ha az Alakzat Teljes Védekezés taktikában van
+```
+
+### 28.7 VÉ csökkentés alakzat által (fix értékek)
+
+```
+3 VÉ: Alakzat Pengehátrányban vagy Alappengénél
+4 VÉ: Alakzat Pengeelőnyben
+
+Túlerő módosító:
+  +0: 3 fő (legkisebb alakzat)
+  +1: 5+ fő
+```
+
+### 28.8 Alakzat ÉP
+
+```
+Összesített ÉP = tagok_száma x 28 (vagy lényfüggő, pl. ork: 40)
+Minden 28 ÉP veszteségnél: -1 fő → újraszámolás (VÉ, létszám bónusz)
+```
+
+### 28.9 Alakzat taktikái
+
+```
+Engedélyezett taktikák (fix értékek):
+  Támadó:   TÉ: +3, VÉ: -6
+  Védő:     VÉ: +4, TÉ: -8
+  Roham:    TÉ: +4, VÉ: -8
+  Fárasztó:  +2 VÉ csökkentés
+
+Manőverek: NEM használhatók alakzatban.
+```
+
+### 28.10 Tiltott taktikák alakzat ellen
+
+```
+Nem használható egyén által alakzat ellen:
+  - Fárasztó taktika
+  - Kezdeményező taktika
+  - Kiváró taktika
+  - Visszafogott taktika
+```
+
+### 28.11 Alakzat vs Alakzat
+
+```
+Mindkét alakzat: 1 támadás/kör
+VÉ csökkentés/kör: 2
+Túlerő: +1 VÉ csökkentés / +3 ember (max +5)
+Max létszám modellezéshez: 20 fő / alakzat
+```
+
+### 28.12 Implementációs terv
+
+```
+Webapp scope: NJK alakzat kalkulátor (KM eszköz):
+  - Input: tagok száma, min Alakzatharc szint, Vezető fok, Támadó/Védekező fok, fegyveres TÉ/VÉ átlag
+  - Output: Alakzat TÉ, VÉ, VÉ csökkentés értékek, engedélyezett taktikák
+
+Nem játékos karakter kalkulátor → egyszerűsített (nem per-tag, hanem átlag alapú).
+A játékos karakter Alakzatharc szintje max_HM-be már beleszámít (rules.json: sum harcmodor_összeg + alakzatharc_szint).
+```

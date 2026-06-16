@@ -114,7 +114,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
 | Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Kiváltja a korábbi "2 kezes harc" és "Pajzs kézben" toggle-öket. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
-| Hatás pool box | info szekció | 6 alszekció: Harcérték módosítók, Aktív Hatások, Manőver bónuszok, Előny/Hátrány, Fortély emlékeztetők, Narratív módosítók |
+| Hatás pool box | info szekció | 7 alszekció: Taktikák, Harci helyzetek, Státusz hatások, Manőver bónuszok, Előny/Hátrány, Fortély bónuszok, Narratív módosítók |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
 | Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend |
@@ -129,12 +129,13 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 - Chip kattintás fokozatos taktikánál: fokválasztó picker újra felugrik
 
 ### Hatás pool szekciók
-1. **Harcérték módosítók**: taktikák fix KÉ/TÉ/VÉ/SP összesítése
-2. **Aktív Hatások**: státuszok + harci helyzetek strukturált hatásai kumulálva (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít). Elemek külön sorban (flex-direction: column). Formátum: `{hatás}: {cél}` (pl. "Előny+2: TÉ dobás").
-3. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
-4. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes). Formátum: `Előny+X: Cél (Fortély)` (pl. "Előny+2: Sebzésdobás (Orgyilkos)")
-5. **Fortély emlékeztetők**: harci fortélyok narratív hatásszövegei (yaml `emlékeztető: true` flag alapján)
-6. **Narratív módosítók**: KM által hozzáadott szöveges + opcionális Előny/Hátrány
+1. **Taktikák**: per-taktika sorok. Név narancssárga (`#ff9800`), módosítók zöld (`#66bb6a`), megjegyzések narancssárga (`#ffb74d`). Formátum: `Név (fok): TÉ: +X, VÉ: -Y • megjegyzés`
+2. **Harci helyzetek**: per-helyzet sorok. Név narancssárga, hatások utána. Fix hatásúaknál: Előny/Hátrány + cél. Szituatív (nincs fix hatás): infó szöveg jelenik meg.
+3. **Státusz hatások**: státuszok strukturált hatásai kumulálva célonként (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít). Formátum: `{hatás}: {cél}`.
+4. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
+5. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes). Formátum: `Előny+X: Cél (Fortély)` (pl. "Előny+2: Sebzésdobás (Orgyilkos)")
+6. **Fortély bónuszok**: harci fortélyok narratív hatásszövegei (yaml `emlékeztető: true` flag alapján)
+7. **Narratív módosítók**: KM által hozzáadott szöveges + opcionális Előny/Hátrány
 
 ### Stílus
 - `.aktiv-field-btn`: keretezett label+érték (he-field-btn stílus)
@@ -192,7 +193,7 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
   - Fegyverfogás ≠ Egyfegyveres: összesítő sor felül (lila/purple keret `#9c27b0`), normál sorok halványítva (opacity: 0.4)
     - Kétkezes: összevont harcértékek (§26)
-    - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz, név: "Fegyver + Pajzs". PajzsVÉ csak a lila sorban (normálból kiszűrve).
+    - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő), név: "Fegyver + Pajzs". Csak a lila sorban (normálból kiszűrve).
     - Fegyver+hárító: jobb kéz fegyver + hárítóVÉ bónusz, név: "Fegyver + Hárító: X"
   - Egyfegyveres: csak az Ügyesebb kézben kiválasztott fegyver sora normál, többi halványítva (opacity: 0.4)
   - Tám cella kattintható (Game mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
@@ -428,14 +429,14 @@ HM/CM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban
 - Piros szín ha túllépés
 
 ### Harcmodorok (read-only)
-- Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc szintek
+- Harcmodor képzettség szintek (konstansok.fegyver_kategória_harcmodor values)
 - A Tul/Képz fülről szinkronizálva
 
 ### Fegyverek
 - Fegyver példány kártyák listája
 - Fejléc: fegyver neve (MK fegyvereknél suffix nélkül, `Alapnév` mezőből) + ✕ törlés
 - Mezők (`he-field-btn` stílus, dupla katt → overlay popup):
-  - MF fok: kerek gombok 0-3
+  - MF fok: kerek gombok 0-3. Piros szöveg ha a Mesterfegyver követelménye nem teljesül.
   - Idea: 3 soros popup (-5..-1 / 0 / +1..+5)
   - Anyag: 1 oszlopos popup (acél, bronz, abbitacél, mithrill, lunír)
 - \+ Új fegyver dropdown: kategóriánként csoportosítva (MK 2K variáns kiszűrve)

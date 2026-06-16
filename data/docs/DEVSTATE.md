@@ -197,6 +197,7 @@
   - Harcmodorok: read-only lista (Tul/Képz fülről szinkronizálva)
   - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown)
     - Mezők: MF fok, Idea, Anyag — `he-field-btn` stílus, dupla katt → overlay popup
+    - MF fok: piros szöveg ha Mesterfegyver követelmény nem teljesül
     - Per-element double-tap: `tapTimers` Map (key-per-gomb, nincs interferencia)
     - MK fegyverek: dropdown-ban csak 1K variáns, `Alapnév` mező mint display name (suffix nélkül)
     - MK 2K variáns: automatikusan megjelenik a Harc fülön mint külön sor
@@ -290,7 +291,7 @@
   - Harci helyzetek: overlay picker (név + infó, ABC)
   - Szituációk: overlay picker (név + infó, ABC)
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
-  - Hatás pool box (felül, 6 szekció): Harcérték módosítók | Aktív Hatások | Manőver bónuszok | Előny/Hátrány | Fortély emlékeztetők | Narratív módosítók
+  - Hatás pool box (7 szekció): Taktikák | Harci helyzetek | Státusz hatások | Manőver bónuszok | Előny/Hátrány | Fortély bónuszok | Narratív módosítók
   - Narratív módosítók: "+ Új" gomb → overlay popup (Hátrány/Előny gombok + szöveg + OK, Enter = OK)
   - Több támadás TÉ levonás: konstansokból (`több_támadás_TÉ_levonás`), generikusan (taktika +3 kioltja)
   - Minden picker: Escape + mellé katt bezárja
@@ -356,8 +357,6 @@
 - Faj misztérium képzettségek → Mágia fülre
 
 ### Aktív fül
-- Harci alakzat 🚧 (Alakzatharc kidolgozása szükséges)
-  - kapcsolódó fortélyok bekötése
 - ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF, 0.fok TÉ/VÉ/harckeret konstansokból)
 
 - ✅ Harci akrobatika: session_toggle (yaml `session_toggle: true`) + TÉ/VÉ bekötés + manőver bónusz
@@ -373,13 +372,53 @@
 - ✅ Testőr: vé_veszteség + támadások_száma enyhít (`feltétel: "harci_helyzet:vé_kiterjesztés"`)
 - ✅ Természetes fegyver: SP override, puszta kéz feltétel — már volt
 - ✅ Természetes páncél: SFÉ flat — már volt
-- ✅ Pajzshasználat: HarcScreen §13-ban implementálva (konstansok lookup)
+- ✅ Pajzshasználat: §13 data-driven (pajzs_TÉ_büntetés konstans + fortély yaml pajzs_TÉ_mérséklés + VÉ+2 3.fok, feltétel: fegyverfogás==fegyver_pajzs)
 - ✅ Hárítófegyver használat: Fegyverfogás picker + hárítóVÉ bekötés + fegyverek.json beolvasztás (TODO: MF VÉ bónusz)
 - Kaszabolás: runtime döntés — fortély emlékeztető elég
 - Kitérés lövés elől: próba bónusz — próba rendszer nincs implementálva
 - Támadás erőből: interaktív SP↔TÉ csere — nem automatikus módosító
-- Vezető XY: Alakzatszint bónusz — Alakzatharc rendszer előfeltétel
 - Szabad fortélyok felvételénél: mutassa rögtön a kiterjesztéseket (UI feature)
+
+### Harc alakzatban 🚧
+
+Előfeltétel: Alakzatharc szabályrendszer kidolgozása (`md/065_03_harc_alakzatban.md`).
+Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
+
+**Szabályrendszer összefoglaló:**
+- Alakzat: min 3 fő, max 20 fő
+- Támadószint = MIN(csapat Alakzatharc) + Vezető_fok×2 + MIN(csapat Támadó-alakzat fok)×2
+- Védekezőszint = MIN(csapat Alakzatharc) + Vezető_fok×2 + MIN(csapat Védekező-alakzat fok)×2
+- Alakzat TÉ = AVG(tagok TÉ) + harcmodor_bónusz(Támadószint)
+- Alakzat VÉ = AVG(tagok VÉ) + harcmodor_bónusz(Védekezőszint) + MIN(tagok, 10)
+- Kezdeményezés: alakzat mindig nyer egyén ellen
+- VÉ csökkentés ellen: -2 (normál), -3 (Teljes Védekezés)
+- VÉ csökkentés által: fix 3 (pengealap/hátrány) vagy 4 (előny), +1 ha 5+ fő
+- ÉP: 28/fő, minden 28 ÉP-nél -1 fő
+- Taktikák: fix módosítók (Támadó +3/-6, Védő +4/-8, Roham +4/-8, Fárasztó +2 csökk)
+- Tiltott egyén által alakzat ellen: Fárasztó, Kezdeményező, Kiváró, Visszafogott
+
+**Képzettség:**
+- Alakzatharc (primer/harci) — már felvehető, szintje beleszámít max_HM-be (rules.json)
+
+**Fortélyok (yaml-ok léteznek, módosítók üresek):**
+- Alakzatharc (`alakzatharc.yaml`) — többszörös (spec_típus: "harci alakzatok", spec_lista: ["lovas ék", "testudo"]), maxfok: 2
+- Alakzat: támadó (`alakzat_tamado.yaml`) — maxfok: 2, követelmény: Harcmodor ≥ 6
+- Alakzat: védekező (`alakzat_vedekezo.yaml`) — maxfok: 2, követelmény: Harcmodor ≥ 6
+- Vezető: Alakzatparancsnok (`vezeto_alakzatparancsnok.yaml`) — maxfok: 2, követelmény: Alakzatharc 6/9 + Befolyásolás ≥ 3
+- Vezető: Fejvadász stratégis (`vezeto_fejvadasz_strategis.yaml`) — maxfok: 2
+- Vezető: Íjászparancsnok (`vezeto_ijaszparancsnok.yaml`) — maxfok: 2
+- Vezető: Léglovaskapitány (`vezeto_leglovaskapitany.yaml`) — maxfok: 2
+- Vezető: Lovaskapitány (`vezeto_lovaskapitany.yaml`) — maxfok: 2
+- Vezető: Testőrparancsnok (`vezeto_testorparancsnok.yaml`) — maxfok: 2
+
+**Megjegyzés:** A Vezető fortélyok mindegyike +2 bónuszt ad az Alakzatszintre fokonként. A fortély hatása NEM a játékos karakter harcértékeit módosítja — az alakzat szintű kalkuláció NJK eszközben történik.
+
+**TODO:**
+- [ ] Alakzat típusok spec_lista bővítés (a md szerint: kicsi/nagy/lovas, gyalogos formációk)
+- [ ] NJK Alakzat kalkulátor (KM eszköz): input tagok száma/szintek/fokok/TÉ-VÉ átlag → output alakzat harcértékek
+- [ ] Aktív fül: "Alakzat ellen" helyzet hozzáadás (VÉ csökkentés mérséklés -2, taktika tiltások)
+- [ ] Taktika megkötések: Fárasztó/Kezdeményező/Kiváró/Visszafogott → tiltott alakzat ellen
+- [ ] engine_spec §28 TERV → IMPLEMENTÁLVA státuszra emelés implementáció után
 
 ### Távharc fül
 - Távharc kalkulátor (CÉ és VÉ) — §17
@@ -433,11 +472,15 @@
 - Strict schema: minden YAML source fájlban explicit megvan minden séma-mező (nincs implicit default, `generate_tables.py` setdefault csak biztonsági háló)
 - Session toggle fortélyok: yaml `session_toggle: true` → Aktív fülön generikus toggle gomb, HarcScreen csak aktív toggle-nél alkalmazza TÉ/VÉ módosítókat
 - Pengelimit: `konstansok.kétkezes_harc_max_pengeméret` (nincs hardcode 2.0)
+- Kétkezes harc data-driven: `konstansok.kétkezes_harc_bónuszok[]` tartalmazza `mindkét_fegyver_értékei`, `mf` ("nincs"/"nagyobb"/"mindkettő"), `harckeret`, `TÉ`, `VÉ` fokonként
+- Pengelevonás osztó: `konstansok.kétkezes_harc_pengelevonás_osztó` (0.5)
+- Harcmodor nevek: `Object.values(konstansok.fegyver_kategória_harcmodor)` — nincs hardcoded lista
 - Többszörös státuszok: yaml `többszörös: true` + `alkategóriák: [...]` → generikus alkategória almenü picker
 - Fegyverfogás: `session.fegyverfogás` explicit mező (enum: egyfegyveres/fegyver_pajzs/fegyver_hárító/kétkezes), opciók `konstansok.fegyverfogás_opciók`-ból
 - Fegyver `Hárító` flag: `fegyverek.json`-ban `"1"/"0"` (process_fegyverek.py generálja: név prefix "Hárító:" / ", hárító" / Speciális "Hárítófegyverként")
 - Fegyver `Erőbónusz limit`: `"0"` = nincs erőbónusz, `"99"` = korlátlan. Kód: `parseInt(érték)` ha nem üres, else 99 (üres/NaN nem fordul elő strict schema-val).
-- Fortély `emlékeztető` flag: yaml `emlékeztető: true/false` → AktivScreen Hatás pool "Fortély emlékeztetők" szekció (19 fortélynál true)
+- Pajzs TÉ büntetés: `konstansok.pajzs_TÉ_büntetés` (1D: méret→büntetés) + fortély yaml `pajzs_TÉ_mérséklés` mód
+- Fortély `emlékeztető` flag: yaml `emlékeztető: true/false` → AktivScreen Hatás pool "Fortély bónuszok" szekció (19 fortélynál true)
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
 - Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek, taktikák, harci helyzetek, szituációk, manőverek, státuszok, hatások, események, hátterek)
