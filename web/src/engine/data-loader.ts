@@ -20,7 +20,7 @@ interface KonstansokRaw {
   páncél_csatolt_tag_mgt: { hajlékonyvért_nem_fém: Record<string, number>; hajlékonyvért_fém: Record<string, number>; merevvért_fém: Record<string, number> };
   mesterfegyver_bónuszok: MesterfegyverBonusz[];
   merevvértviselet_bónuszok: { fok: number; TÉ_büntetés_csökkentés: number }[];
-  pajzshasználat_TÉ_büntetés: { pajzs: string; fokok: number[] }[];
+  pajzs_TÉ_büntetés: { méret: string; büntetés: number }[];
   harcmodorok: { közelharci: string[]; távolsági: string[] };
   fegyver_kategória_harcmodor: Record<string, string>;
   több_támadás_TÉ_levonás: number;

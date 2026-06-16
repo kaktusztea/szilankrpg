@@ -345,15 +345,15 @@ merevvértviselet_bónuszok:
 # Pajzshasználat TÉ büntetés (pajzs x fok mátrix)
 # ============================================================
 
-pajzshasználat_TÉ_büntetés:
-  - pajzs: "nincs"
-    fokok: [0, 0, 0, 0]
-  - pajzs: "kis pajzs"
-    fokok: [-3, 0, 0, 0]
-  - pajzs: "közepes pajzs"
-    fokok: [-6, -3, 0, 0]
-  - pajzs: "nagy pajzs"
-    fokok: [-9, -6, -3, 0]
+pajzs_TÉ_büntetés:
+  - méret: "nincs"
+    büntetés: 0
+  - méret: "kis"
+    büntetés: -3
+  - méret: "közepes"
+    büntetés: -6
+  - méret: "nagy"
+    büntetés: -9
 
 # ============================================================
 # Aura bónusz tábla

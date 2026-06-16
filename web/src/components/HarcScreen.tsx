@@ -345,8 +345,17 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
   // Pajzs VÉ — lookup méret alapján
   const PAJZS_MÉRET_NÉV: Record<string, string> = { kis: 'Kis Pajzs', közepes: 'Közepes Pajzs', nagy: 'Nagy Pajzs' };
-  const pajzsDef = session.aktív_pajzs && k.pajzs.méret ? data.pajzsok.find(p => p.Pajzs === PAJZS_MÉRET_NÉV[k.pajzs.méret]) : null;
+  const pajzsDef = (session.aktív_pajzs || session.fegyverfogás === 'fegyver_pajzs') && k.pajzs.méret ? data.pajzsok.find(p => p.Pajzs === PAJZS_MÉRET_NÉV[k.pajzs.méret]) : null;
   const pajzsVÉ = pajzsDef ? parseInt(pajzsDef.VÉ) || 0 : 0;
+
+  // Pajzs TÉ büntetés: konstansok lookup + fortély mérséklés
+  const pajzsTÉBüntetés = (() => {
+    if (session.fegyverfogás !== 'fegyver_pajzs' || !k.pajzs.méret) return 0;
+    const entry = konstansok.pajzs_TÉ_büntetés?.find((e: { méret: string; büntetés: number }) => e.méret === k.pajzs.méret);
+    const alap = entry?.büntetés ?? 0;
+    const mérséklés = fortelyMods['pajzs_TÉ_mérséklés'] ?? 0;
+    return Math.min(0, alap + mérséklés);
+  })();
 
   // Hárítófegyver VÉ
   let hárítóVÉ = 0;
@@ -363,13 +372,13 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
   }
 
   // Fogás összesítő sor (pajzs / hárító)
-  let fogásResult: { név: string; VÉ_bónusz: number } | null = null;
+  let fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null = null;
   if (session.fegyverfogás === 'fegyver_pajzs' && pajzsVÉ > 0) {
     const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    fogásResult = { név: (jobbFp?.alap ?? 'Fegyver') + ' + Pajzs', VÉ_bónusz: pajzsVÉ };
+    fogásResult = { név: (jobbFp?.alap ?? 'Fegyver') + ' + Pajzs', VÉ_bónusz: pajzsVÉ, TÉ_büntetés: pajzsTÉBüntetés };
   } else if (session.fegyverfogás === 'fegyver_hárító' && hárítóVÉ > 0) {
     const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    fogásResult = { név: (jobbFp?.alap ?? 'Fegyver') + ' + ' + hárítóNév, VÉ_bónusz: hárítóVÉ };
+    fogásResult = { név: (jobbFp?.alap ?? 'Fegyver') + ' + ' + hárítóNév, VÉ_bónusz: hárítóVÉ, TÉ_büntetés: 0 };
   }
 
   // ÉP TÉ levonás
@@ -445,7 +454,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
               <tr style={{ border: '2px solid #9c27b0' }}>
                 <td>{fogásResult.név}</td>
                 <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
-                <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
+                <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + fogásResult.TÉ_büntetés + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
                 <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
                 <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
                 <td>{r.pengehossz}</td>

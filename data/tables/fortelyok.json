@@ -4592,7 +4592,20 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "pajzs_TÉ_mérséklés",
+            "mód": "flat",
+            "érték": 3,
+            "feltétel": [
+              {
+                "forrás": "fegyverfogás",
+                "operátor": "==",
+                "érték": "fegyver_pajzs"
+              }
+            ]
+          }
+        ]
       },
       {
         "fok": 2,
@@ -4615,7 +4628,20 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "pajzs_TÉ_mérséklés",
+            "mód": "flat",
+            "érték": 6,
+            "feltétel": [
+              {
+                "forrás": "fegyverfogás",
+                "operátor": "==",
+                "érték": "fegyver_pajzs"
+              }
+            ]
+          }
+        ]
       },
       {
         "fok": 3,
@@ -4638,7 +4664,32 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "pajzs_TÉ_mérséklés",
+            "mód": "flat",
+            "érték": 9,
+            "feltétel": [
+              {
+                "forrás": "fegyverfogás",
+                "operátor": "==",
+                "érték": "fegyver_pajzs"
+              }
+            ]
+          },
+          {
+            "cél": "VÉ",
+            "mód": "flat",
+            "érték": 2,
+            "feltétel": [
+              {
+                "forrás": "fegyverfogás",
+                "operátor": "==",
+                "érték": "fegyver_pajzs"
+              }
+            ]
+          }
+        ]
       }
     ]
   },

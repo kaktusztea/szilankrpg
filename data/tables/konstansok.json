@@ -387,42 +387,22 @@
       "TÉ_büntetés_csökkentés": 15
     }
   ],
-  "pajzshasználat_TÉ_büntetés": [
+  "pajzs_TÉ_büntetés": [
     {
-      "pajzs": "nincs",
-      "fokok": [
-        0,
-        0,
-        0,
-        0
-      ]
+      "méret": "nincs",
+      "büntetés": 0
     },
     {
-      "pajzs": "kis pajzs",
-      "fokok": [
-        -3,
-        0,
-        0,
-        0
-      ]
+      "méret": "kis",
+      "büntetés": -3
     },
     {
-      "pajzs": "közepes pajzs",
-      "fokok": [
-        -6,
-        -3,
-        0,
-        0
-      ]
+      "méret": "közepes",
+      "büntetés": -6
     },
     {
-      "pajzs": "nagy pajzs",
-      "fokok": [
-        -9,
-        -6,
-        -3,
-        0
-      ]
+      "méret": "nagy",
+      "büntetés": -9
     }
   ],
   "aura_bónusz": [

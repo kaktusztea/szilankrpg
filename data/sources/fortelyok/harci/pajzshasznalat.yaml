@@ -27,7 +27,14 @@ fokok:
   hatástext: 
   - text: "Teljes pajzs VÉ aktív."
   - text: "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6."
-  módosítók: ""
+  módosítók:
+  - cél: "pajzs_TÉ_mérséklés"
+    mód: "flat"
+    érték: 3
+    feltétel:
+    - forrás: "fegyverfogás"
+      operátor: "=="
+      érték: "fegyver_pajzs"
 - fok: 2
   követelménytext: ""
   követelmények: 
@@ -38,7 +45,14 @@ fokok:
   - text: "Teljes pajzs VÉ aktív."
   - text: "TÉ levonás: Kis:-0, Közepes:-0, Nagy:-3."
   - text: "Fegyverrel VAGY pajzzsal külön támadhatsz."
-  módosítók: ""
+  módosítók:
+  - cél: "pajzs_TÉ_mérséklés"
+    mód: "flat"
+    érték: 6
+    feltétel:
+    - forrás: "fegyverfogás"
+      operátor: "=="
+      érték: "fegyver_pajzs"
 - fok: 3
   követelménytext: ""
   követelmények: 
@@ -49,6 +63,20 @@ fokok:
   - text: "Teljes pajzs VÉ aktív, TÉ levonás nincs."
   - text: "VÉ:+2 minden pajzshoz."
   - text: "Fegyverrel VAGY pajzzsal külön támadhatsz."
-  módosítók: ""
+  módosítók:
+  - cél: "pajzs_TÉ_mérséklés"
+    mód: "flat"
+    érték: 9
+    feltétel:
+    - forrás: "fegyverfogás"
+      operátor: "=="
+      érték: "fegyver_pajzs"
+  - cél: "VÉ"
+    mód: "flat"
+    érték: 2
+    feltétel:
+    - forrás: "fegyverfogás"
+      operátor: "=="
+      érték: "fegyver_pajzs"
 todo: 
 - text: ""

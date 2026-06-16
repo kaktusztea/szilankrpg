@@ -2,7 +2,7 @@
   "schema_version": 2,
   "név": "von Agabor",
   "játékos": "",
-  "mentés_dátum": "2026-06-16 11:44",
+  "mentés_dátum": "",
   "tsz": 8,
   "leírás": "Toroni zsoldos lovag",
   "kor": 32,
@@ -19,7 +19,7 @@
     "érzékenység": 0
   },
   "HM_TÉ": 15,
-  "HM_VÉ": 15,
+  "HM_VÉ": 17,
   "CM": 0,
   "képzettségek": [
     {
@@ -40,7 +40,7 @@
     },
     {
       "név": "Fájdalomtűrés",
-      "szint": 7
+      "szint": 5
     },
     {
       "név": "Észlelés",
@@ -89,18 +89,6 @@
   ],
   "fortélyok": [
     {
-      "név": "Mesterfegyver",
-      "fok": 2,
-      "spec_típus": "fegyver",
-      "spec_elem": "tőr"
-    },
-    {
-      "név": "Mesterfegyver",
-      "fok": 2,
-      "spec_típus": "fegyver",
-      "spec_elem": "kard, lovag"
-    },
-    {
       "név": "Merevvértviselet",
       "fok": 3,
       "spec_típus": "",
@@ -108,7 +96,7 @@
     },
     {
       "név": "Harcos elme",
-      "fok": 1,
+      "fok": 2,
       "spec_típus": "",
       "spec_elem": ""
     },
@@ -132,7 +120,7 @@
     },
     {
       "név": "Elpusztíthatatlan",
-      "fok": 1,
+      "fok": 2,
       "spec_típus": "",
       "spec_elem": ""
     },
@@ -143,10 +131,22 @@
       "spec_elem": ""
     },
     {
+      "név": "Támadás erőből",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
       "név": "Fárasztás",
       "fok": 1,
       "spec_típus": "",
       "spec_elem": ""
+    },
+    {
+      "név": "Mesterfegyver",
+      "fok": 3,
+      "spec_típus": "fegyver",
+      "spec_elem": "kard, lovag"
     },
     {
       "név": "Építészet",
@@ -293,12 +293,6 @@
       "spec_típus": "nyelv",
       "spec_elem": "Toroni",
       "kiérdemelt": true
-    },
-    {
-      "név": "Kétkezes harc",
-      "fok": 2,
-      "spec_típus": "",
-      "spec_elem": ""
     }
   ],
   "fortélyok_speciális": {
@@ -353,8 +347,8 @@
     "manőver_pont_használt": 0,
     "sebzések": [],
     "aktív_fegyver_index": 0,
-    "aktív_fegyver_bal_index": 1,
-    "kétkezes_harc": true,
+    "aktív_fegyver_bal_index": -1,
+    "kétkezes_harc": false,
     "aktív_pajzs": false,
     "aktív_páncél": true,
     "aktív_taktikák": [],
@@ -364,6 +358,6 @@
     "aktív_státuszok": [],
     "narratív_módosítók": [],
     "harci_akrobatika": false,
-    "fegyverfogás": "kétkezes"
+    "fegyverfogás": "egyfegyveres"
   }
 }
