@@ -269,7 +269,7 @@
   - `szituáció:roham` → `taktika:roham`
 - ✅ Aktív fül adatforrások (YAML → JSON):
   - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika, kombó_mód/lista, fokozatos, megkötések)
-  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (29 helyzet, id, infó, hatások)
+  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (29 helyzet, id, infó, hatások, tiltja_taktikákat, kizár_helyzetek)
   - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
   - `data/sources/statuszok.yaml` → `tables/statuszok.json` (19 státusz, kategória, fokok+alcím+strukturált hatások)
@@ -421,12 +421,9 @@ Az alábbi helyzeteknél a szabályrendszer explicit tiltásokat/engedélyezése
 - ✅ Kétkezesség fortély kioltja (bármelyik kézzel levonás nélkül, de csak 1 fegyverrel)
 
 **TODO:**
-- [ ] Orvtámadás: aktív helyzet → összes taktika picker disabled + Hátulról/Meglepetés kizárás
-- [ ] Láthatatlanul: Fárasztó taktika tiltás (megkötés a taktikák yaml-ban)
-- [ ] Közrefogás: Pengeelőny semlegesítés logika (Harc fül VÉ csökkentés)
-- [ ] Magasabbról + Lovas harc: kizáró jelzés (ha lovas harc aktív, Magasabbról disabled)
-- [ ] Belharci szituáció: komplex rendszer (harcmodor + pengehossz feltételek, fegyver override)
-- [ ] Puszta kéz + Kétkezes harc: Fegyverfogás picker kizárás (ha mindkét kéz puszta kéz)
+- [x] Orvtámadás: aktív helyzet → összes taktika picker disabled + Hátulról/Meglepetés kizárás (data: `tiltja_taktikákat`, `kizár_helyzetek` yaml mezők + AktivScreen logika)
+- [x] Láthatatlanul: Fárasztó taktika tiltás (data: taktikák yaml `megkötések: harci_helyzet/tiltott/Láthatatlanul`)
+
 
 ### Harc alakzatban 🚧
 

@@ -117,7 +117,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Hatás pool box | info szekció | 7 alszekció: Taktikák, Harci helyzetek, Státusz hatások, Manőver bónuszok, Előny/Hátrány, Fortély bónuszok, Narratív módosítók |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
-| Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend |
+| Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend. Kizárás: yaml `kizár_helyzetek` lista szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. |
 | Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
 | Narratív módosítók | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |

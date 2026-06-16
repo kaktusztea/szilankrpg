@@ -742,6 +742,14 @@ note: A webapp Aktív fülön ezek toggle-ök. A pontos hatásaikat a karakterla
       Kategóriák: Harci pozíciók (065_01_03), Fegyver helyzetek (065_01_04), Fizikai/környezeti (065_01_05).
       Nem toggle-ök (automatikus/levezetett): Képzetlen fegyverhasználat, Pusztakezes harc.
       Nem az Aktív fülre (Sebzéstípusok, Fegyverméret): csak a Pengeelőny/Pengehátrány releváns, a többi szabály.
+
+Kombinálási/tiltási szabályok (data layer: harci_helyzetek.yaml mezők):
+  tiltja_taktikákat: bool — ha true, ÖSSZES taktika disabled amíg ez a helyzet aktív.
+    Implementált: Orvtámadás (true). Hozzáadáskor aktív taktikák automatikusan törlődnek.
+  kizár_helyzetek: string[] — ezen helyzetek nem adhatók hozzá / eltávolítódnak hozzáadáskor.
+    Implementált: Orvtámadás → ["Hátulról támadás", "Meglepetés"]
+  Taktika megkötések (taktikak.yaml → megkötések[]):
+    Fárasztás: harci_helyzet/tiltott/Pengehátrány, harci_helyzet/tiltott/Láthatatlanul
       Fokozatos helyzetek (alszekciók a doksiban): Láthatatlanul (hallható/csendes), Sötétben (félhomály/teljes+zaj/teljes+csend), Tűz ruhán (ég/lángol).
 
 ### 21.3 Szituációk

@@ -627,7 +627,20 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 }
                 return true;
               }).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
-                <div key={h.név} className="manover-card" onClick={() => { setSession(s => ({ ...s, aktív_helyzetek: [...s.aktív_helyzetek, h.név] })); setShowHelyzetPicker(false); }}>
+                <div key={h.név} className="manover-card" onClick={() => {
+                  const hDef = data.harciHelyzetek.find(d => d.név === h.név);
+                  setSession(s => {
+                    let helyzetek = [...s.aktív_helyzetek, h.név];
+                    let taktikák = s.aktív_taktikák;
+                    // Kizárt helyzetek eltávolítása
+                    const kizár = (hDef as any)?.kizár_helyzetek ?? [];
+                    if (kizár.length) helyzetek = helyzetek.filter(hh => !kizár.includes(hh));
+                    // Tiltja taktikákat → törlés
+                    if ((hDef as any)?.tiltja_taktikákat) taktikák = [];
+                    return { ...s, aktív_helyzetek: helyzetek, aktív_taktikák: taktikák };
+                  });
+                  setShowHelyzetPicker(false);
+                }}>
                   <span className="manover-card-name">{h.név}</span>
                   <span className="manover-card-hatas">{h.infó}</span>
                 </div>
