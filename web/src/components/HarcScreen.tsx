@@ -221,6 +221,21 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
     const mf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
 
     // Evaluate reactive rules with weapon-specific context
+    // Override módosítók: fegyver-specifikus feltétel ("fegyver:X") → alap SP felülírás
+    let alapSP = parseInt(fDef.SP) || 0;
+    for (const kf of k.fortélyok) {
+      const fDef2 = data.fortelySummaries.find(d => d.név === kf.név);
+      if (!fDef2) continue;
+      const fokDef2 = fDef2.fokok.find(fd => fd.fok === kf.fok);
+      if (!fokDef2?.módosítók) continue;
+      for (const mod of fokDef2.módosítók) {
+        if (mod.mód !== 'override' || mod.cél !== 'SP') continue;
+        if (typeof mod.feltétel === 'string' && mod.feltétel.startsWith('fegyver:')) {
+          const fegyverNév = mod.feltétel.slice('fegyver:'.length);
+          if (fDef.Fegyver.toLowerCase() === fegyverNév.toLowerCase()) alapSP = mod.érték;
+        }
+      }
+    }
     const fCtx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
       HM_TÉ: k.HM_TÉ,
       HM_VÉ: k.HM_VÉ,
@@ -236,7 +251,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
       fegyver_harcmodor_szint: harcmodorSzint,
       fegyver_alap_TÉ: parseInt(fDef.TÉ) || 0,
       fegyver_alap_VÉ: parseInt(fDef.VÉ) || 0,
-      fegyver_alap_SP: parseInt(fDef.SP) || 0,
+      fegyver_alap_SP: alapSP,
       fegyver_erőbónusz_limit: fDef['Erőbónusz limit'] !== '' ? parseInt(fDef['Erőbónusz limit']) : 99,
       fegyver_sebesség: parseInt(fDef.Sebesség) || 6,
       fegyver_mf_TÉ: mf.TÉ,

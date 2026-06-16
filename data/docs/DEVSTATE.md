@@ -428,22 +428,6 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: lila összesítő sor (kétkezes/pajzs/hárító).
 - Lovas harc
 
-## Új chat nyitásakor olvasd be ezeket
-- `/mnt/c/repo/szilank.code/data/docs/DEVSTATE.md` (ez a fájl)
-- `/mnt/c/repo/szilank.code/data/docs/engine_spec.md` — engine kalkulációk specifikációja
-- `/mnt/c/repo/szilank.code/data/docs/gui_spec.md` — GUI specifikáció (screen-ek, viselkedés, formázás)
-- `/mnt/c/repo/szilank.code/data/sources/konstansok.yaml` — központi konstansok
-- `/mnt/c/repo/szilank.code/data/schemas/` — összes schema (karakter, fortely, kepzettseg, fegyver, pancel, faj, taktika, statusz, hatas, esemeny, harci_helyzet, szituacio, manover, hatter)
-- `/mnt/c/repo/szilank.code/web/src/App.tsx` — fő app komponens (tab rendszer, mód toggle)
-- `/mnt/c/repo/szilank.code/web/src/components/HarcScreen.tsx` — Harc fül implementáció
-- `/mnt/c/repo/szilank.code/web/src/components/TulajdonsagokScreen.tsx` — Tulajdonságok + Képzettségek fül
-- `/mnt/c/repo/szilank.code/web/src/components/FortelyokScreen.tsx` — Fortélyok fül
-- `/mnt/c/repo/szilank.code/web/src/components/HarcertekekScreen.tsx` — Harcértékek fül
-- `/mnt/c/repo/szilank.code/web/src/components/AktivScreen.tsx` — Aktív fül (taktikák, helyzetek, státuszok, hatás pool)
-- `/mnt/c/repo/szilank.code/web/src/components/HatterekScreen.tsx` — Hátterek fül
-- `/mnt/c/repo/szilank.code/web/src/engine/` — engine modulok (types, data-loader, reactive)
-- `/mnt/c/repo/szilank.code/data/rules.json` — reactive engine deklaratív szabályok
-
 ## Fontos konvenciók
 - Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`
 - Feltétel típusok: string (session dispatch: `"taktika:X"`, `"harci_helyzet:Y"`) VAGY lista (kalkulált: `[{forrás, operátor, érték}]`)
