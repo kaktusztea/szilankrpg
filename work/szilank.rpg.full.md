@@ -323,15 +323,19 @@ https://github.com/kaktusztea/szilankrpg/
 
 ### 6.5 [Harcot módosító tényezők](065_00_harcot_modosito_tenyezok.md)
 
+- [Fegyverfogás](065_04_00_fegyverfogas.md)
+  - [Egyfegyveres](065_04_00_fegyverfogas.md#egyfegyveres)
+  - [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md)
+  - [Fegyver + pajzs](065_04_00_fegyverfogas.md#fegyver--pajzs)
+  - [Fegyver + hárítófegyver](065_04_00_fegyverfogas.md#fegyver--hárítófegyver)
+- [Harci taktikák](065_02_harci_taktikak.md)
 - [Harci helyzetek](065_01_00_harci_helyzetek.md)
   - [Belharci szituáció](065_01_01_belharci_szituacio.md)
   - [Fegyverrántás váratlanul](065_01_02_fegyverrantas_varatlanul.md)
   - [Harci pozíciók](065_01_03_harci_poziciok.md)
   - [Fegyverrel kapcsolatos helyzetek](065_01_04_fegyver_harci_helyzetek.md)
   - [Fizikai és környezeti helyzetek](065_01_05_fizikai_es_kornyezeti_helyzetek.md)
-- [Harci taktikák](065_02_harci_taktikak.md)
 - [Harc alakzatban](065_03_harc_alakzatban.md)
-- [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
 
 ### 6.6 [Manőverek](066_00_manoverek.md) 🎲
 
@@ -14728,7 +14732,7 @@ A győzelem mámora megacélozza izmaid és akaratod.
 
 Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 
-### [Kétkezes harc szabályai](../065_04_ketkezes_harc_szabalyai.md)
+### [Kétkezes harc szabályai](../065_04_04_ketkezes_harc.md)
 
 - [Mesterfegyver](mesterfegyver.md) fortély
 - [Kétkezesség](ketkezesseg.md) fortély
@@ -19304,7 +19308,7 @@ Az igazi jó harcos taktikus. Ismeri saját gyengéit és erősségeit és igyek
   - [Fizikai és környezeti helyzetek](065_01_05_fizikai_es_kornyezeti_helyzetek.md)
 - [Harci taktikák](065_02_harci_taktikak.md)
 - [Harc alakzatban](065_03_harc_alakzatban.md)
-- [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
+- [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md)
 
 ## 6.6 [Manőverek](066_00_manoverek.md) 🎲
 
@@ -21412,6 +21416,8 @@ Hatása [Felszerelésre](010_03_06_felszereles.md):
 ---
 ### Hátulütők
 
+🔆 Kétkezes fegyverek nem használhatóak pajzzsal.
+
 🔆 Nagy pajzsot cipelni hosszú távon igen kimerítő, ezért is viszik lovon, vagy fegyverhordozókkal a harcosok. Továbbá behatolásnál, szűk helyen, sűrű erdőben képtelenség cipelni.
 
 🔆 A **Paveze** típusú álló fedezékpajzsokat nem lehet kézben tartani és harcolni velük. Kizárólag statikus fedezékként múködhetnek.
@@ -21830,13 +21836,15 @@ A lovag kínkeservesen feltápászkodik, hite, bátorsága és a láncing megmen
 
 ## Harcot módosító tényezők
 
-### [Harci helyzetek](065_01_00_harci_helyzetek.md)
+### [Fegyverfogás](065_04_00_fegyverfogas.md)
 
 ### [Harci taktikák](065_02_harci_taktikak.md)
 
+### [Harci helyzetek](065_01_00_harci_helyzetek.md)
+
 ### [Harc alakzatban](065_03_harc_alakzatban.md)
 
-### [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md)
+### [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)
 
 ---
 
@@ -23394,14 +23402,64 @@ VÉ csökkentés/kör: 2
 
 ---
 
-🔗 [Kétkezes harc szabályai](065_04_ketkezes_harc_szabalyai.md) →
+🔗 [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
 
 
 ---
 ---
-## File: md/065_04_ketkezes_harc_szabalyai.md
+## File: md/065_04_00_fegyverfogas.md
+
+## Fegyverfogás
+
+A harci konfiguráció meghatározza, hogyan használod a fegyveredet (kezeidet) a küzdelemben. A konfiguráció a harc előtt vagy közben is változtatható (fegyverváltás, pajzs eldobása, stb.), de egy adott pillanatban mindig kizárólag egy konfiguráció érvényes.
+
+A lovas/léglovas harc nem ide tartozik, az egy harcpozíció (lásd [Harc lóhátról, légi hátasról](067_00_harc_hatasrol.md)). A harcpozíció bármely itt leírt konfigurációval kombinálható.
+
+---
+### Egyfegyveres
+
+Ez az alapértelmezett harci konfiguráció: egyetlen fegyvert forgatsz - mindegy, hogy egy, vagy két kézzel.
+
+**Ide tartoznak:**
+- Egykezes fegyverek (kard, tőr, buzogány, stb.)
+- Kétkezes fegyverek (kétkezes kard, lándzsa, alabárd)
+- Másfélkezes fegyverek két kézzel forgatva
+- Másfélkezes fegyverek egy kézzel forgatva
+
+A harcérték kalkulációnál az [alapeset](062_01_ke_te_ve_ce.md) érvényesül.
+
+A szabad kéz használható manőverekhez (Lefegyverzés, Lábkirántás segítés), de támadni vele nem tudsz (kivéve [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md) fortéllyal).
+
+---
+### [Kétkezes harc](065_04_04_ketkezes_harc.md)
+
+Mindkét kézben egy-egy fegyver. Bővebben lásd: [Kétkezes harc szabályai](065_04_04_ketkezes_harc.md).
+
+---
+### Fegyver + pajzs
+
+Egyik kezedben fegyver, a másikban pajzs. Bővebben lásd: [Pajzsok, pajzshasználat](064_02_10_pajzsok_pajzshasznalat.md)
+
+---
+### Fegyver + hárítófegyver
+
+Jobbik kezedben a fő fegyvered, a gyengébbikben egy hárítófegyver. Ez utóbbi kizárólag védekezésre szolgál, nem támadhatsz vele.
+
+Bővebben lásd: [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md).
+
+→ [Közelharci hárítófegyverek](068_02_kozelharci_fegyverek.md#közelharci-hárítófegyverek)\
+→ [Kardvívó hárítófegyverek](068_03_kardvivo_fegyverek.md#kardívó-hárítófegyverek)
+
+---
+
+⚜️ [Nyitóoldal](szabalyrendszer.md#6-harcrendszer-️)
+
+
+---
+---
+## File: md/065_04_04_ketkezes_harc.md
 
 # Kétkezes harc szabályai
 
@@ -23418,6 +23476,8 @@ Nagyobb fegyver
   Sebessége számít
   Harcmodora számít
 ```
+
+❌ Hárítófegyverrel **nem** lehet Kétkezes harcot végezni.
 
 <br />
 
@@ -25424,6 +25484,8 @@ KF: Különleges fegyver
 | Béltépő                 | `2`  | `0`  |    `+1`     |   `6`    |     `S`      |    `0`     |    egykezes    |       `2`       |  `0`   | `2`  | `0` | `0`  | közelharci | Ha minimum `11` SP sebzést elérsz, akkor további `+5 SP` jár.<br />Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés.<br />Páncéltalan esetén `K6` dobás:  `1` és `2` esetén a fegyver elakad a testben, ha volt sebzés. |
 | Dzsambia                | `2`  | `2`  |    `+0`     |   `6`    |   `V`/`S`    |    `0`     |    egykezes    |       `0`       |  `0`   | `1`  | `0` | `0`  | közelharci |                                                                                                                                                                                                                                             |
 | Garott                  | `0`  | `0`  | `+8` / `+4` |    -     |     `V`      |    `-1`    |    kétkezes    |       `5`       |  `0`   | `0`  | `0` | `0`  | közelharci | Lásd lenn a leírást.                                                                                                                                                                                                                        |
+| Hárító: Alkarvédő       | `0`  | `2`  |    `-10`    |   `99`   |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | közelharci | Csak ≤1 pengés fegyver ellen                                                                                                                                                                                                                |
+| Hárító: Tonfa           | `0`  | `2`  |    `-3`     |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | közelharci | Csak ≤1 pengés fegyver ellen                                                                                                                                                                                                                |
 | Kés                     | `1`  | `1`  |    `+0`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
 | Kriszkés                | `2`  | `1`  |  `+3`/`0`   |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | Páncél nélküli ellenfélnél, szúrás esetén `SP:+3`.<br />Páncélszúrásra nem használható.                                                                                                                                                     |
 | Levéltőr                | `2`  | `3`  |    `+1`     |   `6`    |   `S`/`V`    |    `0`     |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | közelharci | -                                                                                                                                                                                                                                           |
@@ -25465,21 +25527,11 @@ Alapesetben hiába viselsz hárítófegyvert kiegészítésként a nem-fegyverfo
 
 Ha felveszed a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) fortélyt, akkor az ott leírtak szerint a gyengébb kezedben forgathatsz hárítófegyvert - de továbbra sem támadhatsz vele.
 
-<!-- tag: md_table_haritofegyver_start -->
+Ha mindkét karon/kézben az alábbi fegyverek vannak, akkor is **csak** a fenti harcértékek az irányadóak, további bónusz **nem** jár.
 
-| Hárítófegyver     | TÉ  |   VÉ    |  SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória  | Speciális |
-| ----------------- | :-: | :-----: | :--: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :--------: | --------- |
-| Hárító: Alkarvédő | `0` | `3/2/0` | `-`  |   `99`   |     `-`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci |           |
-| Hárító: Tonfa     | `0` | `3/2/0` | `-3` |   `6`    |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0` | közelharci |           |
-
-<!-- tag: md_table_haritofegyver_end -->
-
-### Alkarvédő és Tonfa
-
-- Közelharci fegyverek ellen `VÉ:+3`
-- Egykezes, pengefegyverek ellen `VÉ:+2`
-- Ennél nagyobb fegyverek ellen nem védenek.
-- Ha mindkét karon/kézben van, akkor is csak a fenti harcértékek az irányadóak, további bónusz nem jár.
+A fenti listában ez a két hárítófegyver szerepel:
+- Hárító: Alkarvédő
+- Hárító: Tonfa
 
 ---
 
@@ -25504,39 +25556,41 @@ KF: Különleges fegyver
 
 <!-- tag: md_table_fegyver_start -->
 
-| Fegyver                | TÉ  | VÉ  |  SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  |  KF  | Kategória | Speciális                                                                                                                                                                                                                                                                               |
-| ---------------------- | :-: | :-: | :--: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :--: | :-------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Kard, dzsenn szablya   | `5` | `5` | `+4` |   `6`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Kard, emrelin          | `5` | `4` | `+4` |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Kard, fejvadász        | `3` | `4` | `+3` |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `O6` | kardvívó  | G0rv1ki klánnal, vagy mesterrel.<br />Egyébként rövidkard harcértékek.<br />Hárítófegyverként is használható.                                                                                                                                                                           |
-| Kard, handzsár         | `5` | `3` | `+4` |   `7`    |     `V`      |    `1`     |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, hiequar          | `4` | `3` | `+4` |   `7`    |   `S`/`V`    |    `1`     |    egykezes    |       `3`       |  `2`   | `0`  | `0` |      | kardvívó  | Elfek használják. Előtörténet!                                                                                                                                                                                                                                                          |
-| Kard, hosszú           | `4` | `4` | `+4` |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | A legelterjedtebb kard                                                                                                                                                                                                                                                                  |
-| Kard, jatagán          | `3` | `2` | `+1` |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Kard, kétkezes         | `7` | `5` | `+8` |   `9`    |   `V`/`S`    |    `2`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Ha közrefogják a forgatót, fegyverének VÉ-je `0`-ra zuhan.<br />Erő követelmény: `+2`.<br />Edzettség követelmény: `+1`                                                                                                                                                                 |
-| Kard, khossas          | `4` | `3` | `+4` |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Elfek használják. Előtörténet!                                                                                                                                                                                                                                                          |
-| Kard, kígyó            | `3` | `4` | `+3` |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `1`       |  `0`   | `1`  | `0` | `0`  | kardvívó  | Szúró sebzés: `+5` SP; `IV`: ugyan nem íves fegyver, de kialakítása miatt érvényesek rá annak extrái.                                                                                                                                                                                   |
-| Kard, Lagoss           | `6` | `5` | `+4` |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `F9` | kardvívó  | KF nélkül: Kard, Hosszú értékei                                                                                                                                                                                                                                                         |
-| Kard, lovag            | `6` | `4` | `+6` |   `8`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `1`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, másfélkezes (2K) | `6` | `5` | `+5` |   `8`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, másfélkezes (1K) | `4` | `3` | `+5` |   `8`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `1` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, mesterkard (2K)  | `7` | `4` | `+5` |   `8`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, mesterkard (1K)  | `5` | `2` | `+5` |   `8`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `1` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
-| Kard, Pugoss           | `4` | `4` | `+3` |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `F6` | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Kard, rapír            | `4` | `4` | `+3` |   `7`    |   `S`/`V`    |    `1`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Nemesemberek jellemző fegyvere valós harci körülmények között. Nem összetévesztendő a tőrkarddal.                                                                                                                                                                                       |
-| Kard, rövid            | `3` | `2` | `+2` |   `7`    |   `S`/`V`    |   `0.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | -                                                                                                                                                                                                                                                                                       |
-| Kard, Slan 2K          | `7` | `4` | `+6` |   `7`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `S6` | kardvívó  | Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.<br />[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban további `KÉ:+5` bónuszt kap (csak kétkezes forgatási módban). |
-| Kard, Slan 1K          | `5` | `3` | `+6` |   `7`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `3`       |  `2`   | `0`  | `1` | `S6` | kardvívó  | Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.                                                                                                                                                                            |
-| Kard, Slan rövid       | `3` | `2` | `+4` |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `S6` | kardvívó  | Lásd Slan kard.                                                                                                                                                                                                                                                                         |
-| Kard, Slan csatakard   | `8` | `7` | `+9` |   `9`    |   `V`/`S`    |    `2`     |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `S9` | kardvívó  | Hihetetlen drága és ritka.<br />Csak két kézzel forgatható.                                                                                                                                                                                                                             |
-| Kard, szablya          | `4` | `4` | `+3` |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `4`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Mara-sequor 1K         | `6` | `4` | `+6` |   `7`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `1` | `F9` | kardvívó  | Mágikus fém jellege már benne van a harcértékekben.                                                                                                                                                                                                                                     |
-| Mara-sequor 2K         | `7` | `5` | `+6` |   `7`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `F9` | kardvívó  | Mágikus fém jellege már benne van a harcértékekben.                                                                                                                                                                                                                                     |
-| Meneth                 | `3` | `2` | `+4` |   `7`    |     `V`      |   `0.5`    |    egykezes    |     `99/0`      |  `0`   | `1`  | `0` | `0`  | kardvívó  | Ugyan nem íves fegyver, de kialakítása miatt érvényesek rá annak extrái. `SFÉ` duplán számít ellene                                                                                                                                                                                     |
-| Predoci egyeneskard    | `5` | `4` | `+4` |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | -                                                                                                                                                                                                                                                                                       |
-| Sequor                 | `4` | `3` | `+4` |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `F9` | kardvívó  |                                                                                                                                                                                                                                                                                         |
-| Vívóbot                | `4` | `4` | `-5` |   `7`    |     `Z`      |    `1`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Fából készült gyakorlófegyver.                                                                                                                                                                                                                                                          |
-| Tőrkard                | `4` | `4` | `+2` |   `6`    |   `S`/`V`    |    `1`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Lásd a leírást.                                                                                                                                                                                                                                                                         |
+| Fegyver                | TÉ  | VÉ  |  SP   | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  |  KF  | Kategória | Speciális                                                                                                                                                                                                                                                                               |
+| ---------------------- | :-: | :-: | :---: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :--: | :-------: | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Kard, dzsenn szablya   | `5` | `5` | `+4`  |   `6`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
+| Kard, emrelin          | `5` | `4` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
+| Kard, fejvadász        | `3` | `4` | `+3`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `O6` | kardvívó  | G0rv1ki klánnal, vagy mesterrel.<br />Egyébként rövidkard harcértékek.<br />Hárítófegyverként is használható.                                                                                                                                                                           |
+| Kard, handzsár         | `5` | `3` | `+4`  |   `7`    |     `V`      |    `1`     |    egykezes    |      `99`       |  `0`   | `1`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
+| Kard, hiequar          | `4` | `3` | `+4`  |   `7`    |   `S`/`V`    |    `1`     |    egykezes    |       `3`       |  `2`   | `0`  | `0` |      | kardvívó  | Elfek használják. Előtörténet!                                                                                                                                                                                                                                                          |
+| Kard, hosszú           | `4` | `4` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | A legelterjedtebb kard                                                                                                                                                                                                                                                                  |
+| Kard, jatagán          | `3` | `2` | `+1`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
+| Kard, kétkezes         | `7` | `5` | `+8`  |   `9`    |   `V`/`S`    |    `2`     |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Ha közrefogják a forgatót, fegyverének VÉ-je `0`-ra zuhan.<br />Erő követelmény: `+2`.<br />Edzettség követelmény: `+1`                                                                                                                                                                 |
+| Kard, khossas          | `4` | `3` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Elfek használják. Előtörténet!                                                                                                                                                                                                                                                          |
+| Kard, kígyó            | `3` | `4` | `+3`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `1`       |  `0`   | `1`  | `0` | `0`  | kardvívó  | Szúró sebzés: `+5` SP; `IV`: ugyan nem íves fegyver, de kialakítása miatt érvényesek rá annak extrái.                                                                                                                                                                                   |
+| Kard, Lagoss           | `6` | `5` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `F9` | kardvívó  | KF nélkül: Kard, Hosszú értékei                                                                                                                                                                                                                                                         |
+| Kard, lovag            | `6` | `4` | `+6`  |   `8`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `1`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
+| Kard, másfélkezes (2K) | `6` | `5` | `+5`  |   `8`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
+| Kard, másfélkezes (1K) | `4` | `3` | `+5`  |   `8`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `1` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
+| Kard, mesterkard (2K)  | `7` | `4` | `+5`  |   `8`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
+| Kard, mesterkard (1K)  | `5` | `2` | `+5`  |   `8`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `1` | `0`  | kardvívó  | Erő követelmény: `+2`                                                                                                                                                                                                                                                                   |
+| Kard, Pugoss           | `4` | `4` | `+3`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `F6` | kardvívó  |                                                                                                                                                                                                                                                                                         |
+| Kard, rapír            | `4` | `4` | `+3`  |   `7`    |   `S`/`V`    |    `1`     |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Nemesemberek jellemző fegyvere valós harci körülmények között. Nem összetévesztendő a tőrkarddal.                                                                                                                                                                                       |
+| Kard, rövid            | `3` | `2` | `+2`  |   `7`    |   `S`/`V`    |   `0.5`    |    egykezes    |       `2`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | -                                                                                                                                                                                                                                                                                       |
+| Kard, Slan 2K          | `7` | `4` | `+6`  |   `7`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `S6` | kardvívó  | Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.<br />[Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban további `KÉ:+5` bónuszt kap (csak kétkezes forgatási módban). |
+| Kard, Slan 1K          | `5` | `3` | `+6`  |   `7`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `3`       |  `2`   | `0`  | `1` | `S6` | kardvívó  | Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.                                                                                                                                                                            |
+| Kard, Slan rövid       | `3` | `2` | `+4`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `0` | `S6` | kardvívó  | Lásd Slan kard.                                                                                                                                                                                                                                                                         |
+| Kard, Slan csatakard   | `8` | `7` | `+9`  |   `9`    |   `V`/`S`    |    `2`     |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `S9` | kardvívó  | Hihetetlen drága és ritka.<br />Csak két kézzel forgatható.                                                                                                                                                                                                                             |
+| Kard, szablya          | `4` | `4` | `+3`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |       `4`       |  `0`   | `1`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
+| Mara-sequor 1K         | `6` | `4` | `+6`  |   `7`    |   `V`/`S`    |   `1.5`    |    egykezes    |       `3`       |  `0`   | `0`  | `1` | `F9` | kardvívó  | Mágikus fém jellege már benne van a harcértékekben.                                                                                                                                                                                                                                     |
+| Mara-sequor 2K         | `7` | `5` | `+6`  |   `7`    |   `V`/`S`    |   `1.5`    |    kétkezes    |      `99`       |  `2`   | `0`  | `0` | `F9` | kardvívó  | Mágikus fém jellege már benne van a harcértékekben.                                                                                                                                                                                                                                     |
+| Meneth                 | `3` | `2` | `+4`  |   `7`    |     `V`      |   `0.5`    |    egykezes    |     `99/0`      |  `0`   | `1`  | `0` | `0`  | kardvívó  | Ugyan nem íves fegyver, de kialakítása miatt érvényesek rá annak extrái. `SFÉ` duplán számít ellene                                                                                                                                                                                     |
+| Predoci egyeneskard    | `5` | `4` | `+4`  |   `7`    |   `V`/`S`    |    `1`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | -                                                                                                                                                                                                                                                                                       |
+| Sequor                 | `4` | `3` | `+4`  |   `6`    |   `V`/`S`    |   `0.5`    |    egykezes    |       `3`       |  `0`   | `1`  | `0` | `F9` | kardvívó  |                                                                                                                                                                                                                                                                                         |
+| Vívóbot                | `4` | `4` | `-5`  |   `7`    |     `Z`      |    `1`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Fából készült gyakorlófegyver.                                                                                                                                                                                                                                                          |
+| Tőrkard                | `4` | `4` | `+2`  |   `6`    |   `S`/`V`    |    `1`     |    egykezes    |       `1`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Lásd a leírást.                                                                                                                                                                                                                                                                         |
+| Hárító: Csatakesztyű   | `0` | `2` |  `0`  |   `99`   |     `Z`      |    `0`     |    egykezes    |      `99`       |  `0`   | `0`  | `0` | `0`  | kardvívó  |                                                                                                                                                                                                                                                                                         |
+| Hárító: Köpeny         | `0` | `3` | `-20` |   `99`   |     `Z`      |    `0`     |    egykezes    |       `0`       |  `0`   | `0`  | `0` | `0`  | kardvívó  | Legfeljebb 1 penge hosszú fegyverek ellen                                                                                                                                                                                                                                               |
 
 <!-- tag: md_table_fegyver_end -->
 
@@ -25553,14 +25607,9 @@ Nemesemberek fegyvere városi környezetben. Részben esztétikai értékkel bí
 
 A gyengébb kezedben forgatod a [Hárítófegyver használat](fortelyok.harci/haritofegyver_hasznalat.md) szabályai szerint. Nem támadhatsz velük.
 
-<!-- tag: md_table_haritofegyver_start -->
-
-| Hárítófegyver        | TÉ  | VÉ  | SP  | Sebesség | Sebzés módja | Pengehossz | Forgatás módja | Erőbónusz limit | Átütés | Íves | MK  | KF  | Kategória | Speciális                                 |
-| -------------------- | :-: | :-: | :-: | :------: | :----------: | :--------: | :------------: | :-------------: | :----: | :--: | :-: | :-: | :-------: | ----------------------------------------- |
-| Hárító: Csatakesztyű | `0` | `2` | `-` |   `99`   |     `-`      |    `0`     |    egykezes    |       `-`       |  `0`   | `0`  | `0` | `0` | kardvívó  |                                           |
-| Hárító: Köpeny       | `0` | `3` | `-` |   `99`   |     `-`      |    `0`     |    egykezes    |       `-`       |  `0`   | `0`  | `0` | `0` | kardvívó  | Legfeljebb 1 penge hosszú fegyverek ellen |
-
-<!-- tag: md_table_haritofegyver_end -->
+A fenti listában ez a két hárítófegyver szerepel:
+- Hárító: Csatakesztyű
+- Hárító: Köpeny
 
 ---
 
