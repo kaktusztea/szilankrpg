@@ -711,7 +711,7 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Hatások |
 |---------|-----|---------|
-| Meglepetés | meglepetés | Előny+1 TÉ dobásra, VÉ csökk:3, védő: többsz. tám. elvesztés, utolsó tám. Készületlenség = Meglepetés. |
+| Meglepetés | meglepetés | Előny+1 TÉ, VÉ csökkentés: +2. Készületlenség = Meglepetés. |
 | Orvtámadás | orvtámadás | Előny+2 TÉ dobásra. Áldozat VÉ: Közelharc Puszta kézzel. Tiltja: taktikák, Hátulról, Meglepetés. |
 | Hátulról támadás | hátulról | Előny+1 TÉ dobásra. Pajzs VÉ NEM számít. |
 | Magasabbról | magasabbról | Előny+1 TÉ dobásra. Lovas harcban NEM jár. |

@@ -248,17 +248,14 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Meglepetés"
-  infó: "Támadó: megnyert KÉ, Előny+1 TÉ, VÉ csökk:3. Védő: többsz. tám. elvesztés. Készületlenség = Meglepetés."
+  infó: "Előny+1 TÉ, VÉ csökkentés: +2. Készületlenség = Meglepetés."
   hatások:
   - hatás: "előny"
     érték: 1
     cél: "té_dobás"
-  - hatás: "szöveges"
-    cél: "vé_veszteség"
-    megjegyzés: "VÉ csökkentés: 3"
-  - hatás: "szöveges"
-    cél: "támadások_száma"
-    megjegyzés: "Védő: Többszörös támadás elvesztése"
+  - hatás: "előny"
+    érték: 2
+    cél: "vé_csökkentés"
   id: "meglepetés"
   csoport: "pozitív"
   rejtett: false
