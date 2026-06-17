@@ -39,7 +39,9 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "beszorított_2"
+    ],
     "feltétel_kulcs": "harci_helyzet:beszorított_1"
   },
   {
@@ -76,7 +78,9 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "beszorított_1"
+    ],
     "feltétel_kulcs": "harci_helyzet:beszorított_2"
   },
   {
@@ -182,7 +186,9 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "hajítás_nem_dobásra_készített"
+    ],
     "feltétel_kulcs": "harci_helyzet:hajítás_alkalmatlan_fegyverrel"
   },
   {
@@ -204,7 +210,9 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "hajítás_alkalmatlan_fegyverrel"
+    ],
     "feltétel_kulcs": "harci_helyzet:hajítás_nem_dobásra_készített"
   },
   {
@@ -297,7 +305,9 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "láthatatlanul_csendesen"
+    ],
     "feltétel_kulcs": "harci_helyzet:láthatatlanul_hallhatóan"
   },
   {
@@ -324,7 +334,9 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "láthatatlanul_hallhatóan"
+    ],
     "feltétel_kulcs": "harci_helyzet:láthatatlanul_csendesen"
   },
   {
@@ -411,8 +423,8 @@
     ],
     "tiltja_taktikákat": true,
     "kizár_helyzetek": [
-      "Hátulról támadás",
-      "Meglepetés"
+      "hátulról",
+      "meglepetés"
     ],
     "id": "orvtámadás",
     "csoport": "pozitív",
@@ -483,7 +495,10 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "sötétben_2",
+      "sötétben_3"
+    ],
     "feltétel_kulcs": "harci_helyzet:sötétben_1"
   },
   {
@@ -500,7 +515,10 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "sötétben_1",
+      "sötétben_3"
+    ],
     "feltétel_kulcs": "harci_helyzet:sötétben_2"
   },
   {
@@ -517,7 +535,10 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "sötétben_1",
+      "sötétben_2"
+    ],
     "feltétel_kulcs": "harci_helyzet:sötétben_3"
   },
   {
@@ -534,7 +555,9 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "tűz_ruhán_2"
+    ],
     "feltétel_kulcs": "harci_helyzet:tűz_ruhán_1"
   },
   {
@@ -551,7 +574,9 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "tűz_ruhán_1"
+    ],
     "feltétel_kulcs": "harci_helyzet:tűz_ruhán_2"
   },
   {

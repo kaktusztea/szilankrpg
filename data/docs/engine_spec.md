@@ -734,18 +734,22 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Hatások |
 |---------|-----|---------|
-| Beszorított helyzet | beszorított | (1) Enyhén: Hátrány-1 KÉ/TÉ, 1 tám. elvesztés, mozgás feleződik. (2) Erősen: Hátrány-2 KÉ/TÉ, VÉ veszt. dupl., többsz. tám. elvesztés, SP:(0+k20). Támadó/Védő taktikák OK. |
+| Beszorított (1) Enyhén | beszorított_1 | Hátrány-1 KÉ/TÉ, 1 tám. elvesztés, mozgás feleződik. Támadó/Védő taktikák OK. |
+| Beszorított (2) Erősen | beszorított_2 | Hátrány-2 KÉ/TÉ, VÉ veszt. dupl., többsz. tám. elvesztés, mozgás felező, SP:(0+k20). |
 | Csúszós talaj | csúszós_talaj | Hátrány-1 TÉ dobásra. |
 | Elvesztett egyensúly | elvesztett_egyensúly | Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja. |
 | Földön fekve | földön_fekve | Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik. |
-| Hajítás alkalmatlan fegyverrel | hajítás_alkalmatlan_fegyverrel | Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP:-5. Fortély mérsékli. |
+| Hajítás alkalmatlan fegyverrel | hajítás_alkalmatlan_fegyverrel | Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli. |
 | Hajítás nem dobásra készített | hajítás_nem_dobásra_készített | Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli. |
 | Helyhez kötve | helyhez_kötve | Hátrány-1 TÉ dobásra, VÉ veszteség duplázódik. |
 | Lények méret különbsége | méret_különbség | Nagyobb lény: +1 VÉ csökkentés bónusz / kategória különbség. Skála: 1-7. |
 | Rosszabbik kézben tartott fegyver | rosszabbik_kéz | Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja. |
-| Sötétben | sötétben | Félhomály: Hátrány-1 TÉ. Teljes+zajok: Hátrány-1 TÉ. Teljes+csend: Hátrány-2 TÉ. Vakharc/Infra/Ultra mérsékli. |
-| Tűz ruhán | tűz_ruhán | Ég: Hátrány-1 TÉ, (-5+k20)SP/kör. Lángol: Hátrány-2 TÉ, (0+k20)SP/kör. |
-| Vér elvakít | vér_elvakít | Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció kitörlés. |
+| Sötétben - félhomály | sötétben_1 | Hátrány-1 TÉ. Vakharc/Infra/Ultra mérsékli. |
+| Sötétben - teljes, zajokkal | sötétben_2 | Hátrány-1 TÉ. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli. |
+| Sötétben - teljes, csendben | sötétben_3 | Hátrány-2 TÉ. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli. |
+| Tűz ruhán - ég | tűz_ruhán_1 | Hátrány-1 TÉ, (-5+k20)SP/kör. Eloltás: 1 kör. |
+| Tűz ruhán - lángol | tűz_ruhán_2 | Hátrány-2 TÉ, (0+k20)SP/kör. Harcban elolthatatlan. |
+| Vér elvakít | vér_elvakít | Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés. |
 
 #### Rejtett (automatikus, nem picker-ben)
 
@@ -764,8 +768,9 @@ Data layer mezők:
   kizár_helyzetek: string[] — ezen helyzetek nem adhatók hozzá / eltávolítódnak hozzáadáskor.
     Implementált: Orvtámadás → ["Hátulról támadás", "Meglepetés"]
   Taktika megkötések (taktikak.yaml → megkötések[]):
-    Fárasztás: harci_helyzet/tiltott/Pengehátrány, harci_helyzet/tiltott/Láthatatlanul,hallhatóan,
-              harci_helyzet/tiltott/Láthatatlanul,csendesen
+    Fárasztás: harci_helyzet/tiltott/Pengehátrány,
+              harci_helyzet/tiltott/Láthatatlanul harcolás - hallhatóan,
+              harci_helyzet/tiltott/Láthatatlanul harcolás - csendesen
 
 ### 21.3 Szituációk
 

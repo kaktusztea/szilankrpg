@@ -601,7 +601,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
           if (session.aktív_helyzetek.includes(h.név)) return true;
           for (const ah of session.aktív_helyzetek) {
             const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-            if ((ahDef as any)?.kizár_helyzetek?.includes(h.név)) return true;
+            if ((ahDef as any)?.kizár_helyzetek?.includes((h as any).id)) return true;
           }
           return false;
         })} onClick={() => setShowHelyzetPicker(true)}>+ Helyzet...</button>
@@ -621,7 +621,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   if (session.aktív_helyzetek.includes(h.név)) return false;
                   for (const ah of session.aktív_helyzetek) {
                     const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-                    if ((ahDef as any)?.kizár_helyzetek?.includes(h.név)) return false;
+                    if ((ahDef as any)?.kizár_helyzetek?.includes((h as any).id)) return false;
                   }
                   return true;
                 });
@@ -637,7 +637,10 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                     let helyzetek = [...s.aktív_helyzetek, h.név];
                     let taktikák = s.aktív_taktikák;
                     const kizár = (hDef as any)?.kizár_helyzetek ?? [];
-                    if (kizár.length) helyzetek = helyzetek.filter(hh => !kizár.includes(hh));
+                    if (kizár.length) {
+                      const kizártNevek = kizár.map((kid: string) => data.harciHelyzetek.find(d => (d as any).id === kid)?.név).filter(Boolean);
+                      helyzetek = helyzetek.filter(hh => !kizártNevek.includes(hh));
+                    }
                     if ((hDef as any)?.tiltja_taktikákat) taktikák = [];
                     return { ...s, aktív_helyzetek: helyzetek, aktív_taktikák: taktikák };
                   });

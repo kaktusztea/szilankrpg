@@ -32,7 +32,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["beszorított_2"]
 - név: "Beszorított (2) Erősen"
   infó: "Hátrány-2 KÉ/TÉ, VÉ veszteség dupl., többsz. tám. elvesztés, mozgás felező, SP:(0+k20)."
   hatások:
@@ -55,7 +55,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["beszorított_1"]
 - név: "Csúszós talaj"
   infó: "Hátrány-1 TÉ dobásra."
   hatások:
@@ -123,7 +123,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["hajítás_nem_dobásra_készített"]
 - név: "Hajítás nem dobásra készített tárgyakkal"
   infó: "Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli."
   hatások:
@@ -137,7 +137,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["hajítás_alkalmatlan_fegyverrel"]
 - név: "Hátulról támadás"
   infó: "Előny+1 TÉ dobásra. Pajzs VÉ NEM számít."
   hatások:
@@ -199,7 +199,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["láthatatlanul_csendesen"]
 - név: "Láthatatlanul harcolás - csendesen"
   infó: "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott."
   hatások:
@@ -216,7 +216,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["láthatatlanul_hallhatóan"]
 - név: "Levegőből támadás"
   infó: "Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK."
   hatások:
@@ -271,7 +271,7 @@ harci_helyzetek:
     érték: 2
     cél: "té_dobás"
   tiltja_taktikákat: true
-  kizár_helyzetek: ["Hátulról támadás", "Meglepetés"]
+  kizár_helyzetek: ["hátulról", "meglepetés"]
   id: "orvtámadás"
   csoport: "pozitív"
   rejtett: false
@@ -320,7 +320,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["sötétben_2", "sötétben_3"]
 - név: "Sötétben - teljes, zajokkal"
   infó: "Hátrány-1 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli."
   hatások:
@@ -331,7 +331,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["sötétben_1", "sötétben_3"]
 - név: "Sötétben - teljes, csendben"
   infó: "Hátrány-2 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli."
   hatások:
@@ -342,7 +342,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["sötétben_1", "sötétben_2"]
 - név: "Tűz ruhán - ég"
   infó: "Hátrány-1 TÉ, (-5+k20) SP/kör. Eloltás: 1 kör."
   hatások:
@@ -353,7 +353,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["tűz_ruhán_2"]
 - név: "Tűz ruhán - lángol"
   infó: "Hátrány-2 TÉ, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség."
   hatások:
@@ -364,7 +364,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["tűz_ruhán_1"]
 - név: "Vadállatok elleni harc"
   infó: "Informatív: Közelharc + Belharc 2.fok bónuszai relevánsak."
   hatások: []
