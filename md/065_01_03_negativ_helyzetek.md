@@ -1,53 +1,5 @@
 # Negatív helyzetek
 
-## Beszorított helyzet
-
-Ha harcos helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ez nagyon szűk helyeken egészen szélsőséges hátrányokat is okozhat fegyver-típustól függően.
-
-"**Rövid**" fegyverekre (max `0.5` pengehossz) nem jár levonás. Puszta kéz értékei nem módosulnak.
-
-Szűk sikátorban: Ilyenkor fontosak a körülmények. A két oldalról való védettség (falak) folytán szinte lehetetlen hozzáférni, ha egy irányból közelítenek. Ekkor nincs Beszorított helyzet, sőt a KM Előnyt is adhat a `TÉ` dobásra.
-
-### Beszorított helyzet (1) Enyhén
-
-```
-Ellenfél
- Előny+1 TÉ dobásra
-
-Beszorított karakter
-  Hátrány-1
-    KÉ dobásra
-    TÉ dobásra
-  1 támadás elvesztése
-  Mozgás - feleződik
-```
-
-### Beszorított helyzet (2) Erősen
-
-"A kamrában pallossal, vagy alabárddal"
-
-```
-Ellenfél
- Előny+2 TÉ dobásra
-
-Beszorított karakter
-  Hátrány-2
-    KÉ dobásra
-    TÉ dobásra
-  VÉ veszteség duplázódik
-  Többszörös támadás elvesztése
-  Mozgás - feleződik
-  Sebzés csökkentett
-  (0 + k20 SP)
-```
-
-✅ **Támadó- és Védő** taktikák továbbra is használhatóak
-
-🔆 Két Beszorított helyzetű harcos: mindkettőre érvényesek a büntetések
-
-<br />
-
----
 ## Csúszós talaj
 
 ```

@@ -23,6 +23,6 @@ A `k20` támadó dobás egyben esélydobás is: ha a lent leírt értékek vagy 
   - `Mf: 1.fok`: `<= 4 / 8`
   - `Mf: 2.fok`: `<= 2 / 4`
   - `Mf: 3.fok`: `0%` /  `0%`
-- [Beszorított helyzetben](065_01_03_negativ_helyzetek.md#beszorított-helyzet-2-erősen) annak 2. fokozata (Erősen) érvényes rá!
+- [Ellenfeled beszorított](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított) 
 - Nem lehet Alakzatharcban használni
 - Hátulról támadó ellenfelek NEM kapják meg a harci helyzetből adódó bónuszokat!

@@ -9,6 +9,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
 - [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról)
 - [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás)
+- [Ellenfeled beszorított](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított)
 - [Láthatatlanul harcolás - hallhatóan](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan)
 - [Láthatatlanul harcolás - csendesen](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---csendesen)
 
@@ -23,7 +24,6 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 ### [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
 
-- [Beszorított helyzet](065_01_03_negativ_helyzetek.md#beszorított-helyzet)
 - [Csúszós talaj](065_01_03_negativ_helyzetek.md#csúszós-talaj)
 - [Elvesztett egyensúly](065_01_03_negativ_helyzetek.md#elvesztett-egyensúly)
 - [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve)
