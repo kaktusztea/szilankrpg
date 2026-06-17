@@ -256,7 +256,13 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             <span className="aktiv-field-label">Ügyesebb kéz</span>
             <select className="aktiv-field-select" value={session.aktív_fegyver_index} onChange={e => {
               const idx = parseInt(e.target.value);
-              setSession(s => ({ ...s, aktív_fegyver_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_bal_index !== -1 ? s.kétkezes_harc : false }));
+              setSession(s => {
+                const puszta = idx === -1 || karakter.fegyverek[idx]?.alap.toLowerCase() === 'puszta kéz';
+                if (puszta) {
+                  return { ...s, aktív_fegyver_index: idx, fegyverfogás: 'egyfegyveres', kétkezes_harc: false, aktív_fegyver_bal_index: -1 };
+                }
+                return { ...s, aktív_fegyver_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_bal_index !== -1 ? s.kétkezes_harc : false };
+              });
             }}>
               {fegyverOpciók.filter(f => {
                 if (f.idx === -1) return true;
@@ -295,6 +301,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               }}>
                 {fegyverOpciók.filter(f => {
                   if (f.idx === -1) return false;
+                  if (karakter.fegyverek[f.idx]?.alap.toLowerCase() === 'puszta kéz') return false;
                   const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
                   if (fDef?.Hárító === '1') return false;
                   if (session.aktív_fegyver_index === -1) return true;
@@ -850,6 +857,9 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 if (opt.id === 'kétkezes') {
                   if (kétkezes_fegyver) disabled = true;
                   if (karakter.fegyverek.length < 2) disabled = true;
+                  // Puszta kéz nem használható kétkezes harcban
+                  const jobbPuszta = !jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz';
+                  if (jobbPuszta) disabled = true;
                   // Nem lehet hárítófegyverrel kétkezes harcot végezni
                   const nemHáritóFegyverek = karakter.fegyverek.filter((fp, i) => {
                     if (i === jobbIdx) return false;
