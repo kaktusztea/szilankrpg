@@ -374,7 +374,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   }
                   return <span key={i} className="hatas-pool-item">
                     <strong style={{ color: '#ff9800' }}>{def.név}{at.fok != null ? ` (${at.fok})` : ''}:</strong>
-                    {mods.length > 0 && <span style={{ color: '#66bb6a' }}> {mods.join(', ')}</span>}
+                    {mods.length > 0 && <span style={{ color: '#66bb6a' }}> {mods.join(', ')} ✔</span>}
                     {def.megjegyzés && <span style={{ color: '#ffb74d' }}> {mods.length > 0 ? '• ' : ''}{def.megjegyzés}</span>}
                   </span>;
                 })}
