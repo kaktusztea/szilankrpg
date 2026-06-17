@@ -699,58 +699,73 @@ note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Akt
 ### 21.2 Harci Helyzetek
 
 Harci helyzetek speciális Státuszok, amelyek Hatásokat okoznak (080_hatasok_es_statuszok.md).
-Feltétel kulcs: `harci_helyzet:név`. Az Aktív fülön kiválaszthatók (toggle lista).
+Feltétel kulcs: `harci_helyzet:id`. Az Aktív fülön kiválaszthatók (picker overlay, csoportosítva).
 
-A helyzetek NEM egyszerű numerikus módosítók — komplex hatáscsomagok (Előny/Hátrány dobásra,
-támadás elvesztés, VÉ csökkentés, pajzs feltételek, stb.). Részletes leírás: 065_01_*.md.
+Data layer: `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json`
+Schema mezők: név, id, infó, hatások[], csoport, rejtett, tiltja_taktikákat, kizár_helyzetek[]
 
-| Helyzet | feltétel kulcs | Hivatkozott szabály |
-|---------|---------------|---------------------|
-| Belharci szituáció | `harci_helyzet:belharci_szituáció` | 065_01_01 |
-| Fegyverrántás váratlanul | `harci_helyzet:fegyverrántás` | 065_01_02 |
-| Meglepetés | `harci_helyzet:meglepetés` | 065_01_03 |
-| Készületlenség | `harci_helyzet:készületlenség` | 065_01_03 |
-| Beszorított helyzet | `harci_helyzet:beszorított` | 065_01_03 |
-| Orvtámadás | `harci_helyzet:orvtámadás` | 065_01_03 |
-| Hátulról támadás | `harci_helyzet:hátulról` | 065_01_03 |
-| Közrefogás | `harci_helyzet:közrefogás` | 065_01_03 |
-| Levegőből támadás | `harci_helyzet:levegőből` | 065_01_03 |
-| Magasabbról | `harci_helyzet:magasabbról` | 065_01_03 |
-| Védekező takarásban | `harci_helyzet:takarásban` | 065_01_03 |
-| Védő Érték kiterjesztése másra | `harci_helyzet:vé_kiterjesztés` | 065_01_03 |
-| Pengeelőny | `harci_helyzet:pengeelőny` | 065_01_04 |
-| Pengehátrány | `harci_helyzet:pengehátrány` | 065_01_04 |
-| Hajítás alkalmatlan fegyverrel | `harci_helyzet:hajítás_alkalmatlan_fegyverrel` | 065_01_04 |
-| Hajítás nem dobásra készített tárgyakkal | `harci_helyzet:hajítás_nem_dobásra_készített` | 065_01_04 |
-| Képzetlen fegyverhasználat | `harci_helyzet:képzetlen_fegyverhasználat` | 065_01_04 (automatikus: harcmodor<3) |
-| Pusztakezes harc | `harci_helyzet:pusztakezes_harc` | 065_01_04 (automatikus: fegyver=puszta kéz) |
-| Rosszabbik kézben tartott fegyver | `harci_helyzet:rosszabbik_kéz` | 065_01_04 |
-| Csúszós talaj | `harci_helyzet:csúszós_talaj` | 065_01_05 |
-| Elvesztett egyensúly | `harci_helyzet:elvesztett_egyensúly` | 065_01_05 |
-| Földön fekve | `harci_helyzet:földön_fekve` | 065_01_05 |
-| Helyhez kötve | `harci_helyzet:helyhez_kötve` | 065_01_05 |
-| Láthatatlanul | `harci_helyzet:láthatatlanul` | 065_01_05 |
-| Tűz ruhán | `harci_helyzet:tűz_ruhán` | 065_01_05 |
-| Sötétben | `harci_helyzet:sötétben` | 065_01_05 |
-| Vér elvakít | `harci_helyzet:vér_elvakít` | 065_01_05 |
-| Lények méret különbsége | `harci_helyzet:méret_különbség` | 065_01_05 (paraméteres: 0-6 fokozat) |
-| Vadállatok elleni harc | `harci_helyzet:vadállatok` | 065_01_05 (informatív) |
+Picker csoportok (csoport mező): "pozitív" (zöld), "semleges" (narancs), "negatív" (piros)
+Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levezetett).
 
-note: A webapp Aktív fülön ezek toggle-ök. A pontos hatásaikat a karakterlap NEM kalkulálja
-      automatikusan (túl komplex: Előny/Hátrány dobásra, támadás elvesztés, stb.).
-      Funkciójuk az Aktív fülön: feltételes fortély módosítók dispatch-éhez (§16) + informatív jelzés.
-      Kategóriák: Harci pozíciók (065_01_03), Fegyver helyzetek (065_01_04), Fizikai/környezeti (065_01_05).
-      Nem toggle-ök (automatikus/levezetett): Képzetlen fegyverhasználat, Pusztakezes harc.
-      Nem az Aktív fülre (Sebzéstípusok, Fegyverméret): csak a Pengeelőny/Pengehátrány releváns, a többi szabály.
+#### Pozitív helyzetek (065_01_01)
 
-Kombinálási/tiltási szabályok (data layer: harci_helyzetek.yaml mezők):
+| Helyzet | id | Hatások |
+|---------|-----|---------|
+| Meglepetés | meglepetés | Előny+1 TÉ dobásra, VÉ csökk:3, védő: többsz. tám. elvesztés, utolsó tám. Készületlenség = Meglepetés. |
+| Orvtámadás | orvtámadás | Előny+2 TÉ dobásra. Áldozat VÉ: Közelharc Puszta kézzel. Tiltja: taktikák, Hátulról, Meglepetés. |
+| Hátulról támadás | hátulról | Előny+1 TÉ dobásra. Pajzs VÉ NEM számít. |
+| Magasabbról | magasabbról | Előny+1 TÉ dobásra. Lovas harcban NEM jár. |
+| Levegőből támadás | levegőből | Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK. |
+| Láthatatlanul, hallhatóan | láthatatlanul_hallhatóan | Támadó: Előny+1 TÉ, VÉ csökk fixen 2. Védő: Hátrány-1 TÉ. Fárasztó tiltott. |
+| Láthatatlanul, csendesen | láthatatlanul_csendesen | Támadó: Előny+2 TÉ, VÉ csökk fixen 2. Védő: Hátrány-2 TÉ. Fárasztó tiltott. |
+
+#### Semleges helyzetek (065_01_02)
+
+| Helyzet | id | Hatások |
+|---------|-----|---------|
+| Belharci szituáció | belharci_szituáció | Közelharc harcmodor + max 0 pengehossz feltétel. Belharc fortély bónuszok. Egyéb: Beszorított(2). |
+| Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fortély: Fegyverrántás skála. |
+| Közrefogás | közrefogás | Semlegesíti ellenfél Pengeelőnyét → Alappenge. |
+| Védekező takarásban | takarásban | Mindkét fél: Hátrány-1 TÉ dobásra. |
+| Védő Érték kiterjesztése másra | vé_kiterjesztés | Többsz. tám. elvesztés, VÉ veszteség duplázódik. Testőr fortély mérsékli. |
+| Vadállatok elleni harc | vadállatok | Informatív: Közelharc + Belharc 2.fok bónuszai relevánsak. |
+
+#### Negatív helyzetek (065_01_03)
+
+| Helyzet | id | Hatások |
+|---------|-----|---------|
+| Beszorított helyzet | beszorított | (1) Enyhén: Hátrány-1 KÉ/TÉ, 1 tám. elvesztés, mozgás feleződik. (2) Erősen: Hátrány-2 KÉ/TÉ, VÉ veszt. dupl., többsz. tám. elvesztés, SP:(0+k20). Támadó/Védő taktikák OK. |
+| Csúszós talaj | csúszós_talaj | Hátrány-1 TÉ dobásra. |
+| Elvesztett egyensúly | elvesztett_egyensúly | Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja. |
+| Földön fekve | földön_fekve | Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik. |
+| Hajítás alkalmatlan fegyverrel | hajítás_alkalmatlan_fegyverrel | Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP:-5. Fortély mérsékli. |
+| Hajítás nem dobásra készített | hajítás_nem_dobásra_készített | Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli. |
+| Helyhez kötve | helyhez_kötve | Hátrány-1 TÉ dobásra, VÉ veszteség duplázódik. |
+| Lények méret különbsége | méret_különbség | Nagyobb lény: +1 VÉ csökkentés bónusz / kategória különbség. Skála: 1-7. |
+| Rosszabbik kézben tartott fegyver | rosszabbik_kéz | Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja. |
+| Sötétben | sötétben | Félhomály: Hátrány-1 TÉ. Teljes+zajok: Hátrány-1 TÉ. Teljes+csend: Hátrány-2 TÉ. Vakharc/Infra/Ultra mérsékli. |
+| Tűz ruhán | tűz_ruhán | Ég: Hátrány-1 TÉ, (-5+k20)SP/kör. Lángol: Hátrány-2 TÉ, (0+k20)SP/kör. |
+| Vér elvakít | vér_elvakít | Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció kitörlés. |
+
+#### Rejtett (automatikus, nem picker-ben)
+
+| Helyzet | id | Megjegyzés |
+|---------|-----|------------|
+| Pengeelőny | pengeelőny | Fegyverméretből levezetett. VÉ csökk: 2+k20T. |
+| Pengehátrány | pengehátrány | Fegyverméretből levezetett. VÉ csökk: k20T. |
+| Pusztakezes harc | pusztakezes_harc | Automatikus: fegyver=puszta kéz. KÉ/TÉ/VÉ: -3. |
+| Képzetlen fegyverhasználat | képzetlen_fegyverhasználat | Automatikus: harcmodor<3. |
+
+#### Kombinálási/tiltási szabályok
+
+Data layer mezők:
   tiltja_taktikákat: bool — ha true, ÖSSZES taktika disabled amíg ez a helyzet aktív.
     Implementált: Orvtámadás (true). Hozzáadáskor aktív taktikák automatikusan törlődnek.
   kizár_helyzetek: string[] — ezen helyzetek nem adhatók hozzá / eltávolítódnak hozzáadáskor.
     Implementált: Orvtámadás → ["Hátulról támadás", "Meglepetés"]
   Taktika megkötések (taktikak.yaml → megkötések[]):
-    Fárasztás: harci_helyzet/tiltott/Pengehátrány, harci_helyzet/tiltott/Láthatatlanul
-      Fokozatos helyzetek (alszekciók a doksiban): Láthatatlanul (hallható/csendes), Sötétben (félhomály/teljes+zaj/teljes+csend), Tűz ruhán (ég/lángol).
+    Fárasztás: harci_helyzet/tiltott/Pengehátrány, harci_helyzet/tiltott/Láthatatlanul,hallhatóan,
+              harci_helyzet/tiltott/Láthatatlanul,csendesen
 
 ### 21.3 Szituációk
 
