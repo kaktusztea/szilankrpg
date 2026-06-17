@@ -24,7 +24,7 @@ Láthatatlan ellenfélnél
   Védő TÉ Hátrányból
 ```
 
-→ [Láthatatlan ellenfél](../065_01_01_pozitiv_helyzetek.md#láthatatlanul-hallhatóan)
+→ [Láthatatlan ellenfél](../065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan)
 
 <br />
 

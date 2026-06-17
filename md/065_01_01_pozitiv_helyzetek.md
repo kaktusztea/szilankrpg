@@ -103,17 +103,12 @@ Előny+2 TÉ Dobásra
 <br />
 
 ---
-## Láthatatlanul, hallhatóan
+## Láthatatlanul harcolás - hallhatóan
 
 ```
-Láthatatlan Támadó
-  Előny+1 Támadó dobásra
-  VÉ csökkentés: fixen 2
-```
-
-```
-Védő
-  Hátrány-1 Támadó dobásra
+Előny+1 TÉ dobásra
+VÉ csökkentés: +1
+VÉ: +5
 ```
 
 🔆 Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ellen
@@ -123,17 +118,12 @@ Védő
 <br />
 
 ---
-## Láthatatlanul, csendesen
+## Láthatatlanul harcolás - csendesen
 
 ```
-Láthatatlan Támadó
-  Előny+2 Támadó dobásra
-  VÉ csökkentés: fixen 2
-```
-
-```
-Védő
-  Hátrány-2 Támadó dobásra
+Előny+2 TÉ dobásra
+VÉ csökkentés: +2
+VÉ: +10
 ```
 
 🔆 Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ellen

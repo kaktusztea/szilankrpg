@@ -9,8 +9,8 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
 - [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról)
 - [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás)
-- [Láthatatlanul, hallhatóan](065_01_01_pozitiv_helyzetek.md#láthatatlanul-hallhatóan)
-- [Láthatatlanul, csendesen](065_01_01_pozitiv_helyzetek.md#láthatatlanul-csendesen)
+- [Láthatatlanul harcolás - hallhatóan](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan)
+- [Láthatatlanul harcolás - csendesen](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---csendesen)
 
 ### [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
 
