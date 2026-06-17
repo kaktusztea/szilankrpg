@@ -216,7 +216,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Meglepetés"
-  infó: "Előny+1 TÉ;  VÉ csökkentés: +2;  Készületlenség: ellenfeled Meglepetés bónuszt kap."
+  infó: "Előny+1 TÉ; VÉ csökkentés: +2"
   hatások:
   - hatás: "előny"
     érték: 1
