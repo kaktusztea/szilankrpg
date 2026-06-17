@@ -230,7 +230,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Orvtámadás"
-  infó: "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ."
+  infó: "Előny+2 TÉ;  Áldozat VÉ: Közelharc Puszta kézzel"
   hatások:
   - hatás: "előny"
     érték: 2
