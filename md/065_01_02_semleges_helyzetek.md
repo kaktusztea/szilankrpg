@@ -154,14 +154,14 @@ A lándzsás
 <br />
 
 ---
-## Védekező takarásban
+## Takarásban harcolás
 
 ```
-Támadó és Védekező:
-  Hátrány-1 TÉ dobásra
+Hátrány-1 TÉ dobásra
+VÉ: +5
 ```
 
-🔆 Ebben a szituációban mindkét fél számára nehezebb harcolni. Példa: kapu, belógó falrész.
+🔆 Példa: kapu, belógó falrész mögül harcolsz.
 
 🔆 Ha a harcos mozgásában korlátozottá válik pl. tereptárgyaktól, akkor már egy más helyzet (KM dönt) vonatkozik rá:
 - [Beszorított helyzet](065_01_03_negativ_helyzetek.md#beszorított-helyzet)
