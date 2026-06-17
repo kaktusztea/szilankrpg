@@ -4,7 +4,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 
 ### Bővebben
 
-- [Harci helyzet: Belharci szituáció](../065_01_01_belharci_szituacio.md) - áttekintő oldal
+- [Harci helyzet: Belharci szituáció](../065_01_02_semleges_helyzetek.md#belharci-szituáció) - áttekintő oldal
 - [Belharcos manőverek](../066_06_belharcos_manoverek.md)
 
 ---
@@ -12,7 +12,7 @@ Testközelben érzed igazában elemedben magad. Magában foglalja a birkózást 
 
 🔒 Közelharc - `6.szint`
 
-🌟 [Belharci szituációban](../065_01_01_belharci_szituacio.md) alábbi bónuszok
+🌟 [Belharci szituációban](../065_01_02_semleges_helyzetek.md#belharci-szituáció) alábbi bónuszok
 
 ```
 KÉ: +1, TÉ/VÉ:+2
@@ -23,7 +23,7 @@ KÉ: +1, TÉ/VÉ:+2
 
 🔒 Közelharc - `9.szint`
 
-🌟 [Belharci szituációban](../065_01_01_belharci_szituacio.md) alábbi bónuszok
+🌟 [Belharci szituációban](../065_01_02_semleges_helyzetek.md#belharci-szituáció) alábbi bónuszok
 
 ```
 KÉ: +2, TÉ/VÉ:+4
@@ -32,6 +32,6 @@ KÉ: +2, TÉ/VÉ:+4
 ---
 ###  Ellenfél módosítói
 
-Ezek változását szintén a Harcrendszer fejezet [Harci helyzet: Belharci szituáció](../065_01_01_belharci_szituacio.md) leírásánál találod.
+Ezek változását szintén a Harcrendszer fejezet [Harci helyzet: Belharci szituáció](../065_01_02_semleges_helyzetek.md#belharci-szituáció) leírásánál találod.
 
 ---

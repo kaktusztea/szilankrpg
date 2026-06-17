@@ -13,7 +13,7 @@ Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben tudnak körbezárni.
 
 🌟 **Hatás**:
 - Nem alkalmazhatnak ellened [Orvtámadást harc közben](../szituaciok/orvtamadas_harcolo_ellenfelre.md)
-- Nem kapják meg a 🗡️[Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás)
-- Nem kapják meg a 🗡️[Hátulról támadás](../065_01_03_harci_poziciok.md#hátulról-támadás) módosítóit
+- Nem kapják meg a 🗡️[Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
+- Nem kapják meg a 🗡️[Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) módosítóit
 
 ---

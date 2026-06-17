@@ -4,7 +4,7 @@ Hasznos fortély, ha **Védő Értékedet** egy másik - együttműködő - szem
 
 ### Alapeset
 
-Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_03_harci_poziciok.md#védő-érték-kiterjesztése-másra) harci helyzetnél leírt büntetésekkel.
+Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**, de csak a [Védő Érték kiterjesztése másra](../065_01_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra) harci helyzetnél leírt büntetésekkel.
 
 ---
 ### 1. fok

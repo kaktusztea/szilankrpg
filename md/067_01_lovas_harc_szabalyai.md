@@ -30,7 +30,7 @@ A hátas hatása miatt úgy vesszük, mintha `1` pengével hosszabb fegyverrel h
 
 🗡️  [Lovas harc](fortelyok.harci/lovas_harc.md) fortély, [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély határozza meg a bónuszokat
 
-❌ [Magasabbról](065_01_03_harci_poziciok.md#magasabbról) harci helyzet NEM jár!
+❌ [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról) harci helyzet NEM jár!
 
 <br />
 
@@ -51,7 +51,7 @@ Lásd a [szituáció leírását](szituaciok/hatasrol_leeses.md)!
 ---
 ## Hátulról jövő támadások
 
-Itt a [Harci helyzetek](065_01_03_harci_poziciok.md#hátulról-támadás) fejezetben leírt módosítók érvényesek.
+Itt a [Harci helyzetek](065_01_01_pozitiv_helyzetek.md#hátulról-támadás) fejezetben leírt módosítók érvényesek.
 
 <br />
 

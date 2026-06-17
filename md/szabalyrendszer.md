@@ -147,11 +147,10 @@
   - [Fegyver + hárítófegyver](065_04_00_fegyverfogas.md#fegyver--hárítófegyver)
 - [Harci taktikák](065_02_harci_taktikak.md)
 - [Harci helyzetek](065_01_00_harci_helyzetek.md)
-  - [Belharci szituáció](065_01_01_belharci_szituacio.md)
-  - [Fegyverrántás váratlanul](065_01_02_fegyverrantas_varatlanul.md)
-  - [Harci pozíciók](065_01_03_harci_poziciok.md)
-  - [Fegyverrel kapcsolatos helyzetek](065_01_04_fegyver_harci_helyzetek.md)
-  - [Fizikai és környezeti helyzetek](065_01_05_fizikai_es_kornyezeti_helyzetek.md)
+  - [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
+  - [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
+  - [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
+  - [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
 - [Harc alakzatban](065_03_harc_alakzatban.md)
 
 ### 6.6 [Manőverek](066_00_manoverek.md) 🎲

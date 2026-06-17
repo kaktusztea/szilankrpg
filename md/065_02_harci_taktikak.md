@@ -75,13 +75,13 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 
 ❌ Más taktikával együtt
 
-❌ [Láthatatlan](065_01_05_fizikai_es_kornyezeti_helyzetek.md#láthatatlanul) ellenfél ellen
+❌ [Láthatatlan](065_01_01_pozitiv_helyzetek.md#láthatatlanul-hallhatóan) ellenfél ellen
 
 ❌ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány) harci helyzetből **NEM** alkalmazható.
 
 ✅ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge) és [Pengeelőny](065_01_04_fegyver_harci_helyzetek.md#pengeelőny) harci helyzetben csak
 
-✅ [Levegőből támadás](065_01_03_harci_poziciok.md#levegőből-támadás) harci helyzetben
+✅ [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás) harci helyzetben
 
 🔗 Kapcsolódik: **[Fárasztás](fortelyok.harci/farasztas.md)** harci fortély
 
@@ -235,9 +235,9 @@ TÉ:+2, VÉ:-4
 TÉ:+3, VÉ:-6
 ```
 
-✅ [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) szituációban
+✅ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
-❌ [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás) szituációban
+❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
 
 ✅ **Kezdeményező, Kiváró, Érintő, Plusz támadás, 1 támadás taktikával** együtt
 
@@ -255,9 +255,9 @@ VÉ:+3, TÉ:-6
 VÉ:+4, TÉ:-8
 ```
 
-❌ [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) szituációban
+❌ [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) szituációban
 
-❌ [Orvtámadás](065_01_03_harci_poziciok.md#orvtámadás) szituációban
+❌ [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) szituációban
 
 ✅ **Érintő, 1 támadás taktikával** együtt
 
@@ -281,7 +281,7 @@ Ellenfél VÉ csökkentés: (1 + k20T)
 
 A következő körben csak a védekezéssel törődsz, folyamatosan hátrálsz. A kör közben nem változtathatsz a taktikádon és csak a következő körben támadhatsz újra.
 
-🔆 A [lények méretkülönbségéből](065_01_05_fizikai_es_kornyezeti_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
+🔆 A [lények méretkülönbségéből](065_01_03_negativ_helyzetek.md#lények-méret-különbsége) adódó `VÉ` módosító továbbra is hozzáadódik/levonódik a fenti  `1 + k20T` dobáshoz/dobásból.
 
 🔆  Ha nem tudsz folyamatosan hátrálni (pl. egy fal miatt), akkor a KM csökkentheti a fenti `VÉ` bónuszt, akár `VÉ:+3`-ig is (sima max Védekező taktika).
 

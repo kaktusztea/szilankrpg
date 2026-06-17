@@ -2,44 +2,46 @@
 
 A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek szintén [Hatásokat](081_hatasok.md) okoznak.
 
-### [Belharci szituáció](065_01_01_belharci_szituacio.md)
+### [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
 
-### [Fegyverrántás váratlanul](065_01_02_fegyverrantas_varatlanul.md)
+- [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés)
+- [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás)
+- [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
+- [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról)
+- [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás)
+- [Láthatatlanul, hallhatóan](065_01_01_pozitiv_helyzetek.md#láthatatlanul-hallhatóan)
+- [Láthatatlanul, csendesen](065_01_01_pozitiv_helyzetek.md#láthatatlanul-csendesen)
 
-### [Harci pozíciók](065_01_03_harci_poziciok.md)
+### [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
 
-- [Meglepetés](065_01_03_harci_poziciok.md#meglepetés)
-- [Készületlenség](065_01_03_harci_poziciok.md#k%C3%A9sz%C3%BCletlens%C3%A9g)
-- [Beszorított helyzet](065_01_03_harci_poziciok.md#beszor%C3%ADtott-helyzet)
-- [Orvtámadás](065_01_03_harci_poziciok.md#orvt%C3%A1mad%C3%A1s)
-- [Hátulról támadás](065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s)
-- [Közrefogás](065_01_03_harci_poziciok.md#k%C3%B6zrefog%C3%A1s)
-- [Levegőből támadás](065_01_03_harci_poziciok.md#leveg%C5%91b%C5%91l-t%C3%A1mad%C3%A1s)
-- [Magasabbról](065_01_03_harci_poziciok.md#magasabbr%C3%B3l)
-- [Védekező takarásban](065_01_03_harci_poziciok.md#v%C3%A9dekez%C5%91-takar%C3%A1sban)
+- [Belharci szituáció](065_01_02_semleges_helyzetek.md#belharci-szituáció)
+- [Fegyverrántás váratlanul](065_01_02_semleges_helyzetek.md#fegyverrántás-váratlanul)
+- [Közrefogás](065_01_02_semleges_helyzetek.md#közrefogás)
+- [Védekező takarásban](065_01_02_semleges_helyzetek.md#védekező-takarásban)
+- [Védő Érték kiterjesztése másra](065_01_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra)
+- [Vadállatok elleni harc](065_01_02_semleges_helyzetek.md#vadállatok-elleni-harc)
 
-### [Fegyverrel kapcsolatos helyzetek](065_01_04_fegyver_harci_helyzetek.md)
+### [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
 
-- [Fegyverméret](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret)
-- [Hajítás alkalmatlan fegyverrel](065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel)
-- [Hajítás nem dobásra készített tárgyakkal](065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgyakkal)
-- [Képzetlen fegyverhasználat](065_01_04_fegyver_harci_helyzetek.md#k%C3%A9pzetlen-fegyverhaszn%C3%A1lat)
+- [Beszorított helyzet](065_01_03_negativ_helyzetek.md#beszorított-helyzet)
+- [Csúszós talaj](065_01_03_negativ_helyzetek.md#csúszós-talaj)
+- [Elvesztett egyensúly](065_01_03_negativ_helyzetek.md#elvesztett-egyensúly)
+- [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve)
+- [Hajítás alkalmatlan fegyverrel](065_01_03_negativ_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
+- [Hajítás nem dobásra készített tárgyakkal](065_01_03_negativ_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
+- [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
+- [Lények méret különbsége](065_01_03_negativ_helyzetek.md#lények-méret-különbsége)
+- [Rosszabbik kézben tartott fegyver](065_01_03_negativ_helyzetek.md#rosszabbik-kézben-tartott-fegyver)
+- [Sötétben](065_01_03_negativ_helyzetek.md#sötétben)
+- [Tűz ruhán](065_01_03_negativ_helyzetek.md#tűz-ruhán)
+- [Vér elvakít](065_01_03_negativ_helyzetek.md#vér-elvakít)
+
+### [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
+
+- [Fegyverméret](065_01_04_fegyver_harci_helyzetek.md#fegyverméret)
+- [Képzetlen fegyverhasználat](065_01_04_fegyver_harci_helyzetek.md#képzetlen-fegyverhasználat)
 - [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc)
-- [Rosszabbik kézben tartott fegyver](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver)
-- [Sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md#sebz%C3%A9st%C3%ADpusok)
-
-### [Fizikai és környezeti helyzetek](065_01_05_fizikai_es_kornyezeti_helyzetek.md)
-
-- [Csúszós talaj](065_01_05_fizikai_es_kornyezeti_helyzetek.md#cs%C3%BAsz%C3%B3s-talaj)
-- [Elvesztett egyensúly](065_01_05_fizikai_es_kornyezeti_helyzetek.md#elvesztett-egyens%C3%BAly)
-- [Földön fekve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#f%C3%B6ld%C3%B6n-fekve)
-- [Helyhez kötve](065_01_05_fizikai_es_kornyezeti_helyzetek.md#helyhez-k%C3%B6tve)
-- [Láthatatlanul](065_01_05_fizikai_es_kornyezeti_helyzetek.md#l%C3%A1thatatlanul)
-- [Tűz ruhán](065_01_05_fizikai_es_kornyezeti_helyzetek.md#t%C5%B1z-ruh%C3%A1n)
-- [Sötétben](065_01_05_fizikai_es_kornyezeti_helyzetek.md#s%C3%B6t%C3%A9tben)
-- [Vér elvakít](065_01_05_fizikai_es_kornyezeti_helyzetek.md#v%C3%A9r-elvak%C3%ADt)
-- [Lények méret különbsége](065_01_05_fizikai_es_kornyezeti_helyzetek.md#l%C3%A9nyek-m%C3%A9ret-k%C3%BCl%C3%B6nbs%C3%A9ge)
-- [Vadállatok elleni harc](065_01_05_fizikai_es_kornyezeti_helyzetek.md#vad%C3%A1llatok-elleni-harc)
+- [Sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md#sebzéstípusok)
 
 ---
 

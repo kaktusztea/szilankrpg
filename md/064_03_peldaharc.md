@@ -118,7 +118,7 @@ S4:  -7 TÉ
 ---
 ## Lord Gustav és Tetves részletes összecsapása
 
-Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_01_03_harci_poziciok.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
+Lord Gustav elmélázva sétál ki a könyvtárból, mikor Tetves, a bérgyilkos veti rá magát. Jó pénzt ígértek neki a lovag haláláért. Gustav szerencsére időben észbe kap (**Lopakodás/rejtőzés** vs. **Észlelés** próbát a lovag nyeri) így Tetves csak a [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) `Előny+1` TÉ dobásra bónuszát - és az automatikusan nyert kezdeményezést - kapja meg.
 
 ### 🔆Pengeméret
 

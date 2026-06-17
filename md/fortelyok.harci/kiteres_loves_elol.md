@@ -5,7 +5,7 @@ Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt löv
 ### Követelmények
 
 - észleled, hogy rád lőnek
-- nem számítasz 🗡️[Készületlennek](../065_01_03_harci_poziciok.md#készületlenség)
+- nem számítasz 🗡️[Készületlennek](../065_01_01_pozitiv_helyzetek.md#meglepetés)
 - kizárólag arra figyelsz, hogy elkerüld a lövedéket
 
 ### 1. fok

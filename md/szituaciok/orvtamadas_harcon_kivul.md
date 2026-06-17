@@ -33,13 +33,13 @@ Lopakodás/rejtőzés (-6) + Ügyesség
 ---
 ## `II.a` Sikeres Lopakodás → Orvtámadás
 
- [Orvtámadás](../065_01_03_harci_poziciok.md#orvt%C3%A1mad%C3%A1s) harci helyzet bónuszai járnak.
+ [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet bónuszai járnak.
 
 <br />
 
 ## `II.b` Sikertelen Lopakodás testközelben
 
-[Hátulról támadás](../065_01_03_harci_poziciok.md#h%C3%A1tulr%C3%B3l-t%C3%A1mad%C3%A1s) bónuszait kapod csak meg:
+[Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) bónuszait kapod csak meg:
 
 ```
 Előny+1 TÉ dobásra

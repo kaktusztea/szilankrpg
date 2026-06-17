@@ -1,6 +1,6 @@
 ## Meglepetésből, Precíz támadás max TÉ taktikával
 
-[Meglepetésből](../065_01_03_harci_poziciok.md#meglepetés) támadsz (harci helyzet) és maximális [Támadó taktikát](../065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) bevetve (`TÉ:+3, VÉ:-6`) megpróbálkozol egy [Precíz támadás manőverrel](../066_05_altalanos_manoverek.md#precíz-támadás).
+[Meglepetésből](../065_01_01_pozitiv_helyzetek.md#meglepetés) támadsz (harci helyzet) és maximális [Támadó taktikát](../065_02_harci_taktikak.md#t%C3%A1mad%C3%B3-taktika) bevetve (`TÉ:+3, VÉ:-6`) megpróbálkozol egy [Precíz támadás manőverrel](../066_05_altalanos_manoverek.md#precíz-támadás).
 
 A fenti Manővernek [**Végrehajtás** és **Ellenpróba**](../066_04_manover_vegbevitele.md) fázisai vannak. A **Meglepetés** harci helyzet bónusza és a **Támadó taktika** bónusza hogyan érvényesülnek?
 

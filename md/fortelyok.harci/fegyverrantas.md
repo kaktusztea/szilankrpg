@@ -2,7 +2,7 @@
 
 Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél.
 
-Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_02_fegyverrantas_varatlanul.md#fegyverrántás-váratlanul) harci helyzetben (az alkalmazó karakter oldalán):
+Bónuszok 🗡️[Fegyverrántás váratlanul](../065_01_02_semleges_helyzetek.md#fegyverrántás-váratlanul) harci helyzetben (az alkalmazó karakter oldalán):
 ### 1. fok
 
 🔒 Harcmodor: `4.szint`

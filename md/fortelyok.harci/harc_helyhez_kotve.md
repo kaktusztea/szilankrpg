@@ -4,7 +4,7 @@ Nem esel kétségbe akkor sem, ha nagyon kis helyen, vagy kimozgás lehetősége
 
 ### Alapeset
 
-[Helyhez kötve](../065_01_05_fizikai_es_kornyezeti_helyzetek.md#helyhez-kötve) szituáció Hatásai sújtanak.
+[Helyhez kötve](../065_01_03_negativ_helyzetek.md#helyhez-kötve) szituáció Hatásai sújtanak.
 
 ---
 ### 1. fok
