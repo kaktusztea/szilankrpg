@@ -716,8 +716,8 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 | Hátulról támadás | hátulról | Előny+1 TÉ dobásra. Pajzs VÉ NEM számít. |
 | Magasabbról | magasabbról | Előny+1 TÉ dobásra. Lovas harcban NEM jár. |
 | Levegőből támadás | levegőből | Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK. |
-| Láthatatlanul, hallhatóan | láthatatlanul_hallhatóan | Támadó: Előny+1 TÉ, VÉ csökk fixen 2. Védő: Hátrány-1 TÉ. Fárasztó tiltott. |
-| Láthatatlanul, csendesen | láthatatlanul_csendesen | Támadó: Előny+2 TÉ, VÉ csökk fixen 2. Védő: Hátrány-2 TÉ. Fárasztó tiltott. |
+| Láthatatlanul harcolás - hallhatóan | láthatatlanul_hallhatóan | Előny+1 TÉ, VÉ csökk:+1, VÉ:+5. Fárasztó tiltott. |
+| Láthatatlanul harcolás - csendesen | láthatatlanul_csendesen | Előny+2 TÉ, VÉ csökk:+2, VÉ:+10. Fárasztó tiltott. |
 
 #### Semleges helyzetek (065_01_02)
 

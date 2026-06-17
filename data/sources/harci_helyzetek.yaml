@@ -183,23 +183,35 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Láthatatlanul, hallhatóan"
-  infó: "Támadó: Előny+1 TÉ, VÉ csökk fixen 2. Védő: Hátrány-1 TÉ."
+- név: "Láthatatlanul harcolás - hallhatóan"
+  infó: "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott."
   hatások:
   - hatás: "előny"
     érték: 1
     cél: "té_dobás"
+  - hatás: "előny"
+    érték: 1
+    cél: "vé_csökkentés"
+  - hatás: "előny"
+    érték: 5
+    cél: "vé"
   id: "láthatatlanul_hallhatóan"
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Láthatatlanul, csendesen"
-  infó: "Támadó: Előny+2 TÉ, VÉ csökk fixen 2. Védő: Hátrány-2 TÉ."
+- név: "Láthatatlanul harcolás - csendesen"
+  infó: "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott."
   hatások:
   - hatás: "előny"
     érték: 2
     cél: "té_dobás"
+  - hatás: "előny"
+    érték: 2
+    cél: "vé_csökkentés"
+  - hatás: "előny"
+    érték: 10
+    cél: "vé"
   id: "láthatatlanul_csendesen"
   csoport: "pozitív"
   rejtett: false
