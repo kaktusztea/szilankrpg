@@ -330,7 +330,7 @@
   },
   {
     "név": "Meglepetés",
-    "infó": "Előny+1 TÉ, VÉ csökkentés: +2. Készületlenség = Meglepetés.",
+    "infó": "Előny+1 TÉ;  VÉ csökkentés: +2;  Készületlenség: ellenfeled Meglepetés bónuszt kap.",
     "hatások": [
       {
         "hatás": "előny",
