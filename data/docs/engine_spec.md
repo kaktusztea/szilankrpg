@@ -639,7 +639,7 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika: módosítók, fokok, kombó szabályok)
-- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (29 helyzet: id, infó, hatások)
+- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (31 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
 - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció: id, infó)
 - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: id, nehézség, fázisok, hatás)
 
@@ -668,8 +668,10 @@ Kalkuláció két rétege:
 2. **§16 feltételes fortély módosítók** — a HarcScreen fortély loop-jában a `mod.feltétel` check:
    `feltétel.split(':')` → prefix (taktika/harci_helyzet/szituáció/fegyver) → session tömbben keresés
 
-Harci helyzetek: NEM kalkuláltak (komplex hatások) — informatív jelzés (infó mező) + §16 feltétel dispatch.
+Harci helyzetek: NEM kalkuláltak (komplex hatások) — Hatás pool-ban az `infó` mező jelenik meg + §16 feltétel dispatch.
 Manőverek: NEM adnak statikus módosítókat — informatív (nehézség, fázisok, hatás megjelenítés).
+UI: Manőver szekció `aktiv-label` fejléccel (mint Taktikák/Helyzetek).
+Taktikák Hatás pool: módosítók zölddel + ✔ jel a végén (beszámított jelzés).
 
 ### 21.1 Harci Taktikák
 

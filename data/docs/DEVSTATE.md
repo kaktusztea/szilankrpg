@@ -269,7 +269,7 @@
   - `szituáció:roham` → `taktika:roham`
 - ✅ Aktív fül adatforrások (YAML → JSON):
   - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika, kombó_mód/lista, fokozatos, megkötések)
-  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (29 helyzet, id, infó, hatások, tiltja_taktikákat, kizár_helyzetek)
+  - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (31 helyzet, id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek[id-k])
   - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
   - `data/sources/statuszok.yaml` → `tables/statuszok.json` (19 státusz, kategória, fokok+alcím+strukturált hatások)
@@ -379,50 +379,32 @@
 - Támadás erőből: interaktív SP↔TÉ csere — nem automatikus módosító
 - Szabad fortélyok felvételénél: mutassa rögtön a kiterjesztéseket (UI feature)
 
-### Harci helyzetek — kombinálási/tiltási szabályok 🚧
+### Harci helyzetek — kategorizálás és egyszerűsítés ✅
 
-Az alábbi helyzeteknél a szabályrendszer explicit tiltásokat/engedélyezéseket ír elő, amelyeket a webapp-nak érvényesítenie kell.
+Szabályrendszer átszervezés és webapp implementáció kész.
 
-**Orvtámadás:**
-- ❌ Hátulról és Meglepetés harci helyzetek NEM adhatóak hozzá
-- ❌ Egyéb TÉ bónusz nincs
-- ❌ Harci taktikák NEM használhatóak
-- ✅ Precíz támadás manőver használható
+**Elvégzett változtatások:**
+- Picker 3 csoportra bontva: Pozitív (zöld), Semleges (narancs), Negatív (piros) fejléccel
+- Helyzetek egyoldalúsítva (csak saját karakterre vonatkozó módosítók, nincs aszimmetrikus "Támadó/Védő" bontás)
+- Többfokú helyzetek szétbontva: Sötétben (×3), Tűz ruhán (×2), Láthatatlanul (×2), Beszorított → Ellenfeled beszorított
+- `kizár_helyzetek` id-alapú (nem név) — többfokúak kölcsönösen kizárják egymást
+- Rejtett elemek (Pengeelőny, Pengehátrány, Pusztakezes, Képzetlen) nem jelennek meg a picker-ben
+- Készületlenség beolvadt Meglepetésbe (törölve)
+- VÉ csökkentés egyszerűsítés: k20T (Pengehátrány), 1+k20T (Alappenge), 2+k20T (Pengeelőny)
+- Hatás pool: mindig `infó` mező jelenik meg (nem a hatások[] struktúra)
+- Taktikák hatás pool: zöld módosítók végén ✔ jel (beszámított)
+- Manőver szekció: label kiemelve (aktiv-label, mint Taktikák/Helyzetek)
 
-**Meglepetés:**
-- ✅ Támadó taktikával kombinálható
-- 🔆 Pajzs VÉ csak szemből/pajzs-oldalról számít (szituatív, KM dönt)
-
-**Beszorított helyzet:**
-- ✅ Támadó- és Védő taktikák használhatóak
-
-**Levegőből támadás:**
-- ✅ Roham taktika pluszban alkalmazható
-- ✅ Fárasztó taktika használható
-
-**Láthatatlanul:**
-- ❌ Fárasztó taktika NEM alkalmazható láthatatlan ellenfél ellen
-
-**Magasabbról:**
-- ❌ Harc hátasról helyzetben NEM jár pluszban
-
-**Közrefogás:**
-- Semlegesíti az ellenfél Pengeelőny helyzetét (Alappenge-re degradálja)
-
-**Pusztakezes harc:**
-- ❌ Puszta kéz NEM használható Kétkezes harcban
-
-**Belharci szituáció:**
-- ❌ Belharc fortély bónuszok CSAK Közelharc harcmodorban és max "rövid" (0) pengehosszú fegyverrel
-- 0-nál hosszabb fegyver: Beszorított helyzet (2) harci helyzetbe kerül
-- Puszta kéz értékei 0-ra emelkednek (nem negatív)
-
-**Rosszabbik kéz:**
-- ✅ Kétkezesség fortély kioltja (bármelyik kézzel levonás nélkül, de csak 1 fegyverrel)
+**Kombinálási szabályok (implementált, data-driven):**
+- `tiltja_taktikákat: true` → összes taktika disabled (Orvtámadás)
+- `kizár_helyzetek: [id-k]` → picker szűrés + hozzáadáskor eltávolítás
+- Taktika megkötések: `harci_helyzet/tiltott` (Fárasztás: Pengehátrány, Láthatatlanul×2)
 
 **TODO:**
-- [x] Orvtámadás: aktív helyzet → összes taktika picker disabled + Hátulról/Meglepetés kizárás (data: `tiltja_taktikákat`, `kizár_helyzetek` yaml mezők + AktivScreen logika)
-- [x] Láthatatlanul: Fárasztó taktika tiltás (data: taktikák yaml `megkötések: harci_helyzet/tiltott/Láthatatlanul`)
+- [ ] Közrefogás: Pengeelőny semlegesítés logika (Harc fül VÉ csökkentés)
+- [ ] Magasabbról + Lovas harc: kizáró jelzés (ha lovas harc aktív, Magasabbról disabled)
+- [ ] Belharci szituáció: komplex rendszer (harcmodor + pengehossz feltételek, fegyver override)
+- [ ] Puszta kéz + Kétkezes harc: Fegyverfogás picker kizárás (ha mindkét kéz puszta kéz)
 
 
 ### Harc alakzatban 🚧
