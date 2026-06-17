@@ -6,15 +6,15 @@
 
 harci_helyzetek:
 - név: "Belharci szituáció"
-  infó: "Rövid fegyverek előnye, hosszú fegyverek hátránya. Külön szabályrendszer."
+  infó: "Közelharc harcmodor + max 0 pengehossz. Belharc fortély bónuszok. Egyéb fegyver: Beszorított(2)."
   hatások: []
   id: "belharci_szituáció"
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Beszorított helyzet"
-  infó: "Ellenfél Előny+1 TÉ. Beszorított: Hátrány-1 KÉ/TÉ, 1 támadás elvesztés, mozgás feleződik."
+- név: "Beszorított (1) Enyhén"
+  infó: "Hátrány-1 KÉ/TÉ, 1 tám. elvesztés, mozgás feleződik. Támadó/Védő taktikák OK."
   hatások:
   - hatás: "hátrány"
     érték: -1
@@ -28,7 +28,30 @@ harci_helyzetek:
   - hatás: "arányos"
     érték: 0.5
     cél: "mozgás"
-  id: "beszorított"
+  id: "beszorított_1"
+  csoport: "negatív"
+  rejtett: false
+  tiltja_taktikákat: false
+  kizár_helyzetek: []
+- név: "Beszorított (2) Erősen"
+  infó: "Hátrány-2 KÉ/TÉ, VÉ veszteség dupl., többsz. tám. elvesztés, mozgás felező, SP:(0+k20)."
+  hatások:
+  - hatás: "hátrány"
+    érték: -2
+    cél: "ké_dobás"
+  - hatás: "hátrány"
+    érték: -2
+    cél: "té_dobás"
+  - hatás: "szöveges"
+    cél: "vé_veszteség"
+    megjegyzés: "VÉ veszteség duplázódik"
+  - hatás: "szöveges"
+    cél: "támadások_száma"
+    megjegyzés: "Többszörös támadás elvesztése"
+  - hatás: "arányos"
+    érték: 0.5
+    cél: "mozgás"
+  id: "beszorított_2"
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
@@ -45,7 +68,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Elvesztett egyensúly"
-  infó: "Hátrány-1 TÉ, többszörös támadás elvesztés, mozgás feleződik."
+  infó: "Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja."
   hatások:
   - hatás: "hátrány"
     érték: -1
@@ -62,7 +85,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Fegyverrántás váratlanul"
-  infó: "Megnyert KÉ + Előny+1 TÉ dobásra (első csapás)."
+  infó: "KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza."
   hatások:
   - hatás: "előny"
     érték: 1
@@ -88,7 +111,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Hajítás alkalmatlan fegyverrel"
-  infó: "Hátrány-2 Sebzésdobás, Hátrány-2 CÉ. Fegyver CÉ=0."
+  infó: "Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli."
   hatások:
   - hatás: "hátrány"
     érték: -2
@@ -102,7 +125,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Hajítás nem dobásra készített tárgyakkal"
-  infó: "Hátrány-1 Sebzésdobás, Hátrány-1 CÉ. Fegyver CÉ=0."
+  infó: "Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli."
   hatások:
   - hatás: "hátrány"
     érték: -1
@@ -116,7 +139,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Hátulról támadás"
-  infó: "Támadó: Előny+1 TÉ. Pajzs VÉ nem számít."
+  infó: "Előny+1 TÉ dobásra. Pajzs VÉ NEM számít."
   hatások:
   - hatás: "előny"
     érték: 1
@@ -153,7 +176,7 @@ harci_helyzetek:
   kizár_helyzetek: []
 
 - név: "Közrefogás"
-  infó: "+1 TÉ per extra támadó (max +4). Manőver Ellenpróba: legmagasabb MA számít."
+  infó: "Semlegesíti ellenfél Pengeelőnyét → Alappenge."
   hatások: []
   id: "közrefogás"
   csoport: "semleges"
@@ -183,7 +206,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Levegőből támadás"
-  infó: "Repülő→földi: Előny+1 TÉ, Előny+1 VÉ."
+  infó: "Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK."
   hatások:
   - hatás: "előny"
     érték: 1
@@ -213,7 +236,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Meglepetés"
-  infó: "Támadó: megnyert KÉ, Előny+1 TÉ, VÉ csökk:3. Védő: többsz. tám. elvesztés, utolsó."
+  infó: "Támadó: megnyert KÉ, Előny+1 TÉ, VÉ csökk:3. Védő: többsz. tám. elvesztés. Készületlenség = Meglepetés."
   hatások:
   - hatás: "előny"
     érték: 1
@@ -241,7 +264,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
 - név: "Pengeelőny"
-  infó: "VÉ:+1..+4 (per 0.5 penge különbség)."
+  infó: "VÉ csökkentés: 2+k20T."
   hatások: []
   id: "pengeelőny"
   csoport: "negatív"
@@ -249,7 +272,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Pengehátrány"
-  infó: "VÉ:-1..-4 (per 0.5 penge különbség)."
+  infó: "VÉ csökkentés: k20T."
   hatások: []
   id: "pengehátrány"
   csoport: "negatív"
@@ -265,7 +288,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Rosszabbik kézben tartott fegyver"
-  infó: "Hátrány-1 TÉ dobásra. Kétkezesség fortély kiküszöböli."
+  infó: "Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja."
   hatások:
   - hatás: "hátrány"
     érték: -1
@@ -275,32 +298,63 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Sötétben"
-  infó: "Félhomály: Hátrány-1 TÉ. Teljes+zaj: Hátrány-2 TÉ. Teljes+csend: Hátrány-3 TÉ."
+- név: "Sötétben - félhomály"
+  infó: "Hátrány-1 TÉ dobásra. Vakharc/Infralátás/Ultralátás mérsékli."
   hatások:
   - hatás: "hátrány"
     érték: -1
     cél: "té_dobás"
-    megjegyzés: "félhomály"
-  id: "sötétben"
+  id: "sötétben_1"
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Tűz ruhán"
-  infó: "Ég: Hátrány-1 TÉ. Lángol: Hátrány-2 TÉ, 1 támadás elvesztés."
+- név: "Sötétben - teljes, zajokkal"
+  infó: "Hátrány-1 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli."
   hatások:
   - hatás: "hátrány"
     érték: -1
     cél: "té_dobás"
-    megjegyzés: "ég fokozat"
-  id: "tűz_ruhán"
+  id: "sötétben_2"
+  csoport: "negatív"
+  rejtett: false
+  tiltja_taktikákat: false
+  kizár_helyzetek: []
+- név: "Sötétben - teljes, csendben"
+  infó: "Hátrány-2 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli."
+  hatások:
+  - hatás: "hátrány"
+    érték: -2
+    cél: "té_dobás"
+  id: "sötétben_3"
+  csoport: "negatív"
+  rejtett: false
+  tiltja_taktikákat: false
+  kizár_helyzetek: []
+- név: "Tűz ruhán - ég"
+  infó: "Hátrány-1 TÉ, (-5+k20) SP/kör. Eloltás: 1 kör."
+  hatások:
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+  id: "tűz_ruhán_1"
+  csoport: "negatív"
+  rejtett: false
+  tiltja_taktikákat: false
+  kizár_helyzetek: []
+- név: "Tűz ruhán - lángol"
+  infó: "Hátrány-2 TÉ, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség."
+  hatások:
+  - hatás: "hátrány"
+    érték: -2
+    cél: "té_dobás"
+  id: "tűz_ruhán_2"
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Vadállatok elleni harc"
-  infó: "Közelharc + Belharc harcmodor. Állat-specifikus."
+  infó: "Informatív: Közelharc + Belharc 2.fok bónuszai relevánsak."
   hatások: []
   id: "vadállatok"
   csoport: "semleges"
@@ -308,7 +362,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Védekező takarásban"
-  infó: "VÉ:+10 (takarás mértékétől függ, KM dönt)."
+  infó: "Mindkét fél: Hátrány-1 TÉ dobásra."
   hatások: []
   id: "takarásban"
   csoport: "semleges"
@@ -316,7 +370,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Védő Érték kiterjesztése másra"
-  infó: "Többszörös támadás elvesztés, VÉ veszteség duplázódik. Testőr fortély csökkenti."
+  infó: "Többsz. tám. elvesztés, VÉ veszteség duplázódik. Testőr fortély mérsékli."
   hatások:
   - hatás: "szöveges"
     cél: "támadások_száma"
@@ -330,7 +384,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Vér elvakít"
-  infó: "Hátrány-1 TÉ, Hátrány-1 Érzék(Látás)."
+  infó: "Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés."
   hatások:
   - hatás: "hátrány"
     érték: -1

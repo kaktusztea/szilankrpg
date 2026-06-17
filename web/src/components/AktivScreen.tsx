@@ -388,18 +388,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 {session.aktív_helyzetek.map((h, i) => {
                   const def = data.harciHelyzetek.find(d => d.név === h);
                   if (!def) return null;
-                  const parts: string[] = [];
-                  if (def.hatások && def.hatások.length > 0) {
-                    for (const hat of def.hatások) {
-                      if (hat.hatás === 'előny' || hat.hatás === 'hátrány') parts.push(`${hat.hatás === 'előny' ? 'Előny' : 'Hátrány'}${hat.érték! > 0 ? '+' : ''}${hat.érték} ${eseményNév(hat.cél)}${hat.megjegyzés ? ` (${hat.megjegyzés})` : ''}`);
-                      else if (hat.hatás === 'duplázás') parts.push(`×${hat.érték} ${eseményNév(hat.cél)}`);
-                      else if (hat.hatás === 'arányos') parts.push(`×${hat.érték} ${eseményNév(hat.cél)}`);
-                      else if (hat.hatás === 'szöveges' && hat.megjegyzés) parts.push(hat.megjegyzés);
-                    }
-                  } else if (def.infó) {
-                    parts.push(def.infó);
-                  }
-                  return <span key={i} className="hatas-pool-item"><strong style={{ color: '#ff9800' }}>{def.név}:</strong> {parts.join(', ') || '–'}</span>;
+                  return <span key={i} className="hatas-pool-item"><strong style={{ color: '#ff9800' }}>{def.név}:</strong> {def.infó || '–'}</span>;
                 })}
               </div>
             </div>
