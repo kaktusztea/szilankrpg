@@ -5,15 +5,8 @@
 Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
 
 ```
-Támadó
-→ Megnyert KÉ
-→ Előny+1 TÉ dobásra
-→ VÉ csökkentés: 3
-
-Védő
-→ Többszörös támadás elvesztése
-→ Utolsónak támadhat a körben
-→ Pajzs VÉ: szituáció függő
+Előny+1 TÉ dobásra
+VÉ csökkentés: +2
 ```
 
 🔆 [Meglepetés és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---meglepetés)
