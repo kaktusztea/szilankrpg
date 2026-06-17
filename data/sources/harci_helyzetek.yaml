@@ -13,49 +13,17 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Beszorított (1) Enyhén"
-  infó: "Hátrány-1 KÉ/TÉ, 1 tám. elvesztés, mozgás feleződik. Támadó/Védő taktikák OK."
+- név: "Ellenfeled beszorított"
+  infó: "Előny+1 TÉ dobásra."
   hatások:
-  - hatás: "hátrány"
-    érték: -1
-    cél: "ké_dobás"
-  - hatás: "hátrány"
-    érték: -1
+  - hatás: "előny"
+    érték: 1
     cél: "té_dobás"
-  - hatás: "szöveges"
-    cél: "támadások_száma"
-    megjegyzés: "-1 támadás"
-  - hatás: "arányos"
-    érték: 0.5
-    cél: "mozgás"
-  id: "beszorított_1"
-  csoport: "negatív"
+  id: "ellenfél_beszorított"
+  csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["beszorított_2"]
-- név: "Beszorított (2) Erősen"
-  infó: "Hátrány-2 KÉ/TÉ, VÉ veszteség dupl., többsz. tám. elvesztés, mozgás felező, SP:(0+k20)."
-  hatások:
-  - hatás: "hátrány"
-    érték: -2
-    cél: "ké_dobás"
-  - hatás: "hátrány"
-    érték: -2
-    cél: "té_dobás"
-  - hatás: "szöveges"
-    cél: "vé_veszteség"
-    megjegyzés: "VÉ veszteség duplázódik"
-  - hatás: "szöveges"
-    cél: "támadások_száma"
-    megjegyzés: "Többszörös támadás elvesztése"
-  - hatás: "arányos"
-    érték: 0.5
-    cél: "mozgás"
-  id: "beszorított_2"
-  csoport: "negatív"
-  rejtett: false
-  tiltja_taktikákat: false
-  kizár_helyzetek: ["beszorított_1"]
+  kizár_helyzetek: []
 - név: "Csúszós talaj"
   infó: "Hátrány-1 TÉ dobásra."
   hatások:

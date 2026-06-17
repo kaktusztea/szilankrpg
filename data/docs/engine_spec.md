@@ -716,6 +716,7 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 | Hátulról támadás | hátulról | Előny+1 TÉ dobásra. Pajzs VÉ NEM számít. |
 | Magasabbról | magasabbról | Előny+1 TÉ dobásra. Lovas harcban NEM jár. |
 | Levegőből támadás | levegőből | Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK. |
+| Ellenfeled beszorított | ellenfél_beszorított | Előny+1 TÉ dobásra. |
 | Láthatatlanul harcolás - hallhatóan | láthatatlanul_hallhatóan | Előny+1 TÉ, VÉ csökk:+1, VÉ:+5. Fárasztó tiltott. |
 | Láthatatlanul harcolás - csendesen | láthatatlanul_csendesen | Előny+2 TÉ, VÉ csökk:+2, VÉ:+10. Fárasztó tiltott. |
 
@@ -723,7 +724,7 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Hatások |
 |---------|-----|---------|
-| Belharci szituáció | belharci_szituáció | Közelharc harcmodor + max 0 pengehossz feltétel. Belharc fortély bónuszok. Egyéb: Beszorított(2). |
+| Belharci szituáció | belharci_szituáció | Közelharc harcmodor + max 0 pengehossz feltétel. Belharc fortély bónuszok. |
 | Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fortély: Fegyverrántás skála. |
 | Közrefogás | közrefogás | Semlegesíti ellenfél Pengeelőnyét → Alappenge. |
 | Takarásban harcolás | takarásban | Hátrány-1 TÉ, VÉ: +5. |
@@ -734,8 +735,6 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Hatások |
 |---------|-----|---------|
-| Beszorított (1) Enyhén | beszorított_1 | Hátrány-1 KÉ/TÉ, 1 tám. elvesztés, mozgás feleződik. Támadó/Védő taktikák OK. |
-| Beszorított (2) Erősen | beszorított_2 | Hátrány-2 KÉ/TÉ, VÉ veszt. dupl., többsz. tám. elvesztés, mozgás felező, SP:(0+k20). |
 | Csúszós talaj | csúszós_talaj | Hátrány-1 TÉ dobásra. |
 | Elvesztett egyensúly | elvesztett_egyensúly | Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja. |
 | Földön fekve | földön_fekve | Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik. |
@@ -765,8 +764,9 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 Data layer mezők:
   tiltja_taktikákat: bool — ha true, ÖSSZES taktika disabled amíg ez a helyzet aktív.
     Implementált: Orvtámadás (true). Hozzáadáskor aktív taktikák automatikusan törlődnek.
-  kizár_helyzetek: string[] — ezen helyzetek nem adhatók hozzá / eltávolítódnak hozzáadáskor.
-    Implementált: Orvtámadás → ["Hátulról támadás", "Meglepetés"]
+  kizár_helyzetek: string[] — id-kat tartalmaz. Ezen helyzetek nem adhatók hozzá / eltávolítódnak hozzáadáskor.
+    Implementált: Orvtámadás → ["hátulról", "meglepetés"]
+    Többfokú helyzetek: kölcsönösen kizárják egymást (sötétben_1/2/3, tűz_ruhán_1/2, láthatatlanul_*/*, hajítás_*)
   Taktika megkötések (taktikak.yaml → megkötések[]):
     Fárasztás: harci_helyzet/tiltott/Pengehátrány,
               harci_helyzet/tiltott/Láthatatlanul harcolás - hallhatóan,

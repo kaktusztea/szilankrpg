@@ -117,7 +117,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Hatás pool box | info szekció | 7 alszekció: Taktikák, Harci helyzetek, Státusz hatások, Manőver bónuszok, Előny/Hátrány, Fortély bónuszok, Narratív módosítók |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
-| Harci helyzetek | overlay picker + chip | Név + infó, ABC sorrend. Kizárás: yaml `kizár_helyzetek` lista szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
+| Harci helyzetek | overlay picker + chip | 3 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. |
 | Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
 | Narratív módosítók | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
@@ -130,7 +130,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Hatás pool szekciók
 1. **Taktikák**: per-taktika sorok. Név narancssárga (`#ff9800`), módosítók zöld (`#66bb6a`), megjegyzések narancssárga (`#ffb74d`). Formátum: `Név (fok): TÉ: +X, VÉ: -Y • megjegyzés`
-2. **Harci helyzetek**: per-helyzet sorok. Név narancssárga, hatások utána. Fix hatásúaknál: Előny/Hátrány + cél. Szituatív (nincs fix hatás): infó szöveg jelenik meg.
+2. **Harci helyzetek**: per-helyzet sorok. Név narancssárga, utána az `infó` mező szövege (mindig). A `hatások[]` a háttérben működik (feltétel dispatch).
 3. **Státusz hatások**: státuszok strukturált hatásai kumulálva célonként (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít). Formátum: `{hatás}: {cél}`.
 4. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
 5. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes). Formátum: `Előny+X: Cél (Fortély)` (pl. "Előny+2: Sebzésdobás (Orgyilkos)")
