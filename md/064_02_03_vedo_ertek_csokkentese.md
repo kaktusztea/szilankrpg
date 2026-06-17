@@ -15,7 +15,7 @@ Az aktuális fegyverméretek különbségét [Harci helyzetekkel](065_01_04_fegy
 ### ⚜️ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány)
 
 - Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél
-- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `1 + k20T`
+- [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x): `k20T`
 
 ### ⚜️ [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
 

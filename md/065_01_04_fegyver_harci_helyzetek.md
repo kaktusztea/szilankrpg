@@ -9,12 +9,12 @@ A felek által forgatott fegyverek méretének viszonya meghatározza, hogy mely
 ### Pengehátrány
 
 Fegyvered mérete legalább `1 pengével` rövidebb ellenfeledénél.
-A `VÉ` csökkentést tekintve nem tér el a lenti **Alappengétől**, viszont vannak szituációk, mint például a [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-), ahol korlátozó tényező lehet.
+A `VÉ` csökkentést tekintve hátrányban vagy az **Alappengéhez** képest, viszont vannak szituációk, mint például a [Fárasztó taktika](065_02_harci_taktikak.md#f%C3%A1raszt%C3%B3-taktika-), ahol korlátozó tényező lehet.
 
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-1 + k20 tízes része (2;3)
+k20T
 ```
 
 ### Alappenge
@@ -24,7 +24,7 @@ Fegyvered azonos hosszú, vagy **nem** hosszabb legalább `1 pengével` ellenfel
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-1 + k20 tízes része (1;2)
+1 + k20T
 ```
 
 ### Pengeelőny
@@ -34,7 +34,7 @@ Fegyvered mérete legalább `1 pengével` hosszabb ellenfeledénél. **Csak akko
 Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 
 ```
-2 + k20 tízes része (2;3)
+2 + k20T
 ```
 
 <br />

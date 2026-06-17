@@ -103,7 +103,7 @@ Példák:
 
 ```
 VÉ csökkentés
-  1 + k20T
+  k20T
 ```
 
 #### [Alappenge](065_01_04_fegyver_harci_helyzetek.md#alappenge)
