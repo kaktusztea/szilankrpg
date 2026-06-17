@@ -15,7 +15,7 @@ Manőver csak minimum `3.szintű` Harcmodor használata esetén alkalmazható.
 ---
 ## ⚜️ Harci helyzetek és Manőverek - Meglepetés
 
-[Meglepett](065_01_01_pozitiv_helyzetek.md#meglepetés) / [Készületlen](065_01_01_pozitiv_helyzetek.md#meglepetés) az Ellenfél:
+[Meglepett](065_01_01_pozitiv_helyzetek.md#meglepetés) az Ellenfél:
 - Kimarad a **Megakasztás** (`M`) fázis a védő oldalán (ha van)
 - **Végrehajtás** dobásnál továbbra is `TÉ:+4` + `Előny+1` a dobásra
 - Támadó tehet bele `Manőver Pontot`

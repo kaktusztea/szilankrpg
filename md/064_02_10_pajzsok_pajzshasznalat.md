@@ -30,7 +30,7 @@ Lásd: [Pajzshasználat](fortelyok.harci/pajzshasznalat.md) fortély
 ---
 ### Pajzs Harci helyzetekben
 
-Ha a karakter 🗡️[Készületlen](065_01_01_pozitiv_helyzetek.md#meglepetés), vagy 🗡️[Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) támadás áldozata, akkor a `pajzs VÉ` csak akkor adódik hozzá az aktuális `Védő Értékhez`, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
+Ha a karakter 🗡️[Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés) támadás áldozata, akkor a `pajzs VÉ` csak akkor adódik hozzá az aktuális `Védő Értékhez`, ha a támadás szemből, vagy a pajzsot tartó oldalról érkezik.
 
 <br />
 
