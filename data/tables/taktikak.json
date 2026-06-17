@@ -53,7 +53,12 @@
       {
         "típus": "harci_helyzet",
         "mód": "tiltott",
-        "érték": "Láthatatlanul"
+        "érték": "Láthatatlanul, hallhatóan"
+      },
+      {
+        "típus": "harci_helyzet",
+        "mód": "tiltott",
+        "érték": "Láthatatlanul, csendesen"
       }
     ],
     "kombó_mód": "whitelist",

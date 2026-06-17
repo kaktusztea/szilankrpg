@@ -9,3 +9,5 @@ harci_helyzetek:
     hatások: []                # kötelező, lista (strukturált hatások, üres ha nem gépesített)
     tiltja_taktikákat: false   # opcionális, bool (ha true: összes taktika disabled amíg aktív)
     kizár_helyzetek: []        # opcionális, lista (ezen helyzetek nem adhatók hozzá amíg ez aktív)
+    csoport: ""                # kötelező, "játékos" | "km" — picker csoportosítás
+    rejtett: false             # opcionális, bool (ha true: nem jelenik meg a picker-ben, automatikus)

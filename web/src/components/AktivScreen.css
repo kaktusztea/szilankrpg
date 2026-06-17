@@ -289,6 +289,15 @@
   gap: 6px;
 }
 
+.manover-picker-group-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 0 2px;
+  border-bottom: 1px solid #333;
+  margin-top: 4px;
+}
+
 .manover-card {
   background: var(--input-bg);
   border: 1px solid #444;

@@ -608,6 +608,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
           </div>
         ))}
         <button className="aktiv-add-btn" disabled={data.harciHelyzetek.every(h => {
+          if ((h as any).rejtett) return true;
           if (session.aktív_helyzetek.includes(h.név)) return true;
           for (const ah of session.aktív_helyzetek) {
             const ahDef = data.harciHelyzetek.find(d => d.név === ah);
@@ -625,24 +626,29 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               <button className="aktiv-chip-x" onClick={() => setShowHelyzetPicker(false)}>✕</button>
             </div>
             <div className="manover-picker-list">
-              {data.harciHelyzetek.filter(h => {
-                if (session.aktív_helyzetek.includes(h.név)) return false;
-                // Aktív helyzetek kizárják ezt?
-                for (const ah of session.aktív_helyzetek) {
-                  const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-                  if ((ahDef as any)?.kizár_helyzetek?.includes(h.név)) return false;
-                }
-                return true;
-              }).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
+              {(() => {
+                const filtered = data.harciHelyzetek.filter(h => {
+                  if ((h as any).rejtett) return false;
+                  if (session.aktív_helyzetek.includes(h.név)) return false;
+                  for (const ah of session.aktív_helyzetek) {
+                    const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+                    if ((ahDef as any)?.kizár_helyzetek?.includes(h.név)) return false;
+                  }
+                  return true;
+                });
+                const groups: { label: string; color: string; items: typeof filtered }[] = [
+                  { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => (h as any).csoport === 'pozitív') },
+                  { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => (h as any).csoport === 'semleges') },
+                  { label: 'Negatív helyzet', color: '#f44336', items: filtered.filter(h => (h as any).csoport === 'negatív') },
+                ];
+                const renderCard = (h: typeof data.harciHelyzetek[0]) => (
                 <div key={h.név} className="manover-card" onClick={() => {
                   const hDef = data.harciHelyzetek.find(d => d.név === h.név);
                   setSession(s => {
                     let helyzetek = [...s.aktív_helyzetek, h.név];
                     let taktikák = s.aktív_taktikák;
-                    // Kizárt helyzetek eltávolítása
                     const kizár = (hDef as any)?.kizár_helyzetek ?? [];
                     if (kizár.length) helyzetek = helyzetek.filter(hh => !kizár.includes(hh));
-                    // Tiltja taktikákat → törlés
                     if ((hDef as any)?.tiltja_taktikákat) taktikák = [];
                     return { ...s, aktív_helyzetek: helyzetek, aktív_taktikák: taktikák };
                   });
@@ -650,8 +656,14 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 }}>
                   <span className="manover-card-name">{h.név}</span>
                   <span className="manover-card-hatas">{h.infó}</span>
-                </div>
-              ))}
+                </div>);
+                return (<>
+                  {groups.flatMap(g => g.items.length > 0 ? [
+                    <div key={g.label} className="manover-picker-group-label" style={{ color: g.color }}>{g.label}</div>,
+                    ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(renderCard)
+                  ] : [])}
+                </>);
+              })()}
             </div>
           </div>
         </div>,
