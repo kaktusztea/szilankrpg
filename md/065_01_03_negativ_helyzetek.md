@@ -209,7 +209,7 @@ Hátrány-1 Érzék (Látás)
 
 ### ✖️ Megszűntetése harcban
 
-`1` Akció felhasználásával kitörölheted a szemedből a vért, ez `1` támadás kihagyását jelenti.
+1` támadás feláldozásáért kitörölheted szemedből a vért.
 
 ---
 
