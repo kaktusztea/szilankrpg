@@ -330,7 +330,7 @@
   },
   {
     "név": "Meglepetés",
-    "infó": "Előny+1 TÉ;  VÉ csökkentés: +2;  Készületlenség: ellenfeled Meglepetés bónuszt kap.",
+    "infó": "Előny+1 TÉ; VÉ csökkentés: +2",
     "hatások": [
       {
         "hatás": "előny",
@@ -352,7 +352,7 @@
   },
   {
     "név": "Orvtámadás",
-    "infó": "Áldozat VÉ: Közelharc Puszta kézzel. Előny+2 TÉ.",
+    "infó": "Előny+2 TÉ;  Áldozat VÉ: Közelharc Puszta kézzel",
     "hatások": [
       {
         "hatás": "előny",

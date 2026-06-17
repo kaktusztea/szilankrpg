@@ -541,20 +541,22 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
       )}
 
       {/* Manőver */}
-      <div className="aktiv-section" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-        <div className="aktiv-field-btn" onClick={() => setShowManőverPicker(true)}>
-          <span className="aktiv-field-label">Manőver</span>
-          <strong style={{ color: session.aktív_manőver ? 'var(--success)' : 'var(--text-dim)', fontSize: '14px' }}>{session.aktív_manőver || '— nincs —'}</strong>
-          {session.aktív_manőver && (() => {
-            const m = data.manoverek.find(d => d.név === session.aktív_manőver);
-            if (!m) return null;
-            return (<>
-              <span className="taktika-chip-mods">Nehézség: {m.nehézség} • {m.fázisok}</span>
-              <span className="taktika-chip-mods">{m.hatás}</span>
-            </>);
-          })()}
+      <div className="aktiv-section">
+        <span className="aktiv-label">Manőver</span>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+          <div className="aktiv-field-btn" onClick={() => setShowManőverPicker(true)}>
+            <strong style={{ color: session.aktív_manőver ? 'var(--success)' : 'var(--text-dim)', fontSize: '14px' }}>{session.aktív_manőver || '— nincs —'}</strong>
+            {session.aktív_manőver && (() => {
+              const m = data.manoverek.find(d => d.név === session.aktív_manőver);
+              if (!m) return null;
+              return (<>
+                <span className="taktika-chip-mods">Nehézség: {m.nehézség} • {m.fázisok}</span>
+                <span className="taktika-chip-mods">{m.hatás}</span>
+              </>);
+            })()}
+          </div>
+          {session.aktív_manőver && <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_manőver: '' }))}>✕</button>}
         </div>
-        {session.aktív_manőver && <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_manőver: '' }))}>✕</button>}
       </div>
 
       {showManőverPicker && createPortal(
