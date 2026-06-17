@@ -373,9 +373,15 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Védekező takarásban"
-  infó: "Mindkét fél: Hátrány-1 TÉ dobásra."
-  hatások: []
+- név: "Takarásban harcolás"
+  infó: "Hátrány-1 TÉ, VÉ: +5."
+  hatások:
+  - hatás: "hátrány"
+    érték: -1
+    cél: "té_dobás"
+  - hatás: "előny"
+    érték: 5
+    cél: "vé"
   id: "takarásban"
   csoport: "semleges"
   rejtett: false

@@ -726,7 +726,7 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 | Belharci szituáció | belharci_szituáció | Közelharc harcmodor + max 0 pengehossz feltétel. Belharc fortély bónuszok. Egyéb: Beszorított(2). |
 | Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fortély: Fegyverrántás skála. |
 | Közrefogás | közrefogás | Semlegesíti ellenfél Pengeelőnyét → Alappenge. |
-| Védekező takarásban | takarásban | Mindkét fél: Hátrány-1 TÉ dobásra. |
+| Takarásban harcolás | takarásban | Hátrány-1 TÉ, VÉ: +5. |
 | Védő Érték kiterjesztése másra | vé_kiterjesztés | Többsz. tám. elvesztés, VÉ veszteség duplázódik. Testőr fortély mérsékli. |
 | Vadállatok elleni harc | vadállatok | Informatív: Közelharc + Belharc 2.fok bónuszai relevánsak. |
 
