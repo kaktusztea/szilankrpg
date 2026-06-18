@@ -70,6 +70,25 @@
   color: var(--success);
 }
 
+.fort-fok-dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.fort-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  background: transparent;
+}
+
+.fort-dot.filled {
+  background: #fff;
+  border-color: #fff;
+}
+
 .fort-delete {
   background: none;
   border: none;
