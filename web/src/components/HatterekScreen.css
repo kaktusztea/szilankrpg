@@ -74,6 +74,7 @@
   font-size: 13px;
   background: #2a2a3e;
   color: var(--text-dim);
+  user-select: none;
   cursor: pointer;
   border: 1px solid transparent;
 }

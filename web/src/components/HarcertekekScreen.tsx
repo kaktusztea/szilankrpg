@@ -24,13 +24,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   }
 
   // Per-element double-tap tracking
-  const tapTimers = useRef<Map<string, number>>(new Map());
-  function handleDoubleTap(key: string, action: () => void) {
-    const now = Date.now();
-    const last = tapTimers.current.get(key) ?? 0;
-    if (now - last < 350) { action(); tapTimers.current.set(key, 0); }
-    else { tapTimers.current.set(key, now); }
-  }
+
 
   // Harcmodor szintek (read-only, Tul/Képz fülről jönnek)
   const harcmodorok = Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[];
@@ -256,9 +250,9 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
               <button className="fort-delete" onClick={() => setDeleteTarget(i)}>✕</button>
             </div>
             <div className="he-fegyver-fields">
-              <button className="he-field-btn" style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined} onClick={() => handleDoubleTap(`mf-${i}`, () => setMfTarget(i))}>MF fok: <strong>{getMfFok(f.alap)}</strong></button>
-              <button className="he-field-btn" onClick={() => handleDoubleTap(`idea-f-${i}`, () => setIdeaTarget({ type: 'fegyver', idx: i }))}>Idea: <strong>{f.idea}</strong></button>
-              <button className="he-field-btn" onClick={() => handleDoubleTap(`anyag-${i}`, () => setAnyagTarget(i))}>Anyag: <strong>{f.anyag}</strong></button>
+              <button className="he-field-btn" style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined} onClick={() => (() => setMfTarget(i))}>MF fok: <strong>{getMfFok(f.alap)}</strong></button>
+              <button className="he-field-btn" onClick={() => (() => setIdeaTarget({ type: 'fegyver', idx: i }))}>Idea: <strong>{f.idea}</strong></button>
+              <button className="he-field-btn" onClick={() => (() => setAnyagTarget(i))}>Anyag: <strong>{f.anyag}</strong></button>
             </div>
           </div>
         ))}
@@ -276,18 +270,18 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
       <section className="he-section">
         <h3>Páncél</h3>
         <div className="he-fegyver-fields">
-          <button className="he-field-btn" onClick={() => handleDoubleTap('p-struk', () => setPancelPopup('struktúra'))}>Struktúra: <strong>{k.páncél.alap || '—'}</strong></button>
+          <button className="he-field-btn" onClick={() => (() => setPancelPopup('struktúra'))}>Struktúra: <strong>{k.páncél.alap || '—'}</strong></button>
           {aktStruktúra?.merev && (
-            <button className="he-field-btn" onClick={() => handleDoubleTap('p-merevvert', () => setPancelPopup('merevvért'))}>Merevvért fok: <strong>{getMerevvertFok()}</strong></button>
+            <button className="he-field-btn" onClick={() => (() => setPancelPopup('merevvért'))}>Merevvért fok: <strong>{getMerevvertFok()}</strong></button>
           )}
-          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-idea', () => setIdeaTarget({ type: 'páncél', idx: 0 }))}>Idea: <strong>{k.páncél.idea}</strong></button>
-          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-kid', () => setPancelPopup('kidolgozottság'))}>Kidolgozottság: <strong>{k.páncél.kidolgozottság}</strong></button>
-          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-sis', () => updatePancel({ sisak: !k.páncél.sisak }))}>Sisak: <strong>{k.páncél.sisak ? 'igen' : 'nem'}</strong></button>
-          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-veg', () => setPancelPopup('végtagvédettség'))}>Végtagvédettség: <strong>{k.páncél.végtagvédettség}</strong></button>
-          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-mer', () => setPancelPopup('méret'))}>Méret: <strong>{k.páncél.méret_illeszkedés}</strong></button>
-          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => handleDoubleTap('p-rong', () => setPancelPopup('rongálódás'))}>Rongálódás: <strong>{k.páncél.rongálódás}</strong></button>
+          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => (() => setIdeaTarget({ type: 'páncél', idx: 0 }))}>Idea: <strong>{k.páncél.idea}</strong></button>
+          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => (() => setPancelPopup('kidolgozottság'))}>Kidolgozottság: <strong>{k.páncél.kidolgozottság}</strong></button>
+          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => (() => updatePancel({ sisak: !k.páncél.sisak }))}>Sisak: <strong>{k.páncél.sisak ? 'igen' : 'nem'}</strong></button>
+          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => (() => setPancelPopup('végtagvédettség'))}>Végtagvédettség: <strong>{k.páncél.végtagvédettség}</strong></button>
+          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => (() => setPancelPopup('méret'))}>Méret: <strong>{k.páncél.méret_illeszkedés}</strong></button>
+          <button className={`he-field-btn${!k.páncél.alap ? ' he-field-disabled' : ''}`} disabled={!k.páncél.alap} onClick={() => (() => setPancelPopup('rongálódás'))}>Rongálódás: <strong>{k.páncél.rongálódás}</strong></button>
           {aktStruktúra?.fém && (
-            <button className="he-field-btn" onClick={() => handleDoubleTap('p-fem', () => setPancelPopup('fémalapanyag'))}>Fémalapanyag: <strong>{k.páncél.fémalapanyag || 'acél'}</strong></button>
+            <button className="he-field-btn" onClick={() => (() => setPancelPopup('fémalapanyag'))}>Fémalapanyag: <strong>{k.páncél.fémalapanyag || 'acél'}</strong></button>
           )}
         </div>
       </section>
@@ -296,8 +290,8 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
       <section className="he-section">
         <h3>Pajzs</h3>
         <div className="he-fegyver-fields">
-          <button className="he-field-btn" onClick={() => handleDoubleTap('pj-mer', () => setPajzsPopup('méret'))}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
-          <button className="he-field-btn" onClick={() => handleDoubleTap('pj-fok', () => setPajzsPopup('pajzshasználat'))}>Pajzshasználat fok: <strong>{getPajzsFok()}</strong></button>
+          <button className="he-field-btn" onClick={() => (() => setPajzsPopup('méret'))}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
+          <button className="he-field-btn" onClick={() => (() => setPajzsPopup('pajzshasználat'))}>Pajzshasználat fok: <strong>{getPajzsFok()}</strong></button>
           <span className="he-field-btn he-field-indicator" onClick={() => showHint('A pajzs kézben állapotot az Aktív fülön állíthatod!')}>Kézben: <strong>{k.session.aktív_pajzs ? 'igen' : 'nem'}</strong></span>
         </div>
       </section>

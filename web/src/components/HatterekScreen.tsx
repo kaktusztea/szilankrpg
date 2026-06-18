@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+
 import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
 import './HatterekScreen.css';
@@ -12,23 +12,15 @@ interface Props {
 }
 
 export function HatterekScreen({ data, karakter, setKarakter, gameMode, onNavigate }: Props) {
-  const lastTap = useRef<Record<string, number>>({});
 
   function handleTap(item: string, típus: 'leíró' | 'karma') {
     if (gameMode) return;
-    const now = Date.now();
-    const key = `${típus}:${item}`;
-    if (now - (lastTap.current[key] ?? 0) < 350) {
-      lastTap.current[key] = 0;
-      if (típus === 'leíró') {
-        const has = karakter.hátterek.leíró.includes(item);
-        setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, leíró: has ? prev.hátterek.leíró.filter(h => h !== item) : [...prev.hátterek.leíró, item] } } : prev);
-      } else {
-        const has = karakter.hátterek.karma.includes(item);
-        setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, karma: has ? prev.hátterek.karma.filter(h => h !== item) : [...prev.hátterek.karma, item] } } : prev);
-      }
+    if (típus === 'leíró') {
+      const has = karakter.hátterek.leíró.includes(item);
+      setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, leíró: has ? prev.hátterek.leíró.filter(h => h !== item) : [...prev.hátterek.leíró, item] } } : prev);
     } else {
-      lastTap.current[key] = now;
+      const has = karakter.hátterek.karma.includes(item);
+      setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, karma: has ? prev.hátterek.karma.filter(h => h !== item) : [...prev.hátterek.karma, item] } } : prev);
     }
   }
 

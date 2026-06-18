@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { SebzésRubrika } from '../engine/types';
 import './EpTable.css';
@@ -37,7 +37,6 @@ function toSebzések(rubrikák: Rubrika[]): SebzésRubrika[] {
 export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, téLevonások, onNavigate, sebzések, onSebzésekChange }: Props) {
   const oszlopMéret = ÉP / 4;
   const összRubrika = ÉP;
-  const lastTapFooter = useRef(0);
 
   // Build rubrikák from session sebzések
   const rubrikák = buildRubrikák(sebzések, összRubrika);
@@ -148,9 +147,7 @@ export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, téLevonások
             })}
             <div className={`ep-col-footer ${aktKategória === oszlop + 1 ? 'active-cat' : ''}`} onClick={() => {
               if (!onNavigate) return;
-              const now = Date.now();
-              if (now - lastTapFooter.current < 350) { onNavigate(); lastTapFooter.current = 0; }
-              else { lastTapFooter.current = now; }
+              onNavigate();
             }}>{téLevonásLabels[oszlop]}</div>
           </div>
         ))}

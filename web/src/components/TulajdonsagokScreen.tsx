@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import type { Tulajdonsagok } from '../engine/types';
@@ -45,13 +45,9 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
   const [editingTsz, setEditingTsz] = useState(false);
-  const lastTapNév = useRef(0);
-  const lastTapTsz = useRef(0);
   const [editingKor, setEditingKor] = useState(false);
-  const lastTapKor = useRef(0);
   const [editingJátékos, setEditingJátékos] = useState(false);
   const [tempJátékos, setTempJátékos] = useState('');
-  const lastTapJátékos = useRef(0);
 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
@@ -227,13 +223,13 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       {/* Fejléc: Név + Szint */}
       <div className="tul-header">
         <div className="tul-header-box tul-header-név"
-          onClick={() => { if (gameMode) return; const now = Date.now(); if (now - lastTapNév.current < 350) { setTempNév(név); setEditingNév(true); lastTapNév.current = 0; } else { lastTapNév.current = now; } }}
+          onClick={() => { if (gameMode) return; setTempNév(név); setEditingNév(true); }}
         >
           <span className="tul-header-label">Név:</span> <strong>{gameMode ? `${név} (${faj}, ${kor})` : név}</strong>
         </div>
         <div
           className="tul-header-box"
-          onClick={() => { if (gameMode) return; const now = Date.now(); if (now - lastTapTsz.current < 350) { setEditingTsz(true); lastTapTsz.current = 0; } else { lastTapTsz.current = now; } }}
+          onClick={() => { if (gameMode) return; setEditingTsz(true); }}
         >
           <span className="tul-header-label">Szint:</span> <strong>{tsz}</strong>
         </div>
@@ -249,7 +245,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
             </select>
           </div>
           <div className="tul-faj-row"
-            onClick={() => { const now = Date.now(); if (now - lastTapKor.current < 350) { setEditingKor(true); lastTapKor.current = 0; } else { lastTapKor.current = now; } }}
+            onClick={() => { setEditingKor(true); }}
           >
             <span className="tul-header-label">Kor:</span> <strong>{kor}</strong>
           </div>
@@ -261,7 +257,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
           </select>
         </div>
         <div className="tul-header-box"
-          onClick={() => { const now = Date.now(); if (now - lastTapJátékos.current < 350) { setEditingJátékos(true); setTempJátékos(játékos); lastTapJátékos.current = 0; } else { lastTapJátékos.current = now; } }}
+          onClick={() => { setEditingJátékos(true); setTempJátékos(játékos); }}
         >
           <span className="tul-header-label">Játékos:</span> <strong>{játékos || '—'}</strong>
         </div>
@@ -538,7 +534,6 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
   név: string; érték: number; gameMode: boolean; onChange: (v: number) => void; fajMin?: number; fajMax?: number;
 }) {
   const [editing, setEditing] = useState(false);
-  const lastTap = useRef(0);
 
   useEffect(() => {
     if (!editing) return;
@@ -553,14 +548,7 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
   const hasWarning = overLimit || underLimit;
 
   function handleTap() {
-    const now = Date.now();
-    if (now - lastTap.current < 350) {
-      // Double tap
-      if (!gameMode) { setEditing(true); }
-      lastTap.current = 0;
-    } else {
-      lastTap.current = now;
-    }
+    if (!gameMode) { setEditing(true); }
   }
 
   return (
@@ -606,7 +594,6 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
   overLimit: boolean;
 }) {
   const [szintEditing, setSzintEditing] = useState(false);
-  const lastTap = useRef(0);
 
   useEffect(() => {
     if (!szintEditing) return;
@@ -617,13 +604,7 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
 
   function handleTap() {
     if (gameMode) { onInfoToggle(); return; }
-    const now = Date.now();
-    if (now - lastTap.current < 350) {
-      setSzintEditing(true);
-      lastTap.current = 0;
-    } else {
-      lastTap.current = now;
-    }
+    setSzintEditing(true);
   }
 
   const def = findDef(slot.név);

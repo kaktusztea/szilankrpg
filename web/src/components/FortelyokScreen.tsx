@@ -427,7 +427,6 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
 }) {
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
-  const lastTap = useRef(0);
 
   useEffect(() => {
     if (!editing) return;
@@ -438,15 +437,9 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
 
   function handleTap() {
     if (gameMode) { onToggleInfo(); return; }
-    const now = Date.now();
-    if (now - lastTap.current < 350) {
-      if (locked) { onHint('Ezt a fortélyt a Harcértékek fülön kezeld!', 3000); }
-      else if (maxfok <= 1) { onHint('1 fok a maximum'); }
-      else { setEditing(true); }
-      lastTap.current = 0;
-    } else {
-      lastTap.current = now;
-    }
+    if (locked) { onHint('Ezt a fortélyt a Harcértékek fülön kezeld!', 3000); }
+    else if (maxfok <= 1) { onHint('1 fok a maximum'); }
+    else { setEditing(true); }
   }
 
   const fokDef = def?.fokok.find(f => f.fok === slot.fok);
