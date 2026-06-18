@@ -96,14 +96,13 @@ Előny+2 TÉ Dobásra
 <br />
 
 ---
-## Ellenfeled beszorított
+## Beszorított ellenfél
 
 Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
 
 ```
 Előny+1 TÉ dobásra
 ```
-
 
 <br />
 

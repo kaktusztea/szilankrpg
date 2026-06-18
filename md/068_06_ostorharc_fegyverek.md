@@ -18,11 +18,14 @@ Köz- és önveszélyes fegyver. Alacsonyabb [Mesterfegyver](fortelyok.harci/mes
 
 A `k20` támadó dobás egyben esélydobás is: ha a lent leírt értékek vagy azok alá dobsz, akkor magadat is megsebzed. Ha "betalálsz", dobj rendes sebzést magad ellen.
 
-- Harci szituációban (nem gyakorlásban) `1` kézzel / `2` kézzel (`k20`):
-  - `Mf` nélkül : `<= 10 / 16`
-  - `Mf: 1.fok`: `<= 4 / 8`
-  - `Mf: 2.fok`: `<= 2 / 4`
-  - `Mf: 3.fok`: `0%` /  `0%`
-- [Ellenfeled beszorított](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított) 
+```
+k20 Sebzésdobás
+
+Mf nélkül: 1-10
+Mf: 1.fok: 1,2
+Mf: 2.fok: -
+Mf: 3.fok: -
+```
+
 - Nem lehet Alakzatharcban használni
 - Hátulról támadó ellenfelek NEM kapják meg a harci helyzetből adódó bónuszokat!

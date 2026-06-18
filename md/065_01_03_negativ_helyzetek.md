@@ -124,9 +124,7 @@ Hátrány-1 TÉ dobásra
 <br />
 
 ---
-## Sötétben
-
-### Sötétben: Félhomály
+## Sötétben - félhomály
 
 ```
 Hátrány-1 TÉ dobásra
@@ -135,8 +133,10 @@ Hátrány-1 TÉ dobásra
 
 🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
 
+<br />
+
 ---
-### Sötétben: teljes, zajokkal
+## Sötétben - teljes, zajokkal
 
 ```
 Hátrány-1 TÉ dobásra
@@ -146,8 +146,10 @@ Hátrány-1 TÉ dobásra
 
 🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
 
+<br />
+
 ---
-### Sötétben: teljes, csendben
+## Sötétben - teljes, csendben
 
 ```
 Hátrány-2 TÉ dobásra
@@ -159,9 +161,7 @@ Hátrány-2 TÉ dobásra
 <br />
 
 ---
-## Tűz ruhán
-
-### Tűz ruhán - ég
+## Tűz ruhán - ég
 
 Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
 
@@ -178,8 +178,10 @@ Harcban: 1 kör
 Harcon kívül: 1 kör
 ```
 
+<br />
+
 ---
-### Tűz ruhán - lángol
+## Tűz ruhán - lángol
 
 Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
 

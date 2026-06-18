@@ -42,10 +42,12 @@ Minden 5.FP → 1 ÉP
 
 ### ⚜️ Nem-belharcos fegyverek belharci szituációban
 
-→ [Beszorított helyzet (2)](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított) harci helyzet
+```
+TÉ: 0
+VÉ: 0
+```
 
-A `0` pengehossznál nagyobb fegyver forgatója **támadás elhasználása nélkül** elejtheti fegyverét.\
-Ekkor a fenti **Puszta kéz** harcértékeivel küzdhet tovább.
+A `0` pengehossznál nagyobb fegyver forgatója **támadás elhasználása nélkül** elejtheti fegyverét. Ekkor a fenti **Puszta kéz** harcértékeivel küzdhet tovább.
 
 ### ⚜️ Harcmodorok belharci szituációban
 
@@ -162,10 +164,6 @@ VÉ: +5
 ```
 
 🔆 Példa: kapu, belógó falrész mögül harcolsz.
-
-🔆 Ha a harcos mozgásában korlátozottá válik pl. tereptárgyaktól, akkor már egy más helyzet (KM dönt) vonatkozik rá:
-- [Beszorított helyzet](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított)
-- [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
 
 <br />
 

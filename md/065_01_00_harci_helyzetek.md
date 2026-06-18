@@ -4,14 +4,14 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 ### [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
 
-- [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés)
-- [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás)
+- [Beszorított ellenfél](065_01_01_pozitiv_helyzetek.md#beszorított-ellenfél)
 - [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
-- [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról)
-- [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás)
-- [Ellenfeled beszorított](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított)
 - [Láthatatlanul harcolás - hallhatóan](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan)
 - [Láthatatlanul harcolás - csendesen](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---csendesen)
+- [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás)
+- [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról)
+- [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés)
+- [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás)
 
 ### [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
 
@@ -19,8 +19,8 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Fegyverrántás váratlanul](065_01_02_semleges_helyzetek.md#fegyverrántás-váratlanul)
 - [Közrefogás](065_01_02_semleges_helyzetek.md#közrefogás)
 - [Takarásban harcolás](065_01_02_semleges_helyzetek.md#takarásban-harcolás)
-- [Védő Érték kiterjesztése másra](065_01_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra)
 - [Vadállatok elleni harc](065_01_02_semleges_helyzetek.md#vadállatok-elleni-harc)
+- [Védő Érték kiterjesztése másra](065_01_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra)
 
 ### [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
 
@@ -32,8 +32,11 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
 - [Lények méret különbsége](065_01_03_negativ_helyzetek.md#lények-méret-különbsége)
 - [Rosszabbik kézben tartott fegyver](065_01_03_negativ_helyzetek.md#rosszabbik-kézben-tartott-fegyver)
-- [Sötétben](065_01_03_negativ_helyzetek.md#sötétben)
-- [Tűz ruhán](065_01_03_negativ_helyzetek.md#tűz-ruhán)
+- [Sötétben - félhomály](065_01_03_negativ_helyzetek.md#sötétben---félhomály)
+- [Sötétben - teljes, zajokkal](065_01_03_negativ_helyzetek.md#sötétben---teljes-zajokkal)
+- [Sötétben - teljes, csendben](065_01_03_negativ_helyzetek.md#sötétben---teljes-csendben)
+- [Tűz ruhán - ég](065_01_03_negativ_helyzetek.md#tűz-ruhán---ég)
+- [Tűz ruhán - lángol](065_01_03_negativ_helyzetek.md#tűz-ruhán---lángol)
 - [Vér elvakít](065_01_03_negativ_helyzetek.md#vér-elvakít)
 
 ### [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
