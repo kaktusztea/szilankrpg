@@ -1,4 +1,4 @@
-import { useState, useEffect, type ReactNode } from 'react';
+import { useState, useEffect, useRef, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import type { Tulajdonsagok } from '../engine/types';
@@ -435,8 +435,8 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
 
 
       {editingKor && createPortal(
-        <div className="kep-prompt-overlay">
-          <KorPicker kor={kor} onSelect={v => { setKor(v); setEditingKor(false); }} />
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setEditingKor(false); }}>
+          <KorPicker kor={kor} onSelect={v => { setKor(v); }} />
         </div>,
         document.body
       )}
@@ -658,29 +658,45 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
 }
 
 
-function KorPicker({ onSelect }: { kor: number; onSelect: (v: number) => void }) {
-  const [hundreds, setHundreds] = useState(0);
-  const [tens, setTens] = useState<number | null>(null);
-  const [ones, setOnes] = useState<number | null>(null);
-  const value = tens !== null && ones !== null ? hundreds * 100 + tens * 10 + ones : null;
+function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => void }) {
+  const [value, setValue] = useState(kor || 25);
+  const holdRef = useRef<{ active: boolean; timer: ReturnType<typeof setTimeout> | null }>({ active: false, timer: null });
 
-  useEffect(() => {
-    if (value !== null) { setTimeout(() => onSelect(value), 500); }
-  }, [value]);
+  function startHold(dir: 1 | -1) {
+    holdRef.current.active = true;
+    let delay = 200;
+    const startTime = Date.now();
+    function tick() {
+      if (!holdRef.current.active) return;
+      const elapsed = Date.now() - startTime;
+      const step = elapsed > 7000 ? 10 : 1;
+      setValue(v => Math.max(1, Math.min(2000, v + dir * step)));
+      delay = Math.max(30, delay * 0.82);
+      holdRef.current.timer = setTimeout(tick, delay);
+    }
+    holdRef.current.timer = setTimeout(tick, delay);
+  }
+  function stopHold() {
+    holdRef.current.active = false;
+    if (holdRef.current.timer) { clearTimeout(holdRef.current.timer); holdRef.current.timer = null; }
+  }
+
+  useEffect(() => { onSelect(value); }, [value]);
+  useEffect(() => () => stopHold(), []);
 
   return (
-    <div className="kep-prompt" style={{ alignItems: 'center', gap: 'min(10px, 1.5vh)' }}>
-      <label>Kor: <strong>{value ?? '—'}</strong></label>
-      <div style={{ display: 'grid', gridTemplateRows: 'repeat(10, 1fr)', gridTemplateColumns: '1fr 1fr 1fr', gridAutoFlow: 'column', gap: 'min(6px, 0.8vh)' }}>
-        {Array.from({ length: 10 }, (_, d) => (
-          <button key={`h${d}`} className={`fort-fok-btn ${hundreds === d ? 'active' : ''}`} style={{ width: 'min(42px, 6vh)', height: 'min(42px, 6vh)', fontSize: 'min(16px, 2vh)' }} onClick={() => setHundreds(d)}>{d}</button>
-        ))}
-        {Array.from({ length: 10 }, (_, d) => (
-          <button key={`t${d}`} className={`fort-fok-btn ${tens === d ? 'active' : ''}`} style={{ width: 'min(42px, 6vh)', height: 'min(42px, 6vh)', fontSize: 'min(16px, 2vh)' }} onClick={() => setTens(d)}>{d}</button>
-        ))}
-        {Array.from({ length: 10 }, (_, d) => (
-          <button key={`o${d}`} className={`fort-fok-btn ${ones === d ? 'active' : ''}`} style={{ width: 'min(42px, 6vh)', height: 'min(42px, 6vh)', fontSize: 'min(16px, 2vh)' }} onClick={() => setOnes(d)}>{d}</button>
-        ))}
+    <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', padding: '16px' }}>
+      <label style={{ fontSize: '14px', color: 'var(--text-dim)' }}>Életkor</label>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
+          onClick={() => setValue(v => Math.max(1, v - 1))}
+          onMouseDown={() => startHold(-1)} onMouseUp={stopHold} onMouseLeave={stopHold}
+          onTouchStart={() => startHold(-1)} onTouchEnd={stopHold}>−</button>
+        <strong style={{ fontSize: '28px', minWidth: '60px', textAlign: 'center' }}>{value}</strong>
+        <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
+          onClick={() => setValue(v => Math.min(2000, v + 1))}
+          onMouseDown={() => startHold(1)} onMouseUp={stopHold} onMouseLeave={stopHold}
+          onTouchStart={() => startHold(1)} onTouchEnd={stopHold}>+</button>
       </div>
     </div>
   );
