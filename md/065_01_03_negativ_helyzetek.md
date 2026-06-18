@@ -117,6 +117,8 @@ A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9
 
 ```
 Hátrány-1 TÉ dobásra
+
+Megszűnteti: Kétkezesség fortély
 ```
 
 🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
