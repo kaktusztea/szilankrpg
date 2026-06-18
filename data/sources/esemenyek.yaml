@@ -25,7 +25,10 @@ események:
     név: "Támadások száma"
     csoport: "harci"
   - id: "vé_veszteség"
-    név: "VÉ veszteség"
+    név: "VÉ veszteség (elszenvedett)"
+    csoport: "harci"
+  - id: "vé_csökkentés"
+    név: "VÉ csökkentés (okozott)"
     csoport: "harci"
 
   # --- Próbák ---

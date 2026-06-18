@@ -252,7 +252,7 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<SzituacioEntry[]>('tables/szituaciok.json'),
     fetchJson<ManoverEntry[]>('tables/manoverek.json'),
     fetchJson<StatuszEntry[]>('tables/statuszok.json'),
-    fetchJson<HatasOperator[]>('tables/hatasok.json'),
+    fetchJson<HatasOperator[]>('tables/hatas_operatorok.json'),
     fetchJson<EsemenyEntry[]>('tables/esemenyek.json'),
     fetchJson<HatterekData>('tables/hatterek.json'),
     fetchJson<{ rules: Rule[] }>('rules.json'),

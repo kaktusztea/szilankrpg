@@ -16,7 +16,7 @@
 │   │   ├── szituaciok.yaml
 │   │   ├── manoverek.yaml
 │   │   ├── statuszok.yaml     ← 19 státusz (strukturált hatásokkal)
-│   │   ├── hatasok.yaml       ← 8 hatás operátor (előny, hátrány, letilt, stb.)
+│   │   ├── hatas_operatorok.yaml       ← 8 hatás operátor (előny, hátrány, letilt, stb.)
 │   │   ├── esemenyek.yaml     ← 21 esemény/célpont (hatások céljai)
 │   │   ├── hatterek.yaml      ← Leíró + Karma hátterek
 │   │   ├── kepzettsegek/      ← Képzettség adatfájlok (81 db, alkönyvtárakban)
@@ -273,7 +273,7 @@
   - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
   - `data/sources/statuszok.yaml` → `tables/statuszok.json` (19 státusz, kategória, fokok+alcím+strukturált hatások)
-  - `data/sources/hatasok.yaml` → `tables/hatasok.json` (8 hatás operátor: előny, hátrány, arányos, duplázás, letilt, max_limit, szöveges, enyhít)
+  - `data/sources/hatas_operatorok.yaml` → `tables/hatas_operatorok.json` (8 hatás operátor: előny, hátrány, arányos, duplázás, letilt, max_limit, szöveges, enyhít)
   - `data/sources/esemenyek.yaml` → `tables/esemenyek.json` (21 esemény/célpont: harci, próba, fizikai, képesség csoportok)
   - Schema validáció beépítve a `generate_tables.py`-be (`validate_aktiv_ful()`, `validate_hatasok()`, `validate_esemenyek()`, `validate_statuszok()`)
   - Referenciális integritás: státusz hatás.operátor → hatasok id, hatás.cél → esemenyek id
@@ -550,7 +550,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Game mód: üres képzettség/fortély csoportok elrejtve
 - §16 fortély módosítók: `fortelyMods` Record a HarcScreen-ben, generikus iteráció fokok[].módosítók-ból. 6 mód (flat, scaled, override, enyhít, előny, hátrány). `fortelyok.json` tartalmazza a módosítókat. AktivScreen: manőver bónuszok + előny/hátrány szekció a Hatás pool-ban (feltétel szűréssel).
 - Páncél gombok: disabled + `.he-field-disabled` ha nincs struktúra (`!k.páncél.alap`)
-- Aktív fül adatforrások: `taktikak.json`, `harci_helyzetek.json`, `szituaciok.json`, `manoverek.json`, `statuszok.json`, `hatasok.json`, `esemenyek.json`, `hatterek.json` — generate_tables.py validáció
+- Aktív fül adatforrások: `taktikak.json`, `harci_helyzetek.json`, `szituaciok.json`, `manoverek.json`, `statuszok.json`, `hatas_operatorok.json`, `esemenyek.json`, `hatterek.json` — generate_tables.py validáció
 - Taktika kombó: `kombó_mód: "whitelist"|"blacklist"` + `kombó_lista: string[]`
 - Session v2: `aktív_taktikák: AktívTaktika[]`, `aktív_helyzetek: string[]`, `aktív_szituációk: string[]` (régi `aktív_taktika`/`aktív_helyzet` string törölve)
 - AktivScreen.tsx: Hatás pool + taktikák/helyzetek/szituációk/státuszok overlay picker + manőver picker + Fegyverfogás picker + fegyver Ügyesebb/Gyengébb kéz + páncél toggle + narratív módosítók

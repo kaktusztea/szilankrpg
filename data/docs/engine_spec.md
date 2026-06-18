@@ -854,23 +854,48 @@ note: A manőverek nem adnak statikus harcérték módosítókat — ellenpróba
 
 Forrás: md/080_hatasok_es_statuszok.md, md/081_hatasok.md, md/082_statuszok.md
 
-### 22.1 Modell (3 réteg)
+### 22.1 Modell (4 réteg)
 
-| Réteg | Fájl | Leírás |
+| Réteg | Fájl / Forrás | Leírás |
 |-------|------|--------|
-| **Hatás operátorok** | `hatasok.yaml` | A hatás mechanika típusai (8 db) |
-| **Események/Célpontok** | `esemenyek.yaml` | Amire hatások vonatkozhatnak (21 db) |
-| **Státuszok** | `statuszok.yaml` | Állapotok fokozatokkal, strukturált hatáslistával (19 db) |
+| **Hatás mechanika** | `hatas_operatorok.yaml` | Hatás típusok/operátorok (8 db): előny, hátrány, arányos, letilt, stb. |
+| **Célpontok** | `esemenyek.yaml` | Amire a hatás mechanika vonatkozhat (21 db): dobások, képességek, fizikai |
+| **Hatások** | `081_hatasok.md` (TODO: yaml) | Elnevezett, magas szintű játékfogalmak: "Vérzés - erős", "Mozgás - képtelen", "VÉ veszteség duplázódik" stb. Minden Hatás = 1+ mechanika+cél kombináció. |
+| **Státuszok** | `statuszok.yaml` | Állapotok fokozatokkal, amelyek Hatás(oka)t okoznak. |
+| **Harci helyzetek** | `harci_helyzetek.yaml` | Speciális harci státuszok, amelyek szintén Hatás(oka)t okoznak. |
 
-A Státuszok hatásai strukturáltak és gépileg kumulálhatók a Hatás poolba.
-A webapp feladata: informatív kijelzés + Hatás pool aggregálás (implementálva: AktivScreen).
+A lánc: **Státusz/Harci helyzet** → okoz **Hatás(oka)t** → minden Hatás leírható **mechanika+cél** párral.
 
-### 22.2 Hatás operátorok (hatasok.yaml)
+#### Terminológia tisztázás
+
+| Fogalom | Régi elnevezés (data) | Helyes jelentés |
+|---------|----------------------|-----------------|
+| Hatás mechanika típusok | "hatás operátorok" (hatas_operatorok.yaml) | Alacsonyszintű operátorok: hogyan hat (kocka reroll, szorzó, letilt, max korlát) |
+| Célpontok | "események" (esemenyek.yaml) | Mire vonatkozik a mechanika (TÉ dobás, Mozgás, Varázslás képesség) |
+| **Hatások** | — (eddig nem volt yaml) | Magas szintű, elnevezett hatáscsomagok a szabályrendszerből (081_hatasok.md). Pl. "Harcképtelenség" = letilt(harci_képesség) + speciális VÉ. |
+| Státuszok | statuszok.yaml | Állapotok, amelyek Hatásokat okoznak (082_statuszok.md) |
+| Harci helyzetek | harci_helyzetek.yaml | Harci státuszok, amelyek Hatásokat okoznak (065_01_*.md) |
+
+#### Enyhítés szcenárió (fortély → hatás csökkentés)
+
+```
+Státusz: "Blokkolt (2)" → Hatás: "Hátrány-2 TÉ dobásra" + "Mozgás feleződik"
+Fortély: "Harcos Elme 2.fok" → enyhít: Hátrány TÉ dobásra (-1 fokkal)
+Eredmény: effektív Hátrány-1 TÉ dobásra (a fortély részben semlegesítette)
+```
+
+Ez a §16 feltételes fortély módosítók `enyhít` operátorával (már létező mechanika) valósul meg.
+A fortély yaml `módosítók` listájában `mód: "enyhít"` + `cél` + `érték` határozza meg,
+melyik hatás mechanikát/célt csökkenti.
+
+### 22.2 Hatás mechanika típusok (hatas_operatorok.yaml)
+
+(Fájlnév megtartva kompatibilitás miatt, de a fogalom: "hatás mechanika típusok")
 
 ```yaml
-hatás_operátorok:
-  - id: "előny"         # mód: előny_hátrány — kocka reroll
-  - id: "hátrány"       # mód: előny_hátrány — kocka reroll
+hatás_mechanika:  # (yaml-ban: hatás_operátorok — legacy elnevezés)
+  - id: "előny"         # mód: előny_hátrány — kocka reroll (2x/3x dob, jobb számít)
+  - id: "hátrány"       # mód: előny_hátrány — kocka reroll (2x/3x dob, rosszabb számít)
   - id: "arányos"       # mód: szorzó — pl. 0.5 = feleződik
   - id: "duplázás"      # mód: szorzó — pl. 2 = duplázódik
   - id: "letilt"        # mód: letilt — boolean (képesség elvesztés, aut. kudarc)
@@ -879,17 +904,54 @@ hatás_operátorok:
   - id: "enyhít"        # mód: enyhít — csökkenti másik hatás fokát (fortélyokból)
 ```
 
-### 22.3 Események/Célpontok (esemenyek.yaml)
+### 22.3 Célpontok (esemenyek.yaml)
 
 ```yaml
-események:
+célpontok:  # (yaml-ban: események — legacy elnevezés)
   # harci: ké_dobás, té_dobás, cé_dobás, manőver_ellenpróba, sebzésdobás, támadások_száma, vé_veszteség
   # próba: tulajdonságpróba, képzettségpróba, szociális_próba, szellemi_próba, fizikai_próba, érzék_próba, mágiaellenállás, mágia_akarata
   # fizikai: mozgás, beszéd
   # képesség: harci_képesség, varázslás, pszi, antyssjárás
 ```
 
-### 22.4 Státusz struktúra (statuszok.yaml)
+### 22.4 Hatások (hatasok.yaml)
+
+Elnevezett, magas szintű hatáscsomagok (081_hatasok.md). Forrás: `data/sources/hatasok.yaml`.
+Státuszok és Harci helyzetek ezeket okozzák. Minden Hatás leírható mechanika+cél párokkal.
+
+| id | Hatás neve | Mechanika | Cél | Leírás |
+|----|-----------|-----------|-----|--------|
+| előny_1 | Előny+1 | előny +1 | (változó) | 2x dob, nagyobb számít |
+| előny_2 | Előny+2 | előny +2 | (változó) | 3x dob, legnagyobb számít |
+| hátrány_1 | Hátrány-1 | hátrány -1 | (változó) | 2x dob, kisebb számít |
+| hátrány_2 | Hátrány-2 | hátrány -2 | (változó) | 3x dob, legkisebb számít |
+| automatikus_kudarc | Automatikus kudarc | letilt | próbák | Nem dobhatsz, azonnali kudarc |
+| automatikus_próba | Aut. próba | szöveges | — | Aut. siker → sima próba |
+| beszéd_zavart | Beszéd - zavart | szöveges | beszéd | Nehézkes, mágiánál extra próba |
+| beszéd_némult | Beszéd - némult | letilt | beszéd | Hangkiadás képtelen |
+| érzék_zavart | Érzék - zavart | hátrány -1 | érzék_próba | Adott érzékre |
+| érzék_részleges | Érzék - részleges | hátrány -2 | érzék_próba | Adott érzékre |
+| érzék_kioltott | Érzék - kioltott | letilt | érzék_próba | Aut. kudarc érzékpróbára |
+| antyssjárás_elvesztése | Antyssjárás elvesztése | letilt | antyssjárás | Nem lép be Antyss síkra |
+| fp_s1 | FP S1 | szöveges | — | S1 rubrikák FP feltöltés |
+| fp_s2 | FP S2 | szöveges | — | S1+S2 rubrikák FP feltöltés |
+| harcképtelenség | Harcképtelenség | letilt | harci_képesség | Mozog, nem harcol |
+| mozgás_feleződik | Mozgás - feleződik | arányos 0.5 | mozgás | Feleződik |
+| mozgás_lecövekelt | Mozgás - lecövekelt | letilt | mozgás | Helyváltoztatás képtelen |
+| mozgás_képtelen | Mozgás - képtelen | letilt | mozgás+harci | Nyaktól lefelé mozdulni sem |
+| pszi_elvesztése | Pszi elvesztése | letilt | pszi | Diszciplínák használhatatlan |
+| sebzés_csökkentett | Sebzés csökkentett | szöveges | sebzésdobás | 0 + k20 SP |
+| támadás_elvesztés_1 | 1 támadás elvesztése | szöveges | támadások_száma | -1 támadás (min 1) |
+| támadás_elvesztés_többszörös | Többsz. tám. elvesztés | max_limit 1 | támadások_száma | Max 1 tám/kör |
+| varázslás_elvesztése | Varázslás elvesztése | letilt | varázslás | Mágia végzése képtelen |
+| vé_veszteség_duplázódik | VÉ veszteség dupl. | duplázás 2 | vé_veszteség | Elszenvedett VÉ veszt. ×2 |
+| vé_csökkentés_bónusz | VÉ csökk bónusz | szöveges | vé_veszteség | +1..+2 bónusz |
+| vé_csökkentés_fix | VÉ csökkentés: X | szöveges | vé_veszteség | Fix VÉ csökkentés |
+| vérzés_gyenge | Vérzés - gyenge | szöveges | — | 1 ÉP / 10 perc |
+| vérzés_közepes | Vérzés - közepes | szöveges | — | 1 ÉP / 2 kör |
+| vérzés_erős | Vérzés - erős | szöveges | — | 1 ÉP / kör |
+
+### 22.5 Státusz struktúra (statuszok.yaml)
 
 ```yaml
 státuszok:
@@ -898,7 +960,7 @@ státuszok:
     fokok:
       - fok: 1
         alcím: "Közepesen"
-        hatások:                   # strukturált lista: operátor + érték + cél
+        hatások:                   # strukturált lista: mechanika + érték + cél
           - { hatás: "hátrány", érték: -1, cél: "té_dobás" }
           - { hatás: "arányos", érték: 0.5, cél: "mozgás" }
       - fok: 2
@@ -909,41 +971,63 @@ státuszok:
 ```
 
 Hatás objektum mezői:
-- `hatás`: operátor id (kötelező, hatasok.yaml-ból)
-- `érték`: szám (opcionális, operátor-függő)
-- `cél`: esemény id (kötelező, esemenyek.yaml-ból)
+- `hatás`: mechanika típus id (kötelező, hatas_operatorok.yaml-ból)
+- `érték`: szám (opcionális, mechanika-függő)
+- `cél`: célpont id (kötelező, esemenyek.yaml-ból)
 - `megjegyzés`: string (opcionális, kontextuális kiegészítés)
 
-### 22.5 Session
+### 22.6 Session
 
 `session.aktív_státuszok: string[]` — formátum: `"Státusznév (fok)"`, pl. `"Félelem (2)"`
 
-### 22.6 Webapp megjelenítés
+### 22.7 Webapp megjelenítés
 
 - Aktív fülön: dropdown-ból választható (státusz név + fok + alcím)
 - Chip megjelenítés: "Félelem (2) - Rettegés" + ✕ törlés
 - Koppintás (Game mód): hatások listája lenyílik (accordion)
 
-### 22.7 Hatás pool (Aktív fül)
+### 22.8 Hatás pool (Aktív fül)
 
 Az aktív státuszokból cél szerint kumulált hatás összesítő:
 1. Összegyűjtjük az aktív státuszok fokainak `hatások[]` listáit
-2. Cél (`esemény id`) szerint csoportosítunk
-3. Kumulálás mód szerint:
+2. Cél (`célpont id`) szerint csoportosítunk
+3. Kumulálás mechanika szerint:
    - `előny_hátrány`: összegez, clamp [-2, +2]
    - `szorzó` (arányos/duplázás): szorzók alkalmazása
    - `letilt`: boolean — ha egyszer aktív, aktív
    - `max_limit`: legkisebb max érvényesül
    - `szöveges`: csak informatív megjelenítés
-4. A pool informatív — a KM alkalmazza
+4. Fortély `enyhít` operátorok csökkentik az adott célra vonatkozó negatív hatás fokát
+5. A pool informatív — a KM alkalmazza
 
-### 22.8 Validáció (build-time)
+### 22.9 Validáció (build-time)
 
-- `validate_hatasok()`: operátor id egyediség, kötelező mezők, mód enum
-- `validate_esemenyek()`: esemény id egyediség, kötelező mezők, csoport enum
-- `validate_statuszok()`: referenciális integritás (hatás → operátor id, cél → esemény id)
+- `validate_hatasok()`: mechanika típus id egyediség, kötelező mezők, mód enum
+- `validate_esemenyek()`: célpont id egyediség, kötelező mezők, csoport enum
+- `validate_statuszok()`: referenciális integritás (hatás → mechanika id, cél → célpont id)
 
 note: `státusz:` feltétel prefix → §16 feltételes fortély módosítók aktiválása (jövőbeli).
+
+### 22.10 Fortély módosítók és Hatás mechanika kapcsolata
+
+Két párhuzamos rendszer — szándékosan elkülönített:
+
+| Rendszer | Cél referencia típus | Mechanizmus | Példa |
+|----------|---------------------|-------------|-------|
+| Fortély `módosítók` (flat/scaled/előny) | Harcértékek: `TÉ`, `VÉ`, `KÉ`, `SP`, `harckeret`, képzettségnevek | Fix numerikus módosítók, reactive engine számol | Mesterfegyver: TÉ:+3 |
+| Fortély `módosítók` (enyhít) | `esemenyek.yaml` id-k | Státusz/Helyzet Hatásainak csökkentése | Testőr: vé_veszteség enyhít |
+| Státusz/Helyzet `hatások[]` | `esemenyek.yaml` id + `hatas_operatorok.yaml` operátor | Előny/Hátrány kocka-reroll + letilt/szorzó | Félelem(2): hátrány -2 té_dobás |
+
+A fortély `mód: "enyhít"` az egyetlen pont ahol a két rendszer találkozik:
+- A fortély az `esemenyek.yaml` id-jével hivatkozik a célpontra
+- A Státusz/Helyzet `hatások[]` ugyanazt az id-t célozzák
+- Az enyhítés csökkenti a célra vonatkozó negatív hatás fokát
+
+Cél referencia konvenció:
+- Harcértékek (nagybetűs): `TÉ`, `VÉ`, `KÉ`, `CÉ`, `SP`, `SFÉ` → fortély flat/scaled módosítók céljai
+- Dobások/képességek (snake_case): `té_dobás`, `vé_veszteség`, `mozgás` → esemenyek.yaml id-k (Hatás mechanika + enyhít)
+- Speciális engine változók: `harckeret`, `pajzs_TÉ_mérséklés`, `MGT_TÉ_büntetés` → csak fortély flat
+- Manőver célok: `manőver:{id}` → fortély bónuszok manőverekhez
 
 
 ---

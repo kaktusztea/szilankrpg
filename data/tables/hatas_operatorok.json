@@ -1,0 +1,42 @@
+[
+  {
+    "id": "előny",
+    "név": "Előny",
+    "mód": "előny_hátrány"
+  },
+  {
+    "id": "hátrány",
+    "név": "Hátrány",
+    "mód": "előny_hátrány"
+  },
+  {
+    "id": "arányos",
+    "név": "Arányos",
+    "mód": "szorzó"
+  },
+  {
+    "id": "duplázás",
+    "név": "Duplázás",
+    "mód": "szorzó"
+  },
+  {
+    "id": "letilt",
+    "név": "Kioltás",
+    "mód": "letilt"
+  },
+  {
+    "id": "max_limit",
+    "név": "Maximum",
+    "mód": "max_limit"
+  },
+  {
+    "id": "szöveges",
+    "név": "Szöveges",
+    "mód": "szöveges"
+  },
+  {
+    "id": "enyhít",
+    "név": "Enyhít",
+    "mód": "enyhít"
+  }
+]

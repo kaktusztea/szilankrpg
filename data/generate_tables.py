@@ -269,20 +269,22 @@ def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
 
 
 def generate_aktiv_ful():
-    """taktikak.yaml, harci_helyzetek.yaml, szituaciok.yaml, manoverek.yaml, statuszok.yaml, hatasok.yaml, esemenyek.yaml → JSON"""
+    """taktikak.yaml, harci_helyzetek.yaml, szituaciok.yaml, manoverek.yaml, statuszok.yaml, hatas_operatorok.yaml, esemenyek.yaml, hatasok.yaml → JSON"""
     taktikak = load_yaml(os.path.join(SOURCES_DIR, 'taktikak.yaml'))['taktikák']
     helyzetek = load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))['harci_helyzetek']
     szituaciok = load_yaml(os.path.join(SOURCES_DIR, 'szituaciok.yaml'))['szituációk']
     manoverek = load_yaml(os.path.join(SOURCES_DIR, 'manoverek.yaml'))['manőverek']
-    hatasok = load_yaml(os.path.join(SOURCES_DIR, 'hatasok.yaml'))['hatás_operátorok']
+    hatas_operatorok = load_yaml(os.path.join(SOURCES_DIR, 'hatas_operatorok.yaml'))['hatás_operátorok']
     esemenyek = load_yaml(os.path.join(SOURCES_DIR, 'esemenyek.yaml'))['események']
     statuszok = load_yaml(os.path.join(SOURCES_DIR, 'statuszok.yaml'))['státuszok']
+    hatasok = load_yaml(os.path.join(SOURCES_DIR, 'hatasok.yaml'))['hatások']
     hatterek = load_yaml(os.path.join(SOURCES_DIR, 'hatterek.yaml'))
 
     validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek)
-    validate_hatasok(hatasok)
+    validate_hatasok(hatas_operatorok)
     validate_esemenyek(esemenyek)
-    validate_statuszok(statuszok, hatasok, esemenyek)
+    validate_statuszok(statuszok, hatas_operatorok, esemenyek)
+    validate_hatasok_katalogus(hatasok, hatas_operatorok, esemenyek)
 
     # feltétel_kulcs generálás id-ból (yaml-ban nincs, JSON-ban kell)
     for t in taktikak:
@@ -296,8 +298,9 @@ def generate_aktiv_ful():
     write_json('harci_helyzetek.json', helyzetek)
     write_json('szituaciok.json', szituaciok)
     write_json('manoverek.json', manoverek)
-    write_json('hatasok.json', hatasok)
+    write_json('hatas_operatorok.json', hatas_operatorok)
     write_json('esemenyek.json', esemenyek)
+    write_json('hatasok.json', hatasok)
     # Statuszok: default mezők biztosítása
     for s in statuszok:
         s.setdefault('többszörös', False)
@@ -308,7 +311,7 @@ def generate_aktiv_ful():
 
 
 def validate_hatasok(hatasok):
-    """Validate hatasok.yaml hatás_operátorok."""
+    """Validate hatas_operatorok.yaml hatás_operátorok."""
     errors = []
     valid_mod = {'előny_hátrány', 'szorzó', 'letilt', 'max_limit', 'szöveges', 'enyhít'}
     ids_seen = set()
@@ -372,6 +375,32 @@ def validate_statuszok(statuszok, hatasok, esemenyek):
                         if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
     if errors:
         print("  ❌ Státusz validációs hibák:")
+        for e in errors:
+            print(f"     {e}")
+        raise SystemExit(1)
+
+
+def validate_hatasok_katalogus(hatasok, hatas_operatorok, esemenyek):
+    """Validate hatasok.yaml — id egyediség + mechanika referenciális integritás."""
+    errors = []
+    valid_op_ids = {h['id'] for h in hatas_operatorok}
+    valid_cel_ids = {e['id'] for e in esemenyek}
+    ids_seen = set()
+    for i, h in enumerate(hatasok):
+        ctx = f"hatások[{i}] ({h.get('id', '?')})"
+        if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
+        elif h['id'] in ids_seen: errors.append(f"{ctx}: duplikált id")
+        else: ids_seen.add(h['id'])
+        if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
+        mechanika = h.get('mechanika')
+        if not mechanika or not isinstance(mechanika, list): errors.append(f"{ctx}: hiányzó vagy üres 'mechanika'")
+        else:
+            for j, m in enumerate(mechanika):
+                mctx = f"{ctx} mechanika[{j}]"
+                if m.get('hatás') not in valid_op_ids: errors.append(f"{mctx}: ismeretlen operátor: '{m.get('hatás')}'")
+                if m.get('cél') and m['cél'] not in valid_cel_ids: errors.append(f"{mctx}: ismeretlen cél: '{m.get('cél')}'")
+    if errors:
+        print("  ❌ Hatás katalógus validációs hibák:")
         for e in errors:
             print(f"     {e}")
         raise SystemExit(1)

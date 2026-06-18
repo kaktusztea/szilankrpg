@@ -1,34 +1,164 @@
 ---
-# Hatás operátorok — a hatás mechanika típusai
-# mód: hogyan hat a célra
-#   "előny_hátrány" — kocka reroll (érték: -2..-1 / +1..+2, clamp [-2,+2])
-#   "szorzó" — arányos módosítás (érték: 0.5 = feleződik, 2 = duplázódik)
-#   "letilt" — boolean (képesség elvesztés, automatikus kudarc)
-#   "max" — felső korlát beállítás (érték: pl. 1 = max 1 támadás)
-#   "szöveges" — nem kumulálható, csak informatív
+# Hatások katalógus — 081_hatasok.md alapján
+# Minden hatás = elnevezett, magas szintű játékfogalom
+# Státuszok és Harci helyzetek ezeket okozzák
 
-hatás_operátorok:
-  - id: "előny"
-    név: "Előny"
-    mód: "előny_hátrány"
-  - id: "hátrány"
-    név: "Hátrány"
-    mód: "előny_hátrány"
-  - id: "arányos"
-    név: "Arányos"
-    mód: "szorzó"
-  - id: "duplázás"
-    név: "Duplázás"
-    mód: "szorzó"
-  - id: "letilt"
-    név: "Kioltás"
-    mód: "letilt"
-  - id: "max_limit"
-    név: "Maximum"
-    mód: "max_limit"
-  - id: "szöveges"
-    név: "Szöveges"
-    mód: "szöveges"
-  - id: "enyhít"
-    név: "Enyhít"
-    mód: "enyhít"
+hatások:
+# --- Előny/Hátrány rendszer ---
+- id: "előny_1"
+  név: "Előny+1"
+  leírás: "2x dob, nagyobb számít. Védekezésnél: támadó Hátrány-1."
+  mechanika: [{hatás: "előny", érték: 1}]
+
+- id: "előny_2"
+  név: "Előny+2"
+  leírás: "3x dob, legnagyobb számít. Védekezésnél: támadó Hátrány-2."
+  mechanika: [{hatás: "előny", érték: 2}]
+
+- id: "hátrány_1"
+  név: "Hátrány-1"
+  leírás: "2x dob, kisebb számít. Védekezésnél: támadó Előny+1."
+  mechanika: [{hatás: "hátrány", érték: -1}]
+
+- id: "hátrány_2"
+  név: "Hátrány-2"
+  leírás: "3x dob, legkisebb számít. Védekezésnél: támadó Előny+2."
+  mechanika: [{hatás: "hátrány", érték: -2}]
+
+# --- Kudarc ---
+- id: "automatikus_kudarc"
+  név: "Automatikus kudarc"
+  leírás: "Nem dobhatsz próbát, azonnali kudarc."
+  mechanika: [{hatás: "letilt", cél: "képzettségpróba"}, {hatás: "letilt", cél: "tulajdonságpróba"}]
+
+- id: "automatikus_próba"
+  név: "Automatikus tulajdonság/képzettségpróba"
+  leírás: "Ami másnak automatikus siker, az neked sima próbadobás."
+  mechanika: [{hatás: "szöveges", megjegyzés: "automatikus siker → sima próba"}]
+
+# --- Beszéd ---
+- id: "beszéd_zavart"
+  név: "Beszéd - zavart"
+  leírás: "Nehezen formálsz szavakat. Varázslásnál: extra Önuralom próba (Nehéz)."
+  mechanika: [{hatás: "szöveges", cél: "beszéd", megjegyzés: "nehézkes beszéd, extra próba mágiánál"}]
+
+- id: "beszéd_némult"
+  név: "Beszéd - némult"
+  leírás: "Képtelen vagy hangot kiadni. Mágia hangkomponense nem alkalmazható."
+  mechanika: [{hatás: "letilt", cél: "beszéd"}]
+
+# --- Érzék ---
+- id: "érzék_zavart"
+  név: "Érzék - zavart"
+  leírás: "Hátrány-1 minden adott érzéken alapuló próbára."
+  mechanika: [{hatás: "hátrány", érték: -1, cél: "érzék_próba"}]
+
+- id: "érzék_részleges"
+  név: "Érzék - részleges"
+  leírás: "Hátrány-2 minden adott érzéken alapuló próbára."
+  mechanika: [{hatás: "hátrány", érték: -2, cél: "érzék_próba"}]
+
+- id: "érzék_kioltott"
+  név: "Érzék - kioltott"
+  leírás: "Automatikus kudarc minden adott érzéken alapuló próbára."
+  mechanika: [{hatás: "letilt", cél: "érzék_próba"}]
+
+# --- Antyssjárás ---
+- id: "antyssjárás_elvesztése"
+  név: "Antyssjárás elvesztése"
+  leírás: "Nem vagy képes az Antyss síkjára bejutni, ott közlekedni."
+  mechanika: [{hatás: "letilt", cél: "antyssjárás"}]
+
+# --- FP ---
+- id: "fp_s1"
+  név: "FP S1"
+  leírás: "S1 Egészség kategória rubrikái feltöltődnek FP jelölőkkel."
+  mechanika: [{hatás: "szöveges", megjegyzés: "S1 FP feltöltés"}]
+
+- id: "fp_s2"
+  név: "FP S2"
+  leírás: "S1 és S2 Egészség kategóriák rubrikái feltöltődnek FP jelölőkkel."
+  mechanika: [{hatás: "szöveges", megjegyzés: "S1+S2 FP feltöltés"}]
+
+# --- Harci képesség ---
+- id: "harcképtelenség"
+  név: "Harcképtelenség"
+  leírás: "Mozogni tudsz, harcolni nem. VÉ a mozgás jellegétől függ."
+  mechanika: [{hatás: "letilt", cél: "harci_képesség"}]
+
+# --- Mozgás ---
+- id: "mozgás_feleződik"
+  név: "Mozgás - feleződik"
+  leírás: "Mozgás értéked feleződik (harcon belül és kívül)."
+  mechanika: [{hatás: "arányos", érték: 0.5, cél: "mozgás"}]
+
+- id: "mozgás_lecövekelt"
+  név: "Mozgás - lecövekelt"
+  leírás: "Nem tudsz helyet változtatni. Testrészeid mozgását nem befolyásolja."
+  mechanika: [{hatás: "letilt", cél: "mozgás"}]
+
+- id: "mozgás_képtelen"
+  név: "Mozgás - képtelen"
+  leírás: "Mozdulni se bírsz nyaktól lefelé. Szemmozgás, légzés működik."
+  mechanika: [{hatás: "letilt", cél: "mozgás"}, {hatás: "letilt", cél: "harci_képesség"}]
+
+# --- Pszi ---
+- id: "pszi_elvesztése"
+  név: "Pszi használat elvesztése"
+  leírás: "Képtelen vagy bármilyen diszciplína végzésére, fenntartására."
+  mechanika: [{hatás: "letilt", cél: "pszi"}]
+
+# --- Sebzés ---
+- id: "sebzés_csökkentett"
+  név: "Sebzés csökkentett"
+  leírás: "Sebzésed: 0 + k20 SP."
+  mechanika: [{hatás: "szöveges", cél: "sebzésdobás", megjegyzés: "0 + k20 SP"}]
+
+# --- Támadások ---
+- id: "támadás_elvesztés_1"
+  név: "1 támadás elvesztése"
+  leírás: "-1 támadás a körben (min 1)."
+  mechanika: [{hatás: "szöveges", cél: "támadások_száma", megjegyzés: "-1 támadás"}]
+
+- id: "támadás_elvesztés_többszörös"
+  név: "Többszörös támadás elvesztése"
+  leírás: "Max 1 támadás / kör."
+  mechanika: [{hatás: "max_limit", érték: 1, cél: "támadások_száma"}]
+
+# --- Varázslás ---
+- id: "varázslás_elvesztése"
+  név: "Varázslás képesség elvesztése"
+  leírás: "Képtelen vagy bármilyen mágia végzésére, fenntartására."
+  mechanika: [{hatás: "letilt", cél: "varázslás"}]
+
+# --- VÉ ---
+- id: "vé_veszteség_duplázódik"
+  név: "VÉ veszteség duplázódik"
+  leírás: "Elszenvedett VÉ veszteséged duplázódik."
+  mechanika: [{hatás: "duplázás", érték: 2, cél: "vé_veszteség"}]
+
+- id: "vé_csökkentés_bónusz"
+  név: "VÉ csökkentés bónusz"
+  leírás: "VÉ csökkentésedhez +1 vagy +2 bónusz."
+  mechanika: [{hatás: "szöveges", cél: "vé_csökkentés", megjegyzés: "+1..+2 VÉ csökkentés bónusz"}]
+
+- id: "vé_csökkentés_fix"
+  név: "VÉ csökkentés: X"
+  leírás: "Ellenfeled VÉ-t csökkented X értékkel."
+  mechanika: [{hatás: "szöveges", cél: "vé_csökkentés", megjegyzés: "fix VÉ csökkentés"}]
+
+# --- Vérzés ---
+- id: "vérzés_gyenge"
+  név: "Vérzés - gyenge"
+  leírás: "1 ÉP / 10 perc. Harcban nem számít."
+  mechanika: [{hatás: "szöveges", megjegyzés: "1 ÉP / 10 perc"}]
+
+- id: "vérzés_közepes"
+  név: "Vérzés - közepes"
+  leírás: "1 ÉP / 2 kör."
+  mechanika: [{hatás: "szöveges", megjegyzés: "1 ÉP / 2 kör"}]
+
+- id: "vérzés_erős"
+  név: "Vérzés - erős"
+  leírás: "1 ÉP / kör."
+  mechanika: [{hatás: "szöveges", megjegyzés: "1 ÉP / kör"}]

@@ -353,7 +353,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Védő Érték kiterjesztése másra"
-  infó: "Többsz. tám. elvesztés, VÉ veszteség duplázódik. Testőr fortély mérsékli."
+  infó: "Többszörös támadás elvesztése, VÉ veszteség duplázódik. Testőr fortély mérsékli."
   hatások:
   - hatás: "szöveges"
     cél: "támadások_száma"

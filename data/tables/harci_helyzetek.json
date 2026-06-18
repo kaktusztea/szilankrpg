@@ -553,7 +553,7 @@
   },
   {
     "név": "Védő Érték kiterjesztése másra",
-    "infó": "Többsz. tám. elvesztés, VÉ veszteség duplázódik. Testőr fortély mérsékli.",
+    "infó": "Többszörös támadás elvesztése, VÉ veszteség duplázódik. Testőr fortély mérsékli.",
     "hatások": [
       {
         "hatás": "szöveges",

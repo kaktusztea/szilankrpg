@@ -397,13 +397,14 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             <div className="hatas-pool-section">
               <span className="hatas-pool-title">Státusz hatások</span>
               <div className="hatas-pool-items">
-                {[...hatásPool.entries()].map(([cél, entry]) => {
+                {[...hatásPool.entries()].filter(([, entry]) => 
+                  entry.letilt || entry.előnyHátrány !== 0 || entry.szorzó !== 1 || entry.maxLimit != null || entry.szövegesek.length > 0
+                ).map(([cél, entry]) => {
                   const parts: string[] = [];
                   if (entry.letilt) parts.push('❌ Letiltva');
                   if (entry.előnyHátrány !== 0) parts.push(entry.előnyHátrány > 0 ? `Előny+${entry.előnyHátrány}` : `Hátrány${entry.előnyHátrány}`);
                   if (entry.szorzó !== 1) parts.push(`×${entry.szorzó}`);
                   if (entry.maxLimit != null) parts.push(`max: ${entry.maxLimit}`);
-                  if (entry.enyhít > 0) parts.push(`⬆${entry.enyhít} enyhítés`);
                   for (const sz of entry.szövegesek) { if (sz) parts.push(sz); }
                   if (parts.length === 0) return null;
                   return <span key={cél} className={`hatas-pool-item ${entry.letilt ? 'negative' : entry.előnyHátrány < 0 ? 'negative' : entry.előnyHátrány > 0 ? 'positive' : ''}`}>{parts.join(', ')}: {eseményNév(cél)}</span>;
