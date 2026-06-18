@@ -209,7 +209,7 @@
 .kep-szint {
   font-size: 17px;
   font-weight: bold;
-  color: var(--warning);
+  color: #fff;
   min-width: 18px;
   text-align: right;
 }
