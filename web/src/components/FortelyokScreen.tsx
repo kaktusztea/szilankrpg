@@ -494,8 +494,12 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
             <div className="fort-info-row">
               <span className="fort-info-label">Kiterjeszti:</span>{' '}
               <span className="fort-info-kit">
-                {def.kiterjeszti_normál.join(', ')}
-                {def.kiterjeszti_erős.length > 0 && ` | Erős: ${def.kiterjeszti_erős.join(', ')}`}
+                {def.kiterjeszti_normál.map((kn: string, ki: number) => (
+                  <span key={ki} style={{ color: képzettségek.some((k: { név: string; szint: number }) => k.név === kn && k.szint >= 1) ? 'var(--success)' : '#e53935' }}>{ki > 0 ? ', ' : ''}{kn}</span>
+                ))}
+                {def.kiterjeszti_erős.length > 0 && <>{' | Erős: '}{def.kiterjeszti_erős.map((kn: string, ki: number) => (
+                  <span key={ki} style={{ color: képzettségek.some((k: { név: string; szint: number }) => k.név === kn && k.szint >= 1) ? 'var(--success)' : '#e53935' }}>{ki > 0 ? ', ' : ''}{kn}</span>
+                ))}</>}
               </span>
             </div>
           )}
