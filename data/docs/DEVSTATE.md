@@ -386,7 +386,7 @@ Szabályrendszer átszervezés és webapp implementáció kész.
 **Elvégzett változtatások:**
 - Picker 3 csoportra bontva: Pozitív (zöld), Semleges (narancs), Negatív (piros) fejléccel
 - Helyzetek egyoldalúsítva (csak saját karakterre vonatkozó módosítók, nincs aszimmetrikus "Támadó/Védő" bontás)
-- Többfokú helyzetek szétbontva: Sötétben (×3), Tűz ruhán (×2), Láthatatlanul (×2), Beszorított → Ellenfeled beszorított
+- Többfokú helyzetek szétbontva: Sötétben (×3), Tűz ruhán (×2), Láthatatlanul (×2), Beszorított → Beszorított ellenfél
 - `kizár_helyzetek` id-alapú (nem név) — többfokúak kölcsönösen kizárják egymást
 - Rejtett elemek (Pengeelőny, Pengehátrány, Pusztakezes, Képzetlen) nem jelennek meg a picker-ben
 - Készületlenség beolvadt Meglepetésbe (törölve)

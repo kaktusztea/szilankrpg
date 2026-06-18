@@ -11,7 +11,7 @@
     "feltétel_kulcs": "harci_helyzet:belharci_szituáció"
   },
   {
-    "név": "Ellenfeled beszorított",
+    "név": "Beszorított ellenfél",
     "infó": "Előny+1 TÉ dobásra.",
     "hatások": [
       {

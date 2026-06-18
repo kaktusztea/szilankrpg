@@ -13,7 +13,7 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Ellenfeled beszorított"
+- név: "Beszorított ellenfél"
   infó: "Előny+1 TÉ dobásra."
   hatások:
   - hatás: "előny"
