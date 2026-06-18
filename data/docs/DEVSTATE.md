@@ -98,12 +98,12 @@
   - TÉ footer double-tap: navigál Tul/Képz → scroll Fájdalomtűrés-hez
   - képzettségek prop: lifted state, Fájdalomtűrés szint módosítás azonnal hat
 - ✅ Tab rendszer: swipe + animáció (0.15s) + tükrözött tab bar (jobb→bal, 18px ikon-only + szöveges fülek)
-- ✅ Szerkesztő/Game mód toggle
+- ✅ Szerkesztő/Game mód toggle (1000ms fade animáció narancs↔zöld)
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
 - ✅ 169 fortély yaml, 81 képzettség yaml, 27 faj yaml
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
-  - Fejléc: Név (double-tap → szerkesztő popup) + Szint (double-tap → gombgrid 3-21, 5 oszlop, utolsó sor középre)
-  - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (double-tap → két lépéses popup: tartomány → érték)
+  - Fejléc: Név (tap → szerkesztő popup) + Szint (tap → gombgrid 3-21, 5 oszlop, utolsó sor középre)
+  - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (tap → +/− overlay)
   - Game módban Faj+Kor a Név mellé konkatenálódik: "von Agabor (Ember (Északi), 32)"
   - Tulajdonságok: fix 2x4 grid, teljes nevek, double-tap → popup gomb-grid (-5..+7), érték választás bezárja
   - Faj limit warning: sárga szín + automatikusan megjelenő "Faj max/min: X" info box (nem zárható)
@@ -116,7 +116,7 @@
   - Rövid koppintás szerkesztő módban: nem csinál semmit (csak double-tap)
 - ✅ Fortélyok fül: teljes UI (szerkesztő + game mód)
   - 6 csoport (Harci → Általános → Érzékek → Szabad → Kiemelt → Misztikus), összecsukható
-  - Fok kijelzés: szám, szín: sárga (nem max), zöld (max)
+  - Fok kijelzés: karikák (●/○) — teli=aktív fok, üres=nem aktív; Nyelvismeret: szöveges label marad
   - Dropdown: `"Név (max X)"`, ingyenes kerettel: `🎁N`, KP-t adó: `➕6-12-18KP`
   - Többszörös fortélyok: generikus `többszörösség` yaml mező alapján
     - `spec_típus` + `spec_lista: [...]` → fix lista dropdown (szűri a már felvetteket)
@@ -133,7 +133,7 @@
     - Harcmodor lista összevonás: ha mind harcmodor → "Harcmodor ≥ X" (lista `data.konstansok.harcmodorok`-ból)
   - Rendezés: locked fortélyok előre → azonos nevűek együtt (ABC) → azon belül fok desc
   - Game mód váltáskor info accordion resetelődik
-  - Rövid koppintás szerkesztő módban: nem csinál semmit (csak double-tap)
+  - Kiterjeszti szekció: zöld ha képzettség felvéve (≥1.szint), piros ha nincs
 - ✅ Build pipeline: YAML → JSON generálás automatizálva
   - `data/generate_tables.py`: központi script (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek)
   - Vite plugin: dev szerver indulásakor automatikusan futtatja a generálást
@@ -177,7 +177,7 @@
   - Primer költés = primer képzettségek + primer fortélyok + HM + CM
   - Primer limit = összes_kp + spec_kp
 - ✅ Szint választó: gombgrid 3-21 (5 oszlop, utolsó sor középre)
-- ✅ Kor választó: két lépéses (tartomány → érték), 10–58/60–100 toggle, 100-200/5, 200-1000/50, 42x42px kerek gombok
+- ✅ Kor választó: +/− gombok long press gyorsítással (200ms→30ms, 7s után ×10 lépés), 1–2000 tartomány
 - ✅ Build metadata (`web/generate_metadata.py` → `public/metadata.json`)
   - Verzió formátum: `ÉV.ÉVNAPJA.napibuild` (pl. `26.158.4`)
   - Napi build counter: `.build_counter` fájl (nem repo része)
@@ -196,7 +196,7 @@
   - HM/CM vásárlás: +/- gombok, validálás (max_HM, aszimmetria, max_CM)
   - Harcmodorok: read-only lista (Tul/Képz fülről szinkronizálva)
   - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown)
-    - Mezők: MF fok, Idea, Anyag — `he-field-btn` stílus, dupla katt → overlay popup
+    - Mezők: MF fok, Idea, Anyag — `he-field-btn` stílus, tap → overlay popup
     - MF fok: piros szöveg ha Mesterfegyver követelmény nem teljesül
     - Per-element double-tap: `tapTimers` Map (key-per-gomb, nincs interferencia)
     - MK fegyverek: dropdown-ban csak 1K variáns, `Alapnév` mező mint display name (suffix nélkül)
@@ -318,7 +318,7 @@
   - Tab váltás mód-korrekció: `prevGameMode` ref → index újraszámítás mód váltáskor
 - ✅ Jegyzetek (✏️) és Napló (📅) overlay-re költöztetve
   - Felső sáv gombok (fejlécben ⚙️ mellé): ✏️ és 📅, kattintásra fullscreen overlay nyílik
-  - Overlay: ✕ bezáró gomb + fejléc + teljes képernyős tartalom
+  - Overlay: fejléc + teljes képernyős tartalom, mellé kattintás bezár (nincs ✕ gomb)
   - Escape bezárja
   - Alsó tab bar-ból eltávolítva (nem swipe-olható)
 - ✅ PWA manifest + Fullscreen
