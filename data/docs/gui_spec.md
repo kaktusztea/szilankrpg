@@ -49,13 +49,14 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 
 - **Mobile-first**: 320px szélességtől használható
 - **Két mód**: Szerkesztő mód és Game mód (toggle gomb a fejlécben)
-  - Toggle gomb szín: Szerkesztő=`#ff9800`, Game=`#4caf50` (háttér), szöveg: `#000`
+  - Toggle gomb szín: Szerkesztő=`#ff9800`, Game=`#4caf50` (háttér), szöveg: `#000`, átmenet: 1000ms ease
 - **Tab navigáció**: alul fix tab bar, horizontálisan scrollozható (minden tab közvetlenül elérhető, nincs "..." menü)
 - **Screen váltás**: jobb-bal swipe gesztussal (mobilon, threshold: 30px), desktop-on tab kattintás
 - **Swipe**: csak horizontális, `Math.abs(dx) > Math.abs(dy)` check
 - **Double-tap**: 350ms threshold minden szerkesztő interakcióhoz (Tulajdonságok, Képzettségek, Fortélyok, Név, Szint, Kor)
 - **Popup overlay-ek**: `createPortal(document.body)`, `.kep-prompt-overlay` osztály, `position: fixed; inset: 0; z-index: 100`
 - **Escape**: minden popup overlay bezárható
+- **Overlay bezárás**: mellé kattintás (background click) — nincs ✕ gomb
 - **Accordion/collapse**: elemek lenyithatók koppintásra (Game mód), másik koppintás becsukja
 - **Szín kód**: sárga (`--warning`) = módosítható/köztes érték, zöld (`--success`) = teljes/számított, piros (`--error`/`--accent`) = hiba/limit túllépés/kiemelt
 
@@ -131,7 +132,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 ### Hatás pool szekciók
 1. **Taktikák**: per-taktika sorok. Név narancssárga (`#ff9800`), módosítók zöld (`#66bb6a`) + ✔ jel a végén (beszámított), megjegyzések narancssárga (`#ffb74d`). Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
 2. **Harci helyzetek**: per-helyzet sorok. Név narancssárga, utána az `infó` mező szövege (mindig). A `hatások[]` a háttérben működik (feltétel dispatch).
-3. **Státusz hatások**: státuszok strukturált hatásai kumulálva célonként (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit, enyhít). Formátum: `{hatás}: {cél}`.
+3. **Státusz hatások**: státuszok strukturált hatásai kumulálva célonként (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit). Enyhítés NEM jelenik meg itt (háttérben hat). Formátum: `{hatás}: {cél}`.
 4. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
 5. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes). Formátum: `Előny+X: Cél (Fortély)` (pl. "Előny+2: Sebzésdobás (Orgyilkos)")
 6. **Fortély bónuszok**: harci fortélyok narratív hatásszövegei (yaml `emlékeztető: true` flag alapján)
@@ -141,7 +142,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 - `.aktiv-field-btn`: keretezett label+érték (he-field-btn stílus)
 - `.aktiv-hatas-pool`: sötét háttér, keretes box, szekciók elválasztó vonallal
 - `.hatas-pool-item .fortely-nev`: narancssárga (#e0a050)
-- Overlay picker: `.manover-picker` (görgethető, 80vh max), `.manover-card` kártyák
+- Overlay picker: `.aktiv-picker` (görgethető, 80vh max), `.aktiv-picker-item` kártyák
 - `.manover-category-label`: narancssárga kategória fejléc
 
 ### Viselkedés
@@ -152,7 +153,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 A Fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc) dedikált választó az Aktív fülön.
 
 **GUI terv:**
-- **Fegyverfogás field-btn**: kattintásra overlay popup nyílik (szokásos `.kep-prompt-overlay` + `.manover-picker` stílus)
+- **Fegyverfogás field-btn**: kattintásra overlay popup nyílik (szokásos `.kep-prompt-overlay` + `.aktiv-picker` stílus)
 - **Popup tartalma**: egymás alatt a választható opciók (`.manover-card` stílus):
   - Egyfegyveres (alap)
   - Fegyver + pajzs (csak ha van pajzs a karakteren)
@@ -255,11 +256,11 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
 
 ### Fejléc (legfelül)
 - **Név + Szint** sor: két összeérő box
-  - Név box (flex:1): `Név: von Agabor` — double-tap → szerkesztő popup (max 40 karakter)
-  - Szint box: `Szint: 8` — double-tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
+  - Név box (flex:1): `Név: von Agabor` — tap → szerkesztő popup (max 40 karakter)
+  - Szint box: `Szint: 8` — tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
 - **Faj + Kor** sor (CSAK szerkesztő módban):
   - Faj box (flex:1): inline `<select>` dropdown (27 faj a tables/fajok.json-ból, közvetlenül koppintható)
-  - Kor box: `Kor: 32` — double-tap → két lépéses popup (tartomány: 10–100/100–200/200–1000, majd érték gombok: 2/5/50-es lépésekkel)
+  - Kor box: `Kor: 32` — tap → +/− overlay (long press gyorsítás: 200ms→30ms, 7s után ×10 lépés, 1–2000)
 - **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"von Agabor (Ember (Északi), 32)"`
 - **Anyanyelv** (CSAK szerkesztő módban): inline `<select>` dropdown (`tables/nyelvek.json`-ból)
   - Módosítás → szinkronizálja kiérdemelt Nyelvismeret fortélyokat (Közös Alap + anyanyelv Alap, `kiérdemelt: true`)
@@ -337,7 +338,7 @@ Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Sza
 ### Megjelenés
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
 - Game módban: üres csoportok elrejtve
-- Kompakt lista: név + fok (szám). Fok szín: sárga ha fok < maxfok, zöld ha fok = maxfok
+- Kompakt lista: név + fok karikák (●/○). Teli=aktív fok (balról: üres, jobbra: teli). Max fok elérve: zöld szín.
   - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok
 - Ingyenes keret alatti többszörös fortélyoknál 🎁 jel a név mellett
 - ✕ törlés gomb minden fortélynál (szerkesztő módban)

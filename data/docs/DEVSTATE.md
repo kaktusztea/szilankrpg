@@ -16,7 +16,8 @@
 │   │   ├── szituaciok.yaml
 │   │   ├── manoverek.yaml
 │   │   ├── statuszok.yaml     ← 19 státusz (strukturált hatásokkal)
-│   │   ├── hatas_operatorok.yaml       ← 8 hatás operátor (előny, hátrány, letilt, stb.)
+│   │   ├── hatas_operatorok.yaml       ← 8 hatás mechanika típus (előny, hátrány, letilt, stb.)
+│   │   ├── hatasok.yaml               ← 29 elnevezett Hatás katalógus (081_hatasok.md)
 │   │   ├── esemenyek.yaml     ← 21 esemény/célpont (hatások céljai)
 │   │   ├── hatterek.yaml      ← Leíró + Karma hátterek
 │   │   ├── kepzettsegek/      ← Képzettség adatfájlok (81 db, alkönyvtárakban)
@@ -273,10 +274,11 @@
   - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
   - `data/sources/statuszok.yaml` → `tables/statuszok.json` (19 státusz, kategória, fokok+alcím+strukturált hatások)
-  - `data/sources/hatas_operatorok.yaml` → `tables/hatas_operatorok.json` (8 hatás operátor: előny, hátrány, arányos, duplázás, letilt, max_limit, szöveges, enyhít)
-  - `data/sources/esemenyek.yaml` → `tables/esemenyek.json` (21 esemény/célpont: harci, próba, fizikai, képesség csoportok)
-  - Schema validáció beépítve a `generate_tables.py`-be (`validate_aktiv_ful()`, `validate_hatasok()`, `validate_esemenyek()`, `validate_statuszok()`)
-  - Referenciális integritás: státusz hatás.operátor → hatasok id, hatás.cél → esemenyek id
+  - `data/sources/hatas_operatorok.yaml` → `tables/hatas_operatorok.json` (8 hatás mechanika típus)
+  - `data/sources/hatasok.yaml` → `tables/hatasok.json` (29 elnevezett Hatás: id, név, leírás, mechanika[])
+  - `data/sources/esemenyek.yaml` → `tables/esemenyek.json` (22 célpont: harci, próba, fizikai, képesség csoportok)
+  - Schema validáció: `validate_aktiv_ful()`, `validate_hatasok()`, `validate_esemenyek()`, `validate_statuszok()`, `validate_hatasok_katalogus()`
+  - Referenciális integritás: státusz operátor → hatas_operatorok id, cél → esemenyek id; Hatás katalógus mechanika → operátor+cél
   - Régi `harcihelyzetek.yaml` törölve
 - ✅ Aktív fül UI (AktivScreen.tsx) — teljes
   - Szilánk: fejléc sávba költözött (kattintásra értékválasztó popup 0-3)
