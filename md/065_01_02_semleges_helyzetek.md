@@ -145,13 +145,13 @@ Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges 
 
 A hosszú kardos
 - "Pengeelőny" helyzetből
-- "Alap `VÉ` csökkentés" helyzetbe kerül
+- "Alappenge" helyzetbe kerül
 
 ### ⚡Példa: Két tőrös közrefog egy lándzsást
 
 A lándzsás
 - "Pengeelőny" helyzetből
-- "Alap `VÉ` csökkentés" helyzetbe kerül
+- "Alappenge" helyzetbe kerül
 
 <br />
 
