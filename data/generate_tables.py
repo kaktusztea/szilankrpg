@@ -371,7 +371,7 @@ def validate_statuszok(statuszok, hatasok, esemenyek):
                     for k, h in enumerate(hatasok_lista):
                         hctx = f"{fctx} hatások[{k}]"
                         if not isinstance(h, dict): errors.append(f"{hctx}: nem objektum"); continue
-                        if h.get('hatás') not in valid_hatas_ids: errors.append(f"{hctx}: ismeretlen hatás operátor: '{h.get('hatás')}'")
+                        if h.get('operátor') not in valid_hatas_ids: errors.append(f"{hctx}: ismeretlen operátor: '{h.get('operátor')}'")
                         if h.get('cél') not in valid_esemeny_ids: errors.append(f"{hctx}: ismeretlen cél esemény: '{h.get('cél')}'")
     if errors:
         print("  ❌ Státusz validációs hibák:")
@@ -397,7 +397,7 @@ def validate_hatasok_katalogus(hatasok, hatas_operatorok, esemenyek):
         else:
             for j, m in enumerate(mechanika):
                 mctx = f"{ctx} mechanika[{j}]"
-                if m.get('hatás') not in valid_op_ids: errors.append(f"{mctx}: ismeretlen operátor: '{m.get('hatás')}'")
+                if m.get('operátor') not in valid_op_ids: errors.append(f"{mctx}: ismeretlen operátor: '{m.get('operátor')}'")
                 if m.get('cél') and m['cél'] not in valid_cel_ids: errors.append(f"{mctx}: ismeretlen cél: '{m.get('cél')}'")
     if errors:
         print("  ❌ Hatás katalógus validációs hibák:")

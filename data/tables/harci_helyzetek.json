@@ -15,7 +15,7 @@
     "infó": "Előny+1 TÉ dobásra.",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1,
         "cél": "té_dobás"
       }
@@ -32,7 +32,7 @@
     "infó": "Hátrány-1 TÉ dobásra.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       }
@@ -49,17 +49,17 @@
     "infó": "Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "cél": "támadások_száma",
         "megjegyzés": "Többszörös támadás elvesztés"
       },
       {
-        "hatás": "arányos",
+        "operátor": "arányos",
         "érték": 0.5,
         "cél": "mozgás"
       }
@@ -76,7 +76,7 @@
     "infó": "KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza.",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1,
         "cél": "té_dobás",
         "megjegyzés": "első csapás"
@@ -94,12 +94,12 @@
     "infó": "Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -2,
         "cél": "té_dobás"
       },
       {
-        "hatás": "duplázás",
+        "operátor": "duplázás",
         "érték": 2,
         "cél": "vé_veszteség"
       }
@@ -116,12 +116,12 @@
     "infó": "Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -2,
         "cél": "sebzésdobás"
       },
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -2,
         "cél": "cé_dobás"
       }
@@ -140,12 +140,12 @@
     "infó": "Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "sebzésdobás"
       },
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "cé_dobás"
       }
@@ -164,12 +164,12 @@
     "infó": "Előny+1 TÉ dobásra. Pajzs VÉ NEM számít.",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1,
         "cél": "té_dobás"
       },
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "cél": "vé_veszteség",
         "megjegyzés": "Pajzs VÉ nem számít"
       }
@@ -186,12 +186,12 @@
     "infó": "Hátrány-1 TÉ dobásra, VÉ veszteség duplázódik.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "hatás": "duplázás",
+        "operátor": "duplázás",
         "érték": 2,
         "cél": "vé_veszteség"
       }
@@ -230,17 +230,17 @@
     "infó": "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott.",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1,
         "cél": "té_dobás"
       },
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1,
         "cél": "vé_csökkentés"
       },
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 5,
         "cél": "vé"
       }
@@ -259,17 +259,17 @@
     "infó": "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott.",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 2,
         "cél": "té_dobás"
       },
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 2,
         "cél": "vé_csökkentés"
       },
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 10,
         "cél": "vé"
       }
@@ -288,7 +288,7 @@
     "infó": "Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK.",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1,
         "cél": "té_dobás"
       }
@@ -316,7 +316,7 @@
     "infó": "Előny+1 TÉ dobásra.",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1,
         "cél": "té_dobás"
       }
@@ -333,12 +333,12 @@
     "infó": "Előny+1 TÉ; VÉ csökkentés: +2",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1,
         "cél": "té_dobás"
       },
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 2,
         "cél": "vé_csökkentés"
       }
@@ -355,7 +355,7 @@
     "infó": "Előny+2 TÉ;  Áldozat VÉ: Közelharc Puszta kézzel",
     "hatások": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 2,
         "cél": "té_dobás"
       }
@@ -408,7 +408,7 @@
     "infó": "Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       }
@@ -425,7 +425,7 @@
     "infó": "Hátrány-1 TÉ dobásra. Vakharc/Infralátás/Ultralátás mérsékli.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       }
@@ -445,7 +445,7 @@
     "infó": "Hátrány-1 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       }
@@ -465,7 +465,7 @@
     "infó": "Hátrány-2 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -2,
         "cél": "té_dobás"
       }
@@ -485,7 +485,7 @@
     "infó": "Hátrány-1 TÉ, (-5+k20) SP/kör. Eloltás: 1 kör.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       }
@@ -504,7 +504,7 @@
     "infó": "Hátrány-2 TÉ, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -2,
         "cél": "té_dobás"
       }
@@ -534,12 +534,12 @@
     "infó": "Hátrány-1 TÉ, VÉ: +5.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       },
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 5,
         "cél": "vé"
       }
@@ -556,12 +556,12 @@
     "infó": "Többszörös támadás elvesztése, VÉ veszteség duplázódik. Testőr fortély mérsékli.",
     "hatások": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "cél": "támadások_száma",
         "megjegyzés": "Többszörös támadás elvesztés"
       },
       {
-        "hatás": "duplázás",
+        "operátor": "duplázás",
         "érték": 2,
         "cél": "vé_veszteség"
       }
@@ -578,7 +578,7 @@
     "infó": "Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés.",
     "hatások": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "té_dobás"
       }

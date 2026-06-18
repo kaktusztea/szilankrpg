@@ -139,7 +139,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
   }
 
   // 2. Státusz + Harci helyzet + Taktika hatások kumulálása
-  const státuszHatások: { cél: string; hatás: string; érték?: number; megjegyzés?: string }[] = [];
+  const státuszHatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] = [];
   for (const at of session.aktív_taktikák) {
     const def = data.taktikak.find(t => t.név === at.név);
     if (!def) continue;
@@ -172,12 +172,12 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
   for (const h of státuszHatások) {
     if (!hatásPool.has(h.cél)) hatásPool.set(h.cél, { előnyHátrány: 0, letilt: false, szorzó: 1, enyhít: 0, szövegesek: [] });
     const entry = hatásPool.get(h.cél)!;
-    if (h.hatás === 'előny' || h.hatás === 'hátrány') entry.előnyHátrány = Math.max(-2, Math.min(2, entry.előnyHátrány + (h.érték ?? 0)));
-    else if (h.hatás === 'letilt') entry.letilt = true;
-    else if (h.hatás === 'max_limit') entry.maxLimit = entry.maxLimit != null ? Math.min(entry.maxLimit, h.érték ?? 99) : h.érték;
-    else if (h.hatás === 'arányos' || h.hatás === 'duplázás') entry.szorzó *= (h.érték ?? 1);
-    else if (h.hatás === 'enyhít') entry.enyhít += (h.érték ?? 0);
-    else if (h.hatás === 'szöveges') entry.szövegesek.push(h.megjegyzés ?? '');
+    if (h.operátor === 'előny' || h.operátor === 'hátrány') entry.előnyHátrány = Math.max(-2, Math.min(2, entry.előnyHátrány + (h.érték ?? 0)));
+    else if (h.operátor === 'letilt') entry.letilt = true;
+    else if (h.operátor === 'max_limit') entry.maxLimit = entry.maxLimit != null ? Math.min(entry.maxLimit, h.érték ?? 99) : h.érték;
+    else if (h.operátor === 'arányos' || h.operátor === 'duplázás') entry.szorzó *= (h.érték ?? 1);
+    else if (h.operátor === 'enyhít') entry.enyhít += (h.érték ?? 0);
+    else if (h.operátor === 'szöveges') entry.szövegesek.push(h.megjegyzés ?? '');
   }
 
   // Fortély enyhítések alkalmazása a Hatás poolra
@@ -530,7 +530,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                   }}>
                     <span className="aktiv-picker-item-name">{f.fok}. fok</span>
                     <span className="aktiv-picker-item-details">{Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ')}</span>
-                    {f.hatások && f.hatások.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map(h => h.megjegyzés || `${h.hatás} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
+                    {f.hatások && f.hatások.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map(h => h.megjegyzés || `${h.operátor} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
                   </div>
                 ));
               })()}
@@ -750,13 +750,13 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                     <span className="aktiv-picker-item-hatas">{f.hatások.slice(0, 4).map(h => {
                       if (typeof h === 'string') return h;
                       const célNév = data.esemenyek.find(e => e.id === h.cél)?.név ?? h.cél;
-                      if (h.hatás === 'hátrány') return `Hátrány${h.érték} ${célNév}`;
-                      if (h.hatás === 'előny') return `Előny+${h.érték} ${célNév}`;
-                      if (h.hatás === 'letilt') return `❌ ${célNév}`;
-                      if (h.hatás === 'max_limit') return `Max ${h.érték} ${célNév}`;
-                      if (h.hatás === 'arányos') return `${célNév} ×${h.érték}`;
-                      if (h.hatás === 'szöveges') return h.megjegyzés || célNév;
-                      return `${célNév}: ${h.hatás}`;
+                      if (h.operátor === 'hátrány') return `Hátrány${h.érték} ${célNév}`;
+                      if (h.operátor === 'előny') return `Előny+${h.érték} ${célNév}`;
+                      if (h.operátor === 'letilt') return `❌ ${célNév}`;
+                      if (h.operátor === 'max_limit') return `Max ${h.érték} ${célNév}`;
+                      if (h.operátor === 'arányos') return `${célNév} ×${h.érték}`;
+                      if (h.operátor === 'szöveges') return h.megjegyzés || célNév;
+                      return `${célNév}: ${h.operátor}`;
                     }).join('; ')}</span>
                   </div>
                 ));

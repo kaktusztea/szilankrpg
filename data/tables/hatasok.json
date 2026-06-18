@@ -5,7 +5,7 @@
     "leírás": "2x dob, nagyobb számít. Védekezésnél: támadó Hátrány-1.",
     "mechanika": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 1
       }
     ]
@@ -16,7 +16,7 @@
     "leírás": "3x dob, legnagyobb számít. Védekezésnél: támadó Hátrány-2.",
     "mechanika": [
       {
-        "hatás": "előny",
+        "operátor": "előny",
         "érték": 2
       }
     ]
@@ -27,7 +27,7 @@
     "leírás": "2x dob, kisebb számít. Védekezésnél: támadó Előny+1.",
     "mechanika": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1
       }
     ]
@@ -38,7 +38,7 @@
     "leírás": "3x dob, legkisebb számít. Védekezésnél: támadó Előny+2.",
     "mechanika": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -2
       }
     ]
@@ -49,11 +49,11 @@
     "leírás": "Nem dobhatsz próbát, azonnali kudarc.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "képzettségpróba"
       },
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "tulajdonságpróba"
       }
     ]
@@ -64,7 +64,7 @@
     "leírás": "Ami másnak automatikus siker, az neked sima próbadobás.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "megjegyzés": "automatikus siker → sima próba"
       }
     ]
@@ -75,7 +75,7 @@
     "leírás": "Nehezen formálsz szavakat. Varázslásnál: extra Önuralom próba (Nehéz).",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "cél": "beszéd",
         "megjegyzés": "nehézkes beszéd, extra próba mágiánál"
       }
@@ -87,7 +87,7 @@
     "leírás": "Képtelen vagy hangot kiadni. Mágia hangkomponense nem alkalmazható.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "beszéd"
       }
     ]
@@ -98,7 +98,7 @@
     "leírás": "Hátrány-1 minden adott érzéken alapuló próbára.",
     "mechanika": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -1,
         "cél": "érzék_próba"
       }
@@ -110,7 +110,7 @@
     "leírás": "Hátrány-2 minden adott érzéken alapuló próbára.",
     "mechanika": [
       {
-        "hatás": "hátrány",
+        "operátor": "hátrány",
         "érték": -2,
         "cél": "érzék_próba"
       }
@@ -122,7 +122,7 @@
     "leírás": "Automatikus kudarc minden adott érzéken alapuló próbára.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "érzék_próba"
       }
     ]
@@ -133,7 +133,7 @@
     "leírás": "Nem vagy képes az Antyss síkjára bejutni, ott közlekedni.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "antyssjárás"
       }
     ]
@@ -144,7 +144,7 @@
     "leírás": "S1 Egészség kategória rubrikái feltöltődnek FP jelölőkkel.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "megjegyzés": "S1 FP feltöltés"
       }
     ]
@@ -155,7 +155,7 @@
     "leírás": "S1 és S2 Egészség kategóriák rubrikái feltöltődnek FP jelölőkkel.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "megjegyzés": "S1+S2 FP feltöltés"
       }
     ]
@@ -166,7 +166,7 @@
     "leírás": "Mozogni tudsz, harcolni nem. VÉ a mozgás jellegétől függ.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "harci_képesség"
       }
     ]
@@ -177,7 +177,7 @@
     "leírás": "Mozgás értéked feleződik (harcon belül és kívül).",
     "mechanika": [
       {
-        "hatás": "arányos",
+        "operátor": "arányos",
         "érték": 0.5,
         "cél": "mozgás"
       }
@@ -189,7 +189,7 @@
     "leírás": "Nem tudsz helyet változtatni. Testrészeid mozgását nem befolyásolja.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "mozgás"
       }
     ]
@@ -200,11 +200,11 @@
     "leírás": "Mozdulni se bírsz nyaktól lefelé. Szemmozgás, légzés működik.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "mozgás"
       },
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "harci_képesség"
       }
     ]
@@ -215,7 +215,7 @@
     "leírás": "Képtelen vagy bármilyen diszciplína végzésére, fenntartására.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "pszi"
       }
     ]
@@ -226,7 +226,7 @@
     "leírás": "Sebzésed: 0 + k20 SP.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "cél": "sebzésdobás",
         "megjegyzés": "0 + k20 SP"
       }
@@ -238,7 +238,7 @@
     "leírás": "-1 támadás a körben (min 1).",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "cél": "támadások_száma",
         "megjegyzés": "-1 támadás"
       }
@@ -250,7 +250,7 @@
     "leírás": "Max 1 támadás / kör.",
     "mechanika": [
       {
-        "hatás": "max_limit",
+        "operátor": "max_limit",
         "érték": 1,
         "cél": "támadások_száma"
       }
@@ -262,7 +262,7 @@
     "leírás": "Képtelen vagy bármilyen mágia végzésére, fenntartására.",
     "mechanika": [
       {
-        "hatás": "letilt",
+        "operátor": "letilt",
         "cél": "varázslás"
       }
     ]
@@ -273,7 +273,7 @@
     "leírás": "Elszenvedett VÉ veszteséged duplázódik.",
     "mechanika": [
       {
-        "hatás": "duplázás",
+        "operátor": "duplázás",
         "érték": 2,
         "cél": "vé_veszteség"
       }
@@ -285,7 +285,7 @@
     "leírás": "VÉ csökkentésedhez +1 vagy +2 bónusz.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "cél": "vé_csökkentés",
         "megjegyzés": "+1..+2 VÉ csökkentés bónusz"
       }
@@ -297,7 +297,7 @@
     "leírás": "Ellenfeled VÉ-t csökkented X értékkel.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "cél": "vé_csökkentés",
         "megjegyzés": "fix VÉ csökkentés"
       }
@@ -309,7 +309,7 @@
     "leírás": "1 ÉP / 10 perc. Harcban nem számít.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "megjegyzés": "1 ÉP / 10 perc"
       }
     ]
@@ -320,7 +320,7 @@
     "leírás": "1 ÉP / 2 kör.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "megjegyzés": "1 ÉP / 2 kör"
       }
     ]
@@ -331,7 +331,7 @@
     "leírás": "1 ÉP / kör.",
     "mechanika": [
       {
-        "hatás": "szöveges",
+        "operátor": "szöveges",
         "megjegyzés": "1 ÉP / kör"
       }
     ]
