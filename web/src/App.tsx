@@ -229,6 +229,8 @@ function App() {
   // --- Autosave localStorage (multi-slot) ---
   useEffect(() => {
     if (!karakter || testMode || !isDirty) return;
+    // Üres/névtelen karakter nem mentődik (nincs értelme slot foglalásnak)
+    if (!karakter.név && karakter.képzettségek.length === 0 && karakter.fortélyok.length === 0) return;
     const expectedLeíró = generateIdLeíró(karakter.név, karakter.tsz);
     if (karakter.id_leíró !== expectedLeíró) {
       setKarakter(prev => prev ? { ...prev, id_leíró: expectedLeíró } : prev);
@@ -251,6 +253,7 @@ function App() {
   function pushUndo(leírás: string) {
     const k = karakterRef.current;
     if (!k) return;
+    if (testMode) setTestMode(false);
     if (!isDirty) setIsDirty(true);
     setUndoStack(prev => [
       { timestamp: Date.now(), leírás, session: structuredClone(k.session), karakter: structuredClone(k) },
@@ -288,11 +291,11 @@ function App() {
   const indicatorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!showNewConfirm && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowMenu(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); setShowSzilánkPicker(false); } }
+    if (!showNewConfirm && !showSlotList && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowMenu(false); setShowSlotList(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); setShowSzilánkPicker(false); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
+  }, [showNewConfirm, showSlotList, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
