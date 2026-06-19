@@ -159,7 +159,7 @@ function App() {
             const uid = parsed.uid || ((parsed as any).id) || generateUid();
             const migrated = { ...parsed, uid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), session: { ...DEFAULT_SESSION, ...parsed.session } };
             localStorage.setItem(`szilank_char_${uid}`, JSON.stringify(migrated));
-            localStorage.setItem('szilank_slots', JSON.stringify([{ uid, id_leíró: migrated.id_leíró, név: migrated.név, mentés_dátum: new Date().toISOString() }]));
+            localStorage.setItem('szilank_slots', JSON.stringify([{ uid, id_leíró: migrated.id_leíró, név: migrated.név, tsz: migrated.tsz, mentés_dátum: new Date().toISOString() }]));
             localStorage.setItem('szilank_active', uid);
             localStorage.removeItem('szilank_karakter');
             localStorage.removeItem('szilank_undo');
@@ -234,10 +234,10 @@ function App() {
     const toSave = { ...karakter, _undo: undoStack } as any;
     localStorage.setItem(`szilank_char_${karakter.uid}`, JSON.stringify(toSave));
     localStorage.setItem('szilank_active', karakter.uid);
-    let slots: { uid: string; id_leíró: string; név: string; mentés_dátum: string }[] = [];
+    let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
     try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { slots = []; }
     const existing = slots.findIndex(s => s.uid === karakter.uid);
-    const entry = { uid: karakter.uid, id_leíró: karakter.id_leíró, név: karakter.név, mentés_dátum: new Date().toISOString() };
+    const entry = { uid: karakter.uid, id_leíró: karakter.id_leíró, név: karakter.név, tsz: karakter.tsz, mentés_dátum: new Date().toISOString() };
     if (existing >= 0) slots[existing] = entry; else slots.unshift(entry);
     slots = slots.slice(0, 10);
     localStorage.setItem('szilank_slots', JSON.stringify(slots));
@@ -631,7 +631,7 @@ function App() {
           <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '8px', minWidth: '300px', maxHeight: '80vh', overflow: 'auto' }}>
             <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Karakter betöltése</label>
             {(() => {
-              let slots: { uid: string; id_leíró: string; név: string; mentés_dátum: string }[] = [];
+              let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
               try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
               slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
               const relTime = (iso: string) => {
@@ -659,11 +659,11 @@ function App() {
                             setShowSlotList(false);
                           }
                         } catch { /* */ }
-                      }}>{karakter?.uid === s.uid ? '●' : '○'} {s.név || s.id_leíró || 'Névtelen'}</span>
+                      }}>{karakter?.uid === s.uid ? '●' : '○'} {s.név || 'Névtelen'}({s.tsz || '?'})</span>
                       <span style={{ fontSize: '11px', color: '#888', marginRight: '8px' }}>{relTime(s.mentés_dátum)}</span>
                       <span style={{ color: '#e53935', cursor: 'pointer', fontSize: '14px', fontWeight: 'bold' }} onClick={(e) => {
                         e.stopPropagation();
-                        setSlotDeleteTarget({ uid: s.uid, név: s.név || s.id_leíró || 'Névtelen' });
+                        setSlotDeleteTarget({ uid: s.uid, név: `${s.név || 'Névtelen'}(${s.tsz || '?'})` });
                       }}>✕</span>
                     </div>
                   ))}
@@ -689,7 +689,7 @@ function App() {
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
               const uid = slotDeleteTarget.uid;
               localStorage.removeItem(`szilank_char_${uid}`);
-              let sl: { uid: string; id_leíró: string; név: string; mentés_dátum: string }[] = [];
+              let sl: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
               try { sl = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
               sl = sl.filter(x => x.uid !== uid);
               localStorage.setItem('szilank_slots', JSON.stringify(sl));
