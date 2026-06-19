@@ -79,6 +79,7 @@
   flex-direction: column;
   gap: 2px;
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .aktiv-field-label {
