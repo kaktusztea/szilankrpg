@@ -177,11 +177,17 @@ function App() {
 
   // --- Undo Stack ---
   const UNDO_MAX = 6;
-  const [undoStack, setUndoStack] = useState<UndoEntry[]>([]);
+  const [undoStack, setUndoStack] = useState<UndoEntry[]>(() => {
+    try { const s = localStorage.getItem('szilank_undo'); return s ? JSON.parse(s) : []; } catch { return []; }
+  });
   const [showUndo, setShowUndo] = useState(false);
   const [undoSelected, setUndoSelected] = useState<number | null>(null);
   const karakterRef = useRef(karakter);
   karakterRef.current = karakter;
+
+  useEffect(() => {
+    localStorage.setItem('szilank_undo', JSON.stringify(undoStack));
+  }, [undoStack]);
 
   function pushUndo(leírás: string) {
     const k = karakterRef.current;
