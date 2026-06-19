@@ -270,7 +270,6 @@ function App() {
   const touchStart = useRef<number>(0);
   const touchY = useRef<number>(0);
   const [showNewConfirm, setShowNewConfirm] = useState(false);
-  const [showTestConfirm, setShowTestConfirm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
   const [showSlotList, setShowSlotList] = useState(false);
@@ -287,11 +286,11 @@ function App() {
   const indicatorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!showNewConfirm && !showTestConfirm && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowTestConfirm(false); setShowMenu(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); setShowSzilánkPicker(false); } }
+    if (!showNewConfirm && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowMenu(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); setShowSzilánkPicker(false); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showTestConfirm, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
+  }, [showNewConfirm, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
@@ -375,8 +374,8 @@ function App() {
   function duplicateKarakter() {
     if (!karakter) return;
     const bumpSuffix = (s: string) => {
-      const m = s.match(/^(.+):(\d+)$/);
-      return m ? `${m[1]}:${parseInt(m[2]) + 1}` : `${s}:2`;
+      const m = s.match(/^(.+) v(\d+)$/);
+      return m ? `${m[1]} v${parseInt(m[2]) + 1}` : `${s} v2`;
     };
     const newUid = generateUid();
     const newNév = bumpSuffix(karakter.név || 'Névtelen');
@@ -659,20 +658,7 @@ function App() {
         document.body
       )}
 
-      {showTestConfirm && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>Teszt karakter betöltése?</label>
-            <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
-              const refErr = validateKarakterData(data.testKarakter, data);
-              if (refErr) { setShowTestConfirm(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
-              setKarakter({ ...data.testKarakter, uid: data.testKarakter.uid || generateUid(), id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz), session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setTestMode(true); setShowTestConfirm(false);
-            }}>Betöltés</button>
-          </div>
-        </div>,
-        document.body
-      )}
+
 
       {showSlotList && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSlotList(false); }}>
@@ -718,7 +704,11 @@ function App() {
                   {slots.length === 0 && <span style={{ color: '#888', textAlign: 'center' }}>Nincs mentett karakter</span>}
                 </div>
                 <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-                  <button className="menu-item" style={{ flex: 1, fontSize: '13px', border: '1px solid #ff9800' }} onClick={() => { setShowSlotList(false); setShowTestConfirm(true); }}>🧪 Teszt</button>
+                  <button className="menu-item" style={{ flex: 1, fontSize: '13px', border: '1px solid #ff9800' }} onClick={() => {
+                    const refErr = validateKarakterData(data.testKarakter, data);
+                    if (refErr) { setShowSlotList(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
+                    setKarakter({ ...data.testKarakter, uid: data.testKarakter.uid || generateUid(), id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz), session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setTestMode(true); setShowSlotList(false);
+                  }}>🧪 Teszt</button>
                   <button className="menu-item" style={{ flex: 1, fontSize: '13px' }} onClick={() => { setShowSlotList(false); loadKarakter(); }}>📁 Fájlból...</button>
                 </div>
                 {slots.length >= 10 && <span style={{ fontSize: '11px', color: 'var(--warning)', textAlign: 'center' }}>Max 10 slot — töröld egy régit fájlba mentés után</span>}

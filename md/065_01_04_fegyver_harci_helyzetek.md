@@ -57,8 +57,9 @@ SP: fegyver eredeti sebzése - 5
 ## Hajítás nem dobásra készített tárgyakkal
 
 ```
-Hátrány-1 Sebzésdobásra
 Hátrány-1 CÉ dobásra
+Hátrány-1 Sebzésdobásra
+
 Fegyver CÉ = 0
 SP: -5 + k20 (FP vagy ÉP: KM dönt)
 ```
