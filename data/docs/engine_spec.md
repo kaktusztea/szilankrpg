@@ -1691,39 +1691,41 @@ Implementáció: az `undoTo()` visszaállításnál a `jegyzetek` és `napló` m
 
 ## §30 Local Storage Cache
 
-Az aktuális karakter állapot és undo stack automatikusan localStorage-ba mentődik.
+Az aktuális karakter állapot és undo stack automatikusan localStorage-ba mentődik (multi-slot rendszer, §31).
 
-### 30.1 Kulcsok (jelenlegi implementáció)
+### 30.1 Kulcsok
 
-| Key | Tartalom | Méret |
-|-----|----------|-------|
-| `szilank_karakter` | Teljes karakter JSON (session-nel együtt) | ~5-15KB |
-| `szilank_undo` | Undo stack tömb (max 6 entry × karakter snapshot) | ~30-90KB |
+| Key | Tartalom |
+|-----|----------|
+| `szilank_slots` | Slot lista: `{ uid, id_leíró, név, mentés_dátum }[]` (max 10) |
+| `szilank_char_{uid}` | Karakter JSON + `_undo` mező (undo stack integrálva) |
+| `szilank_active` | Aktív karakter uid-ja |
 
-note: §31 (multi-karakter) implementálásakor mindkét key megszűnik, helyüket a
-      `szilank_char_{uid}` (benne `_undo` mező) + `szilank_slots` + `szilank_active` veszi át.
+Migráció (backwards compat): ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba, régi kulcsok törlődnek.
 
 ### 30.2 Mentés
 
-- Minden `karakter` state változáskor: `szilank_karakter` felülíródik (`useEffect`)
-- Minden `undoStack` változáskor: `szilank_undo` felülíródik (`useEffect`)
+- Minden `karakter` vagy `undoStack` változáskor: `szilank_char_{uid}` felülíródik (`useEffect`)
+- `szilank_slots` frissül (név, id_leíró, mentés_dátum)
+- `_undo` a karakter JSON-ba integrálva (nem külön key)
 - Nincs debounce — minden módosítás azonnal ment
 
 ### 30.3 Betöltés (init)
 
-- App mount-kor: `szilank_karakter` → parse → `validateKarakter()` → ha valid, betölt
-- Ha invalid vagy nincs: `emptyKarakter` töltődik
-- `szilank_undo` → parse → undo stack inicializálás (ha van); ha nincs → üres stack
+- App mount-kor: `szilank_active` → uid → `szilank_char_{uid}` → parse → betölt
+- Ha nincs aktív: `emptyKarakter` + uid generálás
+- `_undo` mező → undo stack inicializálás
 
-### 30.4 Törlés
+### 30.4 Törlés / Reset
 
-- "Új karakter" gomb: `szilank_karakter` + `szilank_undo` törlődik (`removeItem`)
-- "Karakter betöltés" (fájl/teszt): felülíródik az új állapottal + undo stack reset
+- "Új karakter": új uid, új slot (régi megmarad a listában)
+- Slot törlés: `szilank_char_{uid}` eltávolítás + slots frissítés (TODO: UI)
+- Fájlba exportálás: `_undo` is belekerül a JSON-ba
 
 
 ---
 
-## §31 Multi-karakter mentés (TERV — NEM IMPLEMENTÁLT)
+## §31 Multi-karakter mentés
 
 ### 31.1 Karakter ID-k
 

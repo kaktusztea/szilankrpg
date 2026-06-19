@@ -353,9 +353,11 @@
 - Harci helyzetek kombinálása: szabályok tisztázása
 - Láthatatlan ellenfél taktika: kiszedve a yaml-ból, státuszként kezelni?
 - Ember (Szigetvilági) faj háttér hozzáadása (slan helyett)
-- ✅ Undo gomb + undo stack (↩ fejléc gomb, badge, overlay popup, max 6 entry, localStorage perzisztens)
-- ✅ Local Storage cache (szilank_karakter + szilank_undo, autosave, page reload megőrzés)
-- ✅ Karakter ID: uid (UUID) + id_leíró (slug, auto-frissül)
+- ✅ Undo gomb + undo stack (↩ fejléc gomb, badge, overlay popup, max 6 entry, `_undo` a karakter JSON-ban)
+- ✅ Multi-karakter localStorage (max 10 slot, `szilank_char_{uid}` + `szilank_slots` + `szilank_active`)
+- ✅ Karakter lista overlay ("Karakter betöltése" → slot lista, relatív idő, "Fájlból..." opció)
+- ✅ Karakter ID: uid (UUID, egyedi) + id_leíró (slug, auto-frissül név/TSz-ből)
+- ✅ Migráció: régi `szilank_karakter` single key → automatikus első slot import
 - ODS checker-ek implementálása (KP, limitek, stb.)
 - Faj misztérium képzettségek → Mágia fülre
 
