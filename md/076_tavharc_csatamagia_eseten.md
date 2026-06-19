@@ -44,7 +44,7 @@ Mágiatáv IV
  Osztó: 4
 ```
 
-A **Mágiatáv `I-IV`** valójában `1-1` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) fegyverválasztójában a fortély fokának megfelelő verzióját használd.
+A **Mágiatáv `I-IV`** valójában `1-1` virtuális "fegyver", amely `4` különböző értékkel rendelkezhet, a [Mágiatáv növelés](fortelyok.misztikus/magiatav_noveles.md) fortély fokától függően. A [Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/) fegyverválasztójában a fortély fokának megfelelő verzióját használd.
 
 A **Mágiatáv** szimulálja a (mágikus) távolsági "fegyver" kategóriákat ("tárgy, hajító, nyíl, nyílpuska").
 

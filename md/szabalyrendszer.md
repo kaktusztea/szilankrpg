@@ -1,13 +1,12 @@
-### **[Karakteralkotó](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/karakteralkoto_v9.3.2.ods?raw=true)** &nbsp; | &nbsp; **[Segédlet](https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true)**
-
-**[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md) • [Kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [Kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
+**[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md)\
+[Fortély](040_fortelyok.md) • [Kiterjesztés: általános](030_08_02_fortelyok_kepzettsegkiterjesztes_listaja.md) • [Kiterjesztés: harci](030_08_03_harci_fortelyok_kepzettsegkiterjesztes_listaja.md)
 
 ---
 ### 0. [Áttekintés, Bevezető](000_attekintes.md)
 ### 1. [Karakteralkotás](010_00_karakteralkotas.md)
 
 - [Karakteralkotás bevezető](010_01_karakteralkotas_bevezeto.md)
-- [Karakteralkotó ods](010_02_karakteralkoto_ods.md)
+- [Karakteralkotó webapp](010_02_karakteralkoto_webapp.md)
 - [A karakter jellemzői](010_03_00_karakter_jellemzoi.md)
   - [Kalandozók](010_03_01_kalandozok.md)
   - [Őrszemek](010_03_02_orszem_karakterek.md)

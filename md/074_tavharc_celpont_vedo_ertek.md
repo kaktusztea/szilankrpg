@@ -15,7 +15,7 @@ Célpont VÉ =
 - [Szorzó leírása](073_tavharc_ve_szorzo.md)
 - [Osztó, Cella leírása](072_tavharc_ve_oszto_cella.md)
 
-🔆 A fenti számítások automatizálva lettek a [Karakteralkotó](szabalyrendszer.md#karakteralkotó----segédlet) "**Harc**" fülén, így játék közben könnyen tudod kalkulálni a támadó `CÉ` és a célpont távolsági Védő Érték statisztikákat.
+🔆 A fenti számítások automatizálva lettek a [Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/) "**Távharc** (🏹)" fülén, így játék közben könnyen tudod kalkulálni a támadó `CÉ` és a célpont távolsági Védő Érték statisztikákat.
 
 <br />
 

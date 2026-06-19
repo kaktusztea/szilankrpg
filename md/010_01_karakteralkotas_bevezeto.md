@@ -2,7 +2,7 @@
 
 Milyen jellegűek a Szilánk karakterei?
 
-Fontos különbség más, hagyományos rendszerekhez képest, hogy a Szilánk karaktereinek **nincs kasztja**, sem alap tudáskészlete, így minden jellemzőjét neked kell meghatároznod nulláról - viszont ez sokkal nagyobb szabadságot is ad, még ha több számolással is jár. Ez utóbbiban nyújt hatalmas segítséget az automatizált [Karakteralkotó](010_02_karakteralkoto_ods.md).
+Fontos különbség más, hagyományos rendszerekhez képest, hogy a Szilánk karaktereinek **nincs kasztja**, sem alap tudáskészlete, így minden jellemzőjét neked kell meghatároznod nulláról - viszont ez sokkal nagyobb szabadságot is ad, még ha több számolással is jár. Ez utóbbiban nyújt hatalmas segítséget az automatizált [Karakteralkotó webapp](010_02_karakteralkoto_webapp.md).
 
 Mikor karaktert alkotsz, először fejben elképzeled a küllemét, a jellemét, a származását, hogy mihez ért, miben jó, milyen ismereteket tanult eddigi pályafutása során, majd jöhetnek a számokkal ennek megfeleltetett, modellezett jellemzői.
 
@@ -135,6 +135,6 @@ Az elvont és színesítő ismeretek felől haladunk a "tápos" irányba. A harc
 
 ---
 
-🔗 [Karakteralkotó ods](010_02_karakteralkoto_ods.md) →
+🔗 [Karakteralkotó webapp](010_02_karakteralkoto_webapp.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#1-karakteralkotás)
