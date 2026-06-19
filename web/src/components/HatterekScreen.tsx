@@ -7,19 +7,22 @@ interface Props {
   data: GameData;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
+  pushUndo: (leírás: string) => void;
   gameMode: boolean;
   onNavigate?: (tab: string) => void;
 }
 
-export function HatterekScreen({ data, karakter, setKarakter, gameMode, onNavigate }: Props) {
+export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode, onNavigate }: Props) {
 
   function handleTap(item: string, típus: 'leíró' | 'karma') {
     if (gameMode) return;
     if (típus === 'leíró') {
       const has = karakter.hátterek.leíró.includes(item);
+      pushUndo(`Háttér: ${item} ${has ? '❌' : '✓'}`);
       setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, leíró: has ? prev.hátterek.leíró.filter(h => h !== item) : [...prev.hátterek.leíró, item] } } : prev);
     } else {
       const has = karakter.hátterek.karma.includes(item);
+      pushUndo(`Karma: ${item} ${has ? '❌' : '✓'}`);
       setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, karma: has ? prev.hátterek.karma.filter(h => h !== item) : [...prev.hátterek.karma, item] } } : prev);
     }
   }
