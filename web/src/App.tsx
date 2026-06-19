@@ -291,11 +291,11 @@ function App() {
   const indicatorRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!showNewConfirm && !showSlotList && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowMenu(false); setShowSlotList(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); setShowSzilánkPicker(false); } }
+    if (!showNewConfirm && !showSlotList && !showUndo && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowMenu(false); setShowSlotList(false); setShowUndo(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); setShowSzilánkPicker(false); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showSlotList, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
+  }, [showNewConfirm, showSlotList, showUndo, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
