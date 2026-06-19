@@ -2531,7 +2531,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:célzás"
+            "feltétel": "harci_helyzet:célzás"
           }
         ]
       },
@@ -2563,7 +2563,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:célzás"
+            "feltétel": "harci_helyzet:célzás"
           }
         ]
       }
@@ -2685,7 +2685,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Fárasztás taktika alkalmazásakor: extra VÉ csökkentés bónusz az ellenfélen."
+          "Fárasztás taktika alkalmazásakor: extra +1 VÉ csökkentés bónusz az ellenfélen."
         ],
         "követelmény": "",
         "követelmények": [
@@ -2826,7 +2826,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:szörnyeteg_elleni_harc"
+            "feltétel": "harci_helyzet:szörnyeteg_elleni_harc"
           }
         ]
       }
@@ -2872,7 +2872,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:közönség_előtt"
+            "feltétel": "harci_helyzet:közönség_előtt"
           }
         ]
       }
@@ -3344,7 +3344,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:harci_szekér"
+            "feltétel": "harci_helyzet:harci_szekér"
           },
           {
             "cél": "VÉ",
@@ -3352,7 +3352,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:harci_szekér"
+            "feltétel": "harci_helyzet:harci_szekér"
           }
         ]
       },
@@ -3385,7 +3385,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:harci_szekér"
+            "feltétel": "harci_helyzet:harci_szekér"
           },
           {
             "cél": "VÉ",
@@ -3393,7 +3393,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:harci_szekér"
+            "feltétel": "harci_helyzet:harci_szekér"
           }
         ]
       }
@@ -3973,7 +3973,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:léglovas_harc"
+            "feltétel": "harci_helyzet:léglovas_harc"
           },
           {
             "cél": "VÉ",
@@ -3981,7 +3981,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:léglovas_harc"
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ]
       },
@@ -4006,7 +4006,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:léglovas_harc"
+            "feltétel": "harci_helyzet:léglovas_harc"
           },
           {
             "cél": "VÉ",
@@ -4014,7 +4014,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:léglovas_harc"
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ]
       },
@@ -4039,7 +4039,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:léglovas_harc"
+            "feltétel": "harci_helyzet:léglovas_harc"
           },
           {
             "cél": "VÉ",
@@ -4047,7 +4047,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:léglovas_harc"
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ]
       }
@@ -4099,7 +4099,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:lovas_harc"
+            "feltétel": "harci_helyzet:lovas_harc"
           },
           {
             "cél": "VÉ",
@@ -4107,7 +4107,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:lovas_harc"
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ]
       },
@@ -4143,7 +4143,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:lovas_harc"
+            "feltétel": "harci_helyzet:lovas_harc"
           },
           {
             "cél": "VÉ",
@@ -4151,7 +4151,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:lovas_harc"
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ]
       },
@@ -4187,7 +4187,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:lovas_harc"
+            "feltétel": "harci_helyzet:lovas_harc"
           },
           {
             "cél": "VÉ",
@@ -4195,7 +4195,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:lovas_harc"
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ]
       }
@@ -4839,7 +4839,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           },
           {
             "cél": "VÉ",
@@ -4847,7 +4847,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           },
           {
             "cél": "KÉ",
@@ -4855,7 +4855,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           }
         ]
       },
@@ -4886,7 +4886,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           },
           {
             "cél": "VÉ",
@@ -4894,7 +4894,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           },
           {
             "cél": "KÉ",
@@ -4902,7 +4902,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           }
         ]
       },
@@ -4933,7 +4933,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           },
           {
             "cél": "VÉ",
@@ -4941,7 +4941,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           },
           {
             "cél": "KÉ",
@@ -4949,7 +4949,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "szituáció:páros_harc"
+            "feltétel": "harci_helyzet:páros_harc"
           }
         ]
       }

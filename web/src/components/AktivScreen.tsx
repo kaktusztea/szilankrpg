@@ -18,7 +18,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
   const [taktikaFokválasztó, setTaktikaFokválasztó] = useState<string | null>(null);
   const [showHelyzetPicker, setShowHelyzetPicker] = useState(false);
-  const [showSzituácioPicker, setShowSzituácioPicker] = useState(false);
   const [showStátuszPicker, setShowStátuszPicker] = useState(false);
   const [státuszFokválasztó, setStátuszFokválasztó] = useState<string | null>(null);
   const [érzékválasztó, setÉrzékválasztó] = useState<string | null>(null);
@@ -27,11 +26,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
 
   useEffect(() => {
-    if (!showManőverPicker && !showTaktikaPicker && !showHelyzetPicker && !showSzituácioPicker && !showStátuszPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowManőverPicker(false); setShowTaktikaPicker(false); setTaktikaFokválasztó(null); setShowHelyzetPicker(false); setShowSzituácioPicker(false); setShowStátuszPicker(false); setStátuszFokválasztó(null); setÉrzékválasztó(null); } }
+    if (!showManőverPicker && !showTaktikaPicker && !showHelyzetPicker && !showStátuszPicker) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowManőverPicker(false); setShowTaktikaPicker(false); setTaktikaFokválasztó(null); setShowHelyzetPicker(false); setShowStátuszPicker(false); setStátuszFokválasztó(null); setÉrzékválasztó(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker, showSzituácioPicker, showStátuszPicker]);
+  }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker, showStátuszPicker]);
 
   // Fegyver nevek
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
@@ -226,7 +225,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   const aktívFeltételek = new Set<string>();
   for (const at of session.aktív_taktikák) { const def = data.taktikak.find(t => t.név === at.név); if (def) aktívFeltételek.add(def.feltétel_kulcs); }
   for (const h of session.aktív_helyzetek) { const def = data.harciHelyzetek.find(d => d.név === h); if (def) aktívFeltételek.add(def.feltétel_kulcs); }
-  for (const sz of session.aktív_szituációk) { const def = data.szituaciok.find(d => d.név === sz); if (def) aktívFeltételek.add(def.feltétel_kulcs); }
 
   for (const kf of karakter.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);
@@ -648,6 +646,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => (h as any).csoport === 'pozitív') },
                   { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => (h as any).csoport === 'semleges') },
                   { label: 'Negatív helyzet', color: '#f44336', items: filtered.filter(h => (h as any).csoport === 'negatív') },
+                  { label: 'Szituáció', color: '#ffd54f', items: filtered.filter(h => (h as any).csoport === 'szituáció') },
                 ];
                 const renderCard = (h: typeof data.harciHelyzetek[0]) => (
                 <div key={h.név} className="aktiv-picker-item" onClick={() => {
@@ -787,36 +786,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
         document.body
       )}
 
-      {/* Szituációk */}
-      <div className="aktiv-section">
-        <span className="aktiv-label">Szituációk</span>
-        {session.aktív_szituációk.map((s2, i) => (
-          <div key={i} className="aktiv-chip">
-            <span>{s2}</span>
-            <button className="aktiv-chip-x" onClick={() => { pushUndo(`Szituáció−: ${session.aktív_szituációk[i]}`); setSession(s => ({ ...s, aktív_szituációk: s.aktív_szituációk.filter((_, j) => j !== i) })); }}>✕</button>
-          </div>
-        ))}
-        <button className="aktiv-add-btn" disabled={data.szituaciok.every(s2 => session.aktív_szituációk.includes(s2.név))} onClick={() => setShowSzituácioPicker(true)}>+ Szituáció...</button>
-      </div>
-
-      {showSzituácioPicker && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSzituácioPicker(false); }}>
-          <div className="aktiv-picker">
-            <div className="aktiv-picker-header">
-              <label>Szituáció választó</label>
-            </div>
-            <div className="aktiv-picker-list">
-              {data.szituaciok.filter(s2 => !session.aktív_szituációk.includes(s2.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(s2 => (
-                <div key={s2.név} className="aktiv-picker-item" onClick={() => { pushUndo(`Szituáció: ${s2.név}`); setSession(s => ({ ...s, aktív_szituációk: [...s.aktív_szituációk, s2.név] })); setShowSzituácioPicker(false); }}>
-                  <span className="aktiv-picker-item-name">{s2.név}</span>
-                  <span className="aktiv-picker-item-hatas">{s2.infó}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
 
       {/* Narratív módosítók */}
       <div className="aktiv-section">

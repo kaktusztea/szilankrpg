@@ -92,7 +92,6 @@ export interface Session {
   aktív_páncél: boolean;
   aktív_taktikák: AktívTaktika[];
   aktív_helyzetek: string[];
-  aktív_szituációk: string[];
   aktív_manőver: string;
   aktív_státuszok: string[];
   narratív_módosítók: NarratívMódosító[];
@@ -151,7 +150,6 @@ export const DEFAULT_SESSION: Session = {
   aktív_páncél: true,
   aktív_taktikák: [],
   aktív_helyzetek: [],
-  aktív_szituációk: [],
   aktív_manőver: '',
   aktív_státuszok: [],
   narratív_módosítók: [],

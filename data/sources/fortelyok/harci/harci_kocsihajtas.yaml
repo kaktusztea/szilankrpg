@@ -36,13 +36,13 @@ fokok:
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "szituáció:harci_szekér"
+    feltétel: "harci_helyzet:harci_szekér"
   - cél: "VÉ"
     érték: 8
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "szituáció:harci_szekér"
+    feltétel: "harci_helyzet:harci_szekér"
 - fok: 2
   követelménytext: ""
   követelmények: 
@@ -61,12 +61,12 @@ fokok:
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "szituáció:harci_szekér"
+    feltétel: "harci_helyzet:harci_szekér"
   - cél: "VÉ"
     érték: 12
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "szituáció:harci_szekér"
+    feltétel: "harci_helyzet:harci_szekér"
 todo: 
 - text: ""

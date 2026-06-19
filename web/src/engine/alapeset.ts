@@ -50,7 +50,7 @@ function evaluateFeltétel(feltétel: string, session: Session, karakter: Karakt
     case 'harci_helyzet':
       return session.aktív_helyzetek.includes(érték);
     case 'szituáció':
-      return session.aktív_szituációk.includes(érték);
+      return session.aktív_helyzetek.includes(érték);
     case 'taktika':
       return session.aktív_taktikák.some(t => t.név === érték);
     case 'páncél':

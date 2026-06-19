@@ -73,10 +73,6 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     const def = data.harciHelyzetek.find(d => d.név === h);
     if (def) aktívFeltételek.add(def.feltétel_kulcs);
   }
-  for (const sz of session.aktív_szituációk) {
-    const def = data.szituaciok.find(d => d.név === sz);
-    if (def) aktívFeltételek.add(def.feltétel_kulcs);
-  }
 
   // Taktika módosítók kiszámítása az aktív taktikákból
   const taktikaMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0 };

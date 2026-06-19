@@ -38,13 +38,13 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:léglovas_harc"
+        feltétel: "harci_helyzet:léglovas_harc"
       - cél: "VÉ"
         érték: 3
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:léglovas_harc"
+        feltétel: "harci_helyzet:léglovas_harc"
   - fok: 2
     követelménytext: ""
     követelmények:
@@ -60,13 +60,13 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:léglovas_harc"
+        feltétel: "harci_helyzet:léglovas_harc"
       - cél: "VÉ"
         érték: 6
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:léglovas_harc"
+        feltétel: "harci_helyzet:léglovas_harc"
   - fok: 3
     követelménytext: ""
     követelmények:
@@ -82,13 +82,13 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:léglovas_harc"
+        feltétel: "harci_helyzet:léglovas_harc"
       - cél: "VÉ"
         érték: 9
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: "szituáció:léglovas_harc"
+        feltétel: "harci_helyzet:léglovas_harc"
 
 todo:
   - text: ""

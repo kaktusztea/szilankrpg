@@ -232,7 +232,7 @@ def generate_fajok():
     write_json('faj_tulajdonsag_keretek.json', keretek)
 
 
-def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
+def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
     """Validate aktív fül YAML sources against schemas."""
     errors = []
     # Taktikák
@@ -264,12 +264,6 @@ def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
         if not h.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
         if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
         if not h.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
-    # Szituációk
-    for i, s in enumerate(szituaciok):
-        ctx = f"szituációk[{i}] ({s.get('név', '?')})"
-        if not s.get('név'): errors.append(f"{ctx}: hiányzó 'név'")
-        if not s.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
-        if not s.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
     # Manőverek
     valid_tipus = {'általános', 'belharcos'}
     for i, m in enumerate(manoverek):
@@ -295,10 +289,9 @@ def validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek):
 
 
 def generate_aktiv_ful():
-    """taktikak.yaml, harci_helyzetek.yaml, szituaciok.yaml, manoverek.yaml, statuszok.yaml, hatas_operatorok.yaml, esemenyek.yaml, hatasok.yaml → JSON"""
+    """taktikak.yaml, harci_helyzetek.yaml, manoverek.yaml, statuszok.yaml, hatas_operatorok.yaml, esemenyek.yaml, hatasok.yaml → JSON"""
     taktikak = load_yaml(os.path.join(SOURCES_DIR, 'taktikak.yaml'))['taktikák']
     helyzetek = load_yaml(os.path.join(SOURCES_DIR, 'harci_helyzetek.yaml'))['harci_helyzetek']
-    szituaciok = load_yaml(os.path.join(SOURCES_DIR, 'szituaciok.yaml'))['szituációk']
     manoverek = load_yaml(os.path.join(SOURCES_DIR, 'manoverek.yaml'))['manőverek']
     hatas_operatorok = load_yaml(os.path.join(SOURCES_DIR, 'hatas_operatorok.yaml'))['hatás_operátorok']
     esemenyek = load_yaml(os.path.join(SOURCES_DIR, 'esemenyek.yaml'))['események']
@@ -306,7 +299,7 @@ def generate_aktiv_ful():
     hatasok = load_yaml(os.path.join(SOURCES_DIR, 'hatasok.yaml'))['hatások']
     hatterek = load_yaml(os.path.join(SOURCES_DIR, 'hatterek.yaml'))
 
-    validate_aktiv_ful(taktikak, helyzetek, szituaciok, manoverek)
+    validate_aktiv_ful(taktikak, helyzetek, [], manoverek)
     validate_hatasok(hatas_operatorok)
     validate_esemenyek(esemenyek)
     validate_statuszok(statuszok, hatas_operatorok, esemenyek)
@@ -317,12 +310,9 @@ def generate_aktiv_ful():
         t['feltétel_kulcs'] = f"taktika:{t['id']}"
     for h in helyzetek:
         h['feltétel_kulcs'] = f"harci_helyzet:{h['id']}"
-    for s in szituaciok:
-        s['feltétel_kulcs'] = f"szituáció:{s['id']}"
 
     write_json('taktikak.json', taktikak)
     write_json('harci_helyzetek.json', helyzetek)
-    write_json('szituaciok.json', szituaciok)
     write_json('manoverek.json', manoverek)
     write_json('hatas_operatorok.json', hatas_operatorok)
     write_json('esemenyek.json', esemenyek)

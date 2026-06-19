@@ -32,6 +32,6 @@ fokok:
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "szituáció:közönség_előtt"
+    feltétel: "harci_helyzet:közönség_előtt"
 todo: 
 - text: ""

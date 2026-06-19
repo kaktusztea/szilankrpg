@@ -37,7 +37,7 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "szituáció:célzás"
+    feltétel: "harci_helyzet:célzás"
 - fok: 1
   követelménytext: ""
   követelmények:
@@ -55,7 +55,7 @@ fokok:
     mód: flat
     forrás: ''
     arány: 0
-    feltétel: "szituáció:célzás"
+    feltétel: "harci_helyzet:célzás"
 
 todo:
 - text: ''
