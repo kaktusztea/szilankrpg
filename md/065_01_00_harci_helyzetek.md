@@ -46,6 +46,16 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Pusztakezes harc](065_01_04_fegyver_harci_helyzetek.md#pusztakezes-harc)
 - [Sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md#sebzéstípusok)
 
+### [Körülmények](065_01_05_korulmeny.md)
+
+- [Célzás](065_01_05_korulmeny.md#célzás)
+- [Harci szekér](065_01_05_korulmeny.md#harci-szekér)
+- [Közönség előtt](065_01_05_korulmeny.md#közönség-előtt)
+- [Léglovas harc](065_01_05_korulmeny.md#léglovas-harc)
+- [Lovas harc](065_01_05_korulmeny.md#lovas-harc)
+- [Páros harc](065_01_05_korulmeny.md#páros-harc)
+- [Szörnyeteg elleni harc](065_01_05_korulmeny.md#szörnyeteg-elleni-harc)
+
 ---
 
 🔗 [Harci taktikák](065_02_harci_taktikak.md) →

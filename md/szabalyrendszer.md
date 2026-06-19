@@ -151,6 +151,7 @@
   - [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
   - [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
   - [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
+  - [Körülmények](065_01_05_korulmeny.md)
 - [Harc alakzatban](065_03_harc_alakzatban.md)
 
 ### 6.6 [Manőverek](066_00_manoverek.md) 🎲
