@@ -151,14 +151,36 @@ function App() {
         return;
       }
       const saved = localStorage.getItem('szilank_karakter');
-      if (saved) {
+      // Migráció: régi single-key → multi-slot
+      if (saved && !localStorage.getItem('szilank_slots')) {
         try {
           const parsed = JSON.parse(saved);
           if (validateKarakter(parsed)) {
-            setKarakter({ ...parsed, uid: parsed.uid || ((parsed as any).id) || generateUid(), id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), session: { ...DEFAULT_SESSION, ...parsed.session } });
+            const uid = parsed.uid || ((parsed as any).id) || generateUid();
+            const migrated = { ...parsed, uid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), session: { ...DEFAULT_SESSION, ...parsed.session } };
+            localStorage.setItem(`szilank_char_${uid}`, JSON.stringify(migrated));
+            localStorage.setItem('szilank_slots', JSON.stringify([{ uid, id_leíró: migrated.id_leíró, név: migrated.név, mentés_dátum: new Date().toISOString() }]));
+            localStorage.setItem('szilank_active', uid);
+            localStorage.removeItem('szilank_karakter');
+            localStorage.removeItem('szilank_undo');
+            setKarakter(migrated);
             return;
           }
-        } catch { /* ignore parse error, fall through to empty */ }
+        } catch { /* fall through */ }
+      }
+      // Multi-slot betöltés
+      const activeUid = localStorage.getItem('szilank_active');
+      if (activeUid) {
+        const charData = localStorage.getItem(`szilank_char_${activeUid}`);
+        if (charData) {
+          try {
+            const parsed = JSON.parse(charData);
+            if (validateKarakter(parsed)) {
+              setKarakter({ ...parsed, uid: parsed.uid || activeUid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), session: { ...DEFAULT_SESSION, ...parsed.session } });
+              return;
+            }
+          } catch { /* fall through */ }
+        }
       }
       setKarakter({ ...d.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró("", d.emptyKarakter.tsz) });
     }).catch(e => setError(`Betöltési hiba: ${String(e)}`));
@@ -180,7 +202,26 @@ function App() {
     setKarakter(prev => prev ? { ...prev, session: typeof val === 'function' ? val(prev.session) : val } : prev);
   }, []);
 
-  // --- Autosave localStorage ---
+
+  // --- Undo Stack ---
+  const UNDO_MAX = 6;
+  const [undoStack, setUndoStack] = useState<UndoEntry[]>(() => {
+    try {
+      const activeUid = localStorage.getItem('szilank_active');
+      if (activeUid) {
+        const charData = localStorage.getItem(`szilank_char_${activeUid}`);
+        if (charData) { const p = JSON.parse(charData); return p._undo || []; }
+      }
+      // Fallback: régi kulcs
+      const s = localStorage.getItem('szilank_undo'); return s ? JSON.parse(s) : [];
+    } catch { return []; }
+  });
+  const [showUndo, setShowUndo] = useState(false);
+  const [undoSelected, setUndoSelected] = useState<number | null>(null);
+  const karakterRef = useRef(karakter);
+  karakterRef.current = karakter;
+
+  // --- Autosave localStorage (multi-slot) ---
   useEffect(() => {
     if (!karakter) return;
     const expectedLeíró = generateIdLeíró(karakter.név, karakter.tsz);
@@ -188,22 +229,17 @@ function App() {
       setKarakter(prev => prev ? { ...prev, id_leíró: expectedLeíró } : prev);
       return;
     }
-    localStorage.setItem('szilank_karakter', JSON.stringify(karakter));
-  }, [karakter]);
-
-  // --- Undo Stack ---
-  const UNDO_MAX = 6;
-  const [undoStack, setUndoStack] = useState<UndoEntry[]>(() => {
-    try { const s = localStorage.getItem('szilank_undo'); return s ? JSON.parse(s) : []; } catch { return []; }
-  });
-  const [showUndo, setShowUndo] = useState(false);
-  const [undoSelected, setUndoSelected] = useState<number | null>(null);
-  const karakterRef = useRef(karakter);
-  karakterRef.current = karakter;
-
-  useEffect(() => {
-    localStorage.setItem('szilank_undo', JSON.stringify(undoStack));
-  }, [undoStack]);
+    const toSave = { ...karakter, _undo: undoStack } as any;
+    localStorage.setItem(`szilank_char_${karakter.uid}`, JSON.stringify(toSave));
+    localStorage.setItem('szilank_active', karakter.uid);
+    let slots: { uid: string; id_leíró: string; név: string; mentés_dátum: string }[] = [];
+    try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { slots = []; }
+    const existing = slots.findIndex(s => s.uid === karakter.uid);
+    const entry = { uid: karakter.uid, id_leíró: karakter.id_leíró, név: karakter.név, mentés_dátum: new Date().toISOString() };
+    if (existing >= 0) slots[existing] = entry; else slots.unshift(entry);
+    slots = slots.slice(0, 10);
+    localStorage.setItem('szilank_slots', JSON.stringify(slots));
+  }, [karakter, undoStack]);
 
   function pushUndo(leírás: string) {
     const k = karakterRef.current;
@@ -231,6 +267,7 @@ function App() {
   const [showTestConfirm, setShowTestConfirm] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
+  const [showSlotList, setShowSlotList] = useState(false);
   const [loadError, setLoadError] = useState('');
   const [showFullscreenHint, setShowFullscreenHint] = useState(false);
   const [versionHint, setVersionHint] = useState('');
@@ -330,7 +367,7 @@ function App() {
     if (!karakter) return;
     const now = new Date();
     const dátum = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-    const saved = { ...karakter, mentés_dátum: dátum };
+    const saved = { ...karakter, mentés_dátum: dátum, _undo: undoStack } as any;
     const json = JSON.stringify(saved, null, 2);
     const blob = new Blob([json], { type: 'application/json' });
     const url = URL.createObjectURL(blob);
@@ -368,7 +405,7 @@ function App() {
             return;
           }
           setKarakter({ ...obj, uid: obj.uid || ((obj as any).id) || generateUid(), id_leíró: obj.id_leíró || generateIdLeíró(obj.név, obj.tsz), session: { ...DEFAULT_SESSION, ...obj.session } });
-          setUndoStack([]);
+          setUndoStack((obj as any)._undo || []);
         } catch {
           setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
         }
@@ -519,7 +556,7 @@ function App() {
       {showMenu && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '6px', minWidth: '200px' }}>
-            <button className="menu-item" onClick={() => { setShowMenu(false); loadKarakter(); }}>📂 Karakter betöltése</button>
+            <button className="menu-item" onClick={() => { setShowMenu(false); setShowSlotList(true); }}>📂 Karakter betöltése</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); saveKarakter(); }}>💾 Karakter mentése</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowNewConfirm(true); }}>📄 Új karakter</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowTestConfirm(true); }}>🧪 Teszt karakter</button>
@@ -555,7 +592,12 @@ function App() {
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>Új karakter?</label>
             <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) }); setUndoStack([]); localStorage.removeItem('szilank_karakter'); localStorage.removeItem('szilank_undo'); setShowNewConfirm(false); }}>Új karakter</button>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
+              const uid = generateUid();
+              setKarakter({ ...data.emptyKarakter, uid, id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
+              setUndoStack([]);
+              setShowNewConfirm(false);
+            }}>Új karakter</button>
           </div>
         </div>,
         document.body
@@ -571,6 +613,56 @@ function App() {
               if (refErr) { setShowTestConfirm(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
               setKarakter({ ...data.testKarakter, uid: data.testKarakter.uid || generateUid(), id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz), session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setShowTestConfirm(false);
             }}>Betöltés</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {showSlotList && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSlotList(false); }}>
+          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '8px', minWidth: '300px', maxHeight: '80vh', overflow: 'auto' }}>
+            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Karakter betöltése</label>
+            {(() => {
+              let slots: { uid: string; id_leíró: string; név: string; mentés_dátum: string }[] = [];
+              try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+              slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
+              const relTime = (iso: string) => {
+                const diff = Date.now() - new Date(iso).getTime();
+                if (diff < 60000) return 'most';
+                if (diff < 3600000) return `${Math.floor(diff / 60000)} perce`;
+                if (diff < 86400000) return `${Math.floor(diff / 3600000)} órája`;
+                if (diff < 604800000) return `${Math.floor(diff / 86400000)} napja`;
+                return `${Math.floor(diff / 604800000)} hete`;
+              };
+              return (<>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                  {slots.map(s => (
+                    <div key={s.uid} onClick={() => {
+                      const charData = localStorage.getItem(`szilank_char_${s.uid}`);
+                      if (!charData) return;
+                      try {
+                        const parsed = JSON.parse(charData);
+                        if (validateKarakter(parsed)) {
+                          setKarakter({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } });
+                          setUndoStack((parsed as any)._undo || []);
+                          setShowSlotList(false);
+                        }
+                      } catch { /* */ }
+                    }} style={{ padding: '8px 12px', borderRadius: '4px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                      background: karakter?.uid === s.uid ? '#2a3a2a' : 'var(--input-bg)', border: karakter?.uid === s.uid ? '1px solid var(--success)' : '1px solid #444' }}>
+                      <span style={{ fontWeight: karakter?.uid === s.uid ? 'bold' : 'normal' }}>{karakter?.uid === s.uid ? '●' : '○'} {s.név || s.id_leíró || 'Névtelen'}</span>
+                      <span style={{ fontSize: '11px', color: '#888' }}>{relTime(s.mentés_dátum)}</span>
+                    </div>
+                  ))}
+                  {slots.length === 0 && <span style={{ color: '#888', textAlign: 'center' }}>Nincs mentett karakter</span>}
+                </div>
+                <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
+                  <button className="menu-item" style={{ flex: 1, fontSize: '13px' }} onClick={() => { setShowSlotList(false); setShowNewConfirm(true); }}>+ Új karakter</button>
+                  <button className="menu-item" style={{ flex: 1, fontSize: '13px' }} onClick={() => { setShowSlotList(false); loadKarakter(); }}>📁 Fájlból...</button>
+                </div>
+                {slots.length >= 10 && <span style={{ fontSize: '11px', color: 'var(--warning)', textAlign: 'center' }}>Max 10 slot — töröld egy régit fájlba mentés után</span>}
+              </>);
+            })()}
           </div>
         </div>,
         document.body
