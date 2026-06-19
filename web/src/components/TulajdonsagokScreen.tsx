@@ -669,7 +669,7 @@ function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => vo
     function tick() {
       if (!holdRef.current.active) return;
       const elapsed = Date.now() - startTime;
-      const step = elapsed > 7000 ? 10 : 1;
+      const step = elapsed > 4000 ? 10 : 1;
       setValue(v => Math.max(1, Math.min(2000, v + dir * step)));
       delay = Math.max(30, delay * 0.82);
       holdRef.current.timer = setTimeout(tick, delay);
