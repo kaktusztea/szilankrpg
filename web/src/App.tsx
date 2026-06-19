@@ -274,6 +274,8 @@ function App() {
   const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
   const [showSlotList, setShowSlotList] = useState(false);
   const [slotDeleteTarget, setSlotDeleteTarget] = useState<{ uid: string; név: string } | null>(null);
+  const [showSavePopup, setShowSavePopup] = useState(false);
+  const [saveFile, setSaveFile] = useState<{ blob: Blob; filename: string } | null>(null);
   const [loadError, setLoadError] = useState('');
   const [showFullscreenHint, setShowFullscreenHint] = useState(false);
   const [versionHint, setVersionHint] = useState('');
@@ -292,7 +294,7 @@ function App() {
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
-      if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); saveKarakter(); }
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); setShowSavePopup(true); }
     }
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
@@ -369,25 +371,54 @@ function App() {
   }
 
   // --- Save / Load ---
-  function saveKarakter() {
+  function generateSaveFile(mode: 'single' | 'backup') {
     if (!karakter) return;
     const now = new Date();
     const dátum = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-    const saved = { ...karakter, mentés_dátum: dátum, _undo: undoStack } as any;
-    const json = JSON.stringify(saved, null, 2);
+
+    let json: string;
+    let filename: string;
+
+    if (mode === 'single') {
+      const saved = { ...karakter, mentés_dátum: dátum, _undo: undoStack } as any;
+      json = JSON.stringify(saved, null, 2);
+      const firstName = (karakter.név || 'karakter').split(' ')[0].slice(0, 20);
+      const charAscii = firstName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z]/g, '').toLowerCase();
+      const playerFirst = karakter.játékos ? karakter.játékos.split(' ')[0].slice(0, 20) : '';
+      const playerAscii = playerFirst.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z]/g, '').toLowerCase();
+      const namePart = playerAscii ? `${charAscii || 'karakter'}_${playerAscii}` : (charAscii || 'karakter');
+      filename = `${namePart}_${karakter.tsz}tsz.json`;
+    } else {
+      // Backup: összes slot
+      let slots: { uid: string }[] = [];
+      try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+      const karakterek = slots.map(s => {
+        try { return JSON.parse(localStorage.getItem(`szilank_char_${s.uid}`) || 'null'); } catch { return null; }
+      }).filter(Boolean);
+      const backup = { szilánk_backup: true, verzió: 1, dátum: now.toISOString(), karakterek };
+      json = JSON.stringify(backup, null, 2);
+      filename = `szilank_backup_${now.toISOString().slice(0, 10)}.json`;
+    }
+
     const blob = new Blob([json], { type: 'application/json' });
+    setSaveFile({ blob, filename });
+    setShowSavePopup(false);
+  }
+
+  function downloadFile(blob: Blob, filename: string) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    // Filename: first name (max 20 char) + optional játékos first name, ascii lowercase, no spaces + _Xtsz.json
-    const firstName = (karakter.név || 'karakter').split(' ')[0].slice(0, 20);
-    const charAscii = firstName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z]/g, '').toLowerCase();
-    const playerFirst = karakter.játékos ? karakter.játékos.split(' ')[0].slice(0, 20) : '';
-    const playerAscii = playerFirst.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z]/g, '').toLowerCase();
-    const namePart = playerAscii ? `${charAscii || 'karakter'}_${playerAscii}` : (charAscii || 'karakter');
-    a.download = `${namePart}_${karakter.tsz}tsz.json`;
+    a.download = filename;
     a.click();
     URL.revokeObjectURL(url);
+  }
+
+  async function shareFile(blob: Blob, filename: string) {
+    const file = new File([blob], filename, { type: 'application/json' });
+    try {
+      await navigator.share({ files: [file] });
+    } catch { /* user cancelled or not supported */ }
   }
 
   function loadKarakter() {
@@ -435,10 +466,7 @@ function App() {
         <div className="header-btns">
                     <button className="gear-btn" onClick={() => setOverlayScreen('naplo')}>📅</button>
           <button className="gear-btn" onClick={() => setOverlayScreen('jegyzetek')}>✏️</button>
-          <button className="gear-btn" onClick={() => setShowMenu(true)}>⚙️</button>
-          <button className="gear-btn" disabled={undoStack.length === 0} style={{ position: 'relative', opacity: undoStack.length === 0 ? 0.4 : 1 }} onClick={() => { setShowUndo(true); setUndoSelected(null); }}>
-            ↩{undoStack.length > 0 && <span style={{ position: 'absolute', top: '-2px', right: '-2px', fontSize: '9px', background: '#e53935', color: '#fff', borderRadius: '50%', width: '14px', height: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{undoStack.length}</span>}
-          </button>
+          <button className="gear-btn" style={{ padding: '4px 12px' }} onClick={() => setShowMenu(true)}>⚙️</button>
           <button
             className="mode-toggle"
             style={{ background: gameMode ? '#4caf50' : '#ff9800', color: '#000' }}
@@ -563,8 +591,9 @@ function App() {
       {showMenu && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '6px', minWidth: '200px' }}>
-            <button className="menu-item" onClick={() => { setShowMenu(false); setShowSlotList(true); }}>📂 Karakter betöltése</button>
-            <button className="menu-item" onClick={() => { setShowMenu(false); saveKarakter(); }}>💾 Karakter mentése</button>
+            <button className="menu-item" disabled={undoStack.length === 0} style={{ opacity: undoStack.length === 0 ? 0.4 : 1 }} onClick={() => { setShowMenu(false); setShowUndo(true); setUndoSelected(null); }}>↩ Visszavonás{undoStack.length > 0 ? ` (${undoStack.length})` : ''}</button>
+            <button className="menu-item" onClick={() => { setShowMenu(false); setShowSlotList(true); }}>📂 Karakterek</button>
+            <button className="menu-item" onClick={() => { setShowMenu(false); setShowSavePopup(true); }}>💾 Mentés</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowNewConfirm(true); }}>📄 Új karakter</button>
             {document.fullscreenEnabled && (
               <button className="menu-item" onClick={() => { setShowMenu(false); if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }}>
@@ -629,7 +658,7 @@ function App() {
       {showSlotList && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSlotList(false); }}>
           <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '8px', minWidth: '300px', maxHeight: '80vh', overflow: 'auto' }}>
-            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Karakter betöltése</label>
+            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Karakterek</label>
             {(() => {
               let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
               try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
@@ -701,6 +730,31 @@ function App() {
               }
               setSlotDeleteTarget(null);
             }}>Törlés</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {showSavePopup && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSavePopup(false); }}>
+          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '10px', minWidth: '260px' }}>
+            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Mentés</label>
+            <button className="menu-item" onClick={() => generateSaveFile('single')}>📄 Aktuális karakter</button>
+            <button className="menu-item" onClick={() => generateSaveFile('backup')}>📦 Összes karakter (backup)</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {saveFile && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setSaveFile(null); }}>
+          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '10px', minWidth: '260px' }}>
+            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Fájl kész</label>
+            <span style={{ fontSize: '12px', color: '#888', textAlign: 'center' }}>{saveFile.filename}</span>
+            {typeof navigator.share === 'function' && (
+              <button className="menu-item" onClick={() => { shareFile(saveFile.blob, saveFile.filename); setSaveFile(null); }}>📤 Megosztás</button>
+            )}
+            <button className="menu-item" onClick={() => { downloadFile(saveFile.blob, saveFile.filename); setSaveFile(null); }}>💾 Helyi mentés</button>
           </div>
         </div>,
         document.body
