@@ -218,6 +218,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
   // Fortély emlékeztetők: harci fortélyok amelyeknek van hatástext de nincs gépi módosító
   const fortélyEmlékeztetők: { név: string; fok: number; hatás: string }[] = [];
+  const helyzetFortélyok = new Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>();
   const manőverBónuszok: { név: string; manőver: string; érték: number }[] = [];
   const előnyHátrányMods: { név: string; cél: string; mód: string; érték: number }[] = [];
 
@@ -232,6 +233,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef) continue;
     const hasMods = fokDef.módosítók && Array.isArray(fokDef.módosítók) && fokDef.módosítók.length > 0;
+    let helyzetKötés = '';
     if (hasMods) {
       for (const mod of fokDef.módosítók) {
         if (mod.feltétel && mod.feltétel !== '' && !aktívFeltételek.has(mod.feltétel)) continue;
@@ -241,9 +243,17 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
         if (mod.mód === 'előny' || mod.mód === 'hátrány') {
           előnyHátrányMods.push({ név: kf.név, cél: mod.cél, mód: mod.mód, érték: mod.érték });
         }
+        if (mod.feltétel && mod.feltétel.startsWith('harci_helyzet:')) {
+          helyzetKötés = mod.feltétel.slice(14);
+        }
       }
     }
-    if (def.emlékeztető && fokDef.hatás && fokDef.hatás.length > 0) {
+    if (helyzetKötés && def.emlékeztető && fokDef.hatás?.length) {
+      const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${helyzetKötés}`)?.név || helyzetKötés;
+      const arr = helyzetFortélyok.get(hNév) || [];
+      arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' '), aktív: aktívFeltételek.has(`harci_helyzet:${helyzetKötés}`) });
+      helyzetFortélyok.set(hNév, arr);
+    } else if (def.emlékeztető && fokDef.hatás && fokDef.hatás.length > 0) {
       fortélyEmlékeztetők.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' ') });
     }
   }
@@ -395,7 +405,15 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 {session.aktív_helyzetek.map((h, i) => {
                   const def = data.harciHelyzetek.find(d => d.név === h);
                   if (!def) return null;
-                  return <span key={i} className="hatas-pool-item"><strong style={{ color: '#42a5f5' }}>{def.név}:</strong> {def.infó || '–'}</span>;
+                  const kötöttFortélyok = helyzetFortélyok.get(h) || [];
+                  return <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span className="hatas-pool-item"><strong style={{ color: '#42a5f5' }}>{def.név}:</strong> {def.infó || '–'}</span>
+                    {kötöttFortélyok.map((kf, j) => (
+                      <span key={j} className="hatas-pool-item" style={{ paddingLeft: '12px', color: kf.aktív ? '#66bb6a' : '#888' }}>
+                        → {kf.név} ({kf.fok}): {kf.hatás}{kf.aktív ? ' ✔' : ''}
+                      </span>
+                    ))}
+                  </div>;
                 })}
               </div>
             </div>
