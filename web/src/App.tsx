@@ -140,6 +140,16 @@ function App() {
         setError(`empty_karakter.json referencia hiba: ${refErr}`);
         return;
       }
+      const saved = localStorage.getItem('szilank_karakter');
+      if (saved) {
+        try {
+          const parsed = JSON.parse(saved);
+          if (validateKarakter(parsed)) {
+            setKarakter({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } });
+            return;
+          }
+        } catch { /* ignore parse error, fall through to empty */ }
+      }
       setKarakter(d.emptyKarakter);
     }).catch(e => setError(`Betöltési hiba: ${String(e)}`));
   }, []);
@@ -159,6 +169,11 @@ function App() {
   const setSession = useCallback((val: Session | ((prev: Session) => Session)) => {
     setKarakter(prev => prev ? { ...prev, session: typeof val === 'function' ? val(prev.session) : val } : prev);
   }, []);
+
+  // --- Autosave localStorage ---
+  useEffect(() => {
+    if (karakter) localStorage.setItem('szilank_karakter', JSON.stringify(karakter));
+  }, [karakter]);
 
   // --- Undo Stack ---
   const UNDO_MAX = 6;
