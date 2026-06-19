@@ -475,6 +475,8 @@ note: feltétel == "" → mindig aktív (karakterlap számolja).
 impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexével.
       Sok fortélynál nincs fok:0 (alapeset), csak fok:1-től indul.
       A lookup tehát: fortély_def.fokok.find(f → f.fok == kf.fok), NEM fokok[kf.fok].
+      Könyvtár struktúra: `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml`
+      A `tavharc/` mappából jövők `alcsoport: "tavharc"` mezőt kapnak a JSON-ban (picker csoport: "🏹 Távharc").
       Scaled mód — `forrás` lehetséges értékei:
         - Képzettség név (kisbetű): pl. "akrobatika" → a karakter képzettség szintje
         - Számított érték: pl. "erőbónusz" → min(erő, fegyver.erőbónusz_limit)
@@ -731,10 +733,10 @@ note: A faj_misztérium mező megmondja, melyik Faj Misztérium képzettséget v
 
 ---
 
-## 21. Aktív fül — Taktikák, Manőverek, Helyzetek, Szituációk
+## 21. Aktív fül — Taktikák, Manőverek, Helyzetek
 
 Az Aktív fülön választható elemek és módosítóik összefoglalása.
-UI szekció sorrend: Taktikák → Manőver → Harci helyzetek → Státuszok → Szituációk → Narratív.
+UI szekció sorrend: Taktikák → Manőver → Harci helyzetek (+ Körülmények) → Státuszok → Narratív.
 A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "taktika:roham"` stb.
 
 ### Implementációs illeszkedés
@@ -742,13 +744,13 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika: módosítók, fokok, kombó szabályok)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (32 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
-- `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció: id, infó)
+- `data/sources/szituaciok.yaml` TÖRÖLVE — 7 körülmény a `harci_helyzetek.yaml`-ba olvadt (`csoport: "körülmény"`)
 - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: id, nehézség, fázisok, hatás)
 
 ID és feltétel_kulcs konvenció:
 - YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)
 - JSON-ban: `id` + `feltétel_kulcs` (generált: `"{prefix}:{id}"`)
-- Prefixek: taktika → `"taktika:{id}"`, harci_helyzet → `"harci_helyzet:{id}"`, szituáció → `"szituáció:{id}"`
+- Prefixek: taktika → `"taktika:{id}"`, harci_helyzet → `"harci_helyzet:{id}"` (körülmények is ide tartoznak). `szituáció:` prefix backward-compat.
 - Manőverek: `id` mező (referencia fortély módosítók `manőver:{id}` céljához)
 - Validáció: id egyediség + fortély `manőver:X` → manőver id referenciális ellenőrzés (build-time)
 
@@ -761,7 +763,7 @@ Fokozatos taktikák: `fokozatos: true` → `fokok[]` tömb (pl. Támadó fok:1..
 Session state bővítés (types.ts Session interface):
 - `aktív_taktikák: { név: string, fok?: number }[]` (több kombó, fokozatos taktikáknál fok)
 - `aktív_helyzetek: string[]` (több helyzet egyszerre)
-- `aktív_szituációk: string[]` (új mező)
+- `aktív_szituációk` mező TÖRÖLVE — körülmények a `aktív_helyzetek[]`-ben
 - `aktív_manőver: string` (max 1, marad)
 
 Kalkuláció két rétege:
@@ -771,6 +773,9 @@ Kalkuláció két rétege:
    `feltétel.split(':')` → prefix (taktika/harci_helyzet/szituáció/fegyver) → session tömbben keresés
 
 Harci helyzetek: NEM kalkuláltak (komplex hatások) — Hatás pool-ban az `infó` mező jelenik meg + §16 feltétel dispatch.
+  Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva megjelenik: `→ Fortély (fok): hatástext ✔`
+  Ha a fortély aktív (feltétel teljesül): zöld szín + ✔. Ha nem: szürke.
+  Alapeset (0.fok) hatástext hozzáfűződik az infó szöveghez: `"infó; Alapeset: hatástext"`
 Manőverek: NEM adnak statikus módosítókat — informatív (nehézség, fázisok, hatás megjelenítés).
 UI: Manőver szekció `aktiv-label` fejléccel (mint Taktikák/Helyzetek).
 Taktikák Hatás pool: módosítók zölddel + ✔ jel a végén (beszámított jelzés).
@@ -895,7 +900,7 @@ note: "Kétkezes harc" és "Merevvért 70%" eltávolítva a szituáció dropdown
 
 ---
 
-### 21.3b Szituáció → Harci helyzet beolvasztás — TERV
+### 21.3b Szituáció → Körülmény harci helyzet beolvasztás — IMPLEMENTÁLT
 
 A szituációk külön rendszere megszűnik. Minden szituáció harci helyzetté válik, 4. csoportként.
 
@@ -1743,11 +1748,10 @@ Session állapot visszavonás mechanizmus.
 
 ### 29.2 UI
 
-**Gomb:**
-- Fejléc sávban (App header), a Szerk/Game toggle mellett
-- Ikon: ↩
-- Disabled ha a stack üres
-- Badge: stack mérete (1-6 szám)
+**Menüpont:**
+- ⚙️ Beállítások menü legfelső eleme: "↩ Visszavonás (N)"
+- Disabled ha a stack üres (szürke, nem kattintható)
+- N = stack mérete (1-6)
 
 **Overlay popup (gombra kattintva):**
 ```
@@ -1863,7 +1867,7 @@ Az aktuális karakter állapot és undo stack automatikusan localStorage-ba ment
 
 | Key | Tartalom |
 |-----|----------|
-| `szilank_slots` | Slot lista: `{ uid, id_leíró, név, mentés_dátum }[]` (max 10) |
+| `szilank_slots` | Slot lista: `{ uid, id_leíró, név, tsz, mentés_dátum }[]` (max 10) |
 | `szilank_char_{uid}` | Karakter JSON + `_undo` mező (undo stack integrálva) |
 | `szilank_active` | Aktív karakter uid-ja |
 
@@ -1872,9 +1876,11 @@ Migráció (backwards compat): ha `szilank_karakter` (régi single key) létezik
 ### 30.2 Mentés
 
 - Minden `karakter` vagy `undoStack` változáskor: `szilank_char_{uid}` felülíródik (`useEffect`)
-- `szilank_slots` frissül (név, id_leíró, mentés_dátum)
+- `szilank_slots` frissül (uid, id_leíró, név, tsz, mentés_dátum)
 - `_undo` a karakter JSON-ba integrálva (nem külön key)
 - Nincs debounce — minden módosítás azonnal ment
+- Guard: `if (!karakter || testMode || !isDirty) return`
+- Quota exceeded: `try/catch` — silent fail (nem crashel ha localStorage tele)
 
 ### 30.3 Betöltés (init)
 

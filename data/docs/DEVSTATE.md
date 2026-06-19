@@ -271,7 +271,7 @@
 - ✅ Aktív fül adatforrások (YAML → JSON):
   - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika, kombó_mód/lista, fokozatos, megkötések)
   - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (31 helyzet, id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek[id-k])
-  - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció)
+  - `data/sources/szituaciok.yaml` TÖRÖLVE → 7 körülmény beolvadt `harci_helyzetek.yaml`-ba (`csoport: "körülmény"`)
   - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver, nehézség, fázisok, hatás)
   - `data/sources/statuszok.yaml` → `tables/statuszok.json` (19 státusz, kategória, fokok+alcím+strukturált hatások)
   - `data/sources/hatas_operatorok.yaml` → `tables/hatas_operatorok.json` (8 hatás mechanika típus)
@@ -289,9 +289,9 @@
   - Taktika chip: kétsoros (felül név+fok bold, alul módosítók szürkén pl. "TÉ:+2 VÉ:-4")
   - Taktika megkötések: harci_helyzet/tiltott, harcmodor/tiltott, támadások/min runtime validáció
   - Manőver: overlay picker (Általános/Belharci kategóriák, nehézség+fázisok+hatás), infó a box-ban (Nehézség+fázisok | hatás)
-  - Szekció sorrend: Fegyver+Fogás (felül) → Hatás pool → Taktikák → Manőver → Harci helyzetek → Státuszok → Szituációk → Narratív módosítók
+  - Szekció sorrend: Fegyver+Fogás (felül) → Hatás pool → Taktikák → Manőver → Harci helyzetek → Státuszok → Narratív módosítók
   - Harci helyzetek: overlay picker (név + infó, ABC)
-  - Szituációk: overlay picker (név + infó, ABC)
+  - Körülmények: harci helyzet picker 4. csoport (arany `#ffd54f`), korábban külön szituáció picker
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
   - Hatás pool box (8 szekció): Taktikák | Harci helyzetek | Státusz hatások | Manőver bónuszok | Előny/Hátrány | Fortély bónuszok | Alapesetek | Narratív módosítók
   - Narratív módosítók: "+ Új" gomb → overlay popup (Hátrány/Előny gombok + szöveg + OK, Enter = OK)
@@ -309,7 +309,7 @@
   - Nem-fokozatos taktikáknál a `módosítók` mezőből olvas
   - KÉ box, fegyvertábla TÉ/VÉ/SP és VÉ max csökkenés mind reagál
 - ✅ §16 feltételes fortély módosítók
-  - Session aktív taktikák/helyzetek/szituációk feltétel kulcsai alapján aktiválódnak
+  - Session aktív taktikák/helyzetek feltétel kulcsai alapján aktiválódnak (körülmények is helyzetek)
   - `aktívFeltételek` Set: összegyűjti az aktív `feltétel_kulcs` értékeket (taktika, harci_helyzet, szituáció)
   - Fortély módosítók ahol `feltétel` egyezik → bekerülnek a harcérték kalkulációba
   - Érintett fortélyok: Belharc, Elsöprő roham, Fárasztás, Fegyverrántás, Gladiátor (Bestiái/Közönsége), Célzás, Harci anatómia (orvtámadás)
@@ -342,7 +342,7 @@
 
 ## Elkészült mérföldkövek
 1. ✅ Taktika kombó inkonzisztencia (szimmetrizálva, megkötések felvíve)
-2. ✅ Aktív fül (taktika/helyzet/szituáció/manőver/státusz picker, Hatás pool, narratív módosítók, fegyver jobb/bal/kétkezes)
+2. ✅ Aktív fül (taktika/helyzet/körülmény/manőver/státusz picker, Hatás pool, narratív módosítók, fegyver jobb/bal/kétkezes)
 3. ✅ Hátterek fül (szövegfelhő, data layer-ből)
 4. ✅ Fortély követelmény ellenőrzés (§25 engine_spec, yaml-ok kitöltve, UI: piros jelzés + info)
 5. ✅ Fegyverfogás rendszer (§27: picker, hárítófegyver beolvasztás, lila összesítő sor, Fegyver schema Hárító flag)
@@ -354,11 +354,11 @@
 - Harci helyzetek kombinálása: szabályok tisztázása
 - Láthatatlan ellenfél taktika: kiszedve a yaml-ból, státuszként kezelni?
 - Ember (Szigetvilági) faj háttér hozzáadása (slan helyett)
-- ✅ Undo gomb + undo stack (↩ fejléc gomb, badge, overlay popup, max 6 entry, `_undo` a karakter JSON-ban)
+- ✅ Undo stack (↩ Visszavonás menüpont, overlay popup, max 6 entry, `_undo` a karakter JSON-ban)
 - ✅ Multi-karakter localStorage (max 10 slot, `szilank_char_{uid}` + `szilank_slots` + `szilank_active`)
 - ✅ Karakter lista overlay ("Karakterek" menüpont, `{név} ({tsz}sz)` + relatív idő + ✕ törlés + 🧪 Teszt + 📁 Fájlból)
 - ✅ Karakter ID: uid (UUID, egyedi) + id_leíró (slug, auto-frissül név/TSz-ből)
-- ✅ Duplikálás (📋 menüpont): deep clone, új uid, név:2 suffix, Karakterek ablak nyílik
+- ✅ Duplikálás (📋 menüpont): deep clone, új uid, név " v2" suffix, Karakterek ablak nyílik
 - ✅ Mentés overlay (💾): "Aktuális karakter" / "Összes (backup)" → "Megosztás" (share sheet) / "Helyi mentés"
 - ✅ Teszt mód: teszt karakter nem mentődik, "Szilánk" label narancssárga
 - ✅ isDirty flag: új karakter nem mentődik amíg nincs módosítás
@@ -396,7 +396,7 @@ Szabályrendszer átszervezés és webapp implementáció kész.
 - Rejtett elemek (Pengeelőny, Pengehátrány, Pusztakezes, Képzetlen) nem jelennek meg a picker-ben
 - Készületlenség beolvadt Meglepetésbe (törölve)
 - VÉ csökkentés egyszerűsítés: k20T (Pengehátrány), 1+k20T (Alappenge), 2+k20T (Pengeelőny)
-- Hatás pool: mindig `infó` mező jelenik meg (nem a hatások[] struktúra)
+- Hatás pool: `infó` mező + alapeset hozzáfűzés + fortély bónusz alatta (→ jelöléssel, zöld ha aktív ✔)
 - Taktikák hatás pool: zöld módosítók végén ✔ jel (beszámított)
 - Manőver szekció: label kiemelve (aktiv-label, mint Taktikák/Helyzetek)
 
@@ -457,14 +457,22 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 
 ### Harc fül
 - ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: lila összesítő sor (kétkezes/pajzs/hárító).
+- ✅ Szituáció → Körülmény beolvasztás: `szituaciok.yaml` törölve, 7 körülmény `harci_helyzetek.yaml`-ban, `session.aktív_szituációk` törölve, picker 4. csoport
+- ✅ Távharc fortélyok data layer: `fortelyok/tavharc/` mappa (9 fortély yaml), "🏹 Távharc" picker csoport (`alcsoport` mező)
+- ✅ Hatás pool: harci helyzet alatti fortély bónusz (`→ Fortély (fok): hatás ✔`), alapeset 0.fok hozzáfűzés az infóhoz
+- ✅ Backtick → monospace formázás: `fmtCode()` helper (AktivScreen + FortelyokScreen), Harc fül számok monospace
+- ✅ localStorage quota exceeded: try/catch (silent fail, nem crashel)
+- ✅ Hárítófegyver VÉ: fortély-ellenőrzés (`hasHárítóFortély`) — nincs fortély → hárítóVÉ = 0
+- ✅ Teszt karakter: megerősítő popup eltávolítva (közvetlen betöltés)
 - Lovas harc
 
 ## Fontos konvenciók
 - Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`
 - Feltétel típusok: string (session dispatch: `"taktika:X"`, `"harci_helyzet:Y"`) VAGY lista (kalkulált: `[{forrás, operátor, érték}]`)
-- Feltétel prefixek (string): `szituáció:`, `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `manőver:`, `státusz:`
+- Feltétel prefixek (string): `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `fegyverfogás:`, `páncél:`, `manőver:`, `státusz:`, `szituáció:` (backward-compat)
 - ID konvenció: YAML-ban `id` mező (snake_case, ékezetes). JSON-ban generált `feltétel_kulcs: "{prefix}:{id}"`. Manőver id: fortély `manőver:{id}` cél referencia.
 - Kalkulált feltétel forrásai: session mezők + reactive engine computed + ctx (generikus lookup, nincs hardcode)
+- `engine/alapeset.ts`: `evaluateAlapesetek()` + `evaluateFeltétel()` — 0.fok kiértékelés, prefix dispatch
 - Követelmények: elemek között ÉS, egy elem név listája VAGY
 - Mesterfegyver NEM számít a max HM-be
 - Manőver Pont: `CEIL(harcmodor_összeg x 2 / tsz)`

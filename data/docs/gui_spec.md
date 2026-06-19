@@ -70,12 +70,11 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - 📅 Napló overlay gomb (mindkét mód)
   - ✏️ Jegyzetek overlay gomb (mindkét mód)
-  - ⚙️ Menü gomb: overlay popup (↩ Visszavonás / 📂 Karakterek / 📋 Duplikál / 💾 Mentés / 📄 Új karakter / Teljes képernyő)
-  - ↩ Undo gomb: disabled ha stack üres, badge (piros kör, 9px) mutatja a stack méretét (1-6). Kattintás → undo overlay.
+  - ⚙️ Menü gomb (20% szélesebb padding): overlay popup (↩ Visszavonás / 📂 Karakterek / 📋 Duplikál / 💾 Mentés / 📄 Új karakter / Teljes képernyő)
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 1000ms fade
 - ⚙️ menü popup: `.menu-item` gombok (centered szöveg, `padding: 10px 16px`)
   - Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup (iOS/Android specifikus szöveg)
-- Megerősítő popup-ok (Új/Teszt): overlay, centered, label (bold) + dim szöveg + piros gomb
+- Megerősítő popup-ok (Új karakter): overlay, centered, label (bold) + dim szöveg + piros gomb
 - Betöltési hiba popup: piros "Betöltési hiba" label + hibaüzenet + OK gomb
 
 ### Undo overlay
@@ -92,7 +91,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - `szilank_active`: aktív karakter uid
 - Autosave: minden karakter/undo változáskor, ha `isDirty=true` és nem testMode
 - "Új karakter": isDirty=false → nem mentődik amíg módosítás nem történik
-- "Duplikál": deep clone, új uid, név:2 suffix, Karakterek ablak megnyílik
+- "Duplikál": deep clone, új uid, név " v2" suffix (ismétlésnél v3, v4...), Karakterek ablak megnyílik
 - Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
 - Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + ✕ törlés + 🧪 Teszt + 📁 Fájlból
 
@@ -137,9 +136,8 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Hatás pool box | info szekció | 7 alszekció: Taktikák, Harci helyzetek, Státusz hatások, Manőver bónuszok, Előny/Hátrány, Fortély bónuszok, Narratív módosítók |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | aktiv-label fejléc + field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
-| Harci helyzetek | overlay picker + chip | 3 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
+| Harci helyzetek | overlay picker + chip | 4 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`), Körülmény (arany `#ffd54f`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. |
-| Szituációk | overlay picker + chip | Név + infó, ABC sorrend |
 | Narratív módosítók | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
 
 ### Taktika kombó szabályok
@@ -150,7 +148,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Hatás pool szekciók
 1. **Taktikák**: per-taktika sorok. Név halvány kék (`#90caf9`), módosítók zöld (`#66bb6a`) + ✔ jel a végén (beszámított), megjegyzések narancssárga (`#ffb74d`). Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
-2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#42a5f5`), utána az `infó` mező szövege (fehér, mindig). A `hatások[]` a háttérben működik (feltétel dispatch).
+2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#42a5f5`), utána az `infó` mező szövege (fehér). Ha van 0.fok alapeset aminek feltétele ez a helyzet: " Alapeset: {hatástext}" hozzáfűzve. Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva: `→ Fortély (fok): hatástext ✔` (zöld ha aktív, szürke ha nem).
 3. **Státusz hatások**: státuszok strukturált hatásai kumulálva célonként (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit). Enyhítés NEM jelenik meg itt (háttérben hat). Formátum: `{hatás}: {cél}`.
 4. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
 5. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes). Formátum: `Előny+X: Cél (Fortély)` (pl. "Előny+2: Sebzésdobás (Orgyilkos)")
@@ -229,6 +227,14 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - ⟲: reset (disabled ha 0, megerősítő popup: piros "VÉ Reset" gomb)
   - VÉ oszlop flash: sárga animáció csökkenéskor, zöld animáció +1-nél (1s fade-out)
   - Koppintás a label-re vagy értékre: VÉ csökkenés történet popup (pl. "-3; -2; +1"), mellé kopp bezárja
+
+### Formázás
+- Fegyver táblázat számok (nem első oszlop): `font-family: monospace`
+- VÉ csökkentés gombok: `font-family: monospace`
+- SFÉ értékek (`<strong>`): `font-family: monospace`
+- SFÉ lefedettség %: `font-family: monospace`
+- ÉP számok: `font-family: monospace`
+- Backtick formázás (`\`text\``): `<code>` elem, monospace, háttér `#333`, padding `0 3px`, border-radius `2px` — minden hatástext és infó megjelenítésnél (Aktív fül, Fortélyok fül)
   - Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát (Math.max(0,...) clamp).
 - **ÉP táblázat**:
   - **Fejléc sor** (4 oszlopos grid, S1-S4-hez igazítva):
@@ -354,7 +360,8 @@ Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec
 
 ## 4. Fortélyok fül/screen
 
-Fortélyok listája csoport szerint: Harci → Általános → Érzékek → Szabad → Kiemelt → Misztikus.
+Fortélyok listája csoport szerint: ⚔️ Harci → 🏹 Távharc → 🔧 Általános → 👁️ Érzékek → 🆓 Szabad → ⭐ Kiemelt → ✨ Misztikus.
+A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tartalmazza (logikailag harci, vizuálisan elkülönítve).
 
 ### Megjelenés
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
@@ -756,7 +763,7 @@ Minden adat `fetchJson`-nel:
 ### Karakter state struktúra (App szintjén)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
 - Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
-- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_szituációk`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`
+- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
 - Derived getterek (early return utáni destructuring): `tulajdonságok`, `képzettségek`, `fortélyok`, `session`
