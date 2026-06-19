@@ -3,7 +3,7 @@ név: "Harci kocsihajtás"
 névkomment: ""
 maxfok: 2
 session_toggle: false
-emlékeztető: false
+emlékeztető: true
 többszörösség: 
   spec_típus: ""
   spec_lista: []

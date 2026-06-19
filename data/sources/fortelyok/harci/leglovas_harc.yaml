@@ -5,7 +5,7 @@ név: "Léglovas harc"
 névkomment: ""
 maxfok: 3
 session_toggle: false
-emlékeztető: false
+emlékeztető: true
 többszörösség:
   spec_típus: ""
   spec_lista: []
