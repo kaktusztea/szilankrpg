@@ -1,0 +1,37 @@
+---
+schema_version: 1
+
+név: "Mesterlövész"
+névkomment: ""
+maxfok: 1
+session_toggle: false
+emlékeztető: true
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+  - text: "Cella értékre levonás nagy célpontoknál."
+megjegyzések:
+  - text: ""
+
+kiterjeszti:
+  normál: []
+  erős: []
+
+kp_perfok: 6
+ingyenes_perszint: 0
+
+fokok:
+  - fok: 1
+    követelménytext: "Lövészet 5.szint"
+    követelmények:
+      - név: "Lövészet"
+        érték: 5
+        típus: "képzettség"
+    hatástext:
+      - text: "Cella értékre `-1` levonás, ha olyan célra lősz, ahol Cella `≥ 5`."
+    módosítók: ""
+
+todo:
+  - text: ""

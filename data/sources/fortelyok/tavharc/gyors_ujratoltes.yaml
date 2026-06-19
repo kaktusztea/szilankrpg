@@ -1,0 +1,52 @@
+---
+schema_version: 1
+
+név: "Gyors újratöltés"
+névkomment: ""
+maxfok: 2
+session_toggle: false
+emlékeztető: true
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+  - text: "Gyorsan tudod újratölteni nyílpuskádat."
+megjegyzések:
+  - text: ""
+
+kiterjeszti:
+  normál: []
+  erős: []
+
+kp_perfok: 6
+ingyenes_perszint: 0
+
+fokok:
+  - fok: 0
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Nyílpuskával csak minden `2.` körben lehetséges lőni."
+    módosítók: ""
+  - fok: 1
+    követelménytext: "Lövészet 6.szint"
+    követelmények:
+      - név: "Lövészet"
+        érték: 6
+        típus: "képzettség"
+    hatástext:
+      - text: "Minden körben tudsz `1x` lőni, ha Mozgásodat becseréled újratöltésre."
+    módosítók: ""
+  - fok: 2
+    követelménytext: "Lövészet 9.szint"
+    követelmények:
+      - név: "Lövészet"
+        érték: 9
+        típus: "képzettség"
+    hatástext:
+      - text: "Minden körben tudsz `1x` lőni, Mozgás szabadon elhasználható mellette."
+    módosítók: ""
+
+todo:
+  - text: ""

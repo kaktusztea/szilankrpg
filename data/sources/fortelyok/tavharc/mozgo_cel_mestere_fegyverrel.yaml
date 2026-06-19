@@ -1,0 +1,43 @@
+---
+schema_version: 1
+
+név: "Mozgó cél mestere fegyverrel"
+névkomment: ""
+maxfok: 1
+session_toggle: false
+emlékeztető: true
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+  - text: "Összevissza mozgó ellenfélre is gyakorlottan célzol."
+megjegyzések:
+  - text: ""
+
+kiterjeszti:
+  normál: []
+  erős: []
+
+kp_perfok: 6
+ingyenes_perszint: 0
+
+fokok:
+  - fok: 0
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Kiszámíthatatlan célpont: `4x` Szorzó. Harcoló célpont: `5x` Szorzó."
+    módosítók: ""
+  - fok: 1
+    követelménytext: "Távolsági harcmodor 5.szint"
+    követelmények:
+      - név: ["Íjászat", "Lövészet", "Hajítás"]
+        érték: 5
+        típus: "képzettség"
+    hatástext:
+      - text: "Kiszámíthatatlan célpont: `3x` Szorzó. Harcoló célpont: `4x` Szorzó."
+    módosítók: ""
+
+todo:
+  - text: ""

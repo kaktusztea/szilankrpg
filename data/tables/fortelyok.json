@@ -8042,6 +8042,126 @@
     ]
   },
   {
+    "név": "Gyors hajítás",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Hajítófegyvered Sebesség értéke 1-gyel csökken.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Hajítófegyvered Sebesség értéke `1`-gyel csökken."
+        ],
+        "követelmény": "Hajítás 5.szint",
+        "követelmények": [
+          {
+            "név": "Hajítás",
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Gyors lövés",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Íjad Sebesség értéke 1-gyel csökken.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Íjad Sebesség értéke `1`-gyel csökken."
+        ],
+        "követelmény": "Íjászat 5.szint",
+        "követelmények": [
+          {
+            "név": "Íjászat",
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Gyors újratöltés",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Gyorsan tudod újratölteni nyílpuskádat.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Nyílpuskával csak minden `2.` körben lehetséges lőni."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Minden körben tudsz `1x` lőni, ha Mozgásodat becseréled újratöltésre."
+        ],
+        "követelmény": "Lövészet 6.szint",
+        "követelmények": [
+          {
+            "név": "Lövészet",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Minden körben tudsz `1x` lőni, Mozgás szabadon elhasználható mellette."
+        ],
+        "követelmény": "Lövészet 9.szint",
+        "követelmények": [
+          {
+            "név": "Lövészet",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
     "név": "Kitartott célzás",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -8100,6 +8220,291 @@
             "feltétel": "harci_helyzet:célzás"
           }
         ]
+      }
+    ]
+  },
+  {
+    "név": "Lövés futás közben",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Futás közben is biztos marad a kezed, nem kell megállnod.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Lassú futás közben `+2x` Szorzó büntetés a célpont VÉ kiszámításánál."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Lassú futás közben csak `+1x` Szorzó büntetés a célpont `VÉ` kiszámításánál."
+        ],
+        "követelmény": "Távolsági harcmodor 5.szint",
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Lövés hátasról",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Gyakorlott vagy földi vagy légi hátasról való íjászatban, lövészetben.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Lovas harc körülményben: CÉ levonás: Léptetés:`-3`, Ügetés:`-7`, Vágta:`-13`."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": -3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc",
+            "megjegyzés": "Alapeset: léptetés CÉ levonás"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Lovas harc körülményben: CÉ:`-3` ügetésben, CÉ:`-7` vágtában."
+        ],
+        "követelmény": "Lovaglás 6.szint, Távolsági harcmodor 5.szint, Mesterfegyver 1.fok, Lovas harc 2.fok",
+        "követelmények": [
+          {
+            "név": [
+              "Lovaglás",
+              "Léglovaglás"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": -3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Lovas harc körülményben: CÉ:`-3` vágtában."
+        ],
+        "követelmény": "Lovaglás 9.szint, Távolsági harcmodor 9.szint, Mesterfegyver 2.fok, Lovas harc 3.fok",
+        "követelmények": [
+          {
+            "név": [
+              "Lovaglás",
+              "Léglovaglás"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": -3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Lövés reflexből",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Hirtelen lövésnél/hajításnál nem ér CÉ büntetés.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Hirtelen lövésnél a CÉ-t `-7` levonás sújtja."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": -7,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Alapeset: hirtelen lövés CÉ levonás"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Hirtelen lövés CÉ levonása nem sújt."
+        ],
+        "követelmény": "Gyorsaság +1, Távolsági harcmodor 5.szint",
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Mesterlövész",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Cella értékre levonás nagy célpontoknál.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Cella értékre `-1` levonás, ha olyan célra lősz, ahol Cella `≥ 5`."
+        ],
+        "követelmény": "Lövészet 5.szint",
+        "követelmények": [
+          {
+            "név": "Lövészet",
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Mozgó cél mestere fegyverrel",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Összevissza mozgó ellenfélre is gyakorlottan célzol.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Kiszámíthatatlan célpont: `4x` Szorzó. Harcoló célpont: `5x` Szorzó."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Kiszámíthatatlan célpont: `3x` Szorzó. Harcoló célpont: `4x` Szorzó."
+        ],
+        "követelmény": "Távolsági harcmodor 5.szint",
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
       }
     ]
   }
