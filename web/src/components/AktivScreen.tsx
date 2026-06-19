@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../engine/types';
+import { evaluateAlapesetek } from '../engine/alapeset';
 import './AktivScreen.css';
 
 interface Props {
@@ -249,6 +250,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
     }
   }
 
+  // Alapesetek (0.fok) kiértékelés
+  const alapesetek = evaluateAlapesetek(data.fortelySummaries as any, karakter, session);
+
   return (
     <div className="screen aktiv-screen">
       <h2>❎ Aktív</h2>
@@ -361,7 +365,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       </div>
 
       {/* Hatás pool */}
-      {(session.aktív_taktikák.length > 0 || session.aktív_helyzetek.length > 0 || hasHatásPool || fortélyEmlékeztetők.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
+      {(session.aktív_taktikák.length > 0 || session.aktív_helyzetek.length > 0 || hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetek.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
         <div className="aktiv-hatas-pool">
           {session.aktív_taktikák.length > 0 && (
             <div className="hatas-pool-section">
@@ -446,6 +450,16 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 ))}
               </div>
             </div>
+          )}
+          {alapesetek.length > 0 && (
+            <details className="hatas-pool-section">
+              <summary className="hatas-pool-title" style={{ color: '#ff9800', cursor: 'pointer' }}>Alapesetek ({alapesetek.length}) ▾</summary>
+              <div className="hatas-pool-items">
+                {alapesetek.map((ae, i) => (
+                  <span key={i} className="hatas-pool-item"><strong style={{ color: '#ff9800' }}>{ae.fortély_név}:</strong> {ae.hatástext.join(' ')}</span>
+                ))}
+              </div>
+            </details>
           )}
           {session.narratív_módosítók.length > 0 && (
             <div className="hatas-pool-section">

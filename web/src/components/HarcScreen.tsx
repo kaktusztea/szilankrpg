@@ -377,7 +377,8 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   // Hárítófegyver VÉ
   let hárítóVÉ = 0;
   let hárítóNév = '';
-  if (session.fegyverfogás === 'fegyver_hárító' && session.aktív_fegyver_bal_index >= 0) {
+  const hasHárítóFortély = k.fortélyok.some(f => f.név === 'Hárítófegyver használat');
+  if (session.fegyverfogás === 'fegyver_hárító' && session.aktív_fegyver_bal_index >= 0 && hasHárítóFortély) {
     const hFp = k.fegyverek[session.aktív_fegyver_bal_index];
     if (hFp) {
       const hDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === hFp.alap.toLowerCase());

@@ -491,6 +491,98 @@ impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexév
         - Lookup: kf.név alapján (nem kf.spec_elem!)
 ```
 
+### 16.1 Alapeset (fok: 0) — TERV
+
+A fortély yaml `fokok[]` tartalmazhat `fok: 0` entry-t (Alapeset). Ez **akkor aktív, ha a karakter NEM rendelkezik az adott fortéllyal** (fok == 0 implicit). Ezzel a fortély hiányának mechanikus hatása is a data layer-ben tárolható.
+
+#### Séma
+
+```yaml
+fokok:
+  - fok: 0
+    feltétel:
+      típus: "fegyverfogás"     # session/karakter mező neve
+      érték: "fegyver_hárító"   # egyezés vizsgálat
+    hatástext: "Hárítófegyver VÉ = 0"
+    módosítók:
+      - cél: "vé_hárító"
+        típus: "override"
+        érték: 0
+  - fok: 1
+    hatástext: "Hárítófegyver VÉ aktív"
+    módosítók: [...]
+```
+
+#### Feltétel típusok
+
+```
+típus                  forrás                          érték (példák)
+─────────────────────────────────────────────────────────────────────
+fegyverfogás           session.fegyverfogás            "fegyver_hárító", "fegyver_pajzs", "kétkezes"
+aktív_fegyver          karakter.fegyverek[session      "Puszta kéz", kategória név
+                         .aktív_fegyver_index]
+páncél_viselés         session.aktív_páncél            true (+ karakter.páncél.MGT > 0)
+harci_helyzet          session.aktív_helyzetek[]       helyzet id (pl. "helyhez_kötve")
+mindig                 —                               — (feltétel nélkül aktív)
+távharc_szituáció      (jövőbeli)                      "reflexből", "futás_közben", stb.
+```
+
+#### Kiértékelés logika
+
+```
+FOR EACH fortély_def in data.fortelyok:
+  IF karakter NEM rendelkezik a fortéllyal (nincs felvéve VAGY fok == 0):
+    fok0 = fortély_def.fokok.find(f → f.fok == 0)
+    IF fok0 létezik:
+      IF fok0.feltétel:
+        aktív = evaluate_feltétel(fok0.feltétel, session, karakter)
+      ELSE:
+        aktív = true  // "mindig" típus
+      IF aktív:
+        - módosítók[] alkalmazása (ugyanaz mint §16 fő logika)
+        - hatástext megjelenítése a Hatás pool-ban (negatív/figyelmeztetés színnel)
+```
+
+#### evaluate_feltétel(feltétel, session, karakter)
+
+```
+SWITCH feltétel.típus:
+  "fegyverfogás":
+    RETURN session.fegyverfogás == feltétel.érték
+  "aktív_fegyver":
+    RETURN aktív_fegyver.név == feltétel.érték
+           OR aktív_fegyver.kategória == feltétel.érték
+  "páncél_viselés":
+    RETURN session.aktív_páncél AND karakter.páncél.MGT > 0
+  "harci_helyzet":
+    RETURN session.aktív_helyzetek.includes(feltétel.érték)
+  "mindig":
+    RETURN true
+```
+
+#### GUI megjelenítés
+
+- A 0.fok hatástext a **Hatás pool**-ban jelenik meg narancssárga/piros színnel (figyelmeztetés)
+- Csak akkor látható, ha a feltétel teljesül ÉS a karakter nem rendelkezik a fortéllyal
+- Tooltip/info: "Alapeset — {fortély név} nélkül"
+
+#### Érintett fortélyok (kezdeti batch)
+
+```
+Fortély                         feltétel.típus      feltétel.érték
+──────────────────────────────────────────────────────────────────
+Hárítófegyver használat         fegyverfogás        "fegyver_hárító"
+Pajzshasználat                  fegyverfogás        "fegyver_pajzs"
+Merevvértviselet                páncél_viselés      true
+Kétkezesség                     mindig              —
+Természetes fegyver             aktív_fegyver       "Puszta kéz"
+Vakharc                         harci_helyzet       "sötétben_teljes_csendben"
+Harc helyhez kötve              harci_helyzet       "helyhez_kötve"
+Testőr                          harci_helyzet       "vé_kiterjesztés"
+Úszás                           mindig              —
+Infralátás                      harci_helyzet       "sötétben_félhomály"
+```
+
 ---
 
 ## 17. Távharc Védő Érték kalkulátor

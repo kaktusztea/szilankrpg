@@ -139,6 +139,32 @@ def generate_fortelyok():
         for e in kit_errors:
             print(f"     {e}")
         raise SystemExit(1)
+    # Feltétel prefix validáció
+    konstansok = load_yaml(os.path.join(SOURCES_DIR, 'konstansok.yaml'))
+    valid_prefixek = set(konstansok.get('feltétel_prefixek', []))
+    felt_errors = []
+    for root, dirs, files in os.walk(fdir):
+        for f in sorted(files):
+            if not f.endswith('.yaml'):
+                continue
+            data = load_yaml(os.path.join(root, f))
+            ctx = f"fortelyok/{os.path.relpath(os.path.join(root, f), fdir)}"
+            for fok in (data.get('fokok') or []):
+                for mod in (fok.get('módosítók') or []):
+                    if isinstance(mod, str) or not mod:
+                        continue
+                    felt = mod.get('feltétel', '')
+                    if not felt or not isinstance(felt, str):
+                        continue
+                    if ':' in felt:
+                        prefix = felt.split(':', 1)[0]
+                        if prefix and prefix not in valid_prefixek:
+                            felt_errors.append(f"{ctx} fok {fok.get('fok')}: ismeretlen feltétel prefix '{prefix}' (értéke: '{felt}')")
+    if felt_errors:
+        print("  ❌ Fortély feltétel prefix hibák:")
+        for e in felt_errors:
+            print(f"     {e}")
+        raise SystemExit(1)
     write_json('fortelyok.json', result)
 
 

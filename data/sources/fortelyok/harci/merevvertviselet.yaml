@@ -18,6 +18,17 @@ kiterjeszti:
 kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
+- fok: 0
+  követelménytext: ""
+  követelmények: ""
+  hatástext:
+  - text: "Páncél teljes TÉ büntetése érvényesül: -TÉ == MGT."
+  módosítók:
+  - cél: "MGT_TÉ_büntetés"
+    mód: "flat"
+    érték: 0
+    feltétel: "páncél:viselt"
+    megjegyzés: "Alapeset: teljes MGT TÉ büntetés"
 - fok: 1
   követelménytext: ""
   követelmények: 

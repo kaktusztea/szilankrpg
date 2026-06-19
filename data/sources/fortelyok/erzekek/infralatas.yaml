@@ -23,6 +23,12 @@ kp_perfok: 6
 ingyenes_perszint: 0
 
 fokok:
+  - fok: 0
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Emberi látás, sötétben nem látsz hőképeket."
+    módosítók: ""
   - fok: 1
     követelménytext: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""

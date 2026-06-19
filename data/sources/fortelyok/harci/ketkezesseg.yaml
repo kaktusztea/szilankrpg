@@ -23,6 +23,12 @@ kp_perfok: 6
 ingyenes_perszint: 0
 
 fokok:
+  - fok: 0
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Rosszabbik kézben tartott fegyverrel levonások sújtanak."
+    módosítók: ""
   - fok: 1
     követelménytext: ""
     követelmények: ""

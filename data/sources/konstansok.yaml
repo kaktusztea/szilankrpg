@@ -30,8 +30,10 @@ feltétel_prefixek:
   - "taktika"             # pl. "taktika:fárasztás", "taktika:visszafogott"
   - "fegyver"             # pl. "fegyver:kard, hosszú" — konkrét fegyverre vonatkozik
   - "fegyver_kategória"   # pl. "fegyver_kategória:kardvívó"
+  - "fegyverfogás"        # pl. "fegyverfogás:fegyver_hárító", "fegyverfogás:fegyver_pajzs"
   - "manőver"             # pl. "manőver:kibontakozás"
   - "státusz"             # pl. "státusz:bénultság"
+  - "páncél"              # pl. "páncél:viselt" — aktív páncél MGT > 0
 
 # ============================================================
 # Harcérték konstansok

@@ -1328,6 +1328,15 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
+        "fok": 0,
+        "hatás": [
+          "Nem tudsz úszni. Elmerülsz, fuldokolsz."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
         "fok": 1,
         "hatás": [
           "Tudsz úszni."
@@ -1962,6 +1971,15 @@
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Emberi látás, sötétben nem látsz hőképeket."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
       {
         "fok": 1,
         "hatás": [
@@ -2945,6 +2963,15 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
+        "fok": 0,
+        "hatás": [
+          "Helyhez kötve szituációban: VÉ veszteség duplázódik."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
         "fok": 1,
         "hatás": [
           "VÉ veszteség duplázódás Hatás nem sújt helyhez kötve szituációban."
@@ -3599,6 +3626,23 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
+        "fok": 0,
+        "hatás": [
+          "Hárítófegyver VÉ = 0 (nem tudod használni)."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "vé",
+            "típus": "flat",
+            "érték": 0,
+            "feltétel": "fegyverfogás:fegyver_hárító",
+            "megjegyzés": "Alapeset: hárítófegyver VÉ nem aktív"
+          }
+        ]
+      },
+      {
         "fok": 1,
         "hatás": [
           "Megkapod a gyengébb kezedben forgatott hárítófegyver VÉ értékét pluszban.",
@@ -3779,6 +3823,15 @@
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Rosszabbik kézben tartott fegyverrel levonások sújtanak."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
       {
         "fok": 1,
         "hatás": [
@@ -4162,6 +4215,23 @@
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Páncél teljes TÉ büntetése érvényesül: -TÉ == MGT."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "MGT_TÉ_büntetés",
+            "mód": "flat",
+            "érték": 0,
+            "feltétel": "páncél:viselt",
+            "megjegyzés": "Alapeset: teljes MGT TÉ büntetés"
+          }
+        ]
+      },
       {
         "fok": 1,
         "hatás": [
@@ -4591,6 +4661,23 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
+        "fok": 0,
+        "hatás": [
+          "Pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "pajzs_VÉ_felezés",
+            "mód": "flat",
+            "érték": 0,
+            "feltétel": "fegyverfogás:fegyver_pajzs",
+            "megjegyzés": "Alapeset: képzetlen pajzshasználat"
+          }
+        ]
+      },
+      {
         "fok": 1,
         "hatás": [
           "Teljes pajzs VÉ aktív.",
@@ -4937,6 +5024,25 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
+        "fok": 0,
+        "hatás": [
+          "Puszta kéz sebzése: -5+k20."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "SP",
+            "érték": -5,
+            "mód": "override",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:puszta kéz",
+            "megjegyzés": "Alapeset: képzetlen puszta kéz"
+          }
+        ]
+      },
+      {
         "fok": 1,
         "hatás": [
           "Puszta kéz sebzése: 1+k20 (az alap -5+k20 helyett)."
@@ -5041,6 +5147,15 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
+        "fok": 0,
+        "hatás": [
+          "VÉ kiterjesztés társra: VÉ veszteség duplázódik."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
         "fok": 1,
         "hatás": [
           "VÉ veszteség duplázódás Hatás nem sújt VÉ kiterjesztésekor."
@@ -5125,6 +5240,15 @@
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Teljes sötétben (csendben): Látás érzékre Érzékvesztés - teljes Státusz."
+        ],
+        "követelmény": "",
+        "követelmények": [],
+        "módosítók": []
+      },
       {
         "fok": 1,
         "hatás": [

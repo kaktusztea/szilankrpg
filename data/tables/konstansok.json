@@ -21,8 +21,10 @@
     "taktika",
     "fegyver",
     "fegyver_kategória",
+    "fegyverfogás",
     "manőver",
-    "státusz"
+    "státusz",
+    "páncél"
   ],
   "harcérték_alap": {
     "KÉ": 0,
