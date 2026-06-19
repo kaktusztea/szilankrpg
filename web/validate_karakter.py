@@ -257,7 +257,7 @@ required_session_keys = ["szilánk", "vé_csökkenés", "vé_history", "manőver
                          "sebzések", "aktív_fegyver_index", "aktív_fegyver_bal_index",
                          "kétkezes_harc", "aktív_pajzs",
                          "aktív_páncél", "aktív_taktikák", "aktív_helyzetek",
-                         "aktív_szituációk", "aktív_manőver", "aktív_státuszok",
+                         "aktív_manőver", "aktív_státuszok",
                          "narratív_módosítók", "harci_akrobatika", "fegyverfogás"]
 for k in required_session_keys:
     if k not in session:
