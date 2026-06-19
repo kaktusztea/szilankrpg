@@ -1784,15 +1784,26 @@ Az undo stack a karakter JSON részévé válik:
 4. Ha 10 slot betelt: figyelmeztetés ("Töröld egy régit, vagy mentsd fájlba")
 5. Aktív karakter váltás az új slot-ra
 6. Undo stack reset
+7. `isDirty = false` → nem mentődik amíg a user nem módosít
 
-### 31.5 Karakter lista UI ("Betöltés" menüpont)
+### 31.4b Duplikálás
+
+Beállítások menü → "📋 Duplikál":
+1. Aktuális karakter deep clone (teszt karakter is duplikálható)
+2. Új `uid` generálás
+3. Név suffix: `"von Agabor"` → `"von Agabor:2"` (ha már `:2` → `:3`)
+4. `id_leíró` újragenerálás az új névből
+5. Undo stack reset, testMode kikapcsol, isDirty=true
+6. Karakterek ablak megnyílik (100ms késleltetéssel, hogy az autosave lefusson)
+
+### 31.5 Karakter lista UI ("Karakterek" menüpont)
 
 ```
 ┌─────────────────────────────────┐
 │  Karakter betöltése             │
 ├─────────────────────────────────┤
-│  ● von Agabor          2 perce │  ← aktív (kiemelve)
-│  ○ Tetves              3 napja │
+│  ● von Agabor (8sz)     2 perce │  ← aktív (kiemelve)
+│  ○ Tetves (5sz)         3 napja │
 │  ○ Sárkánytűz         1 hete  │
 │                                 │
 │  [+ Új karakter]                │
@@ -1804,7 +1815,7 @@ Az undo stack a karakter JSON részévé válik:
 
 - Rendezés: utolsó módosítás szerint (legfrissebb felül)
 - Aktív karakter jelölve (●), többi (○)
-- Megjelenítés: `név` (vagy `id_leíró` ha név üres) + relatív idő
+- Megjelenítés: `{név} ({tsz}sz)` + relatív idő + piros ✕ törlés gomb
 - Tap: betöltés (aktív karakter váltás)
 - Long press: törlés megerősítéssel
 - "Fájlból betöltés": a jelenlegi fájl-import működés (JSON fájl kiválasztás)

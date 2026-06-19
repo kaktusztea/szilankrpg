@@ -223,6 +223,9 @@ function App() {
   const karakterRef = useRef(karakter);
   karakterRef.current = karakter;
 
+  const [testMode, setTestMode] = useState(false);
+  const [isDirty, setIsDirty] = useState(false);
+
   // --- Autosave localStorage (multi-slot) ---
   useEffect(() => {
     if (!karakter || testMode || !isDirty) return;
@@ -241,7 +244,7 @@ function App() {
     if (existing >= 0) slots[existing] = entry; else slots.unshift(entry);
     slots = slots.slice(0, 10);
     localStorage.setItem('szilank_slots', JSON.stringify(slots));
-  }, [karakter, undoStack]);
+  }, [karakter, undoStack, isDirty, testMode]);
 
   function pushUndo(leírás: string) {
     const k = karakterRef.current;
@@ -268,8 +271,6 @@ function App() {
   const touchY = useRef<number>(0);
   const [showNewConfirm, setShowNewConfirm] = useState(false);
   const [showTestConfirm, setShowTestConfirm] = useState(false);
-  const [testMode, setTestMode] = useState(false);
-  const [isDirty, setIsDirty] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
   const [showSlotList, setShowSlotList] = useState(false);
@@ -385,7 +386,7 @@ function App() {
     setUndoStack([]);
     setTestMode(false);
     setIsDirty(true);
-    setShowSlotList(true);
+    setTimeout(() => setShowSlotList(true), 100);
   }
 
   function generateSaveFile(mode: 'single' | 'backup') {

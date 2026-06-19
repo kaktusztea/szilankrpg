@@ -70,7 +70,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - 📅 Napló overlay gomb (mindkét mód)
   - ✏️ Jegyzetek overlay gomb (mindkét mód)
-  - ⚙️ Menü gomb: overlay popup (Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter / Teljes képernyő)
+  - ⚙️ Menü gomb: overlay popup (↩ Visszavonás / 📂 Karakterek / 📋 Duplikál / 💾 Mentés / 📄 Új karakter / Teljes képernyő)
   - ↩ Undo gomb: disabled ha stack üres, badge (piros kör, 9px) mutatja a stack méretét (1-6). Kattintás → undo overlay.
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 1000ms fade
 - ⚙️ menü popup: `.menu-item` gombok (centered szöveg, `padding: 10px 16px`)
@@ -86,12 +86,15 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - Overlay mellé kattintás: bezár
 - Jegyzetek és Napló NEM vonódik vissza (mindig friss marad)
 
-### Local Storage
-- `szilank_karakter`: autosave minden módosításkor (karakter JSON)
-- `szilank_undo`: undo stack (max 6 entry)
-- "Új karakter": mindkettő törlődik
-- Betöltés: localStorage-ból ha valid; ha nincs → emptyKarakter + uid generálás
-- Karakter ID-k: `uid` (egyedi UUID, soha nem változik) + `id_leíró` (olvasható slug, auto-frissül)
+### Local Storage (multi-slot)
+- `szilank_slots`: slot lista (max 10, uid + név + tsz + mentés_dátum)
+- `szilank_char_{uid}`: per-karakter JSON (session + `_undo` integrálva)
+- `szilank_active`: aktív karakter uid
+- Autosave: minden karakter/undo változáskor, ha `isDirty=true` és nem testMode
+- "Új karakter": isDirty=false → nem mentődik amíg módosítás nem történik
+- "Duplikál": deep clone, új uid, név:2 suffix, Karakterek ablak megnyílik
+- Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
+- Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + ✕ törlés + 🧪 Teszt + 📁 Fájlból
 
 ---
 

@@ -355,9 +355,12 @@
 - Ember (Szigetvilági) faj háttér hozzáadása (slan helyett)
 - ✅ Undo gomb + undo stack (↩ fejléc gomb, badge, overlay popup, max 6 entry, `_undo` a karakter JSON-ban)
 - ✅ Multi-karakter localStorage (max 10 slot, `szilank_char_{uid}` + `szilank_slots` + `szilank_active`)
-- ✅ Karakter lista overlay ("Karakter betöltése" → slot lista, relatív idő, "Fájlból..." opció)
+- ✅ Karakter lista overlay ("Karakterek" menüpont, `{név} ({tsz}sz)` + relatív idő + ✕ törlés + 🧪 Teszt + 📁 Fájlból)
 - ✅ Karakter ID: uid (UUID, egyedi) + id_leíró (slug, auto-frissül név/TSz-ből)
-- ✅ Migráció: régi `szilank_karakter` single key → automatikus első slot import
+- ✅ Duplikálás (📋 menüpont): deep clone, új uid, név:2 suffix, Karakterek ablak nyílik
+- ✅ Mentés overlay (💾): "Aktuális karakter" / "Összes (backup)" → "Megosztás" (share sheet) / "Helyi mentés"
+- ✅ Teszt mód: teszt karakter nem mentődik, "Szilánk" label narancssárga
+- ✅ isDirty flag: új karakter nem mentődik amíg nincs módosítás
 - ODS checker-ek implementálása (KP, limitek, stb.)
 - Faj misztérium képzettségek → Mágia fülre
 
@@ -379,10 +382,6 @@
 - ✅ Természetes páncél: SFÉ flat — már volt
 - ✅ Pajzshasználat: §13 data-driven (pajzs_TÉ_büntetés konstans + fortély yaml pajzs_TÉ_mérséklés + VÉ+2 3.fok, feltétel: fegyverfogás==fegyver_pajzs)
 - ✅ Hárítófegyver használat: Fegyverfogás picker + hárítóVÉ bekötés + fegyverek.json beolvasztás (TODO: MF VÉ bónusz)
-- Kaszabolás: runtime döntés — fortély emlékeztető elég
-- Kitérés lövés elől: próba bónusz — próba rendszer nincs implementálva
-- Támadás erőből: interaktív SP↔TÉ csere — nem automatikus módosító
-- Szabad fortélyok felvételénél: mutassa rögtön a kiterjesztéseket (UI feature)
 
 ### Harci helyzetek — kategorizálás és egyszerűsítés ✅
 
@@ -406,10 +405,8 @@ Szabályrendszer átszervezés és webapp implementáció kész.
 - Taktika megkötések: `harci_helyzet/tiltott` (Fárasztás: Pengehátrány, Láthatatlanul×2)
 
 **TODO:**
-- [ ] Közrefogás: Pengeelőny semlegesítés logika (Harc fül VÉ csökkentés)
 - [ ] Magasabbról + Lovas harc: kizáró jelzés (ha lovas harc aktív, Magasabbról disabled)
-- [ ] Belharci szituáció: komplex rendszer (harcmodor + pengehossz feltételek, fegyver override)
-- [ ] Puszta kéz + Kétkezes harc: Fegyverfogás picker kizárás (ha mindkét kéz puszta kéz)
+
 
 
 ### Harc alakzatban 🚧
