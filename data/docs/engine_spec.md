@@ -639,7 +639,7 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika: módosítók, fokok, kombó szabályok)
-- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (31 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
+- `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (32 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
 - `data/sources/szituaciok.yaml` → `tables/szituaciok.json` (7 szituáció: id, infó)
 - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: id, nehézség, fázisok, hatás)
 
@@ -859,7 +859,7 @@ Forrás: md/080_hatasok_es_statuszok.md, md/081_hatasok.md, md/082_statuszok.md
 | Réteg | Fájl / Forrás | Leírás |
 |-------|------|--------|
 | **Hatás mechanika** | `hatas_operatorok.yaml` | Hatás típusok/operátorok (8 db): előny, hátrány, arányos, letilt, stb. |
-| **Célpontok** | `esemenyek.yaml` | Amire a hatás mechanika vonatkozhat (21 db): dobások, képességek, fizikai |
+| **Célpontok** | `esemenyek.yaml` | Amire a hatás mechanika vonatkozhat (22 db): dobások, képességek, fizikai |
 | **Hatások** | `081_hatasok.md` (TODO: yaml) | Elnevezett, magas szintű játékfogalmak: "Vérzés - erős", "Mozgás - képtelen", "VÉ veszteség duplázódik" stb. Minden Hatás = 1+ mechanika+cél kombináció. |
 | **Státuszok** | `statuszok.yaml` | Állapotok fokozatokkal, amelyek Hatás(oka)t okoznak. |
 | **Harci helyzetek** | `harci_helyzetek.yaml` | Speciális harci státuszok, amelyek szintén Hatás(oka)t okoznak. |
@@ -1562,7 +1562,7 @@ A játékos karakter Alakzatharc szintje max_HM-be már beleszámít (rules.json
 
 ---
 
-## §29 Undo Stack (TERV — NEM IMPLEMENTÁLT)
+## §29 Undo Stack
 
 Session állapot visszavonás mechanizmus.
 
@@ -1676,42 +1676,145 @@ Session állapot visszavonás mechanizmus.
 Implementáció: az `undoTo()` visszaállításnál a `jegyzetek` és `napló` mezőket az aktuális
 (visszaállítás előtti) értékükkel felülírjuk a visszaállított karakter objektumon.
 
-### 29.4 Implementáció vázlat
-
-```typescript
-interface UndoEntry {
-  timestamp: number;
-  leírás: string;
-  session: Session;       // deep clone
-  karakter: Karakter;     // deep clone
-}
-
-// App szinten:
-const [undoStack, setUndoStack] = useState<UndoEntry[]>([]);
-const UNDO_MAX = 6;
-
-function pushUndo(leírás: string) {
-  setUndoStack(prev => [
-    { timestamp: Date.now(), leírás, session: structuredClone(session), karakter: structuredClone(karakter) },
-    ...prev
-  ].slice(0, UNDO_MAX));
-}
-
-function undoTo(index: number) {
-  const entry = undoStack[index];
-  // Jegyzetek és Napló mindig a legfrissebb marad (kivétel)
-  const restoredKarakter = { ...entry.karakter, jegyzetek: karakter.jegyzetek, napló: karakter.napló };
-  setSession(entry.session);
-  setKarakter(restoredKarakter);
-  setUndoStack(prev => prev.slice(index + 1));
-}
-```
-
 ### 29.5 Megjegyzések
 
-- A stack NEM perzisztens (page reload törli) — ez szándékos (session state az autosave-ből visszajön)
+- A stack localStorage-ban perzisztens (`szilank_undo` key) — page reload után megmarad
 - Game módban és Szerkesztő módban egyaránt működik
 - A `pushUndo()` hívást minden session/karakter módosító függvénybe be kell kötni
   - KIVÉVE: `jegyzetek` és `napló` módosítások (ezek nem generálnak undo entry-t)
 - Teljesítmény: 6× deep clone max ~50KB adat (karakter+session) — elhanyagolható
 - A `pushUndo()` a módosítás ELŐTT hívandó (az aktuális állapotot menti, nem az újat)
+- "Új karakter" és "Karakter betöltés" reseteli a stack-et + törli localStorage-ból
+
+
+---
+
+## §30 Local Storage Cache
+
+Az aktuális karakter állapot és undo stack automatikusan localStorage-ba mentődik.
+
+### 30.1 Kulcsok (jelenlegi implementáció)
+
+| Key | Tartalom | Méret |
+|-----|----------|-------|
+| `szilank_karakter` | Teljes karakter JSON (session-nel együtt) | ~5-15KB |
+| `szilank_undo` | Undo stack tömb (max 6 entry × karakter snapshot) | ~30-90KB |
+
+note: §31 (multi-karakter) implementálásakor mindkét key megszűnik, helyüket a
+      `szilank_char_{id}` (benne `_undo` mező) + `szilank_slots` + `szilank_active` veszi át.
+
+### 30.2 Mentés
+
+- Minden `karakter` state változáskor: `szilank_karakter` felülíródik (`useEffect`)
+- Minden `undoStack` változáskor: `szilank_undo` felülíródik (`useEffect`)
+- Nincs debounce — minden módosítás azonnal ment
+
+### 30.3 Betöltés (init)
+
+- App mount-kor: `szilank_karakter` → parse → `validateKarakter()` → ha valid, betölt
+- Ha invalid vagy nincs: `emptyKarakter` töltődik
+- `szilank_undo` → parse → undo stack inicializálás (ha van); ha nincs → üres stack
+
+### 30.4 Törlés
+
+- "Új karakter" gomb: `szilank_karakter` + `szilank_undo` törlődik (`removeItem`)
+- "Karakter betöltés" (fájl/teszt): felülíródik az új állapottal + undo stack reset
+
+
+---
+
+## §31 Multi-karakter mentés (TERV — NEM IMPLEMENTÁLT)
+
+### 31.1 Karakter ID
+
+- Minden karakter kap egy egyedi `id` mezőt (schema bővítés): generált hash (pl. `crypto.randomUUID()`)
+- Generálás időpontja: "Új karakter" indításkor
+- A `test_karakter.json`-ban is legyen fix id (pl. `"test-von-agabor-001"`)
+- Betöltéskor validáció: ha hiányzik az `id`, generálódjon (backwards compatibility)
+- Schema: `karakter.id: string` (kötelező, top-level mező)
+
+### 31.2 localStorage struktúra
+
+| Key | Tartalom |
+|-----|----------|
+| `szilank_slots` | JSON tömb: `{ id, név, mentés_dátum }[]` — max 10 entry, rendezve utolsó módosítás szerint |
+| `szilank_char_{id}` | Teljes karakter JSON (az adott slot-hoz), benne az undo stack |
+| `szilank_active` | Az aktív karakter `id`-ja (amelyik épp szerkesztés alatt van) |
+
+Az undo stack a karakter JSON részévé válik:
+```json
+{
+  "id": "abc-123",
+  "név": "von Agabor",
+  "session": { ... },
+  "_undo": [
+    { "timestamp": 1719000000, "leírás": "erő: 3 → 2", "session": {...}, "karakter": {...} },
+    ...
+  ],
+  ...
+}
+```
+
+- `_undo` mező: prefix underscore jelzi, hogy nem szabályrendszer adat (meta)
+- Max 6 entry (UNDO_MAX)
+- Fájlba exportálásnál az `_undo` mező opcionálisan elhagyható (clean export) vagy benne maradhat
+- Betöltéskor: ha van `_undo` → undo stack inicializálás; ha nincs → üres stack
+
+### 31.3 Auto save
+
+- Minden karakter módosításkor: `szilank_char_{aktív_id}` felülíródik
+- `szilank_slots` frissül: `mentés_dátum` = now, sorrend újrarendezés
+- Nincs manuális "Mentés" gomb — minden módosítás azonnali
+
+### 31.4 Új karakter
+
+1. `crypto.randomUUID()` → id generálás
+2. `emptyKarakter` + id → localStorage slot foglalás
+3. Ha 10 slot betelt: figyelmeztetés ("Töröld egy régit, vagy mentsd fájlba")
+4. Aktív karakter váltás az új slot-ra
+5. Undo stack reset
+
+### 31.5 Karakter lista UI ("Betöltés" menüpont)
+
+```
+┌─────────────────────────────────┐
+│  Karakter betöltése             │
+├─────────────────────────────────┤
+│  ● von Agabor          2 perce │  ← aktív (kiemelve)
+│  ○ Tetves              3 napja │
+│  ○ Sárkánytűz         1 hete  │
+│                                 │
+│  [+ Új karakter]                │
+│  [📁 Fájlból betöltés...]      │
+├─────────────────────────────────┤
+│  Törlés: hosszú nyomás a sorra │
+└─────────────────────────────────┘
+```
+
+- Rendezés: utolsó módosítás szerint (legfrissebb felül)
+- Aktív karakter jelölve (●), többi (○)
+- Tap: betöltés (aktív karakter váltás)
+- Long press: törlés megerősítéssel
+- "Fájlból betöltés": a jelenlegi fájl-import működés (JSON fájl kiválasztás)
+- Relatív idő kijelzés ("2 perce", "3 napja", "1 hete")
+
+### 31.6 Karakter törlés
+
+- Long press → megerősítő popup: "Törlöd: {név}?"
+- `szilank_char_{id}` eltávolítás
+- `szilank_slots` frissítés
+- Ha az aktív karakter törlődik: automatikusan a legfrissebb másik lesz aktív
+- Ha nincs más: "Új karakter" indul
+
+### 31.7 Fájlba mentés (export)
+
+- A jelenlegi "Karakter mentése" (JSON letöltés) marad
+- Az exportált JSON tartalmazza az `id`-t
+- Importálásnál: ha az id már létezik a slot-ok között → felülírás; ha nem → új slot
+
+### 31.8 Implementációs megjegyzések
+
+- `crypto.randomUUID()`: modern böngészők (HTTPS/localhost) támogatják
+- Fallback id generálás: `Date.now().toString(36) + Math.random().toString(36).slice(2)`
+- localStorage limit: ~5MB böngészőnként — 10 karakter × ~15KB = ~150KB, bőven belefér
+- Migrálás: ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba
