@@ -685,7 +685,7 @@ function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => vo
   useEffect(() => () => stopHold(), []);
 
   return (
-    <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', padding: '16px' }}>
+    <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', padding: '16px', userSelect: 'none', WebkitUserSelect: 'none', touchAction: 'manipulation' }}>
       <label style={{ fontSize: '14px', color: 'var(--text-dim)' }}>Életkor</label>
       <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
         <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
