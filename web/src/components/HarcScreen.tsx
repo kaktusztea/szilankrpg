@@ -65,6 +65,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   // §16: Fortély módosítók — mindig aktív (feltétel="") + feltételes (aktív taktika/helyzet/szituáció)
   const aktívFeltételek = new Set<string>();
+  aktívFeltételek.add(`fegyverfogás:${session.fegyverfogás}`);
   for (const at of session.aktív_taktikák) {
     const def = data.taktikak.find(t => t.név === at.név);
     if (def) aktívFeltételek.add(def.feltétel_kulcs);
@@ -340,7 +341,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
           // Harckeret: pengelevonás + konstans fok bónusz
           const pengelevonás = Math.floor(sumPenge / konstansok.kétkezes_harc_pengelevonás_osztó);
-          const hk = Math.max(0, harcmodorSzint + k.tulajdonságok.gyorsaság + fortelyMods['harckeret'] + khFokBónusz.harckeret - pengelevonás);
+          const hk = Math.max(0, harcmodorSzint + k.tulajdonságok.gyorsaság + fortelyMods['harckeret'] + (khFok === 0 ? (khFokBónusz.harckeret ?? 0) : 0) - pengelevonás);
           const sebesség = parseInt(nagyobb.Sebesség) || 6;
           const támadások = 1 + Math.floor(hk / sebesség);
 

@@ -1,49 +1,46 @@
----
 schema_version: 1
-
-név: "Kétkezesség"
-névkomment: ""
+név: Kétkezesség
+névkomment: ''
 maxfok: 1
 session_toggle: false
 emlékeztető: true
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Kétkezes vagy, bármelyik kezeddel levonás nélkül harcolsz."
+- text: Kétkezes vagy, bármelyik kezeddel levonás nélkül harcolsz.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 0
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Rosszabbik kézben tartott fegyver harci helyzet levonásai sújtanak."
-    módosítók: ""
-  - fok: 1
-    követelménytext: ""
-    követelmények: ""
-    hatástext:
-      - text: "Bármelyik kezeddel levonás nélkül harcolsz (1 fegyverrel)."
-      - text: "Harckeret: +1 bónusz ha kétkezes harcban vagy (min. 1.fok Kétkezes harc + két fegyver)."
-      - text: "Páros kétkezes hajításnál csak az egyik CÉ dobásra jár Hátrány-1."
-    módosítók:
-      - cél: "harckeret"
-        érték: 1
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel:
-          - { forrás: "kétkezes_harc", operátor: "==", érték: true }
-
+- fok: 0
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Rosszabbik kézben tartott fegyver harci helyzet levonásai sújtanak.
+  módosítók: ''
+- fok: 1
+  követelménytext: ''
+  követelmények: ''
+  hatástext:
+  - text: Bármelyik kezeddel levonás nélkül harcolsz (1 fegyverrel).
+  - text: 'Harckeret: +1 bónusz ha kétkezes harcban vagy (min. 1.fok Kétkezes harc
+      + két fegyver).'
+  - text: Páros kétkezes hajításnál csak az egyik CÉ dobásra jár Hátrány-1.
+  módosítók:
+  - cél: harckeret
+    érték: 1
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel:
+    - forrás: kétkezes_harc
+      operátor: ==
+      érték: true
 todo:
-  - text: ""
+- text: ''

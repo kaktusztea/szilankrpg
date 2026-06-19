@@ -232,6 +232,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
   // Aktív feltételek (§16 feltételes módosítókhoz)
   const aktívFeltételek = new Set<string>();
+  aktívFeltételek.add(`fegyverfogás:${session.fegyverfogás}`);
   for (const at of session.aktív_taktikák) { const def = data.taktikak.find(t => t.név === at.név); if (def) aktívFeltételek.add(def.feltétel_kulcs); }
   for (const h of session.aktív_helyzetek) { const def = data.harciHelyzetek.find(d => d.név === h); if (def) aktívFeltételek.add(def.feltétel_kulcs); }
 

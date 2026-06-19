@@ -1,73 +1,64 @@
----
 schema_version: 1
-
-név: "Kétkezes harc"
-névkomment: ""
+név: Kétkezes harc
+névkomment: ''
 maxfok: 3
 session_toggle: false
 emlékeztető: false
 többszörösség:
-  spec_típus: ""
+  spec_típus: ''
   spec_lista: []
-csoport: "harci"
+csoport: harci
 leírások:
-  - text: "Egyszerre mindkét kezedben képes vagy fegyvert forgatni."
+- text: Egyszerre mindkét kezedben képes vagy fegyvert forgatni.
 megjegyzések:
-  - text: ""
-
+- text: ''
 kiterjeszti:
   normál: []
   erős: []
-
 kp_perfok: 6
 ingyenes_perszint: 0
-
 fokok:
-  - fok: 1
-    követelménytext: "Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint."
-    követelmények: ""
-    hatástext:
-      - text: "Harckeret: +2."
-      - text: "Fegyver harcértékek összeadódnak."
-      - text: "Mesterfegyver fortélyok NEM számítanak."
-    módosítók:
-      - cél: "harckeret"
-        érték: 2
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel:
-          - { forrás: "kétkezes_harc", operátor: "==", érték: true }
-  - fok: 2
-    követelménytext: "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint."
-    követelmények: ""
-    hatástext:
-      - text: "Harckeret: +3."
-      - text: "Fegyver harcértékek összeadódnak."
-      - text: "Mf: csak a nagyobb fegyveré számít."
-    módosítók:
-      - cél: "harckeret"
-        érték: 3
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel:
-          - { forrás: "kétkezes_harc", operátor: "==", érték: true }
-  - fok: 3
-    követelménytext: "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint."
-    követelmények: ""
-    hatástext:
-      - text: "Harckeret: +4."
-      - text: "Fegyver harcértékek összeadódnak."
-      - text: "Mf: mindkét fegyveré számít."
-    módosítók:
-      - cél: "harckeret"
-        érték: 4
-        mód: "flat"
-        forrás: ""
-        arány: 0
-        feltétel:
-          - { forrás: "kétkezes_harc", operátor: "==", érték: true }
-
+- fok: 1
+  követelménytext: Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint.
+  követelmények: ''
+  hatástext:
+  - text: 'Harckeret: +2.'
+  - text: Fegyver harcértékek összeadódnak.
+  - text: Mesterfegyver fortélyok NEM számítanak.
+  módosítók:
+  - cél: harckeret
+    érték: 2
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: fegyverfogás:kétkezes
+- fok: 2
+  követelménytext: Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint.
+  követelmények: ''
+  hatástext:
+  - text: 'Harckeret: +3.'
+  - text: Fegyver harcértékek összeadódnak.
+  - text: 'Mf: csak a nagyobb fegyveré számít.'
+  módosítók:
+  - cél: harckeret
+    érték: 3
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: fegyverfogás:kétkezes
+- fok: 3
+  követelménytext: Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint.
+  követelmények: ''
+  hatástext:
+  - text: 'Harckeret: +4.'
+  - text: Fegyver harcértékek összeadódnak.
+  - text: 'Mf: mindkét fegyveré számít.'
+  módosítók:
+  - cél: harckeret
+    érték: 4
+    mód: flat
+    forrás: ''
+    arány: 0
+    feltétel: fegyverfogás:kétkezes
 todo:
-  - text: ""
+- text: ''

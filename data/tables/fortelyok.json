@@ -3748,13 +3748,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": [
-              {
-                "forrás": "kétkezes_harc",
-                "operátor": "==",
-                "érték": true
-              }
-            ]
+            "feltétel": "fegyverfogás:kétkezes"
           }
         ]
       },
@@ -3774,13 +3768,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": [
-              {
-                "forrás": "kétkezes_harc",
-                "operátor": "==",
-                "érték": true
-              }
-            ]
+            "feltétel": "fegyverfogás:kétkezes"
           }
         ]
       },
@@ -3800,13 +3788,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": [
-              {
-                "forrás": "kétkezes_harc",
-                "operátor": "==",
-                "érték": true
-              }
-            ]
+            "feltétel": "fegyverfogás:kétkezes"
           }
         ]
       }
