@@ -223,7 +223,7 @@ function App() {
 
   // --- Autosave localStorage (multi-slot) ---
   useEffect(() => {
-    if (!karakter) return;
+    if (!karakter || testMode || !isDirty) return;
     const expectedLeíró = generateIdLeíró(karakter.név, karakter.tsz);
     if (karakter.id_leíró !== expectedLeíró) {
       setKarakter(prev => prev ? { ...prev, id_leíró: expectedLeíró } : prev);
@@ -244,6 +244,7 @@ function App() {
   function pushUndo(leírás: string) {
     const k = karakterRef.current;
     if (!k) return;
+    if (!isDirty) setIsDirty(true);
     setUndoStack(prev => [
       { timestamp: Date.now(), leírás, session: structuredClone(k.session), karakter: structuredClone(k) },
       ...prev
@@ -265,6 +266,8 @@ function App() {
   const touchY = useRef<number>(0);
   const [showNewConfirm, setShowNewConfirm] = useState(false);
   const [showTestConfirm, setShowTestConfirm] = useState(false);
+  const [testMode, setTestMode] = useState(false);
+  const [isDirty, setIsDirty] = useState(true);
   const [showMenu, setShowMenu] = useState(false);
   const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
   const [showSlotList, setShowSlotList] = useState(false);
@@ -407,6 +410,7 @@ function App() {
           }
           setKarakter({ ...obj, uid: obj.uid || ((obj as any).id) || generateUid(), id_leíró: obj.id_leíró || generateIdLeíró(obj.név, obj.tsz), session: { ...DEFAULT_SESSION, ...obj.session } });
           setUndoStack((obj as any)._undo || []);
+          setTestMode(false); setIsDirty(true);
         } catch {
           setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
         }
@@ -424,7 +428,7 @@ function App() {
   return (
     <div className="app" onContextMenu={e => e.preventDefault()}>
       <header className="header">
-        <span className="title" onClick={handleTitleTap}>Szilánk RPG</span>
+        <span className="title" style={testMode ? { color: '#ff9800' } : undefined} onClick={handleTitleTap}>Szilánk</span>
         <span className="header-szilank" onClick={() => setShowSzilánkPicker(true)}>{session.szilánk}</span>
         <div className="header-btns">
                     <button className="gear-btn" onClick={() => setOverlayScreen('naplo')}>📅</button>
@@ -596,6 +600,8 @@ function App() {
               const uid = generateUid();
               setKarakter({ ...data.emptyKarakter, uid, id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
               setUndoStack([]);
+              setTestMode(false);
+              setIsDirty(false);
               setShowNewConfirm(false);
             }}>Új karakter</button>
           </div>
@@ -611,7 +617,7 @@ function App() {
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
               const refErr = validateKarakterData(data.testKarakter, data);
               if (refErr) { setShowTestConfirm(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
-              setKarakter({ ...data.testKarakter, uid: data.testKarakter.uid || generateUid(), id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz), session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setShowTestConfirm(false);
+              setKarakter({ ...data.testKarakter, uid: data.testKarakter.uid || generateUid(), id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz), session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setTestMode(true); setShowTestConfirm(false);
             }}>Betöltés</button>
           </div>
         </div>,
@@ -647,6 +653,7 @@ function App() {
                           if (validateKarakter(parsed)) {
                             setKarakter({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } });
                             setUndoStack((parsed as any)._undo || []);
+                            setTestMode(false); setIsDirty(true);
                             setShowSlotList(false);
                           }
                         } catch { /* */ }
