@@ -268,6 +268,7 @@ function App() {
   const [showMenu, setShowMenu] = useState(false);
   const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
   const [showSlotList, setShowSlotList] = useState(false);
+  const [slotDeleteTarget, setSlotDeleteTarget] = useState<{ uid: string; név: string } | null>(null);
   const [loadError, setLoadError] = useState('');
   const [showFullscreenHint, setShowFullscreenHint] = useState(false);
   const [versionHint, setVersionHint] = useState('');
@@ -636,32 +637,61 @@ function App() {
               return (<>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
                   {slots.map(s => (
-                    <div key={s.uid} onClick={() => {
-                      const charData = localStorage.getItem(`szilank_char_${s.uid}`);
-                      if (!charData) return;
-                      try {
-                        const parsed = JSON.parse(charData);
-                        if (validateKarakter(parsed)) {
-                          setKarakter({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } });
-                          setUndoStack((parsed as any)._undo || []);
-                          setShowSlotList(false);
-                        }
-                      } catch { /* */ }
-                    }} style={{ padding: '8px 12px', borderRadius: '4px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                    <div key={s.uid} style={{ padding: '8px 12px', borderRadius: '4px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
                       background: karakter?.uid === s.uid ? '#2a3a2a' : 'var(--input-bg)', border: karakter?.uid === s.uid ? '1px solid var(--success)' : '1px solid #444' }}>
-                      <span style={{ fontWeight: karakter?.uid === s.uid ? 'bold' : 'normal' }}>{karakter?.uid === s.uid ? '●' : '○'} {s.név || s.id_leíró || 'Névtelen'}</span>
-                      <span style={{ fontSize: '11px', color: '#888' }}>{relTime(s.mentés_dátum)}</span>
+                      <span style={{ flex: 1, fontWeight: karakter?.uid === s.uid ? 'bold' : 'normal' }} onClick={() => {
+                        const charData = localStorage.getItem(`szilank_char_${s.uid}`);
+                        if (!charData) return;
+                        try {
+                          const parsed = JSON.parse(charData);
+                          if (validateKarakter(parsed)) {
+                            setKarakter({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } });
+                            setUndoStack((parsed as any)._undo || []);
+                            setShowSlotList(false);
+                          }
+                        } catch { /* */ }
+                      }}>{karakter?.uid === s.uid ? '●' : '○'} {s.név || s.id_leíró || 'Névtelen'}</span>
+                      <span style={{ fontSize: '11px', color: '#888', marginRight: '8px' }}>{relTime(s.mentés_dátum)}</span>
+                      <span style={{ color: '#e53935', cursor: 'pointer', fontSize: '14px', fontWeight: 'bold' }} onClick={(e) => {
+                        e.stopPropagation();
+                        setSlotDeleteTarget({ uid: s.uid, név: s.név || s.id_leíró || 'Névtelen' });
+                      }}>✕</span>
                     </div>
                   ))}
                   {slots.length === 0 && <span style={{ color: '#888', textAlign: 'center' }}>Nincs mentett karakter</span>}
                 </div>
                 <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-                  <button className="menu-item" style={{ flex: 1, fontSize: '13px', border: '1px solid #ff9800' }} onClick={() => { setShowSlotList(false); setShowTestConfirm(true); }}>🧪 Teszt karakter</button>
+                  <button className="menu-item" style={{ flex: 1, fontSize: '13px', border: '1px solid #ff9800' }} onClick={() => { setShowSlotList(false); setShowTestConfirm(true); }}>🧪 Teszt</button>
                   <button className="menu-item" style={{ flex: 1, fontSize: '13px' }} onClick={() => { setShowSlotList(false); loadKarakter(); }}>📁 Fájlból...</button>
                 </div>
                 {slots.length >= 10 && <span style={{ fontSize: '11px', color: 'var(--warning)', textAlign: 'center' }}>Max 10 slot — töröld egy régit fájlba mentés után</span>}
               </>);
             })()}
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {slotDeleteTarget && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setSlotDeleteTarget(null); }}>
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
+            <label style={{ fontWeight: 'bold' }}>Karakter törlése</label>
+            <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Törlöd: "{slotDeleteTarget.név}"?</span>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
+              const uid = slotDeleteTarget.uid;
+              localStorage.removeItem(`szilank_char_${uid}`);
+              let sl: { uid: string; id_leíró: string; név: string; mentés_dátum: string }[] = [];
+              try { sl = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+              sl = sl.filter(x => x.uid !== uid);
+              localStorage.setItem('szilank_slots', JSON.stringify(sl));
+              if (karakter?.uid === uid) {
+                if (sl.length > 0) {
+                  const next = localStorage.getItem(`szilank_char_${sl[0].uid}`);
+                  if (next) { const p = JSON.parse(next); setKarakter({ ...p, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack((p as any)._undo || []); }
+                } else { setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) }); setUndoStack([]); }
+              }
+              setSlotDeleteTarget(null);
+            }}>Törlés</button>
           </div>
         </div>,
         document.body
