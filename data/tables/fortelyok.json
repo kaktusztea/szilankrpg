@@ -2328,7 +2328,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Nem sújtanak az alapeset levonásai alkalmi tárgy hajításakor.",
+          "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
           "A tárgy harcértéke nem változik."
         ],
         "követelmény": "",
@@ -2361,6 +2361,7 @@
       {
         "fok": 2,
         "hatás": [
+          "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
           "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
         ],
         "követelmény": "",
@@ -2371,7 +2372,24 @@
             "típus": "képzettség"
           }
         ],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
+          },
+          {
+            "cél": "cé_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:hajítás_nem_dobásra_készített"
+          }
+        ]
       }
     ]
   },

@@ -4,28 +4,28 @@ névkomment: ""
 maxfok: 2
 session_toggle: false
 emlékeztető: true
-többszörösség: 
+többszörösség:
   spec_típus: ""
   spec_lista: []
 csoport: "harci"
-leírások: 
+leírások:
 - text: "Nem dobásra készített tárgyak hajigálása (sámli, palack, stb.)."
-megjegyzések: 
+megjegyzések:
 - text: ""
-kiterjeszti: 
+kiterjeszti:
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok: 
+fokok:
 - fok: 1
   követelménytext: ""
-  követelmények: 
+  követelmények:
   - név: "Hajítás"
     érték: 6
     típus: "képzettség"
-  hatástext: 
-  - text: "Nem sújtanak az alapeset levonásai alkalmi tárgy hajításakor."
+  hatástext:
+  - text: "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások."
   - text: "A tárgy harcértéke nem változik."
   módosítók:
   - cél: "sebzésdobás"
@@ -42,12 +42,25 @@ fokok:
     feltétel: "harci_helyzet:hajítás_nem_dobásra_készített"
 - fok: 2
   követelménytext: ""
-  követelmények: 
+  követelmények:
   - név: "Hajítás"
     érték: 9
     típus: "képzettség"
-  hatástext: 
+  hatástext:
+  - text: "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások."
   - text: "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
-  módosítók: ""
-todo: 
+  módosítók:
+  - cél: "sebzésdobás"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:hajítás_nem_dobásra_készített"
+  - cél: "cé_dobás"
+    érték: 1
+    mód: "enyhít"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:hajítás_nem_dobásra_készített"
+todo:
 - text: ""
