@@ -1,5 +1,94 @@
 # Pozitív helyzetek
 
+## Beszorított ellenfél
+
+Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
+
+```
+Előny+1 TÉ dobásra
+```
+
+<br />
+
+---
+## Hátulról támadás
+
+```
+Előny+1 TÉ dobásra
+```
+
+🔆 Védekező pajzs `VÉ` értéke **NEM** számít
+
+<br />
+
+---
+## Láthatatlanul harcolás - csendesen
+
+```
+Előny+2 TÉ dobásra
+VÉ csökkentés: +2
+VÉ: +10
+```
+
+🔆 Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ellen
+
+🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély
+
+### [Vakharc](fortelyok.harci/vakharc.md) fortély hatása
+
+```
+1.fok megszűntet
+    1 TÉ Hátrányt védőnél
+
+2.fok: megszűntet
+    1 TÉ Előnyt támadónál
+    1 TÉ Hátrányt védőnél
+
+ 3.fok: nullázza a
+    Támadó összes előnyét
+    Védő összes Hátrányát
+```
+
+---
+## Láthatatlanul harcolás - hallhatóan
+
+```
+Előny+1 TÉ dobásra
+VÉ csökkentés: +1
+VÉ: +5
+```
+
+🔆 Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ellen
+
+🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély
+
+<br />
+
+---
+## Levegőből támadás
+
+```
+Előny+2 TÉ Dobásra
+```
+
+🔆 Roham (zuhanás) külön, plusz számolandó
+
+🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
+
+<br />
+
+---
+## Magasabbról
+
+```
+Előny+1 TÉ dobásra
+```
+
+🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
+
+<br />
+
+---
 ## Meglepetés
 
 Ha az ellenfél nem számít az őt érő támadásra, de még képes reagálni, akkor **Meglepetésről** beszélünk.
@@ -57,97 +146,6 @@ Orgyilkos fortély
 
 → [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md) szituáció
 → [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md) szituáció
-
-<br />
-
----
-## Hátulról támadás
-
-```
-Előny+1 TÉ dobásra
-```
-
-🔆 Védekező pajzs `VÉ` értéke **NEM** számít
-
-<br />
-
----
-## Magasabbról
-
-```
-Előny+1 TÉ dobásra
-```
-
-🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
-
-<br />
-
----
-## Levegőből támadás
-
-```
-Előny+2 TÉ Dobásra
-```
-
-🔆 Roham (zuhanás) külön, plusz számolandó
-
-🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
-
-<br />
-
----
-## Beszorított ellenfél
-
-Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
-
-```
-Előny+1 TÉ dobásra
-```
-
-<br />
-
----
-## Láthatatlanul harcolás - hallhatóan
-
-```
-Előny+1 TÉ dobásra
-VÉ csökkentés: +1
-VÉ: +5
-```
-
-🔆 Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ellen
-
-🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély
-
-<br />
-
----
-## Láthatatlanul harcolás - csendesen
-
-```
-Előny+2 TÉ dobásra
-VÉ csökkentés: +2
-VÉ: +10
-```
-
-🔆 Fárasztó Taktika **NEM** alkalmazható láthatatlan ellenfél ellen
-
-🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md) fortély
-
-### [Vakharc](fortelyok.harci/vakharc.md) fortély hatása
-
-```
-1.fok megszűntet
-    1 TÉ Hátrányt védőnél
-
-2.fok: megszűntet
-    1 TÉ Előnyt támadónál
-    1 TÉ Hátrányt védőnél
-
- 3.fok: nullázza a
-    Támadó összes előnyét
-    Védő összes Hátrányát
-```
 
 ---
 
