@@ -559,7 +559,6 @@ function App() {
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowSlotList(true); }}>📂 Karakter betöltése</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); saveKarakter(); }}>💾 Karakter mentése</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowNewConfirm(true); }}>📄 Új karakter</button>
-            <button className="menu-item" onClick={() => { setShowMenu(false); setShowTestConfirm(true); }}>🧪 Teszt karakter</button>
             {document.fullscreenEnabled && (
               <button className="menu-item" onClick={() => { setShowMenu(false); if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }}>
                 {document.fullscreenElement ? '⛶ Kilépés teljes képernyőből' : '⛶ Teljes képernyő'}
@@ -657,7 +656,7 @@ function App() {
                   {slots.length === 0 && <span style={{ color: '#888', textAlign: 'center' }}>Nincs mentett karakter</span>}
                 </div>
                 <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-                  <button className="menu-item" style={{ flex: 1, fontSize: '13px' }} onClick={() => { setShowSlotList(false); setShowNewConfirm(true); }}>+ Új karakter</button>
+                  <button className="menu-item" style={{ flex: 1, fontSize: '13px', border: '1px solid #ff9800' }} onClick={() => { setShowSlotList(false); setShowTestConfirm(true); }}>🧪 Teszt karakter</button>
                   <button className="menu-item" style={{ flex: 1, fontSize: '13px' }} onClick={() => { setShowSlotList(false); loadKarakter(); }}>📁 Fájlból...</button>
                 </div>
                 {slots.length >= 10 && <span style={{ fontSize: '11px', color: 'var(--warning)', textAlign: 'center' }}>Max 10 slot — töröld egy régit fájlba mentés után</span>}
