@@ -71,11 +71,27 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
   - 📅 Napló overlay gomb (mindkét mód)
   - ✏️ Jegyzetek overlay gomb (mindkét mód)
   - ⚙️ Menü gomb: overlay popup (Karakter betöltése / Karakter mentése / Új karakter / Teszt karakter / Teljes képernyő)
-  - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`
+  - ↩ Undo gomb: disabled ha stack üres, badge (piros kör, 9px) mutatja a stack méretét (1-6). Kattintás → undo overlay.
+  - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 1000ms fade
 - ⚙️ menü popup: `.menu-item` gombok (centered szöveg, `padding: 10px 16px`)
   - Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup (iOS/Android specifikus szöveg)
 - Megerősítő popup-ok (Új/Teszt): overlay, centered, label (bold) + dim szöveg + piros gomb
 - Betöltési hiba popup: piros "Betöltési hiba" label + hibaüzenet + OK gomb
+
+### Undo overlay
+- Felugró popup: "Visszavonás" cím
+- Lista: legutóbbi felül, legrégebbi alul (max 6)
+- Kiválasztás: kattintás → a kiválasztott + felette lévők piros háttérrel kiemelve
+- "Visszaállítás (N művelet)" gomb: piros, csak kiválasztás után aktív
+- Overlay mellé kattintás: bezár
+- Jegyzetek és Napló NEM vonódik vissza (mindig friss marad)
+
+### Local Storage
+- `szilank_karakter`: autosave minden módosításkor (karakter JSON)
+- `szilank_undo`: undo stack (max 6 entry)
+- "Új karakter": mindkettő törlődik
+- Betöltés: localStorage-ból ha valid; ha nincs → emptyKarakter + uid generálás
+- Karakter ID-k: `uid` (egyedi UUID, soha nem változik) + `id_leíró` (olvasható slug, auto-frissül)
 
 ---
 

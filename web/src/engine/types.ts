@@ -106,6 +106,8 @@ export interface NarratívMódosító {
 }
 
 export interface Karakter {
+  uid: string;
+  id_leíró: string;
   schema_version: number;
   név: string;
   játékos: string;

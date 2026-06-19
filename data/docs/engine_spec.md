@@ -1701,7 +1701,7 @@ Az aktuális karakter állapot és undo stack automatikusan localStorage-ba ment
 | `szilank_undo` | Undo stack tömb (max 6 entry × karakter snapshot) | ~30-90KB |
 
 note: §31 (multi-karakter) implementálásakor mindkét key megszűnik, helyüket a
-      `szilank_char_{id}` (benne `_undo` mező) + `szilank_slots` + `szilank_active` veszi át.
+      `szilank_char_{uid}` (benne `_undo` mező) + `szilank_slots` + `szilank_active` veszi át.
 
 ### 30.2 Mentés
 
@@ -1725,21 +1725,28 @@ note: §31 (multi-karakter) implementálásakor mindkét key megszűnik, helyük
 
 ## §31 Multi-karakter mentés (TERV — NEM IMPLEMENTÁLT)
 
-### 31.1 Karakter ID
+### 31.1 Karakter ID-k
 
-- Minden karakter kap egy egyedi `id` mezőt (schema bővítés): generált hash (pl. `crypto.randomUUID()`)
-- Generálás időpontja: "Új karakter" indításkor
-- A `test_karakter.json`-ban is legyen fix id (pl. `"test-von-agabor-001"`)
-- Betöltéskor validáció: ha hiányzik az `id`, generálódjon (backwards compatibility)
-- Schema: `karakter.id: string` (kötelező, top-level mező)
+Minden karakter két azonosítót kap:
+
+| Mező | Formátum | Cél |
+|------|----------|-----|
+| `uid` | `crypto.randomUUID()` (pl. `"a1b2c3d4-..."`) | Egyedi azonosító, localStorage kulcs, soha nem változik |
+| `id_leíró` | `"{név-slug}-{tsz}tsz"` (pl. `"von-agabor-8tsz"`) | Ember által olvasható, karakter lista megjelenítéshez |
+
+- `uid`: "Új karakter" indításkor generálódik, soha nem módosul
+- `id_leíró`: automatikusan frissül név/TSz változáskor (slug: kisbetű, szóköz→kötőjel, ékezet marad)
+- A `test_karakter.json`-ban fix uid (pl. `"test-von-agabor-001"`)
+- Betöltéskor: ha hiányzik a `uid`, generálódik (backwards compatibility)
+- Schema: `karakter.uid: string`, `karakter.id_leíró: string` (kötelező, top-level mezők)
 
 ### 31.2 localStorage struktúra
 
 | Key | Tartalom |
 |-----|----------|
-| `szilank_slots` | JSON tömb: `{ id, név, mentés_dátum }[]` — max 10 entry, rendezve utolsó módosítás szerint |
-| `szilank_char_{id}` | Teljes karakter JSON (az adott slot-hoz), benne az undo stack |
-| `szilank_active` | Az aktív karakter `id`-ja (amelyik épp szerkesztés alatt van) |
+| `szilank_slots` | JSON tömb: `{ uid, id_leíró, név, mentés_dátum }[]` — max 10 entry, rendezve utolsó módosítás szerint |
+| `szilank_char_{uid}` | Teljes karakter JSON (az adott slot-hoz), benne az undo stack |
+| `szilank_active` | Az aktív karakter `uid`-ja (amelyik épp szerkesztés alatt van) |
 
 Az undo stack a karakter JSON részévé válik:
 ```json
@@ -1762,17 +1769,19 @@ Az undo stack a karakter JSON részévé válik:
 
 ### 31.3 Auto save
 
-- Minden karakter módosításkor: `szilank_char_{aktív_id}` felülíródik
+- Minden karakter módosításkor: `szilank_char_{uid}` felülíródik
 - `szilank_slots` frissül: `mentés_dátum` = now, sorrend újrarendezés
+- Az `id_leíró` automatikusan frissül név/TSz változáskor
 - Nincs manuális "Mentés" gomb — minden módosítás azonnali
 
 ### 31.4 Új karakter
 
-1. `crypto.randomUUID()` → id generálás
-2. `emptyKarakter` + id → localStorage slot foglalás
-3. Ha 10 slot betelt: figyelmeztetés ("Töröld egy régit, vagy mentsd fájlba")
-4. Aktív karakter váltás az új slot-ra
-5. Undo stack reset
+1. `crypto.randomUUID()` → `uid` generálás
+2. `id_leíró` generálás (üres névből: `"új-karakter-3tsz"`)
+3. `emptyKarakter` + uid + id_leíró → localStorage slot foglalás
+4. Ha 10 slot betelt: figyelmeztetés ("Töröld egy régit, vagy mentsd fájlba")
+5. Aktív karakter váltás az új slot-ra
+6. Undo stack reset
 
 ### 31.5 Karakter lista UI ("Betöltés" menüpont)
 
@@ -1793,6 +1802,7 @@ Az undo stack a karakter JSON részévé válik:
 
 - Rendezés: utolsó módosítás szerint (legfrissebb felül)
 - Aktív karakter jelölve (●), többi (○)
+- Megjelenítés: `név` (vagy `id_leíró` ha név üres) + relatív idő
 - Tap: betöltés (aktív karakter váltás)
 - Long press: törlés megerősítéssel
 - "Fájlból betöltés": a jelenlegi fájl-import működés (JSON fájl kiválasztás)
@@ -1801,7 +1811,7 @@ Az undo stack a karakter JSON részévé válik:
 ### 31.6 Karakter törlés
 
 - Long press → megerősítő popup: "Törlöd: {név}?"
-- `szilank_char_{id}` eltávolítás
+- `szilank_char_{uid}` eltávolítás
 - `szilank_slots` frissítés
 - Ha az aktív karakter törlődik: automatikusan a legfrissebb másik lesz aktív
 - Ha nincs más: "Új karakter" indul
@@ -1809,12 +1819,13 @@ Az undo stack a karakter JSON részévé válik:
 ### 31.7 Fájlba mentés (export)
 
 - A jelenlegi "Karakter mentése" (JSON letöltés) marad
-- Az exportált JSON tartalmazza az `id`-t
-- Importálásnál: ha az id már létezik a slot-ok között → felülírás; ha nem → új slot
+- Az exportált JSON tartalmazza az `uid`-t és `id_leíró`-t
+- Importálásnál: ha az `uid` már létezik a slot-ok között → felülírás; ha nem → új slot
 
 ### 31.8 Implementációs megjegyzések
 
 - `crypto.randomUUID()`: modern böngészők (HTTPS/localhost) támogatják
-- Fallback id generálás: `Date.now().toString(36) + Math.random().toString(36).slice(2)`
+- Fallback uid generálás: `Date.now().toString(36) + Math.random().toString(36).slice(2)`
+- `id_leíró` generálás: `"{név-slug}-{tsz}tsz"` (slug: kisbetű, szóköz→kötőjel)
 - localStorage limit: ~5MB böngészőnként — 10 karakter × ~15KB = ~150KB, bőven belefér
-- Migrálás: ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba
+- Migrálás: ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba, uid generálás

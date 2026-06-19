@@ -15,6 +15,16 @@ import './App.css';
 
 interface UndoEntry { timestamp: number; leírás: string; session: Session; karakter: Karakter; }
 
+function generateUid(): string {
+  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
+  return Date.now().toString(36) + Math.random().toString(36).slice(2);
+}
+
+function generateIdLeíró(név: string, tsz: number): string {
+  const slug = (név || 'új-karakter').toLowerCase().replace(/\s+/g, '-');
+  return `${slug}-${tsz}tsz`;
+}
+
 const ALL_TABS = [
   { id: 'harcertekek', label: '🛡️', editOnly: true },
   { id: 'aktiv', label: '❎', editOnly: false },
@@ -145,12 +155,12 @@ function App() {
         try {
           const parsed = JSON.parse(saved);
           if (validateKarakter(parsed)) {
-            setKarakter({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } });
+            setKarakter({ ...parsed, uid: parsed.uid || ((parsed as any).id) || generateUid(), id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), session: { ...DEFAULT_SESSION, ...parsed.session } });
             return;
           }
         } catch { /* ignore parse error, fall through to empty */ }
       }
-      setKarakter(d.emptyKarakter);
+      setKarakter({ ...d.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró("", d.emptyKarakter.tsz) });
     }).catch(e => setError(`Betöltési hiba: ${String(e)}`));
   }, []);
 
@@ -172,7 +182,13 @@ function App() {
 
   // --- Autosave localStorage ---
   useEffect(() => {
-    if (karakter) localStorage.setItem('szilank_karakter', JSON.stringify(karakter));
+    if (!karakter) return;
+    const expectedLeíró = generateIdLeíró(karakter.név, karakter.tsz);
+    if (karakter.id_leíró !== expectedLeíró) {
+      setKarakter(prev => prev ? { ...prev, id_leíró: expectedLeíró } : prev);
+      return;
+    }
+    localStorage.setItem('szilank_karakter', JSON.stringify(karakter));
   }, [karakter]);
 
   // --- Undo Stack ---
@@ -351,7 +367,7 @@ function App() {
             setLoadError(`Referencia hiba: ${refErr}`);
             return;
           }
-          setKarakter({ ...obj, session: { ...DEFAULT_SESSION, ...obj.session } });
+          setKarakter({ ...obj, uid: obj.uid || ((obj as any).id) || generateUid(), id_leíró: obj.id_leíró || generateIdLeíró(obj.név, obj.tsz), session: { ...DEFAULT_SESSION, ...obj.session } });
           setUndoStack([]);
         } catch {
           setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
@@ -539,7 +555,7 @@ function App() {
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>Új karakter?</label>
             <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(data.emptyKarakter); setUndoStack([]); localStorage.removeItem('szilank_karakter'); localStorage.removeItem('szilank_undo'); setShowNewConfirm(false); }}>Új karakter</button>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) }); setUndoStack([]); localStorage.removeItem('szilank_karakter'); localStorage.removeItem('szilank_undo'); setShowNewConfirm(false); }}>Új karakter</button>
           </div>
         </div>,
         document.body
@@ -553,7 +569,7 @@ function App() {
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
               const refErr = validateKarakterData(data.testKarakter, data);
               if (refErr) { setShowTestConfirm(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
-              setKarakter({ ...data.testKarakter, session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setShowTestConfirm(false);
+              setKarakter({ ...data.testKarakter, uid: data.testKarakter.uid || generateUid(), id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz), session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setShowTestConfirm(false);
             }}>Betöltés</button>
           </div>
         </div>,

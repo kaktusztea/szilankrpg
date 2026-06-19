@@ -96,7 +96,7 @@
   - Gyógyulás: auto-select ha csak 1 típusú seb van
   - ÉP Reset: megerősítő popup, disabled ha nincs seb
   - TÉ levonás: Fájdalomtűrés enyhítés (konstansok.fájdalomtűrés_enyhítés), dinamikus
-  - TÉ footer double-tap: navigál Tul/Képz → scroll Fájdalomtűrés-hez
+  - TÉ footer tap: navigál Tul/Képz → scroll Fájdalomtűrés-hez
   - képzettségek prop: lifted state, Fájdalomtűrés szint módosítás azonnal hat
 - ✅ Tab rendszer: swipe + animáció (0.15s) + tükrözött tab bar (jobb→bal, 18px ikon-only + szöveges fülek)
 - ✅ Szerkesztő/Game mód toggle (1000ms fade animáció narancs↔zöld)
@@ -106,15 +106,14 @@
   - Fejléc: Név (tap → szerkesztő popup) + Szint (tap → gombgrid 3-21, 5 oszlop, utolsó sor középre)
   - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (tap → +/− overlay)
   - Game módban Faj+Kor a Név mellé konkatenálódik: "von Agabor (Ember (Északi), 32)"
-  - Tulajdonságok: fix 2x4 grid, teljes nevek, double-tap → popup gomb-grid (-5..+7), érték választás bezárja
+  - Tulajdonságok: fix 2x4 grid, teljes nevek, tap → popup gomb-grid (-5..+7), érték választás bezárja
   - Faj limit warning: sárga szín + automatikusan megjelenő "Faj max/min: X" info box (nem zárható)
   - Képzettségek: 7 csoportban (összecsukható), dropdown + azonnali szint popup, ✕ törlés (piros megerősítés)
-  - Szint választó: popup gombok 1-15 grid (5x3), aktív=zöld, érték választás bezárja (double-tap triggereli)
+  - Szint választó: popup gombok 1-15 grid (5x3), aktív=zöld, érték választás bezárja (tap triggereli)
   - Szint színkód: 0=piros, 1-8=sárga, 9+=zöld
   - Többszörös képzettségek: generikus `többszörös` lista mező (fix alnév lista VAGY `["*"]` szabad szöveges max 20 kar)
   - Többszörös felvételkor csoportosítva a testvéreik mellé kerülnek
   - Game mód adatlap: próba, domináns tulajdonságok, kiterjesztő fortélyok
-  - Rövid koppintás szerkesztő módban: nem csinál semmit (csak double-tap)
 - ✅ Fortélyok fül: teljes UI (szerkesztő + game mód)
   - 6 csoport (Harci → Általános → Érzékek → Szabad → Kiemelt → Misztikus), összecsukható
   - Fok kijelzés: karikák (●/○) — teli=aktív fok, üres=nem aktív; Nyelvismeret: szöveges label marad
@@ -199,11 +198,11 @@
   - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown)
     - Mezők: MF fok, Idea, Anyag — `he-field-btn` stílus, tap → overlay popup
     - MF fok: piros szöveg ha Mesterfegyver követelmény nem teljesül
-    - Per-element double-tap: `tapTimers` Map (key-per-gomb, nincs interferencia)
+    - Minden szerkesztő elem: egyszeri tap → overlay popup
     - MK fegyverek: dropdown-ban csak 1K variáns, `Alapnév` mező mint display name (suffix nélkül)
     - MK 2K variáns: automatikusan megjelenik a Harc fülön mint külön sor
     - `MK_pár` + `Alapnév` mezők a `fegyverek.json`-ban (process_fegyverek.py generálja)
-  - Páncél: `he-field-btn` stílus, dupla katt → overlay popup
+  - Páncél: `he-field-btn` stílus, tap → overlay popup
     - Struktúra, Fémalapanyag (csak fém struktúránál), Kidolgozottság, Méret, Sisak (toggle), Végtagvédettség, Idea, Rongálódás
     - méret_illeszkedés értékek: `passzol`, `nem passzol`, `borzalmas`
   - Mesterfegyver fortély szinkronizáció:
@@ -224,14 +223,14 @@
   - Páncél lookup-ok: 11 szabály (struktúra/alapanyag/méret/merevvért StringContext lookup-okkal)
   - `if` keyword fix: hozzáadva az identifier exclusion listához
 - ✅ Tulajdonság pontok kijelzés: `Tulajdonság pontok: X/Y` (szerkesztő módban, piros ha túllépés)
-- ✅ Játékos neve mező: double-tap szerkesztő popup, mentés fájlnévben (`karakter_játékos_Xtsz.json`)
+- ✅ Játékos neve mező: tap szerkesztő popup, mentés fájlnévben (`karakter_játékos_Xtsz.json`)
 - ✅ `onSelect preventDefault` eltávolítva (okozta az input karakter-elvesztés bugot iOS-en)
 - ✅ Mentés fájlnév: `kisbetű_éktelenítve_Xtsz.json` formátum (első név max 20 kar, ASCII only)
 - ✅ Pajzs szekció a Harcértékek fülön
   - `PajzsPeldany` típus: `{ méret: string, pajzshasználat_fok: number }`
   - Karakter top-level `pajzs` mező (karakter.yaml séma v2 bővítve)
-  - Méret: double-tap → popup (— nincs — / kis / közepes / nagy)
-  - Pajzshasználat fok: double-tap → kerek gombok 0-3, szinkronizálja a Pajzshasználat fortélyt
+  - Méret: tap → popup (— nincs — / kis / közepes / nagy)
+  - Pajzshasználat fok: tap → kerek gombok 0-3, szinkronizálja a Pajzshasználat fortélyt
   - Kézben: read-only indikátor (`session.aktív_pajzs` alapján), kattintás → sárga hint
   - Pajzshasználat fortély: locked a Fortélyok fülön (nem szerkeszthető/törölhető, nem jelenik meg dropdown-ban)
   - `setPajzsFok()`: fortélyok tömbben közvetlenül módosítja a Pajzshasználat fortélyt
@@ -354,7 +353,9 @@
 - Harci helyzetek kombinálása: szabályok tisztázása
 - Láthatatlan ellenfél taktika: kiszedve a yaml-ból, státuszként kezelni?
 - Ember (Szigetvilági) faj háttér hozzáadása (slan helyett)
-- Undo gomb + undo stack (navigálható)
+- ✅ Undo gomb + undo stack (↩ fejléc gomb, badge, overlay popup, max 6 entry, localStorage perzisztens)
+- ✅ Local Storage cache (szilank_karakter + szilank_undo, autosave, page reload megőrzés)
+- ✅ Karakter ID: uid (UUID) + id_leíró (slug, auto-frissül)
 - ODS checker-ek implementálása (KP, limitek, stb.)
 - Faj misztérium képzettségek → Mágia fülre
 
@@ -519,11 +520,11 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Reset megerősítő dialógus: piros centered gomb ("ÉP Reset" / "VÉ Reset"), disabled ha nincs mit resetelni
 - Default tab induláskor: Tul/Képz (index 5 az ALL_TABS-ban)
 - Fájdalomtűrés enyhítés: konstansok.fájdalomtűrés_enyhítés táblából, dinamikusan frissül szint módosításkor
-- ÉP TÉ footer double-tap: navigál Tul/Képz fülre + scroll Fájdalomtűrés képzettséghez (data-kep attribútum)
+- ÉP TÉ footer tap: navigál Tul/Képz fülre + scroll Fájdalomtűrés képzettséghez (data-kep attribútum)
 - Sebesülés popup: típus+érték gombok, mindkettő kiválasztva → auto-close, 1-15 látható + ▾ lenyitó (16-40)
 - Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
-- iOS kompatibilitás: double-tap modell (nem long-press), nincs touchstart preventDefault hack, `touch-action: manipulation` CSS
+- iOS kompatibilitás: egyszeri tap interakció, `-webkit-tap-highlight-color: transparent` globálisan, `touch-action: manipulation` ahol kell
 - **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Maradék TS inline logika: Fájdalomtűrés enyhítés (küszöb-tábla lookup). §16 fortély módosítók (mindig-aktív + feltételes) és taktika módosítók implementálva a HarcScreen-ben (iteráció fortelyok + session aktív taktikák/helyzetek/szituációk felett).
 - Tradíció képzettség: `"Tradíció: Vulgármágia"` formátum (nem `többszörös` yaml mező!), tradiciok.json-ból picker; Szakrális altípusoknál isten választó (pantheon csoportosítva)
 - `tables/tradiciok.json`: egységes struktúra `{ név, típus, altípusok[] }` — altípusok lehetnek egyszerű (Bárdmágia) vagy pantheon-csoportosított (Szakrális/istenek)
