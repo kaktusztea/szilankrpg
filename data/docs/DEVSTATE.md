@@ -256,6 +256,7 @@
 - ✅ Game módban üres fortély/képzettség csoportok elrejtése
 - ✅ Nyelvismeret dropdown: 🌏 → 🎁 ikon (egységes "ingyenes keret" jelzés)
 - ✅ §16 Fortély módosítók (mindig-aktív, feltétel="") implementálva
+- ✅ §16.1 Alapeset (fok:0): `engine/alapeset.ts` kiértékelő, feltétel prefix dispatch, accordion megjelenítés Hatás pool-ban, Hárítófegyver VÉ fortély-check
   - `generate_tables.py`: fokok[].módosítók mező hozzáadva a fortelyok.json-hoz
   - `data-loader.ts`: FortelyModosito interface + FortelyFokSummary.módosítók
   - `HarcScreen.tsx`: generikus iteráció (flat + scaled mód), fortelyMods Record
@@ -292,7 +293,7 @@
   - Harci helyzetek: overlay picker (név + infó, ABC)
   - Szituációk: overlay picker (név + infó, ABC)
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
-  - Hatás pool box (7 szekció): Taktikák | Harci helyzetek | Státusz hatások | Manőver bónuszok | Előny/Hátrány | Fortély bónuszok | Narratív módosítók
+  - Hatás pool box (8 szekció): Taktikák | Harci helyzetek | Státusz hatások | Manőver bónuszok | Előny/Hátrány | Fortély bónuszok | Alapesetek | Narratív módosítók
   - Narratív módosítók: "+ Új" gomb → overlay popup (Hátrány/Előny gombok + szöveg + OK, Enter = OK)
   - Több támadás TÉ levonás: konstansokból (`több_támadás_TÉ_levonás`), generikusan (taktika +3 kioltja)
   - Minden picker: Escape + mellé katt bezárja

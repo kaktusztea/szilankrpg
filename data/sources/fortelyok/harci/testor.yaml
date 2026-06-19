@@ -4,33 +4,40 @@ névkomment: ""
 maxfok: 2
 session_toggle: false
 emlékeztető: true
-többszörösség: 
+többszörösség:
   spec_típus: ""
   spec_lista: []
 csoport: "harci"
-leírások: 
+leírások:
 - text: "Védő Értékedet kiterjeszted egy másik személyre."
-megjegyzések: 
+megjegyzések:
 - text: ""
-kiterjeszti: 
+kiterjeszti:
   normál: []
   erős: []
 kp_perfok: 6
 ingyenes_perszint: 0
-fokok: 
+fokok:
 - fok: 0
   követelménytext: ""
   követelmények: ""
   hatástext:
-  - text: "VÉ kiterjesztés társra: VÉ veszteség duplázódik."
-  módosítók: ""
+  - text: "VÉ kiterjesztés társra: VÉ veszteség duplázódik (x2)."
+  módosítók:
+  - cél: "vé_veszteség"
+    érték: 2
+    mód: "szorzó"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:vé_kiterjesztés"
+    megjegyzés: "Alapeset: VÉ veszteség duplázódik kiterjesztéskor"
 - fok: 1
   követelménytext: ""
-  követelmények: 
+  követelmények:
   - név: ["Közelharc", "Kardvívás", "Lándzsavívás", "Rombolás", "Ostorharc"]
     érték: 6
     típus: "képzettség"
-  hatástext: 
+  hatástext:
   - text: "VÉ veszteség duplázódás Hatás nem sújt VÉ kiterjesztésekor."
   módosítók:
   - cél: "vé_veszteség"
@@ -41,11 +48,11 @@ fokok:
     feltétel: "harci_helyzet:vé_kiterjesztés"
 - fok: 2
   követelménytext: ""
-  követelmények: 
+  követelmények:
   - név: ["Közelharc", "Kardvívás", "Lándzsavívás", "Rombolás", "Ostorharc"]
     érték: 9
     típus: "képzettség"
-  hatástext: 
+  hatástext:
   - text: "Büntetések nélkül védheted pártfogoltad."
   - text: "Többszörös támadás elvesztése Hatás sem sújt."
   módosítók:
@@ -61,5 +68,5 @@ fokok:
     forrás: ""
     arány: 0
     feltétel: "harci_helyzet:vé_kiterjesztés"
-todo: 
+todo:
 - text: ""

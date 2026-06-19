@@ -32,7 +32,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 ### Egyedi színek (nem CSS változók)
 | Szín | Kód | Használat |
 |------|-----|-----------|
-| Narancssárga | `#e0a050` | Fortély nevek, kategória fejlécek (Hatás pool, Manőver picker, Státusz picker, Karma hátterek) |
+| Narancssárga | `#e0a050` | Fortély nevek (Fortély bónusz pool), kategória fejlécek (Manőver picker, Státusz picker, Karma hátterek) |
 | Világoskék | `#7eb8da` | Háttér alkategória labelek (Származás, Jellem, stb.) |
 | Sötét box háttér | `#1a1a2e` | Hatás pool box háttér |
 | Kártya háttér | `#2a2a3e` | Hatás pool item, hatter-tag |
@@ -149,18 +149,20 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 - Chip kattintás fokozatos taktikánál: fokválasztó picker újra felugrik
 
 ### Hatás pool szekciók
-1. **Taktikák**: per-taktika sorok. Név narancssárga (`#ff9800`), módosítók zöld (`#66bb6a`) + ✔ jel a végén (beszámított), megjegyzések narancssárga (`#ffb74d`). Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
-2. **Harci helyzetek**: per-helyzet sorok. Név narancssárga, utána az `infó` mező szövege (mindig). A `hatások[]` a háttérben működik (feltétel dispatch).
+1. **Taktikák**: per-taktika sorok. Név halvány kék (`#90caf9`), módosítók zöld (`#66bb6a`) + ✔ jel a végén (beszámított), megjegyzések narancssárga (`#ffb74d`). Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
+2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#42a5f5`), utána az `infó` mező szövege (fehér, mindig). A `hatások[]` a háttérben működik (feltétel dispatch).
 3. **Státusz hatások**: státuszok strukturált hatásai kumulálva célonként (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit). Enyhítés NEM jelenik meg itt (háttérben hat). Formátum: `{hatás}: {cél}`.
 4. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
 5. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes). Formátum: `Előny+X: Cél (Fortély)` (pl. "Előny+2: Sebzésdobás (Orgyilkos)")
-6. **Fortély bónuszok**: harci fortélyok narratív hatásszövegei (yaml `emlékeztető: true` flag alapján)
-7. **Narratív módosítók**: KM által hozzáadott szöveges + opcionális Előny/Hátrány
+6. **Fortély bónuszok**: harci fortélyok narratív hatásszövegei (yaml `emlékeztető: true` flag alapján). Fortély név lila (`#ce93d8`).
+7. **Alapesetek**: fortélyok 0.fokának hatástextjei (`<details>` accordion, alapból becsukva). Fejléc: "Alapesetek (N) ▾" szürke. Elemek: fortély név bold fehér + hatástext fehér. Csak feltétel teljesülésekor aktív.
+8. **Narratív módosítók**: KM által hozzáadott szöveges + opcionális Előny/Hátrány
 
 ### Stílus
 - `.aktiv-field-btn`: keretezett label+érték (he-field-btn stílus)
 - `.aktiv-hatas-pool`: sötét háttér, keretes box, szekciók elválasztó vonallal
-- `.hatas-pool-item .fortely-nev`: narancssárga (#e0a050)
+- `.hatas-pool-item .fortely-nev`: lila (#ce93d8)
+- `.taktika-chip-name`: halvány kék (`#90caf9`)
 - Overlay picker: `.aktiv-picker` (görgethető, 80vh max), `.aktiv-picker-item` kártyák
 - `.manover-category-label`: narancssárga kategória fejléc
 

@@ -491,7 +491,7 @@ impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexév
         - Lookup: kf.név alapján (nem kf.spec_elem!)
 ```
 
-### 16.1 Alapeset (fok: 0) — TERV
+### 16.1 Alapeset (fok: 0) — IMPLEMENTÁLT
 
 A fortély yaml `fokok[]` tartalmazhat `fok: 0` entry-t (Alapeset). Ez **akkor aktív, ha a karakter NEM rendelkezik az adott fortéllyal** (fok == 0 implicit). Ezzel a fortély hiányának mechanikus hatása is a data layer-ben tárolható.
 
@@ -562,9 +562,19 @@ SWITCH feltétel.típus:
 
 #### GUI megjelenítés
 
-- A 0.fok hatástext a **Hatás pool**-ban jelenik meg narancssárga/piros színnel (figyelmeztetés)
+- A 0.fok hatástext a **Hatás pool**-ban jelenik meg accordion (`<details>`) formában, alapból becsukva
+- Fejléc: "Alapesetek (N) ▾" — szürke szín (mint "Státusz hatások")
+- Elemek: fortély név bold fehér + hatástext fehér
 - Csak akkor látható, ha a feltétel teljesül ÉS a karakter nem rendelkezik a fortéllyal
-- Tooltip/info: "Alapeset — {fortély név} nélkül"
+
+#### Implementáció
+
+- Modul: `web/src/engine/alapeset.ts`
+  - `evaluateAlapesetek(fortelyDefs, karakter, session)` → `AktívAlapeset[]`
+  - `evaluateFeltétel(feltétel, session, karakter)` → boolean (prefix:érték kiértékelés)
+- Hívás helye: `AktivScreen.tsx` — Hatás pool szekció (fortélyEmlékeztetők után)
+- HarcScreen: `hasHárítóFortély` check — ha nincs "Hárítófegyver használat" fortély → hárítóVÉ = 0
+- Validáció: `generate_tables.py` — feltétel prefix ellenőrzés `konstansok.yaml → feltétel_prefixek` alapján
 
 #### Érintett fortélyok (kezdeti batch)
 

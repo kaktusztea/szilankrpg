@@ -5149,11 +5149,21 @@
       {
         "fok": 0,
         "hatás": [
-          "VÉ kiterjesztés társra: VÉ veszteség duplázódik."
+          "VÉ kiterjesztés társra: VÉ veszteség duplázódik (x2)."
         ],
         "követelmény": "",
         "követelmények": [],
-        "módosítók": []
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 2,
+            "mód": "szorzó",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:vé_kiterjesztés",
+            "megjegyzés": "Alapeset: VÉ veszteség duplázódik kiterjesztéskor"
+          }
+        ]
       },
       {
         "fok": 1,
