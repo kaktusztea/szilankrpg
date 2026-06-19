@@ -691,12 +691,12 @@ function KorPicker({ kor, onSelect }: { kor: number; onSelect: (v: number) => vo
         <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
           onClick={() => setValue(v => Math.max(1, v - 1))}
           onMouseDown={() => startHold(-1)} onMouseUp={stopHold} onMouseLeave={stopHold}
-          onTouchStart={() => startHold(-1)} onTouchEnd={stopHold}>−</button>
-        <strong style={{ fontSize: '28px', minWidth: '60px', textAlign: 'center' }}>{value}</strong>
+          onTouchStart={(e) => { e.preventDefault(); startHold(-1); }} onTouchEnd={stopHold}>−</button>
+        <strong style={{ fontSize: '28px', minWidth: '60px', textAlign: 'center', userSelect: 'none' }}>{value}</strong>
         <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
           onClick={() => setValue(v => Math.min(2000, v + 1))}
           onMouseDown={() => startHold(1)} onMouseUp={stopHold} onMouseLeave={stopHold}
-          onTouchStart={() => startHold(1)} onTouchEnd={stopHold}>+</button>
+          onTouchStart={(e) => { e.preventDefault(); startHold(1); }} onTouchEnd={stopHold}>+</button>
       </div>
     </div>
   );
