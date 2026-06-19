@@ -1820,14 +1820,84 @@ Az undo stack a karakter JSON részévé válik:
 
 ### 31.7 Fájlba mentés (export)
 
-- A jelenlegi "Karakter mentése" (JSON letöltés) marad
-- Az exportált JSON tartalmazza az `uid`-t és `id_leíró`-t
-- Importálásnál: ha az `uid` már létezik a slot-ok között → felülírás; ha nem → új slot
+"Karakter mentése" gomb → overlay popup:
 
-### 31.8 Implementációs megjegyzések
+```
+┌─────────────────────────────┐
+│  Mentés                     │
+├─────────────────────────────┤
+│  ○ Aktuális karakter        │
+│  ○ Összes karakter (backup) │
+├─────────────────────────────┤
+│  [Tovább]                   │
+└─────────────────────────────┘
+```
+
+**Aktuális karakter**: egyedi karakter JSON (uid, id_leíró, _undo benne)
+**Összes karakter (backup)**: unified backup JSON — az összes localStorage slot egy fájlban:
+
+```json
+{
+  "szilánk_backup": true,
+  "verzió": 1,
+  "dátum": "2026-06-19T15:30:00.000Z",
+  "karakterek": [ {...karakter1...}, {...karakter2...}, ... ]
+}
+```
+
+A `szilánk_backup: true` property jelzi, hogy ez unified backup (nem egyedi karakter).
+
+A fájl elkészülte után → második overlay popup:
+
+```
+┌─────────────────────────────┐
+│  Fájl kész                  │
+├─────────────────────────────┤
+│  [📤 Megosztás]             │  ← navigator.share() — mobil share sheet
+│  [💾 Helyi mentés]          │  ← download (ahogy eddig)
+└─────────────────────────────┘
+```
+
+- **Megosztás**: `navigator.share({ files: [file] })` — ha a böngésző támogatja (mobil). Ha nem támogatja → gomb rejtve/disabled.
+- **Helyi mentés**: a jelenlegi Blob+download mechanizmus.
+
+Fájlnév konvenció:
+- Egyedi: `{név_slug}_{tsz}tsz.json`
+- Backup: `szilank_backup_{dátum}.json`
+
+### 31.8 Fájlból betöltés (import)
+
+"Karakter betöltése" → "Fájlból..." gomb → fájlválasztó.
+
+Automatikus felismerés a JSON tartalma alapján:
+- Ha `szilánk_backup === true` → **unified backup import**
+- Egyébként → **egyedi karakter import**
+
+#### Egyedi karakter import
+
+1. Validáció (`validateKarakter`)
+2. Ha az `uid` már létezik a slot listában → megerősítő popup: "Felülírod: {név}({tsz})?"
+   - Igen → felülírás
+   - Nem → kihagyás (nem importál)
+3. Ha nem létezik → új slot hozzáadás
+4. Betöltés aktív karakterként
+
+#### Unified backup import
+
+1. Iteráció a `karakterek[]` tömbön
+2. Egyenként:
+   - Validáció — ha hibás: warning popup ("Hibás entry: {index}. Kihagyva."), folytatás a következővel
+   - Ha `uid` létezik → megerősítő popup: "Felülírod: {név}({tsz})?"
+   - Ha nem létezik → új slot hozzáadás
+3. Nem szakítja meg az importot egy-egy hiba
+4. Importálás végén: az utolsó sikeresen importált karakter lesz az aktív (vagy marad az eddigi ha volt)
+5. Összesítő: "{N} karakter importálva, {M} kihagyva"
+
+### 31.9 Implementációs megjegyzések
 
 - `crypto.randomUUID()`: modern böngészők (HTTPS/localhost) támogatják
 - Fallback uid generálás: `Date.now().toString(36) + Math.random().toString(36).slice(2)`
 - `id_leíró` generálás: `"{név-slug}-{tsz}tsz"` (slug: kisbetű, szóköz→kötőjel)
 - localStorage limit: ~5MB böngészőnként — 10 karakter × ~15KB = ~150KB, bőven belefér
 - Migrálás: ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba, uid generálás
+- `navigator.share()`: csak HTTPS + mobil böngésző; desktop-on fallback = csak "Helyi mentés"
