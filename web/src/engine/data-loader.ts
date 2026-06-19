@@ -31,6 +31,9 @@ interface KonstansokRaw {
   locked_fortélyok: string[];
   egészség_kategória_levonás: { szint: string; módosítók: { cél: string; érték: number }[] }[];
   fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
+  sebesülés_kategóriák_száma: number;
+  hm_aszimmetria_osztó: number;
+  vé_csökkentés_gombok: number[];
 }
 
 // --- KP tábla JSON struktúra ---

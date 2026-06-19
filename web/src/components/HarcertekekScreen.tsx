@@ -37,7 +37,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const alakzatharcSzint = k.képzettségek.find(kp => kp.név === 'Alakzatharc')?.szint ?? 0;
   const maxHM = harciFokok + harcmodorÖsszeg + alakzatharcSzint;
   const maxCM = k.tsz * (konstansok.arányok.max_cm_perszint ?? 2);
-  const maxAszimmetria = Math.floor(k.tsz / 2);
+  const maxAszimmetria = Math.floor(k.tsz / data.konstansok.hm_aszimmetria_osztó);
 
   const hmTotal = k.HM_TÉ + k.HM_VÉ;
   const hmOverflow = hmTotal > maxHM;

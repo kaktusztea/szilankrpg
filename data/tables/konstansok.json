@@ -503,5 +503,12 @@
       "szint": 15,
       "enyhítés": 9
     }
+  ],
+  "sebesülés_kategóriák_száma": 4,
+  "hm_aszimmetria_osztó": 2,
+  "vé_csökkentés_gombok": [
+    1,
+    2,
+    3
   ]
 }

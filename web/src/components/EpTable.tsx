@@ -12,6 +12,7 @@ interface Rubrika {
 
 interface Props {
   ÉP: number;
+  kategóriák: number;
   onSebCountChange?: (count: number) => void;
   ftEnyhítés?: number;
   téLevonások: number[];
@@ -34,8 +35,8 @@ function toSebzések(rubrikák: Rubrika[]): SebzésRubrika[] {
     .map(r => ({ típus: r.típus as SebzésRubrika['típus'], sorszám: r.sorszám }));
 }
 
-export function EpTable({ ÉP, onSebCountChange, ftEnyhítés = 0, téLevonások, onNavigate, sebzések, onSebzésekChange }: Props) {
-  const oszlopMéret = ÉP / 4;
+export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0, téLevonások, onNavigate, sebzések, onSebzésekChange }: Props) {
+  const oszlopMéret = ÉP / kategóriák;
   const összRubrika = ÉP;
 
   // Build rubrikák from session sebzések

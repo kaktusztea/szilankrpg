@@ -399,7 +399,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   }
 
   // ÉP TÉ levonás
-  const oszlopMéret = épValue / 4;
+  const oszlopMéret = épValue / konstansok.sebesülés_kategóriák_száma;
   const téLevonások = (konstansok.egészség_kategória_levonás as { szint: string; módosítók: { cél: string; érték: number }[] }[])
     .map(ek => {
       const téMod = ek.módosítók.find(m => m.cél === 'TÉ');
@@ -430,9 +430,9 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
           <span className="label" onClick={handleVéLabelTap}>VÉ csökkenés</span>
           <span className="value" onClick={handleVéLabelTap}>{session.vé_csökkenés === 0 ? 0 : -session.vé_csökkenés}</span>
           <div className="ve-btns">
-            <button disabled={session.vé_csökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(session.vé_csökkenés + 1, maxVéCsökk))}>-1</button>
-            <button disabled={session.vé_csökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(session.vé_csökkenés + 2, maxVéCsökk))}>-2</button>
-            <button disabled={session.vé_csökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(session.vé_csökkenés + 3, maxVéCsökk))}>-3</button>
+            {(konstansok.vé_csökkentés_gombok as number[]).map(n => (
+              <button key={n} disabled={session.vé_csökkenés >= maxVéCsökk} onClick={() => changeVé(Math.min(session.vé_csökkenés + n, maxVéCsökk))}>-{n}</button>
+            ))}
             <button disabled={session.vé_csökkenés === 0} onClick={() => changeVé(Math.max(0, session.vé_csökkenés - 1))}>+1</button>
             <button disabled={session.vé_csökkenés === 0} onClick={() => setShowVéResetConfirm(true)}>⟲</button>
           </div>
@@ -500,6 +500,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       <div className="harc-section">
         <EpTable
           ÉP={épValue}
+          kategóriák={konstansok.sebesülés_kategóriák_száma}
           onSebCountChange={setSebCount}
           ftEnyhítés={calcFtEnyhítés(k.képzettségek, data.konstansok.fájdalomtűrés_enyhítés)}
           téLevonások={téLevonások}
