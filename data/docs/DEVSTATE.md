@@ -13,7 +13,6 @@
 │   │   ├── konstansok.yaml    ← Központi konstansok (forrás, JSON-ba generálódik)
 │   │   ├── harci_helyzetek.yaml
 │   │   ├── taktikak.yaml
-│   │   ├── szituaciok.yaml
 │   │   ├── manoverek.yaml
 │   │   ├── statuszok.yaml     ← 19 státusz (strukturált hatásokkal)
 │   │   ├── hatas_operatorok.yaml       ← 8 hatás mechanika típus (előny, hátrány, letilt, stb.)
@@ -313,7 +312,7 @@
   - `aktívFeltételek` Set: összegyűjti az aktív `feltétel_kulcs` értékeket (taktika, harci_helyzet, szituáció)
   - Fortély módosítók ahol `feltétel` egyezik → bekerülnek a harcérték kalkulációba
   - Érintett fortélyok: Belharc, Elsöprő roham, Fárasztás, Fegyverrántás, Gladiátor (Bestiái/Közönsége), Célzás, Harci anatómia (orvtámadás)
-- ✅ Session séma bővítés: `aktív_taktika/helyzet` → `aktív_taktikák[]/helyzetek[]/szituációk[]`
+- ✅ Session séma bővítés: `aktív_taktika/helyzet` → `aktív_taktikák[]/helyzetek[]` (körülmények is helyzetek)
   - `AktívTaktika` interface: `{ név, fok? }`
 - ✅ Tab bar átrendezés: sorrend 🟡🟣🔵✨🏹🗡️❎🛡️ (középre rendezve, reszponzív méret)
   - Game módban 🛡️ eltűnik a jobb szélről (többi fix marad)
@@ -366,11 +365,11 @@
 - Faj misztérium képzettségek → Mágia fülre
 
 ### Aktív fül
-- ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF, 0.fok TÉ/VÉ/harckeret konstansokból)
+- ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF, harckeret yaml fortélyból `fegyverfogás:kétkezes` feltétellel)
 
 - ✅ Harci akrobatika: session_toggle (yaml `session_toggle: true`) + TÉ/VÉ bekötés + manőver bónusz
 - Belharc / Belharci szituáció — külön rendszer
-- Páros harc szituáció
+- Páros harc körülmény — implementálva (picker + fortély)
 
 ### Fortélyok — hiányzó számszerűsítések
 - ✅ Harci anatómia: manőver bónusz (`manőver:leütés_hátulról`, `manőver:precíz_támadás`) + Visszafogott TÉ csökkentés (`feltétel: "taktika:visszafogott"`)
@@ -464,6 +463,12 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ localStorage quota exceeded: try/catch (silent fail, nem crashel)
 - ✅ Hárítófegyver VÉ: fortély-ellenőrzés (`hasHárítóFortély`) — nincs fortély → hárítóVÉ = 0
 - ✅ Teszt karakter: megerősítő popup eltávolítva (közvetlen betöltés)
+- ✅ Kétkezes harc harckeret: dupla számolás fix (yaml feltételes módosító + konstans 0.fok, nem duplikálva)
+- ✅ Kétkezesség harckeret +1: feltétel hozzáadva (`session.kétkezes_harc == true`)
+- ✅ `aktívFeltételek` Set: `fegyverfogás:{id}` hozzáadva (HarcScreen + AktivScreen)
+- ✅ HatterekScreen: pushUndo bekötve (háttér módosítás → isDirty + testMode kezelés)
+- ✅ Üres karakter nem mentődik (név+képzettség+fortély mind üres → autosave skip)
+- ✅ pushUndo: testMode kikapcsol (teszt karakteren módosítás → saját karakter lesz)
 - Lovas harc
 
 ## Fontos konvenciók
@@ -495,7 +500,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Strict schema: minden YAML source fájlban explicit megvan minden séma-mező (nincs implicit default, `generate_tables.py` setdefault csak biztonsági háló)
 - Session toggle fortélyok: yaml `session_toggle: true` → Aktív fülön generikus toggle gomb, HarcScreen csak aktív toggle-nél alkalmazza TÉ/VÉ módosítókat
 - Pengelimit: `konstansok.kétkezes_harc_max_pengeméret` (nincs hardcode 2.0)
-- Kétkezes harc data-driven: `konstansok.kétkezes_harc_bónuszok[]` tartalmazza `mindkét_fegyver_értékei`, `mf` ("nincs"/"nagyobb"/"mindkettő"), `harckeret`, `TÉ`, `VÉ` fokonként
+- Kétkezes harc data-driven: `konstansok.kétkezes_harc_bónuszok[]` tartalmazza `mindkét_fegyver_értékei`, `mf`, `TÉ`, `VÉ` fokonként. Harckeret bónusz: yaml fortélyból (`fegyverfogás:kétkezes` feltétel), 0.fok: konstans +1.
 - Pengelevonás osztó: `konstansok.kétkezes_harc_pengelevonás_osztó` (0.5)
 - Harcmodor nevek: `Object.values(konstansok.fegyver_kategória_harcmodor)` — nincs hardcoded lista
 - Többszörös státuszok: yaml `többszörös: true` + `alkategóriák: [...]` → generikus alkategória almenü picker
@@ -506,7 +511,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Fortély `emlékeztető` flag: yaml `emlékeztető: true/false` → AktivScreen Hatás pool "Fortély bónuszok" szekció (19 fortélynál true)
 - Session default: `DEFAULT_SESSION` (types.ts-ben exportálva), betöltéskor hiányzó session pótlása
 - Deploy: GitHub Pages, `https://kaktusztea.github.io/szilankrpg/`, auto-deploy push master-re
-- Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek, taktikák, harci helyzetek, szituációk, manőverek, státuszok, hatások, események, hátterek)
+- Generált JSON-ok: `data/generate_tables.py` script → `tables/` könyvtár (konstansok, képzettségek, fortélyok, kiterjesztések, primer fortélyok, fajok, faj keretek, taktikák, harci helyzetek, manőverek, státuszok, hatások, események, hátterek)
 - Vite plugin: dev szerver indulásakor automatikusan futtatja a generate_tables.py-t; nincs per-request regenerálás
 - Runtime: minden adat `tables/*.json`-ból fetchJson-nel, nincs YAML parse, nincs js-yaml dependency
 - Touch event isolation: kep-row-on `onTouchStart/End stopPropagation` (szerkesztő módban, védi a véletlen lapozást)
@@ -533,7 +538,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
 - iOS kompatibilitás: egyszeri tap interakció, `-webkit-tap-highlight-color: transparent` globálisan, `touch-action: manipulation` ahol kell
-- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Maradék TS inline logika: Fájdalomtűrés enyhítés (küszöb-tábla lookup). §16 fortély módosítók (mindig-aktív + feltételes) és taktika módosítók implementálva a HarcScreen-ben (iteráció fortelyok + session aktív taktikák/helyzetek/szituációk felett).
+- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Maradék TS inline logika: Fájdalomtűrés enyhítés (küszöb-tábla lookup). §16 fortély módosítók (mindig-aktív + feltételes) és taktika módosítók implementálva a HarcScreen-ben (iteráció fortelyok + session aktív taktikák/helyzetek felett).
 - Tradíció képzettség: `"Tradíció: Vulgármágia"` formátum (nem `többszörös` yaml mező!), tradiciok.json-ból picker; Szakrális altípusoknál isten választó (pantheon csoportosítva)
 - `tables/tradiciok.json`: egységes struktúra `{ név, típus, altípusok[] }` — altípusok lehetnek egyszerű (Bárdmágia) vagy pantheon-csoportosított (Szakrális/istenek)
 - `tables/nyelvek.json`: 37 nyelv `{ név, csoport }` — Nyelvismeret fortély picker ebből kínál csoportosított dropdown-t
@@ -561,7 +566,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Game mód: üres képzettség/fortély csoportok elrejtve
 - §16 fortély módosítók: `fortelyMods` Record a HarcScreen-ben, generikus iteráció fokok[].módosítók-ból. 6 mód (flat, scaled, override, enyhít, előny, hátrány). `fortelyok.json` tartalmazza a módosítókat. AktivScreen: manőver bónuszok + előny/hátrány szekció a Hatás pool-ban (feltétel szűréssel).
 - Páncél gombok: disabled + `.he-field-disabled` ha nincs struktúra (`!k.páncél.alap`)
-- Aktív fül adatforrások: `taktikak.json`, `harci_helyzetek.json`, `szituaciok.json`, `manoverek.json`, `statuszok.json`, `hatas_operatorok.json`, `esemenyek.json`, `hatterek.json` — generate_tables.py validáció
+- Aktív fül adatforrások: `taktikak.json`, `harci_helyzetek.json`, `manoverek.json`, `statuszok.json`, `hatas_operatorok.json`, `esemenyek.json`, `hatterek.json` — generate_tables.py validáció
 - Taktika kombó: `kombó_mód: "whitelist"|"blacklist"` + `kombó_lista: string[]`
-- Session v2: `aktív_taktikák: AktívTaktika[]`, `aktív_helyzetek: string[]`, `aktív_szituációk: string[]` (régi `aktív_taktika`/`aktív_helyzet` string törölve)
-- AktivScreen.tsx: Hatás pool + taktikák/helyzetek/szituációk/státuszok overlay picker + manőver picker + Fegyverfogás picker + fegyver Ügyesebb/Gyengébb kéz + páncél toggle + narratív módosítók
+- Session v2: `aktív_taktikák: AktívTaktika[]`, `aktív_helyzetek: string[]` (körülmények is itt, régi `aktív_szituációk` törölve)
+- AktivScreen.tsx: Hatás pool + taktikák/helyzetek/körülmények/státuszok overlay picker + manőver picker + Fegyverfogás picker + fegyver Ügyesebb/Gyengébb kéz + páncél toggle + narratív módosítók

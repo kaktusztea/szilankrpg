@@ -32,7 +32,11 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 ### Egyedi színek (nem CSS változók)
 | Szín | Kód | Használat |
 |------|-----|-----------|
-| Narancssárga | `#e0a050` | Fortély nevek (Fortély bónusz pool), kategória fejlécek (Manőver picker, Státusz picker, Karma hátterek) |
+| Narancssárga | `#e0a050` | Kategória fejlécek (Manőver picker, Státusz picker, Karma hátterek) |
+| Lila | `#ce93d8` | Fortély nevek (Fortély bónusz pool) |
+| Halvány kék | `#90caf9` | Taktika nevek (Hatás pool) |
+| Sötétebb kék | `#42a5f5` | Harci helyzet nevek (Hatás pool) |
+| Arany | `#ffd54f` | Körülmény csoport fejléc (picker) |
 | Világoskék | `#7eb8da` | Háttér alkategória labelek (Származás, Jellem, stb.) |
 | Sötét box háttér | `#1a1a2e` | Hatás pool box háttér |
 | Kártya háttér | `#2a2a3e` | Hatás pool item, hatter-tag |
@@ -121,7 +125,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 
 ## 1. Aktív fül/screen
 
-A harc közbeni szituáció beállítása. Minden itt kiválasztott elem befolyásolja a "Harc" fülön megjelenő értékeket.
+A harc közbeni helyzetek, körülmények, taktikák beállítása. Minden itt kiválasztott elem befolyásolja a "Harc" fülön megjelenő értékeket.
 Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Tartalom (fentről lefelé)
@@ -147,7 +151,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 - Chip kattintás fokozatos taktikánál: fokválasztó picker újra felugrik
 
 ### Hatás pool szekciók
-1. **Taktikák**: per-taktika sorok. Név halvány kék (`#90caf9`), módosítók zöld (`#66bb6a`) + ✔ jel a végén (beszámított), megjegyzések narancssárga (`#ffb74d`). Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
+1. **Taktikák**: per-taktika sorok. Név halvány kék (`#90caf9`), módosítók zöld (`#66bb6a`) + ✔ jel a végén (beszámított), megjegyzés fehér. Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
 2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#42a5f5`), utána az `infó` mező szövege (fehér). Ha van 0.fok alapeset aminek feltétele ez a helyzet: " Alapeset: {hatástext}" hozzáfűzve. Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva: `→ Fortély (fok): hatástext ✔` (zöld ha aktív, szürke ha nem).
 3. **Státusz hatások**: státuszok strukturált hatásai kumulálva célonként (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit). Enyhítés NEM jelenik meg itt (háttérben hat). Formátum: `{hatás}: {cél}`.
 4. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")

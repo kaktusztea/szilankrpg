@@ -470,7 +470,7 @@ note: feltétel == "" → mindig aktív (karakterlap számolja).
       feltétel == "prefix:érték" → feltételesen aktív (UI toggle / automatikus).
       feltétel == [{forrás, operátor, érték}] → kalkulált feltétel (lásd §24).
       Prefixek (lásd konstansok.yaml → feltétel_prefixek):
-        szituáció, harci_helyzet, taktika, fegyver, fegyver_kategória, manőver, státusz
+        harci_helyzet, taktika, fegyver, fegyver_kategória, fegyverfogás, manőver, státusz, páncél
       Módok: flat, scaled, override, enyhít, előny, hátrány
         - "flat": fix numerikus bónusz a célra
         - "scaled": forrás_érték × arány hozzáadás
@@ -538,7 +538,6 @@ aktív_fegyver          karakter.fegyverek[session      "Puszta kéz", kategóri
 páncél_viselés         session.aktív_páncél            true (+ karakter.páncél.MGT > 0)
 harci_helyzet          session.aktív_helyzetek[]       helyzet id (pl. "helyhez_kötve")
 mindig                 —                               — (feltétel nélkül aktív)
-távharc_szituáció      (jövőbeli)                      "reflexből", "futás_közben", stb.
 ```
 
 #### Kiértékelés logika
@@ -782,7 +781,7 @@ Kalkuláció két rétege:
 1. **Taktika módosítók** — direkt numerikus: TÉ/VÉ/KÉ/SP módosítók a Harc fülön számolva
    (hasonlóan a fortélyMod_* context mezőkhöz, pl. `taktikaMod_TÉ`, `taktikaMod_VÉ`)
 2. **§16 feltételes fortély módosítók** — a HarcScreen fortély loop-jában a `mod.feltétel` check:
-   `feltétel.split(':')` → prefix (taktika/harci_helyzet/szituáció/fegyver) → session tömbben keresés
+   `feltétel.split(':')` → prefix (taktika/harci_helyzet/fegyverfogás/fegyver) → aktívFeltételek Set keresés
 
 Harci helyzetek: NEM kalkuláltak (komplex hatások) — Hatás pool-ban az `infó` mező jelenik meg + §16 feltétel dispatch.
   Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva megjelenik: `→ Fortély (fok): hatástext ✔`
@@ -893,22 +892,23 @@ Data layer mezők:
               harci_helyzet/tiltott/Láthatatlanul harcolás - hallhatóan,
               harci_helyzet/tiltott/Láthatatlanul harcolás - csendesen
 
-### 21.3 Szituációk
+### 21.3 Körülmények (korábban: Szituációk)
 
-Általános szituációk amik a harc kontextusát adják.
+A Körülmények a harci helyzetek 4. csoportja (`csoport: "körülmény"`). A picker arany fejléccel (`#ffd54f`) jeleníti meg.
 
-| Szituáció              | feltétel kulcs                     | Megjegyzés            |
+| Körülmény              | feltétel kulcs                     | Megjegyzés            |
 | ---------------------- | ---------------------------------- | --------------------- |
-| Lovas harc             | `szituáció:lovas_harc`             | lóhátról              |
-| Léglovas harc          | `szituáció:léglovas_harc`          | repülő hátasról       |
-| Harci szekér           | `szituáció:harci_szekér`           | szekérről             |
-| Páros harc             | `szituáció:páros_harc`             | koordinált 2 fős harc |
-| Közönség előtt         | `szituáció:közönség_előtt`         | gladiátor             |
-| Szörnyeteg elleni harc | `szituáció:szörnyeteg_elleni_harc` | bestia                |
-| Célzás                 | `szituáció:célzás`                 | távharc               |
+| Lovas harc             | `harci_helyzet:lovas_harc`         | lóhátról              |
+| Léglovas harc          | `harci_helyzet:léglovas_harc`      | repülő hátasról       |
+| Harci szekér           | `harci_helyzet:harci_szekér`       | szekérről             |
+| Páros harc             | `harci_helyzet:páros_harc`         | koordinált 2 fős harc |
+| Közönség előtt         | `harci_helyzet:közönség_előtt`     | gladiátor             |
+| Szörnyeteg elleni harc | `harci_helyzet:szörnyeteg_elleni_harc` | bestia            |
+| Célzás                 | `harci_helyzet:célzás`             | távharc               |
 
-note: "Kétkezes harc" és "Merevvért 70%" eltávolítva a szituáció dropdown-ból — automatikusan kezeltek
-      (session.kétkezes_harc toggle ill. kalkulált feltétel a fortély módosítóban).
+note: `szituaciok.yaml` törölve, minden körülmény a `harci_helyzetek.yaml`-ban él.
+      `session.aktív_szituációk` mező törölve — körülmények az `aktív_helyzetek[]`-ben.
+      Fortély feltételek: `harci_helyzet:X` prefix (backward-compat: `szituáció:X` is működik az `alapeset.ts`-ben).
 
 ---
 
@@ -926,19 +926,19 @@ A szituációk külön rendszere megszűnik. Minden szituáció harci helyzetté
 
 | Jelenlegi szituáció    | Új helyzet id          | Új csoport   | Megjegyzés             |
 | ---------------------- | ---------------------- | ------------ | ---------------------- |
-| Lovas harc             | `lovas_harc`           | szituáció    | lóhátról               |
-| Léglovas harc          | `léglovas_harc`        | szituáció    | repülő hátasról        |
-| Harci szekér           | `harci_szekér`         | szituáció    | szekérről              |
-| Páros harc             | `páros_harc`           | szituáció    | koordinált 2 fős       |
-| Közönség előtt         | `közönség_előtt`       | szituáció    | gladiátor              |
-| Szörnyeteg elleni harc | `szörnyeteg_elleni_harc` | szituáció  | bestia                 |
-| Célzás                 | `célzás`              | szituáció    | távharc célzás         |
+| Lovas harc             | `lovas_harc`           | körülmény    | lóhátról               |
+| Léglovas harc          | `léglovas_harc`        | körülmény    | repülő hátasról        |
+| Harci szekér           | `harci_szekér`         | körülmény    | szekérről              |
+| Páros harc             | `páros_harc`           | körülmény    | koordinált 2 fős       |
+| Közönség előtt         | `közönség_előtt`       | körülmény    | gladiátor              |
+| Szörnyeteg elleni harc | `szörnyeteg_elleni_harc` | körülmény  | bestia                 |
+| Célzás                 | `célzás`              | körülmény    | távharc célzás         |
 
 #### Lépések
 
 **1. Data layer (harci_helyzetek.yaml):**
-- 7 új entry hozzáadása `csoport: "szituáció"`-val
-- Mezők: `név, id, infó, hatások: [], csoport: "szituáció", rejtett: false, tiltja_taktikákat: false, kizár_helyzetek: []`
+- 7 új entry hozzáadása `csoport: "körülmény"`-nyel
+- Mezők: `név, id, infó, hatások: [], csoport: "körülmény", rejtett: false, tiltja_taktikákat: false, kizár_helyzetek: []`
 - `infó`: rövid szöveg ami a Hatás pool-ban megjelenik (pl. "Lovas harc fortély bónuszok aktívak")
 - `szituaciok.yaml` fájl törlése
 
@@ -1236,7 +1236,7 @@ A fortély módosítók `feltétel` mezője kétféle lehet:
 ```yaml
 feltétel: "taktika:roham"
 ```
-Az aktív taktikák/helyzetek/szituációk `feltétel_kulcs` értékéből épül az `aktívFeltételek` Set.
+Az aktív taktikák/helyzetek `feltétel_kulcs` értékéből + a `fegyverfogás:{session.fegyverfogás}` értékből épül az `aktívFeltételek` Set.
 
 ### Strukturált feltétel (kalkulált)
 ```yaml
@@ -1878,6 +1878,7 @@ Implementáció: az `undoTo()` visszaállításnál a `jegyzetek` és `napló` m
   - KIVÉVE: `jegyzetek` és `napló` módosítások (ezek nem generálnak undo entry-t)
 - Teljesítmény: 6× deep clone max ~50KB adat (karakter+session) — elhanyagolható
 - A `pushUndo()` a módosítás ELŐTT hívandó (az aktuális állapotot menti, nem az újat)
+- `pushUndo()` mellékhatásai: `isDirty=true` + `testMode=false` (ha teszt módban módosítás történik → kilép teszt módból, karakter mentődik)
 - "Új karakter" és "Karakter betöltés" reseteli a stack-et + törli localStorage-ból
 
 
