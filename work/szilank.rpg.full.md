@@ -13859,7 +13859,7 @@ Emberi látás, sötétben nem látsz hőképeket.
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_01_03_negativ_helyzetek.md#sötétben-félhomály) módosítóival folyik számodra.
+🌟 Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_01_03_negativ_helyzetek.md#sötétben---félhomály) módosítóival folyik számodra.
 
 <br />
 
@@ -13934,7 +13934,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🌟**Hatás**:
 - Mintha telihold fényénél tájékozódnál vaksötétben.
-- [Sötét: Félhomály](../065_01_03_negativ_helyzetek.md#sötétben-félhomály) módosítóival harcolhatsz.
+- [Sötét: Félhomály](../065_01_03_negativ_helyzetek.md#sötétben---félhomály) módosítóival harcolhatsz.
 
 <br />
 
@@ -21859,14 +21859,14 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 ### [Pozitív helyzetek](065_01_01_pozitiv_helyzetek.md)
 
-- [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés)
-- [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás)
+- [Beszorított ellenfél](065_01_01_pozitiv_helyzetek.md#beszorított-ellenfél)
 - [Hátulról támadás](065_01_01_pozitiv_helyzetek.md#hátulról-támadás)
-- [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról)
-- [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás)
-- [Ellenfeled beszorított](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított)
 - [Láthatatlanul harcolás - hallhatóan](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan)
 - [Láthatatlanul harcolás - csendesen](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---csendesen)
+- [Levegőből támadás](065_01_01_pozitiv_helyzetek.md#levegőből-támadás)
+- [Magasabbról](065_01_01_pozitiv_helyzetek.md#magasabbról)
+- [Meglepetés](065_01_01_pozitiv_helyzetek.md#meglepetés)
+- [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás)
 
 ### [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
 
@@ -21874,8 +21874,8 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Fegyverrántás váratlanul](065_01_02_semleges_helyzetek.md#fegyverrántás-váratlanul)
 - [Közrefogás](065_01_02_semleges_helyzetek.md#közrefogás)
 - [Takarásban harcolás](065_01_02_semleges_helyzetek.md#takarásban-harcolás)
-- [Védő Érték kiterjesztése másra](065_01_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra)
 - [Vadállatok elleni harc](065_01_02_semleges_helyzetek.md#vadállatok-elleni-harc)
+- [Védő Érték kiterjesztése másra](065_01_02_semleges_helyzetek.md#védő-érték-kiterjesztése-másra)
 
 ### [Negatív helyzetek](065_01_03_negativ_helyzetek.md)
 
@@ -21887,8 +21887,11 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
 - [Lények méret különbsége](065_01_03_negativ_helyzetek.md#lények-méret-különbsége)
 - [Rosszabbik kézben tartott fegyver](065_01_03_negativ_helyzetek.md#rosszabbik-kézben-tartott-fegyver)
-- [Sötétben](065_01_03_negativ_helyzetek.md#sötétben)
-- [Tűz ruhán](065_01_03_negativ_helyzetek.md#tűz-ruhán)
+- [Sötétben - félhomály](065_01_03_negativ_helyzetek.md#sötétben---félhomály)
+- [Sötétben - teljes, zajokkal](065_01_03_negativ_helyzetek.md#sötétben---teljes-zajokkal)
+- [Sötétben - teljes, csendben](065_01_03_negativ_helyzetek.md#sötétben---teljes-csendben)
+- [Tűz ruhán - ég](065_01_03_negativ_helyzetek.md#tűz-ruhán---ég)
+- [Tűz ruhán - lángol](065_01_03_negativ_helyzetek.md#tűz-ruhán---lángol)
 - [Vér elvakít](065_01_03_negativ_helyzetek.md#vér-elvakít)
 
 ### [Fegyverméret és sebzéstípusok](065_01_04_fegyver_harci_helyzetek.md)
@@ -22007,14 +22010,13 @@ Előny+2 TÉ Dobásra
 <br />
 
 ---
-## Ellenfeled beszorított
+## Beszorított ellenfél
 
 Ellenfeled helyhiány miatt nem képes fegyverének technikáit maradéktalanul alkalmazni. Ha te kerülsz ebbe a helyzetbe, nyilván ellenfeled kapja a bónuszt.
 
 ```
 Előny+1 TÉ dobásra
 ```
-
 
 <br />
 
@@ -22116,10 +22118,12 @@ Minden 5.FP → 1 ÉP
 
 ### ⚜️ Nem-belharcos fegyverek belharci szituációban
 
-→ [Beszorított helyzet (2)](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított) harci helyzet
+```
+TÉ: 0
+VÉ: 0
+```
 
-A `0` pengehossznál nagyobb fegyver forgatója **támadás elhasználása nélkül** elejtheti fegyverét.\
-Ekkor a fenti **Puszta kéz** harcértékeivel küzdhet tovább.
+A `0` pengehossznál nagyobb fegyver forgatója **támadás elhasználása nélkül** elejtheti fegyverét. Ekkor a fenti **Puszta kéz** harcértékeivel küzdhet tovább.
 
 ### ⚜️ Harcmodorok belharci szituációban
 
@@ -22217,13 +22221,13 @@ Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges 
 
 A hosszú kardos
 - "Pengeelőny" helyzetből
-- "Alap `VÉ` csökkentés" helyzetbe kerül
+- "Alappenge" helyzetbe kerül
 
 ### ⚡Példa: Két tőrös közrefog egy lándzsást
 
 A lándzsás
 - "Pengeelőny" helyzetből
-- "Alap `VÉ` csökkentés" helyzetbe kerül
+- "Alappenge" helyzetbe kerül
 
 <br />
 
@@ -22236,10 +22240,6 @@ VÉ: +5
 ```
 
 🔆 Példa: kapu, belógó falrész mögül harcolsz.
-
-🔆 Ha a harcos mozgásában korlátozottá válik pl. tereptárgyaktól, akkor már egy más helyzet (KM dönt) vonatkozik rá:
-- [Beszorított helyzet](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított)
-- [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
 
 <br />
 
@@ -22398,6 +22398,8 @@ A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9
 
 ```
 Hátrány-1 TÉ dobásra
+
+Megszűnteti: Kétkezesség fortély
 ```
 
 🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
@@ -22405,9 +22407,7 @@ Hátrány-1 TÉ dobásra
 <br />
 
 ---
-## Sötétben
-
-### Sötétben: Félhomály
+## Sötétben - félhomály
 
 ```
 Hátrány-1 TÉ dobásra
@@ -22416,8 +22416,10 @@ Hátrány-1 TÉ dobásra
 
 🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
 
+<br />
+
 ---
-### Sötétben: teljes, zajokkal
+## Sötétben - teljes, zajokkal
 
 ```
 Hátrány-1 TÉ dobásra
@@ -22427,8 +22429,10 @@ Hátrány-1 TÉ dobásra
 
 🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
 
+<br />
+
 ---
-### Sötétben: teljes, csendben
+## Sötétben - teljes, csendben
 
 ```
 Hátrány-2 TÉ dobásra
@@ -22440,9 +22444,7 @@ Hátrány-2 TÉ dobásra
 <br />
 
 ---
-## Tűz ruhán
-
-### Tűz ruhán - ég
+## Tűz ruhán - ég
 
 Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
 
@@ -22459,8 +22461,10 @@ Harcban: 1 kör
 Harcon kívül: 1 kör
 ```
 
+<br />
+
 ---
-### Tűz ruhán - lángol
+## Tűz ruhán - lángol
 
 Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
 
@@ -25621,12 +25625,15 @@ Köz- és önveszélyes fegyver. Alacsonyabb [Mesterfegyver](fortelyok.harci/mes
 
 A `k20` támadó dobás egyben esélydobás is: ha a lent leírt értékek vagy azok alá dobsz, akkor magadat is megsebzed. Ha "betalálsz", dobj rendes sebzést magad ellen.
 
-- Harci szituációban (nem gyakorlásban) `1` kézzel / `2` kézzel (`k20`):
-  - `Mf` nélkül : `<= 10 / 16`
-  - `Mf: 1.fok`: `<= 4 / 8`
-  - `Mf: 2.fok`: `<= 2 / 4`
-  - `Mf: 3.fok`: `0%` /  `0%`
-- [Ellenfeled beszorított](065_01_01_pozitiv_helyzetek.md#ellenfeled-beszorított) 
+```
+k20 Sebzésdobás
+
+Mf nélkül: 1-10
+Mf: 1.fok: 1,2
+Mf: 2.fok: -
+Mf: 3.fok: -
+```
+
 - Nem lehet Alakzatharcban használni
 - Hátulról támadó ellenfelek NEM kapják meg a harci helyzetből adódó bónuszokat!
 
