@@ -382,7 +382,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                     for (const [k, v] of Object.entries(def.módosítók)) { if (typeof v === 'number' && v !== 0) mods.push(`${k}: ${v > 0 ? '+' : ''}${v}`); }
                   }
                   return <span key={i} className="hatas-pool-item">
-                    <strong style={{ color: '#ff9800' }}>{def.név}{at.fok != null ? ` (${at.fok})` : ''}:</strong>
+                    <strong style={{ color: '#90caf9' }}>{def.név}{at.fok != null ? ` (${at.fok})` : ''}:</strong>
                     {mods.length > 0 && <span style={{ color: '#66bb6a' }}> {mods.join(', ')} ✔</span>}
                     {def.megjegyzés && <span style={{ color: '#ffb74d' }}> {mods.length > 0 ? '• ' : ''}{def.megjegyzés}</span>}
                   </span>;
@@ -397,7 +397,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 {session.aktív_helyzetek.map((h, i) => {
                   const def = data.harciHelyzetek.find(d => d.név === h);
                   if (!def) return null;
-                  return <span key={i} className="hatas-pool-item"><strong style={{ color: '#ff9800' }}>{def.név}:</strong> {def.infó || '–'}</span>;
+                  return <span key={i} className="hatas-pool-item"><strong style={{ color: '#42a5f5' }}>{def.név}:</strong> {def.infó || '–'}</span>;
                 })}
               </div>
             </div>
@@ -453,10 +453,10 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           )}
           {alapesetek.length > 0 && (
             <details className="hatas-pool-section">
-              <summary className="hatas-pool-title" style={{ color: '#ff9800', cursor: 'pointer' }}>Alapesetek ({alapesetek.length}) ▾</summary>
+              <summary className="hatas-pool-title" style={{ cursor: 'pointer' }}>Alapesetek ({alapesetek.length}) ▾</summary>
               <div className="hatas-pool-items">
                 {alapesetek.map((ae, i) => (
-                  <span key={i} className="hatas-pool-item"><strong style={{ color: '#ff9800' }}>{ae.fortély_név}:</strong> {ae.hatástext.join(' ')}</span>
+                  <span key={i} className="hatas-pool-item"><strong>{ae.fortély_név}:</strong> {ae.hatástext.join(' ')}</span>
                 ))}
               </div>
             </details>
