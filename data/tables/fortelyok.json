@@ -2,6 +2,7 @@
   {
     "név": "Baráti állatok",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -28,6 +29,7 @@
   {
     "név": "Biztos kezű mászó",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -59,6 +61,7 @@
   {
     "név": "Csábítás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -87,6 +90,7 @@
   {
     "név": "Csomózás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -145,6 +149,7 @@
   {
     "név": "Éber alvó",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -181,6 +186,7 @@
   {
     "név": "Élettan",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -221,6 +227,7 @@
   {
     "név": "Építészet",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -260,6 +267,7 @@
   {
     "név": "Fakír",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -316,6 +324,7 @@
   {
     "név": "Futás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -374,6 +383,7 @@
   {
     "név": "Gyöngyhalász",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -420,6 +430,7 @@
   {
     "név": "Hamisítás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -450,6 +461,7 @@
   {
     "név": "Hangutánzás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -490,6 +502,7 @@
   {
     "név": "Hazudozás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -519,6 +532,7 @@
   {
     "név": "Keresés/rejtés",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -568,6 +582,7 @@
   {
     "név": "Kézműves: Fegyverkovács",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -615,6 +630,7 @@
   {
     "név": "Kézműves: Páncélkovács",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -662,6 +678,7 @@
   {
     "név": "Kitartás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -698,6 +715,7 @@
   {
     "név": "Kocsihajtás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -732,6 +750,7 @@
   {
     "név": "Kötelékből szabadulás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -788,6 +807,7 @@
   {
     "név": "Mechanika",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -851,6 +871,7 @@
   {
     "név": "Megfélemlítés",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -879,6 +900,7 @@
   {
     "név": "Méregálló",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -955,6 +977,7 @@
   {
     "név": "Műhelymester",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -989,6 +1012,7 @@
   {
     "név": "Nyomolvasás/eltűntetés",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1025,6 +1049,7 @@
   {
     "név": "Ősi kultúrkör",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1053,6 +1078,7 @@
   {
     "név": "Pók",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1084,6 +1110,7 @@
   {
     "név": "Sprint",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1120,6 +1147,7 @@
   {
     "név": "Suhanó árnyék",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1151,6 +1179,7 @@
   {
     "név": "Szájról olvasás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1193,6 +1222,7 @@
   {
     "név": "Százarcú",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1239,6 +1269,7 @@
   {
     "név": "Szívósság",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1266,6 +1297,7 @@
   {
     "név": "Történelemismeret",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1316,6 +1348,7 @@
   {
     "név": "Úszás",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1371,6 +1404,7 @@
   {
     "név": "Vezető: Bölcsészprofesszor",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1439,6 +1473,7 @@
   {
     "név": "Vezető: Hajóskapitány",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1507,6 +1542,7 @@
   {
     "név": "Vezető: Nyomozó",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1575,6 +1611,7 @@
   {
     "név": "Vezető: Orvosprofesszor",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1643,6 +1680,7 @@
   {
     "név": "Vezető: Rendező",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1711,6 +1749,7 @@
   {
     "név": "Vezető: Tudósprofesszor",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1779,6 +1818,7 @@
   {
     "név": "Villámgyors keresés/rejtés",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1815,6 +1855,7 @@
   {
     "név": "Zártörő",
     "csoport": "általános",
+    "alcsoport": "altalanos",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1846,6 +1887,7 @@
   {
     "név": "Emberentúli hallás",
     "csoport": "érzékek",
+    "alcsoport": "erzekek",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1883,6 +1925,7 @@
   {
     "név": "Emberentúli látás",
     "csoport": "érzékek",
+    "alcsoport": "erzekek",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1921,6 +1964,7 @@
   {
     "név": "Emberentúli szaglás",
     "csoport": "érzékek",
+    "alcsoport": "erzekek",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -1960,6 +2004,7 @@
   {
     "név": "Infralátás",
     "csoport": "érzékek",
+    "alcsoport": "erzekek",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2003,6 +2048,7 @@
   {
     "név": "Irányérzék",
     "csoport": "érzékek",
+    "alcsoport": "erzekek",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2029,6 +2075,7 @@
   {
     "név": "Ultralátás",
     "csoport": "érzékek",
+    "alcsoport": "erzekek",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2075,6 +2122,7 @@
   {
     "név": "Alakzat: támadó",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2133,6 +2181,7 @@
   {
     "név": "Alakzat: védekező",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2191,6 +2240,7 @@
   {
     "név": "Alakzatharc",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2228,6 +2278,7 @@
   {
     "név": "Alkalmatlan fegyver hajítása",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": true,
@@ -2332,6 +2383,7 @@
   {
     "név": "Alkalmatlan tárgyak hajítása",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": true,
@@ -2414,6 +2466,7 @@
   {
     "név": "Belharc",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2506,6 +2559,7 @@
   {
     "név": "Elpusztíthatatlan",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": true,
@@ -2552,6 +2606,7 @@
   {
     "név": "Elsöprő roham",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2605,6 +2660,7 @@
   {
     "név": "Fárasztás",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2651,6 +2707,7 @@
   {
     "név": "Fegyverrántás",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2723,6 +2780,7 @@
   {
     "név": "Gladiátor bestiái",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": true,
@@ -2769,6 +2827,7 @@
   {
     "név": "Gladiátor közönsége",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": true,
@@ -2815,6 +2874,7 @@
   {
     "név": "Gyors kezdeményezés",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -2885,6 +2945,7 @@
   {
     "név": "Harc helyhez kötve",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": true,
@@ -2970,6 +3031,7 @@
   {
     "név": "Harci akrobatika",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": true,
     "emlékeztető": true,
@@ -3067,6 +3129,7 @@
   {
     "név": "Harci anatómia",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3238,6 +3301,7 @@
   {
     "név": "Harci kocsihajtás",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3336,6 +3400,7 @@
   {
     "név": "Harckeret növelés",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -3469,6 +3534,7 @@
   {
     "név": "Harcos elme",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3548,6 +3614,7 @@
   {
     "név": "Hárítófegyver használat",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3592,6 +3659,7 @@
   {
     "név": "Kaszabolás",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3652,6 +3720,7 @@
   {
     "név": "Kétkezes harc",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -3746,6 +3815,7 @@
   {
     "név": "Kétkezesség",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3797,6 +3867,7 @@
   {
     "név": "Kínokozás",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3824,6 +3895,7 @@
   {
     "név": "Kitérés lövés elől",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3849,6 +3921,7 @@
   {
     "név": "Körkörös harc",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3875,6 +3948,7 @@
   {
     "név": "Léglovas harc",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": true,
@@ -3990,6 +4064,7 @@
   {
     "név": "Lovas harc",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": true,
@@ -4138,6 +4213,7 @@
   {
     "név": "Merevvértviselet",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -4275,6 +4351,7 @@
   {
     "név": "Mesterfegyver",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -4453,6 +4530,7 @@
   {
     "név": "Orgyilkos",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": true,
@@ -4583,6 +4661,7 @@
   {
     "név": "Pajzshasználat",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -4735,6 +4814,7 @@
   {
     "név": "Páros harc",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": true,
@@ -4892,6 +4972,7 @@
   {
     "név": "Támadás erőből",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": true,
@@ -4946,6 +5027,7 @@
   {
     "név": "Természetes fegyver",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -4999,6 +5081,7 @@
   {
     "név": "Természetes páncél",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5069,6 +5152,7 @@
   {
     "név": "Testőr",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": true,
@@ -5172,6 +5256,7 @@
   {
     "név": "Vakharc",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": true,
@@ -5258,6 +5343,7 @@
   {
     "név": "Vezető: Alakzatparancsnok",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5314,6 +5400,7 @@
   {
     "név": "Vezető: Fejvadász strategis",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5362,6 +5449,7 @@
   {
     "név": "Vezető: Íjászparancsnok",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5416,6 +5504,7 @@
   {
     "név": "Vezető: Léglovaskapitány",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5474,6 +5563,7 @@
   {
     "név": "Vezető: Lovaskapitány",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5532,6 +5622,7 @@
   {
     "név": "Vezető: Testőrparancsnok",
     "csoport": "harci",
+    "alcsoport": "harci",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5596,6 +5687,7 @@
   {
     "név": "Analfabéta",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5623,6 +5715,7 @@
   {
     "név": "Apró méretű lény",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5650,6 +5743,7 @@
   {
     "név": "Helyismeret",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5682,6 +5776,7 @@
   {
     "név": "Kultúrkör",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5746,6 +5841,7 @@
   {
     "név": "Nagy méretű lény",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5789,6 +5885,7 @@
   {
     "név": "Nyelvismeret",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5824,6 +5921,7 @@
   {
     "név": "Süketség",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5851,6 +5949,7 @@
   {
     "név": "Tartós sérültség",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5894,6 +5993,7 @@
   {
     "név": "Vakság",
     "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5921,6 +6021,7 @@
   {
     "név": "Antissjárás",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5946,6 +6047,7 @@
   {
     "név": "Belső síkok lényeinek ismerete",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -5973,6 +6075,7 @@
   {
     "név": "Külső síkok lényeinek ismerete",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6000,6 +6103,7 @@
   {
     "név": "Mágiatáv növelés",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6043,6 +6147,7 @@
   {
     "név": "Mágikus lövedék gyorsítása",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 2,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6077,6 +6182,7 @@
   {
     "név": "Mentálfonál",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6103,6 +6209,7 @@
   {
     "név": "Mozgó cél mestere mágiához",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6137,6 +6244,7 @@
   {
     "név": "Pszí Telekinézis",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6180,6 +6288,7 @@
   {
     "név": "Pszí Telepátia",
     "csoport": "misztikus",
+    "alcsoport": "misztikus",
     "maxfok": 3,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6224,6 +6333,7 @@
   {
     "név": "Alkudozás",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6252,6 +6362,7 @@
   {
     "név": "Asztrológia",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6279,6 +6390,7 @@
   {
     "név": "Bűvészet",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6308,6 +6420,7 @@
   {
     "név": "Éneklés",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6336,6 +6449,7 @@
   {
     "név": "Festészet",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6365,6 +6479,7 @@
   {
     "név": "Gazdálkodás",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6392,6 +6507,7 @@
   {
     "név": "Hadtáp",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6419,6 +6535,7 @@
   {
     "név": "Harci iskola",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6444,6 +6561,7 @@
   {
     "név": "Hátas (faj neve)",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6472,6 +6590,7 @@
   {
     "név": "Háziállatok idomítása",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6499,6 +6618,7 @@
   {
     "név": "Heraldika",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6527,6 +6647,7 @@
   {
     "név": "Hivatalnok",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6554,6 +6675,7 @@
   {
     "név": "Irodalom",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6582,6 +6704,7 @@
   {
     "név": "Jogismeret",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6610,6 +6733,7 @@
   {
     "név": "Kalligráfia",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6638,6 +6762,7 @@
   {
     "név": "Kézműves: Ács",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6665,6 +6790,7 @@
   {
     "név": "Kézműves: Asztalos",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6692,6 +6818,7 @@
   {
     "név": "Kézműves: Cipész",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6719,6 +6846,7 @@
   {
     "név": "Kézműves: Cserző",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6746,6 +6874,7 @@
   {
     "név": "Kézműves: Cukrász",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6773,6 +6902,7 @@
   {
     "név": "Kézműves: Ékszerész",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6800,6 +6930,7 @@
   {
     "név": "Kézműves: Kádár",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6827,6 +6958,7 @@
   {
     "név": "Kézműves: Kőműves",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6854,6 +6986,7 @@
   {
     "név": "Kézműves: Kötélgyártó",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6881,6 +7014,7 @@
   {
     "név": "Kézműves: Kovács",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6908,6 +7042,7 @@
   {
     "név": "Kézműves: Lakatos",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6935,6 +7070,7 @@
   {
     "név": "Kézműves: Molnár",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6962,6 +7098,7 @@
   {
     "név": "Kézműves: Pénzverő",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -6989,6 +7126,7 @@
   {
     "név": "Kézműves: Szabó",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7016,6 +7154,7 @@
   {
     "név": "Kézműves: Szakács",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7043,6 +7182,7 @@
   {
     "név": "Kézműves: Szűcs",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7070,6 +7210,7 @@
   {
     "név": "Kihallgatás",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7098,6 +7239,7 @@
   {
     "név": "Különleges faj boncolása (faj neve)",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7123,6 +7265,7 @@
   {
     "név": "Pénzügyek",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7151,6 +7294,7 @@
   {
     "név": "Rejtjelfejtő",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7179,6 +7323,7 @@
   {
     "név": "Stratégia",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7207,6 +7352,7 @@
   {
     "név": "Szertartás",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7234,6 +7380,7 @@
   {
     "név": "Színjátszás",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7262,6 +7409,7 @@
   {
     "név": "Szobrászat",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7291,6 +7439,7 @@
   {
     "név": "Szónoklás",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7319,6 +7468,7 @@
   {
     "név": "Tájtípus - barlangi",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7350,6 +7500,7 @@
   {
     "név": "Tájtípus - dzsungel",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7381,6 +7532,7 @@
   {
     "név": "Tájtípus - erdős",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7412,6 +7564,7 @@
   {
     "név": "Tájtípus - jégmezők",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7443,6 +7596,7 @@
   {
     "név": "Tájtípus - magaslati",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7474,6 +7628,7 @@
   {
     "név": "Tájtípus - mocsaras",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7505,6 +7660,7 @@
   {
     "név": "Tájtípus - puszta",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7536,6 +7692,7 @@
   {
     "név": "Tájtípus - sivatagi",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7567,6 +7724,7 @@
   {
     "név": "Tájtípus - tengerek",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7596,6 +7754,7 @@
   {
     "név": "Tánc",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7624,6 +7783,7 @@
   {
     "név": "Tánc: speciális/belső stílus",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7653,6 +7813,7 @@
   {
     "név": "Térképészet",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7682,6 +7843,7 @@
   {
     "név": "Titkos szervezet: (szervezet neve)",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7711,6 +7873,7 @@
   {
     "név": "Vadállat idomítása",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7738,6 +7901,7 @@
   {
     "név": "Zenélés: fúvós hangszerek",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7766,6 +7930,7 @@
   {
     "név": "Zenélés: húros hangszerek",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7794,6 +7959,7 @@
   {
     "név": "Zenélés: ütős hangszerek",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7822,6 +7988,7 @@
   {
     "név": "Zeneszerző",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7849,6 +8016,7 @@
   {
     "név": "Zsonglőrködés",
     "csoport": "szabad",
+    "alcsoport": "szabad",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": false,
@@ -7876,6 +8044,7 @@
   {
     "név": "Kitartott célzás",
     "csoport": "harci",
+    "alcsoport": "tavharc",
     "maxfok": 1,
     "session_toggle": false,
     "emlékeztető": true,

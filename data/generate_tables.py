@@ -101,6 +101,7 @@ def generate_fortelyok():
             result.append({
                 'név': data['név'],
                 'csoport': data.get('csoport', ''),
+                'alcsoport': os.path.relpath(root, fdir),
                 'maxfok': data.get('maxfok', 1),
                 'session_toggle': data.get('session_toggle', False),
                 'emlékeztető': data.get('emlékeztető', False),

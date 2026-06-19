@@ -12,9 +12,9 @@ function fmtCode(text: string) {
   );
 }
 
-const CSOPORT_SORREND = ['harci', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'];
+const CSOPORT_SORREND = ['harci', 'távharc', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'];
 const CSOPORT_LABEL: Record<string, string> = {
-  harci: '⚔️ Harci', általános: '🔧 Általános', érzékek: '👁️ Érzékek',
+  harci: '⚔️ Harci', távharc: '🏹 Távharc', általános: '🔧 Általános', érzékek: '👁️ Érzékek',
   szabad: '🆓 Szabad', kiemelt: '⭐ Kiemelt', misztikus: '✨ Misztikus',
 };
 
@@ -67,9 +67,10 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
 
   const defsByGroup = new Map<string, FortelySummary[]>();
   for (const d of data.fortelySummaries) {
-    const arr = defsByGroup.get(d.csoport) || [];
+    const vizCsoport = (d as any).alcsoport === 'tavharc' ? 'távharc' : d.csoport;
+    const arr = defsByGroup.get(vizCsoport) || [];
     arr.push(d);
-    defsByGroup.set(d.csoport, arr);
+    defsByGroup.set(vizCsoport, arr);
   }
 
   function setFok(idx: number, fok: number) {
