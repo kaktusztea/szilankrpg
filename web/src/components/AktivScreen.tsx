@@ -269,6 +269,20 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   // Alapesetek (0.fok) kiértékelés
   const alapesetek = evaluateAlapesetek(data.fortelySummaries as any, karakter, session);
 
+  // Alapesetek helyzet-kötött: ha a módosítónak harci_helyzet feltétele van → helyzet alá
+  const alapesetekFiltered = alapesetek.filter(ae => {
+    const hFelt = ae.módosítók.find(m => m.feltétel?.startsWith('harci_helyzet:'));
+    if (hFelt) {
+      const hId = hFelt.feltétel.slice(14);
+      const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${hId}`)?.név || hId;
+      const arr = helyzetFortélyok.get(hNév) || [];
+      arr.push({ név: `⚠ ${ae.fortély_név}`, fok: 0, hatás: ae.hatástext.join(' '), aktív: session.aktív_helyzetek.includes(hNév) });
+      helyzetFortélyok.set(hNév, arr);
+      return false;
+    }
+    return true;
+  });
+
   return (
     <div className="screen aktiv-screen">
       <h2>❎ Aktív</h2>
@@ -381,7 +395,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       </div>
 
       {/* Hatás pool */}
-      {(session.aktív_taktikák.length > 0 || session.aktív_helyzetek.length > 0 || hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetek.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
+      {(session.aktív_taktikák.length > 0 || session.aktív_helyzetek.length > 0 || hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
         <div className="aktiv-hatas-pool">
           {session.aktív_taktikák.length > 0 && (
             <div className="hatas-pool-section">
@@ -414,8 +428,18 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   const def = data.harciHelyzetek.find(d => d.név === h);
                   if (!def) return null;
                   const kötöttFortélyok = helyzetFortélyok.get(h) || [];
+                  // Alapeset 0.fok hatástext keresés: fortély aminek feltétele ez a helyzet
+                  const hId = (def as any).feltétel_kulcs?.split(':')[1] || '';
+                  let alapText = '';
+                  for (const fd of (data.fortelySummaries as any[])) {
+                    const f0 = fd.fokok?.find((f: any) => f.fok === 0);
+                    if (!f0?.hatás?.length) continue;
+                    const hasFelt = f0.módosítók?.some((m: any) => m.feltétel === `harci_helyzet:${hId}`) || f0.hatás?.join(' ').toLowerCase().includes(h.toLowerCase());
+                    if (hasFelt) { alapText = f0.hatás.join(' '); break; }
+                  }
+                  const infóText = (def.infó || '–') + (alapText ? ` Alapeset: ${alapText}` : '');
                   return <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span className="hatas-pool-item"><strong style={{ color: '#42a5f5' }}>{def.név}:</strong> {fmtCode(def.infó || '–')}</span>
+                    <span className="hatas-pool-item"><strong style={{ color: '#42a5f5' }}>{def.név}:</strong> {fmtCode(infóText)}</span>
                     {kötöttFortélyok.map((kf, j) => (
                       <span key={j} className="hatas-pool-item" style={{ paddingLeft: '12px', color: kf.aktív ? '#66bb6a' : '#888' }}>
                         → {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}
@@ -475,11 +499,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
               </div>
             </div>
           )}
-          {alapesetek.length > 0 && (
+          {alapesetekFiltered.length > 0 && (
             <details className="hatas-pool-section">
-              <summary className="hatas-pool-title" style={{ cursor: 'pointer' }}>Alapesetek ({alapesetek.length}) ▾</summary>
+              <summary className="hatas-pool-title" style={{ cursor: 'pointer' }}>Alapesetek ({alapesetekFiltered.length}) ▾</summary>
               <div className="hatas-pool-items">
-                {alapesetek.map((ae, i) => (
+                {alapesetekFiltered.map((ae, i) => (
                   <span key={i} className="hatas-pool-item"><strong>{ae.fortély_név}:</strong> {fmtCode(ae.hatástext.join(' '))}</span>
                 ))}
               </div>
