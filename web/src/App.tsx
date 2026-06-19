@@ -539,7 +539,7 @@ function App() {
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>Új karakter?</label>
             <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(data.emptyKarakter); setUndoStack([]); setShowNewConfirm(false); }}>Új karakter</button>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(data.emptyKarakter); setUndoStack([]); localStorage.removeItem('szilank_karakter'); localStorage.removeItem('szilank_undo'); setShowNewConfirm(false); }}>Új karakter</button>
           </div>
         </div>,
         document.body
