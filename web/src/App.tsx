@@ -13,6 +13,8 @@ import type { Karakter, Session, Fortely } from './engine/types';
 import { DEFAULT_SESSION } from './engine/types';
 import './App.css';
 
+interface UndoEntry { timestamp: number; leírás: string; session: Session; karakter: Karakter; }
+
 const ALL_TABS = [
   { id: 'harcertekek', label: '🛡️', editOnly: true },
   { id: 'aktiv', label: '❎', editOnly: false },
@@ -158,6 +160,33 @@ function App() {
     setKarakter(prev => prev ? { ...prev, session: typeof val === 'function' ? val(prev.session) : val } : prev);
   }, []);
 
+  // --- Undo Stack ---
+  const UNDO_MAX = 6;
+  const [undoStack, setUndoStack] = useState<UndoEntry[]>([]);
+  const [showUndo, setShowUndo] = useState(false);
+  const [undoSelected, setUndoSelected] = useState<number | null>(null);
+  const karakterRef = useRef(karakter);
+  karakterRef.current = karakter;
+
+  function pushUndo(leírás: string) {
+    const k = karakterRef.current;
+    if (!k) return;
+    setUndoStack(prev => [
+      { timestamp: Date.now(), leírás, session: structuredClone(k.session), karakter: structuredClone(k) },
+      ...prev
+    ].slice(0, UNDO_MAX));
+  }
+
+  function undoTo(index: number) {
+    if (!karakter) return;
+    const entry = undoStack[index];
+    const restoredKarakter = { ...entry.karakter, jegyzetek: karakter.jegyzetek, napló: karakter.napló };
+    setKarakter(restoredKarakter);
+    setUndoStack(prev => prev.slice(index + 1));
+    setShowUndo(false);
+    setUndoSelected(null);
+  }
+
   // --- Touch / swipe ---
   const touchStart = useRef<number>(0);
   const touchY = useRef<number>(0);
@@ -302,6 +331,7 @@ function App() {
             return;
           }
           setKarakter({ ...obj, session: { ...DEFAULT_SESSION, ...obj.session } });
+          setUndoStack([]);
         } catch {
           setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
         }
@@ -325,6 +355,9 @@ function App() {
                     <button className="gear-btn" onClick={() => setOverlayScreen('naplo')}>📅</button>
           <button className="gear-btn" onClick={() => setOverlayScreen('jegyzetek')}>✏️</button>
           <button className="gear-btn" onClick={() => setShowMenu(true)}>⚙️</button>
+          <button className="gear-btn" disabled={undoStack.length === 0} style={{ position: 'relative', opacity: undoStack.length === 0 ? 0.4 : 1 }} onClick={() => { setShowUndo(true); setUndoSelected(null); }}>
+            ↩{undoStack.length > 0 && <span style={{ position: 'absolute', top: '-2px', right: '-2px', fontSize: '9px', background: '#e53935', color: '#fff', borderRadius: '50%', width: '14px', height: '14px', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{undoStack.length}</span>}
+          </button>
           <button
             className="mode-toggle"
             style={{ background: gameMode ? '#4caf50' : '#ff9800', color: '#000' }}
@@ -353,6 +386,7 @@ function App() {
                   fortélyok={fortélyok} setFortélyok={setFortélyok}
                   session={session} setSession={setSession}
                   karakter={karakter} setKarakter={setKarakter}
+                  pushUndo={pushUndo}
                 />
               )}
             </div>
@@ -484,7 +518,7 @@ function App() {
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>Új karakter?</label>
             <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(data.emptyKarakter); setShowNewConfirm(false); }}>Új karakter</button>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKarakter(data.emptyKarakter); setUndoStack([]); setShowNewConfirm(false); }}>Új karakter</button>
           </div>
         </div>,
         document.body
@@ -498,8 +532,32 @@ function App() {
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
               const refErr = validateKarakterData(data.testKarakter, data);
               if (refErr) { setShowTestConfirm(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
-              setKarakter({ ...data.testKarakter, session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setShowTestConfirm(false);
+              setKarakter({ ...data.testKarakter, session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setShowTestConfirm(false);
             }}>Betöltés</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {showUndo && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) { setShowUndo(false); setUndoSelected(null); } }}>
+          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '8px', minWidth: '280px' }}>
+            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Visszavonás</label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '300px', overflowY: 'auto' }}>
+              {undoStack.map((entry, i) => (
+                <div key={entry.timestamp} onClick={() => setUndoSelected(i)}
+                  style={{ padding: '6px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '13px',
+                    background: undoSelected !== null && i <= undoSelected ? '#3a1a1a' : 'var(--input-bg)',
+                    border: i === undoSelected ? '1px solid #e53935' : '1px solid #444',
+                    color: undoSelected !== null && i <= undoSelected ? '#ff6b6b' : 'var(--text)' }}>
+                  {undoSelected !== null && i <= undoSelected ? '●' : '○'} {entry.leírás}
+                </div>
+              ))}
+            </div>
+            <button disabled={undoSelected === null} style={{ marginTop: '8px', padding: '8px', borderRadius: '4px', background: undoSelected !== null ? '#e53935' : '#444', color: '#fff', border: 'none', cursor: undoSelected !== null ? 'pointer' : 'default', opacity: undoSelected === null ? 0.5 : 1 }}
+              onClick={() => { if (undoSelected !== null) undoTo(undoSelected); }}>
+              Visszaállítás{undoSelected !== null ? ` (${undoSelected + 1} művelet)` : ''}
+            </button>
           </div>
         </div>,
         document.body
@@ -558,7 +616,7 @@ function App() {
   );
 }
 
-function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession, karakter, setKarakter }: {
+function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession, karakter, setKarakter, pushUndo }: {
   tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void;
   tulajdonságok: any; setTulajdonságok: any;
   képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
@@ -566,10 +624,11 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
   session: Session; setSession: React.Dispatch<React.SetStateAction<Session>>;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
+  pushUndo: (leírás: string) => void;
 }) {
   switch (tab) {
-    case 'aktiv': return <AktivScreen data={data} karakter={karakter} session={session} setSession={setSession} />;
-    case 'harc': return <HarcScreen data={data} karakter={karakter} session={session} setSession={setSession} onNavigate={(id) => {
+    case 'aktiv': return <AktivScreen data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} />;
+    case 'harc': return <HarcScreen data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} onNavigate={(id) => {
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
@@ -588,13 +647,26 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
         return { ...prev, anyanyelv: v, fortélyok: [...ingyenesek, ...filtered] };
       });
       return <TulajdonsagokScreen data={data} gameMode={gameMode}
-        tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok}
-        képzettségek={képzettségek} setKépzettségek={setKépzettségek}
-        név={karakter.név} setNév={v => setKarakter(prev => prev ? { ...prev, név: v } : prev)}
-        játékos={karakter.játékos} setJátékos={v => setKarakter(prev => prev ? { ...prev, játékos: v } : prev)}
-        tsz={karakter.tsz} setTsz={v => setKarakter(prev => prev ? { ...prev, tsz: v } : prev)}
-        kor={karakter.kor} setKor={v => setKarakter(prev => prev ? { ...prev, kor: v } : prev)}
-        faj={karakter.hátterek.faj} setFaj={v => setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev)}
+        tulajdonságok={tulajdonságok} setTulajdonságok={(v: any) => {
+          const newVal = typeof v === 'function' ? v(tulajdonságok) : v;
+          const changed = Object.keys(newVal).find(k => newVal[k] !== (tulajdonságok as any)[k]);
+          pushUndo(changed ? `${changed}: ${(tulajdonságok as any)[changed]} → ${newVal[changed]}` : 'Tulajdonság módosítás');
+          setTulajdonságok(v);
+        }}
+        képzettségek={képzettségek} setKépzettségek={(v: any) => {
+          const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
+          let desc = '';
+          if (newVal.length > képzettségek.length) { const added = newVal.find(n => !képzettségek.some(k => k.név === n.név)); if (added && added.szint > 0) desc = `Képzettség: ${added.név} 0→${added.szint}`; }
+          else if (newVal.length < képzettségek.length) { const removed = képzettségek.find(k => !newVal.some(n => n.név === k.név)); if (removed) desc = `Képzettség: ${removed.név} ${removed.szint}→0❌`; }
+          else { const changed = newVal.find((n, i) => n.szint !== képzettségek[i]?.szint); if (changed) { const old = képzettségek.find(k => k.név === changed.név); if (old && old.szint !== changed.szint) desc = `Képzettség: ${changed.név} ${old.szint}→${changed.szint}`; } }
+          if (desc) pushUndo(desc);
+          setKépzettségek(v);
+        }}
+        név={karakter.név} setNév={v => { pushUndo(`Név: ${karakter.név} → ${v}`); setKarakter(prev => prev ? { ...prev, név: v } : prev); }}
+        játékos={karakter.játékos} setJátékos={v => { pushUndo(`Játékos: ${v}`); setKarakter(prev => prev ? { ...prev, játékos: v } : prev); }}
+        tsz={karakter.tsz} setTsz={v => { pushUndo(`TSz: ${karakter.tsz} → ${v}`); setKarakter(prev => prev ? { ...prev, tsz: v } : prev); }}
+        kor={karakter.kor} setKor={v => { pushUndo(`Kor: ${karakter.kor} → ${v}`); setKarakter(prev => prev ? { ...prev, kor: v } : prev); }}
+        faj={karakter.hátterek.faj} setFaj={v => { pushUndo(`Faj: ${v}`); setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev); }}
         anyanyelv={karakter.anyanyelv} setAnyanyelv={setAnyanyelv}
       />;
     }
@@ -605,13 +677,21 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       });
       const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;
       return <FortelyokScreen data={data} gameMode={gameMode}
-        fortélyok={fortélyok} setFortélyok={setFortélyok}
+        fortélyok={fortélyok} setFortélyok={(v: any) => {
+          const newVal: Fortely[] = typeof v === 'function' ? v(fortélyok) : v;
+          let desc = '';
+          if (newVal.length > fortélyok.length) { const added = newVal.find(n => !fortélyok.some(f => f.név === n.név && f.spec_elem === n.spec_elem)); if (added && added.fok > 0) desc = `Fortély: ${added.név}${added.spec_elem ? ` (${added.spec_elem})` : ""} 0→${added.fok}`; }
+          else if (newVal.length < fortélyok.length) { const removed = fortélyok.find(f => !newVal.some(n => n.név === f.név && n.spec_elem === f.spec_elem)); if (removed) desc = `Fortély: ${removed.név}${removed.spec_elem ? ` (${removed.spec_elem})` : ""} ${removed.fok}→0❌`; }
+          else { const changed = newVal.find((n, i) => n.fok !== fortélyok[i]?.fok); if (changed) { const old = fortélyok.find(f => f.név === changed.név && f.spec_elem === changed.spec_elem); if (old && old.fok !== changed.fok) desc = `Fortély: ${changed.név}${changed.spec_elem ? ` (${changed.spec_elem})` : ""} ${old.fok}→${changed.fok}`; } }
+          if (desc) pushUndo(desc);
+          setFortélyok(v);
+        }}
         tsz={karakter.tsz} fegyverNevek={fegyverNevek} nyelvtanulásSzint={nyelvtanulásSzint}
         képzettségek={képzettségek}
       />;
     }
     case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
-    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={setKarakter} />;
+    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} />;
     case 'hatterek': return <HatterekScreen data={data} karakter={karakter} setKarakter={setKarakter} gameMode={gameMode} onNavigate={tab => { const idx = ALL_TABS.findIndex(t => t.id === tab); if (idx >= 0) setActiveTab(idx); }} />;
     default: return null;
   }

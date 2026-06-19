@@ -1558,3 +1558,160 @@ Webapp scope: NJK alakzat kalkulátor (KM eszköz):
 Nem játékos karakter kalkulátor → egyszerűsített (nem per-tag, hanem átlag alapú).
 A játékos karakter Alakzatharc szintje max_HM-be már beleszámít (rules.json: sum harcmodor_összeg + alakzatharc_szint).
 ```
+
+
+---
+
+## §29 Undo Stack (TERV — NEM IMPLEMENTÁLT)
+
+Session állapot visszavonás mechanizmus.
+
+### 29.1 Modell
+
+- Stack mélység: **6 művelet** (ha betelt, a legrégebbi kiesik)
+- Minden `setSession()` és `setKarakter()` hívás egy tranzakció:
+  - `{ timestamp, leírás, előző_állapot }` push a stack-re
+  - A `leírás` automatikusan generált (pl. "Taktika hozzáadva: Támadó (2)", "VÉ csökkenés: -3", "Fegyver váltás: Tőr")
+- Snapshot típus: session + karakter teljes objektum másolat (deep clone)
+- Visszaállítás: a kiválasztott pontig az összes későbbi tranzakció törlődik és az állapot visszaáll
+
+### 29.2 UI
+
+**Gomb:**
+- Fejléc sávban (App header), a Szerk/Game toggle mellett
+- Ikon: ↩
+- Disabled ha a stack üres
+- Badge: stack mérete (1-6 szám)
+
+**Overlay popup (gombra kattintva):**
+```
+┌─────────────────────────────┐
+│  Visszavonás                │
+├─────────────────────────────┤
+│  ● VÉ csökkenés: -3        │  ← legutóbbi (felül)
+│  ○ Taktika: Támadó (2)     │
+│  ○ Helyzet: Meglepetés      │
+│  ○ Fegyver váltás: Tőr     │
+│  ○ Státusz: Félelem (1)    │
+│  ○ Páncél viselve: Igen    │  ← legrégebbi (alul)
+├─────────────────────────────┤
+│  [Visszaállítás ide]        │  ← gomb, disabled amíg nincs kiválasztva
+└─────────────────────────────┘
+```
+
+- Legutóbbi tranzakció felül, legrégebbi alul
+- Kattintás/tap: kiválasztja a pontot (● jelöli, a felette lévők is jelölve — ezek törlődnek)
+- A kiválasztott pont FÖLÖTTI elemek vizuálisan kiemeltek (pl. piros háttér = ezek visszavonódnak)
+- "Visszaállítás ide" gomb: csak kiválasztás után aktív, kattintásra jóváhagyó popup ("Visszavonod X műveletet?")
+- Jóváhagyás után: azonnali visszaállítás + overlay bezárul
+- Overlay mellé kattintás: bezár (nem von vissza semmit)
+
+### 29.3 Tranzakció leírás generálás
+
+#### Visszavonható műveletek:
+
+**TulajdonsagokScreen:**
+| Forrás | Leírás pattern |
+|--------|---------------|
+| Név szerkesztés | "Név: {régi} → {új}" |
+| TSz változtatás | "TSz: {régi} → {új}" |
+| Kor változtatás | "Kor: {régi} → {új}" |
+| Játékos szerkesztés | "Játékos: {régi} → {új}" |
+| Tulajdonság +/- | "{tulajdonság}: {régi} → {új}" |
+| Képzettség felvétel | "Képzettség+: {név}" |
+| Képzettség törlés | "Képzettség−: {név}" |
+| Képzettség szint | "Képzettség: {név} {régi}→{új}" |
+
+**FortelyokScreen:**
+| Forrás | Leírás pattern |
+|--------|---------------|
+| Fortély felvétel | "Fortély+: {név}" |
+| Fortély törlés | "Fortély−: {név}" |
+| Fortély fok változtatás | "Fortély: {név} fok {régi}→{új}" |
+
+**HarcertekekScreen:**
+| Forrás | Leírás pattern |
+|--------|---------------|
+| HM TÉ/VÉ változtatás | "HM TÉ: {±1}" / "HM VÉ: {±1}" |
+| CM változtatás | "CM: {±1}" |
+| Fegyver hozzáadás/törlés | "Fegyver+: {név}" / "Fegyver−: {név}" |
+| MF fok | "MF: {fegyver} fok {régi}→{új}" |
+| Fegyver Idea/Anyag | "Fegyver: {név} {mező} → {új}" |
+| Páncél struktúra | "Páncél: {mező} → {új}" |
+| Pajzs méret/fok | "Pajzs: {mező} → {új}" |
+
+**HatterekScreen:**
+| Forrás | Leírás pattern |
+|--------|---------------|
+| Háttér toggle | "Háttér: {név} {+/−}" |
+
+**AktivScreen:**
+| Forrás | Leírás pattern |
+|--------|---------------|
+| Taktika hozzáadás/törlés | "Taktika: {név} ({fok})" |
+| Helyzet hozzáadás/törlés | "Helyzet: {név}" |
+| Státusz hozzáadás/törlés | "Státusz: {név} ({fok})" |
+| Szituáció hozzáadás/törlés | "Szituáció: {név}" |
+| Manőver váltás | "Manőver: {név}" |
+| Fegyver váltás | "Fegyver: {név}" |
+| Fegyverfogás | "Fogás: {fogás}" |
+| Páncél/pajzs toggle | "{mező}: {érték}" |
+| Narratív módosító +/- | "Narratív: {szöveg}" |
+
+**HarcScreen:**
+| Forrás | Leírás pattern |
+|--------|---------------|
+| VÉ csökkenés +/- | "VÉ csökkenés: {±érték}" |
+| VÉ reset | "VÉ reset" |
+| MP használat | "MP: −1" / "MP: reset" |
+| Sebzés jelölés | "Sebzés: {SP} ({sáv})" |
+
+#### KIVÉTELEK — NEM vonódnak vissza:
+
+| Mező | Oka |
+|------|-----|
+| `karakter.jegyzetek` | Szöveges napló, mindig a legfrissebb állapot marad |
+| `karakter.napló` | Játékeseménytörténet, kronológiailag nem visszavonható |
+
+Implementáció: az `undoTo()` visszaállításnál a `jegyzetek` és `napló` mezőket az aktuális
+(visszaállítás előtti) értékükkel felülírjuk a visszaállított karakter objektumon.
+
+### 29.4 Implementáció vázlat
+
+```typescript
+interface UndoEntry {
+  timestamp: number;
+  leírás: string;
+  session: Session;       // deep clone
+  karakter: Karakter;     // deep clone
+}
+
+// App szinten:
+const [undoStack, setUndoStack] = useState<UndoEntry[]>([]);
+const UNDO_MAX = 6;
+
+function pushUndo(leírás: string) {
+  setUndoStack(prev => [
+    { timestamp: Date.now(), leírás, session: structuredClone(session), karakter: structuredClone(karakter) },
+    ...prev
+  ].slice(0, UNDO_MAX));
+}
+
+function undoTo(index: number) {
+  const entry = undoStack[index];
+  // Jegyzetek és Napló mindig a legfrissebb marad (kivétel)
+  const restoredKarakter = { ...entry.karakter, jegyzetek: karakter.jegyzetek, napló: karakter.napló };
+  setSession(entry.session);
+  setKarakter(restoredKarakter);
+  setUndoStack(prev => prev.slice(index + 1));
+}
+```
+
+### 29.5 Megjegyzések
+
+- A stack NEM perzisztens (page reload törli) — ez szándékos (session state az autosave-ből visszajön)
+- Game módban és Szerkesztő módban egyaránt működik
+- A `pushUndo()` hívást minden session/karakter módosító függvénybe be kell kötni
+  - KIVÉVE: `jegyzetek` és `napló` módosítások (ezek nem generálnak undo entry-t)
+- Teljesítmény: 6× deep clone max ~50KB adat (karakter+session) — elhanyagolható
+- A `pushUndo()` a módosítás ELŐTT hívandó (az aktuális állapotot menti, nem az újat)

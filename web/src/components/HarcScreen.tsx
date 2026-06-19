@@ -16,11 +16,12 @@ function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftT
   return enyhítés;
 }
 
-export function HarcScreen({ data, karakter, session, setSession, onNavigate }: {
+export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: {
   data: GameData;
   karakter: Karakter;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
+  pushUndo: (leírás: string) => void;
   onNavigate?: (tabId: string) => void;
 }) {
   const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
@@ -37,6 +38,7 @@ export function HarcScreen({ data, karakter, session, setSession, onNavigate }: 
 
   function changeVé(newVal: number) {
     const diff = newVal - session.vé_csökkenés;
+    if (diff !== 0) pushUndo(`VÉ csökkenés: ${diff > 0 ? '-' : '+'}${Math.abs(diff)}`);
     const dir = diff > 0 ? 'down' : 'up';
     setSession(prev => ({
       ...prev,

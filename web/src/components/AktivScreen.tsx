@@ -9,9 +9,10 @@ interface Props {
   karakter: Karakter;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
+  pushUndo: (leírás: string) => void;
 }
 
-export function AktivScreen({ data, karakter, session, setSession }: Props) {
+export function AktivScreen({ data, karakter, session, setSession, pushUndo }: Props) {
   const [showManőverPicker, setShowManőverPicker] = useState(false);
   const [showTaktikaPicker, setShowTaktikaPicker] = useState(false);
   const [taktikaFokválasztó, setTaktikaFokválasztó] = useState<string | null>(null);
@@ -104,15 +105,18 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
   function addTaktika(név: string) {
     const def = data.taktikak.find(t => t.név === név);
     if (!def) return;
+    pushUndo(`Taktika: ${név}`);
     const entry: AktívTaktika = { név, fok: def.fokozatos ? 1 : undefined };
     setSession(s => ({ ...s, aktív_taktikák: [...s.aktív_taktikák, entry] }));
   }
 
   function removeTaktika(idx: number) {
+    pushUndo(`Taktika−: ${session.aktív_taktikák[idx]?.név}`);
     setSession(s => ({ ...s, aktív_taktikák: s.aktív_taktikák.filter((_, i) => i !== idx) }));
   }
 
   function setTaktikaFok(idx: number, fok: number) {
+    pushUndo(`Taktika: ${session.aktív_taktikák[idx]?.név} fok→${fok}`);
     setSession(s => ({ ...s, aktív_taktikák: s.aktív_taktikák.map((t, i) => i === idx ? { ...t, fok } : t) }));
   }
 
@@ -256,6 +260,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             <span className="aktiv-field-label">Ügyesebb kéz</span>
             <select className="aktiv-field-select" value={session.aktív_fegyver_index} onChange={e => {
               const idx = parseInt(e.target.value);
+              pushUndo(`Fegyver: ${idx === -1 ? 'Puszta kéz' : karakter.fegyverek[idx]?.alap ?? idx}`);
               setSession(s => {
                 const puszta = idx === -1 || karakter.fegyverek[idx]?.alap.toLowerCase() === 'puszta kéz';
                 if (puszta) {
@@ -348,7 +353,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             );
           })()}
           <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_páncél ? 'on' : ''}`}
-            onClick={() => setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél }))}>
+            onClick={() => { pushUndo(`Páncél: ${!session.aktív_páncél ? "Igen" : "Nem"}`); setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél })); }}>
             <span className="aktiv-field-label">Páncél viselve</span>
             <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>
           </div>
@@ -449,7 +454,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 {session.narratív_módosítók.map((nm, i) => (
                   <span key={i} className={`hatas-pool-item ${(nm.érték ?? 0) > 0 ? 'positive' : (nm.érték ?? 0) < 0 ? 'negative' : ''}`}>
                     {nm.szöveg}{nm.érték != null ? ` (${nm.érték > 0 ? 'Előny+' : 'Hátrány'}${nm.érték > 0 ? nm.érték : nm.érték})` : ''}
-                    <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) }))}>✕</button>
+                    <button className="aktiv-chip-x" onClick={() => { pushUndo(`Narratív−: ${session.narratív_módosítók[i]?.szöveg}`); setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) })); }}>✕</button>
                   </span>
                 ))}
               </div>
@@ -594,7 +599,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         {session.aktív_helyzetek.map((h, i) => (
           <div key={i} className="aktiv-chip">
             <span>{h}</span>
-            <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }))}>✕</button>
+            <button className="aktiv-chip-x" onClick={() => { pushUndo(`Helyzet−: ${session.aktív_helyzetek[i]}`); setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) })); }}>✕</button>
           </div>
         ))}
         <button className="aktiv-add-btn" disabled={data.harciHelyzetek.every(h => {
@@ -632,6 +637,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 ];
                 const renderCard = (h: typeof data.harciHelyzetek[0]) => (
                 <div key={h.név} className="aktiv-picker-item" onClick={() => {
+                  pushUndo(`Helyzet: ${h.név}`);
                   const hDef = data.harciHelyzetek.find(d => d.név === h.név);
                   setSession(s => {
                     let helyzetek = [...s.aktív_helyzetek, h.név];
@@ -680,7 +686,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                 const újFok = (stFok % maxFok) + 1;
                 setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
               }} style={maxFok > 1 ? { cursor: 'pointer' } : undefined}>{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}</span>
-              <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }))}>✕</button>
+              <button className="aktiv-chip-x" onClick={() => { pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`); setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) })); }}>✕</button>
             </div>
           );
         })}
@@ -708,7 +714,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                           if (s.többszörös && s.alkategóriák?.length) {
                             setÉrzékválasztó(s.név);
                           } else if (s.fokok.length === 1) {
-                            setSession(prev => ({ ...prev, aktív_státuszok: [...prev.aktív_státuszok, `${s.név} (1)`] }));
+                            pushUndo(`Státusz: ${s.név} (1)`); setSession(prev => ({ ...prev, aktív_státuszok: [...prev.aktív_státuszok, `${s.név} (1)`] }));
                             setShowStátuszPicker(false);
                           } else {
                             setStátuszFokválasztó(s.név);
@@ -773,7 +779,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
         {session.aktív_szituációk.map((s2, i) => (
           <div key={i} className="aktiv-chip">
             <span>{s2}</span>
-            <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_szituációk: s.aktív_szituációk.filter((_, j) => j !== i) }))}>✕</button>
+            <button className="aktiv-chip-x" onClick={() => { pushUndo(`Szituáció−: ${session.aktív_szituációk[i]}`); setSession(s => ({ ...s, aktív_szituációk: s.aktív_szituációk.filter((_, j) => j !== i) })); }}>✕</button>
           </div>
         ))}
         <button className="aktiv-add-btn" disabled={data.szituaciok.every(s2 => session.aktív_szituációk.includes(s2.név))} onClick={() => setShowSzituácioPicker(true)}>+ Szituáció...</button>
@@ -787,7 +793,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
             </div>
             <div className="aktiv-picker-list">
               {data.szituaciok.filter(s2 => !session.aktív_szituációk.includes(s2.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(s2 => (
-                <div key={s2.név} className="aktiv-picker-item" onClick={() => { setSession(s => ({ ...s, aktív_szituációk: [...s.aktív_szituációk, s2.név] })); setShowSzituácioPicker(false); }}>
+                <div key={s2.név} className="aktiv-picker-item" onClick={() => { pushUndo(`Szituáció: ${s2.név}`); setSession(s => ({ ...s, aktív_szituációk: [...s.aktív_szituációk, s2.név] })); setShowSzituácioPicker(false); }}>
                   <span className="aktiv-picker-item-name">{s2.név}</span>
                   <span className="aktiv-picker-item-hatas">{s2.infó}</span>
                 </div>
@@ -824,7 +830,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
               const textEl = document.getElementById('narrativ-popup-text') as HTMLInputElement;
               const szöveg = textEl.value.trim();
               if (!szöveg) return;
-              setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték: narrativÉrték }] }));
+              pushUndo(`Narratív: ${szöveg}`); setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték: narrativÉrték }] }));
               setNarrativPopup(false);
               setNarrativÉrték(undefined);
             }}>OK</button>
@@ -876,6 +882,7 @@ export function AktivScreen({ data, karakter, session, setSession }: Props) {
                     style={disabled ? { opacity: 0.4, pointerEvents: 'none' } : active ? { borderColor: 'var(--accent)' } : undefined}
                     onClick={() => {
                       if (disabled) return;
+                      pushUndo(`Fogás: ${opt.név}`);
                       const patch: Partial<typeof session> = { fegyverfogás: opt.id as typeof session.fegyverfogás };
                       if (opt.id === 'egyfegyveres') { patch.kétkezes_harc = false; patch.aktív_pajzs = false; patch.aktív_fegyver_bal_index = -1; }
                       if (opt.id === 'fegyver_pajzs') { patch.kétkezes_harc = false; patch.aktív_pajzs = true; patch.aktív_fegyver_bal_index = -1; }
