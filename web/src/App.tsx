@@ -371,6 +371,23 @@ function App() {
   }
 
   // --- Save / Load ---
+  function duplicateKarakter() {
+    if (!karakter) return;
+    const bumpSuffix = (s: string) => {
+      const m = s.match(/^(.+):(\d+)$/);
+      return m ? `${m[1]}:${parseInt(m[2]) + 1}` : `${s}:2`;
+    };
+    const newUid = generateUid();
+    const newNév = bumpSuffix(karakter.név || 'Névtelen');
+    const newLeíró = generateIdLeíró(newNév, karakter.tsz);
+    const dup = { ...structuredClone(karakter), uid: newUid, név: newNév, id_leíró: newLeíró };
+    setKarakter(dup);
+    setUndoStack([]);
+    setTestMode(false);
+    setIsDirty(true);
+    setShowSlotList(true);
+  }
+
   function generateSaveFile(mode: 'single' | 'backup') {
     if (!karakter) return;
     const now = new Date();
@@ -593,6 +610,7 @@ function App() {
           <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '6px', minWidth: '200px' }}>
             <button className="menu-item" disabled={undoStack.length === 0} style={{ opacity: undoStack.length === 0 ? 0.4 : 1 }} onClick={() => { setShowMenu(false); setShowUndo(true); setUndoSelected(null); }}>↩ Visszavonás{undoStack.length > 0 ? ` (${undoStack.length})` : ''}</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowSlotList(true); }}>📂 Karakterek</button>
+            <button className="menu-item" onClick={() => { setShowMenu(false); duplicateKarakter(); }}>📋 Duplikál</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowSavePopup(true); }}>💾 Mentés</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowNewConfirm(true); }}>📄 Új karakter</button>
             {document.fullscreenEnabled && (
@@ -688,11 +706,11 @@ function App() {
                             setShowSlotList(false);
                           }
                         } catch { /* */ }
-                      }}>{karakter?.uid === s.uid ? '●' : '○'} {s.név || 'Névtelen'}({s.tsz || '?'})</span>
+                      }}>{karakter?.uid === s.uid ? '●' : '○'} {s.név || 'Névtelen'} ({s.tsz || '?'}sz)</span>
                       <span style={{ fontSize: '11px', color: '#888', marginRight: '8px' }}>{relTime(s.mentés_dátum)}</span>
                       <span style={{ color: '#e53935', cursor: 'pointer', fontSize: '14px', fontWeight: 'bold' }} onClick={(e) => {
                         e.stopPropagation();
-                        setSlotDeleteTarget({ uid: s.uid, név: `${s.név || 'Névtelen'}(${s.tsz || '?'})` });
+                        setSlotDeleteTarget({ uid: s.uid, név: `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)` });
                       }}>✕</span>
                     </div>
                   ))}
