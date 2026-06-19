@@ -473,7 +473,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
       >
         <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes ? ' 🎁' : ''}</span>
         <span className="fort-right">
-          {!gameMode && !locked && (
+          {!gameMode && !locked && !slot.kiérdemelt && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}${overLimit ? ' fort-over' : ''}`}>{slot.név === 'Nyelvismeret' ? NYELV_FOK_LABELS[slot.fok] ?? slot.fok : (
