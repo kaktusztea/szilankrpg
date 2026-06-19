@@ -164,6 +164,7 @@ function App() {
             localStorage.removeItem('szilank_karakter');
             localStorage.removeItem('szilank_undo');
             setKarakter(migrated);
+            setIsDirty(true);
             return;
           }
         } catch { /* fall through */ }
@@ -177,6 +178,7 @@ function App() {
             const parsed = JSON.parse(charData);
             if (validateKarakter(parsed)) {
               setKarakter({ ...parsed, uid: parsed.uid || activeUid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), session: { ...DEFAULT_SESSION, ...parsed.session } });
+              setIsDirty(true);
               return;
             }
           } catch { /* fall through */ }
@@ -267,7 +269,7 @@ function App() {
   const [showNewConfirm, setShowNewConfirm] = useState(false);
   const [showTestConfirm, setShowTestConfirm] = useState(false);
   const [testMode, setTestMode] = useState(false);
-  const [isDirty, setIsDirty] = useState(true);
+  const [isDirty, setIsDirty] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
   const [showSlotList, setShowSlotList] = useState(false);
