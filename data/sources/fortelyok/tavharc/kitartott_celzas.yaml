@@ -1,0 +1,56 @@
+---
+schema_version: 1
+
+név: "Kitartott célzás"
+névkomment: ""
+maxfok: 1
+session_toggle: false
+emlékeztető: true
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+  - text: "Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót célzáskor."
+megjegyzések:
+  - text: "Csak kiszámíthatóan mozgó cél ellen alkalmazható."
+  - text: "Íjat legfeljebb `1` körig tarthatsz ki."
+
+kiterjeszti:
+  normál: []
+  erős: []
+
+kp_perfok: 6
+ingyenes_perszint: 0
+
+fokok:
+  - fok: 0
+    követelménytext: ""
+    követelmények: ""
+    hatástext:
+      - text: "Célzás körülményben: `1` kör célzás után `+3 CÉ` módosító."
+    módosítók:
+      - cél: "CÉ"
+        érték: 3
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "harci_helyzet:célzás"
+  - fok: 1
+    követelménytext: ""
+    követelmények:
+      - név: ["Íjászat", "Lövészet"]
+        érték: 5
+        típus: "képzettség"
+    hatástext:
+      - text: "Célzás körülményben: `1` kör célzás után `+7 CÉ` módosító."
+    módosítók:
+      - cél: "CÉ"
+        érték: 7
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "harci_helyzet:célzás"
+
+todo:
+  - text: ""

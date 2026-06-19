@@ -4,6 +4,14 @@ import type { GameData, FortelySummary } from '../engine/data-loader';
 import type { Fortely } from '../engine/types';
 import './FortelyokScreen.css';
 
+function fmtCode(text: string) {
+  const parts = text.split(/(`[^`]+`)/g);
+  return parts.map((p, i) => p.startsWith('`') && p.endsWith('`')
+    ? <code key={i} style={{ fontFamily: 'monospace', background: '#333', padding: '0 3px', borderRadius: '2px' }}>{p.slice(1, -1)}</code>
+    : p
+  );
+}
+
 const CSOPORT_SORREND = ['harci', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'];
 const CSOPORT_LABEL: Record<string, string> = {
   harci: '⚔️ Harci', általános: '🔧 Általános', érzékek: '👁️ Érzékek',
@@ -483,9 +491,9 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
       </div>
       {isOpen && def && (
         <div className="fort-info">
-          {def.leírás && <div className="fort-info-desc">{def.leírás}</div>}
+          {def.leírás && <div className="fort-info-desc">{fmtCode(def.leírás)}</div>}
           {fokDef && fokDef.hatás.length > 0 && (
-            <div className="fort-info-row"><span className="fort-info-label">Hatás:</span> {fokDef.hatás.join(' ')}</div>
+            <div className="fort-info-row"><span className="fort-info-label">Hatás:</span> {fmtCode(fokDef.hatás.join(' '))}</div>
           )}
           {fokDef && fokDef.követelmény && (
             <div className="fort-info-row"><span className="fort-info-label">Követelmény:</span> {fokDef.követelmény}</div>

@@ -5,6 +5,14 @@ import type { Karakter, Session, AktívTaktika } from '../engine/types';
 import { evaluateAlapesetek } from '../engine/alapeset';
 import './AktivScreen.css';
 
+function fmtCode(text: string) {
+  const parts = text.split(/(`[^`]+`)/g);
+  return parts.map((p, i) => p.startsWith('`') && p.endsWith('`')
+    ? <code key={i} style={{ fontFamily: 'monospace', background: '#333', padding: '0 3px', borderRadius: '2px' }}>{p.slice(1, -1)}</code>
+    : p
+  );
+}
+
 interface Props {
   data: GameData;
   karakter: Karakter;
@@ -407,10 +415,10 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   if (!def) return null;
                   const kötöttFortélyok = helyzetFortélyok.get(h) || [];
                   return <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span className="hatas-pool-item"><strong style={{ color: '#42a5f5' }}>{def.név}:</strong> {def.infó || '–'}</span>
+                    <span className="hatas-pool-item"><strong style={{ color: '#42a5f5' }}>{def.név}:</strong> {fmtCode(def.infó || '–')}</span>
                     {kötöttFortélyok.map((kf, j) => (
                       <span key={j} className="hatas-pool-item" style={{ paddingLeft: '12px', color: kf.aktív ? '#66bb6a' : '#888' }}>
-                        → {kf.név} ({kf.fok}): {kf.hatás}{kf.aktív ? ' ✔' : ''}
+                        → {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}
                       </span>
                     ))}
                   </div>;
@@ -462,7 +470,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
               <span className="hatas-pool-title">Fortély bónuszok</span>
               <div className="hatas-pool-items">
                 {fortélyEmlékeztetők.map((fe, i) => (
-                  <span key={i} className="hatas-pool-item"><strong className="fortely-nev">{fe.név} ({fe.fok}):</strong> {fe.hatás}</span>
+                  <span key={i} className="hatas-pool-item"><strong className="fortely-nev">{fe.név} ({fe.fok}):</strong> {fmtCode(fe.hatás)}</span>
                 ))}
               </div>
             </div>
@@ -472,7 +480,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
               <summary className="hatas-pool-title" style={{ cursor: 'pointer' }}>Alapesetek ({alapesetek.length}) ▾</summary>
               <div className="hatas-pool-items">
                 {alapesetek.map((ae, i) => (
-                  <span key={i} className="hatas-pool-item"><strong>{ae.fortély_név}:</strong> {ae.hatástext.join(' ')}</span>
+                  <span key={i} className="hatas-pool-item"><strong>{ae.fortély_név}:</strong> {fmtCode(ae.hatástext.join(' '))}</span>
                 ))}
               </div>
             </details>
@@ -684,7 +692,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   setShowHelyzetPicker(false);
                 }}>
                   <span className="aktiv-picker-item-name">{h.név}</span>
-                  <span className="aktiv-picker-item-hatas">{h.infó}</span>
+                  <span className="aktiv-picker-item-hatas">{fmtCode(h.infó)}</span>
                 </div>);
                 return (<>
                   {groups.flatMap(g => g.items.length > 0 ? [

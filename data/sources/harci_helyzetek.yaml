@@ -427,7 +427,7 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Célzás"
-  infó: "Távharc célzás. Célzás fortély bónuszok aktívak."
+  infó: "Távharc célzás. Kitartott célzás fortély bónuszok aktívak."
   hatások: []
   id: "célzás"
   csoport: "körülmény"
