@@ -417,7 +417,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       <div className="harc-header">
         <div className="ke-box"><span className="label">KÉ</span><span className="value">{ké}</span></div>
         <div className="sfe-box">
-          <span className="label">SFÉ ({páncélLefedettség}%)</span>
+          <span className="label">SFÉ (<span style={{ fontFamily: 'monospace' }}>{páncélLefedettség}%</span>)</span>
           <div className="sfe-values">
             <span className="sfe-line">Fizikai: <strong>{sfé_fizikai}</strong></span>
             <span className="sfe-line" style={{ color: '#aaa' }}>Energia: <strong>{sfé_energia}</strong></span>

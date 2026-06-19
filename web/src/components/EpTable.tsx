@@ -123,7 +123,7 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
   return (
     <div className="ep-table-wrapper">
       <div className="ep-table-header">
-        <span><strong>ÉP: {ÉP}({ÉP - kitöltött})</strong></span>
+        <span><strong>ÉP: <span style={{ fontFamily: 'monospace' }}>{ÉP}({ÉP - kitöltött})</span></strong></span>
         <button className="btn-reset" style={{ fontSize: '15px' }} disabled={kitöltött === 0} onClick={() => setShowResetConfirm(true)}>⟲</button>
         <button className="btn-seb" disabled={kitöltött === összRubrika && rubrikák.every(r => r.típus !== 'FP')} onClick={() => setShowSebDialog(true)}>⚔️ Seb</button>
         <button className="btn-heal" disabled={kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógy</button>

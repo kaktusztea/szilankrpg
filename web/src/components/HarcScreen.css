@@ -64,6 +64,7 @@
   padding: 2px 7px;
   cursor: pointer;
   font-size: 16px;
+  font-family: monospace;
 }
 
 .ve-btns button:disabled {
@@ -79,7 +80,7 @@
 }
 
 .sfe-line { font-size: 16px; }
-.sfe-line strong { font-size: 16px; }
+.sfe-line strong { font-size: 16px; font-family: monospace; }
 
 .ke-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
 .ke-box .label, .sfe-box .label { font-size: 16px; font-weight: bold; color: var(--text); text-transform: uppercase; }
@@ -101,6 +102,7 @@
 .harc-table th.te-col { color: var(--accent); }
 .harc-table th.ve-col { color: var(--warning); }
 .harc-table td:first-child { text-align: left; }
+.harc-table td:not(:first-child) { font-family: monospace; }
 
 .harc-section {
   background: var(--surface);
