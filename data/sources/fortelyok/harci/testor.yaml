@@ -22,7 +22,7 @@ fokok:
   követelménytext: ""
   követelmények: ""
   hatástext:
-  - text: "VÉ kiterjesztés társra: VÉ veszteség duplázódik (x2)."
+  - text: "Védő Érték kiterjesztése másra harci helyzet teljes büntetése sújt."
   módosítók:
   - cél: "vé_veszteség"
     érték: 2
@@ -38,7 +38,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext:
-  - text: "VÉ veszteség duplázódás Hatás nem sújt VÉ kiterjesztésekor."
+  - text: "Védő Érték kiterjesztése másra harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt! A többi igen."
   módosítók:
   - cél: "vé_veszteség"
     érték: 1
@@ -53,8 +53,7 @@ fokok:
     érték: 9
     típus: "képzettség"
   hatástext:
-  - text: "Büntetések nélkül védheted pártfogoltad."
-  - text: "Többszörös támadás elvesztése Hatás sem sújt."
+  - text: "Védő Érték kiterjesztése másra harci helyzet: büntetések nélkül védheted pártfogoltad."
   módosítók:
   - cél: "vé_veszteség"
     érték: 1

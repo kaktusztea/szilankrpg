@@ -893,6 +893,70 @@ Data layer mezők:
 note: "Kétkezes harc" és "Merevvért 70%" eltávolítva a szituáció dropdown-ból — automatikusan kezeltek
       (session.kétkezes_harc toggle ill. kalkulált feltétel a fortély módosítóban).
 
+---
+
+### 21.3b Szituáció → Harci helyzet beolvasztás — TERV
+
+A szituációk külön rendszere megszűnik. Minden szituáció harci helyzetté válik, 4. csoportként.
+
+#### Motiváció
+
+- Egy egységes picker + egy `session.aktív_helyzetek[]` tömb (nincs külön szituáció state)
+- A Hatás pool "Harci helyzetek" szekciójában automatikusan megjelennek (infó mezővel)
+- A fortély bónuszok a szokásos feltétel-rendszeren keresztül aktiválódnak — láthatóan
+
+#### Érintett szituációk → helyzet
+
+| Jelenlegi szituáció    | Új helyzet id          | Új csoport   | Megjegyzés             |
+| ---------------------- | ---------------------- | ------------ | ---------------------- |
+| Lovas harc             | `lovas_harc`           | szituáció    | lóhátról               |
+| Léglovas harc          | `léglovas_harc`        | szituáció    | repülő hátasról        |
+| Harci szekér           | `harci_szekér`         | szituáció    | szekérről              |
+| Páros harc             | `páros_harc`           | szituáció    | koordinált 2 fős       |
+| Közönség előtt         | `közönség_előtt`       | szituáció    | gladiátor              |
+| Szörnyeteg elleni harc | `szörnyeteg_elleni_harc` | szituáció  | bestia                 |
+| Célzás                 | `célzás`              | szituáció    | távharc célzás         |
+
+#### Lépések
+
+**1. Data layer (harci_helyzetek.yaml):**
+- 7 új entry hozzáadása `csoport: "szituáció"`-val
+- Mezők: `név, id, infó, hatások: [], csoport: "szituáció", rejtett: false, tiltja_taktikákat: false, kizár_helyzetek: []`
+- `infó`: rövid szöveg ami a Hatás pool-ban megjelenik (pl. "Lovas harc fortély bónuszok aktívak")
+- `szituaciok.yaml` fájl törlése
+
+**2. Fortély feltételek migrálás:**
+- Minden fortély yaml-ban `feltétel: "szituáció:X"` → `feltétel: "harci_helyzet:X"`
+- `konstansok.yaml → feltétel_prefixek`: `szituáció` marad (backward-compat)
+
+**3. Session state + engine (types.ts, alapeset.ts):**
+- `aktív_szituációk: string[]` törlése a `Session` interface-ből + `DEFAULT_SESSION`-ből
+- Minden `session.aktív_szituációk` hivatkozás → `session.aktív_helyzetek`
+- `alapeset.ts → evaluateFeltétel`: `szituáció:` case = `session.aktív_helyzetek.includes(érték)` (backward-compat, azonos logika mint `harci_helyzet:`)
+
+**4. generate_tables.py + data-loader.ts:**
+- `generate_szituaciok()` törlése, `szituaciok.json` nem generálódik
+- `validate_aktiv_ful()`: szituáció validáció beolvad harci_helyzet validációba
+- `feltétel_kulcs` generálás: szituáció entries → `harci_helyzet:{id}`
+- `data-loader.ts`: `szituaciok` mező törlése `GameData`-ból, fetch eltávolítása
+
+**5. AktivScreen.tsx:**
+- Szituáció picker szekció + chip szekció törlése
+- Helyzet picker: 4. csoport "Szituáció" — arany fejléc (`#ffd54f`)
+- ABC rendezés csoporton belül (Pozitív `#4caf50` / Semleges `#ff9800` / Negatív `#f44336` / Szituáció `#ffd54f`)
+- Hatás pool "Harci helyzetek" szekció: szituáció-helyzetek `infó`-ja is megjelenik (azonos logika, szín: `#42a5f5`)
+
+**6. Szabályrendszer (md/):**
+- `md/150_szituaciok.md` tartalom beolvasztása harci helyzetek fejezetbe
+- `szabalyrendszer.md` ToC frissítés
+- Link audit: `grep -rn "150_szituaciok\|szituáció" md/` → javítás
+- Linkspector futtatás
+
+**7. Spec fájlok frissítés:**
+- engine_spec §21 cím → "Taktikák, Manőverek, Helyzetek", §21.3 beolvasztás §21.2-be
+- gui_spec: szituáció szekció → helyzet picker 4 csoport
+- DEVSTATE: migrálás bejegyzés
+
 ### 21.4 Manőverek
 
 Egy körben max 1 aktív manőver. MP költséggel hajtható végre. Nehézség [2;12].

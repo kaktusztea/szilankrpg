@@ -25,7 +25,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext: 
-  - text: "TÉ:+3 bónusz a harc idejére nagyszámú (20+) közönség előtt."
+  - text: "Közönség előtt szituációban: TÉ:+3 bónusz."
   módosítók: 
   - cél: "TÉ"
     érték: 3

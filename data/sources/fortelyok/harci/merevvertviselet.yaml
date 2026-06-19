@@ -22,7 +22,7 @@ fokok:
   követelménytext: ""
   követelmények: ""
   hatástext:
-  - text: "Páncél teljes TÉ büntetése érvényesül: -TÉ == MGT."
+  - text: "Merevvért viselésénél: teljes TÉ büntetés érvényesül (TÉ levonás = MGT)."
   módosítók:
   - cél: "MGT_TÉ_büntetés"
     mód: "flat"

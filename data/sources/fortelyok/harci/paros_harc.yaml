@@ -25,7 +25,7 @@ fokok:
     érték: 3
     típus: "képzettség"
   hatástext: 
-  - text: "TÉ, VÉ: +2."
+  - text: "Páros harc szituációban: TÉ, VÉ: +2."
   - text: "1:1 harcban KÉ:+1 (többnél nem jár)."
   módosítók: 
   - cél: "TÉ"
@@ -53,7 +53,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext: 
-  - text: "TÉ, VÉ: +4."
+  - text: "Páros harc szituációban: TÉ, VÉ: +4."
   - text: "1:2 harcig KÉ:+1 (többnél nem jár)."
   módosítók: 
   - cél: "TÉ"

@@ -28,7 +28,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext: 
-  - text: "TÉ:+3, VÉ:+3 lovas bónusz."
+  - text: "Lovas harc szituációban: TÉ:+3, VÉ:+3."
   - text: "Lovas Manővereket végezhetsz."
   módosítók: 
   - cél: "TÉ"
@@ -53,7 +53,7 @@ fokok:
     érték: 9
     típus: "képzettség"
   hatástext: 
-  - text: "TÉ:+6, VÉ:+6 lovas bónusz."
+  - text: "Lovas harc szituációban: TÉ:+6, VÉ:+6."
   - text: "Lovas Manővereket végezhetsz."
   módosítók: 
   - cél: "TÉ"

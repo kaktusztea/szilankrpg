@@ -30,7 +30,7 @@ fokok:
         érték: 3
         típus: "képzettség"
     hatástext:
-      - text: "TÉ:+3, VÉ:+3 léglovas bónusz."
+      - text: "Léglovas harc szituációban: TÉ:+3, VÉ:+3."
       - text: "Léglovas Manővereket végezhetsz."
     módosítók:
       - cél: "TÉ"
@@ -52,7 +52,7 @@ fokok:
         érték: 6
         típus: "képzettség"
     hatástext:
-      - text: "TÉ:+6, VÉ:+6 léglovas bónusz."
+      - text: "Léglovas harc szituációban: TÉ:+6, VÉ:+6."
       - text: "Léglovas Manővereket végezhetsz."
     módosítók:
       - cél: "TÉ"

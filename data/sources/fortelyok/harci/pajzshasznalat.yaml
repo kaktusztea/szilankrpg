@@ -22,7 +22,7 @@ fokok:
   követelménytext: ""
   követelmények: ""
   hatástext:
-  - text: "Pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
+  - text: "Fegyver+Pajzs fogásnál: pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
   módosítók:
   - cél: "pajzs_VÉ_felezés"
     mód: "flat"

@@ -2632,7 +2632,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Roham esetén az erőbónusz duplázódik."
+          "Roham taktika esetén: KÉ:+5, erőbónusz duplázódik."
         ],
         "követelmény": "",
         "követelmények": [
@@ -2685,7 +2685,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Ha a **Fárasztás** harci taktikát alkalmazod akkor további `+3 VÉ`-t csökkentesz ellenfeleden támadáskor."
+          "Fárasztás taktika alkalmazásakor: extra VÉ csökkentés bónusz az ellenfélen."
         ],
         "követelmény": "",
         "követelmények": [
@@ -2803,7 +2803,7 @@
       {
         "fok": 1,
         "hatás": [
-          "VÉ:+3 bónusz a harc idejére nem-elfszabású szörnyeteg ellen."
+          "Szörnyeteg elleni harc szituációban: VÉ:+3 bónusz."
         ],
         "követelmény": "",
         "követelmények": [
@@ -2849,7 +2849,7 @@
       {
         "fok": 1,
         "hatás": [
-          "TÉ:+3 bónusz a harc idejére nagyszámú (20+) közönség előtt."
+          "Közönség előtt szituációban: TÉ:+3 bónusz."
         ],
         "követelmény": "",
         "követelmények": [
@@ -2965,7 +2965,7 @@
       {
         "fok": 0,
         "hatás": [
-          "Helyhez kötve szituációban: VÉ veszteség duplázódik."
+          "Helyhez kötve harci helyzet teljes büntetése sújt."
         ],
         "követelmény": "",
         "követelmények": [],
@@ -2974,7 +2974,7 @@
       {
         "fok": 1,
         "hatás": [
-          "VÉ veszteség duplázódás Hatás nem sújt helyhez kötve szituációban."
+          "Helyhez kötve harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt!"
         ],
         "követelmény": "",
         "követelmények": [
@@ -3004,7 +3004,7 @@
       {
         "fok": 2,
         "hatás": [
-          "Hátrány-1 TÉ dobásra sem sújt."
+          "Helyhez kötve harci helyzet: Hátrány-1 TÉ dobásra sem sújt már."
         ],
         "követelmény": "",
         "követelmények": [
@@ -3318,7 +3318,7 @@
       {
         "fok": 1,
         "hatás": [
-          "TÉ/VÉ: +8 harci szekéren.",
+          "Harci szekér szituációban: TÉ/VÉ: +8.",
           "Harci taktikák használhatóak."
         ],
         "követelmény": "",
@@ -3359,7 +3359,7 @@
       {
         "fok": 2,
         "hatás": [
-          "TÉ/VÉ: +12 harci szekéren.",
+          "Harci szekér szituációban: TÉ/VÉ: +12.",
           "Harci taktikák használhatóak."
         ],
         "követelmény": "",
@@ -3628,7 +3628,7 @@
       {
         "fok": 0,
         "hatás": [
-          "Hárítófegyver VÉ = 0 (nem tudod használni)."
+          "Fegyver+Hárítófegyver fogásnál: hárítófegyver VÉ bónusza nem érvényesül."
         ],
         "követelmény": "",
         "követelmények": [],
@@ -3826,7 +3826,7 @@
       {
         "fok": 0,
         "hatás": [
-          "Rosszabbik kézben tartott fegyverrel levonások sújtanak."
+          "Rosszabbik kézben tartott fegyver harci helyzet levonásai sújtanak."
         ],
         "követelmény": "",
         "követelmények": [],
@@ -3929,7 +3929,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Nem alkalmazhatnak ellened Orvtámadást harc közben.",
+          "Orvtámadás harci helyzetet nem alkalmazhatják ellened harc közben.",
           "Nem kapják meg a Hátulról támadás módosítóit."
         ],
         "követelmény": "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2).",
@@ -3955,7 +3955,7 @@
       {
         "fok": 1,
         "hatás": [
-          "TÉ:+3, VÉ:+3 léglovas bónusz.",
+          "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": "",
@@ -3988,7 +3988,7 @@
       {
         "fok": 2,
         "hatás": [
-          "TÉ:+6, VÉ:+6 léglovas bónusz.",
+          "Léglovas harc szituációban: TÉ:+6, VÉ:+6.",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": "",
@@ -4070,7 +4070,7 @@
       {
         "fok": 1,
         "hatás": [
-          "TÉ:+3, VÉ:+3 lovas bónusz.",
+          "Lovas harc szituációban: TÉ:+3, VÉ:+3.",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": "",
@@ -4114,7 +4114,7 @@
       {
         "fok": 2,
         "hatás": [
-          "TÉ:+6, VÉ:+6 lovas bónusz.",
+          "Lovas harc szituációban: TÉ:+6, VÉ:+6.",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": "",
@@ -4218,7 +4218,7 @@
       {
         "fok": 0,
         "hatás": [
-          "Páncél teljes TÉ büntetése érvényesül: -TÉ == MGT."
+          "Merevvért viselésénél: teljes TÉ büntetés érvényesül (TÉ levonás = MGT)."
         ],
         "követelmény": "",
         "követelmények": [],
@@ -4533,7 +4533,7 @@
       {
         "fok": 1,
         "hatás": [
-          "Orvtámadáskor Előny+1 Sebzés dobásra, SP:+1."
+          "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+1."
         ],
         "követelmény": "",
         "követelmények": [
@@ -4571,7 +4571,7 @@
       {
         "fok": 2,
         "hatás": [
-          "Orvtámadáskor Előny+1 Sebzés dobásra, SP:+2."
+          "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+2."
         ],
         "követelmény": "",
         "követelmények": [
@@ -4663,7 +4663,7 @@
       {
         "fok": 0,
         "hatás": [
-          "Pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
+          "Fegyver+Pajzs fogásnál: pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
         ],
         "követelmény": "",
         "követelmények": [],
@@ -4815,7 +4815,7 @@
       {
         "fok": 1,
         "hatás": [
-          "TÉ, VÉ: +2.",
+          "Páros harc szituációban: TÉ, VÉ: +2.",
           "1:1 harcban KÉ:+1 (többnél nem jár)."
         ],
         "követelmény": "",
@@ -4862,7 +4862,7 @@
       {
         "fok": 2,
         "hatás": [
-          "TÉ, VÉ: +4.",
+          "Páros harc szituációban: TÉ, VÉ: +4.",
           "1:2 harcig KÉ:+1 (többnél nem jár)."
         ],
         "követelmény": "",
@@ -5149,7 +5149,7 @@
       {
         "fok": 0,
         "hatás": [
-          "VÉ kiterjesztés társra: VÉ veszteség duplázódik (x2)."
+          "Védő Érték kiterjesztése másra harci helyzet teljes büntetése sújt."
         ],
         "követelmény": "",
         "követelmények": [],
@@ -5168,7 +5168,7 @@
       {
         "fok": 1,
         "hatás": [
-          "VÉ veszteség duplázódás Hatás nem sújt VÉ kiterjesztésekor."
+          "Védő Érték kiterjesztése másra harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt! A többi igen."
         ],
         "követelmény": "",
         "követelmények": [
@@ -5198,8 +5198,7 @@
       {
         "fok": 2,
         "hatás": [
-          "Büntetések nélkül védheted pártfogoltad.",
-          "Többszörös támadás elvesztése Hatás sem sújt."
+          "Védő Érték kiterjesztése másra harci helyzet: büntetések nélkül védheted pártfogoltad."
         ],
         "követelmény": "",
         "követelmények": [
@@ -5253,7 +5252,7 @@
       {
         "fok": 0,
         "hatás": [
-          "Teljes sötétben (csendben): Látás érzékre Érzékvesztés - teljes Státusz."
+          "Sötétben - teljes, csendben harci helyzet: Érzékvesztés-teljes Státusz (Látás) sújt."
         ],
         "követelmény": "",
         "követelmények": [],

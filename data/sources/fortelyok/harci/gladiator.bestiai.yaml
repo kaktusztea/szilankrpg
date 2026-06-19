@@ -25,7 +25,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext: 
-  - text: "VÉ:+3 bónusz a harc idejére nem-elfszabású szörnyeteg ellen."
+  - text: "Szörnyeteg elleni harc szituációban: VÉ:+3 bónusz."
   módosítók: 
   - cél: "VÉ"
     érték: 3

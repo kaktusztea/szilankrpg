@@ -22,7 +22,7 @@ fokok:
   követelménytext: ""
   követelmények: ""
   hatástext:
-  - text: "Helyhez kötve szituációban: VÉ veszteség duplázódik."
+  - text: "Helyhez kötve harci helyzet teljes büntetése sújt."
   módosítók: ""
 - fok: 1
   követelménytext: ""
@@ -31,7 +31,7 @@ fokok:
     érték: 3
     típus: "képzettség"
   hatástext: 
-  - text: "VÉ veszteség duplázódás Hatás nem sújt helyhez kötve szituációban."
+  - text: "Helyhez kötve harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt!"
   módosítók:
   - cél: "vé_veszteség"
     érték: 1
@@ -46,7 +46,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext: 
-  - text: "Hátrány-1 TÉ dobásra sem sújt."
+  - text: "Helyhez kötve harci helyzet: Hátrány-1 TÉ dobásra sem sújt már."
   módosítók:
   - cél: "té_dobás"
     érték: 1

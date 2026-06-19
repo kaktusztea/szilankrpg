@@ -26,7 +26,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext:
-  - text: "Ha a **Fárasztás** harci taktikát alkalmazod akkor további `+3 VÉ`-t csökkentesz ellenfeleden támadáskor."
+  - text: "Fárasztás taktika alkalmazásakor: extra +1 VÉ csökkentés bónusz az ellenfélen."
   módosítók:
   - cél: "VÉ"
     érték: -3

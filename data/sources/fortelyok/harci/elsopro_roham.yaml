@@ -25,7 +25,7 @@ fokok:
     érték: 4
     típus: "képzettség"
   hatástext: 
-  - text: "Roham esetén az erőbónusz duplázódik."
+  - text: "Roham taktika esetén: KÉ:+5, erőbónusz duplázódik."
   módosítók: 
   - cél: "KÉ"
     érték: 5

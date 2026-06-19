@@ -28,7 +28,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext: 
-  - text: "TÉ/VÉ: +8 harci szekéren."
+  - text: "Harci szekér szituációban: TÉ/VÉ: +8."
   - text: "Harci taktikák használhatóak."
   módosítók: 
   - cél: "TÉ"
@@ -53,7 +53,7 @@ fokok:
     érték: 9
     típus: "képzettség"
   hatástext: 
-  - text: "TÉ/VÉ: +12 harci szekéren."
+  - text: "Harci szekér szituációban: TÉ/VÉ: +12."
   - text: "Harci taktikák használhatóak."
   módosítók: 
   - cél: "TÉ"

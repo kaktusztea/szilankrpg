@@ -25,7 +25,7 @@ fokok:
     érték: 6
     típus: "képzettség"
   hatástext:
-  - text: "Orvtámadáskor Előny+1 Sebzés dobásra, SP:+1."
+  - text: "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+1."
   módosítók:
   - cél: "SP"
     érték: 1
@@ -46,7 +46,7 @@ fokok:
     érték: 9
     típus: "képzettség"
   hatástext:
-  - text: "Orvtámadáskor Előny+1 Sebzés dobásra, SP:+2."
+  - text: "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+2."
   módosítók:
   - cél: "SP"
     érték: 2

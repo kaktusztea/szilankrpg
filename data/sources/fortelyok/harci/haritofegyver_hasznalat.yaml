@@ -27,7 +27,7 @@ fokok:
     követelménytext: ""
     követelmények: ""
     hatástext:
-      - text: "Hárítófegyver VÉ = 0 (nem tudod használni)."
+      - text: "Fegyver+Hárítófegyver fogásnál: hárítófegyver VÉ bónusza nem érvényesül."
     módosítók:
       - cél: "vé"
         típus: "flat"
