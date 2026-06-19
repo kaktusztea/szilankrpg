@@ -323,7 +323,7 @@
         "Sebesség": "6-9",
         "Sebzés módja": "S/V/Z",
         "Forgatás módja": "egykezes/kétkezes",
-        "Erőbónusz limit": "0-2",
+        "Erőbónusz limit": "2",
         "Átütés": "0",
         "Hatótáv": "5-10m + Erő",
         "Kategória": "hajító",
