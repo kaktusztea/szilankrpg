@@ -4,6 +4,7 @@ on:
     branches: [ "master" ]
     paths-ignore:
       - 'segedlet/*'
+      - 'archive/*'
   workflow_dispatch:  # Optional: allows manual triggering
 
 jobs:
