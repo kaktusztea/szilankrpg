@@ -63,6 +63,13 @@
   font-weight: bold;
 }
 
+.th-ce-ve-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+}
+
 .th-stepper {
   display: flex;
   align-items: center;

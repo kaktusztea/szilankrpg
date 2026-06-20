@@ -183,11 +183,13 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {/* Kalkulátor — csak ha van fegyver */}
       {tfDef && gameMode && (
         <>
-          {/* CÉ + VÉ */}
-          <div className="th-row th-results">
-            <span className="th-value-main">CÉ: <span style={{ color: '#90caf9' }}>{cé}</span>  ({támadásLabel})</span>
-            {gameMode && <span className="th-value-main">VÉ: <span style={{ color: vé - cé > 20 ? '#e53935' : undefined }}>{vé}</span></span>}
-            {gameMode && <span className="th-value-main" style={{ fontSize: '12px', textAlign: 'center', lineHeight: '1.6' }}>Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>}
+          {/* CÉ + VÉ + Szorzó×Cella */}
+          <div className="th-row th-results" style={{ alignItems: 'stretch' }}>
+            <div className="th-value-main th-ce-ve-box">
+              <span>CÉ: <span style={{ color: '#90caf9' }}>{cé}</span>  ({támadásLabel})</span>
+              {gameMode && <span>VÉ: <span style={{ color: vé - cé > 20 ? '#e53935' : undefined }}>{vé}</span></span>}
+            </div>
+            {gameMode && <span className="th-value-main" style={{ fontSize: '12px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>}
           </div>
 
           {/* VÉ kalkulátor — csak Game módban */}
