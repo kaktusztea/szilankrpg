@@ -68,6 +68,35 @@
   flex-direction: column;
   justify-content: center;
   gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.th-main-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
+.th-szc-box {
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 0 0 auto;
+  color: #999;
+}
+
+.th-tav-btn {
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  flex: 0 0 auto;
+  color: var(--text);
 }
 
 .th-stepper {

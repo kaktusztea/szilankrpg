@@ -183,22 +183,19 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {/* Kalkulátor — csak ha van fegyver */}
       {tfDef && gameMode && (
         <>
-          {/* CÉ + VÉ + Szorzó×Cella */}
-          <div className="th-row th-results" style={{ alignItems: 'stretch' }}>
+          {/* CÉ + VÉ + Szorzó×Cella + Távolság */}
+          <div className="th-main-row">
             <div className="th-value-main th-ce-ve-box">
-              <span>CÉ: <span style={{ color: '#90caf9' }}>{cé}</span>  ({támadásLabel})</span>
-              {gameMode && <span>VÉ: <span style={{ color: vé - cé > 20 ? '#e53935' : undefined }}>{vé}</span></span>}
+              <span>CÉ: {cé}  ({támadásLabel})</span>
+              {gameMode && <span style={{ color: vé - cé > 20 ? '#e53935' : '#ffa726' }}>VÉ: {vé}</span>}
             </div>
-            {gameMode && <span className="th-value-main" style={{ fontSize: '12px', textAlign: 'center', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>}
+            {gameMode && <span className="th-value-main th-szc-box">Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>}
+            {gameMode && <button className="th-value-main th-tav-btn" style={{ borderColor: 'var(--success)' }} onClick={() => setTávolságPopup(true)}>Táv:<br/><span style={{ fontSize: '18px', color: 'var(--success)' }}>{távolság}m</span></button>}
           </div>
 
           {/* VÉ kalkulátor — csak Game módban */}
           {gameMode && (
             <>
-              {/* Távolság */}
-              <div className="th-row th-controls">
-                <button className="he-field-btn" onClick={() => setTávolságPopup(true)}>Távolság: <strong>{távolság}m</strong></button>
-              </div>
 
               {/* Szorzó pickerek */}
               <div className="th-szorzo-grid">
