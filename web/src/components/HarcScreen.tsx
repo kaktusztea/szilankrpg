@@ -382,6 +382,13 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       if (hDef?.Hárító === '1') {
         hárítóVÉ = parseInt(hDef.VÉ) || 0;
         hárítóNév = hFp.alap;
+        // Mesterfegyver VÉ bónusz a hárítófegyverre
+        const hDisplayName = hDef.Alapnév || hDef.Fegyver;
+        const hMfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === hDisplayName || f.spec_elem === hFp.alap));
+        if (hMfEntry) {
+          const hMf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === hMfEntry.fok);
+          if (hMf) hárítóVÉ += hMf.VÉ;
+        }
       }
     }
   }
