@@ -108,5 +108,10 @@
     "id": "antyssjárás",
     "név": "Antyssjárás képesség",
     "csoport": "képesség"
+  },
+  {
+    "id": "általános",
+    "név": "Általános (narratív)",
+    "csoport": "egyéb"
   }
 ]

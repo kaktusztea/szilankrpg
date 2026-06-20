@@ -349,7 +349,7 @@ def validate_hatasok(hatasok):
 def validate_esemenyek(esemenyek):
     """Validate esemenyek.yaml."""
     errors = []
-    valid_csoport = {'harci', 'próba', 'fizikai', 'képesség'}
+    valid_csoport = {'harci', 'próba', 'fizikai', 'képesség', 'egyéb'}
     ids_seen = set()
     for i, e in enumerate(esemenyek):
         ctx = f"események[{i}] ({e.get('id', '?')})"

@@ -566,7 +566,7 @@
           },
           {
             "operátor": "szöveges",
-            "cél": "támadások_száma",
+            "cél": "általános",
             "megjegyzés": "FP S1 feltöltődik"
           }
         ]

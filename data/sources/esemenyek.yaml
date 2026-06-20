@@ -78,3 +78,7 @@ események:
   - id: "antyssjárás"
     név: "Antyssjárás képesség"
     csoport: "képesség"
+  # --- Általános ---
+  - id: "általános"
+    név: "Általános (narratív)"
+    csoport: "egyéb"

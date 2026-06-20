@@ -320,7 +320,7 @@ státuszok:
       érték: -2
       cél: szellemi_próba
     - operátor: szöveges
-      cél: támadások_száma
+      cél: általános
       megjegyzés: FP S1 feltöltődik
   - fok: 3
     alcím: Elcsigázottság

@@ -13,6 +13,16 @@ function fmtCode(text: string) {
   );
 }
 
+function fmtHatás(h: { operátor: string; cél: string; érték?: number; megjegyzés?: string }, eseményNév: (id: string) => string): string | null {
+  if (h.operátor === 'szöveges') return h.megjegyzés || null;
+  if (h.operátor === 'letilt') return `❌ Letiltva: ${eseményNév(h.cél)}`;
+  if (h.operátor === 'előny' || h.operátor === 'hátrány') return `${h.operátor === 'előny' ? 'Előny' : 'Hátrány'}${(h.érték ?? 0) > 0 ? '+' : ''}${h.érték ?? 0}: ${eseményNév(h.cél)}`;
+  if (h.operátor === 'duplázás' || h.operátor === 'arányos') return `×${h.érték ?? 1}: ${eseményNév(h.cél)}`;
+  if (h.operátor === 'max_limit') return `max ${h.érték}: ${eseményNév(h.cél)}`;
+  if (h.operátor === 'enyhít') return `Enyhítés+${h.érték}: ${eseményNév(h.cél)}`;
+  return null;
+}
+
 interface Props {
   data: GameData;
   karakter: Karakter;
@@ -151,15 +161,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   }
 
   // 2. Státusz + Harci helyzet + Taktika hatások kumulálása
-  const státuszHatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] = [];
-  for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
-    if (!def) continue;
-    if (def.fokozatos && def.fokok && at.fok != null) {
-      const fokDef = def.fokok.find(f => f.fok === at.fok);
-      if (fokDef?.hatások) for (const h of fokDef.hatások) státuszHatások.push(h);
-    }
-  }
+  // Harci helyzetek hatásai saját al-boxban jelennek meg (nem a státuszHatások pool-ban)
+  // Státusz hatások per-státusz (nem aggregált)
+  const státuszPerElem: { név: string; alcím?: string; hatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] }[] = [];
   for (const st of session.aktív_státuszok) {
     const match = st.match(/^(.+) \((\d+)\)$/);
     if (!match) continue;
@@ -169,60 +173,27 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
     const def = data.statuszok.find(s => s.név === baseName);
     const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
     if (fokDef) {
-      for (const h of fokDef.hatások) {
-        if (subName) {
-          státuszHatások.push({ ...h, cél: `${h.cél} (${subName.toLowerCase()})` });
-        } else {
-          státuszHatások.push(h);
-        }
-      }
+      const hatások = fokDef.hatások.map(h => subName ? { ...h, cél: `${h.cél} (${subName.toLowerCase()})` } : h);
+      státuszPerElem.push({ név: st, alcím: (fokDef as any).alcím, hatások });
     }
   }
-  // Harci helyzetek hatásai saját al-boxban jelennek meg (nem a státuszHatások pool-ban)
-  // Csoportosítás cél szerint
-  const hatásPool = new Map<string, { előnyHátrány: number; letilt: boolean; maxLimit?: number; szorzó: number; enyhít: number; szövegesek: string[] }>();
-  for (const h of státuszHatások) {
-    if (!hatásPool.has(h.cél)) hatásPool.set(h.cél, { előnyHátrány: 0, letilt: false, szorzó: 1, enyhít: 0, szövegesek: [] });
-    const entry = hatásPool.get(h.cél)!;
-    if (h.operátor === 'előny' || h.operátor === 'hátrány') entry.előnyHátrány = Math.max(-2, Math.min(2, entry.előnyHátrány + (h.érték ?? 0)));
-    else if (h.operátor === 'letilt') entry.letilt = true;
-    else if (h.operátor === 'max_limit') entry.maxLimit = entry.maxLimit != null ? Math.min(entry.maxLimit, h.érték ?? 99) : h.érték;
-    else if (h.operátor === 'arányos' || h.operátor === 'duplázás') entry.szorzó *= (h.érték ?? 1);
-    else if (h.operátor === 'enyhít') entry.enyhít += (h.érték ?? 0);
-    else if (h.operátor === 'szöveges') entry.szövegesek.push(h.megjegyzés ?? '');
-  }
-
-  // Fortély enyhítések alkalmazása a Hatás poolra
-  for (const kf of karakter.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
+  // Taktika hatások per-taktika (operátor-alapúak, pl. duplázás)
+  const taktikaHatásPerElem: { név: string; hatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] }[] = [];
+  for (const at of session.aktív_taktikák) {
+    const def = data.taktikak.find(t => t.név === at.név);
     if (!def) continue;
-    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
-    if (!fokDef?.módosítók) continue;
-    for (const mod of fokDef.módosítók) {
-      if (mod.mód === 'enyhít' && mod.cél) {
-        if (!hatásPool.has(mod.cél)) hatásPool.set(mod.cél, { előnyHátrány: 0, letilt: false, szorzó: 1, enyhít: 0, szövegesek: [] });
-        hatásPool.get(mod.cél)!.enyhít += (mod.érték ?? 0);
-      }
+    if (def.fokozatos && def.fokok && at.fok != null) {
+      const fokDef = def.fokok.find(f => f.fok === at.fok);
+      if (fokDef?.hatások?.length) taktikaHatásPerElem.push({ név: `${def.név} (${at.fok})`, hatások: fokDef.hatások });
     }
   }
-
-  // Enyhítés alkalmazása: letilt → hátrány-2, hátrány fokozat csökkentés
-  for (const [, entry] of hatásPool) {
-    if (entry.enyhít > 0 && (entry.letilt || entry.előnyHátrány < 0)) {
-      let fokozat = entry.letilt ? 3 : Math.abs(entry.előnyHátrány); // letilt = 3. fok
-      fokozat = Math.max(0, fokozat - entry.enyhít);
-      entry.letilt = fokozat >= 3;
-      entry.előnyHátrány = fokozat >= 3 ? 0 : -Math.min(2, fokozat);
-      if (fokozat === 0) { entry.letilt = false; entry.előnyHátrány = 0; }
-    }
-  }
+  const hasHatásPool = státuszPerElem.length > 0 || taktikaHatásPerElem.length > 0;
 
   const eseményNév = (id: string) => {
     const m = id.match(/^(.+?)( \(.+\))$/);
     if (m) { const base = data.esemenyek.find(e => e.id === m[1])?.név ?? m[1]; return base + m[2]; }
     return data.esemenyek.find(e => e.id === id)?.név ?? id;
   };
-  const hasHatásPool = hatásPool.size > 0;
 
   // Fortély emlékeztetők: harci fortélyok amelyeknek van hatástext de nincs gépi módosító
   const fortélyEmlékeztetők: { név: string; fok: number; hatás: string }[] = [];
@@ -453,20 +424,26 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           )}
           {hasHatásPool && (
             <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Státusz hatások</span>
+              <span className="hatas-pool-title">Státuszok</span>
               <div className="hatas-pool-items">
-                {[...hatásPool.entries()].filter(([, entry]) => 
-                  entry.letilt || entry.előnyHátrány !== 0 || entry.szorzó !== 1 || entry.maxLimit != null || entry.szövegesek.length > 0
-                ).map(([cél, entry]) => {
-                  const parts: string[] = [];
-                  if (entry.letilt) parts.push('❌ Letiltva');
-                  if (entry.előnyHátrány !== 0) parts.push(entry.előnyHátrány > 0 ? `Előny+${entry.előnyHátrány}` : `Hátrány${entry.előnyHátrány}`);
-                  if (entry.szorzó !== 1) parts.push(`×${entry.szorzó}`);
-                  if (entry.maxLimit != null) parts.push(`max: ${entry.maxLimit}`);
-                  for (const sz of entry.szövegesek) { if (sz) parts.push(sz); }
-                  if (parts.length === 0) return null;
-                  return <span key={cél} className={`hatas-pool-item ${entry.letilt ? 'negative' : entry.előnyHátrány < 0 ? 'negative' : entry.előnyHátrány > 0 ? 'positive' : ''}`}>{parts.join(', ')}: {eseményNév(cél)}</span>;
-                })}
+                {taktikaHatásPerElem.map((t, i) => (
+                  <div key={`t${i}`} style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span className="hatas-pool-item"><strong style={{ color: '#90caf9' }}>{t.név}</strong></span>
+                    {t.hatások.map((h, j) => {
+                      const txt = fmtHatás(h, eseményNév);
+                      return txt ? <span key={j} className="hatas-pool-item" style={{ paddingLeft: '12px' }}>{txt}</span> : null;
+                    })}
+                  </div>
+                ))}
+                {státuszPerElem.map((s, i) => (
+                  <div key={`s${i}`} style={{ display: 'flex', flexDirection: 'column' }}>
+                    <span className="hatas-pool-item"><strong style={{ color: '#cd7c6f' }}>{s.név}{s.alcím ? ` ${s.alcím}` : ''}</strong></span>
+                    {s.hatások.map((h, j) => {
+                      const txt = fmtHatás(h, eseményNév);
+                      return txt ? <span key={j} className="hatas-pool-item" style={{ paddingLeft: '12px' }}>{txt}</span> : null;
+                    })}
+                  </div>
+                ))}
               </div>
             </div>
           )}
