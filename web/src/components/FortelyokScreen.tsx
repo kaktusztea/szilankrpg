@@ -34,11 +34,12 @@ interface Props {
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
   tsz: number;
   fegyverNevek: string[];
+  távfegyverNevek: string[];
   nyelvtanulásSzint: number;
   képzettségek: { név: string; szint: number }[];
 }
 
-export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, nyelvtanulásSzint, képzettségek }: Props) {
+export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, távfegyverNevek, nyelvtanulásSzint, képzettségek }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
   const lockedSet = new Set(data.konstansok.locked_fortélyok);
   const [hint, setHint] = useState('');
@@ -212,6 +213,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       képzettségek={képzettségek}
                       fortélyok={fortélyok}
                       harcmodorNevek={[...data.konstansok.harcmodorok.közelharci, ...data.konstansok.harcmodorok.távolsági]}
+                      távfegyverNevek={távfegyverNevek}
                       onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
                       onFokChange={fok => setFok(globalIdx, fok)}
                       onHint={showHint}
@@ -417,7 +419,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret, képzettségek, fortélyok, harcmodorNevek }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret, képzettségek, fortélyok, harcmodorNevek, távfegyverNevek }: {
   slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
@@ -429,6 +431,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   képzettségek: { név: string; szint: number }[];
   fortélyok: Fortely[];
   harcmodorNevek: string[];
+  távfegyverNevek: string[];
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
   onRemove: () => void;
@@ -446,7 +449,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
 
   function handleTap() {
     if (gameMode) { onToggleInfo(); return; }
-    if (locked) { onHint('Ezt a fortélyt a Harcértékek fülön kezeld!', 3000); }
+    if (locked) { onHint(távfegyverNevek.includes(slot.spec_elem) ? 'Ezt a fortélyt a Távharc fülön kezeld!' : 'Ezt a fortélyt a Harcértékek fülön kezeld!', 3000); }
     else if (maxfok <= 1) { onHint('1 fok a maximum'); }
     else { setEditing(true); }
   }

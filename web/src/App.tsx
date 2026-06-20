@@ -922,7 +922,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
           if (desc) pushUndo(desc);
           setFortélyok(v);
         }}
-        tsz={karakter.tsz} fegyverNevek={fegyverNevek} nyelvtanulásSzint={nyelvtanulásSzint}
+        tsz={karakter.tsz} fegyverNevek={fegyverNevek} távfegyverNevek={karakter.távfegyverek.map(tf => tf.alap)} nyelvtanulásSzint={nyelvtanulásSzint}
         képzettségek={képzettségek}
       />;
     }

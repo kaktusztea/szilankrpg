@@ -32,11 +32,11 @@ Nevében a lényeg. Sámli, borospalack, kisasztal, malomkő...
 ```
 CÉ: 0 (mindig)
 Osztó: 1
-SP: [-5; +2] (KM dönt)
+SP: [-5] (KM dönt)
 Sebesség: 6-9
 Sebzés: S/V/Z (KM dönt)
 Forgatás: egy/kétkezes
-Erőbónusz limit: [0;2]
+Erőbónusz limit: [2]
 Átütés: 0
 Hatótáv: 5-10m + Erő
 Kategória: hajító
