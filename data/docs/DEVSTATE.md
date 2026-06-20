@@ -352,7 +352,6 @@
 
 | Téma                             | Leírás                                                  | Szekció     |
 | -------------------------------- | ------------------------------------------------------- | ----------- |
-| Hárítófegyver MF VÉ bónusz       | Hárítófegyver használat fortély: MF VÉ bónusz hiányzik  | Fortélyok   |
 | Távharc kalkulátor               | CÉ és VÉ számítás — §17                                 | Távharc fül |
 | Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
 | VÉ eltolás validáció             | max ±10 (taktikák kombinálása esetén is)                | Általános   |
