@@ -42,8 +42,8 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const hmOverflow = hmTotal > maxHM;
   const aszimmetriaOverflow = Math.abs(k.HM_TÉ - k.HM_VÉ) > maxAszimmetria;
 
-  function setHM_TÉ(v: number) { setKarakter(prev => prev ? { ...prev, HM_TÉ: Math.max(0, v) } : prev); }
-  function setHM_VÉ(v: number) { setKarakter(prev => prev ? { ...prev, HM_VÉ: Math.max(0, v) } : prev); }
+  function setHM_TÉ(v: number) { setKarakter(prev => prev ? { ...prev, HM_TÉ: Math.max(0, Math.min(v, maxHM - prev.HM_VÉ)) } : prev); }
+  function setHM_VÉ(v: number) { setKarakter(prev => prev ? { ...prev, HM_VÉ: Math.max(0, Math.min(v, maxHM - prev.HM_TÉ)) } : prev); }
 
   // Mesterfegyver fok lookup: fortélyok tömbből, spec_elem === fegyver.alap (vagy Alapnév)
   function getMfFok(fegyverAlap: string): number {
