@@ -16,10 +16,18 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const konstansok = data.konstansok;
   const szorzok = data.tavharcSzorzok;
 
+  // "Alkalmatlan fegyver hajítása" fortélyból automatikus fegyverek
+  const alkalmatlanFortélyok = k.fortélyok.filter(f => f.név === 'Alkalmatlan fegyver hajítása' && f.spec_elem);
+  const alkalmatlanNevek = alkalmatlanFortélyok.map(f => f.spec_elem);
+  const alkalmatlanDef = data.tavfegyverek.find(d => d.Fegyver.startsWith('🔆'));
+
   // Aktív távfegyver
   const tfIdx = session.aktív_távfegyver_index;
   const tfPeldany = k.távfegyverek[tfIdx];
-  const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+  const isAlkalmatlan = !tfPeldany && tfIdx >= k.távfegyverek.length && tfIdx < k.távfegyverek.length + alkalmatlanNevek.length;
+  const tfDef = tfPeldany
+    ? data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tfPeldany.alap.toLowerCase())
+    : isAlkalmatlan ? alkalmatlanDef : undefined;
 
   // MF fok
   const getMfFok = (alap: string) => k.fortélyok.find(f => f.név === 'Mesterfegyver' && f.spec_elem === alap)?.fok ?? 0;
@@ -117,9 +125,11 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const felvett = new Set(k.távfegyverek.map(tf => tf.alap.toLowerCase()));
   const felvehető = data.tavfegyverek.filter(d => !felvett.has(d.Fegyver.toLowerCase()) && !d.Fegyver.startsWith('🔆'));
 
-  // "Alkalmatlan fegyver hajítása" fortélyból automatikus fegyverek
-  const alkalmatlanFortélyok = k.fortélyok.filter(f => f.név === 'Alkalmatlan fegyver hajítása' && f.spec_elem);
-  const alkalmatlanNevek = alkalmatlanFortélyok.map(f => f.spec_elem);
+  // Virtuális fegyver lista (távfegyverek + alkalmatlanok)
+  const összesFegyver = [
+    ...k.távfegyverek.map(tf => ({ alap: tf.alap, locked: false })),
+    ...alkalmatlanNevek.map(név => ({ alap: név, locked: true })),
+  ];
 
   // MF popup
   const [mfTarget, setMfTarget] = useState<number | null>(null);
@@ -189,10 +199,10 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       )}
 
       {/* Game mód: csak aktív fegyver kijelzés */}
-      {gameMode && k.távfegyverek.length > 0 && (
+      {gameMode && összesFegyver.length > 0 && (
         <div className="th-row th-controls">
           <select className="th-select" value={tfIdx} onChange={e => setSession(s => ({ ...s, aktív_távfegyver_index: parseInt(e.target.value) }))}>
-            {k.távfegyverek.map((tf, i) => <option key={i} value={i}>{tf.alap}</option>)}
+            {összesFegyver.map((tf, i) => <option key={i} value={i}>{tf.locked ? '🔆 ' : ''}{tf.alap}</option>)}
           </select>
           <span className="th-badge">MF: {mfFok}</span>
           <span className="th-badge">Idea: {idea >= 0 ? '+' : ''}{idea}</span>
@@ -223,7 +233,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         </>
       )}
 
-      {!tfDef && k.távfegyverek.length === 0 && gameMode && (
+      {!tfDef && összesFegyver.length === 0 && gameMode && (
         <p style={{ color: '#888', textAlign: 'center', marginTop: '20px' }}>Nincs távfegyver felvéve</p>
       )}
 
@@ -284,6 +294,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         <div style={{ flex: 1, padding: '10px', border: '1px dashed #666', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>
           <strong style={{ color: '#e53935' }}>Részletes értékek</strong>
           <div>Fegyver alap CÉ: {fegyverCÉ}</div>
+          <div>Fegyver Osztó: {osztó}</div>
           <div>MF CÉ bónusz: {mfCÉ}</div>
           <div>Idea CÉ bónusz: {idea}</div>
           <div>Harcmodor CÉ bónusz: {harcmodorCÉ} ({harcmodorNév} szint:{harcmodorSzint})</div>
