@@ -292,7 +292,7 @@
   - Harci helyzetek: overlay picker (név + infó, ABC)
   - Körülmények: harci helyzet picker 4. csoport (arany `#ffd54f`), korábban külön szituáció picker
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
-  - Hatás pool box (8 szekció): Taktikák | Harci helyzetek | Státusz hatások | Manőver bónuszok | Előny/Hátrány | Fortély bónuszok | Alapesetek | Narratív módosítók
+  - Hatás pool box (8 szekció): Taktikák | Harci helyzetek | Státuszok | Manőver bónuszok | Előny/Hátrány | Fortély bónuszok | Alapesetek | Narratív módosítók
   - Narratív módosítók: "+ Új" gomb → overlay popup (Hátrány/Előny gombok + szöveg + OK, Enter = OK)
   - Több támadás TÉ levonás: konstansokból (`több_támadás_TÉ_levonás`), generikusan (taktika +3 kioltja)
   - Minden picker: Escape + mellé katt bezárja
@@ -469,6 +469,10 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ HatterekScreen: pushUndo bekötve (háttér módosítás → isDirty + testMode kezelés)
 - ✅ Üres karakter nem mentődik (név+képzettség+fortély mind üres → autosave skip)
 - ✅ pushUndo: testMode kikapcsol (teszt karakteren módosítás → saját karakter lesz)
+- ✅ Státuszok szekció: per-elem megjelenítés (nem aggregált), státusz név+alcím bordó (`#cd7c6f`), hatás sorok fehér, szöveges: csak megjegyzés
+- ✅ Karakterek overlay: slot név max 15 karakter + `..` + verzió suffix megtartva
+- ✅ Harci helyzetek picker: csoport label félkövér
+- ✅ `esemenyek.yaml`: `általános` cél hozzáadva (csoport: egyéb) szöveges narratív hatásokhoz
 - Lovas harc
 
 ## Fontos konvenciók

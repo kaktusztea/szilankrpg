@@ -97,7 +97,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - "Új karakter": isDirty=false → nem mentődik amíg módosítás nem történik
 - "Duplikál": deep clone, új uid, név " v2" suffix (ismétlésnél v3, v4...), Karakterek ablak megnyílik
 - Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
-- Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + ✕ törlés + 🧪 Teszt + 📁 Fájlból
+- Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + ✕ törlés + 🧪 Teszt + 📁 Fájlból. Név max 15 karakter (utána `..`), verzió suffix (v2) megtartva.
 
 ---
 
@@ -137,7 +137,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
 | Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Kiváltja a korábbi "2 kezes harc" és "Pajzs kézben" toggle-öket. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
-| Hatás pool box | info szekció | 7 alszekció: Taktikák, Harci helyzetek, Státusz hatások, Manőver bónuszok, Előny/Hátrány, Fortély bónuszok, Narratív módosítók |
+| Hatás pool box | info szekció | 7 alszekció: Taktikák, Harci helyzetek, Státuszok, Manőver bónuszok, Előny/Hátrány, Fortély bónuszok, Narratív módosítók |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | aktiv-label fejléc + field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
 | Harci helyzetek | overlay picker + chip | 4 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`), Körülmény (arany `#ffd54f`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
@@ -153,7 +153,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 ### Hatás pool szekciók
 1. **Taktikák**: per-taktika sorok. Név halvány kék (`#90caf9`), módosítók zöld (`#66bb6a`) + ✔ jel a végén (beszámított), megjegyzés fehér. Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
 2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#42a5f5`), utána az `infó` mező szövege (fehér). Ha van 0.fok alapeset aminek feltétele ez a helyzet: " Alapeset: {hatástext}" hozzáfűzve. Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva: `→ Fortély (fok): hatástext ✔` (zöld ha aktív, szürke ha nem).
-3. **Státusz hatások**: státuszok strukturált hatásai kumulálva célonként (Előny/Hátrány clamp [-2,+2], letilt, szorzó, max_limit). Enyhítés NEM jelenik meg itt (háttérben hat). Formátum: `{hatás}: {cél}`.
+3. **Státuszok**: per-elem megjelenítés (nem aggregált). Taktika hatás: név kék (`#90caf9`), alatta soronként fehér hatás sorok. Státusz hatás: `Név (fok) alcím` gesztenye/bordó (`#cd7c6f`), félkövér, alatta soronként fehér hatás sorok. Szöveges operátor: csak `megjegyzés` szöveg (cél nem jelenik meg).
 4. **Manőver bónuszok**: fortélyok `manőver:X` célú módosítói (id→név lookup, pl. "Precíz támadás: +4 (Harci anatómia)")
 5. **Előny / Hátrány**: fortélyok `előny`/`hátrány` módú módosítói (feltételes). Formátum: `Előny+X: Cél (Fortély)` (pl. "Előny+2: Sebzésdobás (Orgyilkos)")
 6. **Fortély bónuszok**: harci fortélyok narratív hatásszövegei (yaml `emlékeztető: true` flag alapján). Fortély név lila (`#ce93d8`).

@@ -1169,19 +1169,23 @@ Hatás objektum mezői:
 - Chip megjelenítés: "Félelem (2) - Rettegés" + ✕ törlés
 - Koppintás (Game mód): hatások listája lenyílik (accordion)
 
-### 22.8 Hatás pool (Aktív fül)
+### 22.8 Hatás pool (Aktív fül) — "Státuszok" szekció
 
-Az aktív státuszokból cél szerint kumulált hatás összesítő:
-1. Összegyűjtjük az aktív státuszok fokainak `hatások[]` listáit
-2. Cél (`célpont id`) szerint csoportosítunk
-3. Kumulálás mechanika szerint:
-   - `előny_hátrány`: összegez, clamp [-2, +2]
-   - `szorzó` (arányos/duplázás): szorzók alkalmazása
-   - `letilt`: boolean — ha egyszer aktív, aktív
-   - `max_limit`: legkisebb max érvényesül
-   - `szöveges`: csak informatív megjelenítés
-4. Fortély `enyhít` operátorok csökkentik az adott célra vonatkozó negatív hatás fokát
-5. A pool informatív — a KM alkalmazza
+Per-státusz és per-taktika megjelenítés (nem aggregált):
+
+Formátum:
+- **Taktika neve (fok)** halvány kék (`#90caf9`) — alatta soronként a hatásai
+- **Státusz név (fok) alcím** gesztenye/bordó (`#cd7c6f`) — alatta soronként a hatásai fehéren
+
+Hatás sor formázás:
+- `szöveges`: csak a `megjegyzés` szöveg (cél nem jelenik meg)
+- `letilt`: "❌ Letiltva: {cél név}"
+- `előny`/`hátrány`: "Előny+N: {cél név}" / "Hátrány-N: {cél név}"
+- `duplázás`/`arányos`: "×N: {cél név}"
+- `max_limit`: "max N: {cél név}"
+- `enyhít`: "Enyhítés+N: {cél név}"
+
+note: A pool informatív — a KM alkalmazza. Nincs aggregáció (minden státusz/taktika saját blokkban).
 
 ### 22.9 Validáció (build-time)
 
@@ -1946,6 +1950,8 @@ Minden karakter két azonosítót kap:
 | `szilank_slots` | JSON tömb: `{ uid, id_leíró, név, mentés_dátum }[]` — max 10 entry, rendezve utolsó módosítás szerint |
 | `szilank_char_{uid}` | Teljes karakter JSON (az adott slot-hoz), benne az undo stack |
 | `szilank_active` | Az aktív karakter `uid`-ja (amelyik épp szerkesztés alatt van) |
+
+Slot lista megjelenítés: `{név} ({tsz}sz)` + relatív idő. Név max 15 karakter, utána `..`, verzió suffix (`v2`) megtartva.
 
 Az undo stack a karakter JSON részévé válik:
 ```json
