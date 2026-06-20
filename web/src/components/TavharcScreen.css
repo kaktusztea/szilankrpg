@@ -16,10 +16,6 @@
   gap: 6px;
 }
 
-.th-results {
-  gap: 12px;
-}
-
 .th-select {
   background: var(--input-bg);
   color: var(--text);
