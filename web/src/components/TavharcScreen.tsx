@@ -204,8 +204,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
               {/* Távolság + Cella */}
               <div className="th-row th-controls">
-                <button className="he-field-btn" onClick={() => setTávolságPopup(true)}>Távolság: <strong>{távolság}m</strong></button>
-                <span className="th-value">Cella: {cella}</span>
+                <button className="he-field-btn" onClick={() => setTávolságPopup(true)}>Távolság: <strong>{távolság}m</strong> (cella:{cella})</button>
               </div>
 
               {/* Szorzó pickerek */}
@@ -278,7 +277,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {/* Távolság popup */}
       {távolságPopup && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setTávolságPopup(false); }}>
-          <TávolságPicker value={távolság} onChange={setTávolság} />
+          <TávolságPicker value={távolság} osztó={osztó} onChange={setTávolság} />
         </div>
       , document.body)}
     </div>
@@ -307,9 +306,10 @@ function SzorzóPicker({ label, list, activeId, onSelect }: {
   );
 }
 
-function TávolságPicker({ value, onChange }: { value: number; onChange: (v: number) => void }) {
+function TávolságPicker({ value, osztó, onChange }: { value: number; osztó: number; onChange: (v: number) => void }) {
   const [val, setVal] = useState(value);
   const holdRef = useRef<{ active: boolean; timer: ReturnType<typeof setTimeout> | null }>({ active: false, timer: null });
+  const cellaVal = Math.ceil(val / osztó);
 
   function startHold(dir: 1 | -1) {
     holdRef.current.active = true;
@@ -341,6 +341,7 @@ function TávolságPicker({ value, onChange }: { value: number; onChange: (v: nu
           onMouseDown={() => startHold(1)} onMouseUp={stopHold} onMouseLeave={stopHold}
           onTouchStart={(e) => { e.preventDefault(); startHold(1); }} onTouchEnd={stopHold}>+</button>
       </div>
+      <span style={{ fontSize: '18px', color: '#888' }}>(cella: {cellaVal})</span>
     </div>
   );
 }
