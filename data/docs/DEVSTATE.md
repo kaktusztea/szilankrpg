@@ -348,6 +348,21 @@
 
 ## TODO Backlog
 
+### Összegzés (nyitott TODO-k)
+
+| Téma                             | Leírás                                                  | Szekció     |
+| -------------------------------- | ------------------------------------------------------- | ----------- |
+| Hárítófegyver MF VÉ bónusz       | Hárítófegyver használat fortély: MF VÉ bónusz hiányzik  | Fortélyok   |
+| Távharc kalkulátor               | CÉ és VÉ számítás — §17                                 | Távharc fül |
+| Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
+| VÉ eltolás validáció             | max ±10 (taktikák kombinálása esetén is)                | Általános   |
+| ODS checker-ek                   | KP limitek, szabályok validálása                        | Általános   |
+| Faj misztérium képzettségek      | → Mágia fülre mozgatás                                  | Általános   |
+| Belharc / Belharci szituáció     | Külön rendszer implementálása                           | Aktív fül   |
+| Magasabbról + Lovas harc kizárás | Ha lovas harc aktív, Magasabbról disabled               | Aktív fül   |
+| Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
+
+
 ### Karakteralkotó — általános
 - VÉ eltolás ökölszabály: max ±10 (taktikák kombinálása esetén is) — validáció
 - Harci helyzetek kombinálása: szabályok tisztázása
@@ -452,7 +467,6 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 
 ### Távharc fül
 - Távharc kalkulátor (CÉ és VÉ) — §17
-- Távharc fortélyok yaml elkészítése
 
 ### Harc fül
 - ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: lila összesítő sor (kétkezes/pajzs/hárító).
@@ -473,7 +487,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Karakterek overlay: slot név max 15 karakter + `..` + verzió suffix megtartva
 - ✅ Harci helyzetek picker: csoport label félkövér
 - ✅ `esemenyek.yaml`: `általános` cél hozzáadva (csoport: egyéb) szöveges narratív hatásokhoz
-- Lovas harc
+- Lovas harc rendszer implementálása
 
 ## Fontos konvenciók
 - Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`
