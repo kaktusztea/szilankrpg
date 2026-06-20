@@ -192,7 +192,7 @@
   - Eltávolítva: `ep.ts`, `tulajdonsag.ts`, `limits.ts`, `tavharc.ts`, `modifiers.ts`, `calcPancel()`, `calcKE()`, `calcCE()`, `kp.ts`, `harcertek.ts`, `pancel.ts`
   - Megmaradt TS engine modul: NINCS — minden kalkuláció a rules.json-ban vagy inline context-építés
 - ✅ Harcértékek fül (🛡️, szerkesztő módban, Fortélyok fül mellett)
-  - HM/CM vásárlás: +/- gombok, validálás (max_HM, aszimmetria, max_CM)
+  - HM vásárlás: +/- gombok, validálás (max_HM, aszimmetria). CM: Távharc fülre került.
   - Harcmodorok: read-only lista (Tul/Képz fülről szinkronizálva)
   - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown)
     - Mezők: MF fok, Idea, Anyag — `he-field-btn` stílus, tap → overlay popup
@@ -212,7 +212,7 @@
     - Mesterfegyver és Pajzshasználat NEM jelenik meg a Fortélyok fül dropdown-jában
 - ✅ Jegyzetek fül (📝): teljes képernyős textarea, mindkét módban elérhető, mentődik karakter fájlba
 - ✅ Napló fül (📖): bejegyzés lista (dátum, KM, kaland, események), szerkesztés/törlés, accordion, editOnly
-- ✅ Távharc fül (🏹): skeleton (TODO: távharc kalkulátor)
+- ✅ Távharc fül (🏹): teljes implementáció (CÉ/VÉ kalkulátor, fegyver kezelés, szorzó pickerek)
 - ✅ Harc fül fegyver tábla: dinamikus (karakter.fegyverek-ből), MK párok kibontva, kategória→harcmodor lookup
   - Tám cella kattintható (Game mód): info popup (fegyver név, sebesség, harckeret)
 - ✅ Reactive Engine migráció: TELJES (pancel.ts, kp.ts, harcertek.ts mind törölve)
@@ -352,16 +352,15 @@
 
 | Téma                             | Leírás                                                  | Szekció     |
 | -------------------------------- | ------------------------------------------------------- | ----------- |
-| Távharc kalkulátor               | CÉ és VÉ számítás — §17                                 | Távharc fül |
-| Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
 | Faj misztérium képzettségek      | → Mágia fülre mozgatás                                  | Általános   |
+| Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
 | Belharc / Belharci szituáció     | Külön rendszer implementálása                           | Aktív fül   |
 | Magasabbról + Lovas harc kizárás | Ha lovas harc aktív, Magasabbról disabled               | Aktív fül   |
 | Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
 
 
 ### Karakteralkotó — általános
-- VÉ eltolás ökölszabály: max ±10 (taktikák kombinálása esetén is) — validáció
+- ✅ VÉ eltolás ökölszabály: max ±10 (taktikák kombinálása esetén is) — konstansok + clamp implementálva
 - Harci helyzetek kombinálása: szabályok tisztázása
 - Láthatatlan ellenfél taktika: kiszedve a yaml-ból, státuszként kezelni?
 - Ember (Szigetvilági) faj háttér hozzáadása (slan helyett)
@@ -420,7 +419,6 @@ Szabályrendszer átszervezés és webapp implementáció kész.
 - [ ] Magasabbról + Lovas harc: kizáró jelzés (ha lovas harc aktív, Magasabbról disabled)
 
 
-
 ### Harc alakzatban 🚧
 
 Előfeltétel: Alakzatharc szabályrendszer kidolgozása (`md/065_03_harc_alakzatban.md`).
@@ -463,7 +461,16 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - [ ] engine_spec §28 TERV → IMPLEMENTÁLVA státuszra emelés implementáció után
 
 ### Távharc fül
-- Távharc kalkulátor (CÉ és VÉ) — §17
+- ✅ Távharc kalkulátor (CÉ + VÉ) — §17: TavharcScreen.tsx implementálva
+- ✅ Data layer: TavfegyverAlap, TavharcSzorzok típusok, tavharc_szorzok.json javítva, karakter séma (távfegyverek[], session.aktív_távfegyver_index)
+- ✅ process_fegyverek.py: Harcmodor + Kategória post-process tavfegyverekre
+- ✅ MesterfegyverBonusz: CÉ mező hozzáadva (konstansok + types)
+- ✅ Fegyver felvétel/törlés/MF/Idea kezelés (szerkesztő mód), VÉ szorzó pickerek + Távolság popup (game mód)
+- ✅ CM szerkesztő: Harcértékek fülről átkerült ide (max limit enforce)
+- ✅ HM limit enforce (Harcértékek fül: HM_TÉ + HM_VÉ ≤ max_HM)
+- ✅ Virtuális fegyverek: "Alkalmatlan fegyver hajítása" + "Alkalmatlan tárgyak hajítása" fortélyból
+- ✅ Tab sorrend: Harcértékek a Távharc és Misztikus közé került
+- ✅ Fortélyok fül: locked Mesterfegyver hint → "Távharc fülön kezeld" ha távfegyverhez tartozik
 
 ### Harc fül
 - ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: lila összesítő sor (kétkezes/pajzs/hárító).
@@ -484,6 +491,8 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Karakterek overlay: slot név max 15 karakter + `..` + verzió suffix megtartva
 - ✅ Harci helyzetek picker: csoport label félkövér
 - ✅ `esemenyek.yaml`: `általános` cél hozzáadva (csoport: egyéb) szöveges narratív hatásokhoz
+- ✅ Taktika VÉ eltolás limit: `konstansok.taktika_vé_eltolás_limit: 10`, HarcScreen clamp
+- ✅ Hárítófegyver MF VÉ bónusz: hárítóVÉ-hez hozzáadva
 - Lovas harc rendszer implementálása
 
 ## Fontos konvenciók

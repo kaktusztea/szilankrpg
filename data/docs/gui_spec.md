@@ -273,62 +273,57 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ## 2b. Távharc fül/screen (🏹)
 
-Távharc kalkulátor — CÉ és célpont VÉ számítás, találati esély. Engine spec: §17.
+Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
 
-### Layout (felülről lefelé)
+### Szerkesztő mód
 
-**1. Fegyver sor (kontrollok):**
+**Távfegyverek szekció:**
+- Fegyver kártyák (hasonló a Harcértékek fül fegyver szekciójához)
+- Aktív fegyver: zöld keret (kattintásra váltható)
+- Kártyán: MF gomb (popup: 0–3) | Idea gomb (popup: -5..+5) | CÉ: X (Yx) badge
+- "Új távfegyver..." dropdown (`tavfegyverek.json`-ból, 🔆 kiszűrve)
+- Törlés: ✕ gomb → megerősítő popup
 
-| Távharc fegyver ● | MF: X.fok ● | Idea ● |
+**Hajítható fegyverek (fortélyból) szekció:**
+- "Alkalmatlan fegyver hajítása" fortélyból: per spec_elem fegyver kártya (nem törölhető, CÉ:0, Osztó:1)
+- "Alkalmatlan tárgyak hajítása" fortélyból: "Alkalmi tárgy" kártya (nem törölhető, CÉ:0, Osztó:1, 2.foknál Osztó:2)
 
-- Fegyver: dropdown/picker a `karakter.távfegyverek[]` listából
-- MF fok: 0–3 (Mesterfegyver fortélyból, ha van az adott fegyverre)
-- Idea: -2..+4 (CÉ-t módosítja ±idea értékkel)
+**CM szerkesztő** (alul, "Részletes értékek" box mellett): −/+ gombok, max limit
 
-**2. CÉ + Támadás sor (kalkulált):**
+**Részletes értékek** (alul, debug/info): CÉ összetevők bontása
 
-| CÉ: X | Támadás db: X / Y kör |
+### Game mód
 
-- CÉ = harcérték_alap.CÉ(-15) + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea
-- Támadás db formátum:
-  - Ha harckeret >= sebesség: `FLOOR(harckeret/sebesség) / kör`
-  - Ha harckeret < sebesség: `1 / CEIL(sebesség/harckeret) kör`
-  - Sebesség = -1 (nyílpuska): `1 / kör` (fix)
+**Fegyver sor:** select dropdown (távfegyverek + virtuális fortély-fegyverek) | MF badge | Idea badge
 
-**3. VÉ + Találati esély sor (kalkulált):**
+**Fő sor (th-main-row):**
 
-| VÉ: X | Találati esély: X% |
+| CÉ: X (Yx) | VÉ: Y | Szorzó × Cella / N × M | Táv: Xm |
 
-- VÉ = Szorzó × Cella (vagy Cella - |Szorzó| ha Szorzó < 1)
-- Találati esély = MAX(0, MIN(100, (21 - (VÉ - CÉ)) / 20 × 100)), kerekítve egészre
+- CÉ: fehér szöveg, `Yx` = támadások/kör
+- VÉ: narancssárga (`#ffa726`), piros (`#e53935`) ha lehetetlen találat (VÉ-CÉ > 20)
+- Szorzó×Cella: szürke (`#999`), nem kattintható
+- Táv: zöld keret + zöld érték, kattintható → Távolság popup (−/+ gombok, cella kijelzés)
 
-**4. Távolság sor (kontroll + kalkulált):**
+**Szorzó pickerek (2×2 + 1 grid, mindig nyitva):**
+- Cél mozgása | Lövész mozgás | Méret | Észlelhetőség | Szél ereje
+- Aktív elem: zöld keret, default: alapeset (Álló 1×, Mozdulatlan 0×, Átlagos 0×, Jól kivehető 0×, Szélcsend 0×)
+- Formátum: `Nx: leírás`
 
-| [-5] [-1] [távolság méter ●] [+1] [+5] | Cella: X |
+### Támadás db formátum
+- `Xx` = X támadás / kör (harckeret >= sebesség)
+- `1/Y kör` = 1 támadás Y körönként (harckeret < sebesség)
+- Sebesség = -1: fix `1x`
 
-- Távolság: stepper gombokkal (±1, ±5), középen a szám
-- Cella = CEIL(távolság / fegyver.Osztó)
-
-**5. Szorzó pickerek (kontrollok, mindig nyitva, 2×2 + 1 grid):**
-
-| Cél mozgása ● | Lövész mozgás ● |
-| Méret ● | Észlelhetőség ● |
-| Szél ereje ● | |
-
-- Minden picker: lista elemei `tavharc_szorzok.json`-ból
-- Aktív elem: zöld keret
-- Default értékek: Cél: Álló (1×), Lövész: Mozdulatlan (0×), Méret: Átlagos (0×), Észlelhetőség: Jól kivehető (0×), Szél: Szélcsend (0×)
-- Formátum: `Nx: leírás` (N = szorzó érték)
-
-**6. Szorzó összesítő (kalkulált):**
-
-| Szorzó: X |
-
-- Szorzó = célpont_mozgás + lövész_mozgás + méret + észlelhetőség + szél
+### Popupok (createPortal)
+- MF fok: 0–3 kerek gombok
+- Idea: -5..+5 kerek gombok (3 sor)
+- Távolság: −/+ gomb + szám + cella (hold gyorsulás)
+- Törlés megerősítő
 
 ### Adatforrások
-- `tables/tavfegyverek.json` (Fegyver, CÉ, Osztó, Sebesség, Harcmodor, Hatótáv)
-- `tables/tavharc_szorzok.json` (5 kategória lista)
+- `tables/tavfegyverek.json` (Fegyver, CÉ, Osztó, Sebesség, Harcmodor, Hatótáv, Kategória)
+- `tables/tavharc_szorzok.json` (5 kategória: célpont_mozgás, lövész_mozgás, célpont_méret, észlelhetőség, szél)
 - `tables/harcmodor_kepzettsegek_bonuszok.json` (CÉ oszlop)
 - `konstansok.mesterfegyver_bónuszok` (CÉ mező)
 
@@ -470,7 +465,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 - Rövid koppintás: nem csinál semmit
 - Double-tap (350ms): fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
   - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se double-tap-re) — ehelyett "1 fok a maximum" hint (2s)
-  - Mesterfegyver (locked): double-tap → "Ezt a fortélyt a Harcértékek fülön kezeld!" hint (3s)
+  - Mesterfegyver (locked): tap → "Ezt a fortélyt a Harcértékek/Távharc fülön kezeld!" hint (3s, távfegyver név alapján)
 - Felvételkor (dropdown): maxfok>1 → azonnal fok popup (egyik sem pre-selected, fok: 0-val kerül be); többszörös → megfelelő picker popup
 - Locked fortélyok (konstansok.locked_fortélyok): NEM jelennek meg a dropdown-ban, nem szerkeszthetők/törölhetők, lista tetején
 - Mesterfegyver bejegyzések: szinkronizálva fegyver példányokból (Harcértékek fül)
@@ -500,17 +495,17 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 
 ## 4b. Harcértékek fül/screen (editOnly: true — Game módban nem látszik)
 
-HM/CM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban elérhető.
+HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban elérhető.
 
 - Alap font-size: `16px` (konzisztens a többi füllel)
 - Szekció fejlécek: `17px bold`
 
-### HM / CM szekció
+### HM szekció
 - HM TÉ, HM VÉ: +/- gombok + érték
-- CM: +/- gombok + érték
-- Validáció: HM összeg ≤ max_HM, aszimmetria ≤ max_HM_aszimmetria, CM ≤ max_CM
-- Info sor: `HM: X/Y  Aszimmetria: X/Y  CM: X/Y`
+- Validáció: HM összeg ≤ max_HM, aszimmetria ≤ max_HM_aszimmetria
+- Info sor: `HM keret: X`
 - Piros szín ha túllépés
+- CM szerkesztés: áthelyezve a Távharc fülre
 
 ### Harcmodorok (read-only)
 - Harcmodor képzettség szintek (konstansok.fegyver_kategória_harcmodor values)
@@ -657,10 +652,10 @@ Alul fix, horizontálisan scrollozható szalag.
 | fortelyok | 🟣 | false |
 | tulajdonsagok | 🔵 | false |
 | misztikus | ✨ | false |
+| harcertekek | 🛡️ | true |
 | tavharc | 🏹 | false |
 | harc | 🗡️ | false |
 | aktiv | ❎ | false |
-| harcertekek | 🛡️ | true |
 
 Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
 | ID | Fejléc ikon | Elérhetőség |

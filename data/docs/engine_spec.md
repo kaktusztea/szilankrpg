@@ -629,6 +629,7 @@ formula:
      + harcmodor_CÉ_bónusz(harcmodor_szint)
      + távfegyver.CÉ
      + mesterfegyver_CÉ_bónusz(fok)   // +1/fok
+     + Idea                            // fegyver minőség: [-5;+5]
 
 output: CÉ (karakter összesített Célzó Értéke az adott fegyverrel)
 ```
@@ -707,30 +708,21 @@ Többszörös találat sebzésbónusz: NINCS távharcban
 ### 17.7 Távharc fül — webapp
 
 ```
-Karakter séma bővítés:
+Karakter séma:
   karakter.távfegyverek: { alap: string }[]   // távfegyver nevei (lookup kulcs → tavfegyverek.json)
-
-Session bővítés:
   session.aktív_távfegyver_index: number      // kiválasztott távfegyver indexe (-1 = nincs)
 
-Szekciók:
-  1. Fegyver választó: aktív távfegyver kiválasztása (karakter.távfegyverek[] listából)
-  2. CÉ összesítő: Alap(-15) + Önuralom + CM + Harcmodor CÉ + Fegyver CÉ + MF CÉ = Összesített CÉ
-  3. VÉ kalkulátor: interaktív szorzó/cella kalkulátor
-     - Távolság input (m)
-     - Célpont mozgás picker (tavharc_szorzok.célpont_mozgás listából)
-     - Lövész mozgás picker (tavharc_szorzok.lövész_mozgás listából)
-     - Célpont méret picker (tavharc_szorzok.célpont_méret listából)
-     - Észlelhetőség picker (tavharc_szorzok.észlelhetőség listából)
-     - Szél picker (tavharc_szorzok.szél listából)
-     - Eredmény: Szorzó | Cella | Célpont VÉ
-  4. Találati esély: CÉ vs Célpont VÉ → %-ban
-  5. Harckeret / Támadások száma
+CÉ formula:
+  CÉ = konstansok.harcérték_alap.CÉ + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea
+
+Virtuális fegyverek (nem a távfegyverek[] tömben, fortélyból származtatottak):
+  - "Alkalmatlan fegyver hajítása" fortély (spec_típus: "fegyver") → per spec_elem, "🔆 Nem dobásra" def
+  - "Alkalmatlan tárgyak hajítása" fortély → "Alkalmi tárgy", "🔆 Nem dobásra" def (2.foknál Osztó=2)
+
+CM szerkesztő: a Távharc fülön (szerkesztő módban), max = tsz × arányok.max_cm_perszint
 
 Adatforrások:
   - tables/tavfegyverek.json (Fegyver, CÉ, Osztó, SP, Sebesség, Hatótáv, Kategória, Erőbónusz, Harcmodor)
-    note: Harcmodor mező hozzáadandó (process_fegyverek.py): "Hajítás"/"Íjászat"/"Lövészet"/"Ostromlövészet"
-    note: Kategória mező hiányzik nyílpuskáknál → pótlandó ("lőfegyver")
   - tables/tavharc_szorzok.json (5 kategória: célpont_mozgás, lövész_mozgás, célpont_méret, észlelhetőség, szél)
   - tables/harcmodor_kepzettsegek_bonuszok.json (CÉ oszlop)
   - konstansok.yaml → mesterfegyver_bónuszok (CÉ mező)
@@ -764,6 +756,8 @@ reactive rules.json:
 
 note: A Mesterfegyver fortély fokai NEM számítanak a max_HM-be.
       A harci_fortélyok ArrayContext-ben {fok, is_mesterfegyver} record-ok vannak.
+      HM szerkesztés: Harcértékek fülön (enforce: HM_TÉ+HM_VÉ ≤ max_HM).
+      CM szerkesztés: Távharc fülön (enforce: CM ≤ max_CM).
 ```
 
 ---
@@ -878,6 +872,7 @@ Session state bővítés (types.ts Session interface):
 Kalkuláció két rétege:
 1. **Taktika módosítók** — direkt numerikus: TÉ/VÉ/KÉ/SP módosítók a Harc fülön számolva
    (hasonlóan a fortélyMod_* context mezőkhöz, pl. `taktikaMod_TÉ`, `taktikaMod_VÉ`)
+   VÉ eltolás ökölszabály: `taktikaMods['VÉ']` clamp `[-limit, +limit]` ahol limit = `konstansok.taktika_vé_eltolás_limit` (10)
 2. **§16 feltételes fortély módosítók** — a HarcScreen fortély loop-jában a `mod.feltétel` check:
    `feltétel.split(':')` → prefix (taktika/harci_helyzet/fegyverfogás/fegyver) → aktívFeltételek Set keresés
 
