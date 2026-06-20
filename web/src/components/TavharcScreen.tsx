@@ -117,6 +117,10 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const felvett = new Set(k.távfegyverek.map(tf => tf.alap.toLowerCase()));
   const felvehető = data.tavfegyverek.filter(d => !felvett.has(d.Fegyver.toLowerCase()) && !d.Fegyver.startsWith('🔆'));
 
+  // "Alkalmatlan fegyver hajítása" fortélyból automatikus fegyverek
+  const alkalmatlanFortélyok = k.fortélyok.filter(f => f.név === 'Alkalmatlan fegyver hajítása' && f.spec_elem);
+  const alkalmatlanNevek = alkalmatlanFortélyok.map(f => f.spec_elem);
+
   // MF popup
   const [mfTarget, setMfTarget] = useState<number | null>(null);
   // Delete confirm
@@ -166,6 +170,21 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             <option value="">+ Új távfegyver...</option>
             {felvehető.map(f => <option key={f.Fegyver} value={f.Fegyver}>{f.Fegyver}</option>)}
           </select>
+          {alkalmatlanNevek.length > 0 && (
+            <>
+              <h3 style={{ marginTop: '12px' }}>Hajítható fegyverek (fortélyból)</h3>
+              {alkalmatlanNevek.map((név, i) => (
+                <div key={`alk-${i}`} className="th-card" style={{ opacity: 0.8 }}>
+                  <div className="th-card-header">
+                    <strong>🔆 {név}</strong>
+                  </div>
+                  <div className="th-card-fields">
+                    <span className="th-badge">CÉ: 0, Osztó: 1</span>
+                  </div>
+                </div>
+              ))}
+            </>
+          )}
         </section>
       )}
 
