@@ -414,3 +414,4 @@ fájdalomtűrés_enyhítés:
 sebesülés_kategóriák_száma: 4
 hm_aszimmetria_osztó: 2
 vé_csökkentés_gombok: [1, 2, 3]
+taktika_vé_eltolás_limit: 10

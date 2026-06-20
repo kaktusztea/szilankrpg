@@ -96,6 +96,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     }
   }
 
+  // Taktika VÉ eltolás limit (ökölszabály)
+  const véLimit = konstansok.taktika_vé_eltolás_limit ?? 10;
+  taktikaMods['VÉ'] = Math.max(-véLimit, Math.min(véLimit, taktikaMods['VÉ']));
+
   const harcmodorÖsszeg = Object.values(konstansok.fegyver_kategória_harcmodor).reduce((s: number, név: string) =>
     s + (k.képzettségek.find(kp => kp.név === név)?.szint ?? 0), 0);
 

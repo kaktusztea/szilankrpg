@@ -354,8 +354,6 @@
 | -------------------------------- | ------------------------------------------------------- | ----------- |
 | Távharc kalkulátor               | CÉ és VÉ számítás — §17                                 | Távharc fül |
 | Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
-| VÉ eltolás validáció             | max ±10 (taktikák kombinálása esetén is)                | Általános   |
-| ODS checker-ek                   | KP limitek, szabályok validálása                        | Általános   |
 | Faj misztérium képzettségek      | → Mágia fülre mozgatás                                  | Általános   |
 | Belharc / Belharci szituáció     | Külön rendszer implementálása                           | Aktív fül   |
 | Magasabbról + Lovas harc kizárás | Ha lovas harc aktív, Magasabbról disabled               | Aktív fül   |
@@ -395,7 +393,7 @@
 - ✅ Természetes fegyver: SP override, puszta kéz feltétel — már volt
 - ✅ Természetes páncél: SFÉ flat — már volt
 - ✅ Pajzshasználat: §13 data-driven (pajzs_TÉ_büntetés konstans + fortély yaml pajzs_TÉ_mérséklés + VÉ+2 3.fok, feltétel: fegyverfogás==fegyver_pajzs)
-- ✅ Hárítófegyver használat: Fegyverfogás picker + hárítóVÉ bekötés + fegyverek.json beolvasztás (TODO: MF VÉ bónusz)
+- ✅ Hárítófegyver használat: Fegyverfogás picker + hárítóVÉ bekötés + fegyverek.json beolvasztás + MF VÉ bónusz
 
 ### Harci helyzetek — kategorizálás és egyszerűsítés ✅
 

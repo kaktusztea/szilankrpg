@@ -34,6 +34,7 @@ interface KonstansokRaw {
   sebesülés_kategóriák_száma: number;
   hm_aszimmetria_osztó: number;
   vé_csökkentés_gombok: number[];
+  taktika_vé_eltolás_limit: number;
 }
 
 // --- KP tábla JSON struktúra ---
