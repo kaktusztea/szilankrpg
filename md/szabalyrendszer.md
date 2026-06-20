@@ -1,4 +1,4 @@
-**[Harci linkek](007_harci_linkek.md)** • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md)
+[Harci linkek](007_harci_linkek.md) • [Státusz](082_statuszok.md) • [Képzettség](030_01_kepzettseglista.md) • [Fortély](040_fortelyok.md)
 
 ---
 ### 0. [Áttekintés, Bevezető](000_attekintes.md)
