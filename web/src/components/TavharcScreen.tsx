@@ -50,13 +50,13 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
   let támadásLabel = '—';
   if (sebesség <= 0) {
-    támadásLabel = '1 / kör';
+    támadásLabel = '1x';
   } else if (harckeret <= 0) {
     támadásLabel = '—';
   } else if (harckeret >= sebesség) {
-    támadásLabel = `${Math.floor(harckeret / sebesség)} / kör`;
+    támadásLabel = `${Math.floor(harckeret / sebesség)}x`;
   } else {
-    támadásLabel = `1 / ${Math.ceil(sebesség / harckeret)} kör`;
+    támadásLabel = `1/${Math.ceil(sebesség / harckeret)} kör`;
   }
 
   // Távolság
@@ -80,9 +80,6 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
   // VÉ
   const vé = szorzóÖsszeg >= 1 ? szorzóÖsszeg * cella : cella - Math.abs(szorzóÖsszeg);
-
-  // Találati esély
-  const találatiEsély = Math.max(0, Math.min(100, Math.round((21 - (vé - cé)) / 20 * 100)));
 
   // --- Fegyver kezelés ---
   function addTávfegyver(alap: string) {
@@ -147,10 +144,10 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             const seb = parseInt(def?.Sebesség ?? '-1') || -1;
             const hk = hmSzint + gyorsaság;
             let tám = '—';
-            if (seb <= 0) tám = '1 / kör';
+            if (seb <= 0) tám = '1x';
             else if (hk <= 0) tám = '—';
-            else if (hk >= seb) tám = `${Math.floor(hk / seb)} / kör`;
-            else tám = `1 / ${Math.ceil(seb / hk)} kör`;
+            else if (hk >= seb) tám = `${Math.floor(hk / seb)}x`;
+            else tám = `1/${Math.ceil(seb / hk)} kör`;
             return (
             <div key={i} className={`th-card${i === tfIdx ? ' th-card-active' : ''}`} onClick={() => setSession(s => ({ ...s, aktív_távfegyver_index: i }))}>
               <div className="th-card-header">
@@ -160,8 +157,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
               <div className="th-card-fields">
                 <button className="he-field-btn" onClick={e => { e.stopPropagation(); setMfTarget(i); }}>MF: <strong>{mf}</strong></button>
                 <button className="he-field-btn" onClick={e => { e.stopPropagation(); setIdeaPopup(true); }}>Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong></button>
-                <span className="th-badge">CÉ: {cardCÉ}</span>
-                <span className="th-badge">Támadás: {tám}</span>
+                <span className="th-badge">CÉ: {cardCÉ}  ({tám})</span>
               </div>
             </div>
             );
@@ -187,24 +183,19 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {/* Kalkulátor — csak ha van fegyver */}
       {tfDef && gameMode && (
         <>
-          {/* CÉ + Támadás */}
+          {/* CÉ + VÉ */}
           <div className="th-row th-results">
-            <span className="th-value">CÉ: {cé}</span>
-            <span className="th-value">Támadás: {támadásLabel}</span>
+            <span className="th-value">CÉ: {cé}  ({támadásLabel})</span>
+            {gameMode && <span className="th-value">VÉ: {vé}</span>}
           </div>
 
           {/* VÉ kalkulátor — csak Game módban */}
           {gameMode && (
             <>
-              {/* VÉ + Találati esély */}
-              <div className="th-row th-results">
-                <span className="th-value">VÉ: {vé}</span>
-                <span className="th-value">Találati esély: {találatiEsély}%</span>
-              </div>
-
-              {/* Távolság + Cella */}
+              {/* Távolság + Szorzó */}
               <div className="th-row th-controls">
                 <button className="he-field-btn" onClick={() => setTávolságPopup(true)}>Távolság: <strong>{távolság}m</strong> (cella:{cella})</button>
+                <span className="th-value th-szorzo-total">Szorzó: {szorzóÖsszeg}</span>
               </div>
 
               {/* Szorzó pickerek */}
@@ -214,11 +205,6 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
                 <SzorzóPicker label="Méret" list={szorzok.célpont_méret} activeId={méretId} onSelect={setMéretId} />
                 <SzorzóPicker label="Észlelhetőség" list={szorzok.észlelhetőség} activeId={észlelhetőségId} onSelect={setÉszlelhetőségId} />
                 <SzorzóPicker label="Szél ereje" list={szorzok.szél} activeId={szélId} onSelect={setSzélId} />
-              </div>
-
-              {/* Szorzó összesítő */}
-              <div className="th-row th-results">
-                <span className="th-value th-szorzo-total">Szorzó: {szorzóÖsszeg}</span>
               </div>
             </>
           )}
