@@ -260,6 +260,9 @@ fegyver_kategória_harcmodor:
   lándzsavívó: "Lándzsavívás"
   ostorharc: "Ostorharc"
 
+# Távharc harcmodor: tavfegyverek.json-ban per-fegyver "Harcmodor" mező
+# (Hajítás / Íjászat / Lövészet / Ostromlövészet / Mágikus célzás)
+
 # Fortélyok amelyeket a Harcértékek fül kezel (Fortélyok fülön locked)
 locked_fortélyok:
   - "Mesterfegyver"
@@ -274,14 +277,17 @@ mesterfegyver_bónuszok:
   - fok: 1
     TÉ: 1
     VÉ: 1
+    CÉ: 1
     SP: 1
   - fok: 2
     TÉ: 2
     VÉ: 2
+    CÉ: 2
     SP: 2
   - fok: 3
     TÉ: 3
     VÉ: 3
+    CÉ: 3
     SP: 3
 
 # ============================================================

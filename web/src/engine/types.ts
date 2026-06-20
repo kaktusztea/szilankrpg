@@ -240,6 +240,7 @@ export interface MesterfegyverBonusz {
   fok: number;
   TÉ: number;
   VÉ: number;
+  CÉ: number;
   SP: number;
 }
 

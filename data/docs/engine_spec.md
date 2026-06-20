@@ -608,17 +608,55 @@ Infralátás                      harci_helyzet       "sötétben_félhomály"
 
 ---
 
-## 17. Távharc Védő Érték kalkulátor
+## 17. Távharc kalkulátor (CÉ + VÉ)
+
+### 17.1 Célzó Érték (CÉ) számítása
 
 ```
-input:  távolság (m), távfegyver.osztó,
+input:  karakter.tulajdonságok.Önuralom, karakter.CM,
+        harcmodor_szint (távfegyver.Harcmodor alnév → karakter képzettség szint),
+        harcmodor_CÉ_bónusz, távfegyver.CÉ, mesterfegyver_fok
+source: konstansok.yaml → mesterfegyver_bónuszok
+        tables/harcmodor_kepzettsegek_bonuszok.json
+        tables/tavfegyverek.json (Harcmodor mező: "Hajítás"/"Íjászat"/"Lövészet"/...)
+
+formula:
+  CÉ_alap = konstansok.harcérték_alap.CÉ   // -15
+
+  CÉ = CÉ_alap
+     + Önuralom
+     + CM
+     + harcmodor_CÉ_bónusz(harcmodor_szint)
+     + távfegyver.CÉ
+     + mesterfegyver_CÉ_bónusz(fok)   // +1/fok
+
+output: CÉ (karakter összesített Célzó Értéke az adott fegyverrel)
+```
+
+### 17.2 CÉ módosítók (taktikák)
+
+```
+Célzás:         +3 CÉ (1 kör célzás után, nem additív)
+Kitartott célzás: +7 CÉ (fortéllyal, 1 kör, nem additív, csak íj max 1 kör!)
+Hirtelen lövés: -7 CÉ (alapesetben)
+Hirtelen lövés + "Lövés reflexből" fortély: +0 CÉ (nincs büntetés)
+
+note: Célzó dobás esetén NINCS -4 levonás az egy körön belül végzett
+      újabb támadásokra (mint sima fegyveres harcnál). Minden dobás
+      ugyanazzal az eredeti CÉ-vel történik.
+```
+
+### 17.3 Célpont Védő Érték (távolsági VÉ)
+
+```
+input:  távolság (m), távfegyver.Osztó,
         célpont_mozgás, lövész_mozgás, célpont_méret,
         észlelhetőség, szél
 source: tables/tavharc_szorzok.json
 
 formula:
   // 1. Cella kiszámítása (felfelé kerekítés)
-  cella = CEIL(távolság / távfegyver.osztó)
+  cella = CEIL(távolság / távfegyver.Osztó)
 
   // 2. Szorzó kiszámítása (összetevők összege)
   szorzó = célpont_mozgás.szorzó
@@ -629,13 +667,73 @@ formula:
 
   // 3. Célpont Védő Érték
   if szorzó >= 1:
-    cél_VÉ = szorzó x cella
+    cél_VÉ = szorzó × cella
   else:
     cél_VÉ = cella - ABS(szorzó)    // szorzó 0 vagy negatív: kivonás (VÉ csökken)
 
 output: cél_VÉ
 note: Találati esély = CÉ + k20 >= cél_VÉ
-      Százalékban: MAX(0, MIN(100, ((21 - (cél_VÉ - CÉ)) / 20) x 100))
+      Százalékban: MAX(0, MIN(100, ((21 - (cél_VÉ - CÉ)) / 20) × 100))
+```
+
+### 17.4 Távharc harckeret
+
+```
+harckeret = harcmodor_szint(távfegyver.Harcmodor) + Gyorsaság
+támadások_száma = FLOOR(harckeret / fegyver_sebesség)
+
+Sebesség = -1 (nyílpuskák): támadások_száma = 1 (fix, nem számítható)
+  "Gyors újratöltés" fortély: +1 támadás/kör nyílpuskáknál
+Sebesség = tartomány (pl. "6-9"): alsó határt használjuk
+```
+
+### 17.5 Hatótáv
+
+```
+max_hatótáv = távfegyver.hatótáv
+// "Nem hajításra alkalmas" tárgyak: hatótáv = Erő × Osztó (m)
+// Hatótávon túl: lövés/hajítás lehetetlen
+```
+
+### 17.6 Sebzés
+
+```
+Íjak: SP + Erőbónusz (ha fegyver megfelelő Erőre tervezett)
+Nyílpuskák: SP (fix, nincs Erőbónusz)
+Hajítófegyverek: SP (nincs Erőbónusz, kivéve speciális)
+Többszörös találat sebzésbónusz: NINCS távharcban
+```
+
+### 17.7 Távharc fül — webapp
+
+```
+Karakter séma bővítés:
+  karakter.távfegyverek: { alap: string }[]   // távfegyver nevei (lookup kulcs → tavfegyverek.json)
+
+Session bővítés:
+  session.aktív_távfegyver_index: number      // kiválasztott távfegyver indexe (-1 = nincs)
+
+Szekciók:
+  1. Fegyver választó: aktív távfegyver kiválasztása (karakter.távfegyverek[] listából)
+  2. CÉ összesítő: Alap(-15) + Önuralom + CM + Harcmodor CÉ + Fegyver CÉ + MF CÉ = Összesített CÉ
+  3. VÉ kalkulátor: interaktív szorzó/cella kalkulátor
+     - Távolság input (m)
+     - Célpont mozgás picker (tavharc_szorzok.célpont_mozgás listából)
+     - Lövész mozgás picker (tavharc_szorzok.lövész_mozgás listából)
+     - Célpont méret picker (tavharc_szorzok.célpont_méret listából)
+     - Észlelhetőség picker (tavharc_szorzok.észlelhetőség listából)
+     - Szél picker (tavharc_szorzok.szél listából)
+     - Eredmény: Szorzó | Cella | Célpont VÉ
+  4. Találati esély: CÉ vs Célpont VÉ → %-ban
+  5. Harckeret / Támadások száma
+
+Adatforrások:
+  - tables/tavfegyverek.json (Fegyver, CÉ, Osztó, SP, Sebesség, Hatótáv, Kategória, Erőbónusz, Harcmodor)
+    note: Harcmodor mező hozzáadandó (process_fegyverek.py): "Hajítás"/"Íjászat"/"Lövészet"/"Ostromlövészet"
+    note: Kategória mező hiányzik nyílpuskáknál → pótlandó ("lőfegyver")
+  - tables/tavharc_szorzok.json (5 kategória: célpont_mozgás, lövész_mozgás, célpont_méret, észlelhetőség, szél)
+  - tables/harcmodor_kepzettsegek_bonuszok.json (CÉ oszlop)
+  - konstansok.yaml → mesterfegyver_bónuszok (CÉ mező)
 ```
 
 ---
