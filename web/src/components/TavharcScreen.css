@@ -167,6 +167,6 @@
 }
 
 .th-szorzo-total {
-  font-size: 16px;
-  color: #90caf9;
+  font-size: 14px;
+  color: var(--text);
 }

@@ -187,15 +187,15 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           <div className="th-row th-results">
             <span className="th-value-main">CÉ: <span style={{ color: '#90caf9' }}>{cé}</span>  ({támadásLabel})</span>
             {gameMode && <span className="th-value-main">VÉ: <span style={{ color: vé - cé > 20 ? '#e53935' : undefined }}>{vé}</span></span>}
+            {gameMode && <span className="th-value-main" style={{ fontSize: '12px', textAlign: 'center', lineHeight: '1.6' }}>Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>}
           </div>
 
           {/* VÉ kalkulátor — csak Game módban */}
           {gameMode && (
             <>
-              {/* Távolság + Szorzó */}
+              {/* Távolság */}
               <div className="th-row th-controls">
-                <button className="he-field-btn" onClick={() => setTávolságPopup(true)}>Távolság: <strong>{távolság}m</strong> (cella:{cella})</button>
-                <span className="th-value th-szorzo-total">Szorzó: {szorzóÖsszeg}</span>
+                <button className="he-field-btn" onClick={() => setTávolságPopup(true)}>Távolság: <strong>{távolság}m</strong></button>
               </div>
 
               {/* Szorzó pickerek */}
