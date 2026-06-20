@@ -698,7 +698,7 @@ function App() {
                             setShowSlotList(false);
                           }
                         } catch { /* */ }
-                      }}>{karakter?.uid === s.uid ? '●' : '○'} {s.név || 'Névtelen'} ({s.tsz || '?'}sz)</span>
+                      }}>{karakter?.uid === s.uid ? '●' : '○'} {(() => { const n = s.név || 'Névtelen'; const vm = n.match(/ v(\d+)$/); const base = vm ? n.slice(0, -vm[0].length) : n; const truncated = base.length > 15 ? base.slice(0, 15) + '..' : base; return truncated + (vm ? ` v${vm[1]}` : ''); })()} ({s.tsz || '?'}sz)</span>
                       <span style={{ fontSize: '11px', color: '#888', marginRight: '8px' }}>{relTime(s.mentés_dátum)}</span>
                       <span style={{ color: '#e53935', cursor: 'pointer', fontSize: '14px', fontWeight: 'bold' }} onClick={(e) => {
                         e.stopPropagation();
