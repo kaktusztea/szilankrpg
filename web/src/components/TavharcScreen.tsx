@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session } from '../engine/types';
@@ -126,6 +126,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const [deleteTarget, setDeleteTarget] = useState<number | null>(null);
   // Idea popup
   const [ideaPopup, setIdeaPopup] = useState(false);
+  // Távolság popup
+  const [távolságPopup, setTávolságPopup] = useState(false);
 
   return (
     <div className="screen tavharc-screen">
@@ -202,13 +204,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
               {/* Távolság + Cella */}
               <div className="th-row th-controls">
-                <div className="th-stepper">
-                  <button onClick={() => setTávolság(Math.max(1, távolság - 5))}>-5</button>
-                  <button onClick={() => setTávolság(Math.max(1, távolság - 1))}>-1</button>
-                  <span className="th-distance">{távolság}m</span>
-                  <button onClick={() => setTávolság(távolság + 1)}>+1</button>
-                  <button onClick={() => setTávolság(távolság + 5)}>+5</button>
-                </div>
+                <button className="he-field-btn" onClick={() => setTávolságPopup(true)}>Távolság: <strong>{távolság}m</strong></button>
                 <span className="th-value">Cella: {cella}</span>
               </div>
 
@@ -278,6 +274,13 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           </div>
         </div>
       , document.body)}
+
+      {/* Távolság popup */}
+      {távolságPopup && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setTávolságPopup(false); }}>
+          <TávolságPicker value={távolság} onChange={setTávolság} />
+        </div>
+      , document.body)}
     </div>
   );
 }
@@ -300,6 +303,44 @@ function SzorzóPicker({ label, list, activeId, onSelect }: {
           {item.szorzó}×: {item.leírás}
         </div>
       ))}
+    </div>
+  );
+}
+
+function TávolságPicker({ value, onChange }: { value: number; onChange: (v: number) => void }) {
+  const [val, setVal] = useState(value);
+  const holdRef = useRef<{ active: boolean; timer: ReturnType<typeof setTimeout> | null }>({ active: false, timer: null });
+
+  function startHold(dir: 1 | -1) {
+    holdRef.current.active = true;
+    let delay = 200;
+    function tick() {
+      if (!holdRef.current.active) return;
+      setVal(v => { const nv = Math.max(1, Math.min(500, v + dir)); onChange(nv); return nv; });
+      delay = Math.max(50, delay * 0.85);
+      holdRef.current.timer = setTimeout(tick, delay);
+    }
+    holdRef.current.timer = setTimeout(tick, delay);
+  }
+  function stopHold() {
+    holdRef.current.active = false;
+    if (holdRef.current.timer) { clearTimeout(holdRef.current.timer); holdRef.current.timer = null; }
+  }
+
+  return (
+    <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', padding: '16px', userSelect: 'none', WebkitUserSelect: 'none', touchAction: 'manipulation' }}>
+      <label style={{ fontSize: '14px', color: 'var(--text-dim)' }}>Távolság (méter)</label>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+        <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
+          onClick={() => { setVal(v => { const nv = Math.max(1, v - 1); onChange(nv); return nv; }); }}
+          onMouseDown={() => startHold(-1)} onMouseUp={stopHold} onMouseLeave={stopHold}
+          onTouchStart={(e) => { e.preventDefault(); startHold(-1); }} onTouchEnd={stopHold}>−</button>
+        <strong style={{ fontSize: '28px', minWidth: '60px', textAlign: 'center' }}>{val}m</strong>
+        <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
+          onClick={() => { setVal(v => { const nv = Math.min(500, v + 1); onChange(nv); return nv; }); }}
+          onMouseDown={() => startHold(1)} onMouseUp={stopHold} onMouseLeave={stopHold}
+          onTouchStart={(e) => { e.preventDefault(); startHold(1); }} onTouchEnd={stopHold}>+</button>
+      </div>
     </div>
   );
 }
