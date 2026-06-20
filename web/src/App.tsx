@@ -27,10 +27,10 @@ function generateIdLeíró(név: string, tsz: number): string {
 }
 
 const ALL_TABS = [
-  { id: 'harcertekek', label: '🛡️', editOnly: true },
   { id: 'aktiv', label: '❎', editOnly: false },
   { id: 'harc', label: '🗡️', editOnly: false },
   { id: 'tavharc', label: '🏹', editOnly: false },
+  { id: 'harcertekek', label: '🛡️', editOnly: true },
   { id: 'misztikus', label: '✨', editOnly: false },
   { id: 'tulajdonsagok', label: '🔵', editOnly: false },
   { id: 'fortelyok', label: '🟣', editOnly: false },
