@@ -54,6 +54,15 @@
   font-weight: bold;
 }
 
+.th-value-main {
+  background: var(--input-bg);
+  border: 2px solid #888;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
 .th-stepper {
   display: flex;
   align-items: center;

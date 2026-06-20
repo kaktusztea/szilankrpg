@@ -185,8 +185,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         <>
           {/* CÉ + VÉ */}
           <div className="th-row th-results">
-            <span className="th-value">CÉ: {cé}  ({támadásLabel})</span>
-            {gameMode && <span className="th-value">VÉ: {vé}</span>}
+            <span className="th-value-main">CÉ: <span style={{ color: '#90caf9' }}>{cé}</span>  ({támadásLabel})</span>
+            {gameMode && <span className="th-value-main">VÉ: <span style={{ color: vé - cé > 20 ? '#e53935' : undefined }}>{vé}</span></span>}
           </div>
 
           {/* VÉ kalkulátor — csak Game módban */}
