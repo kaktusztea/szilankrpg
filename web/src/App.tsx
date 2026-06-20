@@ -4,6 +4,7 @@ import { loadGameData } from './engine/data-loader';
 import type { GameData } from './engine/data-loader';
 import { AktivScreen } from './components/AktivScreen';
 import { HarcScreen } from './components/HarcScreen';
+import { TavharcScreen } from './components/TavharcScreen';
 import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
 import { FortelyokScreen } from './components/FortelyokScreen';
 import { HarcertekekScreen } from './components/HarcertekekScreen';
@@ -867,7 +868,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
-    case 'tavharc': return <div className="screen"><h2>🏹 Távharc</h2><p>Távharc kalkulátor (TODO)</p></div>;
+    case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} gameMode={gameMode} />;
     case 'tulajdonsagok': {
       const setAnyanyelv = (v: string) => setKarakter(prev => {
         if (!prev) return prev;

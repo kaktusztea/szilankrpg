@@ -55,7 +55,7 @@ fegyverek:
   - alap: ""                  # Alaptípus neve (lookup kulcs → fegyverek.json)
     név: ""                   # Opcionális egyedi név (pl. "Vérvörös Penge")
     anyag: "acél"             # acél, bronz, abbitacél, mithrill, lunír
-    idea: 0                   # -2..+4
+    idea: 0                   # -5..+5
 
 távfegyverek:
   - alap: ""                  # Alaptípus neve (lookup kulcs → tavfegyverek.json)

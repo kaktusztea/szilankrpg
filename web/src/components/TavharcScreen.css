@@ -1,0 +1,163 @@
+.tavharc-screen {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.th-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.th-controls {
+  gap: 6px;
+}
+
+.th-results {
+  gap: 12px;
+}
+
+.th-select {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 6px 8px;
+  font-size: 14px;
+  flex: 1;
+  min-width: 0;
+}
+
+.th-select-sm {
+  flex: 0 0 auto;
+  width: auto;
+}
+
+.th-badge {
+  background: var(--input-bg);
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+  color: #ccc;
+}
+
+.th-value {
+  background: var(--input-bg);
+  border: 1px solid #444;
+  border-radius: 4px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.th-stepper {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.th-stepper button {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #555;
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+  cursor: pointer;
+  min-width: 36px;
+}
+
+.th-stepper button:active {
+  background: #444;
+}
+
+.th-distance {
+  font-size: 16px;
+  font-weight: bold;
+  min-width: 50px;
+  text-align: center;
+}
+
+.th-szorzo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+.th-szorzo-grid .th-picker:last-child:nth-child(odd) {
+  grid-column: 1;
+}
+
+.th-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.th-card {
+  background: var(--input-bg);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.th-card-active {
+  border-color: var(--success);
+  background: rgba(76, 175, 80, 0.08);
+}
+
+.th-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.th-card-fields {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.th-picker {
+  background: var(--input-bg);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.th-picker-label {
+  font-weight: bold;
+  font-size: 13px;
+  margin-bottom: 4px;
+  color: #aaa;
+}
+
+.th-picker-item {
+  padding: 4px 6px;
+  font-size: 12px;
+  border-radius: 3px;
+  cursor: pointer;
+  border: 1px solid transparent;
+  margin-bottom: 2px;
+}
+
+.th-picker-item:hover {
+  background: #333;
+}
+
+.th-picker-active {
+  border-color: var(--success) !important;
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.th-szorzo-total {
+  font-size: 16px;
+  color: #90caf9;
+}
