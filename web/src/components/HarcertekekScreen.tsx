@@ -36,17 +36,14 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const harcmodorÖsszeg = harcmodorSzintek.reduce((s, h) => s + h.szint, 0);
   const alakzatharcSzint = k.képzettségek.find(kp => kp.név === 'Alakzatharc')?.szint ?? 0;
   const maxHM = harciFokok + harcmodorÖsszeg + alakzatharcSzint;
-  const maxCM = k.tsz * (konstansok.arányok.max_cm_perszint ?? 2);
   const maxAszimmetria = Math.floor(k.tsz / data.konstansok.hm_aszimmetria_osztó);
 
   const hmTotal = k.HM_TÉ + k.HM_VÉ;
   const hmOverflow = hmTotal > maxHM;
   const aszimmetriaOverflow = Math.abs(k.HM_TÉ - k.HM_VÉ) > maxAszimmetria;
-  const cmOverflow = k.CM > maxCM;
 
   function setHM_TÉ(v: number) { setKarakter(prev => prev ? { ...prev, HM_TÉ: Math.max(0, v) } : prev); }
   function setHM_VÉ(v: number) { setKarakter(prev => prev ? { ...prev, HM_VÉ: Math.max(0, v) } : prev); }
-  function setCM(v: number) { setKarakter(prev => prev ? { ...prev, CM: Math.max(0, v) } : prev); }
 
   // Mesterfegyver fok lookup: fortélyok tömbből, spec_elem === fegyver.alap (vagy Alapnév)
   function getMfFok(fegyverAlap: string): number {
@@ -201,7 +198,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
       <h2>🛡️ Harcértékek</h2>
       {/* HM/CM */}
       <section className="he-section">
-        <h3>HM / CM</h3>
+        <h3>HM</h3>
         <div className="he-hm-grid">
           <div className={`he-hm-row ${hmOverflow || aszimmetriaOverflow ? 'he-error' : ''}`}>
             <span>HM TÉ:</span>
@@ -215,16 +212,9 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
             <strong>{k.HM_VÉ}</strong>
             <button onClick={() => setHM_VÉ(k.HM_VÉ + 1)}>+</button>
           </div>
-          <div className={`he-hm-row ${cmOverflow ? 'he-error' : ''}`}>
-            <span>CM:</span>
-            <button onClick={() => setCM(k.CM - 1)}>−</button>
-            <strong>{k.CM}</strong>
-            <button onClick={() => setCM(k.CM + 1)}>+</button>
-          </div>
         </div>
         <div className="he-hm-info">
           <span className={hmOverflow ? 'he-overflow' : ''}>HM keret: {maxHM - hmTotal}</span>
-          <span className={cmOverflow ? 'he-overflow' : ''}>CM keret: {maxCM - k.CM}</span>
         </div>
       </section>
 

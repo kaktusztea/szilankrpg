@@ -180,33 +180,27 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         </div>
       )}
 
-      {/* Kalkulátor — csak ha van fegyver */}
+      {/* Kalkulátor — csak game módban, ha van fegyver */}
       {tfDef && gameMode && (
         <>
           {/* CÉ + VÉ + Szorzó×Cella + Távolság */}
           <div className="th-main-row">
             <div className="th-value-main th-ce-ve-box">
               <span>CÉ: {cé}  ({támadásLabel})</span>
-              {gameMode && <span style={{ color: vé - cé > 20 ? '#e53935' : '#ffa726' }}>VÉ: {vé}</span>}
+              <span style={{ color: vé - cé > 20 ? '#e53935' : '#ffa726' }}>VÉ: {vé}</span>
             </div>
-            {gameMode && <span className="th-value-main th-szc-box">Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>}
-            {gameMode && <button className="th-value-main th-tav-btn" style={{ borderColor: 'var(--success)' }} onClick={() => setTávolságPopup(true)}>Táv:<br/><span style={{ fontSize: '18px', color: 'var(--success)' }}>{távolság}m</span></button>}
+            <span className="th-value-main th-szc-box">Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>
+            <button className="th-value-main th-tav-btn" style={{ borderColor: 'var(--success)' }} onClick={() => setTávolságPopup(true)}>Táv:<br/><span style={{ fontSize: '18px', color: 'var(--success)' }}>{távolság}m</span></button>
           </div>
 
-          {/* VÉ kalkulátor — csak Game módban */}
-          {gameMode && (
-            <>
-
-              {/* Szorzó pickerek */}
-              <div className="th-szorzo-grid">
-                <SzorzóPicker label="Cél mozgása" list={szorzok.célpont_mozgás} activeId={célMozgásId} onSelect={setCélMozgásId} />
-                <SzorzóPicker label="Lövész mozgás" list={szorzok.lövész_mozgás} activeId={lövészMozgásId} onSelect={setLövészMozgásId} />
-                <SzorzóPicker label="Méret" list={szorzok.célpont_méret} activeId={méretId} onSelect={setMéretId} />
-                <SzorzóPicker label="Észlelhetőség" list={szorzok.észlelhetőség} activeId={észlelhetőségId} onSelect={setÉszlelhetőségId} />
-                <SzorzóPicker label="Szél ereje" list={szorzok.szél} activeId={szélId} onSelect={setSzélId} />
-              </div>
-            </>
-          )}
+          {/* Szorzó pickerek */}
+          <div className="th-szorzo-grid">
+            <SzorzóPicker label="Cél mozgása" list={szorzok.célpont_mozgás} activeId={célMozgásId} onSelect={setCélMozgásId} />
+            <SzorzóPicker label="Lövész mozgás" list={szorzok.lövész_mozgás} activeId={lövészMozgásId} onSelect={setLövészMozgásId} />
+            <SzorzóPicker label="Méret" list={szorzok.célpont_méret} activeId={méretId} onSelect={setMéretId} />
+            <SzorzóPicker label="Észlelhetőség" list={szorzok.észlelhetőség} activeId={észlelhetőségId} onSelect={setÉszlelhetőségId} />
+            <SzorzóPicker label="Szél ereje" list={szorzok.szél} activeId={szélId} onSelect={setSzélId} />
+          </div>
         </>
       )}
 
@@ -265,6 +259,32 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           <TávolságPicker value={távolság} osztó={osztó} onChange={setTávolság} />
         </div>
       , document.body)}
+
+      {/* Részletes értékek + CM szerkesztő */}
+      <div style={{ display: 'flex', gap: '8px', marginTop: '20px', alignItems: 'stretch' }}>
+        <div style={{ flex: 1, padding: '10px', border: '1px dashed #666', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>
+          <strong style={{ color: '#e53935' }}>Részletes értékek</strong>
+          <div>Fegyver alap CÉ: {fegyverCÉ}</div>
+          <div>MF CÉ bónusz: {mfCÉ}</div>
+          <div>Idea CÉ bónusz: {idea}</div>
+          <div>Harcmodor CÉ bónusz: {harcmodorCÉ} ({harcmodorNév} szint:{harcmodorSzint})</div>
+          <div>Tulajdonság (Önuralom): {önuralom}</div>
+          <div>CM: {k.CM}</div>
+          <div>CÉ alap: {céAlap}</div>
+          <div><strong>Összesen: {cé}</strong></div>
+        </div>
+        {!gameMode && (
+          <div style={{ padding: '10px', border: '1px solid #444', borderRadius: '6px', display: 'flex', flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: '6px' }}>
+            <span style={{ fontSize: '12px', color: '#aaa' }}>CM</span>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <button className="fort-fok-btn" style={{ width: '32px', height: '32px' }} onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.max(0, prev.CM - 1) } : prev)}>−</button>
+              <strong style={{ fontSize: '18px' }}>{k.CM}</strong>
+              <button className="fort-fok-btn" style={{ width: '32px', height: '32px' }} onClick={() => setKarakter(prev => prev ? { ...prev, CM: prev.CM + 1 } : prev)}>+</button>
+            </div>
+            <span style={{ fontSize: '11px', color: '#888' }}>max: {k.tsz * (konstansok.arányok.max_cm_perszint ?? 2)}</span>
+          </div>
+        )}
+      </div>
     </div>
   );
 }
