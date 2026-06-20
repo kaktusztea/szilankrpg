@@ -72,4 +72,21 @@ if __name__ == "__main__":
                     spec_str = spec if isinstance(spec, str) else ''
                     entry['Hárító'] = '1' if (name.startswith('Hárító:') or ', hárító' in name.lower() or 'hárítófegyverként' in spec_str.lower()) else '0'
 
+        # Post-process: tavfegyverek.json — Harcmodor és Kategória mező
+        if d['output'] == 'tavfegyverek.json':
+            # Lőfegyverek: íjak → Íjászat, nyílpuskák → Lövészet, fúvócsövek → Lövészet
+            lofegyver_keywords = ['íj', 'visszacsapó']
+            loveszet_keywords = ['nyílpuska', 'fúvócső', 'shad0ni']
+            for entry in full_json:
+                name_lower = entry['Fegyver'].lower()
+                if any(kw in name_lower for kw in loveszet_keywords):
+                    entry.setdefault('Kategória', 'lőfegyver')
+                    entry.setdefault('Harcmodor', 'Lövészet')
+                elif any(kw in name_lower for kw in lofegyver_keywords):
+                    entry.setdefault('Kategória', 'lőfegyver')
+                    entry.setdefault('Harcmodor', 'Íjászat')
+                else:
+                    entry.setdefault('Kategória', 'hajító')
+                    entry.setdefault('Harcmodor', 'Hajítás')
+
         write_list_of_dicts_to_jsonfile(path_json, full_json)

@@ -275,7 +275,7 @@ print("\n--- 6. Schema struktúra validáció ---")
 
 required_top = ["schema_version", "név", "játékos", "mentés_dátum", "tsz", "tulajdonságok", "HM_TÉ", "HM_VÉ", "CM",
                 "képzettségek", "fortélyok", "fortélyok_speciális",
-                "hátterek", "fegyverek", "páncél", "felszerelés", "napló", "session"]
+                "hátterek", "fegyverek", "távfegyverek", "páncél", "felszerelés", "napló", "session"]
 for k in required_top:
     if k not in karakter:
         err(f"Top-level mező hiányzik: '{k}'")

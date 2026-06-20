@@ -329,6 +329,9 @@
       "idea": 0
     }
   ],
+  "távfegyverek": [
+    { "alap": "Rövid íj" }
+  ],
   "páncél": {
     "alap": "bőr",
     "név": "",
@@ -365,6 +368,7 @@
     "aktív_státuszok": [],
     "narratív_módosítók": [],
     "harci_akrobatika": false,
-    "fegyverfogás": "kétkezes"
+    "fegyverfogás": "kétkezes",
+    "aktív_távfegyver_index": 0
   }
 }

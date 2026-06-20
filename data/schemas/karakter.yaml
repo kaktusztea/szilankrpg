@@ -57,6 +57,9 @@ fegyverek:
     anyag: "acél"             # acél, bronz, abbitacél, mithrill, lunír
     idea: 0                   # -2..+4
 
+távfegyverek:
+  - alap: ""                  # Alaptípus neve (lookup kulcs → tavfegyverek.json)
+
 páncél:
   alap: ""                    # Alaptípus neve (lookup kulcs → konstansok.yaml páncél_struktúrák)
   név: ""                     # Opcionális egyedi név
@@ -108,3 +111,4 @@ session:
   narratív_módosítók: []      # { szöveg: string, érték?: number }[] — KM által hozzáadott
   harci_akrobatika: false     # session_toggle fortély runtime állapota
   fegyverfogás: "egyfegyveres"  # enum: egyfegyveres | fegyver_pajzs | fegyver_hárító | kétkezes
+  aktív_távfegyver_index: -1  # Kiválasztott távfegyver indexe a távfegyverek[] tömbben (-1 = nincs)

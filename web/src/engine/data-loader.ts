@@ -1,4 +1,4 @@
-import type { FegyverAlap, PancelStruktura, PancelFemalapanyag, MesterfegyverBonusz, HarcertekAlap, KpConfig, Aranyok } from './types';
+import type { FegyverAlap, TavfegyverAlap, TavharcSzorzok, PancelStruktura, PancelFemalapanyag, MesterfegyverBonusz, HarcertekAlap, KpConfig, Aranyok } from './types';
 
 const BASE = import.meta.env.BASE_URL + 'data/';
 
@@ -210,7 +210,8 @@ export interface HatterekData {
 export interface GameData {
   konstansok: KonstansokRaw;
   fegyverek: FegyverAlap[];
-  tavfegyverek: FegyverAlap[];
+  tavfegyverek: TavfegyverAlap[];
+  tavharcSzorzok: TavharcSzorzok;
   pajzsok: { Pajzs: string; TÉ: string; VÉ: string; Sebesség: string }[];
   kepzettsegKp: { szint: number; kp: number }[];
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number; CÉ: number }[];
@@ -235,10 +236,11 @@ export interface GameData {
 }
 
 export async function loadGameData(): Promise<GameData> {
-  const [konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, hatasOperatorok, esemenyek, hatterek, rulesFile, emptyKarakter, testKarakter] = await Promise.all([
+  const [konstansok, fegyverek, tavfegyverek, tavharcSzorzok, pajzsok, kepzettsegKpRaw, harcmodorRaw, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, hatasOperatorok, esemenyek, hatterek, rulesFile, emptyKarakter, testKarakter] = await Promise.all([
     fetchJson<KonstansokRaw>('tables/konstansok.json'),
     fetchJson<FegyverAlap[]>('tables/fegyverek.json'),
-    fetchJson<FegyverAlap[]>('tables/tavfegyverek.json'),
+    fetchJson<TavfegyverAlap[]>('tables/tavfegyverek.json'),
+    fetchJson<TavharcSzorzok>('tables/tavharc_szorzok.json'),
     fetchJson<{ Pajzs: string; TÉ: string; VÉ: string; Sebesség: string }[]>('tables/pajzsok.json'),
     fetchJson<KepzettsegKpEntry[]>('tables/kepzettseg_kp.json'),
     fetchJson<HarcmodorBonuszEntry[]>('tables/harcmodor_kepzettsegek_bonuszok.json'),
@@ -274,5 +276,5 @@ export async function loadGameData(): Promise<GameData> {
     CÉ: parseInt(e['CÉ']),
   }));
 
-  return { konstansok, fegyverek, tavfegyverek, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, hatasOperatorok, esemenyek, hatterek, rules: rulesFile.rules, emptyKarakter, testKarakter };
+  return { konstansok, fegyverek, tavfegyverek, tavharcSzorzok, pajzsok, kepzettsegKp, harcmodorBonusz, kepzettsegDefs, kiterjesztesek, fajNevek, primerFortelyok, fajKeretek, fortelySummaries, tradiciok, nyelvek, taktikak, harciHelyzetek, manoverek, statuszok, hatasOperatorok, esemenyek, hatterek, rules: rulesFile.rules, emptyKarakter, testKarakter };
 }

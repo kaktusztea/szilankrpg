@@ -10,7 +10,9 @@
         "Erőbónusz": "0",
         "Átütés": "20",
         "Hatótáv": "50m",
-        "Speciális / Megjegyzés": "Halálos hatása és Átütés értéke csak aquir kézben érvényesül"
+        "Speciális / Megjegyzés": "Halálos hatása és Átütés értéke csak aquir kézben érvényesül",
+        "Kategória": "lőfegyver",
+        "Harcmodor": "Lövészet"
     },
     {
         "Fegyver": "Bola",
@@ -24,7 +26,8 @@
         "Átütés": "0",
         "Hatótáv": "20m",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Dárda",
@@ -38,7 +41,8 @@
         "Átütés": "3",
         "Hatótáv": "5m + (Erő x 3)",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "Követelmény: Erő +0. Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
+        "Speciális / Megjegyzés": "Követelmény: Erő +0. Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Dobócsillag",
@@ -52,7 +56,8 @@
         "Átütés": "0",
         "Hatótáv": "15m",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "SFÉ duplán számít ellene"
+        "Speciális / Megjegyzés": "SFÉ duplán számít ellene",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Dobóháló",
@@ -66,7 +71,8 @@
         "Átütés": "0",
         "Hatótáv": "4m + Erő",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Elf íj",
@@ -80,7 +86,8 @@
         "Átütés": "0",
         "Hatótáv": "120m",
         "Kategória": "lőfegyver",
-        "Speciális / Megjegyzés": "Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: 4. Erőbónusz nincs"
+        "Speciális / Megjegyzés": "Csak a készítője (és egyben birtokosa) kezében érvényes értékek, egyébként hagyományos íjként működik, aminek Osztója: 4. Erőbónusz nincs",
+        "Harcmodor": "Íjászat"
     },
     {
         "Fegyver": "Fúvócső, kicsi",
@@ -94,7 +101,8 @@
         "Átütés": "0",
         "Hatótáv": "16m",
         "Kategória": "lőfegyver",
-        "Speciális / Megjegyzés": "k20 dobásnál: 20-as dobás: 1 ÉP, különben 0 ÉP"
+        "Speciális / Megjegyzés": "k20 dobásnál: 20-as dobás: 1 ÉP, különben 0 ÉP",
+        "Harcmodor": "Lövészet"
     },
     {
         "Fegyver": "Fúvócső, vadász",
@@ -108,7 +116,8 @@
         "Átütés": "0",
         "Hatótáv": "30m",
         "Kategória": "lőfegyver",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Harcmodor": "Lövészet"
     },
     {
         "Fegyver": "Hajítóbárd",
@@ -122,7 +131,8 @@
         "Átütés": "0",
         "Hatótáv": "20m + (Erő x 4)",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel"
+        "Speciális / Megjegyzés": "Pajzsba dobva csökkenti annak Védő Értékét a dobott SP értékkel",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Hajítótőr",
@@ -136,7 +146,8 @@
         "Átütés": "0",
         "Hatótáv": "10m",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "Automatikusan jár rá a Közeli lövés fortélynál leírt CÉ:+10 bónusz ha a célpont az 1. Cellában van."
+        "Speciális / Megjegyzés": "Automatikusan jár rá a Közeli lövés fortélynál leírt CÉ:+10 bónusz ha a célpont az 1. Cellában van.",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Hosszú íj",
@@ -150,7 +161,8 @@
         "Átütés": "0",
         "Hatótáv": "120m",
         "Kategória": "lőfegyver",
-        "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
+        "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!",
+        "Harcmodor": "Íjászat"
     },
     {
         "Fegyver": "Kézi nyílpuska",
@@ -163,7 +175,9 @@
         "Erőbónusz": "0",
         "Átütés": "0",
         "Hatótáv": "20m",
-        "Speciális / Megjegyzés": "A kézi nyílpuska kevésbé pontos fegyver kis mérete miatt."
+        "Speciális / Megjegyzés": "A kézi nyílpuska kevésbé pontos fegyver kis mérete miatt.",
+        "Kategória": "lőfegyver",
+        "Harcmodor": "Lövészet"
     },
     {
         "Fegyver": "Kharei nyílpuska",
@@ -176,7 +190,9 @@
         "Erőbónusz": "0",
         "Átütés": "0",
         "Hatótáv": "50m",
-        "Speciális / Megjegyzés": "Míg ki nem fogy a tár. Újratöltés: 1 kör"
+        "Speciális / Megjegyzés": "Míg ki nem fogy a tár. Újratöltés: 1 kör",
+        "Kategória": "lőfegyver",
+        "Harcmodor": "Lövészet"
     },
     {
         "Fegyver": "Kő",
@@ -190,7 +206,8 @@
         "Átütés": "0",
         "Hatótáv": "20m + (Erő x 5)",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Lasszó",
@@ -204,7 +221,8 @@
         "Átütés": "0",
         "Hatótáv": "10m",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "Sebesülés az esés következtében lehet."
+        "Speciális / Megjegyzés": "Sebesülés az esés következtében lehet.",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Nehéz nyílpuska",
@@ -217,7 +235,9 @@
         "Erőbónusz": "0",
         "Átütés": "15",
         "Hatótáv": "80m",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Kategória": "lőfegyver",
+        "Harcmodor": "Lövészet"
     },
     {
         "Fegyver": "Nyílpuska",
@@ -230,7 +250,9 @@
         "Erőbónusz": "0",
         "Átütés": "8",
         "Hatótáv": "50m",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Kategória": "lőfegyver",
+        "Harcmodor": "Lövészet"
     },
     {
         "Fegyver": "Parittya",
@@ -244,7 +266,8 @@
         "Átütés": "0",
         "Hatótáv": "70m",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": "SFÉ duplán számít ellene"
+        "Speciális / Megjegyzés": "SFÉ duplán számít ellene",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Ramiera",
@@ -258,7 +281,8 @@
         "Átütés": "0",
         "Hatótáv": "10m",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Rövid íj",
@@ -272,7 +296,8 @@
         "Átütés": "0",
         "Hatótáv": "60m",
         "Kategória": "lőfegyver",
-        "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
+        "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!",
+        "Harcmodor": "Íjászat"
     },
     {
         "Fegyver": "Shad0ni páncéltörő",
@@ -285,7 +310,9 @@
         "Erőbónusz": "0",
         "Átütés": "20",
         "Hatótáv": "120m",
-        "Speciális / Megjegyzés": "Újratöltés: 1 emberrel: 3 kör, 2 emberrel: 1 kör"
+        "Speciális / Megjegyzés": "Újratöltés: 1 emberrel: 3 kör, 2 emberrel: 1 kör",
+        "Kategória": "lőfegyver",
+        "Harcmodor": "Lövészet"
     },
     {
         "Fegyver": "Tőr",
@@ -299,7 +326,8 @@
         "Átütés": "0",
         "Hatótáv": "10m",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Harcmodor": "Hajítás"
     },
     {
         "Fegyver": "Visszacsapó íj",
@@ -313,7 +341,8 @@
         "Átütés": "3",
         "Hatótáv": "160m",
         "Kategória": "lőfegyver",
-        "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!"
+        "Speciális / Megjegyzés": "Az Erőbónusz csak akkor számít ha az íj erre az Erő értékre lett tervezve!",
+        "Harcmodor": "Íjászat"
     },
     {
         "Fegyver": "🔆 Nem dobásra készített tárgy",
@@ -327,6 +356,7 @@
         "Átütés": "0",
         "Hatótáv": "5-10m + Erő",
         "Kategória": "hajító",
-        "Speciális / Megjegyzés": ""
+        "Speciális / Megjegyzés": "",
+        "Harcmodor": "Hajítás"
     }
 ]

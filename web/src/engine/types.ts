@@ -41,6 +41,10 @@ export interface FegyverPeldany {
   idea: number;
 }
 
+export interface TavfegyverPeldany {
+  alap: string;
+}
+
 export interface PancelPeldany {
   alap: string;
   név: string;
@@ -97,6 +101,7 @@ export interface Session {
   narratív_módosítók: NarratívMódosító[];
   harci_akrobatika: boolean;
   fegyverfogás: 'egyfegyveres' | 'fegyver_pajzs' | 'fegyver_hárító' | 'kétkezes';
+  aktív_távfegyver_index: number;
 }
 
 export interface NarratívMódosító {
@@ -125,6 +130,7 @@ export interface Karakter {
   fortélyok_speciális: FortelyokSpecialis;
   hátterek: { faj: string; leíró: string[]; karma: string[] };
   fegyverek: FegyverPeldany[];
+  távfegyverek: TavfegyverPeldany[];
   páncél: PancelPeldany;
   pajzs: PajzsPeldany;
   felszerelés: { nagy_tárgyak: NagyTargy[] };
@@ -155,6 +161,7 @@ export const DEFAULT_SESSION: Session = {
   narratív_módosítók: [],
   harci_akrobatika: false,
   fegyverfogás: 'egyfegyveres',
+  aktív_távfegyver_index: -1,
 };
 
 // ============================================================
@@ -223,6 +230,45 @@ export interface FegyverAlap {
   MK_pár: string;
   Alapnév: string;
   Hárító: string;
+}
+
+// ============================================================
+// Távharc szorzók (tavharc_szorzok.json)
+// ============================================================
+
+export interface TavharcSzorzoEntry {
+  id: number;
+  leírás: string;
+  szorzó: number;
+}
+
+export interface TavharcSzorzok {
+  célpont_mozgás: TavharcSzorzoEntry[];
+  lövész_mozgás: TavharcSzorzoEntry[];
+  célpont_méret: TavharcSzorzoEntry[];
+  észlelhetőség: TavharcSzorzoEntry[];
+  szél: TavharcSzorzoEntry[];
+}
+
+// ============================================================
+// Távfegyver (alaptípus, tavfegyverek.json)
+// ============================================================
+
+export interface TavfegyverAlap {
+  Fegyver: string;
+  CÉ: string;
+  Osztó: string;
+  SP: string;
+  Sebesség: string;
+  'Sebzés módja': string;
+  'Forgatás módja': string;
+  Erőbónusz: string;
+  'Erőbónusz limit'?: string;
+  Átütés: string;
+  Hatótáv: string;
+  Kategória?: string;
+  Harcmodor?: string;
+  'Speciális / Megjegyzés'?: string;
 }
 
 // ============================================================
