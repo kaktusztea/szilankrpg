@@ -271,15 +271,66 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
 
 ---
 
-## 2b. Távharc fül/screen
+## 2b. Távharc fül/screen (🏹)
 
-Távharc kalkulátor. A célpont Védő Értékét számítja a §17 engine spec alapján.
+Távharc kalkulátor — CÉ és célpont VÉ számítás, találati esély. Engine spec: §17.
 
-### Terv
-- Távharc VÉ kalkulátor (távolság, szorzók, cella)
-- Érintett fortélyok:
-  - Mozgó cél mestere
-  - Mágikus lövedék gyorsítása
+### Layout (felülről lefelé)
+
+**1. Fegyver sor (kontrollok):**
+
+| Távharc fegyver ● | MF: X.fok ● | Idea ● |
+
+- Fegyver: dropdown/picker a `karakter.távfegyverek[]` listából
+- MF fok: 0–3 (Mesterfegyver fortélyból, ha van az adott fegyverre)
+- Idea: -2..+4 (CÉ-t módosítja ±idea értékkel)
+
+**2. CÉ + Támadás sor (kalkulált):**
+
+| CÉ: X | Támadás db: X / Y kör |
+
+- CÉ = harcérték_alap.CÉ(-15) + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea
+- Támadás db formátum:
+  - Ha harckeret >= sebesség: `FLOOR(harckeret/sebesség) / kör`
+  - Ha harckeret < sebesség: `1 / CEIL(sebesség/harckeret) kör`
+  - Sebesség = -1 (nyílpuska): `1 / kör` (fix)
+
+**3. VÉ + Találati esély sor (kalkulált):**
+
+| VÉ: X | Találati esély: X% |
+
+- VÉ = Szorzó × Cella (vagy Cella - |Szorzó| ha Szorzó < 1)
+- Találati esély = MAX(0, MIN(100, (21 - (VÉ - CÉ)) / 20 × 100)), kerekítve egészre
+
+**4. Távolság sor (kontroll + kalkulált):**
+
+| [-5] [-1] [távolság méter ●] [+1] [+5] | Cella: X |
+
+- Távolság: stepper gombokkal (±1, ±5), középen a szám
+- Cella = CEIL(távolság / fegyver.Osztó)
+
+**5. Szorzó pickerek (kontrollok, mindig nyitva, 2×2 + 1 grid):**
+
+| Cél mozgása ● | Lövész mozgás ● |
+| Méret ● | Észlelhetőség ● |
+| Szél ereje ● | |
+
+- Minden picker: lista elemei `tavharc_szorzok.json`-ból
+- Aktív elem: zöld keret
+- Default értékek: Cél: Álló (1×), Lövész: Mozdulatlan (0×), Méret: Átlagos (0×), Észlelhetőség: Jól kivehető (0×), Szél: Szélcsend (0×)
+- Formátum: `Nx: leírás` (N = szorzó érték)
+
+**6. Szorzó összesítő (kalkulált):**
+
+| Szorzó: X |
+
+- Szorzó = célpont_mozgás + lövész_mozgás + méret + észlelhetőség + szél
+
+### Adatforrások
+- `tables/tavfegyverek.json` (Fegyver, CÉ, Osztó, Sebesség, Harcmodor, Hatótáv)
+- `tables/tavharc_szorzok.json` (5 kategória lista)
+- `tables/harcmodor_kepzettsegek_bonuszok.json` (CÉ oszlop)
+- `konstansok.mesterfegyver_bónuszok` (CÉ mező)
 
 ---
 
