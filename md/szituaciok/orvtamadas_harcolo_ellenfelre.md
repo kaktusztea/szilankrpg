@@ -7,10 +7,8 @@ A harcoló karakter folyamatos mozgásban, forgásban van, így komplex szituác
 - Célpont nem tud a jelenlétedről, eddig nem látott a harc során
 - Célpont látóterén kívül vagy
 - [Terelés manőver](../066_05_altalanos_manoverek.md#terel%C3%A9s) sikeres egy társ részéről - leköti és "irányban tartja" az áldozatot
+- Lopakodás célpont háta mögé: Képzettség ellenpróba
 
-## `I.` Lopakodás célpont háta mögé
-
-### Ellenpróba dobás
 
 ```
 Lopakodás/rejtőzés (-6) + Ügyesség
@@ -19,25 +17,17 @@ Lopakodás/rejtőzés (-6) + Ügyesség
   +3: Aktív Észlelés
 ```
 
-<br />
+✅ Lopakodás sikeres → Harci helyzet: [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) bónuszai járnak.
 
-## `II.a` Sikeres Lopakodás → Orvtámadás
-
- [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzet bónuszai járnak.
-
-<br />
-
-## `II.b` Sikertelen Lopakodás
-
-Mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
+❌ Lopakodás sikertelen: mindkét fél normális harcértékeivel folytatja. Már távolról kiszúrtak.
 
 <br />
 
 ## Megkötések
 
-🔆 [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) manőver (harc közben) után **NEM** lehet orvtámadást végezni, csak sima [Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet alakítható ki.
+🔆 Manőver: [Mögékerülés](../066_05_altalanos_manoverek.md#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s) után **NEM** lehet Orvtámadás, csak sima [Hátulról támadás](../065_01_01_pozitiv_helyzetek.md#hátulról-támadás) harci helyzet.
 
-🔆 [Körkörös harc](../fortelyok.harci/korkoros_harc.md) fortély megléte esetén **harc közben egyáltalán nem** alkalmazhatnak ellened [Orvtámadást](../065_01_01_pozitiv_helyzetek.md#orvtámadás).
+🔆 Fortély: [Körkörös harc](../fortelyok.harci/korkoros_harc.md) meglétekor **harc közben NEM** alkalmazhatnak ellened Orvtámadást.
 
 ---
 

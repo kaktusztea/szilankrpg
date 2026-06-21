@@ -139,13 +139,12 @@ Orgyilkos fortély
 → ❌ Egyéb `TÉ` bónusz nincs\
 → ❌ Harci taktikák NEM használhatóak
 
-→ ✅ [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) manőver (páncél elkerüléséhez)
+→ Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅ 
+→ Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
+→ [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak \
 
-→ [Orvtámadás és Manőverek viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás)\
-→ **Orvtámadás** több Manőver követelménye: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról)
-
-→ [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md) szituáció
-→ [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md) szituáció
+→ Szituáció: [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md)
+→ Szituáció: [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md)
 
 ---
 
