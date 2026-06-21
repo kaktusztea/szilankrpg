@@ -15,7 +15,7 @@ A harcoló karakter folyamatos mozgásban, forgásban van, így komplex szituác
 - Képzettség ellenpróba: Lopakodás célpont háta mögé: 
 
 ```
-Lopakodás/rejtőzés (-6) + Ügyesség
+Lopakodás/rejtőzés + Ügyesség
         vs
 Észlelés + Érzékenység
   +3: Aktív Észlelés
