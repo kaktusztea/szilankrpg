@@ -41,7 +41,7 @@ Nem belharcos fegyverek
   Saját harcmodor értékei
   Bármikor elejthető
 
-Állatoknak általában van Belharc fortélya
+Állatoknak általában van Belharcos fortélya
 ```
 
 <br />
@@ -172,12 +172,14 @@ Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
 ## Vadállatok elleni harc
 
 ```
-Közelharc harcmodor
-+ Belharc fortély - 2.fok
+Harcmodor: Közelharc
+Manőver: Belharcba kerülés
+
++ Belharcos fortély - 2.fok
   bónuszai
 ```
 
-Sokféle állat van, ezért nem lehet egységes szabályt alkotni. Az állatok nagy része olyan harcmodort folytat, ami a **Közelharc** + **Belharc**nak felel meg leginkább.
+Sokféle állat van, ezért nem lehet egységes szabályt alkotni. Az állatok nagy része olyan harcmodort folytat, ami a **Közelharc** + **Belharci helyzet**nek felel meg leginkább.
 
 ---
 
