@@ -8,7 +8,7 @@
 - [Alakzat: védekező](fortelyok.harci/alakzat_vedekezo.md)
 - [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) 🔁
 - [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
-- [Belharc](fortelyok.harci/belharc.md)
+- [Belharc](fortelyok.harci/belharcos.md)
 - [Elpusztíthatatlan](fortelyok.harci/elpusztithatatlan.md)
 - [Elsöprő roham](fortelyok.harci/elsopro_roham.md)
 - [Fárasztás](fortelyok.harci/farasztas.md)

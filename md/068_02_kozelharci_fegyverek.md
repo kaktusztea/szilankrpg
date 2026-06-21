@@ -49,7 +49,7 @@ KF: Különleges fegyver
 ### Garottos támadás
 
 - Követelmény: [Orvtámadás](065_01_01_pozitiv_helyzetek.md#orvtámadás) Harci helyzet
-- Siker esetén azonnal [Belharci szituáció](065_01_02_semleges_helyzetek.md#belharci-szituáció) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
+- Siker esetén azonnal [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet) alakul ki és a hurok az áldozat nyakára feszül, melynek sebzése:
   - `+8 SP` az `1.körben`
   - `+4 SP`: további körökben
 - Áldozat [Leforgatás/Irányítás](066_06_belharcos_manoverek.md#leforgat%C3%A1sir%C3%A1ny%C3%ADt%C3%A1s) manőverrel terelhető, forgatható

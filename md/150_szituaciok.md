@@ -5,6 +5,7 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 ## Harci szituációk
 
 - [Ajtóstul nekirontani az túloldalról benyitó ellenfélnek](szituaciok/ajtostul_tamadni.md)
+- [Belharc folyamata](szituaciok/belharc_folyamata.md)
 - [Harci jártasság felmérése](szituaciok/harci_jartassag_felmerese.md)
 - [Hátasról leesés](szituaciok/hatasrol_leeses.md)
 - [Ki mozdul elsőnek?](szituaciok/ki_mozdul_elsonek.md)

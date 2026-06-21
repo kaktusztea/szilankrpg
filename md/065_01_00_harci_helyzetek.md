@@ -15,7 +15,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 
 ### [Semleges helyzetek](065_01_02_semleges_helyzetek.md)
 
-- [Belharci szituáció](065_01_02_semleges_helyzetek.md#belharci-szituáció)
+- [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet)
 - [Fegyverrántás váratlanul](065_01_02_semleges_helyzetek.md#fegyverrántás-váratlanul)
 - [Közrefogás](065_01_02_semleges_helyzetek.md#közrefogás)
 - [Takarásban harcolás](065_01_02_semleges_helyzetek.md#takarásban-harcolás)

@@ -15,13 +15,13 @@
 <br />
 
 ---
-## [Belharci szituáció](065_01_02_semleges_helyzetek.md#belharci-szituáció) mint követelmény
+## [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet) mint követelmény
 
 Mindegyik Belharcos Manővernek feltétele - kivéve a **Belharcba kerülést**.
 
 ## [Ellenpróba](066_04_manover_vegbevitele.md#%EF%B8%8F3-ellenpr%C3%B3ba-e) módosítói
 
-**[Belharc](fortelyok.harci/belharc.md) fortély** ismerete bónuszt ad a **támadó** és **védekező** számára is az **Ellenpróba** fázisnál. Ettől függetlenül Belharci szituációban mindenki, képzetlenül is megpróbálhatja mindegyik Manővert.
+**[Belharcos](fortelyok.harci/belharcos.md) fortély** ismerete bónuszt ad a **támadó** és **védekező** számára is az **Ellenpróba** fázisnál. Ettől függetlenül Belharci szituációban mindenki, képzetlenül is megpróbálhatja mindegyik Manővert.
 
 ```
 +2 / Belharc fortély foka
@@ -56,7 +56,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
 - Fázisok: `Megakasztás, Ellenpróba`
 - Követelmény: Belharcos fegyver és **Közelharc** harcmodor használata
 
-**Hatás**: Sikeresen bekerültél belharcba, innentől a **[Belharci szituációnál](065_01_02_semleges_helyzetek.md#belharci-szituáció)** leírt módosítók érvényesülnek.
+**Hatás**: Sikeresen bekerültél belharcba, innentől a **[Belharci helyzetnél](065_01_02_semleges_helyzetek.md#belharci-helyzet)** leírt módosítók érvényesülnek.
 
 🔆 **Nagy siker**: `4`-gyel túldobott Ellenpróbánál még sebző **Megakasztás** támadást elszenvedve is bekerülsz belharci szituációba, szóval mindenképp dobjatok Ellenpróbát.
 
@@ -113,7 +113,7 @@ Amennyiben a lények között akár csak `1` kategória méret különbség is v
     - Fájdalomtűrés + Önuralom. Célszám: `15`
     - Körönként dobandó. Kudarc esetén képtelen vagy visszatámadni és mágiát, pszít használni, vagy bármilyen manővert alkalmazni.
 
-**Hatás**: Sikeresen kijöttél a leszorításból. A [Belharci szituáció](065_01_02_semleges_helyzetek.md#belharci-szituáció) megmarad.
+**Hatás**: Sikeresen kijöttél a leszorításból. A [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet) megmarad.
 
 <br />
 
