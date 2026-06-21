@@ -127,7 +127,7 @@ Sikeres próba kell:
  Lopakodás/rejtőzés vs. Észlelés
 ```
 
-→ Képzettség: [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) - módosítók a leírásában
+→ Képzettség: [Lopakodás/rejtőzés](kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) - módosítók a leírásában
 
 ```
 Áldozat
