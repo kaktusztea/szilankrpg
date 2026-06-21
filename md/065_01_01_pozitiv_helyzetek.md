@@ -119,23 +119,27 @@ VÉ csökkentés: +2
 
 Mikor úgy vagy képes támadást leadni, hogy ellenfeled erről az utolsó pillanatig nem tud (nem követelmény a hátulról támadás).
 
-→ Szituáció: [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md)
-→ Szituáció: [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md)
+→ Szituáció: [Orvtámadás: harcon kívül](szituaciok/orvtamadas_harcon_kivul.md)\
+→ Szituáció: [Orvtámadás: harcoló ellenfélre](szituaciok/orvtamadas_harcolo_ellenfelre.md)\
 
 ```
 Sikeres próba kell:
  Lopakodás/rejtőzés vs. Észlelés
 ```
 
+→ Képzettség: [Lopakodás/rejtőzés](../kepzettsegek.primer/altalanos/lopakodas_rejtozes.md#️-alapeset-lopakodásrejtőzés-vs-észlelés-ellenpróbához) - módosítók a leírásában
+
 ```
-Áldozat: Közelharci VÉ (Puszta kézzel)
+Áldozat
+  Közelharci VÉ (Puszta kézzel)
 
-Előny+2 Támadó dobásra
+Bónuszok
+  Előny+2 Támadó dobásra
 
-Orgyilkos fortély
-  1.fok: Előny+1 Sebzés dobásra, +1 SP
-  2.fok: Előny+1 Sebzés dobásra, +2 SP
-  3.fok: Előny+2 Sebzés dobásra, +3 SP
+  Orgyilkos fortély
+    1.fok: Előny+1 Sebzés dobásra, +1 SP
+    2.fok: Előny+1 Sebzés dobásra, +2 SP
+    3.fok: Előny+2 Sebzés dobásra, +3 SP
 ```
 
 → ❌ **Hátulról** és **Meglepetés** harci helyzetek **nem** adhatóak hozzá\
