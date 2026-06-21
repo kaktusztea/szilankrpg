@@ -105,7 +105,7 @@ Lásd [Vakharc fortély- Bónusz: harci ösztön](../../fortelyok.harci/vakharc.
 -6: a lopakodó Láthatatlan
 ```
 
-Kapcsolódik: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan)
+Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan)
 
 ### ⚜️ Látótér célszám módosító (lopakodó)
 
@@ -123,18 +123,11 @@ Kapcsolódik: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlanul
 
  [Suhanó árnyék](../../fortelyok.altalanos/suhano_arnyek.md) fortély semmissé teszi.
 
-### ⚜️ Felszerelés célszám módosító (lopakodó)
+### ⚜️ Zajok célszám módosító (lopakodó)
 
 ```
-+0: csendes ruha
-+3: nyikorgós ruha
 +6: csörgő ruha, fémpáncél
-```
-
-### ⚜️ Környezeti zajok célszám módosító (lopakodó)
-
-```
-+3: süket csend
++3: süket csend, nyikorgós ruha
 +0: gyenge alapzaj
 -3: közepesen zajos környezet (nyugisabb piac)
 -3: hallással észlelhetetlen: hangzavar (üvöltő dervisek, kofák)
