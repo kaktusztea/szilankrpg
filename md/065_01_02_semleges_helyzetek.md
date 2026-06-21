@@ -143,6 +143,13 @@ A lándzsás
 <br />
 
 ---
+## Szörnyeteg elleni harc
+
+Bestia/szörny elleni küzdelem. A [Gladiátor: Bestiái](fortelyok.harci/gladiator.bestiai.md) fortély bónuszai aktívak.
+
+<br />
+
+---
 ## Takarásban harcolás
 
 ```

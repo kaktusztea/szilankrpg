@@ -11,6 +11,22 @@ Előny+1 TÉ dobásra
 <br />
 
 ---
+## Célzás
+
+`1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. Csak mozdulatlan állapotban végezhető.
+
+→ [Kitartott célzás](fortelyok.tavharc/kitartott_celzas.md) fortély emeli a fenti bónusza.
+
+<br />
+
+---
+## Harci szekér
+
+Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.md) fortély bónuszai aktívak.
+
+<br />
+
+---
 ## Hátulról támadás
 
 ```
@@ -18,6 +34,13 @@ Előny+1 TÉ dobásra
 ```
 
 🔆 Védekező pajzs `VÉ` értéke **NEM** számít
+
+<br />
+
+---
+## Közönség előtt
+
+Gladiátori harc közönség előtt. A [Gladiátor: Közönsége](fortelyok.harci/gladiator.kozonsege.md) fortély bónuszai aktívak.
 
 <br />
 
@@ -74,6 +97,20 @@ Előny+2 TÉ Dobásra
 🔆 Roham (zuhanás) külön, plusz számolandó
 
 🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
+
+<br />
+
+---
+## Lovas harc
+
+Lóhátról harcolás. A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély bónuszai aktívak.
+
+<br />
+
+---
+## Léglovas harc
+
+Repülő hátas hátáról harcolás. A [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély bónuszai aktívak.
 
 <br />
 
@@ -149,6 +186,13 @@ Bónuszok
 → Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅ 
 → Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
 → [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak \
+
+<br />
+
+---
+## Páros harc
+
+Koordinált 2 fős harc. A [Páros harc](fortelyok.harci/paros_harc.md) fortély bónuszai aktívak.
 
 ---
 
