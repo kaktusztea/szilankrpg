@@ -6,9 +6,13 @@ A harcoló karakter folyamatos mozgásban, forgásban van, így komplex szituác
 
 - Célpont nem tud a jelenlétedről, eddig nem látott a harc során
 - Célpont látóterén kívül vagy
+
+<br />
+
+### Végrehajtás folyamata
+
 - [Terelés manőver](../066_05_altalanos_manoverek.md#terel%C3%A9s) sikeres egy társ részéről - leköti és "irányban tartja" az áldozatot
 - Lopakodás célpont háta mögé: Képzettség ellenpróba
-
 
 ```
 Lopakodás/rejtőzés (-6) + Ügyesség
