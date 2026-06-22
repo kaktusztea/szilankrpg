@@ -15,6 +15,8 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
   const [promptTarget, setPromptTarget] = useState<string | null>(null);
   const [promptValue, setPromptValue] = useState('');
+  const [tradícióPicker, setTradícióPicker] = useState(false);
+  const [tradícióAltípusPicker, setTradícióAltípusPicker] = useState<string | null>(null);
 
   // Aura (reactive)
   const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, konstansok as any, {});
@@ -49,11 +51,11 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [szintTarget, setSzintTarget] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!deleteTarget && !szintTarget && !promptTarget) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); } }
+    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [deleteTarget, szintTarget, promptTarget]);
+  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker]);
 
   const maxSzint = karakter.tsz; // misztikus képzettségek mind primerek
 
@@ -91,10 +93,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Tradíció</h3>
         {tradíció && renderRow(tradíció)}
         {!tradíció && !gameMode && (
-          <select className="he-add-select" value="" onChange={e => { if (e.target.value) addKépzettség(e.target.value); }}>
-            <option value="">+ Tradíció választása...</option>
-            {tradícióOpciók.map(t => <option key={t.név} value={`Tradíció: ${t.név}`}>{t.név}</option>)}
-          </select>
+          <button className="he-add-select" onClick={() => setTradícióPicker(true)}>+ Tradíció választása...</button>
         )}
       </section>
       )}
@@ -180,6 +179,75 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
       )}
 
       {/* Szabad szöveges felvétel popup (Ősi nyelv) */}
+
+      {/* Tradíció picker */}
+      {tradícióPicker && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setTradícióPicker(false); }}>
+          <div className="kep-prompt">
+            <label style={{ fontWeight: 'bold', marginBottom: '8px' }}>Tradíció választás</label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '60vh', overflowY: 'auto' }}>
+              {tradícióOpciók.map(t => (
+                <button key={t.név} className="he-field-btn" onClick={() => {
+                  if (t.altípusok.length > 0) {
+                    setTradícióPicker(false);
+                    setTradícióAltípusPicker(t.név);
+                  } else {
+                    const fullName = `Tradíció: ${t.név}`;
+                    addKépzettség(fullName);
+                    setTradícióPicker(false);
+                  }
+                }}>{t.név} {t.altípusok.length > 0 && '▸'} <span style={{ color: 'var(--text-dim)', fontSize: '13px' }}>({t.típus})</span></button>
+              ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {/* Tradíció altípus picker (pl. Szakrális istenségek) */}
+      {tradícióAltípusPicker && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setTradícióAltípusPicker(null); }}>
+          <div className="kep-prompt">
+            <label style={{ fontWeight: 'bold', marginBottom: '8px' }}>{tradícióAltípusPicker} — altípus</label>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '60vh', overflowY: 'auto' }}>
+              {(() => {
+                const trad = tradícióOpciók.find(t => t.név === tradícióAltípusPicker);
+                if (!trad) return null;
+                const hasPantheon = trad.altípusok.some((a: any) => a.pantheon);
+                if (hasPantheon) {
+                  const byPantheon = new Map<string, any[]>();
+                  for (const a of trad.altípusok) {
+                    const p = (a as any).pantheon || '';
+                    const arr = byPantheon.get(p) || [];
+                    arr.push(a);
+                    byPantheon.set(p, arr);
+                  }
+                  const elements: any[] = [];
+                  for (const [pantheon, items] of byPantheon) {
+                    elements.push(<div key={`h-${pantheon}`} style={{ fontSize: '13px', color: 'var(--text-dim)', marginTop: '6px', borderBottom: '1px solid #444', paddingBottom: '2px' }}>{pantheon}</div>);
+                    for (const item of items) {
+                      elements.push(
+                        <button key={item.név} className="he-field-btn" onClick={() => {
+                          addKépzettség(`Tradíció: ${tradícióAltípusPicker} (${item.név})`);
+                          setTradícióAltípusPicker(null);
+                        }}>{item.név} {item.leírás && <span style={{ color: 'var(--text-dim)', fontSize: '12px' }}>— {item.leírás}</span>}</button>
+                      );
+                    }
+                  }
+                  return elements;
+                }
+                return trad.altípusok.map((a: any) => (
+                  <button key={a.név} className="he-field-btn" onClick={() => {
+                    addKépzettség(`Tradíció: ${tradícióAltípusPicker} (${a.név})`);
+                    setTradícióAltípusPicker(null);
+                  }}>{a.név}</button>
+                ));
+              })()}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
       {promptTarget && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setPromptTarget(null); }}>
           <div className="kep-prompt">
