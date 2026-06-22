@@ -9,7 +9,7 @@ const TULAJDONSAG_NEVEK: (keyof Tulajdonsagok)[] = [
   'intelligencia', 'emlékezet', 'önuralom', 'érzékenység',
 ];
 
-const CSOPORT_SORREND = ['harci', 'misztikus', 'fizikai', 'világi', 'alvilági', 'művészeti', 'tudományos'];
+const CSOPORT_SORREND = ['misztikus', 'fizikai', 'világi', 'alvilági', 'művészeti', 'tudományos'];
 const CSOPORT_LABEL: Record<string, string> = {
   harci: '⚔️ Harci', misztikus: '✨ Misztikus', fizikai: '🏃 Fizikai',
   világi: '🌍 Világi', alvilági: '🗝️ Alvilági', művészeti: '🎨 Művészeti', tudományos: '🧪 Tudományos',

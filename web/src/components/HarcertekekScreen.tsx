@@ -8,9 +8,11 @@ interface Props {
   data: GameData;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
+  képzettségek: { név: string; szint: number }[];
+  setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
 }
 
-export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
+export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek, setKépzettségek }: Props) {
   const k = karakter;
   const { konstansok } = data;
 
@@ -183,15 +185,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
   const [pancelPopup, setPancelPopup] = useState<string | null>(null);
   const [pajzsPopup, setPajzsPopup] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<number | null>(null);
+  const [deleteKepzTarget, setDeleteKepzTarget] = useState<string | null>(null);
   const ideaMin = ideaTarget?.type === 'fegyver' ? -5 : -4;
   const ideaMax = ideaTarget?.type === 'fegyver' ? 5 : 4;
 
   useEffect(() => {
-    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && !pajzsPopup && deleteTarget === null) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); } }
+    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && !pajzsPopup && deleteTarget === null && !deleteKepzTarget) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); setDeleteKepzTarget(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget]);
+  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget]);
 
   return (
     <div className="screen harcertekek-screen">
@@ -218,17 +221,42 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
         </div>
       </section>
 
-      {/* Harcmodorok (read-only) */}
-      {harcmodorSzintek.some(h => h.szint > 0) && (
+      {/* Harci képzettségek (szerkeszthető) */}
       <section className="he-section">
-        <h3>Harcmodorok</h3>
-        <div className="he-harcmodor-list">
-          {harcmodorSzintek.filter(h => h.szint > 0).map(h => (
-            <span key={h.név} className="he-harcmodor-item">{h.név}: <strong>{h.szint}</strong></span>
-          ))}
+        <h3>Harci képzettségek</h3>
+        <div className="he-harcmodor-list" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+          {(() => {
+            const harciDefs = data.kepzettsegDefs.filter(d => d.csoport === 'harci');
+            const allHarciNames: string[] = [];
+            for (const d of harciDefs) {
+              if (d.többszörös.length > 0 && d.többszörös[0] !== '*') {
+                for (const sub of d.többszörös) allHarciNames.push(sub);
+              } else {
+                allHarciNames.push(d.név);
+              }
+            }
+            const felvett = képzettségek.filter(k => allHarciNames.includes(k.név) && k.szint > 0);
+            const nemFelvett = allHarciNames.filter(n => !képzettségek.some(k => k.név === n && k.szint > 0));
+            return (<>
+              {felvett.map(h => (
+                <div key={h.név} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
+                  <span style={{ flex: 1 }}>{h.név}</span>
+                  <button className="fort-delete" onClick={() => setDeleteKepzTarget(h.név)}>✕</button>
+                  <strong style={{ width: '20px', textAlign: 'right' }}>{h.szint}</strong>
+                  <button className="fort-fok-btn" style={{ width: '24px', height: '24px', fontSize: '13px' }} disabled={h.szint <= 1} onClick={() => setKépzettségek(prev => prev.map(k => k.név === h.név ? { ...k, szint: k.szint - 1 } : k))}>−</button>
+                  <button className="fort-fok-btn" style={{ width: '24px', height: '24px', fontSize: '13px' }} disabled={h.szint >= 15} onClick={() => setKépzettségek(prev => prev.map(k => k.név === h.név ? { ...k, szint: Math.min(15, k.szint + 1) } : k))}>+</button>
+                </div>
+              ))}
+              {nemFelvett.length > 0 && (
+                <select className="he-add-select" value="" onChange={e => { if (e.target.value) setKépzettségek(prev => [...prev, { név: e.target.value, szint: 1 }]); }}>
+                  <option value="">+ Harci képzettség...</option>
+                  {nemFelvett.map(n => <option key={n} value={n}>{n}</option>)}
+                </select>
+              )}
+            </>);
+          })()}
         </div>
       </section>
-      )}
 
       {/* Fegyverek */}
       <section className="he-section">
@@ -416,6 +444,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter }: Props) {
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>{k.fegyverek[deleteTarget]?.alap.replace(/ \(1K\)$| 1K$/, '')}</label>
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { removeFegyver(deleteTarget); setDeleteTarget(null); }}>Fegyver törlése</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {deleteKepzTarget && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteKepzTarget(null); }}>
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
+            <label style={{ fontWeight: 'bold' }}>{deleteKepzTarget}</label>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKépzettségek(prev => prev.filter(k => k.név !== deleteKepzTarget)); setDeleteKepzTarget(null); }}>Képzettség törlése</button>
           </div>
         </div>,
         document.body
