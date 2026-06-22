@@ -105,7 +105,6 @@ session:
   aktív_páncél: true
   aktív_taktikák: []          # { név: string, fok?: number }[] — aktívan alkalmazott taktikák
   aktív_helyzetek: []         # string[] — aktív harci helyzetek nevei
-  aktív_szituációk: []        # string[] — aktív szituációk nevei
   aktív_manőver: ""
   aktív_státuszok: []         # string[]
   narratív_módosítók: []      # { szöveg: string, érték?: number }[] — KM által hozzáadott

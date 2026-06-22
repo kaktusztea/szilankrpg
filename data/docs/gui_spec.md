@@ -88,6 +88,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - "Visszaállítás (N művelet)" gomb: piros, csak kiválasztás után aktív
 - Overlay mellé kattintás: bezár
 - Jegyzetek és Napló NEM vonódik vissza (mindig friss marad)
+- Leírás formátum (minden fülről): `Képzettség: {név} {régi}→{új}`, `Fortély: {név} {régi}→{új}`, `{Tulajdonság}: {régi} → {új}`, `TSz: X → Y`, stb.
 
 ### Local Storage (multi-slot)
 - `szilank_slots`: slot lista (max 10, uid + név + tsz + mentés_dátum)

@@ -948,8 +948,24 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
         képzettségek={képzettségek}
       />;
     }
-    case 'misztikus': return <MisztikusScreen data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={(v: any) => { pushUndo('Misztikus képzettség módosítás'); setKépzettségek(v); }} gameMode={gameMode} />;
-    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} képzettségek={képzettségek} setKépzettségek={(v: any) => { pushUndo('Harci képzettség módosítás'); setKépzettségek(v); }} />;
+    case 'misztikus': return <MisztikusScreen data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={(v: any) => {
+          const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
+          let desc = '';
+          if (newVal.length > képzettségek.length) { const added = newVal.find(n => !képzettségek.some(k => k.név === n.név)); if (added) desc = `Képzettség: ${added.név} 0→${added.szint}`; }
+          else if (newVal.length < képzettségek.length) { const removed = képzettségek.find(k => !newVal.some(n => n.név === k.név)); if (removed) desc = `Képzettség: ${removed.név} ${removed.szint}→0❌`; }
+          else { const changed = newVal.find(n => { const old = képzettségek.find(k => k.név === n.név); return old && old.szint !== n.szint; }); if (changed) { const old = képzettségek.find(k => k.név === changed.név)!; desc = `Képzettség: ${changed.név} ${old.szint}→${changed.szint}`; } }
+          if (desc) pushUndo(desc);
+          setKépzettségek(v);
+        }} gameMode={gameMode} />;
+    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} képzettségek={képzettségek} setKépzettségek={(v: any) => {
+          const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
+          let desc = '';
+          if (newVal.length > képzettségek.length) { const added = newVal.find(n => !képzettségek.some(k => k.név === n.név)); if (added) desc = `Képzettség: ${added.név} 0→${added.szint}`; }
+          else if (newVal.length < képzettségek.length) { const removed = képzettségek.find(k => !newVal.some(n => n.név === k.név)); if (removed) desc = `Képzettség: ${removed.név} ${removed.szint}→0❌`; }
+          else { const changed = newVal.find(n => { const old = képzettségek.find(k => k.név === n.név); return old && old.szint !== n.szint; }); if (changed) { const old = képzettségek.find(k => k.név === changed.név)!; desc = `Képzettség: ${changed.név} ${old.szint}→${changed.szint}`; } }
+          if (desc) pushUndo(desc);
+          setKépzettségek(v);
+        }} />;
     case 'hatterek': return <HatterekScreen data={data} karakter={karakter} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode} onNavigate={tab => { const idx = ALL_TABS.findIndex(t => t.id === tab); if (idx >= 0) setActiveTab(idx); }} />;
     default: return null;
   }

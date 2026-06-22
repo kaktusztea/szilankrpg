@@ -258,7 +258,8 @@ required_session_keys = ["szilánk", "vé_csökkenés", "vé_history", "manőver
                          "kétkezes_harc", "aktív_pajzs",
                          "aktív_páncél", "aktív_taktikák", "aktív_helyzetek",
                          "aktív_manőver", "aktív_státuszok",
-                         "narratív_módosítók", "harci_akrobatika", "fegyverfogás"]
+                         "narratív_módosítók", "harci_akrobatika", "fegyverfogás",
+                         "aktív_távfegyver_index"]
 for k in required_session_keys:
     if k not in session:
         err(f"Session mező hiányzik: '{k}'")
@@ -273,9 +274,10 @@ if session.get("fegyverfogás") not in valid_fegyverfogas:
 # ============================================================
 print("\n--- 6. Schema struktúra validáció ---")
 
-required_top = ["schema_version", "név", "játékos", "mentés_dátum", "tsz", "tulajdonságok", "HM_TÉ", "HM_VÉ", "CM",
+required_top = ["schema_version", "név", "játékos", "mentés_dátum", "tsz", "leírás", "kor", "anyanyelv", "vallás",
+                "tulajdonságok", "HM_TÉ", "HM_VÉ", "CM",
                 "képzettségek", "fortélyok", "fortélyok_speciális",
-                "hátterek", "fegyverek", "távfegyverek", "páncél", "felszerelés", "napló", "session"]
+                "hátterek", "fegyverek", "távfegyverek", "páncél", "pajzs", "felszerelés", "jegyzetek", "napló", "session"]
 for k in required_top:
     if k not in karakter:
         err(f"Top-level mező hiányzik: '{k}'")
