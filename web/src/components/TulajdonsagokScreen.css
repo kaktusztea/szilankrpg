@@ -381,6 +381,3 @@
   accent-color: var(--accent);
 }
 
-.kep-over {
-  color: var(--error) !important;
-}
