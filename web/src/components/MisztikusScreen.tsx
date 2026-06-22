@@ -37,6 +37,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
 
   function addKépzettség(név: string) {
     setKépzettségek(prev => [...prev, { név, szint: 1 }]);
+    setSzintTarget(név);
   }
   function removeKépzettség(név: string) {
     setKépzettségek(prev => prev.filter(k => k.név !== név));
@@ -85,6 +86,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
       </div>
 
       {/* Tradíció */}
+      {(!gameMode || tradíció) && (
       <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
         <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Tradíció</h3>
         {tradíció && renderRow(tradíció)}
@@ -94,10 +96,11 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
             {tradícióOpciók.map(t => <option key={t.név} value={`Tradíció: ${t.név}`}>{t.név}</option>)}
           </select>
         )}
-        {!tradíció && gameMode && <span style={{ color: '#666', fontSize: '13px' }}>Nincs tradíció</span>}
       </section>
+      )}
 
-      {/* Arkánumok — mindig megjelenik, tradíció nélkül disabled */}
+      {/* Arkánumok */}
+      {(!gameMode || arkánumok.length > 0) && (
       <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
         <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Arkánumok</h3>
         {arkánumok.map(a => renderRow(a, true, !tradíció))}
@@ -108,8 +111,10 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
             </select>
           )}
       </section>
+      )}
 
-      {/* Faj misztérium — kötve a faj választóhoz, nem törölhető */}
+      {/* Faj misztérium */}
+      {(!gameMode || (képzettségek.find(k => k.név.startsWith('Faj misztérium'))?.szint ?? 0) > 0) && (
       <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
         <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Faj misztérium</h3>
         {(() => {
@@ -126,8 +131,10 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
           );
         })()}
       </section>
+      )}
 
       {/* Ősi nyelv ismerete */}
+      {(!gameMode || ősiNyelvek.length > 0) && (
       <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
         <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Ősi nyelv ismerete</h3>
         {ősiNyelvek.map(k => renderRow(k))}
@@ -135,6 +142,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
           <button className="he-add-select" onClick={() => { setPromptTarget('Ősi nyelv ismerete'); setPromptValue(''); }}>+ Ősi nyelv ismerete...</button>
         )}
       </section>
+      )}
 
       {/* Törlés megerősítő */}
       {deleteTarget && createPortal(
