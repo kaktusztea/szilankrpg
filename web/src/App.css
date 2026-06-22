@@ -97,7 +97,7 @@ body {
   font-size: 15px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color 1500ms ease;
+  transition: background-color 2000ms ease;
 }
 
 .content {
