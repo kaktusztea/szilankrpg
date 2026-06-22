@@ -146,6 +146,10 @@
   margin-left: 4px;
 }
 
+.he-field-fortely {
+  border-color: #ab47bc;
+}
+
 .he-add-select {
   width: 100%;
   background: var(--input-bg);

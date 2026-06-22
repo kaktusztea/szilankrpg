@@ -462,7 +462,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         </thead>
         <tbody>
           {kétkezesResult && (
-            <tr style={{ border: '2px solid #9c27b0' }}>
+            <tr style={{ border: '2px solid #90caf9' }}>
               <td>{kétkezesResult.fegyver_név}</td>
               <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: kétkezesResult.fegyver_név, sebesség: kétkezesResult.sebesség, harckeret: kétkezesResult.harckeret })}>{kétkezesResult.támadások}</td>
               <td>{kétkezesResult.TÉ + téLevonás + taktikaMods['TÉ'] + (kétkezesResult.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
@@ -477,7 +477,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
             const r = fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? fegyverResults[0];
             if (!r) return null;
             return (
-              <tr style={{ border: '2px solid #9c27b0' }}>
+              <tr style={{ border: '2px solid #90caf9' }}>
                 <td>{fogásResult.név}</td>
                 <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
                 <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + fogásResult.TÉ_büntetés + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>

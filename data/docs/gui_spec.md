@@ -824,3 +824,19 @@ Minden adat `fetchJson`-nel:
 A Tulajdonságok/Képzettségek/Fortélyok/Harcértékek fülek **szerkesztő** jellegűek.
 Az Aktív és Harc fülek **runtime** jellegűek (a harc közbeni állapotot kezelik).
 A Jegyzetek fül mindkét módban írható.
+
+---
+
+## Szín nyelv
+
+Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem típusát/forrását.
+
+| Szín | Kód | Jelentés | Példa |
+|------|-----|----------|-------|
+| Zöld | `#4caf50` / `var(--success)` | Aktív elem kiemelés, értékek | aktív fegyver keret, szorzó picker kijelölés |
+| Lila | `#ab47bc` | Fortélyhoz kötött elem | MF fok gomb, Merevvértviselet gomb keret |
+| Narancs | `#ffa726` | Figyelmeztetés, VÉ normál | távharc VÉ szín |
+| Piros | `#e53935` | Hiba, lehetetlen, túllépés | VÉ-CÉ>20, MF követelmény hiba, HM overflow |
+| Arany | `#ffd54f` | — (felszabadult, volt: körülmény csoport) | — |
+| Szürke | `#888` / `#aaa` | Dimmed, read-only, infó | szekció fejléc, részletes értékek |
+| Bordó | `#cd7c6f` | Státusz hatások | státusz név + alcím |

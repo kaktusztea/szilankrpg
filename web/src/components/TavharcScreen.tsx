@@ -183,7 +183,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
                 <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteTarget(i); }}>✕</button>
               </div>
               <div className="th-card-fields">
-                <button className="he-field-btn" onClick={e => { e.stopPropagation(); setMfTarget(i); }}>MF: <strong>{mf}</strong></button>
+                <button className="he-field-btn he-field-fortely" onClick={e => { e.stopPropagation(); setMfTarget(i); }}>MF: <strong>{mf}</strong></button>
                 <button className="he-field-btn" onClick={e => { e.stopPropagation(); setIdeaPopup(true); }}>Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong></button>
                 <span className="th-badge">CÉ: {cardCÉ}  ({tám})</span>
               </div>
