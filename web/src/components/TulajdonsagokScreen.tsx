@@ -543,6 +543,10 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
         const kpCost = (szint: number) => kpTábla.filter(r => r.szint <= szint).reduce((s, r) => s + r.kp, 0);
         const harcmodorNevek = [...konstansok.harcmodorok.közelharci, ...konstansok.harcmodorok.távolsági];
         const misztikusNevek = data.kepzettsegDefs.filter((k: any) => k.csoport === 'misztikus').map((k: any) => k.név.toLowerCase());
+        const isMisztikus = (név: string) => {
+          const lower = név.toLowerCase();
+          return misztikusNevek.some(m => lower === m || lower.startsWith(m + ':'));
+        };
         const primerKepzNevek = new Set(data.kepzettsegDefs.filter((k: any) => k.primer).map((k: any) => k.név.toLowerCase()));
         // Harcmodor többszörösök is primerek
         for (const nm of harcmodorNevek) primerKepzNevek.add(nm);
@@ -558,8 +562,8 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
           if (kp.szint <= 0) continue;
           const cost = kpCost(kp.szint);
           if (harcmodorNevek.includes(kp.név.toLowerCase())) { kp_harcmodor += cost; harcmodorDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
+          else if (isMisztikus(kp.név)) { kp_misztikus += cost; misztikusDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
           else if (!primerKepzNevek.has(kp.név.toLowerCase())) continue;
-          else if (misztikusNevek.includes(kp.név.toLowerCase())) { kp_misztikus += cost; misztikusDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
           else { kp_világi += cost; világiDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
         }
         let kp_harci_fort = 0;
