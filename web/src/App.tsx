@@ -650,7 +650,7 @@ function App() {
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>Új karakter?</label>
-            <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Az aktuális állapot elvész.</span>
+            <span style={{ fontSize: '13px', color: 'var(--text-dim)', textAlign: 'center' }}>Az aktuális karakter NEM vész el, hanem mentésre kerül.<br/>A Karakterek menü alatt elérhető.</span>
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
               const uid = generateUid();
               setKarakter({ ...data.emptyKarakter, uid, id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });

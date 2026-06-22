@@ -295,7 +295,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteTarget(null); }}>
           <div className="kep-prompt" style={{ textAlign: 'center' }}>
             <p><strong>{k.távfegyverek[deleteTarget]?.alap}</strong></p>
-            <button className="btn-del-confirm" onClick={() => { removeTávfegyver(deleteTarget); setDeleteTarget(null); }}>Távfegyver törlése</button>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { removeTávfegyver(deleteTarget); setDeleteTarget(null); }}>Távfegyver törlése</button>
           </div>
         </div>
       , document.body)}
