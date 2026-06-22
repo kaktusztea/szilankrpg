@@ -9,6 +9,7 @@ import { TavharcScreen } from './components/TavharcScreen';
 import { TulajdonsagokScreen } from './components/TulajdonsagokScreen';
 import { FortelyokScreen } from './components/FortelyokScreen';
 import { HarcertekekScreen } from './components/HarcertekekScreen';
+import { MisztikusScreen } from './components/MisztikusScreen';
 import { HatterekScreen } from './components/HatterekScreen';
 import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
 import type { Karakter, Session, Fortely } from './engine/types';
@@ -947,7 +948,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
         képzettségek={képzettségek}
       />;
     }
-    case 'misztikus': return <div className="screen"><h2>✨ Misztikus</h2></div>;
+    case 'misztikus': return <MisztikusScreen data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={(v: any) => { pushUndo('Misztikus képzettség módosítás'); setKépzettségek(v); }} gameMode={gameMode} />;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} képzettségek={képzettségek} setKépzettségek={(v: any) => { pushUndo('Harci képzettség módosítás'); setKépzettségek(v); }} />;
     case 'hatterek': return <HatterekScreen data={data} karakter={karakter} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode} onNavigate={tab => { const idx = ALL_TABS.findIndex(t => t.id === tab); if (idx >= 0) setActiveTab(idx); }} />;
     default: return null;
