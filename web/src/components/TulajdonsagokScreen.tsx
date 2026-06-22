@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
-import type { Tulajdonsagok } from '../engine/types';
+import type { Tulajdonsagok, Karakter } from '../engine/types';
 import './TulajdonsagokScreen.css';
 
 const TULAJDONSAG_NEVEK: (keyof Tulajdonsagok)[] = [
@@ -23,6 +23,7 @@ interface KepzettsegSlot {
 interface Props {
   data: GameData;
   gameMode: boolean;
+  karakter: Karakter;
   tulajdonságok: Tulajdonsagok;
   setTulajdonságok: React.Dispatch<React.SetStateAction<Tulajdonsagok>>;
   képzettségek: KepzettsegSlot[];
@@ -41,7 +42,7 @@ interface Props {
   setAnyanyelv: (v: string) => void;
 }
 
-export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv }: Props) {
+export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv }: Props) {
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
   const [editingTsz, setEditingTsz] = useState(false);
@@ -106,8 +107,9 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       return;
     }
     // Többszörös prefixelt value: "AlapNév:AlNév" → tárolt név = "AlNév"
+    // De ha a teljes név önálló képzettség (pl. "Arkánum: Időmágia"), megtartjuk
     let actualNév = név;
-    if (név.includes(':') && !név.startsWith('__')) {
+    if (név.includes(':') && !név.startsWith('__') && !data.kepzettsegDefs.some(d => d.név === név)) {
       actualNév = név.split(':')[1];
     }
     setKépzettségek(prev => {
@@ -293,6 +295,14 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
       <div className="kep-section">
         {CSOPORT_SORREND.map(csoport => {
           const slotok = getKepzettsegekForCsoport(csoport).slice().sort((a, b) => {
+            const aTrad = a.név.startsWith('Tradíció');
+            const bTrad = b.név.startsWith('Tradíció');
+            if (aTrad && !bTrad) return -1;
+            if (bTrad && !aTrad) return 1;
+            const aArk = a.név.startsWith('Arkánum');
+            const bArk = b.név.startsWith('Arkánum');
+            if (aArk && !bArk) return -1;
+            if (bArk && !aArk) return 1;
             const aHm = a.név.startsWith('Harcmodor:');
             const bHm = b.név.startsWith('Harcmodor:');
             if (aHm && !bHm) return -1;
@@ -332,6 +342,7 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
                     displayName={getDisplayName(slot.név)}
                     findDef={findDef}
                     overLimit={slot.szint > maxSzint}
+                    warning={slot.név.startsWith('Arkánum') && !képzettségek.some(k => k.név.startsWith('Tradíció'))}
                   />
                 );
               })}
@@ -525,6 +536,67 @@ export function TulajdonsagokScreen({ data, gameMode, tulajdonságok, setTulajdo
         </div>,
         document.body
       )}
+
+      {!gameMode && (() => {
+        const konstansok = data.konstansok;
+        const kpTábla = data.kepzettsegKp;
+        const kpCost = (szint: number) => kpTábla.filter(r => r.szint <= szint).reduce((s, r) => s + r.kp, 0);
+        const harcmodorNevek = [...konstansok.harcmodorok.közelharci, ...konstansok.harcmodorok.távolsági];
+        const misztikusNevek = data.kepzettsegDefs.filter((k: any) => k.csoport === 'misztikus').map((k: any) => k.név.toLowerCase());
+        const primerKepzNevek = new Set(data.kepzettsegDefs.filter((k: any) => k.primer).map((k: any) => k.név.toLowerCase()));
+        // Harcmodor többszörösök is primerek
+        for (const nm of harcmodorNevek) primerKepzNevek.add(nm);
+
+        let kp_hm_cm = (karakter.HM_TÉ + karakter.HM_VÉ) * konstansok.kp.hm + karakter.CM * konstansok.kp.cm;
+        let kp_harcmodor = 0;
+        let kp_misztikus = 0;
+        let kp_világi = 0;
+        const harcmodorDetails: { név: string; szint: number; kp: number }[] = [];
+        const misztikusDetails: { név: string; szint: number; kp: number }[] = [];
+        const világiDetails: { név: string; szint: number; kp: number }[] = [];
+        for (const kp of képzettségek) {
+          if (kp.szint <= 0) continue;
+          const cost = kpCost(kp.szint);
+          if (harcmodorNevek.includes(kp.név.toLowerCase())) { kp_harcmodor += cost; harcmodorDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
+          else if (!primerKepzNevek.has(kp.név.toLowerCase())) continue;
+          else if (misztikusNevek.includes(kp.név.toLowerCase())) { kp_misztikus += cost; misztikusDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
+          else { kp_világi += cost; világiDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
+        }
+        let kp_harci_fort = 0;
+        let kp_miszt_fort = 0;
+        const harcifortDetails: { név: string; fok: number; kp: number; spec: string }[] = [];
+        const misztfortDetails: { név: string; fok: number; kp: number; spec: string }[] = [];
+        const primerFortélyok = data.primerFortelyok;
+        for (const f of karakter.fortélyok) {
+          if (!primerFortélyok.includes(f.név)) continue;
+          const def = data.fortelySummaries.find(d => d.név === f.név);
+          if (!def || def.kp_perfok === 0) continue;
+          const cost = f.fok * def.kp_perfok;
+          if (def.csoport === 'harci' || def.csoport === 'távharc') { kp_harci_fort += cost; harcifortDetails.push({ név: f.név, fok: f.fok, kp: cost, spec: f.spec_elem || '' }); }
+          else if (def.csoport === 'misztikus') { kp_miszt_fort += cost; misztfortDetails.push({ név: f.név, fok: f.fok, kp: cost, spec: f.spec_elem || '' }); }
+        }
+        const total = kp_hm_cm + kp_harcmodor + kp_misztikus + kp_világi + kp_harci_fort + kp_miszt_fort;
+        const pct = (v: number) => total > 0 ? Math.round(v / total * 100) : 0;
+        const row = (label: string, val: number) => <div>{label}: {val} KP ({pct(val)}%)</div>;
+
+        return (
+          <div style={{ marginTop: '16px', padding: '10px', border: '1px dashed #666', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>
+            <strong style={{ color: '#e53935' }}>Primer KP bontás</strong>
+            {row('HM + CM', kp_hm_cm)}
+            {row('Harcmodor képzettségek', kp_harcmodor)}
+            {harcmodorDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
+            {row('Misztikus képzettségek', kp_misztikus)}
+            {misztikusDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
+            {row('Primer világi képzettségek', kp_világi)}
+            {világiDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
+            {row('Harci fortélyok', kp_harci_fort)}
+            {harcifortDetails.map((d, i) => <div key={i} style={{ paddingLeft: '10px' }}>· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
+            {row('Misztikus fortélyok', kp_miszt_fort)}
+            {misztfortDetails.map((d, i) => <div key={i} style={{ paddingLeft: '10px' }}>· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
+            <div style={{ borderTop: '1px solid #555', marginTop: '4px', paddingTop: '4px' }}><strong>Össz primer: {total} KP</strong></div>
+          </div>
+        );
+      })()}
     </div>
   );
 }
@@ -581,7 +653,7 @@ function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: 
 }
 
 /* --- Képzettség sor --- */
-function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef, overLimit }: {
+function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef, overLimit, warning }: {
   slot: KepzettsegSlot;
   gameMode: boolean;
   onSzintChange: (szint: number) => void;
@@ -592,6 +664,7 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
   displayName: string;
   findDef: (név: string) => KepzettsegDef | undefined;
   overLimit: boolean;
+  warning?: boolean;
 }) {
   const [szintEditing, setSzintEditing] = useState(false);
 
@@ -617,7 +690,7 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
         data-kep={slot.név}
         onClick={handleTap}
       >
-        <span className={`kep-név${overLimit ? ' kep-over' : ''}`}>{displayName}</span>
+        <span className={`kep-név${overLimit || warning ? ' kep-over' : ''}`}>{displayName}</span>
         <span className="kep-right">
           {!gameMode && (
             <button className="kep-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>

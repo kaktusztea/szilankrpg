@@ -563,6 +563,8 @@ function App() {
         const primerKepNevek = new Set(data.kepzettsegDefs.filter(d => d.primer).map(d => d.név));
         const harcmodorDef = data.kepzettsegDefs.find(d => d.név === 'Harcmodor');
         if (harcmodorDef?.többszörös) for (const a of harcmodorDef.többszörös) primerKepNevek.add(a);
+        const távHarcmodorDef = data.kepzettsegDefs.find(d => d.név === 'Távolsági harcmodor');
+        if (távHarcmodorDef?.többszörös) for (const a of távHarcmodorDef.többszörös) primerKepNevek.add(a);
         // Tradíció és egyéb prefix-alapú primer képzettségek: ha a karakter képzettség neve
         // "AlapNév: ..." formátumú és az alapnév primer, azt is primernek tekintjük
         for (const k of képzettségek) {
@@ -901,7 +903,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
         }
         return { ...prev, anyanyelv: v, fortélyok: [...ingyenesek, ...filtered] };
       });
-      return <TulajdonsagokScreen data={data} gameMode={gameMode}
+      return <TulajdonsagokScreen data={data} gameMode={gameMode} karakter={karakter}
         tulajdonságok={tulajdonságok} setTulajdonságok={(v: any) => {
           const newVal = typeof v === 'function' ? v(tulajdonságok) : v;
           const changed = Object.keys(newVal).find(k => newVal[k] !== (tulajdonságok as any)[k]);
