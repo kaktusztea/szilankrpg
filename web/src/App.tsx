@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef, TouchEvent, useCallback } from 'react';
+import { useState, useEffect, useRef, TouchEvent, useCallback, Component } from 'react';
+import type { ReactNode, ErrorInfo } from 'react';
 import { createPortal } from 'react-dom';
 import { loadGameData } from './engine/data-loader';
 import type { GameData } from './engine/data-loader';
@@ -511,6 +512,7 @@ function App() {
             return (
             <div key={tab.id} className="screen-slide">
               {Math.abs(i - activeTab) <= 1 && (
+                <ScreenErrorBoundary>
                 <TabContent
                   tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab}
                   tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok}
@@ -520,6 +522,7 @@ function App() {
                   karakter={karakter} setKarakter={setKarakter}
                   pushUndo={pushUndo}
                 />
+                </ScreenErrorBoundary>
               )}
             </div>
             );
@@ -850,6 +853,22 @@ function App() {
 
     </div>
   );
+}
+
+class ScreenErrorBoundary extends Component<{ children: ReactNode }, { error: string | null }> {
+  state = { error: null as string | null };
+  static getDerivedStateFromError(error: Error) { return { error: error.message }; }
+  componentDidCatch(error: Error, info: ErrorInfo) { console.error('Screen crash:', error, info); }
+  render() {
+    if (this.state.error) return (
+      <div style={{ padding: '20px', color: '#e53935', textAlign: 'center' }}>
+        <p><strong>⚠️ Hiba a megjelenítésben</strong></p>
+        <p style={{ fontSize: '13px', color: '#aaa' }}>{this.state.error}</p>
+        <button style={{ marginTop: '10px', padding: '6px 12px' }} onClick={() => this.setState({ error: null })}>Újrapróbálás</button>
+      </div>
+    );
+    return this.props.children;
+  }
 }
 
 function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession, karakter, setKarakter, pushUndo }: {
