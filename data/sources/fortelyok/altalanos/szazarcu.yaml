@@ -24,7 +24,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: []
     követelmények:
       - név: "Álcázás/Álruha"
         érték: 4
@@ -33,7 +33,7 @@ fokok:
       - text: "Gyors átöltözés és szegényes felszerelés büntetéseit 3-mal csökkentheted."
     módosítók: ""
   - fok: 2
-    követelménytext: ""
+    követelménytext: []
     követelmények:
       - név: "Álcázás/Álruha"
         érték: 8

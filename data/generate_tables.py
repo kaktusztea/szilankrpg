@@ -85,7 +85,11 @@ def generate_fortelyok():
             fokok_summary = []
             for fok in (data.get('fokok') or []):
                 hatás = [h['text'] for h in (fok.get('hatástext') or []) if h.get('text')]
-                köv = fok.get('követelménytext', '')
+                köv_raw = fok.get('követelménytext', '')
+                if isinstance(köv_raw, list):
+                    köv = [item['text'] for item in köv_raw if item.get('text')]
+                else:
+                    köv = [köv_raw] if köv_raw else []
                 mods = fok.get('módosítók') or []
                 if mods == '':
                     mods = []

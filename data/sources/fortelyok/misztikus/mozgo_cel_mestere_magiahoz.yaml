@@ -24,13 +24,13 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Kiszámíthatatlan Szorzó: 4x. Harcoló Szorzó: 5x."
     módosítók: ""
   - fok: 1
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Kiszámíthatatlan Szorzó: 3x. Harcoló Szorzó: 4x."

@@ -24,7 +24,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2)."
+    követelménytext:
+      - text: "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2)."
     követelmények: ""
     hatástext:
       - text: "Orvtámadás harci helyzetet nem alkalmazhatják ellened harc közben."

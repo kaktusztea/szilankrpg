@@ -20,7 +20,7 @@
           "Az állatok, állati intelligenciájú élőlények alapból enyhe rokonszenvvel viseltetnek irányodban. Nem provokálva békén hagynak.",
           "Az ismeret vadállatokra / bestiákra vonatkozik, amelyek állatnak számítanak. Pl. farkas, 5 fejű skorpió."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -46,7 +46,7 @@
         "hatás": [
           "A Mászás képzettségpróba rontása után a megkapaszkodás Nehézség büntetése rád nem vonatkozik."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Mászás",
@@ -81,7 +81,7 @@
         "hatás": [
           "A kiterjesztett képzettségek csábítással kapcsolatos próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -108,7 +108,7 @@
           "Ügyesség ellenpróbához: +2.",
           "Különleges csomók ismerete."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -129,7 +129,7 @@
           "Ügyesség ellenpróbához: +4.",
           "Mestercsomók ismerete."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -166,7 +166,7 @@
         "hatás": [
           "Alvás közben dobott Észlelés próbádra +2 bónusz jár."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -207,7 +207,7 @@
         "hatás": [
           "Ismered a boncolás tudományát. Méregkeverés képzettségre: +2 bónusz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -249,7 +249,7 @@
         "hatás": [
           "Kiterjeszt képzettségeket 1.fokon."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -258,7 +258,7 @@
         "hatás": [
           "Kiterjeszt képzettségeket 2.fokon."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -284,7 +284,7 @@
         "hatás": [
           "Fájdalomtűrés próbára: +2"
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -304,7 +304,7 @@
         "hatás": [
           "Fájdalomtűrés próbára: +4"
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -342,7 +342,7 @@
           "Hosszútávfutáskor Edzettség próbára: +1.",
           "Rövidtávfutásnál Gyorsaság próbára: +1."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -363,7 +363,7 @@
           "Hosszútávfutáskor Edzettség próbára: +2.",
           "Rövidtávfutásnál Gyorsaság próbára: +2."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -400,7 +400,9 @@
         "hatás": [
           "1 + Edzettség perc ideig bírod a víz alatt."
         ],
-        "követelmény": "Úszás 1.fok",
+        "követelmény": [
+          "Úszás 1.fok"
+        ],
         "követelmények": [
           {
             "név": "Úszás",
@@ -415,7 +417,9 @@
         "hatás": [
           "1 + (2x Edzettség) perc ideig bírod a víz alatt."
         ],
-        "követelmény": "Úszás 2.fok",
+        "követelmény": [
+          "Úszás 2.fok"
+        ],
         "követelmények": [
           {
             "név": "Úszás",
@@ -452,7 +456,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -478,7 +482,7 @@
         "hatás": [
           "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott hangot."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -487,7 +491,7 @@
         "hatás": [
           "Csendes körülmények között is megtévesztően utánzol."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Nyelvismeret",
@@ -523,7 +527,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -552,7 +556,7 @@
         "hatás": [
           "Kiterjeszti az Észlelés és Természetjárás képzettségeket 1.fokon."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Észlelés",
@@ -567,7 +571,7 @@
         "hatás": [
           "Kiterjeszti az Észlelés és Természetjárás képzettségeket 2.fokon."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Észlelés",
@@ -601,7 +605,7 @@
         "hatás": [
           "Dobhatsz alap szinten Kézművesség képzettségre fegyver kovácsolásakor."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -610,7 +614,7 @@
         "hatás": [
           "+2 bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -649,7 +653,7 @@
         "hatás": [
           "Dobhatsz alap szinten Kézművesség képzettségre páncél kovácsolásakor."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -658,7 +662,7 @@
         "hatás": [
           "+2 bónusszal dobhatsz Kézművesség képzettségre páncél kovácsolásakor."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -695,7 +699,7 @@
         "hatás": [
           "Hosszútávú úszás, futás vagy tartós igénybevételnél Edzettség próbára: +1."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -732,7 +736,7 @@
         "hatás": [
           "Lovasszekér, ökrösszekér, postakocsi elvezetése."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -767,7 +771,7 @@
         "hatás": [
           "Ügyesség ellenpróbához: +2"
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -787,7 +791,7 @@
         "hatás": [
           "Ügyesség ellenpróbához: +4"
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -830,7 +834,7 @@
           "Zárnyitás képzettségre: +2.",
           "A kapcsolódó, kiterjesztett képzettségek követelményeként megszünteti a kiterjesztés-büntetést."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -851,7 +855,7 @@
           "Zárnyitás képzettségre: +4.",
           "A kapcsolódó képzettségek kiterjesztésekor már Előny+1 bónuszt is ad."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -891,7 +895,7 @@
         "hatás": [
           "A kiterjesztett képzettségek megfélemlítéssel kapcsolatos próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -917,7 +921,7 @@
         "hatás": [
           "Méregellenállás dobásakor Edzettség próbára: +1."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -937,7 +941,7 @@
         "hatás": [
           "Méregellenállás dobásakor Edzettség próbára: +2."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -957,7 +961,7 @@
         "hatás": [
           "Méregellenállás dobásakor Edzettség próbára: +3."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -997,7 +1001,7 @@
           "NEM csoportos képzettségpróba — csak a te szinted számít.",
           "Tudásodnak megfelelő Ideájú tárgyak gyárthatóak gyorsabban, nagyobb mennyiségben."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Kézművesség",
@@ -1031,7 +1035,7 @@
         "hatás": [
           "Kiterjeszti a Természetjárás képzettséget nyomolvasás témában 1.fokon."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -1040,7 +1044,7 @@
         "hatás": [
           "Kiterjeszti a Természetjárás képzettséget nyomolvasás témában 2.fokon."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -1069,7 +1073,7 @@
         "hatás": [
           "Kiterjeszt képzettségeket az adott ősi kultúrkörre vonatkozóan."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -1095,7 +1099,7 @@
         "hatás": [
           "A \"Gyorsan mászni\" Célszám módosító büntetése rád nem vonatkozik."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Mászás",
@@ -1127,7 +1131,7 @@
         "hatás": [
           "Rövid távú futásnál Gyorsaság próbára +2 bónusz jár."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -1164,7 +1168,7 @@
         "hatás": [
           "A gyors lopakodás Mozgás célszám levonása rád nem érvényes."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Lopakodás/Rejtőzés",
@@ -1196,7 +1200,9 @@
         "hatás": [
           "Beszéd szájról olvasása szituációban az Érzékenység Tulajdonságpróba Célszámára -3 módosítót kapsz."
         ],
-        "követelmény": "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája.",
+        "követelmény": [
+          "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája."
+        ],
         "követelmények": [
           {
             "név": "Nyelvismeret",
@@ -1239,7 +1245,7 @@
         "hatás": [
           "Gyors átöltözés és szegényes felszerelés büntetéseit 3-mal csökkentheted."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Álcázás/Álruha",
@@ -1254,7 +1260,7 @@
         "hatás": [
           "Gyors átöltözés és szegényes felszerelés büntetéseit 6-tal csökkentheted."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Álcázás/Álruha",
@@ -1288,7 +1294,7 @@
           "Bármilyen áldatlan körülmények között is alszol, ugyanúgy ki tudod pihenni magad.",
           "Edzettség x 5 napig bírod élelem nélkül (víz nélkül nem)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -1318,7 +1324,7 @@
           "Már dobhatsz Lexikum próbát történelmi témában.",
           "Ősi kultúrák nélkül a világtörténelem ismerete."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -1328,7 +1334,7 @@
           "A Lexikum próbát +2 bónusszal dobhatod történelmi témában.",
           "Magában foglalja az ősi kultúrák ismeretét is (csak történelmüket és legendáikat)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -1365,7 +1371,7 @@
         "hatás": [
           "Nem tudsz úszni. Elmerülsz, fuldokolsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -1374,7 +1380,7 @@
         "hatás": [
           "Tudsz úszni."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -1384,7 +1390,7 @@
           "Tudsz úszni.",
           "Hosszú távú úszás esetén Edzettség próbára: +2."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -1421,7 +1427,7 @@
         "hatás": [
           "+2 bónusz csoportos Lexikum értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Lexikum",
@@ -1447,7 +1453,7 @@
         "hatás": [
           "+4 bónusz csoportos Lexikum értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Lexikum",
@@ -1490,7 +1496,7 @@
         "hatás": [
           "+2 bónusz csoportos Hajózás értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Hajózás",
@@ -1516,7 +1522,7 @@
         "hatás": [
           "+4 bónusz csoportos Hajózás értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Hajózás",
@@ -1559,7 +1565,7 @@
         "hatás": [
           "+2 bónusz csoportos Nyomozás értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Nyomozás",
@@ -1585,7 +1591,7 @@
         "hatás": [
           "+4 bónusz csoportos Nyomozás értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Nyomozás",
@@ -1628,7 +1634,7 @@
         "hatás": [
           "+2 bónusz csoportos Orvoslás értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Orvoslás",
@@ -1654,7 +1660,7 @@
         "hatás": [
           "+4 bónusz csoportos Orvoslás értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Orvoslás",
@@ -1697,7 +1703,7 @@
         "hatás": [
           "+2 bónusz csoportos Előadóművészet értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Előadóművészet",
@@ -1723,7 +1729,7 @@
         "hatás": [
           "+4 bónusz csoportos Előadóművészet értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Előadóművészet",
@@ -1766,7 +1772,7 @@
         "hatás": [
           "+2 bónusz csoportos Kvantikum értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Kvantikum",
@@ -1792,7 +1798,7 @@
         "hatás": [
           "+4 bónusz csoportos Kvantikum értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Kvantikum",
@@ -1835,7 +1841,7 @@
         "hatás": [
           "Villámgyors keresés kapkodós helyzetekben nullázza az alapeset -3 büntetését."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Észlelés",
@@ -1872,7 +1878,7 @@
         "hatás": [
           "Sietős zárnyitás esetén sem emelkedik a célszám."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Zárnyitás",
@@ -1905,7 +1911,9 @@
           "+2 Hallás Tulajdonságpróbákra.",
           "2x messzebbről meghallasz bármit, mint egy átlagos ember."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -1944,7 +1952,9 @@
           "2x messzebbre látsz, mint egy átlagos ember.",
           "Infralátásra és Ultralátásra is vonatkozik."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -1984,7 +1994,9 @@
           "Olyan próbákat dobhatsz, amelyeket átlag ember nem.",
           "Egyszerre több szagot képes érezni."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -2021,7 +2033,7 @@
         "hatás": [
           "Emberi látás, sötétben nem látsz hőképeket."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -2030,7 +2042,9 @@
         "hatás": [
           "Mintha félhomályban tájékozódnál. Sötét: Félhomály módosítóival harcolsz."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": []
       },
@@ -2039,7 +2053,9 @@
         "hatás": [
           "Ha van hőkép-eltérés, látod a sötétben. Harcban nem jár levonás."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": []
       }
@@ -2066,7 +2082,9 @@
           "Mindig tudod, érzed, merre van észak.",
           "Magassági tájékozódásra nem alkalmas (fel/le)."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": []
       }
@@ -2093,7 +2111,9 @@
           "Mintha telihold fényénél tájékozódnál vaksötétben.",
           "Sötét: Félhomály módosítóival harcolhatsz."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": []
       },
@@ -2103,7 +2123,9 @@
           "Harcban nem jár levonás. Mintha szürkületkor tájékozódnál.",
           "Vaksötétben tudsz olvasni, de lassan."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": []
       },
@@ -2113,7 +2135,9 @@
           "Tökéletesen látsz, mintha nappal lenne.",
           "Úgy tudsz olvasni, mint napvilágnál."
         ],
-        "követelmény": "Kapcsolódó Faj Háttér szükséges.",
+        "követelmény": [
+          "Kapcsolódó Faj Háttér szükséges."
+        ],
         "követelmények": [],
         "módosítók": []
       }
@@ -2139,7 +2163,7 @@
         "hatás": [
           "Alakzat támadó bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2160,7 +2184,7 @@
         "hatás": [
           "Alakzat támadó bónuszai 2.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2198,7 +2222,7 @@
         "hatás": [
           "Alakzat védekező bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2219,7 +2243,7 @@
         "hatás": [
           "Alakzat védekező bónuszai 2.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2260,7 +2284,9 @@
         "hatás": [
           "Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2` olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod."
         ],
-        "követelmény": "A társak is ismerjék az adott alakzatot + Alakzat függő, lásd azok leírását!",
+        "követelmény": [
+          "A társak is ismerjék az adott alakzatot + Alakzat függő, lásd azok leírását!"
+        ],
         "követelmények": [],
         "módosítók": []
       },
@@ -2269,7 +2295,9 @@
         "hatás": [
           "Az Alakzatharc fortélyt akárhányszor felveheted. Ilyenkor választhatsz `2` olyan alakzatot, melyek megtanulásának követelményeit teljesíteni tudod."
         ],
-        "követelmény": "A társak is ismerjék az adott alakzatot + Alakzat függő, lásd azok leírását!",
+        "követelmény": [
+          "A társak is ismerjék az adott alakzatot + Alakzat függő, lásd azok leírását!"
+        ],
         "követelmények": [],
         "módosítók": []
       }
@@ -2296,7 +2324,7 @@
           "Hajítás alkalmatlan fegyverrel harci helyzet büntetései csökkennek: Hátrány-1 Sebzésdobásra és CÉ dobásra.",
           "A fegyver harcértéke nem változik (CÉ=0)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2340,7 +2368,7 @@
           "Hajítás alkalmatlan fegyverrel harci helyzet büntetései nem sújtanak.",
           "A fegyver harcértéke nem változik (CÉ=0)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2401,7 +2429,7 @@
           "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
           "A tárgy harcértéke nem változik."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Hajítás",
@@ -2434,7 +2462,7 @@
           "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
           "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Hajítás",
@@ -2481,7 +2509,7 @@
       {
         "fok": 1,
         "hatás": [],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Közelharc",
@@ -2519,7 +2547,7 @@
       {
         "fok": 2,
         "hatás": [],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Közelharc",
@@ -2576,7 +2604,7 @@
         "hatás": [
           "1 ÉP forgatható át FP ponttá sebesüléskor."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Fájdalomtűrés",
@@ -2591,7 +2619,7 @@
         "hatás": [
           "2 ÉP forgatható át FP ponttá sebesüléskor."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Fájdalomtűrés",
@@ -2623,7 +2651,7 @@
         "hatás": [
           "Roham taktika esetén: KÉ:+5, erőbónusz duplázódik."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2677,7 +2705,7 @@
         "hatás": [
           "Fárasztás taktika alkalmazásakor: extra +1 VÉ csökkentés bónusz az ellenfélen."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2722,7 +2750,7 @@
       {
         "fok": 1,
         "hatás": [],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2750,7 +2778,7 @@
       {
         "fok": 2,
         "hatás": [],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2797,7 +2825,7 @@
         "hatás": [
           "Szörnyeteg elleni harc szituációban: VÉ:+3 bónusz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2844,7 +2872,7 @@
         "hatás": [
           "Közönség előtt szituációban: TÉ:+3 bónusz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -2891,7 +2919,7 @@
         "hatás": [
           "KÉ:+2 bónusz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -2909,7 +2937,7 @@
         "hatás": [
           "KÉ:+4 bónusz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -2927,7 +2955,7 @@
         "hatás": [
           "KÉ:+6 bónusz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -2962,7 +2990,7 @@
         "hatás": [
           "Helyhez kötve harci helyzet teljes büntetése sújt."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -2971,7 +2999,7 @@
         "hatás": [
           "Helyhez kötve harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt!"
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3001,7 +3029,7 @@
         "hatás": [
           "Helyhez kötve harci helyzet: Hátrány-1 TÉ dobásra sem sújt már."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3048,7 +3076,7 @@
         "hatás": [
           "Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Akrobatika",
@@ -3089,7 +3117,7 @@
           "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez.",
           "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Akrobatika",
@@ -3148,7 +3176,7 @@
           "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 3-mal csökken."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3196,7 +3224,7 @@
           "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 6-mal csökken."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3250,7 +3278,7 @@
           "Visszafogott taktika TÉ büntetés: 9-mal csökken.",
           "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3319,7 +3347,7 @@
           "Harci szekér szituációban: TÉ/VÉ: +8.",
           "Harci taktikák használhatóak."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Kocsihajtás",
@@ -3360,7 +3388,7 @@
           "Harci szekér szituációban: TÉ/VÉ: +12.",
           "Harci taktikák használhatóak."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Kocsihajtás",
@@ -3418,7 +3446,7 @@
           "+1 Harckeret.",
           "+1 KÉ."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3457,7 +3485,7 @@
           "+2 Harckeret.",
           "+2 KÉ."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3496,7 +3524,7 @@
           "+3 Harckeret.",
           "+3 KÉ."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3551,7 +3579,7 @@
         "hatás": [
           "Minden kör elején visszanyersz: 1 VÉ (kivéve ami sebesülésből)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3572,7 +3600,7 @@
         "hatás": [
           "Minden kör elején visszanyersz: 2 VÉ (kivéve ami sebesülésből)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3593,7 +3621,9 @@
         "hatás": [
           "Visszanyersz: 2 VÉ + minden előző harci körben elvesztett VÉ-t is."
         ],
-        "követelmény": "Teljes Védekezés Taktika alkalmazása folyamatosan.",
+        "követelmény": [
+          "Teljes Védekezés Taktika alkalmazása folyamatosan."
+        ],
         "követelmények": [
           {
             "név": [
@@ -3631,7 +3661,7 @@
         "hatás": [
           "Fegyver+Hárítófegyver fogásnál: hárítófegyver VÉ bónusza nem érvényesül."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -3650,7 +3680,7 @@
           "Mesterfegyver fortély VÉ bónusza is beszámít.",
           "A hárítófegyverrel nem támadhatsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -3677,7 +3707,7 @@
           "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen.",
           "Egy körben legfeljebb 1x alkalmazható."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3699,7 +3729,7 @@
           "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen.",
           "Egy körben legfeljebb 2x alkalmazható."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -3739,7 +3769,9 @@
           "Fegyver harcértékek összeadódnak.",
           "Mesterfegyver fortélyok NEM számítanak."
         ],
-        "követelmény": "Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint.",
+        "követelmény": [
+          "Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -3759,7 +3791,9 @@
           "Fegyver harcértékek összeadódnak.",
           "Mf: csak a nagyobb fegyveré számít."
         ],
-        "követelmény": "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint.",
+        "követelmény": [
+          "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -3779,7 +3813,9 @@
           "Fegyver harcértékek összeadódnak.",
           "Mf: mindkét fegyveré számít."
         ],
-        "követelmény": "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint.",
+        "követelmény": [
+          "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -3814,7 +3850,7 @@
         "hatás": [
           "Rosszabbik kézben tartott fegyver harci helyzet levonásai sújtanak."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -3825,7 +3861,7 @@
           "Harckeret: +1 bónusz ha kétkezes harcban vagy (min. 1.fok Kétkezes harc + két fegyver).",
           "Páros kétkezes hajításnál csak az egyik CÉ dobásra jár Hátrány-1."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -3868,7 +3904,9 @@
           "Áldozat: Fájdalomtűrés + Önuralom próba (Célszám: Harci anatómia fokától függ: 9/12/15).",
           "Rontott próba: Indulat(1) Harag vagy Félelem(1) Szorongás Státusz."
         ],
-        "követelmény": "Egykezes szúró-vágó-ostor fegyver. Harci anatómia: 1.fok. Sikeres Precíz támadás manőver.",
+        "követelmény": [
+          "Egykezes szúró-vágó-ostor fegyver. Harci anatómia: 1.fok. Sikeres Precíz támadás manőver."
+        ],
         "követelmények": [],
         "módosítók": []
       }
@@ -3894,7 +3932,7 @@
         "hatás": [
           "Szándékos kitérés lövés elől szituációban Akrobatika próbára +2 bónusz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -3921,7 +3959,9 @@
           "Orvtámadás harci helyzetet nem alkalmazhatják ellened harc közben.",
           "Nem kapják meg a Hátulról támadás módosítóit."
         ],
-        "követelmény": "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2).",
+        "követelmény": [
+          "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2)."
+        ],
         "követelmények": [],
         "módosítók": []
       }
@@ -3948,7 +3988,7 @@
           "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -3981,7 +4021,7 @@
           "Léglovas harc szituációban: TÉ:+6, VÉ:+6.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -4014,7 +4054,7 @@
           "TÉ:+9, VÉ:+9 léglovas bónusz.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -4064,7 +4104,7 @@
           "Lovas harc szituációban: TÉ:+3, VÉ:+3.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4108,7 +4148,7 @@
           "Lovas harc szituációban: TÉ:+6, VÉ:+6.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4152,7 +4192,7 @@
           "TÉ:+9, VÉ:+9 lovas bónusz.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4212,7 +4252,7 @@
         "hatás": [
           "Merevvért viselésénél: teljes TÉ büntetés érvényesül (TÉ levonás = MGT)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -4229,7 +4269,7 @@
         "hatás": [
           "Merevvérted TÉ büntetése ennyivel enyhül: -5."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4257,7 +4297,7 @@
         "hatás": [
           "Merevvérted TÉ büntetése ennyivel enyhül: -10."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4286,7 +4326,7 @@
           "Merevvérted TÉ büntetése ennyivel enyhül: -15.",
           "Merevvért viselése esetén VÉ:+3 (ha lefedettség min. 70%)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4350,7 +4390,7 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +1."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4404,7 +4444,7 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +2."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4458,7 +4498,7 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +3."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4529,7 +4569,7 @@
         "hatás": [
           "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+1."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4567,7 +4607,7 @@
         "hatás": [
           "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+2."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4605,7 +4645,7 @@
         "hatás": [
           "Orvtámadáskor Előny+2 Sebzés dobásra, SP:+3."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4660,7 +4700,7 @@
         "hatás": [
           "Fegyver+Pajzs fogásnál: pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -4678,7 +4718,7 @@
           "Teljes pajzs VÉ aktív.",
           "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4714,7 +4754,7 @@
           "TÉ levonás: Kis:-0, Közepes:-0, Nagy:-3.",
           "Fegyverrel VAGY pajzzsal külön támadhatsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4750,7 +4790,7 @@
           "VÉ:+2 minden pajzshoz.",
           "Fegyverrel VAGY pajzzsal külön támadhatsz."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4814,7 +4854,7 @@
           "Páros harc szituációban: TÉ, VÉ: +2.",
           "1:1 harcban KÉ:+1 (többnél nem jár)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4861,7 +4901,7 @@
           "Páros harc szituációban: TÉ, VÉ: +4.",
           "1:2 harcig KÉ:+1 (többnél nem jár)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4908,7 +4948,7 @@
           "TÉ, VÉ: +6.",
           "1:3 harcig KÉ:+1 (többnél nem jár)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4971,7 +5011,7 @@
         "hatás": [
           "Legfeljebb +4 SP (TÉ:-4) pakolható át."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -4990,7 +5030,7 @@
         "hatás": [
           "Legfeljebb +6 SP (TÉ:-6) pakolható át."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -5026,7 +5066,7 @@
         "hatás": [
           "Puszta kéz sebzése: -5+k20."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -5045,7 +5085,9 @@
         "hatás": [
           "Puszta kéz sebzése: 1+k20 (az alap -5+k20 helyett)."
         ],
-        "követelmény": "Faj Háttér ahol ajánlott a Természetes fegyver.",
+        "követelmény": [
+          "Faj Háttér ahol ajánlott a Természetes fegyver."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -5080,7 +5122,9 @@
         "hatás": [
           "SFÉ: +3"
         ],
-        "követelmény": "Faj Háttér ahol ajánlott a Természetes páncél min. 1.fok.",
+        "követelmény": [
+          "Faj Háttér ahol ajánlott a Természetes páncél min. 1.fok."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -5098,7 +5142,9 @@
         "hatás": [
           "SFÉ: +6"
         ],
-        "követelmény": "Faj Háttér ahol ajánlott a Természetes páncél min. 2.fok.",
+        "követelmény": [
+          "Faj Háttér ahol ajánlott a Természetes páncél min. 2.fok."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -5116,7 +5162,9 @@
         "hatás": [
           "SFÉ: +9"
         ],
-        "követelmény": "Faj Háttér ahol ajánlott a Természetes páncél min. 3.fok.",
+        "követelmény": [
+          "Faj Háttér ahol ajánlott a Természetes páncél min. 3.fok."
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -5151,7 +5199,7 @@
         "hatás": [
           "Védő Érték kiterjesztése másra harci helyzet teljes büntetése sújt."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -5170,7 +5218,7 @@
         "hatás": [
           "Védő Érték kiterjesztése másra harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt! A többi igen."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -5200,7 +5248,7 @@
         "hatás": [
           "Védő Érték kiterjesztése másra harci helyzet: büntetések nélkül védheted pártfogoltad."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -5255,7 +5303,7 @@
         "hatás": [
           "Sötétben - teljes, csendben harci helyzet: Érzékvesztés-teljes Státusz (Látás) sújt."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -5265,7 +5313,7 @@
           "Érzék(látás) Tulajdonságpróba büntetés 1 fokot enyhül.",
           "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -5285,7 +5333,7 @@
           "Érzék(látás) Tulajdonságpróba büntetés 2 fokot enyhül.",
           "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból + Támadó TÉ Előnyből."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -5306,7 +5354,7 @@
           "Láthatatlan ellenfélnél: mindent megszüntet.",
           "Túlterhelt érzékek esetén is működik."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -5342,7 +5390,7 @@
         "hatás": [
           "+2 bónusz az Alakzatszintre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Alakzatharc",
@@ -5362,7 +5410,7 @@
         "hatás": [
           "+4 bónusz az Alakzatszintre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Alakzatharc",
@@ -5401,7 +5449,7 @@
         "hatás": [
           "+2 bónusz csoportos Lopakodás/Rejtőzés értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Lopakodás/Rejtőzés",
@@ -5416,7 +5464,7 @@
         "hatás": [
           "+4 bónusz csoportos Lopakodás/Rejtőzés értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Lopakodás/Rejtőzés",
@@ -5450,7 +5498,7 @@
         "hatás": [
           "+2 bónusz az Alakzatszintre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -5468,7 +5516,7 @@
         "hatás": [
           "+4 bónusz az Alakzatszintre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -5505,7 +5553,7 @@
         "hatás": [
           "+2 bónusz az Alakzatszintre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -5525,7 +5573,7 @@
         "hatás": [
           "+4 bónusz az Alakzatszintre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -5564,7 +5612,7 @@
         "hatás": [
           "+2 bónusz az Alakzatszintre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Lovaglás",
@@ -5584,7 +5632,7 @@
         "hatás": [
           "+4 bónusz az Alakzatszintre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Lovaglás",
@@ -5623,7 +5671,7 @@
         "hatás": [
           "+2 bónusz csoportos Észlelés értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": [
@@ -5649,7 +5697,7 @@
         "hatás": [
           "+4 bónusz csoportos Észlelés értékre."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [
           {
             "név": "Alakzatharc",
@@ -5688,7 +5736,7 @@
           "Csak 1. TSz-en vehető fel.",
           "+6 KP bónusz (primer ismeretekre is fordítható)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -5716,7 +5764,7 @@
           "+18 KP bónusz.",
           "ÉP Alap: -20, Edzettség szorzó: x2. Képlet: ÉP = 8 + (Edzettség x 2)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -5749,7 +5797,7 @@
           "Minden 2. TSz-en kapsz egyet ingyen (1, 3, 5, 7...).",
           "Kaland végén a KM is adhat ingyen."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -5814,7 +5862,7 @@
           "Minden 2. TSz-en kapsz egyet ingyen (1, 3, 5, 7...).",
           "Kiterjesztett képzettségekre nincs levonás az adott kultúrkörben."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -5840,7 +5888,7 @@
         "hatás": [
           "ÉP = 48 + (Edzettség x 6)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -5849,7 +5897,7 @@
         "hatás": [
           "ÉP = 68 + (Edzettség x 8)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -5858,7 +5906,7 @@
         "hatás": [
           "ÉP = 88 + (Edzettség x 10)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -5884,7 +5932,7 @@
         "hatás": [
           "Alap szint: hétköznapi beszéd. Írás/olvasás (ha nem analfabéta)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -5894,7 +5942,7 @@
           "Udvari szint: nemesi, egyházi, hivatali, művészi beszéd.",
           "Előadóművészet és irodalom számára követelmény."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -5922,7 +5970,7 @@
           "Csak 1. TSz-en vehető fel.",
           "+12 KP bónusz (primer ismeretekre is fordítható)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -5948,7 +5996,7 @@
         "hatás": [
           "+6 KP bónusz. Pl: 1 kar használhatatlan."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -5957,7 +6005,7 @@
         "hatás": [
           "+12 KP bónusz. Pl: erősen korlátozott járás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -5966,7 +6014,7 @@
         "hatás": [
           "+18 KP bónusz. Pl: teljes rokkantság."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -5994,7 +6042,7 @@
           "Csak 1. TSz-en vehető fel.",
           "+18 KP bónusz (primer ismeretekre is fordítható)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6020,7 +6068,7 @@
         "hatás": [
           "⭕TODO: Hatás kidolgozandó."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6048,7 +6096,7 @@
         "hatás": [
           "Dobhatsz Lexikum képzettségpróbát egyes lények ismeretére."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6076,7 +6124,7 @@
         "hatás": [
           "Dobhatsz Lexikum képzettségpróbát egyes lények ismeretére."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6102,7 +6150,7 @@
         "hatás": [
           "Mágiatáv II jellemzőivel tudsz távolba ható mágiát végezni."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -6111,7 +6159,7 @@
         "hatás": [
           "Mágiatáv III jellemzőivel tudsz távolba ható mágiát végezni."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -6120,7 +6168,7 @@
         "hatás": [
           "Mágiatáv IV jellemzőivel tudsz távolba ható mágiát végezni."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6146,7 +6194,7 @@
         "hatás": [
           "Komplexitás - Mozgatás esetén -3 Nehézség könnyítés."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -6155,7 +6203,7 @@
         "hatás": [
           "Komplexitás - Mozgatás esetén -6 Nehézség könnyítés."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6182,7 +6230,7 @@
           "Egy konkrét személy felé kiépített Mentálfonál.",
           "Telepátia alkalmazásakor nem szükséges látniuk egymást — korlátlan távolság."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6208,7 +6256,7 @@
         "hatás": [
           "Kiszámíthatatlan Szorzó: 4x. Harcoló Szorzó: 5x."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -6217,7 +6265,7 @@
         "hatás": [
           "Kiszámíthatatlan Szorzó: 3x. Harcoló Szorzó: 4x."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6243,7 +6291,7 @@
         "hatás": [
           "Apró tárgyak lassú mozgatása."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -6252,7 +6300,7 @@
         "hatás": [
           "Kard, sisak méretű tárgyak lassú mozgatása."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -6261,7 +6309,7 @@
         "hatás": [
           "Láda méretű tárgyak lassú mozgatása."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6287,7 +6335,7 @@
         "hatás": [
           "Képes vagy üzenetet fogadni."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -6297,7 +6345,7 @@
           "Képes vagy üzenetet küldeni (fogadónak min. 1.fok kell).",
           "Harcban nem alkalmazható."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -6306,7 +6354,7 @@
         "hatás": [
           "Harc közben is képes vagy üzenni (Szabad cselekedettként, 1x/kör)."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6335,7 +6383,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6363,7 +6411,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6393,7 +6441,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6422,7 +6470,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6452,7 +6500,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6480,7 +6528,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6508,7 +6556,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6534,7 +6582,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6563,7 +6611,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6591,7 +6639,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6620,7 +6668,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6648,7 +6696,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6677,7 +6725,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6706,7 +6754,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6735,7 +6783,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6763,7 +6811,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6791,7 +6839,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6819,7 +6867,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6847,7 +6895,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6875,7 +6923,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6903,7 +6951,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6931,7 +6979,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6959,7 +7007,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -6987,7 +7035,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7015,7 +7063,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7043,7 +7091,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7071,7 +7119,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7099,7 +7147,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7127,7 +7175,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7155,7 +7203,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7183,7 +7231,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7212,7 +7260,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7238,7 +7286,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7267,7 +7315,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7296,7 +7344,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7325,7 +7373,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7353,7 +7401,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7382,7 +7430,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7412,7 +7460,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7441,7 +7489,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7473,7 +7521,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7505,7 +7553,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7537,7 +7585,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7569,7 +7617,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7601,7 +7649,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7633,7 +7681,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7665,7 +7713,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7697,7 +7745,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7727,7 +7775,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7756,7 +7804,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7786,7 +7834,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7816,7 +7864,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7846,7 +7894,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7874,7 +7922,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7903,7 +7951,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7932,7 +7980,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7961,7 +8009,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -7989,7 +8037,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -8017,7 +8065,7 @@
         "hatás": [
           "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       }
@@ -8043,7 +8091,9 @@
         "hatás": [
           "Hajítófegyvered Sebesség értéke `1`-gyel csökken."
         ],
-        "követelmény": "Hajítás 5.szint",
+        "követelmény": [
+          "Hajítás 5.szint"
+        ],
         "követelmények": [
           {
             "név": "Hajítás",
@@ -8075,7 +8125,9 @@
         "hatás": [
           "Íjad Sebesség értéke `1`-gyel csökken."
         ],
-        "követelmény": "Íjászat 5.szint",
+        "követelmény": [
+          "Íjászat 5.szint"
+        ],
         "követelmények": [
           {
             "név": "Íjászat",
@@ -8107,7 +8159,7 @@
         "hatás": [
           "Nyílpuskával csak minden `2.` körben lehetséges lőni."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -8116,7 +8168,9 @@
         "hatás": [
           "Minden körben tudsz `1x` lőni, ha Mozgásodat becseréled újratöltésre."
         ],
-        "követelmény": "Lövészet 6.szint",
+        "követelmény": [
+          "Lövészet 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Lövészet",
@@ -8131,7 +8185,9 @@
         "hatás": [
           "Minden körben tudsz `1x` lőni, Mozgás szabadon elhasználható mellette."
         ],
-        "követelmény": "Lövészet 9.szint",
+        "követelmény": [
+          "Lövészet 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Lövészet",
@@ -8163,7 +8219,7 @@
         "hatás": [
           "Célzás körülményben: `1` kör célzás után `+3 CÉ` módosító."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -8181,7 +8237,12 @@
         "hatás": [
           "Célzás körülményben: `1` kör célzás után `+7 CÉ` módosító."
         ],
-        "követelmény": "",
+        "követelmény": [
+          "Csak kiszámíthatóan mozgó cél ellen",
+          "Íjakkal és lőfegyverekkel végezhető",
+          "Íj max `1` körig tartható ki",
+          "`1 kör` után minden plusz kör `CÉ:-3` büntetés (körönként)"
+        ],
         "követelmények": [
           {
             "név": [
@@ -8225,7 +8286,7 @@
         "hatás": [
           "Lassú futás közben `+2x` Szorzó büntetés a célpont VÉ kiszámításánál."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -8234,7 +8295,9 @@
         "hatás": [
           "Lassú futás közben csak `+1x` Szorzó büntetés a célpont `VÉ` kiszámításánál."
         ],
-        "követelmény": "Távolsági harcmodor 5.szint",
+        "követelmény": [
+          "Távolsági harcmodor 5.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -8270,7 +8333,7 @@
         "hatás": [
           "Lovas harc körülményben: CÉ levonás: Léptetés:`-3`, Ügetés:`-7`, Vágta:`-13`."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -8289,7 +8352,9 @@
         "hatás": [
           "Lovas harc körülményben: CÉ:`-3` ügetésben, CÉ:`-7` vágtában."
         ],
-        "követelmény": "Lovaglás 6.szint, Távolsági harcmodor 5.szint, Mesterfegyver 1.fok, Lovas harc 2.fok",
+        "követelmény": [
+          "Lovaglás 6.szint, Távolsági harcmodor 5.szint, Mesterfegyver 1.fok, Lovas harc 2.fok"
+        ],
         "követelmények": [
           {
             "név": [
@@ -8325,7 +8390,9 @@
         "hatás": [
           "Lovas harc körülményben: CÉ:`-3` vágtában."
         ],
-        "követelmény": "Lovaglás 9.szint, Távolsági harcmodor 9.szint, Mesterfegyver 2.fok, Lovas harc 3.fok",
+        "követelmény": [
+          "Lovaglás 9.szint, Távolsági harcmodor 9.szint, Mesterfegyver 2.fok, Lovas harc 3.fok"
+        ],
         "követelmények": [
           {
             "név": [
@@ -8378,7 +8445,7 @@
         "hatás": [
           "Hirtelen lövésnél a CÉ-t `-7` levonás sújtja."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": [
           {
@@ -8397,7 +8464,9 @@
         "hatás": [
           "Hirtelen lövés CÉ levonása nem sújt."
         ],
-        "követelmény": "Gyorsaság +1, Távolsági harcmodor 5.szint",
+        "követelmény": [
+          "Gyorsaság +1, Távolsági harcmodor 5.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -8433,7 +8502,9 @@
         "hatás": [
           "Cella értékre `-1` levonás, ha olyan célra lősz, ahol Cella `≥ 5`."
         ],
-        "követelmény": "Lövészet 5.szint",
+        "követelmény": [
+          "Lövészet 5.szint"
+        ],
         "követelmények": [
           {
             "név": "Lövészet",
@@ -8465,7 +8536,7 @@
         "hatás": [
           "Kiszámíthatatlan célpont: `4x` Szorzó. Harcoló célpont: `5x` Szorzó."
         ],
-        "követelmény": "",
+        "követelmény": [],
         "követelmények": [],
         "módosítók": []
       },
@@ -8474,7 +8545,9 @@
         "hatás": [
           "Kiszámíthatatlan célpont: `3x` Szorzó. Harcoló célpont: `4x` Szorzó."
         ],
-        "követelmény": "Távolsági harcmodor 5.szint",
+        "követelmény": [
+          "Távolsági harcmodor 5.szint"
+        ],
         "követelmények": [
           {
             "név": [

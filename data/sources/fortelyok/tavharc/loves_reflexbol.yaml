@@ -24,7 +24,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Hirtelen lövésnél a CÉ-t `-7` levonás sújtja."
@@ -37,7 +37,8 @@ fokok:
         feltétel: ""
         megjegyzés: "Alapeset: hirtelen lövés CÉ levonás"
   - fok: 1
-    követelménytext: "Gyorsaság +1, Távolsági harcmodor 5.szint"
+    követelménytext:
+      - text: "Gyorsaság +1, Távolsági harcmodor 5.szint"
     követelmények:
       - név: ["Íjászat", "Lövészet", "Hajítás"]
         érték: 5

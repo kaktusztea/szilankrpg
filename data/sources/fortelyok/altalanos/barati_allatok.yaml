@@ -24,7 +24,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Az állatok, állati intelligenciájú élőlények alapból enyhe rokonszenvvel viseltetnek irányodban. Nem provokálva békén hagynak."

@@ -24,19 +24,19 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "ÉP = 48 + (Edzettség x 6)."
     módosítók: ""
   - fok: 2
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "ÉP = 68 + (Edzettség x 8)."
     módosítók: ""
   - fok: 3
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "ÉP = 88 + (Edzettség x 10)."

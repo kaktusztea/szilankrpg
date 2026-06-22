@@ -19,7 +19,7 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 1
-  követelménytext: ""
+  követelménytext: []
   követelmények:
   - név: ["közelharc", "kardvívás", "rombolás", "lándzsavívás", "ostorharc"]
     érték: 4
@@ -29,7 +29,7 @@ fokok:
   - text: "Egy körben legfeljebb 1x alkalmazható."
   módosítók: ""
 - fok: 2
-  követelménytext: ""
+  követelménytext: []
   követelmények:
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 8

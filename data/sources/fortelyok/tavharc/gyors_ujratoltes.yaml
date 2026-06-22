@@ -24,13 +24,14 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Nyílpuskával csak minden `2.` körben lehetséges lőni."
     módosítók: ""
   - fok: 1
-    követelménytext: "Lövészet 6.szint"
+    követelménytext:
+      - text: "Lövészet 6.szint"
     követelmények:
       - név: "Lövészet"
         érték: 6
@@ -39,7 +40,8 @@ fokok:
       - text: "Minden körben tudsz `1x` lőni, ha Mozgásodat becseréled újratöltésre."
     módosítók: ""
   - fok: 2
-    követelménytext: "Lövészet 9.szint"
+    követelménytext:
+      - text: "Lövészet 9.szint"
     követelmények:
       - név: "Lövészet"
         érték: 9

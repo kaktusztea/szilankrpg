@@ -19,13 +19,13 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: ""
+  követelménytext: []
   követelmények: ""
   hatástext: 
   - text: "Dobhatsz alap szinten Kézművesség képzettségre páncél kovácsolásakor."
   módosítók: ""
 - fok: 2
-  követelménytext: ""
+  követelménytext: []
   követelmények: ""
   hatástext: 
   - text: "+2 bónusszal dobhatsz Kézművesség képzettségre páncél kovácsolásakor."

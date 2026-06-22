@@ -24,7 +24,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Fegyver+Hárítófegyver fogásnál: hárítófegyver VÉ bónusza nem érvényesül."
@@ -35,7 +35,7 @@ fokok:
         feltétel: "fegyverfogás:fegyver_hárító"
         megjegyzés: "Alapeset: hárítófegyver VÉ nem aktív"
   - fok: 1
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Megkapod a gyengébb kezedben forgatott hárítófegyver VÉ értékét pluszban."

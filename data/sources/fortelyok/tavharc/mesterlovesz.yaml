@@ -24,7 +24,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: "Lövészet 5.szint"
+    követelménytext:
+      - text: "Lövészet 5.szint"
     követelmények:
       - név: "Lövészet"
         érték: 5

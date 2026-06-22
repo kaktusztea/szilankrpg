@@ -25,7 +25,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Célzás körülményben: `1` kör célzás után `+3 CÉ` módosító."
@@ -37,7 +37,11 @@ fokok:
         arány: 0
         feltétel: "harci_helyzet:célzás"
   - fok: 1
-    követelménytext: ""
+    követelménytext:
+      - text: "Csak kiszámíthatóan mozgó cél ellen"
+      - text: "Íjakkal és lőfegyverekkel végezhető"
+      - text: "Íj max `1` körig tartható ki"
+      - text: "`1 kör` után minden plusz kör `CÉ:-3` büntetés (körönként)"
     követelmények:
       - név: ["Íjászat", "Lövészet"]
         érték: 5

@@ -19,7 +19,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 1
-  követelménytext: Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint.
+  követelménytext:
+    - text: "Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint."
   követelmények: ''
   hatástext:
   - text: 'Harckeret: +2.'
@@ -33,7 +34,8 @@ fokok:
     arány: 0
     feltétel: fegyverfogás:kétkezes
 - fok: 2
-  követelménytext: Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint.
+  követelménytext:
+    - text: "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint."
   követelmények: ''
   hatástext:
   - text: 'Harckeret: +3.'
@@ -47,7 +49,8 @@ fokok:
     arány: 0
     feltétel: fegyverfogás:kétkezes
 - fok: 3
-  követelménytext: Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint.
+  követelménytext:
+    - text: "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint."
   követelmények: ''
   hatástext:
   - text: 'Harckeret: +4.'

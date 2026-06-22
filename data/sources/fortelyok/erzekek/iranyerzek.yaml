@@ -24,7 +24,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelménytext:
+      - text: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
       - text: "Mindig tudod, érzed, merre van észak."

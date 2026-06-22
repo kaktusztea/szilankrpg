@@ -24,13 +24,13 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Komplexitás - Mozgatás esetén -3 Nehézség könnyítés."
     módosítók: ""
   - fok: 2
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Komplexitás - Mozgatás esetén -6 Nehézség könnyítés."

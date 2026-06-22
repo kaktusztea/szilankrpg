@@ -24,19 +24,19 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "+6 KP bónusz. Pl: 1 kar használhatatlan."
     módosítók: ""
   - fok: 2
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "+12 KP bónusz. Pl: erősen korlátozott járás."
     módosítók: ""
   - fok: 3
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "+18 KP bónusz. Pl: teljes rokkantság."

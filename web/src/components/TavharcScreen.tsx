@@ -75,7 +75,28 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const önuralom = k.tulajdonságok.önuralom ?? 0;
   const fegyverCÉ = parseInt(tfDef?.CÉ ?? '0') || 0;
   const mfCÉ = mfBónusz?.CÉ ?? 0;
-  const cé = céAlap + önuralom + k.CM + harcmodorCÉ + fegyverCÉ + mfCÉ + idea;
+
+  // Feltételes fortély CÉ bónusz (pl. Célzás + Kitartott célzás)
+  const aktívFeltételek = new Set<string>();
+  for (const h of session.aktív_helyzetek) {
+    const def = data.harciHelyzetek.find(d => d.név === h);
+    if (def) aktívFeltételek.add((def as any).feltétel_kulcs);
+  }
+  let fortélyCÉ = 0;
+  for (const def of data.fortelySummaries) {
+    const karakterFok = k.fortélyok.find(f => f.név === def.név)?.fok ?? 0;
+    // 0.fok (kiérdemelt): mindig aktív; magasabb fokok: csak ha a karakter felvette
+    const effFok = Math.max(0, karakterFok);
+    const fokDef = def.fokok.find(f => f.fok === effFok);
+    if (!fokDef?.módosítók) continue;
+    for (const mod of fokDef.módosítók) {
+      if (mod.cél === 'CÉ' && mod.feltétel && aktívFeltételek.has(mod.feltétel)) {
+        fortélyCÉ += mod.érték;
+      }
+    }
+  }
+
+  const cé = céAlap + önuralom + k.CM + harcmodorCÉ + fegyverCÉ + mfCÉ + idea + fortélyCÉ;
 
   // Harckeret / Támadás db
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
@@ -182,7 +203,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             const fCÉ = parseInt(def?.CÉ ?? '0') || 0;
             const mf = getMfFok(tf.alap);
             const mfC = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mf)?.CÉ ?? 0;
-            const cardCÉ = céAlap + önuralom + k.CM + hmCÉ + fCÉ + mfC + idea;
+            const cardCÉ = céAlap + önuralom + k.CM + hmCÉ + fCÉ + mfC + idea + fortélyCÉ;
             const seb = parseInt(def?.Sebesség ?? '-1') || -1;
             const hk = hmSzint + gyorsaság;
             let tám = '—';
@@ -335,6 +356,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           <div>Fegyver Osztó: {osztó}</div>
           <div>MF CÉ bónusz: {mfCÉ}</div>
           <div>Idea CÉ bónusz: {idea}</div>
+          {fortélyCÉ !== 0 && <div>Célzás CÉ bónusz: +{fortélyCÉ}</div>}
           <div>Harcmodor CÉ bónusz: {harcmodorCÉ} ({harcmodorNév} szint:{harcmodorSzint})</div>
           <div>Tulajdonság (Önuralom): {önuralom}</div>
           <div>CM: {k.CM}</div>

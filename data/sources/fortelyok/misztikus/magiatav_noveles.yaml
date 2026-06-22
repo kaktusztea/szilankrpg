@@ -24,19 +24,19 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Mágiatáv II jellemzőivel tudsz távolba ható mágiát végezni."
     módosítók: ""
   - fok: 2
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Mágiatáv III jellemzőivel tudsz távolba ható mágiát végezni."
     módosítók: ""
   - fok: 3
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Mágiatáv IV jellemzőivel tudsz távolba ható mágiát végezni."

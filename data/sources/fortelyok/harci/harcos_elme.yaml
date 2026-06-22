@@ -19,7 +19,7 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
@@ -28,7 +28,7 @@ fokok:
   - text: "Minden kör elején visszanyersz: 1 VÉ (kivéve ami sebesülésből)."
   módosítók: ""
 - fok: 2
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9
@@ -37,7 +37,8 @@ fokok:
   - text: "Minden kör elején visszanyersz: 2 VÉ (kivéve ami sebesülésből)."
   módosítók: ""
 - fok: 3
-  követelménytext: "Teljes Védekezés Taktika alkalmazása folyamatosan."
+  követelménytext:
+    - text: "Teljes Védekezés Taktika alkalmazása folyamatosan."
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 12

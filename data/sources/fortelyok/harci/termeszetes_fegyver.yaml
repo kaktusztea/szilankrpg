@@ -24,7 +24,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Puszta kéz sebzése: -5+k20."
@@ -37,7 +37,8 @@ fokok:
         feltétel: "fegyver:puszta kéz"
         megjegyzés: "Alapeset: képzetlen puszta kéz"
   - fok: 1
-    követelménytext: "Faj Háttér ahol ajánlott a Természetes fegyver."
+    követelménytext:
+      - text: "Faj Háttér ahol ajánlott a Természetes fegyver."
     követelmények: ""
     hatástext:
       - text: "Puszta kéz sebzése: 1+k20 (az alap -5+k20 helyett)."

@@ -24,7 +24,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: "Hajítás 5.szint"
+    követelménytext:
+      - text: "Hajítás 5.szint"
     követelmények:
       - név: "Hajítás"
         érték: 5

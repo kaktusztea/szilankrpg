@@ -19,7 +19,7 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
@@ -28,7 +28,7 @@ fokok:
   - text: "Alakzat védekező bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
   módosítók: ""
 - fok: 2
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9

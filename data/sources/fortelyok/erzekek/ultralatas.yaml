@@ -24,21 +24,24 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelménytext:
+      - text: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
       - text: "Mintha telihold fényénél tájékozódnál vaksötétben."
       - text: "Sötét: Félhomály módosítóival harcolhatsz."
     módosítók: ""
   - fok: 2
-    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelménytext:
+      - text: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
       - text: "Harcban nem jár levonás. Mintha szürkületkor tájékozódnál."
       - text: "Vaksötétben tudsz olvasni, de lassan."
     módosítók: ""
   - fok: 3
-    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelménytext:
+      - text: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
       - text: "Tökéletesen látsz, mintha nappal lenne."

@@ -24,7 +24,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: "Íjászat 5.szint"
+    követelménytext:
+      - text: "Íjászat 5.szint"
     követelmények:
       - név: "Íjászat"
         érték: 5

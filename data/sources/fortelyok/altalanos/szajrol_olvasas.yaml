@@ -19,8 +19,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható\
-    \ legyen a célszemély szája."
+  követelménytext:
+    - text: "Nyelvismeret - Udvari szint (az épp beszélt nyelvre). Jól látható legyen a célszemély szája."
   követelmények: 
   - név: "Nyelvismeret"
     érték: 2

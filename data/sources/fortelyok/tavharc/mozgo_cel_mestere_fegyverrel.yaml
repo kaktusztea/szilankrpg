@@ -24,13 +24,14 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Kiszámíthatatlan célpont: `4x` Szorzó. Harcoló célpont: `5x` Szorzó."
     módosítók: ""
   - fok: 1
-    követelménytext: "Távolsági harcmodor 5.szint"
+    követelménytext:
+      - text: "Távolsági harcmodor 5.szint"
     követelmények:
       - név: ["Íjászat", "Lövészet", "Hajítás"]
         érték: 5

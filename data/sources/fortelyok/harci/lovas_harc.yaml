@@ -19,7 +19,7 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
@@ -44,7 +44,7 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:lovas_harc"
 - fok: 2
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9
@@ -69,7 +69,7 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:lovas_harc"
 - fok: 3
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 12

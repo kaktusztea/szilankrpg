@@ -19,19 +19,19 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 0
-  követelménytext: ""
+  követelménytext: []
   követelmények: ""
   hatástext:
   - text: "Nem tudsz úszni. Elmerülsz, fuldokolsz."
   módosítók: ""
 - fok: 1
-  követelménytext: ""
+  követelménytext: []
   követelmények: ""
   hatástext: 
   - text: "Tudsz úszni."
   módosítók: ""
 - fok: 2
-  követelménytext: ""
+  követelménytext: []
   követelmények: ""
   hatástext: 
   - text: "Tudsz úszni."

@@ -24,13 +24,15 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0                    # 0 == alapeset (ha van)
-    követelménytext: ""       # Szöveges követelmény (nem kalkuláció alapja)
+    követelménytext:            # Szöveges követelmények (nem kalkuláció alapja)
+      - text: ""
     követelmények: ""         # Megengedett: "képzettség", "mesterfegyver". Üres ha nincs.
     hatástext:                # Nem-gépesíthető, narratív hatások szövege
       - text: ""
     módosítók: ""             # Gépesíthető hatások listája. Üres ("") ha nincs.
   - fok: 1
-    követelménytext: ""
+    követelménytext:
+      - text: ""
     követelmények:            # Lista elemei ÉS kapcsolatban. Egy elem "név" mezője ha lista: VAGY kapcsolat (bármelyik teljesíti).
       - név: "harcmodor_neve" # string VAGY lista. Lista = VAGY kapcsolat, pl: ["közelharc", "kardvívás"]
         érték: 0              # képzettség szint

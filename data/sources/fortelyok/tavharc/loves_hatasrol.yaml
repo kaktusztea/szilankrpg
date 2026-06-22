@@ -24,7 +24,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Lovas harc körülményben: CÉ levonás: Léptetés:`-3`, Ügetés:`-7`, Vágta:`-13`."
@@ -37,7 +37,8 @@ fokok:
         feltétel: "harci_helyzet:lovas_harc"
         megjegyzés: "Alapeset: léptetés CÉ levonás"
   - fok: 1
-    követelménytext: "Lovaglás 6.szint, Távolsági harcmodor 5.szint, Mesterfegyver 1.fok, Lovas harc 2.fok"
+    követelménytext:
+      - text: "Lovaglás 6.szint, Távolsági harcmodor 5.szint, Mesterfegyver 1.fok, Lovas harc 2.fok"
     követelmények:
       - név: ["Lovaglás", "Léglovaglás"]
         érték: 6
@@ -55,7 +56,8 @@ fokok:
         arány: 0
         feltétel: "harci_helyzet:lovas_harc"
   - fok: 2
-    követelménytext: "Lovaglás 9.szint, Távolsági harcmodor 9.szint, Mesterfegyver 2.fok, Lovas harc 3.fok"
+    követelménytext:
+      - text: "Lovaglás 9.szint, Távolsági harcmodor 9.szint, Mesterfegyver 2.fok, Lovas harc 3.fok"
     követelmények:
       - név: ["Lovaglás", "Léglovaglás"]
         érték: 9

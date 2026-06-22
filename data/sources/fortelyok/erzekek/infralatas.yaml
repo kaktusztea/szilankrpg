@@ -24,19 +24,21 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 0
-    követelménytext: ""
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Emberi látás, sötétben nem látsz hőképeket."
     módosítók: ""
   - fok: 1
-    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelménytext:
+      - text: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
       - text: "Mintha félhomályban tájékozódnál. Sötét: Félhomály módosítóival harcolsz."
     módosítók: ""
   - fok: 2
-    követelménytext: "Kapcsolódó Faj Háttér szükséges."
+    követelménytext:
+      - text: "Kapcsolódó Faj Háttér szükséges."
     követelmények: ""
     hatástext:
       - text: "Ha van hőkép-eltérés, látod a sötétben. Harcban nem jár levonás."

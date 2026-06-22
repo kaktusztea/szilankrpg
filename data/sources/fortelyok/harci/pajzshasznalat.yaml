@@ -19,7 +19,7 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 0
-  követelménytext: ""
+  követelménytext: []
   követelmények: ""
   hatástext:
   - text: "Fegyver+Pajzs fogásnál: pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
@@ -30,7 +30,7 @@ fokok:
     feltétel: "fegyverfogás:fegyver_pajzs"
     megjegyzés: "Alapeset: képzetlen pajzshasználat"
 - fok: 1
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 3
@@ -47,7 +47,7 @@ fokok:
       operátor: "=="
       érték: "fegyver_pajzs"
 - fok: 2
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 5
@@ -65,7 +65,7 @@ fokok:
       operátor: "=="
       érték: "fegyver_pajzs"
 - fok: 3
-  követelménytext: ""
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 8
