@@ -307,7 +307,7 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
             const bHm = b.név.startsWith('Harcmodor:');
             if (aHm && !bHm) return -1;
             if (bHm && !aHm) return 1;
-            return b.szint - a.szint;
+            return a.név.localeCompare(b.név, 'hu');
           });
           if (gameMode && slotok.length === 0) return null;
           const usedNames = slotok.map(s => s.név);
