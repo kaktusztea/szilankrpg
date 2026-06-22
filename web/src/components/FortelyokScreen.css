@@ -89,6 +89,10 @@
   border-color: #fff;
 }
 
+.fort-dot-hidden {
+  visibility: hidden;
+}
+
 .fort-delete {
   background: none;
   border: none;
