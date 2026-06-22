@@ -53,7 +53,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 
 - **Mobile-first**: 320px szélességtől használható
 - **Két mód**: Szerkesztő mód és Game mód (toggle gomb a fejlécben)
-  - Toggle gomb szín: Szerkesztő=`#ff9800`, Game=`#4caf50` (háttér), szöveg: `#000`, átmenet: 1500ms ease
+  - Toggle gomb szín: Szerkesztő=`#ff9800`, Game=`#4caf50` (háttér), szöveg: `#000`, átmenet: 2000ms ease
 - **Tab navigáció**: alul fix tab bar, horizontálisan scrollozható (minden tab közvetlenül elérhető, nincs "..." menü)
 - **Screen váltás**: jobb-bal swipe gesztussal (mobilon, threshold: 30px), desktop-on tab kattintás
 - **Swipe**: csak horizontális, `Math.abs(dx) > Math.abs(dy)` check
@@ -75,7 +75,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
   - 📅 Napló overlay gomb (mindkét mód)
   - ✏️ Jegyzetek overlay gomb (mindkét mód)
   - ⚙️ Menü gomb (20% szélesebb padding): overlay popup (↩ Visszavonás / 📂 Karakterek / 📋 Duplikál / 💾 Mentés / 📄 Új karakter / Teljes képernyő)
-  - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 1000ms fade
+  - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 2000ms fade
 - ⚙️ menü popup: `.menu-item` gombok (centered szöveg, `padding: 10px 16px`)
   - Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup (iOS/Android specifikus szöveg)
 - Megerősítő popup-ok (Új karakter): overlay, centered, label (bold) + dim szöveg + piros gomb
@@ -301,7 +301,7 @@ Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
 | CÉ: X (Yx) | VÉ: Y | Szorzó × Cella / N × M | Táv: Xm |
 
 - CÉ: fehér szöveg, `Yx` = támadások/kör
-- VÉ: narancssárga (`#ffa726`), piros (`#e53935`) ha lehetetlen találat (VÉ-CÉ > 20)
+- VÉ: zöld (`#4caf50`) ha VÉ ≤ CÉ+1 (tuti találat), narancssárga (`#ffa726`) normál, piros (`#e53935`) ha lehetetlen (VÉ-CÉ > 20)
 - Szorzó×Cella: szürke (`#999`), nem kattintható
 - Táv: zöld keret + zöld érték, kattintható → Távolság popup (−/+ gombok, cella kijelzés)
 
@@ -354,11 +354,12 @@ Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
 - **Faj limit warning**: ha az érték meghaladja/alulmúlja a kiválasztott faj min/max keretét → sárga szín + automatikusan megjelenő info box (`Faj max: X` vagy `Faj min: X`), nem zárható kattintással
 
 ### Képzettségek (alatta, csoport-bontásban)
-- Csoportok sorrendje: Harci → Misztikus → Fizikai → Világi → Alvilági → Művészeti → Tudományos
+- Csoportok sorrendje: Fizikai → Világi → Alvilági → Művészeti → Tudományos
+- Harci és Misztikus csoportok átkerültek: Harci → Harcértékek fül, Misztikus → Misztikus fül
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
 - Game módban: üres csoportok elrejtve
 - Minden képzettség: név + szint (0-15) + ✕ törlés gomb
-- Szint színkód: 0=piros, 1-8=sárga, 9+=zöld
+- Szint színkód: 0=piros, 1-8=fehér, 9+=zöld, >tsz limit=piros
 - Csoportonként 1 db dropdown választó (Szerkesztő módban): új képzettség felvétele → azonnal felugrik a szint választó popup
 - Törlés (✕ gomb): szint=0 → azonnal töröl, szint>0 → piros "Törlés" gombot tartalmazó megerősítő dialógus
 - Többszörös képzettségek felvételkor csoportosítva a testvéreik mellé kerülnek
@@ -507,9 +508,12 @@ HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban el
 - Piros szín ha túllépés
 - CM szerkesztés: áthelyezve a Távharc fülre
 
-### Harcmodorok (read-only)
-- Harcmodor képzettség szintek (konstansok.fegyver_kategória_harcmodor values)
-- A Tul/Képz fülről szinkronizálva
+### Harci képzettségek (szerkeszthető)
+- Összes harci képzettség: harcmodor többszörösök (Közelharc, Kardvívás, stb.) + önálló (Alakzatharc, Harci láz)
+- Soronként: név (flex:1) + szint (`kep-szint` class, limit jelzés) + −/+ gombok + ✕ (megerősítő popup)
+- Min szint: 1 (− disabled), Max: 15 (+ disabled), szint > tsz: piros
+- Dropdown: "+ Harci képzettség..." (nem felvett elemek)
+- Csoport label: kék (`#42a5f5`, 17px bold)
 
 ### Fegyverek
 - Fegyver példány kártyák listája
@@ -547,13 +551,31 @@ HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban el
 
 ---
 
-## 5. Misztikus fül/screen
+## 5. Misztikus fül/screen (✨)
 
-- Tradíció képzettség (név + szint)
-- Szféra / Arkánum képzettségek (név + szint lista)
-- Metódus fortélyok (név + max + fok) (Game módban a "max" nem)
-- Misztikus fortélyok (név + max + fok) (Game módban a "max" nem)
-- Aura értékek
+Misztikus képzettségek + Aura értékek. A misztikus csoport átkerült a Tul/Képz fülről ide.
+
+### Felső sor (értékek, boxok)
+- Mágiaellenállás: Aura + 10 (centered, 14px label, 20px érték)
+- Mágia akarata: "{Aura} + k20" (centered)
+- Aura: reactive engine (centered)
+
+### Képzettség szekciók (elválasztó vonalakkal, kék `#42a5f5` h3 label, 17px)
+1. **Tradíció** — max 1 db, kétlépéses overlay picker (tradiciok.json → altípus ha van)
+   - Felvétel után szint popup felugrik
+2. **Arkánumok** — több felvehető, select dropdown
+   - Tradíció nélkül: picker disabled ("⚠ Tradíció szükséges"), felvett nevek piros
+3. **Faj misztérium** — 1 db, faj választóhoz kötve (nem picker, nem törölhető), min szint: 0
+4. **Ősi nyelv ismerete** — többször felvehető, free-text popup (név megadás)
+
+### Szint választó
+- Overlay popup (grid gombok), mint Tul/Képz fülön
+- Min: 1 (kivéve Faj misztérium: 0)
+- Max: 15, szint > tsz → piros (`kep-over`)
+
+### Game mód
+- Csak felvett elemekkel rendelkező szekciók látszanak (cím + tartalom)
+- Picker/szerkesztő elemek elrejtve
 
 ---
 
@@ -841,6 +863,8 @@ Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem 
 | Piros | `#e53935` | Hiba, lehetetlen, túllépés | VÉ-CÉ>20, MF követelmény hiba, HM overflow |
 | Arany | `#ffd54f` | — (felszabadult, volt: körülmény csoport) | — |
 | Szürke | `#888` / `#aaa` | Dimmed, read-only, infó | szekció fejléc, részletes értékek |
+| Kék | `#42a5f5` | Képzettség csoport label | Tul/Képz, Misztikus, Harcértékek szekció címek |
+| Világos lila | `#ce93d8` | Fortély csoport label + Hatás pool fortély név | Fortélyok fül csoportok, fortély bónusz pool |
 | Bordó | `#cd7c6f` | Státusz hatások | státusz név + alcím |
 | Ezüst | `#b0bec5` | Aktív tab indikátor | tab karika keret |
 

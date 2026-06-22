@@ -7,7 +7,7 @@
 ├── data/                      ← Adatfájlok
 │   ├── docs/                  ← Specifikációk, fejlesztői doksik
 │   │   ├── DEVSTATE.md        ← Fejlesztési állapot (ez a fájl)
-│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§27)
+│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§36)
 │   │   └── gui_spec.md        ← GUI spec (screen-ek, viselkedés, formázás)
 │   ├── sources/               ← YAML forrásadatok (amiből generálunk)
 │   │   ├── konstansok.yaml    ← Központi konstansok (forrás, JSON-ba generálódik)
@@ -61,6 +61,9 @@
 │   │   │   ├── HarcertekekScreen.css
 │   │   │   ├── AktivScreen.tsx         ← Aktív fül (KÉSZ)
 │   │   │   ├── AktivScreen.css
+│   │   │   ├── MisztikusScreen.tsx     ← Misztikus fül (KÉSZ)
+│   │   │   ├── TavharcScreen.tsx       ← Távharc fül (KÉSZ)
+│   │   │   ├── TavharcScreen.css
 │   │   │   ├── HatterekScreen.tsx      ← Hátterek fül (KÉSZ)
 │   │   │   └── HatterekScreen.css
 │   │   ├── App.tsx             ← Tab shell + swipe + animáció + Szerk/Game mód + Napló
@@ -78,7 +81,7 @@
 ## Elkészült
 - ✅ Adatmodell: 5 schema (fortely, kepzettseg, karakter, pancel, fegyver, faj)
 - ✅ Konstansok: teljes (KP, arányok, páncél, harcmodorok, mesterfegyver, kétkezes harc, merevvért, pajzs, aura, feltétel prefixek, fegyver_kategória_harcmodor, több_támadás_TÉ_levonás, locked_fortélyok)
-- ✅ Engine spec: 27 szekció (§1-§27), validálva a szabályrendszer + ODS ellen
+- ✅ Engine spec: 36 szekció (§1-§36), validálva a szabályrendszer + ODS ellen
 - ✅ Engine core: TypeScript implementáció, tesztelve 8.szintű karakter ellen (15/18 ✅, maradék 3 javítva)
 - ✅ GUI spec: 8 screen + 2 overlay leírás, formázás, viselkedés
 - ✅ Harc fül UI: KÉ/SFÉ/VÉ csökk/MP boxok, fegyvertábla, ÉP rubrika táblázat (sebesülés/gyógyulás/compaction/TÉ levonás)
@@ -98,7 +101,7 @@
   - TÉ footer tap: navigál Tul/Képz → scroll Fájdalomtűrés-hez
   - képzettségek prop: lifted state, Fájdalomtűrés szint módosítás azonnal hat
 - ✅ Tab rendszer: swipe + animáció (0.15s) + tükrözött tab bar (jobb→bal, 18px ikon-only + szöveges fülek)
-- ✅ Szerkesztő/Game mód toggle (1500ms fade animáció narancs↔zöld)
+- ✅ Szerkesztő/Game mód toggle (2000ms fade animáció narancs↔zöld)
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
 - ✅ 169 fortély yaml, 81 képzettség yaml, 27 faj yaml
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
@@ -140,7 +143,7 @@
   - `js-yaml` runtime dependency eltávolítva → bundle ~43KB-val kisebb (232KB vs 275KB)
   - Minden adat `tables/*.json`-ból töltődik (fetchJson), nincs runtime YAML parse
 - ✅ Reactive Engine (`data/rules.json` + `web/src/engine/reactive.ts`)
-  - Deklaratív dependency graph: 53 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc incl. spec_kp/kiemelt_kp/primer, SFÉ, MGT, merevvért, távharc VÉ, képzettség limitek, manőver pont, felszerelés, max_HM, max_HM_aszimmetria, fegyver TÉ/VÉ/SP/harckeret/támadások, páncél lookup-ok, lefedettség)
+  - Deklaratív dependency graph: 54 szabály (ÉP, KÉ, TÉ/VÉ/CÉ alap, KP teljes lánc incl. spec_kp/kiemelt_kp/primer, SFÉ, MGT, merevvért, távharc VÉ, képzettség limitek, manőver pont, felszerelés, max_HM, max_HM_aszimmetria, fegyver TÉ/VÉ/SP/harckeret/támadások, páncél lookup-ok, lefedettség, Aura)
   - Skaláris képletek + aggregáló: `sum()`, `sum_lookup()`, `sum_where()`, `count()`, `lookup()`, `if()`
   - Topológiai sorrend: automatikus dependency resolution (skaláris Context + ArrayContext)
   - HarcScreen: ÉP, KÉ, manőver pont, SFÉ, páncél_MGT, fegyver TÉ/VÉ/SP/támadások — mind reactive engine-ből
@@ -193,7 +196,7 @@
   - Megmaradt TS engine modul: NINCS — minden kalkuláció a rules.json-ban vagy inline context-építés
 - ✅ Harcértékek fül (🛡️, szerkesztő módban, Fortélyok fül mellett)
   - HM vásárlás: +/- gombok, validálás (max_HM, aszimmetria). CM: Távharc fülre került.
-  - Harcmodorok: read-only lista (Tul/Képz fülről szinkronizálva)
+  - Harci képzettségek: szerkeszthető szekció (+/− gombok, ✕, dropdown)
   - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown)
     - Mezők: MF fok, Idea, Anyag — `he-field-btn` stílus, tap → overlay popup
     - MF fok: piros szöveg ha Mesterfegyver követelmény nem teljesül
@@ -263,7 +266,7 @@
   - Harci akrobatika yaml fix: "harci akrobatika" → "Harci akrobatika" (nagybetű)
 - ✅ Páncél gombok: disabled + szürke ha nincs struktúra kiválasztva (`.he-field-disabled`)
 - ✅ Feltétel prefix javítások fortély yaml-okban:
-  - `szituáció:belharc` → `harci_helyzet:belharci_szituáció`
+  - `szituáció:belharc` → `harci_helyzet:belharci_helyzet`
   - `szituáció:fárasztás_taktika` → `taktika:fárasztás`
   - `szituáció:fegyverrántás` → `harci_helyzet:fegyverrántás`
   - `szituáció:roham` → `taktika:roham`
@@ -290,7 +293,7 @@
   - Manőver: overlay picker (Általános/Belharci kategóriák, nehézség+fázisok+hatás), infó a box-ban (Nehézség+fázisok | hatás)
   - Szekció sorrend: Fegyver+Fogás (felül) → Hatás pool → Taktikák → Manőver → Harci helyzetek → Státuszok → Narratív módosítók
   - Harci helyzetek: overlay picker (név + infó, ABC)
-  - Körülmények: harci helyzet picker 4. csoport (arany `#ffd54f`), korábban külön szituáció picker
+  - Körülmények: beolvadtak pozitív/semleges csoportba (körülmény csoport megszűnt)
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
   - Hatás pool box (8 szekció): Taktikák | Harci helyzetek | Státuszok | Manőver bónuszok | Előny/Hátrány | Fortély bónuszok | Alapesetek | Narratív módosítók
   - Narratív módosítók: "+ Új" gomb → overlay popup (Hátrány/Előny gombok + szöveg + OK, Enter = OK)
@@ -501,14 +504,28 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Hárítófegyver MF VÉ bónusz: hárítóVÉ-hez hozzáadva
 - ✅ ScreenErrorBoundary: minden tab renderelés burkolt, crash → hibaüzenet (nem fehér halál)
 - ✅ Tab indikátor: csík → ezüst karika (`#b0bec5`, border-radius: 50%)
-- ✅ Game mód transition: 1500ms ease
+- ✅ Game mód transition: 2000ms ease
 - ✅ Fortélyok fül: fok pöttyök balról jobbra, 3 fix hely (hidden ha maxfok < 3)
 - ✅ Fortélyok fül: követelménytext lista formátum (schema + 177 yaml konvertálva)
 - ✅ Fortélyok fül: Követelmény sor fmtCode() (backtick→monospace)
+- ✅ Fortélyok fül: csoport label szín világos lila (`#ce93d8`, 17px)
 - ✅ Harcértékek: Merevvértviselet gomb mindig megjelenik (nem csak merevvértnél)
+- ✅ Harcértékek: "Harci képzettségek" szerkeszthető szekció (Tul/Képz fülről átkerült, +/− gombok + ✕ + dropdown)
+- ✅ Misztikus fül (✨): teljes implementáció (Aura/ME/Mágia akarata boxok, Tradíció kétlépéses picker, Arkánumok, Faj misztérium auto, Ősi nyelv free-text)
+- ✅ Tul/Képz: harci + misztikus csoport kiszűrve (átkerült Harcértékek/Misztikus fülre)
+- ✅ Tul/Képz: képzettségek ABC sorrendbe (szint desc helyett)
+- ✅ Tul/Képz: Arkánum képzettség felvétel bug fix (`:` split nem roncsol önálló neveket)
+- ✅ Tul/Képz: Arkánum piros ha nincs Tradíció (warning prop)
+- ✅ Képzettség csoport label: kék (`#42a5f5`, 17px) mindhárom fülön
+- ✅ Képzettség szint szín: fehér normál, zöld ≥9, piros >tsz limit (egységes `.kep-szint` class)
+- ✅ Távharc VÉ szín: zöld ha VÉ ≤ CÉ+1 (tuti találat)
+- ✅ Aura rules.json szabály: `2*(tsz+önuralom)`, konstansok: aura.mágiaellenállás_konstans + táblák
+- ✅ Primer KP bontás box (Tul/Képz fül alja, szerkesztő módban): HM/CM, harcmodor, misztikus, világi, harci fort, miszt fort — részletes bontással
+- ✅ Primer KP: távharc harcmodorok (Hajítás, Íjászat, stb.) is primerként számolva (App.tsx fix)
 - ✅ Új karakter popup: szöveg frissítve ("NEM vész el, mentésre kerül")
 - ✅ Upstream sync: Belharc→Belharcos, Belharci szituáció→Belharci helyzet, Körülmények megszűnt
 - ✅ Harci fortélyok: követelménytext kitöltve (18 fortély, szöveges követelmények md-ből)
+- ✅ empty_karakter.json: hiányzó session mezők pótolva (strict schema)
 - Lovas harc rendszer implementálása
 
 ## Fontos konvenciók
@@ -578,7 +595,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Gyógyulás popup: ÉP/FP + érték gombok, auto-select ha csak egy típus, auto-close
 - Overlay cancel: mellé koppintás (globális click handler `el.classList.contains('kep-prompt-overlay')` → dispatch Escape)
 - iOS kompatibilitás: egyszeri tap interakció, `-webkit-tap-highlight-color: transparent` globálisan, `touch-action: manipulation` ahol kell
-- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (53 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Maradék TS inline logika: Fájdalomtűrés enyhítés (küszöb-tábla lookup). §16 fortély módosítók (mindig-aktív + feltételes) és taktika módosítók implementálva a HarcScreen-ben (iteráció fortelyok + session aktív taktikák/helyzetek felett).
+- **Reactive Engine irányelv**: minden számítási mechanika a `data/rules.json`-ban van (54 szabály). Nincs TS engine modul. A HarcScreen és App.tsx csak context-et épít (lookup táblák, string context, extras) és `evaluate()`-ot hív. Maradék TS inline logika: Fájdalomtűrés enyhítés (küszöb-tábla lookup). §16 fortély módosítók (mindig-aktív + feltételes) és taktika módosítók implementálva a HarcScreen-ben (iteráció fortelyok + session aktív taktikák/helyzetek felett).
 - Tradíció képzettség: `"Tradíció: Vulgármágia"` formátum (nem `többszörös` yaml mező!), tradiciok.json-ból picker; Szakrális altípusoknál isten választó (pantheon csoportosítva)
 - `tables/tradiciok.json`: egységes struktúra `{ név, típus, altípusok[] }` — altípusok lehetnek egyszerű (Bárdmágia) vagy pantheon-csoportosított (Szakrális/istenek)
 - `tables/nyelvek.json`: 37 nyelv `{ név, csoport }` — Nyelvismeret fortély picker ebből kínál csoportosított dropdown-t

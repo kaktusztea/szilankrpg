@@ -2325,3 +2325,43 @@ Aurabontás (Aurahangolás formula):
 
 note: Nem gépesített (dobás-alapú, harci szituáció).
 ```
+
+---
+
+## §35 Misztikus fül — webapp
+
+```
+Képzettség szekciók (misztikus csoport átkerült a Tul/Képz fülről):
+  1. Tradíció — max 1 db, kétlépéses picker (tradiciok.json, altípus ha van pl. Szakrális→istenség)
+  2. Arkánumok — több felvehető (kepzettsegDefs: "Arkánum:*"), picker disabled ha nincs Tradíció
+     Tradíció nélkül: nevek piros, picker "⚠ Tradíció szükséges"
+  3. Faj misztérium — 1 db, automatikusan a karakter faj nevéhez kötött, nem törölhető, min szint: 0
+  4. Ősi nyelv ismerete — többször felvehető, free-text popup (név megadás)
+
+Kijelzett értékek (felső sor):
+  Mágiaellenállás = Aura + konstansok.aura.mágiaellenállás_konstans (10)
+  Mágia akarata = Aura + k20 (kijelzés: "{Aura} + k20")
+  Aura = reactive engine (§34)
+
+Szint választó: overlay popup (0/1-15 grid), mint Tul/Képz fülön
+Szint limit: primer max = tsz (piros jelzés ha túllépés)
+
+Game módban: csak azok a szekciók látszanak amikben van felvett elem (szint > 0)
+```
+
+## §36 Harci képzettségek — Harcértékek fül
+
+```
+A "Harcmodorok" read-only szekció helyett szerkeszthető "Harci képzettségek" szekció.
+Képzettség lista: kepzettsegDefs csoport="harci" többszörös altípusokkal kibontva.
+  Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc (Harcmodor többszörös)
+  Hajítás, Íjászat, Lövészet, Ostromlövészet, Mágikus célzás (Távolsági harcmodor többszörös)
+  Alakzatharc, Harci láz (önálló)
+
+UI: név (flex:1) + szint (kep-szint class, limit jelzés) + −/+ gombok + ✕ (megerősítő popup)
+  Min szint: 1 (−gomb disabled), Max: 15 (+gomb disabled)
+  Szint > tsz: piros (kep-over)
+  Dropdown: "+ Harci képzettség..." (nem felvettek)
+
+Átkerült a Tul/Képz fülről: "harci" csoport kiszűrve a CSOPORT_SORREND-ből.
+```
