@@ -160,7 +160,7 @@
 .kep-csoport-label {
   font-size: 17px;
   font-weight: bold;
-  color: var(--text-dim);
+  color: #42a5f5;
   margin-bottom: 4px;
   padding-bottom: 2px;
   border-bottom: 1px solid #333;
@@ -209,7 +209,7 @@
 .kep-szint {
   font-size: 17px;
   font-weight: bold;
-  color: #ddd;
+  color: var(--text);
   min-width: 18px;
   text-align: right;
 }
@@ -220,6 +220,10 @@
 
 .kep-szint-high {
   color: var(--success);
+}
+
+.kep-over {
+  color: var(--error) !important;
 }
 
 .kep-right {
