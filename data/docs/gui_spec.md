@@ -406,6 +406,12 @@ Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
 - Dinamikusan frissül minden módosításnál
 - Game módban eltűnik
 
+### Primer KP bontás doboz (Tul/Képz fül alja)
+Részletes kategóriánkénti KP bontás: dashed border, szürke szín, 12px betű.
+- HM + CM, Harcmodor képzettségek, Misztikus képzettségek, Primer világi képzettségek, Harci fortélyok, Misztikus fortélyok
+- Per-item részletezés behúzva (`· név (szint.sz): X KP`)
+- Összeg sor: „Össz primer: X KP" (border-top elválasztó)
+
 ---
 
 ## 4. Fortélyok fül/screen
