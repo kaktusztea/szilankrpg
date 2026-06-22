@@ -835,6 +835,7 @@ Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem 
 |------|-----|----------|-------|
 | Zöld | `#4caf50` / `var(--success)` | Aktív elem kiemelés, értékek | aktív fegyver keret, szorzó picker kijelölés |
 | Lila | `#ab47bc` | Fortélyhoz kötött elem | MF fok gomb, Merevvértviselet gomb keret |
+| Világoskék | `#90caf9` | Összevont/kombinált harcérték | Kétkezes harc összesítő sor, fegyverfogás sor, taktika chip név |
 | Narancs | `#ffa726` | Figyelmeztetés, VÉ normál | távharc VÉ szín |
 | Piros | `#e53935` | Hiba, lehetetlen, túllépés | VÉ-CÉ>20, MF követelmény hiba, HM overflow |
 | Arany | `#ffd54f` | — (felszabadult, volt: körülmény csoport) | — |

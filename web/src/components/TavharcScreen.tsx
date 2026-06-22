@@ -44,6 +44,20 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
   // MF fok
   const getMfFok = (alap: string) => k.fortélyok.find(f => f.név === 'Mesterfegyver' && f.spec_elem === alap)?.fok ?? 0;
+  const mfKövetelményHiba = (alap: string): boolean => {
+    const fok = getMfFok(alap);
+    if (fok === 0) return false;
+    const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
+    const fokDef = mfDef?.fokok.find(f => f.fok === fok);
+    if (!fokDef?.követelmények?.length) return false;
+    for (const kov of fokDef.követelmények) {
+      if (kov.típus === 'képzettség') {
+        const nevek = Array.isArray(kov.név) ? kov.név : [kov.név];
+        if (!nevek.some(n => (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték)) return true;
+      }
+    }
+    return false;
+  };
   const mfFok = tfPeldany ? getMfFok(tfPeldany.alap) : 0;
   const mfBónusz = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok);
 
@@ -183,7 +197,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
                 <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteTarget(i); }}>✕</button>
               </div>
               <div className="th-card-fields">
-                <button className="he-field-btn he-field-fortely" onClick={e => { e.stopPropagation(); setMfTarget(i); }}>MF: <strong>{mf}</strong></button>
+                <button className="he-field-btn he-field-fortely" style={mfKövetelményHiba(tf.alap) ? { color: '#e53935' } : undefined} onClick={e => { e.stopPropagation(); setMfTarget(i); }}>MF fok: <strong>{mf}</strong></button>
                 <button className="he-field-btn" onClick={e => { e.stopPropagation(); setIdeaPopup(true); }}>Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong></button>
                 <span className="th-badge">CÉ: {cardCÉ}  ({tám})</span>
               </div>
