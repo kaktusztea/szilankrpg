@@ -32,7 +32,8 @@ fokok:
     feltétel: "harci_helyzet:vé_kiterjesztés"
     megjegyzés: "Alapeset: VÉ veszteség duplázódik kiterjesztéskor"
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
   követelmények:
   - név: ["Közelharc", "Kardvívás", "Lándzsavívás", "Rombolás", "Ostorharc"]
     érték: 6
@@ -47,7 +48,8 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:vé_kiterjesztés"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
   követelmények:
   - név: ["Közelharc", "Kardvívás", "Lándzsavívás", "Rombolás", "Ostorharc"]
     érték: 9

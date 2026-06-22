@@ -30,7 +30,9 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Csak Hajlékonyvértben"
+    - text: "Maximum MGT:10 értékű vértben"
   követelmények:
   - név: "Akrobatika"
     érték: 6
@@ -57,7 +59,9 @@ fokok:
     arány: 0
     feltétel: ""
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Csak Hajlékonyvértben"
+    - text: "Maximum MGT:10 értékű vértben"
   követelmények:
   - név: "Akrobatika"
     érték: 9

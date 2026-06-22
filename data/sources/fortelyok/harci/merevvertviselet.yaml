@@ -19,7 +19,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 0
-  követelménytext: []
+  követelménytext:
+    - text: "[]"
   követelmények: ""
   hatástext:
   - text: "Merevvért viselésénél: teljes TÉ büntetés érvényesül (TÉ levonás = MGT)."
@@ -30,7 +31,8 @@ fokok:
     feltétel: "páncél:viselt"
     megjegyzés: "Alapeset: teljes MGT TÉ büntetés"
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "[]"
   követelmények: 
   - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
     érték: 3
@@ -45,7 +47,8 @@ fokok:
     arány: 0
     feltétel: ""
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "[]"
   követelmények: 
   - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
     érték: 3
@@ -60,7 +63,8 @@ fokok:
     arány: 0
     feltétel: ""
 - fok: 3
-  követelménytext: []
+  követelménytext:
+    - text: "[]"
   követelmények: 
   - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
     érték: 3

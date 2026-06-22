@@ -19,7 +19,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "[]"
   követelmények:
   - név: "Hajítás"
     érték: 6
@@ -41,7 +42,8 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:hajítás_nem_dobásra_készített"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "[]"
   követelmények:
   - név: "Hajítás"
     érték: 9

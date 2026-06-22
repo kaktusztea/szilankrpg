@@ -19,7 +19,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Összeszokott tagokat igényel"
   követelmények: 
   - név: ["Íjászat", "Lövészet"]
     érték: 6
@@ -28,7 +29,8 @@ fokok:
   - text: "+2 bónusz az Alakzatszintre."
   módosítók: ""
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Összeszokott tagokat igényel"
   követelmények: 
   - név: ["Íjászat", "Lövészet"]
     érték: 9

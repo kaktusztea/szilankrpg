@@ -19,7 +19,9 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Két jól összeszokott társ"
+    - text: "A konkrét partnert nevesíteni kell"
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 3
@@ -47,7 +49,8 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:páros_harc"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Két jól összeszokott társ"
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
@@ -75,7 +78,8 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:páros_harc"
 - fok: 3
-  követelménytext: []
+  követelménytext:
+    - text: "Egypetéjű ikrek, harmonikus kapcsolat a felek között"
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9

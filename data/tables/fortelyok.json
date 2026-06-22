@@ -2163,7 +2163,9 @@
         "hatás": [
           "Alakzat támadó bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2184,7 +2186,9 @@
         "hatás": [
           "Alakzat támadó bónuszai 2.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2222,7 +2226,9 @@
         "hatás": [
           "Alakzat védekező bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2243,7 +2249,9 @@
         "hatás": [
           "Alakzat védekező bónuszai 2.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2324,7 +2332,9 @@
           "Hajítás alkalmatlan fegyverrel harci helyzet büntetései csökkennek: Hátrány-1 Sebzésdobásra és CÉ dobásra.",
           "A fegyver harcértéke nem változik (CÉ=0)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2368,7 +2378,9 @@
           "Hajítás alkalmatlan fegyverrel harci helyzet büntetései nem sújtanak.",
           "A fegyver harcértéke nem változik (CÉ=0)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2429,7 +2441,9 @@
           "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
           "A tárgy harcértéke nem változik."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Hajítás",
@@ -2462,7 +2476,9 @@
           "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
           "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Hajítás",
@@ -2509,7 +2525,9 @@
       {
         "fok": 1,
         "hatás": [],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Közelharc",
@@ -2547,7 +2565,9 @@
       {
         "fok": 2,
         "hatás": [],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Közelharc",
@@ -2604,7 +2624,9 @@
         "hatás": [
           "1 ÉP forgatható át FP ponttá sebesüléskor."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Fájdalomtűrés",
@@ -2619,7 +2641,9 @@
         "hatás": [
           "2 ÉP forgatható át FP ponttá sebesüléskor."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Fájdalomtűrés",
@@ -2651,7 +2675,10 @@
         "hatás": [
           "Roham taktika esetén: KÉ:+5, erőbónusz duplázódik."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Rombolás vagy Lándzsavívás",
+          "Roham taktika"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2705,7 +2732,9 @@
         "hatás": [
           "Fárasztás taktika alkalmazásakor: extra +1 VÉ csökkentés bónusz az ellenfélen."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2750,7 +2779,9 @@
       {
         "fok": 1,
         "hatás": [],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2778,7 +2809,9 @@
       {
         "fok": 2,
         "hatás": [],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2825,7 +2858,9 @@
         "hatás": [
           "Szörnyeteg elleni harc szituációban: VÉ:+3 bónusz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Gladiátor Leíró Háttér"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2872,7 +2907,9 @@
         "hatás": [
           "Közönség előtt szituációban: TÉ:+3 bónusz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Gladiátor Leíró Háttér"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2919,7 +2956,9 @@
         "hatás": [
           "KÉ:+2 bónusz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -2937,7 +2976,9 @@
         "hatás": [
           "KÉ:+4 bónusz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -2955,7 +2996,9 @@
         "hatás": [
           "KÉ:+6 bónusz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -2990,7 +3033,9 @@
         "hatás": [
           "Helyhez kötve harci helyzet teljes büntetése sújt."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": []
       },
@@ -2999,7 +3044,9 @@
         "hatás": [
           "Helyhez kötve harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt!"
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3029,7 +3076,9 @@
         "hatás": [
           "Helyhez kötve harci helyzet: Hátrány-1 TÉ dobásra sem sújt már."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3076,7 +3125,10 @@
         "hatás": [
           "Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Csak Hajlékonyvértben",
+          "Maximum MGT:10 értékű vértben"
+        ],
         "követelmények": [
           {
             "név": "Akrobatika",
@@ -3117,7 +3169,10 @@
           "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez.",
           "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Csak Hajlékonyvértben",
+          "Maximum MGT:10 értékű vértben"
+        ],
         "követelmények": [
           {
             "név": "Akrobatika",
@@ -3176,7 +3231,9 @@
           "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 3-mal csökken."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3224,7 +3281,9 @@
           "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 6-mal csökken."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3278,7 +3337,9 @@
           "Visszafogott taktika TÉ büntetés: 9-mal csökken.",
           "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3347,7 +3408,9 @@
           "Harci szekér szituációban: TÉ/VÉ: +8.",
           "Harci taktikák használhatóak."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Kocsihajtás",
@@ -3388,7 +3451,9 @@
           "Harci szekér szituációban: TÉ/VÉ: +12.",
           "Harci taktikák használhatóak."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Kocsihajtás",
@@ -3446,7 +3511,9 @@
           "+1 Harckeret.",
           "+1 KÉ."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3485,7 +3552,9 @@
           "+2 Harckeret.",
           "+2 KÉ."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3524,7 +3593,9 @@
           "+3 Harckeret.",
           "+3 KÉ."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3661,7 +3732,9 @@
         "hatás": [
           "Fegyver+Hárítófegyver fogásnál: hárítófegyver VÉ bónusza nem érvényesül."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -3680,7 +3753,9 @@
           "Mesterfegyver fortély VÉ bónusza is beszámít.",
           "A hárítófegyverrel nem támadhatsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": []
       }
@@ -3707,7 +3782,9 @@
           "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen.",
           "Egy körben legfeljebb 1x alkalmazható."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3729,7 +3806,9 @@
           "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen.",
           "Egy körben legfeljebb 2x alkalmazható."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3850,7 +3929,9 @@
         "hatás": [
           "Rosszabbik kézben tartott fegyver harci helyzet levonásai sújtanak."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": []
       },
@@ -3861,7 +3942,9 @@
           "Harckeret: +1 bónusz ha kétkezes harcban vagy (min. 1.fok Kétkezes harc + két fegyver).",
           "Páros kétkezes hajításnál csak az egyik CÉ dobásra jár Hátrány-1."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -3932,7 +4015,9 @@
         "hatás": [
           "Szándékos kitérés lövés elől szituációban Akrobatika próbára +2 bónusz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": []
       }
@@ -3988,7 +4073,9 @@
           "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -4021,7 +4108,9 @@
           "Léglovas harc szituációban: TÉ:+6, VÉ:+6.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -4054,7 +4143,9 @@
           "TÉ:+9, VÉ:+9 léglovas bónusz.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -4104,7 +4195,9 @@
           "Lovas harc szituációban: TÉ:+3, VÉ:+3.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4148,7 +4241,9 @@
           "Lovas harc szituációban: TÉ:+6, VÉ:+6.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4192,7 +4287,9 @@
           "TÉ:+9, VÉ:+9 lovas bónusz.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4252,7 +4349,9 @@
         "hatás": [
           "Merevvért viselésénél: teljes TÉ büntetés érvényesül (TÉ levonás = MGT)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -4269,7 +4368,9 @@
         "hatás": [
           "Merevvérted TÉ büntetése ennyivel enyhül: -5."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4297,7 +4398,9 @@
         "hatás": [
           "Merevvérted TÉ büntetése ennyivel enyhül: -10."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4326,7 +4429,9 @@
           "Merevvérted TÉ büntetése ennyivel enyhül: -15.",
           "Merevvért viselése esetén VÉ:+3 (ha lefedettség min. 70%)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4390,7 +4495,9 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +1."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4444,7 +4551,9 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +2."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4498,7 +4607,9 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +3."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4569,7 +4680,9 @@
         "hatás": [
           "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+1."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4607,7 +4720,9 @@
         "hatás": [
           "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+2."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4645,7 +4760,9 @@
         "hatás": [
           "Orvtámadáskor Előny+2 Sebzés dobásra, SP:+3."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4700,7 +4817,9 @@
         "hatás": [
           "Fegyver+Pajzs fogásnál: pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -4718,7 +4837,9 @@
           "Teljes pajzs VÉ aktív.",
           "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4754,7 +4875,9 @@
           "TÉ levonás: Kis:-0, Közepes:-0, Nagy:-3.",
           "Fegyverrel VAGY pajzzsal külön támadhatsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4790,7 +4913,9 @@
           "VÉ:+2 minden pajzshoz.",
           "Fegyverrel VAGY pajzzsal külön támadhatsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4854,7 +4979,10 @@
           "Páros harc szituációban: TÉ, VÉ: +2.",
           "1:1 harcban KÉ:+1 (többnél nem jár)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Két jól összeszokott társ",
+          "A konkrét partnert nevesíteni kell"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4901,7 +5029,9 @@
           "Páros harc szituációban: TÉ, VÉ: +4.",
           "1:2 harcig KÉ:+1 (többnél nem jár)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Két jól összeszokott társ"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4948,7 +5078,9 @@
           "TÉ, VÉ: +6.",
           "1:3 harcig KÉ:+1 (többnél nem jár)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Egypetéjű ikrek, harmonikus kapcsolat a felek között"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5011,7 +5143,9 @@
         "hatás": [
           "Legfeljebb +4 SP (TÉ:-4) pakolható át."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5030,7 +5164,9 @@
         "hatás": [
           "Legfeljebb +6 SP (TÉ:-6) pakolható át."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5218,7 +5354,9 @@
         "hatás": [
           "Védő Érték kiterjesztése másra harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt! A többi igen."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5248,7 +5386,9 @@
         "hatás": [
           "Védő Érték kiterjesztése másra harci helyzet: büntetések nélkül védheted pártfogoltad."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5303,7 +5443,9 @@
         "hatás": [
           "Sötétben - teljes, csendben harci helyzet: Érzékvesztés-teljes Státusz (Látás) sújt."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": []
       },
@@ -5313,7 +5455,9 @@
           "Érzék(látás) Tulajdonságpróba büntetés 1 fokot enyhül.",
           "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -5333,7 +5477,9 @@
           "Érzék(látás) Tulajdonságpróba büntetés 2 fokot enyhül.",
           "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból + Támadó TÉ Előnyből."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -5354,7 +5500,9 @@
           "Láthatatlan ellenfélnél: mindent megszüntet.",
           "Túlterhelt érzékek esetén is működik."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "[]"
+        ],
         "követelmények": [],
         "módosítók": [
           {
@@ -5498,7 +5646,9 @@
         "hatás": [
           "+2 bónusz az Alakzatszintre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Összeszokott tagokat igényel"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5516,7 +5666,9 @@
         "hatás": [
           "+4 bónusz az Alakzatszintre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Összeszokott tagokat igényel"
+        ],
         "követelmények": [
           {
             "név": [

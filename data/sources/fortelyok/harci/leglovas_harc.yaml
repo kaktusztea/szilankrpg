@@ -24,7 +24,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
+    követelménytext:
+      - text: "[]"
     követelmények:
       - név: "Léglovaglás"
         érték: 3
@@ -46,7 +47,8 @@ fokok:
         arány: 0
         feltétel: "harci_helyzet:léglovas_harc"
   - fok: 2
-    követelménytext: []
+    követelménytext:
+      - text: "[]"
     követelmények:
       - név: "Léglovaglás"
         érték: 6
@@ -68,7 +70,8 @@ fokok:
         arány: 0
         feltétel: "harci_helyzet:léglovas_harc"
   - fok: 3
-    követelménytext: []
+    követelménytext:
+      - text: "[]"
     követelmények:
       - név: "Léglovaglás"
         érték: 9
