@@ -1,5 +1,5 @@
 schema_version: 1
-név: "Belharc"
+név: "Belharcos"
 névkomment: "adott fegyverre"
 maxfok: 2
 session_toggle: false
@@ -31,23 +31,23 @@ fokok:
   hatástext: ""
   módosítók:
   - cél: "KÉ"
+    érték: 1
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:belharci_helyzet"
+  - cél: "TÉ"
     érték: 2
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_szituáció"
-  - cél: "TÉ"
-    érték: 3
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "harci_helyzet:belharci_szituáció"
+    feltétel: "harci_helyzet:belharci_helyzet"
   - cél: "VÉ"
-    érték: 3
+    érték: 2
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_szituáció"
+    feltétel: "harci_helyzet:belharci_helyzet"
 - fok: 2
   követelménytext: ""
   követelmények:
@@ -57,22 +57,22 @@ fokok:
   hatástext: ""
   módosítók:
   - cél: "KÉ"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:belharci_helyzet"
+  - cél: "TÉ"
     érték: 4
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_szituáció"
-  - cél: "TÉ"
-    érték: 6
-    mód: "flat"
-    forrás: ""
-    arány: 0
-    feltétel: "harci_helyzet:belharci_szituáció"
+    feltétel: "harci_helyzet:belharci_helyzet"
   - cél: "VÉ"
-    érték: 6
+    érték: 4
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_szituáció"
+    feltétel: "harci_helyzet:belharci_helyzet"
 todo:
 - text: ""

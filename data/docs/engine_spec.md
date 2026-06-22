@@ -847,13 +847,13 @@ A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "takt
 Adatforrások (YAML → JSON generálás: `generate_tables.py` → `generate_aktiv_ful()`):
 - `data/sources/taktikak.yaml` → `tables/taktikak.json` (14 taktika: módosítók, fokok, kombó szabályok)
 - `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json` (32 helyzet: id, infó, hatások, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek)
-- `data/sources/szituaciok.yaml` TÖRÖLVE — 7 körülmény a `harci_helyzetek.yaml`-ba olvadt (`csoport: "körülmény"`)
+- `data/sources/szituaciok.yaml` TÖRÖLVE — 7 elem beolvadt `harci_helyzetek.yaml`-ba (pozitív/semleges csoportba)
 - `data/sources/manoverek.yaml` → `tables/manoverek.json` (34 manőver: id, nehézség, fázisok, hatás)
 
 ID és feltétel_kulcs konvenció:
 - YAML-ban: csak `id` mező (snake_case, ékezetes, source of truth)
 - JSON-ban: `id` + `feltétel_kulcs` (generált: `"{prefix}:{id}"`)
-- Prefixek: taktika → `"taktika:{id}"`, harci_helyzet → `"harci_helyzet:{id}"` (körülmények is ide tartoznak). `szituáció:` prefix backward-compat.
+- Prefixek: taktika → `"taktika:{id}"`, harci_helyzet → `"harci_helyzet:{id}"`. `szituáció:` prefix backward-compat.
 - Manőverek: `id` mező (referencia fortély módosítók `manőver:{id}` céljához)
 - Validáció: id egyediség + fortély `manőver:X` → manőver id referenciális ellenőrzés (build-time)
 
@@ -866,7 +866,7 @@ Fokozatos taktikák: `fokozatos: true` → `fokok[]` tömb (pl. Támadó fok:1..
 Session state bővítés (types.ts Session interface):
 - `aktív_taktikák: { név: string, fok?: number }[]` (több kombó, fokozatos taktikáknál fok)
 - `aktív_helyzetek: string[]` (több helyzet egyszerre)
-- `aktív_szituációk` mező TÖRÖLVE — körülmények a `aktív_helyzetek[]`-ben
+- `aktív_szituációk` mező TÖRÖLVE — helyzetek az `aktív_helyzetek[]`-ben
 - `aktív_manőver: string` (max 1, marad)
 
 Kalkuláció két rétege:
@@ -937,12 +937,12 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Hatások |
 |---------|-----|---------|
-| Belharci szituáció | belharci_szituáció | Közelharc harcmodor + max 0 pengehossz feltétel. Belharc fortély bónuszok. |
+| Belharci helyzet | belharci_helyzet | Közelharc harcmodor + max 0 pengehossz feltétel. Belharcos fortély bónuszok. |
 | Fegyverrántás váratlanul | fegyverrántás | KÉ módosítók fegyverméret szerint. Fortély: Fegyverrántás skála. |
 | Közrefogás | közrefogás | Semlegesíti ellenfél Pengeelőnyét → Alappenge. |
 | Takarásban harcolás | takarásban | Hátrány-1 TÉ, VÉ: +5. |
 | Védő Érték kiterjesztése másra | vé_kiterjesztés | Többsz. tám. elvesztés, VÉ veszteség duplázódik. Testőr fortély mérsékli. |
-| Vadállatok elleni harc | vadállatok | Informatív: Közelharc + Belharc 2.fok bónuszai relevánsak. |
+| Vadállatok elleni harc | vadállatok | Informatív: Közelharc + Belharcos 2.fok bónuszai relevánsak. |
 
 #### Negatív helyzetek (065_01_03)
 
@@ -987,27 +987,29 @@ Data layer mezők:
 
 ### 21.3 Körülmények (korábban: Szituációk)
 
-A Körülmények a harci helyzetek 4. csoportja (`csoport: "körülmény"`). A picker arany fejléccel (`#ffd54f`) jeleníti meg.
+Ezek az elemek a harci helyzetek pozitív/semleges csoportjába tartoznak (a "körülmény" alcsoport megszűnt).
+A picker 3 csoporttal jeleníti meg: Pozitív (`#4caf50`) / Semleges (`#ff9800`) / Negatív (`#f44336`).
 
-| Körülmény              | feltétel kulcs                     | Megjegyzés            |
-| ---------------------- | ---------------------------------- | --------------------- |
-| Lovas harc             | `harci_helyzet:lovas_harc`         | lóhátról              |
-| Léglovas harc          | `harci_helyzet:léglovas_harc`      | repülő hátasról       |
-| Harci szekér           | `harci_helyzet:harci_szekér`       | szekérről             |
-| Páros harc             | `harci_helyzet:páros_harc`         | koordinált 2 fős harc |
-| Közönség előtt         | `harci_helyzet:közönség_előtt`     | gladiátor             |
-| Szörnyeteg elleni harc | `harci_helyzet:szörnyeteg_elleni_harc` | bestia            |
-| Célzás                 | `harci_helyzet:célzás`             | távharc               |
+| Helyzet                | feltétel kulcs                         | Csoport    |
+| ---------------------- | -------------------------------------- | ---------- |
+| Lovas harc             | `harci_helyzet:lovas_harc`             | pozitív    |
+| Léglovas harc          | `harci_helyzet:léglovas_harc`          | pozitív    |
+| Harci szekér           | `harci_helyzet:harci_szekér`           | pozitív    |
+| Páros harc             | `harci_helyzet:páros_harc`             | pozitív    |
+| Közönség előtt         | `harci_helyzet:közönség_előtt`         | pozitív    |
+| Célzás                 | `harci_helyzet:célzás`                 | pozitív    |
+| Szörnyeteg elleni harc | `harci_helyzet:szörnyeteg_elleni_harc` | semleges   |
 
-note: `szituaciok.yaml` törölve, minden körülmény a `harci_helyzetek.yaml`-ban él.
-      `session.aktív_szituációk` mező törölve — körülmények az `aktív_helyzetek[]`-ben.
+note: `szituaciok.yaml` törölve, minden elem a `harci_helyzetek.yaml`-ban él.
+      `session.aktív_szituációk` mező törölve — helyzetek az `aktív_helyzetek[]`-ben.
       Fortély feltételek: `harci_helyzet:X` prefix (backward-compat: `szituáció:X` is működik az `alapeset.ts`-ben).
 
 ---
 
-### 21.3b Szituáció → Körülmény harci helyzet beolvasztás — IMPLEMENTÁLT
+### 21.3b Szituáció → Harci helyzet beolvasztás — IMPLEMENTÁLT
 
-A szituációk külön rendszere megszűnik. Minden szituáció harci helyzetté válik, 4. csoportként.
+A szituációk külön rendszere megszűnik. Minden szituáció harci helyzetté válik.
+A "körülmény" alcsoport is megszűnt (2026-06-21): elemei beolvadtak pozitív/semleges csoportba.
 
 #### Motiváció
 
@@ -1015,23 +1017,23 @@ A szituációk külön rendszere megszűnik. Minden szituáció harci helyzetté
 - A Hatás pool "Harci helyzetek" szekciójában automatikusan megjelennek (infó mezővel)
 - A fortély bónuszok a szokásos feltétel-rendszeren keresztül aktiválódnak — láthatóan
 
-#### Érintett szituációk → helyzet
+#### Érintett elemek végleges csoportja
 
-| Jelenlegi szituáció    | Új helyzet id          | Új csoport   | Megjegyzés             |
-| ---------------------- | ---------------------- | ------------ | ---------------------- |
-| Lovas harc             | `lovas_harc`           | körülmény    | lóhátról               |
-| Léglovas harc          | `léglovas_harc`        | körülmény    | repülő hátasról        |
-| Harci szekér           | `harci_szekér`         | körülmény    | szekérről              |
-| Páros harc             | `páros_harc`           | körülmény    | koordinált 2 fős       |
-| Közönség előtt         | `közönség_előtt`       | körülmény    | gladiátor              |
-| Szörnyeteg elleni harc | `szörnyeteg_elleni_harc` | körülmény  | bestia                 |
-| Célzás                 | `célzás`              | körülmény    | távharc célzás         |
+| Helyzet                | id                       | Csoport    |
+| ---------------------- | ----------------------   | ---------- |
+| Lovas harc             | `lovas_harc`             | pozitív    |
+| Léglovas harc          | `léglovas_harc`          | pozitív    |
+| Harci szekér           | `harci_szekér`           | pozitív    |
+| Páros harc             | `páros_harc`             | pozitív    |
+| Közönség előtt         | `közönség_előtt`         | pozitív    |
+| Célzás                 | `célzás`                 | pozitív    |
+| Szörnyeteg elleni harc | `szörnyeteg_elleni_harc` | semleges   |
 
 #### Lépések
 
 **1. Data layer (harci_helyzetek.yaml):**
-- 7 új entry hozzáadása `csoport: "körülmény"`-nyel
-- Mezők: `név, id, infó, hatások: [], csoport: "körülmény", rejtett: false, tiltja_taktikákat: false, kizár_helyzetek: []`
+- 7 entry (pozitív/semleges csoportban)
+- Mezők: `név, id, infó, hatások: [], csoport, rejtett: false, tiltja_taktikákat: false, kizár_helyzetek: []`
 - `infó`: rövid szöveg ami a Hatás pool-ban megjelenik (pl. "Lovas harc fortély bónuszok aktívak")
 - `szituaciok.yaml` fájl törlése
 
@@ -1052,8 +1054,8 @@ A szituációk külön rendszere megszűnik. Minden szituáció harci helyzetté
 
 **5. AktivScreen.tsx:**
 - Szituáció picker szekció + chip szekció törlése
-- Helyzet picker: 4. csoport "Szituáció" — arany fejléc (`#ffd54f`)
-- ABC rendezés csoporton belül (Pozitív `#4caf50` / Semleges `#ff9800` / Negatív `#f44336` / Szituáció `#ffd54f`)
+- Helyzet picker: 3 csoport (Pozitív `#4caf50` / Semleges `#ff9800` / Negatív `#f44336`)
+- ABC rendezés csoporton belül
 - Hatás pool "Harci helyzetek" szekció: szituáció-helyzetek `infó`-ja is megjelenik (azonos logika, szín: `#42a5f5`)
 
 **6. Szabályrendszer (md/):**
@@ -1104,7 +1106,7 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 
 | Manőver                 | Nehézség        | Fázisok | Követelmények                | Hatás                      |
 | ----------------------- | --------------- | ------- | ---------------------------- | -------------------------- |
-| Belharcba kerülés       | 9 (háttal:5)    | M,E     | Közelharc, belharcos fegyver | Belharci szituáció         |
+| Belharcba kerülés       | 9 (háttal:5)    | M,E     | Közelharc, belharcos fegyver | Belharci helyzet           |
 | Belharcból kibontakozás | 5               | M,E     | —                            | Kilépés belharcból         |
 | Átdobás                 | 7               | V,E     | —                            | Ellenfél földre kerül      |
 | Feszítés, Leszorítás    | 8               | V,E     | —                            | TÉ/VÉ:-7, KÉ elvesztés     |
@@ -1122,7 +1124,7 @@ note: A manőverek nem adnak statikus harcérték módosítókat — ellenpróba
         - Harci anatómia → `manőver:leütés_hátulról` +2/+4/+6, `manőver:precíz_támadás` +2/+4/+6
       UI: AktivScreen Hatás pool "Manőver bónuszok" szekció gyűjti ezeket.
       Visszafogott taktika TÉ csökkentés (Harci anatómia): `cél: TÉ, feltétel: "taktika:visszafogott"`, +3/+6/+9.
-      Belharcos manőverek: Belharci szituáció szükséges (kivéve Belharcba kerülés).
+      Belharcos manőverek: Belharci helyzet szükséges (kivéve Belharcba kerülés).
 
 ---
 

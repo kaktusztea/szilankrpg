@@ -674,7 +674,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => (h as any).csoport === 'pozitív') },
                   { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => (h as any).csoport === 'semleges') },
                   { label: 'Negatív helyzet', color: '#f44336', items: filtered.filter(h => (h as any).csoport === 'negatív') },
-                  { label: 'Körülmény', color: '#ffd54f', items: filtered.filter(h => (h as any).csoport === 'körülmény') },
                 ];
                 const renderCard = (h: typeof data.harciHelyzetek[0]) => (
                 <div key={h.név} className="aktiv-picker-item" onClick={() => {

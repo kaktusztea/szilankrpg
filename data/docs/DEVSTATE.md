@@ -358,6 +358,22 @@
 | Magasabbról + Lovas harc kizárás | Ha lovas harc aktív, Magasabbról disabled               | Aktív fül   |
 | Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
 
+### Upstream szabályrendszer változások (2026-06-21 commitok) — ✅ feldolgozva
+
+**1. ✅ "Körülmények" kategória megszűnt** (e077fbb0)
+- `harci_helyzetek.yaml`: 7 elem átsorolva (6 pozitív, 1 semleges)
+- AktivScreen: 4. csoport ("Körülmény") törölve
+
+**2. ✅ "Belharc" fortély → "Belharcos"** (072e5c94)
+- `belharc.yaml` → `belharcos.yaml` átnevezve, név frissítve
+- Módosítók: fok 1: KÉ:+1, TÉ/VÉ:+2 | fok 2: KÉ:+2, TÉ/VÉ:+4
+
+**3. ✅ "Belharci szituáció" → "Belharci helyzet"** (072e5c94)
+- `harci_helyzetek.yaml`: név + id frissítve
+- `belharcos.yaml`: feltétel mezők frissítve (`harci_helyzet:belharci_helyzet`)
+
+**4. "Belharc folyamata" szituáció** — webapp hatás nincs (narratív)
+**5. Orvtámadás átformázás** — webapp hatás nincs (szöveg)
 
 ### Karakteralkotó — általános
 - ✅ VÉ eltolás ökölszabály: max ±10 (taktikák kombinálása esetén is) — konstansok + clamp implementálva
