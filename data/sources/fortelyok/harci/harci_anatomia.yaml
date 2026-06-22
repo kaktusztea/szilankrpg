@@ -19,8 +19,7 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
@@ -49,8 +48,7 @@ fokok:
     arány: 0
     feltétel: "taktika:visszafogott"
 - fok: 2
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9
@@ -82,8 +80,7 @@ fokok:
     arány: 0
     feltétel: "taktika:visszafogott"
 - fok: 3
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 12

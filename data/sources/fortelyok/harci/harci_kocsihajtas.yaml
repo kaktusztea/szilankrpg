@@ -19,8 +19,7 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: 
   - név: "Kocsihajtás"
     érték: 1
@@ -45,8 +44,7 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:harci_szekér"
 - fok: 2
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: 
   - név: "Kocsihajtás"
     érték: 1

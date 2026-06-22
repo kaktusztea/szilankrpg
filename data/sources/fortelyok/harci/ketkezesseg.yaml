@@ -19,15 +19,13 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 0
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: ''
   hatástext:
   - text: Rosszabbik kézben tartott fegyver harci helyzet levonásai sújtanak.
   módosítók: ''
 - fok: 1
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: ''
   hatástext:
   - text: Bármelyik kezeddel levonás nélkül harcolsz (1 fegyverrel).

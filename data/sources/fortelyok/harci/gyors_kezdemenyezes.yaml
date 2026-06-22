@@ -24,8 +24,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext:
-      - text: "[]"
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "KÉ:+2 bónusz."
@@ -37,8 +36,7 @@ fokok:
         arány: 0
         feltétel: ""
   - fok: 2
-    követelménytext:
-      - text: "[]"
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "KÉ:+4 bónusz."
@@ -50,8 +48,7 @@ fokok:
         arány: 0
         feltétel: ""
   - fok: 3
-    követelménytext:
-      - text: "[]"
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "KÉ:+6 bónusz."

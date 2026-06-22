@@ -19,15 +19,13 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 0
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: ""
   hatástext:
   - text: "Sötétben - teljes, csendben harci helyzet: Érzékvesztés-teljes Státusz (Látás) sújt."
   módosítók: ""
 - fok: 1
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: ""
   hatástext:
   - text: "Érzék(látás) Tulajdonságpróba büntetés 1 fokot enyhül."
@@ -41,8 +39,7 @@ fokok:
     feltétel: ""
     alcél: "Látás"
 - fok: 2
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: ""
   hatástext:
   - text: "Érzék(látás) Tulajdonságpróba büntetés 2 fokot enyhül."
@@ -56,8 +53,7 @@ fokok:
     feltétel: ""
     alcél: "Látás"
 - fok: 3
-  követelménytext:
-    - text: "[]"
+  követelménytext: []
   követelmények: ""
   hatástext:
   - text: "Érzék(látás) Tulajdonságpróba büntetés 3 fokot enyhül (auto-kudarc is megszűnik)."

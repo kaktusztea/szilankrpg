@@ -499,8 +499,8 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
           {fokDef && fokDef.hatás.length > 0 && (
             <div className="fort-info-row"><span className="fort-info-label">Hatás:</span> {fmtCode(fokDef.hatás.join(' '))}</div>
           )}
-          {fokDef && fokDef.követelmény.length > 0 && (
-            <div className="fort-info-row"><span className="fort-info-label">Követelmény:</span> {fokDef.követelmény.join('; ')}</div>
+          {fokDef && fokDef.követelmény.filter(t => t).length > 0 && (
+            <div className="fort-info-row"><span className="fort-info-label">Követelmény:</span> {fmtCode(fokDef.követelmény.filter(t => t).join('; '))}</div>
           )}
           {(def.kiterjeszti_normál.length > 0 || def.kiterjeszti_erős.length > 0) && (
             <div className="fort-info-row">

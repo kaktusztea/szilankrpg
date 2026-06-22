@@ -24,8 +24,7 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext:
-      - text: "[]"
+    követelménytext: []
     követelmények: ""
     hatástext:
       - text: "Szándékos kitérés lövés elől szituációban Akrobatika próbára +2 bónusz."
