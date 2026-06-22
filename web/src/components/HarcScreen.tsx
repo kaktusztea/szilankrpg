@@ -418,6 +418,21 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const aktKat = sebCount === 0 ? 0 : Math.min(3, Math.ceil(sebCount / oszlopMéret) - 1);
   const téLevonás = téLevonások[aktKat];
 
+  // Auto Sérült státusz S3/S4 alapján
+  useEffect(() => {
+    const inS3 = sebCount > 2 * oszlopMéret;
+    const inS4 = sebCount > 3 * oszlopMéret;
+    const targetFok = inS4 ? 2 : inS3 ? 1 : 0;
+    const current = session.aktív_státuszok.find(s => s.startsWith('Sérült ('));
+    const currentFok = current ? parseInt(current.match(/\((\d+)\)/)?.[1] ?? '0') : 0;
+    if (targetFok === currentFok) return;
+    setSession(prev => {
+      const filtered = prev.aktív_státuszok.filter(s => !s.startsWith('Sérült ('));
+      if (targetFok === 0) return { ...prev, aktív_státuszok: filtered };
+      return { ...prev, aktív_státuszok: [...filtered, `Sérült (${targetFok})`] };
+    });
+  }, [sebCount, oszlopMéret]);
+
   // Max VÉ csökkenés
   const maxVéCsökk = Math.max(0, ...(kétkezesResult ? [kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ']] : fogásResult ? fegyverResults.map(r => r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ']) : fegyverResults.map(r => r.VÉ + pajzsVÉ + taktikaMods['VÉ'])));
 

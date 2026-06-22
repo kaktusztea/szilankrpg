@@ -719,14 +719,15 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           const def = data.statuszok.find(s => s.név === baseName);
           const maxFok = def?.fokok.length ?? 1;
           const alcím = def?.fokok.find(f => f.fok === stFok)?.alcím;
+          const locked = baseName === 'Sérült';
           return (
             <div key={i} className="aktiv-chip">
               <span onClick={() => {
-                if (maxFok <= 1) return;
+                if (locked || maxFok <= 1) return;
                 const újFok = (stFok % maxFok) + 1;
                 setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
-              }} style={maxFok > 1 ? { cursor: 'pointer' } : undefined}>{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}</span>
-              <button className="aktiv-chip-x" onClick={() => { pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`); setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) })); }}>✕</button>
+              }} style={!locked && maxFok > 1 ? { cursor: 'pointer' } : undefined}>{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}</span>
+              {!locked && <button className="aktiv-chip-x" onClick={() => { pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`); setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) })); }}>✕</button>}
             </div>
           );
         })}
@@ -749,8 +750,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   return (
                     <div key={kat}>
                       <div className="aktiv-picker-category">{kat.charAt(0).toUpperCase() + kat.slice(1)}</div>
-                      {items.map(s => (
-                        <div key={s.név} className="aktiv-picker-item" onClick={() => {
+                      {items.map(s => {
+                        const isAuto = s.név === 'Sérült';
+                        return (
+                        <div key={s.név} className={`aktiv-picker-item${isAuto ? ' aktiv-picker-disabled' : ''}`} onClick={() => {
+                          if (isAuto) return;
                           if (s.többszörös && s.alkategóriák?.length) {
                             setÉrzékválasztó(s.név);
                           } else if (s.fokok.length === 1) {
@@ -760,10 +764,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                             setStátuszFokválasztó(s.név);
                           }
                         }}>
-                          <span className="aktiv-picker-item-name">{s.név}</span>
+                          <span className="aktiv-picker-item-name">{isAuto ? 'Sérült (auto)' : s.név}</span>
                           <span className="aktiv-picker-item-details">{s.fokok.map(f => `${f.fok}. ${f.alcím}`).join(' • ')}</span>
                         </div>
-                      ))}
+                        );
+                      })}
                     </div>
                   );
                 })

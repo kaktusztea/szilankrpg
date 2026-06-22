@@ -315,6 +315,11 @@
   border-color: var(--success);
 }
 
+.aktiv-picker-disabled {
+  opacity: 0.4;
+  cursor: default !important;
+}
+
 .aktiv-picker-item-name {
   font-weight: bold;
   color: var(--text);
