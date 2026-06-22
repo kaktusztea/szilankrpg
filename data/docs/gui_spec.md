@@ -311,9 +311,8 @@ Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
 - Formátum: `Nx: leírás`
 
 ### Támadás db formátum
-- `Xx` = X támadás / kör (harckeret >= sebesség)
-- `1/Y kör` = 1 támadás Y körönként (harckeret < sebesség)
-- Sebesség = -1: fix `1x`
+- `Xx` = X támadás / kör (1 + FLOOR(harckeret / sebesség))
+- Sebesség = -1 (nyílpuska): `1/2 kör` alapeset, "Gyors újratöltés" ≥1.fok → `1x`
 
 ### Popupok (createPortal)
 - MF fok: 0–3 kerek gombok
@@ -826,17 +825,17 @@ Minden adat `fetchJson`-nel:
 - `tables/fajok.json` — 27 faj neve
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
 - `tables/primer_fortelyok.json` — 53 harci+misztikus fortély neve
-- `tables/fortelyok.json` — 169 fortély összefoglaló
+- `tables/fortelyok.json` — 177 fortély összefoglaló
 - `tables/tradiciok.json` — tradíciók (altípusokkal, Szakrális istenekkel)
 - `tables/nyelvek.json` — 37 nyelv (csoportosítva)
-- `data/rules.json` — reactive engine szabályok (53 db)
+- `data/rules.json` — reactive engine szabályok (54 db)
 - `data/karakter/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
 - `data/karakter/test_karakter.json` — teszt karakter (🧪 gomb, runtime fetch + validáció)
 
 ### Karakter state struktúra (App szintjén)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
-- Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
-- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`
+- Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
+- `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`, `aktív_távfegyver_index`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
 - Derived getterek (early return utáni destructuring): `tulajdonságok`, `képzettségek`, `fortélyok`, `session`

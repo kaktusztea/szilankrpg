@@ -1141,7 +1141,7 @@ Forrás: md/080_hatasok_es_statuszok.md, md/081_hatasok.md, md/082_statuszok.md
 | Réteg | Fájl / Forrás | Leírás |
 |-------|------|--------|
 | **Hatás mechanika** | `hatas_operatorok.yaml` | Hatás típusok/operátorok (8 db): előny, hátrány, arányos, letilt, stb. |
-| **Célpontok** | `esemenyek.yaml` | Amire a hatás mechanika vonatkozhat (22 db): dobások, képességek, fizikai |
+| **Célpontok** | `esemenyek.yaml` | Amire a hatás mechanika vonatkozhat (23 db): dobások, képességek, fizikai |
 | **Hatások** | `081_hatasok.md` (TODO: yaml) | Elnevezett, magas szintű játékfogalmak: "Vérzés - erős", "Mozgás - képtelen", "VÉ veszteség duplázódik" stb. Minden Hatás = 1+ mechanika+cél kombináció. |
 | **Státuszok** | `statuszok.yaml` | Állapotok fokozatokkal, amelyek Hatás(oka)t okoznak. |
 | **Harci helyzetek** | `harci_helyzetek.yaml` | Speciális harci státuszok, amelyek szintén Hatás(oka)t okoznak. |

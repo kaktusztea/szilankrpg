@@ -103,7 +103,7 @@
 - ✅ Tab rendszer: swipe + animáció (0.15s) + tükrözött tab bar (jobb→bal, 18px ikon-only + szöveges fülek)
 - ✅ Szerkesztő/Game mód toggle (2000ms fade animáció narancs↔zöld)
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
-- ✅ 169 fortély yaml, 81 képzettség yaml, 27 faj yaml
+- ✅ 177 fortély yaml, 81 képzettség yaml, 27 faj yaml
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
   - Fejléc: Név (tap → szerkesztő popup) + Szint (tap → gombgrid 3-21, 5 oszlop, utolsó sor középre)
   - Faj: inline `<select>` dropdown (szerkesztő módban közvetlenül koppintható) + Kor box (tap → +/− overlay)
