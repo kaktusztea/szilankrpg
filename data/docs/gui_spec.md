@@ -824,10 +824,18 @@ Minden adat `fetchJson`-nel:
 - `tables/kiterjesztesek.json` — képzettség→fortély inverz mapping
 - `tables/fajok.json` — 27 faj neve
 - `tables/faj_tulajdonsag_keretek.json` — faj→tulajdonság min/max keretek
-- `tables/primer_fortelyok.json` — 53 harci+misztikus fortély neve
+- `tables/primer_fortelyok.json` — 62 primer fortély neve (harci + távharc + misztikus)
 - `tables/fortelyok.json` — 177 fortély összefoglaló
 - `tables/tradiciok.json` — tradíciók (altípusokkal, Szakrális istenekkel)
 - `tables/nyelvek.json` — 37 nyelv (csoportosítva)
+- `tables/taktikak.json` — 14 taktika (módosítók, fokok, kombó szabályok)
+- `tables/harci_helyzetek.json` — 32 harci helyzet (id, infó, hatások, csoport)
+- `tables/manoverek.json` — 34 manőver (id, nehézség, fázisok, hatás)
+- `tables/statuszok.json` — 19 státusz (fokok, hatások)
+- `tables/hatas_operatorok.json` — 8 hatás mechanika típus
+- `tables/esemenyek.json` — 23 esemény/célpont
+- `tables/hatterek.json` — leíró + karma hátterek
+- `tables/tavharc_szorzok.json` — 5 szorzó kategória (célpont mozgás, lövész, méret, észlelhetőség, szél)
 - `data/rules.json` — reactive engine szabályok (54 db)
 - `data/karakter/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
 - `data/karakter/test_karakter.json` — teszt karakter (🧪 gomb, runtime fetch + validáció)
