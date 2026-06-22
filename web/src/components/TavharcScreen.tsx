@@ -274,7 +274,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           <div className="th-main-row">
             <div className="th-value-main th-ce-ve-box">
               <span>CÉ: {cé}  ({támadásLabel})</span>
-              <span style={{ color: vé - cé > 20 ? '#e53935' : '#ffa726' }}>VÉ: {vé}</span>
+              <span style={{ color: vé <= cé + 1 ? '#4caf50' : vé - cé > 20 ? '#e53935' : '#ffa726' }}>VÉ: {vé}</span>
             </div>
             <span className="th-value-main th-szc-box">Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>
             <button className="th-value-main th-tav-btn" style={{ borderColor: 'var(--success)' }} onClick={() => setTávolságPopup(true)}>Táv:<br/><span style={{ fontSize: '18px', color: 'var(--success)' }}>{távolság}m</span></button>
