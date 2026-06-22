@@ -36,7 +36,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 | Lila | `#ce93d8` | Fortély nevek (Fortély bónusz pool) |
 | Halvány kék | `#90caf9` | Taktika nevek (Hatás pool) |
 | Sötétebb kék | `#42a5f5` | Harci helyzet nevek (Hatás pool) |
-| Arany | `#ffd54f` | Körülmény csoport fejléc (picker) |
+| Arany | `#ffd54f` | (felszabadult, volt: körülmény csoport) |
 | Világoskék | `#7eb8da` | Háttér alkategória labelek (Származás, Jellem, stb.) |
 | Sötét box háttér | `#1a1a2e` | Hatás pool box háttér |
 | Kártya háttér | `#2a2a3e` | Hatás pool item, hatter-tag |
@@ -53,7 +53,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 
 - **Mobile-first**: 320px szélességtől használható
 - **Két mód**: Szerkesztő mód és Game mód (toggle gomb a fejlécben)
-  - Toggle gomb szín: Szerkesztő=`#ff9800`, Game=`#4caf50` (háttér), szöveg: `#000`, átmenet: 1000ms ease
+  - Toggle gomb szín: Szerkesztő=`#ff9800`, Game=`#4caf50` (háttér), szöveg: `#000`, átmenet: 1500ms ease
 - **Tab navigáció**: alul fix tab bar, horizontálisan scrollozható (minden tab közvetlenül elérhető, nincs "..." menü)
 - **Screen váltás**: jobb-bal swipe gesztussal (mobilon, threshold: 30px), desktop-on tab kattintás
 - **Swipe**: csak horizontális, `Math.abs(dx) > Math.abs(dy)` check
@@ -125,7 +125,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 
 ## 1. Aktív fül/screen
 
-A harc közbeni helyzetek, körülmények, taktikák beállítása. Minden itt kiválasztott elem befolyásolja a "Harc" fülön megjelenő értékeket.
+A harc közbeni helyzetek, taktikák beállítása. Minden itt kiválasztott elem befolyásolja a "Harc" fülön megjelenő értékeket.
 Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Tartalom (fentről lefelé)
@@ -140,8 +140,8 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Hatás pool box | info szekció | 7 alszekció: Taktikák, Harci helyzetek, Státuszok, Manőver bónuszok, Előny/Hátrány, Fortély bónuszok, Narratív módosítók |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
 | Manőver | aktiv-label fejléc + field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
-| Harci helyzetek | overlay picker + chip | 4 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`), Körülmény (arany `#ffd54f`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
-| Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. |
+| Harci helyzetek | overlay picker + chip | 3 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
+| Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. "Sérült" auto-kezelt: szürkítve a pickerben ("Sérült (auto)" label), chip locked (nincs ✕, fok nem kattintható). |
 | Narratív módosítók | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
 
 ### Taktika kombó szabályok
@@ -215,7 +215,7 @@ A karakter aktuális harci értékei, az "Aktív" fül beállításai alapján s
   - Minden box: háttér surface szín, 1px solid #444 border, 6px border-radius, 8px 12px padding
 - **Teljes harcértékek** tábla (fegyverenként):
   - Fegyver | Tám/kör | TÉ | VÉ | SP | Pengehossz
-  - Fegyverfogás ≠ Egyfegyveres: összesítő sor felül (lila/purple keret `#9c27b0`), normál sorok halványítva (opacity: 0.4)
+  - Fegyverfogás ≠ Egyfegyveres: összesítő sor felül (világoskék keret `#90caf9`), normál sorok halványítva (opacity: 0.4)
     - Kétkezes: összevont harcértékek (§26)
     - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő), név: "Fegyver + Pajzs". Csak a lila sorban (normálból kiszűrve).
     - Fegyver+hárító: jobb kéz fegyver + hárítóVÉ bónusz, név: "Fegyver + Hárító: X"
@@ -416,7 +416,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 ### Megjelenés
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
 - Game módban: üres csoportok elrejtve
-- Kompakt lista: név + fok karikák (●/○). Teli=aktív fok (balról: üres, jobbra: teli). Max fok elérve: zöld szín.
+- Kompakt lista: név + fok pöttyök (●/○). Mindig 3 hely, balról jobbra töltődik (filled = felvett fok), maxfok feletti helyek láthatatlanok. Max fok elérve: zöld szín.
   - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok
 - Ingyenes keret alatti többszörös fortélyoknál 🎁 jel a név mellett
 - ✕ törlés gomb minden fortélynál (szerkesztő módban)
@@ -525,6 +525,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban el
 ### Páncél
 - Mezők (`he-field-btn` stílus, dupla katt → overlay popup):
   - Struktúra: lista (konstansok.páncél_struktúrák) + "— nincs —"
+  - Merevvértviselet fok: mindig megjelenik (lila keret, `.he-field-fortely`), popup 0–3
   - Fémalapanyag: csak fém struktúránál látszik
   - Kidolgozottság: pocsék / átlagos / mestermunka
   - Méret: passzol / nem passzol / borzalmas
@@ -675,7 +676,7 @@ Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
 - Tab betűméret: 18px, padding: 8px
 - Inaktív szín: `--text-dim` (#999)
 - Aktív tab: `--accent` szín (#e94560), bold
-- Aktív tab indikátor: 3px accent csík az aktív gomb alatt, slide animáció (0.2s ease-out), betöltéskor transition nélkül
+- Aktív tab indikátor: ezüst (`#b0bec5`) karika keret az aktív gomb körül (`border: 2px solid`, `border-radius: 50%`)
 - Háttér: `--surface`, `border-top: 1px solid #333`, padding: 4px 0
 - Egér scroll: `onWheel` → `scrollLeft += deltaY`
 
@@ -841,3 +842,13 @@ Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem 
 | Arany | `#ffd54f` | — (felszabadult, volt: körülmény csoport) | — |
 | Szürke | `#888` / `#aaa` | Dimmed, read-only, infó | szekció fejléc, részletes értékek |
 | Bordó | `#cd7c6f` | Státusz hatások | státusz név + alcím |
+| Ezüst | `#b0bec5` | Aktív tab indikátor | tab karika keret |
+
+---
+
+## Hibakezelés
+
+- **ScreenErrorBoundary**: minden tab screen renderelést React ErrorBoundary burkolja
+  - Crash esetén: piros "⚠️ Hiba a megjelenítésben" üzenet + hiba szövege + "Újrapróbálás" gomb
+  - A többi tab és a fejléc továbbra is működik
+  - Console-ba részletes stack trace

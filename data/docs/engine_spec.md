@@ -222,7 +222,7 @@ formula:
   CÉ_alap = harcérték_alap.CÉ + önuralom + CM
   CÉ_harcmodor = lookup(táv_harcmodor_szint → harcmodor_kepzettsegek_bonuszok.json).CÉ
   CÉ_fegyver = távfegyver.CÉ
-  CÉ_mesterfegyver = lookup(mesterfegyver_fok → mesterfegyver_bónuszok).TÉ  // távfegyverre: Mf ugyanúgy +1/+2/+3 CÉ-t ad
+  CÉ_mesterfegyver = lookup(mesterfegyver_fok → mesterfegyver_bónuszok).CÉ
   CÉ_fortély = SUM( fortély_módosítók(cél="CÉ", feltétel="") )
 
   CÉ = CÉ_alap + CÉ_harcmodor + CÉ_fegyver + CÉ_mesterfegyver + CÉ_fortély
@@ -713,7 +713,11 @@ Karakter séma:
   session.aktív_távfegyver_index: number      // kiválasztott távfegyver indexe (-1 = nincs)
 
 CÉ formula:
-  CÉ = konstansok.harcérték_alap.CÉ + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea
+  CÉ = konstansok.harcérték_alap.CÉ + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea + fortélyCÉ
+
+  fortélyCÉ: feltételes fortély CÉ bónusz (pl. "Célzás" harci helyzet aktív → "Kitartott célzás" 0.fok: +3, 1.fok: +7)
+    Iteráció: összes fortély definíción, effektív fok = max(0, karakter felvett fok).
+    Csak "CÉ" célú módosítók, ahol feltétel ∈ aktívFeltételek (session.aktív_helyzetek → feltétel_kulcs).
 
 Virtuális fegyverek (nem a távfegyverek[] tömben, fortélyból származtatottak):
   - "Alkalmatlan fegyver hajítása" fortély (spec_típus: "fegyver") → per spec_elem, "🔆 Nem dobásra" def
@@ -839,7 +843,7 @@ note: A faj_misztérium mező megmondja, melyik Faj Misztérium képzettséget v
 ## 21. Aktív fül — Taktikák, Manőverek, Helyzetek
 
 Az Aktív fülön választható elemek és módosítóik összefoglalása.
-UI szekció sorrend: Taktikák → Manőver → Harci helyzetek (+ Körülmények) → Státuszok → Narratív.
+UI szekció sorrend: Taktikák → Manőver → Harci helyzetek → Státuszok → Narratív.
 A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "taktika:roham"` stb.
 
 ### Implementációs illeszkedés
@@ -1066,7 +1070,7 @@ A "körülmény" alcsoport is megszűnt (2026-06-21): elemei beolvadtak pozitív
 
 **7. Spec fájlok frissítés:**
 - engine_spec §21 cím → "Taktikák, Manőverek, Helyzetek", §21.3 beolvasztás §21.2-be
-- gui_spec: szituáció szekció → helyzet picker 4 csoport
+- gui_spec: szituáció szekció → helyzet picker 3 csoport (pozitív/semleges/negatív)
 - DEVSTATE: migrálás bejegyzés
 
 ### 21.4 Manőverek
@@ -2210,3 +2214,42 @@ Automatikus felismerés a JSON tartalma alapján:
 - localStorage limit: ~5MB böngészőnként — 10 karakter × ~15KB = ~150KB, bőven belefér
 - Migrálás: ha `szilank_karakter` (régi single key) létezik → automatikus import az első slot-ba, uid generálás
 - `navigator.share()`: csak HTTPS + mobil böngésző; desktop-on fallback = csak "Helyi mentés"
+
+---
+
+## §32 ScreenErrorBoundary
+
+```
+Minden tab screen renderelést `ScreenErrorBoundary` React class component burkolja.
+Ha egy screen renderelés közben runtime hiba keletkezik (pl. hiányzó karakter mező):
+- A screen helyén piros hibaüzenet jelenik meg a hiba szövegével
+- "Újrapróbálás" gomb reseteli az error state-et
+- A többi tab és a fejléc továbbra is működik
+- Console-ba kerül a részletes stack trace
+
+Implementáció: App.tsx — `<ScreenErrorBoundary>` wrapper a `<TabContent />` körül.
+```
+
+---
+
+## §33 Sérült státusz automatika
+
+```
+input:  session.sebzések.length (sebCount), ÉP, sebesülés_kategóriák_száma (4)
+source: konstansok.yaml
+
+formula:
+  oszlopMéret = ÉP / sebesülés_kategóriák_száma
+  inS3 = sebCount > 2 × oszlopMéret
+  inS4 = sebCount > 3 × oszlopMéret
+  targetFok = inS4 ? 2 : inS3 ? 1 : 0
+
+side effect (HarcScreen useEffect):
+  Ha targetFok változik → session.aktív_státuszok frissítés:
+    targetFok = 0: "Sérült (X)" eltávolítása
+    targetFok > 0: "Sérült ({targetFok})" hozzáadása/frissítése
+
+UI (AktivScreen):
+  - "Sérült" státusz chip: locked (nincs ✕ gomb, fok nem kattintható)
+  - Státusz picker: "Sérült (auto)" névvel jelenik meg, szürkítve, nem kattintható
+```

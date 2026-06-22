@@ -98,7 +98,7 @@
   - TÉ footer tap: navigál Tul/Képz → scroll Fájdalomtűrés-hez
   - képzettségek prop: lifted state, Fájdalomtűrés szint módosítás azonnal hat
 - ✅ Tab rendszer: swipe + animáció (0.15s) + tükrözött tab bar (jobb→bal, 18px ikon-only + szöveges fülek)
-- ✅ Szerkesztő/Game mód toggle (1000ms fade animáció narancs↔zöld)
+- ✅ Szerkesztő/Game mód toggle (1500ms fade animáció narancs↔zöld)
 - ✅ Data betöltés: Vite plugin a ../data/ könyvtárból (nincs duplikálás)
 - ✅ 169 fortély yaml, 81 képzettség yaml, 27 faj yaml
 - ✅ Tulajdonságok + Képzettségek fül: teljes UI (szerkesztő + game mód)
@@ -115,7 +115,7 @@
   - Game mód adatlap: próba, domináns tulajdonságok, kiterjesztő fortélyok
 - ✅ Fortélyok fül: teljes UI (szerkesztő + game mód)
   - 6 csoport (Harci → Általános → Érzékek → Szabad → Kiemelt → Misztikus), összecsukható
-  - Fok kijelzés: karikák (●/○) — teli=aktív fok, üres=nem aktív; Nyelvismeret: szöveges label marad
+  - Fok kijelzés: pöttyök (●/○) — 3 fix hely, balról jobbra töltődik, maxfok feletti hidden; Nyelvismeret: szöveges label marad
   - Dropdown: `"Név (max X)"`, ingyenes kerettel: `🎁N`, KP-t adó: `➕6-12-18KP`
   - Többszörös fortélyok: generikus `többszörösség` yaml mező alapján
     - `spec_típus` + `spec_lista: [...]` → fix lista dropdown (szűri a már felvetteket)
@@ -208,7 +208,7 @@
     - Fegyver MF fok módosítás → automatikusan létrehozza/frissíti a Mesterfegyver fortélyt
     - Fegyver törlés → session aktív_fegyver_index/bal_index és kétkezes_harc reset
     - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején
-    - Dupla katt locked elemre → hint: "Ezt a fortélyt a Harcértékek fülön kezeld!" (3s)
+    - Tap locked elemre → hint: "Ezt a fortélyt a Harcértékek/Távharc fülön kezeld!" (3s, távfegyver név alapján)
     - Mesterfegyver és Pajzshasználat NEM jelenik meg a Fortélyok fül dropdown-jában
 - ✅ Jegyzetek fül (📝): teljes képernyős textarea, mindkét módban elérhető, mentődik karakter fájlba
 - ✅ Napló fül (📖): bejegyzés lista (dátum, KM, kaland, események), szerkesztés/törlés, accordion, editOnly
@@ -344,7 +344,7 @@
 2. ✅ Aktív fül (taktika/helyzet/körülmény/manőver/státusz picker, Hatás pool, narratív módosítók, fegyver jobb/bal/kétkezes)
 3. ✅ Hátterek fül (szövegfelhő, data layer-ből)
 4. ✅ Fortély követelmény ellenőrzés (§25 engine_spec, yaml-ok kitöltve, UI: piros jelzés + info)
-5. ✅ Fegyverfogás rendszer (§27: picker, hárítófegyver beolvasztás, lila összesítő sor, Fegyver schema Hárító flag)
+5. ✅ Fegyverfogás rendszer (§27: picker, hárítófegyver beolvasztás, világoskék összesítő sor, Fegyver schema Hárító flag)
 
 ## TODO Backlog
 
@@ -354,7 +354,7 @@
 | -------------------------------- | ------------------------------------------------------- | ----------- |
 | Faj misztérium képzettségek      | → Mágia fülre mozgatás                                  | Általános   |
 | Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
-| Belharc / Belharci szituáció     | Külön rendszer implementálása                           | Aktív fül   |
+| Belharc / Belharci helyzet       | Külön rendszer implementálása                           | Aktív fül   |
 | Magasabbról + Lovas harc kizárás | Ha lovas harc aktív, Magasabbról disabled               | Aktív fül   |
 | Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
 
@@ -378,7 +378,7 @@
 - ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF, harckeret yaml fortélyból `fegyverfogás:kétkezes` feltétellel)
 
 - ✅ Harci akrobatika: session_toggle (yaml `session_toggle: true`) + TÉ/VÉ bekötés + manőver bónusz
-- Belharc / Belharci szituáció — külön rendszer
+- Belharc / Belharci helyzet — külön rendszer
 - Páros harc körülmény — implementálva (picker + fortély)
 
 ### Fortélyok — hiányzó számszerűsítések
@@ -470,10 +470,17 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Virtuális fegyverek: "Alkalmatlan fegyver hajítása" + "Alkalmatlan tárgyak hajítása" fortélyból
 - ✅ Tab sorrend: Harcértékek a Távharc és Misztikus közé került
 - ✅ Fortélyok fül: locked Mesterfegyver hint → "Távharc fülön kezeld" ha távfegyverhez tartozik
+- ✅ Támadás/kör fix: 1 + FLOOR(HK/Seb) (alap 1 hiányzott)
+- ✅ Nyílpuska: "1/2 kör" alapeset, "Gyors újratöltés" ≥1.fok → "1x" (konstansokból)
+- ✅ MF követelmény hiba: piros szín ha nem teljesül (mint Harcértékek fülön)
+- ✅ MF + Merevvért gomb: lila keret (`.he-field-fortely`)
+- ✅ Célzás CÉ bónusz: feltételes fortély CÉ (0.fok kiérdemelt + magasabb fok override)
+- ✅ Törlés gomb: padding fix (konzisztens méret)
 
 ### Harc fül
-- ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: lila összesítő sor (kétkezes/pajzs/hárító).
-- ✅ Szituáció → Körülmény beolvasztás: `szituaciok.yaml` törölve, 7 körülmény `harci_helyzetek.yaml`-ban, `session.aktív_szituációk` törölve, picker 4. csoport
+- ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: világoskék összesítő sor (`#90caf9`, kétkezes/pajzs/hárító).
+- ✅ Szituáció → Körülmény beolvasztás: `szituaciok.yaml` törölve, 7 elem `harci_helyzetek.yaml`-ban (pozitív/semleges), `session.aktív_szituációk` törölve, picker 3 csoport
+- ✅ Sérült státusz auto: useEffect (S3→fok1, S4→fok2), AktivScreen locked chip + picker szürkítve
 - ✅ Távharc fortélyok data layer: `fortelyok/tavharc/` mappa (9 fortély yaml), "🏹 Távharc" picker csoport (`alcsoport` mező)
 - ✅ Hatás pool: harci helyzet alatti fortély bónusz (`→ Fortély (fok): hatás ✔`), alapeset 0.fok hozzáfűzés az infóhoz
 - ✅ Backtick → monospace formázás: `fmtCode()` helper (AktivScreen + FortelyokScreen), Harc fül számok monospace
@@ -492,6 +499,16 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ `esemenyek.yaml`: `általános` cél hozzáadva (csoport: egyéb) szöveges narratív hatásokhoz
 - ✅ Taktika VÉ eltolás limit: `konstansok.taktika_vé_eltolás_limit: 10`, HarcScreen clamp
 - ✅ Hárítófegyver MF VÉ bónusz: hárítóVÉ-hez hozzáadva
+- ✅ ScreenErrorBoundary: minden tab renderelés burkolt, crash → hibaüzenet (nem fehér halál)
+- ✅ Tab indikátor: csík → ezüst karika (`#b0bec5`, border-radius: 50%)
+- ✅ Game mód transition: 1500ms ease
+- ✅ Fortélyok fül: fok pöttyök balról jobbra, 3 fix hely (hidden ha maxfok < 3)
+- ✅ Fortélyok fül: követelménytext lista formátum (schema + 177 yaml konvertálva)
+- ✅ Fortélyok fül: Követelmény sor fmtCode() (backtick→monospace)
+- ✅ Harcértékek: Merevvértviselet gomb mindig megjelenik (nem csak merevvértnél)
+- ✅ Új karakter popup: szöveg frissítve ("NEM vész el, mentésre kerül")
+- ✅ Upstream sync: Belharc→Belharcos, Belharci szituáció→Belharci helyzet, Körülmények megszűnt
+- ✅ Harci fortélyok: követelménytext kitöltve (18 fortély, szöveges követelmények md-ből)
 - Lovas harc rendszer implementálása
 
 ## Fontos konvenciók
