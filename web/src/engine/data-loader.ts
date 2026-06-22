@@ -35,6 +35,9 @@ interface KonstansokRaw {
   hm_aszimmetria_osztó: number;
   vé_csökkentés_gombok: number[];
   taktika_vé_eltolás_limit: number;
+  nyílpuska_alap_támadás: string;
+  nyílpuska_gyors_újratöltés_fortély: string;
+  nyílpuska_gyors_újratöltés_min_fok: number;
 }
 
 // --- KP tábla JSON struktúra ---

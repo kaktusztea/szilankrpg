@@ -8275,9 +8275,10 @@
         ],
         "követelmény": [
           "Csak kiszámíthatóan mozgó cél ellen",
+          "Csak stabil, álló helyzetből végezhető",
           "Íjakkal és lőfegyverekkel végezhető",
           "Íj max `1` körig tartható ki",
-          "`1 kör` után minden plusz kör `CÉ:-3` büntetés (körönként)"
+          "`1 kör` után rosszabb: minden plusz kör `CÉ:-3` büntetés (körönként)"
         ],
         "követelmények": [
           {

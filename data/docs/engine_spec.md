@@ -681,10 +681,10 @@ note: Találati esély = CÉ + k20 >= cél_VÉ
 
 ```
 harckeret = harcmodor_szint(távfegyver.Harcmodor) + Gyorsaság
-támadások_száma = FLOOR(harckeret / fegyver_sebesség)
+támadások_száma = 1 + FLOOR(harckeret / fegyver_sebesség)
 
-Sebesség = -1 (nyílpuskák): támadások_száma = 1 (fix, nem számítható)
-  "Gyors újratöltés" fortély: +1 támadás/kör nyílpuskáknál
+Sebesség = -1 (nyílpuskák): támadások_száma = "1/2 kör" (alapeset)
+  "Gyors újratöltés" fortély ≥1.fok: támadások_száma = 1 (minden kör)
 Sebesség = tartomány (pl. "6-9"): alsó határt használjuk
 ```
 

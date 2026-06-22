@@ -105,14 +105,14 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const sebesség = parseInt(sebességStr) || -1;
 
   let támadásLabel = '—';
+  const gyorsÚjratöltésFok = k.fortélyok.find(f => f.név === konstansok.nyílpuska_gyors_újratöltés_fortély)?.fok ?? 0;
   if (sebesség <= 0) {
-    támadásLabel = '1x';
+    támadásLabel = gyorsÚjratöltésFok >= konstansok.nyílpuska_gyors_újratöltés_min_fok ? '1x' : konstansok.nyílpuska_alap_támadás;
   } else if (harckeret <= 0) {
-    támadásLabel = '—';
-  } else if (harckeret >= sebesség) {
-    támadásLabel = `${Math.floor(harckeret / sebesség)}x`;
+    támadásLabel = '1x';
   } else {
-    támadásLabel = `1/${Math.ceil(sebesség / harckeret)} kör`;
+    const total = 1 + Math.floor(harckeret / sebesség);
+    támadásLabel = `${total}x`;
   }
 
   // Távolság
@@ -207,10 +207,9 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             const seb = parseInt(def?.Sebesség ?? '-1') || -1;
             const hk = hmSzint + gyorsaság;
             let tám = '—';
-            if (seb <= 0) tám = '1x';
-            else if (hk <= 0) tám = '—';
-            else if (hk >= seb) tám = `${Math.floor(hk / seb)}x`;
-            else tám = `1/${Math.ceil(seb / hk)} kör`;
+            if (seb <= 0) tám = gyorsÚjratöltésFok >= konstansok.nyílpuska_gyors_újratöltés_min_fok ? '1x' : konstansok.nyílpuska_alap_támadás;
+            else if (hk <= 0) tám = '1x';
+            else tám = `${1 + Math.floor(hk / seb)}x`;
             return (
             <div key={i} className={`th-card${i === tfIdx ? ' th-card-active' : ''}`} onClick={() => setSession(s => ({ ...s, aktív_távfegyver_index: i }))}>
               <div className="th-card-header">
