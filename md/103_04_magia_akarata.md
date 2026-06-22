@@ -52,7 +52,7 @@ Ez egy opcionális, bármely varázsláskor ingyen alkalmazható formula, amely 
 Próbadobás támadó
  varázsló oldalán (opcionális)
  
-Aurahangolás + Önuralom +k10
+Aurahangolás + Önuralom + k10
 ```
 
 ```
