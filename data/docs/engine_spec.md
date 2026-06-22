@@ -2253,3 +2253,75 @@ UI (AktivScreen):
   - "Sérült" státusz chip: locked (nincs ✕ gomb, fok nem kattintható)
   - Státusz picker: "Sérült (auto)" névvel jelenik meg, szürkítve, nem kattintható
 ```
+
+---
+
+## §34 Aura
+
+```
+input:  karakter.tsz, karakter.tulajdonságok.önuralom
+source: 103_01_aura_jellemzoi.md
+
+formula:
+  Aura = 2 × (tsz + önuralom)
+
+output: Aura (mágiaellenállás alap, mágikus akarat)
+
+note: Az Aura leengedhető akarattal (tetszőleges mértékben, kényszer nélkül).
+      0 értékű Aura → Zavar (1) Kizökkent státusz + Hátrány-2 Emberismeret próbára.
+      Speciális Aurák (tradíció-függő) a §34 keretein kívül esnek (nem implementált).
+```
+
+### §34.1 Mágiaellenállás (ME)
+
+```
+source: 103_03_magiaellenallas.md
+
+formula:
+  ME = Aura + 10 + módosítók
+
+módosítók (szituációtól függő, nem gépesített):
+  + Amulett, varázstárgy, ereklye (szituációs, +1..+3 tipikusan)
+  + Litániák, versek mormolása (fortély: Asztrál/Mentál/Fizikai mantra, +1..+3)
+  + Képzettségek másodlagos hatásai (+1 per 3 szint, max +5)
+
+note: Nem gépesített a webapp-ban (szituációs módosítók KM döntés).
+      Konstans +10 a konstansok.yaml-ban → aura.mágiaellenállás_konstans
+```
+
+### §34.2 Mágia akarata
+
+```
+source: 103_04_magia_akarata.md
+
+formula:
+  Mágia_akarata = Aura + k20 + módosítók
+
+módosítók:
+  + Aurakiterjesztés távolság levonás (0 / -3 / -6 / -9 / -15)
+  + Auraerősítés formula bónusz (+1..+15, Aurahangolás próba, Komplexitás-függő)
+  + Metódus 3. foka: +2
+  + Szituáció/összhang (Előny-Hátrány skála)
+  + Képzettségek másodlagos hatásai (+1 per 3 szint, max +5)
+
+note: Nem gépesített a webapp-ban (harci/varázslási szituáció, dobás).
+```
+
+### §34.3 Aurapárbaj
+
+```
+source: 103_05_auraparbaj.md
+
+formula:
+  Mágia_akarata (dobás) >= ME (célpont) → varázslat átjut
+
+Auraerősítés rontás:
+  Aktuális Aura -= bónusz_érték (amit próbált)
+  Regeneráció: 1 Aura pont / óra
+
+Aurabontás (Aurahangolás formula):
+  -2 Aura pont / sikeres alkalmazás
+  Visszanyerés: 1 / óra (magától) VAGY Aurahangolás próba (kockázatos)
+
+note: Nem gépesített (dobás-alapú, harci szituáció).
+```

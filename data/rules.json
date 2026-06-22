@@ -471,6 +471,14 @@
         "fegyver_harckeret",
         "fegyver_sebesség"
       ]
+    },
+    {
+      "id": "Aura",
+      "formula": "2 * (tsz + tulajdonságok.önuralom)",
+      "inputs": [
+        "tsz",
+        "tulajdonságok.önuralom"
+      ]
     }
   ]
 }

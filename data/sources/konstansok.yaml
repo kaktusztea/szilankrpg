@@ -426,3 +426,30 @@ taktika_vé_eltolás_limit: 10
 nyílpuska_alap_támadás: "1/2 kör"
 nyílpuska_gyors_újratöltés_fortély: "Gyors újratöltés"
 nyílpuska_gyors_újratöltés_min_fok: 1
+
+# Aura
+aura:
+  mágiaellenállás_konstans: 10
+  aurakiterjesztés_levonás:
+    érintés: 0
+    szoba: 0
+    terem: -3
+    mező: -6
+    csatatér: -9
+  auraerősítés_tábla:
+    - komplexitás: 9
+      bónusz: 1
+    - komplexitás: 12
+      bónusz: 3
+    - komplexitás: 15
+      bónusz: 5
+    - komplexitás: 18
+      bónusz: 7
+    - komplexitás: 21
+      bónusz: 9
+    - komplexitás: 24
+      bónusz: 11
+    - komplexitás: 27
+      bónusz: 13
+    - komplexitás: 30
+      bónusz: 15
