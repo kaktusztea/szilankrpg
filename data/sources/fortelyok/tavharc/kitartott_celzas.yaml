@@ -39,9 +39,10 @@ fokok:
   - fok: 1
     követelménytext:
       - text: "Csak kiszámíthatóan mozgó cél ellen"
+      - text: "Csak stabil, álló helyzetből végezhető"
       - text: "Íjakkal és lőfegyverekkel végezhető"
       - text: "Íj max `1` körig tartható ki"
-      - text: "`1 kör` után minden plusz kör `CÉ:-3` büntetés (körönként)"
+      - text: "`1 kör` után rosszabb: minden plusz kör `CÉ:-3` büntetés (körönként)"
     követelmények:
       - név: ["Íjászat", "Lövészet"]
         érték: 5
