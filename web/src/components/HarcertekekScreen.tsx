@@ -242,7 +242,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
                 <div key={h.név} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
                   <span style={{ flex: 1 }}>{h.név}</span>
                   <button className="fort-delete" onClick={() => setDeleteKepzTarget(h.név)}>✕</button>
-                  <strong className={`kep-szint${h.szint >= 9 ? ' kep-szint-high' : ''}`}>{h.szint}</strong>
+                  <strong className={`kep-szint${h.szint > k.tsz ? ' kep-over' : h.szint >= 9 ? ' kep-szint-high' : ''}`}>{h.szint}</strong>
                   <button className="fort-fok-btn" style={{ width: '24px', height: '24px', fontSize: '13px' }} disabled={h.szint <= 1} onClick={() => setKépzettségek(prev => prev.map(k => k.név === h.név ? { ...k, szint: k.szint - 1 } : k))}>−</button>
                   <button className="fort-fok-btn" style={{ width: '24px', height: '24px', fontSize: '13px' }} disabled={h.szint >= 15} onClick={() => setKépzettségek(prev => prev.map(k => k.név === h.név ? { ...k, szint: Math.min(15, k.szint + 1) } : k))}>+</button>
                 </div>
