@@ -274,7 +274,7 @@ if session.get("fegyverfogás") not in valid_fegyverfogas:
 # ============================================================
 print("\n--- 6. Schema struktúra validáció ---")
 
-required_top = ["schema_version", "név", "játékos", "mentés_dátum", "tsz", "leírás", "kor", "anyanyelv", "vallás",
+required_top = ["schema_version", "név", "becenév", "játékos", "mentés_dátum", "tsz", "leírás", "kor", "anyanyelv", "vallás",
                 "tulajdonságok", "HM_TÉ", "HM_VÉ", "CM",
                 "képzettségek", "fortélyok", "fortélyok_speciális",
                 "hátterek", "fegyverek", "távfegyverek", "páncél", "pajzs", "felszerelés", "jegyzetek", "napló", "session"]

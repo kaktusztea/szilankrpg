@@ -5,6 +5,7 @@
 schema_version: 2
 
 név: ""                       # max 40 karakter
+becenév: ""                   # max 12 karakter (rövid megjelenítési név)
 játékos: ""                   # Játékos neve (max 40 karakter)
 mentés_dátum: ""              # YYYY-MM-DD HH:MM
 tsz: 1                        # Tapasztalati szint (1-21)

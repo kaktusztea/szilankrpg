@@ -114,6 +114,7 @@ export interface Karakter {
   id_leíró: string;
   schema_version: number;
   név: string;
+  becenév: string;
   játékos: string;
   mentés_dátum: string;
   tsz: number;

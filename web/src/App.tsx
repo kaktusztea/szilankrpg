@@ -921,6 +921,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
           setKépzettségek(v);
         }}
         név={karakter.név} setNév={v => { pushUndo(`Név: ${karakter.név} → ${v}`); setKarakter(prev => prev ? { ...prev, név: v } : prev); }}
+        becenév={karakter.becenév} setBecenév={v => { pushUndo(`Becenév: ${v}`); setKarakter(prev => prev ? { ...prev, becenév: v } : prev); }}
         játékos={karakter.játékos} setJátékos={v => { pushUndo(`Játékos: ${v}`); setKarakter(prev => prev ? { ...prev, játékos: v } : prev); }}
         tsz={karakter.tsz} setTsz={v => { pushUndo(`TSz: ${karakter.tsz} → ${v}`); setKarakter(prev => prev ? { ...prev, tsz: v } : prev); }}
         kor={karakter.kor} setKor={v => { pushUndo(`Kor: ${karakter.kor} → ${v}`); setKarakter(prev => prev ? { ...prev, kor: v } : prev); }}

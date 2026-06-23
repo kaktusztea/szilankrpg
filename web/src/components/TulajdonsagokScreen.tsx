@@ -30,6 +30,8 @@ interface Props {
   setKépzettségek: React.Dispatch<React.SetStateAction<KepzettsegSlot[]>>;
   név: string;
   setNév: (v: string) => void;
+  becenév: string;
+  setBecenév: (v: string) => void;
   játékos: string;
   setJátékos: (v: string) => void;
   tsz: number;
@@ -42,9 +44,11 @@ interface Props {
   setAnyanyelv: (v: string) => void;
 }
 
-export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv }: Props) {
+export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, becenév, setBecenév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv }: Props) {
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
+  const [editingBecenév, setEditingBecenév] = useState(false);
+  const [tempBecenév, setTempBecenév] = useState('');
   const [editingTsz, setEditingTsz] = useState(false);
   const [editingKor, setEditingKor] = useState(false);
   const [editingJátékos, setEditingJátékos] = useState(false);
@@ -58,7 +62,7 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
   useEffect(() => {
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setEditingNév(false); setEditingTsz(false);
+        setEditingNév(false); setEditingBecenév(false); setEditingTsz(false);
         setEditingKor(false); setEditingJátékos(false); setDeleteTarget(null); setPendingEditIdx(null);
         setPromptState(null);
       }
@@ -215,19 +219,34 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
   return (
     <div className="screen tul-screen">
       <h2>🔵 Tulajdonságok / Képzettségek</h2>
-      {/* Fejléc: Név + Szint */}
-      <div className="tul-header">
-        <div className="tul-header-box tul-header-név"
+      {/* Fejléc: Név + Becenév + Szint */}
+      <div className="tul-header" style={{ flexDirection: 'column', gap: '4px' }}>
+        <div className="tul-header-box" style={{ width: '100%' }}
           onClick={() => { if (gameMode) return; setTempNév(név); setEditingNév(true); }}
         >
           <span className="tul-header-label">Név:</span> <strong>{gameMode ? `${név} (${faj}, ${kor})` : név}</strong>
         </div>
-        <div
-          className="tul-header-box"
-          onClick={() => { if (gameMode) return; setEditingTsz(true); }}
+        {!gameMode && (
+        <div style={{ display: 'flex', gap: '6px', width: '100%' }}>
+          <div className="tul-header-box" style={{ flex: 1 }}
+            onClick={() => { setEditingBecenév(true); setTempBecenév(becenév); }}
+          >
+            <span className="tul-header-label">Becenév:</span> <strong>{becenév || '—'}</strong>
+          </div>
+          <div className="tul-header-box"
+            onClick={() => { setEditingTsz(true); }}
+          >
+            <span className="tul-header-label">Szint:</span> <strong>{tsz}</strong>
+          </div>
+        </div>
+        )}
+        {gameMode && (
+        <div className="tul-header-box"
+          onClick={() => {}}
         >
           <span className="tul-header-label">Szint:</span> <strong>{tsz}</strong>
         </div>
+        )}
       </div>
 
       {/* Faj + Kor - csak szerkesztő módban */}
@@ -452,6 +471,19 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
             <input autoFocus maxLength={40} value={tempJátékos} onChange={e => setTempJátékos(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') { setJátékos(tempJátékos); setEditingJátékos(false); } }} />
             <div className="kep-prompt-btns">
               <button onClick={() => { setJátékos(tempJátékos); setEditingJátékos(false); }}>OK</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {editingBecenév && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt">
+            <label>Becenév (max 12)</label>
+            <input autoFocus maxLength={12} value={tempBecenév} onChange={e => setTempBecenév(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') { setBecenév(tempBecenév.trim()); setEditingBecenév(false); } if (e.key === 'Escape') setEditingBecenév(false); }} />
+            <div className="kep-prompt-btns">
+              <button onClick={() => { setBecenév(tempBecenév.trim()); setEditingBecenév(false); }}>OK</button>
             </div>
           </div>
         </div>,
