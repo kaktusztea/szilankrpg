@@ -2,6 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData, KepzettsegDef, KiterjesztesEntry } from '../engine/data-loader';
 import type { Tulajdonsagok, Karakter } from '../engine/types';
+import { TulajdonsagCell } from './TulajdonsagCell';
+import { PrimerKpBox } from './PrimerKpBox';
 import './TulajdonsagokScreen.css';
 
 const TULAJDONSAG_NEVEK: (keyof Tulajdonsagok)[] = [
@@ -490,122 +492,8 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
         document.body
       )}
 
-      {!gameMode && (() => {
-        const konstansok = data.konstansok;
-        const kpTábla = data.kepzettsegKp;
-        const kpCost = (szint: number) => kpTábla.filter(r => r.szint <= szint).reduce((s, r) => s + r.kp, 0);
-        const harcmodorNevek = [...konstansok.harcmodorok.közelharci, ...konstansok.harcmodorok.távolsági];
-        const misztikusNevek = data.kepzettsegDefs.filter((k: any) => k.csoport === 'misztikus').map((k: any) => k.név.toLowerCase());
-        const isMisztikus = (név: string) => {
-          const lower = név.toLowerCase();
-          return misztikusNevek.some(m => lower === m || lower.startsWith(m + ':'));
-        };
-        const primerKepzNevek = new Set(data.kepzettsegDefs.filter((k: any) => k.primer).map((k: any) => k.név.toLowerCase()));
-        // Harcmodor többszörösök is primerek
-        for (const nm of harcmodorNevek) primerKepzNevek.add(nm);
-
-        let kp_hm_cm = (karakter.HM_TÉ + karakter.HM_VÉ) * konstansok.kp.hm + karakter.CM * konstansok.kp.cm;
-        let kp_harcmodor = 0;
-        let kp_misztikus = 0;
-        let kp_világi = 0;
-        const harcmodorDetails: { név: string; szint: number; kp: number }[] = [];
-        const misztikusDetails: { név: string; szint: number; kp: number }[] = [];
-        const világiDetails: { név: string; szint: number; kp: number }[] = [];
-        for (const kp of képzettségek) {
-          if (kp.szint <= 0) continue;
-          const cost = kpCost(kp.szint);
-          if (harcmodorNevek.includes(kp.név.toLowerCase())) { kp_harcmodor += cost; harcmodorDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
-          else if (isMisztikus(kp.név)) { kp_misztikus += cost; misztikusDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
-          else if (!primerKepzNevek.has(kp.név.toLowerCase())) continue;
-          else { kp_világi += cost; világiDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
-        }
-        let kp_harci_fort = 0;
-        let kp_miszt_fort = 0;
-        const harcifortDetails: { név: string; fok: number; kp: number; spec: string }[] = [];
-        const misztfortDetails: { név: string; fok: number; kp: number; spec: string }[] = [];
-        const primerFortélyok = data.primerFortelyok;
-        for (const f of karakter.fortélyok) {
-          if (!primerFortélyok.includes(f.név)) continue;
-          const def = data.fortelySummaries.find(d => d.név === f.név);
-          if (!def || def.kp_perfok === 0) continue;
-          const cost = f.fok * def.kp_perfok;
-          if (def.csoport === 'harci' || def.csoport === 'távharc') { kp_harci_fort += cost; harcifortDetails.push({ név: f.név, fok: f.fok, kp: cost, spec: f.spec_elem || '' }); }
-          else if (def.csoport === 'misztikus') { kp_miszt_fort += cost; misztfortDetails.push({ név: f.név, fok: f.fok, kp: cost, spec: f.spec_elem || '' }); }
-        }
-        const total = kp_hm_cm + kp_harcmodor + kp_misztikus + kp_világi + kp_harci_fort + kp_miszt_fort;
-        const pct = (v: number) => total > 0 ? Math.round(v / total * 100) : 0;
-        const row = (label: string, val: number) => <div>{label}: {val} KP ({pct(val)}%)</div>;
-
-        return (
-          <div style={{ marginTop: '16px', padding: '10px', border: '1px dashed #666', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>
-            <strong style={{ color: '#e53935' }}>Primer KP bontás</strong>
-            {row('HM + CM', kp_hm_cm)}
-            {row('Harcmodor képzettségek', kp_harcmodor)}
-            {harcmodorDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
-            {row('Misztikus képzettségek', kp_misztikus)}
-            {misztikusDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
-            {row('Primer világi képzettségek', kp_világi)}
-            {világiDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
-            {row('Harci fortélyok', kp_harci_fort)}
-            {harcifortDetails.map((d, i) => <div key={i} style={{ paddingLeft: '10px' }}>· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
-            {row('Misztikus fortélyok', kp_miszt_fort)}
-            {misztfortDetails.map((d, i) => <div key={i} style={{ paddingLeft: '10px' }}>· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
-            <div style={{ borderTop: '1px solid #555', marginTop: '4px', paddingTop: '4px' }}><strong>Össz primer: {total} KP</strong></div>
-          </div>
-        );
-      })()}
+      {!gameMode && <PrimerKpBox data={data} karakter={karakter} képzettségek={képzettségek} />}
     </div>
-  );
-}
-
-/* --- Tulajdonság cella --- */
-function TulajdonsagCell({ név, érték, gameMode, onChange, fajMin, fajMax }: {
-  név: string; érték: number; gameMode: boolean; onChange: (v: number) => void; fajMin?: number; fajMax?: number;
-}) {
-  const [editing, setEditing] = useState(false);
-
-  useEffect(() => {
-    if (!editing) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setEditing(false); }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [editing]);
-
-  const label = név.charAt(0).toUpperCase() + név.slice(1);
-  const overLimit = fajMax !== undefined && érték > fajMax;
-  const underLimit = fajMin !== undefined && érték < fajMin;
-  const hasWarning = overLimit || underLimit;
-
-  function handleTap() {
-    if (!gameMode) { setEditing(true); }
-  }
-
-  return (
-    <>
-      <div
-        className={`tul-cell ${!gameMode ? 'editable' : ''} ${hasWarning ? 'tul-warn' : ''}`}
-        onClick={handleTap}
-      >
-        <span className="tul-label">{label}:</span>
-        <span className={`tul-value ${hasWarning ? 'tul-value-warn' : ''}`}>{érték}</span>
-        {hasWarning && (
-          <div className="tul-warn-info">{overLimit ? `Faj max: ${fajMax}` : `Faj min: ${fajMin}`}</div>
-        )}
-      </div>
-      {editing && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt">
-            <label>{label}</label>
-            <div className="kep-szint-grid tul-val-grid">
-              {[-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7].map(n => (
-                <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => { onChange(n); setEditing(false); }}>{n}</button>
-              ))}
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
-    </>
   );
 }
 
