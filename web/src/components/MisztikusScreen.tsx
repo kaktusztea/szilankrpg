@@ -16,6 +16,8 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const konstansok = data.konstansok;
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
   const [misztFokTarget, setMisztFokTarget] = useState<number | null>(null);
+  const [misztFortPrompt, setMisztFortPrompt] = useState<{ név: string; többszörös_típus: string; maxfok: number } | null>(null);
+  const [misztKierdemeltPicker, setMisztKierdemeltPicker] = useState<{ név: string; spec_típus: string; spec_elem: string; maxfok: number } | null>(null);
   const [promptTarget, setPromptTarget] = useState<string | null>(null);
   const [promptValue, setPromptValue] = useState('');
   const [tradícióPicker, setTradícióPicker] = useState(false);
@@ -54,11 +56,11 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [szintTarget, setSzintTarget] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker && misztFokTarget === null) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); setMisztFokTarget(null); } }
+    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker && misztFokTarget === null && !misztFortPrompt && !misztKierdemeltPicker) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); setMisztFokTarget(null); setMisztFortPrompt(null); setMisztKierdemeltPicker(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker, misztFokTarget]);
+  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker, misztFokTarget, misztFortPrompt, misztKierdemeltPicker]);
 
   const maxSzint = karakter.tsz; // misztikus képzettségek mind primerek
 
@@ -281,6 +283,54 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         document.body
       )}
 
+      {misztFortPrompt && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setMisztFortPrompt(null); }}>
+          <div className="kep-prompt">
+            <label>{misztFortPrompt.név}: {misztFortPrompt.többszörös_típus}</label>
+            <input autoFocus maxLength={30} value={promptValue} onChange={e => setPromptValue(e.target.value)} onKeyDown={e => {
+              if (e.key === 'Enter' && promptValue.trim()) {
+                setMisztKierdemeltPicker({ név: misztFortPrompt.név, spec_típus: misztFortPrompt.többszörös_típus, spec_elem: promptValue.trim(), maxfok: misztFortPrompt.maxfok });
+                setMisztFortPrompt(null);
+              }
+              if (e.key === 'Escape') setMisztFortPrompt(null);
+            }} />
+            <div className="kep-prompt-btns">
+              <button onClick={() => {
+                if (!promptValue.trim()) return;
+                setMisztKierdemeltPicker({ név: misztFortPrompt.név, spec_típus: misztFortPrompt.többszörös_típus, spec_elem: promptValue.trim(), maxfok: misztFortPrompt.maxfok });
+                setMisztFortPrompt(null);
+              }} disabled={!promptValue.trim()}>OK</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {misztKierdemeltPicker && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
+            <label style={{ fontWeight: 'bold' }}>{misztKierdemeltPicker.spec_elem ? `${misztKierdemeltPicker.név} - ${misztKierdemeltPicker.spec_elem}` : misztKierdemeltPicker.név}</label>
+            <div style={{ display: 'flex', gap: '12px' }}>
+              <button className="he-field-btn" style={{ padding: '10px 16px', fontSize: '16px' }} onClick={() => {
+                const p = misztKierdemeltPicker;
+                const newIdx = fortélyok.length;
+                setFortélyok(prev => [...prev, { név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem }]);
+                if (p.maxfok > 1) setMisztFokTarget(newIdx);
+                setMisztKierdemeltPicker(null);
+              }}>Felvett</button>
+              <button className="he-field-btn" style={{ padding: '10px 16px', fontSize: '16px' }} onClick={() => {
+                const p = misztKierdemeltPicker;
+                const newIdx = fortélyok.length;
+                setFortélyok(prev => [...prev, { név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem, kiérdemelt: true }]);
+                if (p.maxfok > 1) setMisztFokTarget(newIdx);
+                setMisztKierdemeltPicker(null);
+              }}>⭐ Kiérdemelt</button>
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
       {/* Misztikus fortélyok */}
       {(() => {
         const misztFortDefs = data.fortelySummaries.filter(d => d.csoport === 'misztikus');
@@ -307,9 +357,12 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
                 if (!e.target.value) return;
                 const def = misztFortDefs.find(d => d.név === e.target.value);
                 if (!def) return;
-                const newIdx = fortélyok.length;
-                setFortélyok(prev => [...prev, { név: def.név, fok: 1, spec_típus: def.többszörös_típus, spec_elem: '' }]);
-                if (def.maxfok > 1) setMisztFokTarget(newIdx);
+                if (def.többszörös_típus) {
+                  setMisztFortPrompt(def);
+                  setPromptValue('');
+                } else {
+                  setMisztKierdemeltPicker({ név: def.név, spec_típus: '', spec_elem: '', maxfok: def.maxfok });
+                }
               }}>
                 <option value="">+ Misztikus fortély...</option>
                 {felvehető.map(d => <option key={d.név} value={d.név}>{d.név}</option>)}
