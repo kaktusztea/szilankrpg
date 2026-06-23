@@ -255,7 +255,7 @@ export function buildArrayContext(
     const kiemelt: Record<string, number | string>[] = [];
     for (const d of opts.ingyenesFortelyok) {
       const ingyenesDb = Math.floor((opts.tsz + 1) / d.ingyenes_perszint);
-      const felvettDb = fortélyok.filter(f => f.név === d.név).reduce((s, f) => s + f.fok, 0);
+      const felvettDb = fortélyok.filter(f => f.név === d.név && !(f as any).kiérdemelt).reduce((s, f) => s + f.fok, 0);
       const fizetősDb = Math.max(0, felvettDb - ingyenesDb);
       if (fizetősDb > 0) {
         kiemelt.push({ fizetős_kp: fizetősDb * d.kp_perfok });
@@ -274,6 +274,7 @@ export function buildArrayContext(
   if (opts?.primerFortNevek && fortelyKpMap) {
     const primerFort: Record<string, number | string>[] = [];
     for (const f of fortélyok) {
+      if ((f as any).kiérdemelt) continue;
       if (opts.primerFortNevek.has(f.név)) {
         const perFok = fortelyKpMap.get(f.név) ?? 6;
         if (perFok > 0) primerFort.push({ kp: f.fok * perFok });

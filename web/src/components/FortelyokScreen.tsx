@@ -108,7 +108,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
 
   function addMultiInstance(subName: string) {
     if (!multiPickerDef) return;
-    if (multiPickerDef.csoport === 'szabad' || multiPickerDef.csoport === 'kiemelt') {
+    if (multiPickerDef.csoport === 'szabad' || multiPickerDef.csoport === 'kiemelt' || multiPickerDef.csoport === 'misztikus') {
       setSzabadTypePicker({ név: multiPickerDef.név, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName });
       setMultiPickerDef(null);
       return;
