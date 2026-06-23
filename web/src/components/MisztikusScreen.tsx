@@ -18,6 +18,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [misztFokTarget, setMisztFokTarget] = useState<number | null>(null);
   const [misztFortPrompt, setMisztFortPrompt] = useState<{ név: string; többszörös_típus: string; maxfok: number; lista: string[] } | null>(null);
   const [misztKierdemeltPicker, setMisztKierdemeltPicker] = useState<{ név: string; spec_típus: string; spec_elem: string; maxfok: number } | null>(null);
+  const [deleteFortIdx, setDeleteFortIdx] = useState<number | null>(null);
   const [promptTarget, setPromptTarget] = useState<string | null>(null);
   const [promptValue, setPromptValue] = useState('');
   const [tradícióPicker, setTradícióPicker] = useState(false);
@@ -56,11 +57,11 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [szintTarget, setSzintTarget] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker && misztFokTarget === null && !misztFortPrompt && !misztKierdemeltPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); setMisztFokTarget(null); setMisztFortPrompt(null); setMisztKierdemeltPicker(null); } }
+    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker && misztFokTarget === null && !misztFortPrompt && !misztKierdemeltPicker && deleteFortIdx === null) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); setMisztFokTarget(null); setMisztFortPrompt(null); setMisztKierdemeltPicker(null); setDeleteFortIdx(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker, misztFokTarget, misztFortPrompt, misztKierdemeltPicker]);
+  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker, misztFokTarget, misztFortPrompt, misztKierdemeltPicker, deleteFortIdx]);
 
   const maxSzint = karakter.tsz; // misztikus képzettségek mind primerek
 
@@ -344,6 +345,16 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         document.body
       )}
 
+      {deleteFortIdx !== null && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteFortIdx(null); }}>
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
+            <label style={{ fontWeight: 'bold' }}>{fortélyok[deleteFortIdx]?.név}{fortélyok[deleteFortIdx]?.spec_elem ? ` - ${fortélyok[deleteFortIdx].spec_elem}` : ''}</label>
+            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setFortélyok(prev => prev.filter((_, j) => j !== deleteFortIdx)); setDeleteFortIdx(null); }}>Fortély törlése</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
       {/* Misztikus fortélyok */}
       {(() => {
         const misztFortDefs = data.fortelySummaries.filter(d => d.csoport === 'misztikus');
@@ -364,7 +375,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
               return (
               <div key={`${f.név}-${f.spec_elem}-${i}`} className="kep-row" style={{ gap: '8px', cursor: !gameMode && maxfok > 1 ? 'pointer' : undefined }} onClick={() => { if (!gameMode && maxfok > 1) setMisztFokTarget(globalIdx); }}>
                 <span className="kep-név" style={{ flex: 1 }}>{f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név}{f.kiérdemelt ? ' ⭐' : ''}</span>
-                {!gameMode && <button className="fort-delete" onClick={e => { e.stopPropagation(); setFortélyok(prev => prev.filter((_, j) => j !== globalIdx)); }}>✕</button>}
+                {!gameMode && <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteFortIdx(globalIdx); }}>✕</button>}
                 <span className="fort-fok-dots">{Array.from({ length: 3 }, (_, di) => <span key={di} className={`fort-dot${di < f.fok ? ' filled' : ''}${di >= maxfok ? ' fort-dot-hidden' : ''}`} />)}</span>
               </div>
               );
