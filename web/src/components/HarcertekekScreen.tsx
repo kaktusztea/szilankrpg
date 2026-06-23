@@ -186,15 +186,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
   const [pajzsPopup, setPajzsPopup] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<number | null>(null);
   const [deleteKepzTarget, setDeleteKepzTarget] = useState<string | null>(null);
+  const [kepzSzintTarget, setKepzSzintTarget] = useState<string | null>(null);
   const ideaMin = ideaTarget?.type === 'fegyver' ? -5 : -4;
   const ideaMax = ideaTarget?.type === 'fegyver' ? 5 : 4;
 
   useEffect(() => {
-    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && !pajzsPopup && deleteTarget === null && !deleteKepzTarget) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); setDeleteKepzTarget(null); } }
+    if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && !pajzsPopup && deleteTarget === null && !deleteKepzTarget && !kepzSzintTarget) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); setDeleteKepzTarget(null); setKepzSzintTarget(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget]);
+  }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget]);
 
   return (
     <div className="screen harcertekek-screen">
@@ -239,12 +240,10 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
             const nemFelvett = allHarciNames.filter(n => !képzettségek.some(k => k.név === n && k.szint > 0));
             return (<>
               {felvett.map(h => (
-                <div key={h.név} style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-                  <span style={{ flex: 1 }}>{h.név}</span>
-                  <button className="fort-delete" onClick={() => setDeleteKepzTarget(h.név)}>✕</button>
+                <div key={h.név} className="kep-row" onClick={() => setKepzSzintTarget(h.név)}>
+                  <span className="kep-név" style={{ flex: 1 }}>{h.név}</span>
+                  <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteKepzTarget(h.név); }}>✕</button>
                   <strong className={`kep-szint${h.szint > k.tsz ? ' kep-over' : h.szint >= 9 ? ' kep-szint-high' : ''}`}>{h.szint}</strong>
-                  <button className="fort-fok-btn" style={{ width: '24px', height: '24px', fontSize: '13px' }} disabled={h.szint <= 1} onClick={() => setKépzettségek(prev => prev.map(k => k.név === h.név ? { ...k, szint: k.szint - 1 } : k))}>−</button>
-                  <button className="fort-fok-btn" style={{ width: '24px', height: '24px', fontSize: '13px' }} disabled={h.szint >= 15} onClick={() => setKépzettségek(prev => prev.map(k => k.név === h.név ? { ...k, szint: Math.min(15, k.szint + 1) } : k))}>+</button>
                 </div>
               ))}
               {nemFelvett.length > 0 && (
@@ -454,6 +453,23 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>{deleteKepzTarget}</label>
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKépzettségek(prev => prev.filter(k => k.név !== deleteKepzTarget)); setDeleteKepzTarget(null); }}>Képzettség törlése</button>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {kepzSzintTarget && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setKepzSzintTarget(null); }}>
+          <div className="kep-prompt">
+            <label>{kepzSzintTarget} — szint:</label>
+            <div className="kep-szint-grid">
+              {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
+                <button key={n} className={`fort-fok-btn ${(képzettségek.find(kp => kp.név === kepzSzintTarget)?.szint ?? 0) === n ? 'active' : ''}`} onClick={() => {
+                  setKépzettségek(prev => prev.map(kp => kp.név === kepzSzintTarget ? { ...kp, szint: n } : kp));
+                  setKepzSzintTarget(null);
+                }}>{n}</button>
+              ))}
+            </div>
           </div>
         </div>,
         document.body
