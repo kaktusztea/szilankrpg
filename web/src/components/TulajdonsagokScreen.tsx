@@ -6,16 +6,6 @@ import { TulajdonsagCell } from './TulajdonsagCell';
 import { PrimerKpBox } from './PrimerKpBox';
 import './TulajdonsagokScreen.css';
 
-const TULAJDONSAG_NEVEK: (keyof Tulajdonsagok)[] = [
-  'erő', 'edzettség', 'ügyesség', 'gyorsaság',
-  'intelligencia', 'emlékezet', 'önuralom', 'érzékenység',
-];
-
-const CSOPORT_SORREND = ['fizikai', 'világi', 'alvilági', 'művészeti', 'tudományos'];
-const CSOPORT_LABEL: Record<string, string> = {
-  harci: '⚔️ Harci', misztikus: '✨ Misztikus', fizikai: '🏃 Fizikai',
-  világi: '🌍 Világi', alvilági: '🗝️ Alvilági', művészeti: '🎨 Művészeti', tudományos: '🧪 Tudományos',
-};
 
 interface KepzettsegSlot {
   név: string;
@@ -59,6 +49,10 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+  const TULAJDONSAG_NEVEK = (data.konstansok as any).tulajdonság_sorrend as (keyof Tulajdonsagok)[];
+  const csoportSorrend = (data.konstansok as any).képzettség_csoport_sorrend as { id: string; label: string }[];
+  const CSOPORT_SORREND = csoportSorrend.map(c => c.id);
+  const CSOPORT_LABEL: Record<string, string> = Object.fromEntries(csoportSorrend.map(c => [c.id, c.label]));
 
   // Escape bezárja az aktív popup-ot
   useEffect(() => {

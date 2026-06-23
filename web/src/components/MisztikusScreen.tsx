@@ -22,7 +22,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const ctx = buildContext(karakter.tulajdonságok, karakter.tsz, konstansok as any, {});
   const computed = evaluate(data.rules, ctx);
   const aura = computed.get('Aura') ?? 0;
-  const me = aura + ((konstansok as any).aura?.mágiaellenállás_konstans ?? 10);
+  const me = aura + (konstansok as any).aura.mágiaellenállás_konstans;
 
   // Misztikus képzettségek
   const tradíció = képzettségek.find(k => k.név.startsWith('Tradíció'));

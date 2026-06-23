@@ -72,7 +72,7 @@ export function validateKarakterData(k: Karakter, data: GameData): string | null
     errors.push(`Ismeretlen fémalapanyag: "${k.páncél.fémalapanyag}"`);
   }
 
-  const validFegyverAnyag = new Set(['acél', 'bronz', 'abbitacél', 'mithrill', 'lunír']);
+  const validFegyverAnyag = new Set(data.konstansok.fegyver_anyagok as string[]);
   for (const f of k.fegyverek) {
     if (f.anyag && !validFegyverAnyag.has(f.anyag)) {
       errors.push(`Ismeretlen fegyver anyag: "${f.anyag}"`);

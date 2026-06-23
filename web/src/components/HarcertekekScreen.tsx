@@ -358,7 +358,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
-              {['acél', 'bronz', 'abbitacél', 'mithrill', 'lunír'].map(a => (
+              {(data.konstansok as any).fegyver_anyagok.map((a: string) => (
                 <button key={a} className={`fort-fok-btn ${k.fegyverek[anyagTarget]?.anyag === a ? 'active' : ''}`} style={{ width: 'auto', minWidth: '120px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updateFegyver(anyagTarget, { anyag: a }); setAnyagTarget(null); }}>{a}</button>
               ))}
             </div>

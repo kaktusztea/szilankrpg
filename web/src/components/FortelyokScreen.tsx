@@ -6,12 +6,6 @@ import './FortelyokScreen.css';
 
 import { fmtCode } from './formatters';
 
-const CSOPORT_SORREND = ['harci', 'távharc', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'];
-const CSOPORT_LABEL: Record<string, string> = {
-  harci: '⚔️ Harci', távharc: '🏹 Távharc', általános: '🔧 Általános', érzékek: '👁️ Érzékek',
-  szabad: '🆓 Szabad', kiemelt: '⭐ Kiemelt', misztikus: '✨ Misztikus',
-};
-
 /** Display name: "Kultúrkör - erv" if spec_elem, otherwise just név */
 function displayName(f: Fortely): string {
   const base = f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
@@ -19,7 +13,6 @@ function displayName(f: Fortely): string {
   return base;
 }
 
-const NYELV_FOK_LABELS: Record<number, string> = { 1: 'Alap', 2: 'Udvari' };
 
 interface Props {
   data: GameData;
@@ -35,6 +28,10 @@ interface Props {
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, távfegyverNevek, nyelvtanulásSzint, képzettségek }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+  const fortCsoportSorrend = (data.konstansok as any).fortély_csoport_sorrend as { id: string; label: string }[];
+  const CSOPORT_SORREND = fortCsoportSorrend.map(c => c.id);
+  const CSOPORT_LABEL: Record<string, string> = Object.fromEntries(fortCsoportSorrend.map(c => [c.id, c.label]));
+  const NYELV_FOK_LABELS: Record<number, string> = (data.konstansok as any).nyelv_fok_nevek;
   const lockedSet = new Set(data.konstansok.locked_fortélyok);
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -204,6 +201,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       isOpen={isOpen}
                       overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}
                       nyelvPontKeret={slot.név === 'Nyelvismeret' ? nyelvPontKeret : undefined}
+                      nyelvFokLabels={NYELV_FOK_LABELS}
                       képzettségek={képzettségek}
                       fortélyok={fortélyok}
                       harcmodorNevek={[...data.konstansok.harcmodorok.közelharci, ...data.konstansok.harcmodorok.távolsági]}
@@ -413,7 +411,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret, képzettségek, fortélyok, harcmodorNevek, távfegyverNevek }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret, nyelvFokLabels, képzettségek, fortélyok, harcmodorNevek, távfegyverNevek }: {
   slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
@@ -422,6 +420,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   locked: boolean;
   overLimit: boolean;
   nyelvPontKeret?: number;
+  nyelvFokLabels: Record<number, string>;
   képzettségek: { név: string; szint: number }[];
   fortélyok: Fortely[];
   harcmodorNevek: string[];
@@ -432,6 +431,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   onHint: (msg: string, duration?: number) => void;
 }) {
   const [editing, setEditing] = useState(false);
+  const NYELV_FOK_LABELS = nyelvFokLabels;
   const maxfok = def?.maxfok ?? 1;
 
   useEffect(() => {

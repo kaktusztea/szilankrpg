@@ -519,7 +519,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             </div>
             <div className="aktiv-picker-list">
               {!taktikaFokválasztó && data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).sort((a, b) => {
-                const pinned = ['Támadó', 'Védő', 'Teljes Védekezés'];
+                const pinned = (data.konstansok as any).pinned_taktikák;
                 const aPin = pinned.indexOf(a.név);
                 const bPin = pinned.indexOf(b.név);
                 if (aPin >= 0 && bPin >= 0) return aPin - bPin;

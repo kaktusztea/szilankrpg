@@ -820,7 +820,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
     case 'tulajdonsagok': {
       const setAnyanyelv = (v: string) => setKarakter(prev => {
         if (!prev) return prev;
-        const közös = 'Közös (pyarroni)';
+        const közös = (data.konstansok as any).közös_nyelv;
         const filtered = prev.fortélyok.filter(f => !(f.név === 'Nyelvismeret' && f.kiérdemelt));
         const ingyenesek: Fortely[] = [
           { név: 'Nyelvismeret', fok: 1, spec_típus: 'nyelv', spec_elem: közös, kiérdemelt: true },

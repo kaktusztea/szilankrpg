@@ -365,9 +365,9 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <button className="fort-fok-btn" style={{ width: '32px', height: '32px' }} onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.max(0, prev.CM - 1) } : prev)}>−</button>
               <strong style={{ fontSize: '18px' }}>{k.CM}</strong>
-              <button className="fort-fok-btn" style={{ width: '32px', height: '32px' }} onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.min(prev.CM + 1, prev.tsz * (konstansok.arányok.max_cm_perszint ?? 2)) } : prev)}>+</button>
+              <button className="fort-fok-btn" style={{ width: '32px', height: '32px' }} onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.min(prev.CM + 1, prev.tsz * konstansok.arányok.max_cm_perszint) } : prev)}>+</button>
             </div>
-            <span style={{ fontSize: '11px', color: '#888' }}>max: {k.tsz * (konstansok.arányok.max_cm_perszint ?? 2)}</span>
+            <span style={{ fontSize: '11px', color: '#888' }}>max: {k.tsz * konstansok.arányok.max_cm_perszint}</span>
           </div>
         )}
       </div>

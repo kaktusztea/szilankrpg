@@ -1,5 +1,84 @@
 {
   "version": 2,
+  "fegyver_anyagok": [
+    "acél",
+    "bronz",
+    "abbitacél",
+    "mithrill",
+    "lunír"
+  ],
+  "nyelv_fok_nevek": {
+    "1": "Alap",
+    "2": "Udvari"
+  },
+  "pinned_taktikák": [
+    "Támadó",
+    "Védő",
+    "Teljes Védekezés"
+  ],
+  "közös_nyelv": "Közös (pyarroni)",
+  "tulajdonság_sorrend": [
+    "erő",
+    "edzettség",
+    "ügyesség",
+    "gyorsaság",
+    "intelligencia",
+    "emlékezet",
+    "önuralom",
+    "érzékenység"
+  ],
+  "képzettség_csoport_sorrend": [
+    {
+      "id": "fizikai",
+      "label": "Fizikai"
+    },
+    {
+      "id": "világi",
+      "label": "Világi"
+    },
+    {
+      "id": "alvilági",
+      "label": "Alvilági"
+    },
+    {
+      "id": "művészeti",
+      "label": "Művészeti"
+    },
+    {
+      "id": "tudományos",
+      "label": "Tudományos"
+    }
+  ],
+  "fortély_csoport_sorrend": [
+    {
+      "id": "harci",
+      "label": "⚔️ Harci"
+    },
+    {
+      "id": "távharc",
+      "label": "🏹 Távharc"
+    },
+    {
+      "id": "általános",
+      "label": "🔧 Általános"
+    },
+    {
+      "id": "érzékek",
+      "label": "👁️ Érzékek"
+    },
+    {
+      "id": "szabad",
+      "label": "🆓 Szabad"
+    },
+    {
+      "id": "kiemelt",
+      "label": "⭐ Kiemelt"
+    },
+    {
+      "id": "misztikus",
+      "label": "✨ Misztikus"
+    }
+  ],
   "fortély_követelmény_típusok": [
     "képzettség",
     "mesterfegyver"
