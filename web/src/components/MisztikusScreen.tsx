@@ -4,15 +4,18 @@ import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
 import { evaluate, buildContext } from '../engine/reactive';
 
-export function MisztikusScreen({ data, karakter, képzettségek, setKépzettségek, gameMode }: {
+export function MisztikusScreen({ data, karakter, képzettségek, setKépzettségek, fortélyok, setFortélyok, gameMode }: {
   data: GameData;
   karakter: Karakter;
   képzettségek: { név: string; szint: number }[];
   setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
+  fortélyok: { név: string; fok: number; spec_típus: string; spec_elem: string; kiérdemelt?: boolean }[];
+  setFortélyok: React.Dispatch<React.SetStateAction<any[]>>;
   gameMode: boolean;
 }) {
   const konstansok = data.konstansok;
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
+  const [misztFokTarget, setMisztFokTarget] = useState<number | null>(null);
   const [promptTarget, setPromptTarget] = useState<string | null>(null);
   const [promptValue, setPromptValue] = useState('');
   const [tradícióPicker, setTradícióPicker] = useState(false);
@@ -51,11 +54,11 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [szintTarget, setSzintTarget] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); } }
+    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker && misztFokTarget === null) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); setMisztFokTarget(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker]);
+  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker, misztFokTarget]);
 
   const maxSzint = karakter.tsz; // misztikus képzettségek mind primerek
 
@@ -260,6 +263,61 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         </div>,
         document.body
       )}
+
+      {misztFokTarget !== null && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setMisztFokTarget(null); }}>
+          <div className="kep-prompt">
+            <label>{fortélyok[misztFokTarget]?.név} — fok:</label>
+            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
+              {Array.from({ length: data.fortelySummaries.find(d => d.név === fortélyok[misztFokTarget]?.név)?.maxfok ?? 3 }, (_, i) => i + 1).map(n => (
+                <button key={n} className={`fort-fok-btn ${fortélyok[misztFokTarget]?.fok === n ? 'active' : ''}`} onClick={() => {
+                  setFortélyok(prev => prev.map((f, j) => j === misztFokTarget ? { ...f, fok: n } : f));
+                  setMisztFokTarget(null);
+                }}>{n}</button>
+              ))}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {/* Misztikus fortélyok */}
+      {(() => {
+        const misztFortDefs = data.fortelySummaries.filter(d => d.csoport === 'misztikus');
+        const misztFortSlotok = fortélyok.filter(f => misztFortDefs.some(d => d.név === f.név));
+        const felvehető = misztFortDefs.filter(d => !d.többszörös_típus ? !misztFortSlotok.some(s => s.név === d.név) : true);
+        if (gameMode && misztFortSlotok.length === 0) return null;
+        return (
+          <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
+            <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Misztikus fortélyok</h3>
+            {misztFortSlotok.map((f, i) => {
+              const def = misztFortDefs.find(d => d.név === f.név);
+              const maxfok = def?.maxfok ?? 1;
+              const globalIdx = fortélyok.indexOf(f);
+              return (
+              <div key={`${f.név}-${f.spec_elem}-${i}`} className="kep-row" style={{ gap: '8px', cursor: !gameMode && maxfok > 1 ? 'pointer' : undefined }} onClick={() => { if (!gameMode && maxfok > 1) setMisztFokTarget(globalIdx); }}>
+                <span className="kep-név" style={{ flex: 1 }}>{f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név}{f.kiérdemelt ? ' ⭐' : ''}</span>
+                {!gameMode && <button className="fort-delete" onClick={e => { e.stopPropagation(); setFortélyok(prev => prev.filter((_, j) => j !== globalIdx)); }}>✕</button>}
+                <span className="fort-fok-dots">{Array.from({ length: 3 }, (_, di) => <span key={di} className={`fort-dot${di < f.fok ? ' filled' : ''}${di >= maxfok ? ' fort-dot-hidden' : ''}`} />)}</span>
+              </div>
+              );
+            })}
+            {!gameMode && felvehető.length > 0 && (
+              <select className="he-add-select" value="" onChange={e => {
+                if (!e.target.value) return;
+                const def = misztFortDefs.find(d => d.név === e.target.value);
+                if (!def) return;
+                const newIdx = fortélyok.length;
+                setFortélyok(prev => [...prev, { név: def.név, fok: 1, spec_típus: def.többszörös_típus, spec_elem: '' }]);
+                if (def.maxfok > 1) setMisztFokTarget(newIdx);
+              }}>
+                <option value="">+ Misztikus fortély...</option>
+                {felvehető.map(d => <option key={d.név} value={d.név}>{d.név}</option>)}
+              </select>
+            )}
+          </section>
+        );
+      })()}
     </div>
   );
 }

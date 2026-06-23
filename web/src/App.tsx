@@ -877,7 +877,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
           const desc = describeKepChange(képzettségek, newVal);
           if (desc) pushUndo(desc);
           setKépzettségek(v);
-        }} gameMode={gameMode} />;
+        }} fortélyok={fortélyok} setFortélyok={setFortélyok} gameMode={gameMode} />;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} képzettségek={képzettségek} setKépzettségek={(v: any) => {
           const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
           const desc = describeKepChange(képzettségek, newVal);

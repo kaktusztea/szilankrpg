@@ -54,8 +54,6 @@ fortély_csoport_sorrend:
     label: "🆓 Szabad"
   - id: "kiemelt"
     label: "⭐ Kiemelt"
-  - id: "misztikus"
-    label: "✨ Misztikus"
 
 # ============================================================
 # Fortély követelmény és módosító célok (string alapú)
