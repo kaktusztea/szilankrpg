@@ -844,12 +844,24 @@ function App() {
             </div>
             <div style={{ flex: 1, overflow: 'auto', padding: '12px' }}>
               {overlayScreen === 'jegyzetek' && (
+                <>
                 <textarea
-                  style={{ width: '100%', height: '100%', minHeight: 'calc(100vh - 80px)', background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid #555', borderRadius: '6px', padding: '10px', fontSize: '14px', resize: 'none', fontFamily: 'inherit' }}
+                  style={{ width: '100%', minHeight: 'calc(100vh - 160px)', background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid #555', borderRadius: '6px', padding: '10px', fontSize: '14px', resize: 'none', fontFamily: 'inherit' }}
                   value={karakter.jegyzetek}
                   onChange={e => setKarakter(prev => prev ? { ...prev, jegyzetek: e.target.value } : prev)}
                   placeholder="Szabad jegyzetek..."
                 />
+                <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, background: '#1a1a2e', borderTop: '1px solid #444', padding: '6px 10px', fontSize: '15px', zIndex: 102 }}>
+                  <details>
+                    <summary style={{ cursor: 'pointer', fontWeight: 'bold', color: '#90caf9' }}>Tulajdonságpróba (k6)</summary>
+                    <pre style={{ margin: '4px 0', fontFamily: 'monospace', fontSize: '15px', color: '#ccc' }}>{`3: Könnyű\n4: Átlagos\n5: Nehéz\n6: Nagyon nehéz\n7: Rendkívül nehéz\n8: Emberfeletti`}</pre>
+                  </details>
+                  <details>
+                    <summary style={{ cursor: 'pointer', fontWeight: 'bold', color: '#90caf9' }}>Képzettségpróba (k10)</summary>
+                    <pre style={{ margin: '4px 0', fontFamily: 'monospace', fontSize: '15px', color: '#ccc' }}>{` 6: Könnyű\n 9: Átlagos\n12: Nehéz\n15: Nagyon nehéz\n18: Rendkívül nehéz\n21: Emberfeletti`}</pre>
+                  </details>
+                </div>
+                </>
               )}
               {overlayScreen === 'naplo' && <NaploTab karakter={karakter} setKarakter={setKarakter} />}
             </div>

@@ -2365,3 +2365,81 @@ UI: név (flex:1) + szint (kep-szint class, limit jelzés) + −/+ gombok + ✕ 
 
 Átkerült a Tul/Képz fülről: "harci" csoport kiszűrve a CSOPORT_SORREND-ből.
 ```
+
+---
+
+## §37 Próbadobások és Célszámok
+
+Forrás: md/010_05_04_tulajdonsagproba.md, md/030_06_01_kepzettsegproba.md
+
+### 37.1 Tulajdonságpróba
+
+```
+Tulajdonság + k6  vs  Célszám
+
+Célszámok:
+  3: Könnyű
+  4: Átlagos
+  5: Nehéz
+  6: Nagyon nehéz
+  7: Rendkívül nehéz
+  8: Emberfeletti
+
+Siker/Kudarc mérték: ±3 különbség = kiemelt eredmény
+Előny/Hátrány: [-2; +2] skála (Státuszokból)
+```
+
+### 37.2 Képzettségpróba
+
+```
+Tulajdonság + Képzettség szint + k10  vs  Célszám
+
+Célszámok:
+   6: Könnyű
+   9: Átlagos
+  12: Nehéz
+  15: Nagyon nehéz
+  18: Rendkívül nehéz
+  21: Emberfeletti
+  30: Maximum
+
+Lépésköz: 3 (fokozatonként)
+Siker/Kudarc mérték: ±6 különbség (2 fokozat) = kiemelt eredmény
+Előny/Hátrány: [-2; +2] skála (Státuszokból)
+```
+
+### 37.3 Próba képzetlenül
+
+```
+Célszám emelés: +3 (ha képzettség szint = 0)
+Fizikai képzettségeknél: nincs büntetés
+```
+
+### 37.4 Vállalás (képzettségpróba)
+
+```
+Bónusz a próbára: +1..+3 (játékos választ)
+Kritikus hiba próba: k6 vs vállalás_érték
+  Ha dobás ≤ vállalás_érték → Kritikus hiba
+
+Megkötés: vállalás ≤ képzettség szint
+Összetett próbánál nem alkalmazható.
+```
+
+### 37.5 Összetett próba (mindkét típus)
+
+```
+Elsődleges: maximális nehézség célszám
+Másodlagos: 1 fokozattal alacsonyabb (Tulajdonság: -1, Képzettség: -3)
+Lépcsőzetes: max 2 fokozattal alacsonyabb is dobatható
+
+Dobások száma: KM döntés (feladat hossza alapján)
+```
+
+### 37.6 Helyettesítés (képzettségpróba)
+
+```
+Helyettesítő képzettség szint / 3  (lefelé kerekítve)
+Max helyettesítő érték: 5
+Nem adódik hozzá — kiváltja az elsődleges képzettséget.
+```
