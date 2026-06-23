@@ -7,7 +7,7 @@ maxfok: 1
 session_toggle: false
 emlékeztető: false
 többszörösség:
-  spec_típus: ""
+  spec_típus: "stílus"
   spec_lista: []
 csoport: "szabad"
 leírások:
