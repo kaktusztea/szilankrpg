@@ -15,6 +15,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
 }) {
   const konstansok = data.konstansok;
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
+  const [hint, setHint] = useState('');
   const [misztFokTarget, setMisztFokTarget] = useState<number | null>(null);
   const [misztFortPrompt, setMisztFortPrompt] = useState<{ név: string; többszörös_típus: string; maxfok: number; lista: string[] } | null>(null);
   const [misztKierdemeltPicker, setMisztKierdemeltPicker] = useState<{ név: string; spec_típus: string; spec_elem: string; maxfok: number } | null>(null);
@@ -373,7 +374,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
               const maxfok = def?.maxfok ?? 1;
               const globalIdx = fortélyok.indexOf(f);
               return (
-              <div key={`${f.név}-${f.spec_elem}-${i}`} className="kep-row" style={{ gap: '8px', cursor: !gameMode && maxfok > 1 ? 'pointer' : undefined }} onClick={() => { if (!gameMode && maxfok > 1) setMisztFokTarget(globalIdx); }}>
+              <div key={`${f.név}-${f.spec_elem}-${i}`} className="kep-row" style={{ gap: '8px', cursor: !gameMode ? 'pointer' : undefined }} onClick={() => { if (gameMode) return; if (maxfok > 1) setMisztFokTarget(globalIdx); else { setHint('1 fok a maximum'); setTimeout(() => setHint(''), 2000); } }}>
                 <span className="kep-név" style={{ flex: 1 }}>{f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név}{f.kiérdemelt ? ' ⭐' : ''}</span>
                 {!gameMode && <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteFortIdx(globalIdx); }}>✕</button>}
                 <span className="fort-fok-dots">{Array.from({ length: 3 }, (_, di) => <span key={di} className={`fort-dot${di < f.fok ? ' filled' : ''}${di >= maxfok ? ' fort-dot-hidden' : ''}`} />)}</span>
@@ -389,7 +390,9 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
                   setMisztFortPrompt({ ...def, lista: def.többszörös_lista });
                   setPromptValue('');
                 } else {
-                  setMisztKierdemeltPicker({ név: def.név, spec_típus: '', spec_elem: '', maxfok: def.maxfok });
+                  const newIdx = fortélyok.length;
+                  setFortélyok(prev => [...prev, { név: def.név, fok: 1, spec_típus: '', spec_elem: '' }]);
+                  if (def.maxfok > 1) setMisztFokTarget(newIdx);
                 }
               }}>
                 <option value="">+ Misztikus fortély...</option>
@@ -399,6 +402,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
           </section>
         );
       })()}
+      {hint && <div className="he-hint">{hint}</div>}
     </div>
   );
 }

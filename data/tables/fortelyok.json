@@ -2493,4 +2493,6123 @@
   },
   {
     "név": "Belharcos",
-    "csoport": "harci"
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Testközelben érzed igazában elemedben magad. Sikeres Belharcba kerülés maanőver esetén Belharci szituációba kkerülsz és harcértékeidre - csak Közelharc harcmodor esetén - a lent leírt pluszok járnak.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Közelharc",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "KÉ",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:belharci_helyzet"
+          },
+          {
+            "cél": "TÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:belharci_helyzet"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:belharci_helyzet"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Közelharc",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "KÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:belharci_helyzet"
+          },
+          {
+            "cél": "TÉ",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:belharci_helyzet"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:belharci_helyzet"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Elpusztíthatatlan",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Sebesüléskor néhány ÉP átalakul FP ponttá.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "1 ÉP forgatható át FP ponttá sebesüléskor."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Fájdalomtűrés",
+            "érték": 7,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "2 ÉP forgatható át FP ponttá sebesüléskor."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Fájdalomtűrés",
+            "érték": 10,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Elsöprő roham",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Rutinos rohamozó vagy, jókor, megfelelő helyre csapsz futásból.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Roham taktika esetén: KÉ:+5, erőbónusz duplázódik."
+        ],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Rombolás vagy Lándzsavívás",
+          "Roham taktika"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás"
+            ],
+            "érték": 4,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "KÉ",
+            "érték": 5,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "taktika:roham"
+          },
+          {
+            "cél": "SP",
+            "érték": 0,
+            "mód": "scaled",
+            "forrás": "erőbónusz",
+            "arány": 1,
+            "feltétel": "taktika:roham"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Fárasztás",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "A fortély nagy ismerői a bajvívók és harcosok.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Fárasztás taktika alkalmazásakor: extra +1 VÉ csökkentés bónusz az ellenfélen."
+        ],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Lándzsavívás",
+              "Rombolás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "VÉ",
+            "érték": -3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "taktika:fárasztás"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Fegyverrántás",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Gyakorlottan rántasz fegyvert, így előnybe kerülhetsz kezdeményezésnél. Bónuszok Fegyverrántás-szituációban (az alkalmazó oldalán):",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 4,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "KÉ",
+            "érték": 5,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:fegyverrántás"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 8,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "KÉ",
+            "érték": 10,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:fegyverrántás"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Gladiátor bestiái",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nem-elfszabású szörnyetegek elleni harci tapasztalat az arénából.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Szörnyeteg elleni harc szituációban: VÉ:+3 bónusz."
+        ],
+        "követelmény": [
+          "Gladiátor Leíró Háttér"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "VÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:szörnyeteg_elleni_harc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Gladiátor közönsége",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Éltető közönség előtt harcolva extázisba esel.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Közönség előtt szituációban: TÉ:+3 bónusz."
+        ],
+        "követelmény": [
+          "Gladiátor Leíró Háttér"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:közönség_előtt"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Gyors kezdeményezés",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kivételesen gyorsan mozdulsz a harcban.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "KÉ:+2 bónusz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "KÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "KÉ:+4 bónusz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "KÉ",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "KÉ:+6 bónusz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "KÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Harc helyhez kötve",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nem esel kétségbe kis helyen vagy kimozgás nélkül harcolva.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Helyhez kötve harci helyzet teljes büntetése sújt."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Helyhez kötve harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt!"
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:helyhez_kötve"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Helyhez kötve harci helyzet: Hátrány-1 TÉ dobásra sem sújt már."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "té_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:helyhez_kötve"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Harci akrobatika",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": true,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Pattog, mint a nikkelbolha - mondják, ha harcolni látnak. Küzdelem közben akrobatikus elemeket - ugrásokat, vetődéseket, pörgéseket - alkalmazol, amelyek előnyhöz juttatnak a földhözragadt kis senkik ellen...",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
+        ],
+        "követelmény": [
+          "Csak Hajlékonyvértben",
+          "Maximum MGT:10 értékű vértben"
+        ],
+        "követelmények": [
+          {
+            "név": "Akrobatika",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 0,
+            "mód": "scaled",
+            "forrás": "akrobatika",
+            "arány": 0.5,
+            "feltétel": ""
+          },
+          {
+            "cél": "VÉ",
+            "érték": 0,
+            "mód": "scaled",
+            "forrás": "akrobatika",
+            "arány": 0.5,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:kibontakozás",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Az Akrobatika képzettségedet 1:1 hozzáadhatod bónuszként TÉ/VÉ értékeidhez.",
+          "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
+        ],
+        "követelmény": [
+          "Csak Hajlékonyvértben",
+          "Maximum MGT:10 értékű vértben"
+        ],
+        "követelmények": [
+          {
+            "név": "Akrobatika",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 0,
+            "mód": "scaled",
+            "forrás": "akrobatika",
+            "arány": 1,
+            "feltétel": ""
+          },
+          {
+            "cél": "VÉ",
+            "érték": 0,
+            "mód": "scaled",
+            "forrás": "akrobatika",
+            "arány": 1,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:kibontakozás",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Harci anatómia",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered a test sebezhető pontjait, létfontosságú szervek elhelyezkedését.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Leütés hátulról Manőver: +2 MP bónusz Ellenpróbánál.",
+          "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál.",
+          "Visszafogott taktika TÉ büntetés: 3-mal csökken."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "manőver:leütés_hátulról",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:precíz_támadás",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "TÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "taktika:visszafogott"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Leütés hátulról Manőver: +4 MP bónusz Ellenpróbánál.",
+          "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál.",
+          "Visszafogott taktika TÉ büntetés: 6-mal csökken."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Élettan",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "manőver:leütés_hátulról",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:precíz_támadás",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "TÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "taktika:visszafogott"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Leütés hátulról Manőver: +6 MP bónusz Ellenpróbánál.",
+          "Precíz támadás Manőver: +6 MP bónusz Ellenpróbánál.",
+          "Visszafogott taktika TÉ büntetés: 9-mal csökken.",
+          "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 12,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Élettan",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "manőver:leütés_hátulról",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:precíz_támadás",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "TÉ",
+            "érték": 9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "taktika:visszafogott"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Harci kocsihajtás",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Harci szekerek és nagy fogatok kezelése harcban.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Harci szekér szituációban: TÉ/VÉ: +8.",
+          "Harci taktikák használhatóak."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Kocsihajtás",
+            "érték": 1,
+            "típus": "fortély"
+          },
+          {
+            "név": [
+              "Lovaglás",
+              "Léglovaglás"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 8,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:harci_szekér"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 8,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:harci_szekér"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Harci szekér szituációban: TÉ/VÉ: +12.",
+          "Harci taktikák használhatóak."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Kocsihajtás",
+            "érték": 1,
+            "típus": "fortély"
+          },
+          {
+            "név": [
+              "Lovaglás",
+              "Léglovaglás"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 12,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:harci_szekér"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 12,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:harci_szekér"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Harckeret növelés",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Támadásaid számát növeled a Harckeret értékének növelésével.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "+1 Harckeret.",
+          "+1 KÉ."
+        ],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Lándzsavívás",
+              "Rombolás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "harckeret",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "KÉ",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "+2 Harckeret.",
+          "+2 KÉ."
+        ],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Lándzsavívás",
+              "Rombolás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "harckeret",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "KÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "+3 Harckeret.",
+          "+3 KÉ."
+        ],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Lándzsavívás",
+              "Rombolás",
+              "Ostorharc"
+            ],
+            "érték": 12,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "harckeret",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "KÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Harcos elme",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "A harc ritmusát fenntartva kevésbé merít ki a harc szellemileg.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Minden kör elején visszanyersz: 1 VÉ (kivéve ami sebesülésből)."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Minden kör elején visszanyersz: 2 VÉ (kivéve ami sebesülésből)."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Visszanyersz: 2 VÉ + minden előző harci körben elvesztett VÉ-t is."
+        ],
+        "követelmény": [
+          "Teljes Védekezés Taktika alkalmazása folyamatosan."
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 12,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Hárítófegyver használat",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Képes vagy hárítófegyvert használni a nem-forgató kezedben.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Fegyver+Hárítófegyver fogásnál: hárítófegyver VÉ bónusza nem érvényesül."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "vé",
+            "típus": "flat",
+            "érték": 0,
+            "feltétel": "fegyverfogás:fegyver_hárító",
+            "megjegyzés": "Alapeset: hárítófegyver VÉ nem aktív"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Megkapod a gyengébb kezedben forgatott hárítófegyver VÉ értékét pluszban.",
+          "Mesterfegyver fortély VÉ bónusza is beszámít.",
+          "A hárítófegyverrel nem támadhatsz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kaszabolás",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Harcképtelenné tett ellenfél után soron kívüli bónusz támadás.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen.",
+          "Egy körben legfeljebb 1x alkalmazható."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "közelharc",
+              "kardvívás",
+              "rombolás",
+              "lándzsavívás",
+              "ostorharc"
+            ],
+            "érték": 4,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen.",
+          "Egy körben legfeljebb 2x alkalmazható."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 8,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kétkezes harc",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Egyszerre mindkét kezedben képes vagy fegyvert forgatni.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Harckeret: +2.",
+          "Fegyver harcértékek összeadódnak.",
+          "Mesterfegyver fortélyok NEM számítanak."
+        ],
+        "követelmény": [
+          "Nagyobb fegyver harcmodora 6.szint, kisebb fegyver harcmodora 3.szint."
+        ],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "harckeret",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyverfogás:kétkezes"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Harckeret: +3.",
+          "Fegyver harcértékek összeadódnak.",
+          "Mf: csak a nagyobb fegyveré számít."
+        ],
+        "követelmény": [
+          "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 6.szint."
+        ],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "harckeret",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyverfogás:kétkezes"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Harckeret: +4.",
+          "Fegyver harcértékek összeadódnak.",
+          "Mf: mindkét fegyveré számít."
+        ],
+        "követelmény": [
+          "Nagyobb fegyver harcmodora 9.szint, kisebb fegyver harcmodora 9.szint."
+        ],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "harckeret",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyverfogás:kétkezes"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Kétkezesség",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kétkezes vagy, bármelyik kezeddel levonás nélkül harcolsz.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Rosszabbik kézben tartott fegyver harci helyzet levonásai sújtanak."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Bármelyik kezeddel levonás nélkül harcolsz (1 fegyverrel).",
+          "Harckeret: +1 bónusz ha kétkezes harcban vagy (min. 1.fok Kétkezes harc + két fegyver).",
+          "Páros kétkezes hajításnál csak az egyik CÉ dobásra jár Hátrány-1."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "harckeret",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": [
+              {
+                "forrás": "kétkezes_harc",
+                "operátor": "==",
+                "érték": true
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Kínokozás",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Különösen fájdalmas pontokat támadsz, kibillentheted ellenfeledet.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Sebzésed: 1 ÉP.",
+          "Áldozat: Fájdalomtűrés + Önuralom próba (Célszám: Harci anatómia fokától függ: 9/12/15).",
+          "Rontott próba: Indulat(1) Harag vagy Félelem(1) Szorongás Státusz."
+        ],
+        "követelmény": [
+          "Egykezes szúró-vágó-ostor fegyver. Harci anatómia: 1.fok. Sikeres Precíz támadás manőver."
+        ],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kitérés lövés elől",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kimondottan jó vagy a rád kilőtt lövedékek elől való kitérésben.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Szándékos kitérés lövés elől szituációban Akrobatika próbára +2 bónusz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Körkörös harc",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kiválóan érzed ellenfeleid elhelyezkedését, nehezebben zárnak körbe.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Orvtámadás harci helyzetet nem alkalmazhatják ellened harc közben.",
+          "Nem kapják meg a Hátulról támadás módosítóit."
+        ],
+        "követelmény": [
+          "Sikeres Észlelés próba minden kör elején: Célszám 10 + (plusz támadók száma x 2)."
+        ],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Léglovas harc",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Repülő hátason ülve harcolsz.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
+          "Léglovas Manővereket végezhetsz."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Léglovaglás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Léglovas harc szituációban: TÉ:+6, VÉ:+6.",
+          "Léglovas Manővereket végezhetsz."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Léglovaglás",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "TÉ:+9, VÉ:+9 léglovas bónusz.",
+          "Léglovas Manővereket végezhetsz."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Léglovaglás",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Lovas harc",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Hátason ülve harcolsz.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Lovas harc szituációban: TÉ:+3, VÉ:+3.",
+          "Lovas Manővereket végezhetsz."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Lovaglás",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Lovas harc szituációban: TÉ:+6, VÉ:+6.",
+          "Lovas Manővereket végezhetsz."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Lovaglás",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "TÉ:+9, VÉ:+9 lovas bónusz.",
+          "Lovas Manővereket végezhetsz."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 12,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Lovaglás",
+            "érték": 12,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Merevvértviselet",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Merevvértek helyes viselése, TÉ büntetés csökkentése.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Merevvért viselésénél: teljes TÉ büntetés érvényesül (TÉ levonás = MGT)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "MGT_TÉ_büntetés",
+            "mód": "flat",
+            "érték": 0,
+            "feltétel": "páncél:viselt",
+            "megjegyzés": "Alapeset: teljes MGT TÉ büntetés"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Merevvérted TÉ büntetése ennyivel enyhül: -5."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás"
+            ],
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "MGT_TÉ_büntetés",
+            "érték": -5,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Merevvérted TÉ büntetése ennyivel enyhül: -10."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás"
+            ],
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "MGT_TÉ_büntetés",
+            "érték": -10,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Merevvérted TÉ büntetése ennyivel enyhül: -15.",
+          "Merevvért viselése esetén VÉ:+3 (ha lefedettség min. 70%)."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás"
+            ],
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "MGT_TÉ_büntetés",
+            "érték": -15,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "VÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": [
+              {
+                "forrás": "páncél_merev",
+                "operátor": "==",
+                "érték": true
+              },
+              {
+                "forrás": "páncél_lefedettség",
+                "operátor": ">=",
+                "érték": 70
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Mesterfegyver",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "fegyver",
+    "többszörös_lista": [],
+    "leírás": "Egy konkrét fegyver harcértékeit növeled.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Adott fegyverre TÉ/CÉ, VÉ, SP: +1."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 4,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "CÉ",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "SP",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Adott fegyverre TÉ/CÉ, VÉ, SP: +2."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 8,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "CÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "SP",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Adott fegyverre TÉ/CÉ, VÉ, SP: +3."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 12,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "CÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          },
+          {
+            "cél": "SP",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Orgyilkos",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Orvtámadás során kihasználod az ellenfél védtelenségét, sebezhetőbb pontokra célzol.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+1."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "SP",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
+          },
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "előny",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+2."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "SP",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
+          },
+          {
+            "cél": "sebzésdobás",
+            "érték": 1,
+            "mód": "előny",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Orvtámadáskor Előny+2 Sebzés dobásra, SP:+3."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "SP",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
+          },
+          {
+            "cél": "sebzésdobás",
+            "érték": 2,
+            "mód": "előny",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:orvtámadás"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Pajzshasználat",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Pajzsok hatékony használata, TÉ büntetés csökkentése.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Fegyver+Pajzs fogásnál: pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "pajzs_VÉ_felezés",
+            "mód": "flat",
+            "érték": 0,
+            "feltétel": "fegyverfogás:fegyver_pajzs",
+            "megjegyzés": "Alapeset: képzetlen pajzshasználat"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Teljes pajzs VÉ aktív.",
+          "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "pajzs_TÉ_mérséklés",
+            "mód": "flat",
+            "érték": 3,
+            "feltétel": [
+              {
+                "forrás": "fegyverfogás",
+                "operátor": "==",
+                "érték": "fegyver_pajzs"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Teljes pajzs VÉ aktív.",
+          "TÉ levonás: Kis:-0, Közepes:-0, Nagy:-3.",
+          "Fegyverrel VAGY pajzzsal külön támadhatsz."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "pajzs_TÉ_mérséklés",
+            "mód": "flat",
+            "érték": 6,
+            "feltétel": [
+              {
+                "forrás": "fegyverfogás",
+                "operátor": "==",
+                "érték": "fegyver_pajzs"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Teljes pajzs VÉ aktív, TÉ levonás nincs.",
+          "VÉ:+2 minden pajzshoz.",
+          "Fegyverrel VAGY pajzzsal külön támadhatsz."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 8,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "pajzs_TÉ_mérséklés",
+            "mód": "flat",
+            "érték": 9,
+            "feltétel": [
+              {
+                "forrás": "fegyverfogás",
+                "operátor": "==",
+                "érték": "fegyver_pajzs"
+              }
+            ]
+          },
+          {
+            "cél": "VÉ",
+            "mód": "flat",
+            "érték": 2,
+            "feltétel": [
+              {
+                "forrás": "fegyverfogás",
+                "operátor": "==",
+                "érték": "fegyver_pajzs"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Páros harc",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "partner",
+    "többszörös_lista": [],
+    "leírás": "Összeszokott harcosok együtt eredményesebbek.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Páros harc szituációban: TÉ, VÉ: +2.",
+          "1:1 harcban KÉ:+1 (többnél nem jár)."
+        ],
+        "követelmény": [
+          "Két jól összeszokott társ",
+          "A konkrét partnert nevesíteni kell"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          },
+          {
+            "cél": "KÉ",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Páros harc szituációban: TÉ, VÉ: +4.",
+          "1:2 harcig KÉ:+1 (többnél nem jár)."
+        ],
+        "követelmény": [
+          "Két jól összeszokott társ"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          },
+          {
+            "cél": "KÉ",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "TÉ, VÉ: +6.",
+          "1:3 harcig KÉ:+1 (többnél nem jár)."
+        ],
+        "követelmény": [
+          "Egypetéjű ikrek, harmonikus kapcsolat a felek között"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          },
+          {
+            "cél": "KÉ",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:páros_harc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Támadás erőből",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Jobban kihasználod a Támadás erőből harci taktikát.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Legfeljebb +4 SP (TÉ:-4) pakolható át."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Kardvívás",
+              "Lándzsavívás",
+              "Rombolás"
+            ],
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Legfeljebb +6 SP (TÉ:-6) pakolható át."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "Kardvívás",
+              "Lándzsavívás",
+              "Rombolás"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Természetes fegyver",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Faji végtagok/harapás fegyvernek minősül.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Puszta kéz sebzése: -5+k20."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "SP",
+            "érték": -5,
+            "mód": "override",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:puszta kéz",
+            "megjegyzés": "Alapeset: képzetlen puszta kéz"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Puszta kéz sebzése: 1+k20 (az alap -5+k20 helyett)."
+        ],
+        "követelmény": [
+          "Faj Háttér ahol ajánlott a Természetes fegyver."
+        ],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "SP",
+            "érték": 1,
+            "mód": "override",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "fegyver:puszta kéz"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Természetes páncél",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Faji bőr/héj páncélnak minősül.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "SFÉ: +3"
+        ],
+        "követelmény": [
+          "Faj Háttér ahol ajánlott a Természetes páncél min. 1.fok."
+        ],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "SFÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "SFÉ: +6"
+        ],
+        "követelmény": [
+          "Faj Háttér ahol ajánlott a Természetes páncél min. 2.fok."
+        ],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "SFÉ",
+            "érték": 6,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "SFÉ: +9"
+        ],
+        "követelmény": [
+          "Faj Háttér ahol ajánlott a Természetes páncél min. 3.fok."
+        ],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "SFÉ",
+            "érték": 9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Testőr",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Védő Értékedet kiterjeszted egy másik személyre.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Védő Érték kiterjesztése másra harci helyzet teljes büntetése sújt."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 2,
+            "mód": "szorzó",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:vé_kiterjesztés",
+            "megjegyzés": "Alapeset: VÉ veszteség duplázódik kiterjesztéskor"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Védő Érték kiterjesztése másra harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt! A többi igen."
+        ],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Lándzsavívás",
+              "Rombolás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:vé_kiterjesztés"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Védő Érték kiterjesztése másra harci helyzet: büntetések nélkül védheted pártfogoltad."
+        ],
+        "követelmény": [
+          "Közelharc vagy Kardvívás vagy Lándzsavívás vagy Rombolás vagy Ostorharc"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Lándzsavívás",
+              "Rombolás",
+              "Ostorharc"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:vé_kiterjesztés"
+          },
+          {
+            "cél": "támadások_száma",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:vé_kiterjesztés"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Vakharc",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Sötétben apró neszek, megérzések csökkentik a látáshiány hatását.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Sötétben - teljes, csendben harci helyzet: Érzékvesztés-teljes Státusz (Látás) sújt."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Érzék(látás) Tulajdonságpróba büntetés 1 fokot enyhül.",
+          "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "érzék_próba",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "alcél": "Látás"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Érzék(látás) Tulajdonságpróba büntetés 2 fokot enyhül.",
+          "Láthatatlan ellenfélnél: 1 fokot megszüntet Védő TÉ Hátrányból + Támadó TÉ Előnyből."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "érzék_próba",
+            "érték": 2,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "alcél": "Látás"
+          }
+        ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Érzék(látás) Tulajdonságpróba büntetés 3 fokot enyhül (auto-kudarc is megszűnik).",
+          "Láthatatlan ellenfélnél: mindent megszüntet.",
+          "Túlterhelt érzékek esetén is működik."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "érzék_próba",
+            "érték": 3,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "alcél": "Látás"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Vezető: Alakzatparancsnok",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Fegyveres alakzat koordinálása, Alakzatszint emelése.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "+2 bónusz az Alakzatszintre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Alakzatharc",
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Befolyásolás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "+4 bónusz az Alakzatszintre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Alakzatharc",
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Befolyásolás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Vezető: Fejvadász strategis",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Fejvadász alakulat észrevétlen mozgásának koordinálása.",
+    "kiterjeszti_normál": [
+      "Hadászat"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "+2 bónusz csoportos Lopakodás/Rejtőzés értékre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Lopakodás/Rejtőzés",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "+4 bónusz csoportos Lopakodás/Rejtőzés értékre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Lopakodás/Rejtőzés",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Vezető: Íjászparancsnok",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Íjász/lövész alakzat koordinálása.",
+    "kiterjeszti_normál": [
+      "Hadászat"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "+2 bónusz az Alakzatszintre."
+        ],
+        "követelmény": [
+          "Összeszokott tagokat igényel"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "+4 bónusz az Alakzatszintre."
+        ],
+        "követelmény": [
+          "Összeszokott tagokat igényel"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Vezető: Léglovaskapitány",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Légi hátasokkal küzdő egység koordinálása.",
+    "kiterjeszti_normál": [
+      "Hadászat"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "+2 bónusz az Alakzatszintre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Léglovaglás",
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Befolyásolás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "+4 bónusz az Alakzatszintre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Léglovaglás",
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Befolyásolás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Vezető: Lovaskapitány",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Földi hátasokkal küzdő egység koordinálása.",
+    "kiterjeszti_normál": [
+      "Hadászat"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "+2 bónusz az Alakzatszintre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Lovaglás",
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Befolyásolás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "+4 bónusz az Alakzatszintre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Lovaglás",
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Befolyásolás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Vezető: Testőrparancsnok",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Testőrcsapat koordinálása, védelem és észlelés.",
+    "kiterjeszti_normál": [
+      "Hadászat"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "+2 bónusz csoportos Észlelés értékre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": [
+              "közelharc",
+              "kardvívás",
+              "rombolás",
+              "lándzsavívás",
+              "ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Észlelés",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "+4 bónusz csoportos Észlelés értékre."
+        ],
+        "követelmény": [],
+        "követelmények": [
+          {
+            "név": "Alakzatharc",
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Befolyásolás",
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Analfabéta",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": -6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nem tudsz írni és olvasni. Speciális: +6 KP bónusz jár érte.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Nem tudsz írni/olvasni.",
+          "Csak 1. TSz-en vehető fel.",
+          "+6 KP bónusz (primer ismeretekre is fordítható)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Apró méretű lény",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": -18,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Apró termetű lények kötelező fortélya. Speciális: +18 KP bónusz.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Csak 1. TSz-en vehető fel, kötelező az érintett fajoknak.",
+          "+18 KP bónusz.",
+          "ÉP Alap: -20, Edzettség szorzó: x2. Képlet: ÉP = 8 + (Edzettség x 2)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Helyismeret",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 2,
+    "többszörös_típus": "település",
+    "többszörös_lista": [],
+    "leírás": "Egy átlagos városnyi terület ismerete.",
+    "kiterjeszti_normál": [
+      "Nyomozás",
+      "Lexikum",
+      "Városi jártasság",
+      "Etikett"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Tájékozódás, helyi politika, híres személyek, kocsmák, pletykák, alvilági helyek ismerete.",
+          "Minden 2. TSz-en kapsz egyet ingyen (1, 3, 5, 7...).",
+          "Kaland végén a KM is adhat ingyen."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kultúrkör",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 2,
+    "többszörös_típus": "kultúrkör",
+    "többszörös_lista": [
+      "4mund",
+      "asz1sz",
+      "barbár",
+      "bukán",
+      "dw00n",
+      "dzs4d",
+      "elar",
+      "elf",
+      "en0szukei",
+      "erv",
+      "gohr",
+      "gorv1ki",
+      "il4nori",
+      "khál",
+      "kr4ni",
+      "mawini",
+      "ni4rei",
+      "nomád",
+      "pier",
+      "predoci, edorli",
+      "py4r",
+      "ragnaroki",
+      "sh4doni",
+      "syburri",
+      "tarran",
+      "ti4dlani",
+      "tongoriai",
+      "t0r0ni",
+      "törpe"
+    ],
+    "leírás": "Egy adott kultúrkör ismerete.",
+    "kiterjeszti_normál": [
+      "Előadóművészet",
+      "Etikett",
+      "Képzőművészet",
+      "Művészetismeret",
+      "Lexikum",
+      "Városi jártasság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Akcentus, dialektus, zenék, ünnepek, ételek, szokások, babonák, vallásismeret, szleng, hírességek.",
+          "Minden 2. TSz-en kapsz egyet ingyen (1, 3, 5, 7...).",
+          "Kiterjesztett képzettségekre nincs levonás az adott kultúrkörben."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Nagy méretű lény",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nagy termetű lények kötelező fortélya. Magasabb ÉP.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "ÉP = 48 + (Edzettség x 6)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "ÉP = 68 + (Edzettség x 8)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "ÉP = 88 + (Edzettség x 10)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Nyelvismeret",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 0,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "nyelv",
+    "többszörös_lista": [],
+    "leírás": "Egy adott nyelv ismerete. Nem KP-ból tanulható, a Nyelvtanulás képzettség pontjaiból.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Alap szint: hétköznapi beszéd. Írás/olvasás (ha nem analfabéta)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Udvari szint: nemesi, egyházi, hivatali, művészi beszéd.",
+          "Előadóművészet és irodalom számára követelmény."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Süketség",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": -12,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Süket karakter. Speciális: +12 KP bónusz.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Hallás érzékre permanens Érzékvesztés - teljes Státusz.",
+          "Csak 1. TSz-en vehető fel.",
+          "+12 KP bónusz (primer ismeretekre is fordítható)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tartós sérültség",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": -6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Testileg tartósan sérült (rokkant) karakter. KP bónusz fokonként.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "+6 KP bónusz. Pl: 1 kar használhatatlan."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "+12 KP bónusz. Pl: erősen korlátozott járás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "+18 KP bónusz. Pl: teljes rokkantság."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Vakság",
+    "csoport": "kiemelt",
+    "alcsoport": "kiemelt",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": -18,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Vak karakter. Speciális: +18 KP bónusz.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Látás érzékre permanens Érzékvesztés - teljes Státusz.",
+          "Csak 1. TSz-en vehető fel.",
+          "+18 KP bónusz (primer ismeretekre is fordítható)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Antissjárás",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Képes vagy az álomsíkon közlekedni.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "⭕TODO: Hatás kidolgozandó."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Belső síkok lényeinek ismerete",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "lénycsoport",
+    "többszörös_lista": [
+      "elementálok",
+      "asztrállények",
+      "mentállények",
+      "antyss lényei",
+      "élőholtak",
+      "természetszellemek"
+    ],
+    "leírás": "A belső síkok túlvilági teremtményeinek ismerete.",
+    "kiterjeszti_normál": [
+      "Lexikum"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Dobhatsz Lexikum képzettségpróbát egyes lények ismeretére."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Külső síkok lényeinek ismerete",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "lénycsoport",
+    "többszörös_lista": [
+      "démonok",
+      "angyalok",
+      "szeráfok",
+      "dzsinnek"
+    ],
+    "leírás": "A külső síkok túlvilági teremtményeinek ismerete.",
+    "kiterjeszti_normál": [
+      "Lexikum"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Dobhatsz Lexikum képzettségpróbát egyes lények ismeretére."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Mágiatáv növelés",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Távolba direktben ható mágiákra specializálódtál.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Mágiatáv II jellemzőivel tudsz távolba ható mágiát végezni."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Mágiatáv III jellemzőivel tudsz távolba ható mágiát végezni."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Mágiatáv IV jellemzőivel tudsz távolba ható mágiát végezni."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Mágikus lövedék gyorsítása",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kihegyezted magad a lövedékek gyorsítására.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Komplexitás - Mozgatás esetén -3 Nehézség könnyítés."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Komplexitás - Mozgatás esetén -6 Nehézség könnyítés."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Mentálfonál",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "személy",
+    "többszörös_lista": [],
+    "leírás": "Láthatatlan mentális kötelék egy konkrét személy felé.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Egy konkrét személy felé kiépített Mentálfonál.",
+          "Telepátia alkalmazásakor nem szükséges látniuk egymást — korlátlan távolság."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Mozgó cél mestere mágiához",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kiszámíthatatlanul mozgó ellenfélre lőtt mágikus lövedék Szorzó csökkentése.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Kiszámíthatatlan Szorzó: 4x. Harcoló Szorzó: 5x."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Kiszámíthatatlan Szorzó: 3x. Harcoló Szorzó: 4x."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Pszí Telekinézis",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Tárgyak szellemi akarattal való lassú mozgatása.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Apró tárgyak lassú mozgatása."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Kard, sisak méretű tárgyak lassú mozgatása."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Láda méretű tárgyak lassú mozgatása."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Pszí Telepátia",
+    "csoport": "misztikus",
+    "alcsoport": "misztikus",
+    "maxfok": 3,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Szellemi üzenetküldés, amennyiben a fogadó fél képes rá.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Képes vagy üzenetet fogadni."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Képes vagy üzenetet küldeni (fogadónak min. 1.fok kell).",
+          "Harcban nem alkalmazható."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "Harc közben is képes vagy üzenni (Szabad cselekedettként, 1x/kör)."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Alkudozás",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Elemedben érzed magad a piacon akár fegyverekről, akár egy marék friss szamócán való alkudozásról van szó.",
+    "kiterjeszti_normál": [
+      "Befolyásolás",
+      "Emberismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Asztrológia",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Jóslás, együttállások olvasása csillagképekből.",
+    "kiterjeszti_normál": [
+      "Kvantikum"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Bűvészet",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Gondosan begyakorolt trükkök, kellékek segítenek a tátottszájú nézőközönség becsapásában. Szórakoztatás, vagy sötéteb...",
+    "kiterjeszti_normál": [
+      "Befolyásolás",
+      "Előadóművészet",
+      "Lopás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Éneklés",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Dalolás képessége és annak műértése.",
+    "kiterjeszti_normál": [
+      "Előadóművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Festészet",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz vászonra színes műveket. Vagy passzív tudásként ...",
+    "kiterjeszti_normál": [
+      "Értékbecslés",
+      "Képzőművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Gazdálkodás",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Képes vagy egy birtokot igazgatni.",
+    "kiterjeszti_normál": [
+      "Kvantikum"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Hadtáp",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "A hadsereg élelmezése, felszereléssel való ellátása, utánpótlási vonalak kiépítése a feladatod. Jellemzően NJK ismeret.",
+    "kiterjeszti_normál": [
+      "Hadászat"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Harci iskola",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "iskola",
+    "többszörös_lista": [],
+    "leírás": "Speciális harci iskola tagja vagy, ahol egyes csoportos ismeretek tanulására van lehetőséged, illetve egyedi szociáli...",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Hátas (faj neve)",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Földi hátas esetén a Lovaglás, légi hátasnál pedig a Léglovaglás képzettséget terjeszti ki.",
+    "kiterjeszti_normál": [
+      "Lovaglás",
+      "Léglovaglás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Háziállatok idomítása",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Minden háziasított állat idomítása ide tartozik a kutyától a malacokon át a kecskékig.",
+    "kiterjeszti_normál": [
+      "Befolyásolás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Heraldika",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Címerek ismeretét takarja.",
+    "kiterjeszti_normál": [
+      "Lexikum",
+      "Nyomozás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Hivatalnok",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Járatos vagy az állami, vagy uradalmi bürokráciában írott és íratlan szabályaiban, ügyintézésben.",
+    "kiterjeszti_normál": [
+      "Lexikum"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Irodalom",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): Versek, novellák, regények, históriák, színdarabok í...",
+    "kiterjeszti_normál": [
+      "Előadóművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Jogismeret",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "- [Lexikum](../kepzettsegek.szekunder/lexikum.md): 'Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdé...",
+    "kiterjeszti_normál": [
+      "Lexikum",
+      "Nyomozás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kalligráfia",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Írástípusok, írásmódok, titkosírás és annak fejtése.",
+    "kiterjeszti_normál": [
+      "Képzőművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Ács",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ács mesterként fából alkotsz épületeket, nagyobb szerkezeteket.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Asztalos",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Asztalos mesterként fából alkotsz bútorokat, szerszámokat.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Cipész",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Cipőket készítesz a pórnépnek, vagy az udvari dámák kecses lábaira.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Cserző",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Járatos vagy a nyersbőrök tartósításában, előkészítésében.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Cukrász",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Édességek készítése, amely nem is olyan könnyű, mint hiszed. A pontos arányok, körülmények betartása nagyon fontos.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Ékszerész",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nemes fémekből gyönyörű ékszerek készítése, ritka ékkövek míves keretekbe foglalása.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Kádár",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Fából készült edényeket, hordókat, kádakat, dézsákat és más fa tárolóeszközöket készítesz.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Kőműves",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kövekből és égetett téglákból erős, tartós épületszerkezeteket készítesz, például falakat, boltíveket, tornyokat és t...",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Kötélgyártó",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered a kötélverés mesterségét. Különböző forrásaid lehetnek a kötél alapanyagai: kender, papírusz, datolyapálma, d...",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Kovács",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Alap kovácsmesterség. Fémből kalapálsz ki lópatkókat, kapákat, ásókat, ekéket, háztartási eszközöket.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Lakatos",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások kerülnek...",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Molnár",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Malomban dolgozol, lisztet és különböző kalászosok feldolgozását végzed.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Pénzverő",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Az adott uralkodó nevében és pecsétjével fémlemezekből kalapáccsal versz ki pénzérméket. A pénz megfelelő súlyának, m...",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Szabó",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Akár vászonból, akár szőtt kelmékből főként felsőruházatot, például kabátot, nadrágot és blúzt szabsz és varrsz.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Szakács",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Finom étkek készítése, vagy akár a hadsereg hadtápjának működtetése.",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kézműves: Szűcs",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Főleg juhbőrök tisztításával, kikészítésével és feldolgozásával foglalkozol. Megtisztítod a lenyúzott bőrt, eltávolít...",
+    "kiterjeszti_normál": [
+      "Kézművesség"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kihallgatás",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Magában foglalja a kihallgatási technikákat (nem kínzást!), a beszédtechnikát és jól bevált keresztkérdéseket, amelly...",
+    "kiterjeszti_normál": [
+      "Nyomozás",
+      "Emberismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Különleges faj boncolása",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "faj",
+    "többszörös_lista": [],
+    "leírás": "Többször felvehető - egyedi fajonként.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Pénzügyek",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Pénzügyi ismereteid vannak.",
+    "kiterjeszti_normál": [
+      "Kvantikum",
+      "Nyomozás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Rejtjelfejtő",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Érthetetlen szimbólumokkal teli fóliásokat bújsz, a rejtélyek megfejtése legfőbb szenvedélyed. Ha titkosírás megfejté...",
+    "kiterjeszti_normál": [
+      "Kvantikum",
+      "Nyomozás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Stratégia",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nagyban látod a harci helyzetet, térkép felett csapatok mozgását tervezed.",
+    "kiterjeszti_normál": [
+      "Hadászat",
+      "Lexikum"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Szertartás",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "- [Etikett](../kepzettsegek.szekunder/etikett.md): Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) egyedi ...",
+    "kiterjeszti_normál": [
+      "Etikett"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Színjátszás",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a színházi világot. Bábszínház előadások ismeret...",
+    "kiterjeszti_normál": [
+      "Előadóművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Szobrászat",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Holt anyagból faragsz, hívsz életre alakokat az örökkévalóságnak.",
+    "kiterjeszti_normál": [
+      "Értékbecslés",
+      "Képzőművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Szónoklás",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Oh, az a birka nép! Mind a lábad előtt hever, mikor súlyos gondokkal tépelődve, mégis erős akarattal arcodon kilépsz ...",
+    "kiterjeszti_normál": [
+      "Befolyásolás",
+      "Emberismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - barlangi",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered a barlangi környezetet.",
+    "kiterjeszti_normál": [
+      "Alkímia",
+      "Lexikum",
+      "Lopakodás/Rejtőzés",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - dzsungel",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered a dzsungel környezetet.",
+    "kiterjeszti_normál": [
+      "Alkímia",
+      "Lexikum",
+      "Lopakodás/Rejtőzés",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - erdős",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered az erdős környezetet.",
+    "kiterjeszti_normál": [
+      "Alkímia",
+      "Lexikum",
+      "Lopakodás/Rejtőzés",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - jégmezők",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered a jégmezők kegyetlen világát.",
+    "kiterjeszti_normál": [
+      "Alkímia",
+      "Lexikum",
+      "Lopakodás/Rejtőzés",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - magaslati",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered a magaslati, sarkvidéki környezetet.",
+    "kiterjeszti_normál": [
+      "Alkímia",
+      "Lexikum",
+      "Lopakodás/Rejtőzés",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - mocsaras",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered az mocsaras környezetet.",
+    "kiterjeszti_normál": [
+      "Alkímia",
+      "Lexikum",
+      "Lopakodás/Rejtőzés",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - puszta",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered a végtelen füves puszták környezetét.",
+    "kiterjeszti_normál": [
+      "Alkímia",
+      "Lexikum",
+      "Lopakodás/Rejtőzés",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - sivatagi",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ismered a sivatagi környezetet.",
+    "kiterjeszti_normál": [
+      "Alkímia",
+      "Lexikum",
+      "Lopakodás/Rejtőzés",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tájtípus - tengerek",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Tengerek, óceánok világának ismerete.",
+    "kiterjeszti_normál": [
+      "Lexikum",
+      "Természetjárás",
+      "Vajákosság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tánc",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) táncai Előadóművészet képzettséged szintjének megfelel...",
+    "kiterjeszti_normál": [
+      "Előadóművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Tánc: speciális/belső stílus",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "stílus",
+    "többszörös_lista": [],
+    "leírás": "Jellemzően [Kiérdemelt](../042_szabad_fortelyok.md#%EF%B8%8F-ki%C3%A9rdemelt) szabad fortély.",
+    "kiterjeszti_normál": [
+      "Etikett",
+      "Előadóművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Térképészet",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "'... térkép e táj.'",
+    "kiterjeszti_normál": [
+      "Kvantikum",
+      "Nyomozás",
+      "Hajózás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Titkos szervezet",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "szervezet",
+    "többszörös_lista": [],
+    "leírás": "Többször felvehető.",
+    "kiterjeszti_normál": [
+      "Etikett",
+      "Nyomozás",
+      "Városi jártasság"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Vadállat idomítása",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Egy-egy, konkrét vadállat idomítása - fajonként külön kell felvenned. Minden bestia is ide tartozik, amely vadállatna...",
+    "kiterjeszti_normál": [
+      "Befolyásolás"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Zenélés: fúvós hangszerek",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Képes vagy fúvós hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintj...",
+    "kiterjeszti_normál": [
+      "Előadóművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Zenélés: húros hangszerek",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Képes vagy húros hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintj...",
+    "kiterjeszti_normál": [
+      "Előadóművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Zenélés: ütős hangszerek",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Képes vagy ütős hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjé...",
+    "kiterjeszti_normál": [
+      "Előadóművészet",
+      "Művészetismeret"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Zeneszerző",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nem csak eljátszani tudsz dalokat, zenei műveket, hanem komponálni is.",
+    "kiterjeszti_normál": [
+      "Előadóművészet"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Zsonglőrködés",
+    "csoport": "szabad",
+    "alcsoport": "szabad",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "'Négy labdával is tudom ám!'",
+    "kiterjeszti_normál": [
+      "Előadóművészet"
+    ],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "A kiterjesztett képzettségek kapcsolódó próbáinál nincs levonás."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Gyors hajítás",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Hajítófegyvered Sebesség értéke 1-gyel csökken.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Hajítófegyvered Sebesség értéke `1`-gyel csökken."
+        ],
+        "követelmény": [
+          "Hajítás 5.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Hajítás",
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Gyors lövés",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Íjad Sebesség értéke 1-gyel csökken.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Íjad Sebesség értéke `1`-gyel csökken."
+        ],
+        "követelmény": [
+          "Íjászat 5.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Íjászat",
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Gyors újratöltés",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Gyorsan tudod újratölteni nyílpuskádat.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Nyílpuskával csak minden `2.` körben lehetséges lőni."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Minden körben tudsz `1x` lőni, ha Mozgásodat becseréled újratöltésre."
+        ],
+        "követelmény": [
+          "Lövészet 6.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Lövészet",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Minden körben tudsz `1x` lőni, Mozgás szabadon elhasználható mellette."
+        ],
+        "követelmény": [
+          "Lövészet 9.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Lövészet",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Kitartott célzás",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Rövidebb idő alatt felméred a szelet, a távolságot és a többi változót célzáskor.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Célzás körülményben: `1` kör célzás után `+3 CÉ` módosító."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:célzás"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Célzás körülményben: `1` kör célzás után `+7 CÉ` módosító."
+        ],
+        "követelmény": [
+          "Csak kiszámíthatóan mozgó cél ellen",
+          "Csak stabil, álló helyzetből végezhető",
+          "Íjakkal és lőfegyverekkel végezhető",
+          "Íj max `1` körig tartható ki",
+          "`1 kör` után rosszabb: minden plusz kör `CÉ:-3` büntetés (körönként)"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": 7,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:célzás"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Lövés futás közben",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Futás közben is biztos marad a kezed, nem kell megállnod.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Lassú futás közben `+2x` Szorzó büntetés a célpont VÉ kiszámításánál."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Lassú futás közben csak `+1x` Szorzó büntetés a célpont `VÉ` kiszámításánál."
+        ],
+        "követelmény": [
+          "Távolsági harcmodor 5.szint"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Lövés hátasról",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Gyakorlott vagy földi vagy légi hátasról való íjászatban, lövészetben.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Lovas harc körülményben: CÉ levonás: Léptetés:`-3`, Ügetés:`-7`, Vágta:`-13`."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": -3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc",
+            "megjegyzés": "Alapeset: léptetés CÉ levonás"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Lovas harc körülményben: CÉ:`-3` ügetésben, CÉ:`-7` vágtában."
+        ],
+        "követelmény": [
+          "Lovaglás 6.szint, Távolsági harcmodor 5.szint, Mesterfegyver 1.fok, Lovas harc 2.fok"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Lovaglás",
+              "Léglovaglás"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          },
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": -3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Lovas harc körülményben: CÉ:`-3` vágtában."
+        ],
+        "követelmény": [
+          "Lovaglás 9.szint, Távolsági harcmodor 9.szint, Mesterfegyver 2.fok, Lovas harc 3.fok"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Lovaglás",
+              "Léglovaglás"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": -3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "név": "Lövés reflexből",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Hirtelen lövésnél/hajításnál nem ér CÉ büntetés.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Hirtelen lövésnél a CÉ-t `-7` levonás sújtja."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "CÉ",
+            "érték": -7,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Alapeset: hirtelen lövés CÉ levonás"
+          }
+        ]
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Hirtelen lövés CÉ levonása nem sújt."
+        ],
+        "követelmény": [
+          "Gyorsaság +1, Távolsági harcmodor 5.szint"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Mesterlövész",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Cella értékre levonás nagy célpontoknál.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Cella értékre `-1` levonás, ha olyan célra lősz, ahol Cella `≥ 5`."
+        ],
+        "követelmény": [
+          "Lövészet 5.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Lövészet",
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  },
+  {
+    "név": "Mozgó cél mestere fegyverrel",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Összevissza mozgó ellenfélre is gyakorlottan célzol.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Kiszámíthatatlan célpont: `4x` Szorzó. Harcoló célpont: `5x` Szorzó."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Kiszámíthatatlan célpont: `3x` Szorzó. Harcoló célpont: `4x` Szorzó."
+        ],
+        "követelmény": [
+          "Távolsági harcmodor 5.szint"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Íjászat",
+              "Lövészet",
+              "Hajítás"
+            ],
+            "érték": 5,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": []
+      }
+    ]
+  }
+]
