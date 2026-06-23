@@ -9,7 +9,7 @@ import { fmtCode } from './formatters';
 /** Display name: "Kultúrkör - erv" if spec_elem, otherwise just név */
 function displayName(f: Fortely): string {
   const base = f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
-  if (f.kiérdemelt) return f.fok > 1 ? `${base} 🎁➕` : `${base} 🎁`;
+  if (f.kiérdemelt) return f.fok > 1 ? `${base} 🎁➕` : `${base} 🎁⭐`;
   return base;
 }
 
@@ -477,7 +477,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
         className={`fort-row${követelményHiba ? ' fort-kov-hiba' : ''}`}
         onClick={handleTap}
       >
-        <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes ? ' 🎁' : ''}</span>
+        <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes && !slot.kiérdemelt ? ' 🎁' : ''}</span>
         <span className="fort-right">
           {!gameMode && !locked && !slot.kiérdemelt && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
