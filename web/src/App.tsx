@@ -478,6 +478,10 @@ function App() {
     input.click();
   }
 
+  useEffect(() => {
+    document.title = karakter?.becenév || 'Szilánk';
+  }, [karakter?.becenév]);
+
   if (error) return <div className="error">Hiba: {error}</div>;
   if (!data || !karakter) return <div className="loading">Betöltés...</div>;
 

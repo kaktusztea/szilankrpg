@@ -57,7 +57,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - **Tab navigáció**: alul fix tab bar, horizontálisan scrollozható (minden tab közvetlenül elérhető, nincs "..." menü)
 - **Screen váltás**: jobb-bal swipe gesztussal (mobilon, threshold: 30px), desktop-on tab kattintás
 - **Swipe**: csak horizontális, `Math.abs(dx) > Math.abs(dy)` check
-- **Double-tap**: 350ms threshold minden szerkesztő interakcióhoz (Tulajdonságok, Képzettségek, Fortélyok, Név, Szint, Kor)
+- **Tap interakció**: minden szerkesztő interakció egyetlen koppintásra (tap/click) reagál (Tulajdonságok, Képzettségek, Fortélyok, Név, Szint, Kor)
 - **Popup overlay-ek**: `createPortal(document.body)`, `.kep-prompt-overlay` osztály, `position: fixed; inset: 0; z-index: 100`
 - **Escape**: minden popup overlay bezárható
 - **Overlay bezárás**: mellé kattintás (background click) — nincs ✕ gomb
@@ -332,16 +332,19 @@ Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
 ## 3. Tulajdonságok + Képzettségek fül/screen
 
 ### Fejléc (legfelül)
-- **Név + Szint** sor: két összeérő box
-  - Név box (flex:1): `Név: von Agabor` — tap → szerkesztő popup (max 40 karakter)
+- **Név** sor: full szélességű box
+  - Név box: `Név: von Agabor` — tap → szerkesztő popup (max 40 karakter)
+  - Game módban: `"von Agabor (Ember (Északi), 32)"`
+- **Becenév + Szint** sor (CSAK szerkesztő módban): két box egymás mellett
+  - Becenév box (flex:1): `Becenév: Agi` — tap → szerkesztő popup (max 12 karakter)
   - Szint box: `Szint: 8` — tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
+- **Game módban**: csak Szint box jelenik meg (Becenév rejtett)
 - **Faj + Kor** sor (CSAK szerkesztő módban):
   - Faj box (flex:1): inline `<select>` dropdown (27 faj a tables/fajok.json-ból, közvetlenül koppintható)
   - Kor box: `Kor: 32` — tap → +/− overlay (long press gyorsítás: 200ms→30ms, 7s után ×10 lépés, 1–2000)
-- **Game módban**: Faj és Kor eltűnik, a Név kiírásban jelenik meg: `"von Agabor (Ember (Északi), 32)"`
 - **Anyanyelv** (CSAK szerkesztő módban): inline `<select>` dropdown (`tables/nyelvek.json`-ból)
   - Módosítás → szinkronizálja kiérdemelt Nyelvismeret fortélyokat (Közös Alap + anyanyelv Alap, `kiérdemelt: true`)
-- **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` — double-tap → szerkesztő popup (max 40 kar)
+- **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` — tap → szerkesztő popup (max 40 kar)
   - Mentés fájlnévben: `karakternév_játékosnév_Xtsz.json` (ha ki van töltve)
 
 ### Tulajdonságok
@@ -349,7 +352,7 @@ Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
 - 8 tulajdonság fix 2 oszlop x 4 sor grid-ben (fentről lefelé, aztán következő oszlop)
 - Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
 - Nem reszponzív, fix layout
-- Szerkesztő módban: double-tap (350ms) → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
+- Szerkesztő módban: tap → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
 - Game módban: read-only
 - **Faj limit warning**: ha az érték meghaladja/alulmúlja a kiválasztott faj min/max keretét → sárga szín + automatikusan megjelenő info box (`Faj max: X` vagy `Faj min: X`), nem zárható kattintással
 
@@ -388,7 +391,7 @@ Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
 
 #### Viselkedés Szerkesztő módban
 - Rövid koppintás: nem csinál semmit
-- Double-tap (350ms): szint választó popup (gombok 1-15 grid, 5x3 elrendezés, aktív=zöld), érték választás azonnal bezárja
+- Tap: szint választó popup (gombok 1-15 grid, 5x3 elrendezés, aktív=zöld), érték választás azonnal bezárja
 - Escape: popup bezárás
 
 #### Viselkedés Game módban
@@ -470,8 +473,8 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 
 ### Viselkedés Szerkesztő módban
 - Rövid koppintás: nem csinál semmit
-- Double-tap (350ms): fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
-  - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se double-tap-re) — ehelyett "1 fok a maximum" hint (2s)
+- Tap: fok választó popup (kerek radio gombok 1..maxfok, aktív=zöld), érték választás azonnal bezárja
+  - maxfok=1 esetén NEM ugrik fel popup (se felvételkor, se tap-re) — ehelyett "1 fok a maximum" hint (2s)
   - Mesterfegyver (locked): tap → "Ezt a fortélyt a Harcértékek/Távharc fülön kezeld!" hint (3s, távfegyver név alapján)
 - Felvételkor (dropdown): maxfok>1 → azonnal fok popup (egyik sem pre-selected, fok: 0-val kerül be); többszörös → megfelelő picker popup
 - Locked fortélyok (konstansok.locked_fortélyok): NEM jelennek meg a dropdown-ban, nem szerkeszthetők/törölhetők, lista tetején
@@ -524,7 +527,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban el
 ### Fegyverek
 - Fegyver példány kártyák listája
 - Fejléc: fegyver neve (MK fegyvereknél suffix nélkül, `Alapnév` mezőből) + ✕ törlés
-- Mezők (`he-field-btn` stílus, dupla katt → overlay popup):
+- Mezők (`he-field-btn` stílus, tap → overlay popup):
   - MF fok: kerek gombok 0-3. Piros szöveg ha a Mesterfegyver követelménye nem teljesül.
   - Idea: 3 soros popup (-5..-1 / 0 / +1..+5)
   - Anyag: 1 oszlopos popup (acél, bronz, abbitacél, mithrill, lunír)
@@ -533,26 +536,26 @@ HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban el
 - Mesterfegyver szinkron: MF fok módosítás → `syncMfFortelyok` frissíti a fortélyok tömböt
 
 ### Páncél
-- Mezők (`he-field-btn` stílus, dupla katt → overlay popup):
+- Mezők (`he-field-btn` stílus, tap → overlay popup):
   - Struktúra: lista (konstansok.páncél_struktúrák) + "— nincs —"
   - Merevvértviselet fok: mindig megjelenik (lila keret, `.he-field-fortely`), popup 0–3
   - Fémalapanyag: csak fém struktúránál látszik
   - Kidolgozottság: pocsék / átlagos / mestermunka
   - Méret: passzol / nem passzol / borzalmas
-  - Sisak: toggle (dupla katt negálja, igen/nem)
+  - Sisak: toggle (tap negálja, igen/nem)
   - Végtagvédettség: kerek gombok 0-4
   - Idea: 3 soros popup (-4..-1 / 0 / +1..+4)
   - Rongálódás: kerek gombok 0-5
 
 ### Pajzs
-- Mezők (`he-field-btn` stílus, dupla katt → overlay popup):
+- Mezők (`he-field-btn` stílus, tap → overlay popup):
   - Méret: — nincs — / kis / közepes / nagy
   - Pajzshasználat fok: kerek gombok 0-3 (szinkronizálja a Pajzshasználat fortélyt a Fortélyok fülön)
   - Kézben: read-only indikátor (`session.aktív_pajzs`), kattintás → sárga hint ("A pajzs kézben állapotot az Aktív fülön állíthatod!")
 - Pajzshasználat fortély szinkronizáció:
   - Pajzs fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
   - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején
-  - Dupla katt locked elemre → hint: "Ezt a fortélyt a Harcértékek fülön kezeld!" (3s)
+  - Tap locked elemre → hint: "Ezt a fortélyt a Harcértékek fülön kezeld!" (3s)
   - Pajzshasználat NEM jelenik meg a Fortélyok fül dropdown-jában
 
 ---
@@ -591,13 +594,13 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 ### Tartalom
 - **Faj háttér**: read-only chip (karakter.hátterek.faj), kattintásra navigál Tulajdonságok fülre
-- **Leíró hátterek**: kategóriánként (Származás, Jellem, Küllem, Fóbia) — szövegfelhő, dupla katt toggle
-- **Karma hátterek**: egyetlen csoport — szövegfelhő, dupla katt toggle
+- **Leíró hátterek**: kategóriánként (Származás, Jellem, Küllem, Fóbia) — szövegfelhő, tap toggle
+- **Karma hátterek**: egyetlen csoport — szövegfelhő, tap toggle
 
 ### Viselkedés
-- Dupla katt: aktivál/deaktivál (toggle)
+- Tap: aktivál/deaktivál (toggle)
 - Aktív elemek: színes kijelölés (leíró = zöld, karma = narancs), sor elejére rendezés, ABC sorrend
-- Game módban: nem szerkeszthető (dupla katt nem reagál)
+- Game módban: nem szerkeszthető (tap nem reagál)
 - Kategória label: világoskék (#7eb8da), bold
 - Csoport fejléc (Leíró/Karma): narancssárga (#e0a050), uppercase
 
@@ -849,7 +852,7 @@ Minden adat `fetchJson`-nel:
 
 ### Karakter state struktúra (App szintjén)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
-- Top-level: `schema_version`, `név`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
+- Top-level: `schema_version`, `név`, `becenév`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
 - `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`, `aktív_távfegyver_index`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
