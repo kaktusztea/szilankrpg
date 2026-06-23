@@ -7,6 +7,8 @@ import { EpTable } from './EpTable';
 import type { SebzésRubrika } from '../engine/types';
 import './HarcScreen.css';
 
+import { buildAktívFeltételek } from '../engine/feltetelek';
+
 function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftTable: { szint: number; enyhítés: number }[]): number {
   const ftSzint = képzettségek.find(kp => kp.név === 'Fájdalomtűrés')?.szint ?? 0;
   let enyhítés = 0;
@@ -63,17 +65,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const k = karakter;
   const { konstansok, harcmodorBonusz } = data;
 
-  // §16: Fortély módosítók — mindig aktív (feltétel="") + feltételes (aktív taktika/helyzet/szituáció)
-  const aktívFeltételek = new Set<string>();
-  aktívFeltételek.add(`fegyverfogás:${session.fegyverfogás}`);
-  for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
-    if (def) aktívFeltételek.add(def.feltétel_kulcs);
-  }
-  for (const h of session.aktív_helyzetek) {
-    const def = data.harciHelyzetek.find(d => d.név === h);
-    if (def) aktívFeltételek.add(def.feltétel_kulcs);
-  }
+  const aktívFeltételek = buildAktívFeltételek(session, data);
 
   // Taktika módosítók kiszámítása az aktív taktikákból
   const taktikaMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0 };

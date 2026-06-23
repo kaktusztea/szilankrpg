@@ -4,13 +4,7 @@ import type { GameData, FortelySummary } from '../engine/data-loader';
 import type { Fortely } from '../engine/types';
 import './FortelyokScreen.css';
 
-function fmtCode(text: string) {
-  const parts = text.split(/(`[^`]+`)/g);
-  return parts.map((p, i) => p.startsWith('`') && p.endsWith('`')
-    ? <code key={i} style={{ fontFamily: 'monospace', background: '#333', padding: '0 3px', borderRadius: '2px' }}>{p.slice(1, -1)}</code>
-    : p
-  );
-}
+import { fmtCode } from './formatters';
 
 const CSOPORT_SORREND = ['harci', 'távharc', 'általános', 'érzékek', 'szabad', 'kiemelt', 'misztikus'];
 const CSOPORT_LABEL: Record<string, string> = {

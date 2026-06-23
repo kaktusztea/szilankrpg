@@ -11,9 +11,12 @@ import { FortelyokScreen } from './components/FortelyokScreen';
 import { HarcertekekScreen } from './components/HarcertekekScreen';
 import { MisztikusScreen } from './components/MisztikusScreen';
 import { HatterekScreen } from './components/HatterekScreen';
+import { NaploTab } from './components/NaploTab';
 import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
 import type { Karakter, Session, Fortely } from './engine/types';
 import { DEFAULT_SESSION } from './engine/types';
+import { describeKepChange } from './engine/undo-helpers';
+import { validateKarakter, validateKarakterData } from './engine/validate';
 import './App.css';
 
 interface UndoEntry { timestamp: number; leírás: string; session: Session; karakter: Karakter; }
@@ -38,99 +41,6 @@ const ALL_TABS = [
   { id: 'fortelyok', label: '🟣', editOnly: false },
   { id: 'hatterek', label: '🟡', editOnly: false },
 ];
-
-/** Validate minimal schema compliance */
-function validateKarakter(obj: unknown): obj is Karakter {
-  if (!obj || typeof obj !== 'object') return false;
-  const k = obj as Record<string, unknown>;
-  return (
-    k.schema_version === 2 &&
-    typeof k.név === 'string' &&
-    typeof k.tsz === 'number' &&
-    typeof k.tulajdonságok === 'object' &&
-    Array.isArray(k.képzettségek) &&
-    Array.isArray(k.fortélyok) &&
-    typeof k.fortélyok_speciális === 'object' &&
-    typeof k.hátterek === 'object' &&
-    Array.isArray(k.fegyverek) &&
-    typeof k.páncél === 'object' &&
-    Array.isArray(k.napló)
-  );
-}
-
-/** Validate referential integrity against loaded tables. Returns error message or null. */
-function validateKarakterData(k: Karakter, data: GameData): string | null {
-  const errors: string[] = [];
-
-  // Faj
-  if (k.hátterek.faj && !data.fajNevek.includes(k.hátterek.faj)) {
-    errors.push(`Ismeretlen faj: "${k.hátterek.faj}"`);
-  }
-
-  // Anyanyelv
-  const nyelvNevek = new Set(data.nyelvek.map(n => n.név));
-  if (k.anyanyelv && !nyelvNevek.has(k.anyanyelv)) {
-    errors.push(`Ismeretlen anyanyelv: "${k.anyanyelv}"`);
-  }
-
-  // Fortélyok
-  const fortelyNevek = new Set(data.fortelySummaries.map(d => d.név));
-  for (const f of k.fortélyok) {
-    if (!fortelyNevek.has(f.név)) {
-      errors.push(`Ismeretlen fortély: "${f.név}"`);
-    }
-  }
-
-  // Képzettségek (including többszörös alnevek)
-  const validKepNames = new Set(data.kepzettsegDefs.map(d => d.név));
-  for (const d of data.kepzettsegDefs) {
-    if (d.többszörös) for (const alnév of d.többszörös) validKepNames.add(alnév);
-  }
-  // Prefixes for special képzettségek (e.g. "Tradíció: ...", "Ősi nyelv ismerete: ...")
-  const validKepPrefixes = data.kepzettsegDefs.filter(d => d.többszörös.length === 0 && d.csoport === 'misztikus').map(d => d.név + ': ');
-  // Also free-text többszörös prefixes
-  for (const d of data.kepzettsegDefs) {
-    if (d.többszörös.length > 0 && d.többszörös[0] === '*') validKepPrefixes.push(d.név + ': ');
-  }
-  for (const kep of k.képzettségek) {
-    if (!validKepNames.has(kep.név) && !validKepPrefixes.some(p => kep.név.startsWith(p))) {
-      errors.push(`Ismeretlen képzettség: "${kep.név}"`);
-    }
-  }
-
-  // Páncél enum értékek
-  const validKidolgozottság = new Set(Object.keys(data.konstansok.páncél_csatolt_tag_mgt.merevvért_fém));
-  const validMéret = new Set(['passzol', 'nem passzol', 'borzalmas']);
-  const validAnyag = new Set(['', ...data.konstansok.páncél_fémalapanyagok.map(a => a.anyag)]);
-  const validStruktúra = new Set(['', ...data.konstansok.páncél_struktúrák.map(s => s.struktúra)]);
-
-  if (k.páncél.alap && !validStruktúra.has(k.páncél.alap)) {
-    errors.push(`Ismeretlen páncél struktúra: "${k.páncél.alap}"`);
-  }
-  if (k.páncél.kidolgozottság && !validKidolgozottság.has(k.páncél.kidolgozottság)) {
-    errors.push(`Ismeretlen kidolgozottság: "${k.páncél.kidolgozottság}"`);
-  }
-  if (k.páncél.méret_illeszkedés && !validMéret.has(k.páncél.méret_illeszkedés)) {
-    errors.push(`Ismeretlen méret_illeszkedés: "${k.páncél.méret_illeszkedés}"`);
-  }
-  if (k.páncél.fémalapanyag && !validAnyag.has(k.páncél.fémalapanyag)) {
-    errors.push(`Ismeretlen fémalapanyag: "${k.páncél.fémalapanyag}"`);
-  }
-
-  // Fegyverek anyag
-  const validFegyverAnyag = new Set(['acél', 'bronz', 'abbitacél', 'mithrill', 'lunír']);
-  for (const f of k.fegyverek) {
-    if (f.anyag && !validFegyverAnyag.has(f.anyag)) {
-      errors.push(`Ismeretlen fegyver anyag: "${f.anyag}"`);
-    }
-    if (f.alap) {
-      const found = data.fegyverek.some(fd => fd.Fegyver.toLowerCase() === f.alap.toLowerCase());
-      if (!found) errors.push(`Ismeretlen fegyver alaptípus: "${f.alap}"`);
-    }
-  }
-
-  return errors.length > 0 ? errors.join('; ') : null;
-}
 
 function App() {
   const [data, setData] = useState<GameData | null>(null);
@@ -929,10 +839,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
         }}
         képzettségek={képzettségek} setKépzettségek={(v: any) => {
           const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
-          let desc = '';
-          if (newVal.length > képzettségek.length) { const added = newVal.find(n => !képzettségek.some(k => k.név === n.név)); if (added && added.szint > 0) desc = `Képzettség: ${added.név} 0→${added.szint}`; }
-          else if (newVal.length < képzettségek.length) { const removed = képzettségek.find(k => !newVal.some(n => n.név === k.név)); if (removed) desc = `Képzettség: ${removed.név} ${removed.szint}→0❌`; }
-          else { const changed = newVal.find((n, i) => n.szint !== képzettségek[i]?.szint); if (changed) { const old = képzettségek.find(k => k.név === changed.név); if (old && old.szint !== changed.szint) desc = `Képzettség: ${changed.név} ${old.szint}→${changed.szint}`; } }
+          const desc = describeKepChange(képzettségek, newVal);
           if (desc) pushUndo(desc);
           setKépzettségek(v);
         }}
@@ -967,19 +874,13 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
     }
     case 'misztikus': return <MisztikusScreen data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={(v: any) => {
           const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
-          let desc = '';
-          if (newVal.length > képzettségek.length) { const added = newVal.find(n => !képzettségek.some(k => k.név === n.név)); if (added) desc = `Képzettség: ${added.név} 0→${added.szint}`; }
-          else if (newVal.length < képzettségek.length) { const removed = képzettségek.find(k => !newVal.some(n => n.név === k.név)); if (removed) desc = `Képzettség: ${removed.név} ${removed.szint}→0❌`; }
-          else { const changed = newVal.find(n => { const old = képzettségek.find(k => k.név === n.név); return old && old.szint !== n.szint; }); if (changed) { const old = képzettségek.find(k => k.név === changed.név)!; desc = `Képzettség: ${changed.név} ${old.szint}→${changed.szint}`; } }
+          const desc = describeKepChange(képzettségek, newVal);
           if (desc) pushUndo(desc);
           setKépzettségek(v);
         }} gameMode={gameMode} />;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} képzettségek={képzettségek} setKépzettségek={(v: any) => {
           const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
-          let desc = '';
-          if (newVal.length > képzettségek.length) { const added = newVal.find(n => !képzettségek.some(k => k.név === n.név)); if (added) desc = `Képzettség: ${added.név} 0→${added.szint}`; }
-          else if (newVal.length < képzettségek.length) { const removed = képzettségek.find(k => !newVal.some(n => n.név === k.név)); if (removed) desc = `Képzettség: ${removed.név} ${removed.szint}→0❌`; }
-          else { const changed = newVal.find(n => { const old = képzettségek.find(k => k.név === n.név); return old && old.szint !== n.szint; }); if (changed) { const old = képzettségek.find(k => k.név === changed.név)!; desc = `Képzettség: ${changed.név} ${old.szint}→${changed.szint}`; } }
+          const desc = describeKepChange(képzettségek, newVal);
           if (desc) pushUndo(desc);
           setKépzettségek(v);
         }} />;
@@ -988,94 +889,5 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
   }
 }
 
-function NaploTab({ karakter, setKarakter }: { karakter: Karakter; setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>> }) {
-  const [openIdx, setOpenIdx] = useState<number | null>(null);
-  const [adding, setAdding] = useState(false);
-  const [editIdx, setEditIdx] = useState<number | null>(null);
-  const [form, setForm] = useState({ dátum: '', km: '', kaland: '', események: '' });
-
-  function addEntry() {
-    if (!form.dátum && !form.kaland) return;
-    setKarakter(prev => prev ? { ...prev, napló: [...prev.napló, { ...form }] } : prev);
-    setForm({ dátum: '', km: '', kaland: '', események: '' });
-    setAdding(false);
-  }
-
-  function saveEdit() {
-    if (editIdx === null) return;
-    setKarakter(prev => prev ? { ...prev, napló: prev.napló.map((e, i) => i === editIdx ? { ...form } : e) } : prev);
-    setEditIdx(null);
-    setOpenIdx(null);
-  }
-
-  function removeEntry(idx: number) {
-    setKarakter(prev => prev ? { ...prev, napló: prev.napló.filter((_, i) => i !== idx) } : prev);
-    setOpenIdx(null);
-  }
-
-  const today = new Date().toISOString().slice(0, 10);
-
-  return (
-    <div className="screen" style={{ padding: '12px', minHeight: '100%' }} onClick={e => { if (editIdx !== null) return; if ((e.target as HTMLElement).closest('[data-naplo-entry]')) return; setOpenIdx(null); }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '10px' }}>
-        <h2 style={{ margin: 0 }}>📅 Napló</h2>
-        <button style={{ background: 'var(--primary)', border: '1px solid #555', borderRadius: '4px', padding: '6px 12px', color: 'var(--text)', fontSize: '14px' }} onClick={() => { setAdding(true); setForm({ dátum: today, km: '', kaland: '', események: '' }); }}>+ Új bejegyzés</button>
-      </div>
-
-      {karakter.napló.length === 0 && !adding && <p style={{ color: 'var(--text-dim)' }}>Nincs bejegyzés.</p>}
-
-      {karakter.napló.map((entry, i) => (
-        <div key={i} style={{ marginBottom: '4px' }} data-naplo-entry>
-          <div
-            style={{ background: 'var(--surface)', border: '1px solid #444', borderRadius: '4px', padding: '8px 10px', cursor: 'pointer', fontSize: '15px' }}
-            onClick={() => setOpenIdx(openIdx === i ? null : i)}
-          >
-            [{entry.dátum}] {entry.km && `${entry.km}: `}{entry.kaland}
-          </div>
-          {openIdx === i && editIdx !== i && (
-            <div style={{ background: '#1a1a3a', border: '1px solid #444', borderTop: 'none', borderRadius: '0 0 4px 4px', padding: '8px 10px', fontSize: '14px' }}>
-              {entry.események && <div style={{ whiteSpace: 'pre-wrap', color: 'var(--text)' }}>{entry.események}</div>}
-              <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-                <button style={{ background: 'var(--primary)', border: '1px solid #555', borderRadius: '4px', padding: '4px 10px', color: 'var(--text)', fontSize: '13px' }} onClick={() => { setEditIdx(i); setForm({ ...entry }); }}>Szerkeszt</button>
-                <button style={{ background: 'var(--error)', border: 'none', borderRadius: '4px', padding: '4px 10px', color: '#fff', fontSize: '13px' }} onClick={() => removeEntry(i)}>Törlés</button>
-              </div>
-            </div>
-          )}
-          {editIdx === i && (
-            <div style={{ background: '#1a1a3a', border: '1px solid #444', borderTop: 'none', borderRadius: '0 0 4px 4px', padding: '10px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-              <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-                <input type="date" value={form.dátum} onChange={e => setForm(f => ({ ...f, dátum: e.target.value }))} style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '4px 8px', color: 'var(--text)', fontSize: '14px' }} />
-                <button style={{ background: 'var(--primary)', border: '1px solid #555', borderRadius: '4px', padding: '4px 8px', color: 'var(--text)', fontSize: '13px' }} onClick={() => setForm(f => ({ ...f, dátum: today }))}>Ma</button>
-              </div>
-              <input placeholder="KM neve" value={form.km} onChange={e => setForm(f => ({ ...f, km: e.target.value }))} style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '6px 10px', color: 'var(--text)', fontSize: '14px' }} />
-              <input placeholder="Kaland neve" value={form.kaland} onChange={e => setForm(f => ({ ...f, kaland: e.target.value }))} style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '6px 10px', color: 'var(--text)', fontSize: '14px' }} />
-              <textarea placeholder="Események..." value={form.események} onChange={e => setForm(f => ({ ...f, események: e.target.value }))} rows={4} style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '6px 10px', color: 'var(--text)', fontSize: '14px', resize: 'vertical', fontFamily: 'inherit' }} />
-              <div style={{ display: 'flex', gap: '8px' }}>
-                <button style={{ background: 'var(--success)', border: 'none', borderRadius: '4px', padding: '6px 14px', color: '#000', fontWeight: 'bold', fontSize: '14px' }} onClick={saveEdit}>Mentés</button>
-                <button style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '6px 14px', color: 'var(--text)', fontSize: '14px' }} onClick={() => setEditIdx(null)}>Mégse</button>
-              </div>
-            </div>
-          )}
-        </div>
-      ))}
-
-      {adding && (
-        <div style={{ background: 'var(--surface)', border: '1px solid #555', borderRadius: '6px', padding: '12px', marginTop: '8px', display: 'flex', flexDirection: 'column', gap: '8px' }}>
-          <div style={{ display: 'flex', gap: '6px', alignItems: 'center' }}>
-            <input type="date" value={form.dátum} onChange={e => setForm(f => ({ ...f, dátum: e.target.value }))} style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '4px 8px', color: 'var(--text)', fontSize: '14px' }} />
-            <button style={{ background: 'var(--primary)', border: '1px solid #555', borderRadius: '4px', padding: '4px 8px', color: 'var(--text)', fontSize: '13px' }} onClick={() => setForm(f => ({ ...f, dátum: today }))}>Ma</button>
-          </div>
-          <input placeholder="KM neve" value={form.km} onChange={e => setForm(f => ({ ...f, km: e.target.value }))} style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '6px 10px', color: 'var(--text)', fontSize: '14px' }} />
-          <input placeholder="Kaland neve" value={form.kaland} onChange={e => setForm(f => ({ ...f, kaland: e.target.value }))} style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '6px 10px', color: 'var(--text)', fontSize: '14px' }} />
-          <textarea placeholder="Események..." value={form.események} onChange={e => setForm(f => ({ ...f, események: e.target.value }))} rows={4} style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '6px 10px', color: 'var(--text)', fontSize: '14px', resize: 'vertical', fontFamily: 'inherit' }} />
-          <div style={{ display: 'flex', gap: '8px' }}>
-            <button style={{ background: 'var(--success)', border: 'none', borderRadius: '4px', padding: '6px 14px', color: '#000', fontWeight: 'bold', fontSize: '14px' }} onClick={addEntry}>Mentés</button>
-            <button style={{ background: 'var(--input-bg)', border: '1px solid #555', borderRadius: '4px', padding: '6px 14px', color: 'var(--text)', fontSize: '14px' }} onClick={() => setAdding(false)}>Mégse</button>
-          </div>
-        </div>
-      )}
-    </div>
-  );
-}
 
 export default App;

@@ -2,6 +2,7 @@ import { useState, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session } from '../engine/types';
+import { buildAktívFeltételek } from '../engine/feltetelek';
 import './TavharcScreen.css';
 
 export function TavharcScreen({ data, karakter, session, setSession, setKarakter, gameMode }: {
@@ -77,11 +78,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const mfCÉ = mfBónusz?.CÉ ?? 0;
 
   // Feltételes fortély CÉ bónusz (pl. Célzás + Kitartott célzás)
-  const aktívFeltételek = new Set<string>();
-  for (const h of session.aktív_helyzetek) {
-    const def = data.harciHelyzetek.find(d => d.név === h);
-    if (def) aktívFeltételek.add((def as any).feltétel_kulcs);
-  }
+  const aktívFeltételek = buildAktívFeltételek(session, data);
   let fortélyCÉ = 0;
   for (const def of data.fortelySummaries) {
     const karakterFok = k.fortélyok.find(f => f.név === def.név)?.fok ?? 0;
