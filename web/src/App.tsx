@@ -630,7 +630,7 @@ function App() {
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowSavePopup(true); }}>💾 Mentés</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowNewConfirm(true); }}>📄 Új karakter</button>
             {document.fullscreenEnabled && (
-              <button className="menu-item" onClick={() => { setShowMenu(false); if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); }}>
+              <button className="menu-item" onClick={() => { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); setShowMenu(false); }}>
                 {document.fullscreenElement ? '⛶ Kilépés teljes képernyőből' : '⛶ Teljes képernyő'}
               </button>
             )}
