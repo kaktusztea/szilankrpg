@@ -135,7 +135,14 @@ body {
 }
 
 .tab-indicator {
-  display: none;
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  height: calc(100% - 8px);
+  border: 2px solid #b0bec5;
+  border-radius: 50%;
+  pointer-events: none;
+  box-sizing: border-box;
 }
 
 .tab-bar::-webkit-scrollbar { display: none; }
@@ -155,7 +162,6 @@ body {
 
 .tab-btn.active {
   color: var(--accent);
-  border-color: #b0bec5;
   font-weight: bold;
 }
 
