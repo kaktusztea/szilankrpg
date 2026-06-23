@@ -33,6 +33,3 @@ fokok:
     hatástext:
       - text: "Cella értékre `-1` levonás, ha olyan célra lősz, ahol Cella `≥ 5`."
     módosítók: ""
-
-todo:
-  - text: ""

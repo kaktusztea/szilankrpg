@@ -56,6 +56,3 @@ fokok:
         forrás: ""
         arány: 0
         feltétel: "harci_helyzet:célzás"
-
-todo:
-  - text: ""

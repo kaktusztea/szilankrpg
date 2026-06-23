@@ -52,5 +52,4 @@ fokok:
         feltétel: ""          # Mikor aktív: "" = MINDIG. Egyébként "prefix:érték" formátum.
         megjegyzés: ""        # Opcionális: emberi olvasásra (pl. "méregellenállás dobásakor")
 
-todo:
-  - text: ""
+

@@ -87,5 +87,3 @@ fokok:
     - forrás: "páncél_lefedettség"
       operátor: ">="
       érték: 70
-todo: 
-- text: ""

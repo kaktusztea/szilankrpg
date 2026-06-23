@@ -42,5 +42,3 @@ fokok:
     - forrás: kétkezes_harc
       operátor: ==
       érték: true
-todo:
-- text: ''
