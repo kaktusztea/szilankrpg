@@ -1,13 +1,13 @@
 ---
 schema_version: 1
 
-név: "Titkos szervezet: (szervezet neve)"
+név: "Titkos szervezet"
 névkomment: ""
 maxfok: 1
 session_toggle: false
 emlékeztető: false
 többszörösség:
-  spec_típus: ""
+  spec_típus: "szervezet"
   spec_lista: []
 csoport: "szabad"
 leírások:

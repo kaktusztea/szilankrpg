@@ -1,13 +1,13 @@
 ---
 schema_version: 1
 
-név: "Különleges faj boncolása (faj neve)"
+név: "Különleges faj boncolása"
 névkomment: ""
 maxfok: 1
 session_toggle: false
 emlékeztető: false
 többszörösség:
-  spec_típus: ""
+  spec_típus: "faj"
   spec_lista: []
 csoport: "szabad"
 leírások:
