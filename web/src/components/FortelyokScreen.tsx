@@ -9,7 +9,7 @@ import { fmtCode } from './formatters';
 /** Display name: "Kultúrkör - erv" if spec_elem, otherwise just név */
 function displayName(f: Fortely): string {
   const base = f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név;
-  if (f.kiérdemelt) return f.fok > 1 ? `${base} 🎁➕` : `${base} 🎁⭐`;
+  if (f.kiérdemelt) return f.fok > 1 ? `${base} ⭐➕` : `${base} ⭐`;
   return base;
 }
 
@@ -108,7 +108,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
 
   function addMultiInstance(subName: string) {
     if (!multiPickerDef) return;
-    if (multiPickerDef.csoport === 'szabad') {
+    if (multiPickerDef.csoport === 'szabad' || multiPickerDef.csoport === 'kiemelt') {
       setSzabadTypePicker({ név: multiPickerDef.név, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName });
       setMultiPickerDef(null);
       return;
@@ -232,7 +232,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                           if (maradtIngyenes > 0) label += ` 🎁${maradtIngyenes}`;
                         } else if (d.ingyenes_perszint > 0) {
                           const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
-                          const felvettDb = fortélyok.filter(f => f.név === d.név).length;
+                          const felvettDb = fortélyok.filter(f => f.név === d.név && !f.kiérdemelt).length;
                           const maradtIngyenes = Math.max(0, ingyenesDb - felvettDb);
                           if (maradtIngyenes > 0) label += ` 🎁${maradtIngyenes}`;
                         } else if (d.kp_perfok < 0) {
