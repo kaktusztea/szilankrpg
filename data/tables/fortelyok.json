@@ -6120,7 +6120,14 @@
     "kp_perfok": 6,
     "ingyenes_perszint": 0,
     "többszörös_típus": "lénycsoport",
-    "többszörös_lista": [],
+    "többszörös_lista": [
+      "elementálok",
+      "asztrállények",
+      "mentállények",
+      "antyss lényei",
+      "élőholtak",
+      "természetszellemek"
+    ],
     "leírás": "A belső síkok túlvilági teremtményeinek ismerete.",
     "kiterjeszti_normál": [
       "Lexikum"

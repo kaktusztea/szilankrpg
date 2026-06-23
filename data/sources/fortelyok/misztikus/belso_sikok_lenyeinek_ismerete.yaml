@@ -8,7 +8,7 @@ session_toggle: false
 emlékeztető: false
 többszörösség:
   spec_típus: "lénycsoport"
-  spec_lista: []
+  spec_lista: ["elementálok", "asztrállények", "mentállények", "antyss lényei", "élőholtak", "természetszellemek"]
 csoport: "misztikus"
 leírások:
   - text: "A belső síkok túlvilági teremtményeinek ismerete."
