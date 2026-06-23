@@ -8,7 +8,7 @@ session_toggle: false
 emlékeztető: false
 többszörösség:
   spec_típus: "lénycsoport"
-  spec_lista: []
+  spec_lista: ["démonok", "angyalok", "szeráfok", "dzsinnek"]
 csoport: "misztikus"
 leírások:
   - text: "A külső síkok túlvilági teremtményeinek ismerete."

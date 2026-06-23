@@ -6155,7 +6155,12 @@
     "kp_perfok": 6,
     "ingyenes_perszint": 0,
     "többszörös_típus": "lénycsoport",
-    "többszörös_lista": [],
+    "többszörös_lista": [
+      "démonok",
+      "angyalok",
+      "szeráfok",
+      "dzsinnek"
+    ],
     "leírás": "A külső síkok túlvilági teremtményeinek ismerete.",
     "kiterjeszti_normál": [
       "Lexikum"
