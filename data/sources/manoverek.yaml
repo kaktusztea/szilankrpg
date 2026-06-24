@@ -2,7 +2,7 @@
 # Manőverek — Aktív fül dropdown forrás
 # Forrás: md/066_05, 066_06, 066_07
 
-manőverek: 
+manőverek:
 - név: "Átsiklás"
   típus: "általános"
   nehézség: 6
@@ -25,7 +25,7 @@ manőverek:
   típus: "általános"
   nehézség: 10
   fázisok: "V,E"
-  hatás: "Kiszolgáltatott pozíció (fegyver nyakánál). Kijövetel: Kibontakozás Nehézség:10, TÉ:+20 Megakasztás."
+  hatás: "Kiszolgáltatott pozíció (fegyver nyakánál). Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled."
   id: "ellenfél_elfogása"
 - név: "Felállás földről"
   típus: "általános"

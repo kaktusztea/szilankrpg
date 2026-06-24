@@ -28,7 +28,7 @@
     "típus": "általános",
     "nehézség": 10,
     "fázisok": "V,E",
-    "hatás": "Kiszolgáltatott pozíció (fegyver nyakánál). Kijövetel: Kibontakozás Nehézség:10, TÉ:+20 Megakasztás.",
+    "hatás": "Kiszolgáltatott pozíció (fegyver nyakánál). Kijövetel: Kibontakozás Nehézség:10, TÉ:+4 Megakasztást kap ellenfeled.",
     "id": "ellenfél_elfogása"
   },
   {

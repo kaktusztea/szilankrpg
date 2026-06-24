@@ -124,7 +124,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   }
 
 
-  const { státuszPerElem, taktikaHatásPerElem, hasHatásPool, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév } = calcHatásPool(data, karakter, session);
+  const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév } = calcHatásPool(data, karakter, session);
   return (
     <div className="screen aktiv-screen">
       <h2>❎ Aktív</h2>
@@ -237,44 +237,8 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       </div>
 
       {/* Hatás pool */}
-      {(hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0) && (
+      {(fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0) && (
         <div className="aktiv-hatas-pool">
-          {hasHatásPool && (
-            <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Taktika hatások</span>
-              <div className="hatas-pool-items">
-                {taktikaHatásPerElem.map((t, i) => (
-                  <div key={`t${i}`} style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span className="hatas-pool-item"><strong style={{ color: '#90caf9' }}>{t.név}</strong></span>
-                    {t.hatások.map((h, j) => {
-                      const txt = fmtHatás(h, eseményNév);
-                      return txt ? <span key={j} className="hatas-pool-item" style={{ paddingLeft: '12px' }}>{txt}</span> : null;
-                    })}
-                  </div>
-                ))}
-              </div>
-            </div>
-          )}
-          {manőverBónuszok.length > 0 && (
-            <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Manőver bónuszok</span>
-              <div className="hatas-pool-items">
-                {manőverBónuszok.map((mb, i) => (
-                  <span key={i} className="hatas-pool-item positive">{data.manoverek.find(m => m.id === mb.manőver)?.név ?? mb.manőver.replace(/_/g, ' ')}: +{mb.érték} ({mb.név})</span>
-                ))}
-              </div>
-            </div>
-          )}
-          {előnyHátrányMods.length > 0 && (
-            <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Előny / Hátrány</span>
-              <div className="hatas-pool-items">
-                {előnyHátrányMods.map((eh, i) => (
-                  <span key={i} className={`hatas-pool-item ${eh.mód === 'előny' ? 'positive' : 'negative'}`}>{eh.mód === 'előny' ? `Előny+${eh.érték}` : `Hátrány${eh.érték}`}: {eh.cél.replace(/_/g, ' ').replace(/^./, c => c.toUpperCase())} ({eh.név})</span>
-                ))}
-              </div>
-            </div>
-          )}
           {fortélyEmlékeztetők.length > 0 && (
             <div className="hatas-pool-section">
               <span className="hatas-pool-title">Fortély bónuszok</span>
@@ -321,6 +285,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             </div>
           );
         })}
+        {taktikaHatásPerElem.map((t, i) => (
+          <div key={`th${i}`} className="kep-row" style={{ paddingLeft: '8px', fontSize: '12px', opacity: 0.85 }}>
+            <span style={{ flex: 1 }}><strong style={{ color: '#90caf9' }}>{t.név}:</strong> {t.hatások.map((h: any, j) => { const txt = fmtHatás({ operátor: h.hatás ?? h.operátor, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév); return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null; })}</span>
+          </div>
+        ))}
       </div>
 
       {showTaktikaPicker && createPortal(
@@ -419,6 +388,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             </div>
           );
         })}
+        {előnyHátrányMods.map((eh, i) => (
+          <div key={`eh${i}`} className="kep-row" style={{ paddingLeft: '8px', fontSize: '12px', opacity: 0.85 }}>
+            <span style={{ flex: 1, color: eh.mód === 'előny' ? '#66bb6a' : '#e53935' }}>{eh.mód === 'előny' ? `Előny+${eh.érték}` : `Hátrány${eh.érték}`}: {eh.cél.replace(/_/g, ' ')} ({eh.név})</span>
+          </div>
+        ))}
       </div>
 
       {showHelyzetPicker && createPortal(
@@ -493,6 +467,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             </div>
           );
         })()}
+        {manőverBónuszok.map((mb, i) => (
+          <div key={`mb${i}`} className="kep-row" style={{ paddingLeft: '8px', fontSize: '12px', opacity: 0.85 }}>
+            <span style={{ flex: 1, color: '#66bb6a' }}>{data.manoverek.find(m => m.id === mb.manőver)?.név ?? mb.manőver.replace(/_/g, ' ')}: +{mb.érték} ({mb.név})</span>
+          </div>
+        ))}
       </div>
 
       {showManőverPicker && createPortal(
