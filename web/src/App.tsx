@@ -230,10 +230,11 @@ function App() {
     const btn = activeTabBtnRef.current;
     if (!ind || !btn) return;
     const size = ind.offsetHeight || btn.offsetHeight;
-    ind.style.transform = `translateX(${btn.offsetLeft + (btn.offsetWidth - size) / 2}px)`;
+    const centerX = btn.offsetLeft + btn.offsetWidth / 2;
+    ind.style.transform = `translateX(${centerX - size / 2}px)`;
     if (!indicatorInit.current) {
       requestAnimationFrame(() => {
-        if (ind) ind.style.transition = 'transform 0.2s ease-out, width 0.2s ease-out';
+        if (ind) ind.style.transition = 'transform 0.2s ease-out';
         indicatorInit.current = true;
       });
     }

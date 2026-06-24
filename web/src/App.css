@@ -127,6 +127,7 @@ body {
 .tab-bar {
   display: flex;
   justify-content: center;
+  gap: 4px;
   background: var(--surface);
   border-top: 1px solid #333;
   padding: 4px 0;
@@ -157,8 +158,12 @@ body {
   padding: 8px;
   cursor: pointer;
   white-space: nowrap;
-  flex-shrink: 1;
-  min-width: 0;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .tab-btn.active {
