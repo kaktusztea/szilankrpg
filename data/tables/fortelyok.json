@@ -2698,7 +2698,23 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "harci_helyzet:belharci_helyzet"
+            "feltétel": [
+              {
+                "forrás": "harci_helyzet:belharci_helyzet",
+                "operátor": "==",
+                "érték": true
+              },
+              {
+                "forrás": "aktív_fegyver_harcmodor",
+                "operátor": "==",
+                "érték": "Közelharc"
+              },
+              {
+                "forrás": "aktív_fegyver_pengehossz",
+                "operátor": "<=",
+                "érték": 0
+              }
+            ]
           },
           {
             "cél": "TÉ",
@@ -2706,7 +2722,23 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "harci_helyzet:belharci_helyzet"
+            "feltétel": [
+              {
+                "forrás": "harci_helyzet:belharci_helyzet",
+                "operátor": "==",
+                "érték": true
+              },
+              {
+                "forrás": "aktív_fegyver_harcmodor",
+                "operátor": "==",
+                "érték": "Közelharc"
+              },
+              {
+                "forrás": "aktív_fegyver_pengehossz",
+                "operátor": "<=",
+                "érték": 0
+              }
+            ]
           },
           {
             "cél": "VÉ",
@@ -2714,7 +2746,23 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "harci_helyzet:belharci_helyzet"
+            "feltétel": [
+              {
+                "forrás": "harci_helyzet:belharci_helyzet",
+                "operátor": "==",
+                "érték": true
+              },
+              {
+                "forrás": "aktív_fegyver_harcmodor",
+                "operátor": "==",
+                "érték": "Közelharc"
+              },
+              {
+                "forrás": "aktív_fegyver_pengehossz",
+                "operátor": "<=",
+                "érték": 0
+              }
+            ]
           }
         ]
       },
@@ -2738,7 +2786,23 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "harci_helyzet:belharci_helyzet"
+            "feltétel": [
+              {
+                "forrás": "harci_helyzet:belharci_helyzet",
+                "operátor": "==",
+                "érték": true
+              },
+              {
+                "forrás": "aktív_fegyver_harcmodor",
+                "operátor": "==",
+                "érték": "Közelharc"
+              },
+              {
+                "forrás": "aktív_fegyver_pengehossz",
+                "operátor": "<=",
+                "érték": 0
+              }
+            ]
           },
           {
             "cél": "TÉ",
@@ -2746,7 +2810,23 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "harci_helyzet:belharci_helyzet"
+            "feltétel": [
+              {
+                "forrás": "harci_helyzet:belharci_helyzet",
+                "operátor": "==",
+                "érték": true
+              },
+              {
+                "forrás": "aktív_fegyver_harcmodor",
+                "operátor": "==",
+                "érték": "Közelharc"
+              },
+              {
+                "forrás": "aktív_fegyver_pengehossz",
+                "operátor": "<=",
+                "érték": 0
+              }
+            ]
           },
           {
             "cél": "VÉ",
@@ -2754,7 +2834,23 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "harci_helyzet:belharci_helyzet"
+            "feltétel": [
+              {
+                "forrás": "harci_helyzet:belharci_helyzet",
+                "operátor": "==",
+                "érték": true
+              },
+              {
+                "forrás": "aktív_fegyver_harcmodor",
+                "operátor": "==",
+                "érték": "Közelharc"
+              },
+              {
+                "forrás": "aktív_fegyver_pengehossz",
+                "operátor": "<=",
+                "érték": 0
+              }
+            ]
           }
         ]
       }

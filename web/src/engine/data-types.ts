@@ -93,6 +93,10 @@ export interface HarciHelyzetEntry {
   feltétel_kulcs: string;
   infó: string;
   hatások?: StatuszHatas[];
+  fegyver_override?: {
+    feltétel: { forrás: string; operátor: string; érték: unknown }[];
+    módosítók: { cél: string; érték: number; mód: string }[];
+  };
 }
 
 export interface SzituacioEntry {

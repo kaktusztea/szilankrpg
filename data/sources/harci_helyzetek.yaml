@@ -6,13 +6,19 @@
 
 harci_helyzetek:
 - név: "Belharci helyzet"
-  infó: "Közelharc harcmodor + max 0 pengehossz. Belharcos fortély bónuszok. Egyéb fegyver: Beszorított(2)."
+  infó: "Közelharc harcmodor + max 0 pengehossz. Belharcos fortély bónuszok. Egyéb fegyver: fegyver TÉ/VÉ=0."
   hatások: []
   id: "belharci_helyzet"
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
+  fegyver_override:
+    feltétel:
+      - { forrás: "aktív_fegyver_pengehossz", operátor: ">", érték: 0 }
+    módosítók:
+      - { cél: "fegyver_TÉ", érték: 0, mód: "override" }
+      - { cél: "fegyver_VÉ", érték: 0, mód: "override" }
 - név: "Beszorított ellenfél"
   infó: "Előny+1 TÉ dobásra."
   hatások:

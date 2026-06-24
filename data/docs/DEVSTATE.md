@@ -371,7 +371,7 @@
 | -------------------------------- | ------------------------------------------------------- | ----------- |
 | Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
 | Magasabbról + Lovas harc kizárás | Ha lovas harc aktív, Magasabbról disabled               | Aktív fül   |
-| Belharc / Belharci helyzet       | Külön rendszer implementálása                           | Aktív fül   |
+| Belharc / Belharci helyzet       | Fegyver/harcmodor korlátozás jelzés, puszta kéz override  | Aktív fül   |
 | Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
 
 ### Karakteralkotó — általános
@@ -392,7 +392,7 @@
 - ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF, harckeret yaml fortélyból `fegyverfogás:kétkezes` feltétellel)
 
 - ✅ Harci akrobatika: session_toggle (yaml `session_toggle: true`) + TÉ/VÉ bekötés + manőver bónusz
-- Belharc / Belharci helyzet — külön rendszer
+- Belharc rendszer — fegyver/harcmodor korlátozás jelzés + puszta kéz TÉ/VÉ/SP override
 - Páros harc körülmény — implementálva (picker + fortély)
 
 ### Fortélyok — hiányzó számszerűsítések

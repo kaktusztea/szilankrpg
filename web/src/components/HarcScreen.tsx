@@ -113,6 +113,21 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
   stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
 
+  // Aktív fegyver computed értékek (Belharc feltételekhez)
+  const aktívFegyverFp = session.aktív_fegyver_index >= 0 ? k.fegyverek[session.aktív_fegyver_index] : null;
+  const aktívFegyverDef = aktívFegyverFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === aktívFegyverFp.alap.toLowerCase()) : null;
+  const jobbPengehossz = aktívFegyverDef ? (parseFloat(aktívFegyverDef.Pengehossz) || 0) : 0;
+  let aktívFegyverPengehossz = jobbPengehossz;
+  // Kétkezes harc / hárítófegyver: bal kéz pengehossza is számít (összeg)
+  if (session.kétkezes_harc && session.aktív_fegyver_bal_index >= 0 || session.fegyverfogás === 'fegyver_hárító' && session.aktív_fegyver_bal_index >= 0) {
+    const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
+    const balDef = balFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === balFp.alap.toLowerCase()) : null;
+    aktívFegyverPengehossz += balDef ? (parseFloat(balDef.Pengehossz) || 0) : 0;
+  }
+  const aktívFegyverKat = aktívFegyverDef?.Kategória ?? 'közelharci';
+  const aktívFegyverHarcmodor = konstansok.fegyver_kategória_harcmodor[aktívFegyverKat] ?? 'Közelharc';
+  stringCtx.set('aktív_fegyver_harcmodor', aktívFegyverHarcmodor);
+
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
     harcmodor_összeg: harcmodorÖsszeg,
     HM_TÉ: k.HM_TÉ,
@@ -126,14 +141,19 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     páncél_sisak: k.páncél.sisak ? 1 : 0,
     páncél_idea: k.páncél.idea,
     páncél_rongálódás: k.páncél.rongálódás,
+    aktív_fegyver_pengehossz: aktívFegyverPengehossz,
   });
   const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 
-  // Kalkulált feltétel kontextus — generikus: computed + session + ctx
-  function getFeltételÉrték(forrás: string): number | boolean | undefined {
+  // Kalkulált feltétel kontextus — generikus: computed + session + ctx + stringCtx + aktívFeltételek
+  function getFeltételÉrték(forrás: string): number | boolean | string | undefined {
+    if (aktívFeltételek.has(forrás)) return true;
     if (forrás in session) return (session as unknown as Record<string, unknown>)[forrás] as number | boolean;
     if (computed.has(forrás)) return computed.get(forrás)!;
     if (ctx.has(forrás)) return ctx.get(forrás)!;
+    if (stringCtx.has(forrás)) return stringCtx.get(forrás)!;
+    // Prefix kulcs ami NINCS az aktívFeltételek-ben → false
+    if (forrás.includes(':')) return false;
     return undefined;
   }
 
@@ -270,8 +290,25 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       sebesség: parseInt(fDef.Sebesség) || 6,
       pengehossz: parseFloat(fDef.Pengehossz) || 0,
       sebzésmód: fDef['Sebzés módja'],
+      alap_TÉ: parseInt(fDef.TÉ) || 0,
+      alap_VÉ: parseInt(fDef.VÉ) || 0,
     };
   });
+
+  // Fegyver override aktív harci helyzetekből (pl. Belharci helyzet: fegyver TÉ/VÉ=0 ha pengehossz>0)
+  const belharciAktív = session.aktív_helyzetek.includes('Belharci helyzet');
+  for (const helyzetNév of session.aktív_helyzetek) {
+    const hDef = data.harciHelyzetek.find(h => h.név === helyzetNév);
+    if (!hDef?.fegyver_override) continue;
+    const overFeltétel = hDef.fegyver_override.feltétel;
+    if (!feltételTeljesül(overFeltétel)) continue;
+    for (const mod of hDef.fegyver_override.módosítók) {
+      for (const r of fegyverResults) {
+        if (mod.cél === 'fegyver_TÉ' && mod.mód === 'override') r.TÉ -= r.alap_TÉ;
+        if (mod.cél === 'fegyver_VÉ' && mod.mód === 'override') r.VÉ -= r.alap_VÉ;
+      }
+    }
+  }
 
   // Kétkezes harc összevont kalkuláció
   let kétkezesResult: (typeof fegyverResults[0] & { sumPengehossz: number }) | null = null;
@@ -283,6 +320,19 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         jobbFp, balFp, fegyverek: data.fegyverek, karakter: k,
         konstansok: konstansok as any, harcmodorBonusz, fortelyMods,
       });
+    }
+  }
+
+  // Fegyver override a kétkezes result-ra is
+  if (kétkezesResult) {
+    for (const helyzetNév of session.aktív_helyzetek) {
+      const hDef = data.harciHelyzetek.find(h => h.név === helyzetNév);
+      if (!hDef?.fegyver_override) continue;
+      if (!feltételTeljesül(hDef.fegyver_override.feltétel)) continue;
+      for (const mod of hDef.fegyver_override.módosítók) {
+        if (mod.cél === 'fegyver_TÉ' && mod.mód === 'override') kétkezesResult.TÉ -= kétkezesResult.alap_TÉ;
+        if (mod.cél === 'fegyver_VÉ' && mod.mód === 'override') kétkezesResult.VÉ -= kétkezesResult.alap_VÉ;
+      }
     }
   }
 
@@ -398,12 +448,12 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
       <table className="harc-table">
         <thead>
-          <tr><th>Fegyver</th><th>Tám</th><th className="te-col">TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>
+          <tr><th>{belharciAktív ? <span style={{ color: '#ef9a9a' }}>BELHARC</span> : 'Fegyver'}</th><th>Tám</th><th className="te-col">TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>
         </thead>
         <tbody>
           {kétkezesResult && (
             <tr style={{ border: '2px solid #90caf9' }}>
-              <td>{kétkezesResult.fegyver_név}</td>
+              <td style={belharciAktív && kétkezesResult.sumPengehossz > 0 ? { color: '#e53935' } : undefined}>{kétkezesResult.fegyver_név}</td>
               <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: kétkezesResult.fegyver_név, sebesség: kétkezesResult.sebesség, harckeret: kétkezesResult.harckeret })}>{kétkezesResult.támadások}</td>
               <td>{kétkezesResult.TÉ + téLevonás + taktikaMods['TÉ'] + (kétkezesResult.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
               <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
@@ -435,7 +485,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
               if (r.fegyver_név !== jobbNév) return { opacity: 0.4 };
               return undefined;
             })()}>
-              <td>{r.fegyver_név}</td>
+              <td style={belharciAktív && r.pengehossz > 0 ? { color: '#e53935' } : undefined}>{r.fegyver_név}</td>
               <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
               <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
               <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + (fogásResult ? 0 : pajzsVÉ) + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>

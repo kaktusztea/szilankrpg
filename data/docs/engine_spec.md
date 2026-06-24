@@ -1131,6 +1131,27 @@ note: A manőverek nem adnak statikus harcérték módosítókat — ellenpróba
       Visszafogott taktika TÉ csökkentés (Harci anatómia): `cél: TÉ, feltétel: "taktika:visszafogott"`, +3/+6/+9.
       Belharcos manőverek: Belharci helyzet szükséges (kivéve Belharcba kerülés).
 
+#### Belharc rendszer összefoglaló
+
+A Belharci helyzet egy semleges harci helyzet amelyet az Aktív fül picker-ből lehet aktiválni.
+Aktiváláskor:
+  - A Belharcos fortély feltételes módosítói (`feltétel: "harci_helyzet:belharci_helyzet"`) érvényesülnek:
+    1.fok: KÉ+1, TÉ+2, VÉ+2; 2.fok: KÉ+2, TÉ+4, VÉ+4
+  - Ha a karakter NEM rendelkezik Belharcos fortéllyal: a fenti bónuszok nem járnak,
+    de a helyzet aktiválható (pl. "belekényszerítik")
+
+  Belharcos (aki aktiválja):
+    - Közelharc harcmodor kötelező (a fortély bónuszaihoz)
+    - Max 0 pengehosszú fegyver (tőr, puszta kéz)
+    - Puszta kéz harcértékei: TÉ=0, VÉ=0, SP=0, sebzés FP (1ÉP/5FP)
+
+  Nem belharcos (aki belekényszerül):
+    - Saját harcmodor értékei maradnak (harcmodor bónusz jár)
+    - Nem belharcos fegyverek (pl. kard): fegyver TÉ=0, VÉ=0 (testközelben nem forgatható)
+    - Fegyver bármikor elejthető
+
+  - Belharcos manőverek (Belharcba kerülés kivételével) mind előfeltételnek követelik a helyzetet
+
 ---
 
 ## §22 Státuszok és Hatások

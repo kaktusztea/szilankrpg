@@ -37,19 +37,28 @@ fokok:
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_helyzet"
+    feltétel:
+      - { forrás: "harci_helyzet:belharci_helyzet", operátor: "==", érték: true }
+      - { forrás: "aktív_fegyver_harcmodor", operátor: "==", érték: "Közelharc" }
+      - { forrás: "aktív_fegyver_pengehossz", operátor: "<=", érték: 0 }
   - cél: "TÉ"
     érték: 2
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_helyzet"
+    feltétel:
+      - { forrás: "harci_helyzet:belharci_helyzet", operátor: "==", érték: true }
+      - { forrás: "aktív_fegyver_harcmodor", operátor: "==", érték: "Közelharc" }
+      - { forrás: "aktív_fegyver_pengehossz", operátor: "<=", érték: 0 }
   - cél: "VÉ"
     érték: 2
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_helyzet"
+    feltétel:
+      - { forrás: "harci_helyzet:belharci_helyzet", operátor: "==", érték: true }
+      - { forrás: "aktív_fegyver_harcmodor", operátor: "==", érték: "Közelharc" }
+      - { forrás: "aktív_fegyver_pengehossz", operátor: "<=", érték: 0 }
 - fok: 2
   követelménytext:
     - text: "Közelharc - 9.szint"
@@ -64,16 +73,25 @@ fokok:
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_helyzet"
+    feltétel:
+      - { forrás: "harci_helyzet:belharci_helyzet", operátor: "==", érték: true }
+      - { forrás: "aktív_fegyver_harcmodor", operátor: "==", érték: "Közelharc" }
+      - { forrás: "aktív_fegyver_pengehossz", operátor: "<=", érték: 0 }
   - cél: "TÉ"
     érték: 4
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_helyzet"
+    feltétel:
+      - { forrás: "harci_helyzet:belharci_helyzet", operátor: "==", érték: true }
+      - { forrás: "aktív_fegyver_harcmodor", operátor: "==", érték: "Közelharc" }
+      - { forrás: "aktív_fegyver_pengehossz", operátor: "<=", érték: 0 }
   - cél: "VÉ"
     érték: 4
     mód: "flat"
     forrás: ""
     arány: 0
-    feltétel: "harci_helyzet:belharci_helyzet"
+    feltétel:
+      - { forrás: "harci_helyzet:belharci_helyzet", operátor: "==", érték: true }
+      - { forrás: "aktív_fegyver_harcmodor", operátor: "==", érték: "Közelharc" }
+      - { forrás: "aktív_fegyver_pengehossz", operátor: "<=", érték: 0 }

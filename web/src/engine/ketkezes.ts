@@ -28,6 +28,8 @@ export interface KétkezesResult {
   pengehossz: number;
   sumPengehossz: number;
   sebzésmód: string;
+  alap_TÉ: number;
+  alap_VÉ: number;
 }
 
 export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null {
@@ -99,5 +101,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
     pengehossz: Math.max(jobbPenge, balPenge),
     sumPengehossz: sumPenge,
     sebzésmód: jobbDef['Sebzés módja'],
+    alap_TÉ: alapTÉ,
+    alap_VÉ: alapVÉ,
   };
 }
