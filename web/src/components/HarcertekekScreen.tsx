@@ -266,6 +266,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
               <strong>{f.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
               <button className="fort-delete" onClick={() => setDeleteTarget(i)}>✕</button>
             </div>
+            {(() => { const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase()); if (!fd) return null; const mfFok = getMfFok(f.alap); const mf = (konstansok as any).mesterfegyver_bónuszok?.find((b: any) => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 }; const idea = f.idea; return <div className="he-fegyver-fields" style={{ marginBottom: '8px' }}><span className="he-field-btn he-field-indicator"><span style={{ color: '#90caf9' }}>TÉ:</span>{(parseInt(fd.TÉ)||0)+mf.TÉ+idea} <span style={{ color: '#90caf9', marginLeft: '6px' }}>VÉ:</span>{(parseInt(fd.VÉ)||0)+mf.VÉ+idea} <span style={{ color: '#90caf9', marginLeft: '6px' }}>SP:</span>{(parseInt(fd.SP)||0)+mf.SP+idea} <span style={{ color: '#90caf9', marginLeft: '6px' }}>Sebesség:</span>{fd.Sebesség}</span></div>; })()}
             <div className="he-fegyver-fields">
               <button className="he-field-btn he-field-fortely" style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined} onClick={() => setMfTarget(i)}>MF fok: <strong>{getMfFok(f.alap)}</strong></button>
               <button className="he-field-btn" onClick={() => setIdeaTarget({ type: 'fegyver', idx: i })}>Idea: <strong>{f.idea}</strong></button>
