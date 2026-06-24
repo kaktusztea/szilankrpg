@@ -17,7 +17,7 @@
 │   │   ├── statuszok.yaml     ← 19 státusz (strukturált hatásokkal)
 │   │   ├── hatas_operatorok.yaml       ← 8 hatás mechanika típus (előny, hátrány, letilt, stb.)
 │   │   ├── hatasok.yaml               ← 29 elnevezett Hatás katalógus (081_hatasok.md)
-│   │   ├── esemenyek.yaml     ← 21 esemény/célpont (hatások céljai)
+│   │   ├── esemenyek.yaml     ← 23 esemény/célpont (hatások céljai)
 │   │   ├── hatterek.yaml      ← Leíró + Karma hátterek
 │   │   ├── kepzettsegek/      ← Képzettség adatfájlok (81 db, alkönyvtárakban)
 │   │   │   ├── primer/altalanos/   (10 db)
@@ -26,27 +26,35 @@
 │   │   │   ├── primer/arkanumok/   (16 db)
 │   │   │   ├── primer/faj_miszteriumok/ (26 db)
 │   │   │   └── szekunder/          (22 db)
-│   │   ├── fortelyok/         ← Fortély adatfájlok (169 db, csoportonként alkönyvtár)
-│   │   │   ├── harci/         (45 db)
+│   │   ├── fortelyok/         ← Fortély adatfájlok (177 db, csoportonként alkönyvtár)
+│   │   │   ├── harci/         (44 db)
 │   │   │   ├── altalanos/     (41 db)
 │   │   │   ├── szabad/        (59 db)
 │   │   │   ├── erzekek/       (6 db)
 │   │   │   ├── kiemelt/       (9 db)
-│   │   │   └── misztikus/     (9 db)
+│   │   │   ├── misztikus/     (9 db)
+│   │   │   └── tavharc/       (9 db)
 │   │   └── fajok/             ← Faj hátterek (27 db)
 │   ├── schemas/               ← YAML sémák (karakter, fortely, kepzettseg, fegyver, pancel, faj, taktika, statusz, hatas, esemeny, harci_helyzet, szituacio, manover, hatter)
 │   ├── tables/                ← Generált + statikus JSON táblák (runtime)
 │   ├── karakter/              ← Karakter template-ek
 │   │   ├── empty_karakter.json  ← Üres karakter template
 │   │   └── test_karakter.json   ← Teszt karakter (single source of truth)
-│   ├── rules.json             ← Reactive engine szabályok (53 deklaratív képlet/aggregáció)
+│   ├── rules.json             ← Reactive engine szabályok (54 deklaratív képlet/aggregáció)
 │   └── generate_tables.py     ← YAML→JSON generáló script (Vite plugin és prebuild futtatja)
 ├── web/                       ← React + Vite + TypeScript webes app
 │   ├── src/
 │   │   ├── engine/            ← Kalkulációs engine modulok
 │   │   │   ├── types.ts       ← Típusdefiníciók (Karakter v2, Session, Fortely, stb.)
+│   │   │   ├── data-types.ts  ← Adat interface-ek (GameData, FortelySummary, TaktikaEntry, stb.)
 │   │   │   ├── data-loader.ts ← JSON betöltés runtime
 │   │   │   ├── reactive.ts   ← Reactive rule engine (evaluate, buildContext, buildArrayContext)
+│   │   │   ├── feltetelek.ts ← buildAktívFeltételek helper
+│   │   │   ├── ketkezes.ts   ← Kétkezes harc kalkuláció (calcKétkezesHarc)
+│   │   │   ├── file-ops.ts   ← Save/Load/Duplicate logika
+│   │   │   ├── validate.ts   ← Karakter validáció (schema + referenciális)
+│   │   │   ├── undo-helpers.ts ← describeKepChange
+│   │   │   ├── alapeset.ts   ← Fortély 0.fok (Alapeset) kiértékelés
 │   │   │   └── index.ts       ← Barrel export
 │   │   ├── components/
 │   │   │   ├── HarcScreen.tsx  ← Harc fül (KÉSZ)
@@ -55,17 +63,23 @@
 │   │   │   ├── EpTable.css
 │   │   │   ├── TulajdonsagokScreen.tsx  ← Tulajdonságok + Képzettségek fül (KÉSZ)
 │   │   │   ├── TulajdonsagokScreen.css
+│   │   │   ├── TulajdonsagCell.tsx      ← Tulajdonság cella popup
+│   │   │   ├── PrimerKpBox.tsx          ← Primer KP bontás doboz
 │   │   │   ├── FortelyokScreen.tsx      ← Fortélyok fül (KÉSZ)
 │   │   │   ├── FortelyokScreen.css
+│   │   │   ├── FortelyFelvetel.tsx      ← Közös fortély felvételi wizard
 │   │   │   ├── HarcertekekScreen.tsx    ← Harcértékek fül (KÉSZ)
 │   │   │   ├── HarcertekekScreen.css
 │   │   │   ├── AktivScreen.tsx         ← Aktív fül (KÉSZ)
 │   │   │   ├── AktivScreen.css
+│   │   │   ├── HatasPoolCalc.ts        ← Hatás pool kalkuláció helper
 │   │   │   ├── MisztikusScreen.tsx     ← Misztikus fül (KÉSZ)
 │   │   │   ├── TavharcScreen.tsx       ← Távharc fül (KÉSZ)
 │   │   │   ├── TavharcScreen.css
 │   │   │   ├── HatterekScreen.tsx      ← Hátterek fül (KÉSZ)
-│   │   │   └── HatterekScreen.css
+│   │   │   ├── HatterekScreen.css
+│   │   │   ├── NaploTab.tsx            ← Napló overlay komponens
+│   │   │   └── formatters.tsx          ← fmtCode + fmtHatás shared helperek
 │   │   ├── App.tsx             ← Tab shell + swipe + animáció + Szerk/Game mód + Napló
 │   │   └── App.css             ← Globális stílusok, dark theme
 │   ├── vite.config.ts          ← Vite config (serveDataPlugin, metadata generation, polling, host)
@@ -81,7 +95,7 @@
 ## Elkészült
 - ✅ Adatmodell: 5 schema (fortely, kepzettseg, karakter, pancel, fegyver, faj)
 - ✅ Konstansok: teljes (KP, arányok, páncél, harcmodorok, mesterfegyver, kétkezes harc, merevvért, pajzs, aura, feltétel prefixek, fegyver_kategória_harcmodor, több_támadás_TÉ_levonás, locked_fortélyok)
-- ✅ Engine spec: 36 szekció (§1-§36), validálva a szabályrendszer + ODS ellen
+- ✅ Engine spec: 37 szekció (§1-§37), validálva a szabályrendszer + ODS ellen
 - ✅ Engine core: TypeScript implementáció, tesztelve 8.szintű karakter ellen (15/18 ✅, maradék 3 javítva)
 - ✅ GUI spec: 8 screen + 2 overlay leírás, formázás, viselkedés
 - ✅ Harc fül UI: KÉ/SFÉ/VÉ csökk/MP boxok, fegyvertábla, ÉP rubrika táblázat (sebesülés/gyógyulás/compaction/TÉ levonás)
@@ -303,7 +317,7 @@
   - Faj háttér: read-only chip (karakter.hátterek.faj), kattintásra navigál Tulajdonságok fülre
   - Szövegfelhő: Leíró hátterek (Származás/Jellem/Küllem/Fóbia) + Karma hátterek
   - Adatforrás: `data/sources/hatterek.yaml` → `tables/hatterek.json`
-  - Dupla katt toggle (aktív ↔ inaktív), kijelöltek előre + ABC sorrend
+  - Tap toggle (aktív ↔ inaktív), kijelöltek előre + ABC sorrend
   - Game módban nem szerkeszthető
 - ✅ Taktika módosítók → Harc fül
   - Aktív taktikák TÉ/VÉ/KÉ/SP módosítói beépítve a harcérték kalkulációba
@@ -355,10 +369,9 @@
 
 | Téma                             | Leírás                                                  | Szekció     |
 | -------------------------------- | ------------------------------------------------------- | ----------- |
-| Faj misztérium képzettségek      | → Mágia fülre mozgatás                                  | Általános   |
 | Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
-| Belharc / Belharci helyzet       | Külön rendszer implementálása                           | Aktív fül   |
 | Magasabbról + Lovas harc kizárás | Ha lovas harc aktív, Magasabbról disabled               | Aktív fül   |
+| Belharc / Belharci helyzet       | Külön rendszer implementálása                           | Aktív fül   |
 | Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
 
 ### Karakteralkotó — általános
@@ -374,8 +387,6 @@
 - ✅ Mentés overlay (💾): "Aktuális karakter" / "Összes (backup)" → "Megosztás" (share sheet) / "Helyi mentés"
 - ✅ Teszt mód: teszt karakter nem mentődik, "Szilánk" label narancssárga
 - ✅ isDirty flag: új karakter nem mentődik amíg nincs módosítás
-- ODS checker-ek implementálása (KP, limitek, stb.)
-- Faj misztérium képzettségek → Mágia fülre
 
 ### Aktív fül
 - ✅ Kétkezes harc (§26 engine_spec, HarcScreen összevont kalkuláció, lila keret, pengelevonás, fok-függő MF, harckeret yaml fortélyból `fegyverfogás:kétkezes` feltétellel)
@@ -526,6 +537,14 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Upstream sync: Belharc→Belharcos, Belharci szituáció→Belharci helyzet, Körülmények megszűnt
 - ✅ Harci fortélyok: követelménytext kitöltve (18 fortély, szöveges követelmények md-ből)
 - ✅ empty_karakter.json: hiányzó session mezők pótolva (strict schema)
+- ✅ Becenév mező: karakter schema + Tul/Képz fül (max 12 kar), browser tab title override
+- ✅ Fortély schema: `kiérdemelhető` mező (177 yaml frissítve), `todo` mező eltávolítva (175 yaml-ból)
+- ✅ Misztikus fortélyok: Fortélyok fülről → Misztikus fülre áthelyezve, FortélyFelvétel wizard
+- ✅ Többszörös fortély fix: Titkos szervezet, Különleges faj boncolása, Tánc: belső stílus, Harci iskola (free-text)
+- ✅ Többszörös fortély fix: Belső/Külső síkok lényeinek ismerete (fix lista picker)
+- ✅ Kiérdemelt fortélyok: nem számítanak primer költésbe, nem foglalják az ingyenes keretet
+- ✅ Modularizáció: file-ops, feltetelek, ketkezes, validate, undo-helpers, formatters, HatasPoolCalc, NaploTab, TulajdonsagCell, PrimerKpBox, FortelyFelvetel, data-types
+- ✅ Data layer kiemelés: fegyver_anyagok, képzettség/fortély_csoport_sorrend, nyelv_fok_nevek, pinned_taktikák, közös_nyelv, tulajdonság_sorrend → konstansok.yaml
 - Lovas harc rendszer implementálása
 
 ## Fontos konvenciók

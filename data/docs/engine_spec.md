@@ -35,9 +35,10 @@ source: tables/kepzettseg_kp.json, schemas/kepzettseg.yaml (primer flag),
 formula:
   kp_képzettségek = SUM( lookup(képzettség.szint → kepzettseg_kp.json) )
   kp_fortélyok    = SUM( fortély.fok ) x kp.fortélyfok
-                    // kivéve: kiérdemelt fortélyok (kiérdemelt=true → 0 KP)
+                    // kivéve: kiérdemelt fortélyok (kiérdemelt=true → 0 KP, nem számít primer költésbe sem)
                     // kivéve: szabad fortélyok ingyenes kerete (első TSz db → 0 KP)
                     // kivéve: ingyenes_perszint > 0 fortélyok (Kultúrkör, Helyismeret → 0 KP)
+                    //         kiérdemelt NEM foglalja az ingyenes keretet
                     // szabad fortélyok keret feletti KP: szekunder KP-ból fizetendő (nem primer)
   kp_hm           = (HM_TÉ + HM_VÉ) x kp.hm
   kp_cm           = CM x kp.cm
@@ -2337,6 +2338,14 @@ Képzettség szekciók (misztikus csoport átkerült a Tul/Képz fülről):
      Tradíció nélkül: nevek piros, picker "⚠ Tradíció szükséges"
   3. Faj misztérium — 1 db, automatikusan a karakter faj nevéhez kötött, nem törölhető, min szint: 0
   4. Ősi nyelv ismerete — többször felvehető, free-text popup (név megadás)
+  5. Misztikus fortélyok — a Fortélyok fülről ide áthelyezve (csoport "misztikus")
+     Felvétel: közös FortélyFelvétel wizard (FortelyFelvetel.tsx)
+     - Többszörös + fix lista (Belső/Külső síkok): lista picker → közvetlen felvétel
+     - Többszörös + free-text (Mentálfonál): free-text input → Kiérdemelt ha kiérdemelhető=true
+     - Nem többszörös: közvetlen felvétel + fok picker (ha maxfok > 1)
+     Fok módosítás: koppintás a sorra → fok popup (ha maxfok > 1), egyébként "1 fok a maximum" hint
+     Pöttyök: 3 pozíció (balról töltve, mint Fortélyok fülön)
+     ABC rendezés (hu locale)
 
 Kijelzett értékek (felső sor):
   Mágiaellenállás = Aura + konstansok.aura.mágiaellenállás_konstans (10)
@@ -2347,6 +2356,21 @@ Szint választó: overlay popup (0/1-15 grid), mint Tul/Képz fülön
 Szint limit: primer max = tsz (piros jelzés ha túllépés)
 
 Game módban: csak azok a szekciók látszanak amikben van felvett elem (szint > 0)
+```
+
+## §35b Fortély schema mezők
+
+```
+Fortély yaml séma (data/schemas/fortely.yaml) — releváns generált mezők a fortelyok.json-ban:
+  név, csoport, maxfok, session_toggle, emlékeztető, kiérdemelhető,
+  kp_perfok, ingyenes_perszint, többszörös_típus, többszörös_lista,
+  leírás, kiterjeszti_normál, kiterjeszti_erős, fokok[]
+
+  kiérdemelhető: boolean — ha true, a felvételi wizard-ban választható a "⭐ Kiérdemelt" opció
+    true: szabad (mind), kiemelt (mind), misztikus: Mentálfonál
+    false: harci, távharc, általános, érzékek, misztikus (többi)
+
+  todo mező: TÖRÖLVE a schemából (2 fortélynál maradt nem-üres: alakzatharc, antissjaras)
 ```
 
 ## §36 Harci képzettségek — Harcértékek fül
