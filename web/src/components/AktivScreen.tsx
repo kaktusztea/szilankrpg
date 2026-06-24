@@ -237,38 +237,8 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       </div>
 
       {/* Hatás pool */}
-      {(session.aktív_taktikák.length > 0 || session.aktív_helyzetek.length > 0 || hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
+      {(hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
         <div className="aktiv-hatas-pool">
-          {session.aktív_helyzetek.length > 0 && (
-            <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Harci helyzetek</span>
-              <div className="hatas-pool-items">
-                {session.aktív_helyzetek.map((h, i) => {
-                  const def = data.harciHelyzetek.find(d => d.név === h);
-                  if (!def) return null;
-                  const kötöttFortélyok = helyzetFortélyok.get(h) || [];
-                  // Alapeset 0.fok hatástext keresés: fortély aminek feltétele ez a helyzet
-                  const hId = (def as any).feltétel_kulcs?.split(':')[1] || '';
-                  let alapText = '';
-                  for (const fd of (data.fortelySummaries as any[])) {
-                    const f0 = fd.fokok?.find((f: any) => f.fok === 0);
-                    if (!f0?.hatás?.length) continue;
-                    const hasFelt = f0.módosítók?.some((m: any) => m.feltétel === `harci_helyzet:${hId}`) || f0.hatás?.join(' ').toLowerCase().includes(h.toLowerCase());
-                    if (hasFelt) { alapText = f0.hatás.join(' '); break; }
-                  }
-                  const infóText = (def.infó || '–') + (alapText ? ` Alapeset: ${alapText}` : '');
-                  return <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span className="hatas-pool-item"><strong style={{ color: '#42a5f5' }}>{def.név}:</strong> {fmtCode(infóText)}</span>
-                    {kötöttFortélyok.map((kf, j) => (
-                      <span key={j} className="hatas-pool-item" style={{ paddingLeft: '12px', color: kf.aktív ? '#66bb6a' : '#888' }}>
-                        → {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}
-                      </span>
-                    ))}
-                  </div>;
-                })}
-              </div>
-            </div>
-          )}
           {hasHatásPool && (
             <div className="hatas-pool-section">
               <span className="hatas-pool-title">Státuszok</span>
@@ -351,8 +321,8 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       )}
 
       {/* Taktikák */}
-      <div className="aktiv-section">
-        <span className="aktiv-label">Taktikák</span>
+      <div className="aktiv-section" style={{ fontSize: '13px' }}>
+        <span className="aktiv-label">Taktikák <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.taktikak.every(t => session.aktív_taktikák.some(a => a.név === t.név) || !isTaktikaAllowed(t.név))} onClick={() => setShowTaktikaPicker(true)}>+</button></span>
         {session.aktív_taktikák.map((t, i) => {
           const def = data.taktikak.find(d => d.név === t.név);
           const mods: string[] = [];
@@ -373,7 +343,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             </div>
           );
         })}
-        <button className="aktiv-add-btn" disabled={data.taktikak.every(t => session.aktív_taktikák.some(a => a.név === t.név) || !isTaktikaAllowed(t.név))} onClick={() => setShowTaktikaPicker(true)}>+ Taktika...</button>
       </div>
 
       {showTaktikaPicker && createPortal(
@@ -432,65 +401,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
         </div>,
         document.body
       )}
-
-      {/* Manőver */}
-      <div className="aktiv-section">
-        <span className="aktiv-label">Manőver</span>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <div className="aktiv-field-btn" onClick={() => setShowManőverPicker(true)}>
-            <strong style={{ color: session.aktív_manőver ? 'var(--success)' : 'var(--text-dim)', fontSize: '14px' }}>{session.aktív_manőver || '— nincs —'}</strong>
-            {session.aktív_manőver && (() => {
-              const m = data.manoverek.find(d => d.név === session.aktív_manőver);
-              if (!m) return null;
-              return (<>
-                <span className="taktika-chip-mods">Nehézség: {m.nehézség} • {m.fázisok}</span>
-                <span className="taktika-chip-mods">{m.hatás}</span>
-              </>);
-            })()}
-          </div>
-          {session.aktív_manőver && <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_manőver: '' }))}>✕</button>}
-        </div>
-      </div>
-
-      {showManőverPicker && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowManőverPicker(false); }}>
-          <div className="aktiv-picker">
-            <div className="aktiv-picker-header">
-              <label>Manőver választó</label>
-            </div>
-            <div className="aktiv-picker-list">
-              {['általános', 'belharcos'].map(tipus => {
-                const items = data.manoverek.filter(m => m.típus === tipus);
-                if (items.length === 0) return null;
-                return (
-                  <div key={tipus}>
-                    <div className="aktiv-picker-category">{tipus === 'általános' ? 'Általános' : 'Belharci'}</div>
-                    {items.map(m => (
-                      <div key={m.név} className={`aktiv-picker-item ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
-                        <span className="aktiv-picker-item-name">{m.név}</span>
-                        <span className="aktiv-picker-item-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
-                        <span className="aktiv-picker-item-hatas">{m.hatás}</span>
-                      </div>
-                    ))}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
-
       {/* Harci helyzetek */}
-      <div className="aktiv-section" style={{ borderBottom: 'none' }}>
-        <span className="aktiv-label">Harci helyzetek</span>
-        {session.aktív_helyzetek.map((h, i) => (
-          <div key={i} className="aktiv-chip">
-            <span>{h}</span>
-            <button className="aktiv-chip-x" onClick={() => { pushUndo(`Helyzet−: ${session.aktív_helyzetek[i]}`); setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) })); }}>✕</button>
-          </div>
-        ))}
-        <button className="aktiv-add-btn" disabled={data.harciHelyzetek.every(h => {
+      <div className="aktiv-section" style={{ borderBottom: 'none', fontSize: '13px' }}>
+        <span className="aktiv-label">Harci helyzetek <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.harciHelyzetek.every(h => {
           if ((h as any).rejtett) return true;
           if (session.aktív_helyzetek.includes(h.név)) return true;
           for (const ah of session.aktív_helyzetek) {
@@ -498,7 +411,36 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             if ((ahDef as any)?.kizár_helyzetek?.includes((h as any).id)) return true;
           }
           return false;
-        })} onClick={() => setShowHelyzetPicker(true)}>+ Helyzet...</button>
+        })} onClick={() => setShowHelyzetPicker(true)}>+</button></span>
+        {session.aktív_helyzetek.map((h, i) => {
+          const def = data.harciHelyzetek.find(d => d.név === h);
+          if (!def) return null;
+          const kötöttFortélyok = helyzetFortélyok.get(h) || [];
+          const hId = (def as any).feltétel_kulcs?.split(':')[1] || '';
+          let alapText = '';
+          for (const fd of (data.fortelySummaries as any[])) {
+            const f0 = fd.fokok?.find((f: any) => f.fok === 0);
+            if (!f0?.hatás?.length) continue;
+            const hasFelt = f0.módosítók?.some((m: any) => m.feltétel === `harci_helyzet:${hId}`) || f0.hatás?.join(' ').toLowerCase().includes(h.toLowerCase());
+            if (hasFelt) { alapText = f0.hatás.join(' '); break; }
+          }
+          const infóText = (def.infó || '') + (alapText ? ` Alapeset: ${alapText}` : '');
+          return (
+            <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
+              <div className="kep-row">
+                <span style={{ flex: 1 }}>
+                  <strong style={{ color: '#ff9800' }}>{h}:</strong> {fmtCode(infóText)}
+                </span>
+                <button className="fort-delete" onClick={e => { e.stopPropagation(); pushUndo(`Helyzet−: ${h}`); setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) })); }}>✕</button>
+              </div>
+              {kötöttFortélyok.map((kf, j) => (
+                <div key={j} className="kep-row" style={{ paddingLeft: '12px', color: kf.aktív ? '#66bb6a' : '#888' }}>
+                  → {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}
+                </div>
+              ))}
+            </div>
+          );
+        })}
       </div>
 
       {showHelyzetPicker && createPortal(
@@ -555,6 +497,55 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
         </div>,
         document.body
       )}
+
+      {/* Manőver */}
+      <div className="aktiv-section">
+        <span className="aktiv-label">Manőver <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px', visibility: session.aktív_manőver ? 'hidden' : undefined }} onClick={() => setShowManőverPicker(true)}>+</button></span>
+        {session.aktív_manőver && (() => {
+          const m = data.manoverek.find(d => d.név === session.aktív_manőver);
+          if (!m) return null;
+          return (
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <div className="aktiv-field-btn">
+                <strong style={{ color: 'var(--success)', fontSize: '14px' }}>{session.aktív_manőver}</strong>
+                <span className="taktika-chip-mods">Nehézség: {m.nehézség} • {m.fázisok}</span>
+                <span className="taktika-chip-mods">{m.hatás}</span>
+              </div>
+              <button className="aktiv-chip-x" onClick={() => setSession(s => ({ ...s, aktív_manőver: '' }))}>✕</button>
+            </div>
+          );
+        })()}
+      </div>
+
+      {showManőverPicker && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowManőverPicker(false); }}>
+          <div className="aktiv-picker">
+            <div className="aktiv-picker-header">
+              <label>Manőver választó</label>
+            </div>
+            <div className="aktiv-picker-list">
+              {['általános', 'belharcos'].map(tipus => {
+                const items = data.manoverek.filter(m => m.típus === tipus);
+                if (items.length === 0) return null;
+                return (
+                  <div key={tipus}>
+                    <div className="aktiv-picker-category">{tipus === 'általános' ? 'Általános' : 'Belharci'}</div>
+                    {items.map(m => (
+                      <div key={m.név} className={`aktiv-picker-item ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
+                        <span className="aktiv-picker-item-name">{m.név}</span>
+                        <span className="aktiv-picker-item-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
+                        <span className="aktiv-picker-item-hatas">{m.hatás}</span>
+                      </div>
+                    ))}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
 
       {/* Státuszok */}
       <div className="aktiv-section" style={{ marginTop: '16px', borderTop: '1px solid #333', borderBottom: 'none', paddingTop: '16px' }}>
