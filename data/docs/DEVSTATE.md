@@ -131,7 +131,7 @@
   - Többszörös felvételkor csoportosítva a testvéreik mellé kerülnek
   - Game mód adatlap: próba, domináns tulajdonságok, kiterjesztő fortélyok
 - ✅ Fortélyok fül: teljes UI (szerkesztő + game mód)
-  - 6 csoport (Harci → Általános → Érzékek → Szabad → Kiemelt → Misztikus), összecsukható
+  - 6 csoport (Harci → Távharc → Általános → Érzékek → Szabad → Kiemelt), összecsukható
   - Fok kijelzés: pöttyök (●/○) — 3 fix hely, balról jobbra töltődik, maxfok feletti hidden; Nyelvismeret: szöveges label marad
   - Dropdown: `"Név (max X)"`, ingyenes kerettel: `🎁N`, KP-t adó: `➕6-12-18KP`
   - Többszörös fortélyok: generikus `többszörösség` yaml mező alapján
@@ -210,7 +210,7 @@
   - Megmaradt TS engine modul: NINCS — minden kalkuláció a rules.json-ban vagy inline context-építés
 - ✅ Harcértékek fül (🛡️, szerkesztő módban, Fortélyok fül mellett)
   - HM vásárlás: +/- gombok, validálás (max_HM, aszimmetria). CM: Távharc fülre került.
-  - Harci képzettségek: szerkeszthető szekció (+/− gombok, ✕, dropdown)
+  - Harci képzettségek: szerkeszthető szekció (kep-row stílus, tap → szint picker popup, ✕, dropdown)
   - Fegyverek: példány lista, + Új fegyver (kategóriánkénti dropdown)
     - Mezők: MF fok, Idea, Anyag — `he-field-btn` stílus, tap → overlay popup
     - MF fok: piros szöveg ha Mesterfegyver követelmény nem teljesül
@@ -514,14 +514,14 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Taktika VÉ eltolás limit: `konstansok.taktika_vé_eltolás_limit: 10`, HarcScreen clamp
 - ✅ Hárítófegyver MF VÉ bónusz: hárítóVÉ-hez hozzáadva
 - ✅ ScreenErrorBoundary: minden tab renderelés burkolt, crash → hibaüzenet (nem fehér halál)
-- ✅ Tab indikátor: csík → ezüst karika (`#b0bec5`, border-radius: 50%)
+- ✅ Tab indikátor: ezüst karika (`#b0bec5`, aspect-ratio:1), fix 42×42px gombok, gap:4px, center pozíció animált (0.2s)
 - ✅ Game mód transition: 2000ms ease
 - ✅ Fortélyok fül: fok pöttyök balról jobbra, 3 fix hely (hidden ha maxfok < 3)
 - ✅ Fortélyok fül: követelménytext lista formátum (schema + 177 yaml konvertálva)
 - ✅ Fortélyok fül: Követelmény sor fmtCode() (backtick→monospace)
 - ✅ Fortélyok fül: csoport label szín világos lila (`#ce93d8`, 17px)
 - ✅ Harcértékek: Merevvértviselet gomb mindig megjelenik (nem csak merevvértnél)
-- ✅ Harcértékek: "Harci képzettségek" szerkeszthető szekció (Tul/Képz fülről átkerült, +/− gombok + ✕ + dropdown)
+- ✅ Harcértékek: "Harci képzettségek" szerkeszthető szekció (Tul/Képz fülről átkerült, kep-row + szint picker + ✕ + dropdown)
 - ✅ Misztikus fül (✨): teljes implementáció (Aura/ME/Mágia akarata boxok, Tradíció kétlépéses picker, Arkánumok, Faj misztérium auto, Ősi nyelv free-text)
 - ✅ Tul/Képz: harci + misztikus csoport kiszűrve (átkerült Harcértékek/Misztikus fülre)
 - ✅ Tul/Képz: képzettségek ABC sorrendbe (szint desc helyett)
@@ -545,6 +545,8 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Kiérdemelt fortélyok: nem számítanak primer költésbe, nem foglalják az ingyenes keretet
 - ✅ Modularizáció: file-ops, feltetelek, ketkezes, validate, undo-helpers, formatters, HatasPoolCalc, NaploTab, TulajdonsagCell, PrimerKpBox, FortelyFelvetel, data-types
 - ✅ Data layer kiemelés: fegyver_anyagok, képzettség/fortély_csoport_sorrend, nyelv_fok_nevek, pinned_taktikák, közös_nyelv, tulajdonság_sorrend → konstansok.yaml
+- ✅ Jegyzetek overlay: floating célszám panel (Tulajdonságpróba k6, Képzettségpróba k10) — `<details>` accordion
+- ✅ Fullscreen: requestFullscreen user gesture fix (setShowMenu a hívás után, nem előtte)
 - Lovas harc rendszer implementálása
 
 ## Fontos konvenciók
@@ -597,8 +599,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Szint választó (képzettségek): gombok 1-15 grid (5 oszlop), aktív=zöld
 - Fok választó (fortélyok): kerek radio gombok (1..maxfok), aktív=zöld
 - Popup dialógusok: createPortal(document.body) — kiszöknek a screen-slide overflow kontextusból
-- Double-tap: 350ms threshold → popup megnyitás (Név, Szint, Kor, Tulajdonságok, Képzettségek, Fortélyok, ÉP TÉ footer→navigáció)
-- Double-tap Harcértékek fülön: per-element `tapTimers` Map (key: `mf-{i}`, `idea-f-{i}`, `anyag-{i}`, `p-struk`, stb.)
+- Tap interakció: minden szerkesztő elem egyetlen koppintásra reagál (popup megnyitás)
 - Locked fortélyok (Harcértékek fülön kezeltek): `konstansok.yaml → locked_fortélyok` lista. Fortélyok fülön nem szerkeszthető/törölhető, dropdown-ból kiszűrve.
 - MK fegyverek: `fegyverek.json` MK_pár (pár másik tagja) + Alapnév (display name suffix nélkül) + Hárító flag; process_fegyverek.py generálja
 - méret_illeszkedés értékek: `passzol`, `nem passzol`, `borzalmas` (MGT: 0, 3, 6)

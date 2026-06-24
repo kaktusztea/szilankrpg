@@ -339,6 +339,7 @@ Távharc kalkulátor — CÉ és célpont VÉ számítás. Engine spec: §17.
   - Becenév box (flex:1): `Becenév: Agi` — tap → szerkesztő popup (max 12 karakter)
   - Szint box: `Szint: 8` — tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
 - **Game módban**: csak Szint box jelenik meg (Becenév rejtett)
+- **Böngésző tab title**: `document.title = karakter.becenév || 'Szilánk'`
 - **Faj + Kor** sor (CSAK szerkesztő módban):
   - Faj box (flex:1): inline `<select>` dropdown (27 faj a tables/fajok.json-ból, közvetlenül koppintható)
   - Kor box: `Kor: 32` — tap → +/− overlay (long press gyorsítás: 200ms→30ms, 7s után ×10 lépés, 1–2000)
@@ -420,7 +421,8 @@ Részletes kategóriánkénti KP bontás: dashed border, szürke szín, 12px bet
 
 ## 4. Fortélyok fül/screen
 
-Fortélyok listája csoport szerint: ⚔️ Harci → 🏹 Távharc → 🔧 Általános → 👁️ Érzékek → 🆓 Szabad → ⭐ Kiemelt → ✨ Misztikus.
+Fortélyok listája csoport szerint: ⚔️ Harci → 🏹 Távharc → 🔧 Általános → 👁️ Érzékek → 🆓 Szabad → ⭐ Kiemelt.
+A "Misztikus" csoport a Misztikus fülre került (nem jelenik meg a Fortélyok fülön).
 A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tartalmazza (logikailag harci, vizuálisan elkülönítve).
 
 ### Megjelenés
@@ -454,8 +456,8 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 - Csoport-szintű ingyenes keret: TSz db (az egész szabad csoportból összesen)
 - Ingyenes keretbe eső fortélyok: 🎁 jelölés a soron
 - Keret felett: 6 KP/db (szekunder KP-ból)
-- Kiérdemelt fortélyok (`kiérdemelt: true`): 🎁 jelölés, nem fogyasztják se a keretet se a KP-t
-- Felvételkor popup: "6/0 Felvett" / "⭐ Kiérdemelt" választó
+- Kiérdemelt fortélyok (`kiérdemelt: true`): ⭐ jelölés (fok>1: ⭐➕), nem fogyasztják se a keretet se a KP-t
+- Felvételkor popup: "Felvett" / "⭐ Kiérdemelt" választó (csak `kiérdemelhető: true` fortélyoknál)
 
 ### Nyelvismeret pont keret
 - Nyelvtanulás képzettség 4. szinttől: `(szint - 3) x 3` pont
@@ -519,10 +521,11 @@ HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban el
 
 ### Harci képzettségek (szerkeszthető)
 - Összes harci képzettség: harcmodor többszörösök (Közelharc, Kardvívás, stb.) + önálló (Alakzatharc, Harci láz)
-- Soronként: név (flex:1) + szint (`kep-szint` class, limit jelzés) + −/+ gombok + ✕ (megerősítő popup)
-- Min szint: 1 (− disabled), Max: 15 (+ disabled), szint > tsz: piros
+- `.kep-row` stílusú box-ok (azonos a Tul/Képz fülön lévő sorokkal): név (flex:1) + ✕ + szint
+- Kattintás a sorra: szint picker popup (grid gombok 1-15, mint Tul/Képz fülön)
+- szint > tsz: piros (`kep-over`)
+- ✕: megerősítő popup
 - Dropdown: "+ Harci képzettség..." (nem felvett elemek)
-- Csoport label: kék (`#42a5f5`, 17px bold)
 
 ### Fegyverek
 - Fegyver példány kártyák listája
@@ -582,6 +585,16 @@ Misztikus képzettségek + Aura értékek. A misztikus csoport átkerült a Tul/
 - Min: 1 (kivéve Faj misztérium: 0)
 - Max: 15, szint > tsz → piros (`kep-over`)
 
+### Misztikus fortélyok szekció (legalul)
+- Fortélyok fülről ide átkerült "misztikus" csoport
+- `.kep-row` stílusú sorok: név + pöttyök (fort-fok-dots, mint Fortélyok fülön) + ✕
+- Kattintás sorra: fok picker popup (ha maxfok > 1), "1 fok a maximum" hint (ha maxfok = 1)
+- ✕: megerősítő popup ("Fortély törlése")
+- Felvétel: dropdown → `FortelyFelvetel.tsx` wizard (többszörös/kiérdemelt/fok lépések)
+- ABC rendezés (hu locale)
+- Ha fix lista (Belső/Külső síkok): minden elem felvéve → eltűnik a dropdown-ból
+- Kiérdemelt: csak `kiérdemelhető: true` fortélyoknál (yaml mező, pl. Mentálfonál)
+
 ### Game mód
 - Csak felvett elemekkel rendelkező szekciók látszanak (cím + tartalom)
 - Picker/szerkesztő elemek elrejtve
@@ -618,6 +631,9 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 - ✕ gomb vagy Escape bezárja
 - Tartalom a karakter fájlba mentődik (`jegyzetek` mező)
 - Placeholder: "Szabad jegyzetek..."
+- Alul floating panel (fixed, bottom:0): két összecsukható accordion (`<details>`)
+  - Tulajdonságpróba (k6): célszám tábla (3-8) monospace, 15px
+  - Képzettségpróba (k10): célszám tábla (6-21) monospace, 15px
 
 ---
 
@@ -702,14 +718,13 @@ Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
 - Mód váltás korrekció: `prevGameMode` ref → ID alapú index újraszámítás
 
 ### Stílus
-- `justify-content: center`, `overflow: hidden` (nem scrollozható)
-- Gombméret: `font-size: min(18px, calc(100vw / var(--tab-count) - 8px))`, `flex-shrink: 1`
-- Tab betűméret: 18px, padding: 8px
+- Tab gombok: fix 42×42px, `display: flex; align-items: center; justify-content: center; flex-shrink: 0`
 - Inaktív szín: `--text-dim` (#999)
 - Aktív tab: `--accent` szín (#e94560), bold
-- Aktív tab indikátor: ezüst (`#b0bec5`) karika keret az aktív gomb körül (`border: 2px solid`, `border-radius: 50%`)
-- Háttér: `--surface`, `border-top: 1px solid #333`, padding: 4px 0
-- Egér scroll: `onWheel` → `scrollLeft += deltaY`
+- Aktív tab indikátor: ezüst (`#b0bec5`) karika, `aspect-ratio: 1`, `border-radius: 50%`, height-ből számolt méret
+  - Pozícionálás: gomb középpontjához igazítva (`centerX - size/2`)
+  - Animáció: `transform 0.2s ease-out` (első renderkor nincs animáció)
+- Háttér: `--surface`, `border-top: 1px solid #333`, padding: 4px 0, `gap: 4px`, `justify-content: center`
 
 ---
 
