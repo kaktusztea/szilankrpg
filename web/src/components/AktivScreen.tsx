@@ -237,7 +237,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       </div>
 
       {/* Hatás pool */}
-      {(hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
+      {(hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0) && (
         <div className="aktiv-hatas-pool">
           {hasHatásPool && (
             <div className="hatas-pool-section">
@@ -294,19 +294,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 ))}
               </div>
             </details>
-          )}
-          {session.narratív_módosítók.length > 0 && (
-            <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Narratív módosítók</span>
-              <div className="hatas-pool-items">
-                {session.narratív_módosítók.map((nm, i) => (
-                  <span key={i} className={`hatas-pool-item ${(nm.érték ?? 0) > 0 ? 'positive' : (nm.érték ?? 0) < 0 ? 'negative' : ''}`}>
-                    {nm.szöveg}{nm.érték != null ? ` (${nm.érték > 0 ? 'Előny+' : 'Hátrány'}${nm.érték > 0 ? nm.érték : nm.érték})` : ''}
-                    <button className="aktiv-chip-x" onClick={() => { pushUndo(`Narratív−: ${session.narratív_módosítók[i]?.szöveg}`); setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) })); }}>✕</button>
-                  </span>
-                ))}
-              </div>
-            </div>
           )}
         </div>
       )}
@@ -653,9 +640,17 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
 
       {/* Narratív módosítók */}
-      <div className="aktiv-section">
-        <span className="aktiv-label">Narratív módosítók</span>
-        <button className="narrativ-add-btn" onClick={() => { setNarrativÉrték(undefined); setNarrativPopup(true); }}>+ Új</button>
+      <div className="aktiv-section" style={{ fontSize: '13px' }}>
+        <span className="aktiv-label">Narratív módosítók <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} onClick={() => { setNarrativÉrték(undefined); setNarrativPopup(true); }}>+</button></span>
+        {session.narratív_módosítók.map((nm, i) => (
+          <div key={i} className="kep-row">
+            <span style={{ flex: 1 }}>
+              <strong style={{ color: (nm.érték ?? 0) > 0 ? '#66bb6a' : '#e53935' }}>{nm.szöveg}:</strong>
+              <span> {nm.érték != null ? (nm.érték > 0 ? `Előny+${nm.érték}` : `Hátrány${nm.érték}`) : ''}</span>
+            </span>
+            <button className="fort-delete" onClick={e => { e.stopPropagation(); pushUndo(`Narratív−: ${nm.szöveg}`); setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) })); }}>✕</button>
+          </div>
+        ))}
       </div>
       {narrativPopup && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if (e.target === e.currentTarget) setNarrativPopup(false); }}>
