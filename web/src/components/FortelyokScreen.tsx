@@ -229,12 +229,12 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                         if (csoport === 'szabad') {
                           const nonKierdemelt = slotok.filter(s => !s.kiérdemelt).length;
                           const maradtIngyenes = Math.max(0, tsz - nonKierdemelt);
-                          if (maradtIngyenes > 0) label += ` 🎁${maradtIngyenes}`;
+                          if (maradtIngyenes > 0) label += ` ●${maradtIngyenes}`;
                         } else if (d.ingyenes_perszint > 0) {
                           const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
                           const felvettDb = fortélyok.filter(f => f.név === d.név && !f.kiérdemelt).length;
                           const maradtIngyenes = Math.max(0, ingyenesDb - felvettDb);
-                          if (maradtIngyenes > 0) label += ` 🎁${maradtIngyenes}`;
+                          if (maradtIngyenes > 0) label += ` ●${maradtIngyenes}`;
                         } else if (d.kp_perfok < 0) {
                           const vals = Array.from({ length: d.maxfok }, (_, i) => Math.abs(d.kp_perfok) * (i + 1));
                           label += ` ➕${vals.join('-')}KP`;
@@ -246,7 +246,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                           const used = fortélyok.filter(f => f.név === 'Nyelvismeret' && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0)
                             + fortélyok.filter(f => f.név === 'Nyelvismeret' && f.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
                           const maradt = keret - used;
-                          if (maradt > 0) label += ` 🎁${maradt}`;
+                          if (maradt > 0) label += ` ●${maradt}`;
                           nyelvDisabled = maradt <= 0;
                         }
                         return <option key={d.név} value={d.név} disabled={fegyverDisabled || nyelvDisabled}>{label}</option>;
@@ -441,8 +441,15 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
     return () => document.removeEventListener('keydown', onKey);
   }, [editing]);
 
-  function handleTap() {
+  function handleTap(e: React.MouseEvent<HTMLDivElement>) {
     if (gameMode) { onToggleInfo(); return; }
+    // Ne aktiválódjon az ✕ gomb közelében (jobbra a névtől)
+    const row = e.currentTarget;
+    const delBtn = row.querySelector('.fort-delete') as HTMLElement | null;
+    if (delBtn) {
+      const btnRect = delBtn.getBoundingClientRect();
+      if (e.clientX >= btnRect.left - 25) return;
+    }
     if (locked) { onHint(távfegyverNevek.includes(slot.spec_elem) ? 'Ezt a fortélyt a Távharc fülön kezeld!' : 'Ezt a fortélyt a Harcértékek fülön kezeld!', 3000); }
     else if (maxfok <= 1) { onHint('1 fok a maximum'); }
     else { setEditing(true); }
@@ -477,7 +484,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
         className={`fort-row${követelményHiba ? ' fort-kov-hiba' : ''}`}
         onClick={handleTap}
       >
-        <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes && !slot.kiérdemelt ? ' 🎁' : ''}</span>
+        <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes && !slot.kiérdemelt ? <span style={{ color: '#a5d6a7', fontSize: '11px', marginLeft: '4px', display: 'inline-block', transform: 'translateY(-3px)' }}>●</span> : ''}</span>
         <span className="fort-right">
           {!gameMode && !locked && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>

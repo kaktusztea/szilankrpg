@@ -517,8 +517,14 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
     return () => document.removeEventListener('keydown', onKey);
   }, [szintEditing]);
 
-  function handleTap() {
+  function handleTap(e: React.MouseEvent<HTMLDivElement>) {
     if (gameMode) { onInfoToggle(); return; }
+    const row = e.currentTarget;
+    const delBtn = row.querySelector('.kep-delete') as HTMLElement | null;
+    if (delBtn) {
+      const btnRect = delBtn.getBoundingClientRect();
+      if (e.clientX >= btnRect.left - 25) return;
+    }
     setSzintEditing(true);
   }
 
