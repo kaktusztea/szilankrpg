@@ -124,7 +124,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   }
 
 
-  const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév } = calcHatásPool(data, karakter, session);
+  const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév } = calcHatásPool(data, karakter, session);
   return (
     <div className="screen aktiv-screen">
       <h2>❎ Aktív</h2>
@@ -388,11 +388,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             </div>
           );
         })}
-        {előnyHátrányMods.map((eh, i) => (
-          <div key={`eh${i}`} className="kep-row" style={{ paddingLeft: '8px', fontSize: '12px', opacity: 0.85 }}>
-            <span style={{ flex: 1, color: eh.mód === 'előny' ? '#66bb6a' : '#e53935' }}>{eh.mód === 'előny' ? `Előny+${eh.érték}` : `Hátrány${eh.érték}`}: {eh.cél.replace(/_/g, ' ')} ({eh.név})</span>
-          </div>
-        ))}
       </div>
 
       {showHelyzetPicker && createPortal(
