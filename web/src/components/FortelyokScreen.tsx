@@ -496,16 +496,23 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
           {fokDef && fokDef.követelmény.filter(t => t).length > 0 && (
             <div className="fort-info-row"><span className="fort-info-label">Követelmény:</span> {fmtCode(fokDef.követelmény.filter(t => t).join('; '))}</div>
           )}
-          {(def.kiterjeszti_normál.length > 0 || def.kiterjeszti_erős.length > 0) && (
+          {def.kiterjeszti_normál.length > 0 && (
             <div className="fort-info-row">
-              <span className="fort-info-label">Kiterjeszti:</span>{' '}
+              <span className="fort-info-label">Normál:</span>{' '}
               <span className="fort-info-kit">
                 {def.kiterjeszti_normál.map((kn: string, ki: number) => (
                   <span key={ki} style={{ color: képzettségek.some((k: { név: string; szint: number }) => k.név === kn && k.szint >= 1) ? 'var(--success)' : '#e53935' }}>{ki > 0 ? ', ' : ''}{kn}</span>
                 ))}
-                {def.kiterjeszti_erős.length > 0 && <>{' | Erős: '}{def.kiterjeszti_erős.map((kn: string, ki: number) => (
+              </span>
+            </div>
+          )}
+          {def.kiterjeszti_erős.length > 0 && (
+            <div className="fort-info-row">
+              <span className="fort-info-label">Erős:</span>{' '}
+              <span className="fort-info-kit">
+                {def.kiterjeszti_erős.map((kn: string, ki: number) => (
                   <span key={ki} style={{ color: képzettségek.some((k: { név: string; szint: number }) => k.név === kn && k.szint >= 1) ? 'var(--success)' : '#e53935' }}>{ki > 0 ? ', ' : ''}{kn}</span>
-                ))}</>}
+                ))}
               </span>
             </div>
           )}
