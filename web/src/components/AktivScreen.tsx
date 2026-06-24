@@ -239,29 +239,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       {/* Hatás pool */}
       {(session.aktív_taktikák.length > 0 || session.aktív_helyzetek.length > 0 || hasHatásPool || fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0 || manőverBónuszok.length > 0 || előnyHátrányMods.length > 0 || session.narratív_módosítók.length > 0) && (
         <div className="aktiv-hatas-pool">
-          {session.aktív_taktikák.length > 0 && (
-            <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Taktikák</span>
-              <div className="hatas-pool-items">
-                {session.aktív_taktikák.map((at, i) => {
-                  const def = data.taktikak.find(t => t.név === at.név);
-                  if (!def) return null;
-                  const mods: string[] = [];
-                  if (def.fokozatos && def.fokok && at.fok != null) {
-                    const fokDef = def.fokok.find(f => f.fok === at.fok);
-                    if (fokDef) { for (const [k, v] of Object.entries(fokDef)) { if (k !== 'fok' && typeof v === 'number' && v !== 0) mods.push(`${k}: ${v > 0 ? '+' : ''}${v}`); } }
-                  } else if (def.módosítók) {
-                    for (const [k, v] of Object.entries(def.módosítók)) { if (typeof v === 'number' && v !== 0) mods.push(`${k}: ${v > 0 ? '+' : ''}${v}`); }
-                  }
-                  return <span key={i} className="hatas-pool-item">
-                    <strong style={{ color: '#90caf9' }}>{def.név}{at.fok != null ? ` (${at.fok})` : ''}:</strong>
-                    {mods.length > 0 && <span style={{ color: '#66bb6a' }}> {mods.join(', ')} ✔</span>}
-                    {def.megjegyzés && <span> {mods.length > 0 ? '• ' : ''}{def.megjegyzés}</span>}
-                  </span>;
-                })}
-              </div>
-            </div>
-          )}
           {session.aktív_helyzetek.length > 0 && (
             <div className="hatas-pool-section">
               <span className="hatas-pool-title">Harci helyzetek</span>
@@ -378,20 +355,21 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
         <span className="aktiv-label">Taktikák</span>
         {session.aktív_taktikák.map((t, i) => {
           const def = data.taktikak.find(d => d.név === t.név);
-          let modStr = '';
+          const mods: string[] = [];
           if (def?.fokozatos && def.fokok && t.fok != null) {
-            const f = def.fokok.find(fk => fk.fok === t.fok);
-            if (f) modStr = Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}:${(v as number) > 0 ? '+' : ''}${v}`).join(' ');
+            const fokDef = def.fokok.find(fk => fk.fok === t.fok);
+            if (fokDef) { for (const [k, v] of Object.entries(fokDef)) { if (k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`); } }
           } else if (def?.módosítók) {
-            modStr = Object.entries(def.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}:${(v as number) > 0 ? '+' : ''}${v}`).join(' ');
+            for (const [k, v] of Object.entries(def.módosítók)) { if (typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`); }
           }
           return (
-            <div key={i} className="aktiv-chip taktika-chip">
-              <div style={{ display: 'flex', flexDirection: 'column' }} onClick={() => { if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); } }}>
-                <span className="taktika-chip-name" style={def?.fokozatos ? { cursor: 'pointer' } : undefined}>{t.név}{t.fok != null ? ` (${t.fok})` : ''}</span>
-                {modStr && <span className="taktika-chip-mods">{modStr}</span>}
-              </div>
-              <button className="aktiv-chip-x" onClick={() => removeTaktika(i)}>✕</button>
+            <div key={i} className="kep-row" style={{ cursor: def?.fokozatos ? 'pointer' : undefined }} onClick={() => { if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); } }}>
+              <span style={{ flex: 1 }}>
+                <strong style={{ color: '#90caf9' }}>{t.név}{t.fok != null ? ` (${t.fok})` : ''}:</strong>
+                {mods.length > 0 && <span style={{ color: '#66bb6a' }}> {mods.join(', ')} ✔</span>}
+                {def?.megjegyzés && <span style={{ opacity: 0.7 }}> • {def.megjegyzés}</span>}
+              </span>
+              <button className="fort-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}>✕</button>
             </div>
           );
         })}
