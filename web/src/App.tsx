@@ -26,7 +26,7 @@ const ALL_TABS = [
   { id: 'aktiv', label: '❎', editOnly: false },
   { id: 'harc', label: '🗡️', editOnly: false },
   { id: 'tavharc', label: '🏹', editOnly: false },
-  { id: 'harcertekek', label: '🛡️', editOnly: true },
+  { id: 'harcertekek', label: '🛡️', editOnly: false },
   { id: 'misztikus', label: '✨', editOnly: false },
   { id: 'tulajdonsagok', label: '🔵', editOnly: false },
   { id: 'fortelyok', label: '🟣', editOnly: false },
@@ -797,7 +797,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
           if (desc) pushUndo(desc);
           setKépzettségek(v);
         }} fortélyok={fortélyok} setFortélyok={setFortélyok} gameMode={gameMode} />;
-    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} képzettségek={képzettségek} setKépzettségek={(v: any) => {
+    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} képzettségek={képzettségek} gameMode={gameMode} setKépzettségek={(v: any) => {
           const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
           const desc = describeKepChange(képzettségek, newVal);
           if (desc) pushUndo(desc);

@@ -10,9 +10,10 @@ interface Props {
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   képzettségek: { név: string; szint: number }[];
   setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
+  gameMode: boolean;
 }
 
-export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek, setKépzettségek }: Props) {
+export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek, setKépzettségek, gameMode }: Props) {
   const k = karakter;
   const { konstansok } = data;
 
@@ -198,7 +199,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
   }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget]);
 
   return (
-    <div className="screen harcertekek-screen">
+    <div className="screen harcertekek-screen" style={gameMode ? { pointerEvents: 'none' } : undefined}>
       <h2>🛡️ Harcértékek</h2>
       {/* HM/CM */}
       <section className="he-section">
@@ -206,15 +207,15 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
         <div className="he-hm-grid">
           <div className={`he-hm-row ${hmOverflow || aszimmetriaOverflow ? 'he-error' : ''}`}>
             <span>HM TÉ:</span>
-            <button onClick={() => setHM_TÉ(k.HM_TÉ - 1)}>−</button>
+            <button disabled={gameMode} style={gameMode ? { opacity: 0.3 } : undefined} onClick={() => setHM_TÉ(k.HM_TÉ - 1)}>−</button>
             <strong>{k.HM_TÉ}</strong>
-            <button onClick={() => setHM_TÉ(k.HM_TÉ + 1)}>+</button>
+            <button disabled={gameMode} style={gameMode ? { opacity: 0.3 } : undefined} onClick={() => setHM_TÉ(k.HM_TÉ + 1)}>+</button>
           </div>
           <div className={`he-hm-row ${hmOverflow || aszimmetriaOverflow ? 'he-error' : ''}`}>
             <span>HM VÉ:</span>
-            <button onClick={() => setHM_VÉ(k.HM_VÉ - 1)}>−</button>
+            <button disabled={gameMode} style={gameMode ? { opacity: 0.3 } : undefined} onClick={() => setHM_VÉ(k.HM_VÉ - 1)}>−</button>
             <strong>{k.HM_VÉ}</strong>
-            <button onClick={() => setHM_VÉ(k.HM_VÉ + 1)}>+</button>
+            <button disabled={gameMode} style={gameMode ? { opacity: 0.3 } : undefined} onClick={() => setHM_VÉ(k.HM_VÉ + 1)}>+</button>
           </div>
         </div>
         <div className="he-hm-info">
@@ -240,13 +241,13 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
             const nemFelvett = allHarciNames.filter(n => !képzettségek.some(k => k.név === n && k.szint > 0));
             return (<>
               {felvett.map(h => (
-                <div key={h.név} className="kep-row" onClick={() => setKepzSzintTarget(h.név)}>
+                <div key={h.név} className="kep-row" onClick={() => !gameMode && setKepzSzintTarget(h.név)}>
                   <span className="kep-név" style={{ flex: 1 }}>{h.név}</span>
-                  <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteKepzTarget(h.név); }}>✕</button>
+                  {!gameMode && <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteKepzTarget(h.név); }}>✕</button>}
                   <strong className={`kep-szint${h.szint > k.tsz ? ' kep-over' : h.szint >= 9 ? ' kep-szint-high' : ''}`}>{h.szint}</strong>
                 </div>
               ))}
-              {nemFelvett.length > 0 && (
+              {!gameMode && nemFelvett.length > 0 && (
                 <select className="he-add-select" value="" onChange={e => { if (e.target.value) setKépzettségek(prev => [...prev, { név: e.target.value, szint: 1 }]); }}>
                   <option value="">+ Harci képzettség...</option>
                   {nemFelvett.map(n => <option key={n} value={n}>{n}</option>)}
@@ -274,14 +275,14 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
             </div>
           </div>
         ))}
-        <select className="he-add-select" value="" onChange={e => { if (e.target.value) addFegyver(e.target.value); }}>
+        {!gameMode && <select className="he-add-select" value="" onChange={e => { if (e.target.value) addFegyver(e.target.value); }}>
           <option value="">+ Új fegyver...</option>
           {['kardvívó', 'közelharci', 'romboló', 'lándzsavívó', 'ostorharc'].filter(kat => fegyverByKat.has(kat)).map(kat => (
             <optgroup key={kat} label={kat}>
               {fegyverByKat.get(kat)!.map(item => <option key={item.id} value={item.id}>{item.label}</option>)}
             </optgroup>
           ))}
-        </select>
+        </select>}
       </section>
 
       {/* Páncél */}
