@@ -33,8 +33,8 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
 
   // Misztikus képzettségek
   const tradíció = képzettségek.find(k => k.név.startsWith('Tradíció'));
-  const arkánumok = képzettségek.filter(k => k.név.startsWith('Arkánum'));
-  const ősiNyelvek = képzettségek.filter(k => k.név.startsWith('Ősi nyelv ismerete'));
+  const arkánumok = képzettségek.filter(k => k.név.startsWith('Arkánum')).sort((a, b) => a.név.localeCompare(b.név, 'hu'));
+  const ősiNyelvek = képzettségek.filter(k => k.név.startsWith('Ősi nyelv ismerete')).sort((a, b) => a.név.localeCompare(b.név, 'hu'));
 
   // Elérhető opciók
   const arkánumDefs = data.kepzettsegDefs.filter(d => d.név.startsWith('Arkánum:'));
@@ -308,7 +308,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
       {/* Misztikus fortélyok */}
       {(() => {
         const misztFortDefs = data.fortelySummaries.filter(d => d.csoport === 'misztikus');
-        const misztFortSlotok = fortélyok.filter(f => misztFortDefs.some(d => d.név === f.név));
+        const misztFortSlotok = fortélyok.filter(f => misztFortDefs.some(d => d.név === f.név)).sort((a, b) => a.név.localeCompare(b.név, 'hu'));
         const felvehető = misztFortDefs.filter(d => {
           if (!d.többszörös_típus) return !misztFortSlotok.some(s => s.név === d.név);
           if (d.többszörös_lista.length > 0) return d.többszörös_lista.some(l => !misztFortSlotok.some(s => s.név === d.név && s.spec_elem === l));
