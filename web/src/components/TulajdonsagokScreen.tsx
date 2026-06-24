@@ -37,6 +37,7 @@ interface Props {
 }
 
 export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, becenév, setBecenév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv }: Props) {
+  const felvettFortelyok = karakter.fortélyok.map(f => f.név);
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
   const [editingBecenév, setEditingBecenév] = useState(false);
@@ -351,6 +352,7 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
                     findDef={findDef}
                     overLimit={slot.szint > maxSzint}
                     warning={slot.név.startsWith('Arkánum') && !képzettségek.some(k => k.név.startsWith('Tradíció'))}
+                    felvettFortelyok={felvettFortelyok}
                   />
                 );
               })}
@@ -492,7 +494,7 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
 }
 
 /* --- Képzettség sor --- */
-function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef, overLimit, warning }: {
+function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek, infoOpen, onInfoToggle, displayName, findDef, overLimit, warning, felvettFortelyok }: {
   slot: KepzettsegSlot;
   gameMode: boolean;
   onSzintChange: (szint: number) => void;
@@ -504,6 +506,7 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
   findDef: (név: string) => KepzettsegDef | undefined;
   overLimit: boolean;
   warning?: boolean;
+  felvettFortelyok: string[];
 }) {
   const [szintEditing, setSzintEditing] = useState(false);
 
@@ -544,10 +547,20 @@ function KepzettsegRow({ slot, gameMode, onSzintChange, onRemove, kiterjesztesek
           {def.domináns_tulajdonságok.length > 0 && (
             <div className="kep-info-row"><span className="kep-info-label">Domináns:</span> {def.domináns_tulajdonságok.join(', ')}</div>
           )}
-          {kit.length > 0 && (
+          {kit.filter(k => k.típus !== 'erős').length > 0 && (
             <div className="kep-info-row">
-              <span className="kep-info-label">Kiterjeszti:</span>
-              <span className="kep-info-kit">{kit.map(k => `${k.fortély}${k.típus === 'erős' ? ' (erős)' : ''}`).join(', ')}</span>
+              <span className="kep-info-label">Kiterjeszti Normál:</span>
+              <span className="kep-info-kit">{kit.filter(k => k.típus !== 'erős').map((k, i) => (
+                <span key={i} style={{ color: felvettFortelyok.includes(k.fortély) ? 'var(--success)' : '#e53935' }}>{i > 0 ? '; ' : ''}{k.fortély}</span>
+              ))}</span>
+            </div>
+          )}
+          {kit.filter(k => k.típus === 'erős').length > 0 && (
+            <div className="kep-info-row">
+              <span className="kep-info-label">Kiterjeszti Erős:</span>
+              <span className="kep-info-kit">{kit.filter(k => k.típus === 'erős').map((k, i) => (
+                <span key={i} style={{ color: felvettFortelyok.includes(k.fortély) ? 'var(--success)' : '#e53935' }}>{i > 0 ? '; ' : ''}{k.fortély}</span>
+              ))}</span>
             </div>
           )}
         </div>
