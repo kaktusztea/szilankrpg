@@ -20,14 +20,22 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: []
-  követelmények: ""
+  követelménytext:
+    - text: "Kovács szabad fortély"
+  követelmények:
+    - név: "Kovács"
+      érték: 1
+      típus: "fortély"
   hatástext: 
   - text: "Dobhatsz alap szinten Kézművesség képzettségre fegyver kovácsolásakor."
   módosítók: ""
 - fok: 2
-  követelménytext: []
-  követelmények: ""
+  követelménytext:
+    - text: "Kovács szabad fortély"
+  követelmények:
+    - név: "Kovács"
+      érték: 1
+      típus: "fortély"
   hatástext: 
   - text: "+2 bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor."
   módosítók: 

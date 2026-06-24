@@ -48,7 +48,9 @@
         "hatás": [
           "A Mászás képzettségpróba rontása után a megkapaszkodás Nehézség büntetése rád nem vonatkozik."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Mászás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Mászás",
@@ -363,6 +365,16 @@
             "feltétel": "",
             "megjegyzés": "Edzettség próba hosszútávfutáskor",
             "alcél": "Edzettség"
+          },
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Gyorsaság próba rövidtávfutáskor",
+            "alcél": "Gyorsaság"
           }
         ]
       },
@@ -384,6 +396,16 @@
             "feltétel": "",
             "megjegyzés": "Edzettség próba hosszútávfutáskor",
             "alcél": "Edzettség"
+          },
+          {
+            "cél": "tulajdonságpróba",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "",
+            "megjegyzés": "Gyorsaság próba rövidtávfutáskor",
+            "alcél": "Gyorsaság"
           }
         ]
       }
@@ -503,7 +525,9 @@
         "hatás": [
           "Csendes körülmények között is megtévesztően utánzol."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Nyelvismeret - 1.fok"
+        ],
         "követelmények": [
           {
             "név": "Nyelvismeret",
@@ -570,7 +594,9 @@
         "hatás": [
           "Kiterjeszti az Észlelés és Természetjárás képzettségeket 1.fokon."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Észlelés - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Észlelés",
@@ -585,7 +611,9 @@
         "hatás": [
           "Kiterjeszti az Észlelés és Természetjárás képzettségeket 2.fokon."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Észlelés - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Észlelés",
@@ -620,8 +648,16 @@
         "hatás": [
           "Dobhatsz alap szinten Kézművesség képzettségre fegyver kovácsolásakor."
         ],
-        "követelmény": [],
-        "követelmények": [],
+        "követelmény": [
+          "Kovács szabad fortély"
+        ],
+        "követelmények": [
+          {
+            "név": "Kovács",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
         "módosítók": []
       },
       {
@@ -629,8 +665,16 @@
         "hatás": [
           "+2 bónusszal dobhatsz Kézművesség képzettségre fegyver kovácsolásakor."
         ],
-        "követelmény": [],
-        "követelmények": [],
+        "követelmény": [
+          "Kovács szabad fortély"
+        ],
+        "követelmények": [
+          {
+            "név": "Kovács",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
         "módosítók": [
           {
             "cél": "képzettségpróba",
@@ -669,8 +713,16 @@
         "hatás": [
           "Dobhatsz alap szinten Kézművesség képzettségre páncél kovácsolásakor."
         ],
-        "követelmény": [],
-        "követelmények": [],
+        "követelmény": [
+          "Kovács szabad fortély"
+        ],
+        "követelmények": [
+          {
+            "név": "Kovács",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
         "módosítók": []
       },
       {
@@ -678,8 +730,16 @@
         "hatás": [
           "+2 bónusszal dobhatsz Kézművesség képzettségre páncél kovácsolásakor."
         ],
-        "követelmény": [],
-        "követelmények": [],
+        "követelmény": [
+          "Kovács szabad fortély"
+        ],
+        "követelmények": [
+          {
+            "név": "Kovács",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
         "módosítók": [
           {
             "cél": "képzettségpróba",
@@ -754,7 +814,9 @@
         "hatás": [
           "Lovasszekér, ökrösszekér, postakocsi elvezetése."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Lovaglás VAGY Léglovaglás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -1024,7 +1086,9 @@
           "NEM csoportos képzettségpróba — csak a te szinted számít.",
           "Tudásodnak megfelelő Ideájú tárgyak gyárthatóak gyorsabban, nagyobb mennyiségben."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kézművesség - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Kézművesség",
@@ -1125,7 +1189,9 @@
         "hatás": [
           "A \"Gyorsan mászni\" Célszám módosító büntetése rád nem vonatkozik."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Mászás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Mászás",
@@ -1196,7 +1262,9 @@
         "hatás": [
           "A gyors lopakodás Mozgás célszám levonása rád nem érvényes."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Lopakodás/Rejtőzés - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Lopakodás/Rejtőzés",
@@ -1275,7 +1343,9 @@
         "hatás": [
           "Gyors átöltözés és szegényes felszerelés büntetéseit 3-mal csökkentheted."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Álcázás/Álruha - 4.szint"
+        ],
         "követelmények": [
           {
             "név": "Álcázás/Álruha",
@@ -1290,7 +1360,9 @@
         "hatás": [
           "Gyors átöltözés és szegényes felszerelés büntetéseit 6-tal csökkentheted."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Álcázás/Álruha - 8.szint"
+        ],
         "követelmények": [
           {
             "név": "Álcázás/Álruha",
@@ -1461,7 +1533,9 @@
         "hatás": [
           "+2 bónusz csoportos Lexikum értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Lexikum - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Lexikum",
@@ -1487,7 +1561,9 @@
         "hatás": [
           "+4 bónusz csoportos Lexikum értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Lexikum - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Lexikum",
@@ -1531,7 +1607,9 @@
         "hatás": [
           "+2 bónusz csoportos Hajózás értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Hajózás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Hajózás",
@@ -1557,7 +1635,9 @@
         "hatás": [
           "+4 bónusz csoportos Hajózás értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Hajózás - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Hajózás",
@@ -1601,7 +1681,9 @@
         "hatás": [
           "+2 bónusz csoportos Nyomozás értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Nyomozás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Nyomozás",
@@ -1627,7 +1709,9 @@
         "hatás": [
           "+4 bónusz csoportos Nyomozás értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Nyomozás - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Nyomozás",
@@ -1671,7 +1755,9 @@
         "hatás": [
           "+2 bónusz csoportos Orvoslás értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Orvoslás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Orvoslás",
@@ -1697,7 +1783,9 @@
         "hatás": [
           "+4 bónusz csoportos Orvoslás értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Orvoslás - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Orvoslás",
@@ -1741,7 +1829,9 @@
         "hatás": [
           "+2 bónusz csoportos Előadóművészet értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Előadóművészet - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Előadóművészet",
@@ -1767,7 +1857,9 @@
         "hatás": [
           "+4 bónusz csoportos Előadóművészet értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Előadóművészet - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Előadóművészet",
@@ -1811,7 +1903,9 @@
         "hatás": [
           "+2 bónusz csoportos Kvantikum értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kvantikum - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Kvantikum",
@@ -1837,7 +1931,9 @@
         "hatás": [
           "+4 bónusz csoportos Kvantikum értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kvantikum - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Kvantikum",
@@ -1881,7 +1977,10 @@
         "hatás": [
           "Villámgyors keresés kapkodós helyzetekben nullázza az alapeset -3 büntetését."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Észlelés - 3.szint",
+          "Keresés/rejtés - 1.fok"
+        ],
         "követelmények": [
           {
             "név": "Észlelés",
@@ -1919,7 +2018,9 @@
         "hatás": [
           "Sietős zárnyitás esetén sem emelkedik a célszám."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Zárnyitás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Zárnyitás",
@@ -2211,7 +2312,9 @@
         "hatás": [
           "Alakzat támadó bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2232,7 +2335,9 @@
         "hatás": [
           "Alakzat támadó bónuszai 2.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2271,7 +2376,9 @@
         "hatás": [
           "Alakzat védekező bónuszai 1.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2292,7 +2399,9 @@
         "hatás": [
           "Alakzat védekező bónuszai 2.fokon. Lásd Harc alakzatban fejezet."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2375,7 +2484,10 @@
           "Hajítás alkalmatlan fegyverrel harci helyzet büntetései csökkennek: Hátrány-1 Sebzésdobásra és CÉ dobásra.",
           "A fegyver harcértéke nem változik (CÉ=0)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint",
+          "Hajítás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2419,7 +2531,10 @@
           "Hajítás alkalmatlan fegyverrel harci helyzet büntetései nem sújtanak.",
           "A fegyver harcértéke nem változik (CÉ=0)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
+          "Hajítás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2481,7 +2596,9 @@
           "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
           "A tárgy harcértéke nem változik."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Hajítás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Hajítás",
@@ -2514,7 +2631,9 @@
           "Nem sújtanak alkalmi tárgy hajításakor a CÉ dobásra, Sebzésdobásra harcérték levonások.",
           "Alkalmi fegyvereid Osztó értéke 2-re emelkedik."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Hajítás - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Hajítás",
@@ -2562,7 +2681,9 @@
       {
         "fok": 1,
         "hatás": [],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Közelharc",
@@ -2600,7 +2721,9 @@
       {
         "fok": 2,
         "hatás": [],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Közelharc",
@@ -2658,7 +2781,9 @@
         "hatás": [
           "1 ÉP forgatható át FP ponttá sebesüléskor."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Fájdalomtűrés - 7.szint"
+        ],
         "követelmények": [
           {
             "név": "Fájdalomtűrés",
@@ -2673,7 +2798,9 @@
         "hatás": [
           "2 ÉP forgatható át FP ponttá sebesüléskor."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Fájdalomtűrés - 10.szint"
+        ],
         "követelmények": [
           {
             "név": "Fájdalomtűrés",
@@ -2812,7 +2939,9 @@
       {
         "fok": 1,
         "hatás": [],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 4.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -2840,7 +2969,9 @@
       {
         "fok": 2,
         "hatás": [],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3069,7 +3200,9 @@
         "hatás": [
           "Helyhez kötve harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt!"
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 3.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3099,7 +3232,9 @@
         "hatás": [
           "Helyhez kötve harci helyzet: Hátrány-1 TÉ dobásra sem sújt már."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3130,7 +3265,7 @@
     "név": "Harci akrobatika",
     "csoport": "harci",
     "alcsoport": "harci",
-    "maxfok": 2,
+    "maxfok": 3,
     "session_toggle": true,
     "emlékeztető": true,
     "kiérdemelhető": false,
@@ -3228,6 +3363,58 @@
             "feltétel": ""
           }
         ]
+      },
+      {
+        "fok": 3,
+        "hatás": [
+          "TÉ:+3, VÉ:+3.",
+          "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
+        ],
+        "követelmény": [
+          "Csak Hajlékonyvértben",
+          "Maximum MGT:10 értékű vértben"
+        ],
+        "követelmények": [
+          {
+            "név": "Akrobatika",
+            "érték": 12,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "VÉ",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:kibontakozás",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:átsiklás",
+            "érték": 3,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
       }
     ]
   },
@@ -3254,7 +3441,9 @@
           "Precíz támadás Manőver: +2 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 3-mal csökken."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3302,7 +3491,10 @@
           "Precíz támadás Manőver: +4 MP bónusz Ellenpróbánál.",
           "Visszafogott taktika TÉ büntetés: 6-mal csökken."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
+          "Élettan - 1.fok"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3356,7 +3548,10 @@
           "Visszafogott taktika TÉ büntetés: 9-mal csökken.",
           "Bénítás, görcs, kábulat okozása. Szemgolyó kiszedése."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 12.szint",
+          "Élettan - 1.fok"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3426,7 +3621,10 @@
           "Harci szekér szituációban: TÉ/VÉ: +8.",
           "Harci taktikák használhatóak."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kocsihajtás - 1.fok",
+          "Lovaglás VAGY Léglovaglás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Kocsihajtás",
@@ -3467,7 +3665,10 @@
           "Harci szekér szituációban: TÉ/VÉ: +12.",
           "Harci taktikák használhatóak."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kocsihajtás - 1.fok",
+          "Lovaglás VAGY Léglovaglás - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Kocsihajtás",
@@ -3666,7 +3867,9 @@
         "hatás": [
           "Minden kör elején visszanyersz: 1 VÉ (kivéve ami sebesülésből)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3687,7 +3890,9 @@
         "hatás": [
           "Minden kör elején visszanyersz: 2 VÉ (kivéve ami sebesülésből)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3796,7 +4001,9 @@
           "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen.",
           "Egy körben legfeljebb 1x alkalmazható."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 4.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -3818,7 +4025,9 @@
           "Ha harcképtelenné teszel valakit: +1 soron kívüli bónusz támadás közeli ellenfél ellen.",
           "Egy körben legfeljebb 2x alkalmazható."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4083,7 +4292,9 @@
           "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Léglovaglás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -4116,7 +4327,9 @@
           "Léglovas harc szituációban: TÉ:+6, VÉ:+6.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Léglovaglás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -4149,7 +4362,9 @@
           "TÉ:+9, VÉ:+9 léglovas bónusz.",
           "Léglovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Léglovaglás - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -4200,7 +4415,10 @@
           "Lovas harc szituációban: TÉ:+3, VÉ:+3.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint",
+          "Lovaglás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4244,7 +4462,10 @@
           "Lovas harc szituációban: TÉ:+6, VÉ:+6.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint",
+          "Lovaglás - 9.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4288,7 +4509,10 @@
           "TÉ:+9, VÉ:+9 lovas bónusz.",
           "Lovas Manővereket végezhetsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 12.szint",
+          "Lovaglás - 12.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4366,7 +4590,9 @@
         "hatás": [
           "Merevvérted TÉ büntetése ennyivel enyhül: -5."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4394,7 +4620,9 @@
         "hatás": [
           "Merevvérted TÉ büntetése ennyivel enyhül: -10."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4423,7 +4651,9 @@
           "Merevvérted TÉ büntetése ennyivel enyhül: -15.",
           "Merevvért viselése esetén VÉ:+3 (ha lefedettség min. 70%)."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4488,7 +4718,9 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +1."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 4.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4542,7 +4774,9 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +2."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4596,7 +4830,9 @@
         "hatás": [
           "Adott fegyverre TÉ/CÉ, VÉ, SP: +3."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 12.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4668,7 +4904,9 @@
         "hatás": [
           "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+1."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4706,7 +4944,9 @@
         "hatás": [
           "Orvtámadás harci helyzetben: Előny+1 Sebzés dobásra, SP:+2."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4744,7 +4984,9 @@
         "hatás": [
           "Orvtámadáskor Előny+2 Sebzés dobásra, SP:+3."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4818,7 +5060,9 @@
           "Teljes pajzs VÉ aktív.",
           "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 3.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4854,7 +5098,9 @@
           "TÉ levonás: Kis:-0, Közepes:-0, Nagy:-3.",
           "Fegyverrel VAGY pajzzsal külön támadhatsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 5.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -4890,7 +5136,9 @@
           "VÉ:+2 minden pajzshoz.",
           "Fegyverrel VAGY pajzzsal külön támadhatsz."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5120,7 +5368,9 @@
         "hatás": [
           "Legfeljebb +4 SP (TÉ:-4) pakolható át."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kardvívás VAGY Lándzsavívás VAGY Rombolás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5139,7 +5389,9 @@
         "hatás": [
           "Legfeljebb +6 SP (TÉ:-6) pakolható át."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Kardvívás VAGY Lándzsavívás VAGY Rombolás - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5508,7 +5760,10 @@
         "hatás": [
           "+2 bónusz az Alakzatszintre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Alakzatharc - 6.szint",
+          "Befolyásolás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Alakzatharc",
@@ -5528,7 +5783,10 @@
         "hatás": [
           "+4 bónusz az Alakzatszintre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Alakzatharc - 9.szint",
+          "Befolyásolás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Alakzatharc",
@@ -5568,7 +5826,9 @@
         "hatás": [
           "+2 bónusz csoportos Lopakodás/Rejtőzés értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Lopakodás/Rejtőzés - 6.szint"
+        ],
         "követelmények": [
           {
             "név": "Lopakodás/Rejtőzés",
@@ -5583,7 +5843,9 @@
         "hatás": [
           "+4 bónusz csoportos Lopakodás/Rejtőzés értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Lopakodás/Rejtőzés - 9.szint"
+        ],
         "követelmények": [
           {
             "név": "Lopakodás/Rejtőzés",
@@ -5678,7 +5940,10 @@
         "hatás": [
           "+2 bónusz az Alakzatszintre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Léglovaglás - 6.szint",
+          "Befolyásolás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -5698,7 +5963,10 @@
         "hatás": [
           "+4 bónusz az Alakzatszintre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Léglovaglás - 9.szint",
+          "Befolyásolás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Léglovaglás",
@@ -5738,7 +6006,10 @@
         "hatás": [
           "+2 bónusz az Alakzatszintre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Lovaglás - 6.szint",
+          "Befolyásolás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Lovaglás",
@@ -5758,7 +6029,10 @@
         "hatás": [
           "+4 bónusz az Alakzatszintre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Lovaglás - 9.szint",
+          "Befolyásolás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Lovaglás",
@@ -5798,7 +6072,10 @@
         "hatás": [
           "+2 bónusz csoportos Észlelés értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "közelharc VAGY kardvívás VAGY rombolás VAGY lándzsavívás VAGY ostorharc - 6.szint",
+          "Észlelés - 6.szint"
+        ],
         "követelmények": [
           {
             "név": [
@@ -5824,7 +6101,10 @@
         "hatás": [
           "+4 bónusz csoportos Észlelés értékre."
         ],
-        "követelmény": [],
+        "követelmény": [
+          "Alakzatharc - 9.szint",
+          "Befolyásolás - 3.szint"
+        ],
         "követelmények": [
           {
             "név": "Alakzatharc",

@@ -31,7 +31,8 @@ fokok:
     feltétel: "fegyverfogás:fegyver_pajzs"
     megjegyzés: "Alapeset: képzetlen pajzshasználat"
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 3.szint"
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 3
@@ -48,7 +49,8 @@ fokok:
       operátor: "=="
       érték: "fegyver_pajzs"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 5.szint"
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 5
@@ -66,7 +68,8 @@ fokok:
       operátor: "=="
       érték: "fegyver_pajzs"
 - fok: 3
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 8

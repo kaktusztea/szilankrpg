@@ -1,4 +1,4 @@
-## 🟣 Fakír (1)
+## 🟣 Fakír (2)
 
 Kínzás esetén pluszt kapsz 🔵 [Fájdalomtűrés](../kepzettsegek.primer/altalanos/fajdalomtures.md) próbádra.
 

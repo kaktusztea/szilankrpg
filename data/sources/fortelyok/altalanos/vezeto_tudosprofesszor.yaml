@@ -20,7 +20,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Kvantikum - 6.szint"
   követelmények: 
   - név: "Kvantikum"
     érték: 6
@@ -37,7 +38,8 @@ fokok:
     megjegyzés: "csoportos Kvantikum értékre"
     alcél: "Kvantikum"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Kvantikum - 9.szint"
   követelmények: 
   - név: "Kvantikum"
     érték: 9

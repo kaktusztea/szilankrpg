@@ -25,7 +25,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
+    követelménytext:
+      - text: "Kézművesség - 9.szint"
     követelmények:
       - név: "Kézművesség"
         érték: 9

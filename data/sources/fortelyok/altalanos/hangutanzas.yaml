@@ -26,7 +26,8 @@ fokok:
   - text: "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott hangot."
   módosítók: ""
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Nyelvismeret - 1.fok"
   követelmények: 
   - név: "Nyelvismeret"
     érték: 1

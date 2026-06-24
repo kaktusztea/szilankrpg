@@ -20,7 +20,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok:
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
   követelmények:
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6
@@ -41,7 +42,8 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:orvtámadás"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
   követelmények:
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9
@@ -62,7 +64,8 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:orvtámadás"
 - fok: 3
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 9.szint"
   követelmények:
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 9

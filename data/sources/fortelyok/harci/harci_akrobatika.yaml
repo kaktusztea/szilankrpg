@@ -1,7 +1,7 @@
 schema_version: 1
 név: "Harci akrobatika"
 névkomment: ""
-maxfok: 2
+maxfok: 3
 session_toggle: true
 emlékeztető: true
 kiérdemelhető: false
@@ -84,6 +84,42 @@ fokok:
     arány: 1
     feltétel: ""
   - cél: "manőver:kibontakozás"
+    érték: 3
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+- fok: 3
+  követelménytext:
+    - text: "Csak Hajlékonyvértben"
+    - text: "Maximum MGT:10 értékű vértben"
+  követelmények:
+  - név: "Akrobatika"
+    érték: 12
+    típus: "képzettség"
+  hatástext:
+  - text: "TÉ:+3, VÉ:+3."
+  - text: "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
+  módosítók:
+  - cél: "TÉ"
+    érték: 3
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+  - cél: "VÉ"
+    érték: 3
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+  - cél: "manőver:kibontakozás"
+    érték: 3
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+  - cél: "manőver:átsiklás"
     érték: 3
     mód: "flat"
     forrás: ""

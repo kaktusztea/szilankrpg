@@ -25,7 +25,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
+    követelménytext:
+      - text: "Mászás - 6.szint"
     követelmények:
       - név: "Mászás"
         érték: 6

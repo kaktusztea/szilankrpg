@@ -25,7 +25,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
+    követelménytext:
+      - text: "Észlelés - 3.szint"
     követelmények:
       - név: "Észlelés"
         érték: 3
@@ -34,7 +35,8 @@ fokok:
       - text: "Kiterjeszti az Észlelés és Természetjárás képzettségeket 1.fokon."
     módosítók: ""
   - fok: 2
-    követelménytext: []
+    követelménytext:
+      - text: "Észlelés - 3.szint"
     követelmények:
       - név: "Észlelés"
         érték: 3

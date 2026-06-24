@@ -26,7 +26,8 @@ fokok:
   - text: "Helyhez kötve harci helyzet teljes büntetése sújt."
   módosítók: ""
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 3.szint"
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 3
@@ -41,7 +42,8 @@ fokok:
     arány: 0
     feltétel: "harci_helyzet:helyhez_kötve"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
   követelmények: 
   - név: ["Közelharc", "Kardvívás", "Rombolás", "Lándzsavívás", "Ostorharc"]
     érték: 6

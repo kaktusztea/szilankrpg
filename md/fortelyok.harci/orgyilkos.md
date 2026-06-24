@@ -1,4 +1,4 @@
-## 🟣 Orgyilkos (2)
+## 🟣 Orgyilkos (3)
 
 [Orvtámadás](../065_01_01_pozitiv_helyzetek.md#orvtámadás) harci helyzetben (csak akkor) jobb eséllyel érsz el nagyobb sebzést.
 

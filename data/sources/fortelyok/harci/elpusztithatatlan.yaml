@@ -25,7 +25,8 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
+    követelménytext:
+      - text: "Fájdalomtűrés - 7.szint"
     követelmények:
       - név: "Fájdalomtűrés"
         érték: 7
@@ -34,7 +35,8 @@ fokok:
       - text: "1 ÉP forgatható át FP ponttá sebesüléskor."
     módosítók: ""
   - fok: 2
-    követelménytext: []
+    követelménytext:
+      - text: "Fájdalomtűrés - 10.szint"
     követelmények:
       - név: "Fájdalomtűrés"
         érték: 10

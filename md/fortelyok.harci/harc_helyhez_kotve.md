@@ -1,4 +1,4 @@
-## 🟣 Harc helyhez kötve (3)
+## 🟣 Harc helyhez kötve (2)
 
 Nem esel kétségbe akkor sem, ha nagyon kis helyen, vagy kimozgás lehetősége nélkül kell harcolni.
 

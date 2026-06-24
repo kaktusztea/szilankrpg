@@ -20,7 +20,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Hajózás - 6.szint"
   követelmények: 
   - név: "Hajózás"
     érték: 6
@@ -37,7 +38,8 @@ fokok:
     megjegyzés: "csoportos Hajózás értékre"
     alcél: "Hajózás"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Hajózás - 9.szint"
   követelmények: 
   - név: "Hajózás"
     érték: 9

@@ -25,7 +25,9 @@ ingyenes_perszint: 0
 
 fokok:
   - fok: 1
-    követelménytext: []
+    követelménytext:
+      - text: "Léglovaglás - 6.szint"
+      - text: "Befolyásolás - 3.szint"
     követelmények:
       - név: "Léglovaglás"
         érték: 6
@@ -37,7 +39,9 @@ fokok:
       - text: "+2 bónusz az Alakzatszintre."
     módosítók: ""
   - fok: 2
-    követelménytext: []
+    követelménytext:
+      - text: "Léglovaglás - 9.szint"
+      - text: "Befolyásolás - 3.szint"
     követelmények:
       - név: "Léglovaglás"
         érték: 9

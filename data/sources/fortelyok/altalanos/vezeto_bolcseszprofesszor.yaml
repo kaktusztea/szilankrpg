@@ -20,7 +20,8 @@ kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Lexikum - 6.szint"
   követelmények: 
   - név: "Lexikum"
     érték: 6
@@ -37,7 +38,8 @@ fokok:
     megjegyzés: "csoportos Lexikum értékre"
     alcél: "Lexikum"
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Lexikum - 9.szint"
   követelmények: 
   - név: "Lexikum"
     érték: 9

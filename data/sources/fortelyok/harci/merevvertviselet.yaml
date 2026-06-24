@@ -31,7 +31,8 @@ fokok:
     feltétel: "páncél:viselt"
     megjegyzés: "Alapeset: teljes MGT TÉ büntetés"
 - fok: 1
-  követelménytext: []
+  követelménytext:
+    - text: "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
   követelmények: 
   - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
     érték: 3
@@ -46,7 +47,8 @@ fokok:
     arány: 0
     feltétel: ""
 - fok: 2
-  követelménytext: []
+  követelménytext:
+    - text: "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
   követelmények: 
   - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
     érték: 3
@@ -61,7 +63,8 @@ fokok:
     arány: 0
     feltétel: ""
 - fok: 3
-  követelménytext: []
+  követelménytext:
+    - text: "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
   követelmények: 
   - név: ["Kardvívás", "Rombolás", "Lándzsavívás"]
     érték: 3
