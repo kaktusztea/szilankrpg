@@ -135,19 +135,6 @@
   margin-bottom: 6px;
 }
 
-.aktiv-chip {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  background: var(--primary);
-  border: 1px solid #555;
-  border-radius: 4px;
-  padding: 4px 8px;
-  margin: 2px 4px 2px 0;
-  font-size: 14px;
-  color: var(--text);
-}
-
 .aktiv-chip-x {
   background: none;
   border: none;
@@ -370,12 +357,6 @@
   font-size: 14px;
   cursor: pointer;
   margin-top: 6px;
-}
-
-.taktika-chip-name {
-  font-size: 14px;
-  font-weight: bold;
-  color: #90caf9;
 }
 
 .taktika-chip-mods {

@@ -4,7 +4,6 @@ import { evaluateAlapesetek, AktívAlapeset } from '../engine/alapeset';
 import { buildAktívFeltételek } from '../engine/feltetelek';
 
 export interface HatásPoolData {
-  taktikaMods: Record<string, number>;
   státuszPerElem: { név: string; alcím?: string; hatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] }[];
   taktikaHatásPerElem: { név: string; hatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] }[];
   hasHatásPool: boolean;
@@ -20,19 +19,7 @@ export function calcHatásPool(data: GameData, karakter: Karakter, session: Sess
   const aktívFeltételek = buildAktívFeltételek(session, data);
 
   // 1. Taktika harcérték módosítók
-  const taktikaMods: Record<string, number> = {};
-  for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
-    if (!def) continue;
-    if (def.fokozatos && def.fokok && at.fok != null) {
-      const fokDef = def.fokok.find(f => f.fok === at.fok);
-      if (fokDef) { for (const [k, v] of Object.entries(fokDef)) { if (k !== 'fok' && typeof v === 'number') taktikaMods[k] = (taktikaMods[k] ?? 0) + v; } }
-    } else if (def.módosítók) {
-      for (const [k, v] of Object.entries(def.módosítók)) { if (typeof v === 'number') taktikaMods[k] = (taktikaMods[k] ?? 0) + v; }
-    }
-  }
-
-  // 2. Státusz + Taktika hatások
+  // 1. Státusz + Taktika hatások
   const státuszPerElem: HatásPoolData['státuszPerElem'] = [];
   for (const st of session.aktív_státuszok) {
     const match = st.match(/^(.+) \((\d+)\)$/);
@@ -130,5 +117,5 @@ export function calcHatásPool(data: GameData, karakter: Karakter, session: Sess
     return true;
   });
 
-  return { taktikaMods, státuszPerElem, taktikaHatásPerElem, hasHatásPool, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév };
+  return { státuszPerElem, taktikaHatásPerElem, hasHatásPool, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév };
 }

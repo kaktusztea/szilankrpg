@@ -241,7 +241,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
         <div className="aktiv-hatas-pool">
           {hasHatásPool && (
             <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Státuszok</span>
+              <span className="hatas-pool-title">Taktika hatások</span>
               <div className="hatas-pool-items">
                 {taktikaHatásPerElem.map((t, i) => (
                   <div key={`t${i}`} style={{ display: 'flex', flexDirection: 'column' }}>
