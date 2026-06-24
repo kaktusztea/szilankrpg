@@ -57,7 +57,7 @@ export function calcHatásPool(data: GameData, karakter: Karakter, session: Sess
       if (fokDef?.hatások?.length) taktikaHatásPerElem.push({ név: `${def.név} (${at.fok})`, hatások: fokDef.hatások });
     }
   }
-  const hasHatásPool = státuszPerElem.length > 0 || taktikaHatásPerElem.length > 0;
+  const hasHatásPool = taktikaHatásPerElem.length > 0;
 
   const eseményNév = (id: string) => {
     const m = id.match(/^(.+?)( \(.+\))$/);

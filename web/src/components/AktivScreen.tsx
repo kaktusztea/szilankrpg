@@ -252,15 +252,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                     })}
                   </div>
                 ))}
-                {státuszPerElem.map((s, i) => (
-                  <div key={`s${i}`} style={{ display: 'flex', flexDirection: 'column' }}>
-                    <span className="hatas-pool-item"><strong style={{ color: '#cd7c6f' }}>{s.név}{s.alcím ? ` ${s.alcím}` : ''}</strong></span>
-                    {s.hatások.map((h, j) => {
-                      const txt = fmtHatás(h, eseményNév);
-                      return txt ? <span key={j} className="hatas-pool-item" style={{ paddingLeft: '12px' }}>{txt}</span> : null;
-                    })}
-                  </div>
-                ))}
               </div>
             </div>
           )}
@@ -548,8 +539,8 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
 
       {/* Státuszok */}
-      <div className="aktiv-section" style={{ marginTop: '16px', borderTop: '1px solid #333', borderBottom: 'none', paddingTop: '16px' }}>
-        <span className="aktiv-label">Státuszok</span>
+      <div className="aktiv-section" style={{ marginTop: '16px', borderTop: '1px solid #333', borderBottom: 'none', paddingTop: '16px', fontSize: '13px' }}>
+        <span className="aktiv-label">Státuszok <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.statuszok.every(s => s.többszörös || session.aktív_státuszok.some(st => st.startsWith(s.név + ' (')))} onClick={() => setShowStátuszPicker(true)}>+</button></span>
         {session.aktív_státuszok.map((st, i) => {
           const match = st.match(/^(.+) \((\d+)\)$/);
           const stNév = match?.[1] ?? st;
@@ -559,18 +550,21 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           const maxFok = def?.fokok.length ?? 1;
           const alcím = def?.fokok.find(f => f.fok === stFok)?.alcím;
           const locked = baseName === 'Sérült';
+          const perElem = státuszPerElem.find(s => s.név === stNév || s.név === `${stNév} (${stFok})`);
           return (
-            <div key={i} className="aktiv-chip">
-              <span onClick={() => {
-                if (locked || maxFok <= 1) return;
-                const újFok = (stFok % maxFok) + 1;
-                setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
-              }} style={!locked && maxFok > 1 ? { cursor: 'pointer' } : undefined}>{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}</span>
-              {!locked && <button className="aktiv-chip-x" onClick={() => { pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`); setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) })); }}>✕</button>}
+            <div key={i} className="kep-row" style={{ cursor: !locked && maxFok > 1 ? 'pointer' : undefined }} onClick={() => {
+              if (locked || maxFok <= 1) return;
+              const újFok = (stFok % maxFok) + 1;
+              setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
+            }}>
+              <span style={{ flex: 1 }}>
+                <strong style={{ color: '#cd7c6f' }}>{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}:</strong>
+                {perElem && perElem.hatások.length > 0 && <span> {perElem.hatások.map((h, j) => { const txt = fmtHatás(h, eseményNév); return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null; })}</span>}
+              </span>
+              {!locked && <button className="fort-delete" onClick={e => { e.stopPropagation(); pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`); setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) })); }}>✕</button>}
             </div>
           );
         })}
-        <button className="aktiv-add-btn" disabled={data.statuszok.every(s => s.többszörös || session.aktív_státuszok.some(st => st.startsWith(s.név + ' (')))} onClick={() => setShowStátuszPicker(true)}>+ Státusz...</button>
       </div>
 
       {showStátuszPicker && createPortal(
