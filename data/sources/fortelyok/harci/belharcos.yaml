@@ -30,7 +30,8 @@ fokok:
   - név: "Közelharc"
     érték: 6
     típus: "képzettség"
-  hatástext: ""
+  hatástext:
+  - text: "KÉ:+1, TÉ:+2, VÉ:+2"
   módosítók:
   - cél: "KÉ"
     érték: 1
@@ -66,7 +67,8 @@ fokok:
   - név: "Közelharc"
     érték: 9
     típus: "képzettség"
-  hatástext: ""
+  hatástext:
+  - text: "KÉ:+2, TÉ:+4, VÉ:+4"
   módosítók:
   - cél: "KÉ"
     érték: 2

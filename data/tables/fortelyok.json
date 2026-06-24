@@ -2680,7 +2680,9 @@
     "fokok": [
       {
         "fok": 1,
-        "hatás": [],
+        "hatás": [
+          "KÉ:+1, TÉ:+2, VÉ:+2"
+        ],
         "követelmény": [
           "Közelharc - 6.szint"
         ],
@@ -2768,7 +2770,9 @@
       },
       {
         "fok": 2,
-        "hatás": [],
+        "hatás": [
+          "KÉ:+2, TÉ:+4, VÉ:+4"
+        ],
         "követelmény": [
           "Közelharc - 9.szint"
         ],

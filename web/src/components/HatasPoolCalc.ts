@@ -80,22 +80,35 @@ export function calcHatásPool(data: GameData, karakter: Karakter, session: Sess
     let helyzetKötés = '';
     if (hasMods) {
       for (const mod of fokDef.módosítók) {
-        if (mod.feltétel && mod.feltétel !== '' && !aktívFeltételek.has(mod.feltétel)) continue;
+        // Feltétel ellenőrzés: string VAGY strukturált lista
+        if (mod.feltétel && mod.feltétel !== '') {
+          if (typeof mod.feltétel === 'string') {
+            if (!aktívFeltételek.has(mod.feltétel)) continue;
+          } else if (Array.isArray(mod.feltétel)) {
+            // Strukturált feltétel: keressünk benne harci_helyzet prefix-et
+            const hFelt = (mod.feltétel as { forrás: string }[]).find(p => p.forrás?.startsWith('harci_helyzet:'));
+            if (hFelt && !aktívFeltételek.has(hFelt.forrás)) continue;
+          }
+        }
         if (typeof mod.cél === 'string' && mod.cél.startsWith('manőver:')) {
           manőverBónuszok.push({ név: kf.név, manőver: mod.cél.slice(8), érték: mod.érték });
         }
         if (mod.mód === 'előny' || mod.mód === 'hátrány') {
           előnyHátrányMods.push({ név: kf.név, cél: mod.cél, mód: mod.mód, érték: mod.érték });
         }
-        if (mod.feltétel && mod.feltétel.startsWith('harci_helyzet:')) {
+        // Helyzet kötés: string vagy strukturált feltételből
+        if (typeof mod.feltétel === 'string' && mod.feltétel.startsWith('harci_helyzet:')) {
           helyzetKötés = mod.feltétel.slice(14);
+        } else if (Array.isArray(mod.feltétel)) {
+          const hFelt = (mod.feltétel as { forrás: string }[]).find(p => p.forrás?.startsWith('harci_helyzet:'));
+          if (hFelt) helyzetKötés = hFelt.forrás.slice(14);
         }
       }
     }
-    if (helyzetKötés && def.emlékeztető && fokDef.hatás?.length) {
+    if (helyzetKötés) {
       const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${helyzetKötés}`)?.név || helyzetKötés;
       const arr = helyzetFortélyok.get(hNév) || [];
-      arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' '), aktív: aktívFeltételek.has(`harci_helyzet:${helyzetKötés}`) });
+      arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás?.join(' ') ?? '', aktív: aktívFeltételek.has(`harci_helyzet:${helyzetKötés}`) });
       helyzetFortélyok.set(hNév, arr);
     } else if (def.emlékeztető && fokDef.hatás && fokDef.hatás.length > 0) {
       fortélyEmlékeztetők.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' ') });
