@@ -229,8 +229,8 @@ function App() {
     const ind = indicatorRef.current;
     const btn = activeTabBtnRef.current;
     if (!ind || !btn) return;
-    ind.style.width = `${btn.offsetWidth}px`;
-    ind.style.transform = `translateX(${btn.offsetLeft}px)`;
+    const size = ind.offsetHeight || btn.offsetHeight;
+    ind.style.transform = `translateX(${btn.offsetLeft + (btn.offsetWidth - size) / 2}px)`;
     if (!indicatorInit.current) {
       requestAnimationFrame(() => {
         if (ind) ind.style.transition = 'transform 0.2s ease-out, width 0.2s ease-out';
