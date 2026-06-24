@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
 import { evaluate, buildContext } from '../engine/reactive';
+import { FortélyFelvétel } from './FortelyFelvetel';
 
 export function MisztikusScreen({ data, karakter, képzettségek, setKépzettségek, fortélyok, setFortélyok, gameMode }: {
   data: GameData;
@@ -17,8 +18,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [deleteTarget, setDeleteTarget] = useState<string | null>(null);
   const [hint, setHint] = useState('');
   const [misztFokTarget, setMisztFokTarget] = useState<number | null>(null);
-  const [misztFortPrompt, setMisztFortPrompt] = useState<{ név: string; többszörös_típus: string; maxfok: number; lista: string[] } | null>(null);
-  const [misztKierdemeltPicker, setMisztKierdemeltPicker] = useState<{ név: string; spec_típus: string; spec_elem: string; maxfok: number } | null>(null);
+  const [felvételDef, setFelvételDef] = useState<any | null>(null);
   const [deleteFortIdx, setDeleteFortIdx] = useState<number | null>(null);
   const [promptTarget, setPromptTarget] = useState<string | null>(null);
   const [promptValue, setPromptValue] = useState('');
@@ -58,11 +58,11 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [szintTarget, setSzintTarget] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker && misztFokTarget === null && !misztFortPrompt && !misztKierdemeltPicker && deleteFortIdx === null) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); setMisztFokTarget(null); setMisztFortPrompt(null); setMisztKierdemeltPicker(null); setDeleteFortIdx(null); } }
+    if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker && misztFokTarget === null && !felvételDef && deleteFortIdx === null) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); setMisztFokTarget(null); setFelvételDef(null); setDeleteFortIdx(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker, misztFokTarget, misztFortPrompt, misztKierdemeltPicker, deleteFortIdx]);
+  }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker, misztFokTarget, felvételDef, deleteFortIdx]);
 
   const maxSzint = karakter.tsz; // misztikus képzettségek mind primerek
 
@@ -268,6 +268,16 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         document.body
       )}
 
+      {felvételDef && (
+        <FortélyFelvétel
+          def={felvételDef}
+          kiérdemeltOpció={!!felvételDef.kiérdemelhető}
+          felvettSpecElemek={fortélyok.filter(f => f.név === felvételDef.név).map(f => f.spec_elem)}
+          onDone={result => { setFortélyok(prev => [...prev, result]); setFelvételDef(null); }}
+          onCancel={() => setFelvételDef(null)}
+        />
+      )}
+
       {misztFokTarget !== null && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setMisztFokTarget(null); }}>
           <div className="kep-prompt">
@@ -279,67 +289,6 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
                   setMisztFokTarget(null);
                 }}>{n}</button>
               ))}
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {misztFortPrompt && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setMisztFortPrompt(null); }}>
-          <div className="kep-prompt">
-            <label style={{ fontWeight: 'bold', marginBottom: '8px' }}>{misztFortPrompt.név}</label>
-            {misztFortPrompt.lista.length > 0 ? (
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '60vh', overflowY: 'auto' }}>
-                {misztFortPrompt.lista.filter(l => !fortélyok.some(f => f.név === misztFortPrompt.név && f.spec_elem === l)).map(l => (
-                  <button key={l} className="he-field-btn" onClick={() => {
-                    const newIdx = fortélyok.length;
-                    setFortélyok(prev => [...prev, { név: misztFortPrompt.név, fok: 1, spec_típus: misztFortPrompt.többszörös_típus, spec_elem: l }]);
-                    if (misztFortPrompt.maxfok > 1) setMisztFokTarget(newIdx);
-                    setMisztFortPrompt(null);
-                  }}>{l}</button>
-                ))}
-              </div>
-            ) : (<>
-              <input autoFocus maxLength={30} value={promptValue} onChange={e => setPromptValue(e.target.value)} onKeyDown={e => {
-                if (e.key === 'Enter' && promptValue.trim()) {
-                  setMisztKierdemeltPicker({ név: misztFortPrompt.név, spec_típus: misztFortPrompt.többszörös_típus, spec_elem: promptValue.trim(), maxfok: misztFortPrompt.maxfok });
-                  setMisztFortPrompt(null);
-                }
-                if (e.key === 'Escape') setMisztFortPrompt(null);
-              }} />
-              <div className="kep-prompt-btns">
-                <button onClick={() => {
-                  if (!promptValue.trim()) return;
-                  setMisztKierdemeltPicker({ név: misztFortPrompt.név, spec_típus: misztFortPrompt.többszörös_típus, spec_elem: promptValue.trim(), maxfok: misztFortPrompt.maxfok });
-                  setMisztFortPrompt(null);
-                }} disabled={!promptValue.trim()}>OK</button>
-              </div>
-            </>)}
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {misztKierdemeltPicker && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>{misztKierdemeltPicker.spec_elem ? `${misztKierdemeltPicker.név} - ${misztKierdemeltPicker.spec_elem}` : misztKierdemeltPicker.név}</label>
-            <div style={{ display: 'flex', gap: '12px' }}>
-              <button className="he-field-btn" style={{ padding: '10px 16px', fontSize: '16px' }} onClick={() => {
-                const p = misztKierdemeltPicker;
-                const newIdx = fortélyok.length;
-                setFortélyok(prev => [...prev, { név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem }]);
-                if (p.maxfok > 1) setMisztFokTarget(newIdx);
-                setMisztKierdemeltPicker(null);
-              }}>Felvett</button>
-              <button className="he-field-btn" style={{ padding: '10px 16px', fontSize: '16px' }} onClick={() => {
-                const p = misztKierdemeltPicker;
-                const newIdx = fortélyok.length;
-                setFortélyok(prev => [...prev, { név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem, kiérdemelt: true }]);
-                if (p.maxfok > 1) setMisztFokTarget(newIdx);
-                setMisztKierdemeltPicker(null);
-              }}>⭐ Kiérdemelt</button>
             </div>
           </div>
         </div>,
@@ -386,14 +335,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
                 if (!e.target.value) return;
                 const def = misztFortDefs.find(d => d.név === e.target.value);
                 if (!def) return;
-                if (def.többszörös_típus) {
-                  setMisztFortPrompt({ ...def, lista: def.többszörös_lista });
-                  setPromptValue('');
-                } else {
-                  const newIdx = fortélyok.length;
-                  setFortélyok(prev => [...prev, { név: def.név, fok: 1, spec_típus: '', spec_elem: '' }]);
-                  if (def.maxfok > 1) setMisztFokTarget(newIdx);
-                }
+                setFelvételDef(def);
               }}>
                 <option value="">+ Misztikus fortély...</option>
                 {felvehető.map(d => <option key={d.név} value={d.név}>{d.név}</option>)}

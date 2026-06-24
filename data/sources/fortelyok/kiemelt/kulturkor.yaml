@@ -6,6 +6,7 @@ névkomment: ""
 maxfok: 1
 session_toggle: false
 emlékeztető: false
+kiérdemelhető: true
 többszörösség:
   spec_típus: "kultúrkör"
   spec_lista: ["4mund", "asz1sz", "barbár", "bukán", "dw00n", "dzs4d", "elar", "elf", "en0szukei", "erv", "gohr", "gorv1ki", "il4nori", "khál", "kr4ni", "mawini", "ni4rei", "nomád", "pier", "predoci, edorli", "py4r", "ragnaroki", "sh4doni", "syburri", "tarran", "ti4dlani", "tongoriai", "t0r0ni", "törpe"]

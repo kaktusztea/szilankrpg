@@ -4,6 +4,7 @@ névkomment: ""
 maxfok: 2
 session_toggle: true
 emlékeztető: true
+kiérdemelhető: false
 többszörösség:
   spec_típus: ""
   spec_lista: []

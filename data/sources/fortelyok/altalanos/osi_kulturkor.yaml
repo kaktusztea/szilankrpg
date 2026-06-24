@@ -6,6 +6,7 @@ névkomment: ""
 maxfok: 1
 session_toggle: false
 emlékeztető: false
+kiérdemelhető: false
 többszörösség:
   spec_típus: "kultúrkör"
   spec_lista: []

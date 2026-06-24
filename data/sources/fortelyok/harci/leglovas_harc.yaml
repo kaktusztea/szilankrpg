@@ -6,6 +6,7 @@ névkomment: ""
 maxfok: 3
 session_toggle: false
 emlékeztető: true
+kiérdemelhető: false
 többszörösség:
   spec_típus: ""
   spec_lista: []
