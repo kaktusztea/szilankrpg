@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../engine/types';
-import { evaluateAlapesetek } from '../engine/alapeset';
-import { buildAktívFeltételek } from '../engine/feltetelek';
+import { calcHatásPool } from './HatasPoolCalc';
 import { fmtCode, fmtHatás } from './formatters';
 import './AktivScreen.css';
 
@@ -124,120 +123,8 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
     setSession(s => ({ ...s, aktív_taktikák: s.aktív_taktikák.map((t, i) => i === idx ? { ...t, fok } : t) }));
   }
 
-  // --- Hatás pool kalkuláció ---
-  // 1. Taktika harcérték módosítók
-  const taktikaMods: Record<string, number> = {};
-  const taktikaMegjegyzések: string[] = [];
-  for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
-    if (!def) continue;
-    if (def.fokozatos && def.fokok && at.fok != null) {
-      const fokDef = def.fokok.find(f => f.fok === at.fok);
-      if (fokDef) {
-        for (const [k, v] of Object.entries(fokDef)) {
-          if (k !== 'fok' && typeof v === 'number') taktikaMods[k] = (taktikaMods[k] ?? 0) + v;
-        }
-      }
-    } else if (def.módosítók) {
-      for (const [k, v] of Object.entries(def.módosítók)) {
-        if (typeof v === 'number') taktikaMods[k] = (taktikaMods[k] ?? 0) + v;
-      }
-    }
-    if (def.megjegyzés) taktikaMegjegyzések.push(`${def.név}: ${def.megjegyzés}`);
-  }
 
-  // 2. Státusz + Harci helyzet + Taktika hatások kumulálása
-  // Harci helyzetek hatásai saját al-boxban jelennek meg (nem a státuszHatások pool-ban)
-  // Státusz hatások per-státusz (nem aggregált)
-  const státuszPerElem: { név: string; alcím?: string; hatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] }[] = [];
-  for (const st of session.aktív_státuszok) {
-    const match = st.match(/^(.+) \((\d+)\)$/);
-    if (!match) continue;
-    const stNév = match[1];
-    const baseName = stNév.includes(': ') ? stNév.split(': ')[0] : stNév;
-    const subName = stNév.includes(': ') ? stNév.split(': ')[1] : '';
-    const def = data.statuszok.find(s => s.név === baseName);
-    const fokDef = def?.fokok.find(f => f.fok === parseInt(match[2]));
-    if (fokDef) {
-      const hatások = fokDef.hatások.map(h => subName ? { ...h, cél: `${h.cél} (${subName.toLowerCase()})` } : h);
-      státuszPerElem.push({ név: st, alcím: (fokDef as any).alcím, hatások });
-    }
-  }
-  // Taktika hatások per-taktika (operátor-alapúak, pl. duplázás)
-  const taktikaHatásPerElem: { név: string; hatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] }[] = [];
-  for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
-    if (!def) continue;
-    if (def.fokozatos && def.fokok && at.fok != null) {
-      const fokDef = def.fokok.find(f => f.fok === at.fok);
-      if (fokDef?.hatások?.length) taktikaHatásPerElem.push({ név: `${def.név} (${at.fok})`, hatások: fokDef.hatások });
-    }
-  }
-  const hasHatásPool = státuszPerElem.length > 0 || taktikaHatásPerElem.length > 0;
-
-  const eseményNév = (id: string) => {
-    const m = id.match(/^(.+?)( \(.+\))$/);
-    if (m) { const base = data.esemenyek.find(e => e.id === m[1])?.név ?? m[1]; return base + m[2]; }
-    return data.esemenyek.find(e => e.id === id)?.név ?? id;
-  };
-
-  // Fortély emlékeztetők: harci fortélyok amelyeknek van hatástext de nincs gépi módosító
-  const fortélyEmlékeztetők: { név: string; fok: number; hatás: string }[] = [];
-  const helyzetFortélyok = new Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>();
-  const manőverBónuszok: { név: string; manőver: string; érték: number }[] = [];
-  const előnyHátrányMods: { név: string; cél: string; mód: string; érték: number }[] = [];
-
-  // Aktív feltételek (§16 feltételes módosítókhoz)
-  const aktívFeltételek = buildAktívFeltételek(session, data);
-
-  for (const kf of karakter.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
-    if (!def || def.csoport !== 'harci') continue;
-    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
-    if (!fokDef) continue;
-    const hasMods = fokDef.módosítók && Array.isArray(fokDef.módosítók) && fokDef.módosítók.length > 0;
-    let helyzetKötés = '';
-    if (hasMods) {
-      for (const mod of fokDef.módosítók) {
-        if (mod.feltétel && mod.feltétel !== '' && !aktívFeltételek.has(mod.feltétel)) continue;
-        if (typeof mod.cél === 'string' && mod.cél.startsWith('manőver:')) {
-          manőverBónuszok.push({ név: kf.név, manőver: mod.cél.slice(8), érték: mod.érték });
-        }
-        if (mod.mód === 'előny' || mod.mód === 'hátrány') {
-          előnyHátrányMods.push({ név: kf.név, cél: mod.cél, mód: mod.mód, érték: mod.érték });
-        }
-        if (mod.feltétel && mod.feltétel.startsWith('harci_helyzet:')) {
-          helyzetKötés = mod.feltétel.slice(14);
-        }
-      }
-    }
-    if (helyzetKötés && def.emlékeztető && fokDef.hatás?.length) {
-      const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${helyzetKötés}`)?.név || helyzetKötés;
-      const arr = helyzetFortélyok.get(hNév) || [];
-      arr.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' '), aktív: aktívFeltételek.has(`harci_helyzet:${helyzetKötés}`) });
-      helyzetFortélyok.set(hNév, arr);
-    } else if (def.emlékeztető && fokDef.hatás && fokDef.hatás.length > 0) {
-      fortélyEmlékeztetők.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' ') });
-    }
-  }
-
-  // Alapesetek (0.fok) kiértékelés
-  const alapesetek = evaluateAlapesetek(data.fortelySummaries as any, karakter, session);
-
-  // Alapesetek helyzet-kötött: ha a módosítónak harci_helyzet feltétele van → helyzet alá
-  const alapesetekFiltered = alapesetek.filter(ae => {
-    const hFelt = ae.módosítók.find(m => m.feltétel?.startsWith('harci_helyzet:'));
-    if (hFelt) {
-      const hId = hFelt.feltétel.slice(14);
-      const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${hId}`)?.név || hId;
-      const arr = helyzetFortélyok.get(hNév) || [];
-      arr.push({ név: `⚠ ${ae.fortély_név}`, fok: 0, hatás: ae.hatástext.join(' '), aktív: session.aktív_helyzetek.includes(hNév) });
-      helyzetFortélyok.set(hNév, arr);
-      return false;
-    }
-    return true;
-  });
-
+  const { státuszPerElem, taktikaHatásPerElem, hasHatásPool, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév } = calcHatásPool(data, karakter, session);
   return (
     <div className="screen aktiv-screen">
       <h2>❎ Aktív</h2>

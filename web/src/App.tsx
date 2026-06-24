@@ -18,18 +18,9 @@ import { DEFAULT_SESSION } from './engine/types';
 import { describeKepChange } from './engine/undo-helpers';
 import { validateKarakter, validateKarakterData } from './engine/validate';
 import './App.css';
+import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, downloadFile, shareFile, loadKarakterFromFile } from './engine/file-ops';
 
 interface UndoEntry { timestamp: number; leírás: string; session: Session; karakter: Karakter; }
-
-function generateUid(): string {
-  if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
-  return Date.now().toString(36) + Math.random().toString(36).slice(2);
-}
-
-function generateIdLeíró(név: string, tsz: number): string {
-  const slug = (név || 'új-karakter').toLowerCase().replace(/\s+/g, '-');
-  return `${slug}-${tsz}tsz`;
-}
 
 const ALL_TABS = [
   { id: 'aktiv', label: '❎', editOnly: false },
@@ -291,14 +282,7 @@ function App() {
   // --- Save / Load ---
   function duplicateKarakter() {
     if (!karakter) return;
-    const bumpSuffix = (s: string) => {
-      const m = s.match(/^(.+) v(\d+)$/);
-      return m ? `${m[1]} v${parseInt(m[2]) + 1}` : `${s} v2`;
-    };
-    const newUid = generateUid();
-    const newNév = bumpSuffix(karakter.név || 'Névtelen');
-    const newLeíró = generateIdLeíró(newNév, karakter.tsz);
-    const dup = { ...structuredClone(karakter), uid: newUid, név: newNév, id_leíró: newLeíró };
+    const dup = dupKarakter(karakter);
     setKarakter(dup);
     setUndoStack([]);
     setTestMode(false);
@@ -306,86 +290,20 @@ function App() {
     setTimeout(() => setShowSlotList(true), 100);
   }
 
-  function generateSaveFile(mode: 'single' | 'backup') {
+  function handleGenerateSave(mode: 'single' | 'backup') {
     if (!karakter) return;
-    const now = new Date();
-    const dátum = `${now.getFullYear()}-${String(now.getMonth()+1).padStart(2,'0')}-${String(now.getDate()).padStart(2,'0')} ${String(now.getHours()).padStart(2,'0')}:${String(now.getMinutes()).padStart(2,'0')}`;
-
-    let json: string;
-    let filename: string;
-
-    if (mode === 'single') {
-      const saved = { ...karakter, mentés_dátum: dátum, _undo: undoStack } as any;
-      json = JSON.stringify(saved, null, 2);
-      const firstName = (karakter.név || 'karakter').split(' ')[0].slice(0, 20);
-      const charAscii = firstName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z]/g, '').toLowerCase();
-      const playerFirst = karakter.játékos ? karakter.játékos.split(' ')[0].slice(0, 20) : '';
-      const playerAscii = playerFirst.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z]/g, '').toLowerCase();
-      const namePart = playerAscii ? `${charAscii || 'karakter'}_${playerAscii}` : (charAscii || 'karakter');
-      filename = `${namePart}_${karakter.tsz}tsz.json`;
-    } else {
-      // Backup: összes slot
-      let slots: { uid: string }[] = [];
-      try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
-      const karakterek = slots.map(s => {
-        try { return JSON.parse(localStorage.getItem(`szilank_char_${s.uid}`) || 'null'); } catch { return null; }
-      }).filter(Boolean);
-      const backup = { szilánk_backup: true, verzió: 1, dátum: now.toISOString(), karakterek };
-      json = JSON.stringify(backup, null, 2);
-      filename = `szilank_backup_${now.toISOString().slice(0, 10)}.json`;
-    }
-
-    const blob = new Blob([json], { type: 'application/json' });
-    setSaveFile({ blob, filename });
+    setSaveFile(generateSaveFile(karakter, undoStack, mode));
     setShowSavePopup(false);
   }
 
-  function downloadFile(blob: Blob, filename: string) {
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = filename;
-    a.click();
-    URL.revokeObjectURL(url);
-  }
-
-  async function shareFile(blob: Blob, filename: string) {
-    const file = new File([blob], filename, { type: 'application/json' });
-    try {
-      await navigator.share({ files: [file] });
-    } catch { /* user cancelled or not supported */ }
-  }
-
-  function loadKarakter() {
-    const input = document.createElement('input');
-    input.type = 'file';
-    input.accept = '.json';
-    input.onchange = () => {
-      const file = input.files?.[0];
-      if (!file) return;
-      const reader = new FileReader();
-      reader.onload = () => {
-        try {
-          const obj = JSON.parse(reader.result as string);
-          if (!validateKarakter(obj)) {
-            setLoadError('Érvénytelen karakter json állomány.');
-            return;
-          }
-          const refErr = validateKarakterData(obj, data!);
-          if (refErr) {
-            setLoadError(`Referencia hiba: ${refErr}`);
-            return;
-          }
-          setKarakter({ ...obj, uid: obj.uid || ((obj as any).id) || generateUid(), id_leíró: obj.id_leíró || generateIdLeíró(obj.név, obj.tsz), session: { ...DEFAULT_SESSION, ...obj.session } });
-          setUndoStack((obj as any)._undo || []);
-          setTestMode(false); setIsDirty(true);
-        } catch {
-          setLoadError('Nem sikerült betölteni a fájlt (hibás JSON).');
-        }
-      };
-      reader.readAsText(file);
-    };
-    input.click();
+  async function loadKarakter() {
+    if (!data) return;
+    const result = await loadKarakterFromFile(data);
+    if ('error' in result) { setLoadError(result.error); return; }
+    setKarakter(result.karakter);
+    setUndoStack(result.undo);
+    setTestMode(false);
+    setIsDirty(true);
   }
 
   useEffect(() => {
@@ -674,8 +592,8 @@ function App() {
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSavePopup(false); }}>
           <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '10px', minWidth: '260px' }}>
             <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Mentés</label>
-            <button className="menu-item" onClick={() => generateSaveFile('single')}>📄 Aktuális karakter</button>
-            <button className="menu-item" onClick={() => generateSaveFile('backup')}>📦 Összes karakter (backup)</button>
+            <button className="menu-item" onClick={() => handleGenerateSave('single')}>📄 Aktuális karakter</button>
+            <button className="menu-item" onClick={() => handleGenerateSave('backup')}>📦 Összes karakter (backup)</button>
           </div>
         </div>,
         document.body
