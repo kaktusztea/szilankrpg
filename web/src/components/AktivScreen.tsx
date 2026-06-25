@@ -46,7 +46,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
     // Ha bármelyik aktív helyzet tiltja az összes taktikát
     for (const h of session.aktív_helyzetek) {
       const hDef = data.harciHelyzetek.find(d => d.név === h);
-      if ((hDef as any)?.tiltja_taktikákat) return false;
+      if (hDef?.tiltja_taktikákat) return false;
     }
 
     const def = data.taktikak.find(t => t.név === név);
@@ -57,6 +57,13 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       for (const mk of def.megkötések) {
         if (mk.típus === 'harci_helyzet' && mk.mód === 'tiltott') {
           if (session.aktív_helyzetek.includes(mk.érték as string)) return false;
+        }
+        if (mk.típus === 'harci_helyzet' && mk.mód === 'szükséges') {
+          const szükséges = Array.isArray(mk.érték) ? mk.érték : [mk.érték];
+          if (!session.aktív_helyzetek.some(h => {
+            const hDef = data.harciHelyzetek.find(d => d.név === h);
+            return hDef && szükséges.includes(hDef.id);
+          })) return false;
         }
         if (mk.típus === 'harcmodor' && mk.mód === 'tiltott') {
           const aktívFegyverIdx = session.aktív_fegyver_index;
@@ -372,11 +379,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       {/* Harci helyzetek */}
       <div className="aktiv-section" style={{ borderBottom: 'none', fontSize: '13px' }}>
         <span className="aktiv-label">Harci helyzetek <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.harciHelyzetek.every(h => {
-          if ((h as any).rejtett) return true;
+          if (h.rejtett) return true;
           if (session.aktív_helyzetek.includes(h.név)) return true;
           for (const ah of session.aktív_helyzetek) {
             const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-            if ((ahDef as any)?.kizár_helyzetek?.includes((h as any).id)) return true;
+            if (ahDef?.kizár_helyzetek?.includes(h.id)) return true;
           }
           return false;
         })} onClick={() => setShowHelyzetPicker(true)}>+</button></span>
@@ -440,13 +447,21 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   setSession(s => {
                     let helyzetek = [...s.aktív_helyzetek, h.név];
                     let taktikák = s.aktív_taktikák;
-                    const kizár = (hDef as any)?.kizár_helyzetek ?? [];
+                    const kizár = hDef?.kizár_helyzetek ?? [];
                     if (kizár.length) {
-                      const kizártNevek = kizár.map((kid: string) => data.harciHelyzetek.find(d => (d as any).id === kid)?.név).filter(Boolean);
+                      const kizártNevek = kizár.map((kid: string) => data.harciHelyzetek.find(d => d.id === kid)?.név).filter(Boolean);
                       helyzetek = helyzetek.filter(hh => !kizártNevek.includes(hh));
                     }
-                    if ((hDef as any)?.tiltja_taktikákat) taktikák = [];
-                    return { ...s, aktív_helyzetek: helyzetek, aktív_taktikák: taktikák };
+                    if (hDef?.tiltja_taktikákat) taktikák = [];
+                    // Lovas/Léglovas harc: hárító és kétkezes fogás tiltott → reset egyfegyveresre
+                    const patch: Partial<typeof s> = {};
+                    if (hDef && (hDef.id === 'lovas_harc' || hDef.id === 'léglovas_harc') && (s.fegyverfogás === 'fegyver_hárító' || s.fegyverfogás === 'kétkezes')) {
+                      patch.fegyverfogás = 'egyfegyveres';
+                      patch.kétkezes_harc = false;
+                      patch.aktív_pajzs = false;
+                      patch.aktív_fegyver_bal_index = -1;
+                    }
+                    return { ...s, ...patch, aktív_helyzetek: helyzetek, aktív_taktikák: taktikák };
                   });
                   setShowHelyzetPicker(false);
                 }}>
@@ -497,12 +512,12 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
               <label>Manőver választó</label>
             </div>
             <div className="aktiv-picker-list">
-              {['általános', 'belharcos'].map(tipus => {
+              {['általános', 'belharcos', 'lovas'].map(tipus => {
                 const items = data.manoverek.filter(m => m.típus === tipus);
                 if (items.length === 0) return null;
                 return (
                   <div key={tipus}>
-                    <div className="aktiv-picker-category">{tipus === 'általános' ? 'Általános' : 'Belharci'}</div>
+                    <div className="aktiv-picker-category">{tipus === 'általános' ? 'Általános' : tipus === 'belharcos' ? 'Belharci' : 'Lovas'}</div>
                     {items.map(m => (
                       <div key={m.név} className={`aktiv-picker-item ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
                         <span className="aktiv-picker-item-name">{m.név}</span>
@@ -714,6 +729,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   if (nemHáritóFegyverek.length === 0) disabled = true;
                 }
                 if (kétkezes_fegyver && opt.id !== 'egyfegyveres') disabled = true;
+                // Lovas/Léglovas harc: hárítófegyver és kétkezes harc tiltott
+                const lovasAktív = session.aktív_helyzetek.some(h => { const hd = data.harciHelyzetek.find(d => d.név === h); return hd && (hd.id === 'lovas_harc' || hd.id === 'léglovas_harc'); });
+                if (lovasAktív && (opt.id === 'fegyver_hárító' || opt.id === 'kétkezes')) disabled = true;
                 const active = session.fegyverfogás === opt.id;
                 return (
                   <div key={opt.id} className={`aktiv-picker-item ${disabled ? 'disabled' : ''} ${active ? 'active' : ''}`}

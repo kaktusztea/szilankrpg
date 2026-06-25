@@ -12,7 +12,7 @@ harci_helyzetek:
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "célzás", "takarásban"]
   fegyver_override:
     feltétel:
       - { forrás: "aktív_fegyver_pengehossz", operátor: ">", érték: 0 }
@@ -83,7 +83,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "helyhez_kötve", "célzás"]
 - név: "Hajítás alkalmatlan fegyverrel"
   infó: "Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli."
   hatások:
@@ -139,7 +139,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "levegőből"]
 - név: "Képzetlen fegyverhasználat"
   infó: "Harcmodor 3.szint alatti: lásd Harcmodor képzettség büntetések."
   hatások: []
@@ -201,7 +201,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["lovas_harc", "harci_szekér", "magasabbról", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "célzás"]
 - név: "Lények méret különbsége"
   infó: "Méretkülönbség [0-6] fokozat: +1 VÉ csökkentés / különbség."
   hatások: []
@@ -220,7 +220,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "földön_fekve", "levegőből"]
 - név: "Meglepetés"
   infó: "Előny+1 TÉ; VÉ csökkentés: +2"
   hatások:
@@ -391,7 +391,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["magasabbról", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "levegőből", "célzás"]
 - név: "Léglovas harc"
   infó: "Repülő hátas hátáról harcolás. Léglovas harc fortély bónuszok aktívak."
   hatások: []
@@ -399,7 +399,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["magasabbról", "lovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "csúszós_talaj", "célzás"]
 - név: "Harci szekér"
   infó: "Szekérről harcolás. Harci kocsihajtas fortély bónuszok aktívak."
   hatások: []
@@ -407,7 +407,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "magasabbról", "levegőből", "célzás"]
 - név: "Páros harc"
   infó: "Koordinált 2 fős harc. Páros harc fortély bónuszok aktívak."
   hatások: []
@@ -439,4 +439,4 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "levegőből"]

@@ -7,7 +7,15 @@
     "csoport": "semleges",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "lovas_harc",
+      "léglovas_harc",
+      "harci_szekér",
+      "magasabbról",
+      "levegőből",
+      "célzás",
+      "takarásban"
+    ],
     "fegyver_override": {
       "feltétel": [
         {
@@ -129,7 +137,15 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "lovas_harc",
+      "léglovas_harc",
+      "harci_szekér",
+      "magasabbról",
+      "levegőből",
+      "helyhez_kötve",
+      "célzás"
+    ],
     "feltétel_kulcs": "harci_helyzet:földön_fekve"
   },
   {
@@ -221,7 +237,14 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "lovas_harc",
+      "léglovas_harc",
+      "harci_szekér",
+      "belharci_helyzet",
+      "földön_fekve",
+      "levegőből"
+    ],
     "feltétel_kulcs": "harci_helyzet:helyhez_kötve"
   },
   {
@@ -318,7 +341,15 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "lovas_harc",
+      "harci_szekér",
+      "magasabbról",
+      "belharci_helyzet",
+      "földön_fekve",
+      "helyhez_kötve",
+      "célzás"
+    ],
     "feltétel_kulcs": "harci_helyzet:levegőből"
   },
   {
@@ -346,7 +377,12 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "lovas_harc",
+      "léglovas_harc",
+      "földön_fekve",
+      "levegőből"
+    ],
     "feltétel_kulcs": "harci_helyzet:magasabbról"
   },
   {
@@ -619,7 +655,16 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "magasabbról",
+      "léglovas_harc",
+      "harci_szekér",
+      "belharci_helyzet",
+      "földön_fekve",
+      "helyhez_kötve",
+      "levegőből",
+      "célzás"
+    ],
     "feltétel_kulcs": "harci_helyzet:lovas_harc"
   },
   {
@@ -630,7 +675,16 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "magasabbról",
+      "lovas_harc",
+      "harci_szekér",
+      "belharci_helyzet",
+      "földön_fekve",
+      "helyhez_kötve",
+      "csúszós_talaj",
+      "célzás"
+    ],
     "feltétel_kulcs": "harci_helyzet:léglovas_harc"
   },
   {
@@ -641,7 +695,16 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "lovas_harc",
+      "léglovas_harc",
+      "belharci_helyzet",
+      "földön_fekve",
+      "helyhez_kötve",
+      "magasabbról",
+      "levegőből",
+      "célzás"
+    ],
     "feltétel_kulcs": "harci_helyzet:harci_szekér"
   },
   {
@@ -685,7 +748,14 @@
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "lovas_harc",
+      "léglovas_harc",
+      "harci_szekér",
+      "belharci_helyzet",
+      "földön_fekve",
+      "levegőből"
+    ],
     "feltétel_kulcs": "harci_helyzet:célzás"
   }
 ]

@@ -91,8 +91,13 @@ export interface TaktikaEntry {
 
 export interface HarciHelyzetEntry {
   név: string;
+  id: string;
   feltétel_kulcs: string;
   infó: string;
+  csoport?: string;
+  rejtett?: boolean;
+  tiltja_taktikákat?: boolean;
+  kizár_helyzetek?: string[];
   hatások?: StatuszHatas[];
   fegyver_override?: {
     feltétel: { forrás: string; operátor: string; érték: unknown }[];

@@ -374,8 +374,7 @@
 
 | Téma                             | Leírás                                                  | Szekció     |
 | -------------------------------- | ------------------------------------------------------- | ----------- |
-| Lovas harc rendszer              | Teljes lovas harc implementáció                         | Harc fül    |
-| Magasabbról + Lovas harc kizárás | Ha lovas harc aktív, Magasabbról disabled               | Aktív fül   |
+| Lovas harc rendszer              | Teljes lovas harc implementáció (§38 engine_spec)       | Harc+Aktív  |
 | Belharc / Belharci helyzet       | Fegyver/harcmodor korlátozás jelzés, puszta kéz override  | Aktív fül   |
 | Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
 
@@ -434,7 +433,7 @@ Szabályrendszer átszervezés és webapp implementáció kész.
 - Taktika megkötések: `harci_helyzet/tiltott` (Fárasztás: Pengehátrány, Láthatatlanul×2)
 
 **TODO:**
-- [ ] Magasabbról + Lovas harc: kizáró jelzés (ha lovas harc aktív, Magasabbról disabled)
+- [ ] Magasabbról + Lovas harc: beolvadt §38 engine_spec implementációba
 
 
 ### Harc alakzatban 🚧
@@ -495,6 +494,24 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ MF + Merevvért gomb: lila keret (`.he-field-fortely`)
 - ✅ Célzás CÉ bónusz: feltételes fortély CÉ (0.fok kiérdemelt + magasabb fok override)
 - ✅ Törlés gomb: padding fix (konzisztens méret)
+
+### Lovas harc rendszer 🚧
+
+Engine spec: §38.
+
+**Data layer (TODO):**
+- [ ] `lovas_harc.yaml` + `leglovas_harc.yaml`: 0.fok (Alapeset) hozzáadása: TÉ:-9, VÉ:-9
+- [ ] `harci_helyzetek.yaml`: kölcsönös `kizár_helyzetek` (Lovas harc ↔ Magasabbról)
+- [ ] `taktikak.yaml`: "Lovas roham" (TÉ:+6, SP:+10) + "Lovas támadás galoppból" (TÉ:+3, SP:+5) — megkötés: `harci_helyzet/szükséges`
+- [ ] `taktikak.yaml`: "Roham" + "Öngyilkos roham" → megkötés: `harci_helyzet/tiltott/lovas_harc` + `léglovas_harc`
+- [ ] `manoverek.yaml`: "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás" (típus: "lovas") + meglévő "Lovas akasztása" típus fix
+
+**Engine / Webapp (TODO):**
+- [ ] AktivScreen taktika picker: `harci_helyzet/szükséges` megkötés logika (új mód)
+- [ ] AktivScreen taktika picker: Roham/Öngyilkos roham disabled ha lovas/léglovas helyzet aktív
+- [ ] AktivScreen manőver picker: "Lovas" kategória csoport
+- [ ] HarcScreen Ph oszlop: +1 penge kijelzés ha lovas helyzet + fortély ≥ 1.fok
+- [ ] Magasabbról kizárás: data-driven `kizár_helyzetek`-kel (meglévő logika)
 
 ### Harc fül
 - ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: világoskék összesítő sor (`#90caf9`, kétkezes/pajzs/hárító).
@@ -569,7 +586,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Taktika fortély_bővítés: generikus rendszer (taktikak.yaml `fortély_bővítés` mező, extra fok extrapoláció, lila ● jelölés, invalidáció fortély törlésnél)
 - ✅ Anyanyelv picker: ABC sorrend (hu locale)
 - ✅ Schema konzisztencia: `karakter.yaml` bővítve (uid, id_leíró), `szituacio.yaml` elavult schema törölve, `taktika.yaml` schema + source bővítve (fortély_bővítés)
-- Lovas harc rendszer implementálása
+- Lovas harc rendszer implementálása (§38 engine_spec, részletes terv kész)
 
 ## Fontos konvenciók
 - Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`
@@ -670,4 +687,5 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Taktika kombó: `kombó_mód: "whitelist"|"blacklist"` + `kombó_lista: string[]`
 - Taktika fortély_bővítés: `fortély_bővítés: { fortély: string, extra_fokok_per_fok: number } | null` — minden taktikában explicit (strict schema). Extra fokok: lineáris extrapoláció utolsó definiált fokból. Lila ● jelölés picker-ben. Invalidáció useEffect-tel (App.tsx).
 - Session v2: `aktív_taktikák: AktívTaktika[]`, `aktív_helyzetek: string[]` (körülmények is itt, régi `aktív_szituációk` törölve)
+- Taktika megkötés típusok: `harci_helyzet/tiltott` (adott helyzetnél NEM használható), `harci_helyzet/szükséges` (adott helyzet(ek) aktív szükséges, §38), `harcmodor/tiltott`, `támadások/min`, `per_küzdelem/max`, `többes_harc/tiltott`
 - AktivScreen.tsx: Hatás pool (Fortély bónuszok + Alapesetek) + taktikák/helyzetek/manőver/státuszok overlay picker + Fegyverfogás picker + fegyver Ügyesebb/Gyengébb kéz + páncél toggle + narratív Előny/Hátrányok

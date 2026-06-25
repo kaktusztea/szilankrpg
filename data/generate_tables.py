@@ -271,7 +271,7 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
         if not h.get('id'): errors.append(f"{ctx}: hiányzó 'id'")
         if not h.get('infó'): errors.append(f"{ctx}: hiányzó 'infó'")
     # Manőverek
-    valid_tipus = {'általános', 'belharcos'}
+    valid_tipus = {'általános', 'belharcos', 'lovas'}
     for i, m in enumerate(manoverek):
         ctx = f"manőverek[{i}] ({m.get('név', '?')})"
         if not m.get('név'): errors.append(f"{ctx}: hiányzó 'név'")

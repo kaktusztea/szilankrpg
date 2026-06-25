@@ -2542,3 +2542,238 @@ Helyettesítő képzettség szint / 3  (lefelé kerekítve)
 Max helyettesítő érték: 5
 Nem adódik hozzá — kiváltja az elsődleges képzettséget.
 ```
+
+
+---
+
+## §38 Lovas harc rendszer
+
+Forrás: md/067_00_harc_hatasrol.md, md/067_01_lovas_harc_szabalyai.md, md/067_02_lovas_leglovas_fortelyok.md, md/067_03_lovas_harci_taktikak.md, md/067_04_lovas_manoverek.md
+
+### 38.1 Alapszabályok
+
+Lovas harc aktiválás: a játékos az Aktív fülön a "Lovas harc" (id: `lovas_harc`) vagy "Léglovas harc" (id: `léglovas_harc`) harci helyzetet választja.
+
+```
+Fortély nélkül (0.fok, Alapeset):
+  TÉ: -9
+  VÉ: -9
+  Lenti bónuszok NEM járnak
+
+Fortéllyal (1-3.fok):
+  TÉ: +3 / +6 / +9 (Lovas harc fortély fokonként)
+  VÉ: +3 / +6 / +9
+  Fegyverméret: +1 penge bónusz (hátas miatti magaslat)
+  Min pengeméret: 1
+
+❌ "Magasabbról" harci helyzet NEM aktiválható lovas/léglovas harc közben
+```
+
+### 38.2 Fortélyok (meglévő data layer)
+
+| Fortély | Fok | TÉ/VÉ | Feltétel | Állapot |
+|---------|-----|--------|----------|---------|
+| Lovas harc | 0 (alapeset) | -9/-9 | `harci_helyzet:lovas_harc` | TODO: hozzáadni yaml-hoz |
+| Lovas harc | 1 | +3/+3 | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+| Lovas harc | 2 | +6/+6 | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+| Lovas harc | 3 | +9/+9 | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+| Léglovas harc | 0 (alapeset) | -9/-9 | `harci_helyzet:léglovas_harc` | TODO: hozzáadni yaml-hoz |
+| Léglovas harc | 1 | +3/+3 | `harci_helyzet:léglovas_harc` | ✅ yaml kész |
+| Léglovas harc | 2 | +6/+6 | `harci_helyzet:léglovas_harc` | ✅ yaml kész |
+| Léglovas harc | 3 | +9/+9 | `harci_helyzet:léglovas_harc` | ✅ yaml kész |
+| Harci kocsihajtás | 0 | — | `harci_helyzet:harci_szekér` | — (nincs Alapeset büntetés) |
+| Harci kocsihajtás | 1 | +8/+8 | `harci_helyzet:harci_szekér` | ✅ yaml kész |
+| Harci kocsihajtás | 2 | +12/+12 | `harci_helyzet:harci_szekér` | ✅ yaml kész |
+| Lövés hátasról | 0 (alapeset) | CÉ:-3 (léptetés) | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+| Lövés hátasról | 1 | CÉ:-3 (ügetés) | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+| Lövés hátasról | 2 | CÉ:-3 (vágta) | `harci_helyzet:lovas_harc` | ✅ yaml kész |
+
+note: A "Lövés hátasról" CÉ levonása függ a hátas tempójától (léptetés/ügetés/vágta).
+      A webapp nem modellezi a tempót automatikusan — a KM/játékos választja a megfelelő fokot.
+      A 0.fok (léptetésnél CÉ:-3) mindig aktív a `lovas_harc` helyzetnél (Alapeset mechanizmus, §16.1).
+      A fokozatok a "legrosszabb aktív tempó" CÉ-jét adják meg narratívan.
+
+### 38.3 Fegyverméret +1 penge bónusz
+
+```
+if "lovas_harc" ∈ aktív_helyzetek OR "léglovas_harc" ∈ aktív_helyzetek:
+  AND karakter fortélyok tartalmaz Lovas harc (fok ≥ 1) VAGY Léglovas harc (fok ≥ 1):
+    effektív_pengeméret = fegyver.pengeméret + 1
+    min_pengeméret = 1
+
+Hatás: a Pengeelőny/Pengehátrány meghatározásnál az effektív pengével számol.
+```
+
+Implementáció:
+- A Pengeelőny/Pengehátrány jelenleg informatív (rejtett helyzetek, nem kalkulált a webapp-ban)
+- A +1 penge bónusz a Harc fül "Ph" oszlopában jelenik meg (effektív penge kijelzés)
+- HarcScreen: ha lovas helyzet aktív ÉS van Lovas/Léglovas harc fortély (≥1.fok) → Ph kijelzés +1
+
+### 38.4 Magasabbról kizárás
+
+```
+if "lovas_harc" ∈ aktív_helyzetek OR "léglovas_harc" ∈ aktív_helyzetek:
+  "Magasabbról" helyzet: disabled a picker-ben + nem hozzáadható
+
+if "magasabbról" ∈ aktív_helyzetek AND hozzáadás(lovas_harc/léglovas_harc):
+  "Magasabbról" automatikusan eltávolítódik
+```
+
+Implementáció: `harci_helyzetek.yaml` bővítés:
+- "Lovas harc" → `kizár_helyzetek: ["magasabbról"]`
+- "Léglovas harc" → `kizár_helyzetek: ["magasabbról"]`
+- "Magasabbról" → `kizár_helyzetek: ["lovas_harc", "léglovas_harc"]` (kétirányú)
+
+note: A meglévő `kizár_helyzetek` logika (kölcsönös kizárás) már implementálva van az AktivScreen-ben.
+      A hozzáadásakor a kizárt helyzetek automatikusan eltávolítódnak.
+
+### 38.5 Lovas taktikák
+
+Két új taktika a `taktikak.yaml`-ba:
+
+```yaml
+- név: "Lovas roham"
+  fokozatos: false
+  módosítók:
+    TÉ: 6
+    SP: 10
+  megjegyzés: "1 oda-vissza csapás. VÉ büntetés NINCS. Lovaglás próba: 12."
+  megkötések:
+  - típus: "harci_helyzet"
+    mód: "szükséges"
+    érték: ["lovas_harc", "léglovas_harc"]
+  kombó_mód: "whitelist"
+  kombó_lista: []
+  fortély_bővítés: null
+  id: "lovas_roham"
+
+- név: "Lovas támadás galoppból"
+  fokozatos: false
+  módosítók:
+    TÉ: 3
+    SP: 5
+  megjegyzés: "1 oda-vissza csapás. VÉ büntetés NINCS. Lovaglás próba: 9."
+  megkötések:
+  - típus: "harci_helyzet"
+    mód: "szükséges"
+    érték: ["lovas_harc", "léglovas_harc"]
+  kombó_mód: "whitelist"
+  kombó_lista: []
+  fortély_bővítés: null
+  id: "lovas_támadás_galoppból"
+```
+
+Fontos: A "Lovas roham" kiváltja a gyalogos "Roham"-ot és "Öngyilkos roham"-ot.
+Megkötés: `harci_helyzet/szükséges` — **új megkötés típus** (eddig csak `tiltott` létezik).
+Ha a szükséges harci helyzet NEM aktív → a taktika disabled a picker-ben.
+
+A megkötés új `mód: "szükséges"` logika:
+```typescript
+if (megkötés.típus === "harci_helyzet" && megkötés.mód === "szükséges") {
+  const szükséges: string[] = Array.isArray(megkötés.érték) ? megkötés.érték : [megkötés.érték];
+  const aktív = session.aktív_helyzetek.some(h => szükséges.includes(h));
+  if (!aktív) return disabled;
+}
+```
+
+A gyalogos "Roham" / "Öngyilkos roham" vs Lovas taktikák viszonya:
+- Ha lovas_harc aktív: "Roham" és "Öngyilkos roham" disabled (tiltás irány: lovas helyzetnél)
+- Implementáció: "Roham" + "Öngyilkos roham" → megkötés hozzáadása: `harci_helyzet/tiltott/"lovas_harc"` és `"léglovas_harc"`
+
+### 38.6 Lovas manőverek (data layer)
+
+Három meglévő manőver bővítés + 1 placeholder kiegészítés a `manoverek.yaml`-ban:
+
+```yaml
+- név: "Hátas táncoltatása"
+  típus: "lovas"
+  nehézség: 0
+  fázisok: "M"
+  hatás: "Soron kívüli Megakasztás minden harcérintkezésben lévő ellenfél ellen. Távharc VÉ: Kiszámíthatatlan (6x)."
+  id: "hátas_táncoltatása"
+
+- név: "Lovas áttörés"
+  típus: "lovas"
+  nehézség: "4-10"
+  fázisok: "V,E"
+  hatás: "Áttörés ellenfél sorain. Sikernél ellenfelek szétszóródnak, hátrány a következő körben."
+  id: "lovas_áttörés"
+
+- név: "Lovas akasztása"
+  típus: "lovas"
+  nehézség: 4
+  fázisok: "M,E"
+  hatás: "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Pengeelőny szükséges. Sebző dobás a lovasra."
+  id: "lovas_akasztása"
+
+- név: "Lóhátról lerántás"
+  típus: "lovas"
+  nehézség: "6-12"
+  fázisok: "M,V,E"
+  hatás: "GYALOGOS végzi. Sikernél a lovas földre kerül."
+  id: "lóhátról_lerántás"
+```
+
+A meglévő `"Lovas akasztása"` (típus: "általános") → típus módosítás "lovas"-ra + hatás szöveg frissítés.
+
+Az Aktív fül manőver picker-ben: új "Lovas" kategória csoport megjelenik (mint "Általános"/"Belharcos" mellett).
+
+### 38.7 Leesés szituáció (informatív, nem kalkulált)
+
+A leesés mechanika (sebesüléskor Lovaglás próba, Akrobatika próba) a KM kezeli narratívan.
+A webapp nem kalkulálja automatikusan — informatív szövegként a "Lovas harc" helyzet infó mezőjében hivatkozik rá.
+
+```
+Sebesüléskor leesés veszélye:
+  6-10 ÉP seb → Lovaglás próba: 9
+  11-15 ÉP seb → Lovaglás próba: 12
+  15+ ÉP seb → Lovaglás próba: 15
+
+Leesés → Akrobatika próba:
+  Áll/Lassú: Nehézség 9, SP: k20+0
+  Üget: Nehézség 15, SP: k20+5
+  Vágta: Nehézség 18, SP: k20+15
+```
+
+### 38.8 Idomítatlan hátas (informatív)
+
+```
+TÉ: nem támadhatsz
+VÉ: -10
+Lovaglás/Léglovaglás képzettségpróba körönként (Nehézség: 12-15)
+```
+
+A webapp nem modellezi külön — informatív szöveg, KM kezeli.
+
+### 38.9 Implementációs lépések
+
+#### I. Data layer módosítások
+
+1. `lovas_harc.yaml`: 0.fok hozzáadása (TÉ:-9, VÉ:-9, feltétel: `harci_helyzet:lovas_harc`)
+2. `leglovas_harc.yaml`: 0.fok hozzáadása (TÉ:-9, VÉ:-9, feltétel: `harci_helyzet:léglovas_harc`)
+3. `harci_helyzetek.yaml`:
+   - "Lovas harc" → `kizár_helyzetek: ["magasabbról"]`
+   - "Léglovas harc" → `kizár_helyzetek: ["magasabbról"]`
+   - "Magasabbról" → `kizár_helyzetek: ["lovas_harc", "léglovas_harc"]`
+4. `taktikak.yaml`: "Lovas roham" + "Lovas támadás galoppból" hozzáadás
+   - "Roham" + "Öngyilkos roham" → megkötés bővítés: `harci_helyzet/tiltott` + lovas helyzet
+5. `manoverek.yaml`:
+   - Meglévő "Lovas akasztása" típus: "általános" → "lovas", hatás szöveg frissítés
+   - Új: "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás" (típus: "lovas")
+
+#### II. Engine / Webapp módosítások
+
+6. AktivScreen — Taktika picker: `harci_helyzet/szükséges` megkötés logika (§38.5)
+   - Ha aktív helyzetek nem tartalmazzák a szükséges értéket → taktika disabled
+7. AktivScreen — Taktika picker: Roham/Öngyilkos roham disabled ha lovas helyzet aktív (§38.5)
+8. AktivScreen — Manőver picker: "Lovas" kategória csoport megjelenítés (§38.6)
+9. HarcScreen — Ph oszlop: +1 penge kijelzés ha lovas helyzet aktív ÉS fortély ≥ 1.fok (§38.3)
+10. Magasabbról kizárás: `kizár_helyzetek` data-driven (§38.4) — automatikus a meglévő logikával
+
+#### III. Tesztelés
+
+11. Teszt karakter bővítés: Lovas harc fortély + Lovaglás képzettség felvétele opcionális (nem blokkoló)
+12. Feature teszt: lovas helyzet aktiválás → fortély TÉ/VÉ módosítók → Harc fül kalkuláció helyes
+13. Feature teszt: Magasabbról kizárás működik (mindkét irányban)
+14. Feature teszt: Lovas taktikák csak lovas helyzetnél elérhetőek
+15. Feature teszt: 0.fok büntetés (-9/-9) érvényesül ha nincs fortély

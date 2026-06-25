@@ -140,14 +140,15 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 | Hatás pool box | info szekció | Fortély bónuszok + Alapesetek (accordion) |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
-| Manőver | aktiv-label fejléc + field-btn + overlay picker | Általános/Belharci kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
+| Manőver | aktiv-label fejléc + field-btn + overlay picker | Általános/Belharci/Lovas kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
 | Harci helyzetek | overlay picker + chip | 3 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. "Sérült" auto-kezelt: szürkítve a pickerben ("Sérült (auto)" label), chip locked (nincs ✕, fok nem kattintható). |
 | Narratív Előny/Hátrányok | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
 
 ### Taktika kombó szabályok
 - Picker csak a kompatibilis taktikákat kínálja (whitelist/blacklist + megkötések szűrés)
-- Megkötések: `harci_helyzet/tiltott`, `harcmodor/tiltott`, `támadások/min`
+- Megkötések: `harci_helyzet/tiltott`, `harci_helyzet/szükséges` (§38), `harcmodor/tiltott`, `támadások/min`
+- `harci_helyzet/szükséges`: taktika disabled ha a szükséges helyzet(ek) egyike sincs aktív (pl. Lovas roham → lovas_harc/léglovas_harc kell)
 - Fokozatos taktikáknál két lépéses picker (taktika → fok)
 - Chip kattintás fokozatos taktikánál: fokválasztó picker újra felugrik
 

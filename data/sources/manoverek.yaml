@@ -88,10 +88,10 @@ manőverek:
   hatás: "Ájulás ha sebzés ≥ ÉP/4↓. Egyébként Bódultság státusz. Sebzés FP-ként jelenik meg."
   id: "leütés_hátulról"
 - név: "Lovas akasztása"
-  típus: "általános"
-  nehézség: 0
-  fázisok: "—"
-  hatás: "Lásd lovas manőverek (067_04)."
+  típus: "lovas"
+  nehézség: 4
+  fázisok: "M,E"
+  hatás: "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Pengeelőny szükséges. Sebző dobás a lovasra, aki elveszíti támadását."
   id: "lovas_akasztása"
 - név: "Mesterjel"
   típus: "általános"
@@ -207,3 +207,21 @@ manőverek:
   fázisok: "V,E"
   hatás: "Azonnali halál (elfszabású anatómia). Megelőző Feszítés szükséges."
   id: "nyaktörés"
+- név: "Hátas táncoltatása"
+  típus: "lovas"
+  nehézség: 0
+  fázisok: "M"
+  hatás: "Lovas végzi. Soron kívüli Megakasztás minden harcérintkezésben lévő ellenfél ellen. Távharc VÉ: Kiszámíthatatlan (6x). Követelmény: Lovas harc 2.fok."
+  id: "hátas_táncoltatása"
+- név: "Lovas áttörés"
+  típus: "lovas"
+  nehézség: 0
+  fázisok: "V,E"
+  hatás: "Áttörés ellenfél sorain galopp/roham tempóval. Sikernél ellenfelek szétszóródnak, hátrány a következő körben. Nehézség: 4-10 (ellenfelek száma és fegyverzete függvénye)."
+  id: "lovas_áttörés"
+- név: "Lóhátról lerántás"
+  típus: "lovas"
+  nehézség: 0
+  fázisok: "M,V,E"
+  hatás: "GYALOGOS végzi lovas ellen. Közvetlen harcérintkezés szükséges. Sikernél a lovas földre kerül. Nehézség: 6-12 (hátas mozgása, lovas figyelme függvénye)."
+  id: "lóhátról_lerántás"

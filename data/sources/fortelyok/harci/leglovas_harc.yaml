@@ -24,6 +24,24 @@ kp_perfok: 6
 ingyenes_perszint: 0
 
 fokok:
+  - fok: 0
+    követelménytext: []
+    követelmények: ""
+    hatástext:
+      - text: "Léglovas harc fortély nélkül: TÉ:-9, VÉ:-9. Lenti bónuszok NEM járnak."
+    módosítók:
+      - cél: "TÉ"
+        érték: -9
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "harci_helyzet:léglovas_harc"
+      - cél: "VÉ"
+        érték: -9
+        mód: "flat"
+        forrás: ""
+        arány: 0
+        feltétel: "harci_helyzet:léglovas_harc"
   - fok: 1
     követelménytext:
       - text: "Léglovaglás - 3.szint"

@@ -359,5 +359,53 @@
     "megkötések": [],
     "id": "tettetés",
     "feltétel_kulcs": "taktika:tettetés"
+  },
+  {
+    "név": "Lovas roham",
+    "fokozatos": false,
+    "módosítók": {
+      "TÉ": 6,
+      "SP": 10
+    },
+    "megjegyzés": "1 oda-vissza csapás. VÉ büntetés NINCS. Lovaglás próba: 12.",
+    "megkötések": [
+      {
+        "típus": "harci_helyzet",
+        "mód": "szükséges",
+        "érték": [
+          "lovas_harc",
+          "léglovas_harc"
+        ]
+      }
+    ],
+    "kombó_mód": "whitelist",
+    "kombó_lista": [],
+    "fortély_bővítés": null,
+    "id": "lovas_roham",
+    "feltétel_kulcs": "taktika:lovas_roham"
+  },
+  {
+    "név": "Lovas támadás galoppból",
+    "fokozatos": false,
+    "módosítók": {
+      "TÉ": 3,
+      "SP": 5
+    },
+    "megjegyzés": "1 oda-vissza csapás. VÉ büntetés NINCS. Lovaglás próba: 9.",
+    "megkötések": [
+      {
+        "típus": "harci_helyzet",
+        "mód": "szükséges",
+        "érték": [
+          "lovas_harc",
+          "léglovas_harc"
+        ]
+      }
+    ],
+    "kombó_mód": "whitelist",
+    "kombó_lista": [],
+    "fortély_bővítés": null,
+    "id": "lovas_támadás_galoppból",
+    "feltétel_kulcs": "taktika:lovas_támadás_galoppból"
   }
 ]

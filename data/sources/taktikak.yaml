@@ -96,6 +96,12 @@ taktikák:
   - típus: "per_küzdelem"
     mód: "max"
     érték: 1
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Lovas harc"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Léglovas harc"
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null
@@ -121,6 +127,12 @@ taktikák:
   - típus: "harcmodor"
     mód: "tiltott"
     érték: "Ostorharc"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Lovas harc"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Léglovas harc"
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null
@@ -243,3 +255,31 @@ taktikák:
   fortély_bővítés: null
   megkötések: []
   id: "tettetés"
+- név: "Lovas roham"
+  fokozatos: false
+  módosítók:
+    TÉ: 6
+    SP: 10
+  megjegyzés: "1 oda-vissza csapás. VÉ büntetés NINCS. Lovaglás próba: 12."
+  megkötések:
+  - típus: "harci_helyzet"
+    mód: "szükséges"
+    érték: ["lovas_harc", "léglovas_harc"]
+  kombó_mód: "whitelist"
+  kombó_lista: []
+  fortély_bővítés: null
+  id: "lovas_roham"
+- név: "Lovas támadás galoppból"
+  fokozatos: false
+  módosítók:
+    TÉ: 3
+    SP: 5
+  megjegyzés: "1 oda-vissza csapás. VÉ büntetés NINCS. Lovaglás próba: 9."
+  megkötések:
+  - típus: "harci_helyzet"
+    mód: "szükséges"
+    érték: ["lovas_harc", "léglovas_harc"]
+  kombó_mód: "whitelist"
+  kombó_lista: []
+  fortély_bővítés: null
+  id: "lovas_támadás_galoppból"

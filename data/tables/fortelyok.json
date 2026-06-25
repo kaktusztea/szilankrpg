@@ -4387,6 +4387,32 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
+        "fok": 0,
+        "hatás": [
+          "Léglovas harc fortély nélkül: TÉ:-9, VÉ:-9. Lenti bónuszok NEM járnak."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": -9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": -9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          }
+        ]
+      },
+      {
         "fok": 1,
         "hatás": [
           "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
@@ -4509,6 +4535,32 @@
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Lovas harc fortély nélkül: TÉ:-9, VÉ:-9. Lenti bónuszok NEM járnak."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": [
+          {
+            "cél": "TÉ",
+            "érték": -9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "VÉ",
+            "érték": -9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          }
+        ]
+      },
       {
         "fok": 1,
         "hatás": [
