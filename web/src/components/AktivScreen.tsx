@@ -29,11 +29,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
 
   useEffect(() => {
-    if (!showManőverPicker && !showTaktikaPicker && !showHelyzetPicker && !showStátuszPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowManőverPicker(false); setShowTaktikaPicker(false); setTaktikaFokválasztó(null); setShowHelyzetPicker(false); setShowStátuszPicker(false); setStátuszFokválasztó(null); setÉrzékválasztó(null); } }
+    if (!showManőverPicker && !showTaktikaPicker && !showHelyzetPicker && !showStátuszPicker && !showFegyverfogás && !narrativPopup) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowManőverPicker(false); setShowTaktikaPicker(false); setTaktikaFokválasztó(null); setShowHelyzetPicker(false); setShowStátuszPicker(false); setStátuszFokválasztó(null); setÉrzékválasztó(null); setShowFegyverfogás(false); setNarrativPopup(false); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker, showStátuszPicker]);
+  }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker, showStátuszPicker, showFegyverfogás, narrativPopup]);
 
   // Fegyver nevek
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
@@ -636,7 +636,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
       {/* Narratív módosítók */}
       <div className="aktiv-section" style={{ fontSize: '13px' }}>
-        <span className="aktiv-label">Narratív módosítók <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} onClick={() => { setNarrativÉrték(undefined); setNarrativPopup(true); }}>+</button></span>
+        <span className="aktiv-label">Narratív Előny/Hátrányok <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} onClick={() => { setNarrativÉrték(undefined); setNarrativPopup(true); }}>+</button></span>
         {session.narratív_módosítók.map((nm, i) => (
           <div key={i} className="kep-row">
             <span style={{ flex: 1 }}>
@@ -650,7 +650,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       {narrativPopup && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if (e.target === e.currentTarget) setNarrativPopup(false); }}>
           <div className="kep-prompt" style={{ gap: '12px', minWidth: '260px' }}>
-            <label style={{ fontWeight: 'bold' }}>Narratív módosító</label>
+            <label style={{ fontWeight: 'bold' }}>Narratív Előny/Hátrány</label>
             <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
               {[{ v: -2, l: 'Hátrány-2' }, { v: -1, l: 'Hátrány-1' }, { v: 1, l: 'Előny+1' }, { v: 2, l: 'Előny+2' }].map(b => {
                 const sel = narrativÉrték === b.v;

@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session } from '../engine/types';
@@ -204,6 +204,14 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const [ideaPopup, setIdeaPopup] = useState(false);
   // Távolság popup
   const [távolságPopup, setTávolságPopup] = useState(false);
+
+  // Escape bezárás
+  useEffect(() => {
+    if (mfTarget === null && deleteTarget === null && !ideaPopup && !távolságPopup) return;
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setMfTarget(null); setDeleteTarget(null); setIdeaPopup(false); setTávolságPopup(false); } }
+    document.addEventListener('keydown', onKey);
+    return () => document.removeEventListener('keydown', onKey);
+  }, [mfTarget, deleteTarget, ideaPopup, távolságPopup]);
 
   return (
     <div className="screen tavharc-screen">
