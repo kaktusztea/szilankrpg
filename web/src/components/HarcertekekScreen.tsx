@@ -30,7 +30,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
 
 
   // Harcmodor szintek (read-only, Tul/Képz fülről jönnek)
-  const harcmodorok = Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[];
+  const harcmodorok = [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])];
   const harcmodorSzintek = harcmodorok.map(n => ({ név: n, szint: k.képzettségek.find(kp => kp.név === n)?.szint ?? 0 }));
 
   const közelharciHmSet = new Set(harcmodorok);

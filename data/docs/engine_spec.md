@@ -413,6 +413,23 @@ note: Fegyver+pajzs mód automatikusan aktív_pajzs = true.
       Pajzshasználat fok 3: VÉ+2 extra + teljes büntetés mérsékelve (TÉ: 0 minden pajzshoz).
 ```
 
+### 13.1 Pajzs fegyverként (csak pajzs harc)
+
+Ha a karakter kizárólag a pajzzsal harcol (fegyver nélkül):
+- Aktív fül: Ügyesebb kéz = pajzs (idx: -2), Fegyverfogás: Egyfegyveres
+- Fegyvertáblában a pajzs fegyver harcértékei jelennek meg (`fegyverek.json`, kategória: "pajzs")
+- Harcmodor: Közelharc (`konstansok.fegyver_kategória_harcmodor.pajzs: "Közelharc"`)
+
+Bónuszok: a Pajzshasználat fortély `fegyver_kategória:pajzs` feltételes módosítói (§16):
+- 1.fok: TÉ:+1, VÉ:+1, SP:+1
+- 2.fok: TÉ:+2, VÉ:+2, SP:+2
+- 3.fok: TÉ:+3, VÉ:+3, SP:+3
+
+Data layer: `pajzshasznalat.yaml` módosítók (feltétel: `"fegyver_kategória:pajzs"`, mód: flat).
+HarcScreen: `aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`)` → fortély módosítók automatikusan aktiválódnak.
+Pajzs adatok: `process_fegyverek.py` hozzáfűzi a `pajzsok.json` tartalmát `fegyverek.json`-hoz (kategória: "pajzs").
+Harcértékek fül: "pajzs" kategória kiszűrve a fegyver felvétel dropdown-ból.
+
 ---
 
 ## 14. Manőver Alap / Manőver Pont

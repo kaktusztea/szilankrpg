@@ -99,7 +99,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const véLimit = konstansok.taktika_vé_eltolás_limit;
   taktikaMods['VÉ'] = Math.max(-véLimit, Math.min(véLimit, taktikaMods['VÉ']));
 
-  const harcmodorÖsszeg = Object.values(konstansok.fegyver_kategória_harcmodor).reduce((s: number, név: string) =>
+  const harcmodorÖsszeg = [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])].reduce((s: number, név: string) =>
     s + (k.képzettségek.find(kp => kp.név === név)?.szint ?? 0), 0);
 
   // Páncél + lookup tables — all logic now in rules.json

@@ -561,15 +561,19 @@ HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban el
   - Rongálódás: kerek gombok 0-5
 
 ### Pajzs
+- Harcérték chip (ha van méret kiválasztva): TÉ/VÉ/SP/Sebesség kijelzés (Pajzshasználat fok bónusszal)
+  - Ha NEM "csak pajzs harc" mód (egyfegyveres + pajzs az ügyesebb kézben): TÉ/SP/Sebesség áthúzva (`line-through 2px`, opacity 0.5)
 - Mezők (`he-field-btn` stílus, tap → overlay popup):
   - Méret: — nincs — / kis / közepes / nagy
   - Pajzshasználat fok: kerek gombok 0-3 (szinkronizálja a Pajzshasználat fortélyt a Fortélyok fülön)
-  - Kézben: read-only indikátor (`session.aktív_pajzs`), kattintás → sárga hint ("A pajzs kézben állapotot az Aktív fülön állíthatod!")
+  - Kézben, fegyver mellett: read-only indikátor (`session.aktív_pajzs`), kattintás → sárga hint
 - Pajzshasználat fortély szinkronizáció:
   - Pajzs fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
   - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején
   - Tap locked elemre → hint: "Ezt a fortélyt a Harcértékek fülön kezeld!" (3s)
   - Pajzshasználat NEM jelenik meg a Fortélyok fül dropdown-jában
+- Pajzs fegyverként: ha van méret → Aktív fül Ügyesebb kéz dropdown-ban megjelenik (idx: -2, zöld szín)
+  - Fegyverek dropdown-ban (Harcértékek fül): "pajzs" kategória kiszűrve (nem vehető fel külön)
 
 ---
 

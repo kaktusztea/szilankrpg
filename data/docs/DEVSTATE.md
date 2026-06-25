@@ -243,13 +243,18 @@
 - ✅ `onSelect preventDefault` eltávolítva (okozta az input karakter-elvesztés bugot iOS-en)
 - ✅ Mentés fájlnév: `kisbetű_éktelenítve_Xtsz.json` formátum (első név max 20 kar, ASCII only)
 - ✅ Pajzs szekció a Harcértékek fülön
-  - `PajzsPeldany` típus: `{ méret: string, pajzshasználat_fok: number }`
+  - `PajzsPeldany` típus: `{ méret: string }`
   - Karakter top-level `pajzs` mező (karakter.yaml séma v2 bővítve)
   - Méret: tap → popup (— nincs — / kis / közepes / nagy)
   - Pajzshasználat fok: tap → kerek gombok 0-3, szinkronizálja a Pajzshasználat fortélyt
-  - Kézben: read-only indikátor (`session.aktív_pajzs` alapján), kattintás → sárga hint
+  - Kézben, fegyver mellett: read-only indikátor (`session.aktív_pajzs` alapján), kattintás → sárga hint
   - Pajzshasználat fortély: locked a Fortélyok fülön (nem szerkeszthető/törölhető, nem jelenik meg dropdown-ban)
   - `setPajzsFok()`: fortélyok tömbben közvetlenül módosítja a Pajzshasználat fortélyt
+  - Harcérték chip: TÉ/VÉ/SP/Sebesség (ha van méret), áthúzás ha nem "csak pajzs" mód
+  - Pajzs fegyverként: `fegyverek.json`-ban (kategória: "pajzs", process_fegyverek.py generálja), dropdown-ból kiszűrve
+  - Aktív fül: Ügyesebb kéz dropdown-ban megjelenik (idx: -2, zöld szín), ha van pajzs méret
+  - Harc fül: pajzs fegyver sor megjelenik a fegyvertáblában (Közelharc harcmodor)
+  - Pajzs harc bónusz: Pajzshasználat fortély `fegyver_kategória:pajzs` feltételes módosítói (TÉ/VÉ/SP per fok, data-driven)
 - ✅ Nyelvismeret fok UI: "Alap"/"Udvari" label (szám helyett), lekerekített téglalap gombok, centered fejléc
   - Nyelv picker: custom styled gomb-lista csoportonként (narancssárga fejléc + elválasztó vonal), scrollozható (max 70vh)
 - ✅ Kor választó javítások: szabályos kör gombok (42x42px), 10–58 / 60–100 toggle split (cserélődő tartalom)
@@ -326,7 +331,7 @@
   - KÉ box, fegyvertábla TÉ/VÉ/SP és VÉ max csökkenés mind reagál
 - ✅ §16 feltételes fortély módosítók
   - Session aktív taktikák/helyzetek feltétel kulcsai alapján aktiválódnak (körülmények is helyzetek)
-  - `aktívFeltételek` Set: összegyűjti az aktív `feltétel_kulcs` értékeket (taktika, harci_helyzet, szituáció)
+  - `aktívFeltételek` Set: összegyűjti az aktív `feltétel_kulcs` értékeket (taktika, harci_helyzet, fegyverfogás, fegyver_kategória)
   - Fortély módosítók ahol `feltétel` egyezik → bekerülnek a harcérték kalkulációba
   - Érintett fortélyok: Belharc, Elsöprő roham, Fárasztás, Fegyverrántás, Gladiátor (Bestiái/Közönsége), Célzás, Harci anatómia (orvtámadás)
 - ✅ Session séma bővítés: `aktív_taktika/helyzet` → `aktív_taktikák[]/helyzetek[]` (körülmények is helyzetek)
