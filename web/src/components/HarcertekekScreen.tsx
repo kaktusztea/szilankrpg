@@ -33,6 +33,10 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
   const harcmodorok = Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[];
   const harcmodorSzintek = harcmodorok.map(n => ({ név: n, szint: k.képzettségek.find(kp => kp.név === n)?.szint ?? 0 }));
 
+  const közelharciHmSet = new Set(harcmodorok);
+  const távharciHmSet = new Set(data.kepzettsegDefs.find(d => d.név === 'Távolsági harcmodor')?.többszörös ?? []);
+  const harciKepzDisplayName = (n: string) => közelharciHmSet.has(n) ? `Harcmodor: ${n}` : távharciHmSet.has(n) ? `Táv. harcmodor: ${n}` : n;
+
   // max_HM (simplified calc here — same as reactive)
   const harciFortelyNevek = new Set(data.fortelySummaries.filter(d => d.csoport === 'harci').map(d => d.név));
   const harciFokok = k.fortélyok.filter(f => harciFortelyNevek.has(f.név) && f.név !== 'Mesterfegyver').reduce((s, f) => s + f.fok, 0);
@@ -262,7 +266,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
             return (<>
               {felvett.map(h => (
                 <div key={h.név} className="kep-row" onClick={() => !gameMode && setKepzSzintTarget(h.név)}>
-                  <span className="kep-név" style={{ flex: 1 }}>{h.név}</span>
+                  <span className="kep-név" style={{ flex: 1 }}>{harciKepzDisplayName(h.név)}</span>
                   {!gameMode && <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteKepzTarget(h.név); }}>✕</button>}
                   <strong className={`kep-szint${h.szint > k.tsz ? ' kep-over' : h.szint >= 9 ? ' kep-szint-high' : ''}`}>{h.szint}</strong>
                 </div>
@@ -270,7 +274,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
               {!gameMode && nemFelvett.length > 0 && (
                 <select className="he-add-select" value="" onChange={e => { if (e.target.value) { const név = e.target.value; setKépzettségek(prev => [...prev, { név, szint: 1 }]); setKepzSzintTarget(név); } }}>
                   <option value="">+ Harci képzettség...</option>
-                  {nemFelvett.map(n => <option key={n} value={n}>{n}</option>)}
+                  {nemFelvett.map(n => <option key={n} value={n}>{harciKepzDisplayName(n)}</option>)}
                 </select>
               )}
             </>);
@@ -473,7 +477,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
       {deleteKepzTarget && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteKepzTarget(null); }}>
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>{deleteKepzTarget}</label>
+            <label style={{ fontWeight: 'bold' }}>{harciKepzDisplayName(deleteKepzTarget)}</label>
             <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKépzettségek(prev => prev.filter(k => k.név !== deleteKepzTarget)); setDeleteKepzTarget(null); }}>Képzettség törlése</button>
           </div>
         </div>,
@@ -483,7 +487,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
       {kepzSzintTarget && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setKepzSzintTarget(null); }}>
           <div className="kep-prompt">
-            <label>{kepzSzintTarget} — szint:</label>
+            <label>{harciKepzDisplayName(kepzSzintTarget)} — szint:</label>
             <div className="kep-szint-grid">
               {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
                 <button key={n} className={`fort-fok-btn ${(képzettségek.find(kp => kp.név === kepzSzintTarget)?.szint ?? 0) === n ? 'active' : ''}`} onClick={() => {
