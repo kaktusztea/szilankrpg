@@ -16,6 +16,7 @@
       "Fárasztás",
       "Tettetés"
     ],
+    "fortély_bővítés": null,
     "id": "1_támadás",
     "feltétel_kulcs": "taktika:1_támadás"
   },
@@ -35,6 +36,7 @@
       "1 támadás",
       "Plusz támadás"
     ],
+    "fortély_bővítés": null,
     "megkötések": [],
     "id": "érintő",
     "feltétel_kulcs": "taktika:érintő"
@@ -63,6 +65,7 @@
     ],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
+    "fortély_bővítés": null,
     "id": "fárasztás",
     "feltétel_kulcs": "taktika:fárasztás"
   },
@@ -103,6 +106,7 @@
       "Visszafogott",
       "1 támadás"
     ],
+    "fortély_bővítés": null,
     "megkötések": [],
     "id": "kezdeményező",
     "feltétel_kulcs": "taktika:kezdeményező"
@@ -124,6 +128,7 @@
       "1 támadás",
       "Tettetés"
     ],
+    "fortély_bővítés": null,
     "id": "kiváró",
     "feltétel_kulcs": "taktika:kiváró"
   },
@@ -139,6 +144,7 @@
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
+    "fortély_bővítés": null,
     "id": "öngyilkos_roham",
     "feltétel_kulcs": "taktika:öngyilkos_roham"
   },
@@ -153,6 +159,7 @@
       "Érintő",
       "Támadás erőből"
     ],
+    "fortély_bővítés": null,
     "megkötések": [],
     "id": "plusz_támadás",
     "feltétel_kulcs": "taktika:plusz_támadás"
@@ -169,6 +176,7 @@
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [],
+    "fortély_bővítés": null,
     "id": "roham",
     "feltétel_kulcs": "taktika:roham"
   },
@@ -231,6 +239,7 @@
       "Plusz támadás",
       "1 támadás"
     ],
+    "fortély_bővítés": null,
     "id": "támadó",
     "feltétel_kulcs": "taktika:támadó"
   },
@@ -265,6 +274,7 @@
       "Érintő",
       "1 támadás"
     ],
+    "fortély_bővítés": null,
     "id": "védő",
     "feltétel_kulcs": "taktika:védő"
   },
@@ -277,6 +287,7 @@
     "megjegyzés": "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20T.",
     "kombó_mód": "whitelist",
     "kombó_lista": [],
+    "fortély_bővítés": null,
     "megkötések": [],
     "id": "teljes_védekezés",
     "feltétel_kulcs": "taktika:teljes_védekezés"
@@ -329,6 +340,7 @@
       "1 támadás",
       "Tettetés"
     ],
+    "fortély_bővítés": null,
     "megkötések": [],
     "id": "visszafogott",
     "feltétel_kulcs": "taktika:visszafogott"
@@ -343,6 +355,7 @@
       "Kiváró",
       "Visszafogott"
     ],
+    "fortély_bővítés": null,
     "megkötések": [],
     "id": "tettetés",
     "feltétel_kulcs": "taktika:tettetés"

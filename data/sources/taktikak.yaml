@@ -15,6 +15,7 @@ taktikák:
     érték: 2
   kombó_mód: "blacklist"
   kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés", "Fárasztás", "Tettetés"]
+  fortély_bővítés: null
   megkötések: []
   id: "1_támadás"
 - név: "Érintő"
@@ -24,6 +25,7 @@ taktikák:
   megjegyzés: "Sebzés: 0. Csak megérintés."
   kombó_mód: "whitelist"
   kombó_lista: ["Támadó", "Védő", "Kezdeményező", "Kiváró", "1 támadás", "Plusz támadás"]
+  fortély_bővítés: null
   megkötések: []
   id: "érintő"
 - név: "Fárasztás"
@@ -42,6 +44,7 @@ taktikák:
     érték: "Láthatatlanul harcolás - csendesen"
   kombó_mód: "whitelist"
   kombó_lista: []
+  fortély_bővítés: null
   id: "fárasztás"
 - név: "Kezdeményező"
   fokozatos: true
@@ -63,6 +66,7 @@ taktikák:
     VÉ: -5
   kombó_mód: "whitelist"
   kombó_lista: ["Támadó", "Érintő", "Visszafogott", "1 támadás"]
+  fortély_bővítés: null
   megkötések: []
   id: "kezdeményező"
 - név: "Kiváró"
@@ -75,6 +79,7 @@ taktikák:
     mód: "tiltott"
   kombó_mód: "whitelist"
   kombó_lista: ["Támadó", "Érintő", "Visszafogott", "Támadás erőből", "1 támadás", "Tettetés"]
+  fortély_bővítés: null
   megkötések: []
   id: "kiváró"
 - név: "Öngyilkos roham"
@@ -93,6 +98,7 @@ taktikák:
     érték: 1
   kombó_mód: "whitelist"
   kombó_lista: []
+  fortély_bővítés: null
   megkötések: []
   id: "öngyilkos_roham"
 - név: "Plusz támadás"
@@ -101,6 +107,7 @@ taktikák:
   megjegyzés: "+1 támadás. VÉ:-3 azonnal (VÉ csökkenés)."
   kombó_mód: "whitelist"
   kombó_lista: ["Támadó", "Érintő", "Támadás erőből"]
+  fortély_bővítés: null
   megkötések: []
   id: "plusz_támadás"
 - név: "Roham"
@@ -116,6 +123,7 @@ taktikák:
     érték: "Ostorharc"
   kombó_mód: "whitelist"
   kombó_lista: []
+  fortély_bővítés: null
   megkötések: []
   id: "roham"
 - név: "Támadás erőből"
@@ -157,6 +165,7 @@ taktikák:
     érték: "Orvtámadás"
   kombó_mód: "whitelist"
   kombó_lista: ["Kezdeményező", "Kiváró", "Érintő", "Plusz támadás", "1 támadás"]
+  fortély_bővítés: null
   megkötések: []
   id: "támadó"
 - név: "Védő"
@@ -183,6 +192,7 @@ taktikák:
     érték: "Orvtámadás"
   kombó_mód: "whitelist"
   kombó_lista: ["Érintő", "1 támadás"]
+  fortély_bővítés: null
   megkötések: []
   id: "védő"
 - név: "Teljes Védekezés"
@@ -192,6 +202,7 @@ taktikák:
   megjegyzés: "Nem támad, hátrál. VÉ csökk ellenfélnek: 1+k20T."
   kombó_mód: "whitelist"
   kombó_lista: []
+  fortély_bővítés: null
   megkötések: []
   id: "teljes_védekezés"
 - név: "Visszafogott"
@@ -220,6 +231,7 @@ taktikák:
   megjegyzés: "TÉ levonásért kisebb sebzéskocka. Harci anatómia csökkenti TÉ büntetést."
   kombó_mód: "whitelist"
   kombó_lista: ["Kezdeményező", "Kiváró", "1 támadás", "Tettetés"]
+  fortély_bővítés: null
   megkötések: []
   id: "visszafogott"
 - név: "Tettetés"
@@ -228,5 +240,6 @@ taktikák:
   megjegyzés: "Képzetlenebbnek tetteted magad. Harcmodor+Ügyesség vs 15 próba. Kiváró, Visszafogott taktikával együtt."
   kombó_mód: "whitelist"
   kombó_lista: ["Kiváró", "Visszafogott"]
+  fortély_bővítés: null
   megkötések: []
   id: "tettetés"

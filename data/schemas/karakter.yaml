@@ -4,6 +4,8 @@
 # NEM tároljuk a származtatott/számított értékeket (ÉP, KÉ, TÉ, VÉ, SP, KP, SFÉ, MGT, stb.)
 schema_version: 2
 
+uid: ""                       # UUID, egyedi azonosító (generált, nem módosítandó)
+id_leíró: ""                  # slug, auto-frissül név/TSz-ből (pl. "harcos_5sz")
 név: ""                       # max 40 karakter
 becenév: ""                   # max 12 karakter (rövid megjelenítési név)
 játékos: ""                   # Játékos neve (max 40 karakter)

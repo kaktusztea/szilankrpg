@@ -1,8 +1,0 @@
----
-# Schema: szituaciok.yaml
-# Gyökér: szituációk (lista)
-
-szituációk:
-  - név: ""                    # kötelező, string
-    feltétel_kulcs: ""         # kötelező, "szituáció:xyz" formátum
-    infó: ""                   # kötelező, string (rövid leírás)
