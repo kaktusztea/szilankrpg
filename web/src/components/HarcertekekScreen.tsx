@@ -371,16 +371,16 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
             {(() => {
               const current = ideaTarget.type === 'fegyver' ? k.fegyverek[ideaTarget.idx]?.idea : k.páncél.idea;
               const selectIdea = (n: number) => { if (ideaTarget.type === 'fegyver') updateFegyver(ideaTarget.idx, { idea: n }); else updatePancel({ idea: n }); setIdeaTarget(null); };
-              const btn = (n: number) => <button key={n} className={`fort-fok-btn ${current === n ? 'active' : ''}`} style={{ width: '36px', height: '36px', fontSize: '13px' }} onClick={() => selectIdea(n)}>{n > 0 ? `+${n}` : n}</button>;
+              const btn = (n: number) => <button key={n} className={`fort-fok-btn he-idea-cell ${current === n ? 'active' : ''}`} onClick={() => selectIdea(n)}>{n > 0 ? `+${n}` : n}</button>;
               return (
-                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
-                  <div style={{ display: 'flex', gap: '6px' }}>
+                <div className="he-idea-grid">
+                  <div className="he-idea-row">
                     {Array.from({ length: -ideaMin }, (_, i) => ideaMin + i).map(btn)}
                   </div>
-                  <div style={{ display: 'flex', gap: '6px' }}>
+                  <div className="he-idea-row">
                     {btn(0)}
                   </div>
-                  <div style={{ display: 'flex', gap: '6px' }}>
+                  <div className="he-idea-row">
                     {Array.from({ length: ideaMax }, (_, i) => i + 1).map(btn)}
                   </div>
                 </div>
@@ -410,7 +410,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
           <div className="kep-prompt">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
               {(data.konstansok.fegyver_anyagok as string[]).map((a: string) => (
-                <button key={a} className={`fort-fok-btn ${k.fegyverek[anyagTarget]?.anyag === a ? 'active' : ''}`} style={{ width: 'auto', minWidth: '120px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updateFegyver(anyagTarget, { anyag: a }); setAnyagTarget(null); }}>{a}</button>
+                <button key={a} className={`fort-fok-btn he-picker-btn ${k.fegyverek[anyagTarget]?.anyag === a ? 'active' : ''}`} onClick={() => { updateFegyver(anyagTarget, { anyag: a }); setAnyagTarget(null); }}>{a}</button>
               ))}
             </div>
           </div>
@@ -436,9 +436,9 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
           <div className="kep-prompt">
             <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
               {pajzsPopup === 'méret' && <>
-                <button className={`fort-fok-btn ${!k.pajzs.méret ? 'active' : ''}`} style={{ width: 'auto', minWidth: '140px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePajzs({ méret: '' }); setPajzsPopup(null); }}>— nincs —</button>
+                <button className={`fort-fok-btn he-picker-btn-wide ${!k.pajzs.méret ? 'active' : ''}`} onClick={() => { updatePajzs({ méret: '' }); setPajzsPopup(null); }}>— nincs —</button>
                 {['kis', 'közepes', 'nagy'].map(v => (
-                  <button key={v} className={`fort-fok-btn ${k.pajzs.méret === v ? 'active' : ''}`} style={{ width: 'auto', minWidth: '140px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' }} onClick={() => { updatePajzs({ méret: v }); setPajzsPopup(null); }}>{v}</button>
+                  <button key={v} className={`fort-fok-btn he-picker-btn-wide ${k.pajzs.méret === v ? 'active' : ''}`} onClick={() => { updatePajzs({ méret: v }); setPajzsPopup(null); }}>{v}</button>
                 ))}
               </>}
               {pajzsPopup === 'pajzshasználat' && (
@@ -458,7 +458,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>{k.fegyverek[deleteTarget]?.alap.replace(/ \(1K\)$| 1K$/, '')}</label>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { removeFegyver(deleteTarget); setDeleteTarget(null); }}>Fegyver törlése</button>
+            <button className="btn-del-confirm he-del-confirm" onClick={() => { removeFegyver(deleteTarget); setDeleteTarget(null); }}>Fegyver törlése</button>
           </div>
         </div>,
         document.body
@@ -468,7 +468,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteKepzTarget(null); }}>
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>{harciKepzDisplayName(deleteKepzTarget)}</label>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKépzettségek(prev => prev.filter(k => k.név !== deleteKepzTarget)); setDeleteKepzTarget(null); }}>Képzettség törlése</button>
+            <button className="btn-del-confirm he-del-confirm" onClick={() => { setKépzettségek(prev => prev.filter(k => k.név !== deleteKepzTarget)); setDeleteKepzTarget(null); }}>Képzettség törlése</button>
           </div>
         </div>,
         document.body
@@ -529,30 +529,27 @@ function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, merevvert
   onUpdate: (patch: Record<string, unknown>) => void;
   onMerevvert: (fok: number) => void;
 }) {
-  const btnStyle = { width: 'auto', minWidth: '120px', padding: '6px 16px', borderRadius: '6px', fontSize: '14px' };
-  const btnStyleWide = { ...btnStyle, minWidth: '140px' };
-
   return (
     <div className="kep-prompt-overlay">
       <div className="kep-prompt">
         <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
           {popup === 'struktúra' && <>
-            <button className={`fort-fok-btn ${!páncél.alap ? 'active' : ''}`} style={btnStyleWide} onClick={() => onUpdate({ alap: '', fémalapanyag: '' })}>— nincs —</button>
+            <button className={`fort-fok-btn he-picker-btn-wide ${!páncél.alap ? 'active' : ''}`} onClick={() => onUpdate({ alap: '', fémalapanyag: '' })}>— nincs —</button>
             {struktúrák.map(s => (
-              <button key={s.struktúra} className={`fort-fok-btn ${páncél.alap === s.struktúra ? 'active' : ''}`} style={btnStyleWide} onClick={() => onUpdate({ alap: s.struktúra, fémalapanyag: '' })}>{s.struktúra}</button>
+              <button key={s.struktúra} className={`fort-fok-btn he-picker-btn-wide ${páncél.alap === s.struktúra ? 'active' : ''}`} onClick={() => onUpdate({ alap: s.struktúra, fémalapanyag: '' })}>{s.struktúra}</button>
             ))}
           </>}
           {popup === 'fémalapanyag' && <>
-            <button className={`fort-fok-btn ${!páncél.fémalapanyag ? 'active' : ''}`} style={btnStyle} onClick={() => onUpdate({ fémalapanyag: '' })}>acél (alap)</button>
+            <button className={`fort-fok-btn he-picker-btn ${!páncél.fémalapanyag ? 'active' : ''}`} onClick={() => onUpdate({ fémalapanyag: '' })}>acél (alap)</button>
             {fémalapanyagok.map(a => (
-              <button key={a.anyag} className={`fort-fok-btn ${páncél.fémalapanyag === a.anyag ? 'active' : ''}`} style={btnStyle} onClick={() => onUpdate({ fémalapanyag: a.anyag })}>{a.anyag}</button>
+              <button key={a.anyag} className={`fort-fok-btn he-picker-btn ${páncél.fémalapanyag === a.anyag ? 'active' : ''}`} onClick={() => onUpdate({ fémalapanyag: a.anyag })}>{a.anyag}</button>
             ))}
           </>}
           {popup === 'kidolgozottság' && ['pocsék', 'átlagos', 'mestermunka'].map(v => (
-            <button key={v} className={`fort-fok-btn ${páncél.kidolgozottság === v ? 'active' : ''}`} style={btnStyle} onClick={() => onUpdate({ kidolgozottság: v })}>{v}</button>
+            <button key={v} className={`fort-fok-btn he-picker-btn ${páncél.kidolgozottság === v ? 'active' : ''}`} onClick={() => onUpdate({ kidolgozottság: v })}>{v}</button>
           ))}
           {popup === 'méret' && ['passzol', 'nem passzol', 'borzalmas'].map(v => (
-            <button key={v} className={`fort-fok-btn ${páncél.méret_illeszkedés === v ? 'active' : ''}`} style={btnStyleWide} onClick={() => onUpdate({ méret_illeszkedés: v })}>{v}</button>
+            <button key={v} className={`fort-fok-btn he-picker-btn-wide ${páncél.méret_illeszkedés === v ? 'active' : ''}`} onClick={() => onUpdate({ méret_illeszkedés: v })}>{v}</button>
           ))}
           {popup === 'végtagvédettség' && (
             <div className="fort-fok-radios">
