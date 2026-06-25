@@ -97,7 +97,10 @@
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "magasabbról",
+      "levegőből"
+    ],
     "feltétel_kulcs": "harci_helyzet:elvesztett_egyensúly"
   },
   {
@@ -144,7 +147,9 @@
       "magasabbról",
       "levegőből",
       "helyhez_kötve",
-      "célzás"
+      "célzás",
+      "vé_kiterjesztés",
+      "közrefogás"
     ],
     "feltétel_kulcs": "harci_helyzet:földön_fekve"
   },
@@ -266,7 +271,9 @@
     "csoport": "semleges",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "földön_fekve"
+    ],
     "feltétel_kulcs": "harci_helyzet:közrefogás"
   },
   {
@@ -348,7 +355,8 @@
       "belharci_helyzet",
       "földön_fekve",
       "helyhez_kötve",
-      "célzás"
+      "célzás",
+      "takarásban"
     ],
     "feltétel_kulcs": "harci_helyzet:levegőből"
   },
@@ -420,7 +428,10 @@
     "tiltja_taktikákat": true,
     "kizár_helyzetek": [
       "hátulról",
-      "meglepetés"
+      "meglepetés",
+      "lovas_harc",
+      "léglovas_harc",
+      "harci_szekér"
     ],
     "id": "orvtámadás",
     "csoport": "pozitív",
@@ -605,7 +616,11 @@
     "csoport": "semleges",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "lovas_harc",
+      "léglovas_harc",
+      "levegőből"
+    ],
     "feltétel_kulcs": "harci_helyzet:takarásban"
   },
   {
@@ -627,7 +642,9 @@
     "csoport": "semleges",
     "rejtett": false,
     "tiltja_taktikákat": false,
-    "kizár_helyzetek": [],
+    "kizár_helyzetek": [
+      "földön_fekve"
+    ],
     "feltétel_kulcs": "harci_helyzet:vé_kiterjesztés"
   },
   {
@@ -663,7 +680,9 @@
       "földön_fekve",
       "helyhez_kötve",
       "levegőből",
-      "célzás"
+      "célzás",
+      "orvtámadás",
+      "takarásban"
     ],
     "feltétel_kulcs": "harci_helyzet:lovas_harc"
   },
@@ -683,7 +702,9 @@
       "földön_fekve",
       "helyhez_kötve",
       "csúszós_talaj",
-      "célzás"
+      "célzás",
+      "orvtámadás",
+      "takarásban"
     ],
     "feltétel_kulcs": "harci_helyzet:léglovas_harc"
   },
@@ -703,7 +724,8 @@
       "helyhez_kötve",
       "magasabbról",
       "levegőből",
-      "célzás"
+      "célzás",
+      "orvtámadás"
     ],
     "feltétel_kulcs": "harci_helyzet:harci_szekér"
   },

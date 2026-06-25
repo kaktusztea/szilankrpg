@@ -57,7 +57,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["magasabbról", "levegőből"]
 - név: "Fegyverrántás váratlanul"
   infó: "KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza."
   hatások:
@@ -83,7 +83,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "helyhez_kötve", "célzás"]
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "helyhez_kötve", "célzás", "vé_kiterjesztés", "közrefogás"]
 - név: "Hajítás alkalmatlan fegyverrel"
   infó: "Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli."
   hatások:
@@ -156,7 +156,7 @@ harci_helyzetek:
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["földön_fekve"]
 - név: "Láthatatlanul harcolás - hallhatóan"
   infó: "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott."
   hatások:
@@ -201,7 +201,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "harci_szekér", "magasabbról", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "célzás"]
+  kizár_helyzetek: ["lovas_harc", "harci_szekér", "magasabbról", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "célzás", "takarásban"]
 - név: "Lények méret különbsége"
   infó: "Méretkülönbség [0-6] fokozat: +1 VÉ csökkentés / különbség."
   hatások: []
@@ -242,7 +242,7 @@ harci_helyzetek:
     érték: 2
     cél: "té_dobás"
   tiltja_taktikákat: true
-  kizár_helyzetek: ["hátulról", "meglepetés"]
+  kizár_helyzetek: ["hátulról", "meglepetés", "lovas_harc", "léglovas_harc", "harci_szekér"]
   id: "orvtámadás"
   csoport: "pozitív"
   rejtett: false
@@ -357,7 +357,7 @@ harci_helyzetek:
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "levegőből"]
 - név: "Védő Érték kiterjesztése másra"
   infó: "Többszörös támadás elvesztése, VÉ veszteség duplázódik. Testőr fortély mérsékli."
   hatások:
@@ -371,7 +371,7 @@ harci_helyzetek:
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: []
+  kizár_helyzetek: ["földön_fekve"]
 - név: "Vér elvakít"
   infó: "Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés."
   hatások:
@@ -391,7 +391,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["magasabbról", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "levegőből", "célzás"]
+  kizár_helyzetek: ["magasabbról", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "levegőből", "célzás", "orvtámadás", "takarásban"]
 - név: "Léglovas harc"
   infó: "Repülő hátas hátáról harcolás. Léglovas harc fortély bónuszok aktívak."
   hatások: []
@@ -399,7 +399,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["magasabbról", "lovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "csúszós_talaj", "célzás"]
+  kizár_helyzetek: ["magasabbról", "lovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "csúszós_talaj", "célzás", "orvtámadás", "takarásban"]
 - név: "Harci szekér"
   infó: "Szekérről harcolás. Harci kocsihajtas fortély bónuszok aktívak."
   hatások: []
@@ -407,7 +407,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "magasabbról", "levegőből", "célzás"]
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "magasabbról", "levegőből", "célzás", "orvtámadás"]
 - név: "Páros harc"
   infó: "Koordinált 2 fős harc. Páros harc fortély bónuszok aktívak."
   hatások: []
