@@ -136,7 +136,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" + Pajzs (ha van méret, idx:-2, zöld szín). Mindig látható. |
 | Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
 | Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
-| Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Kiváltja a korábbi "2 kezes harc" és "Pajzs kézben" toggle-öket. |
+| Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Disabled logika: puszta kéz, kétkezes fegyver, nincs pajzs/hárító, + aktív helyzetek `tiltott_fegyverfogások` mezője (§38.4). Helyzet hozzáadáskor tiltott fogás → auto-reset Egyfegyveresre. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 | Hatás pool box | info szekció | Fortély bónuszok + Alapesetek (accordion) |
 | Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
@@ -148,7 +148,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 ### Taktika kombó szabályok
 - Picker csak a kompatibilis taktikákat kínálja (whitelist/blacklist + megkötések szűrés)
 - Megkötések: `harci_helyzet/tiltott`, `harci_helyzet/szükséges` (§38), `harcmodor/tiltott`, `támadások/min`
-- `harci_helyzet/szükséges`: taktika disabled ha a szükséges helyzet(ek) egyike sincs aktív (pl. Lovas roham → lovas_harc/léglovas_harc kell)
+- `harci_helyzet/szükséges`: taktika disabled ha a szükséges helyzet(ek) egyike sincs aktív (pl. (Lég)Lovas roham → lovas_harc/léglovas_harc kell)
 - Fokozatos taktikáknál két lépéses picker (taktika → fok)
 - Chip kattintás fokozatos taktikánál: fokválasztó picker újra felugrik
 

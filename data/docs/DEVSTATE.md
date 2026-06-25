@@ -374,13 +374,13 @@
 
 | Téma                             | Leírás                                                  | Szekció     |
 | -------------------------------- | ------------------------------------------------------- | ----------- |
-| Lovas harc rendszer              | Teljes lovas harc implementáció (§38 engine_spec)       | Harc+Aktív  |
+| Lovas harc rendszer              | ✅ Kész (Ph kijelzés opcionális, §38)                   | Harc+Aktív  |
 | Belharc / Belharci helyzet       | Fegyver/harcmodor korlátozás jelzés, puszta kéz override  | Aktív fül   |
 | Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
 
 ### Karakteralkotó — általános
 - ✅ VÉ eltolás ökölszabály: max ±10 (taktikák kombinálása esetén is) — konstansok + clamp implementálva
-- Harci helyzetek kombinálása: szabályok tisztázása
+- ✅ Harci helyzetek kombinálása: teljes kizárás mátrix implementálva (harci_helyzetek.yaml `kizár_helyzetek`, 13 helyzetnél aktív)
 - Láthatatlan ellenfél taktika: kiszedve a yaml-ból, státuszként kezelni?
 - Ember (Szigetvilági) faj háttér hozzáadása (slan helyett)
 - ✅ Undo stack (↩ Visszavonás menüpont, overlay popup, max 6 entry, `_undo` a karakter JSON-ban)
@@ -433,7 +433,7 @@ Szabályrendszer átszervezés és webapp implementáció kész.
 - Taktika megkötések: `harci_helyzet/tiltott` (Fárasztás: Pengehátrány, Láthatatlanul×2)
 
 **TODO:**
-- [ ] Magasabbról + Lovas harc: beolvadt §38 engine_spec implementációba
+- [x] Magasabbról + Lovas harc: implementálva (§38, `kizár_helyzetek` data-driven)
 
 
 ### Harc alakzatban 🚧
@@ -499,19 +499,24 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 
 Engine spec: §38.
 
-**Data layer (TODO):**
-- [ ] `lovas_harc.yaml` + `leglovas_harc.yaml`: 0.fok (Alapeset) hozzáadása: TÉ:-9, VÉ:-9
-- [ ] `harci_helyzetek.yaml`: kölcsönös `kizár_helyzetek` (Lovas harc ↔ Magasabbról)
-- [ ] `taktikak.yaml`: "(Lég)Lovas roham" (TÉ:+6, SP:+10) + "(Lég)Lovas támadás galoppból" (TÉ:+3, SP:+5) — megkötés: `harci_helyzet/szükséges`
-- [ ] `taktikak.yaml`: "Roham" + "Öngyilkos roham" → megkötés: `harci_helyzet/tiltott/lovas_harc` + `léglovas_harc`
-- [ ] `manoverek.yaml`: "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás" (típus: "lovas") + meglévő "Lovas megakasztása" típus fix
+**Data layer (✅ KÉSZ):**
+- [x] `lovas_harc.yaml` + `leglovas_harc.yaml`: 0.fok (Alapeset) hozzáadva: TÉ:-9, VÉ:-9
+- [x] `harci_helyzetek.yaml`: teljes kizárás mátrix (lovas↔léglovas↔magasabbról↔belharc↔földön↔helyhez kötve↔orvtámadás↔stb.) + `tiltott_fegyverfogások` mező
+- [x] `taktikak.yaml`: "(Lég)Lovas roham" + "(Lég)Lovas támadás galoppból" — megkötés: `harci_helyzet/szükséges`
+- [x] `taktikak.yaml`: "Roham" + "Öngyilkos roham" → megkötés: `harci_helyzet/tiltott`
+- [x] `manoverek.yaml`: "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás", "Lovas megakasztása" (típus: "lovas")
+- [x] `generate_tables.py`: "lovas" manőver típus validáció
+- [x] `harci_helyzet.yaml` schema: `tiltott_fegyverfogások` mező
 
-**Engine / Webapp (TODO):**
-- [ ] AktivScreen taktika picker: `harci_helyzet/szükséges` megkötés logika (új mód)
-- [ ] AktivScreen taktika picker: Roham/Öngyilkos roham disabled ha lovas/léglovas helyzet aktív
-- [ ] AktivScreen manőver picker: "Lovas" kategória csoport
-- [ ] HarcScreen Ph oszlop: +1 penge kijelzés ha lovas helyzet + fortély ≥ 1.fok
-- [ ] Magasabbról kizárás: data-driven `kizár_helyzetek`-kel (meglévő logika)
+**Engine / Webapp (✅ KÉSZ):**
+- [x] AktivScreen taktika picker: `harci_helyzet/szükséges` megkötés logika (új mód)
+- [x] AktivScreen taktika picker: Roham/Öngyilkos roham disabled ha lovas/léglovas helyzet aktív
+- [x] AktivScreen manőver picker: "Lovas" kategória csoport
+- [x] AktivScreen fegyverfogás picker: data-driven `tiltott_fegyverfogások` (hárító+kétkezes disabled)
+- [x] AktivScreen helyzet hozzáadás: fogás auto-reset ha tiltott
+- [x] data-types.ts: HarciHelyzetEntry bővítés (id, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek, tiltott_fegyverfogások)
+- [x] Magasabbról + összes kizárás: data-driven `kizár_helyzetek` (meglévő logika)
+- [ ] HarcScreen Ph oszlop: +1 penge kijelzés ha lovas helyzet + fortély ≥ 1.fok (opcionális, kozmetikai)
 
 ### Harc fül
 - ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: világoskék összesítő sor (`#90caf9`, kétkezes/pajzs/hárító).
@@ -586,7 +591,7 @@ Engine spec: §38.
 - ✅ Taktika fortély_bővítés: generikus rendszer (taktikak.yaml `fortély_bővítés` mező, extra fok extrapoláció, lila ● jelölés, invalidáció fortély törlésnél)
 - ✅ Anyanyelv picker: ABC sorrend (hu locale)
 - ✅ Schema konzisztencia: `karakter.yaml` bővítve (uid, id_leíró), `szituacio.yaml` elavult schema törölve, `taktika.yaml` schema + source bővítve (fortély_bővítés)
-- Lovas harc rendszer implementálása (§38 engine_spec, részletes terv kész)
+- ✅ Lovas harc rendszer implementálva (§38 engine_spec, data layer + webapp kész, Ph kijelzés opcionális)
 
 ## Fontos konvenciók
 - Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`
@@ -688,4 +693,5 @@ Engine spec: §38.
 - Taktika fortély_bővítés: `fortély_bővítés: { fortély: string, extra_fokok_per_fok: number } | null` — minden taktikában explicit (strict schema). Extra fokok: lineáris extrapoláció utolsó definiált fokból. Lila ● jelölés picker-ben. Invalidáció useEffect-tel (App.tsx).
 - Session v2: `aktív_taktikák: AktívTaktika[]`, `aktív_helyzetek: string[]` (körülmények is itt, régi `aktív_szituációk` törölve)
 - Taktika megkötés típusok: `harci_helyzet/tiltott` (adott helyzetnél NEM használható), `harci_helyzet/szükséges` (adott helyzet(ek) aktív szükséges, §38), `harcmodor/tiltott`, `támadások/min`, `per_küzdelem/max`, `többes_harc/tiltott`
+- Harci helyzet `tiltott_fegyverfogások`: yaml lista mező (§38.4). Ha aktív helyzet tartalmazza a fogás id-ját → Fegyverfogás picker disabled + helyzet hozzáadáskor auto-reset Egyfegyveresre. Data-driven, nincs hardcoded id a kódban.
 - AktivScreen.tsx: Hatás pool (Fortély bónuszok + Alapesetek) + taktikák/helyzetek/manőver/státuszok overlay picker + Fegyverfogás picker + fegyver Ügyesebb/Gyengébb kéz + páncél toggle + narratív Előny/Hátrányok
