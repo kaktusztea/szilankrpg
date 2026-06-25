@@ -264,7 +264,7 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
         <div className="tul-faj-row">
           <span className="tul-header-label">Anyanyelv:</span>
           <select className="faj-select" value={anyanyelv} onChange={e => setAnyanyelv(e.target.value)}>
-            {data.nyelvek.map(n => <option key={n.név} value={n.név}>{n.név}</option>)}
+            {[...data.nyelvek].sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(n => <option key={n.név} value={n.név}>{n.név}</option>)}
           </select>
         </div>
         <div className="tul-header-box"
