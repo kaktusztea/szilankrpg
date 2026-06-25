@@ -55,6 +55,7 @@
 │   │   │   ├── validate.ts   ← Karakter validáció (schema + referenciális)
 │   │   │   ├── undo-helpers.ts ← describeKepChange
 │   │   │   ├── alapeset.ts   ← Fortély 0.fok (Alapeset) kiértékelés
+│   │   │   ├── helpers.ts    ← Közös utility függvények (lookupFegyver)
 │   │   │   └── index.ts       ← Barrel export
 │   │   ├── components/
 │   │   │   ├── HarcScreen.tsx  ← Harc fül (KÉSZ)
@@ -570,7 +571,7 @@ Engine spec: §38.
 - ✅ Többszörös fortély fix: Titkos szervezet, Különleges faj boncolása, Tánc: belső stílus, Harci iskola (free-text)
 - ✅ Többszörös fortély fix: Belső/Külső síkok lényeinek ismerete (fix lista picker)
 - ✅ Kiérdemelt fortélyok: nem számítanak primer költésbe, nem foglalják az ingyenes keretet
-- ✅ Modularizáció: file-ops, feltetelek, ketkezes, validate, undo-helpers, formatters, HatasPoolCalc, NaploTab, TulajdonsagCell, PrimerKpBox, FortelyFelvetel, data-types
+- ✅ Modularizáció: file-ops, feltetelek, ketkezes, validate, undo-helpers, formatters, HatasPoolCalc, NaploTab, TulajdonsagCell, PrimerKpBox, FortelyFelvetel, data-types, helpers
 - ✅ Data layer kiemelés: fegyver_anyagok, képzettség/fortély_csoport_sorrend, nyelv_fok_nevek, pinned_taktikák, közös_nyelv, tulajdonság_sorrend → konstansok.yaml
 - ✅ Jegyzetek overlay: floating célszám panel (Tulajdonságpróba k6, Képzettségpróba k10) — `<details>` accordion
 - ✅ Fullscreen: requestFullscreen user gesture fix (setShowMenu a hívás után, nem előtte)
@@ -592,6 +593,13 @@ Engine spec: §38.
 - ✅ Anyanyelv picker: ABC sorrend (hu locale)
 - ✅ Schema konzisztencia: `karakter.yaml` bővítve (uid, id_leíró), `szituacio.yaml` elavult schema törölve, `taktika.yaml` schema + source bővítve (fortély_bővítés)
 - ✅ Lovas harc rendszer implementálva (§38 engine_spec, data layer + webapp kész, Ph kijelzés opcionális)
+- ✅ Harci helyzetek kizárás mátrix: 13 helyzet kölcsönös kizárásai definiálva (harci_helyzetek.yaml `kizár_helyzetek`)
+- ✅ Harci helyzet `tiltott_fegyverfogások` mező: data-driven fegyverfogás tiltás (schema + yaml + AktivScreen generikus logika)
+- ✅ HarcertekekScreen bug fix: harci képzettség felvétel szint picker cancel → 0.szintű képzettség eltávolítása (korábban szint:1-gyel maradt)
+- ✅ Fortélyok fül: Mesterfegyver követelmény kijelzés → konkrét harcmodor név ("Harcmodor - Kardvívás ≥ 8" a generikus "Harcmodor ≥ 8" helyett)
+- ✅ Refaktor: 7 db `as any` cast eltávolítva (AktivScreen, HarcertekekScreen), `isHelyzetAvailable()` helper kiemelés, `engine/helpers.ts` (lookupFegyver utility)
+- ✅ Szabályrendszer md: harci helyzet kizárások (`❌ Kizárja:`) hozzáadva 065_01_01/02/03 fájlokhoz
+- ✅ "Lovas akasztása" → "Lovas megakasztása" átnevezés (data + md)
 
 ## Fontos konvenciók
 - Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`

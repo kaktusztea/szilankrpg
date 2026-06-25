@@ -506,7 +506,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 - Gépileg ellenőrizhető típusok: `képzettség` (szint), `fortély` (fok)
 - Nem teljesülő követelmény: piros bal border (`.fort-kov-hiba`) + automatikus piros info sor ("⚠ Követelmény: X ≥ Y")
 - OR lista (név tömbben): bármelyik egyezés elegendő
-- Harcmodor összevonás: ha a követelmény lista összes eleme harcmodor → "Harcmodor ≥ X" (rövidített)
+- Harcmodor összevonás: ha a követelmény lista összes eleme harcmodor → "Harcmodor ≥ X" (rövidített). Mesterfegyvernél fegyver-specifikus: "Harcmodor - Kardvívás ≥ X" (fegyver kategória → harcmodor lookup)
 - Többszörös fortély követelmény (pl. Nyelvismeret): bármelyik példány teljesítheti
 - Case-insensitive összehasonlítás mindkét típusnál
 - Rendezés: locked fortélyok előre → azonos nevűek együtt (ABC) → azon belül fok desc
