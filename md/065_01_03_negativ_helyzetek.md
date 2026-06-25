@@ -21,6 +21,8 @@ Mozgás - feleződik
 
 A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
 
+❌ Kizárja: Magasabbról, Levegőből támadás
+
 <br />
 
 ---
@@ -30,6 +32,8 @@ A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrob
 Hátrány-2 TÉ dobásra
 VÉ veszteség duplázódik
 ```
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Helyhez kötve, Célzás, VÉ kiterjesztés, Közrefogás
 
 <br />
 
@@ -72,6 +76,8 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 Hátrány-1 TÉ dobásra
 VÉ veszteség duplázódik
 ```
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
 
 <br />
 

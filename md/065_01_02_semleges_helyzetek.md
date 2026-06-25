@@ -6,6 +6,8 @@ Ha a képzett harcosnak sikerül ellenfele fegyvere "mögé", testközelébe ker
 
 Szituáció:  [Belharc folyamata](szituaciok/belharc_folyamata.md) - bekerülés, kikerülés
 
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Célzás, Takarásban
+
 <br />
 
 ### Bónuszok
@@ -128,6 +130,8 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás.
 
 Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Pengeelőny** harci helyzetét.
 
+❌ Kizárja: Földön fekve
+
 ### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
 
 A hosszú kardos
@@ -159,6 +163,8 @@ VÉ: +5
 
 🔆 Példa: kapu, belógó falrész mögül harcolsz.
 
+❌ Kizárja: Lovas harc, Léglovas harc, Levegőből támadás
+
 <br />
 
 ---
@@ -172,6 +178,8 @@ VÉ veszteség duplázódik
 Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
 
 🔆 A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
+
+❌ Kizárja: Földön fekve
 
 <br />
 

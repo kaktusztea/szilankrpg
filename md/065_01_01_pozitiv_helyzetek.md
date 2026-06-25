@@ -17,12 +17,16 @@ Előny+1 TÉ dobásra
 
 → [Kitartott célzás](fortelyok.tavharc/kitartott_celzas.md) fortély emeli a fenti bónusza.
 
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
+
 <br />
 
 ---
 ## Harci szekér
 
 Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Lovas harc, Léglovas harc, Belharci helyzet, Földön fekve, Helyhez kötve, Magasabbról, Levegőből támadás, Célzás, Orvtámadás
 
 <br />
 
@@ -98,6 +102,8 @@ Előny+2 TÉ Dobásra
 
 🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
 
+❌ Kizárja: Lovas harc, Harci szekér, Magasabbról, Belharci helyzet, Földön fekve, Helyhez kötve, Célzás, Takarásban
+
 <br />
 
 ---
@@ -105,12 +111,16 @@ Előny+2 TÉ Dobásra
 
 Lóhátról harcolás. A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély bónuszai aktívak.
 
+❌ Kizárja: Magasabbról, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Levegőből támadás, Célzás, Orvtámadás, Takarásban
+
 <br />
 
 ---
 ## Léglovas harc
 
 Repülő hátas hátáról harcolás. A [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Magasabbról, Lovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Csúszós talaj, Célzás, Orvtámadás, Takarásban
 
 <br />
 
@@ -122,6 +132,8 @@ Előny+1 TÉ dobásra
 ```
 
 🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
+
+❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás
 
 <br />
 
@@ -179,11 +191,11 @@ Bónuszok
     3.fok: Előny+2 Sebzés dobásra, +3 SP
 ```
 
-→ ❌ **Hátulról** és **Meglepetés** harci helyzetek **nem** adhatóak hozzá\
+→ ❌ Kizárja: Hátulról, Meglepetés, Lovas harc, Léglovas harc, Harci szekér
 → ❌ Egyéb `TÉ` bónusz nincs\
 → ❌ Harci taktikák NEM használhatóak
 
-→ Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅ 
+→ Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅
 → Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
 → [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak \
 
