@@ -309,7 +309,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             </div>
             <div className="aktiv-picker-list">
               {!taktikaFokválasztó && data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).sort((a, b) => {
-                const pinned = (data.konstansok as any).pinned_taktikák;
+                const pinned = (data.konstansok.pinned_taktikák ?? []) as string[];
                 const aPin = pinned.indexOf(a.név);
                 const bPin = pinned.indexOf(b.név);
                 if (aPin >= 0 && bPin >= 0) return aPin - bPin;
@@ -391,9 +391,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           const def = data.harciHelyzetek.find(d => d.név === h);
           if (!def) return null;
           const kötöttFortélyok = helyzetFortélyok.get(h) || [];
-          const hId = (def as any).feltétel_kulcs?.split(':')[1] || '';
+          const hId = def.feltétel_kulcs?.split(':')[1] || '';
           let alapText = '';
-          for (const fd of (data.fortelySummaries as any[])) {
+          for (const fd of data.fortelySummaries) {
             const f0 = fd.fokok?.find((f: any) => f.fok === 0);
             if (!f0?.hatás?.length) continue;
             const hasFelt = f0.módosítók?.some((m: any) => m.feltétel === `harci_helyzet:${hId}`) || f0.hatás?.join(' ').toLowerCase().includes(h.toLowerCase());
@@ -427,18 +427,18 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             <div className="aktiv-picker-list">
               {(() => {
                 const filtered = data.harciHelyzetek.filter(h => {
-                  if ((h as any).rejtett) return false;
+                  if (h.rejtett) return false;
                   if (session.aktív_helyzetek.includes(h.név)) return false;
                   for (const ah of session.aktív_helyzetek) {
                     const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-                    if ((ahDef as any)?.kizár_helyzetek?.includes((h as any).id)) return false;
+                    if (ahDef?.kizár_helyzetek?.includes(h.id)) return false;
                   }
                   return true;
                 });
                 const groups: { label: string; color: string; items: typeof filtered }[] = [
-                  { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => (h as any).csoport === 'pozitív') },
-                  { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => (h as any).csoport === 'semleges') },
-                  { label: 'Negatív helyzet', color: '#f44336', items: filtered.filter(h => (h as any).csoport === 'negatív') },
+                  { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => h.csoport === 'pozitív') },
+                  { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => h.csoport === 'semleges') },
+                  { label: 'Negatív helyzet', color: '#f44336', items: filtered.filter(h => h.csoport === 'negatív') },
                 ];
                 const renderCard = (h: typeof data.harciHelyzetek[0]) => (
                 <div key={h.név} className="aktiv-picker-item" onClick={() => {
