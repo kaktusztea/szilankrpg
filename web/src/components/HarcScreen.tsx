@@ -39,7 +39,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   function changeVé(newVal: number) {
     const diff = newVal - session.vé_csökkenés;
-    if (diff !== 0) pushUndo(`VÉ csökkenés: ${diff > 0 ? '-' : '+'}${Math.abs(diff)}`);
+    if (diff !== 0) pushUndo(`${diff > 0 ? 'VÉ csökkenés' : 'VÉ visszanyerés'}: ${diff > 0 ? '-' : '+'}${Math.abs(diff)}`);
     const dir = diff > 0 ? 'down' : 'up';
     setSession(prev => ({
       ...prev,
