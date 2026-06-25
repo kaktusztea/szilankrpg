@@ -240,17 +240,14 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       {(fortélyEmlékeztetők.length > 0 || alapesetekFiltered.length > 0) && (
         <div className="aktiv-hatas-pool">
           {fortélyEmlékeztetők.length > 0 && (
-            <div className="hatas-pool-section">
-              <span className="hatas-pool-title">Fortély bónuszok</span>
-              <div className="hatas-pool-items">
-                {fortélyEmlékeztetők.map((fe, i) => (
-                  <span key={i} className="hatas-pool-item"><strong className="fortely-nev">{fe.név} ({fe.fok}):</strong> {fmtCode(fe.hatás)}</span>
-                ))}
-              </div>
+            <div className="hatas-pool-items">
+              {fortélyEmlékeztetők.map((fe, i) => (
+                <span key={i} className="hatas-pool-item"><strong className="fortely-nev">{fe.név} ({fe.fok}):</strong> {fmtCode(fe.hatás)}</span>
+              ))}
             </div>
           )}
           {alapesetekFiltered.length > 0 && (
-            <details className="hatas-pool-section">
+            <details style={{ marginTop: fortélyEmlékeztetők.length > 0 ? '8px' : 0 }}>
               <summary className="hatas-pool-title" style={{ cursor: 'pointer' }}>Alapesetek ({alapesetekFiltered.length}) ▾</summary>
               <div className="hatas-pool-items">
                 {alapesetekFiltered.map((ae, i) => (
