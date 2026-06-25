@@ -141,7 +141,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   // Fegyver kategória feltétel hozzáadása
   aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`);
 
-  const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
+  const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
     harcmodor_összeg: harcmodorÖsszeg,
     HM_TÉ: k.HM_TÉ,
     HM_VÉ: k.HM_VÉ,
@@ -271,7 +271,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         }
       }
     }
-    const fCtx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
+    const fCtx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
       HM_TÉ: k.HM_TÉ,
       HM_VÉ: k.HM_VÉ,
       felszerelés_mgt: 0,
@@ -339,7 +339,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     if (jobbFp && balFp) {
       kétkezesResult = calcKétkezesHarc({
         jobbFp, balFp, fegyverek: data.fegyverek, karakter: k,
-        konstansok: konstansok as any, harcmodorBonusz, fortelyMods,
+        konstansok: konstansok, harcmodorBonusz, fortelyMods,
       });
     }
   }
@@ -363,13 +363,13 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const pajzsVÉ = pajzsDef ? parseInt(pajzsDef.VÉ) || 0 : 0;
 
   // Pajzs TÉ büntetés: konstansok lookup + fortély mérséklés
-  const pajzsTÉBüntetés = (() => {
-    if (session.fegyverfogás !== 'fegyver_pajzs' || !k.pajzs.méret) return 0;
+  let pajzsTÉBüntetés = 0;
+  if (session.fegyverfogás === 'fegyver_pajzs' && k.pajzs.méret) {
     const entry = konstansok.pajzs_TÉ_büntetés?.find((e: { méret: string; büntetés: number }) => e.méret === k.pajzs.méret);
     const alap = entry?.büntetés ?? 0;
     const mérséklés = fortelyMods['pajzs_TÉ_mérséklés'] ?? 0;
-    return Math.min(0, alap + mérséklés);
-  })();
+    pajzsTÉBüntetés = Math.min(0, alap + mérséklés);
+  }
 
   // Hárítófegyver VÉ
   let hárítóVÉ = 0;

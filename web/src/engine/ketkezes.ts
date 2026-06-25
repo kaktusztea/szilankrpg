@@ -12,6 +12,7 @@ interface KétkezesInput {
     mesterfegyver_bónuszok: { fok: number; TÉ: number; VÉ: number; SP: number }[];
     fegyver_kategória_harcmodor: Record<string, string>;
     harcérték_alap: { TÉ: number; VÉ: number };
+    [key: string]: unknown;
   };
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number }[];
   fortelyMods: Record<string, number>;
