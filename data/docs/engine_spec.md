@@ -439,7 +439,7 @@ input:  közelharci harcmodor szintek (konstansok.fegyver_kategória_harcmodor v
         karakter.tsz
 
 formula:
-  harcmodor_összeg = SUM(konstansok.fegyver_kategória_harcmodor.values → képzettség szintek)
+  harcmodor_összeg = SUM(UNIQUE(konstansok.fegyver_kategória_harcmodor.values) → képzettség szintek)
   manőver_pont = CEIL(harcmodor_összeg x 2 / tsz)
 
 output: manőver_pont

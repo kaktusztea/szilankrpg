@@ -133,7 +133,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 | Elem | Típus | Leírás |
 |------|-------|--------|
-| Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz". Mindig látható. |
+| Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" + Pajzs (ha van méret, idx:-2, zöld szín). Mindig látható. |
 | Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
 | Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
 | Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Kiváltja a korábbi "2 kezes harc" és "Pajzs kézben" toggle-öket. |
@@ -229,6 +229,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
     - Fegyver+pajzs: jobb kéz fegyver + pajzsVÉ bónusz + TÉ büntetés (Pajzshasználat fok-függő), név: "Fegyver + Pajzs". Csak a lila sorban (normálból kiszűrve).
     - Fegyver+hárító: jobb kéz fegyver + hárítóVÉ bónusz, név: "Fegyver + Hárító: X"
   - Egyfegyveres: csak az Ügyesebb kézben kiválasztott fegyver sora normál, többi halványítva (opacity: 0.4)
+  - Pajzs fegyver sor: ha van pajzs méret → megjelenik a fegyvertáblában (kategória: "pajzs", Közelharc harcmodor). Aktív ha idx=-2 kiválasztva.
   - Tám cella kattintható (Game mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)

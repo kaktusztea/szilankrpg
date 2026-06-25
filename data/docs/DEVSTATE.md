@@ -602,7 +602,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Pengelimit: `konstansok.kétkezes_harc_max_pengeméret` (nincs hardcode 2.0)
 - Kétkezes harc data-driven: `konstansok.kétkezes_harc_bónuszok[]` tartalmazza `mindkét_fegyver_értékei`, `mf`, `TÉ`, `VÉ` fokonként. Harckeret bónusz: yaml fortélyból (`fegyverfogás:kétkezes` feltétel), 0.fok: konstans +1.
 - Pengelevonás osztó: `konstansok.kétkezes_harc_pengelevonás_osztó` (0.5)
-- Harcmodor nevek: `Object.values(konstansok.fegyver_kategória_harcmodor)` — nincs hardcoded lista
+- Harcmodor nevek: `[...new Set(Object.values(konstansok.fegyver_kategória_harcmodor))]` — unique-olt (pajzs kategória duplikálná Közelharc-ot)
 - Harcmodor display name (Harcértékek fül): közelharci → "Harcmodor: X", távharci → "Táv. harcmodor: X", egyéb → nyers név. Csak megjelenítés, belső referenciák a nyers nevet használják.
 - Többszörös státuszok: yaml `többszörös: true` + `alkategóriák: [...]` → generikus alkategória almenü picker
 - Fegyverfogás: `session.fegyverfogás` explicit mező (enum: egyfegyveres/fegyver_pajzs/fegyver_hárító/kétkezes), opciók `konstansok.fegyverfogás_opciók`-ból
@@ -656,7 +656,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Nyelvismeret felvétel: custom styled gomb-lista overlay (`.nyelv-picker`, `.nyelv-csoport`, `.nyelv-btn`), mellé katt/Escape cancel
 - Kor választó: 10–58 / 60–100 toggle split (cserélődő tartalom, nem append), 42x42px kerek gombok
 - Harcértékek fül szekció elválasztó: `.he-section + .he-section { border-top }`, h3-on nincs border-bottom
-- process_fegyverek.py: pattern fájlok helye `data/tables/*_pattern.json` (fegyver, tavfegyver, pajzs). Hárítófegyverek beolvasztva fegyverek.json-ba (md tag átnevezés).
+- process_fegyverek.py: pattern fájlok helye `data/tables/*_pattern.json` (fegyver, tavfegyver, pajzs). Hárítófegyverek beolvasztva fegyverek.json-ba (md tag átnevezés). Pajzsok hozzáfűzve fegyverek.json-hoz (kategória: "pajzs", pajzsok.json-ból).
 - Fejléc: ⚙️ menü gomb (overlay popup: Karakter betöltése/mentése, Új/Teszt karakter) + 🔧/🎮 mód toggle
 - Tab bar: tükrözött (jobb→bal), induláskor `scrollLeft = scrollWidth`, ikon-only fülek, 18px font, aktív tab alatti 3px accent csík (slide animáció)
 - Screen slider: tükrözött (`TABS.length-1-activeTab`), swipe irány invertált
