@@ -362,3 +362,26 @@
   color: #aaa;
   margin-top: 1px;
 }
+
+.aktiv-add-btn-sm {
+  margin-left: 8px;
+  padding: 2px 8px;
+  font-size: 13px;
+}
+
+.aktiv-taktika-row-clickable { cursor: pointer; }
+
+.aktiv-add-btn-hidden { visibility: hidden; }
+
+.narrativ-val-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: bold;
+  cursor: pointer;
+}
+.narrativ-val-btn.selected {
+  color: #fff;
+}

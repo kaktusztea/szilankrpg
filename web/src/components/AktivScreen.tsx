@@ -82,7 +82,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
         setShowTaktikaPicker(false); setTaktikaFokválasztó(null);
       }}>
         <span className="aktiv-picker-item-name">{f.fok}. fok{def!.fokok && f.fok > def!.fokok[def!.fokok.length - 1].fok && <span style={{ color: '#ce93d8', marginLeft: '6px' }}>●</span>}</span>
-        <span className="aktiv-picker-item-details">{Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ')}</span>
+        <span className="aktiv-picker-item-details">{Object.entries(f)
+          .filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0)
+          .map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ')}</span>
         {f.hatások && f.hatások.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map(h => h.megjegyzés || `${h.operátor} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
       </div>
     ));
@@ -383,7 +385,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             for (const [k, v] of Object.entries(def.módosítók)) { if (typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`); }
           }
           return (
-            <div key={i} className="kep-row" style={{ cursor: def?.fokozatos ? 'pointer' : undefined }} onClick={() => { if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); } }}>
+            <div key={i} className={`kep-row${def?.fokozatos ? ' aktiv-taktika-row-clickable' : ''}`} onClick={() => { if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); } }}>
               <span style={{ flex: 1 }}>
                 <strong style={{ color: '#90caf9' }}>{t.név}{t.fok != null ? ` (${t.fok})` : ''}:</strong>
                 {mods.length > 0 && <span style={{ color: '#66bb6a' }}> {mods.join(', ')} ✔</span>}
@@ -433,7 +435,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   <span className="aktiv-picker-item-name">{t.név}{t.fokozatos ? ` 📶` : ''}</span>
                   <span className="aktiv-picker-item-details">
                     {t.fokozatos && t.fokok
-                      ? t.fokok.map(f => `${f.fok}: ${Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}:${v}`).join(', ')}`).join(' | ')
+                      ? t.fokok.map(f => `${f.fok}: ${Object.entries(f)
+                          .filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0)
+                          .map(([k, v]) => `${k}:${v}`).join(', ')}`).join(' | ')
                       : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${v > 0 ? '+' : ''}${v}`).join(', ') : ''}
                   </span>
                   {t.megjegyzés && <span className="aktiv-picker-item-hatas">{t.megjegyzés}</span>}
@@ -447,7 +451,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       )}
       {/* Harci helyzetek */}
       <div className="aktiv-section" style={{ borderBottom: 'none', fontSize: '13px' }}>
-        <span className="aktiv-label">Harci helyzetek <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.harciHelyzetek.every(h => !isHelyzetAvailable(h))} onClick={() => setShowHelyzetPicker(true)}>+</button></span>
+        <span className="aktiv-label">Harci helyzetek
+          <button className="aktiv-add-btn aktiv-add-btn-sm"
+            disabled={data.harciHelyzetek.every(h => !isHelyzetAvailable(h))}
+            onClick={() => setShowHelyzetPicker(true)}>+</button>
+        </span>
         {session.aktív_helyzetek.map((h, i) => {
           const def = data.harciHelyzetek.find(d => d.név === h);
           if (!def) return null;
@@ -467,7 +475,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 <span style={{ flex: 1 }}>
                   <strong style={{ color: '#ff9800' }}>{h}:</strong> {fmtCode(infóText)}
                 </span>
-                <button className="fort-delete" onClick={e => { e.stopPropagation(); pushUndo(`Helyzet−: ${h}`); setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) })); }}>✕</button>
+                <button className="fort-delete" onClick={e => {
+                  e.stopPropagation();
+                  pushUndo(`Helyzet−: ${h}`);
+                  setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }));
+                }}>✕</button>
               </div>
               {kötöttFortélyok.map((kf, j) => (
                 <div key={j} className="kep-row" style={{ paddingLeft: '12px', color: kf.aktív ? '#66bb6a' : '#888' }}>
@@ -495,7 +507,10 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
       {/* Manőver */}
       <div className="aktiv-section">
-        <span className="aktiv-label">Manőver <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px', visibility: session.aktív_manőver ? 'hidden' : undefined }} onClick={() => setShowManőverPicker(true)}>+</button></span>
+        <span className="aktiv-label">Manőver
+          <button className={`aktiv-add-btn aktiv-add-btn-sm${session.aktív_manőver ? ' aktiv-add-btn-hidden' : ''}`}
+            onClick={() => setShowManőverPicker(true)}>+</button>
+        </span>
         {session.aktív_manőver && (() => {
           const m = data.manoverek.find(d => d.név === session.aktív_manőver);
           if (!m) return null;
@@ -531,7 +546,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   <div key={tipus}>
                     <div className="aktiv-picker-category">{tipus === 'általános' ? 'Általános' : tipus === 'belharcos' ? 'Belharci' : 'Lovas'}</div>
                     {items.map(m => (
-                      <div key={m.név} className={`aktiv-picker-item ${session.aktív_manőver === m.név ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
+                      <div key={m.név}
+                        className={`aktiv-picker-item ${session.aktív_manőver === m.név ? 'active' : ''}`}
+                        onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowManőverPicker(false); }}>
                         <span className="aktiv-picker-item-name">{m.név}</span>
                         <span className="aktiv-picker-item-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
                         <span className="aktiv-picker-item-hatas">{m.hatás}</span>
@@ -572,9 +589,16 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             }}>
               <span style={{ flex: 1 }}>
                 <strong style={{ color: '#cd7c6f' }}>{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}:</strong>
-                {perElem && perElem.hatások.length > 0 && <span> {perElem.hatások.map((h, j) => { const txt = fmtHatás(h, eseményNév); return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null; })}</span>}
+                {perElem && perElem.hatások.length > 0 && <span> {perElem.hatások.map((h, j) => {
+                  const txt = fmtHatás(h, eseményNév);
+                  return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
+                })}</span>}
               </span>
-              {!locked && <button className="fort-delete" onClick={e => { e.stopPropagation(); pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`); setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) })); }}>✕</button>}
+              {!locked && <button className="fort-delete" onClick={e => {
+                e.stopPropagation();
+                pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`);
+                setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }));
+              }}>✕</button>}
             </div>
           );
         })}
@@ -667,14 +691,21 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
       {/* Narratív módosítók */}
       <div className="aktiv-section" style={{ fontSize: '13px' }}>
-        <span className="aktiv-label">Narratív Előny/Hátrányok <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} onClick={() => { setNarrativÉrték(undefined); setNarrativPopup(true); }}>+</button></span>
+        <span className="aktiv-label">Narratív Előny/Hátrányok
+          <button className="aktiv-add-btn aktiv-add-btn-sm"
+            onClick={() => { setNarrativÉrték(undefined); setNarrativPopup(true); }}>+</button>
+        </span>
         {session.narratív_módosítók.map((nm, i) => (
           <div key={i} className="kep-row">
             <span style={{ flex: 1 }}>
               <strong style={{ color: (nm.érték ?? 0) > 0 ? '#66bb6a' : '#e53935' }}>{nm.szöveg}:</strong>
               <span> {nm.érték != null ? (nm.érték > 0 ? `Előny+${nm.érték}` : `Hátrány${nm.érték}`) : ''}</span>
             </span>
-            <button className="fort-delete" onClick={e => { e.stopPropagation(); pushUndo(`Narratív−: ${nm.szöveg}`); setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) })); }}>✕</button>
+            <button className="fort-delete" onClick={e => {
+              e.stopPropagation();
+              pushUndo(`Narratív−: ${nm.szöveg}`);
+              setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) }));
+            }}>✕</button>
           </div>
         ))}
       </div>
@@ -688,7 +719,8 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 const color = b.v > 0 ? '#4caf50' : 'var(--accent)';
                 return (
                   <button key={b.v} onClick={() => setNarrativÉrték(b.v)}
-                    style={{ padding: '8px 12px', borderRadius: '6px', border: `2px solid ${sel ? color : 'rgba(255,255,255,0.3)'}`, background: sel ? color : 'var(--surface)', color: sel ? '#fff' : 'var(--text)', fontWeight: 'bold', cursor: 'pointer' }}>
+                    className={`narrativ-val-btn${sel ? ' selected' : ''}`}
+                    style={sel ? { borderColor: color, background: color } : undefined}>
                     {b.l}
                   </button>
                 );
