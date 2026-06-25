@@ -270,7 +270,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'center' }}>
             <label>{deleteTarget.név}</label>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Fortély törlése</button>
+            <button className="btn-del-confirm he-del-confirm" onClick={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Fortély törlése</button>
           </div>
         </div>,
         document.body
@@ -287,7 +287,11 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
               <label>{isNyelv ? displayName(pSlot) : `${pSlot?.név} — fok:`}</label>
               <div className="fort-fok-radios">
                 {Array.from({ length: pMaxfok }, (_, i) => i + 1).map(f => (
-                  <button key={f} className={`fort-fok-btn ${pSlot?.fok === f ? 'active' : ''}`} style={isNyelv ? { width: 'auto', padding: '6px 14px', borderRadius: '6px' } : undefined} onClick={() => { setFortélyok(prev => prev.map((ft, i) => i === pendingFortIdx ? { ...ft, fok: f } : ft)); setPendingFortIdx(null); }}>{isNyelv ? NYELV_FOK_LABELS[f] ?? f : f}</button>
+                  <button key={f}
+                    className={`fort-fok-btn ${pSlot?.fok === f ? 'active' : ''}${isNyelv ? ' fort-fok-btn-wide' : ''}`}
+                    onClick={() => { setFortélyok(prev => prev.map((ft, i) => i === pendingFortIdx ? { ...ft, fok: f } : ft)); setPendingFortIdx(null); }}>
+                    {isNyelv ? NYELV_FOK_LABELS[f] ?? f : f}
+                  </button>
                 ))}
               </div>
             </div>
@@ -415,7 +419,9 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret, nyelvFokLabels, képzettségek, fortélyok, harcmodorNevek, távfegyverNevek, fegyverHarcmodorNév }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove,
+  isIngyenes, locked, onHint, overLimit, nyelvPontKeret, nyelvFokLabels,
+  képzettségek, fortélyok, harcmodorNevek, távfegyverNevek, fegyverHarcmodorNév }: {
   slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
@@ -489,7 +495,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
         className={`fort-row${követelményHiba ? ' fort-kov-hiba' : ''}`}
         onClick={handleTap}
       >
-        <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes && !slot.kiérdemelt ? <span style={{ color: '#a5d6a7', fontSize: '11px', marginLeft: '4px', display: 'inline-block', transform: 'translateY(-3px)' }}>●</span> : ''}</span>
+        <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>{label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}</span>
         <span className="fort-right">
           {!gameMode && !locked && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
@@ -513,7 +519,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
               <span className="fort-info-label">Normál kiterjesztés:</span>{' '}
               <span className="fort-info-kit">
                 {def.kiterjeszti_normál.map((kn: string, ki: number) => (
-                  <span key={ki} style={{ color: képzettségek.some((k: { név: string; szint: number }) => k.név === kn && k.szint >= 1) ? 'var(--success)' : '#e53935' }}>{ki > 0 ? ', ' : ''}{kn}</span>
+                  <span key={ki} className={képzettségek.some((k: { név: string; szint: number }) => k.név === kn && k.szint >= 1) ? 'fort-req-met' : 'fort-req-unmet'}>{ki > 0 ? ', ' : ''}{kn}</span>
                 ))}
               </span>
             </div>
@@ -523,7 +529,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
               <span className="fort-info-label">Erős kiterjesztés:</span>{' '}
               <span className="fort-info-kit">
                 {def.kiterjeszti_erős.map((kn: string, ki: number) => (
-                  <span key={ki} style={{ color: képzettségek.some((k: { név: string; szint: number }) => k.név === kn && k.szint >= 1) ? 'var(--success)' : '#e53935' }}>{ki > 0 ? ', ' : ''}{kn}</span>
+                  <span key={ki} className={képzettségek.some((k: { név: string; szint: number }) => k.név === kn && k.szint >= 1) ? 'fort-req-met' : 'fort-req-unmet'}>{ki > 0 ? ', ' : ''}{kn}</span>
                 ))}
               </span>
             </div>
@@ -546,7 +552,11 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
             <label style={slot.név === 'Nyelvismeret' ? { textAlign: 'center', width: '100%' } : undefined}>{slot.név === 'Nyelvismeret' ? label : `${label} — fok:`}</label>
             <div className="fort-fok-radios">
               {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
-                <button key={f} className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}`} style={slot.név === 'Nyelvismeret' ? { width: 'auto', padding: '6px 14px', borderRadius: '6px' } : undefined} onClick={() => { onFokChange(f); setEditing(false); }}>{slot.név === 'Nyelvismeret' ? NYELV_FOK_LABELS[f] ?? f : f}</button>
+                <button key={f}
+                  className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}${slot.név === 'Nyelvismeret' ? ' fort-fok-btn-wide' : ''}`}
+                  onClick={() => { onFokChange(f); setEditing(false); }}>
+                  {slot.név === 'Nyelvismeret' ? NYELV_FOK_LABELS[f] ?? f : f}
+                </button>
               ))}
             </div>
           </div>
