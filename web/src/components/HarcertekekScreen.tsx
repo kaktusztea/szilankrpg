@@ -218,7 +218,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
 
   useEffect(() => {
     if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && !pajzsPopup && deleteTarget === null && !deleteKepzTarget && !kepzSzintTarget) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); setDeleteKepzTarget(null); setKepzSzintTarget(null); } }
+    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); setDeleteKepzTarget(null); if (kepzSzintTarget) { const kp = képzettségek.find(k => k.név === kepzSzintTarget); if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget)); } setKepzSzintTarget(null); } }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget]);
@@ -273,7 +273,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
                 </div>
               ))}
               {!gameMode && nemFelvett.length > 0 && (
-                <select className="he-add-select" value="" onChange={e => { if (e.target.value) { const név = e.target.value; setKépzettségek(prev => [...prev, { név, szint: 1 }]); setKepzSzintTarget(név); } }}>
+                <select className="he-add-select" value="" onChange={e => { if (e.target.value) { const név = e.target.value; setKépzettségek(prev => [...prev, { név, szint: 0 }]); setKepzSzintTarget(név); } }}>
                   <option value="">+ Harci képzettség...</option>
                   {nemFelvett.map(n => <option key={n} value={n}>{harciKepzDisplayName(n)}</option>)}
                 </select>
@@ -487,7 +487,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
       )}
 
       {kepzSzintTarget && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setKepzSzintTarget(null); }}>
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) { const kp = képzettségek.find(k => k.név === kepzSzintTarget); if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget)); setKepzSzintTarget(null); } }}>
           <div className="kep-prompt">
             <label>{harciKepzDisplayName(kepzSzintTarget)} — szint:</label>
             <div className="kep-szint-grid">
