@@ -453,9 +453,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                       helyzetek = helyzetek.filter(hh => !kizártNevek.includes(hh));
                     }
                     if (hDef?.tiltja_taktikákat) taktikák = [];
-                    // Lovas/Léglovas harc: hárító és kétkezes fogás tiltott → reset egyfegyveresre
+                    // Helyzet tiltott fegyverfogásai: ha aktív fogás tiltott → reset egyfegyveresre
                     const patch: Partial<typeof s> = {};
-                    if (hDef && (hDef.id === 'lovas_harc' || hDef.id === 'léglovas_harc') && (s.fegyverfogás === 'fegyver_hárító' || s.fegyverfogás === 'kétkezes')) {
+                    if (hDef?.tiltott_fegyverfogások?.includes(s.fegyverfogás)) {
                       patch.fegyverfogás = 'egyfegyveres';
                       patch.kétkezes_harc = false;
                       patch.aktív_pajzs = false;
@@ -729,9 +729,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   if (nemHáritóFegyverek.length === 0) disabled = true;
                 }
                 if (kétkezes_fegyver && opt.id !== 'egyfegyveres') disabled = true;
-                // Lovas/Léglovas harc: hárítófegyver és kétkezes harc tiltott
-                const lovasAktív = session.aktív_helyzetek.some(h => { const hd = data.harciHelyzetek.find(d => d.név === h); return hd && (hd.id === 'lovas_harc' || hd.id === 'léglovas_harc'); });
-                if (lovasAktív && (opt.id === 'fegyver_hárító' || opt.id === 'kétkezes')) disabled = true;
+                // Aktív helyzetek tiltott fegyverfogásai (data-driven)
+                for (const ah of session.aktív_helyzetek) {
+                  const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+                  if (ahDef?.tiltott_fegyverfogások?.includes(opt.id)) { disabled = true; break; }
+                }
                 const active = session.fegyverfogás === opt.id;
                 return (
                   <div key={opt.id} className={`aktiv-picker-item ${disabled ? 'disabled' : ''} ${active ? 'active' : ''}`}

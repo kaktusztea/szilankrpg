@@ -684,6 +684,10 @@
       "orvtámadás",
       "takarásban"
     ],
+    "tiltott_fegyverfogások": [
+      "fegyver_hárító",
+      "kétkezes"
+    ],
     "feltétel_kulcs": "harci_helyzet:lovas_harc"
   },
   {
@@ -705,6 +709,10 @@
       "célzás",
       "orvtámadás",
       "takarásban"
+    ],
+    "tiltott_fegyverfogások": [
+      "fegyver_hárító",
+      "kétkezes"
     ],
     "feltétel_kulcs": "harci_helyzet:léglovas_harc"
   },

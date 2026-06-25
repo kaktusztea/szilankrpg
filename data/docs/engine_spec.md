@@ -2714,7 +2714,7 @@ Három meglévő manőver bővítés + 1 placeholder kiegészítés a `manoverek
   id: "lóhátról_lerántás"
 ```
 
-A meglévő `"Lovas akasztása"` (típus: "általános") → típus módosítás "lovas"-ra + hatás szöveg frissítés.
+A meglévő `"Lovas megakasztása"` (korábbi név: "Lovas akasztása") típus: "lovas", hatás szöveg frissítve.
 
 Az Aktív fül manőver picker-ben: új "Lovas" kategória csoport megjelenik (mint "Általános"/"Belharcos" mellett).
 

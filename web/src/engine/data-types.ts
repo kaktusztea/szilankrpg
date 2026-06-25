@@ -97,6 +97,7 @@ export interface HarciHelyzetEntry {
   csoport?: string;
   rejtett?: boolean;
   tiltja_taktikákat?: boolean;
+  tiltott_fegyverfogások?: string[];
   kizár_helyzetek?: string[];
   hatások?: StatuszHatas[];
   fegyver_override?: {

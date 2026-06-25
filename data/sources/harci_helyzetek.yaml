@@ -392,6 +392,7 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["magasabbról", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "levegőből", "célzás", "orvtámadás", "takarásban"]
+  tiltott_fegyverfogások: ["fegyver_hárító", "kétkezes"]
 - név: "Léglovas harc"
   infó: "Repülő hátas hátáról harcolás. Léglovas harc fortély bónuszok aktívak."
   hatások: []
@@ -400,6 +401,7 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["magasabbról", "lovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "csúszós_talaj", "célzás", "orvtámadás", "takarásban"]
+  tiltott_fegyverfogások: ["fegyver_hárító", "kétkezes"]
 - név: "Harci szekér"
   infó: "Szekérről harcolás. Harci kocsihajtas fortély bónuszok aktívak."
   hatások: []
