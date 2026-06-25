@@ -36,7 +36,9 @@ interface Props {
   setAnyanyelv: (v: string) => void;
 }
 
-export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, név, setNév, becenév, setBecenév, játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv }: Props) {
+export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, setTulajdonságok,
+  képzettségek, setKépzettségek, név, setNév, becenév, setBecenév, játékos, setJátékos,
+  tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv }: Props) {
   const felvettFortelyok = karakter.fortélyok.map(f => f.név);
   const [editingNév, setEditingNév] = useState(false);
   const [tempNév, setTempNév] = useState('');
@@ -399,7 +401,7 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'center' }}>
             <label>{deleteTarget.név}</label>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Képzettség törlése</button>
+            <button className="btn-del-confirm he-del-confirm" onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Képzettség törlése</button>
           </div>
         </div>,
         document.body
@@ -411,7 +413,8 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
             <label>{getDisplayName(képzettségek[pendingEditIdx]?.név ?? '')} — szint:</label>
             <div className="kep-szint-grid">
               {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
-                <button key={n} className={`fort-fok-btn ${képzettségek[pendingEditIdx!]?.szint === n ? 'active' : ''}`} onClick={() => { setKépzettségek(prev => prev.map((k, i) => i === pendingEditIdx ? { ...k, szint: n } : k)); setPendingEditIdx(null); }}>{n}</button>
+                <button key={n} className={`fort-fok-btn ${képzettségek[pendingEditIdx!]?.szint === n ? 'active' : ''}`}
+                  onClick={() => { setKépzettségek(prev => prev.map((k, i) => i === pendingEditIdx ? { ...k, szint: n } : k)); setPendingEditIdx(null); }}>{n}</button>
               ))}
             </div>
           </div>
@@ -466,7 +469,9 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
             <label>Játékos neve</label>
-            <input autoFocus maxLength={40} value={tempJátékos} onChange={e => setTempJátékos(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') { setJátékos(tempJátékos); setEditingJátékos(false); } }} />
+            <input autoFocus maxLength={40} value={tempJátékos}
+              onChange={e => setTempJátékos(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') { setJátékos(tempJátékos); setEditingJátékos(false); } }} />
             <div className="kep-prompt-btns">
               <button onClick={() => { setJátékos(tempJátékos); setEditingJátékos(false); }}>OK</button>
             </div>
@@ -479,7 +484,9 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
             <label>Becenév (max 12)</label>
-            <input autoFocus maxLength={12} value={tempBecenév} onChange={e => setTempBecenév(e.target.value)} onKeyDown={e => { if (e.key === 'Enter') { setBecenév(tempBecenév.trim()); setEditingBecenév(false); } if (e.key === 'Escape') setEditingBecenév(false); }} />
+            <input autoFocus maxLength={12} value={tempBecenév}
+              onChange={e => setTempBecenév(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter') { setBecenév(tempBecenév.trim()); setEditingBecenév(false); } if (e.key === 'Escape') setEditingBecenév(false); }} />
             <div className="kep-prompt-btns">
               <button onClick={() => { setBecenév(tempBecenév.trim()); setEditingBecenév(false); }}>OK</button>
             </div>
