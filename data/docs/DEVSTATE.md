@@ -7,7 +7,7 @@
 ├── data/                      ← Adatfájlok
 │   ├── docs/                  ← Specifikációk, fejlesztői doksik
 │   │   ├── DEVSTATE.md        ← Fejlesztési állapot (ez a fájl)
-│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§36)
+│   │   ├── engine_spec.md     ← Engine kalkuláció spec (§1-§39)
 │   │   └── gui_spec.md        ← GUI spec (screen-ek, viselkedés, formázás)
 │   ├── sources/               ← YAML forrásadatok (amiből generálunk)
 │   │   ├── konstansok.yaml    ← Központi konstansok (forrás, JSON-ba generálódik)
@@ -378,6 +378,7 @@
 | Lovas harc rendszer              | ✅ Kész (Ph kijelzés opcionális, §38)                   | Harc+Aktív  |
 | Belharc / Belharci helyzet       | Fegyver/harcmodor korlátozás jelzés, puszta kéz override  | Aktív fül   |
 | Harc alakzatban                  | NJK kalkulátor, Alakzat ellen helyzet, taktika tiltások | §28         |
+| Méreggenerátor                   | KM eszköz: méreg paraméterek → komplexitás/Mk szint    | §39         |
 
 ### Karakteralkotó — általános
 - ✅ VÉ eltolás ökölszabály: max ±10 (taktikák kombinálása esetén is) — konstansok + clamp implementálva
@@ -477,6 +478,31 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - [ ] Aktív fül: "Alakzat ellen" helyzet hozzáadás (VÉ csökkentés mérséklés -2, taktika tiltások)
 - [ ] Taktika megkötések: Fárasztó/Kezdeményező/Kiváró/Visszafogott → tiltott alakzat ellen
 - [ ] engine_spec §28 TERV → IMPLEMENTÁLVA státuszra emelés implementáció után
+
+### Méreggenerátor 🚧
+
+Forrás: md/141_meregkeveres_szabalyai.md — Méreg paraméterek → Komplexitás kalkulátor (KM eszköz).
+
+**Szabályrendszer összefoglaló:**
+- Komplexitás = Erősség(1-10) + Súlyosság(1-5) + Elállás/Kiürülés(0-6) + Hatóidő(0-5) + Speciális(Σ)
+- Min. Méregkeverés szint = MAX(CEIL(Komplexitás/2), legmagasabb paraméter Mk küszöb)
+- Méregellenállás: (Edzettség + k6) vs Méreg_Erősség
+- 4 típus: étel/ital, légi, kontakt, fegyver (elállás vs kiürülés szétválás)
+- Speciális: +2/+3/+6 módosítók (többkomponens, sűrű, színtelen, szagtalan, félrevezető)
+
+**Nyitott kérdések (wiki TODO.meregrendszer):**
+- Hatás súlyossága: "Alvás" kategóriája (1 vagy 2?)
+- Másodlagos hatás: -1 vagy -2 kategóriával alacsonyabb?
+- Alapanyag követelmény: (Alkímia + Vajákosság) >= Komplexitás/2 — véglegesítendő
+- Méregérzékelés: Méregkeverés próba alap célszáma hiányzik
+- Hatás időtartama, FP mint hatás — nincs véglegesítve
+- Elkészítés ideje — nincs modellezve
+
+**TODO:**
+- [ ] Konstansok YAML: méreg paraméter táblák (erősség, súlyosság, elállás, kiürülés, hatóidő, speciálisok)
+- [ ] Méreggenerátor overlay (KM eszköz): input paraméterek → output komplexitás + min Mk + érzékelés nehézség
+- [ ] Preset mérgek (144_peldamergek.md alapján): Lórúgás, Könnycsepp, Múló évszakok
+- [ ] engine_spec §39 TERV → IMPLEMENTÁLVA státuszra emelés implementáció után
 
 ### Távharc fül
 - ✅ Távharc kalkulátor (CÉ + VÉ) — §17: TavharcScreen.tsx implementálva
@@ -598,7 +624,7 @@ Engine spec: §38.
 - ✅ HarcertekekScreen bug fix: harci képzettség felvétel szint picker cancel → 0.szintű képzettség eltávolítása (korábban szint:1-gyel maradt)
 - ✅ Fortélyok fül: Mesterfegyver követelmény kijelzés → konkrét harcmodor név ("Harcmodor - Kardvívás ≥ 8" a generikus "Harcmodor ≥ 8" helyett)
 - ✅ Refaktor: `as any` cast eliminálás (28→14), `isHelyzetAvailable()` + `renderHelyzetItems()` + `renderTaktikaFokok()` helperek, `FegyverChip` + `PancelPopup` + `FegyverfogásPicker` alkomponensek, `lookupFegyver` helper (16 helyen alkalmazva), App.tsx KP sáv `useMemo`, NaploTab + HarcertekekScreen + MisztikusScreen inline style → CSS class konverzió
-- ✅ CSS konverzió állapot (200+ kar sorok): NaploTab 0 ✅ | MisztikusScreen 3 ✅ | HarcertekekScreen 13 | AktivScreen 12 | App.tsx 12 | FortelyokScreen 8 | HarcScreen 6 | TavharcScreen 6 | TulajdonsagokScreen 5 — TODO: folytatás AktivScreen-nel
+- ✅ CSS konverzió állapot (200+ kar sorok): App.tsx 0 ✅ | NaploTab 0 ✅ | AktivScreen 1 ✅ | FortelyokScreen 1 ✅ | TavharcScreen 1 ✅ | TulajdonsagokScreen 1 ✅ | HarcScreen 3 ✅ | MisztikusScreen 3 ✅ | HarcertekekScreen 13 (maradék: className logika, nincs inline style)
 - ✅ Szabályrendszer md: harci helyzet kizárások (`❌ Kizárja:`) hozzáadva 065_01_01/02/03 fájlokhoz
 - ✅ "Lovas akasztása" → "Lovas megakasztása" átnevezés (data + md)
 - ✅ Kétkezes harc gyengébb kéz bug fix: pajzs (idx:-2) kiszűrve a dropdown-ból

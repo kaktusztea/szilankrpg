@@ -2780,3 +2780,160 @@ A webapp nem modellezi külön — informatív szöveg, KM kezeli.
 16. Feature teszt: Lovas taktikák csak lovas helyzetnél elérhetőek
 17. Feature teszt: 0.fok büntetés (-9/-9) érvényesül ha nincs fortély
 18. Feature teszt: Fegyverfogás disabled + auto-reset
+
+
+---
+
+## §39 Méreggenerátor (TERV — NEM IMPLEMENTÁLT)
+
+Forrás: md/141_meregkeveres_szabalyai.md, md/142_meregellenallas.md, md/143_meregerzekeles.md, md/144_peldamergek.md
+
+KM eszköz: méreg összeállítása paraméterekből → komplexitás és jellemzők kiszámítása.
+
+### 39.1 Méreg típusok (hordozó közeg)
+
+```
+- Étel/italméreg
+- Légiméreg
+- Kontaktméreg
+- Fegyverméreg
+```
+
+### 39.2 Összetevő eredet
+
+```
+- Állati
+- Növényi
+- Ásványi (szervetlen)
+```
+
+### 39.3 Komplexitás formula
+
+```
+Komplexitás = Erősség + Súlyosság + Elállás/Kiürülés + Hatóidő + Speciális
+
+Méregkeverés próba célszáma = Komplexitás
+
+Minimum szükséges Méregkeverés szint = MAX(
+  CEIL(Komplexitás / 2),
+  legmagasabb paraméter Mk küszöb (lásd Elállás/Kiürülés és Hatóidő táblák)
+)
+```
+
+### 39.4 Méreg Erőssége (1-10)
+
+```
+Skála: 1 (leggyengébb) — 10 (legerősebb)
+Méregellenállás próba célszáma = Erősség
+Plusz adag: Erősség × 1.5 (lefelé kerekítve)
+Kis adag: Erősség × 0.5 (lefelé kerekítve)
+```
+
+### 39.5 Hatás súlyossága (1-5)
+
+```
+1: Enyhe rosszullét, hányás, alvás
+2: Bódultság státusz, Görcs
+3: Kábultság státusz, Részleges bénulás
+4: Életveszély, Teljes bénulás
+5: Halál
+
+Másodlagos hatás (sikeres ellenállás próba esetén): max (Súlyosság - 1) kategória
+```
+
+### 39.6 Elállás (fegyvermérgek) / Kiürülés (egyéb)
+
+#### Elállás (fegyverméreg)
+
+| Érték | Időtartam | Min. Mk szint |
+|-------|-----------|---------------|
+| 0 | Pár másodperc | — |
+| 1 | 1 perc | — |
+| 2 | 10 perc | — |
+| 3 | 1 óra | 3 |
+| 4 | 1 nap | 6 |
+| 5 | 1 hónap | 9 |
+| 6 | Örökké | 12 |
+
+#### Kiürülés (étel/ital/légi/kontakt)
+
+| Érték | Időtartam | Min. Mk szint |
+|-------|-----------|---------------|
+| 0 | 1 kör | 3 |
+| 1 | 1 óra | 6 |
+| 2 | 1 nap | 9 |
+| 3 | 1 hét | 12 |
+
+### 39.7 Hatóidő
+
+| Érték | Lassú verzió | Min. Mk (lassú) | Gyors verzió | Min. Mk (gyors) |
+|-------|--------------|-----------------|--------------|-----------------|
+| +0 | 30 perc – 3 óra | — | — | — |
+| +1 | 4–23 óra | 3 | 2–20 perc | 3 |
+| +2 | 1–10 nap | 5 | 2–6 kör | 5 |
+| +3 | 2–4 hét | 7 | — | — |
+| +4 | Hónapok | 9 | 10 szegmens (Gyorsan) | 7 |
+| +5 | Évek | 12 | 1 szegmens (Azonnal) | 9 |
+
+Megjegyzés: Lassú és Gyors verzió ugyanannyi Komplexitás pontot ad (+érték), de eltérő Mk küszöbük van.
+
+### 39.8 Speciális módosítók
+
+| Módosító | Leírás |
+|----------|--------|
+| +2 | Plusz 1 komponens |
+| +3 | Plusz 1 hordozó közeg |
+| +3 | Több hordozóból csak 1 hatóanyag, többi természetes |
+| +2 | Sűrű (kis mennyiség elég 1 adaghoz) |
+| +3 | Színtelen |
+| +3 | Szagtalan/ízetlen (egyben értendő) |
+| +3/+6 | Félrevezető tünetek I/II (érzékelés nehézsége nő) |
+| +0 | Szabadban sem eloszló légméreg (speciális fizikai közvetítő kell, pl. füstöt okádó labdacs) |
+
+### 39.9 Méregellenállás próba
+
+```
+(Edzettség + k6) vs Méreg_Erősség
+
+Bónusz: Méregálló fortély fok × 1 (TODO: pontosítás)
+Sikertelen: elsődleges hatás érvényesül
+Sikeres: másodlagos hatás érvényesül (ha van, egyébként semmi)
+```
+
+### 39.10 Méregérzékelés
+
+```
+1. Méregkeverés próba (ha Méregkeverés ≥ 3):
+   Méregkeverés + Érzékenység vs Célszám (TODO: alap célszám kidolgozás)
+
+2. Érzékenység tulajdonságpróba:
+   Alap célszám: 4
+   Módosítók: Kis adag +1, Dupla −1, Sűrű +1, Színtelen +1, Szagtalan +1
+```
+
+### 39.11 Követelmény számítás
+
+```
+Méregkeverés próba célszáma = Komplexitás
+  (Méregkeverés képzettségpróba: Méregkeverés szint + k10 vs Komplexitás)
+
+Minimum Mk szint = MAX(
+  CEIL(Komplexitás / 2),
+  legmagasabb Elállás/Kiürülés/Hatóidő paraméter Mk küszöbe
+)
+
+Alapanyag követelmény (TODO — wiki javaslat):
+  (Alkímia + Vajákosság) >= Komplexitás / 2
+  Ha csak ásványi → csak Alkímia számít
+  Ha csak állati/növényi → csak Vajákosság számít
+```
+
+### 39.12 Implementációs terv
+
+```
+Webapp scope: Méreggenerátor overlay (KM eszköz)
+  - Input: típus, erősség, súlyosság, elállás/kiürülés, hatóidő, speciálisok (checkboxok)
+  - Output: komplexitás, min Mk szint, méregellenállás célszám, érzékelés nehézsége
+  - Opcionális: mentés név+leírás formában a karakter napló/jegyzetek rovatába
+  - Példamérgek betöltése (preset-ek a 144_peldamergek.md alapján)
+```

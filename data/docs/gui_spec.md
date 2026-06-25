@@ -919,3 +919,38 @@ Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem 
   - Crash esetén: piros "⚠️ Hiba a megjelenítésben" üzenet + hiba szövege + "Újrapróbálás" gomb
   - A többi tab és a fejléc továbbra is működik
   - Console-ba részletes stack trace
+
+---
+
+## 7. Méreggenerátor overlay (TERV — NEM IMPLEMENTÁLT)
+
+KM eszköz overlay (hasonló a Jegyzetek overlay-hez). Méreg paraméterek beállítása → komplexitás és jellemzők kiszámítása.
+
+### Megnyitás
+- ⚙️ menüből vagy dedikált fejléc gomb (TODO: eldöntendő)
+
+### Tartalom
+
+**Input szekció:**
+| Paraméter | UI elem | Értéktartomány |
+|-----------|---------|----------------|
+| Típus (hordozó) | radio/select | Étel/ital, Légi, Kontakt, Fegyver |
+| Erősség | stepper (−/+) | 1–10 |
+| Súlyosság | stepper/select | 1–5 (label: hatás neve) |
+| Elállás/Kiürülés | select | típustól függ (Fegyver: 0–6, egyéb: 0–3) |
+| Hatóidő | select | 0–5 (lassú/gyors verzió opció) |
+| Speciálisok | checkbox lista | +2/+3/+6 módosítók |
+
+**Output szekció:**
+- Komplexitás (nagy, bold szám)
+- Minimum Méregkeverés szint
+- Méregellenállás célszám (= Erősség)
+- Érzékelés nehézsége (Érzékenység célszám módosítókkal)
+
+**Preset gombok:**
+- "Lórúgás", "Könnycsepp", "Múló évszakok" (preset betöltés → kitölti az inputokat)
+
+### Viselkedés
+- Minden input változás azonnal frissíti az output-ot (reaktív)
+- Overlay bezárás: ✕ gomb / Escape / háttér kattintás
+- Típus váltás: Elállás↔Kiürülés select automatikusan vált
