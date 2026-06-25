@@ -688,81 +688,95 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       )}
 
       {showFegyverfogás && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if (e.target === e.currentTarget) setShowFegyverfogás(false); }}>
-          <div className="aktiv-picker">
-            <div className="aktiv-picker-header">
-              <label>Fegyverfogás</label>
-            </div>
-            <div className="aktiv-picker-list">
-              {(data.konstansok.fegyverfogás_opciók as { id: string; név: string }[]).map(opt => {
-                const jobbIdx = session.aktív_fegyver_index;
-                const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
-                const jobbDef = jobbFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase()) : null;
-                const kétkezes_fegyver = jobbDef?.['Forgatás módja'] === 'kétkezes';
-                let disabled = false;
-                if (opt.id === 'fegyver_pajzs' && !karakter.pajzs?.méret) disabled = true;
-                if (opt.id === 'fegyver_hárító') {
-                  const hasHáritó = karakter.fegyverek.some(fp => {
-                    const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
-                    return def?.['Hárító'] === '1';
-                  });
-                  const hasFortély = karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);
-                  if (!hasHáritó || !hasFortély) disabled = true;
-                }
-                if (opt.id === 'kétkezes') {
-                  if (kétkezes_fegyver) disabled = true;
-                  if (karakter.fegyverek.length < 2) disabled = true;
-                  // Puszta kéz nem használható kétkezes harcban
-                  const jobbPuszta = !jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz';
-                  if (jobbPuszta) disabled = true;
-                  // Nem lehet hárítófegyverrel kétkezes harcot végezni
-                  const nemHáritóFegyverek = karakter.fegyverek.filter((fp, i) => {
-                    if (i === jobbIdx) return false;
-                    const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
-                    return def?.Hárító !== '1';
-                  });
-                  if (nemHáritóFegyverek.length === 0) disabled = true;
-                }
-                if (kétkezes_fegyver && opt.id !== 'egyfegyveres') disabled = true;
-                // Aktív helyzetek tiltott fegyverfogásai (data-driven)
-                for (const ah of session.aktív_helyzetek) {
-                  const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-                  if (ahDef?.tiltott_fegyverfogások?.includes(opt.id)) { disabled = true; break; }
-                }
-                const active = session.fegyverfogás === opt.id;
-                return (
-                  <div key={opt.id} className={`aktiv-picker-item ${disabled ? 'disabled' : ''} ${active ? 'active' : ''}`}
-                    style={disabled ? { opacity: 0.4, pointerEvents: 'none' } : active ? { borderColor: 'var(--accent)' } : undefined}
-                    onClick={() => {
-                      if (disabled) return;
-                      pushUndo(`Fogás: ${opt.név}`);
-                      const patch: Partial<typeof session> = { fegyverfogás: opt.id as typeof session.fegyverfogás };
-                      if (opt.id === 'egyfegyveres') { patch.kétkezes_harc = false; patch.aktív_pajzs = false; patch.aktív_fegyver_bal_index = -1; }
-                      if (opt.id === 'fegyver_pajzs') { patch.kétkezes_harc = false; patch.aktív_pajzs = true; patch.aktív_fegyver_bal_index = -1; }
-                      if (opt.id === 'fegyver_hárító') { patch.kétkezes_harc = false; patch.aktív_pajzs = false; patch.aktív_fegyver_bal_index = -1; }
-                      if (opt.id === 'kétkezes') {
-                        patch.kétkezes_harc = true; patch.aktív_pajzs = false;
-                        // Ha nincs bal kéz fegyver, legkisebb pengéjűt választjuk
-                        if (session.aktív_fegyver_bal_index === -1) {
-                          const eligible = karakter.fegyverek.map((fp, i) => ({ i, penge: parseFloat(data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase())?.Pengehossz ?? '99') || 99 }))
-                            .filter(e => e.i !== session.aktív_fegyver_index)
-                            .sort((a, b) => a.penge - b.penge);
-                          if (eligible.length > 0) patch.aktív_fegyver_bal_index = eligible[0].i;
-                        }
-                      }
-                      setSession(s => ({ ...s, ...patch }));
-                      setShowFegyverfogás(false);
-                    }}>
-                    <span className="aktiv-picker-item-name">{opt.név}</span>
-                    {disabled && opt.id === 'fegyver_hárító' && <span style={{ fontSize: '11px', color: '#888' }}>Vegyél fel legalább 1 hárítófegyvert és a Hárítófegyver használat fortélyt.</span>}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>,
+        <FegyverfogásPicker
+          data={data} karakter={karakter} session={session}
+          onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`); setSession(s => ({ ...s, ...patch })); setShowFegyverfogás(false); }}
+          onClose={() => setShowFegyverfogás(false)}
+        />,
         document.body
       )}
+    </div>
+  );
+}
+
+/** Fegyverfogás overlay picker */
+function FegyverfogásPicker({ data, karakter, session, onSelect, onClose }: {
+  data: GameData;
+  karakter: Props['karakter'];
+  session: Props['session'];
+  onSelect: (patch: Partial<Props['session']>) => void;
+  onClose: () => void;
+}) {
+  const jobbIdx = session.aktív_fegyver_index;
+  const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
+  const jobbDef = jobbFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase()) : null;
+  const kétkezesFegyver = jobbDef?.['Forgatás módja'] === 'kétkezes';
+
+  function isDisabled(id: string): boolean {
+    if (id === 'fegyver_pajzs' && !karakter.pajzs?.méret) return true;
+    if (id === 'fegyver_hárító') {
+      const hasHáritó = karakter.fegyverek.some(fp => {
+        const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+        return def?.['Hárító'] === '1';
+      });
+      const hasFortély = karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);
+      if (!hasHáritó || !hasFortély) return true;
+    }
+    if (id === 'kétkezes') {
+      if (kétkezesFegyver) return true;
+      if (karakter.fegyverek.length < 2) return true;
+      if (!jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz') return true;
+      const nemHáritó = karakter.fegyverek.filter((fp, i) => {
+        if (i === jobbIdx) return false;
+        const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+        return def?.Hárító !== '1';
+      });
+      if (nemHáritó.length === 0) return true;
+    }
+    if (kétkezesFegyver && id !== 'egyfegyveres') return true;
+    for (const ah of session.aktív_helyzetek) {
+      const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+      if (ahDef?.tiltott_fegyverfogások?.includes(id)) return true;
+    }
+    return false;
+  }
+
+  function buildPatch(id: string): Partial<Props['session']> {
+    const patch: Partial<Props['session']> = { fegyverfogás: id as Props['session']['fegyverfogás'] };
+    if (id === 'egyfegyveres') { patch.kétkezes_harc = false; patch.aktív_pajzs = false; patch.aktív_fegyver_bal_index = -1; }
+    if (id === 'fegyver_pajzs') { patch.kétkezes_harc = false; patch.aktív_pajzs = true; patch.aktív_fegyver_bal_index = -1; }
+    if (id === 'fegyver_hárító') { patch.kétkezes_harc = false; patch.aktív_pajzs = false; patch.aktív_fegyver_bal_index = -1; }
+    if (id === 'kétkezes') {
+      patch.kétkezes_harc = true; patch.aktív_pajzs = false;
+      if (session.aktív_fegyver_bal_index === -1) {
+        const eligible = karakter.fegyverek.map((fp, i) => ({ i, penge: parseFloat(data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase())?.Pengehossz ?? '99') || 99 }))
+          .filter(e => e.i !== session.aktív_fegyver_index)
+          .sort((a, b) => a.penge - b.penge);
+        if (eligible.length > 0) patch.aktív_fegyver_bal_index = eligible[0].i;
+      }
+    }
+    return patch;
+  }
+
+  return (
+    <div className="kep-prompt-overlay" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
+      <div className="aktiv-picker">
+        <div className="aktiv-picker-header"><label>Fegyverfogás</label></div>
+        <div className="aktiv-picker-list">
+          {(data.konstansok.fegyverfogás_opciók as { id: string; név: string }[]).map(opt => {
+            const disabled = isDisabled(opt.id);
+            const active = session.fegyverfogás === opt.id;
+            return (
+              <div key={opt.id} className={`aktiv-picker-item ${disabled ? 'disabled' : ''} ${active ? 'active' : ''}`}
+                style={disabled ? { opacity: 0.4, pointerEvents: 'none' } : active ? { borderColor: 'var(--accent)' } : undefined}
+                onClick={() => { if (!disabled) onSelect(buildPatch(opt.id)); }}>
+                <span className="aktiv-picker-item-name">{opt.név}</span>
+                {disabled && opt.id === 'fegyver_hárító' && <span style={{ fontSize: '11px', color: '#888' }}>Vegyél fel legalább 1 hárítófegyvert és a Hárítófegyver használat fortélyt.</span>}
+              </div>
+            );
+          })}
+        </div>
+      </div>
     </div>
   );
 }
