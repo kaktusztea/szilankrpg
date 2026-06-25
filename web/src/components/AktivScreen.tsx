@@ -52,6 +52,82 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
     return true;
   }
 
+  function renderTaktikaFokok() {
+    if (!taktikaFokválasztó) return null;
+    const def = data.taktikak.find(t => t.név === taktikaFokválasztó);
+    if (!def?.fokok) return null;
+    const existing = session.aktív_taktikák.findIndex(a => a.név === taktikaFokválasztó);
+    let fokok = [...def.fokok];
+    if (def.fortély_bővítés) {
+      const fb = def.fortély_bővítés;
+      const fortélyFok = karakter.fortélyok.find(f => f.név === fb.fortély)?.fok ?? 0;
+      const extraFokok = fortélyFok * fb.extra_fokok_per_fok;
+      const utolsó = def.fokok[def.fokok.length - 1];
+      const perFok: Record<string, number> = {};
+      for (const [k, v] of Object.entries(utolsó)) {
+        if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
+      }
+      for (let i = 1; i <= extraFokok; i++) {
+        const newFok = utolsó.fok + i;
+        const entry: any = { fok: newFok };
+        for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * newFok);
+        fokok.push(entry);
+      }
+    }
+    return fokok.map(f => (
+      <div key={f.fok} className={`aktiv-picker-item ${existing >= 0 && session.aktív_taktikák[existing].fok === f.fok ? 'active' : ''}`} onClick={() => {
+        if (existing >= 0) { setTaktikaFok(existing, f.fok); }
+        else { setSession(s => ({ ...s, aktív_taktikák: [...s.aktív_taktikák, { név: taktikaFokválasztó!, fok: f.fok }] })); }
+        setShowTaktikaPicker(false); setTaktikaFokválasztó(null);
+      }}>
+        <span className="aktiv-picker-item-name">{f.fok}. fok{def!.fokok && f.fok > def!.fokok[def!.fokok.length - 1].fok && <span style={{ color: '#ce93d8', marginLeft: '6px' }}>●</span>}</span>
+        <span className="aktiv-picker-item-details">{Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ')}</span>
+        {f.hatások && f.hatások.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map(h => h.megjegyzés || `${h.operátor} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
+      </div>
+    ));
+  }
+
+  function renderHelyzetItems() {
+    const filtered = data.harciHelyzetek.filter(h => isHelyzetAvailable(h));
+    const groups = [
+      { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => h.csoport === 'pozitív') },
+      { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => h.csoport === 'semleges') },
+      { label: 'Negatív helyzet', color: '#f44336', items: filtered.filter(h => h.csoport === 'negatív') },
+    ];
+    function addHelyzet(h: typeof data.harciHelyzetek[0]) {
+      pushUndo(`Helyzet: ${h.név}`);
+      const hDef = data.harciHelyzetek.find(d => d.név === h.név);
+      setSession(s => {
+        let helyzetek = [...s.aktív_helyzetek, h.név];
+        let taktikák = s.aktív_taktikák;
+        const kizár = hDef?.kizár_helyzetek ?? [];
+        if (kizár.length) {
+          const kizártNevek = kizár.map((kid: string) => data.harciHelyzetek.find(d => d.id === kid)?.név).filter(Boolean);
+          helyzetek = helyzetek.filter(hh => !kizártNevek.includes(hh));
+        }
+        if (hDef?.tiltja_taktikákat) taktikák = [];
+        const patch: Partial<typeof s> = {};
+        if (hDef?.tiltott_fegyverfogások?.includes(s.fegyverfogás)) {
+          patch.fegyverfogás = 'egyfegyveres'; patch.kétkezes_harc = false;
+          patch.aktív_pajzs = false; patch.aktív_fegyver_bal_index = -1;
+        }
+        return { ...s, ...patch, aktív_helyzetek: helyzetek, aktív_taktikák: taktikák };
+      });
+      setShowHelyzetPicker(false);
+    }
+    return (<>
+      {groups.flatMap(g => g.items.length > 0 ? [
+        <div key={g.label} className="aktiv-picker-group-label" style={{ color: g.color }}>{g.label}</div>,
+        ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
+          <div key={h.név} className="aktiv-picker-item" onClick={() => addHelyzet(h)}>
+            <span className="aktiv-picker-item-name">{h.név}</span>
+            <span className="aktiv-picker-item-hatas">{fmtCode(h.infó)}</span>
+          </div>
+        ))
+      ] : [])}
+    </>);
+  }
+
   // Fegyver nevek
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
     const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase());
@@ -362,45 +438,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   {t.megjegyzés && <span className="aktiv-picker-item-hatas">{t.megjegyzés}</span>}
                 </div>
               ))}
-              {taktikaFokválasztó && (() => {
-                const def = data.taktikak.find(t => t.név === taktikaFokválasztó);
-                if (!def?.fokok) return null;
-                const existing = session.aktív_taktikák.findIndex(a => a.név === taktikaFokválasztó);
-                // Dinamikus foklista: alap + fortély_bővítés extra fokok
-                let fokok = [...def.fokok];
-                if (def.fortély_bővítés) {
-                  const fb = def.fortély_bővítés;
-                  const fortélyFok = karakter.fortélyok.find(f => f.név === fb.fortély)?.fok ?? 0;
-                  const extraFokok = fortélyFok * fb.extra_fokok_per_fok;
-                  const utolsó = def.fokok[def.fokok.length - 1];
-                  // Lineáris extrapoláció: per fok növekmény az utolsó definiált fok mintájából
-                  const perFok: Record<string, number> = {};
-                  for (const [k, v] of Object.entries(utolsó)) {
-                    if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
-                  }
-                  for (let i = 1; i <= extraFokok; i++) {
-                    const newFok = utolsó.fok + i;
-                    const entry: any = { fok: newFok };
-                    for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * newFok);
-                    fokok.push(entry);
-                  }
-                }
-                return fokok.map(f => (
-                  <div key={f.fok} className={`aktiv-picker-item ${existing >= 0 && session.aktív_taktikák[existing].fok === f.fok ? 'active' : ''}`} onClick={() => {
-                    if (existing >= 0) {
-                      setTaktikaFok(existing, f.fok);
-                    } else {
-                      setSession(s => ({ ...s, aktív_taktikák: [...s.aktív_taktikák, { név: taktikaFokválasztó!, fok: f.fok }] }));
-                    }
-                    setShowTaktikaPicker(false);
-                    setTaktikaFokválasztó(null);
-                  }}>
-                    <span className="aktiv-picker-item-name">{f.fok}. fok{def!.fokok && f.fok > def!.fokok[def!.fokok.length - 1].fok && <span style={{ color: '#ce93d8', marginLeft: '6px' }}>●</span>}</span>
-                    <span className="aktiv-picker-item-details">{Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ')}</span>
-                    {f.hatások && f.hatások.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map(h => h.megjegyzés || `${h.operátor} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
-                  </div>
-                ));
-              })()}
+              {taktikaFokválasztó && renderTaktikaFokok()}
             </div>
           </div>
         </div>,
@@ -447,48 +485,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
               <label>Harci helyzet választó</label>
             </div>
             <div className="aktiv-picker-list">
-              {(() => {
-                const filtered = data.harciHelyzetek.filter(h => isHelyzetAvailable(h));
-                const groups: { label: string; color: string; items: typeof filtered }[] = [
-                  { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => h.csoport === 'pozitív') },
-                  { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => h.csoport === 'semleges') },
-                  { label: 'Negatív helyzet', color: '#f44336', items: filtered.filter(h => h.csoport === 'negatív') },
-                ];
-                const renderCard = (h: typeof data.harciHelyzetek[0]) => (
-                <div key={h.név} className="aktiv-picker-item" onClick={() => {
-                  pushUndo(`Helyzet: ${h.név}`);
-                  const hDef = data.harciHelyzetek.find(d => d.név === h.név);
-                  setSession(s => {
-                    let helyzetek = [...s.aktív_helyzetek, h.név];
-                    let taktikák = s.aktív_taktikák;
-                    const kizár = hDef?.kizár_helyzetek ?? [];
-                    if (kizár.length) {
-                      const kizártNevek = kizár.map((kid: string) => data.harciHelyzetek.find(d => d.id === kid)?.név).filter(Boolean);
-                      helyzetek = helyzetek.filter(hh => !kizártNevek.includes(hh));
-                    }
-                    if (hDef?.tiltja_taktikákat) taktikák = [];
-                    // Helyzet tiltott fegyverfogásai: ha aktív fogás tiltott → reset egyfegyveresre
-                    const patch: Partial<typeof s> = {};
-                    if (hDef?.tiltott_fegyverfogások?.includes(s.fegyverfogás)) {
-                      patch.fegyverfogás = 'egyfegyveres';
-                      patch.kétkezes_harc = false;
-                      patch.aktív_pajzs = false;
-                      patch.aktív_fegyver_bal_index = -1;
-                    }
-                    return { ...s, ...patch, aktív_helyzetek: helyzetek, aktív_taktikák: taktikák };
-                  });
-                  setShowHelyzetPicker(false);
-                }}>
-                  <span className="aktiv-picker-item-name">{h.név}</span>
-                  <span className="aktiv-picker-item-hatas">{fmtCode(h.infó)}</span>
-                </div>);
-                return (<>
-                  {groups.flatMap(g => g.items.length > 0 ? [
-                    <div key={g.label} className="aktiv-picker-group-label" style={{ color: g.color }}>{g.label}</div>,
-                    ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(renderCard)
-                  ] : [])}
-                </>);
-              })()}
+              {renderHelyzetItems()}
             </div>
           </div>
         </div>,
