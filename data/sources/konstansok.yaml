@@ -313,6 +313,7 @@ fegyver_kategória_harcmodor:
   romboló: "Rombolás"
   lándzsavívó: "Lándzsavívás"
   ostorharc: "Ostorharc"
+  pajzs: "Közelharc"
 
 # Távharc harcmodor: tavfegyverek.json-ban per-fegyver "Harcmodor" mező
 # (Hajítás / Íjászat / Lövészet / Ostromlövészet / Mágikus célzás)

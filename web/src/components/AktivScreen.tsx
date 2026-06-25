@@ -39,7 +39,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
     const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase());
     return { név: fd?.Alapnév || f.alap, idx: i };
-  })];
+  }), ...(karakter.pajzs?.méret ? [{ név: karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs', idx: -2 }] : [])];
 
   // Taktika kombó + megkötés validáció
   function isTaktikaAllowed(név: string): boolean {

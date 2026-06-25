@@ -123,7 +123,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   // Aktív fegyver computed értékek (Belharc feltételekhez)
   const aktívFegyverFp = session.aktív_fegyver_index >= 0 ? k.fegyverek[session.aktív_fegyver_index] : null;
-  const aktívFegyverDef = aktívFegyverFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === aktívFegyverFp.alap.toLowerCase()) : null;
+  const pajzsFegyverNév = k.pajzs?.méret ? (k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs') : null;
+  const aktívFegyverDef = session.aktív_fegyver_index === -2
+    ? data.fegyverek.find(f => f.Fegyver === pajzsFegyverNév)
+    : aktívFegyverFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === aktívFegyverFp.alap.toLowerCase()) : null;
   const jobbPengehossz = aktívFegyverDef ? (parseFloat(aktívFegyverDef.Pengehossz) || 0) : 0;
   let aktívFegyverPengehossz = jobbPengehossz;
   // Kétkezes harc / hárítófegyver: bal kéz pengehossza is számít (összeg)
@@ -234,6 +237,15 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       if (párDef) fegyverRows.push({ név: párDef.Fegyver, fDef: párDef, mfFok });
     }
   }
+  // Pajzs fegyverként (ha van méret kiválasztva)
+  if (pajzsFegyverNév) {
+    const pajzsDef = data.fegyverek.find(f => f.Fegyver === pajzsFegyverNév);
+    if (pajzsDef) {
+      const pajzsMf = k.fortélyok.find(f => f.név === 'Mesterfegyver' && f.spec_elem === pajzsFegyverNév)?.fok ?? 0;
+      fegyverRows.push({ név: pajzsDef.Fegyver, fDef: pajzsDef, mfFok: pajzsMf });
+    }
+  }
+
 
   const fegyverResults = fegyverRows.map(({ fDef, mfFok }) => {
     const kat = fDef.Kategória;
@@ -490,7 +502,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
             <tr key={i} style={(() => {
               if (kétkezesResult || fogásResult) return { opacity: 0.4 };
               const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-              const jobbNév = jobbFp ? (data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase())?.Fegyver ?? '') : 'Puszta kéz';
+              const jobbNév = session.aktív_fegyver_index === -2 ? (pajzsFegyverNév ?? '') : jobbFp ? (data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase())?.Fegyver ?? '') : 'Puszta kéz';
               if (r.fegyver_név !== jobbNév) return { opacity: 0.4 };
               return undefined;
             })()}>

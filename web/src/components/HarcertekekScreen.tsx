@@ -183,7 +183,19 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
   function updatePajzs(patch: Partial<{ méret: string }>) {
     setKarakter(prev => {
       if (!prev) return prev;
-      return { ...prev, pajzs: { ...prev.pajzs, ...patch } };
+      let fortélyok = prev.fortélyok;
+      const régiNév = prev.pajzs.méret ? (prev.pajzs.méret.charAt(0).toUpperCase() + prev.pajzs.méret.slice(1) + ' Pajzs') : '';
+      if (patch.méret !== undefined && patch.méret !== prev.pajzs.méret && régiNév) {
+        if (!patch.méret) {
+          // Méret törlés → Mesterfegyver fortély törlés
+          fortélyok = fortélyok.filter(f => !(f.név === 'Mesterfegyver' && f.spec_elem === régiNév));
+        } else {
+          // Méret csere → spec_elem átírás
+          const újNév = patch.méret.charAt(0).toUpperCase() + patch.méret.slice(1) + ' Pajzs';
+          fortélyok = fortélyok.map(f => f.név === 'Mesterfegyver' && f.spec_elem === régiNév ? { ...f, spec_elem: újNév } : f);
+        }
+      }
+      return { ...prev, pajzs: { ...prev.pajzs, ...patch }, fortélyok };
     });
   }
 
@@ -192,6 +204,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
   const felvettFegyverek = new Set(k.fegyverek.map(fp => fp.alap.toLowerCase()));
   for (const f of data.fegyverek) {
     if (f.MK_pár && f['Forgatás módja'] === 'kétkezes') continue; // skip 2K of MK pairs
+    if (f.Kategória === 'pajzs') continue; // pajzs nem vehető fel fegyverként (Pajzs szekcióban kezelendő)
     if (felvettFegyverek.has(f.Fegyver.toLowerCase())) continue; // már felvéve
     const arr = fegyverByKat.get(f.Kategória) || [];
     arr.push({ id: f.Fegyver, label: f.Alapnév || f.Fegyver });
@@ -333,6 +346,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
         <div className="he-fegyver-fields">
           <button className="he-field-btn" onClick={() => setPajzsPopup('méret')}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
           <button className="he-field-btn" onClick={() => setPajzsPopup('pajzshasználat')}>Pajzshasználat fok: <strong>{getPajzsFok()}</strong></button>
+          {k.pajzs.méret && <button className="he-field-btn he-field-fortely" onClick={() => setPajzsPopup('pajzs_mf')}>MF fok: <strong>{getMfFok(k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs')}</strong></button>}
           <span className="he-field-btn he-field-indicator" onClick={() => showHint('A pajzs kézben állapotot az Aktív fülön állíthatod!')}>Kézben: <strong>{k.session.aktív_pajzs ? 'igen' : 'nem'}</strong></span>
         </div>
       </section>
@@ -456,6 +470,14 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
                   {[0, 1, 2, 3].map(n => (
                     <button key={n} className={`fort-fok-btn ${getPajzsFok() === n ? 'active' : ''}`} onClick={() => { setPajzsFok(n); setPajzsPopup(null); }}>{n}</button>
                   ))}
+                </div>
+              )}
+              {pajzsPopup === 'pajzs_mf' && (
+                <div className="fort-fok-radios">
+                  {[0, 1, 2, 3].map(n => {
+                    const pajzsNév = k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs';
+                    return <button key={n} className={`fort-fok-btn ${getMfFok(pajzsNév) === n ? 'active' : ''}`} onClick={() => { setMfFok(pajzsNév, n); setPajzsPopup(null); }}>{n}</button>;
+                  })}
                 </div>
               )}
             </div>

@@ -72,6 +72,33 @@ if __name__ == "__main__":
                     spec_str = spec if isinstance(spec, str) else ''
                     entry['Hárító'] = '1' if (name.startswith('Hárító:') or ', hárító' in name.lower() or 'hárítófegyverként' in spec_str.lower()) else '0'
 
+            # Pajzs fegyverek hozzáfűzése (pajzzsal harcolás esete)
+            pajzs_path = os.path.join(dir_data, 'tables', 'pajzsok.json')
+            if os.path.exists(pajzs_path):
+                with open(pajzs_path, encoding='utf-8') as pf:
+                    pajzsok = json.load(pf)
+                for p in pajzsok:
+                    full_json.append({
+                        'Fegyver': p['Pajzs'],
+                        'TÉ': p.get('TÉ', '0'),
+                        'VÉ': p.get('VÉ', '0'),
+                        'SP': p.get('SP', '+0'),
+                        'Sebesség': p.get('Sebesség', '8'),
+                        'Sebzés módja': 'Z',
+                        'Pengehossz': '0',
+                        'Forgatás módja': 'egykezes',
+                        'Erőbónusz limit': p.get('Erőbónusz limit', '0'),
+                        'Átütés': '0',
+                        'Íves': '0',
+                        'MK': '0',
+                        'KF': '0',
+                        'Kategória': 'pajzs',
+                        'Speciális': p.get('Speciális', ''),
+                        'MK_pár': '',
+                        'Alapnév': '',
+                        'Hárító': '0',
+                    })
+
         # Post-process: tavfegyverek.json — Harcmodor és Kategória mező
         if d['output'] == 'tavfegyverek.json':
             # Lőfegyverek: íjak → Íjászat, nyílpuskák → Lövészet, fúvócsövek → Lövészet
