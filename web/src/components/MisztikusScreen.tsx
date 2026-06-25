@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
 import { evaluate, buildContext } from '../engine/reactive';
+import './MisztikusScreen.css';
 import { FortélyFelvétel } from './FortelyFelvetel';
 
 export function MisztikusScreen({ data, karakter, képzettségek, setKépzettségek, fortélyok, setFortélyok, gameMode }: {
@@ -59,7 +60,13 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
 
   useEffect(() => {
     if (!deleteTarget && !szintTarget && !promptTarget && !tradícióPicker && !tradícióAltípusPicker && misztFokTarget === null && !felvételDef && deleteFortIdx === null) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null); setTradícióPicker(false); setTradícióAltípusPicker(null); setMisztFokTarget(null); setFelvételDef(null); setDeleteFortIdx(null); } }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setDeleteTarget(null); setSzintTarget(null); setPromptTarget(null);
+        setTradícióPicker(false); setTradícióAltípusPicker(null);
+        setMisztFokTarget(null); setFelvételDef(null); setDeleteFortIdx(null);
+      }
+    }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [deleteTarget, szintTarget, promptTarget, tradícióPicker, tradícióAltípusPicker, misztFokTarget, felvételDef, deleteFortIdx]);
@@ -67,15 +74,15 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const maxSzint = karakter.tsz; // misztikus képzettségek mind primerek
 
   const renderRow = (k: { név: string; szint: number }, canDelete = true, warning = false) => (
-    <div key={k.név} style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 10px', background: 'var(--surface)', border: '1px solid #3a3a5a', borderRadius: '4px', marginBottom: '4px', cursor: 'pointer' }} onClick={() => !gameMode && setSzintTarget(k.név)}>
-      <span style={{ flex: 1, fontSize: '17px', color: warning ? '#e53935' : undefined }}>{k.név.includes(':') ? k.név.split(':')[1].trim() : k.név}</span>
+    <div key={k.név} className="miszt-row" onClick={() => !gameMode && setSzintTarget(k.név)}>
+      <span className={`miszt-row-name${warning ? ' miszt-row-warn' : ''}`}>{k.név.includes(':') ? k.név.split(':')[1].trim() : k.név}</span>
       {canDelete && !gameMode && <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteTarget(k.név); }}>✕</button>}
       <strong className={`kep-szint${k.szint > maxSzint ? ' kep-over' : k.szint >= 9 ? ' kep-szint-high' : ''}`}>{k.szint}</strong>
     </div>
   );
 
   return (
-    <div className="screen" style={{ padding: '12px', display: 'flex', flexDirection: 'column', gap: '12px' }}>
+    <div className="screen miszt-screen">
       <h2>✨ Misztikus</h2>
 
       {/* Aura értékek */}
@@ -130,8 +137,8 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
           const szint = slot?.szint ?? 0;
           if (!fajNév) return <span style={{ color: '#666', fontSize: '13px' }}>Faj nincs kiválasztva</span>;
           return (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '4px', padding: '6px 10px', background: 'var(--surface)', border: '1px solid #3a3a5a', borderRadius: '4px', cursor: 'pointer' }} onClick={() => !gameMode && setSzintTarget(fajMisztNév!)}>
-              <span style={{ flex: 1, fontSize: '17px' }}>{fajNév}</span>
+            <div className="miszt-row" onClick={() => !gameMode && setSzintTarget(fajMisztNév!)}>
+              <span className="miszt-row-name">{fajNév}</span>
               <strong className={`kep-szint${szint > maxSzint ? ' kep-over' : szint >= 9 ? ' kep-szint-high' : ''}`}>{szint}</strong>
             </div>
           );
@@ -155,7 +162,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteTarget(null); }}>
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>{deleteTarget}</label>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { removeKépzettség(deleteTarget); setDeleteTarget(null); }}>Képzettség törlése</button>
+            <button className="btn-del-confirm he-del-confirm" onClick={() => { removeKépzettség(deleteTarget); setDeleteTarget(null); }}>Képzettség törlése</button>
           </div>
         </div>,
         document.body
@@ -231,7 +238,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
                   }
                   const elements: any[] = [];
                   for (const [pantheon, items] of byPantheon) {
-                    elements.push(<div key={`h-${pantheon}`} style={{ fontSize: '13px', color: 'var(--text-dim)', marginTop: '6px', borderBottom: '1px solid #444', paddingBottom: '2px' }}>{pantheon}</div>);
+                    elements.push(<div key={`h-${pantheon}`} className="miszt-section-label">{pantheon}</div>);
                     for (const item of items) {
                       elements.push(
                         <button key={item.név} className="he-field-btn" onClick={() => {
@@ -259,7 +266,9 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setPromptTarget(null); }}>
           <div className="kep-prompt">
             <label>{promptTarget}: név</label>
-            <input autoFocus maxLength={30} value={promptValue} onChange={e => setPromptValue(e.target.value)} onKeyDown={e => { if (e.key === 'Enter' && promptValue.trim()) { addKépzettség(`${promptTarget}: ${promptValue.trim()}`); setPromptTarget(null); } if (e.key === 'Escape') setPromptTarget(null); }} />
+            <input autoFocus maxLength={30} value={promptValue}
+              onChange={e => setPromptValue(e.target.value)}
+              onKeyDown={e => { if (e.key === 'Enter' && promptValue.trim()) { addKépzettség(`${promptTarget}: ${promptValue.trim()}`); setPromptTarget(null); } if (e.key === 'Escape') setPromptTarget(null); }} />
             <div className="kep-prompt-btns">
               <button onClick={() => { if (promptValue.trim()) { addKépzettség(`${promptTarget}: ${promptValue.trim()}`); setPromptTarget(null); } }} disabled={!promptValue.trim()}>OK</button>
             </div>
@@ -299,7 +308,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteFortIdx(null); }}>
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
             <label style={{ fontWeight: 'bold' }}>{fortélyok[deleteFortIdx]?.név}{fortélyok[deleteFortIdx]?.spec_elem ? ` - ${fortélyok[deleteFortIdx].spec_elem}` : ''}</label>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { setFortélyok(prev => prev.filter((_, j) => j !== deleteFortIdx)); setDeleteFortIdx(null); }}>Fortély törlése</button>
+            <button className="btn-del-confirm he-del-confirm" onClick={() => { setFortélyok(prev => prev.filter((_, j) => j !== deleteFortIdx)); setDeleteFortIdx(null); }}>Fortély törlése</button>
           </div>
         </div>,
         document.body
@@ -323,7 +332,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
               const maxfok = def?.maxfok ?? 1;
               const globalIdx = fortélyok.indexOf(f);
               return (
-              <div key={`${f.név}-${f.spec_elem}-${i}`} className="kep-row" style={{ gap: '8px', cursor: !gameMode ? 'pointer' : undefined }} onClick={() => { if (gameMode) return; if (maxfok > 1) setMisztFokTarget(globalIdx); else { setHint('1 fok a maximum'); setTimeout(() => setHint(''), 2000); } }}>
+              <div key={`${f.név}-${f.spec_elem}-${i}`} className="kep-row miszt-fort-row" onClick={() => { if (gameMode) return; if (maxfok > 1) setMisztFokTarget(globalIdx); else { setHint('1 fok a maximum'); setTimeout(() => setHint(''), 2000); } }}>
                 <span className="kep-név" style={{ flex: 1 }}>{f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név}{f.kiérdemelt ? ' ⭐' : ''}</span>
                 {!gameMode && <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteFortIdx(globalIdx); }}>✕</button>}
                 <span className="fort-fok-dots">{Array.from({ length: 3 }, (_, di) => <span key={di} className={`fort-dot${di < f.fok ? ' filled' : ''}${di >= maxfok ? ' fort-dot-hidden' : ''}`} />)}</span>
