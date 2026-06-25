@@ -78,6 +78,22 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
     return false;
   }
 
+  function mfKövetelményText(fegyverAlap: string): string {
+    const fok = getMfFok(fegyverAlap);
+    if (fok === 0) return '';
+    const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
+    const fokDef = mfDef?.fokok.find(f => f.fok === fok);
+    if (!fokDef?.követelmények?.length) return '';
+    const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
+    const fegyverHarcmodor = fDef ? (konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.Kategória] : undefined;
+    const kov = fokDef.követelmények[0];
+    if (kov.típus === 'képzettség') {
+      const név = fegyverHarcmodor ?? (Array.isArray(kov.név) ? kov.név.join(' / ') : kov.név);
+      return `⚠ ${név} ≥ ${kov.érték}`;
+    }
+    return '';
+  }
+
   function setMfFok(fegyverAlap: string, fok: number) {
     const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
     const displayName = fDef?.Alapnév || fegyverAlap;
@@ -273,7 +289,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
             </div>
             {(() => { const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase()); if (!fd) return null; const mfFok = getMfFok(f.alap); const mf = (konstansok as any).mesterfegyver_bónuszok?.find((b: any) => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 }; const idea = f.idea; return <div className="he-fegyver-fields" style={{ marginBottom: '8px' }}><span className="he-field-btn he-field-indicator"><span style={{ color: '#90caf9' }}>TÉ:</span>{(parseInt(fd.TÉ)||0)+mf.TÉ+idea} <span style={{ color: '#90caf9', marginLeft: '6px' }}>VÉ:</span>{(parseInt(fd.VÉ)||0)+mf.VÉ+idea} <span style={{ color: '#90caf9', marginLeft: '6px' }}>SP:</span>{(parseInt(fd.SP)||0)+mf.SP+idea} <span style={{ color: '#90caf9', marginLeft: '6px' }}>Sebesség:</span>{fd.Sebesség}</span></div>; })()}
             <div className="he-fegyver-fields">
-              <button className="he-field-btn he-field-fortely" style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined} onClick={() => setMfTarget(i)}>MF fok: <strong>{getMfFok(f.alap)}</strong></button>
+              <button className="he-field-btn he-field-fortely" style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined} onClick={() => setMfTarget(i)}>MF fok: <strong>{getMfFok(f.alap)}</strong>{mfKövetelményHiba(f.alap) && <span style={{ display: 'block', fontSize: '11px', marginTop: '2px', color: '#e53935' }}>{mfKövetelményText(f.alap)}</span>}</button>
               <button className="he-field-btn" onClick={() => setIdeaTarget({ type: 'fegyver', idx: i })}>Idea: <strong>{f.idea}</strong></button>
               <button className="he-field-btn" onClick={() => setAnyagTarget(i)}>Anyag: <strong>{f.anyag}</strong></button>
             </div>

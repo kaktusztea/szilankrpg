@@ -63,6 +63,21 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
     }
     return false;
   };
+  const mfKövetelményText = (alap: string): string => {
+    const fok = getMfFok(alap);
+    if (fok === 0) return '';
+    const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
+    const fokDef = mfDef?.fokok.find(f => f.fok === fok);
+    if (!fokDef?.követelmények?.length) return '';
+    const tfDef2 = data.tavfegyverek.find(tf => tf.Fegyver.toLowerCase() === alap.toLowerCase());
+    const fegyverHarcmodor = tfDef2?.Harcmodor;
+    const kov = fokDef.követelmények[0];
+    if (kov.típus === 'képzettség') {
+      const név = fegyverHarcmodor ?? (Array.isArray(kov.név) ? kov.név.join(' / ') : kov.név);
+      return `⚠ ${név} ≥ ${kov.érték}`;
+    }
+    return '';
+  };
   const mfFok = tfPeldany ? getMfFok(tfPeldany.alap) : 0;
   const mfBónusz = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok);
 
@@ -218,7 +233,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
                 <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteTarget(i); }}>✕</button>
               </div>
               <div className="th-card-fields">
-                <button className="he-field-btn he-field-fortely" style={mfKövetelményHiba(tf.alap) ? { color: '#e53935' } : undefined} onClick={e => { e.stopPropagation(); setMfTarget(i); }}>MF fok: <strong>{mf}</strong></button>
+                <button className="he-field-btn he-field-fortely" style={mfKövetelményHiba(tf.alap) ? { color: '#e53935' } : undefined} onClick={e => { e.stopPropagation(); setMfTarget(i); }}>MF fok: <strong>{mf}</strong>{mfKövetelményHiba(tf.alap) && <span style={{ display: 'block', fontSize: '11px', marginTop: '2px', color: '#e53935' }}>{mfKövetelményText(tf.alap)}</span>}</button>
                 <button className="he-field-btn" onClick={e => { e.stopPropagation(); setIdeaPopup(true); }}>Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong></button>
                 <span className="th-badge">CÉ: {cardCÉ}  ({tám})</span>
               </div>
