@@ -197,7 +197,13 @@ function App() {
 
   useEffect(() => {
     if (!showNewConfirm && !showSlotList && !showUndo && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowNewConfirm(false); setShowMenu(false); setShowSlotList(false); setShowUndo(false); setLoadError(''); setOverlayScreen(null); setShowFullscreenHint(false); setShowSzilánkPicker(false); } }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setShowNewConfirm(false); setShowMenu(false); setShowSlotList(false);
+        setShowUndo(false); setLoadError(''); setOverlayScreen(null);
+        setShowFullscreenHint(false); setShowSzilánkPicker(false);
+      }
+    }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [showNewConfirm, showSlotList, showUndo, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
@@ -435,7 +441,7 @@ function App() {
         </div>
       </main>
 
-      {versionHint && <div className="version-hint" style={{ background: '#ff9800', color: '#000', textAlign: 'center', padding: '6px 12px', fontSize: '14px', fontWeight: 'bold', borderRadius: '4px', margin: '0 8px 4px' }}>{versionHint}</div>}
+      {versionHint && <div className="version-hint">{versionHint}</div>}
 
       {!gameMode && data && kpBar}
 
@@ -459,7 +465,10 @@ function App() {
       {showMenu && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '6px', minWidth: '200px' }}>
-            <button className="menu-item" disabled={undoStack.length === 0} style={{ opacity: undoStack.length === 0 ? 0.4 : 1 }} onClick={() => { setShowMenu(false); setShowUndo(true); setUndoSelected(null); }}>↩ Visszavonás{undoStack.length > 0 ? ` (${undoStack.length})` : ''}</button>
+            <button className="menu-item" disabled={undoStack.length === 0}
+              onClick={() => { setShowMenu(false); setShowUndo(true); setUndoSelected(null); }}>
+              ↩ Visszavonás{undoStack.length > 0 ? ` (${undoStack.length})` : ''}
+            </button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowSlotList(true); }}>📂 Karakterek</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); duplicateKarakter(); }}>📋 Duplikál</button>
             <button className="menu-item" onClick={() => { setShowMenu(false); setShowSavePopup(true); }}>💾 Mentés</button>
@@ -483,7 +492,8 @@ function App() {
             <label style={{ fontWeight: 'bold' }}>Szilánk</label>
             <div style={{ display: 'flex', gap: '8px' }}>
               {[0, 1, 2, 3].map(v => (
-                <button key={v} className={`fort-fok-btn ${session.szilánk === v ? 'active' : ''}`} onClick={() => { setSession(s => ({ ...s, szilánk: v })); setShowSzilánkPicker(false); }}>{v}</button>
+                <button key={v} className={`fort-fok-btn ${session.szilánk === v ? 'active' : ''}`}
+                  onClick={() => { setSession(s => ({ ...s, szilánk: v })); setShowSzilánkPicker(false); }}>{v}</button>
               ))}
             </div>
           </div>
@@ -690,19 +700,19 @@ function App() {
               {overlayScreen === 'jegyzetek' && (
                 <>
                 <textarea
-                  style={{ width: '100%', minHeight: 'calc(100vh - 160px)', background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid #555', borderRadius: '6px', padding: '10px', fontSize: '14px', resize: 'none', fontFamily: 'inherit' }}
+                  className="app-jegyzetek-textarea"
                   value={karakter.jegyzetek}
                   onChange={e => setKarakter(prev => prev ? { ...prev, jegyzetek: e.target.value } : prev)}
                   placeholder="Szabad jegyzetek..."
                 />
-                <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, background: '#1a1a2e', borderTop: '1px solid #444', padding: '6px 10px', fontSize: '15px', zIndex: 102 }}>
+                <div className="app-proba-bar">
                   <details>
-                    <summary style={{ cursor: 'pointer', fontWeight: 'bold', color: '#90caf9' }}>Tulajdonságpróba (k6)</summary>
-                    <pre style={{ margin: '4px 0', fontFamily: 'monospace', fontSize: '15px', color: '#ccc' }}>{`3: Könnyű\n4: Átlagos\n5: Nehéz\n6: Nagyon nehéz\n7: Rendkívül nehéz\n8: Emberfeletti`}</pre>
+                    <summary className="app-proba-summary">Tulajdonságpróba (k6)</summary>
+                    <pre className="app-proba-pre">{`3: Könnyű\n4: Átlagos\n5: Nehéz\n6: Nagyon nehéz\n7: Rendkívül nehéz\n8: Emberfeletti`}</pre>
                   </details>
                   <details>
-                    <summary style={{ cursor: 'pointer', fontWeight: 'bold', color: '#90caf9' }}>Képzettségpróba (k10)</summary>
-                    <pre style={{ margin: '4px 0', fontFamily: 'monospace', fontSize: '15px', color: '#ccc' }}>{` 6: Könnyű\n 9: Átlagos\n12: Nehéz\n15: Nagyon nehéz\n18: Rendkívül nehéz\n21: Emberfeletti`}</pre>
+                    <summary className="app-proba-summary">Képzettségpróba (k10)</summary>
+                    <pre className="app-proba-pre">{` 6: Könnyű\n 9: Átlagos\n12: Nehéz\n15: Nagyon nehéz\n18: Rendkívül nehéz\n21: Emberfeletti`}</pre>
                   </details>
                 </div>
                 </>
@@ -734,7 +744,9 @@ class ScreenErrorBoundary extends Component<{ children: ReactNode }, { error: st
   }
 }
 
-function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok, képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession, karakter, setKarakter, pushUndo }: {
+function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok,
+  képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession,
+  karakter, setKarakter, pushUndo }: {
   tab: string; data: GameData; gameMode: boolean; setActiveTab: (i: number) => void;
   tulajdonságok: any; setTulajdonságok: any;
   képzettségek: { név: string; szint: number }[]; setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
@@ -797,8 +809,13 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
         fortélyok={fortélyok} setFortélyok={(v: any) => {
           const newVal: Fortely[] = typeof v === 'function' ? v(fortélyok) : v;
           let desc = '';
-          if (newVal.length > fortélyok.length) { const added = newVal.find(n => !fortélyok.some(f => f.név === n.név && f.spec_elem === n.spec_elem)); if (added && added.fok > 0) desc = `Fortély: ${added.név}${added.spec_elem ? ` (${added.spec_elem})` : ""} 0→${added.fok}`; }
-          else if (newVal.length < fortélyok.length) { const removed = fortélyok.find(f => !newVal.some(n => n.név === f.név && n.spec_elem === f.spec_elem)); if (removed) desc = `Fortély: ${removed.név}${removed.spec_elem ? ` (${removed.spec_elem})` : ""} ${removed.fok}→0❌`; }
+          if (newVal.length > fortélyok.length) {
+            const added = newVal.find(n => !fortélyok.some(f => f.név === n.név && f.spec_elem === n.spec_elem));
+            if (added && added.fok > 0) desc = `Fortély: ${added.név}${added.spec_elem ? ` (${added.spec_elem})` : ""} 0→${added.fok}`;
+          } else if (newVal.length < fortélyok.length) {
+            const removed = fortélyok.find(f => !newVal.some(n => n.név === f.név && n.spec_elem === f.spec_elem));
+            if (removed) desc = `Fortély: ${removed.név}${removed.spec_elem ? ` (${removed.spec_elem})` : ""} ${removed.fok}→0❌`;
+          }
           else {
             const changed = newVal.find((n, i) => n.fok !== fortélyok[i]?.fok);
             if (changed) {
@@ -819,13 +836,17 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
           if (desc) pushUndo(desc);
           setKépzettségek(v);
         }} fortélyok={fortélyok} setFortélyok={setFortélyok} gameMode={gameMode} />;
-    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter} setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }} képzettségek={képzettségek} gameMode={gameMode} setKépzettségek={(v: any) => {
+    case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter}
+        setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }}
+        képzettségek={képzettségek} gameMode={gameMode} setKépzettségek={(v: any) => {
           const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
           const desc = describeKepChange(képzettségek, newVal);
           if (desc) pushUndo(desc);
           setKépzettségek(v);
         }} />;
-    case 'hatterek': return <HatterekScreen data={data} karakter={karakter} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode} onNavigate={tab => { const idx = ALL_TABS.findIndex(t => t.id === tab); if (idx >= 0) setActiveTab(idx); }} />;
+    case 'hatterek': return <HatterekScreen data={data} karakter={karakter}
+        setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}
+        onNavigate={tab => { const idx = ALL_TABS.findIndex(t => t.id === tab); if (idx >= 0) setActiveTab(idx); }} />;
     default: return null;
   }
 }

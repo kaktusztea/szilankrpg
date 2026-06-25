@@ -88,6 +88,8 @@ body {
   text-align: center;
 }
 
+.menu-item:disabled { opacity: 0.4; cursor: default; }
+
 .mode-toggle {
   background: var(--input-bg);
   color: var(--text);
@@ -226,3 +228,41 @@ body {
 }
 
 .error { color: var(--error); }
+
+.app-jegyzetek-textarea {
+  width: 100%;
+  min-height: calc(100vh - 160px);
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #555;
+  border-radius: 6px;
+  padding: 10px;
+  font-size: 14px;
+  resize: none;
+  font-family: inherit;
+}
+
+.app-proba-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #1a1a2e;
+  border-top: 1px solid #444;
+  padding: 6px 10px;
+  font-size: 15px;
+  z-index: 102;
+}
+
+.app-proba-summary {
+  cursor: pointer;
+  font-weight: bold;
+  color: #90caf9;
+}
+
+.app-proba-pre {
+  margin: 4px 0;
+  font-family: monospace;
+  font-size: 15px;
+  color: #ccc;
+}
