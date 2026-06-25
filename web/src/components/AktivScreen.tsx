@@ -451,7 +451,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           return (
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div className="aktiv-field-btn">
-                <strong style={{ color: 'var(--success)', fontSize: '14px' }}>{session.aktív_manőver}</strong>
+                <strong style={{ color: '#bbb', fontSize: '14px' }}>{session.aktív_manőver}</strong>
                 <span className="taktika-chip-mods">Nehézség: {m.nehézség} • {m.fázisok}</span>
                 <span className="taktika-chip-mods">{m.hatás}</span>
               </div>
