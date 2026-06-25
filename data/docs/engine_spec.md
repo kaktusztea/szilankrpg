@@ -844,7 +844,7 @@ note: A faj_misztérium mező megmondja, melyik Faj Misztérium képzettséget v
 ## 21. Aktív fül — Taktikák, Manőverek, Helyzetek
 
 Az Aktív fülön választható elemek és módosítóik összefoglalása.
-UI szekció sorrend: Taktikák → Manőver → Harci helyzetek → Státuszok → Narratív.
+UI szekció sorrend: Fegyver+Fogás → Fortély bónuszok/Alapesetek → Taktikák → Harci helyzetek → Manőver → Státuszok → Narratív Előny/Hátrányok.
 A feltételes fortély módosítók (§16) ezekhez kötődnek: `feltétel: "taktika:roham"` stb.
 
 ### Implementációs illeszkedés
@@ -903,7 +903,7 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 | Öngyilkos roham | TÉ:+5, VÉ:-10, SP:+7, VÉcsökk 2x | — | más (max 1x/küzdelem) |
 | Plusz támadás | +1 támadás, VÉ:-3 azonnal | Támadó, Érintő, Tám.erőből | más |
 | Roham | TÉ:+4, VÉ:-8, SP:+5, VÉcsökk 2x | — | más |
-| Támadás erőből | TÉ:-1..-2, SP:+1..+2 | Kiváró, Plusz tám, 1 tám | más |
+| Támadás erőből | TÉ:-1..-2, SP:+1..+2 (fortéllyal: max -6/+6) | Kiváró, Plusz tám, 1 tám | más |
 | Támadó | TÉ:+1..+3, VÉ:-2..-6 | Kezdeményező, Kiváró, Érintő, Plusz tám, 1 tám | más |
 | Védő | VÉ:+1..+4, TÉ:-2..-8 | Érintő, 1 tám | más |
 | Teljes Védekezés | VÉ:+6, nem támad, hátrál | — | más |
@@ -913,6 +913,31 @@ Egy körben aktív harci taktika(ák). Feltétel kulcs: `taktika:név`.
 note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Aktív fülön megadja a fokozatot.
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
       Fárasztás: nem támadás, nem kombinálható mással.
+
+### 21.1b Taktika fortély_bővítés
+
+Fokozatos taktikáknál a `fortély_bővítés` yaml mező lehetővé teszi, hogy egy fortély extra fokokat
+engedélyezzen a taktika picker-ben.
+
+Schema: `fortély_bővítés: { fortély: string, extra_fokok_per_fok: number } | null`
+
+Kalkuláció:
+```
+alap_max_fok = def.fokok.length (yaml-ban definiált fokok)
+fortély_fok = karakter.fortélyok[fortély_bővítés.fortély].fok ?? 0
+max_fok = alap_max_fok + fortély_fok * extra_fokok_per_fok
+```
+
+Extra fokok módosítói: lineáris extrapoláció az utolsó definiált fok mintájából.
+Pl. Támadás erőből: alap 2 fok (SP:+1/TÉ:-1, SP:+2/TÉ:-2), `extra_fokok_per_fok: 2`
+- Fortély 1.fok → max 4 fok (SP:+4, TÉ:-4)
+- Fortély 2.fok → max 6 fok (SP:+6, TÉ:-6)
+
+Implementáció:
+- AktivScreen fok picker: dinamikusan generálja az extra fokokat, lila ● jelölés
+- HarcScreen taktikaMods: extrapoláció ha `fokDef` nem található a def.fokok-ban
+- AktivScreen chip: extrapolált módosítók megjelenítése
+- App.tsx useEffect: taktika invalidáció ha fortély törlés után az aktív fok > megengedett max
 
 ### 21.2 Harci Helyzetek
 

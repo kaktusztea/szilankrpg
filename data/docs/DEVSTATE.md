@@ -259,7 +259,7 @@
   - Régi ikon gombok (🧪📄💾📂) eltávolítva a fejlécből
 - ✅ Tab bar tükrözés: jobbról balra sorrend (Aktív jobb szélre), induláskor jobbra scrollozva
   - Screen slider és swipe irány is tükrözve
-  - Ikon-only tab-ok: ❎🗡️🏹🔵🟣🛡️✨📜 (szöveges: Jegyzetek, Napló, Taktikák, Helyzetek, Manőverek)
+  - Ikon-only tab-ok: ✳️🗡️🏹🔵🟣🛡️✨📜 (szöveges: Jegyzetek, Napló, Taktikák, Helyzetek, Manőverek)
   - Tab font-size: 18px, padding: 8px
 - ✅ Screen címek: h2 hozzáadva (Tul/Képz, Fortélyok, Harcértékek)
 - ✅ Anyanyelv mező + ingyenes Nyelvismeret fortélyok
@@ -305,12 +305,12 @@
   - Taktika chip: kétsoros (felül név+fok bold, alul módosítók szürkén pl. "TÉ:+2 VÉ:-4")
   - Taktika megkötések: harci_helyzet/tiltott, harcmodor/tiltott, támadások/min runtime validáció
   - Manőver: overlay picker (Általános/Belharci kategóriák, nehézség+fázisok+hatás), infó a box-ban (Nehézség+fázisok | hatás)
-  - Szekció sorrend: Fegyver+Fogás (felül) → Hatás pool → Taktikák → Manőver → Harci helyzetek → Státuszok → Narratív módosítók
+  - Szekció sorrend: Fegyver+Fogás (felül) → Hatás pool → Taktikák → Harci helyzetek → Manőver → Státuszok → Narratív Előny/Hátrányok
   - Harci helyzetek: overlay picker (név + infó, ABC)
   - Körülmények: beolvadtak pozitív/semleges csoportba (körülmény csoport megszűnt)
   - Státuszok: overlay picker (Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó emberi olvasható hatásokkal), chip katt → fok ciklikus váltás
-  - Hatás pool box (8 szekció): Taktikák | Harci helyzetek | Státuszok | Manőver bónuszok | Előny/Hátrány | Fortély bónuszok | Alapesetek | Narratív módosítók
-  - Narratív módosítók: "+ Új" gomb → overlay popup (Hátrány/Előny gombok + szöveg + OK, Enter = OK)
+  - Hatás pool box (2 szekció): Fortély bónuszok | Alapesetek (accordion)
+  - Narratív Előny/Hátrányok: "+ Új" gomb → overlay popup (Hátrány/Előny gombok + szöveg + OK, Enter = OK)
   - Több támadás TÉ levonás: konstansokból (`több_támadás_TÉ_levonás`), generikusan (taktika +3 kioltja)
   - Minden picker: Escape + mellé katt bezárja
 - ✅ Hátterek fül (HatterekScreen.tsx)
@@ -331,7 +331,7 @@
   - Érintett fortélyok: Belharc, Elsöprő roham, Fárasztás, Fegyverrántás, Gladiátor (Bestiái/Közönsége), Célzás, Harci anatómia (orvtámadás)
 - ✅ Session séma bővítés: `aktív_taktika/helyzet` → `aktív_taktikák[]/helyzetek[]` (körülmények is helyzetek)
   - `AktívTaktika` interface: `{ név, fok? }`
-- ✅ Tab bar átrendezés: sorrend 🟡🟣🔵✨🏹🗡️❎🛡️ (középre rendezve, reszponzív méret)
+- ✅ Tab bar átrendezés: sorrend 🟡🟣🔵✨🏹🗡️✳️🛡️ (középre rendezve, reszponzív méret)
   - Game módban 🛡️ eltűnik a jobb szélről (többi fix marad)
   - Tab váltás mód-korrekció: `prevGameMode` ref → index újraszámítás mód váltáskor
 - ✅ Jegyzetek (✏️) és Napló (📅) overlay-re költöztetve
@@ -547,6 +547,23 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - ✅ Data layer kiemelés: fegyver_anyagok, képzettség/fortély_csoport_sorrend, nyelv_fok_nevek, pinned_taktikák, közös_nyelv, tulajdonság_sorrend → konstansok.yaml
 - ✅ Jegyzetek overlay: floating célszám panel (Tulajdonságpróba k6, Képzettségpróba k10) — `<details>` accordion
 - ✅ Fullscreen: requestFullscreen user gesture fix (setShowMenu a hívás után, nem előtte)
+- ✅ Aktív fül ikon: ❎ → ✳️
+- ✅ Harc + Távharc screen: h2 fejléc hozzáadva (🗡️ Harc, 🏹 Távharc)
+- ✅ Távharc screen: "Távfegyverek" szekció cím eltávolítva (redundáns a h2-vel)
+- ✅ Harcértékek screen: Harci képzettségek display name ("Harcmodor: X", "Táv. harcmodor: X")
+- ✅ Harcértékek screen: Harci képzettség felvételkor szint picker automatikusan felugrik
+- ✅ Mesterfegyver követelmény: fegyver-specifikus harcmodor ellenőrzés (nem az egész OR lista, hanem a fegyver kategóriájához tartozó harcmodor)
+- ✅ MF fok chip: ha követelmény nem teljesül, alatta piros `⚠ Harcmodor ≥ X` szöveg (mindkét screen)
+- ✅ Visszavonás: VÉ visszanyerés pozitív esetben "VÉ visszanyerés: +X" (nem "VÉ csökkenés")
+- ✅ Aktív screen: `margin-top: auto` bug fix (tartalom alulra igazítódott nagy screenen)
+- ✅ Aktív screen: szekció elválasztó vonal eltávolítva (`.aktiv-section` border-bottom)
+- ✅ Aktív screen: Manőver szekció szín világos szürke (`#bbb`, volt zöld)
+- ✅ Aktív screen: "Narratív módosítók" → "Narratív Előny/Hátrányok"
+- ✅ Aktív screen: Hatás pool egyszerűsítés (`.hatas-pool-section` wrapper eltávolítva, "Fortély bónuszok" cím eltávolítva)
+- ✅ Aktív screen + Távharc screen: Escape bezárás hiányzó popup-okra (Fegyverfogás, Narratív, MF fok, stb.)
+- ✅ Taktika fortély_bővítés: generikus rendszer (taktikak.yaml `fortély_bővítés` mező, extra fok extrapoláció, lila ● jelölés, invalidáció fortély törlésnél)
+- ✅ Anyanyelv picker: ABC sorrend (hu locale)
+- ✅ Schema konzisztencia: `karakter.yaml` bővítve (uid, id_leíró), `szituacio.yaml` elavult schema törölve, `taktika.yaml` schema + source bővítve (fortély_bővítés)
 - Lovas harc rendszer implementálása
 
 ## Fontos konvenciók
@@ -581,6 +598,7 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Kétkezes harc data-driven: `konstansok.kétkezes_harc_bónuszok[]` tartalmazza `mindkét_fegyver_értékei`, `mf`, `TÉ`, `VÉ` fokonként. Harckeret bónusz: yaml fortélyból (`fegyverfogás:kétkezes` feltétel), 0.fok: konstans +1.
 - Pengelevonás osztó: `konstansok.kétkezes_harc_pengelevonás_osztó` (0.5)
 - Harcmodor nevek: `Object.values(konstansok.fegyver_kategória_harcmodor)` — nincs hardcoded lista
+- Harcmodor display name (Harcértékek fül): közelharci → "Harcmodor: X", távharci → "Táv. harcmodor: X", egyéb → nyers név. Csak megjelenítés, belső referenciák a nyers nevet használják.
 - Többszörös státuszok: yaml `többszörös: true` + `alkategóriák: [...]` → generikus alkategória almenü picker
 - Fegyverfogás: `session.fegyverfogás` explicit mező (enum: egyfegyveres/fegyver_pajzs/fegyver_hárító/kétkezes), opciók `konstansok.fegyverfogás_opciók`-ból
 - Fegyver `Hárító` flag: `fegyverek.json`-ban `"1"/"0"` (process_fegyverek.py generálja: név prefix "Hárító:" / ", hárító" / Speciális "Hárítófegyverként")
@@ -645,5 +663,6 @@ Engine spec: §28 (TERV — NEM IMPLEMENTÁLT).
 - Páncél gombok: disabled + `.he-field-disabled` ha nincs struktúra (`!k.páncél.alap`)
 - Aktív fül adatforrások: `taktikak.json`, `harci_helyzetek.json`, `manoverek.json`, `statuszok.json`, `hatas_operatorok.json`, `esemenyek.json`, `hatterek.json` — generate_tables.py validáció
 - Taktika kombó: `kombó_mód: "whitelist"|"blacklist"` + `kombó_lista: string[]`
+- Taktika fortély_bővítés: `fortély_bővítés: { fortély: string, extra_fokok_per_fok: number } | null` — minden taktikában explicit (strict schema). Extra fokok: lineáris extrapoláció utolsó definiált fokból. Lila ● jelölés picker-ben. Invalidáció useEffect-tel (App.tsx).
 - Session v2: `aktív_taktikák: AktívTaktika[]`, `aktív_helyzetek: string[]` (körülmények is itt, régi `aktív_szituációk` törölve)
-- AktivScreen.tsx: Hatás pool + taktikák/helyzetek/körülmények/státuszok overlay picker + manőver picker + Fegyverfogás picker + fegyver Ügyesebb/Gyengébb kéz + páncél toggle + narratív módosítók
+- AktivScreen.tsx: Hatás pool (Fortély bónuszok + Alapesetek) + taktikák/helyzetek/manőver/státuszok overlay picker + Fegyverfogás picker + fegyver Ügyesebb/Gyengébb kéz + páncél toggle + narratív Előny/Hátrányok
