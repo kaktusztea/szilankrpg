@@ -51,10 +51,14 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
     const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
     const fokDef = mfDef?.fokok.find(f => f.fok === fok);
     if (!fokDef?.követelmények?.length) return false;
+    // Távfegyverhez tartozó harcmodor meghatározása
+    const tfDef2 = data.tavfegyverek.find(tf => tf.Fegyver.toLowerCase() === alap.toLowerCase());
+    const fegyverHarcmodor = tfDef2?.Harcmodor;
     for (const kov of fokDef.követelmények) {
       if (kov.típus === 'képzettség') {
-        const nevek = Array.isArray(kov.név) ? kov.név : [kov.név];
-        if (!nevek.some(n => (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték)) return true;
+        // Ha a fegyver harcmodorja ismert, csak azt vizsgáljuk (nem az egész OR listát)
+        const szűrtNevek = fegyverHarcmodor ? [fegyverHarcmodor] : (Array.isArray(kov.név) ? kov.név : [kov.név]);
+        if (!szűrtNevek.some(n => (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték)) return true;
       }
     }
     return false;

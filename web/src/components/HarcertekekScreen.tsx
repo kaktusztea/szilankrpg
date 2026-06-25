@@ -62,10 +62,14 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
     const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
     const fokDef = mfDef?.fokok.find(f => f.fok === fok);
     if (!fokDef?.követelmények?.length) return false;
+    // Fegyverhez tartozó harcmodor meghatározása
+    const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
+    const fegyverHarcmodor = fDef ? (konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.Kategória] : undefined;
     for (const kov of fokDef.követelmények) {
       if (kov.típus === 'képzettség') {
-        const nevek = Array.isArray(kov.név) ? kov.név : [kov.név];
-        if (!nevek.some(n => (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték)) return true;
+        // Ha a fegyver harcmodorja ismert, csak azt vizsgáljuk (nem az egész OR listát)
+        const szűrtNevek = fegyverHarcmodor ? [fegyverHarcmodor] : (Array.isArray(kov.név) ? kov.név : [kov.név]);
+        if (!szűrtNevek.some(n => (k.képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték)) return true;
       } else if (kov.típus === 'fortély') {
         const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
         if (!k.fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték)) return true;
