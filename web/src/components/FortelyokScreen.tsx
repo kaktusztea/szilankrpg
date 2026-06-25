@@ -206,6 +206,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       fortélyok={fortélyok}
                       harcmodorNevek={[...data.konstansok.harcmodorok.közelharci, ...data.konstansok.harcmodorok.távolsági]}
                       távfegyverNevek={távfegyverNevek}
+                      fegyverHarcmodorNév={slot.spec_elem ? (() => { const fd = data.fegyverek.find(d => d.Alapnév?.toLowerCase() === slot.spec_elem!.toLowerCase() || d.Fegyver.toLowerCase() === slot.spec_elem!.toLowerCase()); return fd ? data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] : undefined; })() : undefined}
                       onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
                       onFokChange={fok => setFok(globalIdx, fok)}
                       onHint={showHint}
@@ -411,7 +412,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   );
 }
 
-function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret, nyelvFokLabels, képzettségek, fortélyok, harcmodorNevek, távfegyverNevek }: {
+function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove, isIngyenes, locked, onHint, overLimit, nyelvPontKeret, nyelvFokLabels, képzettségek, fortélyok, harcmodorNevek, távfegyverNevek, fegyverHarcmodorNév }: {
   slot: Fortely;
   def?: FortelySummary;
   gameMode: boolean;
@@ -425,6 +426,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
   fortélyok: Fortely[];
   harcmodorNevek: string[];
   távfegyverNevek: string[];
+  fegyverHarcmodorNév?: string;
   onToggleInfo: () => void;
   onFokChange: (fok: number) => void;
   onRemove: () => void;
@@ -467,7 +469,7 @@ function FortelyRow({ slot, def, gameMode, isOpen, onToggleInfo, onFokChange, on
         const teljesül = nevek.some(n => (képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték);
         if (!teljesül) {
           const isHarcmodor = Array.isArray(kov.név) && kov.név.every(n => harcmodorNevek.some(h => h.toLowerCase() === n.toLowerCase()));
-          hiányzóKöv.push(`${isHarcmodor ? 'Harcmodor' : (Array.isArray(kov.név) ? kov.név.join('/') : kov.név)} ≥ ${kov.érték}`);
+          hiányzóKöv.push(`${isHarcmodor ? (fegyverHarcmodorNév ? `Harcmodor - ${fegyverHarcmodorNév}` : 'Harcmodor') : (Array.isArray(kov.név) ? kov.név.join('/') : kov.név)} ≥ ${kov.érték}`);
         }
       } else if (kov.típus === 'fortély') {
         const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
