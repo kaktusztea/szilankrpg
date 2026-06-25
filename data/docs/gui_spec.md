@@ -134,7 +134,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Elem | Típus | Leírás |
 |------|-------|--------|
 | Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" + Pajzs (ha van méret, idx:-2, zöld szín). Mindig látható. |
-| Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
+| Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók+pajzs+puszta kéz kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
 | Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
 | Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Disabled logika: puszta kéz, kétkezes fegyver, nincs pajzs/hárító, + aktív helyzetek `tiltott_fegyverfogások` mezője (§38.4). Helyzet hozzáadáskor tiltott fogás → auto-reset Egyfegyveresre. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
@@ -199,7 +199,7 @@ A Fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes ha
 - Egyfegyveres → `kétkezes_harc: false`, `aktív_pajzs: false`, Gyengébb kéz dropdown eltűnik
 - Fegyver + pajzs → `aktív_pajzs: true`, `kétkezes_harc: false`, Gyengébb kéz: disabled "Pajzs"
 - Fegyver + hárító → `aktív_pajzs: false`, `kétkezes_harc: false`, Gyengébb kéz: hárítófegyver választó (auto-select ha 1 db)
-- Kétkezes harc → `kétkezes_harc: true`, `aktív_pajzs: false`, Gyengébb kéz: fegyver választó (pengelimit szűrt, hárítók kiszűrve)
+- Kétkezes harc → `kétkezes_harc: true`, `aktív_pajzs: false`, Gyengébb kéz: fegyver választó (pengelimit szűrt, hárítók+pajzs+puszta kéz kiszűrve)
 
 **Inkompatibilitás (inaktív + szürke a popup-ban, nem elrejtve):**
 - Puszta kéz jobb kézben → Fegyverfogás választó disabled + szürke, fix "Egyfegyveres"
@@ -543,7 +543,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban el
 - Fegyver példány kártyák listája
 - Fejléc: fegyver neve (MK fegyvereknél suffix nélkül, `Alapnév` mezőből) + ✕ törlés
 - Mezők (`he-field-btn` stílus, tap → overlay popup):
-  - MF fok: kerek gombok 0-3. Piros szöveg ha a Mesterfegyver követelménye nem teljesül. Hiba esetén alatta kis betűs piros sor: `⚠ Harcmodor ≥ X` (a fegyverhez tartozó konkrét harcmodor).
+  - MF fok: kerek gombok 0-3. Piros szöveg ha a Mesterfegyver követelménye nem teljesül. Hiba esetén alatta kis betűs piros sor: `⚠ Harcmodor - Kardvívás ≥ X` (a fegyverhez tartozó konkrét harcmodor).
   - Idea: 3 soros popup (-5..-1 / 0 / +1..+5)
   - Anyag: 1 oszlopos popup (acél, bronz, abbitacél, mithrill, lunír)
 - \+ Új fegyver dropdown: kategóriánként csoportosítva (MK 2K variáns kiszűrve)
@@ -660,33 +660,28 @@ Fejléc gombbal nyitható fullscreen overlay (nem tab). Mindkét módban elérhe
 Játék session bejegyzések naplója.
 
 ### Tartalom
-- Screen: `padding: 12px; min-height: 100%`
-- Fejléc: `h2` "📖 Napló" (margin:0) + "+ Új bejegyzés" gomb (jobb oldal, `background: --primary; border: 1px solid #555; border-radius: 4px; padding: 6px 12px; font-size: 14px`)
-- Ha nincs bejegyzés: `"Nincs bejegyzés."` szürke szöveg
+- Screen: `.naplo-screen` (padding: 12px; min-height: 100%)
+- Fejléc: `.naplo-header` (h2 + `.naplo-btn-new` gomb jobb oldalon)
+- Ha nincs bejegyzés: `.naplo-empty` szürke szöveg
 
 ### Összecsukott bejegyzés lista
-- Rekord sor: `background: --surface; border: 1px solid #444; border-radius: 4px; padding: 8px 10px; font-size: 15px; cursor: pointer`
+- Rekord sor: `.naplo-entry-header` (surface background, 1px border, pointer cursor)
 - Formátum: `[dátum] KM: Kaland neve`
-- Sorok gap: `margin-bottom: 4px`
+- Sorok gap: `.naplo-entry` (margin-bottom: 4px)
 
 ### Kinyitott bejegyzés (accordion)
-- Panel: `background: #1a1a3a; border: 1px solid #444; border-top: none; border-radius: 0 0 4px 4px; padding: 8px 10px; font-size: 14px`
-- Események szöveg: `white-space: pre-wrap; color: --text`
-- Gombok sor (`margin-top: 8px; gap: 8px`):
-  - "Szerkeszt": `background: --primary; border: 1px solid #555; border-radius: 4px; padding: 4px 10px; font-size: 13px`
-  - "Törlés": `background: --error; border: none; border-radius: 4px; padding: 4px 10px; color: #fff; font-size: 13px`
+- Panel: `.naplo-panel .naplo-panel-view`
+- Események szöveg: `.naplo-events` (pre-wrap)
+- Gombok sor: `.naplo-actions` (`.naplo-btn` + `.naplo-btn-del`)
 
 ### Szerkesztő form (inline, accordion-ban)
-- Container: `background: #1a1a3a; border: 1px solid #444; border-top: none; border-radius: 0 0 4px 4px; padding: 10px; flex-direction: column; gap: 8px`
-- Mezők: `background: --input-bg; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; font-size: 14px`
-- Dátum sor: `<input type="date">` + "Ma" gomb (`background: --primary; padding: 4px 8px; font-size: 13px`)
-- Események: `<textarea rows=4; resize: vertical; font-family: inherit>`
-- Gombok sor:
-  - "Mentés": `background: --success; color: #000; font-weight: bold; font-size: 14px; padding: 6px 14px`
-  - "Mégse": `background: --input-bg; border: 1px solid #555; font-size: 14px; padding: 6px 14px`
+- Container: `.naplo-panel`
+- Mezők: `.naplo-input` / `.naplo-textarea`
+- Dátum sor: `.naplo-form-row` (input `.naplo-input-short` + `.naplo-btn` "Ma")
+- Gombok sor: `.naplo-form-btns` (`.naplo-btn-save` + `.naplo-btn-cancel`)
 
 ### Új bejegyzés form
-- Azonos stílussal mint szerkesztő form, de `background: --surface; border: 1px solid #555; border-radius: 6px; padding: 12px; margin-top: 8px`
+- Azonos mint szerkesztő form, wrapper: `.naplo-add-wrap`
 
 ### Viselkedés
 - Kattintás rekord sorra: toggle accordion (open/close)

@@ -597,9 +597,12 @@ Engine spec: §38.
 - ✅ Harci helyzet `tiltott_fegyverfogások` mező: data-driven fegyverfogás tiltás (schema + yaml + AktivScreen generikus logika)
 - ✅ HarcertekekScreen bug fix: harci képzettség felvétel szint picker cancel → 0.szintű képzettség eltávolítása (korábban szint:1-gyel maradt)
 - ✅ Fortélyok fül: Mesterfegyver követelmény kijelzés → konkrét harcmodor név ("Harcmodor - Kardvívás ≥ 8" a generikus "Harcmodor ≥ 8" helyett)
-- ✅ Refaktor: 7 db `as any` cast eltávolítva (AktivScreen, HarcertekekScreen), `isHelyzetAvailable()` helper kiemelés, `engine/helpers.ts` (lookupFegyver utility)
+- ✅ Refaktor: `as any` cast eliminálás (28→14), `isHelyzetAvailable()` + `renderHelyzetItems()` + `renderTaktikaFokok()` helperek, `FegyverChip` + `PancelPopup` + `FegyverfogásPicker` alkomponensek, `lookupFegyver` helper (16 helyen alkalmazva), App.tsx KP sáv `useMemo`, NaploTab + HarcertekekScreen + MisztikusScreen inline style → CSS class konverzió
+- ✅ CSS konverzió állapot (200+ kar sorok): NaploTab 0 ✅ | MisztikusScreen 3 ✅ | HarcertekekScreen 13 | AktivScreen 12 | App.tsx 12 | FortelyokScreen 8 | HarcScreen 6 | TavharcScreen 6 | TulajdonsagokScreen 5 — TODO: folytatás AktivScreen-nel
 - ✅ Szabályrendszer md: harci helyzet kizárások (`❌ Kizárja:`) hozzáadva 065_01_01/02/03 fájlokhoz
 - ✅ "Lovas akasztása" → "Lovas megakasztása" átnevezés (data + md)
+- ✅ Kétkezes harc gyengébb kéz bug fix: pajzs (idx:-2) kiszűrve a dropdown-ból
+- ✅ Napló fókusz bug fix: belső `EntryForm` komponens → `renderForm` helper (nem remountolódik state változáskor)
 
 ## Fontos konvenciók
 - Módosító módok: `flat`, `scaled`, `override`, `enyhít`, `előny`, `hátrány`

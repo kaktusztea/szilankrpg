@@ -1771,7 +1771,7 @@ Picker elérhetőség:
 
 Bal kéz dropdown:
   - Csak "kétkezes" és "fegyver_hárító" fogásnál jelenik meg
-  - "kétkezes": karakter fegyverek (pengelimit szűrt, hárítófegyverek kiszűrve)
+  - "kétkezes": karakter fegyverek (pengelimit szűrt, hárítófegyverek kiszűrve, pajzs kiszűrve, puszta kéz kiszűrve)
   - "fegyver_hárító": hárítófegyverek listája
 ```
 
