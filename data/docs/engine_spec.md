@@ -1412,6 +1412,18 @@ Ellenőrzés logika:
 - `képzettség`: `karakter.képzettségek.some(k => k.név == név && k.szint >= érték)` — lista típusnál bármelyik egyezés elég (OR)
 - `fortély`: `karakter.fortélyok.some(f => f.név == név && f.fok >= érték)` — többszörös fortélynál (pl. Nyelvismeret) bármely példány teljesítheti
 
+**Mesterfegyver követelmény — fegyver-specifikus harcmodor szűkítés:**
+
+A Mesterfegyver fortély yaml-ban a követelmény OR listában az összes közelharci harcmodor szerepel.
+Az UI ellenőrzés (`HarcertekekScreen`, `TavharcScreen`) azonban **nem az egész OR listát** vizsgálja,
+hanem **kizárólag az adott fegyverhez tartozó harcmodort**:
+- Közelharci fegyver: `fegyver.Kategória` → `konstansok.fegyver_kategória_harcmodor[kategória]` lookup
+- Távfegyver: `távfegyver.Harcmodor` mező közvetlenül (pl. Íjászat, Hajítás, Lövészet)
+
+Tehát: "Kard, hosszú" (kardvívó kategória) MF → csak Kardvívás ≥ X vizsgálat;
+"Hosszú íj" (Harcmodor: Íjászat) MF → csak Íjászat ≥ X vizsgálat.
+Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista érvényes.
+
 ### Általános fortélyok
 
 | Fortély | Fok | Típus | Név | Érték |
@@ -1510,9 +1522,9 @@ Ellenőrzés logika:
 | Merevvértviselet | 1 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
 | Merevvértviselet | 2 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
 | Merevvértviselet | 3 | képzettség | [Kardvívás, Rombolás, Lándzsavívás] | 3 | |
-| Mesterfegyver | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 4 | |
-| Mesterfegyver | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | |
-| Mesterfegyver | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | |
+| Mesterfegyver | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 4 | Fegyver-specifikus: csak az adott fegyver harcmodorát vizsgálja (→ §25 szűkítés) |
+| Mesterfegyver | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 8 | Fegyver-specifikus: csak az adott fegyver harcmodorát vizsgálja (→ §25 szűkítés) |
+| Mesterfegyver | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | Fegyver-specifikus: csak az adott fegyver harcmodorát vizsgálja (→ §25 szűkítés) |
 | Orgyilkos | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
 | Orgyilkos | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | |
 | Pajzshasználat | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | |

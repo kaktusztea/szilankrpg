@@ -127,7 +127,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév } = calcHatásPool(data, karakter, session);
   return (
     <div className="screen aktiv-screen">
-      <h2>❎ Aktív</h2>
+      <h2>✳️ Aktív</h2>
 
       {/* Fegyverek + Fegyverfogás sor — felül */}
       <div className="aktiv-bottom-section">

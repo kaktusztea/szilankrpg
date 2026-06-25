@@ -416,6 +416,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   return (
     <div className="screen harc-screen">
+      <h2>🗡️ Harc</h2>
       <div className="harc-header">
         <div className="ke-box"><span className="label">KÉ</span><span className="value">{ké}</span></div>
         <div className="sfe-box">

@@ -192,10 +192,10 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
   return (
     <div className="screen tavharc-screen">
+      <h2>🏹 Távharc</h2>
       {/* Fegyver lista (szerkesztő módban kezelhető) */}
       {!gameMode && (
         <section className="th-section">
-          <h3>Távfegyverek</h3>
           {k.távfegyverek.map((tf, i) => {
             const def = data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tf.alap.toLowerCase());
             const hmNév = def?.Harcmodor ?? 'Hajítás';

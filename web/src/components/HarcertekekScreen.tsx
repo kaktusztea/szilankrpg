@@ -252,7 +252,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
                 </div>
               ))}
               {!gameMode && nemFelvett.length > 0 && (
-                <select className="he-add-select" value="" onChange={e => { if (e.target.value) setKépzettségek(prev => [...prev, { név: e.target.value, szint: 1 }]); }}>
+                <select className="he-add-select" value="" onChange={e => { if (e.target.value) { const név = e.target.value; setKépzettségek(prev => [...prev, { név, szint: 1 }]); setKepzSzintTarget(név); } }}>
                   <option value="">+ Harci képzettség...</option>
                   {nemFelvett.map(n => <option key={n} value={n}>{n}</option>)}
                 </select>

@@ -23,7 +23,7 @@ import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, gener
 interface UndoEntry { timestamp: number; leírás: string; session: Session; karakter: Karakter; }
 
 const ALL_TABS = [
-  { id: 'aktiv', label: '❎', editOnly: false },
+  { id: 'aktiv', label: '✳️', editOnly: false },
   { id: 'harc', label: '🗡️', editOnly: false },
   { id: 'tavharc', label: '🏹', editOnly: false },
   { id: 'harcertekek', label: '🛡️', editOnly: false },
