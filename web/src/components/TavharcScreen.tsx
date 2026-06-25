@@ -241,7 +241,12 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
                 <button className="fort-delete" onClick={e => { e.stopPropagation(); setDeleteTarget(i); }}>✕</button>
               </div>
               <div className="th-card-fields">
-                <button className="he-field-btn he-field-fortely" style={mfKövetelményHiba(tf.alap) ? { color: '#e53935' } : undefined} onClick={e => { e.stopPropagation(); setMfTarget(i); }}>MF fok: <strong>{mf}</strong>{mfKövetelményHiba(tf.alap) && <span style={{ display: 'block', fontSize: '11px', marginTop: '2px', color: '#e53935' }}>{mfKövetelményText(tf.alap)}</span>}</button>
+                <button className="he-field-btn he-field-fortely"
+                  style={mfKövetelményHiba(tf.alap) ? { color: '#e53935' } : undefined}
+                  onClick={e => { e.stopPropagation(); setMfTarget(i); }}>
+                  MF fok: <strong>{mf}</strong>
+                  {mfKövetelményHiba(tf.alap) && <span className="he-mf-error">{mfKövetelményText(tf.alap)}</span>}
+                </button>
                 <button className="he-field-btn" onClick={e => { e.stopPropagation(); setIdeaPopup(true); }}>Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong></button>
                 <span className="th-badge">CÉ: {cardCÉ}  ({tám})</span>
               </div>
@@ -301,7 +306,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
               <span style={{ color: vé <= cé + 1 ? '#4caf50' : vé - cé > 20 ? '#e53935' : '#ffa726' }}>VÉ: {vé}</span>
             </div>
             <span className="th-value-main th-szc-box">Szorzó × Cella<br/><span style={{ fontSize: '18px' }}>{szorzóÖsszeg} × {cella}</span></span>
-            <button className="th-value-main th-tav-btn" style={{ borderColor: 'var(--success)' }} onClick={() => setTávolságPopup(true)}>Táv:<br/><span style={{ fontSize: '18px', color: 'var(--success)' }}>{távolság}m</span></button>
+            <button className="th-value-main th-tav-btn" onClick={() => setTávolságPopup(true)}>Táv:<br/><span className="th-tav-value">{távolság}m</span></button>
           </div>
 
           {/* Szorzó pickerek */}
@@ -349,15 +354,15 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setIdeaPopup(false); }}>
           <div className="kep-prompt">
             <label>Idea érték</label>
-            <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '6px' }}>
-              <div style={{ display: 'flex', gap: '6px' }}>
-                {[-5, -4, -3, -2, -1].map(n => <button key={n} className={`fort-fok-btn${idea === n ? ' active' : ''}`} style={{ width: '36px', height: '36px', fontSize: '13px' }} onClick={() => { setIdea(n); setIdeaPopup(false); }}>{n}</button>)}
+            <div className="he-idea-grid">
+              <div className="th-idea-row">
+                {[-5, -4, -3, -2, -1].map(n => <button key={n} className={`fort-fok-btn th-idea-cell${idea === n ? ' active' : ''}`} onClick={() => { setIdea(n); setIdeaPopup(false); }}>{n}</button>)}
               </div>
-              <div style={{ display: 'flex', gap: '6px' }}>
-                <button className={`fort-fok-btn${idea === 0 ? ' active' : ''}`} style={{ width: '36px', height: '36px', fontSize: '13px' }} onClick={() => { setIdea(0); setIdeaPopup(false); }}>0</button>
+              <div className="th-idea-row">
+                <button className={`fort-fok-btn th-idea-cell${idea === 0 ? ' active' : ''}`} onClick={() => { setIdea(0); setIdeaPopup(false); }}>0</button>
               </div>
-              <div style={{ display: 'flex', gap: '6px' }}>
-                {[1, 2, 3, 4, 5].map(n => <button key={n} className={`fort-fok-btn${idea === n ? ' active' : ''}`} style={{ width: '36px', height: '36px', fontSize: '13px' }} onClick={() => { setIdea(n); setIdeaPopup(false); }}>+{n}</button>)}
+              <div className="th-idea-row">
+                {[1, 2, 3, 4, 5].map(n => <button key={n} className={`fort-fok-btn th-idea-cell${idea === n ? ' active' : ''}`} onClick={() => { setIdea(n); setIdeaPopup(false); }}>+{n}</button>)}
               </div>
             </div>
           </div>
@@ -392,7 +397,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <button className="fort-fok-btn" style={{ width: '32px', height: '32px' }} onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.max(0, prev.CM - 1) } : prev)}>−</button>
               <strong style={{ fontSize: '18px' }}>{k.CM}</strong>
-              <button className="fort-fok-btn" style={{ width: '32px', height: '32px' }} onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.min(prev.CM + 1, prev.tsz * konstansok.arányok.max_cm_perszint) } : prev)}>+</button>
+              <button className="fort-fok-btn th-cm-btn" onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.min(prev.CM + 1, prev.tsz * konstansok.arányok.max_cm_perszint) } : prev)}>+</button>
             </div>
             <span style={{ fontSize: '11px', color: '#888' }}>max: {k.tsz * konstansok.arányok.max_cm_perszint}</span>
           </div>

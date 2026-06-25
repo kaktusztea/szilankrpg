@@ -79,6 +79,7 @@
   cursor: pointer;
   flex: 0 0 auto;
   color: var(--text);
+  border-color: var(--success);
 }
 
 .th-szorzo-grid {
@@ -155,3 +156,8 @@
   border-color: var(--success) !important;
   background: rgba(76, 175, 80, 0.1);
 }
+
+.th-idea-cell { width: 36px; height: 36px; font-size: 13px; }
+.th-idea-row { display: flex; gap: 6px; }
+.th-tav-value { font-size: 18px; color: var(--success); }
+.th-cm-btn { width: 32px; height: 32px; }

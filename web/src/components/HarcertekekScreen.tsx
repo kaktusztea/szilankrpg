@@ -309,7 +309,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
                 style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined}
                 onClick={() => setMfTarget(i)}>
                 MF fok: <strong>{getMfFok(f.alap)}</strong>
-                {mfKövetelményHiba(f.alap) && <span style={{ display: 'block', fontSize: '11px', marginTop: '2px', color: '#e53935' }}>{mfKövetelményText(f.alap)}</span>}
+                {mfKövetelményHiba(f.alap) && <span className="he-mf-error">{mfKövetelményText(f.alap)}</span>}
               </button>
               <button className="he-field-btn" onClick={() => setIdeaTarget({ type: 'fegyver', idx: i })}>Idea: <strong>{f.idea}</strong></button>
               <button className="he-field-btn" onClick={() => setAnyagTarget(i)}>Anyag: <strong>{f.anyag}</strong></button>

@@ -249,3 +249,5 @@
 .he-del-confirm {
   padding: 6px 15px;
 }
+
+.he-mf-error { display: block; font-size: 11px; margin-top: 2px; color: #e53935; }
