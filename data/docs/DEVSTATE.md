@@ -502,7 +502,7 @@ Engine spec: §38.
 **Data layer (TODO):**
 - [ ] `lovas_harc.yaml` + `leglovas_harc.yaml`: 0.fok (Alapeset) hozzáadása: TÉ:-9, VÉ:-9
 - [ ] `harci_helyzetek.yaml`: kölcsönös `kizár_helyzetek` (Lovas harc ↔ Magasabbról)
-- [ ] `taktikak.yaml`: "Lovas roham" (TÉ:+6, SP:+10) + "Lovas támadás galoppból" (TÉ:+3, SP:+5) — megkötés: `harci_helyzet/szükséges`
+- [ ] `taktikak.yaml`: "(Lég)Lovas roham" (TÉ:+6, SP:+10) + "(Lég)Lovas támadás galoppból" (TÉ:+3, SP:+5) — megkötés: `harci_helyzet/szükséges`
 - [ ] `taktikak.yaml`: "Roham" + "Öngyilkos roham" → megkötés: `harci_helyzet/tiltott/lovas_harc` + `léglovas_harc`
 - [ ] `manoverek.yaml`: "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás" (típus: "lovas") + meglévő "Lovas megakasztása" típus fix
 

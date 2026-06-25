@@ -255,7 +255,7 @@ taktikák:
   fortély_bővítés: null
   megkötések: []
   id: "tettetés"
-- név: "Lovas roham"
+- név: "(Lég)Lovas roham"
   fokozatos: false
   módosítók:
     TÉ: 6
@@ -269,7 +269,7 @@ taktikák:
   kombó_lista: []
   fortély_bővítés: null
   id: "lovas_roham"
-- név: "Lovas támadás galoppból"
+- név: "(Lég)Lovas támadás galoppból"
   fokozatos: false
   módosítók:
     TÉ: 3

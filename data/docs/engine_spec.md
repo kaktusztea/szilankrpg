@@ -2632,7 +2632,7 @@ note: A meglévő `kizár_helyzetek` logika (kölcsönös kizárás) már implem
 Két új taktika a `taktikak.yaml`-ba:
 
 ```yaml
-- név: "Lovas roham"
+- név: "(Lég)Lovas roham"
   fokozatos: false
   módosítók:
     TÉ: 6

@@ -361,7 +361,7 @@
     "feltétel_kulcs": "taktika:tettetés"
   },
   {
-    "név": "Lovas roham",
+    "név": "(Lég)Lovas roham",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 6,
@@ -385,7 +385,7 @@
     "feltétel_kulcs": "taktika:lovas_roham"
   },
   {
-    "név": "Lovas támadás galoppból",
+    "név": "(Lég)Lovas támadás galoppból",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 3,
