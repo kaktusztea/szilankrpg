@@ -4,6 +4,7 @@ import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../engine/types';
 import { calcHatásPool } from './HatasPoolCalc';
 import { fmtCode, fmtHatás } from './formatters';
+import { lookupFegyver } from '../engine/helpers';
 import './AktivScreen.css';
 
 
@@ -130,7 +131,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
   // Fegyver nevek
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
-    const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase());
+    const fd = lookupFegyver(data.fegyverek, f.alap);
     return { név: fd?.Alapnév || f.alap, idx: i };
   }), ...(karakter.pajzs?.méret ? [{ név: karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs', idx: -2 }] : [])];
 
@@ -163,7 +164,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           if (aktívFegyverIdx >= 0) {
             const fp = karakter.fegyverek[aktívFegyverIdx];
             if (fp) {
-              const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+              const fd = lookupFegyver(data.fegyverek, fp.alap);
               if (fd && data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] === mk.érték) return false;
             }
           }
@@ -172,7 +173,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           // Aktív fegyver támadásszáma ellenőrzés
           const aktívFegyverIdx = session.aktív_fegyver_index;
           const fp = aktívFegyverIdx >= 0 ? karakter.fegyverek[aktívFegyverIdx] : null;
-          const fd = fp ? data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase()) : null;
+          const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
           const sebesség = fd ? parseInt(fd.Sebesség) || 6 : 6;
           const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] ?? 'Közelharc') : 'Közelharc';
           const harcmodorSzint = karakter.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
@@ -250,8 +251,8 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 if (session.aktív_fegyver_bal_index === -1) return true;
                 const balFp = karakter.fegyverek[session.aktív_fegyver_bal_index];
                 if (!balFp) return true;
-                const balDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === balFp.alap.toLowerCase());
-                const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
+                const balDef = lookupFegyver(data.fegyverek, balFp.alap);
+                const fDef = lookupFegyver(data.fegyverek, karakter.fegyverek[f.idx]?.alap ?? "");
                 return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(balDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
               }).map(f => <option key={f.idx} value={f.idx} style={(f.idx === -1 || f.idx === -2) ? { color: '#81c784' } : undefined}>{f.név}</option>)}
             </select>
@@ -263,7 +264,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
               <select className="aktiv-field-select" disabled><option>Pajzs</option></select>
             ) : session.fegyverfogás === 'fegyver_hárító' ? (() => {
               const háritók = karakter.fegyverek.map((fp, i) => ({ i, fp })).filter(({ fp }) => {
-                const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+                const def = lookupFegyver(data.fegyverek, fp.alap);
                 return def?.Hárító === '1';
               });
               const selected = háritók.find(h => h.i === session.aktív_fegyver_bal_index) || háritók[0];
@@ -284,12 +285,12 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                   if (f.idx === -1) return false; // puszta kéz
                   if (f.idx === -2) return false; // pajzs
                   if (karakter.fegyverek[f.idx]?.alap.toLowerCase() === 'puszta kéz') return false;
-                  const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
+                  const fDef = lookupFegyver(data.fegyverek, karakter.fegyverek[f.idx]?.alap ?? "");
                   if (fDef?.Hárító === '1') return false;
                   if (session.aktív_fegyver_index === -1) return true;
                   const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
                   if (!jobbFp) return true;
-                  const jobbDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase());
+                  const jobbDef = lookupFegyver(data.fegyverek, jobbFp.alap);
                   return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(jobbDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
                 }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
               </select>
@@ -739,14 +740,14 @@ function FegyverfogásPicker({ data, karakter, session, onSelect, onClose }: {
 }) {
   const jobbIdx = session.aktív_fegyver_index;
   const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
-  const jobbDef = jobbFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase()) : null;
+  const jobbDef = jobbFp ? lookupFegyver(data.fegyverek, jobbFp.alap) : null;
   const kétkezesFegyver = jobbDef?.['Forgatás módja'] === 'kétkezes';
 
   function isDisabled(id: string): boolean {
     if (id === 'fegyver_pajzs' && !karakter.pajzs?.méret) return true;
     if (id === 'fegyver_hárító') {
       const hasHáritó = karakter.fegyverek.some(fp => {
-        const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+        const def = lookupFegyver(data.fegyverek, fp.alap);
         return def?.['Hárító'] === '1';
       });
       const hasFortély = karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);
@@ -758,7 +759,7 @@ function FegyverfogásPicker({ data, karakter, session, onSelect, onClose }: {
       if (!jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz') return true;
       const nemHáritó = karakter.fegyverek.filter((fp, i) => {
         if (i === jobbIdx) return false;
-        const def = data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+        const def = lookupFegyver(data.fegyverek, fp.alap);
         return def?.Hárító !== '1';
       });
       if (nemHáritó.length === 0) return true;
@@ -779,7 +780,7 @@ function FegyverfogásPicker({ data, karakter, session, onSelect, onClose }: {
     if (id === 'kétkezes') {
       patch.kétkezes_harc = true; patch.aktív_pajzs = false;
       if (session.aktív_fegyver_bal_index === -1) {
-        const eligible = karakter.fegyverek.map((fp, i) => ({ i, penge: parseFloat(data.fegyverek.find(d => d.Fegyver.toLowerCase() === fp.alap.toLowerCase())?.Pengehossz ?? '99') || 99 }))
+        const eligible = karakter.fegyverek.map((fp, i) => ({ i, penge: parseFloat(lookupFegyver(data.fegyverek, fp.alap)?.Pengehossz ?? '99') || 99 }))
           .filter(e => e.i !== session.aktív_fegyver_index)
           .sort((a, b) => a.penge - b.penge);
         if (eligible.length > 0) patch.aktív_fegyver_bal_index = eligible[0].i;

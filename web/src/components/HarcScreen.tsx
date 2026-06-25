@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, SebzésRubrika } from '../engine/types';
 import { evaluate, buildContext } from '../engine/reactive';
+import { lookupFegyver } from '../engine/helpers';
 import { buildAktívFeltételek } from '../engine/feltetelek';
 import { calcKétkezesHarc } from '../engine/ketkezes';
 import { EpTable } from './EpTable';
@@ -125,14 +126,14 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const aktívFegyverFp = session.aktív_fegyver_index >= 0 ? k.fegyverek[session.aktív_fegyver_index] : null;
   const pajzsFegyverNév = k.pajzs?.méret ? (k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs') : null;
   const aktívFegyverDef = session.aktív_fegyver_index === -2
-    ? data.fegyverek.find(f => f.Fegyver === pajzsFegyverNév)
-    : aktívFegyverFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === aktívFegyverFp.alap.toLowerCase()) : null;
+    ? lookupFegyver(data.fegyverek, pajzsFegyverNév ?? '')
+    : aktívFegyverFp ? lookupFegyver(data.fegyverek, aktívFegyverFp.alap) : null;
   const jobbPengehossz = aktívFegyverDef ? (parseFloat(aktívFegyverDef.Pengehossz) || 0) : 0;
   let aktívFegyverPengehossz = jobbPengehossz;
   // Kétkezes harc / hárítófegyver: bal kéz pengehossza is számít (összeg)
   if (session.kétkezes_harc && session.aktív_fegyver_bal_index >= 0 || session.fegyverfogás === 'fegyver_hárító' && session.aktív_fegyver_bal_index >= 0) {
     const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
-    const balDef = balFp ? data.fegyverek.find(f => f.Fegyver.toLowerCase() === balFp.alap.toLowerCase()) : null;
+    const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
     aktívFegyverPengehossz += balDef ? (parseFloat(balDef.Pengehossz) || 0) : 0;
   }
   const aktívFegyverKat = aktívFegyverDef?.Kategória ?? 'közelharci';
@@ -223,11 +224,11 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   // Fegyverek — build from karakter.fegyverek, expand MK pairs
   const fegyverRows: { név: string; fDef: typeof data.fegyverek[0]; mfFok: number }[] = [];
   // Always include Puszta kéz
-  const pusztaKez = data.fegyverek.find(f => f.Fegyver.toLowerCase() === 'puszta kéz');
+  const pusztaKez = lookupFegyver(data.fegyverek, 'puszta kéz');
   if (pusztaKez) fegyverRows.push({ név: pusztaKez.Fegyver, fDef: pusztaKez, mfFok: 0 });
   // Karakter fegyverek
   for (const fp of k.fegyverek) {
-    const fDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === fp.alap.toLowerCase());
+    const fDef = lookupFegyver(data.fegyverek, fp.alap);
     if (!fDef) continue;
     const displayName = fDef.Alapnév || fDef.Fegyver;
     const mfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fp.alap));
@@ -235,13 +236,13 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     fegyverRows.push({ név: fDef.Fegyver, fDef, mfFok });
     // If MK pair exists, add 2K row with same MF/idea
     if (fDef.MK_pár) {
-      const párDef = data.fegyverek.find(f => f.Fegyver === fDef.MK_pár);
+      const párDef = lookupFegyver(data.fegyverek, fDef.MK_pár);
       if (párDef) fegyverRows.push({ név: párDef.Fegyver, fDef: párDef, mfFok });
     }
   }
   // Pajzs fegyverként (ha van méret kiválasztva)
   if (pajzsFegyverNév) {
-    const pajzsDef = data.fegyverek.find(f => f.Fegyver === pajzsFegyverNév);
+    const pajzsDef = lookupFegyver(data.fegyverek, pajzsFegyverNév ?? '');
     if (pajzsDef) {
       fegyverRows.push({ név: pajzsDef.Fegyver, fDef: pajzsDef, mfFok: 0 });
     }
@@ -378,7 +379,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   if (session.fegyverfogás === 'fegyver_hárító' && session.aktív_fegyver_bal_index >= 0 && hasHárítóFortély) {
     const hFp = k.fegyverek[session.aktív_fegyver_bal_index];
     if (hFp) {
-      const hDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === hFp.alap.toLowerCase());
+      const hDef = lookupFegyver(data.fegyverek, hFp.alap);
       if (hDef?.Hárító === '1') {
         hárítóVÉ = parseInt(hDef.VÉ) || 0;
         hárítóNév = hFp.alap;
@@ -485,7 +486,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
           )}
           {!kétkezesResult && fogásResult && (() => {
             const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-            const jobbNév = jobbFp ? (data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase())?.Fegyver ?? '') : '';
+            const jobbNév = jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? '') : '';
             const r = fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? fegyverResults[0];
             if (!r) return null;
             return (
@@ -503,7 +504,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
             <tr key={i} style={(() => {
               if (kétkezesResult || fogásResult) return { opacity: 0.4 };
               const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-              const jobbNév = session.aktív_fegyver_index === -2 ? (pajzsFegyverNév ?? '') : jobbFp ? (data.fegyverek.find(d => d.Fegyver.toLowerCase() === jobbFp.alap.toLowerCase())?.Fegyver ?? '') : 'Puszta kéz';
+              const jobbNév = session.aktív_fegyver_index === -2 ? (pajzsFegyverNév ?? '') : jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? '') : 'Puszta kéz';
               if (r.fegyver_név !== jobbNév) return { opacity: 0.4 };
               return undefined;
             })()}>

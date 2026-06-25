@@ -16,6 +16,7 @@ import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
 import type { Karakter, Session, Fortely } from './engine/types';
 import { DEFAULT_SESSION } from './engine/types';
 import { describeKepChange } from './engine/undo-helpers';
+import { lookupFegyver } from './engine/helpers';
 import { validateKarakter, validateKarakterData } from './engine/validate';
 import './App.css';
 import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, downloadFile, shareFile, loadKarakterFromFile } from './engine/file-ops';
@@ -788,7 +789,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
     }
     case 'fortelyok': {
       const fegyverNevek = karakter.fegyverek.map(f => {
-        const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase());
+        const fd = lookupFegyver(data.fegyverek, f.alap);
         return fd?.Alapnév || f.alap;
       });
       const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;

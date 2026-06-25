@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, FegyverPeldany, PancelPeldany } from '../engine/types';
+import { lookupFegyver } from '../engine/helpers';
 import './HarcertekekScreen.css';
 
 interface Props {
@@ -54,7 +55,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
 
   // Mesterfegyver fok lookup: fortélyok tömbből, spec_elem === fegyver.alap (vagy Alapnév)
   function getMfFok(fegyverAlap: string): number {
-    const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
+    const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
     const displayName = fDef?.Alapnév || fegyverAlap;
     const entry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fegyverAlap));
     return entry?.fok ?? 0;
@@ -67,7 +68,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
     const fokDef = mfDef?.fokok.find(f => f.fok === fok);
     if (!fokDef?.követelmények?.length) return false;
     // Fegyverhez tartozó harcmodor meghatározása
-    const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
+    const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
     const fegyverHarcmodor = fDef ? (konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.Kategória] : undefined;
     for (const kov of fokDef.követelmények) {
       if (kov.típus === 'képzettség') {
@@ -88,7 +89,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
     const mfDef = data.fortelySummaries.find(d => d.név === 'Mesterfegyver');
     const fokDef = mfDef?.fokok.find(f => f.fok === fok);
     if (!fokDef?.követelmények?.length) return '';
-    const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
+    const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
     const fegyverHarcmodor = fDef ? (konstansok.fegyver_kategória_harcmodor as Record<string, string>)[fDef.Kategória] : undefined;
     const kov = fokDef.követelmények[0];
     if (kov.típus === 'képzettség') {
@@ -99,7 +100,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
   }
 
   function setMfFok(fegyverAlap: string, fok: number) {
-    const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === fegyverAlap.toLowerCase());
+    const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
     const displayName = fDef?.Alapnév || fegyverAlap;
     setKarakter(prev => {
       if (!prev) return prev;
@@ -156,7 +157,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
       const removed = prev.fegyverek[idx];
       const fegyverek = prev.fegyverek.filter((_, i) => i !== idx);
       // Töröljük a Mesterfegyver fortélyt is ha a fegyverhez tartozott
-      const fDef = data.fegyverek.find(fd => fd.Fegyver.toLowerCase() === removed.alap.toLowerCase());
+      const fDef = lookupFegyver(data.fegyverek, removed.alap);
       const displayName = fDef?.Alapnév || removed.alap;
       const fortélyok = prev.fortélyok.filter(f => !(f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === removed.alap)));
       // Session: fegyver indexek és kétkezes harc reset ha érintett
@@ -302,7 +303,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
               <strong>{f.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
               <button className="fort-delete" onClick={() => setDeleteTarget(i)}>✕</button>
             </div>
-                        {(() => { const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase()); if (!fd) return null; return <FegyverChip fd={fd} mfFok={getMfFok(f.alap)} idea={f.idea} konstansok={konstansok} />; })()}
+                        {(() => { const fd = lookupFegyver(data.fegyverek, f.alap); if (!fd) return null; return <FegyverChip fd={fd} mfFok={getMfFok(f.alap)} idea={f.idea} konstansok={konstansok} />; })()}
             <div className="he-fegyver-fields">
               <button className="he-field-btn he-field-fortely"
                 style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined}
@@ -348,7 +349,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
         <h3>Pajzs</h3>
                 {k.pajzs.méret && (() => {
                   const pNév = k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs';
-                  const pd = data.fegyverek.find(d => d.Fegyver === pNév);
+                  const pd = lookupFegyver(data.fegyverek, pNév);
                   if (!pd) return null;
                   const strike = (k.session.fegyverfogás !== 'egyfegyveres' || k.session.aktív_fegyver_index !== -2)
                     ? { textDecoration: 'line-through', textDecorationThickness: '2px', opacity: 0.5 } as React.CSSProperties
