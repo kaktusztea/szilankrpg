@@ -199,7 +199,8 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 setSession(s => ({ ...s, aktív_fegyver_bal_index: idx }));
               }}>
                 {fegyverOpciók.filter(f => {
-                  if (f.idx === -1) return false;
+                  if (f.idx === -1) return false; // puszta kéz
+                  if (f.idx === -2) return false; // pajzs
                   if (karakter.fegyverek[f.idx]?.alap.toLowerCase() === 'puszta kéz') return false;
                   const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
                   if (fDef?.Hárító === '1') return false;
