@@ -198,6 +198,8 @@ export interface KonstansokRaw {
   közös_nyelv: string;
   fortély_csoport_sorrend: { id: string; label: string }[];
   nyelv_fok_nevek: Record<number, string>;
+  tulajdonság_sorrend: string[];
+  képzettség_csoport_sorrend: { id: string; label: string }[];
   [key: string]: any;
 }
 

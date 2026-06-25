@@ -50,8 +50,8 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
   // Game mode: adatlap megjelenítés
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
-  const TULAJDONSAG_NEVEK = (data.konstansok as any).tulajdonság_sorrend as (keyof Tulajdonsagok)[];
-  const csoportSorrend = (data.konstansok as any).képzettség_csoport_sorrend as { id: string; label: string }[];
+  const TULAJDONSAG_NEVEK = data.konstansok.tulajdonság_sorrend as (keyof Tulajdonsagok)[];
+  const csoportSorrend = data.konstansok.képzettség_csoport_sorrend;
   const CSOPORT_SORREND = csoportSorrend.map(c => c.id);
   const CSOPORT_LABEL: Record<string, string> = Object.fromEntries(csoportSorrend.map(c => [c.id, c.label]));
 
@@ -277,7 +277,7 @@ export function TulajdonsagokScreen({ data, gameMode, karakter, tulajdonságok, 
       {/* Tulajdonságok */}
       {!gameMode && (() => {
         const pontTábla = data.konstansok.tulajdonság_pontok as Record<string, number>;
-        const keret = (data.konstansok.arányok as any).tulajdonság_pont_alap + Math.floor(tsz / 2);
+        const keret = data.konstansok.arányok.tulajdonság_pont_alap + Math.floor(tsz / 2);
         const elköltött = TULAJDONSAG_NEVEK.reduce((s, key) => s + (pontTábla[String(tulajdonságok[key])] ?? 0), 0);
         const maradék = keret - elköltött;
         return (
