@@ -86,6 +86,7 @@ export interface TaktikaEntry {
   megkötések?: TaktikaMegkötés[];
   kombó_mód: string;
   kombó_lista: string[];
+  fortély_bővítés?: { fortély: string; extra_fokok_per_fok: number };
 }
 
 export interface HarciHelyzetEntry {

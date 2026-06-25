@@ -195,6 +195,10 @@
       "Plusz támadás",
       "1 támadás"
     ],
+    "fortély_bővítés": {
+      "fortély": "Támadás erőből",
+      "extra_fokok_per_fok": 2
+    },
     "id": "támadás_erőből",
     "feltétel_kulcs": "taktika:támadás_erőből"
   },

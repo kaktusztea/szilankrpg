@@ -72,7 +72,15 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     const def = data.taktikak.find(t => t.név === at.név);
     if (!def) continue;
     if (def.fokozatos && def.fokok && at.fok != null) {
-      const fokDef = def.fokok.find(f => f.fok === at.fok);
+      let fokDef = def.fokok.find(f => f.fok === at.fok);
+      // Extra fok extrapoláció (fortély_bővítés)
+      if (!fokDef && def.fortély_bővítés) {
+        const utolsó = def.fokok[def.fokok.length - 1];
+        const perFok: Record<string, number> = {};
+        for (const [k, v] of Object.entries(utolsó)) { if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok; }
+        fokDef = { fok: at.fok } as typeof utolsó;
+        for (const [k, step] of Object.entries(perFok)) (fokDef as any)[k] = Math.round(step * at.fok);
+      }
       if (fokDef) {
         if (fokDef.TÉ) taktikaMods['TÉ'] += fokDef.TÉ;
         if (fokDef.VÉ) taktikaMods['VÉ'] += fokDef.VÉ;

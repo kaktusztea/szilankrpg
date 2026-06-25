@@ -24,3 +24,8 @@ taktikák:
       - { típus: "", mód: "", érték: "" }
     kombó_mód: "whitelist"     # kötelező, enum: "whitelist" | "blacklist"
     kombó_lista: []            # kötelező, string lista (taktika nevek)
+    # Fortély bővítés: ha egy fortély extra taktika fokokat engedélyez
+    # fortély: fortély neve, extra_fokok_per_fok: hány extra fok fokonként
+    fortély_bővítés:           # opcionális
+      fortély: ""
+      extra_fokok_per_fok: 0

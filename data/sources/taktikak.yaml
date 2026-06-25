@@ -134,6 +134,9 @@ taktikák:
     érték: "Ostorharc"
   kombó_mód: "whitelist"
   kombó_lista: ["Kiváró", "Plusz támadás", "1 támadás"]
+  fortély_bővítés:
+    fortély: "Támadás erőből"
+    extra_fokok_per_fok: 2
   megkötések: []
   id: "támadás_erőből"
 - név: "Támadó"

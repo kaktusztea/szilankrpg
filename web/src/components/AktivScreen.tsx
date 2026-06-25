@@ -266,7 +266,12 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
           const def = data.taktikak.find(d => d.név === t.név);
           const mods: string[] = [];
           if (def?.fokozatos && def.fokok && t.fok != null) {
-            const fokDef = def.fokok.find(fk => fk.fok === t.fok);
+            let fokDef = def.fokok.find(fk => fk.fok === t.fok);
+            if (!fokDef && def.fortély_bővítés) {
+              const utolsó = def.fokok[def.fokok.length - 1];
+              fokDef = { fok: t.fok } as typeof utolsó;
+              for (const [k, v] of Object.entries(utolsó)) { if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') (fokDef as any)[k] = Math.round((v / utolsó.fok) * t.fok); }
+            }
             if (fokDef) { for (const [k, v] of Object.entries(fokDef)) { if (k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`); } }
           } else if (def?.módosítók) {
             for (const [k, v] of Object.entries(def.módosítók)) { if (typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`); }
@@ -324,7 +329,26 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 const def = data.taktikak.find(t => t.név === taktikaFokválasztó);
                 if (!def?.fokok) return null;
                 const existing = session.aktív_taktikák.findIndex(a => a.név === taktikaFokválasztó);
-                return def.fokok.map(f => (
+                // Dinamikus foklista: alap + fortély_bővítés extra fokok
+                let fokok = [...def.fokok];
+                if (def.fortély_bővítés) {
+                  const fb = def.fortély_bővítés;
+                  const fortélyFok = karakter.fortélyok.find(f => f.név === fb.fortély)?.fok ?? 0;
+                  const extraFokok = fortélyFok * fb.extra_fokok_per_fok;
+                  const utolsó = def.fokok[def.fokok.length - 1];
+                  // Lineáris extrapoláció: per fok növekmény az utolsó definiált fok mintájából
+                  const perFok: Record<string, number> = {};
+                  for (const [k, v] of Object.entries(utolsó)) {
+                    if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
+                  }
+                  for (let i = 1; i <= extraFokok; i++) {
+                    const newFok = utolsó.fok + i;
+                    const entry: any = { fok: newFok };
+                    for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * newFok);
+                    fokok.push(entry);
+                  }
+                }
+                return fokok.map(f => (
                   <div key={f.fok} className={`aktiv-picker-item ${existing >= 0 && session.aktív_taktikák[existing].fok === f.fok ? 'active' : ''}`} onClick={() => {
                     if (existing >= 0) {
                       setTaktikaFok(existing, f.fok);
@@ -334,7 +358,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                     setShowTaktikaPicker(false);
                     setTaktikaFokválasztó(null);
                   }}>
-                    <span className="aktiv-picker-item-name">{f.fok}. fok</span>
+                    <span className="aktiv-picker-item-name">{f.fok}. fok{def!.fokok && f.fok > def!.fokok[def!.fokok.length - 1].fok && <span style={{ color: '#ce93d8', marginLeft: '6px' }}>●</span>}</span>
                     <span className="aktiv-picker-item-details">{Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ')}</span>
                     {f.hatások && f.hatások.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map(h => h.megjegyzés || `${h.operátor} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
                   </div>
