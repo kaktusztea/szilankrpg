@@ -140,7 +140,7 @@ function App() {
       setKarakter(prev => prev ? { ...prev, id_leíró: expectedLeíró } : prev);
       return;
     }
-    const toSave = { ...karakter, _undo: undoStack } as any;
+    const toSave = { ...karakter, _undo: undoStack } as Karakter & { _undo: unknown };
     try {
       localStorage.setItem(`szilank_char_${karakter.uid}`, JSON.stringify(toSave));
       localStorage.setItem('szilank_active', karakter.uid);
@@ -338,7 +338,7 @@ function App() {
     const harcmodorÖsszeg = [...new Set(Object.values(data.konstansok.fegyver_kategória_harcmodor) as string[])]
       .reduce((s, n) => s + (képzettségek.find(k => k.név === n)?.szint ?? 0), 0);
     const alakzatharcSzint = képzettségek.find(k => k.név === 'Alakzatharc')?.szint ?? 0;
-    const kpCtx = buildContext(tulajdonságok, tsz, data.konstansok as any, {
+    const kpCtx = buildContext(tulajdonságok, tsz, data.konstansok, {
       spec_tartós_sérülés_fok: spec.tartós_sérülés_fok,
       HM_TÉ: karakter.HM_TÉ, HM_VÉ: karakter.HM_VÉ, CM: karakter.CM,
       harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: alakzatharcSzint,
@@ -753,7 +753,7 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
     case 'tulajdonsagok': {
       const setAnyanyelv = (v: string) => setKarakter(prev => {
         if (!prev) return prev;
-        const közös = (data.konstansok as any).közös_nyelv;
+        const közös = data.konstansok.közös_nyelv;
         const filtered = prev.fortélyok.filter(f => !(f.név === 'Nyelvismeret' && f.kiérdemelt));
         const ingyenesek: Fortely[] = [
           { név: 'Nyelvismeret', fok: 1, spec_típus: 'nyelv', spec_elem: közös, kiérdemelt: true },
@@ -766,8 +766,9 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
       return <TulajdonsagokScreen data={data} gameMode={gameMode} karakter={karakter}
         tulajdonságok={tulajdonságok} setTulajdonságok={(v: any) => {
           const newVal = typeof v === 'function' ? v(tulajdonságok) : v;
-          const changed = Object.keys(newVal).find(k => newVal[k] !== (tulajdonságok as any)[k]);
-          pushUndo(changed ? `${changed}: ${(tulajdonságok as any)[changed]} → ${newVal[changed]}` : 'Tulajdonság módosítás');
+          const tul = tulajdonságok as Record<string, number>;
+          const changed = Object.keys(newVal).find(k => newVal[k] !== tul[k]);
+          pushUndo(changed ? `${changed}: ${tul[changed!]} → ${newVal[changed!]}` : 'Tulajdonság módosítás');
           setTulajdonságok(v);
         }}
         képzettségek={képzettségek} setKépzettségek={(v: any) => {

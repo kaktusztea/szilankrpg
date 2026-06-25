@@ -154,7 +154,7 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
 export function buildContext(
   tulajdonságok: Record<string, number> | object,
   tsz: number,
-  konstansok: { harcérték_alap: Record<string, number>; kp: Record<string, number>; arányok: Record<string, number>; kp_bónusz?: Record<string, number> },
+  konstansok: { harcérték_alap: Record<string, number>; kp: Record<string, number>; arányok: Record<string, number>; kp_bónusz?: Record<string, number>; [key: string]: unknown },
   extras?: Record<string, number>,
 ): Context {
   const ctx: Context = new Map();

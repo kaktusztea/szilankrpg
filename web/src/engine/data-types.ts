@@ -194,6 +194,7 @@ export interface KonstansokRaw {
   nyílpuska_alap_támadás: string;
   nyílpuska_gyors_újratöltés_fortély: string;
   nyílpuska_gyors_újratöltés_min_fok: number;
+  közös_nyelv: string;
   [key: string]: any;
 }
 
