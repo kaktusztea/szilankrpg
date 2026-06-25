@@ -111,7 +111,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   lookupArrays.set('csatolt_mgt_merev', Object.entries(csatoltMgt.merevvért_fém).map(([n, v]) => ({ név: n, érték: v })));
   lookupArrays.set('csatolt_mgt_fém', Object.entries(csatoltMgt.hajlékonyvért_fém).map(([n, v]) => ({ név: n, érték: v })));
   lookupArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([n, v]) => ({ név: n, érték: v })));
-  lookupArrays.set('struktúrák', konstansok.páncél_struktúrák.map(s => ({ név: s.struktúra, mgt: s.mgt, sfé_fizikai: s.sfé_fizikai, sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0 })));
+  lookupArrays.set('struktúrák', konstansok.páncél_struktúrák.map(s => ({
+    név: s.struktúra, mgt: s.mgt, sfé_fizikai: s.sfé_fizikai,
+    sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0
+  })));
   lookupArrays.set('fémalapanyagok', konstansok.páncél_fémalapanyagok.map(a => ({ anyag: a.anyag, mgt: a.mgt, sfé_bónusz: a.sfé_bónusz })));
   lookupArrays.set('méret_tábla', [{ név: 'passzol', érték: 0 }, { név: 'nem passzol', érték: 3 }, { név: 'borzalmas', érték: 6 }]);
   lookupArrays.set('merevvért_tábla', konstansok.merevvértviselet_bónuszok.map(b => ({ fok: b.fok, csökkentés: b.TÉ_büntetés_csökkentés })));
@@ -431,7 +434,11 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   }, [sebCount, oszlopMéret]);
 
   // Max VÉ csökkenés
-  const maxVéCsökk = Math.max(0, ...(kétkezesResult ? [kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ']] : fogásResult ? fegyverResults.map(r => r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ']) : fegyverResults.map(r => r.VÉ + pajzsVÉ + taktikaMods['VÉ'])));
+  const maxVéCsökk = Math.max(0, ...(kétkezesResult
+    ? [kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ']]
+    : fogásResult
+      ? fegyverResults.map(r => r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ'])
+      : fegyverResults.map(r => r.VÉ + pajzsVÉ + taktikaMods['VÉ'])));
 
   // MP
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
@@ -471,13 +478,13 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
       <table className="harc-table">
         <thead>
-          <tr><th>{belharciAktív ? <span style={{ color: '#ef9a9a' }}>BELHARC</span> : 'Fegyver'}</th><th>Tám</th><th className="te-col">TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>
+          <tr><th>{belharciAktív ? <span className="harc-belharc-label">BELHARC</span> : 'Fegyver'}</th><th>Tám</th><th className="te-col">TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th></tr>
         </thead>
         <tbody>
           {kétkezesResult && (
             <tr style={{ border: '2px solid #90caf9' }}>
               <td style={belharciAktív && kétkezesResult.sumPengehossz > 0 ? { color: '#e53935' } : undefined}>{kétkezesResult.fegyver_név}</td>
-              <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: kétkezesResult.fegyver_név, sebesség: kétkezesResult.sebesség, harckeret: kétkezesResult.harckeret })}>{kétkezesResult.támadások}</td>
+              <td className="harc-tam-clickable" onClick={() => setTámInfo({ név: kétkezesResult.fegyver_név, sebesség: kétkezesResult.sebesség, harckeret: kétkezesResult.harckeret })}>{kétkezesResult.támadások}</td>
               <td>{kétkezesResult.TÉ + téLevonás + taktikaMods['TÉ'] + (kétkezesResult.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
               <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
               <td>{kétkezesResult.SP + taktikaMods['SP']} {kétkezesResult.sebzésmód}</td>
@@ -492,7 +499,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
             return (
               <tr style={{ border: '2px solid #90caf9' }}>
                 <td>{fogásResult.név}</td>
-                <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
+                <td className="harc-tam-clickable" onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
                 <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + fogásResult.TÉ_büntetés + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
                 <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
                 <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
@@ -509,7 +516,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
               return undefined;
             })()}>
               <td style={belharciAktív && r.pengehossz > 0 ? { color: '#e53935' } : undefined}>{r.fegyver_név}</td>
-              <td style={{ cursor: 'pointer' }} onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
+              <td className="harc-tam-clickable" onClick={() => setTámInfo({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
               <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
               <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + (fogásResult ? 0 : pajzsVÉ) + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
               <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
@@ -526,7 +533,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
           onSebCountChange={setSebCount}
           ftEnyhítés={calcFtEnyhítés(k.képzettségek, data.konstansok.fájdalomtűrés_enyhítés)}
           téLevonások={téLevonások}
-          onNavigate={k.képzettségek.some(kp => kp.név === 'Fájdalomtűrés') ? () => { onNavigate?.('tulajdonsagok'); setTimeout(() => { document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 200); } : undefined}
+          onNavigate={k.képzettségek.some(kp => kp.név === 'Fájdalomtűrés') ? () => {
+            onNavigate?.('tulajdonsagok');
+            setTimeout(() => { document.querySelector('[data-kep="Fájdalomtűrés"]')?.scrollIntoView({ block: 'start', behavior: 'smooth' }); }, 200);
+          } : undefined}
           sebzések={session.sebzések}
           onSebzésekChange={(sebzések: SebzésRubrika[]) => setSession(prev => ({ ...prev, sebzések }))}
         />

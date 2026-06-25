@@ -179,3 +179,6 @@
   0% { background: var(--success); color: #000; }
   100% { background: transparent; color: inherit; }
 }
+
+.harc-belharc-label { color: #ef9a9a; }
+.harc-tam-clickable { cursor: pointer; }
