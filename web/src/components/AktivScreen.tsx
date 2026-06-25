@@ -153,7 +153,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 const balDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === balFp.alap.toLowerCase());
                 const fDef = data.fegyverek.find(d => d.Fegyver.toLowerCase() === karakter.fegyverek[f.idx]?.alap.toLowerCase());
                 return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(balDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
-              }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
+              }).map(f => <option key={f.idx} value={f.idx} style={(f.idx === -1 || f.idx === -2) ? { color: '#81c784' } : undefined}>{f.név}</option>)}
             </select>
           </div>
           {session.fegyverfogás !== 'egyfegyveres' && (

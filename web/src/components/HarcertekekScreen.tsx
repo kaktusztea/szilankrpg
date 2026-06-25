@@ -343,11 +343,12 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
       {/* Pajzs */}
       <section className="he-section">
         <h3>Pajzs</h3>
+        {k.pajzs.méret && (() => { const pNév = k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs'; const pd = data.fegyverek.find(d => d.Fegyver === pNév); if (!pd) return null; const mfFok = getMfFok(pNév); const mf = (konstansok as any).mesterfegyver_bónuszok?.find((b: any) => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 }; const strike = (k.session.fegyverfogás === 'egyfegyveres' && k.session.aktív_fegyver_index === -2) ? undefined : { textDecoration: 'line-through', textDecorationThickness: '2px', opacity: 0.5 } as React.CSSProperties; return <div className="he-fegyver-fields" style={{ marginBottom: '8px' }}><span className="he-field-btn he-field-indicator"><span style={{ color: '#90caf9', ...strike }}>TÉ:</span><span style={strike}>{(parseInt(pd.TÉ)||0)+mf.TÉ}</span> <span style={{ color: '#90caf9', marginLeft: '6px' }}>VÉ:</span>{(parseInt(pd.VÉ)||0)+mf.VÉ} <span style={{ color: '#90caf9', marginLeft: '6px', ...strike }}>SP:</span><span style={strike}>{(parseInt(pd.SP)||0)+mf.SP}</span> <span style={{ color: '#90caf9', marginLeft: '6px', ...strike }}>Sebesség:</span><span style={strike}>{pd.Sebesség}</span></span></div>; })()}
         <div className="he-fegyver-fields">
           <button className="he-field-btn" onClick={() => setPajzsPopup('méret')}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
           <button className="he-field-btn" onClick={() => setPajzsPopup('pajzshasználat')}>Pajzshasználat fok: <strong>{getPajzsFok()}</strong></button>
-          {k.pajzs.méret && <button className="he-field-btn he-field-fortely" onClick={() => setPajzsPopup('pajzs_mf')}>MF fok: <strong>{getMfFok(k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs')}</strong></button>}
-          <span className="he-field-btn he-field-indicator" onClick={() => showHint('A pajzs kézben állapotot az Aktív fülön állíthatod!')}>Kézben: <strong>{k.session.aktív_pajzs ? 'igen' : 'nem'}</strong></span>
+          {k.pajzs.méret && <button className="he-field-btn he-field-fortely" onClick={() => setPajzsPopup('pajzs_mf')}>MF fok: <strong>{getMfFok(k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs')}</strong><span style={{ display: 'block', fontSize: '11px', marginTop: '2px', color: '#999' }}>csak pajzs harc</span></button>}
+          <span className="he-field-btn he-field-indicator" onClick={() => showHint('A pajzs kézben állapotot az Aktív fülön állíthatod!')}>Kézben, fegyver mellett: <strong>{k.session.aktív_pajzs ? 'igen' : 'nem'}</strong></span>
         </div>
       </section>
 
