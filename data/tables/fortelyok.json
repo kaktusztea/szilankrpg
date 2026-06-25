@@ -5158,7 +5158,8 @@
         "fok": 1,
         "hatás": [
           "Teljes pajzs VÉ aktív.",
-          "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6."
+          "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6.",
+          "Pajzs harc: TÉ:+1, VÉ:+1, SP:+1."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 3.szint"
@@ -5188,6 +5189,24 @@
                 "érték": "fegyver_pajzs"
               }
             ]
+          },
+          {
+            "cél": "TÉ",
+            "mód": "flat",
+            "érték": 1,
+            "feltétel": "fegyver_kategória:pajzs"
+          },
+          {
+            "cél": "VÉ",
+            "mód": "flat",
+            "érték": 1,
+            "feltétel": "fegyver_kategória:pajzs"
+          },
+          {
+            "cél": "SP",
+            "mód": "flat",
+            "érték": 1,
+            "feltétel": "fegyver_kategória:pajzs"
           }
         ]
       },
@@ -5196,7 +5215,8 @@
         "hatás": [
           "Teljes pajzs VÉ aktív.",
           "TÉ levonás: Kis:-0, Közepes:-0, Nagy:-3.",
-          "Fegyverrel VAGY pajzzsal külön támadhatsz."
+          "Fegyverrel VAGY pajzzsal külön támadhatsz.",
+          "Pajzs harc: TÉ:+2, VÉ:+2, SP:+2."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 5.szint"
@@ -5226,6 +5246,24 @@
                 "érték": "fegyver_pajzs"
               }
             ]
+          },
+          {
+            "cél": "TÉ",
+            "mód": "flat",
+            "érték": 2,
+            "feltétel": "fegyver_kategória:pajzs"
+          },
+          {
+            "cél": "VÉ",
+            "mód": "flat",
+            "érték": 2,
+            "feltétel": "fegyver_kategória:pajzs"
+          },
+          {
+            "cél": "SP",
+            "mód": "flat",
+            "érték": 2,
+            "feltétel": "fegyver_kategória:pajzs"
           }
         ]
       },
@@ -5234,7 +5272,8 @@
         "hatás": [
           "Teljes pajzs VÉ aktív, TÉ levonás nincs.",
           "VÉ:+2 minden pajzshoz.",
-          "Fegyverrel VAGY pajzzsal külön támadhatsz."
+          "Fegyverrel VAGY pajzzsal külön támadhatsz.",
+          "Pajzs harc: TÉ:+3, VÉ:+3, SP:+3."
         ],
         "követelmény": [
           "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"
@@ -5276,6 +5315,24 @@
                 "érték": "fegyver_pajzs"
               }
             ]
+          },
+          {
+            "cél": "TÉ",
+            "mód": "flat",
+            "érték": 3,
+            "feltétel": "fegyver_kategória:pajzs"
+          },
+          {
+            "cél": "VÉ",
+            "mód": "flat",
+            "érték": 3,
+            "feltétel": "fegyver_kategória:pajzs"
+          },
+          {
+            "cél": "SP",
+            "mód": "flat",
+            "érték": 3,
+            "feltétel": "fegyver_kategória:pajzs"
           }
         ]
       }

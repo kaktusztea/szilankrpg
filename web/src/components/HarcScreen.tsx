@@ -138,6 +138,8 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const aktívFegyverKat = aktívFegyverDef?.Kategória ?? 'közelharci';
   const aktívFegyverHarcmodor = konstansok.fegyver_kategória_harcmodor[aktívFegyverKat] ?? 'Közelharc';
   stringCtx.set('aktív_fegyver_harcmodor', aktívFegyverHarcmodor);
+  // Fegyver kategória feltétel hozzáadása
+  aktívFeltételek.add(`fegyver_kategória:${aktívFegyverKat}`);
 
   const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok as any, {
     harcmodor_összeg: harcmodorÖsszeg,
@@ -241,8 +243,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   if (pajzsFegyverNév) {
     const pajzsDef = data.fegyverek.find(f => f.Fegyver === pajzsFegyverNév);
     if (pajzsDef) {
-      const pajzsMf = k.fortélyok.find(f => f.név === 'Mesterfegyver' && f.spec_elem === pajzsFegyverNév)?.fok ?? 0;
-      fegyverRows.push({ név: pajzsDef.Fegyver, fDef: pajzsDef, mfFok: pajzsMf });
+      fegyverRows.push({ név: pajzsDef.Fegyver, fDef: pajzsDef, mfFok: 0 });
     }
   }
 

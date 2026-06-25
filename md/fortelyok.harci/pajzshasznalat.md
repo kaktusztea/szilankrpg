@@ -9,6 +9,8 @@ Ismered a fegyvereket remekül kiegészítő pajzsok használatát.
 
 Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon még `TÉ` levonást okoz a használó oldalán. Ezek a hátrányon magasabb fokokon enyhülnek.
 
+Ha a karakter **kizárólag a pajzzsal harcol** (nincs fegyver a kézben), a fortély foka Mesterfegyver-szerű bónuszokat is ad a pajzs harcértékeire (`TÉ`, `VÉ`, `SP`).
+
 <br />
 
 ### Alapeset
@@ -37,6 +39,8 @@ TÉ levonás
 -6: Nagy pajzs
 ```
 
+🛡️ Pajzs harc (csak pajzs a kézben): `TÉ:+1`, `VÉ:+1`, `SP:+1`
+
 <br />
 
 ### 2. fok
@@ -55,6 +59,8 @@ TÉ levonás
 - Fegyverrel VAGY a pajzzsal külön támadhatsz
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket
 
+🛡️ Pajzs harc (csak pajzs a kézben): `TÉ:+2`, `VÉ:+2`, `SP:+2`
+
 <br />
 
 ### 3. fok
@@ -70,5 +76,7 @@ VÉ:+2 minden pajzshoz
 
 - Fegyverrel VAGY a pajzzsal külön támadhatsz
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket
+
+🛡️ Pajzs harc (csak pajzs a kézben): `TÉ:+3`, `VÉ:+3`, `SP:+3`
 
 ---

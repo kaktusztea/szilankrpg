@@ -40,6 +40,7 @@ fokok:
   hatástext: 
   - text: "Teljes pajzs VÉ aktív."
   - text: "TÉ levonás: Kis:-0, Közepes:-3, Nagy:-6."
+  - text: "Pajzs harc: TÉ:+1, VÉ:+1, SP:+1."
   módosítók:
   - cél: "pajzs_TÉ_mérséklés"
     mód: "flat"
@@ -48,6 +49,18 @@ fokok:
     - forrás: "fegyverfogás"
       operátor: "=="
       érték: "fegyver_pajzs"
+  - cél: "TÉ"
+    mód: "flat"
+    érték: 1
+    feltétel: "fegyver_kategória:pajzs"
+  - cél: "VÉ"
+    mód: "flat"
+    érték: 1
+    feltétel: "fegyver_kategória:pajzs"
+  - cél: "SP"
+    mód: "flat"
+    érték: 1
+    feltétel: "fegyver_kategória:pajzs"
 - fok: 2
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 5.szint"
@@ -59,6 +72,7 @@ fokok:
   - text: "Teljes pajzs VÉ aktív."
   - text: "TÉ levonás: Kis:-0, Közepes:-0, Nagy:-3."
   - text: "Fegyverrel VAGY pajzzsal külön támadhatsz."
+  - text: "Pajzs harc: TÉ:+2, VÉ:+2, SP:+2."
   módosítók:
   - cél: "pajzs_TÉ_mérséklés"
     mód: "flat"
@@ -67,6 +81,18 @@ fokok:
     - forrás: "fegyverfogás"
       operátor: "=="
       érték: "fegyver_pajzs"
+  - cél: "TÉ"
+    mód: "flat"
+    érték: 2
+    feltétel: "fegyver_kategória:pajzs"
+  - cél: "VÉ"
+    mód: "flat"
+    érték: 2
+    feltétel: "fegyver_kategória:pajzs"
+  - cél: "SP"
+    mód: "flat"
+    érték: 2
+    feltétel: "fegyver_kategória:pajzs"
 - fok: 3
   követelménytext:
     - text: "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 8.szint"
@@ -78,6 +104,7 @@ fokok:
   - text: "Teljes pajzs VÉ aktív, TÉ levonás nincs."
   - text: "VÉ:+2 minden pajzshoz."
   - text: "Fegyverrel VAGY pajzzsal külön támadhatsz."
+  - text: "Pajzs harc: TÉ:+3, VÉ:+3, SP:+3."
   módosítók:
   - cél: "pajzs_TÉ_mérséklés"
     mód: "flat"
@@ -93,3 +120,15 @@ fokok:
     - forrás: "fegyverfogás"
       operátor: "=="
       érték: "fegyver_pajzs"
+  - cél: "TÉ"
+    mód: "flat"
+    érték: 3
+    feltétel: "fegyver_kategória:pajzs"
+  - cél: "VÉ"
+    mód: "flat"
+    érték: 3
+    feltétel: "fegyver_kategória:pajzs"
+  - cél: "SP"
+    mód: "flat"
+    érték: 3
+    feltétel: "fegyver_kategória:pajzs"
