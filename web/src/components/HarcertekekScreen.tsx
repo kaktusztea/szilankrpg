@@ -475,7 +475,13 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
       )}
 
       {kepzSzintTarget && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) { const kp = képzettségek.find(k => k.név === kepzSzintTarget); if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget)); setKepzSzintTarget(null); } }}>
+        <div className="kep-prompt-overlay" onClick={e => {
+          if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) {
+            const kp = képzettségek.find(k => k.név === kepzSzintTarget);
+            if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget));
+            setKepzSzintTarget(null);
+          }
+        }}>
           <div className="kep-prompt">
             <label>{harciKepzDisplayName(kepzSzintTarget)} — szint:</label>
             <div className="kep-szint-grid">
