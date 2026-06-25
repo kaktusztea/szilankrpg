@@ -356,7 +356,8 @@
       "földön_fekve",
       "helyhez_kötve",
       "célzás",
-      "takarásban"
+      "takarásban",
+      "elvesztett_egyensúly"
     ],
     "feltétel_kulcs": "harci_helyzet:levegőből"
   },
@@ -389,7 +390,10 @@
       "lovas_harc",
       "léglovas_harc",
       "földön_fekve",
-      "levegőből"
+      "levegőből",
+      "belharci_helyzet",
+      "elvesztett_egyensúly",
+      "harci_szekér"
     ],
     "feltétel_kulcs": "harci_helyzet:magasabbról"
   },
@@ -619,7 +623,8 @@
     "kizár_helyzetek": [
       "lovas_harc",
       "léglovas_harc",
-      "levegőből"
+      "levegőből",
+      "belharci_helyzet"
     ],
     "feltétel_kulcs": "harci_helyzet:takarásban"
   },

@@ -376,6 +376,14 @@ function App() {
   if (error) return <div className="error">Hiba: {error}</div>;
   if (!data || !karakter) return <div className="loading">Betöltés...</div>;
 
+  function truncSlotName(név: string | undefined): string {
+    const n = név || 'Névtelen';
+    const vm = n.match(/ v(\d+)$/);
+    const base = vm ? n.slice(0, -vm[0].length) : n;
+    const truncated = base.length > 15 ? base.slice(0, 15) + '..' : base;
+    return truncated + (vm ? ` v${vm[1]}` : '');
+  }
+
   const { tulajdonságok, képzettségek, fortélyok, session } = karakter;
 
   return (
@@ -535,7 +543,7 @@ function App() {
                             setShowSlotList(false);
                           }
                         } catch { /* */ }
-                      }}>{karakter?.uid === s.uid ? '●' : '○'} {(() => { const n = s.név || 'Névtelen'; const vm = n.match(/ v(\d+)$/); const base = vm ? n.slice(0, -vm[0].length) : n; const truncated = base.length > 15 ? base.slice(0, 15) + '..' : base; return truncated + (vm ? ` v${vm[1]}` : ''); })()} ({s.tsz || '?'}sz)</span>
+                      }}>{karakter?.uid === s.uid ? '●' : '○'} {truncSlotName(s.név)} ({s.tsz || '?'}sz)</span>
                       <span style={{ fontSize: '11px', color: '#888', marginRight: '8px' }}>{relTime(s.mentés_dátum)}</span>
                       <span style={{ color: '#e53935', cursor: 'pointer', fontSize: '14px', fontWeight: 'bold' }} onClick={(e) => {
                         e.stopPropagation();
@@ -549,7 +557,13 @@ function App() {
                   <button className="menu-item" style={{ flex: 1, fontSize: '13px', border: '1px solid #ff9800' }} onClick={() => {
                     const refErr = validateKarakterData(data.testKarakter, data);
                     if (refErr) { setShowSlotList(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
-                    setKarakter({ ...data.testKarakter, uid: data.testKarakter.uid || generateUid(), id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz), session: { ...DEFAULT_SESSION, ...data.testKarakter.session } }); setUndoStack([]); setTestMode(true); setShowSlotList(false);
+                    setKarakter({
+                      ...data.testKarakter,
+                      uid: data.testKarakter.uid || generateUid(),
+                      id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
+                      session: { ...DEFAULT_SESSION, ...data.testKarakter.session }
+                    });
+                    setUndoStack([]); setTestMode(true); setShowSlotList(false);
                   }}>🧪 Teszt</button>
                   <button className="menu-item" style={{ flex: 1, fontSize: '13px' }} onClick={() => { setShowSlotList(false); loadKarakter(); }}>📁 Fájlból...</button>
                 </div>
@@ -626,7 +640,10 @@ function App() {
                 </div>
               ))}
             </div>
-            <button disabled={undoSelected === null} style={{ marginTop: '8px', padding: '8px', borderRadius: '4px', background: undoSelected !== null ? '#e53935' : '#444', color: '#fff', border: 'none', cursor: undoSelected !== null ? 'pointer' : 'default', opacity: undoSelected === null ? 0.5 : 1 }}
+            <button disabled={undoSelected === null}
+              style={{ marginTop: '8px', padding: '8px', borderRadius: '4px',
+                background: undoSelected !== null ? '#e53935' : '#444', color: '#fff', border: 'none',
+                cursor: undoSelected !== null ? 'pointer' : 'default', opacity: undoSelected === null ? 0.5 : 1 }}
               onClick={() => { if (undoSelected !== null) undoTo(undoSelected); }}>
               Visszaállítás{undoSelected !== null ? ` (${undoSelected + 1} művelet)` : ''}
             </button>
@@ -780,7 +797,13 @@ function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTula
           let desc = '';
           if (newVal.length > fortélyok.length) { const added = newVal.find(n => !fortélyok.some(f => f.név === n.név && f.spec_elem === n.spec_elem)); if (added && added.fok > 0) desc = `Fortély: ${added.név}${added.spec_elem ? ` (${added.spec_elem})` : ""} 0→${added.fok}`; }
           else if (newVal.length < fortélyok.length) { const removed = fortélyok.find(f => !newVal.some(n => n.név === f.név && n.spec_elem === f.spec_elem)); if (removed) desc = `Fortély: ${removed.név}${removed.spec_elem ? ` (${removed.spec_elem})` : ""} ${removed.fok}→0❌`; }
-          else { const changed = newVal.find((n, i) => n.fok !== fortélyok[i]?.fok); if (changed) { const old = fortélyok.find(f => f.név === changed.név && f.spec_elem === changed.spec_elem); if (old && old.fok !== changed.fok) desc = `Fortély: ${changed.név}${changed.spec_elem ? ` (${changed.spec_elem})` : ""} ${old.fok}→${changed.fok}`; } }
+          else {
+            const changed = newVal.find((n, i) => n.fok !== fortélyok[i]?.fok);
+            if (changed) {
+              const old = fortélyok.find(f => f.név === changed.név && f.spec_elem === changed.spec_elem);
+              if (old && old.fok !== changed.fok) desc = `Fortély: ${changed.név}${changed.spec_elem ? ` (${changed.spec_elem})` : ""} ${old.fok}→${changed.fok}`;
+            }
+          }
           if (desc) pushUndo(desc);
           setFortélyok(v);
         }}

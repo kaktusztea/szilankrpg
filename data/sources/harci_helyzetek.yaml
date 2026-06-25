@@ -201,7 +201,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "harci_szekér", "magasabbról", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "célzás", "takarásban"]
+  kizár_helyzetek: ["lovas_harc", "harci_szekér", "magasabbról", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "célzás", "takarásban", "elvesztett_egyensúly"]
 - név: "Lények méret különbsége"
   infó: "Méretkülönbség [0-6] fokozat: +1 VÉ csökkentés / különbség."
   hatások: []
@@ -220,7 +220,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "földön_fekve", "levegőből"]
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "földön_fekve", "levegőből", "belharci_helyzet", "elvesztett_egyensúly", "harci_szekér"]
 - név: "Meglepetés"
   infó: "Előny+1 TÉ; VÉ csökkentés: +2"
   hatások:
@@ -357,7 +357,7 @@ harci_helyzetek:
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "levegőből"]
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "levegőből", "belharci_helyzet"]
 - név: "Védő Érték kiterjesztése másra"
   infó: "Többszörös támadás elvesztése, VÉ veszteség duplázódik. Testőr fortély mérsékli."
   hatások:

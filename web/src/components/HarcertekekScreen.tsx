@@ -218,7 +218,17 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
 
   useEffect(() => {
     if (!ideaTarget && mfTarget === null && anyagTarget === null && !pancelPopup && !pajzsPopup && deleteTarget === null && !deleteKepzTarget && !kepzSzintTarget) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null); setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); setDeleteKepzTarget(null); if (kepzSzintTarget) { const kp = képzettségek.find(k => k.név === kepzSzintTarget); if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget)); } setKepzSzintTarget(null); } }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setIdeaTarget(null); setMfTarget(null); setAnyagTarget(null);
+        setPancelPopup(null); setPajzsPopup(null); setDeleteTarget(null); setDeleteKepzTarget(null);
+        if (kepzSzintTarget) {
+          const kp = képzettségek.find(k => k.név === kepzSzintTarget);
+          if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget));
+        }
+        setKepzSzintTarget(null);
+      }
+    }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget]);
@@ -294,7 +304,12 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
             </div>
                         {(() => { const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase()); if (!fd) return null; return <FegyverChip fd={fd} mfFok={getMfFok(f.alap)} idea={f.idea} konstansok={konstansok} />; })()}
             <div className="he-fegyver-fields">
-              <button className="he-field-btn he-field-fortely" style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined} onClick={() => setMfTarget(i)}>MF fok: <strong>{getMfFok(f.alap)}</strong>{mfKövetelményHiba(f.alap) && <span style={{ display: 'block', fontSize: '11px', marginTop: '2px', color: '#e53935' }}>{mfKövetelményText(f.alap)}</span>}</button>
+              <button className="he-field-btn he-field-fortely"
+                style={mfKövetelményHiba(f.alap) ? { color: '#e53935' } : undefined}
+                onClick={() => setMfTarget(i)}>
+                MF fok: <strong>{getMfFok(f.alap)}</strong>
+                {mfKövetelményHiba(f.alap) && <span style={{ display: 'block', fontSize: '11px', marginTop: '2px', color: '#e53935' }}>{mfKövetelményText(f.alap)}</span>}
+              </button>
               <button className="he-field-btn" onClick={() => setIdeaTarget({ type: 'fegyver', idx: i })}>Idea: <strong>{f.idea}</strong></button>
               <button className="he-field-btn" onClick={() => setAnyagTarget(i)}>Anyag: <strong>{f.anyag}</strong></button>
             </div>
@@ -331,7 +346,15 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
       {/* Pajzs */}
       <section className="he-section">
         <h3>Pajzs</h3>
-                {k.pajzs.méret && (() => { const pNév = k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs'; const pd = data.fegyverek.find(d => d.Fegyver === pNév); if (!pd) return null; const strike = (k.session.fegyverfogás === 'egyfegyveres' && k.session.aktív_fegyver_index === -2) ? undefined : { textDecoration: 'line-through', textDecorationThickness: '2px', opacity: 0.5 } as React.CSSProperties; return <FegyverChip fd={pd} mfFok={getPajzsFok()} idea={0} konstansok={konstansok} strike={strike} />; })()}
+                {k.pajzs.méret && (() => {
+                  const pNév = k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs';
+                  const pd = data.fegyverek.find(d => d.Fegyver === pNév);
+                  if (!pd) return null;
+                  const strike = (k.session.fegyverfogás !== 'egyfegyveres' || k.session.aktív_fegyver_index !== -2)
+                    ? { textDecoration: 'line-through', textDecorationThickness: '2px', opacity: 0.5 } as React.CSSProperties
+                    : undefined;
+                  return <FegyverChip fd={pd} mfFok={getPajzsFok()} idea={0} konstansok={konstansok} strike={strike} />;
+                })()}
         <div className="he-fegyver-fields">
           <button className="he-field-btn" onClick={() => setPajzsPopup('méret')}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
           <button className="he-field-btn" onClick={() => setPajzsPopup('pajzshasználat')}>Pajzshasználat fok: <strong>{getPajzsFok()}</strong></button>

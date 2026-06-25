@@ -30,7 +30,13 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
   useEffect(() => {
     if (!showManőverPicker && !showTaktikaPicker && !showHelyzetPicker && !showStátuszPicker && !showFegyverfogás && !narrativPopup) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') { setShowManőverPicker(false); setShowTaktikaPicker(false); setTaktikaFokválasztó(null); setShowHelyzetPicker(false); setShowStátuszPicker(false); setStátuszFokválasztó(null); setÉrzékválasztó(null); setShowFegyverfogás(false); setNarrativPopup(false); } }
+    function onKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') {
+        setShowManőverPicker(false); setShowTaktikaPicker(false); setTaktikaFokválasztó(null);
+        setShowHelyzetPicker(false); setShowStátuszPicker(false); setStátuszFokválasztó(null);
+        setÉrzékválasztó(null); setShowFegyverfogás(false); setNarrativPopup(false);
+      }
+    }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker, showStátuszPicker, showFegyverfogás, narrativPopup]);
@@ -280,7 +286,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
       {/* Taktikák */}
       <div className="aktiv-section" style={{ fontSize: '13px' }}>
-        <span className="aktiv-label">Taktikák <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.taktikak.every(t => session.aktív_taktikák.some(a => a.név === t.név) || !isTaktikaAllowed(t.név))} onClick={() => setShowTaktikaPicker(true)}>+</button></span>
+        <span className="aktiv-label">Taktikák
+          <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }}
+            disabled={data.taktikak.every(t => session.aktív_taktikák.some(a => a.név === t.név) || !isTaktikaAllowed(t.név))}
+            onClick={() => setShowTaktikaPicker(true)}>+</button>
+        </span>
         {session.aktív_taktikák.map((t, i) => {
           const def = data.taktikak.find(d => d.név === t.név);
           const mods: string[] = [];
@@ -308,7 +318,13 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
         })}
         {taktikaHatásPerElem.map((t, i) => (
           <div key={`th${i}`} className="kep-row" style={{ paddingLeft: '8px', fontSize: '12px', opacity: 0.85 }}>
-            <span style={{ flex: 1 }}><strong style={{ color: '#90caf9' }}>{t.név}:</strong> {t.hatások.map((h: any, j) => { const txt = fmtHatás({ operátor: h.hatás ?? h.operátor, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév); return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null; })}</span>
+            <span style={{ flex: 1 }}>
+              <strong style={{ color: '#90caf9' }}>{t.név}:</strong>{' '}
+              {t.hatások.map((h: any, j) => {
+                const txt = fmtHatás({ operátor: h.hatás ?? h.operátor, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);
+                return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
+              })}
+            </span>
           </div>
         ))}
       </div>
@@ -339,7 +355,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 }}>
                   <span className="aktiv-picker-item-name">{t.név}{t.fokozatos ? ` 📶` : ''}</span>
                   <span className="aktiv-picker-item-details">
-                    {t.fokozatos && t.fokok ? t.fokok.map(f => `${f.fok}: ${Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}:${v}`).join(', ')}`).join(' | ') : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${v > 0 ? '+' : ''}${v}`).join(', ') : ''}
+                    {t.fokozatos && t.fokok
+                      ? t.fokok.map(f => `${f.fok}: ${Object.entries(f).filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0).map(([k, v]) => `${k}:${v}`).join(', ')}`).join(' | ')
+                      : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${v > 0 ? '+' : ''}${v}`).join(', ') : ''}
                   </span>
                   {t.megjegyzés && <span className="aktiv-picker-item-hatas">{t.megjegyzés}</span>}
                 </div>
@@ -533,7 +551,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
 
       {/* Státuszok */}
       <div className="aktiv-section" style={{ marginTop: '16px', borderTop: '1px solid #333', borderBottom: 'none', paddingTop: '16px', fontSize: '13px' }}>
-        <span className="aktiv-label">Státuszok <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.statuszok.every(s => s.többszörös || session.aktív_státuszok.some(st => st.startsWith(s.név + ' (')))} onClick={() => setShowStátuszPicker(true)}>+</button></span>
+        <span className="aktiv-label">Státuszok
+          <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }}
+            disabled={data.statuszok.every(s => s.többszörös || session.aktív_státuszok.some(st => st.startsWith(s.név + ' (')))}
+            onClick={() => setShowStátuszPicker(true)}>+</button>
+        </span>
         {session.aktív_státuszok.map((st, i) => {
           const match = st.match(/^(.+) \((\d+)\)$/);
           const stNév = match?.[1] ?? st;
@@ -674,7 +696,17 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 );
               })}
             </div>
-            <input className="narrativ-input" placeholder="Leírás..." id="narrativ-popup-text" maxLength={40} style={{ width: '100%' }} onKeyDown={e => { if (e.key === 'Enter' && narrativÉrték !== undefined) { const textEl = e.target as HTMLInputElement; const szöveg = textEl.value.trim(); if (!szöveg) return; setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték: narrativÉrték }] })); setNarrativPopup(false); setNarrativÉrték(undefined); } }} />
+            <input className="narrativ-input" placeholder="Leírás..." id="narrativ-popup-text" maxLength={40}
+              style={{ width: '100%' }}
+              onKeyDown={e => {
+                if (e.key === 'Enter' && narrativÉrték !== undefined) {
+                  const textEl = e.target as HTMLInputElement;
+                  const szöveg = textEl.value.trim();
+                  if (!szöveg) return;
+                  setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték: narrativÉrték }] }));
+                  setNarrativPopup(false); setNarrativÉrték(undefined);
+                }
+              }} />
             <button className="narrativ-add-btn" style={{ alignSelf: 'center', padding: '8px 24px' }} disabled={narrativÉrték === undefined} onClick={() => {
               const textEl = document.getElementById('narrativ-popup-text') as HTMLInputElement;
               const szöveg = textEl.value.trim();
