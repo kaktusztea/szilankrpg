@@ -87,12 +87,12 @@ manőverek:
   fázisok: "V,E"
   hatás: "Ájulás ha sebzés ≥ ÉP/4↓. Egyébként Bódultság státusz. Sebzés FP-ként jelenik meg."
   id: "leütés_hátulról"
-- név: "Lovas akasztása"
+- név: "Lovas megakasztása"
   típus: "lovas"
   nehézség: 4
   fázisok: "M,E"
   hatás: "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Pengeelőny szükséges. Sebző dobás a lovasra, aki elveszíti támadását."
-  id: "lovas_akasztása"
+  id: "lovas_megakasztása"
 - név: "Mesterjel"
   típus: "általános"
   nehézség: 10

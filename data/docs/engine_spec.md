@@ -1139,7 +1139,7 @@ Fázisok: M=Megakasztás, V=Végrehajtás, E=Ellenpróba.
 | Lánccsapdából szabadítás    | 7                               | E            | —                                                 | Fegyver kiszabadítás                       |
 | Lefegyverzés / Fegyvertörés | 10 (±2)                         | V,E          | Harcmodor 5                                       | Fegyver kiesik/eltörik                     |
 | Leütés hátulról             | 6 (-2/Harci anat. fok)          | V,E          | Orvtámadás+Hátulról, zúzó/puszta kéz              | Ájulás (ÉP/4↓ sebzésnél)                   |
-| Lovas akasztása             | —                               | —            | Lásd lovas manőverek                              | —                                          |
+| Lovas megakasztása          | —                               | —            | Lásd lovas manőverek                              | —                                          |
 | Mesterjel                   | 10-12                           | V,E          | MF 2, hegyes szúrófegyver                         | Jel belekarcolása (1 ÉP)                   |
 | Mögékerülés                 | 8/6/4 (túlerő)                  | E            | —                                                 | Hátulról támadás pozíció                   |
 | Pajzzsal felöklelés         | 7 (±erő)                        | V,E          | Harcmodor 5, Pajzshasználat 2, közepes/nagy pajzs | Ellenfél földre kerül                      |
@@ -2699,12 +2699,12 @@ Három meglévő manőver bővítés + 1 placeholder kiegészítés a `manoverek
   hatás: "Áttörés ellenfél sorain. Sikernél ellenfelek szétszóródnak, hátrány a következő körben."
   id: "lovas_áttörés"
 
-- név: "Lovas akasztása"
+- név: "Lovas megakasztása"
   típus: "lovas"
   nehézség: 4
   fázisok: "M,E"
   hatás: "GYALOGOS végzi lovas ellen. Szúró szálfegyver + Pengeelőny szükséges. Sebző dobás a lovasra."
-  id: "lovas_akasztása"
+  id: "lovas_megakasztása"
 
 - név: "Lóhátról lerántás"
   típus: "lovas"
@@ -2758,7 +2758,7 @@ A webapp nem modellezi külön — informatív szöveg, KM kezeli.
 4. `taktikak.yaml`: "Lovas roham" + "Lovas támadás galoppból" hozzáadás
    - "Roham" + "Öngyilkos roham" → megkötés bővítés: `harci_helyzet/tiltott` + lovas helyzet
 5. `manoverek.yaml`:
-   - Meglévő "Lovas akasztása" típus: "általános" → "lovas", hatás szöveg frissítés
+   - Meglévő "Lovas megakasztása" típus: "általános" → "lovas", hatás szöveg frissítés
    - Új: "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás" (típus: "lovas")
 
 #### II. Engine / Webapp módosítások

@@ -504,7 +504,7 @@ Engine spec: §38.
 - [ ] `harci_helyzetek.yaml`: kölcsönös `kizár_helyzetek` (Lovas harc ↔ Magasabbról)
 - [ ] `taktikak.yaml`: "Lovas roham" (TÉ:+6, SP:+10) + "Lovas támadás galoppból" (TÉ:+3, SP:+5) — megkötés: `harci_helyzet/szükséges`
 - [ ] `taktikak.yaml`: "Roham" + "Öngyilkos roham" → megkötés: `harci_helyzet/tiltott/lovas_harc` + `léglovas_harc`
-- [ ] `manoverek.yaml`: "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás" (típus: "lovas") + meglévő "Lovas akasztása" típus fix
+- [ ] `manoverek.yaml`: "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás" (típus: "lovas") + meglévő "Lovas megakasztása" típus fix
 
 **Engine / Webapp (TODO):**
 - [ ] AktivScreen taktika picker: `harci_helyzet/szükséges` megkötés logika (új mód)
