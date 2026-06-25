@@ -35,6 +35,17 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
     return () => document.removeEventListener('keydown', onKey);
   }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker, showStátuszPicker, showFegyverfogás, narrativPopup]);
 
+  // Helyzet elérhetőség ellenőrzés (picker szűrés + disabled gomb)
+  function isHelyzetAvailable(h: typeof data.harciHelyzetek[0]): boolean {
+    if (h.rejtett) return false;
+    if (session.aktív_helyzetek.includes(h.név)) return false;
+    for (const ah of session.aktív_helyzetek) {
+      const ahDef = data.harciHelyzetek.find(d => d.név === ah);
+      if (ahDef?.kizár_helyzetek?.includes(h.id)) return false;
+    }
+    return true;
+  }
+
   // Fegyver nevek
   const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
     const fd = data.fegyverek.find(d => d.Fegyver.toLowerCase() === f.alap.toLowerCase());
@@ -378,15 +389,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       )}
       {/* Harci helyzetek */}
       <div className="aktiv-section" style={{ borderBottom: 'none', fontSize: '13px' }}>
-        <span className="aktiv-label">Harci helyzetek <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.harciHelyzetek.every(h => {
-          if (h.rejtett) return true;
-          if (session.aktív_helyzetek.includes(h.név)) return true;
-          for (const ah of session.aktív_helyzetek) {
-            const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-            if (ahDef?.kizár_helyzetek?.includes(h.id)) return true;
-          }
-          return false;
-        })} onClick={() => setShowHelyzetPicker(true)}>+</button></span>
+        <span className="aktiv-label">Harci helyzetek <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }} disabled={data.harciHelyzetek.every(h => !isHelyzetAvailable(h))} onClick={() => setShowHelyzetPicker(true)}>+</button></span>
         {session.aktív_helyzetek.map((h, i) => {
           const def = data.harciHelyzetek.find(d => d.név === h);
           if (!def) return null;
@@ -426,15 +429,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             </div>
             <div className="aktiv-picker-list">
               {(() => {
-                const filtered = data.harciHelyzetek.filter(h => {
-                  if (h.rejtett) return false;
-                  if (session.aktív_helyzetek.includes(h.név)) return false;
-                  for (const ah of session.aktív_helyzetek) {
-                    const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-                    if (ahDef?.kizár_helyzetek?.includes(h.id)) return false;
-                  }
-                  return true;
-                });
+                const filtered = data.harciHelyzetek.filter(h => isHelyzetAvailable(h));
                 const groups: { label: string; color: string; items: typeof filtered }[] = [
                   { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => h.csoport === 'pozitív') },
                   { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => h.csoport === 'semleges') },
