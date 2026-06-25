@@ -39,7 +39,13 @@ TÉ levonás
 -6: Nagy pajzs
 ```
 
-🛡️ Pajzs harc (csak pajzs a kézben): `TÉ:+1`, `VÉ:+1`, `SP:+1`
+```
+🛡️ Pajzs harc (csak pajzs a kézben)
+
+TÉ:+1
+VÉ:+1
+SP:+1
+```
 
 <br />
 
@@ -59,7 +65,13 @@ TÉ levonás
 - Fegyverrel VAGY a pajzzsal külön támadhatsz
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket
 
-🛡️ Pajzs harc (csak pajzs a kézben): `TÉ:+2`, `VÉ:+2`, `SP:+2`
+```
+🛡️ Pajzs harc (csak pajzs a kézben)
+
+TÉ:+2
+VÉ:+2
+SP:+2
+```
 
 <br />
 
@@ -77,6 +89,12 @@ VÉ:+2 minden pajzshoz
 - Fegyverrel VAGY a pajzzsal külön támadhatsz
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket
 
-🛡️ Pajzs harc (csak pajzs a kézben): `TÉ:+3`, `VÉ:+3`, `SP:+3`
+```
+🛡️ Pajzs harc (csak pajzs a kézben)
+
+TÉ:+3
+VÉ:+3
+SP:+3
+```
 
 ---
