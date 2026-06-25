@@ -28,10 +28,10 @@ interface Props {
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, távfegyverNevek, nyelvtanulásSzint, képzettségek }: Props) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
-  const fortCsoportSorrend = (data.konstansok as any).fortély_csoport_sorrend as { id: string; label: string }[];
+  const fortCsoportSorrend = data.konstansok.fortély_csoport_sorrend;
   const CSOPORT_SORREND = fortCsoportSorrend.map(c => c.id);
   const CSOPORT_LABEL: Record<string, string> = Object.fromEntries(fortCsoportSorrend.map(c => [c.id, c.label]));
-  const NYELV_FOK_LABELS: Record<number, string> = (data.konstansok as any).nyelv_fok_nevek;
+  const NYELV_FOK_LABELS: Record<number, string> = data.konstansok.nyelv_fok_nevek;
   const lockedSet = new Set(data.konstansok.locked_fortélyok);
   const [hint, setHint] = useState('');
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -59,7 +59,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
 
   const defsByGroup = new Map<string, FortelySummary[]>();
   for (const d of data.fortelySummaries) {
-    const vizCsoport = (d as any).alcsoport === 'tavharc' ? 'távharc' : d.csoport;
+    const vizCsoport = d.alcsoport === 'tavharc' ? 'távharc' : d.csoport;
     const arr = defsByGroup.get(vizCsoport) || [];
     arr.push(d);
     defsByGroup.set(vizCsoport, arr);
@@ -206,7 +206,10 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
                       fortélyok={fortélyok}
                       harcmodorNevek={[...data.konstansok.harcmodorok.közelharci, ...data.konstansok.harcmodorok.távolsági]}
                       távfegyverNevek={távfegyverNevek}
-                      fegyverHarcmodorNév={slot.spec_elem ? (() => { const fd = data.fegyverek.find(d => d.Alapnév?.toLowerCase() === slot.spec_elem!.toLowerCase() || d.Fegyver.toLowerCase() === slot.spec_elem!.toLowerCase()); return fd ? data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] : undefined; })() : undefined}
+                      fegyverHarcmodorNév={slot.spec_elem ? (() => {
+                        const fd = data.fegyverek.find(d => d.Alapnév?.toLowerCase() === slot.spec_elem!.toLowerCase() || d.Fegyver.toLowerCase() === slot.spec_elem!.toLowerCase());
+                        return fd ? data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] : undefined;
+                      })() : undefined}
                       onToggleInfo={() => setInfoTarget(isOpen ? null : `${globalIdx}`)}
                       onFokChange={fok => setFok(globalIdx, fok)}
                       onHint={showHint}

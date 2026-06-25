@@ -38,6 +38,7 @@ export interface FortelyFokSummary {
 export interface FortelySummary {
   név: string;
   csoport: string;
+  alcsoport?: string;
   maxfok: number;
   session_toggle: boolean;
   emlékeztető: boolean;
@@ -195,6 +196,8 @@ export interface KonstansokRaw {
   nyílpuska_gyors_újratöltés_fortély: string;
   nyílpuska_gyors_újratöltés_min_fok: number;
   közös_nyelv: string;
+  fortély_csoport_sorrend: { id: string; label: string }[];
+  nyelv_fok_nevek: Record<number, string>;
   [key: string]: any;
 }
 
