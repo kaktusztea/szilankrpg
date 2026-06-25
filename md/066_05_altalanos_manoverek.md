@@ -14,7 +14,7 @@
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
 - [Lefegyverzés / Fegyvertörés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s)
 - [Leütés hátulról](#le%C3%BCt%C3%A9s-h%C3%A1tulr%C3%B3l)
-- [Lovas, léglovas akasztása](#lovas-l%C3%A9glovas-akaszt%C3%A1sa)
+- [Lovas, léglovas megakasztása](#lovas-l%C3%A9glovas-megakaszt%C3%A1sa)
 - [Mesterjel](#mesterjel)
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
 - [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
@@ -257,7 +257,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 <br />
 
 ---
-### Lovas, léglovas akasztása
+### Lovas, léglovas megakasztása
 
 Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
 

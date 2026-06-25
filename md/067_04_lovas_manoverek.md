@@ -31,7 +31,7 @@ Megpróbálsz áttörni az ellenfél sorain, lendületed és hátasod erejét ki
 <br />
 
 ---
-### ⚜️ Lovas, léglovas akasztása
+### ⚜️ Lovas, léglovas megakasztása
 
 Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd [rohamozó lovas](067_03_lovas_harci_taktikak.md#lovas-roham--l%C3%A9glovas-roham) felé mutat.
 
