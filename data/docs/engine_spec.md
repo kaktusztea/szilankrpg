@@ -2945,3 +2945,312 @@ Webapp scope: Méreggenerátor overlay (KM eszköz)
   - Opcionális: mentés név+leírás formában a karakter napló/jegyzetek rovatába
   - Példamérgek betöltése (preset-ek a 144_peldamergek.md alapján)
 ```
+
+
+---
+
+## §40 Karakter URL Export (megosztás)
+
+Cél: teljes karakter állapotát egyetlen URL-ben átadni, szerver nélkül, lehető legrövidebb formában.
+
+### 40.1 Kihagyott mezők
+
+Az URL exportból kihagyandó mezők (nem szükségesek a karakter reprodukálásához, vagy runtime-specifikusak):
+
+```
+Kihagyott (nem kerül bele az URL payload-ba):
+  - uid                   (generált, betöltéskor új keletkezik)
+  - id_leíró              (származtatott)
+  - mentés_dátum          (irreleváns megosztásnál)
+  - jegyzetek             (szabad szöveg, lehet nagy)
+  - napló[]               (kaland bejegyzések, lehet nagy)
+  - session               (teljes session objektum — runtime állapot)
+```
+
+### 40.2 Kompakt JSON formátum
+
+A karakter a következő rövidített kulcsú, tömörített struktúrában kerül kódolásra.
+A cél: minimalizálni a JSON méretet tömörítés előtt.
+
+```
+{
+  "sv": schema_version,                     // number (2)
+  "n":  név,                                // string
+  "bn": becenév,                            // string (kihagyható ha üres)
+  "j":  játékos,                            // string (kihagyható ha üres)
+  "t":  tsz,                                // number
+  "l":  leírás,                             // string (kihagyható ha üres)
+  "k":  kor,                                // number
+  "an": anyanyelv,                          // string
+  "v":  vallás,                             // string (kihagyható ha üres)
+  "tu": [erő, edz, ügy, gyo, int, eml, önu, érz],  // number[8] — fix sorrend
+  "hm": [HM_TÉ, HM_VÉ],                   // number[2]
+  "cm": CM,                                 // number
+  "kp": [[név, szint], ...],               // képzettségek — [string, number][]
+  "fo": fortélyok tömörítve (lásd 40.3),   // mixed[][]
+  "fs": fortélyok_speciális (csak non-default),  // object (kihagyható ha üres)
+  "ht": hátterek tömörítve (lásd 40.4),    // array
+  "fg": fegyverek tömörítve (lásd 40.5),   // array
+  "tf": távfegyverek (lásd 40.6),          // string[]
+  "pa": páncél (csak non-default mezők),   // object (kihagyható ha üres)
+  "pj": pajzs méret,                       // string (kihagyható ha üres)
+  "fl": felszerelés (lásd 40.7)            // object (kihagyható ha üres)
+}
+```
+
+Szabály: ha egy opcionálisnak jelölt mező értéke üres string, üres tömb, üres objektum, `0`, vagy megegyezik a sémabeli default-tal → **ki kell hagyni** a kompakt JSON-ből (csökkenti a méretet).
+
+### 40.3 Fortélyok tömörítése
+
+Minden fortély egy tömb:
+
+```
+Alap eset (nem többszörös, nincs kiérdemelt):
+  [név, fok]
+
+Többszörös (spec_típus nem üres):
+  [név, fok, spec_típus, spec_elem]
+
+Kiérdemelt flag (kiérdemelt=true):
+  utolsó elemként: 1
+  Példa: ["Nyelvismeret", 1, "nyelv", "Toroni", 1]
+```
+
+Példák:
+```json
+["Merevvértviselet", 3]
+["Mesterfegyver", 2, "fegyver", "tőr"]
+["Kultúrkör", 1, "kultúrkör", "dw00n"]
+["Nyelvismeret", 1, "nyelv", "Közös (pyarroni)", 1]
+```
+
+### 40.4 Hátterek tömörítése
+
+```
+Mindig: [faj]
+Ha van leíró: [faj, leíró_tömb]
+Ha van karma is: [faj, leíró_tömb, karma_tömb]
+
+Példa: ["Ember (Északi)"]
+Példa: ["Elf", ["Nemesi származás", "Kétéletű"]]
+Példa: ["Ember (Déli)", [], ["Hatalmas önuralom"]]
+```
+
+### 40.5 Fegyverek tömörítése
+
+Minden fegyver egy tömb. A trailing default értékek elhagyhatók.
+
+```
+Sorrend: [alap, név, anyag, idea]
+Default-ok: név="", anyag="acél", idea=0
+
+Példák:
+  ["kard, lovag"]                         // minden default
+  ["tőr"]                                 // minden default
+  ["kard, hosszú", "Vérvörös Penge"]      // egyedi név, anyag/idea default
+  ["buzogány, nehéz", "", "mithrill", 2]  // egyedi anyag és idea
+```
+
+### 40.6 Távfegyverek tömörítése
+
+```
+Egyszerű string tömb (csak az alap név):
+  ["Rövid íj", "Könnyű nyílpuska"]
+```
+
+### 40.7 Felszerelés tömörítése
+
+```
+Ha nincs nagy_tárgy: kihagyható.
+Ha van: {"nt": [[név, MGT], ...]}
+
+Példa: {"nt": [["Hátizsák", 1], ["Pajzs tok", 2]]}
+```
+
+### 40.8 Páncél tömörítése
+
+Csak a nem-default mezők kerülnek be. Default értékek (kihagyhatók):
+```
+név: ""
+fémalapanyag: ""
+idea: 0
+kidolgozottság: "átlagos"
+sisak: false
+végtagvédettség: 0
+méret_illeszkedés: "passzol"
+rongálódás: 0
+```
+
+Ha `alap` is üres → a teljes `pa` kulcs kihagyható.
+
+Példa (bőr páncél, default minden más):
+```json
+{"alap": "bőr"}
+```
+
+Példa (teljes láncing):
+```json
+{"alap": "sodrony, teljes", "fémalapanyag": "acél", "sisak": true, "végtagvédettség": 3}
+```
+
+### 40.9 Encode pipeline
+
+```
+input:  karakter objektum (teljes, app state-ből)
+
+1. Kihagyás:  uid, id_leíró, mentés_dátum, jegyzetek, napló, session törlése
+2. Kompaktálás: kulcsok rövidítése, tömbösítés, default-ok elhagyása (40.2–40.8 szerint)
+3. Szerializálás: JSON.stringify(compact, null, 0)   // minified, separators: (',',':')
+4. Tömörítés: pako.deflate(jsonString, {level: 9})   // Uint8Array
+5. Kódolás: base64url encode (RFC 4648 §5, padding nélkül)
+              A-Z a-z 0-9 - _ karakterek (URL-safe, nem kell urlencode)
+6. URL összeállítás: `${baseUrl}/k#${base64urlString}`
+
+output: URL string (~1000-1700 karakter egy átlagos karakterre)
+```
+
+### 40.10 Decode pipeline
+
+```
+input:  URL hash fragment (a '#' utáni rész)
+
+1. base64url decode → Uint8Array
+   (padding visszaállítása: length % 4 szerinti '=' hozzáfűzés)
+2. pako.inflate → JSON string (UTF-8)
+3. JSON.parse → compact objektum
+4. Dekompaktálás:
+   - "tu" → tulajdonságok objektum (fix sorrend: erő, edz, ügy, gyo, int, eml, önu, érz)
+   - "hm" → HM_TÉ, HM_VÉ
+   - "kp" → képzettségek[{név, szint}]
+   - "fo" → fortélyok[{név, fok, spec_típus, spec_elem, kiérdemelt?}]
+   - "ht" → hátterek{faj, leíró[], karma[]}
+   - "fg" → fegyverek[{alap, név, anyag, idea}]  (default-ok visszaállítása)
+   - "tf" → távfegyverek[{alap}]
+   - "pa" → páncél (default-ok visszaállítása)
+   - "pj" → pajzs{méret}
+   - "fl" → felszerelés{nagy_tárgyak[]}
+   - Hiányzó opcionális kulcsok → schema default-ok
+5. Kiegészítés runtime mezőkkel:
+   - uid: új UUID generálás
+   - id_leíró: név + tsz-ből generálás
+   - mentés_dátum: aktuális időpont
+   - jegyzetek: ""
+   - napló: []
+   - session: empty_karakter.json session default-jai
+6. Schema version ellenőrzés: compact.sv === CURRENT_SCHEMA_VERSION
+   Ha nem egyezik → hibaüzenet ("Elavult karakter link, nem importálható")
+
+output: teljes karakter objektum (betölthető az app state-be)
+```
+
+### 40.11 Dependency
+
+```
+package: pako (^2.1.0)
+  - pako.deflate(input, {level: 9}) → Uint8Array
+  - pako.inflate(input) → Uint8Array
+  - ~26 KB gzipped, zero dependency, jól karbantartott
+  - https://github.com/nickel-bianchi/pako (zlib JS port)
+
+base64url: saját utility (nem kell külső lib)
+  function toBase64Url(bytes: Uint8Array): string
+  function fromBase64Url(str: string): Uint8Array
+```
+
+### 40.12 URL formátum
+
+```
+Fragment-based (javasolt):
+  https://szilank.app/k#eNqNVM1O4zAQfp...
+
+Előnyök:
+  - Fragment nem küldődik a szervernek → privacy, statikus hosting kompatibilis
+  - Nem számít bele a szerver-oldali URL limit-be
+  - Böngésző címsor: ~65 000 karakter (Chrome), ~2 MB (Firefox)
+  - Megosztáskor (chat, email) a teljes URL másolódik
+
+Alternatíva (ha fragment nem megfelelő):
+  https://szilank.app/k?d=eNqNVM1O4zAQfp...
+  Hátrány: query string szerver-oldali limitek (8 KB tipikusan), de még bőven elég.
+```
+
+### 40.13 Méret becslések
+
+```
+Referencia karakter: von Agabor (8 TSz, 16 képzettség, 35 fortély)
+  - Kompakt JSON: ~1550 byte
+  - deflate + base64url: ~980 karakter
+  - Teljes URL: ~1005 karakter
+
+Becslés nagy karakterre (15 TSz, 30 képzettség, 60 fortély):
+  - ~1700 karakter (bőven URL limitek alatt)
+
+Böngésző/szerver limitek:
+  - Chrome címsor: ~65 000 char
+  - Firefox címsor: ~2 MB
+  - Szerver-oldali (query string): 8 KB tipikus (CDN, nginx)
+  - → Minden reális karakter elfér
+```
+
+### 40.14 UI integráció
+
+#### Export (Karaktertár overlay-ből)
+
+```
+Hely: Karakterek overlay — minden slot sor végén egy 🔗 (link/másolás) ikon gomb.
+Viselkedés:
+  1. Kattintás → encode pipeline (§40.9) futtatása az adott slot karakterére
+  2. navigator.clipboard.writeText(url) → vágólapra másolás
+  3. Toast üzenet: "Karakter link vágólapra másolva!"
+  4. Ha clipboard API nem elérhető → fallback: prompt() ablak az URL-lel
+
+Ikon: kis lánc/link ikon (🔗) vagy másolás ikon (📋).
+Pozíció: slot sorban, a ✕ törlés gomb ELŐTT (jobb oldalon, a műveleti gombok között).
+```
+
+#### Import (URL megnyitásakor)
+
+```
+Trigger: App induláskor (mount), ha window.location.hash nem üres és '#' után 
+         legalább 20 karakter van (rövid fragment-ek ignorálva).
+
+Flow:
+  1. Hash fragment kiolvasása: window.location.hash.slice(1)
+  2. Decode pipeline (§40.10) futtatása
+  3. Ha decode SIKERTELEN (corrupt, inflate hiba, JSON parse hiba):
+     → Toast: "Érvénytelen karakter link"
+     → hash törlése (history.replaceState)
+     → STOP
+  4. Ha decode SIKERES:
+     a. uid kiolvasása a dekódolt karakterből (ha volt az eredetiben — de §40.1 szerint nincs!)
+        → Új uid generálás az importált karakternek
+     b. Ütközés vizsgálat: VAN-E már a Karaktertárban (szilank_slots) azonos 
+        NÉV + TSZ kombóval rendelkező karakter?
+        - Ha NINCS ütközés:
+          → Karakter hozzáadása a Karaktertárhoz (új slot)
+          → Aktív karakterré válik
+          → Toast: "Karakter importálva: {név} ({tsz}sz)"
+        - Ha VAN ütközés (azonos név+tsz):
+          → Confirm dialog: "'{név} ({tsz}sz)' már létezik. Felülírod?"
+          → "Felülírás": meglévő slot felülírása az importált adatokkal (uid marad a régi)
+          → "Új példány": új uid-val hozzáadás (mint duplikátum)
+          → "Mégse": importálás elvetése
+     c. hash törlése: history.replaceState(null, '', window.location.pathname)
+     d. Undo stack reset az importált karakteren (üres _undo)
+
+Note: Az uid kihagyásra kerül az URL-ből (§40.1), ezért az ütközés-vizsgálat
+      NÉV + TSZ alapú (nem uid alapú). Ez szándékos: ugyanazt a karaktert
+      többször megosztva ne duplikálódjon véletlenül.
+```
+
+### 40.15 Edge case-ek
+
+```
+- Üres karakter: ~200 char URL (minimális, működik)
+- Schema verzió eltérés: import elutasítása hibaüzenettel
+- Corrupt base64 / inflate hiba: try-catch, felhasználóbarát hibaüzenet
+- Túl hosszú URL (elméletben nem fordul elő): encode után méret check, 
+  figyelmeztetés ha > 4000 char (régebbi böngészők/proxy-k)
+- Speciális karakterek a nevekben (ékezetek, vessző): 
+  UTF-8 kódolás → deflate kezeli, base64url output clean
+```

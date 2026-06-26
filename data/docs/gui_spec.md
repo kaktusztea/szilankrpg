@@ -98,7 +98,8 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - "Új karakter": isDirty=false → nem mentődik amíg módosítás nem történik
 - "Duplikál": deep clone, új uid, név " v2" suffix (ismétlésnél v3, v4...), Karakterek ablak megnyílik
 - Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
-- Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + ✕ törlés + 🧪 Teszt + 📁 Fájlból. Név max 15 karakter (utána `..`), verzió suffix (v2) megtartva.
+- Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + 🔗 Megosztás + ✕ törlés + 🧪 Teszt + 📁 Fájlból. Név max 15 karakter (utána `..`), verzió suffix (v2) megtartva.
+  - 🔗 ikon: karakter URL export (deflate+base64url) → vágólapra. Toast: "Karakter link vágólapra másolva!"
 
 ---
 
@@ -954,3 +955,39 @@ KM eszköz overlay (hasonló a Jegyzetek overlay-hez). Méreg paraméterek beál
 - Minden input változás azonnal frissíti az output-ot (reaktív)
 - Overlay bezárás: ✕ gomb / Escape / háttér kattintás
 - Típus váltás: Elállás↔Kiürülés select automatikusan vált
+
+---
+
+## Karakter URL megosztás
+
+### Export (Karaktertár overlay)
+
+A Karakterek overlay-ben minden slot sorban a műveleti gombok között (✕ törlés előtt) egy **🔗** ikon gomb.
+
+| Elem | Viselkedés |
+|------|-----------|
+| 🔗 gomb | Kattintásra: karakter URL generálás (engine_spec §40) → vágólapra másolás |
+| Toast | "Karakter link vágólapra másolva!" (success szín, 2 mp) |
+| Fallback | Ha navigator.clipboard nem elérhető → window.prompt() az URL-lel |
+
+Slot sor elrendezés (balról jobbra):
+```
+[karakter név (TSz)] [relatív idő]    [🔗] [✕]
+```
+
+### Import (URL hash)
+
+App mount-kor automatikusan fut, ha `window.location.hash` nem üres és legalább 20 karakter hosszú.
+
+| Lépés | Viselkedés |
+|-------|-----------|
+| Decode siker | Ütközésvizsgálat: van-e már a Karaktertárban azonos NÉV + TSZ kombó? |
+| Nincs ütközés | Karakter hozzáadása új slotként → aktívvá válik → Toast: "Karakter importálva: {név} ({tsz}sz)" |
+| Van ütközés | Confirm dialog: "'{név} ({tsz}sz)' már létezik a Karaktertáradban." |
+| Dialog: "Felülírás" | Meglévő slot felülírása az importált adatokkal (uid marad a régi) |
+| Dialog: "Új példány" | Új uid-val hozzáadás (mint duplikátum) |
+| Dialog: "Mégse" | Import elvetése, hash törlése |
+| Decode hiba | Toast: "Érvénytelen karakter link" (error szín) |
+| Végül | hash törlése: `history.replaceState(null, '', window.location.pathname + window.location.search)` |
+
+Confirm dialog stílus: az app meglévő overlay/modal stílusát követi (sötét háttér, centered box, 3 gomb sor).
