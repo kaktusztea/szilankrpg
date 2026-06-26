@@ -387,3 +387,14 @@
 }
 
 .aktiv-min-penge-warning { color: #e53935; margin-left: 6px; }
+
+.aktiv-section-sm { font-size: 13px; }
+.aktiv-section-statuszok { margin-top: 16px; border-top: 1px solid #333; border-bottom: none; padding-top: 16px; font-size: 13px; }
+.aktiv-taktika-name { color: #90caf9; }
+.aktiv-taktika-mods { color: #66bb6a; }
+.aktiv-taktika-note { opacity: 0.7; }
+.aktiv-sub-row { padding-left: 8px; font-size: 12px; opacity: 0.85; }
+.aktiv-statusz-name { color: #cd7c6f; }
+.aktiv-manover-name { color: #bbb; font-size: 14px; }
+.aktiv-manover-bonus { flex: 1; color: #66bb6a; }
+.aktiv-extra-fok-dot { color: #ce93d8; margin-left: 6px; }
