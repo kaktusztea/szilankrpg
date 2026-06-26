@@ -15214,6 +15214,8 @@ Ismered a fegyvereket remekül kiegészítő pajzsok használatát.
 
 Minél nagyobb a pajzs, annál jobban korlátoz is, így alacsonyabb fokokon még `TÉ` levonást okoz a használó oldalán. Ezek a hátrányon magasabb fokokon enyhülnek.
 
+Ha a karakter **kizárólag a pajzzsal harcol** (nincs fegyver a kézben), a fortély foka Mesterfegyver-szerű bónuszokat is ad a pajzs harcértékeire (`TÉ`, `VÉ`, `SP`).
+
 <br />
 
 ### Alapeset
@@ -15242,6 +15244,14 @@ TÉ levonás
 -6: Nagy pajzs
 ```
 
+```
+🛡️ Pajzs harc (csak pajzs a kézben)
+
+TÉ:+1
+VÉ:+1
+SP:+1
+```
+
 <br />
 
 ### 2. fok
@@ -15260,6 +15270,14 @@ TÉ levonás
 - Fegyverrel VAGY a pajzzsal külön támadhatsz
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket
 
+```
+🛡️ Pajzs harc (csak pajzs a kézben)
+
+TÉ:+2
+VÉ:+2
+SP:+2
+```
+
 <br />
 
 ### 3. fok
@@ -15275,6 +15293,14 @@ VÉ:+2 minden pajzshoz
 
 - Fegyverrel VAGY a pajzzsal külön támadhatsz
 - Tanulhatsz [pajzsos manőver](../066_05_altalanos_manoverek.md) ismereteket
+
+```
+🛡️ Pajzs harc (csak pajzs a kézben)
+
+TÉ:+3
+VÉ:+3
+SP:+3
+```
 
 ---
 
@@ -21929,12 +21955,16 @@ Előny+1 TÉ dobásra
 
 → [Kitartott célzás](fortelyok.tavharc/kitartott_celzas.md) fortély emeli a fenti bónusza.
 
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
+
 <br />
 
 ---
 ## Harci szekér
 
 Szekérről harcolás. A [Harci kocsihajtas](fortelyok.harci/harci_kocsihajtas.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Lovas harc, Léglovas harc, Belharci helyzet, Földön fekve, Helyhez kötve, Magasabbról, Levegőből támadás, Célzás, Orvtámadás
 
 <br />
 
@@ -22010,6 +22040,8 @@ Előny+2 TÉ Dobásra
 
 🔆 [Fárasztó taktika](065_02_harci_taktikak.md#fárasztó-taktika-) használható
 
+❌ Kizárja: Lovas harc, Harci szekér, Magasabbról, Belharci helyzet, Földön fekve, Helyhez kötve, Célzás, Takarásban
+
 <br />
 
 ---
@@ -22017,12 +22049,16 @@ Előny+2 TÉ Dobásra
 
 Lóhátról harcolás. A [Lovas harc](fortelyok.harci/lovas_harc.md) fortély bónuszai aktívak.
 
+❌ Kizárja: Magasabbról, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Levegőből támadás, Célzás, Orvtámadás, Takarásban
+
 <br />
 
 ---
 ## Léglovas harc
 
 Repülő hátas hátáról harcolás. A [Léglovas harc](fortelyok.harci/leglovas_harc.md) fortély bónuszai aktívak.
+
+❌ Kizárja: Magasabbról, Lovas harc, Harci szekér, Belharci helyzet, Földön fekve, Helyhez kötve, Csúszós talaj, Célzás, Orvtámadás, Takarásban
 
 <br />
 
@@ -22034,6 +22070,8 @@ Előny+1 TÉ dobásra
 ```
 
 🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
+
+❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás
 
 <br />
 
@@ -22091,11 +22129,11 @@ Bónuszok
     3.fok: Előny+2 Sebzés dobásra, +3 SP
 ```
 
-→ ❌ **Hátulról** és **Meglepetés** harci helyzetek **nem** adhatóak hozzá\
+→ ❌ Kizárja: Hátulról, Meglepetés, Lovas harc, Léglovas harc, Harci szekér
 → ❌ Egyéb `TÉ` bónusz nincs\
 → ❌ Harci taktikák NEM használhatóak
 
-→ Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅ 
+→ Manőver: [Precíz támadás](066_05_altalanos_manoverek.md#prec%C3%ADz-t%C3%A1mad%C3%A1s) használható (páncél megkerüléséhez) ✅
 → Manőver: [Leütés hátulról](066_05_altalanos_manoverek.md#leütés-hátulról), [Rávetődés hátulról](066_05_altalanos_manoverek.md#rávetődés-hátulról) - követelményük az **Orvtámadás** helyzet
 → [Manőverek és Orvtámadás viszonya](066_03_manover_szabalyok.md#️-harci-helyzetek-és-manőverek---orvtámadás): `(E)llenpróba` dobás csak \
 
@@ -22124,6 +22162,8 @@ Koordinált 2 fős harc. A [Páros harc](fortelyok.harci/paros_harc.md) fortély
 Ha a képzett harcosnak sikerül ellenfele fegyvere "mögé", testközelébe kerülni, akkor ebből előnyt kovácsolhat. A belharc magában foglalja a birkózást és a földharcot is.
 
 Szituáció:  [Belharc folyamata](szituaciok/belharc_folyamata.md) - bekerülés, kikerülés
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Célzás, Takarásban
 
 <br />
 
@@ -22247,6 +22287,8 @@ Nagy kétkezes fegyverek esetén értelmetlen a fegyverrántás.
 
 Ha valakit két oldalról sikerül közrefogni, az semlegesíti annak esetleges **Pengeelőny** harci helyzetét.
 
+❌ Kizárja: Földön fekve
+
 ### ⚡Példa: Két tőrös közrefog egy Hosszú kardost
 
 A hosszú kardos
@@ -22278,6 +22320,8 @@ VÉ: +5
 
 🔆 Példa: kapu, belógó falrész mögül harcolsz.
 
+❌ Kizárja: Lovas harc, Léglovas harc, Levegőből támadás
+
 <br />
 
 ---
@@ -22291,6 +22335,8 @@ VÉ veszteség duplázódik
 Ha társadat akarod védeni, kiterjesztheted rá **Védő Értékedet**.
 
 🔆 A fenti hátrányokat csökkentheted a [Testőr](fortelyok.harci/testor.md) fortély tanulásával.
+
+❌ Kizárja: Földön fekve
 
 <br />
 
@@ -22341,6 +22387,8 @@ Mozgás - feleződik
 
 A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrobatika](kepzettsegek.primer/altalanos/akrobatika.md) képzettségpróbát dobsz Nehéz (`12`) célszám ellen.
 
+❌ Kizárja: Magasabbról, Levegőből támadás
+
 <br />
 
 ---
@@ -22350,6 +22398,8 @@ A hatások alapból a kör végéig tartanak, kivéve, ha azonnal sikeres [Akrob
 Hátrány-2 TÉ dobásra
 VÉ veszteség duplázódik
 ```
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Helyhez kötve, Célzás, VÉ kiterjesztés, Közrefogás
 
 <br />
 
@@ -22392,6 +22442,8 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 Hátrány-1 TÉ dobásra
 VÉ veszteség duplázódik
 ```
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
 
 <br />
 
@@ -23914,7 +23966,7 @@ A sikertelen Manőver ugyanúgy és ugyanakkora **VÉ csökkentést** okoz, mint
 - [Lánccsapdából szabadítás](#l%C3%A1nccsapd%C3%A1b%C3%B3l-szabad%C3%ADt%C3%A1s)
 - [Lefegyverzés / Fegyvertörés](#lefegyverz%C3%A9s--fegyvert%C3%B6r%C3%A9s)
 - [Leütés hátulról](#le%C3%BCt%C3%A9s-h%C3%A1tulr%C3%B3l)
-- [Lovas, léglovas akasztása](#lovas-l%C3%A9glovas-akaszt%C3%A1sa)
+- [Lovas, léglovas megakasztása](#lovas-l%C3%A9glovas-megakaszt%C3%A1sa)
 - [Mesterjel](#mesterjel)
 - [Mögékerülés](#m%C3%B6g%C3%A9ker%C3%BCl%C3%A9s)
 - [Pajzzsal felöklelés](#pajzzsal-fel%C3%B6klel%C3%A9s)
@@ -24157,7 +24209,7 @@ Célod ellenfeled ájulása. A **Nehézség** a [Precíz támadás](#prec%C3%ADz
 <br />
 
 ---
-### Lovas, léglovas akasztása
+### Lovas, léglovas megakasztása
 
 Lásd a [Lovas, léglovas manőverek](067_04_lovas_manoverek.md) oldalán.
 
@@ -24905,7 +24957,7 @@ Megpróbálsz áttörni az ellenfél sorain, lendületed és hátasod erejét ki
 <br />
 
 ---
-### ⚜️ Lovas, léglovas akasztása
+### ⚜️ Lovas, léglovas megakasztása
 
 Megveted lábad és szálfegyvered végét a földbe támasztod. A fegyver hegye a feléd [rohamozó lovas](067_03_lovas_harci_taktikak.md#lovas-roham--l%C3%A9glovas-roham) felé mutat.
 
