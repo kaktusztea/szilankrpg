@@ -1,0 +1,1 @@
+export { MisztikusScreen } from './MisztikusScreen';
