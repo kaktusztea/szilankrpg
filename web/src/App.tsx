@@ -192,6 +192,7 @@ function App() {
   const [versionHint, setVersionHint] = useState('');
   const [toast, setToast] = useState<{ msg: string; type: 'success' | 'error' } | null>(null);
   const [importConfirm, setImportConfirm] = useState<{ karakter: Karakter; matchUid: string } | null>(null);
+  const [sharePopup, setSharePopup] = useState<{ név: string; copied: boolean; url?: string } | null>(null);
   const [overlayScreen, setOverlayScreen] = useState<'jegyzetek' | 'naplo' | null>(null);
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTapTitle = useRef(0);
@@ -273,17 +274,18 @@ function App() {
     setImportConfirm(null);
   }
 
-  function shareSlotUrl(slotUid: string) {
+  async function shareSlotUrl(slotUid: string) {
     const charData = localStorage.getItem(`szilank_char_${slotUid}`);
     if (!charData) return;
     try {
       const parsed = JSON.parse(charData) as Karakter;
       const url = encodeKarakterUrl(parsed);
-      if (navigator.clipboard) {
-        navigator.clipboard.writeText(url).then(() => setToast({ msg: 'Karakter link vágólapra másolva!', type: 'success' }));
-      } else {
-        window.prompt('Karakter link (másold ki):', url);
-      }
+      let copied = false;
+      try {
+        await navigator.clipboard.writeText(url);
+        copied = true;
+      } catch { /* clipboard blocked */ }
+      setSharePopup({ név: parsed.név || 'Névtelen', copied, url });
     } catch { setToast({ msg: 'Hiba az URL generálásakor.', type: 'error' }); }
   }
 
@@ -794,6 +796,25 @@ function App() {
               )}
               {overlayScreen === 'naplo' && <NaploTab karakter={karakter} setKarakter={setKarakter} />}
             </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {sharePopup && createPortal(
+        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setSharePopup(null); }}>
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '340px' }}>
+            <label style={{ fontWeight: 'bold' }}>🔗 Megosztás</label>
+            <span style={{ fontSize: '13px', color: 'var(--text)', textAlign: 'center' }}>
+              {sharePopup.copied
+                ? <>„{sharePopup.név}" link vágólapra másolva!</>
+                : <>Másold ki a linket:</>}
+            </span>
+            {!sharePopup.copied && sharePopup.url && (
+              <input readOnly value={sharePopup.url} onFocus={e => e.target.select()}
+                style={{ width: '100%', padding: '6px 8px', fontSize: '11px', background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid #444', borderRadius: '4px', userSelect: 'text', WebkitUserSelect: 'text' }} />
+            )}
+            <button className="menu-item" style={{ padding: '6px 15px' }} onClick={() => setSharePopup(null)}>OK</button>
           </div>
         </div>,
         document.body
