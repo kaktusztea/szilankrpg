@@ -5,6 +5,7 @@ import type { Karakter, Session, AktívTaktika } from '../engine/types';
 import { calcHatásPool } from './HatasPoolCalc';
 import { fmtCode, fmtHatás } from './formatters';
 import { lookupFegyver } from '../engine/helpers';
+import { isTaktikaAllowed, isHelyzetAvailable, getMinPengeWarning, getTaktikaMods, getHelyzetInfoText, buildFegyverOpciók } from './AktivHelpers';
 import './AktivScreen.css';
 
 
@@ -42,16 +43,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
     return () => document.removeEventListener('keydown', onKey);
   }, [showManőverPicker, showTaktikaPicker, showHelyzetPicker, showStátuszPicker, showFegyverfogás, narrativPopup]);
 
-  // Helyzet elérhetőség ellenőrzés (picker szűrés + disabled gomb)
-  function isHelyzetAvailable(h: typeof data.harciHelyzetek[0]): boolean {
-    if (h.rejtett) return false;
-    if (session.aktív_helyzetek.includes(h.név)) return false;
-    for (const ah of session.aktív_helyzetek) {
-      const ahDef = data.harciHelyzetek.find(d => d.név === ah);
-      if (ahDef?.kizár_helyzetek?.includes(h.id)) return false;
-    }
-    return true;
-  }
+  // Helyzet elérhetőség — delegálva AktivHelpers-be
 
   function renderTaktikaFokok() {
     if (!taktikaFokválasztó) return null;
@@ -91,7 +83,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   }
 
   function renderHelyzetItems() {
-    const filtered = data.harciHelyzetek.filter(h => isHelyzetAvailable(h));
+    const filtered = data.harciHelyzetek.filter(h => isHelyzetAvailable(h, session, data));
     const groups = [
       { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => h.csoport === 'pozitív') },
       { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => h.csoport === 'semleges') },
@@ -132,81 +124,9 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
   }
 
   // Fegyver nevek
-  const fegyverOpciók = [{ név: 'Puszta kéz', idx: -1 }, ...karakter.fegyverek.map((f, i) => {
-    const fd = lookupFegyver(data.fegyverek, f.alap);
-    return { név: fd?.Alapnév || f.alap, idx: i };
-  }), ...(karakter.pajzs?.méret ? [{ név: karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs', idx: -2 }] : [])];
+  const fegyverOpciók = buildFegyverOpciók(karakter, data);
 
-  // Taktika kombó + megkötés validáció
-  function isTaktikaAllowed(név: string): boolean {
-    // Ha bármelyik aktív helyzet tiltja az összes taktikát
-    for (const h of session.aktív_helyzetek) {
-      const hDef = data.harciHelyzetek.find(d => d.név === h);
-      if (hDef?.tiltja_taktikákat) return false;
-    }
-
-    const def = data.taktikak.find(t => t.név === név);
-    if (!def) return false;
-
-    // Megkötések ellenőrzése
-    if (def.megkötések) {
-      for (const mk of def.megkötések) {
-        if (mk.típus === 'harci_helyzet' && mk.mód === 'tiltott') {
-          if (session.aktív_helyzetek.includes(mk.érték as string)) return false;
-        }
-        if (mk.típus === 'harci_helyzet' && mk.mód === 'szükséges') {
-          const szükséges = Array.isArray(mk.érték) ? mk.érték : [mk.érték];
-          if (!session.aktív_helyzetek.some(h => {
-            const hDef = data.harciHelyzetek.find(d => d.név === h);
-            return hDef && szükséges.includes(hDef.id);
-          })) return false;
-        }
-        if (mk.típus === 'harcmodor' && mk.mód === 'tiltott') {
-          const aktívFegyverIdx = session.aktív_fegyver_index;
-          if (aktívFegyverIdx >= 0) {
-            const fp = karakter.fegyverek[aktívFegyverIdx];
-            if (fp) {
-              const fd = lookupFegyver(data.fegyverek, fp.alap);
-              if (fd && data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] === mk.érték) return false;
-            }
-          }
-        }
-        if (mk.típus === 'támadások' && mk.mód === 'min') {
-          // Aktív fegyver támadásszáma ellenőrzés
-          const aktívFegyverIdx = session.aktív_fegyver_index;
-          const fp = aktívFegyverIdx >= 0 ? karakter.fegyverek[aktívFegyverIdx] : null;
-          const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
-          const sebesség = fd ? parseInt(fd.Sebesség) || 6 : 6;
-          const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] ?? 'Közelharc') : 'Közelharc';
-          const harcmodorSzint = karakter.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
-          const harckeret = harcmodorSzint * 2;
-          const támadások = 1 + Math.floor(harckeret / sebesség);
-          if (támadások < (mk.érték as number)) return false;
-        }
-      }
-    }
-
-    // Kombó validáció
-    if (session.aktív_taktikák.length === 0) return true;
-    for (const aktív of session.aktív_taktikák) {
-      const aktívDef = data.taktikak.find(t => t.név === aktív.név);
-      if (!aktívDef) continue;
-      if (aktívDef.kombó_mód === 'whitelist' && !aktívDef.kombó_lista.includes(név)) return false;
-      if (aktívDef.kombó_mód === 'blacklist' && aktívDef.kombó_lista.includes(név)) return false;
-    }
-    if (def.kombó_mód === 'whitelist' && def.kombó_lista.length === 0 && session.aktív_taktikák.length > 0) return false;
-    if (def.kombó_mód === 'whitelist') {
-      for (const aktív of session.aktív_taktikák) {
-        if (!def.kombó_lista.includes(aktív.név)) return false;
-      }
-    }
-    if (def.kombó_mód === 'blacklist') {
-      for (const aktív of session.aktív_taktikák) {
-        if (def.kombó_lista.includes(aktív.név)) return false;
-      }
-    }
-    return true;
-  }
+  // Taktika kombó + megkötés validáció — delegálva AktivHelpers-be
 
   function addTaktika(név: string) {
     const def = data.taktikak.find(t => t.név === név);
@@ -367,23 +287,12 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       <div className="aktiv-section" style={{ fontSize: '13px' }}>
         <span className="aktiv-label">Taktikák
           <button className="aktiv-add-btn" style={{ marginLeft: '8px', padding: '2px 8px', fontSize: '13px' }}
-            disabled={data.taktikak.every(t => session.aktív_taktikák.some(a => a.név === t.név) || !isTaktikaAllowed(t.név))}
+            disabled={data.taktikak.every(t => session.aktív_taktikák.some(a => a.név === t.név) || !isTaktikaAllowed(t.név, session, karakter, data))}
             onClick={() => setShowTaktikaPicker(true)}>+</button>
         </span>
         {session.aktív_taktikák.map((t, i) => {
           const def = data.taktikak.find(d => d.név === t.név);
-          const mods: string[] = [];
-          if (def?.fokozatos && def.fokok && t.fok != null) {
-            let fokDef = def.fokok.find(fk => fk.fok === t.fok);
-            if (!fokDef && def.fortély_bővítés) {
-              const utolsó = def.fokok[def.fokok.length - 1];
-              fokDef = { fok: t.fok } as typeof utolsó;
-              for (const [k, v] of Object.entries(utolsó)) { if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') (fokDef as any)[k] = Math.round((v / utolsó.fok) * t.fok); }
-            }
-            if (fokDef) { for (const [k, v] of Object.entries(fokDef)) { if (k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`); } }
-          } else if (def?.módosítók) {
-            for (const [k, v] of Object.entries(def.módosítók)) { if (typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`); }
-          }
+          const mods = getTaktikaMods(t, data);
           return (
             <div key={i} className={`kep-row${def?.fokozatos ? ' aktiv-taktika-row-clickable' : ''}`} onClick={() => { if (def?.fokozatos) { setTaktikaFokválasztó(t.név); setShowTaktikaPicker(true); } }}>
               <span style={{ flex: 1 }}>
@@ -415,7 +324,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
               <label>{taktikaFokválasztó ? `${taktikaFokválasztó} — fok választó` : 'Taktika választó'}</label>
             </div>
             <div className="aktiv-picker-list">
-              {!taktikaFokválasztó && data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név)).sort((a, b) => {
+              {!taktikaFokválasztó && data.taktikak.filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név, session, karakter, data)).sort((a, b) => {
                 const pinned = (data.konstansok.pinned_taktikák ?? []) as string[];
                 const aPin = pinned.indexOf(a.név);
                 const bPin = pinned.indexOf(b.név);
@@ -453,41 +362,15 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
       <div className="aktiv-section" style={{ borderBottom: 'none', fontSize: '13px' }}>
         <span className="aktiv-label">Harci helyzetek
           <button className="aktiv-add-btn aktiv-add-btn-sm"
-            disabled={data.harciHelyzetek.every(h => !isHelyzetAvailable(h))}
+            disabled={data.harciHelyzetek.every(h => !isHelyzetAvailable(h, session, data))}
             onClick={() => setShowHelyzetPicker(true)}>+</button>
         </span>
         {session.aktív_helyzetek.map((h, i) => {
           const def = data.harciHelyzetek.find(d => d.név === h);
           if (!def) return null;
           const kötöttFortélyok = helyzetFortélyok.get(h) || [];
-          const hId = def.feltétel_kulcs?.split(':')[1] || '';
-          let alapText = '';
-          for (const fd of data.fortelySummaries) {
-            const f0 = fd.fokok?.find((f: any) => f.fok === 0);
-            if (!f0?.hatás?.length) continue;
-            const hasFelt = f0.módosítók?.some((m: any) => m.feltétel === `harci_helyzet:${hId}`) || f0.hatás?.join(' ').toLowerCase().includes(h.toLowerCase());
-            if (hasFelt) { alapText = f0.hatás.join(' '); break; }
-          }
-          const infóText = (def.infó || '') + (alapText ? ` Alapeset: ${alapText}` : '');
-          // Min pengehossz figyelmeztetés: generikus — fortély módosítók min_pengehossz céllal
-          let minPengeWarning = '';
-          const hFeltételKulcs = def.feltétel_kulcs || '';
-          for (const kf of karakter.fortélyok) {
-            const fd = data.fortelySummaries.find(d => d.név === kf.név);
-            if (!fd) continue;
-            const fokDef = fd.fokok.find((f: any) => f.fok === kf.fok);
-            if (!fokDef?.módosítók) continue;
-            for (const mod of fokDef.módosítók) {
-              if (mod.cél === 'min_pengehossz' && mod.feltétel === hFeltételKulcs) {
-                const aktívFp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
-                const aktívFd = session.aktív_fegyver_index === -2
-                  ? lookupFegyver(data.fegyverek, (karakter.pajzs?.méret ? karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs' : '') )
-                  : aktívFp ? lookupFegyver(data.fegyverek, aktívFp.alap) : null;
-                const ph = aktívFd ? (parseFloat(aktívFd.Pengehossz) || 0) : 0;
-                if (ph < mod.érték) minPengeWarning = `⚠ Min. pengehossz: ${mod.érték}!`;
-              }
-            }
-          }
+          const infóText = getHelyzetInfoText(h, data);
+          const minPengeWarning = getMinPengeWarning(def.feltétel_kulcs || '', karakter, session, data);
           return (
             <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
               <div className="kep-row">

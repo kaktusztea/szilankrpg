@@ -2614,8 +2614,10 @@ Hatás: a Pengeelőny/Pengehátrány meghatározásnál az effektív pengével s
 
 Implementáció:
 - A Pengeelőny/Pengehátrány jelenleg informatív (rejtett helyzetek, nem kalkulált a webapp-ban)
-- A +1 penge bónusz a Harc fül "Ph" oszlopában jelenik meg (effektív penge kijelzés)
-- HarcScreen: ha lovas helyzet aktív ÉS van Lovas/Léglovas harc fortély (≥1.fok) → Ph kijelzés +1
+- A +1 penge bónusz a Harc fül "Ph" oszlopában jelenik meg (effektív penge kijelzés, zöld szín)
+- Data-driven: fortély yaml `pengehossz` cél módosító (flat, feltétel: `harci_helyzet:X`), HarcScreen generikusan feldolgozza `fortelyMods['pengehossz']`-ból
+- Min pengehossz: fortély yaml `min_pengehossz` cél módosító, AktivScreen generikusan jeleníti meg figyelmeztetésként (piros `⚠`) a harci helyzet info sávban ha aktív fegyver nem éri el
+- ✅ IMPLEMENTÁLVA
 
 ### 38.4 Harci helyzet kizárások és fegyverfogás tiltás
 

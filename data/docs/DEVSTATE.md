@@ -544,7 +544,7 @@ Engine spec: §38.
 - [x] AktivScreen helyzet hozzáadás: fogás auto-reset ha tiltott
 - [x] data-types.ts: HarciHelyzetEntry bővítés (id, csoport, rejtett, tiltja_taktikákat, kizár_helyzetek, tiltott_fegyverfogások)
 - [x] Magasabbról + összes kizárás: data-driven `kizár_helyzetek` (meglévő logika)
-- [ ] HarcScreen Ph oszlop: +1 penge kijelzés ha lovas helyzet + fortély ≥ 1.fok (opcionális, kozmetikai)
+- [x] HarcScreen Ph oszlop: +1 penge kijelzés ha lovas helyzet + fortély ≥ 1.fok (data-driven: fortély yaml `pengehossz`/`min_pengehossz` módosítók)
 
 ### Harc fül
 - ✅ Harc fül fegyvertábla: aktív fegyver sor normál, többi halványítva. Fegyverfogás ≠ Egyfegyveres: világoskék összesítő sor (`#90caf9`, kétkezes/pajzs/hárító).
@@ -598,7 +598,7 @@ Engine spec: §38.
 - ✅ Többszörös fortély fix: Titkos szervezet, Különleges faj boncolása, Tánc: belső stílus, Harci iskola (free-text)
 - ✅ Többszörös fortély fix: Belső/Külső síkok lényeinek ismerete (fix lista picker)
 - ✅ Kiérdemelt fortélyok: nem számítanak primer költésbe, nem foglalják az ingyenes keretet
-- ✅ Modularizáció: file-ops, feltetelek, ketkezes, validate, undo-helpers, formatters, HatasPoolCalc, NaploTab, TulajdonsagCell, PrimerKpBox, FortelyFelvetel, data-types, helpers
+- ✅ Modularizáció: file-ops, feltetelek, ketkezes, validate, undo-helpers, formatters, HatasPoolCalc, NaploTab, TulajdonsagCell, PrimerKpBox, FortelyFelvetel, data-types, helpers, AktivHelpers
 - ✅ Data layer kiemelés: fegyver_anyagok, képzettség/fortély_csoport_sorrend, nyelv_fok_nevek, pinned_taktikák, közös_nyelv, tulajdonság_sorrend → konstansok.yaml
 - ✅ Jegyzetek overlay: floating célszám panel (Tulajdonságpróba k6, Képzettségpróba k10) — `<details>` accordion
 - ✅ Fullscreen: requestFullscreen user gesture fix (setShowMenu a hívás után, nem előtte)
