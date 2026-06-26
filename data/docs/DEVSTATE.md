@@ -598,7 +598,7 @@ Engine spec: §38.
 - ✅ Többszörös fortély fix: Titkos szervezet, Különleges faj boncolása, Tánc: belső stílus, Harci iskola (free-text)
 - ✅ Többszörös fortély fix: Belső/Külső síkok lényeinek ismerete (fix lista picker)
 - ✅ Kiérdemelt fortélyok: nem számítanak primer költésbe, nem foglalják az ingyenes keretet
-- ✅ Modularizáció: file-ops, feltetelek, ketkezes, validate, undo-helpers, formatters, HatasPoolCalc, NaploTab, TulajdonsagCell, PrimerKpBox, FortelyFelvetel, data-types, helpers, AktivHelpers
+- ✅ Modularizáció: file-ops, feltetelek, ketkezes, validate, undo-helpers, formatters, HatasPoolCalc, NaploTab, TulajdonsagCell, PrimerKpBox, FortelyFelvetel, data-types, helpers, AktivHelpers, AktivTaktikak, AktivStatuszok, AktivManover, AktivNarrativ, HarcCalc
 - ✅ Data layer kiemelés: fegyver_anyagok, képzettség/fortély_csoport_sorrend, nyelv_fok_nevek, pinned_taktikák, közös_nyelv, tulajdonság_sorrend → konstansok.yaml
 - ✅ Jegyzetek overlay: floating célszám panel (Tulajdonságpróba k6, Képzettségpróba k10) — `<details>` accordion
 - ✅ Fullscreen: requestFullscreen user gesture fix (setShowMenu a hívás után, nem előtte)
