@@ -121,7 +121,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       )}
 
       {!tfDef && összesFegyver.length === 0 && gameMode && (
-        <p style={{ color: '#888', textAlign: 'center', marginTop: '20px' }}>Nincs távfegyver felvéve</p>
+        <p className="th-no-fegyver">Nincs távfegyver felvéve</p>
       )}
 
       <TavharcReszletek

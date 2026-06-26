@@ -13,8 +13,8 @@ export function TradícióSection({ tradíció, maxSzint, gameMode, onEdit, onDe
   if (gameMode && !tradíció) return null;
 
   return (
-    <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
-      <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Tradíció</h3>
+    <section className="miszt-section">
+      <h3 className="miszt-section-title">Tradíció</h3>
       {tradíció && (
         <MisztikusRow
           név={tradíció.név} szint={tradíció.szint} maxSzint={maxSzint}

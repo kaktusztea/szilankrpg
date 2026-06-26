@@ -33,10 +33,10 @@ export function HarcHeader({
       </div>
 
       <div className="sfe-box">
-        <span className="label">SFÉ (<span style={{ fontFamily: 'monospace' }}>{páncélLefedettség}%</span>)</span>
+        <span className="label">SFÉ (<span className="harc-monospace">{páncélLefedettség}%</span>)</span>
         <div className="sfe-values">
           <span className="sfe-line">Fizikai: <strong>{sfé_fizikai}</strong></span>
-          <span className="sfe-line" style={{ color: '#aaa' }}>Energia: <strong>{sfé_energia}</strong></span>
+          <span className="sfe-line harc-sfe-secondary">Energia: <strong>{sfé_energia}</strong></span>
         </div>
       </div>
 

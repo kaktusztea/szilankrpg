@@ -123,8 +123,8 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
   return (
     <div className="ep-table-wrapper">
       <div className="ep-table-header">
-        <span><strong>ÉP: <span style={{ fontFamily: 'monospace' }}>{ÉP}({ÉP - kitöltött})</span></strong></span>
-        <button className="btn-reset" style={{ fontSize: '15px' }} disabled={kitöltött === 0} onClick={() => setShowResetConfirm(true)}>⟲</button>
+        <span><strong>ÉP: <span className="harc-monospace">{ÉP}({ÉP - kitöltött})</span></strong></span>
+        <button className="btn-reset btn-reset-sm" disabled={kitöltött === 0} onClick={() => setShowResetConfirm(true)}>⟲</button>
         <button className="btn-seb" disabled={kitöltött === összRubrika && rubrikák.every(r => r.típus !== 'FP')} onClick={() => setShowSebDialog(true)}>⚔️ Seb</button>
         <button className="btn-heal" disabled={kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógy</button>
       </div>
@@ -173,8 +173,8 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
       )}
       {showResetConfirm && createPortal(
         <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={reset}>ÉP Reset</button>
+          <div className="kep-prompt harc-confirm-center">
+            <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={reset}>ÉP Reset</button>
           </div>
         </div>,
         document.body

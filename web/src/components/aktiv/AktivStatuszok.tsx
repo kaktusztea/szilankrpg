@@ -37,12 +37,12 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           const locked = baseName === 'Sérült';
           const perElem = státuszPerElem.find(s => s.név === stNév || s.név === `${stNév} (${stFok})`);
           return (
-            <div key={i} className="kep-row" style={{ cursor: !locked && maxFok > 1 ? 'pointer' : undefined }} onClick={() => {
+            <div key={i} className="kep-row" style={!locked && maxFok > 1 ? { cursor: 'pointer' } : undefined} onClick={() => {
               if (locked || maxFok <= 1) return;
               const újFok = (stFok % maxFok) + 1;
               setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
             }}>
-              <span style={{ flex: 1 }}>
+              <span className="aktiv-flex-1">
                 <strong className="aktiv-statusz-name">{stNév} ({stFok}){alcím ? ` - ${alcím}` : ''}:</strong>
                 {perElem && perElem.hatások.length > 0 && <span> {perElem.hatások.map((h, j) => {
                   const txt = fmtHatás(h, eseményNév);

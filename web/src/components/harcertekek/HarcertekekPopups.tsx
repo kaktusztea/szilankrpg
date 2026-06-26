@@ -93,7 +93,7 @@ export function Popups({
       {anyagTarget !== null && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+            <div className="he-column-layout">
               {(konstansok.fegyver_anyagok as string[]).map((a: string) => (
                 <button key={a} className={`fort-fok-btn he-picker-btn ${k.fegyverek[anyagTarget]?.anyag === a ? 'active' : ''}`} onClick={() => { updateFegyver(anyagTarget, { anyag: a }); onClose('anyagTarget'); }}>{a}</button>
               ))}
@@ -121,7 +121,7 @@ export function Popups({
       {pajzsPopup && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+            <div className="he-column-layout">
               {pajzsPopup === 'méret' && <>
                 <button className={`fort-fok-btn he-picker-btn-wide ${!k.pajzs.méret ? 'active' : ''}`} onClick={() => { updatePajzs({ méret: '' }); onClose('pajzsPopup'); }}>— nincs —</button>
                 {['kis', 'közepes', 'nagy'].map(v => (
@@ -144,8 +144,8 @@ export function Popups({
       {/* Delete fegyver */}
       {deleteTarget !== null && createPortal(
         <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>{k.fegyverek[deleteTarget]?.alap.replace(/ \(1K\)$| 1K$/, '')}</label>
+          <div className="kep-prompt kep-prompt-align-center kep-prompt-gap-12">
+            <label className="kep-prompt-label-bold">{k.fegyverek[deleteTarget]?.alap.replace(/ \(1K\)$| 1K$/, '')}</label>
             <button className="btn-del-confirm he-del-confirm" onClick={() => { removeFegyver(deleteTarget); onClose('deleteTarget'); }}>Fegyver törlése</button>
           </div>
         </div>,
@@ -155,8 +155,8 @@ export function Popups({
       {/* Delete képzettség */}
       {deleteKepzTarget && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) onClose('deleteKepzTarget'); }}>
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>{harciKepzDisplayName(data, deleteKepzTarget)}</label>
+          <div className="kep-prompt kep-prompt-align-center kep-prompt-gap-12">
+            <label className="kep-prompt-label-bold">{harciKepzDisplayName(data, deleteKepzTarget)}</label>
             <button className="btn-del-confirm he-del-confirm" onClick={() => { setKépzettségek(prev => prev.filter(kp => kp.név !== deleteKepzTarget)); onClose('deleteKepzTarget'); }}>Képzettség törlése</button>
           </div>
         </div>,

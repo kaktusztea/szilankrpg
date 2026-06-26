@@ -50,7 +50,7 @@ export function TavharcPopups({ karakter, setKarakter, mfTarget, setMfTarget, de
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setMfTarget(null); }}>
           <div className="kep-prompt">
             <h4>Mesterfegyver fok — {k.távfegyverek[mfTarget]?.alap}</h4>
-            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center' }}>
+            <div className="kep-prompt-flex-fok">
               {[0, 1, 2, 3].map(f => (
                 <button key={f} className={`fort-fok-btn${getMfFok(k, k.távfegyverek[mfTarget]?.alap) === f ? ' active' : ''}`}
                   onClick={() => { setMfFok(k.távfegyverek[mfTarget]!.alap, f); setMfTarget(null); }}>{f}</button>
@@ -62,9 +62,9 @@ export function TavharcPopups({ karakter, setKarakter, mfTarget, setMfTarget, de
 
       {deleteTarget !== null && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteTarget(null); }}>
-          <div className="kep-prompt" style={{ textAlign: 'center' }}>
+          <div className="kep-prompt kep-prompt-text-center">
             <p><strong>{k.távfegyverek[deleteTarget]?.alap}</strong></p>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => { removeTávfegyver(deleteTarget); setDeleteTarget(null); }}>Távfegyver törlése</button>
+            <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={() => { removeTávfegyver(deleteTarget); setDeleteTarget(null); }}>Távfegyver törlése</button>
           </div>
         </div>
       , document.body)}

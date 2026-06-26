@@ -71,8 +71,8 @@ export function FortélyFelvétel({ def, kiérdemeltOpció, felvettSpecElemek, o
       <div className="kep-prompt">
         {step === 'többszörös' && hasLista && (
           <>
-            <label style={{ fontWeight: 'bold', marginBottom: '8px' }}>{def.név}</label>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '60vh', overflowY: 'auto' }}>
+            <label className="kep-prompt-label-bold-mb">{def.név}</label>
+            <div className="kep-prompt-flex-col-list">
               {def.többszörös_lista.filter(l => !felvettSpecElemek.includes(l)).map(l => (
                 <button key={l} className="he-field-btn" onClick={() => handleListaSelect(l)}>{l}</button>
               ))}
@@ -91,17 +91,17 @@ export function FortélyFelvétel({ def, kiérdemeltOpció, felvettSpecElemek, o
         )}
         {step === 'kiérdemelt' && (
           <>
-            <label style={{ fontWeight: 'bold' }}>{specElem ? `${def.név} - ${specElem}` : def.név}</label>
-            <div style={{ display: 'flex', gap: '12px', marginTop: '8px' }}>
-              <button className="he-field-btn" style={{ padding: '10px 16px', fontSize: '16px' }} onClick={() => handleKiérdemelt(false)}>Felvett</button>
-              <button className="he-field-btn" style={{ padding: '10px 16px', fontSize: '16px' }} onClick={() => handleKiérdemelt(true)}>⭐ Kiérdemelt</button>
+            <label className="kep-prompt-label-bold">{specElem ? `${def.név} - ${specElem}` : def.név}</label>
+            <div className="kep-prompt-flex-btns-mt">
+              <button className="he-field-btn kep-prompt-btn-lg" onClick={() => handleKiérdemelt(false)}>Felvett</button>
+              <button className="he-field-btn kep-prompt-btn-lg" onClick={() => handleKiérdemelt(true)}>⭐ Kiérdemelt</button>
             </div>
           </>
         )}
         {step === 'fok' && (
           <>
             <label>{def.név}{specElem ? ` - ${specElem}` : ''} — fok:</label>
-            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="kep-prompt-flex-fok">
               {Array.from({ length: def.maxfok }, (_, i) => i + 1).map(n => (
                 <button key={n} className="fort-fok-btn" onClick={() => finish(n)}>{n}</button>
               ))}

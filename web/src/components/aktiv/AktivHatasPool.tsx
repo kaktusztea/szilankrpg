@@ -18,8 +18,8 @@ export function AktivHatasPool({ fortélyEmlékeztetők, alapesetekFiltered }: P
         </div>
       )}
       {alapesetekFiltered.length > 0 && (
-        <details style={{ marginTop: fortélyEmlékeztetők.length > 0 ? '8px' : 0 }}>
-          <summary className="hatas-pool-title" style={{ cursor: 'pointer' }}>Alapesetek ({alapesetekFiltered.length}) ▾</summary>
+        <details className="aktiv-hatas-pool-details">
+          <summary className="hatas-pool-title">Alapesetek ({alapesetekFiltered.length}) ▾</summary>
           <div className="hatas-pool-items">
             {alapesetekFiltered.map((ae, i) => (
               <span key={i} className="hatas-pool-item"><strong>{ae.fortély_név}:</strong> {fmtCode(ae.hatástext.join(' '))}</span>

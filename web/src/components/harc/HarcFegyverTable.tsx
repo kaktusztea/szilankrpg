@@ -35,7 +35,7 @@ export function HarcFegyverTable({
     if (!kétkezesResult) return null;
     const r = kétkezesResult;
     return (
-      <tr style={{ border: '2px solid #90caf9' }}>
+      <tr className="harc-fegyver-active-row">
         <td style={belharciAktív && r.sumPengehossz > 0 ? { color: '#e53935' } : undefined}>{r.fegyver_név}</td>
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
         <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? többTámTÉ : 0)}</td>
@@ -53,7 +53,7 @@ export function HarcFegyverTable({
     const r = fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? fegyverResults[0];
     if (!r) return null;
     return (
-      <tr style={{ border: '2px solid #90caf9' }}>
+      <tr className="harc-fegyver-active-row">
         <td>{fogásResult.név}</td>
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
         <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + fogásResult.TÉ_büntetés + (r.támadások > 1 ? többTámTÉ : 0)}</td>

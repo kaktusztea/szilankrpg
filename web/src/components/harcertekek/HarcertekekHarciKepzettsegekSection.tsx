@@ -20,10 +20,10 @@ export function HarciKepzettsegekSection({ data, karakter: k, képzettségek, se
   return (
     <section className="he-section">
       <h3>Harci képzettségek</h3>
-      <div className="he-harcmodor-list" style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
+      <div className="he-harcmodor-list he-harcmodor-col">
         {felvett.map(h => (
           <div key={h.név} className="kep-row" onClick={() => !gameMode && onKepzSzint(h.név)}>
-            <span className="kep-név" style={{ flex: 1 }}>{harciKepzDisplayName(data, h.név)}</span>
+            <span className="kep-név aktiv-flex-1">{harciKepzDisplayName(data, h.név)}</span>
             {!gameMode && (
               <button className="fort-delete" onClick={e => { e.stopPropagation(); onDeleteKepz(h.név); }}>✕</button>
             )}

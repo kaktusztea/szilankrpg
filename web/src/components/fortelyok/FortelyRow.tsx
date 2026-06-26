@@ -76,13 +76,13 @@ export function FortelyRow({
       )}
 
       {overLimit && isOpen && (
-        <div className="fort-info" style={{ color: 'var(--error)' }}>
+        <div className="fort-info fort-info-error">
           A felvehető Nyelvismeret fokok száma a Nyelvtanulás képzettség szintjétől függ. Túllépted a keretet! Max tanulható fok: {nyelvPontKeret ?? 0}
         </div>
       )}
 
       {követelményHiba && (
-        <div className="fort-info" style={{ color: 'var(--error)' }}>
+        <div className="fort-info fort-info-error">
           ⚠ Követelmény: {hiányzóKöv.join(', ')}
         </div>
       )}

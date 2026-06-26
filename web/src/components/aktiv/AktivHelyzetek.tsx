@@ -55,7 +55,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
 
   return (
     <>
-      <div className="aktiv-section" style={{ borderBottom: 'none', fontSize: '13px' }}>
+      <div className="aktiv-section aktiv-section-noborder">
         <span className="aktiv-label">Harci helyzetek
           <button className="aktiv-add-btn aktiv-add-btn-sm"
             disabled={data.harciHelyzetek.every(h => !isHelyzetAvailable(h, session, data))}
@@ -68,10 +68,10 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
           const infóText = getHelyzetInfoText(h, data);
           const minPengeWarning = getMinPengeWarning(def.feltétel_kulcs || '', karakter, session, data);
           return (
-            <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
+            <div key={i} className="aktiv-flex-col">
               <div className="kep-row">
-                <span style={{ flex: 1 }}>
-                  <strong style={{ color: '#ff9800' }}>{h}:</strong> {fmtCode(infóText)}
+                <span className="aktiv-flex-1">
+                  <strong className="aktiv-strong-helyzet">{h}:</strong> {fmtCode(infóText)}
                   {minPengeWarning && <span className="aktiv-min-penge-warning">{minPengeWarning}</span>}
                 </span>
                 <button className="fort-delete" onClick={e => {

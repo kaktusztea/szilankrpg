@@ -398,3 +398,24 @@
 .aktiv-manover-name { color: #bbb; font-size: 14px; }
 .aktiv-manover-bonus { flex: 1; color: #66bb6a; }
 .aktiv-extra-fok-dot { color: #ce93d8; margin-left: 6px; }
+
+/* --- Aktiv inline → CSS --- */
+.aktiv-section-noborder { border-bottom: none; font-size: 13px; }
+.aktiv-flex-col { display: flex; flex-direction: column; }
+.aktiv-flex-1 { flex: 1; }
+.aktiv-strong-pos { color: #66bb6a; }
+.aktiv-strong-neg { color: #e53935; }
+.aktiv-strong-helyzet { color: #ff9800; }
+.aktiv-manover-flex { display: flex; align-items: center; gap: 8px; }
+.aktiv-hatas-pool-details { margin-top: 8px; }
+.aktiv-hatas-pool-details[open] > summary { cursor: pointer; }
+.aktiv-hint-disabled { font-size: 11px; color: #888; }
+.aktiv-picker-item-disabled-inline { opacity: 0.4; pointer-events: none; }
+.aktiv-picker-item-active-accent { border-color: var(--accent); }
+
+/* Narratív popup */
+.narrativ-popup { gap: 12px; min-width: 260px; }
+.narrativ-popup-label { font-weight: bold; }
+.narrativ-popup-btns { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.narrativ-input-full { width: 100%; }
+.narrativ-add-btn-center { align-self: center; padding: 8px 24px; }

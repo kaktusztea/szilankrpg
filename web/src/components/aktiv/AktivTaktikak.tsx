@@ -89,7 +89,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
           const mods = getTaktikaMods(t, data);
           return (
             <div key={i} className={`kep-row${def?.fokozatos ? ' aktiv-taktika-row-clickable' : ''}`} onClick={() => { if (def?.fokozatos) { setFokválasztó(t.név); setShowPicker(true); } }}>
-              <span style={{ flex: 1 }}>
+              <span className="aktiv-flex-1">
                 <strong className="aktiv-taktika-name">{t.név}{t.fok != null ? ` (${t.fok})` : ''}:</strong>
                 {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.join(', ')} ✔</span>}
                 {def?.megjegyzés && <span className="aktiv-taktika-note"> • {def.megjegyzés}</span>}
@@ -100,7 +100,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
         })}
         {taktikaHatásPerElem.map((t, i) => (
           <div key={`th${i}`} className="kep-row aktiv-sub-row">
-            <span style={{ flex: 1 }}>
+            <span className="aktiv-flex-1">
               <strong className="aktiv-taktika-name">{t.név}:</strong>{' '}
               {t.hatások.map((h: any, j: number) => {
                 const txt = fmtHatás({ operátor: h.hatás ?? h.operátor, cél: h.cél, érték: h.érték, megjegyzés: h.megjegyzés }, eseményNév);

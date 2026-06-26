@@ -84,7 +84,7 @@ export function TulajdonsagokPopups({
 
     {deleteTarget && createPortal(
       <div className="kep-prompt-overlay">
-        <div className="kep-prompt" style={{ alignItems: 'center' }}>
+        <div className="kep-prompt kep-prompt-align-center">
           <label>{deleteTarget.név}</label>
           <button className="btn-del-confirm he-del-confirm" onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Képzettség törlése</button>
         </div>
@@ -128,9 +128,9 @@ export function TulajdonsagokPopups({
       <div className="kep-prompt-overlay">
         <div className="kep-prompt">
           <label>Tapasztalati szint</label>
-          <div className="kep-szint-grid" style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: '6px', maxWidth: `${5 * 36 + 4 * 6}px`, margin: '0 auto' }}>
+          <div className="kep-szint-grid tsz-grid">
             {Array.from({ length: data.konstansok.arányok.max_tsz - 2 }, (_, i) => i + 3).map(n => (
-              <button key={n} className={`fort-fok-btn ${tsz === n ? 'active' : ''}`} style={{ width: '36px', height: '36px' }} onClick={() => { setTsz(n); setEditingTsz(false); }}>{n}</button>
+              <button key={n} className={`fort-fok-btn ${tsz === n ? 'active' : ''}`} onClick={() => { setTsz(n); setEditingTsz(false); }}>{n}</button>
             ))}
           </div>
         </div>

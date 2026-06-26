@@ -12,10 +12,10 @@ export function FajMisztériumSection({ fajNév, szint, maxSzint, gameMode, onEd
   const fajMisztNév = fajNév ? `Faj misztérium: ${fajNév}` : '';
 
   return (
-    <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
-      <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Faj misztérium</h3>
+    <section className="miszt-section">
+      <h3 className="miszt-section-title">Faj misztérium</h3>
       {!fajNév ? (
-        <span style={{ color: '#666', fontSize: '13px' }}>Faj nincs kiválasztva</span>
+        <span className="miszt-no-faj">Faj nincs kiválasztva</span>
       ) : (
         <div className="miszt-row" onClick={() => !gameMode && onEdit(fajMisztNév)}>
           <span className="miszt-row-name">{fajNév}</span>

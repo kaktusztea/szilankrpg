@@ -47,20 +47,20 @@ export function PrimerKpBox({ data, karakter, képzettségek }: {
   const row = (label: string, val: number) => <div>{label}: {val} KP ({pct(val)}%)</div>;
 
   return (
-    <div style={{ marginTop: '16px', padding: '10px', border: '1px dashed #666', borderRadius: '6px', fontSize: '12px', color: '#aaa' }}>
-      <strong style={{ color: '#e53935' }}>Primer KP bontás</strong>
+    <div className="primer-kp-box">
+      <strong className="primer-kp-title">Primer KP bontás</strong>
       {row('HM + CM', kp_hm_cm)}
       {row('Harcmodor képzettségek', kp_harcmodor)}
-      {harcmodorDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
+      {harcmodorDetails.map(d => <div key={d.név} className="primer-kp-indent">· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
       {row('Misztikus képzettségek', kp_misztikus)}
-      {misztikusDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
+      {misztikusDetails.map(d => <div key={d.név} className="primer-kp-indent">· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
       {row('Primer világi képzettségek', kp_világi)}
-      {világiDetails.map(d => <div key={d.név} style={{ paddingLeft: '10px' }}>· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
+      {világiDetails.map(d => <div key={d.név} className="primer-kp-indent">· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
       {row('Harci fortélyok', kp_harci_fort)}
-      {harcifortDetails.map((d, i) => <div key={i} style={{ paddingLeft: '10px' }}>· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
+      {harcifortDetails.map((d, i) => <div key={i} className="primer-kp-indent">· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
       {row('Misztikus fortélyok', kp_miszt_fort)}
-      {misztfortDetails.map((d, i) => <div key={i} style={{ paddingLeft: '10px' }}>· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
-      <div style={{ borderTop: '1px solid #555', marginTop: '4px', paddingTop: '4px' }}><strong>Össz primer: {total} KP</strong></div>
+      {misztfortDetails.map((d, i) => <div key={i} className="primer-kp-indent">· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
+      <div className="primer-kp-total"><strong>Össz primer: {total} KP</strong></div>
     </div>
   );
 }

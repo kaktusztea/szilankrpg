@@ -25,20 +25,20 @@ export function TávolságPicker({ value, osztó, onChange }: {
   }
 
   return (
-    <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', padding: '16px', userSelect: 'none', WebkitUserSelect: 'none', touchAction: 'manipulation' }}>
-      <label style={{ fontSize: '14px', color: 'var(--text-dim)' }}>Távolság (méter)</label>
-      <div style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
-        <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
+    <div className="kep-prompt picker-wrapper">
+      <label className="picker-label">Távolság (méter)</label>
+      <div className="picker-controls">
+        <button className="fort-fok-btn picker-btn-lg"
           onClick={() => { setVal(v => { const nv = Math.max(1, v - 1); onChange(nv); return nv; }); }}
           onMouseDown={() => startHold(-1)} onMouseUp={stopHold} onMouseLeave={stopHold}
           onTouchStart={(e) => { e.preventDefault(); startHold(-1); }} onTouchEnd={stopHold}>−</button>
-        <strong style={{ fontSize: '28px', minWidth: '60px', textAlign: 'center' }}>{val}m</strong>
-        <button className="fort-fok-btn" style={{ width: '44px', height: '44px', fontSize: '22px' }}
+        <strong className="picker-value-lg">{val}m</strong>
+        <button className="fort-fok-btn picker-btn-lg"
           onClick={() => { setVal(v => { const nv = Math.min(500, v + 1); onChange(nv); return nv; }); }}
           onMouseDown={() => startHold(1)} onMouseUp={stopHold} onMouseLeave={stopHold}
           onTouchStart={(e) => { e.preventDefault(); startHold(1); }} onTouchEnd={stopHold}>+</button>
       </div>
-      <span style={{ fontSize: '18px', color: '#888' }}>(cella: {cellaVal})</span>
+      <span className="picker-hint">(cella: {cellaVal})</span>
     </div>
   );
 }

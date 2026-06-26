@@ -161,3 +161,29 @@
 .th-idea-row { display: flex; gap: 6px; }
 .th-tav-value { font-size: 18px; color: var(--success); }
 .th-cm-btn { width: 32px; height: 32px; }
+
+/* --- Távharc inline → CSS --- */
+.th-reszletek { display: flex; gap: 8px; margin-top: 20px; align-items: stretch; }
+.th-reszletek-box { flex: 1; padding: 10px; border: 1px dashed #666; border-radius: 6px; font-size: 12px; color: #aaa; }
+.th-reszletek-title { color: #e53935; }
+.th-cm-box { padding: 10px; border: 1px solid #444; border-radius: 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; }
+.th-cm-label { font-size: 12px; color: #aaa; }
+.th-cm-value { font-size: 18px; }
+.th-cm-max { font-size: 11px; color: #888; }
+.th-cm-btn-size { width: 32px; height: 32px; }
+.th-cm-controls { display: flex; align-items: center; gap: 8px; }
+.th-no-fegyver { color: #888; text-align: center; margin-top: 20px; }
+.th-card-dim { opacity: 0.8; }
+.th-hajithato-title { margin-top: 12px; }
+.th-ve-ok { color: #4caf50; }
+.th-ve-bad { color: #e53935; }
+.th-ve-warn { color: #ffa726; }
+.th-szc-value { font-size: 18px; }
+
+/* --- Picker (TávolságPicker, KorPicker) --- */
+.picker-wrapper { align-items: center; gap: 12px; padding: 16px; user-select: none; -webkit-user-select: none; touch-action: manipulation; }
+.picker-label { font-size: 14px; color: var(--text-dim); }
+.picker-controls { display: flex; align-items: center; gap: 16px; }
+.picker-btn-lg { width: 44px; height: 44px; font-size: 22px; }
+.picker-value-lg { font-size: 28px; min-width: 60px; text-align: center; user-select: none; }
+.picker-hint { font-size: 18px; color: #888; }

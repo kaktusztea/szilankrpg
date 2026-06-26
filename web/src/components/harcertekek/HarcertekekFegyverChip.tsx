@@ -10,17 +10,15 @@ interface Props {
 
 export function FegyverChip({ fd, mfFok, idea, konstansok, strike }: Props) {
   const mf = konstansok.mesterfegyver_bónuszok?.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
-  const stat: CSSProperties = { color: '#90caf9' };
-  const statML: CSSProperties = { color: '#90caf9', marginLeft: '6px' };
   return (
-    <div className="he-fegyver-fields" style={{ marginBottom: '8px' }}>
+    <div className="he-fegyver-fields he-fegyver-chip-mb">
       <span className="he-field-btn he-field-indicator">
-        <span style={{ ...stat, ...strike }}>TÉ:</span>
+        <span className="he-stat-label" style={strike}>TÉ:</span>
         <span style={strike}>{(parseInt(fd.TÉ) || 0) + mf.TÉ + idea}</span>
-        {' '}<span style={statML}>VÉ:</span>{(parseInt(fd.VÉ) || 0) + mf.VÉ + idea}
-        {' '}<span style={{ ...statML, ...strike }}>SP:</span>
+        {' '}<span className="he-stat-ml">VÉ:</span>{(parseInt(fd.VÉ) || 0) + mf.VÉ + idea}
+        {' '}<span className="he-stat-ml" style={strike}>SP:</span>
         <span style={strike}>{(parseInt(fd.SP) || 0) + mf.SP + idea}</span>
-        {' '}<span style={{ ...statML, ...strike }}>Sebesség:</span>
+        {' '}<span className="he-stat-ml" style={strike}>Sebesség:</span>
         <span style={strike}>{fd.Sebesség}</span>
       </span>
     </div>

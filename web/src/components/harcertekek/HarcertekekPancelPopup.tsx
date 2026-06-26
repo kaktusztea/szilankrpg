@@ -12,7 +12,7 @@ export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, me
   return (
     <div className="kep-prompt-overlay">
       <div className="kep-prompt">
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '6px', alignItems: 'center' }}>
+        <div className="he-column-layout">
           {popup === 'struktúra' && <>
             <button className={`fort-fok-btn he-picker-btn-wide ${!páncél.alap ? 'active' : ''}`} onClick={() => onUpdate({ alap: '', fémalapanyag: '' })}>— nincs —</button>
             {struktúrák.map(s => (

@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 export function fmtCode(text: string): ReactNode[] {
   const parts = text.split(/(`[^`]+`)/g);
   return parts.map((p, i) => p.startsWith('`') && p.endsWith('`')
-    ? <code key={i} style={{ fontFamily: 'monospace', background: '#333', padding: '0 3px', borderRadius: '2px' }}>{p.slice(1, -1)}</code>
+    ? <code key={i} className="fmt-code">{p.slice(1, -1)}</code>
     : p
   );
 }

@@ -15,8 +15,8 @@ export function HarcPopups({ session, showVéResetConfirm, showVéHistory, támI
     <>
       {showVéResetConfirm && createPortal(
         <div className="kep-prompt-overlay" onClick={onCloseAll}>
-          <div className="kep-prompt" style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }} onClick={e => e.stopPropagation()}>
-            <button className="btn-del-confirm" style={{ fontSize: '16px', padding: '6px 14px' }} onClick={onVéReset}>VÉ Reset</button>
+          <div className="kep-prompt harc-confirm-center" onClick={e => e.stopPropagation()}>
+            <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={onVéReset}>VÉ Reset</button>
           </div>
         </div>,
         document.body
@@ -25,8 +25,8 @@ export function HarcPopups({ session, showVéResetConfirm, showVéHistory, támI
       {showVéHistory && createPortal(
         <div className="kep-prompt-overlay" onClick={onCloseAll}>
           <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-            <label style={{ fontWeight: 'bold' }}>VÉ csökkenés történet</label>
-            <div style={{ fontSize: '15px', color: 'var(--text)' }}>
+            <label className="harc-popup-label">VÉ csökkenés történet</label>
+            <div className="harc-popup-text">
               {session.vé_history.length === 0 ? '—' : session.vé_history.map(v => (v > 0 ? `+${v}` : String(v))).join('; ')}
             </div>
           </div>
@@ -37,8 +37,8 @@ export function HarcPopups({ session, showVéResetConfirm, showVéHistory, támI
       {támInfo && createPortal(
         <div className="kep-prompt-overlay" onClick={onCloseAll}>
           <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-            <label style={{ fontWeight: 'bold' }}>{támInfo.név}</label>
-            <div style={{ fontSize: '15px', color: 'var(--text)', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+            <label className="harc-popup-label">{támInfo.név}</label>
+            <div className="harc-popup-col">
               <span>Sebesség: {támInfo.sebesség}</span>
               <span>Harckeret: {támInfo.harckeret}</span>
             </div>

@@ -34,7 +34,7 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
       <div className="hatter-cloud-section">
         <span className="hatter-cloud-title">Faj háttér</span>
         <div className="hatter-cloud">
-          <span className="hatter-tag active" style={{ cursor: 'pointer' }} onClick={() => onNavigate?.('tulajdonsagok')}>{karakter.hátterek.faj || '— nincs —'}</span>
+          <span className="hatter-tag active" onClick={() => onNavigate?.('tulajdonsagok')}>{karakter.hátterek.faj || '— nincs —'}</span>
         </div>
       </div>
 

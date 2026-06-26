@@ -29,8 +29,8 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
         </span>
         {session.narratív_módosítók.map((nm, i) => (
           <div key={i} className="kep-row">
-            <span style={{ flex: 1 }}>
-              <strong style={{ color: (nm.érték ?? 0) > 0 ? '#66bb6a' : '#e53935' }}>{nm.szöveg}:</strong>
+            <span className="aktiv-flex-1">
+              <strong className={(nm.érték ?? 0) > 0 ? 'aktiv-strong-pos' : 'aktiv-strong-neg'}>{nm.szöveg}:</strong>
               <span> {nm.érték != null ? (nm.érték > 0 ? `Előny+${nm.érték}` : `Hátrány${nm.érték}`) : ''}</span>
             </span>
             <button className="fort-delete" onClick={e => {
@@ -44,9 +44,9 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
 
       {showPopup && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if (e.target === e.currentTarget) setShowPopup(false); }}>
-          <div className="kep-prompt" style={{ gap: '12px', minWidth: '260px' }}>
-            <label style={{ fontWeight: 'bold' }}>Narratív Előny/Hátrány</label>
-            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="kep-prompt narrativ-popup">
+            <label className="narrativ-popup-label">Narratív Előny/Hátrány</label>
+            <div className="narrativ-popup-btns">
               {[{ v: -2, l: 'Hátrány-2' }, { v: -1, l: 'Hátrány-1' }, { v: 1, l: 'Előny+1' }, { v: 2, l: 'Előny+2' }].map(b => {
                 const sel = érték === b.v;
                 const color = b.v > 0 ? '#4caf50' : 'var(--accent)';
@@ -59,10 +59,10 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
                 );
               })}
             </div>
-            <input className="narrativ-input" placeholder="Leírás..." maxLength={40} style={{ width: '100%' }}
+            <input className="narrativ-input narrativ-input-full" placeholder="Leírás..." maxLength={40}
               onKeyDown={e => { if (e.key === 'Enter') submit((e.target as HTMLInputElement).value.trim()); }}
               id="narrativ-popup-text" />
-            <button className="narrativ-add-btn" style={{ alignSelf: 'center', padding: '8px 24px' }} disabled={érték === undefined} onClick={() => {
+            <button className="narrativ-add-btn narrativ-add-btn-center" disabled={érték === undefined} onClick={() => {
               const el = document.getElementById('narrativ-popup-text') as HTMLInputElement;
               submit(el.value.trim());
             }}>OK</button>

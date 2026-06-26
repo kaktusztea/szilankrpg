@@ -184,3 +184,13 @@
 .harc-tam-clickable { cursor: pointer; }
 
 .ph-bonus { color: #66bb6a; }
+
+/* --- Harc inline → CSS --- */
+.harc-monospace { font-family: monospace; }
+.btn-reset-sm { font-size: 15px; }
+.harc-confirm-center { display: flex; align-items: center; justify-content: center; }
+.harc-popup-label { font-weight: bold; }
+.harc-popup-text { font-size: 15px; color: var(--text); }
+.harc-popup-col { font-size: 15px; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
+.harc-fegyver-active-row { border: 2px solid #90caf9; }
+.harc-sfe-secondary { color: #aaa; }

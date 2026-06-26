@@ -70,15 +70,15 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
 
       {(alkalmatlan.nevek.length > 0 || alkalmatlan.alkalmiTárgyNév) && (
         <>
-          <h3 style={{ marginTop: '12px' }}>Hajítható fegyverek (fortélyból)</h3>
+          <h3 className="th-hajithato-title">Hajítható fegyverek (fortélyból)</h3>
           {alkalmatlan.nevek.map((név, i) => (
-            <div key={`alk-${i}`} className="th-card" style={{ opacity: 0.8 }}>
+            <div key={`alk-${i}`} className="th-card th-card-dim">
               <div className="th-card-header"><strong>🔆 {név}</strong></div>
               <div className="th-card-fields"><span className="th-badge">CÉ: 0, Osztó: 1</span></div>
             </div>
           ))}
           {alkalmatlan.alkalmiTárgyNév && (
-            <div className="th-card" style={{ opacity: 0.8 }}>
+            <div className="th-card th-card-dim">
               <div className="th-card-header"><strong>🔆 {alkalmatlan.alkalmiTárgyNév}</strong></div>
               <div className="th-card-fields">
                 <span className="th-badge">CÉ: 0, Osztó: {alkalmatlan.alkalmiTárgyDef?.Osztó ?? 1}</span>

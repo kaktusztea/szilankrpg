@@ -34,15 +34,15 @@ export function TulajdonsagokHeader({
   return (
     <>
       {/* Fejléc: Név + Becenév + Szint */}
-      <div className="tul-header" style={{ flexDirection: 'column', gap: '4px' }}>
-        <div className="tul-header-box" style={{ width: '100%' }}
+      <div className="tul-header tul-header-col">
+        <div className="tul-header-box tul-header-full"
           onClick={() => { if (!gameMode) onEditNév(); }}
         >
           <span className="tul-header-label">Név:</span> <strong>{gameMode ? `${név} (${faj}, ${kor})` : név}</strong>
         </div>
         {!gameMode && (
-          <div style={{ display: 'flex', gap: '6px', width: '100%' }}>
-            <div className="tul-header-box" style={{ flex: 1 }} onClick={onEditBecenév}>
+          <div className="tul-header-two-col">
+            <div className="tul-header-box tul-header-flex1" onClick={onEditBecenév}>
               <span className="tul-header-label">Becenév:</span> <strong>{becenév || '—'}</strong>
             </div>
             <div className="tul-header-box" onClick={onEditTsz}>
@@ -88,7 +88,7 @@ export function TulajdonsagokHeader({
         const elköltött = TULAJDONSAG_NEVEK.reduce((s, key) => s + (pontTábla[String(tulajdonságok[key])] ?? 0), 0);
         const maradék = keret - elköltött;
         return (
-          <div className="tul-pont-bar" style={{ padding: '4px 8px', fontSize: '13px', color: maradék < 0 ? 'var(--error)' : 'var(--text-dim)' }}>
+          <div className={`tul-pont-bar tul-pont-bar-styled${maradék < 0 ? ' he-error' : ''}`}>
             <span>Tulajdonság pontok: {elköltött}/{keret}</span>
           </div>
         );

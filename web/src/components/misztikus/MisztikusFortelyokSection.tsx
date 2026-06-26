@@ -25,8 +25,8 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
   if (gameMode && misztFortSlotok.length === 0) return null;
 
   return (
-    <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
-      <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Misztikus fortélyok</h3>
+    <section className="miszt-section">
+      <h3 className="miszt-section-title">Misztikus fortélyok</h3>
       {misztFortSlotok.map((f, i) => {
         const def = misztFortDefs.find(d => d.név === f.név);
         const maxfok = def?.maxfok ?? 1;
@@ -38,7 +38,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
               if (maxfok > 1) onFokChange(globalIdx);
               else { onHint('1 fok a maximum'); }
             }}>
-            <span className="kep-név" style={{ flex: 1 }}>
+            <span className="kep-név aktiv-flex-1">
               {f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név}{f.kiérdemelt ? ' ⭐' : ''}
             </span>
             {!gameMode && (

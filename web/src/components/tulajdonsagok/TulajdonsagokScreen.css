@@ -381,3 +381,18 @@
   accent-color: var(--accent);
 }
 
+/* --- Tulajdonsagok inline → CSS --- */
+.tul-header-col { flex-direction: column; gap: 4px; }
+.tul-header-full { width: 100%; }
+.tul-header-two-col { display: flex; gap: 6px; width: 100%; }
+.tul-header-flex1 { flex: 1; }
+.tul-pont-bar-styled { padding: 4px 8px; font-size: 13px; color: var(--text-dim); }
+.tsz-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 204px; margin: 0 auto; }
+.tsz-grid .fort-fok-btn { width: 36px; height: 36px; }
+
+/* --- PrimerKpBox --- */
+.primer-kp-box { margin-top: 16px; padding: 10px; border: 1px dashed #666; border-radius: 6px; font-size: 12px; color: #aaa; }
+.primer-kp-title { color: #e53935; }
+.primer-kp-indent { padding-left: 10px; }
+.primer-kp-total { border-top: 1px solid #555; margin-top: 4px; padding-top: 4px; }
+

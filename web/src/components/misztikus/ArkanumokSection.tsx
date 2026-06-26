@@ -15,8 +15,8 @@ export function ArkánumokSection({ arkánumok, elérhetőArkánumok, hasTradíc
   if (gameMode && arkánumok.length === 0) return null;
 
   return (
-    <section style={{ borderTop: '1px solid #444', paddingTop: '12px' }}>
-      <h3 style={{ fontSize: '17px', color: '#42a5f5', margin: '0 0 6px' }}>Arkánumok</h3>
+    <section className="miszt-section">
+      <h3 className="miszt-section-title">Arkánumok</h3>
       {arkánumok.map(a => (
         <MisztikusRow
           key={a.név} név={a.név} szint={a.szint} maxSzint={maxSzint}

@@ -67,8 +67,8 @@ export function MisztikusPopups(props: MisztikusPopupsProps) {
     <>
       {props.deleteTarget && (
         <Overlay onClose={props.onCancelDelete}>
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>{props.deleteTarget}</label>
+          <div className="kep-prompt kep-prompt-align-center kep-prompt-gap-12">
+            <label className="kep-prompt-label-bold">{props.deleteTarget}</label>
             <button className="btn-del-confirm he-del-confirm" onClick={props.onConfirmDelete}>Képzettség törlése</button>
           </div>
         </Overlay>
@@ -108,15 +108,15 @@ export function MisztikusPopups(props: MisztikusPopupsProps) {
       {props.tradícióPicker && (
         <Overlay onClose={props.onCancelTradíció}>
           <div className="kep-prompt">
-            <label style={{ fontWeight: 'bold', marginBottom: '8px' }}>Tradíció választás</label>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '60vh', overflowY: 'auto' }}>
+            <label className="kep-prompt-label-bold-mb">Tradíció választás</label>
+            <div className="kep-prompt-flex-col-list">
               {props.tradícióOpciók.map(t => (
                 <button key={t.név} className="he-field-btn" onClick={() => {
                   if (t.altípusok.length > 0) props.onPickTradícióAltípus(t.név);
                   else props.onPickTradíció(t.név);
                 }}>
                   {t.név} {t.altípusok.length > 0 && '▸'}{' '}
-                  <span style={{ color: 'var(--text-dim)', fontSize: '13px' }}>({t.típus})</span>
+                  <span className="kep-prompt-text-dim">({t.típus})</span>
                 </button>
               ))}
             </div>
@@ -127,8 +127,8 @@ export function MisztikusPopups(props: MisztikusPopupsProps) {
       {props.tradícióAltípusPicker && (
         <Overlay onClose={props.onCancelAltípus}>
           <div className="kep-prompt">
-            <label style={{ fontWeight: 'bold', marginBottom: '8px' }}>{props.tradícióAltípusPicker} — altípus</label>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '60vh', overflowY: 'auto' }}>
+            <label className="kep-prompt-label-bold-mb">{props.tradícióAltípusPicker} — altípus</label>
+            <div className="kep-prompt-flex-col-list">
               <AltípusLista
                 tradícióOpciók={props.tradícióOpciók}
                 tradícióNév={props.tradícióAltípusPicker}
@@ -153,7 +153,7 @@ export function MisztikusPopups(props: MisztikusPopupsProps) {
         <Overlay onClose={props.onCancelFok}>
           <div className="kep-prompt">
             <label>{props.deleteFortNév || 'Fortély'} — fok:</label>
-            <div style={{ display: 'flex', gap: '8px', justifyContent: 'center', flexWrap: 'wrap' }}>
+            <div className="kep-prompt-flex-fok">
               {Array.from({ length: props.misztFokMaxfok }, (_, i) => i + 1).map(n => (
                 <button key={n} className={`fort-fok-btn ${props.misztFokCurrentFok === n ? 'active' : ''}`}
                   onClick={() => props.onFokPick(n)}>{n}</button>
@@ -165,8 +165,8 @@ export function MisztikusPopups(props: MisztikusPopupsProps) {
 
       {props.deleteFortIdx !== null && (
         <Overlay onClose={props.onCancelDeleteFort}>
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>{props.deleteFortNév}</label>
+          <div className="kep-prompt kep-prompt-align-center kep-prompt-gap-12">
+            <label className="kep-prompt-label-bold">{props.deleteFortNév}</label>
             <button className="btn-del-confirm he-del-confirm" onClick={props.onConfirmDeleteFort}>Fortély törlése</button>
           </div>
         </Overlay>
@@ -209,7 +209,7 @@ function AltípusLista({ tradícióOpciók, tradícióNév, onPick }: {
           <div className="miszt-section-label">{pantheon}</div>
           {items.map(item => (
             <button key={item.név} className="he-field-btn" onClick={() => onPick(item.név)}>
-              {item.név} {item.leírás && <span style={{ color: 'var(--text-dim)', fontSize: '12px' }}>— {item.leírás}</span>}
+              {item.név} {item.leírás && <span className="kep-prompt-text-dim-sm">— {item.leírás}</span>}
             </button>
           ))}
         </div>

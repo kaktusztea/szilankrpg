@@ -251,3 +251,10 @@
 }
 
 .he-mf-error { display: block; font-size: 11px; margin-top: 2px; color: #e53935; }
+
+/* --- Harcertekek inline → CSS --- */
+.he-fegyver-chip-mb { margin-bottom: 8px; }
+.he-stat-label { color: #90caf9; }
+.he-stat-ml { color: #90caf9; margin-left: 6px; }
+.he-column-layout { display: flex; flex-direction: column; gap: 6px; align-items: center; }
+.he-harcmodor-col { display: flex; flex-direction: column; gap: 4px; }

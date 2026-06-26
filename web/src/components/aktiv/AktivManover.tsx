@@ -24,7 +24,7 @@ export function AktivManover({ data, session, setSession, manőverBónuszok }: P
           const m = data.manoverek.find(d => d.név === session.aktív_manőver);
           if (!m) return null;
           return (
-            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            <div className="aktiv-manover-flex">
               <div className="aktiv-field-btn">
                 <strong className="aktiv-manover-name">{session.aktív_manőver}</strong>
                 <span className="taktika-chip-mods">Nehézség: {m.nehézség} • {m.fázisok}</span>

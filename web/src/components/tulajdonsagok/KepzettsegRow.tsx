@@ -52,7 +52,7 @@ export function KepzettsegRow({
             <div className="kep-info-row">
               <span className="kep-info-label">Kiterjeszti Normál:</span>
               <span className="kep-info-kit">{kit.filter(k => k.típus !== 'erős').map((k, i) => (
-                <span key={i} style={{ color: felvettFortelyok.includes(k.fortély) ? 'var(--success)' : '#e53935' }}>{i > 0 ? '; ' : ''}{k.fortély}</span>
+                <span key={i} className={felvettFortelyok.includes(k.fortély) ? 'fort-req-met' : 'fort-req-unmet'}>{i > 0 ? '; ' : ''}{k.fortély}</span>
               ))}</span>
             </div>
           )}
@@ -60,7 +60,7 @@ export function KepzettsegRow({
             <div className="kep-info-row">
               <span className="kep-info-label">Kiterjeszti Erős:</span>
               <span className="kep-info-kit">{kit.filter(k => k.típus === 'erős').map((k, i) => (
-                <span key={i} style={{ color: felvettFortelyok.includes(k.fortély) ? 'var(--success)' : '#e53935' }}>{i > 0 ? '; ' : ''}{k.fortély}</span>
+                <span key={i} className={felvettFortelyok.includes(k.fortély) ? 'fort-req-met' : 'fort-req-unmet'}>{i > 0 ? '; ' : ''}{k.fortély}</span>
               ))}</span>
             </div>
           )}
