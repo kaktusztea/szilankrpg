@@ -140,6 +140,7 @@ formula:
 output: KÉ
 note: A rules.json KÉ képlete NEM tartalmazza a fortély módosítókat (körkörös függőség miatt).
       A HarcScreen utólag adja hozzá: computed.KÉ + taktikaMods.KÉ + fortelyMods.KÉ.
+      A fortelyMods tartalmazza az alapeset (0.fok) módosítókat is (evaluateAlapesetek → flat mód, aktív feltétel).
 ```
 
 ---
@@ -172,6 +173,7 @@ formula:  // ismételve minden egyes fegyverre
   TÉ_fegyver = fegyver.TÉ
   TÉ_mesterfegyver = lookup(mesterfegyver_fok → mesterfegyver_bónuszok).TÉ
   TÉ_fortély = SUM( fortély_módosítók(cél="TÉ", feltétel="") )
+              + SUM( alapeset_módosítók(cél="TÉ", aktív feltétel) )   // §16.1, pl. Lovas harc 0.fok: -9
 
   TÉ = TÉ_alap + TÉ_harcmodor + TÉ_fegyver + TÉ_mesterfegyver + TÉ_fortély
 
@@ -197,6 +199,7 @@ formula:  // ismételve minden egyes fegyverre
   VÉ_fegyver = fegyver.VÉ
   VÉ_mesterfegyver = lookup(mesterfegyver_fok → mesterfegyver_bónuszok).VÉ
   VÉ_fortély = SUM( fortély_módosítók(cél="VÉ", feltétel="") )
+              + SUM( alapeset_módosítók(cél="VÉ", aktív feltétel) )   // §16.1, pl. Lovas harc 0.fok: -9
 
   VÉ = VÉ_alap + VÉ_harcmodor + VÉ_fegyver + VÉ_mesterfegyver + VÉ_fortély
 
@@ -601,9 +604,14 @@ SWITCH feltétel.típus:
 #### Implementáció
 
 - Modul: `web/src/engine/alapeset.ts`
-  - `evaluateAlapesetek(fortelyDefs, karakter, session)` → `AktívAlapeset[]`
+  - `evaluateAlapesetek(fortelyDefs, karakter, session, aktívFeltételek?)` → `AktívAlapeset[]`
   - `evaluateFeltétel(feltétel, session, karakter)` → boolean (prefix:érték kiértékelés)
-- Hívás helye: `AktivScreen.tsx` — Hatás pool szekció (fortélyEmlékeztetők után)
+  - Ha `aktívFeltételek` Set megadva → azzal ellenőrzi a feltételeket (hash lookup, konzisztens a HarcScreen aktívFeltételek Set-jével)
+  - Ha nincs megadva → fallback az `evaluateFeltétel()` hívásra (AktivScreen Hatás pool használja)
+- Hívás helye:
+  - `AktivScreen.tsx` — Hatás pool szekció (fortélyEmlékeztetők után), aktívFeltételek nélkül
+  - `HarcScreen.tsx` — fortélyMods számítás (aktívFeltételek Set-tel): alapeset flat módosítók beszámítása harcértékekbe (pl. Lovas/Léglovas harc 0.fok TÉ:-9 VÉ:-9)
+  - `HatasPoolCalc.ts` — Hatás pool kalkuláció (aktívFeltételek Set-tel)
 - HarcScreen: `hasHárítóFortély` check — ha nincs "Hárítófegyver használat" fortély → hárítóVÉ = 0
 - Validáció: `generate_tables.py` — feltétel prefix ellenőrzés `konstansok.yaml → feltétel_prefixek` alapján
 
