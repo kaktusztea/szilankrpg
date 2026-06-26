@@ -282,6 +282,7 @@
   - `generate_tables.py`: fokok[].módosítók mező hozzáadva a fortelyok.json-hoz
   - `data-loader.ts`: FortelyModosito interface + FortelyFokSummary.módosítók
   - `HarcScreen.tsx`: generikus iteráció (flat + scaled mód), fortelyMods Record
+  - `HarcScreen.tsx`: alapeset módosítók beszámítása harcértékekbe (evaluateAlapesetek → fortelyMods, pl. Lovas/Léglovas harc TÉ:-9 VÉ:-9)
   - Érintett: Gyors kezdeményezés (KÉ), Harckeret növelés (harckeret+KÉ), Harci akrobatika (TÉ/VÉ scaled), Természetes páncél (SFÉ)
   - Harci akrobatika yaml fix: "harci akrobatika" → "Harci akrobatika" (nagybetű)
 - ✅ Páncél gombok: disabled + szürke ha nincs struktúra kiválasztva (`.he-field-disabled`)

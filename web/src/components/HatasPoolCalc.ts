@@ -103,7 +103,7 @@ export function calcHatásPool(data: GameData, karakter: Karakter, session: Sess
   }
 
   // 4. Alapesetek
-  const alapesetek = evaluateAlapesetek(data.fortelySummaries as any, karakter, session);
+  const alapesetek = evaluateAlapesetek(data.fortelySummaries as any, karakter, session, aktívFeltételek);
   const alapesetekFiltered = alapesetek.filter(ae => {
     const hFelt = ae.módosítók.find(m => m.feltétel?.startsWith('harci_helyzet:'));
     if (hFelt) {

@@ -482,7 +482,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
                 }}>✕</button>
               </div>
               {kötöttFortélyok.map((kf, j) => (
-                <div key={j} className="kep-row" style={{ paddingLeft: '12px', color: kf.aktív ? '#66bb6a' : '#888' }}>
+                <div key={j} className="kep-row" style={{ paddingLeft: '12px', color: kf.fok === 0 ? '#cd7c6f' : (kf.aktív ? '#66bb6a' : '#888'), flexWrap: 'wrap', wordBreak: 'break-word', justifyContent: 'flex-start' }}>
                   → {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}
                 </div>
               ))}

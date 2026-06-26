@@ -13,7 +13,8 @@ export interface AktívAlapeset {
 export function evaluateAlapesetek(
   fortelyDefs: { név: string; fokok: { fok: number; hatás: string[]; módosítók: any[] }[] }[],
   karakter: Karakter,
-  session: Session
+  session: Session,
+  aktívFeltételek?: Set<string>
 ): AktívAlapeset[] {
   const kFort = new Set(karakter.fortélyok.map(f => f.név));
   const result: AktívAlapeset[] = [];
@@ -27,7 +28,11 @@ export function evaluateAlapesetek(
       // Csak hatástext, mindig aktív
       result.push({ fortély_név: def.név, hatástext: fok0.hatás || [], módosítók: [] });
     } else {
-      const aktív = fok0.módosítók.filter((m: any) => !m.feltétel || evaluateFeltétel(m.feltétel, session, karakter));
+      const aktív = fok0.módosítók.filter((m: any) => {
+        if (!m.feltétel) return true;
+        if (aktívFeltételek) return aktívFeltételek.has(m.feltétel);
+        return evaluateFeltétel(m.feltétel, session, karakter);
+      });
       if (aktív.length > 0) {
         result.push({ fortély_név: def.név, hatástext: fok0.hatás || [], módosítók: aktív });
       }

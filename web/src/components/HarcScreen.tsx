@@ -5,6 +5,7 @@ import type { Karakter, Session, SebzésRubrika } from '../engine/types';
 import { evaluate, buildContext } from '../engine/reactive';
 import { lookupFegyver } from '../engine/helpers';
 import { buildAktívFeltételek } from '../engine/feltetelek';
+import { evaluateAlapesetek } from '../engine/alapeset';
 import { calcKétkezesHarc } from '../engine/ketkezes';
 import { EpTable } from './EpTable';
 import './HarcScreen.css';
@@ -212,6 +213,14 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       } else if (mod.mód === 'scaled' && mod.forrás) {
         const forrásÉrték = k.képzettségek.find(kp => kp.név.toLowerCase() === mod.forrás)?.szint ?? 0;
         fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + Math.floor(forrásÉrték * mod.arány);
+      }
+    }
+  }
+  // Alapesetek (0.fok): ha karakter NEM rendelkezik a fortéllyal, de feltétel aktív
+  for (const ae of evaluateAlapesetek(data.fortelySummaries as any, k, session, aktívFeltételek)) {
+    for (const mod of ae.módosítók) {
+      if (mod.mód === 'flat' && mod.cél in fortelyMods) {
+        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
       }
     }
   }
