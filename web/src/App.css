@@ -266,3 +266,76 @@ body {
   font-size: 15px;
   color: #ccc;
 }
+
+/* --- URL Share: slot link gomb --- */
+.slot-share-btn {
+  color: #90caf9;
+  cursor: pointer;
+  font-size: 14px;
+  margin-right: 8px;
+}
+
+/* --- URL Share: popup --- */
+.share-popup-label {
+  font-weight: bold;
+}
+
+.share-popup-msg {
+  font-size: 13px;
+  color: var(--text);
+  text-align: center;
+}
+
+.share-popup-input {
+  width: 100%;
+  padding: 6px 8px;
+  font-size: 11px;
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid #444;
+  border-radius: 4px;
+  user-select: text;
+  -webkit-user-select: text;
+}
+
+/* --- Toast --- */
+.toast {
+  position: fixed;
+  bottom: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  z-index: 99999;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+  max-width: 90vw;
+  text-align: center;
+}
+
+.toast-success { background: #2e7d32; }
+.toast-error { background: #c62828; }
+
+/* --- Import confirm --- */
+.import-confirm-label {
+  font-weight: bold;
+}
+
+.import-confirm-msg {
+  font-size: 13px;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.import-confirm-btns {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.import-confirm-btns .menu-item {
+  padding: 6px 12px;
+  font-size: 13px;
+}

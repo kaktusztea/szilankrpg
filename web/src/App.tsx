@@ -629,7 +629,7 @@ function App() {
                         } catch { /* */ }
                       }}>{karakter?.uid === s.uid ? '●' : '○'} {truncSlotName(s.név)} ({s.tsz || '?'}sz)</span>
                       <span style={{ fontSize: '11px', color: '#888', marginRight: '8px' }}>{relTime(s.mentés_dátum)}</span>
-                      <span style={{ color: '#90caf9', cursor: 'pointer', fontSize: '14px', marginRight: '8px' }} onClick={(e) => {
+                      <span className="slot-share-btn" onClick={(e) => {
                         e.stopPropagation();
                         shareSlotUrl(s.uid);
                       }}>🔗</span>
@@ -804,15 +804,14 @@ function App() {
       {sharePopup && createPortal(
         <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setSharePopup(null); }}>
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '340px' }}>
-            <label style={{ fontWeight: 'bold' }}>🔗 Megosztás</label>
-            <span style={{ fontSize: '13px', color: 'var(--text)', textAlign: 'center' }}>
+            <label className="share-popup-label">🔗 Megosztás</label>
+            <span className="share-popup-msg">
               {sharePopup.copied
                 ? <>„{sharePopup.név}" link vágólapra másolva!</>
                 : <>Másold ki a linket:</>}
             </span>
             {!sharePopup.copied && sharePopup.url && (
-              <input readOnly value={sharePopup.url} onFocus={e => e.target.select()}
-                style={{ width: '100%', padding: '6px 8px', fontSize: '11px', background: 'var(--input-bg)', color: 'var(--text)', border: '1px solid #444', borderRadius: '4px', userSelect: 'text', WebkitUserSelect: 'text' }} />
+              <input readOnly value={sharePopup.url} onFocus={e => e.target.select()} className="share-popup-input" />
             )}
             <button className="menu-item" style={{ padding: '6px 15px' }} onClick={() => setSharePopup(null)}>OK</button>
           </div>
@@ -821,10 +820,7 @@ function App() {
       )}
 
       {toast && createPortal(
-        <div style={{ position: 'fixed', bottom: '80px', left: '50%', transform: 'translateX(-50%)',
-          background: toast.type === 'success' ? '#2e7d32' : '#c62828', color: '#fff',
-          padding: '10px 20px', borderRadius: '8px', fontSize: '13px', zIndex: 99999,
-          boxShadow: '0 4px 12px rgba(0,0,0,0.5)', maxWidth: '90vw', textAlign: 'center' }}>
+        <div className={`toast ${toast.type === 'success' ? 'toast-success' : 'toast-error'}`}>
           {toast.msg}
         </div>,
         document.body
@@ -833,16 +829,16 @@ function App() {
       {importConfirm && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '320px' }}>
-            <label style={{ fontWeight: 'bold' }}>Karakter importálása</label>
-            <span style={{ fontSize: '13px', color: 'var(--text-dim)', textAlign: 'center' }}>
+            <label className="import-confirm-label">Karakter importálása</label>
+            <span className="import-confirm-msg">
               „{importConfirm.karakter.név} ({importConfirm.karakter.tsz}sz)" már létezik a Karaktertáradban.
             </span>
-            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
-              <button className="menu-item" style={{ padding: '6px 12px', fontSize: '13px' }}
+            <div className="import-confirm-btns">
+              <button className="menu-item"
                 onClick={() => importKarakter(importConfirm.karakter, importConfirm.matchUid)}>Felülírás</button>
-              <button className="menu-item" style={{ padding: '6px 12px', fontSize: '13px' }}
+              <button className="menu-item"
                 onClick={() => importKarakter(importConfirm.karakter, false)}>Új példány</button>
-              <button className="menu-item" style={{ padding: '6px 12px', fontSize: '13px' }}
+              <button className="menu-item"
                 onClick={() => setImportConfirm(null)}>Mégse</button>
             </div>
           </div>
