@@ -385,3 +385,5 @@
 .narrativ-val-btn.selected {
   color: #fff;
 }
+
+.aktiv-min-penge-warning { color: #e53935; margin-left: 6px; }

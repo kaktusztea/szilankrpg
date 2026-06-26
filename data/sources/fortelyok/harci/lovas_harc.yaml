@@ -50,6 +50,7 @@ fokok:
     típus: "képzettség"
   hatástext: 
   - text: "Lovas harc szituációban: TÉ:+3, VÉ:+3."
+  - text: "Fegyverméret: +1 penge, min 1 penge."
   - text: "Lovas Manővereket végezhetsz."
   módosítók: 
   - cél: "TÉ"
@@ -60,6 +61,18 @@ fokok:
     feltétel: "harci_helyzet:lovas_harc"
   - cél: "VÉ"
     érték: 3
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:lovas_harc"
+  - cél: "pengehossz"
+    érték: 1
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:lovas_harc"
+  - cél: "min_pengehossz"
+    érték: 1
     mód: "flat"
     forrás: ""
     arány: 0
@@ -77,6 +90,7 @@ fokok:
     típus: "képzettség"
   hatástext: 
   - text: "Lovas harc szituációban: TÉ:+6, VÉ:+6."
+  - text: "Fegyverméret: +1 penge, min 1 penge."
   - text: "Lovas Manővereket végezhetsz."
   módosítók: 
   - cél: "TÉ"
@@ -87,6 +101,18 @@ fokok:
     feltétel: "harci_helyzet:lovas_harc"
   - cél: "VÉ"
     érték: 6
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:lovas_harc"
+  - cél: "pengehossz"
+    érték: 1
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:lovas_harc"
+  - cél: "min_pengehossz"
+    érték: 1
     mód: "flat"
     forrás: ""
     arány: 0
@@ -104,6 +130,7 @@ fokok:
     típus: "képzettség"
   hatástext: 
   - text: "TÉ:+9, VÉ:+9 lovas bónusz."
+  - text: "Fegyverméret: +1 penge, min 1 penge."
   - text: "Lovas Manővereket végezhetsz."
   módosítók: 
   - cél: "TÉ"
@@ -114,6 +141,18 @@ fokok:
     feltétel: "harci_helyzet:lovas_harc"
   - cél: "VÉ"
     érték: 9
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:lovas_harc"
+  - cél: "pengehossz"
+    érték: 1
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: "harci_helyzet:lovas_harc"
+  - cél: "min_pengehossz"
+    érték: 1
     mód: "flat"
     forrás: ""
     arány: 0

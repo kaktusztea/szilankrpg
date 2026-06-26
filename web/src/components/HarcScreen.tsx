@@ -198,7 +198,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     return false;
   }
 
-  const fortelyMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0 };
+  const fortelyMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0, pengehossz: 0, min_pengehossz: 0 };
   for (const kf of k.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);
     if (!def) continue;
@@ -497,7 +497,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
               <td>{kétkezesResult.TÉ + téLevonás + taktikaMods['TÉ'] + (kétkezesResult.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
               <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, kétkezesResult.VÉ + pajzsVÉ + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
               <td>{kétkezesResult.SP + taktikaMods['SP']} {kétkezesResult.sebzésmód}</td>
-              <td>{kétkezesResult.pengehossz}({kétkezesResult.sumPengehossz})</td>
+              <td className={fortelyMods['pengehossz'] ? 'ph-bonus' : undefined}>{kétkezesResult.pengehossz + fortelyMods['pengehossz']}({kétkezesResult.sumPengehossz + fortelyMods['pengehossz']})</td>
             </tr>
           )}
           {!kétkezesResult && fogásResult && (() => {
@@ -512,7 +512,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
                 <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + fogásResult.TÉ_büntetés + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
                 <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
                 <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
-                <td>{r.pengehossz}</td>
+                <td className={fortelyMods['pengehossz'] ? 'ph-bonus' : undefined}>{r.pengehossz + fortelyMods['pengehossz']}</td>
               </tr>
             );
           })()}
@@ -529,7 +529,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
               <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? konstansok.több_támadás_TÉ_levonás : 0)}</td>
               <td className={véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : ''}>{Math.max(0, r.VÉ + (fogásResult ? 0 : pajzsVÉ) + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
               <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
-              <td>{r.pengehossz}</td>
+              <td className={fortelyMods['pengehossz'] ? 'ph-bonus' : undefined}>{r.pengehossz + fortelyMods['pengehossz']}</td>
             </tr>
           ))}
         </tbody>

@@ -4416,6 +4416,7 @@
         "fok": 1,
         "hatás": [
           "Léglovas harc szituációban: TÉ:+3, VÉ:+3.",
+          "Fegyverméret: +1 penge, min 1 penge.",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4444,6 +4445,22 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "min_pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ]
       },
@@ -4451,6 +4468,7 @@
         "fok": 2,
         "hatás": [
           "Léglovas harc szituációban: TÉ:+6, VÉ:+6.",
+          "Fegyverméret: +1 penge, min 1 penge.",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4479,6 +4497,22 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "min_pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
           }
         ]
       },
@@ -4486,6 +4520,7 @@
         "fok": 3,
         "hatás": [
           "TÉ:+9, VÉ:+9 léglovas bónusz.",
+          "Fegyverméret: +1 penge, min 1 penge.",
           "Léglovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4510,6 +4545,22 @@
           {
             "cél": "VÉ",
             "érték": 9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:léglovas_harc"
+          },
+          {
+            "cél": "min_pengehossz",
+            "érték": 1,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
@@ -4565,6 +4616,7 @@
         "fok": 1,
         "hatás": [
           "Lovas harc szituációban: TÉ:+3, VÉ:+3.",
+          "Fegyverméret: +1 penge, min 1 penge.",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4605,6 +4657,22 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "min_pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ]
       },
@@ -4612,6 +4680,7 @@
         "fok": 2,
         "hatás": [
           "Lovas harc szituációban: TÉ:+6, VÉ:+6.",
+          "Fegyverméret: +1 penge, min 1 penge.",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4652,6 +4721,22 @@
             "forrás": "",
             "arány": 0,
             "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "min_pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
           }
         ]
       },
@@ -4659,6 +4744,7 @@
         "fok": 3,
         "hatás": [
           "TÉ:+9, VÉ:+9 lovas bónusz.",
+          "Fegyverméret: +1 penge, min 1 penge.",
           "Lovas Manővereket végezhetsz."
         ],
         "követelmény": [
@@ -4695,6 +4781,22 @@
           {
             "cél": "VÉ",
             "érték": 9,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "pengehossz",
+            "érték": 1,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:lovas_harc"
+          },
+          {
+            "cél": "min_pengehossz",
+            "érték": 1,
             "mód": "flat",
             "forrás": "",
             "arány": 0,

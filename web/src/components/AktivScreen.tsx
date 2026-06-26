@@ -469,11 +469,31 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: P
             if (hasFelt) { alapText = f0.hatás.join(' '); break; }
           }
           const infóText = (def.infó || '') + (alapText ? ` Alapeset: ${alapText}` : '');
+          // Min pengehossz figyelmeztetés: generikus — fortély módosítók min_pengehossz céllal
+          let minPengeWarning = '';
+          const hFeltételKulcs = def.feltétel_kulcs || '';
+          for (const kf of karakter.fortélyok) {
+            const fd = data.fortelySummaries.find(d => d.név === kf.név);
+            if (!fd) continue;
+            const fokDef = fd.fokok.find((f: any) => f.fok === kf.fok);
+            if (!fokDef?.módosítók) continue;
+            for (const mod of fokDef.módosítók) {
+              if (mod.cél === 'min_pengehossz' && mod.feltétel === hFeltételKulcs) {
+                const aktívFp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
+                const aktívFd = session.aktív_fegyver_index === -2
+                  ? lookupFegyver(data.fegyverek, (karakter.pajzs?.méret ? karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs' : '') )
+                  : aktívFp ? lookupFegyver(data.fegyverek, aktívFp.alap) : null;
+                const ph = aktívFd ? (parseFloat(aktívFd.Pengehossz) || 0) : 0;
+                if (ph < mod.érték) minPengeWarning = `⚠ Min. pengehossz: ${mod.érték}!`;
+              }
+            }
+          }
           return (
             <div key={i} style={{ display: 'flex', flexDirection: 'column' }}>
               <div className="kep-row">
                 <span style={{ flex: 1 }}>
                   <strong style={{ color: '#ff9800' }}>{h}:</strong> {fmtCode(infóText)}
+                  {minPengeWarning && <span className="aktiv-min-penge-warning">{minPengeWarning}</span>}
                 </span>
                 <button className="fort-delete" onClick={e => {
                   e.stopPropagation();
