@@ -20,6 +20,7 @@ import { lookupFegyver } from './engine/helpers';
 import { validateKarakter, validateKarakterData } from './engine/validate';
 import './App.css';
 import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, downloadFile, shareFile, loadKarakterFromFile } from './engine/file-ops';
+import { encodeKarakterUrl, decodeKarakterFromHash } from './engine/url-share';
 
 interface UndoEntry { timestamp: number; leírás: string; session: Session; karakter: Karakter; }
 
@@ -189,6 +190,8 @@ function App() {
   const [loadError, setLoadError] = useState('');
   const [showFullscreenHint, setShowFullscreenHint] = useState(false);
   const [versionHint, setVersionHint] = useState('');
+  const [toast, setToast] = useState<{ msg: string; type: 'success' | 'error' } | null>(null);
+  const [importConfirm, setImportConfirm] = useState<{ karakter: Karakter; matchUid: string } | null>(null);
   const [overlayScreen, setOverlayScreen] = useState<'jegyzetek' | 'naplo' | null>(null);
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTapTitle = useRef(0);
@@ -215,6 +218,74 @@ function App() {
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
   });
+
+  // Toast auto-dismiss
+  useEffect(() => {
+    if (!toast) return;
+    const t = setTimeout(() => setToast(null), 2500);
+    return () => clearTimeout(t);
+  }, [toast]);
+
+  // URL hash import (app mount)
+  const hashImportDone = useRef(false);
+  useEffect(() => {
+    if (hashImportDone.current || !data) return;
+    const hash = window.location.hash.slice(1);
+    if (hash.length < 20) return;
+    hashImportDone.current = true;
+    const result = decodeKarakterFromHash(hash);
+    if ('error' in result) {
+      setToast({ msg: result.error, type: 'error' });
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+      return;
+    }
+    const imported = result.karakter;
+    // Ütközés vizsgálat: név + tsz
+    let slots: { uid: string; név: string; tsz: number; mentés_dátum: string }[] = [];
+    try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+    const match = slots.find(s => s.név === imported.név && s.tsz === imported.tsz);
+    if (match) {
+      imported.uid = generateUid();
+      imported.id_leíró = generateIdLeíró(imported.név, imported.tsz);
+      setImportConfirm({ karakter: imported, matchUid: match.uid });
+    } else {
+      imported.uid = generateUid();
+      imported.id_leíró = generateIdLeíró(imported.név, imported.tsz);
+      importKarakter(imported, false);
+    }
+    history.replaceState(null, '', window.location.pathname + window.location.search);
+  }, [data]);
+
+  function importKarakter(k: Karakter, overwriteUid: string | false) {
+    if (overwriteUid) {
+      // Felülírás: meglévő uid-val
+      const final = { ...k, uid: overwriteUid, id_leíró: generateIdLeíró(k.név, k.tsz) };
+      localStorage.setItem(`szilank_char_${overwriteUid}`, JSON.stringify(final));
+      setKarakter(final);
+    } else {
+      // Új slot
+      setKarakter(k);
+    }
+    setUndoStack([]);
+    setTestMode(false);
+    setIsDirty(true);
+    setToast({ msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
+    setImportConfirm(null);
+  }
+
+  function shareSlotUrl(slotUid: string) {
+    const charData = localStorage.getItem(`szilank_char_${slotUid}`);
+    if (!charData) return;
+    try {
+      const parsed = JSON.parse(charData) as Karakter;
+      const url = encodeKarakterUrl(parsed);
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(() => setToast({ msg: 'Karakter link vágólapra másolva!', type: 'success' }));
+      } else {
+        window.prompt('Karakter link (másold ki):', url);
+      }
+    } catch { setToast({ msg: 'Hiba az URL generálásakor.', type: 'error' }); }
+  }
 
   // Taktika fok invalidáció: fortély törlés után extra fokok érvénytelenné válhatnak
   useEffect(() => {
@@ -556,6 +627,10 @@ function App() {
                         } catch { /* */ }
                       }}>{karakter?.uid === s.uid ? '●' : '○'} {truncSlotName(s.név)} ({s.tsz || '?'}sz)</span>
                       <span style={{ fontSize: '11px', color: '#888', marginRight: '8px' }}>{relTime(s.mentés_dátum)}</span>
+                      <span style={{ color: '#90caf9', cursor: 'pointer', fontSize: '14px', marginRight: '8px' }} onClick={(e) => {
+                        e.stopPropagation();
+                        shareSlotUrl(s.uid);
+                      }}>🔗</span>
                       <span style={{ color: '#e53935', cursor: 'pointer', fontSize: '14px', fontWeight: 'bold' }} onClick={(e) => {
                         e.stopPropagation();
                         setSlotDeleteTarget({ uid: s.uid, név: `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)` });
@@ -718,6 +793,36 @@ function App() {
                 </>
               )}
               {overlayScreen === 'naplo' && <NaploTab karakter={karakter} setKarakter={setKarakter} />}
+            </div>
+          </div>
+        </div>,
+        document.body
+      )}
+
+      {toast && createPortal(
+        <div style={{ position: 'fixed', bottom: '80px', left: '50%', transform: 'translateX(-50%)',
+          background: toast.type === 'success' ? '#2e7d32' : '#c62828', color: '#fff',
+          padding: '10px 20px', borderRadius: '8px', fontSize: '13px', zIndex: 99999,
+          boxShadow: '0 4px 12px rgba(0,0,0,0.5)', maxWidth: '90vw', textAlign: 'center' }}>
+          {toast.msg}
+        </div>,
+        document.body
+      )}
+
+      {importConfirm && createPortal(
+        <div className="kep-prompt-overlay">
+          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '320px' }}>
+            <label style={{ fontWeight: 'bold' }}>Karakter importálása</label>
+            <span style={{ fontSize: '13px', color: 'var(--text-dim)', textAlign: 'center' }}>
+              „{importConfirm.karakter.név} ({importConfirm.karakter.tsz}sz)" már létezik a Karaktertáradban.
+            </span>
+            <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <button className="menu-item" style={{ padding: '6px 12px', fontSize: '13px' }}
+                onClick={() => importKarakter(importConfirm.karakter, importConfirm.matchUid)}>Felülírás</button>
+              <button className="menu-item" style={{ padding: '6px 12px', fontSize: '13px' }}
+                onClick={() => importKarakter(importConfirm.karakter, false)}>Új példány</button>
+              <button className="menu-item" style={{ padding: '6px 12px', fontSize: '13px' }}
+                onClick={() => setImportConfirm(null)}>Mégse</button>
             </div>
           </div>
         </div>,
