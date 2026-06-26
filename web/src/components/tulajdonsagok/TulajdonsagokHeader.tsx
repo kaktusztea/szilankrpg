@@ -1,6 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Tulajdonsagok } from '../../engine/types';
-import { TulajdonsagCell } from '../TulajdonsagCell';
+import { TulajdonsagCell } from './TulajdonsagCell';
 
 interface Props {
   data: GameData;

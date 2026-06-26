@@ -1,1 +1,0 @@
-export { HarcScreen } from './harc';

@@ -5,8 +5,8 @@ import { buildDefsByGroup, getDisplayName } from './helpers';
 import { TulajdonsagokHeader } from './TulajdonsagokHeader';
 import { KepzettsegCsoport } from './KepzettsegCsoport';
 import { TulajdonsagokPopups } from './TulajdonsagokPopups';
-import { PrimerKpBox } from '../PrimerKpBox';
-import '../TulajdonsagokScreen.css';
+import { PrimerKpBox } from './PrimerKpBox';
+import './TulajdonsagokScreen.css';
 
 export function TulajdonsagokScreen({
   data, gameMode, karakter, tulajdonságok, setTulajdonságok,

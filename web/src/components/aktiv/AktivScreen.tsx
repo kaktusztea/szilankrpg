@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { AktivBaseProps } from './types';
-import { calcHatásPool } from '../HatasPoolCalc';
+import { calcHatásPool } from './HatasPoolCalc';
 import { AktivFegyverSection } from './AktivFegyverSection';
 import { AktivHatasPool } from './AktivHatasPool';
 import { AktivHelyzetek } from './AktivHelyzetek';
@@ -10,7 +10,7 @@ import { AktivTaktikak } from './AktivTaktikak';
 import { AktivStatuszok } from './AktivStatuszok';
 import { AktivManover } from './AktivManover';
 import { AktivNarrativ } from './AktivNarrativ';
-import '../AktivScreen.css';
+import './AktivScreen.css';
 
 export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);

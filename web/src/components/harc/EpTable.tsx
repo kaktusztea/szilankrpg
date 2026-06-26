@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
-import type { SebzésRubrika } from '../engine/types';
+import type { SebzésRubrika } from '../../engine/types';
 import './EpTable.css';
 
 type SebTípus = 'S' | 'V' | 'Z' | 'FP' | '';

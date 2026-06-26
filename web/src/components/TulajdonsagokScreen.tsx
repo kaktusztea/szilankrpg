@@ -1,1 +1,0 @@
-export { TulajdonsagokScreen } from './tulajdonsagok';

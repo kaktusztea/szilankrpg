@@ -1,1 +1,0 @@
-export { TavharcScreen } from './tavharc';

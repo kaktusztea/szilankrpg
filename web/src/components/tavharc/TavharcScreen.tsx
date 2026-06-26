@@ -6,7 +6,7 @@ import { TavharcGameSelector } from './TavharcGameSelector';
 import { TavharcKalkulator } from './TavharcKalkulator';
 import { TavharcReszletek } from './TavharcReszletek';
 import { TavharcPopups } from './TavharcPopups';
-import '../TavharcScreen.css';
+import './TavharcScreen.css';
 
 export function TavharcScreen({ data, karakter, session, setSession, setKarakter, gameMode }: TavharcProps) {
   const k = karakter;

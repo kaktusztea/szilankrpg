@@ -10,7 +10,7 @@ import { FajMisztériumSection } from './FajMiszteriumSection';
 import { ŐsiNyelvSection } from './OsiNyelvSection';
 import { MisztikusFortélyokSection } from './MisztikusFortelyokSection';
 import { MisztikusPopups } from './MisztikusPopups';
-import '../MisztikusScreen.css';
+import './MisztikusScreen.css';
 
 export function MisztikusScreen({ data, karakter, képzettségek, setKépzettségek, fortélyok, setFortélyok, gameMode }: MisztikusScreenProps) {
   const konstansok = data.konstansok;

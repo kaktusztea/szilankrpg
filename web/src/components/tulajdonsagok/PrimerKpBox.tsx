@@ -1,5 +1,5 @@
-import type { GameData } from '../engine/data-loader';
-import type { Karakter } from '../engine/types';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter } from '../../engine/types';
 
 export function PrimerKpBox({ data, karakter, képzettségek }: {
   data: GameData;

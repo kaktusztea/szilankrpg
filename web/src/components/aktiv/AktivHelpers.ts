@@ -1,6 +1,6 @@
-import type { GameData } from '../engine/data-loader';
-import type { Karakter, Session } from '../engine/types';
-import { lookupFegyver } from '../engine/helpers';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter, Session } from '../../engine/types';
+import { lookupFegyver } from '../../engine/helpers';
 
 /** Taktika engedélyezett-e az aktuális session alapján */
 export function isTaktikaAllowed(

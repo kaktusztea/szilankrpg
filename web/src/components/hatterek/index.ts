@@ -1,0 +1,1 @@
+export { HatterekScreen } from './HatterekScreen';

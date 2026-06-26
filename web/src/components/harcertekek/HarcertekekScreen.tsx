@@ -1,7 +1,7 @@
-import type { GameData } from '../engine/data-loader';
-import type { Karakter } from '../engine/types';
-import { HmSection, HarciKepzettsegekSection, FegyverekSection, PancelSection, PajzsSection, Popups } from './harcertekek';
-import { useHint, usePopupState, useKarakterMutators } from './harcertekek/hooks';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter } from '../../engine/types';
+import { HmSection, HarciKepzettsegekSection, FegyverekSection, PancelSection, PajzsSection, Popups } from './index';
+import { useHint, usePopupState, useKarakterMutators } from './hooks';
 import './HarcertekekScreen.css';
 
 interface Props {

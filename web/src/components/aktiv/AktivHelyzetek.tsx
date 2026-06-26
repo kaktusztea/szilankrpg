@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { AktivBaseProps } from './types';
 import { fmtCode } from '../formatters';
-import { isHelyzetAvailable, getMinPengeWarning, getHelyzetInfoText } from '../AktivHelpers';
+import { isHelyzetAvailable, getMinPengeWarning, getHelyzetInfoText } from './AktivHelpers';
 
 interface Props extends AktivBaseProps {
   helyzetFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;

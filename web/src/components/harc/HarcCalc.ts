@@ -1,9 +1,9 @@
-import type { GameData } from '../engine/data-loader';
-import type { Karakter, Session } from '../engine/types';
-import { evaluate, buildContext } from '../engine/reactive';
-import { lookupFegyver } from '../engine/helpers';
-import { evaluateAlapesetek } from '../engine/alapeset';
-import { calcKétkezesHarc } from '../engine/ketkezes';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter, Session } from '../../engine/types';
+import { evaluate, buildContext } from '../../engine/reactive';
+import { lookupFegyver } from '../../engine/helpers';
+import { evaluateAlapesetek } from '../../engine/alapeset';
+import { calcKétkezesHarc } from '../../engine/ketkezes';
 
 export interface FegyverResult {
   fegyver_név: string;

@@ -4,7 +4,7 @@ import type { FortelyokScreenProps, DeleteTarget, SzabadTypePicker } from './typ
 import { buildDefsByGroup, displayName, getFortelyokForCsoport } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
 import { DeletePopup, FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
-import '../FortelyokScreen.css';
+import './FortelyokScreen.css';
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, távfegyverNevek, nyelvtanulásSzint, képzettségek }: FortelyokScreenProps) {
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());

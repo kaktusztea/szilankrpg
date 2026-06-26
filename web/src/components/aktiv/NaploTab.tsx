@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { Karakter } from '../engine/types';
+import type { Karakter } from '../../engine/types';
 import './NaploTab.css';
 
 export function NaploTab({ karakter, setKarakter }: { karakter: Karakter; setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>> }) {

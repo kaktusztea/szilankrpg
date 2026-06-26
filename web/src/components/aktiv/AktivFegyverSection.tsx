@@ -1,6 +1,6 @@
 import type { AktivBaseProps } from './types';
 import { lookupFegyver } from '../../engine/helpers';
-import { buildFegyverOpciók } from '../AktivHelpers';
+import { buildFegyverOpciók } from './AktivHelpers';
 
 interface Props extends AktivBaseProps {
   onShowFegyverfogás: () => void;

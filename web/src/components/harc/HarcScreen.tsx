@@ -5,9 +5,9 @@ import { useHarcComputed } from './useHarcComputed';
 import { HarcHeader } from './HarcHeader';
 import { HarcFegyverTable } from './HarcFegyverTable';
 import { HarcPopups } from './HarcPopups';
-import { EpTable } from '../EpTable';
-import { calcFtEnyhítés } from '../HarcCalc';
-import '../HarcScreen.css';
+import { EpTable } from './EpTable';
+import { calcFtEnyhítés } from './HarcCalc';
+import './HarcScreen.css';
 
 export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: HarcBaseProps) {
   const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');

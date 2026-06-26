@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { FortelySummary } from '../engine/data-loader';
-import type { Fortely } from '../engine/types';
+import type { FortelySummary } from '../../engine/data-loader';
+import type { Fortely } from '../../engine/types';
 
 /**
  * Generikus fortély felvételi wizard overlay.

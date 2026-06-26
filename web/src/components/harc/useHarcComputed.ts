@@ -8,7 +8,7 @@ import {
   calcTaktikaMods, buildPancelLookups, calcFortelyMods,
   buildFegyverRows, calcFegyverResults, applyFegyverOverrides,
   calcKétkezes, calcFogás,
-} from '../HarcCalc';
+} from './HarcCalc';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;

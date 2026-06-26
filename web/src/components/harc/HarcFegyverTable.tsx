@@ -1,6 +1,6 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import type { FegyverResult } from '../HarcCalc';
+import type { FegyverResult } from './HarcCalc';
 import { lookupFegyver } from '../../engine/helpers';
 
 interface HarcFegyverTableProps {

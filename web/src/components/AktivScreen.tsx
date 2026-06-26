@@ -1,1 +1,0 @@
-export { AktivScreen } from './aktiv';

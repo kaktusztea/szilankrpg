@@ -1,7 +1,7 @@
-import type { GameData } from '../engine/data-loader';
-import type { Karakter, Session } from '../engine/types';
-import { evaluateAlapesetek, AktívAlapeset } from '../engine/alapeset';
-import { buildAktívFeltételek } from '../engine/feltetelek';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter, Session } from '../../engine/types';
+import { evaluateAlapesetek, AktívAlapeset } from '../../engine/alapeset';
+import { buildAktívFeltételek } from '../../engine/feltetelek';
 
 export interface HatásPoolData {
   státuszPerElem: { név: string; alcím?: string; hatások: { cél: string; operátor: string; érték?: number; megjegyzés?: string }[] }[];

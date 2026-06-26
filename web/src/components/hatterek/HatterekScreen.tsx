@@ -1,6 +1,6 @@
 
-import type { GameData } from '../engine/data-loader';
-import type { Karakter } from '../engine/types';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter } from '../../engine/types';
 import './HatterekScreen.css';
 
 interface Props {

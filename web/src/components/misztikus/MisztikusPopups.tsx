@@ -1,7 +1,7 @@
 import { createPortal } from 'react-dom';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
-import { FortélyFelvétel } from '../FortelyFelvetel';
+import { FortélyFelvétel } from '../fortelyok/FortelyFelvetel';
 
 interface TradícióOpció {
   név: string;
@@ -205,7 +205,7 @@ function AltípusLista({ tradícióOpciók, tradícióNév, onPick }: {
   return (
     <>
       {[...byPantheon.entries()].map(([pantheon, items]) => (
-        <div key={pantheon}>
+        <div key={pantheon} className="miszt-pantheon-group">
           <div className="miszt-section-label">{pantheon}</div>
           {items.map(item => (
             <button key={item.név} className="he-field-btn" onClick={() => onPick(item.név)}>

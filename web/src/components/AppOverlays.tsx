@@ -5,7 +5,7 @@ import type { GameData } from '../engine/data-loader';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { validateKarakterData } from '../engine/validate';
 import { SlotList } from './SlotList';
-import { NaploTab } from './NaploTab';
+import { NaploTab } from './aktiv/NaploTab';
 
 export interface OverlayState {
   showMenu: boolean;
