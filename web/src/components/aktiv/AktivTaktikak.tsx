@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { GameData } from '../engine/data-loader';
-import type { Karakter, Session, AktívTaktika } from '../engine/types';
-import { fmtHatás } from './formatters';
-import { isTaktikaAllowed, getTaktikaMods } from './AktivHelpers';
+import type { GameData } from '../../engine/data-loader';
+import type { Karakter, Session, AktívTaktika } from '../../engine/types';
+import { fmtHatás } from '../formatters';
+import { isTaktikaAllowed, getTaktikaMods } from '../AktivHelpers';
 
 interface Props {
   data: GameData;

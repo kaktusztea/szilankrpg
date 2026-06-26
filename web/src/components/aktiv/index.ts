@@ -1,0 +1,1 @@
+export { AktivScreen } from './AktivScreen';

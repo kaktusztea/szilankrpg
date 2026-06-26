@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { Session } from '../engine/types';
+import type { Session } from '../../engine/types';
 
 interface Props {
   session: Session;

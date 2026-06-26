@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
-import type { GameData } from '../engine/data-loader';
-import type { Session } from '../engine/types';
+import type { GameData } from '../../engine/data-loader';
+import type { Session } from '../../engine/types';
 
 interface Props {
   data: GameData;
