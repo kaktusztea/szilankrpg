@@ -1,6 +1,5 @@
 import { useState, useEffect, useRef, useMemo, TouchEvent, useCallback, Component } from 'react';
 import type { ReactNode, ErrorInfo } from 'react';
-import { createPortal } from 'react-dom';
 import { loadGameData } from './engine/data-loader';
 import type { GameData } from './engine/data-loader';
 import { AktivScreen } from './components/AktivScreen';
@@ -11,7 +10,8 @@ import { FortelyokScreen } from './components/FortelyokScreen';
 import { HarcertekekScreen } from './components/HarcertekekScreen';
 import { MisztikusScreen } from './components/MisztikusScreen';
 import { HatterekScreen } from './components/HatterekScreen';
-import { NaploTab } from './components/NaploTab';
+import { AppOverlays } from './components/AppOverlays';
+import type { OverlayState } from './components/AppOverlays';
 import { evaluate, buildContext, buildArrayContext } from './engine/reactive';
 import type { Karakter, Session, Fortely } from './engine/types';
 import { DEFAULT_SESSION } from './engine/types';
@@ -34,6 +34,14 @@ const ALL_TABS = [
   { id: 'fortelyok', label: '🟣', editOnly: false },
   { id: 'hatterek', label: '🟡', editOnly: false },
 ];
+
+const INITIAL_OVERLAYS: OverlayState = {
+  showMenu: false, showSzilánkPicker: false, showSlotList: false,
+  slotDeleteTarget: null, showSavePopup: false, saveFile: null,
+  loadError: '', showFullscreenHint: false, showNewConfirm: false,
+  showUndo: false, undoSelected: null, overlayScreen: null,
+  sharePopup: null, toast: null, importConfirm: null,
+};
 
 function App() {
   const [data, setData] = useState<GameData | null>(null);
@@ -124,8 +132,6 @@ function App() {
       const s = localStorage.getItem('szilank_undo'); return s ? JSON.parse(s) : [];
     } catch { return []; }
   });
-  const [showUndo, setShowUndo] = useState(false);
-  const [undoSelected, setUndoSelected] = useState<number | null>(null);
   const karakterRef = useRef(karakter);
   karakterRef.current = karakter;
 
@@ -173,48 +179,39 @@ function App() {
     const restoredKarakter = { ...entry.karakter, jegyzetek: karakter.jegyzetek, napló: karakter.napló };
     setKarakter(restoredKarakter);
     setUndoStack(prev => prev.slice(index + 1));
-    setShowUndo(false);
-    setUndoSelected(null);
+    setOverlay('showUndo', false);
+    setOverlay('undoSelected', null);
   }
 
   // --- Touch / swipe ---
   const touchStart = useRef<number>(0);
   const touchY = useRef<number>(0);
-  const [showNewConfirm, setShowNewConfirm] = useState(false);
-  const [showMenu, setShowMenu] = useState(false);
-  const [showSzilánkPicker, setShowSzilánkPicker] = useState(false);
-  const [showSlotList, setShowSlotList] = useState(false);
-  const [slotDeleteTarget, setSlotDeleteTarget] = useState<{ uid: string; név: string } | null>(null);
-  const [showSavePopup, setShowSavePopup] = useState(false);
-  const [saveFile, setSaveFile] = useState<{ blob: Blob; filename: string } | null>(null);
-  const [loadError, setLoadError] = useState('');
-  const [showFullscreenHint, setShowFullscreenHint] = useState(false);
+  const [overlays, setOverlays] = useState<OverlayState>(INITIAL_OVERLAYS);
+  const setOverlay = useCallback(<K extends keyof OverlayState>(key: K, value: OverlayState[K]) => {
+    setOverlays(prev => ({ ...prev, [key]: value }));
+  }, []);
   const [versionHint, setVersionHint] = useState('');
-  const [toast, setToast] = useState<{ msg: string; type: 'success' | 'error' } | null>(null);
-  const [importConfirm, setImportConfirm] = useState<{ karakter: Karakter; matchUid: string } | null>(null);
-  const [sharePopup, setSharePopup] = useState<{ név: string; copied: boolean; url?: string } | null>(null);
-  const [overlayScreen, setOverlayScreen] = useState<'jegyzetek' | 'naplo' | null>(null);
   const versionHintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const lastTapTitle = useRef(0);
   const tabBarRef = useRef<HTMLElement>(null);
   const indicatorRef = useRef<HTMLDivElement>(null);
 
+  const anyOverlayOpen = overlays.showNewConfirm || overlays.showSlotList || overlays.showUndo || overlays.showMenu || !!overlays.loadError || !!overlays.overlayScreen || overlays.showFullscreenHint || overlays.showSzilánkPicker || !!overlays.sharePopup || !!overlays.slotDeleteTarget || overlays.showSavePopup || !!overlays.saveFile;
+
   useEffect(() => {
-    if (!showNewConfirm && !showSlotList && !showUndo && !showMenu && !loadError && !overlayScreen && !showFullscreenHint && !showSzilánkPicker) return;
+    if (!anyOverlayOpen) return;
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setShowNewConfirm(false); setShowMenu(false); setShowSlotList(false);
-        setShowUndo(false); setLoadError(''); setOverlayScreen(null);
-        setShowFullscreenHint(false); setShowSzilánkPicker(false);
+        setOverlays(prev => ({ ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm }));
       }
     }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [showNewConfirm, showSlotList, showUndo, showMenu, loadError, overlayScreen, showFullscreenHint, showSzilánkPicker]);
+  }, [anyOverlayOpen]);
 
   useEffect(() => {
     function onKeyDown(e: KeyboardEvent) {
-      if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); setShowSavePopup(true); }
+      if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); setOverlay('showSavePopup', true); }
     }
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
@@ -222,10 +219,10 @@ function App() {
 
   // Toast auto-dismiss
   useEffect(() => {
-    if (!toast) return;
-    const t = setTimeout(() => setToast(null), 2500);
+    if (!overlays.toast) return;
+    const t = setTimeout(() => setOverlay('toast', null), 2500);
     return () => clearTimeout(t);
-  }, [toast]);
+  }, [overlays.toast]);
 
   // URL hash import (app mount)
   const hashImportDone = useRef(false);
@@ -236,22 +233,19 @@ function App() {
     hashImportDone.current = true;
     const result = decodeKarakterFromHash(hash);
     if ('error' in result) {
-      setToast({ msg: result.error, type: 'error' });
+      setOverlay('toast', { msg: result.error, type: 'error' });
       history.replaceState(null, '', window.location.pathname + window.location.search);
       return;
     }
     const imported = result.karakter;
-    // Ütközés vizsgálat: név + tsz
     let slots: { uid: string; név: string; tsz: number; mentés_dátum: string }[] = [];
     try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
     const match = slots.find(s => s.név === imported.név && s.tsz === imported.tsz);
+    imported.uid = generateUid();
+    imported.id_leíró = generateIdLeíró(imported.név, imported.tsz);
     if (match) {
-      imported.uid = generateUid();
-      imported.id_leíró = generateIdLeíró(imported.név, imported.tsz);
-      setImportConfirm({ karakter: imported, matchUid: match.uid });
+      setOverlay('importConfirm', { karakter: imported, matchUid: match.uid });
     } else {
-      imported.uid = generateUid();
-      imported.id_leíró = generateIdLeíró(imported.név, imported.tsz);
       importKarakter(imported, false);
     }
     history.replaceState(null, '', window.location.pathname + window.location.search);
@@ -259,19 +253,17 @@ function App() {
 
   function importKarakter(k: Karakter, overwriteUid: string | false) {
     if (overwriteUid) {
-      // Felülírás: meglévő uid-val
       const final = { ...k, uid: overwriteUid, id_leíró: generateIdLeíró(k.név, k.tsz) };
       localStorage.setItem(`szilank_char_${overwriteUid}`, JSON.stringify(final));
       setKarakter(final);
     } else {
-      // Új slot
       setKarakter(k);
     }
     setUndoStack([]);
     setTestMode(false);
     setIsDirty(true);
-    setToast({ msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
-    setImportConfirm(null);
+    setOverlay('toast', { msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
+    setOverlay('importConfirm', null);
   }
 
   async function shareSlotUrl(slotUid: string) {
@@ -281,12 +273,9 @@ function App() {
       const parsed = JSON.parse(charData) as Karakter;
       const url = encodeKarakterUrl(parsed);
       let copied = false;
-      try {
-        await navigator.clipboard.writeText(url);
-        copied = true;
-      } catch { /* clipboard blocked */ }
-      setSharePopup({ név: parsed.név || 'Névtelen', copied, url });
-    } catch { setToast({ msg: 'Hiba az URL generálásakor.', type: 'error' }); }
+      try { await navigator.clipboard.writeText(url); copied = true; } catch { /* clipboard blocked */ }
+      setOverlay('sharePopup', { név: parsed.név || 'Névtelen', copied, url });
+    } catch { setOverlay('toast', { msg: 'Hiba az URL generálásakor.', type: 'error' }); }
   }
 
   // Taktika fok invalidáció: fortély törlés után extra fokok érvénytelenné válhatnak
@@ -387,19 +376,19 @@ function App() {
     setUndoStack([]);
     setTestMode(false);
     setIsDirty(true);
-    setTimeout(() => setShowSlotList(true), 100);
+    setTimeout(() => setOverlay('showSlotList', true), 100);
   }
 
   function handleGenerateSave(mode: 'single' | 'backup') {
     if (!karakter) return;
-    setSaveFile(generateSaveFile(karakter, undoStack, mode));
-    setShowSavePopup(false);
+    setOverlay('saveFile', generateSaveFile(karakter, undoStack, mode));
+    setOverlay('showSavePopup', false);
   }
 
   async function loadKarakter() {
     if (!data) return;
     const result = await loadKarakterFromFile(data);
-    if ('error' in result) { setLoadError(result.error); return; }
+    if ('error' in result) { setOverlay('loadError', result.error); return; }
     setKarakter(result.karakter);
     setUndoStack(result.undo);
     setTestMode(false);
@@ -456,25 +445,17 @@ function App() {
   if (error) return <div className="error">Hiba: {error}</div>;
   if (!data || !karakter) return <div className="loading">Betöltés...</div>;
 
-  function truncSlotName(név: string | undefined): string {
-    const n = név || 'Névtelen';
-    const vm = n.match(/ v(\d+)$/);
-    const base = vm ? n.slice(0, -vm[0].length) : n;
-    const truncated = base.length > 15 ? base.slice(0, 15) + '..' : base;
-    return truncated + (vm ? ` v${vm[1]}` : '');
-  }
-
   const { tulajdonságok, képzettségek, fortélyok, session } = karakter;
 
   return (
     <div className="app" onContextMenu={e => e.preventDefault()}>
       <header className="header">
         <span className="title" style={testMode ? { color: '#ff9800' } : undefined} onClick={handleTitleTap}>Szilánk</span>
-        <span className="header-szilank" onClick={() => setShowSzilánkPicker(true)}>{session.szilánk}</span>
+        <span className="header-szilank" onClick={() => setOverlay('showSzilánkPicker', true)}>{session.szilánk}</span>
         <div className="header-btns">
-                    <button className="gear-btn" onClick={() => setOverlayScreen('naplo')}>📅</button>
-          <button className="gear-btn" onClick={() => setOverlayScreen('jegyzetek')}>✏️</button>
-          <button className="gear-btn" style={{ padding: '4px 12px' }} onClick={() => setShowMenu(true)}>⚙️</button>
+          <button className="gear-btn" onClick={() => setOverlay('overlayScreen', 'naplo')}>📅</button>
+          <button className="gear-btn" onClick={() => setOverlay('overlayScreen', 'jegyzetek')}>✏️</button>
+          <button className="gear-btn" style={{ padding: '4px 12px' }} onClick={() => setOverlay('showMenu', true)}>⚙️</button>
           <button
             className="mode-toggle"
             style={{ background: gameMode ? '#4caf50' : '#ff9800', color: '#000' }}
@@ -535,316 +516,18 @@ function App() {
         })}
       </nav>
 
-      {showMenu && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '6px', minWidth: '200px' }}>
-            <button className="menu-item" disabled={undoStack.length === 0}
-              onClick={() => { setShowMenu(false); setShowUndo(true); setUndoSelected(null); }}>
-              ↩ Visszavonás{undoStack.length > 0 ? ` (${undoStack.length})` : ''}
-            </button>
-            <button className="menu-item" onClick={() => { setShowMenu(false); setShowSlotList(true); }}>📂 Karakterek</button>
-            <button className="menu-item" onClick={() => { setShowMenu(false); duplicateKarakter(); }}>📋 Duplikál</button>
-            <button className="menu-item" onClick={() => { setShowMenu(false); setShowSavePopup(true); }}>💾 Mentés</button>
-            <button className="menu-item" onClick={() => { setShowMenu(false); setShowNewConfirm(true); }}>📄 Új karakter</button>
-            {document.fullscreenEnabled && (
-              <button className="menu-item" onClick={() => { if (document.fullscreenElement) document.exitFullscreen(); else document.documentElement.requestFullscreen(); setShowMenu(false); }}>
-                {document.fullscreenElement ? '⛶ Kilépés teljes képernyőből' : '⛶ Teljes képernyő'}
-              </button>
-            )}
-            {!document.fullscreenEnabled && !window.matchMedia('(display-mode: standalone)').matches && (
-              <button className="menu-item" onClick={() => { setShowMenu(false); setShowFullscreenHint(true); }}>⛶ Teljes képernyő</button>
-            )}
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {showSzilánkPicker && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '8px' }}>
-            <label style={{ fontWeight: 'bold' }}>Szilánk</label>
-            <div style={{ display: 'flex', gap: '8px' }}>
-              {[0, 1, 2, 3].map(v => (
-                <button key={v} className={`fort-fok-btn ${session.szilánk === v ? 'active' : ''}`}
-                  onClick={() => { setSession(s => ({ ...s, szilánk: v })); setShowSzilánkPicker(false); }}>{v}</button>
-              ))}
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {showNewConfirm && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>Új karakter?</label>
-            <span style={{ fontSize: '13px', color: 'var(--text-dim)', textAlign: 'center' }}>Az aktuális karakter NEM vész el, hanem mentésre kerül.<br/>A Karakterek menü alatt elérhető.</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
-              const uid = generateUid();
-              setKarakter({ ...data.emptyKarakter, uid, id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
-              setUndoStack([]);
-              setTestMode(false);
-              setIsDirty(false);
-              setShowNewConfirm(false);
-            }}>Új karakter</button>
-          </div>
-        </div>,
-        document.body
-      )}
-
-
-
-      {showSlotList && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSlotList(false); }}>
-          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '8px', minWidth: '300px', maxHeight: '80vh', overflow: 'auto' }}>
-            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Karakterek</label>
-            {(() => {
-              let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
-              try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
-              slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
-              const relTime = (iso: string) => {
-                const diff = Date.now() - new Date(iso).getTime();
-                if (diff < 60000) return 'most';
-                if (diff < 3600000) return `${Math.floor(diff / 60000)} perce`;
-                if (diff < 86400000) return `${Math.floor(diff / 3600000)} órája`;
-                if (diff < 604800000) return `${Math.floor(diff / 86400000)} napja`;
-                return `${Math.floor(diff / 604800000)} hete`;
-              };
-              return (<>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                  {slots.map(s => (
-                    <div key={s.uid} style={{ padding: '8px 12px', borderRadius: '4px', cursor: 'pointer', display: 'flex', justifyContent: 'space-between', alignItems: 'center',
-                      background: karakter?.uid === s.uid ? '#2a3a2a' : 'var(--input-bg)', border: karakter?.uid === s.uid ? '1px solid var(--success)' : '1px solid #444' }}>
-                      <span style={{ flex: 1, fontWeight: karakter?.uid === s.uid ? 'bold' : 'normal' }} onClick={() => {
-                        const charData = localStorage.getItem(`szilank_char_${s.uid}`);
-                        if (!charData) return;
-                        try {
-                          const parsed = JSON.parse(charData);
-                          if (validateKarakter(parsed)) {
-                            setKarakter({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } });
-                            setUndoStack((parsed as any)._undo || []);
-                            setTestMode(false); setIsDirty(true);
-                            setShowSlotList(false);
-                          }
-                        } catch { /* */ }
-                      }}>{karakter?.uid === s.uid ? '●' : '○'} {truncSlotName(s.név)} ({s.tsz || '?'}sz)</span>
-                      <span style={{ fontSize: '11px', color: '#888', marginRight: '8px' }}>{relTime(s.mentés_dátum)}</span>
-                      <span className="slot-share-btn" onClick={(e) => {
-                        e.stopPropagation();
-                        shareSlotUrl(s.uid);
-                      }}>🔗</span>
-                      <span style={{ color: '#e53935', cursor: 'pointer', fontSize: '14px', fontWeight: 'bold' }} onClick={(e) => {
-                        e.stopPropagation();
-                        setSlotDeleteTarget({ uid: s.uid, név: `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)` });
-                      }}>✕</span>
-                    </div>
-                  ))}
-                  {slots.length === 0 && <span style={{ color: '#888', textAlign: 'center' }}>Nincs mentett karakter</span>}
-                </div>
-                <div style={{ display: 'flex', gap: '8px', marginTop: '8px' }}>
-                  <button className="menu-item" style={{ flex: 1, fontSize: '13px', border: '1px solid #ff9800' }} onClick={() => {
-                    const refErr = validateKarakterData(data.testKarakter, data);
-                    if (refErr) { setShowSlotList(false); setLoadError(`Teszt karakter hiba: ${refErr}`); return; }
-                    setKarakter({
-                      ...data.testKarakter,
-                      uid: data.testKarakter.uid || generateUid(),
-                      id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
-                      session: { ...DEFAULT_SESSION, ...data.testKarakter.session }
-                    });
-                    setUndoStack([]); setTestMode(true); setShowSlotList(false);
-                  }}>🧪 Teszt</button>
-                  <button className="menu-item" style={{ flex: 1, fontSize: '13px' }} onClick={() => { setShowSlotList(false); loadKarakter(); }}>📁 Fájlból...</button>
-                </div>
-                {slots.length >= 10 && <span style={{ fontSize: '11px', color: 'var(--warning)', textAlign: 'center' }}>Max 10 slot — töröld egy régit fájlba mentés után</span>}
-              </>);
-            })()}
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {slotDeleteTarget && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setSlotDeleteTarget(null); }}>
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px' }}>
-            <label style={{ fontWeight: 'bold' }}>Karakter törlése</label>
-            <span style={{ fontSize: '13px', color: 'var(--text-dim)' }}>Törlöd: "{slotDeleteTarget.név}"?</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => {
-              const uid = slotDeleteTarget.uid;
-              localStorage.removeItem(`szilank_char_${uid}`);
-              let sl: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
-              try { sl = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
-              sl = sl.filter(x => x.uid !== uid);
-              localStorage.setItem('szilank_slots', JSON.stringify(sl));
-              if (karakter?.uid === uid) {
-                if (sl.length > 0) {
-                  const next = localStorage.getItem(`szilank_char_${sl[0].uid}`);
-                  if (next) { const p = JSON.parse(next); setKarakter({ ...p, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack((p as any)._undo || []); }
-                } else { setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) }); setUndoStack([]); }
-              }
-              setSlotDeleteTarget(null);
-            }}>Törlés</button>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {showSavePopup && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowSavePopup(false); }}>
-          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '10px', minWidth: '260px' }}>
-            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Mentés</label>
-            <button className="menu-item" onClick={() => handleGenerateSave('single')}>📄 Aktuális karakter</button>
-            <button className="menu-item" onClick={() => handleGenerateSave('backup')}>📦 Összes karakter (backup)</button>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {saveFile && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setSaveFile(null); }}>
-          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '10px', minWidth: '260px' }}>
-            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Fájl kész</label>
-            <span style={{ fontSize: '12px', color: '#888', textAlign: 'center' }}>{saveFile.filename}</span>
-            {typeof navigator.share === 'function' && (
-              <button className="menu-item" onClick={() => { shareFile(saveFile.blob, saveFile.filename); setSaveFile(null); }}>📤 Megosztás</button>
-            )}
-            <button className="menu-item" onClick={() => { downloadFile(saveFile.blob, saveFile.filename); setSaveFile(null); }}>💾 Helyi mentés</button>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {showUndo && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) { setShowUndo(false); setUndoSelected(null); } }}>
-          <div className="kep-prompt" style={{ alignItems: 'stretch', gap: '8px', minWidth: '280px' }}>
-            <label style={{ fontWeight: 'bold', textAlign: 'center' }}>Visszavonás</label>
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '4px', maxHeight: '300px', overflowY: 'auto' }}>
-              {undoStack.map((entry, i) => (
-                <div key={entry.timestamp} onClick={() => setUndoSelected(i)}
-                  style={{ padding: '6px 10px', borderRadius: '4px', cursor: 'pointer', fontSize: '13px',
-                    background: undoSelected !== null && i <= undoSelected ? '#3a1a1a' : 'var(--input-bg)',
-                    border: i === undoSelected ? '1px solid #e53935' : '1px solid #444',
-                    color: undoSelected !== null && i <= undoSelected ? '#ff6b6b' : 'var(--text)' }}>
-                  {undoSelected !== null && i <= undoSelected ? '●' : '○'} {entry.leírás}
-                </div>
-              ))}
-            </div>
-            <button disabled={undoSelected === null}
-              style={{ marginTop: '8px', padding: '8px', borderRadius: '4px',
-                background: undoSelected !== null ? '#e53935' : '#444', color: '#fff', border: 'none',
-                cursor: undoSelected !== null ? 'pointer' : 'default', opacity: undoSelected === null ? 0.5 : 1 }}
-              onClick={() => { if (undoSelected !== null) undoTo(undoSelected); }}>
-              Visszaállítás{undoSelected !== null ? ` (${undoSelected + 1} művelet)` : ''}
-            </button>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {loadError && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '320px' }}>
-            <label style={{ fontWeight: 'bold', color: 'var(--error)' }}>Betöltési hiba</label>
-            <span style={{ fontSize: '13px', color: 'var(--text)', textAlign: 'center' }}>{loadError}</span>
-            <button className="btn-del-confirm" style={{ padding: '6px 15px' }} onClick={() => setLoadError('')}>OK</button>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {showFullscreenHint && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '320px' }}>
-            <label style={{ fontWeight: 'bold' }}>Teljes képernyő</label>
-            <span style={{ fontSize: '13px', color: 'var(--text)', textAlign: 'center' }}>
-              {/iPad|iPhone|iPod/.test(navigator.userAgent)
-                ? 'Megosztás ikon (⬆️) → Főképernyőhöz adás'
-                : '⋮ menü → Telepítés / Hozzáadás a kezdőképernyőhöz'}
-            </span>
-            <button className="menu-item" style={{ padding: '6px 15px' }} onClick={() => setShowFullscreenHint(false)}>OK</button>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {overlayScreen && karakter && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setOverlayScreen(null); }}>
-          <div style={{ position: 'fixed', inset: 0, display: 'flex', flexDirection: 'column', background: 'var(--bg)', zIndex: 101 }}>
-            <div style={{ display: 'flex', alignItems: 'center', padding: '8px 12px', borderBottom: '1px solid #333', background: 'var(--primary)' }}>
-              <button style={{ background: 'none', border: 'none', color: 'var(--text)', fontSize: '18px', cursor: 'pointer' }} onClick={() => setOverlayScreen(null)}>✕</button>
-              <span style={{ marginLeft: '10px', fontWeight: 'bold', color: 'var(--text)' }}>{overlayScreen === 'jegyzetek' ? '✏️ Jegyzetek' : '📅 Napló'}</span>
-            </div>
-            <div style={{ flex: 1, overflow: 'auto', padding: '12px' }}>
-              {overlayScreen === 'jegyzetek' && (
-                <>
-                <textarea
-                  className="app-jegyzetek-textarea"
-                  value={karakter.jegyzetek}
-                  onChange={e => setKarakter(prev => prev ? { ...prev, jegyzetek: e.target.value } : prev)}
-                  placeholder="Szabad jegyzetek..."
-                />
-                <div className="app-proba-bar">
-                  <details>
-                    <summary className="app-proba-summary">Tulajdonságpróba (k6)</summary>
-                    <pre className="app-proba-pre">{`3: Könnyű\n4: Átlagos\n5: Nehéz\n6: Nagyon nehéz\n7: Rendkívül nehéz\n8: Emberfeletti`}</pre>
-                  </details>
-                  <details>
-                    <summary className="app-proba-summary">Képzettségpróba (k10)</summary>
-                    <pre className="app-proba-pre">{` 6: Könnyű\n 9: Átlagos\n12: Nehéz\n15: Nagyon nehéz\n18: Rendkívül nehéz\n21: Emberfeletti`}</pre>
-                  </details>
-                </div>
-                </>
-              )}
-              {overlayScreen === 'naplo' && <NaploTab karakter={karakter} setKarakter={setKarakter} />}
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {sharePopup && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setSharePopup(null); }}>
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '340px' }}>
-            <label className="share-popup-label">🔗 Megosztás</label>
-            <span className="share-popup-msg">
-              {sharePopup.copied
-                ? <>„{sharePopup.név}" link vágólapra másolva!</>
-                : <>Másold ki a linket:</>}
-            </span>
-            {!sharePopup.copied && sharePopup.url && (
-              <input readOnly value={sharePopup.url} onFocus={e => e.target.select()} className="share-popup-input" />
-            )}
-            <button className="menu-item" style={{ padding: '6px 15px' }} onClick={() => setSharePopup(null)}>OK</button>
-          </div>
-        </div>,
-        document.body
-      )}
-
-      {toast && createPortal(
-        <div className={`toast ${toast.type === 'success' ? 'toast-success' : 'toast-error'}`}>
-          {toast.msg}
-        </div>,
-        document.body
-      )}
-
-      {importConfirm && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt" style={{ alignItems: 'center', gap: '12px', maxWidth: '320px' }}>
-            <label className="import-confirm-label">Karakter importálása</label>
-            <span className="import-confirm-msg">
-              „{importConfirm.karakter.név} ({importConfirm.karakter.tsz}sz)" már létezik a Karaktertáradban.
-            </span>
-            <div className="import-confirm-btns">
-              <button className="menu-item"
-                onClick={() => importKarakter(importConfirm.karakter, importConfirm.matchUid)}>Felülírás</button>
-              <button className="menu-item"
-                onClick={() => importKarakter(importConfirm.karakter, false)}>Új példány</button>
-              <button className="menu-item"
-                onClick={() => setImportConfirm(null)}>Mégse</button>
-            </div>
-          </div>
-        </div>,
-        document.body
-      )}
+      <AppOverlays
+        state={overlays} setState={setOverlay}
+        data={data} karakter={karakter} session={session}
+        setSession={setSession} setKarakter={setKarakter}
+        undoStack={undoStack} undoTo={undoTo}
+        duplicateKarakter={duplicateKarakter}
+        handleGenerateSave={handleGenerateSave}
+        shareFile={shareFile} downloadFile={downloadFile}
+        loadKarakter={loadKarakter} shareSlotUrl={shareSlotUrl}
+        importKarakter={importKarakter}
+        setUndoStack={setUndoStack} setTestMode={setTestMode} setIsDirty={setIsDirty}
+      />
 
     </div>
   );
