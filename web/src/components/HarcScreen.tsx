@@ -5,19 +5,9 @@ import type { Karakter, Session, SebzésRubrika } from '../engine/types';
 import { evaluate, buildContext } from '../engine/reactive';
 import { lookupFegyver } from '../engine/helpers';
 import { buildAktívFeltételek } from '../engine/feltetelek';
-import { evaluateAlapesetek } from '../engine/alapeset';
-import { calcKétkezesHarc } from '../engine/ketkezes';
+import { calcTaktikaMods, buildPancelLookups, calcFortelyMods, buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKétkezes, calcFogás, calcFtEnyhítés } from './HarcCalc';
 import { EpTable } from './EpTable';
 import './HarcScreen.css';
-
-function calcFtEnyhítés(képzettségek: { név: string; szint: number }[], ftTable: { szint: number; enyhítés: number }[]): number {
-  const ftSzint = képzettségek.find(kp => kp.név === 'Fájdalomtűrés')?.szint ?? 0;
-  let enyhítés = 0;
-  for (const row of ftTable) {
-    if (ftSzint >= row.szint) enyhítés = row.enyhítés;
-  }
-  return enyhítés;
-}
 
 export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: {
   data: GameData;
@@ -64,61 +54,19 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   }, [showVéResetConfirm, showVéHistory, támInfo]);
 
   const k = karakter;
-  const { konstansok, harcmodorBonusz } = data;
+  const { konstansok } = data;
 
   const aktívFeltételek = buildAktívFeltételek(session, data);
 
-  // Taktika módosítók kiszámítása az aktív taktikákból
-  const taktikaMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0 };
-  for (const at of session.aktív_taktikák) {
-    const def = data.taktikak.find(t => t.név === at.név);
-    if (!def) continue;
-    if (def.fokozatos && def.fokok && at.fok != null) {
-      let fokDef = def.fokok.find(f => f.fok === at.fok);
-      // Extra fok extrapoláció (fortély_bővítés)
-      if (!fokDef && def.fortély_bővítés) {
-        const utolsó = def.fokok[def.fokok.length - 1];
-        const perFok: Record<string, number> = {};
-        for (const [k, v] of Object.entries(utolsó)) { if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok; }
-        fokDef = { fok: at.fok } as typeof utolsó;
-        for (const [k, step] of Object.entries(perFok)) (fokDef as any)[k] = Math.round(step * at.fok);
-      }
-      if (fokDef) {
-        if (fokDef.TÉ) taktikaMods['TÉ'] += fokDef.TÉ;
-        if (fokDef.VÉ) taktikaMods['VÉ'] += fokDef.VÉ;
-        if (fokDef.KÉ) taktikaMods['KÉ'] += fokDef.KÉ;
-        if (fokDef.SP) taktikaMods['SP'] += fokDef.SP;
-      }
-    } else if (def.módosítók) {
-      if (def.módosítók.TÉ) taktikaMods['TÉ'] += def.módosítók.TÉ;
-      if (def.módosítók.VÉ) taktikaMods['VÉ'] += def.módosítók.VÉ;
-      if (def.módosítók.KÉ) taktikaMods['KÉ'] += def.módosítók.KÉ;
-      if (def.módosítók.SP) taktikaMods['SP'] += def.módosítók.SP;
-    }
-  }
-
-  // Taktika VÉ eltolás limit (ökölszabály)
-  const véLimit = konstansok.taktika_vé_eltolás_limit;
-  taktikaMods['VÉ'] = Math.max(-véLimit, Math.min(véLimit, taktikaMods['VÉ']));
+  // Taktika módosítók
+  const taktikaMods = calcTaktikaMods(session, data);
 
   const harcmodorÖsszeg = [...new Set(Object.values(konstansok.fegyver_kategória_harcmodor) as string[])].reduce((s: number, név: string) =>
     s + (k.képzettségek.find(kp => kp.név === név)?.szint ?? 0), 0);
 
-  // Páncél + lookup tables — all logic now in rules.json
+  // Páncél
   const merevvértFok = k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0;
-  const csatoltMgt = konstansok.páncél_csatolt_tag_mgt;
-
-  const lookupArrays = new Map<string, Record<string, number | string>[]>();
-  lookupArrays.set('csatolt_mgt_merev', Object.entries(csatoltMgt.merevvért_fém).map(([n, v]) => ({ név: n, érték: v })));
-  lookupArrays.set('csatolt_mgt_fém', Object.entries(csatoltMgt.hajlékonyvért_fém).map(([n, v]) => ({ név: n, érték: v })));
-  lookupArrays.set('csatolt_mgt_nemfém', Object.entries(csatoltMgt.hajlékonyvért_nem_fém).map(([n, v]) => ({ név: n, érték: v })));
-  lookupArrays.set('struktúrák', konstansok.páncél_struktúrák.map(s => ({
-    név: s.struktúra, mgt: s.mgt, sfé_fizikai: s.sfé_fizikai,
-    sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0
-  })));
-  lookupArrays.set('fémalapanyagok', konstansok.páncél_fémalapanyagok.map(a => ({ anyag: a.anyag, mgt: a.mgt, sfé_bónusz: a.sfé_bónusz })));
-  lookupArrays.set('méret_tábla', [{ név: 'passzol', érték: 0 }, { név: 'nem passzol', érték: 3 }, { név: 'borzalmas', érték: 6 }]);
-  lookupArrays.set('merevvért_tábla', konstansok.merevvértviselet_bónuszok.map(b => ({ fok: b.fok, csökkentés: b.TÉ_büntetés_csökkentés })));
+  const lookupArrays = buildPancelLookups(konstansok);
 
   const stringCtx = new Map<string, string>();
   stringCtx.set('páncél_alap', k.páncél.alap);
@@ -198,32 +146,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     return false;
   }
 
-  const fortelyMods: Record<string, number> = { KÉ: 0, TÉ: 0, VÉ: 0, SP: 0, CÉ: 0, harckeret: 0, SFÉ: 0, pengehossz: 0, min_pengehossz: 0 };
-  for (const kf of k.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
-    if (!def) continue;
-    const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
-    if (!fokDef?.módosítók) continue;
-    for (const mod of fokDef.módosítók) {
-      if (!feltételTeljesül(mod.feltétel)) continue;
-      // session_toggle fortélyok: TÉ/VÉ módosítók csak ha az aktív
-      if (def.session_toggle && (mod.cél === 'TÉ' || mod.cél === 'VÉ') && !(session as unknown as Record<string, unknown>)[kf.név.toLowerCase().replace(/ /g, '_')]) continue;
-      if (mod.mód === 'flat') {
-        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
-      } else if (mod.mód === 'scaled' && mod.forrás) {
-        const forrásÉrték = k.képzettségek.find(kp => kp.név.toLowerCase() === mod.forrás)?.szint ?? 0;
-        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + Math.floor(forrásÉrték * mod.arány);
-      }
-    }
-  }
-  // Alapesetek (0.fok): ha karakter NEM rendelkezik a fortéllyal, de feltétel aktív
-  for (const ae of evaluateAlapesetek(data.fortelySummaries as any, k, session, aktívFeltételek)) {
-    for (const mod of ae.módosítók) {
-      if (mod.mód === 'flat' && mod.cél in fortelyMods) {
-        fortelyMods[mod.cél] = (fortelyMods[mod.cél] ?? 0) + mod.érték;
-      }
-    }
-  }
+  const fortelyMods = calcFortelyMods(k, session, data, aktívFeltételek, feltételTeljesül);
   const fortelyKE = fortelyMods['KÉ'];
 
   const épValue = computed.get('ÉP') ?? 40;
@@ -233,188 +156,20 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const sfé_energia = (session.aktív_páncél ? (computed.get('sfé_energia') ?? 0) : 0) + fortelyMods['SFÉ'];
   const páncélLefedettség = session.aktív_páncél ? (computed.get('páncél_lefedettség') ?? 0) : 0;
 
-  // Fegyverek — build from karakter.fegyverek, expand MK pairs
-  const fegyverRows: { név: string; fDef: typeof data.fegyverek[0]; mfFok: number }[] = [];
-  // Always include Puszta kéz
-  const pusztaKez = lookupFegyver(data.fegyverek, 'puszta kéz');
-  if (pusztaKez) fegyverRows.push({ név: pusztaKez.Fegyver, fDef: pusztaKez, mfFok: 0 });
-  // Karakter fegyverek
-  for (const fp of k.fegyverek) {
-    const fDef = lookupFegyver(data.fegyverek, fp.alap);
-    if (!fDef) continue;
-    const displayName = fDef.Alapnév || fDef.Fegyver;
-    const mfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fp.alap));
-    const mfFok = mfEntry?.fok ?? 0;
-    fegyverRows.push({ név: fDef.Fegyver, fDef, mfFok });
-    // If MK pair exists, add 2K row with same MF/idea
-    if (fDef.MK_pár) {
-      const párDef = lookupFegyver(data.fegyverek, fDef.MK_pár);
-      if (párDef) fegyverRows.push({ név: párDef.Fegyver, fDef: párDef, mfFok });
-    }
-  }
-  // Pajzs fegyverként (ha van méret kiválasztva)
-  if (pajzsFegyverNév) {
-    const pajzsDef = lookupFegyver(data.fegyverek, pajzsFegyverNév ?? '');
-    if (pajzsDef) {
-      fegyverRows.push({ név: pajzsDef.Fegyver, fDef: pajzsDef, mfFok: 0 });
-    }
-  }
+  // Fegyverek
+  const fegyverRows = buildFegyverRows(k, data, pajzsFegyverNév);
 
+  const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx);
 
-  const fegyverResults = fegyverRows.map(({ fDef, mfFok }) => {
-    const kat = fDef.Kategória;
-    const harcmodorNév = konstansok.fegyver_kategória_harcmodor[kat] ?? 'Közelharc';
-    const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
-    const hb = harcmodorBonusz.find(b => b.szint === harcmodorSzint);
-    const mf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
-
-    // Evaluate reactive rules with weapon-specific context
-    // Override módosítók: fegyver-specifikus feltétel ("fegyver:X") → alap SP felülírás
-    let alapSP = parseInt(fDef.SP) || 0;
-    for (const kf of k.fortélyok) {
-      const fDef2 = data.fortelySummaries.find(d => d.név === kf.név);
-      if (!fDef2) continue;
-      const fokDef2 = fDef2.fokok.find(fd => fd.fok === kf.fok);
-      if (!fokDef2?.módosítók) continue;
-      for (const mod of fokDef2.módosítók) {
-        if (mod.mód !== 'override' || mod.cél !== 'SP') continue;
-        if (typeof mod.feltétel === 'string' && mod.feltétel.startsWith('fegyver:')) {
-          const fegyverNév = mod.feltétel.slice('fegyver:'.length);
-          if (fDef.Fegyver.toLowerCase() === fegyverNév.toLowerCase()) alapSP = mod.érték;
-        }
-      }
-    }
-    const fCtx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
-      HM_TÉ: k.HM_TÉ,
-      HM_VÉ: k.HM_VÉ,
-      felszerelés_mgt: 0,
-      merevvért_fok: merevvértFok,
-      páncél_van: k.páncél.alap ? 1 : 0,
-      páncél_végtagvédettség: k.páncél.végtagvédettség,
-      páncél_sisak: k.páncél.sisak ? 1 : 0,
-      páncél_idea: k.páncél.idea,
-      páncél_rongálódás: k.páncél.rongálódás,
-      fegyver_harcmodor_TÉ: hb?.TÉ ?? 0,
-      fegyver_harcmodor_VÉ: hb?.VÉ ?? 0,
-      fegyver_harcmodor_szint: harcmodorSzint,
-      fegyver_alap_TÉ: parseInt(fDef.TÉ) || 0,
-      fegyver_alap_VÉ: parseInt(fDef.VÉ) || 0,
-      fegyver_alap_SP: alapSP,
-      fegyver_erőbónusz_limit: fDef['Erőbónusz limit'] !== '' ? parseInt(fDef['Erőbónusz limit']) : 99,
-      fegyver_sebesség: parseInt(fDef.Sebesség) || 6,
-      fegyver_mf_TÉ: mf.TÉ,
-      fegyver_mf_VÉ: mf.VÉ,
-      fegyver_mf_SP: mf.SP,
-      fegyver_fortély_TÉ: fortelyMods['TÉ'],
-      fegyver_fortély_VÉ: fortelyMods['VÉ'],
-      fegyver_fortély_SP: fortelyMods['SP'],
-      fegyver_fortély_harckeret: fortelyMods['harckeret'],
-      harcmodor_összeg: harcmodorÖsszeg,
-      alakzatharc_szint: 0,
-    });
-    const fComp = evaluate(data.rules, fCtx, lookupArrays, stringCtx);
-
-    return {
-      fegyver_név: fDef.Fegyver,
-      TÉ: fComp.get('fegyver_TÉ') ?? 0,
-      VÉ: fComp.get('fegyver_VÉ') ?? 0,
-      SP: fComp.get('fegyver_SP') ?? 0,
-      támadások: fComp.get('fegyver_támadások') ?? 1,
-      harckeret: fComp.get('fegyver_harckeret') ?? 0,
-      sebesség: parseInt(fDef.Sebesség) || 6,
-      pengehossz: parseFloat(fDef.Pengehossz) || 0,
-      sebzésmód: fDef['Sebzés módja'],
-      alap_TÉ: parseInt(fDef.TÉ) || 0,
-      alap_VÉ: parseInt(fDef.VÉ) || 0,
-    };
-  });
-
-  // Fegyver override aktív harci helyzetekből (pl. Belharci helyzet: fegyver TÉ/VÉ=0 ha pengehossz>0)
+  // Fegyver override aktív harci helyzetekből
   const belharciAktív = session.aktív_helyzetek.includes('Belharci helyzet');
-  for (const helyzetNév of session.aktív_helyzetek) {
-    const hDef = data.harciHelyzetek.find(h => h.név === helyzetNév);
-    if (!hDef?.fegyver_override) continue;
-    const overFeltétel = hDef.fegyver_override.feltétel;
-    if (!feltételTeljesül(overFeltétel)) continue;
-    for (const mod of hDef.fegyver_override.módosítók) {
-      for (const r of fegyverResults) {
-        if (mod.cél === 'fegyver_TÉ' && mod.mód === 'override') r.TÉ -= r.alap_TÉ;
-        if (mod.cél === 'fegyver_VÉ' && mod.mód === 'override') r.VÉ -= r.alap_VÉ;
-      }
-    }
-  }
+  applyFegyverOverrides(fegyverResults, session, data, feltételTeljesül);
 
-  // Kétkezes harc összevont kalkuláció
-  let kétkezesResult: (typeof fegyverResults[0] & { sumPengehossz: number }) | null = null;
-  if (session.kétkezes_harc && session.aktív_fegyver_bal_index >= 0) {
-    const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
-    if (jobbFp && balFp) {
-      kétkezesResult = calcKétkezesHarc({
-        jobbFp, balFp, fegyverek: data.fegyverek, karakter: k,
-        konstansok: konstansok, harcmodorBonusz, fortelyMods,
-      });
-    }
-  }
+  // Kétkezes harc
+  const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, feltételTeljesül);
 
-  // Fegyver override a kétkezes result-ra is
-  if (kétkezesResult) {
-    for (const helyzetNév of session.aktív_helyzetek) {
-      const hDef = data.harciHelyzetek.find(h => h.név === helyzetNév);
-      if (!hDef?.fegyver_override) continue;
-      if (!feltételTeljesül(hDef.fegyver_override.feltétel)) continue;
-      for (const mod of hDef.fegyver_override.módosítók) {
-        if (mod.cél === 'fegyver_TÉ' && mod.mód === 'override') kétkezesResult.TÉ -= kétkezesResult.alap_TÉ;
-        if (mod.cél === 'fegyver_VÉ' && mod.mód === 'override') kétkezesResult.VÉ -= kétkezesResult.alap_VÉ;
-      }
-    }
-  }
-
-  // Pajzs VÉ — lookup méret alapján
-  const PAJZS_MÉRET_NÉV: Record<string, string> = { kis: 'Kis Pajzs', közepes: 'Közepes Pajzs', nagy: 'Nagy Pajzs' };
-  const pajzsDef = (session.aktív_pajzs || session.fegyverfogás === 'fegyver_pajzs') && k.pajzs.méret ? data.pajzsok.find(p => p.Pajzs === PAJZS_MÉRET_NÉV[k.pajzs.méret]) : null;
-  const pajzsVÉ = pajzsDef ? parseInt(pajzsDef.VÉ) || 0 : 0;
-
-  // Pajzs TÉ büntetés: konstansok lookup + fortély mérséklés
-  let pajzsTÉBüntetés = 0;
-  if (session.fegyverfogás === 'fegyver_pajzs' && k.pajzs.méret) {
-    const entry = konstansok.pajzs_TÉ_büntetés?.find((e: { méret: string; büntetés: number }) => e.méret === k.pajzs.méret);
-    const alap = entry?.büntetés ?? 0;
-    const mérséklés = fortelyMods['pajzs_TÉ_mérséklés'] ?? 0;
-    pajzsTÉBüntetés = Math.min(0, alap + mérséklés);
-  }
-
-  // Hárítófegyver VÉ
-  let hárítóVÉ = 0;
-  let hárítóNév = '';
-  const hasHárítóFortély = k.fortélyok.some(f => f.név === 'Hárítófegyver használat');
-  if (session.fegyverfogás === 'fegyver_hárító' && session.aktív_fegyver_bal_index >= 0 && hasHárítóFortély) {
-    const hFp = k.fegyverek[session.aktív_fegyver_bal_index];
-    if (hFp) {
-      const hDef = lookupFegyver(data.fegyverek, hFp.alap);
-      if (hDef?.Hárító === '1') {
-        hárítóVÉ = parseInt(hDef.VÉ) || 0;
-        hárítóNév = hFp.alap;
-        // Mesterfegyver VÉ bónusz a hárítófegyverre
-        const hDisplayName = hDef.Alapnév || hDef.Fegyver;
-        const hMfEntry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (f.spec_elem === hDisplayName || f.spec_elem === hFp.alap));
-        if (hMfEntry) {
-          const hMf = konstansok.mesterfegyver_bónuszok.find(b => b.fok === hMfEntry.fok);
-          if (hMf) hárítóVÉ += hMf.VÉ;
-        }
-      }
-    }
-  }
-
-  // Fogás összesítő sor (pajzs / hárító)
-  let fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null = null;
-  if (session.fegyverfogás === 'fegyver_pajzs' && pajzsVÉ > 0) {
-    const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    fogásResult = { név: (jobbFp?.alap ?? 'Fegyver') + ' + Pajzs', VÉ_bónusz: pajzsVÉ, TÉ_büntetés: pajzsTÉBüntetés };
-  } else if (session.fegyverfogás === 'fegyver_hárító' && hárítóVÉ > 0) {
-    const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    fogásResult = { név: (jobbFp?.alap ?? 'Fegyver') + ' + ' + hárítóNév, VÉ_bónusz: hárítóVÉ, TÉ_büntetés: 0 };
-  }
+  // Pajzs / Hárító / Fogás
+  const { pajzsVÉ, fogásResult } = calcFogás(k, session, data, fortelyMods);
 
   // ÉP TÉ levonás
   const oszlopMéret = épValue / konstansok.sebesülés_kategóriák_száma;
