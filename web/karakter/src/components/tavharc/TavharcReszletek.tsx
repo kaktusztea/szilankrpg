@@ -1,7 +1,7 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 
-export function TavharcReszletek({ fegyverCÉ, osztó, mfCÉ, idea, fortélyCÉ, harcmodorCÉ, harcmodorNév, harcmodorSzint, önuralom, CM, céAlap, cé, gameMode, karakter, setKarakter, konstansok }: {
+export function TavharcReszletek({ fegyverCÉ, osztó, mfCÉ, idea, fortélyCÉ, harcmodorCÉ, harcmodorNév, harcmodorSzint, önuralom, CM, céAlap, cé, gameMode, karakter, setKarakter, konstansok, isMágikus, mágikusTulajdonságCÉ }: {
   fegyverCÉ: number;
   osztó: number;
   mfCÉ: number;
@@ -18,6 +18,8 @@ export function TavharcReszletek({ fegyverCÉ, osztó, mfCÉ, idea, fortélyCÉ,
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   konstansok: GameData['konstansok'];
+  isMágikus?: boolean;
+  mágikusTulajdonságCÉ?: number;
 }) {
   return (
     <div className="th-reszletek">
@@ -29,8 +31,10 @@ export function TavharcReszletek({ fegyverCÉ, osztó, mfCÉ, idea, fortélyCÉ,
         <div>Idea CÉ bónusz: {idea}</div>
         {fortélyCÉ !== 0 && <div>Célzás CÉ bónusz: +{fortélyCÉ}</div>}
         <div>Harcmodor CÉ bónusz: {harcmodorCÉ} ({harcmodorNév} szint:{harcmodorSzint})</div>
-        <div>Tulajdonság (Önuralom): {önuralom}</div>
-        <div>CM: {CM}</div>
+        {isMágikus
+          ? <div>TSz + Gyo + Int: {mágikusTulajdonságCÉ}</div>
+          : <><div>Tulajdonság (Önuralom): {önuralom}</div><div>CM: {CM}</div></>
+        }
         <div>CÉ alap: {céAlap}</div>
         <div><strong>Összesen: {cé}</strong></div>
       </div>

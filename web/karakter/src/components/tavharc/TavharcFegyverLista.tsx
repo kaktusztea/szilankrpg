@@ -1,5 +1,5 @@
 import type { TavharcProps } from './types';
-import { getMfFok, mfKövetelményHiba, mfKövetelményText, calcCÉ, calcTámadásLabel, getAlkalmatlanInfo } from './helpers';
+import { getMfFok, mfKövetelményHiba, mfKövetelményText, calcCÉ, getCÉInputs, calcTámadásLabel, getAlkalmatlanInfo } from './helpers';
 
 export function TavharcFegyverLista({ data, karakter, session, setSession, setKarakter, idea, fortélyCÉ, onMfTarget, onDeleteTarget, onIdeaPopup }: TavharcProps & {
   idea: number;
@@ -11,14 +11,14 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
   const k = karakter;
   const konstansok = data.konstansok;
   const céAlap = konstansok.harcérték_alap.CÉ;
-  const önuralom = k.tulajdonságok.önuralom ?? 0;
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
   const gyorsÚjratöltésFok = k.fortélyok.find(f => f.név === konstansok.nyílpuska_gyors_újratöltés_fortély)?.fok ?? 0;
   const tfIdx = session.aktív_távfegyver_index;
 
   const alkalmatlan = getAlkalmatlanInfo(k, data);
   const felvett = new Set(k.távfegyverek.map(tf => tf.alap.toLowerCase()));
-  const felvehető = data.tavfegyverek.filter(d => !felvett.has(d.Fegyver.toLowerCase()) && !d.Fegyver.startsWith('🔆'));
+  const hasMágikus = k.távfegyverek.some(tf => data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tf.alap.toLowerCase())?.Kategória === 'mágikus');
+  const felvehető = data.tavfegyverek.filter(d => !felvett.has(d.Fegyver.toLowerCase()) && !d.Fegyver.startsWith('🔆') && !(hasMágikus && d.Kategória === 'mágikus'));
 
   function addTávfegyver(alap: string) {
     setKarakter(prev => {
@@ -39,9 +39,10 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
         const fCÉ = parseInt(def?.CÉ ?? '0') || 0;
         const mf = getMfFok(k, tf.alap);
         const mfC = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mf)?.CÉ ?? 0;
-        const cardCÉ = calcCÉ({ céAlap, önuralom, CM: k.CM, harcmodorCÉ: hmCÉ, fegyverCÉ: fCÉ, mfCÉ: mfC, idea, fortélyCÉ });
+        const { önuralom: cÖn, CM: cCM, idea: cIdea, isMágikus: isMágikusCard } = getCÉInputs(k, def, idea);
+        const cardCÉ = calcCÉ({ céAlap, önuralom: cÖn, CM: cCM, harcmodorCÉ: hmCÉ, fegyverCÉ: fCÉ, mfCÉ: mfC, idea: cIdea, fortélyCÉ });
         const sebesség = parseInt(def?.Sebesség ?? '-1') || -1;
-        const tám = calcTámadásLabel({ harcmodorSzint: hmSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok });
+        const tám = isMágikusCard ? '—' : calcTámadásLabel({ harcmodorSzint: hmSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok });
 
         return (
           <div key={i} className={`th-card${i === tfIdx ? ' th-card-active' : ''}`} onClick={() => setSession(s => ({ ...s, aktív_távfegyver_index: i }))}>
@@ -56,7 +57,7 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
                 MF fok: <strong>{mf}</strong>
                 {mfKövetelményHiba(k, data, tf.alap) && <span className="he-mf-error">{mfKövetelményText(k, data, tf.alap)}</span>}
               </button>
-              <button className="he-field-btn" onClick={e => { e.stopPropagation(); onIdeaPopup(); }}>Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong></button>
+              {!isMágikusCard && <button className="he-field-btn" onClick={e => { e.stopPropagation(); onIdeaPopup(); }}>Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong></button>}
               <span className="th-badge">CÉ: {cardCÉ}  ({tám})</span>
             </div>
           </div>

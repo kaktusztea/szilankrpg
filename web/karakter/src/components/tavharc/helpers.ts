@@ -106,6 +106,19 @@ export function calcCÉ(params: {
     + params.fegyverCÉ + params.mfCÉ + params.idea + params.fortélyCÉ;
 }
 
+/** Mágikus vs normál CÉ input adaptáció (Kategória alapján) */
+export function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea: number): { önuralom: number; CM: number; idea: number; isMágikus: boolean; mágikusProp: number } {
+  const isMágikus = def?.Kategória === 'mágikus';
+  const mágikusProp = k.tsz + (k.tulajdonságok.gyorsaság ?? 0) + (k.tulajdonságok.intelligencia ?? 0);
+  return {
+    önuralom: isMágikus ? mágikusProp : (k.tulajdonságok.önuralom ?? 0),
+    CM: isMágikus ? 0 : k.CM,
+    idea: isMágikus ? 0 : idea,
+    isMágikus,
+    mágikusProp,
+  };
+}
+
 /** Támadás label (harckeret alapú) */
 export function calcTámadásLabel(params: {
   harcmodorSzint: number; gyorsaság: number; sebesség: number;

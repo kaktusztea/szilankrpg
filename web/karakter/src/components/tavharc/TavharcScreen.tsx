@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import type { TavharcProps, VirtuálisFegyver } from './types';
-import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉ, calcTámadásLabel, calcVÉ } from './helpers';
+import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉ, getCÉInputs, calcTámadásLabel, calcVÉ } from './helpers';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
 import { TavharcGameSelector } from './TavharcGameSelector';
 import { TavharcKalkulator } from './TavharcKalkulator';
@@ -39,13 +39,14 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const önuralom = k.tulajdonságok.önuralom ?? 0;
   const fegyverCÉ = parseInt(tfDef?.CÉ ?? '0') || 0;
   const fortélyCÉ = getFortélyCÉ(k, data, session);
-  const cé = calcCÉ({ céAlap, önuralom, CM: k.CM, harcmodorCÉ, fegyverCÉ, mfCÉ, idea, fortélyCÉ });
+  const { önuralom: céÖnuralom, CM: céCM, idea: céIdea, isMágikus, mágikusProp: mágikusTulajdonságCÉ } = getCÉInputs(k, tfDef, idea);
+  const cé = calcCÉ({ céAlap, önuralom: céÖnuralom, CM: céCM, harcmodorCÉ, fegyverCÉ, mfCÉ, idea: céIdea, fortélyCÉ });
 
   // Támadás
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
   const sebesség = parseInt(tfDef?.Sebesség ?? '-1') || -1;
   const gyorsÚjratöltésFok = k.fortélyok.find(f => f.név === konstansok.nyílpuska_gyors_újratöltés_fortély)?.fok ?? 0;
-  const támadásLabel = calcTámadásLabel({ harcmodorSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok });
+  const támadásLabel = isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok });
 
   // Távolság & VÉ
   const [távolság, setTávolság] = useState(10);
@@ -104,7 +105,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       )}
 
       {gameMode && (
-        <TavharcGameSelector összesFegyver={összesFegyver} tfIdx={tfIdx} setSession={setSession} mfFok={mfFok} idea={idea} />
+        <TavharcGameSelector összesFegyver={összesFegyver} tfIdx={tfIdx} setSession={setSession} mfFok={mfFok} idea={idea} isMágikus={isMágikus} />
       )}
 
       {tfDef && gameMode && (
@@ -129,6 +130,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         harcmodorCÉ={harcmodorCÉ} harcmodorNév={harcmodorNév} harcmodorSzint={harcmodorSzint}
         önuralom={önuralom} CM={k.CM} céAlap={céAlap} cé={cé}
         gameMode={gameMode} karakter={karakter} setKarakter={setKarakter} konstansok={konstansok}
+        isMágikus={isMágikus} mágikusTulajdonságCÉ={mágikusTulajdonságCÉ}
       />
 
       <TavharcPopups

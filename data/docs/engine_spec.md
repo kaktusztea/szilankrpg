@@ -232,6 +232,7 @@ formula:
   CÉ = CÉ_alap + CÉ_harcmodor + CÉ_fegyver + CÉ_mesterfegyver + CÉ_fortély
 
 output: CÉ (per távfegyver)
+note: Mágikus kategóriájú fegyverekre (Mágiatáv I–IV) eltérő formula — lásd §17.1.
 ```
 
 ---
@@ -659,20 +660,52 @@ input:  karakter.tulajdonságok.Önuralom, karakter.CM,
         harcmodor_CÉ_bónusz, távfegyver.CÉ, mesterfegyver_fok
 source: konstansok.yaml → mesterfegyver_bónuszok
         tables/harcmodor_kepzettsegek_bonuszok.json
-        tables/tavfegyverek.json (Harcmodor mező: "Hajítás"/"Íjászat"/"Lövészet"/...)
+        tables/tavfegyverek.json (Harcmodor mező: "Hajítás"/"Íjászat"/"Lövészet"/"Mágikus célzás")
 
 formula:
   CÉ_alap = konstansok.harcérték_alap.CÉ   // -15
 
-  CÉ = CÉ_alap
-     + Önuralom
-     + CM
-     + harcmodor_CÉ_bónusz(harcmodor_szint)
-     + távfegyver.CÉ
-     + mesterfegyver_CÉ_bónusz(fok)   // +1/fok
-     + Idea                            // fegyver minőség: [-5;+5]
+  if távfegyver.Kategória == "mágikus":
+    // Mágiatáv egyedi CÉ formula (076_tavharc_csatamagia_eseten.md)
+    CÉ = CÉ_alap
+       + TSz + Gyorsaság + Intelligencia
+       + harcmodor_CÉ_bónusz(harcmodor_szint)   // Mágikus célzás
+       + távfegyver.CÉ                          // Mágiatáv I:+1, II:+2, III:+3, IV:+4
+       + mesterfegyver_CÉ_bónusz(fok)
+       + Idea
+  else:
+    CÉ = CÉ_alap
+       + Önuralom
+       + CM
+       + harcmodor_CÉ_bónusz(harcmodor_szint)
+       + távfegyver.CÉ
+       + mesterfegyver_CÉ_bónusz(fok)
+       + Idea
 
 output: CÉ (karakter összesített Célzó Értéke az adott fegyverrel)
+```
+
+### 17.1b Mágiatáv fegyverek
+
+```
+Mágiatáv I–IV: virtuális távfegyverek mágikus célzáshoz.
+A "Mágiatáv növelés" fortély foka határozza meg, melyik fokozat használható:
+  0 fok (nincs fortély): Mágiatáv I
+  1.fok: Mágiatáv II
+  2.fok: Mágiatáv III
+  3.fok: Mágiatáv IV
+
+Adatok (tavfegyverek.json):
+  Kategória: "mágikus"
+  Harcmodor: "Mágikus célzás"
+  CÉ: fokozat (1-4)
+  Osztó: fokozat (1-4)
+  SP/Sebesség/Hatótáv: varázslat-specifikus (webapp: nem kalkulált, "—" kijelzés)
+  Erőbónusz: 0
+
+Felvétel: kézi (karakter.távfegyverek[]-be, mint bármely távfegyver).
+Mesterfegyver: felvehető (spec_elem: "Mágiatáv X").
+Támadások/kör: nem kalkulálható (varázslás/kör szabály dönti el).
 ```
 
 ### 17.2 CÉ módosítók (taktikák)
@@ -755,6 +788,10 @@ Karakter séma:
 
 CÉ formula:
   CÉ = konstansok.harcérték_alap.CÉ + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea + fortélyCÉ
+
+  if távfegyver.Kategória == "mágikus":
+    CÉ = konstansok.harcérték_alap.CÉ + (TSz + Gyorsaság + Intelligencia) + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea + fortélyCÉ
+    // Önuralom és CM NEM számít, helyette TSz + Gyo + Int
 
   fortélyCÉ: feltételes fortély CÉ bónusz (pl. "Célzás" harci helyzet aktív → "Kitartott célzás" 0.fok: +3, 1.fok: +7)
     Iteráció: összes fortély definíción, effektív fok = max(0, karakter felvett fok).

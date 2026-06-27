@@ -101,12 +101,33 @@ if __name__ == "__main__":
 
         # Post-process: tavfegyverek.json — Harcmodor és Kategória mező
         if d['output'] == 'tavfegyverek.json':
+            # Mágiatáv I-IV hozzáfűzése (virtuális mágikus távfegyverek)
+            for fokozat, (ce, oszto) in enumerate([('1','1'),('2','2'),('3','3'),('4','4')], start=1):
+                roman = ['I','II','III','IV'][fokozat-1]
+                full_json.append({
+                    'Fegyver': f'Mágiatáv {roman}',
+                    'CÉ': ce,
+                    'Osztó': oszto,
+                    'SP': '0',
+                    'Sebesség': '0',
+                    'Sebzés módja': 'spec',
+                    'Forgatás módja': 'spec',
+                    'Erőbónusz': '0',
+                    'Átütés': '0',
+                    'Hatótáv': '0',
+                    'Speciális / Megjegyzés': 'Varázslat-specifikus SP/Hatótáv/Sebesség',
+                    'Kategória': 'mágikus',
+                    'Harcmodor': 'Mágikus célzás',
+                })
+
             # Lőfegyverek: íjak → Íjászat, nyílpuskák → Lövészet, fúvócsövek → Lövészet
             lofegyver_keywords = ['íj', 'visszacsapó']
             loveszet_keywords = ['nyílpuska', 'fúvócső', 'shad0ni']
             for entry in full_json:
                 name_lower = entry['Fegyver'].lower()
-                if any(kw in name_lower for kw in loveszet_keywords):
+                if 'mágiatáv' in name_lower:
+                    continue  # már be van állítva
+                elif any(kw in name_lower for kw in loveszet_keywords):
                     entry.setdefault('Kategória', 'lőfegyver')
                     entry.setdefault('Harcmodor', 'Lövészet')
                 elif any(kw in name_lower for kw in lofegyver_keywords):
