@@ -25,7 +25,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/barati_allatok.md"
   },
   {
     "név": "Biztos kezű mászó",
@@ -60,7 +61,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/biztos_kezu_maszo.md"
   },
   {
     "név": "Csábítás",
@@ -90,7 +92,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/csabitas.md"
   },
   {
     "név": "Csomózás",
@@ -150,7 +153,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/csomozas.md"
   },
   {
     "név": "Éber alvó",
@@ -188,7 +192,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/eber_alvo.md"
   },
   {
     "név": "Élettan",
@@ -230,7 +235,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/elettan.md"
   },
   {
     "név": "Építészet",
@@ -271,7 +277,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/epiteszet.md"
   },
   {
     "név": "Fakír",
@@ -329,7 +336,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/fakir.md"
   },
   {
     "név": "Futás",
@@ -409,7 +417,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/futas.md"
   },
   {
     "név": "Gyöngyhalász",
@@ -461,7 +470,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/gyongyhalasz.md"
   },
   {
     "név": "Hamisítás",
@@ -493,7 +503,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/hamisitas.md"
   },
   {
     "név": "Hangutánzás",
@@ -537,7 +548,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/hangutanzas.md"
   },
   {
     "név": "Hazudozás",
@@ -568,7 +580,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/hazudozas.md"
   },
   {
     "név": "Keresés/rejtés",
@@ -623,7 +636,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/kereses_rejtes.md"
   },
   {
     "név": "Kézműves: Fegyverkovács",
@@ -688,7 +702,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/kezmuves_fegyverkovacs.md"
   },
   {
     "név": "Kézműves: Páncélkovács",
@@ -753,7 +768,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/kezmuves_pancelkovacs.md"
   },
   {
     "név": "Kitartás",
@@ -791,7 +807,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/kitartas.md"
   },
   {
     "név": "Kocsihajtás",
@@ -829,7 +846,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/kocsihajtas.md"
   },
   {
     "név": "Kötelékből szabadulás",
@@ -887,7 +905,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/kotelekbol_szabadulas.md"
   },
   {
     "név": "Mechanika",
@@ -952,7 +971,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/mechanika.md"
   },
   {
     "név": "Megfélemlítés",
@@ -982,7 +1002,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/megfelemlites.md"
   },
   {
     "név": "Méregálló",
@@ -1060,7 +1081,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/meregallo.md"
   },
   {
     "név": "Műhelymester",
@@ -1098,7 +1120,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/muhelymester.md"
   },
   {
     "név": "Nyomolvasás/eltűntetés",
@@ -1136,7 +1159,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/nyomolvasas_eltuntetes.md"
   },
   {
     "név": "Ősi kultúrkör",
@@ -1166,7 +1190,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/osi_kulturkor.md"
   },
   {
     "név": "Pók",
@@ -1201,7 +1226,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/pok.md"
   },
   {
     "név": "Sprint",
@@ -1239,7 +1265,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/sprint.md"
   },
   {
     "név": "Suhanó árnyék",
@@ -1274,7 +1301,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/suhano_arnyek.md"
   },
   {
     "név": "Szájról olvasás",
@@ -1320,7 +1348,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/szajrol_olvasas.md"
   },
   {
     "név": "Százarcú",
@@ -1372,7 +1401,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/szazarcu.md"
   },
   {
     "név": "Szívósság",
@@ -1401,7 +1431,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/szivossag.md"
   },
   {
     "név": "Történelemismeret",
@@ -1453,7 +1484,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/tortenelemismeret.md"
   },
   {
     "név": "Úszás",
@@ -1510,7 +1542,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/uszas.md"
   },
   {
     "név": "Vezető: Bölcsészprofesszor",
@@ -1584,7 +1617,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/vezeto_bolcseszprofesszor.md"
   },
   {
     "név": "Vezető: Hajóskapitány",
@@ -1658,7 +1692,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/vezeto_hajoskapitany.md"
   },
   {
     "név": "Vezető: Nyomozó",
@@ -1732,7 +1767,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/vezeto_nyomozo.md"
   },
   {
     "név": "Vezető: Orvosprofesszor",
@@ -1806,7 +1842,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/vezeto_orvosprofesszor.md"
   },
   {
     "név": "Vezető: Rendező",
@@ -1880,7 +1917,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/vezeto_rendezo.md"
   },
   {
     "név": "Vezető: Tudósprofesszor",
@@ -1954,7 +1992,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/vezeto_tudosprofesszor.md"
   },
   {
     "név": "Villámgyors keresés/rejtés",
@@ -1995,7 +2034,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/villamgyors.kereses.rejtes.md"
   },
   {
     "név": "Zártörő",
@@ -2030,7 +2070,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.altalanos/zartoro.md"
   },
   {
     "név": "Emberentúli hallás",
@@ -2071,7 +2112,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.erzekek/emberentuli_hallas.md"
   },
   {
     "név": "Emberentúli látás",
@@ -2113,7 +2155,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.erzekek/emberentuli_latas.md"
   },
   {
     "név": "Emberentúli szaglás",
@@ -2156,7 +2199,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.erzekek/emberentuli_szaglas.md"
   },
   {
     "név": "Infralátás",
@@ -2205,7 +2249,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.erzekek/infralatas.md"
   },
   {
     "név": "Irányérzék",
@@ -2235,7 +2280,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.erzekek/iranyerzek.md"
   },
   {
     "név": "Ultralátás",
@@ -2289,7 +2335,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.erzekek/ultralatas.md"
   },
   {
     "név": "Alakzat: támadó",
@@ -2353,7 +2400,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/alakzat_tamado.md"
   },
   {
     "név": "Alakzat: védekező",
@@ -2417,7 +2465,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/alakzat_vedekezo.md"
   },
   {
     "név": "Alakzatharc",
@@ -2460,7 +2509,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/alakzatharc.md"
   },
   {
     "név": "Alkalmatlan fegyver hajítása",
@@ -2572,7 +2622,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/alkalmatlan_fegyver_hajitasa.md"
   },
   {
     "név": "Alkalmatlan tárgyak hajítása",
@@ -2660,7 +2711,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/alkalmatlan_targyak_hajitasa.md"
   },
   {
     "név": "Belharcos",
@@ -2858,7 +2910,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/belharcos.md"
   },
   {
     "név": "Elpusztíthatatlan",
@@ -2910,7 +2963,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/elpusztithatatlan.md"
   },
   {
     "név": "Elsöprő roham",
@@ -2968,7 +3022,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/elsopro_roham.md"
   },
   {
     "név": "Fárasztás",
@@ -3018,7 +3073,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/farasztas.md"
   },
   {
     "név": "Fegyverrántás",
@@ -3096,7 +3152,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/fegyverrantas.md"
   },
   {
     "név": "Gladiátor bestiái",
@@ -3146,7 +3203,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/gladiator.bestiai.md"
   },
   {
     "név": "Gladiátor közönsége",
@@ -3196,7 +3254,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/gladiator.kozonsege.md"
   },
   {
     "név": "Gyors kezdeményezés",
@@ -3268,7 +3327,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/gyors_kezdemenyezes.md"
   },
   {
     "név": "Harc helyhez kötve",
@@ -3359,7 +3419,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/harc_helyhez_kotve.md"
   },
   {
     "név": "Harci akrobatika",
@@ -3516,7 +3577,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/harci_akrobatika.md"
   },
   {
     "név": "Harci anatómia",
@@ -3697,7 +3759,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/harci_anatomia.md"
   },
   {
     "név": "Harci kocsihajtás",
@@ -3803,7 +3866,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/harci_kocsihajtas.md"
   },
   {
     "név": "Harckeret növelés",
@@ -3944,7 +4008,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/harckeret_noveles.md"
   },
   {
     "név": "Harcos elme",
@@ -4031,7 +4096,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/harcos_elme.md"
   },
   {
     "név": "Hárítófegyver használat",
@@ -4077,7 +4143,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/haritofegyver_hasznalat.md"
   },
   {
     "név": "Kaszabolás",
@@ -4143,7 +4210,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/kaszabolas.md"
   },
   {
     "név": "Kétkezes harc",
@@ -4227,7 +4295,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/ketkezes_harc.md"
   },
   {
     "név": "Kétkezesség",
@@ -4280,7 +4349,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/ketkezesseg.md"
   },
   {
     "név": "Kínokozás",
@@ -4311,7 +4381,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/kinokozas.md"
   },
   {
     "név": "Kitérés lövés elől",
@@ -4338,7 +4409,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/kiteres_loves_elol.md"
   },
   {
     "név": "Körkörös harc",
@@ -4368,7 +4440,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/korkoros_harc.md"
   },
   {
     "név": "Léglovas harc",
@@ -4568,7 +4641,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/leglovas_harc.md"
   },
   {
     "név": "Lovas harc",
@@ -4804,7 +4878,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/lovas_harc.md"
   },
   {
     "név": "Merevvértviselet",
@@ -4949,7 +5024,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/merevvertviselet.md"
   },
   {
     "név": "Mesterfegyver",
@@ -5135,7 +5211,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/mesterfegyver.md"
   },
   {
     "név": "Orgyilkos",
@@ -5273,7 +5350,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/orgyilkos.md"
   },
   {
     "név": "Pajzshasználat",
@@ -5490,7 +5568,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/pajzshasznalat.md"
   },
   {
     "név": "Páros harc",
@@ -5656,7 +5735,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/paros_harc.md"
   },
   {
     "név": "Támadás erőből",
@@ -5716,7 +5796,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/tamadas_erobol.md"
   },
   {
     "név": "Természetes fegyver",
@@ -5773,7 +5854,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/termeszetes_fegyver.md"
   },
   {
     "név": "Természetes páncél",
@@ -5851,7 +5933,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/termeszetes_pancel.md"
   },
   {
     "név": "Testőr",
@@ -5960,7 +6043,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/testor.md"
   },
   {
     "név": "Vakharc",
@@ -6048,7 +6132,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/vakharc.md"
   },
   {
     "név": "Vezető: Alakzatparancsnok",
@@ -6112,7 +6197,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/vezeto_alakzatparancsnok.md"
   },
   {
     "név": "Vezető: Fejvadász strategis",
@@ -6166,7 +6252,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/vezeto_fejvadasz_strategis.md"
   },
   {
     "név": "Vezető: Íjászparancsnok",
@@ -6226,7 +6313,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/vezeto_ijaszparancsnok.md"
   },
   {
     "név": "Vezető: Léglovaskapitány",
@@ -6292,7 +6380,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/vezeto_leglovaskapitany.md"
   },
   {
     "név": "Vezető: Lovaskapitány",
@@ -6358,7 +6447,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/vezeto_lovaskapitany.md"
   },
   {
     "név": "Vezető: Testőrparancsnok",
@@ -6430,7 +6520,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.harci/vezeto_testorparancsnok.md"
   },
   {
     "név": "Analfabéta",
@@ -6459,7 +6550,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/analfabeta.md"
   },
   {
     "név": "Apró méretű lény",
@@ -6488,7 +6580,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/apro_meretu_leny.md"
   },
   {
     "név": "Helyismeret",
@@ -6522,7 +6615,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/helyismeret.md"
   },
   {
     "név": "Kultúrkör",
@@ -6588,7 +6682,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/kulturkor.md"
   },
   {
     "név": "Nagy méretű lény",
@@ -6633,7 +6728,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/nagy_meretu_leny.md"
   },
   {
     "név": "Nyelvismeret",
@@ -6670,7 +6766,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/nyelvismeret.md"
   },
   {
     "név": "Süketség",
@@ -6699,7 +6796,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/suketseg.md"
   },
   {
     "név": "Tartós sérültség",
@@ -6744,7 +6842,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/tartos_serultseg.md"
   },
   {
     "név": "Vakság",
@@ -6773,7 +6872,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.kiemelt/vaksag.md"
   },
   {
     "név": "Antissjárás",
@@ -6800,7 +6900,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/antissjaras.md"
   },
   {
     "név": "Belső síkok lényeinek ismerete",
@@ -6836,7 +6937,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/belso_sikok_lenyeinek_ismerete.md"
   },
   {
     "név": "Külső síkok lényeinek ismerete",
@@ -6870,7 +6972,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/kulso_sikok_lenyeinek_ismerete.md"
   },
   {
     "név": "Mágiatáv növelés",
@@ -6915,7 +7018,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/magiatav_noveles.md"
   },
   {
     "név": "Mágikus lövedék gyorsítása",
@@ -6951,7 +7055,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/magikus_lovedek_gyorsitasa.md"
   },
   {
     "név": "Mentálfonál",
@@ -6979,7 +7084,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/mentalfonal.md"
   },
   {
     "név": "Mozgó cél mestere mágiához",
@@ -7015,7 +7121,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/mozgo_cel_mestere_magiahoz.md"
   },
   {
     "név": "Pszí Telekinézis",
@@ -7060,7 +7167,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/pszi_telekinezis.md"
   },
   {
     "név": "Pszí Telepátia",
@@ -7106,7 +7214,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.misztikus/pszi_telepatia.md"
   },
   {
     "név": "Alkudozás",
@@ -7136,7 +7245,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/alkudozas.md"
   },
   {
     "név": "Asztrológia",
@@ -7165,7 +7275,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/asztrologia.md"
   },
   {
     "név": "Bűvészet",
@@ -7196,7 +7307,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/buveszet.md"
   },
   {
     "név": "Éneklés",
@@ -7226,7 +7338,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/enekles.md"
   },
   {
     "név": "Festészet",
@@ -7257,7 +7370,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/festeszet.md"
   },
   {
     "név": "Gazdálkodás",
@@ -7286,7 +7400,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/gazdalkodas.md"
   },
   {
     "név": "Hadtáp",
@@ -7315,7 +7430,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/hadtap.md"
   },
   {
     "név": "Harci iskola",
@@ -7342,7 +7458,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/harci_iskola.md"
   },
   {
     "név": "Hátas (faj neve)",
@@ -7372,7 +7489,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/hatas.md"
   },
   {
     "név": "Háziállatok idomítása",
@@ -7401,7 +7519,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/haziallatok_idomitasa.md"
   },
   {
     "név": "Heraldika",
@@ -7431,7 +7550,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/heraldika.md"
   },
   {
     "név": "Hivatalnok",
@@ -7460,7 +7580,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/hivatalnok.md"
   },
   {
     "név": "Irodalom",
@@ -7490,7 +7611,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/irodalom.md"
   },
   {
     "név": "Jogismeret",
@@ -7520,7 +7642,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/jogismeret.md"
   },
   {
     "név": "Kalligráfia",
@@ -7550,7 +7673,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kalligrafia.md"
   },
   {
     "név": "Kézműves: Ács",
@@ -7579,7 +7703,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_acs.md"
   },
   {
     "név": "Kézműves: Asztalos",
@@ -7608,7 +7733,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_asztalos.md"
   },
   {
     "név": "Kézműves: Cipész",
@@ -7637,7 +7763,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_cipesz.md"
   },
   {
     "név": "Kézműves: Cserző",
@@ -7666,7 +7793,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_cserzo.md"
   },
   {
     "név": "Kézműves: Cukrász",
@@ -7695,7 +7823,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_cukrasz.md"
   },
   {
     "név": "Kézműves: Ékszerész",
@@ -7724,7 +7853,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_ekszeresz.md"
   },
   {
     "név": "Kézműves: Kádár",
@@ -7753,7 +7883,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_kadar.md"
   },
   {
     "név": "Kézműves: Kőműves",
@@ -7782,7 +7913,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_komuves.md"
   },
   {
     "név": "Kézműves: Kötélgyártó",
@@ -7811,7 +7943,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_kotelgyarto.md"
   },
   {
     "név": "Kézműves: Kovács",
@@ -7840,7 +7973,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_kovacs.md"
   },
   {
     "név": "Kézműves: Lakatos",
@@ -7869,7 +8003,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_lakatos.md"
   },
   {
     "név": "Kézműves: Molnár",
@@ -7898,7 +8033,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_molnar.md"
   },
   {
     "név": "Kézműves: Pénzverő",
@@ -7927,7 +8063,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_penzvero.md"
   },
   {
     "név": "Kézműves: Szabó",
@@ -7956,7 +8093,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_szabo.md"
   },
   {
     "név": "Kézműves: Szakács",
@@ -7985,7 +8123,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_szakacs.md"
   },
   {
     "név": "Kézműves: Szűcs",
@@ -8014,7 +8153,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kezmuves_szucs.md"
   },
   {
     "név": "Kihallgatás",
@@ -8044,7 +8184,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kihallgatas.md"
   },
   {
     "név": "Különleges faj boncolása",
@@ -8071,7 +8212,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/kulonleges_faj_boncolasa.md"
   },
   {
     "név": "Pénzügyek",
@@ -8101,7 +8243,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/penzugyek.md"
   },
   {
     "név": "Rejtjelfejtő",
@@ -8131,7 +8274,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/rejtjelfejto.md"
   },
   {
     "név": "Stratégia",
@@ -8161,7 +8305,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/strategia.md"
   },
   {
     "név": "Szertartás",
@@ -8190,7 +8335,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/szertartas.md"
   },
   {
     "név": "Színjátszás",
@@ -8220,7 +8366,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/szinjatszas.md"
   },
   {
     "név": "Szobrászat",
@@ -8251,7 +8398,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/szobraszat.md"
   },
   {
     "név": "Szónoklás",
@@ -8281,7 +8429,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/szonoklas.md"
   },
   {
     "név": "Tájtípus - barlangi",
@@ -8314,7 +8463,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_barlangi.md"
   },
   {
     "név": "Tájtípus - dzsungel",
@@ -8347,7 +8497,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_dzsungel.md"
   },
   {
     "név": "Tájtípus - erdős",
@@ -8380,7 +8531,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_erdos.md"
   },
   {
     "név": "Tájtípus - jégmezők",
@@ -8413,7 +8565,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_jegmezok.md"
   },
   {
     "név": "Tájtípus - magaslati",
@@ -8446,7 +8599,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_magaslati.md"
   },
   {
     "név": "Tájtípus - mocsaras",
@@ -8479,7 +8633,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_mocsaras.md"
   },
   {
     "név": "Tájtípus - puszta",
@@ -8512,7 +8667,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_puszta.md"
   },
   {
     "név": "Tájtípus - sivatagi",
@@ -8545,7 +8701,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_sivatagi.md"
   },
   {
     "név": "Tájtípus - tengerek",
@@ -8576,7 +8733,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tajtipus_tengerek.md"
   },
   {
     "név": "Tánc",
@@ -8606,7 +8764,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tanc.md"
   },
   {
     "név": "Tánc: speciális/belső stílus",
@@ -8637,7 +8796,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/tanc_belso_stilus.md"
   },
   {
     "név": "Térképészet",
@@ -8668,7 +8828,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/terkepeszet.md"
   },
   {
     "név": "Titkos szervezet",
@@ -8699,7 +8860,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/titkos_szervezet.md"
   },
   {
     "név": "Vadállat idomítása",
@@ -8728,7 +8890,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/vadallat_idomitasa.md"
   },
   {
     "név": "Zenélés: fúvós hangszerek",
@@ -8758,7 +8921,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/zeneles_fuvos_hangszerek.md"
   },
   {
     "név": "Zenélés: húros hangszerek",
@@ -8788,7 +8952,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/zeneles_huros_hangszerek.md"
   },
   {
     "név": "Zenélés: ütős hangszerek",
@@ -8818,7 +8983,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/zeneles_utos_hangszerek.md"
   },
   {
     "név": "Zeneszerző",
@@ -8847,7 +9013,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/zeneszerzo.md"
   },
   {
     "név": "Zsonglőrködés",
@@ -8876,7 +9043,8 @@
         "követelmények": [],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.szabad/zsonglorkodes.md"
   },
   {
     "név": "Gyors hajítás",
@@ -8911,7 +9079,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/gyors_hajitas.md"
   },
   {
     "név": "Gyors lövés",
@@ -8946,7 +9115,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/gyors_loves.md"
   },
   {
     "név": "Gyors újratöltés",
@@ -9007,7 +9177,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/gyors_ujratoltes.md"
   },
   {
     "név": "Kitartott célzás",
@@ -9076,7 +9247,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/kitartott_celzas.md"
   },
   {
     "név": "Lövés futás közben",
@@ -9124,7 +9296,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/loves_futas_kozben.md"
   },
   {
     "név": "Lövés hátasról",
@@ -9237,7 +9410,8 @@
           }
         ]
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/loves_hatasrol.md"
   },
   {
     "név": "Lövés reflexből",
@@ -9295,7 +9469,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/loves_reflexbol.md"
   },
   {
     "név": "Mesterlövész",
@@ -9330,7 +9505,8 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/mesterlovesz.md"
   },
   {
     "név": "Mozgó cél mestere fegyverrel",
@@ -9378,6 +9554,7 @@
         ],
         "módosítók": []
       }
-    ]
+    ],
+    "md_fájl": "fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md"
   }
 ]

@@ -1,5 +1,6 @@
 import type { FortelySummary, FortelyFokSummary } from '../../engine/data-loader';
 import { fmtCode } from '../formatters';
+import { MdLink } from '../MdLink';
 
 interface Props {
   def: FortelySummary;
@@ -39,6 +40,7 @@ export function FortelyInfoPanel({ def, fokDef, kiterjesztiNormál, kiterjesztiE
           </span>
         </div>
       )}
+      {def.md_fájl && <div className="fort-info-row"><MdLink mdFájl={def.md_fájl} /></div>}
     </div>
   );
 }

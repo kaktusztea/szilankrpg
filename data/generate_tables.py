@@ -50,6 +50,16 @@ def generate_kepzettsegek():
             if not isinstance(data.get('primer', False), bool): errors.append(f"{ctx}: 'primer' nem boolean")
             if not isinstance(data.get('többszörös', []), list): errors.append(f"{ctx}: 'többszörös' nem lista")
             if data.get('próba', 'nincs') not in ('nincs', 'dobható', 'ellenpróba', 'nem dobható'): errors.append(f"{ctx}: 'próba' invalid: '{data.get('próba')}'")
+            # md_fájl: relatív path az md/ könyvtáron belül
+            rel = os.path.relpath(os.path.join(root, f), kdir)  # pl. primer/altalanos/akrobatika.yaml
+            parts = rel.replace('.yaml', '.md').replace(os.sep, '/')
+            # kepzettsegek.primer/altalanos/x.md vagy kepzettsegek.szekunder/x.md
+            md_parts = parts.split('/')
+            if md_parts[0] == 'primer' and len(md_parts) >= 3:
+                sub = md_parts[1].replace('_', '.')
+                md_fajl = f"kepzettsegek.primer/{sub}/{md_parts[2]}"
+            else:
+                md_fajl = f"kepzettsegek.szekunder/{md_parts[-1]}"
             result.append({
                 'név': data['név'],
                 'csoport': data['csoport'],
@@ -57,6 +67,7 @@ def generate_kepzettsegek():
                 'többszörös': data.get('többszörös', []),
                 'próba': data.get('próba', 'nincs'),
                 'domináns_tulajdonságok': data.get('domináns_tulajdonságok', []),
+                'md_fájl': md_fajl,
             })
     if errors:
         print("  ❌ Képzettség validációs hibák:")
@@ -102,10 +113,13 @@ def generate_fortelyok():
             kit_norm = kiterjeszti.get('normál', []) if kiterjeszti else []
             kit_eros = kiterjeszti.get('erős', []) if kiterjeszti else []
             tobbszorosseg = data.get('többszörösség', {})
+            # md_fájl: fortelyok.{alcsoport}/{fájlnév}.md
+            alcsoport = os.path.relpath(root, fdir).replace(os.sep, '/')
+            md_fajl = f"fortelyok.{alcsoport}/{f.replace('.yaml', '.md')}"
             result.append({
                 'név': data['név'],
                 'csoport': data.get('csoport', ''),
-                'alcsoport': os.path.relpath(root, fdir),
+                'alcsoport': alcsoport,
                 'maxfok': data.get('maxfok', 1),
                 'session_toggle': data.get('session_toggle', False),
                 'emlékeztető': data.get('emlékeztető', False),
@@ -118,6 +132,7 @@ def generate_fortelyok():
                 'kiterjeszti_normál': kit_norm,
                 'kiterjeszti_erős': kit_eros,
                 'fokok': fokok_summary,
+                'md_fájl': md_fajl,
             })
     if errors:
         print("  ❌ Fortély validációs hibák:")

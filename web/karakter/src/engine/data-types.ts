@@ -9,6 +9,7 @@ export interface KepzettsegDef {
   többszörös: string[];
   próba: string;
   domináns_tulajdonságok: string[];
+  md_fájl: string;
 }
 
 // --- Kiterjesztés entry ---
@@ -50,6 +51,7 @@ export interface FortelySummary {
   kiterjeszti_normál: string[];
   kiterjeszti_erős: string[];
   fokok: FortelyFokSummary[];
+  md_fájl: string;
 }
 
 // --- Tradíció ---

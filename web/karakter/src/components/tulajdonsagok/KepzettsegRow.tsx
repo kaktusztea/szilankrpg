@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { KepzettsegRowProps } from './types';
+import { MdLink } from '../MdLink';
 
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
@@ -64,6 +65,7 @@ export function KepzettsegRow({
               ))}</span>
             </div>
           )}
+          {def.md_fájl && <div className="kep-info-row"><MdLink mdFájl={def.md_fájl} /></div>}
         </div>
       )}
 

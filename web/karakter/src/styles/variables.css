@@ -24,3 +24,17 @@ body {
 }
 
 #root { height: 100%; }
+
+/* --- Közös: Adatlap link ikon --- */
+.md-link {
+  display: inline-block;
+  text-decoration: none;
+  font-size: 14px;
+  opacity: 0.6;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+.md-link:hover,
+.md-link:active {
+  opacity: 1;
+}
