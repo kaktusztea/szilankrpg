@@ -1,40 +1,33 @@
-.fort-screen {
-  padding-bottom: 20px;
-}
+/* =============================================
+   Fortélyok fül
+   ============================================= */
 
-.fort-section {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+.fort-screen { padding-bottom: 20px; }
+.fort-section { display: flex; flex-direction: column; gap: 12px; }
 
+/* Csoport fejléc */
 .fort-csoport-label {
   font-size: 17px;
   font-weight: bold;
-  color: #ce93d8;
+  color: var(--color-section-purple);
   margin-bottom: 4px;
   padding-bottom: 2px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-light);
   cursor: pointer;
   user-select: none;
 }
 
-.fort-csoport-arrow {
-  font-size: 15px;
-  margin-right: 2px;
-}
+.fort-csoport-arrow { font-size: 15px; margin-right: 2px; }
+.fort-row-wrapper { margin-bottom: 1px; }
 
-.fort-row-wrapper {
-  margin-bottom: 1px;
-}
-
+/* Sor */
 .fort-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 6px 10px;
   background: var(--surface);
-  border: 1px solid #3a3a5a;
+  border: 1px solid var(--border-row);
   border-radius: 4px;
   user-select: none;
   -webkit-user-select: none;
@@ -43,56 +36,19 @@
   cursor: pointer;
 }
 
-.fort-row-new {
-  opacity: 0.7;
-}
+.fort-row-new { opacity: 0.7; }
+.fort-név { font-size: 17px; color: var(--text); }
+.fort-right { display: flex; align-items: center; gap: 6px; }
+.fort-fok { font-size: 17px; font-weight: bold; color: var(--warning); min-width: 20px; text-align: right; }
+.fort-fok.fort-fok-max { color: var(--success); }
 
-.fort-név {
-  font-size: 17px;
-  color: var(--text);
-}
+/* Fok pöttyök */
+.fort-fok-dots { display: inline-flex; gap: 3px; align-items: center; }
+.fort-dot { width: 10px; height: 10px; border-radius: 50%; border: 1.5px solid #ccc; background: transparent; }
+.fort-dot.filled { background: #fff; border-color: #fff; }
+.fort-dot-hidden { visibility: hidden; }
 
-.fort-right {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.fort-fok {
-  font-size: 17px;
-  font-weight: bold;
-  color: var(--warning);
-  min-width: 20px;
-  text-align: right;
-}
-
-.fort-fok.fort-fok-max {
-  color: var(--success);
-}
-
-.fort-fok-dots {
-  display: inline-flex;
-  gap: 3px;
-  align-items: center;
-}
-
-.fort-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  border: 1.5px solid #ccc;
-  background: transparent;
-}
-
-.fort-dot.filled {
-  background: #fff;
-  border-color: #fff;
-}
-
-.fort-dot-hidden {
-  visibility: hidden;
-}
-
+/* Törlés */
 .fort-delete {
   background: none;
   border: none;
@@ -103,57 +59,42 @@
   padding: 0;
 }
 
+/* Select */
 .fort-select {
   flex: 1;
   background: var(--input-bg);
   color: var(--text);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 15px;
   width: 100%;
 }
 
+/* Info panel */
 .fort-info {
-  background: #1a1a3a;
-  border: 1px solid #444;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
   border-top: none;
   border-radius: 0 0 4px 4px;
   padding: 6px 10px;
   font-size: 13px;
 }
 
-.fort-info-desc {
-  color: var(--text-dim);
-  margin-bottom: 4px;
-  font-style: italic;
-}
-
-.fort-info-row {
-  margin-bottom: 3px;
-}
-
-.fort-info-label {
-  color: var(--text-dim);
-  margin-right: 4px;
-}
-
-.fort-info-kit {
-  color: var(--success);
-}
+.fort-info-desc { color: var(--text-dim); margin-bottom: 4px; font-style: italic; }
+.fort-info-row { margin-bottom: 3px; }
+.fort-info-label { color: var(--text-dim); margin-right: 4px; }
+.fort-info-kit { color: var(--success); }
+.fort-info-error { color: var(--error); }
 
 /* --- Fok radio buttons --- */
-.fort-fok-radios {
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-}
+.fort-fok-radios { display: flex; gap: 8px; justify-content: center; }
 
 .fort-fok-btn {
   width: 36px;
   height: 36px;
   border-radius: 50%;
-  border: 2px solid #555;
+  border: 2px solid var(--border-input);
   background: var(--input-bg);
   color: var(--text);
   font-size: 18px;
@@ -172,10 +113,8 @@
   color: var(--error);
 }
 
-.fort-fok-btn:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
+.fort-fok-btn:disabled { opacity: 0.3; cursor: default; }
+.fort-fok-btn-wide { width: auto; padding: 6px 14px; border-radius: 6px; }
 
 /* --- Hint bar --- */
 .fort-hint {
@@ -191,36 +130,16 @@
   margin-top: 8px;
 }
 
-.fort-over {
-  color: var(--error) !important;
-}
+.fort-over { color: var(--error) !important; }
 
-.nyelv-picker {
-  max-height: 70vh;
-  overflow-y: auto;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-.nyelv-csoport-label {
-  font-size: 13px;
-  font-weight: bold;
-  color: var(--warning);
-  margin-bottom: 4px;
-  padding-bottom: 2px;
-  border-bottom: 1px solid #444;
-}
-
-.nyelv-csoport {
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
+/* --- Nyelv picker --- */
+.nyelv-picker { max-height: 70vh; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; }
+.nyelv-csoport-label { font-size: 13px; font-weight: bold; color: var(--warning); margin-bottom: 4px; padding-bottom: 2px; border-bottom: 1px solid var(--border); }
+.nyelv-csoport { display: flex; flex-direction: column; gap: 3px; }
 
 .nyelv-btn {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 8px 12px;
   font-size: 15px;
@@ -229,15 +148,9 @@
   cursor: pointer;
 }
 
-.fort-kov-hiba {
-  border-left: 3px solid var(--error);
-}
-
-.fort-fok-btn-wide { width: auto; padding: 6px 14px; border-radius: 6px; }
+/* --- Követelmény --- */
+.fort-kov-hiba { border-left: 3px solid var(--error); }
 .fort-ingyenes-dot { color: #a5d6a7; font-size: 11px; margin-left: 4px; display: inline-block; transform: translateY(-3px); }
 .fort-req-met { color: var(--success); }
 .fort-req-unmet { color: #e53935; }
-
-/* --- Fortélyok --- */
-.fort-info-error { color: var(--error); }
 .fort-label-centered { text-align: center; width: 100%; }

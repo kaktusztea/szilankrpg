@@ -1,22 +1,10 @@
+/* =============================================
+   Harc fül
+   ============================================= */
+
 .harc-screen h3 { margin: 12px 0 6px; font-size: 17px; }
 
-.harc-nav-btns {
-  display: flex;
-  gap: 4px;
-  margin-bottom: 8px;
-}
-
-.harc-nav-btns button {
-  flex: 1;
-  padding: 6px 4px;
-  background: #0a2a4a;
-  color: var(--text);
-  border: 1px solid #444;
-  border-radius: 4px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
+/* --- Header box grid --- */
 .harc-header {
   display: grid;
   grid-template-columns: auto 1fr auto auto;
@@ -25,14 +13,12 @@
 }
 
 @media (max-width: 480px) {
-  .harc-header {
-    grid-template-columns: auto 1fr;
-  }
+  .harc-header { grid-template-columns: auto 1fr; }
 }
 
-.ke-box, .sfe-box {
+.ke-box, .sfe-box, .ve-csokk-box, .mp-box {
   background: var(--surface);
-  border: 1px solid #444;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 8px 12px;
   display: flex;
@@ -42,24 +28,22 @@
 
 .sfe-box { align-items: flex-start !important; }
 
-.ve-csokk-box, .mp-box {
-  background: var(--surface);
-  border: 1px solid #444;
-  border-radius: 6px;
-  padding: 8px 12px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+.ke-box .label, .sfe-box .label { font-size: 16px; font-weight: bold; color: var(--text); text-transform: uppercase; }
+.ke-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
 .ve-csokk-box .value { font-size: 24px; font-weight: bold; color: var(--warning); }
 .mp-box .value { font-size: 20px; font-weight: bold; color: var(--success); }
 
+.sfe-values { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
+.sfe-line { font-size: 16px; }
+.sfe-line strong { font-size: 16px; font-family: monospace; }
+
+/* --- VÉ gombok --- */
 .ve-btns { display: flex; gap: 4px; margin-top: 4px; }
+
 .ve-btns button {
   background: var(--input-bg);
   color: var(--text);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 3px;
   padding: 2px 7px;
   cursor: pointer;
@@ -67,24 +51,9 @@
   font-family: monospace;
 }
 
-.ve-btns button:disabled {
-  opacity: 0.3;
-  cursor: default;
-}
+.ve-btns button:disabled { opacity: 0.3; cursor: default; }
 
-.sfe-values {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  margin-top: 4px;
-}
-
-.sfe-line { font-size: 16px; }
-.sfe-line strong { font-size: 16px; font-family: monospace; }
-
-.ke-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
-.ke-box .label, .sfe-box .label { font-size: 16px; font-weight: bold; color: var(--text); text-transform: uppercase; }
-
+/* --- Fegyver tábla --- */
 .harc-table {
   width: 100%;
   border-collapse: collapse;
@@ -94,7 +63,7 @@
 
 .harc-table th, .harc-table td {
   padding: 4px 6px;
-  border: 1px solid #444;
+  border: 1px solid var(--border);
   text-align: center;
 }
 
@@ -104,57 +73,35 @@
 .harc-table td:first-child { text-align: left; }
 .harc-table td:not(:first-child) { font-family: monospace; }
 
+/* --- Harc szekció --- */
 .harc-section {
   background: var(--surface);
-  border: 1px solid #444;
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 8px 12px;
   margin-bottom: 8px;
 }
 
+/* --- VÉ csökkentés --- */
 .ve-csokk { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+
 .ve-csokk button {
   background: var(--input-bg);
   color: var(--text);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 4px 10px;
   cursor: pointer;
   font-size: 17px;
 }
 
-.ep-bar {
-  display: flex;
-  gap: 2px;
-  margin: 6px 0;
-}
-
-.ep-segment {
-  flex: 1;
-  text-align: center;
-  padding: 6px 4px;
-  border-radius: 3px;
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.ep-segment .te-lev {
-  font-size: 17px;
-  font-weight: normal;
-  margin-top: 2px;
-  opacity: 0.9;
-}
-
-.ep-segment.s1 { background: #4caf50; color: #000; }
-.ep-segment.s2 { background: #ff9800; color: #000; }
-.ep-segment.s3 { background: #f44336; color: #fff; }
-.ep-segment.s4 { background: #880000; color: #fff; }
-
+/* --- Manőver --- */
 .manover { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
 .manover button {
   background: var(--input-bg);
   color: var(--text);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 4px 10px;
   cursor: pointer;
@@ -162,13 +109,9 @@
 
 .dim { font-size: 17px; color: var(--text-dim); }
 
-.ve-flash-down {
-  animation: ve-pulse-down 1s ease-out;
-}
-
-.ve-flash-up {
-  animation: ve-pulse-up 1s ease-out;
-}
+/* --- VÉ flash animáció --- */
+.ve-flash-down { animation: ve-pulse-down 1s ease-out; }
+.ve-flash-up { animation: ve-pulse-up 1s ease-out; }
 
 @keyframes ve-pulse-down {
   0% { background: var(--warning); color: #000; }
@@ -180,26 +123,48 @@
   100% { background: transparent; color: inherit; }
 }
 
+/* --- Speciális jelölések --- */
 .harc-belharc-label { color: #ef9a9a; }
 .harc-belharc-warn { color: #e53935; }
 .harc-tam-clickable { cursor: pointer; }
 .harc-row-dimmed { opacity: 0.4; }
-
-.ph-bonus { color: #66bb6a; }
-
-/* --- Harc inline → CSS --- */
+.ph-bonus { color: var(--color-positive); }
 .harc-monospace { font-family: monospace; }
 .btn-reset-sm { font-size: 15px; }
+.harc-fegyver-active-row { border: 2px solid var(--color-taktika); }
+.harc-sfe-secondary { color: #aaa; }
+
+/* --- Popup helpers --- */
 .harc-confirm-center { display: flex; align-items: center; justify-content: center; }
 .harc-popup-label { font-weight: bold; }
 .harc-popup-text { font-size: 15px; color: var(--text); }
 .harc-popup-col { font-size: 15px; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
-.harc-fegyver-active-row { border: 2px solid #90caf9; }
-.harc-sfe-secondary { color: #aaa; }
 
-/* Részletes értékek box */
-.harc-reszletek { padding: 10px; border: 1px dashed #666; border-radius: 6px; font-size: 12px; color: #aaa; margin-top: 16px; }
-.harc-reszletek-title { color: #e53935; display: block; margin-bottom: 6px; }
+/* --- Részletes értékek --- */
+.harc-reszletek {
+  padding: 10px;
+  border: 1px dashed #666;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 16px;
+}
+
+.harc-reszletek-title { color: var(--accent); display: block; margin-bottom: 6px; }
 .harc-reszletek-section { margin-bottom: 4px; }
 .harc-reszletek-label { color: #ccc; font-weight: bold; }
 .harc-reszletek-indent { margin-left: 8px; margin-top: 1px; }
+
+/* --- Nav gombok --- */
+.harc-nav-btns { display: flex; gap: 4px; margin-bottom: 8px; }
+
+.harc-nav-btns button {
+  flex: 1;
+  padding: 6px 4px;
+  background: #0a2a4a;
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+}

@@ -1,22 +1,80 @@
+/* =============================================
+   Napló overlay
+   ============================================= */
+
 .naplo-screen { padding: 12px; min-height: 100%; }
 .naplo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
 .naplo-header h2 { margin: 0; }
 .naplo-empty { color: var(--text-dim); }
 .naplo-entry { margin-bottom: 4px; }
-.naplo-entry-header { background: var(--surface); border: 1px solid #444; border-radius: 4px; padding: 8px 10px; cursor: pointer; font-size: 15px; }
-.naplo-panel { background: #1a1a3a; border: 1px solid #444; border-top: none; border-radius: 0 0 4px 4px; padding: 10px; display: flex; flex-direction: column; gap: 8px; }
+
+.naplo-entry-header {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 10px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+.naplo-panel {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
 .naplo-panel-view { padding: 8px 10px; font-size: 14px; }
 .naplo-events { white-space: pre-wrap; color: var(--text); }
 .naplo-actions { display: flex; gap: 8px; margin-top: 8px; }
 .naplo-form-row { display: flex; gap: 6px; align-items: center; }
 .naplo-form-btns { display: flex; gap: 8px; }
-.naplo-add-wrap { background: var(--surface); border: 1px solid #555; border-radius: 6px; padding: 12px; margin-top: 8px; }
 
-.naplo-input { background: var(--input-bg); border: 1px solid #555; border-radius: 4px; padding: 6px 10px; color: var(--text); font-size: 14px; }
-.naplo-input-short { background: var(--input-bg); border: 1px solid #555; border-radius: 4px; padding: 4px 8px; color: var(--text); font-size: 14px; }
-.naplo-textarea { background: var(--input-bg); border: 1px solid #555; border-radius: 4px; padding: 6px 10px; color: var(--text); font-size: 14px; resize: vertical; font-family: inherit; }
-.naplo-btn { background: var(--primary); border: 1px solid #555; border-radius: 4px; padding: 4px 10px; color: var(--text); font-size: 13px; }
-.naplo-btn-new { background: var(--primary); border: 1px solid #555; border-radius: 4px; padding: 6px 12px; color: var(--text); font-size: 14px; }
+.naplo-add-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  padding: 12px;
+  margin-top: 8px;
+}
+
+/* --- Napló input elemek --- */
+.naplo-input {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.naplo-input-short {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 4px 8px;
+  color: var(--text);
+  font-size: 14px;
+}
+
+.naplo-textarea {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 14px;
+  resize: vertical;
+  font-family: inherit;
+}
+
+/* --- Napló gombok --- */
+.naplo-btn { background: var(--primary); border: 1px solid var(--border-input); border-radius: 4px; padding: 4px 10px; color: var(--text); font-size: 13px; }
+.naplo-btn-new { background: var(--primary); border: 1px solid var(--border-input); border-radius: 4px; padding: 6px 12px; color: var(--text); font-size: 14px; }
 .naplo-btn-save { background: var(--success); border: none; border-radius: 4px; padding: 6px 14px; color: #000; font-weight: bold; font-size: 14px; }
-.naplo-btn-cancel { background: var(--input-bg); border: 1px solid #555; border-radius: 4px; padding: 6px 14px; color: var(--text); font-size: 14px; }
+.naplo-btn-cancel { background: var(--input-bg); border: 1px solid var(--border-input); border-radius: 4px; padding: 6px 14px; color: var(--text); font-size: 14px; }
 .naplo-btn-del { background: var(--error); border: none; border-radius: 4px; padding: 4px 10px; color: #fff; font-size: 13px; }

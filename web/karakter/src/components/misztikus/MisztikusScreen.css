@@ -1,26 +1,48 @@
-/* --- Misztikus Screen layout --- */
+/* =============================================
+   Misztikus fül
+   ============================================= */
+
 .miszt-screen { padding: 12px; display: flex; flex-direction: column; gap: 12px; }
 
-/* --- Misztikus section common --- */
-.miszt-section { border-top: 1px solid #444; padding-top: 12px; }
-.miszt-section-title { font-size: 17px; color: #42a5f5; margin: 0 0 6px; }
+/* --- Szekció --- */
+.miszt-section { border-top: 1px solid var(--border); padding-top: 12px; }
+.miszt-section-title { font-size: 17px; color: var(--color-section-blue); margin: 0 0 6px; }
+.miszt-section-label { font-size: 13px; color: var(--text-dim); margin-top: 6px; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
 .miszt-no-faj { color: #666; font-size: 13px; }
-.miszt-section-label { font-size: 13px; color: var(--text-dim); margin-top: 6px; border-bottom: 1px solid #444; padding-bottom: 2px; }
 
-/* --- Képzettség row --- */
-.miszt-row { display: flex; align-items: center; gap: 4px; padding: 6px 10px; background: var(--surface); border: 1px solid #3a3a5a; border-radius: 4px; margin-bottom: 4px; cursor: pointer; }
+/* --- Képzettség sor --- */
+.miszt-row {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 6px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border-row);
+  border-radius: 4px;
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
 .miszt-row-name { flex: 1; font-size: 17px; }
 .miszt-row-warn { color: #e53935; }
 
-/* --- Fortély row --- */
+/* --- Fortély sor --- */
 .miszt-fort-row { gap: 8px; }
 .miszt-fort-name { flex: 1; }
 
 /* --- Aura panel --- */
 .aura-panel { display: flex; gap: 12px; flex-wrap: wrap; }
-.aura-card { background: var(--input-bg); border: 1px solid #444; border-radius: 6px; padding: 8px 14px; text-align: center; }
+
+.aura-card {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  text-align: center;
+}
+
 .aura-card-label { font-size: 14px; color: #aaa; }
 .aura-card-value { font-size: 20px; }
 
-/* --- Tradíció altípus picker pantheon groups --- */
+/* --- Tradíció altípus picker --- */
 .miszt-pantheon-group { display: flex; flex-direction: column; gap: 4px; }

@@ -1,3 +1,7 @@
+/* =============================================
+   ÉP Táblázat
+   ============================================= */
+
 .ep-table-wrapper { margin-bottom: 8px; }
 
 .ep-table-header {
@@ -14,28 +18,15 @@
 .ep-table-header .btn-reset {
   padding: 4px 6px;
   border-radius: 4px;
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   font-size: 13px;
   cursor: pointer;
   text-align: center;
 }
 
-.ep-table-header .btn-seb {
-  background: var(--accent);
-  color: #fff;
-}
-
-.ep-table-header .btn-heal {
-  background: var(--success);
-  color: #000;
-}
-
-.ep-table-header .btn-reset {
-  background: var(--input-bg);
-  color: var(--text);
-  max-width: 70%;
-  justify-self: center;
-}
+.ep-table-header .btn-seb { background: var(--accent); color: #fff; }
+.ep-table-header .btn-heal { background: var(--success); color: #000; }
+.ep-table-header .btn-reset { background: var(--input-bg); color: var(--text); max-width: 70%; justify-self: center; }
 
 .ep-table-header .btn-seb:disabled,
 .ep-table-header .btn-heal:disabled,
@@ -44,17 +35,10 @@
   cursor: default;
 }
 
-.ep-grid {
-  display: flex;
-  gap: 2px;
-}
+/* --- Grid --- */
+.ep-grid { display: flex; gap: 2px; }
 
-.ep-column {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 1px;
-}
+.ep-column { flex: 1; display: flex; flex-direction: column; gap: 1px; }
 
 .ep-col-header {
   text-align: center;
@@ -75,14 +59,11 @@
   border-radius: 3px;
 }
 
-.ep-col-footer.active-cat {
-  background: var(--accent);
-  color: #000;
-}
+.ep-col-footer.active-cat { background: var(--accent); color: #000; }
 
 .ep-cell {
   height: 22px;
-  border: 1px solid #444;
+  border: 1px solid var(--border);
   border-radius: 2px;
   display: flex;
   align-items: center;
@@ -92,19 +73,14 @@
   background: var(--input-bg);
 }
 
-.ep-cell.filled {
-  color: #fff;
-}
+.ep-cell.filled { color: #fff; }
 
-.ep-buttons {
-  display: flex;
-  gap: 6px;
-  margin-top: 8px;
-}
+/* --- Gombok --- */
+.ep-buttons { display: flex; gap: 6px; margin-top: 8px; }
 
 .ep-buttons button {
   padding: 6px 12px;
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   cursor: pointer;
   font-size: 15px;
@@ -112,18 +88,16 @@
   color: var(--text);
 }
 
-.ep-buttons button:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
+.ep-buttons button:disabled { opacity: 0.4; cursor: default; }
 
 .btn-seb { border-color: #c0392b !important; }
 .btn-heal { border-color: #27ae60 !important; }
 .btn-reset { border-color: #666 !important; }
 
+/* --- Dialógus --- */
 .ep-dialog {
   background: var(--surface);
-  border: 2px solid #555;
+  border: 2px solid var(--border-input);
   border-radius: 8px;
   padding: 12px;
   margin-top: 8px;
@@ -131,18 +105,12 @@
 
 .ep-dialog h4 { margin-bottom: 8px; }
 
-.ep-dialog-row {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-bottom: 8px;
-}
-
+.ep-dialog-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
 .ep-dialog-row label { font-size: 15px; min-width: 50px; }
 
 .ep-dialog-row button {
   padding: 4px 10px;
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   background: var(--input-bg);
   color: var(--text);
@@ -160,22 +128,29 @@
   width: 60px;
   padding: 4px 8px;
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   color: var(--text);
   font-size: 16px;
 }
 
-.btn-confirm {
-  background: var(--accent) !important;
-  color: #fff !important;
-  border-color: var(--accent) !important;
+.btn-confirm { background: var(--accent) !important; color: #fff !important; border-color: var(--accent) !important; }
+.ep-expand-btn { text-align: center; color: var(--text-dim); font-size: 28px; cursor: pointer; padding: 2px 0; }
+
+/* --- ÉP szegmens sáv --- */
+.ep-bar { display: flex; gap: 2px; margin: 6px 0; }
+
+.ep-segment {
+  flex: 1;
+  text-align: center;
+  padding: 6px 4px;
+  border-radius: 3px;
+  font-size: 17px;
+  font-weight: bold;
 }
 
-.ep-expand-btn {
-  text-align: center;
-  color: var(--text-dim);
-  font-size: 28px;
-  cursor: pointer;
-  padding: 2px 0;
-}
+.ep-segment .te-lev { font-size: 17px; font-weight: normal; margin-top: 2px; opacity: 0.9; }
+.ep-segment.s1 { background: #4caf50; color: #000; }
+.ep-segment.s2 { background: #ff9800; color: #000; }
+.ep-segment.s3 { background: #f44336; color: #fff; }
+.ep-segment.s4 { background: #880000; color: #fff; }

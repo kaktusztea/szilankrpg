@@ -1,3 +1,7 @@
+/* =============================================
+   Aktív fül
+   ============================================= */
+
 .aktiv-screen {
   padding: 12px;
   display: flex;
@@ -5,42 +9,34 @@
   min-height: 100%;
 }
 
-.aktiv-screen h2 {
-  margin: 0 0 12px;
-}
+.aktiv-screen h2 { margin: 0 0 12px; }
 
+/* --- Sorok --- */
 .aktiv-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-light);
 }
 
-.aktiv-label {
-  font-size: 15px;
-  font-weight: bold;
-  color: var(--text);
-}
+.aktiv-label { font-size: 15px; font-weight: bold; color: var(--text); }
+.aktiv-value { font-size: 16px; font-weight: bold; color: var(--success); }
 
-.aktiv-value {
-  font-size: 16px;
-  font-weight: bold;
-  color: var(--success);
-}
-
+/* --- Select --- */
 .aktiv-select {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   color: var(--text);
   padding: 6px 10px;
   font-size: 14px;
 }
 
+/* --- Toggle --- */
 .aktiv-toggle {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 6px 14px;
   font-size: 14px;
@@ -48,23 +44,15 @@
   cursor: pointer;
 }
 
-.aktiv-toggle.on {
-  background: var(--success);
-  color: #000;
-  border-color: var(--success);
-}
+.aktiv-toggle.on { background: var(--success); color: #000; border-color: var(--success); }
+.aktiv-toggle.disabled { opacity: 0.4; cursor: not-allowed; }
 
-.aktiv-toggle.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-/* Fegyver sor — he-field-btn stílus */
+/* --- Fegyver sor --- */
 .aktiv-fegyver-row {
   display: flex;
   gap: 6px;
   padding: 8px 0;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-light);
   flex-wrap: wrap;
 }
 
@@ -72,7 +60,7 @@
   flex: 1;
   min-width: 0;
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 6px 8px;
   display: flex;
@@ -82,19 +70,9 @@
   -webkit-tap-highlight-color: transparent;
 }
 
-.aktiv-field-btn.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
+.aktiv-field-btn.disabled { opacity: 0.4; cursor: not-allowed; }
+.aktiv-field-label { font-size: 11px; color: #888; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 
-.aktiv-field-label {
-  font-size: 11px;
-  color: #888;
-  text-transform: uppercase;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
 .aktiv-field-select {
   background: transparent;
   border: none;
@@ -116,51 +94,36 @@
   min-width: 60px;
 }
 
-.aktiv-field-toggle strong {
-  color: var(--text-dim);
-  font-size: 14px;
-}
+.aktiv-field-toggle strong { color: var(--text-dim); font-size: 14px; }
+.aktiv-field-toggle.on strong { color: var(--success); }
+.aktiv-field-toggle.disabled { opacity: 0.4; cursor: not-allowed; }
 
-.aktiv-field-toggle.on strong {
-  color: var(--success);
-}
+/* --- Szekciók --- */
+.aktiv-section { padding: 10px 0; }
+.aktiv-section .aktiv-label { display: block; margin-bottom: 6px; }
+.aktiv-section-sm { font-size: 13px; }
+.aktiv-section-noborder { border-bottom: none; font-size: 13px; }
+.aktiv-section-statuszok { margin-top: 16px; border-top: 1px solid var(--border-light); border-bottom: none; padding-top: 16px; font-size: 13px; }
+.aktiv-bottom-section { padding-top: 12px; border-top: 1px solid var(--border-light); }
 
-.aktiv-field-toggle.disabled {
-  opacity: 0.4;
-  cursor: not-allowed;
-}
-
-.aktiv-section {
-  padding: 10px 0;
-}
-
-.aktiv-section .aktiv-label {
-  display: block;
-  margin-bottom: 6px;
-}
-
-.aktiv-chip-x {
-  background: none;
-  border: none;
-  color: var(--error);
-  font-size: 14px;
-  cursor: pointer;
-  padding: 0 2px;
-}
+/* --- Chip-ek --- */
+.aktiv-chip-x { background: none; border: none; color: var(--error); font-size: 14px; cursor: pointer; padding: 0 2px; }
 
 .aktiv-fok-select {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 3px;
   color: var(--text);
   padding: 2px 4px;
   font-size: 13px;
 }
 
-/* Hatás pool */
+.taktika-chip-mods { font-size: 12px; color: #aaa; margin-top: 1px; }
+
+/* --- Hatás pool --- */
 .aktiv-hatas-pool {
-  background: #1a1a2e;
-  border: 1px solid #444;
+  background: var(--bg);
+  border: 1px solid var(--border);
   border-radius: 6px;
   padding: 8px 10px;
   margin-bottom: 12px;
@@ -169,14 +132,10 @@
 .hatas-pool-section {
   margin-bottom: 10px;
   padding-bottom: 10px;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid var(--border);
 }
 
-.hatas-pool-section:last-child {
-  margin-bottom: 0;
-  padding-bottom: 0;
-  border-bottom: none;
-}
+.hatas-pool-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
 
 .hatas-pool-title {
   font-size: 12px;
@@ -188,43 +147,27 @@
   margin-bottom: 4px;
 }
 
-.hatas-pool-items {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
+.hatas-pool-items { display: flex; flex-direction: column; gap: 4px; }
 
 .hatas-pool-item {
   font-size: 13px;
   padding: 2px 6px;
   border-radius: 3px;
-  background: #2a2a3e;
+  background: var(--card-bg);
   color: var(--text);
 }
 
-.hatas-pool-item.positive {
-  color: var(--success);
-}
+.hatas-pool-item.positive { color: var(--success); }
+.hatas-pool-item.negative { color: var(--error); }
+.hatas-pool-item .fortely-nev { color: var(--color-fortely); }
 
-.hatas-pool-item.negative {
-  color: var(--error);
-}
-
-.hatas-pool-item .fortely-nev {
-  color: #ce93d8;
-}
-
-/* Narratív módosítók input */
-.narrativ-add-row {
-  display: flex;
-  gap: 4px;
-  margin-top: 6px;
-}
+/* --- Narratív módosítók --- */
+.narrativ-add-row { display: flex; gap: 4px; margin-top: 6px; }
 
 .narrativ-input {
   flex: 1;
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   color: var(--text);
   padding: 6px 8px;
@@ -233,7 +176,7 @@
 
 .narrativ-select {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   color: var(--text);
   padding: 6px 4px;
@@ -252,10 +195,30 @@
   cursor: pointer;
 }
 
-/* Manőver picker overlay */
+/* Narratív popup */
+.narrativ-popup-content { display: flex; flex-direction: column; gap: 12px; min-width: 260px; padding: 4px; }
+.narrativ-popup-btns { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
+.narrativ-input-full { width: 100%; }
+.narrativ-add-btn-center { align-self: center; padding: 8px 24px; }
+
+.narrativ-val-btn {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 2px solid rgba(255,255,255,0.3);
+  background: var(--surface);
+  color: var(--text);
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.narrativ-val-btn.selected { color: #fff; }
+.narrativ-val-pos.selected { border-color: var(--success); background: var(--success); }
+.narrativ-val-neg.selected { border-color: var(--accent); background: var(--accent); }
+
+/* --- Picker overlay --- */
 .aktiv-picker {
   background: var(--primary);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 8px;
   width: 90vw;
   max-width: 400px;
@@ -269,7 +232,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 10px 12px;
-  border-bottom: 1px solid #444;
+  border-bottom: 1px solid var(--border);
   font-weight: bold;
 }
 
@@ -287,13 +250,13 @@
   text-transform: uppercase;
   letter-spacing: 0.05em;
   padding: 4px 0 2px;
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-light);
   margin-top: 4px;
 }
 
 .aktiv-picker-item {
   background: var(--input-bg);
-  border: 1px solid #444;
+  border: 1px solid var(--border);
   border-radius: 4px;
   padding: 8px 10px;
   cursor: pointer;
@@ -302,58 +265,20 @@
   gap: 2px;
 }
 
-.aktiv-picker-item.active {
-  border-color: var(--success);
-}
+.aktiv-picker-item.active { border-color: var(--success); }
+.aktiv-picker-disabled { opacity: 0.4; cursor: default !important; }
+.aktiv-picker-item-name { font-weight: bold; color: var(--text); font-size: 14px; }
+.aktiv-picker-item-details { font-size: 12px; color: #aaa; }
+.aktiv-picker-item-hatas { font-size: 12px; color: #ccc; font-style: italic; }
+.aktiv-picker-info { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: #aaa; padding: 2px 8px; }
+.aktiv-picker-category { font-size: 13px; font-weight: bold; color: var(--color-section-orange); padding: 8px 4px 4px; border-bottom: 1px solid var(--border); margin-bottom: 6px; }
+.aktiv-picker-item-disabled-inline { opacity: 0.4; pointer-events: none; }
+.aktiv-picker-item-active-accent { border-color: var(--accent); }
 
-.aktiv-picker-disabled {
-  opacity: 0.4;
-  cursor: default !important;
-}
-
-.aktiv-picker-item-name {
-  font-weight: bold;
-  color: var(--text);
-  font-size: 14px;
-}
-
-.aktiv-picker-item-details {
-  font-size: 12px;
-  color: #aaa;
-}
-
-.aktiv-picker-item-hatas {
-  font-size: 12px;
-  color: #ccc;
-  font-style: italic;
-}
-
-.aktiv-picker-info {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  font-size: 12px;
-  color: #aaa;
-  padding: 2px 8px;
-}
-
-.aktiv-bottom-section {
-  padding-top: 12px;
-  border-top: 1px solid #333;
-}
-
-.aktiv-picker-category {
-  font-size: 13px;
-  font-weight: bold;
-  color: #e0a050;
-  padding: 8px 4px 4px;
-  border-bottom: 1px solid #444;
-  margin-bottom: 6px;
-}
-
+/* --- Add gomb --- */
 .aktiv-add-btn {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   color: var(--text-dim);
   padding: 6px 12px;
@@ -362,78 +287,42 @@
   margin-top: 6px;
 }
 
-.taktika-chip-mods {
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 1px;
-}
-
-.aktiv-add-btn-sm {
-  margin-left: 8px;
-  padding: 2px 8px;
-  font-size: 13px;
-}
-
-.aktiv-taktika-row-clickable { cursor: pointer; }
-
+.aktiv-add-btn-sm { margin-left: 8px; padding: 2px 8px; font-size: 13px; }
 .aktiv-add-btn-hidden { visibility: hidden; }
 
-.narrativ-val-btn {
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 2px solid rgba(255,255,255,0.3);
-  background: var(--surface);
-  color: var(--text);
-  font-weight: bold;
-  cursor: pointer;
-}
-.narrativ-val-btn.selected {
-  color: #fff;
-}
+/* --- Taktika --- */
+.aktiv-taktika-row-clickable { cursor: pointer; }
+.aktiv-taktika-name { color: var(--color-taktika); }
+.aktiv-taktika-mods { color: var(--color-positive); }
+.aktiv-taktika-note { opacity: 0.7; }
+.aktiv-extra-fok-dot { color: var(--color-fortely); margin-left: 6px; }
 
+/* --- Helyzetek --- */
+.aktiv-sub-row { padding-left: 8px; font-size: 12px; opacity: 0.85; }
+.aktiv-helyzet-fortely-sor { padding-left: 12px; flex-wrap: wrap; word-break: break-word; justify-content: flex-start; }
+.aktiv-helyzet-aktiv { color: var(--color-positive); }
+.aktiv-helyzet-inaktiv { color: #888; }
+.aktiv-helyzet-alapeset { color: var(--color-statusz); }
 .aktiv-min-penge-warning { color: #e53935; margin-left: 6px; }
 
-.aktiv-section-sm { font-size: 13px; }
-.aktiv-section-statuszok { margin-top: 16px; border-top: 1px solid #333; border-bottom: none; padding-top: 16px; font-size: 13px; }
-.aktiv-taktika-name { color: #90caf9; }
-.aktiv-taktika-mods { color: #66bb6a; }
-.aktiv-taktika-note { opacity: 0.7; }
-.aktiv-sub-row { padding-left: 8px; font-size: 12px; opacity: 0.85; }
-.aktiv-statusz-name { color: #cd7c6f; }
-.aktiv-manover-name { color: #bbb; font-size: 14px; }
-.aktiv-manover-bonus { flex: 1; color: #66bb6a; }
-.aktiv-extra-fok-dot { color: #ce93d8; margin-left: 6px; }
-
-/* --- Aktiv inline → CSS --- */
-.aktiv-section-noborder { border-bottom: none; font-size: 13px; }
-.aktiv-flex-col { display: flex; flex-direction: column; }
-.aktiv-flex-1 { flex: 1; }
-.aktiv-strong-pos { color: #66bb6a; }
-.aktiv-strong-neg { color: #e53935; }
-.aktiv-strong-helyzet { color: #ff9800; }
-.aktiv-manover-flex { display: flex; align-items: center; gap: 8px; }
-.aktiv-hatas-pool-details { margin-top: 8px; }
-.aktiv-hatas-pool-details[open] > summary { cursor: pointer; }
-.aktiv-hint-disabled { font-size: 11px; color: #888; }
-.aktiv-picker-item-disabled-inline { opacity: 0.4; pointer-events: none; }
-.aktiv-picker-item-active-accent { border-color: var(--accent); }
-
-/* Helyzet-kötött fortély sorok */
-.aktiv-helyzet-fortely-sor { padding-left: 12px; flex-wrap: wrap; word-break: break-word; justify-content: flex-start; }
-.aktiv-helyzet-aktiv { color: #66bb6a; }
-.aktiv-helyzet-inaktiv { color: #888; }
-.aktiv-helyzet-alapeset { color: #cd7c6f; }
-
-/* Státusz clickable */
+/* --- Státusz --- */
+.aktiv-statusz-name { color: var(--color-statusz); }
 .aktiv-statusz-row-clickable { cursor: pointer; }
 
-/* Fegyver select speciális opció */
-.aktiv-option-special { color: #81c784; }
+/* --- Manőver --- */
+.aktiv-manover-name { color: #bbb; font-size: 14px; }
+.aktiv-manover-bonus { flex: 1; color: var(--color-positive); }
+.aktiv-manover-flex { display: flex; align-items: center; gap: 8px; }
 
-/* Narratív popup */
-.narrativ-popup-content { display: flex; flex-direction: column; gap: 12px; min-width: 260px; padding: 4px; }
-.narrativ-popup-btns { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
-.narrativ-input-full { width: 100%; }
-.narrativ-add-btn-center { align-self: center; padding: 8px 24px; }
-.narrativ-val-pos.selected { border-color: #4caf50; background: #4caf50; }
-.narrativ-val-neg.selected { border-color: var(--accent); background: var(--accent); }
+/* --- Hatás pool details --- */
+.aktiv-hatas-pool-details { margin-top: 8px; }
+.aktiv-hatas-pool-details[open] > summary { cursor: pointer; }
+
+/* --- Helpers --- */
+.aktiv-flex-col { display: flex; flex-direction: column; }
+.aktiv-flex-1 { flex: 1; }
+.aktiv-strong-pos { color: var(--color-positive); }
+.aktiv-strong-neg { color: #e53935; }
+.aktiv-strong-helyzet { color: var(--warning); }
+.aktiv-hint-disabled { font-size: 11px; color: #888; }
+.aktiv-option-special { color: #81c784; }

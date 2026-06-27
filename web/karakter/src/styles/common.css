@@ -1,0 +1,402 @@
+/* =============================================
+   Közös, újrafelhasznált stílusok
+   =============================================
+   Generikus komponens class-ok, amiket a screen-specifikus
+   CSS fájlok felhasználnak (extend / compose / override).
+   ============================================= */
+
+/* ===================
+   1. Kártya / Panel
+   =================== */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+}
+
+.card-alt {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+
+/* ===================
+   2. Lista sor (képzettség, fortély, misztikus)
+   =================== */
+.row-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border-row);
+  border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.row-item-new { opacity: 0.7; }
+
+.row-item-name { font-size: 17px; color: var(--text); }
+
+.row-item-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===================
+   3. Gomb variánsok
+   =================== */
+.btn-base {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.btn-base:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* Field gomb (label + érték, kártya-szerű) */
+.field-btn {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 4px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: left;
+}
+
+.field-btn strong {
+  color: var(--success);
+  margin-left: 4px;
+}
+
+.field-btn-fortely { border-color: #ab47bc; }
+
+/* Törlés gomb (ikonszerű) */
+.btn-delete {
+  background: none;
+  border: none;
+  color: #6ec6ff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Fok/szint kerek gomb */
+.btn-round {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--border-input);
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-round.active {
+  border-color: var(--success);
+  background: var(--success);
+  color: #000;
+}
+
+.btn-round.btn-round-del {
+  border-color: var(--error);
+  color: var(--error);
+}
+
+.btn-round:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.btn-round-wide {
+  width: auto;
+  padding: 6px 14px;
+  border-radius: 6px;
+}
+
+/* ===================
+   4. Select / Dropdown
+   =================== */
+.select-base {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+}
+
+/* ===================
+   5. Csoport fejléc (összecsukható)
+   =================== */
+.group-label {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  user-select: none;
+}
+
+.group-label-blue { color: var(--color-section-blue); }
+.group-label-purple { color: var(--color-section-purple); }
+.group-label-orange { color: var(--color-section-orange); }
+
+.group-arrow {
+  font-size: 15px;
+  margin-right: 2px;
+}
+
+/* ===================
+   6. Info panel (accordion alatti, sor részletek)
+   =================== */
+.info-panel {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+.info-panel-row { margin-bottom: 3px; }
+.info-panel-label { color: var(--text-dim); margin-right: 4px; }
+.info-panel-value { color: var(--success); }
+
+/* ===================
+   7. Részletek / Debug box (dashed border)
+   =================== */
+.details-box {
+  padding: 10px;
+  border: 1px dashed #666;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.details-box-title {
+  color: var(--accent);
+  display: block;
+  margin-bottom: 6px;
+}
+
+/* ===================
+   8. Szint/fok grid
+   =================== */
+.grid-buttons {
+  display: grid;
+  grid-template-columns: repeat(5, 36px);
+  gap: 6px;
+  justify-content: center;
+}
+
+.grid-buttons-fok {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ===================
+   9. Hint bar (sticky alul)
+   =================== */
+.hint-bar {
+  position: sticky;
+  bottom: 0;
+  background: var(--warning);
+  color: #000;
+  text-align: center;
+  padding: 6px;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 4px;
+  margin-top: 8px;
+}
+
+/* ===================
+   10. Picker overlay (közös)
+   =================== */
+.picker-overlay {
+  background: var(--primary);
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  width: 90vw;
+  max-width: 400px;
+  max-height: 80vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.picker-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  font-weight: bold;
+}
+
+.picker-list {
+  overflow-y: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.picker-item {
+  background: var(--input-bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 8px 10px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.picker-item.active { border-color: var(--success); }
+.picker-item-disabled { opacity: 0.4; cursor: default !important; }
+.picker-item-name { font-weight: bold; color: var(--text); font-size: 14px; }
+.picker-item-details { font-size: 12px; color: #aaa; }
+
+.picker-category {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--color-section-orange);
+  padding: 8px 4px 4px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 6px;
+}
+
+.picker-group-label {
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 4px 0 2px;
+  border-bottom: 1px solid var(--border-light);
+  margin-top: 4px;
+}
+
+/* ===================
+   11. Toggle gomb
+   =================== */
+.toggle-btn {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 6px 14px;
+  font-size: 14px;
+  color: var(--text-dim);
+  cursor: pointer;
+}
+
+.toggle-btn.on {
+  background: var(--success);
+  color: #000;
+  border-color: var(--success);
+}
+
+.toggle-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* ===================
+   12. Fok pöttyök (fortély, misztikus)
+   =================== */
+.fok-dots {
+  display: inline-flex;
+  gap: 3px;
+  align-items: center;
+}
+
+.fok-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1.5px solid #ccc;
+  background: transparent;
+}
+
+.fok-dot.filled {
+  background: #fff;
+  border-color: #fff;
+}
+
+.fok-dot-hidden { visibility: hidden; }
+
+/* ===================
+   13. Inline code formatter
+   =================== */
+.fmt-code {
+  font-family: monospace;
+  background: #333;
+  padding: 0 3px;
+  border-radius: 2px;
+}
+
+/* ===================
+   14. Input field
+   =================== */
+.input-field {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-size: 14px;
+  color: var(--text);
+  width: 100%;
+}
+
+/* ===================
+   15. Szín-error overridek
+   =================== */
+.color-error { color: var(--error) !important; }
+.color-success { color: var(--success); }
+.color-warning { color: var(--warning); }
+.color-dim { color: var(--text-dim); }
+
+/* ===================
+   16. Picker controls (távolság, kor)
+   =================== */
+.picker-controls-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.picker-value-display {
+  font-size: 28px;
+  min-width: 60px;
+  text-align: center;
+  user-select: none;
+}
+
+.picker-btn-size {
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+}

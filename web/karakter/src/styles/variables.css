@@ -1,8 +1,13 @@
+/* =============================================
+   CSS Változók és globális reset
+   ============================================= */
+
 * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
 
 :root {
   --bg: #1a1a2e;
   --surface: #16213e;
+  --surface-alt: #1a1a3a;
   --primary: #0f3460;
   --accent: #e94560;
   --text: #eee;
@@ -11,6 +16,28 @@
   --success: #4caf50;
   --warning: #ff9800;
   --error: #f44336;
+
+  /* Borderek */
+  --border: #444;
+  --border-light: #333;
+  --border-row: #3a3a5a;
+  --border-input: #555;
+
+  /* Kártya/card háttér */
+  --card-bg: #2a2a3e;
+
+  /* Színek: szekció fejlécek */
+  --color-section-blue: #42a5f5;
+  --color-section-purple: #ce93d8;
+  --color-section-orange: #e0a050;
+  --color-section-cat: #7eb8da;
+
+  /* Hatás pool színek */
+  --color-taktika: #90caf9;
+  --color-helyzet: #42a5f5;
+  --color-fortely: #ce93d8;
+  --color-statusz: #cd7c6f;
+  --color-positive: #66bb6a;
 }
 
 body {
@@ -35,6 +62,4 @@ body {
   vertical-align: middle;
 }
 .md-link:hover,
-.md-link:active {
-  opacity: 1;
-}
+.md-link:active { opacity: 1; }

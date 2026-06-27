@@ -1,5 +1,10 @@
 @import './styles/variables.css';
+@import './styles/common.css';
 @import './styles/overlays.css';
+
+/* =============================================
+   App shell: layout, header, tabs, KP sáv
+   ============================================= */
 
 .app {
   display: flex;
@@ -14,19 +19,21 @@
   -webkit-touch-callout: none;
 }
 
+/* --- Header --- */
 .header {
   display: flex;
   align-items: center;
   padding: 8px 12px;
   background: var(--primary);
-  border-bottom: 1px solid #333;
+  border-bottom: 1px solid var(--border-light);
 }
 
 .title { font-weight: bold; font-size: 16px; white-space: nowrap; }
+.title-test { color: var(--warning); }
 
 .header-szilank {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 2px 8px;
   font-size: 14px;
@@ -46,16 +53,18 @@
 
 .gear-btn {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 4px 8px;
   font-size: 16px;
   cursor: pointer;
 }
 
+.gear-btn-padded { padding: 4px 12px; }
+
 .menu-item {
   background: var(--input-bg);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 10px 16px;
   font-size: 16px;
@@ -69,7 +78,7 @@
 .mode-toggle {
   background: var(--input-bg);
   color: var(--text);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 4px 10px;
   font-size: 15px;
@@ -78,6 +87,10 @@
   transition: background-color 2000ms ease;
 }
 
+.mode-toggle-game { background: #4caf50; color: #000; }
+.mode-toggle-szerk { background: #ff9800; color: #000; }
+
+/* --- Content & screen slider --- */
 .content {
   flex: 1;
   overflow: hidden;
@@ -102,12 +115,13 @@
   font-size: 18px;
 }
 
+/* --- Tab bar --- */
 .tab-bar {
   display: flex;
   justify-content: center;
   gap: 4px;
   background: var(--surface);
-  border-top: 1px solid #333;
+  border-top: 1px solid var(--border-light);
   padding: 4px 0;
   overflow: hidden;
   position: relative;
@@ -149,6 +163,7 @@
   font-weight: bold;
 }
 
+/* --- KP sáv --- */
 .kp-bar {
   display: flex;
   align-items: center;
@@ -179,6 +194,7 @@
 .kp-bar-neg { background: #c62828; }
 .kp-primer-over { color: #ffcdd2; }
 
+/* --- Misc --- */
 .version-hint {
   background: var(--warning);
   color: #000;
@@ -200,12 +216,13 @@
 
 .error { color: var(--error); }
 
+/* --- Jegyzetek textarea --- */
 .app-jegyzetek-textarea {
   width: 100%;
   min-height: calc(100vh - 160px);
   background: var(--input-bg);
   color: var(--text);
-  border: 1px solid #555;
+  border: 1px solid var(--border-input);
   border-radius: 6px;
   padding: 10px;
   font-size: 14px;
@@ -213,41 +230,23 @@
   font-family: inherit;
 }
 
+/* --- Próba bar --- */
 .app-proba-bar {
   position: fixed;
   bottom: 0;
   left: 0;
   right: 0;
-  background: #1a1a2e;
-  border-top: 1px solid #444;
+  background: var(--bg);
+  border-top: 1px solid var(--border);
   padding: 6px 10px;
   font-size: 15px;
   z-index: 102;
 }
 
-.app-proba-summary {
-  cursor: pointer;
-  font-weight: bold;
-  color: #90caf9;
-}
-
-.app-proba-pre {
-  margin: 4px 0;
-  font-family: monospace;
-  font-size: 15px;
-  color: #ccc;
-}
+.app-proba-summary { cursor: pointer; font-weight: bold; color: var(--color-taktika); }
+.app-proba-pre { margin: 4px 0; font-family: monospace; font-size: 15px; color: #ccc; }
 
 /* --- Error boundary --- */
 .error-boundary { padding: 20px; color: #e53935; text-align: center; }
 .error-boundary-msg { font-size: 13px; color: #aaa; }
 .error-boundary-btn { margin-top: 10px; padding: 6px 12px; }
-
-/* --- Inline code formatter --- */
-.fmt-code { font-family: monospace; background: #333; padding: 0 3px; border-radius: 2px; }
-
-/* --- Header inline overrides --- */
-.gear-btn-padded { padding: 4px 12px; }
-.mode-toggle-game { background: #4caf50; color: #000; }
-.mode-toggle-szerk { background: #ff9800; color: #000; }
-.title-test { color: #ff9800; }
