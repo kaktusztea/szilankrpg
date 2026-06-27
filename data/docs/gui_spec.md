@@ -9,10 +9,12 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - **Stack**: React 19 + Vite 6 + TypeScript 5.8
 - **Base URL**: `/szilankrpg/`
 - **Max szélesség**: 600px (centered)
-- **Font**: `-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
-- **Base font-size**: 14px
+- **Font**: `'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
+- **Base font-size**: 16px
 - **Context menu**: disabled (`onContextMenu preventDefault`)
 - **User select**: disabled (`user-select: none`, `-webkit-touch-callout: none`)
+- **Body height**: `100dvh` (dynamic viewport height, iOS safe area aware)
+- **Overflow**: `hidden` (body szinten, screen slide-ok belül scrolloznak)
 
 ## CSS változók (dark theme)
 
@@ -69,7 +71,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 ## App fejléc (header)
 
 - `padding: 8px 12px`, háttér: `--primary`, `border-bottom: 1px solid #333`
-- Bal: "Szilánk RPG" (`font-weight: bold, 16px, white-space: nowrap`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
+- Bal: "Szilánk" (`font-weight: bold, 16px, white-space: nowrap`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
 - Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → értékválasztó popup 0/1/2/3)
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - 📅 Napló overlay gomb (mindkét mód)
@@ -96,9 +98,9 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - `szilank_active`: aktív karakter uid
 - Autosave: minden karakter/undo változáskor, ha `isDirty=true` és nem testMode
 - "Új karakter": isDirty=false → nem mentődik amíg módosítás nem történik
-- "Duplikál": deep clone, új uid, név " v2" suffix (ismétlésnél v3, v4...), Karakterek ablak megnyílik
+- "Duplikál": deep clone, új uid, név ":2" suffix (ismétlésnél :3, :4...), Karakterek ablak megnyílik
 - Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
-- Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + 🔗 Megosztás + ✕ törlés + 🧪 Teszt + 📁 Fájlból. Név max 15 karakter (utána `..`), verzió suffix (v2) megtartva.
+- Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + 🔗 Megosztás + ✕ törlés + 🧪 Teszt + 📁 Fájlból. Név max 15 karakter (utána `..`), verzió suffix (:2) megtartva.
   - 🔗 ikon: karakter URL export (deflate+base64url) → vágólapra. Toast: "Karakter link vágólapra másolva!"
 
 ---
@@ -110,7 +112,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 | Tulajdonságok            | szerkeszthető | read-only                  |
 | Képzettségek             | szerkeszthető (szint, felvétel) | read-only    |
 | Fortélyok                | szerkeszthető (fok, felvétel)   | read-only    |
-| Harcértékek              | szerkeszthető | **nem látszik** (editOnly) |
+| Harcértékek              | szerkeszthető | read-only                  |
 | Fegyverek, Páncél        | szerkeszthető | read-only                  |
 | Hátterek                 | szerkeszthető | read-only                  |
 | **Aktív fül**            | szerkeszthető | **szerkeszthető** ✅        |
@@ -121,7 +123,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 ### Viselkedés
 - **Toggle gomb** a fejlécben (pl. 🔧/🎮 ikon): váltás a két mód között
 - **Game módban**: a szerkesztő kontrollok (input mezők, szint-állítók, felvétel gombok) eltűnnek — csak az értékek látszanak
-- **Game módban elérhető**: Aktív fül teljes egészében, VÉ csökkenés +/- gombok, ÉP jelölés, Manőver Pont felhasználás
+- **Game módban elérhető**: Aktív fül teljes egészében, VÉ csökkenés +/- gombok, ÉP jelölés, Manőver Pont felhasználás, Harcértékek fül (read-only)
 
 ---
 
@@ -180,6 +182,42 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 ### Viselkedés
 - Minden módosítás azonnal frissíti a session-t → Harc fül értékei reagálnak
+
+### Komponens struktúra (components/aktiv/)
+
+| Komponens | Felelősség |
+|-----------|------------|
+| `AktivScreen.tsx` | Fő layout, szekciók összerakása |
+| `AktivFegyverSection.tsx` | Fegyver választás szekció (Ügyesebb + Gyengébb kéz + Fogás + Páncél + Session toggles) |
+| `UgyesebbKezSelect.tsx` | Ügyesebb kéz fegyver dropdown |
+| `GyengebbKezSelect.tsx` | Gyengébb kéz fegyver dropdown (feltételes megjelenítés) |
+| `AktivFegyverfogas.tsx` | Fegyverfogás picker overlay |
+| `SessionToggles.tsx` | Session toggle fortély gombok (pl. Harci akrobatika) |
+| `AktivTaktikak.tsx` | Taktika picker + chip-ek + fok kezelés |
+| `AktivHelyzetek.tsx` | Harci helyzet picker + chip-ek (3 csoport: pozitív/semleges/negatív) |
+| `AktivManover.tsx` | Manőver picker + info box |
+| `AktivStatuszok.tsx` | Státusz picker + chip-ek |
+| `StatuszPickerOverlay.tsx` | Státusz választó overlay (kategóriák + fok) |
+| `AktivNarrativ.tsx` | Narratív előny/hátrány kezelés |
+| `AktivHatasPool.tsx` | Hatás pool box (fortély bónuszok + alapesetek accordion) |
+| `HatasPoolCalc.ts` | Hatás pool kalkuláció logika |
+| `AktivHelpers.ts` | Segédfüggvények (kombó szűrés, megkötés ellenőrzés) |
+| `NaploTab.tsx` | Napló overlay tartalom |
+
+### Harc fül komponens struktúra (components/harc/)
+
+| Komponens | Felelősség |
+|-----------|------------|
+| `HarcScreen.tsx` | Fő harc screen (header boxok + fegyvertábla + ÉP tábla) |
+| `useHarcComputed.ts` | Hook: context build + reactive evaluate + feltétel dispatch |
+| `fegyver-calc.ts` | buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes |
+| `taktika-calc.ts` | calcTaktikaMods (fokozatos extrapoláció) |
+| `pancel-calc.ts` | buildPancelLookups, calcFogas, calcFtEnyhites |
+| `HarcHeader.tsx` | KÉ, SFÉ, VÉ csökk, MP felső box sor |
+| `HarcFegyverTable.tsx` | Fegyver harcértékek tábla |
+| `EpTable.tsx` | ÉP sebesülés táblázat (S1-S4) |
+| `HarcPopups.tsx` | Harc fül popup-ok (Tám info, VÉ history) |
+| `HarcCalc.ts` | Re-export barrel (backward compat) |
 
 ### Fegyverfogás választó
 
@@ -517,9 +555,9 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 
 ---
 
-## 4b. Harcértékek fül/screen (editOnly: true — Game módban nem látszik)
+## 4b. Harcértékek fül/screen (🛡️)
 
-HM vásárlás, fegyver és páncél konfiguráció. Csak Szerkesztő módban elérhető.
+HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes szerkeszthetőség, Game módban read-only.
 
 - Alap font-size: `16px` (konzisztens a többi füllel)
 - Szekció fejlécek: `17px bold`
@@ -712,7 +750,7 @@ Alul fix, horizontálisan scrollozható szalag.
 | fortelyok | 🟣 | false |
 | tulajdonsagok | 🔵 | false |
 | misztikus | ✨ | false |
-| harcertekek | 🛡️ | true |
+| harcertekek | 🛡️ | false |
 | tavharc | 🏹 | false |
 | harc | 🗡️ | false |
 | aktiv | ✳️ | false |
@@ -723,7 +761,7 @@ Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
 | jegyzetek | ✏️ | mindkét mód |
 | naplo | 📅 | mindkét mód |
 
-- `editOnly: true` → Game módban a tab eltűnik (🛡️ jobb szélről, többi fix)
+- Jelenleg nincs `editOnly: true` tab — Game módban minden fül elérhető
 - Default aktív tab induláskor: `tulajdonsagok` (index 5 az ALL_TABS-ban)
 - **Tükrözött sorrend**: reverse() renderelés → a tömb utolsó eleme jelenik meg balra
 - Screen slider is tükrözve: `translateX(-(TABS.length-1-activeTab)*100%)`, swipe irány invertált
@@ -795,7 +833,7 @@ Deklaratív számítási szabályok dependency graph-ban:
 - **ArrayContext**: `buildArrayContext()` — tömbök (képzettségek, fortélyok, kp_tábla, harci_fortélyok, csatolt_mgt táblák)
 - **StringContext**: string-keyed lookup-okhoz (pl. páncél_kidolgozottság → csatolt_mgt tábla kulcs)
 
-#### Jelenlegi rules.json szabályok (53 db):
+#### Jelenlegi rules.json szabályok (54 db):
 | ID | Formula típus | Leírás |
 |----|--------------|--------|
 | ÉP | képlet | 28 + edzettség x 4 |
@@ -877,13 +915,20 @@ Minden adat `fetchJson`-nel:
 - `data/karakter/empty_karakter.json` — üres karakter template (induláskor betöltődik, validálva)
 - `data/karakter/test_karakter.json` — teszt karakter (🧪 gomb, runtime fetch + validáció)
 
-### Karakter state struktúra (App szintjén)
+### Karakter state struktúra (Hook architektúra)
+- **`useKarakterState`** hook: localStorage multi-slot kezelés, karakter load/save, undo stack
+  - Exportál: `data, error, karakter, setKarakter, testMode, setTestMode, isDirty, setIsDirty, undoStack, setUndoStack, pushUndo, undoTo, setTulajdonságok, setKépzettségek, setFortélyok, setSession`
+- **`useKarakterActions`** hook: magasabb szintű műveletek
+  - Exportál: `importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter`
+- **`useUndoWrappedSetters`** hook: undo-aware setter wrapperek (pushUndo + setKarakter együtt)
+  - Exportál: `setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo`
+- **`useUrlImport`** hook: URL hash import (app mount-kor automatikus)
+- **`useSwipe`** hook: swipe gesztus kezelés (activeTab, tabCount, setActiveTab)
+- **`useOverlays`** hook: overlay állapotkezelés (OverlayState objektum, setOverlay, Escape/Ctrl+S, toast auto-dismiss)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
-- Top-level: `schema_version`, `név`, `becenév`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
+- Top-level: `schema_version`, `uid`, `id_leíró`, `név`, `becenév`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
 - `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`, `aktív_távfegyver_index`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
-- Convenience setterek: `setTulajdonságok`, `setKépzettségek`, `setFortélyok`, `setSession` (useCallback, partial update)
-- Derived getterek (early return utáni destructuring): `tulajdonságok`, `képzettségek`, `fortélyok`, `session`
 - Inicializálás: `data.emptyKarakter` betöltéskor (validated)
 - Mentés/betöltés: teljes `karakter` objektum JSON-ként (session-nel együtt)
 - Név/TSz/Kor/Faj: lifted props → TulajdonsagokScreen
@@ -920,6 +965,55 @@ Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem 
   - Crash esetén: piros "⚠️ Hiba a megjelenítésben" üzenet + hiba szövege + "Újrapróbálás" gomb
   - A többi tab és a fejléc továbbra is működik
   - Console-ba részletes stack trace
+
+---
+
+## Overlay rendszer (AppOverlays)
+
+Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi `OverlayState` objektummal (`useOverlays` hook).
+
+### OverlayState mezők
+
+| Mező | Típus | Leírás |
+|------|-------|--------|
+| showMenu | boolean | ⚙️ menü popup |
+| showSzilánkPicker | boolean | Szilánk pont picker (0/1/2/3) |
+| showSlotList | boolean | Karakterek lista overlay |
+| slotDeleteTarget | {uid, név} \| null | Slot törlés megerősítő |
+| showSavePopup | boolean | Mentés mód választó (single/backup) |
+| saveFile | {blob, filename} \| null | Fájl kész (megosztás/letöltés) overlay |
+| loadError | string | Betöltési hiba popup |
+| showFullscreenHint | boolean | Teljes képernyő hint (iOS/Android) |
+| showNewConfirm | boolean | Új karakter megerősítő |
+| showUndo | boolean | Undo overlay |
+| undoSelected | number \| null | Kiválasztott undo pozíció |
+| overlayScreen | 'jegyzetek' \| 'naplo' \| null | Fullscreen overlay screen |
+| sharePopup | {név, copied, url?} \| null | URL share eredmény popup |
+| toast | {msg, type} \| null | Toast üzenet (2.5s auto-dismiss) |
+| importConfirm | {karakter, matchUid} \| null | Import ütközés confirm dialog |
+
+### Közös viselkedés
+- **Escape**: minden overlay bezárul (kivéve toast és importConfirm)
+- **Ctrl+S**: save popup megnyílik
+- **Toast**: success zöld (`#2e7d32`) / error piros (`#c62828`), auto-dismiss 2.5s
+- **Overlay hátter katt** → dispatch Escape
+
+### Overlay komponensek (components/overlays/)
+- `OverlayPortal.tsx` — createPortal wrapper
+- `MenuOverlay.tsx` — ⚙️ menü (6 gomb)
+- `SzilankPickerOverlay.tsx` — Szilánk pont (0-3)
+- `NewCharConfirmOverlay.tsx` — Új karakter megerősítő
+- `SlotListOverlay.tsx` — Karaktertár (slot lista + 🧪 teszt + 📁 fájlból)
+- `SlotDeleteOverlay.tsx` — Slot törlés confirm
+- `SaveOverlay.tsx` — Mentés mód (single/backup)
+- `SaveFileOverlay.tsx` — Fájl kész (📤 Megosztás / 💾 Letöltés)
+- `UndoOverlay.tsx` — Visszavonás lista
+- `LoadErrorOverlay.tsx` — Betöltési hiba
+- `FullscreenHintOverlay.tsx` — Teljes képernyő tipp
+- `OverlayScreenOverlay.tsx` — Fullscreen overlay wrapper (Jegyzetek / Napló)
+- `SharePopupOverlay.tsx` — URL share eredmény
+- `ToastOverlay.tsx` — Toast üzenet
+- `ImportConfirmOverlay.tsx` — Import ütközés (Felülírás / Új példány / Mégse)
 
 ---
 

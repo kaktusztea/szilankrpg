@@ -252,6 +252,9 @@ formula:  // ismételve minden egyes fegyverre
 
 output: SP (per fegyver)
 note: sebzésmód (S/V/Z) a fegyverből jön, nem számítás
+      SP override: ha egy fortély `mód: "override"` + `cél: "SP"` + `feltétel: "fegyver:X"` módosítót tartalmaz,
+        az felülírja az adott fegyver alap SP-jét (pl. Természetes fegyver → puszta kéz SP override).
+        Implementáció: `fegyver-calc.ts → calcFegyverResults()` — pre-loop SP felülírás a reactive rule input előtt.
 ```
 
 ---
@@ -286,8 +289,15 @@ output: össz_támadás (támadások száma / kör)
 note: Ha össz_támadás >= 2, minden támadásra TÉ:-3 levonás jár (az elsőre is).
 impl: páncél_MGT a reactive engine `páncél_MGT` szabályából jön.
       A `fegyver_harckeret` reactive rule használja inputként (egyfegyveres).
-      Kétkezes harc: saját kalkuláció a HarcScreen-ben (§26).
+      Kétkezes harc: saját kalkuláció (`engine/ketkezes.ts`, §26).
       Harc fül Tám cella: kattintásra info popup (fegyver név, sebesség, harckeret).
+      Moduláris harc kalkuláció:
+        - `harc/HarcCalc.ts` — re-export barrel (backward compat)
+        - `harc/fegyver-calc.ts` — buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes
+        - `harc/taktika-calc.ts` — calcTaktikaMods
+        - `harc/pancel-calc.ts` — buildPancelLookups, calcFogas, calcFtEnyhites
+        - `harc/useHarcComputed.ts` — hook: context build + evaluate + feltétel dispatch
+        - `engine/fortely-mods.ts` — calcFortelyMods (önálló engine modul)
 ```
 
 ---
@@ -508,6 +518,10 @@ note: feltétel == "" → mindig aktív (karakterlap számolja).
 impl: A fokok tömbben a fok értéke NEM feltétlenül egyezik a tömb indexével.
       Sok fortélynál nincs fok:0 (alapeset), csak fok:1-től indul.
       A lookup tehát: fortély_def.fokok.find(f → f.fok == kf.fok), NEM fokok[kf.fok].
+      Modul: `engine/fortely-mods.ts` → `calcFortelyMods()` (self-contained, engine-szintű).
+        Input: karakter, session, gameData, aktívFeltételek Set, feltételTeljesül callback.
+        Output: Record<string, number> (célokra összegzett bónuszok: KÉ, TÉ, VÉ, SP, CÉ, harckeret, SFÉ, pengehossz, min_pengehossz).
+        Belsőleg meghívja: `evaluateAlapesetek()` (engine/alapeset.ts) a 0.fok módosítók beszámítására.
       Könyvtár struktúra: `fortelyok/{harci,tavharc,altalanos,erzekek,szabad,kiemelt,misztikus}/*.yaml`
       A `tavharc/` mappából jövők `alcsoport: "tavharc"` mezőt kapnak a JSON-ban (picker csoport: "🏹 Távharc").
       Scaled mód — `forrás` lehetséges értékei:
@@ -1202,6 +1216,45 @@ Aktiváláskor:
 
   - Belharcos manőverek (Belharcba kerülés kivételével) mind előfeltételnek követelik a helyzetet
 
+#### Fegyver override mechanizmus (harci helyzet → fegyver harcértékek nullázás)
+
+Egyes harci helyzetek (`harci_helyzetek.yaml`) tartalmazhatnak `fegyver_override` mezőt, ami aktív fegyverek harcértékeit felülírja (pl. Belharc: nagy fegyverek TÉ/VÉ = 0).
+
+```yaml
+# harci_helyzetek.yaml példa:
+- név: "Belharci helyzet"
+  id: "belharci_helyzet"
+  fegyver_override:
+    feltétel:
+      - { forrás: "aktív_fegyver_pengehossz", operátor: ">", érték: 0 }
+    módosítók:
+      - { cél: "fegyver_TÉ", érték: 0, mód: "override" }
+      - { cél: "fegyver_VÉ", érték: 0, mód: "override" }
+```
+
+Kiértékelés (`fegyver-calc.ts → applyFegyverOverrides`):
+```
+FOR EACH aktív_helyzet in session.aktív_helyzetek:
+  hDef = lookup(helyzet_név → harci_helyzetek)
+  IF hDef.fegyver_override:
+    IF feltételTeljesül(hDef.fegyver_override.feltétel):
+      FOR EACH mod in hDef.fegyver_override.módosítók:
+        IF mod.cél == "fegyver_TÉ" AND mod.mód == "override":
+          result.TÉ -= result.alap_TÉ   // fegyver saját TÉ eltávolítása
+        IF mod.cél == "fegyver_VÉ" AND mod.mód == "override":
+          result.VÉ -= result.alap_VÉ   // fegyver saját VÉ eltávolítása
+```
+
+Data layer (`data-types.ts → HarciHelyzetEntry`):
+```typescript
+fegyver_override?: {
+  feltétel: { forrás: string; operátor: string; érték: unknown }[];
+  módosítók: { cél: string; érték: number; mód: string }[];
+};
+```
+
+note: A Kétkezes harc összesítő sorra is alkalmazódik (calcKetkezes → ugyanaz a loop).
+
 ---
 
 ## §22 Státuszok és Hatások
@@ -1442,6 +1495,35 @@ Session kulcs: `fortély_név.toLowerCase().replace(/ /g, '_')` (pl. `harci_akro
 
 Jelenlegi session_toggle fortélyok:
 - Harci akrobatika → `session.harci_akrobatika` (TÉ/VÉ: Akrobatika képzettség × arány)
+
+### Feltétel kiértékelés implementáció (useHarcComputed)
+
+A `harc/useHarcComputed.ts` hook tartalmazza a centralizált feltétel-kiértékelést:
+
+```typescript
+// getFeltételÉrték: érték lookup sorrend
+function getFeltételÉrték(forrás: string): number | boolean | string | undefined {
+  1. aktívFeltételek Set (taktikák, helyzetek, fegyverfogás, fegyver_kategória kulcsok)
+  2. session mezők (kétkezes_harc, aktív_pajzs, stb.)
+  3. computed (reactive engine eredmények: páncél_merev, páncél_lefedettség, stb.)
+  4. ctx (buildContext input értékek)
+  5. stringCtx (páncél_alap, páncél_kidolgozottság, aktív_fegyver_harcmodor)
+  6. prefix:érték format → false (ha nincs a Set-ben)
+}
+
+// feltételTeljesül: string vagy strukturált feltétel
+function feltételTeljesül(feltétel: unknown): boolean {
+  - üres/"" → true (mindig aktív)
+  - string → aktívFeltételek.has(feltétel)
+  - lista [{forrás, operátor, érték}] → mindegyik ÉS: getFeltételÉrték(forrás) OP érték
+}
+```
+
+Az `aktívFeltételek` Set tartalma (`engine/feltetelek.ts → buildAktívFeltételek`):
+- `fegyverfogás:{session.fegyverfogás}`
+- per aktív taktika: `taktika_def.feltétel_kulcs` (pl. `"taktika:támadó"`)
+- per aktív helyzet: `helyzet_def.feltétel_kulcs` (pl. `"harci_helyzet:lovas_harc"`)
+- `fegyver_kategória:{aktívFegyverKat}` (useHarcComputed-ban hozzáadva)
 
 ## §25 Fortély követelmények
 
@@ -1795,13 +1877,14 @@ Fegyver + pajzs:
   VÉ +2 (3. fok): fortély yaml módosító → fortelyMods['VÉ'] → fegyver_fortély_VÉ.
   A pajzsVÉ és TÉ büntetés CSAK a lila összesítő sorban jelenik meg (normál sorokból kiszűrve).
 
-Fegyver + hárítófegyver (RÉSZBEN IMPLEMENTÁLVA):
+Fegyver + hárítófegyver (IMPLEMENTÁLVA):
   hárítóVÉ = hárítófegyver.VÉ (fegyverek.json Hárító flag, ha van "Hárítófegyver használat" fortély, else 0)
-  hárítóMF_VÉ = MF_bónusz VÉ a hárítófegyverre (TODO: ha van MF a hárítóra)
+  hárítóMF_VÉ = MF_bónusz VÉ a hárítófegyverre (ha van MF a hárítóra → mesterfegyver_bónuszok lookup)
   Fegyver VÉ += hárítóVÉ + hárítóMF_VÉ
   TÉ büntetés: nincs (a hárítófegyver nem TÉ büntetést ad, mint a pajzs)
   Támadások: nem növeli (hárítófegyverrel nem támadsz)
   Kétkezes harc: hárítófegyverrel nem végezhető (szűrve picker-ben és dropdown-ban)
+  impl: `pancel-calc.ts → calcFogas()` — hárítóVÉ + hárítóMF_VÉ kalkuláció integrálva.
 
 Kétkezes harc:
   Lásd §26 (teljes implementáció).
@@ -1829,7 +1912,7 @@ Kétkezes fegyver (lándzsa, stb.) → kizárólag "Egyfegyveres" fogás.
 6. ✅ HarcScreen: Hárítófegyver VÉ bekötés (ha fegyverfogás == "fegyver_hárító") + lila sor
 7. ✅ karakter.yaml séma: `session.fegyverfogás` mező
 8. ✅ validate_karakter.py: fegyverfogás enum validáció
-9. TODO: Hárítófegyver MF VÉ bónusz (ha van Mesterfegyver a hárítóra)
+9. ✅ Hárítófegyver MF VÉ bónusz (ha van Mesterfegyver a hárítóra)
 
 ---
 
@@ -2354,6 +2437,12 @@ output: Aura (mágiaellenállás alap, mágikus akarat)
 note: Az Aura leengedhető akarattal (tetszőleges mértékben, kényszer nélkül).
       0 értékű Aura → Zavar (1) Kizökkent státusz + Hátrány-2 Emberismeret próbára.
       Speciális Aurák (tradíció-függő) a §34 keretein kívül esnek (nem implementált).
+
+reactive rules.json:
+  Aura: 2 * (tsz + tulajdonságok.önuralom)
+
+impl: Misztikus fül (`MisztikusScreen.tsx`) jeleníti meg az Aura, ME, és Mágia akarata értékeket.
+      A Mágiaellenállás (§34.1) = Aura + konstansok.aura.mágiaellenállás_konstans (inline számítás).
 ```
 
 ### §34.1 Mágiaellenállás (ME)
@@ -3256,3 +3345,194 @@ Note: Az uid kihagyásra kerül az URL-ből (§40.1), ezért az ütközés-vizsg
 - Speciális karakterek a nevekben (ékezetek, vessző): 
   UTF-8 kódolás → deflate kezeli, base64url output clean
 ```
+
+
+---
+
+## §41 Reactive Engine implementáció
+
+Forrás: `web/karakter/src/engine/reactive.ts`, `data/rules.json`
+
+### 41.1 Architektúra
+
+A webapp **minden numerikus kalkulációja** deklaratív szabályokból áll (`rules.json`, 54 szabály).
+Nincs hardcoded TS kalkuláció — a TypeScript kód csak context-et épít és `evaluate()`-ot hív.
+
+Kivétel (maradék TS inline logika):
+- Fájdalomtűrés enyhítés: küszöb-tábla lookup (`pancel-calc.ts → calcFtEnyhites`)
+- Kétkezes harc összesítő: multi-fegyver kompozíció (`engine/ketkezes.ts`)
+- Fortély módosítók iteráció: feltételes aktiválás (`engine/fortely-mods.ts`)
+- Taktika módosítók: fokozatos extrapoláció (`harc/taktika-calc.ts`)
+
+### 41.2 Rule struktúra
+
+```json
+{
+  "id": "fegyver_TÉ",
+  "formula": "konstansok.harcérték_alap.TÉ + tulajdonságok.erő + ...",
+  "inputs": ["konstansok.harcérték_alap.TÉ", "tulajdonságok.erő", ...]
+}
+```
+
+- `id`: egyedi azonosító, egyben az output változó neve
+- `formula`: kiértékelhető kifejezés (aritmetika + függvényhívások)
+- `inputs`: dependency lista (topológiai rendezéshez)
+
+### 41.3 Kiértékelés (`evaluate`)
+
+```
+input:  rules: Rule[], ctx: Context, arrays?: ArrayContext, stringCtx?: StringContext
+output: Map<string, number> (minden rule id → kiszámított érték)
+
+algoritmus:
+  pending = [...rules]
+  WHILE pending nem üres:
+    FIND first rule whose ALL inputs are resolved (ctx ∪ results ∪ arrays ∪ stringCtx)
+    evalFormula(rule.formula) → number
+    results[rule.id] = value
+    ctx[rule.id] = value  // elérhetővé teszi függő szabályoknak
+  RETURN results
+```
+
+Topológiai rendezés implicit: az `inputs` mező alapján, iteratív feloldás.
+Ha egy rule inputja nincs kielégítve → kihagyva (marad pending-ben, legközelebb újrapróbálja).
+Max iteráció limit: `rules.length * 2` (végtelen ciklus védelem).
+
+### 41.4 Context típusok
+
+| Típus | Tartalom | Építés |
+|-------|----------|--------|
+| **Context** (`Map<string, number>`) | Skaláris értékek: tulajdonságok, tsz, konstansok, HM, CM, páncél inputok, fegyver inputok | `buildContext()` |
+| **ArrayContext** (`Map<string, Record<string, number|string>[]>`) | Tömbök: képzettségek, fortélyok, kp_tábla, harci_fortélyok, lookup táblák | `buildArrayContext()` + manuális `lookupArrays.set()` |
+| **StringContext** (`Map<string, string>`) | String-keyed lookup kulcsok: páncél_alap, páncél_fémalapanyag, páncél_kidolgozottság, páncél_méret_illeszkedés, aktív_fegyver_harcmodor | Manuális `.set()` |
+
+### 41.5 buildContext — skaláris context
+
+Automatikusan bejárja:
+- `tulajdonságok.*` (8 db) → `"tulajdonságok.erő"`, `"tulajdonságok.ügyesség"`, stb.
+- `konstansok.harcérték_alap.*` → `"konstansok.harcérték_alap.KÉ"`, stb.
+- `konstansok.kp.*` → `"konstansok.kp.perszint"`, stb.
+- `konstansok.arányok.*` → `"konstansok.arányok.max_cm_perszint"`, stb.
+- `konstansok.kp_bónusz.*` → `"konstansok.kp_bónusz.analfabéta"`, stb.
+- `tsz` → egyetlen érték
+- `extras` → tetszőleges kulcs-érték párok (HM_TÉ, HM_VÉ, CM, páncél mezők, fegyver mezők, stb.)
+
+### 41.6 buildArrayContext — tömb context
+
+| Tömb neve | Tartalom | Felhasználás |
+|-----------|----------|-------------|
+| `képzettségek` | `[{szint}]` | `kp_képzettségek` sum_lookup |
+| `fortélyok` | `[{fok}]` — KP-t költő, nem kiérdemelt, nem ingyenes | `kp_fortélyok` sum |
+| `kp_bónusz_fortélyok` | `[{bónusz_kp}]` — negatív kp_perfok-úak | `spec_kp` sum |
+| `kp_tábla` | `[{szint, kp}]` | sum_lookup tábla |
+| `harci_fortélyok` | `[{fok, is_mesterfegyver}]` | `max_HM` sum_where |
+| `kiemelt_fortélyok` | `[{fizetős_kp}]` — ingyenes keret feletti | `kiemelt_kp` sum |
+| `primer_képzettségek` | `[{szint}]` — primer flag-gel | `kp_primer_képzettségek` sum_lookup |
+| `primer_fortélyok` | `[{kp}]` — fok×kp_perfok | `kp_primer_fortélyok` sum |
+| `struktúrák` | `[{név, mgt, sfé_fizikai, sfé_energia, merev, fém}]` | páncél lookup |
+| `fémalapanyagok` | `[{anyag, mgt, sfé_bónusz}]` | páncél lookup |
+| `méret_tábla` | `[{név, érték}]` | páncél méret MGT lookup |
+| `merevvért_tábla` | `[{fok, csökkentés}]` | merevvért lookup |
+| `csatolt_mgt_merev/fém/nemfém` | `[{név, érték}]` | csatolt tag MGT lookup |
+
+### 41.7 Formula nyelv
+
+Támogatott operátorok és függvények:
+
+| Elem | Szintaxis | Példa |
+|------|-----------|-------|
+| Aritmetika | `+`, `-`, `*`, `/` | `tsz * 4 + 28` |
+| `floor()` | `floor(expr)` | `floor(tsz / 2)` |
+| `ceil()` | `ceil(expr)` | `ceil(harcmodor_összeg * 2 / tsz)` |
+| `min()` | `min(a, b)` | `min(erő, limit)` |
+| `max()` | `max(a, b)` | `max(0, érték)` |
+| `abs()` | `abs(expr)` | `abs(diff)` |
+| `if()` | `if(cond, then, else)` | `if(páncél_merev, MGT, 0)` |
+| `sum()` | `sum(tömb, mező)` | `sum(fortélyok, fok)` |
+| `sum_lookup()` | `sum_lookup(tömb, mező, tábla, kulcs, érték)` | `sum_lookup(képzettségek, szint, kp_tábla, szint, kp)` |
+| `sum_where()` | `sum_where(tömb, összegMező, szűrőMező, szűrőÉrték)` | `sum_where(harci_fortélyok, fok, is_mesterfegyver, 0)` |
+| `count()` | `count(tömb)` | `count(képzettségek)` |
+| `lookup()` | `lookup(tömb, kulcsMező, kulcsÉrték, értékMező)` | `lookup(struktúrák, név, páncél_alap, mgt)` |
+
+A `lookup()` kulcsérték-feloldás sorrendje:
+1. `ctx` / `results` (numerikus) — ha a kulcsérték egy context változónév
+2. `stringCtx` (string) — string-keyed lookup (páncél struktúra név, kidolgozottság)
+3. `Number(literal)` — szám literál fallback
+
+A `if()` ternary-re fordul: `if(a, b, c)` → `((a) ? (b) : (c))`.
+Végső kiértékelés: `new Function(...)` — biztonságos (nincs user input a formulákban).
+
+### 41.8 Hívási helyek
+
+| Hívó | Mit épít | Mire használja |
+|------|----------|---------------|
+| `App.tsx` (KP számítás) | Teljes buildContext + buildArrayContext (összes tömb) | KP, primer keret, tulajdonság pont keret, max_HM, max_CM, ÉP |
+| `useHarcComputed.ts` | buildContext + páncél lookupArrays + stringCtx | Páncél SFÉ/MGT, merevvért, lefedettség, KÉ, manőver pont |
+| `fegyver-calc.ts` | Per-fegyver buildContext (fegyver-specifikus extras) | TÉ, VÉ, SP, harckeret, támadások — fegyverenként ismételve |
+| `TavharcScreen.tsx` | Távharc context (távolság, osztó, szorzó) | Cella, cél_VÉ |
+| `MisztikusScreen.tsx` | Alap context | Aura |
+
+### 41.9 Teljes szabálylista (54 db)
+
+| ID | Típus | Bemenet összefoglaló |
+|----|-------|---------------------|
+| ÉP | képlet | edzettség |
+| S1_max, S2_max, S3_max | képlet | ÉP |
+| KÉ | képlet | gyorsaság, intelligencia, tsz |
+| TÉ_alap | képlet | erő, ügyesség, gyorsaság, HM_TÉ |
+| VÉ_alap | képlet | gyorsaság, ügyesség, HM_VÉ |
+| CÉ_alap | képlet | önuralom, CM |
+| összes_kp | képlet | tsz, intelligencia |
+| összes_szekunder_kp | képlet | tsz, emlékezet |
+| tulajdonság_pont_keret | képlet | tsz |
+| manőver_pont | képlet | harcmodor_összeg, tsz |
+| felszerelés_keret | képlet | erő |
+| felszerelés_mgt | képlet | terhelés, keret |
+| max_CM | képlet | tsz |
+| max_HM | sum_where | harci_fortélyok, harcmodor_összeg, alakzatharc |
+| max_HM_aszimmetria | képlet | tsz |
+| kp_képzettségek | sum_lookup | képzettségek, kp_tábla |
+| kp_fortélyok | sum | fortélyok fok |
+| kp_hm | képlet | HM_TÉ, HM_VÉ |
+| kp_cm | képlet | CM |
+| spec_kp | sum + képlet | kp_bónusz_fortélyok, tartós_sérülés |
+| kiemelt_kp | sum | kiemelt_fortélyok |
+| kp_primer_képzettségek | sum_lookup | primer_képzettségek, kp_tábla |
+| kp_primer_fortélyok | sum | primer_fortélyok |
+| primer_költés | képlet | primer_kp + hm + cm |
+| primer_keret | képlet | összes_kp + spec_kp - primer_költés |
+| elköltött_kp | képlet | kp_képzettségek + fortélyok + hm + cm + kiemelt |
+| maradék_kp | képlet | összes - elköltött |
+| sfé_fizikai | képlet | struktúra + alapanyag + idea - rongálódás |
+| sfé_energia | képlet | struktúra + alapanyag + idea - rongálódás |
+| páncél_struktúra_mgt | lookup | struktúrák tábla |
+| páncél_struktúra_sfé_fizikai | lookup | struktúrák tábla |
+| páncél_struktúra_sfé_energia | lookup | struktúrák tábla |
+| páncél_merev | lookup | struktúrák tábla |
+| páncél_fém | lookup | struktúrák tábla |
+| páncél_alapanyag_mgt | lookup | fémalapanyagok tábla |
+| páncél_alapanyag_sfé_bónusz | lookup | fémalapanyagok tábla |
+| páncél_méret_mgt | lookup | méret_tábla |
+| merevvért_csökkentés | lookup | merevvért_tábla |
+| páncél_csatolt_db | képlet | végtagvédettség + sisak |
+| páncél_lefedettség | if | páncél_van, végtagvédettség, sisak |
+| páncél_MGT | képlet + nested if/lookup | struktúra + alapanyag + csatolt + méret - erő |
+| merevvért_TÉ_büntetés | if | páncél_merev, MGT, csökkentés |
+| távharc_cella | képlet | távolság, osztó |
+| távharc_cél_VÉ | képlet | szorzó, cella |
+| képzettség_max_szint_primer | képlet | max_szint, tsz |
+| képzettség_max_szint_szekunder | képlet | max_szint, tsz + plusz |
+| fegyver_TÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély |
+| fegyver_VÉ | képlet | alap + tulajdonságok + HM + harcmodor + fegyver + MF + fortély |
+| fegyver_SP | képlet | fegyver + min(erő, limit) + MF + fortély |
+| fegyver_harckeret | képlet | harcmodor + gyorsaság - MGT - felszMGT + fortély |
+| fegyver_támadások | képlet | 1 + floor(harckeret / sebesség) |
+| Aura | képlet | tsz, önuralom |
+
+### 41.10 Szabály hozzáadás workflow
+
+Új reactive rule hozzáadásakor:
+1. `data/rules.json` — rule entry (id, formula, inputs)
+2. Hívó komponens — `extras` vagy `arrayContext` bővítés a szükséges inputokkal
+3. Eredmény kiolvasás: `computed.get('rule_id')` → UI megjelenítés
+4. engine_spec frissítés — formula dokumentálás a releváns szekcióban
