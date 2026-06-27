@@ -11,13 +11,10 @@ function getPengehossz(data: GameData, alap: string): number {
   return parseFloat(lookupFegyver(data.fegyverek, alap)?.Pengehossz ?? '0') || 0;
 }
 
-function isPuszta(karakter: Karakter, idx: number): boolean {
-  return idx === -1 || (karakter.fegyverek[idx]?.alap.toLowerCase() === 'puszta kéz');
-}
-
-/** Speciális elem (puszta kéz, pajzs) — nem használható kétkezes harcra */
+/** Speciális elem (puszta kéz, pajzs) — nem valódi fegyver, nem használható kétkezes harcra */
 function isSpeciális(karakter: Karakter, idx: number): boolean {
-  return idx < 0 || isPuszta(karakter, idx);
+  if (idx < 0) return true;
+  return karakter.fegyverek[idx]?.alap.toLowerCase() === 'puszta kéz';
 }
 
 /** Szűrt fegyveropciók a gyengébb kézhez (kétkezes harc mód) */
@@ -134,7 +131,7 @@ function ÜgyesebbKézSelect({ data, karakter, session, setSession, pushUndo, fe
       value={session.aktív_fegyver_index}
       options={options}
       onChange={idx => {
-        pushUndo(`Fegyver: ${isSpeciális(karakter, idx) ? (idx === -1 ? 'Puszta kéz' : fegyverOpciók.find(f => f.idx === idx)?.név ?? idx) : karakter.fegyverek[idx]?.alap ?? idx}`);
+        pushUndo(`Fegyver: ${fegyverOpciók.find(f => f.idx === idx)?.név ?? 'Puszta kéz'}`);
         setSession(s => {
           if (isSpeciális(karakter, idx)) {
             return { ...s, aktív_fegyver_index: idx, fegyverfogás: 'egyfegyveres', kétkezes_harc: false, aktív_fegyver_bal_index: -1 };
