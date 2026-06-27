@@ -49,5 +49,17 @@ export function useOverlays() {
     return () => clearTimeout(t);
   }, [overlays.toast, setOverlay]);
 
+  // kep-prompt-overlay click dismiss (background click → Escape)
+  useEffect(() => {
+    function handler(e: MouseEvent) {
+      const el = e.target as HTMLElement;
+      if (el.classList.contains('kep-prompt-overlay')) {
+        document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }));
+      }
+    }
+    document.addEventListener('click', handler);
+    return () => document.removeEventListener('click', handler);
+  }, []);
+
   return { overlays, setOverlay, setOverlays, anyOverlayOpen, INITIAL_OVERLAYS };
 }

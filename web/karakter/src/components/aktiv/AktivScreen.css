@@ -33,19 +33,7 @@
   font-size: 14px;
 }
 
-/* --- Toggle --- */
-.aktiv-toggle {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 6px 14px;
-  font-size: 14px;
-  color: var(--text-dim);
-  cursor: pointer;
-}
-
-.aktiv-toggle.on { background: var(--success); color: #000; border-color: var(--success); }
-.aktiv-toggle.disabled { opacity: 0.4; cursor: not-allowed; }
+/* --- Toggle → common.css (.aktiv-toggle) --- */
 
 /* --- Fegyver sor --- */
 .aktiv-fegyver-row {
@@ -215,63 +203,9 @@
 .narrativ-val-pos.selected { border-color: var(--success); background: var(--success); }
 .narrativ-val-neg.selected { border-color: var(--accent); background: var(--accent); }
 
-/* --- Picker overlay --- */
-.aktiv-picker {
-  background: var(--primary);
-  border: 1px solid var(--border-input);
-  border-radius: 8px;
-  width: 90vw;
-  max-width: 400px;
-  max-height: 80vh;
-  display: flex;
-  flex-direction: column;
-}
-
-.aktiv-picker-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 12px;
-  border-bottom: 1px solid var(--border);
-  font-weight: bold;
-}
-
-.aktiv-picker-list {
-  overflow-y: auto;
-  padding: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.aktiv-picker-group-label {
-  font-size: 0.75rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  padding: 4px 0 2px;
-  border-bottom: 1px solid var(--border-light);
-  margin-top: 4px;
-}
-
-.aktiv-picker-item {
-  background: var(--input-bg);
-  border: 1px solid var(--border);
-  border-radius: 4px;
-  padding: 8px 10px;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-}
-
-.aktiv-picker-item.active { border-color: var(--success); }
-.aktiv-picker-disabled { opacity: 0.4; cursor: default !important; }
-.aktiv-picker-item-name { font-weight: bold; color: var(--text); font-size: 14px; }
-.aktiv-picker-item-details { font-size: 12px; color: #aaa; }
+/* --- Picker overlay (base → common.css, itt csak aktív-specifikus) --- */
 .aktiv-picker-item-hatas { font-size: 12px; color: #ccc; font-style: italic; }
 .aktiv-picker-info { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: #aaa; padding: 2px 8px; }
-.aktiv-picker-category { font-size: 13px; font-weight: bold; color: var(--color-section-orange); padding: 8px 4px 4px; border-bottom: 1px solid var(--border); margin-bottom: 6px; }
 .aktiv-picker-item-disabled-inline { opacity: 0.4; pointer-events: none; }
 .aktiv-picker-item-active-accent { border-color: var(--accent); }
 

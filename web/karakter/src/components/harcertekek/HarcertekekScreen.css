@@ -118,19 +118,7 @@
 
 .he-toggle input { width: 18px; height: 18px; }
 
-/* --- Hint bar --- */
-.he-hint {
-  position: sticky;
-  bottom: 0;
-  background: var(--warning);
-  color: #000;
-  text-align: center;
-  padding: 6px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 4px;
-  margin-top: 8px;
-}
+/* --- Hint bar → common.css (.he-hint) --- */
 
 /* --- Picker gombok --- */
 .he-picker-btn { width: auto; min-width: 120px; padding: 6px 16px; border-radius: 6px; font-size: 14px; }

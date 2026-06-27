@@ -90,45 +90,9 @@
 /* --- Fok radio buttons --- */
 .fort-fok-radios { display: flex; gap: 8px; justify-content: center; }
 
-.fort-fok-btn {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 2px solid var(--border-input);
-  background: var(--input-bg);
-  color: var(--text);
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-}
+/* .fort-fok-btn, .fort-fok-btn.active, :disabled, .fort-fok-del, -wide → common.css */
 
-.fort-fok-btn.active {
-  border-color: var(--success);
-  background: var(--success);
-  color: #000;
-}
-
-.fort-fok-btn.fort-fok-del {
-  border-color: var(--error);
-  color: var(--error);
-}
-
-.fort-fok-btn:disabled { opacity: 0.3; cursor: default; }
-.fort-fok-btn-wide { width: auto; padding: 6px 14px; border-radius: 6px; }
-
-/* --- Hint bar --- */
-.fort-hint {
-  position: sticky;
-  bottom: 0;
-  background: var(--warning);
-  color: #000;
-  text-align: center;
-  padding: 6px;
-  font-size: 18px;
-  font-weight: bold;
-  border-radius: 4px;
-  margin-top: 8px;
-}
+/* --- Hint bar → common.css (.fort-hint) --- */
 
 .fort-over { color: var(--error) !important; }
 
