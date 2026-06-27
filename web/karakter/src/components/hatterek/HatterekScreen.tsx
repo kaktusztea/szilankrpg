@@ -17,8 +17,8 @@ interface Props {
 }
 
 function baseName(entry: string): string {
-  const idx = entry.lastIndexOf(': ');
-  return idx >= 0 ? entry.slice(0, idx) : entry;
+  const idx = entry.lastIndexOf(' (');
+  return idx >= 0 && entry.endsWith(')') ? entry.slice(0, idx) : entry;
 }
 
 export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode, onNavigate }: Props) {
@@ -50,7 +50,7 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
 
   function handleFreeTextConfirm(text: string) {
     if (!popup) return;
-    const entry = `${popup.elem}: ${text}`;
+    const entry = `${popup.elem} (${text})`;
     updateField(popup.field, arr => [...arr, entry], `Háttér: ${entry} ✓`);
     setPopup(null);
   }
