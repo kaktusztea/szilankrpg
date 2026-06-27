@@ -94,3 +94,20 @@
   color: #e0a050;
   border-color: #e0a050;
 }
+
+.hatter-tag-multi {
+  border: 1px dashed #666;
+  cursor: pointer;
+}
+
+.hatter-multi-x {
+  margin-left: 4px;
+  font-size: 11px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.hatter-multi-x:hover {
+  opacity: 1;
+  color: var(--error);
+}

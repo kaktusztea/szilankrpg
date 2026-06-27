@@ -1,7 +1,7 @@
 import type { FegyverAlap, TavfegyverAlap, TavharcSzorzok, Karakter } from './types';
 import type { Rule } from './reactive';
 import type { KonstansokRaw, KepzettsegDef, KiterjesztesEntry, FortelySummary, TradicioEntry, NyelvEntry, TaktikaEntry, HarciHelyzetEntry, ManoverEntry, StatuszEntry, HatasOperator, EsemenyEntry, HatterekData, GameData } from './data-types';
-export type { KepzettsegDef, KiterjesztesEntry, FortelyModosito, FortelyFokSummary, FortelySummary, TradicioAltipus, TradicioEntry, NyelvEntry, TaktikaMegkötés, TaktikaEntry, HarciHelyzetEntry, SzituacioEntry, ManoverEntry, StatuszHatas, StatuszFok, StatuszEntry, HatasOperator, EsemenyEntry, LeíróHátterKategória, HatterekData, GameData } from './data-types';
+export type { KepzettsegDef, KiterjesztesEntry, FortelyModosito, FortelyFokSummary, FortelySummary, TradicioAltipus, TradicioEntry, NyelvEntry, TaktikaMegkötés, TaktikaEntry, HarciHelyzetEntry, SzituacioEntry, ManoverEntry, StatuszHatas, StatuszFok, StatuszEntry, HatasOperator, EsemenyEntry, LeíróHátterKategória, KarmaHátterEntry, HatterekData, GameData } from './data-types';
 
 const BASE = import.meta.env.BASE_URL + 'data/';
 

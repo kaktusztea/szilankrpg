@@ -5,29 +5,54 @@
 leíró_hátterek:
   - kategória: "Származás"
     elemek: ["Apród", "Árva", "Erdőlakó", "Fejvadász", "Gladiátor", "Harcművész", "Jobbágy", "Lovag", "Nemes", "Polgár", "Varázsló", "Városlakó"]
+    többszörös: false
   - kategória: "Jellem"
     elemek: ["Élet", "Rend", "Halál", "Káosz", "Alattomos", "Alattvaló", "Álmodozó", "Autoriter", "Barátságos", "Cinikus", "Gondoskodó", "Gyanakvó", "Gyáva", "Gyűjtögető", "Hallgatag", "Hiszékeny", "Idealista", "Megfontolt", "Megbízhatatlan", "Megbízható", "Meggondolatlan", "Naív", "Nagyképű", "Nárcisztikus", "Precíz", "Szerény", "Talpnyaló", "Teszetosza", "Tiszteletreméltó", "Tudálékos", "Vezéralkat"]
+    többszörös: false
   - kategória: "Küllem"
     elemek: ["Alacsony", "Albínó", "Divatos", "Jóképű", "Kövér", "Magas", "Mokány", "Rusnya", "Sánta", "Sebhelyes", "Tömzsi", "Vékony"]
+    többszörös: false
   - kategória: "Fóbia"
     elemek: ["Kígyóiszonyos", "Pókiszonyos", "Tériszonyos"]
+    többszörös: false
+  - kategória: "Viszony"
+    elemek: ["Barát", "Ellenség", "Gyűlöli őt/őket", "Kapcsolat", "Lekötelezettje neki/nekik", "Párkapcsolatban vele", "Szervezet tagja"]
+    többszörös: true
 
 karma_hátterek:
-  - "Áldott személy"
-  - "Áldáshordozó"
-  - "Átkozott személy"
-  - "Átokhordozó"
-  - "Alkoholista"
-  - "Árnyjáró"
-  - "Bajnok"
-  - "Bölcs Tanító"
-  - "Bukott gyógyító"
-  - "Gyerekgyilkos"
-  - "Gyilkos"
-  - "Hírhedt"
-  - "Hős"
-  - "Szolgalelkű"
-  - "Természet Gyermeke"
-  - "Világlátott"
-  - "Mágia: Auraösszhang"
-  - "Mágia: Profán"
+  - név: "Áldott személy"
+    többszörös: true
+  - név: "Áldáshordozó"
+    többszörös: true
+  - név: "Átkozott személy"
+    többszörös: true
+  - név: "Átokhordozó"
+    többszörös: true
+  - név: "Alkoholista"
+    többszörös: false
+  - név: "Árnyjáró"
+    többszörös: false
+  - név: "Bajnok"
+    többszörös: false
+  - név: "Bölcs Tanító"
+    többszörös: false
+  - név: "Bukott gyógyító"
+    többszörös: false
+  - név: "Gyerekgyilkos"
+    többszörös: false
+  - név: "Gyilkos"
+    többszörös: false
+  - név: "Hírhedt"
+    többszörös: true
+  - név: "Hős"
+    többszörös: false
+  - név: "Szolgalelkű"
+    többszörös: false
+  - név: "Természet Gyermeke"
+    többszörös: false
+  - név: "Világlátott"
+    többszörös: false
+  - név: "Mágia: Auraösszhang"
+    többszörös: true
+  - név: "Mágia: Profán"
+    többszörös: false

@@ -4,5 +4,8 @@
 leíró_hátterek:
   - kategória: ""              # kötelező, string (csoportnév)
     elemek: []                 # kötelező, string lista
+    többszörös: false          # opcionális, ha true: elemek többször felvehetők free text kiegészítővel
 
-karma_hátterek: []             # kötelező, string lista
+karma_hátterek:
+  - név: ""                    # kötelező, string
+    többszörös: false          # opcionális, ha true: többször felvehető free text kiegészítővel

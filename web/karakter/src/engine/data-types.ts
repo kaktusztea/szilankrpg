@@ -160,11 +160,17 @@ export interface EsemenyEntry {
 export interface LeíróHátterKategória {
   kategória: string;
   elemek: string[];
+  többszörös: boolean;
+}
+
+export interface KarmaHátterEntry {
+  név: string;
+  többszörös: boolean;
 }
 
 export interface HatterekData {
   leíró_hátterek: LeíróHátterKategória[];
-  karma_hátterek: string[];
+  karma_hátterek: KarmaHátterEntry[];
 }
 
 // --- Konstansok (belső, nem exportált a data-loader-ből) ---
