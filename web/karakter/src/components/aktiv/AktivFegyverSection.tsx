@@ -7,8 +7,6 @@ import { UgyesebbKezSelect } from './UgyesebbKezSelect';
 import { GyengebbKezSelect } from './GyengebbKezSelect';
 import { SessionToggles } from './SessionToggles';
 
-// --- Helpers ---
-
 function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Session): boolean {
   const opciók = data.konstansok.fegyverfogás_opciók as { id: string }[];
   const aktív = session.fegyverfogás || 'egyfegyveres';
@@ -35,13 +33,9 @@ function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Ses
   });
 }
 
-// --- Props ---
-
 interface Props extends AktivBaseProps {
   onShowFegyverfogás: () => void;
 }
-
-// --- Main Component ---
 
 export function AktivFegyverSection({ data, karakter, session, setSession, pushUndo, onShowFegyverfogás }: Props) {
   const fegyverOpciók = buildFegyverOpciók(karakter, data);
@@ -63,15 +57,13 @@ export function AktivFegyverSection({ data, karakter, session, setSession, pushU
   );
 }
 
-// --- Inline sub-components (small, no need for own file) ---
-
 function FegyverfogásButton({ data, karakter, session, onShowFegyverfogás }: Pick<AktivBaseProps, 'data' | 'karakter' | 'session'> & { onShowFegyverfogás: () => void }) {
   const opciók = data.konstansok.fegyverfogás_opciók as { id: string; név: string }[];
   const aktívNév = opciók.find(o => o.id === session.fegyverfogás)?.név ?? 'Egyfegyveres';
   const disabled = !hasMásikFegyverfogás(data, karakter, session);
 
   return (
-    <div className={`aktiv-field-btn ${disabled ? 'disabled' : ''}`}
+    <div className={`aktiv-field-btn${disabled ? ' disabled' : ''}`}
       onClick={() => { if (!disabled) onShowFegyverfogás(); }}>
       <span className="aktiv-field-label">Fegyverfogás</span>
       <strong>{aktívNév}</strong>
@@ -81,7 +73,7 @@ function FegyverfogásButton({ data, karakter, session, onShowFegyverfogás }: P
 
 function PáncélToggle({ session, setSession, pushUndo }: Pick<AktivBaseProps, 'session' | 'setSession' | 'pushUndo'>) {
   return (
-    <div className={`aktiv-field-btn aktiv-field-toggle ${session.aktív_páncél ? 'on' : ''}`}
+    <div className={`aktiv-field-btn aktiv-field-toggle${session.aktív_páncél ? ' on' : ''}`}
       onClick={() => { pushUndo(`Páncél: ${!session.aktív_páncél ? 'Igen' : 'Nem'}`); setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél })); }}>
       <span className="aktiv-field-label">Páncél viselve</span>
       <strong>{session.aktív_páncél ? 'Igen' : 'Nem'}</strong>

@@ -2,6 +2,11 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/helpers';
 
+/** Pengehossz lookup közös helper */
+export function getPengehossz(data: GameData, alap: string): number {
+  return parseFloat(lookupFegyver(data.fegyverek, alap)?.Pengehossz ?? '0') || 0;
+}
+
 /** Taktika engedélyezett-e az aktuális session alapján */
 export function isTaktikaAllowed(
   név: string,

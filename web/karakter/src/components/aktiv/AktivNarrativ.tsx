@@ -1,12 +1,19 @@
 import { useState } from 'react';
-import { createPortal } from 'react-dom';
 import type { Session } from '../../engine/types';
+import { PickerOverlay } from './PickerOverlay';
 
 interface Props {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string) => void;
 }
+
+const ÉRTÉKEK = [
+  { v: -2, l: 'Hátrány-2' },
+  { v: -1, l: 'Hátrány-1' },
+  { v: 1, l: 'Előny+1' },
+  { v: 2, l: 'Előny+2' },
+] as const;
 
 export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
   const [showPopup, setShowPopup] = useState(false);
@@ -42,22 +49,16 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
         ))}
       </div>
 
-      {showPopup && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if (e.target === e.currentTarget) setShowPopup(false); }}>
-          <div className="kep-prompt narrativ-popup">
-            <label className="narrativ-popup-label">Narratív Előny/Hátrány</label>
+      {showPopup && (
+        <PickerOverlay title="Narratív Előny/Hátrány" onClose={() => setShowPopup(false)}>
+          <div className="narrativ-popup-content">
             <div className="narrativ-popup-btns">
-              {[{ v: -2, l: 'Hátrány-2' }, { v: -1, l: 'Hátrány-1' }, { v: 1, l: 'Előny+1' }, { v: 2, l: 'Előny+2' }].map(b => {
-                const sel = érték === b.v;
-                const color = b.v > 0 ? '#4caf50' : 'var(--accent)';
-                return (
-                  <button key={b.v} onClick={() => setÉrték(b.v)}
-                    className={`narrativ-val-btn${sel ? ' selected' : ''}`}
-                    style={sel ? { borderColor: color, background: color } : undefined}>
-                    {b.l}
-                  </button>
-                );
-              })}
+              {ÉRTÉKEK.map(b => (
+                <button key={b.v} onClick={() => setÉrték(b.v)}
+                  className={`narrativ-val-btn${érték === b.v ? ' selected' : ''}${b.v > 0 ? ' narrativ-val-pos' : ' narrativ-val-neg'}`}>
+                  {b.l}
+                </button>
+              ))}
             </div>
             <input className="narrativ-input narrativ-input-full" placeholder="Leírás..." maxLength={40}
               onKeyDown={e => { if (e.key === 'Enter') submit((e.target as HTMLInputElement).value.trim()); }}
@@ -67,8 +68,7 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
               submit(el.value.trim());
             }}>OK</button>
           </div>
-        </div>,
-        document.body
+        </PickerOverlay>
       )}
     </>
   );

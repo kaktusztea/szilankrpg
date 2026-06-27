@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { createPortal } from 'react-dom';
 import type { AktivBaseProps } from './types';
 import { fmtCode } from '../formatters';
 import { isHelyzetAvailable, getMinPengeWarning, getHelyzetInfoText } from './AktivHelpers';
+import { PickerOverlay } from './PickerOverlay';
 
 interface Props extends AktivBaseProps {
   helyzetFortélyok: Map<string, { név: string; fok: number; hatás: string; aktív: boolean }[]>;
@@ -33,32 +33,18 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
     setShowPicker(false);
   }
 
-  function renderHelyzetItems() {
-    const filtered = data.harciHelyzetek.filter(h => isHelyzetAvailable(h, session, data));
-    const groups = [
-      { label: 'Pozitív helyzet', color: '#4caf50', items: filtered.filter(h => h.csoport === 'pozitív') },
-      { label: 'Semleges helyzet', color: '#ff9800', items: filtered.filter(h => h.csoport === 'semleges') },
-      { label: 'Negatív helyzet', color: '#f44336', items: filtered.filter(h => h.csoport === 'negatív') },
-    ];
-    return (<>
-      {groups.flatMap(g => g.items.length > 0 ? [
-        <div key={g.label} className="aktiv-picker-group-label" style={{ color: g.color }}>{g.label}</div>,
-        ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
-          <div key={h.név} className="aktiv-picker-item" onClick={() => addHelyzet(h)}>
-            <span className="aktiv-picker-item-name">{h.név}</span>
-            <span className="aktiv-picker-item-hatas">{fmtCode(h.infó)}</span>
-          </div>
-        ))
-      ] : [])}
-    </>);
-  }
+  const groups = [
+    { label: 'Pozitív helyzet', color: '#4caf50', items: data.harciHelyzetek.filter(h => h.csoport === 'pozitív' && isHelyzetAvailable(h, session, data)) },
+    { label: 'Semleges helyzet', color: '#ff9800', items: data.harciHelyzetek.filter(h => h.csoport === 'semleges' && isHelyzetAvailable(h, session, data)) },
+    { label: 'Negatív helyzet', color: '#f44336', items: data.harciHelyzetek.filter(h => h.csoport === 'negatív' && isHelyzetAvailable(h, session, data)) },
+  ];
 
   return (
     <>
       <div className="aktiv-section aktiv-section-noborder">
         <span className="aktiv-label">Harci helyzetek
           <button className="aktiv-add-btn aktiv-add-btn-sm"
-            disabled={data.harciHelyzetek.every(h => !isHelyzetAvailable(h, session, data))}
+            disabled={groups.every(g => g.items.length === 0)}
             onClick={() => setShowPicker(true)}>+</button>
         </span>
         {session.aktív_helyzetek.map((h, i) => {
@@ -81,7 +67,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
                 }}>✕</button>
               </div>
               {kötöttFortélyok.map((kf, j) => (
-                <div key={j} className="kep-row" style={{ paddingLeft: '12px', color: kf.fok === 0 ? '#cd7c6f' : (kf.aktív ? '#66bb6a' : '#888'), flexWrap: 'wrap', wordBreak: 'break-word', justifyContent: 'flex-start' }}>
+                <div key={j} className={`kep-row aktiv-helyzet-fortely-sor ${kf.fok === 0 ? 'aktiv-helyzet-alapeset' : kf.aktív ? 'aktiv-helyzet-aktiv' : 'aktiv-helyzet-inaktiv'}`}>
                   → {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}
                 </div>
               ))}
@@ -90,18 +76,18 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
         })}
       </div>
 
-      {showPicker && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowPicker(false); }}>
-          <div className="aktiv-picker">
-            <div className="aktiv-picker-header">
-              <label>Harci helyzet választó</label>
-            </div>
-            <div className="aktiv-picker-list">
-              {renderHelyzetItems()}
-            </div>
-          </div>
-        </div>,
-        document.body
+      {showPicker && (
+        <PickerOverlay title="Harci helyzet választó" onClose={() => setShowPicker(false)}>
+          {groups.flatMap(g => g.items.length > 0 ? [
+            <div key={g.label} className="aktiv-picker-group-label" style={{ color: g.color }}>{g.label}</div>,
+            ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
+              <div key={h.név} className="aktiv-picker-item" onClick={() => addHelyzet(h)}>
+                <span className="aktiv-picker-item-name">{h.név}</span>
+                <span className="aktiv-picker-item-hatas">{fmtCode(h.infó)}</span>
+              </div>
+            ))
+          ] : [])}
+        </PickerOverlay>
       )}
     </>
   );

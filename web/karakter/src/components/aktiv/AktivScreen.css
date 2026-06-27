@@ -418,9 +418,22 @@
 .aktiv-picker-item-disabled-inline { opacity: 0.4; pointer-events: none; }
 .aktiv-picker-item-active-accent { border-color: var(--accent); }
 
+/* Helyzet-kötött fortély sorok */
+.aktiv-helyzet-fortely-sor { padding-left: 12px; flex-wrap: wrap; word-break: break-word; justify-content: flex-start; }
+.aktiv-helyzet-aktiv { color: #66bb6a; }
+.aktiv-helyzet-inaktiv { color: #888; }
+.aktiv-helyzet-alapeset { color: #cd7c6f; }
+
+/* Státusz clickable */
+.aktiv-statusz-row-clickable { cursor: pointer; }
+
+/* Fegyver select speciális opció */
+.aktiv-option-special { color: #81c784; }
+
 /* Narratív popup */
-.narrativ-popup { gap: 12px; min-width: 260px; }
-.narrativ-popup-label { font-weight: bold; }
+.narrativ-popup-content { display: flex; flex-direction: column; gap: 12px; min-width: 260px; padding: 4px; }
 .narrativ-popup-btns { display: flex; gap: 8px; justify-content: center; flex-wrap: wrap; }
 .narrativ-input-full { width: 100%; }
 .narrativ-add-btn-center { align-self: center; padding: 8px 24px; }
+.narrativ-val-pos.selected { border-color: #4caf50; background: #4caf50; }
+.narrativ-val-neg.selected { border-color: var(--accent); background: var(--accent); }

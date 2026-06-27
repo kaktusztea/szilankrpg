@@ -34,9 +34,10 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           const alcím = def?.fokok.find(f => f.fok === stFok)?.alcím;
           const locked = baseName === 'Sérült';
           const perElem = státuszPerElem.find(s => s.név === stNév || s.név === `${stNév} (${stFok})`);
+          const clickable = !locked && maxFok > 1;
           return (
-            <div key={i} className="kep-row" style={!locked && maxFok > 1 ? { cursor: 'pointer' } : undefined} onClick={() => {
-              if (locked || maxFok <= 1) return;
+            <div key={i} className={`kep-row${clickable ? ' aktiv-statusz-row-clickable' : ''}`} onClick={() => {
+              if (!clickable) return;
               const újFok = (stFok % maxFok) + 1;
               setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));
             }}>

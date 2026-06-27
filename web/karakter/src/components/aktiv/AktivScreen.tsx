@@ -1,5 +1,4 @@
 import { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
 import type { AktivBaseProps } from './types';
 import { calcHatásPool } from './HatasPoolCalc';
 import { AktivFegyverSection } from './AktivFegyverSection';
@@ -17,9 +16,7 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
 
   useEffect(() => {
     if (!showFegyverfogás) return;
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setShowFegyverfogás(false);
-    }
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setShowFegyverfogás(false); };
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [showFegyverfogás]);
@@ -50,13 +47,12 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
 
       <AktivNarrativ session={session} setSession={setSession} pushUndo={pushUndo} />
 
-      {showFegyverfogás && createPortal(
+      {showFegyverfogás && (
         <AktivFegyverfogas
           data={data} karakter={karakter} session={session}
           onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`); setSession(s => ({ ...s, ...patch })); setShowFegyverfogás(false); }}
           onClose={() => setShowFegyverfogás(false)}
-        />,
-        document.body
+        />
       )}
     </div>
   );

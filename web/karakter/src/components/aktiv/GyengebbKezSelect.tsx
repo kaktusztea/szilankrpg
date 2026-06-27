@@ -1,13 +1,10 @@
 import { useEffect } from 'react';
 import type { AktivBaseProps } from './types';
-import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
+import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/helpers';
-import { FegyverSelectField } from './UgyesebbKezSelect';
-
-function getPengehossz(data: GameData, alap: string): number {
-  return parseFloat(lookupFegyver(data.fegyverek, alap)?.Pengehossz ?? '0') || 0;
-}
+import { getPengehossz } from './AktivHelpers';
+import { FegyverSelectField } from './FegyverSelectField';
 
 function getKétkezesBalOpciók(
   fegyverOpciók: { név: string; idx: number }[],

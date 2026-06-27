@@ -1,33 +1,11 @@
 import type { AktivBaseProps } from './types';
-import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
-import { lookupFegyver } from '../../engine/helpers';
-
-function getPengehossz(data: GameData, alap: string): number {
-  return parseFloat(lookupFegyver(data.fegyverek, alap)?.Pengehossz ?? '0') || 0;
-}
+import { getPengehossz } from './AktivHelpers';
+import { FegyverSelectField } from './FegyverSelectField';
 
 function isSpeciális(karakter: Karakter, idx: number): boolean {
   if (idx < 0) return true;
   return karakter.fegyverek[idx]?.alap.toLowerCase() === 'puszta kéz';
-}
-
-function FegyverSelectField({ label, value, options, onChange }: {
-  label: string;
-  value: number;
-  options: { név: string; idx: number }[];
-  onChange: (idx: number) => void;
-}) {
-  return (
-    <div className="aktiv-field-btn">
-      <span className="aktiv-field-label">{label}</span>
-      <select className="aktiv-field-select" value={value} onChange={e => onChange(parseInt(e.target.value))}>
-        {options.map(f => (
-          <option key={f.idx} value={f.idx} style={f.idx < 0 ? { color: '#81c784' } : undefined}>{f.név}</option>
-        ))}
-      </select>
-    </div>
-  );
 }
 
 export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUndo, fegyverOpciók }: AktivBaseProps & { fegyverOpciók: { név: string; idx: number }[] }) {
@@ -64,5 +42,3 @@ export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUnd
     />
   );
 }
-
-export { FegyverSelectField };

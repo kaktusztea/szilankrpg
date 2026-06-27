@@ -1,7 +1,7 @@
 import { useState } from 'react';
-import { createPortal } from 'react-dom';
 import type { GameData } from '../../engine/data-loader';
 import type { Session } from '../../engine/types';
+import { PickerOverlay } from './PickerOverlay';
 
 interface Props {
   data: GameData;
@@ -9,6 +9,12 @@ interface Props {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   manőverBónuszok: { manőver: string; érték: number; név: string }[];
 }
+
+const MANŐVER_TÍPUSOK = [
+  { id: 'általános', label: 'Általános' },
+  { id: 'belharcos', label: 'Belharci' },
+  { id: 'lovas', label: 'Lovas' },
+] as const;
 
 export function AktivManover({ data, session, setSession, manőverBónuszok }: Props) {
   const [showPicker, setShowPicker] = useState(false);
@@ -41,33 +47,27 @@ export function AktivManover({ data, session, setSession, manőverBónuszok }: P
         ))}
       </div>
 
-      {showPicker && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setShowPicker(false); }}>
-          <div className="aktiv-picker">
-            <div className="aktiv-picker-header"><label>Manőver választó</label></div>
-            <div className="aktiv-picker-list">
-              {['általános', 'belharcos', 'lovas'].map(tipus => {
-                const items = data.manoverek.filter(m => m.típus === tipus);
-                if (items.length === 0) return null;
-                return (
-                  <div key={tipus}>
-                    <div className="aktiv-picker-category">{tipus === 'általános' ? 'Általános' : tipus === 'belharcos' ? 'Belharci' : 'Lovas'}</div>
-                    {items.map(m => (
-                      <div key={m.név}
-                        className={`aktiv-picker-item ${session.aktív_manőver === m.név ? 'active' : ''}`}
-                        onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowPicker(false); }}>
-                        <span className="aktiv-picker-item-name">{m.név}</span>
-                        <span className="aktiv-picker-item-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
-                        <span className="aktiv-picker-item-hatas">{m.hatás}</span>
-                      </div>
-                    ))}
+      {showPicker && (
+        <PickerOverlay title="Manőver választó" onClose={() => setShowPicker(false)}>
+          {MANŐVER_TÍPUSOK.map(({ id, label }) => {
+            const items = data.manoverek.filter(m => m.típus === id);
+            if (items.length === 0) return null;
+            return (
+              <div key={id}>
+                <div className="aktiv-picker-category">{label}</div>
+                {items.map(m => (
+                  <div key={m.név}
+                    className={`aktiv-picker-item${session.aktív_manőver === m.név ? ' active' : ''}`}
+                    onClick={() => { setSession(s => ({ ...s, aktív_manőver: m.név })); setShowPicker(false); }}>
+                    <span className="aktiv-picker-item-name">{m.név}</span>
+                    <span className="aktiv-picker-item-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
+                    <span className="aktiv-picker-item-hatas">{m.hatás}</span>
                   </div>
-                );
-              })}
-            </div>
-          </div>
-        </div>,
-        document.body
+                ))}
+              </div>
+            );
+          })}
+        </PickerOverlay>
       )}
     </>
   );
