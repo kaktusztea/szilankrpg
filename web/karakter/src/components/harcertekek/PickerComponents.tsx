@@ -1,0 +1,86 @@
+/** Radios row — compact numbered buttons (MF fok, végtagvédettség, rongálódás, stb.) */
+export function FokRadios({ values, current, onSelect }: {
+  values: number[];
+  current: number;
+  onSelect: (v: number) => void;
+}) {
+  return (
+    <div className="fort-fok-radios">
+      {values.map(n => (
+        <button key={n} className={`fort-fok-btn${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>{n}</button>
+      ))}
+    </div>
+  );
+}
+
+/** Column picker — vertical list of labeled options */
+export function ColumnPicker<T extends string>({ options, current, onSelect, wide }: {
+  options: { value: T; label: string }[];
+  current: T;
+  onSelect: (v: T) => void;
+  wide?: boolean;
+}) {
+  const cls = wide ? 'fort-fok-btn he-picker-btn-wide' : 'fort-fok-btn he-picker-btn';
+  return (
+    <div className="he-column-layout">
+      {options.map(o => (
+        <button key={o.value} className={`${cls}${current === o.value ? ' active' : ''}`} onClick={() => onSelect(o.value)}>{o.label}</button>
+      ))}
+    </div>
+  );
+}
+
+/** Idea grid — 3-row grid (negatives / zero / positives) */
+export function IdeaGrid({ min, max, current, onSelect }: {
+  min: number;
+  max: number;
+  current: number;
+  onSelect: (v: number) => void;
+}) {
+  const negatives = Array.from({ length: -min }, (_, i) => min + i);
+  const positives = Array.from({ length: max }, (_, i) => i + 1);
+  const btn = (n: number) => (
+    <button key={n} className={`fort-fok-btn he-idea-cell${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>
+      {n > 0 ? `+${n}` : n}
+    </button>
+  );
+  return (
+    <div className="he-idea-grid">
+      <div className="he-idea-row">{negatives.map(btn)}</div>
+      <div className="he-idea-row">{btn(0)}</div>
+      <div className="he-idea-row">{positives.map(btn)}</div>
+    </div>
+  );
+}
+
+/** Delete confirmation — name label + red delete button */
+export function DeleteConfirm({ label, buttonText, onConfirm }: {
+  label: string;
+  buttonText: string;
+  onConfirm: () => void;
+}) {
+  return (
+    <div className="kep-prompt-align-center kep-prompt-gap-12">
+      <label className="kep-prompt-label-bold">{label}</label>
+      <button className="btn-del-confirm he-del-confirm" onClick={onConfirm}>{buttonText}</button>
+    </div>
+  );
+}
+
+/** Level grid — 15-button grid for skill level selection */
+export function SzintGrid({ current, onSelect, label }: {
+  current: number;
+  onSelect: (v: number) => void;
+  label: string;
+}) {
+  return (
+    <>
+      <label>{label}</label>
+      <div className="kep-szint-grid">
+        {Array.from({ length: 15 }, (_, i) => i + 1).map(n => (
+          <button key={n} className={`fort-fok-btn${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>{n}</button>
+        ))}
+      </div>
+    </>
+  );
+}

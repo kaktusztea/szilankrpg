@@ -54,10 +54,11 @@ interface KétkezesMfResult {
   kisebb: { TÉ: number; VÉ: number; SP: number };
 }
 
-/** Kétkezes MF bónusz a khFok mf szabálya alapján ("nincs"/"nagyobb"/"mindkettő"). */
+/** Kétkezes MF bónusz a khFok mf szabálya alapján ("nincs"/"nagyobb"/"mindkettő").
+ *  A nagyobb/kisebb a pengehossz szerinti sorrend (konzisztens a kétkezesBontás-sal). */
 function calcKétkezesMf(
   k: Karakter, session: Session, data: GameData,
-  jobbMfFok: number,
+  _jobbMfFok: number,
 ): KétkezesMfResult {
   const { konstansok } = data;
   const khFok = k.fortélyok.find(f => f.név === 'Kétkezes harc')?.fok ?? 0;
@@ -66,16 +67,29 @@ function calcKétkezesMf(
 
   if (mfMode === 'nincs') return { ...MF_ZERO, nagyobb: MF_ZERO, kisebb: MF_ZERO };
 
-  const mfN = getMfBónusz(konstansok, jobbMfFok);
+  // Pengehossz szerinti sorrend (nagyobb penge = "nagyobb")
+  const jobbFp = k.fegyverek[session.aktív_fegyver_index];
+  const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
+  const jobbDef = jobbFp ? lookupFegyver(data.fegyverek, jobbFp.alap) : null;
+  const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
+  const jobbPenge = jobbDef ? (parseFloat(jobbDef.Pengehossz) || 0) : 0;
+  const balPenge = balDef ? (parseFloat(balDef.Pengehossz) || 0) : 0;
+
+  const nagyobbDef = jobbPenge >= balPenge ? jobbDef : balDef;
+  const nagyobbFp = jobbPenge >= balPenge ? jobbFp : balFp;
+  const kisebbDef = jobbPenge >= balPenge ? balDef : jobbDef;
+  const kisebbFp = jobbPenge >= balPenge ? balFp : jobbFp;
+
+  const nagyobbNév = nagyobbDef?.Alapnév || nagyobbDef?.Fegyver || '';
+  const nagyobbMfFok = nagyobbFp ? findMfFok(k, nagyobbNév, nagyobbFp.alap) : 0;
+  const mfN = getMfBónusz(konstansok, nagyobbMfFok);
+
   if (mfMode !== 'mindkettő') return { ...mfN, nagyobb: mfN, kisebb: MF_ZERO };
 
-  // "mindkettő": jobb + bal kéz MF összege
-  const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
-  if (!balFp) return { ...mfN, nagyobb: mfN, kisebb: MF_ZERO };
-  const balDef = lookupFegyver(data.fegyverek, balFp.alap);
-  const balNév = balDef?.Alapnév || balDef?.Fegyver || '';
-  const balMfFok = findMfFok(k, balNév, balFp.alap);
-  const mfK = getMfBónusz(konstansok, balMfFok);
+  // "mindkettő": nagyobb + kisebb MF összege
+  const kisebbNév = kisebbDef?.Alapnév || kisebbDef?.Fegyver || '';
+  const kisebbMfFok = kisebbFp ? findMfFok(k, kisebbNév, kisebbFp.alap) : 0;
+  const mfK = getMfBónusz(konstansok, kisebbMfFok);
   return { TÉ: mfN.TÉ + mfK.TÉ, VÉ: mfN.VÉ + mfK.VÉ, SP: mfN.SP + mfK.SP, nagyobb: mfN, kisebb: mfK };
 }
 

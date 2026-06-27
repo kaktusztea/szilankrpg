@@ -258,3 +258,6 @@
 .he-stat-ml { color: #90caf9; margin-left: 6px; }
 .he-column-layout { display: flex; flex-direction: column; gap: 6px; align-items: center; }
 .he-harcmodor-col { display: flex; flex-direction: column; gap: 4px; }
+.he-strike { text-decoration: line-through; text-decoration-thickness: 2px; opacity: 0.5; }
+.he-btn-disabled { opacity: 0.3; }
+.he-overflow { color: var(--error); }

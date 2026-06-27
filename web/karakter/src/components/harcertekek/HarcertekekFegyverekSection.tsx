@@ -86,8 +86,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
       {fd && <FegyverChip fd={fd} mfFok={mfFok} idea={fegyver.idea} konstansok={konstansok} />}
       <div className="he-fegyver-fields">
         <button
-          className="he-field-btn he-field-fortely"
-          style={hasError ? { color: '#e53935' } : undefined}
+          className={`he-field-btn he-field-fortely${hasError ? ' he-error' : ''}`}
           onClick={() => onMfTarget(index)}
         >
           MF fok: <strong>{mfFok}</strong>
