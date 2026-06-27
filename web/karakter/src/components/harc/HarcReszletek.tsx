@@ -40,9 +40,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
       <div className="harc-reszletek-section">
         <span className="harc-reszletek-label">Támadás/kör: {r.támadások}</span>
         <div className="harc-reszletek-indent">
-          Harcmodor szint: {d.harcmodorSzint} ({d.harcmodorNév}) · Gyorsaság: {k.tulajdonságok.gyorsaság} · Sebesség: {r.sebesség}
-          {fortelyMods['harckeret'] ? ` · Fortély: ${fmtMod(fortelyMods['harckeret'])}` : ''}
-          {` · Harckeret: ${r.harckeret}`}
+          Harckeret: {r.harckeret} ({d.harcmodorNév} {d.harcmodorSzint} + Gyor {k.tulajdonságok.gyorsaság}{fortelyMods['harckeret'] ? ` + Fortély ${fmtMod(fortelyMods['harckeret'])}` : ''}) ÷ Sebesség: {r.sebesség}
         </div>
       </div>
 
