@@ -1,6 +1,6 @@
 import type { AktivBaseProps } from './types';
 import type { Session } from '../../engine/types';
-import { lookupFegyver } from '../../engine/helpers';
+import { lookupFegyver } from '../../engine/utils';
 import { PickerOverlay } from './PickerOverlay';
 
 interface Props extends Pick<AktivBaseProps, 'data' | 'karakter' | 'session'> {

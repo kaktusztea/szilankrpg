@@ -2,7 +2,7 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import type { HarcComputed } from './types';
 import { evaluate, buildContext } from '../../engine/reactive';
-import { lookupFegyver } from '../../engine/helpers';
+import { lookupFegyver } from '../../engine/utils';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 import {
   calcTaktikaMods, buildPancelLookups, calcFortelyMods,

@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import type { AktivBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver } from '../../engine/helpers';
+import { lookupFegyver } from '../../engine/utils';
 import { getPengehossz } from './AktivHelpers';
 import { FegyverSelectField } from './FegyverSelectField';
 

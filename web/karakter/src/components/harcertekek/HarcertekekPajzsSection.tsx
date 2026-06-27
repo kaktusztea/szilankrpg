@@ -1,6 +1,6 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver } from '../../engine/helpers';
+import { lookupFegyver } from '../../engine/utils';
 import { FegyverChip } from './HarcertekekFegyverChip';
 
 interface Props {

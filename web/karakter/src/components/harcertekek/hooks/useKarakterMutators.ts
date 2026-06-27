@@ -1,7 +1,7 @@
 import { useCallback } from 'react';
 import type { GameData } from '../../../engine/data-loader';
 import type { Karakter, FegyverPeldany, PancelPeldany } from '../../../engine/types';
-import { lookupFegyver } from '../../../engine/helpers';
+import { lookupFegyver } from '../../../engine/utils';
 
 type SetKarakter = React.Dispatch<React.SetStateAction<Karakter | null>>;
 

@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import type { Karakter, Fortely } from '../engine/types';
-import { describeKepChange } from '../engine/undo-helpers';
+import { describeKepChange } from '../engine/utils';
 
 interface Deps {
   karakter: Karakter;

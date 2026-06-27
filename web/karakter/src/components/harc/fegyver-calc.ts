@@ -1,7 +1,7 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { evaluate, buildContext } from '../../engine/reactive';
-import { lookupFegyver } from '../../engine/helpers';
+import { lookupFegyver } from '../../engine/utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
 import type { FegyverResult } from './types';
 

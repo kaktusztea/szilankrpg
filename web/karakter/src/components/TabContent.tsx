@@ -10,7 +10,7 @@ import { FortelyokScreen } from './fortelyok';
 import { HarcertekekScreen } from './harcertekek';
 import { MisztikusScreen } from './misztikus';
 import { HatterekScreen } from './hatterek';
-import { lookupFegyver } from '../engine/helpers';
+import { lookupFegyver } from '../engine/utils';
 
 export const ALL_TABS: TabDef[] = [
   { id: 'aktiv', label: '✳️', editOnly: false },

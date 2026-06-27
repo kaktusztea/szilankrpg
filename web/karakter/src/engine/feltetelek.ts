@@ -1,4 +1,4 @@
-import type { GameData } from './data-loader';
+import type { GameData } from './data-types';
 import type { Session } from './types';
 
 export function buildAktívFeltételek(session: Session, data: GameData): Set<string> {

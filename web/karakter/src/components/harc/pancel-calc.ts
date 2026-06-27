@@ -1,6 +1,6 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { lookupFegyver } from '../../engine/helpers';
+import { lookupFegyver } from '../../engine/utils';
 
 /** Páncél lookup táblák építése */
 export function buildPancelLookups(konstansok: any): Map<string, Record<string, number | string>[]> {

@@ -1,4 +1,5 @@
 import type { Session, Karakter } from './types';
+import { evaluateFeltétel } from './utils';
 
 export interface AktívAlapeset {
   fortély_név: string;
@@ -25,7 +26,6 @@ export function evaluateAlapesetek(
     if (!fok0 || (!fok0.hatás?.length && !fok0.módosítók?.length)) continue;
 
     if (!fok0.módosítók?.length) {
-      // Csak hatástext, mindig aktív
       result.push({ fortély_név: def.név, hatástext: fok0.hatás || [], módosítók: [] });
     } else {
       const aktív = fok0.módosítók.filter((m: any) => {
@@ -39,28 +39,4 @@ export function evaluateAlapesetek(
     }
   }
   return result;
-}
-
-function evaluateFeltétel(feltétel: string, session: Session, karakter: Karakter): boolean {
-  const i = feltétel.indexOf(':');
-  if (i === -1) return true;
-  const prefix = feltétel.slice(0, i);
-  const érték = feltétel.slice(i + 1);
-
-  switch (prefix) {
-    case 'fegyverfogás':
-      return session.fegyverfogás === érték;
-    case 'fegyver':
-      return (karakter.fegyverek[session.aktív_fegyver_index]?.alap?.toLowerCase() ?? '') === érték.toLowerCase();
-    case 'harci_helyzet':
-      return session.aktív_helyzetek.includes(érték);
-    case 'szituáció':
-      return session.aktív_helyzetek.includes(érték);
-    case 'taktika':
-      return session.aktív_taktikák.some(t => t.név === érték);
-    case 'páncél':
-      return session.aktív_páncél;
-    default:
-      return false;
-  }
 }
