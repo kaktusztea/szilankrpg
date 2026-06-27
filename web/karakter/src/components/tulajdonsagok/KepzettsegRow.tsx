@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { KepzettsegRowProps } from './types';
-import { MdLink } from '../MdLink';
+import { KepzettsegInfoPanel } from '../KepzettsegInfoPanel';
 
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
@@ -29,7 +29,6 @@ export function KepzettsegRow({
   }
 
   const def = findDef(slot.név);
-  const kit = kiterjesztesek[slot.név] || [];
 
   return (
     <div className="kep-row-wrapper">
@@ -44,29 +43,7 @@ export function KepzettsegRow({
       </div>
 
       {gameMode && infoOpen && def && (
-        <div className="kep-info">
-          <div className="kep-info-row"><span className="kep-info-label">Próba:</span> {def.próba}</div>
-          {def.domináns_tulajdonságok.length > 0 && (
-            <div className="kep-info-row"><span className="kep-info-label">Domináns:</span> {def.domináns_tulajdonságok.join(', ')}</div>
-          )}
-          {kit.filter(k => k.típus !== 'erős').length > 0 && (
-            <div className="kep-info-row">
-              <span className="kep-info-label">Kiterjeszti Normál:</span>
-              <span className="kep-info-kit">{kit.filter(k => k.típus !== 'erős').map((k, i) => (
-                <span key={i} className={felvettFortelyok.includes(k.fortély) ? 'fort-req-met' : 'fort-req-unmet'}>{i > 0 ? '; ' : ''}{k.fortély}</span>
-              ))}</span>
-            </div>
-          )}
-          {kit.filter(k => k.típus === 'erős').length > 0 && (
-            <div className="kep-info-row">
-              <span className="kep-info-label">Kiterjeszti Erős:</span>
-              <span className="kep-info-kit">{kit.filter(k => k.típus === 'erős').map((k, i) => (
-                <span key={i} className={felvettFortelyok.includes(k.fortély) ? 'fort-req-met' : 'fort-req-unmet'}>{i > 0 ? '; ' : ''}{k.fortély}</span>
-              ))}</span>
-            </div>
-          )}
-          {def.md_fájl && <div className="kep-info-row"><MdLink mdFájl={def.md_fájl} /></div>}
-        </div>
+        <KepzettsegInfoPanel def={def} kit={kiterjesztesek[slot.név] || []} felvettFortelyok={felvettFortelyok} />
       )}
 
       {szintEditing && createPortal(

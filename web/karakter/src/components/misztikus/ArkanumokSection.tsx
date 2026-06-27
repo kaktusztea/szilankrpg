@@ -1,3 +1,4 @@
+import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
 import { MisztikusRow } from './MisztikusRow';
 
 interface ArkánumokSectionProps {
@@ -6,12 +7,17 @@ interface ArkánumokSectionProps {
   hasTradíció: boolean;
   maxSzint: number;
   gameMode: boolean;
+  infoTarget: string | null;
+  onInfoToggle: (key: string) => void;
+  findDef: (név: string) => KepzettsegDef | undefined;
+  kiterjesztesek: Record<string, KiterjesztesEntry[]>;
+  felvettFortelyok: string[];
   onEdit: (név: string) => void;
   onDelete: (név: string) => void;
   onAdd: (név: string) => void;
 }
 
-export function ArkánumokSection({ arkánumok, elérhetőArkánumok, hasTradíció, maxSzint, gameMode, onEdit, onDelete, onAdd }: ArkánumokSectionProps) {
+export function ArkánumokSection({ arkánumok, elérhetőArkánumok, hasTradíció, maxSzint, gameMode, infoTarget, onInfoToggle, findDef, kiterjesztesek, felvettFortelyok, onEdit, onDelete, onAdd }: ArkánumokSectionProps) {
   if (gameMode && arkánumok.length === 0) return null;
 
   return (
@@ -22,6 +28,9 @@ export function ArkánumokSection({ arkánumok, elérhetőArkánumok, hasTradíc
           key={a.név} név={a.név} szint={a.szint} maxSzint={maxSzint}
           warning={!hasTradíció} gameMode={gameMode}
           onEdit={() => onEdit(a.név)} onDelete={() => onDelete(a.név)}
+          infoOpen={infoTarget === `kep-${a.név}`}
+          onInfoToggle={() => onInfoToggle(`kep-${a.név}`)}
+          def={findDef(a.név)} kit={kiterjesztesek[a.név]} felvettFortelyok={felvettFortelyok}
         />
       ))}
       {!gameMode && elérhetőArkánumok.length > 0 && (

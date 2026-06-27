@@ -1,12 +1,20 @@
+import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
+import { MisztikusRow } from './MisztikusRow';
+
 interface FajMisztériumSectionProps {
   fajNév: string;
   szint: number;
   maxSzint: number;
   gameMode: boolean;
+  infoTarget: string | null;
+  onInfoToggle: (key: string) => void;
+  findDef: (név: string) => KepzettsegDef | undefined;
+  kiterjesztesek: Record<string, KiterjesztesEntry[]>;
+  felvettFortelyok: string[];
   onEdit: (név: string) => void;
 }
 
-export function FajMisztériumSection({ fajNév, szint, maxSzint, gameMode, onEdit }: FajMisztériumSectionProps) {
+export function FajMisztériumSection({ fajNév, szint, maxSzint, gameMode, infoTarget, onInfoToggle, findDef, kiterjesztesek, felvettFortelyok, onEdit }: FajMisztériumSectionProps) {
   if (gameMode && szint === 0) return null;
 
   const fajMisztNév = fajNév ? `Faj misztérium: ${fajNév}` : '';
@@ -17,10 +25,13 @@ export function FajMisztériumSection({ fajNév, szint, maxSzint, gameMode, onEd
       {!fajNév ? (
         <span className="miszt-no-faj">Faj nincs kiválasztva</span>
       ) : (
-        <div className="miszt-row" onClick={() => !gameMode && onEdit(fajMisztNév)}>
-          <span className="miszt-row-name">{fajNév}</span>
-          <strong className={`kep-szint${szint > maxSzint ? ' kep-over' : szint >= 9 ? ' kep-szint-high' : ''}`}>{szint}</strong>
-        </div>
+        <MisztikusRow
+          név={fajMisztNév} szint={szint} maxSzint={maxSzint} canDelete={false}
+          gameMode={gameMode} onEdit={() => onEdit(fajMisztNév)}
+          infoOpen={infoTarget === `kep-${fajMisztNév}`}
+          onInfoToggle={() => onInfoToggle(`kep-${fajMisztNév}`)}
+          def={findDef(fajMisztNév)} kit={kiterjesztesek[fajMisztNév]} felvettFortelyok={felvettFortelyok}
+        />
       )}
     </section>
   );

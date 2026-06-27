@@ -3,6 +3,7 @@ import type { MisztikusScreenProps } from './types';
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import { evaluate, buildContext } from '../../engine/reactive';
+import { findDef as findKepzDef } from '../tulajdonsagok/helpers';
 import { AuraPanel } from './AuraPanel';
 import { TradícióSection } from './TradicioSection';
 import { ArkánumokSection } from './ArkanumokSection';
@@ -26,6 +27,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   const [misztFokTarget, setMisztFokTarget] = useState<number | null>(null);
   const [deleteFortIdx, setDeleteFortIdx] = useState<number | null>(null);
   const [hint, setHint] = useState('');
+  const [infoTarget, setInfoTarget] = useState<string | null>(null);
 
   // Escape handler
   const anyPopupOpen = deleteTarget || szintTarget || promptTarget || tradícióPicker || tradícióAltípusPicker || felvételDef || misztFokTarget !== null || deleteFortIdx !== null;
@@ -80,6 +82,13 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
     setTimeout(() => setHint(''), 2000);
   }
 
+  // Info accordion helpers
+  const findDef = (név: string) => findKepzDef(név, data.kepzettsegDefs);
+  const felvettFortelyok = karakter.fortélyok.map(f => f.név);
+  function handleInfoToggle(key: string) {
+    setInfoTarget(prev => prev === key ? null : key);
+  }
+
   // Popup action handlers
   function handleSzintPick(szint: number) {
     if (!szintTarget) return;
@@ -127,28 +136,37 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
 
       <TradícióSection
         tradíció={tradíció} maxSzint={maxSzint} gameMode={gameMode}
+        infoTarget={infoTarget} onInfoToggle={handleInfoToggle}
+        findDef={findDef} kiterjesztesek={data.kiterjesztesek} felvettFortelyok={felvettFortelyok}
         onEdit={setSzintTarget} onDelete={setDeleteTarget} onPickTradíció={() => setTradícióPicker(true)}
       />
 
       <ArkánumokSection
         arkánumok={arkánumok} elérhetőArkánumok={elérhetőArkánumok}
         hasTradíció={!!tradíció} maxSzint={maxSzint} gameMode={gameMode}
+        infoTarget={infoTarget} onInfoToggle={handleInfoToggle}
+        findDef={findDef} kiterjesztesek={data.kiterjesztesek} felvettFortelyok={felvettFortelyok}
         onEdit={setSzintTarget} onDelete={setDeleteTarget} onAdd={addKépzettség}
       />
 
       <FajMisztériumSection
         fajNév={fajNév} szint={fajMisztSzint} maxSzint={maxSzint}
         gameMode={gameMode} onEdit={setSzintTarget}
+        infoTarget={infoTarget} onInfoToggle={handleInfoToggle}
+        findDef={findDef} kiterjesztesek={data.kiterjesztesek} felvettFortelyok={felvettFortelyok}
       />
 
       <ŐsiNyelvSection
         ősiNyelvek={ősiNyelvek} maxSzint={maxSzint} gameMode={gameMode}
+        infoTarget={infoTarget} onInfoToggle={handleInfoToggle}
+        findDef={findDef} kiterjesztesek={data.kiterjesztesek} felvettFortelyok={felvettFortelyok}
         onEdit={setSzintTarget} onDelete={setDeleteTarget}
         onAdd={() => { setPromptTarget('Ősi nyelv ismerete'); setPromptValue(''); }}
       />
 
       <MisztikusFortélyokSection
         misztFortDefs={misztFortDefs} fortélyok={fortélyok} gameMode={gameMode}
+        képzettségek={képzettségek} infoTarget={infoTarget} onInfoToggle={handleInfoToggle}
         onFelvétel={setFelvételDef} onFokChange={setMisztFokTarget}
         onDelete={setDeleteFortIdx} onHint={showHint}
       />

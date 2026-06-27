@@ -27,7 +27,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, képzettségek,
   const pajzsFok = karakter.fortélyok.find(f => f.név === 'Pajzshasználat')?.fok ?? 0;
 
   return (
-    <div className="screen harcertekek-screen" style={gameMode ? { pointerEvents: 'none' } : undefined}>
+    <div className="screen harcertekek-screen">
       <h2>🛡️ Harcértékek</h2>
 
       <HmSection data={data} karakter={karakter} setKarakter={setKarakter} gameMode={gameMode} />
