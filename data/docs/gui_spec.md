@@ -490,16 +490,16 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 - Game módban: üres csoportok elrejtve
 - Kompakt lista: név + fok pöttyök (●/○). Mindig 3 hely, balról jobbra töltődik (filled = felvett fok), maxfok feletti helyek láthatatlanok. Max fok elérve: zöld szín.
   - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok
-- Ingyenes keret alatti többszörös fortélyoknál 🎁 jel a név mellett
+- Ingyenes keret alatti többszörös fortélyoknál halvány zöld ● pötty a név mellett (`fort-ingyenes-dot` class)
 - ✕ törlés gomb minden fortélynál (szerkesztő módban)
 - Csoportonként 1 db dropdown (szerkesztő módban): új fortély felvétele
 
 ### Dropdown lista jelölések
 - Normál: `"FortélyNév (X)"` ahol X a maxfok
-- Ingyenes kerettel (Kultúrkör, Helyismeret): `"Név (1) 🎁N"` ahol N a maradék ingyenes keret
-- Szabad fortélyok: `"Név (1) 🎁N"` ha van szabad ingyenes keret (TSz db összesen a csoportból)
-- Nyelvismeret: `"Nyelvismeret (2) 🎁N"` ahol N a maradék nyelvtanulás pont
-- KP-t adó (Vakság, stb.): `"Név (X) ➕6KP"` vagy több foknál: `"Név (3) ➕6-12-18KP"`
+- Ingyenes kerettel (Kultúrkör, Helyismeret): `"Név (1) ●N"` ahol N a maradék ingyenes keret
+- Szabad fortélyok: `"Név (1) ●N"` ha van szabad ingyenes keret (TSz db összesen a csoportból)
+- Nyelvismeret: `"Nyelvismeret (2) ●N"` ahol N a maradék nyelvtanulás pont
+- KP-t adó (Vakság, stb.): `"Név (X) 🎁6KP"` vagy több foknál: `"Név (3) 🎁6-12-18KP"`
 - `spec_típus: "fegyver"`: disabled ha nincs fegyver a karakteren vagy mindhez felvéve
 - `spec_típus: "nyelv"` (Nyelvismeret): disabled ha pont keret elfogyott
 - Többszörösen felvehető fortélyok mindig láthatóak a dropdown-ban (nem szűrődnek ki)
@@ -514,7 +514,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 
 ### Szabad fortélyok speciális kezelés
 - Csoport-szintű ingyenes keret: TSz db (az egész szabad csoportból összesen)
-- Ingyenes keretbe eső fortélyok: 🎁 jelölés a soron
+- Ingyenes keretbe eső fortélyok: halvány zöld ● pötty a név mellett
 - Keret felett: 6 KP/db (szekunder KP-ból)
 - Kiérdemelt fortélyok (`kiérdemelt: true`): ⭐ jelölés (fok>1: ⭐➕), nem fogyasztják se a keretet se a KP-t
 - Felvételkor popup: "Felvett" / "⭐ Kiérdemelt" választó (csak `kiérdemelhető: true` fortélyoknál)

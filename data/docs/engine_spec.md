@@ -839,7 +839,7 @@ note: Nem rules.json szabály — inline számítás a FortelyokScreen-ben.
       Nyelvismeret kp_perfok: 0 (nem KP-ból, hanem Nyelvtanulás pontokból vehető fel).
       Kiérdemelt Nyelvismeret: anyanyelv választásból szinkronizálva (Közös Alap + anyanyelv Alap).
       Fok emelhető (Alap→Udvari), az extra fok fizetős pontból.
-      UI: "Alap" / "Udvari" label (nem szám), 🎁 / 🎁➕ jelölés.
+      UI: "Alap" / "Udvari" label (nem szám), ⭐ / ⭐➕ jelölés.
 ```
 
 

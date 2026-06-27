@@ -103,7 +103,7 @@ function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, fegyver
             if (maradtIngyenes > 0) label += ` ●${maradtIngyenes}`;
           } else if (d.kp_perfok < 0) {
             const vals = Array.from({ length: d.maxfok }, (_, i) => Math.abs(d.kp_perfok) * (i + 1));
-            label += ` ➕${vals.join('-')}KP`;
+            label += ` 🎁${vals.join('-')}KP`;
           }
           const fegyverDisabled = d.többszörös_típus === 'fegyver' && (fegyverNevek.length === 0 || fegyverNevek.every(n => fortélyok.some(f => f.név === d.név && f.spec_elem === n)));
           let nyelvDisabled = false;
