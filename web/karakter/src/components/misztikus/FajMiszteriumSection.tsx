@@ -1,21 +1,15 @@
-import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
-import { MisztikusRow } from './MisztikusRow';
+import type { SectionContext } from './types';
+import { SectionRow } from './SectionRow';
 
-interface FajMisztériumSectionProps {
+interface Props {
+  ctx: SectionContext;
   fajNév: string;
   szint: number;
-  maxSzint: number;
-  gameMode: boolean;
-  infoTarget: string | null;
-  onInfoToggle: (key: string) => void;
-  findDef: (név: string) => KepzettsegDef | undefined;
-  kiterjesztesek: Record<string, KiterjesztesEntry[]>;
-  felvettFortelyok: string[];
   onEdit: (név: string) => void;
 }
 
-export function FajMisztériumSection({ fajNév, szint, maxSzint, gameMode, infoTarget, onInfoToggle, findDef, kiterjesztesek, felvettFortelyok, onEdit }: FajMisztériumSectionProps) {
-  if (gameMode && szint === 0) return null;
+export function FajMisztériumSection({ ctx, fajNév, szint, onEdit }: Props) {
+  if (ctx.gameMode && szint === 0) return null;
 
   const fajMisztNév = fajNév ? `Faj misztérium: ${fajNév}` : '';
 
@@ -25,13 +19,8 @@ export function FajMisztériumSection({ fajNév, szint, maxSzint, gameMode, info
       {!fajNév ? (
         <span className="miszt-no-faj">Faj nincs kiválasztva</span>
       ) : (
-        <MisztikusRow
-          név={fajMisztNév} szint={szint} maxSzint={maxSzint} canDelete={false}
-          gameMode={gameMode} onEdit={() => onEdit(fajMisztNév)}
-          infoOpen={infoTarget === `kep-${fajMisztNév}`}
-          onInfoToggle={() => onInfoToggle(`kep-${fajMisztNév}`)}
-          def={findDef(fajMisztNév)} kit={kiterjesztesek[fajMisztNév]} felvettFortelyok={felvettFortelyok}
-        />
+        <SectionRow ctx={ctx} név={fajMisztNév} szint={szint} canDelete={false}
+          onEdit={() => onEdit(fajMisztNév)} />
       )}
     </section>
   );

@@ -2,7 +2,7 @@ import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import { FortelyInfoPanel } from '../fortelyok/FortelyInfoPanel';
 
-interface MisztikusFortélyokSectionProps {
+interface Props {
   misztFortDefs: FortelySummary[];
   fortélyok: Fortely[];
   gameMode: boolean;
@@ -15,7 +15,7 @@ interface MisztikusFortélyokSectionProps {
   onHint: (msg: string) => void;
 }
 
-export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode, képzettségek, infoTarget, onInfoToggle, onFelvétel, onFokChange, onDelete, onHint }: MisztikusFortélyokSectionProps) {
+export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode, képzettségek, infoTarget, onInfoToggle, onFelvétel, onFokChange, onDelete, onHint }: Props) {
   const misztFortSlotok = fortélyok
     .filter(f => misztFortDefs.some(d => d.név === f.név))
     .sort((a, b) => a.név.localeCompare(b.név, 'hu'));
@@ -35,18 +35,19 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
         const def = misztFortDefs.find(d => d.név === f.név);
         const maxfok = def?.maxfok ?? 1;
         const globalIdx = fortélyok.indexOf(f);
-        const key = `mf-${globalIdx}`;
-        const isOpen = infoTarget === key;
+        const infoKey = `mf-${globalIdx}`;
+        const isOpen = infoTarget === infoKey;
         const fokDef = def?.fokok.find(fd => fd.fok === f.fok);
+
         return (
           <div key={`${f.név}-${f.spec_elem}-${i}`} className="fort-row-wrapper">
             <div className="kep-row miszt-fort-row"
               onClick={() => {
-                if (gameMode) { onInfoToggle(key); return; }
+                if (gameMode) { onInfoToggle(infoKey); return; }
                 if (maxfok > 1) onFokChange(globalIdx);
-                else { onHint('1 fok a maximum'); }
+                else onHint('1 fok a maximum');
               }}>
-              <span className="kep-név aktiv-flex-1">
+              <span className="kep-név miszt-fort-name">
                 {f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név}{f.kiérdemelt ? ' ⭐' : ''}
               </span>
               {!gameMode && (
@@ -60,8 +61,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
             </div>
             {gameMode && isOpen && def && (
               <FortelyInfoPanel
-                def={def}
-                fokDef={fokDef}
+                def={def} fokDef={fokDef}
                 kiterjesztiNormál={def.kiterjeszti_normál}
                 kiterjesztiErős={def.kiterjeszti_erős}
                 képzettségek={képzettségek}

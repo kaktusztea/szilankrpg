@@ -1,4 +1,4 @@
-import type { GameData } from '../../engine/data-loader';
+import type { GameData, KepzettsegDef, KiterjesztesEntry, FortelySummary } from '../../engine/data-loader';
 import type { Karakter, Fortely } from '../../engine/types';
 
 export interface MisztikusScreenProps {
@@ -11,8 +11,32 @@ export interface MisztikusScreenProps {
   gameMode: boolean;
 }
 
-export interface KépzettségActions {
-  addKépzettség: (név: string) => void;
-  removeKépzettség: (név: string) => void;
-  setSzint: (név: string, szint: number) => void;
+/** Shared context for all Misztikus section components */
+export interface SectionContext {
+  maxSzint: number;
+  gameMode: boolean;
+  infoTarget: string | null;
+  onInfoToggle: (key: string) => void;
+  findDef: (név: string) => KepzettsegDef | undefined;
+  kiterjesztesek: Record<string, KiterjesztesEntry[]>;
+  felvettFortelyok: string[];
+}
+
+/** Popup state managed by useMisztikusPopups hook */
+export interface PopupState {
+  deleteTarget: string | null;
+  szintTarget: string | null;
+  promptTarget: string | null;
+  promptValue: string;
+  tradícióPicker: boolean;
+  tradícióAltípusPicker: string | null;
+  felvételDef: FortelySummary | null;
+  misztFokTarget: number | null;
+  deleteFortIdx: number | null;
+}
+
+export interface TradícióOpció {
+  név: string;
+  típus: string;
+  altípusok: { név: string; leírás?: string; pantheon?: string }[];
 }

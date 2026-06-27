@@ -19,18 +19,16 @@ interface MisztikusRowProps {
 
 export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning = false, gameMode, infoOpen, def, kit, felvettFortelyok, onEdit, onDelete, onInfoToggle }: MisztikusRowProps) {
   const displayName = név.includes(':') ? név.split(':')[1].trim() : név;
+  const szintClass = `kep-szint${szint > maxSzint ? ' kep-over' : szint >= 9 ? ' kep-szint-high' : ''}`;
 
   return (
     <div className="kep-row-wrapper">
-      <div className="miszt-row" onClick={() => {
-        if (gameMode) onInfoToggle?.();
-        else onEdit();
-      }}>
+      <div className="miszt-row" onClick={() => gameMode ? onInfoToggle?.() : onEdit()}>
         <span className={`miszt-row-name${warning ? ' miszt-row-warn' : ''}`}>{displayName}</span>
         {canDelete && !gameMode && (
           <button className="fort-delete" onClick={e => { e.stopPropagation(); onDelete?.(); }}>✕</button>
         )}
-        <strong className={`kep-szint${szint > maxSzint ? ' kep-over' : szint >= 9 ? ' kep-szint-high' : ''}`}>{szint}</strong>
+        <strong className={szintClass}>{szint}</strong>
       </div>
       {gameMode && infoOpen && def && (
         <KepzettsegInfoPanel def={def} kit={kit || []} felvettFortelyok={felvettFortelyok || []} />
