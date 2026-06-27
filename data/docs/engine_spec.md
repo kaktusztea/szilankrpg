@@ -297,6 +297,7 @@ impl: páncél_MGT a reactive engine `páncél_MGT` szabályából jön.
         - `harc/taktika-calc.ts` — calcTaktikaMods
         - `harc/pancel-calc.ts` — buildPancelLookups, calcFogas, calcFtEnyhites
         - `harc/useHarcComputed.ts` — hook: context build + evaluate + feltétel dispatch
+        - `harc/harc-reszletek-calc.ts` — calcReszletekData (aktív fegyver bontás adatok)
         - `engine/fortely-mods.ts` — calcFortelyMods (önálló engine modul)
 ```
 

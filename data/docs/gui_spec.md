@@ -217,6 +217,8 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | `HarcFegyverTable.tsx` | Fegyver harcértékek tábla |
 | `EpTable.tsx` | ÉP sebesülés táblázat (S1-S4) |
 | `HarcPopups.tsx` | Harc fül popup-ok (Tám info, VÉ history) |
+| `HarcReszletek.tsx` | Részletes értékek box (aktív fegyver harcérték bontás) |
+| `harc-reszletek-calc.ts` | Részletes értékek kalkuláció (aktív fegyver meghatározás, bontás adatok) |
 | `HarcCalc.ts` | Re-export barrel (backward compat) |
 
 ### Fegyverfogás választó
@@ -318,6 +320,14 @@ Fejléc: `<h2>🗡️ Harc</h2>`
     - Mindkettő kiválasztva → azonnal bezárul. Nincs OK/Mégse.
   - Mellé koppintás (overlay háttér) = cancel mindkét popup-nál
 - **Manőver Pont**: Manőver Alap + aktuális/max MP + gombok (+1, -1). Default: max.
+- **Részletes értékek** (ÉP tábla alatt, dashed border box, 12px, szürke):
+  - Aktív fegyver (kétkezes összesítő / fogás sor / egyfegyveres ügyesebb kéz) harcérték bontása
+  - Név: fegyver név + [kategória]
+  - Támadás/kör: harcmodor szint (név), gyorsaság, sebesség, fortély harckeret, végső harckeret
+  - TÉ: alap, erő, ügyesség, gyorsaság, HM, harcmodor, fegyver, MF, fortély, taktika, fogás, több tám, sérülés
+  - VÉ: alap, gyorsaság, ügyesség, HM, harcmodor, fegyver, MF, fortély, fogás, pajzs, taktika, VÉ csökkenés
+  - SP: fegyver alap, erőbónusz (limit), MF, fortély, taktika
+  - Pengehossz: alap, fortély bónusz, összpenge (kétkezesnél)
 
 ---
 
