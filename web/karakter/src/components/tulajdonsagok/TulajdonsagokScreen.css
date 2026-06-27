@@ -2,12 +2,18 @@
   padding-bottom: 20px;
 }
 
+/* --- Fejléc --- */
 .tul-header {
   display: flex;
   gap: 0;
   margin-bottom: 10px;
   font-size: 16px;
   color: var(--text);
+}
+
+.tul-header-col {
+  flex-direction: column;
+  gap: 4px;
 }
 
 .tul-header-box {
@@ -18,17 +24,18 @@
   user-select: none;
 }
 
-.tul-header-név {
-  flex: 1;
-  cursor: pointer;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-right: none;
+.tul-header-full {
+  width: 100%;
 }
 
-.tul-header-box:last-child {
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
+.tul-header-two-col {
+  display: flex;
+  gap: 6px;
+  width: 100%;
+}
+
+.tul-header-flex1 {
+  flex: 1;
 }
 
 .tul-header-label {
@@ -64,6 +71,13 @@
   flex: 1;
 }
 
+/* --- Tulajdonság pont sáv --- */
+.tul-pont-bar-styled {
+  padding: 4px 8px;
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
 /* --- Tulajdonságok grid --- */
 .tul-grid {
   display: grid;
@@ -72,13 +86,6 @@
   grid-template-columns: 1fr 1fr;
   gap: 6px;
   margin-bottom: 16px;
-}
-
-@media (max-width: 480px) {
-  .tul-grid {
-    grid-template-rows: repeat(4, auto);
-    grid-template-columns: 1fr 1fr;
-  }
 }
 
 .tul-cell {
@@ -117,11 +124,6 @@
   text-align: left;
 }
 
-.tul-cell.sliding {
-  border-color: var(--accent);
-  cursor: grabbing;
-}
-
 .tul-label {
   font-size: 17px;
   color: var(--text-dim);
@@ -131,23 +133,6 @@
   font-size: 17px;
   font-weight: bold;
   color: var(--text);
-}
-
-.tul-slider-track {
-  position: absolute;
-  bottom: 3px;
-  left: 12.5%;
-  right: 12.5%;
-  height: 4px;
-  background: #333;
-  border-radius: 2px;
-}
-
-.tul-slider-fill {
-  height: 100%;
-  background: var(--accent);
-  border-radius: 2px;
-  transition: width 0.05s;
 }
 
 /* --- Képzettségek --- */
@@ -191,10 +176,6 @@
   touch-action: manipulation;
   position: relative;
   cursor: pointer;
-}
-
-.kep-row.sliding {
-  border-color: var(--accent);
 }
 
 .kep-row-new {
@@ -252,23 +233,6 @@
   font-size: 17px;
 }
 
-.kep-slider-track {
-  position: absolute;
-  bottom: 2px;
-  left: 12.5%;
-  right: 12.5%;
-  height: 3px;
-  background: #333;
-  border-radius: 2px;
-}
-
-.kep-slider-fill {
-  height: 100%;
-  background: var(--accent);
-  border-radius: 2px;
-  transition: width 0.05s;
-}
-
 /* --- Game mód info panel --- */
 .kep-info {
   background: #1a1a3a;
@@ -292,7 +256,7 @@
   color: var(--success);
 }
 
-/* --- Szint grid buttons --- */
+/* --- Popup szint grid gombok --- */
 .kep-szint-grid {
   display: grid;
   grid-template-columns: repeat(5, 36px);
@@ -310,89 +274,71 @@
   color: #000;
 }
 
-/* --- Szabad szöveges prompt --- */
-.kep-prompt-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.6);
+/* --- TSZ grid --- */
+.tsz-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px;
+  max-width: 204px;
+  margin: 0 auto;
+}
+
+.tsz-grid .fort-fok-btn {
+  width: 36px;
+  height: 36px;
+}
+
+/* --- KorPicker --- */
+.kor-picker {
+  align-items: center;
+}
+
+.kor-picker-label {
+  font-size: 16px;
+  color: var(--text);
+  text-align: center;
+}
+
+.kor-picker-controls {
   display: flex;
   align-items: center;
+  gap: 16px;
   justify-content: center;
-  z-index: 100;
-  touch-action: none;
 }
 
-.kep-prompt {
-  background: var(--surface);
-  border: 1px solid #555;
-  border-radius: 8px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  min-width: 250px;
-  touch-action: auto;
+.kor-picker-btn {
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
 }
 
-.kep-prompt label {
-  font-size: 16px;
-  color: var(--text);
+.kor-picker-value {
+  font-size: 24px;
+  min-width: 50px;
+  text-align: center;
 }
-
-.kep-prompt input {
-  background: var(--input-bg);
-  color: var(--text);
-  border: 1px solid #555;
-  border-radius: 4px;
-  padding: 6px 10px;
-  font-size: 16px;
-}
-
-.kep-prompt-btns {
-  display: flex;
-  gap: 8px;
-  justify-content: flex-end;
-}
-
-.kep-prompt-btns button {
-  background: var(--primary);
-  color: var(--text);
-  border: 1px solid #555;
-  border-radius: 4px;
-  padding: 4px 12px;
-  font-size: 17px;
-  cursor: pointer;
-}
-
-.kep-prompt-btns button:disabled {
-  opacity: 0.4;
-  cursor: default;
-}
-
-.btn-del-confirm {
-  background: var(--error) !important;
-  color: #fff !important;
-  border-color: var(--error) !important;
-}
-
-/* --- TSZ slider --- */
-.tsz-slider {
-  width: 100%;
-  accent-color: var(--accent);
-}
-
-/* --- Tulajdonsagok inline → CSS --- */
-.tul-header-col { flex-direction: column; gap: 4px; }
-.tul-header-full { width: 100%; }
-.tul-header-two-col { display: flex; gap: 6px; width: 100%; }
-.tul-header-flex1 { flex: 1; }
-.tul-pont-bar-styled { padding: 4px 8px; font-size: 13px; color: var(--text-dim); }
-.tsz-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px; max-width: 204px; margin: 0 auto; }
-.tsz-grid .fort-fok-btn { width: 36px; height: 36px; }
 
 /* --- PrimerKpBox --- */
-.primer-kp-box { margin-top: 16px; padding: 10px; border: 1px dashed #666; border-radius: 6px; font-size: 12px; color: #aaa; }
-.primer-kp-title { color: #e53935; }
-.primer-kp-indent { padding-left: 10px; }
-.primer-kp-total { border-top: 1px solid #555; margin-top: 4px; padding-top: 4px; }
+.primer-kp-box {
+  margin-top: 16px;
+  padding: 10px;
+  border: 1px dashed #666;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #aaa;
+}
 
+.primer-kp-title {
+  color: #e53935;
+}
+
+.primer-kp-indent {
+  padding-left: 10px;
+}
+
+.primer-kp-total {
+  border-top: 1px solid #555;
+  margin-top: 4px;
+  padding-top: 4px;
+}

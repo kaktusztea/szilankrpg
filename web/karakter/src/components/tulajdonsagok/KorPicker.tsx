@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 
 interface Props {
   kor: number;
@@ -29,22 +29,22 @@ export function KorPicker({ kor, onSelect }: Props) {
     if (holdRef.current.timer) { clearTimeout(holdRef.current.timer); holdRef.current.timer = null; }
   }
 
-  useEffect(() => { onSelect(value); }, [value]);
+  useEffect(() => { onSelect(value); }, [value]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => () => stopHold(), []);
 
   return (
-    <div className="kep-prompt picker-wrapper">
-      <label className="picker-label">Életkor</label>
-      <div className="picker-controls">
-        <button className="fort-fok-btn picker-btn-lg"
+    <div className="kep-prompt kor-picker">
+      <label className="kor-picker-label">Életkor</label>
+      <div className="kor-picker-controls">
+        <button className="fort-fok-btn kor-picker-btn"
           onClick={() => setValue(v => Math.max(1, v - 1))}
           onMouseDown={() => startHold(-1)} onMouseUp={stopHold} onMouseLeave={stopHold}
-          onTouchStart={(e) => { e.preventDefault(); startHold(-1); }} onTouchEnd={stopHold}>−</button>
-        <strong className="picker-value-lg">{value}</strong>
-        <button className="fort-fok-btn picker-btn-lg"
+          onTouchStart={e => { e.preventDefault(); startHold(-1); }} onTouchEnd={stopHold}>−</button>
+        <strong className="kor-picker-value">{value}</strong>
+        <button className="fort-fok-btn kor-picker-btn"
           onClick={() => setValue(v => Math.min(2000, v + 1))}
           onMouseDown={() => startHold(1)} onMouseUp={stopHold} onMouseLeave={stopHold}
-          onTouchStart={(e) => { e.preventDefault(); startHold(1); }} onTouchEnd={stopHold}>+</button>
+          onTouchStart={e => { e.preventDefault(); startHold(1); }} onTouchEnd={stopHold}>+</button>
       </div>
     </div>
   );

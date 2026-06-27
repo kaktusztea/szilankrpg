@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import { useState } from 'react';
 import type { KepzettsegRowProps } from './types';
 import { KepzettsegInfoPanel } from '../KepzettsegInfoPanel';
+import { GridPickerPopup } from './popups';
+
+const SZINT_VALUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
@@ -10,17 +12,9 @@ export function KepzettsegRow({
 }: KepzettsegRowProps) {
   const [szintEditing, setSzintEditing] = useState(false);
 
-  useEffect(() => {
-    if (!szintEditing) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setSzintEditing(false); }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [szintEditing]);
-
   function handleTap(e: React.MouseEvent<HTMLDivElement>) {
     if (gameMode) { onInfoToggle(); return; }
-    const row = e.currentTarget;
-    const delBtn = row.querySelector('.kep-delete') as HTMLElement | null;
+    const delBtn = e.currentTarget.querySelector('.kep-delete') as HTMLElement | null;
     if (delBtn) {
       const btnRect = delBtn.getBoundingClientRect();
       if (e.clientX >= btnRect.left - 25) return;
@@ -38,7 +32,9 @@ export function KepzettsegRow({
           {!gameMode && (
             <button className="kep-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className={`kep-szint ${slot.szint === 0 ? 'kep-szint-zero' : slot.szint >= 9 ? 'kep-szint-high' : ''}${overLimit ? ' kep-over' : ''}`}>{slot.szint}</span>
+          <span className={`kep-szint${slot.szint === 0 ? ' kep-szint-zero' : slot.szint >= 9 ? ' kep-szint-high' : ''}${overLimit ? ' kep-over' : ''}`}>
+            {slot.szint}
+          </span>
         </span>
       </div>
 
@@ -46,18 +42,14 @@ export function KepzettsegRow({
         <KepzettsegInfoPanel def={def} kit={kiterjesztesek[slot.név] || []} felvettFortelyok={felvettFortelyok} />
       )}
 
-      {szintEditing && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt">
-            <label>{displayName} — szint:</label>
-            <div className="kep-szint-grid">
-              {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
-                <button key={n} className={`fort-fok-btn ${slot.szint === n ? 'active' : ''}`} onClick={() => { onSzintChange(n); setSzintEditing(false); }}>{n}</button>
-              ))}
-            </div>
-          </div>
-        </div>,
-        document.body
+      {szintEditing && (
+        <GridPickerPopup
+          label={`${displayName} — szint:`}
+          values={SZINT_VALUES}
+          current={slot.szint}
+          onSelect={n => { onSzintChange(n); setSzintEditing(false); }}
+          onCancel={() => setSzintEditing(false)}
+        />
       )}
     </div>
   );

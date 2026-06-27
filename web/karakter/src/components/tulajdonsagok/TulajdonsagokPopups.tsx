@@ -1,178 +1,160 @@
-import { createPortal } from 'react-dom';
 import type { GameData } from '../../engine/data-loader';
 import type { KepzettsegSlot } from './types';
+import { TextInputPopup, GridPickerPopup, ConfirmPopup } from './popups';
 import { KorPicker } from './KorPicker';
+import { OverlayPortal } from '../overlays/OverlayPortal';
 import { getDisplayName } from './helpers';
+
+const SZINT_VALUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 
 interface PromptState { alapNév: string }
 interface DeleteTarget { idx: number; név: string; szint: number }
+
+export interface PopupState {
+  promptState: PromptState | null;
+  promptValue: string;
+  deleteTarget: DeleteTarget | null;
+  pendingEditIdx: number | null;
+  editingNév: boolean;
+  tempNév: string;
+  editingBecenév: boolean;
+  tempBecenév: string;
+  editingTsz: boolean;
+  editingKor: boolean;
+  editingJátékos: boolean;
+  tempJátékos: string;
+}
+
+export const INITIAL_POPUP_STATE: PopupState = {
+  promptState: null, promptValue: '', deleteTarget: null, pendingEditIdx: null,
+  editingNév: false, tempNév: '', editingBecenév: false, tempBecenév: '',
+  editingTsz: false, editingKor: false, editingJátékos: false, tempJátékos: ''
+};
 
 interface Props {
   data: GameData;
   képzettségek: KepzettsegSlot[];
   setKépzettségek: React.Dispatch<React.SetStateAction<KepzettsegSlot[]>>;
-  // Prompt (szabad szöveges többszörös)
-  promptState: PromptState | null;
-  setPromptState: (v: PromptState | null) => void;
-  promptValue: string;
-  setPromptValue: (v: string) => void;
+  popup: PopupState;
+  setPopup: React.Dispatch<React.SetStateAction<PopupState>>;
   onConfirmPrompt: () => void;
-  // Delete confirm
-  deleteTarget: DeleteTarget | null;
-  setDeleteTarget: (v: DeleteTarget | null) => void;
-  // Pending edit (szint popup új képzettséghez)
-  pendingEditIdx: number | null;
-  setPendingEditIdx: (v: number | null) => void;
-  // Név editor
-  editingNév: boolean;
-  setEditingNév: (v: boolean) => void;
-  tempNév: string;
-  setTempNév: (v: string) => void;
+  // Setterek
   setNév: (v: string) => void;
-  // Becenév editor
-  editingBecenév: boolean;
-  setEditingBecenév: (v: boolean) => void;
-  tempBecenév: string;
-  setTempBecenév: (v: string) => void;
   setBecenév: (v: string) => void;
-  // TSZ editor
-  editingTsz: boolean;
-  setEditingTsz: (v: boolean) => void;
   tsz: number;
   setTsz: (v: number) => void;
-  // Kor editor
-  editingKor: boolean;
-  setEditingKor: (v: boolean) => void;
   kor: number;
   setKor: (v: number) => void;
-  // Játékos editor
-  editingJátékos: boolean;
-  setEditingJátékos: (v: boolean) => void;
-  tempJátékos: string;
-  setTempJátékos: (v: string) => void;
   setJátékos: (v: string) => void;
 }
 
 export function TulajdonsagokPopups({
   data, képzettségek, setKépzettségek,
-  promptState, setPromptState, promptValue, setPromptValue, onConfirmPrompt,
-  deleteTarget, setDeleteTarget,
-  pendingEditIdx, setPendingEditIdx,
-  editingNév, setEditingNév, tempNév, setTempNév, setNév,
-  editingBecenév, setEditingBecenév, tempBecenév, setTempBecenév, setBecenév,
-  editingTsz, setEditingTsz, tsz, setTsz,
-  editingKor, setEditingKor, kor, setKor,
-  editingJátékos, setEditingJátékos, tempJátékos, setTempJátékos, setJátékos
+  popup, setPopup, onConfirmPrompt,
+  setNév, setBecenév, tsz, setTsz, kor, setKor, setJátékos
 }: Props) {
+  const p = popup;
+  const close = (fields: Partial<PopupState>) => setPopup(prev => ({ ...prev, ...fields }));
+
+  const tszValues = Array.from(
+    { length: data.konstansok.arányok.max_tsz - 2 }, (_, i) => i + 3
+  );
+
   return (<>
-    {promptState && createPortal(
-      <div className="kep-prompt-overlay">
-        <div className="kep-prompt">
-          <label>{promptState.alapNév} — alnév:</label>
-          <input autoFocus maxLength={20} value={promptValue}
-            onChange={e => setPromptValue(e.target.value)}
-            onKeyDown={e => { if (e.key === 'Enter') onConfirmPrompt(); if (e.key === 'Escape') setPromptState(null); }}
-          />
-          <div className="kep-prompt-btns">
-            <button onClick={onConfirmPrompt} disabled={!promptValue.trim()}>OK</button>
-            <button onClick={() => setPromptState(null)}>Mégse</button>
-          </div>
-        </div>
-      </div>,
-      document.body
+    {/* Szabad szöveges képzettség alnév */}
+    {p.promptState && (
+      <TextInputPopup
+        label={`${p.promptState.alapNév} — alnév:`}
+        value={p.promptValue}
+        onChange={v => close({ promptValue: v })}
+        onConfirm={onConfirmPrompt}
+        onCancel={() => close({ promptState: null })}
+        maxLength={20}
+        disabled={!p.promptValue.trim()}
+      />
     )}
 
-    {deleteTarget && createPortal(
-      <div className="kep-prompt-overlay">
-        <div className="kep-prompt kep-prompt-align-center">
-          <label>{deleteTarget.név}</label>
-          <button className="btn-del-confirm he-del-confirm" onClick={() => { setKépzettségek(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}>Képzettség törlése</button>
-        </div>
-      </div>,
-      document.body
+    {/* Képzettség törlés megerősítő */}
+    {p.deleteTarget && (
+      <ConfirmPopup
+        label={p.deleteTarget.név}
+        confirmText="Képzettség törlése"
+        onConfirm={() => {
+          setKépzettségek(prev => prev.filter((_, i) => i !== p.deleteTarget!.idx));
+          close({ deleteTarget: null });
+        }}
+        onCancel={() => close({ deleteTarget: null })}
+      />
     )}
 
-    {pendingEditIdx !== null && createPortal(
-      <div className="kep-prompt-overlay">
-        <div className="kep-prompt">
-          <label>{getDisplayName(képzettségek[pendingEditIdx]?.név ?? '', data.kepzettsegDefs)} — szint:</label>
-          <div className="kep-szint-grid">
-            {[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15].map(n => (
-              <button key={n} className={`fort-fok-btn ${képzettségek[pendingEditIdx!]?.szint === n ? 'active' : ''}`}
-                onClick={() => { setKépzettségek(prev => prev.map((k, i) => i === pendingEditIdx ? { ...k, szint: n } : k)); setPendingEditIdx(null); }}>{n}</button>
-            ))}
-          </div>
-        </div>
-      </div>,
-      document.body
+    {/* Új képzettség szint választó */}
+    {p.pendingEditIdx !== null && képzettségek[p.pendingEditIdx] && (
+      <GridPickerPopup
+        label={`${getDisplayName(képzettségek[p.pendingEditIdx].név, data.kepzettsegDefs)} — szint:`}
+        values={SZINT_VALUES}
+        current={képzettségek[p.pendingEditIdx].szint}
+        onSelect={n => {
+          setKépzettségek(prev => prev.map((k, i) => i === p.pendingEditIdx ? { ...k, szint: n } : k));
+          close({ pendingEditIdx: null });
+        }}
+        onCancel={() => close({ pendingEditIdx: null })}
+      />
     )}
 
-    {editingNév && createPortal(
-      <div className="kep-prompt-overlay">
-        <div className="kep-prompt">
-          <label>Karakter neve:</label>
-          <input autoFocus maxLength={40} value={tempNév}
-            onChange={e => setTempNév(e.target.value)}
-            onKeyDown={e => { if (e.key === 'Enter' && tempNév.trim()) { setNév(tempNév.trim()); setEditingNév(false); } if (e.key === 'Escape') setEditingNév(false); }}
-          />
-          <div className="kep-prompt-btns">
-            <button onClick={() => { setNév(tempNév.trim()); setEditingNév(false); }} disabled={!tempNév.trim()}>OK</button>
-            <button onClick={() => setEditingNév(false)}>Mégse</button>
-          </div>
-        </div>
-      </div>,
-      document.body
+    {/* Név szerkesztő */}
+    {p.editingNév && (
+      <TextInputPopup
+        label="Karakter neve:"
+        value={p.tempNév}
+        onChange={v => close({ tempNév: v })}
+        onConfirm={() => { setNév(p.tempNév.trim()); close({ editingNév: false }); }}
+        onCancel={() => close({ editingNév: false })}
+        maxLength={40}
+        disabled={!p.tempNév.trim()}
+      />
     )}
 
-    {editingTsz && createPortal(
-      <div className="kep-prompt-overlay">
-        <div className="kep-prompt">
-          <label>Tapasztalati szint</label>
-          <div className="kep-szint-grid tsz-grid">
-            {Array.from({ length: data.konstansok.arányok.max_tsz - 2 }, (_, i) => i + 3).map(n => (
-              <button key={n} className={`fort-fok-btn ${tsz === n ? 'active' : ''}`} onClick={() => { setTsz(n); setEditingTsz(false); }}>{n}</button>
-            ))}
-          </div>
-        </div>
-      </div>,
-      document.body
+    {/* Becenév szerkesztő */}
+    {p.editingBecenév && (
+      <TextInputPopup
+        label="Becenév (max 12)"
+        value={p.tempBecenév}
+        onChange={v => close({ tempBecenév: v })}
+        onConfirm={() => { setBecenév(p.tempBecenév.trim()); close({ editingBecenév: false }); }}
+        onCancel={() => close({ editingBecenév: false })}
+        maxLength={12}
+      />
     )}
 
-    {editingKor && createPortal(
-      <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setEditingKor(false); }}>
+    {/* TSZ választó */}
+    {p.editingTsz && (
+      <GridPickerPopup
+        label="Tapasztalati szint"
+        values={tszValues}
+        current={tsz}
+        onSelect={n => { setTsz(n); close({ editingTsz: false }); }}
+        onCancel={() => close({ editingTsz: false })}
+        gridClass="tsz-grid"
+      />
+    )}
+
+    {/* Kor választó */}
+    {p.editingKor && (
+      <OverlayPortal dismissible onClose={() => close({ editingKor: false })}>
         <KorPicker kor={kor} onSelect={v => setKor(v)} />
-      </div>,
-      document.body
+      </OverlayPortal>
     )}
 
-    {editingJátékos && createPortal(
-      <div className="kep-prompt-overlay">
-        <div className="kep-prompt">
-          <label>Játékos neve</label>
-          <input autoFocus maxLength={40} value={tempJátékos}
-            onChange={e => setTempJátékos(e.target.value)}
-            onKeyDown={e => { if (e.key === 'Enter') { setJátékos(tempJátékos); setEditingJátékos(false); } }} />
-          <div className="kep-prompt-btns">
-            <button onClick={() => { setJátékos(tempJátékos); setEditingJátékos(false); }}>OK</button>
-          </div>
-        </div>
-      </div>,
-      document.body
-    )}
-
-    {editingBecenév && createPortal(
-      <div className="kep-prompt-overlay">
-        <div className="kep-prompt">
-          <label>Becenév (max 12)</label>
-          <input autoFocus maxLength={12} value={tempBecenév}
-            onChange={e => setTempBecenév(e.target.value)}
-            onKeyDown={e => { if (e.key === 'Enter') { setBecenév(tempBecenév.trim()); setEditingBecenév(false); } if (e.key === 'Escape') setEditingBecenév(false); }} />
-          <div className="kep-prompt-btns">
-            <button onClick={() => { setBecenév(tempBecenév.trim()); setEditingBecenév(false); }}>OK</button>
-          </div>
-        </div>
-      </div>,
-      document.body
+    {/* Játékos szerkesztő */}
+    {p.editingJátékos && (
+      <TextInputPopup
+        label="Játékos neve"
+        value={p.tempJátékos}
+        onChange={v => close({ tempJátékos: v })}
+        onConfirm={() => { setJátékos(p.tempJátékos); close({ editingJátékos: false }); }}
+        onCancel={() => close({ editingJátékos: false })}
+        maxLength={40}
+      />
     )}
   </>);
 }

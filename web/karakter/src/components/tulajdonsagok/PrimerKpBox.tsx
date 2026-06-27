@@ -1,66 +1,51 @@
+import { useMemo } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
+import { calcPrimerKp, type KpDetail } from './primerKpCalc';
 
-export function PrimerKpBox({ data, karakter, képzettségek }: {
+interface Props {
   data: GameData;
   karakter: Karakter;
   képzettségek: { név: string; szint: number }[];
-}) {
-  const konstansok = data.konstansok;
-  const kpTábla = data.kepzettsegKp;
-  const kpCost = (szint: number) => kpTábla.filter(r => r.szint <= szint).reduce((s, r) => s + r.kp, 0);
-  const harcmodorNevek = [...konstansok.harcmodorok.közelharci, ...konstansok.harcmodorok.távolsági];
-  const misztikusNevek = data.kepzettsegDefs.filter((k: any) => k.csoport === 'misztikus').map((k: any) => k.név.toLowerCase());
-  const isMisztikus = (név: string) => {
-    const lower = név.toLowerCase();
-    return misztikusNevek.some(m => lower === m || lower.startsWith(m + ':'));
-  };
-  const primerKepzNevek = new Set(data.kepzettsegDefs.filter((k: any) => k.primer).map((k: any) => k.név.toLowerCase()));
-  for (const nm of harcmodorNevek) primerKepzNevek.add(nm);
+}
 
-  let kp_hm_cm = (karakter.HM_TÉ + karakter.HM_VÉ) * konstansok.kp.hm + karakter.CM * konstansok.kp.cm;
-  let kp_harcmodor = 0, kp_misztikus = 0, kp_világi = 0;
-  const harcmodorDetails: { név: string; szint: number; kp: number }[] = [];
-  const misztikusDetails: { név: string; szint: number; kp: number }[] = [];
-  const világiDetails: { név: string; szint: number; kp: number }[] = [];
-  for (const kp of képzettségek) {
-    if (kp.szint <= 0) continue;
-    const cost = kpCost(kp.szint);
-    if (harcmodorNevek.includes(kp.név.toLowerCase())) { kp_harcmodor += cost; harcmodorDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
-    else if (isMisztikus(kp.név)) { kp_misztikus += cost; misztikusDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
-    else if (!primerKepzNevek.has(kp.név.toLowerCase())) continue;
-    else { kp_világi += cost; világiDetails.push({ név: kp.név, szint: kp.szint, kp: cost }); }
-  }
-  let kp_harci_fort = 0, kp_miszt_fort = 0;
-  const harcifortDetails: { név: string; fok: number; kp: number; spec: string }[] = [];
-  const misztfortDetails: { név: string; fok: number; kp: number; spec: string }[] = [];
-  for (const f of karakter.fortélyok) {
-    if (!data.primerFortelyok.includes(f.név)) continue;
-    const def = data.fortelySummaries.find(d => d.név === f.név);
-    if (!def || def.kp_perfok === 0) continue;
-    const cost = f.fok * def.kp_perfok;
-    if (def.csoport === 'harci' || def.csoport === 'távharc') { kp_harci_fort += cost; harcifortDetails.push({ név: f.név, fok: f.fok, kp: cost, spec: f.spec_elem || '' }); }
-    else if (def.csoport === 'misztikus') { kp_miszt_fort += cost; misztfortDetails.push({ név: f.név, fok: f.fok, kp: cost, spec: f.spec_elem || '' }); }
-  }
-  const total = kp_hm_cm + kp_harcmodor + kp_misztikus + kp_világi + kp_harci_fort + kp_miszt_fort;
-  const pct = (v: number) => total > 0 ? Math.round(v / total * 100) : 0;
-  const row = (label: string, val: number) => <div>{label}: {val} KP ({pct(val)}%)</div>;
+export function PrimerKpBox({ data, karakter, képzettségek }: Props) {
+  const kpData = useMemo(
+    () => calcPrimerKp(data, karakter, képzettségek),
+    [data, karakter, képzettségek]
+  );
+
+  const pct = (v: number) => kpData.total > 0 ? Math.round(v / kpData.total * 100) : 0;
 
   return (
     <div className="primer-kp-box">
       <strong className="primer-kp-title">Primer KP bontás</strong>
-      {row('HM + CM', kp_hm_cm)}
-      {row('Harcmodor képzettségek', kp_harcmodor)}
-      {harcmodorDetails.map(d => <div key={d.név} className="primer-kp-indent">· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
-      {row('Misztikus képzettségek', kp_misztikus)}
-      {misztikusDetails.map(d => <div key={d.név} className="primer-kp-indent">· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
-      {row('Primer világi képzettségek', kp_világi)}
-      {világiDetails.map(d => <div key={d.név} className="primer-kp-indent">· {d.név} ({d.szint}.sz): {d.kp} KP</div>)}
-      {row('Harci fortélyok', kp_harci_fort)}
-      {harcifortDetails.map((d, i) => <div key={i} className="primer-kp-indent">· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
-      {row('Misztikus fortélyok', kp_miszt_fort)}
-      {misztfortDetails.map((d, i) => <div key={i} className="primer-kp-indent">· {d.név}{d.spec ? `: ${d.spec}` : ''} ({d.fok}.fok): {d.kp} KP</div>)}
-      <div className="primer-kp-total"><strong>Össz primer: {total} KP</strong></div>
+      <KpRow label="HM + CM" value={kpData.kp_hm_cm} pct={pct(kpData.kp_hm_cm)} />
+      <KpRow label="Harcmodor képzettségek" value={kpData.kp_harcmodor} pct={pct(kpData.kp_harcmodor)} />
+      <DetailList items={kpData.harcmodorDetails} type="kep" />
+      <KpRow label="Misztikus képzettségek" value={kpData.kp_misztikus} pct={pct(kpData.kp_misztikus)} />
+      <DetailList items={kpData.misztikusDetails} type="kep" />
+      <KpRow label="Primer világi képzettségek" value={kpData.kp_világi} pct={pct(kpData.kp_világi)} />
+      <DetailList items={kpData.világiDetails} type="kep" />
+      <KpRow label="Harci fortélyok" value={kpData.kp_harci_fort} pct={pct(kpData.kp_harci_fort)} />
+      <DetailList items={kpData.harcifortDetails} type="fort" />
+      <KpRow label="Misztikus fortélyok" value={kpData.kp_miszt_fort} pct={pct(kpData.kp_miszt_fort)} />
+      <DetailList items={kpData.misztfortDetails} type="fort" />
+      <div className="primer-kp-total"><strong>Össz primer: {kpData.total} KP</strong></div>
     </div>
   );
+}
+
+function KpRow({ label, value, pct }: { label: string; value: number; pct: number }) {
+  return <div>{label}: {value} KP ({pct}%)</div>;
+}
+
+function DetailList({ items, type }: { items: KpDetail[]; type: 'kep' | 'fort' }) {
+  return (<>
+    {items.map((d, i) => (
+      <div key={i} className="primer-kp-indent">
+        · {d.név}{d.spec ? `: ${d.spec}` : ''} ({type === 'kep' ? `${d.szint}.sz` : `${d.fok}.fok`}): {d.kp} KP
+      </div>
+    ))}
+  </>);
 }
