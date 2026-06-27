@@ -6,6 +6,7 @@ import { HarcHeader } from './HarcHeader';
 import { HarcFegyverTable } from './HarcFegyverTable';
 import { HarcPopups } from './HarcPopups';
 import { EpTable } from './EpTable';
+import { HarcReszletek } from './HarcReszletek';
 import { calcFtEnyhítés } from './HarcCalc';
 import './HarcScreen.css';
 
@@ -119,6 +120,19 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
           onSebzésekChange={(sebzések: SebzésRubrika[]) => setSession(prev => ({ ...prev, sebzések }))}
         />
       </div>
+
+      <HarcReszletek
+        karakter={karakter}
+        session={session}
+        data={data}
+        fegyverResults={hc.fegyverResults}
+        kétkezesResult={hc.kétkezesResult}
+        fogásResult={hc.fogásResult}
+        taktikaMods={hc.taktikaMods}
+        fortelyMods={hc.fortelyMods}
+        téLevonás={téLevonás}
+        pajzsVÉ={hc.pajzsVÉ}
+      />
 
       <HarcPopups
         session={session}
