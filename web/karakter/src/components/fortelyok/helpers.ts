@@ -1,4 +1,4 @@
-import type { FortelySummary } from '../../engine/data-loader';
+import type { FortelySummary, FortelyFokSummary } from '../../engine/data-loader';
 import type { Fortely } from '../../engine/types';
 
 export function displayName(f: Fortely): string {
@@ -77,4 +77,30 @@ export function buildDefsByGroup(fortelySummaries: FortelySummary[]): Map<string
     map.set(vizCsoport, arr);
   }
   return map;
+}
+
+export function checkKövetelmények(
+  fokDef: FortelyFokSummary | undefined,
+  képzettségek: { név: string; szint: number }[],
+  fortélyok: { név: string; fok: number }[],
+  harcmodorNevek: string[],
+  fegyverHarcmodorNév?: string
+): string[] {
+  if (!fokDef?.követelmények?.length) return [];
+  const hiányzó: string[] = [];
+  for (const kov of fokDef.követelmények) {
+    if (kov.típus === 'képzettség') {
+      const nevek = Array.isArray(kov.név) ? kov.név : [kov.név];
+      const teljesül = nevek.some(n => (képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték);
+      if (!teljesül) {
+        const isHarcmodor = Array.isArray(kov.név) && kov.név.every(n => harcmodorNevek.some(h => h.toLowerCase() === n.toLowerCase()));
+        hiányzó.push(`${isHarcmodor ? (fegyverHarcmodorNév ? `Harcmodor - ${fegyverHarcmodorNév}` : 'Harcmodor') : (Array.isArray(kov.név) ? kov.név.join('/') : kov.név)} ≥ ${kov.érték}`);
+      }
+    } else if (kov.típus === 'fortély') {
+      const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
+      const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
+      if (!megvan) hiányzó.push(`${név} fortély ≥ ${kov.érték}. fok`);
+    }
+  }
+  return hiányzó;
 }

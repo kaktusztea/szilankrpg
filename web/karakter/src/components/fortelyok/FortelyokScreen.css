@@ -238,5 +238,6 @@
 .fort-req-met { color: var(--success); }
 .fort-req-unmet { color: #e53935; }
 
-/* --- Fortélyok inline → CSS --- */
+/* --- Fortélyok --- */
 .fort-info-error { color: var(--error); }
+.fort-label-centered { text-align: center; width: 100%; }

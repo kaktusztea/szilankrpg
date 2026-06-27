@@ -1,5 +1,6 @@
 import type { FortelyCsoportProps } from './types';
 import { FortelyRow } from './FortelyRow';
+import { NewFortelySelect } from './NewFortelySelect';
 import { calcNyelvPontKeret, calcNyelvTúllépés, isSlotIngyenes } from './helpers';
 
 export function FortelyCsoport({
@@ -72,52 +73,6 @@ export function FortelyCsoport({
           />
         )}
       </>)}
-    </div>
-  );
-}
-
-function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, onAdd }: {
-  available: { név: string; maxfok: number; kp_perfok: number; többszörös_típus: string; ingyenes_perszint: number }[];
-  csoport: string;
-  slotok: { név: string; kiérdemelt?: boolean; fok: number }[];
-  tsz: number;
-  fortélyok: { név: string; spec_elem: string; kiérdemelt?: boolean; fok: number }[];
-  fegyverNevek: string[];
-  nyelvtanulásSzint: number;
-  onAdd: (név: string) => void;
-}) {
-  return (
-    <div className="fort-row fort-row-new">
-      <select className="fort-select" value="" onChange={e => { if (e.target.value) onAdd(e.target.value); }}>
-        <option value="">+ Új fortély...</option>
-        {available.map(d => {
-          let label = `${d.név} (${d.maxfok})`;
-          if (csoport === 'szabad') {
-            const nonKierdemelt = slotok.filter(s => !s.kiérdemelt).length;
-            const maradtIngyenes = Math.max(0, tsz - nonKierdemelt);
-            if (maradtIngyenes > 0) label += ` ●${maradtIngyenes}`;
-          } else if (d.ingyenes_perszint > 0) {
-            const ingyenesDb = Math.floor((tsz + 1) / d.ingyenes_perszint);
-            const felvettDb = fortélyok.filter(f => f.név === d.név && !f.kiérdemelt).length;
-            const maradtIngyenes = Math.max(0, ingyenesDb - felvettDb);
-            if (maradtIngyenes > 0) label += ` ●${maradtIngyenes}`;
-          } else if (d.kp_perfok < 0) {
-            const vals = Array.from({ length: d.maxfok }, (_, i) => Math.abs(d.kp_perfok) * (i + 1));
-            label += ` 🎁${vals.join('-')}KP`;
-          }
-          const fegyverDisabled = d.többszörös_típus === 'fegyver' && (fegyverNevek.length === 0 || fegyverNevek.every(n => fortélyok.some(f => f.név === d.név && f.spec_elem === n)));
-          let nyelvDisabled = false;
-          if (d.név === 'Nyelvismeret') {
-            const keret = Math.max(0, (nyelvtanulásSzint - 3) * 3);
-            const used = fortélyok.filter(f => f.név === 'Nyelvismeret' && !f.kiérdemelt).reduce((s, f) => s + f.fok, 0)
-              + fortélyok.filter(f => f.név === 'Nyelvismeret' && f.kiérdemelt).reduce((s, f) => s + Math.max(0, f.fok - 1), 0);
-            const maradt = keret - used;
-            if (maradt > 0) label += ` ●${maradt}`;
-            nyelvDisabled = maradt <= 0;
-          }
-          return <option key={d.név} value={d.név} disabled={fegyverDisabled || nyelvDisabled}>{label}</option>;
-        })}
-      </select>
     </div>
   );
 }

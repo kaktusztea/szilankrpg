@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { FortelyRowProps } from './types';
-import { displayName } from './helpers';
+import { displayName, checkKövetelmények } from './helpers';
 import { FortelyInfoPanel } from './FortelyInfoPanel';
 
 export function FortelyRow({
@@ -38,10 +38,9 @@ export function FortelyRow({
 
   const fokDef = def?.fokok.find(f => f.fok === slot.fok);
   const label = displayName(slot);
-
-  // Követelmény ellenőrzés
   const hiányzóKöv = checkKövetelmények(fokDef, képzettségek, fortélyok, harcmodorNevek, fegyverHarcmodorNév);
   const követelményHiba = hiányzóKöv.length > 0;
+  const isNyelv = slot.név === 'Nyelvismeret';
 
   return (
     <div className="fort-row-wrapper">
@@ -54,7 +53,7 @@ export function FortelyRow({
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}${overLimit ? ' fort-over' : ''}`}>
-            {slot.név === 'Nyelvismeret' ? nyelvFokLabels[slot.fok] ?? slot.fok : (
+            {isNyelv ? nyelvFokLabels[slot.fok] ?? slot.fok : (
               <span className="fort-fok-dots">
                 {Array.from({ length: 3 }, (_, i) => (
                   <span key={i} className={`fort-dot${i < slot.fok ? ' filled' : ''}${i >= maxfok ? ' fort-dot-hidden' : ''}`} />
@@ -90,15 +89,15 @@ export function FortelyRow({
       {editing && createPortal(
         <div className="kep-prompt-overlay">
           <div className="kep-prompt">
-            <label style={slot.név === 'Nyelvismeret' ? { textAlign: 'center', width: '100%' } : undefined}>
-              {slot.név === 'Nyelvismeret' ? label : `${label} — fok:`}
+            <label className={isNyelv ? 'fort-label-centered' : undefined}>
+              {isNyelv ? label : `${label} — fok:`}
             </label>
             <div className="fort-fok-radios">
               {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
                 <button key={f}
-                  className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}${slot.név === 'Nyelvismeret' ? ' fort-fok-btn-wide' : ''}`}
+                  className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}${isNyelv ? ' fort-fok-btn-wide' : ''}`}
                   onClick={() => { onFokChange(f); setEditing(false); }}>
-                  {slot.név === 'Nyelvismeret' ? nyelvFokLabels[f] ?? f : f}
+                  {isNyelv ? nyelvFokLabels[f] ?? f : f}
                 </button>
               ))}
             </div>
@@ -108,30 +107,4 @@ export function FortelyRow({
       )}
     </div>
   );
-}
-
-function checkKövetelmények(
-  fokDef: { követelmények: { név: string | string[]; érték: number; típus: string }[] } | undefined,
-  képzettségek: { név: string; szint: number }[],
-  fortélyok: { név: string; fok: number }[],
-  harcmodorNevek: string[],
-  fegyverHarcmodorNév?: string
-): string[] {
-  if (!fokDef?.követelmények?.length) return [];
-  const hiányzó: string[] = [];
-  for (const kov of fokDef.követelmények) {
-    if (kov.típus === 'képzettség') {
-      const nevek = Array.isArray(kov.név) ? kov.név : [kov.név];
-      const teljesül = nevek.some(n => (képzettségek.find(kp => kp.név.toLowerCase() === n.toLowerCase())?.szint ?? 0) >= kov.érték);
-      if (!teljesül) {
-        const isHarcmodor = Array.isArray(kov.név) && kov.név.every(n => harcmodorNevek.some(h => h.toLowerCase() === n.toLowerCase()));
-        hiányzó.push(`${isHarcmodor ? (fegyverHarcmodorNév ? `Harcmodor - ${fegyverHarcmodorNév}` : 'Harcmodor') : (Array.isArray(kov.név) ? kov.név.join('/') : kov.név)} ≥ ${kov.érték}`);
-      }
-    } else if (kov.típus === 'fortély') {
-      const név = Array.isArray(kov.név) ? kov.név[0] : kov.név;
-      const megvan = fortélyok.some(f => f.név.toLowerCase() === név.toLowerCase() && f.fok >= kov.érték);
-      if (!megvan) hiányzó.push(`${név} fortély ≥ ${kov.érték}. fok`);
-    }
-  }
-  return hiányzó;
 }
