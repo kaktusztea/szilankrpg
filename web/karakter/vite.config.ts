@@ -6,7 +6,7 @@ import { execSync } from 'child_process';
 import type { Plugin } from 'vite';
 
 function serveDataPlugin(): Plugin {
-  const dataDir = path.resolve(__dirname, '../data');
+  const dataDir = path.resolve(__dirname, '../../data');
   const generateScript = path.join(dataDir, 'generate_tables.py');
   const metadataScript = path.resolve(__dirname, 'generate_metadata.py');
   const metaPath = path.resolve(__dirname, 'public/metadata.json');

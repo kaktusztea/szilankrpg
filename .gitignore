@@ -10,6 +10,6 @@ Excalidraw
 .makemd
 .space
 node_modules
-web/dist
-web/public/metadata.json
-web/.build_counter
+web/karakter/dist
+web/karakter/public/metadata.json
+web/karakter/.build_counter

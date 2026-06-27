@@ -4,7 +4,7 @@ on:
   push:
     branches: [master]
     paths:
-      - 'web/**'
+      - 'web/karakter/**'
       - 'data/**'
   workflow_dispatch:
 
@@ -39,24 +39,24 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-          cache-dependency-path: web/package-lock.json
+          cache-dependency-path: web/karakter/package-lock.json
 
       - name: Install dependencies
         run: npm ci
-        working-directory: web
+        working-directory: web/karakter
 
       - name: Build
         run: npm run build
-        working-directory: web
+        working-directory: web/karakter
 
       - name: Copy data to dist
-        run: mkdir -p web/dist/data/tables web/dist/data/karakter && cp data/tables/*.json web/dist/data/tables/ && cp data/rules.json web/dist/data/ && cp data/karakter/*.json web/dist/data/karakter/
+        run: mkdir -p web/karakter/dist/data/tables web/karakter/dist/data/karakter && cp data/tables/*.json web/karakter/dist/data/tables/ && cp data/rules.json web/karakter/dist/data/ && cp data/karakter/*.json web/karakter/dist/data/karakter/
 
       - uses: actions/configure-pages@v6
 
       - uses: actions/upload-pages-artifact@v5
         with:
-          path: web/dist
+          path: web/karakter/dist
 
       - name: Deploy to GitHub Pages
         id: deployment

@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "generate": "python3 ../data/generate_tables.py",
-    "prebuild": "python3 ../data/generate_tables.py",
+    "generate": "python3 ../../data/generate_tables.py",
+    "prebuild": "python3 ../../data/generate_tables.py",
     "build": "tsc -b && vite build",
-    "postbuild": "mkdir -p dist/data/tables dist/data/karakter && cp ../data/tables/*.json dist/data/tables/ && cp ../data/rules.json dist/data/ && cp ../data/karakter/*.json dist/data/karakter/",
+    "postbuild": "mkdir -p dist/data/tables dist/data/karakter && cp ../../data/tables/*.json dist/data/tables/ && cp ../../data/rules.json dist/data/ && cp ../../data/karakter/*.json dist/data/karakter/",
     "preview": "vite preview"
   },
   "dependencies": {
