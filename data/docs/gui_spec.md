@@ -21,6 +21,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 ```css
 --bg: #1a1a2e
 --surface: #16213e
+--surface-alt: #1a1a3a
 --primary: #0f3460
 --accent: #e94560
 --text: #eee
@@ -29,7 +30,30 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 --success: #4caf50
 --warning: #ff9800
 --error: #f44336
+--border: #444
+--border-light: #333
+--border-row: #3a3a5a
+--border-input: #555
+--card-bg: #2a2a3e
+--color-section-blue: #42a5f5
+--color-section-purple: #ce93d8
+--color-section-orange: #e0a050
+--color-section-cat: #7eb8da
+--color-taktika: #90caf9
+--color-helyzet: #42a5f5
+--color-fortely: #ce93d8
+--color-statusz: #cd7c6f
+--color-positive: #66bb6a
 ```
+
+### CSS fájl struktúra (`src/styles/`)
+| Fájl | Tartalom |
+|------|----------|
+| `variables.css` | CSS változók, reset, globális elemek (body, #root, .md-link) |
+| `common.css` | Közös komponens stílusok (gombok, sorok, chipek, field-btn) |
+| `layout.css` | App layout (header, tab bar, main wrapper, screen slide) |
+| `overlays.css` | Overlay/popup stílusok (.kep-prompt-overlay, picker-ek) |
+| `screens.css` | Screen-specifikus közös stílusok |
 
 ### Egyedi színek (nem CSS változók)
 | Szín | Kód | Használat |
@@ -202,6 +226,8 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | `AktivHatasPool.tsx` | Hatás pool box (fortély bónuszok + alapesetek accordion) |
 | `HatasPoolCalc.ts` | Hatás pool kalkuláció logika |
 | `AktivHelpers.ts` | Segédfüggvények (kombó szűrés, megkötés ellenőrzés) |
+| `PickerOverlay.tsx` | Generikus picker overlay wrapper (taktika, helyzet, manőver) |
+| `FegyverSelectField.tsx` | Fegyver select field-btn komponens (közös Ügyesebb/Gyengébb kéz) |
 | `NaploTab.tsx` | Napló overlay tartalom |
 
 ### Harc fül komponens struktúra (components/harc/)
@@ -675,8 +701,15 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 - **Leíró hátterek**: kategóriánként (Származás, Jellem, Küllem, Fóbia) — szövegfelhő, tap toggle
 - **Karma hátterek**: egyetlen csoport — szövegfelhő, tap toggle
 
+### Többszörös hátterek
+- Leíró és karma hátterek egyaránt lehetnek `többszörös: true` (hatter.yaml séma)
+- Többszörös elem: tap → free-text popup (kiegészítő szöveg megadása)
+- Eredmény: `"Elem (szöveg)"` formátumban tárolódik a karakter hátterek tömbjében
+- Többszörösen felvett elemek: külön chip-ek, egyenként törölhetők (✕ gomb)
+- Nem többszörös elemek: normál toggle viselkedés (aktív/inaktív)
+
 ### Viselkedés
-- Tap: aktivál/deaktivál (toggle)
+- Tap: aktivál/deaktivál (toggle) — többszörösnél popup
 - Aktív elemek: színes kijelölés (leíró = zöld, karma = narancs), sor elejére rendezés, ABC sorrend
 - Game módban: nem szerkeszthető (tap nem reagál)
 - Kategória label: világoskék (#7eb8da), bold
@@ -685,6 +718,14 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 ### Stílus
 - `.hatter-tag`: lekerekített pill (border-radius: 12px), sötét háttér, szürke
 - `.hatter-tag.active`: zöld háttér+keret (leíró) / narancs háttér+keret (karma)
+
+### Komponens struktúra (components/hatterek/)
+| Komponens | Felelősség |
+|-----------|------------|
+| `HatterekScreen.tsx` | Fő layout, szekciók összerakása |
+| `TagCloud.tsx` | Leíró háttér szövegfelhő (tap toggle + többszörös) |
+| `KarmaCloud.tsx` | Karma háttér szövegfelhő (tap toggle + többszörös) |
+| `FreeTextPopup.tsx` | Free-text kiegészítő popup (többszörös háttér felvételkor) |
 
 ---
 
@@ -935,6 +976,12 @@ Minden adat `fetchJson`-nel:
 - **`useUrlImport`** hook: URL hash import (app mount-kor automatikus)
 - **`useSwipe`** hook: swipe gesztus kezelés (activeTab, tabCount, setActiveTab)
 - **`useOverlays`** hook: overlay állapotkezelés (OverlayState objektum, setOverlay, Escape/Ctrl+S, toast auto-dismiss)
+- **`useAutoSave`** hook: localStorage auto-mentés logika
+- **`useGameDataLoader`** hook: GameData betöltés + karakter inicializálás
+- **`useGameModeTabSync`** hook: Game/Szerkesztő mód váltás tab korrekció
+- **`useTaktikaInvalidation`** hook: Taktika fok invalidáció fortély törléskor
+- **`useVersionHint`** hook: Verzió double-tap hint kezelés
+- **`useHoldRepeat`** hook: Hold-to-repeat gomb viselkedés (gyorsulás)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
 - Top-level: `schema_version`, `uid`, `id_leíró`, `név`, `becenév`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
 - `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`, `aktív_távfegyver_index`

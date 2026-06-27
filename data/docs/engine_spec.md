@@ -619,7 +619,7 @@ SWITCH feltétel.típus:
 
 #### Implementáció
 
-- Modul: `web/src/engine/alapeset.ts`
+- Modul: `web/karakter/src/engine/alapeset.ts`
   - `evaluateAlapesetek(fortelyDefs, karakter, session, aktívFeltételek?)` → `AktívAlapeset[]`
   - `evaluateFeltétel(feltétel, session, karakter)` → boolean (prefix:érték kiértékelés)
   - Ha `aktívFeltételek` Set megadva → azzal ellenőrzi a feltételeket (hash lookup, konzisztens a HarcScreen aktívFeltételek Set-jével)
@@ -706,6 +706,8 @@ Adatok (tavfegyverek.json):
 Felvétel: kézi (karakter.távfegyverek[]-be, mint bármely távfegyver).
 Mesterfegyver: felvehető (spec_elem: "Mágiatáv X").
 Támadások/kör: nem kalkulálható (varázslás/kör szabály dönti el).
+
+Generálás: `process_fegyverek.py` — Mágiatáv I-IV automatikusan hozzáfűződik a tavfegyverek.json-hoz.
 ```
 
 ### 17.2 CÉ módosítók (taktikák)
@@ -2574,11 +2576,15 @@ Game módban: csak azok a szekciók látszanak amikben van felvett elem (szint >
 Fortély yaml séma (data/schemas/fortely.yaml) — releváns generált mezők a fortelyok.json-ban:
   név, csoport, maxfok, session_toggle, emlékeztető, kiérdemelhető,
   kp_perfok, ingyenes_perszint, többszörös_típus, többszörös_lista,
-  leírás, kiterjeszti_normál, kiterjeszti_erős, fokok[]
+  leírás, kiterjeszti_normál, kiterjeszti_erős, fokok[], md_fájl
 
   kiérdemelhető: boolean — ha true, a felvételi wizard-ban választható a "⭐ Kiérdemelt" opció
     true: szabad (mind), kiemelt (mind), misztikus: Mentálfonál
     false: harci, távharc, általános, érzékek, misztikus (többi)
+
+  md_fájl: string — relatív path az md/ könyvtáron belül (pl. "fortelyok.harci/mesterfegyver.md")
+    Generálás: `generate_tables.py` — `fortelyok.{alcsoport}/{fájlnév}.md` formátumban
+    Webapp: `MdLink` komponens használja (🔗 ikon → GitHub szabályrendszer link)
 
   todo mező: TÖRÖLVE a schemából (2 fortélynál maradt nem-üres: alakzatharc, antissjaras)
 ```
