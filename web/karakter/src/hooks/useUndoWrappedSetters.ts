@@ -1,5 +1,5 @@
 import { useCallback } from 'react';
-import type { Karakter, Fortely } from '../engine/types';
+import type { Karakter, Tulajdonsagok, Fortely, Kepzettseg } from '../engine/types';
 import { describeKepChange } from '../engine/utils';
 
 interface Deps {
@@ -8,45 +8,72 @@ interface Deps {
   pushUndo: (leírás: string) => void;
 }
 
+/** Generic undo-aware setter factory: wraps pushUndo + setKarakter for any karakter field. */
+function makeUndoSetter<T>(
+  field: keyof Karakter,
+  getCurrent: () => T,
+  describer: (prev: T, next: T) => string,
+  pushUndo: (s: string) => void,
+  setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
+) {
+  return (val: T | ((prev: T) => T)) => {
+    const prev = getCurrent();
+    const next = typeof val === 'function' ? (val as (p: T) => T)(prev) : val;
+    const desc = describer(prev, next);
+    if (desc) pushUndo(desc);
+    setKarakter(k => k ? { ...k, [field]: next } : k);
+  };
+}
+
+function describeTulajdonság(prev: Tulajdonsagok, next: Tulajdonsagok): string {
+  const prevR = prev as unknown as Record<string, number>;
+  const nextR = next as unknown as Record<string, number>;
+  const key = Object.keys(nextR).find(k => nextR[k] !== prevR[k]);
+  return key ? `${key}: ${prevR[key]} → ${nextR[key]}` : 'Tulajdonság módosítás';
+}
+
+function describeFortély(prev: Fortely[], next: Fortely[]): string {
+  const fmt = (f: Fortely) => f.név + (f.spec_elem ? ` (${f.spec_elem})` : '');
+  if (next.length > prev.length) {
+    const added = next.find(n => !prev.some(f => f.név === n.név && f.spec_elem === n.spec_elem));
+    return added && added.fok > 0 ? `Fortély: ${fmt(added)} 0→${added.fok}` : '';
+  }
+  if (next.length < prev.length) {
+    const removed = prev.find(f => !next.some(n => n.név === f.név && n.spec_elem === f.spec_elem));
+    return removed ? `Fortély: ${fmt(removed)} ${removed.fok}→0❌` : '';
+  }
+  const changed = next.find((n, i) => n.fok !== prev[i]?.fok);
+  if (changed) {
+    const old = prev.find(f => f.név === changed.név && f.spec_elem === changed.spec_elem);
+    if (old && old.fok !== changed.fok) return `Fortély: ${fmt(changed)} ${old.fok}→${changed.fok}`;
+  }
+  return '';
+}
+
 export function useUndoWrappedSetters({ karakter, setKarakter, pushUndo }: Deps) {
-  const tulajdonságok = karakter.tulajdonságok;
-  const képzettségek = karakter.képzettségek;
-  const fortélyok = karakter.fortélyok;
+  const setTulajdonságokUndo = useCallback(
+    makeUndoSetter<Tulajdonsagok>(
+      'tulajdonságok',
+      () => karakter.tulajdonságok,
+      describeTulajdonság,
+      pushUndo, setKarakter,
+    ), [karakter.tulajdonságok, pushUndo, setKarakter]);
 
-  const setTulajdonságokUndo = useCallback((v: any) => {
-    const newVal = typeof v === 'function' ? v(tulajdonságok) : v;
-    const tul = tulajdonságok as unknown as Record<string, number>;
-    const changed = Object.keys(newVal).find(k => newVal[k] !== tul[k]);
-    pushUndo(changed ? `${changed}: ${tul[changed!]} → ${newVal[changed!]}` : 'Tulajdonság módosítás');
-    setKarakter(prev => prev ? { ...prev, tulajdonságok: newVal } : prev);
-  }, [tulajdonságok, pushUndo, setKarakter]);
+  const setKépzettségekUndo = useCallback(
+    makeUndoSetter<Kepzettseg[]>(
+      'képzettségek',
+      () => karakter.képzettségek,
+      describeKepChange,
+      pushUndo, setKarakter,
+    ), [karakter.képzettségek, pushUndo, setKarakter]);
 
-  const setKépzettségekUndo = useCallback((v: any) => {
-    const newVal: { név: string; szint: number }[] = typeof v === 'function' ? v(képzettségek) : v;
-    const desc = describeKepChange(képzettségek, newVal);
-    if (desc) pushUndo(desc);
-    setKarakter(prev => prev ? { ...prev, képzettségek: newVal } : prev);
-  }, [képzettségek, pushUndo, setKarakter]);
-
-  const setFortélyokUndo = useCallback((v: any) => {
-    const newVal: Fortely[] = typeof v === 'function' ? v(fortélyok) : v;
-    let desc = '';
-    if (newVal.length > fortélyok.length) {
-      const added = newVal.find(n => !fortélyok.some(f => f.név === n.név && f.spec_elem === n.spec_elem));
-      if (added && added.fok > 0) desc = `Fortély: ${added.név}${added.spec_elem ? ` (${added.spec_elem})` : ""} 0→${added.fok}`;
-    } else if (newVal.length < fortélyok.length) {
-      const removed = fortélyok.find(f => !newVal.some(n => n.név === f.név && n.spec_elem === f.spec_elem));
-      if (removed) desc = `Fortély: ${removed.név}${removed.spec_elem ? ` (${removed.spec_elem})` : ""} ${removed.fok}→0❌`;
-    } else {
-      const changed = newVal.find((n, i) => n.fok !== fortélyok[i]?.fok);
-      if (changed) {
-        const old = fortélyok.find(f => f.név === changed.név && f.spec_elem === changed.spec_elem);
-        if (old && old.fok !== changed.fok) desc = `Fortély: ${changed.név}${changed.spec_elem ? ` (${changed.spec_elem})` : ""} ${old.fok}→${changed.fok}`;
-      }
-    }
-    if (desc) pushUndo(desc);
-    setKarakter(prev => prev ? { ...prev, fortélyok: newVal } : prev);
-  }, [fortélyok, pushUndo, setKarakter]);
+  const setFortélyokUndo = useCallback(
+    makeUndoSetter<Fortely[]>(
+      'fortélyok',
+      () => karakter.fortélyok,
+      describeFortély,
+      pushUndo, setKarakter,
+    ), [karakter.fortélyok, pushUndo, setKarakter]);
 
   return { setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo };
 }

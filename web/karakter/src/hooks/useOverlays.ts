@@ -16,7 +16,10 @@ export function useOverlays() {
     setOverlays(prev => ({ ...prev, [key]: value }));
   }, []);
 
-  const anyOverlayOpen = overlays.showNewConfirm || overlays.showSlotList || overlays.showUndo || overlays.showMenu || !!overlays.loadError || !!overlays.overlayScreen || overlays.showFullscreenHint || overlays.showSzilánkPicker || !!overlays.sharePopup || !!overlays.slotDeleteTarget || overlays.showSavePopup || !!overlays.saveFile;
+  const anyOverlayOpen = overlays.showNewConfirm || overlays.showSlotList || overlays.showUndo
+    || overlays.showMenu || !!overlays.loadError || !!overlays.overlayScreen
+    || overlays.showFullscreenHint || overlays.showSzilánkPicker || !!overlays.sharePopup
+    || !!overlays.slotDeleteTarget || overlays.showSavePopup || !!overlays.saveFile;
 
   // ESC closes overlays
   useEffect(() => {
@@ -37,14 +40,14 @@ export function useOverlays() {
     }
     document.addEventListener('keydown', onKeyDown);
     return () => document.removeEventListener('keydown', onKeyDown);
-  });
+  }, [setOverlay]);
 
   // Toast auto-dismiss
   useEffect(() => {
     if (!overlays.toast) return;
     const t = setTimeout(() => setOverlay('toast', null), 2500);
     return () => clearTimeout(t);
-  }, [overlays.toast]);
+  }, [overlays.toast, setOverlay]);
 
   return { overlays, setOverlay, setOverlays, anyOverlayOpen, INITIAL_OVERLAYS };
 }
