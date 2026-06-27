@@ -31,7 +31,19 @@ export function AktivFegyverSection({ data, karakter, session, setSession, pushU
               if (puszta) {
                 return { ...s, aktív_fegyver_index: idx, fegyverfogás: 'egyfegyveres', kétkezes_harc: false, aktív_fegyver_bal_index: -1 };
               }
-              return { ...s, aktív_fegyver_index: idx, kétkezes_harc: idx !== -1 && s.aktív_fegyver_bal_index !== -1 ? s.kétkezes_harc : false };
+              let balIdx = s.aktív_fegyver_bal_index;
+              if (balIdx !== -1) {
+                if (balIdx === idx) { balIdx = -1; }
+                else {
+                  const jobbDef = lookupFegyver(data.fegyverek, karakter.fegyverek[idx]?.alap ?? '');
+                  const balDef = lookupFegyver(data.fegyverek, karakter.fegyverek[balIdx]?.alap ?? '');
+                  const jobbPenge = parseFloat(jobbDef?.Pengehossz ?? '0') || 0;
+                  const balPenge = parseFloat(balDef?.Pengehossz ?? '0') || 0;
+                  if (balPenge > jobbPenge || balPenge + jobbPenge > data.konstansok.kétkezes_harc_max_pengeméret) { balIdx = -1; }
+                }
+              }
+              const kétkezes = idx !== -1 && balIdx !== -1 ? s.kétkezes_harc : false;
+              return { ...s, aktív_fegyver_index: idx, aktív_fegyver_bal_index: balIdx, kétkezes_harc: kétkezes };
             });
           }}
         />
@@ -115,7 +127,10 @@ function GyengébbKézSelect({ data, karakter, session, setSession, fegyverOpci�
           const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
           if (!jobbFp) return true;
           const jobbDef = lookupFegyver(data.fegyverek, jobbFp.alap);
-          return (parseFloat(fDef?.Pengehossz ?? '0') || 0) + (parseFloat(jobbDef?.Pengehossz ?? '0') || 0) <= data.konstansok.kétkezes_harc_max_pengeméret;
+          const balPenge = parseFloat(fDef?.Pengehossz ?? '0') || 0;
+          const jobbPenge = parseFloat(jobbDef?.Pengehossz ?? '0') || 0;
+          if (balPenge > jobbPenge) return false;
+          return balPenge + jobbPenge <= data.konstansok.kétkezes_harc_max_pengeméret;
         }).map(f => <option key={f.idx} value={f.idx}>{f.név}</option>)}
       </select>
     </div>
