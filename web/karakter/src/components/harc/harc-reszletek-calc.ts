@@ -3,6 +3,11 @@ import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult } from './types';
 import { lookupFegyver } from '../../engine/helpers';
 
+export interface KétkezesBontás {
+  nagyobb: { név: string; TÉ: number; VÉ: number; mfTÉ: number; mfVÉ: number; mfSP: number };
+  kisebb: { név: string; TÉ: number; VÉ: number; mfTÉ: number; mfVÉ: number; mfSP: number };
+}
+
 export interface ReszletekData {
   fegyverNév: string;
   kategória: string;
@@ -24,6 +29,7 @@ export interface ReszletekData {
   téFogásBüntetés: number;
   véFogásBónusz: number;
   sumPengehossz: number | null;
+  kétkezes: KétkezesBontás | null;
 }
 
 const MF_ZERO = { TÉ: 0, VÉ: 0, SP: 0 };
@@ -42,29 +48,35 @@ function getMfBónusz(konstansok: any, fok: number): { TÉ: number; VÉ: number;
   return konstansok.mesterfegyver_bónuszok.find((b: any) => b.fok === fok) ?? MF_ZERO;
 }
 
+interface KétkezesMfResult {
+  TÉ: number; VÉ: number; SP: number;
+  nagyobb: { TÉ: number; VÉ: number; SP: number };
+  kisebb: { TÉ: number; VÉ: number; SP: number };
+}
+
 /** Kétkezes MF bónusz a khFok mf szabálya alapján ("nincs"/"nagyobb"/"mindkettő"). */
 function calcKétkezesMf(
   k: Karakter, session: Session, data: GameData,
   jobbMfFok: number,
-): { TÉ: number; VÉ: number; SP: number } {
+): KétkezesMfResult {
   const { konstansok } = data;
   const khFok = k.fortélyok.find(f => f.név === 'Kétkezes harc')?.fok ?? 0;
   const khFokEntry = konstansok.kétkezes_harc_bónuszok?.find((b: any) => b.fok === khFok);
   const mfMode: string = khFokEntry?.mf ?? 'nincs';
 
-  if (mfMode === 'nincs') return MF_ZERO;
+  if (mfMode === 'nincs') return { ...MF_ZERO, nagyobb: MF_ZERO, kisebb: MF_ZERO };
 
   const mfN = getMfBónusz(konstansok, jobbMfFok);
-  if (mfMode !== 'mindkettő') return mfN;
+  if (mfMode !== 'mindkettő') return { ...mfN, nagyobb: mfN, kisebb: MF_ZERO };
 
   // "mindkettő": jobb + bal kéz MF összege
   const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
-  if (!balFp) return mfN;
+  if (!balFp) return { ...mfN, nagyobb: mfN, kisebb: MF_ZERO };
   const balDef = lookupFegyver(data.fegyverek, balFp.alap);
   const balNév = balDef?.Alapnév || balDef?.Fegyver || '';
   const balMfFok = findMfFok(k, balNév, balFp.alap);
   const mfK = getMfBónusz(konstansok, balMfFok);
-  return { TÉ: mfN.TÉ + mfK.TÉ, VÉ: mfN.VÉ + mfK.VÉ, SP: mfN.SP + mfK.SP };
+  return { TÉ: mfN.TÉ + mfK.TÉ, VÉ: mfN.VÉ + mfK.VÉ, SP: mfN.SP + mfK.SP, nagyobb: mfN, kisebb: mfK };
 }
 
 export function calcReszletekData(
@@ -111,9 +123,41 @@ export function calcReszletekData(
   // Mesterfegyver bónusz
   const fNév = fDef?.Alapnév || fDef?.Fegyver || '';
   const mfFok = findMfFok(k, fNév, fDefLookupNév);
-  const mf = kétkezesResult
+  const mfResult = kétkezesResult
     ? calcKétkezesMf(k, session, data, mfFok)
-    : getMfBónusz(konstansok, mfFok);
+    : null;
+  const mf = mfResult ?? getMfBónusz(konstansok, mfFok);
+
+  // Kétkezes bontás adatok
+  let kétkezesBontás: KétkezesBontás | null = null;
+  if (kétkezesResult) {
+    const jobbFp = k.fegyverek[session.aktív_fegyver_index];
+    const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
+    const jobbDef = jobbFp ? lookupFegyver(data.fegyverek, jobbFp.alap) : null;
+    const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
+    const jobbPenge = jobbDef ? (parseFloat(jobbDef.Pengehossz) || 0) : 0;
+    const balPenge = balDef ? (parseFloat(balDef.Pengehossz) || 0) : 0;
+    const nagyobbDef = jobbPenge >= balPenge ? jobbDef : balDef;
+    const kisebbDef = jobbPenge >= balPenge ? balDef : jobbDef;
+    kétkezesBontás = {
+      nagyobb: {
+        név: nagyobbDef?.Alapnév || nagyobbDef?.Fegyver || '',
+        TÉ: parseInt(nagyobbDef?.TÉ ?? '0') || 0,
+        VÉ: parseInt(nagyobbDef?.VÉ ?? '0') || 0,
+        mfTÉ: mfResult?.nagyobb.TÉ ?? 0,
+        mfVÉ: mfResult?.nagyobb.VÉ ?? 0,
+        mfSP: mfResult?.nagyobb.SP ?? 0,
+      },
+      kisebb: {
+        név: kisebbDef?.Alapnév || kisebbDef?.Fegyver || '',
+        TÉ: parseInt(kisebbDef?.TÉ ?? '0') || 0,
+        VÉ: parseInt(kisebbDef?.VÉ ?? '0') || 0,
+        mfTÉ: mfResult?.kisebb.TÉ ?? 0,
+        mfVÉ: mfResult?.kisebb.VÉ ?? 0,
+        mfSP: mfResult?.kisebb.SP ?? 0,
+      },
+    };
+  }
 
   // Erőbónusz
   const erőBónuszLimit = fDef && fDef['Erőbónusz limit'] !== '' ? parseInt(fDef['Erőbónusz limit']) : 99;
@@ -148,5 +192,6 @@ export function calcReszletekData(
     téFogásBüntetés,
     véFogásBónusz,
     sumPengehossz: kétkezesResult ? kétkezesResult.sumPengehossz : null,
+    kétkezes: kétkezesBontás,
   };
 }
