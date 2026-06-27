@@ -1,13 +1,15 @@
 import type { TavharcProps } from './types';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText, calcCÉ, getCÉInputs, calcTámadásLabel, getAlkalmatlanInfo } from './helpers';
 
-export function TavharcFegyverLista({ data, karakter, session, setSession, setKarakter, idea, fortélyCÉ, onMfTarget, onDeleteTarget, onIdeaPopup }: TavharcProps & {
+interface Props extends TavharcProps {
   idea: number;
   fortélyCÉ: number;
   onMfTarget: (idx: number) => void;
   onDeleteTarget: (idx: number) => void;
   onIdeaPopup: () => void;
-}) {
+}
+
+export function TavharcFegyverLista({ data, karakter, session, setSession, setKarakter, idea, fortélyCÉ, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
   const k = karakter;
   const konstansok = data.konstansok;
   const céAlap = konstansok.harcérték_alap.CÉ;
@@ -24,8 +26,7 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
     setKarakter(prev => {
       if (!prev) return prev;
       const távfegyverek = [...prev.távfegyverek, { alap }];
-      const newSession = { ...prev.session, aktív_távfegyver_index: távfegyverek.length - 1 };
-      return { ...prev, távfegyverek, session: newSession };
+      return { ...prev, távfegyverek, session: { ...prev.session, aktív_távfegyver_index: távfegyverek.length - 1 } };
     });
   }
 
@@ -39,10 +40,11 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
         const fCÉ = parseInt(def?.CÉ ?? '0') || 0;
         const mf = getMfFok(k, tf.alap);
         const mfC = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mf)?.CÉ ?? 0;
-        const { önuralom: cÖn, CM: cCM, idea: cIdea, isMágikus: isMágikusCard } = getCÉInputs(k, def, idea);
-        const cardCÉ = calcCÉ({ céAlap, önuralom: cÖn, CM: cCM, harcmodorCÉ: hmCÉ, fegyverCÉ: fCÉ, mfCÉ: mfC, idea: cIdea, fortélyCÉ });
+        const inp = getCÉInputs(k, def, idea);
+        const cardCÉ = calcCÉ({ céAlap, önuralom: inp.önuralom, CM: inp.CM, harcmodorCÉ: hmCÉ, fegyverCÉ: fCÉ, mfCÉ: mfC, idea: inp.idea, fortélyCÉ });
         const sebesség = parseInt(def?.Sebesség ?? '-1') || -1;
-        const tám = isMágikusCard ? '—' : calcTámadásLabel({ harcmodorSzint: hmSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok });
+        const tám = inp.isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint: hmSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok });
+        const hasError = mfKövetelményHiba(k, data, tf.alap);
 
         return (
           <div key={i} className={`th-card${i === tfIdx ? ' th-card-active' : ''}`} onClick={() => setSession(s => ({ ...s, aktív_távfegyver_index: i }))}>
@@ -51,13 +53,16 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
               <button className="fort-delete" onClick={e => { e.stopPropagation(); onDeleteTarget(i); }}>✕</button>
             </div>
             <div className="th-card-fields">
-              <button className="he-field-btn he-field-fortely"
-                style={mfKövetelményHiba(k, data, tf.alap) ? { color: '#e53935' } : undefined}
+              <button className={`he-field-btn he-field-fortely${hasError ? ' th-mf-error' : ''}`}
                 onClick={e => { e.stopPropagation(); onMfTarget(i); }}>
                 MF fok: <strong>{mf}</strong>
-                {mfKövetelményHiba(k, data, tf.alap) && <span className="he-mf-error">{mfKövetelményText(k, data, tf.alap)}</span>}
+                {hasError && <span className="he-mf-error">{mfKövetelményText(k, data, tf.alap)}</span>}
               </button>
-              {!isMágikusCard && <button className="he-field-btn" onClick={e => { e.stopPropagation(); onIdeaPopup(); }}>Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong></button>}
+              {!inp.isMágikus && (
+                <button className="he-field-btn" onClick={e => { e.stopPropagation(); onIdeaPopup(); }}>
+                  Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong>
+                </button>
+              )}
               <span className="th-badge">CÉ: {cardCÉ}  ({tám})</span>
             </div>
           </div>

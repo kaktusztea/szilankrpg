@@ -22,4 +22,28 @@ export interface AlkalmatlanInfo {
   alkalmiTárgyDef: TavfegyverAlap | undefined;
 }
 
-export type { GameData, Karakter, Session, TavfegyverAlap };
+/** CÉ részletes összetevők (Részletek box-hoz és kalkulációhoz) */
+export interface CÉBontás {
+  céAlap: number;
+  önuralom: number;
+  CM: number;
+  harcmodorCÉ: number;
+  harcmodorNév: string;
+  harcmodorSzint: number;
+  fegyverCÉ: number;
+  mfCÉ: number;
+  idea: number;
+  fortélyCÉ: number;
+  cé: number;
+  osztó: number;
+  isMágikus: boolean;
+  mágikusTulajdonságCÉ: number;
+}
+
+/** Popup állapotok (TavharcScreen state csomagolás) */
+export interface TavharcPopupState {
+  mfTarget: number | null;
+  deleteTarget: number | null;
+  ideaPopup: boolean;
+  távolságPopup: boolean;
+}

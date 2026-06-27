@@ -1,26 +1,19 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import type { CÉBontás } from './types';
 
-export function TavharcReszletek({ fegyverCÉ, osztó, mfCÉ, idea, fortélyCÉ, harcmodorCÉ, harcmodorNév, harcmodorSzint, önuralom, CM, céAlap, cé, gameMode, karakter, setKarakter, konstansok, isMágikus, mágikusTulajdonságCÉ }: {
-  fegyverCÉ: number;
-  osztó: number;
-  mfCÉ: number;
-  idea: number;
-  fortélyCÉ: number;
-  harcmodorCÉ: number;
-  harcmodorNév: string;
-  harcmodorSzint: number;
-  önuralom: number;
-  CM: number;
-  céAlap: number;
-  cé: number;
+interface Props {
+  bontás: CÉBontás;
   gameMode: boolean;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   konstansok: GameData['konstansok'];
-  isMágikus?: boolean;
-  mágikusTulajdonságCÉ?: number;
-}) {
+}
+
+export function TavharcReszletek({ bontás, gameMode, karakter, setKarakter, konstansok }: Props) {
+  const { fegyverCÉ, osztó, mfCÉ, idea, fortélyCÉ, harcmodorCÉ, harcmodorNév, harcmodorSzint, önuralom, cé, céAlap, isMágikus, mágikusTulajdonságCÉ } = bontás;
+  const CM = karakter.CM;
+
   return (
     <div className="th-reszletek">
       <div className="th-reszletek-box">
@@ -44,7 +37,7 @@ export function TavharcReszletek({ fegyverCÉ, osztó, mfCÉ, idea, fortélyCÉ,
           <div className="th-cm-controls">
             <button className="fort-fok-btn th-cm-btn-size" onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.max(0, prev.CM - 1) } : prev)}>−</button>
             <strong className="th-cm-value">{CM}</strong>
-            <button className="fort-fok-btn th-cm-btn" onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.min(prev.CM + 1, prev.tsz * konstansok.arányok.max_cm_perszint) } : prev)}>+</button>
+            <button className="fort-fok-btn th-cm-btn-size" onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.min(prev.CM + 1, prev.tsz * konstansok.arányok.max_cm_perszint) } : prev)}>+</button>
           </div>
           <span className="th-cm-max">max: {karakter.tsz * konstansok.arányok.max_cm_perszint}</span>
         </div>

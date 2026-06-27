@@ -1,25 +1,22 @@
-import { createPortal } from 'react-dom';
 import type { Karakter } from '../../engine/types';
-import { getMfFok } from './helpers';
+import type { TavharcPopupState } from './types';
+import { PopupOverlay } from '../PopupOverlay';
 import { TávolságPicker } from './TavolsagPicker';
+import { getMfFok } from './helpers';
 
-export function TavharcPopups({ karakter, setKarakter, mfTarget, setMfTarget, deleteTarget, setDeleteTarget, ideaPopup, setIdeaPopup, távolságPopup, setTávolságPopup, idea, setIdea, távolság, setTávolság, osztó }: {
+interface Props {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  mfTarget: number | null;
-  setMfTarget: (v: number | null) => void;
-  deleteTarget: number | null;
-  setDeleteTarget: (v: number | null) => void;
-  ideaPopup: boolean;
-  setIdeaPopup: (v: boolean) => void;
-  távolságPopup: boolean;
-  setTávolságPopup: (v: boolean) => void;
+  popup: TavharcPopupState;
+  closePopup: (key: keyof TavharcPopupState) => void;
   idea: number;
   setIdea: (v: number) => void;
   távolság: number;
   setTávolság: (v: number) => void;
   osztó: number;
-}) {
+}
+
+export function TavharcPopups({ karakter, setKarakter, popup, closePopup, idea, setIdea, távolság, setTávolság, osztó }: Props) {
   const k = karakter;
 
   function setMfFok(alap: string, fok: number) {
@@ -46,53 +43,48 @@ export function TavharcPopups({ karakter, setKarakter, mfTarget, setMfTarget, de
 
   return (
     <>
-      {mfTarget !== null && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setMfTarget(null); }}>
-          <div className="kep-prompt">
-            <h4>Mesterfegyver fok — {k.távfegyverek[mfTarget]?.alap}</h4>
-            <div className="kep-prompt-flex-fok">
-              {[0, 1, 2, 3].map(f => (
-                <button key={f} className={`fort-fok-btn${getMfFok(k, k.távfegyverek[mfTarget]?.alap) === f ? ' active' : ''}`}
-                  onClick={() => { setMfFok(k.távfegyverek[mfTarget]!.alap, f); setMfTarget(null); }}>{f}</button>
-              ))}
-            </div>
+      {popup.mfTarget !== null && (
+        <PopupOverlay onClose={() => closePopup('mfTarget')}>
+          <h4>Mesterfegyver fok — {k.távfegyverek[popup.mfTarget]?.alap}</h4>
+          <div className="kep-prompt-flex-fok">
+            {[0, 1, 2, 3].map(f => (
+              <button key={f} className={`fort-fok-btn${getMfFok(k, k.távfegyverek[popup.mfTarget!]?.alap) === f ? ' active' : ''}`}
+                onClick={() => { setMfFok(k.távfegyverek[popup.mfTarget!]!.alap, f); closePopup('mfTarget'); }}>{f}</button>
+            ))}
           </div>
-        </div>
-      , document.body)}
+        </PopupOverlay>
+      )}
 
-      {deleteTarget !== null && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setDeleteTarget(null); }}>
-          <div className="kep-prompt kep-prompt-text-center">
-            <p><strong>{k.távfegyverek[deleteTarget]?.alap}</strong></p>
-            <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={() => { removeTávfegyver(deleteTarget); setDeleteTarget(null); }}>Távfegyver törlése</button>
+      {popup.deleteTarget !== null && (
+        <PopupOverlay onClose={() => closePopup('deleteTarget')} centerText>
+          <p><strong>{k.távfegyverek[popup.deleteTarget]?.alap}</strong></p>
+          <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={() => { removeTávfegyver(popup.deleteTarget!); closePopup('deleteTarget'); }}>Távfegyver törlése</button>
+        </PopupOverlay>
+      )}
+
+      {popup.ideaPopup && (
+        <PopupOverlay onClose={() => closePopup('ideaPopup')}>
+          <label>Idea érték</label>
+          <div className="he-idea-grid">
+            {[[-5, -4, -3, -2, -1], [0], [1, 2, 3, 4, 5]].map((row, ri) => (
+              <div key={ri} className="th-idea-row">
+                {row.map(n => (
+                  <button key={n} className={`fort-fok-btn th-idea-cell${idea === n ? ' active' : ''}`}
+                    onClick={() => { setIdea(n); closePopup('ideaPopup'); }}>
+                    {n > 0 ? `+${n}` : n}
+                  </button>
+                ))}
+              </div>
+            ))}
           </div>
-        </div>
-      , document.body)}
+        </PopupOverlay>
+      )}
 
-      {ideaPopup && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setIdeaPopup(false); }}>
-          <div className="kep-prompt">
-            <label>Idea érték</label>
-            <div className="he-idea-grid">
-              <div className="th-idea-row">
-                {[-5, -4, -3, -2, -1].map(n => <button key={n} className={`fort-fok-btn th-idea-cell${idea === n ? ' active' : ''}`} onClick={() => { setIdea(n); setIdeaPopup(false); }}>{n}</button>)}
-              </div>
-              <div className="th-idea-row">
-                <button className={`fort-fok-btn th-idea-cell${idea === 0 ? ' active' : ''}`} onClick={() => { setIdea(0); setIdeaPopup(false); }}>0</button>
-              </div>
-              <div className="th-idea-row">
-                {[1, 2, 3, 4, 5].map(n => <button key={n} className={`fort-fok-btn th-idea-cell${idea === n ? ' active' : ''}`} onClick={() => { setIdea(n); setIdeaPopup(false); }}>+{n}</button>)}
-              </div>
-            </div>
-          </div>
-        </div>
-      , document.body)}
-
-      {távolságPopup && createPortal(
-        <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) setTávolságPopup(false); }}>
+      {popup.távolságPopup && (
+        <PopupOverlay onClose={() => closePopup('távolságPopup')}>
           <TávolságPicker value={távolság} osztó={osztó} onChange={setTávolság} />
-        </div>
-      , document.body)}
+        </PopupOverlay>
+      )}
     </>
   );
 }

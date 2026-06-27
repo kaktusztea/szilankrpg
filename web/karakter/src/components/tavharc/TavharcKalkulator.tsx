@@ -1,7 +1,15 @@
 import type { TavharcSzorzok } from '../../engine/types';
 import { SzorzóPicker } from './SzorzoPicker';
 
-export function TavharcKalkulator({ cé, vé, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, célMozgásId, setCélMozgásId, lövészMozgásId, setLövészMozgásId, méretId, setMéretId, észlelhetőségId, setÉszlelhetőségId, szélId, setSzélId, onTávolságPopup }: {
+interface SzorzóState {
+  célMozgásId: number;
+  lövészMozgásId: number;
+  méretId: number;
+  észlelhetőségId: number;
+  szélId: number;
+}
+
+interface Props {
   cé: number;
   vé: number;
   támadásLabel: string;
@@ -9,35 +17,31 @@ export function TavharcKalkulator({ cé, vé, támadásLabel, szorzóÖsszeg, ce
   cella: number;
   távolság: number;
   szorzok: TavharcSzorzok;
-  célMozgásId: number;
-  setCélMozgásId: (id: number) => void;
-  lövészMozgásId: number;
-  setLövészMozgásId: (id: number) => void;
-  méretId: number;
-  setMéretId: (id: number) => void;
-  észlelhetőségId: number;
-  setÉszlelhetőségId: (id: number) => void;
-  szélId: number;
-  setSzélId: (id: number) => void;
+  szorzóState: SzorzóState;
+  onSzorzóChange: (key: keyof SzorzóState, id: number) => void;
   onTávolságPopup: () => void;
-}) {
+}
+
+export function TavharcKalkulator({ cé, vé, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup }: Props) {
+  const véClass = vé <= cé + 1 ? 'th-ve-ok' : vé - cé > 20 ? 'th-ve-bad' : 'th-ve-warn';
+
   return (
     <>
       <div className="th-main-row">
         <div className="th-value-main th-ce-ve-box">
           <span>CÉ: {cé}  ({támadásLabel})</span>
-          <span className={vé <= cé + 1 ? 'th-ve-ok' : vé - cé > 20 ? 'th-ve-bad' : 'th-ve-warn'}>VÉ: {vé}</span>
+          <span className={véClass}>VÉ: {vé}</span>
         </div>
         <span className="th-value-main th-szc-box">Szorzó × Cella<br/><span className="th-szc-value">{szorzóÖsszeg} × {cella}</span></span>
         <button className="th-value-main th-tav-btn" onClick={onTávolságPopup}>Táv:<br/><span className="th-tav-value">{távolság}m</span></button>
       </div>
 
       <div className="th-szorzo-grid">
-        <SzorzóPicker label="Cél mozgása" list={szorzok.célpont_mozgás} activeId={célMozgásId} onSelect={setCélMozgásId} />
-        <SzorzóPicker label="Lövész mozgás" list={szorzok.lövész_mozgás} activeId={lövészMozgásId} onSelect={setLövészMozgásId} />
-        <SzorzóPicker label="Méret" list={szorzok.célpont_méret} activeId={méretId} onSelect={setMéretId} />
-        <SzorzóPicker label="Észlelhetőség" list={szorzok.észlelhetőség} activeId={észlelhetőségId} onSelect={setÉszlelhetőségId} />
-        <SzorzóPicker label="Szél ereje" list={szorzok.szél} activeId={szélId} onSelect={setSzélId} />
+        <SzorzóPicker label="Cél mozgása" list={szorzok.célpont_mozgás} activeId={szorzóState.célMozgásId} onSelect={id => onSzorzóChange('célMozgásId', id)} />
+        <SzorzóPicker label="Lövész mozgás" list={szorzok.lövész_mozgás} activeId={szorzóState.lövészMozgásId} onSelect={id => onSzorzóChange('lövészMozgásId', id)} />
+        <SzorzóPicker label="Méret" list={szorzok.célpont_méret} activeId={szorzóState.méretId} onSelect={id => onSzorzóChange('méretId', id)} />
+        <SzorzóPicker label="Észlelhetőség" list={szorzok.észlelhetőség} activeId={szorzóState.észlelhetőségId} onSelect={id => onSzorzóChange('észlelhetőségId', id)} />
+        <SzorzóPicker label="Szél ereje" list={szorzok.szél} activeId={szorzóState.szélId} onSelect={id => onSzorzóChange('szélId', id)} />
       </div>
     </>
   );

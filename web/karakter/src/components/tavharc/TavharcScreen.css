@@ -36,6 +36,62 @@
   color: #ccc;
 }
 
+/* --- Fegyver kártyák --- */
+.th-card {
+  background: var(--input-bg);
+  border: 1px solid #444;
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin-bottom: 6px;
+  cursor: pointer;
+}
+
+.th-card-active {
+  border-color: var(--success);
+  background: rgba(76, 175, 80, 0.08);
+}
+
+.th-card-dim {
+  opacity: 0.8;
+}
+
+.th-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4px;
+}
+
+.th-card-fields {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.th-mf-error {
+  color: #e53935;
+}
+
+/* --- Hajítható szekció --- */
+.th-hajithato-title {
+  margin-top: 12px;
+  font-size: 14px;
+  color: #aaa;
+}
+
+.th-section h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* --- Game mód kalkulátor --- */
+.th-main-row {
+  display: flex;
+  gap: 8px;
+  align-items: stretch;
+}
+
 .th-value-main {
   background: var(--input-bg);
   border: 2px solid #888;
@@ -54,12 +110,6 @@
   min-width: 0;
 }
 
-.th-main-row {
-  display: flex;
-  gap: 8px;
-  align-items: stretch;
-}
-
 .th-szc-box {
   font-size: 12px;
   text-align: center;
@@ -68,6 +118,10 @@
   justify-content: center;
   flex: 0 0 auto;
   color: #999;
+}
+
+.th-szc-value {
+  font-size: 18px;
 }
 
 .th-tav-btn {
@@ -82,6 +136,17 @@
   border-color: var(--success);
 }
 
+.th-tav-value {
+  font-size: 18px;
+  color: var(--success);
+}
+
+/* --- VÉ szín variánsok --- */
+.th-ve-ok { color: #4caf50; }
+.th-ve-bad { color: #e53935; }
+.th-ve-warn { color: #ffa726; }
+
+/* --- Szorzó picker grid --- */
 .th-szorzo-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -90,39 +155,6 @@
 
 .th-szorzo-grid .th-picker:last-child:nth-child(odd) {
   grid-column: 1;
-}
-
-.th-section h3 {
-  margin: 0 0 8px 0;
-  font-size: 14px;
-  color: #aaa;
-}
-
-.th-card {
-  background: var(--input-bg);
-  border: 1px solid #444;
-  border-radius: 6px;
-  padding: 8px 10px;
-  margin-bottom: 6px;
-  cursor: pointer;
-}
-
-.th-card-active {
-  border-color: var(--success);
-  background: rgba(76, 175, 80, 0.08);
-}
-
-.th-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 4px;
-}
-
-.th-card-fields {
-  display: flex;
-  gap: 6px;
-  flex-wrap: wrap;
 }
 
 .th-picker {
@@ -157,33 +189,119 @@
   background: rgba(76, 175, 80, 0.1);
 }
 
-.th-idea-cell { width: 36px; height: 36px; font-size: 13px; }
-.th-idea-row { display: flex; gap: 6px; }
-.th-tav-value { font-size: 18px; color: var(--success); }
-.th-cm-btn { width: 32px; height: 32px; }
+/* --- Idea popup --- */
+.th-idea-row {
+  display: flex;
+  gap: 6px;
+}
 
-/* --- Távharc inline → CSS --- */
-.th-reszletek { display: flex; gap: 8px; margin-top: 20px; align-items: stretch; }
-.th-reszletek-box { flex: 1; padding: 10px; border: 1px dashed #666; border-radius: 6px; font-size: 12px; color: #aaa; }
-.th-reszletek-title { color: #e53935; }
-.th-cm-box { padding: 10px; border: 1px solid #444; border-radius: 6px; display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; }
-.th-cm-label { font-size: 12px; color: #aaa; }
-.th-cm-value { font-size: 18px; }
-.th-cm-max { font-size: 11px; color: #888; }
-.th-cm-btn-size { width: 32px; height: 32px; }
-.th-cm-controls { display: flex; align-items: center; gap: 8px; }
-.th-no-fegyver { color: #888; text-align: center; margin-top: 20px; }
-.th-card-dim { opacity: 0.8; }
-.th-hajithato-title { margin-top: 12px; }
-.th-ve-ok { color: #4caf50; }
-.th-ve-bad { color: #e53935; }
-.th-ve-warn { color: #ffa726; }
-.th-szc-value { font-size: 18px; }
+.th-idea-cell {
+  width: 36px;
+  height: 36px;
+  font-size: 13px;
+}
 
-/* --- Picker (TávolságPicker, KorPicker) --- */
-.picker-wrapper { align-items: center; gap: 12px; padding: 16px; user-select: none; -webkit-user-select: none; touch-action: manipulation; }
-.picker-label { font-size: 14px; color: var(--text-dim); }
-.picker-controls { display: flex; align-items: center; gap: 16px; }
-.picker-btn-lg { width: 44px; height: 44px; font-size: 22px; }
-.picker-value-lg { font-size: 28px; min-width: 60px; text-align: center; user-select: none; }
-.picker-hint { font-size: 18px; color: #888; }
+/* --- Részletek és CM --- */
+.th-reszletek {
+  display: flex;
+  gap: 8px;
+  margin-top: 20px;
+  align-items: stretch;
+}
+
+.th-reszletek-box {
+  flex: 1;
+  padding: 10px;
+  border: 1px dashed #666;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #aaa;
+}
+
+.th-reszletek-title {
+  color: #e53935;
+}
+
+.th-cm-box {
+  padding: 10px;
+  border: 1px solid #444;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+}
+
+.th-cm-label {
+  font-size: 12px;
+  color: #aaa;
+}
+
+.th-cm-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.th-cm-value {
+  font-size: 18px;
+}
+
+.th-cm-btn-size {
+  width: 32px;
+  height: 32px;
+}
+
+.th-cm-max {
+  font-size: 11px;
+  color: #888;
+}
+
+/* --- Üzenet --- */
+.th-no-fegyver {
+  color: #888;
+  text-align: center;
+  margin-top: 20px;
+}
+
+/* --- Távolság picker (embedded in PopupOverlay) --- */
+.th-tavolsag-picker {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+/* --- Közös picker stílusok (TávolságPicker, KorPicker) --- */
+.picker-label {
+  font-size: 14px;
+  color: var(--text-dim);
+}
+
+.picker-controls {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.picker-btn-lg {
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+}
+
+.picker-value-lg {
+  font-size: 28px;
+  min-width: 60px;
+  text-align: center;
+  user-select: none;
+}
+
+.picker-hint {
+  font-size: 18px;
+  color: #888;
+}

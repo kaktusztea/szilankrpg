@@ -1,11 +1,13 @@
 import type { TavharcSzorzoEntry } from '../../engine/types';
 
-export function SzorzóPicker({ label, list, activeId, onSelect }: {
+interface Props {
   label: string;
   list: TavharcSzorzoEntry[];
   activeId: number;
   onSelect: (id: number) => void;
-}) {
+}
+
+export function SzorzóPicker({ label, list, activeId, onSelect }: Props) {
   return (
     <div className="th-picker">
       <div className="th-picker-label">{label}</div>

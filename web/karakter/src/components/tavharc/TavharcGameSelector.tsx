@@ -1,14 +1,16 @@
 import type { Session } from '../../engine/types';
 import type { VirtuálisFegyver } from './types';
 
-export function TavharcGameSelector({ összesFegyver, tfIdx, setSession, mfFok, idea, isMágikus }: {
+interface Props {
   összesFegyver: VirtuálisFegyver[];
   tfIdx: number;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   mfFok: number;
   idea: number;
   isMágikus?: boolean;
-}) {
+}
+
+export function TavharcGameSelector({ összesFegyver, tfIdx, setSession, mfFok, idea, isMágikus }: Props) {
   if (összesFegyver.length === 0) return null;
 
   return (
