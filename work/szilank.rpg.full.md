@@ -13380,19 +13380,19 @@ Az ősi kultúrák történelmének ismerete a Történelemismeret fortély foka
 
 ### Alapeset
 
-A fortély nélkül történelmi témában nem dobhatsz próbát [Lexikum](../kepzettsegek.szekunder/lexikum.md) képzettségre (**E**rős Kiterjesztés).
+A fortély nélkül történelmi témában nem dobhatsz próbát [Lexikum](../kepzettsegek.szekunder/lexikum.md) és [Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) képzettségre (**E**rős Kiterjesztés).
 
 ---
 ### 1. fok
 
 🌟 **Hatás**:
-- Már dobhatsz [Lexikum](../kepzettsegek.szekunder/lexikum.md) próbát történelmi témában.
+- Már dobhatsz [Lexikum](../kepzettsegek.szekunder/lexikum.md) és [Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) próbát történelmi témában.
 - Ősi kultúrák nélkül a világtörténelem ismerete
 
 ### 2. fok
 
 🌟 **Hatás**:
-- A [Lexikum](../kepzettsegek.szekunder/lexikum.md) próbát `+2` bónusszal dobhatod történelmi témában.
+- A [Lexikum](../kepzettsegek.szekunder/lexikum.md) és [Hadászat](../kepzettsegek.primer/altalanos/hadaszat.md) próbát `+2` bónusszal dobhatod történelmi témában.
 - Magában foglalja az ősi kultúrák ismeretét is, de **csak a történelmüket** és legendáikat!
 - FONTOS: Ha az ősi kultúrák egyéb aspektusaira is kíváncsi vagy, akkor a Történelemismeret mellett az [Ősi kultúrkör](../fortelyok.altalanos/osi_kulturkor.md) fortélyra IS szükséged van a **Lexikum** képzettség kiterjesztésénél (`E`).
 
