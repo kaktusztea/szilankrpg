@@ -1,17 +1,16 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { useKarakterState } from './hooks/useKarakterState';
 import { useOverlays } from './hooks/useOverlays';
 import { useSwipe } from './hooks/useSwipe';
 import { useUrlImport } from './hooks/useUrlImport';
+import { useKarakterActions } from './hooks/useKarakterActions';
 import { Header } from './components/Header';
 import { TabBar } from './components/TabBar';
 import { KpBar } from './components/KpBar';
 import { TabContent, ALL_TABS } from './components/TabContent';
 import { ScreenErrorBoundary } from './components/ScreenErrorBoundary';
 import { AppOverlays } from './components/AppOverlays';
-import type { Karakter } from './engine/types';
-import { generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, downloadFile, shareFile, loadKarakterFromFile } from './engine/file-ops';
-import { encodeKarakterUrl } from './engine/url-share';
+import { downloadFile, shareFile } from './engine/file-ops';
 import './App.css';
 
 declare const __APP_VERSION__: string;
@@ -92,63 +91,12 @@ function App() {
     return () => document.removeEventListener('click', handler);
   }, []);
 
-  // --- Import ---
-  const importKarakter = useCallback((k: Karakter, overwriteUid: string | false) => {
-    if (overwriteUid) {
-      const final = { ...k, uid: overwriteUid, id_leíró: generateIdLeíró(k.név, k.tsz) };
-      localStorage.setItem(`szilank_char_${overwriteUid}`, JSON.stringify(final));
-      setKarakter(final);
-    } else {
-      setKarakter(k);
-    }
-    setUndoStack([]);
-    setTestMode(false);
-    setIsDirty(true);
-    setOverlay('toast', { msg: `Karakter importálva: ${k.név} (${k.tsz}sz)`, type: 'success' });
-    setOverlay('importConfirm', null);
-  }, [setKarakter, setUndoStack, setTestMode, setIsDirty, setOverlay]);
+  // --- Actions hook ---
+  const { importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter } = useKarakterActions({
+    data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay,
+  });
 
   useUrlImport(data, setOverlay, importKarakter);
-
-  // --- Share URL ---
-  async function shareSlotUrl(slotUid: string) {
-    const charData = localStorage.getItem(`szilank_char_${slotUid}`);
-    if (!charData) return;
-    try {
-      const parsed = JSON.parse(charData) as Karakter;
-      const url = encodeKarakterUrl(parsed);
-      let copied = false;
-      try { await navigator.clipboard.writeText(url); copied = true; } catch { /* clipboard blocked */ }
-      setOverlay('sharePopup', { név: parsed.név || 'Névtelen', copied, url });
-    } catch { setOverlay('toast', { msg: 'Hiba az URL generálásakor.', type: 'error' }); }
-  }
-
-  // --- Save / Load / Duplicate ---
-  function duplicateKarakter() {
-    if (!karakter) return;
-    const dup = dupKarakter(karakter);
-    setKarakter(dup);
-    setUndoStack([]);
-    setTestMode(false);
-    setIsDirty(true);
-    setTimeout(() => setOverlay('showSlotList', true), 100);
-  }
-
-  function handleGenerateSave(mode: 'single' | 'backup') {
-    if (!karakter) return;
-    setOverlay('saveFile', generateSaveFile(karakter, undoStack, mode));
-    setOverlay('showSavePopup', false);
-  }
-
-  async function loadKarakter() {
-    if (!data) return;
-    const result = await loadKarakterFromFile(data);
-    if ('error' in result) { setOverlay('loadError', result.error); return; }
-    setKarakter(result.karakter);
-    setUndoStack(result.undo);
-    setTestMode(false);
-    setIsDirty(true);
-  }
 
   // --- Undo wrapper (closes overlay) ---
   function handleUndoTo(index: number) {

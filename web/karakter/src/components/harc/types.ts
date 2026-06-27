@@ -1,6 +1,19 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
-import type { FegyverResult } from './HarcCalc';
+
+export interface FegyverResult {
+  fegyver_név: string;
+  TÉ: number;
+  VÉ: number;
+  SP: number;
+  támadások: number;
+  harckeret: number;
+  sebesség: number;
+  pengehossz: number;
+  sebzésmód: string;
+  alap_TÉ: number;
+  alap_VÉ: number;
+}
 
 export interface HarcBaseProps {
   data: GameData;

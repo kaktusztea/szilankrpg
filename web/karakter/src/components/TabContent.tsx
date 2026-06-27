@@ -1,6 +1,7 @@
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, Fortely } from '../engine/types';
 import type { TabDef } from './TabBar';
+import { useUndoWrappedSetters } from '../hooks/useUndoWrappedSetters';
 import { AktivScreen } from './aktiv';
 import { HarcScreen } from './harc';
 import { TavharcScreen } from './tavharc';
@@ -10,7 +11,6 @@ import { HarcertekekScreen } from './harcertekek';
 import { MisztikusScreen } from './misztikus';
 import { HatterekScreen } from './hatterek';
 import { lookupFegyver } from '../engine/helpers';
-import { describeKepChange } from '../engine/undo-helpers';
 
 export const ALL_TABS: TabDef[] = [
   { id: 'aktiv', label: '✳️', editOnly: false },
@@ -41,9 +41,12 @@ interface Props {
   pushUndo: (leírás: string) => void;
 }
 
-export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, setTulajdonságok,
-  képzettségek, setKépzettségek, fortélyok, setFortélyok, session, setSession,
+export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
+  képzettségek, fortélyok, setFortélyok, session, setSession,
   karakter, setKarakter, pushUndo }: Props) {
+
+  const { setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo } = useUndoWrappedSetters({ karakter, setKarakter, pushUndo });
+
   switch (tab) {
     case 'aktiv': return <AktivScreen data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} />;
     case 'harc': return <HarcScreen data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} onNavigate={(id) => {
@@ -65,19 +68,8 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, 
         return { ...prev, anyanyelv: v, fortélyok: [...ingyenesek, ...filtered] };
       });
       return <TulajdonsagokScreen data={data} gameMode={gameMode} karakter={karakter}
-        tulajdonságok={tulajdonságok} setTulajdonságok={(v: any) => {
-          const newVal = typeof v === 'function' ? v(tulajdonságok) : v;
-          const tul = tulajdonságok as Record<string, number>;
-          const changed = Object.keys(newVal).find(k => newVal[k] !== tul[k]);
-          pushUndo(changed ? `${changed}: ${tul[changed!]} → ${newVal[changed!]}` : 'Tulajdonság módosítás');
-          setTulajdonságok(v);
-        }}
-        képzettségek={képzettségek} setKépzettségek={(v: any) => {
-          const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
-          const desc = describeKepChange(képzettségek, newVal);
-          if (desc) pushUndo(desc);
-          setKépzettségek(v);
-        }}
+        tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságokUndo}
+        képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo}
         név={karakter.név} setNév={v => { pushUndo(`Név: ${karakter.név} → ${v}`); setKarakter(prev => prev ? { ...prev, név: v } : prev); }}
         becenév={karakter.becenév} setBecenév={v => { pushUndo(`Becenév: ${v}`); setKarakter(prev => prev ? { ...prev, becenév: v } : prev); }}
         játékos={karakter.játékos} setJátékos={v => { pushUndo(`Játékos: ${v}`); setKarakter(prev => prev ? { ...prev, játékos: v } : prev); }}
@@ -94,43 +86,16 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok, 
       });
       const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;
       return <FortelyokScreen data={data} gameMode={gameMode}
-        fortélyok={fortélyok} setFortélyok={(v: any) => {
-          const newVal: Fortely[] = typeof v === 'function' ? v(fortélyok) : v;
-          let desc = '';
-          if (newVal.length > fortélyok.length) {
-            const added = newVal.find(n => !fortélyok.some(f => f.név === n.név && f.spec_elem === n.spec_elem));
-            if (added && added.fok > 0) desc = `Fortély: ${added.név}${added.spec_elem ? ` (${added.spec_elem})` : ""} 0→${added.fok}`;
-          } else if (newVal.length < fortélyok.length) {
-            const removed = fortélyok.find(f => !newVal.some(n => n.név === f.név && n.spec_elem === f.spec_elem));
-            if (removed) desc = `Fortély: ${removed.név}${removed.spec_elem ? ` (${removed.spec_elem})` : ""} ${removed.fok}→0❌`;
-          } else {
-            const changed = newVal.find((n, i) => n.fok !== fortélyok[i]?.fok);
-            if (changed) {
-              const old = fortélyok.find(f => f.név === changed.név && f.spec_elem === changed.spec_elem);
-              if (old && old.fok !== changed.fok) desc = `Fortély: ${changed.név}${changed.spec_elem ? ` (${changed.spec_elem})` : ""} ${old.fok}→${changed.fok}`;
-            }
-          }
-          if (desc) pushUndo(desc);
-          setFortélyok(v);
-        }}
+        fortélyok={fortélyok} setFortélyok={setFortélyokUndo}
         tsz={karakter.tsz} fegyverNevek={fegyverNevek} távfegyverNevek={karakter.távfegyverek.map(tf => tf.alap)} nyelvtanulásSzint={nyelvtanulásSzint}
         képzettségek={képzettségek}
       />;
     }
-    case 'misztikus': return <MisztikusScreen data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={(v: any) => {
-          const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
-          const desc = describeKepChange(képzettségek, newVal);
-          if (desc) pushUndo(desc);
-          setKépzettségek(v);
-        }} fortélyok={fortélyok} setFortélyok={setFortélyok} gameMode={gameMode} />;
+    case 'misztikus': return <MisztikusScreen data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo}
+      fortélyok={fortélyok} setFortélyok={setFortélyok} gameMode={gameMode} />;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter}
         setKarakter={(v: any) => { pushUndo('Harcértékek módosítás'); setKarakter(v); }}
-        képzettségek={képzettségek} gameMode={gameMode} setKépzettségek={(v: any) => {
-          const newVal: {név: string; szint: number}[] = typeof v === 'function' ? v(képzettségek) : v;
-          const desc = describeKepChange(képzettségek, newVal);
-          if (desc) pushUndo(desc);
-          setKépzettségek(v);
-        }} />;
+        képzettségek={képzettségek} gameMode={gameMode} setKépzettségek={setKépzettségekUndo} />;
     case 'hatterek': return <HatterekScreen data={data} karakter={karakter}
         setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}
         onNavigate={tab => { const idx = ALL_TABS.findIndex(t => t.id === tab); if (idx >= 0) setActiveTab(idx); }} />;
