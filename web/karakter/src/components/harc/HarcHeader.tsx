@@ -12,7 +12,6 @@ interface HarcHeaderProps {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string) => void;
   konstansok: GameData['konstansok'];
-  véFlash: '' | 'down' | 'up';
   onVéChange: (newVal: number) => void;
   onVéLabelTap: () => void;
   onVéResetClick: () => void;

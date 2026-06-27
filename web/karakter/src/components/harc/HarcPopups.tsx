@@ -10,41 +10,46 @@ interface HarcPopupsProps {
   onCloseAll: () => void;
 }
 
+/** Generikus overlay wrapper: háttér kattintásra bezár, tartalom stopPropagation. */
+function Overlay({ onClose, children }: { onClose: () => void; children: React.ReactNode }) {
+  return createPortal(
+    <div className="kep-prompt-overlay" onClick={onClose}>
+      <div className="kep-prompt" onClick={e => e.stopPropagation()}>
+        {children}
+      </div>
+    </div>,
+    document.body,
+  );
+}
+
 export function HarcPopups({ session, showVéResetConfirm, showVéHistory, támInfo, onVéReset, onCloseAll }: HarcPopupsProps) {
+  if (!showVéResetConfirm && !showVéHistory && !támInfo) return null;
+
   return (
     <>
-      {showVéResetConfirm && createPortal(
-        <div className="kep-prompt-overlay" onClick={onCloseAll}>
-          <div className="kep-prompt harc-confirm-center" onClick={e => e.stopPropagation()}>
-            <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={onVéReset}>VÉ Reset</button>
-          </div>
-        </div>,
-        document.body
+      {showVéResetConfirm && (
+        <Overlay onClose={onCloseAll}>
+          <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={onVéReset}>VÉ Reset</button>
+        </Overlay>
       )}
 
-      {showVéHistory && createPortal(
-        <div className="kep-prompt-overlay" onClick={onCloseAll}>
-          <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-            <label className="harc-popup-label">VÉ csökkenés történet</label>
-            <div className="harc-popup-text">
-              {session.vé_history.length === 0 ? '—' : session.vé_history.map(v => (v > 0 ? `+${v}` : String(v))).join('; ')}
-            </div>
+      {showVéHistory && (
+        <Overlay onClose={onCloseAll}>
+          <label className="harc-popup-label">VÉ csökkenés történet</label>
+          <div className="harc-popup-text">
+            {session.vé_history.length === 0 ? '—' : session.vé_history.map(v => (v > 0 ? `+${v}` : String(v))).join('; ')}
           </div>
-        </div>,
-        document.body
+        </Overlay>
       )}
 
-      {támInfo && createPortal(
-        <div className="kep-prompt-overlay" onClick={onCloseAll}>
-          <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-            <label className="harc-popup-label">{támInfo.név}</label>
-            <div className="harc-popup-col">
-              <span>Sebesség: {támInfo.sebesség}</span>
-              <span>Harckeret: {támInfo.harckeret}</span>
-            </div>
+      {támInfo && (
+        <Overlay onClose={onCloseAll}>
+          <label className="harc-popup-label">{támInfo.név}</label>
+          <div className="harc-popup-col">
+            <span>Sebesség: {támInfo.sebesség}</span>
+            <span>Harckeret: {támInfo.harckeret}</span>
           </div>
-        </div>,
-        document.body
+        </Overlay>
       )}
     </>
   );

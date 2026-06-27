@@ -155,25 +155,24 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
       </div>
 
       {showSebDialog && createPortal(
-        <div className="kep-prompt-overlay">
-          <SebDialog onConfirm={sebesülés} onCancel={() => setShowSebDialog(false)} />
+        <div className="kep-prompt-overlay" onClick={() => setShowSebDialog(false)}>
+          <SebDialog onConfirm={sebesülés} />
         </div>,
         document.body
       )}
       {showGyógyDialog && createPortal(
-        <div className="kep-prompt-overlay">
+        <div className="kep-prompt-overlay" onClick={() => setShowGyógyDialog(false)}>
           <GyógyDialog
             maxÉP={rubrikák.filter(r => r.típus !== '' && r.típus !== 'FP').length}
             maxFP={rubrikák.filter(r => r.típus === 'FP').length}
             onConfirm={gyógyulás}
-            onCancel={() => setShowGyógyDialog(false)}
           />
         </div>,
         document.body
       )}
       {showResetConfirm && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt harc-confirm-center">
+        <div className="kep-prompt-overlay" onClick={() => setShowResetConfirm(false)}>
+          <div className="kep-prompt harc-confirm-center" onClick={e => e.stopPropagation()}>
             <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={reset}>ÉP Reset</button>
           </div>
         </div>,
@@ -183,7 +182,7 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
   );
 }
 
-function SebDialog({ onConfirm, onCancel: _onCancel }: { onConfirm: (t: SebTípus, v: number) => void; onCancel: () => void }) {
+function SebDialog({ onConfirm }: { onConfirm: (t: SebTípus, v: number) => void }) {
   const [típus, setTípus] = useState<SebTípus | ''>('');
   const [érték, setÉrték] = useState<number | null>(null);
   const [expanded, setExpanded] = useState(false);
@@ -195,7 +194,7 @@ function SebDialog({ onConfirm, onCancel: _onCancel }: { onConfirm: (t: SebTípu
   }, [típus, érték]);
 
   return (
-    <div className="kep-prompt">
+    <div className="kep-prompt" onClick={e => e.stopPropagation()}>
       <label>Sebesülés</label>
       <div className="ep-dialog-row">
         {(['S', 'V', 'Z', 'FP'] as SebTípus[]).map(t => (
@@ -219,7 +218,7 @@ function SebDialog({ onConfirm, onCancel: _onCancel }: { onConfirm: (t: SebTípu
   );
 }
 
-function GyógyDialog({ maxÉP, maxFP, onConfirm, onCancel: _onCancel }: { maxÉP: number; maxFP: number; onConfirm: (t: 'FP' | 'ÉP', v: number) => void; onCancel: () => void }) {
+function GyógyDialog({ maxÉP, maxFP, onConfirm }: { maxÉP: number; maxFP: number; onConfirm: (t: 'FP' | 'ÉP', v: number) => void }) {
   const autoType = maxÉP > 0 && maxFP === 0 ? 'ÉP' : maxFP > 0 && maxÉP === 0 ? 'FP' : '';
   const [típus, setTípus] = useState<'FP' | 'ÉP' | ''>(autoType);
   const [érték, setÉrték] = useState<number | null>(null);
@@ -232,7 +231,7 @@ function GyógyDialog({ maxÉP, maxFP, onConfirm, onCancel: _onCancel }: { maxÉ
   }, [típus, érték]);
 
   return (
-    <div className="kep-prompt">
+    <div className="kep-prompt" onClick={e => e.stopPropagation()}>
       <label>Gyógyulás</label>
       <div className="ep-dialog-row">
         <button disabled={maxÉP === 0} className={`fort-fok-btn ${típus === 'ÉP' ? 'active' : ''}`} onClick={() => { setTípus('ÉP'); setÉrték(null); }}>ÉP</button>

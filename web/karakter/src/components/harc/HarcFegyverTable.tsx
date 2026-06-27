@@ -20,58 +20,86 @@ interface HarcFegyverTableProps {
   onTámInfoClick: (info: { név: string; sebesség: number; harckeret: number }) => void;
 }
 
+/** Közös TÉ kalkuláció (alap + levonás + taktika + fogás + többtám). */
+function computeTÉ(baseTÉ: number, téLevonás: number, taktikaTÉ: number, fogásTÉ: number, támadások: number, többTámTÉ: number): number {
+  return baseTÉ + téLevonás + taktikaTÉ + fogásTÉ + (támadások > 1 ? többTámTÉ : 0);
+}
+
+/** Közös VÉ kalkuláció (alap + bónusz + taktika - csökkenés, min 0). */
+function computeVÉ(baseVÉ: number, bónusz: number, taktikaVÉ: number, csökkenés: number): number {
+  return Math.max(0, baseVÉ + bónusz + taktikaVÉ - csökkenés);
+}
+
 export function HarcFegyverTable({
   karakter, session, data, fegyverResults, kétkezesResult, fogásResult,
   pajzsVÉ, pajzsFegyverNév, taktikaMods, fortelyMods,
   téLevonás, belharciAktív, véFlash, onTámInfoClick,
 }: HarcFegyverTableProps) {
   const { konstansok } = data;
-  const k = karakter;
   const többTámTÉ = konstansok.több_támadás_TÉ_levonás;
   const véFlashClass = véFlash === 'down' ? 've-flash-down' : véFlash === 'up' ? 've-flash-up' : '';
   const phBonusClass = fortelyMods['pengehossz'] ? 'ph-bonus' : undefined;
+  const hasOverlayRow = !!(kétkezesResult || fogásResult);
 
-  function renderKétkezes() {
-    if (!kétkezesResult) return null;
-    const r = kétkezesResult;
+  function getAktívFegyverNév(): string {
+    if (session.aktív_fegyver_index === -2) return pajzsFegyverNév ?? '';
+    const jobbFp = karakter.fegyverek[session.aktív_fegyver_index];
+    return jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? '') : 'Puszta kéz';
+  }
+
+  function isActiveRow(r: FegyverResult): boolean {
+    return r.fegyver_név === getAktívFegyverNév();
+  }
+
+  function renderRow(r: FegyverResult, opts: {
+    veBónusz: number; téExtra: number; isOverlay: boolean; showPh2?: number;
+  }) {
+    const { veBónusz, téExtra, isOverlay, showPh2 } = opts;
+    const té = computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], téExtra, r.támadások, többTámTÉ);
+    const vé = computeVÉ(r.VÉ, veBónusz, taktikaMods['VÉ'], session.vé_csökkenés);
+    const sp = r.SP + taktikaMods['SP'];
+    const ph = r.pengehossz + (fortelyMods['pengehossz'] ?? 0);
+    const pengeWarning = belharciAktív && r.pengehossz > 0;
+
     return (
-      <tr className="harc-fegyver-active-row">
-        <td style={belharciAktív && r.sumPengehossz > 0 ? { color: '#e53935' } : undefined}>{r.fegyver_név}</td>
+      <tr key={r.fegyver_név + (isOverlay ? '-overlay' : '')} className={isOverlay ? 'harc-fegyver-active-row' : undefined}>
+        <td className={pengeWarning ? 'harc-belharc-warn' : undefined}>{r.fegyver_név}</td>
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
-        <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? többTámTÉ : 0)}</td>
-        <td className={véFlashClass}>{Math.max(0, r.VÉ + pajzsVÉ + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
-        <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
-        <td className={phBonusClass}>{r.pengehossz + fortelyMods['pengehossz']}({r.sumPengehossz + fortelyMods['pengehossz']})</td>
+        <td>{té}</td>
+        <td className={véFlashClass}>{vé}</td>
+        <td>{sp} {r.sebzésmód}</td>
+        <td className={phBonusClass}>{showPh2 != null ? `${ph}(${showPh2 + (fortelyMods['pengehossz'] ?? 0)})` : ph}</td>
       </tr>
     );
   }
 
-  function renderFogás() {
-    if (kétkezesResult || !fogásResult) return null;
-    const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    const jobbNév = jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? '') : '';
-    const r = fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? fegyverResults[0];
-    if (!r) return null;
-    return (
-      <tr className="harc-fegyver-active-row">
-        <td>{fogásResult.név}</td>
-        <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
-        <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + fogásResult.TÉ_büntetés + (r.támadások > 1 ? többTámTÉ : 0)}</td>
-        <td className={véFlashClass}>{Math.max(0, r.VÉ + fogásResult.VÉ_bónusz + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
-        <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
-        <td className={phBonusClass}>{r.pengehossz + fortelyMods['pengehossz']}</td>
-      </tr>
-    );
-  }
-
-  function getRowOpacity(r: FegyverResult): React.CSSProperties | undefined {
-    if (kétkezesResult || fogásResult) return { opacity: 0.4 };
-    const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    const jobbNév = session.aktív_fegyver_index === -2
-      ? (pajzsFegyverNév ?? '')
-      : jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? '') : 'Puszta kéz';
-    if (r.fegyver_név !== jobbNév) return { opacity: 0.4 };
-    return undefined;
+  function renderOverlayRow() {
+    if (kétkezesResult) {
+      return renderRow(kétkezesResult, {
+        veBónusz: pajzsVÉ, téExtra: 0, isOverlay: true, showPh2: kétkezesResult.sumPengehossz,
+      });
+    }
+    if (fogásResult) {
+      const jobbNév = getAktívFegyverNév();
+      const r = fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? fegyverResults[0];
+      if (!r) return null;
+      // For fogás overlay, render with fogás bonuses, override name
+      const té = computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], fogásResult.TÉ_büntetés, r.támadások, többTámTÉ);
+      const vé = computeVÉ(r.VÉ, fogásResult.VÉ_bónusz, taktikaMods['VÉ'], session.vé_csökkenés);
+      const sp = r.SP + taktikaMods['SP'];
+      const ph = r.pengehossz + (fortelyMods['pengehossz'] ?? 0);
+      return (
+        <tr className="harc-fegyver-active-row">
+          <td>{fogásResult.név}</td>
+          <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
+          <td>{té}</td>
+          <td className={véFlashClass}>{vé}</td>
+          <td>{sp} {r.sebzésmód}</td>
+          <td className={phBonusClass}>{ph}</td>
+        </tr>
+      );
+    }
+    return null;
   }
 
   return (
@@ -83,16 +111,15 @@ export function HarcFegyverTable({
         </tr>
       </thead>
       <tbody>
-        {renderKétkezes()}
-        {renderFogás()}
-        {fegyverResults.map((r, i) => (
-          <tr key={i} style={getRowOpacity(r)}>
-            <td style={belharciAktív && r.pengehossz > 0 ? { color: '#e53935' } : undefined}>{r.fegyver_név}</td>
+        {renderOverlayRow()}
+        {fegyverResults.map(r => (
+          <tr key={r.fegyver_név} className={hasOverlayRow || !isActiveRow(r) ? 'harc-row-dimmed' : undefined}>
+            <td className={belharciAktív && r.pengehossz > 0 ? 'harc-belharc-warn' : undefined}>{r.fegyver_név}</td>
             <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
             <td>{r.TÉ + téLevonás + taktikaMods['TÉ'] + (r.támadások > 1 ? többTámTÉ : 0)}</td>
             <td className={véFlashClass}>{Math.max(0, r.VÉ + (fogásResult ? 0 : pajzsVÉ) + taktikaMods['VÉ'] - session.vé_csökkenés)}</td>
             <td>{r.SP + taktikaMods['SP']} {r.sebzésmód}</td>
-            <td className={phBonusClass}>{r.pengehossz + fortelyMods['pengehossz']}</td>
+            <td className={phBonusClass}>{r.pengehossz + (fortelyMods['pengehossz'] ?? 0)}</td>
           </tr>
         ))}
       </tbody>

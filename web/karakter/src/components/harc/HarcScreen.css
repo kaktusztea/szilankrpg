@@ -181,7 +181,9 @@
 }
 
 .harc-belharc-label { color: #ef9a9a; }
+.harc-belharc-warn { color: #e53935; }
 .harc-tam-clickable { cursor: pointer; }
+.harc-row-dimmed { opacity: 0.4; }
 
 .ph-bonus { color: #66bb6a; }
 
