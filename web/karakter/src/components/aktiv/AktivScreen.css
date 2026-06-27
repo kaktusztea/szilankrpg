@@ -82,6 +82,11 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+.aktiv-field-btn.disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
 .aktiv-field-label {
   font-size: 11px;
   color: #888;
