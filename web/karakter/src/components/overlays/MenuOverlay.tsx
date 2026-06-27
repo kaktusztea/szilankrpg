@@ -20,7 +20,7 @@ export function MenuOverlay({ undoCount, onUndo, onSlots, onDuplicate, onSave, o
         </button>
         <button className="menu-item" onClick={onSlots}>📂 Karakterek</button>
         <button className="menu-item" onClick={onDuplicate}>📋 Duplikál</button>
-        <button className="menu-item" onClick={onSave}>💾 Mentés</button>
+        <button className="menu-item" onClick={onSave}>💾 Mentés háttértárra</button>
         <button className="menu-item" onClick={onNew}>📄 Új karakter</button>
         {document.fullscreenEnabled && (
           <button className="menu-item" onClick={() => {
