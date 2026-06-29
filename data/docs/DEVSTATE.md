@@ -48,39 +48,6 @@ TODO:
 
 ---
 
-## Legutóbbi refaktorálás (2026-06-29)
-
-Cél: modularizáció, teljesítmény, DRY.
-
-| # | Terület | Fájlok | Hatás |
-|---|---------|--------|-------|
-| 1 | fegyver-calc evaluate optimalizáció | `reactive.ts` (+filterFegyverRules), `fegyver-calc.ts`, `useHarcComputed.ts` | 54→5 rule/fegyver, páncél ctx egyszer |
-| 2 | HatasPoolCalc szétbontás | `aktiv/HatasPoolCalc.ts` (4 pure fn + orchestrator) | Tesztelhető részek |
-| 3 | Közös MF/penge util | `harc/shared.ts` (új), `harc-reszletek-calc.ts` | DRY: findMfFok, getMfBónusz |
-| 4 | EpTable logika kiszervezés | `harc/ep-logic.ts` (új), `EpTable.tsx` | Pure logic külön |
-| 5 | AktivHelpers szétszedés | `aktiv/taktika-helpers.ts`, `aktiv/helyzet-helpers.ts` (új), `AktivHelpers.ts` (barrel) | SRP |
-| 6 | TabContent adapter | `karakter-setters.ts` (új), `TabContent.tsx` | makeFieldSetter eliminálja inline lambdákat |
-| 7 | Feltétel eval kiszervezés | `engine/feltetel-eval.ts` (új), `useHarcComputed.ts` | Feltétel logika újrahasznosítható |
-| 8 | Generikus hook-ok | `hooks/useEscapeClose.ts`, `hooks/usePopupState.ts` (új) | Inline useEffect eliminálás |
-| 9 | shared.ts bővítés | `harc/shared.ts` (+calcSpOverride, resolveNagyobbKisebb), `HarcCalc.ts` (törölve) | DRY: SP override + kétkezes pengeméret |
-| 10 | HarcFegyverTable DRY | `HarcFegyverTable.tsx` | Egyetlen renderRow() minden sorra (TÉ/VÉ duplikáció eliminálva) |
-| 11 | pajzsFegyverNév konszolidáció | `shared.ts` (+buildPajzsFegyverNév), 5 fájl | 5 inline duplikáció → 1 helper |
-| 12 | Escape hack eltávolítás | `useOverlays.ts`, `EpTable.tsx` | dispatchEvent hack → direkt reset + useEscapeClose |
-| 13 | Setter konvenció konszolidáció | `karakter-setters.ts` (+makeFajSetter, makeUndoKarakterSetter), `TabContent.tsx` | Egységes undo-aware setter minta |
-| 14 | calcFortélyPool olvashatóság | `aktiv/HatasPoolCalc.ts` (+isFeltételAktív, extractHelyzetKötés) | 3-level nesting → flat helpers |
-| 15 | EpDialogs kiemelés | `harc/EpDialogs.tsx` (új), `EpTable.tsx` | useEffect trigger → explicit click handler |
-| 16 | Taktika üzleti logika kiemelés | `aktiv/taktika-helpers.ts` (+getExtraFokok, formatFokMods), `AktivTaktikak.tsx` | Render ↔ logika szétválasztás |
-| 17 | fegyver-calc cache fix | `fegyver-calc.ts` | Module-szintű let → WeakMap (HMR-safe) |
-| 18 | Overlay/picker konszolidáció | `PopupOverlay.tsx`, `PickerOverlay.tsx`, `misztikus/Overlay.tsx`, `FortelyPopups.tsx`, `FortelyFelvetel.tsx`, `FortelyRow.tsx`, `SpecPicker.tsx`, `HarcPopups.tsx`, `StatuszPickerOverlay.tsx` | 2 központi shell (PopupOverlay + PickerOverlay) + ESC kezelés; 9 fájlból inline createPortal eliminálva; 6 fájlból redundáns useEscapeClose/useEffect törölve |
-| 19 | Inline style → CSS class | `AktivHelyzetek.tsx`, `styles/common.css` | Helyzet picker csoport színek CSS classban (`.aktiv-picker-group-pozitív/semleges/negatív`) |
-| 20 | MF lookup DRY (canonical) | `engine/mf-utils.ts` (új), `harcertekek/helpers.ts`, `harc/shared.ts` | Egységes `findMfFok` + `getMfBónusz` az engine layerben |
-| 21 | Taktika fokDef interpoláció DRY | `aktiv/taktika-helpers.ts` (+interpolateFokDef), `harc/taktika-calc.ts` | Közös helper a fortély_bővítés extrapolációra |
-| 22 | Reactive engine belső bontás | `engine/reactive-parse.ts` (új), `engine/reactive.ts` | evalFormula + 5 aggregate resolver → külön fájl (tesztelhetőség) |
-| 23 | Undo hook kiszervezés | `hooks/useUndo.ts` (új), `hooks/useKarakterState.ts` | Undo logika önálló hook-ba |
-| 24 | Unit test infrastruktúra | `vitest.config.ts`, 14 test fájl (103 teszt: 66 unit + 22 fuzz + 15 golden) | Vitest + fast-check bekötve buildbe; lefedi: reactive-parse, reactive, mf-utils, utils, validate, ep-logic, shared, taktika-helpers + golden integráció (test_karakter teljes pipeline) |
-
----
-
 ## Fontos adatmodell összefoglaló
 
 ### Karakter séma (v2)

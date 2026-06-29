@@ -29,6 +29,7 @@
 - [Kínokozás](fortelyok.harci/kinokozas.md)
 - [Kitérés lövés elől](fortelyok.harci/kiteres_loves_elol.md)
 - [Körkörös harc](fortelyok.harci/korkoros_harc.md)
+- [Lefegyverzés mestere](fortelyok.harci/lefegyverzes_mestere.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
 - [Mesterfegyver](fortelyok.harci/mesterfegyver.md)
 - [Orgyilkos](fortelyok.harci/orgyilkos.md)

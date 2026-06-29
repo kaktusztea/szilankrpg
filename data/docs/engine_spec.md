@@ -1231,6 +1231,7 @@ note: A manőverek nem adnak statikus harcérték módosítókat — ellenpróba
       Kivétel: fortélyok amik manőver Ellenpróba bónuszt adnak (cél: `manőver:név`, mód: flat):
         - Harci akrobatika → `manőver:kibontakozás` +1/+3
         - Harci anatómia → `manőver:leütés_hátulról` +2/+4/+6, `manőver:precíz_támadás` +2/+4/+6
+        - Lefegyverzés mestere → `manőver:lefegyverzés_fegyvertörés` +2/+4, `manőver:lánccsapda` +2 (2.fok)
       UI: AktivScreen Hatás pool "Manőver bónuszok" szekció gyűjti ezeket.
       Visszafogott taktika TÉ csökkentés (Harci anatómia): `cél: TÉ, feltétel: "taktika:visszafogott"`, +3/+6/+9.
       Belharcos manőverek: Belharci helyzet szükséges (kivéve Belharcba kerülés).

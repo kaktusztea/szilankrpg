@@ -1,0 +1,70 @@
+---
+schema_version: 1
+
+név: "Lefegyverzés mestere"
+névkomment: ""
+maxfok: 2
+session_toggle: false
+emlékeztető: true
+kiérdemelhető: false
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+- text: "Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét, vagy töröd el egy gyenge pontján."
+megjegyzések:
+- text: ""
+kiterjeszti:
+  normál: []
+  erős: []
+kp_perfok: 6
+ingyenes_perszint: 0
+fokok:
+- fok: 1
+  követelménytext:
+    - text: "Kardvívás VAGY Lándzsavívás - 9.szint"
+    - text: "Mesterfegyver - 1.fok"
+  követelmények:
+  - név: ["Kardvívás", "Lándzsavívás"]
+    érték: 9
+    típus: "képzettség"
+  - név: "Mesterfegyver"
+    érték: 1
+    típus: "fortély"
+  hatástext:
+  - text: "Lefegyverzés/Fegyvertörés Manőver: +2 MP bónusz Ellenpróbánál."
+  módosítók:
+  - cél: "manőver:lefegyverzés_fegyvertörés"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+- fok: 2
+  követelménytext:
+    - text: "Kardvívás VAGY Lándzsavívás - 12.szint"
+    - text: "Mesterfegyver - 2.fok"
+  követelmények:
+  - név: ["Kardvívás", "Lándzsavívás"]
+    érték: 12
+    típus: "képzettség"
+  - név: "Mesterfegyver"
+    érték: 2
+    típus: "fortély"
+  hatástext:
+  - text: "Lefegyverzés/Fegyvertörés Manőver: +4 MP bónusz Ellenpróbánál."
+  - text: "Lánccsapda Manőver: +2 MP bónusz Ellenpróbánál."
+  módosítók:
+  - cél: "manőver:lefegyverzés_fegyvertörés"
+    érték: 4
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""
+  - cél: "manőver:lánccsapda"
+    érték: 2
+    mód: "flat"
+    forrás: ""
+    arány: 0
+    feltétel: ""

@@ -4444,6 +4444,104 @@
     "md_fájl": "fortelyok.harci/korkoros_harc.md"
   },
   {
+    "név": "Lefegyverzés mestere",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét, vagy töröd el egy gyenge pontján.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Lefegyverzés/Fegyvertörés Manőver: +2 MP bónusz Ellenpróbánál."
+        ],
+        "követelmény": [
+          "Kardvívás VAGY Lándzsavívás - 9.szint",
+          "Mesterfegyver - 1.fok"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Kardvívás",
+              "Lándzsavívás"
+            ],
+            "érték": 9,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Mesterfegyver",
+            "érték": 1,
+            "típus": "fortély"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "manőver:lefegyverzés_fegyvertörés",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Lefegyverzés/Fegyvertörés Manőver: +4 MP bónusz Ellenpróbánál.",
+          "Lánccsapda Manőver: +2 MP bónusz Ellenpróbánál."
+        ],
+        "követelmény": [
+          "Kardvívás VAGY Lándzsavívás - 12.szint",
+          "Mesterfegyver - 2.fok"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Kardvívás",
+              "Lándzsavívás"
+            ],
+            "érték": 12,
+            "típus": "képzettség"
+          },
+          {
+            "név": "Mesterfegyver",
+            "érték": 2,
+            "típus": "fortély"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "manőver:lefegyverzés_fegyvertörés",
+            "érték": 4,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          },
+          {
+            "cél": "manőver:lánccsapda",
+            "érték": 2,
+            "mód": "flat",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": ""
+          }
+        ]
+      }
+    ],
+    "md_fájl": "fortelyok.harci/lefegyverzes_mestere.md"
+  },
+  {
     "név": "Léglovas harc",
     "csoport": "harci",
     "alcsoport": "harci",
