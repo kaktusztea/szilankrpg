@@ -1,6 +1,6 @@
 import type { TavharcProps } from './types';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText, calcCÉ, getCÉInputs, calcTámadásLabel, getAlkalmatlanInfo } from './helpers';
-import { MAX_FEGYVER } from '../../ui-constants';
+import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 
 interface Props extends TavharcProps {
   idea: number;
@@ -70,7 +70,7 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
         );
       })}
 
-      {k.távfegyverek.length < MAX_FEGYVER && (
+      {k.távfegyverek.length < MAX_FEGYVER_DARAB && (
       <select className="he-add-select" value="" onChange={e => { if (e.target.value) addTávfegyver(e.target.value); }}>
         <option value="">+ Új távfegyver...</option>
         {felvehető.map(f => <option key={f.Fegyver} value={f.Fegyver}>{f.Fegyver}</option>)}

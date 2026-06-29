@@ -3,7 +3,7 @@ import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
 import { FegyverChip } from './HarcertekekFegyverChip';
 import { getMfFok, mfKövetelményHiba, mfKövetelményText, buildFegyverByKat, FEGYVER_KATEGORIAK } from './helpers';
-import { MAX_FEGYVER } from '../../ui-constants';
+import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 
 interface Props {
   data: GameData;
@@ -46,7 +46,7 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
           onDeleteTarget={onDeleteTarget}
         />
       ))}
-      {!gameMode && k.fegyverek.length < MAX_FEGYVER && (
+      {!gameMode && k.fegyverek.length < MAX_FEGYVER_DARAB && (
         <select className="he-add-select" value="" onChange={e => { if (e.target.value) addFegyver(e.target.value); }}>
           <option value="">+ Új fegyver...</option>
           {FEGYVER_KATEGORIAK.filter(kat => fegyverByKat.has(kat)).map(kat => (
