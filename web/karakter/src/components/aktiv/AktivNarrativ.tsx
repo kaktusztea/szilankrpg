@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type { Session } from '../../engine/types';
 import { PickerOverlay } from './PickerOverlay';
 
@@ -18,6 +18,7 @@ const ÉRTÉKEK = [
 export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
   const [showPopup, setShowPopup] = useState(false);
   const [érték, setÉrték] = useState<number | undefined>(undefined);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   function submit(szöveg: string) {
     if (!szöveg || érték === undefined) return;
@@ -61,11 +62,10 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
               ))}
             </div>
             <input className="narrativ-input narrativ-input-full" placeholder="Leírás..." maxLength={40}
-              onKeyDown={e => { if (e.key === 'Enter') submit((e.target as HTMLInputElement).value.trim()); }}
-              id="narrativ-popup-text" />
+              ref={inputRef}
+              onKeyDown={e => { if (e.key === 'Enter') submit((e.target as HTMLInputElement).value.trim()); }} />
             <button className="narrativ-add-btn narrativ-add-btn-center" disabled={érték === undefined} onClick={() => {
-              const el = document.getElementById('narrativ-popup-text') as HTMLInputElement;
-              submit(el.value.trim());
+              submit(inputRef.current?.value.trim() ?? '');
             }}>OK</button>
           </div>
         </PickerOverlay>
