@@ -6,7 +6,7 @@ Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét, vag
 ### 1. fok
 
 🔒 **Követelmény**:
-- [Kardvívás](../kepzettsegek.primer/harci/kardvivas.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/landzsavivas.md) - `9.szint`
+- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) - `9.szint`
 - [Mesterfegyver](mesterfegyver.md) fortély: `1.fok`
 
 🌟 **Hatás**:
@@ -16,7 +16,7 @@ Ellenfeled kezéből gyakorlott mozdulatokkal perdíted ki annak fegyverét, vag
 ### 2. fok
 
 🔒 **Követelmény**:
-- [Kardvívás](../kepzettsegek.primer/harci/kardvivas.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/landzsavivas.md) - `12.szint`
+- [Kardvívás](../kepzettsegek.primer/harci/harcmodor.md) VAGY [Lándzsavívás](../kepzettsegek.primer/harci/harcmodor.md) - `12.szint`
 - [Mesterfegyver](mesterfegyver.md) fortély: `2.fok`
 
 🌟 **Hatás**:
