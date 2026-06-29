@@ -8,6 +8,7 @@ import { HarcPopups } from './HarcPopups';
 import { EpTable } from './EpTable';
 import { HarcReszletek } from './HarcReszletek';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
+import { calcSérültFok } from './ep-logic';
 import './HarcScreen.css';
 
 export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: HarcBaseProps) {
@@ -47,9 +48,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   // Auto Sérült státusz
   useEffect(() => {
-    const inS3 = sebCount > 2 * hc.oszlopMéret;
-    const inS4 = sebCount > 3 * hc.oszlopMéret;
-    const targetFok = inS4 ? 2 : inS3 ? 1 : 0;
+    const targetFok = calcSérültFok(sebCount, hc.oszlopMéret);
     const current = session.aktív_státuszok.find(s => s.startsWith('Sérült ('));
     const currentFok = current ? parseInt(current.match(/\((\d+)\)/)?.[1] ?? '0') : 0;
     if (targetFok === currentFok) return;

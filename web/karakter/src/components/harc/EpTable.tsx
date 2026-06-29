@@ -1,9 +1,9 @@
 import { useState, useEffect, useCallback } from 'react';
-import { createPortal } from 'react-dom';
 import type { SebzésRubrika } from '../../engine/types';
 import { buildRubrikák, toSebzések, applySeb, applyGyógy } from './ep-logic';
 import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { SebDialog, GyógyDialog } from './EpDialogs';
+import { DialogPortal } from './DialogPortal';
 import './EpTable.css';
 
 interface Props {
@@ -88,29 +88,26 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
         ))}
       </div>
 
-      {showSebDialog && createPortal(
-        <div className="kep-prompt-overlay" onClick={() => setShowSebDialog(false)}>
+      {showSebDialog && (
+        <DialogPortal onClose={() => setShowSebDialog(false)}>
           <SebDialog onConfirm={sebesülés} />
-        </div>,
-        document.body
+        </DialogPortal>
       )}
-      {showGyógyDialog && createPortal(
-        <div className="kep-prompt-overlay" onClick={() => setShowGyógyDialog(false)}>
+      {showGyógyDialog && (
+        <DialogPortal onClose={() => setShowGyógyDialog(false)}>
           <GyógyDialog
             maxÉP={rubrikák.filter(r => r.típus !== '' && r.típus !== 'FP').length}
             maxFP={rubrikák.filter(r => r.típus === 'FP').length}
             onConfirm={gyógyulás}
           />
-        </div>,
-        document.body
+        </DialogPortal>
       )}
-      {showResetConfirm && createPortal(
-        <div className="kep-prompt-overlay" onClick={() => setShowResetConfirm(false)}>
+      {showResetConfirm && (
+        <DialogPortal onClose={() => setShowResetConfirm(false)}>
           <div className="kep-prompt harc-confirm-center" onClick={e => e.stopPropagation()}>
             <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={reset}>ÉP Reset</button>
           </div>
-        </div>,
-        document.body
+        </DialogPortal>
       )}
     </div>
   );

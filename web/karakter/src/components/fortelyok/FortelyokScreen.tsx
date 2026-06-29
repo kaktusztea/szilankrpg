@@ -1,9 +1,9 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
-import type { FortelySummary } from '../../engine/data-loader';
-import type { FortelyokScreenProps, DeleteTarget, SzabadTypePicker } from './types';
+import type { FortelyokScreenProps, DeleteTarget } from './types';
 import { buildDefsByGroup, displayName, getFortelyokForCsoport } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
 import { DeletePopup, FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
+import { useFortelyActions } from './useFortelyActions';
 import { HINT_DURATION_MS } from '../../ui-constants';
 import './FortelyokScreen.css';
 
@@ -13,9 +13,12 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null);
-  const [pendingFortIdx, setPendingFortIdx] = useState<number | null>(null);
-  const [multiPickerDef, setMultiPickerDef] = useState<FortelySummary | null>(null);
-  const [szabadTypePicker, setSzabadTypePicker] = useState<SzabadTypePicker | null>(null);
+
+  const {
+    pendingFortIdx, multiPickerDef, szabadTypePicker,
+    setPendingFortIdx, setMultiPickerDef, setSzabadTypePicker,
+    setFok, addFortely, addMultiInstance, confirmSzabad, confirmFok, pendingSlot,
+  } = useFortelyActions({ data, fortélyok, setFortélyok });
 
   const fortCsoportSorrend = data.konstansok.fortély_csoport_sorrend;
   const CSOPORT_SORREND = fortCsoportSorrend.map(c => c.id);
@@ -32,42 +35,6 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
     setHint(msg);
     if (hintTimer.current) clearTimeout(hintTimer.current);
     hintTimer.current = setTimeout(() => setHint(''), duration);
-  }
-
-  function setFok(idx: number, fok: number) {
-    setFortélyok(prev => prev.map((f, i) => i === idx ? { ...f, fok } : f));
-  }
-
-  function addFortely(név: string) {
-    const def = data.fortelySummaries.find(d => d.név === név);
-    if (def && def.csoport === 'szabad') {
-      if (def.többszörös_típus) { setMultiPickerDef(def); return; }
-      setSzabadTypePicker({ név, spec_típus: '', spec_elem: '' });
-      return;
-    }
-    if (def && def.többszörös_típus) { setMultiPickerDef(def); return; }
-    setFortélyok(prev => {
-      if (def && def.maxfok > 1) {
-        setPendingFortIdx(prev.length);
-        return [...prev, { név, fok: 0, spec_típus: '', spec_elem: '' }];
-      }
-      return [...prev, { név, fok: 1, spec_típus: '', spec_elem: '' }];
-    });
-  }
-
-  function addMultiInstance(subName: string) {
-    if (!multiPickerDef) return;
-    if (multiPickerDef.csoport === 'szabad' || multiPickerDef.csoport === 'kiemelt' || multiPickerDef.csoport === 'misztikus') {
-      setSzabadTypePicker({ név: multiPickerDef.név, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName });
-      setMultiPickerDef(null);
-      return;
-    }
-    const maxfok = multiPickerDef.maxfok;
-    setFortélyok(prev => {
-      if (maxfok > 1) setPendingFortIdx(prev.length);
-      return [...prev, { név: multiPickerDef.név, fok: maxfok > 1 ? 0 : 1, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName }];
-    });
-    setMultiPickerDef(null);
   }
 
   return (
@@ -115,20 +82,15 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
         />
       )}
 
-      {pendingFortIdx !== null && (() => {
-        const pSlot = fortélyok[pendingFortIdx];
-        const pDef = data.fortelySummaries.find(d => d.név === pSlot?.név);
-        if (!pSlot) return null;
-        return (
-          <FokPickerPopup
-            slot={pSlot}
-            maxfok={pDef?.maxfok ?? 1}
-            nyelvFokLabels={NYELV_FOK_LABELS}
-            onSelect={fok => { setFok(pendingFortIdx, fok); setPendingFortIdx(null); }}
-            onCancel={() => setPendingFortIdx(null)}
-          />
-        );
-      })()}
+      {pendingFortIdx !== null && pendingSlot && (
+        <FokPickerPopup
+          slot={pendingSlot}
+          maxfok={data.fortelySummaries.find(d => d.név === pendingSlot.név)?.maxfok ?? 1}
+          nyelvFokLabels={NYELV_FOK_LABELS}
+          onSelect={confirmFok}
+          onCancel={() => setPendingFortIdx(null)}
+        />
+      )}
 
       {multiPickerDef && (
         <MultiPicker
@@ -144,16 +106,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
       {szabadTypePicker && (
         <SzabadTypePickerPopup
           picker={szabadTypePicker}
-          onFelvett={() => {
-            const p = szabadTypePicker;
-            setFortélyok(prev => [...prev, { név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem }]);
-            setSzabadTypePicker(null);
-          }}
-          onKiérdemelt={() => {
-            const p = szabadTypePicker;
-            setFortélyok(prev => [...prev, { név: p.név, fok: 1, spec_típus: p.spec_típus, spec_elem: p.spec_elem, kiérdemelt: true }]);
-            setSzabadTypePicker(null);
-          }}
+          onFelvett={() => confirmSzabad(false)}
+          onKiérdemelt={() => confirmSzabad(true)}
           onCancel={() => setSzabadTypePicker(null)}
         />
       )}

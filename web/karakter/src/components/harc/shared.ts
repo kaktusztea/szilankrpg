@@ -53,3 +53,13 @@ export function resolveNagyobbKisebb<T extends { Pengehossz: string }>(
     jobbPenge, balPenge,
   };
 }
+
+/** Közös TÉ kalkuláció (alap + levonás + taktika + fogás + többtám). */
+export function computeTÉ(baseTÉ: number, téLevonás: number, taktikaTÉ: number, fogásTÉ: number, támadások: number, többTámTÉ: number): number {
+  return baseTÉ + téLevonás + taktikaTÉ + fogásTÉ + (támadások > 1 ? többTámTÉ : 0);
+}
+
+/** Közös VÉ kalkuláció (alap + bónusz + taktika - csökkenés, min 0). */
+export function computeVÉ(baseVÉ: number, bónusz: number, taktikaVÉ: number, csökkenés: number): number {
+  return Math.max(0, baseVÉ + bónusz + taktikaVÉ - csökkenés);
+}

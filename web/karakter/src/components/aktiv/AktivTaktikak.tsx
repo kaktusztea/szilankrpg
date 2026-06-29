@@ -2,8 +2,10 @@ import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../../engine/types';
 import { fmtHatás } from '../formatters';
-import { isTaktikaAllowed, getTaktikaMods, getExtraFokok, formatFokMods } from './AktivHelpers';
+import { isTaktikaAllowed, getTaktikaMods } from './AktivHelpers';
 import { PickerOverlay } from './PickerOverlay';
+import { TaktikaPickerList } from './TaktikaPickerList';
+import { TaktikaFokPicker } from './TaktikaFokPicker';
 
 interface Props {
   data: GameData;
@@ -37,54 +39,16 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
     setSession(s => ({ ...s, aktív_taktikák: s.aktív_taktikák.map((t, i) => i === idx ? { ...t, fok } : t) }));
   }
 
-  function renderFokPicker() {
-    if (!fokválasztó) return null;
-    const def = data.taktikak.find(t => t.név === fokválasztó);
-    if (!def?.fokok) return null;
-    const existing = session.aktív_taktikák.findIndex(a => a.név === fokválasztó);
-    const fokok = getExtraFokok(def, karakter);
-    const maxBaseFok = def.fokok[def.fokok.length - 1].fok;
-
-    return fokok.map(f => (
-      <div key={f.fok}
-        className={`aktiv-picker-item${existing >= 0 && session.aktív_taktikák[existing].fok === f.fok ? ' active' : ''}`}
-        onClick={() => {
-          if (existing >= 0) setTaktikaFok(existing, f.fok);
-          else { pushUndo(`Taktika: ${fokválasztó}`); setSession(s => ({ ...s, aktív_taktikák: [...s.aktív_taktikák, { név: fokválasztó!, fok: f.fok }] })); }
-          setShowPicker(false); setFokválasztó(null);
-        }}>
-        <span className="aktiv-picker-item-name">{f.fok}. fok{f.fok > maxBaseFok && <span className="aktiv-extra-fok-dot">●</span>}</span>
-        <span className="aktiv-picker-item-details">{formatFokMods(f)}</span>
-        {f.hatások?.length > 0 && <span className="aktiv-picker-item-hatas">{f.hatások.map((h: any) => h.megjegyzés || `${h.operátor} ${h.érték ?? ''} ${h.cél}`).join(', ')}</span>}
-      </div>
-    ));
-  }
-
-  function renderTaktikaList() {
-    const pinned = (data.konstansok.pinned_taktikák ?? []) as string[];
-    return data.taktikak
-      .filter(t => !session.aktív_taktikák.some(a => a.név === t.név) && isTaktikaAllowed(t.név, session, karakter, data))
-      .sort((a, b) => {
-        const aPin = pinned.indexOf(a.név), bPin = pinned.indexOf(b.név);
-        if (aPin >= 0 && bPin >= 0) return aPin - bPin;
-        if (aPin >= 0) return -1;
-        if (bPin >= 0) return 1;
-        return a.név.localeCompare(b.név, 'hu');
-      })
-      .map(t => (
-        <div key={t.név} className="aktiv-picker-item" onClick={() => {
-          if (t.fokozatos) setFokválasztó(t.név);
-          else { addTaktika(t.név); setShowPicker(false); }
-        }}>
-          <span className="aktiv-picker-item-name">{t.név}{t.fokozatos ? ' 📶' : ''}</span>
-          <span className="aktiv-picker-item-details">
-            {t.fokozatos && t.fokok
-              ? t.fokok.map((f: any) => `${f.fok}: ${formatFokMods(f)}`).join(' | ')
-              : t.módosítók ? Object.entries(t.módosítók).filter(([, v]) => v !== 0).map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ') : ''}
-          </span>
-          {t.megjegyzés && <span className="aktiv-picker-item-hatas">{t.megjegyzés}</span>}
-        </div>
-      ));
+  function handleFokSelect(fok: number, isNew: boolean) {
+    if (!fokválasztó) return;
+    if (!isNew) {
+      const idx = session.aktív_taktikák.findIndex(a => a.név === fokválasztó);
+      if (idx >= 0) setTaktikaFok(idx, fok);
+    } else {
+      pushUndo(`Taktika: ${fokválasztó}`);
+      setSession(s => ({ ...s, aktív_taktikák: [...s.aktív_taktikák, { név: fokválasztó!, fok }] }));
+    }
+    setShowPicker(false); setFokválasztó(null);
   }
 
   const allDisabled = data.taktikak.every(t => session.aktív_taktikák.some(a => a.név === t.név) || !isTaktikaAllowed(t.név, session, karakter, data));
@@ -125,7 +89,12 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
 
       {showPicker && (
         <PickerOverlay title={fokválasztó ? `${fokválasztó} — fok választó` : 'Taktika választó'} onClose={() => { setShowPicker(false); setFokválasztó(null); }}>
-          {fokválasztó ? renderFokPicker() : renderTaktikaList()}
+          {fokválasztó
+            ? <TaktikaFokPicker fokválasztó={fokválasztó} data={data} karakter={karakter} session={session} onSelect={handleFokSelect} />
+            : <TaktikaPickerList data={data} karakter={karakter} session={session}
+                onAddSimple={név => { addTaktika(név); setShowPicker(false); }}
+                onFokválasztó={setFokválasztó} />
+          }
         </PickerOverlay>
       )}
     </>

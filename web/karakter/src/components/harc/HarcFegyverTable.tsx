@@ -2,6 +2,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult } from './types';
 import { lookupFegyver } from '../../engine/utils';
+import { computeTÉ, computeVÉ } from './shared';
 
 interface HarcFegyverTableProps {
   karakter: Karakter;
@@ -18,16 +19,6 @@ interface HarcFegyverTableProps {
   belharciAktív: boolean;
   véFlash: '' | 'down' | 'up';
   onTámInfoClick: (info: { név: string; sebesség: number; harckeret: number }) => void;
-}
-
-/** Közös TÉ kalkuláció (alap + levonás + taktika + fogás + többtám). */
-function computeTÉ(baseTÉ: number, téLevonás: number, taktikaTÉ: number, fogásTÉ: number, támadások: number, többTámTÉ: number): number {
-  return baseTÉ + téLevonás + taktikaTÉ + fogásTÉ + (támadások > 1 ? többTámTÉ : 0);
-}
-
-/** Közös VÉ kalkuláció (alap + bónusz + taktika - csökkenés, min 0). */
-function computeVÉ(baseVÉ: number, bónusz: number, taktikaVÉ: number, csökkenés: number): number {
-  return Math.max(0, baseVÉ + bónusz + taktikaVÉ - csökkenés);
 }
 
 export function HarcFegyverTable({
