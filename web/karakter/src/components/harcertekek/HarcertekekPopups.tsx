@@ -46,8 +46,8 @@ export function Popups({
         <PopupOverlay onClose={() => onClose('ideaTarget')}>
           <label>Idea érték</label>
           <IdeaGrid
-            min={ideaTarget.type === 'fegyver' ? -5 : -4}
-            max={ideaTarget.type === 'fegyver' ? 5 : 4}
+            minIdea={ideaTarget.type === 'fegyver' ? -5 : -4}
+            maxIdea={ideaTarget.type === 'fegyver' ? 5 : 4}
             current={ideaTarget.type === 'fegyver' ? k.fegyverek[ideaTarget.idx]?.idea ?? 0 : k.páncél.idea}
             onSelect={n => {
               if (ideaTarget.type === 'fegyver') updateFegyver(ideaTarget.idx, { idea: n });

@@ -31,14 +31,14 @@ export function ColumnPicker<T extends string>({ options, current, onSelect, wid
 }
 
 /** Idea grid — 3-row grid (negatives / zero / positives) */
-export function IdeaGrid({ min, max, current, onSelect }: {
-  min: number;
-  max: number;
+export function IdeaGrid({ minIdea, maxIdea, current, onSelect }: {
+  minIdea: number;
+  maxIdea: number;
   current: number;
   onSelect: (v: number) => void;
 }) {
-  const negatives = Array.from({ length: -min }, (_, i) => min + i);
-  const positives = Array.from({ length: max }, (_, i) => i + 1);
+  const negatives = Array.from({ length: -minIdea }, (_, i) => minIdea + i);
+  const positives = Array.from({ length: maxIdea }, (_, i) => i + 1);
   const btn = (n: number) => (
     <button key={n} className={`fort-fok-btn he-idea-cell${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>
       {n > 0 ? `+${n}` : n}

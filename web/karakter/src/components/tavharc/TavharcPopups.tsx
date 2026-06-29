@@ -82,7 +82,7 @@ export function TavharcPopups({ karakter, setKarakter, popup, closePopup, idea, 
 
       {popup.távolságPopup && (
         <PopupOverlay onClose={() => closePopup('távolságPopup')}>
-          <TávolságPicker value={távolság} osztó={osztó} onChange={setTávolság} />
+          <TávolságPicker távolság={távolság} osztó={osztó} onChange={setTávolság} />
         </PopupOverlay>
       )}
     </>

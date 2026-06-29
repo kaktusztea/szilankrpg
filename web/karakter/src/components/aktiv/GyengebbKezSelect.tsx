@@ -87,7 +87,7 @@ function KétkezesBalSelect({ data, karakter, session, setSession, fegyverOpció
   return (
     <FegyverSelectField
       label="Gyengébb kéz"
-      value={validIdx}
+      selectedIdx={validIdx}
       options={filteredBal}
       onChange={idx => setSession(s => ({ ...s, aktív_fegyver_bal_index: idx }))}
     />

@@ -20,7 +20,7 @@ export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUnd
   return (
     <FegyverSelectField
       label="Ügyesebb kéz"
-      value={session.aktív_fegyver_index}
+      selectedIdx={session.aktív_fegyver_index}
       options={options}
       onChange={idx => {
         pushUndo(`Fegyver: ${fegyverOpciók.find(f => f.idx === idx)?.név ?? 'Puszta kéz'}`);
