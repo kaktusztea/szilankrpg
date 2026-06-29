@@ -65,9 +65,11 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     });
   }, [sebCount, hc.oszlopMéret]);
 
-  // TÉ levonás az aktuális sérülés alapján
+  // TÉ levonás az aktuális sérülés alapján (Fájdalomtűrés enyhítéssel)
   const aktKat = sebCount === 0 ? 0 : Math.min(3, Math.ceil(sebCount / hc.oszlopMéret) - 1);
-  const téLevonás = hc.téLevonások[aktKat];
+  const ftEnyhítés = calcFtEnyhítés(karakter.képzettségek, data.konstansok.fájdalomtűrés_enyhítés);
+  const rawTéLevonás = hc.téLevonások[aktKat];
+  const téLevonás = rawTéLevonás === 0 ? 0 : Math.min(0, rawTéLevonás + ftEnyhítés);
 
   const handleSebzésekChange = useCallback((sebzések: SebzésRubrika[]) => {
     setSession(prev => ({ ...prev, sebzések }));
