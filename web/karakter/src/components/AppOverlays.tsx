@@ -1,8 +1,8 @@
 import type { Karakter, Session } from '../engine/types';
-import { DEFAULT_SESSION } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
-import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { validateKarakterData } from '../engine/validate';
+import { generateUid, generateIdLeíró } from '../engine/file-ops';
+import { DEFAULT_SESSION } from '../engine/types';
 import {
   MenuOverlay, SzilankPickerOverlay, NewCharConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveOverlay, SaveFileOverlay,
@@ -45,6 +45,7 @@ interface Props {
   loadKarakter: () => void;
   shareSlotUrl: (uid: string) => void;
   importKarakter: (k: Karakter, overwriteUid: string | false) => void;
+  deleteSlot: (uid: string) => void;
   setUndoStack: React.Dispatch<React.SetStateAction<any[]>>;
   setTestMode: (v: boolean) => void;
   setIsDirty: (v: boolean) => void;
@@ -53,7 +54,7 @@ interface Props {
 export function AppOverlays({
   state: s, setState: set, data, karakter, session, setSession,
   setKarakter, undoStack, undoTo, duplicateKarakter, handleGenerateSave,
-  shareFile, downloadFile, loadKarakter, shareSlotUrl, importKarakter,
+  shareFile, downloadFile, loadKarakter, shareSlotUrl, importKarakter, deleteSlot,
   setUndoStack, setTestMode, setIsDirty,
 }: Props) {
 
@@ -62,21 +63,7 @@ export function AppOverlays({
 
   // --- Slot delete handler ---
   const handleSlotDelete = () => {
-    const uid = s.slotDeleteTarget!.uid;
-    localStorage.removeItem(`szilank_char_${uid}`);
-    let sl: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
-    try { sl = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
-    sl = sl.filter(x => x.uid !== uid);
-    localStorage.setItem('szilank_slots', JSON.stringify(sl));
-    if (karakter?.uid === uid) {
-      if (sl.length > 0) {
-        const next = localStorage.getItem(`szilank_char_${sl[0].uid}`);
-        if (next) { const p = JSON.parse(next); setKarakter({ ...p, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack((p as any)._undo || []); }
-      } else {
-        setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
-        setUndoStack([]);
-      }
-    }
+    deleteSlot(s.slotDeleteTarget!.uid);
     set('slotDeleteTarget', null);
   };
 

@@ -1,7 +1,8 @@
 import { useCallback } from 'react';
 import type { Karakter, Session } from '../engine/types';
+import { DEFAULT_SESSION } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
-import { generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, loadKarakterFromFile } from '../engine/file-ops';
+import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, loadKarakterFromFile } from '../engine/file-ops';
 import { encodeKarakterUrl } from '../engine/url-share';
 import type { OverlayState } from '../components/AppOverlays';
 
@@ -61,6 +62,23 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     setOverlay('showSavePopup', false);
   }
 
+  function deleteSlot(uid: string) {
+    localStorage.removeItem(`szilank_char_${uid}`);
+    let sl: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
+    try { sl = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+    sl = sl.filter(x => x.uid !== uid);
+    localStorage.setItem('szilank_slots', JSON.stringify(sl));
+    if (karakter?.uid === uid) {
+      if (sl.length > 0) {
+        const next = localStorage.getItem(`szilank_char_${sl[0].uid}`);
+        if (next) { const p = JSON.parse(next); setKarakter({ ...p, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack((p as any)._undo || []); }
+      } else if (data) {
+        setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
+        setUndoStack([]);
+      }
+    }
+  }
+
   async function loadKarakter() {
     if (!data) return;
     const result = await loadKarakterFromFile(data);
@@ -71,5 +89,5 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     setIsDirty(true);
   }
 
-  return { importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter };
+  return { importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter, deleteSlot };
 }

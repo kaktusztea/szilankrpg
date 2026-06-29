@@ -1,4 +1,5 @@
 import type { Karakter } from '../../engine/types';
+import type { GameData } from '../../engine/data-loader';
 
 /** Mesterfegyver fok keresés fegyver név/alap alapján (case-insensitive). */
 export function findMfFok(karakter: Karakter, fegyverNév: string, fegyverAlap: string): number {
@@ -12,6 +13,23 @@ export function findMfFok(karakter: Karakter, fegyverNév: string, fegyverAlap: 
 /** MF bónusz lookup fokszám alapján. */
 export function getMfBónusz(konstansok: { mesterfegyver_bónuszok: { fok: number; TÉ: number; VÉ: number; SP: number }[] }, fok: number): { TÉ: number; VÉ: number; SP: number } {
   return konstansok.mesterfegyver_bónuszok.find(b => b.fok === fok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
+}
+
+/** SP override keresés fortélyokból (pl. Természetes fegyver → puszta kéz SP). */
+export function calcSpOverride(fegyverNév: string, karakter: Karakter, data: GameData): number | null {
+  for (const kf of karakter.fortélyok) {
+    const def = data.fortelySummaries.find(d => d.név === kf.név);
+    if (!def) continue;
+    const fokDef = def.fokok.find((fd: any) => fd.fok === kf.fok);
+    if (!fokDef?.módosítók) continue;
+    for (const mod of fokDef.módosítók) {
+      if (mod.mód !== 'override' || mod.cél !== 'SP') continue;
+      if (typeof mod.feltétel === 'string' && mod.feltétel.startsWith('fegyver:')) {
+        if (fegyverNév.toLowerCase() === mod.feltétel.slice('fegyver:'.length).toLowerCase()) return mod.érték;
+      }
+    }
+  }
+  return null;
 }
 
 /** Nagyobb/kisebb fegyver meghatározása pengehossz szerint. */

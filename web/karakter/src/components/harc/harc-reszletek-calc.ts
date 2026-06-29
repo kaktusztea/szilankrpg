@@ -2,7 +2,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult } from './types';
 import { lookupFegyver } from '../../engine/utils';
-import { findMfFok, getMfBónusz } from './shared';
+import { findMfFok, getMfBónusz, resolveNagyobbKisebb } from './shared';
 
 export interface KétkezesBontás {
   nagyobb: { név: string; TÉ: number; VÉ: number; mfTÉ: number; mfVÉ: number; mfSP: number };
@@ -54,28 +54,22 @@ function calcKétkezesMf(
 
   if (mfMode === 'nincs') return { ...MF_ZERO, nagyobb: MF_ZERO, kisebb: MF_ZERO };
 
-  // Pengehossz szerinti sorrend (nagyobb penge = "nagyobb")
   const jobbFp = k.fegyverek[session.aktív_fegyver_index];
   const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
   const jobbDef = jobbFp ? lookupFegyver(data.fegyverek, jobbFp.alap) : null;
   const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
-  const jobbPenge = jobbDef ? (parseFloat(jobbDef.Pengehossz) || 0) : 0;
-  const balPenge = balDef ? (parseFloat(balDef.Pengehossz) || 0) : 0;
+  if (!jobbDef || !balDef) return { ...MF_ZERO, nagyobb: MF_ZERO, kisebb: MF_ZERO };
 
-  const nagyobbDef = jobbPenge >= balPenge ? jobbDef : balDef;
-  const nagyobbFp = jobbPenge >= balPenge ? jobbFp : balFp;
-  const kisebbDef = jobbPenge >= balPenge ? balDef : jobbDef;
-  const kisebbFp = jobbPenge >= balPenge ? balFp : jobbFp;
+  const { nagyobb: nagyobbDef, kisebb: kisebbDef, nagyobbFp, kisebbFp } = resolveNagyobbKisebb(jobbDef, balDef, jobbFp, balFp);
 
-  const nagyobbNév = nagyobbDef?.Alapnév || nagyobbDef?.Fegyver || '';
-  const nagyobbMfFok = nagyobbFp ? findMfFok(k, nagyobbNév, nagyobbFp.alap) : 0;
+  const nagyobbNév = nagyobbDef.Alapnév || nagyobbDef.Fegyver || '';
+  const nagyobbMfFok = findMfFok(k, nagyobbNév, nagyobbFp.alap);
   const mfN = getMfBónusz(konstansok, nagyobbMfFok);
 
   if (mfMode !== 'mindkettő') return { ...mfN, nagyobb: mfN, kisebb: MF_ZERO };
 
-  // "mindkettő": nagyobb + kisebb MF összege
-  const kisebbNév = kisebbDef?.Alapnév || kisebbDef?.Fegyver || '';
-  const kisebbMfFok = kisebbFp ? findMfFok(k, kisebbNév, kisebbFp.alap) : 0;
+  const kisebbNév = kisebbDef.Alapnév || kisebbDef.Fegyver || '';
+  const kisebbMfFok = findMfFok(k, kisebbNév, kisebbFp.alap);
   const mfK = getMfBónusz(konstansok, kisebbMfFok);
   return { TÉ: mfN.TÉ + mfK.TÉ, VÉ: mfN.VÉ + mfK.VÉ, SP: mfN.SP + mfK.SP, nagyobb: mfN, kisebb: mfK };
 }
@@ -132,32 +126,31 @@ export function calcReszletekData(
   // Kétkezes bontás adatok
   let kétkezesBontás: KétkezesBontás | null = null;
   if (kétkezesResult) {
-    const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    const balFp = k.fegyverek[session.aktív_fegyver_bal_index];
-    const jobbDef = jobbFp ? lookupFegyver(data.fegyverek, jobbFp.alap) : null;
-    const balDef = balFp ? lookupFegyver(data.fegyverek, balFp.alap) : null;
-    const jobbPenge = jobbDef ? (parseFloat(jobbDef.Pengehossz) || 0) : 0;
-    const balPenge = balDef ? (parseFloat(balDef.Pengehossz) || 0) : 0;
-    const nagyobbDef = jobbPenge >= balPenge ? jobbDef : balDef;
-    const kisebbDef = jobbPenge >= balPenge ? balDef : jobbDef;
-    kétkezesBontás = {
-      nagyobb: {
-        név: nagyobbDef?.Alapnév || nagyobbDef?.Fegyver || '',
-        TÉ: parseInt(nagyobbDef?.TÉ ?? '0') || 0,
-        VÉ: parseInt(nagyobbDef?.VÉ ?? '0') || 0,
-        mfTÉ: mfResult?.nagyobb.TÉ ?? 0,
-        mfVÉ: mfResult?.nagyobb.VÉ ?? 0,
-        mfSP: mfResult?.nagyobb.SP ?? 0,
-      },
-      kisebb: {
-        név: kisebbDef?.Alapnév || kisebbDef?.Fegyver || '',
-        TÉ: parseInt(kisebbDef?.TÉ ?? '0') || 0,
-        VÉ: parseInt(kisebbDef?.VÉ ?? '0') || 0,
-        mfTÉ: mfResult?.kisebb.TÉ ?? 0,
-        mfVÉ: mfResult?.kisebb.VÉ ?? 0,
-        mfSP: mfResult?.kisebb.SP ?? 0,
-      },
-    };
+    const jobbFp2 = k.fegyverek[session.aktív_fegyver_index];
+    const balFp2 = k.fegyverek[session.aktív_fegyver_bal_index];
+    const jobbDef2 = jobbFp2 ? lookupFegyver(data.fegyverek, jobbFp2.alap) : null;
+    const balDef2 = balFp2 ? lookupFegyver(data.fegyverek, balFp2.alap) : null;
+    if (jobbDef2 && balDef2) {
+      const { nagyobb: nDef, kisebb: kDef } = resolveNagyobbKisebb(jobbDef2, balDef2, jobbFp2, balFp2);
+      kétkezesBontás = {
+        nagyobb: {
+          név: nDef.Alapnév || nDef.Fegyver || '',
+          TÉ: parseInt(nDef.TÉ ?? '0') || 0,
+          VÉ: parseInt(nDef.VÉ ?? '0') || 0,
+          mfTÉ: mfResult?.nagyobb.TÉ ?? 0,
+          mfVÉ: mfResult?.nagyobb.VÉ ?? 0,
+          mfSP: mfResult?.nagyobb.SP ?? 0,
+        },
+        kisebb: {
+          név: kDef.Alapnév || kDef.Fegyver || '',
+          TÉ: parseInt(kDef.TÉ ?? '0') || 0,
+          VÉ: parseInt(kDef.VÉ ?? '0') || 0,
+          mfTÉ: mfResult?.kisebb.TÉ ?? 0,
+          mfVÉ: mfResult?.kisebb.VÉ ?? 0,
+          mfSP: mfResult?.kisebb.SP ?? 0,
+        },
+      };
+    }
   }
 
   // Erőbónusz

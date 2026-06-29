@@ -35,7 +35,7 @@ function App() {
   useGameModeTabSync(gameMode, activeTab, setActiveTab);
   useTaktikaInvalidation(karakter, data, setKarakter);
 
-  const { importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter } = useKarakterActions({
+  const { importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter, deleteSlot } = useKarakterActions({
     data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay,
   });
 
@@ -98,7 +98,7 @@ function App() {
         handleGenerateSave={handleGenerateSave}
         shareFile={shareFile} downloadFile={downloadFile}
         loadKarakter={loadKarakter} shareSlotUrl={shareSlotUrl}
-        importKarakter={importKarakter}
+        importKarakter={importKarakter} deleteSlot={deleteSlot}
         setUndoStack={setUndoStack} setTestMode={setTestMode} setIsDirty={setIsDirty}
       />
     </div>

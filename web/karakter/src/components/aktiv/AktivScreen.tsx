@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { AktivBaseProps } from './types';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { calcHatásPool } from './HatasPoolCalc';
 import { AktivFegyverSection } from './AktivFegyverSection';
 import { AktivHatasPool } from './AktivHatasPool';
@@ -13,13 +14,7 @@ import './AktivScreen.css';
 
 export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
-
-  useEffect(() => {
-    if (!showFegyverfogás) return;
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') setShowFegyverfogás(false); };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [showFegyverfogás]);
+  useEscapeClose(showFegyverfogás, () => setShowFegyverfogás(false));
 
   const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév } = calcHatásPool(data, karakter, session);
 

@@ -1,6 +1,7 @@
-import { useState, useRef, useEffect, useMemo } from 'react';
+import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
 import type { FortelySummary } from '../../engine/data-loader';
 import type { FortelyokScreenProps, DeleteTarget, SzabadTypePicker } from './types';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { buildDefsByGroup, displayName, getFortelyokForCsoport } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
 import { DeletePopup, FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
@@ -27,13 +28,9 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
 
   useEffect(() => { setInfoTarget(null); }, [gameMode]);
 
-  useEffect(() => {
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') { setMultiPickerDef(null); setDeleteTarget(null); setPendingFortIdx(null); setSzabadTypePicker(null); }
-    }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, []);
+  const hasAnyPopup = !!multiPickerDef || !!deleteTarget || pendingFortIdx !== null || !!szabadTypePicker;
+  const closeAllPopups = useCallback(() => { setMultiPickerDef(null); setDeleteTarget(null); setPendingFortIdx(null); setSzabadTypePicker(null); }, []);
+  useEscapeClose(hasAnyPopup, closeAllPopups);
 
   function showHint(msg: string, duration = 2000) {
     setHint(msg);

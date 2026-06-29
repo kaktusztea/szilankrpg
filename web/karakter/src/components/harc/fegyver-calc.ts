@@ -1,8 +1,9 @@
-import type { Karakter, Session } from '../../engine/types';
+import type { Karakter, Session, FegyverAlap } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { evaluate, buildContext, filterFegyverRules, type Rule } from '../../engine/reactive';
 import { lookupFegyver } from '../../engine/utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
+import { calcSpOverride } from './shared';
 import type { FegyverResult } from './types';
 
 /** Cached filtered fegyver rules (populated on first call). */
@@ -13,8 +14,8 @@ function getFegyverRules(allRules: Rule[]): Rule[] {
 }
 
 /** Fegyver sorok felépítése (karakter fegyverek + puszta kéz + MK párok + pajzs) */
-export function buildFegyverRows(k: Karakter, data: GameData, pajzsFegyverNév: string | null) {
-  const rows: { név: string; fDef: any; mfFok: number }[] = [];
+export function buildFegyverRows(k: Karakter, data: GameData, pajzsFegyverNév: string | null): { név: string; fDef: FegyverAlap; mfFok: number }[] {
+  const rows: { név: string; fDef: FegyverAlap; mfFok: number }[] = [];
   const pusztaKez = lookupFegyver(data.fegyverek, 'puszta kéz');
   if (pusztaKez) rows.push({ név: pusztaKez.Fegyver, fDef: pusztaKez, mfFok: 0 });
   for (const fp of k.fegyverek) {
@@ -37,7 +38,7 @@ export function buildFegyverRows(k: Karakter, data: GameData, pajzsFegyverNév: 
 
 /** Fegyver harcértékek kiszámítása reactive engine-nel (optimalizált: base ctx egyszer, 5 rule per fegyver) */
 export function calcFegyverResults(
-  fegyverRows: { fDef: any; mfFok: number }[],
+  fegyverRows: { fDef: FegyverAlap; mfFok: number }[],
   k: Karakter, data: GameData,
   fortelyMods: Record<string, number>,
   merevvértFok: number,
@@ -79,18 +80,8 @@ export function calcFegyverResults(
     const mf = konstansok.mesterfegyver_bónuszok.find((b: any) => b.fok === mfFok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
 
     let alapSP = parseInt(fDef.SP) || 0;
-    for (const kf of k.fortélyok) {
-      const fDef2 = data.fortelySummaries.find(d => d.név === kf.név);
-      if (!fDef2) continue;
-      const fokDef2 = fDef2.fokok.find((fd: any) => fd.fok === kf.fok);
-      if (!fokDef2?.módosítók) continue;
-      for (const mod of fokDef2.módosítók) {
-        if (mod.mód !== 'override' || mod.cél !== 'SP') continue;
-        if (typeof mod.feltétel === 'string' && mod.feltétel.startsWith('fegyver:')) {
-          if (fDef.Fegyver.toLowerCase() === mod.feltétel.slice('fegyver:'.length).toLowerCase()) alapSP = mod.érték;
-        }
-      }
-    }
+    const spOvr = calcSpOverride(fDef.Fegyver, k, data);
+    if (spOvr !== null) alapSP = spOvr;
 
     // Per-weapon context: clone base + add weapon-specific values
     const fCtx = new Map(baseCtx);

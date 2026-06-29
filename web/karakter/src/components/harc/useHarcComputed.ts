@@ -4,11 +4,11 @@ import type { HarcComputed } from './types';
 import { evaluate, buildContext } from '../../engine/reactive';
 import { lookupFegyver } from '../../engine/utils';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
-import {
-  calcTaktikaMods, buildPancelLookups, calcFortelyMods,
-  buildFegyverRows, calcFegyverResults, applyFegyverOverrides,
-  calcKétkezes, calcFogás,
-} from './HarcCalc';
+import { createFeltételEvaluator } from '../../engine/feltetel-eval';
+import { calcTaktikaMods } from './taktika-calc';
+import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
+import { buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes as calcKétkezes } from './fegyver-calc';
+import { calcFortelyMods } from '../../engine/fortely-mods';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;
@@ -63,39 +63,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   });
   const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
 
-  // Feltétel kiértékelő
-  function getFeltételÉrték(forrás: string): number | boolean | string | undefined {
-    if (aktívFeltételek.has(forrás)) return true;
-    if (forrás in session) return (session as unknown as Record<string, unknown>)[forrás] as number | boolean;
-    if (computed.has(forrás)) return computed.get(forrás)!;
-    if (ctx.has(forrás)) return ctx.get(forrás)!;
-    if (stringCtx.has(forrás)) return stringCtx.get(forrás)!;
-    if (forrás.includes(':')) return false;
-    return undefined;
-  }
-
-  function feltételTeljesül(feltétel: unknown): boolean {
-    if (!feltétel || feltétel === '') return true;
-    if (typeof feltétel === 'string') return aktívFeltételek.has(feltétel);
-    if (Array.isArray(feltétel)) {
-      return feltétel.every((pred: { forrás: string; operátor: string; érték: unknown }) => {
-        const val = getFeltételÉrték(pred.forrás);
-        if (val === undefined) return false;
-        const normVal = typeof val === 'boolean' ? (val ? 1 : 0) : val;
-        const normExp = typeof pred.érték === 'boolean' ? (pred.érték ? 1 : 0) : pred.érték;
-        switch (pred.operátor) {
-          case '==': return normVal === normExp;
-          case '!=': return normVal !== normExp;
-          case '>=': return (normVal as number) >= (normExp as number);
-          case '<=': return (normVal as number) <= (normExp as number);
-          case '>': return (normVal as number) > (normExp as number);
-          case '<': return (normVal as number) < (normExp as number);
-          default: return false;
-        }
-      });
-    }
-    return false;
-  }
+  const { feltételTeljesül } = createFeltételEvaluator(aktívFeltételek, session, computed, ctx, stringCtx);
 
   const fortelyMods = calcFortelyMods(k, session, data, aktívFeltételek, feltételTeljesül);
 

@@ -1,5 +1,6 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useCallback } from 'react';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ } from './helpers';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
 import { TavharcGameSelector } from './TavharcGameSelector';
@@ -74,15 +75,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   }, []);
 
   // --- Escape ---
-  useEffect(() => {
-    const anyOpen = popup.mfTarget !== null || popup.deleteTarget !== null || popup.ideaPopup || popup.távolságPopup;
-    if (!anyOpen) return;
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setPopup({ mfTarget: null, deleteTarget: null, ideaPopup: false, távolságPopup: false });
-    }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [popup]);
+  const anyPopupOpen = popup.mfTarget !== null || popup.deleteTarget !== null || popup.ideaPopup || popup.távolságPopup;
+  useEscapeClose(anyPopupOpen, () => setPopup({ mfTarget: null, deleteTarget: null, ideaPopup: false, távolságPopup: false }));
 
   return (
     <div className="screen tavharc-screen">

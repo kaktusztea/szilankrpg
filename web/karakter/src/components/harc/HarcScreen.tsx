@@ -2,12 +2,13 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { HarcBaseProps } from './types';
 import type { SebzésRubrika } from '../../engine/types';
 import { useHarcComputed } from './useHarcComputed';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { HarcHeader } from './HarcHeader';
 import { HarcFegyverTable } from './HarcFegyverTable';
 import { HarcPopups } from './HarcPopups';
 import { EpTable } from './EpTable';
 import { HarcReszletek } from './HarcReszletek';
-import { calcFtEnyhítés } from './HarcCalc';
+import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import './HarcScreen.css';
 
 export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: HarcBaseProps) {
@@ -40,14 +41,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   // Escape handler for all popups
   const hasPopup = showVéResetConfirm || showVéHistory || !!támInfo;
-  useEffect(() => {
-    if (!hasPopup) return;
-    const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') closePopups();
-    };
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [hasPopup]);
+  useEscapeClose(hasPopup, closePopups);
 
   function closePopups() {
     setShowVéResetConfirm(false);
