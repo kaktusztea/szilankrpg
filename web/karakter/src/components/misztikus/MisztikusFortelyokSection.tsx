@@ -1,7 +1,8 @@
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import { FortelyInfoPanel } from '../fortelyok/FortelyInfoPanel';
-import { MAX_FORTÉLY_FOK } from '../ui-constants';
+import { MAX_FORTÉLY_FOK, MAX_AZONOS_FORTÉLY } from '../../ui-constants';
+import { isFreeTextPicker, RUNTIME_PICKER_TYPES } from '../SpecPicker';
 
 interface Props {
   misztFortDefs: FortelySummary[];
@@ -22,7 +23,9 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
     .sort((a, b) => a.név.localeCompare(b.név, 'hu'));
 
   const felvehető = misztFortDefs.filter(d => {
-    if (!d.többszörös_típus) return !misztFortSlotok.some(s => s.név === d.név);
+    const count = misztFortSlotok.filter(s => s.név === d.név).length;
+    if (!d.többszörös_típus) return count === 0;
+    if (isFreeTextPicker(d, RUNTIME_PICKER_TYPES) && count >= MAX_AZONOS_FORTÉLY) return false;
     if (d.többszörös_lista.length > 0) return d.többszörös_lista.some(l => !misztFortSlotok.some(s => s.név === d.név && s.spec_elem === l));
     return true;
   });

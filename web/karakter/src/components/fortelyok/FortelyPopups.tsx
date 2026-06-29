@@ -1,9 +1,9 @@
-import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { FortelySummary, NyelvEntry } from '../../engine/data-loader';
 import type { Fortely } from '../../engine/types';
 import type { DeleteTarget, SzabadTypePicker } from './types';
 import { displayName } from './helpers';
+import { SpecPicker, buildFortelyPickerSource } from '../SpecPicker';
 
 // --- Delete confirmation ---
 export function DeletePopup({ target, onConfirm, onCancel }: {
@@ -60,87 +60,9 @@ export function MultiPicker({ def, fortélyok, fegyverNevek, nyelvek, onSelect, 
   onSelect: (subName: string) => void;
   onCancel: () => void;
 }) {
-  const [freetextValue, setFreetextValue] = useState('');
   const usedSubs = new Set(fortélyok.filter(f => f.név === def.név).map(f => f.spec_elem));
-
-  if (def.többszörös_lista.length > 0) {
-    const availSubs = def.többszörös_lista.filter(s => !usedSubs.has(s));
-    return createPortal(
-      <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) onCancel(); }}>
-        <div className="kep-prompt">
-          <label>{def.név} — {def.többszörös_típus}:</label>
-          <select className="fort-select" autoFocus value="" onChange={e => { if (e.target.value) onSelect(e.target.value); }}>
-            <option value="">Válassz...</option>
-            {availSubs.map(k => <option key={k} value={k}>{k}</option>)}
-          </select>
-          <div className="kep-prompt-btns"><button onClick={onCancel}>Mégse</button></div>
-        </div>
-      </div>,
-      document.body
-    );
-  }
-
-  if (def.többszörös_típus === 'fegyver') {
-    const availFegyverek = fegyverNevek.filter(n => !usedSubs.has(n));
-    return createPortal(
-      <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) onCancel(); }}>
-        <div className="kep-prompt">
-          <label>{def.név} — fegyver:</label>
-          <select className="fort-select" autoFocus value="" onChange={e => { if (e.target.value) onSelect(e.target.value); }}>
-            <option value="">Válassz fegyvert...</option>
-            {availFegyverek.map(k => <option key={k} value={k}>{k}</option>)}
-          </select>
-          <div className="kep-prompt-btns"><button onClick={onCancel}>Mégse</button></div>
-        </div>
-      </div>,
-      document.body
-    );
-  }
-
-  if (def.többszörös_típus === 'nyelv') {
-    const availNyelvek = nyelvek.filter(n => !usedSubs.has(n.név));
-    const byGroup = new Map<string, NyelvEntry[]>();
-    for (const n of availNyelvek) {
-      const arr = byGroup.get(n.csoport) || [];
-      arr.push(n);
-      byGroup.set(n.csoport, arr);
-    }
-    return createPortal(
-      <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) onCancel(); }}>
-        <div className="kep-prompt nyelv-picker">
-          {[...byGroup.entries()].map(([group, langs]) => (
-            <div key={group} className="nyelv-csoport">
-              <div className="nyelv-csoport-label">{group}</div>
-              {langs.map(l => (
-                <button key={l.név} className="nyelv-btn" onClick={() => onSelect(l.név)}>{l.név}</button>
-              ))}
-            </div>
-          ))}
-        </div>
-      </div>,
-      document.body
-    );
-  }
-
-  // Freetext
-  return createPortal(
-    <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) onCancel(); }}>
-      <div className="kep-prompt">
-        <label>{def.név} — {def.többszörös_típus}:</label>
-        <input
-          autoFocus maxLength={20}
-          value={freetextValue}
-          onChange={e => setFreetextValue(e.target.value)}
-          onKeyDown={e => { if (e.key === 'Enter' && freetextValue.trim()) onSelect(freetextValue.trim()); if (e.key === 'Escape') onCancel(); }}
-        />
-        <div className="kep-prompt-btns">
-          <button onClick={() => { if (freetextValue.trim()) onSelect(freetextValue.trim()); }} disabled={!freetextValue.trim()}>OK</button>
-          <button onClick={onCancel}>Mégse</button>
-        </div>
-      </div>
-    </div>,
-    document.body
-  );
+  const source = buildFortelyPickerSource(def, usedSubs, { fegyverNevek, nyelvek });
+  return <SpecPicker source={source} onSelect={onSelect} onCancel={onCancel} />;
 }
 
 // --- Szabad type picker (Felvett / Kiérdemelt) ---

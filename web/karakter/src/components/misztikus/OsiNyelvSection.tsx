@@ -1,5 +1,6 @@
 import type { SectionContext } from './types';
 import { SectionRow } from './SectionRow';
+import { MAX_AZONOS_KÉPZETTSÉG } from '../../ui-constants';
 
 interface Props {
   ctx: SectionContext;
@@ -7,10 +8,12 @@ interface Props {
   onEdit: (név: string) => void;
   onDelete: (név: string) => void;
   onAdd: () => void;
+  onHint: (msg: string) => void;
 }
 
-export function ŐsiNyelvSection({ ctx, ősiNyelvek, onEdit, onDelete, onAdd }: Props) {
+export function ŐsiNyelvSection({ ctx, ősiNyelvek, onEdit, onDelete, onAdd, onHint }: Props) {
   if (ctx.gameMode && ősiNyelvek.length === 0) return null;
+  const maxed = ősiNyelvek.length >= MAX_AZONOS_KÉPZETTSÉG;
 
   return (
     <section className="miszt-section">
@@ -20,7 +23,10 @@ export function ŐsiNyelvSection({ ctx, ősiNyelvek, onEdit, onDelete, onAdd }: 
           onEdit={() => onEdit(k.név)} onDelete={() => onDelete(k.név)} />
       ))}
       {!ctx.gameMode && (
-        <button className="he-add-select" onClick={onAdd}>+ Ősi nyelv ismerete...</button>
+        <button className={`he-add-select${maxed ? ' he-add-disabled' : ''}`}
+          onClick={() => maxed ? onHint(`Ebből a képzettségből max ${MAX_AZONOS_KÉPZETTSÉG} darab vehető fel!`) : onAdd()}>
+          + Ősi nyelv ismerete...
+        </button>
       )}
     </section>
   );

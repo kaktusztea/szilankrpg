@@ -101,6 +101,7 @@
   font-size: 16px;
   text-align: left;
 }
+.he-add-disabled { opacity: 0.4; cursor: not-allowed; }
 
 /* --- Páncél mezők --- */
 .he-pancel-fields { display: flex; flex-direction: column; gap: 8px; font-size: 16px; }

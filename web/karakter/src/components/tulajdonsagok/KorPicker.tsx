@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { MAX_KOR } from '../../ui-constants';
 
 interface Props {
   kor: number;
@@ -17,7 +18,7 @@ export function KorPicker({ kor, onSelect }: Props) {
       if (!holdRef.current.active) return;
       const elapsed = Date.now() - startTime;
       const step = elapsed > 4000 ? 10 : 1;
-      setValue(v => Math.max(1, Math.min(2000, v + dir * step)));
+      setValue(v => Math.max(1, Math.min(MAX_KOR, v + dir * step)));
       delay = Math.max(30, delay * 0.82);
       holdRef.current.timer = setTimeout(tick, delay);
     }
@@ -42,7 +43,7 @@ export function KorPicker({ kor, onSelect }: Props) {
           onTouchStart={e => { e.preventDefault(); startHold(-1); }} onTouchEnd={stopHold}>−</button>
         <strong className="kor-picker-value">{value}</strong>
         <button className="fort-fok-btn kor-picker-btn"
-          onClick={() => setValue(v => Math.min(2000, v + 1))}
+          onClick={() => setValue(v => Math.min(MAX_KOR, v + 1))}
           onMouseDown={() => startHold(1)} onMouseUp={stopHold} onMouseLeave={stopHold}
           onTouchStart={e => { e.preventDefault(); startHold(1); }} onTouchEnd={stopHold}>+</button>
       </div>

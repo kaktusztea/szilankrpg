@@ -10,9 +10,10 @@ interface TagCloudProps {
   onToggle: (item: string, field: HátterField, többszörös: boolean) => void;
   onRemove: (entry: string, field: HátterField) => void;
   getMultiEntries: (baseNév: string, field: HátterField) => string[];
+  isMaxed?: (item: string) => boolean;
 }
 
-export function TagCloud({ items, aktív, field, többszörös, gameMode, colorClass = '', onToggle, onRemove, getMultiEntries }: TagCloudProps) {
+export function TagCloud({ items, aktív, field, többszörös, gameMode, colorClass = '', onToggle, onRemove, getMultiEntries, isMaxed }: TagCloudProps) {
   if (többszörös) {
     return (
       <div className="hatter-cloud">
@@ -27,7 +28,7 @@ export function TagCloud({ items, aktív, field, többszörös, gameMode, colorC
           ))
         )}
         {!gameMode && items.map(item => (
-          <span key={item} className={`hatter-tag ${colorClass} hatter-tag-multi`} onClick={() => onToggle(item, field, true)}>{item}</span>
+          <span key={item} className={`hatter-tag ${colorClass} hatter-tag-multi${isMaxed?.(item) ? ' hatter-tag-disabled' : ''}`} onClick={() => onToggle(item, field, true)}>{item}</span>
         ))}
       </div>
     );

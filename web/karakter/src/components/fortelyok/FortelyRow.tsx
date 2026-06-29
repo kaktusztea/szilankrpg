@@ -3,7 +3,7 @@ import { createPortal } from 'react-dom';
 import type { FortelyRowProps } from './types';
 import { displayName, checkKövetelmények } from './helpers';
 import { FortelyInfoPanel } from './FortelyInfoPanel';
-import { MAX_FORTÉLY_FOK } from '../ui-constants';
+import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
 export function FortelyRow({
   slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove,

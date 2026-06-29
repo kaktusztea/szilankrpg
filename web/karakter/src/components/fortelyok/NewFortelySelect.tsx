@@ -1,7 +1,9 @@
 import type { Fortely } from '../../engine/types';
+import { MAX_AZONOS_FORTÉLY } from '../../ui-constants';
+import { isFreeTextPicker, RUNTIME_PICKER_TYPES } from '../SpecPicker';
 
 interface Props {
-  available: { név: string; maxfok: number; kp_perfok: number; többszörös_típus: string; ingyenes_perszint: number }[];
+  available: { név: string; maxfok: number; kp_perfok: number; többszörös_típus: string; többszörös_lista: string[]; ingyenes_perszint: number }[];
   csoport: string;
   slotok: Fortely[];
   tsz: number;
@@ -62,11 +64,12 @@ function buildOptionLabel(
 }
 
 function isOptionDisabled(
-  d: { név: string; többszörös_típus: string },
+  d: { név: string; többszörös_típus: string; többszörös_lista: string[] },
   fortélyok: Fortely[],
   fegyverNevek: string[],
   nyelvtanulásSzint: number
 ): boolean {
+  if (isFreeTextPicker(d, RUNTIME_PICKER_TYPES) && fortélyok.filter(f => f.név === d.név).length >= MAX_AZONOS_FORTÉLY) return true;
   if (d.többszörös_típus === 'fegyver') {
     return fegyverNevek.length === 0 || fegyverNevek.every(n => fortélyok.some(f => f.név === d.név && f.spec_elem === n));
   }

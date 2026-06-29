@@ -5,6 +5,7 @@ import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { buildDefsByGroup, displayName, getFortelyokForCsoport } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
 import { DeletePopup, FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
+import { HINT_DURATION_MS } from '../../ui-constants';
 import './FortelyokScreen.css';
 
 export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz, fegyverNevek, távfegyverNevek, nyelvtanulásSzint, képzettségek }: FortelyokScreenProps) {
@@ -32,7 +33,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   const closeAllPopups = useCallback(() => { setMultiPickerDef(null); setDeleteTarget(null); setPendingFortIdx(null); setSzabadTypePicker(null); }, []);
   useEscapeClose(hasAnyPopup, closeAllPopups);
 
-  function showHint(msg: string, duration = 2000) {
+  function showHint(msg: string, duration = HINT_DURATION_MS) {
     setHint(msg);
     if (hintTimer.current) clearTimeout(hintTimer.current);
     hintTimer.current = setTimeout(() => setHint(''), duration);

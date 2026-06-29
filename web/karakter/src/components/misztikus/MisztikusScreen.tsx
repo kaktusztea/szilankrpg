@@ -11,6 +11,7 @@ import { FajMisztériumSection } from './FajMiszteriumSection';
 import { ŐsiNyelvSection } from './OsiNyelvSection';
 import { MisztikusFortélyokSection } from './MisztikusFortelyokSection';
 import { MisztikusPopups } from './MisztikusPopups';
+import { HINT_DURATION_MS } from '../../ui-constants';
 import './MisztikusScreen.css';
 
 export function MisztikusScreen({ data, karakter, képzettségek, setKépzettségek, fortélyok, setFortélyok, gameMode }: MisztikusScreenProps) {
@@ -87,7 +88,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   }
   function showHint(msg: string) {
     setHint(msg);
-    setTimeout(() => setHint(''), 2000);
+    setTimeout(() => setHint(''), HINT_DURATION_MS);
   }
 
   return (
@@ -108,7 +109,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
 
       <ŐsiNyelvSection ctx={sectionCtx} ősiNyelvek={ősiNyelvek}
         onEdit={actions.openSzint} onDelete={actions.openDelete}
-        onAdd={() => actions.openPrompt('Ősi nyelv ismerete')} />
+        onAdd={() => actions.openPrompt('Ősi nyelv ismerete')} onHint={showHint} />
 
       <MisztikusFortélyokSection
         misztFortDefs={misztFortDefs} fortélyok={fortélyok} gameMode={gameMode}

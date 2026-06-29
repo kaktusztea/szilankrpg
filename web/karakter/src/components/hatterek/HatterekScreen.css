@@ -28,6 +28,7 @@
 .hatter-tag.karma { color: #ccc; }
 .hatter-tag.karma.active { background: #3a2a2a; color: var(--color-section-orange); border-color: var(--color-section-orange); }
 .hatter-tag-multi { border: 1px dashed #666; cursor: pointer; }
+.hatter-tag-disabled { opacity: 0.4; cursor: not-allowed; }
 .hatter-multi-x { margin-left: 4px; font-size: 11px; opacity: 0.7; cursor: pointer; }
 .hatter-multi-x:hover { opacity: 1; color: var(--error); }
 

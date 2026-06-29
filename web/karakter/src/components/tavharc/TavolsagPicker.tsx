@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react';
 import { useHoldRepeat } from '../../hooks/useHoldRepeat';
+import { MAX_TÁVOLSÁG_MÉTER } from '../../ui-constants';
 
 export function TávolságPicker({ távolság, osztó, onChange }: {
   távolság: number; osztó: number; onChange: (v: number) => void;
@@ -8,7 +9,7 @@ export function TávolságPicker({ távolság, osztó, onChange }: {
   const cellaVal = Math.ceil(méter / osztó);
 
   const step = useCallback((dir: 1 | -1) => {
-    setMéter(v => { const nv = Math.max(1, Math.min(500, v + dir)); onChange(nv); return nv; });
+    setMéter(v => { const nv = Math.max(1, Math.min(MAX_TÁVOLSÁG_MÉTER, v + dir)); onChange(nv); return nv; });
   }, [onChange]);
 
   const { holdProps } = useHoldRepeat(step);

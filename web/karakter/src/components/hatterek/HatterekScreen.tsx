@@ -1,10 +1,11 @@
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import type { GameData } from '../../engine/data-types';
 import type { Karakter } from '../../engine/types';
 import type { HátterField } from './types';
 import { TagCloud } from './TagCloud';
 import { KarmaCloud } from './KarmaCloud';
 import { FreeTextPopup } from './FreeTextPopup';
+import { MAX_AZONOS_HÁTTÉR, HINT_DURATION_MS } from '../../ui-constants';
 import './HatterekScreen.css';
 
 interface Props {
@@ -23,6 +24,14 @@ function baseName(entry: string): string {
 
 export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode, onNavigate }: Props) {
   const [popup, setPopup] = useState<{ field: HátterField; elem: string } | null>(null);
+  const [hint, setHint] = useState('');
+  const hintTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function showHint(msg: string) {
+    setHint(msg);
+    if (hintTimer.current) clearTimeout(hintTimer.current);
+    hintTimer.current = setTimeout(() => setHint(''), HINT_DURATION_MS);
+  }
 
   function updateField(field: HátterField, updater: (arr: string[]) => string[], undoMsg: string) {
     pushUndo(undoMsg);
@@ -32,6 +41,10 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
   function handleToggle(item: string, field: HátterField, többszörös: boolean) {
     if (gameMode) return;
     if (többszörös) {
+      if (getMultiEntries(item, field).length >= MAX_AZONOS_HÁTTÉR) {
+        showHint(`Ebből a háttérből max ${MAX_AZONOS_HÁTTÉR} darab vehető fel!`);
+        return;
+      }
       setPopup({ field, elem: item });
       return;
     }
@@ -84,6 +97,7 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
               onToggle={handleToggle}
               onRemove={handleRemove}
               getMultiEntries={getMultiEntries}
+              isMaxed={item => getMultiEntries(item, 'leíró').length >= MAX_AZONOS_HÁTTÉR}
             />
           </div>
         ))}
@@ -99,6 +113,7 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
           onToggle={handleToggle}
           onRemove={handleRemove}
           getMultiEntries={getMultiEntries}
+          isMaxed={(item, field) => getMultiEntries(item, field).length >= MAX_AZONOS_HÁTTÉR}
         />
       </div>
 
@@ -109,6 +124,7 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
           onClose={() => setPopup(null)}
         />
       )}
+      {hint && <div className="fort-hint">{hint}</div>}
     </div>
   );
 }

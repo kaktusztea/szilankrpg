@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import type { Karakter } from '../engine/types';
 import type { UndoEntry } from './useKarakterState';
 import { generateIdLeíró } from '../engine/file-ops';
+import { MAX_SLOT } from '../ui-constants';
 
 /**
  * Persists karakter + undoStack to localStorage whenever they change.
@@ -34,7 +35,7 @@ export function useAutoSave(
       const existing = slots.findIndex(s => s.uid === karakter.uid);
       const entry = { uid: karakter.uid, id_leíró: karakter.id_leíró, név: karakter.név, tsz: karakter.tsz, mentés_dátum: new Date().toISOString() };
       if (existing >= 0) slots[existing] = entry; else slots.unshift(entry);
-      slots = slots.slice(0, 10);
+      slots = slots.slice(0, MAX_SLOT);
       localStorage.setItem('szilank_slots', JSON.stringify(slots));
     } catch { /* quota exceeded */ }
   }, [karakter, undoStack, isDirty, testMode]);

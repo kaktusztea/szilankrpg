@@ -2,10 +2,9 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { Karakter, Session } from '../engine/types';
 import { useGameDataLoader } from './useGameDataLoader';
 import { useAutoSave } from './useAutoSave';
+import { UNDO_MAX } from '../ui-constants';
 
 export interface UndoEntry { timestamp: number; leírás: string; session: Session; karakter: Karakter; }
-
-const UNDO_MAX = 6;
 
 function loadInitialUndo(): UndoEntry[] {
   try {
