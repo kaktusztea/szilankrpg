@@ -1,4 +1,4 @@
-import { Overlay } from '../Overlay';
+import { OverlayPortal } from '../../overlays/OverlayPortal';
 
 interface Props {
   target: string;
@@ -13,8 +13,8 @@ export function SzintPickerPopup({ target, currentSzint, onPick, onClose }: Prop
   const options = Array.from({ length: (minSzint === 0 ? 16 : 15) }, (_, i) => i + minSzint);
 
   return (
-    <Overlay onClose={onClose}>
-      <div className="kep-prompt">
+    <OverlayPortal dismissible onClose={onClose}>
+      <div className="kep-prompt" onClick={e => e.stopPropagation()}>
         <label>{displayName} — szint:</label>
         <div className="kep-szint-grid">
           {options.map(n => (
@@ -23,6 +23,6 @@ export function SzintPickerPopup({ target, currentSzint, onPick, onClose }: Prop
           ))}
         </div>
       </div>
-    </Overlay>
+    </OverlayPortal>
   );
 }

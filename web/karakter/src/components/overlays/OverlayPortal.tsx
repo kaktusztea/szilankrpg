@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { ReactNode } from 'react';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
 
 interface Props {
   children: ReactNode;
@@ -10,14 +10,7 @@ interface Props {
 }
 
 export function OverlayPortal({ children, dismissible, onClose }: Props) {
-  useEffect(() => {
-    if (!onClose) return;
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') { e.stopImmediatePropagation(); onClose!(); }
-    }
-    document.addEventListener('keydown', onKey, true);
-    return () => document.removeEventListener('keydown', onKey, true);
-  }, [onClose]);
+  useEscapeClose(!!onClose, onClose ?? (() => {}));
 
   const handleBackdrop = (e: React.MouseEvent<HTMLDivElement>) => {
     if (dismissible && onClose && (e.target as HTMLElement).classList.contains('kep-prompt-overlay')) {

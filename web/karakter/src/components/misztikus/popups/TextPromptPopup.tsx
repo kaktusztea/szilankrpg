@@ -1,4 +1,4 @@
-import { Overlay } from '../Overlay';
+import { OverlayPortal } from '../../overlays/OverlayPortal';
 
 interface Props {
   target: string;
@@ -10,8 +10,8 @@ interface Props {
 
 export function TextPromptPopup({ target, value, onChange, onConfirm, onClose }: Props) {
   return (
-    <Overlay onClose={onClose}>
-      <div className="kep-prompt">
+    <OverlayPortal dismissible onClose={onClose}>
+      <div className="kep-prompt" onClick={e => e.stopPropagation()}>
         <label>{target}: név</label>
         <input autoFocus maxLength={30} value={value}
           onChange={e => onChange(e.target.value)}
@@ -23,6 +23,6 @@ export function TextPromptPopup({ target, value, onChange, onConfirm, onClose }:
           <button onClick={onConfirm} disabled={!value.trim()}>OK</button>
         </div>
       </div>
-    </Overlay>
+    </OverlayPortal>
   );
 }

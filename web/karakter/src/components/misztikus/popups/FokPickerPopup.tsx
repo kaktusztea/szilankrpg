@@ -1,4 +1,4 @@
-import { Overlay } from '../Overlay';
+import { OverlayPortal } from '../../overlays/OverlayPortal';
 
 interface Props {
   név: string;
@@ -10,8 +10,8 @@ interface Props {
 
 export function FokPickerPopup({ név, maxfok, currentFok, onPick, onClose }: Props) {
   return (
-    <Overlay onClose={onClose}>
-      <div className="kep-prompt">
+    <OverlayPortal dismissible onClose={onClose}>
+      <div className="kep-prompt" onClick={e => e.stopPropagation()}>
         <label>{név} — fok:</label>
         <div className="kep-prompt-flex-fok">
           {Array.from({ length: maxfok }, (_, i) => i + 1).map(n => (
@@ -20,6 +20,6 @@ export function FokPickerPopup({ név, maxfok, currentFok, onPick, onClose }: Pr
           ))}
         </div>
       </div>
-    </Overlay>
+    </OverlayPortal>
   );
 }

@@ -1,6 +1,5 @@
-import { createPortal } from 'react-dom';
 import type { ReactNode } from 'react';
-import { useEscapeClose } from '../hooks/useEscapeClose';
+import { OverlayPortal } from './overlays/OverlayPortal';
 
 interface Props {
   children: ReactNode;
@@ -9,18 +8,14 @@ interface Props {
   className?: string;
 }
 
-/** Generic popup overlay with portal, Escape close, background click close. */
+/** Popup overlay with portal, Escape close, background click close, and kep-prompt wrapper. */
 export function PopupOverlay({ children, onClose, centerText, className }: Props) {
-  useEscapeClose(!!onClose, onClose ?? (() => {}));
-  return createPortal(
-    <div className="kep-prompt-overlay" onClick={e => {
-      if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) onClose?.();
-    }}>
+  return (
+    <OverlayPortal dismissible onClose={onClose}>
       <div className={`${className ?? 'kep-prompt'}${centerText ? ' kep-prompt-text-center' : ''}`}
         onClick={e => e.stopPropagation()}>
         {children}
       </div>
-    </div>,
-    document.body
+    </OverlayPortal>
   );
 }

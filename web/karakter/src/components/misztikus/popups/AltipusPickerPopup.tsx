@@ -1,5 +1,5 @@
 import type { TradícióOpció } from '../types';
-import { Overlay } from '../Overlay';
+import { OverlayPortal } from '../../overlays/OverlayPortal';
 
 interface Props {
   tradícióNév: string;
@@ -15,8 +15,8 @@ export function AltípusPickerPopup({ tradícióNév, opciók, onPick, onClose }
   const hasPantheon = trad.altípusok.some(a => a.pantheon);
 
   return (
-    <Overlay onClose={onClose}>
-      <div className="kep-prompt">
+    <OverlayPortal dismissible onClose={onClose}>
+      <div className="kep-prompt" onClick={e => e.stopPropagation()}>
         <label className="kep-prompt-label-bold-mb">{tradícióNév} — altípus</label>
         <div className="kep-prompt-flex-col-list">
           {!hasPantheon
@@ -27,7 +27,7 @@ export function AltípusPickerPopup({ tradícióNév, opciók, onPick, onClose }
           }
         </div>
       </div>
-    </Overlay>
+    </OverlayPortal>
   );
 }
 

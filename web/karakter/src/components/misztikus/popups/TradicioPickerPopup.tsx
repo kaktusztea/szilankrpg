@@ -1,5 +1,5 @@
 import type { TradícióOpció } from '../types';
-import { Overlay } from '../Overlay';
+import { OverlayPortal } from '../../overlays/OverlayPortal';
 
 interface Props {
   opciók: TradícióOpció[];
@@ -10,8 +10,8 @@ interface Props {
 
 export function TradícióPickerPopup({ opciók, onPick, onPickAltípus, onClose }: Props) {
   return (
-    <Overlay onClose={onClose}>
-      <div className="kep-prompt">
+    <OverlayPortal dismissible onClose={onClose}>
+      <div className="kep-prompt" onClick={e => e.stopPropagation()}>
         <label className="kep-prompt-label-bold-mb">Tradíció választás</label>
         <div className="kep-prompt-flex-col-list">
           {opciók.map(t => (
@@ -25,6 +25,6 @@ export function TradícióPickerPopup({ opciók, onPick, onPickAltípus, onClose
           ))}
         </div>
       </div>
-    </Overlay>
+    </OverlayPortal>
   );
 }

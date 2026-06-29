@@ -1,6 +1,5 @@
-import { createPortal } from 'react-dom';
 import type { ReactNode } from 'react';
-import { useEscapeClose } from '../../hooks/useEscapeClose';
+import { OverlayPortal } from '../overlays/OverlayPortal';
 
 interface Props {
   title: string;
@@ -9,14 +8,12 @@ interface Props {
 }
 
 export function PickerOverlay({ title, onClose, children }: Props) {
-  useEscapeClose(true, onClose);
-  return createPortal(
-    <div className="kep-prompt-overlay" onClick={e => { if (e.target === e.currentTarget) onClose(); }}>
-      <div className="aktiv-picker">
+  return (
+    <OverlayPortal dismissible onClose={onClose}>
+      <div className="aktiv-picker" onClick={e => e.stopPropagation()}>
         <div className="aktiv-picker-header"><label>{title}</label></div>
         <div className="aktiv-picker-list">{children}</div>
       </div>
-    </div>,
-    document.body
+    </OverlayPortal>
   );
 }

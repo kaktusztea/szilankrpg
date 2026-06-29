@@ -1,4 +1,5 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useCallback, useEffect } from 'react';
+import { useHoldRepeat } from '../../hooks/useHoldRepeat';
 import { MAX_KOR } from '../../ui-constants';
 
 interface Props {
@@ -8,44 +9,26 @@ interface Props {
 
 export function KorPicker({ kor, onSelect }: Props) {
   const [value, setValue] = useState(kor || 25);
-  const holdRef = useRef<{ active: boolean; timer: ReturnType<typeof setTimeout> | null }>({ active: false, timer: null });
 
-  function startHold(dir: 1 | -1) {
-    holdRef.current.active = true;
-    let delay = 200;
-    const startTime = Date.now();
-    function tick() {
-      if (!holdRef.current.active) return;
-      const elapsed = Date.now() - startTime;
-      const step = elapsed > 4000 ? 10 : 1;
-      setValue(v => Math.max(1, Math.min(MAX_KOR, v + dir * step)));
-      delay = Math.max(30, delay * 0.82);
-      holdRef.current.timer = setTimeout(tick, delay);
-    }
-    holdRef.current.timer = setTimeout(tick, delay);
-  }
+  const step = useCallback((dir: 1 | -1, amount?: number) => {
+    setValue(v => Math.max(1, Math.min(MAX_KOR, v + dir * (amount ?? 1))));
+  }, []);
 
-  function stopHold() {
-    holdRef.current.active = false;
-    if (holdRef.current.timer) { clearTimeout(holdRef.current.timer); holdRef.current.timer = null; }
-  }
+  const getStep = useCallback((elapsed: number) => elapsed > 4000 ? 10 : 1, []);
+
+  const { holdProps } = useHoldRepeat(step, { initialDelay: 200, minDelay: 30, factor: 0.82, getStep });
 
   useEffect(() => { onSelect(value); }, [value]); // eslint-disable-line react-hooks/exhaustive-deps
-  useEffect(() => () => stopHold(), []);
 
   return (
     <div className="kep-prompt kor-picker">
       <label className="kor-picker-label">Életkor</label>
       <div className="kor-picker-controls">
         <button className="fort-fok-btn kor-picker-btn"
-          onClick={() => setValue(v => Math.max(1, v - 1))}
-          onMouseDown={() => startHold(-1)} onMouseUp={stopHold} onMouseLeave={stopHold}
-          onTouchStart={e => { e.preventDefault(); startHold(-1); }} onTouchEnd={stopHold}>−</button>
+          onClick={() => step(-1)} {...holdProps(-1)}>−</button>
         <strong className="kor-picker-value">{value}</strong>
         <button className="fort-fok-btn kor-picker-btn"
-          onClick={() => setValue(v => Math.min(MAX_KOR, v + 1))}
-          onMouseDown={() => startHold(1)} onMouseUp={stopHold} onMouseLeave={stopHold}
-          onTouchStart={e => { e.preventDefault(); startHold(1); }} onTouchEnd={stopHold}>+</button>
+          onClick={() => step(1)} {...holdProps(1)}>+</button>
       </div>
     </div>
   );
