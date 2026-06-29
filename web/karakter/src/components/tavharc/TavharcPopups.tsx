@@ -1,6 +1,7 @@
 import type { Karakter } from '../../engine/types';
 import type { TavharcPopupState } from './types';
 import { PopupOverlay } from '../PopupOverlay';
+import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { TávolságPicker } from './TavolsagPicker';
 import { getMfFok } from './helpers';
 
@@ -56,10 +57,12 @@ export function TavharcPopups({ karakter, setKarakter, popup, closePopup, idea, 
       )}
 
       {popup.deleteTarget !== null && (
-        <PopupOverlay onClose={() => closePopup('deleteTarget')} centerText>
-          <p><strong>{k.távfegyverek[popup.deleteTarget]?.alap}</strong></p>
-          <button className="btn-del-confirm kep-prompt-btn-confirm" onClick={() => { removeTávfegyver(popup.deleteTarget!); closePopup('deleteTarget'); }}>Távfegyver törlése</button>
-        </PopupOverlay>
+        <DeleteConfirmPopup
+          label={k.távfegyverek[popup.deleteTarget]?.alap ?? ''}
+          buttonText="Távfegyver törlése"
+          onConfirm={() => { removeTávfegyver(popup.deleteTarget!); closePopup('deleteTarget'); }}
+          onClose={() => closePopup('deleteTarget')}
+        />
       )}
 
       {popup.ideaPopup && (

@@ -1,6 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import type { KepzettsegSlot } from './types';
-import { TextInputPopup, GridPickerPopup, ConfirmPopup } from './popups';
+import { TextInputPopup, GridPickerPopup } from './popups';
+import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { KorPicker } from './KorPicker';
 import { OverlayPortal } from '../overlays/OverlayPortal';
 import { getDisplayName } from './helpers';
@@ -76,14 +77,14 @@ export function TulajdonsagokPopups({
 
     {/* Képzettség törlés megerősítő */}
     {p.deleteTarget && (
-      <ConfirmPopup
+      <DeleteConfirmPopup
         label={p.deleteTarget.név}
-        confirmText="Képzettség törlése"
+        buttonText="Képzettség törlése"
         onConfirm={() => {
           setKépzettségek(prev => prev.filter((_, i) => i !== p.deleteTarget!.idx));
           close({ deleteTarget: null });
         }}
-        onCancel={() => close({ deleteTarget: null })}
+        onClose={() => close({ deleteTarget: null })}
       />
     )}
 

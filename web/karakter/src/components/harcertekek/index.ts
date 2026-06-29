@@ -6,4 +6,4 @@ export { PajzsSection } from './HarcertekekPajzsSection';
 export { Popups } from './HarcertekekPopups';
 export { HarcertekekScreen } from './HarcertekekScreen';
 export { PopupOverlay } from './PopupOverlay';
-export { FokRadios, ColumnPicker, IdeaGrid, DeleteConfirm, SzintGrid } from './PickerComponents';
+export { FokRadios, ColumnPicker, IdeaGrid, SzintGrid } from './PickerComponents';

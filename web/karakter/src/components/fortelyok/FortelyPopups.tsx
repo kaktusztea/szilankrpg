@@ -1,23 +1,9 @@
 import type { FortelySummary, NyelvEntry } from '../../engine/data-loader';
 import type { Fortely } from '../../engine/types';
-import type { DeleteTarget, SzabadTypePicker } from './types';
+import type { SzabadTypePicker } from './types';
 import { displayName } from './helpers';
 import { PopupOverlay } from '../PopupOverlay';
 import { SpecPicker, buildFortelyPickerSource } from '../SpecPicker';
-
-// --- Delete confirmation ---
-export function DeletePopup({ target, onConfirm, onCancel }: {
-  target: DeleteTarget;
-  onConfirm: () => void;
-  onCancel: () => void;
-}) {
-  return (
-    <PopupOverlay onClose={onCancel} centerText>
-      <label>{target.név}</label>
-      <button className="btn-del-confirm he-del-confirm" onClick={onConfirm}>Fortély törlése</button>
-    </PopupOverlay>
-  );
-}
 
 // --- Fok picker (for new fortély) ---
 export function FokPickerPopup({ slot, maxfok, nyelvFokLabels, onSelect, onCancel }: {

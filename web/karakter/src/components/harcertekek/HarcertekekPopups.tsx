@@ -2,7 +2,8 @@ import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from './PopupOverlay';
 import { PancelPopup } from './HarcertekekPancelPopup';
-import { FokRadios, ColumnPicker, IdeaGrid, DeleteConfirm, SzintGrid } from './PickerComponents';
+import { FokRadios, ColumnPicker, IdeaGrid, SzintGrid } from './PickerComponents';
+import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { getMfFok, harciKepzDisplayName } from './helpers';
 
 interface PopupState {
@@ -117,23 +118,21 @@ export function Popups({
       )}
 
       {deleteTarget !== null && (
-        <PopupOverlay onClose={() => onClose('deleteTarget')}>
-          <DeleteConfirm
-            label={k.fegyverek[deleteTarget]?.alap.replace(/ \(1K\)$| 1K$/, '') ?? ''}
-            buttonText="Fegyver törlése"
-            onConfirm={() => { removeFegyver(deleteTarget); onClose('deleteTarget'); }}
-          />
-        </PopupOverlay>
+        <DeleteConfirmPopup
+          label={k.fegyverek[deleteTarget]?.alap.replace(/ \(1K\)$| 1K$/, '') ?? ''}
+          buttonText="Fegyver törlése"
+          onConfirm={() => { removeFegyver(deleteTarget); onClose('deleteTarget'); }}
+          onClose={() => onClose('deleteTarget')}
+        />
       )}
 
       {deleteKepzTarget && (
-        <PopupOverlay onClose={() => onClose('deleteKepzTarget')}>
-          <DeleteConfirm
-            label={harciKepzDisplayName(data, deleteKepzTarget)}
-            buttonText="Képzettség törlése"
-            onConfirm={() => { setKépzettségek(prev => prev.filter(kp => kp.név !== deleteKepzTarget)); onClose('deleteKepzTarget'); }}
-          />
-        </PopupOverlay>
+        <DeleteConfirmPopup
+          label={harciKepzDisplayName(data, deleteKepzTarget)}
+          buttonText="Képzettség törlése"
+          onConfirm={() => { setKépzettségek(prev => prev.filter(kp => kp.név !== deleteKepzTarget)); onClose('deleteKepzTarget'); }}
+          onClose={() => onClose('deleteKepzTarget')}
+        />
       )}
 
       {kepzSzintTarget && (

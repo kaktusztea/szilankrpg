@@ -53,20 +53,6 @@ export function IdeaGrid({ minIdea, maxIdea, current, onSelect }: {
   );
 }
 
-/** Delete confirmation — name label + red delete button */
-export function DeleteConfirm({ label, buttonText, onConfirm }: {
-  label: string;
-  buttonText: string;
-  onConfirm: () => void;
-}) {
-  return (
-    <div className="kep-prompt-align-center kep-prompt-gap-12">
-      <label className="kep-prompt-label-bold">{label}</label>
-      <button className="btn-del-confirm he-del-confirm" onClick={onConfirm}>{buttonText}</button>
-    </div>
-  );
-}
-
 /** Level grid — button grid for skill level selection */
 export function SzintGrid({ current, maxSzint, onSelect, label }: {
   current: number;

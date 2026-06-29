@@ -3,13 +3,13 @@ import type { FortelySummary } from '../../engine/data-loader';
 import type { PopupState, TradícióOpció } from './types';
 import { FortélyFelvétel } from '../fortelyok/FortelyFelvetel';
 import {
-  DeleteConfirmPopup,
   SzintPickerPopup,
   TextPromptPopup,
   TradícióPickerPopup,
   AltípusPickerPopup,
   FokPickerPopup,
 } from './popups';
+import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 
 interface Props {
   state: PopupState;
@@ -51,7 +51,7 @@ export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióO
   return (
     <>
       {deleteTarget && (
-        <DeleteConfirmPopup target={deleteTarget} onConfirm={h.onConfirmDelete} onClose={actions.closeDelete} />
+        <DeleteConfirmPopup label={deleteTarget} buttonText="Képzettség törlése" onConfirm={h.onConfirmDelete} onClose={actions.closeDelete} />
       )}
 
       {szintTarget && (
@@ -87,7 +87,7 @@ export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióO
       )}
 
       {deleteFortIdx !== null && (
-        <DeleteConfirmPopup target={delFortLabel} label="Fortély törlése"
+        <DeleteConfirmPopup label={delFortLabel} buttonText="Fortély törlése"
           onConfirm={h.onConfirmDeleteFort} onClose={actions.closeDeleteFort} />
       )}
     </>

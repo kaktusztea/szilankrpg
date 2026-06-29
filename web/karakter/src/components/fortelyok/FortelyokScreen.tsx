@@ -2,7 +2,8 @@ import { useState, useRef, useEffect, useMemo } from 'react';
 import type { FortelyokScreenProps, DeleteTarget } from './types';
 import { buildDefsByGroup, displayName, getFortelyokForCsoport } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
-import { DeletePopup, FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
+import { FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
+import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { useFortelyActions } from './useFortelyActions';
 import { HINT_DURATION_MS } from '../../ui-constants';
 import './FortelyokScreen.css';
@@ -75,10 +76,11 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
       {hint && <div className="fort-hint">{hint}</div>}
 
       {deleteTarget && (
-        <DeletePopup
-          target={deleteTarget}
+        <DeleteConfirmPopup
+          label={deleteTarget.név}
+          buttonText="Fortély törlése"
           onConfirm={() => { setFortélyok(prev => prev.filter((_, i) => i !== deleteTarget.idx)); setDeleteTarget(null); }}
-          onCancel={() => setDeleteTarget(null)}
+          onClose={() => setDeleteTarget(null)}
         />
       )}
 
