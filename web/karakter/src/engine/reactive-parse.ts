@@ -22,10 +22,7 @@ export function evalFormula(formula: string, ctx: Context, results: Map<string, 
   });
 
   try {
-    const withIf = resolved.replace(
-      /if\(([^,]+),\s*([^,]+),\s*([^)]+)\)/g,
-      '(($1) ? ($2) : ($3))'
-    );
+    const withIf = resolveIf(resolved);
     const fn = new Function('floor', 'ceil', 'min', 'max', 'abs', `return (${withIf});`);
     return fn(Math.floor, Math.ceil, Math.min, Math.max, Math.abs);
   } catch {
@@ -97,4 +94,46 @@ export function resolveLookup(formula: string, ctx: Context, results: Map<string
       return String(Number(row ? (row[valueField] ?? 0) : 0));
     }
   );
+}
+
+/** Resolve if(cond, then, else) expressions iteratively, innermost first. */
+export function resolveIf(str: string): string {
+  let s = str;
+  // Repeatedly resolve the innermost if() (one with no nested if inside its args)
+  const MAX = 20;
+  for (let i = 0; i < MAX; i++) {
+    const idx = s.lastIndexOf('if(');
+    if (idx === -1) break;
+    // Find matching closing paren with balanced counting
+    let depth = 0;
+    let end = -1;
+    for (let j = idx + 2; j < s.length; j++) {
+      if (s[j] === '(') depth++;
+      else if (s[j] === ')') { depth--; if (depth === 0) { end = j; break; } }
+    }
+    if (end === -1) break;
+    // Split args at top-level commas within the parens
+    const inner = s.slice(idx + 3, end);
+    const args = splitTopLevel(inner);
+    if (args.length === 3) {
+      s = s.slice(0, idx) + `((${args[0].trim()}) ? (${args[1].trim()}) : (${args[2].trim()}))` + s.slice(end + 1);
+    } else {
+      break; // malformed
+    }
+  }
+  return s;
+}
+
+/** Split string by commas that are not inside parentheses. */
+function splitTopLevel(s: string): string[] {
+  const parts: string[] = [];
+  let depth = 0;
+  let start = 0;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] === '(') depth++;
+    else if (s[i] === ')') depth--;
+    else if (s[i] === ',' && depth === 0) { parts.push(s.slice(start, i)); start = i + 1; }
+  }
+  parts.push(s.slice(start));
+  return parts;
 }

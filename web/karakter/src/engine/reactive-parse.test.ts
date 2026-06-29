@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { evalFormula, resolveSum, resolveSumLookup, resolveSumWhere, resolveCount, resolveLookup } from './reactive-parse';
+import { evalFormula, resolveSum, resolveSumLookup, resolveSumWhere, resolveCount, resolveLookup, resolveIf } from './reactive-parse';
 import type { Context, ArrayContext, StringContext } from './reactive';
 
 function makeCtx(entries: Record<string, number> = {}): Context {
@@ -88,5 +88,25 @@ describe('evalFormula', () => {
   });
   it('returns 0 on invalid formula', () => {
     expect(evalFormula('???invalid!!!', makeCtx(), new Map(), makeArrays(), makeStr())).toBe(0);
+  });
+});
+
+describe('resolveIf', () => {
+  it('resolves simple if', () => {
+    expect(resolveIf('if(1, 10, 20)')).toBe('((1) ? (10) : (20))');
+  });
+  it('resolves nested if (inner first)', () => {
+    const result = resolveIf('if(0, 2, if(0, 1, 0.5))');
+    expect(result).toBe('((0) ? (2) : (((0) ? (1) : (0.5))))');
+  });
+  it('nested if evaluates correctly via evalFormula', () => {
+    const ctx = makeCtx({ a: 0, b: 1 });
+    // if(a, 100, if(b, 50, 0)) → b=1 → 50
+    expect(evalFormula('if(a, 100, if(b, 50, 0))', ctx, new Map(), makeArrays(), makeStr())).toBe(50);
+  });
+  it('deeply nested if works', () => {
+    const ctx = makeCtx({ x: 0, y: 0, z: 1 });
+    // if(x, 1, if(y, 2, if(z, 3, 4))) → z=1 → 3
+    expect(evalFormula('if(x, 1, if(y, 2, if(z, 3, 4)))', ctx, new Map(), makeArrays(), makeStr())).toBe(3);
   });
 });
