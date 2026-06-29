@@ -60,6 +60,9 @@ Cél: modularizáció, teljesítmény, DRY.
 | 4 | EpTable logika kiszervezés | `harc/ep-logic.ts` (új), `EpTable.tsx` | Pure logic külön |
 | 5 | AktivHelpers szétszedés | `aktiv/taktika-helpers.ts`, `aktiv/helyzet-helpers.ts` (új), `AktivHelpers.ts` (barrel) | SRP |
 | 6 | TabContent adapter | `karakter-setters.ts` (új), `TabContent.tsx` | makeFieldSetter eliminálja inline lambdákat |
+| 7 | Feltétel eval kiszervezés | `engine/feltetel-eval.ts` (új), `useHarcComputed.ts` | Feltétel logika újrahasznosítható |
+| 8 | Generikus hook-ok | `hooks/useEscapeClose.ts`, `hooks/usePopupState.ts` (új) | Inline useEffect eliminálás |
+| 9 | shared.ts bővítés | `harc/shared.ts` (+calcSpOverride, resolveNagyobbKisebb), `HarcCalc.ts` (törölve) | DRY: SP override + kétkezes pengeméret |
 
 ---
 

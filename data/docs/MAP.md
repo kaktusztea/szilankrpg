@@ -29,6 +29,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `alapeset.ts` | Fortély 0.fok (Alapeset) kiértékelés |
 | `ketkezes.ts` | Kétkezes harc összesítő kalkuláció |
 | `feltetelek.ts` | buildAktívFeltételek helper |
+| `feltetel-eval.ts` | FeltételEvaluator factory (context-alapú feltétel kiértékelés) |
 | `url-share.ts` | Karakter URL export/import (deflate+base64url) |
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
@@ -46,6 +47,8 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `useSwipe` | Swipe gesture |
 | `useUrlImport` | URL hash import (mount-kor) |
 | `useHoldRepeat` | Hold-to-repeat gomb gyorsulás |
+| `useEscapeClose` | Escape billentyű popup bezárás |
+| `usePopupState` | Generikus popup/overlay state kezelő |
 
 ### Komponensek (`components/`)
 
