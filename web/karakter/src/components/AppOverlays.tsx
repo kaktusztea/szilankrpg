@@ -49,13 +49,14 @@ interface Props {
   setUndoStack: React.Dispatch<React.SetStateAction<any[]>>;
   setTestMode: (v: boolean) => void;
   setIsDirty: (v: boolean) => void;
+  isDirty: boolean;
 }
 
 export function AppOverlays({
   state: s, setState: set, data, karakter, session, setSession,
   setKarakter, undoStack, undoTo, duplicateKarakter, handleGenerateSave,
   shareFile, downloadFile, loadKarakter, shareSlotUrl, importKarakter, deleteSlot,
-  setUndoStack, setTestMode, setIsDirty,
+  setUndoStack, setTestMode, setIsDirty, isDirty,
 }: Props) {
 
   // --- Menu ---
@@ -99,6 +100,7 @@ export function AppOverlays({
       {s.showMenu && (
         <MenuOverlay
           undoCount={undoStack.length}
+          isNewDisabled={!isDirty}
           onUndo={() => { closeMenu(); set('showUndo', true); set('undoSelected', null); }}
           onSlots={() => { closeMenu(); set('showSlotList', true); }}
           onDuplicate={() => { closeMenu(); duplicateKarakter(); }}

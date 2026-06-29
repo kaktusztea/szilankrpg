@@ -75,6 +75,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
       } else if (data) {
         setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
         setUndoStack([]);
+        setIsDirty(false);
       }
     }
   }

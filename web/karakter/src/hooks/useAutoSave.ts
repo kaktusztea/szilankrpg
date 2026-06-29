@@ -17,7 +17,8 @@ export function useAutoSave(
 ) {
   useEffect(() => {
     if (!karakter || testMode || !isDirty) return;
-    if (!karakter.név && karakter.képzettségek.length === 0 && karakter.fortélyok.length === 0) return;
+    const tulajDefault = Object.values(karakter.tulajdonságok).every(v => v === 0);
+    if (!karakter.név && karakter.képzettségek.length === 0 && karakter.fortélyok.length === 0 && tulajDefault) return;
 
     const expectedLeíró = generateIdLeíró(karakter.név, karakter.tsz);
     if (karakter.id_leíró !== expectedLeíró) {

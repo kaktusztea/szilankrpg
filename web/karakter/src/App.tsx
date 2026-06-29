@@ -19,7 +19,7 @@ import './App.css';
 function App() {
   const {
     data, error, karakter, setKarakter,
-    testMode, setTestMode, setIsDirty,
+    testMode, setTestMode, isDirty, setIsDirty,
     undoStack, setUndoStack, pushUndo, undoTo,
     setTulajdonságok, setKépzettségek, setFortélyok, setSession,
   } = useKarakterState();
@@ -100,6 +100,7 @@ function App() {
         loadKarakter={loadKarakter} shareSlotUrl={shareSlotUrl}
         importKarakter={importKarakter} deleteSlot={deleteSlot}
         setUndoStack={setUndoStack} setTestMode={setTestMode} setIsDirty={setIsDirty}
+        isDirty={isDirty}
       />
     </div>
   );
