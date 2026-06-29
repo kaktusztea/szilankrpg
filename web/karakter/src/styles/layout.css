@@ -204,18 +204,7 @@
   color: #fff;
 }
 
-/* --- Misc (version hint, loading, error) --- */
-.version-hint {
-  background: var(--warning);
-  color: #000;
-  text-align: center;
-  padding: 6px 12px;
-  font-size: 14px;
-  font-weight: bold;
-  border-radius: 4px;
-  margin: 0 8px 4px;
-}
-
+/* --- Misc (loading, error) --- */
 .loading, .error {
   display: flex;
   align-items: center;

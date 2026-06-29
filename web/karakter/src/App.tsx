@@ -4,7 +4,6 @@ import { useOverlays } from './hooks/useOverlays';
 import { useSwipe } from './hooks/useSwipe';
 import { useUrlImport } from './hooks/useUrlImport';
 import { useKarakterActions } from './hooks/useKarakterActions';
-import { useVersionHint } from './hooks/useVersionHint';
 import { useGameModeTabSync } from './hooks/useGameModeTabSync';
 import { useTaktikaInvalidation } from './hooks/useTaktikaInvalidation';
 import { Header } from './components/Header';
@@ -27,7 +26,6 @@ function App() {
   const { overlays, setOverlay } = useOverlays();
   const [activeTab, setActiveTab] = useState(5);
   const [gameMode, setGameMode] = useState(false);
-  const { versionHint, handleTitleTap } = useVersionHint();
 
   const TABS = ALL_TABS.filter(t => !t.editOnly || !gameMode);
   const { handleTouchStart, handleTouchEnd } = useSwipe(activeTab, TABS.length, setActiveTab);
@@ -56,7 +54,7 @@ function App() {
     <div className="app" onContextMenu={e => e.preventDefault()}>
       <Header
         testMode={testMode} gameMode={gameMode} setGameMode={setGameMode}
-        session={session} setOverlay={setOverlay} onTitleTap={handleTitleTap}
+        session={session} setOverlay={setOverlay}
       />
 
       <main className="content" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
@@ -84,7 +82,6 @@ function App() {
         </div>
       </main>
 
-      {versionHint && <div className="version-hint">{versionHint}</div>}
       {!gameMode && <KpBar data={data} karakter={karakter} />}
 
       <TabBar tabs={TABS} activeTab={activeTab} setActiveTab={setActiveTab} />

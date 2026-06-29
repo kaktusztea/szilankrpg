@@ -35,6 +35,7 @@ export function MenuOverlay({ undoCount, isNewDisabled, onUndo, onSlots, onDupli
         {!document.fullscreenEnabled && !window.matchMedia('(display-mode: standalone)').matches && (
           <button className="menu-item" onClick={onFullscreenHint}>⛶ Teljes képernyő</button>
         )}
+        <div className="menu-build">{__APP_VERSION__}</div>
       </div>
     </OverlayPortal>
   );

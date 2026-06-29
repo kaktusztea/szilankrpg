@@ -7,13 +7,12 @@ interface Props {
   setGameMode: (v: boolean) => void;
   session: Session;
   setOverlay: <K extends keyof OverlayState>(key: K, value: OverlayState[K]) => void;
-  onTitleTap: () => void;
 }
 
-export function Header({ testMode, gameMode, setGameMode, session, setOverlay, onTitleTap }: Props) {
+export function Header({ testMode, gameMode, setGameMode, session, setOverlay }: Props) {
   return (
     <header className="header">
-      <span className={`title${testMode ? ' title-test' : ''}`} onClick={onTitleTap}>Szilánk</span>
+      <span className={`title${testMode ? ' title-test' : ''}`} onClick={() => setOverlay('showSzilánkPicker', true)}>Szilánk</span>
       <span className="header-szilank" onClick={() => setOverlay('showSzilánkPicker', true)}>{session.szilánk}</span>
       <div className="header-btns">
         <button className="gear-btn" onClick={() => setOverlay('overlayScreen', 'naplo')}>📅</button>

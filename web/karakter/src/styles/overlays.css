@@ -81,6 +81,7 @@
 
 /* --- 3. Overlay variáns layoutok --- */
 .overlay-menu { align-items: stretch; gap: 6px; min-width: 200px; }
+.menu-build { font-size: 10px; text-align: center; opacity: 0.5; margin-top: 4px; }
 .overlay-szilank { align-items: center; gap: 8px; }
 .overlay-confirm { align-items: center; gap: 12px; max-width: 320px; }
 .overlay-slots { align-items: stretch; gap: 8px; min-width: 300px; max-height: 80vh; overflow: auto; }
