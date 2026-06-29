@@ -11,6 +11,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - **Max szélesség**: 600px (centered)
 - **Font**: `'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
 - **Base font-size**: 16px
+- **Input min font-size**: 16px (iOS Safari auto-zoom prevention — 16px alatt a böngésző zoom-ol és nem áll vissza)
 - **Context menu**: disabled (`onContextMenu preventDefault`)
 - **User select**: disabled (`user-select: none`, `-webkit-touch-callout: none`)
 - **Body height**: `100dvh` (dynamic viewport height, iOS safe area aware)
@@ -848,7 +849,7 @@ Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
 - Tartalom: `background: --surface; border: 1px solid #555; border-radius: 8px; padding: 16px; min-width: 250px; touch-action: auto`
 - Gombok (`.kep-prompt-btns`): `background: --primary; border: 1px solid #555; border-radius: 4px; padding: 4px 12px; font-size: 13px`
 - Törlés gomb (`.btn-del-confirm`): `background: --error; color: #fff`
-- Input mezők: `background: --input-bg; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; font-size: 14px`
+- Input mezők: `background: --input-bg; border: 1px solid #555; border-radius: 4px; padding: 6px 10px; font-size: 16px` (min 16px — iOS Safari auto-zoom prevention)
 - Slider (`<input type="range">`): `width: 100%; accent-color: --accent`
 - Szint grid gombok (`.fort-fok-btn`): `36px x 36px; border-radius: 50%; border: 2px solid #555; font-size: 16px; font-weight: bold`
   - Aktív: `border-color: --success; background: --success; color: #000`
