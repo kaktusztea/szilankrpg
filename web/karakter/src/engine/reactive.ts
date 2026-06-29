@@ -148,6 +148,14 @@ function evalFormula(formula: string, ctx: Context, results: Map<string, number>
   }
 }
 
+/** Rule IDs that are fegyver-specific (only these need per-weapon evaluation). */
+const FEGYVER_RULE_IDS = new Set(['fegyver_TÉ', 'fegyver_VÉ', 'fegyver_SP', 'fegyver_harckeret', 'fegyver_támadások']);
+
+/** Pre-filter rules to only fegyver-specific ones (call once, cache the result). */
+export function filterFegyverRules(rules: Rule[]): Rule[] {
+  return rules.filter(r => FEGYVER_RULE_IDS.has(r.id));
+}
+
 /**
  * Build a flat context map from the character state and konstansok.
  */

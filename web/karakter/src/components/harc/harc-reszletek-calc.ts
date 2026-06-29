@@ -2,6 +2,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult } from './types';
 import { lookupFegyver } from '../../engine/utils';
+import { findMfFok, getMfBónusz } from './shared';
 
 export interface KétkezesBontás {
   nagyobb: { név: string; TÉ: number; VÉ: number; mfTÉ: number; mfVÉ: number; mfSP: number };
@@ -33,20 +34,6 @@ export interface ReszletekData {
 }
 
 const MF_ZERO = { TÉ: 0, VÉ: 0, SP: 0 };
-
-/** Mesterfegyver fok keresés fegyver alapján (case-insensitive). */
-function findMfFok(k: Karakter, fegyverNév: string, fegyverAlap: string): number {
-  const entry = k.fortélyok.find(f => f.név === 'Mesterfegyver' && (
-    f.spec_elem?.toLowerCase() === fegyverNév.toLowerCase() ||
-    f.spec_elem?.toLowerCase() === fegyverAlap.toLowerCase()
-  ));
-  return entry?.fok ?? 0;
-}
-
-/** MF bónusz lookup fokszám alapján. */
-function getMfBónusz(konstansok: any, fok: number): { TÉ: number; VÉ: number; SP: number } {
-  return konstansok.mesterfegyver_bónuszok.find((b: any) => b.fok === fok) ?? MF_ZERO;
-}
 
 interface KétkezesMfResult {
   TÉ: number; VÉ: number; SP: number;

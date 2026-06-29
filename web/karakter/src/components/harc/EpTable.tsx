@@ -1,14 +1,8 @@
 import { useState, useEffect } from 'react';
 import { createPortal } from 'react-dom';
 import type { SebzésRubrika } from '../../engine/types';
+import { buildRubrikák, toSebzések, applySeb, applyGyógy, type SebTípus } from './ep-logic';
 import './EpTable.css';
-
-type SebTípus = 'S' | 'V' | 'Z' | 'FP' | '';
-
-interface Rubrika {
-  típus: SebTípus;
-  sorszám: number;
-}
 
 interface Props {
   ÉP: number;
@@ -21,33 +15,12 @@ interface Props {
   onSebzésekChange: (sebzések: SebzésRubrika[]) => void;
 }
 
-function buildRubrikák(sebzések: SebzésRubrika[], összRubrika: number): Rubrika[] {
-  const rubrikák: Rubrika[] = Array.from({ length: összRubrika }, () => ({ típus: '', sorszám: 0 }));
-  for (let i = 0; i < sebzések.length && i < összRubrika; i++) {
-    rubrikák[i] = { típus: sebzések[i].típus, sorszám: sebzések[i].sorszám };
-  }
-  return rubrikák;
-}
-
-function toSebzések(rubrikák: Rubrika[]): SebzésRubrika[] {
-  return rubrikák
-    .filter(r => r.típus !== '')
-    .map(r => ({ típus: r.típus as SebzésRubrika['típus'], sorszám: r.sorszám }));
-}
-
 export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0, téLevonások, onNavigate, sebzések, onSebzésekChange }: Props) {
   const oszlopMéret = ÉP / kategóriák;
   const összRubrika = ÉP;
 
   // Build rubrikák from session sebzések
   const rubrikák = buildRubrikák(sebzések, összRubrika);
-
-  function getNextSorszám(currentRubrikák: Rubrika[]): number {
-    const usedSorszámok = new Set(currentRubrikák.filter(r => r.típus !== '').map(r => r.sorszám));
-    for (let i = 1; ; i++) {
-      if (!usedSorszámok.has(i)) return i;
-    }
-  }
 
   const [showSebDialog, setShowSebDialog] = useState(false);
   const [showGyógyDialog, setShowGyógyDialog] = useState(false);
@@ -63,47 +36,12 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
   }, [showSebDialog, showGyógyDialog, showResetConfirm]);
 
   function sebesülés(típus: SebTípus, érték: number) {
-    const újRubrikák = [...rubrikák];
-    const újSorszám = getNextSorszám(újRubrikák);
-    let maradék = érték;
-
-    if (típus !== 'FP') {
-      for (let i = 0; i < újRubrikák.length && maradék > 0; i++) {
-        if (újRubrikák[i].típus === 'FP') {
-          újRubrikák[i] = { típus, sorszám: újSorszám };
-          maradék--;
-        }
-      }
-    }
-
-    for (let i = 0; i < újRubrikák.length && maradék > 0; i++) {
-      if (újRubrikák[i].típus === '') {
-        újRubrikák[i] = { típus, sorszám: újSorszám };
-        maradék--;
-      }
-    }
-    onSebzésekChange(toSebzések(újRubrikák));
+    onSebzésekChange(toSebzések(applySeb(rubrikák, típus, érték)));
     setShowSebDialog(false);
   }
 
   function gyógyulás(típusSzűrő: 'FP' | 'ÉP', érték: number) {
-    const újRubrikák = [...rubrikák];
-    let maradék = érték;
-    for (let i = újRubrikák.length - 1; i >= 0 && maradék > 0; i--) {
-      if (típusSzűrő === 'FP' && újRubrikák[i].típus === 'FP') {
-        újRubrikák[i] = { típus: '', sorszám: 0 };
-        maradék--;
-      } else if (típusSzűrő === 'ÉP' && újRubrikák[i].típus !== '' && újRubrikák[i].típus !== 'FP') {
-        újRubrikák[i] = { típus: '', sorszám: 0 };
-        maradék--;
-      }
-    }
-    // Compaction
-    const filled = újRubrikák.filter(r => r.típus !== '');
-    for (let i = 0; i < újRubrikák.length; i++) {
-      újRubrikák[i] = i < filled.length ? filled[i] : { típus: '', sorszám: 0 };
-    }
-    onSebzésekChange(toSebzések(újRubrikák));
+    onSebzésekChange(toSebzések(applyGyógy(rubrikák, típusSzűrő, érték)));
     setShowGyógyDialog(false);
   }
 

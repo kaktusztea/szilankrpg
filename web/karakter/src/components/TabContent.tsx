@@ -2,6 +2,7 @@ import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, Fortely } from '../engine/types';
 import type { TabDef } from './TabBar';
 import { useUndoWrappedSetters } from '../hooks/useUndoWrappedSetters';
+import { makeFieldSetter } from './karakter-setters';
 import { AktivScreen } from './aktiv';
 import { HarcScreen } from './harc';
 import { TavharcScreen } from './tavharc';
@@ -55,6 +56,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
     }} />;
     case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} gameMode={gameMode} />;
     case 'tulajdonsagok': {
+      const sf = makeFieldSetter(pushUndo, setKarakter);
       const setAnyanyelv = (v: string) => setKarakter(prev => {
         if (!prev) return prev;
         const közös = data.konstansok.közös_nyelv;
@@ -70,11 +72,11 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
       return <TulajdonsagokScreen data={data} gameMode={gameMode} karakter={karakter}
         tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságokUndo}
         képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo}
-        név={karakter.név} setNév={v => { pushUndo(`Név: ${karakter.név} → ${v}`); setKarakter(prev => prev ? { ...prev, név: v } : prev); }}
-        becenév={karakter.becenév} setBecenév={v => { pushUndo(`Becenév: ${v}`); setKarakter(prev => prev ? { ...prev, becenév: v } : prev); }}
-        játékos={karakter.játékos} setJátékos={v => { pushUndo(`Játékos: ${v}`); setKarakter(prev => prev ? { ...prev, játékos: v } : prev); }}
-        tsz={karakter.tsz} setTsz={v => { pushUndo(`TSz: ${karakter.tsz} → ${v}`); setKarakter(prev => prev ? { ...prev, tsz: v } : prev); }}
-        kor={karakter.kor} setKor={v => { pushUndo(`Kor: ${karakter.kor} → ${v}`); setKarakter(prev => prev ? { ...prev, kor: v } : prev); }}
+        név={karakter.név} setNév={sf('név', (p, n) => `Név: ${p} → ${n}`)}
+        becenév={karakter.becenév} setBecenév={sf('becenév', (_, n) => `Becenév: ${n}`)}
+        játékos={karakter.játékos} setJátékos={sf('játékos', (_, n) => `Játékos: ${n}`)}
+        tsz={karakter.tsz} setTsz={sf('tsz', (p, n) => `TSz: ${p} → ${n}`)}
+        kor={karakter.kor} setKor={sf('kor', (p, n) => `Kor: ${p} → ${n}`)}
         faj={karakter.hátterek.faj} setFaj={v => { pushUndo(`Faj: ${v}`); setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev); }}
         anyanyelv={karakter.anyanyelv} setAnyanyelv={setAnyanyelv}
       />;

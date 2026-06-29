@@ -108,7 +108,8 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
 
   // Fegyverek
   const fegyverRows = buildFegyverRows(k, data, pajzsFegyverNév);
-  const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx);
+  const páncélMGT = computed.get('páncél_MGT') ?? 0;
+  const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx, páncélMGT);
   applyFegyverOverrides(fegyverResults, session, data, feltételTeljesül);
 
   const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, feltételTeljesül);

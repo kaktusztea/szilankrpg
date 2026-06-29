@@ -1,9 +1,16 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { evaluate, buildContext } from '../../engine/reactive';
+import { evaluate, buildContext, filterFegyverRules, type Rule } from '../../engine/reactive';
 import { lookupFegyver } from '../../engine/utils';
 import { calcKétkezesHarc } from '../../engine/ketkezes';
 import type { FegyverResult } from './types';
+
+/** Cached filtered fegyver rules (populated on first call). */
+let _fegyverRules: Rule[] | null = null;
+function getFegyverRules(allRules: Rule[]): Rule[] {
+  if (!_fegyverRules) _fegyverRules = filterFegyverRules(allRules);
+  return _fegyverRules;
+}
 
 /** Fegyver sorok felépítése (karakter fegyverek + puszta kéz + MK párok + pajzs) */
 export function buildFegyverRows(k: Karakter, data: GameData, pajzsFegyverNév: string | null) {
@@ -28,7 +35,7 @@ export function buildFegyverRows(k: Karakter, data: GameData, pajzsFegyverNév: 
   return rows;
 }
 
-/** Fegyver harcértékek kiszámítása reactive engine-nel */
+/** Fegyver harcértékek kiszámítása reactive engine-nel (optimalizált: base ctx egyszer, 5 rule per fegyver) */
 export function calcFegyverResults(
   fegyverRows: { fDef: any; mfFok: number }[],
   k: Karakter, data: GameData,
@@ -37,8 +44,33 @@ export function calcFegyverResults(
   harcmodorÖsszeg: number,
   lookupArrays: Map<string, Record<string, number | string>[]>,
   stringCtx: Map<string, string>,
+  precomputedPáncélMGT?: number,
 ): FegyverResult[] {
   const { konstansok, harcmodorBonusz } = data;
+  const fegyverRules = getFegyverRules(data.rules);
+
+  // Base context: built once, shared across all weapons
+  const baseCtx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
+    HM_TÉ: k.HM_TÉ, HM_VÉ: k.HM_VÉ,
+    merevvért_fok: merevvértFok,
+    páncél_van: k.páncél.alap ? 1 : 0, páncél_végtagvédettség: k.páncél.végtagvédettség,
+    páncél_sisak: k.páncél.sisak ? 1 : 0, páncél_idea: k.páncél.idea, páncél_rongálódás: k.páncél.rongálódás,
+    fegyver_fortély_TÉ: fortelyMods['TÉ'], fegyver_fortély_VÉ: fortelyMods['VÉ'], fegyver_fortély_SP: fortelyMods['SP'],
+    fegyver_fortély_harckeret: fortelyMods['harckeret'],
+    harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: 0,
+  });
+
+  // Pre-resolve páncél_MGT and felszerelés_mgt (from parent evaluate or compute here once)
+  if (precomputedPáncélMGT !== undefined) {
+    baseCtx.set('páncél_MGT', precomputedPáncélMGT);
+    baseCtx.set('felszerelés_mgt', 0);
+  } else {
+    // Fallback: evaluate páncél rules once
+    const fullComp = evaluate(data.rules, new Map(baseCtx), lookupArrays, stringCtx);
+    baseCtx.set('páncél_MGT', fullComp.get('páncél_MGT') ?? 0);
+    baseCtx.set('felszerelés_mgt', fullComp.get('felszerelés_mgt') ?? 0);
+  }
+
   return fegyverRows.map(({ fDef, mfFok }) => {
     const kat = fDef.Kategória;
     const harcmodorNév = konstansok.fegyver_kategória_harcmodor[kat] ?? 'Közelharc';
@@ -60,21 +92,22 @@ export function calcFegyverResults(
       }
     }
 
-    const fCtx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
-      HM_TÉ: k.HM_TÉ, HM_VÉ: k.HM_VÉ, felszerelés_mgt: 0,
-      merevvért_fok: merevvértFok,
-      páncél_van: k.páncél.alap ? 1 : 0, páncél_végtagvédettség: k.páncél.végtagvédettség,
-      páncél_sisak: k.páncél.sisak ? 1 : 0, páncél_idea: k.páncél.idea, páncél_rongálódás: k.páncél.rongálódás,
-      fegyver_harcmodor_TÉ: hb?.TÉ ?? 0, fegyver_harcmodor_VÉ: hb?.VÉ ?? 0, fegyver_harcmodor_szint: harcmodorSzint,
-      fegyver_alap_TÉ: parseInt(fDef.TÉ) || 0, fegyver_alap_VÉ: parseInt(fDef.VÉ) || 0, fegyver_alap_SP: alapSP,
-      fegyver_erőbónusz_limit: fDef['Erőbónusz limit'] !== '' ? parseInt(fDef['Erőbónusz limit']) : 99,
-      fegyver_sebesség: parseInt(fDef.Sebesség) || 6,
-      fegyver_mf_TÉ: mf.TÉ, fegyver_mf_VÉ: mf.VÉ, fegyver_mf_SP: mf.SP,
-      fegyver_fortély_TÉ: fortelyMods['TÉ'], fegyver_fortély_VÉ: fortelyMods['VÉ'], fegyver_fortély_SP: fortelyMods['SP'],
-      fegyver_fortély_harckeret: fortelyMods['harckeret'],
-      harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: 0,
-    });
-    const fComp = evaluate(data.rules, fCtx, lookupArrays, stringCtx);
+    // Per-weapon context: clone base + add weapon-specific values
+    const fCtx = new Map(baseCtx);
+    fCtx.set('fegyver_harcmodor_TÉ', hb?.TÉ ?? 0);
+    fCtx.set('fegyver_harcmodor_VÉ', hb?.VÉ ?? 0);
+    fCtx.set('fegyver_harcmodor_szint', harcmodorSzint);
+    fCtx.set('fegyver_alap_TÉ', parseInt(fDef.TÉ) || 0);
+    fCtx.set('fegyver_alap_VÉ', parseInt(fDef.VÉ) || 0);
+    fCtx.set('fegyver_alap_SP', alapSP);
+    fCtx.set('fegyver_erőbónusz_limit', fDef['Erőbónusz limit'] !== '' ? parseInt(fDef['Erőbónusz limit']) : 99);
+    fCtx.set('fegyver_sebesség', parseInt(fDef.Sebesség) || 6);
+    fCtx.set('fegyver_mf_TÉ', mf.TÉ);
+    fCtx.set('fegyver_mf_VÉ', mf.VÉ);
+    fCtx.set('fegyver_mf_SP', mf.SP);
+
+    // Evaluate only 5 fegyver rules (not all 54)
+    const fComp = evaluate(fegyverRules, fCtx);
     return {
       fegyver_név: fDef.Fegyver,
       TÉ: fComp.get('fegyver_TÉ') ?? 0, VÉ: fComp.get('fegyver_VÉ') ?? 0, SP: fComp.get('fegyver_SP') ?? 0,
