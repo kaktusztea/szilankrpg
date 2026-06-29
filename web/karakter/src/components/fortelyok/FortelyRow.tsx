@@ -40,7 +40,7 @@ export function FortelyRow({
     <div className="fort-row-wrapper">
       <div className={`fort-row${követelményHiba ? ' fort-kov-hiba' : ''}`} onClick={handleTap}>
         <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>
-          {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}
+          {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}{def && def.kp_perfok < 0 && <span className="fort-gift"> 🎁{Math.abs(def.kp_perfok * slot.fok)}KP</span>}
         </span>
         <span className="fort-right">
           {!gameMode && !locked && (
