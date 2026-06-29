@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { createPortal } from 'react-dom';
 import type { GameData } from '../../engine/data-loader';
 import type { Session } from '../../engine/types';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
 
 interface Props {
   data: GameData;
@@ -11,6 +12,7 @@ interface Props {
 }
 
 export function StatuszPickerOverlay({ data, session, onPick, onClose }: Props) {
+  useEscapeClose(true, onClose);
   const [fokválasztó, setFokválasztó] = useState<string | null>(null);
   const [érzékválasztó, setÉrzékválasztó] = useState<string | null>(null);
 
