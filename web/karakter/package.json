@@ -7,7 +7,8 @@
     "dev": "vite",
     "generate": "python3 ../../data/generate_tables.py",
     "prebuild": "python3 ../../data/generate_tables.py",
-    "build": "tsc -b && vite build",
+    "test": "vitest run",
+    "build": "vitest run && tsc -b && vite build",
     "postbuild": "mkdir -p dist/data/tables dist/data/karakter && cp ../../data/tables/*.json dist/data/tables/ && cp ../../data/rules.json dist/data/ && cp ../../data/karakter/*.json dist/data/karakter/",
     "preview": "vite preview"
   },
@@ -21,7 +22,9 @@
     "@types/react": "^19.1.0",
     "@types/react-dom": "^19.1.0",
     "@vitejs/plugin-react": "^4.4.0",
+    "fast-check": "^3.22.0",
     "typescript": "~5.8.0",
-    "vite": "^6.3.0"
+    "vite": "^6.3.0",
+    "vitest": "^2.1.8"
   }
 }

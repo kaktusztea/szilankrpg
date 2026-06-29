@@ -77,6 +77,7 @@ Cél: modularizáció, teljesítmény, DRY.
 | 21 | Taktika fokDef interpoláció DRY | `aktiv/taktika-helpers.ts` (+interpolateFokDef), `harc/taktika-calc.ts` | Közös helper a fortély_bővítés extrapolációra |
 | 22 | Reactive engine belső bontás | `engine/reactive-parse.ts` (új), `engine/reactive.ts` | evalFormula + 5 aggregate resolver → külön fájl (tesztelhetőség) |
 | 23 | Undo hook kiszervezés | `hooks/useUndo.ts` (új), `hooks/useKarakterState.ts` | Undo logika önálló hook-ba |
+| 24 | Unit test infrastruktúra | `vitest.config.ts`, 13 test fájl (88 teszt, ebből 22 fuzz/property-based) | Vitest + fast-check bekötve buildbe; lefedi: reactive-parse, reactive, mf-utils, utils, validate, ep-logic, shared, taktika-helpers |
 
 ---
 
@@ -115,5 +116,6 @@ Cél: modularizáció, teljesítmény, DRY.
 
 ### Build pipeline
 - `generate_tables.py`: YAML → JSON (Vite buildStart + prebuild)
+- `vitest run`: 88 unit teszt (66 deterministic + 22 property-based fuzz; build előtt fut)
 - Deploy: GitHub Pages, auto-deploy push master
 - Metadata: `ÉV.ÉVNAPJA.napibuild`
