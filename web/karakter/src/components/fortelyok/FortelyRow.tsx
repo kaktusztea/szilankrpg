@@ -32,6 +32,7 @@ export function FortelyRow({
 
   const fokDef = def?.fokok.find(f => f.fok === slot.fok);
   const label = displayName(slot);
+  const giftBadge = def && def.kp_perfok < 0 ? ` 🎁${Math.abs(def.kp_perfok * slot.fok)}KP` : '';
   const hiányzóKöv = checkKövetelmények(fokDef, képzettségek, fortélyok, harcmodorNevek, fegyverHarcmodorNév);
   const követelményHiba = hiányzóKöv.length > 0;
   const isNyelv = slot.név === 'Nyelvismeret';
@@ -40,7 +41,7 @@ export function FortelyRow({
     <div className="fort-row-wrapper">
       <div className={`fort-row${követelményHiba ? ' fort-kov-hiba' : ''}`} onClick={handleTap}>
         <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>
-          {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}{def && def.kp_perfok < 0 && <span className="fort-gift"> 🎁{Math.abs(def.kp_perfok * slot.fok)}KP</span>}
+          {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}{giftBadge && <span className="fort-gift">{giftBadge}</span>}
         </span>
         <span className="fort-right">
           {!gameMode && !locked && (
