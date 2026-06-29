@@ -71,6 +71,7 @@ Cél: modularizáció, teljesítmény, DRY.
 | 15 | EpDialogs kiemelés | `harc/EpDialogs.tsx` (új), `EpTable.tsx` | useEffect trigger → explicit click handler |
 | 16 | Taktika üzleti logika kiemelés | `aktiv/taktika-helpers.ts` (+getExtraFokok, formatFokMods), `AktivTaktikak.tsx` | Render ↔ logika szétválasztás |
 | 17 | fegyver-calc cache fix | `fegyver-calc.ts` | Module-szintű let → WeakMap (HMR-safe) |
+| 18 | Overlay/picker konszolidáció | `PopupOverlay.tsx`, `PickerOverlay.tsx`, `misztikus/Overlay.tsx`, `FortelyPopups.tsx`, `FortelyFelvetel.tsx`, `FortelyRow.tsx`, `SpecPicker.tsx`, `HarcPopups.tsx`, `StatuszPickerOverlay.tsx` | 2 központi shell (PopupOverlay + PickerOverlay) + ESC kezelés; 9 fájlból inline createPortal eliminálva; 6 fájlból redundáns useEscapeClose/useEffect törölve |
 
 ---
 

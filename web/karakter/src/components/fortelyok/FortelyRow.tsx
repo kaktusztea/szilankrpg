@@ -1,8 +1,8 @@
-import { useState, useEffect } from 'react';
-import { createPortal } from 'react-dom';
+import { useState } from 'react';
 import type { FortelyRowProps } from './types';
 import { displayName, checkKövetelmények } from './helpers';
 import { FortelyInfoPanel } from './FortelyInfoPanel';
+import { PopupOverlay } from '../PopupOverlay';
 import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 
 export function FortelyRow({
@@ -12,13 +12,6 @@ export function FortelyRow({
 }: FortelyRowProps) {
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
-
-  useEffect(() => {
-    if (!editing) return;
-    function onKey(e: KeyboardEvent) { if (e.key === 'Escape') setEditing(false); }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [editing]);
 
   function handleTap(e: React.MouseEvent<HTMLDivElement>) {
     if (gameMode) { onToggleInfo(); return; }
@@ -87,24 +80,21 @@ export function FortelyRow({
         </div>
       )}
 
-      {editing && createPortal(
-        <div className="kep-prompt-overlay">
-          <div className="kep-prompt">
-            <label className={isNyelv ? 'fort-label-centered' : undefined}>
-              {isNyelv ? label : `${label} — fok:`}
-            </label>
-            <div className="fort-fok-radios">
-              {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
-                <button key={f}
-                  className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}${isNyelv ? ' fort-fok-btn-wide' : ''}`}
-                  onClick={() => { onFokChange(f); setEditing(false); }}>
-                  {isNyelv ? nyelvFokLabels[f] ?? f : f}
-                </button>
-              ))}
-            </div>
+      {editing && (
+        <PopupOverlay onClose={() => setEditing(false)}>
+          <label className={isNyelv ? 'fort-label-centered' : undefined}>
+            {isNyelv ? label : `${label} — fok:`}
+          </label>
+          <div className="fort-fok-radios">
+            {Array.from({ length: maxfok }, (_, i) => i + 1).map(f => (
+              <button key={f}
+                className={`fort-fok-btn ${slot.fok === f ? 'active' : ''}${isNyelv ? ' fort-fok-btn-wide' : ''}`}
+                onClick={() => { onFokChange(f); setEditing(false); }}>
+                {isNyelv ? nyelvFokLabels[f] ?? f : f}
+              </button>
+            ))}
           </div>
-        </div>,
-        document.body
+        </PopupOverlay>
       )}
     </div>
   );

@@ -2,7 +2,6 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { HarcBaseProps } from './types';
 import type { SebzésRubrika } from '../../engine/types';
 import { useHarcComputed } from './useHarcComputed';
-import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { HarcHeader } from './HarcHeader';
 import { HarcFegyverTable } from './HarcFegyverTable';
 import { HarcPopups } from './HarcPopups';
@@ -39,10 +38,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     triggerVéFlash(diff > 0 ? 'down' : 'up');
   }, [session.vé_csökkenés, pushUndo, setSession, triggerVéFlash]);
 
-  // Escape handler for all popups
-  const hasPopup = showVéResetConfirm || showVéHistory || !!támInfo;
-  useEscapeClose(hasPopup, closePopups);
-
+  // Popup close handler
   function closePopups() {
     setShowVéResetConfirm(false);
     setShowVéHistory(false);

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { PopupState } from './types';
 
 const EMPTY: PopupState = {
@@ -15,21 +15,6 @@ const EMPTY: PopupState = {
 
 export function useMisztikusPopups() {
   const [state, setState] = useState<PopupState>(EMPTY);
-
-  const isOpen = !!(
-    state.deleteTarget || state.szintTarget || state.promptTarget ||
-    state.tradícióPicker || state.tradícióAltípusPicker ||
-    state.felvételDef || state.misztFokTarget !== null || state.deleteFortIdx !== null
-  );
-
-  useEffect(() => {
-    if (!isOpen) return;
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') setState(EMPTY);
-    }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [isOpen]);
 
   const actions = {
     openDelete: (név: string) => setState(s => ({ ...s, deleteTarget: név })),

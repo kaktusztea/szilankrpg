@@ -1,7 +1,6 @@
-import { useState, useRef, useEffect, useMemo, useCallback } from 'react';
+import { useState, useRef, useEffect, useMemo } from 'react';
 import type { FortelySummary } from '../../engine/data-loader';
 import type { FortelyokScreenProps, DeleteTarget, SzabadTypePicker } from './types';
-import { useEscapeClose } from '../../hooks/useEscapeClose';
 import { buildDefsByGroup, displayName, getFortelyokForCsoport } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
 import { DeletePopup, FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
@@ -28,10 +27,6 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   const defsByGroup = useMemo(() => buildDefsByGroup(data.fortelySummaries), [data]);
 
   useEffect(() => { setInfoTarget(null); }, [gameMode]);
-
-  const hasAnyPopup = !!multiPickerDef || !!deleteTarget || pendingFortIdx !== null || !!szabadTypePicker;
-  const closeAllPopups = useCallback(() => { setMultiPickerDef(null); setDeleteTarget(null); setPendingFortIdx(null); setSzabadTypePicker(null); }, []);
-  useEscapeClose(hasAnyPopup, closeAllPopups);
 
   function showHint(msg: string, duration = HINT_DURATION_MS) {
     setHint(msg);

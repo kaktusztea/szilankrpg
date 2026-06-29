@@ -58,6 +58,8 @@ Header.tsx                 Fejléc (cím, menü, mód toggle)
 TabBar.tsx                 Alsó tab bar (tükrözött, ikon-only)
 TabContent.tsx             Screen slider wrapper
 KpBar.tsx                  KP sáv (szerkesztő módban)
+PopupOverlay.tsx           Központi kis popup shell (portál + ESC + háttér katt)
+SpecPicker.tsx             Többszörös fortély/spec picker (lista/csoportos/freetext)
 AppOverlays.tsx            Globális overlay-ek összefogó
 ScreenErrorBoundary.tsx    Per-tab error boundary
 

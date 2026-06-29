@@ -1,6 +1,15 @@
 import { createPortal } from 'react-dom';
+import type { ReactNode } from 'react';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
 
-export function Overlay({ onClose, children }: { onClose: () => void; children: React.ReactNode }) {
+interface Props {
+  onClose: () => void;
+  children: ReactNode;
+}
+
+/** Bare overlay shell: portal + background click close + Escape close. No inner wrapper div. */
+export function Overlay({ onClose, children }: Props) {
+  useEscapeClose(true, onClose);
   return createPortal(
     <div className="kep-prompt-overlay" onClick={e => {
       if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) onClose();

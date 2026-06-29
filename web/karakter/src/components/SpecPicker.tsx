@@ -1,5 +1,5 @@
-import { useState, type ReactNode } from 'react';
-import { createPortal } from 'react-dom';
+import { useState } from 'react';
+import { PopupOverlay } from './PopupOverlay';
 
 // --- Source types ---
 
@@ -21,53 +21,52 @@ interface SpecPickerProps {
 export function SpecPicker({ source, onSelect, onCancel }: SpecPickerProps) {
   const [freetextValue, setFreetextValue] = useState('');
 
-  const overlay = (content: ReactNode, cls = 'kep-prompt') => createPortal(
-    <div className="kep-prompt-overlay" onClick={e => { if ((e.target as HTMLElement).classList.contains('kep-prompt-overlay')) onCancel(); }}>
-      <div className={cls} onClick={e => e.stopPropagation()}>{content}</div>
-    </div>,
-    document.body
-  );
-
   if (source.type === 'list') {
-    return overlay(<>
-      <label>{source.label}</label>
-      <select className="fort-select" autoFocus value="" onChange={e => { if (e.target.value) onSelect(e.target.value); }}>
-        <option value="">Válassz...</option>
-        {source.items.map(k => <option key={k} value={k}>{k}</option>)}
-      </select>
-      <div className="kep-prompt-btns"><button onClick={onCancel}>Mégse</button></div>
-    </>);
+    return (
+      <PopupOverlay onClose={onCancel}>
+        <label>{source.label}</label>
+        <select className="fort-select" autoFocus value="" onChange={e => { if (e.target.value) onSelect(e.target.value); }}>
+          <option value="">Válassz...</option>
+          {source.items.map(k => <option key={k} value={k}>{k}</option>)}
+        </select>
+        <div className="kep-prompt-btns"><button onClick={onCancel}>Mégse</button></div>
+      </PopupOverlay>
+    );
   }
 
   if (source.type === 'grouped') {
-    return overlay(<>
-      {source.groups.map(g => (
-        <div key={g.label} className="nyelv-csoport">
-          <div className="nyelv-csoport-label">{g.label}</div>
-          {g.items.map(item => (
-            <button key={item} className="nyelv-btn" onClick={() => onSelect(item)}>{item}</button>
-          ))}
-        </div>
-      ))}
-    </>, 'kep-prompt nyelv-picker');
+    return (
+      <PopupOverlay onClose={onCancel} className="kep-prompt nyelv-picker">
+        {source.groups.map(g => (
+          <div key={g.label} className="nyelv-csoport">
+            <div className="nyelv-csoport-label">{g.label}</div>
+            {g.items.map(item => (
+              <button key={item} className="nyelv-btn" onClick={() => onSelect(item)}>{item}</button>
+            ))}
+          </div>
+        ))}
+      </PopupOverlay>
+    );
   }
 
   // freetext
   const maxLen = source.maxLength ?? 20;
-  return overlay(<>
-    <label>{source.label}</label>
-    <input
-      autoFocus maxLength={maxLen}
-      value={freetextValue}
-      onChange={e => setFreetextValue(e.target.value)}
-      onKeyDown={e => { if (e.key === 'Enter' && freetextValue.trim()) onSelect(freetextValue.trim()); if (e.key === 'Escape') onCancel(); }}
-      placeholder={source.placeholder}
-    />
-    <div className="kep-prompt-btns">
-      <button onClick={() => { if (freetextValue.trim()) onSelect(freetextValue.trim()); }} disabled={!freetextValue.trim()}>OK</button>
-      <button onClick={onCancel}>Mégse</button>
-    </div>
-  </>);
+  return (
+    <PopupOverlay onClose={onCancel}>
+      <label>{source.label}</label>
+      <input
+        autoFocus maxLength={maxLen}
+        value={freetextValue}
+        onChange={e => setFreetextValue(e.target.value)}
+        onKeyDown={e => { if (e.key === 'Enter' && freetextValue.trim()) onSelect(freetextValue.trim()); if (e.key === 'Escape') onCancel(); }}
+        placeholder={source.placeholder}
+      />
+      <div className="kep-prompt-btns">
+        <button onClick={() => { if (freetextValue.trim()) onSelect(freetextValue.trim()); }} disabled={!freetextValue.trim()}>OK</button>
+        <button onClick={onCancel}>Mégse</button>
+      </div>
+    </PopupOverlay>
+  );
 }
 
 // --- Helper: build source from fortély def + context ---
@@ -92,7 +91,6 @@ export function buildFortelyPickerSource(
     }
     return { type: 'grouped', label: def.név, groups: [...byGroup.entries()].map(([label, items]) => ({ label, items })) };
   }
-  // free text
   return { type: 'freetext', label: `${def.név} — ${def.többszörös_típus}:` };
 }
 
