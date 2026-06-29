@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import type { FortelyRowProps } from './types';
 import { displayName, checkKövetelmények } from './helpers';
 import { FortelyInfoPanel } from './FortelyInfoPanel';
+import { MAX_FORTÉLY_FOK } from '../ui-constants';
 
 export function FortelyRow({
   slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove,
@@ -55,7 +56,7 @@ export function FortelyRow({
           <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}${overLimit ? ' fort-over' : ''}`}>
             {isNyelv ? nyelvFokLabels[slot.fok] ?? slot.fok : (
               <span className="fort-fok-dots">
-                {Array.from({ length: 3 }, (_, i) => (
+                {Array.from({ length: MAX_FORTÉLY_FOK }, (_, i) => (
                   <span key={i} className={`fort-dot${i < slot.fok ? ' filled' : ''}${i >= maxfok ? ' fort-dot-hidden' : ''}`} />
                 ))}
               </span>

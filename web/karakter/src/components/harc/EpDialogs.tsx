@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import type { SebTípus } from './ep-logic';
+import { SEB_TÍPUSOK, SEB_ALAP_MAX, SEB_BŐVÍTETT_MAX, type SebTípus } from './ep-logic';
 
 /** Sebesülés dialógus: típus + érték választás → onConfirm. */
 export function SebDialog({ onConfirm }: { onConfirm: (t: SebTípus, v: number) => void }) {
@@ -19,19 +19,19 @@ export function SebDialog({ onConfirm }: { onConfirm: (t: SebTípus, v: number) 
     <div className="kep-prompt" onClick={e => e.stopPropagation()}>
       <label>Sebesülés</label>
       <div className="ep-dialog-row">
-        {(['S', 'V', 'Z', 'FP'] as SebTípus[]).map(t => (
+        {SEB_TÍPUSOK.map(t => (
           <button key={t} className={`fort-fok-btn ${típus === t ? 'active' : ''}`} onClick={() => handleTípus(t)}>{t}</button>
         ))}
       </div>
       <div className="kep-szint-grid">
-        {Array.from({ length: 15 }, (_, i) => i + 1).map(n => (
+        {Array.from({ length: SEB_ALAP_MAX }, (_, i) => i + 1).map(n => (
           <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => handleÉrték(n)}>{n}</button>
         ))}
       </div>
       {!expanded && <div className="ep-expand-btn" onClick={() => setExpanded(true)}>▾</div>}
       {expanded && (
         <div className="kep-szint-grid">
-          {Array.from({ length: 25 }, (_, i) => i + 16).map(n => (
+          {Array.from({ length: SEB_BŐVÍTETT_MAX - SEB_ALAP_MAX }, (_, i) => i + SEB_ALAP_MAX + 1).map(n => (
             <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => handleÉrték(n)}>{n}</button>
           ))}
         </div>

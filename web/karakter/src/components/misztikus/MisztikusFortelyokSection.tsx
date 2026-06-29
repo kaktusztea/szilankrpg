@@ -1,6 +1,7 @@
 import type { Fortely } from '../../engine/types';
 import type { FortelySummary } from '../../engine/data-loader';
 import { FortelyInfoPanel } from '../fortelyok/FortelyInfoPanel';
+import { MAX_FORTÉLY_FOK } from '../ui-constants';
 
 interface Props {
   misztFortDefs: FortelySummary[];
@@ -54,7 +55,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
                 <button className="fort-delete" onClick={e => { e.stopPropagation(); onDelete(globalIdx); }}>✕</button>
               )}
               <span className="fort-fok-dots">
-                {Array.from({ length: 3 }, (_, di) => (
+                {Array.from({ length: MAX_FORTÉLY_FOK }, (_, di) => (
                   <span key={di} className={`fort-dot${di < f.fok ? ' filled' : ''}${di >= maxfok ? ' fort-dot-hidden' : ''}`} />
                 ))}
               </span>

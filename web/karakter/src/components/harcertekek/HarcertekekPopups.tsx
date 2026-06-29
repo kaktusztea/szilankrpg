@@ -144,6 +144,7 @@ export function Popups({
         }}>
           <SzintGrid
             label={`${harciKepzDisplayName(data, kepzSzintTarget)} — szint:`}
+            maxSzint={data.konstansok.arányok.képzettség_max_szint}
             current={képzettségek.find(kp => kp.név === kepzSzintTarget)?.szint ?? 0}
             onSelect={n => {
               setKépzettségek(prev => prev.map(kp => kp.név === kepzSzintTarget ? { ...kp, szint: n } : kp));

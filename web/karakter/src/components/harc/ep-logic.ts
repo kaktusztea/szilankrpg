@@ -2,6 +2,10 @@ import type { SebzésRubrika } from '../../engine/types';
 
 export type SebTípus = 'S' | 'V' | 'Z' | 'FP' | '';
 
+export const SEB_TÍPUSOK: SebTípus[] = ['S', 'V', 'Z', 'FP'];
+export const SEB_ALAP_MAX = 15;
+export const SEB_BŐVÍTETT_MAX = 40;
+
 export interface Rubrika {
   típus: SebTípus;
   sorszám: number;

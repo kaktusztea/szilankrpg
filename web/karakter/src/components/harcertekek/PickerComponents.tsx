@@ -67,9 +67,10 @@ export function DeleteConfirm({ label, buttonText, onConfirm }: {
   );
 }
 
-/** Level grid — 15-button grid for skill level selection */
-export function SzintGrid({ current, onSelect, label }: {
+/** Level grid — button grid for skill level selection */
+export function SzintGrid({ current, maxSzint, onSelect, label }: {
   current: number;
+  maxSzint: number;
   onSelect: (v: number) => void;
   label: string;
 }) {
@@ -77,7 +78,7 @@ export function SzintGrid({ current, onSelect, label }: {
     <>
       <label>{label}</label>
       <div className="kep-szint-grid">
-        {Array.from({ length: 15 }, (_, i) => i + 1).map(n => (
+        {Array.from({ length: maxSzint }, (_, i) => i + 1).map(n => (
           <button key={n} className={`fort-fok-btn${current === n ? ' active' : ''}`} onClick={() => onSelect(n)}>{n}</button>
         ))}
       </div>
