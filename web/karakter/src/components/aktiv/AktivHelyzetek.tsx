@@ -34,9 +34,9 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
   }
 
   const groups = [
-    { label: 'Pozitív helyzet', color: '#4caf50', items: data.harciHelyzetek.filter(h => h.csoport === 'pozitív' && isHelyzetAvailable(h, session, data)) },
-    { label: 'Semleges helyzet', color: '#ff9800', items: data.harciHelyzetek.filter(h => h.csoport === 'semleges' && isHelyzetAvailable(h, session, data)) },
-    { label: 'Negatív helyzet', color: '#f44336', items: data.harciHelyzetek.filter(h => h.csoport === 'negatív' && isHelyzetAvailable(h, session, data)) },
+    { label: 'Pozitív helyzet', cls: 'aktiv-picker-group-pozitív', items: data.harciHelyzetek.filter(h => h.csoport === 'pozitív' && isHelyzetAvailable(h, session, data)) },
+    { label: 'Semleges helyzet', cls: 'aktiv-picker-group-semleges', items: data.harciHelyzetek.filter(h => h.csoport === 'semleges' && isHelyzetAvailable(h, session, data)) },
+    { label: 'Negatív helyzet', cls: 'aktiv-picker-group-negatív', items: data.harciHelyzetek.filter(h => h.csoport === 'negatív' && isHelyzetAvailable(h, session, data)) },
   ];
 
   return (
@@ -79,7 +79,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
       {showPicker && (
         <PickerOverlay title="Harci helyzet választó" onClose={() => setShowPicker(false)}>
           {groups.flatMap(g => g.items.length > 0 ? [
-            <div key={g.label} className="aktiv-picker-group-label" style={{ color: g.color }}>{g.label}</div>,
+            <div key={g.label} className={`aktiv-picker-group-label ${g.cls}`}>{g.label}</div>,
             ...g.items.sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(h => (
               <div key={h.név} className="aktiv-picker-item" onClick={() => addHelyzet(h)}>
                 <span className="aktiv-picker-item-name">{h.név}</span>

@@ -319,6 +319,10 @@
   border-bottom: 1px solid var(--border-light);
   margin-top: 4px;
 }
+.aktiv-picker-group-pozitív { color: #4caf50; }
+.aktiv-picker-group-semleges { color: #ff9800; }
+.aktiv-picker-group-negatív { color: #f44336;
+}
 
 /* ===================
    11. Toggle gomb

@@ -1,6 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
+import { findMfFok as findMfFokCanonical } from '../../engine/mf-utils';
 
 // --- HM számítás ---
 
@@ -48,12 +49,7 @@ export function harciKepzDisplayName(data: GameData, név: string): string {
 // --- Mesterfegyver ---
 
 export function getMfFok(data: GameData, k: Karakter, fegyverAlap: string): number {
-  const fDef = lookupFegyver(data.fegyverek, fegyverAlap);
-  const displayName = fDef?.Alapnév || fegyverAlap;
-  const entry = k.fortélyok.find(
-    f => f.név === 'Mesterfegyver' && (f.spec_elem === displayName || f.spec_elem === fegyverAlap)
-  );
-  return entry?.fok ?? 0;
+  return findMfFokCanonical(k, data.fegyverek, fegyverAlap);
 }
 
 export function mfKövetelményHiba(data: GameData, k: Karakter, fegyverAlap: string): boolean {

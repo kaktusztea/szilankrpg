@@ -2,6 +2,19 @@ import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
 
+/** Extrapolált fokDef interpoláció: ha a keresett fok nincs a fokok listában de van fortély_bővítés. */
+export function interpolateFokDef<T extends Record<string, unknown>>(fokok: T[], fok: number, hasBővítés: boolean): T | undefined {
+  const found = fokok.find((f: any) => f.fok === fok);
+  if (found) return found;
+  if (!hasBővítés || fokok.length === 0) return undefined;
+  const utolsó = fokok[fokok.length - 1] as any;
+  const result: any = { fok };
+  for (const [k, v] of Object.entries(utolsó)) {
+    if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') result[k] = Math.round((v / utolsó.fok) * fok);
+  }
+  return result as T;
+}
+
 /** Taktika engedélyezett-e az aktuális session alapján */
 export function isTaktikaAllowed(
   név: string, session: Session, karakter: Karakter, data: GameData,
@@ -72,14 +85,7 @@ export function getTaktikaMods(t: { név: string; fok?: number }, data: GameData
   if (!def) return [];
   const mods: string[] = [];
   if (def.fokozatos && def.fokok && t.fok != null) {
-    let fokDef = def.fokok.find(fk => fk.fok === t.fok);
-    if (!fokDef && def.fortély_bővítés) {
-      const utolsó = def.fokok[def.fokok.length - 1];
-      fokDef = { fok: t.fok } as typeof utolsó;
-      for (const [k, v] of Object.entries(utolsó)) {
-        if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') (fokDef as any)[k] = Math.round((v / utolsó.fok) * t.fok);
-      }
-    }
+    const fokDef = interpolateFokDef(def.fokok, t.fok, !!def.fortély_bővítés);
     if (fokDef) {
       for (const [k, v] of Object.entries(fokDef)) {
         if (k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0) mods.push(`${k}:${v > 0 ? '+' : ''}${v}`);

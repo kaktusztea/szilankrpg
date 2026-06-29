@@ -22,10 +22,12 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | Fájl | Felelősség |
 |------|-----------|
 | `reactive.ts` | Rule engine: evaluate, buildContext, buildArrayContext |
+| `reactive-parse.ts` | Formula parser: evalFormula, aggregate resolverek (sum, lookup, stb.) |
 | `types.ts` | Karakter v2, Session, Fortely interface-ek |
 | `data-types.ts` | GameData, FortelySummary, TaktikaEntry, HarciHelyzetEntry stb. |
 | `data-loader.ts` | fetchJson runtime adatbetöltés |
 | `fortely-mods.ts` | calcFortelyMods — feltételes fortély módosítók |
+| `mf-utils.ts` | Canonical findMfFok + getMfBónusz |
 | `alapeset.ts` | Fortély 0.fok (Alapeset) kiértékelés |
 | `ketkezes.ts` | Kétkezes harc összesítő kalkuláció |
 | `feltetelek.ts` | buildAktívFeltételek helper |
@@ -38,7 +40,8 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 ### Hooks (`hooks/`)
 | Hook | Felelősség |
 |------|-----------|
-| `useKarakterState` | localStorage multi-slot, karakter load/save, undo |
+| `useKarakterState` | localStorage multi-slot, karakter load/save |
+| `useUndo` | Undo stack kezelés (pushUndo, undoTo) |
 | `useKarakterActions` | mentés, betöltés, teszt, import, share |
 | `useUndoWrappedSetters` | Undo-aware setter wrapperek |
 | `useOverlays` | Overlay state kezelés (Escape, toast, gombok) |
@@ -171,9 +174,9 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | 24 | Kalkulált feltételek | `useHarcComputed.ts` |
 | 26 | Kétkezes harc | `ketkezes.ts` |
 | 27 | Fegyverfogás | `AktivFegyverfogas.tsx`, `pancel-calc.ts` |
-| 29 | Undo | `useKarakterState.ts` |
+| 29 | Undo | `useKarakterState.ts`, `useUndo.ts` |
 | 30-31 | Local Storage, Multi-karakter | `useKarakterState.ts`, `useAutoSave.ts` |
 | 34 | Aura | `MisztikusScreen.tsx` |
 | 38 | Lovas harc | `harci_helyzetek.yaml`, `taktikak.yaml` |
 | 40 | URL Export | `url-share.ts` |
-| 41 | Reactive Engine | `reactive.ts`, `rules.json` |
+| 41 | Reactive Engine | `reactive.ts`, `reactive-parse.ts`, `rules.json` |

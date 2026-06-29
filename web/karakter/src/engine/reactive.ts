@@ -2,6 +2,7 @@
  * Reactive rule engine — evaluates declarative formulas from rules.json
  * against a context of named values (scalars and arrays).
  */
+import { evalFormula } from './reactive-parse';
 
 export interface Rule {
   id: string;
@@ -44,112 +45,6 @@ export function evaluate(rules: Rule[], ctx: Context, arrays?: ArrayContext, str
   }
 
   return results;
-}
-
-/**
- * Evaluate a formula string.
- * Supports: arithmetic, floor/ceil/min/max/abs, and aggregate functions:
- *   sum_lookup(arrayName, field, lookupTable, lookupKey, lookupValue)
- *   sum(arrayName, field)
- *   sum_where(arrayName, sumField, filterField, filterValue)
- *   count(arrayName)
- *   lookup(arrayName, keyField, keyValue, valueField)
- *   if(condition, thenValue, elseValue)
- */
-function evalFormula(formula: string, ctx: Context, results: Map<string, number>, arrays: ArrayContext, stringCtx: StringContext): number {
-  // Process aggregate functions first
-  let processed = formula;
-  processed = resolveSumLookup(processed, arrays);
-  processed = resolveSumWhere(processed, arrays);
-  processed = resolveSum(processed, arrays);
-  processed = resolveCount(processed, arrays);
-  processed = resolveLookup(processed, ctx, results, arrays, stringCtx);
-
-  // Replace remaining identifiers with their values
-  const resolved = processed.replace(/[a-záéíóöőúüűA-ZÁÉÍÓÖŐÚÜŰ_][a-záéíóöőúüűA-ZÁÉÍÓÖŐÚÜŰ0-9_.]*/g, (match) => {
-    if (match === 'floor' || match === 'ceil' || match === 'min' || match === 'max' || match === 'abs' || match === 'if') return match;
-    const val = results.get(match) ?? ctx.get(match) ?? 0;
-    return String(val);
-  });
-
-  try {
-    const withIf = resolved.replace(
-      /if\(([^,]+),\s*([^,]+),\s*([^)]+)\)/g,
-      '(($1) ? ($2) : ($3))'
-    );
-    const fn = new Function('floor', 'ceil', 'min', 'max', 'abs', `return (${withIf});`);
-    return fn(Math.floor, Math.ceil, Math.min, Math.max, Math.abs);
-  } catch {
-    return 0;
-  }
-}
-
-// --- Aggregate resolvers ---
-
-function resolveSumLookup(formula: string, arrays: ArrayContext): string {
-  return formula.replace(
-    /sum_lookup\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+)\)/g,
-    (_match, arrayName, field, tableName, keyField, valueField) => {
-      const arr = arrays.get(arrayName) ?? [];
-      const table = arrays.get(tableName) ?? [];
-      let sum = 0;
-      for (const item of arr) {
-        const key = item[field] ?? 0;
-        const row = table.find(r => r[keyField] === key);
-        sum += Number(row ? (row[valueField] ?? 0) : 0);
-      }
-      return String(sum);
-    }
-  );
-}
-
-function resolveSumWhere(formula: string, arrays: ArrayContext): string {
-  return formula.replace(
-    /sum_where\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_0-9.]+)\)/g,
-    (_match, arrayName, sumField, filterField, filterValue) => {
-      const arr = arrays.get(arrayName) ?? [];
-      const fv = Number(filterValue);
-      const filtered = arr.filter(item => item[filterField] === fv);
-      return String(filtered.reduce((s, item) => s + Number(item[sumField] ?? 0), 0));
-    }
-  );
-}
-
-function resolveSum(formula: string, arrays: ArrayContext): string {
-  return formula.replace(
-    /sum\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+)\)/g,
-    (_match, arrayName, field) => {
-      const arr = arrays.get(arrayName) ?? [];
-      return String(arr.reduce((s, item) => s + Number(item[field] ?? 0), 0));
-    }
-  );
-}
-
-function resolveCount(formula: string, arrays: ArrayContext): string {
-  return formula.replace(
-    /count\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ]+)\)/g,
-    (_match, arrayName) => String((arrays.get(arrayName) ?? []).length)
-  );
-}
-
-function resolveLookup(formula: string, ctx: Context, results: Map<string, number>, arrays: ArrayContext, stringCtx: StringContext): string {
-  return formula.replace(
-    /lookup\(([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_0-9.]+),\s*([\wáéíóöőúüűÁÉÍÓÖŐÚÜŰ_]+)\)/g,
-    (_match, arrayName, keyField, keyValue, valueField) => {
-      const arr = arrays.get(arrayName) ?? [];
-      // Check string context for string-keyed lookups
-      const strCtxVal = stringCtx.get(keyValue);
-      if (strCtxVal !== undefined) {
-        const row = arr.find(r => r[keyField] === strCtxVal);
-        return String(Number(row ? (row[valueField] ?? 0) : 0));
-      }
-      // Resolve keyValue: check context or parse as number
-      const ctxVal = ctx.get(keyValue) ?? results.get(keyValue);
-      const kv = ctxVal !== undefined ? ctxVal : (Number(keyValue) || 0);
-      const row = arr.find(r => r[keyField] === kv);
-      return String(Number(row ? (row[valueField] ?? 0) : 0));
-    }
-  );
 }
 
 /** Rule IDs that are fegyver-specific (only these need per-weapon evaluation). */

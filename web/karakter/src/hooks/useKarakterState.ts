@@ -2,20 +2,8 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { Karakter, Session } from '../engine/types';
 import { useGameDataLoader } from './useGameDataLoader';
 import { useAutoSave } from './useAutoSave';
-import { UNDO_MAX } from '../ui-constants';
-
-export interface UndoEntry { timestamp: number; leírás: string; session: Session; karakter: Karakter; }
-
-function loadInitialUndo(): UndoEntry[] {
-  try {
-    const activeUid = localStorage.getItem('szilank_active');
-    if (activeUid) {
-      const charData = localStorage.getItem(`szilank_char_${activeUid}`);
-      if (charData) { const p = JSON.parse(charData); return p._undo || []; }
-    }
-    const s = localStorage.getItem('szilank_undo'); return s ? JSON.parse(s) : [];
-  } catch { return []; }
-}
+import { useUndo } from './useUndo';
+export type { UndoEntry } from './useUndo';
 
 export function useKarakterState() {
   const { data, error, initialKarakter, initialDirty } = useGameDataLoader();
@@ -23,10 +11,13 @@ export function useKarakterState() {
   const [karakter, setKarakter] = useState<Karakter | null>(null);
   const [testMode, setTestMode] = useState(false);
   const [isDirty, setIsDirty] = useState(false);
-  const [undoStack, setUndoStack] = useState<UndoEntry[]>(loadInitialUndo);
 
   const karakterRef = useRef(karakter);
   karakterRef.current = karakter;
+
+  const { undoStack, setUndoStack, pushUndo, undoTo } = useUndo(
+    karakterRef, karakter, setKarakter, testMode, setTestMode, isDirty, setIsDirty,
+  );
 
   // Init karakter from loader
   useEffect(() => {
@@ -54,25 +45,6 @@ export function useKarakterState() {
   const setSession = useCallback((val: Session | ((prev: Session) => Session)) => {
     setKarakter(prev => prev ? { ...prev, session: typeof val === 'function' ? val(prev.session) : val } : prev);
   }, []);
-
-  // --- Undo ---
-  const pushUndo = useCallback((leírás: string) => {
-    const k = karakterRef.current;
-    if (!k) return;
-    if (testMode) setTestMode(false);
-    if (!isDirty) setIsDirty(true);
-    setUndoStack(prev => [
-      { timestamp: Date.now(), leírás, session: structuredClone(k.session), karakter: structuredClone(k) },
-      ...prev
-    ].slice(0, UNDO_MAX));
-  }, [testMode, isDirty]);
-
-  const undoTo = useCallback((index: number) => {
-    if (!karakter) return;
-    const entry = undoStack[index];
-    setKarakter({ ...entry.karakter, jegyzetek: karakter.jegyzetek, napló: karakter.napló });
-    setUndoStack(prev => prev.slice(index + 1));
-  }, [karakter, undoStack]);
 
   return {
     data, error, karakter, setKarakter,

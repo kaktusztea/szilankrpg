@@ -72,6 +72,11 @@ Cél: modularizáció, teljesítmény, DRY.
 | 16 | Taktika üzleti logika kiemelés | `aktiv/taktika-helpers.ts` (+getExtraFokok, formatFokMods), `AktivTaktikak.tsx` | Render ↔ logika szétválasztás |
 | 17 | fegyver-calc cache fix | `fegyver-calc.ts` | Module-szintű let → WeakMap (HMR-safe) |
 | 18 | Overlay/picker konszolidáció | `PopupOverlay.tsx`, `PickerOverlay.tsx`, `misztikus/Overlay.tsx`, `FortelyPopups.tsx`, `FortelyFelvetel.tsx`, `FortelyRow.tsx`, `SpecPicker.tsx`, `HarcPopups.tsx`, `StatuszPickerOverlay.tsx` | 2 központi shell (PopupOverlay + PickerOverlay) + ESC kezelés; 9 fájlból inline createPortal eliminálva; 6 fájlból redundáns useEscapeClose/useEffect törölve |
+| 19 | Inline style → CSS class | `AktivHelyzetek.tsx`, `styles/common.css` | Helyzet picker csoport színek CSS classban (`.aktiv-picker-group-pozitív/semleges/negatív`) |
+| 20 | MF lookup DRY (canonical) | `engine/mf-utils.ts` (új), `harcertekek/helpers.ts`, `harc/shared.ts` | Egységes `findMfFok` + `getMfBónusz` az engine layerben |
+| 21 | Taktika fokDef interpoláció DRY | `aktiv/taktika-helpers.ts` (+interpolateFokDef), `harc/taktika-calc.ts` | Közös helper a fortély_bővítés extrapolációra |
+| 22 | Reactive engine belső bontás | `engine/reactive-parse.ts` (új), `engine/reactive.ts` | evalFormula + 5 aggregate resolver → külön fájl (tesztelhetőség) |
+| 23 | Undo hook kiszervezés | `hooks/useUndo.ts` (új), `hooks/useKarakterState.ts` | Undo logika önálló hook-ba |
 
 ---
 

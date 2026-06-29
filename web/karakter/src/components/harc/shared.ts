@@ -1,5 +1,6 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+export { getMfBónusz } from '../../engine/mf-utils';
 
 /** Pajzs fegyver név összerakása a karakter pajzs méretéből. */
 export function buildPajzsFegyverNév(karakter: Karakter): string | null {
@@ -14,11 +15,6 @@ export function findMfFok(karakter: Karakter, fegyverNév: string, fegyverAlap: 
     f.spec_elem?.toLowerCase() === fegyverAlap.toLowerCase()
   ));
   return entry?.fok ?? 0;
-}
-
-/** MF bónusz lookup fokszám alapján. */
-export function getMfBónusz(konstansok: { mesterfegyver_bónuszok: { fok: number; TÉ: number; VÉ: number; SP: number }[] }, fok: number): { TÉ: number; VÉ: number; SP: number } {
-  return konstansok.mesterfegyver_bónuszok.find(b => b.fok === fok) ?? { TÉ: 0, VÉ: 0, SP: 0 };
 }
 
 /** SP override keresés fortélyokból (pl. Természetes fegyver → puszta kéz SP). */
