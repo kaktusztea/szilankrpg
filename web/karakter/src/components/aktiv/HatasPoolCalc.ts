@@ -59,6 +59,27 @@ export function calcTaktikaHatások(session: Session, data: GameData): TaktikaHa
   return result;
 }
 
+/** Check if a modifier's feltétel is satisfied by the active conditions. */
+function isFeltételAktív(feltétel: unknown, aktívFeltételek: Set<string>): boolean {
+  if (!feltétel || feltétel === '') return true;
+  if (typeof feltétel === 'string') return aktívFeltételek.has(feltétel);
+  if (Array.isArray(feltétel)) {
+    const hFelt = (feltétel as { forrás: string }[]).find(p => p.forrás?.startsWith('harci_helyzet:'));
+    return !hFelt || aktívFeltételek.has(hFelt.forrás);
+  }
+  return true;
+}
+
+/** Extract helyzet binding key from a modifier's feltétel (if any). */
+function extractHelyzetKötés(feltétel: unknown): string {
+  if (typeof feltétel === 'string' && feltétel.startsWith('harci_helyzet:')) return feltétel.slice(14);
+  if (Array.isArray(feltétel)) {
+    const hFelt = (feltétel as { forrás: string }[]).find(p => p.forrás?.startsWith('harci_helyzet:'));
+    if (hFelt) return hFelt.forrás.slice(14);
+  }
+  return '';
+}
+
 export function calcFortélyPool(
   karakter: Karakter, data: GameData, aktívFeltételek: Set<string>,
 ): { fortélyEmlékeztetők: FortélyEmlékeztető[]; helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>; manőverBónuszok: ManőverBónusz[]; előnyHátrányMods: ElőnyHátrányMod[] } {
@@ -72,32 +93,27 @@ export function calcFortélyPool(
     if (!def || def.csoport !== 'harci') continue;
     const fokDef = def.fokok.find(fd => fd.fok === kf.fok);
     if (!fokDef) continue;
-    const hasMods = fokDef.módosítók && Array.isArray(fokDef.módosítók) && fokDef.módosítók.length > 0;
+
     let helyzetKötés = '';
-    if (hasMods) {
+
+    // Process modifiers: collect manőver bónusz, előny/hátrány, helyzet kötés
+    if (fokDef.módosítók && Array.isArray(fokDef.módosítók) && fokDef.módosítók.length > 0) {
       for (const mod of fokDef.módosítók) {
-        if (mod.feltétel && mod.feltétel !== '') {
-          if (typeof mod.feltétel === 'string') {
-            if (!aktívFeltételek.has(mod.feltétel)) continue;
-          } else if (Array.isArray(mod.feltétel)) {
-            const hFelt = (mod.feltétel as { forrás: string }[]).find(p => p.forrás?.startsWith('harci_helyzet:'));
-            if (hFelt && !aktívFeltételek.has(hFelt.forrás)) continue;
-          }
-        }
+        if (!isFeltételAktív(mod.feltétel, aktívFeltételek)) continue;
+
         if (typeof mod.cél === 'string' && mod.cél.startsWith('manőver:')) {
           manőverBónuszok.push({ név: kf.név, manőver: mod.cél.slice(8), érték: mod.érték });
         }
         if (mod.mód === 'előny' || mod.mód === 'hátrány') {
           előnyHátrányMods.push({ név: kf.név, cél: mod.cél, mód: mod.mód, érték: mod.érték });
         }
-        if (typeof mod.feltétel === 'string' && mod.feltétel.startsWith('harci_helyzet:')) {
-          helyzetKötés = mod.feltétel.slice(14);
-        } else if (Array.isArray(mod.feltétel)) {
-          const hFelt = (mod.feltétel as { forrás: string }[]).find(p => p.forrás?.startsWith('harci_helyzet:'));
-          if (hFelt) helyzetKötés = hFelt.forrás.slice(14);
-        }
+
+        const kötés = extractHelyzetKötés(mod.feltétel);
+        if (kötés) helyzetKötés = kötés;
       }
     }
+
+    // Categorize: helyzet-bound vs emlékeztető
     if (helyzetKötés) {
       const hNév = data.harciHelyzetek.find(d => d.feltétel_kulcs === `harci_helyzet:${helyzetKötés}`)?.név || helyzetKötés;
       const arr = helyzetFortélyok.get(hNév) || [];

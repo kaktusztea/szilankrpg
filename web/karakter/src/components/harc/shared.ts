@@ -1,6 +1,12 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 
+/** Pajzs fegyver név összerakása a karakter pajzs méretéből. */
+export function buildPajzsFegyverNév(karakter: Karakter): string | null {
+  if (!karakter.pajzs?.méret) return null;
+  return karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs';
+}
+
 /** Mesterfegyver fok keresés fegyver név/alap alapján (case-insensitive). */
 export function findMfFok(karakter: Karakter, fegyverNév: string, fegyverAlap: string): number {
   const entry = karakter.fortélyok.find(f => f.név === 'Mesterfegyver' && (

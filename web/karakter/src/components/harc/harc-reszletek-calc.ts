@@ -2,7 +2,7 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { FegyverResult } from './types';
 import { lookupFegyver } from '../../engine/utils';
-import { findMfFok, getMfBónusz, resolveNagyobbKisebb } from './shared';
+import { findMfFok, getMfBónusz, resolveNagyobbKisebb, buildPajzsFegyverNév } from './shared';
 
 export interface KétkezesBontás {
   nagyobb: { név: string; TÉ: number; VÉ: number; mfTÉ: number; mfVÉ: number; mfSP: number };
@@ -93,7 +93,7 @@ export function calcReszletekData(
     aktívResult = kétkezesResult;
   } else {
     const jobbFp = k.fegyverek[session.aktív_fegyver_index];
-    const pajzsFegyverNév = k.pajzs?.méret ? (k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs') : null;
+    const pajzsFegyverNév = buildPajzsFegyverNév(k);
     const jobbNév = session.aktív_fegyver_index === -2
       ? (pajzsFegyverNév ?? '')
       : jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? '') : 'Puszta kéz';

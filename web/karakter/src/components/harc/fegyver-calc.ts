@@ -6,11 +6,15 @@ import { calcKétkezesHarc } from '../../engine/ketkezes';
 import { calcSpOverride } from './shared';
 import type { FegyverResult } from './types';
 
-/** Cached filtered fegyver rules (populated on first call). */
-let _fegyverRules: Rule[] | null = null;
+/** Cached filtered fegyver rules (keyed by rules array reference). */
+const _fegyverRulesCache = new WeakMap<Rule[], Rule[]>();
 function getFegyverRules(allRules: Rule[]): Rule[] {
-  if (!_fegyverRules) _fegyverRules = filterFegyverRules(allRules);
-  return _fegyverRules;
+  let cached = _fegyverRulesCache.get(allRules);
+  if (!cached) {
+    cached = filterFegyverRules(allRules);
+    _fegyverRulesCache.set(allRules, cached);
+  }
+  return cached;
 }
 
 /** Fegyver sorok felépítése (karakter fegyverek + puszta kéz + MK párok + pajzs) */

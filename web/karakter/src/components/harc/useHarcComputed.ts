@@ -9,6 +9,7 @@ import { calcTaktikaMods } from './taktika-calc';
 import { buildPancelLookups, calcFogas as calcFogás } from './pancel-calc';
 import { buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes as calcKétkezes } from './fegyver-calc';
 import { calcFortelyMods } from '../../engine/fortely-mods';
+import { buildPajzsFegyverNév } from './shared';
 
 export function useHarcComputed(data: GameData, karakter: Karakter, session: Session): HarcComputed {
   const k = karakter;
@@ -31,7 +32,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
 
   // Aktív fegyver pengehossz
   const aktívFegyverFp = session.aktív_fegyver_index >= 0 ? k.fegyverek[session.aktív_fegyver_index] : null;
-  const pajzsFegyverNév = k.pajzs?.méret ? (k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs') : null;
+  const pajzsFegyverNév = buildPajzsFegyverNév(k);
   const aktívFegyverDef = session.aktív_fegyver_index === -2
     ? lookupFegyver(data.fegyverek, pajzsFegyverNév ?? '')
     : aktívFegyverFp ? lookupFegyver(data.fegyverek, aktívFegyverFp.alap) : null;

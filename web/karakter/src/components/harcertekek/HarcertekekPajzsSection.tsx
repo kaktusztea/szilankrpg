@@ -1,6 +1,7 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
+import { buildPajzsFegyverNév } from '../harc/shared';
 import { FegyverChip } from './HarcertekekFegyverChip';
 
 interface Props {
@@ -13,8 +14,8 @@ interface Props {
 
 export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup, showHint }: Props) {
   const pajzsChip = (() => {
-    if (!k.pajzs.méret) return null;
-    const pNév = k.pajzs.méret.charAt(0).toUpperCase() + k.pajzs.méret.slice(1) + ' Pajzs';
+    const pNév = buildPajzsFegyverNév(k);
+    if (!pNév) return null;
     const pd = lookupFegyver(data.fegyverek, pNév);
     if (!pd) return null;
     const isInactive = k.session.fegyverfogás !== 'egyfegyveres' || k.session.aktív_fegyver_index !== -2;

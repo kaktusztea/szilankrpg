@@ -92,3 +92,32 @@ export function getTaktikaMods(t: { név: string; fok?: number }, data: GameData
   }
   return mods;
 }
+
+/** Get taktika fokok including fortély bővítés extra fokok. */
+export function getExtraFokok(def: any, karakter: Karakter): any[] {
+  let fokok = [...def.fokok];
+  if (def.fortély_bővítés) {
+    const fb = def.fortély_bővítés;
+    const fortélyFok = karakter.fortélyok.find(f => f.név === fb.fortély)?.fok ?? 0;
+    const extraCount = fortélyFok * fb.extra_fokok_per_fok;
+    const utolsó = def.fokok[def.fokok.length - 1];
+    const perFok: Record<string, number> = {};
+    for (const [k, v] of Object.entries(utolsó)) {
+      if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
+    }
+    for (let i = 1; i <= extraCount; i++) {
+      const newFok = utolsó.fok + i;
+      const entry: any = { fok: newFok };
+      for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * newFok);
+      fokok.push(entry);
+    }
+  }
+  return fokok;
+}
+
+/** Format fok modifier values as display string. */
+export function formatFokMods(f: Record<string, unknown>): string {
+  return Object.entries(f)
+    .filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0)
+    .map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ');
+}

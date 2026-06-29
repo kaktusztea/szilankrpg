@@ -1,6 +1,7 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
+import { buildPajzsFegyverNév } from '../harc/shared';
 
 /** Helyzet elérhető-e a pickerben */
 export function isHelyzetAvailable(
@@ -28,7 +29,7 @@ export function getMinPengeWarning(
       if (mod.cél === 'min_pengehossz' && mod.feltétel === helyzetFeltételKulcs) {
         const aktívFp = session.aktív_fegyver_index >= 0 ? karakter.fegyverek[session.aktív_fegyver_index] : null;
         const aktívFd = session.aktív_fegyver_index === -2
-          ? lookupFegyver(data.fegyverek, karakter.pajzs?.méret ? karakter.pajzs.méret.charAt(0).toUpperCase() + karakter.pajzs.méret.slice(1) + ' Pajzs' : '')
+          ? lookupFegyver(data.fegyverek, buildPajzsFegyverNév(karakter) ?? '')
           : aktívFp ? lookupFegyver(data.fegyverek, aktívFp.alap) : null;
         const ph = aktívFd ? (parseFloat(aktívFd.Pengehossz) || 0) : 0;
         if (ph < mod.érték) return `⚠ Min. pengehossz: ${mod.érték}!`;

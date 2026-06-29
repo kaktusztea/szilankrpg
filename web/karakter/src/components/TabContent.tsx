@@ -2,7 +2,7 @@ import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, Fortely, Tulajdonsagok } from '../engine/types';
 import type { TabDef } from './TabBar';
 import { useUndoWrappedSetters } from '../hooks/useUndoWrappedSetters';
-import { makeFieldSetter, makeAnyanyelvSetter, buildFortelyokProps } from './karakter-setters';
+import { makeFieldSetter, makeAnyanyelvSetter, buildFortelyokProps, makeFajSetter, makeUndoKarakterSetter } from './karakter-setters';
 import { AktivScreen } from './aktiv';
 import { HarcScreen } from './harc';
 import { TavharcScreen } from './tavharc';
@@ -65,7 +65,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
         játékos={karakter.játékos} setJátékos={sf('játékos', (_, n) => `Játékos: ${n}`)}
         tsz={karakter.tsz} setTsz={sf('tsz', (p, n) => `TSz: ${p} → ${n}`)}
         kor={karakter.kor} setKor={sf('kor', (p, n) => `Kor: ${p} → ${n}`)}
-        faj={karakter.hátterek.faj} setFaj={v => { pushUndo(`Faj: ${v}`); setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev); }}
+        faj={karakter.hátterek.faj} setFaj={makeFajSetter(pushUndo, setKarakter)}
         anyanyelv={karakter.anyanyelv} setAnyanyelv={setAnyanyelv}
       />;
     }
@@ -80,7 +80,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
     case 'misztikus': return <MisztikusScreen data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo}
       fortélyok={fortélyok} setFortélyok={setFortélyok} gameMode={gameMode} />;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter}
-        setKarakter={(updater) => { pushUndo('Harcértékek módosítás'); setKarakter(updater); }}
+        setKarakter={makeUndoKarakterSetter(pushUndo, setKarakter, 'Harcértékek módosítás')}
         képzettségek={képzettségek} gameMode={gameMode} setKépzettségek={setKépzettségekUndo} />;
     case 'hatterek': return <HatterekScreen data={data} karakter={karakter}
         setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}

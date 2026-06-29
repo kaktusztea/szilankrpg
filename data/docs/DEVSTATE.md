@@ -63,6 +63,14 @@ Cél: modularizáció, teljesítmény, DRY.
 | 7 | Feltétel eval kiszervezés | `engine/feltetel-eval.ts` (új), `useHarcComputed.ts` | Feltétel logika újrahasznosítható |
 | 8 | Generikus hook-ok | `hooks/useEscapeClose.ts`, `hooks/usePopupState.ts` (új) | Inline useEffect eliminálás |
 | 9 | shared.ts bővítés | `harc/shared.ts` (+calcSpOverride, resolveNagyobbKisebb), `HarcCalc.ts` (törölve) | DRY: SP override + kétkezes pengeméret |
+| 10 | HarcFegyverTable DRY | `HarcFegyverTable.tsx` | Egyetlen renderRow() minden sorra (TÉ/VÉ duplikáció eliminálva) |
+| 11 | pajzsFegyverNév konszolidáció | `shared.ts` (+buildPajzsFegyverNév), 5 fájl | 5 inline duplikáció → 1 helper |
+| 12 | Escape hack eltávolítás | `useOverlays.ts`, `EpTable.tsx` | dispatchEvent hack → direkt reset + useEscapeClose |
+| 13 | Setter konvenció konszolidáció | `karakter-setters.ts` (+makeFajSetter, makeUndoKarakterSetter), `TabContent.tsx` | Egységes undo-aware setter minta |
+| 14 | calcFortélyPool olvashatóság | `aktiv/HatasPoolCalc.ts` (+isFeltételAktív, extractHelyzetKötés) | 3-level nesting → flat helpers |
+| 15 | EpDialogs kiemelés | `harc/EpDialogs.tsx` (új), `EpTable.tsx` | useEffect trigger → explicit click handler |
+| 16 | Taktika üzleti logika kiemelés | `aktiv/taktika-helpers.ts` (+getExtraFokok, formatFokMods), `AktivTaktikak.tsx` | Render ↔ logika szétválasztás |
+| 17 | fegyver-calc cache fix | `fegyver-calc.ts` | Module-szintű let → WeakMap (HMR-safe) |
 
 ---
 

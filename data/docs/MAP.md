@@ -71,7 +71,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivHatasPool.tsx       Hatás pool box
   HatasPoolCalc.ts         Pool kalkuláció logika (4 pure fn + orchestrator)
   AktivHelpers.ts          Barrel re-export (taktika + helyzet helpers)
-  taktika-helpers.ts       Taktika validáció, kombó, getTaktikaMods
+  taktika-helpers.ts       Taktika validáció, kombó, getTaktikaMods, getExtraFokok, formatFokMods
   helyzet-helpers.ts       Helyzet elérhetőség, min penge, infó szöveg
 
 harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
@@ -80,10 +80,11 @@ harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   fegyver-calc.ts          Per-fegyver TÉ/VÉ/SP/harckeret (optimalizált: 5 rule/fegyver)
   taktika-calc.ts          Taktika módosítók
   pancel-calc.ts           Páncél lookup + fogás VÉ
-  shared.ts                Közös utils: findMfFok, getMfBónusz, resolveNagyobbKisebb
+  shared.ts                Közös utils: findMfFok, getMfBónusz, resolveNagyobbKisebb, buildPajzsFegyverNév
   ep-logic.ts              ÉP sebesülés/gyógyulás pure logika
   harc-reszletek-calc.ts   Részletes értékek bontás
   EpTable.tsx              ÉP sebesülés tábla (S1-S4)
+  EpDialogs.tsx            Seb/Gyógy dialógusok (explicit click handler)
   HarcFegyverTable.tsx     Fegyver harcértékek tábla
   HarcHeader.tsx           KÉ, SFÉ, VÉ csökk, MP boxok
 

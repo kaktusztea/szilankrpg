@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../../engine/types';
 import { fmtHatás } from '../formatters';
-import { isTaktikaAllowed, getTaktikaMods } from './AktivHelpers';
+import { isTaktikaAllowed, getTaktikaMods, getExtraFokok, formatFokMods } from './AktivHelpers';
 import { PickerOverlay } from './PickerOverlay';
 
 interface Props {
@@ -37,39 +37,12 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
     setSession(s => ({ ...s, aktív_taktikák: s.aktív_taktikák.map((t, i) => i === idx ? { ...t, fok } : t) }));
   }
 
-  function getExtraFokok(def: any): any[] {
-    let fokok = [...def.fokok];
-    if (def.fortély_bővítés) {
-      const fb = def.fortély_bővítés;
-      const fortélyFok = karakter.fortélyok.find(f => f.név === fb.fortély)?.fok ?? 0;
-      const extraCount = fortélyFok * fb.extra_fokok_per_fok;
-      const utolsó = def.fokok[def.fokok.length - 1];
-      const perFok: Record<string, number> = {};
-      for (const [k, v] of Object.entries(utolsó)) {
-        if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
-      }
-      for (let i = 1; i <= extraCount; i++) {
-        const newFok = utolsó.fok + i;
-        const entry: any = { fok: newFok };
-        for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * newFok);
-        fokok.push(entry);
-      }
-    }
-    return fokok;
-  }
-
-  function formatFokMods(f: any): string {
-    return Object.entries(f)
-      .filter(([k, v]) => k !== 'fok' && k !== 'hatások' && typeof v === 'number' && v !== 0)
-      .map(([k, v]) => `${k}: ${(v as number) > 0 ? '+' : ''}${v}`).join(', ');
-  }
-
   function renderFokPicker() {
     if (!fokválasztó) return null;
     const def = data.taktikak.find(t => t.név === fokválasztó);
     if (!def?.fokok) return null;
     const existing = session.aktív_taktikák.findIndex(a => a.név === fokválasztó);
-    const fokok = getExtraFokok(def);
+    const fokok = getExtraFokok(def, karakter);
     const maxBaseFok = def.fokok[def.fokok.length - 1].fok;
 
     return fokok.map(f => (

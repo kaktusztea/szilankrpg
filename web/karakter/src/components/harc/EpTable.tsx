@@ -1,7 +1,9 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { createPortal } from 'react-dom';
 import type { SebzésRubrika } from '../../engine/types';
-import { buildRubrikák, toSebzések, applySeb, applyGyógy, type SebTípus } from './ep-logic';
+import { buildRubrikák, toSebzések, applySeb, applyGyógy } from './ep-logic';
+import { useEscapeClose } from '../../hooks/useEscapeClose';
+import { SebDialog, GyógyDialog } from './EpDialogs';
 import './EpTable.css';
 
 interface Props {
@@ -19,23 +21,17 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
   const oszlopMéret = ÉP / kategóriák;
   const összRubrika = ÉP;
 
-  // Build rubrikák from session sebzések
   const rubrikák = buildRubrikák(sebzések, összRubrika);
 
   const [showSebDialog, setShowSebDialog] = useState(false);
   const [showGyógyDialog, setShowGyógyDialog] = useState(false);
   const [showResetConfirm, setShowResetConfirm] = useState(false);
 
-  useEffect(() => {
-    if (!showSebDialog && !showGyógyDialog && !showResetConfirm) return;
-    function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') { setShowSebDialog(false); setShowGyógyDialog(false); setShowResetConfirm(false); }
-    }
-    document.addEventListener('keydown', onKey);
-    return () => document.removeEventListener('keydown', onKey);
-  }, [showSebDialog, showGyógyDialog, showResetConfirm]);
+  const hasPopup = showSebDialog || showGyógyDialog || showResetConfirm;
+  const closeAll = useCallback(() => { setShowSebDialog(false); setShowGyógyDialog(false); setShowResetConfirm(false); }, []);
+  useEscapeClose(hasPopup, closeAll);
 
-  function sebesülés(típus: SebTípus, érték: number) {
+  function sebesülés(típus: Parameters<typeof applySeb>[1], érték: number) {
     onSebzésekChange(toSebzések(applySeb(rubrikák, típus, érték)));
     setShowSebDialog(false);
   }
@@ -115,72 +111,6 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
           </div>
         </div>,
         document.body
-      )}
-    </div>
-  );
-}
-
-function SebDialog({ onConfirm }: { onConfirm: (t: SebTípus, v: number) => void }) {
-  const [típus, setTípus] = useState<SebTípus | ''>('');
-  const [érték, setÉrték] = useState<number | null>(null);
-  const [expanded, setExpanded] = useState(false);
-
-  useEffect(() => {
-    if (típus && érték) {
-      onConfirm(típus as SebTípus, érték);
-    }
-  }, [típus, érték]);
-
-  return (
-    <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-      <label>Sebesülés</label>
-      <div className="ep-dialog-row">
-        {(['S', 'V', 'Z', 'FP'] as SebTípus[]).map(t => (
-          <button key={t} className={`fort-fok-btn ${típus === t ? 'active' : ''}`} onClick={() => setTípus(t)}>{t}</button>
-        ))}
-      </div>
-      <div className="kep-szint-grid">
-        {Array.from({ length: 15 }, (_, i) => i + 1).map(n => (
-          <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => setÉrték(n)}>{n}</button>
-        ))}
-      </div>
-      {!expanded && <div className="ep-expand-btn" onClick={() => setExpanded(true)}>▾</div>}
-      {expanded && (
-        <div className="kep-szint-grid">
-          {Array.from({ length: 25 }, (_, i) => i + 16).map(n => (
-            <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => setÉrték(n)}>{n}</button>
-          ))}
-        </div>
-      )}
-    </div>
-  );
-}
-
-function GyógyDialog({ maxÉP, maxFP, onConfirm }: { maxÉP: number; maxFP: number; onConfirm: (t: 'FP' | 'ÉP', v: number) => void }) {
-  const autoType = maxÉP > 0 && maxFP === 0 ? 'ÉP' : maxFP > 0 && maxÉP === 0 ? 'FP' : '';
-  const [típus, setTípus] = useState<'FP' | 'ÉP' | ''>(autoType);
-  const [érték, setÉrték] = useState<number | null>(null);
-  const max = típus === 'ÉP' ? maxÉP : típus === 'FP' ? maxFP : 0;
-
-  useEffect(() => {
-    if (típus && érték) {
-      onConfirm(típus as 'FP' | 'ÉP', érték);
-    }
-  }, [típus, érték]);
-
-  return (
-    <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-      <label>Gyógyulás</label>
-      <div className="ep-dialog-row">
-        <button disabled={maxÉP === 0} className={`fort-fok-btn ${típus === 'ÉP' ? 'active' : ''}`} onClick={() => { setTípus('ÉP'); setÉrték(null); }}>ÉP</button>
-        <button disabled={maxFP === 0} className={`fort-fok-btn ${típus === 'FP' ? 'active' : ''}`} onClick={() => { setTípus('FP'); setÉrték(null); }}>FP</button>
-      </div>
-      {típus && (
-        <div className="kep-szint-grid">
-          {Array.from({ length: max }, (_, i) => i + 1).map(n => (
-            <button key={n} className={`fort-fok-btn ${érték === n ? 'active' : ''}`} onClick={() => setÉrték(n)}>{n}</button>
-          ))}
-        </div>
       )}
     </div>
   );

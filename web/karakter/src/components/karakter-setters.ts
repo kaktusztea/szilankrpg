@@ -48,3 +48,26 @@ export function buildFortelyokProps(karakter: Karakter, data: GameData) {
   const nyelvtanulásSzint = karakter.képzettségek.find(k => k.név === 'Nyelvtanulás')?.szint ?? 0;
   return { fegyverNevek, távfegyverNevek: karakter.távfegyverek.map(tf => tf.alap), nyelvtanulásSzint };
 }
+
+/** Faj setter (nested hátterek.faj). */
+export function makeFajSetter(
+  pushUndo: (leírás: string) => void,
+  setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
+) {
+  return (v: string) => {
+    pushUndo(`Faj: ${v}`);
+    setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev);
+  };
+}
+
+/** Generic undo-wrapping setKarakter (fixed label). */
+export function makeUndoKarakterSetter(
+  pushUndo: (leírás: string) => void,
+  setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
+  undoLabel: string,
+) {
+  return (updater: React.SetStateAction<Karakter | null>) => {
+    pushUndo(undoLabel);
+    setKarakter(updater);
+  };
+}
