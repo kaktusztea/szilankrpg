@@ -18,11 +18,8 @@ export function KarmaCloud({ entries, aktív, gameMode, onToggle, onRemove, getM
       {entries.flatMap(entry =>
         entry.többszörös
           ? getMultiEntries(entry.név, 'karma').map((e, i) => (
-              <span key={`a-${e}-${i}`} className="hatter-tag karma active">
+              <span key={`a-${e}-${i}`} className="hatter-tag karma active" onClick={() => !gameMode && onRemove(e, 'karma')}>
                 {e}
-                {!gameMode && (
-                  <span className="hatter-multi-x" onClick={ev => { ev.stopPropagation(); onRemove(e, 'karma'); }}>✕</span>
-                )}
               </span>
             ))
           : aktív.includes(entry.név)

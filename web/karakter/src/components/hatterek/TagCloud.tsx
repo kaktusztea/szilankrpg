@@ -19,11 +19,8 @@ export function TagCloud({ items, aktív, field, többszörös, gameMode, colorC
       <div className="hatter-cloud">
         {items.flatMap(item =>
           getMultiEntries(item, field).map((entry, i) => (
-            <span key={`a-${entry}-${i}`} className={`hatter-tag ${colorClass} active`}>
+            <span key={`a-${entry}-${i}`} className={`hatter-tag ${colorClass} active`} onClick={() => !gameMode && onRemove(entry, field)}>
               {entry}
-              {!gameMode && (
-                <span className="hatter-multi-x" onClick={e => { e.stopPropagation(); onRemove(entry, field); }}>✕</span>
-              )}
             </span>
           ))
         )}
