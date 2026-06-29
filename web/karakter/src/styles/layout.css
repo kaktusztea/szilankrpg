@@ -59,19 +59,54 @@
 .gear-btn-padded { padding: 4px 12px; }
 
 .mode-toggle {
-  background: var(--input-bg);
-  color: var(--text);
+  color: #000;
   border: 1px solid var(--border-input);
   border-radius: 4px;
   padding: 4px 10px;
   font-size: 15px;
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color 2000ms ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
 }
 
-.mode-toggle-game { background: #4caf50; color: #000; }
-.mode-toggle-szerk { background: #ff9800; color: #000; }
+/* Game mód: narancs csík bal szélén (háttér), zöld tölti ki jobbról balra */
+.mode-toggle-game {
+  background: #ff9800;
+}
+.mode-toggle-game::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; right: 0;
+  width: calc(100% - 5px);
+  background: #4caf50;
+  z-index: -1;
+  animation: fill-from-right 600ms ease forwards;
+}
+
+/* Szerk mód: zöld csík jobb szélén (háttér), narancs tölti ki balról jobbra */
+.mode-toggle-szerk {
+  background: #4caf50;
+}
+.mode-toggle-szerk::after {
+  content: '';
+  position: absolute;
+  top: 0; bottom: 0; left: 0;
+  width: calc(100% - 5px);
+  background: #ff9800;
+  z-index: -1;
+  animation: fill-from-left 600ms ease forwards;
+}
+
+@keyframes fill-from-right {
+  from { width: 0; }
+  to { width: calc(100% - 5px); }
+}
+@keyframes fill-from-left {
+  from { width: 0; }
+  to { width: calc(100% - 5px); }
+}
 
 /* --- Content & screen slider --- */
 .content {
