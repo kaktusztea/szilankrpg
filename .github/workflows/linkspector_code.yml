@@ -18,6 +18,7 @@ jobs:
         with:
           github_token: ${{ secrets.github_token }}
           reporter: github-check
+          tool_name: "Linkspector code"
           fail_on_error: true
           fail_level: error
           filter_mode: nofilter
