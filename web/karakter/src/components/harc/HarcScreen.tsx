@@ -158,6 +158,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         téLevonás={téLevonás}
         pajzsVÉ={hc.pajzsVÉ}
         páncélMGT={hc.páncélMGT}
+        merevvértBüntetés={hc.merevvértBüntetés}
       />
 
       <HarcPopups

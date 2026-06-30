@@ -78,7 +78,8 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   // Fegyverek
   const fegyverRows = buildFegyverRows(k, data, pajzsFegyverNév);
   const páncélMGT = session.aktív_páncél ? (computed.get('páncél_MGT') ?? 0) : 0;
-  const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx, páncélMGT);
+  const merevvértBüntetés = session.aktív_páncél ? (computed.get('merevvért_TÉ_büntetés') ?? 0) : 0;
+  const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx, páncélMGT, merevvértBüntetés);
   applyFegyverOverrides(fegyverResults, session, data, feltételTeljesül);
 
   const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, feltételTeljesül, páncélMGT);
@@ -102,7 +103,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     });
 
   return {
-    ké, épValue, manöverPont, sfé_fizikai, sfé_energia, páncélLefedettség, páncélMGT,
+    ké, épValue, manöverPont, sfé_fizikai, sfé_energia, páncélLefedettség, páncélMGT, merevvértBüntetés,
     taktikaMods, fortelyMods, fegyverResults, kétkezesResult, fogásResult,
     pajzsVÉ, pajzsFegyverNév, belharciAktív, maxVéCsökk, oszlopMéret, téLevonások,
     feltételTeljesül,

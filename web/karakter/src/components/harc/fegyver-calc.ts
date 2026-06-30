@@ -50,6 +50,7 @@ export function calcFegyverResults(
   lookupArrays: Map<string, Record<string, number | string>[]>,
   stringCtx: Map<string, string>,
   precomputedPáncélMGT?: number,
+  precomputedMerevvértBüntetés?: number,
 ): FegyverResult[] {
   const { konstansok, harcmodorBonusz } = data;
   const fegyverRules = getFegyverRules(data.rules);
@@ -65,15 +66,17 @@ export function calcFegyverResults(
     harcmodor_összeg: harcmodorÖsszeg, alakzatharc_szint: 0,
   });
 
-  // Pre-resolve páncél_MGT and felszerelés_mgt (from parent evaluate or compute here once)
+  // Pre-resolve páncél_MGT, merevvért_TÉ_büntetés and felszerelés_mgt (from parent evaluate or compute here once)
   if (precomputedPáncélMGT !== undefined) {
     baseCtx.set('páncél_MGT', precomputedPáncélMGT);
     baseCtx.set('felszerelés_mgt', 0);
+    baseCtx.set('merevvért_TÉ_büntetés', precomputedMerevvértBüntetés ?? 0);
   } else {
     // Fallback: evaluate páncél rules once
     const fullComp = evaluate(data.rules, new Map(baseCtx), lookupArrays, stringCtx);
     baseCtx.set('páncél_MGT', fullComp.get('páncél_MGT') ?? 0);
     baseCtx.set('felszerelés_mgt', fullComp.get('felszerelés_mgt') ?? 0);
+    baseCtx.set('merevvért_TÉ_büntetés', fullComp.get('merevvért_TÉ_büntetés') ?? 0);
   }
 
   return fegyverRows.map(({ fDef, mfFok }) => {

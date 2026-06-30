@@ -4996,23 +4996,6 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
-        "fok": 0,
-        "hatás": [
-          "Merevvért viselésénél: teljes TÉ büntetés érvényesül (TÉ levonás = MGT)."
-        ],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "MGT_TÉ_büntetés",
-            "mód": "flat",
-            "érték": 0,
-            "feltétel": "páncél:viselt",
-            "megjegyzés": "Alapeset: teljes MGT TÉ büntetés"
-          }
-        ]
-      },
-      {
         "fok": 1,
         "hatás": [
           "Merevvérted TÉ büntetése ennyivel enyhül: -5."

@@ -15,6 +15,7 @@ interface Props {
   téLevonás: number;
   pajzsVÉ: number;
   páncélMGT: number;
+  merevvértBüntetés: number;
 }
 
 function fmtMod(val: number): string {
@@ -38,8 +39,8 @@ function KétkezesFegyverMf({ kh, mező }: { kh: KétkezesBontás; mező: 'TÉ' 
   return <DetailParts parts={parts} />;
 }
 
-export function HarcReszletek({ karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, fortelyMods, téLevonás, pajzsVÉ, páncélMGT }: Props) {
-  const d = calcReszletekData(karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, téLevonás, pajzsVÉ, páncélMGT);
+export function HarcReszletek({ karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, fortelyMods, téLevonás, pajzsVÉ, páncélMGT, merevvértBüntetés }: Props) {
+  const d = calcReszletekData(karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, téLevonás, pajzsVÉ, páncélMGT, merevvértBüntetés);
   if (!d) return null;
 
   const { konstansok } = data;
@@ -68,6 +69,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
           : <DetailParts parts={[['Fegyver', r.alap_TÉ], ['MF', d.mfTÉ]]} />}
         <DetailParts parts={[
           ['Fortély', fortelyMods['TÉ']],
+          ['Merevvért', d.merevvértBüntetés ? -d.merevvértBüntetés : 0],
           ['Taktika', taktikaMods['TÉ']],
           ['Fogás', d.téFogásBüntetés],
           ['Több tám', d.többTám],

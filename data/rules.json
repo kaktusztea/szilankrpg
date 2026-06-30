@@ -415,7 +415,7 @@
     },
     {
       "id": "fegyver_TÉ",
-      "formula": "konstansok.harcérték_alap.TÉ + tulajdonságok.erő + tulajdonságok.ügyesség + tulajdonságok.gyorsaság + HM_TÉ + fegyver_harcmodor_TÉ + fegyver_alap_TÉ + fegyver_mf_TÉ + fegyver_fortély_TÉ",
+      "formula": "konstansok.harcérték_alap.TÉ + tulajdonságok.erő + tulajdonságok.ügyesség + tulajdonságok.gyorsaság + HM_TÉ + fegyver_harcmodor_TÉ + fegyver_alap_TÉ + fegyver_mf_TÉ + fegyver_fortély_TÉ - merevvért_TÉ_büntetés",
       "inputs": [
         "konstansok.harcérték_alap.TÉ",
         "tulajdonságok.erő",
@@ -425,7 +425,8 @@
         "fegyver_harcmodor_TÉ",
         "fegyver_alap_TÉ",
         "fegyver_mf_TÉ",
-        "fegyver_fortély_TÉ"
+        "fegyver_fortély_TÉ",
+        "merevvért_TÉ_büntetés"
       ]
     },
     {

@@ -19,17 +19,6 @@ kiterjeszti:
 kp_perfok: 6
 ingyenes_perszint: 0
 fokok: 
-- fok: 0
-  követelménytext: []
-  követelmények: ""
-  hatástext:
-  - text: "Merevvért viselésénél: teljes TÉ büntetés érvényesül (TÉ levonás = MGT)."
-  módosítók:
-  - cél: "MGT_TÉ_büntetés"
-    mód: "flat"
-    érték: 0
-    feltétel: "páncél:viselt"
-    megjegyzés: "Alapeset: teljes MGT TÉ büntetés"
 - fok: 1
   követelménytext:
     - text: "Kardvívás VAGY Rombolás VAGY Lándzsavívás - 3.szint"
