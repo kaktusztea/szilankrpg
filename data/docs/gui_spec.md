@@ -286,7 +286,13 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 ### Tartalom
 
 - **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 2x2 grid):
-  - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, fehér)
+  - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, fehér). Kattintható (cursor: pointer, min-width: 64px).
+    - Klikk → **Kezdeményező dobás**: KÉ + k20 (random 1-20). Overlay popup jelenik meg:
+      - Fejléc: "Kezdeményezés" (16px, bold, uppercase)
+      - Eredmény: nagy szám (48px, bold, monospace)
+      - Részlet: "KÉ (X) + k20 (Y)" (13px, dim szín)
+      - Mellé kattintás bezárja → eredmény push a session `ké_dobások` FIFO tömbbe (max 3, legújabb elöl)
+    - Box alján: utolsó max 3 dobott érték egymás mellett (11px, monospace). Színek balról jobbra egyre sötétülnek: #ccc → #888 → #555 (legújabb a legvilágosabb).
   - **SFÉ box** (balra rendezve): fejléc label `SFÉ (X%)` (14px, bold, fehér, uppercase), alatta `Fizikai: X` és `Energia: X` egymás alatt (14px, érték: 16px bold)
   - **VÉ csökk. box**: label (14px, bold, fehér, uppercase), érték (24px, bold, warning/sárga szín), alatta gombok: +1, +2, +3, -1, ⟲ (12px, 4px gap). Dinamikusan csökkenti a Teljes harcértékek VÉ oszlopát.
   - **MP box**: label `MP` (14px, bold, fehér, uppercase), érték `X/Y` (20px, bold, success/zöld szín), alatta gombok: -1, ⟲ (12px). Default: max.

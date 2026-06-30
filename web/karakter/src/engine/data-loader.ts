@@ -40,7 +40,7 @@ export async function loadGameData(): Promise<GameData> {
     fetchJson<HatterekData>('tables/hatterek.json'),
     fetchJson<{ rules: Rule[] }>('rules.json'),
     fetchJson<Karakter>('karakter/empty_karakter.json'),
-    fetchJson<Karakter>('karakter/test_karakter.json'),
+    fetchJson<Karakter>('karakter/test_karakter2.json'),
   ]);
 
   const kepzettsegKp = kepzettsegKpRaw.map(e => ({

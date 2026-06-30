@@ -48,7 +48,7 @@ with open(TABLES / "faj_tulajdonsag_keretek.json") as f:
     faj_keretek = json.load(f)
 
 # --- Define test karakter (matching testdata.ts) ---
-karakter_path = BASE / "karakter" / "test_karakter.json"
+karakter_path = BASE / "karakter" / "test_karakter2.json"
 with open(karakter_path, "r", encoding="utf-8") as f:
     karakter = json.load(f)
 
