@@ -92,7 +92,7 @@ export function AppOverlays({
       id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
       session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
     });
-    setUndoStack([]); setTestMode(true); set('showSlotList', false);
+    setUndoStack([]); setTestMode(true); setIsDirty(true); set('showSlotList', false);
   };
 
   return (
