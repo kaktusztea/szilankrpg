@@ -1,6 +1,6 @@
-import type { AktivBaseProps } from './types';
+import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
-import { getPengehossz } from './AktivHelpers';
+import { getPengehossz } from './fegyver-helpers';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function isSpeciális(karakter: Karakter, idx: number): boolean {
@@ -8,7 +8,9 @@ function isSpeciális(karakter: Karakter, idx: number): boolean {
   return karakter.fegyverek[idx]?.alap.toLowerCase() === 'puszta kéz';
 }
 
-export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUndo, fegyverOpciók }: AktivBaseProps & { fegyverOpciók: { név: string; idx: number }[] }) {
+type Props = HarcBaseProps & { fegyverOpciók: { név: string; idx: number }[] };
+
+export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUndo, fegyverOpciók }: Props) {
   const options = fegyverOpciók.filter(f => {
     if (f.idx < 0) return true;
     if (session.aktív_fegyver_bal_index < 0) return true;

@@ -1,10 +1,7 @@
-import { useState } from 'react';
 import type { AktivBaseProps } from './types';
 import { calcHatásPool } from './HatasPoolCalc';
-import { AktivFegyverSection } from './AktivFegyverSection';
 import { AktivHatasPool } from './AktivHatasPool';
 import { AktivHelyzetek } from './AktivHelyzetek';
-import { AktivFegyverfogas } from './AktivFegyverfogas';
 import { AktivTaktikak } from './AktivTaktikak';
 import { AktivStatuszok } from './AktivStatuszok';
 import { AktivManover } from './AktivManover';
@@ -12,18 +9,11 @@ import { AktivNarrativ } from './AktivNarrativ';
 import './AktivScreen.css';
 
 export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
-  const [showFegyverfogás, setShowFegyverfogás] = useState(false);
-
   const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév } = calcHatásPool(data, karakter, session);
 
   return (
     <div className="screen aktiv-screen">
       <h2>✳️ Aktív</h2>
-
-      <AktivFegyverSection
-        data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
-        onShowFegyverfogás={() => setShowFegyverfogás(true)}
-      />
 
       <AktivHatasPool fortélyEmlékeztetők={fortélyEmlékeztetők} alapesetekFiltered={alapesetekFiltered} />
 
@@ -39,14 +29,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
         státuszPerElem={státuszPerElem} eseményNév={eseményNév} />
 
       <AktivNarrativ session={session} setSession={setSession} pushUndo={pushUndo} />
-
-      {showFegyverfogás && (
-        <AktivFegyverfogas
-          data={data} karakter={karakter} session={session}
-          onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`); setSession(s => ({ ...s, ...patch })); setShowFegyverfogás(false); }}
-          onClose={() => setShowFegyverfogás(false)}
-        />
-      )}
     </div>
   );
 }

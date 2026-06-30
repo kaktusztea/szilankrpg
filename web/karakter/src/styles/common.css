@@ -325,7 +325,63 @@
 }
 
 /* ===================
-   11. Toggle gomb
+   11. Field-btn (label + érték oszlopos card-szerű)
+   Használva: Aktív fül, Harc fül fegyver szekció, Manőver
+   =================== */
+.aktiv-field-btn {
+  flex: 1;
+  min-width: 0;
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 6px 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.aktiv-field-btn.disabled { opacity: 0.4; cursor: not-allowed; }
+
+.aktiv-field-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aktiv-field-select {
+  background: transparent;
+  border: none;
+  color: var(--success);
+  font-size: 14px;
+  font-weight: bold;
+  padding: 0;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.aktiv-field-toggle {
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 0 0 auto;
+  min-width: 60px;
+}
+
+.aktiv-field-toggle strong { color: var(--text-dim); font-size: 14px; }
+.aktiv-field-toggle.on strong { color: var(--success); }
+.aktiv-field-toggle.disabled { opacity: 0.4; cursor: not-allowed; }
+
+.aktiv-option-special { color: #81c784; }
+
+/* ===================
+   12. Toggle gomb
    =================== */
 .toggle-btn,
 .aktiv-toggle {

@@ -1,9 +1,9 @@
 import { useEffect } from 'react';
-import type { AktivBaseProps } from './types';
+import type { HarcBaseProps } from './types';
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
-import { getPengehossz } from './AktivHelpers';
+import { getPengehossz } from './fegyver-helpers';
 import { FegyverSelectField } from './FegyverSelectField';
 
 function getKétkezesBalOpciók(
@@ -26,7 +26,9 @@ function getKétkezesBalOpciók(
   });
 }
 
-export function GyengebbKezSelect({ data, karakter, session, setSession, fegyverOpciók }: Pick<AktivBaseProps, 'data' | 'karakter' | 'session' | 'setSession'> & { fegyverOpciók: { név: string; idx: number }[] }) {
+type Props = Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'> & { fegyverOpciók: { név: string; idx: number }[] };
+
+export function GyengebbKezSelect({ data, karakter, session, setSession, fegyverOpciók }: Props) {
   if (session.fegyverfogás === 'fegyver_pajzs') {
     return (
       <div className="aktiv-field-btn">
@@ -43,7 +45,7 @@ export function GyengebbKezSelect({ data, karakter, session, setSession, fegyver
   return <KétkezesBalSelect data={data} karakter={karakter} session={session} setSession={setSession} fegyverOpciók={fegyverOpciók} />;
 }
 
-function HáritóSelect({ data, karakter, session, setSession }: Pick<AktivBaseProps, 'data' | 'karakter' | 'session' | 'setSession'>) {
+function HáritóSelect({ data, karakter, session, setSession }: Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'>) {
   const háritók = karakter.fegyverek
     .map((fp, i) => ({ i, fp }))
     .filter(({ fp }) => lookupFegyver(data.fegyverek, fp.alap)?.Hárító === '1');
@@ -68,7 +70,7 @@ function HáritóSelect({ data, karakter, session, setSession }: Pick<AktivBaseP
   );
 }
 
-function KétkezesBalSelect({ data, karakter, session, setSession, fegyverOpciók }: Pick<AktivBaseProps, 'data' | 'karakter' | 'session' | 'setSession'> & { fegyverOpciók: { név: string; idx: number }[] }) {
+function KétkezesBalSelect({ data, karakter, session, setSession, fegyverOpciók }: Props) {
   const filteredBal = getKétkezesBalOpciók(fegyverOpciók, karakter, data, session.aktív_fegyver_index);
 
   const validIdx = filteredBal.some(f => f.idx === session.aktív_fegyver_bal_index)

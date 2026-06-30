@@ -1,14 +1,14 @@
-import type { AktivBaseProps } from './types';
+import type { HarcBaseProps } from './types';
 import type { Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
-import { PickerOverlay } from './PickerOverlay';
+import { PickerOverlay } from '../aktiv/PickerOverlay';
 
-interface Props extends Pick<AktivBaseProps, 'data' | 'karakter' | 'session'> {
+interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session'> {
   onSelect: (patch: Partial<Session>) => void;
   onClose: () => void;
 }
 
-export function AktivFegyverfogas({ data, karakter, session, onSelect, onClose }: Props) {
+export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }: Props) {
   const jobbIdx = session.aktív_fegyver_index;
   const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
   const jobbDef = jobbFp ? lookupFegyver(data.fegyverek, jobbFp.alap) : null;

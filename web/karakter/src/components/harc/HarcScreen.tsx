@@ -7,6 +7,8 @@ import { HarcFegyverTable } from './HarcFegyverTable';
 import { HarcPopups } from './HarcPopups';
 import { EpTable } from './EpTable';
 import { HarcReszletek } from './HarcReszletek';
+import { HarcFegyverSection } from './HarcFegyverSection';
+import { HarcFegyverfogas } from './HarcFegyverfogas';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
 import { KeDobas, pushKéDobás } from './KeDobas';
@@ -20,6 +22,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number } | null>(null);
   const [sebCount, setSebCount] = useState(0);
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
+  const [showFegyverfogás, setShowFegyverfogás] = useState(false);
 
   const hc = useHarcComputed(data, karakter, session);
 
@@ -116,6 +119,11 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onKéClick={handleKéClick}
       />
 
+      <HarcFegyverSection
+        data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
+        onShowFegyverfogás={() => setShowFegyverfogás(true)}
+      />
+
       <HarcFegyverTable
         karakter={karakter}
         session={session}
@@ -172,6 +180,14 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
       {kéDobásEredmény !== null && (
         <KeDobas ké={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
+      )}
+
+      {showFegyverfogás && (
+        <HarcFegyverfogas
+          data={data} karakter={karakter} session={session}
+          onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`); setSession(s => ({ ...s, ...patch })); setShowFegyverfogás(false); }}
+          onClose={() => setShowFegyverfogás(false)}
+        />
       )}
     </div>
   );

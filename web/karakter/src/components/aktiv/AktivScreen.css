@@ -35,56 +35,7 @@
 
 /* --- Toggle → common.css (.aktiv-toggle) --- */
 
-/* --- Fegyver sor --- */
-.aktiv-fegyver-row {
-  display: flex;
-  gap: 6px;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border-light);
-  flex-wrap: wrap;
-}
-
-.aktiv-field-btn {
-  flex: 1;
-  min-width: 0;
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 6px 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  overflow: hidden;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.aktiv-field-btn.disabled { opacity: 0.4; cursor: not-allowed; }
-.aktiv-field-label { font-size: 11px; color: #888; text-transform: uppercase; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-
-.aktiv-field-select {
-  background: transparent;
-  border: none;
-  color: var(--success);
-  font-size: 14px;
-  font-weight: bold;
-  padding: 0;
-  width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.aktiv-field-toggle {
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  flex: 0 0 auto;
-  min-width: 60px;
-}
-
-.aktiv-field-toggle strong { color: var(--text-dim); font-size: 14px; }
-.aktiv-field-toggle.on strong { color: var(--success); }
-.aktiv-field-toggle.disabled { opacity: 0.4; cursor: not-allowed; }
+/* --- Fegyver sor → áthelyezve HarcScreen.css-be (harc-fegyver-row) --- */
 
 /* --- Szekciók --- */
 .aktiv-section { padding: 10px 0; }
@@ -92,7 +43,6 @@
 .aktiv-section-sm { font-size: 13px; }
 .aktiv-section-noborder { border-bottom: none; font-size: 13px; }
 .aktiv-section-statuszok { margin-top: 16px; border-top: 1px solid var(--border-light); border-bottom: none; padding-top: 16px; font-size: 13px; }
-.aktiv-bottom-section { padding-top: 12px; border-top: 1px solid var(--border-light); }
 
 /* --- Chip-ek --- */
 .aktiv-chip-x { background: none; border: none; color: var(--error); font-size: 14px; cursor: pointer; padding: 0 2px; }
@@ -259,4 +209,3 @@
 .aktiv-strong-neg { color: #e53935; }
 .aktiv-strong-helyzet { color: var(--warning); }
 .aktiv-hint-disabled { font-size: 11px; color: #888; }
-.aktiv-option-special { color: #81c784; }

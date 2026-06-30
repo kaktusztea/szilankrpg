@@ -1,6 +1,8 @@
-import type { AktivBaseProps } from './types';
+import type { HarcBaseProps } from './types';
 
-export function SessionToggles({ data, karakter, session, setSession }: Pick<AktivBaseProps, 'data' | 'karakter' | 'session' | 'setSession'>) {
+type Props = Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession'>;
+
+export function SessionToggles({ data, karakter, session, setSession }: Props) {
   const toggleForts = data.fortelySummaries.filter(d => d.session_toggle);
   return (
     <>

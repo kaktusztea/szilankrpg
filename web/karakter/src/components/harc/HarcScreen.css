@@ -55,6 +55,19 @@
 
 .ve-btns button:disabled { opacity: 0.3; cursor: default; }
 
+/* --- Fegyver szekció (fegyver/fogás/páncél blokk) --- */
+.harc-fegyver-section {
+  margin-bottom: 12px;
+}
+
+.harc-fegyver-row {
+  display: flex;
+  gap: 6px;
+  padding: 8px 0;
+  border-bottom: 1px solid var(--border-light);
+  flex-wrap: wrap;
+}
+
 /* --- Fegyver tábla --- */
 .harc-table {
   width: 100%;

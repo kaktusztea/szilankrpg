@@ -1,8 +1,8 @@
-import type { AktivBaseProps } from './types';
+import type { HarcBaseProps } from './types';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
-import { buildFegyverOpciók } from './AktivHelpers';
+import { buildFegyverOpciók } from './fegyver-helpers';
 import { UgyesebbKezSelect } from './UgyesebbKezSelect';
 import { GyengebbKezSelect } from './GyengebbKezSelect';
 import { SessionToggles } from './SessionToggles';
@@ -33,22 +33,22 @@ function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Ses
   });
 }
 
-interface Props extends AktivBaseProps {
+interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession' | 'pushUndo'> {
   onShowFegyverfogás: () => void;
 }
 
-export function AktivFegyverSection({ data, karakter, session, setSession, pushUndo, onShowFegyverfogás }: Props) {
+export function HarcFegyverSection({ data, karakter, session, setSession, pushUndo, onShowFegyverfogás }: Props) {
   const fegyverOpciók = buildFegyverOpciók(karakter, data);
 
   return (
-    <div className="aktiv-bottom-section">
-      <div className="aktiv-fegyver-row">
+    <div className="harc-fegyver-section">
+      <div className="harc-fegyver-row">
         <UgyesebbKezSelect data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo} fegyverOpciók={fegyverOpciók} />
         {session.fegyverfogás !== 'egyfegyveres' && (
           <GyengebbKezSelect data={data} karakter={karakter} session={session} setSession={setSession} fegyverOpciók={fegyverOpciók} />
         )}
       </div>
-      <div className="aktiv-fegyver-row">
+      <div className="harc-fegyver-row">
         <SessionToggles data={data} karakter={karakter} session={session} setSession={setSession} />
         <FegyverfogásButton data={data} karakter={karakter} session={session} onShowFegyverfogás={onShowFegyverfogás} />
         <PáncélToggle session={session} setSession={setSession} pushUndo={pushUndo} />
@@ -57,7 +57,7 @@ export function AktivFegyverSection({ data, karakter, session, setSession, pushU
   );
 }
 
-function FegyverfogásButton({ data, karakter, session, onShowFegyverfogás }: Pick<AktivBaseProps, 'data' | 'karakter' | 'session'> & { onShowFegyverfogás: () => void }) {
+function FegyverfogásButton({ data, karakter, session, onShowFegyverfogás }: Pick<HarcBaseProps, 'data' | 'karakter' | 'session'> & { onShowFegyverfogás: () => void }) {
   const opciók = data.konstansok.fegyverfogás_opciók as { id: string; név: string }[];
   const aktívNév = opciók.find(o => o.id === session.fegyverfogás)?.név ?? 'Egyfegyveres';
   const disabled = !hasMásikFegyverfogás(data, karakter, session);
@@ -71,7 +71,7 @@ function FegyverfogásButton({ data, karakter, session, onShowFegyverfogás }: P
   );
 }
 
-function PáncélToggle({ session, setSession, pushUndo }: Pick<AktivBaseProps, 'session' | 'setSession' | 'pushUndo'>) {
+function PáncélToggle({ session, setSession, pushUndo }: Pick<HarcBaseProps, 'session' | 'setSession' | 'pushUndo'>) {
   return (
     <div className={`aktiv-field-btn aktiv-field-toggle${session.aktív_páncél ? ' on' : ''}`}
       onClick={() => { pushUndo(`Páncél: ${!session.aktív_páncél ? 'Igen' : 'Nem'}`); setSession(s => ({ ...s, aktív_páncél: !s.aktív_páncél })); }}>
