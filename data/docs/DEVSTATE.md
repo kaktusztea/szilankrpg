@@ -54,7 +54,7 @@ TODO:
 - Egyetlen JSON (`karakter + session`), NEM tartalmaz számított értékeket
 - `session`: runtime harc state (vé_csökkenés, aktív_taktikák, fegyverfogás, stb.)
 - Multi-slot localStorage: `szilank_char_{uid}`, max 10 slot
-- Teszt karakter: `data/karakter/test_karakter.json` (single source of truth)
+- Teszt karakter: `data/karakter/test_karakter2.json` (single source of truth)
 
 ### Képzettségek
 - `többszörös`: `[]`=egyszeri, `["X","Y"]`=fix lista, `["*"]`=freetext
@@ -83,6 +83,6 @@ TODO:
 
 ### Build pipeline
 - `generate_tables.py`: YAML → JSON (Vite buildStart + prebuild)
-- `vitest run`: 103 unit teszt (66 deterministic + 22 fuzz + 15 golden; build előtt fut)
+- `vitest run`: 107 unit teszt (66 deterministic + 22 fuzz + 15 golden; build előtt fut)
 - Deploy: GitHub Pages, auto-deploy push master
 - Metadata: `ÉV.ÉVNAPJA.napibuild`
