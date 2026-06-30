@@ -39,6 +39,7 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
           index={i}
           isActive={i === tfIdx}
           karakter={k}
+          session={session}
           data={data}
           idea={idea}
           fortélyCÉ={fortélyCÉ}

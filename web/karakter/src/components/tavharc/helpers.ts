@@ -103,14 +103,15 @@ export function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea:
 }
 
 /** Teljes CÉ bontás kiszámítása egy adott fegyverhez */
-export function calcCÉBontás(k: Karakter, data: GameData, session: Session, def: TavfegyverAlap | undefined, idea: number, fortélyCÉ: number): CÉBontás {
+export function calcCÉBontás(k: Karakter, data: GameData, session: Session, def: TavfegyverAlap | undefined, idea: number, fortélyCÉ: number, fegyverAlap?: string): CÉBontás {
   const konstansok = data.konstansok;
   const céAlap = konstansok.harcérték_alap.CÉ;
   const harcmodorNév = def?.Harcmodor ?? 'Hajítás';
   const harcmodorSzint = k.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
   const harcmodorCÉ = data.harcmodorBonusz.find(b => b.szint === harcmodorSzint)?.CÉ ?? -9;
   const fegyverCÉ = parseInt(def?.CÉ ?? '0') || 0;
-  const mfFok = def ? getMfFok(k, k.távfegyverek[session.aktív_távfegyver_index]?.alap ?? '') : 0;
+  const mfAlap = fegyverAlap ?? k.távfegyverek[session.aktív_távfegyver_index]?.alap ?? '';
+  const mfFok = def ? getMfFok(k, mfAlap) : 0;
   const mfCÉ = konstansok.mesterfegyver_bónuszok.find(b => b.fok === mfFok)?.CÉ ?? 0;
   const inp = getCÉInputs(k, def, idea);
   const osztó = parseInt(def?.Osztó ?? '1') || 1;
