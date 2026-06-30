@@ -1,5 +1,7 @@
 import type { Karakter, PancelPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import { evaluate, buildContext } from '../../engine/reactive';
+import { buildPancelLookups } from '../harc/pancel-calc';
 
 interface Props {
   data: GameData;
@@ -10,52 +12,34 @@ interface Props {
   onIdeaTarget: () => void;
 }
 
-/** Compute raw SFÉ (fizikai + energia) from páncél config */
-function calcSfé(k: Karakter, konstansok: any): { fizikai: number; energia: number } {
-  const struktúra = konstansok.páncél_struktúrák.find((s: any) => s.struktúra === k.páncél.alap);
-  if (!struktúra) return { fizikai: 0, energia: 0 };
-  const defaultAnyag = konstansok.páncél_fémalapanyagok[0]?.anyag ?? '';
-  const alapanyag = struktúra.fém
-    ? konstansok.páncél_fémalapanyagok.find((a: any) => a.anyag === (k.páncél.fémalapanyag || defaultAnyag))
-    : null;
-  const sféBónusz = alapanyag ? (typeof alapanyag.sfé_bónusz === 'number' ? alapanyag.sfé_bónusz : 0) : 0;
-  const common = sféBónusz + k.páncél.idea - k.páncél.rongálódás;
+/** Evaluate páncél rules via reactive engine */
+function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; sfé_energia: number; mgt: number } {
+  if (!k.páncél.alap) return { sfé_fizikai: 0, sfé_energia: 0, mgt: 0 };
+
+  const { konstansok } = data;
+  const lookupArrays = buildPancelLookups(konstansok);
+
+  const stringCtx = new Map<string, string>();
+  stringCtx.set('páncél_alap', k.páncél.alap);
+  stringCtx.set('páncél_fémalapanyag', k.páncél.fémalapanyag);
+  stringCtx.set('páncél_kidolgozottság', k.páncél.kidolgozottság);
+  stringCtx.set('páncél_méret_illeszkedés', k.páncél.méret_illeszkedés);
+
+  const ctx = buildContext(k.tulajdonságok, k.tsz, konstansok, {
+    páncél_van: 1,
+    páncél_végtagvédettség: k.páncél.végtagvédettség,
+    páncél_sisak: k.páncél.sisak ? 1 : 0,
+    páncél_idea: k.páncél.idea,
+    páncél_rongálódás: k.páncél.rongálódás,
+  });
+
+  const computed = evaluate(data.rules, ctx, lookupArrays, stringCtx);
+
   return {
-    fizikai: struktúra.sfé_fizikai + common,
-    energia: struktúra.sfé_energia + common,
+    sfé_fizikai: computed.get('sfé_fizikai') ?? 0,
+    sfé_energia: computed.get('sfé_energia') ?? 0,
+    mgt: computed.get('páncél_MGT') ?? 0,
   };
-}
-
-/** Compute MGT from páncél config */
-function calcMgt(k: Karakter, konstansok: any): number {
-  const struktúra = konstansok.páncél_struktúrák.find((s: any) => s.struktúra === k.páncél.alap);
-  if (!struktúra) return 0;
-
-  // Alapanyag MGT (only for fém)
-  const defaultAnyag = konstansok.páncél_fémalapanyagok[0]?.anyag ?? '';
-  const alapanyag = struktúra.fém
-    ? konstansok.páncél_fémalapanyagok.find((a: any) => a.anyag === (k.páncél.fémalapanyag || defaultAnyag))
-    : null;
-  const alapanyagMgt = alapanyag?.mgt ?? 0;
-
-  // Csatolt tag MGT
-  const csatoltDb = k.páncél.végtagvédettség + (k.páncél.sisak ? 1 : 0);
-  const csatoltTábla = konstansok.páncél_csatolt_tag_mgt;
-  let tagMgtPerDb = 0;
-  if (struktúra.merev) {
-    tagMgtPerDb = csatoltTábla.merevvért_fém[k.páncél.kidolgozottság] ?? 0;
-  } else if (struktúra.fém) {
-    tagMgtPerDb = csatoltTábla.hajlékonyvért_fém[k.páncél.kidolgozottság] ?? 0;
-  } else {
-    tagMgtPerDb = csatoltTábla.hajlékonyvért_nem_fém[k.páncél.kidolgozottság] ?? 0;
-  }
-  const csatoltMgt = csatoltDb * tagMgtPerDb;
-
-  // Méret MGT
-  const méretEntries = konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[];
-  const méretMgt = méretEntries.find(m => m.fokozat === k.páncél.méret_illeszkedés)?.mgt ?? 0;
-
-  return Math.max(0, struktúra.mgt + alapanyagMgt + csatoltMgt + méretMgt - k.tulajdonságok.erő);
 }
 
 export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, onPopup, onIdeaTarget }: Props) {
@@ -64,8 +48,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
   const aktStruktúra = struktúrák.find((s: any) => s.struktúra === k.páncél.alap);
   const hasAlap = !!k.páncél.alap;
 
-  const sfé = hasAlap ? calcSfé(k, konstansok) : { fizikai: 0, energia: 0 };
-  const mgt = hasAlap ? calcMgt(k, konstansok) : 0;
+  const { sfé_fizikai, sfé_energia, mgt } = calcPancelValues(k, data);
 
   function updatePancel(patch: Partial<PancelPeldany>) {
     setKarakter(prev => prev ? { ...prev, páncél: { ...prev.páncél, ...patch } } : prev);
@@ -76,7 +59,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
       <h3>Páncél</h3>
       {hasAlap && (
         <div className="he-pancel-chips">
-          <span className="he-pancel-chip">SFÉ: {sfé.fizikai}/{sfé.energia}</span>
+          <span className="he-pancel-chip">SFÉ: {sfé_fizikai}/{sfé_energia}</span>
           <span className="he-pancel-chip">MGT: {mgt}</span>
           <button className="he-pancel-chip he-pancel-chip-btn" onClick={() => onPopup('rongálódás')}>Rongálódás: {k.páncél.rongálódás}</button>
         </div>
