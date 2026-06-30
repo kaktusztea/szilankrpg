@@ -26,6 +26,8 @@
   align-items: center;
 }
 
+.ke-box { min-width: 64px; }
+
 .sfe-box { align-items: flex-start !important; }
 
 .ke-box .label, .sfe-box .label { font-size: 16px; font-weight: bold; color: var(--text); text-transform: uppercase; }
@@ -168,3 +170,47 @@
   font-size: 16px;
   cursor: pointer;
 }
+
+/* --- KÉ dobás popup --- */
+.ke-dobas-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 20px 32px;
+}
+
+.ke-dobas-header {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.ke-dobas-result {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--text);
+  font-family: monospace;
+}
+
+.ke-dobas-detail {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+/* --- KÉ dobás history (box aljára) --- */
+.ke-history {
+  display: flex;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.ke-history-item {
+  font-size: 11px;
+  font-family: monospace;
+}
+
+.ke-history-item:nth-child(1) { color: #ccc; }
+.ke-history-item:nth-child(2) { color: #888; }
+.ke-history-item:nth-child(3) { color: #555; }

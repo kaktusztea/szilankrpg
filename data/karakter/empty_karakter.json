@@ -77,6 +77,7 @@
     "narratív_módosítók": [],
     "harci_akrobatika": false,
     "fegyverfogás": "egyfegyveres",
-    "aktív_távfegyver_index": -1
+    "aktív_távfegyver_index": -1,
+    "ké_dobások": []
   }
 }

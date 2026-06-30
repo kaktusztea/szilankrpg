@@ -9,6 +9,7 @@ import { EpTable } from './EpTable';
 import { HarcReszletek } from './HarcReszletek';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
+import { KeDobas, pushKéDobás } from './KeDobas';
 import './HarcScreen.css';
 
 export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: HarcBaseProps) {
@@ -18,6 +19,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number } | null>(null);
   const [sebCount, setSebCount] = useState(0);
+  const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
 
   const hc = useHarcComputed(data, karakter, session);
 
@@ -38,6 +40,20 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     }));
     triggerVéFlash(diff > 0 ? 'down' : 'up');
   }, [session.vé_csökkenés, pushUndo, setSession, triggerVéFlash]);
+
+  // KÉ dobás handler
+  const handleKéClick = useCallback(() => {
+    const k20 = Math.floor(Math.random() * 20) + 1;
+    setKéDobásEredmény(hc.ké + k20);
+  }, [hc.ké]);
+
+  const handleKéDobásClose = useCallback((eredmény: number) => {
+    setKéDobásEredmény(null);
+    setSession(prev => ({
+      ...prev,
+      ké_dobások: pushKéDobás(prev.ké_dobások ?? [], eredmény),
+    }));
+  }, [setSession]);
 
   // Popup close handler
   function closePopups() {
@@ -97,6 +113,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onVéChange={changeVé}
         onVéLabelTap={() => { if (session.vé_csökkenés > 0) setShowVéHistory(true); }}
         onVéResetClick={() => setShowVéResetConfirm(true)}
+        onKéClick={handleKéClick}
       />
 
       <HarcFegyverTable
@@ -150,6 +167,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onVéReset={() => { changeVé(0); setShowVéResetConfirm(false); }}
         onCloseAll={closePopups}
       />
+
+      {kéDobásEredmény !== null && (
+        <KeDobas ké={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
+      )}
     </div>
   );
 }

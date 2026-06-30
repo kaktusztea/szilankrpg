@@ -15,20 +15,28 @@ interface HarcHeaderProps {
   onVéChange: (newVal: number) => void;
   onVéLabelTap: () => void;
   onVéResetClick: () => void;
+  onKéClick: () => void;
 }
 
 export function HarcHeader({
   ké, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont,
   maxVéCsökk, session, setSession, konstansok,
-  onVéChange, onVéLabelTap, onVéResetClick,
+  onVéChange, onVéLabelTap, onVéResetClick, onKéClick,
 }: HarcHeaderProps) {
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
 
   return (
     <div className="harc-header">
-      <div className="ke-box">
+      <div className="ke-box" onClick={onKéClick} style={{ cursor: 'pointer' }}>
         <span className="label">KÉ</span>
         <span className="value">{ké}</span>
+        {session.ké_dobások.length > 0 && (
+          <div className="ke-history">
+            {session.ké_dobások.map((d, i) => (
+              <span key={i} className="ke-history-item">{d}</span>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="sfe-box">

@@ -102,6 +102,7 @@ export interface Session {
   harci_akrobatika: boolean;
   fegyverfogás: 'egyfegyveres' | 'fegyver_pajzs' | 'fegyver_hárító' | 'kétkezes';
   aktív_távfegyver_index: number;
+  ké_dobások: number[];
 }
 
 export interface NarratívMódosító {
@@ -163,6 +164,7 @@ export const DEFAULT_SESSION: Session = {
   harci_akrobatika: false,
   fegyverfogás: 'egyfegyveres',
   aktív_távfegyver_index: -1,
+  ké_dobások: [],
 };
 
 // ============================================================
