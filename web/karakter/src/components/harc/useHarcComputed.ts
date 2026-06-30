@@ -102,7 +102,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
     });
 
   return {
-    ké, épValue, manöverPont, sfé_fizikai, sfé_energia, páncélLefedettség,
+    ké, épValue, manöverPont, sfé_fizikai, sfé_energia, páncélLefedettség, páncélMGT,
     taktikaMods, fortelyMods, fegyverResults, kétkezesResult, fogásResult,
     pajzsVÉ, pajzsFegyverNév, belharciAktív, maxVéCsökk, oszlopMéret, téLevonások,
     feltételTeljesül,

@@ -6,12 +6,14 @@ interface Props {
   páncél: { alap: string; fémalapanyag: string; kidolgozottság: string; méret_illeszkedés: string; végtagvédettség: number; rongálódás: number };
   struktúrák: { struktúra: string; fém?: boolean }[];
   fémalapanyagok: { anyag: string }[];
+  kidolgozottságOpciók: string[];
+  méretOpciók: string[];
   merevvertFok: number;
   onUpdate: (patch: Record<string, unknown>) => void;
   onMerevvert: (fok: number) => void;
 }
 
-export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, merevvertFok, onUpdate, onMerevvert }: Props) {
+export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, kidolgozottságOpciók, méretOpciók, merevvertFok, onUpdate, onMerevvert }: Props) {
   return (
     <PopupOverlay onClose={() => onUpdate({})}>
       {popup === 'struktúra' && (
@@ -27,17 +29,14 @@ export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, me
       )}
       {popup === 'fémalapanyag' && (
         <ColumnPicker
-          options={[
-            { value: '', label: 'acél (alap)' },
-            ...fémalapanyagok.map(a => ({ value: a.anyag, label: a.anyag })),
-          ]}
-          current={páncél.fémalapanyag}
+          options={fémalapanyagok.map(a => ({ value: a.anyag, label: a.anyag }))}
+          current={páncél.fémalapanyag || fémalapanyagok[0]?.anyag || ''}
           onSelect={v => onUpdate({ fémalapanyag: v })}
         />
       )}
       {popup === 'kidolgozottság' && (
         <ColumnPicker
-          options={['pocsék', 'átlagos', 'mestermunka'].map(v => ({ value: v, label: v }))}
+          options={kidolgozottságOpciók.map(v => ({ value: v, label: v }))}
           current={páncél.kidolgozottság}
           onSelect={v => onUpdate({ kidolgozottság: v })}
         />
@@ -45,7 +44,7 @@ export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, me
       {popup === 'méret' && (
         <ColumnPicker
           wide
-          options={['passzol', 'nem passzol', 'borzalmas'].map(v => ({ value: v, label: v }))}
+          options={méretOpciók.map(v => ({ value: v, label: v }))}
           current={páncél.méret_illeszkedés}
           onSelect={v => onUpdate({ méret_illeszkedés: v })}
         />

@@ -14,7 +14,7 @@ export function buildPancelLookups(konstansok: any): Map<string, Record<string, 
     sfé_energia: s.sfé_energia, merev: s.merev ? 1 : 0, fém: s.fém ? 1 : 0
   })));
   lookupArrays.set('fémalapanyagok', konstansok.páncél_fémalapanyagok.map((a: any) => ({ anyag: a.anyag, mgt: a.mgt, sfé_bónusz: a.sfé_bónusz })));
-  lookupArrays.set('méret_tábla', [{ név: 'passzol', érték: 0 }, { név: 'nem passzol', érték: 3 }, { név: 'borzalmas', érték: 6 }]);
+  lookupArrays.set('méret_tábla', (konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[]).map(m => ({ név: m.fokozat, érték: m.mgt })));
   lookupArrays.set('merevvért_tábla', konstansok.merevvértviselet_bónuszok.map((b: any) => ({ fok: b.fok, csökkentés: b.TÉ_büntetés_csökkentés })));
   return lookupArrays;
 }

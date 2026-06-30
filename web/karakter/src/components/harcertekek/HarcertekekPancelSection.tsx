@@ -14,8 +14,9 @@ interface Props {
 function calcSfé(k: Karakter, konstansok: any): { fizikai: number; energia: number } {
   const struktúra = konstansok.páncél_struktúrák.find((s: any) => s.struktúra === k.páncél.alap);
   if (!struktúra) return { fizikai: 0, energia: 0 };
+  const defaultAnyag = konstansok.páncél_fémalapanyagok[0]?.anyag ?? '';
   const alapanyag = struktúra.fém
-    ? konstansok.páncél_fémalapanyagok.find((a: any) => a.anyag === (k.páncél.fémalapanyag || 'acél'))
+    ? konstansok.páncél_fémalapanyagok.find((a: any) => a.anyag === (k.páncél.fémalapanyag || defaultAnyag))
     : null;
   const sféBónusz = alapanyag ? (typeof alapanyag.sfé_bónusz === 'number' ? alapanyag.sfé_bónusz : 0) : 0;
   const common = sféBónusz + k.páncél.idea - k.páncél.rongálódás;
@@ -31,8 +32,9 @@ function calcMgt(k: Karakter, konstansok: any): number {
   if (!struktúra) return 0;
 
   // Alapanyag MGT (only for fém)
+  const defaultAnyag = konstansok.páncél_fémalapanyagok[0]?.anyag ?? '';
   const alapanyag = struktúra.fém
-    ? konstansok.páncél_fémalapanyagok.find((a: any) => a.anyag === (k.páncél.fémalapanyag || 'acél'))
+    ? konstansok.páncél_fémalapanyagok.find((a: any) => a.anyag === (k.páncél.fémalapanyag || defaultAnyag))
     : null;
   const alapanyagMgt = alapanyag?.mgt ?? 0;
 
@@ -50,8 +52,8 @@ function calcMgt(k: Karakter, konstansok: any): number {
   const csatoltMgt = csatoltDb * tagMgtPerDb;
 
   // Méret MGT
-  const méretMap: Record<string, number> = { 'passzol': 0, 'nem passzol': 3, 'borzalmas': 6 };
-  const méretMgt = méretMap[k.páncél.méret_illeszkedés] ?? 0;
+  const méretEntries = konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[];
+  const méretMgt = méretEntries.find(m => m.fokozat === k.páncél.méret_illeszkedés)?.mgt ?? 0;
 
   return Math.max(0, struktúra.mgt + alapanyagMgt + csatoltMgt + méretMgt - k.tulajdonságok.erő);
 }
@@ -88,7 +90,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
         <button className={`he-field-btn${!hasAlap ? ' he-field-disabled' : ''}`} disabled={!hasAlap} onClick={() => onPopup('végtagvédettség')}>Végtagvédettség: <strong>{k.páncél.végtagvédettség}</strong></button>
         <button className={`he-field-btn${!hasAlap ? ' he-field-disabled' : ''}`} disabled={!hasAlap} onClick={() => onPopup('méret')}>Méret: <strong>{k.páncél.méret_illeszkedés}</strong></button>
         {aktStruktúra?.fém && (
-          <button className="he-field-btn" onClick={() => onPopup('fémalapanyag')}>Fémalapanyag: <strong>{k.páncél.fémalapanyag || 'acél'}</strong></button>
+          <button className="he-field-btn" onClick={() => onPopup('fémalapanyag')}>Fémalapanyag: <strong>{k.páncél.fémalapanyag || konstansok.páncél_fémalapanyagok[0]?.anyag || ''}</strong></button>
         )}
       </div>
     </section>

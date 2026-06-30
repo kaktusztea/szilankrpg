@@ -14,6 +14,7 @@ interface Props {
   fortelyMods: Record<string, number>;
   téLevonás: number;
   pajzsVÉ: number;
+  páncélMGT: number;
 }
 
 function fmtMod(val: number): string {
@@ -37,8 +38,8 @@ function KétkezesFegyverMf({ kh, mező }: { kh: KétkezesBontás; mező: 'TÉ' 
   return <DetailParts parts={parts} />;
 }
 
-export function HarcReszletek({ karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, fortelyMods, téLevonás, pajzsVÉ }: Props) {
-  const d = calcReszletekData(karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, téLevonás, pajzsVÉ);
+export function HarcReszletek({ karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, fortelyMods, téLevonás, pajzsVÉ, páncélMGT }: Props) {
+  const d = calcReszletekData(karakter, session, data, fegyverResults, kétkezesResult, fogásResult, taktikaMods, téLevonás, pajzsVÉ, páncélMGT);
   if (!d) return null;
 
   const { konstansok } = data;
@@ -55,6 +56,7 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
 
       <Section label={`Támadás/kör: ${r.támadások}`}>
         Harckeret: {r.harckeret} ({d.harcmodorNév} {d.harcmodorSzint} + Gyor {k.tulajdonságok.gyorsaság}
+        {d.páncélMGT > 0 ? ` − MGT ${d.páncélMGT}` : ''}
         {fortelyMods['harckeret'] ? ` + Fortély ${fmtMod(fortelyMods['harckeret'])}` : ''}) ÷ Sebesség: {r.sebesség}
       </Section>
 

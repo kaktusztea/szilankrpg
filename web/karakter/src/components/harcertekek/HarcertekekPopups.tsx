@@ -74,7 +74,7 @@ export function Popups({
         <PopupOverlay onClose={() => onClose('anyagTarget')}>
           <ColumnPicker
             options={(konstansok.fegyver_anyagok as string[]).map(a => ({ value: a, label: a }))}
-            current={k.fegyverek[anyagTarget]?.anyag ?? 'acél'}
+            current={k.fegyverek[anyagTarget]?.anyag ?? (konstansok.fegyver_anyagok as string[])[0] ?? ''}
             onSelect={a => { updateFegyver(anyagTarget, { anyag: a }); onClose('anyagTarget'); }}
           />
         </PopupOverlay>
@@ -86,6 +86,8 @@ export function Popups({
           páncél={k.páncél}
           struktúrák={konstansok.páncél_struktúrák}
           fémalapanyagok={konstansok.páncél_fémalapanyagok}
+          kidolgozottságOpciók={Object.keys(konstansok.páncél_csatolt_tag_mgt.hajlékonyvért_nem_fém)}
+          méretOpciók={(konstansok.páncél_méret_illeszkedés as { fokozat: string; mgt: number }[]).map(m => m.fokozat)}
           merevvertFok={k.fortélyok.find(f => f.név === 'Merevvértviselet')?.fok ?? 0}
           onUpdate={patch => { updatePancel(patch); onClose('pancelPopup'); }}
           onMerevvert={fok => { setMerevvertFok(fok); onClose('pancelPopup'); }}

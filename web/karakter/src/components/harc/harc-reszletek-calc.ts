@@ -31,6 +31,7 @@ export interface ReszletekData {
   véFogásBónusz: number;
   sumPengehossz: number | null;
   kétkezes: KétkezesBontás | null;
+  páncélMGT: number;
 }
 
 const MF_ZERO = { TÉ: 0, VÉ: 0, SP: 0 };
@@ -82,6 +83,7 @@ export function calcReszletekData(
   taktikaMods: Record<string, number>,
   téLevonás: number,
   pajzsVÉ: number,
+  páncélMGT: number,
 ): ReszletekData | null {
   const k = karakter;
   const { konstansok, harcmodorBonusz } = data;
@@ -187,5 +189,6 @@ export function calcReszletekData(
     véFogásBónusz,
     sumPengehossz: kétkezesResult ? kétkezesResult.sumPengehossz : null,
     kétkezes: kétkezesBontás,
+    páncélMGT,
   };
 }

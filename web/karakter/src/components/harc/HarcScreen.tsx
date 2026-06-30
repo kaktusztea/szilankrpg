@@ -157,6 +157,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         fortelyMods={hc.fortelyMods}
         téLevonás={téLevonás}
         pajzsVÉ={hc.pajzsVÉ}
+        páncélMGT={hc.páncélMGT}
       />
 
       <HarcPopups

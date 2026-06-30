@@ -22,7 +22,8 @@ export function FegyverekSection({ data, karakter: k, setKarakter, gameMode, onI
   function addFegyver(alap: string) {
     setKarakter(prev => {
       if (!prev) return prev;
-      return { ...prev, fegyverek: [...prev.fegyverek, { alap, név: '', anyag: 'acél', idea: 0 }] };
+      const defaultAnyag = (konstansok.fegyver_anyagok as string[])[0] ?? '';
+      return { ...prev, fegyverek: [...prev.fegyverek, { alap, név: '', anyag: defaultAnyag, idea: 0 }] };
     });
   }
 

@@ -254,6 +254,20 @@
       "mestermunka": 1
     }
   },
+  "páncél_méret_illeszkedés": [
+    {
+      "fokozat": "passzol",
+      "mgt": 0
+    },
+    {
+      "fokozat": "nem passzol",
+      "mgt": 3
+    },
+    {
+      "fokozat": "borzalmas",
+      "mgt": 6
+    }
+  ],
   "páncél_fémalapanyagok": [
     {
       "anyag": "acél",

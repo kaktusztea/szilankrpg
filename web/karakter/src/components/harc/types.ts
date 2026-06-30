@@ -31,6 +31,7 @@ export interface HarcComputed {
   sfé_fizikai: number;
   sfé_energia: number;
   páncélLefedettség: number;
+  páncélMGT: number;
   taktikaMods: Record<string, number>;
   fortelyMods: Record<string, number>;
   fegyverResults: FegyverResult[];
