@@ -235,7 +235,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 
 | Komponens | Felelősség |
 |-----------|------------|
-| `HarcScreen.tsx` | Fő harc screen (header boxok + fegyvertábla + ÉP tábla) |
+| `HarcScreen.tsx` | Fő harc screen (fegyver blokk + header boxok + fegyvertábla + ÉP tábla) |
 | `useHarcComputed.ts` | Hook: context build + reactive evaluate + feltétel dispatch |
 | `fegyver-calc.ts` | buildFegyverRows, calcFegyverResults, applyFegyverOverrides, calcKetkezes |
 | `taktika-calc.ts` | calcTaktikaMods (fokozatos extrapoláció) |
@@ -285,6 +285,9 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 
 ### Tartalom
 
+- **Fegyver blokk** (legfelül, a fejléc alatt):
+  - Ügyesebb kéz fegyver dropdown (session toggle-ök: H. Akrobatika, Fegyverfogás, Páncél viselve)
+  - `HarcFegyverSection` komponens (azonos az Aktív fül fegyver szekciójával)
 - **Felső box-sor** (egy sorban, egymás mellett, gap: 8px; mobilon ≤480px: 2x2 grid):
   - **KÉ box**: label `KÉ` (14px, bold, fehér, uppercase), érték (28px, bold, fehér). Kattintható (cursor: pointer, min-width: 64px).
     - Klikk → **Kezdeményező dobás**: KÉ + k20 (random 1-20). Overlay popup jelenik meg:
