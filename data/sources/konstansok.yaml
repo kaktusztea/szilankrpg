@@ -413,18 +413,31 @@ merevvértviselet_bónuszok:
     TÉ_büntetés_csökkentés: 15
 
 # ============================================================
-# Pajzshasználat TÉ büntetés (pajzs x fok mátrix)
+# Pajzshasználat hatások (pajzs méret × Pajzshasználat fortély fok)
 # ============================================================
+# Mechanika:
+#   - Pajzs méretenként alap TÉ büntetés: kis:-3, közepes:-6, nagy:-9
+#   - Pajzshasználat fortély fokonként +3-mal mérsékli a TÉ büntetést
+#   - 3. fokon a büntetés teljesen eltűnik + extra VÉ:+2 a pajzs alap VÉ-hez
+#   - Pajzs alap VÉ: kis:3, közepes:10, nagy:16
+#   - Az alábbi tábla az előre kiszámított végső értékeket tartalmazza
 
-pajzs_TÉ_büntetés:
-  - méret: "nincs"
-    büntetés: 0
-  - méret: "kis"
-    büntetés: -3
-  - méret: "közepes"
-    büntetés: -6
-  - méret: "nagy"
-    büntetés: -9
+pajzs_hatások:
+  kis:
+    - { fok: 0, VÉ: 3, TÉ: -3 }
+    - { fok: 1, VÉ: 3, TÉ: 0 }
+    - { fok: 2, VÉ: 3, TÉ: 0 }
+    - { fok: 3, VÉ: 5, TÉ: 0 }
+  közepes:
+    - { fok: 0, VÉ: 10, TÉ: -6 }
+    - { fok: 1, VÉ: 10, TÉ: -3 }
+    - { fok: 2, VÉ: 10, TÉ: 0 }
+    - { fok: 3, VÉ: 12, TÉ: 0 }
+  nagy:
+    - { fok: 0, VÉ: 16, TÉ: -9 }
+    - { fok: 1, VÉ: 16, TÉ: -6 }
+    - { fok: 2, VÉ: 16, TÉ: -3 }
+    - { fok: 3, VÉ: 18, TÉ: 0 }
 
 # ============================================================
 # Aura bónusz tábla

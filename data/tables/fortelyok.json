@@ -5468,23 +5468,6 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
-        "fok": 0,
-        "hatás": [
-          "Fegyver+Pajzs fogásnál: pajzs VÉ fele aktív csak. TÉ levonás: Kis:-3, Közepes:-6, Nagy:-9."
-        ],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "pajzs_VÉ_felezés",
-            "mód": "flat",
-            "érték": 0,
-            "feltétel": "fegyverfogás:fegyver_pajzs",
-            "megjegyzés": "Alapeset: képzetlen pajzshasználat"
-          }
-        ]
-      },
-      {
         "fok": 1,
         "hatás": [
           "Teljes pajzs VÉ aktív.",
@@ -5508,18 +5491,6 @@
           }
         ],
         "módosítók": [
-          {
-            "cél": "pajzs_TÉ_mérséklés",
-            "mód": "flat",
-            "érték": 3,
-            "feltétel": [
-              {
-                "forrás": "fegyverfogás",
-                "operátor": "==",
-                "érték": "fegyver_pajzs"
-              }
-            ]
-          },
           {
             "cél": "TÉ",
             "mód": "flat",
@@ -5566,18 +5537,6 @@
         ],
         "módosítók": [
           {
-            "cél": "pajzs_TÉ_mérséklés",
-            "mód": "flat",
-            "érték": 6,
-            "feltétel": [
-              {
-                "forrás": "fegyverfogás",
-                "operátor": "==",
-                "érték": "fegyver_pajzs"
-              }
-            ]
-          },
-          {
             "cél": "TÉ",
             "mód": "flat",
             "érték": 2,
@@ -5622,30 +5581,6 @@
           }
         ],
         "módosítók": [
-          {
-            "cél": "pajzs_TÉ_mérséklés",
-            "mód": "flat",
-            "érték": 9,
-            "feltétel": [
-              {
-                "forrás": "fegyverfogás",
-                "operátor": "==",
-                "érték": "fegyver_pajzs"
-              }
-            ]
-          },
-          {
-            "cél": "VÉ",
-            "mód": "flat",
-            "érték": 2,
-            "feltétel": [
-              {
-                "forrás": "fegyverfogás",
-                "operátor": "==",
-                "érték": "fegyver_pajzs"
-              }
-            ]
-          },
           {
             "cél": "TÉ",
             "mód": "flat",

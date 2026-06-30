@@ -45,7 +45,7 @@
     "név": "Fárasztás",
     "fokozatos": false,
     "módosítók": {},
-    "megjegyzés": "VÉ csökkentés: 2/kör. Nem támad. Fortély+pengeelőny bónusz.",
+    "megjegyzés": "VÉ csökkentés: 2/kör fixen, nincs támadódobás. Csak Pengeelőnyben lehet.",
     "megkötések": [
       {
         "típus": "harci_helyzet",

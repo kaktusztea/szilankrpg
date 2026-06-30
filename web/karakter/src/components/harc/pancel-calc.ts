@@ -20,21 +20,24 @@ export function buildPancelLookups(konstansok: any): Map<string, Record<string, 
 }
 
 /** Pajzs és Hárítófegyver VÉ + Fogás összesítő */
-export function calcFogas(k: Karakter, session: Session, data: GameData, fortelyMods: Record<string, number>): {
+export function calcFogas(k: Karakter, session: Session, data: GameData, _fortelyMods: Record<string, number>): {
   pajzsVÉ: number;
   fogásResult: { név: string; VÉ_bónusz: number; TÉ_büntetés: number } | null;
 } {
   const { konstansok } = data;
-  const PAJZS_MÉRET_NÉV: Record<string, string> = { kis: 'Kis Pajzs', közepes: 'Közepes Pajzs', nagy: 'Nagy Pajzs' };
-  const pajzsDef = (session.aktív_pajzs || session.fegyverfogás === 'fegyver_pajzs') && k.pajzs.méret
-    ? data.pajzsok.find(p => p.Pajzs === PAJZS_MÉRET_NÉV[k.pajzs.méret]) : null;
-  const pajzsVÉ = pajzsDef ? parseInt(pajzsDef.VÉ) || 0 : 0;
 
+  // Pajzs VÉ és TÉ büntetés: egyetlen lookup a pajzs_hatások táblából (méret × Pajzshasználat fok)
+  const pajzsFok = k.fortélyok.find(f => f.név === 'Pajzshasználat')?.fok ?? 0;
+  const hasPajzs = (session.aktív_pajzs || session.fegyverfogás === 'fegyver_pajzs') && k.pajzs.méret;
+  let pajzsVÉ = 0;
   let pajzsTÉBüntetés = 0;
-  if (session.fegyverfogás === 'fegyver_pajzs' && k.pajzs.méret) {
-    const entry = konstansok.pajzs_TÉ_büntetés?.find((e: any) => e.méret === k.pajzs.méret);
-    const mérséklés = fortelyMods['pajzs_TÉ_mérséklés'] ?? 0;
-    pajzsTÉBüntetés = Math.min(0, (entry?.büntetés ?? 0) + mérséklés);
+  if (hasPajzs) {
+    const hatások = (konstansok.pajzs_hatások as Record<string, { fok: number; VÉ: number; TÉ: number }[]>)?.[k.pajzs.méret];
+    const entry = hatások?.find(h => h.fok === pajzsFok) ?? hatások?.[0];
+    if (entry) {
+      pajzsVÉ = entry.VÉ;
+      pajzsTÉBüntetés = Math.min(0, entry.TÉ);
+    }
   }
 
   let hárítóVÉ = 0;
