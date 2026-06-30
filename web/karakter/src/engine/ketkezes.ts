@@ -16,6 +16,7 @@ interface KétkezesInput {
   };
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number }[];
   fortelyMods: Record<string, number>;
+  páncélMGT?: number;
 }
 
 export interface KétkezesResult {
@@ -92,7 +93,8 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
 
   // Harckeret
   const pengelevonás = Math.floor(sumPenge / konstansok.kétkezes_harc_pengelevonás_osztó);
-  const hk = Math.max(0, harcmodorSzint + k.tulajdonságok.gyorsaság + fortelyMods['harckeret'] + (khFok === 0 ? (khFokBónusz.harckeret ?? 0) : 0) - pengelevonás);
+  const mgt = input.páncélMGT ?? 0;
+  const hk = Math.max(0, harcmodorSzint + k.tulajdonságok.gyorsaság + fortelyMods['harckeret'] + (khFok === 0 ? (khFokBónusz.harckeret ?? 0) : 0) - mgt - pengelevonás);
   const sebesség = parseInt(nagyobb.Sebesség) || 6;
   const támadások = 1 + Math.floor(hk / sebesség);
 

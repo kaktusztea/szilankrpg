@@ -12,7 +12,7 @@ többszörösség:
   spec_lista: []
 csoport: "kiemelt"
 leírások:
-  - text: "Egy adott nyelv ismerete. Nem KP-ból tanulható, a Nyelvtanulás képzettség pontjaiból."
+  - text: "Egy adott nyelv ismerete. Nem KP-ból tanulható, a Nyelvtanulás képzettség által kapott speciális pontjokból. 1 pont: 1 fok"
 megjegyzések:
   - text: ""
 
@@ -35,5 +35,5 @@ fokok:
     követelmények: ""
     hatástext:
       - text: "Udvari szint: nemesi, egyházi, hivatali, művészi beszéd."
-      - text: "Előadóművészet és irodalom számára követelmény."
+      - text: "Előadóművészet és Irodalom számára követelmény."
     módosítók: ""

@@ -6841,7 +6841,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "nyelv",
     "többszörös_lista": [],
-    "leírás": "Egy adott nyelv ismerete. Nem KP-ból tanulható, a Nyelvtanulás képzettség pontjaiból.",
+    "leírás": "Egy adott nyelv ismerete. Nem KP-ból tanulható, a Nyelvtanulás képzettség által kapott speciális pontjokból. 1 pont: 1 fok",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -6858,7 +6858,7 @@
         "fok": 2,
         "hatás": [
           "Udvari szint: nemesi, egyházi, hivatali, művészi beszéd.",
-          "Előadóművészet és irodalom számára követelmény."
+          "Előadóművészet és Irodalom számára követelmény."
         ],
         "követelmény": [],
         "követelmények": [],

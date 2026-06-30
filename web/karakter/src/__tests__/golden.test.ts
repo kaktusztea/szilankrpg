@@ -138,19 +138,20 @@ describe('Golden #2 — fegyver kalkuláció', () => {
 });
 
 describe('Golden #2 — kétkezes harc', () => {
-  it('Kard, lovag + Tőr: TÉ=49, VÉ=62, SP=11, harckeret=9, támadások=2', () => {
+  it('Kard, lovag + Tőr: TÉ=49, VÉ=62, SP=11, harckeret=0, támadások=1 (MGT=14)', () => {
     const fortelyMods = { TÉ: 0, VÉ: 0, SP: 0, harckeret: 0 };
     const result = calcKétkezesHarc({
       jobbFp: karakter.fegyverek[0],
       balFp: karakter.fegyverek[1],
       fegyverek, karakter, konstansok, harcmodorBonusz, fortelyMods,
+      páncélMGT: 14,
     });
     expect(result).not.toBeNull();
     expect(result!.TÉ).toBe(49);
     expect(result!.VÉ).toBe(62);
     expect(result!.SP).toBe(11);
-    expect(result!.harckeret).toBe(9);
-    expect(result!.támadások).toBe(2);
+    expect(result!.harckeret).toBe(0);
+    expect(result!.támadások).toBe(1);
     expect(result!.sumPengehossz).toBe(1);
   });
 });
