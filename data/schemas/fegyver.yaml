@@ -17,3 +17,4 @@ KF: false                     # Különleges fegyver szabály érvényes-e
 kategória: ""                 # közelharc / kardvívó / lándzsavívó / romboló / ostorharc
 hárító: false                 # kötelező, boolean — hárítófegyverként használható-e (Fegyverfogás: Fegyver+hárító)
 speciális: ""                 # szöveges megjegyzés
+SP_override: null             # opcionális: { fortély: "fortély_név", SP: szám } — ha a karakter rendelkezik a fortéllyal, felülírja a fegyver alap SP-jét

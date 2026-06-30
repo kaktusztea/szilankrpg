@@ -17,7 +17,8 @@
         "Speciális": "Szúró és Vágó módban",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Alabárd Z",
@@ -37,7 +38,8 @@
         "Speciális": "Zúzó módban. Talán a legjobb a páncélok ellen az Átütéssel.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Balta",
@@ -57,7 +59,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Béltépő",
@@ -77,7 +80,8 @@
         "Speciális": "Ha minimum 11 SP sebzést elérsz, akkor további +5 SP jár. Páncélos ellenfélnél minden esetben elakad, ha átment rajta a sebzés. Páncéltalan esetén K6 dobás:  1 és 2 esetén a fegyver elakad a testben, ha volt sebzés.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Bot, furkós",
@@ -97,7 +101,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Bot, hosszú",
@@ -117,7 +122,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Bot, rövid",
@@ -137,7 +143,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Buzogány, egykezes",
@@ -157,7 +164,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Buzogány, kétkezes",
@@ -177,7 +185,8 @@
         "Speciális": "Erő követelmény:+2",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Buzogány, láncos",
@@ -197,7 +206,8 @@
         "Speciális": "Ellene az ellenfél Pajzs VÉ fele számít csak!",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Buzogány, shadleki",
@@ -217,7 +227,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Buzogány, tollas",
@@ -237,7 +248,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Csatabárd, egykezes",
@@ -257,7 +269,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Csatabárd, kétkezes",
@@ -277,7 +290,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Csatacsákány",
@@ -297,7 +311,8 @@
         "Speciális": "Nagyon vérzik. 50% az esély, hogy beragad és nem lehet kihúzni harc közben",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Dzsambia",
@@ -317,7 +332,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Garott",
@@ -337,7 +353,8 @@
         "Speciális": "Lásd lenn a leírást.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Harci kalapács",
@@ -357,7 +374,8 @@
         "Speciális": "Erő követelmény:+2",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Hárító: Alkarvédő",
@@ -377,7 +395,8 @@
         "Speciális": "Csak ≤1 pengés fegyver ellen",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "1"
+        "Hárító": "1",
+        "SP_override": null
     },
     {
         "Fegyver": "Hárító: Csatakesztyű",
@@ -397,7 +416,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "1"
+        "Hárító": "1",
+        "SP_override": null
     },
     {
         "Fegyver": "Hárító: Köpeny",
@@ -417,7 +437,8 @@
         "Speciális": "Legfeljebb 1 penge hosszú fegyverek ellen",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "1"
+        "Hárító": "1",
+        "SP_override": null
     },
     {
         "Fegyver": "Hárító: Tonfa",
@@ -437,7 +458,8 @@
         "Speciális": "Csak ≤1 pengés fegyver ellen",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "1"
+        "Hárító": "1",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, dzsenn szablya",
@@ -457,7 +479,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, emrelin",
@@ -477,7 +500,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, fejvadász",
@@ -497,7 +521,8 @@
         "Speciális": "G0rv1ki klánnal, vagy mesterrel. Egyébként rövidkard harcértékek. Hárítófegyverként is használható.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "1"
+        "Hárító": "1",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, handzsár",
@@ -517,7 +542,8 @@
         "Speciális": "Erő követelmény: +2",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, hiequar",
@@ -537,7 +563,8 @@
         "Speciális": "Elfek használják. Előtörténet!",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, hosszú",
@@ -557,7 +584,8 @@
         "Speciális": "A legelterjedtebb kard",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, jatagán",
@@ -577,7 +605,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, kétkezes",
@@ -597,7 +626,8 @@
         "Speciális": "Ha közrefogják a forgatót, fegyverének VÉ-je 0-ra zuhan. Erő követelmény: +2. Edzettség követelmény: +1",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, khossas",
@@ -617,7 +647,8 @@
         "Speciális": "Elfek használják. Előtörténet!",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, kígyó",
@@ -640,7 +671,8 @@
         },
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, Lagoss",
@@ -660,7 +692,8 @@
         "Speciális": "KF nélkül: Kard, Hosszú értékei",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, lovag",
@@ -680,7 +713,8 @@
         "Speciális": "Erő követelmény: +2",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, másfélkezes (1K)",
@@ -700,7 +734,8 @@
         "Speciális": "Erő követelmény: +2",
         "MK_pár": "Kard, másfélkezes (2K)",
         "Alapnév": "Kard, másfélkezes",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, másfélkezes (2K)",
@@ -720,7 +755,8 @@
         "Speciális": "Erő követelmény: +2",
         "MK_pár": "Kard, másfélkezes (1K)",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, mesterkard (1K)",
@@ -740,7 +776,8 @@
         "Speciális": "Erő követelmény: +2",
         "MK_pár": "Kard, mesterkard (2K)",
         "Alapnév": "Kard, mesterkard",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, mesterkard (2K)",
@@ -760,7 +797,8 @@
         "Speciális": "Erő követelmény: +2",
         "MK_pár": "Kard, mesterkard (1K)",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, Pugoss",
@@ -780,7 +818,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, rapír",
@@ -800,7 +839,8 @@
         "Speciális": "Nemesemberek jellemző fegyvere valós harci körülmények között. Nem összetévesztendő a tőrkarddal.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, rövid",
@@ -820,7 +860,8 @@
         "Speciális": "-",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, Slan 1K",
@@ -840,7 +881,8 @@
         "Speciális": "Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül.",
         "MK_pár": "Kard, Slan 2K",
         "Alapnév": "Kard, Slan",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, Slan 2K",
@@ -860,7 +902,8 @@
         "Speciális": "Nagyon ritka, rendkívül nehéz hozzájutni, legtöbbször személyre szabott. Drága, speciális anyagokból készül. [Fegyverrántás](fortelyok.harci/fegyverrantas.md) fortélyban képzett karakter fegyverrántó szituációban további KÉ:+5 bónuszt kap (csak kétkezes forgatási módban).",
         "MK_pár": "Kard, Slan 1K",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, Slan csatakard",
@@ -880,7 +923,8 @@
         "Speciális": "Hihetetlen drága és ritka. Csak két kézzel forgatható.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, Slan rövid",
@@ -900,7 +944,8 @@
         "Speciális": "Lásd Slan kard.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kard, szablya",
@@ -920,7 +965,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kés",
@@ -940,7 +986,8 @@
         "Speciális": "-",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kopja, harci",
@@ -960,7 +1007,8 @@
         "Speciális": "Csak lovon használható. Lándzsavívás harcmodorban forgatandó.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kopja, torna",
@@ -980,7 +1028,8 @@
         "Speciális": "Puhafa, lovagi tornákra való",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Korbács",
@@ -1000,7 +1049,8 @@
         "Speciális": "Íves fegyvernek számít - a fegyver mögé \"becsapó\" tulajdonsága miatt",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kriszkés",
@@ -1020,7 +1070,8 @@
         "Speciális": "Páncél nélküli ellenfélnél, szúrás esetén SP:+3. Páncélszúrásra nem használható.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Lándzsa, keskeny hegyű",
@@ -1040,7 +1091,8 @@
         "Speciális": "Kis területet roncsol, de páncélokat jól üti át",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Lándzsa, széles hegyű",
@@ -1060,7 +1112,8 @@
         "Speciális": "Nagy területet roncsol, de nehezebben megy át a páncélokon",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Levéltőr",
@@ -1080,7 +1133,8 @@
         "Speciális": "-",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Mara-sequor 1K",
@@ -1100,7 +1154,8 @@
         "Speciális": "Mágikus fém jellege már benne van a harcértékekben.",
         "MK_pár": "Mara-sequor 2K",
         "Alapnév": "Mara-sequor",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Mara-sequor 2K",
@@ -1120,7 +1175,8 @@
         "Speciális": "Mágikus fém jellege már benne van a harcértékekben.",
         "MK_pár": "Mara-sequor 1K",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Markolatgomb",
@@ -1140,7 +1196,8 @@
         "Speciális": "Ugyanazok az értékei, mint a Vasökölnek.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Meneth",
@@ -1160,7 +1217,8 @@
         "Speciális": "Ugyan nem íves fegyver, de kialakítása miatt érvényesek rá annak extrái. SFÉ duplán számít ellene",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Méregfog",
@@ -1180,7 +1238,8 @@
         "Speciális": "Ha sebzést okoz, befecskendezi a benne tárolt mérget.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Ostor",
@@ -1200,7 +1259,8 @@
         "Speciális": "Íves fegyvernek számít - a fegyver mögé \"becsapó\" tulajdonsága miatt",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Ostorkard",
@@ -1220,7 +1280,8 @@
         "Speciális": "Minimum Mf:1.fok nélkül 30% esély az önsebzésre",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Pika, keskeny hegyű",
@@ -1240,7 +1301,8 @@
         "Speciális": "Kis területet roncsol, de páncélokat jól üti át",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Pika, széles hegyű",
@@ -1260,7 +1322,8 @@
         "Speciális": "Nagy területet roncsol, de nehezebben megy át a páncélokon",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Predoci egyeneskard",
@@ -1280,7 +1343,8 @@
         "Speciális": "-",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Pugoss",
@@ -1300,7 +1364,8 @@
         "Speciális": "Ha a karakter nem ismeri a fegyver különleges fogásait akkor harcértékei sima tőré lesznek.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Puszta kéz",
@@ -1320,7 +1385,11 @@
         "Speciális": "FP sebesülést okoz. Minden 5.FP 1 ÉP.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": {
+            "fortély": "Természetes fegyver",
+            "SP": 1
+        }
     },
     {
         "Fegyver": "Puszta kéz Belharcban",
@@ -1340,7 +1409,8 @@
         "Speciális": "FP sebesülést okoz. Minden 5.FP 1 ÉP.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Ramiera",
@@ -1360,7 +1430,8 @@
         "Speciális": "G0rv1ki klán, vagy mester. Tőrnél nehezebb elrejteni. Ha a karakter nem ismeri a fegyver különleges fogásait akkor harcértékei sima tőré lesznek.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Sequor",
@@ -1380,7 +1451,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Szigony, egykezes",
@@ -1400,7 +1472,8 @@
         "Speciális": "+5 SP ha SFÉ után legalább 11 SP lett a sebzés.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Szigony, kétkezes",
@@ -1420,7 +1493,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Tőr",
@@ -1440,7 +1514,8 @@
         "Speciális": "-",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Tőr, hárító",
@@ -1460,7 +1535,8 @@
         "Speciális": "Nagyon drága!",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "1"
+        "Hárító": "1",
+        "SP_override": null
     },
     {
         "Fegyver": "Tőr, kígyó",
@@ -1480,7 +1556,8 @@
         "Speciális": "Áldozótőr. Vágásnál SP:+0",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Tőr, ököl",
@@ -1500,7 +1577,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Tőr, páncélszúró",
@@ -1520,7 +1598,8 @@
         "Speciális": "Áldozat földön van, Belharci szituáció, akkor automatikus \"Precíz támadás\" Manőver Ellenpróba siker. Ilyenkor az SFÉ ellene 0, mert beszúr a rések közt.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Tőr, Slan",
@@ -1540,7 +1619,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Tőrkard",
@@ -1560,7 +1640,8 @@
         "Speciális": "Lásd a leírást.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Vasököl / páncélkesztyű",
@@ -1580,7 +1661,8 @@
         "Speciális": "",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Vívóbot",
@@ -1600,7 +1682,8 @@
         "Speciális": "Fából készült gyakorlófegyver.",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Kis Pajzs",
@@ -1620,7 +1703,8 @@
         "Speciális": "-",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Közepes Pajzs",
@@ -1640,7 +1724,8 @@
         "Speciális": "Erő követelmény: +1",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     },
     {
         "Fegyver": "Nagy Pajzs",
@@ -1660,6 +1745,7 @@
         "Speciális": "Erő követelmény: +2 Legfeljebb 0.5 penge hosszú fegyver lehet a másik kézben. Minden plusz 0.5 penge TÉ:-3 büntetést ad",
         "MK_pár": "",
         "Alapnév": "",
-        "Hárító": "0"
+        "Hárító": "0",
+        "SP_override": null
     }
 ]

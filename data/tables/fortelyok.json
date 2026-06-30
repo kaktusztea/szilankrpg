@@ -5849,25 +5849,6 @@
     "kiterjeszti_erős": [],
     "fokok": [
       {
-        "fok": 0,
-        "hatás": [
-          "Puszta kéz sebzése: -5+k20."
-        ],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "SP",
-            "érték": -5,
-            "mód": "override",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "fegyver:puszta kéz",
-            "megjegyzés": "Alapeset: képzetlen puszta kéz"
-          }
-        ]
-      },
-      {
         "fok": 1,
         "hatás": [
           "Puszta kéz sebzése: 1+k20 (az alap -5+k20 helyett)."
@@ -5876,16 +5857,7 @@
           "Faj Háttér ahol ajánlott a Természetes fegyver."
         ],
         "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "SP",
-            "érték": 1,
-            "mód": "override",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "fegyver:puszta kéz"
-          }
-        ]
+        "módosítók": []
       }
     ],
     "md_fájl": "fortelyok.harci/termeszetes_fegyver.md"

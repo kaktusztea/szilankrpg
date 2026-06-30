@@ -99,6 +99,13 @@ if __name__ == "__main__":
                         'Hárító': '0',
                     })
 
+            # SP_override: fegyver-szintű fortély override (Természetes fegyver → Puszta kéz)
+            for entry in full_json:
+                if entry['Fegyver'] == 'Puszta kéz':
+                    entry['SP_override'] = {'fortély': 'Természetes fegyver', 'SP': 1}
+                elif 'SP_override' not in entry:
+                    entry['SP_override'] = None
+
         # Post-process: tavfegyverek.json — Harcmodor és Kategória mező
         if d['output'] == 'tavfegyverek.json':
             # Mágiatáv I-IV hozzáfűzése (virtuális mágikus távfegyverek)

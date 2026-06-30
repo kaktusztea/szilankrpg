@@ -17,20 +17,12 @@ export function findMfFok(karakter: Karakter, fegyverNév: string, fegyverAlap: 
   return entry?.fok ?? 0;
 }
 
-/** SP override keresés fortélyokból (pl. Természetes fegyver → puszta kéz SP). */
+/** SP override keresés fegyver definícióból (pl. Természetes fegyver → puszta kéz SP). */
 export function calcSpOverride(fegyverNév: string, karakter: Karakter, data: GameData): number | null {
-  for (const kf of karakter.fortélyok) {
-    const def = data.fortelySummaries.find(d => d.név === kf.név);
-    if (!def) continue;
-    const fokDef = def.fokok.find((fd: any) => fd.fok === kf.fok);
-    if (!fokDef?.módosítók) continue;
-    for (const mod of fokDef.módosítók) {
-      if (mod.mód !== 'override' || mod.cél !== 'SP') continue;
-      if (typeof mod.feltétel === 'string' && mod.feltétel.startsWith('fegyver:')) {
-        if (fegyverNév.toLowerCase() === mod.feltétel.slice('fegyver:'.length).toLowerCase()) return mod.érték;
-      }
-    }
-  }
+  const fDef = data.fegyverek.find(f => f.Fegyver.toLowerCase() === fegyverNév.toLowerCase());
+  if (!fDef?.SP_override) return null;
+  const ovr = fDef.SP_override as { fortély: string; SP: number };
+  if (karakter.fortélyok.some(kf => kf.név === ovr.fortély)) return ovr.SP;
   return null;
 }
 

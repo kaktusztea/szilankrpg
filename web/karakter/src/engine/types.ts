@@ -233,6 +233,7 @@ export interface FegyverAlap {
   MK_pár: string;
   Alapnév: string;
   Hárító: string;
+  SP_override?: { fortély: string; SP: number } | null;
 }
 
 // ============================================================

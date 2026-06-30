@@ -24,29 +24,10 @@ kp_perfok: 6
 ingyenes_perszint: 0
 
 fokok:
-  - fok: 0
-    követelménytext: []
-    követelmények: ""
-    hatástext:
-      - text: "Puszta kéz sebzése: -5+k20."
-    módosítók:
-      - cél: "SP"
-        érték: -5
-        mód: "override"
-        forrás: ""
-        arány: 0
-        feltétel: "fegyver:puszta kéz"
-        megjegyzés: "Alapeset: képzetlen puszta kéz"
   - fok: 1
     követelménytext:
       - text: "Faj Háttér ahol ajánlott a Természetes fegyver."
     követelmények: ""
     hatástext:
       - text: "Puszta kéz sebzése: 1+k20 (az alap -5+k20 helyett)."
-    módosítók:
-      - cél: "SP"
-        érték: 1
-        mód: "override"
-        forrás: ""
-        arány: 0
-        feltétel: "fegyver:puszta kéz"
+    módosítók: []
