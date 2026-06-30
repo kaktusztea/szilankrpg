@@ -102,6 +102,11 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     <div className="screen harc-screen">
       <h2>🗡️ Harc</h2>
 
+      <HarcFegyverSection
+        data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
+        onShowFegyverfogás={() => setShowFegyverfogás(true)}
+      />
+
       <HarcHeader
         ké={hc.ké}
         sfé_fizikai={hc.sfé_fizikai}
@@ -117,11 +122,6 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onVéLabelTap={() => { if (session.vé_csökkenés > 0) setShowVéHistory(true); }}
         onVéResetClick={() => setShowVéResetConfirm(true)}
         onKéClick={handleKéClick}
-      />
-
-      <HarcFegyverSection
-        data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
-        onShowFegyverfogás={() => setShowFegyverfogás(true)}
       />
 
       <HarcFegyverTable
