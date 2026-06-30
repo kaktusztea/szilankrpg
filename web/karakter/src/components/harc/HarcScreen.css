@@ -14,6 +14,7 @@
 
 @media (max-width: 480px) {
   .harc-header { grid-template-columns: auto 1fr; }
+  .ke-box { width: 80px; }
 }
 
 .ke-box, .sfe-box, .ve-csokk-box, .mp-box {
@@ -26,7 +27,7 @@
   align-items: center;
 }
 
-.ke-box { min-width: 64px; }
+.ke-box { width: 96px; flex-shrink: 0; }
 
 .sfe-box { align-items: flex-start !important; }
 
