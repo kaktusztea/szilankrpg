@@ -82,7 +82,7 @@ export function useHarcComputed(data: GameData, karakter: Karakter, session: Ses
   const fegyverResults = calcFegyverResults(fegyverRows, k, data, fortelyMods, merevvértFok, harcmodorÖsszeg, lookupArrays, stringCtx, páncélMGT, merevvértBüntetés);
   applyFegyverOverrides(fegyverResults, session, data, feltételTeljesül);
 
-  const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, feltételTeljesül, páncélMGT);
+  const kétkezesResult = calcKétkezes(k, session, data, fortelyMods, feltételTeljesül, páncélMGT, merevvértBüntetés);
   const { pajzsVÉ, fogásResult } = calcFogás(k, session, data, fortelyMods);
 
   const belharciAktív = session.aktív_helyzetek.includes('Belharci helyzet');

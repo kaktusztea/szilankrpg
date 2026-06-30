@@ -17,6 +17,7 @@ interface KétkezesInput {
   harcmodorBonusz: { szint: number; TÉ: number; VÉ: number }[];
   fortelyMods: Record<string, number>;
   páncélMGT?: number;
+  merevvértBüntetés?: number;
 }
 
 export interface KétkezesResult {
@@ -83,7 +84,7 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
   const alapTÉ = (parseInt(nagyobb.TÉ) || 0) + (khFokBónusz.mindkét_fegyver_értékei ? (parseInt(kisebb.TÉ) || 0) : 0);
   const alapVÉ = (parseInt(nagyobb.VÉ) || 0) + (khFokBónusz.mindkét_fegyver_értékei ? (parseInt(kisebb.VÉ) || 0) : 0);
   const TÉ = konstansok.harcérték_alap.TÉ + k.tulajdonságok.erő + k.tulajdonságok.ügyesség + k.tulajdonságok.gyorsaság
-    + k.HM_TÉ + (hb?.TÉ ?? 0) + alapTÉ + mfTÉ + fortelyMods['TÉ'] + khFokBónusz.TÉ;
+    + k.HM_TÉ + (hb?.TÉ ?? 0) + alapTÉ + mfTÉ + fortelyMods['TÉ'] + khFokBónusz.TÉ - (input.merevvértBüntetés ?? 0);
   const VÉ = konstansok.harcérték_alap.VÉ + k.tulajdonságok.gyorsaság + k.tulajdonságok.ügyesség
     + k.HM_VÉ + (hb?.VÉ ?? 0) + alapVÉ + mfVÉ + fortelyMods['VÉ'] + khFokBónusz.VÉ;
 

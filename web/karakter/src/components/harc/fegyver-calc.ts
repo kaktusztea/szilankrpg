@@ -140,6 +140,7 @@ export function calcKetkezes(
   fortelyMods: Record<string, number>,
   feltételTeljesül: (feltétel: unknown) => boolean,
   páncélMGT?: number,
+  merevvértBüntetés?: number,
 ): (FegyverResult & { sumPengehossz: number }) | null {
   if (!session.kétkezes_harc || session.aktív_fegyver_bal_index < 0) return null;
   const jobbFp = k.fegyverek[session.aktív_fegyver_index];
@@ -148,7 +149,7 @@ export function calcKetkezes(
   const result = calcKétkezesHarc({
     jobbFp, balFp, fegyverek: data.fegyverek, karakter: k,
     konstansok: data.konstansok, harcmodorBonusz: data.harcmodorBonusz, fortelyMods,
-    páncélMGT,
+    páncélMGT, merevvértBüntetés,
   });
   if (!result) return null;
   for (const helyzetNév of session.aktív_helyzetek) {
