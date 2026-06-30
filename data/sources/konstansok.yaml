@@ -219,6 +219,18 @@ páncél_védett_terület:      # százalékban
   sisak: 10
   végtagok: 10              # felkarok; alkarok; combok; lábszárak - tagonként
 
+# ============================================================
+# Csatolt tag MGT (páncél struktúra típus × kidolgozottság → MGT/tag)
+# ============================================================
+# Mechanika:
+#   - Páncél csatolt tagok (végtagvédők + sisak) egyenként hozzáadnak MGT-t
+#   - A hozzáadott MGT/tag a páncél struktúra típusától és kidolgozottságától függ:
+#     • hajlékonyvért nem fém (posztó, bőr): pocsék:1, átlagos:0.5, mestermunka:0
+#     • hajlékonyvért fém (lánc/sodrony): pocsék:2, átlagos:1, mestermunka:0.25
+#     • merevvért fém (pikkely, lemez): pocsék:3, átlagos:2, mestermunka:1
+#   - Képlet: csatolt_mgt = csatolt_db × tag_mgt_per_db (végeredmény felkerekítve)
+#   - A rules.json páncél_MGT szabály tartalmazza a feltételes lookup-ot
+
 páncél_csatolt_tag_mgt:
   hajlékonyvért_nem_fém:
     pocsék: 1
