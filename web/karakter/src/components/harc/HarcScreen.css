@@ -34,7 +34,9 @@
   align-items: center;
 }
 
-.ke-box { width: 96px; flex-shrink: 0; }
+@media (min-width: 481px) {
+  .ke-box { width: 96px; flex-shrink: 0; }
+}
 
 .sfe-box { align-items: flex-start !important; }
 
