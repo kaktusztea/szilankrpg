@@ -13,3 +13,4 @@ export { OverlayScreenOverlay } from './OverlayScreenOverlay';
 export { SharePopupOverlay } from './SharePopupOverlay';
 export { ToastOverlay } from './ToastOverlay';
 export { ImportConfirmOverlay } from './ImportConfirmOverlay';
+export { SlotLimitOverlay } from './SlotLimitOverlay';

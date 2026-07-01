@@ -7,6 +7,7 @@ import { encodeKarakterUrl } from '../engine/url-share';
 import type { OverlayState } from '../components/AppOverlays';
 import type { UndoEntry } from './useUndo';
 import { sanitizeUndo } from './useUndo';
+import { isSlotFull } from './slot-utils';
 
 interface Deps {
   data: GameData | null;
@@ -22,6 +23,7 @@ interface Deps {
 export function useKarakterActions({ data, karakter, setKarakter, undoStack, setUndoStack, setTestMode, setIsDirty, setOverlay }: Deps) {
 
   const importKarakter = useCallback((k: Karakter, overwriteUid: string | false) => {
+    if (!overwriteUid && isSlotFull()) { setOverlay('showSlotLimit', true); setOverlay('importConfirm', null); return; }
     if (overwriteUid) {
       const final = { ...k, uid: overwriteUid, id_leíró: generateIdLeíró(k.név, k.tsz) };
       localStorage.setItem(`szilank_char_${overwriteUid}`, JSON.stringify(final));
@@ -50,6 +52,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
 
   function duplicateKarakter() {
     if (!karakter) return;
+    if (isSlotFull()) { setOverlay('showSlotLimit', true); return; }
     const dup = dupKarakter(karakter);
     setKarakter(dup);
     setUndoStack([]);
@@ -84,6 +87,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
 
   async function loadKarakter() {
     if (!data) return;
+    if (isSlotFull()) { setOverlay('showSlotLimit', true); return; }
     const result = await loadKarakterFromFile(data);
     if ('error' in result) { setOverlay('loadError', result.error); return; }
     setKarakter(result.karakter);

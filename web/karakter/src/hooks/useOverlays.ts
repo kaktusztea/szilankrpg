@@ -6,7 +6,7 @@ const INITIAL_OVERLAYS: OverlayState = {
   slotDeleteTarget: null, showSavePopup: false, saveFile: null,
   loadError: '', showFullscreenHint: false, showNewConfirm: false,
   showUndo: false, undoSelected: null, overlayScreen: null,
-  sharePopup: null, toast: null, importConfirm: null,
+  sharePopup: null, toast: null, importConfirm: null, showSlotLimit: false,
 };
 
 export function useOverlays() {

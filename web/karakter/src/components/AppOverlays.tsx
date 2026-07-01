@@ -3,11 +3,13 @@ import type { GameData } from '../engine/data-loader';
 import { validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION } from '../engine/types';
+import { isSlotFull } from '../hooks/slot-utils';
 import {
   MenuOverlay, SzilankPickerOverlay, NewCharConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveOverlay, SaveFileOverlay,
   UndoOverlay, LoadErrorOverlay, FullscreenHintOverlay,
   OverlayScreenOverlay, SharePopupOverlay, ToastOverlay, ImportConfirmOverlay,
+  SlotLimitOverlay,
 } from './overlays';
 
 export interface OverlayState {
@@ -26,6 +28,7 @@ export interface OverlayState {
   sharePopup: { név: string; copied: boolean; url?: string } | null;
   toast: { msg: string; type: 'success' | 'error' } | null;
   importConfirm: { karakter: Karakter; matchUid: string } | null;
+  showSlotLimit: boolean;
 }
 
 interface Props {
@@ -105,7 +108,7 @@ export function AppOverlays({
           onSlots={() => { closeMenu(); set('showSlotList', true); }}
           onDuplicate={() => { closeMenu(); duplicateKarakter(); }}
           onSave={() => { closeMenu(); set('showSavePopup', true); }}
-          onNew={() => { closeMenu(); set('showNewConfirm', true); }}
+          onNew={() => { closeMenu(); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
           onFullscreenHint={() => { closeMenu(); set('showFullscreenHint', true); }}
           onClose={closeMenu}
         />
@@ -201,6 +204,10 @@ export function AppOverlays({
           onNewCopy={() => importKarakter(s.importConfirm!.karakter, false)}
           onCancel={() => set('importConfirm', null)}
         />
+      )}
+
+      {s.showSlotLimit && (
+        <SlotLimitOverlay onClose={() => set('showSlotLimit', false)} />
       )}
     </>
   );

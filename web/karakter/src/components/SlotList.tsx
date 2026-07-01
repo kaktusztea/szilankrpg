@@ -2,7 +2,6 @@ import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION } from '../engine/types';
 import { validateKarakter } from '../engine/validate';
 import { sanitizeUndo } from '../hooks/useUndo';
-import { MAX_KARAKTER_DB } from '../ui-constants';
 
 interface SlotEntry {
   uid: string;
@@ -74,7 +73,6 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onTest, onFileL
         <button className="menu-item slot-test-btn" onClick={onTest}>🧪 Teszt</button>
         <button className="menu-item slot-file-btn" onClick={onFileLoad}>📁 Fájlból...</button>
       </div>
-      {slots.length >= MAX_KARAKTER_DB && <span className="slot-max-warning">Max {MAX_KARAKTER_DB} slot — töröld egy régit fájlba mentés után</span>}
     </>
   );
 }
