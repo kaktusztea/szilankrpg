@@ -7,6 +7,7 @@ const INITIAL_OVERLAYS: OverlayState = {
   loadError: '', showFullscreenHint: false, showNewConfirm: false,
   showUndo: false, undoSelected: null, overlayScreen: null,
   sharePopup: null, toast: null, importConfirm: null, showSlotLimit: false,
+  backupRestore: null,
 };
 
 export function useOverlays() {
@@ -19,14 +20,15 @@ export function useOverlays() {
   const anyOverlayOpen = overlays.showNewConfirm || overlays.showSlotList || overlays.showUndo
     || overlays.showMenu || !!overlays.loadError || !!overlays.overlayScreen
     || overlays.showFullscreenHint || overlays.showSzilánkPicker || !!overlays.sharePopup
-    || !!overlays.slotDeleteTarget || overlays.showSavePopup || !!overlays.saveFile;
+    || !!overlays.slotDeleteTarget || overlays.showSavePopup || !!overlays.saveFile
+    || !!overlays.backupRestore;
 
   // ESC closes overlays
   useEffect(() => {
     if (!anyOverlayOpen) return;
     function onKey(e: KeyboardEvent) {
       if (e.key === 'Escape') {
-        setOverlays(prev => ({ ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm }));
+        setOverlays(prev => ({ ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm, backupRestore: prev.backupRestore }));
       }
     }
     document.addEventListener('keydown', onKey);
@@ -54,7 +56,7 @@ export function useOverlays() {
     function handler(e: MouseEvent) {
       const el = e.target as HTMLElement;
       if (el.classList.contains('kep-prompt-overlay')) {
-        setOverlays(prev => ({ ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm }));
+        setOverlays(prev => ({ ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm, backupRestore: prev.backupRestore }));
       }
     }
     document.addEventListener('click', handler);

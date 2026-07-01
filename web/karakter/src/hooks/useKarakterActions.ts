@@ -87,13 +87,29 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
 
   async function loadKarakter() {
     if (!data) return;
-    if (isSlotFull()) { setOverlay('showSlotLimit', true); return; }
     const result = await loadKarakterFromFile(data);
     if ('error' in result) { setOverlay('loadError', result.error); return; }
-    setKarakter(result.karakter);
-    setUndoStack(result.undo);
-    setTestMode(false);
-    setIsDirty(true);
+
+    if (result.type === 'backup') {
+      // Open backup restore overlay — let user pick which characters to restore
+      setOverlay('backupRestore', { karakterek: result.karakterek, dátum: result.dátum });
+      return;
+    }
+
+    // Single character load — check uid collision
+    let slots: { uid: string; név: string; tsz: number; mentés_dátum: string }[] = [];
+    try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+    const match = slots.find(s => s.uid === result.karakter.uid);
+    if (match) {
+      // uid already exists → ask for confirmation
+      setOverlay('importConfirm', { karakter: result.karakter, matchUid: match.uid });
+    } else {
+      if (isSlotFull()) { setOverlay('showSlotLimit', true); return; }
+      setKarakter(result.karakter);
+      setUndoStack(result.undo);
+      setTestMode(false);
+      setIsDirty(true);
+    }
   }
 
   return { importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter, deleteSlot };

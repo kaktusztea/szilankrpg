@@ -9,7 +9,7 @@ import {
   SlotListOverlay, SlotDeleteOverlay, SaveOverlay, SaveFileOverlay,
   UndoOverlay, LoadErrorOverlay, FullscreenHintOverlay,
   OverlayScreenOverlay, SharePopupOverlay, ToastOverlay, ImportConfirmOverlay,
-  SlotLimitOverlay,
+  SlotLimitOverlay, BackupRestoreOverlay,
 } from './overlays';
 
 export interface OverlayState {
@@ -29,6 +29,7 @@ export interface OverlayState {
   toast: { msg: string; type: 'success' | 'error' } | null;
   importConfirm: { karakter: Karakter; matchUid: string } | null;
   showSlotLimit: boolean;
+  backupRestore: { karakterek: { karakter: Karakter; undo: any[] }[]; dátum: string } | null;
 }
 
 interface Props {
@@ -208,6 +209,51 @@ export function AppOverlays({
 
       {s.showSlotLimit && (
         <SlotLimitOverlay onClose={() => set('showSlotLimit', false)} />
+      )}
+
+      {s.backupRestore && (
+        <BackupRestoreOverlay
+          karakterek={s.backupRestore.karakterek}
+          dátum={s.backupRestore.dátum}
+          onRestore={(selected) => {
+            // Perform the actual restore
+            let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
+            try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { slots = []; }
+
+            const MAX = 10;
+            let lastKarakter: Karakter | null = null;
+            let lastUndo: any[] = [];
+
+            for (const { karakter: k, undo } of selected) {
+              const existingIdx = slots.findIndex(sl => sl.uid === k.uid);
+              // If it's a new character and we're at the limit, skip
+              if (existingIdx < 0 && slots.length >= MAX) continue;
+
+              const toSave = { ...k, _undo: undo } as any;
+              try {
+                localStorage.setItem(`szilank_char_${k.uid}`, JSON.stringify(toSave));
+                const entry = { uid: k.uid, id_leíró: k.id_leíró, név: k.név, tsz: k.tsz, mentés_dátum: (k as any).mentés_dátum || new Date().toISOString() };
+                if (existingIdx >= 0) slots[existingIdx] = entry; else slots.push(entry);
+                lastKarakter = k;
+                lastUndo = undo;
+              } catch { /* quota exceeded */ break; }
+            }
+
+            localStorage.setItem('szilank_slots', JSON.stringify(slots));
+
+            if (lastKarakter) {
+              setKarakter(lastKarakter);
+              setUndoStack(lastUndo);
+              setTestMode(false);
+              setIsDirty(true);
+              localStorage.setItem('szilank_active', lastKarakter.uid);
+            }
+
+            set('backupRestore', null);
+            set('toast', { msg: `${selected.length} karakter betöltve`, type: 'success' });
+          }}
+          onClose={() => set('backupRestore', null)}
+        />
       )}
     </>
   );

@@ -168,3 +168,19 @@
 .import-confirm-msg { font-size: 13px; color: var(--text-dim); text-align: center; }
 .import-confirm-btns { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
 .import-confirm-btns .menu-item { padding: 6px 12px; font-size: 13px; }
+
+/* --- 10. Backup restore --- */
+.overlay-backup-restore { align-items: stretch; gap: 10px; min-width: 290px; max-width: 360px; max-height: 80vh; }
+.backup-restore-list { display: flex; flex-direction: column; gap: 4px; max-height: 50vh; overflow-y: auto; }
+.backup-restore-item {
+  display: flex; align-items: center; gap: 8px;
+  padding: 8px 12px; border-radius: 4px;
+  background: var(--input-bg); border: 1px solid var(--border);
+  cursor: pointer; user-select: none;
+}
+.backup-restore-item.selected { border-color: var(--success); background: #2a3a2a; }
+.backup-restore-check { font-size: 14px; flex-shrink: 0; }
+.backup-restore-name { flex: 1; font-size: 14px; color: var(--text); }
+.backup-restore-warn { font-size: 16px; flex-shrink: 0; }
+.backup-restore-date { font-size: 11px; color: var(--text-dim); text-align: center; margin-top: 4px; }
+.backup-confirm-summary { font-size: 14px; color: var(--text); text-align: center; line-height: 1.6; }
