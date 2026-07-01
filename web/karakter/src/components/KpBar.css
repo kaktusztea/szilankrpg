@@ -1,0 +1,71 @@
+/* KP Info Popup */
+.kp-info-popup {
+  max-width: 320px;
+  width: 100%;
+}
+
+.kp-info-title {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: bold;
+  text-align: center;
+  color: var(--text);
+}
+
+.kp-info-section {
+  margin-bottom: 10px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.kp-info-section:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.kp-info-label {
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.kp-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2px 0;
+  font-size: 14px;
+  color: var(--text);
+}
+
+.kp-info-val {
+  font-family: monospace;
+  font-weight: bold;
+  min-width: 40px;
+  text-align: right;
+}
+
+.kp-info-formula {
+  font-size: 11px;
+  color: var(--text-dim);
+  font-style: italic;
+  padding-left: 8px;
+}
+
+.kp-info-sum {
+  border-top: 1px dashed var(--border);
+  margin-top: 4px;
+  padding-top: 4px;
+  font-weight: bold;
+}
+
+.kp-info-result {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.kp-info-pos { color: var(--success); }
+.kp-info-neg { color: var(--error); }
