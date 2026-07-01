@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { OverlayPortal } from './OverlayPortal';
+import { MAX_KARAKTER_DB } from '../../ui-constants';
 import type { Karakter } from '../../engine/types';
 
 interface BackupEntry {
@@ -14,12 +15,12 @@ interface Props {
   onClose: () => void;
 }
 
-/** Returns a Set of uid-s that already exist in the slot list. */
-function getExistingUids(): Set<string> {
+/** Returns a Set of uid-s that already exist in the slot list, and the current slot count. */
+function getSlotInfo(): { existingUids: Set<string>; slotCount: number } {
   try {
     const slots: { uid: string }[] = JSON.parse(localStorage.getItem('szilank_slots') || '[]');
-    return new Set(slots.map(s => s.uid));
-  } catch { return new Set(); }
+    return { existingUids: new Set(slots.map(s => s.uid)), slotCount: slots.length };
+  } catch { return { existingUids: new Set(), slotCount: 0 }; }
 }
 
 function formatDátum(iso: string): string {
@@ -31,10 +32,21 @@ function formatDátum(iso: string): string {
 }
 
 export function BackupRestoreOverlay({ karakterek, dátum, onRestore, onClose }: Props) {
-  const [selected, setSelected] = useState<Set<number>>(() => new Set(karakterek.map((_, i) => i)));
-  const [showConfirm, setShowConfirm] = useState(false);
+  const { existingUids, slotCount } = getSlotInfo();
+  const freeSlots = MAX_KARAKTER_DB - slotCount;
 
-  const existingUids = getExistingUids();
+  const [selected, setSelected] = useState<Set<number>>(() => {
+    // Pre-select all that fit: overwrites always, new ones up to freeSlots
+    const set = new Set<number>();
+    let newCount = 0;
+    for (let i = 0; i < karakterek.length; i++) {
+      const isOverwrite = existingUids.has(karakterek[i].karakter.uid);
+      if (isOverwrite) { set.add(i); }
+      else if (newCount < freeSlots) { set.add(i); newCount++; }
+    }
+    return set;
+  });
+  const [showConfirm, setShowConfirm] = useState(false);
 
   const toggle = (idx: number) => {
     setSelected(prev => {
@@ -47,6 +59,14 @@ export function BackupRestoreOverlay({ karakterek, dátum, onRestore, onClose }:
   const selectedEntries = karakterek.filter((_, i) => selected.has(i));
   const newCount = selectedEntries.filter(e => !existingUids.has(e.karakter.uid)).length;
   const overwriteCount = selectedEntries.filter(e => existingUids.has(e.karakter.uid)).length;
+
+  // An unselected "new" item is disabled if the new selection limit is reached
+  const isDisabled = (idx: number): boolean => {
+    if (selected.has(idx)) return false; // already selected → can deselect
+    const isOverwrite = existingUids.has(karakterek[idx].karakter.uid);
+    if (isOverwrite) return false; // overwrite never counts against limit
+    return newCount >= freeSlots; // no more room for new entries
+  };
 
   if (showConfirm) {
     return (
@@ -69,21 +89,25 @@ export function BackupRestoreOverlay({ karakterek, dátum, onRestore, onClose }:
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt overlay-backup-restore">
         <label className="overlay-label overlay-label-center">Backup visszaállítás</label>
+        {freeSlots < karakterek.filter(e => !existingUids.has(e.karakter.uid)).length && (
+          <div className="backup-restore-limit">Szabad hely: {freeSlots} / {MAX_KARAKTER_DB}</div>
+        )}
         <div className="backup-restore-list">
           {karakterek.map((entry, i) => {
             const isExisting = existingUids.has(entry.karakter.uid);
             const isSelected = selected.has(i);
+            const disabled = isDisabled(i);
             return (
               <div
                 key={entry.karakter.uid + '-' + i}
-                className={`backup-restore-item${isSelected ? ' selected' : ''}`}
-                onClick={() => toggle(i)}
+                className={`backup-restore-item${isSelected ? ' selected' : ''}${disabled ? ' disabled' : ''}`}
+                onClick={() => { if (!disabled) toggle(i); }}
               >
                 <span className="backup-restore-check">{isSelected ? '●' : '○'}</span>
                 <span className="backup-restore-name">
                   {entry.karakter.név || 'Névtelen'} ({entry.karakter.tsz}sz)
                 </span>
-                {isExisting && <span className="backup-restore-warn" title="Már létezik a Karaktertárban">⚠️</span>}
+                {isExisting && <span className="backup-restore-warn" title="Felülírás (már létezik)">⚠️</span>}
               </div>
             );
           })}

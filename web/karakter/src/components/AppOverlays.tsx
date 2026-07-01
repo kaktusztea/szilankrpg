@@ -4,6 +4,7 @@ import { validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION } from '../engine/types';
 import { isSlotFull } from '../hooks/slot-utils';
+import { MAX_KARAKTER_DB } from '../ui-constants';
 import {
   MenuOverlay, SzilankPickerOverlay, NewCharConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveOverlay, SaveFileOverlay,
@@ -220,20 +221,25 @@ export function AppOverlays({
             let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
             try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { slots = []; }
 
-            const MAX = 10;
+            const MAX = MAX_KARAKTER_DB;
+            // Count how many new entries we can still insert
+            const currentCount = slots.length;
+            let newInserted = 0;
+            const maxNew = MAX - currentCount;
             let lastKarakter: Karakter | null = null;
             let lastUndo: any[] = [];
 
             for (const { karakter: k, undo } of selected) {
               const existingIdx = slots.findIndex(sl => sl.uid === k.uid);
-              // If it's a new character and we're at the limit, skip
-              if (existingIdx < 0 && slots.length >= MAX) continue;
+              // If it's a new character and we've reached the limit, skip
+              if (existingIdx < 0 && newInserted >= maxNew) continue;
 
               const toSave = { ...k, _undo: undo } as any;
               try {
                 localStorage.setItem(`szilank_char_${k.uid}`, JSON.stringify(toSave));
                 const entry = { uid: k.uid, id_leíró: k.id_leíró, név: k.név, tsz: k.tsz, mentés_dátum: (k as any).mentés_dátum || new Date().toISOString() };
-                if (existingIdx >= 0) slots[existingIdx] = entry; else slots.push(entry);
+                if (existingIdx >= 0) { slots[existingIdx] = entry; }
+                else { slots.push(entry); newInserted++; }
                 lastKarakter = k;
                 lastUndo = undo;
               } catch { /* quota exceeded */ break; }
