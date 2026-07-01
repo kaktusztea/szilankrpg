@@ -1,17 +1,18 @@
 import { useCallback } from 'react';
-import type { Karakter, Session } from '../engine/types';
+import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, loadKarakterFromFile } from '../engine/file-ops';
 import { encodeKarakterUrl } from '../engine/url-share';
 import type { OverlayState } from '../components/AppOverlays';
+import type { UndoEntry } from './useUndo';
 
 interface Deps {
   data: GameData | null;
   karakter: Karakter | null;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  undoStack: { timestamp: number; leírás: string; session: Session; karakter: Karakter }[];
-  setUndoStack: React.Dispatch<React.SetStateAction<any[]>>;
+  undoStack: UndoEntry[];
+  setUndoStack: React.Dispatch<React.SetStateAction<UndoEntry[]>>;
   setTestMode: (v: boolean) => void;
   setIsDirty: (v: boolean) => void;
   setOverlay: <K extends keyof OverlayState>(key: K, value: OverlayState[K]) => void;

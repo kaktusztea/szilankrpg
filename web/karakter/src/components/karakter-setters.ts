@@ -1,10 +1,11 @@
 import type { Karakter, Fortely } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
+import type { UndoPatch } from '../hooks/useUndo';
 import { lookupFegyver } from '../engine/utils';
 
 /** Generikus undo-aware field setter gyár. */
 export function makeFieldSetter(
-  pushUndo: (leírás: string) => void,
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
   return function setField<K extends keyof Karakter>(
@@ -14,7 +15,7 @@ export function makeFieldSetter(
     return (val: Karakter[K]) => {
       setKarakter(prev => {
         if (!prev) return prev;
-        pushUndo(undoLabel(prev[field], val));
+        pushUndo(undoLabel(prev[field], val), [{ field: field as string, prev: prev[field] }]);
         return { ...prev, [field]: val };
       });
     };
@@ -51,22 +52,26 @@ export function buildFortelyokProps(karakter: Karakter, data: GameData) {
 
 /** Faj setter (nested hátterek.faj). */
 export function makeFajSetter(
-  pushUndo: (leírás: string) => void,
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
   return (v: string) => {
-    pushUndo(`Faj: ${v}`);
-    setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev);
+    setKarakter(prev => {
+      if (!prev) return prev;
+      pushUndo(`Faj: ${v}`, [{ field: 'hátterek', prev: prev.hátterek }]);
+      return { ...prev, hátterek: { ...prev.hátterek, faj: v } };
+    });
   };
 }
 
 /** Generic undo-wrapping setKarakter (fixed label). */
 export function makeUndoKarakterSetter(
-  pushUndo: (leírás: string) => void,
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
   undoLabel: string,
 ) {
   return (updater: React.SetStateAction<Karakter | null>) => {
+    // No explicit patches — pushUndo will snapshot the full karakter as fallback
     pushUndo(undoLabel);
     setKarakter(updater);
   };

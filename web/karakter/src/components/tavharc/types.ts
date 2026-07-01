@@ -1,5 +1,6 @@
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, TavfegyverAlap } from '../../engine/types';
+import type { UndoPatch } from '../../hooks/useUndo';
 
 export interface TavharcProps {
   data: GameData;
@@ -7,6 +8,7 @@ export interface TavharcProps {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
   gameMode: boolean;
 }
 

@@ -1,6 +1,7 @@
 import { useState, useRef } from 'react';
 import type { GameData } from '../../engine/data-types';
 import type { Karakter } from '../../engine/types';
+import type { UndoPatch } from '../../hooks/useUndo';
 import type { HátterField } from './types';
 import { TagCloud } from './TagCloud';
 import { KarmaCloud } from './KarmaCloud';
@@ -12,7 +13,7 @@ interface Props {
   data: GameData;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
   gameMode: boolean;
   onNavigate?: (tab: string) => void;
 }
@@ -34,7 +35,7 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
   }
 
   function updateField(field: HátterField, updater: (arr: string[]) => string[], undoMsg: string) {
-    pushUndo(undoMsg);
+    pushUndo(undoMsg, [{ field: 'hátterek', prev: karakter.hátterek }]);
     setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, [field]: updater(prev.hátterek[field]) } } : prev);
   }
 

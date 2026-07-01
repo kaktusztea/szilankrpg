@@ -25,7 +25,7 @@ export function UgyesebbKezSelect({ data, karakter, session, setSession, pushUnd
       selectedIdx={session.aktív_fegyver_index}
       options={options}
       onChange={idx => {
-        pushUndo(`Fegyver: ${fegyverOpciók.find(f => f.idx === idx)?.név ?? 'Puszta kéz'}`);
+        pushUndo(`Fegyver: ${fegyverOpciók.find(f => f.idx === idx)?.név ?? 'Puszta kéz'}`, [{ field: 'session', prev: session }]);
         setSession(s => {
           if (isSpeciális(karakter, idx)) {
             return { ...s, aktív_fegyver_index: idx, fegyverfogás: 'egyfegyveres', kétkezes_harc: false, aktív_fegyver_bal_index: -1 };

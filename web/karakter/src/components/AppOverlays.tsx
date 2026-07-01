@@ -36,7 +36,7 @@ interface Props {
   session: Session;
   setSession: (v: Session | ((prev: Session) => Session)) => void;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  undoStack: { timestamp: number; leírás: string; session: Session; karakter: Karakter }[];
+  undoStack: { timestamp: number; leírás: string; patches: unknown[] }[];
   undoTo: (index: number) => void;
   duplicateKarakter: () => void;
   handleGenerateSave: (mode: 'single' | 'backup') => void;

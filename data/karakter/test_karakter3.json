@@ -1,0 +1,622 @@
+{
+  "uid": "mr218l84owh6yd6bzo",
+  "id_leíró": "pak-teth-11tsz",
+  "schema_version": 2,
+  "név": "pak-Teth",
+  "becenév": "pakkk",
+  "játékos": "Béluska",
+  "mentés_dátum": "2026-07-01 12:26",
+  "tsz": 11,
+  "leírás": "",
+  "kor": 33,
+  "anyanyelv": "Amund",
+  "vallás": "",
+  "tulajdonságok": {
+    "erő": 2,
+    "edzettség": 2,
+    "ügyesség": 2,
+    "gyorsaság": 3,
+    "intelligencia": 2,
+    "emlékezet": 3,
+    "önuralom": -1,
+    "érzékenység": 3
+  },
+  "HM_TÉ": 2,
+  "HM_VÉ": 1,
+  "CM": 5,
+  "képzettségek": [
+    {
+      "név": "Akrobatika",
+      "szint": 8
+    },
+    {
+      "név": "Fájdalomtűrés",
+      "szint": 9
+    },
+    {
+      "név": "Tradíció: Szakrális (Amhe-Ramun)",
+      "szint": 11
+    },
+    {
+      "név": "Arkánum: Asztrálmágia",
+      "szint": 10
+    },
+    {
+      "név": "Arkánum: Külső síkok lényeinek idézése",
+      "szint": 8
+    },
+    {
+      "név": "Arkánum: Térmágia",
+      "szint": 9
+    },
+    {
+      "név": "Faj misztérium: Amund",
+      "szint": 7
+    },
+    {
+      "név": "Ősi nyelv ismerete: Ős-Amund",
+      "szint": 6
+    },
+    {
+      "név": "Lopakodás/Rejtőzés",
+      "szint": 6
+    },
+    {
+      "név": "Művészetismeret",
+      "szint": 7
+    },
+    {
+      "név": "Kvantikum",
+      "szint": 9
+    },
+    {
+      "név": "Lexikum",
+      "szint": 9
+    },
+    {
+      "név": "Hadászat",
+      "szint": 6
+    },
+    {
+      "név": "Orvoslás",
+      "szint": 6
+    },
+    {
+      "név": "Befolyásolás",
+      "szint": 9
+    },
+    {
+      "név": "Etikett",
+      "szint": 6
+    },
+    {
+      "név": "Nyelvtanulás",
+      "szint": 5
+    },
+    {
+      "név": "Észlelés",
+      "szint": 8
+    },
+    {
+      "név": "Nyomozás",
+      "szint": 7
+    },
+    {
+      "név": "Természetjárás",
+      "szint": 8
+    },
+    {
+      "név": "Emberismeret",
+      "szint": 6
+    },
+    {
+      "név": "Kardvívás",
+      "szint": 6
+    }
+  ],
+  "fortélyok": [
+    {
+      "név": "Mesterfegyver",
+      "fok": 1,
+      "spec_típus": "fegyver",
+      "spec_elem": "Meneth"
+    },
+    {
+      "név": "Nyelvismeret",
+      "fok": 1,
+      "spec_típus": "nyelv",
+      "spec_elem": "Közös (pyarroni)",
+      "kiérdemelt": true
+    },
+    {
+      "név": "Nyelvismeret",
+      "fok": 2,
+      "spec_típus": "nyelv",
+      "spec_elem": "Amund",
+      "kiérdemelt": true
+    },
+    {
+      "név": "Külső síkok lényeinek ismerete",
+      "fok": 1,
+      "spec_típus": "lénycsoport",
+      "spec_elem": "dzsinnek",
+      "kiérdemelt": false
+    },
+    {
+      "név": "Mágiatáv növelés",
+      "fok": 2,
+      "spec_típus": "",
+      "spec_elem": "",
+      "kiérdemelt": false
+    },
+    {
+      "név": "Pszí Telekinézis",
+      "fok": 2,
+      "spec_típus": "",
+      "spec_elem": "",
+      "kiérdemelt": false
+    },
+    {
+      "név": "Pszí Telepátia",
+      "fok": 2,
+      "spec_típus": "",
+      "spec_elem": "",
+      "kiérdemelt": false
+    },
+    {
+      "név": "Mentálfonál",
+      "fok": 1,
+      "spec_típus": "személy",
+      "spec_elem": "Hah-Sehh főpap",
+      "kiérdemelt": false
+    },
+    {
+      "név": "Baráti állatok",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Csomózás",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Futás",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Hazudozás",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Asztrológia",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Alkudozás",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Hivatalnok",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Gazdálkodás",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Hadtáp",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Heraldika",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Kihallgatás",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Térképészet",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Zenélés: húros hangszerek",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Tájtípus - sivatagi",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Tájtípus - puszta",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Irodalom",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Helyismeret",
+      "fok": 1,
+      "spec_típus": "település",
+      "spec_elem": "el-Sobira"
+    },
+    {
+      "név": "Helyismeret",
+      "fok": 1,
+      "spec_típus": "település",
+      "spec_elem": "el-xyz"
+    },
+    {
+      "név": "Helyismeret",
+      "fok": 1,
+      "spec_típus": "település",
+      "spec_elem": "el-xyz2"
+    },
+    {
+      "név": "Helyismeret",
+      "fok": 1,
+      "spec_típus": "település",
+      "spec_elem": "el-xy3"
+    },
+    {
+      "név": "Helyismeret",
+      "fok": 1,
+      "spec_típus": "település",
+      "spec_elem": "el-xyz4"
+    },
+    {
+      "név": "Helyismeret",
+      "fok": 1,
+      "spec_típus": "település",
+      "spec_elem": "el-xyz5"
+    },
+    {
+      "név": "Kultúrkör",
+      "fok": 1,
+      "spec_típus": "kultúrkör",
+      "spec_elem": "4mund"
+    },
+    {
+      "név": "Kultúrkör",
+      "fok": 1,
+      "spec_típus": "kultúrkör",
+      "spec_elem": "dzs4d"
+    },
+    {
+      "név": "Kultúrkör",
+      "fok": 1,
+      "spec_típus": "kultúrkör",
+      "spec_elem": "sh4doni"
+    },
+    {
+      "név": "Kultúrkör",
+      "fok": 1,
+      "spec_típus": "kultúrkör",
+      "spec_elem": "barbár"
+    },
+    {
+      "név": "Kultúrkör",
+      "fok": 1,
+      "spec_típus": "kultúrkör",
+      "spec_elem": "gorv1ki"
+    },
+    {
+      "név": "Kultúrkör",
+      "fok": 1,
+      "spec_típus": "kultúrkör",
+      "spec_elem": "elf"
+    },
+    {
+      "név": "Elpusztíthatatlan",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Ultralátás",
+      "fok": 2,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Éber alvó",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Keresés/rejtés",
+      "fok": 2,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Méregálló",
+      "fok": 2,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Történelemismeret",
+      "fok": 2,
+      "spec_típus": "",
+      "spec_elem": ""
+    },
+    {
+      "név": "Szájról olvasás",
+      "fok": 1,
+      "spec_típus": "",
+      "spec_elem": ""
+    }
+  ],
+  "fortélyok_speciális": {
+    "analfabéta": false,
+    "apró_méretű_lény": false,
+    "tartós_sérülés_fok": 0,
+    "vakság": false,
+    "süketség": false
+  },
+  "hátterek": {
+    "faj": "Amund",
+    "leíró": [
+      "Gyanakvó",
+      "Alattomos",
+      "Nemes",
+      "Megfontolt",
+      "Vezéralkat",
+      "Precíz",
+      "Magas",
+      "Sebhelyes",
+      "Gyűlöli őt/őket (Dzsennek)"
+    ],
+    "karma": [
+      "Bölcs Tanító"
+    ]
+  },
+  "fegyverek": [
+    {
+      "alap": "Meneth",
+      "név": "",
+      "anyag": "abbitacél",
+      "idea": 0
+    }
+  ],
+  "távfegyverek": [
+    {
+      "alap": "Mágiatáv III"
+    }
+  ],
+  "páncél": {
+    "alap": "bőr",
+    "név": "",
+    "fémalapanyag": "",
+    "idea": 0,
+    "kidolgozottság": "mestermunka",
+    "sisak": false,
+    "végtagvédettség": 0,
+    "méret_illeszkedés": "passzol",
+    "rongálódás": 0
+  },
+  "pajzs": {
+    "méret": ""
+  },
+  "felszerelés": {
+    "nagy_tárgyak": []
+  },
+  "jegyzetek": "",
+  "napló": [],
+  "session": {
+    "szilánk": 1,
+    "vé_csökkenés": 0,
+    "vé_history": [],
+    "manőver_pont_használt": 0,
+    "sebzések": [
+      {
+        "típus": "V",
+        "sorszám": 1
+      },
+      {
+        "típus": "V",
+        "sorszám": 1
+      },
+      {
+        "típus": "V",
+        "sorszám": 1
+      },
+      {
+        "típus": "V",
+        "sorszám": 1
+      },
+      {
+        "típus": "V",
+        "sorszám": 1
+      },
+      {
+        "típus": "V",
+        "sorszám": 1
+      },
+      {
+        "típus": "V",
+        "sorszám": 1
+      },
+      {
+        "típus": "FP",
+        "sorszám": 2
+      },
+      {
+        "típus": "FP",
+        "sorszám": 2
+      },
+      {
+        "típus": "FP",
+        "sorszám": 2
+      },
+      {
+        "típus": "FP",
+        "sorszám": 2
+      },
+      {
+        "típus": "FP",
+        "sorszám": 2
+      }
+    ],
+    "aktív_fegyver_index": 0,
+    "aktív_fegyver_bal_index": -1,
+    "kétkezes_harc": false,
+    "aktív_pajzs": false,
+    "aktív_páncél": true,
+    "aktív_taktikák": [
+      {
+        "név": "Támadó",
+        "fok": 3
+      }
+    ],
+    "aktív_helyzetek": [
+      "Meglepetés"
+    ],
+    "aktív_manőver": "Csonkolás",
+    "aktív_státuszok": [
+      "Zavar (1)"
+    ],
+    "narratív_módosítók": [
+      {
+        "szöveg": "Kacsintás",
+        "érték": 1
+      }
+    ],
+    "harci_akrobatika": false,
+    "fegyverfogás": "egyfegyveres",
+    "aktív_távfegyver_index": 0,
+    "ké_dobások": []
+  },
+  "_undo": [
+    {
+      "timestamp": 1782908748461,
+      "leírás": "Képzettség: Nyelvtanulás 0→5",
+      "patches": [
+        {
+          "field": "képzettségek",
+          "op": "add",
+          "item": {
+            "név": "Nyelvtanulás",
+            "szint": 5
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1782908736861,
+      "leírás": "Fortély: Nyelvismeret (Amund) 1→2",
+      "patches": [
+        {
+          "field": "fortélyok",
+          "op": "update",
+          "index": 2,
+          "prev": {
+            "név": "Nyelvismeret",
+            "fok": 1,
+            "spec_típus": "nyelv",
+            "spec_elem": "Amund",
+            "kiérdemelt": true
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1782908720694,
+      "leírás": "Fortély: Szájról olvasás 0→1",
+      "patches": [
+        {
+          "field": "fortélyok",
+          "op": "add",
+          "item": {
+            "név": "Szájról olvasás",
+            "fok": 1,
+            "spec_típus": "",
+            "spec_elem": ""
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1782908713644,
+      "leírás": "Fortély: Történelemismeret 0→2",
+      "patches": [
+        {
+          "field": "fortélyok",
+          "op": "add",
+          "item": {
+            "név": "Történelemismeret",
+            "fok": 2,
+            "spec_típus": "",
+            "spec_elem": ""
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1782908707477,
+      "leírás": "Fortély: Méregálló 0→2",
+      "patches": [
+        {
+          "field": "fortélyok",
+          "op": "add",
+          "item": {
+            "név": "Méregálló",
+            "fok": 2,
+            "spec_típus": "",
+            "spec_elem": ""
+          }
+        }
+      ]
+    },
+    {
+      "timestamp": 1782908701444,
+      "leírás": "Fortély: Keresés/rejtés 0→2",
+      "patches": [
+        {
+          "field": "fortélyok",
+          "op": "add",
+          "item": {
+            "név": "Keresés/rejtés",
+            "fok": 2,
+            "spec_típus": "",
+            "spec_elem": ""
+          }
+        }
+      ]
+    }
+  ]
+}

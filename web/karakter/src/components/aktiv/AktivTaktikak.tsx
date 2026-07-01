@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Karakter, Session, AktívTaktika } from '../../engine/types';
+import type { UndoPatch } from '../../hooks/useUndo';
 import { fmtHatás } from '../formatters';
 import { isTaktikaAllowed, getTaktikaMods } from './AktivHelpers';
 import { PickerOverlay } from './PickerOverlay';
@@ -12,7 +13,7 @@ interface Props {
   karakter: Karakter;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
   taktikaHatásPerElem: { név: string; hatások: any[] }[];
   eseményNév: (id: string) => string;
 }
@@ -24,18 +25,18 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
   function addTaktika(név: string) {
     const def = data.taktikak.find(t => t.név === név);
     if (!def) return;
-    pushUndo(`Taktika: ${név}`);
+    pushUndo(`Taktika: ${név}`, [{ field: 'session', prev: session }]);
     const entry: AktívTaktika = { név, fok: def.fokozatos ? 1 : undefined };
     setSession(s => ({ ...s, aktív_taktikák: [...s.aktív_taktikák, entry] }));
   }
 
   function removeTaktika(idx: number) {
-    pushUndo(`Taktika−: ${session.aktív_taktikák[idx]?.név}`);
+    pushUndo(`Taktika−: ${session.aktív_taktikák[idx]?.név}`, [{ field: 'session', prev: session }]);
     setSession(s => ({ ...s, aktív_taktikák: s.aktív_taktikák.filter((_, i) => i !== idx) }));
   }
 
   function setTaktikaFok(idx: number, fok: number) {
-    pushUndo(`Taktika: ${session.aktív_taktikák[idx]?.név} fok→${fok}`);
+    pushUndo(`Taktika: ${session.aktív_taktikák[idx]?.név} fok→${fok}`, [{ field: 'session', prev: session }]);
     setSession(s => ({ ...s, aktív_taktikák: s.aktív_taktikák.map((t, i) => i === idx ? { ...t, fok } : t) }));
   }
 
@@ -45,7 +46,7 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
       const idx = session.aktív_taktikák.findIndex(a => a.név === fokválasztó);
       if (idx >= 0) setTaktikaFok(idx, fok);
     } else {
-      pushUndo(`Taktika: ${fokválasztó}`);
+      pushUndo(`Taktika: ${fokválasztó}`, [{ field: 'session', prev: session }]);
       setSession(s => ({ ...s, aktív_taktikák: [...s.aktív_taktikák, { név: fokválasztó!, fok }] }));
     }
     setShowPicker(false); setFokválasztó(null);

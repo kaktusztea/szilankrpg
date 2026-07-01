@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import type { Karakter } from '../engine/types';
-import type { UndoEntry } from './useKarakterState';
+import type { UndoEntry } from './useUndo';
 import { generateIdLeíró } from '../engine/file-ops';
 import { MAX_SLOT } from '../ui-constants';
 

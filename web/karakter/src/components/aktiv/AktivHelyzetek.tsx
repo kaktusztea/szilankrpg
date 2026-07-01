@@ -12,7 +12,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
   const [showPicker, setShowPicker] = useState(false);
 
   function addHelyzet(h: typeof data.harciHelyzetek[0]) {
-    pushUndo(`Helyzet: ${h.név}`);
+    pushUndo(`Helyzet: ${h.név}`, [{ field: 'session', prev: session }]);
     const hDef = data.harciHelyzetek.find(d => d.név === h.név);
     setSession(s => {
       let helyzetek = [...s.aktív_helyzetek, h.név];
@@ -62,7 +62,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
                 </span>
                 <button className="fort-delete" onClick={e => {
                   e.stopPropagation();
-                  pushUndo(`Helyzet−: ${h}`);
+                  pushUndo(`Helyzet−: ${h}`, [{ field: 'session', prev: session }]);
                   setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }));
                 }}>✕</button>
               </div>

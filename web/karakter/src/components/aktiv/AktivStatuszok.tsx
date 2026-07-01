@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Session } from '../../engine/types';
+import type { UndoPatch } from '../../hooks/useUndo';
 import { fmtHatás } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
 
@@ -8,7 +9,7 @@ interface Props {
   data: GameData;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
   státuszPerElem: { név: string; hatások: any[] }[];
   eseményNév: (id: string) => string;
 }
@@ -50,7 +51,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
               </span>
               {!locked && <button className="fort-delete" onClick={e => {
                 e.stopPropagation();
-                pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`);
+                pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`, [{ field: 'session', prev: session }]);
                 setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }));
               }}>✕</button>}
             </div>
@@ -62,7 +63,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
         <StatuszPickerOverlay
           data={data} session={session}
           onPick={fullName => {
-            pushUndo(`Státusz: ${fullName}`);
+            pushUndo(`Státusz: ${fullName}`, [{ field: 'session', prev: session }]);
             setSession(prev => ({ ...prev, aktív_státuszok: [...prev.aktív_státuszok, fullName] }));
             setShowPicker(false);
           }}

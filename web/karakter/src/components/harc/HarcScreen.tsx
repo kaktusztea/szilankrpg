@@ -35,7 +35,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   const changeVé = useCallback((newVal: number) => {
     const diff = newVal - session.vé_csökkenés;
-    if (diff !== 0) pushUndo(`${diff > 0 ? 'VÉ csökkenés' : 'VÉ visszanyerés'}: ${diff > 0 ? '-' : '+'}${Math.abs(diff)}`);
+    if (diff !== 0) pushUndo(`${diff > 0 ? 'VÉ csökkenés' : 'VÉ visszanyerés'}: ${diff > 0 ? '-' : '+'}${Math.abs(diff)}`, [{ field: 'session', prev: session }]);
     setSession(prev => ({
       ...prev,
       vé_csökkenés: newVal,
@@ -185,7 +185,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       {showFegyverfogás && (
         <HarcFegyverfogas
           data={data} karakter={karakter} session={session}
-          onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`); setSession(s => ({ ...s, ...patch })); setShowFegyverfogás(false); }}
+          onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`, [{ field: 'session', prev: session }]); setSession(s => ({ ...s, ...patch })); setShowFegyverfogás(false); }}
           onClose={() => setShowFegyverfogás(false)}
         />
       )}

@@ -1,5 +1,6 @@
 import type { Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import type { UndoPatch } from '../../hooks/useUndo';
 
 interface HarcHeaderProps {
   ké: number;
@@ -10,7 +11,7 @@ interface HarcHeaderProps {
   maxVéCsökk: number;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
   konstansok: GameData['konstansok'];
   onVéChange: (newVal: number) => void;
   onVéLabelTap: () => void;

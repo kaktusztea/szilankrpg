@@ -1,5 +1,6 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import type { UndoPatch } from '../../hooks/useUndo';
 import type { CÉBontás } from './types';
 
 interface Props {
@@ -7,10 +8,11 @@ interface Props {
   gameMode: boolean;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
   konstansok: GameData['konstansok'];
 }
 
-export function TavharcReszletek({ bontás, gameMode, karakter, setKarakter, konstansok }: Props) {
+export function TavharcReszletek({ bontás, gameMode, karakter, setKarakter, pushUndo, konstansok }: Props) {
   const { fegyverCÉ, osztó, mfCÉ, idea, fortélyCÉ, harcmodorCÉ, harcmodorNév, harcmodorSzint, önuralom, cé, céAlap, isMágikus, mágikusTulajdonságCÉ } = bontás;
   const CM = karakter.CM;
 
@@ -35,9 +37,9 @@ export function TavharcReszletek({ bontás, gameMode, karakter, setKarakter, kon
         <div className="th-cm-box">
           <span className="th-cm-label">CM</span>
           <div className="th-cm-controls">
-            <button className="fort-fok-btn th-cm-btn-size" onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.max(0, prev.CM - 1) } : prev)}>−</button>
+            <button className="fort-fok-btn th-cm-btn-size" onClick={() => { pushUndo(`CM: ${CM} → ${CM - 1}`, [{ field: 'CM', prev: CM }]); setKarakter(prev => prev ? { ...prev, CM: Math.max(0, prev.CM - 1) } : prev); }}>−</button>
             <strong className="th-cm-value">{CM}</strong>
-            <button className="fort-fok-btn th-cm-btn-size" onClick={() => setKarakter(prev => prev ? { ...prev, CM: Math.min(prev.CM + 1, prev.tsz * konstansok.arányok.max_cm_perszint) } : prev)}>+</button>
+            <button className="fort-fok-btn th-cm-btn-size" onClick={() => { pushUndo(`CM: ${CM} → ${CM + 1}`, [{ field: 'CM', prev: CM }]); setKarakter(prev => prev ? { ...prev, CM: Math.min(prev.CM + 1, prev.tsz * konstansok.arányok.max_cm_perszint) } : prev); }}>+</button>
           </div>
           <span className="th-cm-max">max: {karakter.tsz * konstansok.arányok.max_cm_perszint}</span>
         </div>

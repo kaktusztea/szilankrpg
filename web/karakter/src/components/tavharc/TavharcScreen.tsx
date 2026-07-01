@@ -8,7 +8,7 @@ import { TavharcReszletek } from './TavharcReszletek';
 import { TavharcPopups } from './TavharcPopups';
 import './TavharcScreen.css';
 
-export function TavharcScreen({ data, karakter, session, setSession, setKarakter, gameMode }: TavharcProps) {
+export function TavharcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, gameMode }: TavharcProps) {
   const k = karakter;
   const konstansok = data.konstansok;
   const szorzok = data.tavharcSzorzok;
@@ -79,7 +79,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
 
       {!gameMode && (
         <TavharcFegyverLista
-          data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} gameMode={gameMode}
+          data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}
           idea={idea} fortélyCÉ={fortélyCÉ}
           onMfTarget={i => setPopup(s => ({ ...s, mfTarget: i }))}
           onDeleteTarget={i => setPopup(s => ({ ...s, deleteTarget: i }))}
@@ -103,7 +103,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         <p className="th-no-fegyver">Nincs távfegyver felvéve</p>
       )}
 
-      <TavharcReszletek bontás={bontás} gameMode={gameMode} karakter={karakter} setKarakter={setKarakter} konstansok={konstansok} />
+      <TavharcReszletek bontás={bontás} gameMode={gameMode} karakter={karakter} setKarakter={setKarakter} pushUndo={pushUndo} konstansok={konstansok} />
 
       <TavharcPopups
         karakter={karakter} setKarakter={setKarakter}

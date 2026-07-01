@@ -1,5 +1,6 @@
 import type { GameData } from '../engine/data-loader';
 import type { Karakter, Session, Fortely, Tulajdonsagok } from '../engine/types';
+import type { UndoPatch } from '../hooks/useUndo';
 import type { TabDef } from './TabBar';
 import { useUndoWrappedSetters } from '../hooks/useUndoWrappedSetters';
 import { makeFieldSetter, makeAnyanyelvSetter, buildFortelyokProps, makeFajSetter, makeUndoKarakterSetter } from './karakter-setters';
@@ -38,7 +39,7 @@ interface Props {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
 }
 
 export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
@@ -53,7 +54,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
-    case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} gameMode={gameMode} />;
+    case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode} />;
     case 'tulajdonsagok': {
       const sf = makeFieldSetter(pushUndo, setKarakter);
       const setAnyanyelv = makeAnyanyelvSetter(setKarakter, data.konstansok.közös_nyelv);

@@ -1,11 +1,12 @@
 import { useRef, useState } from 'react';
 import type { Session } from '../../engine/types';
+import type { UndoPatch } from '../../hooks/useUndo';
 import { PickerOverlay } from './PickerOverlay';
 
 interface Props {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
 }
 
 const ÉRTÉKEK = [
@@ -22,7 +23,7 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
 
   function submit(szöveg: string) {
     if (!szöveg || érték === undefined) return;
-    pushUndo(`Narratív: ${szöveg}`);
+    pushUndo(`Narratív: ${szöveg}`, [{ field: 'session', prev: session }]);
     setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték }] }));
     setShowPopup(false);
     setÉrték(undefined);
@@ -43,7 +44,7 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
             </span>
             <button className="fort-delete" onClick={e => {
               e.stopPropagation();
-              pushUndo(`Narratív−: ${nm.szöveg}`);
+              pushUndo(`Narratív−: ${nm.szöveg}`, [{ field: 'session', prev: session }]);
               setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) }));
             }}>✕</button>
           </div>
