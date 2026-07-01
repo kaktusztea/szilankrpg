@@ -3,7 +3,7 @@ import type { Karakter, Session, Fortely, Tulajdonsagok } from '../engine/types'
 import type { UndoPatch } from '../hooks/useUndo';
 import type { TabDef } from './TabBar';
 import { useUndoWrappedSetters } from '../hooks/useUndoWrappedSetters';
-import { makeFieldSetter, makeAnyanyelvSetter, buildFortelyokProps, makeFajSetter, makeUndoKarakterSetter } from './karakter-setters';
+import { makeFieldSetter, makeAnyanyelvSetter, buildFortelyokProps, makeFajSetter } from './karakter-setters';
 import { AktivScreen } from './aktiv';
 import { HarcScreen } from './harc';
 import { TavharcScreen } from './tavharc';
@@ -39,7 +39,7 @@ interface Props {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
 }
 
 export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
@@ -81,7 +81,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
     case 'misztikus': return <MisztikusScreen data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo}
       fortélyok={fortélyok} setFortélyok={setFortélyok} gameMode={gameMode} />;
     case 'harcertekek': return <HarcertekekScreen data={data} karakter={karakter}
-        setKarakter={makeUndoKarakterSetter(pushUndo, setKarakter, 'Harcértékek módosítás')}
+        setKarakter={setKarakter} pushUndo={pushUndo}
         képzettségek={képzettségek} gameMode={gameMode} setKépzettségek={setKépzettségekUndo} />;
     case 'hatterek': return <HatterekScreen data={data} karakter={karakter}
         setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}

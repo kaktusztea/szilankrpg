@@ -22,7 +22,6 @@ Build CSAK kód/yaml változáskor kell. Spec fájlok (engine_spec, gui_spec, DE
 1. Tervet SOHA ne hajtsd végre automatikusan — mutasd be, kérj jóváhagyást
 2. Nem egyértelmű kérésnél kérdezz vissza
 3. Backward compatibility: NEM szükséges (régi localStorage invalidálódhat)
-4. Feature után ajánld fel DEVSTATE/spec szinkront (`szilank-devstate-sync` skill)
 
 ## Architektúra — 3 pillér
 

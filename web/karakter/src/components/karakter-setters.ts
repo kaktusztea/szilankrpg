@@ -5,7 +5,7 @@ import { lookupFegyver } from '../engine/utils';
 
 /** Generikus undo-aware field setter gyár. */
 export function makeFieldSetter(
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void,
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
   return function setField<K extends keyof Karakter>(
@@ -15,7 +15,7 @@ export function makeFieldSetter(
     return (val: Karakter[K]) => {
       setKarakter(prev => {
         if (!prev) return prev;
-        pushUndo(undoLabel(prev[field], val), [{ field: field as string, prev: prev[field] }]);
+        pushUndo(undoLabel(prev[field], val), [{ field: field as string, prev: prev[field] }], val);
         return { ...prev, [field]: val };
       });
     };
@@ -52,21 +52,22 @@ export function buildFortelyokProps(karakter: Karakter, data: GameData) {
 
 /** Faj setter (nested hátterek.faj). */
 export function makeFajSetter(
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void,
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
   return (v: string) => {
     setKarakter(prev => {
       if (!prev) return prev;
-      pushUndo(`Faj: ${v}`, [{ field: 'hátterek', prev: prev.hátterek }]);
-      return { ...prev, hátterek: { ...prev.hátterek, faj: v } };
+      const nextHátterek = { ...prev.hátterek, faj: v };
+      pushUndo(`Faj: ${v}`, [{ field: 'hátterek', prev: prev.hátterek }], nextHátterek);
+      return { ...prev, hátterek: nextHátterek };
     });
   };
 }
 
 /** Generic undo-wrapping setKarakter (fixed label). */
 export function makeUndoKarakterSetter(
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void,
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
   undoLabel: string,
 ) {

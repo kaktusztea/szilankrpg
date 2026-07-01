@@ -13,7 +13,7 @@ interface Props {
   data: GameData;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   gameMode: boolean;
   onNavigate?: (tab: string) => void;
 }

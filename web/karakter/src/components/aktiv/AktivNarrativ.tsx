@@ -6,7 +6,7 @@ import { PickerOverlay } from './PickerOverlay';
 interface Props {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
 }
 
 const ÉRTÉKEK = [

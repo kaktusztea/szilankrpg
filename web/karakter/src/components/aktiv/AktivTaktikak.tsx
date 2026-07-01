@@ -13,7 +13,7 @@ interface Props {
   karakter: Karakter;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   taktikaHatásPerElem: { név: string; hatások: any[] }[];
   eseményNév: (id: string) => string;
 }

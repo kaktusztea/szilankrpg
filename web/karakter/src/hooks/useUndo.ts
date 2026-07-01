@@ -91,6 +91,27 @@ function coalesceKey(patches: UndoPatch[]): string | null {
   return p.field;
 }
 
+/**
+ * After coalescing, check if undoing would be a noop (prev === current post-modification value).
+ * This happens when a user toggles a value back to its original state (e.g. erő 3→4→3).
+ */
+function isNoopAfterCoalesce(patches: UndoPatch[], nextValue: unknown): boolean {
+  if (patches.length !== 1) return false;
+  const p = patches[0];
+  if ('op' in p) {
+    // Array update: compare prev item with the next array's element at the same position
+    if (p.op === 'update') {
+      const nextArr = nextValue as unknown[];
+      if (!Array.isArray(nextArr) || p.index >= nextArr.length) return false;
+      return JSON.stringify(p.prev) === JSON.stringify(nextArr[p.index]);
+    }
+    // add/remove noop is complex — skip for now
+    return false;
+  }
+  // Scalar: compare prev with nextValue directly
+  return JSON.stringify(p.prev) === JSON.stringify(nextValue);
+}
+
 export function useUndo(
   karakterRef: React.RefObject<Karakter | null>,
   karakter: Karakter | null,
@@ -105,8 +126,11 @@ export function useUndo(
   /**
    * Push an undo entry with minimal inverse patches.
    * If the top entry has the same coalesce key, merge (keep original patch, update leírás).
+   * If after merging the stored prev equals nextValue, the entry is a noop and gets dropped.
+   *
+   * @param nextValue - The value AFTER the current modification (used for noop detection on coalesce).
    */
-  const pushUndo = useCallback((leírás: string, patches?: UndoPatch[]) => {
+  const pushUndo = useCallback((leírás: string, patches?: UndoPatch[], nextValue?: unknown) => {
     const k = karakterRef.current;
     if (!k) return;
     if (testMode) setTestMode(false);
@@ -132,6 +156,10 @@ export function useUndo(
         if (topKey === newKey) {
           // Coalesce: keep the original patch (oldest prev value), update leírás + timestamp
           const merged: UndoEntry = { timestamp: entry.timestamp, leírás: entry.leírás, patches: prev[0].patches };
+          // Noop detection: if the merged prev equals the post-modification value, drop the entry
+          if (nextValue !== undefined && isNoopAfterCoalesce(merged.patches, nextValue)) {
+            return prev.slice(1);
+          }
           return [merged, ...prev.slice(1)].slice(0, UNDO_MAX);
         }
       }

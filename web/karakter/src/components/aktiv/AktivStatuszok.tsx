@@ -9,7 +9,7 @@ interface Props {
   data: GameData;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   státuszPerElem: { név: string; hatások: any[] }[];
   eseményNév: (id: string) => string;
 }

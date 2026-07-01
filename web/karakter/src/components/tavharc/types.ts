@@ -8,7 +8,7 @@ export interface TavharcProps {
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   gameMode: boolean;
 }
 

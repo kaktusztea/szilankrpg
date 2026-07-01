@@ -1,15 +1,17 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import type { UndoPatch } from '../../hooks/useUndo';
 import { calcMaxHM, calcMaxAszimmetria } from './helpers';
 
 interface Props {
   data: GameData;
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   gameMode: boolean;
 }
 
-export function HmSection({ data, karakter: k, setKarakter, gameMode }: Props) {
+export function HmSection({ data, karakter: k, setKarakter, pushUndo, gameMode }: Props) {
   const maxHM = calcMaxHM(data, k);
   const maxAszimmetria = calcMaxAszimmetria(data, k.tsz);
   const hmTotal = k.HM_TÉ + k.HM_VÉ;
@@ -18,10 +20,14 @@ export function HmSection({ data, karakter: k, setKarakter, gameMode }: Props) {
   const hasError = hmOverflow || aszimmetriaOverflow;
 
   function setHM_TÉ(v: number) {
-    setKarakter(prev => prev ? { ...prev, HM_TÉ: Math.max(0, Math.min(v, maxHM - prev.HM_VÉ)) } : prev);
+    const clamped = Math.max(0, Math.min(v, maxHM - k.HM_VÉ));
+    pushUndo(`HM TÉ: ${k.HM_TÉ} → ${clamped}`, [{ field: 'HM_TÉ', prev: k.HM_TÉ }], clamped);
+    setKarakter(prev => prev ? { ...prev, HM_TÉ: clamped } : prev);
   }
   function setHM_VÉ(v: number) {
-    setKarakter(prev => prev ? { ...prev, HM_VÉ: Math.max(0, Math.min(v, maxHM - prev.HM_TÉ)) } : prev);
+    const clamped = Math.max(0, Math.min(v, maxHM - k.HM_TÉ));
+    pushUndo(`HM VÉ: ${k.HM_VÉ} → ${clamped}`, [{ field: 'HM_VÉ', prev: k.HM_VÉ }], clamped);
+    setKarakter(prev => prev ? { ...prev, HM_VÉ: clamped } : prev);
   }
 
   const btnCls = gameMode ? 'he-btn-disabled' : '';

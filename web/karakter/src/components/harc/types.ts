@@ -21,7 +21,7 @@ export interface HarcBaseProps {
   karakter: Karakter;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onNavigate?: (tabId: string) => void;
 }
 

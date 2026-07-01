@@ -6,7 +6,7 @@ import { describeKepChange } from '../engine/utils';
 interface Deps {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
 }
 
 // --- Patch builders ---
@@ -92,14 +92,14 @@ function makeUndoSetter<T>(
   getCurrent: () => T,
   describer: (prev: T, next: T) => string,
   patchBuilder: (prev: T, next: T) => UndoPatch[],
-  pushUndo: (s: string, patches?: UndoPatch[]) => void,
+  pushUndo: (s: string, patches?: UndoPatch[], nextValue?: unknown) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
   return (val: T | ((prev: T) => T)) => {
     const prev = getCurrent();
     const next = typeof val === 'function' ? (val as (p: T) => T)(prev) : val;
     const desc = describer(prev, next);
-    if (desc) pushUndo(desc, patchBuilder(prev, next));
+    if (desc) pushUndo(desc, patchBuilder(prev, next), next);
     setKarakter(k => k ? { ...k, [field]: next } : k);
   };
 }

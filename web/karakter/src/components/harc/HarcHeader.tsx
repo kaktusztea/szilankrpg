@@ -11,7 +11,7 @@ interface HarcHeaderProps {
   maxVéCsökk: number;
   session: Session;
   setSession: React.Dispatch<React.SetStateAction<Session>>;
-  pushUndo: (leírás: string, patches?: UndoPatch[]) => void;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   konstansok: GameData['konstansok'];
   onVéChange: (newVal: number) => void;
   onVéLabelTap: () => void;
