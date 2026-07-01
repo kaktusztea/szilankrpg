@@ -10,14 +10,19 @@ interface Props {
   selected: number | null;
   onSelect: (index: number) => void;
   onApply: () => void;
+  onReset: () => void;
   onClose: () => void;
 }
 
-export function UndoOverlay({ entries, selected, onSelect, onApply, onClose }: Props) {
+export function UndoOverlay({ entries, selected, onSelect, onApply, onReset, onClose }: Props) {
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt overlay-undo">
-        <label className="overlay-label-center">Visszavonás</label>
+        <div className="undo-header">
+          <label className="overlay-label-center">Visszavonás</label>
+          <button className="undo-reset-btn" disabled={entries.length === 0}
+            onClick={onReset} title="Előzmények törlése">⟲</button>
+        </div>
         <div className="undo-list">
           {entries.map((entry, i) => (
             <div key={entry.timestamp} onClick={() => onSelect(i)}

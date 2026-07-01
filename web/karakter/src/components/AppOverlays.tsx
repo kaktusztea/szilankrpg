@@ -164,6 +164,7 @@ export function AppOverlays({
           selected={s.undoSelected}
           onSelect={i => set('undoSelected', i)}
           onApply={() => { if (s.undoSelected !== null) undoTo(s.undoSelected); }}
+          onReset={() => { setUndoStack([]); set('showUndo', false); set('undoSelected', null); }}
           onClose={() => { set('showUndo', false); set('undoSelected', null); }}
         />
       )}

@@ -116,6 +116,10 @@
 .undo-entry-target { border-color: #e53935; }
 .undo-apply-btn { margin-top: 8px; padding: 8px; border-radius: 4px; background: #444; color: #fff; border: none; cursor: default; opacity: 0.5; }
 .undo-apply-active { background: #e53935; cursor: pointer; opacity: 1; }
+.undo-header { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.undo-reset-btn { background: none; border: 1px solid var(--border); border-radius: 4px; color: var(--text-dim); font-size: 14px; padding: 2px 6px; cursor: pointer; line-height: 1; }
+.undo-reset-btn:disabled { opacity: 0.3; cursor: default; }
+.undo-reset-btn:not(:disabled):hover { color: var(--error); border-color: var(--error); }
 
 /* --- 6. Fullscreen overlay (jegyzetek/naplo) --- */
 .fullscreen-overlay { position: fixed; inset: 0; display: flex; flex-direction: column; background: var(--bg); z-index: 101; }
