@@ -34,11 +34,11 @@ export function generateSaveFile(karakter: Karakter, undoStack: any[], mode: 'si
   if (mode === 'single') {
     const saved = { ...karakter, mentés_dátum: dátum, _undo: undoStack } as any;
     json = JSON.stringify(saved, null, 2);
-    const firstName = (karakter.név || 'karakter').split(' ')[0].slice(0, 20);
-    const charAscii = firstName.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z]/g, '').toLowerCase();
-    const playerFirst = karakter.játékos ? karakter.játékos.split(' ')[0].slice(0, 20) : '';
-    const playerAscii = playerFirst.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^a-zA-Z]/g, '').toLowerCase();
-    const namePart = playerAscii ? `${charAscii || 'karakter'}_${playerAscii}` : (charAscii || 'karakter');
+    const charRaw = (karakter.becenév || karakter.név || 'karakter');
+    const charAscii = charRaw.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_').replace(/[^a-zA-Z_-]/g, '').toLowerCase();
+    const playerRaw = karakter.játékos || '';
+    const playerAscii = playerRaw.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/\s+/g, '_').replace(/[^a-zA-Z_-]/g, '').toLowerCase();
+    const namePart = playerAscii ? `${charAscii || 'karakter'}__${playerAscii}` : (charAscii || 'karakter');
     filename = `${namePart}_${karakter.tsz}tsz.json`;
   } else {
     let slots: { uid: string }[] = [];
