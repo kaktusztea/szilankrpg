@@ -109,12 +109,13 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - Betöltési hiba popup: piros "Betöltési hiba" label + hibaüzenet + OK gomb
 
 ### Undo overlay
-- Felugró popup: "Visszavonás" cím
+- Felugró popup: "Visszavonás" cím + "⟲" reset gomb (előzmények teljes törlése, disabled ha üres stack)
 - Lista: legutóbbi felül, legrégebbi alul (max 6)
 - Kiválasztás: kattintás → a kiválasztott + felette lévők piros háttérrel kiemelve
 - "Visszaállítás (N művelet)" gomb: piros, csak kiválasztás után aktív
 - Overlay mellé kattintás: bezár
 - Jegyzetek és Napló NEM vonódik vissza (mindig friss marad)
+- **Undo modell**: patch-alapú (minimális inverz műveletek, nem teljes snapshot). Coalescing: azonos elemre vonatkozó egymást követő szerkesztések egyetlen bejegyzéssé olvadnak. Noop detection: ha a coalesced patch visszaállna az eredeti értékre, az entry törlődik.
 - Leírás formátum (minden fülről): `Képzettség: {név} {régi}→{új}`, `Fortély: {név} {régi}→{új}`, `{Tulajdonság}: {régi} → {új}`, `TSz: X → Y`, stb.
 
 ### Local Storage (multi-slot)
@@ -124,9 +125,14 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - Autosave: minden karakter/undo változáskor, ha `isDirty=true` és nem testMode
 - "Új karakter": isDirty=false → nem mentődik amíg módosítás nem történik
 - "Duplikál": deep clone, új uid, név ":2" suffix (ismétlésnél :3, :4...), Karakterek ablak megnyílik
+- **Slot limit**: ha `MAX_KARAKTER_DB` (10) elérve → "Új karakter" / "Duplikál" / import / fájlból betöltés (új slot) helyett `SlotLimitOverlay` jelenik meg ("Karakter limit" felirat, piros, max szám kiírva, hint: töröld egy régit)
 - Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
+- **Fájlnév**: `{becenév||név}__{játékos}_{tsz}tsz.json` (ékezet nélkül, szóköz→`_`, dupla `__` elválasztja a karakter és játékos nevet)
 - Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + 🔗 Megosztás + ✕ törlés + 🧪 Teszt + 📁 Fájlból. Név max 15 karakter (utána `..`), verzió suffix (:2) megtartva.
   - 🔗 ikon: karakter URL export (deflate+base64url) → vágólapra. Toast: "Karakter link vágólapra másolva!"
+- **Fájlból betöltés**: single JSON és backup JSON egyaránt támogatott
+  - Single: uid ütközés vizsgálat → ha létezik: importConfirm dialog (Felülírás / Új példány / Mégse)
+  - Backup (`szilánk_backup: true`): `BackupRestoreOverlay` felugrik (multi-select lista, meglévők ⚠️ jelöléssel, megerősítő lépés)
 
 ---
 
@@ -506,6 +512,11 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - Primer limit = összes_kp + spec_kp
 - Dinamikusan frissül minden módosításnál
 - Game módban eltűnik
+- **Kattintható** (cursor: pointer): klikk → KP info popup (`PopupOverlay`)
+  - Cím: "KP képlet bontás"
+  - Szekciók: Keret (Összes KP + formula, Szekunder KP + formula, Speciális KP, Összes keret összeg), Elköltött (Képzettségek, Fortélyok, HM, CM, Kiemelt, összeg), Eredmény (Maradt KP: zöld/piros), Primer bontás (keret, költés, delta)
+  - Formula sorok: dőlt, dim szín, kis betű (11px)
+  - Stílus: `.kp-info-popup` (max-width: 320px), `.kp-info-section` (border-bottom elválasztó), `.kp-info-val` (monospace, bold, jobbra igazított), `.kp-info-pos`/`.kp-info-neg` (zöld/piros)
 
 ### Primer KP bontás doboz (Tul/Képz fül alja)
 Részletes kategóriánkénti KP bontás: dashed border, szürke szín, 12px betű.
@@ -979,8 +990,8 @@ Minden adat `fetchJson`-nel:
 ### Karakter state struktúra (Hook architektúra)
 - **`useKarakterState`** hook: localStorage multi-slot kezelés, karakter load/save, undo stack
   - Exportál: `data, error, karakter, setKarakter, testMode, setTestMode, isDirty, setIsDirty, undoStack, setUndoStack, pushUndo, undoTo, setTulajdonságok, setKépzettségek, setFortélyok, setSession`
-- **`useKarakterActions`** hook: magasabb szintű műveletek
-  - Exportál: `importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter`
+- **`useKarakterActions`** hook: magasabb szintű műveletek (slot limit ellenőrzés, backup restore kezelés)
+  - Exportál: `importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter, deleteSlot`
 - **`useUndoWrappedSetters`** hook: undo-aware setter wrapperek (pushUndo + setKarakter együtt)
   - Exportál: `setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo`
 - **`useUrlImport`** hook: URL hash import (app mount-kor automatikus)
@@ -1058,6 +1069,8 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 | sharePopup | {név, copied, url?} \| null | URL share eredmény popup |
 | toast | {msg, type} \| null | Toast üzenet (2.5s auto-dismiss) |
 | importConfirm | {karakter, matchUid} \| null | Import ütközés confirm dialog |
+| showSlotLimit | boolean | Slot limit elérve (max 10) popup |
+| backupRestore | {karakterek, dátum} \| null | Backup restore overlay (multi-select) |
 
 ### Közös viselkedés
 - **Escape**: minden overlay bezárul (kivéve toast és importConfirm)
@@ -1081,6 +1094,8 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 - `SharePopupOverlay.tsx` — URL share eredmény
 - `ToastOverlay.tsx` — Toast üzenet
 - `ImportConfirmOverlay.tsx` — Import ütközés (Felülírás / Új példány / Mégse)
+- `SlotLimitOverlay.tsx` — Slot limit elérve (max karakter szám)
+- `BackupRestoreOverlay.tsx` — Backup fájl visszaállítás (multi-select, felülírás jelzés, megerősítés)
 
 ---
 
