@@ -13,8 +13,15 @@
 }
 
 @media (max-width: 480px) {
-  .harc-header { grid-template-columns: auto 1fr; }
-  .ke-box { width: auto; }
+  .harc-header {
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+  }
+  /* Row 1: KÉ + SFÉ, Row 2: VÉ csökk + MP */
+  .ke-box       { grid-column: 1; grid-row: 1; width: auto; }
+  .sfe-box      { grid-column: 2; grid-row: 1; }
+  .ve-csokk-box { grid-column: 1; grid-row: 2; }
+  .mp-box       { grid-column: 2; grid-row: 2; }
 }
 
 .ke-box, .sfe-box, .ve-csokk-box, .mp-box {
