@@ -2,6 +2,7 @@ import type { Karakter } from './types';
 import type { GameData } from './data-loader';
 import { DEFAULT_SESSION } from './types';
 import { validateKarakter, validateKarakterData } from './validate';
+import { sanitizeUndo } from '../hooks/useUndo';
 
 function generateUid(): string {
   if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
@@ -83,7 +84,7 @@ export function loadKarakterFromFile(data: GameData): Promise<{ karakter: Karakt
           const refErr = validateKarakterData(obj, data);
           if (refErr) { resolve({ error: `Referencia hiba: ${refErr}` }); return; }
           const karakter = { ...obj, uid: obj.uid || generateUid(), id_leíró: obj.id_leíró || generateIdLeíró(obj.név, obj.tsz), session: { ...DEFAULT_SESSION, ...obj.session } } as Karakter;
-          resolve({ karakter, undo: (obj as any)._undo || [] });
+          resolve({ karakter, undo: sanitizeUndo((obj as any)._undo) });
         } catch { resolve({ error: 'Nem sikerült betölteni a fájlt (hibás JSON).' }); }
       };
       reader.readAsText(file);

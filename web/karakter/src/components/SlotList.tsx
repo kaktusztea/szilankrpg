@@ -1,6 +1,7 @@
 import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION } from '../engine/types';
 import { validateKarakter } from '../engine/validate';
+import { sanitizeUndo } from '../hooks/useUndo';
 import { MAX_SLOT } from '../ui-constants';
 
 interface SlotEntry {
@@ -48,7 +49,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onTest, onFileL
     try {
       const parsed = JSON.parse(charData);
       if (validateKarakter(parsed)) {
-        onLoad({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } }, (parsed as any)._undo || []);
+        onLoad({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } }, sanitizeUndo((parsed as any)._undo));
       }
     } catch { /* */ }
   }

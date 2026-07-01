@@ -46,6 +46,12 @@ function applyPatch(k: Karakter, patch: UndoPatch): Karakter {
   return { ...k, [field]: patch.prev };
 }
 
+/** Filter out legacy undo entries (pre-patch format: full karakter snapshots). */
+export function sanitizeUndo(raw: unknown): UndoEntry[] {
+  if (!Array.isArray(raw)) return [];
+  return raw.filter((e: any) => Array.isArray(e?.patches)) as UndoEntry[];
+}
+
 function loadInitialUndo(): UndoEntry[] {
   try {
     const activeUid = localStorage.getItem('szilank_active');
@@ -53,7 +59,7 @@ function loadInitialUndo(): UndoEntry[] {
       const charData = localStorage.getItem(`szilank_char_${activeUid}`);
       if (charData) {
         const p = JSON.parse(charData);
-        return p._undo || [];
+        return sanitizeUndo(p._undo);
       }
     }
     return [];

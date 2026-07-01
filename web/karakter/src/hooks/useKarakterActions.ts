@@ -6,6 +6,7 @@ import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, gener
 import { encodeKarakterUrl } from '../engine/url-share';
 import type { OverlayState } from '../components/AppOverlays';
 import type { UndoEntry } from './useUndo';
+import { sanitizeUndo } from './useUndo';
 
 interface Deps {
   data: GameData | null;
@@ -72,7 +73,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     if (karakter?.uid === uid) {
       if (sl.length > 0) {
         const next = localStorage.getItem(`szilank_char_${sl[0].uid}`);
-        if (next) { const p = JSON.parse(next); setKarakter({ ...p, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack((p as any)._undo || []); }
+        if (next) { const p = JSON.parse(next); setKarakter({ ...p, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack(sanitizeUndo((p as any)._undo)); }
       } else if (data) {
         setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
         setUndoStack([]);
