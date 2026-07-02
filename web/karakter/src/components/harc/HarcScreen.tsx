@@ -2,6 +2,7 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import type { HarcBaseProps } from './types';
 import type { SebzésRubrika } from '../../engine/types';
 import { useHarcComputed } from './useHarcComputed';
+import { useHint } from '../harcertekek/hooks/useHint';
 import { HarcHeader } from './HarcHeader';
 import { HarcFegyverTable } from './HarcFegyverTable';
 import { HarcPopups } from './HarcPopups';
@@ -25,6 +26,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
 
   const hc = useHarcComputed(data, karakter, session);
+  const { hint, showHint } = useHint();
 
   // VÉ flash animation
   const triggerVéFlash = useCallback((dir: 'down' | 'up') => {
@@ -105,6 +107,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       <HarcFegyverSection
         data={data} karakter={karakter} session={session} setSession={setSession} pushUndo={pushUndo}
         onShowFegyverfogás={() => setShowFegyverfogás(true)}
+        páncélMGT={hc.páncélMGT} showHint={showHint}
       />
 
       <HarcHeader
@@ -189,6 +192,8 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
           onClose={() => setShowFegyverfogás(false)}
         />
       )}
+
+      {hint && <div className="he-hint">{hint}</div>}
     </div>
   );
 }

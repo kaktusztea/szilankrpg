@@ -35,9 +35,11 @@ function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Ses
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 'setSession' | 'pushUndo'> {
   onShowFegyverfogás: () => void;
+  páncélMGT: number;
+  showHint: (msg: string) => void;
 }
 
-export function HarcFegyverSection({ data, karakter, session, setSession, pushUndo, onShowFegyverfogás }: Props) {
+export function HarcFegyverSection({ data, karakter, session, setSession, pushUndo, onShowFegyverfogás, páncélMGT, showHint }: Props) {
   const fegyverOpciók = buildFegyverOpciók(karakter, data);
 
   return (
@@ -49,7 +51,7 @@ export function HarcFegyverSection({ data, karakter, session, setSession, pushUn
         )}
       </div>
       <div className="harc-fegyver-row">
-        <SessionToggles data={data} karakter={karakter} session={session} setSession={setSession} />
+        <SessionToggles data={data} karakter={karakter} session={session} setSession={setSession} páncélMGT={páncélMGT} showHint={showHint} />
         <FegyverfogásButton data={data} karakter={karakter} session={session} onShowFegyverfogás={onShowFegyverfogás} />
         <PáncélToggle session={session} setSession={setSession} pushUndo={pushUndo} />
       </div>
