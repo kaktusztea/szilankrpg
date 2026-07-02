@@ -24,7 +24,7 @@ export function PancelPopup({ popup, páncél, struktúrák, fémalapanyagok, ki
             ...struktúrák.map(s => ({ value: s.struktúra, label: s.struktúra })),
           ]}
           current={páncél.alap}
-          onSelect={v => onUpdate({ alap: v, fémalapanyag: '' })}
+          onSelect={v => onUpdate({ alap: v, fémalapanyag: '', idea: 0 })}
         />
       )}
       {popup === 'fémalapanyag' && (

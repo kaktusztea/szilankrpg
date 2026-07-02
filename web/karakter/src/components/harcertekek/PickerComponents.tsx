@@ -44,11 +44,18 @@ export function IdeaGrid({ minIdea, maxIdea, current, onSelect }: {
       {n > 0 ? `+${n}` : n}
     </button>
   );
+  const singleRow = maxIdea <= 1;
   return (
     <div className="he-idea-grid">
-      <div className="he-idea-row">{negatives.map(btn)}</div>
-      <div className="he-idea-row">{btn(0)}</div>
-      <div className="he-idea-row">{positives.map(btn)}</div>
+      {singleRow ? (
+        <div className="he-idea-row">{[...negatives, 0, ...positives].map(btn)}</div>
+      ) : (
+        <>
+          <div className="he-idea-row">{negatives.map(btn)}</div>
+          <div className="he-idea-row">{btn(0)}</div>
+          <div className="he-idea-row">{positives.map(btn)}</div>
+        </>
+      )}
     </div>
   );
 }

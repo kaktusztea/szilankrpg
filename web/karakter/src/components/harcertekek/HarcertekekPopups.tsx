@@ -41,14 +41,17 @@ export function Popups({
   const { ideaTarget, mfTarget, anyagTarget, pancelPopup, pajzsPopup, deleteTarget, deleteKepzTarget, kepzSzintTarget } = state;
   const { konstansok } = data;
 
+  const pancelIdeaRange = (konstansok.páncél_struktúrák as any[])
+    .find(s => s.struktúra === k.páncél.alap)?.idea_plusz_minusz ?? 0;
+
   return (
     <>
       {ideaTarget && (
         <PopupOverlay onClose={() => onClose('ideaTarget')}>
           <label>Idea érték</label>
           <IdeaGrid
-            minIdea={ideaTarget.type === 'fegyver' ? -5 : -4}
-            maxIdea={ideaTarget.type === 'fegyver' ? 5 : 4}
+            minIdea={ideaTarget.type === 'fegyver' ? -5 : -pancelIdeaRange}
+            maxIdea={ideaTarget.type === 'fegyver' ? 5 : pancelIdeaRange}
             current={ideaTarget.type === 'fegyver' ? k.fegyverek[ideaTarget.idx]?.idea ?? 0 : k.páncél.idea}
             onSelect={n => {
               if (ideaTarget.type === 'fegyver') updateFegyver(ideaTarget.idx, { idea: n });
