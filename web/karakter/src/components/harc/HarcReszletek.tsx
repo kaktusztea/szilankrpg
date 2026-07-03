@@ -58,7 +58,8 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
       <Section label={`Támadás/kör: ${r.támadások}`}>
         Harckeret: {r.harckeret} ({d.harcmodorNév} {d.harcmodorSzint} + Gyor {k.tulajdonságok.gyorsaság}
         {d.páncélMGT > 0 ? ` − MGT ${d.páncélMGT}` : ''}
-        {fortelyMods['harckeret'] ? ` + Fortély ${fmtMod(fortelyMods['harckeret'])}` : ''}) ÷ Sebesség: {r.sebesség}
+        {fortelyMods['harckeret'] ? ` + Fortély ${fmtMod(fortelyMods['harckeret'])}` : ''}
+        {d.sumPengehossz != null ? (() => { const pl = Math.floor(d.sumPengehossz / konstansok.kétkezes_harc_pengelevonás_osztó); return pl > 0 ? ` − Penge ${pl}` : ''; })() : ''}) ÷ Sebesség: {r.sebesség}
       </Section>
 
       <Section label={`TÉ: ${d.finalTÉ}`}>
