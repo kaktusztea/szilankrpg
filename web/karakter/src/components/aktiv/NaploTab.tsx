@@ -33,13 +33,13 @@ export function NaploTab({ karakter, setKarakter }: { karakter: Karakter; setKar
     return (
       <div className="naplo-panel">
         <div className="naplo-form-row">
-          <input type="date" value={form.dátum} onChange={e => setForm(f => ({ ...f, dátum: e.target.value }))} className="naplo-input-short" />
+          <input type="date" value={form.dátum} onChange={e => setForm(f => ({ ...f, dátum: e.target.value }))} className="field-input naplo-input-short" />
           <button className="naplo-btn" onClick={() => setForm(f => ({ ...f, dátum: today }))}>Ma</button>
         </div>
-        <input placeholder="KM neve" value={form.km} onChange={e => setForm(f => ({ ...f, km: e.target.value }))} className="naplo-input" />
-        <input placeholder="Kaland neve" value={form.kaland} onChange={e => setForm(f => ({ ...f, kaland: e.target.value }))} className="naplo-input" />
+        <input placeholder="KM neve" value={form.km} onChange={e => setForm(f => ({ ...f, km: e.target.value }))} className="field-input" />
+        <input placeholder="Kaland neve" value={form.kaland} onChange={e => setForm(f => ({ ...f, kaland: e.target.value }))} className="field-input" />
         <textarea placeholder="Események..." value={form.események} onChange={e => setForm(f => ({ ...f, események: e.target.value }))}
-          rows={4} className="naplo-textarea" />
+          rows={4} className="field-input naplo-textarea" />
         <div className="naplo-form-btns">
           <button className="naplo-btn-save" onClick={onSave}>Mentés</button>
           <button className="naplo-btn-cancel" onClick={onCancel}>Mégse</button>

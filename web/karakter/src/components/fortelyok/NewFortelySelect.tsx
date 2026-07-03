@@ -15,8 +15,8 @@ interface Props {
 
 export function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, fegyverNevek, nyelvtanulásSzint, onAdd }: Props) {
   return (
-    <div className="fort-row fort-row-new">
-      <select className="fort-select" value="" onChange={e => { if (e.target.value) onAdd(e.target.value); }}>
+    <div className="item-row item-row-new">
+      <select className="field-select fort-select" value="" onChange={e => { if (e.target.value) onAdd(e.target.value); }}>
         <option value="">+ Új fortély...</option>
         {available.map(d => {
           const label = buildOptionLabel(d, csoport, slotok, tsz, fortélyok, nyelvtanulásSzint);

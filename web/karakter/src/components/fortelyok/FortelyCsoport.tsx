@@ -19,7 +19,7 @@ export function FortelyCsoport({
 
   return (
     <div className="fort-csoport">
-      <h3 className="fort-csoport-label" onClick={onToggleCollapse}>
+      <h3 className="csoport-label fort-csoport-label" onClick={onToggleCollapse}>
         <span className="fort-csoport-arrow">{collapsed ? '▸' : '▾'}</span> {csoportLabel} <span className="dim">({slotok.length})</span>
       </h3>
       {!collapsed && (<>

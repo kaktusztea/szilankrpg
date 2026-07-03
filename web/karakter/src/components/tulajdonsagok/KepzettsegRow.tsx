@@ -14,7 +14,7 @@ export function KepzettsegRow({
 
   function handleTap(e: React.MouseEvent<HTMLDivElement>) {
     if (gameMode) { onInfoToggle(); return; }
-    const delBtn = e.currentTarget.querySelector('.kep-delete') as HTMLElement | null;
+    const delBtn = e.currentTarget.querySelector('.item-delete') as HTMLElement | null;
     if (delBtn) {
       const btnRect = delBtn.getBoundingClientRect();
       if (e.clientX >= btnRect.left - 25) return;
@@ -26,11 +26,11 @@ export function KepzettsegRow({
 
   return (
     <div className="kep-row-wrapper">
-      <div className="kep-row" data-kep={slot.név} onClick={handleTap}>
+      <div className="item-row" data-kep={slot.név} onClick={handleTap}>
         <span className={`kep-név${overLimit || warning ? ' kep-over' : ''}`}>{displayName}</span>
         <span className="kep-right">
           {!gameMode && (
-            <button className="kep-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
+            <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className={`kep-szint${slot.szint === 0 ? ' kep-szint-zero' : slot.szint >= 9 ? ' kep-szint-high' : ''}${overLimit ? ' kep-over' : ''}`}>
             {slot.szint}

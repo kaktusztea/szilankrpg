@@ -83,7 +83,7 @@ function FegyverCard({ index, fegyver, data, karakter, konstansok, onIdeaTarget,
     <div className="he-fegyver-card">
       <div className="he-fegyver-header">
         <strong>{fegyver.alap.replace(/ \(1K\)$| 1K$/, '')}</strong>
-        <button className="fort-delete" onClick={() => onDeleteTarget(index)}>✕</button>
+        <button className="item-delete" onClick={() => onDeleteTarget(index)}>✕</button>
       </div>
       {fd && <FegyverChip fd={fd} mfFok={mfFok} idea={fegyver.idea} konstansok={konstansok} />}
       <div className="he-fegyver-fields">

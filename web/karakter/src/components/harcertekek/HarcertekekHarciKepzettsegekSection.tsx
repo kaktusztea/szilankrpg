@@ -34,13 +34,13 @@ export function HarciKepzettsegekSection({ data, karakter: k, képzettségek, se
           const isOpen = infoOpen === h.név;
           return (
             <div key={h.név} className="kep-row-wrapper">
-              <div className="kep-row" onClick={() => {
+              <div className="item-row" onClick={() => {
                 if (gameMode) { setInfoOpen(isOpen ? null : h.név); }
                 else onKepzSzint(h.név);
               }}>
                 <span className="kep-név aktiv-flex-1">{harciKepzDisplayName(data, h.név)}</span>
                 {!gameMode && (
-                  <button className="fort-delete" onClick={e => { e.stopPropagation(); onDeleteKepz(h.név); }}>✕</button>
+                  <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteKepz(h.név); }}>✕</button>
                 )}
                 <strong className={`kep-szint${h.szint > k.tsz ? ' kep-over' : h.szint >= 9 ? ' kep-szint-high' : ''}`}>{h.szint}</strong>
               </div>

@@ -45,7 +45,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
 
         return (
           <div key={`${f.név}-${f.spec_elem}-${i}`} className="fort-row-wrapper">
-            <div className="kep-row miszt-fort-row"
+            <div className="item-row miszt-fort-row"
               onClick={() => {
                 if (gameMode) { onInfoToggle(infoKey); return; }
                 if (maxfok > 1) onFokChange(globalIdx);
@@ -55,7 +55,7 @@ export function MisztikusFortélyokSection({ misztFortDefs, fortélyok, gameMode
                 {f.spec_elem ? `${f.név} - ${f.spec_elem}` : f.név}{f.kiérdemelt ? ' ⭐' : ''}
               </span>
               {!gameMode && (
-                <button className="fort-delete" onClick={e => { e.stopPropagation(); onDelete(globalIdx); }}>✕</button>
+                <button className="item-delete" onClick={e => { e.stopPropagation(); onDelete(globalIdx); }}>✕</button>
               )}
               <span className="fort-fok-dots">
                 {Array.from({ length: MAX_FORTÉLY_FOK }, (_, di) => (

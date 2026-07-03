@@ -15,7 +15,7 @@ export function TavharcGameSelector({ összesFegyver, tfIdx, setSession, mfFok, 
 
   return (
     <div className="th-row th-controls">
-      <select className="th-select" value={tfIdx} onChange={e => setSession(s => ({ ...s, aktív_távfegyver_index: parseInt(e.target.value) }))}>
+      <select className="field-select th-select" value={tfIdx} onChange={e => setSession(s => ({ ...s, aktív_távfegyver_index: parseInt(e.target.value) }))}>
         {összesFegyver.map((tf, i) => <option key={i} value={i}>{tf.locked ? '🔆 ' : ''}{tf.alap}</option>)}
       </select>
       <span className="th-badge">MF: {mfFok}</span>

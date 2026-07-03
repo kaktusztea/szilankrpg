@@ -5,38 +5,13 @@
 .fort-screen { padding-bottom: 20px; }
 .fort-section { display: flex; flex-direction: column; gap: 12px; }
 
-/* Csoport fejléc */
-.fort-csoport-label {
-  font-size: 17px;
-  font-weight: bold;
-  color: var(--color-fortely);
-  margin-bottom: 4px;
-  padding-bottom: 2px;
-  border-bottom: 1px solid var(--border-light);
-  cursor: pointer;
-  user-select: none;
-}
+/* Csoport fejléc → base: .csoport-label (common.css) */
+.fort-csoport-label { color: var(--color-fortely); }
 
 .fort-csoport-arrow { font-size: 15px; margin-right: 2px; }
 .fort-row-wrapper { margin-bottom: 1px; }
 
-/* Sor */
-.fort-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 6px 10px;
-  background: var(--surface);
-  border: 1px solid var(--border-row);
-  border-radius: 4px;
-  user-select: none;
-  -webkit-user-select: none;
-  -webkit-touch-callout: none;
-  touch-action: manipulation;
-  cursor: pointer;
-}
-
-.fort-row-new { opacity: 0.7; }
+/* Sor → base: .item-row (common.css) */
 .fort-név { font-size: 17px; color: var(--text); }
 .fort-right { display: flex; align-items: center; gap: 6px; }
 .fort-fok { min-width: 20px; text-align: right; }
@@ -48,44 +23,13 @@
 .fort-dot.filled { background: #fff; border-color: #fff; }
 .fort-dot-hidden { visibility: hidden; }
 
-/* Törlés */
-.fort-delete {
-  background: none;
-  border: none;
-  color: #6ec6ff;
-  font-size: 18px;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0;
-}
+/* Törlés → base: .item-delete (common.css) */
 
-/* Select */
-.fort-select {
-  flex: 1;
-  background: var(--input-bg);
-  color: var(--text);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 4px 8px;
-  font-size: 15px;
-  width: 100%;
-}
+/* Select → base: .field-select (common.css) */
+.fort-select { font-size: 15px; width: 100%; }
 
-/* Info panel */
-.fort-info {
-  background: var(--surface-alt);
-  border: 1px solid var(--border);
-  border-top: none;
-  border-radius: 0 0 4px 4px;
-  padding: 6px 10px;
-  font-size: 13px;
-}
-
+/* Info panel → base: .info-panel (common.css) */
 .fort-info-desc { color: var(--text-dim); margin-bottom: 4px; font-style: italic; }
-.fort-info-row { margin-bottom: 3px; }
-.fort-info-label { color: var(--text-dim); margin-right: 4px; }
-.fort-info-kit { color: var(--success); }
-.fort-info-error { color: var(--error); }
 
 /* --- Fok radio buttons --- */
 .fort-fok-radios { display: flex; gap: 8px; justify-content: center; }

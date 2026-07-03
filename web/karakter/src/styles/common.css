@@ -6,6 +6,113 @@
    ============================================= */
 
 /* ===================
+   Lista sor (fortély, képzettség, misztikus)
+   =================== */
+.item-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 6px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border-row);
+  border-radius: 4px;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+.item-row-new { opacity: 0.7; }
+
+/* ===================
+   Csoport fejléc (collapsible szekció title)
+   =================== */
+.csoport-label {
+  font-size: 17px;
+  font-weight: bold;
+  margin-bottom: 4px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid var(--border-light);
+  cursor: pointer;
+  user-select: none;
+}
+
+/* ===================
+   Info panel (sor alá kinyíló részletek)
+   =================== */
+.info-panel {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+.info-panel-row { margin-bottom: 3px; }
+.info-panel-label { color: var(--text-dim); margin-right: 4px; }
+.info-panel-kit { color: var(--success); }
+.info-panel-error { color: var(--error); }
+
+/* ===================
+   Törlés gomb (sor végén)
+   =================== */
+.item-delete {
+  background: none;
+  border: none;
+  color: #6ec6ff;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* ===================
+   Select mező
+   =================== */
+.field-select {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+}
+
+/* ===================
+   Input mező
+   =================== */
+.field-input {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  padding: 6px 10px;
+  color: var(--text);
+  font-size: 16px;
+}
+
+/* ===================
+   Debug/részletek box (dashed border info panel)
+   =================== */
+.debug-box {
+  padding: 10px;
+  border: 1px dashed #666;
+  border-radius: 6px;
+  font-size: 12px;
+  color: #aaa;
+}
+.debug-box-title { color: var(--accent); display: block; margin-bottom: 6px; }
+
+/* ===================
+   Picker (±gombos érték választó: kor, távolság)
+   =================== */
+.picker-label { font-size: 14px; color: var(--text-dim); }
+.picker-controls { display: flex; align-items: center; gap: 16px; }
+.picker-btn-lg { width: 44px; height: 44px; font-size: 22px; }
+.picker-value-lg { font-size: 28px; min-width: 60px; text-align: center; user-select: none; }
+.picker-hint { font-size: 18px; color: #888; }
+
+/* ===================
    Gomb variánsok
    =================== */
 /* Fok/szint kerek gomb */

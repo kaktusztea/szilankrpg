@@ -48,8 +48,8 @@ export function HarcReszletek({ karakter, session, data, fegyverResults, kétkez
   const r = d.result;
 
   return (
-    <div className="harc-reszletek">
-      <strong className="harc-reszletek-title">Részletes értékek</strong>
+    <div className="debug-box harc-reszletek">
+      <strong className="debug-box-title">Részletes értékek</strong>
 
       <Section label="Név">
         {d.fegyverNév} [{d.kategória}]

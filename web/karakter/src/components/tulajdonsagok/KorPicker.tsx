@@ -23,11 +23,11 @@ export function KorPicker({ kor, onSelect }: Props) {
   return (
     <div className="kep-prompt kor-picker">
       <label className="kor-picker-label">Életkor</label>
-      <div className="kor-picker-controls">
-        <button className="fort-fok-btn kor-picker-btn"
+      <div className="picker-controls">
+        <button className="fort-fok-btn picker-btn-lg"
           onClick={() => step(-1)} {...holdProps(-1)}>−</button>
-        <strong className="kor-picker-value">{value}</strong>
-        <button className="fort-fok-btn kor-picker-btn"
+        <strong className="picker-value-lg">{value}</strong>
+        <button className="fort-fok-btn picker-btn-lg"
           onClick={() => step(1)} {...holdProps(1)}>+</button>
       </div>
     </div>

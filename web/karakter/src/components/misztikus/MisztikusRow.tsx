@@ -23,10 +23,10 @@ export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning 
 
   return (
     <div className="kep-row-wrapper">
-      <div className="miszt-row" onClick={() => gameMode ? onInfoToggle?.() : onEdit()}>
+      <div className="item-row miszt-row" onClick={() => gameMode ? onInfoToggle?.() : onEdit()}>
         <span className={`miszt-row-name${warning ? ' miszt-row-warn' : ''}`}>{displayName}</span>
         {canDelete && !gameMode && (
-          <button className="fort-delete" onClick={e => { e.stopPropagation(); onDelete?.(); }}>✕</button>
+          <button className="item-delete" onClick={e => { e.stopPropagation(); onDelete?.(); }}>✕</button>
         )}
         <strong className={szintClass}>{szint}</strong>
       </div>

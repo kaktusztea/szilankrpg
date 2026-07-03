@@ -18,8 +18,8 @@ export function PrimerKpBox({ data, karakter, képzettségek }: Props) {
   const pct = (v: number) => kpData.total > 0 ? Math.round(v / kpData.total * 100) : 0;
 
   return (
-    <div className="primer-kp-box">
-      <strong className="primer-kp-title">Primer KP bontás</strong>
+    <div className="debug-box primer-kp-box">
+      <strong className="debug-box-title">Primer KP bontás</strong>
       <KpRow label="HM + CM" value={kpData.kp_hm_cm} pct={pct(kpData.kp_hm_cm)} />
       <KpRow label="Harcmodor képzettségek" value={kpData.kp_harcmodor} pct={pct(kpData.kp_harcmodor)} />
       <DetailList items={kpData.harcmodorDetails} type="kep" />

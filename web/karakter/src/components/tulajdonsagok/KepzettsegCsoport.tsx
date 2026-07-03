@@ -36,7 +36,7 @@ export function KepzettsegCsoport({
 
   return (
     <div className="kep-csoport">
-      <h3 className="kep-csoport-label" onClick={onToggleCollapse}>
+      <h3 className="csoport-label kep-csoport-label" onClick={onToggleCollapse}>
         <span className="kep-csoport-arrow">{collapsed ? '▸' : '▾'}</span> {csoportLabel} <span className="dim">({slotok.length})</span>
       </h3>
       {!collapsed && (<>
@@ -63,8 +63,8 @@ export function KepzettsegCsoport({
           );
         })}
         {!gameMode && available.length > 0 && (
-          <div className="kep-row kep-row-new">
-            <select className="kep-select" value="" onChange={e => { if (e.target.value) onAddKepzettseg(csoport, e.target.value); }}>
+          <div className="item-row item-row-new">
+            <select className="field-select kep-select" value="" onChange={e => { if (e.target.value) onAddKepzettseg(csoport, e.target.value); }}>
               <option value="">+ Új képzettség...</option>
               {available.map(o => <option key={o.value} value={o.value}>{o.label}</option>)}
             </select>

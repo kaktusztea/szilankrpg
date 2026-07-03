@@ -41,7 +41,7 @@ export function AktivManover({ data, session, setSession, manőverBónuszok }: P
           );
         })()}
         {manőverBónuszok.map((mb, i) => (
-          <div key={`mb${i}`} className="kep-row aktiv-sub-row">
+          <div key={`mb${i}`} className="item-row aktiv-sub-row">
             <span className="aktiv-manover-bonus">{data.manoverek.find(m => m.id === mb.manőver)?.név ?? mb.manőver.replace(/_/g, ' ')}: +{mb.érték} ({mb.név})</span>
           </div>
         ))}

@@ -71,12 +71,12 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
                 {mods.length > 0 && <span className="aktiv-taktika-mods"> {mods.join(', ')} ✔</span>}
                 {def?.megjegyzés && <span className="aktiv-taktika-note"> • {def.megjegyzés}</span>}
               </span>
-              <button className="fort-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}>✕</button>
+              <button className="item-delete" onClick={e => { e.stopPropagation(); removeTaktika(i); }}>✕</button>
             </div>
           );
         })}
         {taktikaHatásPerElem.map((t, i) => (
-          <div key={`th${i}`} className="kep-row aktiv-sub-row">
+          <div key={`th${i}`} className="item-row aktiv-sub-row">
             <span className="aktiv-flex-1">
               <strong className="aktiv-taktika-name">{t.név}:</strong>{' '}
               {t.hatások.map((h: any, j: number) => {

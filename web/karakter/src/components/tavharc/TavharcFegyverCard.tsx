@@ -33,7 +33,7 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
     <div className={`th-card${isActive ? ' th-card-active' : ''}`} onClick={onSelect}>
       <div className="th-card-header">
         <strong>{tf.alap}</strong>
-        <button className="fort-delete" onClick={e => { e.stopPropagation(); onDeleteTarget(); }}>✕</button>
+        <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteTarget(); }}>✕</button>
       </div>
       <div className="th-card-fields">
         <button className={`he-field-btn he-field-fortely${hasError ? ' th-mf-error' : ''}`}

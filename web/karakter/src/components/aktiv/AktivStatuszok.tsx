@@ -49,7 +49,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
                   return txt ? <span key={j}>{j > 0 ? ', ' : ''}{txt}</span> : null;
                 })}</span>}
               </span>
-              {!locked && <button className="fort-delete" onClick={e => {
+              {!locked && <button className="item-delete" onClick={e => {
                 e.stopPropagation();
                 pushUndo(`Státusz−: ${session.aktív_státuszok[i]}`, [{ field: 'session', prev: session }]);
                 setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.filter((_, j) => j !== i) }));

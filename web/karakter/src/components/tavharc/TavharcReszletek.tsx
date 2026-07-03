@@ -18,8 +18,8 @@ export function TavharcReszletek({ bontás, gameMode, karakter, setKarakter, pus
 
   return (
     <div className="th-reszletek">
-      <div className="th-reszletek-box">
-        <strong className="th-reszletek-title">Részletes értékek</strong>
+      <div className="debug-box th-reszletek-box">
+        <strong className="debug-box-title">Részletes értékek</strong>
         <div>Fegyver alap CÉ: {fegyverCÉ}</div>
         <div>Fegyver Osztó: {osztó}</div>
         <div>MF CÉ bónusz: {mfCÉ}</div>

@@ -55,12 +55,12 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
           const minPengeWarning = getMinPengeWarning(def.feltétel_kulcs || '', karakter, session, data);
           return (
             <div key={i} className="aktiv-flex-col">
-              <div className="kep-row">
+              <div className="item-row">
                 <span className="aktiv-flex-1">
                   <strong className="aktiv-strong-helyzet">{h}:</strong> {fmtCode(infóText)}
                   {minPengeWarning && <span className="aktiv-min-penge-warning">{minPengeWarning}</span>}
                 </span>
-                <button className="fort-delete" onClick={e => {
+                <button className="item-delete" onClick={e => {
                   e.stopPropagation();
                   pushUndo(`Helyzet−: ${h}`, [{ field: 'session', prev: session }]);
                   setSession(s => ({ ...s, aktív_helyzetek: s.aktív_helyzetek.filter((_, j) => j !== i) }));

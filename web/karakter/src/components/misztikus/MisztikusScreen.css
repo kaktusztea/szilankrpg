@@ -10,18 +10,8 @@
 .miszt-section-label { font-size: 13px; color: var(--text-dim); margin-top: 6px; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
 .miszt-no-faj { color: #666; font-size: 13px; }
 
-/* --- Képzettség sor --- */
-.miszt-row {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  padding: 6px 10px;
-  background: var(--surface);
-  border: 1px solid var(--border-row);
-  border-radius: 4px;
-  margin-bottom: 4px;
-  cursor: pointer;
-}
+/* --- Képzettség sor → base: .item-row (common.css) --- */
+.miszt-row { gap: 4px; }
 
 .miszt-row-name { flex: 1; font-size: 17px; }
 .miszt-row-warn { color: #e53935; }

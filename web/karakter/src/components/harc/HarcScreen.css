@@ -165,17 +165,9 @@
 .harc-popup-text { font-size: 15px; color: var(--text); }
 .harc-popup-col { font-size: 15px; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
 
-/* --- Részletes értékek --- */
-.harc-reszletek {
-  padding: 10px;
-  border: 1px dashed #666;
-  border-radius: 6px;
-  font-size: 12px;
-  color: #aaa;
-  margin-top: 16px;
-}
+/* --- Részletes értékek → base: .debug-box (common.css) --- */
+.harc-reszletek { margin-top: 16px; }
 
-.harc-reszletek-title { color: var(--accent); display: block; margin-bottom: 6px; }
 .harc-reszletek-section { margin-bottom: 4px; }
 .harc-reszletek-label { color: #ccc; font-weight: bold; }
 .harc-reszletek-indent { margin-left: 8px; margin-top: 1px; }

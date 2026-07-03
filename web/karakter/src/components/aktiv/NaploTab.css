@@ -42,32 +42,10 @@
   margin-top: 8px;
 }
 
-/* --- Napló input elemek --- */
-.naplo-input {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 6px 10px;
-  color: var(--text);
-  font-size: 16px;
-}
-
-.naplo-input-short {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 4px 8px;
-  color: var(--text);
-  font-size: 16px;
-}
+/* --- Napló input elemek → base: .field-input (common.css) --- */
+.naplo-input-short { padding: 4px 8px; }
 
 .naplo-textarea {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 6px 10px;
-  color: var(--text);
-  font-size: 16px;
   resize: vertical;
   font-family: inherit;
 }

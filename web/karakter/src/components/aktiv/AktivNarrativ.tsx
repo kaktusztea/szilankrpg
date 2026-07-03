@@ -37,12 +37,12 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
             onClick={() => { setÉrték(undefined); setShowPopup(true); }}>+</button>
         </span>
         {session.narratív_módosítók.map((nm, i) => (
-          <div key={i} className="kep-row">
+          <div key={i} className="item-row">
             <span className="aktiv-flex-1">
               <strong className="aktiv-statusz-name">{nm.szöveg}:</strong>
               <span> {nm.érték != null ? (nm.érték > 0 ? `Előny+${nm.érték}` : `Hátrány${nm.érték}`) : ''}</span>
             </span>
-            <button className="fort-delete" onClick={e => {
+            <button className="item-delete" onClick={e => {
               e.stopPropagation();
               pushUndo(`Narratív−: ${nm.szöveg}`, [{ field: 'session', prev: session }]);
               setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) }));
@@ -62,7 +62,7 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
                 </button>
               ))}
             </div>
-            <input className="narrativ-input narrativ-input-full" placeholder="Leírás..." maxLength={40}
+            <input className="field-input narrativ-input narrativ-input-full" placeholder="Leírás..." maxLength={40}
               ref={inputRef}
               onKeyDown={e => { if (e.key === 'Enter') submit((e.target as HTMLInputElement).value.trim()); }} />
             <button className="narrativ-add-btn narrativ-add-btn-center" disabled={érték === undefined} onClick={() => {

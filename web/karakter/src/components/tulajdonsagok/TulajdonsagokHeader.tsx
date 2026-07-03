@@ -62,7 +62,7 @@ export function TulajdonsagokHeader({
         <div className="tul-faj-kor-row">
           <div className="tul-faj-row">
             <span className="tul-header-label">Faj:</span>
-            <select className="faj-select" value={faj} onChange={e => setFaj(e.target.value)}>
+            <select className="field-select faj-select" value={faj} onChange={e => setFaj(e.target.value)}>
               {data.fajNevek.map(f => <option key={f} value={f}>{f}</option>)}
             </select>
           </div>
@@ -72,7 +72,7 @@ export function TulajdonsagokHeader({
         </div>
         <div className="tul-faj-row">
           <span className="tul-header-label">Anyanyelv:</span>
-          <select className="faj-select" value={anyanyelv} onChange={e => setAnyanyelv(e.target.value)}>
+          <select className="field-select faj-select" value={anyanyelv} onChange={e => setAnyanyelv(e.target.value)}>
             {[...data.nyelvek].sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(n => <option key={n.név} value={n.név}>{n.név}</option>)}
           </select>
         </div>

@@ -16,7 +16,7 @@ export function FortelyRow({
   function handleTap(e: React.MouseEvent<HTMLDivElement>) {
     if (gameMode) { onToggleInfo(); return; }
     const row = e.currentTarget;
-    const delBtn = row.querySelector('.fort-delete') as HTMLElement | null;
+    const delBtn = row.querySelector('.item-delete') as HTMLElement | null;
     if (delBtn) {
       const btnRect = delBtn.getBoundingClientRect();
       if (e.clientX >= btnRect.left - 25) return;
@@ -39,13 +39,13 @@ export function FortelyRow({
 
   return (
     <div className="fort-row-wrapper">
-      <div className={`fort-row${követelményHiba ? ' fort-kov-hiba' : ''}`} onClick={handleTap}>
+      <div className={`item-row${követelményHiba ? ' fort-kov-hiba' : ''}`} onClick={handleTap}>
         <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>
           {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}{giftBadge && <span className="fort-gift">{giftBadge}</span>}
         </span>
         <span className="fort-right">
           {!gameMode && !locked && (
-            <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
+            <button className="item-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
           <span className={`fort-fok${isNyelv ? ' nyelvismeret-fok' : ''}${overLimit ? ' fort-over' : ''}`}>
             {isNyelv ? nyelvFokLabels[slot.fok] ?? slot.fok : (
@@ -70,13 +70,13 @@ export function FortelyRow({
       )}
 
       {overLimit && isOpen && (
-        <div className="fort-info fort-info-error">
+        <div className="info-panel info-panel-error">
           A felvehető Nyelvismeret fokok száma a Nyelvtanulás képzettség szintjétől függ. Túllépted a keretet! Max tanulható fok: {nyelvPontKeret ?? 0}
         </div>
       )}
 
       {követelményHiba && (
-        <div className="fort-info fort-info-error">
+        <div className="info-panel info-panel-error">
           ⚠ Követelmény: {hiányzóKöv.join(', ')}
         </div>
       )}
