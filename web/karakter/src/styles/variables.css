@@ -26,18 +26,25 @@
   /* Kártya/card háttér */
   --card-bg: #2a2a3e;
 
-  /* Színek: szekció fejlécek */
-  --color-section-blue: #42a5f5;
-  --color-section-purple: #ce93d8;
-  --color-section-orange: #e0a050;
-  --color-section-cat: #7eb8da;
-
-  /* Hatás pool színek */
-  --color-taktika: #90caf9;
-  --color-helyzet: #42a5f5;
+  /* Entitás-paletta (szín-nyelv) */
   --color-fortely: #ce93d8;
+  --color-kepzettseg: #42a5f5;
+  --color-hatter: #e0a050;
+  --color-taktika: #90caf9;
+  --color-helyzet: #4dd0e1;
   --color-statusz: #cd7c6f;
+  --color-manover: #b0bec5;
+  --color-misztikus: #9fa8da;
   --color-positive: #66bb6a;
+
+  /* Háttér al-kategória (nem entitás-szín) */
+  --color-hatter-cat: #7eb8da;
+
+  /* Legacy alias-ok (→ törlendő ha minden átállt) */
+  --color-section-blue: var(--color-kepzettseg);
+  --color-section-purple: var(--color-fortely);
+  --color-section-orange: var(--color-hatter);
+  --color-section-cat: var(--color-hatter-cat);
 }
 
 body {

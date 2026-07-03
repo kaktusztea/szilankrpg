@@ -100,7 +100,7 @@
 .kep-csoport-label {
   font-size: 17px;
   font-weight: bold;
-  color: var(--color-section-blue);
+  color: var(--color-kepzettseg);
   margin-bottom: 4px;
   padding-bottom: 2px;
   border-bottom: 1px solid var(--border-light);

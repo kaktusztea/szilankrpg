@@ -6,7 +6,7 @@
 
 /* --- Szekció --- */
 .miszt-section { border-top: 1px solid var(--border); padding-top: 12px; }
-.miszt-section-title { font-size: 17px; color: var(--color-section-blue); margin: 0 0 6px; }
+.miszt-section-title { font-size: 17px; color: var(--color-misztikus); margin: 0 0 6px; }
 .miszt-section-label { font-size: 13px; color: var(--text-dim); margin-top: 6px; border-bottom: 1px solid var(--border); padding-bottom: 2px; }
 .miszt-no-faj { color: #666; font-size: 13px; }
 

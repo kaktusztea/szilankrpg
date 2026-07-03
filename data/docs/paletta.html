@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<title>Szilánk – Szín-nyelv terv</title>
+<style>
+  body { background: #1a1a2e; color: #eee; font-family: 'Segoe UI', sans-serif; padding: 24px; }
+  h1 { font-size: 22px; margin-bottom: 8px; }
+  h2 { font-size: 17px; margin: 24px 0 10px; color: #999; text-transform: uppercase; letter-spacing: 1px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 12px; }
+  .swatch {
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 1px solid #444;
+  }
+  .swatch-name { font-weight: bold; font-size: 15px; }
+  .swatch-hex { font-family: monospace; font-size: 13px; opacity: 0.8; }
+  .swatch-var { font-size: 11px; opacity: 0.6; }
+  .swatch-usage { font-size: 11px; margin-top: 4px; opacity: 0.7; }
+
+  .separator { border-top: 1px solid #333; margin: 32px 0; }
+
+  /* Példa szekció */
+  .example { margin-top: 32px; padding: 16px; border: 1px dashed #555; border-radius: 8px; }
+  .example h3 { margin: 0 0 12px; font-size: 15px; color: #888; }
+  .pool-item { padding: 4px 8px; margin: 3px 0; border-radius: 3px; background: #2a2a3e; font-size: 14px; }
+</style>
+</head>
+<body>
+
+<h1>Szilánk RPG – Szín-nyelv terv</h1>
+<p style="color:#888; font-size:13px;">Entitás-paletta + állapot színek dark theme-hez</p>
+
+<h2>Entitás-paletta (domain színek)</h2>
+<div class="grid">
+  <div class="swatch" style="background:#ce93d8; color:#000;">
+    <span class="swatch-name">Fortély</span>
+    <span class="swatch-hex">#ce93d8</span>
+    <span class="swatch-var">--color-fortely</span>
+    <span class="swatch-usage">Csoport fejléc, hatás pool, field border</span>
+  </div>
+  <div class="swatch" style="background:#42a5f5; color:#000;">
+    <span class="swatch-name">Képzettség</span>
+    <span class="swatch-hex">#42a5f5</span>
+    <span class="swatch-var">--color-kepzettseg</span>
+    <span class="swatch-usage">Csoport fejléc, szint kijelzés</span>
+  </div>
+  <div class="swatch" style="background:#e0a050; color:#000;">
+    <span class="swatch-name">Háttér</span>
+    <span class="swatch-hex">#e0a050</span>
+    <span class="swatch-var">--color-hatter</span>
+    <span class="swatch-usage">Szekció cím, karma tag active</span>
+  </div>
+  <div class="swatch" style="background:#90caf9; color:#000;">
+    <span class="swatch-name">Taktika</span>
+    <span class="swatch-hex">#90caf9</span>
+    <span class="swatch-var">--color-taktika</span>
+    <span class="swatch-usage">Taktika név, stat label</span>
+  </div>
+  <div class="swatch" style="background:#4dd0e1; color:#000;">
+    <span class="swatch-name">Helyzet</span>
+    <span class="swatch-hex">#4dd0e1</span>
+    <span class="swatch-var">--color-helyzet</span>
+    <span class="swatch-usage">Helyzet név, hatás pool (ÚJ – volt kék)</span>
+  </div>
+  <div class="swatch" style="background:#cd7c6f; color:#000;">
+    <span class="swatch-name">Státusz</span>
+    <span class="swatch-hex">#cd7c6f</span>
+    <span class="swatch-var">--color-statusz</span>
+    <span class="swatch-usage">Státusz név, alapeset jelzés</span>
+  </div>
+  <div class="swatch" style="background:#b0bec5; color:#000;">
+    <span class="swatch-name">Manőver (A – visszafogott)</span>
+    <span class="swatch-hex">#b0bec5</span>
+    <span class="swatch-var">--color-manover</span>
+    <span class="swatch-usage">Manőver név</span>
+  </div>
+  <div class="swatch" style="background:#dce775; color:#000;">
+    <span class="swatch-name">Manőver (B – markáns)</span>
+    <span class="swatch-hex">#dce775</span>
+    <span class="swatch-var">--color-manover</span>
+    <span class="swatch-usage">Manőver név (alternatíva)</span>
+  </div>
+  <div class="swatch" style="background:#9fa8da; color:#000;">
+    <span class="swatch-name">Misztikus</span>
+    <span class="swatch-hex">#9fa8da</span>
+    <span class="swatch-var">--color-misztikus</span>
+    <span class="swatch-usage">Misztikus szekció címek (ÚJ)</span>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<h2>Állapot-paletta (szemantikus)</h2>
+<div class="grid">
+  <div class="swatch" style="background:#4caf50; color:#000;">
+    <span class="swatch-name">Success / Aktív</span>
+    <span class="swatch-hex">#4caf50</span>
+    <span class="swatch-var">--success</span>
+  </div>
+  <div class="swatch" style="background:#66bb6a; color:#000;">
+    <span class="swatch-name">Pozitív módosító</span>
+    <span class="swatch-hex">#66bb6a</span>
+    <span class="swatch-var">--color-positive</span>
+  </div>
+  <div class="swatch" style="background:#ff9800; color:#000;">
+    <span class="swatch-name">Warning / Figyelmeztetés</span>
+    <span class="swatch-hex">#ff9800</span>
+    <span class="swatch-var">--warning</span>
+  </div>
+  <div class="swatch" style="background:#f44336; color:#fff;">
+    <span class="swatch-name">Error / Hiba</span>
+    <span class="swatch-hex">#f44336</span>
+    <span class="swatch-var">--error</span>
+  </div>
+  <div class="swatch" style="background:#e94560; color:#fff;">
+    <span class="swatch-name">Accent (TÉ, ÉP, CTA)</span>
+    <span class="swatch-hex">#e94560</span>
+    <span class="swatch-var">--accent</span>
+  </div>
+  <div class="swatch" style="background:#999; color:#000;">
+    <span class="swatch-name">Dim / Halvány</span>
+    <span class="swatch-hex">#999999</span>
+    <span class="swatch-var">--text-dim</span>
+  </div>
+</div>
+
+<div class="separator"></div>
+
+<h2>Példa: Hatás Pool (összehasonlítás)</h2>
+<div class="example">
+  <h3>Minden forrás saját színnel</h3>
+  <div class="pool-item"><span style="color:#90caf9;">⬥ Taktika:</span> Támadó taktika → TÉ:+10, VÉ:−10</div>
+  <div class="pool-item"><span style="color:#4dd0e1;">⬥ Helyzet:</span> Meglepetés → TÉ:+20</div>
+  <div class="pool-item"><span style="color:#ce93d8;">⬥ Fortély:</span> Kétkezes harc [2.fok] → TÉ:+5</div>
+  <div class="pool-item"><span style="color:#cd7c6f;">⬥ Státusz:</span> Bódult → VÉ:−30</div>
+  <div class="pool-item"><span style="color:#b0bec5;">⬥ Manőver:</span> Lefegyverezés → TÉ:−10, MP:2</div>
+</div>
+
+<div class="separator"></div>
+
+<h2>Kontraszt teszt (dark háttéren)</h2>
+<div style="background:#1a1a2e; padding:16px; border-radius:8px; border:1px solid #444; display:flex; flex-direction:column; gap:6px; font-size:15px;">
+  <span style="color:#ce93d8;">Fortély szöveg ezen a háttéren</span>
+  <span style="color:#42a5f5;">Képzettség szöveg ezen a háttéren</span>
+  <span style="color:#e0a050;">Háttér szöveg ezen a háttéren</span>
+  <span style="color:#90caf9;">Taktika szöveg ezen a háttéren</span>
+  <span style="color:#4dd0e1;">Helyzet szöveg ezen a háttéren (ÚJ cián)</span>
+  <span style="color:#cd7c6f;">Státusz szöveg ezen a háttéren</span>
+  <span style="color:#b0bec5;">Manőver szöveg (visszafogott)</span>
+  <span style="color:#dce775;">Manőver szöveg (markáns alt.)</span>
+  <span style="color:#9fa8da;">Misztikus szöveg ezen a háttéren</span>
+</div>
+
+<div style="background:#16213e; padding:16px; border-radius:8px; border:1px solid #444; display:flex; flex-direction:column; gap:6px; font-size:15px; margin-top:12px;">
+  <span style="color:#999; font-size:12px;">--surface háttéren (#16213e):</span>
+  <span style="color:#ce93d8;">Fortély szöveg</span>
+  <span style="color:#42a5f5;">Képzettség szöveg</span>
+  <span style="color:#e0a050;">Háttér szöveg</span>
+  <span style="color:#90caf9;">Taktika szöveg</span>
+  <span style="color:#4dd0e1;">Helyzet szöveg (ÚJ cián)</span>
+  <span style="color:#cd7c6f;">Státusz szöveg</span>
+  <span style="color:#b0bec5;">Manőver (visszafogott)</span>
+  <span style="color:#9fa8da;">Misztikus szöveg</span>
+</div>
+
+</body>
+</html>

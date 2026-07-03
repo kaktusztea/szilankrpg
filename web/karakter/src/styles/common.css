@@ -83,7 +83,7 @@
   margin-left: 4px;
 }
 
-.field-btn-fortely { border-color: #ab47bc; }
+.field-btn-fortely { border-color: var(--color-fortely); }
 
 /* Törlés gomb (ikonszerű) */
 .btn-delete {
@@ -164,9 +164,9 @@
   user-select: none;
 }
 
-.group-label-blue { color: var(--color-section-blue); }
-.group-label-purple { color: var(--color-section-purple); }
-.group-label-orange { color: var(--color-section-orange); }
+.group-label-blue { color: var(--color-kepzettseg); }
+.group-label-purple { color: var(--color-fortely); }
+.group-label-orange { color: var(--color-hatter); }
 
 .group-arrow {
   font-size: 15px;
@@ -304,7 +304,7 @@
 .aktiv-picker-category {
   font-size: 13px;
   font-weight: bold;
-  color: var(--color-section-orange);
+  color: var(--color-hatter);
   padding: 8px 4px 4px;
   border-bottom: 1px solid var(--border);
   margin-bottom: 6px;

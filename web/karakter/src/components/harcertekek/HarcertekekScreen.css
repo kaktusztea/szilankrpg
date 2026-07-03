@@ -86,7 +86,7 @@
 }
 
 .he-field-btn strong { color: var(--success); margin-left: 4px; }
-.he-field-fortely { border-color: #ab47bc; }
+.he-field-fortely { border-color: var(--color-fortely); }
 .he-field-indicator { cursor: default; opacity: 0.7; }
 .he-field-disabled { opacity: 0.4; pointer-events: none; }
 

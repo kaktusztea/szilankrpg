@@ -184,7 +184,7 @@
 /* --- Helyzetek --- */
 .aktiv-sub-row { padding-left: 8px; font-size: 12px; opacity: 0.85; }
 .aktiv-helyzet-fortely-sor { padding-left: 12px; flex-wrap: wrap; word-break: break-word; justify-content: flex-start; }
-.aktiv-helyzet-aktiv { color: var(--color-positive); }
+.aktiv-helyzet-aktiv { color: var(--color-helyzet); }
 .aktiv-helyzet-inaktiv { color: #888; }
 .aktiv-helyzet-alapeset { color: var(--color-statusz); }
 .aktiv-min-penge-warning { color: #e53935; margin-left: 6px; }
@@ -194,7 +194,7 @@
 .aktiv-statusz-row-clickable { cursor: pointer; }
 
 /* --- Manőver --- */
-.aktiv-manover-name { color: #bbb; font-size: 14px; }
+.aktiv-manover-name { color: var(--color-manover); font-size: 14px; }
 .aktiv-manover-bonus { flex: 1; color: var(--color-positive); }
 .aktiv-manover-flex { display: flex; align-items: center; gap: 8px; }
 
@@ -207,5 +207,5 @@
 .aktiv-flex-1 { flex: 1; }
 .aktiv-strong-pos { color: var(--color-positive); }
 .aktiv-strong-neg { color: #e53935; }
-.aktiv-strong-helyzet { color: var(--warning); }
+.aktiv-strong-helyzet { color: var(--color-helyzet); }
 .aktiv-hint-disabled { font-size: 11px; color: #888; }

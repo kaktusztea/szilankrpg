@@ -39,7 +39,7 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
         {session.narratív_módosítók.map((nm, i) => (
           <div key={i} className="kep-row">
             <span className="aktiv-flex-1">
-              <strong className={(nm.érték ?? 0) > 0 ? 'aktiv-strong-pos' : 'aktiv-strong-neg'}>{nm.szöveg}:</strong>
+              <strong className="aktiv-statusz-name">{nm.szöveg}:</strong>
               <span> {nm.érték != null ? (nm.érték > 0 ? `Előny+${nm.érték}` : `Hátrány${nm.érték}`) : ''}</span>
             </span>
             <button className="fort-delete" onClick={e => {
