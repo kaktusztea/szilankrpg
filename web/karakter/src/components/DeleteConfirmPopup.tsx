@@ -10,7 +10,7 @@ interface Props {
 /** Unified delete confirmation popup — label + red button, used across all screens. */
 export function DeleteConfirmPopup({ label, buttonText, onConfirm, onClose }: Props) {
   return (
-    <PopupOverlay onClose={onClose}>
+    <PopupOverlay onClose={onClose} centerText>
       <label className="kep-prompt-label-bold">{label}</label>
       <button className="btn-del-confirm he-del-confirm" onClick={onConfirm}>{buttonText}</button>
     </PopupOverlay>
