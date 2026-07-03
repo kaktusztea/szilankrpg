@@ -1,12 +1,7 @@
 /* =============================================
    Tulajdonságok + Képzettségek fül
    =============================================
-   Közös class-ok használva: .card, .row-item, .row-item-name,
-   .row-item-right, .btn-delete, .select-base, .group-label,
-   .group-label-blue, .group-arrow, .info-panel, .info-panel-row,
-   .info-panel-label, .info-panel-value, .grid-buttons, .btn-round,
-   .details-box, .details-box-title, .picker-controls-row,
-   .picker-value-display, .picker-btn-size
+   Közös class-ok használva: .fort-fok-btn
    ============================================= */
 
 .tul-screen { padding-bottom: 20px; }
@@ -96,7 +91,7 @@
 /* --- Képzettségek --- */
 .kep-section { display: flex; flex-direction: column; gap: 12px; }
 
-/* Csoport fejléc: használja .group-label + .group-label-blue */
+/* Csoport fejléc */
 .kep-csoport-label {
   font-size: 17px;
   font-weight: bold;
