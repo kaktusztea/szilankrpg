@@ -35,7 +35,7 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
         return (
           <div key={tf.név} className={`aktiv-field-btn aktiv-field-toggle ${active && !disabled ? 'on' : ''} ${disabled ? 'disabled' : ''}`}
             onClick={() => {
-              if (feltételDisabled) { showHint(`Csak posztó/fegyverkabát/bőr, max MGT:${harciAkroMaxMgt}`); return; }
+              if (feltételDisabled) { showHint(`Páncél: posztó/fegyverkabát/bőr, max MGT:${harciAkroMaxMgt}`); return; }
               if (has) setSession(s => ({ ...s, [sessionKey]: !active }));
             }}>
             <span className="aktiv-field-label">{tf.név.length > 14 ? tf.név.replace('Harci ', 'H. ') : tf.név}</span>
