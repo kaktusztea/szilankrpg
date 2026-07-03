@@ -47,7 +47,7 @@ export function FortelyRow({
           {!gameMode && !locked && (
             <button className="fort-delete" onClick={e => { e.stopPropagation(); onRemove(); }}>✕</button>
           )}
-          <span className={`fort-fok ${slot.fok >= maxfok ? 'fort-fok-max' : ''}${overLimit ? ' fort-over' : ''}`}>
+          <span className={`fort-fok${isNyelv ? ' nyelvismeret-fok' : ''}${overLimit ? ' fort-over' : ''}`}>
             {isNyelv ? nyelvFokLabels[slot.fok] ?? slot.fok : (
               <span className="fort-fok-dots">
                 {Array.from({ length: MAX_FORTÉLY_FOK }, (_, i) => (

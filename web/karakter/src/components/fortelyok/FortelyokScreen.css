@@ -39,8 +39,8 @@
 .fort-row-new { opacity: 0.7; }
 .fort-név { font-size: 17px; color: var(--text); }
 .fort-right { display: flex; align-items: center; gap: 6px; }
-.fort-fok { font-size: 17px; font-weight: bold; color: var(--warning); min-width: 20px; text-align: right; }
-.fort-fok.fort-fok-max { color: var(--success); }
+.fort-fok { min-width: 20px; text-align: right; }
+.fort-fok.nyelvismeret-fok { font-size: 17px; font-weight: bold; color: var(--success); }
 
 /* Fok pöttyök */
 .fort-fok-dots { display: inline-flex; gap: 3px; align-items: center; }
