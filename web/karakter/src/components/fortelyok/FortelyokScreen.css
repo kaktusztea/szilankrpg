@@ -90,7 +90,7 @@
 /* --- Fok radio buttons --- */
 .fort-fok-radios { display: flex; gap: 8px; justify-content: center; }
 
-/* .fort-fok-btn, .fort-fok-btn.active, :disabled, .fort-fok-del, -wide → common.css */
+/* .fort-fok-btn, .fort-fok-btn.active, :disabled, -wide → common.css */
 
 /* --- Hint bar → common.css (.fort-hint) --- */
 

@@ -94,11 +94,6 @@
   color: #000;
 }
 
-.fort-fok-btn.fort-fok-del {
-  border-color: var(--error);
-  color: var(--error);
-}
-
 .fort-fok-btn:disabled {
   opacity: 0.3;
   cursor: default;
