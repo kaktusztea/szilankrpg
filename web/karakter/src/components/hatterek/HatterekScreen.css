@@ -24,9 +24,9 @@
   border: 1px solid transparent;
 }
 
-.hatter-tag.active { background: #2a3a2a; color: var(--success); border-color: var(--success); }
+.hatter-tag.active { background: #3a3020; color: #e8d5a0; border-color: #e8d5a0; }
 .hatter-tag.karma { color: #ccc; }
-.hatter-tag.karma.active { background: #3a2a2a; color: var(--color-hatter); border-color: var(--color-hatter); }
+.hatter-tag.karma.active { background: #3a3020; color: #e8d5a0; border-color: #e8d5a0; }
 .hatter-tag-multi { border: 1px dashed #666; cursor: pointer; }
 .hatter-tag-disabled { opacity: 0.4; cursor: not-allowed; }
 
