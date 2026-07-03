@@ -1,8 +1,8 @@
-# Szilánk RPG - Karakteralkotó Webapp
+# Szilánk Karakter webapp
 
 Webes karakteralkotó és harckezelő alkalmazás a Szilánk RPG szabályrendszerhez. Mobilra és Desktopra is optimalizált.
 
-Kliens mód kizárólag, nincs szerver komponens, könnyen hosztolható egyénileg is például github.io alá.
+Kliens mód kizárólag, tehát nincs szerver komponens, könnyen hosztolható egyénileg is például github.io alá.
 
 ---
 ## Módok
@@ -75,7 +75,7 @@ Fortélyoknál és képzettségeknél megjelenik egy 🔗 ikon, ami a GitHub-on 
 
 ### Támadás szám info panel
 
-A Harc fül fegyver táblázatában a **Tám** (Támadások száma) cellára koppintva egy info popup ugrik fel: fegyver neve, Sebesség értéke, és a számított Harckeret. 
+A Harc fül fegyver táblázatában a **Tám** (Támadások száma) cellára koppintva egy info popup ugrik fel: fegyver neve, Sebesség értéke, és a számított Harckeret.
 
 ### Szilánk pont (fejléc)
 A fejlécben a "Szilánk RPG" szöveg mellett lévő keretes számra koppintva 0–3 közötti értéket választhatsz.
