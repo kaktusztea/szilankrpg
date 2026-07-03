@@ -8,7 +8,7 @@ export function lookupFegyver(fegyverek: FegyverAlap[], alap: string): FegyverAl
 
 /**
  * String feltétel kiértékelése prefix:érték formátumban.
- * Használható: alapeset.ts, HatasPoolCalc, AktivScreen — mindenhol ahol
+ * Használható: alapeset.ts, aktiv-calc, AktivScreen — mindenhol ahol
  * aktívFeltételek Set nem áll rendelkezésre.
  */
 export function evaluateFeltétel(feltétel: string, session: Session, karakter: Karakter): boolean {

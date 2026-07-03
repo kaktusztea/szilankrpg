@@ -12,15 +12,12 @@ export interface TaktikaHatásPerElem { név: string; hatások: HatásEntry[] }
 export interface FortélyEmlékeztető { név: string; fok: number; hatás: string }
 export interface HelyzetFortélyEntry { név: string; fok: number; hatás: string; aktív: boolean }
 export interface ManőverBónusz { név: string; manőver: string; érték: number }
-export interface ElőnyHátrányMod { név: string; cél: string; mód: string; érték: number }
-
-export interface HatásPoolData {
+export interface AktivCalcData {
   státuszPerElem: StátuszPerElem[];
   taktikaHatásPerElem: TaktikaHatásPerElem[];
   fortélyEmlékeztetők: FortélyEmlékeztető[];
   helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>;
   manőverBónuszok: ManőverBónusz[];
-  előnyHátrányMods: ElőnyHátrányMod[];
   alapesetekFiltered: AktívAlapeset[];
   eseményNév: (id: string) => string;
 }
@@ -81,11 +78,10 @@ function extractHelyzetKötés(feltétel: unknown): string {
 
 export function calcFortélyPool(
   karakter: Karakter, data: GameData, aktívFeltételek: Set<string>,
-): { fortélyEmlékeztetők: FortélyEmlékeztető[]; helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>; manőverBónuszok: ManőverBónusz[]; előnyHátrányMods: ElőnyHátrányMod[] } {
+): { fortélyEmlékeztetők: FortélyEmlékeztető[]; helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>; manőverBónuszok: ManőverBónusz[] } {
   const fortélyEmlékeztetők: FortélyEmlékeztető[] = [];
   const helyzetFortélyok = new Map<string, HelyzetFortélyEntry[]>();
   const manőverBónuszok: ManőverBónusz[] = [];
-  const előnyHátrányMods: ElőnyHátrányMod[] = [];
 
   for (const kf of karakter.fortélyok) {
     const def = data.fortelySummaries.find(d => d.név === kf.név);
@@ -103,9 +99,6 @@ export function calcFortélyPool(
         if (typeof mod.cél === 'string' && mod.cél.startsWith('manőver:')) {
           manőverBónuszok.push({ név: kf.név, manőver: mod.cél.slice(8), érték: mod.érték });
         }
-        if (mod.mód === 'előny' || mod.mód === 'hátrány') {
-          előnyHátrányMods.push({ név: kf.név, cél: mod.cél, mód: mod.mód, érték: mod.érték });
-        }
 
         const kötés = extractHelyzetKötés(mod.feltétel);
         if (kötés) helyzetKötés = kötés;
@@ -122,7 +115,7 @@ export function calcFortélyPool(
       fortélyEmlékeztetők.push({ név: kf.név, fok: kf.fok, hatás: fokDef.hatás.join(' ') });
     }
   }
-  return { fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods };
+  return { fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok };
 }
 
 export function calcAlapesetPool(
@@ -147,7 +140,7 @@ export function calcAlapesetPool(
 
 // --- Orchestrator ---
 
-export function calcHatásPool(data: GameData, karakter: Karakter, session: Session): HatásPoolData {
+export function calcAktivData(data: GameData, karakter: Karakter, session: Session): AktivCalcData {
   const aktívFeltételek = buildAktívFeltételek(session, data);
 
   const státuszPerElem = calcStátuszHatások(session, data);
@@ -159,8 +152,8 @@ export function calcHatásPool(data: GameData, karakter: Karakter, session: Sess
     return data.esemenyek.find(e => e.id === id)?.név ?? id;
   };
 
-  const { fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods } = calcFortélyPool(karakter, data, aktívFeltételek);
+  const { fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok } = calcFortélyPool(karakter, data, aktívFeltételek);
   const alapesetekFiltered = calcAlapesetPool(data, karakter, session, aktívFeltételek, helyzetFortélyok);
 
-  return { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév };
+  return { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév };
 }

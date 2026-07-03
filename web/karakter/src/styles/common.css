@@ -163,6 +163,7 @@
   font-weight: bold;
   border-radius: 4px;
   margin-top: 8px;
+  white-space: pre-line;
 }
 .he-hint-info { background: var(--success); }
 

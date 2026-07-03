@@ -35,7 +35,16 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
         return (
           <div key={tf.név} className={`aktiv-field-btn aktiv-field-toggle ${active && !disabled ? 'on' : ''} ${disabled ? 'disabled' : ''}`}
             onClick={() => {
-              if (feltételDisabled) { showHint(`Páncél: posztó/fegyverkabát/bőr, max MGT:${harciAkroMaxMgt}`); return; }
+              if (disabled) {
+                if (sessionKey === 'harci_akrobatika') {
+                  const lines: string[] = [];
+                  if (!has) lines.push('Harci akrobatika fortély hiányzik');
+                  if (session.aktív_páncél && !harciAkroEngedett) lines.push('Páncél: posztó / fegyverkabát / bőr');
+                  if (session.aktív_páncél && páncélMGT > harciAkroMaxMgt) lines.push(`max MGT: ${harciAkroMaxMgt}`);
+                  if (lines.length > 0) showHint(lines.join('\n'));
+                }
+                return;
+              }
               if (has) setSession(s => ({ ...s, [sessionKey]: !active }));
             }}>
             <span className="aktiv-field-label">{tf.név.length > 14 ? tf.név.replace('Harci ', 'H. ') : tf.név}</span>
