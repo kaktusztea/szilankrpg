@@ -68,7 +68,7 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
             const erőTag = erő > 0 ? `- ${erő} (Erő bónusz)` : erő < 0 ? `+ ${-erő} (Erő büntetés)` : '';
             showHint(`MGT: ${mgt} = ${nyers}(páncél)${erőTag ? ' ' + erőTag : ''}`, 'info', 2000);
           }}>MGT: {mgt}</button>
-          <button className="he-pancel-chip he-pancel-chip-btn" onClick={() => onPopup('rongálódás')}>Rongálódás: {k.páncél.rongálódás}</button>
+          <button className="he-field-btn" onClick={() => onPopup('rongálódás')}>Rongálódás: <strong>{k.páncél.rongálódás}</strong></button>
         </div>
       )}
       <div className="he-fegyver-fields">
