@@ -25,8 +25,6 @@
 }
 
 .hatter-tag.active { background: #3a3020; color: #e8d5a0; border-color: #e8d5a0; }
-.hatter-tag.karma { color: #ccc; }
-.hatter-tag.karma.active { background: #3a3020; color: #e8d5a0; border-color: #e8d5a0; }
 .hatter-tag-multi { border: 1px dashed #666; cursor: pointer; }
 .hatter-tag-disabled { opacity: 0.4; cursor: not-allowed; }
 

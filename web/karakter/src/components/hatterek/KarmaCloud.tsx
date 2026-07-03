@@ -18,20 +18,20 @@ export function KarmaCloud({ entries, aktív, gameMode, onToggle, onRemove, getM
       {entries.flatMap(entry =>
         entry.többszörös
           ? getMultiEntries(entry.név, 'karma').map((e, i) => (
-              <span key={`a-${e}-${i}`} className="hatter-tag karma active" onClick={() => !gameMode && onRemove(e, 'karma')}>
+              <span key={`a-${e}-${i}`} className="hatter-tag active" onClick={() => !gameMode && onRemove(e, 'karma')}>
                 {e}
               </span>
             ))
           : aktív.includes(entry.név)
-            ? [<span key={`a-${entry.név}`} className="hatter-tag karma active" onClick={() => onToggle(entry.név, 'karma', false)}>{entry.név}</span>]
+            ? [<span key={`a-${entry.név}`} className="hatter-tag active" onClick={() => onToggle(entry.név, 'karma', false)}>{entry.név}</span>]
             : []
       )}
       {/* Picker / inactive entries */}
       {[...entries].sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(entry =>
         entry.többszörös
-          ? (!gameMode && <span key={entry.név} className={`hatter-tag karma hatter-tag-multi${isMaxed?.(entry.név, 'karma') ? ' hatter-tag-disabled' : ''}`} onClick={() => onToggle(entry.név, 'karma', true)}>{entry.név}</span>)
+          ? (!gameMode && <span key={entry.név} className={`hatter-tag hatter-tag-multi${isMaxed?.(entry.név, 'karma') ? ' hatter-tag-disabled' : ''}`} onClick={() => onToggle(entry.név, 'karma', true)}>{entry.név}</span>)
           : !aktív.includes(entry.név)
-            ? <span key={entry.név} className="hatter-tag karma" onClick={() => onToggle(entry.név, 'karma', false)}>{entry.név}</span>
+            ? <span key={entry.név} className="hatter-tag" onClick={() => onToggle(entry.név, 'karma', false)}>{entry.név}</span>
             : null
       )}
     </div>
