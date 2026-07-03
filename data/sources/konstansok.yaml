@@ -516,7 +516,7 @@ fájdalomtűrés_enyhítés:
 # ============================================================
 
 harci_akrobatika:
-  max_mgt: 8
+  max_mgt: 5
 
 sebesülés_kategóriák_száma: 4
 hm_aszimmetria_osztó: 2
