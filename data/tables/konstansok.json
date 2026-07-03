@@ -170,6 +170,7 @@
       "leírás": "Posztó vagy bunda",
       "fém": false,
       "merev": false,
+      "harci_akrobatika": true,
       "mgt": 2,
       "sfé_fizikai": 2,
       "sfé_energia": 4,
@@ -181,6 +182,7 @@
       "leírás": "Fegyverkabát",
       "fém": false,
       "merev": false,
+      "harci_akrobatika": true,
       "mgt": 3,
       "sfé_fizikai": 3,
       "sfé_energia": 5,
@@ -192,6 +194,7 @@
       "leírás": "Bőrpáncél",
       "fém": false,
       "merev": false,
+      "harci_akrobatika": true,
       "mgt": 5,
       "sfé_fizikai": 7,
       "sfé_energia": 10,
@@ -203,6 +206,7 @@
       "leírás": "Láncing / sodronying",
       "fém": true,
       "merev": false,
+      "harci_akrobatika": false,
       "mgt": 8,
       "sfé_fizikai": 10,
       "sfé_energia": 10,
@@ -214,6 +218,7 @@
       "leírás": "Pikkely fémpáncél",
       "fém": true,
       "merev": true,
+      "harci_akrobatika": false,
       "mgt": 8,
       "sfé_fizikai": 15,
       "sfé_energia": 10,
@@ -225,6 +230,7 @@
       "leírás": "Lemezpáncél",
       "fém": true,
       "merev": true,
+      "harci_akrobatika": false,
       "mgt": 10,
       "sfé_fizikai": 20,
       "sfé_energia": 8,
@@ -649,6 +655,9 @@
       "enyhítés": 9
     }
   ],
+  "harci_akrobatika": {
+    "max_mgt": 5
+  },
   "sebesülés_kategóriák_száma": 4,
   "hm_aszimmetria_osztó": 2,
   "vé_csökkentés_gombok": [

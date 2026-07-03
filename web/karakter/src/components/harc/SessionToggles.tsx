@@ -9,11 +9,12 @@ interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session' | 's
 export function SessionToggles({ data, karakter, session, setSession, páncélMGT, showHint }: Props) {
   const toggleForts = data.fortelySummaries.filter(d => d.session_toggle);
 
-  // Harci akrobatika disabled check: merev páncél OR MGT > 10 (only if páncél viselve)
-  const páncélStruktúra = (data.konstansok.páncél_struktúrák as { struktúra: string; merev: boolean }[])
+  // Harci akrobatika disabled check: struktúra flag + MGT limit (data-driven)
+  const páncélStruktúra = (data.konstansok.páncél_struktúrák as { struktúra: string; harci_akrobatika: boolean }[])
     .find(s => s.struktúra === karakter.páncél.alap);
-  const páncélMerev = páncélStruktúra?.merev ?? false;
-  const harciAkroDisabled = session.aktív_páncél && (páncélMerev || páncélMGT > 10);
+  const harciAkroEngedett = páncélStruktúra?.harci_akrobatika;
+  const harciAkroMaxMgt = (data.konstansok.harci_akrobatika as { max_mgt: number }).max_mgt;
+  const harciAkroDisabled = session.aktív_páncél && (!harciAkroEngedett || páncélMGT > harciAkroMaxMgt);
 
   // Force OFF when disabled
   useEffect(() => {
@@ -34,7 +35,7 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
         return (
           <div key={tf.név} className={`aktiv-field-btn aktiv-field-toggle ${active && !disabled ? 'on' : ''} ${disabled ? 'disabled' : ''}`}
             onClick={() => {
-              if (feltételDisabled) { showHint('Csak Hajlékonyvértben, max MGT:10'); return; }
+              if (feltételDisabled) { showHint(`Csak posztó/fegyverkabát/bőr, max MGT:${harciAkroMaxMgt}`); return; }
               if (has) setSession(s => ({ ...s, [sessionKey]: !active }));
             }}>
             <span className="aktiv-field-label">{tf.név.length > 14 ? tf.név.replace('Harci ', 'H. ') : tf.név}</span>

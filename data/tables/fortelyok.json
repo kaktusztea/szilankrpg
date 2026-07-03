@@ -3444,8 +3444,8 @@
           "Az **Akrobatika** képzettséged `felét` hozzáadhatod bónuszként `TÉ/VÉ` értékeidhez."
         ],
         "követelmény": [
-          "Csak Hajlékonyvértben",
-          "Maximum MGT:10 értékű vértben"
+          "Csak posztó, fegyverkabát, bőr páncél struktúrában",
+          "Maximum MGT:5 értékű vértben"
         ],
         "követelmények": [
           {
@@ -3488,8 +3488,8 @@
           "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
         ],
         "követelmény": [
-          "Csak Hajlékonyvértben",
-          "Maximum MGT:10 értékű vértben"
+          "Csak posztó, fegyverkabát, bőr páncél struktúrában",
+          "Maximum MGT:5 értékű vértben"
         ],
         "követelmények": [
           {
@@ -3532,8 +3532,8 @@
           "Kibontakozás/Átsiklás manőverre +3 bónuszt kapsz."
         ],
         "követelmény": [
-          "Csak Hajlékonyvértben",
-          "Maximum MGT:10 értékű vértben"
+          "Csak posztó, fegyverkabát, bőr páncél struktúrában",
+          "Maximum MGT:5 értékű vértben"
         ],
         "követelmények": [
           {
