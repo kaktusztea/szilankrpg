@@ -17,7 +17,6 @@ export interface ElőnyHátrányMod { név: string; cél: string; mód: string; 
 export interface HatásPoolData {
   státuszPerElem: StátuszPerElem[];
   taktikaHatásPerElem: TaktikaHatásPerElem[];
-  hasHatásPool: boolean;
   fortélyEmlékeztetők: FortélyEmlékeztető[];
   helyzetFortélyok: Map<string, HelyzetFortélyEntry[]>;
   manőverBónuszok: ManőverBónusz[];
@@ -153,7 +152,6 @@ export function calcHatásPool(data: GameData, karakter: Karakter, session: Sess
 
   const státuszPerElem = calcStátuszHatások(session, data);
   const taktikaHatásPerElem = calcTaktikaHatások(session, data);
-  const hasHatásPool = taktikaHatásPerElem.length > 0;
 
   const eseményNév = (id: string) => {
     const m = id.match(/^(.+?)( \(.+\))$/);
@@ -164,5 +162,5 @@ export function calcHatásPool(data: GameData, karakter: Karakter, session: Sess
   const { fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods } = calcFortélyPool(karakter, data, aktívFeltételek);
   const alapesetekFiltered = calcAlapesetPool(data, karakter, session, aktívFeltételek, helyzetFortélyok);
 
-  return { státuszPerElem, taktikaHatásPerElem, hasHatásPool, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév };
+  return { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, előnyHátrányMods, alapesetekFiltered, eseményNév };
 }

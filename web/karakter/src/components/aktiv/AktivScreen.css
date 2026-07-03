@@ -111,10 +111,13 @@
 .aktiv-add-btn-hidden { visibility: hidden; }
 
 /* --- Taktika --- */
+.aktiv-taktika-item { align-items: flex-start; }
 .aktiv-taktika-row-clickable { cursor: pointer; }
 .aktiv-taktika-name { color: var(--color-taktika); }
 .aktiv-taktika-mods { color: var(--color-positive); }
-.aktiv-taktika-note { opacity: 0.7; }
+.aktiv-taktika-header { display: flex; align-items: center; justify-content: space-between; }
+.aktiv-taktika-hatas { font-size: 12px; opacity: 0.85; margin-top: 2px; }
+.aktiv-taktika-note { opacity: 0.7; font-size: 12px; margin-top: 2px; }
 .aktiv-extra-fok-dot { color: var(--color-fortely); margin-left: 6px; }
 
 /* --- Helyzetek --- */
