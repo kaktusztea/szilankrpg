@@ -74,7 +74,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivStatuszok.tsx       Státusz picker
   AktivFegyverSection.tsx  Fegyver/fogás/páncél toggle szekció
   AktivHatasPool.tsx       Hatás pool box
-  HatasPoolCalc.ts         Pool kalkuláció logika (4 pure fn + orchestrator)
+  aktiv-calc.ts            Aktív fül kalkuláció logika (4 pure fn + orchestrator)
   AktivHelpers.ts          Barrel re-export (taktika + helyzet helpers)
   taktika-helpers.ts       Taktika validáció, kombó, getTaktikaMods, getExtraFokok, formatFokMods
   helyzet-helpers.ts       Helyzet elérhetőség, min penge, infó szöveg

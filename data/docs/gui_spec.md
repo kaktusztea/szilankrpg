@@ -36,25 +36,58 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 --border-row: #3a3a5a
 --border-input: #555
 --card-bg: #2a2a3e
---color-section-blue: #42a5f5
---color-section-purple: #ce93d8
---color-section-orange: #e0a050
---color-section-cat: #7eb8da
---color-taktika: #90caf9
---color-helyzet: #42a5f5
+
+/* Entitás-paletta (szín-nyelv) */
 --color-fortely: #ce93d8
+--color-kepzettseg: #42a5f5
+--color-hatter: #e0a050
+--color-taktika: #90caf9
+--color-helyzet: #4dd0e1
 --color-statusz: #cd7c6f
+--color-manover: #b0bec5
+--color-misztikus: #9fa8da
 --color-positive: #66bb6a
+
+/* Háttér al-kategória (nem entitás-szín) */
+--color-hatter-cat: #7eb8da
+
+/* Legacy alias-ok (→ törlendő ha minden átállt) */
+--color-section-blue: var(--color-kepzettseg)
+--color-section-purple: var(--color-fortely)
+--color-section-orange: var(--color-hatter)
+--color-section-cat: var(--color-hatter-cat)
 ```
 
 ### CSS fájl struktúra (`src/styles/`)
 | Fájl | Tartalom |
 |------|----------|
 | `variables.css` | CSS változók, reset, globális elemek (body, #root, .md-link) |
-| `common.css` | Közös komponens stílusok (gombok, sorok, chipek, field-btn) |
+| `common.css` | Közös komponens stílusok (item-row, info-panel, item-delete, field-select, field-input, debug-box, picker, field-btn, hint, fmt-code) |
 | `layout.css` | App layout (header, tab bar, main wrapper, screen slide) |
 | `overlays.css` | Overlay/popup stílusok (.kep-prompt-overlay, picker-ek) |
 | `screens.css` | Screen-specifikus közös stílusok |
+
+### Közös CSS osztályok (`common.css`)
+| Osztály | Leírás |
+|---------|--------|
+| `.item-row` | Lista sor (fortély, képzettség, misztikus, harci helyzet, taktika, státusz stb.) — flex, align center, gap 8px |
+| `.item-row-new` | Új elem hozzáadás sor (opacity: 0.7) |
+| `.item-delete` | Törlés gomb (✕) a sor végén (kék, 18px, border nélküli) |
+| `.csoport-label` | Összecsukható szekció fejléc (17px bold, border-bottom, pointer) |
+| `.info-panel` | Sor alá kinyíló részletek panel (surface-alt bg, border) |
+| `.info-panel-row` | Info panel sor |
+| `.info-panel-label` | Info panel label (dim szín) |
+| `.info-panel-error` | Hibajelző info panel (piros) |
+| `.field-select` | Select mező (input-bg, border, 16px) |
+| `.field-input` | Input/textarea mező (input-bg, border, 16px) |
+| `.debug-box` | Részletes/debug info box (dashed border, 12px, szürke) |
+| `.debug-box-title` | Debug box cím (accent szín) |
+| `.picker-controls` | ±gombos érték választó layout (flex, gap 16px) |
+| `.picker-btn-lg` | Nagy picker gomb (44×44px, 22px font) |
+| `.picker-value-lg` | Nagy picker érték kijelző (28px, centered) |
+| `.fort-fok-btn` | Fok/szint kerek gomb (36×36px, border-radius 50%) |
+| `.he-hint` / `.fort-hint` | Sticky hint bar (bottom, warning háttér, 14px bold) |
+| `.he-hint-info` | Info típusú hint (success/zöld háttér) |
 
 ### Egyedi színek (nem CSS változók)
 | Szín | Kód | Használat |
@@ -62,7 +95,7 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 | Narancssárga | `#e0a050` | Kategória fejlécek (Manőver picker, Státusz picker, Karma hátterek) |
 | Lila | `#ce93d8` | Fortély nevek (Fortély bónusz pool) |
 | Halvány kék | `#90caf9` | Taktika nevek (Hatás pool) |
-| Sötétebb kék | `#42a5f5` | Harci helyzet nevek (Hatás pool) |
+| Türkiz | `#4dd0e1` | Harci helyzet nevek |
 | Arany | `#ffd54f` | (felszabadult, volt: körülmény csoport) |
 | Világoskék | `#7eb8da` | Háttér alkategória labelek (Származás, Jellem, stb.) |
 | Sötét box háttér | `#1a1a2e` | Hatás pool box háttér |
@@ -169,12 +202,12 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 |------|-------|--------|
 | Fegyver (Ügyesebb kéz) | field-btn dropdown | Karakter fegyver-példányai + "Puszta kéz" + Pajzs (ha van méret, idx:-2, zöld szín). Mindig látható. |
 | Fegyver (Gyengébb kéz) | field-btn dropdown | Csak ha Fegyverfogás ≠ Egyfegyveres. Kétkezesnél: fegyverek (pengelimit szűrt, hárítók+pajzs+puszta kéz kiszűrve). Hárítónál: hárítófegyverek. Pajzsnál: disabled "Pajzs". |
-| Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély. Pl. "H. akrobatika" |
+| Session toggle fortélyok | field-btn toggle(k) | Generikus: yaml `session_toggle: true` → gomb. Disabled ha nincs fortély VAGY feltétel nem teljesül. Pl. "H. akrobatika" (páncél: posztó/fegyverkabát/bőr, max MGT:5, Akrobatika képzettség követelmény) |
 | Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Disabled logika: puszta kéz, kétkezes fegyver, nincs pajzs/hárító, + aktív helyzetek `tiltott_fegyverfogások` mezője (§38.4). Helyzet hozzáadáskor tiltott fogás → auto-reset Egyfegyveresre. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 | Hatás pool box | info szekció | Fortély bónuszok + Alapesetek (accordion) |
-| Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: kétsoros (név+fok bold, módosítók szürkén) |
-| Manőver | aktiv-label fejléc + field-btn + overlay picker | Általános/Belharci/Lovas kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
+| Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: többsoros item-row (fejléc: név+fok bold + mods ✔ + ✕ gomb; alatta: hatás sor inline; opcionális megjegyzés sor) |
+| Manőver | aktiv h3 fejléc + field-btn + overlay picker | Általános/Belharci/Lovas kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
 | Harci helyzetek | overlay picker + chip | 3 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. "Sérült" auto-kezelt: szürkítve a pickerben ("Sérült (auto)" label), chip locked (nincs ✕, fok nem kattintható). |
 | Narratív Előny/Hátrányok | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
@@ -193,9 +226,9 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
   - Ha a fortély törlődik/csökken és az aktív taktika fok > megengedett max → taktika automatikusan kikapcsol
 
 ### Aktív fül szekciók (a Hatás pool box-on kívül)
-1. **Taktikák**: per-taktika sorok. Név halvány kék (`#90caf9`), módosítók zöld (`#66bb6a`) + ✔ jel a végén (beszámított), megjegyzés fehér. Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
-2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#42a5f5`), utána az `infó` mező szövege (fehér). Ha van 0.fok alapeset aminek feltétele ez a helyzet: " Alapeset: {hatástext}" hozzáfűzve. Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva: `→ Fortély (fok): hatástext ✔` (zöld ha aktív, szürke ha nem).
-3. **Manőver**: aktiv-label fejléc, field-btn. Manőver cím világos szürke (`#bbb`). Alatta: Nehézség+fázisok sor, hatás sor.
+1. **Taktikák**: per-taktika sorok (`.item-row`). Kétsoros layout: fejléc sor (név+fok bold halvány kék `#90caf9`, módosítók zöld `#66bb6a` + ✔, jobb szélen ✕ gomb) + alatta hatás sor (inline, az adott taktika hatásai kiírva). Ha van `megjegyzés`: harmadik sor (dim szín). Formátum: `Név (fok): TÉ: +X, VÉ: -Y ✔ • megjegyzés`
+2. **Harci helyzetek**: per-helyzet sorok. Név sötétebb kék (`#4dd0e1`), utána az `infó` mező szövege (fehér). Ha van 0.fok alapeset aminek feltétele ez a helyzet: " Alapeset: {hatástext}" hozzáfűzve. Ha van fortély aminek feltétele `harci_helyzet:{id}` → alatta indentálva: `→ Fortély (fok): hatástext ✔` (zöld ha aktív, szürke ha nem).
+3. **Manőver**: `<h3>` fejléc, field-btn. Manőver cím világos szürke (`#bbb`). Alatta: Nehézség+fázisok sor, hatás sor.
 4. **Státuszok**: per-elem megjelenítés (nem aggregált). Státusz hatás: `Név (fok) alcím` gesztenye/bordó (`#cd7c6f`), félkövér, alatta soronként fehér hatás sorok. Szöveges operátor: csak `megjegyzés` szöveg (cél nem jelenik meg).
 5. **Narratív Előny/Hátrányok**: KM által hozzáadott szöveges + Előny/Hátrány értékek.
 
@@ -210,6 +243,8 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 - `.taktika-chip-name`: halvány kék (`#90caf9`)
 - Overlay picker: `.aktiv-picker` (görgethető, 80vh max), `.aktiv-picker-item` kártyák
 - `.manover-category-label`: narancssárga kategória fejléc
+- Szekció fejlécek: `<h3>` elem (Taktikák, Harci helyzetek, Státuszok, Manőver, Narratív)
+- `.he-hint`: sticky hint bar alul, `white-space: pre-line` (többsoros hint támogatás)
 
 ### Viselkedés
 - Minden módosítás azonnal frissíti a session-t → Harc fül értékei reagálnak
@@ -231,7 +266,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | `StatuszPickerOverlay.tsx` | Státusz választó overlay (kategóriák + fok) |
 | `AktivNarrativ.tsx` | Narratív előny/hátrány kezelés |
 | `AktivHatasPool.tsx` | Hatás pool box (fortély bónuszok + alapesetek accordion) |
-| `HatasPoolCalc.ts` | Hatás pool kalkuláció logika |
+| `aktiv-calc.ts` | Aktív fül kalkuláció logika (státusz/taktika hatások, fortély emlékeztetők, helyzet kötések, manőver bónuszok, alapesetek) |
 | `AktivHelpers.ts` | Segédfüggvények (kombó szűrés, megkötés ellenőrzés) |
 | `PickerOverlay.tsx` | Generikus picker overlay wrapper (taktika, helyzet, manőver) |
 | `FegyverSelectField.tsx` | Fegyver select field-btn komponens (közös Ügyesebb/Gyengébb kéz) |
@@ -362,7 +397,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
     - Mindkettő kiválasztva → azonnal bezárul. Nincs OK/Mégse.
   - Mellé koppintás (overlay háttér) = cancel mindkét popup-nál
 - **Manőver Pont**: Manőver Alap + aktuális/max MP + gombok (+1, -1). Default: max.
-- **Részletes értékek** (ÉP tábla alatt, dashed border box, 12px, szürke):
+- **Részletes értékek** (ÉP tábla alatt, `.debug-box` stílus: dashed border, 12px, szürke):
   - Aktív fegyver (kétkezes összesítő / fogás sor / egyfegyveres ügyesebb kéz) harcérték bontása
   - Név: fegyver név + [kategória]
   - Támadás/kör: harcmodor szint (név), gyorsaság, sebesség, fortély harckeret, végső harckeret
@@ -393,7 +428,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 
 **CM szerkesztő** (alul, "Részletes értékek" box mellett): −/+ gombok, max limit
 
-**Részletes értékek** (alul, debug/info): CÉ összetevők bontása
+**Részletes értékek** (alul, `.debug-box` stílus): CÉ összetevők bontása
 
 ### Game mód
 
@@ -519,7 +554,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
   - Stílus: `.kp-info-popup` (max-width: 320px), `.kp-info-section` (border-bottom elválasztó), `.kp-info-val` (monospace, bold, jobbra igazított), `.kp-info-pos`/`.kp-info-neg` (zöld/piros)
 
 ### Primer KP bontás doboz (Tul/Képz fül alja)
-Részletes kategóriánkénti KP bontás: dashed border, szürke szín, 12px betű.
+Részletes kategóriánkénti KP bontás: `.debug-box` stílus (dashed border, szürke szín, 12px betű).
 - HM + CM, Harcmodor képzettségek, Misztikus képzettségek, Primer világi képzettségek, Harci fortélyok, Misztikus fortélyok
 - Per-item részletezés behúzva (`· név (szint.sz): X KP`)
 - Összeg sor: „Össz primer: X KP" (border-top elválasztó)
@@ -536,7 +571,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
 - Game módban: üres csoportok elrejtve
 - Kompakt lista: név + fok pöttyök (●/○). Mindig 3 hely, balról jobbra töltődik (filled = felvett fok), maxfok feletti helyek láthatatlanok. Max fok elérve: zöld szín.
-  - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok
+  - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok, `.nyelvismeret-fok` class
 - Ingyenes keret alatti többszörös fortélyoknál halvány zöld ● pötty a név mellett (`fort-ingyenes-dot` class)
 - ✕ törlés gomb minden fortélynál (szerkesztő módban)
 - Csoportonként 1 db dropdown (szerkesztő módban): új fortély felvétele
@@ -592,7 +627,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 - Escape: popup bezárás
 
 ### Viselkedés Game módban
-- Koppintás: lenyílik inline accordion info panel:
+- Koppintás: lenyílik inline accordion info panel (`.info-panel`):
   - Leírás (dőlt)
   - Hatás (aktuális fok hatás szövege)
   - Követelmény (ha van)
@@ -600,7 +635,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 
 ### Követelmény ellenőrzés
 - Gépileg ellenőrizhető típusok: `képzettség` (szint), `fortély` (fok)
-- Nem teljesülő követelmény: piros bal border (`.fort-kov-hiba`) + automatikus piros info sor ("⚠ Követelmény: X ≥ Y")
+- Nem teljesülő követelmény: piros bal border (`.fort-kov-hiba`) + automatikus piros info sor (`.info-panel-error`, "⚠ Követelmény: X ≥ Y")
 - OR lista (név tömbben): bármelyik egyezés elegendő
 - Harcmodor összevonás: ha a követelmény lista összes eleme harcmodor → "Harcmodor ≥ X" (rövidített). Mesterfegyvernél fegyver-specifikus: "Harcmodor - Kardvívás ≥ X" (fegyver kategória → harcmodor lookup)
 - Többszörös fortély követelmény (pl. Nyelvismeret): bármelyik példány teljesítheti
@@ -629,7 +664,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
 ### Harci képzettségek (szerkeszthető)
 - Összes harci képzettség: harcmodor többszörösök (Közelharc, Kardvívás, stb.) + önálló (Alakzatharc, Harci láz)
 - Display name: közelharci harcmodorok → "Harcmodor: X", távharci → "Táv. harcmodor: X", egyéb → csak a név
-- `.kep-row` stílusú box-ok (azonos a Tul/Képz fülön lévő sorokkal): név (flex:1) + ✕ + szint
+- `.item-row` stílusú box-ok (azonos a Tul/Képz fülön lévő sorokkal): név (flex:1) + ✕ + szint
 - Kattintás a sorra: szint picker popup (grid gombok 1-15, mint Tul/Képz fülön)
 - szint > tsz: piros (`kep-over`)
 - ✕: megerősítő popup
@@ -647,6 +682,7 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
 - Mesterfegyver szinkron: MF fok módosítás → `syncMfFortelyok` frissíti a fortélyok tömböt
 
 ### Páncél
+- Chip sor (ha van alap struktúra kiválasztva): `SFÉ: X/Y` | `MGT: Z` (kattintható → info hint: MGT bontás formula, zöld `.he-hint-info`, 2s) | `Rongálódás: N` (`.he-field-btn` stílus, kattintás → popup)
 - Mezők (`he-field-btn` stílus, tap → overlay popup):
   - Struktúra: lista (konstansok.páncél_struktúrák) + "— nincs —"
   - Merevvértviselet fok: mindig megjelenik (lila keret, `.he-field-fortely`), popup 0–3
@@ -699,7 +735,7 @@ Misztikus képzettségek + Aura értékek. A misztikus csoport átkerült a Tul/
 
 ### Misztikus fortélyok szekció (legalul)
 - Fortélyok fülről ide átkerült "misztikus" csoport
-- `.kep-row` stílusú sorok: név + pöttyök (fort-fok-dots, mint Fortélyok fülön) + ✕
+- `.item-row` stílusú sorok: név + pöttyök (fort-fok-dots, mint Fortélyok fülön) + ✕
 - Kattintás sorra: fok picker popup (ha maxfok > 1), "1 fok a maximum" hint (ha maxfok = 1)
 - ✕: megerősítő popup ("Fortély törlése")
 - Felvétel: dropdown → `FortelyFelvetel.tsx` wizard (többszörös/kiérdemelt/fok lépések)
@@ -738,7 +774,7 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 ### Stílus
 - `.hatter-tag`: lekerekített pill (border-radius: 12px), sötét háttér, szürke
-- `.hatter-tag.active`: zöld háttér+keret (leíró) / narancs háttér+keret (karma)
+- `.hatter-tag.active`: zöld háttér+keret (leíró) / narancs háttér+keret (karma) — egységes osztály, nincs `.karma` szeparáció
 
 ### Komponens struktúra (components/hatterek/)
 | Komponens | Felelősség |
@@ -787,8 +823,8 @@ Játék session bejegyzések naplója.
 
 ### Szerkesztő form (inline, accordion-ban)
 - Container: `.naplo-panel`
-- Mezők: `.naplo-input` / `.naplo-textarea`
-- Dátum sor: `.naplo-form-row` (input `.naplo-input-short` + `.naplo-btn` "Ma")
+- Mezők: `.field-input` (közös input stílus) + screen-specifikus `.naplo-input-short` / `.naplo-textarea`
+- Dátum sor: `.naplo-form-row` (input `.field-input .naplo-input-short` + `.naplo-btn` "Ma")
 - Gombok sor: `.naplo-form-btns` (`.naplo-btn-save` + `.naplo-btn-cancel`)
 
 ### Új bejegyzés form
@@ -858,7 +894,7 @@ Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
 - Csak szomszédos screen-ek renderelődnek: `Math.abs(i - activeTab) <= 1`
 - Swipe gesztus: `onTouchStart`/`onTouchEnd` a `<main>` elemen, **invertált irány** (jobbra swipe = nagyobb index)
 - **Swipe isolation**: `handleTouchStart` ellenőrzi `.closest('.kep-prompt-overlay')` → ha overlay nyitva, swipe letiltva
-- **Kep-row védelem**: `onTouchStart/End stopPropagation` a kep-row elemeken (szerkesztő módban)
+- **Item-row védelem**: `onTouchStart/End stopPropagation` a item-row elemeken (szerkesztő módban)
 - **Screen slide padding**: 12px
 
 ---
@@ -1026,13 +1062,16 @@ Egységes szín kódrendszer a webapp-ban — a szín vizuálisan jelzi az elem 
 | Zöld | `#4caf50` / `var(--success)` | Aktív elem kiemelés, értékek | aktív fegyver keret, szorzó picker kijelölés |
 | Lila | `#ab47bc` | Fortélyhoz kötött elem | MF fok gomb, Merevvértviselet gomb keret |
 | Világoskék | `#90caf9` | Összevont/kombinált harcérték | Kétkezes harc összesítő sor, fegyverfogás sor, taktika chip név |
+| Türkiz | `#4dd0e1` | Harci helyzet | helyzet chip nevek |
 | Narancs | `#ffa726` | Figyelmeztetés, VÉ normál | távharc VÉ szín |
 | Piros | `#e53935` | Hiba, lehetetlen, túllépés | VÉ-CÉ>20, MF követelmény hiba, HM overflow |
 | Arany | `#ffd54f` | — (felszabadult, volt: körülmény csoport) | — |
 | Szürke | `#888` / `#aaa` | Dimmed, read-only, infó | szekció fejléc, részletes értékek |
-| Kék | `#42a5f5` | Képzettség csoport label | Tul/Képz, Misztikus, Harcértékek szekció címek |
-| Világos lila | `#ce93d8` | Fortély csoport label + Hatás pool fortély név | Fortélyok fül csoportok, fortély bónusz pool |
-| Bordó | `#cd7c6f` | Státusz hatások | státusz név + alcím |
+| Kék | `#42a5f5` / `var(--color-kepzettseg)` | Képzettség csoport label | Tul/Képz, Misztikus, Harcértékek szekció címek |
+| Világos lila | `#ce93d8` / `var(--color-fortely)` | Fortély csoport label + Hatás pool fortély név | Fortélyok fül csoportok, fortély bónusz pool |
+| Bordó | `#cd7c6f` / `var(--color-statusz)` | Státusz hatások | státusz név + alcím |
+| Kékes szürke | `#b0bec5` / `var(--color-manover)` | Manőver elemek | manőver bónusz sorok |
+| Halványlila | `#9fa8da` / `var(--color-misztikus)` | Misztikus elemek | misztikus szekció |
 | Ezüst | `#b0bec5` | Aktív tab indikátor | tab karika keret |
 
 ---

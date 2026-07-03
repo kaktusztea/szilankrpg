@@ -1668,9 +1668,9 @@ Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista é
 | Gladiátor közönsége | 1 | háttér | Gladiátor | — | + Harcmodor ≥ 6 |
 | Harc helyhez kötve | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 3 | |
 | Harc helyhez kötve | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
-| Harci akrobatika | 1 | képzettség | Akrobatika | 6 | Csak hajlékony vértben, MGT ≤ 10 |
-| Harci akrobatika | 2 | képzettség | Akrobatika | 9 | Csak hajlékony vértben, MGT ≤ 10 |
-| Harci akrobatika | 3 | képzettség | Akrobatika | 12 | Csak hajlékony vértben, MGT ≤ 10 |
+| Harci akrobatika | 1 | képzettség | Akrobatika | 6 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
+| Harci akrobatika | 2 | képzettség | Akrobatika | 9 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
+| Harci akrobatika | 3 | képzettség | Akrobatika | 12 | Csak posztó/fegyverkabát/bőr struktúra, MGT ≤ 5 |
 | Harci anatómia | 1 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 6 | |
 | Harci anatómia | 2 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 9 | + Élettan fortély ≥ 1 |
 | Harci anatómia | 3 | képzettség | [Közelharc, Kardvívás, Rombolás, Lándzsavívás, Ostorharc] | 12 | + Élettan fortély ≥ 1 |
