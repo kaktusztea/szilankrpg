@@ -29,6 +29,3 @@
 .hatter-tag-disabled { opacity: 0.4; cursor: not-allowed; }
 
 
-/* --- Popup --- */
-.hatter-popup-label { font-weight: bold; margin-bottom: 8px; display: block; }
-.hatter-popup-btns { margin-top: 10px; }

@@ -11,32 +11,6 @@
 
 .aktiv-screen h2 { margin: 0 0 12px; }
 
-/* --- Sorok --- */
-.aktiv-row {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 8px 0;
-  border-bottom: 1px solid var(--border-light);
-}
-
-.aktiv-label { font-size: 15px; font-weight: bold; color: var(--text); }
-.aktiv-value { font-size: 16px; font-weight: bold; color: var(--success); }
-
-/* --- Select --- */
-.aktiv-select {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  color: var(--text);
-  padding: 6px 10px;
-  font-size: 14px;
-}
-
-/* --- Toggle → common.css (.aktiv-toggle) --- */
-
-/* --- Fegyver sor → áthelyezve HarcScreen.css-be (harc-fegyver-row) --- */
-
 /* --- Szekciók --- */
 .aktiv-section { padding: 10px 0; }
 .aktiv-section .aktiv-label { display: block; margin-bottom: 6px; }
@@ -46,15 +20,6 @@
 
 /* --- Chip-ek --- */
 .aktiv-chip-x { background: none; border: none; color: var(--error); font-size: 14px; cursor: pointer; padding: 0 2px; }
-
-.aktiv-fok-select {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 3px;
-  color: var(--text);
-  padding: 2px 4px;
-  font-size: 13px;
-}
 
 .taktika-chip-mods { font-size: 12px; color: #aaa; margin-top: 1px; }
 
@@ -66,14 +31,6 @@
   padding: 8px 10px;
   margin-bottom: 12px;
 }
-
-.hatas-pool-section {
-  margin-bottom: 10px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid var(--border);
-}
-
-.hatas-pool-section:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: none; }
 
 .hatas-pool-title {
   font-size: 12px;
@@ -100,8 +57,6 @@
 .hatas-pool-item .fortely-nev { color: var(--color-fortely); }
 
 /* --- Narratív módosítók --- */
-.narrativ-add-row { display: flex; gap: 4px; margin-top: 6px; }
-
 .narrativ-input {
   flex: 1;
   background: var(--input-bg);
@@ -110,16 +65,6 @@
   color: var(--text);
   padding: 6px 8px;
   font-size: 14px;
-}
-
-.narrativ-select {
-  background: var(--input-bg);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  color: var(--text);
-  padding: 6px 4px;
-  font-size: 13px;
-  width: 90px;
 }
 
 .narrativ-add-btn {
@@ -155,7 +100,6 @@
 
 /* --- Picker overlay (base → common.css, itt csak aktív-specifikus) --- */
 .aktiv-picker-item-hatas { font-size: 12px; color: #ccc; font-style: italic; }
-.aktiv-picker-info { display: flex; flex-direction: column; gap: 2px; font-size: 12px; color: #aaa; padding: 2px 8px; }
 .aktiv-picker-item-disabled-inline { opacity: 0.4; pointer-events: none; }
 .aktiv-picker-item-active-accent { border-color: var(--accent); }
 
@@ -205,7 +149,5 @@
 /* --- Helpers --- */
 .aktiv-flex-col { display: flex; flex-direction: column; }
 .aktiv-flex-1 { flex: 1; }
-.aktiv-strong-pos { color: var(--color-positive); }
-.aktiv-strong-neg { color: #e53935; }
 .aktiv-strong-helyzet { color: var(--color-helyzet); }
 .aktiv-hint-disabled { font-size: 11px; color: #888; }

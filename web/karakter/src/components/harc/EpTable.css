@@ -75,21 +75,6 @@
 
 .ep-cell.filled { color: #fff; }
 
-/* --- Gombok --- */
-.ep-buttons { display: flex; gap: 6px; margin-top: 8px; }
-
-.ep-buttons button {
-  padding: 6px 12px;
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 15px;
-  background: var(--input-bg);
-  color: var(--text);
-}
-
-.ep-buttons button:disabled { opacity: 0.4; cursor: default; }
-
 .btn-seb { border-color: #c0392b !important; }
 .btn-heal { border-color: #27ae60 !important; }
 .btn-reset { border-color: #666 !important; }
@@ -136,21 +121,3 @@
 
 .btn-confirm { background: var(--accent) !important; color: #fff !important; border-color: var(--accent) !important; }
 .ep-expand-btn { text-align: center; color: var(--text-dim); font-size: 28px; cursor: pointer; padding: 2px 0; }
-
-/* --- ÉP szegmens sáv --- */
-.ep-bar { display: flex; gap: 2px; margin: 6px 0; }
-
-.ep-segment {
-  flex: 1;
-  text-align: center;
-  padding: 6px 4px;
-  border-radius: 3px;
-  font-size: 17px;
-  font-weight: bold;
-}
-
-.ep-segment .te-lev { font-size: 17px; font-weight: normal; margin-top: 2px; opacity: 0.9; }
-.ep-segment.s1 { background: #4caf50; color: #000; }
-.ep-segment.s2 { background: #ff9800; color: #000; }
-.ep-segment.s3 { background: #f44336; color: #fff; }
-.ep-segment.s4 { background: #880000; color: #fff; }
