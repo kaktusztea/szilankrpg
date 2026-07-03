@@ -108,6 +108,7 @@
 .he-pancel-chip {
   font-size: 12px;
   font-weight: bold;
+  font-family: inherit;
   background: var(--primary);
   border: 1px solid var(--border-input);
   border-radius: 10px;

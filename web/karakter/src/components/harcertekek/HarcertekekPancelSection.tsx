@@ -1,5 +1,6 @@
 import type { Karakter, PancelPeldany } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
+import type { HintType } from './hooks/useHint';
 import { evaluate, buildContext } from '../../engine/reactive';
 import { buildPancelLookups } from '../harc/pancel-calc';
 
@@ -10,6 +11,7 @@ interface Props {
   merevvertFok: number;
   onPopup: (popup: string) => void;
   onIdeaTarget: () => void;
+  showHint: (msg: string, type?: HintType, duration?: number) => void;
 }
 
 /** Evaluate páncél rules via reactive engine */
@@ -42,7 +44,7 @@ function calcPancelValues(k: Karakter, data: GameData): { sfé_fizikai: number; 
   };
 }
 
-export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, onPopup, onIdeaTarget }: Props) {
+export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, onPopup, onIdeaTarget, showHint }: Props) {
   const { konstansok } = data;
   const struktúrák = konstansok.páncél_struktúrák;
   const aktStruktúra = struktúrák.find((s: any) => s.struktúra === k.páncél.alap);
@@ -60,7 +62,12 @@ export function PancelSection({ data, karakter: k, setKarakter, merevvertFok, on
       {hasAlap && (
         <div className="he-pancel-chips">
           <span className="he-pancel-chip">SFÉ: {sfé_fizikai}/{sfé_energia}</span>
-          <span className="he-pancel-chip">MGT: {mgt}</span>
+          <button className="he-pancel-chip he-pancel-chip-btn" onClick={() => {
+            const erő = k.tulajdonságok.erő;
+            const nyers = mgt + erő;
+            const erőTag = erő > 0 ? `- ${erő} (Erő bónusz)` : erő < 0 ? `+ ${-erő} (Erő büntetés)` : '';
+            showHint(`MGT: ${mgt} = ${nyers}(páncél)${erőTag ? ' ' + erőTag : ''}`, 'info', 2000);
+          }}>MGT: {mgt}</button>
           <button className="he-pancel-chip he-pancel-chip-btn" onClick={() => onPopup('rongálódás')}>Rongálódás: {k.páncél.rongálódás}</button>
         </div>
       )}

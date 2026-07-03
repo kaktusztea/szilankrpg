@@ -1,14 +1,18 @@
 import { useState, useRef, useCallback } from 'react';
 
-export function useHint(duration = 3000) {
+export type HintType = 'warning' | 'info';
+
+export function useHint(defaultDuration = 3000) {
   const [hint, setHint] = useState('');
+  const [hintType, setHintType] = useState<HintType>('warning');
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  const showHint = useCallback((msg: string) => {
+  const showHint = useCallback((msg: string, type: HintType = 'warning', duration?: number) => {
     setHint(msg);
+    setHintType(type);
     if (timer.current) clearTimeout(timer.current);
-    timer.current = setTimeout(() => setHint(''), duration);
-  }, [duration]);
+    timer.current = setTimeout(() => setHint(''), duration ?? defaultDuration);
+  }, [defaultDuration]);
 
-  return { hint, showHint };
+  return { hint, hintType, showHint };
 }

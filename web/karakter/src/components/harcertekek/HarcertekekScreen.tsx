@@ -16,7 +16,7 @@ interface Props {
 }
 
 export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képzettségek, setKépzettségek, gameMode }: Props) {
-  const { hint, showHint } = useHint();
+  const { hint, hintType, showHint } = useHint();
 
   // Undo-wrapping setKarakter for sections that don't use explicit patches (fegyverek, páncél)
   const undoSetKarakter: React.Dispatch<React.SetStateAction<Karakter | null>> = (updater) => {
@@ -56,6 +56,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
         merevvertFok={merevvertFok}
         onPopup={popup.setPancelPopup}
         onIdeaTarget={() => popup.setIdeaTarget({ type: 'páncél', idx: 0 })}
+        showHint={showHint}
       />
 
       <PajzsSection
@@ -72,7 +73,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
         removeFegyver={mutators.removeFegyver} setKépzettségek={setKépzettségek}
       />
 
-      {hint && <div className="he-hint">{hint}</div>}
+      {hint && <div className={`he-hint${hintType === 'info' ? ' he-hint-info' : ''}`}>{hint}</div>}
     </div>
   );
 }
