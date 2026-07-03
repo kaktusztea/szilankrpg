@@ -57,14 +57,14 @@ export function AktivTaktikak({ data, karakter, session, setSession, pushUndo, t
   return (
     <>
       <div className="aktiv-section aktiv-section-sm">
-        <span className="aktiv-label">Taktikák
+        <h3>Taktikák
           <button className="aktiv-add-btn aktiv-add-btn-sm" disabled={allDisabled} onClick={() => setShowPicker(true)}>+</button>
-        </span>
+        </h3>
         {session.aktív_taktikák.map((t, i) => {
           const def = data.taktikak.find(d => d.név === t.név);
           const mods = getTaktikaMods(t, data);
           return (
-            <div key={i} className={`kep-row${def?.fokozatos ? ' aktiv-taktika-row-clickable' : ''}`}
+            <div key={i} className={`item-row${def?.fokozatos ? ' aktiv-taktika-row-clickable' : ''}`}
               onClick={() => { if (def?.fokozatos) { setFokválasztó(t.név); setShowPicker(true); } }}>
               <span className="aktiv-flex-1">
                 <strong className="aktiv-taktika-name">{t.név}{t.fok != null ? ` (${t.fok})` : ''}:</strong>

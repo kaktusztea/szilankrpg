@@ -22,10 +22,10 @@ export function AktivManover({ data, session, setSession, manőverBónuszok }: P
   return (
     <>
       <div className="aktiv-section">
-        <span className="aktiv-label">Manőver
+        <h3>Manőver
           <button className={`aktiv-add-btn aktiv-add-btn-sm${session.aktív_manőver ? ' aktiv-add-btn-hidden' : ''}`}
             onClick={() => setShowPicker(true)}>+</button>
-        </span>
+        </h3>
         {session.aktív_manőver && (() => {
           const m = data.manoverek.find(d => d.név === session.aktív_manőver);
           if (!m) return null;

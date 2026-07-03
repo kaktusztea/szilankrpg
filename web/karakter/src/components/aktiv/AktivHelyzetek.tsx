@@ -42,11 +42,11 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
   return (
     <>
       <div className="aktiv-section aktiv-section-noborder">
-        <span className="aktiv-label">Harci helyzetek
+        <h3>Harci helyzetek
           <button className="aktiv-add-btn aktiv-add-btn-sm"
             disabled={groups.every(g => g.items.length === 0)}
             onClick={() => setShowPicker(true)}>+</button>
-        </span>
+        </h3>
         {session.aktív_helyzetek.map((h, i) => {
           const def = data.harciHelyzetek.find(d => d.név === h);
           if (!def) return null;
@@ -67,7 +67,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
                 }}>✕</button>
               </div>
               {kötöttFortélyok.map((kf, j) => (
-                <div key={j} className={`kep-row aktiv-helyzet-fortely-sor ${kf.fok === 0 ? 'aktiv-helyzet-alapeset' : kf.aktív ? 'aktiv-helyzet-aktiv' : 'aktiv-helyzet-inaktiv'}`}>
+                <div key={j} className={`item-row aktiv-helyzet-fortely-sor ${kf.fok === 0 ? 'aktiv-helyzet-alapeset' : kf.aktív ? 'aktiv-helyzet-aktiv' : 'aktiv-helyzet-inaktiv'}`}>
                   → {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}
                 </div>
               ))}

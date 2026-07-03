@@ -32,10 +32,10 @@ export function AktivNarrativ({ session, setSession, pushUndo }: Props) {
   return (
     <>
       <div className="aktiv-section aktiv-section-sm">
-        <span className="aktiv-label">Narratív Előny/Hátrányok
+        <h3>Narratív Előny/Hátrányok
           <button className="aktiv-add-btn aktiv-add-btn-sm"
             onClick={() => { setÉrték(undefined); setShowPopup(true); }}>+</button>
-        </span>
+        </h3>
         {session.narratív_módosítók.map((nm, i) => (
           <div key={i} className="item-row">
             <span className="aktiv-flex-1">

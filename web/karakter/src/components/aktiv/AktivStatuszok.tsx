@@ -20,11 +20,11 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
   return (
     <>
       <div className="aktiv-section aktiv-section-statuszok">
-        <span className="aktiv-label">Státuszok
+        <h3>Státuszok
           <button className="aktiv-add-btn aktiv-add-btn-sm"
             disabled={data.statuszok.every(s => s.többszörös || session.aktív_státuszok.some(st => st.startsWith(s.név + ' (')))}
             onClick={() => setShowPicker(true)}>+</button>
-        </span>
+        </h3>
         {session.aktív_státuszok.map((st, i) => {
           const match = st.match(/^(.+) \((\d+)\)$/);
           const stNév = match?.[1] ?? st;
@@ -37,7 +37,7 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
           const perElem = státuszPerElem.find(s => s.név === stNév || s.név === `${stNév} (${stFok})`);
           const clickable = !locked && maxFok > 1;
           return (
-            <div key={i} className={`kep-row${clickable ? ' aktiv-statusz-row-clickable' : ''}`} onClick={() => {
+            <div key={i} className={`item-row${clickable ? ' aktiv-statusz-row-clickable' : ''}`} onClick={() => {
               if (!clickable) return;
               const újFok = (stFok % maxFok) + 1;
               setSession(s => ({ ...s, aktív_státuszok: s.aktív_státuszok.map((v, j) => j === i ? `${stNév} (${újFok})` : v) }));

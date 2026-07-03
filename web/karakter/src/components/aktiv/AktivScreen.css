@@ -13,7 +13,7 @@
 
 /* --- Szekciók --- */
 .aktiv-section { padding: 10px 0; }
-.aktiv-section .aktiv-label { display: block; margin-bottom: 6px; }
+.aktiv-section h3 { margin: 0 0 6px; font-size: 15px; color: var(--text); }
 .aktiv-section-sm { font-size: 13px; }
 .aktiv-section-noborder { border-bottom: none; font-size: 13px; }
 .aktiv-section-statuszok { margin-top: 16px; border-top: 1px solid var(--border-light); border-bottom: none; padding-top: 16px; font-size: 13px; }
