@@ -21,7 +21,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🌟**Hatás**:
 - Mintha telihold fényénél tájékozódnál vaksötétben.
-- [Sötét: Félhomály](../065_01_03_negativ_helyzetek.md#sötétben---félhomály) módosítóival harcolhatsz.
+- A harc a [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival folyik számodra.
 
 <br />
 
@@ -29,7 +29,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 2.fok**, mint felvehető Érzék-fortély
 
-🌟 Harcban nem jár számodra levonás. Mintha szürkületkor tájékozódnál. Vaksötétben is tudsz olvasni, de csak bogarászva, mintha egy gyufa fényénél, lassan forgatnád a lapokat. Türelemjáték.
+🌟 [Vakharcban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás. Mintha szürkületkor tájékozódnál. Vaksötétben is tudsz olvasni, de csak bogarászva, mintha egy gyufa fényénél, lassan forgatnád a lapokat. Türelemjáték.
 
 <br />
 
@@ -37,7 +37,7 @@ Emberi látás, teljes, holdtalan sötétben gyakorlatilag vakság, nem látsz s
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Ultralátás - 3.fok**, mint felvehető Érzék-fortély
 
-🌟 Harcban nem jár számodra levonás. Tökéletesen látsz, mintha nappal lenne, a látótávolság is ugyanaz. Úgy tudsz olvasni, mint napvilágnál.
+🌟 [Vakharcban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás. Tökéletesen látsz, mintha nappal lenne, a látótávolság is ugyanaz. Úgy tudsz olvasni, mint napvilágnál.
 
 ---
 ### Egyedi jellemzők

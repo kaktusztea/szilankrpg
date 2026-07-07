@@ -14,7 +14,7 @@ Emberi látás, sötétben nem látsz hőképeket.
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 1.fok**, mint felvehető Érzék-fortély
 
-🌟 Mintha félhomályban tájékozódnál. A harc a [Sötét: Félhomály](../065_01_03_negativ_helyzetek.md#sötétben---félhomály) módosítóival folyik számodra.
+🌟 Mintha félhomályban tájékozódnál. A harc a [Vakharc - félhomályban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) módosítóival folyik számodra.
 
 <br />
 
@@ -22,11 +22,12 @@ Emberi látás, sötétben nem látsz hőképeket.
 
 🔒 Kapcsolódó [Faj Háttér](../021_faj_hatterek.md) amelynél szerepel legalább az **Infralátás - 2.fok**, mint felvehető Érzék-fortély
 
-🌟 Ha van a hőképben eltérés, látod a sötétben - legyenek akár élőlények, akár tárgyak. Amennyiben ez teljesül, a harcban nem jár számodra levonás.
+🌟 Ha van a hőképben eltérés, látod a sötétben - legyenek akár élőlények, akár tárgyak. Amennyiben ez teljesül, [Vakharcban](../065_01_03_negativ_helyzetek.md#vakharc---félhomályban) nem jár számodra levonás.
 
 ---
 ### Egyedi jellemzők
 
+- Olvasásra nem alkalmas
 - A távolság "használhatóságát" továbbra is az **Észlelés** képzettség határozza meg (mennyire folynak össze a hőfoltok).
 - A látótávolságot infrában a [Fejlett látás](emberentuli_latas.md) Érzék-fortély is befolyásolja, ezért látnak az elfek a legtávolabb hőképek alapján.
 - `2.fokon` sem adnak értékelhető képet egy föld alatti kripta hideg kőfalai

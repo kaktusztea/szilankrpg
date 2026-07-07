@@ -75,7 +75,7 @@ Csak meg akarsz érinteni valakit harc közben. A pontos helyet **nem** definiá
 
 ❌ Más taktikával együtt
 
-❌ [Láthatatlan](065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan) ellenfél ellen
+❌ [Láthatatlan](065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen) ellenfél ellen
 
 ❌ [Pengehátrány](065_01_04_fegyver_harci_helyzetek.md#pengehátrány) harci helyzetből **NEM** alkalmazható.
 

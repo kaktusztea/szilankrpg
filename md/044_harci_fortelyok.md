@@ -39,7 +39,7 @@
 - [Természetes fegyver](fortelyok.harci/termeszetes_fegyver.md)
 - [Természetes páncél](fortelyok.harci/termeszetes_pancel.md)
 - [Testőr](fortelyok.harci/testor.md)
-- [Vakharc](fortelyok.harci/vakharc.md)
+- [Vakharc fejlesztése](fortelyok.harci/vakharc_fejlesztese.md)
 - [Vezető: Alakzatparancsnok](fortelyok.harci/vezeto_alakzatparancsnok.md)
 - [Vezető: Fejvadász strategis](fortelyok.harci/vezeto_fejvadasz_strategis.md)
 - [Vezető: Íjászparancsnok](fortelyok.harci/vezeto_ijaszparancsnok.md)

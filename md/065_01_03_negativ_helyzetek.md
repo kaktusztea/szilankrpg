@@ -132,39 +132,24 @@ Megszűnteti: Kétkezesség fortély
 <br />
 
 ---
-## Sötétben - félhomály
+## Vakharc - félhomályban
 
 ```
 Hátrány-1 TÉ dobásra
-Érzék(látás) - részleges
 ```
 
-🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
+🔆 Mérsékli: [Vakharc fejlesztése](fortelyok.harci/vakharc_fejlesztese.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
 
 <br />
 
 ---
-## Sötétben - teljes, zajokkal
-
-```
-Hátrány-1 TÉ dobásra
-Érzék(látás) - kioltott
- (automatikus kudarc)
-```
-
-🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
-
-<br />
-
----
-## Sötétben - teljes, csendben
+## Vakharc - sötétben
 
 ```
 Hátrány-2 TÉ dobásra
-Érzék(látás) - kioltott
 ```
 
-🔆 Mérsékli: [Vakharc](fortelyok.harci/vakharc.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
+🔆 Mérsékli: [Vakharc fejlesztése](fortelyok.harci/vakharc_fejlesztese.md), [Infralátás](fortelyok.erzekek/infralatas.md), [Ultralátás](fortelyok.erzekek/ultralatas.md) fortélyok
 
 <br />
 

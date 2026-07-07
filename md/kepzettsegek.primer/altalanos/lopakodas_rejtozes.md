@@ -89,10 +89,6 @@ Nyílt téren kaméleonként beleolvadni a mintázatba.
 - Mozgás: a lopakodó az észlelő látásának perifériáján halad
 - Távolság: `10-15` méter
 
-### ⚜️ Vakharc dobás módosító (áldozat)
-
-Lásd [Vakharc fortély- Bónusz: harci ösztön](../../fortelyok.harci/vakharc.md#bónusz-harci-ösztön)
-
 ### ⚜️ Láthatóság célszám módosító (lopakodó)
 
 ```
@@ -105,7 +101,7 @@ Lásd [Vakharc fortély- Bónusz: harci ösztön](../../fortelyok.harci/vakharc.
 -6: a lopakodó Láthatatlan
 ```
 
-Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlanul-harcolás---hallhatóan)
+Kapcsolódik Harci helyzet: [Láthatatlan](../../065_01_01_pozitiv_helyzetek.md#láthatatlan---részlegesen)
 
 ### ⚜️ Látótér célszám módosító (lopakodó)
 
