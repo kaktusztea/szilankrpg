@@ -9098,7 +9098,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "harci_helyzet:kitartott_célzás"
+            "feltétel": "taktika:kitartott_célzás"
           }
         ]
       }

@@ -283,3 +283,55 @@ taktikák:
   kombó_lista: []
   fortély_bővítés: null
   id: "lovas_támadás_galoppból"
+
+# --- Távharci taktikák ---
+
+- név: "Kitartott célzás"
+  fokozatos: false
+  módosítók:
+    CÉ: 3
+  megjegyzés: "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ."
+  megkötések:
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Lovas harc"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Léglovas harc"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Harci szekér"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Belharci helyzet"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Földön fekve"
+  - típus: "harci_helyzet"
+    mód: "tiltott"
+    érték: "Levegőből támadás"
+  kombó_mód: "blacklist"
+  kombó_lista: ["Lövéskitérés"]
+  fortély_bővítés: null
+  csoport: "távharc"
+  id: "kitartott_célzás"
+- név: "Lövéskitérés"
+  fokozatos: false
+  módosítók: {}
+  megjegyzés: "Akrobatika próba (Gyorsaság) a lövedék elkerülésére. Fortéllyal +2."
+  megkötések: []
+  kombó_mód: "blacklist"
+  kombó_lista: ["Kitartott célzás"]
+  fortély_bővítés: null
+  csoport: "távharc"
+  id: "lövéskitérés"
+- név: "Páros kétkezes hajítás"
+  fokozatos: false
+  módosítók: {}
+  megjegyzés: "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány."
+  megkötések: []
+  kombó_mód: "blacklist"
+  kombó_lista: ["Kitartott célzás", "Lövéskitérés"]
+  fortély_bővítés: null
+  csoport: "távharc"
+  id: "páros_kétkezes_hajítás"

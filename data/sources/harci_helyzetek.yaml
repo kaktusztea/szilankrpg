@@ -12,7 +12,7 @@ harci_helyzetek:
   csoport: "semleges"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "kitartott_célzás", "takarásban"]
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "takarásban"]
   fegyver_override:
     feltétel:
       - { forrás: "aktív_fegyver_pengehossz", operátor: ">", érték: 0 }
@@ -83,7 +83,7 @@ harci_helyzetek:
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "helyhez_kötve", "kitartott_célzás", "vé_kiterjesztés", "közrefogás"]
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "magasabbról", "levegőből", "helyhez_kötve", "vé_kiterjesztés", "közrefogás"]
 - név: "Hajítás alkalmatlan fegyverrel"
   infó: "Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli."
   hatások:
@@ -201,7 +201,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "harci_szekér", "magasabbról", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "kitartott_célzás", "takarásban", "elvesztett_egyensúly"]
+  kizár_helyzetek: ["lovas_harc", "harci_szekér", "magasabbról", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "takarásban", "elvesztett_egyensúly"]
 - név: "Lények méret különbsége"
   infó: "Méretkülönbség [0-6] fokozat: +1 VÉ csökkentés / különbség."
   hatások: []
@@ -380,7 +380,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["magasabbról", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "levegőből", "kitartott_célzás", "orvtámadás", "takarásban"]
+  kizár_helyzetek: ["magasabbról", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "levegőből", "orvtámadás", "takarásban"]
   tiltott_fegyverfogások: ["fegyver_hárító", "kétkezes"]
 - név: "Léglovas harc"
   infó: "Repülő hátas hátáról harcolás. Léglovas harc fortély bónuszok aktívak."
@@ -389,7 +389,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["magasabbról", "lovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "csúszós_talaj", "kitartott_célzás", "orvtámadás", "takarásban"]
+  kizár_helyzetek: ["magasabbról", "lovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "csúszós_talaj", "orvtámadás", "takarásban"]
   tiltott_fegyverfogások: ["fegyver_hárító", "kétkezes"]
 - név: "Harci szekér"
   infó: "Szekérről harcolás. Harci kocsihajtas fortély bónuszok aktívak."
@@ -398,7 +398,7 @@ harci_helyzetek:
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "magasabbról", "levegőből", "kitartott_célzás", "orvtámadás"]
+  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "belharci_helyzet", "földön_fekve", "helyhez_kötve", "magasabbról", "levegőből", "orvtámadás"]
 - név: "Páros harc"
   infó: "Koordinált 2 fős harc. Páros harc fortély bónuszok aktívak."
   hatások: []
@@ -423,18 +423,7 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Kitartott célzás"
-  infó: "Távharc kitartott célzás. Kitartott célzás fejlesztése fortély bónuszok aktívak."
-  hatások:
-  - operátor: "flat"
-    cél: "CÉ"
-    érték: 3
-    megjegyzés: "1 kör célzás után"
-  id: "kitartott_célzás"
-  csoport: "távharc"
-  rejtett: false
-  tiltja_taktikákat: false
-  kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "levegőből", "lövés_reflexből"]
+
 - név: "Lövés reflexből"
   infó: "Váratlan lövés/hajítás. Lövés reflexből fejlesztése fortély kioltja a CÉ büntetést."
   hatások: []
@@ -442,7 +431,7 @@ harci_helyzetek:
   csoport: "távharc"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["kitartott_célzás"]
+  kizár_helyzetek: []
 - név: "Nyílpuska újratöltés"
   infó: "Nyílpuskával csak minden 2. körben lehetséges lőni."
   hatások:
