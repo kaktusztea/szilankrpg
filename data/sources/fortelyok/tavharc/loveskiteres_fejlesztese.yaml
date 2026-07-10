@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 
-név: "Kitérés lövés elől"
+név: "Lövéskitérés fejlesztése"
 névkomment: ""
 maxfok: 1
 session_toggle: false
@@ -28,5 +28,5 @@ fokok:
     követelménytext: []
     követelmények: ""
     hatástext:
-      - text: "Szándékos kitérés lövés elől szituációban Akrobatika próbára +2 bónusz."
+      - text: "Lövéskitérés taktikában Akrobatika próbára +2 bónusz."
     módosítók: ""

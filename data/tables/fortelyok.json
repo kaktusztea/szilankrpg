@@ -4385,34 +4385,6 @@
     "md_fájl": "fortelyok.harci/kinokozas.md"
   },
   {
-    "név": "Kitérés lövés elől",
-    "csoport": "harci",
-    "alcsoport": "harci",
-    "maxfok": 1,
-    "session_toggle": false,
-    "emlékeztető": true,
-    "kiérdemelhető": false,
-    "kp_perfok": 6,
-    "ingyenes_perszint": 0,
-    "többszörös_típus": "",
-    "többszörös_lista": [],
-    "leírás": "Kimondottan jó vagy a rád kilőtt lövedékek elől való kitérésben.",
-    "kiterjeszti_normál": [],
-    "kiterjeszti_erős": [],
-    "fokok": [
-      {
-        "fok": 1,
-        "hatás": [
-          "Szándékos kitérés lövés elől szituációban Akrobatika próbára +2 bónusz."
-        ],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": []
-      }
-    ],
-    "md_fájl": "fortelyok.harci/kiteres_loves_elol.md"
-  },
-  {
     "név": "Körkörös harc",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -9354,6 +9326,34 @@
       }
     ],
     "md_fájl": "fortelyok.tavharc/loves_reflexbol_fejlesztese.md"
+  },
+  {
+    "név": "Lövéskitérés fejlesztése",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 1,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Kimondottan jó vagy a rád kilőtt lövedékek elől való kitérésben.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 1,
+        "hatás": [
+          "Lövéskitérés taktikában Akrobatika próbára +2 bónusz."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      }
+    ],
+    "md_fájl": "fortelyok.tavharc/loveskiteres_fejlesztese.md"
   },
   {
     "név": "Mesterlövész",
