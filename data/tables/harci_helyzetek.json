@@ -476,7 +476,7 @@
     "feltétel_kulcs": "harci_helyzet:pusztakezes_harc"
   },
   {
-    "név": "Rosszabbik kézben tartott fegyver",
+    "név": "Gyengébb kéz",
     "infó": "Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja.",
     "hatások": [
       {
@@ -485,12 +485,12 @@
         "cél": "té_dobás"
       }
     ],
-    "id": "rosszabbik_kéz",
+    "id": "gyengébb_kéz",
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [],
-    "feltétel_kulcs": "harci_helyzet:rosszabbik_kéz"
+    "feltétel_kulcs": "harci_helyzet:gyengébb_kéz"
   },
   {
     "név": "Vakharc - félhomályban",

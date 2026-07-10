@@ -40,6 +40,17 @@ Hatás: [VÉ csökkentés](081_hatasok.md#-v%C3%A9-cs%C3%B6kkent%C3%A9s-x) ↓
 <br />
 
 ---
+## Gyengébb kéz
+
+```
+Hátrány-1 TÉ dobásra
+```
+
+🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
+
+<br />
+
+---
 ## Hajítás alkalmatlan fegyverrel
 
 ```
@@ -98,17 +109,6 @@ KÉ: -3, TÉ: -3, VÉ: -3
 - [Belharci helyzet](065_01_02_semleges_helyzetek.md#belharci-helyzet), ahol a Puszta kéz harcértékei `0`-ra emelkednek és járnak a **Belharcból** eredő esetleges módosítók is.
 
 🔆 A **Puszta kéz** "egykezes" fegyvernek számít, tehát **nem** lehet vele **Kétkezes harcot** folytatni
-
-<br />
-
----
-## Rosszabbik kézben tartott fegyver
-
-```
-Hátrány-1 TÉ dobásra
-```
-
-🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
 
 <br />
 

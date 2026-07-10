@@ -270,13 +270,13 @@ harci_helyzetek:
   rejtett: true
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Rosszabbik kézben tartott fegyver"
+- név: "Gyengébb kéz"
   infó: "Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja."
   hatások:
   - operátor: "hátrány"
     érték: -1
     cél: "té_dobás"
-  id: "rosszabbik_kéz"
+  id: "gyengébb_kéz"
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false

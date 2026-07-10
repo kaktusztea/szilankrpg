@@ -8,8 +8,8 @@ Kétkezes vagy születésed óta, vagy később szorgalmasan begyakoroltak.
 
 ### Alapeset
 
-Ha nem vagy kétkezes és a rosszabbik kezedben tartod a fegyvered, levonások sújtanak:\
-[Rosszabbik kézben tartott fegyver](../065_01_04_fegyver_harci_helyzetek.md#rosszabbik-kézben-tartott-fegyver) harci helyzet
+Ha nem vagy kétkezes és a gyengébb kezedben tartod a fegyvered, levonások sújtanak:\
+[Gyengébb kéz](../065_01_04_fegyver_harci_helyzetek.md#gyengébb-kéz) harci helyzet
 
 ---
 ### 1. fok

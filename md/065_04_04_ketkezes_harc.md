@@ -59,7 +59,7 @@ SUM 2 penge felett
 ## Sebzés
 
 Mindig az ügyesebb kézben levő fegyver sebez.\
-Kivéve ha direkt a [Rosszabbik kézben tartott fegyverrel](065_01_04_fegyver_harci_helyzetek.md#rosszabbik-k%C3%A9zben-tartott-fegyver) akarsz támadni.
+Kivéve ha direkt a [Gyengébb kézzel](065_01_04_fegyver_harci_helyzetek.md#gyengébb-kéz) akarsz támadni.
 
 <br />
 

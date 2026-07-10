@@ -38,7 +38,7 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Hajítás nem dobásra készített tárgyakkal](065_01_03_negativ_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
 - [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
 - [Lények méret különbsége](065_01_03_negativ_helyzetek.md#lények-méret-különbsége)
-- [Rosszabbik kézben tartott fegyver](065_01_03_negativ_helyzetek.md#rosszabbik-kézben-tartott-fegyver)
+- [Gyengébb kéz](065_01_03_negativ_helyzetek.md#gyengébb-kéz)
 - [Tűz ruhán - ég](065_01_03_negativ_helyzetek.md#tűz-ruhán---ég)
 - [Tűz ruhán - lángol](065_01_03_negativ_helyzetek.md#tűz-ruhán---lángol)
 - [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban)
