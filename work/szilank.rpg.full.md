@@ -27908,7 +27908,7 @@ VÉ = Szorzó x Cella
 ```
 
 ```
-Célzó dobás-1
+Célzó dobás #1
 
 2(CÉ) + k20   vs   14(VÉ)
  → találati esély: 40%
@@ -27935,7 +27935,7 @@ VÉ = 12  (6 × 2)
 ```
 
 ```
-Célzó dobás-2
+Célzó dobás #2
 
 2(CÉ) + k20   vs   12(VÉ)
  → találati esély: 50%
