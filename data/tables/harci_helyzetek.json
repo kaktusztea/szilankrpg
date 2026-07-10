@@ -169,7 +169,7 @@
       }
     ],
     "id": "hajítás_alkalmatlan_fegyverrel",
-    "csoport": "negatív",
+    "csoport": "távharc",
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [
@@ -193,7 +193,7 @@
       }
     ],
     "id": "hajítás_nem_dobásra_készített",
-    "csoport": "negatív",
+    "csoport": "távharc",
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [

@@ -94,7 +94,7 @@ harci_helyzetek:
     érték: -2
     cél: "cé_dobás"
   id: "hajítás_alkalmatlan_fegyverrel"
-  csoport: "negatív"
+  csoport: "távharc"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["hajítás_nem_dobásra_készített"]
@@ -108,7 +108,7 @@ harci_helyzetek:
     érték: -1
     cél: "cé_dobás"
   id: "hajítás_nem_dobásra_készített"
-  csoport: "negatív"
+  csoport: "távharc"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["hajítás_alkalmatlan_fegyverrel"]
