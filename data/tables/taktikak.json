@@ -1,6 +1,7 @@
 [
   {
     "név": "1 támadás",
+    "id": "1_támadás",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 3
@@ -17,11 +18,12 @@
       "Tettetés"
     ],
     "fortély_bővítés": null,
-    "id": "1_támadás",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:1_támadás"
   },
   {
     "név": "Érintő",
+    "id": "érintő",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 3
@@ -38,11 +40,12 @@
     ],
     "fortély_bővítés": null,
     "megkötések": [],
-    "id": "érintő",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:érintő"
   },
   {
     "név": "Fárasztás",
+    "id": "fárasztás",
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "VÉ csökkentés: 2/kör fixen, nincs támadódobás. Csak Pengeelőnyben lehet.",
@@ -66,11 +69,12 @@
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,
-    "id": "fárasztás",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:fárasztás"
   },
   {
     "név": "Kezdeményező",
+    "id": "kezdeményező",
     "fokozatos": true,
     "fokok": [
       {
@@ -108,11 +112,12 @@
     ],
     "fortély_bővítés": null,
     "megkötések": [],
-    "id": "kezdeményező",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:kezdeményező"
   },
   {
     "név": "Kiváró",
+    "id": "kiváró",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 2
@@ -129,11 +134,12 @@
       "Tettetés"
     ],
     "fortély_bővítés": null,
-    "id": "kiváró",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:kiváró"
   },
   {
     "név": "Öngyilkos roham",
+    "id": "öngyilkos_roham",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 5,
@@ -145,11 +151,12 @@
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,
-    "id": "öngyilkos_roham",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:öngyilkos_roham"
   },
   {
     "név": "Plusz támadás",
+    "id": "plusz_támadás",
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "+1 támadás. VÉ:-3 azonnal (VÉ csökkenés).",
@@ -161,11 +168,12 @@
     ],
     "fortély_bővítés": null,
     "megkötések": [],
-    "id": "plusz_támadás",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:plusz_támadás"
   },
   {
     "név": "Roham",
+    "id": "roham",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 4,
@@ -177,11 +185,12 @@
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,
-    "id": "roham",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:roham"
   },
   {
     "név": "Támadás erőből",
+    "id": "támadás_erőből",
     "fokozatos": true,
     "fokok": [
       {
@@ -207,11 +216,12 @@
       "fortély": "Támadás erőből",
       "extra_fokok_per_fok": 2
     },
-    "id": "támadás_erőből",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:támadás_erőből"
   },
   {
     "név": "Támadó",
+    "id": "támadó",
     "fokozatos": true,
     "fokok": [
       {
@@ -240,11 +250,12 @@
       "1 támadás"
     ],
     "fortély_bővítés": null,
-    "id": "támadó",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:támadó"
   },
   {
     "név": "Védő",
+    "id": "védő",
     "fokozatos": true,
     "fokok": [
       {
@@ -275,11 +286,12 @@
       "1 támadás"
     ],
     "fortély_bővítés": null,
-    "id": "védő",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:védő"
   },
   {
     "név": "Teljes Védekezés",
+    "id": "teljes_védekezés",
     "fokozatos": false,
     "módosítók": {
       "VÉ": 6
@@ -289,11 +301,12 @@
     "kombó_lista": [],
     "fortély_bővítés": null,
     "megkötések": [],
-    "id": "teljes_védekezés",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:teljes_védekezés"
   },
   {
     "név": "Visszafogott",
+    "id": "visszafogott",
     "fokozatos": true,
     "fokok": [
       {
@@ -342,11 +355,12 @@
     ],
     "fortély_bővítés": null,
     "megkötések": [],
-    "id": "visszafogott",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:visszafogott"
   },
   {
     "név": "Tettetés",
+    "id": "tettetés",
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "Képzetlenebbnek tetteted magad. Harcmodor+Ügyesség vs 15 próba. Kiváró, Visszafogott taktikával együtt.",
@@ -357,11 +371,12 @@
     ],
     "fortély_bővítés": null,
     "megkötések": [],
-    "id": "tettetés",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:tettetés"
   },
   {
     "név": "(Lég)Lovas roham",
+    "id": "lovas_roham",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 6,
@@ -381,11 +396,12 @@
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,
-    "id": "lovas_roham",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:lovas_roham"
   },
   {
     "név": "(Lég)Lovas támadás galoppból",
+    "id": "lovas_támadás_galoppból",
     "fokozatos": false,
     "módosítók": {
       "TÉ": 3,
@@ -405,64 +421,31 @@
     "kombó_mód": "whitelist",
     "kombó_lista": [],
     "fortély_bővítés": null,
-    "id": "lovas_támadás_galoppból",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:lovas_támadás_galoppból"
   },
   {
     "név": "Kitartott célzás",
+    "id": "kitartott_célzás",
     "fokozatos": false,
     "módosítók": {
       "CÉ": 3
     },
     "megjegyzés": "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. Csak íjakkal és lőfegyverekkel.",
-    "megkötések": [
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Lovas harc"
-      },
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Léglovas harc"
-      },
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Harci szekér"
-      },
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Belharci helyzet"
-      },
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Földön fekve"
-      },
-      {
-        "típus": "harci_helyzet",
-        "mód": "tiltott",
-        "érték": "Levegőből támadás"
-      },
-      {
-        "típus": "távfegyver_kategória",
-        "mód": "szükséges",
-        "érték": "lőfegyver"
-      }
-    ],
-    "kombó_mód": "blacklist",
-    "kombó_lista": [
-      "Lövéskitérés"
-    ],
+    "megkötések": [],
+    "kombó_mód": "whitelist",
+    "kombó_lista": [],
     "fortély_bővítés": null,
     "csoport": "távharc",
-    "id": "kitartott_célzás",
+    "szűrő_harcmodorok": [
+      "Íjászat",
+      "Lövészet"
+    ],
     "feltétel_kulcs": "taktika:kitartott_célzás"
   },
   {
     "név": "Lövéskitérés",
+    "id": "lövéskitérés",
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "Akrobatika próba (Gyorsaság) a lövedék elkerülésére. Fortéllyal +2.",
@@ -473,11 +456,12 @@
     ],
     "fortély_bővítés": null,
     "csoport": "távharc",
-    "id": "lövéskitérés",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:lövéskitérés"
   },
   {
     "név": "Páros kétkezes hajítás",
+    "id": "páros_kétkezes_hajítás",
     "fokozatos": false,
     "módosítók": {},
     "megjegyzés": "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány.",
@@ -489,7 +473,7 @@
     ],
     "fortély_bővítés": null,
     "csoport": "távharc",
-    "id": "páros_kétkezes_hajítás",
+    "szűrő_harcmodorok": [],
     "feltétel_kulcs": "taktika:páros_kétkezes_hajítás"
   }
 ]

@@ -5,6 +5,7 @@
 
 taktikák:
 - név: "1 támadás"
+  id: "1_támadás"
   fokozatos: false
   módosítók:
     TÉ: 3
@@ -17,8 +18,9 @@ taktikák:
   kombó_lista: ["Roham", "Öngyilkos roham", "Plusz támadás", "Teljes Védekezés", "Fárasztás", "Tettetés"]
   fortély_bővítés: null
   megkötések: []
-  id: "1_támadás"
+  szűrő_harcmodorok: []
 - név: "Érintő"
+  id: "érintő"
   fokozatos: false
   módosítók:
     TÉ: 3
@@ -27,8 +29,9 @@ taktikák:
   kombó_lista: ["Támadó", "Védő", "Kezdeményező", "Kiváró", "1 támadás", "Plusz támadás"]
   fortély_bővítés: null
   megkötések: []
-  id: "érintő"
+  szűrő_harcmodorok: []
 - név: "Fárasztás"
+  id: "fárasztás"
   fokozatos: false
   módosítók: {}
   megjegyzés: "VÉ csökkentés: 2/kör fixen, nincs támadódobás. Csak Pengeelőnyben lehet."
@@ -45,8 +48,9 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null
-  id: "fárasztás"
+  szűrő_harcmodorok: []
 - név: "Kezdeményező"
+  id: "kezdeményező"
   fokozatos: true
   fokok:
   - fok: 1
@@ -68,8 +72,9 @@ taktikák:
   kombó_lista: ["Támadó", "Érintő", "Visszafogott", "1 támadás"]
   fortély_bővítés: null
   megkötések: []
-  id: "kezdeményező"
+  szűrő_harcmodorok: []
 - név: "Kiváró"
+  id: "kiváró"
   fokozatos: false
   módosítók:
     TÉ: 2
@@ -81,8 +86,9 @@ taktikák:
   kombó_lista: ["Támadó", "Érintő", "Visszafogott", "Támadás erőből", "1 támadás", "Tettetés"]
   fortély_bővítés: null
   megkötések: []
-  id: "kiváró"
+  szűrő_harcmodorok: []
 - név: "Öngyilkos roham"
+  id: "öngyilkos_roham"
   fokozatos: false
   módosítók:
     TÉ: 5
@@ -106,8 +112,9 @@ taktikák:
   kombó_lista: []
   fortély_bővítés: null
   megkötések: []
-  id: "öngyilkos_roham"
+  szűrő_harcmodorok: []
 - név: "Plusz támadás"
+  id: "plusz_támadás"
   fokozatos: false
   módosítók: {}
   megjegyzés: "+1 támadás. VÉ:-3 azonnal (VÉ csökkenés)."
@@ -115,8 +122,9 @@ taktikák:
   kombó_lista: ["Támadó", "Érintő", "Támadás erőből"]
   fortély_bővítés: null
   megkötések: []
-  id: "plusz_támadás"
+  szűrő_harcmodorok: []
 - név: "Roham"
+  id: "roham"
   fokozatos: false
   módosítók:
     TÉ: 4
@@ -137,8 +145,9 @@ taktikák:
   kombó_lista: []
   fortély_bővítés: null
   megkötések: []
-  id: "roham"
+  szűrő_harcmodorok: []
 - név: "Támadás erőből"
+  id: "támadás_erőből"
   fokozatos: true
   fokok:
   - fok: 1
@@ -158,8 +167,9 @@ taktikák:
     fortély: "Támadás erőből"
     extra_fokok_per_fok: 2
   megkötések: []
-  id: "támadás_erőből"
+  szűrő_harcmodorok: []
 - név: "Támadó"
+  id: "támadó"
   fokozatos: true
   fokok:
   - fok: 1
@@ -179,8 +189,9 @@ taktikák:
   kombó_lista: ["Kezdeményező", "Kiváró", "Érintő", "Plusz támadás", "1 támadás"]
   fortély_bővítés: null
   megkötések: []
-  id: "támadó"
+  szűrő_harcmodorok: []
 - név: "Védő"
+  id: "védő"
   fokozatos: true
   fokok:
   - fok: 1
@@ -206,8 +217,9 @@ taktikák:
   kombó_lista: ["Érintő", "1 támadás"]
   fortély_bővítés: null
   megkötések: []
-  id: "védő"
+  szűrő_harcmodorok: []
 - név: "Teljes Védekezés"
+  id: "teljes_védekezés"
   fokozatos: false
   módosítók:
     VÉ: 6
@@ -216,8 +228,9 @@ taktikák:
   kombó_lista: []
   fortély_bővítés: null
   megkötések: []
-  id: "teljes_védekezés"
+  szűrő_harcmodorok: []
 - név: "Visszafogott"
+  id: "visszafogott"
   fokozatos: true
   fokok:
   - fok: 1
@@ -245,8 +258,9 @@ taktikák:
   kombó_lista: ["Kezdeményező", "Kiváró", "1 támadás", "Tettetés"]
   fortély_bővítés: null
   megkötések: []
-  id: "visszafogott"
+  szűrő_harcmodorok: []
 - név: "Tettetés"
+  id: "tettetés"
   fokozatos: false
   módosítók: {}
   megjegyzés: "Képzetlenebbnek tetteted magad. Harcmodor+Ügyesség vs 15 próba. Kiváró, Visszafogott taktikával együtt."
@@ -254,8 +268,9 @@ taktikák:
   kombó_lista: ["Kiváró", "Visszafogott"]
   fortély_bővítés: null
   megkötések: []
-  id: "tettetés"
+  szűrő_harcmodorok: []
 - név: "(Lég)Lovas roham"
+  id: "lovas_roham"
   fokozatos: false
   módosítók:
     TÉ: 6
@@ -268,8 +283,9 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null
-  id: "lovas_roham"
+  szűrő_harcmodorok: []
 - név: "(Lég)Lovas támadás galoppból"
+  id: "lovas_támadás_galoppból"
   fokozatos: false
   módosítók:
     TÉ: 3
@@ -282,11 +298,12 @@ taktikák:
   kombó_mód: "whitelist"
   kombó_lista: []
   fortély_bővítés: null
-  id: "lovas_támadás_galoppból"
+  szűrő_harcmodorok: []
 
 # --- Távharci taktikák ---
 
 - név: "Kitartott célzás"
+  id: "kitartott_célzás"
   fokozatos: false
   módosítók:
     CÉ: 3
@@ -296,8 +313,9 @@ taktikák:
   kombó_lista: []
   fortély_bővítés: null
   csoport: "távharc"
-  id: "kitartott_célzás"
+  szűrő_harcmodorok: ["Íjászat", "Lövészet"]
 - név: "Lövéskitérés"
+  id: "lövéskitérés"
   fokozatos: false
   módosítók: {}
   megjegyzés: "Akrobatika próba (Gyorsaság) a lövedék elkerülésére. Fortéllyal +2."
@@ -306,8 +324,9 @@ taktikák:
   kombó_lista: ["Kitartott célzás"]
   fortély_bővítés: null
   csoport: "távharc"
-  id: "lövéskitérés"
+  szűrő_harcmodorok: []
 - név: "Páros kétkezes hajítás"
+  id: "páros_kétkezes_hajítás"
   fokozatos: false
   módosítók: {}
   megjegyzés: "2 db Célzó dobás Hátrány-1 büntetéssel. 1 támadásnak számít. Kétkezesség: csak 1 dobásra jár Hátrány."
@@ -316,4 +335,4 @@ taktikák:
   kombó_lista: ["Kitartott célzás", "Lövéskitérés"]
   fortély_bővítés: null
   csoport: "távharc"
-  id: "páros_kétkezes_hajítás"
+  szűrő_harcmodorok: []

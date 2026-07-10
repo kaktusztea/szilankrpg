@@ -91,6 +91,7 @@ export interface TaktikaEntry {
   kombó_lista: string[];
   fortély_bővítés?: { fortély: string; extra_fokok_per_fok: number };
   csoport?: string;
+  szűrő_harcmodorok?: string[];
 }
 
 export interface HarciHelyzetEntry {

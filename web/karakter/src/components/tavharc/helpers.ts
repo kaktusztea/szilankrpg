@@ -86,6 +86,13 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session): n
   for (const at of session.aktív_taktikák) {
     const def = data.taktikak.find(t => t.név === at.név);
     if (!def?.módosítók?.CÉ) continue;
+    // szűrő_harcmodorok: bónusz csak akkor jár ha az aktív távfegyver harcmodora egyezik
+    if (def.szűrő_harcmodorok?.length) {
+      const tfIdx = session.aktív_távfegyver_index;
+      const tfPeldany = k.távfegyverek[tfIdx];
+      const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+      if (!tfDef || !def.szűrő_harcmodorok.includes(tfDef.Harcmodor ?? '')) continue;
+    }
     total += def.módosítók.CÉ;
   }
   // Fortély módosítók: feltételes CÉ bónuszok

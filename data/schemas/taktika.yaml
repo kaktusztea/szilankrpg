@@ -4,6 +4,7 @@
 
 taktikák:
   - név: ""                    # kötelező, string
+    id: ""                     # kötelező, egyedi azonosító (snake_case, ékezetes)
     feltétel_kulcs: ""         # kötelező, "taktika:xyz" formátum
     fokozatos: false           # kötelező, boolean
     # Ha fokozatos: false → módosítók dict (opcionális, TÉ/VÉ/KÉ/SP kulcsok)
@@ -29,3 +30,5 @@ taktikák:
     fortély_bővítés:           # opcionális
       fortély: ""
       extra_fokok_per_fok: 0
+    csoport: ""                # opcionális, string ("távharc" | "")
+    szűrő_harcmodorok: []     # opcionális, string lista — CÉ módosító csak ezekkel a harcmodorokkal érvényes
