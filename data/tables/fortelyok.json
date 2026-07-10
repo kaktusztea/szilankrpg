@@ -9075,7 +9075,7 @@
     "md_fájl": "fortelyok.tavharc/gyors_loves.md"
   },
   {
-    "név": "Kitartott célzás",
+    "név": "Kitartott célzás fejlesztése",
     "csoport": "harci",
     "alcsoport": "tavharc",
     "maxfok": 1,
@@ -9092,26 +9092,15 @@
     "fokok": [
       {
         "fok": 0,
-        "hatás": [
-          "Célzás körülményben: `1` kör célzás után `+3 CÉ` módosító."
-        ],
+        "hatás": [],
         "követelmény": [],
         "követelmények": [],
-        "módosítók": [
-          {
-            "cél": "CÉ",
-            "érték": 3,
-            "mód": "flat",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:célzás"
-          }
-        ]
+        "módosítók": []
       },
       {
         "fok": 1,
         "hatás": [
-          "Célzás körülményben: `1` kör célzás után `+7 CÉ` módosító."
+          "Kitartott célzás helyzetben: további `+4 CÉ` módosító (összesen `+7`)."
         ],
         "követelmény": [
           "Csak kiszámíthatóan mozgó cél ellen",
@@ -9133,16 +9122,16 @@
         "módosítók": [
           {
             "cél": "CÉ",
-            "érték": 7,
+            "érték": 4,
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "harci_helyzet:célzás"
+            "feltétel": "harci_helyzet:kitartott_célzás"
           }
         ]
       }
     ],
-    "md_fájl": "fortelyok.tavharc/kitartott_celzas.md"
+    "md_fájl": "fortelyok.tavharc/kitartott_celzas_fejlesztes.md"
   },
   {
     "név": "Lövés futás közben",

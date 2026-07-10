@@ -13,7 +13,7 @@
       "harci_szekér",
       "magasabbról",
       "levegőből",
-      "célzás",
+      "kitartott_célzás",
       "takarásban"
     ],
     "fegyver_override": {
@@ -147,7 +147,7 @@
       "magasabbról",
       "levegőből",
       "helyhez_kötve",
-      "célzás",
+      "kitartott_célzás",
       "vé_kiterjesztés",
       "közrefogás"
     ],
@@ -355,7 +355,7 @@
       "belharci_helyzet",
       "földön_fekve",
       "helyhez_kötve",
-      "célzás",
+      "kitartott_célzás",
       "takarásban",
       "elvesztett_egyensúly"
     ],
@@ -663,7 +663,7 @@
       "földön_fekve",
       "helyhez_kötve",
       "levegőből",
-      "célzás",
+      "kitartott_célzás",
       "orvtámadás",
       "takarásban"
     ],
@@ -689,7 +689,7 @@
       "földön_fekve",
       "helyhez_kötve",
       "csúszós_talaj",
-      "célzás",
+      "kitartott_célzás",
       "orvtámadás",
       "takarásban"
     ],
@@ -715,7 +715,7 @@
       "helyhez_kötve",
       "magasabbról",
       "levegőből",
-      "célzás",
+      "kitartott_célzás",
       "orvtámadás"
     ],
     "feltétel_kulcs": "harci_helyzet:harci_szekér"
@@ -754,10 +754,17 @@
     "feltétel_kulcs": "harci_helyzet:szörnyeteg_elleni_harc"
   },
   {
-    "név": "Célzás",
-    "infó": "Távharc célzás. Kitartott célzás fortély bónuszok aktívak.",
-    "hatások": [],
-    "id": "célzás",
+    "név": "Kitartott célzás",
+    "infó": "Távharc kitartott célzás. Kitartott célzás fejlesztése fortély bónuszok aktívak.",
+    "hatások": [
+      {
+        "operátor": "flat",
+        "cél": "CÉ",
+        "érték": 3,
+        "megjegyzés": "1 kör célzás után"
+      }
+    ],
+    "id": "kitartott_célzás",
     "csoport": "távharc",
     "rejtett": false,
     "tiltja_taktikákat": false,
@@ -770,7 +777,7 @@
       "levegőből",
       "lövés_reflexből"
     ],
-    "feltétel_kulcs": "harci_helyzet:célzás"
+    "feltétel_kulcs": "harci_helyzet:kitartott_célzás"
   },
   {
     "név": "Lövés reflexből",
@@ -781,7 +788,7 @@
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [
-      "célzás"
+      "kitartott_célzás"
     ],
     "feltétel_kulcs": "harci_helyzet:lövés_reflexből"
   },

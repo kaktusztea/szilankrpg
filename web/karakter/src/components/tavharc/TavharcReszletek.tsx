@@ -24,7 +24,7 @@ export function TavharcReszletek({ bontás, gameMode, karakter, setKarakter, pus
         <div>Fegyver Osztó: {osztó}</div>
         <div>MF CÉ bónusz: {mfCÉ}</div>
         <div>Idea CÉ bónusz: {idea}</div>
-        {fortélyCÉ !== 0 && <div>Célzás CÉ bónusz: +{fortélyCÉ}</div>}
+        {fortélyCÉ !== 0 && <div>Helyzet/Fortély CÉ: {fortélyCÉ > 0 ? '+' : ''}{fortélyCÉ}</div>}
         <div>Harcmodor CÉ bónusz: {harcmodorCÉ} ({harcmodorNév} szint:{harcmodorSzint})</div>
         {isMágikus
           ? <div>TSz + Gyo + Int: {mágikusTulajdonságCÉ}</div>

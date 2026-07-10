@@ -74,9 +74,18 @@ export function mfKövetelményText(k: Karakter, data: GameData, alap: string): 
 export function getFortélyCÉ(k: Karakter, data: GameData, session: Session): number {
   const aktívFeltételek = buildAktívFeltételek(session, data);
   let total = 0;
-  for (const def of data.fortelySummaries) {
-    const effFok = Math.max(0, k.fortélyok.find(f => f.név === def.név)?.fok ?? 0);
-    const módosítók = def.fokok.find(f => f.fok === effFok)?.módosítók;
+  // Helyzet hatások: CÉ flat bónuszok aktív helyzetekből
+  for (const hNév of session.aktív_helyzetek) {
+    const def = data.harciHelyzetek.find(d => d.név === hNév);
+    if (!def?.hatások) continue;
+    for (const h of def.hatások) {
+      if (h.cél === 'CÉ' && h.operátor === 'flat' && h.érték) total += h.érték;
+    }
+  }
+  // Fortély módosítók: feltételes CÉ bónuszok
+  for (const fDef of data.fortelySummaries) {
+    const effFok = Math.max(0, k.fortélyok.find(f => f.név === fDef.név)?.fok ?? 0);
+    const módosítók = fDef.fokok.find(f => f.fok === effFok)?.módosítók;
     if (!módosítók) continue;
     for (const mod of módosítók) {
       if (mod.cél === 'CÉ' && mod.feltétel && aktívFeltételek.has(mod.feltétel)) total += mod.érték;
