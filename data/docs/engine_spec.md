@@ -760,7 +760,7 @@ harckeret = harcmodor_szint(távfegyver.Harcmodor) + Gyorsaság
 támadások_száma = 1 + FLOOR(harckeret / fegyver_sebesség)
 
 Sebesség = -1 (nyílpuskák): támadások_száma = "1/2 kör" (alapeset)
-  "Gyors újratöltés" fortély ≥1.fok: támadások_száma = 1 (minden kör)
+  "Nyílpuska újratöltés fejlesztése" fortély ≥1.fok: támadások_száma = 1 (minden kör)
 Sebesség = tartomány (pl. "6-9"): alsó határt használjuk
 ```
 
@@ -1731,8 +1731,8 @@ Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista é
 |---------|-----|-------|-----|-------|------------|
 | Gyors hajítás | 1 | képzettség | Hajítás | 5 | Csak hajítófegyverekkel |
 | Gyors lövés | 1 | képzettség | Íjászat | 5 | Csak íjjal |
-| Gyors újratöltés | 1 | képzettség | Lövészet | 6 | |
-| Gyors újratöltés | 2 | képzettség | Lövészet | 9 | |
+| Nyílpuska újratöltés fejlesztése | 1 | képzettség | Lövészet | 6 | |
+| Nyílpuska újratöltés fejlesztése | 2 | képzettség | Lövészet | 9 | |
 | Kitartott célzás | 1 | képzettség | [Íjászat, Lövészet] | 5 | |
 | Lövés futás közben | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
 | Lövés hátasról | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | + Lovaglás ≥ 6, Mesterfegyver ≥ 1, Lovas harc ≥ 2 |

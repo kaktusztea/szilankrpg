@@ -450,7 +450,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 
 ### Támadás db formátum
 - `Xx` = X támadás / kör (1 + FLOOR(harckeret / sebesség))
-- Sebesség = -1 (nyílpuska): `1/2 kör` alapeset, "Gyors újratöltés" ≥1.fok → `1x`
+- Sebesség = -1 (nyílpuska): `1/2 kör` alapeset, "Nyílpuska újratöltés fejlesztése" ≥1.fok + "Nyílpuska újratöltés" helyzet aktív → `1x`
 
 ### Popupok (createPortal)
 - MF fok: 0–3 kerek gombok

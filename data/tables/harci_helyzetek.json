@@ -758,7 +758,7 @@
     "infó": "Távharc célzás. Kitartott célzás fortély bónuszok aktívak.",
     "hatások": [],
     "id": "célzás",
-    "csoport": "pozitív",
+    "csoport": "távharc",
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [
@@ -770,5 +770,22 @@
       "levegőből"
     ],
     "feltétel_kulcs": "harci_helyzet:célzás"
+  },
+  {
+    "név": "Nyílpuska újratöltés",
+    "infó": "Nyílpuskával csak minden 2. körben lehetséges lőni.",
+    "hatások": [
+      {
+        "operátor": "szöveges",
+        "cél": "támadások_száma",
+        "megjegyzés": "1/2 kör"
+      }
+    ],
+    "id": "nyílpuska_újratöltés",
+    "csoport": "távharc",
+    "rejtett": false,
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [],
+    "feltétel_kulcs": "harci_helyzet:nyílpuska_újratöltés"
   }
 ]

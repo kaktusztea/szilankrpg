@@ -1,7 +1,7 @@
 ---
 schema_version: 1
 
-név: "Gyors újratöltés"
+név: "Nyílpuska újratöltés fejlesztése"
 névkomment: ""
 maxfok: 2
 session_toggle: false
@@ -39,7 +39,13 @@ fokok:
         típus: "képzettség"
     hatástext:
       - text: "Minden körben tudsz `1x` lőni, ha Mozgásodat becseréled újratöltésre."
-    módosítók: ""
+    módosítók:
+      - cél: "támadások_száma"
+        érték: 1
+        mód: "enyhít"
+        forrás: ""
+        arány: 0
+        feltétel: "harci_helyzet:nyílpuska_újratöltés"
   - fok: 2
     követelménytext:
       - text: "Lövészet 9.szint"
@@ -49,4 +55,10 @@ fokok:
         típus: "képzettség"
     hatástext:
       - text: "Minden körben tudsz `1x` lőni, Mozgás szabadon elhasználható mellette."
-    módosítók: ""
+    módosítók:
+      - cél: "támadások_száma"
+        érték: 2
+        mód: "enyhít"
+        forrás: ""
+        arány: 0
+        feltétel: "harci_helyzet:nyílpuska_újratöltés"

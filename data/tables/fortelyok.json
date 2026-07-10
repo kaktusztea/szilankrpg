@@ -9075,68 +9075,6 @@
     "md_fájl": "fortelyok.tavharc/gyors_loves.md"
   },
   {
-    "név": "Gyors újratöltés",
-    "csoport": "harci",
-    "alcsoport": "tavharc",
-    "maxfok": 2,
-    "session_toggle": false,
-    "emlékeztető": true,
-    "kiérdemelhető": false,
-    "kp_perfok": 6,
-    "ingyenes_perszint": 0,
-    "többszörös_típus": "",
-    "többszörös_lista": [],
-    "leírás": "Gyorsan tudod újratölteni nyílpuskádat.",
-    "kiterjeszti_normál": [],
-    "kiterjeszti_erős": [],
-    "fokok": [
-      {
-        "fok": 0,
-        "hatás": [
-          "Nyílpuskával csak minden `2.` körben lehetséges lőni."
-        ],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": []
-      },
-      {
-        "fok": 1,
-        "hatás": [
-          "Minden körben tudsz `1x` lőni, ha Mozgásodat becseréled újratöltésre."
-        ],
-        "követelmény": [
-          "Lövészet 6.szint"
-        ],
-        "követelmények": [
-          {
-            "név": "Lövészet",
-            "érték": 6,
-            "típus": "képzettség"
-          }
-        ],
-        "módosítók": []
-      },
-      {
-        "fok": 2,
-        "hatás": [
-          "Minden körben tudsz `1x` lőni, Mozgás szabadon elhasználható mellette."
-        ],
-        "követelmény": [
-          "Lövészet 9.szint"
-        ],
-        "követelmények": [
-          {
-            "név": "Lövészet",
-            "érték": 9,
-            "típus": "képzettség"
-          }
-        ],
-        "módosítók": []
-      }
-    ],
-    "md_fájl": "fortelyok.tavharc/gyors_ujratoltes.md"
-  },
-  {
     "név": "Kitartott célzás",
     "csoport": "harci",
     "alcsoport": "tavharc",
@@ -9512,5 +9450,85 @@
       }
     ],
     "md_fájl": "fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md"
+  },
+  {
+    "név": "Nyílpuska újratöltés fejlesztése",
+    "csoport": "harci",
+    "alcsoport": "tavharc",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Gyorsan tudod újratölteni nyílpuskádat.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Nyílpuskával csak minden `2.` körben lehetséges lőni."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Minden körben tudsz `1x` lőni, ha Mozgásodat becseréled újratöltésre."
+        ],
+        "követelmény": [
+          "Lövészet 6.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Lövészet",
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "támadások_száma",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:nyílpuska_újratöltés"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Minden körben tudsz `1x` lőni, Mozgás szabadon elhasználható mellette."
+        ],
+        "követelmény": [
+          "Lövészet 9.szint"
+        ],
+        "követelmények": [
+          {
+            "név": "Lövészet",
+            "érték": 9,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "támadások_száma",
+            "érték": 2,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:nyílpuska_újratöltés"
+          }
+        ]
+      }
+    ],
+    "md_fájl": "fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md"
   }
 ]

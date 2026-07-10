@@ -427,7 +427,18 @@ harci_helyzetek:
   infó: "Távharc célzás. Kitartott célzás fortély bónuszok aktívak."
   hatások: []
   id: "célzás"
-  csoport: "pozitív"
+  csoport: "távharc"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["lovas_harc", "léglovas_harc", "harci_szekér", "belharci_helyzet", "földön_fekve", "levegőből"]
+- név: "Nyílpuska újratöltés"
+  infó: "Nyílpuskával csak minden 2. körben lehetséges lőni."
+  hatások:
+  - operátor: "szöveges"
+    cél: "támadások_száma"
+    megjegyzés: "1/2 kör"
+  id: "nyílpuska_újratöltés"
+  csoport: "távharc"
+  rejtett: false
+  tiltja_taktikákat: false
+  kizár_helyzetek: []

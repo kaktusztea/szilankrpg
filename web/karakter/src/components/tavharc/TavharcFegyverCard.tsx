@@ -11,14 +11,14 @@ interface Props {
   idea: number;
   fortélyCÉ: number;
   gyorsaság: number;
-  gyorsÚjratöltésFok: number;
+  újratöltésEnyhítés: number;
   onSelect: () => void;
   onMfTarget: () => void;
   onDeleteTarget: () => void;
   onIdeaPopup: () => void;
 }
 
-export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, idea, fortélyCÉ, gyorsaság, gyorsÚjratöltésFok, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
+export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, idea, fortélyCÉ, gyorsaság, újratöltésEnyhítés, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
   const tf = k.távfegyverek[index];
   const konstansok = data.konstansok;
   const def = data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tf.alap.toLowerCase());
@@ -26,7 +26,7 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
   const bontás = calcCÉBontás(k, data, session, def, idea, fortélyCÉ, tf.alap);
   const mf = getMfFok(k, tf.alap);
   const sebesség = parseInt(def?.Sebesség ?? '-1') || -1;
-  const tám = bontás.isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok });
+  const tám = bontás.isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
   const hasError = mfKövetelményHiba(k, data, tf.alap);
 
   return (

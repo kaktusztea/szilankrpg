@@ -201,8 +201,6 @@ export interface KonstansokRaw {
   vé_csökkentés_gombok: number[];
   taktika_vé_eltolás_limit: number;
   nyílpuska_alap_támadás: string;
-  nyílpuska_gyors_újratöltés_fortély: string;
-  nyílpuska_gyors_újratöltés_min_fok: number;
   közös_nyelv: string;
   fortély_csoport_sorrend: { id: string; label: string }[];
   nyelv_fok_nevek: Record<number, string>;

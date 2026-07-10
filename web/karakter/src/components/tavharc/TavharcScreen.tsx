@@ -1,6 +1,6 @@
 import { useState, useCallback } from 'react';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
-import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ } from './helpers';
+import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
 import { TavharcGameSelector } from './TavharcGameSelector';
 import { TavharcKalkulator } from './TavharcKalkulator';
@@ -32,8 +32,8 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   // --- Támadás ---
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
   const sebesség = parseInt(tfDef?.Sebesség ?? '-1') || -1;
-  const gyorsÚjratöltésFok = k.fortélyok.find(f => f.név === konstansok.nyílpuska_gyors_újratöltés_fortély)?.fok ?? 0;
-  const támadásLabel = bontás.isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok });
+  const újratöltésEnyhítés = calcÚjratöltésEnyhítés(session, k);
+  const támadásLabel = bontás.isMágikus ? '—' : calcTámadásLabel({ harcmodorSzint: bontás.harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás: konstansok.nyílpuska_alap_támadás });
 
   // --- Távolság & VÉ ---
   const [távolság, setTávolság] = useState(10);
@@ -48,12 +48,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
     szélId: szorzok.szél[0]?.id ?? 0,
   });
 
-  const getSzorzó = (list: typeof szorzok.célpont_mozgás, id: number) => list.find(e => e.id === id)?.szorzó ?? 0;
-  const szorzóÖsszeg = getSzorzó(szorzok.célpont_mozgás, szorzóState.célMozgásId)
-    + getSzorzó(szorzok.lövész_mozgás, szorzóState.lövészMozgásId)
-    + getSzorzó(szorzok.célpont_méret, szorzóState.méretId)
-    + getSzorzó(szorzok.észlelhetőség, szorzóState.észlelhetőségId)
-    + getSzorzó(szorzok.szél, szorzóState.szélId);
+  const szorzóÖsszeg = calcSzorzóÖsszeg(szorzok, szorzóState);
 
   const vé = calcVÉ(szorzóÖsszeg, cella);
   const onSzorzóChange = useCallback((key: keyof typeof szorzóState, id: number) => {

@@ -667,8 +667,6 @@
   ],
   "taktika_vé_eltolás_limit": 10,
   "nyílpuska_alap_támadás": "1/2 kör",
-  "nyílpuska_gyors_újratöltés_fortély": "Gyors újratöltés",
-  "nyílpuska_gyors_újratöltés_min_fok": 1,
   "aura": {
     "mágiaellenállás_konstans": 10,
     "aurakiterjesztés_levonás": {

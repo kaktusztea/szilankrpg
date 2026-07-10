@@ -37,6 +37,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
     { label: 'Pozitív helyzet', cls: 'aktiv-picker-group-pozitív', items: data.harciHelyzetek.filter(h => h.csoport === 'pozitív' && isHelyzetAvailable(h, session, data)) },
     { label: 'Semleges helyzet', cls: 'aktiv-picker-group-semleges', items: data.harciHelyzetek.filter(h => h.csoport === 'semleges' && isHelyzetAvailable(h, session, data)) },
     { label: 'Negatív helyzet', cls: 'aktiv-picker-group-negatív', items: data.harciHelyzetek.filter(h => h.csoport === 'negatív' && isHelyzetAvailable(h, session, data)) },
+    { label: 'Távharci helyzet', cls: 'aktiv-picker-group-távharc', items: data.harciHelyzetek.filter(h => h.csoport === 'távharc' && isHelyzetAvailable(h, session, data)) },
   ];
 
   return (

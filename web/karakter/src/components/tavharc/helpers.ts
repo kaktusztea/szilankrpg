@@ -1,5 +1,5 @@
 import type { GameData } from '../../engine/data-loader';
-import type { Karakter, Session, TavfegyverAlap } from '../../engine/types';
+import type { Karakter, Session, TavfegyverAlap, TavharcSzorzok, TavharcSzorzoEntry } from '../../engine/types';
 import type { AlkalmatlanInfo, CÉBontás } from './types';
 import { buildAktívFeltételek } from '../../engine/feltetelek';
 
@@ -124,12 +124,12 @@ export function calcCÉBontás(k: Karakter, data: GameData, session: Session, de
 
 export function calcTámadásLabel(params: {
   harcmodorSzint: number; gyorsaság: number; sebesség: number;
-  gyorsÚjratöltésFok: number; konstansok: GameData['konstansok'];
+  újratöltésEnyhítés: number; alapTámadás: string;
 }): string {
-  const { harcmodorSzint, gyorsaság, sebesség, gyorsÚjratöltésFok, konstansok } = params;
+  const { harcmodorSzint, gyorsaság, sebesség, újratöltésEnyhítés, alapTámadás } = params;
   if (sebesség <= 0) {
-    return gyorsÚjratöltésFok >= konstansok.nyílpuska_gyors_újratöltés_min_fok
-      ? '1x' : konstansok.nyílpuska_alap_támadás;
+    // ponytail: újratöltésEnyhítés >= 1 = fortély enyhíti a helyzetet → 1x
+    return újratöltésEnyhítés >= 1 ? '1x' : alapTámadás;
   }
   const harckeret = harcmodorSzint + gyorsaság;
   if (harckeret <= 0) return '1x';
@@ -140,4 +140,30 @@ export function calcTámadásLabel(params: {
 
 export function calcVÉ(szorzóÖsszeg: number, cella: number): number {
   return szorzóÖsszeg >= 1 ? szorzóÖsszeg * cella : cella - Math.abs(szorzóÖsszeg);
+}
+
+// --- Újratöltés ---
+
+export function calcÚjratöltésEnyhítés(session: Session, k: Karakter): number {
+  if (!session.aktív_helyzetek.includes('Nyílpuska újratöltés')) return 0;
+  return k.fortélyok.find(f => f.név === 'Nyílpuska újratöltés fejlesztése')?.fok ?? 0;
+}
+
+// --- Szorzó összeg ---
+
+export interface SzorzóState {
+  célMozgásId: number;
+  lövészMozgásId: number;
+  méretId: number;
+  észlelhetőségId: number;
+  szélId: number;
+}
+
+export function calcSzorzóÖsszeg(szorzok: TavharcSzorzok, state: SzorzóState): number {
+  const get = (list: TavharcSzorzoEntry[], id: number) => list.find(e => e.id === id)?.szorzó ?? 0;
+  return get(szorzok.célpont_mozgás, state.célMozgásId)
+    + get(szorzok.lövész_mozgás, state.lövészMozgásId)
+    + get(szorzok.célpont_méret, state.méretId)
+    + get(szorzok.észlelhetőség, state.észlelhetőségId)
+    + get(szorzok.szél, state.szélId);
 }

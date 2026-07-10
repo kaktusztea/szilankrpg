@@ -1,5 +1,5 @@
 import type { TavharcProps } from './types';
-import { getAlkalmatlanInfo } from './helpers';
+import { getAlkalmatlanInfo, calcÚjratöltésEnyhítés } from './helpers';
 import { TavharcFegyverCard } from './TavharcFegyverCard';
 import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 
@@ -13,9 +13,8 @@ interface Props extends TavharcProps {
 
 export function TavharcFegyverLista({ data, karakter, session, setSession, setKarakter, idea, fortélyCÉ, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
   const k = karakter;
-  const konstansok = data.konstansok;
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
-  const gyorsÚjratöltésFok = k.fortélyok.find(f => f.név === konstansok.nyílpuska_gyors_újratöltés_fortély)?.fok ?? 0;
+  const újratöltésEnyhítés = calcÚjratöltésEnyhítés(session, k);
   const tfIdx = session.aktív_távfegyver_index;
 
   const alkalmatlan = getAlkalmatlanInfo(k, data);
@@ -44,7 +43,7 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
           idea={idea}
           fortélyCÉ={fortélyCÉ}
           gyorsaság={gyorsaság}
-          gyorsÚjratöltésFok={gyorsÚjratöltésFok}
+          újratöltésEnyhítés={újratöltésEnyhítés}
           onSelect={() => setSession(s => ({ ...s, aktív_távfegyver_index: i }))}
           onMfTarget={() => onMfTarget(i)}
           onDeleteTarget={() => onDeleteTarget(i)}
