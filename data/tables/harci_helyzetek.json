@@ -767,9 +767,23 @@
       "harci_szekér",
       "belharci_helyzet",
       "földön_fekve",
-      "levegőből"
+      "levegőből",
+      "lövés_reflexből"
     ],
     "feltétel_kulcs": "harci_helyzet:célzás"
+  },
+  {
+    "név": "Lövés reflexből",
+    "infó": "Váratlan lövés/hajítás. Lövés reflexből fejlesztése fortély kioltja a CÉ büntetést.",
+    "hatások": [],
+    "id": "lövés_reflexből",
+    "csoport": "távharc",
+    "rejtett": false,
+    "tiltja_taktikákat": false,
+    "kizár_helyzetek": [
+      "célzás"
+    ],
+    "feltétel_kulcs": "harci_helyzet:lövés_reflexből"
   },
   {
     "név": "Nyílpuska újratöltés",

@@ -69,7 +69,7 @@ export function AktivHelyzetek({ data, karakter, session, setSession, pushUndo, 
               </div>
               {kötöttFortélyok.map((kf, j) => (
                 <div key={j} className={`item-row aktiv-helyzet-fortely-sor ${kf.fok === 0 ? 'aktiv-helyzet-alapeset' : kf.aktív ? 'aktiv-helyzet-aktiv' : 'aktiv-helyzet-inaktiv'}`}>
-                  → {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}
+                  <span>→ {kf.név} ({kf.fok}): {fmtCode(kf.hatás)}{kf.aktív ? ' ✔' : ''}</span>
                 </div>
               ))}
             </div>

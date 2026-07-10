@@ -715,8 +715,8 @@ Generálás: `process_fegyverek.py` — Mágiatáv I-IV automatikusan hozzáfűz
 ```
 Célzás:         +3 CÉ (1 kör célzás után, nem additív)
 Kitartott célzás: +7 CÉ (fortéllyal, 1 kör, nem additív, csak íj max 1 kör!)
-Hirtelen lövés: -7 CÉ (alapesetben)
-Hirtelen lövés + "Lövés reflexből" fortély: +0 CÉ (nincs büntetés)
+Lövés reflexből: -7 CÉ (alapesetben)
+Lövés reflexből + "Lövés reflexből fejlesztése" fortély: +0 CÉ (nincs büntetés)
 
 note: Célzó dobás esetén NINCS -4 levonás az egy körön belül végzett
       újabb támadásokra (mint sima fegyveres harcnál). Minden dobás
@@ -1737,7 +1737,7 @@ Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista é
 | Lövés futás közben | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
 | Lövés hátasról | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | + Lovaglás ≥ 6, Mesterfegyver ≥ 1, Lovas harc ≥ 2 |
 | Lövés hátasról | 2 | képzettség | [Íjászat, Lövészet, Hajítás] | 9 | + Lovaglás ≥ 9, Mesterfegyver ≥ 2, Lovas harc ≥ 3 |
-| Lövés reflexből | 1 | tulajdonság | Gyorsaság | 1 | + Távolsági harcmodor ≥ 5 |
+| Lövés reflexből fejlesztése | 1 | tulajdonság | Gyorsaság | 1 | + Távolsági harcmodor ≥ 5 |
 | Mesterlövész | 1 | képzettség | Lövészet | 5 | |
 | Mozgó cél mestere fegyverrel | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
 

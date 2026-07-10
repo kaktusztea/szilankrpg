@@ -1,11 +1,11 @@
 ---
 schema_version: 1
 
-név: "Lövés reflexből"
+név: "Lövés reflexből fejlesztése"
 névkomment: ""
 maxfok: 1
 session_toggle: false
-emlékeztető: true
+emlékeztető: false
 kiérdemelhető: false
 többszörösség:
   spec_típus: ""
@@ -35,7 +35,7 @@ fokok:
         mód: "flat"
         forrás: ""
         arány: 0
-        feltétel: ""
+        feltétel: "harci_helyzet:lövés_reflexből"
         megjegyzés: "Alapeset: hirtelen lövés CÉ levonás"
   - fok: 1
     követelménytext:

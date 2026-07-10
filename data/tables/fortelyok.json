@@ -9308,12 +9308,12 @@
     "md_fájl": "fortelyok.tavharc/loves_hatasrol.md"
   },
   {
-    "név": "Lövés reflexből",
+    "név": "Lövés reflexből fejlesztése",
     "csoport": "harci",
     "alcsoport": "tavharc",
     "maxfok": 1,
     "session_toggle": false,
-    "emlékeztető": true,
+    "emlékeztető": false,
     "kiérdemelhető": false,
     "kp_perfok": 6,
     "ingyenes_perszint": 0,
@@ -9337,7 +9337,7 @@
             "mód": "flat",
             "forrás": "",
             "arány": 0,
-            "feltétel": "",
+            "feltétel": "harci_helyzet:lövés_reflexből",
             "megjegyzés": "Alapeset: hirtelen lövés CÉ levonás"
           }
         ]
@@ -9364,7 +9364,7 @@
         "módosítók": []
       }
     ],
-    "md_fájl": "fortelyok.tavharc/loves_reflexbol.md"
+    "md_fájl": "fortelyok.tavharc/loves_reflexbol_fejlesztese.md"
   },
   {
     "név": "Mesterlövész",

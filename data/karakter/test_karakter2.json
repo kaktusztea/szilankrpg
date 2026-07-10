@@ -397,7 +397,7 @@
       "spec_elem": "pier"
     },
     {
-      "név": "Lövés reflexből",
+      "név": "Lövés reflexből fejlesztése",
       "fok": 1,
       "spec_típus": "",
       "spec_elem": ""
@@ -666,7 +666,7 @@
           "field": "fortélyok",
           "op": "add",
           "item": {
-            "név": "Lövés reflexből",
+            "név": "Lövés reflexből fejlesztése",
             "fok": 1,
             "spec_típus": "",
             "spec_elem": ""
