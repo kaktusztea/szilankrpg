@@ -63,7 +63,7 @@
 
 - [Gyors hajítás](fortelyok.tavharc/gyors_hajitas.md)
 - [Gyors lövés](fortelyok.tavharc/gyors_loves.md)
-- [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md)
+- [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md)
 - [Kitartott célzás](fortelyok.tavharc/kitartott_celzas.md)
 - [Lövés futás közben](fortelyok.tavharc/loves_futas_kozben.md)
 - [Lövés reflexből](fortelyok.tavharc/loves_reflexbol.md)

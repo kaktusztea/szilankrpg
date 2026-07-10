@@ -111,7 +111,7 @@ Harckeret =
 
 ✅ [Harckeret](063_04_tamadasok_szama_fegyverrel.md#harckeret) rendszert használjuk
 
-❌ [Nyílpuskáknak](068_01_09_nyilpuskak.md) nincs **Sebesség** értéke. Ezt mérsékelheti a [Gyors újratöltés](fortelyok.tavharc/gyors_ujratoltes.md) harci fortély.
+❌ [Nyílpuskáknak](068_01_09_nyilpuskak.md) nincs **Sebesség** értéke. Ezt mérsékelheti a [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md) harci fortély.
 
 → Távolsági fegyverek **Sebesség** értékeit lásd itt: [Hajítófegyverek táblázata](068_07_hajitofegyverek.md), [Lőfegyverek táblázata](068_08_lofegyverek.md)
 

@@ -1,10 +1,10 @@
-## 🟣 Gyors újratöltés (2)
+## 🟣 Nyílpuska újratöltés fejlesztése (2)
 
 Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpuskádat.
 
 ### Alapeset
 
-[Nyílpuskák jellemzői](../068_01_09_nyilpuskak.md): Csak minden `2.körben` lehetséges velük lőni
+[Nyílpuska újratöltés](../074_tavharci_helyzetek.md#nyílpuska-újratöltés) távharci helyzet: Csak minden `2.körben` lehetséges lőni.
 
 ---
 ### 1. fok
@@ -12,7 +12,7 @@ Gyakorlatodnak köszönhetően kifejezetten gyorsan tudod újratölteni nyílpus
 🔒 Lövészet - `6.szint`
 
 🌟 **Hatás**:
-- Már minden körben tudsz (`1x`) lőni, ha [Mozgásodat](../063_01_harci_kor.md#2-mozgás) "becseréled" az újratöltésre
+- Minden körben tudsz (`1x`) lőni, ha [Mozgásodat](../063_01_harci_kor.md#2-mozgás) "becseréled" az újratöltésre
 - Ekkor nem tudsz mozgást végezni
 
 ### 2. fok
