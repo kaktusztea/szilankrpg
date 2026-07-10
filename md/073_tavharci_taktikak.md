@@ -1,4 +1,4 @@
-## Távolsági Harc taktikák
+## Távharci taktikák
 
 Néhány egyedi taktika itt is előfordul.
 

@@ -5,7 +5,7 @@ A távolsági lő- és hajítófegyvereket az alábbi **harcmodor képzettségek
 
 ## Befolyásoló jellemzők
 
-A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem ugyanolyan "céltárgynak" minősül, mint egy szalmabábú, vagy egy agyaggalamb - kivéve a [Szándékos kitérés lövés elől](075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) szituációt. Az alábbiak befolyásolják a találat esélyeit:
+A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem ugyanolyan "céltárgynak" minősül, mint egy szalmabábú, vagy egy agyaggalamb - kivéve a [Szándékos kitérés lövés elől](073_tavharci_taktikak.md#szándékos-kitérés-lövés-elől) szituációt. Az alábbiak befolyásolják a találat esélyeit:
 
 - Támadó Célzó Értéke
 - Használt fegyver Célzó Értéke, Osztója
@@ -36,17 +36,17 @@ A befolyásoló jellemzők fent említett hatásait a `CÉ` és `VÉ` értékekr
 
 ### [Célzó Érték (CÉ) számítása](071_tavharc_ce.md)
 
-### [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md)
+### [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
 
-### [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
+### [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md)
 
-### [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
+### [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
 
 
 ---
 ## Taktikák, mágikus lövedékek, fegyverek
 
-### [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
+### [Távolsági Harc Taktikák](073_tavharci_taktikak.md)
 
 ### [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
 

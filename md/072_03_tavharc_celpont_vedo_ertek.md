@@ -12,8 +12,8 @@ Célpont VÉ =
   Szorzó  ×  Cella
 ```
 
-- [Szorzó leírása](073_tavharc_ve_szorzo.md)
-- [Osztó, Cella leírása](072_tavharc_ve_oszto_cella.md)
+- [Szorzó leírása](072_02_tavharc_ve_szorzo.md)
+- [Osztó, Cella leírása](072_01_tavharc_ve_oszto_cella.md)
 
 🔆 A fenti számítások automatizálva lettek a [Karakteralkotó webapp](https://kaktusztea.github.io/szilankrpg/) "**Távharc** (🏹)" fülén, így játék közben könnyen tudod kalkulálni a támadó `CÉ` és a célpont távolsági Védő Érték statisztikákat.
 
@@ -48,6 +48,6 @@ Célpont VÉ =
 
 ---
 
-🔗 [Távharc taktikák](075_tavharc_taktikak.md) →
+🔗 [Távharc taktikák](073_tavharci_taktikak.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

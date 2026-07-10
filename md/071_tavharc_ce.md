@@ -85,6 +85,6 @@ Lásd bővebben:
 
 ---
 
-🔗 [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md) →
+🔗 [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

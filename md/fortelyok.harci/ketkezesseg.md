@@ -19,7 +19,7 @@ Ha nem vagy kétkezes és a gyengébb kezedben tartod a fegyvered, levonások s�
 - [Harckeret](../063_04_tamadasok_szama_fegyverrel.md#harckeret): `+1` bónusz
   - **ha** legalább `1.fokon` jártas vagy [Kétkezes harcban](ketkezes_harc.md)
   - és épp két fegyvert forgatsz
-- [Páros, kétkezes hajítás](../075_tavharc_taktikak.md#páros-kétkezes-hajítás) harci szituációban csak az egyik `CÉ` dobásra jár a `Hátrány-1` büntetés.
+- [Páros, kétkezes hajítás](../073_tavharci_taktikak.md#páros-kétkezes-hajítás) harci szituációban csak az egyik `CÉ` dobásra jár a `Hátrány-1` büntetés.
 
 ---
 ## Fegyver + Pajzs eset

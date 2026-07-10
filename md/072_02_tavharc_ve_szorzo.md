@@ -131,6 +131,6 @@ Szél ereje
 
 ---
 
-🔗 [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md) →
+🔗 [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

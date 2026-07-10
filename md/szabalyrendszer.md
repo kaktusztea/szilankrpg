@@ -210,10 +210,10 @@
 ### 7. [Távolsági harcrendszer](070_tavolsagi_harc.md) 🏹
 
 - [Célzó Érték számítása](071_tavharc_ce.md)
-- [Osztó és Cella értéke a távolsági Védő Értékben](072_tavharc_ve_oszto_cella.md)
-- [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md)
-- [Célpont Védő Érték kiszámítása](074_tavharc_celpont_vedo_ertek.md)
-- [Távolsági Harc Taktikák](075_tavharc_taktikak.md)
+- [Osztó és Cella értéke a távolsági Védő Értékben](072_01_tavharc_ve_oszto_cella.md)
+- [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md)
+- [Célpont Védő Érték kiszámítása](072_03_tavharc_celpont_vedo_ertek.md)
+- [Távolsági Harc Taktikák](073_tavharci_taktikak.md)
 - [Távolsági harc csatamágia esetén](076_tavharc_csatamagia_eseten.md)
 - [Területlövés](077_teruletloves.md)
 - [Távolsági fegyverek](078_tavharc_fegyverek.md)

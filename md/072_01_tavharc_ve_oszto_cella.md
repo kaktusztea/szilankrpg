@@ -51,7 +51,7 @@ Cella =
   (Távolság (m) / Fegyver Osztó) ↑
 ```
 
-Ez a hányados (felfelé kerekítve) adja meg, hogy hányadik **"távolság-cellában"** található a célpont. A `Védő Érték` végső kalkulációjakor ezzel a számmal lesz majd beszorozva a célpont **Szorzója**, amelyet a [következő oldalon](073_tavharc_ve_szorzo.md) tárgyalunk.
+Ez a hányados (felfelé kerekítve) adja meg, hogy hányadik **"távolság-cellában"** található a célpont. A `Védő Érték` végső kalkulációjakor ezzel a számmal lesz majd beszorozva a célpont **Szorzója**, amelyet a [következő oldalon](072_02_tavharc_ve_szorzo.md) tárgyalunk.
 
 #### ⚡ Cella példa
 
@@ -79,6 +79,6 @@ Ha a KM esetleg mágikus, vagy kifejezetten jó minőségű fegyver értékeit a
 
 ---
 
-🔗 [Szorzó értéke a távolsági Védő Értékben](073_tavharc_ve_szorzo.md) →
+🔗 [Szorzó értéke a távolsági Védő Értékben](072_02_tavharc_ve_szorzo.md) →
 
 ⚜️ [Nyitóoldal](szabalyrendszer.md#7-távolsági-harcrendszer-)

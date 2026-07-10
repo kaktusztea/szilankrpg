@@ -8,7 +8,7 @@ A [Gyógyítás, Gyógyulás](130_gyogyitas_gyogyulas.md) elszenvedett sebeid re
 
 Kiemelt fejezetet szenteltünk a [Szituációknak](150_szituaciok.md), hogy ne maradj sorvezető nélkül klasszikus próbahelyzetek során sem, mint például az [Érzékelés, Észlelés](szituaciok/erzekeles_eszleles_aktiv_passziv.md) - ami talán a leggyakoribb ellenpróbás szituáció, amivel a kalandozásaid során találkozhatsz.
 
-A rendszer jól adaptálható nem-fantasy, modern világokra is új, ad-hoc [Szabad fortélyok](042_szabad_fortelyok.md) meghatározásával a képzettségek kiterjesztéseként és a [Távharc Osztó](072_tavharc_ve_oszto_cella.md) meghatározásával lőfegyverekre (Távcsöves puska: `10`).
+A rendszer jól adaptálható nem-fantasy, modern világokra is új, ad-hoc [Szabad fortélyok](042_szabad_fortelyok.md) meghatározásával a képzettségek kiterjesztéseként és a [Távharc Osztó](072_01_tavharc_ve_oszto_cella.md) meghatározásával lőfegyverekre (Távcsöves puska: `10`).
 
 A szabályrendszer eredeti, hiteles forrása ezen URL alatt található:\
 https://github.com/kaktusztea/szilankrpg/

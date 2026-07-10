@@ -1,6 +1,6 @@
 ## Szándékos kitérés lövés elől
 
-Lásd a [Szándékos kitérés lövés elől](../075_tavharc_taktikak.md#szándékos-kitérés-lövés-elől) fejezetet!
+Lásd a [Szándékos kitérés lövés elől](../073_tavharci_taktikak.md#szándékos-kitérés-lövés-elől) fejezetet!
 
 ---
 
