@@ -77,6 +77,8 @@ Hátrány-1 TÉ dobásra
 VÉ veszteség duplázódik
 ```
 
+Enyhíti: [Helyhez kötve fejlesztése](fortelyok.harci/helyhez_kotve_fejlesztese.md) fortély
+
 ❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
 
 <br />

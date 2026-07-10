@@ -67,7 +67,7 @@ manőverek:
   típus: "általános"
   nehézség: 9
   fázisok: "V,E"
-  hatás: "Ellenfél fegyvere foglyul ejtve — nem használhatja. Harc helyhez kötve módosítók."
+  hatás: "Ellenfél fegyvere foglyul ejtve — nem használhatja. Helyhez kötve harci helyzet módosítók."
   id: "lánccsapda"
 - név: "Lánccsapdából szabadítás"
   típus: "általános"

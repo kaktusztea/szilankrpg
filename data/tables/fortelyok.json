@@ -3331,98 +3331,6 @@
     "md_fájl": "fortelyok.harci/gyors_kezdemenyezes.md"
   },
   {
-    "név": "Harc helyhez kötve",
-    "csoport": "harci",
-    "alcsoport": "harci",
-    "maxfok": 2,
-    "session_toggle": false,
-    "emlékeztető": true,
-    "kiérdemelhető": false,
-    "kp_perfok": 6,
-    "ingyenes_perszint": 0,
-    "többszörös_típus": "",
-    "többszörös_lista": [],
-    "leírás": "Nem esel kétségbe kis helyen vagy kimozgás nélkül harcolva.",
-    "kiterjeszti_normál": [],
-    "kiterjeszti_erős": [],
-    "fokok": [
-      {
-        "fok": 0,
-        "hatás": [
-          "Helyhez kötve harci helyzet teljes büntetése sújt."
-        ],
-        "követelmény": [],
-        "követelmények": [],
-        "módosítók": []
-      },
-      {
-        "fok": 1,
-        "hatás": [
-          "Helyhez kötve harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt!"
-        ],
-        "követelmény": [
-          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 3.szint"
-        ],
-        "követelmények": [
-          {
-            "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
-            ],
-            "érték": 3,
-            "típus": "képzettség"
-          }
-        ],
-        "módosítók": [
-          {
-            "cél": "vé_veszteség",
-            "érték": 1,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:helyhez_kötve"
-          }
-        ]
-      },
-      {
-        "fok": 2,
-        "hatás": [
-          "Helyhez kötve harci helyzet: Hátrány-1 TÉ dobásra sem sújt már."
-        ],
-        "követelmény": [
-          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
-        ],
-        "követelmények": [
-          {
-            "név": [
-              "Közelharc",
-              "Kardvívás",
-              "Rombolás",
-              "Lándzsavívás",
-              "Ostorharc"
-            ],
-            "érték": 6,
-            "típus": "képzettség"
-          }
-        ],
-        "módosítók": [
-          {
-            "cél": "té_dobás",
-            "érték": 1,
-            "mód": "enyhít",
-            "forrás": "",
-            "arány": 0,
-            "feltétel": "harci_helyzet:helyhez_kötve"
-          }
-        ]
-      }
-    ],
-    "md_fájl": "fortelyok.harci/harc_helyhez_kotve.md"
-  },
-  {
     "név": "Harci akrobatika",
     "csoport": "harci",
     "alcsoport": "harci",
@@ -4145,6 +4053,98 @@
       }
     ],
     "md_fájl": "fortelyok.harci/haritofegyver_hasznalat.md"
+  },
+  {
+    "név": "Helyhez kötve fejlesztése",
+    "csoport": "harci",
+    "alcsoport": "harci",
+    "maxfok": 2,
+    "session_toggle": false,
+    "emlékeztető": true,
+    "kiérdemelhető": false,
+    "kp_perfok": 6,
+    "ingyenes_perszint": 0,
+    "többszörös_típus": "",
+    "többszörös_lista": [],
+    "leírás": "Nem esel kétségbe kis helyen vagy kimozgás nélkül harcolva.",
+    "kiterjeszti_normál": [],
+    "kiterjeszti_erős": [],
+    "fokok": [
+      {
+        "fok": 0,
+        "hatás": [
+          "Helyhez kötve harci helyzet teljes büntetése sújt."
+        ],
+        "követelmény": [],
+        "követelmények": [],
+        "módosítók": []
+      },
+      {
+        "fok": 1,
+        "hatás": [
+          "Helyhez kötve harci helyzet: a VÉ veszteség duplázódás Hatás már nem sújt!"
+        ],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 3.szint"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 3,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "vé_veszteség",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:helyhez_kötve"
+          }
+        ]
+      },
+      {
+        "fok": 2,
+        "hatás": [
+          "Helyhez kötve harci helyzet: Hátrány-1 TÉ dobásra sem sújt már."
+        ],
+        "követelmény": [
+          "Közelharc VAGY Kardvívás VAGY Rombolás VAGY Lándzsavívás VAGY Ostorharc - 6.szint"
+        ],
+        "követelmények": [
+          {
+            "név": [
+              "Közelharc",
+              "Kardvívás",
+              "Rombolás",
+              "Lándzsavívás",
+              "Ostorharc"
+            ],
+            "érték": 6,
+            "típus": "képzettség"
+          }
+        ],
+        "módosítók": [
+          {
+            "cél": "té_dobás",
+            "érték": 1,
+            "mód": "enyhít",
+            "forrás": "",
+            "arány": 0,
+            "feltétel": "harci_helyzet:helyhez_kötve"
+          }
+        ]
+      }
+    ],
+    "md_fájl": "fortelyok.harci/helyhez_kotve_fejlesztese.md"
   },
   {
     "név": "Kaszabolás",
