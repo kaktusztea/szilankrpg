@@ -48,7 +48,7 @@ VÉ csökkentés: +1 bónusz
 VÉ: +5
 ```
 
-🔆 [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban)
+🔆 [Vakharc - félhomályban](065_01_03_negativ_helyzetek.md#vakharc---félhomályban): nullázza bónuszaidat
 
 🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
 
@@ -64,6 +64,8 @@ Előny+2 TÉ dobásra
 VÉ csökkentés: +2 bónusz
 VÉ: +10
 ```
+
+🔆 [Vakharc - sötétben](065_01_03_negativ_helyzetek.md#vakharc---sötétben): nullázza bónuszaidat
 
 🔆 Fárasztó Taktika **NEM** alkalmazható Láthatatlan ellenfél ellen
 
