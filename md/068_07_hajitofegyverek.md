@@ -44,7 +44,8 @@ Kategória: hajító
 
 A harcértékek a tárgy jellegétől függnek, de a fenti értékek fölé nem nyúlhatnak.
 
-Kapcsolódó fortély: [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
+Kapcsolódó távharci helyzet: [Hajítás nem dobásra készített tárgyakkal](074_tavharci_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)\
+Kapcsolódó fortély: [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md)
 
 ---
 

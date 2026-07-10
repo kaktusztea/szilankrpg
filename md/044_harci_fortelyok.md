@@ -6,8 +6,6 @@
 
 - [Alakzat: támadó](fortelyok.harci/alakzat_tamado.md)
 - [Alakzat: védekező](fortelyok.harci/alakzat_vedekezo.md)
-- [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) 🔁
-- [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_targyak_hajitasa.md)
 - [Belharc](fortelyok.harci/belharcos.md)
 - [Elpusztíthatatlan](fortelyok.harci/elpusztithatatlan.md)
 - [Elsöprő roham](fortelyok.harci/elsopro_roham.md)
@@ -61,6 +59,8 @@
 
 <!-- tag: tavharc__fortely -->
 
+- [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) 🔁
+- [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md)
 - [Gyors hajítás](fortelyok.tavharc/gyors_hajitas.md)
 - [Gyors lövés](fortelyok.tavharc/gyors_loves.md)
 - [Kitartott célzás fejlesztése](fortelyok.tavharc/kitartott_celzas_fejlesztes.md)

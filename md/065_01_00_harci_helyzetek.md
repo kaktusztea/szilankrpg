@@ -33,8 +33,6 @@ A Harci helyzetek speciális [Státuszok](080_hatasok_es_statuszok.md), melyek s
 - [Csúszós talaj](065_01_03_negativ_helyzetek.md#csúszós-talaj)
 - [Elvesztett egyensúly](065_01_03_negativ_helyzetek.md#elvesztett-egyensúly)
 - [Földön fekve](065_01_03_negativ_helyzetek.md#földön-fekve)
-- [Hajítás alkalmatlan fegyverrel](065_01_03_negativ_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
-- [Hajítás nem dobásra készített tárgyakkal](065_01_03_negativ_helyzetek.md#hajítás-nem-dobásra-készített-tárgyakkal)
 - [Helyhez kötve](065_01_03_negativ_helyzetek.md#helyhez-kötve)
 - [Lények méret különbsége](065_01_03_negativ_helyzetek.md#lények-méret-különbsége)
 - [Gyengébb kéz](065_01_03_negativ_helyzetek.md#gyengébb-kéz)

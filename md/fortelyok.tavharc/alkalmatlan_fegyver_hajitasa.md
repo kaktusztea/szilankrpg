@@ -6,11 +6,11 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 
 ### Kapcsolódik
 
--  [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) képzettség
+[Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) képzettség
 
 ### Alapeset
 
-[Hajítás alkalmatlan fegyverrel - harci helyzet levonásai](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
+[Hajítás alkalmatlan fegyverrel - harci helyzet levonásai](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel)
 
 ---
 ### 1. fok
@@ -20,7 +20,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 - [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `3.szint`
 
 🌟 **Hatás**:
-- [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései az adott fegyver dobásakor csökkennek:
+- [Hajítás alkalmatlan fegyverrel](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) távharci helyzet büntetései az adott fegyver dobásakor csökkennek:
   - `Hátrány-1` Sebzésdobásra
   - `Hátrány-1` `CÉ` dobásra
 - A fegyver harcértéke nem változik (`CÉ=0`)
@@ -34,7 +34,7 @@ Képes vagy bármely (az ésszerűség határain belül) nem kifejezetten hajít
 - [Hajítás harcmodor](../kepzettsegek.primer/harci/harcmodor.md) - `6.szint`
 
 🌟 **Hatás**:
-- [Hajítás alkalmatlan fegyverrel](../065_01_04_fegyver_harci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései **nem** sújtanak
+- [Hajítás alkalmatlan fegyverrel](../074_tavharci_helyzetek.md#hajítás-alkalmatlan-fegyverrel) harci helyzet büntetései **nem** sújtanak
 - A fegyver harcértéke nem változik (`CÉ=0`)
 
 ---

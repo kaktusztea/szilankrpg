@@ -38,38 +38,6 @@ VÉ veszteség duplázódik
 <br />
 
 ---
-## Hajítás alkalmatlan fegyverrel
-
-```
-Hátrány-2 Sebzésdobásra
-Hátrány-2 CÉ dobásra
-Fegyver CÉ = 0
-SP: fegyver eredeti sebzése - 5
-```
-
-⚡ Példa: hosszú kard hajítása
-
-🔆 Mérsékelheti: [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) fortély
-
----
-## Hajítás nem dobásra készített tárgyakkal
-
-```
-Hátrány-1 Sebzésdobásra
-Hátrány-1 CÉ dobásra
-Fegyver CÉ = 0
-SP: -5 + k20 (FP vagy ÉP: KM dönt)
-```
-
-⚡ Példa: sámli hajítása
-
-🔆 Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
-
-🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély
-
-<br />
-
----
 ## Helyhez kötve
 
 ```

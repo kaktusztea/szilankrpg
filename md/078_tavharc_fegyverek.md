@@ -78,7 +78,7 @@ Például hosszú kard hajítása. Alapesetben jelentős büntetésekkel végezh
 
 → [Hajítás alkalmatlan fegyverrel](065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-alkalmatlan-fegyverrel) harci helyzet
 
-⚜️ [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) 🔁 fortély tanulásával (fegyverenként) a büntetések mérsékelhetőek.
+⚜️ [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) 🔁 fortély tanulásával (fegyverenként) a büntetések mérsékelhetőek.
 
 <br />
 
@@ -89,7 +89,7 @@ Például sámli hajítása. Alapesetben büntetésekkel végezhető:
 
 → [Hajítás nem dobásra készített tárgyakkal](https://github.com/kaktusztea/szilankrpg/blob/master/md/065_01_04_fegyver_harci_helyzetek.md#haj%C3%ADt%C3%A1s-nem-dob%C3%A1sra-k%C3%A9sz%C3%ADtett-t%C3%A1rgyakkal) harci helyzet
 
-⚜️ [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) fortély tanulásával a büntetések mérsékelhetőek.
+⚜️ [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) fortély tanulásával a büntetések mérsékelhetőek.
 
 <br />
 

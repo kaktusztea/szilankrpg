@@ -62,7 +62,7 @@ SP: fegyver eredeti sebzése - 5
 
 ⚡ Példa: hosszú kard hajítása
 
-🔆 Mérsékelheti: [Alkalmatlan fegyver hajítása](fortelyok.harci/alkalmatlan_fegyver_hajitasa.md) fortély
+🔆 Mérsékelheti: [Alkalmatlan fegyver hajítása](fortelyok.tavharc/alkalmatlan_fegyver_hajitasa.md) fortély
 
 ---
 ## Hajítás nem dobásra készített tárgyakkal
@@ -79,7 +79,7 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 
 🔆 Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
 
-🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítása](fortelyok.harci/alkalmatlan_targyak_hajitasa.md) fortély
+🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) fortély
 
 <br />
 
