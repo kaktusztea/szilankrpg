@@ -4,7 +4,7 @@ A [Harci helyzetek](065_01_04_fegyver_harci_helyzetek.md) távolsági harcra von
 
 - [Kitartott célzás](#kitartott-célzás)
 - [Lövés reflexből](#lövés-reflexből)
-- [Nyílpuska újratöltése](#nyílpuska-újratöltése)
+- [Nyílpuska újratöltés](#nyílpuska-újratöltés)
 
 ## Kitartott célzás
 
