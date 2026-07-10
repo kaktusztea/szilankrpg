@@ -277,7 +277,7 @@
     "feltétel_kulcs": "harci_helyzet:közrefogás"
   },
   {
-    "név": "Láthatatlanul harcolás - hallhatóan",
+    "név": "Láthatatlan - részlegesen",
     "infó": "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott.",
     "hatások": [
       {
@@ -296,17 +296,17 @@
         "cél": "vé"
       }
     ],
-    "id": "láthatatlanul_hallhatóan",
+    "id": "láthatatlan_részlegesen",
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [
-      "láthatatlanul_csendesen"
+      "láthatatlan_teljesen"
     ],
-    "feltétel_kulcs": "harci_helyzet:láthatatlanul_hallhatóan"
+    "feltétel_kulcs": "harci_helyzet:láthatatlan_részlegesen"
   },
   {
-    "név": "Láthatatlanul harcolás - csendesen",
+    "név": "Láthatatlan - teljesen",
     "infó": "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott.",
     "hatások": [
       {
@@ -325,14 +325,14 @@
         "cél": "vé"
       }
     ],
-    "id": "láthatatlanul_csendesen",
+    "id": "láthatatlan_teljesen",
     "csoport": "pozitív",
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [
-      "láthatatlanul_hallhatóan"
+      "láthatatlan_részlegesen"
     ],
-    "feltétel_kulcs": "harci_helyzet:láthatatlanul_csendesen"
+    "feltétel_kulcs": "harci_helyzet:láthatatlan_teljesen"
   },
   {
     "név": "Levegőből támadás",
@@ -493,8 +493,8 @@
     "feltétel_kulcs": "harci_helyzet:rosszabbik_kéz"
   },
   {
-    "név": "Sötétben - félhomály",
-    "infó": "Hátrány-1 TÉ dobásra. Vakharc/Infralátás/Ultralátás mérsékli.",
+    "név": "Vakharc - félhomályban",
+    "infó": "Hátrány-1 TÉ dobásra. Vakharc fejlesztése/Infralátás/Ultralátás mérsékli.",
     "hatások": [
       {
         "operátor": "hátrány",
@@ -502,39 +502,18 @@
         "cél": "té_dobás"
       }
     ],
-    "id": "sötétben_1",
+    "id": "vakharc_félhomály",
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [
-      "sötétben_2",
-      "sötétben_3"
+      "vakharc_sötétben"
     ],
-    "feltétel_kulcs": "harci_helyzet:sötétben_1"
+    "feltétel_kulcs": "harci_helyzet:vakharc_félhomály"
   },
   {
-    "név": "Sötétben - teljes, zajokkal",
-    "infó": "Hátrány-1 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli.",
-    "hatások": [
-      {
-        "operátor": "hátrány",
-        "érték": -1,
-        "cél": "té_dobás"
-      }
-    ],
-    "id": "sötétben_2",
-    "csoport": "negatív",
-    "rejtett": false,
-    "tiltja_taktikákat": false,
-    "kizár_helyzetek": [
-      "sötétben_1",
-      "sötétben_3"
-    ],
-    "feltétel_kulcs": "harci_helyzet:sötétben_2"
-  },
-  {
-    "név": "Sötétben - teljes, csendben",
-    "infó": "Hátrány-2 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli.",
+    "név": "Vakharc - sötétben",
+    "infó": "Hátrány-2 TÉ dobásra. Vakharc fejlesztése/Infralátás/Ultralátás mérsékli.",
     "hatások": [
       {
         "operátor": "hátrány",
@@ -542,15 +521,14 @@
         "cél": "té_dobás"
       }
     ],
-    "id": "sötétben_3",
+    "id": "vakharc_sötétben",
     "csoport": "negatív",
     "rejtett": false,
     "tiltja_taktikákat": false,
     "kizár_helyzetek": [
-      "sötétben_1",
-      "sötétben_2"
+      "vakharc_félhomály"
     ],
-    "feltétel_kulcs": "harci_helyzet:sötétben_3"
+    "feltétel_kulcs": "harci_helyzet:vakharc_sötétben"
   },
   {
     "név": "Tűz ruhán - ég",

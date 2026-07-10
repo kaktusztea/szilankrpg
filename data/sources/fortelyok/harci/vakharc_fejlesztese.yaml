@@ -1,0 +1,47 @@
+schema_version: 1
+név: "Vakharc fejlesztése"
+névkomment: ""
+maxfok: 3
+session_toggle: false
+emlékeztető: true
+kiérdemelhető: false
+többszörösség:
+  spec_típus: ""
+  spec_lista: []
+csoport: "harci"
+leírások:
+- text: "Sötétben apró neszek, megérzések segítenek csökkenteni a látáshiány okozta hátrányokat."
+megjegyzések:
+- text: ""
+kiterjeszti:
+  normál: []
+  erős: []
+kp_perfok: 6
+ingyenes_perszint: 0
+fokok:
+- fok: 0
+  követelménytext: []
+  követelmények: ""
+  hatástext:
+  - text: "Vakharc - félhomályban / Vakharc - sötétben harci helyzet hátrányai sújtanak."
+  módosítók: ""
+- fok: 1
+  követelménytext: []
+  követelmények: ""
+  hatástext:
+  - text: "Vakharc harci helyzetben: 1 fokot megszüntet TÉ Hátrányodból."
+  módosítók: ""
+- fok: 2
+  követelménytext: []
+  követelmények: ""
+  hatástext:
+  - text: "Vakharc harci helyzetben: 2 fokot megszüntet TÉ Hátrányodból."
+  módosítók: ""
+- fok: 3
+  követelménytext: []
+  követelmények: ""
+  hatástext:
+  - text: "Vakharc harci helyzetben: 2 fokot megszüntet TÉ Hátrányodból."
+  - text: "Láthatatlan ellenfél ellen: 1 fokot megszüntet Támadó TÉ Előnyéből."
+  - text: "Túlterhelt érzékek esetén is működik."
+  módosítók: ""

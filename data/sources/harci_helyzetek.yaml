@@ -157,7 +157,7 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["földön_fekve"]
-- név: "Láthatatlanul harcolás - hallhatóan"
+- név: "Láthatatlan - részlegesen"
   infó: "Előny+1 TÉ, VÉ csökkentés: +1, VÉ: +5. Fárasztó tiltott."
   hatások:
   - operátor: "előny"
@@ -169,12 +169,12 @@ harci_helyzetek:
   - operátor: "előny"
     érték: 5
     cél: "vé"
-  id: "láthatatlanul_hallhatóan"
+  id: "láthatatlan_részlegesen"
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["láthatatlanul_csendesen"]
-- név: "Láthatatlanul harcolás - csendesen"
+  kizár_helyzetek: ["láthatatlan_teljesen"]
+- név: "Láthatatlan - teljesen"
   infó: "Előny+2 TÉ, VÉ csökkentés: +2, VÉ: +10. Fárasztó tiltott."
   hatások:
   - operátor: "előny"
@@ -186,11 +186,11 @@ harci_helyzetek:
   - operátor: "előny"
     érték: 10
     cél: "vé"
-  id: "láthatatlanul_csendesen"
+  id: "láthatatlan_teljesen"
   csoport: "pozitív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["láthatatlanul_hallhatóan"]
+  kizár_helyzetek: ["láthatatlan_részlegesen"]
 - név: "Levegőből támadás"
   infó: "Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK."
   hatások:
@@ -281,39 +281,28 @@ harci_helyzetek:
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
-- név: "Sötétben - félhomály"
-  infó: "Hátrány-1 TÉ dobásra. Vakharc/Infralátás/Ultralátás mérsékli."
+- név: "Vakharc - félhomályban"
+  infó: "Hátrány-1 TÉ dobásra. Vakharc fejlesztése/Infralátás/Ultralátás mérsékli."
   hatások:
   - operátor: "hátrány"
     érték: -1
     cél: "té_dobás"
-  id: "sötétben_1"
+  id: "vakharc_félhomály"
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["sötétben_2", "sötétben_3"]
-- név: "Sötétben - teljes, zajokkal"
-  infó: "Hátrány-1 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli."
-  hatások:
-  - operátor: "hátrány"
-    érték: -1
-    cél: "té_dobás"
-  id: "sötétben_2"
-  csoport: "negatív"
-  rejtett: false
-  tiltja_taktikákat: false
-  kizár_helyzetek: ["sötétben_1", "sötétben_3"]
-- név: "Sötétben - teljes, csendben"
-  infó: "Hátrány-2 TÉ dobásra. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli."
+  kizár_helyzetek: ["vakharc_sötétben"]
+- név: "Vakharc - sötétben"
+  infó: "Hátrány-2 TÉ dobásra. Vakharc fejlesztése/Infralátás/Ultralátás mérsékli."
   hatások:
   - operátor: "hátrány"
     érték: -2
     cél: "té_dobás"
-  id: "sötétben_3"
+  id: "vakharc_sötétben"
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
-  kizár_helyzetek: ["sötétben_1", "sötétben_2"]
+  kizár_helyzetek: ["vakharc_félhomály"]
 - név: "Tűz ruhán - ég"
   infó: "Hátrány-1 TÉ, (-5+k20) SP/kör. Eloltás: 1 kör."
   hatások:
