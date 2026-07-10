@@ -60,22 +60,21 @@ Lásd bővebben:
 ---
 ## CÉ Módosítók
 
+→ [Távharci helyzetek](074_tavharci_helyzetek.md)\
 → [Távolsági fortélyok](044_harci_fortelyok.md#t%C3%A1vols%C3%A1gi-harci-fort%C3%A9lyok)
 
 ```
-+3: 1 célzással eltöltött kör után
-   (nem additív) 🔆
+Kitartott célzás helyzet
+ +3: alapeset
+ +7: "Kitartott célzás fejlesztése" fortéllyal
+     (+3 alapeset + 4 fortély)
 
-+7: 1 célzással eltöltött kör után
-    "Kitartott célzás" fortéllyal
-    (nem additív) 🔆
-
--7: Lövés reflexből
--0: Lövés reflexből
-    "Lövés reflexből fejlesztése" fortéllyal
+Lövés reflexből helyzet
+ -7: Lövés reflexből
+ -0: "Lövés reflexből fejlesztése" fortéllyal
 ```
 
-🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
+🔆 **Kitartott célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
 
 ### Kapcsolódik
 

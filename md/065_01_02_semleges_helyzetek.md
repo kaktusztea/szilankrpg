@@ -6,7 +6,7 @@ Ha a képzett harcosnak sikerül ellenfele fegyvere "mögé", testközelébe ker
 
 Szituáció:  [Belharc folyamata](szituaciok/belharc_folyamata.md) - bekerülés, kikerülés
 
-❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Célzás, Takarásban
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Takarásban
 
 <br />
 

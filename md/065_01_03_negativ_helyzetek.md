@@ -33,7 +33,7 @@ Hátrány-2 TÉ dobásra
 VÉ veszteség duplázódik
 ```
 
-❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Helyhez kötve, Célzás, VÉ kiterjesztés, Közrefogás
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Magasabbról, Levegőből támadás, Helyhez kötve, VÉ kiterjesztés, Közrefogás
 
 <br />
 

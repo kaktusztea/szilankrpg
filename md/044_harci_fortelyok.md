@@ -63,8 +63,8 @@
 
 - [Gyors hajítás](fortelyok.tavharc/gyors_hajitas.md)
 - [Gyors lövés](fortelyok.tavharc/gyors_loves.md)
+- [Kitartott célzás fejlesztése](fortelyok.tavharc/kitartott_celzas_fejlesztes.md)
 - [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md)
-- [Kitartott célzás](fortelyok.tavharc/kitartott_celzas.md)
 - [Lövés futás közben](fortelyok.tavharc/loves_futas_kozben.md)
 - [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md)
 - [Mesterlövész](fortelyok.tavharc/mesterlovesz.md)
