@@ -5,13 +5,12 @@ import { MAX_FEGYVER_DARAB } from '../../ui-constants';
 
 interface Props extends TavharcProps {
   idea: number;
-  fortélyCÉ: number;
   onMfTarget: (idx: number) => void;
   onDeleteTarget: (idx: number) => void;
   onIdeaPopup: () => void;
 }
 
-export function TavharcFegyverLista({ data, karakter, session, setSession, setKarakter, idea, fortélyCÉ, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
+export function TavharcFegyverLista({ data, karakter, session, setSession, setKarakter, idea, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
   const k = karakter;
   const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
   const újratöltésEnyhítés = calcÚjratöltésEnyhítés(session, k);
@@ -41,7 +40,6 @@ export function TavharcFegyverLista({ data, karakter, session, setSession, setKa
           session={session}
           data={data}
           idea={idea}
-          fortélyCÉ={fortélyCÉ}
           gyorsaság={gyorsaság}
           újratöltésEnyhítés={újratöltésEnyhítés}
           onSelect={() => setSession(s => ({ ...s, aktív_távfegyver_index: i }))}

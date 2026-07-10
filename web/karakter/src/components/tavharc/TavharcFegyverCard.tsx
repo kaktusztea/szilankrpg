@@ -1,6 +1,6 @@
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { getMfFok, mfKövetelményHiba, mfKövetelményText, calcCÉBontás, calcTámadásLabel } from './helpers';
+import { getMfFok, mfKövetelményHiba, mfKövetelményText, calcCÉBontás, calcTámadásLabel, getFortélyCÉ } from './helpers';
 
 interface Props {
   index: number;
@@ -9,7 +9,6 @@ interface Props {
   session: Session;
   data: GameData;
   idea: number;
-  fortélyCÉ: number;
   gyorsaság: number;
   újratöltésEnyhítés: number;
   onSelect: () => void;
@@ -18,11 +17,12 @@ interface Props {
   onIdeaPopup: () => void;
 }
 
-export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, idea, fortélyCÉ, gyorsaság, újratöltésEnyhítés, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
+export function TavharcFegyverCard({ index, isActive, karakter: k, session, data, idea, gyorsaság, újratöltésEnyhítés, onSelect, onMfTarget, onDeleteTarget, onIdeaPopup }: Props) {
   const tf = k.távfegyverek[index];
   const konstansok = data.konstansok;
   const def = data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tf.alap.toLowerCase());
 
+  const fortélyCÉ = getFortélyCÉ(k, data, session, tf.alap);
   const bontás = calcCÉBontás(k, data, session, def, idea, fortélyCÉ, tf.alap);
   const mf = getMfFok(k, tf.alap);
   const sebesség = parseInt(def?.Sebesség ?? '-1') || -1;

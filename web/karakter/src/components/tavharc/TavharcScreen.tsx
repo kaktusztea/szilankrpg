@@ -23,7 +23,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
   const [idea, setIdea] = useState(0);
 
   // --- CÉ bontás ---
-  const fortélyCÉ = getFortélyCÉ(k, data, session);
+  const fortélyCÉ = getFortélyCÉ(k, data, session, tfPeldany?.alap);
   const bontás = calcCÉBontás(k, data, session, tfDef, idea, fortélyCÉ);
 
   // --- MF ---
@@ -75,7 +75,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
       {!gameMode && (
         <TavharcFegyverLista
           data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}
-          idea={idea} fortélyCÉ={fortélyCÉ}
+          idea={idea}
           onMfTarget={i => setPopup(s => ({ ...s, mfTarget: i }))}
           onDeleteTarget={i => setPopup(s => ({ ...s, deleteTarget: i }))}
           onIdeaPopup={() => setPopup(s => ({ ...s, ideaPopup: true }))}

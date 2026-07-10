@@ -71,9 +71,16 @@ export function mfKövetelményText(k: Karakter, data: GameData, alap: string): 
 
 // --- CÉ kalkuláció ---
 
-export function getFortélyCÉ(k: Karakter, data: GameData, session: Session): number {
+export function getFortélyCÉ(k: Karakter, data: GameData, session: Session, fegyverAlap?: string): number {
   const aktívFeltételek = buildAktívFeltételek(session, data);
   let total = 0;
+  // Resolve target weapon def (explicit or from session index)
+  const tfPeldanyR = fegyverAlap
+    ? { alap: fegyverAlap }
+    : k.távfegyverek[session.aktív_távfegyver_index];
+  const tfDefR = tfPeldanyR
+    ? data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tfPeldanyR.alap.toLowerCase())
+    : undefined;
   // Helyzet hatások: CÉ flat bónuszok aktív helyzetekből
   for (const hNév of session.aktív_helyzetek) {
     const def = data.harciHelyzetek.find(d => d.név === hNév);
@@ -88,10 +95,7 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session): n
     if (!def?.módosítók?.CÉ) continue;
     // szűrő_harcmodorok: bónusz csak akkor jár ha az aktív távfegyver harcmodora egyezik
     if (def.szűrő_harcmodorok?.length) {
-      const tfIdx = session.aktív_távfegyver_index;
-      const tfPeldany = k.távfegyverek[tfIdx];
-      const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
-      if (!tfDef || !def.szűrő_harcmodorok.includes(tfDef.Harcmodor ?? '')) continue;
+      if (!tfDefR || !def.szűrő_harcmodorok.includes(tfDefR.Harcmodor ?? '')) continue;
     }
     total += def.módosítók.CÉ;
   }
@@ -101,7 +105,15 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session): n
     const módosítók = fDef.fokok.find(f => f.fok === effFok)?.módosítók;
     if (!módosítók) continue;
     for (const mod of módosítók) {
-      if (mod.cél === 'CÉ' && mod.feltétel && aktívFeltételek.has(mod.feltétel)) total += mod.érték;
+      if (mod.cél !== 'CÉ' || !mod.feltétel || !aktívFeltételek.has(mod.feltétel)) continue;
+      // If feltétel references a taktika with szűrő_harcmodorok, check weapon compatibility
+      if (mod.feltétel.startsWith('taktika:')) {
+        const tDef = data.taktikak.find(t => t.feltétel_kulcs === mod.feltétel);
+        if (tDef?.szűrő_harcmodorok?.length) {
+          if (!tfDefR || !tDef.szűrő_harcmodorok.includes(tfDefR.Harcmodor ?? '')) continue;
+        }
+      }
+      total += mod.érték;
     }
   }
   return total;
