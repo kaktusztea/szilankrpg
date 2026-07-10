@@ -4,7 +4,6 @@ A [Harci helyzetek](065_01_04_fegyver_harci_helyzetek.md) távolsági harcra von
 
 - [Hajítás alkalmatlan fegyverrel](#hajítás-alkalmatlan-fegyverrel)
 - [Hajítás nem dobásra készített tárgyakkal](#hajítás-nem-dobásra-készített-tárgyakkal)
-- [Kitartott célzás](#kitartott-célzás)
 - [Lövés reflexből](#lövés-reflexből)
 - [Nyílpuska újratöltés](#nyílpuska-újratöltés)
 
@@ -38,17 +37,6 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 🔆 Bővebben: [Nem dobásra készített tárgyak harcértékei](068_07_hajitofegyverek.md#-nem-dobásra-készített-tárgy)
 
 🔆 Mérsékelheti: [Alkalmatlan tárgyak hajítása](fortelyok.tavharc/alkalmatlan_targyak_hajitasa.md) fortély
-
-<br />
-
----
-## Kitartott célzás
-
-`1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. Csak mozdulatlan állapotban végezhető.
-
-→ [Kitartott célzás fejlesztése](fortelyok.tavharc/kitartott_celzas_fejlesztes.md) fortély további `+4 CÉ`-t ad (összesen `+7`).
-
-❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
 
 <br />
 

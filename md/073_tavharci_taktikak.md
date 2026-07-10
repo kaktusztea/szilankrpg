@@ -2,6 +2,10 @@
 
 Néhány egyedi taktika itt is előfordul.
 
+- [Lövéskitérés](#lövéskitérés)
+- [Kitartott célzás](#kitartott-célzás)
+- [Páros, kétkezes hajítás](#páros-kétkezes-hajítás)
+
 ---
 ### Lövéskitérés
 
@@ -85,6 +89,15 @@ Leggyorsabb mozgatás (EM)
 🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy betalál-e. Ennek módosítóiról itt: [Lövéskitérés sikertelen](szituaciok/loveskiteres_sikertelen.md).
 
 <br />
+
+---
+### Kitartott célzás
+
+`1` célzással eltöltött kör után `+3 CÉ` módosítót kapsz. Csak mozdulatlan állapotban végezhető.
+
+→ [Kitartott célzás fejlesztése](fortelyok.tavharc/kitartott_celzas_fejlesztes.md) fortély további `+4 CÉ`-t ad (összesen `+7`).
+
+❌ Kizárja: Lovas harc, Léglovas harc, Harci szekér, Belharci helyzet, Földön fekve, Levegőből támadás
 
 ---
 ### Páros, kétkezes hajítás
