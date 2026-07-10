@@ -414,7 +414,7 @@
     "módosítók": {
       "CÉ": 3
     },
-    "megjegyzés": "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ.",
+    "megjegyzés": "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. Csak íjakkal és lőfegyverekkel.",
     "megkötések": [
       {
         "típus": "harci_helyzet",
@@ -445,6 +445,11 @@
         "típus": "harci_helyzet",
         "mód": "tiltott",
         "érték": "Levegőből támadás"
+      },
+      {
+        "típus": "távfegyver_kategória",
+        "mód": "szükséges",
+        "érték": "lőfegyver"
       }
     ],
     "kombó_mód": "blacklist",

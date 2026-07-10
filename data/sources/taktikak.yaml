@@ -290,28 +290,10 @@ taktikák:
   fokozatos: false
   módosítók:
     CÉ: 3
-  megjegyzés: "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ."
-  megkötések:
-  - típus: "harci_helyzet"
-    mód: "tiltott"
-    érték: "Lovas harc"
-  - típus: "harci_helyzet"
-    mód: "tiltott"
-    érték: "Léglovas harc"
-  - típus: "harci_helyzet"
-    mód: "tiltott"
-    érték: "Harci szekér"
-  - típus: "harci_helyzet"
-    mód: "tiltott"
-    érték: "Belharci helyzet"
-  - típus: "harci_helyzet"
-    mód: "tiltott"
-    érték: "Földön fekve"
-  - típus: "harci_helyzet"
-    mód: "tiltott"
-    érték: "Levegőből támadás"
-  kombó_mód: "blacklist"
-  kombó_lista: ["Lövéskitérés"]
+  megjegyzés: "1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. Csak íjakkal és lőfegyverekkel."
+  megkötések: []
+  kombó_mód: "whitelist"
+  kombó_lista: []
   fortély_bővítés: null
   csoport: "távharc"
   id: "kitartott_célzás"

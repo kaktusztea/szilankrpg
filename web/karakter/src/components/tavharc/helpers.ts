@@ -82,6 +82,12 @@ export function getFortélyCÉ(k: Karakter, data: GameData, session: Session): n
       if (h.cél === 'CÉ' && h.operátor === 'flat' && h.érték) total += h.érték;
     }
   }
+  // Taktika módosítók: CÉ bónuszok aktív taktikákból
+  for (const at of session.aktív_taktikák) {
+    const def = data.taktikak.find(t => t.név === at.név);
+    if (!def?.módosítók?.CÉ) continue;
+    total += def.módosítók.CÉ;
+  }
   // Fortély módosítók: feltételes CÉ bónuszok
   for (const fDef of data.fortelySummaries) {
     const effFok = Math.max(0, k.fortélyok.find(f => f.név === fDef.név)?.fok ?? 0);

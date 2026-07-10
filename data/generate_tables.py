@@ -257,7 +257,7 @@ def validate_aktiv_ful(taktikak, helyzetek, _szituaciok, manoverek):
     """Validate aktív fül YAML sources against schemas."""
     errors = []
     # Taktikák
-    valid_megkotes_tipus = {'harci_helyzet', 'harcmodor', 'szituáció', 'támadások', 'többes_harc', 'per_küzdelem'}
+    valid_megkotes_tipus = {'harci_helyzet', 'harcmodor', 'szituáció', 'támadások', 'többes_harc', 'per_küzdelem', 'távfegyver_kategória'}
     valid_megkotes_mod = {'tiltott', 'szükséges', 'min', 'max'}
     for i, t in enumerate(taktikak):
         ctx = f"taktikák[{i}] ({t.get('név', '?')})"

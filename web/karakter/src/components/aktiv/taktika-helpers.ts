@@ -54,6 +54,13 @@ export function isTaktikaAllowed(
         const támadások = 1 + Math.floor((harcmodorSzint * 2) / sebesség);
         if (támadások < (mk.érték as number)) return false;
       }
+      if (mk.típus === 'távfegyver_kategória' && mk.mód === 'szükséges') {
+        const tfIdx = session.aktív_távfegyver_index;
+        const tfPeldany = karakter.távfegyverek[tfIdx];
+        const tfDef = tfPeldany ? data.tavfegyverek.find(d => d.Fegyver.toLowerCase() === tfPeldany.alap.toLowerCase()) : undefined;
+        const szükséges = Array.isArray(mk.érték) ? mk.érték : [mk.érték as string];
+        if (!tfDef || !szükséges.includes(tfDef.Kategória ?? '')) return false;
+      }
     }
   }
 
