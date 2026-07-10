@@ -66,7 +66,7 @@
 - [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md)
 - [Kitartott célzás](fortelyok.tavharc/kitartott_celzas.md)
 - [Lövés futás közben](fortelyok.tavharc/loves_futas_kozben.md)
-- [Lövés reflexből](fortelyok.tavharc/loves_reflexbol.md)
+- [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md)
 - [Mesterlövész](fortelyok.tavharc/mesterlovesz.md)
 - [Mozgó cél mestere fegyverrel](fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md)
 

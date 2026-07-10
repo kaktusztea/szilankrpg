@@ -70,9 +70,9 @@ Lásd bővebben:
     "Kitartott célzás" fortéllyal
     (nem additív) 🔆
 
--7: Hirtelen lövés
--0: Hirtelen lövés
-    "Lövés reflexből" fortéllyal
+-7: Lövés reflexből
+-0: Lövés reflexből
+    "Lövés reflexből fejlesztése" fortéllyal
 ```
 
 🔆 **Célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!

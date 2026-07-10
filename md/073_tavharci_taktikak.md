@@ -26,8 +26,6 @@ Akrobatika képzettségpróba
 - támadótól való távolságtól
 - támadó által használt fegyvertől
 
-
-
 🔆 Kapcsolódik: [Elemi mágia - Mozgatás](kepzettsegek.primer/arkanumok/elemi_magia.md#komplexitás---mozgatás) (`EM`)
 
 ```
