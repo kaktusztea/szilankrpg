@@ -1,4 +1,4 @@
-## 🟣 Kitérés lövés elől (1)
+## 🟣 Lövéskitérés fejlesztése (1)
 
 Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt lövedékek elől való kitérésben.
 
@@ -10,6 +10,6 @@ Gyorsaságod és hidegvéred páratlan! Kimondottan jó vagy a rád kilőtt löv
 
 ### 1. fok
 
-🌟 [Szándékos kitérés lövés elől](../073_tavharci_taktikak.md#szándékos-kitérés-lövés-elől) szituációban **Akrobatika** képzettségpróbádra `+2` bónuszt kapsz
+🌟 [Lövéskitérés](../073_tavharci_taktikak.md#lövéskitérés) taktikában **Akrobatika** képzettségpróbádra `+2` bónuszt kapsz
 
 ---

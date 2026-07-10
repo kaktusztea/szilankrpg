@@ -25,7 +25,6 @@
 - [Kétkezes harc](fortelyok.harci/ketkezes_harc.md)
 - [Kétkezesség](fortelyok.harci/ketkezesseg.md)
 - [Kínokozás](fortelyok.harci/kinokozas.md)
-- [Kitérés lövés elől](fortelyok.harci/kiteres_loves_elol.md)
 - [Körkörös harc](fortelyok.harci/korkoros_harc.md)
 - [Lefegyverzés mestere](fortelyok.harci/lefegyverzes_mestere.md)
 - [Merevvértviselet](fortelyok.harci/merevvertviselet.md)
@@ -67,6 +66,7 @@
 - [Nyílpuska újratöltés fejlesztése](fortelyok.tavharc/nyilpuska_ujratoltes_fejlesztese.md)
 - [Lövés futás közben](fortelyok.tavharc/loves_futas_kozben.md)
 - [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md)
+- [Lövéskitérés fejlesztése](fortelyok.tavharc/loveskiteres_fejlesztese.md)
 - [Mesterlövész](fortelyok.tavharc/mesterlovesz.md)
 - [Mozgó cél mestere fegyverrel](fortelyok.tavharc/mozgo_cel_mestere_fegyverrel.md)
 

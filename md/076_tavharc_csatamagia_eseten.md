@@ -175,7 +175,7 @@ Ez a fortély a **Mágiatáv** "fegyverre" is felvehető, ahogy bármely más fe
 
 A lövedék sebessége alapból lassú, ezt a Komplexitás növelésével lehet fokozni. Ebben ad könnyítést ez a fortély. A pontosságra (`CÉ`, `Osztó`) semmilyen hatása nincs.
 
-Kapcsolódik: [Szándékos kitérés lövés elől](073_tavharci_taktikak.md#szándékos-kitérés-lövés-elől)
+Kapcsolódik: [Lövéskitérés](073_tavharci_taktikak.md#lövéskitérés)
 
 ---
 ## Kapcsolódó Arkánumok

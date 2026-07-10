@@ -48,7 +48,7 @@ Célpont mozgás jellege
 
 - **Harcoló csoport**: Harcoló tömegbe lövést jelent, ahol **bármelyik** fél eltalálása megfelel.
   → Kit talál el: random dobás → `k10`
-- [Sikertelenül szándékosan kitérő célpont](szituaciok/kiteres_loves_elol_sikertelen.md)
+- [Sikertelenül szándékosan kitérő célpont](szituaciok/loveskiteres_sikertelen.md)
 
 ---
 ### Szorzó - Mozgás módosító (lövész)

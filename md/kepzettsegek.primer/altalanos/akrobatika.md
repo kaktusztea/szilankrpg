@@ -7,7 +7,7 @@ Magába foglalja az [esést](../../szituaciok/eses_magasbol.md), **ugrást** és
 ### Kapcsolódik
 
 - [Harci akrobatika](../../fortelyok.harci/harci_akrobatika.md) fortély
-- [Kitérés lövés elől](../../fortelyok.harci/kiteres_loves_elol.md)
+- [Lövéskitérés fejlesztése](../../fortelyok.tavharc/loveskiteres_fejlesztese.md)
 
 ### Szituációk
 
@@ -15,7 +15,7 @@ Magába foglalja az [esést](../../szituaciok/eses_magasbol.md), **ugrást** és
 - [Ugrás magasba / távolba](../../szituaciok/ugras_magasba_tavolba.md)
 - [Kötéltánc](../../szituaciok/koteltanc.md)
 - [Lóról leesés](../../szituaciok/hatasrol_leeses.md)
-- [Szándékos kitérés lövés elől](../../szituaciok/szandekos_kiteres_loves_elol.md)
+- [Lövéskitérés](../../szituaciok/loveskiteres.md)
 
 ### Mesterbónuszok
 

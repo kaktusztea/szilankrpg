@@ -1,6 +1,6 @@
-## Kitérés lövés elől sikertelen (rontott Akrobatika próba)
+## Lövéskitérés sikertelen (rontott Akrobatika próba)
 
-A célpont [szándékosan megpróbált kitérni](../073_tavharci_taktikak.md#szándékos-kitérés-lövés-elől) a lövés/hajítás elől - sikertelenül.
+A célpont [megpróbált kitérni](../073_tavharci_taktikak.md#lövéskitérés) a lövés/hajítás elől - sikertelenül.
 
 Ilyenkor a lövész rendesen **Célzó Dobást** tesz.
 

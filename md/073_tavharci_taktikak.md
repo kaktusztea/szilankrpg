@@ -3,17 +3,17 @@
 Néhány egyedi taktika itt is előfordul.
 
 ---
-### Szándékos kitérés lövés elől
+### Lövéskitérés
 
 ```
 Akrobatika képzettségpróba
   Gyorsaság Tulajdonsággal
 
-+2 "Kitérés lövés elől"
-   harci fortéllyal
++2 "Lövéskitérés fejlesztése"
+   távharci fortéllyal
 ```
 
-→ [Kitérés lövés elől](fortelyok.harci/kiteres_loves_elol.md) harci fortély
+→ [Lövéskitérés fejlesztése](fortelyok.tavharc/loveskiteres_fejlesztese.md) távharci fortély
 
 #### Követelmények célpont számára
 
@@ -82,7 +82,7 @@ Leggyorsabb mozgatás (EM)
 
 🔆 Ha a próba sikeres, sikerült elugrani a lövedék elől, a támadó automatikusan elvesztette a támadását - már nem is tehet **Célzó dobást**.
 
-🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy betalál-e. Ennek módosítóiról itt: [Kitérés lövés elől sikertelen](szituaciok/kiteres_loves_elol_sikertelen.md).
+🔆 Ha a próba **sikertelen** akkor a lövész jön és sima **Célzó dobást** tesz, aminek sikere dönti el, hogy betalál-e. Ennek módosítóiról itt: [Lövéskitérés sikertelen](szituaciok/loveskiteres_sikertelen.md).
 
 <br />
 

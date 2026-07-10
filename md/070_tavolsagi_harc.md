@@ -5,7 +5,7 @@ A távolsági lő- és hajítófegyvereket az alábbi **harcmodor képzettségek
 
 ## Befolyásoló jellemzők
 
-A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem ugyanolyan "céltárgynak" minősül, mint egy szalmabábú, vagy egy agyaggalamb - kivéve a [Szándékos kitérés lövés elől](073_tavharci_taktikak.md#szándékos-kitérés-lövés-elől) szituációt. Az alábbiak befolyásolják a találat esélyeit:
+A támadott fél nem saját **Védő Értékével** vesz részt a harcban, hanem ugyanolyan "céltárgynak" minősül, mint egy szalmabábú, vagy egy agyaggalamb - kivéve a [Lövéskitérés](073_tavharci_taktikak.md#lövéskitérés) szituációt. Az alábbiak befolyásolják a találat esélyeit:
 
 - Támadó Célzó Értéke
 - Használt fegyver Célzó Értéke, Osztója

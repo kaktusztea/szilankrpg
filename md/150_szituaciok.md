@@ -23,8 +23,8 @@ Játék során vannak klasszikus, gyakran előforduló **szituációk**, amelyek
 - [Hajítás nem dobásra készített tárgyakkal](szituaciok/hajitas_nem_dobasra_keszitett_targyakkal.md)
 - [Harcoló tömegbe lövés - egy konkrét célra](szituaciok/harcolo_tomegbe_loves__egy_konkret_celra.md)
 - [Harcoló tömegbe lövés - bárki jó találatnak](szituaciok/harcolo_tomegbe_loves__barki_jo_talalatnak.md)
-- [Szándékos kitérés lövés elől próba](szituaciok/szandekos_kiteres_loves_elol.md)
-- [Szándékos kitérés lövés elől sikertelen (rontott Gyorsaságpróba)](szituaciok/kiteres_loves_elol_sikertelen.md)
+- [Lövéskitérés próba](szituaciok/loveskiteres.md)
+- [Lövéskitérés sikertelen (rontott Gyorsaságpróba)](szituaciok/loveskiteres_sikertelen.md)
 - [Lövész nyúl a fegyveréért, támad rá egy harcos](szituaciok/lovesz_nyul_fegyvereert_tamad_ra_harcos.md)
 - [Lövés vaksötétben, zajos célpontra](079_02_tavharc_sotetben.md)
 
