@@ -13,7 +13,6 @@ Ha hirtelen kell lőni ([Lövés reflexből](../074_tavharci_helyzetek.md#lövé
 ### 1. fok
 
 🔒 **Követelmény**:
-- Gyorsaság: `+1`
 - Távolsági harcmodor – `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 

@@ -26,7 +26,7 @@ ingyenes_perszint: 0
 fokok:
   - fok: 1
     követelménytext:
-      - text: "Egykezes szúró-vágó-ostor fegyver. Harci anatómia: 1.fok. Sikeres Precíz támadás manőver."
+      - text: "Egykezes szúró-vágó-ostor fegyver. Sikeres Precíz támadás manőver."
     követelmények: ""
     hatástext:
       - text: "Sebzésed: 1 ÉP."
