@@ -14774,13 +14774,17 @@ Harc közben nem a pusztítás a célod, hanem különösen fájdalmas pontokat 
 
 Támadás előtt kell bejelentened, hogy alkalmazni akarod ezt az ismeretet.
 
+### Megkötések
+
+- A fortély alapból csak elfszabásúak ellen használható, ha anatómiájuk nem titok, vagy nem ismeretlen az alkalmazó számára.
+- Csak egykezes szúró-vágó-ostor fegyverrel, amellyel lehetséges pontra támadni
+- Csak vértmentes pontot támadhatsz
+- A fortély által leírt előnyök **nem** érvényesülnek semmilyen világi, vagy mágikus módszerrel kiváltott harci lázban.
+
 ### 1. fok
 
 🔒 **Követelmény**:
 
-- Csak egykezes szúró-vágó-ostor fegyverrel, amellyel lehetséges pontra támadni
-- Harci anatómia: `1.fok` ([megkötései](harci_anatomia.md#megk%C3%B6t%C3%A9sek) számítanak)
-- Csak vértmentes pontot támadhatsz
 - Sikeres [Precíz támadás](../066_05_altalanos_manoverek.md#precíz-támadás) manőver
 
 🌟 **Hatás**: Eltaláltad a kiszemelt fájdalmas pontot ellenfeled testén
@@ -18168,7 +18172,6 @@ Ha hirtelen kell lőni ([Lövés reflexből](../074_tavharci_helyzetek.md#lövé
 ### 1. fok
 
 🔒 **Követelmény**:
-- Gyorsaság: `+1`
 - Távolsági harcmodor – `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 
