@@ -37,4 +37,3 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
     </div>
   );
 }
-}
