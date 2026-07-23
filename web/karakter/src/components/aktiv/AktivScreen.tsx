@@ -49,12 +49,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
     <div className="screen aktiv-screen" ref={screenRef}>
       <h2>✳️ Aktív</h2>
 
-      {/* Debug telemetry — iOS standalone layout bug investigation */}
-      <div style={{ fontSize: 10, color: '#888', background: '#111', padding: '3px 6px', borderRadius: 3, marginBottom: 6, minHeight: 14 }}>
-        <div>r#{renderCount.current} | T:{session.aktív_taktikák.length} H:{session.aktív_helyzetek.length} M:{session.aktív_manőver ? 1 : 0} S:{session.aktív_státuszok.length} N:{session.narratív_módosítók.length}</div>
-        {debugLog.length > 0 && <div style={{ marginTop: 2, whiteSpace: 'pre-wrap' }}>{debugLog.join('\n')}</div>}
-      </div>
-
       <AktivHatasPool fortélyEmlékeztetők={fortélyEmlékeztetők} alapesetekFiltered={alapesetekFiltered} />
 
       <AktivTaktikak data={data} karakter={karakter} session={session} setSession={trackedSetSession} pushUndo={trackedPushUndo}
@@ -69,6 +63,12 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
         státuszPerElem={státuszPerElem} eseményNév={eseményNév} />
 
       <AktivNarrativ session={session} setSession={trackedSetSession} pushUndo={trackedPushUndo} />
+
+      {/* Debug telemetry — iOS standalone layout bug investigation */}
+      <div style={{ fontSize: 10, color: '#888', background: '#111', padding: '3px 6px', borderRadius: 3, marginTop: 12, minHeight: 14 }}>
+        <div>r#{renderCount.current} | T:{session.aktív_taktikák.length} H:{session.aktív_helyzetek.length} M:{session.aktív_manőver ? 1 : 0} S:{session.aktív_státuszok.length} N:{session.narratív_módosítók.length}</div>
+        {debugLog.length > 0 && <div style={{ marginTop: 2, whiteSpace: 'pre-wrap' }}>{debugLog.join('\n')}</div>}
+      </div>
     </div>
   );
 }
