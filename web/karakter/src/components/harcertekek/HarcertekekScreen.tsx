@@ -61,7 +61,7 @@ export function HarcertekekScreen({ data, karakter, setKarakter, pushUndo, képz
 
       <PajzsSection
         data={data} karakter={karakter} pajzsFok={pajzsFok}
-        onPajzsPopup={popup.setPajzsPopup} showHint={showHint}
+        onPajzsPopup={popup.setPajzsPopup}
       />
 
       <Popups

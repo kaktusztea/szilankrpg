@@ -9,10 +9,9 @@ interface Props {
   karakter: Karakter;
   pajzsFok: number;
   onPajzsPopup: (popup: string) => void;
-  showHint: (msg: string) => void;
 }
 
-export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup, showHint }: Props) {
+export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup }: Props) {
   const pajzsChip = (() => {
     const pNév = buildPajzsFegyverNév(k);
     if (!pNév) return null;
@@ -29,9 +28,6 @@ export function PajzsSection({ data, karakter: k, pajzsFok, onPajzsPopup, showHi
       <div className="he-fegyver-fields">
         <button className="he-field-btn" onClick={() => onPajzsPopup('méret')}>Méret: <strong>{k.pajzs.méret || '— nincs —'}</strong></button>
         <button className="he-field-btn he-field-fortely" onClick={() => onPajzsPopup('pajzshasználat')}>Pajzshasználat fok: <strong>{pajzsFok}</strong></button>
-        <span className="he-field-btn he-field-indicator" onClick={() => showHint('A pajzs kézben állapotot az Aktív fülön állíthatod!')}>
-          Kézben, fegyver mellett: <strong>{k.session.aktív_pajzs ? 'igen' : 'nem'}</strong>
-        </span>
       </div>
     </section>
   );
