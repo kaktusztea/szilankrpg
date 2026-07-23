@@ -1,4 +1,3 @@
-import { useRef, useEffect } from 'react';
 import type { AktivBaseProps } from './types';
 import { calcAktivData } from './aktiv-calc';
 import { AktivHatasPool } from './AktivHatasPool';
@@ -10,19 +9,10 @@ import { AktivNarrativ } from './AktivNarrativ';
 import './AktivScreen.css';
 
 export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
-  const screenRef = useRef<HTMLDivElement>(null);
-
-  // ponytail: iOS standalone webapp reflow bug workaround —
-  // WebKit skips repaint when content shrinks; touching offsetHeight forces layout.
-  // Ceiling: if Apple fixes this in WebKit, this effect becomes a no-op (safe to remove).
-  useEffect(() => {
-    screenRef.current?.offsetHeight;
-  });
-
   const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév } = calcAktivData(data, karakter, session);
 
   return (
-    <div className="screen aktiv-screen" ref={screenRef}>
+    <div className="screen aktiv-screen">
       <h2>✳️ Aktív</h2>
 
       <AktivHatasPool fortélyEmlékeztetők={fortélyEmlékeztetők} alapesetekFiltered={alapesetekFiltered} />
@@ -39,6 +29,11 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
         státuszPerElem={státuszPerElem} eseményNév={eseményNév} />
 
       <AktivNarrativ session={session} setSession={setSession} pushUndo={pushUndo} />
+
+      {/* ponytail: iOS standalone WebView layout bug — content disappears when
+          enough items are removed. A min-height spacer anchors the layout.
+          Ceiling: remove when Apple fixes WebKit standalone reflow. */}
+      <div aria-hidden="true" style={{ minHeight: 1, flexShrink: 0 }} />
     </div>
   );
 }
