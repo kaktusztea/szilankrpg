@@ -4376,7 +4376,7 @@
           "Rontott próba: Indulat(1) Harag vagy Félelem(1) Szorongás Státusz."
         ],
         "követelmény": [
-          "Egykezes szúró-vágó-ostor fegyver. Harci anatómia: 1.fok. Sikeres Precíz támadás manőver."
+          "Egykezes szúró-vágó-ostor fegyver. Sikeres Precíz támadás manőver."
         ],
         "követelmények": [],
         "módosítók": []
@@ -9309,7 +9309,7 @@
           "Hirtelen lövés CÉ levonása nem sújt."
         ],
         "követelmény": [
-          "Gyorsaság +1, Távolsági harcmodor 5.szint"
+          "Távolsági harcmodor 5.szint"
         ],
         "követelmények": [
           {
