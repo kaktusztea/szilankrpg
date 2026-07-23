@@ -14,7 +14,8 @@ export function FegyverChip({ fd, mfFok, idea, konstansok, inactive }: Props) {
       <span className="he-field-btn he-field-indicator">
         <span className={`he-stat-label${cls}`}>TÉ:</span>
         <span className={cls}>{(parseInt(fd.TÉ) || 0) + mf.TÉ + idea}</span>
-        {' '}<span className="he-stat-ml">VÉ:</span>{(parseInt(fd.VÉ) || 0) + mf.VÉ + idea}
+        {' '}<span className={`he-stat-ml${cls}`}>VÉ:</span>
+        <span className={cls}>{(parseInt(fd.VÉ) || 0) + mf.VÉ + idea}</span>
         {' '}<span className={`he-stat-ml${cls}`}>SP:</span>
         <span className={cls}>{(parseInt(fd.SP) || 0) + mf.SP + idea}</span>
         {' '}<span className={`he-stat-ml${cls}`}>Sebesség:</span>
