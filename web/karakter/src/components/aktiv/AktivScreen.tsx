@@ -12,12 +12,11 @@ import './AktivScreen.css';
 export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
   const screenRef = useRef<HTMLDivElement>(null);
 
-  // iOS standalone webapp scroll fix: reset scroll if it's beyond content
+  // ponytail: iOS standalone webapp reflow bug workaround —
+  // WebKit skips repaint when content shrinks; touching offsetHeight forces layout.
+  // Ceiling: if Apple fixes this in WebKit, this effect becomes a no-op (safe to remove).
   useEffect(() => {
-    const el = screenRef.current?.parentElement; // .screen-slide
-    if (el && el.scrollTop > 0 && el.scrollTop > el.scrollHeight - el.clientHeight) {
-      el.scrollTop = Math.max(0, el.scrollHeight - el.clientHeight);
-    }
+    screenRef.current?.offsetHeight;
   });
 
   const { státuszPerElem, taktikaHatásPerElem, fortélyEmlékeztetők, helyzetFortélyok, manőverBónuszok, alapesetekFiltered, eseményNév } = calcAktivData(data, karakter, session);
