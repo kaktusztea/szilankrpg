@@ -113,7 +113,7 @@ export function BackupRestoreOverlay({ karakterek, dátum, onRestore, onClose }:
           })}
         </div>
         {dátum && <div className="backup-restore-date">Backup dátuma: {formatDátum(dátum)}</div>}
-        <div className="kep-prompt-btns" style={{ justifyContent: 'center' }}>
+        <div className="kep-prompt-btns backup-restore-btns">
           <button
             className="menu-item"
             disabled={selected.size === 0}

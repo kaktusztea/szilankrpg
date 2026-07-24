@@ -41,6 +41,8 @@
   gap: 8px;
 }
 
+.backup-restore-btns { justify-content: center; }
+
 .kep-prompt-btns button {
   background: var(--primary);
   border: 1px solid var(--border-input);

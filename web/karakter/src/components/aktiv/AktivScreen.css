@@ -146,3 +146,5 @@
 .aktiv-flex-1 { flex: 1; }
 .aktiv-strong-helyzet { color: var(--color-helyzet); }
 .aktiv-hint-disabled { font-size: 11px; color: #888; }
+
+.aktiv-picker-tavharc-header { margin-top: 12px; }

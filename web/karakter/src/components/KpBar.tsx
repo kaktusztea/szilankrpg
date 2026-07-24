@@ -17,7 +17,7 @@ export function KpBar({ data, karakter }: Props) {
 
   return (
     <>
-      <div className="kp-bar" onClick={() => setShowPopup(true)} style={{ cursor: 'pointer' }}>
+      <div className="kp-bar" onClick={() => setShowPopup(true)}>
         <span className={kp.maradékKp < 0 ? 'kp-section-neg' : 'kp-section-ok'}>
           Maradt KP: {kp.maradékKp}
         </span>

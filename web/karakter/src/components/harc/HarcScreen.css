@@ -34,6 +34,8 @@
   align-items: center;
 }
 
+.ke-box { cursor: pointer; }
+
 @media (min-width: 481px) {
   .ke-box { width: 96px; flex-shrink: 0; }
 }

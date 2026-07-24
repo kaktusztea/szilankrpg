@@ -33,7 +33,7 @@ export function TaktikaPickerList({ data, karakter, session, onAddSimple, onFokv
       const showHeader = t.csoport === 'távharc' && !tavharcHeaderShown;
       if (showHeader) tavharcHeaderShown = true;
       return <div key={t.név}>
-        {showHeader && <div className="manover-category-label" style={{ marginTop: 12 }}>🏹 Távharci taktikák</div>}
+        {showHeader && <div className="manover-category-label aktiv-picker-tavharc-header">🏹 Távharci taktikák</div>}
         <div className="aktiv-picker-item" onClick={() => {
           if (t.fokozatos) onFokválasztó(t.név);
           else onAddSimple(t.név);

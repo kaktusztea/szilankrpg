@@ -28,7 +28,7 @@ export function HarcHeader({
 
   return (
     <div className="harc-header">
-      <div className="ke-box" onClick={onKéClick} style={{ cursor: 'pointer' }}>
+      <div className="ke-box" onClick={onKéClick}>
         <span className="label">KÉ</span>
         <span className="value">{ké}</span>
         {session.ké_dobások.length > 0 && (
