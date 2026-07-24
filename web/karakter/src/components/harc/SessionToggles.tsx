@@ -49,7 +49,7 @@ export function SessionToggles({ data, karakter, session, setSession, páncélMG
                   const lines: string[] = [];
                   if (!has) lines.push('Harci akrobatika fortély hiányzik');
                   if (session.aktív_páncél && !harciAkroEngedett) lines.push('Páncél: posztó / fegyverkabát / bőr');
-                  if (session.aktív_páncél && páncélMGT > harciAkroMaxMgt) lines.push(`max MGT: ${harciAkroMaxMgt}`);
+                  if (session.aktív_páncél && páncélMGT > harciAkroMaxMgt) lines.push(`max MGT: ${harciAkroMaxMgt} (Erőbónusz után)`);
                   if (harciAkroKovDisabled) lines.push(`Akrobatika képzettség: >=${harciAkroKov!.érték}`);
                   if (lines.length > 0) showHint(lines.join('\n'));
                 }
