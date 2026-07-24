@@ -4,7 +4,7 @@ import json
 from datetime import datetime
 from pathlib import Path
 
-out_dir = Path(__file__).parent / "public"
+out_dir = Path(__file__).resolve().parent.parent / "public"
 out_dir.mkdir(exist_ok=True)
 out_path = out_dir / "metadata.json"
 
