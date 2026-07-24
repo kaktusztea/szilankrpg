@@ -90,6 +90,13 @@ function AuraerosítesTab() {
           ))}
         </tbody>
       </table>
+
+      <h4 className="miszt-osszh-title">Sikertelen:</h4>
+      <ul className="miszt-magia-list">
+        <li>Aura azonnal: <strong>-2</strong></li>
+        <li>Regeneráció: 1 / óra</li>
+        <li>NEM okoz auto kudarcot!</li>
+      </ul>
     </div>
   );
 }
