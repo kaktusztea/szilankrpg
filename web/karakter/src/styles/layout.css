@@ -127,6 +127,9 @@
   height: 100%;
   overflow-y: auto;
   padding: 12px;
+  -webkit-overflow-scrolling: touch;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
 
 .screen h2 { margin-bottom: 12px; font-size: 18px; }

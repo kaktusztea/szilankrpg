@@ -29,11 +29,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
         státuszPerElem={státuszPerElem} eseményNév={eseményNév} />
 
       <AktivNarrativ session={session} setSession={setSession} pushUndo={pushUndo} />
-
-      {/* ponytail: iOS standalone WebView layout bug — content disappears when
-          items are removed. A visible (painted) element anchors the layout.
-          Ceiling: remove when Apple fixes WebKit standalone reflow. */}
-      <div aria-hidden="true" style={{ minHeight: 2, background: '#111' }} />
     </div>
   );
 }

@@ -146,3 +146,6 @@
 .aktiv-flex-1 { flex: 1; }
 .aktiv-strong-helyzet { color: var(--color-helyzet); }
 .aktiv-hint-disabled { font-size: 11px; color: #888; }
+
+/* iOS standalone WebView reflow bug fix — force own compositing layer */
+.aktiv-screen { -webkit-transform: translateZ(0); transform: translateZ(0); }
