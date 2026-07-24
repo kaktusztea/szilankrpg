@@ -17,6 +17,15 @@ Mobil-first, responsive design. Tab-alapú navigáció (alsó tab bar).
 - **Body height**: `100dvh` (dynamic viewport height, iOS safe area aware)
 - **Overflow**: `hidden` (body szinten, screen slide-ok belül scrolloznak)
 
+### iOS standalone webapp (Főképernyőhöz adás)
+
+iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (standalone mód) egy speciális WebView, ami agresszívebb compositing optimalizációt alkalmaz:
+
+- **Paint bug**: Ha egy scroll container (`overflow-y: auto`) tartalmának magassága csökken (DOM elemek törlése), a WebKit nem rajzolja újra a réteget — "eltűnik" a tartalom. Overlay/popup megnyitása kényszeríti a repaint-et.
+- **Fix**: `.screen-slide`-on `transform: translateZ(0)` + `-webkit-overflow-scrolling: touch` → GPU layer promotion, ami kényszeríti a WebKit-et minden DOM mutációnál a réteg újrarajzolására.
+- **Nem elég**: `offsetHeight` olvasás (force reflow), üres `minHeight` spacer, láthatatlan DOM elem. Csak a `translateZ(0)` saját compositing layer oldja meg.
+- **Konvenció**: Inline `style={{}}` tilos — minden CSS-ből menjen (class-ok). A `translateZ(0)` nem hack, hanem a layout CSS állandó része.
+
 ## CSS változók (dark theme)
 
 ```css
@@ -206,16 +215,17 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | Fegyverfogás | field-btn → overlay picker | Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes harc. Disabled logika: puszta kéz, kétkezes fegyver, nincs pajzs/hárító, + aktív helyzetek `tiltott_fegyverfogások` mezője (§38.4). Helyzet hozzáadáskor tiltott fogás → auto-reset Egyfegyveresre. |
 | Páncél viselve | field-btn toggle | Hatással a Harc fül SFÉ-re |
 | Hatás pool box | info szekció | Fortély bónuszok + Alapesetek (accordion) |
-| Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Chip: többsoros item-row (fejléc: név+fok bold + mods ✔ + ✕ gomb; alatta: hatás sor inline; opcionális megjegyzés sor) |
+| Taktikák | overlay picker + chip | ABC, fokozatos: 📶, két lépéses fokválasztó, chip katt → fok módosítás. Távharci taktikák a lista végén, "🏹 Távharci taktikák" fejléccel elválasztva. Chip: többsoros item-row (fejléc: név+fok bold + mods ✔ + ✕ gomb; alatta: hatás sor inline; opcionális megjegyzés sor) |
 | Manőver | aktiv h3 fejléc + field-btn + overlay picker | Általános/Belharci/Lovas kategóriák, infó a box-ban (Nehézség+fázisok sor, hatás sor) |
-| Harci helyzetek | overlay picker + chip | 3 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`) fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
+| Harci helyzetek | overlay picker + chip | 4 csoportra bontva: Pozitív (zöld `#4caf50`), Semleges (narancs `#ff9800`), Negatív (piros `#f44336`), Távharci fejléccel. Csoporton belül ABC. Rejtett elemek (yaml `rejtett: true`) nem jelennek meg. Kizárás: yaml `kizár_helyzetek` (id alapú) szűri a pickert + hozzáadáskor eltávolít. Yaml `tiltja_taktikákat: true` → taktika picker disabled + meglévők törlődnek. |
 | Státuszok | overlay picker + chip | Fizikai/Szellemi/Mágikus kategóriák, két lépéses fokválasztó, chip katt → fok ciklikus. Többszörös státuszok (yaml `többszörös: true`): alkategória almenü → fok. "Sérült" auto-kezelt: szürkítve a pickerben ("Sérült (auto)" label), chip locked (nincs ✕, fok nem kattintható). |
 | Narratív Előny/Hátrányok | "+ Új" gomb → overlay popup | Popup: Hátrány-2/-1, Előny+1/+2 gombok (kötelező) + szöveg input + OK. Enter = OK. |
 
 ### Taktika kombó szabályok
 - Picker csak a kompatibilis taktikákat kínálja (whitelist/blacklist + megkötések szűrés)
-- Megkötések: `harci_helyzet/tiltott`, `harci_helyzet/szükséges` (§38), `harcmodor/tiltott`, `támadások/min`
+- Megkötések: `harci_helyzet/tiltott`, `harci_helyzet/szükséges` (§38), `harcmodor/tiltott`, `támadások/min`, `távfegyver_kategória/szükséges`
 - `harci_helyzet/szükséges`: taktika disabled ha a szükséges helyzet(ek) egyike sincs aktív (pl. (Lég)Lovas roham → lovas_harc/léglovas_harc kell)
+- `távfegyver_kategória/szükséges`: taktika disabled ha az aktív távfegyver kategóriája nem egyezik (pl. Kitartott célzás → csak íj/nyílpuska)
 - Fokozatos taktikáknál két lépéses picker (taktika → fok)
 - Chip kattintás fokozatos taktikánál: fokválasztó picker újra felugrik
 
@@ -429,6 +439,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 **CM szerkesztő** (alul, "Részletes értékek" box mellett): −/+ gombok, max limit
 
 **Részletes értékek** (alul, `.debug-box` stílus): CÉ összetevők bontása
+- "Helyzet/Fortély CÉ" sor: aktív harci helyzetek CÉ flat bónusza + aktív taktikák CÉ módosítója (szűrő_harcmodorok figyelembe vételével) + feltételes fortély CÉ bónuszok. Per-fegyver számolva (fegyver harcmodor szűrés).
 
 ### Game mód
 
@@ -695,12 +706,12 @@ HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes 
   - Rongálódás: kerek gombok 0-5
 
 ### Pajzs
-- Harcérték chip (ha van méret kiválasztva): TÉ/VÉ/SP/Sebesség kijelzés (Pajzshasználat fok bónusszal)
-  - Ha NEM "csak pajzs harc" mód (egyfegyveres + pajzs az ügyesebb kézben): TÉ/SP/Sebesség áthúzva (`line-through 2px`, opacity 0.5)
+- Harcérték chip (ha van méret kiválasztva): **VÉ**/TÉ/SP/Sebesség kijelzés (Pajzshasználat fok bónusszal). VÉ első helyen.
+  - VÉ: soha nincs áthúzva (a pajzs VÉ-t mindig ad)
+  - TÉ/SP/Sebesség: áthúzva (`line-through 2px`, opacity 0.5) ha NEM "csak pajzs harc" mód (egyfegyveres + pajzs az ügyesebb kézben)
 - Mezők (`he-field-btn` stílus, tap → overlay popup):
   - Méret: — nincs — / kis / közepes / nagy
   - Pajzshasználat fok: kerek gombok 0-3 (szinkronizálja a Pajzshasználat fortélyt a Fortélyok fülön)
-  - Kézben, fegyver mellett: read-only indikátor (`session.aktív_pajzs`), kattintás → sárga hint
 - Pajzshasználat fortély szinkronizáció:
   - Pajzs fok módosítás → automatikusan létrehozza/frissíti a Pajzshasználat fortélyt
   - Fortélyok fülön: locked (nem szerkeszthető/törölhető), lista tetején

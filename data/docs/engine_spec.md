@@ -710,13 +710,28 @@ Támadások/kör: nem kalkulálható (varázslás/kör szabály dönti el).
 Generálás: `process_fegyverek.py` — Mágiatáv I-IV automatikusan hozzáfűződik a tavfegyverek.json-hoz.
 ```
 
-### 17.2 CÉ módosítók (taktikák)
+### 17.2 CÉ módosítók (taktikák, helyzetek, fortélyok)
 
 ```
-Célzás:         +3 CÉ (1 kör célzás után, nem additív)
-Kitartott célzás: +7 CÉ (fortéllyal, 1 kör, nem additív, csak íj max 1 kör!)
-Lövés reflexből: -7 CÉ (alapesetben)
-Lövés reflexből + "Lövés reflexből fejlesztése" fortély: +0 CÉ (nincs büntetés)
+A CÉ-hez adódó módosítókat a getFortélyCÉ() függvény számolja (per fegyver).
+Három forrásból:
+
+1. Aktív harci helyzetek: hatások[].cél === 'CÉ' && operátor === 'flat'
+   Pl. Hajítás alkalmatlan fegyverrel: Hátrány-2 CÉ
+
+2. Aktív taktikák: taktika.módosítók.CÉ
+   - szűrő_harcmodorok figyelembe vétele: bónusz csak akkor jár, ha az aktív
+     távfegyver harcmodora szerepel a taktika szűrő_harcmodorok[] tömbjében.
+   Pl. Kitartott célzás: +3 CÉ (csak Íjászat/Lövészet)
+
+3. Fortély módosítók: feltételes CÉ bónuszok (feltétel aktívFeltételek-ben)
+   - Ha a feltétel taktika: prefixű, és az adott taktikának van szűrő_harcmodorok
+     mezője, akkor a fegyver harcmodorát is ellenőrzi.
+   Pl. Kitartott célzás fejlesztése: +4 CÉ (feltétel: taktika:kitartott_célzás)
+       → összesen +7 CÉ kitartott célzás + fortély esetén
+
+Lövés reflexből: -7 CÉ (harci helyzet hatásként, alapesetben)
+Lövés reflexből + "Lövés reflexből fejlesztése" fortély: kioltja a -7 büntetést
 
 note: Célzó dobás esetén NINCS -4 levonás az egy körön belül végzett
       újabb támadásokra (mint sima fegyveres harcnál). Minden dobás
@@ -795,8 +810,8 @@ CÉ formula:
     CÉ = konstansok.harcérték_alap.CÉ + (TSz + Gyorsaság + Intelligencia) + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea + fortélyCÉ
     // Önuralom és CM NEM számít, helyette TSz + Gyo + Int
 
-  fortélyCÉ: feltételes fortély CÉ bónusz (pl. "Célzás" harci helyzet aktív → "Kitartott célzás" 0.fok: +3, 1.fok: +7)
-    Iteráció: összes fortély definíción, effektív fok = max(0, karakter felvett fok).
+  fortélyCÉ: helyzet + taktika + fortély CÉ módosítók összege (per fegyver, szűrő_harcmodorok figyelembe vételével)
+    Lásd §17.2 a részletekért.
     Csak "CÉ" célú módosítók, ahol feltétel ∈ aktívFeltételek (session.aktív_helyzetek → feltétel_kulcs).
 
 Virtuális fegyverek (nem a távfegyverek[] tömben, fortélyból származtatottak):
@@ -993,6 +1008,20 @@ note: "Választható" értékek (pl. Támadó TÉ:+1..+3) → a játékos az Akt
       Roham/Ö.roham: csak az első oda-vissza csapásra érvényes.
       Fárasztás: nem támadás, nem kombinálható mással.
 
+#### Távharci taktikák
+
+| Taktika | Módosítók | Megjegyzés |
+|---------|-----------|------------|
+| Kitartott célzás | CÉ:+3 | 1 kör célzás, mozdulatlan. Fortéllyal összesen +7 CÉ. szűrő_harcmodorok: [Íjászat, Lövészet] |
+| Lövéskitérés | — | Akrobatika próba lövedék elkerülésére. Fortéllyal +2. |
+| Páros kétkezes hajítás | — | 2 db Célzó dobás Hátrány-1 büntetéssel. |
+
+#### Taktika mezők (data layer)
+
+- `csoport`: "távharc" (picker-ben külön szekció) vagy üres (közelharci)
+- `szűrő_harcmodorok`: string[] — ha nem üres, a taktika CÉ módosítója csak akkor érvényes, ha az aktív távfegyver Harcmodor mezője szerepel a listában. A picker-ben a taktika nem jelenik meg ha a feltétel nem teljesül.
+- `megkötések[].típus === 'távfegyver_kategória'` + `mód: 'szükséges'`: taktika disabled ha az aktív távfegyver Kategória mezője nem egyezik az értékkel.
+
 ### 21.1b Taktika fortély_bővítés
 
 Fokozatos taktikáknál a `fortély_bővítés` yaml mező lehetővé teszi, hogy egy fortély extra fokokat
@@ -1026,7 +1055,7 @@ Feltétel kulcs: `harci_helyzet:id`. Az Aktív fülön kiválaszthatók (picker 
 Data layer: `data/sources/harci_helyzetek.yaml` → `tables/harci_helyzetek.json`
 Schema mezők: név, id, infó, hatások[], csoport, rejtett, tiltja_taktikákat, kizár_helyzetek[]
 
-Picker csoportok (csoport mező): "pozitív" (zöld), "semleges" (narancs), "negatív" (piros)
+Picker csoportok (csoport mező): "pozitív" (zöld), "semleges" (narancs), "negatív" (piros), "távharc"
 Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levezetett).
 
 #### Pozitív helyzetek (065_01_01)
@@ -1060,8 +1089,6 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 | Csúszós talaj | csúszós_talaj | Hátrány-1 TÉ dobásra. |
 | Elvesztett egyensúly | elvesztett_egyensúly | Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja. |
 | Földön fekve | földön_fekve | Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik. |
-| Hajítás alkalmatlan fegyverrel | hajítás_alkalmatlan_fegyverrel | Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli. |
-| Hajítás nem dobásra készített | hajítás_nem_dobásra_készített | Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli. |
 | Helyhez kötve | helyhez_kötve | Hátrány-1 TÉ dobásra, VÉ veszteség duplázódik. |
 | Lények méret különbsége | méret_különbség | Nagyobb lény: +1 VÉ csökkentés bónusz / kategória különbség. Skála: 1-7. |
 | Rosszabbik kézben tartott fegyver | rosszabbik_kéz | Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja. |
@@ -1071,6 +1098,15 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 | Tűz ruhán - ég | tűz_ruhán_1 | Hátrány-1 TÉ, (-5+k20)SP/kör. Eloltás: 1 kör. |
 | Tűz ruhán - lángol | tűz_ruhán_2 | Hátrány-2 TÉ, (0+k20)SP/kör. Harcban elolthatatlan. |
 | Vér elvakít | vér_elvakít | Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés. |
+
+#### Távharci helyzetek
+
+| Helyzet | id | Hatások |
+|---------|-----|---------|
+| Hajítás alkalmatlan fegyverrel | hajítás_alkalmatlan_fegyverrel | Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli. |
+| Hajítás nem dobásra készített | hajítás_nem_dobásra_készített | Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli. |
+| Lövés reflexből | lövés_reflexből | Hátrány CÉ:-7. Fortély kioltja. |
+| Nyílpuska újratöltés | nyílpuska_újratöltés | Csak 2 körönként lőhet. Fortéllyal 1/kör. |
 
 #### Rejtett (automatikus, nem picker-ben)
 
@@ -1097,7 +1133,7 @@ Data layer mezők:
 ### 21.3 Körülmények (korábban: Szituációk)
 
 Ezek az elemek a harci helyzetek pozitív/semleges csoportjába tartoznak (a "körülmény" alcsoport megszűnt).
-A picker 3 csoporttal jeleníti meg: Pozitív (`#4caf50`) / Semleges (`#ff9800`) / Negatív (`#f44336`).
+A picker 4 csoporttal jeleníti meg: Pozitív (`#4caf50`) / Semleges (`#ff9800`) / Negatív (`#f44336`) / Távharci.
 
 | Helyzet                | feltétel kulcs                         | Csoport    |
 | ---------------------- | -------------------------------------- | ---------- |
@@ -1106,7 +1142,6 @@ A picker 3 csoporttal jeleníti meg: Pozitív (`#4caf50`) / Semleges (`#ff9800`)
 | Harci szekér           | `harci_helyzet:harci_szekér`           | pozitív    |
 | Páros harc             | `harci_helyzet:páros_harc`             | pozitív    |
 | Közönség előtt         | `harci_helyzet:közönség_előtt`         | pozitív    |
-| Célzás                 | `harci_helyzet:célzás`                 | pozitív    |
 | Szörnyeteg elleni harc | `harci_helyzet:szörnyeteg_elleni_harc` | semleges   |
 
 note: `szituaciok.yaml` törölve, minden elem a `harci_helyzetek.yaml`-ban él.
@@ -1135,7 +1170,6 @@ A "körülmény" alcsoport is megszűnt (2026-06-21): elemei beolvadtak pozitív
 | Harci szekér           | `harci_szekér`           | pozitív    |
 | Páros harc             | `páros_harc`             | pozitív    |
 | Közönség előtt         | `közönség_előtt`         | pozitív    |
-| Célzás                 | `célzás`                 | pozitív    |
 | Szörnyeteg elleni harc | `szörnyeteg_elleni_harc` | semleges   |
 
 #### Lépések
@@ -1733,11 +1767,11 @@ Fallback (ha a fegyver harcmodorja nem határozható meg): az egész OR lista é
 | Gyors lövés | 1 | képzettség | Íjászat | 5 | Csak íjjal |
 | Nyílpuska újratöltés fejlesztése | 1 | képzettség | Lövészet | 6 | |
 | Nyílpuska újratöltés fejlesztése | 2 | képzettség | Lövészet | 9 | |
-| Kitartott célzás | 1 | képzettség | [Íjászat, Lövészet] | 5 | |
+| Kitartott célzás fejlesztése | 1 | képzettség | [Íjászat, Lövészet] | 5 | |
 | Lövés futás közben | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
 | Lövés hátasról | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | + Lovaglás ≥ 6, Mesterfegyver ≥ 1, Lovas harc ≥ 2 |
 | Lövés hátasról | 2 | képzettség | [Íjászat, Lövészet, Hajítás] | 9 | + Lovaglás ≥ 9, Mesterfegyver ≥ 2, Lovas harc ≥ 3 |
-| Lövés reflexből fejlesztése | 1 | tulajdonság | Gyorsaság | 1 | + Távolsági harcmodor ≥ 5 |
+| Lövés reflexből fejlesztése | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
 | Mesterlövész | 1 | képzettség | Lövészet | 5 | |
 | Mozgó cél mestere fegyverrel | 1 | képzettség | [Íjászat, Lövészet, Hajítás] | 5 | |
 
@@ -2761,8 +2795,8 @@ A Lovas/Léglovas harc helyzet aktiválásakor a kizárt helyzetek automatikusan
 
 | Helyzet | kizár_helyzetek |
 |---------|----------------|
-| Lovas harc | magasabbról, léglovas_harc, harci_szekér, belharci_helyzet, földön_fekve, helyhez_kötve, levegőből, célzás, orvtámadás, takarásban |
-| Léglovas harc | magasabbról, lovas_harc, harci_szekér, belharci_helyzet, földön_fekve, helyhez_kötve, csúszós_talaj, célzás, orvtámadás, takarásban |
+| Lovas harc | magasabbról, léglovas_harc, harci_szekér, belharci_helyzet, földön_fekve, helyhez_kötve, levegőből, orvtámadás, takarásban |
+| Léglovas harc | magasabbról, lovas_harc, harci_szekér, belharci_helyzet, földön_fekve, helyhez_kötve, csúszós_talaj, orvtámadás, takarásban |
 | Magasabbról | lovas_harc, léglovas_harc, földön_fekve, levegőből |
 
 #### Fegyverfogás tiltás (harci_helyzetek.yaml `tiltott_fegyverfogások`)
@@ -2902,7 +2936,7 @@ A webapp nem modellezi külön — informatív szöveg, KM kezeli.
 
 1. ✅ `lovas_harc.yaml`: 0.fok hozzáadva (TÉ:-9, VÉ:-9)
 2. ✅ `leglovas_harc.yaml`: 0.fok hozzáadva (TÉ:-9, VÉ:-9)
-3. ✅ `harci_helyzetek.yaml`: teljes kizárás mátrix (Lovas↔Léglovas↔Magasabbról↔Belharc↔Földön↔Helyhez kötve↔Célzás↔Orvtámadás↔Takarásban↔stb.) + `tiltott_fegyverfogások` mező
+3. ✅ `harci_helyzetek.yaml`: teljes kizárás mátrix (Lovas↔Léglovas↔Magasabbról↔Belharc↔Földön↔Helyhez kötve↔Orvtámadás↔Takarásban↔stb.) + `tiltott_fegyverfogások` mező
 4. ✅ `taktikak.yaml`: "(Lég)Lovas roham" + "(Lég)Lovas támadás galoppból" + Roham/Öngyilkos roham `harci_helyzet/tiltott` megkötés
 5. ✅ `manoverek.yaml`: "Lovas megakasztása" (típus: "lovas") + "Hátas táncoltatása", "Lovas áttörés", "Lóhátról lerántás"
 6. ✅ `generate_tables.py`: "lovas" manőver típus validáció
