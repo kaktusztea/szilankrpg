@@ -145,15 +145,33 @@ Amennyiben az épp használt Metódus használatában `3.fokon` vagy járatos, a
 ⭕TODO: formázás, fogalmazás⭕
 
 - Őrület varázslása viharos tengeren
-- Védelem: a hajóskapitányra nyugodt tengeren nehezebb rá őrületet varázsolni
+- Védelem:
 
 ✅ Agóra:
 Képzettségszinttől függ. Aura TÉ/VÉ
 
+### Támadó oldal
+
 ```
-+1: 3.szint
-...
++1:  3.szint
++2:  6.szint
++3:  9.szint
++4: 12.szint
 +5: 15.szint
 ```
+
+Példa: egy tengerész-varázsló (Hajózás: `6.szint`) bónusza `+2` Mágia akaratra ha háborgó tengeren őrültet varázsolni.
+
+### Védelem
+
+```
+-1:  3.szint
+-2:  6.szint
+-3:  9.szint
+-4: 12.szint
+-5: 15.szint
+```
+
+Példa: egy hajóskapitányra (Hajózás: `9.szint`) nyugodt tengeren nehezebb (`-3`) őrületet varázsolni.
 
 ---

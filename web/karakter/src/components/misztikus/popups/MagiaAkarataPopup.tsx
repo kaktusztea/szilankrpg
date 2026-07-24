@@ -6,7 +6,7 @@ interface Props {
 }
 
 export function MagiaAkarataPopup({ onClose }: Props) {
-  const [tab, setTab] = useState<0 | 1 | 2>(0);
+  const [tab, setTab] = useState<0 | 1 | 2 | 3>(0);
 
   return (
     <OverlayPortal dismissible onClose={onClose}>
@@ -21,11 +21,15 @@ export function MagiaAkarataPopup({ onClose }: Props) {
           <button className={`miszt-magia-tab${tab === 2 ? ' active' : ''}`} onClick={() => setTab(2)}>
             Összhang
           </button>
+          <button className={`miszt-magia-tab${tab === 3 ? ' active' : ''}`} onClick={() => setTab(3)}>
+            Képzettség+
+          </button>
         </div>
 
         {tab === 0 && <AurakiterjesztesTab />}
         {tab === 1 && <AuraerosítesTab />}
         {tab === 2 && <OsszehangTab />}
+        {tab === 3 && <KepzettsegPlusTab />}
       </div>
     </OverlayPortal>
   );
@@ -135,6 +139,56 @@ function OsszehangTab() {
           ))}
         </tbody>
       </table>
+    </div>
+  );
+}
+
+function KepzettsegPlusTab() {
+  const rows: { szint: number; bónusz: number }[] = [
+    { szint: 3, bónusz: 1 },
+    { szint: 6, bónusz: 2 },
+    { szint: 9, bónusz: 3 },
+    { szint: 12, bónusz: 4 },
+    { szint: 15, bónusz: 5 },
+  ];
+
+  return (
+    <div className="miszt-osszh">
+      <h4 className="miszt-osszh-title">Támadó oldal</h4>
+      <table className="miszt-magia-table">
+        <thead>
+          <tr><th>Szint</th><th>Bónusz</th></tr>
+        </thead>
+        <tbody>
+          {rows.map(r => (
+            <tr key={r.szint}>
+              <td className="miszt-magia-val">{r.szint}</td>
+              <td className="miszt-magia-val">+{r.bónusz}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="miszt-magia-example">
+        Példa: tengerész-varázsló (Hajózás: 6.szint) bónusza <strong>+2</strong> Mágia akaratra ha háborgó tengeren őrültet varázsolni.
+      </p>
+
+      <h4 className="miszt-osszh-title">Védelem</h4>
+      <table className="miszt-magia-table">
+        <thead>
+          <tr><th>Szint</th><th>Módosító</th></tr>
+        </thead>
+        <tbody>
+          {rows.map(r => (
+            <tr key={r.szint}>
+              <td className="miszt-magia-val">{r.szint}</td>
+              <td className="miszt-magia-val">-{r.bónusz}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p className="miszt-magia-example">
+        Példa: hajóskapitányra (Hajózás: 9.szint) nyugodt tengeren nehezebb (<strong>-3</strong>) őrületet varázsolni.
+      </p>
     </div>
   );
 }

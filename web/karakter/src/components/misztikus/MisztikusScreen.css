@@ -41,13 +41,13 @@
 .aura-card-clickable { cursor: pointer; border-color: var(--color-misztikus); }
 .aura-card-clickable:active { opacity: 0.7; }
 
-.miszt-magia-popup { min-width: 260px; max-width: 340px; }
+.miszt-magia-popup { min-width: 0; max-width: calc(100vw - 32px); width: 340px; box-sizing: border-box; }
 
-.miszt-magia-tabs { display: flex; gap: 0; margin-bottom: 10px; border-bottom: 1px solid var(--border); }
+.miszt-magia-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 0; margin-bottom: 10px; border-bottom: 1px solid var(--border); }
 .miszt-magia-tab {
-  flex: 1; padding: 6px 8px; font-size: 13px;
+  padding: 6px 6px; font-size: 12px;
   background: none; border: none; color: var(--text-dim); cursor: pointer;
-  border-bottom: 2px solid transparent;
+  border-bottom: 2px solid transparent; white-space: nowrap; text-align: center;
 }
 .miszt-magia-tab.active { color: var(--color-misztikus); border-bottom-color: var(--color-misztikus); }
 
@@ -61,3 +61,5 @@
 
 .miszt-osszh-title { font-size: 13px; color: var(--color-misztikus); margin: 10px 0 4px; }
 .miszt-osszh-title:first-child { margin-top: 0; }
+
+.miszt-magia-example { font-size: 12px; color: var(--text-dim); margin: 6px 0 0; font-style: italic; }
