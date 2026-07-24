@@ -33,6 +33,7 @@ export interface PopupState {
   felvételDef: FortelySummary | null;
   misztFokTarget: number | null;
   deleteFortIdx: number | null;
+  mágiaAkarata: boolean;
 }
 
 export interface TradícióOpció {

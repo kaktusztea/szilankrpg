@@ -9,6 +9,7 @@ import {
   AltípusPickerPopup,
   FokPickerPopup,
 } from './popups';
+import { MagiaAkarataPopup } from './popups/MagiaAkarataPopup';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 
 interface Props {
@@ -28,6 +29,7 @@ interface Props {
     closeFelvétel: () => void;
     closeFok: () => void;
     closeDeleteFort: () => void;
+    closeMágiaAkarata: () => void;
   };
   onConfirmDelete: () => void;
   onSzintPick: (szint: number) => void;
@@ -89,6 +91,10 @@ export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióO
       {deleteFortIdx !== null && (
         <DeleteConfirmPopup label={delFortLabel} buttonText="Fortély törlése"
           onConfirm={h.onConfirmDeleteFort} onClose={actions.closeDeleteFort} />
+      )}
+
+      {state.mágiaAkarata && (
+        <MagiaAkarataPopup onClose={actions.closeMágiaAkarata} />
       )}
     </>
   );

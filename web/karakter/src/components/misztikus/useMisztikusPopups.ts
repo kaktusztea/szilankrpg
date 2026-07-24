@@ -11,6 +11,7 @@ const EMPTY: PopupState = {
   felvételDef: null,
   misztFokTarget: null,
   deleteFortIdx: null,
+  mágiaAkarata: false,
 };
 
 export function useMisztikusPopups() {
@@ -41,6 +42,9 @@ export function useMisztikusPopups() {
 
     openDeleteFort: (idx: number) => setState(s => ({ ...s, deleteFortIdx: idx })),
     closeDeleteFort: () => setState(s => ({ ...s, deleteFortIdx: null })),
+
+    openMágiaAkarata: () => setState(s => ({ ...s, mágiaAkarata: true })),
+    closeMágiaAkarata: () => setState(s => ({ ...s, mágiaAkarata: false })),
   };
 
   return { state, actions };

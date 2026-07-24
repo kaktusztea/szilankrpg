@@ -95,7 +95,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
     <div className="screen miszt-screen">
       <h2>✨ Misztikus</h2>
 
-      <AuraPanel aura={aura} me={me} />
+      <AuraPanel aura={aura} me={me} onMágiaAkarata={actions.openMágiaAkarata} />
 
       <TradícióSection ctx={sectionCtx} tradíció={tradíció}
         onEdit={actions.openSzint} onDelete={actions.openDelete} onPickTradíció={actions.openTradíció} />
