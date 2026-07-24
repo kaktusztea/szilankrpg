@@ -6,7 +6,7 @@ interface Props {
 }
 
 export function MagiaAkarataPopup({ onClose }: Props) {
-  const [tab, setTab] = useState<0 | 1>(0);
+  const [tab, setTab] = useState<0 | 1 | 2>(0);
 
   return (
     <OverlayPortal dismissible onClose={onClose}>
@@ -18,10 +18,14 @@ export function MagiaAkarataPopup({ onClose }: Props) {
           <button className={`miszt-magia-tab${tab === 1 ? ' active' : ''}`} onClick={() => setTab(1)}>
             Auraerősítés
           </button>
+          <button className={`miszt-magia-tab${tab === 2 ? ' active' : ''}`} onClick={() => setTab(2)}>
+            Összhang
+          </button>
         </div>
 
         {tab === 0 && <AurakiterjesztesTab />}
         {tab === 1 && <AuraerosítesTab />}
+        {tab === 2 && <OsszehangTab />}
       </div>
     </OverlayPortal>
   );
@@ -78,6 +82,55 @@ function AuraerosítesTab() {
             <tr key={r.komp}>
               <td className="miszt-magia-val">{r.komp}</td>
               <td className="miszt-magia-val">+{r.bónusz}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  );
+}
+
+function OsszehangTab() {
+  const varázslóRows: { érték: number; leírás: string }[] = [
+    { érték: -2, leírás: 'Erős koncentrálás másra' },
+    { érték: -1, leírás: 'Koncentrálás másra' },
+  ];
+
+  const áldozatRows: { érték: number; leírás: string }[] = [
+    { érték: -2, leírás: 'Papi védő áldás II. (adott arkánum ellen)' },
+    { érték: -2, leírás: 'Isteni kegy' },
+    { érték: -1, leírás: 'Friss szerelmes érzelmét elorozni — nehezebb (Asztrálmágia ellen)' },
+    { érték: -1, leírás: 'Áldozat kiégett érzelmileg (Asztrálmágia ellen)' },
+    { érték: -1, leírás: 'Harci láz (Asztrál/Mentálmágia ellen)' },
+    { érték: -1, leírás: 'Papi védő áldás I. (adott arkánum ellen)' },
+    { érték: -1, leírás: 'Védőszellem' },
+    { érték: +1, leírás: 'Frissen összetört szívű fiatal ficsúrt asztrálmágiával elbájolni — könnyebb' },
+    { érték: +2, leírás: 'Áldozat érzelmi sokkban' },
+  ];
+
+  return (
+    <div className="miszt-osszh">
+      <p className="miszt-magia-formula">Előny-Hátrány skálán eltolás (k10)</p>
+
+      <h4 className="miszt-osszh-title">Varázsló állapota</h4>
+      <table className="miszt-magia-table">
+        <tbody>
+          {varázslóRows.map((r, i) => (
+            <tr key={i}>
+              <td className="miszt-magia-val">{r.érték > 0 ? `+${r.érték}` : r.érték}</td>
+              <td className="miszt-magia-label">{r.leírás}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+
+      <h4 className="miszt-osszh-title">Áldozat állapota</h4>
+      <table className="miszt-magia-table">
+        <tbody>
+          {áldozatRows.map((r, i) => (
+            <tr key={i}>
+              <td className="miszt-magia-val">{r.érték > 0 ? `+${r.érték}` : r.érték}</td>
+              <td className="miszt-magia-label">{r.leírás}</td>
             </tr>
           ))}
         </tbody>

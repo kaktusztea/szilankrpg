@@ -58,3 +58,6 @@
 .miszt-magia-val { text-align: center; font-family: monospace; }
 
 .miszt-magia-formula { font-size: 13px; color: var(--text-dim); margin: 0 0 8px; font-style: italic; }
+
+.miszt-osszh-title { font-size: 13px; color: var(--color-misztikus); margin: 10px 0 4px; }
+.miszt-osszh-title:first-child { margin-top: 0; }
