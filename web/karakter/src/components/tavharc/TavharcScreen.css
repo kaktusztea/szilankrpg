@@ -143,3 +143,29 @@
 
 /* --- Távolsági harcmodorok szekció --- */
 .th-kepz-section { margin-bottom: 12px; }
+
+/* --- Game mód fegyver picker --- */
+.th-game-fegyver-btn { flex: 1; min-width: 0; text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+.th-fegyver-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: calc(5 * 44px);
+  overflow-y: auto;
+  min-width: 220px;
+}
+
+.th-fegyver-picker-item {
+  background: var(--input-bg);
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 16px;
+  color: var(--text);
+  cursor: pointer;
+  text-align: left;
+}
+
+.th-fegyver-picker-item:hover { background: #333; }
+.th-fegyver-picker-active { border-color: var(--success); background: rgba(76, 175, 80, 0.12); }

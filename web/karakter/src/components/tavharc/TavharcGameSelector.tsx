@@ -1,5 +1,7 @@
+import { useState } from 'react';
 import type { Session } from '../../engine/types';
 import type { VirtuálisFegyver } from './types';
+import { PopupOverlay } from '../PopupOverlay';
 
 interface Props {
   összesFegyver: VirtuálisFegyver[];
@@ -11,15 +13,36 @@ interface Props {
 }
 
 export function TavharcGameSelector({ összesFegyver, tfIdx, setSession, mfFok, idea, isMágikus }: Props) {
+  const [showPicker, setShowPicker] = useState(false);
+
   if (összesFegyver.length === 0) return null;
+
+  const aktív = összesFegyver[tfIdx];
+  const aktívNév = aktív ? `${aktív.locked ? '🔆 ' : ''}${aktív.alap}` : '—';
 
   return (
     <div className="th-row th-controls">
-      <select className="field-select th-select" value={tfIdx} onChange={e => setSession(s => ({ ...s, aktív_távfegyver_index: parseInt(e.target.value) }))}>
-        {összesFegyver.map((tf, i) => <option key={i} value={i}>{tf.locked ? '🔆 ' : ''}{tf.alap}</option>)}
-      </select>
+      <button className="he-field-btn th-game-fegyver-btn" onClick={() => setShowPicker(true)}>
+        🏹 <strong>{aktívNév}</strong>
+      </button>
       <span className="th-badge">MF: {mfFok}</span>
       {!isMágikus && <span className="th-badge">Idea: {idea >= 0 ? '+' : ''}{idea}</span>}
+
+      {showPicker && (
+        <PopupOverlay onClose={() => setShowPicker(false)}>
+          <div className="th-fegyver-picker">
+            {összesFegyver.map((tf, i) => (
+              <button
+                key={i}
+                className={`th-fegyver-picker-item${i === tfIdx ? ' th-fegyver-picker-active' : ''}`}
+                onClick={() => { setSession(s => ({ ...s, aktív_távfegyver_index: i })); setShowPicker(false); }}
+              >
+                {tf.locked ? '🔆 ' : ''}{tf.alap}
+              </button>
+            ))}
+          </div>
+        </PopupOverlay>
+      )}
     </div>
   );
 }

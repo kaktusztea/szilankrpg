@@ -35,6 +35,13 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
         <strong>{tf.alap}</strong>
         <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteTarget(); }}>✕</button>
       </div>
+      <div className="he-fegyver-fields he-fegyver-chip-mb">
+        <span className="he-field-btn he-field-indicator">
+          <span className="he-stat-label">CÉ:</span>
+          <span>{bontás.cé}</span>
+          {' '}<span className="he-stat-ml">({tám})</span>
+        </span>
+      </div>
       <div className="th-card-fields">
         <button className={`he-field-btn he-field-fortely${hasError ? ' th-mf-error' : ''}`}
           onClick={e => { e.stopPropagation(); onMfTarget(); }}>
@@ -46,7 +53,6 @@ export function TavharcFegyverCard({ index, isActive, karakter: k, session, data
             Idea: <strong>{idea >= 0 ? '+' : ''}{idea}</strong>
           </button>
         )}
-        <span className="th-badge">CÉ: {bontás.cé}  ({tám})</span>
       </div>
     </div>
   );
