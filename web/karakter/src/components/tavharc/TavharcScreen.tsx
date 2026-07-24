@@ -6,9 +6,13 @@ import { TavharcGameSelector } from './TavharcGameSelector';
 import { TavharcKalkulator } from './TavharcKalkulator';
 import { TavharcReszletek } from './TavharcReszletek';
 import { TavharcPopups } from './TavharcPopups';
+import { TavharcKepzettsegekSection } from './TavharcKepzettsegekSection';
+import { PopupOverlay } from '../PopupOverlay';
+import { SzintGrid } from '../harcertekek/PickerComponents';
+import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import './TavharcScreen.css';
 
-export function TavharcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, gameMode }: TavharcProps) {
+export function TavharcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, képzettségek, setKépzettségek, gameMode }: TavharcProps) {
   const k = karakter;
   const konstansok = data.konstansok;
   const szorzok = data.tavharcSzorzok;
@@ -68,13 +72,32 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
     setPopup(s => ({ ...s, [key]: key === 'mfTarget' || key === 'deleteTarget' ? null : false }));
   }, []);
 
+  // --- Képzettség popup state ---
+  const [kepzSzintTarget, setKepzSzintTarget] = useState<string | null>(null);
+  const [deleteKepzTarget, setDeleteKepzTarget] = useState<string | null>(null);
+
+  const closeKepzPopup = useCallback(() => {
+    if (kepzSzintTarget) {
+      const kp = képzettségek.find(k => k.név === kepzSzintTarget);
+      if (kp && kp.szint === 0) setKépzettségek(prev => prev.filter(k => k.név !== kepzSzintTarget));
+    }
+    setKepzSzintTarget(null);
+  }, [kepzSzintTarget, képzettségek, setKépzettségek]);
+
   return (
     <div className="screen tavharc-screen">
       <h2>🏹 Távharc</h2>
 
+      <TavharcKepzettsegekSection
+        data={data} karakter={karakter} képzettségek={képzettségek} setKépzettségek={setKépzettségek}
+        gameMode={gameMode}
+        onDeleteKepz={név => setDeleteKepzTarget(név)}
+        onKepzSzint={név => setKepzSzintTarget(név)}
+      />
+
       {!gameMode && (
         <TavharcFegyverLista
-          data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode}
+          data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} képzettségek={képzettségek} setKépzettségek={setKépzettségek} gameMode={gameMode}
           idea={idea}
           onMfTarget={i => setPopup(s => ({ ...s, mfTarget: i }))}
           onDeleteTarget={i => setPopup(s => ({ ...s, deleteTarget: i }))}
@@ -107,6 +130,29 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
         távolság={távolság} setTávolság={setTávolság}
         osztó={bontás.osztó}
       />
+
+      {kepzSzintTarget && (
+        <PopupOverlay onClose={closeKepzPopup}>
+          <SzintGrid
+            label={`Távolsági harcmodor: ${kepzSzintTarget} — szint:`}
+            maxSzint={data.konstansok.arányok.képzettség_max_szint}
+            current={képzettségek.find(kp => kp.név === kepzSzintTarget)?.szint ?? 0}
+            onSelect={n => {
+              setKépzettségek(prev => prev.map(kp => kp.név === kepzSzintTarget ? { ...kp, szint: n } : kp));
+              setKepzSzintTarget(null);
+            }}
+          />
+        </PopupOverlay>
+      )}
+
+      {deleteKepzTarget && (
+        <DeleteConfirmPopup
+          label={`Távolsági harcmodor: ${deleteKepzTarget}`}
+          buttonText="Képzettség törlése"
+          onConfirm={() => { setKépzettségek(prev => prev.filter(kp => kp.név !== deleteKepzTarget)); setDeleteKepzTarget(null); }}
+          onClose={() => setDeleteKepzTarget(null)}
+        />
+      )}
     </div>
   );
 }

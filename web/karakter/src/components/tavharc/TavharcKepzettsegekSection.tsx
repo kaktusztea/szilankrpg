@@ -1,6 +1,10 @@
 import type { Karakter } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
-import { getAllKözelharciNames, harciKepzDisplayName } from './helpers';
+import { getAllTávharciNames } from '../harcertekek/helpers';
+
+function távharciDisplayName(név: string): string {
+  return `Távolsági harcmodor: ${név}`;
+}
 
 interface Props {
   data: GameData;
@@ -12,21 +16,22 @@ interface Props {
   onKepzSzint: (név: string) => void;
 }
 
-export function HarciKepzettsegekSection({ data, karakter: k, képzettségek, setKépzettségek, gameMode, onDeleteKepz, onKepzSzint }: Props) {
-  const allHarciNames = getAllKözelharciNames(data);
-  const felvett = képzettségek.filter(kp => allHarciNames.includes(kp.név) && kp.szint > 0);
-  const nemFelvett = allHarciNames.filter(n => !képzettségek.some(kp => kp.név === n && kp.szint > 0));
+export function TavharcKepzettsegekSection({ data, karakter: k, képzettségek, setKépzettségek, gameMode, onDeleteKepz, onKepzSzint }: Props) {
+  const allTávharciNames = getAllTávharciNames(data);
+  const felvett = képzettségek.filter(kp => allTávharciNames.includes(kp.név) && kp.szint > 0);
+  const nemFelvett = allTávharciNames.filter(n => !képzettségek.some(kp => kp.név === n && kp.szint > 0));
+
+  if (gameMode && felvett.length === 0) return null;
 
   return (
-    <section className="he-section">
-      <h3>Harci képzettségek</h3>
+    <section className="he-section th-kepz-section">
       <div className="he-harcmodor-list he-harcmodor-col">
         {felvett.map(h => (
             <div key={h.név} className="kep-row-wrapper">
               <div className="item-row" onClick={() => {
                 if (!gameMode) onKepzSzint(h.név);
               }}>
-                <span className="kep-név aktiv-flex-1">{harciKepzDisplayName(data, h.név)}</span>
+                <span className="kep-név aktiv-flex-1">{távharciDisplayName(h.név)}</span>
                 {!gameMode && (
                   <button className="item-delete" onClick={e => { e.stopPropagation(); onDeleteKepz(h.név); }}>✕</button>
                 )}
@@ -45,8 +50,8 @@ export function HarciKepzettsegekSection({ data, karakter: k, képzettségek, se
               onKepzSzint(név);
             }}
           >
-            <option value="">+ Harci képzettség...</option>
-            {nemFelvett.map(n => <option key={n} value={n}>{harciKepzDisplayName(data, n)}</option>)}
+            <option value="">+ Távolsági harcmodor...</option>
+            {nemFelvett.map(n => <option key={n} value={n}>{távharciDisplayName(n)}</option>)}
           </select>
         )}
       </div>

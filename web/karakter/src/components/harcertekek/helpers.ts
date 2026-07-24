@@ -130,3 +130,14 @@ export function getAllHarciNames(data: GameData): string[] {
   }
   return names;
 }
+
+/** Csak távharci harcmodor nevek (Hajítás, Íjászat, Lövészet, stb.) */
+export function getAllTávharciNames(data: GameData): string[] {
+  return [...getTávharciHmSet(data)];
+}
+
+/** Közelharci harcmodorok + egyéb harci képzettségek (távharci NÉLKÜL) */
+export function getAllKözelharciNames(data: GameData): string[] {
+  const távharci = getTávharciHmSet(data);
+  return getAllHarciNames(data).filter(n => !távharci.has(n));
+}

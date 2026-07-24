@@ -54,7 +54,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
       const idx = ALL_TABS.findIndex(t => t.id === id);
       if (idx >= 0) setActiveTab(idx);
     }} />;
-    case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} gameMode={gameMode} />;
+    case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo} gameMode={gameMode} />;
     case 'tulajdonsagok': {
       const sf = makeFieldSetter(pushUndo, setKarakter);
       const setAnyanyelv = makeAnyanyelvSetter(setKarakter, data.konstansok.közös_nyelv);

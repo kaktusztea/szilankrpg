@@ -9,6 +9,8 @@ export interface TavharcProps {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  képzettségek: { név: string; szint: number }[];
+  setKépzettségek: React.Dispatch<React.SetStateAction<{ név: string; szint: number }[]>>;
   gameMode: boolean;
 }
 
