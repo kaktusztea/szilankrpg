@@ -14,7 +14,7 @@ interface Props {
   téLevonások: number[];
   onNavigate?: () => void;
   sebzések: SebzésRubrika[];
-  onSebzésekChange: (sebzések: SebzésRubrika[]) => void;
+  onSebzésekChange: (sebzések: SebzésRubrika[], leírás: string) => void;
 }
 
 export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0, téLevonások, onNavigate, sebzések, onSebzésekChange }: Props) {
@@ -32,17 +32,19 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
   useEscapeClose(hasPopup, closeAll);
 
   function sebesülés(típus: Parameters<typeof applySeb>[1], érték: number) {
-    onSebzésekChange(toSebzések(applySeb(rubrikák, típus, érték)));
+    const label = típus === 'FP' ? `Sebesülés: ${érték} FP` : `Sebesülés: ${érték} ÉP (${típus})`;
+    onSebzésekChange(toSebzések(applySeb(rubrikák, típus, érték)), label);
     setShowSebDialog(false);
   }
 
   function gyógyulás(típusSzűrő: 'FP' | 'ÉP', érték: number) {
-    onSebzésekChange(toSebzések(applyGyógy(rubrikák, típusSzűrő, érték)));
+    const label = típusSzűrő === 'FP' ? `Gyógyulás: ${érték} FP` : `Gyógyulás: ${érték} ÉP`;
+    onSebzésekChange(toSebzések(applyGyógy(rubrikák, típusSzűrő, érték)), label);
     setShowGyógyDialog(false);
   }
 
   function reset() {
-    onSebzésekChange([]);
+    onSebzésekChange([], 'ÉP reset');
     setShowResetConfirm(false);
   }
 

@@ -87,9 +87,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const rawTéLevonás = hc.téLevonások[aktKat];
   const téLevonás = rawTéLevonás === 0 ? 0 : Math.min(0, rawTéLevonás + ftEnyhítés);
 
-  const handleSebzésekChange = useCallback((sebzések: SebzésRubrika[]) => {
+  const handleSebzésekChange = useCallback((sebzések: SebzésRubrika[], leírás: string) => {
+    pushUndo(leírás, [{ field: 'session', prev: session }]);
     setSession(prev => ({ ...prev, sebzések }));
-  }, [setSession]);
+  }, [setSession, pushUndo, session]);
 
   const handleNavigateToFt = useCallback(() => {
     onNavigate?.('tulajdonsagok');
