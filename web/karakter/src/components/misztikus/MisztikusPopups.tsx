@@ -18,6 +18,8 @@ interface Props {
   fortélyok: Fortely[];
   tradícióOpciók: TradícióOpció[];
   misztFortDefs: FortelySummary[];
+  önuralom: number;
+  aurahangolás: number;
   actions: {
     closeDelete: () => void;
     closeSzint: () => void;
@@ -41,7 +43,7 @@ interface Props {
   onConfirmDeleteFort: () => void;
 }
 
-export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióOpciók, misztFortDefs, actions, ...h }: Props) {
+export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióOpciók, misztFortDefs, önuralom, aurahangolás, actions, ...h }: Props) {
   const { deleteTarget, szintTarget, promptTarget, promptValue, tradícióPicker, tradícióAltípusPicker, felvételDef, misztFokTarget, deleteFortIdx } = state;
 
   // Derived values for fok/delete popups
@@ -94,7 +96,7 @@ export function MisztikusPopups({ state, képzettségek, fortélyok, tradícióO
       )}
 
       {state.mágiaAkarata && (
-        <MagiaAkarataPopup onClose={actions.closeMágiaAkarata} />
+        <MagiaAkarataPopup önuralom={önuralom} aurahangolás={aurahangolás} onClose={actions.closeMágiaAkarata} />
       )}
     </>
   );

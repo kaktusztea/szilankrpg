@@ -2,10 +2,12 @@ import { useState } from 'react';
 import { OverlayPortal } from '../../overlays/OverlayPortal';
 
 interface Props {
+  önuralom: number;
+  aurahangolás: number;
   onClose: () => void;
 }
 
-export function MagiaAkarataPopup({ onClose }: Props) {
+export function MagiaAkarataPopup({ önuralom, aurahangolás, onClose }: Props) {
   const [tab, setTab] = useState<0 | 1 | 2 | 3>(0);
 
   return (
@@ -27,7 +29,7 @@ export function MagiaAkarataPopup({ onClose }: Props) {
         </div>
 
         {tab === 0 && <AurakiterjesztesTab />}
-        {tab === 1 && <AuraerosítesTab />}
+        {tab === 1 && <AuraerosítesTab önuralom={önuralom} aurahangolás={aurahangolás} />}
         {tab === 2 && <OsszehangTab />}
         {tab === 3 && <KepzettsegPlusTab />}
       </div>
@@ -62,7 +64,7 @@ function AurakiterjesztesTab() {
   );
 }
 
-function AuraerosítesTab() {
+function AuraerosítesTab({ önuralom, aurahangolás }: { önuralom: number; aurahangolás: number }) {
   const rows: { komp: number; bónusz: number }[] = [
     { komp: 9, bónusz: 1 },
     { komp: 12, bónusz: 3 },
@@ -77,6 +79,7 @@ function AuraerosítesTab() {
   return (
     <div>
       <p className="miszt-magia-formula">Aurahangolás + Önuralom + k10</p>
+      <p className="miszt-magia-formula-vals">({aurahangolás} + {önuralom} + k10)</p>
       <table className="miszt-magia-table">
         <thead>
           <tr><th>Komplexitás</th><th>Bónusz</th></tr>

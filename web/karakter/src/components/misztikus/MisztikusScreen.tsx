@@ -37,6 +37,10 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
     felvettFortelyok: karakter.fortélyok.map(f => f.név),
   };
 
+  const aurahangolásKep = képzettségek.find(k => k.név === 'Arkánum: Aurahangolás');
+  const aurahangolás = aurahangolásKep?.szint ?? 0;
+  const önuralom = karakter.tulajdonságok.önuralom;
+
   // Derived data
   const tradíció = képzettségek.find(k => k.név.startsWith('Tradíció'));
   const arkánumok = képzettségek.filter(k => k.név.startsWith('Arkánum')).sort((a, b) => a.név.localeCompare(b.név, 'hu'));
@@ -123,6 +127,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
       <MisztikusPopups
         state={popups} képzettségek={képzettségek} fortélyok={fortélyok}
         tradícióOpciók={data.tradiciok ?? []} misztFortDefs={misztFortDefs}
+        önuralom={önuralom} aurahangolás={aurahangolás}
         actions={actions}
         onConfirmDelete={() => { if (popups.deleteTarget) { removeKépzettség(popups.deleteTarget); actions.closeDelete(); } }}
         onSzintPick={handleSzintPick}
