@@ -1,6 +1,6 @@
 ## Mágiaelmélet
 
-Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiaelmelet) fejlesztjük. Amint ott elkészül, bemásolni ide.
+Jelenleg a saját [STUDY oldalán](https://github.com/kaktusztea/szilankrpg/wiki/STUDY.magiaelmelet) fejlesztjük.
 
 ---
 
