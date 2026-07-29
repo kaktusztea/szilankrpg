@@ -139,5 +139,6 @@
 
 /* --- PrimerKpBox → base: .debug-box (common.css) --- */
 .primer-kp-box { margin-top: 16px; }
+.primer-kp-cat { color: #d4727f; }
 .primer-kp-indent { padding-left: 10px; }
 .primer-kp-total { border-top: 1px solid var(--border-input); margin-top: 4px; padding-top: 4px; }

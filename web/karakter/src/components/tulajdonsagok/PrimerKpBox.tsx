@@ -37,7 +37,7 @@ export function PrimerKpBox({ data, karakter, képzettségek }: Props) {
 }
 
 function KpRow({ label, value, pct }: { label: string; value: number; pct: number }) {
-  return <div>{label}: {value} KP ({pct}%)</div>;
+  return <div><span className="primer-kp-cat">{label}</span>: {value} KP ({pct}%)</div>;
 }
 
 function DetailList({ items, type }: { items: KpDetail[]; type: 'kep' | 'fort' }) {
