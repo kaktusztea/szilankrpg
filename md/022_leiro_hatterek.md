@@ -21,7 +21,7 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Varázsló
 - Városlakó
 
-### Jellem, fóbiák, hobbik
+### Jellem
 
 - Élet
 - Rend
@@ -43,7 +43,6 @@ __
 - Idealista
 - Kapzsi
 - Kényes
-- Kígyóiszonyos
 - Megfontolt
 - Megbízhatatlan
 - Megbízható
@@ -54,18 +53,16 @@ __
 - Nárcisztikus
 - Piperkőc
 - Pojáca
-- Pókiszonyos
 - Precíz
 - Szerény
 - Talpnyaló
 - Teszetosza
-- Tériszonyos
 - Tiszteletreméltó
 - Tudálékos
 - Vezéralkat
 - Zsugori
 
-### Küllem, fizikum
+### Küllem
 
 - Alacsony
 - Albínó
@@ -79,6 +76,12 @@ __
 - Sebhelyes
 - Tömzsi
 - Vékony
+
+### Fóbia
+
+- Kígyóiszonyos
+- Pókiszonyos
+- Tériszonyos
 
 ### Viszony
 
