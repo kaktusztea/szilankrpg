@@ -34,7 +34,8 @@ export function TagCloud({ items, aktív, field, többszörös, gameMode, colorC
   const sorted = [...items].sort((a, b) => {
     const aAct = aktív.includes(a) ? 0 : 1;
     const bAct = aktív.includes(b) ? 0 : 1;
-    return aAct - bAct || a.localeCompare(b, 'hu');
+    if (aAct !== bAct) return aAct - bAct;
+    return items.indexOf(a) - items.indexOf(b);
   });
 
   return (
