@@ -27,6 +27,7 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Rend
 - Halál
 - Káosz
+__
 - Alattomos
 - Alattvaló
 - Álmodozó
@@ -40,6 +41,8 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Hallgatag
 - Hiszékeny
 - Idealista
+- Kapzsi
+- Kényes
 - Kígyóiszonyos
 - Megfontolt
 - Megbízhatatlan
@@ -47,7 +50,10 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Meggondolatlan
 - Naív
 - Nagyképű
+- Nagyvonalú
 - Nárcisztikus
+- Piperkőc
+- Pojáca
 - Pókiszonyos
 - Precíz
 - Szerény
@@ -57,6 +63,7 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Tiszteletreméltó
 - Tudálékos
 - Vezéralkat
+- Zsugori
 
 ### Küllem, fizikum
 
