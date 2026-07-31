@@ -4290,12 +4290,13 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Varázsló
 - Városlakó
 
-### Jellem, fóbiák, hobbik
+### Jellem
 
 - Élet
 - Rend
 - Halál
 - Káosz
+__
 - Alattomos
 - Alattvaló
 - Álmodozó
@@ -4309,25 +4310,28 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Hallgatag
 - Hiszékeny
 - Idealista
-- Kígyóiszonyos
+- Kapzsi
+- Kényes
 - Megfontolt
 - Megbízhatatlan
 - Megbízható
 - Meggondolatlan
 - Naív
 - Nagyképű
+- Nagyvonalú
 - Nárcisztikus
-- Pókiszonyos
+- Piperkőc
+- Pojáca
 - Precíz
 - Szerény
 - Talpnyaló
 - Teszetosza
-- Tériszonyos
 - Tiszteletreméltó
 - Tudálékos
 - Vezéralkat
+- Zsugori
 
-### Küllem, fizikum
+### Küllem
 
 - Alacsony
 - Albínó
@@ -4341,6 +4345,12 @@ Alább 1-2 szavas leíró jelzőket találsz, amelyek további színesítő elem
 - Sebhelyes
 - Tömzsi
 - Vékony
+
+### Fóbia
+
+- Kígyóiszonyos
+- Pókiszonyos
+- Tériszonyos
 
 ### Viszony
 
