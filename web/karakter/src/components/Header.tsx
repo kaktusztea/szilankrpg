@@ -13,8 +13,9 @@ interface Props {
 export function Header({ testMode, gameMode, setGameMode, session, undoCount, setOverlay }: Props) {
   return (
     <header className="header">
-      <span className={`title${testMode ? ' title-test' : ''}`} onClick={() => setOverlay('showSzilánkPicker', true)}>Szilánk</span>
-      <span className="header-szilank" onClick={() => setOverlay('showSzilánkPicker', true)}>{session.szilánk}</span>
+      <span className="header-szilank" onClick={() => setOverlay('showSzilánkPicker', true)}>
+        <span className={`szilank-label${testMode ? ' title-test' : ''}`}>Szilánk</span> {session.szilánk}
+      </span>
       <div className="header-btns">
         <button
           className="gear-btn"
