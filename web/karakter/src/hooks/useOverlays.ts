@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import type { OverlayState } from '../components/AppOverlays';
 
 const INITIAL_OVERLAYS: OverlayState = {
@@ -12,6 +12,10 @@ const INITIAL_OVERLAYS: OverlayState = {
 
 export function useOverlays() {
   const [overlays, setOverlays] = useState<OverlayState>(INITIAL_OVERLAYS);
+  // Timestamp of the last backdrop dismiss — used to swallow the synthesized
+  // "ghost" click-through iOS Safari fires on the element exposed beneath a
+  // just-closed overlay (closes a stacked confirm, then the SlotList behind it).
+  const lastBackdropDismiss = useRef(0);
 
   const setOverlay = useCallback(<K extends keyof OverlayState>(key: K, value: OverlayState[K]) => {
     setOverlays(prev => ({ ...prev, [key]: value }));
@@ -23,17 +27,23 @@ export function useOverlays() {
     || !!overlays.slotDeleteTarget || overlays.showSavePopup || !!overlays.saveFile
     || !!overlays.backupRestore;
 
+  // Close the topmost overlay: a stacked confirm (slotDeleteTarget) closes on its
+  // own without dismissing the SlotList behind it; otherwise reset everything.
+  const closeTopmost = useCallback(() => {
+    setOverlays(prev => prev.slotDeleteTarget
+      ? { ...prev, slotDeleteTarget: null }
+      : { ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm, backupRestore: prev.backupRestore });
+  }, []);
+
   // ESC closes overlays
   useEffect(() => {
     if (!anyOverlayOpen) return;
     function onKey(e: KeyboardEvent) {
-      if (e.key === 'Escape') {
-        setOverlays(prev => ({ ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm, backupRestore: prev.backupRestore }));
-      }
+      if (e.key === 'Escape') closeTopmost();
     }
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
-  }, [anyOverlayOpen]);
+  }, [anyOverlayOpen, closeTopmost]);
 
   // Ctrl+S → save popup
   useEffect(() => {
@@ -56,12 +66,18 @@ export function useOverlays() {
     function handler(e: MouseEvent) {
       const el = e.target as HTMLElement;
       if (el.classList.contains('kep-prompt-overlay')) {
-        setOverlays(prev => ({ ...INITIAL_OVERLAYS, toast: prev.toast, importConfirm: prev.importConfirm, backupRestore: prev.backupRestore }));
+        // ponytail: 400ms guard drops iOS ghost click-through onto the newly
+        // exposed backdrop. Ceiling: two deliberate backdrop taps <400ms apart
+        // register as one — acceptable for modal overlays.
+        const now = Date.now();
+        if (now - lastBackdropDismiss.current < 400) return;
+        lastBackdropDismiss.current = now;
+        closeTopmost();
       }
     }
     document.addEventListener('click', handler);
     return () => document.removeEventListener('click', handler);
-  }, []);
+  }, [closeTopmost]);
 
   return { overlays, setOverlay, setOverlays, anyOverlayOpen, INITIAL_OVERLAYS };
 }

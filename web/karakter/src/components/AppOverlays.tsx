@@ -132,7 +132,6 @@ export function AppOverlays({
         <SlotDeleteOverlay
           név={s.slotDeleteTarget.név}
           onConfirm={handleSlotDelete}
-          onClose={() => set('slotDeleteTarget', null)}
         />
       )}
 
