@@ -1,5 +1,4 @@
 export { OverlayPortal } from './OverlayPortal';
-export { MenuOverlay } from './MenuOverlay';
 export { SzilankPickerOverlay } from './SzilankPickerOverlay';
 export { NewCharConfirmOverlay } from './NewCharConfirmOverlay';
 export { SlotListOverlay } from './SlotListOverlay';

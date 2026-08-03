@@ -24,7 +24,8 @@ export function Header({ testMode, gameMode, setGameMode, session, undoCount, se
           ↩{undoCount > 0 ? ` ${undoCount}` : ''}
         </button>
         <button className="gear-btn" onClick={() => setOverlay('overlayScreen', 'jegyzetek')}>✏️</button>
-        <button className="gear-btn gear-btn-padded" onClick={() => setOverlay('showMenu', true)}>⚙️</button>
+        <button className="gear-btn" onClick={() => setOverlay('overlayScreen', 'naplo')}>📅</button>
+        <button className="gear-btn gear-btn-padded" onClick={() => setOverlay('showSlotList', true)}>🧑</button>
         <button
           className={`mode-toggle ${gameMode ? 'mode-toggle-game' : 'mode-toggle-szerk'}`}
           onClick={() => setGameMode(!gameMode)}

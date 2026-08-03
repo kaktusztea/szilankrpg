@@ -28,9 +28,15 @@ interface Props {
   onShareFile: (uid: string) => void;
   onDuplicate: (uid: string) => void;
   onFileLoad: () => void;
+  onNew: () => void;
+  onSave: () => void;
+  newDisabled: boolean;
+  onTest: () => void;
+  onFullscreenHint: () => void;
+  onClose: () => void;
 }
 
-export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad }: Props) {
+export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
   let slots: SlotEntry[] = [];
   try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
   slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
@@ -48,6 +54,11 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
 
   return (
     <>
+      <div className="slot-actions slot-actions-top">
+        <button className="menu-item slot-file-btn" title="Új karakter" disabled={newDisabled} onClick={onNew}>📄</button>
+        <button className="menu-item slot-file-btn" title="Betöltés fájlból" onClick={onFileLoad}>📁</button>
+        <button className="menu-item slot-file-btn" title="Backup mentése" disabled={newDisabled} onClick={onSave}>💾</button>
+      </div>
       <div className="slot-list">
         {slots.map(s => (
           <div key={s.uid} className={`slot-row ${activeUid === s.uid ? 'slot-row-active' : ''}`}>
@@ -59,21 +70,29 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
               <span className="slot-delete-btn" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</span>
             </div>
             <div className="slot-chips">
-              <button className="slot-chip" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗 Link másolása</button>
-              <button className="slot-chip" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>💾 Mentés fájlba</button>
-            </div>
-            <div className="slot-chips">
+              <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
+              <button className="slot-chip" title="Mentés fájlba" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>💾</button>
               {typeof navigator.share === 'function' && (
-                <button className="slot-chip" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤 Megosztás</button>
+                <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
               )}
-              <button className="slot-chip" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>📋 Duplikál</button>
+              <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>⧉</button>
             </div>
           </div>
         ))}
         {slots.length === 0 && <span className="slot-empty">Nincs mentett karakter</span>}
       </div>
-      <div className="slot-actions">
-        <button className="menu-item slot-file-btn" onClick={onFileLoad}>📁 Fájlból...</button>
+      <div className="menu-footer">
+        <button className="menu-test-chip" onClick={onTest}>T</button>
+        <span className="menu-build">{__APP_VERSION__}</span>
+        {document.fullscreenEnabled ? (
+          <button className="menu-fs-chip" title="Teljes képernyő" onClick={() => {
+            if (document.fullscreenElement) document.exitFullscreen();
+            else document.documentElement.requestFullscreen();
+            onClose();
+          }}>⛶</button>
+        ) : (!window.matchMedia('(display-mode: standalone)').matches && (
+          <button className="menu-fs-chip" title="Teljes képernyő" onClick={onFullscreenHint}>⛶</button>
+        ))}
       </div>
     </>
   );

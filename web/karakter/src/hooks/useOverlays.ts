@@ -2,7 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import type { OverlayState } from '../components/AppOverlays';
 
 const INITIAL_OVERLAYS: OverlayState = {
-  showMenu: false, showSzilánkPicker: false, showSlotList: false,
+  showSzilánkPicker: false, showSlotList: false,
   slotDeleteTarget: null, showSavePopup: false, saveFile: null,
   loadError: '', showFullscreenHint: false, showNewConfirm: false,
   showUndo: false, undoSelected: null, overlayScreen: null,
@@ -18,7 +18,7 @@ export function useOverlays() {
   }, []);
 
   const anyOverlayOpen = overlays.showNewConfirm || overlays.showSlotList || overlays.showUndo
-    || overlays.showMenu || !!overlays.loadError || !!overlays.overlayScreen
+    || !!overlays.loadError || !!overlays.overlayScreen
     || overlays.showFullscreenHint || overlays.showSzilánkPicker || !!overlays.sharePopup
     || !!overlays.slotDeleteTarget || overlays.showSavePopup || !!overlays.saveFile
     || !!overlays.backupRestore;

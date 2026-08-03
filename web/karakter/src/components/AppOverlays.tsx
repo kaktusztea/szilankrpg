@@ -6,7 +6,7 @@ import { DEFAULT_SESSION } from '../engine/types';
 import { isSlotFull } from '../hooks/slot-utils';
 import { MAX_KARAKTER_DB } from '../ui-constants';
 import {
-  MenuOverlay, SzilankPickerOverlay, NewCharConfirmOverlay,
+  SzilankPickerOverlay, NewCharConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveOverlay, SaveFileOverlay,
   UndoOverlay, LoadErrorOverlay, FullscreenHintOverlay,
   OverlayScreenOverlay, SharePopupOverlay, ToastOverlay, ImportConfirmOverlay,
@@ -14,7 +14,6 @@ import {
 } from './overlays';
 
 export interface OverlayState {
-  showMenu: boolean;
   showSzilánkPicker: boolean;
   showSlotList: boolean;
   slotDeleteTarget: { uid: string; név: string } | null;
@@ -65,9 +64,6 @@ export function AppOverlays({
   setUndoStack, setTestMode, setIsDirty, isDirty,
 }: Props) {
 
-  // --- Menu ---
-  const closeMenu = () => set('showMenu', false);
-
   // --- Slot delete handler ---
   const handleSlotDelete = () => {
     deleteSlot(s.slotDeleteTarget!.uid);
@@ -91,30 +87,18 @@ export function AppOverlays({
 
   const handleSlotTest = () => {
     const refErr = validateKarakterData(data.testKarakter, data);
-    if (refErr) { set('showMenu', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
+    if (refErr) { set('showSlotList', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
     setKarakter({
       ...data.testKarakter,
       uid: data.testKarakter.uid || generateUid(),
       id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
       session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
     });
-    setUndoStack([]); setTestMode(true); setIsDirty(true); set('showMenu', false);
+    setUndoStack([]); setTestMode(true); setIsDirty(true); set('showSlotList', false);
   };
 
   return (
     <>
-      {s.showMenu && (
-        <MenuOverlay
-          isNewDisabled={!isDirty}
-          onSlots={() => { closeMenu(); set('showSlotList', true); }}
-          onSave={() => { closeMenu(); set('showSavePopup', true); }}
-          onNew={() => { closeMenu(); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
-          onNaplo={() => { closeMenu(); set('overlayScreen', 'naplo'); }}
-          onTest={handleSlotTest}
-          onFullscreenHint={() => { closeMenu(); set('showFullscreenHint', true); }}
-          onClose={closeMenu}
-        />
-      )}
 
       {s.showSzilánkPicker && (
         <SzilankPickerOverlay
@@ -135,6 +119,11 @@ export function AppOverlays({
           onShareFile={(uid) => saveSlotToFile(uid, 'share')}
           onDuplicate={duplicateSlot}
           onFileLoad={() => { set('showSlotList', false); loadKarakter(); }}
+          onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
+          onSave={() => { set('showSlotList', false); set('showSavePopup', true); }}
+          newDisabled={!isDirty}
+          onTest={handleSlotTest}
+          onFullscreenHint={() => { set('showSlotList', false); set('showFullscreenHint', true); }}
           onClose={() => set('showSlotList', false)}
         />
       )}
