@@ -17,7 +17,7 @@ export function SaveFileOverlay({ filename, blob, onShare, onDownload, onClose }
         {typeof navigator.share === 'function' && (
           <button className="menu-item" onClick={() => onShare(blob, filename)}>📤 Megosztás</button>
         )}
-        <button className="menu-item" onClick={() => onDownload(blob, filename)}>📦 Helyi mentés</button>
+        <button className="menu-item" onClick={() => onDownload(blob, filename)}>💾 Helyi mentés</button>
       </div>
     </OverlayPortal>
   );

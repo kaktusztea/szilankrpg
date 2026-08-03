@@ -71,7 +71,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
             </div>
             <div className="slot-chips">
               <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
-              <button className="slot-chip" title="Mentés fájlba" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>📦</button>
+              <button className="slot-chip" title="Mentés fájlba" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>💾</button>
               {typeof navigator.share === 'function' && (
                 <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
               )}
