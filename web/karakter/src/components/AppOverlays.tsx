@@ -43,12 +43,13 @@ interface Props {
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   undoStack: { timestamp: number; leírás: string; patches: unknown[] }[];
   undoTo: (index: number) => void;
-  duplicateKarakter: () => void;
+  duplicateSlot: (uid: string) => void;
   handleGenerateSave: (mode: 'single' | 'backup') => void;
   shareFile: (blob: Blob, filename: string) => void;
   downloadFile: (blob: Blob, filename: string) => void;
   loadKarakter: () => void;
   shareSlotUrl: (uid: string) => void;
+  saveSlotToFile: (uid: string, action: 'download' | 'share') => void;
   importKarakter: (k: Karakter, overwriteUid: string | false) => void;
   deleteSlot: (uid: string) => void;
   setUndoStack: React.Dispatch<React.SetStateAction<any[]>>;
@@ -59,8 +60,8 @@ interface Props {
 
 export function AppOverlays({
   state: s, setState: set, data, karakter, session, setSession,
-  setKarakter, undoStack, undoTo, duplicateKarakter, handleGenerateSave,
-  shareFile, downloadFile, loadKarakter, shareSlotUrl, importKarakter, deleteSlot,
+  setKarakter, undoStack, undoTo, duplicateSlot, handleGenerateSave,
+  shareFile, downloadFile, loadKarakter, shareSlotUrl, saveSlotToFile, importKarakter, deleteSlot,
   setUndoStack, setTestMode, setIsDirty, isDirty,
 }: Props) {
 
@@ -90,14 +91,14 @@ export function AppOverlays({
 
   const handleSlotTest = () => {
     const refErr = validateKarakterData(data.testKarakter, data);
-    if (refErr) { set('showSlotList', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
+    if (refErr) { set('showMenu', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
     setKarakter({
       ...data.testKarakter,
       uid: data.testKarakter.uid || generateUid(),
       id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
       session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
     });
-    setUndoStack([]); setTestMode(true); setIsDirty(true); set('showSlotList', false);
+    setUndoStack([]); setTestMode(true); setIsDirty(true); set('showMenu', false);
   };
 
   return (
@@ -106,10 +107,10 @@ export function AppOverlays({
         <MenuOverlay
           isNewDisabled={!isDirty}
           onSlots={() => { closeMenu(); set('showSlotList', true); }}
-          onDuplicate={() => { closeMenu(); duplicateKarakter(); }}
           onSave={() => { closeMenu(); set('showSavePopup', true); }}
           onNew={() => { closeMenu(); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
           onNaplo={() => { closeMenu(); set('overlayScreen', 'naplo'); }}
+          onTest={handleSlotTest}
           onFullscreenHint={() => { closeMenu(); set('showFullscreenHint', true); }}
           onClose={closeMenu}
         />
@@ -130,7 +131,9 @@ export function AppOverlays({
           onLoad={handleSlotLoad}
           onDelete={(uid, név) => set('slotDeleteTarget', { uid, név })}
           onShare={shareSlotUrl}
-          onTest={handleSlotTest}
+          onSaveFile={(uid) => saveSlotToFile(uid, 'download')}
+          onShareFile={(uid) => saveSlotToFile(uid, 'share')}
+          onDuplicate={duplicateSlot}
           onFileLoad={() => { set('showSlotList', false); loadKarakter(); }}
           onClose={() => set('showSlotList', false)}
         />

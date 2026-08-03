@@ -11,15 +11,6 @@ interface SlotEntry {
   mentés_dátum: string;
 }
 
-function relTime(iso: string): string {
-  const diff = Date.now() - new Date(iso).getTime();
-  if (diff < 60000) return 'most';
-  if (diff < 3600000) return `${Math.floor(diff / 60000)} perce`;
-  if (diff < 86400000) return `${Math.floor(diff / 3600000)} órája`;
-  if (diff < 604800000) return `${Math.floor(diff / 86400000)} napja`;
-  return `${Math.floor(diff / 604800000)} hete`;
-}
-
 function truncSlotName(név: string | undefined): string {
   const n = név || 'Névtelen';
   const vm = n.match(/ v(\d+)$/);
@@ -33,11 +24,13 @@ interface Props {
   onLoad: (karakter: Karakter, undo: any[]) => void;
   onDelete: (uid: string, név: string) => void;
   onShare: (uid: string) => void;
-  onTest: () => void;
+  onSaveFile: (uid: string) => void;
+  onShareFile: (uid: string) => void;
+  onDuplicate: (uid: string) => void;
   onFileLoad: () => void;
 }
 
-export function SlotList({ activeUid, onLoad, onDelete, onShare, onTest, onFileLoad }: Props) {
+export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad }: Props) {
   let slots: SlotEntry[] = [];
   try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
   slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
@@ -58,19 +51,28 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onTest, onFileL
       <div className="slot-list">
         {slots.map(s => (
           <div key={s.uid} className={`slot-row ${activeUid === s.uid ? 'slot-row-active' : ''}`}>
-            <span className={`slot-name ${activeUid === s.uid ? 'slot-name-active' : ''}`}
-              onClick={() => loadSlot(s.uid)}>
-              {activeUid === s.uid ? '●' : '○'} {truncSlotName(s.név)} ({s.tsz || '?'}sz)
-            </span>
-            <span className="slot-time">{relTime(s.mentés_dátum)}</span>
-            <span className="slot-share-btn" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</span>
-            <span className="slot-delete-btn" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</span>
+            <div className="slot-row-top">
+              <span className={`slot-name ${activeUid === s.uid ? 'slot-name-active' : ''}`}
+                onClick={() => loadSlot(s.uid)}>
+                {activeUid === s.uid ? '●' : '○'} {truncSlotName(s.név)} ({s.tsz || '?'}sz)
+              </span>
+              <span className="slot-delete-btn" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</span>
+            </div>
+            <div className="slot-chips">
+              <button className="slot-chip" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗 Link másolása</button>
+              <button className="slot-chip" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>💾 Mentés fájlba</button>
+            </div>
+            <div className="slot-chips">
+              {typeof navigator.share === 'function' && (
+                <button className="slot-chip" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤 Megosztás</button>
+              )}
+              <button className="slot-chip" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>📋 Duplikál</button>
+            </div>
           </div>
         ))}
         {slots.length === 0 && <span className="slot-empty">Nincs mentett karakter</span>}
       </div>
       <div className="slot-actions">
-        <button className="menu-item slot-test-btn" onClick={onTest}>🧪 Teszt</button>
         <button className="menu-item slot-file-btn" onClick={onFileLoad}>📁 Fájlból...</button>
       </div>
     </>

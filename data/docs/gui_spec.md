@@ -143,7 +143,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - ↩ Visszavonás gomb: undo overlay-t nyit (`↩ N` alakban, N = undo stack mérete; disabled + csak `↩` ha üres). Label szöveg nélkül.
   - ✏️ Jegyzetek overlay gomb (mindkét mód)
-  - ⚙️ Menü gomb (20% szélesebb padding): overlay popup (📂 Karakterek / 📋 Duplikál / 💾 Mentés / 📄 Új karakter / 📅 Napló / Teljes képernyő)
+  - ⚙️ Menü gomb (20% szélesebb padding): overlay popup (📂 Karakterek / 💾 Mentés / 📄 Új karakter / 📅 Napló). Legalul footer sor: kis `T` chip (teszt karakter betöltése, halvány keret) a build verzió bal oldalán, `⛶` teljes képernyő ikon (label nélkül) a jobb oldalán.
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 2000ms fade
 - ⚙️ menü popup: `.menu-item` gombok (centered szöveg, `padding: 10px 16px`)
   - Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup (iOS/Android specifikus szöveg)
@@ -170,8 +170,10 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - **Slot limit**: ha `MAX_KARAKTER_DB` (10) elérve → "Új karakter" / "Duplikál" / import / fájlból betöltés (új slot) helyett `SlotLimitOverlay` jelenik meg ("Karakter limit" felirat, piros, max szám kiírva, hint: töröld egy régit)
 - Mentés overlay: "Aktuális karakter" / "Összes (backup)" → "Megosztás" / "Helyi mentés"
 - **Fájlnév**: `{becenév||név}__{játékos}_{tsz}tsz.json` (ékezet nélkül, szóköz→`_`, dupla `__` elválasztja a karakter és játékos nevet)
-- Karakterek overlay: slot lista `{név} ({tsz}sz)` + relatív idő + 🔗 Megosztás + ✕ törlés + 🧪 Teszt + 📁 Fájlból. Név max 15 karakter (utána `..`), verzió suffix (:2) megtartva.
-  - 🔗 ikon: karakter URL export (deflate+base64url) → vágólapra. Toast: "Karakter link vágólapra másolva!"
+- Karakterek overlay: minden slot 3-soros chip. Név max 15 karakter (utána `..`), verzió suffix (:2) megtartva. Alul közös gombsor: 📁 Fájlból.
+  - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés) + `✕` törlés
+  - **2. sor** (chip-ek): `🔗 Link másolása` (karakter URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") | `💾 Mentés fájlba` (az adott karakter `single` JSON letöltése)
+  - **3. sor** (chip-ek): `📤 Megosztás` (az adott karakter `single` JSON megosztása Web Share API-val — **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) | `📋 Duplikál` (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix)
 - **Fájlból betöltés**: single JSON és backup JSON egyaránt támogatott
   - Single: uid ütközés vizsgálat → ha létezik: importConfirm dialog (Felülírás / Új példány / Mégse)
   - Backup (`szilánk_backup: true`): `BackupRestoreOverlay` felugrik (multi-select lista, meglévők ⚠️ jelöléssel, megerősítő lépés)
@@ -1188,17 +1190,19 @@ KM eszköz overlay (hasonló a Jegyzetek overlay-hez). Méreg paraméterek beál
 
 ### Export (Karaktertár overlay)
 
-A Karakterek overlay-ben minden slot sorban a műveleti gombok között (✕ törlés előtt) egy **🔗** ikon gomb.
+A Karakterek overlay-ben minden slot 2-soros chip; az URL export a 2. sor **🔗 Link másolása** chipje.
 
 | Elem | Viselkedés |
 |------|-----------|
-| 🔗 gomb | Kattintásra: karakter URL generálás (engine_spec §40) → vágólapra másolás |
+| 🔗 Link másolása chip | Kattintásra: karakter URL generálás (engine_spec §40) → vágólapra másolás |
 | Toast | "Karakter link vágólapra másolva!" (success szín, 2 mp) |
 | Fallback | Ha navigator.clipboard nem elérhető → window.prompt() az URL-lel |
 
-Slot sor elrendezés (balról jobbra):
+Slot chip elrendezés:
 ```
-[karakter név (TSz)] [relatív idő]    [🔗] [✕]
+● karakter név (TSz)                    ✕
+🔗 Link másolása  💾 Mentés fájlba
+📤 Megosztás  📋 Duplikál
 ```
 
 ### Import (URL hash)

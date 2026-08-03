@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
-import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, loadKarakterFromFile } from '../engine/file-ops';
+import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, loadKarakterFromFile, downloadFile, shareFile } from '../engine/file-ops';
 import { encodeKarakterUrl } from '../engine/url-share';
 import type { OverlayState } from '../components/AppOverlays';
 import type { UndoEntry } from './useUndo';
@@ -50,10 +50,26 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     } catch { setOverlay('toast', { msg: 'Hiba az URL generálásakor.', type: 'error' }); }
   }
 
-  function duplicateKarakter() {
-    if (!karakter) return;
+  // Save a single stored slot to a file (download or share) — operates on the given slot, not the active character
+  async function saveSlotToFile(slotUid: string, action: 'download' | 'share') {
+    const charData = localStorage.getItem(`szilank_char_${slotUid}`);
+    if (!charData) return;
+    let parsed: Karakter & { _undo?: unknown };
+    try { parsed = JSON.parse(charData); } catch { setOverlay('toast', { msg: 'Hiba a mentés generálásakor.', type: 'error' }); return; }
+    const undo = sanitizeUndo((parsed as any)._undo);
+    const { blob, filename } = generateSaveFile(parsed, undo, 'single');
+    if (action === 'download') downloadFile(blob, filename);
+    else await shareFile(blob, filename);
+  }
+
+  // Duplicate a specific stored slot (not necessarily the active character); the duplicate becomes active
+  function duplicateSlot(uid: string) {
     if (isSlotFull()) { setOverlay('showSlotLimit', true); return; }
-    const dup = dupKarakter(karakter);
+    const charData = localStorage.getItem(`szilank_char_${uid}`);
+    if (!charData) return;
+    let parsed: Karakter;
+    try { parsed = JSON.parse(charData); } catch { setOverlay('toast', { msg: 'Hiba a duplikáláskor.', type: 'error' }); return; }
+    const dup = dupKarakter(parsed);
     setKarakter(dup);
     setUndoStack([]);
     setTestMode(false);
@@ -112,5 +128,5 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     }
   }
 
-  return { importKarakter, shareSlotUrl, duplicateKarakter, handleGenerateSave, loadKarakter, deleteSlot };
+  return { importKarakter, shareSlotUrl, saveSlotToFile, duplicateSlot, handleGenerateSave, loadKarakter, deleteSlot };
 }
