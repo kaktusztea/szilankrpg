@@ -33,21 +33,26 @@ export function TulajdonsagokHeader({
 
   return (
     <>
-      {/* Fejléc: Név + Becenév + Szint */}
+      {/* Fejléc: Becenév + Név + Szint */}
       <div className="tul-header tul-header-col">
-        <div className="tul-header-box tul-header-full"
-          onClick={() => { if (!gameMode) onEditNév(); }}
-        >
-          <span className="tul-header-label">Név:</span> <strong>{gameMode ? `${név} (${faj}, ${kor})` : név}</strong>
-        </div>
+        {!gameMode && (
+          <div className="tul-header-box tul-header-full" onClick={onEditBecenév}>
+            <span className="tul-header-label">Becenév:</span> <strong>{becenév || '—'}</strong>
+          </div>
+        )}
         {!gameMode && (
           <div className="tul-header-two-col">
-            <div className="tul-header-box tul-header-flex1" onClick={onEditBecenév}>
-              <span className="tul-header-label">Becenév:</span> <strong>{becenév || '—'}</strong>
+            <div className="tul-header-box tul-header-flex1" onClick={onEditNév}>
+              <span className="tul-header-label">Név:</span> <strong>{név}</strong>
             </div>
             <div className="tul-header-box" onClick={onEditTsz}>
               <span className="tul-header-label">Szint:</span> <strong>{tsz}</strong>
             </div>
+          </div>
+        )}
+        {gameMode && (
+          <div className="tul-header-box tul-header-full">
+            <span className="tul-header-label">Név:</span> <strong>{`${név} (${faj}, ${kor})`}</strong>
           </div>
         )}
         {gameMode && (
