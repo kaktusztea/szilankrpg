@@ -112,6 +112,7 @@
 .slot-actions { display: flex; gap: 8px; margin-top: 8px; }
 .slot-actions-top { margin-top: 0; margin-bottom: 8px; }
 .slot-actions-top .slot-file-btn { font-size: 16px; padding: 7px 11px; }
+.slot-actions-top .slot-file-btn.is-disabled { opacity: 0.4; cursor: default; }
 .slot-file-btn { flex: 1; font-size: 13px; }
 
 /* --- 5. Undo --- */

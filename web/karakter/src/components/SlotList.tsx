@@ -55,9 +55,9 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
   return (
     <>
       <div className="slot-actions slot-actions-top">
-        <button className="menu-item slot-file-btn" title="Új karakter" disabled={newDisabled} onClick={onNew}>📄</button>
+        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Új karakter" onClick={() => { if (!newDisabled) onNew(); }}>📄</button>
         <button className="menu-item slot-file-btn" title="Betöltés fájlból" onClick={onFileLoad}>📁</button>
-        <button className="menu-item slot-file-btn" title="Backup mentése" disabled={newDisabled} onClick={onSave}>💾</button>
+        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Backup mentése" onClick={() => { if (!newDisabled) onSave(); }}>📦</button>
       </div>
       <div className="slot-list">
         {slots.map(s => (
@@ -71,7 +71,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
             </div>
             <div className="slot-chips">
               <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
-              <button className="slot-chip" title="Mentés fájlba" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>💾</button>
+              <button className="slot-chip" title="Mentés fájlba" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>📦</button>
               {typeof navigator.share === 'function' && (
                 <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
               )}

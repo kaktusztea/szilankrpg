@@ -171,10 +171,10 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - **Fájlnév**: `{becenév||név}__{játékos}_{tsz}tsz.json` (ékezet nélkül, szóköz→`_`, dupla `__` elválasztja a karakter és játékos nevet)
 - Karakterek hub overlay (🧑): az összes karakter-kezelés egy helyen. Felépítés fentről lefelé:
   - Fejléc: „Karakterek"
-  - **Felső akció sor** (`.slot-actions-top`, ikon-only, `title` tooltip): `📄` Új karakter (disabled ha `!isDirty`) · `📁` Betöltés fájlból (import: single + backup restore) · `💾` Backup (összes karakter mentése — disabled ha `!isDirty`)
+  - **Felső akció sor** (`.slot-actions-top`, ikon-only, `title` tooltip): `📄` Új karakter (disabled ha `!isDirty`) · `📁` Betöltés fájlból (import: single + backup restore) · `📦` Backup (összes karakter mentése — disabled ha `!isDirty`)
   - **Slot kártyák** (per karakter, 2-soros): Név max 15 karakter (utána `..`), verzió suffix (:2) megtartva.
     - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés) + `✕` törlés
-    - **2. sor** (ikon-only chipek, ~38px érintési méret, `title` tooltip): `🔗` Link másolása (URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") · `💾` Mentés fájlba (`single` JSON letöltése) · `📤` Megosztás (`single` JSON Web Share — **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) · `⧉` Duplikál (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix)
+    - **2. sor** (ikon-only chipek, ~38px érintési méret, `title` tooltip): `🔗` Link másolása (URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") · `📦` Mentés fájlba (`single` JSON letöltése) · `📤` Megosztás (`single` JSON Web Share — **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) · `⧉` Duplikál (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix)
   - **Footer** (`.menu-footer`): kis `T` chip (teszt karakter betöltése, halvány keret) a build verzió bal oldalán, `⛶` teljes képernyő ikon (label nélkül) a jobb oldalán. Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup.
 - **Fájlból betöltés**: single JSON és backup JSON egyaránt támogatott
   - Single: uid ütközés vizsgálat → ha létezik: importConfirm dialog (Felülírás / Új példány / Mégse)
@@ -856,7 +856,7 @@ Játék session bejegyzések naplója.
 
 ### Tárolás
 - `karakter.napló[]` tömb: `{ dátum: string, km: string, kaland: string, események: string }`
-- Mentéskor a karakter JSON-ba kerül (💾 gombbal)
+- Mentéskor a karakter JSON-ba kerül (📦 gombbal)
 
 ---
 
@@ -1140,7 +1140,7 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 - `SlotListOverlay.tsx` — Karaktertár (slot lista + 🧪 teszt + 📁 fájlból)
 - `SlotDeleteOverlay.tsx` — Slot törlés confirm
 - `SaveOverlay.tsx` — Mentés mód (single/backup)
-- `SaveFileOverlay.tsx` — Fájl kész (📤 Megosztás / 💾 Letöltés)
+- `SaveFileOverlay.tsx` — Fájl kész (📤 Megosztás / 📦 Letöltés)
 - `UndoOverlay.tsx` — Visszavonás lista
 - `LoadErrorOverlay.tsx` — Betöltési hiba
 - `FullscreenHintOverlay.tsx` — Teljes képernyő tipp
@@ -1203,7 +1203,7 @@ A Karakterek hub-ban minden slot 2-soros chip; az URL export a 2. sor **🔗** (
 Slot chip elrendezés:
 ```
 ● karakter név (TSz)          ✕
-🔗  💾  📤  ⧉
+🔗  📦  📤  ⧉
 ```
 
 ### Import (URL hash)
