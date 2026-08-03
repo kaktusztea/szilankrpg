@@ -104,13 +104,12 @@ export function AppOverlays({
     <>
       {s.showMenu && (
         <MenuOverlay
-          undoCount={undoStack.length}
           isNewDisabled={!isDirty}
-          onUndo={() => { closeMenu(); set('showUndo', true); set('undoSelected', null); }}
           onSlots={() => { closeMenu(); set('showSlotList', true); }}
           onDuplicate={() => { closeMenu(); duplicateKarakter(); }}
           onSave={() => { closeMenu(); set('showSavePopup', true); }}
           onNew={() => { closeMenu(); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
+          onNaplo={() => { closeMenu(); set('overlayScreen', 'naplo'); }}
           onFullscreenHint={() => { closeMenu(); set('showFullscreenHint', true); }}
           onClose={closeMenu}
         />

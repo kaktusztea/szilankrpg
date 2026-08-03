@@ -141,9 +141,9 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - Bal: "Szilánk" (`font-weight: bold, 16px, white-space: nowrap`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
 - Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → értékválasztó popup 0/1/2/3)
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
-  - 📅 Napló overlay gomb (mindkét mód)
+  - ↩ Visszavonás gomb: undo overlay-t nyit (`↩ N` alakban, N = undo stack mérete; disabled + csak `↩` ha üres). Label szöveg nélkül.
   - ✏️ Jegyzetek overlay gomb (mindkét mód)
-  - ⚙️ Menü gomb (20% szélesebb padding): overlay popup (↩ Visszavonás / 📂 Karakterek / 📋 Duplikál / 💾 Mentés / 📄 Új karakter / Teljes képernyő)
+  - ⚙️ Menü gomb (20% szélesebb padding): overlay popup (📂 Karakterek / 📋 Duplikál / 💾 Mentés / 📄 Új karakter / 📅 Napló / Teljes képernyő)
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 2000ms fade
 - ⚙️ menü popup: `.menu-item` gombok (centered szöveg, `padding: 10px 16px`)
   - Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup (iOS/Android specifikus szöveg)
@@ -813,7 +813,7 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 ## 6c. Napló overlay (📅)
 
-Fejléc gombbal nyitható fullscreen overlay (nem tab). Mindkét módban elérhető. ✕ gomb vagy Escape bezárja.
+Fejléc ⚙️ menüből nyitható fullscreen overlay (nem tab). Mindkét módban elérhető. ✕ gomb vagy Escape bezárja.
 
 Játék session bejegyzések naplója.
 
@@ -874,11 +874,11 @@ Alul fix, horizontálisan scrollozható szalag.
 | harc | 🗡️ | false |
 | aktiv | ✳️ | false |
 
-Overlay screen-ek (fejléc gombokkal nyithatók, nem a tab bar-ban):
-| ID | Fejléc ikon | Elérhetőség |
-|----|-------------|-------------|
-| jegyzetek | ✏️ | mindkét mód |
-| naplo | 📅 | mindkét mód |
+Overlay screen-ek:
+| ID | Nyitás | Elérhetőség |
+|----|--------|-------------|
+| jegyzetek | ✏️ fejléc gomb | mindkét mód |
+| naplo | ⚙️ menü → 📅 Napló | mindkét mód |
 
 - Jelenleg nincs `editOnly: true` tab — Game módban minden fül elérhető
 - Default aktív tab induláskor: `tulajdonsagok` (index 5 az ALL_TABS-ban)

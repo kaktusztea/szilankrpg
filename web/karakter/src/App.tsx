@@ -54,7 +54,7 @@ function App() {
     <div className="app" onContextMenu={e => e.preventDefault()}>
       <Header
         testMode={testMode} gameMode={gameMode} setGameMode={setGameMode}
-        session={session} setOverlay={setOverlay}
+        session={session} undoCount={undoStack.length} setOverlay={setOverlay}
       />
 
       <main className="content" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
