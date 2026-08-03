@@ -15,13 +15,26 @@ function generateIdLeíró(név: string, tsz: number): string {
 }
 
 export function duplicateKarakter(karakter: Karakter): Karakter {
-  const bumpSuffix = (s: string) => {
-    const m = s.match(/^(.+) v(\d+)$/);
-    return m ? `${m[1]} v${parseInt(m[2]) + 1}` : `${s} v2`;
-  };
   const newUid = generateUid();
-  const newNév = bumpSuffix(karakter.név || 'Névtelen');
+  let slotNames: string[] = [];
+  try { slotNames = (JSON.parse(localStorage.getItem('szilank_slots') || '[]') as { név: string }[]).map(s => s.név); } catch { /* */ }
+  const newNév = nextDuplicateName(karakter.név || 'Névtelen', slotNames);
   return { ...structuredClone(karakter), uid: newUid, név: newNév, id_leíró: generateIdLeíró(newNév, karakter.tsz) };
+}
+
+// Compute the next "<base> vN" name: strips any trailing " vN" from src to get the base,
+// then picks max(existing vN for that base) + 1 (base with no suffix counts as v1 → min result is v2).
+export function nextDuplicateName(srcName: string, existingNames: string[]): string {
+  const baseMatch = srcName.match(/^(.+) v(\d+)$/);
+  const base = baseMatch ? baseMatch[1] : srcName;
+  const esc = base.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const re = new RegExp(`^${esc} v(\\d+)$`);
+  let maxV = 1;
+  for (const n of existingNames) {
+    const m = (n || '').match(re);
+    if (m) maxV = Math.max(maxV, parseInt(m[1]));
+  }
+  return `${base} v${maxV + 1}`;
 }
 
 export function generateSaveFile(karakter: Karakter, undoStack: any[], mode: 'single' | 'backup'): { blob: Blob; filename: string } {
