@@ -64,7 +64,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
           <div key={s.uid} className={`slot-row ${activeUid === s.uid ? 'slot-row-active' : ''}`} onClick={() => loadSlot(s.uid)}>
             <div className="slot-row-top">
               <span className={`slot-name ${activeUid === s.uid ? 'slot-name-active' : ''}`}>
-                {activeUid === s.uid ? '●' : '○'} {truncSlotName(s.név)} ({s.tsz || '?'}sz)
+                {truncSlotName(s.név)} ({s.tsz || '?'}sz)
               </span>
             </div>
             <div className="slot-chips">
