@@ -173,8 +173,8 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
   - Fejléc: „Karakterek"
   - **Felső akció sor** (`.slot-actions-top`, ikon-only, `title` tooltip): `📄` Új karakter (disabled ha `!isDirty`) · `📁` Betöltés fájlból (import: single + backup restore) · `📦` Backup (összes karakter mentése — disabled ha `!isDirty`)
   - **Slot kártyák** (per karakter, 2-soros): Név max 15 karakter (utána `..`), verzió suffix (:2) megtartva.
-    - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés) + `✕` törlés
-    - **2. sor** (ikon-only chipek, ~38px érintési méret, `title` tooltip): `🔗` Link másolása (URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") · `💾` Mentés fájlba (`single` JSON letöltése) · `📤` Megosztás (`single` JSON Web Share — **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) · `⧉` Duplikál (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix)
+    - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés)
+    - **2. sor** (ikon-only chipek, 38×38px, 18px, `title` tooltip): `🔗` Link másolása (URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") · `💾` Mentés fájlba (`single` JSON letöltése) · `📤` Megosztás (`single` JSON Web Share — **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) · `⧉` Duplikál (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix) · `✕` törlés (piros chip, `.slot-chip-del`)
   - **Footer** (`.menu-footer`): kis `T` chip (teszt karakter betöltése, halvány keret) a build verzió bal oldalán, `⛶` teljes képernyő ikon (label nélkül) a jobb oldalán. Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup.
 - **Fájlból betöltés**: single JSON és backup JSON egyaránt támogatott
   - Single: uid ütközés vizsgálat → ha létezik: importConfirm dialog (Felülírás / Új példány / Mégse)
@@ -1202,8 +1202,8 @@ A Karakterek hub-ban minden slot 2-soros chip; az URL export a 2. sor **🔗** (
 
 Slot chip elrendezés:
 ```
-● karakter név (TSz)          ✕
-🔗  💾  📤  ⧉
+● karakter név (TSz)
+🔗  💾  📤  ⧉  ✕
 ```
 
 ### Import (URL hash)

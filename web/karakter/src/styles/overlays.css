@@ -105,13 +105,13 @@
 .slot-row-top { display: flex; justify-content: space-between; align-items: center; }
 .slot-name { flex: 1; cursor: pointer; }
 .slot-name-active { font-weight: bold; }
-.slot-delete-btn { color: #e53935; cursor: pointer; font-size: 14px; font-weight: bold; margin-left: 8px; }
 .slot-empty { color: #888; text-align: center; }
 .slot-chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .slot-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 10px; width: 38px; height: 38px; font-size: 18px; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
+.slot-chip-del { color: #e53935; font-weight: bold; }
 .slot-actions { display: flex; gap: 8px; margin-top: 8px; }
 .slot-actions-top { margin-top: 0; margin-bottom: 8px; }
-.slot-actions-top .slot-file-btn { font-size: 16px; padding: 7px 11px; }
+.slot-actions-top .slot-file-btn { font-size: 18px; padding: 7px 11px; }
 .slot-actions-top .slot-file-btn.is-disabled { opacity: 0.4; cursor: default; }
 .slot-file-btn { flex: 1; font-size: 13px; }
 

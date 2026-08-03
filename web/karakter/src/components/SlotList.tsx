@@ -67,7 +67,6 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
                 onClick={() => loadSlot(s.uid)}>
                 {activeUid === s.uid ? '●' : '○'} {truncSlotName(s.név)} ({s.tsz || '?'}sz)
               </span>
-              <span className="slot-delete-btn" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</span>
             </div>
             <div className="slot-chips">
               <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
@@ -76,6 +75,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
                 <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
               )}
               <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>⧉</button>
+              <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</button>
             </div>
           </div>
         ))}
