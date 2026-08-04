@@ -668,7 +668,8 @@ formula:
   if távfegyver.Kategória == "mágikus":
     // Mágiatáv egyedi CÉ formula (076_tavharc_csatamagia_eseten.md)
     CÉ = CÉ_alap
-       + TSz + Gyorsaság + Intelligencia
+       + TSz + Gyorsaság + Intelligencia    // Önuralom helyett
+       + CM
        + harcmodor_CÉ_bónusz(harcmodor_szint)   // Mágikus célzás
        + távfegyver.CÉ                          // Mágiatáv I:+1, II:+2, III:+3, IV:+4
        + mesterfegyver_CÉ_bónusz(fok)
@@ -807,8 +808,8 @@ CÉ formula:
   CÉ = konstansok.harcérték_alap.CÉ + Önuralom + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea + fortélyCÉ
 
   if távfegyver.Kategória == "mágikus":
-    CÉ = konstansok.harcérték_alap.CÉ + (TSz + Gyorsaság + Intelligencia) + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + Idea + fortélyCÉ
-    // Önuralom és CM NEM számít, helyette TSz + Gyo + Int
+    CÉ = konstansok.harcérték_alap.CÉ + (TSz + Gyorsaság + Intelligencia) + CM + harcmodor_CÉ_bónusz + fegyver.CÉ + MF.CÉ + fortélyCÉ
+    // Önuralom NEM számít, helyette TSz + Gyo + Int. CM viszont igen (rulebook 076). Idea nem.
 
   fortélyCÉ: helyzet + taktika + fortély CÉ módosítók összege (per fegyver, szűrő_harcmodorok figyelembe vételével)
     Lásd §17.2 a részletekért.

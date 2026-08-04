@@ -129,7 +129,9 @@ export function getCÉInputs(k: Karakter, def: TavfegyverAlap | undefined, idea:
   const mágikusTulajdonságCÉ = k.tsz + (k.tulajdonságok.gyorsaság ?? 0) + (k.tulajdonságok.intelligencia ?? 0);
   return {
     önuralom: isMágikus ? mágikusTulajdonságCÉ : (k.tulajdonságok.önuralom ?? 0),
-    CM: isMágikus ? 0 : k.CM,
+    // CM mindig számít — mágikus fegyvernél is (szabálykönyv 076: a mágikus
+    // CÉ formula tartalmaz + CM-et; csak az Önuralmat váltja TSz+Gyo+Int).
+    CM: k.CM,
     idea: isMágikus ? 0 : idea,
     isMágikus,
     mágikusTulajdonságCÉ,
