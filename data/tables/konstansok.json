@@ -81,6 +81,10 @@
     {
       "id": "kiemelt",
       "label": "⭐ Kiemelt"
+    },
+    {
+      "id": "misztikus",
+      "label": "✨ Misztikus"
     }
   ],
   "fortély_követelmény_típusok": [

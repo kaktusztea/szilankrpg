@@ -60,7 +60,9 @@ export function FortelyCsoport({
           );
         })}
 
-        {!gameMode && available.length > 0 && (
+        {/* Misztikus fortélyok felvétele a Misztikus fülön történik (Felvett/Kiérdemelt
+            választó, megkötések miatt) — itt csak megjelenítés + fok/törlés. */}
+        {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
           <NewFortelySelect
             available={available}
             csoport={csoport}
