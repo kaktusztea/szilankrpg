@@ -80,7 +80,6 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
   function handleGenerateSave(mode: 'single' | 'backup') {
     if (!karakter) return;
     setOverlay('saveFile', generateSaveFile(karakter, undoStack, mode));
-    setOverlay('showSavePopup', false);
   }
 
   function deleteSlot(uid: string) {

@@ -3,7 +3,7 @@ import type { OverlayState } from '../components/AppOverlays';
 
 const INITIAL_OVERLAYS: OverlayState = {
   showSzilánkPicker: false, showSlotList: false,
-  slotDeleteTarget: null, showSavePopup: false, saveFile: null,
+  slotDeleteTarget: null, saveFile: null,
   loadError: '', showFullscreenHint: false, showNewConfirm: false,
   showUndo: false, undoSelected: null, overlayScreen: null,
   sharePopup: null, toast: null, importConfirm: null, showSlotLimit: false,
@@ -24,7 +24,7 @@ export function useOverlays() {
   const anyOverlayOpen = overlays.showNewConfirm || overlays.showSlotList || overlays.showUndo
     || !!overlays.loadError || !!overlays.overlayScreen
     || overlays.showFullscreenHint || overlays.showSzilánkPicker || !!overlays.sharePopup
-    || !!overlays.slotDeleteTarget || overlays.showSavePopup || !!overlays.saveFile
+    || !!overlays.slotDeleteTarget || !!overlays.saveFile
     || !!overlays.backupRestore;
 
   // Close the topmost overlay: a stacked confirm (slotDeleteTarget) closes on its
@@ -44,15 +44,6 @@ export function useOverlays() {
     document.addEventListener('keydown', onKey);
     return () => document.removeEventListener('keydown', onKey);
   }, [anyOverlayOpen, closeTopmost]);
-
-  // Ctrl+S → save popup
-  useEffect(() => {
-    function onKeyDown(e: KeyboardEvent) {
-      if ((e.ctrlKey || e.metaKey) && e.key === 's') { e.preventDefault(); setOverlay('showSavePopup', true); }
-    }
-    document.addEventListener('keydown', onKeyDown);
-    return () => document.removeEventListener('keydown', onKeyDown);
-  }, [setOverlay]);
 
   // Toast auto-dismiss
   useEffect(() => {

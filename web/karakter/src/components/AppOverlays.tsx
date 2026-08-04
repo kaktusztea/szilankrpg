@@ -7,7 +7,7 @@ import { isSlotFull } from '../hooks/slot-utils';
 import { MAX_KARAKTER_DB } from '../ui-constants';
 import {
   SzilankPickerOverlay, NewCharConfirmOverlay,
-  SlotListOverlay, SlotDeleteOverlay, SaveOverlay, SaveFileOverlay,
+  SlotListOverlay, SlotDeleteOverlay, SaveFileOverlay,
   UndoOverlay, LoadErrorOverlay, FullscreenHintOverlay,
   OverlayScreenOverlay, SharePopupOverlay, ToastOverlay, ImportConfirmOverlay,
   SlotLimitOverlay, BackupRestoreOverlay,
@@ -17,7 +17,6 @@ export interface OverlayState {
   showSzilánkPicker: boolean;
   showSlotList: boolean;
   slotDeleteTarget: { uid: string; név: string } | null;
-  showSavePopup: boolean;
   saveFile: { blob: Blob; filename: string } | null;
   loadError: string;
   showFullscreenHint: boolean;
@@ -120,7 +119,7 @@ export function AppOverlays({
           onDuplicate={duplicateSlot}
           onFileLoad={() => { set('showSlotList', false); loadKarakter(); }}
           onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
-          onSave={() => { set('showSlotList', false); set('showSavePopup', true); }}
+          onSave={() => { set('showSlotList', false); handleGenerateSave('backup'); }}
           newDisabled={!isDirty}
           onTest={handleSlotTest}
           onFullscreenHint={() => { set('showSlotList', false); set('showFullscreenHint', true); }}
@@ -132,14 +131,6 @@ export function AppOverlays({
         <SlotDeleteOverlay
           név={s.slotDeleteTarget.név}
           onConfirm={handleSlotDelete}
-        />
-      )}
-
-      {s.showSavePopup && (
-        <SaveOverlay
-          onSingle={() => handleGenerateSave('single')}
-          onBackup={() => handleGenerateSave('backup')}
-          onClose={() => set('showSavePopup', false)}
         />
       )}
 
