@@ -42,6 +42,8 @@ képzettség_csoport_sorrend:
     label: "Művészeti"
   - id: "tudományos"
     label: "Tudományos"
+  - id: "misztikus"
+    label: "Misztikus"
 
 fortély_csoport_sorrend:
   - id: "harci"

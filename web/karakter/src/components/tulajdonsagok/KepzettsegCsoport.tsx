@@ -62,7 +62,9 @@ export function KepzettsegCsoport({
             />
           );
         })}
-        {!gameMode && available.length > 0 && (
+        {/* Misztikus képzettségek felvétele a Misztikus fülön történik (faj/tradíció
+            megkötések miatt) — itt csak megjelenítés + szint/törlés. */}
+        {!gameMode && csoport !== 'misztikus' && available.length > 0 && (
           <div className="item-row item-row-new">
             <select className="field-select kep-select" value="" onChange={e => { if (e.target.value) onAddKepzettseg(csoport, e.target.value); }}>
               <option value="">+ Új képzettség...</option>
