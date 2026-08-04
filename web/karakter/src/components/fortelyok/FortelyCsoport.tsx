@@ -17,10 +17,16 @@ export function FortelyCsoport({
   const nyelvPontKeret = calcNyelvPontKeret(nyelvtanulásSzint);
   const { overSet: nyelvOverSet } = calcNyelvTúllépés(slotok, nyelvPontKeret);
 
+  // Szabad fortélyok: remaining free slots (same quota as the dropdown ●N indicator).
+  const szabadMaradtIngyenes = Math.max(0, tsz - slotok.filter(s => !s.kiérdemelt).length);
+
   return (
     <div className="fort-csoport">
       <h3 className="csoport-label fort-csoport-label" onClick={onToggleCollapse}>
         <span className="fort-csoport-arrow">{collapsed ? '▸' : '▾'}</span> {csoportLabel} <span className="dim">({slotok.length})</span>
+        {csoport === 'szabad' && !gameMode && (
+          <span className="fort-csoport-ingyenes">● {szabadMaradtIngyenes} ingyenes</span>
+        )}
       </h3>
       {!collapsed && (<>
         {slotok.map((slot, i) => {
