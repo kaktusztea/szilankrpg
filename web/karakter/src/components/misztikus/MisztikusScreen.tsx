@@ -105,7 +105,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
         onEdit={actions.openSzint} onDelete={actions.openDelete} onPickTradíció={actions.openTradíció} />
 
       <ArkánumokSection ctx={sectionCtx} arkánumok={arkánumok}
-        elérhetőArkánumok={elérhetőArkánumok} hasTradíció={!!tradíció}
+        elérhetőArkánumok={elérhetőArkánumok} feloldva={!!tradíció || fajMisztSzint > 0}
         onEdit={actions.openSzint} onDelete={actions.openDelete} onAdd={addKépzettség} />
 
       <FajMisztériumSection ctx={sectionCtx} fajNév={fajNév} szint={fajMisztSzint}
