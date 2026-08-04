@@ -1,14 +1,14 @@
 ---
 schema_version: 1
 
-név: "Hátas (faj neve)"
+név: "Hátas"
 névkomment: ""
 maxfok: 1
 session_toggle: false
 emlékeztető: false
 kiérdemelhető: true
 többszörösség:
-  spec_típus: ""
+  spec_típus: "faj"
   spec_lista: []
 csoport: "szabad"
 leírások:

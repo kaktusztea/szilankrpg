@@ -7390,7 +7390,7 @@
     "md_fájl": "fortelyok.szabad/harci_iskola.md"
   },
   {
-    "név": "Hátas (faj neve)",
+    "név": "Hátas",
     "csoport": "szabad",
     "alcsoport": "szabad",
     "maxfok": 1,
@@ -7399,7 +7399,7 @@
     "kiérdemelhető": true,
     "kp_perfok": 6,
     "ingyenes_perszint": 0,
-    "többszörös_típus": "",
+    "többszörös_típus": "faj",
     "többszörös_lista": [],
     "leírás": "Földi hátas esetén a Lovaglás, légi hátasnál pedig a Léglovaglás képzettséget terjeszti ki.",
     "kiterjeszti_normál": [
