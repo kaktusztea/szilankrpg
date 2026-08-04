@@ -30,6 +30,8 @@ tulajdonság_sorrend:
   - "érzékenység"
 
 képzettség_csoport_sorrend:
+  - id: "harci"
+    label: "Harci"
   - id: "fizikai"
     label: "Fizikai"
   - id: "világi"
