@@ -3,8 +3,7 @@
    ============================================= */
 
 .naplo-screen { padding: 12px; min-height: 100%; }
-.naplo-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
-.naplo-header h2 { margin: 0; }
+.naplo-header { display: flex; justify-content: flex-start; align-items: center; margin-bottom: 10px; }
 .naplo-empty { color: var(--text-dim); }
 .naplo-entry { margin-bottom: 4px; }
 

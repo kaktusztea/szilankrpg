@@ -53,7 +53,6 @@ export function NaploTab({ karakter, setKarakter }: { karakter: Karakter; setKar
       onClick={e => { if (editIdx !== null) return; if ((e.target as HTMLElement).closest('[data-naplo-entry]')) return; setOpenIdx(null); }}>
 
       <div className="naplo-header">
-        <h2>📅 Napló</h2>
         <button className="naplo-btn-new"
           onClick={() => { setAdding(true); setForm({ dátum: today, km: '', kaland: '', események: '' }); }}>
           + Új bejegyzés
