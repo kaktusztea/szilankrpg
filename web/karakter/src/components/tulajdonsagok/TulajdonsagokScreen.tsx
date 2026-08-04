@@ -29,7 +29,7 @@ export function TulajdonsagokScreen({
   // Escape bezárja az aktív popup-ot
   const hasAnyPopup = popup.editingNév || popup.editingBecenév || popup.editingTsz
     || popup.editingKor || popup.editingJátékos || popup.deleteTarget !== null
-    || popup.pendingEditIdx !== null || popup.promptState !== null;
+    || popup.pendingNew !== null || popup.promptState !== null;
   const resetPopups = useCallback(() => setPopup(INITIAL_POPUP_STATE), []);
   useEscapeClose(hasAnyPopup, resetPopups);
 
@@ -59,29 +59,24 @@ export function TulajdonsagokScreen({
     if (név.includes(':') && !név.startsWith('__') && !data.kepzettsegDefs.some(d => d.név === név)) {
       actualNév = név.split(':')[1];
     }
-    setKépzettségek(prev => {
-      const parentDef = data.kepzettsegDefs.find(d =>
-        d.többszörös.length > 0 && d.többszörös[0] !== '*' && d.többszörös.includes(actualNév)
-      );
-      if (parentDef) {
-        const siblings = new Set(parentDef.többszörös);
-        const lastIdx = prev.reduce((acc, k, i) => siblings.has(k.név) ? i : acc, -1);
-        const newArr = [...prev];
-        const insertAt = lastIdx + 1;
-        newArr.splice(insertAt, 0, { név: actualNév, szint: 0 });
-        setPopup(p => ({ ...p, pendingEditIdx: insertAt }));
-        return newArr;
-      }
-      setPopup(p => ({ ...p, pendingEditIdx: prev.length }));
-      return [...prev, { név: actualNév, szint: 0 }];
-    });
+    // Compute insert position without mutating — the képzettség is only added
+    // once the user picks a szint (cancel = no insert, no undo entry).
+    const parentDef = data.kepzettsegDefs.find(d =>
+      d.többszörös.length > 0 && d.többszörös[0] !== '*' && d.többszörös.includes(actualNév)
+    );
+    let insertAt = képzettségek.length;
+    if (parentDef) {
+      const siblings = new Set(parentDef.többszörös);
+      const lastIdx = képzettségek.reduce((acc, k, i) => siblings.has(k.név) ? i : acc, -1);
+      insertAt = lastIdx + 1;
+    }
+    setPopup(p => ({ ...p, pendingNew: { név: actualNév, insertAt } }));
   }
 
   function confirmPrompt() {
     if (!popup.promptState || !popup.promptValue.trim()) return;
     const fullNév = `${popup.promptState.alapNév}: ${popup.promptValue.trim()}`;
-    setKépzettségek(prev => [...prev, { név: fullNév, szint: 0 }]);
-    setPopup(p => ({ ...p, promptState: null, pendingEditIdx: képzettségek.length }));
+    setPopup(p => ({ ...p, promptState: null, pendingNew: { név: fullNév, insertAt: képzettségek.length } }));
   }
 
   function toggleCollapse(csoport: string) {
@@ -133,7 +128,7 @@ export function TulajdonsagokScreen({
       </div>
 
       <TulajdonsagokPopups
-        data={data} képzettségek={képzettségek} setKépzettségek={setKépzettségek}
+        data={data} setKépzettségek={setKépzettségek}
         popup={popup} setPopup={setPopup} onConfirmPrompt={confirmPrompt}
         setNév={setNév} setBecenév={setBecenév}
         tsz={tsz} setTsz={setTsz} kor={kor} setKor={setKor} setJátékos={setJátékos}

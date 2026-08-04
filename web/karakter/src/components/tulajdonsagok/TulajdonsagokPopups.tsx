@@ -15,7 +15,7 @@ export interface PopupState {
   promptState: PromptState | null;
   promptValue: string;
   deleteTarget: DeleteTarget | null;
-  pendingEditIdx: number | null;
+  pendingNew: { név: string; insertAt: number } | null;
   editingNév: boolean;
   tempNév: string;
   editingBecenév: boolean;
@@ -27,14 +27,13 @@ export interface PopupState {
 }
 
 export const INITIAL_POPUP_STATE: PopupState = {
-  promptState: null, promptValue: '', deleteTarget: null, pendingEditIdx: null,
+  promptState: null, promptValue: '', deleteTarget: null, pendingNew: null,
   editingNév: false, tempNév: '', editingBecenév: false, tempBecenév: '',
   editingTsz: false, editingKor: false, editingJátékos: false, tempJátékos: ''
 };
 
 interface Props {
   data: GameData;
-  képzettségek: KepzettsegSlot[];
   setKépzettségek: React.Dispatch<React.SetStateAction<KepzettsegSlot[]>>;
   popup: PopupState;
   setPopup: React.Dispatch<React.SetStateAction<PopupState>>;
@@ -50,7 +49,7 @@ interface Props {
 }
 
 export function TulajdonsagokPopups({
-  data, képzettségek, setKépzettségek,
+  data, setKépzettségek,
   popup, setPopup, onConfirmPrompt,
   setNév, setBecenév, tsz, setTsz, kor, setKor, setJátékos
 }: Props) {
@@ -89,16 +88,22 @@ export function TulajdonsagokPopups({
     )}
 
     {/* Új képzettség szint választó */}
-    {p.pendingEditIdx !== null && képzettségek[p.pendingEditIdx] && (
+    {/* Új képzettség szint választó — a képzettség csak szint választáskor kerül be */}
+    {p.pendingNew && (
       <GridPickerPopup
-        label={`${getDisplayName(képzettségek[p.pendingEditIdx].név, data.kepzettsegDefs)} — szint:`}
+        label={`${getDisplayName(p.pendingNew.név, data.kepzettsegDefs)} — szint:`}
         values={SZINT_VALUES}
-        current={képzettségek[p.pendingEditIdx].szint}
+        current={0}
         onSelect={n => {
-          setKépzettségek(prev => prev.map((k, i) => i === p.pendingEditIdx ? { ...k, szint: n } : k));
-          close({ pendingEditIdx: null });
+          const { név, insertAt } = p.pendingNew!;
+          setKépzettségek(prev => {
+            const arr = [...prev];
+            arr.splice(insertAt, 0, { név, szint: n });
+            return arr;
+          });
+          close({ pendingNew: null });
         }}
-        onCancel={() => close({ pendingEditIdx: null })}
+        onCancel={() => close({ pendingNew: null })}
       />
     )}
 

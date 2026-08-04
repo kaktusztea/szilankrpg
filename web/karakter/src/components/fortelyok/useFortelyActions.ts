@@ -10,8 +10,8 @@ interface Opts {
   setFortélyok: React.Dispatch<React.SetStateAction<Fortely[]>>;
 }
 
-export function useFortelyActions({ data, fortélyok, setFortélyok }: Opts) {
-  const [pendingFortIdx, setPendingFortIdx] = useState<number | null>(null);
+export function useFortelyActions({ data, setFortélyok }: Opts) {
+  const [pendingFort, setPendingFort] = useState<Fortely | null>(null);
   const [multiPickerDef, setMultiPickerDef] = useState<FortelySummary | null>(null);
   const [szabadTypePicker, setSzabadTypePicker] = useState<SzabadTypePicker | null>(null);
 
@@ -27,13 +27,12 @@ export function useFortelyActions({ data, fortélyok, setFortélyok }: Opts) {
       return;
     }
     if (def && def.többszörös_típus) { setMultiPickerDef(def); return; }
-    setFortélyok(prev => {
-      if (def && def.maxfok > 1) {
-        setPendingFortIdx(prev.length);
-        return [...prev, { név, fok: 0, spec_típus: '', spec_elem: '' }];
-      }
-      return [...prev, { név, fok: 1, spec_típus: '', spec_elem: '' }];
-    });
+    // maxfok > 1: defer the insert until the user picks a fok (cancel = no add, no undo)
+    if (def && def.maxfok > 1) {
+      setPendingFort({ név, fok: 0, spec_típus: '', spec_elem: '' });
+      return;
+    }
+    setFortélyok(prev => [...prev, { név, fok: 1, spec_típus: '', spec_elem: '' }]);
   }
 
   function addMultiInstance(subName: string) {
@@ -43,11 +42,13 @@ export function useFortelyActions({ data, fortélyok, setFortélyok }: Opts) {
       setMultiPickerDef(null);
       return;
     }
-    const maxfok = multiPickerDef.maxfok;
-    setFortélyok(prev => {
-      if (maxfok > 1) setPendingFortIdx(prev.length);
-      return [...prev, { név: multiPickerDef.név, fok: maxfok > 1 ? 0 : 1, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName }];
-    });
+    // maxfok > 1: defer the insert until the user picks a fok (cancel = no add, no undo)
+    if (multiPickerDef.maxfok > 1) {
+      setPendingFort({ név: multiPickerDef.név, fok: 0, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName });
+      setMultiPickerDef(null);
+      return;
+    }
+    setFortélyok(prev => [...prev, { név: multiPickerDef.név, fok: 1, spec_típus: multiPickerDef.többszörös_típus, spec_elem: subName }]);
     setMultiPickerDef(null);
   }
 
@@ -59,15 +60,15 @@ export function useFortelyActions({ data, fortélyok, setFortélyok }: Opts) {
   }
 
   function confirmFok(fok: number) {
-    if (pendingFortIdx === null) return;
-    setFok(pendingFortIdx, fok);
-    setPendingFortIdx(null);
+    if (!pendingFort) return;
+    setFortélyok(prev => [...prev, { ...pendingFort, fok }]);
+    setPendingFort(null);
   }
 
   return {
-    pendingFortIdx, multiPickerDef, szabadTypePicker,
-    setPendingFortIdx, setMultiPickerDef, setSzabadTypePicker,
+    pendingFort, multiPickerDef, szabadTypePicker,
+    setPendingFort, setMultiPickerDef, setSzabadTypePicker,
     setFok, addFortely, addMultiInstance, confirmSzabad, confirmFok,
-    pendingSlot: pendingFortIdx !== null ? fortélyok[pendingFortIdx] : null,
+    pendingSlot: pendingFort,
   };
 }

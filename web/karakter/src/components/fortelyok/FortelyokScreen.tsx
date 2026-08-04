@@ -16,8 +16,8 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null);
 
   const {
-    pendingFortIdx, multiPickerDef, szabadTypePicker,
-    setPendingFortIdx, setMultiPickerDef, setSzabadTypePicker,
+    pendingFort, multiPickerDef, szabadTypePicker,
+    setPendingFort, setMultiPickerDef, setSzabadTypePicker,
     setFok, addFortely, addMultiInstance, confirmSzabad, confirmFok, pendingSlot,
   } = useFortelyActions({ data, fortélyok, setFortélyok });
 
@@ -84,13 +84,13 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
         />
       )}
 
-      {pendingFortIdx !== null && pendingSlot && (
+      {pendingFort && pendingSlot && (
         <FokPickerPopup
           slot={pendingSlot}
           maxfok={data.fortelySummaries.find(d => d.név === pendingSlot.név)?.maxfok ?? 1}
           nyelvFokLabels={NYELV_FOK_LABELS}
           onSelect={confirmFok}
-          onCancel={() => setPendingFortIdx(null)}
+          onCancel={() => setPendingFort(null)}
         />
       )}
 
