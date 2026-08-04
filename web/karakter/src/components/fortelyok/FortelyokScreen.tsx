@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect, useMemo } from 'react';
 import type { FortelyokScreenProps, DeleteTarget } from './types';
-import { buildDefsByGroup, displayName, getFortelyokForCsoport } from './helpers';
+import { buildDefsByGroup, displayName, getFortelyokForCsoport, calcSzabadFelvettKp } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
 import { FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
@@ -108,6 +108,7 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
       {szabadTypePicker && (
         <SzabadTypePickerPopup
           picker={szabadTypePicker}
+          felvettKp={calcSzabadFelvettKp(szabadTypePicker.név, fortélyok, data.fortelySummaries, tsz)}
           onFelvett={() => confirmSzabad(false)}
           onKiérdemelt={() => confirmSzabad(true)}
           onCancel={() => setSzabadTypePicker(null)}

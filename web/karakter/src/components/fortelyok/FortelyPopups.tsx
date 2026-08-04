@@ -46,8 +46,9 @@ export function MultiPicker({ def, fortélyok, fegyverNevek, nyelvek, onSelect, 
 }
 
 // --- Szabad type picker (Felvett / Kiérdemelt) ---
-export function SzabadTypePickerPopup({ picker, onFelvett, onKiérdemelt, onCancel }: {
+export function SzabadTypePickerPopup({ picker, felvettKp, onFelvett, onKiérdemelt, onCancel }: {
   picker: SzabadTypePicker;
+  felvettKp: number;
   onFelvett: () => void;
   onKiérdemelt: () => void;
   onCancel: () => void;
@@ -57,7 +58,7 @@ export function SzabadTypePickerPopup({ picker, onFelvett, onKiérdemelt, onCanc
     <PopupOverlay onClose={onCancel} className="kep-prompt kep-prompt-align-center kep-prompt-gap-12">
       <label className="kep-prompt-label-bold">{label}</label>
       <div className="kep-prompt-flex-btns">
-        <button className="he-field-btn kep-prompt-btn-lg" onClick={onFelvett}>6/0 Felvett</button>
+        <button className="he-field-btn kep-prompt-btn-lg" onClick={onFelvett}>Felvett ({felvettKp} KP)</button>
         <button className="he-field-btn kep-prompt-btn-lg" onClick={onKiérdemelt}>⭐ Kiérdemelt</button>
       </div>
     </PopupOverlay>

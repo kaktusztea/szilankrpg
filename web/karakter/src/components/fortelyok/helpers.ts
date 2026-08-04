@@ -27,6 +27,20 @@ export function getFortelyokForCsoport(
   return items;
 }
 
+/** KP cost of the next non-kiérdemelt ("Felvett") szabad fortély: 0 while within the free quota (tsz), else the def's kp_perfok. */
+export function calcSzabadFelvettKp(
+  név: string,
+  fortélyok: Fortely[],
+  fortelySummaries: FortelySummary[],
+  tsz: number
+): number {
+  const def = fortelySummaries.find(d => d.név === név);
+  if (!def) return 0;
+  const szabadNevek = new Set(fortelySummaries.filter(d => d.csoport === 'szabad').map(d => d.név));
+  const nonKierdemelt = fortélyok.filter(f => szabadNevek.has(f.név) && !f.kiérdemelt).length;
+  return nonKierdemelt < tsz ? 0 : def.kp_perfok;
+}
+
 export function calcNyelvPontKeret(nyelvtanulásSzint: number): number {
   return Math.max(0, (nyelvtanulásSzint - 3) * 3);
 }
