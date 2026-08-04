@@ -5,6 +5,7 @@ import { lookupFegyver } from '../engine/utils';
 
 /** Generikus undo-aware field setter gyár. */
 export function makeFieldSetter(
+  karakter: Karakter,
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
@@ -13,11 +14,10 @@ export function makeFieldSetter(
     undoLabel: (prev: Karakter[K], next: Karakter[K]) => string,
   ) {
     return (val: Karakter[K]) => {
-      setKarakter(prev => {
-        if (!prev) return prev;
-        pushUndo(undoLabel(prev[field], val), [{ field: field as string, prev: prev[field] }], val);
-        return { ...prev, [field]: val };
-      });
+      // pushUndo must run OUTSIDE the setKarakter updater — StrictMode invokes
+      // updaters twice in dev, which would push the undo entry twice.
+      pushUndo(undoLabel(karakter[field], val), [{ field: field as string, prev: karakter[field] }], val);
+      setKarakter(prev => prev ? { ...prev, [field]: val } : prev);
     };
   };
 }
@@ -52,16 +52,15 @@ export function buildFortelyokProps(karakter: Karakter, data: GameData) {
 
 /** Faj setter (nested hátterek.faj). */
 export function makeFajSetter(
+  karakter: Karakter,
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
 ) {
   return (v: string) => {
-    setKarakter(prev => {
-      if (!prev) return prev;
-      const nextHátterek = { ...prev.hátterek, faj: v };
-      pushUndo(`Faj: ${v}`, [{ field: 'hátterek', prev: prev.hátterek }], nextHátterek);
-      return { ...prev, hátterek: nextHátterek };
-    });
+    // pushUndo outside the updater (StrictMode double-invokes updaters in dev).
+    const nextHátterek = { ...karakter.hátterek, faj: v };
+    pushUndo(`Faj: ${v}`, [{ field: 'hátterek', prev: karakter.hátterek }], nextHátterek);
+    setKarakter(prev => prev ? { ...prev, hátterek: { ...prev.hátterek, faj: v } } : prev);
   };
 }
 

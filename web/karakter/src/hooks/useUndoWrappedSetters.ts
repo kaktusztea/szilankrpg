@@ -11,9 +11,13 @@ interface Deps {
 
 // --- Patch builders ---
 
-function buildTulajdonságPatch(prev: Tulajdonsagok, _next: Tulajdonsagok): UndoPatch[] {
-  // Tulajdonságok is a flat object — store as scalar overwrite
-  return [{ field: 'tulajdonságok', prev }];
+function buildTulajdonságPatch(prev: Tulajdonsagok, next: Tulajdonsagok): UndoPatch[] {
+  // Tulajdonságok is a flat object — store as scalar overwrite, tagged with the
+  // changed key so edits to different properties don't coalesce into one entry.
+  const prevR = prev as unknown as Record<string, number>;
+  const nextR = next as unknown as Record<string, number>;
+  const changed = Object.keys(nextR).find(k => nextR[k] !== prevR[k]);
+  return [{ field: 'tulajdonságok', prev, ckey: changed }];
 }
 
 function buildKépzettségPatch(prev: Kepzettseg[], next: Kepzettseg[]): UndoPatch[] {

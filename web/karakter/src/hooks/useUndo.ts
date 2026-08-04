@@ -8,7 +8,7 @@ import { UNDO_MAX } from '../ui-constants';
  * - For array fields: { field, op, index?, item?, prev? }
  */
 export type UndoPatch =
-  | { field: string; prev: unknown }                                          // scalar overwrite
+  | { field: string; prev: unknown; ckey?: string }                          // scalar overwrite (ckey: optional coalesce discriminator)
   | { field: string; op: 'add'; item: unknown }                               // was added → undo = remove
   | { field: string; op: 'remove'; index: number; item: unknown }             // was removed → undo = re-insert
   | { field: string; op: 'update'; index: number; prev: unknown }             // was updated → undo = restore prev
@@ -93,8 +93,9 @@ function coalesceKey(patches: UndoPatch[]): string | null {
       return `${p.field}:${item?.['név'] ?? ''}:${item?.['spec_elem'] ?? ''}`;
     }
   }
-  // Scalar field
-  return p.field;
+  // Scalar field — include optional discriminator so edits to distinct
+  // sub-fields (e.g. individual tulajdonságok) don't coalesce into one entry.
+  return p.ckey ? `${p.field}:${p.ckey}` : p.field;
 }
 
 /**

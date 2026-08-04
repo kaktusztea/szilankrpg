@@ -56,7 +56,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
     }} />;
     case 'tavharc': return <TavharcScreen data={data} karakter={karakter} session={session} setSession={setSession} setKarakter={setKarakter} pushUndo={pushUndo} képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo} gameMode={gameMode} />;
     case 'tulajdonsagok': {
-      const sf = makeFieldSetter(pushUndo, setKarakter);
+      const sf = makeFieldSetter(karakter, pushUndo, setKarakter);
       const setAnyanyelv = makeAnyanyelvSetter(setKarakter, data.konstansok.közös_nyelv);
       return <TulajdonsagokScreen data={data} gameMode={gameMode} karakter={karakter}
         tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságokUndo}
@@ -66,7 +66,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
         játékos={karakter.játékos} setJátékos={sf('játékos', (_, n) => `Játékos: ${n}`)}
         tsz={karakter.tsz} setTsz={sf('tsz', (p, n) => `TSz: ${p} → ${n}`)}
         kor={karakter.kor} setKor={sf('kor', (p, n) => `Kor: ${p} → ${n}`)}
-        faj={karakter.hátterek.faj} setFaj={makeFajSetter(pushUndo, setKarakter)}
+        faj={karakter.hátterek.faj} setFaj={makeFajSetter(karakter, pushUndo, setKarakter)}
         anyanyelv={karakter.anyanyelv} setAnyanyelv={setAnyanyelv}
       />;
     }
