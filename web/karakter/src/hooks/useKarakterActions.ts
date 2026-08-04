@@ -79,7 +79,11 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
 
   function handleGenerateSave(mode: 'single' | 'backup') {
     if (!karakter) return;
-    setOverlay('saveFile', generateSaveFile(karakter, undoStack, mode));
+    const { blob, filename } = generateSaveFile(karakter, undoStack, mode);
+    // Desktop (no Web Share API): only "Helyi mentés" would show — skip the
+    // overlay and download directly. Mobile keeps the share/download choice.
+    if (typeof navigator.share !== 'function') { downloadFile(blob, filename); return; }
+    setOverlay('saveFile', { blob, filename });
   }
 
   function deleteSlot(uid: string) {
