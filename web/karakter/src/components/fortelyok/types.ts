@@ -49,6 +49,7 @@ export interface FortelyRowProps {
   isIngyenes: boolean;
   locked: boolean;
   overLimit: boolean;
+  kiterjesztHiányos: boolean;
   nyelvPontKeret?: number;
   nyelvFokLabels: Record<number, string>;
   képzettségek: { név: string; szint: number }[];

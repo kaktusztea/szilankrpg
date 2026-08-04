@@ -8,7 +8,7 @@ import { MAX_FORTÉLY_FOK } from '../../ui-constants';
 export function FortelyRow({
   slot, def, gameMode, isOpen, onToggleInfo, onFokChange, onRemove,
   isIngyenes, locked, onHint, overLimit, nyelvPontKeret, nyelvFokLabels,
-  képzettségek, fortélyok, harcmodorNevek, távfegyverNevek, fegyverHarcmodorNév
+  képzettségek, fortélyok, harcmodorNevek, távfegyverNevek, fegyverHarcmodorNév, kiterjesztHiányos
 }: FortelyRowProps) {
   const [editing, setEditing] = useState(false);
   const maxfok = def?.maxfok ?? 1;
@@ -40,7 +40,7 @@ export function FortelyRow({
   return (
     <div className="fort-row-wrapper">
       <div className={`item-row${követelményHiba ? ' fort-kov-hiba' : ''}`} onClick={handleTap}>
-        <span className={`fort-név${overLimit ? ' fort-over' : ''}`}>
+        <span className={`fort-név${overLimit || kiterjesztHiányos ? ' fort-over' : ''}`}>
           {label}{isIngyenes && !slot.kiérdemelt ? <span className="fort-ingyenes-dot">●</span> : ''}{giftBadge && <span className="fort-gift">{giftBadge}</span>}
         </span>
         <span className="fort-right">

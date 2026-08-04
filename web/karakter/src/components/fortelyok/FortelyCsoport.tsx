@@ -29,6 +29,13 @@ export function FortelyCsoport({
           const isOpen = infoTarget === `${globalIdx}`;
           const isIngyenes = isSlotIngyenes(slot, csoport, slotok, tsz, def);
 
+          // Fortély extends skills, but none of those skills is taken yet → warning:
+          // red name (like skills with unmet requirement) + keep the info accordion
+          // open in edit mode (otherwise the extension info is game-mode only).
+          const kiterjeszt = def ? [...def.kiterjeszti_normál, ...def.kiterjeszti_erős] : [];
+          const kiterjesztHiányos = kiterjeszt.length > 0
+            && !kiterjeszt.some(kn => képzettségek.some(k => k.név === kn && k.szint >= 1));
+
           const fegyverHarcmodorNév = slot.spec_elem ? (() => {
             const fd = data.fegyverek.find(d => d.Alapnév?.toLowerCase() === slot.spec_elem!.toLowerCase() || d.Fegyver.toLowerCase() === slot.spec_elem!.toLowerCase());
             return fd ? data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] : undefined;
@@ -43,7 +50,8 @@ export function FortelyCsoport({
               isIngyenes={isIngyenes}
               locked={lockedSet.has(slot.név)}
               gameMode={gameMode}
-              isOpen={isOpen}
+              isOpen={isOpen || (!gameMode && kiterjesztHiányos)}
+              kiterjesztHiányos={kiterjesztHiányos}
               overLimit={slot.név === 'Nyelvismeret' && nyelvOverSet.has(slot)}
               nyelvPontKeret={slot.név === 'Nyelvismeret' ? nyelvPontKeret : undefined}
               nyelvFokLabels={nyelvFokLabels}
