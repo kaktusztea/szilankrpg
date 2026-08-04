@@ -57,7 +57,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
       <div className="slot-actions slot-actions-top">
         <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Új karakter" onClick={() => { if (!newDisabled) onNew(); }}>📄</button>
         <button className="menu-item slot-file-btn" title="Betöltés fájlból" onClick={onFileLoad}>📁</button>
-        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Backup mentése" onClick={() => { if (!newDisabled) onSave(); }}>📦</button>
+        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Összes karakter mentése" onClick={() => { if (!newDisabled) onSave(); }}>📦</button>
       </div>
       <div className="slot-list">
         {slots.map(s => (
