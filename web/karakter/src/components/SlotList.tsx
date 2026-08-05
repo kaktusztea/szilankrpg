@@ -40,18 +40,21 @@ interface Props {
 }
 
 export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
-  // Full backup: show a spinner in place of 📦 while the (Windows) native save
-  // dialog is being prepared. The dialog stealing focus fires window 'blur',
-  // which is our cue that the dialog appeared → close the menu. Fallback timeout
-  // in case blur never fires (e.g. mobile in-app overlay path).
-  const [saving, setSaving] = useState(false);
+  // Full backup / single save: show a spinner in place of the icon while the
+  // (Windows) native save dialog is being prepared. The dialog stealing focus
+  // fires window 'blur' → close the menu. Fallback timeout if blur never fires.
+  // savingId: '__backup__' for the backup button, or a slot uid for its 💾.
+  const [savingId, setSavingId] = useState<string | null>(null);
+  const isSaving = savingId !== null;
+  // Desktop = no Web Share API → direct download → OS save dialog (has the lag).
+  const isDesktop = typeof navigator.share !== 'function';
   useEffect(() => {
-    if (!saving) return;
+    if (!savingId) return;
     const finish = () => onClose();
     window.addEventListener('blur', finish, { once: true });
     const t = setTimeout(finish, 8000);
     return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
-  }, [saving, onClose]);
+  }, [savingId, onClose]);
 
   let slots: SlotEntry[] = [];
   try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
@@ -78,7 +81,14 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
         </div>
         <div className="slot-chips">
           <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
-          <button className="slot-chip" title="Mentés fájlba" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>💾</button>
+          <button className="slot-chip" title="Mentés fájlba" onClick={e => {
+            e.stopPropagation();
+            if (!isDesktop) { onSaveFile(s.uid); return; }
+            if (isSaving) return;
+            setSavingId(s.uid);
+            // Let the spinner paint before the download triggers the OS save dialog.
+            requestAnimationFrame(() => requestAnimationFrame(() => onSaveFile(s.uid)));
+          }}>{savingId === s.uid ? <span className="slot-btn-spinner" /> : '💾'}</button>
           {typeof navigator.share === 'function' && (
             <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
           )}
@@ -94,13 +104,13 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
       <div className="slot-actions slot-actions-top">
         <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Új karakter" onClick={() => { if (!newDisabled) onNew(); }}>📄</button>
         <button className="menu-item slot-file-btn" title="Betöltés fájlból" onClick={onFileLoad}>📁</button>
-        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled || saving} title="Összes karakter mentése"
+        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled || isSaving} title="Összes karakter mentése"
           onClick={() => {
-            if (newDisabled || saving) return;
-            setSaving(true);
+            if (newDisabled || isSaving) return;
+            setSavingId('__backup__');
             // Let the spinner paint before the (possibly blocking) save generation + dialog.
             requestAnimationFrame(() => requestAnimationFrame(() => onSave()));
-          }}>{saving ? <span className="slot-btn-spinner" /> : '📦'}</button>
+          }}>{savingId === '__backup__' ? <span className="slot-btn-spinner" /> : '📦'}</button>
       </div>
       <div className="slot-list">
         {slots.length === 0 && <span className="slot-empty">Nincs mentett karakter</span>}
