@@ -121,8 +121,10 @@ export function TavharcLoveskiteres({ karakter, konstansok, tavfegyverek }: Prop
         <PopupOverlay onClose={() => setDobás(null)}>
           <div className="ke-dobas-popup">
             <div className="ke-dobas-header">Lövéskitérés</div>
-            <div className="ke-dobas-result">{akrobatika + dobás.k10}</div>
-            <div className="ke-dobas-detail">Akrobatika+Gyorsaság ({akrobatika}) + k10 ({dobás.k10}) — célszám {célszám}</div>
+            <div className="ke-dobas-result">
+              {akrobatika + dobás.k10}<span className="th-lk-vs"> vs </span><span className="th-lk-celszam-num">{célszám}</span>
+            </div>
+            <div className="ke-dobas-detail">Akrobatika+Gyorsaság ({akrobatika}) + k10 ({dobás.k10})</div>
             <div className={dobás.siker ? 'th-lk-siker' : 'th-lk-sikertelen'}>
               {dobás.siker ? 'Siker — kitértél!' : 'Sikertelen — a lövész jöhet'}
             </div>

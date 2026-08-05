@@ -128,6 +128,8 @@
 .th-lk-kiteres-btn:disabled { opacity: 0.4; cursor: default; border-color: var(--border); }
 .th-lk-siker { color: var(--success); font-weight: bold; font-size: 15px; }
 .th-lk-sikertelen { color: #e53935; font-weight: bold; font-size: 15px; }
+.th-lk-vs { color: #888; font-size: 0.55em; }
+.th-lk-celszam-num { color: #e53935; }
 
 /* --- Idea popup --- */
 .th-idea-row { display: flex; gap: 6px; }
