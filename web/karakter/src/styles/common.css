@@ -190,6 +190,23 @@
   font-weight: bold;
 }
 
+.aktiv-picker-close {
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  margin: -6px -4px -6px 8px;   /* larger tap target without shifting the layout */
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aktiv-picker-close:hover { color: var(--accent); }
+
 .aktiv-picker-list {
   overflow-y: auto;
   padding: 8px;

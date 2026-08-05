@@ -129,7 +129,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - **Tap interakció**: minden szerkesztő interakció egyetlen koppintásra (tap/click) reagál (Tulajdonságok, Képzettségek, Fortélyok, Név, Szint, Kor)
 - **Popup overlay-ek**: `createPortal(document.body)`, `.kep-prompt-overlay` osztály, `position: fixed; inset: 0; z-index: 100`
 - **Escape**: minden popup overlay bezárható
-- **Overlay bezárás**: mellé kattintás (background click) — nincs ✕ gomb
+- **Overlay bezárás**: mellé kattintás (background click) + Escape. A kis megerősítő/érték-választó popupokon nincs ✕ gomb. Kivétel: az **Aktív fül picker overlay-jei** (Taktikák, Harci helyzetek, Manőver, Státuszok — közös `PickerOverlay`) jobb felső sarkában nagy ✕ bezáró gomb (`.aktiv-picker-close`, min. 44×44px tap-target) is van a mobil kényelemért; a háttér-katt/Escape továbbra is működik.
 - **Accordion/collapse**: elemek lenyithatók koppintásra (Game mód), másik koppintás becsukja
 - **Szín kód**: sárga (`--warning`) = módosítható/köztes érték, zöld (`--success`) = teljes/számított, piros (`--error`/`--accent`) = hiba/limit túllépés/kiemelt
 

@@ -11,7 +11,10 @@ export function PickerOverlay({ title, onClose, children }: Props) {
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="aktiv-picker" onClick={e => e.stopPropagation()}>
-        <div className="aktiv-picker-header"><label>{title}</label></div>
+        <div className="aktiv-picker-header">
+          <label>{title}</label>
+          <button type="button" className="aktiv-picker-close" aria-label="Bezárás" onClick={onClose}>✕</button>
+        </div>
         <div className="aktiv-picker-list">{children}</div>
       </div>
     </OverlayPortal>
