@@ -198,6 +198,7 @@ export interface KonstansokRaw {
   locked_fortélyok: string[];
   egészség_kategória_levonás: any[];
   fájdalomtűrés_enyhítés: { szint: number; enyhítés: number }[];
+  lövéskitérés: Record<string, { max_táv: number; célszám: number }[]>;
   sebesülés_kategóriák_száma: number;
   hm_aszimmetria_osztó: number;
   vé_csökkentés_gombok: number[];

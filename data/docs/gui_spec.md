@@ -464,6 +464,13 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - Aktív elem: zöld keret, default: alapeset (Álló 1×, Mozdulatlan 0×, Átlagos 0×, Jól kivehető 0×, Szélcsend 0×)
 - Formátum: `Nx: leírás`
 
+**Lövéskitérés box (a grid Szél ereje melletti üres cellája, Játék mód):** önálló, **védekező** eszköz (md/073) — a karakter a CÉLPONT, saját Akrobatikájával tér ki egy bejövő lövés elől. Teljesen független a kimenő lövés-kalkulátortól. Tartalma:
+- Bejövő fegyver kategória: field-gomb → popup lista (fegyver-picker stílus, `th-fegyver-picker`), NEM dropdown (Nem alkalmas tárgy / Korlátosan alkalmas / Dobófegyver / Íj / Nyílpuska; default a kiválasztott fegyver harcmodorából; mágikus: külön iteráció)
+- Saját távolság léptető (− Xm +, hold-repeat)
+- Célszám (`konstansok.lövéskitérés` 2D lookup: kategória × táv; közelebb = magasabb célszám). Max távon túl: „hatótávon kívül vagy", a Kitérés gomb tiltva.
+- Akrobatika+Gyorsaság érték (Akrobatika szint + Gyorsaság + 2 ha „Lövéskitérés fejlesztése" fortély)
+- „Kitérés" gomb (jobb alsó): `Akrobatika+Gyorsaság + k10` képzettségpróba → popup (KÉ/TÉ dobás mintája), célszámhoz mérve **Siker/Sikertelen** jelzés.
+
 ### Támadás db formátum
 - `Xx` = X támadás / kör (1 + FLOOR(harckeret / sebesség))
 - Sebesség = -1 (nyílpuska): `1/2 kör` alapeset, "Nyílpuska újratöltés fejlesztése" ≥1.fok + "Nyílpuska újratöltés" helyzet aktív → `1x`

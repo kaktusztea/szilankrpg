@@ -203,3 +203,45 @@ export function calcSzorzóÖsszeg(szorzok: TavharcSzorzok, state: SzorzóState)
     + get(szorzok.észlelhetőség, state.észlelhetőségId)
     + get(szorzok.szél, state.szélId);
 }
+
+// --- Lövéskitérés (védekező Akrobatika próba, md/073) ---
+
+/** A lövéskitérés kategóriák stabil kulcsai + megjelenítő címkéik (mágikus: külön iteráció). */
+export const LÖVÉSKITÉRÉS_KATEGÓRIÁK: { kulcs: string; label: string }[] = [
+  { kulcs: 'nem_alkalmas_tárgyak', label: 'Nem alkalmas tárgy' },
+  { kulcs: 'korlátosan_alkalmas', label: 'Korlátosan alkalmas' },
+  { kulcs: 'dobófegyverek', label: 'Dobófegyver' },
+  { kulcs: 'íjak', label: 'Íj' },
+  { kulcs: 'nyílpuskák', label: 'Nyílpuska' },
+];
+
+/** Alapértelmezett bejövő kategória a kiválasztott fegyver harcmodora alapján. */
+export function defaultLöveskitérésKategória(harcmodor: string | undefined): string {
+  if (harcmodor === 'Íjászat') return 'íjak';
+  if (harcmodor === 'Lövészet') return 'nyílpuskák';
+  if (harcmodor === 'Hajítás') return 'dobófegyverek';
+  return 'dobófegyverek';
+}
+
+/**
+ * Akrobatika próba célszáma: az első sor, ahol táv <= max_táv (közelebb = magasabb célszám).
+ * Max távon túl → null (hatótávon kívül).
+ */
+export function calcLöveskitérésCélszám(
+  sorok: { max_táv: number; célszám: number }[] | undefined,
+  távolság: number,
+): number | null {
+  if (!sorok) return null;
+  for (const sor of sorok) {
+    if (távolság <= sor.max_táv) return sor.célszám;
+  }
+  return null;
+}
+
+/** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság (+2 fortély). */
+export function calcAkrobatikaÉrték(k: Karakter): number {
+  const akrobatika = k.képzettségek.find(kp => kp.név === 'Akrobatika')?.szint ?? 0;
+  const gyorsaság = k.tulajdonságok.gyorsaság ?? 0;
+  const fejlesztés = k.fortélyok.some(f => f.név === 'Lövéskitérés fejlesztése') ? 2 : 0;
+  return akrobatika + gyorsaság + fejlesztés;
+}

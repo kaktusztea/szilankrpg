@@ -100,6 +100,33 @@
 .th-picker-item:hover { background: #333; }
 .th-picker-active { border-color: var(--success) !important; background: rgba(76, 175, 80, 0.1); }
 
+/* --- Lövéskitérés box (a szorzó-grid Szél ereje melletti cellája) --- */
+.th-lk-box { display: flex; flex-direction: column; gap: 6px; border-color: var(--warning); }
+.th-lk-box .th-picker-label { color: color-mix(in srgb, var(--warning) 60%, #999); }
+.th-lk-kat-btn { width: 100%; font-size: 10px; }
+.th-lk-tav { display: flex; align-items: center; justify-content: center; gap: 8px; }
+.th-lk-tav-btn { width: 28px; height: 28px; }
+.th-lk-tav-value { font-size: 14px; font-family: monospace; min-width: 44px; text-align: center; }
+.th-lk-info { display: flex; flex-direction: column; gap: 2px; font-size: 12px; }
+.th-lk-celszam { color: var(--text); }
+.th-lk-celszam strong { color: var(--accent); font-size: 15px; }
+.th-lk-outofrange { color: #e53935; font-style: italic; }
+.th-lk-akrobatika { color: #aaa; }
+.th-lk-actions { display: flex; justify-content: flex-end; margin-top: 2px; }
+.th-lk-kiteres-btn {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--success);
+  border-radius: 4px;
+  padding: 4px 12px;
+  font-size: 13px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.th-lk-kiteres-btn:disabled { opacity: 0.4; cursor: default; border-color: var(--border); }
+.th-lk-siker { color: var(--success); font-weight: bold; font-size: 15px; }
+.th-lk-sikertelen { color: #e53935; font-weight: bold; font-size: 15px; }
+
 /* --- Idea popup --- */
 .th-idea-row { display: flex; gap: 6px; }
 .th-idea-cell { width: 36px; height: 36px; font-size: 13px; }

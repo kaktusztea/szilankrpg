@@ -667,6 +667,106 @@
       "enyhítés": 9
     }
   ],
+  "lövéskitérés": {
+    "nem_alkalmas_tárgyak": [
+      {
+        "max_táv": 1,
+        "célszám": 15
+      },
+      {
+        "max_táv": 2,
+        "célszám": 12
+      },
+      {
+        "max_táv": 3,
+        "célszám": 9
+      }
+    ],
+    "korlátosan_alkalmas": [
+      {
+        "max_táv": 1,
+        "célszám": 18
+      },
+      {
+        "max_táv": 2,
+        "célszám": 15
+      },
+      {
+        "max_táv": 3,
+        "célszám": 12
+      },
+      {
+        "max_táv": 4,
+        "célszám": 9
+      }
+    ],
+    "dobófegyverek": [
+      {
+        "max_táv": 2,
+        "célszám": 21
+      },
+      {
+        "max_táv": 4,
+        "célszám": 18
+      },
+      {
+        "max_táv": 6,
+        "célszám": 15
+      },
+      {
+        "max_táv": 8,
+        "célszám": 12
+      },
+      {
+        "max_táv": 10,
+        "célszám": 9
+      }
+    ],
+    "íjak": [
+      {
+        "max_táv": 5,
+        "célszám": 21
+      },
+      {
+        "max_táv": 10,
+        "célszám": 18
+      },
+      {
+        "max_táv": 15,
+        "célszám": 15
+      },
+      {
+        "max_táv": 20,
+        "célszám": 12
+      },
+      {
+        "max_táv": 25,
+        "célszám": 9
+      }
+    ],
+    "nyílpuskák": [
+      {
+        "max_táv": 10,
+        "célszám": 21
+      },
+      {
+        "max_táv": 20,
+        "célszám": 18
+      },
+      {
+        "max_táv": 30,
+        "célszám": 15
+      },
+      {
+        "max_táv": 40,
+        "célszám": 12
+      },
+      {
+        "max_táv": 50,
+        "célszám": 9
+      }
+    ]
+  },
   "harci_akrobatika": {
     "max_mgt": 5
   },

@@ -518,6 +518,41 @@ fájdalomtűrés_enyhítés:
     enyhítés: 9
 
 # ============================================================
+# Lövéskitérés — Akrobatika próba célszám (md/073_tavharci_taktikak.md)
+# Kategória × távolság → célszám. Az első sor, ahol táv <= max_táv.
+# Max távon túl: nincs célszám (hatótávon kívül). Közelebb = magasabb célszám.
+# ============================================================
+
+lövéskitérés:
+  nem_alkalmas_tárgyak:      # Mágiatáv I
+    - { max_táv: 1, célszám: 15 }
+    - { max_táv: 2, célszám: 12 }
+    - { max_táv: 3, célszám: 9 }
+  korlátosan_alkalmas:       # Mágiatáv II
+    - { max_táv: 1, célszám: 18 }
+    - { max_táv: 2, célszám: 15 }
+    - { max_táv: 3, célszám: 12 }
+    - { max_táv: 4, célszám: 9 }
+  dobófegyverek:             # Mágiatáv III
+    - { max_táv: 2, célszám: 21 }
+    - { max_táv: 4, célszám: 18 }
+    - { max_táv: 6, célszám: 15 }
+    - { max_táv: 8, célszám: 12 }
+    - { max_táv: 10, célszám: 9 }
+  íjak:                      # Mágiatáv IV
+    - { max_táv: 5, célszám: 21 }
+    - { max_táv: 10, célszám: 18 }
+    - { max_táv: 15, célszám: 15 }
+    - { max_táv: 20, célszám: 12 }
+    - { max_táv: 25, célszám: 9 }
+  nyílpuskák:
+    - { max_táv: 10, célszám: 21 }
+    - { max_táv: 20, célszám: 18 }
+    - { max_táv: 30, célszám: 15 }
+    - { max_táv: 40, célszám: 12 }
+    - { max_táv: 50, célszám: 9 }
+
+# ============================================================
 # Harci akrobatika páncél korlátok
 # ============================================================
 
