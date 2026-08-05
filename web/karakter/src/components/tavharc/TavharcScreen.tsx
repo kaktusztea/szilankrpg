@@ -1,6 +1,7 @@
 import { useState, useCallback } from 'react';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
-import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg, defaultLöveskitérésKategória } from './helpers';
+import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
+import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
 import { TavharcGameSelector } from './TavharcGameSelector';
 import { TavharcKalkulator } from './TavharcKalkulator';
@@ -114,8 +115,12 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           cé={bontás.cé} vé={vé} támadásLabel={támadásLabel} szorzóÖsszeg={szorzóÖsszeg} cella={cella} távolság={távolság}
           szorzok={szorzok} szorzóState={szorzóState} onSzorzóChange={onSzorzóChange}
           onTávolságPopup={() => setPopup(s => ({ ...s, távolságPopup: true }))}
-          karakter={k} konstansok={konstansok} loveskiteresDefault={defaultLöveskitérésKategória(tfDef?.Harcmodor)}
+          karakter={k} konstansok={konstansok} tavfegyverek={data.tavfegyverek}
         />
+      )}
+
+      {gameMode && !tfDef && (
+        <TavharcLoveskiteres karakter={k} konstansok={konstansok} tavfegyverek={data.tavfegyverek} />
       )}
 
       {!tfDef && összesFegyver.length === 0 && gameMode && (

@@ -464,10 +464,11 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - Aktív elem: zöld keret, default: alapeset (Álló 1×, Mozdulatlan 0×, Átlagos 0×, Jól kivehető 0×, Szélcsend 0×)
 - Formátum: `Nx: leírás`
 
-**Lövéskitérés box (a grid Szél ereje melletti üres cellája, Játék mód):** önálló, **védekező** eszköz (md/073) — a karakter a CÉLPONT, saját Akrobatikájával tér ki egy bejövő lövés elől. Teljesen független a kimenő lövés-kalkulátortól. Tartalma:
-- Bejövő fegyver kategória: field-gomb → popup lista (fegyver-picker stílus, `th-fegyver-picker`), NEM dropdown (Nem alkalmas tárgy / Korlátosan alkalmas / Dobófegyver / Íj / Nyílpuska; default a kiválasztott fegyver harcmodorából; mágikus: külön iteráció)
+**Lövéskitérés box (Játék mód, MINDIG látszik):** önálló, **védekező** eszköz (md/073) — a karakter a CÉLPONT, saját Akrobatikájával tér ki egy BEJÖVŐ (támadó) fegyver lövése elől. Teljesen független a kimenő lövés-kalkulátortól; nincs szükség felvett távfegyverre. Ha van kiválasztott (kimenő) fegyver: a szorzó-grid Szél ereje melletti cellájában; ha nincs: standalone jelenik meg. Tartalma:
+- Bejövő fegyver: field-gomb → popup lista (fegyver-picker stílus, `th-fegyver-picker`). Sorrend: Hajítótőr, Rövid íj, Hosszú íj, Nyílpuska felül; alattuk ABC a konkrét fegyverek; legalul két absztrakt opció: „Korlátosan alkalmas fegyver" és „🔆 Nem dobásra készített tárgy". Alapállapot: „Bejövő fegyver" placeholder (invalid, informatív; Kitérés tiltva).
 - Saját távolság léptető (− Xm +, hold-repeat)
-- Célszám (`konstansok.lövéskitérés` 2D lookup: kategória × táv; közelebb = magasabb célszám). Max távon túl: „hatótávon kívül vagy", a Kitérés gomb tiltva.
+- Célszám: a fegyver **Osztójából** adódó kategória (md/078: Osztó 1=Nem alkalmas, 2=Korlátosan alkalmas, 3=Dobófegyver, 4=Íj, ≥5=Nyílpuska) + távolság a `konstansok.lövéskitérés` táblából. Közelebb = magasabb; a tábla maxán túl a legkönnyebb (9) marad.
+- „hatótávon kívül vagy": a fegyver tényleges **Hatótáv**-ja alapján (Erő-függő képletnél nincs gát). Ilyenkor Kitérés tiltva.
 - Akrobatika+Gyorsaság érték (Akrobatika szint + Gyorsaság + 2 ha „Lövéskitérés fejlesztése" fortély)
 - „Kitérés" gomb (jobb alsó): `Akrobatika+Gyorsaság + k10` képzettségpróba → popup (KÉ/TÉ dobás mintája), célszámhoz mérve **Siker/Sikertelen** jelzés.
 

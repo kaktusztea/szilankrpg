@@ -204,38 +204,48 @@ export function calcSzorzóÖsszeg(szorzok: TavharcSzorzok, state: SzorzóState)
     + get(szorzok.szél, state.szélId);
 }
 
-// --- Lövéskitérés (védekező Akrobatika próba, md/073) ---
+// --- Lövéskitérés (védekező Akrobatika próba, md/073 + kategóriák md/078) ---
 
-/** A lövéskitérés kategóriák stabil kulcsai + megjelenítő címkéik (mágikus: külön iteráció). */
-export const LÖVÉSKITÉRÉS_KATEGÓRIÁK: { kulcs: string; label: string }[] = [
-  { kulcs: 'nem_alkalmas_tárgyak', label: 'Nem alkalmas tárgy' },
-  { kulcs: 'korlátosan_alkalmas', label: 'Korlátosan alkalmas' },
-  { kulcs: 'dobófegyverek', label: 'Dobófegyver' },
-  { kulcs: 'íjak', label: 'Íj' },
-  { kulcs: 'nyílpuskák', label: 'Nyílpuska' },
-];
+/** Osztó → lövéskitérés célszám-kategória (md/078: a kategóriát az Osztó adja). */
+export function osztóToLöveskitérésKategória(osztó: number): string | null {
+  switch (osztó) {
+    case 1: return 'nem_alkalmas_tárgyak';   // Mágiatáv I
+    case 2: return 'korlátosan_alkalmas';    // Mágiatáv II
+    case 3: return 'dobófegyverek';          // Mágiatáv III (apró hajító/szálfegyver)
+    case 4: return 'íjak';                   // Mágiatáv IV
+    default: return osztó >= 5 ? 'nyílpuskák' : null;
+  }
+}
 
-/** Alapértelmezett bejövő kategória a kiválasztott fegyver harcmodora alapján. */
-export function defaultLöveskitérésKategória(harcmodor: string | undefined): string {
-  if (harcmodor === 'Íjászat') return 'íjak';
-  if (harcmodor === 'Lövészet') return 'nyílpuskák';
-  if (harcmodor === 'Hajítás') return 'dobófegyverek';
-  return 'dobófegyverek';
+/** Bejövő távfegyver → célszám-kategória az Osztója alapján (mágikus: külön iteráció → null). */
+export function weaponToLöveskitérésKategória(def: TavfegyverAlap): string | null {
+  if (def.Kategória === 'mágikus') return null;
+  return osztóToLöveskitérésKategória(parseInt(def.Osztó) || 0);
+}
+
+/**
+ * Hatótáv méterben. Fix szám ("50m") → az érték; Erő-függő képlet ("20m + (Erő x 5)")
+ * → Infinity, mert a támadó Ereje ismeretlen, így nincs range-gát (nem blokkolunk hamisan).
+ */
+export function parseHatótáv(hatótáv: string): number {
+  const m = /^\s*(\d+)\s*m?\s*$/.exec(hatótáv ?? '');
+  return m ? parseInt(m[1]) : Infinity;
 }
 
 /**
  * Akrobatika próba célszáma: az első sor, ahol táv <= max_táv (közelebb = magasabb célszám).
- * Max távon túl → null (hatótávon kívül).
+ * A tábla maximumán túl a legkönnyebb (utolsó) sor érvényes; hiányzó tábla → null.
+ * A tényleges „hatótávon kívül vagy" a fegyver Hatótávja alapján dől el (nem itt).
  */
 export function calcLöveskitérésCélszám(
   sorok: { max_táv: number; célszám: number }[] | undefined,
   távolság: number,
 ): number | null {
-  if (!sorok) return null;
+  if (!sorok || sorok.length === 0) return null;
   for (const sor of sorok) {
     if (távolság <= sor.max_táv) return sor.célszám;
   }
-  return null;
+  return sorok[sorok.length - 1].célszám;
 }
 
 /** A kitérő karakter Akrobatika próba módosítója: Akrobatika szint + Gyorsaság (+2 fortély). */

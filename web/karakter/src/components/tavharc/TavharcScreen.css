@@ -104,6 +104,8 @@
 .th-lk-box { display: flex; flex-direction: column; gap: 6px; border-color: var(--warning); }
 .th-lk-box .th-picker-label { color: color-mix(in srgb, var(--warning) 60%, #999); }
 .th-lk-kat-btn { width: 100%; font-size: 10px; }
+.th-lk-kat-btn-empty { opacity: 0.7; font-style: italic; }
+.th-lk-hint { color: #888; font-style: italic; }
 .th-lk-tav { display: flex; align-items: center; justify-content: center; gap: 8px; }
 .th-lk-tav-btn { width: 28px; height: 28px; }
 .th-lk-tav-value { font-size: 14px; font-family: monospace; min-width: 44px; text-align: center; }

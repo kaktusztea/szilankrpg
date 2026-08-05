@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import type { Karakter } from '../../engine/types';
-import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, defaultLöveskitérésKategória } from './helpers';
+import type { Karakter, TavfegyverAlap } from '../../engine/types';
+import { calcLöveskitérésCélszám, calcAkrobatikaÉrték, weaponToLöveskitérésKategória, osztóToLöveskitérésKategória, parseHatótáv } from './helpers';
 
 // Íjak tábla (md/073): 5m→21, 10m→18, 15m→15, 20m→12, 25m→9
 const íjak = [
@@ -19,12 +19,50 @@ describe('calcLöveskitérésCélszám', () => {
     expect(calcLöveskitérésCélszám(íjak, 25)).toBe(9);
   });
 
-  it('returns null beyond the maximum range (hatótávon kívül)', () => {
-    expect(calcLöveskitérésCélszám(íjak, 26)).toBeNull();
+  it('clamps to the easiest (last) row beyond the table max — out-of-range is decided by Hatótáv, not here', () => {
+    expect(calcLöveskitérésCélszám(íjak, 26)).toBe(9);
+    expect(calcLöveskitérésCélszám(íjak, 999)).toBe(9);
   });
 
-  it('returns null for a missing table', () => {
+  it('returns null for a missing/empty table', () => {
     expect(calcLöveskitérésCélszám(undefined, 3)).toBeNull();
+    expect(calcLöveskitérésCélszám([], 3)).toBeNull();
+  });
+});
+
+describe('osztóToLöveskitérésKategória', () => {
+  it('maps Osztó → category (md/078)', () => {
+    expect(osztóToLöveskitérésKategória(1)).toBe('nem_alkalmas_tárgyak');
+    expect(osztóToLöveskitérésKategória(2)).toBe('korlátosan_alkalmas');
+    expect(osztóToLöveskitérésKategória(3)).toBe('dobófegyverek');
+    expect(osztóToLöveskitérésKategória(4)).toBe('íjak');
+    expect(osztóToLöveskitérésKategória(5)).toBe('nyílpuskák');
+    expect(osztóToLöveskitérésKategória(6)).toBe('nyílpuskák'); // ≥5 → nyílpuskák
+    expect(osztóToLöveskitérésKategória(0)).toBeNull();
+  });
+});
+
+describe('weaponToLöveskitérésKategória', () => {
+  const def = (p: Partial<TavfegyverAlap>) => p as TavfegyverAlap;
+  it('maps by Osztó, not harcmodor (e.g. Kharei nyílpuska Osztó 4 → íjak)', () => {
+    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Kharei nyílpuska', Osztó: '4', Harcmodor: 'Lövészet' }))).toBe('íjak');
+    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Tőr', Osztó: '2', Harcmodor: 'Hajítás' }))).toBe('korlátosan_alkalmas');
+    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Nyílpuska', Osztó: '5', Harcmodor: 'Lövészet' }))).toBe('nyílpuskák');
+  });
+  it('returns null for mágikus (deferred)', () => {
+    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Mágiatáv I', Osztó: '1', Kategória: 'mágikus' }))).toBeNull();
+  });
+});
+
+describe('parseHatótáv', () => {
+  it('parses a plain "Nm" range', () => {
+    expect(parseHatótáv('50m')).toBe(50);
+    expect(parseHatótáv('120m')).toBe(120);
+    expect(parseHatótáv('10')).toBe(10);
+  });
+  it('returns Infinity for Erő-based formulas (attacker Erő unknown → no range gate)', () => {
+    expect(parseHatótáv('20m + (Erő x 5)')).toBe(Infinity);
+    expect(parseHatótáv('5-10m + Erő')).toBe(Infinity);
   });
 });
 
@@ -46,14 +84,5 @@ describe('calcAkrobatikaÉrték', () => {
   it('treats missing Akrobatika as 0', () => {
     const k = { képzettségek: [], tulajdonságok: { gyorsaság: 2 }, fortélyok: [] } as unknown as Karakter;
     expect(calcAkrobatikaÉrték(k)).toBe(2);
-  });
-});
-
-describe('defaultLöveskitérésKategória', () => {
-  it('maps harcmodor to the incoming weapon category', () => {
-    expect(defaultLöveskitérésKategória('Íjászat')).toBe('íjak');
-    expect(defaultLöveskitérésKategória('Lövészet')).toBe('nyílpuskák');
-    expect(defaultLöveskitérésKategória('Hajítás')).toBe('dobófegyverek');
-    expect(defaultLöveskitérésKategória(undefined)).toBe('dobófegyverek');
   });
 });
