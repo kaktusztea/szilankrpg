@@ -1,6 +1,7 @@
 export { OverlayPortal } from './OverlayPortal';
 export { SzilankPickerOverlay } from './SzilankPickerOverlay';
 export { NewCharConfirmOverlay } from './NewCharConfirmOverlay';
+export { TestConfirmOverlay } from './TestConfirmOverlay';
 export { SlotListOverlay } from './SlotListOverlay';
 export { SlotDeleteOverlay } from './SlotDeleteOverlay';
 export { SaveFileOverlay } from './SaveFileOverlay';

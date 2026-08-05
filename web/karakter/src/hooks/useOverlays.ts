@@ -4,7 +4,7 @@ import type { OverlayState } from '../components/AppOverlays';
 const INITIAL_OVERLAYS: OverlayState = {
   showSzilánkPicker: false, showSlotList: false,
   slotDeleteTarget: null, saveFile: null,
-  loadError: '', showFullscreenHint: false, showNewConfirm: false,
+  loadError: '', showFullscreenHint: false, showNewConfirm: false, showTestConfirm: false,
   showUndo: false, undoSelected: null, overlayScreen: null,
   sharePopup: null, toast: null, importConfirm: null, showSlotLimit: false,
   backupRestore: null,
@@ -21,7 +21,7 @@ export function useOverlays() {
     setOverlays(prev => ({ ...prev, [key]: value }));
   }, []);
 
-  const anyOverlayOpen = overlays.showNewConfirm || overlays.showSlotList || overlays.showUndo
+  const anyOverlayOpen = overlays.showNewConfirm || overlays.showTestConfirm || overlays.showSlotList || overlays.showUndo
     || !!overlays.loadError || !!overlays.overlayScreen
     || overlays.showFullscreenHint || overlays.showSzilánkPicker || !!overlays.sharePopup
     || !!overlays.slotDeleteTarget || !!overlays.saveFile

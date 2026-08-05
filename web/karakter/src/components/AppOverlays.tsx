@@ -6,7 +6,7 @@ import { DEFAULT_SESSION } from '../engine/types';
 import { isSlotFull } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
 import {
-  SzilankPickerOverlay, NewCharConfirmOverlay,
+  SzilankPickerOverlay, NewCharConfirmOverlay, TestConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveFileOverlay,
   UndoOverlay, LoadErrorOverlay, FullscreenHintOverlay,
   OverlayScreenOverlay, SharePopupOverlay, ToastOverlay, ImportConfirmOverlay,
@@ -21,6 +21,7 @@ export interface OverlayState {
   loadError: string;
   showFullscreenHint: boolean;
   showNewConfirm: boolean;
+  showTestConfirm: boolean;
   showUndo: boolean;
   undoSelected: number | null;
   overlayScreen: 'jegyzetek' | 'naplo' | null;
@@ -86,14 +87,14 @@ export function AppOverlays({
 
   const handleSlotTest = () => {
     const refErr = validateKarakterData(data.testKarakter, data);
-    if (refErr) { set('showSlotList', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
+    if (refErr) { set('showTestConfirm', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
     setKarakter({
       ...data.testKarakter,
       uid: data.testKarakter.uid || generateUid(),
       id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
       session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
     });
-    setUndoStack([]); setTestMode(true); setIsDirty(true); set('showSlotList', false);
+    setUndoStack([]); setTestMode(true); setIsDirty(true); set('showTestConfirm', false);
   };
 
   return (
@@ -108,6 +109,8 @@ export function AppOverlays({
 
       {s.showNewConfirm && <NewCharConfirmOverlay onConfirm={handleNewChar} />}
 
+      {s.showTestConfirm && <TestConfirmOverlay onConfirm={handleSlotTest} />}
+
       {s.showSlotList && (
         <SlotListOverlay
           activeUid={karakter?.uid}
@@ -121,7 +124,7 @@ export function AppOverlays({
           onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
           onSave={() => { handleGenerateSave('backup'); }}
           newDisabled={!isDirty}
-          onTest={handleSlotTest}
+          onTest={() => { set('showSlotList', false); set('showTestConfirm', true); }}
           onFullscreenHint={() => { set('showSlotList', false); set('showFullscreenHint', true); }}
           onClose={() => set('showSlotList', false)}
         />
