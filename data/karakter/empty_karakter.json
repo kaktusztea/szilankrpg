@@ -4,6 +4,7 @@
   "schema_version": 2,
   "név": "",
   "becenév": "",
+  "jk": true,
   "játékos": "",
   "mentés_dátum": "",
   "tsz": 3,

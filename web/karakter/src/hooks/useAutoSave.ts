@@ -30,10 +30,10 @@ export function useAutoSave(
       localStorage.setItem(`szilank_char_${karakter.uid}`, JSON.stringify(toSave));
       localStorage.setItem('szilank_active', karakter.uid);
 
-      let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
+      let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string; jk: boolean }[] = [];
       try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { slots = []; }
       const existing = slots.findIndex(s => s.uid === karakter.uid);
-      const entry = { uid: karakter.uid, id_leíró: karakter.id_leíró, név: karakter.név, tsz: karakter.tsz, mentés_dátum: new Date().toISOString() };
+      const entry = { uid: karakter.uid, id_leíró: karakter.id_leíró, név: karakter.név, tsz: karakter.tsz, mentés_dátum: new Date().toISOString(), jk: karakter.jk ?? true };
       if (existing >= 0) slots[existing] = entry; else slots.unshift(entry);
       localStorage.setItem('szilank_slots', JSON.stringify(slots));
     } catch { /* quota exceeded */ }

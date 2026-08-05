@@ -26,6 +26,19 @@
 }
 
 .tul-header-full { width: 100%; }
+.tul-becenev-row { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+.tul-jk-chip {
+  flex-shrink: 0;
+  border-radius: 10px;
+  padding: 3px 10px;
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid var(--border-input);
+  cursor: pointer;
+  color: var(--text);
+}
+.tul-jk-chip-jk { background: #2a3a2a; border-color: var(--success); }
+.tul-jk-chip-njk { background: var(--surface); }
 .tul-header-two-col { display: flex; gap: 6px; width: 100%; }
 .tul-header-flex1 { flex: 1; }
 .tul-header-label { color: var(--text-dim); }

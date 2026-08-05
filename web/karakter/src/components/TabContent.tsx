@@ -63,6 +63,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
         képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo}
         név={karakter.név} setNév={sf('név', (p, n) => `Név: ${p} → ${n}`)}
         becenév={karakter.becenév} setBecenév={sf('becenév', (_, n) => `Becenév: ${n}`)}
+        jk={karakter.jk} setJk={sf('jk', (_, n) => `Típus: ${n ? 'JK' : 'NJK'}`)}
         játékos={karakter.játékos} setJátékos={sf('játékos', (_, n) => `Játékos: ${n}`)}
         tsz={karakter.tsz} setTsz={sf('tsz', (p, n) => `TSz: ${p} → ${n}`)}
         kor={karakter.kor} setKor={sf('kor', (p, n) => `Kor: ${p} → ${n}`)}

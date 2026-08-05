@@ -8,6 +8,7 @@ uid: ""                       # UUID, egyedi azonosító (generált, nem módos�
 id_leíró: ""                  # slug, auto-frissül név/TSz-ből (pl. "harcos_5sz")
 név: ""                       # max 40 karakter
 becenév: ""                   # max 12 karakter (rövid megjelenítési név)
+jk: true                      # true = játékoskarakter (JK), false = nem játszó karakter (NJK)
 játékos: ""                   # Játékos neve (max 40 karakter)
 mentés_dátum: ""              # YYYY-MM-DD HH:MM
 tsz: 1                        # Tapasztalati szint (1-21)

@@ -18,6 +18,8 @@ export interface Props {
   setNév: (v: string) => void;
   becenév: string;
   setBecenév: (v: string) => void;
+  jk: boolean;
+  setJk: (v: boolean) => void;
   játékos: string;
   setJátékos: (v: string) => void;
   tsz: number;

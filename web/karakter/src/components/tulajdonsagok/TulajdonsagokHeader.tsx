@@ -14,6 +14,8 @@ interface Props {
   kor: number;
   faj: string;
   anyanyelv: string;
+  jk: boolean;
+  setJk: (v: boolean) => void;
   onEditNév: () => void;
   onEditBecenév: () => void;
   onEditTsz: () => void;
@@ -27,7 +29,7 @@ export function TulajdonsagokHeader({
   data, gameMode, tulajdonságok, setTul,
   név, becenév, játékos, tsz, kor, faj, anyanyelv,
   onEditNév, onEditBecenév, onEditTsz, onEditKor, onEditJátékos,
-  setFaj, setAnyanyelv
+  setFaj, setAnyanyelv, jk, setJk
 }: Props) {
   const TULAJDONSAG_NEVEK = data.konstansok.tulajdonság_sorrend as (keyof Tulajdonsagok)[];
 
@@ -36,8 +38,14 @@ export function TulajdonsagokHeader({
       {/* Fejléc: Becenév + Név + Szint */}
       <div className="tul-header tul-header-col">
         {!gameMode && (
-          <div className="tul-header-box tul-header-full" onClick={onEditBecenév}>
-            <span className="tul-header-label">Becenév:</span> <strong>{becenév || '—'}</strong>
+          <div className="tul-header-box tul-header-full tul-becenev-row" onClick={onEditBecenév}>
+            <span><span className="tul-header-label">Becenév:</span> <strong>{becenév || '—'}</strong></span>
+            <button
+              type="button"
+              className={`tul-jk-chip${jk ? ' tul-jk-chip-jk' : ' tul-jk-chip-njk'}`}
+              title="JK / NJK váltás"
+              onClick={e => { e.stopPropagation(); setJk(!jk); }}
+            >{jk ? 'JK' : 'NJK'}</button>
           </div>
         )}
         {!gameMode && (

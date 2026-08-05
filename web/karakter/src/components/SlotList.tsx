@@ -10,6 +10,7 @@ interface SlotEntry {
   név: string;
   tsz: number;
   mentés_dátum: string;
+  jk?: boolean;
 }
 
 function truncSlotName(név: string | undefined): string {
@@ -61,9 +62,30 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
     try {
       const parsed = JSON.parse(charData);
       if (validateKarakter(parsed)) {
-        onLoad({ ...parsed, session: { ...DEFAULT_SESSION, ...parsed.session } }, sanitizeUndo((parsed as any)._undo));
+        onLoad({ ...parsed, jk: parsed.jk ?? true, session: { ...DEFAULT_SESSION, ...parsed.session } }, sanitizeUndo((parsed as any)._undo));
       }
     } catch { /* */ }
+  }
+
+  function renderSlot(s: SlotEntry) {
+    return (
+      <div key={s.uid} className={`slot-row ${activeUid === s.uid ? 'slot-row-active' : ''}`} onClick={() => loadSlot(s.uid)}>
+        <div className="slot-row-top">
+          <span className={`slot-name ${activeUid === s.uid ? 'slot-name-active' : ''}`}>
+            {truncSlotName(s.név)} ({s.tsz || '?'}sz)
+          </span>
+        </div>
+        <div className="slot-chips">
+          <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
+          <button className="slot-chip" title="Mentés fájlba" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>💾</button>
+          {typeof navigator.share === 'function' && (
+            <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
+          )}
+          <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>⧉</button>
+          <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -80,25 +102,16 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
           }}>{saving ? <span className="slot-btn-spinner" /> : '📦'}</button>
       </div>
       <div className="slot-list">
-        {slots.map(s => (
-          <div key={s.uid} className={`slot-row ${activeUid === s.uid ? 'slot-row-active' : ''}`} onClick={() => loadSlot(s.uid)}>
-            <div className="slot-row-top">
-              <span className={`slot-name ${activeUid === s.uid ? 'slot-name-active' : ''}`}>
-                {truncSlotName(s.név)} ({s.tsz || '?'}sz)
-              </span>
-            </div>
-            <div className="slot-chips">
-              <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
-              <button className="slot-chip" title="Mentés fájlba" onClick={e => { e.stopPropagation(); onSaveFile(s.uid); }}>💾</button>
-              {typeof navigator.share === 'function' && (
-                <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
-              )}
-              <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>⧉</button>
-              <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</button>
-            </div>
+        {slots.length === 0 && <span className="slot-empty">Nincs mentett karakter</span>}
+        {[
+          { title: 'Játszó karakterek (JK)', rows: slots.filter(s => s.jk !== false) },
+          { title: 'Nem játszó karakterek (NJK)', rows: slots.filter(s => s.jk === false) },
+        ].map(section => section.rows.length > 0 && (
+          <div key={section.title} className="slot-section">
+            <div className="slot-section-title">{section.title}</div>
+            {section.rows.map(s => renderSlot(s))}
           </div>
         ))}
-        {slots.length === 0 && <span className="slot-empty">Nincs mentett karakter</span>}
       </div>
       <div className="menu-footer">
         <button className="menu-test-chip" onClick={onTest}>T</button>

@@ -100,6 +100,9 @@
 
 /* --- 4. Slot lista --- */
 .slot-list { display: flex; flex-direction: column; gap: 4px; }
+.slot-section { display: flex; flex-direction: column; gap: 4px; }
+.slot-section + .slot-section { margin-top: 12px; }
+.slot-section-title { font-size: 12px; font-weight: bold; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 2px 4px; border-bottom: 1px solid var(--border); }
 .slot-row { padding: 8px 12px; border-radius: 4px; background: var(--input-bg); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; cursor: pointer; }
 .slot-row-active { background: #2a3a2a; border-color: var(--success); }
 .slot-row-top { display: flex; justify-content: space-between; align-items: center; }

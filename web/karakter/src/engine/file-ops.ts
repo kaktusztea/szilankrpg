@@ -96,7 +96,7 @@ function parseSingleKarakter(obj: unknown, data: GameData): { karakter: Karakter
   if (!validateKarakter(obj)) return { error: 'Érvénytelen karakter json állomány.' };
   const refErr = validateKarakterData(obj, data);
   if (refErr) return { error: `Referencia hiba: ${refErr}` };
-  const karakter = { ...obj, uid: (obj as any).uid || generateUid(), id_leíró: (obj as any).id_leíró || generateIdLeíró(obj.név, obj.tsz), session: { ...DEFAULT_SESSION, ...(obj as any).session } } as Karakter;
+  const karakter = { ...obj, uid: (obj as any).uid || generateUid(), id_leíró: (obj as any).id_leíró || generateIdLeíró(obj.név, obj.tsz), jk: (obj as any).jk ?? true, session: { ...DEFAULT_SESSION, ...(obj as any).session } } as Karakter;
   return { karakter, undo: sanitizeUndo((obj as any)._undo) };
 }
 

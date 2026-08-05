@@ -4,6 +4,7 @@
   "schema_version": 2,
   "név": "pak-Teth",
   "becenév": "pakkk",
+  "jk": false,
   "játékos": "Béluska",
   "mentés_dátum": "2026-07-01 13:53",
   "tsz": 11,

@@ -36,6 +36,7 @@ interface CompactKarakter {
   sv: number;
   n: string;
   bn?: string;
+  jk?: boolean;
   j?: string;
   t: number;
   l?: string;
@@ -85,6 +86,7 @@ function compactEncode(k: Karakter): CompactKarakter {
   };
 
   if (k.becenév) c.bn = k.becenév;
+  if (k.jk === false) c.jk = false;
   if (k.játékos) c.j = k.játékos;
   if (k.leírás) c.l = k.leírás;
   if (k.vallás) c.v = k.vallás;
@@ -175,6 +177,7 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     schema_version: c.sv,
     név: c.n,
     becenév: c.bn || '',
+    jk: c.jk ?? true,
     játékos: c.j || '',
     tsz: c.t,
     leírás: c.l || '',

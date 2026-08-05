@@ -12,7 +12,8 @@ import './TulajdonsagokScreen.css';
 export function TulajdonsagokScreen({
   data, gameMode, karakter, tulajdonságok, setTulajdonságok,
   képzettségek, setKépzettségek, név, setNév, becenév, setBecenév,
-  játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv
+  játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv,
+  jk, setJk
 }: Props) {
   const felvettFortelyok = karakter.fortélyok.map(f => f.név);
 
@@ -95,6 +96,7 @@ export function TulajdonsagokScreen({
         data={data} gameMode={gameMode}
         tulajdonságok={tulajdonságok} setTul={setTul}
         név={név} becenév={becenév} játékos={játékos} tsz={tsz} kor={kor} faj={faj} anyanyelv={anyanyelv}
+        jk={jk} setJk={setJk}
         onEditNév={() => setPopup(p => ({ ...p, editingNév: true, tempNév: név }))}
         onEditBecenév={() => setPopup(p => ({ ...p, editingBecenév: true, tempBecenév: becenév }))}
         onEditTsz={() => setPopup(p => ({ ...p, editingTsz: true }))}

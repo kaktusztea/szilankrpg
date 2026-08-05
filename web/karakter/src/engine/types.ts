@@ -116,6 +116,7 @@ export interface Karakter {
   schema_version: number;
   név: string;
   becenév: string;
+  jk: boolean;
   játékos: string;
   mentés_dátum: string;
   tsz: number;
