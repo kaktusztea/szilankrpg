@@ -8,6 +8,7 @@ interface SlotEntry {
   uid: string;
   id_leíró: string;
   név: string;
+  becenév?: string;
   tsz: number;
   mentés_dátum: string;
   jk?: boolean;
@@ -72,7 +73,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
       <div key={s.uid} className={`slot-row ${activeUid === s.uid ? 'slot-row-active' : ''}`} onClick={() => loadSlot(s.uid)}>
         <div className="slot-row-top">
           <span className={`slot-name ${activeUid === s.uid ? 'slot-name-active' : ''}`}>
-            {truncSlotName(s.név)} ({s.tsz || '?'}sz)
+            {truncSlotName(s.név || s.becenév)} ({s.tsz || '?'}sz)
           </span>
         </div>
         <div className="slot-chips">
@@ -82,7 +83,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
             <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
           )}
           <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>⧉</button>
-          <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</button>
+          <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || s.becenév || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</button>
         </div>
       </div>
     );

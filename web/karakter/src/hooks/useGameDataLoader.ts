@@ -38,7 +38,7 @@ export function useGameDataLoader() {
             const uid = parsed.uid || ((parsed as any).id) || generateUid();
             const migrated = { ...parsed, uid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), jk: parsed.jk ?? true, session: { ...DEFAULT_SESSION, ...parsed.session } };
             localStorage.setItem(`szilank_char_${uid}`, JSON.stringify(migrated));
-            localStorage.setItem('szilank_slots', JSON.stringify([{ uid, id_leíró: migrated.id_leíró, név: migrated.név, tsz: migrated.tsz, mentés_dátum: new Date().toISOString(), jk: migrated.jk }]));
+            localStorage.setItem('szilank_slots', JSON.stringify([{ uid, id_leíró: migrated.id_leíró, név: migrated.név, becenév: migrated.becenév, tsz: migrated.tsz, mentés_dátum: new Date().toISOString(), jk: migrated.jk }]));
             localStorage.setItem('szilank_active', uid);
             localStorage.removeItem('szilank_karakter');
             localStorage.removeItem('szilank_undo');

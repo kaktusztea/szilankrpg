@@ -199,7 +199,7 @@ export function AppOverlays({
           dátum={s.backupRestore.dátum}
           onRestore={(selected) => {
             // Perform the actual restore
-            let slots: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string; jk: boolean }[] = [];
+            let slots: { uid: string; id_leíró: string; név: string; becenév: string; tsz: number; mentés_dátum: string; jk: boolean }[] = [];
             try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { slots = []; }
 
             const MAX = MAX_KARAKTER_DB;
@@ -218,7 +218,7 @@ export function AppOverlays({
               const toSave = { ...k, _undo: undo } as any;
               try {
                 localStorage.setItem(`szilank_char_${k.uid}`, JSON.stringify(toSave));
-                const entry = { uid: k.uid, id_leíró: k.id_leíró, név: k.név, tsz: k.tsz, mentés_dátum: (k as any).mentés_dátum || new Date().toISOString(), jk: (k as any).jk ?? true };
+                const entry = { uid: k.uid, id_leíró: k.id_leíró, név: k.név, becenév: (k as any).becenév || '', tsz: k.tsz, mentés_dátum: (k as any).mentés_dátum || new Date().toISOString(), jk: (k as any).jk ?? true };
                 if (existingIdx >= 0) { slots[existingIdx] = entry; }
                 else { slots.push(entry); newInserted++; }
                 lastKarakter = k;
