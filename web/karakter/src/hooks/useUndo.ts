@@ -67,7 +67,7 @@ function loadInitialUndo(): UndoEntry[] {
 }
 
 /** Fields eligible for coalescing (consecutive edits to same element merge into one entry). */
-const COALESCE_FIELDS = new Set(['HM_TÉ', 'HM_VÉ', 'CM', 'képzettségek', 'fortélyok', 'tulajdonságok']);
+const COALESCE_FIELDS = new Set(['HM_TÉ', 'HM_VÉ', 'CM', 'jk', 'képzettségek', 'fortélyok', 'tulajdonságok']);
 
 /**
  * Determine a coalescing key for an entry's patches.
