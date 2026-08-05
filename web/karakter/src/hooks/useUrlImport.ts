@@ -4,6 +4,7 @@ import type { Karakter } from '../engine/types';
 import type { OverlayState } from '../components/AppOverlays';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { decodeKarakterFromHash } from '../engine/url-share';
+import { readSlots } from './slot-utils';
 
 export function useUrlImport(
   data: GameData | null,
@@ -24,8 +25,7 @@ export function useUrlImport(
       return;
     }
     const imported = result.karakter;
-    let slots: { uid: string; név: string; tsz: number; mentés_dátum: string }[] = [];
-    try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+    const slots = readSlots();
     const match = slots.find(s => s.név === imported.név && s.tsz === imported.tsz);
     imported.uid = generateUid();
     imported.id_leíró = generateIdLeíró(imported.név, imported.tsz);

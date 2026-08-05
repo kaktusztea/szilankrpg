@@ -4,7 +4,7 @@ import { validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION } from '../engine/types';
 import { isSlotFull } from '../hooks/slot-utils';
-import { MAX_KARAKTER_DB } from '../ui-constants';
+import { restoreBackup } from '../hooks/backup-restore';
 import {
   SzilankPickerOverlay, NewCharConfirmOverlay,
   SlotListOverlay, SlotDeleteOverlay, SaveFileOverlay,
@@ -198,44 +198,13 @@ export function AppOverlays({
           karakterek={s.backupRestore.karakterek}
           dátum={s.backupRestore.dátum}
           onRestore={(selected) => {
-            // Perform the actual restore
-            let slots: { uid: string; id_leíró: string; név: string; becenév: string; tsz: number; mentés_dátum: string; jk: boolean }[] = [];
-            try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { slots = []; }
-
-            const MAX = MAX_KARAKTER_DB;
-            // Count how many new entries we can still insert
-            const currentCount = slots.length;
-            let newInserted = 0;
-            const maxNew = MAX - currentCount;
-            let lastKarakter: Karakter | null = null;
-            let lastUndo: any[] = [];
-
-            for (const { karakter: k, undo } of selected) {
-              const existingIdx = slots.findIndex(sl => sl.uid === k.uid);
-              // If it's a new character and we've reached the limit, skip
-              if (existingIdx < 0 && newInserted >= maxNew) continue;
-
-              const toSave = { ...k, _undo: undo } as any;
-              try {
-                localStorage.setItem(`szilank_char_${k.uid}`, JSON.stringify(toSave));
-                const entry = { uid: k.uid, id_leíró: k.id_leíró, név: k.név, becenév: (k as any).becenév || '', tsz: k.tsz, mentés_dátum: (k as any).mentés_dátum || new Date().toISOString(), jk: (k as any).jk ?? true };
-                if (existingIdx >= 0) { slots[existingIdx] = entry; }
-                else { slots.push(entry); newInserted++; }
-                lastKarakter = k;
-                lastUndo = undo;
-              } catch { /* quota exceeded */ break; }
-            }
-
-            localStorage.setItem('szilank_slots', JSON.stringify(slots));
-
-            if (lastKarakter) {
-              setKarakter(lastKarakter);
-              setUndoStack(lastUndo);
+            const restored = restoreBackup(selected);
+            if (restored) {
+              setKarakter(restored.karakter);
+              setUndoStack(restored.undo as typeof undoStack);
               setTestMode(false);
               setIsDirty(true);
-              localStorage.setItem('szilank_active', lastKarakter.uid);
             }
-
             set('backupRestore', null);
             set('toast', { msg: `${selected.length} karakter betöltve`, type: 'success' });
           }}

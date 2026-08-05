@@ -3,16 +3,7 @@ import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION } from '../engine/types';
 import { validateKarakter } from '../engine/validate';
 import { sanitizeUndo } from '../hooks/useUndo';
-
-interface SlotEntry {
-  uid: string;
-  id_leíró: string;
-  név: string;
-  becenév?: string;
-  tsz: number;
-  mentés_dátum: string;
-  jk?: boolean;
-}
+import { readSlots, type SlotEntry } from '../hooks/slot-utils';
 
 function truncSlotName(név: string | undefined): string {
   const n = név || 'Névtelen';
@@ -56,8 +47,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
     return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
   }, [savingId, onClose]);
 
-  let slots: SlotEntry[] = [];
-  try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+  const slots: SlotEntry[] = readSlots();
   slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
 
   function loadSlot(uid: string) {

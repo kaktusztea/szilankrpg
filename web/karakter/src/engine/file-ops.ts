@@ -3,6 +3,7 @@ import type { GameData } from './data-loader';
 import { DEFAULT_SESSION } from './types';
 import { validateKarakter, validateKarakterData } from './validate';
 import { sanitizeUndo } from '../hooks/useUndo';
+import { readSlots } from '../hooks/slot-utils';
 
 function generateUid(): string {
   if (typeof crypto !== 'undefined' && crypto.randomUUID) return crypto.randomUUID();
@@ -16,8 +17,7 @@ function generateIdLeíró(név: string, tsz: number): string {
 
 export function duplicateKarakter(karakter: Karakter): Karakter {
   const newUid = generateUid();
-  let slotNames: string[] = [];
-  try { slotNames = (JSON.parse(localStorage.getItem('szilank_slots') || '[]') as { név: string }[]).map(s => s.név); } catch { /* */ }
+  const slotNames = readSlots().map(s => s.név);
   const newNév = nextDuplicateName(karakter.név || 'Névtelen', slotNames);
   return { ...structuredClone(karakter), uid: newUid, név: newNév, id_leíró: generateIdLeíró(newNév, karakter.tsz) };
 }
@@ -54,8 +54,7 @@ export function generateSaveFile(karakter: Karakter, undoStack: any[], mode: 'si
     const namePart = playerAscii ? `${charAscii || 'karakter'}__${playerAscii}` : (charAscii || 'karakter');
     filename = `${namePart}_${karakter.tsz}tsz.json`;
   } else {
-    let slots: { uid: string }[] = [];
-    try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+    const slots = readSlots();
     const karakterek = slots.map(s => {
       try { return JSON.parse(localStorage.getItem(`szilank_char_${s.uid}`) || 'null'); } catch { return null; }
     }).filter(Boolean);

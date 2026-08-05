@@ -5,6 +5,7 @@ import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION } from '../engine/types';
 import { validateKarakter, validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
+import { writeSlots } from './slot-utils';
 
 /**
  * Loads GameData, validates emptyKarakter, migrates legacy localStorage,
@@ -38,7 +39,7 @@ export function useGameDataLoader() {
             const uid = parsed.uid || ((parsed as any).id) || generateUid();
             const migrated = { ...parsed, uid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), jk: parsed.jk ?? true, session: { ...DEFAULT_SESSION, ...parsed.session } };
             localStorage.setItem(`szilank_char_${uid}`, JSON.stringify(migrated));
-            localStorage.setItem('szilank_slots', JSON.stringify([{ uid, id_leíró: migrated.id_leíró, név: migrated.név, becenév: migrated.becenév, tsz: migrated.tsz, mentés_dátum: new Date().toISOString(), jk: migrated.jk }]));
+            writeSlots([{ uid, id_leíró: migrated.id_leíró, név: migrated.név, becenév: migrated.becenév, tsz: migrated.tsz, mentés_dátum: new Date().toISOString(), jk: migrated.jk }]);
             localStorage.setItem('szilank_active', uid);
             localStorage.removeItem('szilank_karakter');
             localStorage.removeItem('szilank_undo');

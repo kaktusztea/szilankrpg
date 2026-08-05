@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import type { Karakter } from '../engine/types';
 import type { UndoEntry } from './useUndo';
 import { generateIdLeíró } from '../engine/file-ops';
+import { readSlots, writeSlots } from './slot-utils';
 
 /**
  * Persists karakter + undoStack to localStorage whenever they change.
@@ -30,12 +31,11 @@ export function useAutoSave(
       localStorage.setItem(`szilank_char_${karakter.uid}`, JSON.stringify(toSave));
       localStorage.setItem('szilank_active', karakter.uid);
 
-      let slots: { uid: string; id_leíró: string; név: string; becenév: string; tsz: number; mentés_dátum: string; jk: boolean }[] = [];
-      try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { slots = []; }
+      const slots = readSlots();
       const existing = slots.findIndex(s => s.uid === karakter.uid);
       const entry = { uid: karakter.uid, id_leíró: karakter.id_leíró, név: karakter.név, becenév: karakter.becenév, tsz: karakter.tsz, mentés_dátum: new Date().toISOString(), jk: karakter.jk ?? true };
       if (existing >= 0) slots[existing] = entry; else slots.unshift(entry);
-      localStorage.setItem('szilank_slots', JSON.stringify(slots));
+      writeSlots(slots);
     } catch { /* quota exceeded */ }
   }, [karakter, undoStack, isDirty, testMode]);
 }

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { OverlayPortal } from './OverlayPortal';
 import { MAX_KARAKTER_DB } from '../../ui-constants';
+import { readSlots } from '../../hooks/slot-utils';
 import type { Karakter } from '../../engine/types';
 
 interface BackupEntry {
@@ -17,10 +18,8 @@ interface Props {
 
 /** Returns a Set of uid-s that already exist in the slot list, and the current slot count. */
 function getSlotInfo(): { existingUids: Set<string>; slotCount: number } {
-  try {
-    const slots: { uid: string }[] = JSON.parse(localStorage.getItem('szilank_slots') || '[]');
-    return { existingUids: new Set(slots.map(s => s.uid)), slotCount: slots.length };
-  } catch { return { existingUids: new Set(), slotCount: 0 }; }
+  const slots = readSlots();
+  return { existingUids: new Set(slots.map(s => s.uid)), slotCount: slots.length };
 }
 
 function formatDátum(iso: string): string {

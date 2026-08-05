@@ -7,7 +7,7 @@ import { encodeKarakterUrl } from '../engine/url-share';
 import type { OverlayState } from '../components/AppOverlays';
 import type { UndoEntry } from './useUndo';
 import { sanitizeUndo } from './useUndo';
-import { isSlotFull } from './slot-utils';
+import { isSlotFull, readSlots, writeSlots } from './slot-utils';
 
 interface Deps {
   data: GameData | null;
@@ -88,10 +88,8 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
 
   function deleteSlot(uid: string) {
     localStorage.removeItem(`szilank_char_${uid}`);
-    let sl: { uid: string; id_leíró: string; név: string; tsz: number; mentés_dátum: string }[] = [];
-    try { sl = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
-    sl = sl.filter(x => x.uid !== uid);
-    localStorage.setItem('szilank_slots', JSON.stringify(sl));
+    const sl = readSlots().filter(x => x.uid !== uid);
+    writeSlots(sl);
     if (karakter?.uid === uid) {
       if (sl.length > 0) {
         const next = localStorage.getItem(`szilank_char_${sl[0].uid}`);
@@ -116,8 +114,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     }
 
     // Single character load — check uid collision
-    let slots: { uid: string; név: string; tsz: number; mentés_dátum: string }[] = [];
-    try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
+    const slots = readSlots();
     const match = slots.find(s => s.uid === result.karakter.uid);
     if (match) {
       // uid already exists → ask for confirmation
