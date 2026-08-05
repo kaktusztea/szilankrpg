@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react';
 import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION } from '../engine/types';
 import { validateKarakter } from '../engine/validate';
@@ -37,6 +38,19 @@ interface Props {
 }
 
 export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onShareFile, onDuplicate, onFileLoad, onNew, onSave, newDisabled, onTest, onFullscreenHint, onClose }: Props) {
+  // Full backup: show a spinner in place of 📦 while the (Windows) native save
+  // dialog is being prepared. The dialog stealing focus fires window 'blur',
+  // which is our cue that the dialog appeared → close the menu. Fallback timeout
+  // in case blur never fires (e.g. mobile in-app overlay path).
+  const [saving, setSaving] = useState(false);
+  useEffect(() => {
+    if (!saving) return;
+    const finish = () => onClose();
+    window.addEventListener('blur', finish, { once: true });
+    const t = setTimeout(finish, 8000);
+    return () => { window.removeEventListener('blur', finish); clearTimeout(t); };
+  }, [saving, onClose]);
+
   let slots: SlotEntry[] = [];
   try { slots = JSON.parse(localStorage.getItem('szilank_slots') || '[]'); } catch { /* */ }
   slots.sort((a, b) => b.mentés_dátum.localeCompare(a.mentés_dátum));
@@ -57,7 +71,13 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
       <div className="slot-actions slot-actions-top">
         <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Új karakter" onClick={() => { if (!newDisabled) onNew(); }}>📄</button>
         <button className="menu-item slot-file-btn" title="Betöltés fájlból" onClick={onFileLoad}>📁</button>
-        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled} title="Összes karakter mentése" onClick={() => { if (!newDisabled) onSave(); }}>📦</button>
+        <button className={`menu-item slot-file-btn${newDisabled ? ' is-disabled' : ''}`} aria-disabled={newDisabled || saving} title="Összes karakter mentése"
+          onClick={() => {
+            if (newDisabled || saving) return;
+            setSaving(true);
+            // Let the spinner paint before the (possibly blocking) save generation + dialog.
+            requestAnimationFrame(() => requestAnimationFrame(() => onSave()));
+          }}>{saving ? <span className="slot-btn-spinner" /> : '📦'}</button>
       </div>
       <div className="slot-list">
         {slots.map(s => (

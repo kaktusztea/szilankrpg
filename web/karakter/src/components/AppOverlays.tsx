@@ -119,7 +119,7 @@ export function AppOverlays({
           onDuplicate={duplicateSlot}
           onFileLoad={() => { set('showSlotList', false); loadKarakter(); }}
           onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
-          onSave={() => { set('showSlotList', false); handleGenerateSave('backup'); }}
+          onSave={() => { handleGenerateSave('backup'); }}
           newDisabled={!isDirty}
           onTest={handleSlotTest}
           onFullscreenHint={() => { set('showSlotList', false); set('showFullscreenHint', true); }}

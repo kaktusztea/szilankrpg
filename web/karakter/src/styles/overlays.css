@@ -114,6 +114,8 @@
 .slot-actions-top .slot-file-btn { font-size: 18px; padding: 7px 11px; }
 .slot-actions-top .slot-file-btn.is-disabled { opacity: 0.4; cursor: default; }
 .slot-file-btn { flex: 1; font-size: 13px; }
+.slot-btn-spinner { display: inline-block; width: 16px; height: 16px; border: 2px solid var(--border-input); border-top-color: var(--text); border-radius: 50%; animation: slot-spin 0.7s linear infinite; vertical-align: middle; }
+@keyframes slot-spin { to { transform: rotate(360deg); } }
 
 /* --- 5. Undo --- */
 .undo-list { display: flex; flex-direction: column; gap: 4px; max-height: 300px; overflow-y: auto; }
