@@ -104,15 +104,21 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
       </div>
       <div className="slot-list">
         {slots.length === 0 && <span className="slot-empty">Nincs mentett karakter</span>}
-        {[
-          { title: 'Játszó karakterek (JK)', rows: slots.filter(s => s.jk !== false) },
-          { title: 'Nem játszó karakterek (NJK)', rows: slots.filter(s => s.jk === false) },
-        ].map(section => section.rows.length > 0 && (
-          <div key={section.title} className="slot-section">
-            <div className="slot-section-title">{section.title}</div>
-            {section.rows.map(s => renderSlot(s))}
-          </div>
-        ))}
+        {(() => {
+          const jkRows = slots.filter(s => s.jk !== false);
+          const njkRows = slots.filter(s => s.jk === false);
+          // Szekció-fejlécek csak akkor, ha van legalább 1 NJK; különben sima lista.
+          if (njkRows.length === 0) return jkRows.map(s => renderSlot(s));
+          return [
+            { title: 'Játékos karakterek', rows: jkRows },
+            { title: 'Nem Játékos karakterek', rows: njkRows },
+          ].map(section => section.rows.length > 0 && (
+            <div key={section.title} className="slot-section">
+              <div className="slot-section-title">{section.title}</div>
+              {section.rows.map(s => renderSlot(s))}
+            </div>
+          ));
+        })()}
       </div>
       <div className="menu-footer">
         <button className="menu-test-chip" onClick={onTest}>T</button>
