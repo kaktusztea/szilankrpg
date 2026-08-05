@@ -365,6 +365,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
   - Pajzs fegyver sor: ha van pajzs méret → megjelenik a fegyvertáblában (kategória: "pajzs", Közelharc harcmodor). Aktív ha idx=-2 kiválasztva.
   - Tám cella kattintható (Game mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
+  - **Támadó dobás** (Játék mód): a `TÉ` fejléc (kattintható gomb) ÉS az éppen aktív fegyver sorának TÉ cellája (pontozott aláhúzás) rányomásra **Támadó dobás** popupot nyit — mindkettő ugyanazt, az aktív fegyver aktuális TÉ-jét dobja. Viselkedés azonos a Kezdeményezéssel (KÉ), csak TÉ + k20: nagy eredmény szám, „TÉ (X) + k20 (Y)" részlet, mellé katt / Escape bezár → eredmény push a session `té_dobások` FIFO tömbbe (max 3, legújabb elöl). Közös popup komponens: `DobasPopup`.
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
   - TÉ értékek: dinamikusan csökkennek sebesülés kategória TÉ levonással
   - VÉ értékek: dinamikusan csökkennek VÉ csökkenés értékkel

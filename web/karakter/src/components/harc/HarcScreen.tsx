@@ -12,7 +12,7 @@ import { HarcFegyverSection } from './HarcFegyverSection';
 import { HarcFegyverfogas } from './HarcFegyverfogas';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
-import { KeDobas, pushKéDobás } from './KeDobas';
+import { DobasPopup, pushDobás } from './DobasPopup';
 import './HarcScreen.css';
 
 export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: HarcBaseProps) {
@@ -23,6 +23,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number } | null>(null);
   const [sebCount, setSebCount] = useState(0);
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
+  const [téDobás, setTéDobás] = useState<{ alap: number; eredmény: number } | null>(null);
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
 
   const hc = useHarcComputed(data, karakter, session);
@@ -56,7 +57,22 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     setKéDobásEredmény(null);
     setSession(prev => ({
       ...prev,
-      ké_dobások: pushKéDobás(prev.ké_dobások ?? [], eredmény),
+      ké_dobások: pushDobás(prev.ké_dobások ?? [], eredmény),
+    }));
+  }, [setSession]);
+
+  // Támadó dobás handler (TÉ + k20). Az alapértéket (aktív fegyver TÉ) a dobás
+  // pillanatában rögzítjük, mert fegyverváltással változhat.
+  const handleTéDobás = useCallback((té: number) => {
+    const k20 = Math.floor(Math.random() * 20) + 1;
+    setTéDobás({ alap: té, eredmény: té + k20 });
+  }, []);
+
+  const handleTéDobásClose = useCallback((eredmény: number) => {
+    setTéDobás(null);
+    setSession(prev => ({
+      ...prev,
+      té_dobások: pushDobás(prev.té_dobások ?? [], eredmény),
     }));
   }, [setSession]);
 
@@ -143,6 +159,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         belharciAktív={hc.belharciAktív}
         véFlash={véFlash}
         onTámInfoClick={setTámInfo}
+        onTéDobás={handleTéDobás}
       />
 
       <div className="harc-section">
@@ -183,7 +200,11 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       />
 
       {kéDobásEredmény !== null && (
-        <KeDobas ké={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
+        <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
+      )}
+
+      {téDobás !== null && (
+        <DobasPopup cím="Támadó dobás" alapLabel="TÉ" alap={téDobás.alap} eredmény={téDobás.eredmény} onClose={handleTéDobásClose} />
       )}
 
       {showFegyverfogás && (

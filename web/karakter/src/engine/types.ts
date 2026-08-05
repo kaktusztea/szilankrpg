@@ -103,6 +103,7 @@ export interface Session {
   fegyverfogás: 'egyfegyveres' | 'fegyver_pajzs' | 'fegyver_hárító' | 'kétkezes';
   aktív_távfegyver_index: number;
   ké_dobások: number[];
+  té_dobások: number[];
 }
 
 export interface NarratívMódosító {
@@ -166,6 +167,7 @@ export const DEFAULT_SESSION: Session = {
   fegyverfogás: 'egyfegyveres',
   aktív_távfegyver_index: -1,
   ké_dobások: [],
+  té_dobások: [],
 };
 
 // ============================================================

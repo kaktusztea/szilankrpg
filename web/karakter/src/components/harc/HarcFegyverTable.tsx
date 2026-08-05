@@ -19,12 +19,13 @@ interface HarcFegyverTableProps {
   belharciAktív: boolean;
   véFlash: '' | 'down' | 'up';
   onTámInfoClick: (info: { név: string; sebesség: number; harckeret: number }) => void;
+  onTéDobás?: (té: number) => void;
 }
 
 export function HarcFegyverTable({
   karakter, session, data, fegyverResults, kétkezesResult, fogásResult,
   pajzsVÉ, pajzsFegyverNév, taktikaMods, fortelyMods,
-  téLevonás, belharciAktív, véFlash, onTámInfoClick,
+  téLevonás, belharciAktív, véFlash, onTámInfoClick, onTéDobás,
 }: HarcFegyverTableProps) {
   const { konstansok } = data;
   const többTámTÉ = konstansok.több_támadás_TÉ_levonás;
@@ -49,13 +50,16 @@ export function HarcFegyverTable({
     const ph = r.pengehossz + (fortelyMods['pengehossz'] ?? 0);
     const pengeWarning = belharciAktív && r.pengehossz > 0;
     const név = displayNév ?? r.fegyver_név;
+    // The active row is the overlay row (kétkezes/fogás) or the non-dimmed weapon row.
+    const isActive = isOverlay || !dimmed;
 
     return (
       <tr key={név + (isOverlay ? '-overlay' : '')}
         className={isOverlay ? 'harc-fegyver-active-row' : dimmed ? 'harc-row-dimmed' : undefined}>
         <td className={pengeWarning ? 'harc-belharc-warn' : undefined}>{név}</td>
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
-        <td>{té}</td>
+        <td className={isActive && onTéDobás ? 'harc-te-clickable' : undefined}
+          onClick={isActive && onTéDobás ? () => onTéDobás(té) : undefined}>{té}</td>
         <td className={véFlashClass}>{vé}</td>
         <td>{sp} {r.sebzésmód}</td>
         <td className={phBonusClass}>{showPh2 != null ? `${ph}(${showPh2 + (fortelyMods['pengehossz'] ?? 0)})` : ph}</td>
@@ -81,12 +85,36 @@ export function HarcFegyverTable({
     return null;
   }
 
+  // Active weapon's displayed TÉ — mirrors the overlay/active-row selection in
+  // renderOverlayRow + the tbody map. Both the "TÉ" header button and the active
+  // row's TÉ cell roll this same value.
+  function getActiveRowTÉ(): number | null {
+    if (kétkezesResult) {
+      return computeTÉ(kétkezesResult.TÉ, téLevonás, taktikaMods['TÉ'], 0, kétkezesResult.támadások, többTámTÉ);
+    }
+    if (fogásResult) {
+      const r = fegyverResults.find(fr => fr.fegyver_név === getAktívFegyverNév()) ?? fegyverResults[0];
+      if (!r) return null;
+      return computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], fogásResult.TÉ_büntetés, r.támadások, többTámTÉ);
+    }
+    const r = fegyverResults.find(fr => fr.fegyver_név === getAktívFegyverNév());
+    if (!r) return null;
+    return computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], 0, r.támadások, többTámTÉ);
+  }
+  const aktívTÉ = getActiveRowTÉ();
+
   return (
     <table className="harc-table">
       <thead>
         <tr>
           <th>{belharciAktív ? <span className="harc-belharc-label">BELHARC</span> : 'Fegyver'}</th>
-          <th>Tám</th><th className="te-col">TÉ</th><th className="ve-col">VÉ</th><th>SP</th><th>Ph</th>
+          <th>Tám</th>
+          <th className="te-col">
+            {onTéDobás && aktívTÉ != null
+              ? <button type="button" className="harc-te-dobas-btn" onClick={() => onTéDobás(aktívTÉ)}>TÉ</button>
+              : 'TÉ'}
+          </th>
+          <th className="ve-col">VÉ</th><th>SP</th><th>Ph</th>
         </tr>
       </thead>
       <tbody>
