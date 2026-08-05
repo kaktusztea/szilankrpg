@@ -12,7 +12,8 @@ többszörösség:
   spec_lista: []
 csoport: "szabad"
 leírások:
-  - text: "Egy-egy, konkrét vadállat idomítása - fajonként külön kell felvenned. Minden bestia is ide tartozik, amely vadállatna..."
+  - text: "Egy-egy, konkrét vadállat idomítása - fajonként külön kell felvenned. Minden bestia is ide tartozik, amely vadállatnak minősül."
+  - text: "A lovak és egyéb, akár légi hátasok betanítása is ide tartozik."
 megjegyzések:
   - text: ""
 

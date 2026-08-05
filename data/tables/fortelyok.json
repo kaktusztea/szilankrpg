@@ -2726,7 +2726,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Testközelben érzed igazában elemedben magad. Sikeres Belharcba kerülés maanőver esetén Belharci szituációba kkerülsz és harcértékeidre - csak Közelharc harcmodor esetén - a lent leírt pluszok járnak.",
+    "leírás": "Testközelben érzed igazában elemedben magad. Sikeres Belharcba kerülés manőver esetén Belharci szituációba kkerülsz és harcértékeidre - csak Közelharc harcmodor esetén - a lent leírt pluszok járnak.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7218,7 +7218,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Gondosan begyakorolt trükkök, kellékek segítenek a tátottszájú nézőközönség becsapásában. Szórakoztatás, vagy sötéteb...",
+    "leírás": "Gondosan begyakorolt trükkök, kellékek segítenek a tátottszájú nézőközönség becsapásában. Szórakoztatás, vagy sötétebb szándékok is vezethetnek.",
     "kiterjeszti_normál": [
       "Befolyásolás",
       "Előadóművészet",
@@ -7281,7 +7281,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz vászonra színes műveket. Vagy passzív tudásként ...",
+    "leírás": "Jól bánsz az ecsettel, kedvtelésből, vagy önkifejezés céljából vetsz vászonra színes műveket. Vagy passzív tudásként ismered a nagy festők műveit, technikáját, műveinek szellemiségét.",
     "kiterjeszti_normál": [
       "Értékbecslés",
       "Képzőművészet",
@@ -7373,7 +7373,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "iskola",
     "többszörös_lista": [],
-    "leírás": "Speciális harci iskola tagja vagy, ahol egyes csoportos ismeretek tanulására van lehetőséged, illetve egyedi szociáli...",
+    "leírás": "Speciális harci iskola tagja vagy, ahol egyes csoportos ismeretek tanulására van lehetőséged, illetve egyedi szociális, narratív előnyöket ad. Külön kell felvenni minden egyes harci iskolához, melyet vagy a világleírásból vettél, vagy te találtad ki - esetleg a KM segítségével.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
@@ -7523,7 +7523,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "- [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): Versek, novellák, regények, históriák, színdarabok í...",
+    "leírás": "- Előadóművészet: Versek, novellák, regények, históriák, színdarabok írása. - Művészetismeret: Ismered adott Kultúrkör neves irodalmárait, íróit, költőit és stílusukat, műveiket.",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"
@@ -7554,7 +7554,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "- [Lexikum](../kepzettsegek.szekunder/lexikum.md): 'Az íly gyalázatos tett büntetése Shadon székesfővárosában 6 holdé...",
+    "leírás": "",
     "kiterjeszti_normál": [
       "Lexikum",
       "Nyomozás"
@@ -7826,7 +7826,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Kövekből és égetett téglákból erős, tartós épületszerkezeteket készítesz, például falakat, boltíveket, tornyokat és t...",
+    "leírás": "Kövekből és égetett téglákból erős, tartós épületszerkezeteket készítesz, például falakat, boltíveket, tornyokat és tervek alapján akár várakat is. Ácsolt állványzatokat húzol fel, különféle emelőszerkezeteket használsz a nehéz kövek helyre emeléséhez.",
     "kiterjeszti_normál": [
       "Kézművesség"
     ],
@@ -7856,7 +7856,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Ismered a kötélverés mesterségét. Különböző forrásaid lehetnek a kötél alapanyagai: kender, papírusz, datolyapálma, d...",
+    "leírás": "Ismered a kötélverés mesterségét. Különböző forrásaid lehetnek a kötél alapanyagai: kender, papírusz, datolyapálma, de akár, bőr és egyéb növényi rostok is.",
     "kiterjeszti_normál": [
       "Kézművesség"
     ],
@@ -7916,7 +7916,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások kerülnek...",
+    "leírás": "Fémből készítesz különféle kisebb szerkezeteket: zárak, lakatok, kulcsok, valamint épület- és bútorvasalások kerülnek ki kezed alól. Magasabb szinten egyéb vasból és acélból készült szerkezetek, például ajtók, ablakok, korlátok, lépcsők, és más fémes tartószerkezetek készítése, javítása is ide tartozik. 🔆 A zárak nyitása a Zárnyitás képzettség alá tartozik! Ez a fortély nem ad bónuszt az ilyen jellegű próbákra.",
     "kiterjeszti_normál": [
       "Kézművesség"
     ],
@@ -7976,7 +7976,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Az adott uralkodó nevében és pecsétjével fémlemezekből kalapáccsal versz ki pénzérméket. A pénz megfelelő súlyának, m...",
+    "leírás": "Az adott uralkodó nevében és pecsétjével fémlemezekből kalapáccsal versz ki pénzérméket. A pénz megfelelő súlyának, méretének és mintázatának biztosítása is feladatod.",
     "kiterjeszti_normál": [
       "Kézművesség"
     ],
@@ -8066,7 +8066,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Főleg juhbőrök tisztításával, kikészítésével és feldolgozásával foglalkozol. Megtisztítod a lenyúzott bőrt, eltávolít...",
+    "leírás": "Főleg juhbőrök tisztításával, kikészítésével és feldolgozásával foglalkozol. Megtisztítod a lenyúzott bőrt, eltávolítod a húst és hártyákat, puhítod, sózod és fested az alapanyagot. A fenti készítményből szabsz és varrsz ruhákat, bundákat, ködmönöket. Prémes bundák, drága szőrmekülönlegességek kerülnek ki kezeid alól.",
     "kiterjeszti_normál": [
       "Kézművesség"
     ],
@@ -8096,7 +8096,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Magában foglalja a kihallgatási technikákat (nem kínzást!), a beszédtechnikát és jól bevált keresztkérdéseket, amelly...",
+    "leírás": "Magában foglalja a kihallgatási technikákat (nem kínzást!), a beszédtechnikát és jól bevált keresztkérdéseket, amellyel az ellentmondások felfedhetők. A fentieken kívül a kihallgatott érzelmi világát is hangolja az alkalmazó, kooperatív viselkedésre sarkallva őt.",
     "kiterjeszti_normál": [
       "Nyomozás",
       "Emberismeret"
@@ -8186,7 +8186,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Érthetetlen szimbólumokkal teli fóliásokat bújsz, a rejtélyek megfejtése legfőbb szenvedélyed. Ha titkosírás megfejté...",
+    "leírás": "Érthetetlen szimbólumokkal teli fóliásokat bújsz, a rejtélyek megfejtése legfőbb szenvedélyed. Ha titkosírás megfejtésére kerül sor, ezzel a fortéllyal büntetés nélkül dobhatsz Kvantikum képzettségpróbát.",
     "kiterjeszti_normál": [
       "Kvantikum",
       "Nyomozás"
@@ -8248,7 +8248,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "- [Etikett](../kepzettsegek.szekunder/etikett.md): Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) egyedi ...",
+    "leírás": "- Etikett: Az ismert Kultúrkörök egyedi szertartásait Etikett képzettséged szintjének megfelelően el is tudod végezni, illetve felismered az említett Kultúrkörökhöz tartozó szertartásokat. Példa: teaszertartás. A szakrális szertartások nem tartoznak ide.",
     "kiterjeszti_normál": [
       "Etikett"
     ],
@@ -8278,7 +8278,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a színházi világot. Bábszínház előadások ismeret...",
+    "leírás": "Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a színházi világot. Bábszínház előadások ismerete, árnyjátékok ismerete is ide tartozik. 🔆 Nem használható hazudozásra, mások becsapására. Arra lásd a Befolyásolás képzettséget.",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"
@@ -8341,7 +8341,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Oh, az a birka nép! Mind a lábad előtt hever, mikor súlyos gondokkal tépelődve, mégis erős akarattal arcodon kilépsz ...",
+    "leírás": "Oh, az a birka nép! Mind a lábad előtt hever, mikor súlyos gondokkal tépelődve, mégis erős akarattal arcodon kilépsz eléjük a napfényre és lángra gyújtod lelküket...",
     "kiterjeszti_normál": [
       "Befolyásolás",
       "Emberismeret"
@@ -8676,7 +8676,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Az ismert [Kultúrkörök](../fortelyok.kiemelt/kulturkor.md) táncai Előadóművészet képzettséged szintjének megfelel...",
+    "leírás": "Az ismert Kultúrkörök táncai Előadóművészet képzettséged szintjének megfelelően járni is tudod.",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"
@@ -8707,7 +8707,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "stílus",
     "többszörös_lista": [],
-    "leírás": "Jellemzően [Kiérdemelt](../042_szabad_fortelyok.md#%EF%B8%8F-ki%C3%A9rdemelt) szabad fortély.",
+    "leírás": "Jellemzően Kiérdemelt szabad fortély. Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális táncot takar, mint például a Tor0ni Vérnász. Magától értetődik, hogy speciális/belső táncstílus tanulásához kapcsolódó Kultúrkör fortély is szükségeltetik (lásd követelmények).",
     "kiterjeszti_normál": [
       "Etikett",
       "Előadóművészet",
@@ -8803,7 +8803,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Egy-egy, konkrét vadállat idomítása - fajonként külön kell felvenned. Minden bestia is ide tartozik, amely vadállatna...",
+    "leírás": "Egy-egy, konkrét vadállat idomítása - fajonként külön kell felvenned. Minden bestia is ide tartozik, amely vadállatnak minősül. A lovak és egyéb, akár légi hátasok betanítása is ide tartozik.",
     "kiterjeszti_normál": [
       "Befolyásolás"
     ],
@@ -8833,7 +8833,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Képes vagy fúvós hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintj...",
+    "leírás": "Képes vagy fúvós hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"
@@ -8864,7 +8864,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Képes vagy húros hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintj...",
+    "leírás": "Képes vagy húros hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"
@@ -8895,7 +8895,7 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Képes vagy ütős hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjé...",
+    "leírás": "Képes vagy ütős hangszereket megszólaltatni. Az ismert Kultúrkörök zenéit Előadóművészet képzettséged szintjének megfelelően elő is tudod adni.",
     "kiterjeszti_normál": [
       "Előadóművészet",
       "Művészetismeret"

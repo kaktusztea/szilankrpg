@@ -12,7 +12,8 @@ többszörösség:
   spec_lista: []
 csoport: "szabad"
 leírások:
-  - text: "Jellemzően [Kiérdemelt](../042_szabad_fortelyok.md#%EF%B8%8F-ki%C3%A9rdemelt) szabad fortély."
+  - text: "Jellemzően Kiérdemelt szabad fortély."
+  - text: "Többször felvehető. Ez általában egyedi, titkos, vagy nagyon speciális táncot takar, mint például a **Tor0ni Vérnász**. Magától értetődik, hogy speciális/belső táncstílus tanulásához kapcsolódó Kultúrkör fortély is szükségeltetik (lásd követelmények)."
 megjegyzések:
   - text: ""
 
