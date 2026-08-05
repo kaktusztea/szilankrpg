@@ -2,7 +2,7 @@ import type { HarcBaseProps } from './types';
 import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { lookupFegyver } from '../../engine/utils';
-import { buildFegyverOpciók } from './fegyver-helpers';
+import { buildFegyverOpciók, kétkezesLehetséges } from './fegyver-helpers';
 import { UgyesebbKezSelect } from './UgyesebbKezSelect';
 import { GyengebbKezSelect } from './GyengebbKezSelect';
 import { SessionToggles } from './SessionToggles';
@@ -26,8 +26,7 @@ function hasMásikFegyverfogás(data: GameData, karakter: Karakter, session: Ses
         && karakter.fortélyok.some(f => f.név === 'Hárítófegyver használat' && f.fok > 0);
     }
     if (opt.id === 'kétkezes') {
-      if (kétkezes || karakter.fegyverek.length < 2) return false;
-      return karakter.fegyverek.some((fp, i) => i !== jobbIdx && lookupFegyver(data.fegyverek, fp.alap)?.Hárító !== '1');
+      return kétkezesLehetséges(data, karakter, jobbIdx);
     }
     return true;
   });

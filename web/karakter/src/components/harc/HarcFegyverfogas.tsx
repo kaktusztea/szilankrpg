@@ -2,6 +2,7 @@ import type { HarcBaseProps } from './types';
 import type { Session } from '../../engine/types';
 import { lookupFegyver } from '../../engine/utils';
 import { PickerOverlay } from '../aktiv/PickerOverlay';
+import { kétkezesLehetséges } from './fegyver-helpers';
 
 interface Props extends Pick<HarcBaseProps, 'data' | 'karakter' | 'session'> {
   onSelect: (patch: Partial<Session>) => void;
@@ -23,13 +24,7 @@ export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }:
       if (!hasHáritó || !hasFortély) return true;
     }
     if (id === 'kétkezes') {
-      if (kétkezesFegyver || karakter.fegyverek.length < 2) return true;
-      if (!jobbFp || jobbFp.alap.toLowerCase() === 'puszta kéz') return true;
-      const nemHáritó = karakter.fegyverek.filter((fp, i) => {
-        if (i === jobbIdx) return false;
-        return lookupFegyver(data.fegyverek, fp.alap)?.Hárító !== '1';
-      });
-      if (nemHáritó.length === 0) return true;
+      if (!kétkezesLehetséges(data, karakter, jobbIdx)) return true;
     }
     for (const ah of session.aktív_helyzetek) {
       const ahDef = data.harciHelyzetek.find(d => d.név === ah);
@@ -46,10 +41,13 @@ export function HarcFegyverfogas({ data, karakter, session, onSelect, onClose }:
     if (id === 'kétkezes') {
       patch.kétkezes_harc = true; patch.aktív_pajzs = false;
       if (session.aktív_fegyver_bal_index === -1) {
-        const eligible = karakter.fegyverek.map((fp, i) => ({ i, penge: parseFloat(lookupFegyver(data.fegyverek, fp.alap)?.Pengehossz ?? '99') || 99 }))
-          .filter(e => e.i !== session.aktív_fegyver_index)
+        const cand = karakter.fegyverek
+          .map((fp, i) => ({ i, alap: fp.alap, penge: parseFloat(lookupFegyver(data.fegyverek, fp.alap)?.Pengehossz ?? '99') || 99 }))
+          .filter(e => e.alap.toLowerCase() !== 'puszta kéz' && lookupFegyver(data.fegyverek, e.alap)?.Hárító !== '1')
           .sort((a, b) => a.penge - b.penge);
-        if (eligible.length > 0) patch.aktív_fegyver_bal_index = eligible[0].i;
+        // Lehetőleg másik fegyver a gyengébb kézbe; ha nincs, ugyanaz (pl. 2 db tőr).
+        const pick = cand.find(e => e.i !== session.aktív_fegyver_index) ?? cand[0];
+        if (pick) patch.aktív_fegyver_bal_index = pick.i;
       }
     }
     return patch;
