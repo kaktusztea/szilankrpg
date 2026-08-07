@@ -8,7 +8,7 @@
   "játékos": "Benedek",
   "mentés_dátum": "2026-06-29 13:55",
   "tsz": 10,
-  "leírás": "Toroni zsoldos lovag",
+  "leírás": "Toroni paplovag, dezertált zsoldos",
   "kor": 32,
   "anyanyelv": "Toroni",
   "vallás": "",
@@ -470,10 +470,10 @@
   },
   "jegyzetek": "Első jegyzet\nMásodik jegyzet",
   "előtörténet": {
-    "származás_helye": "Tor, Toron",
+    "származás_helye": "Toron, Shulur",
     "szociális_érzék": "Határozott fellépésű, szókimondó",
     "külső": "Magas, szőke, kék szemű lovag, félhosszú hajjal",
-    "előtörténet": "Toroni zsoldos lovag, aki fiatalon csatlakozott a Tor városát védő lovagrendhez. Számos hadjáratban vett részt, mielőtt saját útjára indult volna."
+    "előtörténet": "Toroni paplovag, aki fiatalon csatlakozott a shuluri hadsereghez. A legutóbbi Zászlóháborúban is részt vett, mielőtt dezertált és zsoldosnak állt."
   },
   "napló": [
     {
