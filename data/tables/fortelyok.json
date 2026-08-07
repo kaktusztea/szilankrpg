@@ -518,14 +518,14 @@
     "ingyenes_perszint": 0,
     "többszörös_típus": "",
     "többszörös_lista": [],
-    "leírás": "Emberi hangok megtévesztő utánzása.",
+    "leírás": "Személyek és állatok hangjának megtévesztő utánzása.",
     "kiterjeszti_normál": [],
     "kiterjeszti_erős": [],
     "fokok": [
       {
         "fok": 1,
         "hatás": [
-          "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott hangot."
+          "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott személy vagy állat hangját."
         ],
         "követelmény": [],
         "követelmények": [],
@@ -534,7 +534,7 @@
       {
         "fok": 2,
         "hatás": [
-          "Csendes körülmények között is megtévesztően utánzol."
+          "Csendes körülmények között is megtévesztően utánzol egy korábban hallott személy vagy állat hangját."
         ],
         "követelmény": [
           "Nyelvismeret - 1.fok"
