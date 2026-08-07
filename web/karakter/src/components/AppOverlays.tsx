@@ -110,6 +110,10 @@ export function AppOverlays({
       loadTestKarakter();
       set('showSlotList', false);
       set('toast', { msg: 'Teszt karakter alapállapotba állítva', type: 'success' });
+    } else if (!isDirty) {
+      // Untouched empty karakter → load without confirmation
+      set('showSlotList', false);
+      loadTestKarakter();
     } else {
       set('showSlotList', false);
       set('showTestConfirm', true);
