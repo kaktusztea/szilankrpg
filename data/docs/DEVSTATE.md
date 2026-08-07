@@ -53,6 +53,8 @@ TODO:
 ### Karakter séma (v2)
 - Egyetlen JSON (`karakter + session`), NEM tartalmaz számított értékeket
 - `session`: runtime harc state (vé_csökkenés, aktív_taktikák, fegyverfogás, stb.)
+- `előtörténet`: biográfiai mezők (`{ származás_helye, szociális_érzék, külső, előtörténet }`) — Előtörténet overlay (🪪)
+- `checkpoints[]`: kiemelt karakter verziók (snapshot-alapú, → engine_spec §31b)
 - Multi-slot localStorage: `szilank_char_{uid}`, max 10 slot
 - Teszt karakter: `data/karakter/test_karakter2.json` (single source of truth)
 

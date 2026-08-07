@@ -171,7 +171,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - Karakterek hub overlay (🧑): az összes karakter-kezelés egy helyen. Felépítés fentről lefelé:
   - Fejléc: „Karakterek"
   - **Felső akció sor** (`.slot-actions-top`, ikon-only, `title` tooltip): `📄` Új karakter (disabled ha `!isDirty`) · `📁` Betöltés fájlból (import: single + backup restore) · `📦` Backup (összes karakter mentése — disabled ha `!isDirty`)
-  - **Slot kártyák** (per karakter, 2-soros): Név max 15 karakter (utána `..`), verzió suffix (:2) megtartva.
+  - **Slot kártyák** (per karakter, 2-soros): a név ellipsis-szel csonkolódik hosszú névnél, a TSz suffix mindig látható (lásd 1. sor).
     - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés). Külön span a névnek (`.slot-name`, ellipsis-csonkolás hosszú névnél) és a TSz-nek (`.slot-tsz`, sosem zsugorodik → mindig látható, a csonkolt név `...`-a után is)
     - **2. sor** (ikon-only chipek, 38×38px, 18px, `title` tooltip): `🔗` Link másolása (URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") · `💾` Mentés fájlba (`single` JSON letöltése) · `📤` Megosztás (`single` JSON Web Share — **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) · `⧉` Duplikál (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix) · `✕` törlés (piros chip, `.slot-chip-del`)
   - **Footer** (`.menu-footer`): kis `T` chip (teszt karakter betöltése, halvány keret) a build verzió bal oldalán, `⛶` teljes képernyő ikon (label nélkül) a jobb oldalán. Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup.
@@ -492,13 +492,13 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 ## 3. Tulajdonságok + Képzettségek fül/screen
 
 ### Fejléc (legfelül)
-- **Név** sor: full szélességű box
-  - Név box: `Név: von Agabor` — tap → szerkesztő popup (max 40 karakter)
-  - Game módban: `"von Agabor (Ember (Északi), 32)"`
-- **Becenév + Szint** sor (CSAK szerkesztő módban): két box egymás mellett
-  - Becenév box (flex:1): `Becenév: Agi` — tap → szerkesztő popup (max 12 karakter)
+- **Becenév** sor (CSAK szerkesztő módban, full szélességű box): `Becenév: Agi` — tap a boxra → szerkesztő popup (max 12 karakter). Jobb oldalon két chip:
+  - 🪪 Előtörténet chip (`.tul-elotortenet-chip`) → Előtörténet overlay (lásd lentebb)
+  - JK/NJK toggle chip (`.tul-jk-chip`) → `jk` mező váltás (Játékos Karakter / Nem Játékos Karakter)
+- **Név + Szint** sor (CSAK szerkesztő módban, két box egymás mellett):
+  - Név box (flex:1): `Név: von Agabor` — tap → szerkesztő popup (max 40 karakter)
   - Szint box: `Szint: 8` — tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
-- **Game módban**: csak Szint box jelenik meg (Becenév rejtett)
+- **Game módban**: `Név: "{név} ({faj}, {kor})"` full box + külön Szint box (Becenév + chipek rejtve)
 - **Böngésző tab title**: `document.title = karakter.becenév || 'Szilánk'`
 - **Faj + Kor** sor (CSAK szerkesztő módban):
   - Faj box (flex:1): inline `<select>` dropdown (27 faj a tables/fajok.json-ból, közvetlenül koppintható)
@@ -507,6 +507,25 @@ Fejléc: `<h2>🏹 Távharc</h2>`
   - Módosítás → szinkronizálja kiérdemelt Nyelvismeret fortélyokat (Közös Alap + anyanyelv Alap, `kiérdemelt: true`)
 - **Játékos box** (CSAK szerkesztő módban): `Játékos: Attila` — tap → szerkesztő popup (max 40 kar)
   - Mentés fájlnévben: `karakternév_játékosnév_Xtsz.json` (ha ki van töltve)
+
+### Előtörténet overlay (🪪)
+
+Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`ElotortenetOverlay.tsx`). ✕ vagy Escape / háttér-katt zárja. Biográfiai és narratív mezők egy helyen. Mezők (mind `.field-input`, karakterlimit `slice`-olva):
+
+| Mező | Típus | Limit | Tárolás |
+|------|-------|-------|---------|
+| Becenév | input | 12 | `karakter.becenév` |
+| Név | input | 40 | `karakter.név` |
+| Kor | picker gomb (`KorPicker`) | 5–500 | `karakter.kor` |
+| Vallás | picker gomb (`VallasPickerOverlay`) | — | `karakter.vallás` (üres = "Hitetlen") |
+| Származás helye | input | 40 | `karakter.előtörténet.származás_helye` |
+| Szociális érzék | textarea (2 sor) | 200 | `karakter.előtörténet.szociális_érzék` |
+| Külső | textarea (2 sor) | 200 | `karakter.előtörténet.külső` |
+| Előtörténet | textarea (8 sor) | 5000 | `karakter.előtörténet.előtörténet` (karakterszámláló: `{n}/5000`) |
+
+- A Becenév/Név/Kor inline is szerkeszthető a fejlécben; itt egy helyen összefogva a többi biográfiai mezővel.
+- `előtörténet` objektum: `{ származás_helye, szociális_érzék, külső, előtörténet }` (schema: `karakter.yaml`, betöltéskor `DEFAULT_ELOTORTENET` pótolja a hiányt).
+
 
 ### Tulajdonságok
 - Tulajdonság pontok kijelzés (szerkesztő mód): `Tulajdonság pontok: X/Y` (piros ha túllépés)
@@ -740,8 +759,16 @@ Misztikus képzettségek + Aura értékek. A misztikus csoport átkerült a Tul/
 
 ### Felső sor (értékek, boxok)
 - Mágiaellenállás: Aura + 10 (centered, 14px label, 20px érték)
-- Mágia akarata: "{Aura} + k20" (centered)
+- Mágia akarata: "{Aura} + k20" (centered) — **kattintható kártya** (`.aura-card-clickable`) → Mágia akarata popup
 - Aura: reactive engine (centered)
+
+### Mágia akarata popup (`MagiaAkarataPopup`)
+Referencia-táblák a mágia akarata próbához, négy fül (`.miszt-magia-tab`):
+1. **Aurakiterjesztés** — hatótáv → szellemkéz/zóna módosító tábla (Érintés 0/0 … Csatatér -9/-15)
+2. **Auraerősítés** — formula `Aurahangolás + Önuralom + k10` (behelyettesített értékekkel) + Komplexitás→Bónusz tábla (9→+1 … 30→+15) + sikertelenség szabályai (Aura -2, regeneráció 1/óra, nincs auto kudarc)
+3. **Összhang** — Előny-Hátrány eltolás (k10): Varázsló állapota + Áldozat állapota módosító listák
+4. **Képzettség+** — Szint→Bónusz tábla (Támadó oldal + / Védelem −), példákkal
+- Dismissible (háttér-katt / Escape zár)
 
 ### Képzettség szekciók (elválasztó vonalakkal, kék `#42a5f5` h3 label, 17px)
 1. **Tradíció** — max 1 db, kétlépéses overlay picker (tradiciok.json → altípus ha van)
@@ -820,6 +847,7 @@ Egyetlen görgethető nézetben, felülről lefelé. Mindhárom szekció összec
 - Kiemelt verziók (checkpoint) listája, dátum szerint (legújabb elöl)
 - Verzió sorra katt: checkpoint megtekintés (overlay bezár); ✕: törlés
 - "+ Új checkpoint" gomb (max `MAX_CHECKPOINTS`); inline név-form
+- Megtekintéskor a mód toggle disabled (`viewingCheckpoint`). Visszaállítás: `CheckpointRestoreOverlay` — két mód: "Töröljek minden ez utáni állapotot" (truncate) / "Új elemként fűzni a legutolsó után" (append). Logika → engine_spec §31b.
 
 ### 2. Napló (accordion, alapból csukva)
 - `<details>` (`.naplo-cp-section .naplo-log-section`, summary `.naplo-log-summary`)
@@ -1049,7 +1077,7 @@ Minden adat `fetchJson`-nel:
 - **`useVersionHint`** hook: Verzió double-tap hint kezelés
 - **`useHoldRepeat`** hook: Hold-to-repeat gomb viselkedés (gyorsulás)
 - `karakter: Karakter | null` — egyetlen unified state objektum (schema v2)
-- Top-level: `schema_version`, `uid`, `id_leíró`, `név`, `becenév`, `játékos`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `session`
+- Top-level: `schema_version`, `uid`, `id_leíró`, `név`, `becenév`, `játékos`, `jk`, `mentés_dátum`, `tsz`, `kor`, `anyanyelv`, `vallás`, `leírás`, `előtörténet`, `tulajdonságok`, `HM_TÉ`, `HM_VÉ`, `CM`, `képzettségek`, `fortélyok`, `fortélyok_speciális`, `hátterek`, `fegyverek`, `távfegyverek`, `páncél`, `pajzs`, `felszerelés`, `jegyzetek`, `napló`, `checkpoints`, `session`
 - `session`: `szilánk`, `vé_csökkenés`, `vé_history`, `manőver_pont_használt`, `sebzések`, `aktív_fegyver_index`, `aktív_fegyver_bal_index`, `kétkezes_harc`, `aktív_pajzs`, `aktív_páncél`, `aktív_taktikák`, `aktív_helyzetek`, `aktív_manőver`, `aktív_státuszok`, `narratív_módosítók`, `harci_akrobatika`, `fegyverfogás`, `aktív_távfegyver_index`
 - `mentés_dátum`: mentéskor automatikusan kitöltve (YYYY-MM-DD HH:MM), betöltéskor read-only
 - Inicializálás: `data.emptyKarakter` betöltéskor (validated)

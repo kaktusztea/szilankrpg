@@ -2293,7 +2293,7 @@ Minden karakter két azonosítót kap:
 | `szilank_char_{uid}` | Teljes karakter JSON (az adott slot-hoz), benne az undo stack |
 | `szilank_active` | Az aktív karakter `uid`-ja (amelyik épp szerkesztés alatt van) |
 
-Slot lista megjelenítés: `{név} ({tsz}sz)` + relatív idő. Név max 15 karakter, utána `..`, verzió suffix (`v2`) megtartva.
+Slot lista megjelenítés: `{név} ({tsz}sz)` + relatív idő. Hosszú név `...`-tal csonkolódik (CSS ellipsis, `.slot-name`), de a TSz suffix (`.slot-tsz`) sosem zsugorodik → mindig látható.
 
 Az undo stack a karakter JSON részévé válik:
 ```json
@@ -2460,7 +2460,33 @@ Automatikus felismerés a JSON tartalma alapján:
 
 ---
 
-## §32 ScreenErrorBoundary
+## §31b Karakter verziók (checkpoint)
+
+Snapshot-alapú verziókövetés a karakteren belül. UI: Szilánk picker → Napló/Verziók overlay (lásd gui_spec 6b). Logika: `engine/checkpoint-utils.ts`.
+
+### Adatmodell
+- `karakter.checkpoints[]`: `{ id, név, dátum, snapshot }` — a karakter JSON része (mentődik, URL exportból kizárva)
+- `id`: 8 karakteres random azonosító; `név`: max 20 karakter; `dátum`: ISO string
+- Rendezés: legújabb elöl; max `MAX_CHECKPOINTS` darab (`ui-constants.ts`)
+
+### Snapshot
+- `createSnapshot(karakter)`: a karakter mezők mély másolata (`structuredClone`), KIVÉVE a runtime/meta mezőket: `uid`, `id_leíró`, `session`, `checkpoints`, `mentés_dátum`, `schema_version`
+- Tehát a snapshot a teljes karakterállapot (tulajdonságok, képzettségek, fortélyok, felszerelés, jegyzetek, napló, előtörténet stb.), de nem tartalmaz beágyazott checkpointokat és runtime harc state-et
+
+### Létrehozás
+- `createCheckpoint(karakter, név)`: új checkpoint az aktuális állapotból, a lista elejére; `MAX_CHECKPOINTS`-ra vágva
+- Napló bejegyzés hozzáadásakor opcionálisan (checkbox) automatikusan is létrejön; auto-név: `autoCheckpointName()` = `"{YYYY-MM-DD} auto mentés"`
+
+### Visszaállítás (két mód)
+- `restoreTruncate(karakter, id)`: a kiválasztott checkpointra áll vissza, ÉS töröl minden nála újabb checkpointot (a lista a kiválasztottól lefelé marad)
+- `restoreAppend(karakter, id)`: a kiválasztott snapshotot új, legfrissebb bejegyzésként duplikálja (`← {név}` névvel), a többi checkpoint megmarad
+- Mindkettő: a snapshot visszaíródik a karakterre, `session` DEFAULT_SESSION-re reset, `uid`/`id_leíró`/`schema_version`/`mentés_dátum` megőrizve
+- Megtekintés (view): a checkpoint állapot csak olvasásra betöltve — a mód toggle disabled (`viewingCheckpoint`)
+
+### Törlés
+- `deleteCheckpoint(checkpoints, id)`: id alapján kiszűri a checkpointot
+
+---
 
 ```
 Minden tab screen renderelést `ScreenErrorBoundary` React class component burkolja.

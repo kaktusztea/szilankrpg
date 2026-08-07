@@ -33,6 +33,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `feltetelek.ts` | buildAktívFeltételek helper |
 | `feltetel-eval.ts` | FeltételEvaluator factory (context-alapú feltétel kiértékelés) |
 | `url-share.ts` | Karakter URL export/import (deflate+base64url) |
+| `checkpoint-utils.ts` | Karakter verziók (checkpoint): snapshot, create, restore (truncate/append), delete — §31b |
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
 | `utils.ts` | lookupFegyver, evaluateFeltétel, describeKepChange |
@@ -78,6 +79,7 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivHelpers.ts          Barrel re-export (taktika + helyzet helpers)
   taktika-helpers.ts       Taktika validáció, kombó, getTaktikaMods, getExtraFokok, formatFokMods
   helyzet-helpers.ts       Helyzet elérhetőség, min penge, infó szöveg
+  NaploTab.tsx             Verziók + Napló accordionok (OverlayScreenOverlay tartalma)
 
 harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcScreen.tsx           Fő screen
@@ -100,6 +102,9 @@ tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
 tulajdonsagok/             Tulajdonságok + Képzettségek fül
   TulajdonsagokScreen.tsx  Fő screen (név, faj, kor, tulajdonságok, képzettségek)
   KepzettsegCsoport.tsx    Képzettség csoport (csukható, game/edit mód)
+  ElotortenetOverlay.tsx   Előtörténet overlay (becenév, név, kor, vallás, biográfiai mezők)
+  KorPicker.tsx            Kor +/- picker overlay
+  VallasPickerOverlay.tsx  Vallás választó overlay
 
 fortelyok/                 Fortélyok fül
   FortelyokScreen.tsx      Fő screen (csoportok, felvétel, fok kezelés)
@@ -113,12 +118,18 @@ harcertekek/               Harcértékek fül (HM, fegyver, páncél, pajzs)
 
 misztikus/                 Misztikus fül (Aura, Tradíció, Arkánumok)
   MisztikusScreen.tsx      Fő screen
+  AuraPanel.tsx            Aura értékek (Mágiaellenállás, Mágia akarata kattintható kártya)
+  MisztikusPopups.tsx      Popup dispatcher (tradíció, szint, fok, felvétel, mágia akarata)
+  popups/MagiaAkarataPopup.tsx  Mágia akarata 4-füles referencia popup
 
 hatterek/                  Hátterek fül (szövegfelhő)
   HatterekScreen.tsx       Fő screen (leíró + karma)
 
 overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb.)
   AppOverlays.tsx-ben összefogva
+  OverlayScreenOverlay.tsx Verziók/Napló/Jegyzetek összevont overlay (NaploTab + jegyzetek + próba)
+  SzilankPickerOverlay.tsx Szilánk pont (0-3) + gyors-elérési hub (Szabályrendszer link, próba táblák)
+  SlotListOverlay.tsx      Karakterek hub (slot lista → SlotList.tsx)
 ```
 
 ## Data Sources (`data/sources/`)
@@ -176,6 +187,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | 27 | Fegyverfogás | `AktivFegyverfogas.tsx`, `pancel-calc.ts` |
 | 29 | Undo | `useKarakterState.ts`, `useUndo.ts` |
 | 30-31 | Local Storage, Multi-karakter | `useKarakterState.ts`, `useAutoSave.ts` |
+| 31b | Karakter verziók (checkpoint) | `checkpoint-utils.ts`, `NaploTab.tsx` |
 | 34 | Aura | `MisztikusScreen.tsx` |
 | 38 | Lovas harc | `harci_helyzetek.yaml`, `taktikak.yaml` |
 | 40 | URL Export | `url-share.ts` |
