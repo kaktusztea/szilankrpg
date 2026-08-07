@@ -1,5 +1,6 @@
 import type { Karakter, Session } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
+import type { UndoPatch } from '../hooks/useUndo';
 import { validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
@@ -40,6 +41,7 @@ interface Props {
   session: Session;
   setSession: (v: Session | ((prev: Session) => Session)) => void;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
+  pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   undoStack: { timestamp: number; leírás: string; patches: unknown[] }[];
   undoTo: (index: number) => void;
   duplicateSlot: (uid: string) => void;
@@ -59,7 +61,7 @@ interface Props {
 
 export function AppOverlays({
   state: s, setState: set, data, karakter, session, setSession,
-  setKarakter, undoStack, undoTo, duplicateSlot, handleGenerateSave,
+  setKarakter, pushUndo, undoStack, undoTo, duplicateSlot, handleGenerateSave,
   shareFile, downloadFile, loadKarakter, shareSlotUrl, saveSlotToFile, importKarakter, deleteSlot,
   setUndoStack, setTestMode, setIsDirty, isDirty,
 }: Props) {
@@ -104,7 +106,7 @@ export function AppOverlays({
       {s.showSzilánkPicker && (
         <SzilankPickerOverlay
           current={session.szilánk}
-          onPick={v => { setSession(prev => ({ ...prev, szilánk: v })); set('showSzilánkPicker', false); }}
+          onPick={v => { pushUndo(`Szilánk: ${session.szilánk} → ${v}`, [{ field: 'session', prev: session }]); setSession(prev => ({ ...prev, szilánk: v })); set('showSzilánkPicker', false); }}
         />
       )}
 

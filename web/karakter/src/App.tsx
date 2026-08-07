@@ -90,6 +90,7 @@ function App() {
         state={overlays} setState={setOverlay}
         data={data} karakter={karakter} session={session}
         setSession={setSession} setKarakter={setKarakter}
+        pushUndo={pushUndo}
         undoStack={undoStack} undoTo={handleUndoTo}
         duplicateSlot={duplicateSlot}
         handleGenerateSave={handleGenerateSave}
