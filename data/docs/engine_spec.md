@@ -1467,7 +1467,7 @@ Hatás objektum mezői:
 
 - Aktív fülön: dropdown-ból választható (státusz név + fok + alcím)
 - Chip megjelenítés: "Félelem (2) - Rettegés" + ✕ törlés
-- Koppintás (Game mód): hatások listája lenyílik (accordion)
+- Koppintás (Játék mód): hatások listája lenyílik (accordion)
 
 ### 22.8 Hatás pool (Aktív fül) — "Státuszok" szekció
 
@@ -2219,7 +2219,7 @@ Implementáció: az `undoTo()` visszaállításnál a `jegyzetek` és `napló` m
 ### 29.5 Megjegyzések
 
 - A stack localStorage-ban perzisztens (`szilank_undo` key) — page reload után megmarad
-- Game módban és Szerkesztő módban egyaránt működik
+- Játék módban és Szerkesztő módban egyaránt működik
 - A `pushUndo()` hívást minden session/karakter módosító függvénybe be kell kötni
   - KIVÉVE: `jegyzetek` és `napló` módosítások (ezek nem generálnak undo entry-t)
 - Teljesítmény: 6× deep clone max ~50KB adat (karakter+session) — elhanyagolható
@@ -2629,7 +2629,7 @@ Kijelzett értékek (felső sor):
 Szint választó: overlay popup (0/1-15 grid), mint Tul/Képz fülön
 Szint limit: primer max = tsz (piros jelzés ha túllépés)
 
-Game módban: csak azok a szekciók látszanak amikben van felvett elem (szint > 0)
+Játék módban: csak azok a szekciók látszanak amikben van felvett elem (szint > 0)
 ```
 
 ## §35b Fortély schema mezők

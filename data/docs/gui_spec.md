@@ -121,7 +121,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 ## Általános elvek
 
 - **Mobile-first**: 320px szélességtől használható
-- **Két mód**: Szerkesztő mód és Game mód (toggle gomb a fejlécben)
+- **Két mód**: Szerkesztő mód és Játék mód (toggle gomb a fejlécben)
   - Toggle gomb szín: Szerkesztő=`#ff9800`, Game=`#4caf50` (háttér), szöveg: `#000`, átmenet: 2000ms ease
 - **Tab navigáció**: alul fix tab bar, horizontálisan scrollozható (minden tab közvetlenül elérhető, nincs "..." menü)
 - **Screen váltás**: jobb-bal swipe gesztussal (mobilon, threshold: 30px), desktop-on tab kattintás
@@ -130,7 +130,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - **Popup overlay-ek**: `createPortal(document.body)`, `.kep-prompt-overlay` osztály, `position: fixed; inset: 0; z-index: 100`
 - **Escape**: minden popup overlay bezárható
 - **Overlay bezárás**: mellé kattintás (background click) + Escape. A kis megerősítő/érték-választó popupokon nincs ✕ gomb. Kivétel: az **Aktív fül picker overlay-jei** (Taktikák, Harci helyzetek, Manőver, Státuszok — közös `PickerOverlay`) jobb felső sarkában nagy ✕ bezáró gomb (`.aktiv-picker-close`, min. 44×44px tap-target) is van a mobil kényelemért; a háttér-katt/Escape továbbra is működik.
-- **Accordion/collapse**: elemek lenyithatók koppintásra (Game mód), másik koppintás becsukja
+- **Accordion/collapse**: elemek lenyithatók koppintásra (Játék mód), másik koppintás becsukja
 - **Szín kód**: sárga (`--warning`) = módosítható/köztes érték, zöld (`--success`) = teljes/számított, piros (`--error`/`--accent`) = hiba/limit túllépés/kiemelt
 
 ---
@@ -181,9 +181,9 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 
 ---
 
-## Szerkesztő mód vs Game mód
+## Szerkesztő mód vs Játék mód
 
-| | Szerkesztő mód                          | Game mód                   |
+| | Szerkesztő mód                          | Játék mód                   |
 |---|------------------------------------------|----------------------------|
 | Tulajdonságok            | szerkeszthető | read-only                  |
 | Képzettségek             | szerkeszthető (szint, felvétel) | read-only    |
@@ -198,8 +198,8 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 
 ### Viselkedés
 - **Toggle gomb** a fejlécben (pl. 🔧/🎮 ikon): váltás a két mód között
-- **Game módban**: a szerkesztő kontrollok (input mezők, szint-állítók, felvétel gombok) eltűnnek — csak az értékek látszanak
-- **Game módban elérhető**: Aktív fül teljes egészében, VÉ csökkenés +/- gombok, ÉP jelölés, Manőver Pont felhasználás, Harcértékek fül (read-only)
+- **Játék módban**: a szerkesztő kontrollok (input mezők, szint-állítók, felvétel gombok) eltűnnek — csak az értékek látszanak
+- **Játék módban elérhető**: Aktív fül teljes egészében, VÉ csökkenés +/- gombok, ÉP jelölés, Manőver Pont felhasználás, Harcértékek fül (read-only)
 
 ---
 
@@ -362,7 +362,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
     - Fegyver+hárító: jobb kéz fegyver + hárítóVÉ bónusz, név: "Fegyver + Hárító: X"
   - Egyfegyveres: csak az Ügyesebb kézben kiválasztott fegyver sora normál, többi halványítva (opacity: 0.4)
   - Pajzs fegyver sor: ha van pajzs méret → megjelenik a fegyvertáblában (kategória: "pajzs", Közelharc harcmodor). Aktív ha idx=-2 kiválasztva.
-  - Tám cella kattintható (Game mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
+  - Tám cella kattintható (Játék mód): info overlay popup (fegyver név, Sebesség, Harckeret). Bezárás: mellé katt / Escape.
   - TÉ label: accent/piros szín (azonos az ÉP TÉ levonás színével)
   - **Támadó dobás** (Játék mód): a `TÉ` fejléc (kattintható gomb) ÉS az éppen aktív fegyver sorának TÉ cellája (pontozott aláhúzás) rányomásra **Támadó dobás** popupot nyit — mindkettő ugyanazt, az aktív fegyver aktuális TÉ-jét dobja. Viselkedés azonos a Kezdeményezéssel (KÉ), csak TÉ + k20: nagy eredmény szám, „TÉ (X) + k20 (Y)" részlet, mellé katt / Escape bezár → eredmény push a session `té_dobások` FIFO tömbbe (max 3, legújabb elöl). Közös popup komponens: `DobasPopup`.
   - VÉ label: warning/sárga szín (azonos a VÉ csökkenés box színével)
@@ -445,7 +445,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 **Részletes értékek** (alul, `.debug-box` stílus): CÉ összetevők bontása
 - "Helyzet/Fortély CÉ" sor: aktív harci helyzetek CÉ flat bónusza + aktív taktikák CÉ módosítója (szűrő_harcmodorok figyelembe vételével) + feltételes fortély CÉ bónuszok. Per-fegyver számolva (fegyver harcmodor szűrés).
 
-### Game mód
+### Játék mód
 
 **Fegyver sor:** select dropdown (távfegyverek + virtuális fortély-fegyverek) | MF badge | Idea badge
 
@@ -498,7 +498,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - **Név + Szint** sor (CSAK szerkesztő módban, két box egymás mellett):
   - Név box (flex:1): `Név: von Agabor` — tap → szerkesztő popup (max 40 karakter)
   - Szint box: `Szint: 8` — tap → gombgrid popup (3-21, 5 oszlop flexbox, utolsó sor középre)
-- **Game módban**: `Név: "{név} ({faj}, {kor})"` full box + külön Szint box (Becenév + chipek rejtve)
+- **Játék módban**: `Név: "{név} ({faj}, {kor})"` full box + külön Szint box (Becenév + chipek rejtve)
 - **Böngésző tab title**: `document.title = karakter.becenév || 'Szilánk'`
 - **Faj + Kor** sor (CSAK szerkesztő módban):
   - Faj box (flex:1): inline `<select>` dropdown (27 faj a tables/fajok.json-ból, közvetlenül koppintható)
@@ -533,14 +533,14 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
 - Nem reszponzív, fix layout
 - Szerkesztő módban: tap → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
-- Game módban: read-only
+- Játék módban: read-only
 - **Faj limit warning**: ha az érték meghaladja/alulmúlja a kiválasztott faj min/max keretét → sárga szín + automatikusan megjelenő info box (`Faj max: X` vagy `Faj min: X`), nem zárható kattintással
 
 ### Képzettségek (alatta, csoport-bontásban)
 - Csoportok sorrendje: Fizikai → Világi → Alvilági → Művészeti → Tudományos
 - Harci és Misztikus csoportok átkerültek: Harci → Harcértékek fül, Misztikus → Misztikus fül
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
-- Game módban: üres csoportok elrejtve
+- Játék módban: üres csoportok elrejtve
 - Minden képzettség: név + szint (0-15) + ✕ törlés gomb
 - Szint színkód: 0=piros, 1-8=fehér, 9+=zöld, >tsz limit=piros
 - Csoportonként 1 db dropdown választó (Szerkesztő módban): új képzettség felvétele → azonnal felugrik a szint választó popup
@@ -574,7 +574,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Tap: szint választó popup (gombok 1-15 grid, 5x3 elrendezés, aktív=zöld), érték választás azonnal bezárja
 - Escape: popup bezárás
 
-#### Viselkedés Game módban
+#### Viselkedés Játék módban
 - Koppintás: lenyílik accordion adatlap:
   - **Próba**: dobható / nem dobható / ellenpróba
   - **Domináns tulajdonságok**: pl. "Ügyesség, Gyorsaság"
@@ -588,7 +588,7 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Primer költés = primer képzettségek KP + primer fortélyok KP + kp_hm + kp_cm
 - Primer limit = összes_kp + spec_kp
 - Dinamikusan frissül minden módosításnál
-- Game módban eltűnik
+- Játék módban eltűnik
 - **Kattintható** (cursor: pointer): klikk → KP info popup (`PopupOverlay`)
   - Cím: "KP képlet bontás"
   - Szekciók: Keret (Összes KP + formula, Szekunder KP + formula, Speciális KP, Összes keret összeg), Elköltött (Képzettségek, Fortélyok, HM, CM, Kiemelt, összeg), Eredmény (Maradt KP: zöld/piros), Primer bontás (keret, költés, delta)
@@ -611,7 +611,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 
 ### Megjelenés
 - Csoportok összecsukhatóak (header koppintásra toggle, ▸/▾ nyíl + elemszám)
-- Game módban: üres csoportok elrejtve
+- Játék módban: üres csoportok elrejtve
 - Kompakt lista: név + fok pöttyök (●/○). Mindig 3 hely, balról jobbra töltődik (filled = felvett fok), maxfok feletti helyek láthatatlanok. Max fok elérve: zöld szín.
   - Nyelvismeret kivétel: fok szám helyett "Alap" (1) / "Udvari" (2) label, fok választó gombok lekerekített téglalapok, `.nyelvismeret-fok` class
 - Ingyenes keret alatti többszörös fortélyoknál halvány zöld ● pötty a név mellett (`fort-ingyenes-dot` class)
@@ -668,7 +668,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 - ✕ törlés: mindig megerősítő dialógus (piros "Törlés" gomb) — locked elemeknél nincs ✕
 - Escape: popup bezárás
 
-### Viselkedés Game módban
+### Viselkedés Játék módban
 - Koppintás: lenyílik inline accordion info panel (`.info-panel`):
   - Leírás (dőlt)
   - Hatás (aktuális fok hatás szövege)
@@ -691,7 +691,7 @@ A "Távharc" csoport a `fortelyok/tavharc/` mappából jövő fortélyokat tarta
 
 ## 4b. Harcértékek fül/screen (🛡️)
 
-HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes szerkeszthetőség, Game módban read-only.
+HM vásárlás, fegyver és páncél konfiguráció. Szerkesztő módban teljes szerkeszthetőség, Játék módban read-only.
 
 - Alap font-size: `16px` (konzisztens a többi füllel)
 - Szekció fejlécek: `17px bold`
@@ -793,7 +793,7 @@ Referencia-táblák a mágia akarata próbához, négy fül (`.miszt-magia-tab`)
 - Ha fix lista (Belső/Külső síkok): minden elem felvéve → eltűnik a dropdown-ból
 - Kiérdemelt: csak `kiérdemelhető: true` fortélyoknál (yaml mező, pl. Mentálfonál)
 
-### Game mód
+### Játék mód
 - Csak felvett elemekkel rendelkező szekciók látszanak (cím + tartalom)
 - Picker/szerkesztő elemek elrejtve
 
@@ -818,7 +818,7 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 ### Viselkedés
 - Tap: aktivál/deaktivál (toggle) — többszörösnél popup
 - Aktív elemek: színes kijelölés (leíró = zöld, karma = narancs), sor elejére rendezés, ABC sorrend
-- Game módban: nem szerkeszthető (tap nem reagál)
+- Játék módban: nem szerkeszthető (tap nem reagál)
 - Kategória label: világoskék (#7eb8da), bold
 - Csoport fejléc (Leíró/Karma): narancssárga (#e0a050), uppercase
 
@@ -906,7 +906,7 @@ Overlay screen-ek:
 |----|--------|-------------|
 | overlayScreen | ✏️ fejléc gomb | mindkét mód (Verziók, Napló, Jegyzetek — lásd 6b) |
 
-- Jelenleg nincs `editOnly: true` tab — Game módban minden fül elérhető
+- Jelenleg nincs `editOnly: true` tab — Játék módban minden fül elérhető
 - Default aktív tab induláskor: `tulajdonsagok` (index 5 az ALL_TABS-ban)
 - **Tükrözött sorrend**: reverse() renderelés → a tömb utolsó eleme jelenik meg balra
 - Screen slider is tükrözve: `translateX(-(TABS.length-1-activeTab)*100%)`, swipe irány invertált

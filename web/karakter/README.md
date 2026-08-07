@@ -10,7 +10,7 @@ Kliens mód kizárólag, tehát nincs szerver komponens, könnyen hosztolható e
 Az app két módban használható (fejléc jobb oldalán a 🔧/🎮 gombbal váltható):
 
 - **Szerkesztő mód** (🔧): karakter létrehozás és módosítás - minden mező szerkeszthető
-- **Game mód** (🎮): játék közben - csak a harc- és session-kezelés aktív, a karakter adatai írásvédettek
+- **Játék mód** (🎮): játék közben - csak a harc- és session-kezelés aktív, a karakter adatai írásvédettek
 
 ---
 ## Fejléc
@@ -22,7 +22,7 @@ A fejléc bal oldalán a **Szilánk pont** (keretes szám) látható, jobb oldal
 | ↩    | Visszavonás (undo) - a szám a visszavonható lépéseket mutatja |
 | ✏️   | Verziók, Napló, Jegyzetek ablak |
 | 🧑   | Karakterek (karaktertár, mentés/betöltés) |
-| 🔧/🎮 | Szerkesztő ⇄ Game mód váltás |
+| 🔧/🎮 | Szerkesztő ⇄ Játék mód váltás |
 
 ---
 ## Fülek
@@ -52,7 +52,7 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Páncél**: struktúra, fémalapanyag, kidolgozottság, sisak, végtag, méret - SFÉ és MGT automatikus számítás
 - **KP sáv**: a tab-bar felett folyamatosan mutatja a maradék KP-t és a primer keretet
 
-### Harckezelés (Game mód)
+### Harckezelés (Játék mód)
 
 - **Aktív fül**: fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes), taktikák kombó-szabályokkal, harci helyzetek, manőverek, státuszok - minden választás azonnal hat a Harc fülre
 - **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, SFÉ, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
@@ -101,9 +101,9 @@ A Karakterek ablakban (🧑) minden slot sorában a 🔗 gombbal egyetlen URL-be
 
 A Harc fülön a **VÉ csökkenés** label-re vagy értékre koppintva megjelenik a VÉ változások története (pl. "-3; -2; +1"). Mellé koppintás bezárja.
 
-### Képzettség info panel (Game mód)
+### Képzettség info panel (Játék mód)
 
-A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken game módban a képzettség sorra koppintva kinyílik egy info panel: Próba, Domináns tulajdonságok, Kiterjesztő fortélyok (zöld = megvan, piros = nincs meg), és 🔗 szabály link.
+A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék módban a képzettség sorra koppintva kinyílik egy info panel: Próba, Domináns tulajdonságok, Kiterjesztő fortélyok (zöld = megvan, piros = nincs meg), és 🔗 szabály link.
 
 ### Szabály linkek (🔗)
 
