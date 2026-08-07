@@ -84,39 +84,49 @@ export function HatterekScreen({ data, karakter, setKarakter, pushUndo, gameMode
       </div>
 
       {/* Leíró hátterek */}
+      {(!gameMode || karakter.hátterek.leíró.length > 0) && (
       <div className="hatter-cloud-section">
         <span className="hatter-cloud-title">Leíró hátterek</span>
-        {data.hatterek.leíró_hátterek.map(cat => (
-          <div key={cat.kategória} className="hatter-cloud-cat">
-            <span className="hatter-cat-label">{cat.kategória}</span>
-            <TagCloud
-              items={cat.elemek}
-              aktív={karakter.hátterek.leíró}
-              field="leíró"
-              többszörös={cat.többszörös}
-              gameMode={gameMode}
-              onToggle={handleToggle}
-              onRemove={handleRemove}
-              getMultiEntries={getMultiEntries}
-              isMaxed={item => getMultiEntries(item, 'leíró').length >= MAX_AZONOS_HÁTTÉR}
-            />
-          </div>
-        ))}
+        {data.hatterek.leíró_hátterek.map(cat => {
+          const hasActive = cat.többszörös
+            ? cat.elemek.some(item => getMultiEntries(item, 'leíró').length > 0)
+            : cat.elemek.some(item => karakter.hátterek.leíró.includes(item));
+          if (gameMode && !hasActive) return null;
+          return (
+            <div key={cat.kategória} className="hatter-cloud-cat">
+              <span className="hatter-cat-label">{cat.kategória}</span>
+              <TagCloud
+                items={cat.elemek}
+                aktív={karakter.hátterek.leíró}
+                field="leíró"
+                többszörös={cat.többszörös}
+                gameMode={gameMode}
+                onToggle={handleToggle}
+                onRemove={handleRemove}
+                getMultiEntries={getMultiEntries}
+                isMaxed={item => getMultiEntries(item, 'leíró').length >= MAX_AZONOS_HÁTTÉR}
+              />
+            </div>
+          );
+        })}
       </div>
+      )}
 
       {/* Karma hátterek */}
-      <div className="hatter-cloud-section">
-        <span className="hatter-cloud-title">Karma hátterek</span>
-        <KarmaCloud
-          entries={data.hatterek.karma_hátterek}
-          aktív={karakter.hátterek.karma}
-          gameMode={gameMode}
-          onToggle={handleToggle}
-          onRemove={handleRemove}
-          getMultiEntries={getMultiEntries}
-          isMaxed={(item, field) => getMultiEntries(item, field).length >= MAX_AZONOS_HÁTTÉR}
-        />
-      </div>
+      {(!gameMode || karakter.hátterek.karma.length > 0) && (
+        <div className="hatter-cloud-section">
+          <span className="hatter-cloud-title">Karma hátterek</span>
+          <KarmaCloud
+            entries={data.hatterek.karma_hátterek}
+            aktív={karakter.hátterek.karma}
+            gameMode={gameMode}
+            onToggle={handleToggle}
+            onRemove={handleRemove}
+            getMultiEntries={getMultiEntries}
+            isMaxed={(item, field) => getMultiEntries(item, field).length >= MAX_AZONOS_HÁTTÉR}
+          />
+        </div>
+      )}
 
       {popup && (
         <FreeTextPopup

@@ -31,7 +31,9 @@ export function TagCloud({ items, aktív, field, többszörös, gameMode, colorC
     );
   }
 
-  const sorted = [...items].sort((a, b) => {
+  const visible = gameMode ? items.filter(item => aktív.includes(item)) : items;
+
+  const sorted = [...visible].sort((a, b) => {
     const aAct = aktív.includes(a) ? 0 : 1;
     const bAct = aktív.includes(b) ? 0 : 1;
     if (aAct !== bAct) return aAct - bAct;

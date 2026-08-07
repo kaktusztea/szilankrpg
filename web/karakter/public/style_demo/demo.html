@@ -1,0 +1,566 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Szilánk — Tipográfia Demo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+/* =============================================
+   SZILÁNK TYPE RAMP — TERV
+   =============================================
+   Jelenlegi állapot: 18 különböző font-size (10–48px)
+   Cél: 7 fokozat + 1 display (speciális, pl. KÉ dobás eredmény)
+
+   Elvek:
+   - Mobil-first: base = 14px (nem 16, mert sűrű adattábla app)
+   - Skála: major second (~1.125) + néhány kerekítés
+   - Minden fokozathoz: size, line-height, weight
+   - CSS custom property-k → egyetlen helyen módosítható
+   ============================================= */
+
+:root {
+  /* --- Színek (a meglévő palettából) --- */
+  --bg: #1a1a2e;
+  --surface: #16213e;
+  --surface-alt: #1a1a3a;
+  --primary: #0f3460;
+  --accent: #e94560;
+  --text: #eee;
+  --text-dim: #999;
+  --input-bg: #2a2a4a;
+  --success: #4caf50;
+  --warning: #ff9800;
+  --error: #f44336;
+  --border: #444;
+  --border-light: #333;
+  --border-input: #555;
+  --card-bg: #2a2a3e;
+  --color-fortely: #ce93d8;
+  --color-kepzettseg: #42a5f5;
+  --color-hatter: #e0a050;
+  --color-taktika: #90caf9;
+  --color-helyzet: #4dd0e1;
+  --color-statusz: #cd7c6f;
+  --color-manover: #b0bec5;
+  --color-positive: #66bb6a;
+
+  /* =============================================
+     TYPE RAMP — 7 + 1 fokozat
+     ============================================= */
+
+  /* Display — speciális nagy számok (KÉ dobás, VÉ csökkenés) */
+  --type-display-size: 36px;
+  --type-display-line: 1.1;
+  --type-display-weight: 700;
+
+  /* Title — screen cím (h2) */
+  --type-title-size: 18px;
+  --type-title-line: 1.3;
+  --type-title-weight: 700;
+
+  /* Subtitle — szekció cím (h3, csoport fejléc) */
+  --type-subtitle-size: 16px;
+  --type-subtitle-line: 1.3;
+  --type-subtitle-weight: 700;
+
+  /* Body — fő szövegtörzs, input, select, listaelem név */
+  --type-body-size: 14px;
+  --type-body-line: 1.4;
+  --type-body-weight: 400;
+
+  /* Body Strong — kiemelt body (tábla fejléc, aktív érték) */
+  --type-body-strong-size: 14px;
+  --type-body-strong-line: 1.4;
+  --type-body-strong-weight: 700;
+
+  /* Caption — másodlagos infó, leírás, tooltip */
+  --type-caption-size: 12px;
+  --type-caption-line: 1.4;
+  --type-caption-weight: 400;
+
+  /* Overline — kategória címke, uppercase label */
+  --type-overline-size: 11px;
+  --type-overline-line: 1.3;
+  --type-overline-weight: 600;
+
+  /* Micro — badge, build szám, kevéssé fontos metaadat */
+  --type-micro-size: 10px;
+  --type-micro-line: 1.2;
+  --type-micro-weight: 400;
+}
+
+/* =============================================
+   UTILITY CLASSES
+   ============================================= */
+
+.type-display {
+  font-size: var(--type-display-size);
+  line-height: var(--type-display-line);
+  font-weight: var(--type-display-weight);
+}
+
+.type-title {
+  font-size: var(--type-title-size);
+  line-height: var(--type-title-line);
+  font-weight: var(--type-title-weight);
+}
+
+.type-subtitle {
+  font-size: var(--type-subtitle-size);
+  line-height: var(--type-subtitle-line);
+  font-weight: var(--type-subtitle-weight);
+}
+
+.type-body {
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  font-weight: var(--type-body-weight);
+}
+
+.type-body-strong {
+  font-size: var(--type-body-strong-size);
+  line-height: var(--type-body-strong-line);
+  font-weight: var(--type-body-strong-weight);
+}
+
+.type-caption {
+  font-size: var(--type-caption-size);
+  line-height: var(--type-caption-line);
+  font-weight: var(--type-caption-weight);
+}
+
+.type-overline {
+  font-size: var(--type-overline-size);
+  line-height: var(--type-overline-line);
+  font-weight: var(--type-overline-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.type-micro {
+  font-size: var(--type-micro-size);
+  line-height: var(--type-micro-line);
+  font-weight: var(--type-micro-weight);
+}
+
+/* =============================================
+   DEMO PAGE LAYOUT
+   ============================================= */
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Noto Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: var(--type-body-size);
+  line-height: var(--type-body-line);
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.demo-section {
+  margin-bottom: 32px;
+  padding-bottom: 24px;
+  border-bottom: 1px solid var(--border);
+}
+
+.demo-section:last-child { border-bottom: none; }
+
+.demo-label {
+  font-size: var(--type-overline-size);
+  font-weight: var(--type-overline-weight);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  margin-bottom: 4px;
+}
+
+.demo-meta {
+  font-size: var(--type-micro-size);
+  color: var(--text-dim);
+  margin-bottom: 12px;
+  font-family: monospace;
+}
+
+/* --- Type Ramp Table --- */
+.ramp-table { width: 100%; border-collapse: collapse; margin-bottom: 24px; }
+.ramp-table th, .ramp-table td { padding: 8px 10px; border: 1px solid var(--border); text-align: left; }
+.ramp-table th { background: var(--primary); font-size: var(--type-caption-size); font-weight: 700; }
+.ramp-table .ramp-name { color: var(--color-taktika); }
+.ramp-table .ramp-context { color: var(--text-dim); font-size: var(--type-caption-size); }
+
+/* --- Simulated app components --- */
+.sim-header {
+  display: flex; align-items: center; padding: 8px 12px;
+  background: var(--primary); border-bottom: 1px solid var(--border-light);
+  border-radius: 6px; margin-bottom: 12px;
+}
+.sim-header-title { font-size: var(--type-body-strong-size); font-weight: var(--type-body-strong-weight); color: var(--success); }
+.sim-header-btn { margin-left: auto; background: var(--input-bg); border: 1px solid var(--border-input); border-radius: 4px; padding: 4px 10px; font-size: var(--type-body-size); color: #000; font-weight: 700; background: var(--success); }
+
+.sim-stat-row {
+  display: flex; gap: 8px; margin-bottom: 12px;
+}
+.sim-stat-box {
+  flex: 1; background: var(--surface); border: 1px solid var(--border);
+  border-radius: 6px; padding: 8px 12px; text-align: center;
+}
+.sim-stat-label { font-size: var(--type-overline-size); font-weight: var(--type-overline-weight); text-transform: uppercase; letter-spacing: 0.05em; color: var(--text-dim); }
+.sim-stat-value { font-size: var(--type-display-size); font-weight: var(--type-display-weight); line-height: var(--type-display-line); }
+.sim-stat-value-sm { font-size: var(--type-title-size); font-weight: var(--type-title-weight); }
+
+.sim-table { width: 100%; border-collapse: collapse; margin-bottom: 12px; }
+.sim-table th, .sim-table td { padding: 4px 6px; border: 1px solid var(--border); text-align: center; }
+.sim-table th { background: var(--primary); font-size: var(--type-body-strong-size); font-weight: var(--type-body-strong-weight); }
+.sim-table td { font-size: var(--type-body-size); }
+.sim-table td:first-child { text-align: left; }
+.sim-table td:not(:first-child) { font-family: monospace; }
+.sim-te { color: var(--accent); }
+.sim-ve { color: var(--warning); }
+
+.sim-item-row {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 6px 10px; background: var(--surface); border: 1px solid var(--border-light);
+  border-radius: 4px; margin-bottom: 4px;
+}
+.sim-item-name { font-size: var(--type-body-size); font-weight: var(--type-body-weight); }
+.sim-item-meta { font-size: var(--type-caption-size); color: var(--text-dim); }
+.sim-item-fok { font-size: var(--type-body-strong-size); font-weight: 700; color: var(--color-fortely); }
+
+.sim-section-title { font-size: var(--type-subtitle-size); font-weight: var(--type-subtitle-weight); margin: 16px 0 8px; padding-bottom: 4px; border-bottom: 1px solid var(--border-light); }
+
+.sim-chip {
+  display: inline-block; padding: 3px 10px; border-radius: 12px;
+  font-size: var(--type-caption-size); font-weight: var(--type-body-strong-weight);
+  background: var(--input-bg); border: 1px solid var(--border-input); margin: 2px;
+}
+.sim-chip-taktika { color: var(--color-taktika); }
+.sim-chip-helyzet { color: var(--color-helyzet); }
+
+.sim-field-btn {
+  flex: 1; background: var(--input-bg); border: 1px solid var(--border-input);
+  border-radius: 4px; padding: 6px 8px; display: flex; flex-direction: column; gap: 2px;
+}
+.sim-field-label { font-size: var(--type-overline-size); font-weight: var(--type-overline-weight); color: var(--text-dim); text-transform: uppercase; }
+.sim-field-value { font-size: var(--type-body-size); font-weight: 700; color: var(--success); }
+
+.sim-info-panel {
+  background: var(--surface-alt); border: 1px solid var(--border); border-radius: 4px;
+  padding: 6px 10px; margin-bottom: 8px;
+}
+.sim-info-label { font-size: var(--type-caption-size); color: var(--text-dim); }
+.sim-info-value { font-size: var(--type-caption-size); color: var(--text); }
+
+.sim-toast {
+  display: inline-block; background: #2e7d32; color: #fff; padding: 8px 16px;
+  border-radius: 8px; font-size: var(--type-caption-size); font-weight: var(--type-body-strong-weight);
+}
+
+.sim-build { font-size: var(--type-micro-size); color: var(--text-dim); opacity: 0.6; }
+
+.comparison { display: flex; gap: 24px; margin-top: 16px; }
+.comparison-col { flex: 1; }
+.comparison-col h4 { font-size: var(--type-caption-size); color: var(--text-dim); margin-bottom: 8px; text-transform: uppercase; }
+.old-sizes { font-family: monospace; font-size: var(--type-caption-size); color: var(--error); line-height: 1.8; }
+.new-sizes { font-family: monospace; font-size: var(--type-caption-size); color: var(--success); line-height: 1.8; }
+  </style>
+</head>
+<body>
+
+<!-- ===== SECTION 1: Type Ramp Reference ===== -->
+<div class="demo-section">
+  <h1 class="type-title" style="margin-bottom: 4px;">Szilánk Type Ramp</h1>
+  <p class="type-caption" style="color: var(--text-dim); margin-bottom: 16px;">
+    7 fokozat + 1 display. Font: Noto Sans. Jelenlegi 18 méret → 8 méret.
+  </p>
+
+  <table class="ramp-table">
+    <thead>
+      <tr>
+        <th>Név</th>
+        <th>Méret</th>
+        <th>Line-h</th>
+        <th>Weight</th>
+        <th>Kontextus</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="ramp-name">Display</td>
+        <td>36px</td>
+        <td>1.1</td>
+        <td>700</td>
+        <td class="ramp-context">KÉ dobás eredmény, nagy szám kijelzők</td>
+      </tr>
+      <tr>
+        <td class="ramp-name">Title</td>
+        <td>18px</td>
+        <td>1.3</td>
+        <td>700</td>
+        <td class="ramp-context">Screen cím (h2), popup cím</td>
+      </tr>
+      <tr>
+        <td class="ramp-name">Subtitle</td>
+        <td>16px</td>
+        <td>1.3</td>
+        <td>700</td>
+        <td class="ramp-context">Szekció cím (h3), csoport fejléc, stat box label</td>
+      </tr>
+      <tr>
+        <td class="ramp-name">Body</td>
+        <td>14px</td>
+        <td>1.4</td>
+        <td>400</td>
+        <td class="ramp-context">Fő szöveg, input, select, listaelem, tábla cella</td>
+      </tr>
+      <tr>
+        <td class="ramp-name">Body Strong</td>
+        <td>14px</td>
+        <td>1.4</td>
+        <td>700</td>
+        <td class="ramp-context">Tábla fejléc, kiemelt értékek, gomb szöveg</td>
+      </tr>
+      <tr>
+        <td class="ramp-name">Caption</td>
+        <td>12px</td>
+        <td>1.4</td>
+        <td>400</td>
+        <td class="ramp-context">Leírás, info panel, chip módosítók, toast</td>
+      </tr>
+      <tr>
+        <td class="ramp-name">Overline</td>
+        <td>11px</td>
+        <td>1.3</td>
+        <td>600</td>
+        <td class="ramp-context">Kategória label, field-btn felirat, uppercase címke</td>
+      </tr>
+      <tr>
+        <td class="ramp-name">Micro</td>
+        <td>10px</td>
+        <td>1.2</td>
+        <td>400</td>
+        <td class="ramp-context">Build szám, badge, debug info</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- ===== SECTION 2: Visual Type Scale ===== -->
+<div class="demo-section">
+  <div class="demo-label">Vizuális skála</div>
+  <div style="margin-bottom: 8px;">
+    <span class="type-display">36px Display</span>
+  </div>
+  <div style="margin-bottom: 6px;">
+    <span class="type-title">18px Title — Screen címsor</span>
+  </div>
+  <div style="margin-bottom: 6px;">
+    <span class="type-subtitle">16px Subtitle — Szekció fejléc</span>
+  </div>
+  <div style="margin-bottom: 6px;">
+    <span class="type-body">14px Body — Alapértelmezett szövegtörzs</span>
+  </div>
+  <div style="margin-bottom: 6px;">
+    <span class="type-body-strong">14px Body Strong — Kiemelt értékek</span>
+  </div>
+  <div style="margin-bottom: 6px;">
+    <span class="type-caption">12px Caption — Másodlagos információ</span>
+  </div>
+  <div style="margin-bottom: 6px;">
+    <span class="type-overline">11px Overline — Kategória címke</span>
+  </div>
+  <div style="margin-bottom: 6px;">
+    <span class="type-micro">10px Micro — Build szám, badge</span>
+  </div>
+</div>
+
+<!-- ===== SECTION 3: Simulated App Components ===== -->
+<div class="demo-section">
+  <div class="demo-label">App komponensek a type ramp-pel</div>
+  <div class="demo-meta">Ezek a webapp valódi elemeit szimulálják az új tipográfiával</div>
+
+  <!-- Header -->
+  <div class="sim-header">
+    <span class="sim-header-title">⚔ Teszt Karakter</span>
+    <button class="sim-header-btn">Game</button>
+  </div>
+
+  <!-- Stat boxes (KÉ, SFÉ, VÉ csökk, MP) -->
+  <div class="sim-stat-row">
+    <div class="sim-stat-box">
+      <div class="sim-stat-label">KÉ</div>
+      <div class="sim-stat-value">18</div>
+    </div>
+    <div class="sim-stat-box">
+      <div class="sim-stat-label">VÉ csökk</div>
+      <div class="sim-stat-value sim-te" style="color: var(--warning);">-35</div>
+    </div>
+    <div class="sim-stat-box">
+      <div class="sim-stat-label">MP</div>
+      <div class="sim-stat-value-sm" style="color: var(--success);">12</div>
+    </div>
+  </div>
+
+  <!-- Fegyver tábla -->
+  <div class="sim-section-title">Fegyvertábla</div>
+  <table class="sim-table">
+    <thead>
+      <tr>
+        <th>Fegyver</th>
+        <th class="sim-te">TÉ</th>
+        <th class="sim-ve">VÉ</th>
+        <th>SP</th>
+        <th>Tám</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Hosszú kard</td>
+        <td class="sim-te">72</td>
+        <td class="sim-ve">134</td>
+        <td>+8</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Tőr (bal)</td>
+        <td class="sim-te">45</td>
+        <td class="sim-ve">98</td>
+        <td>+3</td>
+        <td>1</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Field buttons (fegyver/fogás/páncél) -->
+  <div class="sim-section-title">Field gombok</div>
+  <div style="display: flex; gap: 6px; margin-bottom: 12px;">
+    <div class="sim-field-btn">
+      <span class="sim-field-label">Fegyver</span>
+      <span class="sim-field-value">Hosszú kard</span>
+    </div>
+    <div class="sim-field-btn">
+      <span class="sim-field-label">Fogás</span>
+      <span class="sim-field-value">Egykezes</span>
+    </div>
+    <div class="sim-field-btn">
+      <span class="sim-field-label">Páncél</span>
+      <span class="sim-field-value">Láncing</span>
+    </div>
+  </div>
+
+  <!-- Fortély lista -->
+  <div class="sim-section-title">Fortélyok</div>
+  <div class="sim-item-row">
+    <div>
+      <span class="sim-item-name">Kétkezes harc</span>
+      <span class="sim-item-meta" style="margin-left: 8px;">Harci</span>
+    </div>
+    <span class="sim-item-fok">●●○</span>
+  </div>
+  <div class="sim-item-row">
+    <div>
+      <span class="sim-item-name">Pajzshasználat</span>
+      <span class="sim-item-meta" style="margin-left: 8px;">Harci</span>
+    </div>
+    <span class="sim-item-fok">●●●</span>
+  </div>
+  <div class="sim-item-row">
+    <div>
+      <span class="sim-item-name">Éles elme</span>
+      <span class="sim-item-meta" style="margin-left: 8px;">Általános</span>
+    </div>
+    <span class="sim-item-fok">●○○</span>
+  </div>
+
+  <!-- Taktika/helyzet chip-ek -->
+  <div class="sim-section-title">Aktív taktikák & helyzetek</div>
+  <div style="margin-bottom: 8px;">
+    <span class="sim-chip sim-chip-taktika">⚔ Támadó</span>
+    <span class="sim-chip sim-chip-taktika">🛡 Védekező</span>
+    <span class="sim-chip sim-chip-helyzet">Meglepetés</span>
+    <span class="sim-chip sim-chip-helyzet">Harc lóhátról</span>
+  </div>
+
+  <!-- Info panel -->
+  <div class="sim-section-title">Info panel</div>
+  <div class="sim-info-panel">
+    <span class="sim-info-label">Követelmény:</span>
+    <span class="sim-info-value">Ügyesség 14+, Harci képzettség 3.fok</span>
+  </div>
+  <div class="sim-info-panel">
+    <span class="sim-info-label">Hatás:</span>
+    <span class="sim-info-value">TÉ: +5, VÉ: -10 (2.fok: TÉ: +10, VÉ: -15)</span>
+  </div>
+
+  <!-- Toast -->
+  <div style="margin-top: 12px;">
+    <span class="sim-toast">✓ Karakter mentve</span>
+  </div>
+
+  <!-- Build szám -->
+  <div style="margin-top: 12px;">
+    <span class="sim-build">v1.42 • build #237</span>
+  </div>
+</div>
+
+<!-- ===== SECTION 4: Migration mapping ===== -->
+<div class="demo-section">
+  <div class="demo-label">Migráció: régi méretek → új fokozatok</div>
+  <div class="comparison">
+    <div class="comparison-col">
+      <h4>Régi (18 méret)</h4>
+      <div class="old-sizes">
+48px → Display<br>
+34px → Display<br>
+28px → Display<br>
+24px → Display<br>
+22px → Title<br>
+20px → Title<br>
+18px → Title<br>
+17px → Subtitle<br>
+16px → Subtitle<br>
+15px → Body<br>
+14px → Body<br>
+13px → Caption<br>
+12px → Caption<br>
+11px → Overline<br>
+10px → Micro<br>
+0.75rem → Caption<br>
+0.55em → Micro
+      </div>
+    </div>
+    <div class="comparison-col">
+      <h4>Új (8 fokozat)</h4>
+      <div class="new-sizes">
+Display: 36px / 1.1 / 700<br>
+Title: 18px / 1.3 / 700<br>
+Subtitle: 16px / 1.3 / 700<br>
+Body: 14px / 1.4 / 400<br>
+Body Strong: 14px / 1.4 / 700<br>
+Caption: 12px / 1.4 / 400<br>
+Overline: 11px / 1.3 / 600<br>
+Micro: 10px / 1.2 / 400
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== SECTION 5: Implementation Plan ===== -->
+<div class="demo-section">
+  <div class="demo-label">Implementációs terv</div>
+  <div class="type-body" style="margin-top: 8px; line-height: 1.8;">
+    <strong>1. Fázis:</strong> CSS változók definiálása (<code>variables.css</code>)<br>
+    <strong>2. Fázis:</strong> Utility class-ok létrehozása (<code>typography.css</code>)<br>
+    <strong>3. Fázis:</strong> Meglévő CSS fájlok migrálása (file-by-file)<br>
+    <strong>4. Fázis:</strong> Inline/ad-hoc font-size törlése komponensekből<br>
+    <strong>5. Fázis:</strong> Vizuális regresszió ellenőrzés
+  </div>
+</div>
+
+</body>
+</html>

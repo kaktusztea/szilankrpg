@@ -26,10 +26,10 @@ export function KarmaCloud({ entries, aktív, gameMode, onToggle, onRemove, getM
             ? [<span key={`a-${entry.név}`} className="hatter-tag active" onClick={() => onToggle(entry.név, 'karma', false)}>{entry.név}</span>]
             : []
       )}
-      {/* Picker / inactive entries */}
-      {[...entries].sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(entry =>
+      {/* Picker / inactive entries — hidden in game mode */}
+      {!gameMode && [...entries].sort((a, b) => a.név.localeCompare(b.név, 'hu')).map(entry =>
         entry.többszörös
-          ? (!gameMode && <span key={entry.név} className={`hatter-tag hatter-tag-multi${isMaxed?.(entry.név, 'karma') ? ' hatter-tag-disabled' : ''}`} onClick={() => onToggle(entry.név, 'karma', true)}>{entry.név}</span>)
+          ? <span key={entry.név} className={`hatter-tag hatter-tag-multi${isMaxed?.(entry.név, 'karma') ? ' hatter-tag-disabled' : ''}`} onClick={() => onToggle(entry.név, 'karma', true)}>{entry.név}</span>
           : !aktív.includes(entry.név)
             ? <span key={entry.név} className="hatter-tag" onClick={() => onToggle(entry.név, 'karma', false)}>{entry.név}</span>
             : null
