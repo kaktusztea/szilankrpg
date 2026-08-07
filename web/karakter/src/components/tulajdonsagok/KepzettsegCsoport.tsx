@@ -27,7 +27,7 @@ export function KepzettsegCsoport({
   kiterjesztesek, tsz, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
   felvettFortelyok, onAddKepzettseg, onSzintChange, onRemove
 }: Props) {
-  const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup));
+  const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
 
   const usedNames = slotok.map(s => s.név);

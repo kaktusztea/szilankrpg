@@ -99,7 +99,21 @@ export function getKepzettsegekForCsoport(
 /**
  * Képzettség slot-ok rendezése csoporton belül.
  */
-export function sortKepzettsegSlotok(slotok: KepzettsegSlot[]): KepzettsegSlot[] {
+export function sortKepzettsegSlotok(slotok: KepzettsegSlot[], kepzettsegDefs?: KepzettsegDef[]): KepzettsegSlot[] {
+  // Build harcmodor name sets for grouping
+  const közelharciNames = new Set<string>();
+  const távharciNames = new Set<string>();
+  if (kepzettsegDefs) {
+    const hmDef = kepzettsegDefs.find(d => d.név === 'Harcmodor');
+    if (hmDef && hmDef.többszörös.length > 0) {
+      for (const n of hmDef.többszörös) közelharciNames.add(n);
+    }
+    const thDef = kepzettsegDefs.find(d => d.név === 'Távolsági harcmodor');
+    if (thDef && thDef.többszörös.length > 0) {
+      for (const n of thDef.többszörös) távharciNames.add(n);
+    }
+  }
+
   return slotok.slice().sort((a, b) => {
     const aTrad = a.név.startsWith('Tradíció');
     const bTrad = b.név.startsWith('Tradíció');
@@ -109,10 +123,16 @@ export function sortKepzettsegSlotok(slotok: KepzettsegSlot[]): KepzettsegSlot[]
     const bArk = b.név.startsWith('Arkánum');
     if (aArk && !bArk) return -1;
     if (bArk && !aArk) return 1;
-    const aHm = a.név.startsWith('Harcmodor:');
-    const bHm = b.név.startsWith('Harcmodor:');
-    if (aHm && !bHm) return -1;
-    if (bHm && !aHm) return 1;
+    // Közelharci harcmodorok
+    const aKhm = közelharciNames.has(a.név);
+    const bKhm = közelharciNames.has(b.név);
+    if (aKhm && !bKhm) return -1;
+    if (bKhm && !aKhm) return 1;
+    // Távharci harcmodorok (after közelharci)
+    const aThm = távharciNames.has(a.név);
+    const bThm = távharciNames.has(b.név);
+    if (aThm && !bThm) return -1;
+    if (bThm && !aThm) return 1;
     return a.név.localeCompare(b.név, 'hu');
   });
 }
