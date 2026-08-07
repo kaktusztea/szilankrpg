@@ -40,7 +40,9 @@ __
 - Gyűjtögető
 - Hallgatag
 - Hiszékeny
+- Hitehagyott
 - Idealista
+- Identitáskrízis
 - Kapzsi
 - Kényes
 - Megfontolt
