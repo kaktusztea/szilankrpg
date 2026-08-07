@@ -1,5 +1,5 @@
 /**
- * Golden test #2 — test_karakter2.json (von Agabor, 10. TSz, Dzsenn, komplex session)
+ * Golden test #2 — test_karakter2.json (Teszt karakter, 10. TSz, Dzsenn, komplex session)
  * Cél: minél több picker / non-default érték lefedése.
  * Bronz lánc/sodrony, sisak, végtagvédettség=3, nem passzol, rongálódás=3,
  * kétkezes harc, Támadó taktika fok 3, Hátulról támadás helyzet, Félelem státusz.
@@ -39,7 +39,7 @@ beforeAll(() => {
   }));
 });
 
-describe('Golden #2 — rules.json alapszámítások (von Agabor, 10. TSz, Dzsenn)', () => {
+describe('Golden #2 — rules.json alapszámítások (Teszt karakter, 10. TSz, Dzsenn)', () => {
   let results: Map<string, number>;
 
   beforeAll(() => {

@@ -1,5 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import type { Tulajdonsagok } from '../../engine/types';
+import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../../engine/types';
 import type { Props, KepzettsegSlot } from './types';
 import { buildDefsByGroup, getDisplayName } from './helpers';
 import { TulajdonsagokHeader } from './TulajdonsagokHeader';
@@ -90,9 +91,26 @@ export function TulajdonsagokScreen({
     });
   }
 
+  const isTestKarakter = karakter.uid === data.testKarakter.uid;
+
   return (
     <div className="screen tul-screen">
-      <h2>🔵 Tulajdonságok / Képzettségek</h2>
+      <h2>🔵 Tulajdonságok / Képzettségek{isTestKarakter && (
+        <button
+          type="button"
+          className="tul-test-reset-btn"
+          title="Teszt karakter alapállapotba állítása"
+          onClick={() => {
+            setKarakter({
+              ...data.testKarakter,
+              uid: data.testKarakter.uid,
+              id_leíró: data.testKarakter.id_leíró,
+              előtörténet: { ...DEFAULT_ELOTORTENET, ...data.testKarakter.előtörténet },
+              session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
+            });
+          }}
+        >🔄</button>
+      )}</h2>
 
       <TulajdonsagokHeader
         data={data} gameMode={gameMode}

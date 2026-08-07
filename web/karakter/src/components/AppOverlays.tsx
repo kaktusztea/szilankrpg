@@ -87,7 +87,7 @@ export function AppOverlays({
     setKarakter(k); setUndoStack(undo); setTestMode(false); setIsDirty(true); set('showSlotList', false);
   };
 
-  const handleSlotTest = () => {
+  const loadTestKarakter = () => {
     const refErr = validateKarakterData(data.testKarakter, data);
     if (refErr) { set('showTestConfirm', false); set('loadError', `Teszt karakter hiba: ${refErr}`); return; }
     setKarakter({
@@ -97,7 +97,23 @@ export function AppOverlays({
       előtörténet: { ...DEFAULT_ELOTORTENET, ...data.testKarakter.előtörténet },
       session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
     });
-    setUndoStack([]); setTestMode(true); setIsDirty(true); set('showTestConfirm', false);
+    setUndoStack([]); setTestMode(false); setIsDirty(true); set('showTestConfirm', false);
+  };
+
+  const handleSlotTest = () => loadTestKarakter();
+
+  /** Reset test char if already active, otherwise open confirm dialog */
+  const handleTestBtn = () => {
+    const testUid = data.testKarakter.uid;
+    if (testUid && karakter?.uid === testUid) {
+      // Already viewing test char → reset to original state
+      loadTestKarakter();
+      set('showSlotList', false);
+      set('toast', { msg: 'Teszt karakter alapállapotba állítva', type: 'success' });
+    } else {
+      set('showSlotList', false);
+      set('showTestConfirm', true);
+    }
   };
 
   return (
@@ -127,7 +143,7 @@ export function AppOverlays({
           onNew={() => { set('showSlotList', false); if (isSlotFull()) { set('showSlotLimit', true); } else { set('showNewConfirm', true); } }}
           onSave={() => { handleGenerateSave('backup'); }}
           newDisabled={!isDirty}
-          onTest={() => { set('showSlotList', false); set('showTestConfirm', true); }}
+          onTest={handleTestBtn}
           onFullscreenHint={() => { set('showSlotList', false); set('showFullscreenHint', true); }}
           onClose={() => set('showSlotList', false)}
         />

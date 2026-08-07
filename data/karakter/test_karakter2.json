@@ -1,9 +1,9 @@
 {
   "uid": "52a5adb5-f900-4668-89f0-102a57c47a36",
-  "id_leíró": "von-agabor-10tsz",
+  "id_leíró": "teszt-karakter-10tsz",
   "schema_version": 2,
-  "név": "von Agabor",
-  "becenév": "Von Agaborka",
+  "név": "Teszt karakter",
+  "becenév": "Teszt kari",
   "jk": true,
   "játékos": "Benedek",
   "mentés_dátum": "2026-06-29 13:55",

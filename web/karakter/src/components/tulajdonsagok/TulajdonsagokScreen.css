@@ -186,3 +186,16 @@
 .vallas-picker { max-height: 80vh; overflow-y: auto; }
 .vallas-picker-list { max-height: 70vh; overflow-y: auto; }
 .vallas-active { border-color: var(--success) !important; background: rgba(76, 175, 80, 0.15); }
+
+/* Test karakter reset gomb */
+.tul-test-reset-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  margin-left: 8px;
+  cursor: pointer;
+  opacity: 0.7;
+  vertical-align: middle;
+  padding: 2px 4px;
+}
+.tul-test-reset-btn:active { opacity: 1; }
