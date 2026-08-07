@@ -42,7 +42,7 @@
   gap: 4px;
 }
 
-.szilank-label { color: var(--text); }
+.szilank-label { color: var(--text); font-size: 15px; }
 
 .header-btns {
   display: flex;
