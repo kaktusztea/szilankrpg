@@ -62,8 +62,9 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
       <div key={s.uid} className={`slot-row ${activeUid === s.uid ? 'slot-row-active' : ''}`} onClick={() => loadSlot(s.uid)}>
         <div className="slot-row-top">
           <span className={`slot-name ${activeUid === s.uid ? 'slot-name-active' : ''}`}>
-            {truncSlotName(s.név || s.becenév)} ({s.tsz || '?'}sz)
+            {truncSlotName(s.név || s.becenév)}
           </span>
+          <span className={`slot-tsz ${activeUid === s.uid ? 'slot-name-active' : ''}`}>({s.tsz || '?'}sz)</span>
         </div>
         <div className="slot-chips">
           <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
