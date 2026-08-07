@@ -111,9 +111,9 @@
 .slot-section-title { font-size: 12px; font-weight: bold; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; padding: 2px 2px 4px; border-bottom: 1px solid var(--border); }
 .slot-row { padding: 8px 12px; border-radius: 4px; background: var(--input-bg); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; cursor: pointer; }
 .slot-row-active { background: #2a3a2a; border-color: var(--success); }
-.slot-row-top { display: flex; justify-content: flex-start; align-items: baseline; gap: 6px; }
-.slot-name { flex: 0 1 auto; min-width: 0; font-size: 18px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.slot-tsz { flex: 0 0 auto; font-size: 18px; }
+.slot-row-top { font-size: 18px; overflow-wrap: break-word; }
+.slot-name { }
+.slot-tsz { white-space: nowrap; }
 .slot-name-active { font-weight: bold; }
 .slot-empty { color: #888; text-align: center; }
 .slot-chips { display: flex; flex-wrap: wrap; gap: 8px; }

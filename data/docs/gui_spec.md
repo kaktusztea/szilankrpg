@@ -171,8 +171,8 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - Karakterek hub overlay (🧑): az összes karakter-kezelés egy helyen. Felépítés fentről lefelé:
   - Fejléc: „Karakterek"
   - **Felső akció sor** (`.slot-actions-top`, ikon-only, `title` tooltip): `📄` Új karakter (disabled ha `!isDirty`) · `📁` Betöltés fájlból (import: single + backup restore) · `📦` Backup (összes karakter mentése — disabled ha `!isDirty`)
-  - **Slot kártyák** (per karakter, 2-soros): a név ellipsis-szel csonkolódik hosszú névnél, a TSz suffix mindig látható (lásd 1. sor).
-    - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés). Külön span a névnek (`.slot-name`, ellipsis-csonkolás hosszú névnél) és a TSz-nek (`.slot-tsz`, sosem zsugorodik → mindig látható, a csonkolt név `...`-a után is)
+  - **Slot kártyák** (per karakter, 2-soros): a név több sorba tördelődik hosszú névnél (nincs csonkolás), a TSz suffix a név után folyik (lásd 1. sor).
+    - **1. sor**: `● {név} ({tsz}sz)` (● = aktív, ○ = inaktív; katt → betöltés). A név több sorba tördelődik (`.slot-row-top` `overflow-wrap: break-word` — szóhatáron tör, túl hosszú szót szó közben vág), a TSz (`.slot-tsz`, `white-space: nowrap`) egyben marad, a név után folyik.
     - **2. sor** (ikon-only chipek, 38×38px, 18px, `title` tooltip): `🔗` Link másolása (URL export deflate+base64url → vágólapra; Toast: "Karakter link vágólapra másolva!") · `💾` Mentés fájlba (`single` JSON letöltése) · `📤` Megosztás (`single` JSON Web Share — **csak ha `navigator.share` elérhető**, azaz gyakorlatilag mobilon) · `⧉` Duplikál (az adott slot duplikálása, a másolat aktívvá válik, `:2` suffix) · `✕` törlés (piros chip, `.slot-chip-del`)
   - **Footer** (`.menu-footer`): kis `T` chip (teszt karakter betöltése, halvány keret) a build verzió bal oldalán, `⛶` teljes képernyő ikon (label nélkül) a jobb oldalán. Teljes képernyő: desktop → requestFullscreen/exitFullscreen; mobil → hint popup.
 - **Fájlból betöltés**: single JSON és backup JSON egyaránt támogatott

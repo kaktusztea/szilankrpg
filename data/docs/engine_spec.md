@@ -2293,7 +2293,7 @@ Minden karakter két azonosítót kap:
 | `szilank_char_{uid}` | Teljes karakter JSON (az adott slot-hoz), benne az undo stack |
 | `szilank_active` | Az aktív karakter `uid`-ja (amelyik épp szerkesztés alatt van) |
 
-Slot lista megjelenítés: `{név} ({tsz}sz)` + relatív idő. Hosszú név `...`-tal csonkolódik (CSS ellipsis, `.slot-name`), de a TSz suffix (`.slot-tsz`) sosem zsugorodik → mindig látható.
+Slot lista megjelenítés: `{név} ({tsz}sz)` + relatív idő. Hosszú név több sorba tördelődik (`.slot-row-top` `overflow-wrap: break-word` — szóhatáron, túl hosszú szót szó közben), a TSz suffix (`.slot-tsz`) egyben marad.
 
 Az undo stack a karakter JSON részévé válik:
 ```json
