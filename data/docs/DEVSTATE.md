@@ -83,6 +83,26 @@ TODO:
 
 ### Build pipeline
 - `generate_tables.py`: YAML → JSON (Vite buildStart + prebuild)
-- `vitest run`: 107 unit teszt (66 deterministic + 22 fuzz + 15 golden; build előtt fut)
+  - Hash-alapú skip: ha a YAML source-ok nem változtak, automatikusan kihagy (`tables/.sources_hash`)
+  - Marker fájl: `tables/.generated_marker` — Vite plugin ezt nézi freshness check-hez
+  - `--force` flag: kényszerített újragenerálás (`python3 generate_tables.py --force`)
+- `vitest run`: 227 unit teszt (31 fájl); build előtt fut
 - Deploy: GitHub Pages, auto-deploy push master
 - Metadata: `ÉV.ÉVNAPJA.napibuild`
+
+### Build scriptek
+
+| Script | Mikor használd | Idő (WSL) |
+|--------|---------------|------------|
+| `npm run build` | CI / deploy előtt (teljes: test + typecheck + bundle) | ~2 perc |
+| `npm run build:changed` | Lokális: csak érintett tesztek + typecheck + bundle | ~50s–1m |
+| `npm run build:fast` | Gyors iteráció: teszt nélkül, typecheck + bundle | ~34s |
+| `npm run test` | Összes teszt futtatása | ~1.5 perc |
+| `npm run test:changed` | Csak módosult fájlokhoz tartozó tesztek (git-based) | ~22s |
+| `npm run generate` | YAML→JSON generálás (skip ha nincs változás) | ~4s / ~20s |
+
+Inkrementális működés:
+- **TypeScript**: `incremental: true` + `tsBuildInfoFile` → változatlan fájlok skip
+- **generate_tables.py**: MD5 hash az összes YAML source + a script tartalma alapján
+- **Vite plugin**: `tables/.generated_marker` mtime vs source YAML-ok mtime
+- **vitest --changed**: git diff-ből határozza meg az érintett teszteket

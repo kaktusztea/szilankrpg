@@ -3,17 +3,54 @@
 
 Run from repo root or from data/ directory.
 Usage: python3 data/generate_tables.py
+       python3 data/generate_tables.py --force   # skip freshness check
 """
 
-import yaml, json, os, sys
+import yaml, json, os, sys, hashlib
 
 # Resolve data directory
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 DATA_DIR = SCRIPT_DIR
 SOURCES_DIR = os.path.join(DATA_DIR, 'sources')
 TABLES_DIR = os.path.join(DATA_DIR, 'tables')
+HASH_FILE = os.path.join(TABLES_DIR, '.sources_hash')
 
 os.makedirs(TABLES_DIR, exist_ok=True)
+
+
+def compute_sources_hash():
+    """Compute a combined hash of all YAML source files + this script."""
+    h = hashlib.md5()
+    # Include the generator script itself
+    with open(os.path.join(SCRIPT_DIR, 'generate_tables.py'), 'rb') as f:
+        h.update(f.read())
+    # Walk all YAML sources sorted for determinism
+    yaml_files = []
+    for root, dirs, files in os.walk(SOURCES_DIR):
+        dirs.sort()
+        for f in sorted(files):
+            if f.endswith('.yaml') or f.endswith('.yml'):
+                yaml_files.append(os.path.join(root, f))
+    for path in yaml_files:
+        with open(path, 'rb') as f:
+            h.update(path.encode())
+            h.update(f.read())
+    return h.hexdigest()
+
+
+def sources_unchanged():
+    """Check if sources haven't changed since last successful generation."""
+    if not os.path.exists(HASH_FILE):
+        return False
+    with open(HASH_FILE, 'r') as f:
+        stored = f.read().strip()
+    return stored == compute_sources_hash()
+
+
+def write_hash():
+    """Write current sources hash after successful generation."""
+    with open(HASH_FILE, 'w') as f:
+        f.write(compute_sources_hash())
 
 
 def write_json(filename, data):
@@ -444,6 +481,11 @@ def validate_hatasok_katalogus(hatasok, hatas_operatorok, esemenyek):
 
 
 if __name__ == '__main__':
+    force = '--force' in sys.argv
+    if not force and sources_unchanged():
+        print("Tables up-to-date, skipping generation.")
+        sys.exit(0)
+
     print("Generating tables...")
     generate_konstansok()
     generate_kepzettsegek()
@@ -470,4 +512,10 @@ if __name__ == '__main__':
         print("  ❌ Fortély → manőver referenciális hibák:")
         for e in errors: print(f"     {e}")
         raise SystemExit(1)
+    # Write marker file for Vite plugin freshness detection
+    marker = os.path.join(TABLES_DIR, '.generated_marker')
+    with open(marker, 'w') as f:
+        f.write('')
+    # Write hash for next run's skip check
+    write_hash()
     print("Done.")
