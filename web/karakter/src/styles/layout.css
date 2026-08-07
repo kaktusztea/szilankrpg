@@ -36,6 +36,10 @@
   color: var(--success);
   cursor: pointer;
   white-space: nowrap;
+  align-self: stretch;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
 }
 
 .szilank-label { color: var(--text); }
