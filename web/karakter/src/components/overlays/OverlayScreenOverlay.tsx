@@ -21,13 +21,16 @@ export function OverlayScreenOverlay({ karakter, setKarakter, onClose, onViewChe
           {/* Karakter verziók + Napló (accordionok) */}
           <NaploTab karakter={karakter} setKarakter={setKarakter} onViewCheckpoint={id => { onViewCheckpoint?.(id); onClose(); }} />
 
-          {/* Jegyzetek — mindig látható */}
-          <textarea
-            className="app-jegyzetek-textarea"
-            value={karakter.jegyzetek}
-            onChange={e => setKarakter(prev => prev ? { ...prev, jegyzetek: e.target.value } : prev)}
-            placeholder="Szabad jegyzetek..."
-          />
+          {/* Jegyzetek — accordion, alapból nyitva */}
+          <details className="naplo-cp-section naplo-notes-section" open>
+            <summary className="naplo-cp-summary naplo-notes-summary">Jegyzetek</summary>
+            <textarea
+              className="app-jegyzetek-textarea"
+              value={karakter.jegyzetek}
+              onChange={e => setKarakter(prev => prev ? { ...prev, jegyzetek: e.target.value } : prev)}
+              placeholder="Szabad jegyzetek..."
+            />
+          </details>
 
           {/* Próba táblák — összecsukva, legalul */}
           <div className="app-proba-bar">

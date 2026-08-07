@@ -71,13 +71,10 @@
 .naplo-cp-summary {
   font-weight: bold;
   font-size: 15px;
-  color: var(--color-hatter);
+  color: var(--color-taktika);
   cursor: pointer;
   user-select: none;
 }
-
-/* Napló accordion summary — eltérő szín a verzióktól */
-.naplo-log-summary { color: var(--color-taktika); }
 
 .naplo-cp-list {
   margin-top: 8px;

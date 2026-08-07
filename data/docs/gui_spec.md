@@ -813,23 +813,26 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 Fejléc ✏️ gombbal nyitható fullscreen overlay (nem tab). Mindkét módban (szerkesztő + game) elérhető. ✕ gomb vagy Escape bezárja. Cím: "✏️ Verziók, Napló, Jegyzetek".
 
-Egyetlen görgethető nézetben, felülről lefelé:
+Egyetlen görgethető nézetben, felülről lefelé. Mindhárom szekció összecsukható `<details>` accordion, azonos summary formázással (`.naplo-cp-summary`, bold 15px, kék `--color-taktika`):
 
-### 1. Karakter verziók (accordion)
-- Összecsukható `<details>` (`.naplo-cp-section`, summary `.naplo-cp-summary`, narancs `--color-hatter`)
+### 1. Karakter verziók (accordion, alapból csukva)
+- `<details>` (`.naplo-cp-section`, summary `.naplo-cp-summary`)
 - Kiemelt verziók (checkpoint) listája, dátum szerint (legújabb elöl)
 - Verzió sorra katt: checkpoint megtekintés (overlay bezár); ✕: törlés
 - "+ Új checkpoint" gomb (max `MAX_CHECKPOINTS`); inline név-form
 
-### 2. Napló (accordion)
-- Összecsukható `<details>` (`.naplo-cp-section .naplo-log-section`, summary `.naplo-log-summary`, kék `--color-taktika`)
+### 2. Napló (accordion, alapból csukva)
+- `<details>` (`.naplo-cp-section .naplo-log-section`, summary `.naplo-log-summary`)
 - Summary: "Napló (N)" — N = bejegyzések száma
 - Játék session bejegyzések naplója (lásd viselkedés lentebb)
 
-### 3. Jegyzetek (mindig látható)
-- Szabad szöveges `<textarea>` (`.app-jegyzetek-textarea`), NEM accordion
-- Tartalom a karakter fájlba mentődik (`jegyzetek` mező)
-- Placeholder: "Szabad jegyzetek..."
+### 3. Jegyzetek (accordion, alapból NYITVA)
+- `<details open>` (`.naplo-cp-section .naplo-notes-section`, summary `.naplo-notes-summary`)
+- Summary: "Jegyzetek"
+- Szabad szöveges `<textarea>` (`.app-jegyzetek-textarea`, `resize: vertical`)
+- Tartalom a karakter fájlba mentődik (`jegyzetek` mező); placeholder: "Szabad jegyzetek..."
+
+> A `.naplo-log-summary` és `.naplo-notes-summary` osztályoknak nincs saját színük — a közös `.naplo-cp-summary` kék színt öröklik (szemantikus jelölők).
 
 ### 4. Próba táblák (accordionok, legalul)
 - `.app-proba-bar` (flow-ban a body alján, nem fixed)
