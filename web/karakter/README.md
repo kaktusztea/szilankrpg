@@ -55,9 +55,18 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 ### Harckezelés (Game mód)
 
 - **Aktív fül**: fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes), taktikák kombó-szabályokkal, harci helyzetek, manőverek, státuszok - minden választás azonnal hat a Harc fülre
-- **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, SFÉ, VÉ csökkenés +/- gombok, MP kezelés, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
-- **ÉP táblázat**: S1-S4 rubrikák, sebesülés típussal (S/V/Z/FP), gyógyulás, TÉ levonás automatika
+- **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, SFÉ, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
+  - **Kezdeményezés dobás**: a KÉ boxra koppintva `KÉ + k20` dobás nagy számmal; az utolsó 3 dobás a KÉ boxban látszik
+  - **Támadó dobás**: az aktív fegyver TÉ cellájára (vagy a TÉ gombra) koppintva `TÉ + k20` dobás
+  - **VÉ csökkentés**: a VÉ csökkenés boxban a `-N` gombokkal csökkentheted a védőértéket (támadásonként), `+1` gombbal visszaállíthatsz egyet, `⟲` nullázza. A label/érték koppintással a csökkentések története is látszik
+  - **Manőver pont (MP)**: az MP box mutatja az aktuális/max manőver pontot; `-1` gombbal használsz el egyet, `⟲` visszaállítja mindet
+  - **Harci akrobatika ki/be**: session kapcsoló (Igen/Nem) - letiltva ha hiányzik a fortély, nem megfelelő a páncél (struktúra vagy túl magas MGT), vagy kevés az Akrobatika képzettség szint (koppintásra megjelenik a hiányzó feltétel)
+  - **Páncél viselve ki/be**: session kapcsoló (Igen/Nem) - viseled-e épp a páncélt (hat az SFÉ-re, MGT-re és a Harci akrobatika elérhetőségére)
+- **ÉP táblázat / Sebesülés**: S1-S4 rubrikák, TÉ levonás automatika
+  - **Sebesülés rögzítése**: típus (S/V/Z/FP) + érték választás (1-4, bővíthető ▾ nagyobb értékekre)
+  - **Gyógyulás**: ÉP vagy FP + érték választás (csak a meglévő sebekre)
 - **Távharc**: CÉ + célpont VÉ kalkulátor szorzó-pickerekkel (mozgás, méret, szél stb.)
+  - **Lövéskitérés**: védekező eszköz - válaszd ki a bejövő fegyvert és a távolságot, az app kiszámolja a célszámot (fegyver kategória + távolság). "Kitérés" gombbal `Akrobatika+Gyorsaság + k10` dobás a célszám ellen → siker (kitértél) / sikertelen (a lövész jöhet)
 
 ### Aktív fül
 
@@ -109,7 +118,10 @@ A Harc fül fegyver táblázatában a **Tám** (Támadások száma) cellára kop
 A Misztikus fülön a **Mágia akarata** kártyára koppintva egy négyfüles referencia-ablak nyílik: Aurakiterjesztés (hatótáv módosítók), Auraerősítés (komplexitás→bónusz tábla), Összhang (előny-hátrány módosítók), Képzettség+ (szint→bónusz tábla).
 
 ### Szilánk pont és gyors-elérés (fejléc)
-A fejlécben a "Szilánk" felirat melletti keretes számra koppintva megnyílik a Szilánk pont ablak: 0–3 közötti érték választható, alatta a **Szabályrendszer** link (GitHub) és összecsukható próba-segédlet (Tulajdonság-/Képzettségpróba célszámok).
+A fejlécben a "Szilánk" felirat melletti keretes számra koppintva megnyílik a Szilánk pont ablak, ami egyben gyors-elérési hub is:
+- 0–3 közötti Szilánk pont érték választható
+- **Szabályrendszer** link (a szabálykönyv GitHub oldalára navigál)
+- összecsukható próba-segédlet: Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok
 
 
 ### Undo (Visszavonás)
