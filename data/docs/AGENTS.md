@@ -10,7 +10,7 @@ Magyar nyelvű asztali szerepjáték (RPG) webes karakteralkotó.
 ## Build & Test
 
 ```bash
-cd /mnt/c/repo/szilank.code/web/karakter
+cd /repo/github/szilank.code/web/karakter
 npm run build    # generate_tables.py + tsc + vite build
 npm run dev      # localhost:5173
 ```
@@ -72,8 +72,8 @@ Konfigurálható értékek → data layer (YAML/JSON/rules.json), NE hardcoded:
 - Prefixek: `harci_helyzet:`, `taktika:`, `fegyver:`, `fegyver_kategória:`, `fegyverfogás:`
 
 ## Szabályrendszer (md/)
-- Éles: `/mnt/c/repo/szilank.code/md/` — tartalomjegyzék: `szabalyrendszer.md`
-- Wiki (fejlesztő portál): `/mnt/c/repo/szilank.wiki/` — félkész, NE keverd az élessel
+- Éles: `/repo/github/szilank.code/md/` — tartalomjegyzék: `szabalyrendszer.md`
+- Wiki (fejlesztő portál): `/repo/github/szilank.wiki/` — félkész, NE keverd az élessel
 - Link audit: anchor módosításkor `grep -r` a teljes md/ könyvtáron
 - `.obsidian/` könyvtár: SOHA ne módosítsd
 

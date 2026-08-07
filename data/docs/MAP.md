@@ -1,6 +1,6 @@
 # Szilánk RPG — Kódtérkép
 
-## Repo gyökér (`/mnt/c/repo/szilank.code/`)
+## Repo gyökér (`/repo/github/szilank.code/`)
 
 ```
 md/                          Éles szabályrendszer (markdown, ToC: szabalyrendszer.md)

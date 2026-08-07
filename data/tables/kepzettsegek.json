@@ -1,122 +1,276 @@
 [
   {
-    "név": "Akrobatika",
-    "csoport": "fizikai",
-    "primer": true,
+    "név": "Álcázás/Álruha",
+    "csoport": "alvilági",
+    "primer": false,
     "többszörös": [],
     "próba": "dobható",
     "domináns_tulajdonságok": [
       "Ügyesség",
-      "Gyorsaság"
-    ],
-    "md_fájl": "kepzettsegek.primer/altalanos/akrobatika.md"
-  },
-  {
-    "név": "Befolyásolás",
-    "csoport": "világi",
-    "primer": true,
-    "többszörös": [],
-    "próba": "ellenpróba",
-    "domináns_tulajdonságok": [
       "Intelligencia",
+      "Önuralom",
       "Érzékenység"
     ],
-    "md_fájl": "kepzettsegek.primer/altalanos/befolyasolas.md"
+    "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
   },
   {
-    "név": "Emberismeret",
-    "csoport": "világi",
-    "primer": true,
-    "többszörös": [],
-    "próba": "ellenpróba",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia"
-    ],
-    "md_fájl": "kepzettsegek.primer/altalanos/emberismeret.md"
-  },
-  {
-    "név": "Észlelés",
-    "csoport": "világi",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia"
-    ],
-    "md_fájl": "kepzettsegek.primer/altalanos/eszleles.md"
-  },
-  {
-    "név": "Fájdalomtűrés",
-    "csoport": "fizikai",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Önuralom"
-    ],
-    "md_fájl": "kepzettsegek.primer/altalanos/fajdalomtures.md"
-  },
-  {
-    "név": "Hadászat",
+    "név": "Alkímia",
     "csoport": "tudományos",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Intelligencia"
-    ],
-    "md_fájl": "kepzettsegek.primer/altalanos/hadaszat.md"
-  },
-  {
-    "név": "Lopakodás/Rejtőzés",
-    "csoport": "alvilági",
-    "primer": true,
-    "többszörös": [],
-    "próba": "ellenpróba",
-    "domináns_tulajdonságok": [
-      "Ügyesség",
-      "Önuralom"
-    ],
-    "md_fájl": "kepzettsegek.primer/altalanos/lopakodas_rejtozes.md"
-  },
-  {
-    "név": "Méregkeverés",
-    "csoport": "tudományos",
-    "primer": true,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet",
-      "Önuralom",
-      "Intelligencia"
-    ],
-    "md_fájl": "kepzettsegek.primer/altalanos/meregkeveres.md"
-  },
-  {
-    "név": "Nyomozás",
-    "csoport": "világi",
-    "primer": true,
+    "primer": false,
     "többszörös": [],
     "próba": "dobható",
     "domináns_tulajdonságok": [
       "Intelligencia",
       "Emlékezet"
     ],
-    "md_fájl": "kepzettsegek.primer/altalanos/nyomozas.md"
+    "md_fájl": "kepzettsegek.szekunder/alkimia.md"
   },
   {
-    "név": "Orvoslás",
+    "név": "Csapdaállítás",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Önuralom"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/csapdaallitas.md"
+  },
+  {
+    "név": "Előadóművészet",
+    "csoport": "művészeti",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Emlékezet"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/eloadomuveszet.md"
+  },
+  {
+    "név": "Értékbecslés",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
+  },
+  {
+    "név": "Etikett",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia",
+      "Önuralom",
+      "Emlékezet"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/etikett.md"
+  },
+  {
+    "név": "Hajózás",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia",
+      "Emlékezet",
+      "Ügyesség"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/hajozas.md"
+  },
+  {
+    "név": "Képzőművészet",
+    "csoport": "művészeti",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Ügyesség"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
+  },
+  {
+    "név": "Kézművesség",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Intelligencia"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/kezmuvesseg.md"
+  },
+  {
+    "név": "Kvantikum",
     "csoport": "tudományos",
-    "primer": true,
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Emlékezet"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/kvantikum.md"
+  },
+  {
+    "név": "Léglovaglás",
+    "csoport": "fizikai",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Ügyesség",
+      "Gyorsaság"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
+  },
+  {
+    "név": "Lexikum",
+    "csoport": "tudományos",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/lexikum.md"
+  },
+  {
+    "név": "Lopás",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Önuralom"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/lopas.md"
+  },
+  {
+    "név": "Lovaglás",
+    "csoport": "fizikai",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Ügyesség",
+      "Gyorsaság"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/lovaglas.md"
+  },
+  {
+    "név": "Mászás",
+    "csoport": "fizikai",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Edzettség"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/maszas.md"
+  },
+  {
+    "név": "Művészetismeret",
+    "csoport": "művészeti",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia",
+      "Érzékenység"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
+  },
+  {
+    "név": "Nyelvtanulás",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Érzékenység"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
+  },
+  {
+    "név": "Szerencsejáték",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom",
+      "Intelligencia"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
+  },
+  {
+    "név": "Természetjárás",
+    "csoport": "világi",
+    "primer": false,
     "többszörös": [],
     "próba": "dobható",
     "domináns_tulajdonságok": [
       "Érzékenység",
       "Intelligencia"
     ],
-    "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
+    "md_fájl": "kepzettsegek.szekunder/termeszetjaras.md"
+  },
+  {
+    "név": "Vajákosság",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/vajakossag.md"
+  },
+  {
+    "név": "Városi jártasság",
+    "csoport": "világi",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Emlékezet",
+      "Intelligencia"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/varosi_jartassag.md"
+  },
+  {
+    "név": "Zárnyitás",
+    "csoport": "alvilági",
+    "primer": false,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Ügyesség",
+      "Önuralom"
+    ],
+    "md_fájl": "kepzettsegek.szekunder/zarnyitas.md"
   },
   {
     "név": "Arkánum: Asztrálmágia",
@@ -579,276 +733,122 @@
     "md_fájl": "kepzettsegek.primer/misztikus/tradicio.md"
   },
   {
-    "név": "Álcázás/Álruha",
-    "csoport": "alvilági",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Ügyesség",
-      "Intelligencia",
-      "Önuralom",
-      "Érzékenység"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/alcazas_alruha.md"
-  },
-  {
-    "név": "Alkímia",
-    "csoport": "tudományos",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Intelligencia",
-      "Emlékezet"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/alkimia.md"
-  },
-  {
-    "név": "Csapdaállítás",
-    "csoport": "alvilági",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Intelligencia",
-      "Önuralom"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/csapdaallitas.md"
-  },
-  {
-    "név": "Előadóművészet",
-    "csoport": "művészeti",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Emlékezet"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/eloadomuveszet.md"
-  },
-  {
-    "név": "Értékbecslés",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet",
-      "Intelligencia"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/ertekbecsles.md"
-  },
-  {
-    "név": "Etikett",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia",
-      "Önuralom",
-      "Emlékezet"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/etikett.md"
-  },
-  {
-    "név": "Hajózás",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Intelligencia",
-      "Emlékezet",
-      "Ügyesség"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/hajozas.md"
-  },
-  {
-    "név": "Képzőművészet",
-    "csoport": "művészeti",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Érzékenység",
-      "Ügyesség"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/kepzomuveszet.md"
-  },
-  {
-    "név": "Kézművesség",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Ügyesség",
-      "Intelligencia"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/kezmuvesseg.md"
-  },
-  {
-    "név": "Kvantikum",
-    "csoport": "tudományos",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Intelligencia",
-      "Emlékezet"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/kvantikum.md"
-  },
-  {
-    "név": "Léglovaglás",
+    "név": "Akrobatika",
     "csoport": "fizikai",
-    "primer": false,
+    "primer": true,
     "többszörös": [],
     "próba": "dobható",
     "domináns_tulajdonságok": [
-      "Önuralom",
       "Ügyesség",
       "Gyorsaság"
     ],
-    "md_fájl": "kepzettsegek.szekunder/leglovaglas.md"
+    "md_fájl": "kepzettsegek.primer/altalanos/akrobatika.md"
   },
   {
-    "név": "Lexikum",
-    "csoport": "tudományos",
-    "primer": false,
+    "név": "Befolyásolás",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Érzékenység"
+    ],
+    "md_fájl": "kepzettsegek.primer/altalanos/befolyasolas.md"
+  },
+  {
+    "név": "Emberismeret",
+    "csoport": "világi",
+    "primer": true,
+    "többszörös": [],
+    "próba": "ellenpróba",
+    "domináns_tulajdonságok": [
+      "Érzékenység",
+      "Intelligencia"
+    ],
+    "md_fájl": "kepzettsegek.primer/altalanos/emberismeret.md"
+  },
+  {
+    "név": "Észlelés",
+    "csoport": "világi",
+    "primer": true,
     "többszörös": [],
     "próba": "dobható",
     "domináns_tulajdonságok": [
-      "Emlékezet",
+      "Érzékenység",
       "Intelligencia"
     ],
-    "md_fájl": "kepzettsegek.szekunder/lexikum.md"
+    "md_fájl": "kepzettsegek.primer/altalanos/eszleles.md"
   },
   {
-    "név": "Lopás",
+    "név": "Fájdalomtűrés",
+    "csoport": "fizikai",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Önuralom"
+    ],
+    "md_fájl": "kepzettsegek.primer/altalanos/fajdalomtures.md"
+  },
+  {
+    "név": "Hadászat",
+    "csoport": "tudományos",
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia"
+    ],
+    "md_fájl": "kepzettsegek.primer/altalanos/hadaszat.md"
+  },
+  {
+    "név": "Lopakodás/Rejtőzés",
     "csoport": "alvilági",
-    "primer": false,
+    "primer": true,
     "többszörös": [],
     "próba": "ellenpróba",
     "domináns_tulajdonságok": [
       "Ügyesség",
       "Önuralom"
     ],
-    "md_fájl": "kepzettsegek.szekunder/lopas.md"
+    "md_fájl": "kepzettsegek.primer/altalanos/lopakodas_rejtozes.md"
   },
   {
-    "név": "Lovaglás",
-    "csoport": "fizikai",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Önuralom",
-      "Ügyesség",
-      "Gyorsaság"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/lovaglas.md"
-  },
-  {
-    "név": "Mászás",
-    "csoport": "fizikai",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Ügyesség",
-      "Edzettség"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/maszas.md"
-  },
-  {
-    "név": "Művészetismeret",
-    "csoport": "művészeti",
-    "primer": false,
+    "név": "Méregkeverés",
+    "csoport": "tudományos",
+    "primer": true,
     "többszörös": [],
     "próba": "dobható",
     "domináns_tulajdonságok": [
       "Emlékezet",
-      "Intelligencia",
-      "Érzékenység"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/muveszetismeret.md"
-  },
-  {
-    "név": "Nyelvtanulás",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet",
-      "Érzékenység"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/nyelvtanulas.md"
-  },
-  {
-    "név": "Szerencsejáték",
-    "csoport": "alvilági",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
       "Önuralom",
       "Intelligencia"
     ],
-    "md_fájl": "kepzettsegek.szekunder/szerencsejatek.md"
+    "md_fájl": "kepzettsegek.primer/altalanos/meregkeveres.md"
   },
   {
-    "név": "Természetjárás",
+    "név": "Nyomozás",
     "csoport": "világi",
-    "primer": false,
+    "primer": true,
+    "többszörös": [],
+    "próba": "dobható",
+    "domináns_tulajdonságok": [
+      "Intelligencia",
+      "Emlékezet"
+    ],
+    "md_fájl": "kepzettsegek.primer/altalanos/nyomozas.md"
+  },
+  {
+    "név": "Orvoslás",
+    "csoport": "tudományos",
+    "primer": true,
     "többszörös": [],
     "próba": "dobható",
     "domináns_tulajdonságok": [
       "Érzékenység",
       "Intelligencia"
     ],
-    "md_fájl": "kepzettsegek.szekunder/termeszetjaras.md"
-  },
-  {
-    "név": "Vajákosság",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet",
-      "Intelligencia"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/vajakossag.md"
-  },
-  {
-    "név": "Városi jártasság",
-    "csoport": "világi",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Emlékezet",
-      "Intelligencia"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/varosi_jartassag.md"
-  },
-  {
-    "név": "Zárnyitás",
-    "csoport": "alvilági",
-    "primer": false,
-    "többszörös": [],
-    "próba": "dobható",
-    "domináns_tulajdonságok": [
-      "Ügyesség",
-      "Önuralom"
-    ],
-    "md_fájl": "kepzettsegek.szekunder/zarnyitas.md"
+    "md_fájl": "kepzettsegek.primer/altalanos/orvoslas.md"
   }
 ]

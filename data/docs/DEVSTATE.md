@@ -92,14 +92,16 @@ TODO:
 
 ### Build scriptek
 
-| Script | Mikor használd | Idő (WSL) |
-|--------|---------------|------------|
-| `npm run build` | CI / deploy előtt (teljes: test + typecheck + bundle) | ~2 perc |
-| `npm run build:changed` | Lokális: csak érintett tesztek + typecheck + bundle | ~50s–1m |
-| `npm run build:fast` | Gyors iteráció: teszt nélkül, typecheck + bundle | ~34s |
-| `npm run test` | Összes teszt futtatása | ~1.5 perc |
-| `npm run test:changed` | Csak módosult fájlokhoz tartozó tesztek (git-based) | ~22s |
-| `npm run generate` | YAML→JSON generálás (skip ha nincs változás) | ~4s / ~20s |
+A natív Linux fájlrendszeren (`/repo/github/szilank.code/`) a teljes build ~18s, ezért **mindig `npm run build`-et használunk** (nincs szükség inkrementális variánsokra).
+
+| Script | Mikor használd | Idő |
+|--------|---------------|-----|
+| `npm run build` | **Mindig ezt használd** — teljes: test + typecheck + bundle | ~18s |
+| `npm run build:fast` | Elérhető, de nem használjuk (tesztek nélkül) | ~8s |
+| `npm run build:changed` | Elérhető, de nem használjuk (git-based teszt szűrés) | ~10s |
+| `npm run test` | Csak tesztek futtatása (build nélkül) | ~5s |
+| `npm run test:changed` | Elérhető, de nem használjuk | ~2s |
+| `npm run generate` | YAML→JSON generálás (skip ha nincs változás) | ~0.5s / ~3s |
 
 Inkrementális működés:
 - **TypeScript**: `incremental: true` + `tsBuildInfoFile` → változatlan fájlok skip
