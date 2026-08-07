@@ -179,6 +179,9 @@
 .elotortenet-value { font-size: 16px; color: var(--text); font-weight: bold; }
 .elotortenet-textarea-sm { min-height: 48px; resize: vertical; }
 .elotortenet-textarea-lg { min-height: 120px; resize: vertical; }
+@media (min-width: 600px) {
+  .elotortenet-textarea-lg { min-height: 260px; }
+}
 .elotortenet-counter { font-size: 11px; color: var(--text-dim); text-align: right; }
 .elotortenet-vallas-btn { text-align: left; }
 
