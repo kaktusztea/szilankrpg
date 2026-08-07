@@ -1,4 +1,4 @@
-const MD_BASE = 'https://github.com/kaktusztea/szilankrpg/blob/master/md/';
+export const MD_BASE = 'https://github.com/kaktusztea/szilankrpg/blob/master/md/';
 
 interface Props {
   mdFájl: string;

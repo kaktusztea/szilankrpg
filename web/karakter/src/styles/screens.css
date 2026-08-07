@@ -31,15 +31,7 @@
   margin-top: 8px;
 }
 
-/* --- Próba bar (összecsukható táblák, flow-ban a body alján) --- */
-.app-proba-bar {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 8px 10px;
-  font-size: 15px;
-}
-
+/* --- Próba táblák (Szilánk picker hub) --- */
 .app-proba-summary { cursor: pointer; font-weight: bold; color: var(--color-taktika); }
 .app-proba-pre { margin: 4px 0; font-family: monospace; font-size: 15px; color: #ccc; }
 

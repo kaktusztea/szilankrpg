@@ -85,7 +85,13 @@
 .menu-footer { display: flex; align-items: center; justify-content: center; gap: 8px; margin-top: 4px; }
 .menu-test-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 12px; padding: 0; width: 36px; height: 29px; font-size: 14px; font-weight: bold; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; text-align: center; }
 .menu-fs-chip { background: var(--surface); border: 1px solid var(--border-input); border-radius: 12px; padding: 0; width: 36px; height: 29px; font-size: 17px; color: var(--text); cursor: pointer; display: inline-flex; align-items: center; justify-content: center; line-height: 1; }
-.overlay-szilank { align-items: center; gap: 8px; }
+.overlay-szilank { align-items: center; gap: 8px; max-height: 85vh; overflow-y: auto; }
+
+/* Szilánk picker quick-access hub */
+.szilank-divider { width: 100%; border: none; border-top: 1px solid var(--border); margin: 2px 0; }
+.szilank-hub-link { color: var(--color-taktika); text-decoration: none; font-weight: bold; }
+.szilank-hub-link:hover, .szilank-hub-link:active { text-decoration: underline; }
+.szilank-hub-proba { width: 100%; display: flex; flex-direction: column; gap: 6px; }
 .overlay-confirm { align-items: center; gap: 12px; max-width: 320px; }
 .overlay-slots { align-items: stretch; gap: 8px; min-width: 300px; max-height: 80vh; overflow: auto; }
 .overlay-undo { align-items: stretch; gap: 8px; min-width: 280px; }

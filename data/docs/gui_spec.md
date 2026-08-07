@@ -139,7 +139,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 
 - `padding: 8px 12px`, háttér: `--primary`, `border-bottom: 1px solid #333`
 - Bal: "Szilánk" (`font-weight: bold, 16px, white-space: nowrap`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
-- Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → értékválasztó popup 0/1/2/3)
+- Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → Szilánk picker hub). A hub tartalma: (1) Szilánk értékválasztó 0/1/2/3, (2) elválasztó + "📖 Szabályrendszer" külső link (`MD_BASE + szabalyrendszer.md`, új tab), (3) elválasztó + két összecsukható próba accordion: Tulajdonságpróba (k6, célszám 3-8) és Képzettségpróba (k10, célszám 6-21) monospace. Dismissible (háttér-katt / Escape zár). Értékválasztás is zár.
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - ↩ Visszavonás gomb: undo overlay-t nyit (`↩ N` alakban, N = undo stack mérete; disabled + csak `↩` ha üres). Label szöveg nélkül.
   - ✏️ Verziók, Napló, Jegyzetek overlay gomb (mindkét mód) — összevont overlay (lásd 6b)
@@ -834,11 +834,7 @@ Egyetlen görgethető nézetben, felülről lefelé. Mindhárom szekció összec
 
 > A `.naplo-log-summary` és `.naplo-notes-summary` osztályoknak nincs saját színük — a közös `.naplo-cp-summary` kék színt öröklik (szemantikus jelölők).
 
-### 4. Próba táblák (accordionok, legalul)
-- `.app-proba-bar` (flow-ban a body alján, nem fixed)
-- Két összecsukható `<details>`:
-  - Tulajdonságpróba (k6): célszám tábla (3-8) monospace, 15px
-  - Képzettségpróba (k10): célszám tábla (6-21) monospace, 15px
+> A próba táblák (Tulajdonság-/Képzettségpróba célszámok) átkerültek a Szilánk picker hubba (lásd Header szekció).
 
 ### Napló viselkedés
 - Screen: `.naplo-screen` (embedded, padding 0)
@@ -1106,7 +1102,7 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 
 | Mező | Típus | Leírás |
 |------|-------|--------|
-| showSzilánkPicker | boolean | Szilánk pont picker (0/1/2/3) |
+| showSzilánkPicker | boolean | Szilánk picker hub (érték 0/1/2/3 + Szabályrendszer link + próba táblák) |
 
 | showSlotList | boolean | Karakterek lista overlay |
 | slotDeleteTarget | {uid, név} \| null | Slot törlés megerősítő |
@@ -1132,7 +1128,7 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 
 ### Overlay komponensek (components/overlays/)
 - `OverlayPortal.tsx` — createPortal wrapper
-- `SzilankPickerOverlay.tsx` — Szilánk pont (0-3)
+- `SzilankPickerOverlay.tsx` — Szilánk pont (0-3) + gyors-elérési hub (Szabályrendszer link, próba táblák)
 
 - `NewCharConfirmOverlay.tsx` — Új karakter megerősítő
 - `SlotListOverlay.tsx` — Karaktertár (slot lista + 🧪 teszt + 📁 fájlból)

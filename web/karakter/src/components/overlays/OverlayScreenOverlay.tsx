@@ -31,18 +31,6 @@ export function OverlayScreenOverlay({ karakter, setKarakter, onClose, onViewChe
               placeholder="Szabad jegyzetek..."
             />
           </details>
-
-          {/* Próba táblák — összecsukva, legalul */}
-          <div className="app-proba-bar">
-            <details>
-              <summary className="app-proba-summary">Tulajdonságpróba (k6)</summary>
-              <pre className="app-proba-pre">{`3: Könnyű\n4: Átlagos\n5: Nehéz\n6: Nagyon nehéz\n7: Rendkívül nehéz\n8: Emberfeletti`}</pre>
-            </details>
-            <details>
-              <summary className="app-proba-summary">Képzettségpróba (k10)</summary>
-              <pre className="app-proba-pre">{` 6: Könnyű\n 9: Átlagos\n12: Nehéz\n15: Nagyon nehéz\n18: Rendkívül nehéz\n21: Emberfeletti`}</pre>
-            </details>
-          </div>
         </div>
       </div>
     </OverlayPortal>
