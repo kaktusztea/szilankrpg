@@ -20,6 +20,10 @@ export function VallasPickerOverlay({ data, current, onPick, onClose }: Props) {
     if (!byPantheon.has(p)) byPantheon.set(p, []);
     byPantheon.get(p)!.push(i);
   }
+  // Sort within each group
+  for (const items of byPantheon.values()) {
+    items.sort((a, b) => a.név.localeCompare(b.név, 'hu'));
+  }
 
   return (
     <OverlayPortal dismissible onClose={onClose}>
@@ -31,7 +35,7 @@ export function VallasPickerOverlay({ data, current, onPick, onClose }: Props) {
             className={`he-field-btn${!current ? ' vallas-active' : ''}`}
             onClick={() => onPick('')}
           >
-            — nincs —
+            Hitetlen
           </button>
 
           {[...byPantheon.entries()].map(([pantheon, items]) => (

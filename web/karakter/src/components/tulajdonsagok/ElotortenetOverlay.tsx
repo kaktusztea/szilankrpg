@@ -76,7 +76,7 @@ export function ElotortenetOverlay({ karakter, setKarakter, data, onClose }: Pro
                 className="he-field-btn elotortenet-vallas-btn"
                 onClick={() => setShowVallasPicker(true)}
               >
-                {karakter.vallás || '— válassz —'}
+                {karakter.vallás || 'Hitetlen'}
               </button>
             </div>
           </div>
