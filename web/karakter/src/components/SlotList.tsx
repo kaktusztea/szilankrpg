@@ -6,11 +6,7 @@ import { sanitizeUndo } from '../hooks/useUndo';
 import { readSlots, type SlotEntry } from '../hooks/slot-utils';
 
 function truncSlotName(név: string | undefined): string {
-  const n = név || 'Névtelen';
-  const vm = n.match(/ v(\d+)$/);
-  const base = vm ? n.slice(0, -vm[0].length) : n;
-  const truncated = base.length > 15 ? base.slice(0, 15) + '..' : base;
-  return truncated + (vm ? ` v${vm[1]}` : '');
+  return név || 'Névtelen';
 }
 
 interface Props {
