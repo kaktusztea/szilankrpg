@@ -34,6 +34,7 @@ code/                        Python scriptek (process_fegyverek.py + lib/)
 | `feltetel-eval.ts` | FeltételEvaluator factory (context-alapú feltétel kiértékelés) |
 | `url-share.ts` | Karakter URL export/import (deflate+base64url) |
 | `checkpoint-utils.ts` | Karakter verziók (checkpoint): snapshot, create, restore (truncate/append), delete — §31b |
+| `dice.ts` | Kockadobás: rollDie(sides), rollK20, rollK10 (közös randomizálás) |
 | `file-ops.ts` | Save/Load/Duplicate |
 | `validate.ts` | Karakter validáció |
 | `utils.ts` | lookupFegyver, evaluateFeltétel, describeKepChange |
@@ -79,7 +80,9 @@ aktiv/                     Aktív fül (taktika, helyzet, manőver, státusz, fe
   AktivHelpers.ts          Barrel re-export (taktika + helyzet helpers)
   taktika-helpers.ts       Taktika validáció, kombó, getTaktikaMods, getExtraFokok, formatFokMods
   helyzet-helpers.ts       Helyzet elérhetőség, min penge, infó szöveg
-  NaploTab.tsx             Verziók + Napló accordionok (OverlayScreenOverlay tartalma)
+  NaploTab.tsx             Verziók + Napló accordionok kompozíciója (CheckpointSection + NaploSection)
+  CheckpointSection.tsx    Karakter verziók accordion (lista, létrehozás, törlés, megtekintés)
+  NaploSection.tsx         Napló accordion (bejegyzések, szerkesztő form, opcionális checkpoint)
 
 harc/                      Harc fül (harcértékek, ÉP, fegyvertábla)
   HarcScreen.tsx           Fő screen
@@ -187,7 +190,7 @@ overlays/                  Globális overlay-ek (menü, mentés, slot, undo, stb
 | 27 | Fegyverfogás | `AktivFegyverfogas.tsx`, `pancel-calc.ts` |
 | 29 | Undo | `useKarakterState.ts`, `useUndo.ts` |
 | 30-31 | Local Storage, Multi-karakter | `useKarakterState.ts`, `useAutoSave.ts` |
-| 31b | Karakter verziók (checkpoint) | `checkpoint-utils.ts`, `NaploTab.tsx` |
+| 31b | Karakter verziók (checkpoint) | `checkpoint-utils.ts`, `CheckpointSection.tsx` |
 | 34 | Aura | `MisztikusScreen.tsx` |
 | 38 | Lovas harc | `harci_helyzetek.yaml`, `taktikak.yaml` |
 | 40 | URL Export | `url-share.ts` |

@@ -4,10 +4,7 @@ import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { validateKarakter } from '../engine/validate';
 import { sanitizeUndo } from '../hooks/useUndo';
 import { readSlots, type SlotEntry } from '../hooks/slot-utils';
-
-function truncSlotName(név: string | undefined): string {
-  return név || 'Névtelen';
-}
+import { SlotRow } from './SlotRow';
 
 interface Props {
   activeUid: string | undefined;
@@ -35,6 +32,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
   const isSaving = savingId !== null;
   // Desktop = no Web Share API → direct download → OS save dialog (has the lag).
   const isDesktop = typeof navigator.share !== 'function';
+  const canShare = typeof navigator.share === 'function';
   useEffect(() => {
     if (!savingId) return;
     const finish = () => onClose();
@@ -57,32 +55,29 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
     } catch { /* */ }
   }
 
+  /** Save a slot to file. On desktop: show spinner (native dialog lag), let it paint before triggering download. */
+  function saveSlot(uid: string) {
+    if (!isDesktop) { onSaveFile(uid); return; }
+    if (isSaving) return;
+    setSavingId(uid);
+    requestAnimationFrame(() => requestAnimationFrame(() => onSaveFile(uid)));
+  }
+
   function renderSlot(s: SlotEntry) {
     return (
-      <div key={s.uid} className={`slot-row ${activeUid === s.uid ? 'slot-row-active' : ''}`} onClick={() => loadSlot(s.uid)}>
-        <div className="slot-row-top">
-          <span className={`slot-name ${activeUid === s.uid ? 'slot-name-active' : ''}`}>
-            {truncSlotName(s.név || s.becenév)}
-          </span>
-          <span className={`slot-tsz ${activeUid === s.uid ? 'slot-name-active' : ''}`}> ({s.tsz || '?'}sz)</span>
-        </div>
-        <div className="slot-chips">
-          <button className="slot-chip" title="Link másolása" onClick={e => { e.stopPropagation(); onShare(s.uid); }}>🔗</button>
-          <button className="slot-chip" title="Mentés fájlba" onClick={e => {
-            e.stopPropagation();
-            if (!isDesktop) { onSaveFile(s.uid); return; }
-            if (isSaving) return;
-            setSavingId(s.uid);
-            // Let the spinner paint before the download triggers the OS save dialog.
-            requestAnimationFrame(() => requestAnimationFrame(() => onSaveFile(s.uid)));
-          }}>{savingId === s.uid ? <span className="slot-btn-spinner" /> : '💾'}</button>
-          {typeof navigator.share === 'function' && (
-            <button className="slot-chip" title="Megosztás" onClick={e => { e.stopPropagation(); onShareFile(s.uid); }}>📤</button>
-          )}
-          <button className="slot-chip" title="Duplikál" onClick={e => { e.stopPropagation(); onDuplicate(s.uid); }}>⧉</button>
-          <button className="slot-chip slot-chip-del" title="Törlés" onClick={e => { e.stopPropagation(); onDelete(s.uid, `${s.név || s.becenév || 'Névtelen'} (${s.tsz || '?'}sz)`); }}>✕</button>
-        </div>
-      </div>
+      <SlotRow
+        key={s.uid}
+        slot={s}
+        active={activeUid === s.uid}
+        savingId={savingId}
+        canShare={canShare}
+        onLoad={loadSlot}
+        onShare={onShare}
+        onSaveSlot={saveSlot}
+        onShareFile={onShareFile}
+        onDuplicate={onDuplicate}
+        onDelete={onDelete}
+      />
     );
   }
 

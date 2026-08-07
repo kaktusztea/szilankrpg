@@ -112,7 +112,6 @@
 .slot-row { padding: 8px 12px; border-radius: 4px; background: var(--input-bg); border: 1px solid var(--border); display: flex; flex-direction: column; gap: 6px; cursor: pointer; }
 .slot-row-active { background: #2a3a2a; border-color: var(--success); }
 .slot-row-top { font-size: 18px; overflow-wrap: break-word; }
-.slot-name { }
 .slot-tsz { white-space: nowrap; }
 .slot-name-active { font-weight: bold; }
 .slot-empty { color: #888; text-align: center; }

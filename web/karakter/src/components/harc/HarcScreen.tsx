@@ -13,6 +13,7 @@ import { HarcFegyverfogas } from './HarcFegyverfogas';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás } from './DobasPopup';
+import { rollK20 } from '../../engine/dice';
 import './HarcScreen.css';
 
 export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: HarcBaseProps) {
@@ -49,8 +50,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   // KÉ dobás handler
   const handleKéClick = useCallback(() => {
-    const k20 = Math.floor(Math.random() * 20) + 1;
-    setKéDobásEredmény(hc.ké + k20);
+    setKéDobásEredmény(hc.ké + rollK20());
   }, [hc.ké]);
 
   const handleKéDobásClose = useCallback((eredmény: number) => {
@@ -64,8 +64,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   // Támadó dobás handler (TÉ + k20). Az alapértéket (aktív fegyver TÉ) a dobás
   // pillanatában rögzítjük, mert fegyverváltással változhat.
   const handleTéDobás = useCallback((té: number) => {
-    const k20 = Math.floor(Math.random() * 20) + 1;
-    setTéDobás({ alap: té, eredmény: té + k20 });
+    setTéDobás({ alap: té, eredmény: té + rollK20() });
   }, []);
 
   const handleTéDobásClose = useCallback((eredmény: number) => {

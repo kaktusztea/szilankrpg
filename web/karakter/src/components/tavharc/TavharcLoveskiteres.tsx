@@ -4,6 +4,7 @@ import type { KonstansokRaw } from '../../engine/data-types';
 import { useHoldRepeat } from '../../hooks/useHoldRepeat';
 import { MAX_TÁVOLSÁG_MÉTER } from '../../ui-constants';
 import { PopupOverlay } from '../PopupOverlay';
+import { rollK10 } from '../../engine/dice';
 import { weaponToLöveskitérésKategória, parseHatótáv, calcLöveskitérésCélszám, calcAkrobatikaÉrték } from './helpers';
 
 interface Props {
@@ -70,7 +71,7 @@ export function TavharcLoveskiteres({ karakter, konstansok, tavfegyverek }: Prop
 
   const kitérés = () => {
     if (célszám === null) return;
-    const k10 = Math.floor(Math.random() * 10) + 1;
+    const k10 = rollK10();
     setDobás({ k10, siker: akrobatika + k10 >= célszám });
   };
 
