@@ -97,6 +97,12 @@ napló:                          # Kaland bejegyzések listája
     kaland: ""                  # Kaland neve
     események: ""               # Szabad szöveges leírás
 
+checkpoints:                    # Kiemelt verziók (snapshot-alapú verziókövetés)
+  - id: ""                      # nanoid (8 char)
+    név: ""                     # max 20 karakter
+    dátum: ""                   # ISO timestamp
+    snapshot: {}                # Full state snapshot (session, checkpoints, uid, id_leíró nélkül)
+
 # ============================================================
 # Session (runtime állapot — Game módban változó értékek)
 # Ugyanabban a fájlban, szeparált szekcióban.

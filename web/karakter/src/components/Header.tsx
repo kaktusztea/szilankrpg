@@ -5,12 +5,13 @@ interface Props {
   testMode: boolean;
   gameMode: boolean;
   setGameMode: (v: boolean) => void;
+  viewingCheckpoint: boolean;
   session: Session;
   undoCount: number;
   setOverlay: <K extends keyof OverlayState>(key: K, value: OverlayState[K]) => void;
 }
 
-export function Header({ testMode, gameMode, setGameMode, session, undoCount, setOverlay }: Props) {
+export function Header({ testMode, gameMode, setGameMode, viewingCheckpoint, session, undoCount, setOverlay }: Props) {
   return (
     <header className="header">
       <span className="header-szilank" onClick={() => setOverlay('showSzilánkPicker', true)}>
@@ -28,10 +29,11 @@ export function Header({ testMode, gameMode, setGameMode, session, undoCount, se
         <button className="gear-btn" onClick={() => setOverlay('overlayScreen', 'naplo')}>📅</button>
         <button className="gear-btn gear-btn-padded" onClick={() => setOverlay('showSlotList', true)}>🧑</button>
         <button
-          className={`mode-toggle ${gameMode ? 'mode-toggle-game' : 'mode-toggle-szerk'}`}
-          onClick={() => setGameMode(!gameMode)}
+          className={`mode-toggle ${(gameMode || viewingCheckpoint) ? 'mode-toggle-game' : 'mode-toggle-szerk'}`}
+          onClick={() => !viewingCheckpoint && setGameMode(!gameMode)}
+          disabled={viewingCheckpoint}
         >
-          {gameMode ? '🎮 Játék' : '🔧 Szerk'}
+          {(gameMode || viewingCheckpoint) ? '🎮 Játék' : '🔧 Szerk'}
         </button>
       </div>
     </header>

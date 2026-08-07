@@ -55,3 +55,132 @@
 .naplo-btn-save { background: var(--success); border: none; border-radius: 4px; padding: 6px 14px; color: #000; font-weight: bold; font-size: 14px; }
 .naplo-btn-cancel { background: var(--input-bg); border: 1px solid var(--border-input); border-radius: 4px; padding: 6px 14px; color: var(--text); font-size: 14px; }
 .naplo-btn-del { background: var(--error); border: none; border-radius: 4px; padding: 4px 10px; color: #fff; font-size: 13px; }
+
+/* =============================================
+   Checkpoint section
+   ============================================= */
+
+.naplo-cp-section {
+  margin-bottom: 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+  background: var(--surface);
+}
+
+.naplo-cp-summary {
+  font-weight: bold;
+  font-size: 15px;
+  color: var(--color-hatter);
+  cursor: pointer;
+  user-select: none;
+}
+
+.naplo-cp-list {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.naplo-cp-entry {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.naplo-cp-entry:active {
+  opacity: 0.7;
+}
+
+.naplo-cp-dot {
+  color: var(--color-hatter);
+  font-size: 12px;
+}
+
+.naplo-cp-entry-name {
+  flex: 1;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.naplo-cp-entry-date {
+  color: var(--text-dim);
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.naplo-cp-empty {
+  color: var(--text-dim);
+  font-size: 13px;
+  padding: 4px 0;
+}
+
+.naplo-cp-new-btn {
+  margin-top: 8px;
+}
+
+.naplo-cp-new-form {
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Checkpoint checkbox in napló form */
+.naplo-cp-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 8px 0 4px;
+  border-top: 1px solid var(--border);
+}
+
+.naplo-cp-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.naplo-cp-label input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+}
+
+.naplo-cp-name {
+  font-size: 14px;
+}
+
+/* Checkpoint restore overlay */
+.checkpoint-restore-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.checkpoint-restore-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.checkpoint-restore-option input[type="radio"] {
+  margin-top: 2px;
+  width: 18px;
+  height: 18px;
+}

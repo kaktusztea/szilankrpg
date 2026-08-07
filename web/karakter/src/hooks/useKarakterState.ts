@@ -11,6 +11,7 @@ export function useKarakterState() {
   const [karakter, setKarakter] = useState<Karakter | null>(null);
   const [testMode, setTestMode] = useState(false);
   const [isDirty, setIsDirty] = useState(false);
+  const [viewingMode, setViewingMode] = useState(false);
 
   const karakterRef = useRef(karakter);
   karakterRef.current = karakter;
@@ -28,7 +29,7 @@ export function useKarakterState() {
   }, [initialKarakter]);
 
   // Autosave
-  useAutoSave(karakter, undoStack, isDirty, testMode, setKarakter);
+  useAutoSave(karakter, undoStack, isDirty, testMode, setKarakter, viewingMode);
 
   // Document title
   useEffect(() => { document.title = karakter?.becenév || 'Szilánk'; }, [karakter?.becenév]);
@@ -49,6 +50,7 @@ export function useKarakterState() {
   return {
     data, error, karakter, setKarakter,
     testMode, setTestMode, isDirty, setIsDirty,
+    viewingMode, setViewingMode,
     undoStack, setUndoStack, pushUndo, undoTo,
     setTulajdonságok, setKépzettségek, setFortélyok, setSession,
   };

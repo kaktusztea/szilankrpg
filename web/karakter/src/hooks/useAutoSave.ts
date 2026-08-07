@@ -6,7 +6,7 @@ import { readSlots, writeSlots } from './slot-utils';
 
 /**
  * Persists karakter + undoStack to localStorage whenever they change.
- * Skips save if testMode, !isDirty, or karakter is empty (no name/skills/feats).
+ * Skips save if testMode, !isDirty, viewingCheckpoint, or karakter is empty (no name/skills/feats).
  */
 export function useAutoSave(
   karakter: Karakter | null,
@@ -14,9 +14,10 @@ export function useAutoSave(
   isDirty: boolean,
   testMode: boolean,
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>,
+  viewingCheckpoint = false,
 ) {
   useEffect(() => {
-    if (!karakter || testMode || !isDirty) return;
+    if (!karakter || testMode || !isDirty || viewingCheckpoint) return;
     const tulajDefault = Object.values(karakter.tulajdonságok).every(v => v === 0);
     if (!karakter.név && !karakter.becenév && karakter.képzettségek.length === 0 && karakter.fortélyok.length === 0 && tulajDefault) return;
 
@@ -37,5 +38,5 @@ export function useAutoSave(
       if (existing >= 0) slots[existing] = entry; else slots.unshift(entry);
       writeSlots(slots);
     } catch { /* quota exceeded */ }
-  }, [karakter, undoStack, isDirty, testMode]);
+  }, [karakter, undoStack, isDirty, testMode, viewingCheckpoint]);
 }

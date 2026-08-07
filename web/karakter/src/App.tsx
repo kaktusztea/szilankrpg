@@ -12,15 +12,21 @@ import { KpBar } from './components/KpBar';
 import { TabContent, ALL_TABS } from './components/TabContent';
 import { ScreenErrorBoundary } from './components/ScreenErrorBoundary';
 import { AppOverlays } from './components/AppOverlays';
-import { downloadFile, shareFile } from './engine/file-ops';
+import { downloadFile, shareFile, generateUid, generateIdLeíró } from './engine/file-ops';
+import { restoreTruncate, restoreAppend } from './engine/checkpoint-utils';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './engine/types';
+import type { Karakter } from './engine/types';
 import { validateKarakterData } from './engine/validate';
+import { CheckpointBanner } from './components/CheckpointBanner';
+import { CheckpointRestoreOverlay } from './components/overlays/CheckpointRestoreOverlay';
 import './App.css';
 
 function App() {
   const {
     data, error, karakter, setKarakter,
     testMode, setTestMode, isDirty, setIsDirty,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    viewingMode: _viewingMode, setViewingMode,
     undoStack, setUndoStack, pushUndo, undoTo,
     setTulajdonságok, setKépzettségek, setFortélyok, setSession,
   } = useKarakterState();
@@ -28,8 +34,12 @@ function App() {
   const { overlays, setOverlay } = useOverlays();
   const [activeTab, setActiveTab] = useState(5);
   const [gameMode, setGameMode] = useState(false);
+  const [viewingCheckpointId, setViewingCheckpointId] = useState<string | null>(null);
 
-  const TABS = ALL_TABS.filter(t => !t.editOnly || !gameMode);
+  // When viewing a checkpoint, everything is read-only
+  const effectiveGameMode = gameMode || !!viewingCheckpointId;
+
+  const TABS = ALL_TABS.filter(t => !t.editOnly || !effectiveGameMode);
   const { handleTouchStart, handleTouchEnd } = useSwipe(activeTab, TABS.length, setActiveTab);
 
   useGameModeTabSync(gameMode, activeTab, setActiveTab);
@@ -63,6 +73,90 @@ function App() {
     setOverlay('toast', { msg: 'Teszt karakter alapállapotba állítva', type: 'success' });
   }
 
+  const [showRestoreOverlay, setShowRestoreOverlay] = useState(false);
+  // latestSnapshot: stores the full karakter state before switching to a checkpoint view
+  const [latestSnapshot, setLatestSnapshot] = useState<Karakter | null>(null);
+
+  const viewingCheckpoint = viewingCheckpointId
+    ? (latestSnapshot ?? karakter)?.checkpoints.find(c => c.id === viewingCheckpointId) ?? null
+    : null;
+
+  /** Enter checkpoint viewing: save current state, apply snapshot read-only */
+  function handleViewCheckpoint(id: string) {
+    if (!karakter) return;
+    const cp = karakter.checkpoints.find(c => c.id === id);
+    if (!cp) return;
+    // Save latest state (only if not already viewing a checkpoint)
+    if (!latestSnapshot) {
+      setLatestSnapshot(karakter);
+    }
+    // Apply checkpoint snapshot onto karakter (read-only view)
+    setKarakter({
+      ...karakter,
+      ...cp.snapshot,
+      uid: karakter.uid,
+      id_leíró: karakter.id_leíró,
+      schema_version: karakter.schema_version,
+      checkpoints: karakter.checkpoints,
+      session: karakter.session,
+      mentés_dátum: karakter.mentés_dátum,
+    });
+    setViewingCheckpointId(id);
+    setViewingMode(true);
+  }
+
+  /** Exit checkpoint viewing: restore latest state */
+  function handleCheckpointBack() {
+    if (latestSnapshot) {
+      setKarakter(latestSnapshot);
+      setLatestSnapshot(null);
+    }
+    setViewingCheckpointId(null);
+    setViewingMode(false);
+  }
+
+  function handleCheckpointRestore(mode: 'truncate' | 'append') {
+    if (!latestSnapshot || !viewingCheckpointId) return;
+    // Restore operates on the latestSnapshot's checkpoints (the real data)
+    const base = latestSnapshot;
+    const restored = mode === 'truncate'
+      ? restoreTruncate(base, viewingCheckpointId)
+      : restoreAppend(base, viewingCheckpointId);
+    setKarakter(restored);
+    setUndoStack([]);
+    setIsDirty(true);
+    setLatestSnapshot(null);
+    setViewingCheckpointId(null);
+    setViewingMode(false);
+    setShowRestoreOverlay(false);
+    setOverlay('toast', { msg: 'Verzió visszaállítva', type: 'success' });
+  }
+
+  function handleCheckpointDuplicate() {
+    if (!viewingCheckpointId) return;
+    const base = latestSnapshot ?? karakter;
+    if (!base) return;
+    const cp = base.checkpoints.find(c => c.id === viewingCheckpointId);
+    if (!cp) return;
+    const newUid = generateUid();
+    const restored = {
+      ...base,
+      ...cp.snapshot,
+      uid: newUid,
+      session: { ...DEFAULT_SESSION },
+      checkpoints: [],
+    } as Karakter;
+    restored.id_leíró = generateIdLeíró(restored.név, restored.tsz);
+    restored.becenév = restored.becenév ? `${restored.becenév} (dup)` : '';
+    setKarakter(restored);
+    setUndoStack([]);
+    setIsDirty(true);
+    setLatestSnapshot(null);
+    setViewingCheckpointId(null);
+    setViewingMode(false);
+    setOverlay('toast', { msg: 'Verzió duplikálva', type: 'success' });
+  }
+
   if (error) return <div className="error">Hiba: {error}</div>;
   if (!data || !karakter) return <div className="loading">Betöltés...</div>;
 
@@ -72,8 +166,25 @@ function App() {
     <div className="app" onContextMenu={e => e.preventDefault()}>
       <Header
         testMode={testMode} gameMode={gameMode} setGameMode={setGameMode}
+        viewingCheckpoint={!!viewingCheckpointId}
         session={session} undoCount={undoStack.length} setOverlay={setOverlay}
       />
+
+      {viewingCheckpoint && (
+        <CheckpointBanner
+          checkpoint={viewingCheckpoint}
+          onBack={handleCheckpointBack}
+          onRestore={() => setShowRestoreOverlay(true)}
+          onDuplicate={handleCheckpointDuplicate}
+        />
+      )}
+
+      {showRestoreOverlay && (
+        <CheckpointRestoreOverlay
+          onRestore={handleCheckpointRestore}
+          onClose={() => setShowRestoreOverlay(false)}
+        />
+      )}
 
       <main className="content" onTouchStart={handleTouchStart} onTouchEnd={handleTouchEnd}>
         <div className="screen-slider" style={{ '--active-offset': TABS.length - 1 - activeTab } as React.CSSProperties}>
@@ -84,7 +195,7 @@ function App() {
                 {Math.abs(i - activeTab) <= 1 && (
                   <ScreenErrorBoundary>
                     <TabContent
-                      tab={tab.id} data={data} gameMode={gameMode} setActiveTab={setActiveTab}
+                      tab={tab.id} data={data} gameMode={effectiveGameMode} setActiveTab={setActiveTab}
                       tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságok}
                       képzettségek={képzettségek} setKépzettségek={setKépzettségek}
                       fortélyok={fortélyok} setFortélyok={setFortélyok}
@@ -101,7 +212,7 @@ function App() {
         </div>
       </main>
 
-      {!gameMode && <KpBar data={data} karakter={karakter} />}
+      {!effectiveGameMode && <KpBar data={data} karakter={karakter} />}
 
       <TabBar tabs={TABS} activeTab={activeTab} setActiveTab={setActiveTab} />
 
@@ -118,6 +229,7 @@ function App() {
         importKarakter={importKarakter} deleteSlot={deleteSlot}
         setUndoStack={setUndoStack} setTestMode={setTestMode} setIsDirty={setIsDirty}
         isDirty={isDirty}
+        onViewCheckpoint={handleViewCheckpoint}
       />
     </div>
   );

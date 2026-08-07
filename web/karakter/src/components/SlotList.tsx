@@ -56,7 +56,7 @@ export function SlotList({ activeUid, onLoad, onDelete, onShare, onSaveFile, onS
     try {
       const parsed = JSON.parse(charData);
       if (validateKarakter(parsed)) {
-        onLoad({ ...parsed, jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session } }, sanitizeUndo((parsed as any)._undo));
+        onLoad({ ...parsed, jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session }, checkpoints: parsed.checkpoints || [] }, sanitizeUndo((parsed as any)._undo));
       }
     } catch { /* */ }
   }

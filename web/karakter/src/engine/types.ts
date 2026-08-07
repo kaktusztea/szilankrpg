@@ -118,6 +118,13 @@ export interface NarratívMódosító {
   érték?: number;  // opcionális: Előny/Hátrány (-2..+2)
 }
 
+export interface Checkpoint {
+  id: string;               // nanoid 8 char
+  név: string;              // max 20 karakter
+  dátum: string;            // ISO timestamp
+  snapshot: Partial<Karakter>;  // full state snapshot (session, checkpoints, uid, id_leíró nélkül)
+}
+
 export interface Karakter {
   uid: string;
   id_leíró: string;
@@ -148,6 +155,7 @@ export interface Karakter {
   előtörténet: Előtörténet;
   jegyzetek: string;
   napló: NaploBejegyzes[];
+  checkpoints: Checkpoint[];
   session: Session;
 }
 

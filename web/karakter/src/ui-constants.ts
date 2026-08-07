@@ -10,3 +10,5 @@ export const MAX_FEGYVER_DARAB = 10;
 export const MAX_AZONOS_HÁTTÉR = 10;
 export const MAX_AZONOS_FORTÉLY = 10;
 export const MAX_AZONOS_KÉPZETTSÉG = 10;
+export const MAX_CHECKPOINTS = 20;
+export const MAX_CHECKPOINT_NÉV = 20;

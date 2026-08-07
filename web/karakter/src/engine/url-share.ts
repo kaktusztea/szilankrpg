@@ -130,7 +130,7 @@ function compactEncode(k: Karakter): CompactKarakter {
   return c;
 }
 
-function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' | 'mentés_dátum' | 'jegyzetek' | 'napló' | 'session'> {
+function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' | 'mentés_dátum' | 'jegyzetek' | 'napló' | 'session' | 'checkpoints'> {
   const tulajdonságok: any = {};
   TULAJ_ORDER.forEach((key, i) => { tulajdonságok[key] = c.tu[i] ?? 0; });
 
@@ -240,6 +240,7 @@ export function decodeKarakterFromHash(hash: string): { karakter: Karakter } | {
       jegyzetek: '',
       előtörténet: { ...DEFAULT_ELOTORTENET },
       napló: [],
+      checkpoints: [],
       session: { ...DEFAULT_SESSION },
     };
     return { karakter };

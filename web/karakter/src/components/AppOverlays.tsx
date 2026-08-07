@@ -57,13 +57,14 @@ interface Props {
   setTestMode: (v: boolean) => void;
   setIsDirty: (v: boolean) => void;
   isDirty: boolean;
+  onViewCheckpoint?: (id: string) => void;
 }
 
 export function AppOverlays({
   state: s, setState: set, data, karakter, session, setSession,
   setKarakter, pushUndo, undoStack, undoTo, duplicateSlot, handleGenerateSave,
   shareFile, downloadFile, loadKarakter, shareSlotUrl, saveSlotToFile, importKarakter, deleteSlot,
-  setUndoStack, setTestMode, setIsDirty, isDirty,
+  setUndoStack, setTestMode, setIsDirty, isDirty, onViewCheckpoint,
 }: Props) {
 
   // --- Slot delete handler ---
@@ -191,6 +192,7 @@ export function AppOverlays({
           karakter={karakter}
           setKarakter={setKarakter}
           onClose={() => set('overlayScreen', null)}
+          onViewCheckpoint={onViewCheckpoint}
         />
       )}
 

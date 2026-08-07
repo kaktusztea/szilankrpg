@@ -1,0 +1,43 @@
+.checkpoint-banner {
+  background: #3a2800;
+  border: 1px solid var(--warning);
+  border-radius: 6px;
+  padding: 8px 12px;
+  margin: 0 8px 8px;
+  text-align: center;
+}
+
+.checkpoint-banner-label {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--warning);
+  margin-bottom: 8px;
+}
+
+.checkpoint-banner-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.checkpoint-banner-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  color: var(--text);
+  padding: 6px 12px;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.checkpoint-banner-btn:active {
+  opacity: 0.7;
+}
+
+.checkpoint-banner-btn-restore {
+  background: var(--primary);
+  border-color: var(--accent);
+  color: var(--accent);
+  font-weight: bold;
+}

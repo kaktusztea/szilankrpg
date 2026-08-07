@@ -7,9 +7,10 @@ interface Props {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   onClose: () => void;
+  onViewCheckpoint?: (id: string) => void;
 }
 
-export function OverlayScreenOverlay({ screen, karakter, setKarakter, onClose }: Props) {
+export function OverlayScreenOverlay({ screen, karakter, setKarakter, onClose, onViewCheckpoint }: Props) {
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="fullscreen-overlay">
@@ -40,7 +41,7 @@ export function OverlayScreenOverlay({ screen, karakter, setKarakter, onClose }:
               </div>
             </>
           )}
-          {screen === 'naplo' && <NaploTab karakter={karakter} setKarakter={setKarakter} />}
+          {screen === 'naplo' && <NaploTab karakter={karakter} setKarakter={setKarakter} onViewCheckpoint={id => { onViewCheckpoint?.(id); onClose(); }} />}
         </div>
       </div>
     </OverlayPortal>
