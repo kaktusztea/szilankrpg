@@ -1,5 +1,5 @@
 import { OverlayPortal } from './OverlayPortal';
-import { MD_BASE } from '../MdLink';
+import { MD_BASE, REPO_BASE } from '../MdLink';
 
 interface Props {
   current: number;
@@ -23,6 +23,11 @@ export function SzilankPickerOverlay({ current, onPick, onClose }: Props) {
 
         <a className="szilank-hub-link" href={MD_BASE + 'szabalyrendszer.md'}
           target="_blank" rel="noopener noreferrer">📖 Szabályrendszer</a>
+
+        <hr className="szilank-divider" />
+
+        <a className="szilank-hub-link" href={REPO_BASE + 'web/karakter/README.md'}
+          target="_blank" rel="noopener noreferrer">📱 Webapp manuál</a>
 
         <hr className="szilank-divider" />
 
