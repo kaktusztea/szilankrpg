@@ -13,6 +13,18 @@ Az app két módban használható (fejléc jobb oldalán a 🔧/🎮 gombbal vá
 - **Game mód** (🎮): játék közben - csak a harc- és session-kezelés aktív, a karakter adatai írásvédettek
 
 ---
+## Fejléc
+
+A fejléc bal oldalán a **Szilánk pont** (keretes szám) látható, jobb oldalán a gombok:
+
+| Gomb | Funkció |
+| ---- | ------- |
+| ↩    | Visszavonás (undo) - a szám a visszavonható lépéseket mutatja |
+| ✏️   | Verziók, Napló, Jegyzetek ablak |
+| 🧑   | Karakterek (karaktertár, mentés/betöltés) |
+| 🔧/🎮 | Szerkesztő ⇄ Game mód váltás |
+
+---
 ## Fülek
 
 Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
@@ -56,10 +68,25 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 - **Státuszok**: fokozatonkénti hatások (Előny/Hátrány, letilt, szorzó stb.)
 
 ---
+## Verziók, Napló, Jegyzetek (✏️)
+
+A fejléc ✏️ gombjával nyíló ablak három részből áll:
+
+- **Karakter verziók**: kiemelt pillanatképek (checkpoint) a karakterről. Bármikor létrehozhatsz egyet, megtekintheted vagy visszaállhatsz rá. Visszaállításnál választhatsz: az utána lévő verziók törlése, vagy új verzióként hozzáfűzés. Napló bejegyzés írásakor opcionálisan automatikusan is készül verzió.
+- **Napló**: játék session bejegyzések (dátum, KM, kaland neve, események). Összecsukható lista, szerkeszthető.
+- **Jegyzetek**: szabad szöveges jegyzetmező (mindig nyitva).
+
+Alul összecsukható próba-segédlet: Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok - ez a Szilánk pont ablakban is elérhető.
+
+## Előtörténet (🪪)
+
+A Tulajdonságok fül fejlécében a 🪪 gombbal nyíló ablak a karakter biográfiai adatait fogja össze: Becenév, Név, Kor, Vallás, Származás helye, Szociális érzék, Külső, és egy hosszú Előtörténet szövegmező (max 5000 karakter).
+
+---
 ## Rejtett funkciók
 
 ### Karakter URL megosztás
-A Karakterek overlay-ben (⚙️ → 📂 Karakterek) minden slot sorában a 🔗 gombbal egyetlen URL-be tömörítheted a karaktert és vágólapra másolhatod. Az URL megnyitásakor az app automatikusan importálja a karaktert.
+A Karakterek ablakban (🧑) minden slot sorában a 🔗 gombbal egyetlen URL-be tömörítheted a karaktert és vágólapra másolhatod. Az URL megnyitásakor az app automatikusan importálja a karaktert.
 
 ### VÉ csökkenés történet
 
@@ -77,25 +104,29 @@ Fortélyoknál és képzettségeknél megjelenik egy 🔗 ikon, ami a GitHub-on 
 
 A Harc fül fegyver táblázatában a **Tám** (Támadások száma) cellára koppintva egy info popup ugrik fel: fegyver neve, Sebesség értéke, és a számított Harckeret.
 
-### Szilánk pont (fejléc)
-A fejlécben a "Szilánk RPG" szöveg mellett lévő keretes számra koppintva 0–3 közötti értéket választhatsz.
+### Mágia akarata segédlet
+
+A Misztikus fülön a **Mágia akarata** kártyára koppintva egy négyfüles referencia-ablak nyílik: Aurakiterjesztés (hatótáv módosítók), Auraerősítés (komplexitás→bónusz tábla), Összhang (előny-hátrány módosítók), Képzettség+ (szint→bónusz tábla).
+
+### Szilánk pont és gyors-elérés (fejléc)
+A fejlécben a "Szilánk" felirat melletti keretes számra koppintva megnyílik a Szilánk pont ablak: 0–3 közötti érték választható, alatta a **Szabályrendszer** link (GitHub) és összecsukható próba-segédlet (Tulajdonság-/Képzettségpróba célszámok).
 
 
 ### Undo (Visszavonás)
-A ⚙️ menüben "↩ Visszavonás" - max 6 lépés visszavonható. Minden szerkesztési művelet (tulajdonság, képzettség, fortély, harcérték, fegyver, taktika, VÉ csökkenés, sebzés stb.) visszaállítható.
+A fejléc ↩ gombjával - max 6 lépés visszavonható. Minden szerkesztési művelet (tulajdonság, képzettség, fortély, harcérték, fegyver, taktika, VÉ csökkenés, sebzés stb.) visszaállítható.
 
 ### Verzió infó
 
-A "Szilánk RPG" szövegre duplán koppintva 5 másodpercre megjelenik a build verzió.
+A "Szilánk" feliratra duplán koppintva 5 másodpercre megjelenik a build verzió.
 
 ---
 ## Karaktertár
 
 - Max 10 karakter tárolható a böngésző localStorage-ában
-- ⚙️ → 📂 Karakterek: slot lista (aktív ●, többi ○), relatív idő kijelzéssel
-- Mentés fájlba: egyedi karakter JSON vagy összes backup
-- Betöltés: fájlból (JSON) vagy URL-ből
-- Duplikálás: ⚙️ → 📋 Duplikál
+- 🧑 Karakterek: slot lista (aktív ●, többi ○), relatív idő kijelzéssel
+- Felső sor: 📄 új karakter, 📁 betöltés fájlból, 📦 összes karakter mentése (backup)
+- Slot soronkénti gombok: 🔗 link másolása, 💾 mentés fájlba, 📤 megosztás (mobil), ⧉ duplikálás, ✕ törlés
+- Betöltés: fájlból (JSON, egyedi vagy backup) vagy URL-ből
 
 ---
 ## Technikai tudnivalók
