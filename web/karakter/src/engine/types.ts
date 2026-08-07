@@ -66,6 +66,13 @@ export interface NagyTargy {
   MGT: number;
 }
 
+export interface Előtörténet {
+  származás_helye: string;
+  szociális_érzék: string;
+  külső: string;
+  előtörténet: string;
+}
+
 export interface NaploBejegyzes {
   dátum: string;
   km: string;
@@ -138,10 +145,22 @@ export interface Karakter {
   páncél: PancelPeldany;
   pajzs: PajzsPeldany;
   felszerelés: { nagy_tárgyak: NagyTargy[] };
+  előtörténet: Előtörténet;
   jegyzetek: string;
   napló: NaploBejegyzes[];
   session: Session;
 }
+
+// ============================================================
+// Default előtörténet (betöltéskor hiányzó előtörténet pótlása)
+// ============================================================
+
+export const DEFAULT_ELOTORTENET: Előtörténet = {
+  származás_helye: '',
+  szociális_érzék: '',
+  külső: '',
+  előtörténet: '',
+};
 
 // ============================================================
 // Default session (betöltéskor hiányzó session pótlása)

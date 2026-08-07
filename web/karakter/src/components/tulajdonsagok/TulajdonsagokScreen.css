@@ -155,3 +155,30 @@
 .primer-kp-cat { color: #d4727f; }
 .primer-kp-indent { padding-left: 10px; }
 .primer-kp-total { border-top: 1px solid var(--border-input); margin-top: 4px; padding-top: 4px; }
+
+/* --- Előtörténet chip + overlay --- */
+.tul-becenev-chips { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.tul-elotortenet-chip {
+  background: #1a2a3a;
+  border-color: #7eb8da;
+  color: #7eb8da;
+  font-size: 14px;
+}
+.tul-elotortenet-chip:active { opacity: 0.7; }
+
+.elotortenet-body { display: flex; flex-direction: column; gap: 12px; padding: 12px; overflow-y: auto; }
+.elotortenet-field { display: flex; flex-direction: column; gap: 4px; }
+.elotortenet-row { display: flex; gap: 12px; align-items: flex-end; }
+.elotortenet-field-narrow { flex-shrink: 0; }
+.elotortenet-field-flex1 { flex: 1; min-width: 0; }
+.elotortenet-label { font-size: 13px; color: var(--text-dim); font-weight: bold; }
+.elotortenet-value { font-size: 16px; color: var(--text); font-weight: bold; }
+.elotortenet-textarea-sm { min-height: 48px; resize: vertical; }
+.elotortenet-textarea-lg { min-height: 120px; resize: vertical; }
+.elotortenet-counter { font-size: 11px; color: var(--text-dim); text-align: right; }
+.elotortenet-vallas-btn { text-align: left; }
+
+/* Vallás picker */
+.vallas-picker { max-height: 80vh; overflow-y: auto; }
+.vallas-picker-list { max-height: 70vh; overflow-y: auto; }
+.vallas-active { border-color: var(--success) !important; background: rgba(76, 175, 80, 0.15); }

@@ -6,11 +6,12 @@ import { TulajdonsagokHeader } from './TulajdonsagokHeader';
 import { KepzettsegCsoport } from './KepzettsegCsoport';
 import { TulajdonsagokPopups, INITIAL_POPUP_STATE, type PopupState } from './TulajdonsagokPopups';
 import { PrimerKpBox } from './PrimerKpBox';
+import { ElotortenetOverlay } from './ElotortenetOverlay';
 import { useEscapeClose } from './useEscapeClose';
 import './TulajdonsagokScreen.css';
 
 export function TulajdonsagokScreen({
-  data, gameMode, karakter, tulajdonságok, setTulajdonságok,
+  data, gameMode, karakter, setKarakter, tulajdonságok, setTulajdonságok,
   képzettségek, setKépzettségek, név, setNév, becenév, setBecenév,
   játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv,
   jk, setJk
@@ -20,6 +21,7 @@ export function TulajdonsagokScreen({
   const [popup, setPopup] = useState<PopupState>(INITIAL_POPUP_STATE);
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
   const [collapsedGroups, setCollapsedGroups] = useState<Set<string>>(new Set());
+  const [showElotortenet, setShowElotortenet] = useState(false);
 
   const csoportSorrend = data.konstansok.képzettség_csoport_sorrend;
   const CSOPORT_SORREND = csoportSorrend.map(c => c.id);
@@ -103,6 +105,7 @@ export function TulajdonsagokScreen({
         onEditKor={() => setPopup(p => ({ ...p, editingKor: true }))}
         onEditJátékos={() => setPopup(p => ({ ...p, editingJátékos: true, tempJátékos: játékos }))}
         setFaj={setFaj} setAnyanyelv={setAnyanyelv}
+        onOpenElotortenet={() => setShowElotortenet(true)}
       />
 
       <div className="kep-section">
@@ -137,6 +140,15 @@ export function TulajdonsagokScreen({
       />
 
       {!gameMode && <PrimerKpBox data={data} karakter={karakter} képzettségek={képzettségek} />}
+
+      {showElotortenet && (
+        <ElotortenetOverlay
+          karakter={karakter}
+          setKarakter={setKarakter}
+          data={data}
+          onClose={() => setShowElotortenet(false)}
+        />
+      )}
     </div>
   );
 }

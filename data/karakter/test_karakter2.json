@@ -469,6 +469,12 @@
     "nagy_tárgyak": []
   },
   "jegyzetek": "Első jegyzet\nMásodik jegyzet",
+  "előtörténet": {
+    "származás_helye": "Tor, Toron",
+    "szociális_érzék": "Határozott fellépésű, szókimondó",
+    "külső": "Magas, szőke, kék szemű lovag, félhosszú hajjal",
+    "előtörténet": "Toroni zsoldos lovag, aki fiatalon csatlakozott a Tor városát védő lovagrendhez. Számos hadjáratban vett részt, mielőtt saját útjára indult volna."
+  },
   "napló": [
     {
       "dátum": "2026-06-23",

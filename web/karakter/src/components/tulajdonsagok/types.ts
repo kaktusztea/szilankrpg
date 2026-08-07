@@ -10,6 +10,7 @@ export interface Props {
   data: GameData;
   gameMode: boolean;
   karakter: Karakter;
+  setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   tulajdonságok: Tulajdonsagok;
   setTulajdonságok: React.Dispatch<React.SetStateAction<Tulajdonsagok>>;
   képzettségek: KepzettsegSlot[];

@@ -5,7 +5,7 @@
  */
 import { deflate, inflate } from 'pako';
 import type { Karakter, Fortely, FegyverPeldany } from './types';
-import { DEFAULT_SESSION } from './types';
+import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './types';
 
 // ============================================================
 // base64url (RFC 4648 §5, no padding)
@@ -203,6 +203,7 @@ function compactDecode(c: CompactKarakter): Omit<Karakter, 'uid' | 'id_leíró' 
     páncél,
     pajzs: { méret: c.pj || '' },
     felszerelés: { nagy_tárgyak: c.fl?.nt?.map(([név, MGT]) => ({ név, MGT })) || [] },
+    előtörténet: { ...DEFAULT_ELOTORTENET },
   };
 }
 
@@ -237,6 +238,7 @@ export function decodeKarakterFromHash(hash: string): { karakter: Karakter } | {
       id_leíró: '',
       mentés_dátum: '',
       jegyzetek: '',
+      előtörténet: { ...DEFAULT_ELOTORTENET },
       napló: [],
       session: { ...DEFAULT_SESSION },
     };

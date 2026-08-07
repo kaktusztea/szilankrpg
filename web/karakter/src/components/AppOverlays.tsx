@@ -2,7 +2,7 @@ import type { Karakter, Session } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
-import { DEFAULT_SESSION } from '../engine/types';
+import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import { isSlotFull } from '../hooks/slot-utils';
 import { restoreBackup } from '../hooks/backup-restore';
 import {
@@ -92,6 +92,7 @@ export function AppOverlays({
       ...data.testKarakter,
       uid: data.testKarakter.uid || generateUid(),
       id_leíró: data.testKarakter.id_leíró || generateIdLeíró(data.testKarakter.név, data.testKarakter.tsz),
+      előtörténet: { ...DEFAULT_ELOTORTENET, ...data.testKarakter.előtörténet },
       session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
     });
     setUndoStack([]); setTestMode(true); setIsDirty(true); set('showTestConfirm', false);

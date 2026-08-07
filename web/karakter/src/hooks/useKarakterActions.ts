@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
 import type { Karakter } from '../engine/types';
-import { DEFAULT_SESSION } from '../engine/types';
+import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
 import type { GameData } from '../engine/data-loader';
 import { generateUid, generateIdLeíró, duplicateKarakter as dupKarakter, generateSaveFile, loadKarakterFromFile, downloadFile, shareFile } from '../engine/file-ops';
 import { encodeKarakterUrl } from '../engine/url-share';
@@ -93,7 +93,7 @@ export function useKarakterActions({ data, karakter, setKarakter, undoStack, set
     if (karakter?.uid === uid) {
       if (sl.length > 0) {
         const next = localStorage.getItem(`szilank_char_${sl[0].uid}`);
-        if (next) { const p = JSON.parse(next); setKarakter({ ...p, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack(sanitizeUndo((p as any)._undo)); }
+        if (next) { const p = JSON.parse(next); setKarakter({ ...p, előtörténet: { ...DEFAULT_ELOTORTENET, ...p.előtörténet }, session: { ...DEFAULT_SESSION, ...p.session } }); setUndoStack(sanitizeUndo((p as any)._undo)); }
       } else if (data) {
         setKarakter({ ...data.emptyKarakter, uid: generateUid(), id_leíró: generateIdLeíró('', data.emptyKarakter.tsz) });
         setUndoStack([]);

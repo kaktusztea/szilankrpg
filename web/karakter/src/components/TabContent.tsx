@@ -58,7 +58,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
     case 'tulajdonsagok': {
       const sf = makeFieldSetter(karakter, pushUndo, setKarakter);
       const setAnyanyelv = makeAnyanyelvSetter(setKarakter, data.konstansok.közös_nyelv);
-      return <TulajdonsagokScreen data={data} gameMode={gameMode} karakter={karakter}
+      return <TulajdonsagokScreen data={data} gameMode={gameMode} karakter={karakter} setKarakter={setKarakter}
         tulajdonságok={tulajdonságok} setTulajdonságok={setTulajdonságokUndo}
         képzettségek={képzettségek} setKépzettségek={setKépzettségekUndo}
         név={karakter.név} setNév={sf('név', (p, n) => `Név: ${p} → ${n}`)}

@@ -85,6 +85,12 @@ felszerelés:
 
 jegyzetek: ""                   # Szabad szöveges jegyzetmező
 
+előtörténet:
+  származás_helye: ""           # max 40 karakter
+  szociális_érzék: ""           # max 200 karakter
+  külső: ""                     # max 200 karakter
+  előtörténet: ""               # max 5000 karakter (nagy freetext)
+
 napló:                          # Kaland bejegyzések listája
   - dátum: ""                   # YYYY-MM-DD formátum
     km: ""                      # Kalandmester neve

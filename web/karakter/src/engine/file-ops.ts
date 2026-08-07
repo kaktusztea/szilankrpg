@@ -1,6 +1,6 @@
 import type { Karakter } from './types';
 import type { GameData } from './data-loader';
-import { DEFAULT_SESSION } from './types';
+import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './types';
 import { validateKarakter, validateKarakterData } from './validate';
 import { sanitizeUndo } from '../hooks/useUndo';
 import { readSlots } from '../hooks/slot-utils';
@@ -95,7 +95,7 @@ function parseSingleKarakter(obj: unknown, data: GameData): { karakter: Karakter
   if (!validateKarakter(obj)) return { error: 'Érvénytelen karakter json állomány.' };
   const refErr = validateKarakterData(obj, data);
   if (refErr) return { error: `Referencia hiba: ${refErr}` };
-  const karakter = { ...obj, uid: (obj as any).uid || generateUid(), id_leíró: (obj as any).id_leíró || generateIdLeíró(obj.név, obj.tsz), jk: (obj as any).jk ?? true, session: { ...DEFAULT_SESSION, ...(obj as any).session } } as Karakter;
+  const karakter = { ...obj, uid: (obj as any).uid || generateUid(), id_leíró: (obj as any).id_leíró || generateIdLeíró(obj.név, obj.tsz), jk: (obj as any).jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...(obj as any).előtörténet }, session: { ...DEFAULT_SESSION, ...(obj as any).session } } as Karakter;
   return { karakter, undo: sanitizeUndo((obj as any)._undo) };
 }
 
