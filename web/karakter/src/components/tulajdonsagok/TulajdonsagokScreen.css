@@ -163,6 +163,10 @@
   border-color: #7eb8da;
   color: #7eb8da;
   font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
 }
 .tul-elotortenet-chip:active { opacity: 0.7; }
 

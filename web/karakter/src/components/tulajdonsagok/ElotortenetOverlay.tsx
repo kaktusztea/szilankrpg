@@ -30,7 +30,7 @@ export function ElotortenetOverlay({ karakter, setKarakter, data, onClose }: Pro
       <div className="fullscreen-overlay" onClick={e => e.stopPropagation()}>
         <div className="fullscreen-overlay-header">
           <button className="fullscreen-overlay-close" onClick={onClose}>✕</button>
-          <span className="fullscreen-overlay-title">🪪 Előtörténet</span>
+          <span className="fullscreen-overlay-title">Előtörténet</span>
         </div>
         <div className="fullscreen-overlay-body elotortenet-body">
           {/* Becenév */}

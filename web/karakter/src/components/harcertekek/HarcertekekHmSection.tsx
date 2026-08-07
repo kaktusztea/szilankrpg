@@ -34,7 +34,6 @@ export function HmSection({ data, karakter: k, setKarakter, pushUndo, gameMode }
 
   return (
     <section className="he-section">
-      <h3>HM</h3>
       <div className="he-hm-grid">
         <div className={`he-hm-row${hasError ? ' he-error' : ''}`}>
           <span>HM TÉ:</span>
