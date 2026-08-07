@@ -13,6 +13,8 @@ import { TabContent, ALL_TABS } from './components/TabContent';
 import { ScreenErrorBoundary } from './components/ScreenErrorBoundary';
 import { AppOverlays } from './components/AppOverlays';
 import { downloadFile, shareFile } from './engine/file-ops';
+import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from './engine/types';
+import { validateKarakterData } from './engine/validate';
 import './App.css';
 
 function App() {
@@ -45,6 +47,22 @@ function App() {
     setOverlay('undoSelected', null);
   }
 
+  function handleTestReset() {
+    if (!data) return;
+    const refErr = validateKarakterData(data.testKarakter, data);
+    if (refErr) return;
+    setKarakter({
+      ...data.testKarakter,
+      uid: data.testKarakter.uid,
+      id_leíró: data.testKarakter.id_leíró,
+      előtörténet: { ...DEFAULT_ELOTORTENET, ...data.testKarakter.előtörténet },
+      session: { ...DEFAULT_SESSION, ...data.testKarakter.session },
+    });
+    setUndoStack([]);
+    setIsDirty(true);
+    setOverlay('toast', { msg: 'Teszt karakter alapállapotba állítva', type: 'success' });
+  }
+
   if (error) return <div className="error">Hiba: {error}</div>;
   if (!data || !karakter) return <div className="loading">Betöltés...</div>;
 
@@ -73,6 +91,7 @@ function App() {
                       session={session} setSession={setSession}
                       karakter={karakter} setKarakter={setKarakter}
                       pushUndo={pushUndo}
+                      onTestReset={handleTestReset}
                     />
                   </ScreenErrorBoundary>
                 )}

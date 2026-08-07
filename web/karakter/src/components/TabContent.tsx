@@ -40,11 +40,12 @@ interface Props {
   karakter: Karakter;
   setKarakter: React.Dispatch<React.SetStateAction<Karakter | null>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
+  onTestReset?: () => void;
 }
 
 export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
   képzettségek, fortélyok, setFortélyok, session, setSession,
-  karakter, setKarakter, pushUndo }: Props) {
+  karakter, setKarakter, pushUndo, onTestReset }: Props) {
 
   const { setTulajdonságokUndo, setKépzettségekUndo, setFortélyokUndo } = useUndoWrappedSetters({ karakter, setKarakter, pushUndo });
 
@@ -69,6 +70,7 @@ export function TabContent({ tab, data, gameMode, setActiveTab, tulajdonságok,
         kor={karakter.kor} setKor={sf('kor', (p, n) => `Kor: ${p} → ${n}`)}
         faj={karakter.hátterek.faj} setFaj={makeFajSetter(karakter, pushUndo, setKarakter)}
         anyanyelv={karakter.anyanyelv} setAnyanyelv={setAnyanyelv}
+        onTestReset={onTestReset}
       />;
     }
     case 'fortelyok': {

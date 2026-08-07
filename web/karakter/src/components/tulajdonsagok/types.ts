@@ -31,6 +31,7 @@ export interface Props {
   setFaj: (v: string) => void;
   anyanyelv: string;
   setAnyanyelv: (v: string) => void;
+  onTestReset?: () => void;
 }
 
 export interface KepzettsegRowProps {
