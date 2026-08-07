@@ -5,7 +5,7 @@ const INITIAL_OVERLAYS: OverlayState = {
   showSzilánkPicker: false, showSlotList: false,
   slotDeleteTarget: null, saveFile: null,
   loadError: '', showFullscreenHint: false, showNewConfirm: false, showTestConfirm: false,
-  showUndo: false, undoSelected: null, overlayScreen: null,
+  showUndo: false, undoSelected: null, overlayScreen: false,
   sharePopup: null, toast: null, importConfirm: null, showSlotLimit: false,
   backupRestore: null,
 };

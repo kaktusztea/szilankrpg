@@ -19,28 +19,25 @@
 /* --- Jegyzetek textarea --- */
 .app-jegyzetek-textarea {
   width: 100%;
-  min-height: calc(100vh - 160px);
+  min-height: 200px;
   background: var(--input-bg);
   color: var(--text);
   border: 1px solid var(--border-input);
   border-radius: 6px;
   padding: 10px;
   font-size: 14px;
-  resize: none;
+  resize: vertical;
   font-family: inherit;
+  margin-bottom: 12px;
 }
 
-/* --- Próba bar --- */
+/* --- Próba bar (összecsukható táblák, flow-ban a body alján) --- */
 .app-proba-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: var(--bg);
-  border-top: 1px solid var(--border);
-  padding: 6px 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
   font-size: 15px;
-  z-index: 102;
 }
 
 .app-proba-summary { cursor: pointer; font-weight: bold; color: var(--color-taktika); }

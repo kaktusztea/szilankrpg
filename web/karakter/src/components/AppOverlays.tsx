@@ -25,7 +25,7 @@ export interface OverlayState {
   showTestConfirm: boolean;
   showUndo: boolean;
   undoSelected: number | null;
-  overlayScreen: 'jegyzetek' | 'naplo' | null;
+  overlayScreen: boolean;
   sharePopup: { név: string; copied: boolean; url?: string } | null;
   toast: { msg: string; type: 'success' | 'error' } | null;
   importConfirm: { karakter: Karakter; matchUid: string } | null;
@@ -188,10 +188,9 @@ export function AppOverlays({
 
       {s.overlayScreen && (
         <OverlayScreenOverlay
-          screen={s.overlayScreen}
           karakter={karakter}
           setKarakter={setKarakter}
-          onClose={() => set('overlayScreen', null)}
+          onClose={() => set('overlayScreen', false)}
           onViewCheckpoint={onViewCheckpoint}
         />
       )}

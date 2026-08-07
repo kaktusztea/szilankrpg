@@ -25,8 +25,7 @@ export function Header({ testMode, gameMode, setGameMode, viewingCheckpoint, ses
         >
           ↩{undoCount > 0 ? ` ${undoCount}` : ''}
         </button>
-        <button className="gear-btn" onClick={() => setOverlay('overlayScreen', 'jegyzetek')}>✏️</button>
-        <button className="gear-btn" onClick={() => setOverlay('overlayScreen', 'naplo')}>📅</button>
+        <button className="gear-btn" onClick={() => setOverlay('overlayScreen', true)}>✏️</button>
         <button className="gear-btn gear-btn-padded" onClick={() => setOverlay('showSlotList', true)}>🧑</button>
         <button
           className={`mode-toggle ${(gameMode || viewingCheckpoint) ? 'mode-toggle-game' : 'mode-toggle-szerk'}`}

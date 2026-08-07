@@ -142,8 +142,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 - Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → értékválasztó popup 0/1/2/3)
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - ↩ Visszavonás gomb: undo overlay-t nyit (`↩ N` alakban, N = undo stack mérete; disabled + csak `↩` ha üres). Label szöveg nélkül.
-  - ✏️ Jegyzetek overlay gomb (mindkét mód)
-  - 📅 Napló overlay gomb (mindkét mód)
+  - ✏️ Verziók, Napló, Jegyzetek overlay gomb (mindkét mód) — összevont overlay (lásd 6b)
   - 🧑 Karakterek gomb (20% szélesebb padding): a Karakterek hub overlay-t nyitja (lásd lentebb) — ez az egyetlen karakter-kezelő menü
   - 🔧/🎮 Mód toggle: háttér `#ff9800`/`#4caf50`, szöveg `#000`, 15px, `white-space: nowrap`, 2000ms fade
 - Megerősítő popup-ok (Új karakter): overlay, centered, label (bold) + dim szöveg + piros gomb
@@ -284,7 +283,7 @@ Mindkét módban (szerkesztő + game) elérhető és szerkeszthető.
 | `AktivHelpers.ts` | Segédfüggvények (kombó szűrés, megkötés ellenőrzés) |
 | `PickerOverlay.tsx` | Generikus picker overlay wrapper (taktika, helyzet, manőver) |
 | `FegyverSelectField.tsx` | Fegyver select field-btn komponens (közös Ügyesebb/Gyengébb kéz) |
-| `NaploTab.tsx` | Napló overlay tartalom |
+| `NaploTab.tsx` | Verziók + Napló accordionok (overlay tartalom) |
 
 ### Harc fül komponens struktúra (components/harc/)
 
@@ -810,61 +809,49 @@ Szövegfelhő alapú háttér választó. Adatforrás: `tables/hatterek.json`.
 
 ---
 
-## 6b. Jegyzetek overlay (✏️)
+## 6b. Verziók, Napló, Jegyzetek overlay (✏️)
 
-- Fejléc gombbal nyitható fullscreen overlay (nem tab)
-- Teljes képernyős `<textarea>` — szabad szöveges jegyzetmező
-- Mindkét módban (szerkesztő + game) elérhető és szerkeszthető
-- ✕ gomb vagy Escape bezárja
+Fejléc ✏️ gombbal nyitható fullscreen overlay (nem tab). Mindkét módban (szerkesztő + game) elérhető. ✕ gomb vagy Escape bezárja. Cím: "✏️ Verziók, Napló, Jegyzetek".
+
+Egyetlen görgethető nézetben, felülről lefelé:
+
+### 1. Karakter verziók (accordion)
+- Összecsukható `<details>` (`.naplo-cp-section`, summary `.naplo-cp-summary`, narancs `--color-hatter`)
+- Kiemelt verziók (checkpoint) listája, dátum szerint (legújabb elöl)
+- Verzió sorra katt: checkpoint megtekintés (overlay bezár); ✕: törlés
+- "+ Új checkpoint" gomb (max `MAX_CHECKPOINTS`); inline név-form
+
+### 2. Napló (accordion)
+- Összecsukható `<details>` (`.naplo-cp-section .naplo-log-section`, summary `.naplo-log-summary`, kék `--color-taktika`)
+- Summary: "Napló (N)" — N = bejegyzések száma
+- Játék session bejegyzések naplója (lásd viselkedés lentebb)
+
+### 3. Jegyzetek (mindig látható)
+- Szabad szöveges `<textarea>` (`.app-jegyzetek-textarea`), NEM accordion
 - Tartalom a karakter fájlba mentődik (`jegyzetek` mező)
 - Placeholder: "Szabad jegyzetek..."
-- Alul floating panel (fixed, bottom:0): két összecsukható accordion (`<details>`)
+
+### 4. Próba táblák (accordionok, legalul)
+- `.app-proba-bar` (flow-ban a body alján, nem fixed)
+- Két összecsukható `<details>`:
   - Tulajdonságpróba (k6): célszám tábla (3-8) monospace, 15px
   - Képzettségpróba (k10): célszám tábla (6-21) monospace, 15px
 
----
-
-## 6c. Napló overlay (📅)
-
-Fejléc 📅 gombbal nyitható fullscreen overlay (nem tab). Mindkét módban elérhető. ✕ gomb vagy Escape bezárja.
-
-Játék session bejegyzések naplója.
-
-### Tartalom
-- Screen: `.naplo-screen` (padding: 12px; min-height: 100%)
-- Fejléc: `.naplo-header` (h2 + `.naplo-btn-new` gomb jobb oldalon)
+### Napló viselkedés
+- Screen: `.naplo-screen` (embedded, padding 0)
+- Fejléc: `.naplo-header` (`.naplo-btn-new` gomb)
 - Ha nincs bejegyzés: `.naplo-empty` szürke szöveg
-
-### Összecsukott bejegyzés lista
-- Rekord sor: `.naplo-entry-header` (surface background, 1px border, pointer cursor)
-- Formátum: `[dátum] KM: Kaland neve`
-- Sorok gap: `.naplo-entry` (margin-bottom: 4px)
-
-### Kinyitott bejegyzés (accordion)
-- Panel: `.naplo-panel .naplo-panel-view`
-- Események szöveg: `.naplo-events` (pre-wrap)
-- Gombok sor: `.naplo-actions` (`.naplo-btn` + `.naplo-btn-del`)
-
-### Szerkesztő form (inline, accordion-ban)
-- Container: `.naplo-panel`
-- Mezők: `.field-input` (közös input stílus) + screen-specifikus `.naplo-input-short` / `.naplo-textarea`
-- Dátum sor: `.naplo-form-row` (input `.field-input .naplo-input-short` + `.naplo-btn` "Ma")
-- Gombok sor: `.naplo-form-btns` (`.naplo-btn-save` + `.naplo-btn-cancel`)
-
-### Új bejegyzés form
-- Azonos mint szerkesztő form, wrapper: `.naplo-add-wrap`
-
-### Viselkedés
-- Kattintás rekord sorra: toggle accordion (open/close)
-- Mellé kattintás (screen háttérre, rekord boxokon kívülre): accordion bezárul
-- Szerkesztés közben: mellé kattintás NEM zárja be (védi a form-ot)
-- Szerkesztés "Mentés": adatok frissülnek, accordion bezárul
-- Szerkesztés "Mégse": változtatás eldobva, szerkesztés mód bezárul (accordion nyitva marad)
-- Dátum "Ma" gomb: mai dátumot állít be (YYYY-MM-DD)
-- "+ Új bejegyzés": dátum automatikusan mai napra, üres mezők
+- Rekord sor: `.naplo-entry-header`, formátum: `[dátum] KM: Kaland neve`
+- Kinyitott bejegyzés (accordion): `.naplo-panel .naplo-panel-view`, események `.naplo-events` (pre-wrap), gombok `.naplo-actions`
+- Szerkesztő/új form: `.naplo-panel` / `.naplo-add-wrap`, mezők `.field-input` + `.naplo-input-short` / `.naplo-textarea`, dátum "Ma" gomb
+- Kattintás rekord sorra: toggle accordion; mellé kattintás bezár (kivéve szerkesztés közben)
+- Szerkesztés "Mentés": frissül + bezár; "Mégse": eldob, szerkesztés zár
+- "+ Új bejegyzés": dátum mai napra; opcionális "Kiemelt verzió létrehozása" checkbox → checkpoint
 
 ### Tárolás
-- `karakter.napló[]` tömb: `{ dátum: string, km: string, kaland: string, események: string }`
+- `karakter.jegyzetek: string`
+- `karakter.napló[]`: `{ dátum, km, kaland, események }`
+- `karakter.checkpoints[]`: kiemelt verziók
 - Mentéskor a karakter JSON-ba kerül (💾 gombbal)
 
 ---
@@ -890,8 +877,7 @@ Alul fix, horizontálisan scrollozható szalag.
 Overlay screen-ek:
 | ID | Nyitás | Elérhetőség |
 |----|--------|-------------|
-| jegyzetek | ✏️ fejléc gomb | mindkét mód |
-| naplo | 📅 fejléc gomb | mindkét mód |
+| overlayScreen | ✏️ fejléc gomb | mindkét mód (Verziók, Napló, Jegyzetek — lásd 6b) |
 
 - Jelenleg nincs `editOnly: true` tab — Game módban minden fül elérhető
 - Default aktív tab induláskor: `tulajdonsagok` (index 5 az ALL_TABS-ban)
@@ -1128,7 +1114,7 @@ Az összes globális overlay-t az `AppOverlays.tsx` komponens kezeli, központi 
 | showNewConfirm | boolean | Új karakter megerősítő |
 | showUndo | boolean | Undo overlay |
 | undoSelected | number \| null | Kiválasztott undo pozíció |
-| overlayScreen | 'jegyzetek' \| 'naplo' \| null | Fullscreen overlay screen |
+| overlayScreen | boolean | Verziók/Napló/Jegyzetek fullscreen overlay nyitva |
 | sharePopup | {név, copied, url?} \| null | URL share eredmény popup |
 | toast | {msg, type} \| null | Toast üzenet (2.5s auto-dismiss) |
 | importConfirm | {karakter, matchUid} \| null | Import ütközés confirm dialog |

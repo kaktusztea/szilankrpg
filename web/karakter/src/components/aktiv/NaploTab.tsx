@@ -18,6 +18,7 @@ export function NaploTab({ karakter, setKarakter, onViewCheckpoint }: Props) {
   const [cpChecked, setCpChecked] = useState(true);
   const [cpNév, setCpNév] = useState('');
   const [cpOpen, setCpOpen] = useState(false);
+  const [naploOpen, setNaploOpen] = useState(false);
   const [newCpAdding, setNewCpAdding] = useState(false);
   const [newCpNév, setNewCpNév] = useState('');
 
@@ -147,41 +148,47 @@ export function NaploTab({ karakter, setKarakter, onViewCheckpoint }: Props) {
         )}
       </details>
 
-      {/* Napló entries */}
-      <div className="naplo-header">
-        <button className="naplo-btn-new"
-          onClick={() => { setAdding(true); setForm({ dátum: today, km: '', kaland: '', események: '' }); setCpChecked(true); setCpNév(''); }}>
-          + Új bejegyzés
-        </button>
-      </div>
+      {/* Napló entries (accordion) */}
+      <details className="naplo-cp-section naplo-log-section" open={naploOpen} onToggle={e => setNaploOpen((e.target as HTMLDetailsElement).open)}>
+        <summary className="naplo-cp-summary naplo-log-summary">
+          Napló ({karakter.napló.length})
+        </summary>
 
-      {karakter.napló.length === 0 && !adding && <p className="naplo-empty">Nincs bejegyzés.</p>}
+        <div className="naplo-header">
+          <button className="naplo-btn-new"
+            onClick={() => { setAdding(true); setForm({ dátum: today, km: '', kaland: '', események: '' }); setCpChecked(true); setCpNév(''); }}>
+            + Új bejegyzés
+          </button>
+        </div>
 
-      {karakter.napló.map((entry, i) => (
-        <div key={i} className="naplo-entry" data-naplo-entry>
-          <div className="naplo-entry-header" onClick={() => setOpenIdx(openIdx === i ? null : i)}>
-            [{entry.dátum}] {entry.km && `${entry.km}: `}{entry.kaland}
-          </div>
+        {karakter.napló.length === 0 && !adding && <p className="naplo-empty">Nincs bejegyzés.</p>}
 
-          {openIdx === i && editIdx !== i && (
-            <div className="naplo-panel naplo-panel-view">
-              {entry.események && <div className="naplo-events">{entry.események}</div>}
-              <div className="naplo-actions">
-                <button className="naplo-btn" onClick={() => { setEditIdx(i); setForm({ ...entry }); }}>Szerkeszt</button>
-                <button className="naplo-btn-del" onClick={() => removeEntry(i)}>Törlés</button>
-              </div>
+        {karakter.napló.map((entry, i) => (
+          <div key={i} className="naplo-entry" data-naplo-entry>
+            <div className="naplo-entry-header" onClick={() => setOpenIdx(openIdx === i ? null : i)}>
+              [{entry.dátum}] {entry.km && `${entry.km}: `}{entry.kaland}
             </div>
-          )}
 
-          {editIdx === i && renderForm(saveEdit, () => setEditIdx(null))}
-        </div>
-      ))}
+            {openIdx === i && editIdx !== i && (
+              <div className="naplo-panel naplo-panel-view">
+                {entry.események && <div className="naplo-events">{entry.események}</div>}
+                <div className="naplo-actions">
+                  <button className="naplo-btn" onClick={() => { setEditIdx(i); setForm({ ...entry }); }}>Szerkeszt</button>
+                  <button className="naplo-btn-del" onClick={() => removeEntry(i)}>Törlés</button>
+                </div>
+              </div>
+            )}
 
-      {adding && (
-        <div className="naplo-add-wrap">
-          {renderForm(addEntry, () => setAdding(false), true)}
-        </div>
-      )}
+            {editIdx === i && renderForm(saveEdit, () => setEditIdx(null))}
+          </div>
+        ))}
+
+        {adding && (
+          <div className="naplo-add-wrap">
+            {renderForm(addEntry, () => setAdding(false), true)}
+          </div>
+        )}
+      </details>
     </div>
   );
 }

@@ -2,7 +2,7 @@
    Napló overlay
    ============================================= */
 
-.naplo-screen { padding: 12px; min-height: 100%; }
+.naplo-screen { padding: 0; min-height: auto; }
 .naplo-header { display: flex; justify-content: flex-start; align-items: center; margin-bottom: 10px; }
 .naplo-empty { color: var(--text-dim); }
 .naplo-entry { margin-bottom: 4px; }
@@ -75,6 +75,9 @@
   cursor: pointer;
   user-select: none;
 }
+
+/* Napló accordion summary — eltérő szín a verzióktól */
+.naplo-log-summary { color: var(--color-taktika); }
 
 .naplo-cp-list {
   margin-top: 8px;
