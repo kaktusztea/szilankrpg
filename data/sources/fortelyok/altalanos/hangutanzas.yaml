@@ -10,7 +10,7 @@ többszörösség:
   spec_lista: []
 csoport: "általános"
 leírások: 
-- text: "Emberi hangok megtévesztő utánzása."
+- text: "Személyek és állatok hangjának megtévesztő utánzása."
 megjegyzések: 
 - text: ""
 kiterjeszti: 
@@ -23,7 +23,7 @@ fokok:
   követelménytext: []
   követelmények: ""
   hatástext: 
-  - text: "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott hangot."
+  - text: "Zajos háttérben megtévesztően utánzol egy legalább 1 percig hallott személy vagy állat hangját."
   módosítók: ""
 - fok: 2
   követelménytext:
@@ -33,5 +33,5 @@ fokok:
     érték: 1
     típus: "fortély"
   hatástext: 
-  - text: "Csendes körülmények között is megtévesztően utánzol."
+  - text: "Csendes körülmények között is megtévesztően utánzol egy korábban hallott személy vagy állat hangját."
   módosítók: ""
