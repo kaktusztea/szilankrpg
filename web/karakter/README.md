@@ -38,7 +38,7 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 | 🛡️  | Harcértékek                  | HM/CM, fegyverek, páncél, pajzs beállítása               |
 | 🏹   | Távharc                      | Távfegyverek, CÉ kalkulátor, célpont VÉ szorzók          |
 | 🗡️  | Harc                         | Teljes harcértékek, VÉ csökkenés, ÉP/sebesülés, MP       |
-| ✳️   | Aktív                        | Fegyverfogás, taktikák, helyzetek, manőverek, státuszok  |
+| ✳️   | Aktív                        | Taktikák, helyzetek, manőverek, státuszok               |
 
 ---
 ## Főbb funkciók
