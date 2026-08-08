@@ -55,7 +55,7 @@ export function HarcFegyverTable({
 
     return (
       <tr key={név + (isOverlay ? '-overlay' : '')}
-        className={isOverlay ? 'harc-fegyver-active-row' : dimmed ? 'harc-row-dimmed' : undefined}>
+        className={isOverlay ? 'harc-fegyver-active-row' : dimmed ? 'harc-row-dimmed' : 'harc-fegyver-active-row'}>
         <td className={pengeWarning ? 'harc-belharc-warn' : undefined}>{név}</td>
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret })}>{r.támadások}</td>
         <td className={isActive && onTéDobás ? 'harc-te-clickable' : undefined}

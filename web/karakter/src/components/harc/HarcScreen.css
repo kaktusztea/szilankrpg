@@ -169,6 +169,7 @@
 .harc-monospace { font-family: monospace; }
 .btn-reset-sm { font-size: 15px; }
 .harc-fegyver-active-row { border: 2px solid var(--color-taktika); }
+.harc-fegyver-active-row td:not(:first-child) { font-size: 18px; }
 .harc-sfe-secondary { color: #aaa; }
 
 /* --- Popup helpers --- */
