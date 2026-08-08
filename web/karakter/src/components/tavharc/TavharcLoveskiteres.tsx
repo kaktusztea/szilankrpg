@@ -14,23 +14,26 @@ interface Props {
 }
 
 /** Egy választható bejövő fegyver / kategória a lövéskitéréshez. */
-interface LKOpció { név: string; kategória: string | null; hatótáv: number }
+interface LKOpció { név: string; kategória: string | null; hatótáv: number; separator?: boolean }
 
 // A lista tetején rögzített (gyakori) fegyverek ebben a sorrendben.
 const KIEMELT = ['Hajítótőr', 'Rövid íj', 'Hosszú íj', 'Nyílpuska'];
 
 function buildOpciók(tavfegyverek: TavfegyverAlap[]): LKOpció[] {
-  // Konkrét fegyverek (nem mágikus, nem improvizált 🔆): kiemeltek felül, alattuk ABC.
-  const valós = tavfegyverek
-    .filter(f => f.Kategória !== 'mágikus' && !f.Fegyver.startsWith('🔆'))
-    .sort((a, b) => {
-      const ai = KIEMELT.indexOf(a.Fegyver);
-      const bi = KIEMELT.indexOf(b.Fegyver);
-      if (ai !== -1 && bi !== -1) return ai - bi;
-      if (ai !== -1) return -1;
-      if (bi !== -1) return 1;
-      return a.Fegyver.localeCompare(b.Fegyver, 'hu');
-    })
+  const all = tavfegyverek.filter(f => !f.Fegyver.startsWith('🔆'));
+  const mágikus = all.filter(f => f.Kategória === 'mágikus')
+    .sort((a, b) => a.Fegyver.localeCompare(b.Fegyver, 'hu'))
+    .map(f => ({ név: f.Fegyver, kategória: weaponToLöveskitérésKategória(f), hatótáv: parseHatótáv(f.Hatótáv) }));
+
+  const nemMágikus = all.filter(f => f.Kategória !== 'mágikus');
+  const kiemelt = nemMágikus
+    .filter(f => KIEMELT.includes(f.Fegyver))
+    .sort((a, b) => KIEMELT.indexOf(a.Fegyver) - KIEMELT.indexOf(b.Fegyver))
+    .map(f => ({ név: f.Fegyver, kategória: weaponToLöveskitérésKategória(f), hatótáv: parseHatótáv(f.Hatótáv) }));
+
+  const maradék = nemMágikus
+    .filter(f => !KIEMELT.includes(f.Fegyver))
+    .sort((a, b) => a.Fegyver.localeCompare(b.Fegyver, 'hu'))
     .map(f => ({ név: f.Fegyver, kategória: weaponToLöveskitérésKategória(f), hatótáv: parseHatótáv(f.Hatótáv) }));
 
   // Improvizált 🔆 tárgyak a data-ból (Erő-függő hatótáv → nincs range-gát).
@@ -38,12 +41,21 @@ function buildOpciók(tavfegyverek: TavfegyverAlap[]): LKOpció[] {
     .filter(f => f.Fegyver.startsWith('🔆'))
     .map(f => ({ név: f.Fegyver, kategória: weaponToLöveskitérésKategória(f), hatótáv: Infinity }));
 
-  // Absztrakt kategóriák a lista alján.
-  return [
-    ...valós,
-    { név: '🔆 Korlátosan alkalmas fegyver', kategória: 'korlátosan_alkalmas', hatótáv: Infinity },
-    ...improv,
-  ];
+  // Separatorok a csoportok között.
+  const result: LKOpció[] = [...kiemelt];
+  if (mágikus.length > 0) {
+    result.push({ név: '__sep1__', kategória: null, hatótáv: 0, separator: true });
+    result.push(...mágikus);
+  }
+  if (maradék.length > 0) {
+    result.push({ név: '__sep2__', kategória: null, hatótáv: 0, separator: true });
+    result.push(...maradék);
+  }
+  result.push({ név: '__sep3__', kategória: null, hatótáv: 0, separator: true });
+  result.push({ név: '🔆 Korlátosan alkalmas fegyver', kategória: 'korlátosan_alkalmas', hatótáv: Infinity });
+  result.push(...improv);
+
+  return result;
 }
 
 /**
@@ -111,7 +123,9 @@ export function TavharcLoveskiteres({ karakter, konstansok, tavfegyverek }: Prop
       {showPicker && (
         <PopupOverlay onClose={() => setShowPicker(false)}>
           <div className="th-fegyver-picker">
-            {opciók.map(o => (
+            {opciók.map(o => o.separator ? (
+              <hr key={o.név} className="th-fegyver-picker-sep" />
+            ) : (
               <button
                 key={o.név}
                 className={`th-fegyver-picker-item${o.név === sel?.név ? ' th-fegyver-picker-active' : ''}`}

@@ -49,8 +49,9 @@ describe('weaponToLöveskitérésKategória', () => {
     expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Tőr', Osztó: '2', Harcmodor: 'Hajítás' }))).toBe('korlátosan_alkalmas');
     expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Nyílpuska', Osztó: '5', Harcmodor: 'Lövészet' }))).toBe('nyílpuskák');
   });
-  it('returns null for mágikus (deferred)', () => {
-    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Mágiatáv I', Osztó: '1', Kategória: 'mágikus' }))).toBeNull();
+  it('maps mágikus by Osztó (Mágiatáv I Osztó 1 → nem_alkalmas_tárgyak)', () => {
+    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Mágiatáv I', Osztó: '1', Kategória: 'mágikus' }))).toBe('nem_alkalmas_tárgyak');
+    expect(weaponToLöveskitérésKategória(def({ Fegyver: 'Mágiatáv IV', Osztó: '4', Kategória: 'mágikus' }))).toBe('íjak');
   });
 });
 

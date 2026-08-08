@@ -217,9 +217,8 @@ export function osztóToLöveskitérésKategória(osztó: number): string | null
   }
 }
 
-/** Bejövő távfegyver → célszám-kategória az Osztója alapján (mágikus: külön iteráció → null). */
+/** Bejövő távfegyver → célszám-kategória az Osztója alapján. */
 export function weaponToLöveskitérésKategória(def: TavfegyverAlap): string | null {
-  if (def.Kategória === 'mágikus') return null;
   return osztóToLöveskitérésKategória(parseInt(def.Osztó) || 0);
 }
 

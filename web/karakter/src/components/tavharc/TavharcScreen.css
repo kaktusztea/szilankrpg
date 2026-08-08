@@ -203,3 +203,4 @@
 
 .th-fegyver-picker-item:hover { background: #333; }
 .th-fegyver-picker-active { border-color: var(--success); background: rgba(76, 175, 80, 0.12); }
+.th-fegyver-picker-sep { border: none; border-top: 1px solid var(--border); margin: 4px 0; }
