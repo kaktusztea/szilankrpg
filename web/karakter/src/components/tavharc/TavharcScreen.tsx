@@ -173,7 +173,6 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
           alap={céDobás.alap}
           eredmény={céDobás.eredmény}
           vsCélszám={céDobás.vé}
-          vsCélszámLabel="VÉ"
           onClose={() => setCéDobás(null)}
         />
       )}

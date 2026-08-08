@@ -159,6 +159,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         véFlash={véFlash}
         onTámInfoClick={setTámInfo}
         onTéDobás={handleTéDobás}
+        téDobások={session.té_dobások}
       />
 
       <div className="harc-section">

@@ -8,9 +8,8 @@ interface Props {
   alap: number;
   eredmény: number;
   onClose: (eredmény: number) => void;
-  /** Optional target value to compare against (shows siker/sikertelen). */
+  /** Optional target value to compare against (shows Találat/Nem talált). */
   vsCélszám?: number;
-  vsCélszámLabel?: string;
 }
 
 /**

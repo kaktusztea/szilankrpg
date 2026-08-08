@@ -154,7 +154,6 @@
 .harc-belharc-label { color: #ef9a9a; }
 .harc-belharc-warn { color: #e53935; }
 .harc-tam-clickable { cursor: pointer; }
-.harc-te-clickable { cursor: pointer; text-decoration: underline dotted; }
 .harc-te-dobas-btn {
   background: none;
   border: none;
@@ -213,12 +212,6 @@
   color: var(--text-dim);
 }
 
-.ke-dobas-vs {
-  font-size: 14px;
-  color: var(--text-dim);
-  margin-top: 4px;
-}
-
 .ke-dobas-result-vs-row {
   display: flex;
   align-items: baseline;
@@ -264,3 +257,12 @@
 .ke-history-item:nth-child(1) { color: #ccc; }
 .ke-history-item:nth-child(2) { color: #888; }
 .ke-history-item:nth-child(3) { color: #555; }
+
+/* TÉ dobás history (horizontal below TÉ button, like KÉ) */
+.te-header-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  cursor: pointer;
+}
