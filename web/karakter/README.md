@@ -105,6 +105,15 @@ A Harc fülön a **VÉ csökkenés** label-re vagy értékre koppintva megjeleni
 
 A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék módban a képzettség sorra koppintva kinyílik egy info panel: Próba, Domináns tulajdonságok, Kiterjesztő fortélyok (zöld = megvan, piros = nincs meg), és alul 🔗 szabály link + 🎲 Képzettségpróba dobás gomb.
 
+### Tulajdonságpróba dobás (Játék mód)
+
+A Tulajdonságok+Képzettségek fülön játék módban bármelyik Tulajdonság boxra koppintva megnyílik a Tulajdonságpróba ablak (`Tulajdonság + k6 vs Célszám`):
+
+- **Nehézség** választó: 3 (Könnyű) … 8 (Emberfeletti)
+- **Előny/Hátrány** választó: Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
+- **Dobás**: az eredmény (legjobb/legrosszabb k6 az Előny/Hátrány szerint) a célszámhoz mérve → **Siker** (zöld) / **Sikertelen** (piros)
+- Ha a célszám a max dobással (6) sem érhető el, „Lehetetlen" jelenik meg a Dobás gomb helyén
+
 ### Képzettségpróba dobás (🎲, Játék mód)
 
 A képzettség info paneljében a 🎲 gombbal nyíló ablak levezényli a képzettségpróbát (`Tulajdonság + Képzettség szint + k10 vs Célszám`):

@@ -533,7 +533,17 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Megjelenítés: teljes név + érték egymás mellett, pl. `Erő: 3`
 - Nem reszponzív, fix layout
 - Szerkesztő módban: tap → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
-- Játék módban: read-only
+- Játék módban: tap → **Tulajdonságpróba popup** (`TulajdonsagProbaPopup`):
+  - Fejléc: "Tulajdonságpróba", alcím: `{Tulajdonság neve} ({érték})` (kék szín)
+  - Nehézség picker (field-btn → overlay): 3 (Könnyű), 4 (Átlagos), 5 (Nehéz), 6 (Nagyon nehéz), 7 (Rendkívül nehéz), 8 (Emberfeletti)
+  - Előny/Hátrány picker (field-btn → overlay): Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
+  - Összesítő sor: `{tulajdonság érték} vs {célszám}` (monospace)
+  - **Dobás gomb** (k6): disabled amíg nincs Nehézség kiválasztva. Előny/Hátrány címke alatta (Előny → zöld, Hátrány → sárga).
+  - Ha lehetetlen (`tulajdonság + 6 < célszám`): piros "Lehetetlen" label a Dobás gomb helyén.
+  - Eredmény: nagy szám + vs + célszám, alatta Siker/Sikertelen, alatta k6 értékek (szóközzel elválasztva, kiválasztott bold).
+  - Előny/Hátrány dobás k6-tal: Előny+N → (N+1) db k6 legnagyobb, Hátrány-N → (|N|+1) db k6 legkisebb.
+  - Nehézség/Előny-Hátrány váltás törli az eredményt (újbóli Dobás gomb).
+  - Dismissible (háttér-katt / Escape zár)
 - **Faj limit warning**: ha az érték meghaladja/alulmúlja a kiválasztott faj min/max keretét → sárga szín + automatikusan megjelenő info box (`Faj max: X` vagy `Faj min: X`), nem zárható kattintással
 
 ### Képzettségek (alatta, csoport-bontásban)

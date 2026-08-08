@@ -2689,7 +2689,17 @@ Célszámok:
 
 Siker/Kudarc mérték: ±3 különbség = kiemelt eredmény
 Előny/Hátrány: [-2; +2] skála (Státuszokból)
+Lehetetlen: tulajdonság + 6 < célszám → nem dobható
+
+Előny/Hátrány dobás (k6):
+  Előny+N: (N+1) db k6, legnagyobb számít
+  Hátrány-N: (|N|+1) db k6, legkisebb számít
+  Sima (0): 1 db k6
 ```
+
+Webapp implementáció: `TulajdonsagProbaPopup.tsx` (Játék mód, Tulajdonság box kattintás).
+Pure helper: `tulProbaLehetetlen(tulÉrték, célszám)`.
+Dice: `engine/dice.ts → rollElőnyHátrányK6(szint)`.
 
 ### 37.2 Képzettségpróba
 

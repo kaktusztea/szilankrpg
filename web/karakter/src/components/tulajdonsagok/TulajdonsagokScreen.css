@@ -88,6 +88,7 @@
 }
 
 .tul-cell.editable { cursor: pointer; }
+.tul-cell.tul-cell-game { cursor: pointer; }
 .tul-cell.tul-warn { border-color: var(--warning); }
 .tul-value-warn { color: var(--warning) !important; }
 .tul-warn-info { font-size: 16px; color: var(--warning); width: 100%; text-align: left; }

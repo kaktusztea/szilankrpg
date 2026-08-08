@@ -105,6 +105,7 @@ tavharc/                   Távharc fül (CÉ/VÉ kalkulátor)
 tulajdonsagok/             Tulajdonságok + Képzettségek fül
   TulajdonsagokScreen.tsx  Fő screen (név, faj, kor, tulajdonságok, képzettségek)
   KepzettsegCsoport.tsx    Képzettség csoport (csukható, game/edit mód)
+  TulajdonsagProbaPopup.tsx  Tulajdonságpróba dobás popup (Játék mód, k6)
   ElotortenetOverlay.tsx   Előtörténet overlay (becenév, név, kor, vallás, biográfiai mezők)
   KorPicker.tsx            Kor +/- picker overlay
   VallasPickerOverlay.tsx  Vallás választó overlay

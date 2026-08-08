@@ -28,3 +28,16 @@ export function rollElőnyHátrány(szint: number): ProbaDobás {
   const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
   return { rolls, eredmény };
 }
+
+/**
+ * Előny/Hátrány dobás k6-tal (Tulajdonságpróba, md/010_05_04):
+ *  - szint > 0 (Előny+N): (N+1) db k6, a legnagyobb számít
+ *  - szint < 0 (Hátrány-N): (|N|+1) db k6, a legkisebb számít
+ *  - szint == 0: egyetlen k6 (sima dobás)
+ */
+export function rollElőnyHátrányK6(szint: number): ProbaDobás {
+  const count = Math.abs(szint) + 1;
+  const rolls = Array.from({ length: count }, () => rollDie(6));
+  const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
+  return { rolls, eredmény };
+}

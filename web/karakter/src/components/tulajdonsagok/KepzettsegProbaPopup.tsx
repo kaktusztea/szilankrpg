@@ -161,7 +161,7 @@ export function KepzettsegProbaPopup({
             <div className="kep-proba-rolls">
               {ehCímke && <span className={eh.szint > 0 ? 'kep-proba-eh-előny' : 'kep-proba-eh'}>{ehCímke} · </span>}
               k10: {dobás!.rolls.map((r, i) => (
-                <span key={i}>{i > 0 ? ', ' : ''}<span className={r === dobás!.eredmény ? 'kep-proba-roll-sel' : ''}>{r}</span></span>
+                <span key={i}>{i > 0 ? ' ' : ''}<span className={r === dobás!.eredmény ? 'kep-proba-roll-sel' : ''}>{r}</span></span>
               ))}
             </div>
           </div>
