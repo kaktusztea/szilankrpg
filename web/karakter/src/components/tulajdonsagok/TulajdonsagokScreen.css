@@ -269,6 +269,8 @@
 .kep-proba-vs { color: #888; font-size: 0.7em; margin: 0 6px; }
 .kep-proba-celszam { color: #e53935; }
 .kep-proba-eh { color: var(--warning); font-size: 13px; }
+.kep-proba-rolls { font-size: 13px; color: var(--text-dim); font-family: monospace; }
+.kep-proba-roll-sel { color: var(--text); font-weight: bold; }
 
 .kep-proba-roll-btn {
   background: var(--primary);

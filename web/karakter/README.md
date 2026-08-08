@@ -103,7 +103,17 @@ A Harc fülön a **VÉ csökkenés** label-re vagy értékre koppintva megjeleni
 
 ### Képzettség info panel (Játék mód)
 
-A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék módban a képzettség sorra koppintva kinyílik egy info panel: Próba, Domináns tulajdonságok, Kiterjesztő fortélyok (zöld = megvan, piros = nincs meg), és 🔗 szabály link.
+A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék módban a képzettség sorra koppintva kinyílik egy info panel: Próba, Domináns tulajdonságok, Kiterjesztő fortélyok (zöld = megvan, piros = nincs meg), és alul 🔗 szabály link + 🎲 Képzettségpróba dobás gomb.
+
+### Képzettségpróba dobás (🎲, Játék mód)
+
+A képzettség info paneljében a 🎲 gombbal nyíló ablak levezényli a képzettségpróbát (`Tulajdonság + Képzettség szint + k10 vs Célszám`):
+
+- **Tulajdonság** és **Nehézség** választó (overlay popup-ok). A Dobás gomb inaktív, amíg mindkettő nincs kiválasztva.
+- **Nehézség**: alapból a 6 (Könnyű) … 21 (Emberfeletti) célszámok; a ▾ nyíllal a 21 felettiek is (24, 27, 30).
+- **Kiterjesztő fortély** (ha a képzettséghez tartozik ilyen): választható, hogy melyik fortély terjeszti ki a próbát. Kis státusz pötty jelzi: zöld = felvéve, sárga = hiányzó Normál kiterjesztés, piros = hiányzó Erős kiterjesztés. A fortély **foka** szerint a próba Előny/Hátrány dobást kap (Normál 0.fok → Hátrány-2, 2.fok → Előny+1, 3.fok → Előny+2). Erős kiterjesztés hiányában a próba nem dobható („Nem dobhatsz").
+- **Dobás**: az eredmény (a legjobb/legrosszabb k10 az Előny/Hátrány szerint) a célszámhoz mérve → **Siker** (zöld) / **Sikertelen** (piros).
+- Ha a célszám a max dobással sem érhető el, „Lehetetlen" jelenik meg a Dobás gomb helyén.
 
 ### Szabály linkek (🔗)
 

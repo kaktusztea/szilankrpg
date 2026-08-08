@@ -119,17 +119,17 @@ export function KepzettsegProbaPopup({
         <div className="kep-proba-subtitle">{képzettségNév} ({szint})</div>
 
         <div className="kep-proba-row">
-          {kiterjesztesek.length > 0 && (
-            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
-              {kit ? <>{kit.fortély} <span className={kitDotClass(kit)}>●</span></> : 'Kiterjesztés'}
-            </button>
-          )}
           <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('tul')}>
             {selTul !== null ? `${tulLabel(selTul)} (${tulajdonságok[selTul]})` : 'Tulajdonság'}
           </button>
           <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('neh')}>
             {nehézség !== null ? nehézségDisplay(nehézség) : 'Nehézség'}
           </button>
+          {kiterjesztesek.length > 0 && (
+            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
+              {kit ? <>{kit.fortély} <span className={kitDotClass(kit)}>●</span></> : 'Kiterjesztés'}
+            </button>
+          )}
         </div>
 
         {erősTiltott ? (
@@ -155,9 +155,14 @@ export function KepzettsegProbaPopup({
             <div className="kep-proba-result-num">
               {eredmény}<span className="kep-proba-result-vs"> vs </span><span className="kep-proba-result-cel">{nehézség}</span>
             </div>
-            {ehCímke && <div className={`kep-proba-eh${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}>{ehCímke} — dobások: {dobás!.rolls.join(', ')}</div>}
             <div className={siker ? 'kep-proba-siker' : 'kep-proba-sikertelen'}>
               {siker ? 'Siker' : 'Sikertelen'}
+            </div>
+            <div className="kep-proba-rolls">
+              {ehCímke && <span className={eh.szint > 0 ? 'kep-proba-eh-előny' : 'kep-proba-eh'}>{ehCímke} · </span>}
+              k10: {dobás!.rolls.map((r, i) => (
+                <span key={i}>{i > 0 ? ', ' : ''}<span className={r === dobás!.eredmény ? 'kep-proba-roll-sel' : ''}>{r}</span></span>
+              ))}
             </div>
           </div>
         )}
