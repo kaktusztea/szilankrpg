@@ -14,3 +14,17 @@ export function rollK20(): number {
 export function rollK10(): number {
   return rollDie(10);
 }
+
+/**
+ * Előny/Hátrány dobás k10-zel (md/030_08_01, §37):
+ *  - szint > 0 (Előny+N): (N+1) db k10, a legnagyobb számít
+ *  - szint < 0 (Hátrány-N): (|N|+1) db k10, a legkisebb számít
+ *  - szint == 0: egyetlen k10 (sima dobás)
+ */
+export interface ProbaDobás { rolls: number[]; eredmény: number }
+export function rollElőnyHátrány(szint: number): ProbaDobás {
+  const count = Math.abs(szint) + 1;
+  const rolls = Array.from({ length: count }, () => rollK10());
+  const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
+  return { rolls, eredmény };
+}

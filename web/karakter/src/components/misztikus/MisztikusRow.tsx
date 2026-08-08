@@ -1,4 +1,5 @@
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
+import type { Tulajdonsagok } from '../../engine/types';
 import { KepzettsegInfoPanel } from '../KepzettsegInfoPanel';
 
 interface MisztikusRowProps {
@@ -11,13 +12,14 @@ interface MisztikusRowProps {
   infoOpen?: boolean;
   def?: KepzettsegDef;
   kit?: KiterjesztesEntry[];
-  felvettFortelyok?: string[];
+  fortélyFokok: Record<string, number>;
+  tulajdonságok: Tulajdonsagok;
   onEdit: () => void;
   onDelete?: () => void;
   onInfoToggle?: () => void;
 }
 
-export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning = false, gameMode, infoOpen, def, kit, felvettFortelyok, onEdit, onDelete, onInfoToggle }: MisztikusRowProps) {
+export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning = false, gameMode, infoOpen, def, kit, fortélyFokok, tulajdonságok, onEdit, onDelete, onInfoToggle }: MisztikusRowProps) {
   const displayName = név.includes(':') ? név.split(':')[1].trim() : név;
   const szintClass = `kep-szint${szint > maxSzint ? ' kep-over' : szint >= 9 ? ' kep-szint-high' : ''}`;
 
@@ -31,7 +33,7 @@ export function MisztikusRow({ név, szint, maxSzint, canDelete = true, warning 
         <strong className={szintClass}>{szint}</strong>
       </div>
       {gameMode && infoOpen && def && (
-        <KepzettsegInfoPanel def={def} kit={kit || []} felvettFortelyok={felvettFortelyok || []} />
+        <KepzettsegInfoPanel def={def} kit={kit || []} fortélyFokok={fortélyFokok} tulajdonságok={tulajdonságok} szint={szint} />
       )}
     </div>
   );

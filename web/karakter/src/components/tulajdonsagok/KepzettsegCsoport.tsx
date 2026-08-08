@@ -1,4 +1,5 @@
 import type { KepzettsegDef, KiterjesztesEntry } from '../../engine/data-loader';
+import type { Tulajdonsagok } from '../../engine/types';
 import type { KepzettsegSlot } from './types';
 import { KepzettsegRow } from './KepzettsegRow';
 import { getDisplayName, findDef as findDefHelper, getAvailableNames, getKepzettsegekForCsoport, sortKepzettsegSlotok } from './helpers';
@@ -16,7 +17,8 @@ interface Props {
   onToggleCollapse: () => void;
   infoTarget: string | null;
   setInfoTarget: (v: string | null) => void;
-  felvettFortelyok: string[];
+  tulajdonságok: Tulajdonsagok;
+  fortélyFokok: Record<string, number>;
   onAddKepzettseg: (csoport: string, név: string) => void;
   onSzintChange: (globalIdx: number, szint: number) => void;
   onRemove: (globalIdx: number, slot: KepzettsegSlot) => void;
@@ -25,7 +27,7 @@ interface Props {
 export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
   kiterjesztesek, tsz, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
-  felvettFortelyok, onAddKepzettseg, onSzintChange, onRemove
+  fortélyFokok, tulajdonságok, onAddKepzettseg, onSzintChange, onRemove
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
@@ -58,7 +60,8 @@ export function KepzettsegCsoport({
               findDef={boundFindDef}
               overLimit={slot.szint > maxSzint}
               warning={slot.név.startsWith('Arkánum') && !képzettségek.some(k => k.név.startsWith('Tradíció'))}
-              felvettFortelyok={felvettFortelyok}
+              fortélyFokok={fortélyFokok}
+              tulajdonságok={tulajdonságok}
             />
           );
         })}

@@ -1,5 +1,5 @@
 import type { GameData, KepzettsegDef, KiterjesztesEntry, FortelySummary } from '../../engine/data-loader';
-import type { Karakter, Fortely } from '../../engine/types';
+import type { Karakter, Fortely, Tulajdonsagok } from '../../engine/types';
 
 export interface MisztikusScreenProps {
   data: GameData;
@@ -19,7 +19,8 @@ export interface SectionContext {
   onInfoToggle: (key: string) => void;
   findDef: (név: string) => KepzettsegDef | undefined;
   kiterjesztesek: Record<string, KiterjesztesEntry[]>;
-  felvettFortelyok: string[];
+  fortélyFokok: Record<string, number>;
+  tulajdonságok: Tulajdonsagok;
 }
 
 /** Popup state managed by useMisztikusPopups hook */

@@ -46,5 +46,6 @@ export interface KepzettsegRowProps {
   findDef: (név: string) => KepzettsegDef | undefined;
   overLimit: boolean;
   warning?: boolean;
-  felvettFortelyok: string[];
+  fortélyFokok: Record<string, number>;
+  tulajdonságok: Tulajdonsagok;
 }

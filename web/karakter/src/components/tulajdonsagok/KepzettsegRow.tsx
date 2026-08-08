@@ -8,7 +8,7 @@ const SZINT_VALUES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15];
 export function KepzettsegRow({
   slot, gameMode, onSzintChange, onRemove,
   kiterjesztesek, infoOpen, onInfoToggle,
-  displayName, findDef, overLimit, warning, felvettFortelyok
+  displayName, findDef, overLimit, warning, fortélyFokok, tulajdonságok
 }: KepzettsegRowProps) {
   const [szintEditing, setSzintEditing] = useState(false);
 
@@ -39,7 +39,7 @@ export function KepzettsegRow({
       </div>
 
       {gameMode && infoOpen && def && (
-        <KepzettsegInfoPanel def={def} kit={kiterjesztesek[slot.név] || []} felvettFortelyok={felvettFortelyok} />
+        <KepzettsegInfoPanel def={def} kit={kiterjesztesek[slot.név] || []} fortélyFokok={fortélyFokok} tulajdonságok={tulajdonságok} szint={slot.szint} />
       )}
 
       {szintEditing && (

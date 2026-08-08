@@ -4,6 +4,7 @@ import type { Props, KepzettsegSlot } from './types';
 import { buildDefsByGroup, getDisplayName } from './helpers';
 import { TulajdonsagokHeader } from './TulajdonsagokHeader';
 import { KepzettsegCsoport } from './KepzettsegCsoport';
+import { buildFortélyFokok } from './KepzettsegProbaPopup';
 import { TulajdonsagokPopups, INITIAL_POPUP_STATE, type PopupState } from './TulajdonsagokPopups';
 import { PrimerKpBox } from './PrimerKpBox';
 import { ElotortenetOverlay } from './ElotortenetOverlay';
@@ -16,7 +17,7 @@ export function TulajdonsagokScreen({
   játékos, setJátékos, tsz, setTsz, kor, setKor, faj, setFaj, anyanyelv, setAnyanyelv,
   jk, setJk, onTestReset
 }: Props) {
-  const felvettFortelyok = karakter.fortélyok.map(f => f.név);
+  const fortélyFokok = buildFortélyFokok(karakter.fortélyok);
 
   const [popup, setPopup] = useState<PopupState>(INITIAL_POPUP_STATE);
   const [infoTarget, setInfoTarget] = useState<string | null>(null);
@@ -133,7 +134,8 @@ export function TulajdonsagokScreen({
             onToggleCollapse={() => toggleCollapse(csoport)}
             infoTarget={infoTarget}
             setInfoTarget={setInfoTarget}
-            felvettFortelyok={felvettFortelyok}
+            tulajdonságok={tulajdonságok}
+            fortélyFokok={fortélyFokok}
             onAddKepzettseg={addKepzettseg}
             onSzintChange={handleSzintChange}
             onRemove={handleRemove}

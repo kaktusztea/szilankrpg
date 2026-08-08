@@ -3,6 +3,7 @@ import type { MisztikusScreenProps, SectionContext } from './types';
 import type { Fortely } from '../../engine/types';
 import { evaluate, buildContext } from '../../engine/reactive';
 import { findDef as findKepzDef } from '../tulajdonsagok/helpers';
+import { buildFortélyFokok } from '../tulajdonsagok/KepzettsegProbaPopup';
 import { useMisztikusPopups } from './useMisztikusPopups';
 import { AuraPanel } from './AuraPanel';
 import { TradícióSection } from './TradicioSection';
@@ -34,7 +35,8 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
     onInfoToggle: (key) => setInfoTarget(prev => prev === key ? null : key),
     findDef: (név) => findKepzDef(név, data.kepzettsegDefs),
     kiterjesztesek: data.kiterjesztesek,
-    felvettFortelyok: karakter.fortélyok.map(f => f.név),
+    fortélyFokok: buildFortélyFokok(karakter.fortélyok),
+    tulajdonságok: karakter.tulajdonságok,
   };
 
   const aurahangolásKep = képzettségek.find(k => k.név === 'Arkánum: Aurahangolás');

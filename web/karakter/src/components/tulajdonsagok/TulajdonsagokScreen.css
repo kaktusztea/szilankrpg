@@ -202,3 +202,114 @@
   padding: 2px 4px;
 }
 .tul-test-reset-btn:active { opacity: 1; }
+
+/* --- Képzettségpróba dobás (Játék mód) --- */
+.info-panel-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+.kep-proba-dice-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: 0.8;
+  padding: 2px 4px;
+  line-height: 1;
+}
+.kep-proba-dice-btn:active { opacity: 1; }
+
+.kep-proba-popup {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 260px;
+}
+.kep-proba-header {
+  font-size: 15px;
+  font-weight: bold;
+  color: var(--text);
+  text-align: center;
+}
+.kep-proba-subtitle {
+  text-align: center;
+  color: var(--color-kepzettseg);
+  font-size: 16px;
+  margin-top: -6px;
+}
+.kep-proba-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.kep-proba-row .field-select { width: 100%; }
+.kep-proba-kit-btn { width: 100%; text-align: left; }
+.kep-proba-neh-tobbi { text-align: center; opacity: 0.7; padding: 2px 0; }
+
+/* Kiterjesztés státusz pötty (kicsi, mint a Szabad fortély pötty) */
+.kep-proba-dot-green, .kep-proba-dot-yellow, .kep-proba-dot-red {
+  font-size: 11px;
+  margin-left: 4px;
+  display: inline-block;
+  transform: translateY(-1px);
+}
+.kep-proba-dot-green { color: #66bb6a; }
+.kep-proba-dot-yellow { color: #ffca28; }
+.kep-proba-dot-red { color: #e53935; }
+
+.kep-proba-summary {
+  text-align: center;
+  font-family: monospace;
+  font-size: 22px;
+  font-weight: bold;
+  color: var(--text);
+}
+.kep-proba-vs { color: #888; font-size: 0.7em; margin: 0 6px; }
+.kep-proba-celszam { color: #e53935; }
+.kep-proba-eh { color: var(--warning); font-size: 13px; }
+
+.kep-proba-roll-btn {
+  background: var(--primary);
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  color: var(--text);
+  font-size: 15px;
+  font-weight: bold;
+  padding: 8px 0;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1px;
+}
+.kep-proba-roll-eh { font-size: 13px; font-weight: normal; color: var(--warning); }
+.kep-proba-eh-előny { color: var(--success); }
+.kep-proba-roll-btn:active { background: var(--accent); }
+.kep-proba-roll-btn:disabled { opacity: 0.4; cursor: default; background: var(--primary); }
+
+.kep-proba-tiltott {
+  text-align: center;
+  color: #e53935;
+  font-weight: bold;
+  font-size: 16px;
+  padding: 8px 0;
+}
+
+.kep-proba-result {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+.kep-proba-result-num {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--text);
+  font-family: monospace;
+}
+.kep-proba-result-vs { color: #888; font-size: 0.55em; }
+.kep-proba-result-cel { color: #e53935; }
+.kep-proba-siker { color: var(--success); font-weight: bold; font-size: 16px; }
+.kep-proba-sikertelen { color: #e53935; font-weight: bold; font-size: 16px; }

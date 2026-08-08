@@ -21,7 +21,8 @@ export function SectionRow({ ctx, név, szint, canDelete = true, warning = false
       onInfoToggle={() => ctx.onInfoToggle(infoKey)}
       def={ctx.findDef(név)}
       kit={ctx.kiterjesztesek[név] as KiterjesztesEntry[] | undefined}
-      felvettFortelyok={ctx.felvettFortelyok}
+      fortélyFokok={ctx.fortélyFokok}
+      tulajdonságok={ctx.tulajdonságok}
       onEdit={onEdit} onDelete={onDelete}
     />
   );

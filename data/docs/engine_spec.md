@@ -2746,6 +2746,36 @@ Max helyettesítő érték: 5
 Nem adódik hozzá — kiváltja az elsődleges képzettséget.
 ```
 
+### 37.7 Képzettség-kiterjesztés Előny/Hátrány (fortély foka szerint)
+
+Forrás: md/030_08_01_kepzettsegek_fortelyok_kapcsolata.md
+
+Egy fortély Normál vagy Erős kiterjesztésben kapcsolódhat egy képzettséghez (`tables/kiterjesztesek.json`).
+A képzettségpróba Előny/Hátrány szintje a kiterjesztő fortély **felvett fokából** adódik:
+
+```
+típus    fok            hatás
+──────────────────────────────────────
+Normál   0 (nincs)      Hátrány-2
+Normál   1              sima (0)
+Normál   2              Előny+1
+Normál   3              Előny+2
+Erős     0 (nincs)      nem dobható (auto kudarc)
+Erős     1              sima (0)
+Erős     2              Előny+1
+Erős     3              Előny+2
+```
+
+Általánosan (fok ≥ 1): `szint = min(fok - 1, 2)`. Erős 0.fok esetén a próba tiltott.
+
+Előny/Hátrány dobás (webapp): `engine/dice.ts → rollElőnyHátrány(szint)`:
+- `szint > 0` (Előny+N): `N+1` db k10, a legnagyobb számít
+- `szint < 0` (Hátrány-N): `|N|+1` db k10, a legkisebb számít
+- `szint == 0`: egyetlen k10
+
+Implementáció: `KepzettsegProbaPopup.tsx` (Játék mód, képzettség accordion 🎲).
+Pure helperek (teszteltek): `kiterjesztésElőnyHátrány(típus, fok)`, `buildFortélyFokok(fortélyok)`, `előnyHátrányLabel(szint)`, `probaSiker(tul, szint, k10, célszám)`.
+A UI egy kiterjesztést kezel egyszerre (picker); a több-fortélyes eset (md/030_08_01 speciális szakasz) a KM döntése.
 
 ---
 
