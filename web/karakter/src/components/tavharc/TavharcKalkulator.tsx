@@ -22,18 +22,19 @@ interface Props {
   szorzóState: SzorzóState;
   onSzorzóChange: (key: keyof SzorzóState, id: number) => void;
   onTávolságPopup: () => void;
+  onCéDobás: () => void;
   karakter: Karakter;
   konstansok: KonstansokRaw;
   tavfegyverek: TavfegyverAlap[];
 }
 
-export function TavharcKalkulator({ cé, vé, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup, karakter, konstansok, tavfegyverek }: Props) {
+export function TavharcKalkulator({ cé, vé, támadásLabel, szorzóÖsszeg, cella, távolság, szorzok, szorzóState, onSzorzóChange, onTávolságPopup, onCéDobás, karakter, konstansok, tavfegyverek }: Props) {
   const véClass = vé <= cé + 1 ? 'th-ve-ok' : vé - cé > 20 ? 'th-ve-bad' : 'th-ve-warn';
 
   return (
     <>
       <div className="th-main-row">
-        <div className="th-value-main th-ce-ve-box">
+        <div className="th-value-main th-ce-ve-box th-ce-ve-clickable" onClick={onCéDobás}>
           <span>CÉ: {cé}  ({támadásLabel})</span>
           <span className={véClass}>VÉ: {vé}</span>
         </div>

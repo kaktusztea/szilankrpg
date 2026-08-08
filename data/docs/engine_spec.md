@@ -2690,6 +2690,7 @@ Célszámok:
 Siker/Kudarc mérték: ±3 különbség = kiemelt eredmény
 Előny/Hátrány: [-2; +2] skála (Státuszokból)
 Lehetetlen: tulajdonság + 6 < célszám → nem dobható
+Biztos siker: tulajdonság + 1 >= célszám → dobás nélkül sikeres
 
 Előny/Hátrány dobás (k6):
   Előny+N: (N+1) db k6, legnagyobb számít
@@ -2698,7 +2699,7 @@ Előny/Hátrány dobás (k6):
 ```
 
 Webapp implementáció: `TulajdonsagProbaPopup.tsx` (Játék mód, Tulajdonság box kattintás).
-Pure helper: `tulProbaLehetetlen(tulÉrték, célszám)`.
+Pure helperek: `tulProbaLehetetlen(tulÉrték, célszám)`, `tulProbaBiztosSiker(tulÉrték, célszám)`.
 Dice: `engine/dice.ts → rollElőnyHátrányK6(szint)`.
 
 ### 37.2 Képzettségpróba
@@ -2718,7 +2719,12 @@ Célszámok:
 Lépésköz: 3 (fokozatonként)
 Siker/Kudarc mérték: ±6 különbség (2 fokozat) = kiemelt eredmény
 Előny/Hátrány: [-2; +2] skála (Státuszokból)
+Lehetetlen: tulajdonság + szint + 10 < célszám → nem dobható
+Biztos siker: tulajdonság + szint + 1 >= célszám → dobás nélkül sikeres
 ```
+
+Webapp: `KepzettsegProbaPopup.tsx`.
+Pure helperek: `probaLehetetlen(tulÉrték, szint, célszám)`, `probaBiztosSiker(tulÉrték, szint, célszám)`.
 
 ### 37.3 Próba képzetlenül
 

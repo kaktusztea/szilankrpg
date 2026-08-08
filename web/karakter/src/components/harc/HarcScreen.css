@@ -213,6 +213,42 @@
   color: var(--text-dim);
 }
 
+.ke-dobas-vs {
+  font-size: 14px;
+  color: var(--text-dim);
+  margin-top: 4px;
+}
+
+.ke-dobas-result-vs-row {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.ke-dobas-result-vs {
+  font-size: 16px;
+  color: var(--text-dim);
+}
+
+.ke-dobas-result-cel {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--text-dim);
+  font-family: monospace;
+}
+
+.ke-dobas-siker {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--success);
+}
+
+.ke-dobas-sikertelen {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--error);
+}
+
 /* --- KÉ dobás history (box aljára) --- */
 .ke-history {
   display: flex;

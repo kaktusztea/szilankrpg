@@ -53,6 +53,7 @@
 }
 
 .th-ce-ve-box { display: flex; flex-direction: column; justify-content: center; gap: 4px; flex: 1; min-width: 0; }
+.th-ce-ve-clickable { cursor: pointer; }
 .th-szc-box { font-size: 12px; text-align: center; display: flex; flex-direction: column; justify-content: center; flex: 0 0 auto; color: #999; }
 .th-szc-value { font-size: 18px; }
 

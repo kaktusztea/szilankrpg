@@ -377,6 +377,7 @@ Fejléc: `<h2>🗡️ Harc</h2>`
 
 ### Formázás
 - Fegyver táblázat számok (nem első oszlop): `font-family: monospace`
+- Fegyver táblázat aktív sor (`.harc-fegyver-active-row`) számok: `font-size: 18px` (alap 16px + 2px kiemelés)
 - VÉ csökkentés gombok: `font-family: monospace`
 - SFÉ értékek (`<strong>`): `font-family: monospace`
 - SFÉ lefedettség %: `font-family: monospace`
@@ -455,6 +456,7 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 
 - CÉ: fehér szöveg, `Yx` = támadások/kör
 - VÉ: zöld (`#4caf50`) ha VÉ ≤ CÉ+1 (tuti találat), narancssárga (`#ffa726`) normál, piros (`#e53935`) ha lehetetlen (VÉ-CÉ > 20)
+- **Célzó dobás** (Játék mód): a CÉ/VÉ box kattintható (cursor: pointer). Kattintásra `DobasPopup` nyílik (`CÉ + k20 vs VÉ`): nagy eredmény szám + „vs" + VÉ szám (Tulajdonságpróba stílus — két nagy szám egymás mellett), alatta részlet: `CÉ (X) + k20 (Y)`, alatta Találat (zöld) / Nem talált (piros). Mellé katt / Escape bezár.
 - Szorzó×Cella: szürke (`#999`), nem kattintható
 - Táv: zöld keret + zöld érték, kattintható → Távolság popup (−/+ gombok, cella kijelzés)
 
@@ -534,12 +536,14 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Nem reszponzív, fix layout
 - Szerkesztő módban: tap → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
 - Játék módban: tap → **Tulajdonságpróba popup** (`TulajdonsagProbaPopup`):
-  - Fejléc: "Tulajdonságpróba", alcím: `{Tulajdonság neve} ({érték})` (kék szín)
+  - Fejléc: "Tulajdonságpróba" + jobb felső sarokban ⟲ reset gomb (disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
+  - Alcím: `{Tulajdonság neve} ({érték})` (kék szín)
   - Nehézség picker (field-btn → overlay): 3 (Könnyű), 4 (Átlagos), 5 (Nehéz), 6 (Nagyon nehéz), 7 (Rendkívül nehéz), 8 (Emberfeletti)
   - Előny/Hátrány picker (field-btn → overlay): Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
   - Összesítő sor: `{tulajdonság érték} vs {célszám}` (monospace)
   - **Dobás gomb** (k6): disabled amíg nincs Nehézség kiválasztva. Előny/Hátrány címke alatta (Előny → zöld, Hátrány → sárga).
   - Ha lehetetlen (`tulajdonság + 6 < célszám`): piros "Lehetetlen" label a Dobás gomb helyén.
+  - Ha biztos siker (`tulajdonság + 1 >= célszám`): zöld "Biztos siker" label a Dobás gomb helyén.
   - Eredmény: nagy szám + vs + célszám, alatta Siker/Sikertelen, alatta k6 értékek (szóközzel elválasztva, kiválasztott bold).
   - Előny/Hátrány dobás k6-tal: Előny+N → (N+1) db k6 legnagyobb, Hátrány-N → (|N|+1) db k6 legkisebb.
   - Nehézség/Előny-Hátrány váltás törli az eredményt (újbóli Dobás gomb).
@@ -591,9 +595,10 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - **Kiterjeszti**: fortélyok listája (normál/erős jelzéssel)
   - **Akció sor** (alul): 🔗 Szabályrendszer link + 🎲 Képzettségpróba dobás gomb
 - **🎲 Képzettségpróba popup** (csak Játék módban, accordion alján): kattintásra `PopupOverlay`
-  - Fejléc: "Képzettségpróba", alatta alcím: `{képzettség neve} ({szint})`
+  - Fejléc: "Képzettségpróba" + jobb felső sarokban ⟲ reset gomb (disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
+  - Alcím: `{képzettség neve} ({szint})`
   - Három overlay popup picker (vallás választó stílus, field-btn → popup), mindegyik üres alapértékkel: **Tulajdonság** (placeholder „Tulajdonság"; mind a 8 tulajdonság, érték kijelezve) + **Nehézség** (placeholder „Nehézség"; célszámok md/030_06_01 — alapból 6 (Könnyű) … 21 (Emberfeletti) látszik, apró ▾ lenyitó nyíl alul a 21 feletti, elnevezés nélküli célszámokhoz: 24, 27, 30 (max))
-  - **Dobás gomb**: szürke/inaktív, amíg nincs Tulajdonság ÉS Nehézség is kiválasztva. Ha a próba lehetetlen (tulajdonság + képzettség szint + max k10 (10) < célszám), a Dobás gomb helyén `Lehetetlen` piros felirat.
+  - **Dobás gomb**: szürke/inaktív, amíg nincs Tulajdonság ÉS Nehézség is kiválasztva. Ha a próba lehetetlen (tulajdonság + képzettség szint + max k10 (10) < célszám), a Dobás gomb helyén `Lehetetlen` piros felirat. Ha biztos siker (tulajdonság + szint + 1 >= célszám), a Dobás gomb helyén `Biztos siker` zöld felirat.
   - **Kiterjesztő fortély picker** (a Nehézség picker alatt, csak ha a képzettségnek van kiterjesztő fortélye — md/030_08_01): field-btn → overlay popup picker. Opciók: `Kiterjesztés` (default, törzstudás — sima dobás) + a kiterjesztő fortélyok, mindegyik mellett kis státusz pötty (mint a Szabad fortély pötty): zöld=felvéve, sárga=hiányzó Normál, piros=hiányzó Erős. A kiterjesztés a fortély **foka** szerint Előny/Hátrány dobást ad (`rollElőnyHátrány`, engine/dice.ts): Normál 0.fok (nincs felvéve) → Hátrány-2, 1.fok → sima, 2.fok → Előny+1, 3.fok → Előny+2. Erős 0.fok → a Dobás gomb helyett `Nem dobhatsz` piros felirat; 1-3.fok mint Normál. A Dobás gombban a „Dobás" felirat alatt megjelenik az aktuális `Előny+N`/`Hátrány-N` címke (Előny → zöld, Hátrány → sárga). Dobás után az eredmény szám és a Siker/Sikertelen alatt megjelenik a dobott k10 érték(ek) (`k10: X` vagy több érték Előny/Hátrány esetén, az Előny/Hátrány címkével).
   - Összesítő sor: `{tulajdonság érték} + {szint} vs {célszám}` (monospace)
   - **Dobás gomb** → `Tulajdonság + Képzettség szint + k10` (rollK10). Eredmény inline a Lövéskitérés popup mintájára: két érték egy sorban — nagy eredményszám + kis „vs" + piros célszám —, alatta színes Siker / Sikertelen. Tulajdonság/nehézség váltás törli az eredményt (újbóli Dobás gomb jelenik meg).

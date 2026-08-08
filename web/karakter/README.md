@@ -66,6 +66,7 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
   - **Sebesülés rögzítése**: típus (S/V/Z/FP) + érték választás (1-4, bővíthető ▾ nagyobb értékekre)
   - **Gyógyulás**: ÉP vagy FP + érték választás (csak a meglévő sebekre)
 - **Távharc**: CÉ + célpont VÉ kalkulátor szorzó-pickerekkel (mozgás, méret, szél stb.)
+  - **Célzó dobás**: a CÉ/VÉ box-ra koppintva `CÉ + k20` dobás — az eredmény a kiszámolt VÉ-vel összevetve (két nagy szám egymás mellett), alatta Találat / Nem talált jelzés
   - **Lövéskitérés**: védekező eszköz - válaszd ki a bejövő fegyvert és a távolságot, az app kiszámolja a célszámot (fegyver kategória + távolság). "Kitérés" gombbal `Akrobatika+Gyorsaság + k10` dobás a célszám ellen → siker (kitértél) / sikertelen (a lövész jöhet)
 
 ### Aktív fül
