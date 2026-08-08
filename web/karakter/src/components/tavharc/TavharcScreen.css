@@ -113,7 +113,9 @@
 .th-lk-celszam { color: var(--text); }
 .th-lk-celszam strong { color: var(--accent); font-size: 15px; }
 .th-lk-outofrange { color: #e53935; font-style: italic; }
-.th-lk-akrobatika { color: #aaa; }
+.th-lk-akrobatika { color: var(--text); }
+.th-lk-akrobatika strong { color: var(--text); font-size: 15px; }
+.th-lk-lehetetlen { color: #e53935; font-weight: bold; text-align: center; }
 .th-lk-actions { display: flex; justify-content: flex-end; margin-top: 2px; }
 .th-lk-kiteres-btn {
   background: var(--input-bg);

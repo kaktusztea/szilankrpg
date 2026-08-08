@@ -63,6 +63,8 @@ export function TavharcLoveskiteres({ karakter, konstansok, tavfegyverek }: Prop
     ? calcLöveskitérésCélszám(konstansok.lövéskitérés[sel.kategória], távolság)
     : null;
   const akrobatika = calcAkrobatikaÉrték(karakter);
+  // Lehetetlen: még a max k10 (10) dobással sem érhető el a célszám.
+  const lehetetlen = célszám !== null && akrobatika + 10 < célszám;
 
   const step = useCallback((dir: 1 | -1) => {
     setTávolság(v => Math.max(1, Math.min(MAX_TÁVOLSÁG_MÉTER, v + dir)));
@@ -90,16 +92,20 @@ export function TavharcLoveskiteres({ karakter, konstansok, tavfegyverek }: Prop
       </div>
 
       <div className="th-lk-info">
+        <span className="th-lk-akrobatika">Akrobatika+Gyorsaság: <strong>{akrobatika}</strong></span>
         {!sel
           ? <span className="th-lk-hint">Válassz bejövő fegyvert</span>
           : hatótávonKívül
             ? <span className="th-lk-outofrange">hatótávon kívül vagy</span>
             : <span className="th-lk-celszam">Célszám: <strong>{célszám}</strong></span>}
-        <span className="th-lk-akrobatika">Akrobatika+Gyorsaság: {akrobatika}</span>
       </div>
 
       <div className="th-lk-actions">
-        <button className="th-lk-kiteres-btn" onClick={kitérés} disabled={célszám === null}>Kitérés</button>
+        {lehetetlen ? (
+          <div className="th-lk-lehetetlen">Lehetetlen</div>
+        ) : (
+          <button className="th-lk-kiteres-btn" onClick={kitérés} disabled={célszám === null}>Kitérés</button>
+        )}
       </div>
 
       {showPicker && (

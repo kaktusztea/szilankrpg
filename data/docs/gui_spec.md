@@ -468,8 +468,8 @@ Fejléc: `<h2>🏹 Távharc</h2>`
 - Saját távolság léptető (− Xm +, hold-repeat)
 - Célszám: a fegyver **Osztójából** adódó kategória (md/078: Osztó 1=Nem alkalmas, 2=Korlátosan alkalmas, 3=Dobófegyver, 4=Íj, ≥5=Nyílpuska) + távolság a `konstansok.lövéskitérés` táblából. Közelebb = magasabb; a tábla maxán túl a legkönnyebb (9) marad.
 - „hatótávon kívül vagy": a fegyver tényleges **Hatótáv**-ja alapján (Erő-függő képletnél nincs gát). Ilyenkor Kitérés tiltva.
-- Akrobatika+Gyorsaság érték (Akrobatika szint + Gyorsaság + 2 ha „Lövéskitérés fejlesztése" fortély)
-- „Kitérés" gomb (jobb alsó): `Akrobatika+Gyorsaság + k10` képzettségpróba → popup (KÉ/TÉ dobás mintája), célszámhoz mérve **Siker/Sikertelen** jelzés.
+- Akrobatika+Gyorsaság érték (Akrobatika szint + Gyorsaság + 2 ha „Lövéskitérés fejlesztése" fortély). A box-ban ez a sor van felül (fehér label + fehér `<strong>` érték), alatta a Célszám sor.
+- „Kitérés" gomb (jobb alsó): `Akrobatika+Gyorsaság + k10` képzettségpróba → popup (KÉ/TÉ dobás mintája), célszámhoz mérve **Siker/Sikertelen** jelzés. Ha a kitérés lehetetlen (Akrobatika+Gyorsaság + max k10 (10) < célszám), a gomb helyén piros „Lehetetlen" felirat.
 
 ### Támadás db formátum
 - `Xx` = X támadás / kör (1 + FLOOR(harckeret / sebesség))
