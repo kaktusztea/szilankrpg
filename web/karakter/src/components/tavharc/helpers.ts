@@ -225,10 +225,13 @@ export function weaponToLöveskitérésKategória(def: TavfegyverAlap): string |
 /**
  * Hatótáv méterben. Fix szám ("50m") → az érték; Erő-függő képlet ("20m + (Erő x 5)")
  * → Infinity, mert a támadó Ereje ismeretlen, így nincs range-gát (nem blokkolunk hamisan).
+ * "0" vagy üres → Infinity (pl. Mágiatáv: nincs hatótáv korlát a lövéskitérés szempontjából).
  */
 export function parseHatótáv(hatótáv: string): number {
   const m = /^\s*(\d+)\s*m?\s*$/.exec(hatótáv ?? '');
-  return m ? parseInt(m[1]) : Infinity;
+  if (!m) return Infinity;
+  const v = parseInt(m[1]);
+  return v > 0 ? v : Infinity;
 }
 
 /**
