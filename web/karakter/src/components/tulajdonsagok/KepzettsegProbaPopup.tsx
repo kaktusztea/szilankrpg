@@ -40,6 +40,11 @@ export function probaLehetetlen(tulÉrték: number, szint: number, célszám: nu
   return tulÉrték + szint + 10 < célszám;
 }
 
+/** A próba biztos siker, ha min k10 (1) dobással is eléri a célszámot. */
+export function probaBiztosSiker(tulÉrték: number, szint: number, célszám: number): boolean {
+  return tulÉrték + szint + 1 >= célszám;
+}
+
 /** Fortély név → felvett (max) fok. Többszörös fortélynél a legmagasabb példány foka. */
 export function buildFortélyFokok(fortélyok: Fortely[]): Record<string, number> {
   const m: Record<string, number> = {};
@@ -108,6 +113,7 @@ export function KepzettsegProbaPopup({
   const tulÉrték = selTul !== null ? tulajdonságok[selTul] : 0;
   // Lehetetlen: még a max k10 (10) dobással sem érhető el a célszám.
   const lehetetlen = kész && probaLehetetlen(tulÉrték, szint, nehézség!);
+  const biztosSiker = kész && !lehetetlen && probaBiztosSiker(tulÉrték, szint, nehézség!);
   const eredmény = dobás !== null && kész ? tulÉrték + szint + dobás.eredmény : null;
   const siker = eredmény !== null && nehézség !== null && probaSiker(tulÉrték, szint, dobás!.eredmény, nehézség);
   const ehCímke = előnyHátrányLabel(eh.szint);
@@ -115,7 +121,15 @@ export function KepzettsegProbaPopup({
   return (
     <PopupOverlay onClose={onClose}>
       <div className="kep-proba-popup">
-        <div className="kep-proba-header">Képzettségpróba</div>
+        <div className="kep-proba-header">
+          Képzettségpróba
+          <button
+            className="kep-proba-reset-btn"
+            disabled={dobás === null}
+            onClick={resetDobás}
+            title="Újradobás"
+          >⟲</button>
+        </div>
         <div className="kep-proba-subtitle">{képzettségNév} ({szint})</div>
 
         <div className="kep-proba-row">
@@ -143,6 +157,8 @@ export function KepzettsegProbaPopup({
             )}
             {lehetetlen ? (
               <div className="kep-proba-tiltott">Lehetetlen</div>
+            ) : biztosSiker ? (
+              <div className="kep-proba-biztos">Biztos siker</div>
             ) : (
               <button className="kep-proba-roll-btn" disabled={!kész} onClick={() => setDobás(rollElőnyHátrány(eh.szint))}>
                 Dobás

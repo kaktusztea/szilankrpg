@@ -26,6 +26,11 @@ export function tulProbaLehetetlen(tulÉrték: number, célszám: number): boole
   return tulÉrték + 6 < célszám;
 }
 
+/** Tulajdonságpróba biztos siker, ha min k6 (1) dobással is eléri a célszámot. */
+export function tulProbaBiztosSiker(tulÉrték: number, célszám: number): boolean {
+  return tulÉrték + 1 >= célszám;
+}
+
 type PickerId = 'neh' | 'eh' | null;
 
 interface Props {
@@ -46,6 +51,7 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
 
   const kész = nehézség !== null;
   const lehetetlen = kész && tulProbaLehetetlen(érték, nehézség!);
+  const biztosSiker = kész && !lehetetlen && tulProbaBiztosSiker(érték, nehézség!);
   const eredmény = dobás !== null && kész ? érték + dobás.eredmény : null;
   const siker = eredmény !== null && nehézség !== null && eredmény >= nehézség;
   const ehCímke = előnyHátrányLabel(ehSzint);
@@ -55,7 +61,15 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
   return (
     <PopupOverlay onClose={onClose}>
       <div className="kep-proba-popup">
-        <div className="kep-proba-header">Tulajdonságpróba</div>
+        <div className="kep-proba-header">
+          Tulajdonságpróba
+          <button
+            className="kep-proba-reset-btn"
+            disabled={dobás === null}
+            onClick={() => setDobás(null)}
+            title="Újradobás"
+          >⟲</button>
+        </div>
         <div className="kep-proba-subtitle">{label} ({érték})</div>
 
         <div className="kep-proba-row">
@@ -76,6 +90,8 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
             )}
             {lehetetlen ? (
               <div className="kep-proba-tiltott">Lehetetlen</div>
+            ) : biztosSiker ? (
+              <div className="kep-proba-biztos">Biztos siker</div>
             ) : (
               <button className="kep-proba-roll-btn" disabled={!kész} onClick={() => setDobás(rollElőnyHátrányK6(ehSzint))}>
                 Dobás
