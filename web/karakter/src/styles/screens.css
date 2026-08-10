@@ -32,7 +32,7 @@
 }
 
 /* --- Próba táblák (Szilánk picker hub) --- */
-.app-proba-summary { cursor: pointer; font-weight: bold; color: var(--color-taktika); }
+.app-proba-summary { font-weight: bold; color: var(--color-taktika); }
 .app-proba-pre { margin: 4px 0; font-family: monospace; font-size: 15px; color: #ccc; }
 
 /* --- Error boundary --- */
