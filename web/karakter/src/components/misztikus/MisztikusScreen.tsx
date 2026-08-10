@@ -80,6 +80,7 @@ export function MisztikusScreen({ data, karakter, képzettségek, setKépzettsé
   function handleAltípusPick(tradíció: string, altípus: string) {
     addKépzettség(`Tradíció: ${tradíció} (${altípus})`);
     actions.closeAltípus();
+    actions.closeTradíció();
   }
   function handlePromptConfirm() {
     if (popups.promptTarget && popups.promptValue.trim()) {

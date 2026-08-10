@@ -32,7 +32,7 @@ export function useMisztikusPopups() {
     closeTradíció: () => setState(s => ({ ...s, tradícióPicker: false })),
 
     openAltípus: (név: string) => setState(s => ({ ...s, tradícióPicker: false, tradícióAltípusPicker: név })),
-    closeAltípus: () => setState(s => ({ ...s, tradícióAltípusPicker: null })),
+    closeAltípus: () => setState(s => ({ ...s, tradícióAltípusPicker: null, tradícióPicker: true })),
 
     openFelvétel: (def: any) => setState(s => ({ ...s, felvételDef: def })),
     closeFelvétel: () => setState(s => ({ ...s, felvételDef: null })),

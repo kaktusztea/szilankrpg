@@ -118,8 +118,14 @@ export function KepzettsegProbaPopup({
   const siker = eredmény !== null && nehézség !== null && probaSiker(tulÉrték, szint, dobás!.eredmény, nehézség);
   const ehCímke = előnyHátrányLabel(eh.szint);
 
+  // Escape: ha belső picker nyitva → azt zárjuk, ne a teljes popup-ot.
+  const handleOuterClose = () => {
+    if (openPicker !== null) { setOpenPicker(null); return; }
+    onClose();
+  };
+
   return (
-    <PopupOverlay onClose={onClose}>
+    <PopupOverlay onClose={handleOuterClose}>
       <div className="kep-proba-popup">
         <div className="kep-proba-header">
           Képzettségpróba
