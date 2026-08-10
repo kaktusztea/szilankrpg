@@ -264,6 +264,12 @@
 .kep-proba-row .field-select { width: 100%; }
 .kep-proba-kit-btn { width: 100%; text-align: left; }
 .kep-proba-neh-tobbi { text-align: center; opacity: 0.7; padding: 2px 0; }
+.kep-proba-neh-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
 
 /* Kiterjesztés státusz pötty (kicsi, mint a Szabad fortély pötty) */
 .kep-proba-dot-green, .kep-proba-dot-yellow, .kep-proba-dot-red {

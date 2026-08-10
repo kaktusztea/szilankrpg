@@ -31,8 +31,6 @@ export function tulProbaBiztosSiker(tulÉrték: number, célszám: number): bool
   return tulÉrték + 1 >= célszám;
 }
 
-type PickerId = 'neh' | 'eh' | null;
-
 interface Props {
   tulajdonságNév: string;
   érték: number;
@@ -41,12 +39,12 @@ interface Props {
 
 /**
  * Tulajdonságpróba dobás popup (Játék mód): Tulajdonság + k6 vs célszám.
- * Nehézség picker + Előny/Hátrány picker.
+ * Nehézség inline gombok + Előny/Hátrány picker.
  */
 export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Props) {
   const [nehézség, setNehézség] = useState<number | null>(null);
   const [ehSzint, setEhSzint] = useState(0);
-  const [openPicker, setOpenPicker] = useState<PickerId>(null);
+  const [showEhPicker, setShowEhPicker] = useState(false);
   const [dobás, setDobás] = useState<ProbaDobás | null>(null);
 
   const kész = nehézség !== null;
@@ -58,8 +56,14 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
 
   const label = tulajdonságNév.charAt(0).toUpperCase() + tulajdonságNév.slice(1);
 
+  // Escape: ha belső picker nyitva → azt zárjuk, ne a teljes popup-ot.
+  const handleOuterClose = () => {
+    if (showEhPicker) { setShowEhPicker(false); return; }
+    onClose();
+  };
+
   return (
-    <PopupOverlay onClose={onClose}>
+    <PopupOverlay onClose={handleOuterClose}>
       <div className="kep-proba-popup">
         <div className="kep-proba-header">
           Tulajdonságpróba
@@ -72,12 +76,18 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
         </div>
         <div className="kep-proba-subtitle">{label} ({érték})</div>
 
+        <div className="kep-proba-neh-list">
+          {NEHÉZSÉGEK.map(n => (
+            <button key={n.érték} className={`he-field-btn${nehézség === n.érték ? ' vallas-active' : ''}`}
+              onClick={() => { setNehézség(n.érték); setDobás(null); }}>
+              {n.érték} ({n.label})
+            </button>
+          ))}
+        </div>
+
         <div className="kep-proba-row">
-          <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('neh')}>
-            {nehézség !== null ? `${nehézség} (${NEHÉZSÉGEK.find(n => n.érték === nehézség)?.label ?? ''})` : 'Nehézség'}
-          </button>
-          <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('eh')}>
-            {ehSzint !== 0 ? ELŐNY_HÁTRÁNY.find(e => e.szint === ehSzint)?.label : '—'}
+          <button className="he-field-btn kep-proba-kit-btn" onClick={() => setShowEhPicker(true)}>
+            {ehSzint !== 0 ? ELŐNY_HÁTRÁNY.find(e => e.szint === ehSzint)?.label : '→ Előny / Hátrány'}
           </button>
         </div>
 
@@ -117,31 +127,18 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
         )}
       </div>
 
-      {openPicker !== null && (
-        <PopupOverlay onClose={() => setOpenPicker(null)}>
+      {showEhPicker && (
+        <PopupOverlay onClose={() => setShowEhPicker(false)}>
           <div className="kep-prompt vallas-picker" onClick={e => e.stopPropagation()}>
-            {openPicker === 'neh' && (<>
-              <label className="kep-prompt-label-bold-mb">Nehézség</label>
-              <div className="kep-prompt-flex-col-list">
-                {NEHÉZSÉGEK.map(n => (
-                  <button key={n.érték} className={`he-field-btn${nehézség === n.érték ? ' vallas-active' : ''}`}
-                    onClick={() => { setNehézség(n.érték); setDobás(null); setOpenPicker(null); }}>
-                    {n.érték} ({n.label})
-                  </button>
-                ))}
-              </div>
-            </>)}
-            {openPicker === 'eh' && (<>
-              <label className="kep-prompt-label-bold-mb">Előny / Hátrány</label>
-              <div className="kep-prompt-flex-col-list">
-                {ELŐNY_HÁTRÁNY.map(e => (
-                  <button key={e.szint} className={`he-field-btn${ehSzint === e.szint ? ' vallas-active' : ''}`}
-                    onClick={() => { setEhSzint(e.szint); setDobás(null); setOpenPicker(null); }}>
-                    {e.label}
-                  </button>
-                ))}
-              </div>
-            </>)}
+            <label className="kep-prompt-label-bold-mb">Előny / Hátrány</label>
+            <div className="kep-prompt-flex-col-list">
+              {ELŐNY_HÁTRÁNY.map(e => (
+                <button key={e.szint} className={`he-field-btn${ehSzint === e.szint ? ' vallas-active' : ''}`}
+                  onClick={() => { setEhSzint(e.szint); setDobás(null); setShowEhPicker(false); }}>
+                  {e.label}
+                </button>
+              ))}
+            </div>
           </div>
         </PopupOverlay>
       )}
