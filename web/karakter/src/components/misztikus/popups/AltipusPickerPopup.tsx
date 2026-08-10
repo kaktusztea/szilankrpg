@@ -17,7 +17,7 @@ export function AltípusPickerPopup({ tradícióNév, opciók, onPick, onClose }
   return (
     <OverlayPortal dismissible onClose={onClose}>
       <div className="kep-prompt" onClick={e => e.stopPropagation()}>
-        <label className="kep-prompt-label-bold-mb">{tradícióNév} — altípus</label>
+        <label className="kep-prompt-label-bold-mb">{tradícióNév} — {hasPantheon ? 'Pantheon' : 'altípus'}</label>
         <div className="kep-prompt-flex-col-list">
           {!hasPantheon
             ? trad.altípusok.map(a => (
