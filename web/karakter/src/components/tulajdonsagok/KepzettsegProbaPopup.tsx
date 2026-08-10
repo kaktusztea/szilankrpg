@@ -73,7 +73,7 @@ export function probaSiker(tulÉrték: number, szint: number, k10: number, céls
   return tulÉrték + szint + k10 >= célszám;
 }
 
-type PickerId = 'kit' | 'tul' | 'neh' | null;
+type PickerId = 'kit' | null;
 
 interface Props {
   képzettségNév: string;
@@ -138,19 +138,42 @@ export function KepzettsegProbaPopup({
         </div>
         <div className="kep-proba-subtitle">{képzettségNév} ({szint})</div>
 
-        <div className="kep-proba-row">
-          <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('tul')}>
-            {selTul !== null ? `${tulLabel(selTul)} (${tulajdonságok[selTul]})` : 'Tulajdonság'}
-          </button>
-          <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('neh')}>
-            {nehézség !== null ? nehézségDisplay(nehézség) : 'Nehézség'}
-          </button>
-          {kiterjesztesek.length > 0 && (
-            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
-              {kit ? <>{kit.fortély} <span className={kitDotClass(kit)}>●</span></> : 'Kiterjesztés'}
-            </button>
-          )}
+        <div className="kep-proba-dual-list">
+          <div className="kep-proba-dual-col">
+            {MIND_TULAJDONSÁG.map(t => (
+              <button key={t} className={`he-field-btn${selTul === t ? ' vallas-active' : ''}`}
+                onClick={() => { setSelTul(t); resetDobás(); }}>
+                {tulLabel(t)} ({tulajdonságok[t]})
+              </button>
+            ))}
+          </div>
+          <div className="kep-proba-dual-col">
+            {NEHÉZSÉGEK.map(n => (
+              <button key={n.érték} className={`he-field-btn${nehézség === n.érték ? ' vallas-active' : ''}`}
+                onClick={() => { setNehézség(n.érték); resetDobás(); }}>
+                {n.érték} ({n.label})
+              </button>
+            ))}
+            {!nehTöbbi ? (
+              <button className="he-field-btn kep-proba-neh-tobbi" onClick={() => setNehTöbbi(true)}>▾</button>
+            ) : (
+              NEHÉZSÉGEK_EXTRA.map(é => (
+                <button key={é} className={`he-field-btn${nehézség === é ? ' vallas-active' : ''}`}
+                  onClick={() => { setNehézség(é); resetDobás(); }}>
+                  {é}
+                </button>
+              ))
+            )}
+          </div>
         </div>
+
+        {kiterjesztesek.length > 0 && (
+          <div className="kep-proba-row">
+            <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
+              {kit ? <>{kit.fortély} <span className={kitDotClass(kit)}>●</span></> : '→ Kiterjesztés'}
+            </button>
+          </div>
+        )}
 
         {erősTiltott ? (
           <div className="kep-proba-tiltott">Nem dobhatsz</div>
@@ -193,53 +216,19 @@ export function KepzettsegProbaPopup({
       {openPicker !== null && (
         <PopupOverlay onClose={() => setOpenPicker(null)}>
           <div className="kep-prompt vallas-picker" onClick={e => e.stopPropagation()}>
-            {openPicker === 'kit' && (<>
-              <label className="kep-prompt-label-bold-mb">Kiterjesztő fortély</label>
-              <div className="kep-prompt-flex-col-list">
-                <button className={`he-field-btn${selKit === -1 ? ' vallas-active' : ''}`}
-                  onClick={() => { setSelKit(-1); resetDobás(); setOpenPicker(null); }}>
-                  Kiterjesztés
+            <label className="kep-prompt-label-bold-mb">Kiterjesztő fortély</label>
+            <div className="kep-prompt-flex-col-list">
+              <button className={`he-field-btn${selKit === -1 ? ' vallas-active' : ''}`}
+                onClick={() => { setSelKit(-1); resetDobás(); setOpenPicker(null); }}>
+                Kiterjesztés
+              </button>
+              {kiterjesztesek.map((k, i) => (
+                <button key={i} className={`he-field-btn${selKit === i ? ' vallas-active' : ''}`}
+                  onClick={() => { setSelKit(i); resetDobás(); setOpenPicker(null); }}>
+                  {k.fortély} <span className={kitDotClass(k)}>●</span>
                 </button>
-                {kiterjesztesek.map((k, i) => (
-                  <button key={i} className={`he-field-btn${selKit === i ? ' vallas-active' : ''}`}
-                    onClick={() => { setSelKit(i); resetDobás(); setOpenPicker(null); }}>
-                    {k.fortély} <span className={kitDotClass(k)}>●</span>
-                  </button>
-                ))}
-              </div>
-            </>)}
-            {openPicker === 'tul' && (<>
-              <label className="kep-prompt-label-bold-mb">Tulajdonság</label>
-              <div className="kep-prompt-flex-col-list">
-                {MIND_TULAJDONSÁG.map(t => (
-                  <button key={t} className={`he-field-btn${selTul === t ? ' vallas-active' : ''}`}
-                    onClick={() => { setSelTul(t); resetDobás(); setOpenPicker(null); }}>
-                    {tulLabel(t)} ({tulajdonságok[t]})
-                  </button>
-                ))}
-              </div>
-            </>)}
-            {openPicker === 'neh' && (<>
-              <label className="kep-prompt-label-bold-mb">Nehézség</label>
-              <div className="kep-prompt-flex-col-list">
-                {NEHÉZSÉGEK.map(n => (
-                  <button key={n.érték} className={`he-field-btn${nehézség === n.érték ? ' vallas-active' : ''}`}
-                    onClick={() => { setNehézség(n.érték); resetDobás(); setOpenPicker(null); }}>
-                    {n.érték} ({n.label})
-                  </button>
-                ))}
-                {!nehTöbbi ? (
-                  <button className="he-field-btn kep-proba-neh-tobbi" onClick={() => setNehTöbbi(true)}>▾</button>
-                ) : (
-                  NEHÉZSÉGEK_EXTRA.map(é => (
-                    <button key={é} className={`he-field-btn${nehézség === é ? ' vallas-active' : ''}`}
-                      onClick={() => { setNehézség(é); resetDobás(); setOpenPicker(null); }}>
-                      {é}
-                    </button>
-                  ))
-                )}
-              </div>
-            </>)}
+              ))}
+            </div>
           </div>
         </PopupOverlay>
       )}
