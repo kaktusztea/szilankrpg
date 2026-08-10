@@ -86,7 +86,7 @@ A fejléc ✏️ gombjával nyíló ablak három részből áll:
 - **Napló**: játék session bejegyzések (dátum, KM, kaland neve, események). Összecsukható lista, szerkeszthető.
 - **Jegyzetek**: szabad szöveges jegyzetmező (mindig nyitva).
 
-Alul összecsukható próba-segédlet: Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok - ez a Szilánk pont ablakban is elérhető.
+Alul összecsukható próba-segédlet: Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok - ez a Szilánk pont ablakban is elérhető (ott mindig nyitva).
 
 ## Előtörténet (🪪)
 
@@ -110,20 +110,22 @@ A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék m�
 
 A Tulajdonságok+Képzettségek fülön játék módban bármelyik Tulajdonság boxra koppintva megnyílik a Tulajdonságpróba ablak (`Tulajdonság + k6 vs Célszám`):
 
-- **Nehézség** választó: 3 (Könnyű) … 8 (Emberfeletti)
-- **Előny/Hátrány** választó: Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
+- **Nehézség** gomblista (inline): 3 (Könnyű) … 8 (Emberfeletti) — koppintással választható, aktív kiemelten jelölt
+- **Előny/Hátrány** választó (popup): Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
 - **Dobás**: az eredmény (legjobb/legrosszabb k6 az Előny/Hátrány szerint) a célszámhoz mérve → **Siker** (zöld) / **Sikertelen** (piros)
 - Ha a célszám a max dobással (6) sem érhető el, „Lehetetlen" jelenik meg a Dobás gomb helyén
+- Escape: ha az Előny/Hátrány popup nyitva van → azt zárja; egyébként az egész ablakot bezárja
 
 ### Képzettségpróba dobás (🎲, Játék mód)
 
 A képzettség info paneljében a 🎲 gombbal nyíló ablak levezényli a képzettségpróbát (`Tulajdonság + Képzettség szint + k10 vs Célszám`):
 
-- **Tulajdonság** és **Nehézség** választó (overlay popup-ok). A Dobás gomb inaktív, amíg mindkettő nincs kiválasztva.
+- **Tulajdonság** és **Nehézség** gomblista (inline, két oszlopban). A Dobás gomb inaktív, amíg mindkettő nincs kiválasztva.
 - **Nehézség**: alapból a 6 (Könnyű) … 21 (Emberfeletti) célszámok; a ▾ nyíllal a 21 felettiek is (24, 27, 30).
-- **Kiterjesztő fortély** (ha a képzettséghez tartozik ilyen): választható, hogy melyik fortély terjeszti ki a próbát. Kis státusz pötty jelzi: zöld = felvéve, sárga = hiányzó Normál kiterjesztés, piros = hiányzó Erős kiterjesztés. A fortély **foka** szerint a próba Előny/Hátrány dobást kap (Normál 0.fok → Hátrány-2, 2.fok → Előny+1, 3.fok → Előny+2). Erős kiterjesztés hiányában a próba nem dobható („Nem dobhatsz").
+- **Kiterjesztő fortély** (ha a képzettséghez tartozik ilyen, popup): választható, hogy melyik fortély terjeszti ki a próbát. Kis státusz pötty jelzi: zöld = felvéve, sárga = hiányzó Normál kiterjesztés, piros = hiányzó Erős kiterjesztés. A fortély **foka** szerint a próba Előny/Hátrány dobást kap (Normál 0.fok → Hátrány-2, 2.fok → Előny+1, 3.fok → Előny+2). Erős kiterjesztés hiányában a próba nem dobható („Nem dobhatsz").
 - **Dobás**: az eredmény (a legjobb/legrosszabb k10 az Előny/Hátrány szerint) a célszámhoz mérve → **Siker** (zöld) / **Sikertelen** (piros).
 - Ha a célszám a max dobással sem érhető el, „Lehetetlen" jelenik meg a Dobás gomb helyén.
+- Escape: ha a Kiterjesztő fortély popup nyitva van → azt zárja; egyébként az egész ablakot bezárja.
 
 ### Szabály linkek (🔗)
 
@@ -141,7 +143,7 @@ A Misztikus fülön a **Mágia akarata** kártyára koppintva egy négyfüles re
 A fejlécben a "Szilánk" felirat melletti keretes számra koppintva megnyílik a Szilánk pont ablak, ami egyben gyors-elérési hub is:
 - 0–3 közötti Szilánk pont érték választható
 - **Szabályrendszer** link (a szabálykönyv GitHub oldalára navigál)
-- összecsukható próba-segédlet: Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok
+- Próba-segédlet (mindig nyitva): Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok
 
 
 ### Undo (Visszavonás)

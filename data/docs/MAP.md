@@ -106,6 +106,7 @@ tulajdonsagok/             Tulajdonságok + Képzettségek fül
   TulajdonsagokScreen.tsx  Fő screen (név, faj, kor, tulajdonságok, képzettségek)
   KepzettsegCsoport.tsx    Képzettség csoport (csukható, game/edit mód)
   TulajdonsagProbaPopup.tsx  Tulajdonságpróba dobás popup (Játék mód, k6)
+  KepzettsegProbaPopup.tsx   Képzettségpróba dobás popup (Játék mód, k10)
   ElotortenetOverlay.tsx   Előtörténet overlay (becenév, név, kor, vallás, biográfiai mezők)
   KorPicker.tsx            Kor +/- picker overlay
   VallasPickerOverlay.tsx  Vallás választó overlay
@@ -124,7 +125,10 @@ misztikus/                 Misztikus fül (Aura, Tradíció, Arkánumok)
   MisztikusScreen.tsx      Fő screen
   AuraPanel.tsx            Aura értékek (Mágiaellenállás, Mágia akarata kattintható kártya)
   MisztikusPopups.tsx      Popup dispatcher (tradíció, szint, fok, felvétel, mágia akarata)
+  useMisztikusPopups.ts    Popup state hook (tradíció/altípus picker állapotkezelés)
   popups/MagiaAkarataPopup.tsx  Mágia akarata 4-füles referencia popup
+  popups/AltipusPickerPopup.tsx  Tradíció altípus/Pantheon picker popup
+  popups/TradicioPickerPopup.tsx  Tradíció lista picker popup
 
 hatterek/                  Hátterek fül (szövegfelhő)
   HatterekScreen.tsx       Fő screen (leíró + karma)

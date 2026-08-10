@@ -139,7 +139,7 @@ iOS-on minden böngésző WebKit-et használ. A "Főképernyőhöz adás" (stand
 
 - `padding: 8px 12px`, háttér: `--primary`, `border-bottom: 1px solid #333`
 - Bal: "Szilánk" (`font-weight: bold, 16px, white-space: nowrap`) — double-tap → verzió info sáv (5s, sárga, 14px bold)
-- Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → Szilánk picker hub). A hub tartalma: (1) Szilánk értékválasztó 0/1/2/3, (2) elválasztókkal két külső link: "📖 Szabályrendszer" (`MD_BASE + szabalyrendszer.md`) és "📱 Webapp manuál" (`REPO_BASE + web/karakter/README.md`) — új tab, (3) két összecsukható próba accordion: Tulajdonságpróba (k6, célszám 3-8) és Képzettségpróba (k10, célszám 6-21) monospace. Dismissible (háttér-katt / Escape zár). Értékválasztás is zár.
+- Bal mellette: Szilánk pont box (keretes, zöld szám, kattintás → Szilánk picker hub). A hub tartalma: (1) Szilánk értékválasztó 0/1/2/3, (2) elválasztókkal két külső link: "📖 Szabályrendszer" (`MD_BASE + szabalyrendszer.md`) és "📱 Webapp manuál" (`REPO_BASE + web/karakter/README.md`) — új tab, (3) két mindig nyitott próba blokk (nem összecsukható): Tulajdonságpróba (k6, célszám 3-8) és Képzettségpróba (k10, célszám 6-21) monospace. Dismissible (háttér-katt / Escape zár). Értékválasztás is zár.
 - Jobb: gombok (`header-btns`, `gap: 6px`, `flex-shrink: 0`, `margin-left: auto`):
   - ↩ Visszavonás gomb: undo overlay-t nyit (`↩ N` alakban, N = undo stack mérete; disabled + csak `↩` ha üres). Label szöveg nélkül.
   - ✏️ Verziók, Napló, Jegyzetek overlay gomb (mindkét mód) — összevont overlay (lásd 6b)
@@ -536,10 +536,10 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
 - Nem reszponzív, fix layout
 - Szerkesztő módban: tap → popup overlay gomb-grid (-5..+7), érték választás azonnal bezárja
 - Játék módban: tap → **Tulajdonságpróba popup** (`TulajdonsagProbaPopup`):
-  - Fejléc: "Tulajdonságpróba" + jobb felső sarokban ⟲ reset gomb (disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
-  - Alcím: `{Tulajdonság neve} ({érték})` (kék szín)
-  - Nehézség picker (field-btn → overlay): 3 (Könnyű), 4 (Átlagos), 5 (Nehéz), 6 (Nagyon nehéz), 7 (Rendkívül nehéz), 8 (Emberfeletti)
-  - Előny/Hátrány picker (field-btn → overlay): Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
+  - Fejléc: "Tulajdonságpróba" (normál font-weight) + jobb felső sarokban ⟲ reset gomb (36px, disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
+  - Alcím: `{Tulajdonság neve} ({érték})` (kék szín, bold)
+  - Nehézség gomblista (inline, `kep-proba-neh-list`): 3 (Könnyű), 4 (Átlagos), 5 (Nehéz), 6 (Nagyon nehéz), 7 (Rendkívül nehéz), 8 (Emberfeletti). Aktív: `vallas-active` class.
+  - Előny/Hátrány picker gomb (field-btn → overlay popup): Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2. Placeholder: "→ Előny / Hátrány".
   - Összesítő sor: `{tulajdonság érték} vs {célszám}` (monospace)
   - **Dobás gomb** (k6): disabled amíg nincs Nehézség kiválasztva. Előny/Hátrány címke alatta (Előny → zöld, Hátrány → sárga).
   - Ha lehetetlen (`tulajdonság + 6 < célszám`): piros "Lehetetlen" label a Dobás gomb helyén.
@@ -547,7 +547,8 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - Eredmény: nagy szám + vs + célszám, alatta Siker/Sikertelen, alatta k6 értékek (szóközzel elválasztva, kiválasztott bold).
   - Előny/Hátrány dobás k6-tal: Előny+N → (N+1) db k6 legnagyobb, Hátrány-N → (|N|+1) db k6 legkisebb.
   - Nehézség/Előny-Hátrány váltás törli az eredményt (újbóli Dobás gomb).
-  - Dismissible (háttér-katt / Escape zár)
+  - Escape: ha belső picker (Előny/Hátrány) nyitva → azt zárja; egyébként teljes popup bezárás.
+  - Dismissible (háttér-katt zár)
 - **Faj limit warning**: ha az érték meghaladja/alulmúlja a kiválasztott faj min/max keretét → sárga szín + automatikusan megjelenő info box (`Faj max: X` vagy `Faj min: X`), nem zárható kattintással
 
 ### Képzettségek (alatta, csoport-bontásban)
@@ -595,14 +596,15 @@ Fullscreen overlay, a Tulajdonságok fejléc 🪪 chipjével nyílik (`Elotorten
   - **Kiterjeszti**: fortélyok listája (normál/erős jelzéssel)
   - **Akció sor** (alul): 🔗 Szabályrendszer link + 🎲 Képzettségpróba dobás gomb
 - **🎲 Képzettségpróba popup** (csak Játék módban, accordion alján): kattintásra `PopupOverlay`
-  - Fejléc: "Képzettségpróba" + jobb felső sarokban ⟲ reset gomb (disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
-  - Alcím: `{képzettség neve} ({szint})`
-  - Három overlay popup picker (vallás választó stílus, field-btn → popup), mindegyik üres alapértékkel: **Tulajdonság** (placeholder „Tulajdonság"; mind a 8 tulajdonság, érték kijelezve) + **Nehézség** (placeholder „Nehézség"; célszámok md/030_06_01 — alapból 6 (Könnyű) … 21 (Emberfeletti) látszik, apró ▾ lenyitó nyíl alul a 21 feletti, elnevezés nélküli célszámokhoz: 24, 27, 30 (max))
+  - Fejléc: "Képzettségpróba" (normál font-weight) + jobb felső sarokban ⟲ reset gomb (36px, disabled dobás előtt, aktív dobás után → eredmény törlése, újradobás lehetősége)
+  - Alcím: `{képzettség neve} ({szint})` (kék szín, bold)
+  - Két oszlopos inline gomblista (`kep-proba-dual-list`): bal oszlop = **Tulajdonság** (mind a 8, érték kijelezve), jobb oszlop = **Nehézség** (célszámok 6–21, apró ▾ lenyitó alul a 21 feletti célszámokhoz: 24, 27, 30). Aktív: `vallas-active` class.
+  - **Kiterjesztő fortély picker** (alattuk, csak ha a képzettségnek van kiterjesztő fortélya — md/030_08_01): field-btn gomb → overlay popup picker. Placeholder: "→ Kiterjesztő fortély". Opciók: `nincs ❌` (default, törzstudás — sima dobás) + a kiterjesztő fortélyok, mindegyik mellett kis státusz pötty (mint a Szabad fortély pötty): zöld=felvéve, sárga=hiányzó Normál, piros=hiányzó Erős. A kiterjesztés a fortély **foka** szerint Előny/Hátrány dobást ad (`rollElőnyHátrány`, engine/dice.ts): Normál 0.fok (nincs felvéve) → Hátrány-2, 1.fok → sima, 2.fok → Előny+1, 3.fok → Előny+2. Erős 0.fok → a Dobás gomb helyett `Nem dobhatsz` piros felirat; 1-3.fok mint Normál. A Dobás gombban a „Dobás" felirat alatt megjelenik az aktuális `Előny+N`/`Hátrány-N` címke (Előny → zöld, Hátrány → sárga). Dobás után az eredmény szám és a Siker/Sikertelen alatt megjelenik a dobott k10 érték(ek) (`k10: X` vagy több érték Előny/Hátrány esetén, az Előny/Hátrány címkével).
   - **Dobás gomb**: szürke/inaktív, amíg nincs Tulajdonság ÉS Nehézség is kiválasztva. Ha a próba lehetetlen (tulajdonság + képzettség szint + max k10 (10) < célszám), a Dobás gomb helyén `Lehetetlen` piros felirat. Ha biztos siker (tulajdonság + szint + 1 >= célszám), a Dobás gomb helyén `Biztos siker` zöld felirat.
-  - **Kiterjesztő fortély picker** (a Nehézség picker alatt, csak ha a képzettségnek van kiterjesztő fortélye — md/030_08_01): field-btn → overlay popup picker. Opciók: `Kiterjesztés` (default, törzstudás — sima dobás) + a kiterjesztő fortélyok, mindegyik mellett kis státusz pötty (mint a Szabad fortély pötty): zöld=felvéve, sárga=hiányzó Normál, piros=hiányzó Erős. A kiterjesztés a fortély **foka** szerint Előny/Hátrány dobást ad (`rollElőnyHátrány`, engine/dice.ts): Normál 0.fok (nincs felvéve) → Hátrány-2, 1.fok → sima, 2.fok → Előny+1, 3.fok → Előny+2. Erős 0.fok → a Dobás gomb helyett `Nem dobhatsz` piros felirat; 1-3.fok mint Normál. A Dobás gombban a „Dobás" felirat alatt megjelenik az aktuális `Előny+N`/`Hátrány-N` címke (Előny → zöld, Hátrány → sárga). Dobás után az eredmény szám és a Siker/Sikertelen alatt megjelenik a dobott k10 érték(ek) (`k10: X` vagy több érték Előny/Hátrány esetén, az Előny/Hátrány címkével).
   - Összesítő sor: `{tulajdonság érték} + {szint} vs {célszám}` (monospace)
   - **Dobás gomb** → `Tulajdonság + Képzettség szint + k10` (rollK10). Eredmény inline a Lövéskitérés popup mintájára: két érték egy sorban — nagy eredményszám + kis „vs" + piros célszám —, alatta színes Siker / Sikertelen. Tulajdonság/nehézség váltás törli az eredményt (újbóli Dobás gomb jelenik meg).
-  - Dismissible (háttér-katt / Escape zár)
+  - Escape: ha belső picker (Kiterjesztő fortély) nyitva → azt zárja; egyébként teljes popup bezárás.
+  - Dismissible (háttér-katt zár)
 
 ### KP sáv (Szerkesztő módban, minden fülön)
 - Fix sáv a tab-bar felett, két szekció (bal/jobb, független háttérszín)
@@ -796,6 +798,9 @@ Referencia-táblák a mágia akarata próbához, négy fül (`.miszt-magia-tab`)
 
 ### Képzettség szekciók (elválasztó vonalakkal, kék `#42a5f5` h3 label, 17px)
 1. **Tradíció** — max 1 db, kétlépéses overlay picker (tradiciok.json → altípus ha van)
+   - Altípus kiválasztás → mindkét picker bezárul (tradíció + altípus)
+   - Altípus picker bezárás (Escape / háttér-katt) → visszalép a tradíció picker-re
+   - Altípus picker címe: `{tradíció név} — Pantheon` (Szakrális) vagy `{tradíció név} — altípus` (többi)
    - Felvétel után szint popup felugrik
 2. **Arkánumok** — több felvehető, select dropdown
    - Tradíció nélkül: picker disabled ("⚠ Tradíció szükséges"), felvett nevek piros
