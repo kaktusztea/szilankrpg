@@ -170,7 +170,7 @@ export function KepzettsegProbaPopup({
         {kiterjesztesek.length > 0 && (
           <div className="kep-proba-row">
             <button className="he-field-btn kep-proba-kit-btn" onClick={() => setOpenPicker('kit')}>
-              {kit ? <>{kit.fortély} <span className={kitDotClass(kit)}>●</span></> : '→ Kiterjesztés'}
+              {kit ? <>{kit.fortély} <span className={kitDotClass(kit)}>●</span></> : '→ Kiterjesztő fortély'}
             </button>
           </div>
         )}
