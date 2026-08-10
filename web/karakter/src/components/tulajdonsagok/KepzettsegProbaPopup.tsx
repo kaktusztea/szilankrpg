@@ -220,7 +220,7 @@ export function KepzettsegProbaPopup({
             <div className="kep-prompt-flex-col-list">
               <button className={`he-field-btn${selKit === -1 ? ' vallas-active' : ''}`}
                 onClick={() => { setSelKit(-1); resetDobás(); setOpenPicker(null); }}>
-                Kiterjesztés
+                nincs ❌
               </button>
               {kiterjesztesek.map((k, i) => (
                 <button key={i} className={`he-field-btn${selKit === i ? ' vallas-active' : ''}`}
