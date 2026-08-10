@@ -230,7 +230,7 @@
 }
 .kep-proba-header {
   font-size: 15px;
-  font-weight: bold;
+  font-weight: normal;
   color: var(--text);
   text-align: center;
   position: relative;
@@ -254,6 +254,7 @@
   text-align: center;
   color: var(--color-kepzettseg);
   font-size: 16px;
+  font-weight: bold;
   margin-top: -6px;
 }
 .kep-proba-row {
