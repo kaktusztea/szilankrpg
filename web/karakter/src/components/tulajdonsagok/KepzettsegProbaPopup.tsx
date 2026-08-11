@@ -102,15 +102,16 @@ interface Props {
   tulajdonságok: Tulajdonsagok;
   kiterjesztesek: KiterjesztesEntry[];
   fortélyFokok: Record<string, number>;
+  képzettségek: { név: string; szint: number }[];
   onClose: () => void;
 }
 
 /**
  * Képzettségpróba dobás popup (Játék mód): Tulajdonság + Képzettség szint + k10 vs célszám.
- * Extrák szekció: Összetett próba, Vállalás, Ellenpróba.
+ * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, szint, tulajdonságok, kiterjesztesek, fortélyFokok, onClose,
+  képzettségNév, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -124,6 +125,7 @@ export function KepzettsegProbaPopup({
   const [összetettDb, setÖsszetettDb] = useState(0); // 0=ki, 1-3=másodlagos dobások száma
   const [vállalás, setVállalás] = useState(0); // 0=ki, 1-3
   const [ellenpróba, setEllenpróba] = useState(false);
+  const [helyettesítés, setHelyettesítés] = useState<string | null>(null); // képzettség név vagy null
 
   // Összetett + Vállalás eredmények
   const [összetettEredmény, setÖsszetettEredmény] = useState<ÖsszetettEredmény | null>(null);
@@ -147,7 +149,14 @@ export function KepzettsegProbaPopup({
   // Ellenpróba módban nincs célszám szükséges
   const kész = selTul !== null && (ellenpróba || nehézség !== null);
   const tulÉrték = selTul !== null ? tulajdonságok[selTul] : 0;
-  const effSzint = szint + vállalás; // vállalás bónusz hozzáadódik a próbához
+  const effSzint = (() => {
+    if (helyettesítés) {
+      const hKep = képzettségek.find(k => k.név === helyettesítés);
+      const hSzint = hKep ? Math.min(5, Math.floor(hKep.szint / 3)) : 0;
+      return hSzint + vállalás; // helyettesítő kiváltja az eredeti szintet
+    }
+    return szint + vállalás;
+  })();
   // Lehetetlen/biztos siker: csak ha nincs ellenpróba mód
   const lehetetlen = !ellenpróba && kész && nehézség !== null && probaLehetetlen(tulÉrték, effSzint, nehézség);
   const biztosSiker = !ellenpróba && kész && nehézség !== null && !lehetetlen && probaBiztosSiker(tulÉrték, effSzint, nehézség);
@@ -222,7 +231,11 @@ export function KepzettsegProbaPopup({
             title="Újradobás"
           >⟲</button>
         </div>
-        <div className="kep-proba-subtitle">{képzettségNév} ({szint})</div>
+        <div className="kep-proba-subtitle">
+          {helyettesítés
+            ? <><span className="kep-proba-strike">{képzettségNév} ({szint})</span><br/>{helyettesítés} ({effSzint - vállalás})</>
+            : <>{képzettségNév} ({szint})</>}
+        </div>
 
         <div className="kep-proba-dual-list">
           <div className="kep-proba-dual-col">
@@ -318,6 +331,20 @@ export function KepzettsegProbaPopup({
                   </button>
                 </div>
               </div>
+              {/* Helyettesítés */}
+              {képzettségek.length > 1 && (
+              <div className="kep-proba-extras-row">
+                <span className="kep-proba-extras-label">Helyettesítés:</span>
+                <select className="field-select kep-proba-hely-select"
+                  value={helyettesítés || ''}
+                  onChange={e => { setHelyettesítés(e.target.value || null); resetDobás(); }}>
+                  <option value="">nincs</option>
+                  {képzettségek
+                    .filter(k => k.név !== képzettségNév && k.szint >= 3)
+                    .map(k => <option key={k.név} value={k.név}>{k.név} ({k.szint} → {Math.min(5, Math.floor(k.szint / 3))})</option>)}
+                </select>
+              </div>
+              )}
             </div>
           )}
         </div>

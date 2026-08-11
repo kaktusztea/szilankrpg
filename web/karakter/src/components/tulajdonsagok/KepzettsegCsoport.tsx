@@ -62,6 +62,7 @@ export function KepzettsegCsoport({
               warning={slot.név.startsWith('Arkánum') && !képzettségek.some(k => k.név.startsWith('Tradíció'))}
               fortélyFokok={fortélyFokok}
               tulajdonságok={tulajdonságok}
+              képzettségek={képzettségek}
             />
           );
         })}
