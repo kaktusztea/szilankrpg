@@ -31,10 +31,6 @@
   margin-top: 8px;
 }
 
-/* --- Próba táblák (Szilánk picker hub) --- */
-.app-proba-summary { font-weight: bold; color: var(--color-taktika); }
-.app-proba-pre { margin: 4px 0; font-family: monospace; font-size: 15px; color: #ccc; }
-
 /* --- Error boundary --- */
 .error-boundary { padding: 20px; color: #e53935; text-align: center; }
 .error-boundary-msg { font-size: 13px; color: #aaa; }

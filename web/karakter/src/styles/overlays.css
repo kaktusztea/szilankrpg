@@ -91,7 +91,6 @@
 .szilank-divider { width: 100%; border: none; border-top: 1px solid var(--border); margin: 2px 0; }
 .szilank-hub-link { color: var(--color-taktika); text-decoration: none; font-weight: bold; }
 .szilank-hub-link:hover, .szilank-hub-link:active { text-decoration: underline; }
-.szilank-hub-proba { width: 100%; display: flex; flex-direction: column; gap: 6px; }
 .overlay-confirm { align-items: center; gap: 12px; max-width: 320px; }
 .overlay-slots { align-items: stretch; gap: 8px; min-width: 300px; max-height: 80vh; overflow: auto; }
 .overlay-undo { align-items: stretch; gap: 8px; min-width: 280px; }

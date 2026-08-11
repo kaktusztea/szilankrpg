@@ -29,18 +29,7 @@ export function SzilankPickerOverlay({ current, onPick, onClose }: Props) {
         <a className="szilank-hub-link" href={REPO_BASE + 'web/karakter/README.md'}
           target="_blank" rel="noopener noreferrer">📱 Webapp manuál</a>
 
-        <hr className="szilank-divider" />
 
-        <div className="szilank-hub-proba">
-          <div className="app-proba-block">
-            <div className="app-proba-summary">Tulajdonságpróba (k6)</div>
-            <pre className="app-proba-pre">{`3: Könnyű\n4: Átlagos\n5: Nehéz\n6: Nagyon nehéz\n7: Rendkívül nehéz\n8: Emberfeletti`}</pre>
-          </div>
-          <div className="app-proba-block">
-            <div className="app-proba-summary">Képzettségpróba (k10)</div>
-            <pre className="app-proba-pre">{` 6: Könnyű\n 9: Átlagos\n12: Nehéz\n15: Nagyon nehéz\n18: Rendkívül nehéz\n21: Emberfeletti`}</pre>
-          </div>
-        </div>
       </div>
     </OverlayPortal>
   );
