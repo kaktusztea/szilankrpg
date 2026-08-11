@@ -2749,7 +2749,6 @@ Megkötés: vállalás ≤ képzettség szint
 ```
 Elsődleges: maximális nehézség célszám
 Másodlagos: 1 fokozattal alacsonyabb (Tulajdonság: -1, Képzettség: -3)
-Lépcsőzetes: max 2 fokozattal alacsonyabb is dobatható
 
 Dobások száma: KM döntés (feladat hossza alapján)
 ```
