@@ -1,9 +1,10 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import type { GameData } from '../../engine/data-loader';
 import type { Session } from '../../engine/types';
 import type { UndoPatch } from '../../hooks/useUndo';
 import { fmtHatás } from '../formatters';
 import { StatuszPickerOverlay } from './StatuszPickerOverlay';
+import { PickerOverlay } from './PickerOverlay';
 
 interface Props {
   data: GameData;
@@ -14,8 +15,26 @@ interface Props {
   eseményNév: (id: string) => string;
 }
 
+const NARRATÍV_ÉRTÉKEK = [
+  { v: -2, l: 'Hátrány-2' },
+  { v: -1, l: 'Hátrány-1' },
+  { v: 1, l: 'Előny+1' },
+  { v: 2, l: 'Előny+2' },
+] as const;
+
 export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPerElem, eseményNév }: Props) {
   const [showPicker, setShowPicker] = useState(false);
+  const [showNarratív, setShowNarratív] = useState(false);
+  const [narÉrték, setNarÉrték] = useState<number | undefined>(undefined);
+  const narInputRef = useRef<HTMLInputElement>(null);
+
+  function submitNarratív(szöveg: string) {
+    if (!szöveg || narÉrték === undefined) return;
+    pushUndo(`Narratív: ${szöveg}`, [{ field: 'session', prev: session }]);
+    setSession(s => ({ ...s, narratív_módosítók: [...s.narratív_módosítók, { szöveg, érték: narÉrték }] }));
+    setShowNarratív(false);
+    setNarÉrték(undefined);
+  }
 
   return (
     <>
@@ -57,6 +76,18 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
             </div>
           );
         })}
+        {session.narratív_módosítók.map((nm, i) => (
+          <div key={`nar${i}`} className="item-row">
+            <span className="aktiv-flex-1">
+              <strong className="aktiv-statusz-name">{nm.szöveg}:</strong>
+              <span> {(nm.érték ?? 0) > 0 ? `Előny+${nm.érték}` : `Hátrány${nm.érték}`}</span>
+            </span>
+            <button className="item-delete" onClick={() => {
+              pushUndo(`Narratív−: ${nm.szöveg}`, [{ field: 'session', prev: session }]);
+              setSession(s => ({ ...s, narratív_módosítók: s.narratív_módosítók.filter((_, j) => j !== i) }));
+            }}>✕</button>
+          </div>
+        ))}
       </div>
 
       {showPicker && (
@@ -67,8 +98,30 @@ export function AktivStatuszok({ data, session, setSession, pushUndo, státuszPe
             setSession(prev => ({ ...prev, aktív_státuszok: [...prev.aktív_státuszok, fullName] }));
             setShowPicker(false);
           }}
+          onNarratív={() => { setShowPicker(false); setShowNarratív(true); }}
           onClose={() => setShowPicker(false)}
         />
+      )}
+
+      {showNarratív && (
+        <PickerOverlay title="Narratív Előny/Hátrány" onClose={() => setShowNarratív(false)}>
+          <div className="narrativ-popup-content">
+            <div className="narrativ-popup-btns">
+              {NARRATÍV_ÉRTÉKEK.map(b => (
+                <button key={b.v} onClick={() => setNarÉrték(b.v)}
+                  className={`narrativ-val-btn${narÉrték === b.v ? ' selected' : ''}${b.v > 0 ? ' narrativ-val-pos' : ' narrativ-val-neg'}`}>
+                  {b.l}
+                </button>
+              ))}
+            </div>
+            <input className="field-input narrativ-input narrativ-input-full" placeholder="Leírás..." maxLength={40}
+              ref={narInputRef}
+              onKeyDown={e => { if (e.key === 'Enter') submitNarratív((e.target as HTMLInputElement).value.trim()); }} />
+            <button className="narrativ-add-btn narrativ-add-btn-center" disabled={narÉrték === undefined} onClick={() => {
+              submitNarratív(narInputRef.current?.value.trim() ?? '');
+            }}>OK</button>
+          </div>
+        </PickerOverlay>
       )}
     </>
   );

@@ -3,8 +3,8 @@ import type { Karakter, Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import { PopupOverlay } from '../PopupOverlay';
 
-type Mód = 'aktív' | 'passzív';
-type FázisEredmény = 'pending' | 'igen' | 'nem';
+export type Mód = 'aktív' | 'passzív';
+export type FázisEredmény = 'pending' | 'igen' | 'nem';
 
 interface ManőverDef {
   név: string;
@@ -29,7 +29,7 @@ interface Props {
 }
 
 /** Parse fázisok string (e.g. "M,V,E" or "E (M*)") into ordered phase list. */
-function parseFázisok(s: string): ('M' | 'V' | 'E')[] {
+export function parseFázisok(s: string): ('M' | 'V' | 'E')[] {
   const result: ('M' | 'V' | 'E')[] = [];
   if (s.includes('M')) result.push('M');
   if (s.includes('V')) result.push('V');
@@ -257,7 +257,7 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, setSessio
  * V: "igen" (hit) = success; "nem" = failure.
  * E: "igen" (reached) = success; "nem" = failure.
  */
-function fázisSikeres(fázis: 'M' | 'V' | 'E', eredmény: FázisEredmény, _mód: Mód): boolean {
+export function fázisSikeres(fázis: 'M' | 'V' | 'E', eredmény: FázisEredmény, _mód: Mód): boolean {
   if (eredmény === 'pending') return false;
   if (fázis === 'M') return eredmény === 'nem'; // miss = manőver continues
   return eredmény === 'igen';

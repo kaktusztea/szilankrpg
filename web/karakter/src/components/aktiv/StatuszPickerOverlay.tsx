@@ -8,9 +8,10 @@ interface Props {
   session: Session;
   onPick: (fullName: string) => void;
   onClose: () => void;
+  onNarratív?: () => void;
 }
 
-export function StatuszPickerOverlay({ data, session, onPick, onClose }: Props) {
+export function StatuszPickerOverlay({ data, session, onPick, onClose, onNarratív }: Props) {
   const [fokválasztó, setFokválasztó] = useState<string | null>(null);
   const [érzékválasztó, setÉrzékválasztó] = useState<string | null>(null);
 
@@ -45,6 +46,14 @@ export function StatuszPickerOverlay({ data, session, onPick, onClose }: Props) 
           </div>
         );
       })}
+      {!fokválasztó && !érzékválasztó && onNarratív && (
+        <div>
+          <div className="aktiv-picker-category">Narratív</div>
+          <div className="aktiv-picker-item" onClick={onNarratív}>
+            <span className="aktiv-picker-item-name">🔆 Narratív Előny/Hátrányok</span>
+          </div>
+        </div>
+      )}
       {érzékválasztó && !fokválasztó && (() => {
         const def = data.statuszok.find(s => s.név === érzékválasztó);
         return (

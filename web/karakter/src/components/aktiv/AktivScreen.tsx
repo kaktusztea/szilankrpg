@@ -4,7 +4,6 @@ import { AktivHatasPool } from './AktivHatasPool';
 import { AktivHelyzetek } from './AktivHelyzetek';
 import { AktivTaktikak } from './AktivTaktikak';
 import { AktivStatuszok } from './AktivStatuszok';
-import { AktivNarrativ } from './AktivNarrativ';
 import './AktivScreen.css';
 
 export function AktivScreen({ data, karakter, session, setSession, pushUndo }: AktivBaseProps) {
@@ -24,8 +23,6 @@ export function AktivScreen({ data, karakter, session, setSession, pushUndo }: A
 
       <AktivStatuszok data={data} session={session} setSession={setSession} pushUndo={pushUndo}
         státuszPerElem={státuszPerElem} eseményNév={eseményNév} />
-
-      <AktivNarrativ session={session} setSession={setSession} pushUndo={pushUndo} />
     </div>
   );
 }
