@@ -38,8 +38,9 @@ képzettségek:                 # Egységes lista (nincs külön primer/szekunde
 fortélyok:                    # Egységes lista (harci, általános, érzék, szabad, kiemelt többszörösök)
   - név: ""                   # Fortély alap neve (megegyezik a fortely yaml "név" mezőjével)
     fok: 1                    # 1-maxfok (szabad fortélyoknál mindig 1)
-    spec_típus: ""            # Többszöröseknél: megegyezik a fortely.yaml többszörösség.spec_típus-ával. Üres ha nem többszörös.
+    spec_típus: ""            # Többszöröseknél: megegyezik a fortely.yaml többszörösség.spec_típus-ával. Üres ha nem többszörös. Egyedi fortélynál: "egyedi".
     spec_elem: ""             # Többszöröseknél: a konkrét választott elem (pl. "erv", "Erion", "kard, lovag"). Üres ha nem többszörös.
+    # kiterjeszti: []         # Opcionális. Csak egyedi fortélyoknál: kiterjesztett képzettségek listája.
 
 fortélyok_speciális:          # KP bónuszt adó speciális jellemzők (nem normál fortélyok)
   analfabéta: false

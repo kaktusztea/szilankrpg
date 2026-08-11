@@ -2,7 +2,7 @@ import { useState, useRef, useEffect, useMemo } from 'react';
 import type { FortelyokScreenProps, DeleteTarget } from './types';
 import { buildDefsByGroup, displayName, getFortelyokForCsoport, calcSzabadFelvettKp } from './helpers';
 import { FortelyCsoport } from './FortelyCsoport';
-import { FokPickerPopup, MultiPicker, SzabadTypePickerPopup } from './FortelyPopups';
+import { FokPickerPopup, MultiPicker, SzabadTypePickerPopup, EgyediFortelyPopup } from './FortelyPopups';
 import { DeleteConfirmPopup } from '../DeleteConfirmPopup';
 import { useFortelyActions } from './useFortelyActions';
 import { HINT_DURATION_MS } from '../../ui-constants';
@@ -16,9 +16,9 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
   const [deleteTarget, setDeleteTarget] = useState<DeleteTarget | null>(null);
 
   const {
-    pendingFort, multiPickerDef, szabadTypePicker,
-    setPendingFort, setMultiPickerDef, setSzabadTypePicker,
-    setFok, addFortely, addMultiInstance, confirmSzabad, confirmFok, pendingSlot,
+    pendingFort, multiPickerDef, szabadTypePicker, egyediPicker,
+    setPendingFort, setMultiPickerDef, setSzabadTypePicker, setEgyediPicker,
+    setFok, addFortely, addMultiInstance, confirmSzabad, confirmEgyedi, confirmFok, pendingSlot,
   } = useFortelyActions({ data, fortélyok, setFortélyok });
 
   const fortCsoportSorrend = data.konstansok.fortély_csoport_sorrend;
@@ -112,6 +112,14 @@ export function FortelyokScreen({ data, gameMode, fortélyok, setFortélyok, tsz
           onFelvett={() => confirmSzabad(false)}
           onKiérdemelt={() => confirmSzabad(true)}
           onCancel={() => setSzabadTypePicker(null)}
+        />
+      )}
+
+      {egyediPicker && (
+        <EgyediFortelyPopup
+          képzettségek={képzettségek}
+          onConfirm={confirmEgyedi}
+          onCancel={() => setEgyediPicker(false)}
         />
       )}
     </div>

@@ -63,3 +63,10 @@
 .fort-req-met { color: var(--success); }
 .fort-req-unmet { color: #e53935; }
 .fort-label-centered { text-align: center; width: 100%; }
+
+/* --- Egyedi fortély popup --- */
+.egyedi-kit-section { width: 100%; display: flex; flex-direction: column; gap: 4px; }
+.egyedi-kit-label { font-size: 13px; color: var(--text-dim); }
+.egyedi-kit-list { display: flex; flex-direction: column; gap: 4px; max-height: calc(6 * 36px); overflow-y: auto; }
+.egyedi-kit-btn { background: var(--input-bg); border: 1px solid var(--border-input); border-radius: 4px; padding: 6px 10px; font-size: 14px; color: var(--text); cursor: pointer; text-align: left; }
+.egyedi-kit-btn.active { background: var(--primary); border-color: var(--color-kepzettseg); color: #fff; }

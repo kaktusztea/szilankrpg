@@ -14,7 +14,9 @@ export function getFortelyokForCsoport(
   lockedSet: Set<string>
 ): Fortely[] {
   const csoportNevek = new Set((defsByGroup.get(csoport) || []).map(d => d.név));
-  const items = fortélyok.filter(f => csoportNevek.has(f.név));
+  const items = fortélyok.filter(f =>
+    csoportNevek.has(f.név) || (csoport === 'szabad' && f.spec_típus === 'egyedi')
+  );
   items.sort((a, b) => {
     const aLocked = lockedSet.has(a.név);
     const bLocked = lockedSet.has(b.név);
@@ -35,10 +37,10 @@ export function calcSzabadFelvettKp(
   tsz: number
 ): number {
   const def = fortelySummaries.find(d => d.név === név);
-  if (!def) return 0;
+  const kpPerFok = def?.kp_perfok ?? 6;
   const szabadNevek = new Set(fortelySummaries.filter(d => d.csoport === 'szabad').map(d => d.név));
-  const nonKierdemelt = fortélyok.filter(f => szabadNevek.has(f.név) && !f.kiérdemelt).length;
-  return nonKierdemelt < tsz ? 0 : def.kp_perfok;
+  const nonKierdemelt = fortélyok.filter(f => (szabadNevek.has(f.név) || f.spec_típus === 'egyedi') && !f.kiérdemelt).length;
+  return nonKierdemelt < tsz ? 0 : kpPerFok;
 }
 
 export function calcNyelvPontKeret(nyelvtanulásSzint: number): number {

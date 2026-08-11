@@ -1,5 +1,5 @@
 import type { Fortely } from '../../engine/types';
-import { MAX_AZONOS_FORTÉLY } from '../../ui-constants';
+import { MAX_AZONOS_FORTÉLY, EGYEDI_FORTELY_SENTINEL } from '../../ui-constants';
 import { isFreeTextPicker, RUNTIME_PICKER_TYPES } from '../SpecPicker';
 
 interface Props {
@@ -23,6 +23,9 @@ export function NewFortelySelect({ available, csoport, slotok, tsz, fortélyok, 
           const disabled = isOptionDisabled(d, fortélyok, fegyverNevek, nyelvtanulásSzint);
           return <option key={d.név} value={d.név} disabled={disabled}>{label}</option>;
         })}
+        {csoport === 'szabad' && (
+          <option value={EGYEDI_FORTELY_SENTINEL}>⭐Egyedi fortély</option>
+        )}
       </select>
     </div>
   );

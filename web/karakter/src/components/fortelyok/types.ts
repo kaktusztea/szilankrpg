@@ -73,4 +73,5 @@ export interface SzabadTypePicker {
   név: string;
   spec_típus: string;
   spec_elem: string;
+  kiterjeszti?: string[];
 }

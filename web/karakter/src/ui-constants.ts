@@ -12,3 +12,5 @@ export const MAX_AZONOS_FORTÉLY = 10;
 export const MAX_AZONOS_KÉPZETTSÉG = 10;
 export const MAX_CHECKPOINTS = 20;
 export const MAX_CHECKPOINT_NÉV = 20;
+export const EGYEDI_FORTELY_SENTINEL = '__egyedi__';
+export const MAX_EGYEDI_FORTELY_NÉV = 20;

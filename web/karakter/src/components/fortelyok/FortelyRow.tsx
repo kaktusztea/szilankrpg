@@ -69,6 +69,19 @@ export function FortelyRow({
         />
       )}
 
+      {isOpen && !def && slot.kiterjeszti && slot.kiterjeszti.length > 0 && (
+        <div className="info-panel">
+          <div className="info-panel-row">
+            <span className="info-panel-label">Kiterjeszti:</span>{' '}
+            <span className="info-panel-kit">
+              {slot.kiterjeszti.map((kn, ki) => (
+                <span key={ki} className={képzettségek.some(k => k.név === kn && k.szint >= 1) ? 'fort-req-met' : 'fort-req-unmet'}>{ki > 0 ? ', ' : ''}{kn}</span>
+              ))}
+            </span>
+          </div>
+        </div>
+      )}
+
       {overLimit && isOpen && (
         <div className="info-panel info-panel-error">
           A felvehető Nyelvismeret fokok száma a Nyelvtanulás képzettség szintjétől függ. Túllépted a keretet! Max tanulható fok: {nyelvPontKeret ?? 0}

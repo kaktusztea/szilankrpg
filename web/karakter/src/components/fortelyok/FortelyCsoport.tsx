@@ -38,7 +38,7 @@ export function FortelyCsoport({
           // Fortély extends skills, but none of those skills is taken yet → warning:
           // red name (like skills with unmet requirement) + keep the info accordion
           // open in edit mode (otherwise the extension info is game-mode only).
-          const kiterjeszt = def ? [...def.kiterjeszti_normál, ...def.kiterjeszti_erős] : [];
+          const kiterjeszt = def ? [...def.kiterjeszti_normál, ...def.kiterjeszti_erős] : (slot.kiterjeszti ?? []);
           const kiterjesztHiányos = kiterjeszt.length > 0
             && !kiterjeszt.some(kn => képzettségek.some(k => k.név === kn && k.szint >= 1));
 

@@ -24,6 +24,7 @@ export interface Fortely {
   spec_típus: string;
   spec_elem: string;
   kiérdemelt?: boolean;
+  kiterjeszti?: string[];
 }
 
 export interface FortelyokSpecialis {
