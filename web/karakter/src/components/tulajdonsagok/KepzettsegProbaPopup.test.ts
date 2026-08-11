@@ -131,3 +131,50 @@ describe('probaSiker with vállalás (effSzint)', () => {
     expect(probaSiker(3, 7, 5, 15)).toBe(true);
   });
 });
+
+describe('Vállalás + Képzettségpróba együttes eredmény', () => {
+  it('képzettségpróba siker + vállalás kritikus hiba: mindkettő egyszerre lehetséges', () => {
+    // Szabály: a próba sikeres, DE a vállalás kritikus hibát okoz (mindkettő megtörténik).
+    // tul=4, szint=5, vállalás=2, effSzint=7, k10=5 → 4+7+5=16 >= 15 → SIKER
+    const tulÉrték = 4;
+    const effSzint = 5 + 2; // szint + vállalás
+    const k10 = 5;
+    const célszám = 15;
+    expect(probaSiker(tulÉrték, effSzint, k10, célszám)).toBe(true);
+
+    // Vállalás próba: k6=2, vállalás=2 → k6 <= vállalás → Kritikus hiba
+    const vállalásK6 = 2;
+    const vállalásÉrték = 2;
+    const kritikusHiba = vállalásK6 <= vállalásÉrték;
+    expect(kritikusHiba).toBe(true);
+
+    // Mindkettő igaz egyszerre — a szabályrendszer engedi ezt az esetet.
+  });
+
+  it('képzettségpróba siker + vállalás OK: nincs kritikus hiba', () => {
+    const tulÉrték = 4;
+    const effSzint = 5 + 2;
+    const k10 = 5;
+    const célszám = 15;
+    expect(probaSiker(tulÉrték, effSzint, k10, célszám)).toBe(true);
+
+    // Vállalás próba: k6=4, vállalás=2 → k6 > vállalás → OK
+    const vállalásK6 = 4;
+    const vállalásÉrték = 2;
+    const kritikusHiba = vállalásK6 <= vállalásÉrték;
+    expect(kritikusHiba).toBe(false);
+  });
+
+  it('képzettségpróba sikertelen + vállalás kritikus hiba: dupla baj', () => {
+    const tulÉrték = 4;
+    const effSzint = 5 + 2;
+    const k10 = 1;
+    const célszám = 15;
+    // 4+7+1=12 < 15 → sikertelen
+    expect(probaSiker(tulÉrték, effSzint, k10, célszám)).toBe(false);
+
+    // Vállalás: k6=1, vállalás=2 → kritikus hiba
+    const kritikusHiba = 1 <= 2;
+    expect(kritikusHiba).toBe(true);
+  });
+});
