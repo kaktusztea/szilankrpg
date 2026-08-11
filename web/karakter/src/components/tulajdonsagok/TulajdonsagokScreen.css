@@ -227,6 +227,8 @@
   flex-direction: column;
   gap: 12px;
   min-width: 260px;
+  max-height: 85vh;
+  overflow-y: auto;
 }
 .kep-proba-header {
   font-size: 15px;
