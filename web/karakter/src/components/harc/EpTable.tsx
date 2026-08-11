@@ -15,9 +15,10 @@ interface Props {
   onNavigate?: () => void;
   sebzések: SebzésRubrika[];
   onSebzésekChange: (sebzések: SebzésRubrika[], leírás: string) => void;
+  gameMode?: boolean;
 }
 
-export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0, téLevonások, onNavigate, sebzések, onSebzésekChange }: Props) {
+export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0, téLevonások, onNavigate, sebzések, onSebzésekChange, gameMode }: Props) {
   const oszlopMéret = ÉP / kategóriák;
   const összRubrika = ÉP;
 
@@ -60,9 +61,9 @@ export function EpTable({ ÉP, kategóriák, onSebCountChange, ftEnyhítés = 0,
     <div className="ep-table-wrapper">
       <div className="ep-table-header">
         <span><strong>ÉP: <span className="harc-monospace">{ÉP}({ÉP - kitöltött})</span></strong></span>
-        <button className="btn-reset btn-reset-sm" disabled={kitöltött === 0} onClick={() => setShowResetConfirm(true)}>⟲</button>
-        <button className="btn-seb" disabled={kitöltött === összRubrika && rubrikák.every(r => r.típus !== 'FP')} onClick={() => setShowSebDialog(true)}>⚔️ Seb</button>
-        <button className="btn-heal" disabled={kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógy</button>
+        <button className="btn-reset btn-reset-sm" disabled={!gameMode || kitöltött === 0} onClick={() => setShowResetConfirm(true)}>⟲</button>
+        <button className="btn-seb" disabled={!gameMode || (kitöltött === összRubrika && rubrikák.every(r => r.típus !== 'FP'))} onClick={() => setShowSebDialog(true)}>⚔️ Seb</button>
+        <button className="btn-heal" disabled={!gameMode || kitöltött === 0} onClick={() => setShowGyógyDialog(true)}>💚 Gyógy</button>
       </div>
 
       <div className="ep-grid">

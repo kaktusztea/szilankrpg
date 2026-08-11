@@ -151,6 +151,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onVéLabelTap={() => { if (session.vé_csökkenés > 0) setShowVéHistory(true); }}
         onVéResetClick={() => setShowVéResetConfirm(true)}
         onKéClick={handleKéClick}
+        gameMode={gameMode}
       />
 
       {gameMode && (
@@ -172,7 +173,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         belharciAktív={hc.belharciAktív}
         véFlash={véFlash}
         onTámInfoClick={setTámInfo}
-        onTéDobás={handleTéDobás}
+        onTéDobás={gameMode ? handleTéDobás : undefined}
         téDobások={session.té_dobások}
       />
 
@@ -186,6 +187,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
           onNavigate={hasFt ? handleNavigateToFt : undefined}
           sebzések={session.sebzések}
           onSebzésekChange={handleSebzésekChange}
+          gameMode={gameMode}
         />
       </div>
 
@@ -272,6 +274,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
           mód={manoverMód}
           karakter={karakter}
           session={session}
+          setSession={setSession}
           data={data}
           aktívTÉ={baseTÉ}
           aktívVÉ={baseVÉ}

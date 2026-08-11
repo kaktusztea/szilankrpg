@@ -19,6 +19,7 @@ interface Props {
   mód: Mód;
   karakter: Karakter;
   session: Session;
+  setSession: React.Dispatch<React.SetStateAction<Session>>;
   data: GameData;
   /** Aktív fegyver TÉ (from Harc fül computed — may be unavailable). */
   aktívTÉ: number | null;
@@ -52,7 +53,7 @@ function getBelharcFok(karakter: Karakter): number {
   return f?.fok ?? 0;
 }
 
-export function ManoverDobasPopup({ manőver, mód, karakter, session, data, aktívTÉ, aktívVÉ, onClose }: Props) {
+export function ManoverDobasPopup({ manőver, mód, karakter, session, setSession, data, aktívTÉ, aktívVÉ, onClose }: Props) {
   const fázisok = parseFázisok(manőver.fázisok);
   const [eredmények, setEredmények] = useState<FázisEredmény[]>(fázisok.map(() => 'pending'));
   const [költöttMP, setKöltöttMP] = useState(0);
@@ -77,6 +78,10 @@ export function ManoverDobasPopup({ manőver, mód, karakter, session, data, akt
 
   function handleChip(igen: boolean) {
     if (aktívFázisIdx === -1) return;
+    // Deduct MP when Ellenpróba phase is resolved (regardless of outcome).
+    if (fázisok[aktívFázisIdx] === 'E' && költöttMP > 0) {
+      setSession(prev => ({ ...prev, manőver_pont_használt: prev.manőver_pont_használt + költöttMP }));
+    }
     const next = [...eredmények];
     next[aktívFázisIdx] = igen ? 'igen' : 'nem';
     setEredmények(next);

@@ -17,18 +17,19 @@ interface HarcHeaderProps {
   onVéLabelTap: () => void;
   onVéResetClick: () => void;
   onKéClick: () => void;
+  gameMode?: boolean;
 }
 
 export function HarcHeader({
   ké, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont,
   maxVéCsökk, session, setSession, konstansok,
-  onVéChange, onVéLabelTap, onVéResetClick, onKéClick,
+  onVéChange, onVéLabelTap, onVéResetClick, onKéClick, gameMode,
 }: HarcHeaderProps) {
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
 
   return (
     <div className="harc-header">
-      <div className="ke-box" onClick={onKéClick}>
+      <div className="ke-box" onClick={gameMode ? onKéClick : undefined} style={gameMode ? undefined : { cursor: 'default' }}>
         <span className="label">KÉ</span>
         <span className="value">{ké}</span>
         {session.ké_dobások.length > 0 && (
@@ -55,12 +56,12 @@ export function HarcHeader({
         </span>
         <div className="ve-btns">
           {(konstansok.vé_csökkentés_gombok as number[]).map(n => (
-            <button key={n} disabled={session.vé_csökkenés >= maxVéCsökk}
+            <button key={n} disabled={!gameMode || session.vé_csökkenés >= maxVéCsökk}
               onClick={() => onVéChange(Math.min(session.vé_csökkenés + n, maxVéCsökk))}>-{n}</button>
           ))}
-          <button disabled={session.vé_csökkenés === 0}
+          <button disabled={!gameMode || session.vé_csökkenés === 0}
             onClick={() => onVéChange(Math.max(0, session.vé_csökkenés - 1))}>+1</button>
-          <button disabled={session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
+          <button disabled={!gameMode || session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
         </div>
       </div>
 
@@ -68,9 +69,9 @@ export function HarcHeader({
         <span className="label">MP</span>
         <span className="value">{aktMP}/{manöverPont}</span>
         <div className="ve-btns">
-          <button disabled={aktMP === 0}
+          <button disabled={!gameMode || aktMP === 0}
             onClick={() => setSession(prev => ({ ...prev, manőver_pont_használt: prev.manőver_pont_használt + 1 }))}>-1</button>
-          <button disabled={session.manőver_pont_használt === 0}
+          <button disabled={!gameMode || session.manőver_pont_használt === 0}
             onClick={() => setSession(prev => ({ ...prev, manőver_pont_használt: 0 }))}>⟲</button>
         </div>
       </div>
