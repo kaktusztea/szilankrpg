@@ -23,6 +23,7 @@ export interface HarcBaseProps {
   setSession: React.Dispatch<React.SetStateAction<Session>>;
   pushUndo: (leírás: string, patches?: UndoPatch[], nextValue?: unknown) => void;
   onNavigate?: (tabId: string) => void;
+  gameMode?: boolean;
 }
 
 export interface HarcComputed {

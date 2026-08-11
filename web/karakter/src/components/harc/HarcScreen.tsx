@@ -13,10 +13,12 @@ import { HarcFegyverfogas } from './HarcFegyverfogas';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás } from './DobasPopup';
+import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
+import { PickerOverlay } from '../aktiv/PickerOverlay';
 import { rollK20 } from '../../engine/dice';
 import './HarcScreen.css';
 
-export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate }: HarcBaseProps) {
+export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate, gameMode }: HarcBaseProps) {
   const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
   const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [showVéHistory, setShowVéHistory] = useState(false);
@@ -26,6 +28,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
   const [téDobás, setTéDobás] = useState<{ alap: number; eredmény: number } | null>(null);
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
+  // Manőver state
+  const [manoverPicker, setManoverPicker] = useState<'closed' | 'mód' | 'lista'>('closed');
+  const [manoverMód, setManoverMód] = useState<'aktív' | 'passzív'>('aktív');
+  const [popupManőver, setPopupManőver] = useState<typeof data.manoverek[number] | null>(null);
 
   const hc = useHarcComputed(data, karakter, session);
   const { hint, showHint } = useHint();
@@ -116,6 +122,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
   const hasFt = karakter.képzettségek.some(kp => kp.név === 'Fájdalomtűrés');
 
+  // Base TÉ/VÉ for manőver popup (approximation without per-weapon calc).
+  const baseTÉ = (data.konstansok.harcérték_alap?.TÉ ?? 0) + karakter.tulajdonságok.erő + karakter.tulajdonságok.ügyesség + karakter.tulajdonságok.gyorsaság + karakter.HM_TÉ;
+  const baseVÉ = (data.konstansok.harcérték_alap?.VÉ ?? 0) + karakter.tulajdonságok.gyorsaság + karakter.tulajdonságok.ügyesség + karakter.HM_VÉ - session.vé_csökkenés;
+
   return (
     <div className="screen harc-screen">
       <h2>🗡️ Harc</h2>
@@ -142,6 +152,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onVéResetClick={() => setShowVéResetConfirm(true)}
         onKéClick={handleKéClick}
       />
+
+      {gameMode && (
+        <button className="harc-manover-btn" onClick={() => setManoverPicker('mód')}>⚔️ Manőver végrehajtása</button>
+      )}
 
       <HarcFegyverTable
         karakter={karakter}
@@ -216,6 +230,54 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
       )}
 
       {hint && <div className="he-hint">{hint}</div>}
+
+      {manoverPicker === 'mód' && (
+        <PickerOverlay title="Manőver mód" onClose={() => setManoverPicker('closed')}>
+          <div className="aktiv-picker-item manover-mod-btn" onClick={() => { setManoverMód('aktív'); setManoverPicker('lista'); }}>
+            <span className="aktiv-picker-item-name">⚔️ Aktív</span>
+            <span className="aktiv-picker-item-details">Én hajtom végre a manővert</span>
+          </div>
+          <div className="aktiv-picker-item manover-mod-btn" onClick={() => { setManoverMód('passzív'); setManoverPicker('lista'); }}>
+            <span className="aktiv-picker-item-name">🛡️ Passzív</span>
+            <span className="aktiv-picker-item-details">Ellenem hajtják végre</span>
+          </div>
+        </PickerOverlay>
+      )}
+
+      {manoverPicker === 'lista' && (
+        <PickerOverlay title="Manőver választó" onClose={() => setManoverPicker('closed')}>
+          {(['általános', 'belharcos', 'lovas'] as const).map(típus => {
+            const items = data.manoverek.filter(m => m.típus === típus);
+            if (items.length === 0) return null;
+            return (
+              <div key={típus}>
+                <div className="aktiv-picker-category">{típus === 'általános' ? 'Általános' : típus === 'belharcos' ? 'Belharci' : 'Lovas'}</div>
+                {items.map(m => (
+                  <div key={m.név} className="aktiv-picker-item"
+                    onClick={() => { setPopupManőver(m); setManoverPicker('closed'); }}>
+                    <span className="aktiv-picker-item-name">{m.név}</span>
+                    <span className="aktiv-picker-item-details">Nehézség: {m.nehézség} • Fázisok: {m.fázisok}</span>
+                    <span className="aktiv-picker-item-hatas">{m.hatás}</span>
+                  </div>
+                ))}
+              </div>
+            );
+          })}
+        </PickerOverlay>
+      )}
+
+      {popupManőver && (
+        <ManoverDobasPopup
+          manőver={popupManőver}
+          mód={manoverMód}
+          karakter={karakter}
+          session={session}
+          data={data}
+          aktívTÉ={baseTÉ}
+          aktívVÉ={baseVÉ}
+          onClose={() => setPopupManőver(null)}
+        />
+      )}
     </div>
   );
 }

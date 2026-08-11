@@ -120,6 +120,11 @@
     "CÉ": -15
   },
   "több_támadás_TÉ_levonás": -3,
+  "manőver": {
+    "max_mp_támadó": 4,
+    "max_mp_védő": 2,
+    "belharc_fok_szorzó": 2
+  },
   "kp": {
     "perszint": 50,
     "szekunder_perszint": 20,

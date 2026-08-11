@@ -266,3 +266,20 @@
   gap: 2px;
   cursor: pointer;
 }
+
+/* Manőver trigger button (game mode, above weapon table) */
+.harc-manover-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid rgba(76, 175, 80, 0.4);
+  border-radius: 6px;
+  background: rgba(76, 175, 80, 0.08);
+  color: #4caf50;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+.harc-manover-btn:hover { background: rgba(76, 175, 80, 0.15); }
