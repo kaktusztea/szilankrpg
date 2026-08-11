@@ -22,12 +22,13 @@ interface Props {
   onAddKepzettseg: (csoport: string, név: string) => void;
   onSzintChange: (globalIdx: number, szint: number) => void;
   onRemove: (globalIdx: number, slot: KepzettsegSlot) => void;
+  sérültFok?: number;
 }
 
 export function KepzettsegCsoport({
   csoport, csoportLabel, gameMode, képzettségek, defsByGroup, kepzettsegDefs,
   kiterjesztesek, tsz, collapsed, onToggleCollapse, infoTarget, setInfoTarget,
-  fortélyFokok, tulajdonságok, onAddKepzettseg, onSzintChange, onRemove
+  fortélyFokok, tulajdonságok, onAddKepzettseg, onSzintChange, onRemove, sérültFok
 }: Props) {
   const slotok = sortKepzettsegSlotok(getKepzettsegekForCsoport(csoport, képzettségek, defsByGroup), kepzettsegDefs);
   if (gameMode && slotok.length === 0) return null;
@@ -63,6 +64,7 @@ export function KepzettsegCsoport({
               fortélyFokok={fortélyFokok}
               tulajdonságok={tulajdonságok}
               képzettségek={képzettségek}
+              sérültFok={sérültFok}
             />
           );
         })}

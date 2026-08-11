@@ -11,9 +11,10 @@ interface Props {
   tulajdonságok: Tulajdonsagok;
   szint: number;
   képzettségek?: { név: string; szint: number }[];
+  sérültFok?: number;
 }
 
-export function KepzettsegInfoPanel({ def, kit, fortélyFokok, tulajdonságok, szint, képzettségek }: Props) {
+export function KepzettsegInfoPanel({ def, kit, fortélyFokok, tulajdonságok, szint, képzettségek, sérültFok }: Props) {
   const [showProba, setShowProba] = useState(false);
   const van = (fortély: string) => (fortélyFokok[fortély] ?? 0) > 0;
   const normál = kit.filter(k => k.típus !== 'erős');
@@ -53,6 +54,7 @@ export function KepzettsegInfoPanel({ def, kit, fortélyFokok, tulajdonságok, s
           kiterjesztesek={kit}
           fortélyFokok={fortélyFokok}
           képzettségek={képzettségek || []}
+          sérültFok={sérültFok || 0}
           onClose={() => setShowProba(false)}
         />
       )}

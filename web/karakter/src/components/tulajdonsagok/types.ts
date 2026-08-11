@@ -49,4 +49,5 @@ export interface KepzettsegRowProps {
   fortélyFokok: Record<string, number>;
   tulajdonságok: Tulajdonsagok;
   képzettségek: KepzettsegSlot[];
+  sérültFok?: number;
 }

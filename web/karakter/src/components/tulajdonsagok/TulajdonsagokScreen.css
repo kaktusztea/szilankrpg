@@ -336,6 +336,17 @@
   flex-direction: column;
   align-items: center;
   gap: 1px;
+  position: relative;
+}
+.kep-proba-roll-serult {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 12px;
+  font-weight: bold;
+  color: #e57373;
+  opacity: 0.8;
 }
 .kep-proba-roll-eh { font-size: 13px; font-weight: normal; color: var(--warning); }
 .kep-proba-eh-előny { color: var(--success); }

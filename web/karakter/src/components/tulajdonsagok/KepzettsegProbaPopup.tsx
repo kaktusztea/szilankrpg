@@ -103,6 +103,7 @@ interface Props {
   kiterjesztesek: KiterjesztesEntry[];
   fortélyFokok: Record<string, number>;
   képzettségek: { név: string; szint: number }[];
+  sérültFok: number;
   onClose: () => void;
 }
 
@@ -111,7 +112,7 @@ interface Props {
  * Extrák szekció: Összetett próba, Vállalás, Ellenpróba, Helyettesítés.
  */
 export function KepzettsegProbaPopup({
-  képzettségNév, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, onClose,
+  képzettségNév, szint, tulajdonságok, kiterjesztesek, fortélyFokok, képzettségek, sérültFok, onClose,
 }: Props) {
   const [selTul, setSelTul] = useState<keyof Tulajdonsagok | null>(null);
   const [nehézség, setNehézség] = useState<number | null>(null);
@@ -132,7 +133,11 @@ export function KepzettsegProbaPopup({
   const [vállalásEredmény, setVállalásEredmény] = useState<VállalásEredmény | null>(null);
 
   const kit = selKit >= 0 ? kiterjesztesek[selKit] : null;
-  const eh = kit ? kiterjesztésElőnyHátrány(kit.típus, fortélyFokok[kit.fortély] ?? 0) : { szint: 0, tiltott: false };
+  const ehAlap = kit ? kiterjesztésElőnyHátrány(kit.típus, fortélyFokok[kit.fortély] ?? 0) : { szint: 0, tiltott: false };
+  // Sérülés hatása: fok 1-2 → Hátrány-1/-2 hozzáadódik, fok 3 → automatikus kudarc (nem dobható)
+  const sérültTiltott = sérültFok >= 3;
+  const ehSzintRaw = ehAlap.szint - Math.min(sérültFok, 2);
+  const eh = { szint: Math.max(-2, Math.min(2, ehSzintRaw)), tiltott: ehAlap.tiltott || sérültTiltott };
   const erősTiltott = eh.tiltott;
 
   // Pötty szín: felvéve → zöld, hiányzó Erős → piros, hiányzó Normál → sárga.
@@ -352,7 +357,7 @@ export function KepzettsegProbaPopup({
 
         {/* --- Dobás / Eredmény szekció --- */}
         {erősTiltott ? (
-          <div className="kep-proba-tiltott">Nem dobhatsz</div>
+          <div className="kep-proba-tiltott">{sérültTiltott ? 'Haldoklás — Automatikus kudarc' : 'Nem dobhatsz'}</div>
         ) : !vanEredmény ? (
           <>
             {kész && !ellenpróba && (
@@ -371,6 +376,8 @@ export function KepzettsegProbaPopup({
               <div className="kep-proba-biztos">Biztos siker</div>
             ) : (
               <button className="kep-proba-roll-btn" disabled={!kész} onClick={handleDobás}>
+                {sérültFok === 1 && <span className="kep-proba-roll-serult">S3</span>}
+                {sérültFok === 2 && <span className="kep-proba-roll-serult">S4</span>}
                 Dobás
                 {ehCímke && <span className={`kep-proba-roll-eh${eh.szint > 0 ? ' kep-proba-eh-előny' : ''}`}>{ehCímke}</span>}
               </button>
