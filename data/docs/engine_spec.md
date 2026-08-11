@@ -2268,6 +2268,25 @@ Migráció (backwards compat): ha `szilank_karakter` (régi single key) létezik
 
 ---
 
+## §30b Karakter Schema verziókezelés
+
+A karakter JSON `schema_version` mezője határozza meg a struktúra verzióját. A jelenlegi stabil verzió: **v2** (`schema_version: 2`).
+
+### Elvek
+
+- A validáció **strict**: minden mező kötelező (top-level + session). Hiányzó mező = invalid karakter, betöltés megtagadva, hibaüzenet a hiányzó mezők listájával.
+- **Régi (v2 előtti) karakterek** érvénytelenek — nincs backward compatibility migráció.
+- **Jövőbeli verzióváltás** (v2→v3, stb.): új mezők hozzáadásakor a `schema_version` emelkedik, és egy kontrollált migrációs lépés (`migrate_v2_to_v3`) fut betöltéskor, amely kipótolja az új mezőket default értékekkel.
+
+### Validáció (`engine/validate.ts`)
+
+- `validateKarakter(obj)` → `{ valid: true }` vagy `{ valid: false, missing: string[] }`
+- `isValidKarakter(obj)` → type guard (boolean)
+- Ellenőrzött mezők: `REQUIRED_TOP_FIELDS` + `REQUIRED_SESSION_FIELDS`
+- Fájl betöltés és localStorage betöltés egyaránt strict validációt futtat.
+
+---
+
 ## §31 Multi-karakter mentés
 
 ### 31.1 Karakter ID-k

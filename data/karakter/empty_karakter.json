@@ -86,6 +86,7 @@
     "harci_akrobatika": false,
     "fegyverfogás": "egyfegyveres",
     "aktív_távfegyver_index": -1,
-    "ké_dobások": []
+    "ké_dobások": [],
+    "té_dobások": []
   }
 }

@@ -1,23 +1,55 @@
 import type { Karakter } from './types';
 import type { GameData } from './data-loader';
 
-/** Validate minimal schema compliance */
-export function validateKarakter(obj: unknown): obj is Karakter {
-  if (!obj || typeof obj !== 'object') return false;
+/** Required top-level fields in a Karakter object. */
+const REQUIRED_TOP_FIELDS = [
+  'schema_version', 'uid', 'id_leíró', 'név', 'becenév', 'jk', 'játékos', 'mentés_dátum',
+  'tsz', 'leírás', 'kor', 'anyanyelv', 'vallás', 'tulajdonságok',
+  'HM_TÉ', 'HM_VÉ', 'CM', 'képzettségek', 'fortélyok', 'fortélyok_speciális',
+  'hátterek', 'fegyverek', 'távfegyverek', 'páncél', 'pajzs', 'felszerelés',
+  'előtörténet', 'jegyzetek', 'napló', 'checkpoints', 'session',
+] as const;
+
+/** Required session fields. */
+const REQUIRED_SESSION_FIELDS = [
+  'szilánk', 'vé_csökkenés', 'vé_history', 'manőver_pont_használt', 'sebzések',
+  'aktív_fegyver_index', 'aktív_fegyver_bal_index', 'kétkezes_harc',
+  'aktív_pajzs', 'aktív_páncél', 'aktív_taktikák', 'aktív_helyzetek',
+  'aktív_manőver', 'aktív_státuszok', 'narratív_módosítók', 'harci_akrobatika',
+  'fegyverfogás', 'aktív_távfegyver_index', 'ké_dobások', 'té_dobások',
+] as const;
+
+/** Validate strict schema compliance. Returns missing fields list or null if valid. */
+export function validateKarakter(obj: unknown): { valid: true } | { valid: false; missing: string[] } {
+  if (!obj || typeof obj !== 'object') return { valid: false, missing: ['(not an object)'] };
   const k = obj as Record<string, unknown>;
-  return (
-    k.schema_version === 2 &&
-    typeof k.név === 'string' &&
-    typeof k.tsz === 'number' &&
-    typeof k.tulajdonságok === 'object' &&
-    Array.isArray(k.képzettségek) &&
-    Array.isArray(k.fortélyok) &&
-    typeof k.fortélyok_speciális === 'object' &&
-    typeof k.hátterek === 'object' &&
-    Array.isArray(k.fegyverek) &&
-    typeof k.páncél === 'object' &&
-    Array.isArray(k.napló)
-  );
+
+  const missing: string[] = [];
+
+  // Check schema_version first
+  if (k.schema_version !== 2) {
+    missing.push('schema_version (≠ 2)');
+  }
+
+  // Top-level fields
+  for (const field of REQUIRED_TOP_FIELDS) {
+    if (!(field in k)) missing.push(field);
+  }
+
+  // Session fields
+  if (k.session && typeof k.session === 'object') {
+    const s = k.session as Record<string, unknown>;
+    for (const field of REQUIRED_SESSION_FIELDS) {
+      if (!(field in s)) missing.push(`session.${field}`);
+    }
+  }
+
+  return missing.length === 0 ? { valid: true } : { valid: false, missing };
+}
+
+/** Type guard shortcut for simple boolean checks. */
+export function isValidKarakter(obj: unknown): obj is Karakter {
+  return validateKarakter(obj).valid;
 }
 
 /** Validate referential integrity against loaded tables. Returns error message or null. */

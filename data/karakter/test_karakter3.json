@@ -521,7 +521,14 @@
     "harci_akrobatika": false,
     "fegyverfogás": "egyfegyveres",
     "aktív_távfegyver_index": 0,
-    "ké_dobások": []
+    "ké_dobások": [],
+    "té_dobások": []
   },
-  "_undo": []
+  "_undo": [],
+  "előtörténet": {
+    "származás_helye": "",
+    "szociális_érzék": "",
+    "külső": "",
+    "előtörténet": ""
+  }
 }

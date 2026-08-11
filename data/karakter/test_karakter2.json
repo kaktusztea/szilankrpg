@@ -598,7 +598,8 @@
     "harci_akrobatika": false,
     "fegyverfogás": "kétkezes",
     "aktív_távfegyver_index": 0,
-    "ké_dobások": []
+    "ké_dobások": [],
+    "té_dobások": []
   },
   "_undo": [
     {

@@ -3,7 +3,7 @@ import { loadGameData } from '../engine/data-loader';
 import type { GameData } from '../engine/data-loader';
 import type { Karakter } from '../engine/types';
 import { DEFAULT_SESSION, DEFAULT_ELOTORTENET } from '../engine/types';
-import { validateKarakter, validateKarakterData } from '../engine/validate';
+import { validateKarakter, isValidKarakter, validateKarakterData } from '../engine/validate';
 import { generateUid, generateIdLeíró } from '../engine/file-ops';
 import { writeSlots } from './slot-utils';
 
@@ -20,8 +20,10 @@ export function useGameDataLoader() {
   useEffect(() => {
     loadGameData().then(d => {
       setData(d);
-      if (!validateKarakter(d.emptyKarakter)) {
-        setError('Az empty_karakter.json érvénytelen (schema_version !== 2 vagy hiányzó mezők). Ellenőrizd a data/karakter/empty_karakter.json fájlt.');
+      if (!isValidKarakter(d.emptyKarakter)) {
+        const v = validateKarakter(d.emptyKarakter);
+        const details = !v.valid ? v.missing.join(', ') : '';
+        setError(`Az empty_karakter.json érvénytelen — hiányzó mezők: ${details}`);
         return;
       }
       const refErr = validateKarakterData(d.emptyKarakter, d);
@@ -35,7 +37,7 @@ export function useGameDataLoader() {
       if (saved && !localStorage.getItem('szilank_slots')) {
         try {
           const parsed = JSON.parse(saved);
-          if (validateKarakter(parsed)) {
+          if (isValidKarakter(parsed)) {
             const uid = parsed.uid || ((parsed as any).id) || generateUid();
             const migrated = { ...parsed, uid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session }, checkpoints: parsed.checkpoints || [] };
             localStorage.setItem(`szilank_char_${uid}`, JSON.stringify(migrated));
@@ -57,9 +59,13 @@ export function useGameDataLoader() {
         if (charData) {
           try {
             const parsed = JSON.parse(charData);
-            if (validateKarakter(parsed)) {
+            const v = validateKarakter(parsed);
+            if (v.valid) {
               setInitialKarakter({ ...parsed, uid: parsed.uid || activeUid, id_leíró: parsed.id_leíró || generateIdLeíró(parsed.név, parsed.tsz), jk: parsed.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...parsed.előtörténet }, session: { ...DEFAULT_SESSION, ...parsed.session }, checkpoints: parsed.checkpoints || [] });
               setInitialDirty(true);
+              return;
+            } else {
+              setError(`Karakter betöltési hiba — hiányzó mezők: ${v.missing.join(', ')}`);
               return;
             }
           } catch { /* fall through */ }

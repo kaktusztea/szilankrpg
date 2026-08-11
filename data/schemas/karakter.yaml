@@ -40,6 +40,7 @@ fortélyok:                    # Egységes lista (harci, általános, érzék, s
     fok: 1                    # 1-maxfok (szabad fortélyoknál mindig 1)
     spec_típus: ""            # Többszöröseknél: megegyezik a fortely.yaml többszörösség.spec_típus-ával. Üres ha nem többszörös. Egyedi fortélynál: "egyedi".
     spec_elem: ""             # Többszöröseknél: a konkrét választott elem (pl. "erv", "Erion", "kard, lovag"). Üres ha nem többszörös.
+    kiérdemelt: false         # Opcionális. true ha kiérdemelt fortély (nem KP-ból vásárolt).
     # kiterjeszti: []         # Opcionális. Csak egyedi fortélyoknál: kiterjesztett képzettségek listája.
 
 fortélyok_speciális:          # KP bónuszt adó speciális jellemzők (nem normál fortélyok)
@@ -128,3 +129,5 @@ session:
   harci_akrobatika: false     # session_toggle fortély runtime állapota
   fegyverfogás: "egyfegyveres"  # enum: egyfegyveres | fegyver_pajzs | fegyver_hárító | kétkezes
   aktív_távfegyver_index: -1  # Kiválasztott távfegyver indexe a távfegyverek[] tömbben (-1 = nincs)
+  ké_dobások: []              # number[] — KÉ dobás history (max 3, newest first)
+  té_dobások: []              # number[] — TÉ dobás history (max 3, newest first)

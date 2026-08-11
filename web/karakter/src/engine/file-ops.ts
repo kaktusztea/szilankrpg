@@ -92,11 +92,13 @@ function isBackupFile(obj: unknown): obj is { szilánk_backup: true; karakterek:
 }
 
 function parseSingleKarakter(obj: unknown, data: GameData): { karakter: Karakter; undo: any[] } | { error: string } {
-  if (!validateKarakter(obj)) return { error: 'Érvénytelen karakter json állomány.' };
-  const refErr = validateKarakterData(obj, data);
+  const validation = validateKarakter(obj);
+  if (!validation.valid) return { error: `Érvénytelen karakter — hiányzó mezők: ${validation.missing.join(', ')}` };
+  const raw = obj as Record<string, any>;
+  const refErr = validateKarakterData(raw as Karakter, data);
   if (refErr) return { error: `Referencia hiba: ${refErr}` };
-  const karakter = { ...obj, uid: (obj as any).uid || generateUid(), id_leíró: (obj as any).id_leíró || generateIdLeíró(obj.név, obj.tsz), jk: (obj as any).jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...(obj as any).előtörténet }, session: { ...DEFAULT_SESSION, ...(obj as any).session } } as Karakter;
-  return { karakter, undo: sanitizeUndo((obj as any)._undo) };
+  const karakter = { ...raw, uid: raw.uid || generateUid(), id_leíró: raw.id_leíró || generateIdLeíró(raw.név, raw.tsz), jk: raw.jk ?? true, előtörténet: { ...DEFAULT_ELOTORTENET, ...raw.előtörténet }, session: { ...DEFAULT_SESSION, ...raw.session } } as Karakter;
+  return { karakter, undo: sanitizeUndo(raw._undo) };
 }
 
 export function loadKarakterFromFile(data: GameData): Promise<LoadFileResult> {
