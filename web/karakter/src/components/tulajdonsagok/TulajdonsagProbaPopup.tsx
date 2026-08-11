@@ -263,7 +263,9 @@ export function TulajdonsagProbaPopup({ tulajdonságNév, érték, onClose }: Pr
               {eredmény}<span className="kep-proba-result-vs"> vs </span><span className="kep-proba-result-cel">{nehézség}</span>
             </div>
             <div className={siker ? 'kep-proba-siker' : 'kep-proba-sikertelen'}>
-              {siker ? 'Siker' : 'Sikertelen'}
+              {siker
+                ? (nehézség !== null && eredmény !== null && eredmény - nehézség >= 3 ? '⚜️ Kiemelt siker' : 'Siker')
+                : (nehézség !== null && eredmény !== null && nehézség - eredmény >= 3 ? '⚜️ Kiemelt kudarc' : 'Sikertelen')}
             </div>
             <div className="kep-proba-rolls">
               {ehCímke && <span className={ehSzint > 0 ? 'kep-proba-eh-előny' : 'kep-proba-eh'}>{ehCímke} · </span>}

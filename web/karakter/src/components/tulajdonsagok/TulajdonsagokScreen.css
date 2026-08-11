@@ -369,8 +369,9 @@
 }
 .kep-proba-result-vs { color: #888; font-size: 0.55em; }
 .kep-proba-result-cel { color: #e53935; }
-.kep-proba-siker { color: var(--success); font-weight: bold; font-size: 16px; }
-.kep-proba-sikertelen { color: #e53935; font-weight: bold; font-size: 16px; }
+.kep-proba-siker { color: var(--success); font-weight: bold; font-size: 20px; }
+.kep-proba-sikertelen { color: #e53935; font-weight: bold; font-size: 20px; }
+.kep-proba-mertek { text-align: center; font-size: 13px; color: #ffd54f; }
 
 /* --- Extrák szekció (Összetett, Vállalás, Ellenpróba) --- */
 .kep-proba-extras-box {
