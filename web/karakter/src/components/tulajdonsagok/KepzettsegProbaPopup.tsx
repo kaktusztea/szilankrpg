@@ -213,6 +213,7 @@ export function KepzettsegProbaPopup({
     <PopupOverlay onClose={handleOuterClose}>
       <div className="kep-proba-popup">
         <div className="kep-proba-header">
+          <button className="kep-proba-close-btn" onClick={onClose} title="Bezárás">✕</button>
           Képzettségpróba
           <button
             className="kep-proba-reset-btn"
