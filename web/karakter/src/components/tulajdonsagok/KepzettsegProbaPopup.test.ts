@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
 import type { Tulajdonsagok } from '../../engine/types';
-import { tulKulcs, probaSiker, kiterjesztésElőnyHátrány, buildFortélyFokok, előnyHátrányLabel, probaLehetetlen, nehézségDisplay } from './KepzettsegProbaPopup';
+import { tulKulcs, probaSiker, probaBiztosSiker, kiterjesztésElőnyHátrány, buildFortélyFokok, előnyHátrányLabel, probaLehetetlen, nehézségDisplay } from './KepzettsegProbaPopup';
 import { rollElőnyHátrány } from '../../engine/dice';
 
 // A 8 séma-kulcs (Tulajdonsagok) — a display→kulcs mapping-nek ezekre kell esnie.
@@ -96,5 +96,38 @@ describe('nehézségDisplay', () => {
   it('21 feletti (nincs elnevezés): csak a szám', () => {
     expect(nehézségDisplay(24)).toBe('24');
     expect(nehézségDisplay(30)).toBe('30');
+  });
+});
+
+describe('probaBiztosSiker', () => {
+  it('min k10 (1) + tul + szint >= célszám → biztos siker', () => {
+    // 5 + 7 + 1 = 13 >= 12
+    expect(probaBiztosSiker(5, 7, 12)).toBe(true);
+  });
+  it('min k10 (1) + tul + szint < célszám → NEM biztos', () => {
+    // 5 + 5 + 1 = 11 < 12
+    expect(probaBiztosSiker(5, 5, 12)).toBe(false);
+  });
+  it('határeset: pontosan egyenlő → biztos siker', () => {
+    // 3 + 8 + 1 = 12 >= 12
+    expect(probaBiztosSiker(3, 8, 12)).toBe(true);
+  });
+});
+
+describe('probaLehetetlen with vállalás (effSzint)', () => {
+  it('vállalás bónusszal már nem lehetetlen', () => {
+    // tul=3, szint=2, célszám=16 → 3+2+10=15 < 16 → lehetetlen
+    expect(probaLehetetlen(3, 2, 16)).toBe(true);
+    // vállalás +1 → effSzint=3: 3+3+10=16 >= 16 → NEM lehetetlen
+    expect(probaLehetetlen(3, 3, 16)).toBe(false);
+  });
+});
+
+describe('probaSiker with vállalás (effSzint)', () => {
+  it('vállalás bónusz beleszámít', () => {
+    // tul=3, szint=4, k10=5, célszám=15 → 3+4+5=12 < 15: sikertelen
+    expect(probaSiker(3, 4, 5, 15)).toBe(false);
+    // effSzint=4+3=7 (vállalás +3): 3+7+5=15 >= 15: siker
+    expect(probaSiker(3, 7, 5, 15)).toBe(true);
   });
 });
