@@ -11369,7 +11369,7 @@ Célszám: 15 (Nagyon nehéz)
 
 ### Másodlagos dobás
 
-Ezután dob több (a KM dönti el, hány) próbát **1 fokozattal (`-3` célszám) alacsonyabb nehézség ellen**. Például:
+Ezután dob több (a KM dönti el, hány darab) próbát **1 fokozattal (`-3` célszám) alacsonyabb nehézség ellen**. Például:
 
 ```
 Célszám: 12 (Nehéz)
@@ -11377,20 +11377,6 @@ Célszám: 12 (Nehéz)
 ```
 
  Így a siker eloszlása sokkal fokozatosabb és a biztos tudást is jobban jutalmazzuk, valamint elkerüljük, hogy egy kezdő - csak azért, mert szerencséset dobott - egy hosszú, részletes, tudását jóval meghaladó feladatot "véletlenül" megcsinálhasson.
-
-### Lépcsőzetes Célszámok módszere
-
-Hogy a másodlagos dobásból hány kell, az főleg attól függ, hogy a feladat "milyen hosszú", mennyire "többlépcsős". Ha nagyon finom bontást akarunk, akkor akár `2` fokozattal (Célszámra: `-6` ) alacsonyabb nehézségre is dobathatunk akár teljesen folyamatos lefutással is:
-
-```
-Dobások Célszáma
-
-Elsődleges: 15 (Nagyon nehéz)
-Másodlagos: 12 (Nehéz)
-Másodlagos:  9 (Átlagos)
-```
-
-🔆 Megjegyzés: `2` fokozatnál (Célszámra: `-6` ) nagyobb különbségű dobást nem tehetsz.
 
 ### Másodlagos próba kiterjesztett képzettségekre
 
