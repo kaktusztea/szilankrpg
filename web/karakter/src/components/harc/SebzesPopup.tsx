@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
+import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásHatás, SpBónusz } from './combat-roll-info';
 import { netElőnySzint } from './combat-roll-info';
@@ -39,6 +40,11 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(szint);
     setEredmény({ dobás, sp, bónusz, végső: dobás.eredmény + sp + bónusz });
+  }
+
+  function handleManualK20(value: number) {
+    const dobás: ProbaDobás = { rolls: [value], eredmény: value };
+    setEredmény({ dobás, sp, bónusz, végső: value + sp + bónusz });
   }
 
   function handleBónuszClick(val: number) {
@@ -127,7 +133,10 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
               {szint !== 0 ? ` (${szint > 0 ? `Előny+${szint}` : `Hátrány${szint}`})` : ''}
             </div>
 
-            <button className="tamado-sebzes-btn" onClick={handleDobás}>Dobás</button>
+            <div className="dobas-btn-row">
+              <button className="tamado-sebzes-btn" onClick={handleDobás}>Dobás</button>
+              <ManualDicePicker szint={szint} onSelect={handleManualK20} />
+            </div>
           </>
         ) : (
           <>

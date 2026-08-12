@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
 import { SebzesPopup } from './SebzesPopup';
+import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { DobásInfo, DobásHatás } from './combat-roll-info';
 import { netElőnySzint } from './combat-roll-info';
@@ -47,6 +48,11 @@ export function TamadoDobasPopup({ té, sp, dobásInfo, onClose }: Props) {
     setTéResult({ alap: té, dobás, eredmény: té + dobás.eredmény });
   }
 
+  function handleManualK20(value: number) {
+    const dobás: ProbaDobás = { rolls: [value], eredmény: value };
+    setTéResult({ alap: té, dobás, eredmény: té + value });
+  }
+
   const k20Érték = téResult?.dobás.eredmény ?? 0;
   const sebzésElőny = sebzésElőnyFromK20(k20Érték);
 
@@ -85,7 +91,10 @@ export function TamadoDobasPopup({ té, sp, dobásInfo, onClose }: Props) {
             {dobásInfo.téHatások.length > 0 && (
               <HatásokInfo hatások={dobásInfo.téHatások} />
             )}
-            <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>
+            <div className="dobas-btn-row">
+              <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>
+              <ManualDicePicker szint={szint} onSelect={handleManualK20} />
+            </div>
           </>
         ) : (
           <>

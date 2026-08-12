@@ -495,3 +495,57 @@
 .dobas-sp-info {
   margin-top: 4px;
 }
+
+/* --- Dobás button row (button + manual dice icon) --- */
+.dobas-btn-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 4px;
+}
+
+.manual-dice-btn {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--border-input);
+  border-radius: 50%;
+  background: var(--input-bg);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.6;
+}
+
+.manual-dice-btn:hover {
+  opacity: 1;
+}
+
+/* --- Manual dice popup --- */
+.manual-dice-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+}
+
+.manual-dice-title {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.manual-dice-szint {
+  font-size: 13px;
+  color: var(--success);
+  font-weight: bold;
+}
+
+.manual-dice-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 36px);
+  gap: 6px;
+  justify-content: center;
+}
