@@ -41,3 +41,16 @@ export function rollElőnyHátrányK6(szint: number): ProbaDobás {
   const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
   return { rolls, eredmény };
 }
+
+/**
+ * Előny/Hátrány dobás k20-szal (Támadó dobás, Sebzésdobás):
+ *  - szint > 0 (Előny+N): (N+1) db k20, a legnagyobb számít
+ *  - szint < 0 (Hátrány-N): (|N|+1) db k20, a legkisebb számít
+ *  - szint == 0: egyetlen k20 (sima dobás)
+ */
+export function rollElőnyHátrányK20(szint: number): ProbaDobás {
+  const count = Math.abs(szint) + 1;
+  const rolls = Array.from({ length: count }, () => rollDie(20));
+  const eredmény = szint < 0 ? Math.min(...rolls) : Math.max(...rolls);
+  return { rolls, eredmény };
+}

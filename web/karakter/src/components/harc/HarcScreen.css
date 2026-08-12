@@ -312,3 +312,121 @@
   text-align: center;
 }
 .harc-manover-btn:hover { background: rgba(76, 175, 80, 0.15); }
+
+/* --- Támadó dobás popup --- */
+.tamado-dobas-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 24px;
+  min-width: 240px;
+}
+
+.tamado-elony-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.tamado-elony-chip {
+  display: block;
+  width: 100%;
+  padding: 10px 16px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 15px;
+  cursor: pointer;
+  text-align: center;
+}
+
+.tamado-elony-chip.active {
+  border-color: var(--success);
+  background: rgba(76, 175, 80, 0.15);
+  color: var(--success);
+  font-weight: bold;
+}
+
+.tamado-dobas-btn {
+  padding: 12px 32px;
+  border: 1px solid var(--success);
+  border-radius: 6px;
+  background: rgba(76, 175, 80, 0.12);
+  color: var(--success);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.tamado-sebzes-btn {
+  padding: 12px 32px;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: rgba(233, 69, 96, 0.12);
+  color: var(--accent);
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.tamado-sebzes-btn-hint {
+  font-size: 12px;
+  font-weight: normal;
+  color: var(--warning);
+}
+
+/* --- Sebzés bónusz section --- */
+.sebzes-bonusz-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  margin-top: 4px;
+}
+
+.sebzes-bonusz-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.sebzes-bonusz-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 4px;
+  width: 100%;
+}
+
+.sebzes-bonusz-btn {
+  padding: 8px 0;
+  border: 1px solid var(--border-input);
+  border-radius: 4px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 14px;
+  font-family: monospace;
+  cursor: pointer;
+  text-align: center;
+}
+
+.sebzes-bonusz-btn.active {
+  border-color: var(--warning);
+  background: rgba(255, 152, 0, 0.15);
+  color: var(--warning);
+  font-weight: bold;
+}
+
+.sebzes-summary {
+  font-size: 13px;
+  color: var(--text-dim);
+  font-family: monospace;
+}

@@ -13,6 +13,7 @@ import { HarcFegyverfogas } from './HarcFegyverfogas';
 import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás } from './DobasPopup';
+import { TamadoDobasPopup } from './TamadoDobasPopup';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
 import { PickerOverlay } from '../aktiv/PickerOverlay';
 import { computeTÉ, computeVÉ } from './shared';
@@ -28,7 +29,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number } | null>(null);
   const [sebCount, setSebCount] = useState(0);
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
-  const [téDobás, setTéDobás] = useState<{ alap: number; eredmény: number } | null>(null);
+  const [showTamadoDobas, setShowTamadoDobas] = useState(false);
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
   // Manőver state
   const [manoverPicker, setManoverPicker] = useState<'closed' | 'mód' | 'lista'>('closed');
@@ -69,18 +70,19 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
     }));
   }, [setSession]);
 
-  // Támadó dobás handler (TÉ + k20). Az alapértéket (aktív fegyver TÉ) a dobás
-  // pillanatában rögzítjük, mert fegyverváltással változhat.
-  const handleTéDobás = useCallback((té: number) => {
-    setTéDobás({ alap: té, eredmény: té + rollK20() });
+  // Támadó dobás handler: open the new TamadoDobasPopup
+  const handleTéDobás = useCallback(() => {
+    setShowTamadoDobas(true);
   }, []);
 
-  const handleTéDobásClose = useCallback((eredmény: number) => {
-    setTéDobás(null);
-    setSession(prev => ({
-      ...prev,
-      té_dobások: pushDobás(prev.té_dobások ?? [], eredmény),
-    }));
+  const handleTamadoClose = useCallback((eredmény: number | null) => {
+    setShowTamadoDobas(false);
+    if (eredmény !== null) {
+      setSession(prev => ({
+        ...prev,
+        té_dobások: pushDobás(prev.té_dobások ?? [], eredmény),
+      }));
+    }
   }, [setSession]);
 
   // Popup close handler
@@ -181,7 +183,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onVéLabelTap={() => { if (session.vé_csökkenés > 0) setShowVéHistory(true); }}
         onVéResetClick={() => setShowVéResetConfirm(true)}
         onKéClick={handleKéClick}
-        onTéClick={() => { if (aktívTÉ != null) handleTéDobás(aktívTÉ); }}
+        onTéClick={() => { if (aktívTÉ != null) handleTéDobás(); }}
         onManőverClick={() => setManoverPicker('mód')}
         gameMode={gameMode}
       />
@@ -245,8 +247,12 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         <DobasPopup cím="Kezdeményezés" alapLabel="KÉ" alap={hc.ké} eredmény={kéDobásEredmény} onClose={handleKéDobásClose} />
       )}
 
-      {téDobás !== null && (
-        <DobasPopup cím="Támadó dobás" alapLabel="TÉ" alap={téDobás.alap} eredmény={téDobás.eredmény} onClose={handleTéDobásClose} />
+      {showTamadoDobas && aktívTÉ != null && (
+        <TamadoDobasPopup
+          té={aktívTÉ}
+          sp={ctx?.result.SP ?? 0}
+          onClose={handleTamadoClose}
+        />
       )}
 
       {showFegyverfogás && (
