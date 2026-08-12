@@ -7,6 +7,7 @@ import { PopupOverlay } from '../PopupOverlay';
 interface HarcHeaderProps {
   ké: number;
   aktívTÉ: number | null;
+  aktívVÉ: number | null;
   sfé_fizikai: number;
   sfé_energia: number;
   páncélLefedettség: number;
@@ -26,7 +27,7 @@ interface HarcHeaderProps {
 }
 
 export function HarcHeader({
-  ké, aktívTÉ, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont,
+  ké, aktívTÉ, aktívVÉ, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont,
   maxVéCsökk, session, setSession, pushUndo, konstansok,
   onVéChange, onVéLabelTap, onVéResetClick, onKéClick, onTéClick, onManőverClick, gameMode,
 }: HarcHeaderProps) {
@@ -71,10 +72,14 @@ export function HarcHeader({
       </div>
 
       <div className="ve-csokk-box">
-        <span className="label" onClick={onVéLabelTap}>VÉ csökkenés</span>
-        <span className="value" onClick={onVéLabelTap}>
-          {session.vé_csökkenés === 0 ? 0 : -session.vé_csökkenés}
-        </span>
+        <div className="ve-label-row">
+          <span className="label" onClick={onVéLabelTap}>VÉ</span>
+          <button className="ve-reset-btn" disabled={!gameMode || session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
+        </div>
+        <div className="ve-value-row" onClick={onVéLabelTap}>
+          <span className="value">{aktívVÉ ?? '—'}</span>
+          {session.vé_csökkenés > 0 && <span className="ve-csokk-badge">(-{session.vé_csökkenés})</span>}
+        </div>
         <div className="ve-btns">
           {(konstansok.vé_csökkentés_gombok as number[]).map(n => (
             <button key={n} disabled={!gameMode || session.vé_csökkenés >= maxVéCsökk}
@@ -82,7 +87,6 @@ export function HarcHeader({
           ))}
           <button disabled={!gameMode || session.vé_csökkenés === 0}
             onClick={() => onVéChange(Math.max(0, session.vé_csökkenés - 1))}>+1</button>
-          <button disabled={!gameMode || session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
         </div>
       </div>
 
