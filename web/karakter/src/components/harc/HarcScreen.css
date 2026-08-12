@@ -91,18 +91,27 @@
   font-family: monospace;
 }
 
-.harc-header-bottom .mp-box .mp-reset-btn {
-  background: var(--input-bg);
-  color: var(--text);
-  border: 1px solid var(--border-input);
-  border-radius: 3px;
-  padding: 2px 7px;
-  cursor: pointer;
-  font-size: 16px;
-  font-family: monospace;
+/* --- MP picker popup --- */
+.mp-picker-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 24px;
 }
 
-.harc-header-bottom .mp-box .mp-reset-btn:disabled { opacity: 0.3; cursor: default; }
+.mp-picker-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.mp-picker-grid {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .sfe-values { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
 .sfe-line { font-size: 16px; }
@@ -333,7 +342,7 @@
   border-radius: 6px;
   background: rgba(76, 175, 80, 0.08);
   color: #4caf50;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   text-align: center;

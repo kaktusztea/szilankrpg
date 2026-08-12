@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import type { Session } from '../../engine/types';
 import type { GameData } from '../../engine/data-loader';
 import type { UndoPatch } from '../../hooks/useUndo';
+import { PopupOverlay } from '../PopupOverlay';
 
 interface HarcHeaderProps {
   ké: number;
@@ -28,6 +30,7 @@ export function HarcHeader({
   maxVéCsökk, session, setSession, pushUndo, konstansok,
   onVéChange, onVéLabelTap, onVéResetClick, onKéClick, onTéClick, onManőverClick, gameMode,
 }: HarcHeaderProps) {
+  const [showMpPicker, setShowMpPicker] = useState(false);
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
 
   return (
@@ -87,13 +90,33 @@ export function HarcHeader({
         {gameMode && (
           <button className="harc-manover-btn" onClick={onManőverClick}>⚔️ Manőver végrehajtása</button>
         )}
-        <div className="mp-box">
+        <div className="mp-box" onClick={gameMode ? () => setShowMpPicker(true) : undefined}
+          style={gameMode ? { cursor: 'pointer' } : undefined}>
           <span className="label">MP</span>
           <span className="mp-value">{aktMP}/{manöverPont}</span>
-          <button className="mp-reset-btn" disabled={!gameMode || session.manőver_pont_használt === 0}
-            onClick={() => { pushUndo('MP: reset', [{ field: 'session', prev: session }]); setSession(prev => ({ ...prev, manőver_pont_használt: 0 })); }}>⟲</button>
         </div>
       </div>
+
+      {showMpPicker && (
+        <PopupOverlay onClose={() => setShowMpPicker(false)}>
+          <div className="mp-picker-popup">
+            <div className="mp-picker-title">Manőver Pont</div>
+            <div className="mp-picker-grid">
+              {Array.from({ length: manöverPont + 1 }, (_, i) => (
+                <button key={i} className={`fort-fok-btn${i === aktMP ? ' active' : ''}`}
+                  onClick={() => {
+                    const használt = manöverPont - i;
+                    if (használt !== session.manőver_pont_használt) {
+                      pushUndo(`MP: ${aktMP} → ${i}`, [{ field: 'session', prev: session }]);
+                      setSession(prev => ({ ...prev, manőver_pont_használt: használt }));
+                    }
+                    setShowMpPicker(false);
+                  }}>{i}</button>
+              ))}
+            </div>
+          </div>
+        </PopupOverlay>
+      )}
     </div>
   );
 }
