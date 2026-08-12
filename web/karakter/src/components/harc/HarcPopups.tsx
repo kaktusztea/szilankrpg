@@ -24,8 +24,10 @@ export function HarcPopups({ session, showVéResetConfirm, showVéHistory, támI
       {showVéHistory && (
         <PopupOverlay onClose={onCloseAll}>
           <label className="harc-popup-label">VÉ csökkenés történet</label>
-          <div className="harc-popup-text">
-            {session.vé_history.length === 0 ? '—' : session.vé_history.map(v => (v > 0 ? `+${v}` : String(v))).join('; ')}
+          <div className="harc-popup-text ve-history-list">
+            {session.vé_history.length === 0 ? '—' : session.vé_history.map((v, i) => (
+              <span key={i}>{v > 0 ? `+${v}` : String(v)}</span>
+            ))}
           </div>
         </PopupOverlay>
       )}

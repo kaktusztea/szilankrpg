@@ -110,61 +110,31 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const rawTéLevonás = hc.téLevonások[aktKat];
   const téLevonás = rawTéLevonás === 0 ? 0 : Math.min(0, rawTéLevonás + ftEnyhítés);
 
-  // Compute active weapon TÉ for the header box
-  const getAktívTÉ = useCallback((): number | null => {
-    const többTámTÉ = data.konstansok.több_támadás_TÉ_levonás;
-    if (hc.kétkezesResult) {
-      return computeTÉ(hc.kétkezesResult.TÉ, téLevonás, hc.taktikaMods['TÉ'], 0, hc.kétkezesResult.támadások, többTámTÉ);
-    }
+  // Compute active weapon TÉ/VÉ for the header boxes
+  const getAktívFegyverContext = useCallback(() => {
+    if (hc.kétkezesResult) return { result: hc.kétkezesResult, veBónusz: hc.pajzsVÉ, téExtra: 0 };
     if (hc.fogásResult) {
       const jobbIdx = session.aktív_fegyver_index;
       const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
       const jobbNév = jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? 'Puszta kéz') : 'Puszta kéz';
       const r = hc.fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? hc.fegyverResults[0];
-      if (!r) return null;
-      return computeTÉ(r.TÉ, téLevonás, hc.taktikaMods['TÉ'], hc.fogásResult.TÉ_büntetés, r.támadások, többTámTÉ);
-    }
-    const jobbIdx = session.aktív_fegyver_index;
-    const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
-    const jobbNév = jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? 'Puszta kéz') : 'Puszta kéz';
-    if (session.aktív_fegyver_index === -2) {
-      const r = hc.fegyverResults.find(fr => fr.fegyver_név === (hc.pajzsFegyverNév ?? ''));
-      if (!r) return null;
-      return computeTÉ(r.TÉ, téLevonás, hc.taktikaMods['TÉ'], 0, r.támadások, többTámTÉ);
-    }
-    const r = hc.fegyverResults.find(fr => fr.fegyver_név === jobbNév);
-    if (!r) return null;
-    return computeTÉ(r.TÉ, téLevonás, hc.taktikaMods['TÉ'], 0, r.támadások, többTámTÉ);
-  }, [hc, téLevonás, session.aktív_fegyver_index, karakter.fegyverek, data]);
-
-  const aktívTÉ = getAktívTÉ();
-
-  const getAktívVÉ = useCallback((): number | null => {
-    if (hc.kétkezesResult) {
-      return computeVÉ(hc.kétkezesResult.VÉ, hc.pajzsVÉ, hc.taktikaMods['VÉ'], session.vé_csökkenés);
-    }
-    if (hc.fogásResult) {
-      const jobbIdx = session.aktív_fegyver_index;
-      const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
-      const jobbNév = jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? 'Puszta kéz') : 'Puszta kéz';
-      const r = hc.fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? hc.fegyverResults[0];
-      if (!r) return null;
-      return computeVÉ(r.VÉ, hc.fogásResult.VÉ_bónusz, hc.taktikaMods['VÉ'], session.vé_csökkenés);
+      return r ? { result: r, veBónusz: hc.fogásResult.VÉ_bónusz, téExtra: hc.fogásResult.TÉ_büntetés } : null;
     }
     if (session.aktív_fegyver_index === -2) {
       const r = hc.fegyverResults.find(fr => fr.fegyver_név === (hc.pajzsFegyverNév ?? ''));
-      if (!r) return null;
-      return computeVÉ(r.VÉ, hc.pajzsVÉ, hc.taktikaMods['VÉ'], session.vé_csökkenés);
+      return r ? { result: r, veBónusz: hc.pajzsVÉ, téExtra: 0 } : null;
     }
     const jobbIdx = session.aktív_fegyver_index;
     const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
     const jobbNév = jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? 'Puszta kéz') : 'Puszta kéz';
     const r = hc.fegyverResults.find(fr => fr.fegyver_név === jobbNév);
-    if (!r) return null;
-    return computeVÉ(r.VÉ, hc.fogásResult ? 0 : hc.pajzsVÉ, hc.taktikaMods['VÉ'], session.vé_csökkenés);
-  }, [hc, session.vé_csökkenés, session.aktív_fegyver_index, karakter.fegyverek, data]);
+    return r ? { result: r, veBónusz: hc.pajzsVÉ, téExtra: 0 } : null;
+  }, [hc, session.aktív_fegyver_index, karakter.fegyverek, data]);
 
-  const aktívVÉ = getAktívVÉ();
+  const ctx = getAktívFegyverContext();
+  const többTámTÉ = data.konstansok.több_támadás_TÉ_levonás;
+  const aktívTÉ = ctx ? computeTÉ(ctx.result.TÉ, téLevonás, hc.taktikaMods['TÉ'], ctx.téExtra, ctx.result.támadások, többTámTÉ) : null;
+  const aktívVÉ = ctx ? computeVÉ(ctx.result.VÉ, ctx.veBónusz, hc.taktikaMods['VÉ'], session.vé_csökkenés) : null;
 
   const handleSebzésekChange = useCallback((sebzések: SebzésRubrika[], leírás: string) => {
     pushUndo(leírás, [{ field: 'session', prev: session }]);

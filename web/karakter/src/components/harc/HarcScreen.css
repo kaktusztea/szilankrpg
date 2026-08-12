@@ -183,34 +183,7 @@
   margin-bottom: 8px;
 }
 
-/* --- VÉ csökkentés --- */
-.ve-csokk { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
-
-.ve-csokk button {
-  background: var(--input-bg);
-  color: var(--text);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 4px 10px;
-  cursor: pointer;
-  font-size: 17px;
-}
-
-/* --- Manőver --- */
-.manover { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
-
-.manover button {
-  background: var(--input-bg);
-  color: var(--text);
-  border: 1px solid var(--border-input);
-  border-radius: 4px;
-  padding: 4px 10px;
-  cursor: pointer;
-}
-
-.dim { font-size: 17px; color: var(--text-dim); }
-
-/* --- VÉ flash animáció --- */
+/* --- Manőver trigger button (game mode, above weapon table) --- */
 .ve-flash-down { animation: ve-pulse-down 1s ease-out; }
 .ve-flash-up { animation: ve-pulse-up 1s ease-out; }
 
@@ -228,15 +201,6 @@
 .harc-belharc-label { color: #ef9a9a; }
 .harc-belharc-warn { color: #e53935; }
 .harc-tam-clickable { cursor: pointer; }
-.harc-te-dobas-btn {
-  background: none;
-  border: none;
-  color: inherit;
-  font: inherit;
-  font-weight: bold;
-  cursor: pointer;
-  padding: 0;
-}
 .harc-row-dimmed { opacity: 0.4; }
 .ph-bonus { color: var(--color-positive); }
 .harc-monospace { font-family: monospace; }
@@ -247,6 +211,7 @@
 .harc-confirm-center { display: flex; align-items: center; justify-content: center; }
 .harc-popup-label { font-weight: bold; }
 .harc-popup-text { font-size: 15px; color: var(--text); }
+.ve-history-list { display: flex; flex-wrap: wrap; gap: 4px 8px; max-width: 200px; }
 .harc-popup-col { font-size: 15px; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
 
 /* --- Részletes értékek → base: .debug-box (common.css) --- */
@@ -329,15 +294,6 @@
 .ke-history-item:nth-child(1) { color: #ccc; }
 .ke-history-item:nth-child(2) { color: #888; }
 .ke-history-item:nth-child(3) { color: #555; }
-
-/* TÉ dobás history (horizontal below TÉ button, like KÉ) */
-.te-header-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 2px;
-  cursor: pointer;
-}
 
 /* Manőver trigger button (game mode, above weapon table) */
 .harc-manover-btn {
