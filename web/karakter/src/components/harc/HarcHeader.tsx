@@ -72,10 +72,8 @@ export function HarcHeader({
       </div>
 
       <div className="ve-csokk-box">
-        <div className="ve-label-row">
-          <span className="label" onClick={onVéLabelTap}>VÉ</span>
-          <button className="ve-reset-btn" disabled={!gameMode || session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
-        </div>
+        <span className="label" onClick={onVéLabelTap}>VÉ</span>
+        <button className="ve-reset-btn" disabled={!gameMode || session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
         <div className="ve-value-row" onClick={onVéLabelTap}>
           <span className="value">{aktívVÉ ?? '—'}</span>
           {session.vé_csökkenés > 0 && <span className="ve-csokk-badge">(-{session.vé_csökkenés})</span>}

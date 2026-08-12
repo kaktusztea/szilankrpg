@@ -52,8 +52,9 @@
 .ke-box .value, .te-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
 .te-box .value { color: var(--color-taktika); }
 .ve-csokk-box .value { font-size: 28px; font-weight: bold; color: var(--warning); }
+.ve-csokk-box { position: relative; }
 .ve-label-row { display: flex; align-items: center; gap: 6px; }
-.ve-reset-btn { background: none; border: none; color: var(--text); font-size: 22px; cursor: pointer; padding: 2px 6px; opacity: 0.7; }
+.ve-reset-btn { position: absolute; top: 0; right: 2px; background: none; border: none; color: var(--text); font-size: 26px; cursor: pointer; padding: 0; opacity: 0.7; }
 .ve-reset-btn:disabled { opacity: 0.3; cursor: default; }
 .ve-value-row { display: flex; align-items: baseline; gap: 4px; cursor: pointer; }
 .ve-csokk-badge { font-size: 25px; font-weight: bold; color: var(--warning); opacity: 0.7; }
