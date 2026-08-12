@@ -549,3 +549,89 @@
   gap: 6px;
   justify-content: center;
 }
+
+/* --- Páncél info popup --- */
+.pancel-info-popup {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 20px;
+  min-width: 260px;
+}
+
+.pancel-info-empty {
+  color: var(--text-dim);
+  font-size: 14px;
+}
+
+.pancel-info-grid {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.pancel-info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4px 0;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.pancel-info-label {
+  font-size: 13px;
+  color: var(--text-dim);
+}
+
+.pancel-info-value {
+  font-size: 13px;
+  font-weight: bold;
+  color: var(--text);
+}
+
+.pancel-info-highlight {
+  color: var(--success);
+  font-family: monospace;
+}
+
+.pancel-info-editable {
+  border-bottom: none;
+  padding: 6px 0;
+}
+
+.pancel-info-stepper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pancel-step-btn {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-input);
+  border-radius: 50%;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pancel-step-btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.pancel-step-value {
+  font-size: 18px;
+  font-weight: bold;
+  font-family: monospace;
+  color: var(--text);
+  min-width: 20px;
+  text-align: center;
+}

@@ -14,6 +14,7 @@ import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás } from './DobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
+import { PancelInfoPopup } from './PancelInfoPopup';
 import { collectDobásInfo } from './combat-roll-info';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
 import { PickerOverlay } from '../aktiv/PickerOverlay';
@@ -22,7 +23,7 @@ import { lookupFegyver } from '../../engine/utils';
 import { rollK20 } from '../../engine/dice';
 import './HarcScreen.css';
 
-export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNavigate, gameMode }: HarcBaseProps) {
+export function HarcScreen({ data, karakter, session, setSession, setKarakter, pushUndo, onNavigate, gameMode }: HarcBaseProps) {
   const [véFlash, setVéFlash] = useState<'' | 'down' | 'up'>('');
   const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [showVéHistory, setShowVéHistory] = useState(false);
@@ -32,6 +33,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
   const [showTamadoDobas, setShowTamadoDobas] = useState(false);
   const [showFegyverfogás, setShowFegyverfogás] = useState(false);
+  const [showPancelInfo, setShowPancelInfo] = useState(false);
   // Manőver state
   const [manoverPicker, setManoverPicker] = useState<'closed' | 'mód' | 'lista'>('closed');
   const [manoverMód, setManoverMód] = useState<'aktív' | 'passzív'>('aktív');
@@ -185,6 +187,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onVéResetClick={() => setShowVéResetConfirm(true)}
         onKéClick={handleKéClick}
         onTéClick={() => { if (aktívTÉ != null) handleTéDobás(); }}
+        onSféClick={() => setShowPancelInfo(true)}
         onManőverClick={() => setManoverPicker('mód')}
         gameMode={gameMode}
       />
@@ -262,6 +265,18 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
           data={data} karakter={karakter} session={session}
           onSelect={(patch) => { pushUndo(`Fogás: ${patch.fegyverfogás}`, [{ field: 'session', prev: session }]); setSession(s => ({ ...s, ...patch })); setShowFegyverfogás(false); }}
           onClose={() => setShowFegyverfogás(false)}
+        />
+      )}
+
+      {showPancelInfo && setKarakter && (
+        <PancelInfoPopup
+          karakter={karakter}
+          sfé_fizikai={hc.sfé_fizikai}
+          sfé_energia={hc.sfé_energia}
+          mgt={hc.páncélMGT}
+          lefedettség={hc.páncélLefedettség}
+          setKarakter={setKarakter}
+          onClose={() => setShowPancelInfo(false)}
         />
       )}
 

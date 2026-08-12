@@ -22,6 +22,7 @@ interface HarcHeaderProps {
   onVéResetClick: () => void;
   onKéClick: () => void;
   onTéClick: () => void;
+  onSféClick: () => void;
   onManőverClick: () => void;
   gameMode?: boolean;
 }
@@ -29,7 +30,7 @@ interface HarcHeaderProps {
 export function HarcHeader({
   ké, aktívTÉ, aktívVÉ, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont,
   maxVéCsökk, session, setSession, pushUndo, konstansok,
-  onVéChange, onVéLabelTap, onVéResetClick, onKéClick, onTéClick, onManőverClick, gameMode,
+  onVéChange, onVéLabelTap, onVéResetClick, onKéClick, onTéClick, onSféClick, onManőverClick, gameMode,
 }: HarcHeaderProps) {
   const [showMpPicker, setShowMpPicker] = useState(false);
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
@@ -62,7 +63,7 @@ export function HarcHeader({
         )}
       </div>
 
-      <div className="sfe-box">
+      <div className="sfe-box" onClick={onSféClick} style={{ cursor: 'pointer' }}>
         <span className="label">SFÉ (<span className="harc-monospace">{páncélLefedettség}%</span>)</span>
         <div className="sfe-values">
           <span className="sfe-line-fizikai"><strong>{sfé_fizikai}</strong>F</span>
