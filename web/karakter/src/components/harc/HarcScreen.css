@@ -364,10 +364,10 @@
 
 .tamado-sebzes-btn {
   padding: 12px 32px;
-  border: 1px solid var(--accent);
+  border: 1px solid #c76a6a;
   border-radius: 6px;
-  background: rgba(233, 69, 96, 0.12);
-  color: var(--accent);
+  background: rgba(199, 106, 106, 0.12);
+  color: #e08a8a;
   font-size: 16px;
   font-weight: bold;
   cursor: pointer;
@@ -381,7 +381,7 @@
 .tamado-sebzes-btn-hint {
   font-size: 12px;
   font-weight: normal;
-  color: var(--warning);
+  color: var(--color-taktika);
 }
 
 /* --- Sebzés bónusz section --- */
