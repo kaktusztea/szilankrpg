@@ -47,7 +47,7 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 
 - **Tulajdonságok**: koppintással popup-ból állíthatók (-5..+7), faj-korlátok ellenőrzésével
 - **Képzettségek**: csoportokba rendezve, szint popup-pal (1-15), TSz limit jelzéssel
-- **Fortélyok**: fok pöttyök (●/○), követelmény-ellenőrzés (piros jelzés nem teljesüléskor), többszörös fortélyok kezelése
+- **Fortélyok**: fok pöttyök (●/○), követelmény-ellenőrzés (piros jelzés nem teljesüléskor), többszörös fortélyok kezelése, egyedi Szabad fortély felvétele (saját név + kiterjesztés választás)
 - **Fegyverek**: példányonként Mesterfegyver fok, Idea, Anyag beállítás
 - **Páncél**: struktúra, fémalapanyag, kidolgozottság, sisak, végtag, méret - SFÉ és MGT automatikus számítás
 - **KP sáv**: a tab-bar felett folyamatosan mutatja a maradék KP-t és a primer keretet
@@ -55,11 +55,12 @@ Az alsó tab-sorral navigálhatsz (swipe gesztussal is), balról jobbra:
 ### Harckezelés (Játék mód)
 
 - **Aktív fül**: fegyverfogás (Egyfegyveres / Fegyver+pajzs / Fegyver+hárító / Kétkezes), taktikák kombó-szabályokkal, harci helyzetek, manőverek, státuszok - minden választás azonnal hat a Harc fülre
-- **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, SFÉ, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
+- **Harc fül**: fegyverenkénti TÉ/VÉ/SP/Támadás tábla, KÉ, TÉ, SFÉ, VÉ csökkenés, MP boxok a fejlécben, harcérték részletek bontás (TÉ/VÉ/SP összetevők: fegyver alap, MF, taktika, fortély, páncél stb.)
   - **Kezdeményezés dobás**: a KÉ boxra koppintva `KÉ + k20` dobás nagy számmal; az utolsó 3 dobás a KÉ boxban látszik
-  - **Támadó dobás**: az aktív fegyver TÉ cellájára (vagy a TÉ gombra) koppintva `TÉ + k20` dobás
+  - **Támadó dobás**: a fejléc TÉ boxra vagy a fegyvertábla TÉ cellájára koppintva `TÉ + k20` dobás; az utolsó 3 dobás a TÉ boxban is látszik
   - **VÉ csökkentés**: a VÉ csökkenés boxban a `-N` gombokkal csökkentheted a védőértéket (támadásonként), `+1` gombbal visszaállíthatsz egyet, `⟲` nullázza. A label/érték koppintással a csökkentések története is látszik
-  - **Manőver pont (MP)**: az MP box mutatja az aktuális/max manőver pontot; `-1` gombbal használsz el egyet, `⟲` visszaállítja mindet
+  - **Manőver pont (MP)**: az MP box mutatja az aktuális/max manőver pontot; koppintással megnyílik egy picker, ahol közvetlenül állíthatod az aktuális MP értékét (0-tól max-ig)
+  - **Manőver végrehajtása** (⚔️ gomb): a Harc fülön indítható manőver dobás. Először mód választó (Aktív = én hajtom végre / Passzív = ellenem hajtják végre), majd manőver lista. A kiválasztott manőver popup-ban fázisonkénti (M/V/E) dobás, MP felhasználás, belharcos bónusz — az eredmény fázisonként Igen/Nem.
   - **Harci akrobatika ki/be**: session kapcsoló (Igen/Nem) - letiltva ha hiányzik a fortély, nem megfelelő a páncél (struktúra vagy túl magas MGT), vagy kevés az Akrobatika képzettség szint (koppintásra megjelenik a hiányzó feltétel)
   - **Páncél viselve ki/be**: session kapcsoló (Igen/Nem) - viseled-e épp a páncélt (hat az SFÉ-re, MGT-re és a Harci akrobatika elérhetőségére)
 - **ÉP táblázat / Sebesülés**: S1-S4 rubrikák, TÉ levonás automatika
@@ -86,7 +87,7 @@ A fejléc ✏️ gombjával nyíló ablak három részből áll:
 - **Napló**: játék session bejegyzések (dátum, KM, kaland neve, események). Összecsukható lista, szerkeszthető.
 - **Jegyzetek**: szabad szöveges jegyzetmező (mindig nyitva).
 
-Alul összecsukható próba-segédlet: Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok - ez a Szilánk pont ablakban is elérhető (ott mindig nyitva).
+Alul összecsukható próba-segédlet: Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok.
 
 ## Előtörténet (🪪)
 
@@ -111,10 +112,14 @@ A Tulajdonságok+Képzettségek, Harcértékek és Misztikus füleken játék m�
 A Tulajdonságok+Képzettségek fülön játék módban bármelyik Tulajdonság boxra koppintva megnyílik a Tulajdonságpróba ablak (`Tulajdonság + k6 vs Célszám`):
 
 - **Nehézség** gomblista (inline): 3 (Könnyű) … 8 (Emberfeletti) — koppintással választható, aktív kiemelten jelölt
-- **Előny/Hátrány** választó (popup): Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
+- **Extrák** (lenyitható szekció):
+  - **Előny/Hátrány** választó: Hátrány-2, Hátrány-1, — (default), Előny+1, Előny+2
+  - **Összetett próba**: 1 elsődleges + 1-3 másodlagos dobás (egyre könnyebb célszámmal); összesített Siker/Sikertelen
+  - **Ellenpróba**: célszám nélkül dobsz — az eredményt az ellenfél dobásával kell összevetni
 - **Dobás**: az eredmény (legjobb/legrosszabb k6 az Előny/Hátrány szerint) a célszámhoz mérve → **Siker** (zöld) / **Sikertelen** (piros)
+- **Kiemelt siker/kudarc**: ha az eredmény és a célszám különbsége ≥ 6, ⚜️ Kiemelt siker / ⚜️ Kiemelt kudarc jelenik meg
 - Ha a célszám a max dobással (6) sem érhető el, „Lehetetlen" jelenik meg a Dobás gomb helyén
-- Escape: ha az Előny/Hátrány popup nyitva van → azt zárja; egyébként az egész ablakot bezárja
+- Escape / ✕: popup bezárása
 
 ### Képzettségpróba dobás (🎲, Játék mód)
 
@@ -123,9 +128,15 @@ A képzettség info paneljében a 🎲 gombbal nyíló ablak levezényli a képz
 - **Tulajdonság** és **Nehézség** gomblista (inline, két oszlopban). A Dobás gomb inaktív, amíg mindkettő nincs kiválasztva.
 - **Nehézség**: alapból a 6 (Könnyű) … 21 (Emberfeletti) célszámok; a ▾ nyíllal a 21 felettiek is (24, 27, 30).
 - **Kiterjesztő fortély** (ha a képzettséghez tartozik ilyen, popup): választható, hogy melyik fortély terjeszti ki a próbát. Kis státusz pötty jelzi: zöld = felvéve, sárga = hiányzó Normál kiterjesztés, piros = hiányzó Erős kiterjesztés. A fortély **foka** szerint a próba Előny/Hátrány dobást kap (Normál 0.fok → Hátrány-2, 2.fok → Előny+1, 3.fok → Előny+2). Erős kiterjesztés hiányában a próba nem dobható („Nem dobhatsz").
+- **Extrák** (lenyitható szekció):
+  - **Összetett próba**: 1 elsődleges + 1-3 másodlagos dobás (könnyebb célszámmal); összesített Siker/Sikertelen
+  - **Vállalás** (1-3): bónuszként hozzáadódik a próbához, de a dobás után k6 kritikus hiba ellenőrzés — ha k6 ≤ vállalás értéke, Kritikus Hiba
+  - **Ellenpróba**: célszám nélkül dobsz — az eredményt az ellenfél dobásával kell összevetni
+  - **Helyettesítés**: másik képzettséggel dobsz a próba eredeti képzettsége helyett (az eredeti szint helyett `floor(helyettesítő szint / 3)`, max 5 értékkel)
 - **Dobás**: az eredmény (a legjobb/legrosszabb k10 az Előny/Hátrány szerint) a célszámhoz mérve → **Siker** (zöld) / **Sikertelen** (piros).
+- **Kiemelt siker/kudarc**: ha az eredmény és a célszám különbsége ≥ 6, ⚜️ Kiemelt siker / ⚜️ Kiemelt kudarc jelenik meg
 - Ha a célszám a max dobással sem érhető el, „Lehetetlen" jelenik meg a Dobás gomb helyén.
-- Escape: ha a Kiterjesztő fortély popup nyitva van → azt zárja; egyébként az egész ablakot bezárja.
+- Escape / ✕: popup bezárása
 
 ### Szabály linkek (🔗)
 
@@ -143,7 +154,7 @@ A Misztikus fülön a **Mágia akarata** kártyára koppintva egy négyfüles re
 A fejlécben a "Szilánk" felirat melletti keretes számra koppintva megnyílik a Szilánk pont ablak, ami egyben gyors-elérési hub is:
 - 0–3 közötti Szilánk pont érték választható
 - **Szabályrendszer** link (a szabálykönyv GitHub oldalára navigál)
-- Próba-segédlet (mindig nyitva): Tulajdonságpróba (k6) és Képzettségpróba (k10) célszámok
+- **Webapp manuál** link (ez a README)
 
 
 ### Undo (Visszavonás)
