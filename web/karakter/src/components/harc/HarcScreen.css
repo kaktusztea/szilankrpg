@@ -430,3 +430,68 @@
   color: var(--text-dim);
   font-family: monospace;
 }
+
+/* --- Dobás info (active effects, informational) --- */
+.dobas-info-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 6px 8px;
+  border: 1px dashed var(--border);
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.dobas-info-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.dobas-info-badge {
+  font-weight: bold;
+  font-size: 11px;
+  padding: 1px 6px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.dobas-info-badge.előny {
+  color: var(--success);
+  background: rgba(76, 175, 80, 0.1);
+}
+
+.dobas-info-badge.hátrány {
+  color: var(--warning);
+  background: rgba(255, 152, 0, 0.1);
+}
+
+.dobas-info-badge.enyhít {
+  color: var(--color-taktika);
+  background: rgba(144, 202, 249, 0.1);
+}
+
+.dobas-info-badge.sp {
+  color: var(--color-fortely);
+  background: rgba(206, 147, 216, 0.1);
+}
+
+.dobas-info-badge.note {
+  color: var(--warning);
+}
+
+.dobas-notes .dobas-info-source {
+  color: var(--warning);
+  font-size: 12px;
+}
+
+.dobas-info-source {
+  color: var(--text-dim);
+  font-size: 11px;
+}
+
+.dobas-sp-info {
+  margin-top: 4px;
+}

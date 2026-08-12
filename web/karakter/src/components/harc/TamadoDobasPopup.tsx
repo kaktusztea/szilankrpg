@@ -3,6 +3,8 @@ import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from './ElonyPicker';
 import { SebzesPopup } from './SebzesPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
+import type { DobásInfo, DobásHatás } from './combat-roll-info';
+import { netElőnySzint } from './combat-roll-info';
 
 /**
  * Derive Sebzés Előny from the TÉ k20 roll value:
@@ -19,6 +21,8 @@ interface Props {
   té: number;
   /** Active weapon SP value (from reactive engine) */
   sp: number;
+  /** Collected active effects on TÉ/Sebzés rolls */
+  dobásInfo: DobásInfo;
   onClose: (téEredmény: number | null) => void;
 }
 
@@ -30,11 +34,11 @@ interface TéEredmény {
 
 /**
  * Támadó dobás popup — two-phase:
- *  Phase 1: Előny/Hátrány picker + Dobás button
+ *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
  *  Phase 2: Result display + Sebzés button → opens SebzesPopup
  */
-export function TamadoDobasPopup({ té, sp, onClose }: Props) {
-  const [szint, setSzint] = useState(0);
+export function TamadoDobasPopup({ té, sp, dobásInfo, onClose }: Props) {
+  const [szint, setSzint] = useState(() => netElőnySzint(dobásInfo.téHatások));
   const [téResult, setTéResult] = useState<TéEredmény | null>(null);
   const [showSebzés, setShowSebzés] = useState(false);
 
@@ -51,6 +55,10 @@ export function TamadoDobasPopup({ té, sp, onClose }: Props) {
       <SebzesPopup
         sp={sp}
         defaultElőny={sebzésElőny}
+        téK20={k20Érték}
+        sebzésHatások={dobásInfo.sebzésHatások}
+        spBónuszok={dobásInfo.spBónuszok}
+        megjegyzések={dobásInfo.sebzésMegjegyzések}
         onClose={() => onClose(téResult?.eredmény ?? null)}
       />
     );
@@ -63,7 +71,20 @@ export function TamadoDobasPopup({ té, sp, onClose }: Props) {
 
         {!téResult ? (
           <>
+            {dobásInfo.téMegjegyzések.length > 0 && (
+              <div className="dobas-info-list dobas-notes">
+                {dobásInfo.téMegjegyzések.map((m, i) => (
+                  <div key={i} className="dobas-info-item">
+                    <span className="dobas-info-badge note">⚠</span>
+                    <span className="dobas-info-source">{m.forrás}: {m.szöveg}</span>
+                  </div>
+                ))}
+              </div>
+            )}
             <ElonyPicker szint={szint} onChange={setSzint} />
+            {dobásInfo.téHatások.length > 0 && (
+              <HatásokInfo hatások={dobásInfo.téHatások} />
+            )}
             <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>
           </>
         ) : (
@@ -84,3 +105,24 @@ export function TamadoDobasPopup({ té, sp, onClose }: Props) {
     </PopupOverlay>
   );
 }
+
+// ─── Shared info display for active Előny/Hátrány effects ──────────────────
+
+function HatásokInfo({ hatások }: { hatások: DobásHatás[] }) {
+  return (
+    <div className="dobas-info-list">
+      {hatások.map((h, i) => (
+        <div key={i} className="dobas-info-item">
+          <span className={`dobas-info-badge ${h.operátor}`}>
+            {h.operátor === 'előny' ? `Előny+${Math.abs(h.érték)}` :
+             h.operátor === 'hátrány' ? `Hátrány-${Math.abs(h.érték)}` :
+             h.operátor === 'enyhít' ? `Enyhít+${Math.abs(h.érték)}` : '—'}
+          </span>
+          <span className="dobas-info-source">{h.forrás}</span>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ponytail: HatásokInfo is internal-only; if SebzesPopup needs it later, move to a shared file.

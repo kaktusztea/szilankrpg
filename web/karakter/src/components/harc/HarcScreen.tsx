@@ -14,6 +14,7 @@ import { calcFtEnyhites as calcFtEnyhítés } from './pancel-calc';
 import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás } from './DobasPopup';
 import { TamadoDobasPopup } from './TamadoDobasPopup';
+import { collectDobásInfo } from './combat-roll-info';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
 import { PickerOverlay } from '../aktiv/PickerOverlay';
 import { computeTÉ, computeVÉ } from './shared';
@@ -251,6 +252,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         <TamadoDobasPopup
           té={aktívTÉ}
           sp={ctx?.result.SP ?? 0}
+          dobásInfo={collectDobásInfo(session, karakter, data)}
           onClose={handleTamadoClose}
         />
       )}
