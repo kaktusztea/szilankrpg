@@ -46,7 +46,7 @@
 .ke-box { cursor: pointer; }
 .te-box { cursor: pointer; }
 
-.sfe-box { align-items: flex-start !important; }
+.sfe-box { align-items: center !important; }
 
 .ke-box .label, .te-box .label, .sfe-box .label { font-size: 16px; font-weight: bold; color: var(--text); text-transform: uppercase; }
 .ke-box .value, .te-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
