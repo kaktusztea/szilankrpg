@@ -7,24 +7,33 @@
 /* --- Header box grid --- */
 .harc-header {
   display: grid;
-  grid-template-columns: auto 1fr auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: auto auto;
   gap: 8px;
   margin-bottom: 12px;
 }
 
+/* Desktop: Row 1 = KÉ TÉ SFÉ VÉcsökk, Row 2 = bottom (Manőver + MP spanning all) */
+.ke-box       { grid-column: 1; grid-row: 1; }
+.te-box       { grid-column: 2; grid-row: 1; }
+.sfe-box      { grid-column: 3; grid-row: 1; }
+.ve-csokk-box { grid-column: 4; grid-row: 1; }
+.harc-header-bottom { grid-column: 1 / -1; grid-row: 2; }
+
 @media (max-width: 480px) {
   .harc-header {
-    grid-template-columns: auto 1fr;
-    grid-template-rows: auto auto;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto;
   }
-  /* Row 1: KÉ + SFÉ, Row 2: VÉ csökk + MP */
-  .ke-box       { grid-column: 1; grid-row: 1; width: 100%; }
-  .sfe-box      { grid-column: 2; grid-row: 1; }
-  .ve-csokk-box { grid-column: 1; grid-row: 2; }
-  .mp-box       { grid-column: 2; grid-row: 2; }
+  /* Row 1: KÉ + TÉ, Row 2: SFÉ + VÉ csökk, Row 3: bottom */
+  .ke-box       { grid-column: 1; grid-row: 1; }
+  .te-box       { grid-column: 2; grid-row: 1; }
+  .sfe-box      { grid-column: 1; grid-row: 2; }
+  .ve-csokk-box { grid-column: 2; grid-row: 2; }
+  .harc-header-bottom { grid-column: 1 / -1; grid-row: 3; }
 }
 
-.ke-box, .sfe-box, .ve-csokk-box, .mp-box {
+.ke-box, .te-box, .sfe-box, .ve-csokk-box {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: 6px;
@@ -35,17 +44,65 @@
 }
 
 .ke-box { cursor: pointer; }
-
-@media (min-width: 481px) {
-  .ke-box { width: 96px; flex-shrink: 0; }
-}
+.te-box { cursor: pointer; }
 
 .sfe-box { align-items: flex-start !important; }
 
-.ke-box .label, .sfe-box .label { font-size: 16px; font-weight: bold; color: var(--text); text-transform: uppercase; }
-.ke-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
+.ke-box .label, .te-box .label, .sfe-box .label { font-size: 16px; font-weight: bold; color: var(--text); text-transform: uppercase; }
+.ke-box .value, .te-box .value { font-size: 28px; font-weight: bold; color: var(--text); }
+.te-box .value { color: var(--color-taktika); }
 .ve-csokk-box .value { font-size: 24px; font-weight: bold; color: var(--warning); }
-.mp-box .value { font-size: 20px; font-weight: bold; color: var(--success); }
+
+/* --- Header bottom row (Manőver + MP) --- */
+.harc-header-bottom {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.harc-header-bottom .harc-manover-btn {
+  flex: 1;
+  margin: 0;
+}
+
+.harc-header-bottom .mp-box {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 12px;
+  white-space: nowrap;
+}
+
+.harc-header-bottom .mp-box .label {
+  font-size: 18px;
+  font-weight: normal;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.harc-header-bottom .mp-box .mp-value {
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--success);
+  font-family: monospace;
+}
+
+.harc-header-bottom .mp-box .mp-reset-btn {
+  background: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--border-input);
+  border-radius: 3px;
+  padding: 2px 7px;
+  cursor: pointer;
+  font-size: 16px;
+  font-family: monospace;
+}
+
+.harc-header-bottom .mp-box .mp-reset-btn:disabled { opacity: 0.3; cursor: default; }
 
 .sfe-values { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
 .sfe-line { font-size: 16px; }
@@ -95,7 +152,7 @@
 }
 
 .harc-table th { background: var(--primary); font-size: 17px; }
-.harc-table th.te-col { color: var(--accent); }
+.harc-table th.te-col { color: var(--color-taktika); }
 .harc-table th.ve-col { color: var(--warning); }
 .harc-table td:first-child { text-align: left; }
 .harc-table td:not(:first-child) { font-family: monospace; }
@@ -168,7 +225,6 @@
 .harc-monospace { font-family: monospace; }
 .btn-reset-sm { font-size: 15px; }
 .harc-fegyver-active-row { border: 2px solid var(--color-taktika); }
-.harc-fegyver-active-row td:not(:first-child) { font-size: 18px; }
 .harc-sfe-secondary { color: #aaa; }
 
 /* --- Popup helpers --- */

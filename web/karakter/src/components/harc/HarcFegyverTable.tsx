@@ -19,14 +19,12 @@ interface HarcFegyverTableProps {
   belharciAktív: boolean;
   véFlash: '' | 'down' | 'up';
   onTámInfoClick: (info: { név: string; sebesség: number; harckeret: number }) => void;
-  onTéDobás?: (té: number) => void;
-  téDobások?: number[];
 }
 
 export function HarcFegyverTable({
   karakter, session, data, fegyverResults, kétkezesResult, fogásResult,
   pajzsVÉ, pajzsFegyverNév, taktikaMods, fortelyMods,
-  téLevonás, belharciAktív, véFlash, onTámInfoClick, onTéDobás, téDobások,
+  téLevonás, belharciAktív, véFlash, onTámInfoClick,
 }: HarcFegyverTableProps) {
   const { konstansok } = data;
   const többTámTÉ = konstansok.több_támadás_TÉ_levonás;
@@ -83,42 +81,13 @@ export function HarcFegyverTable({
     return null;
   }
 
-  // Active weapon's displayed TÉ — the "TÉ" header button rolls this value.
-  function getActiveRowTÉ(): number | null {
-    if (kétkezesResult) {
-      return computeTÉ(kétkezesResult.TÉ, téLevonás, taktikaMods['TÉ'], 0, kétkezesResult.támadások, többTámTÉ);
-    }
-    if (fogásResult) {
-      const r = fegyverResults.find(fr => fr.fegyver_név === getAktívFegyverNév()) ?? fegyverResults[0];
-      if (!r) return null;
-      return computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], fogásResult.TÉ_büntetés, r.támadások, többTámTÉ);
-    }
-    const r = fegyverResults.find(fr => fr.fegyver_név === getAktívFegyverNév());
-    if (!r) return null;
-    return computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], 0, r.támadások, többTámTÉ);
-  }
-  const aktívTÉ = getActiveRowTÉ();
-
   return (
     <table className="harc-table">
       <thead>
         <tr>
           <th>{belharciAktív ? <span className="harc-belharc-label">BELHARC</span> : 'Fegyver'}</th>
           <th>Tám</th>
-          <th className="te-col">
-            {onTéDobás && aktívTÉ != null
-              ? <div className="te-header-wrap" onClick={() => onTéDobás(aktívTÉ)}>
-                  <span className="harc-te-dobas-btn">TÉ</span>
-                  {téDobások && téDobások.length > 0 && (
-                    <div className="ke-history">
-                      {téDobások.map((d, i) => (
-                        <span key={i} className="ke-history-item">{d}</span>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              : 'TÉ'}
-          </th>
+          <th className="te-col">TÉ</th>
           <th className="ve-col">VÉ</th><th>SP</th><th>Ph</th>
         </tr>
       </thead>

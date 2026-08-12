@@ -15,6 +15,8 @@ import { calcSérültFok } from './ep-logic';
 import { DobasPopup, pushDobás } from './DobasPopup';
 import { ManoverDobasPopup } from '../aktiv/ManoverDobasPopup';
 import { PickerOverlay } from '../aktiv/PickerOverlay';
+import { computeTÉ } from './shared';
+import { lookupFegyver } from '../../engine/utils';
 import { rollK20 } from '../../engine/dice';
 import './HarcScreen.css';
 
@@ -108,6 +110,35 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
   const rawTéLevonás = hc.téLevonások[aktKat];
   const téLevonás = rawTéLevonás === 0 ? 0 : Math.min(0, rawTéLevonás + ftEnyhítés);
 
+  // Compute active weapon TÉ for the header box
+  const getAktívTÉ = useCallback((): number | null => {
+    const többTámTÉ = data.konstansok.több_támadás_TÉ_levonás;
+    if (hc.kétkezesResult) {
+      return computeTÉ(hc.kétkezesResult.TÉ, téLevonás, hc.taktikaMods['TÉ'], 0, hc.kétkezesResult.támadások, többTámTÉ);
+    }
+    if (hc.fogásResult) {
+      const jobbIdx = session.aktív_fegyver_index;
+      const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
+      const jobbNév = jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? 'Puszta kéz') : 'Puszta kéz';
+      const r = hc.fegyverResults.find(fr => fr.fegyver_név === jobbNév) ?? hc.fegyverResults[0];
+      if (!r) return null;
+      return computeTÉ(r.TÉ, téLevonás, hc.taktikaMods['TÉ'], hc.fogásResult.TÉ_büntetés, r.támadások, többTámTÉ);
+    }
+    const jobbIdx = session.aktív_fegyver_index;
+    const jobbFp = jobbIdx >= 0 ? karakter.fegyverek[jobbIdx] : null;
+    const jobbNév = jobbFp ? (lookupFegyver(data.fegyverek, jobbFp.alap)?.Fegyver ?? 'Puszta kéz') : 'Puszta kéz';
+    if (session.aktív_fegyver_index === -2) {
+      const r = hc.fegyverResults.find(fr => fr.fegyver_név === (hc.pajzsFegyverNév ?? ''));
+      if (!r) return null;
+      return computeTÉ(r.TÉ, téLevonás, hc.taktikaMods['TÉ'], 0, r.támadások, többTámTÉ);
+    }
+    const r = hc.fegyverResults.find(fr => fr.fegyver_név === jobbNév);
+    if (!r) return null;
+    return computeTÉ(r.TÉ, téLevonás, hc.taktikaMods['TÉ'], 0, r.támadások, többTámTÉ);
+  }, [hc, téLevonás, session.aktív_fegyver_index, karakter.fegyverek, data]);
+
+  const aktívTÉ = getAktívTÉ();
+
   const handleSebzésekChange = useCallback((sebzések: SebzésRubrika[], leírás: string) => {
     pushUndo(leírás, [{ field: 'session', prev: session }]);
     setSession(prev => ({ ...prev, sebzések }));
@@ -138,6 +169,7 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
 
       <HarcHeader
         ké={hc.ké}
+        aktívTÉ={aktívTÉ}
         sfé_fizikai={hc.sfé_fizikai}
         sfé_energia={hc.sfé_energia}
         páncélLefedettség={hc.páncélLefedettség}
@@ -151,12 +183,10 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         onVéLabelTap={() => { if (session.vé_csökkenés > 0) setShowVéHistory(true); }}
         onVéResetClick={() => setShowVéResetConfirm(true)}
         onKéClick={handleKéClick}
+        onTéClick={() => { if (aktívTÉ != null) handleTéDobás(aktívTÉ); }}
+        onManőverClick={() => setManoverPicker('mód')}
         gameMode={gameMode}
       />
-
-      {gameMode && (
-        <button className="harc-manover-btn" onClick={() => setManoverPicker('mód')}>⚔️ Manőver végrehajtása</button>
-      )}
 
       <HarcFegyverTable
         karakter={karakter}
@@ -173,8 +203,6 @@ export function HarcScreen({ data, karakter, session, setSession, pushUndo, onNa
         belharciAktív={hc.belharciAktív}
         véFlash={véFlash}
         onTámInfoClick={setTámInfo}
-        onTéDobás={gameMode ? handleTéDobás : undefined}
-        téDobások={session.té_dobások}
       />
 
       <div className="harc-section">

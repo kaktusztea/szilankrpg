@@ -4,6 +4,7 @@ import type { UndoPatch } from '../../hooks/useUndo';
 
 interface HarcHeaderProps {
   ké: number;
+  aktívTÉ: number | null;
   sfé_fizikai: number;
   sfé_energia: number;
   páncélLefedettség: number;
@@ -17,24 +18,40 @@ interface HarcHeaderProps {
   onVéLabelTap: () => void;
   onVéResetClick: () => void;
   onKéClick: () => void;
+  onTéClick: () => void;
+  onManőverClick: () => void;
   gameMode?: boolean;
 }
 
 export function HarcHeader({
-  ké, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont,
-  maxVéCsökk, session, setSession, konstansok,
-  onVéChange, onVéLabelTap, onVéResetClick, onKéClick, gameMode,
+  ké, aktívTÉ, sfé_fizikai, sfé_energia, páncélLefedettség, manöverPont,
+  maxVéCsökk, session, setSession, pushUndo, konstansok,
+  onVéChange, onVéLabelTap, onVéResetClick, onKéClick, onTéClick, onManőverClick, gameMode,
 }: HarcHeaderProps) {
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
 
   return (
     <div className="harc-header">
+      {/* Row 1: KÉ + TÉ (mobile) / KÉ + TÉ + SFÉ + VÉ csökk (desktop) */}
       <div className="ke-box" onClick={gameMode ? onKéClick : undefined} style={gameMode ? undefined : { cursor: 'default' }}>
         <span className="label">KÉ</span>
         <span className="value">{ké}</span>
         {session.ké_dobások.length > 0 && (
           <div className="ke-history">
             {session.ké_dobások.map((d, i) => (
+              <span key={i} className="ke-history-item">{d}</span>
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div className="te-box" onClick={gameMode && aktívTÉ != null ? onTéClick : undefined}
+        style={gameMode && aktívTÉ != null ? undefined : { cursor: 'default' }}>
+        <span className="label">TÉ</span>
+        <span className="value">{aktívTÉ ?? '—'}</span>
+        {(session.té_dobások ?? []).length > 0 && (
+          <div className="ke-history">
+            {(session.té_dobások ?? []).map((d, i) => (
               <span key={i} className="ke-history-item">{d}</span>
             ))}
           </div>
@@ -65,14 +82,16 @@ export function HarcHeader({
         </div>
       </div>
 
-      <div className="mp-box">
-        <span className="label">MP</span>
-        <span className="value">{aktMP}/{manöverPont}</span>
-        <div className="ve-btns">
-          <button disabled={!gameMode || aktMP === 0}
-            onClick={() => setSession(prev => ({ ...prev, manőver_pont_használt: prev.manőver_pont_használt + 1 }))}>-1</button>
-          <button disabled={!gameMode || session.manőver_pont_használt === 0}
-            onClick={() => setSession(prev => ({ ...prev, manőver_pont_használt: 0 }))}>⟲</button>
+      {/* Row 3 (mobile) / Row 2 (desktop): Manőver + MP */}
+      <div className="harc-header-bottom">
+        {gameMode && (
+          <button className="harc-manover-btn" onClick={onManőverClick}>⚔️ Manőver végrehajtása</button>
+        )}
+        <div className="mp-box">
+          <span className="label">MP</span>
+          <span className="mp-value">{aktMP}/{manöverPont}</span>
+          <button className="mp-reset-btn" disabled={!gameMode || session.manőver_pont_használt === 0}
+            onClick={() => { pushUndo('MP: reset', [{ field: 'session', prev: session }]); setSession(prev => ({ ...prev, manőver_pont_használt: 0 })); }}>⟲</button>
         </div>
       </div>
     </div>
