@@ -113,9 +113,12 @@
   justify-content: center;
 }
 
-.sfe-values { display: flex; flex-direction: column; gap: 2px; margin-top: 4px; }
-.sfe-line { font-size: 16px; }
-.sfe-line strong { font-size: 16px; font-family: monospace; }
+.sfe-values { display: flex; flex-direction: row; align-items: baseline; gap: 0; margin-top: 4px; }
+.sfe-line-fizikai { font-size: 26px; }
+.sfe-line-fizikai strong { font-size: 28px; font-family: monospace; font-weight: bold; }
+.sfe-sep { font-size: 26px; color: #666; }
+.sfe-line-energia { font-size: 26px; color: #aaa; }
+.sfe-line-energia strong { font-size: 28px; font-family: monospace; font-weight: bold; color: #aaa; }
 
 /* --- VÉ gombok --- */
 .ve-btns { display: flex; gap: 4px; margin-top: 4px; }
@@ -234,7 +237,6 @@
 .harc-monospace { font-family: monospace; }
 .btn-reset-sm { font-size: 15px; }
 .harc-fegyver-active-row { border: 2px solid var(--color-taktika); }
-.harc-sfe-secondary { color: #aaa; }
 
 /* --- Popup helpers --- */
 .harc-confirm-center { display: flex; align-items: center; justify-content: center; }

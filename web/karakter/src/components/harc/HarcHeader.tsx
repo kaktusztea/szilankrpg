@@ -64,8 +64,9 @@ export function HarcHeader({
       <div className="sfe-box">
         <span className="label">SFÉ (<span className="harc-monospace">{páncélLefedettség}%</span>)</span>
         <div className="sfe-values">
-          <span className="sfe-line">Fizikai: <strong>{sfé_fizikai}</strong></span>
-          <span className="sfe-line harc-sfe-secondary">Energia: <strong>{sfé_energia}</strong></span>
+          <span className="sfe-line-fizikai"><strong>{sfé_fizikai}</strong>F</span>
+          <span className="sfe-sep">/</span>
+          <span className="sfe-line-energia"><strong>{sfé_energia}</strong>E</span>
         </div>
       </div>
 
