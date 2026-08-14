@@ -113,7 +113,7 @@ Mindenképp szeretnéd magadhoz ragadni a Kezdeményezést.
 Átengedett KÉ
   ha megnyerted
 
-TÉ:+2 első
+TÉ:+3 első
   visszatámadásra
   ha nem kaptál sebet
 ```
