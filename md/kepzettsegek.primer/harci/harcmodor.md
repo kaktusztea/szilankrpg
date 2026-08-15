@@ -37,6 +37,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 [Skálázható Harci taktikák](../../065_02_harci_taktikak.md): Támadó, Védő, Kezdeményező, Támadás erőből
 
 ```
+Skálázható Harci taktikák
 +4: Maximális felső korlátjuk ennyire nő
 ```
 
