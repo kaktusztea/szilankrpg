@@ -4,10 +4,6 @@ Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a sz
 
 🔆 **Nem használható hazudozásra**, mások becsapására. Arra lásd a [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettséget.
 
-### Követelmény
-
-- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) Udvari foka
-
 ### Kiterjeszti ezeket
 
 - [Előadóművészet](../kepzettsegek.szekunder/eloadomuveszet.md): Életed a világot jelentő deszkák. Vándorszínház csepűrágója, vagy a nagyvárosok ünnepelt színészóriása vagy - ugyanúgy a publikum hálájára vágysz. Az adott [Kultúrkörnek](../fortelyok.kiemelt/kulturkor.md) megfelelő darabokban játszol.
