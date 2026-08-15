@@ -8401,11 +8401,29 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 
 ### Mesterbónuszok
 
+#### 🌟 `6.szint`
+
+[Skálázható Harci taktikák](../../065_02_harci_taktikak.md): Támadó, Védő, Kezdeményező, Támadás erőből
+
+```
++4: Maximális felső korlátjuk ennyire nő
+```
+
 #### 🌟 `9.szint`
+
+```
+Skálázható Harci taktikák
++5: Maximális felső korlátjuk ennyire nő
+```
 
 Ha kezedbe veszel egy fegyvert, meg tudod mondani, mekkora az [Ideája](../../068_01_14_fegyverek_minosege_ideaja.md). Ha leplezetlen mágia van benne azt is érzékeled.
 
 #### 🌟 `12.szint`
+
+```
+Skálázható Harci taktikák
++6: Maximális felső korlátjuk ennyire nő
+```
 
 - Bármilyen fegyvert veszel a kezedbe, annak Sebzése mágikus lesz.
 - A [Sebzéstípus másodlagos](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-másodlagos) és [Sebzéstípus alkalmatlan](../../065_01_04_fegyver_harci_helyzetek.md#sebzéstípus-alkalmatlan) Harci helyzetek `Hátrány` büntetései csökkennek `1`-gyel.
@@ -18130,12 +18148,10 @@ CÉ levonás
 
 🔒 **Követelmény**:
 - Lovaglás/Léglovaglás - `6.szint`
-- Távolsági harcmodor - `5.szint`\
+- Távolsági harcmodor - `6.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
-- [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) - `1.fok`
-- [Lovas harc](../fortelyok.harci/lovas_harc.md) - `2.fok`
 
-🌟 `CÉ:-3` Ügetésben, `CÉ:-7` Vágtában
+🌟 `CÉ:-3` Ügetésben; `CÉ:-7` Vágtában
 
 ### 2. fok
 
@@ -18143,8 +18159,6 @@ CÉ levonás
 - Lovaglás/Léglovaglás - `9.szint`
 - Távolsági harcmodor - `9.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
-- [Mesterfegyver](../fortelyok.harci/mesterfegyver.md) - `2.fok`
-- [Lovas harc](../fortelyok.harci/lovas_harc.md) - `3.fok`
 
 🌟 `CÉ:-3` vágtában
 
@@ -22798,7 +22812,7 @@ Mindenképp szeretnéd magadhoz ragadni a Kezdeményezést.
 Átengedett KÉ
   ha megnyerted
 
-TÉ:+2 első
+TÉ:+3 első
   visszatámadásra
   ha nem kaptál sebet
 ```
