@@ -1,12 +1,14 @@
-## 🟣 Helyismeret (1) (városnyi terület) 🔁
+## 🟣 Helyismeret (1) (adott terület) 🔁
 
 <!-- tag: md_fortely_multiple_helyismeret -->
 
 ```
-1 fokú
-
-Többször felvehető egy-egy
-  átlagos városnyi területre
+Többször felvehető
+  - falvaknál egy uradalom
+    (több falu és a vár)
+  - város/városállam
+  - nagyvárosnak egy kerülete
+    (erioni, shuluri)
 
 1.Tapasztalati Szinttől kezdve
   minden 2. TSz-en kapsz egyet
