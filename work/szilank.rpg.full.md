@@ -8406,6 +8406,7 @@ Alább összesen `5` ilyen különálló harcmodor képzettség általános leí
 [Skálázható Harci taktikák](../../065_02_harci_taktikak.md): Támadó, Védő, Kezdeményező, Támadás erőből
 
 ```
+Skálázható Harci taktikák
 +4: Maximális felső korlátjuk ennyire nő
 ```
 
@@ -17424,10 +17425,6 @@ Jellemzően NJK ismeret.
 Képes vagy színpadi műveket előadni, előadásban részt venni. Ismered a színházi világot. Bábszínház előadások ismerete, árnyjátékok ismerete is ide tartozik.
 
 🔆 **Nem használható hazudozásra**, mások becsapására. Arra lásd a [Befolyásolás](../kepzettsegek.primer/altalanos/befolyasolas.md) képzettséget.
-
-### Követelmény
-
-- [Nyelvismeret](../fortelyok.kiemelt/nyelvismeret.md) fortély (adott nyelv) Udvari foka
 
 ### Kiterjeszti ezeket
 
