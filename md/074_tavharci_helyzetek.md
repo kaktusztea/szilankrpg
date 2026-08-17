@@ -7,7 +7,6 @@ A [Harci helyzetek](065_01_04_fegyver_harci_helyzetek.md) távolsági harcra von
 - [Lövés reflexből](#lövés-reflexből)
 - [Nyílpuska újratöltés](#nyílpuska-újratöltés)
 
-
 ---
 ## Hajítás alkalmatlan fegyverrel
 
