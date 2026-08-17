@@ -165,7 +165,7 @@ Sikeres próba kell:
   Közelharci VÉ (Puszta kézzel)
 
 Bónuszok
-  Előny+2 Támadó dobásra
+  Előny+2 TÉ dobásra
 
   Orgyilkos fortély
     1.fok: Előny+1 Sebzés dobásra, +1 SP
