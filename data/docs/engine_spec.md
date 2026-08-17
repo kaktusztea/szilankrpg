@@ -734,8 +734,8 @@ Három forrásból:
    Pl. Kitartott célzás fejlesztése: +4 CÉ (feltétel: taktika:kitartott_célzás)
        → összesen +7 CÉ kitartott célzás + fortély esetén
 
-Lövés reflexből: -7 CÉ (harci helyzet hatásként, alapesetben)
-Lövés reflexből + "Lövés reflexből fejlesztése" fortély: kioltja a -7 büntetést
+Lövés reflexből: Hátrány-1 CÉ dobásra (harci helyzet hatásként, alapesetben)
+Lövés reflexből + "Lövés reflexből fejlesztése" fortély: kioltja a hátrányát
 
 note: Célzó dobás esetén NINCS -4 levonás az egy körön belül végzett
       újabb támadásokra (mint sima fegyveres harcnál). Minden dobás
@@ -1120,7 +1120,7 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 |---------|-----|---------|
 | Hajítás alkalmatlan fegyverrel | hajítás_alkalmatlan_fegyverrel | Hátrány-2 Sebzésdobás, Hátrány-2 CÉ, Fegyver CÉ=0, SP: fegyver-5. Fortély mérsékli. |
 | Hajítás nem dobásra készített | hajítás_nem_dobásra_készített | Hátrány-1 Sebzésdobás, Hátrány-1 CÉ, Fegyver CÉ=0, SP:(-5+k20). Fortély mérsékli. |
-| Lövés reflexből | lövés_reflexből | Hátrány CÉ:-7. Fortély kioltja. |
+| Lövés reflexből | lövés_reflexből | Hátrány-1 CÉ dobásra. Fortély kioltja. |
 | Nyílpuska újratöltés | nyílpuska_újratöltés | Csak 2 körönként lőhet. Fortéllyal 1/kör. |
 
 #### Rejtett (automatikus, nem picker-ben)

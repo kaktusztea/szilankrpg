@@ -442,8 +442,11 @@ harci_helyzetek:
   kizár_helyzetek: []
 
 - név: "Lövés reflexből"
-  infó: "Váratlan lövés/hajítás. Lövés reflexből fejlesztése fortély kioltja a CÉ büntetést."
-  hatások: []
+  infó: "Váratlan lövés/hajítás. Hátrány-1 CÉ dobásra. Lövés reflexből fejlesztése fortély kioltja."
+  hatások:
+  - operátor: "hátrány"
+    érték: -1
+    cél: "cé_dobás"
   id: "lövés_reflexből"
   csoport: "távharc"
   rejtett: false
