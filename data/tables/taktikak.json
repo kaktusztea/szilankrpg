@@ -94,7 +94,7 @@
         "VÉ": -3
       }
     ],
-    "megjegyzés": "Skálázható: Harcmodor szinttel nő a max fok.",
+    "megjegyzés": "Skálázható. Harcmodor szinttel nő a max fok.",
     "kombó_mód": "whitelist",
     "kombó_lista": [
       "Támadó",
@@ -202,7 +202,7 @@
         "SP": 3
       }
     ],
-    "megjegyzés": "Skálázható: Harcmodor szinttel nő a max fok.",
+    "megjegyzés": "Skálázható. Harcmodor szinttel nő a max fok.",
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
@@ -236,7 +236,7 @@
         "VÉ": -6
       }
     ],
-    "megjegyzés": "Skálázható: Harcmodor szinttel nő a max fok.",
+    "megjegyzés": "Skálázható. Harcmodor szinttel nő a max fok.",
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
@@ -272,7 +272,7 @@
         "TÉ": -6
       }
     ],
-    "megjegyzés": "Skálázható: Harcmodor szinttel nő a max fok.",
+    "megjegyzés": "Skálázható. Harcmodor szinttel nő a max fok.",
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [

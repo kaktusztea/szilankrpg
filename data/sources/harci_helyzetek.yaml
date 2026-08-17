@@ -195,7 +195,7 @@ harci_helyzetek:
   infó: "Előny+2 TÉ dobásra. Roham pluszban. Fárasztó taktika OK."
   hatások:
   - operátor: "előny"
-    érték: 1
+    érték: 2
     cél: "té_dobás"
   id: "levegőből"
   csoport: "pozitív"
