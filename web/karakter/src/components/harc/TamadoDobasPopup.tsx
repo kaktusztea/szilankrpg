@@ -73,6 +73,7 @@ export function TamadoDobasPopup({ té, sp, dobásInfo, onClose }: Props) {
   return (
     <PopupOverlay onClose={() => onClose(téResult?.eredmény ?? null)}>
       <div className="tamado-dobas-popup">
+        {téResult && <button className="sebzes-reset-btn" onClick={() => setTéResult(null)}>⟲</button>}
         <div className="ke-dobas-header">Támadó dobás</div>
 
         {!téResult ? (
