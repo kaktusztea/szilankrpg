@@ -6,7 +6,11 @@ Mágikus lövedékek esetén NEM használható.
 
 ### Alapeset
 
-Ha hirtelen kell lőni ([Lövés reflexből](../074_tavharci_helyzetek.md#lövés-reflexből) helyzet aktív), a **Célzó Értéket** `-7` levonás sújtja.
+Ha hirtelen kell lőni ([Lövés reflexből](../074_tavharci_helyzetek.md#lövés-reflexből) helyzet aktív):
+
+```
+Hátrány-1 CÉ dobásra
+```
 
 <br />
 
@@ -16,6 +20,6 @@ Ha hirtelen kell lőni ([Lövés reflexből](../074_tavharci_helyzetek.md#lövé
 - Távolsági harcmodor – `5.szint`\
   (**Íjászat** / **Lövészet** / **Hajítás**)
 
-🌟 Téged nem érint a [Lövés reflexből](../074_tavharci_helyzetek.md#lövés-reflexből) helyzet okozta büntetés, az ott leírt `CÉ` **levonás** nélkül támadhatod a váratlanul felbukkanó célpontot.
+🌟 Téged nem érint a [Lövés reflexből](../074_tavharci_helyzetek.md#lövés-reflexből) helyzet okozta büntetés, hátrány nélkül támadhatod a váratlanul felbukkanó célpontot.
 
 ---

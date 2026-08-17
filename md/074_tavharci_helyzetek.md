@@ -43,7 +43,11 @@ SP: -5 + k20 (FP vagy ÉP: KM dönt)
 ---
 ### Lövés reflexből
 
-Ha váratlanul kell lőnöd/hajítanod, a **Célzó Értékedet** `CÉ:-7` levonás sújtja.
+Ha váratlanul kell lőnöd/hajítanod:
+
+```
+Hátrány-1 CÉ dobásra
+```
 
 🔆 [Lövés reflexből fejlesztése](fortelyok.tavharc/loves_reflexbol_fejlesztese.md) fortéllyal a büntetés nem érint.
 

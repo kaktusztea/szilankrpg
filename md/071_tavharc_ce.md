@@ -70,8 +70,8 @@ Kitartott célzás helyzet
      (+3 alapeset + 4 fortély)
 
 Lövés reflexből helyzet
- -7: Lövés reflexből
- -0: "Lövés reflexből fejlesztése" fortéllyal
+ Hátrány-1 CÉ dobásra
+ Hátrány nélkül: "Lövés reflexből fejlesztése" fortéllyal
 ```
 
 🔆 **Kitartott célzás**: íjnál csak `1` körig lehet kitartani! `1` kör után nincs bónusz, sőt körönként `CÉ:-3` büntetés jár!
