@@ -15921,15 +15921,17 @@ Edzettség: +3
 ---
 ## File: md/fortelyok.kiemelt/helyismeret.md
 
-## 🟣 Helyismeret (1) (városnyi terület) 🔁
+## 🟣 Helyismeret (1) (adott terület) 🔁
 
 <!-- tag: md_fortely_multiple_helyismeret -->
 
 ```
-1 fokú
-
-Többször felvehető egy-egy
-  átlagos városnyi területre
+Többször felvehető
+  - falvaknál egy uradalom
+    (több falu és a vár)
+  - város/városállam
+  - nagyvárosnak egy kerülete
+    (erioni, shuluri)
 
 1.Tapasztalati Szinttől kezdve
   minden 2. TSz-en kapsz egyet
@@ -19585,7 +19587,7 @@ Ha a karakter találatot kap, harcértékeit - fizikumától függően - levoná
 ---
 ### Sebesülés jelölése a táblázatban
 
-Mikor a karaktert sebesülés éri, elkezdi bejelölni a korábban már bemutatott [Életerő táblázatban](061_01_eletero_pont.md#%C3%A9leter%C5%91-pontok-eloszt%C3%A1sa) a legmagasabb (`S1`) kategóriában lévő mezőket fentről lefelé. Mikor az első oszlop "betelt", folytatja az `S2`, majd az `S3` kategóriában levőkkel és így tovább.
+Mikor a karaktert sebesülés éri, elkezdi bejelölni a korábban már bemutatott [Életerő táblázatban](061_01_eletero_pont.md#%C3%A9leter%C5%91-pontok-eloszt%C3%A1sa) a legmagasabb (`S1`) kategóriában lévő mezőket fentről lefelé. Mikor az első oszlop "betelt", folytatja az `S2`, majd az `S3` kategóriában levőkkel és így tovább. Az adott "S" kategória akkor "kezdődik meg", amikor az első rubrikát bejelöljük benne.
 
 ### Sebek jellegének jelölései
 
@@ -23652,6 +23654,8 @@ A komolyabb, kidolgozottabb Nem Játékos Karakter ellenfelek viszont egy külö
 ## ⚜️ Általános szabályok manőverekre
 
 Egy Manőver végrehajtása `1 támadást` emészt fel, nem szükséges hozzá nyert kezdeményezés.
+
+Körönként maximum `1 db` manőver alkalmazható.
 
 Manővert Ellenfél **ellen** alkalmazunk. Így például kiszaltózni az ablakon, vagy leugrani a várfalról **nem** számít Manővernek.
 
