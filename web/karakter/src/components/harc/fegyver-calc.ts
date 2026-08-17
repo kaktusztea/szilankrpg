@@ -112,6 +112,11 @@ export function calcFegyverResults(
       támadások: fComp.get('fegyver_támadások') ?? 1, harckeret: fComp.get('fegyver_harckeret') ?? 0,
       sebesség: parseInt(fDef.Sebesség) || 6, pengehossz: parseFloat(fDef.Pengehossz) || 0,
       sebzésmód: fDef['Sebzés módja'], alap_TÉ: parseInt(fDef.TÉ) || 0, alap_VÉ: parseInt(fDef.VÉ) || 0,
+      hk_harcmodor: harcmodorSzint,
+      hk_gyorsaság: fCtx.get('tulajdonságok.gyorsaság') ?? 0,
+      hk_mgt: fCtx.get('páncél_MGT') ?? 0,
+      hk_felszerelés_mgt: fCtx.get('felszerelés_mgt') ?? 0,
+      hk_fortély: fortelyMods['harckeret'] ?? 0,
     };
   });
 }

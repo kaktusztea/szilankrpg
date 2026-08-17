@@ -53,6 +53,7 @@
 .te-box .value { color: var(--color-taktika); }
 .ve-csokk-box .value { font-size: 28px; font-weight: bold; color: var(--warning); }
 .ve-csokk-box { position: relative; }
+.ve-csokk-box-disabled > * { pointer-events: none; }
 .ve-label-row { display: flex; align-items: center; gap: 6px; }
 .ve-reset-btn { position: absolute; top: -5px; right: 6px; background: none; border: none; color: var(--text); font-size: 28px; cursor: pointer; padding: 0; opacity: 0.7; }
 .ve-reset-btn:disabled { opacity: 0.3; cursor: default; }
@@ -214,6 +215,7 @@
 .harc-popup-text { font-size: 15px; color: var(--text); }
 .ve-history-list { display: flex; flex-wrap: wrap; gap: 4px 8px; max-width: 200px; }
 .harc-popup-col { font-size: 15px; color: var(--text); display: flex; flex-direction: column; gap: 4px; }
+.harc-popup-detail { font-size: 13px; color: var(--text-dim); padding-left: 4px; }
 
 /* --- Részletes értékek → base: .debug-box (common.css) --- */
 .harc-reszletek { margin-top: 16px; }
@@ -312,6 +314,11 @@
   text-align: center;
 }
 .harc-manover-btn:hover { background: rgba(76, 175, 80, 0.15); }
+.harc-manover-btn-disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+.harc-manover-btn-disabled:hover { background: rgba(76, 175, 80, 0.08); }
 
 /* --- Támadó dobás popup --- */
 .tamado-dobas-popup {

@@ -33,6 +33,11 @@ export interface KétkezesResult {
   sebzésmód: string;
   alap_TÉ: number;
   alap_VÉ: number;
+  hk_harcmodor: number;
+  hk_gyorsaság: number;
+  hk_mgt: number;
+  hk_felszerelés_mgt: number;
+  hk_fortély: number;
 }
 
 export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null {
@@ -107,5 +112,10 @@ export function calcKétkezesHarc(input: KétkezesInput): KétkezesResult | null
     sebzésmód: jobbDef['Sebzés módja'],
     alap_TÉ: alapTÉ,
     alap_VÉ: alapVÉ,
+    hk_harcmodor: harcmodorSzint,
+    hk_gyorsaság: k.tulajdonságok.gyorsaság,
+    hk_mgt: mgt,
+    hk_felszerelés_mgt: 0,
+    hk_fortély: fortelyMods['harckeret'] ?? 0,
   };
 }

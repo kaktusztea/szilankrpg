@@ -114,6 +114,19 @@
   to { width: calc(100% - 5px); }
 }
 
+/* Double-flash hint: signals "switch to Game mode" */
+.mode-toggle-hint {
+  animation: mode-hint-flash 600ms ease;
+}
+@keyframes mode-hint-flash {
+  0%   { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  15%  { box-shadow: 0 0 8px 4px rgba(255,255,255,0.9); }
+  30%  { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  55%  { box-shadow: 0 0 8px 4px rgba(255,255,255,0.9); }
+  70%  { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+  100% { box-shadow: 0 0 0 0 rgba(255,255,255,0); }
+}
+
 /* --- Content & screen slider --- */
 .content {
   flex: 1;

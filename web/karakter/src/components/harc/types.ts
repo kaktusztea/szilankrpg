@@ -14,6 +14,12 @@ export interface FegyverResult {
   sebzésmód: string;
   alap_TÉ: number;
   alap_VÉ: number;
+  // Harckeret részletezés
+  hk_harcmodor: number;
+  hk_gyorsaság: number;
+  hk_mgt: number;
+  hk_felszerelés_mgt: number;
+  hk_fortély: number;
 }
 
 export interface HarcBaseProps {

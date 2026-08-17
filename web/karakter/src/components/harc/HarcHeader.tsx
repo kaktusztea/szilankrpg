@@ -35,10 +35,20 @@ export function HarcHeader({
   const [showMpPicker, setShowMpPicker] = useState(false);
   const aktMP = Math.max(0, manöverPont - session.manőver_pont_használt);
 
+  /** Dupla villanás a Szerk/Játék gombon — jelzi hogy csak Játék módban elérhető */
+  function flashModeToggle() {
+    const btn = document.querySelector('.mode-toggle');
+    if (!btn) return;
+    btn.classList.remove('mode-toggle-hint');
+    // Force reflow to restart animation
+    void (btn as HTMLElement).offsetWidth;
+    btn.classList.add('mode-toggle-hint');
+  }
+
   return (
     <div className="harc-header">
       {/* Row 1: KÉ + TÉ (mobile) / KÉ + TÉ + SFÉ + VÉ csökk (desktop) */}
-      <div className="ke-box" onClick={gameMode ? onKéClick : undefined} style={gameMode ? undefined : { cursor: 'default' }}>
+      <div className="ke-box" onClick={gameMode ? onKéClick : flashModeToggle} style={gameMode ? undefined : { cursor: 'default' }}>
         <span className="label">KÉ</span>
         <span className="value">{ké}</span>
         {session.ké_dobások.length > 0 && (
@@ -50,7 +60,7 @@ export function HarcHeader({
         )}
       </div>
 
-      <div className="te-box" onClick={gameMode && aktívTÉ != null ? onTéClick : undefined}
+      <div className="te-box" onClick={gameMode && aktívTÉ != null ? onTéClick : !gameMode ? flashModeToggle : undefined}
         style={gameMode && aktívTÉ != null ? undefined : { cursor: 'default' }}>
         <span className="label">TÉ</span>
         <span className="value">{aktívTÉ ?? '—'}</span>
@@ -63,7 +73,7 @@ export function HarcHeader({
         )}
       </div>
 
-      <div className="sfe-box" onClick={onSféClick} style={{ cursor: 'pointer' }}>
+      <div className="sfe-box" onClick={gameMode ? onSféClick : flashModeToggle} style={{ cursor: 'pointer' }}>
         <span className="label">SFÉ (<span className="harc-monospace">{páncélLefedettség}%</span>)</span>
         <div className="sfe-values">
           <span className="sfe-line-fizikai"><strong>{sfé_fizikai}</strong>F</span>
@@ -72,10 +82,10 @@ export function HarcHeader({
         </div>
       </div>
 
-      <div className="ve-csokk-box">
-        <span className="label" onClick={onVéLabelTap}>VÉ</span>
+      <div className={`ve-csokk-box${!gameMode ? ' ve-csokk-box-disabled' : ''}`} onClick={!gameMode ? flashModeToggle : undefined}>
+        <span className="label" onClick={gameMode ? onVéLabelTap : undefined}>VÉ</span>
         <button className="ve-reset-btn" disabled={!gameMode || session.vé_csökkenés === 0} onClick={onVéResetClick}>⟲</button>
-        <div className="ve-value-row" onClick={onVéLabelTap}>
+        <div className="ve-value-row" onClick={gameMode ? onVéLabelTap : undefined}>
           <span className="value">{aktívVÉ ?? '—'}</span>
           {session.vé_csökkenés > 0 && <span className="ve-csokk-badge">(-{session.vé_csökkenés})</span>}
         </div>
@@ -91,10 +101,9 @@ export function HarcHeader({
 
       {/* Row 3 (mobile) / Row 2 (desktop): Manőver + MP */}
       <div className="harc-header-bottom">
-        {gameMode && (
-          <button className="harc-manover-btn" onClick={onManőverClick}>⚔️ Manőver végrehajtása</button>
-        )}
-        <div className="mp-box" onClick={gameMode ? () => setShowMpPicker(true) : undefined}
+        <button className={`harc-manover-btn${!gameMode ? ' harc-manover-btn-disabled' : ''}`}
+          onClick={gameMode ? onManőverClick : flashModeToggle}>⚔️ Manőver végrehajtása</button>
+        <div className="mp-box" onClick={gameMode ? () => setShowMpPicker(true) : flashModeToggle}
           style={gameMode ? { cursor: 'pointer' } : undefined}>
           <span className="label">MP</span>
           <span className="mp-value">{aktMP}/{manöverPont}</span>

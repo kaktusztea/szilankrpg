@@ -5,7 +5,7 @@ interface HarcPopupsProps {
   session: Session;
   showVéResetConfirm: boolean;
   showVéHistory: boolean;
-  támInfo: { név: string; sebesség: number; harckeret: number } | null;
+  támInfo: { név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_felszerelés_mgt: number; hk_fortély: number } | null;
   onVéReset: () => void;
   onCloseAll: () => void;
 }
@@ -38,6 +38,12 @@ export function HarcPopups({ session, showVéResetConfirm, showVéHistory, támI
           <div className="harc-popup-col">
             <span>Sebesség: {támInfo.sebesség}</span>
             <span>Harckeret: {támInfo.harckeret}</span>
+            {(támInfo.hk_harcmodor !== 0 || támInfo.hk_gyorsaság !== 0 || támInfo.hk_fortély !== 0 || támInfo.hk_mgt + támInfo.hk_felszerelés_mgt !== 0) && <>
+              {támInfo.hk_harcmodor !== 0 && <span className="harc-popup-detail"> + {támInfo.hk_harcmodor} (Harcmodor)</span>}
+              {támInfo.hk_gyorsaság !== 0 && <span className="harc-popup-detail"> + {támInfo.hk_gyorsaság} (Gyorsaság)</span>}
+              {támInfo.hk_fortély !== 0 && <span className="harc-popup-detail"> + {támInfo.hk_fortély} (fortély)</span>}
+              {(támInfo.hk_mgt + támInfo.hk_felszerelés_mgt) !== 0 && <span className="harc-popup-detail"> -{támInfo.hk_mgt + támInfo.hk_felszerelés_mgt} (MGT)</span>}
+            </>}
           </div>
         </PopupOverlay>
       )}

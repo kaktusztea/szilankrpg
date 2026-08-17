@@ -28,7 +28,7 @@ export function HarcScreen({ data, karakter, session, setSession, setKarakter, p
   const véFlashTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const [showVéHistory, setShowVéHistory] = useState(false);
   const [showVéResetConfirm, setShowVéResetConfirm] = useState(false);
-  const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number } | null>(null);
+  const [támInfo, setTámInfo] = useState<{ név: string; sebesség: number; harckeret: number; hk_harcmodor: number; hk_gyorsaság: number; hk_mgt: number; hk_felszerelés_mgt: number; hk_fortély: number } | null>(null);
   const [sebCount, setSebCount] = useState(0);
   const [kéDobásEredmény, setKéDobásEredmény] = useState<number | null>(null);
   const [showTamadoDobas, setShowTamadoDobas] = useState(false);
