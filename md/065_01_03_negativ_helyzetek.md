@@ -38,6 +38,19 @@ VÉ veszteség duplázódik
 <br />
 
 ---
+## Gyengébb kéz
+
+```
+Hátrány-1 TÉ dobásra
+
+Megszűnteti: Kétkezesség fortély
+```
+
+🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
+
+<br />
+
+---
 ## Helyhez kötve
 
 ```
@@ -85,19 +98,6 @@ Ogár
 ### Pengeméret-különbség és lények mérete
 
 A [Pengeméret-különbség](065_01_04_fegyver_harci_helyzetek.md#fegyverm%C3%A9ret) és a fenti lények méret különbsége két, egymás **mellett** működő szabály.
-
-<br />
-
----
-## Gyengébb kéz
-
-```
-Hátrány-1 TÉ dobásra
-
-Megszűnteti: Kétkezesség fortély
-```
-
-🔆 [Kétkezesség](fortelyok.harci/ketkezesseg.md) fortély: bármelyik kezeddel levonás nélkül tudsz harcolni - de csak `1` fegyverrel!
 
 <br />
 
