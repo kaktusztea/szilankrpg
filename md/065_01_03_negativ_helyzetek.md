@@ -3,7 +3,7 @@
 ## Csúszós talaj
 
 ```
-Hátrány-1 TÉ dobásra
+Hátrány-1 TÉ/CÉ dobásra
 ```
 
 Addig tart, amíg a csúszós felületen áll, mozog a karakter.
@@ -14,7 +14,7 @@ Addig tart, amíg a csúszós felületen áll, mozog a karakter.
 ## Elvesztett egyensúly
 
 ```
-Hátrány-1 TÉ dobásra
+Hátrány-1 TÉ/CÉ dobásra
 Többszörös támadás elvesztése
 Mozgás - feleződik
 ```
@@ -41,7 +41,7 @@ VÉ veszteség duplázódik
 ## Gyengébb kéz
 
 ```
-Hátrány-1 TÉ dobásra
+Hátrány-1 TÉ/CÉ dobásra
 
 Megszűnteti: Kétkezesség fortély
 ```
@@ -129,7 +129,7 @@ Hátrány-2 TÉ dobásra
 Meggyulladt a ruhád egy ponton, még nem vészes, de hamar gond lehet.
 
 ```
-Hátrány-1 Támadó dobásra
+Hátrány-1 TÉ/CÉ dobásra
 
 -5 + k20 SP / kör
 ```
@@ -149,7 +149,7 @@ Harcon kívül: 1 kör
 Lángol a ruhád, folyamatosan sebződsz, csak segítséggel olthatod el, vagy ha nagy mennyiségű víz ér.
 
 ```
-Hátrány-2 Támadó dobásra
+Hátrány-2 TÉ/CÉ dobásra
 
 0 + k20 SP / kör
 ```
