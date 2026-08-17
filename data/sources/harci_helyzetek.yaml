@@ -60,11 +60,7 @@ harci_helyzetek:
   kizár_helyzetek: ["magasabbról", "levegőből"]
 - név: "Fegyverrántás váratlanul"
   infó: "KÉ módosítók fegyverméret szerint. Fegyverrántás fortély skálázza."
-  hatások:
-  - operátor: "előny"
-    érték: 1
-    cél: "té_dobás"
-    megjegyzés: "első csapás"
+  hatások: []
   id: "fegyverrántás"
   csoport: "semleges"
   rejtett: false
@@ -304,22 +300,28 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: ["vakharc_félhomály"]
 - név: "Tűz ruhán - ég"
-  infó: "Hátrány-1 TÉ, (-5+k20) SP/kör. Eloltás: 1 kör."
+  infó: "Hátrány-1 Támadó dobásra, (-5+k20) SP/kör. Eloltás: 1 kör."
   hatások:
   - operátor: "hátrány"
     érték: -1
     cél: "té_dobás"
+  - operátor: "hátrány"
+    érték: -1
+    cél: "cé_dobás"
   id: "tűz_ruhán_1"
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: ["tűz_ruhán_2"]
 - név: "Tűz ruhán - lángol"
-  infó: "Hátrány-2 TÉ, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség."
+  infó: "Hátrány-2 Támadó dobásra, (0+k20) SP/kör. Eloltás: harcban lehetetlen, kívül 2 kör + segítség."
   hatások:
   - operátor: "hátrány"
     érték: -2
     cél: "té_dobás"
+  - operátor: "hátrány"
+    érték: -2
+    cél: "cé_dobás"
   id: "tűz_ruhán_2"
   csoport: "negatív"
   rejtett: false
