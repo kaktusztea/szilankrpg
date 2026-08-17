@@ -1,6 +1,6 @@
 # Aura jellemzői
 
-⭕TODO: kifejteni ezeket, ha van szöveges anyag, bemásolni.
+⭕TODO: kifejteni ezeket, ha van szöveges anyag, bemásolni
 
 - Mágiaellenállást adja
 - Mágikus akaratot adja támadó oldalon
