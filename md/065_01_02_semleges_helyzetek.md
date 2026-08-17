@@ -163,7 +163,7 @@ VÉ: +5
 
 🔆 Példa: kapu, belógó falrész mögül harcolsz.
 
-❌ Kizárja: Lovas harc, Léglovas harc, Levegőből támadás
+❌ Kizárja: Lovas harc, Léglovas harc, Levegőből támadás, Belharci helyzet
 
 <br />
 

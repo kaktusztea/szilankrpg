@@ -511,6 +511,9 @@ note: feltétel == "" → mindig aktív (karakterlap számolja).
         - "enyhít": Hatás pool-ban csökkenti a célra vonatkozó negatív hatás fokát (§22.7)
         - "előny": kocka-reroll bónusz (Előny+érték a cél dobásra). Célok: sebzésdobás, ké_dobás, té_dobás, cé_dobás, képzettségpróba_dobás, tulajdonságpróba_dobás
         - "hátrány": kocka-reroll büntetés (Hátrány+érték). Ugyanazok a célok.
+      Terminológia:
+        - "Támadó dobás" (szabálykönyvben) = té_dobás + cé_dobás (mindkét célra hat).
+          Ha egy helyzet "Hátrány-X Támadó dobásra" ír, a YAML-ben mindkét cél külön szerepel.
       Opcionális mezők:
         - "alcél": konkrét tulajdonság/képzettség neve (pl. "Edzettség", "Zárnyitás", "Látás")
         - "megjegyzés": emberi olvasásra (kontextuális info)
@@ -1098,18 +1101,18 @@ Rejtett elemek (rejtett: true): nem jelennek meg a picker-ben (automatikus/levez
 
 | Helyzet | id | Hatások |
 |---------|-----|---------|
-| Csúszós talaj | csúszós_talaj | Hátrány-1 TÉ dobásra. |
-| Elvesztett egyensúly | elvesztett_egyensúly | Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja. |
+| Csúszós talaj | csúszós_talaj | Hátrány-1 Támadó dobásra. |
+| Elvesztett egyensúly | elvesztett_egyensúly | Hátrány-1 Támadó dobásra, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja. |
 | Földön fekve | földön_fekve | Hátrány-2 TÉ dobásra, VÉ veszteség duplázódik. |
 | Helyhez kötve | helyhez_kötve | Hátrány-1 TÉ dobásra, VÉ veszteség duplázódik. |
 | Lények méret különbsége | méret_különbség | Nagyobb lény: +1 VÉ csökkentés bónusz / kategória különbség. Skála: 1-7. |
-| Rosszabbik kézben tartott fegyver | rosszabbik_kéz | Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja. |
+| Rosszabbik kézben tartott fegyver | rosszabbik_kéz | Hátrány-1 Támadó dobásra. Kétkezesség fortély kioltja. |
 | Sötétben - félhomály | sötétben_1 | Hátrány-1 TÉ. Vakharc/Infra/Ultra mérsékli. |
 | Sötétben - teljes, zajokkal | sötétben_2 | Hátrány-1 TÉ. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli. |
 | Sötétben - teljes, csendben | sötétben_3 | Hátrány-2 TÉ. Érzék(látás) kioltott. Vakharc/Infra/Ultra mérsékli. |
-| Tűz ruhán - ég | tűz_ruhán_1 | Hátrány-1 TÉ, (-5+k20)SP/kör. Eloltás: 1 kör. |
-| Tűz ruhán - lángol | tűz_ruhán_2 | Hátrány-2 TÉ, (0+k20)SP/kör. Harcban elolthatatlan. |
-| Vér elvakít | vér_elvakít | Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés. |
+| Tűz ruhán - ég | tűz_ruhán_1 | Hátrány-1 Támadó dobásra, (-5+k20)SP/kör. Eloltás: 1 kör. |
+| Tűz ruhán - lángol | tűz_ruhán_2 | Hátrány-2 Támadó dobásra, (0+k20)SP/kör. Harcban elolthatatlan. |
+| Vér elvakít | vér_elvakít | Hátrány-1 Támadó dobásra, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés. |
 
 #### Távharci helyzetek
 

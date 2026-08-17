@@ -115,7 +115,7 @@ Előny+1 TÉ dobásra
 
 🔆 [Harc hátasról](067_00_harc_hatasrol.md) helyzetben NEM jár pluszban ez a módosító
 
-❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás
+❌ Kizárja: Lovas harc, Léglovas harc, Földön fekve, Levegőből támadás, Belharci helyzet, Elvesztett egyensúly, Harci szekér
 
 <br />
 

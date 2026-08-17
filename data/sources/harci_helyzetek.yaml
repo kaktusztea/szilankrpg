@@ -31,22 +31,28 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Csúszós talaj"
-  infó: "Hátrány-1 TÉ dobásra."
+  infó: "Hátrány-1 Támadó dobásra."
   hatások:
   - operátor: "hátrány"
     érték: -1
     cél: "té_dobás"
+  - operátor: "hátrány"
+    érték: -1
+    cél: "cé_dobás"
   id: "csúszós_talaj"
   csoport: "negatív"
   rejtett: false
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Elvesztett egyensúly"
-  infó: "Hátrány-1 TÉ, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja."
+  infó: "Hátrány-1 Támadó dobásra, többsz. tám. elvesztés, mozgás feleződik. Akrobatika(12) megoldja."
   hatások:
   - operátor: "hátrány"
     érték: -1
     cél: "té_dobás"
+  - operátor: "hátrány"
+    érték: -1
+    cél: "cé_dobás"
   - operátor: "szöveges"
     cél: "támadások_száma"
     megjegyzés: "Többszörös támadás elvesztés"
@@ -267,11 +273,14 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: []
 - név: "Gyengébb kéz"
-  infó: "Hátrány-1 TÉ dobásra. Kétkezesség fortély kioltja."
+  infó: "Hátrány-1 Támadó dobásra. Kétkezesség fortély kioltja."
   hatások:
   - operátor: "hátrány"
     érték: -1
     cél: "té_dobás"
+  - operátor: "hátrány"
+    érték: -1
+    cél: "cé_dobás"
   id: "gyengébb_kéz"
   csoport: "negatív"
   rejtett: false
@@ -364,11 +373,17 @@ harci_helyzetek:
   tiltja_taktikákat: false
   kizár_helyzetek: ["földön_fekve"]
 - név: "Vér elvakít"
-  infó: "Hátrány-1 TÉ, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés."
+  infó: "Hátrány-1 Támadó dobásra, Hátrány-1 Érzék(Látás). 1 Akció: kitörlés."
   hatások:
   - operátor: "hátrány"
     érték: -1
     cél: "té_dobás"
+  - operátor: "hátrány"
+    érték: -1
+    cél: "cé_dobás"
+  - operátor: "hátrány"
+    érték: -1
+    cél: "érzék_látás"
   id: "vér_elvakít"
   csoport: "negatív"
   rejtett: false
