@@ -783,6 +783,21 @@
     3
   ],
   "taktika_vé_eltolás_limit": 10,
+  "skálázható_taktika_max_fok": [
+    {
+      "szint": 6,
+      "max_fok": 4
+    },
+    {
+      "szint": 9,
+      "max_fok": 5
+    },
+    {
+      "szint": 12,
+      "max_fok": 6
+    }
+  ],
+  "max_manőver_per_kör": 1,
   "nyílpuska_alap_támadás": "1/2 kör",
   "aura": {
     "mágiaellenállás_konstans": 10,

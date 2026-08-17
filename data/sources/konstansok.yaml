@@ -573,6 +573,25 @@ hm_aszimmetria_osztó: 2
 vé_csökkentés_gombok: [1, 2, 3]
 taktika_vé_eltolás_limit: 10
 
+# ============================================================
+# Skálázható taktikák: Harcmodor szint → abszolút max fok korlát
+# A "skálázható: true" taktikáknál a felső korlát erre a fokra nő
+# ============================================================
+
+skálázható_taktika_max_fok:
+  - szint: 6
+    max_fok: 4
+  - szint: 9
+    max_fok: 5
+  - szint: 12
+    max_fok: 6
+
+# ============================================================
+# Manőver korlát
+# ============================================================
+
+max_manőver_per_kör: 1
+
 # Távharc: nyílpuska alapeset (Sebesség = -1)
 nyílpuska_alap_támadás: "1/2 kör"
 

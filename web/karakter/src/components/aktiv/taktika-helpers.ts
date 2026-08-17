@@ -106,9 +106,11 @@ export function getTaktikaMods(t: { név: string; fok?: number }, data: GameData
   return mods;
 }
 
-/** Get taktika fokok including fortély bővítés extra fokok. */
-export function getExtraFokok(def: any, karakter: Karakter): any[] {
+/** Get taktika fokok including fortély bővítés extra fokok and harcmodor-level scaling. */
+export function getExtraFokok(def: any, karakter: Karakter, data?: GameData): any[] {
   let fokok = [...def.fokok];
+
+  // Fortély-based expansion (e.g. Támadás erőből)
   if (def.fortély_bővítés) {
     const fb = def.fortély_bővítés;
     const fortélyFok = karakter.fortélyok.find(f => f.név === fb.fortély)?.fok ?? 0;
@@ -125,6 +127,47 @@ export function getExtraFokok(def: any, karakter: Karakter): any[] {
       fokok.push(entry);
     }
   }
+
+  // Harcmodor-level scaling for skálázható taktikák (absolute max fok cap)
+  if (def.skálázható && data) {
+    const entries = data.konstansok.skálázható_taktika_max_fok;
+    if (entries) {
+      // Find the active weapon's harcmodor level
+      const fp = karakter.fegyverek[karakter.session?.aktív_fegyver_index ?? -1];
+      const fd = fp ? lookupFegyver(data.fegyverek, fp.alap) : null;
+      const harcmodorNév = fd ? (data.konstansok.fegyver_kategória_harcmodor[fd.Kategória] ?? 'Közelharc') : 'Közelharc';
+      const harcmodorSzint = karakter.képzettségek.find(kp => kp.név === harcmodorNév)?.szint ?? 0;
+
+      // Find highest applicable absolute max_fok
+      let maxFok = 0;
+      for (const entry of entries) {
+        if (harcmodorSzint >= entry.szint) maxFok = entry.max_fok;
+      }
+
+      // Extend fokok up to maxFok (if above current max), and truncate fortély extras if over cap
+      if (maxFok > 0) {
+        const currentMax = fokok[fokok.length - 1].fok;
+        if (currentMax < maxFok) {
+          // Extend with interpolated fokok
+          const utolsó = def.fokok[def.fokok.length - 1];
+          const perFok: Record<string, number> = {};
+          for (const [k, v] of Object.entries(utolsó)) {
+            if (k !== 'fok' && k !== 'hatások' && typeof v === 'number') perFok[k] = v / utolsó.fok;
+          }
+          while (fokok[fokok.length - 1].fok < maxFok) {
+            const newFok = fokok[fokok.length - 1].fok + 1;
+            const entry: any = { fok: newFok };
+            for (const [k, step] of Object.entries(perFok)) entry[k] = Math.round(step * newFok);
+            fokok.push(entry);
+          }
+        } else if (currentMax > maxFok) {
+          // Truncate: cap at maxFok
+          fokok = fokok.filter(f => f.fok <= maxFok);
+        }
+      }
+    }
+  }
+
   return fokok;
 }
 

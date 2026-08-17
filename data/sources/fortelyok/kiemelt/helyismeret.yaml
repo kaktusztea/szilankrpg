@@ -8,11 +8,11 @@ session_toggle: false
 emlékeztető: false
 kiérdemelhető: true
 többszörösség:
-  spec_típus: "település"
+  spec_típus: "terület"
   spec_lista: []
 csoport: "kiemelt"
 leírások:
-  - text: "Egy átlagos városnyi terület ismerete."
+  - text: "Egy adott terület ismerete: falvaknál egy uradalom (több falu és a vár), város/városállam, vagy nagyvárosnak egy kerülete."
 megjegyzések:
   - text: ""
 

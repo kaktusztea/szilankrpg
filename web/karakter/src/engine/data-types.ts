@@ -83,6 +83,7 @@ export interface TaktikaEntry {
   név: string;
   feltétel_kulcs: string;
   fokozatos: boolean;
+  skálázható?: boolean;
   módosítók?: Record<string, number>;
   fokok?: { fok: number; TÉ?: number; VÉ?: number; KÉ?: number; SP?: number; hatások?: { operátor: string; érték?: number; cél: string; megjegyzés?: string }[] }[];
   megjegyzés?: string;
@@ -203,6 +204,8 @@ export interface KonstansokRaw {
   hm_aszimmetria_osztó: number;
   vé_csökkentés_gombok: number[];
   taktika_vé_eltolás_limit: number;
+  skálázható_taktika_max_fok: { szint: number; max_fok: number }[];
+  max_manőver_per_kör: number;
   nyílpuska_alap_támadás: string;
   közös_nyelv: string;
   fortély_csoport_sorrend: { id: string; label: string }[];

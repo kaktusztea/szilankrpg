@@ -14,7 +14,7 @@ export function TaktikaFokPicker({ fokválasztó, data, karakter, session, onSel
   const def = data.taktikak.find(t => t.név === fokválasztó);
   if (!def?.fokok) return null;
   const existing = session.aktív_taktikák.findIndex(a => a.név === fokválasztó);
-  const fokok = getExtraFokok(def, karakter);
+  const fokok = getExtraFokok(def, karakter, data);
   const maxBaseFok = def.fokok[def.fokok.length - 1].fok;
 
   return <>

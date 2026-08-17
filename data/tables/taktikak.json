@@ -76,6 +76,7 @@
     "név": "Kezdeményező",
     "id": "kezdeményező",
     "fokozatos": true,
+    "skálázható": true,
     "fokok": [
       {
         "fok": 1,
@@ -120,9 +121,9 @@
     "id": "kiváró",
     "fokozatos": false,
     "módosítók": {
-      "TÉ": 2
+      "TÉ": 3
     },
-    "megjegyzés": "KÉ átengedett. TÉ:+2 visszacsapásra, ha nem kap sebet.",
+    "megjegyzés": "KÉ átengedett. TÉ:+3 visszacsapásra, ha nem kap sebet.",
     "megkötések": [],
     "kombó_mód": "whitelist",
     "kombó_lista": [
@@ -192,6 +193,7 @@
     "név": "Támadás erőből",
     "id": "támadás_erőből",
     "fokozatos": true,
+    "skálázható": true,
     "fokok": [
       {
         "fok": 1,
@@ -223,6 +225,7 @@
     "név": "Támadó",
     "id": "támadó",
     "fokozatos": true,
+    "skálázható": true,
     "fokok": [
       {
         "fok": 1,
@@ -257,6 +260,7 @@
     "név": "Védő",
     "id": "védő",
     "fokozatos": true,
+    "skálázható": true,
     "fokok": [
       {
         "fok": 1,

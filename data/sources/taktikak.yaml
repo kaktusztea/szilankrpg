@@ -52,6 +52,7 @@ taktikák:
 - név: "Kezdeményező"
   id: "kezdeményező"
   fokozatos: true
+  skálázható: true
   fokok:
   - fok: 1
     KÉ: 1
@@ -77,8 +78,8 @@ taktikák:
   id: "kiváró"
   fokozatos: false
   módosítók:
-    TÉ: 2
-  megjegyzés: "KÉ átengedett. TÉ:+2 visszacsapásra, ha nem kap sebet."
+    TÉ: 3
+  megjegyzés: "KÉ átengedett. TÉ:+3 visszacsapásra, ha nem kap sebet."
   megkötések:
   - típus: "többes_harc"
     mód: "tiltott"
@@ -149,6 +150,7 @@ taktikák:
 - név: "Támadás erőből"
   id: "támadás_erőből"
   fokozatos: true
+  skálázható: true
   fokok:
   - fok: 1
     TÉ: -1
@@ -171,6 +173,7 @@ taktikák:
 - név: "Támadó"
   id: "támadó"
   fokozatos: true
+  skálázható: true
   fokok:
   - fok: 1
     TÉ: 1
@@ -193,6 +196,7 @@ taktikák:
 - név: "Védő"
   id: "védő"
   fokozatos: true
+  skálázható: true
   fokok:
   - fok: 1
     VÉ: 1

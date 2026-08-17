@@ -10,9 +10,11 @@ csoportos: false
 próba: "nincs"
 domináns_tulajdonságok: []
 mesterbónuszok:
+  - szint: 6
+    leírás: "Skálázható Harci taktikák (Támadó, Védő, Kezdeményező, Támadás erőből) maximális felső korlátja +4-gyel nő."
   - szint: 9
-    leírás: "Fegyver Ideájának érzékelése, leplezetlen mágia érzékelése kézbe véve."
+    leírás: "Skálázható Harci taktikák felső korlátja +5-tel nő. Fegyver Ideájának érzékelése, leplezetlen mágia érzékelése kézbe véve."
   - szint: 12
-    leírás: "Fegyver sebzése mágikus lesz. Sebzéstípus másodlagos/alkalmatlan büntetés -1."
+    leírás: "Skálázható Harci taktikák felső korlátja +6-tal nő. Fegyver sebzése mágikus lesz. Sebzéstípus másodlagos/alkalmatlan büntetés -1."
   - szint: 15
     leírás: "Sebzéstípus büntetések megszűnnek. Alacsonyabb szintű ellenfél azonnali harcképtelenné tétele sebzéskor."
