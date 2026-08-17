@@ -1,8 +1,7 @@
 import { useState, useCallback } from 'react';
 import type { TavharcProps, VirtuálisFegyver, TavharcPopupState } from './types';
 import { getAlkalmatlanInfo, getAktívTfDef, getMfFok, getFortélyCÉ, calcCÉBontás, calcTámadásLabel, calcVÉ, calcÚjratöltésEnyhítés, calcSzorzóÖsszeg } from './helpers';
-import { collectCéDobásInfo, netCéElőnySzint } from './tavharc-roll-info';
-import { collectDobásInfo } from '../harc/combat-roll-info';
+import { collectCéDobásInfo, netElőnySzint, collectDobásInfo } from '../harc/combat-roll-info';
 import { TavharcLoveskiteres } from './TavharcLoveskiteres';
 import { TavharcFegyverLista } from './TavharcFegyverLista';
 import { TavharcGameSelector } from './TavharcGameSelector';
@@ -181,7 +180,7 @@ export function TavharcScreen({ data, karakter, session, setSession, setKarakter
             céHatások={céInfo.céHatások}
             céMegjegyzések={céInfo.céMegjegyzések}
             sebzésHatások={dobásInfo.sebzésHatások}
-            defaultSzint={netCéElőnySzint(céInfo.céHatások)}
+            defaultSzint={netElőnySzint(céInfo.céHatások)}
             onClose={() => setShowCéDobás(false)}
           />
         );

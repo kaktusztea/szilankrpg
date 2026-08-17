@@ -4,8 +4,8 @@ import { ElonyPicker } from '../harc/ElonyPicker';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
 import { SebzesPopup } from '../harc/SebzesPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
-import type { CéDobásHatás } from './tavharc-roll-info';
 import type { DobásHatás } from '../harc/combat-roll-info';
+import { HatasokInfo } from '../harc/HatasokInfo';
 
 /**
  * Derive Sebzés Előny from the CÉ k20 roll value (same rule as TÉ):
@@ -27,7 +27,7 @@ interface Props {
   /** Fegyver Átütés értéke (informatív, ha > 0) */
   átütés?: number;
   /** Collected active effects on CÉ rolls */
-  céHatások: CéDobásHatás[];
+  céHatások: DobásHatás[];
   /** Megjegyzések (taktika notes relevant to CÉ) */
   céMegjegyzések: { forrás: string; szöveg: string }[];
   /** Active Előny/Hátrány effects on Sebzésdobás */
@@ -104,20 +104,7 @@ export function CélzóDobasPopup({ cé, vé, sp, átütés, céHatások, céMeg
               </div>
             )}
             <ElonyPicker szint={szint} onChange={setSzint} />
-            {céHatások.length > 0 && (
-              <div className="dobas-info-list">
-                {céHatások.map((h, i) => (
-                  <div key={i} className="dobas-info-item">
-                    <span className={`dobas-info-badge ${h.operátor}`}>
-                      {h.operátor === 'előny' ? `Előny+${Math.abs(h.érték)}` :
-                       h.operátor === 'hátrány' ? `Hátrány-${Math.abs(h.érték)}` :
-                       h.operátor === 'enyhít' ? `Enyhít+${Math.abs(h.érték)}` : '—'}
-                    </span>
-                    <span className="dobas-info-source">{h.forrás}</span>
-                  </div>
-                ))}
-              </div>
-            )}
+            {céHatások.length > 0 && <HatasokInfo hatások={céHatások} />}
             <div className="dobas-btn-row">
               <button className="tamado-dobas-btn" onClick={handleDobás}>Dobás</button>
               <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={cé} alapLabel="CÉ" />

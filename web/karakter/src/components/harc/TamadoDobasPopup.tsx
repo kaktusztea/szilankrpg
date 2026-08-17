@@ -4,8 +4,9 @@ import { ElonyPicker } from './ElonyPicker';
 import { SebzesPopup } from './SebzesPopup';
 import { ManualDicePicker } from './ManualDicePicker';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
-import type { DobásInfo, DobásHatás } from './combat-roll-info';
+import type { DobásInfo } from './combat-roll-info';
 import { netElőnySzint } from './combat-roll-info';
+import { HatasokInfo as HatásokInfo } from './HatasokInfo';
 
 /**
  * Derive Sebzés Előny from the TÉ k20 roll value:
@@ -119,23 +120,4 @@ export function TamadoDobasPopup({ té, sp, átütés, dobásInfo, onClose }: Pr
   );
 }
 
-// ─── Shared info display for active Előny/Hátrány effects ──────────────────
-
-function HatásokInfo({ hatások }: { hatások: DobásHatás[] }) {
-  return (
-    <div className="dobas-info-list">
-      {hatások.map((h, i) => (
-        <div key={i} className="dobas-info-item">
-          <span className={`dobas-info-badge ${h.operátor}`}>
-            {h.operátor === 'előny' ? `Előny+${Math.abs(h.érték)}` :
-             h.operátor === 'hátrány' ? `Hátrány-${Math.abs(h.érték)}` :
-             h.operátor === 'enyhít' ? `Enyhít+${Math.abs(h.érték)}` : '—'}
-          </span>
-          <span className="dobas-info-source">{h.forrás}</span>
-        </div>
-      ))}
-    </div>
-  );
-}
-
-// ponytail: HatásokInfo is internal-only; if SebzesPopup needs it later, move to a shared file.
+// ponytail: HatásokInfo moved to shared HatasokInfo.tsx
