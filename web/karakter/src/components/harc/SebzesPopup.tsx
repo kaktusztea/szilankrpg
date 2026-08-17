@@ -9,9 +9,9 @@ import { netElőnySzint } from './combat-roll-info';
 interface Props {
   /** Weapon SP from reactive engine */
   sp: number;
-  /** Default Előny level (from TÉ k20 roll: 16-19→1, 20→2, else 0) */
+  /** Default Előny level (from TÉ/CÉ k20 roll: 16-19→1, 20→2, else 0) */
   defaultElőny: number;
-  /** The actual TÉ k20 roll value (for display) */
+  /** The actual TÉ/CÉ k20 roll value (for display) */
   téK20: number;
   /** Active Előny/Hátrány effects on Sebzésdobás (informational) */
   sebzésHatások: DobásHatás[];
@@ -19,6 +19,10 @@ interface Props {
   spBónuszok: SpBónusz[];
   /** Taktika notes relevant to sebzés (e.g. "Sebzés: 0") */
   megjegyzések: { forrás: string; szöveg: string }[];
+  /** Hide the másodlagos sebzéstípus button (e.g. távharc) */
+  hideMásodlagos?: boolean;
+  /** Hide the automatic SP bonuses list inside StatikusBonuszBtn (e.g. távharc) */
+  hideAutoBónusz?: boolean;
   onClose: () => void;
 }
 
@@ -30,7 +34,7 @@ interface SebzésEredmény {
 }
 
 /** Sebzés overlay: Előny/Hátrány picker + SP bónusz grid + k20 roll + info. */
-export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBónuszok, megjegyzések, onClose }: Props) {
+export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBónuszok, megjegyzések, hideMásodlagos, hideAutoBónusz, onClose }: Props) {
   // Combined default: TÉ k20 bonus + net from active effects, clamped to [-2, +2]
   const combinedDefault = Math.max(-2, Math.min(2, defaultElőny + netElőnySzint(sebzésHatások)));
   const [szint, setSzint] = useState(combinedDefault);
@@ -106,14 +110,17 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
             <StatikusBonuszBtn
               bónusz={bónusz}
               spBónuszok={spBónuszok}
+              hideAuto={hideAutoBónusz}
               onBónuszClick={handleBónuszClick}
             />
 
-            <button
-              className={`sebzes-masodlagos-btn${másodlagos ? ' active' : ''}`}
-              onClick={() => { setMásodlagos(m => !m); setEredmény(null); }}>
-              Sebzéstípus másodlagos: {másodlagos ? 'igen' : 'nem'}
-            </button>
+            {!hideMásodlagos && (
+              <button
+                className={`sebzes-masodlagos-btn${másodlagos ? ' active' : ''}`}
+                onClick={() => { setMásodlagos(m => !m); setEredmény(null); }}>
+                Sebzéstípus másodlagos: {másodlagos ? 'igen' : 'nem'}
+              </button>
+            )}
 
             <div className="sebzes-summary">
               SP: {(() => {
@@ -150,13 +157,14 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
 
 // ─── Statikus bónusz gomb + popup ──────────────────────────────────────────
 
-function StatikusBonuszBtn({ bónusz, spBónuszok, onBónuszClick }: {
+function StatikusBonuszBtn({ bónusz, spBónuszok, hideAuto, onBónuszClick }: {
   bónusz: number;
   spBónuszok: SpBónusz[];
+  hideAuto?: boolean;
   onBónuszClick: (val: number) => void;
 }) {
   const [open, setOpen] = useState(false);
-  const fortélySum = spBónuszok.reduce((s, b) => s + b.érték, 0);
+  const fortélySum = hideAuto ? 0 : spBónuszok.reduce((s, b) => s + b.érték, 0);
   const total = fortélySum + bónusz;
   const colorClass = total > 0 ? 'sebzes-stat-pos' : total < 0 ? 'sebzes-stat-neg' : '';
 
@@ -169,17 +177,19 @@ function StatikusBonuszBtn({ bónusz, spBónuszok, onBónuszClick }: {
         <PopupOverlay onClose={() => setOpen(false)}>
           <div className="sebzes-stat-popup">
             <label className="harc-popup-label">Statikus SP bónuszok</label>
-            <div className="sebzes-stat-list">
-              <span className="sebzes-stat-manual-label">Automatikus bónuszok:</span>
-              {spBónuszok.length > 0 ? spBónuszok.map((b, i) => (
-                <div key={i} className="sebzes-stat-item">
-                  <span className={b.érték > 0 ? 'sebzes-stat-pos' : 'sebzes-stat-neg'}>
-                    {b.érték > 0 ? '+' : ''}{b.érték}
-                  </span>
-                  <span className="sebzes-stat-source">{b.forrás}</span>
-                </div>
-              )) : <span className="sebzes-stat-source">–</span>}
-            </div>
+            {!hideAuto && (
+              <div className="sebzes-stat-list">
+                <span className="sebzes-stat-manual-label">Automatikus bónuszok:</span>
+                {spBónuszok.length > 0 ? spBónuszok.map((b, i) => (
+                  <div key={i} className="sebzes-stat-item">
+                    <span className={b.érték > 0 ? 'sebzes-stat-pos' : 'sebzes-stat-neg'}>
+                      {b.érték > 0 ? '+' : ''}{b.érték}
+                    </span>
+                    <span className="sebzes-stat-source">{b.forrás}</span>
+                  </div>
+                )) : <span className="sebzes-stat-source">–</span>}
+              </div>
+            )}
             <div className="sebzes-stat-manual">
               <span className="sebzes-stat-manual-label">Kézi bónusz:</span>
               <div className="sebzes-stat-grid">

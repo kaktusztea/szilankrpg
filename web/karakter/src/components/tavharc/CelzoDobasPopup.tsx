@@ -2,18 +2,34 @@ import { useState } from 'react';
 import { PopupOverlay } from '../PopupOverlay';
 import { ElonyPicker } from '../harc/ElonyPicker';
 import { ManualDicePicker } from '../harc/ManualDicePicker';
+import { SebzesPopup } from '../harc/SebzesPopup';
 import { rollElőnyHátrányK20, type ProbaDobás } from '../../engine/dice';
 import type { CéDobásHatás } from './tavharc-roll-info';
+import type { DobásHatás } from '../harc/combat-roll-info';
+
+/**
+ * Derive Sebzés Előny from the CÉ k20 roll value (same rule as TÉ):
+ *  16-19 → Előny+1, 20 → Előny+2, otherwise 0
+ */
+function sebzésElőnyFromK20(k20: number): number {
+  if (k20 === 20) return 2;
+  if (k20 >= 16) return 1;
+  return 0;
+}
 
 interface Props {
   /** Active weapon CÉ value */
   cé: number;
   /** Target VÉ (from szorzó × cella) */
   vé: number;
+  /** Weapon SP value */
+  sp: number;
   /** Collected active effects on CÉ rolls */
   céHatások: CéDobásHatás[];
   /** Megjegyzések (taktika notes relevant to CÉ) */
   céMegjegyzések: { forrás: string; szöveg: string }[];
+  /** Active Előny/Hátrány effects on Sebzésdobás */
+  sebzésHatások: DobásHatás[];
   /** Default Előny/Hátrány szint (from active effects) */
   defaultSzint: number;
   onClose: () => void;
@@ -26,13 +42,15 @@ interface CéEredmény {
 }
 
 /**
- * Célzó dobás popup — TamadoDobasPopup mintájára:
+ * Célzó dobás popup — three phases:
  *  Phase 1: Előny/Hátrány picker + active effects info + Dobás button
- *  Phase 2: Result display (CÉ + k20 vs VÉ) + Találat/Nem talált
+ *  Phase 2: Result display (CÉ + k20 vs VÉ) + Találat → Sebzés button
+ *  Phase 3: SebzesPopup (reused from harc/, hideMásodlagos=true)
  */
-export function CélzóDobasPopup({ cé, vé, céHatások, céMegjegyzések, defaultSzint, onClose }: Props) {
+export function CélzóDobasPopup({ cé, vé, sp, céHatások, céMegjegyzések, sebzésHatások, defaultSzint, onClose }: Props) {
   const [szint, setSzint] = useState(defaultSzint);
   const [result, setResult] = useState<CéEredmény | null>(null);
+  const [showSebzés, setShowSebzés] = useState(false);
 
   function handleDobás() {
     const dobás = rollElőnyHátrányK20(szint);
@@ -44,7 +62,25 @@ export function CélzóDobasPopup({ cé, vé, céHatások, céMegjegyzések, def
     setResult({ alap: cé, dobás, eredmény: cé + value });
   }
 
+  const k20Érték = result?.dobás.eredmény ?? 0;
   const siker = result ? result.eredmény >= vé : false;
+  const sebzésElőny = sebzésElőnyFromK20(k20Érték);
+
+  if (showSebzés) {
+    return (
+      <SebzesPopup
+        sp={sp}
+        defaultElőny={sebzésElőny}
+        téK20={k20Érték}
+        sebzésHatások={sebzésHatások}
+        spBónuszok={[]}
+        megjegyzések={[]}
+        hideMásodlagos
+        hideAutoBónusz
+        onClose={onClose}
+      />
+    );
+  }
 
   return (
     <PopupOverlay onClose={onClose}>
@@ -98,6 +134,12 @@ export function CélzóDobasPopup({ cé, vé, céHatások, céMegjegyzések, def
             <div className={siker ? 'ke-dobas-siker' : 'ke-dobas-sikertelen'}>
               {siker ? 'Találat' : 'Nem talált'}
             </div>
+            {siker && (
+              <button className="tamado-sebzes-btn" onClick={() => setShowSebzés(true)}>
+                Sebzés
+                {sebzésElőny > 0 && <span className="tamado-sebzes-btn-hint">Előny+{sebzésElőny}</span>}
+              </button>
+            )}
           </>
         )}
       </div>
