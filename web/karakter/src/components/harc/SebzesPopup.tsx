@@ -35,10 +35,13 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
   const combinedDefault = Math.max(-2, Math.min(2, defaultElőny + netElőnySzint(sebzésHatások)));
   const [szint, setSzint] = useState(combinedDefault);
   const [bónusz, setBónusz] = useState(0);
+  const [másodlagos, setMásodlagos] = useState(false);
   const [eredmény, setEredmény] = useState<SebzésEredmény | null>(null);
 
+  const effSzint = Math.max(-2, Math.min(2, szint + (másodlagos ? -1 : 0)));
+
   function handleDobás() {
-    const dobás = rollElőnyHátrányK20(szint);
+    const dobás = rollElőnyHátrányK20(effSzint);
     setEredmény({ dobás, sp, bónusz, végső: dobás.eredmény + sp + bónusz });
   }
 
@@ -60,6 +63,7 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
   return (
     <PopupOverlay onClose={onClose}>
       <div className="tamado-dobas-popup">
+        {eredmény && <button className="sebzes-reset-btn" onClick={() => setEredmény(null)}>⟲</button>}
         <div className="ke-dobas-header">Sebzés</div>
 
         {!eredmény ? (
@@ -99,43 +103,32 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
               </div>
             )}
 
-            <div className="sebzes-bonusz-section">
-              <span className="sebzes-bonusz-label">Bónusz SP:</span>
-              <div className="sebzes-bonusz-grid">
-                {[-6, -5, -4, -3, -2, -1].map(v => (
-                  <button key={v}
-                    className={`sebzes-bonusz-btn${bónusz === v ? ' active' : ''}`}
-                    onClick={() => handleBónuszClick(v)}>{v}</button>
-                ))}
-              </div>
-              <div className="sebzes-bonusz-grid">
-                {[1, 2, 3, 4, 5, 6].map(v => (
-                  <button key={v}
-                    className={`sebzes-bonusz-btn${bónusz === v ? ' active' : ''}`}
-                    onClick={() => handleBónuszClick(v)}>{`+${v}`}</button>
-                ))}
-              </div>
-            </div>
+            <StatikusBonuszBtn
+              bónusz={bónusz}
+              spBónuszok={spBónuszok}
+              onBónuszClick={handleBónuszClick}
+            />
 
-            {spBónuszok.length > 0 && (
-              <div className="dobas-info-list dobas-sp-info">
-                {spBónuszok.map((b, i) => (
-                  <div key={i} className="dobas-info-item">
-                    <span className="dobas-info-badge sp">+{b.érték} SP</span>
-                    <span className="dobas-info-source">{b.forrás}</span>
-                  </div>
-                ))}
-              </div>
-            )}
+            <button
+              className={`sebzes-masodlagos-btn${másodlagos ? ' active' : ''}`}
+              onClick={() => { setMásodlagos(m => !m); setEredmény(null); }}>
+              Sebzéstípus másodlagos: {másodlagos ? 'igen' : 'nem'}
+            </button>
 
             <div className="sebzes-summary">
-              SP: {sp}{bónusz !== 0 ? ` ${bónusz > 0 ? '+' : ''}${bónusz}` : ''} + k20
-              {szint !== 0 ? ` (${szint > 0 ? `Előny+${szint}` : `Hátrány${szint}`})` : ''}
+              SP: {(() => {
+                const fortélySum = spBónuszok.reduce((s, b) => s + b.érték, 0);
+                const totalBónusz = fortélySum + bónusz;
+                const base = sp - fortélySum;
+                if (totalBónusz !== 0) return <>{base}<span className={totalBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{totalBónusz > 0 ? '+' : ''}{totalBónusz}</span></>;
+                return sp;
+              })()} + k20
+              {effSzint !== 0 ? ` (${effSzint > 0 ? `Előny+${effSzint}` : `Hátrány${effSzint}`})` : ''}
             </div>
 
             <div className="dobas-btn-row">
               <button className="tamado-sebzes-btn" onClick={handleDobás}>Dobás</button>
-              <ManualDicePicker szint={szint} onSelect={handleManualK20} alapÉrték={sp + bónusz} alapLabel="SP" />
+              <ManualDicePicker szint={effSzint} onSelect={handleManualK20} alapÉrték={sp + bónusz} alapLabel="SP" />
             </div>
           </>
         ) : (
@@ -152,5 +145,56 @@ export function SebzesPopup({ sp, defaultElőny, téK20, sebzésHatások, spBón
         )}
       </div>
     </PopupOverlay>
+  );
+}
+
+// ─── Statikus bónusz gomb + popup ──────────────────────────────────────────
+
+function StatikusBonuszBtn({ bónusz, spBónuszok, onBónuszClick }: {
+  bónusz: number;
+  spBónuszok: SpBónusz[];
+  onBónuszClick: (val: number) => void;
+}) {
+  const [open, setOpen] = useState(false);
+  const fortélySum = spBónuszok.reduce((s, b) => s + b.érték, 0);
+  const total = fortélySum + bónusz;
+  const colorClass = total > 0 ? 'sebzes-stat-pos' : total < 0 ? 'sebzes-stat-neg' : '';
+
+  return (
+    <>
+      <button className={`sebzes-stat-btn ${colorClass}`} onClick={() => setOpen(true)}>
+        Statikus bónuszok: {total > 0 ? '+' : ''}{total}
+      </button>
+      {open && (
+        <PopupOverlay onClose={() => setOpen(false)}>
+          <div className="sebzes-stat-popup">
+            <label className="harc-popup-label">Statikus SP bónuszok</label>
+            <div className="sebzes-stat-list">
+              <span className="sebzes-stat-manual-label">Automatikus bónuszok:</span>
+              {spBónuszok.length > 0 ? spBónuszok.map((b, i) => (
+                <div key={i} className="sebzes-stat-item">
+                  <span className={b.érték > 0 ? 'sebzes-stat-pos' : 'sebzes-stat-neg'}>
+                    {b.érték > 0 ? '+' : ''}{b.érték}
+                  </span>
+                  <span className="sebzes-stat-source">{b.forrás}</span>
+                </div>
+              )) : <span className="sebzes-stat-source">–</span>}
+            </div>
+            <div className="sebzes-stat-manual">
+              <span className="sebzes-stat-manual-label">Kézi bónusz:</span>
+              <div className="sebzes-stat-grid">
+                {[-6, -5, -4, -3, -2, -1, 1, 2, 3, 4, 5, 6].map(v => (
+                  <button key={v}
+                    className={`sebzes-stat-circle${bónusz === v ? ' active' : ''}${v > 0 ? ' sebzes-stat-pos' : v < 0 ? ' sebzes-stat-neg' : ''}`}
+                    onClick={() => { onBónuszClick(v); setOpen(false); }}>
+                    {v > 0 ? `+${v}` : v === 0 ? '0' : v}
+                  </button>
+                ))}
+              </div>
+            </div>
+          </div>
+        </PopupOverlay>
+      )}
+    </>
   );
 }

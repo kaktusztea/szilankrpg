@@ -205,6 +205,8 @@
 .harc-tam-clickable { cursor: pointer; }
 .harc-row-dimmed { opacity: 0.4; }
 .ph-bonus { color: var(--color-positive); }
+.sp-bonus-pos { color: var(--success); }
+.sp-bonus-neg { color: var(--error); }
 .harc-monospace { font-family: monospace; }
 .btn-reset-sm { font-size: 15px; }
 .harc-fegyver-active-row { border: 2px solid var(--color-taktika); }
@@ -238,6 +240,21 @@
   font-weight: bold;
   color: var(--text);
   text-transform: uppercase;
+  text-align: center;
+}
+
+.sebzes-reset-btn {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  background: none;
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  color: var(--text);
+  opacity: 0.8;
+  padding: 0;
+  line-height: 1;
 }
 
 .ke-dobas-result {
@@ -328,6 +345,7 @@
   gap: 12px;
   padding: 20px 24px;
   min-width: 240px;
+  position: relative;
 }
 
 .tamado-elony-list {
@@ -392,44 +410,96 @@
 }
 
 /* --- Sebzés bónusz section --- */
-.sebzes-bonusz-section {
+/* --- Statikus bónusz gomb + popup --- */
+.sebzes-stat-btn {
   width: 100%;
+  padding: 10px;
+  margin-top: 4px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text);
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+.sebzes-stat-pos { color: var(--success); }
+.sebzes-stat-neg { color: var(--error); }
+
+.sebzes-stat-popup {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  margin-top: 4px;
+  gap: 12px;
+  min-width: 240px;
 }
-
-.sebzes-bonusz-label {
+.sebzes-stat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.sebzes-stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+.sebzes-stat-item > span:first-child {
+  font-weight: bold;
+  font-family: monospace;
+  min-width: 32px;
+}
+.sebzes-stat-source { color: var(--text-dim); }
+.sebzes-stat-manual-label {
   font-size: 13px;
   color: var(--text-dim);
+  margin-bottom: 4px;
 }
-
-.sebzes-bonusz-grid {
+.sebzes-stat-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 4px;
-  width: 100%;
+  grid-template-columns: repeat(6, 36px);
+  gap: 6px;
+  justify-content: center;
 }
-
-.sebzes-bonusz-btn {
-  padding: 8px 0;
+.sebzes-stat-circle {
+  width: 36px;
+  height: 36px;
   border: 1px solid var(--border-input);
-  border-radius: 4px;
+  border-radius: 50%;
   background: var(--input-bg);
   color: var(--text);
   font-size: 14px;
   font-family: monospace;
   cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sebzes-stat-circle.active {
+  border-color: var(--warning);
+  background: rgba(255, 152, 0, 0.2);
+  font-weight: bold;
+}
+.sebzes-stat-circle.active.sebzes-stat-pos { border-color: var(--success); background: rgba(76, 175, 80, 0.2); }
+.sebzes-stat-circle.active.sebzes-stat-neg { border-color: var(--error); background: rgba(244, 67, 54, 0.2); }
+
+/* Másodlagos sebzés toggle */
+.sebzes-masodlagos-btn {
+  width: 100%;
+  padding: 10px;
+  margin-top: 6px;
+  border: 1px solid var(--border-input);
+  border-radius: 6px;
+  background: var(--input-bg);
+  color: var(--text-dim);
+  font-size: 14px;
+  cursor: pointer;
   text-align: center;
 }
-
-.sebzes-bonusz-btn.active {
-  border-color: var(--warning);
-  background: rgba(255, 152, 0, 0.15);
-  color: var(--warning);
-  font-weight: bold;
+.sebzes-masodlagos-btn.active {
+  border-color: var(--error);
+  background: rgba(244, 67, 54, 0.1);
+  color: #e57373;
 }
 
 .sebzes-summary {

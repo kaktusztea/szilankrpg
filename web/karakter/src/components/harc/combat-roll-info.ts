@@ -140,18 +140,23 @@ export function collectDobásInfo(session: Session, karakter: Karakter, data: Ga
   }
 
 
-  // 4. Fortélyok — feltételes módosítók on té_dobás/sebzésdobás
+  // 4. Fortélyok — feltételes módosítók on té_dobás/sebzésdobás/SP
   for (const kf of karakter.fortélyok) {
     const def = (data.fortelySummaries as FortelySummary[]).find(f => f.név === kf.név);
     if (!def) continue;
     const fokDef = def.fokok.find(f => f.fok === kf.fok);
     if (!fokDef?.módosítók) continue;
     for (const mod of fokDef.módosítók) {
-      if (mod.cél !== 'té_dobás' && mod.cél !== 'sebzésdobás') continue;
-      if (mod.mód !== 'előny' && mod.mód !== 'hátrány' && mod.mód !== 'enyhít') continue;
       // Check feltétel against aktívFeltételek
       if (mod.feltétel && !aktívFeltételek.has(mod.feltétel)) continue;
       const forrás = kf.spec_elem ? `${kf.név} - ${kf.spec_elem}` : kf.név;
+
+      if (mod.cél === 'SP' && mod.mód === 'flat') {
+        spBónuszok.push({ forrás, érték: mod.érték });
+        continue;
+      }
+      if (mod.cél !== 'té_dobás' && mod.cél !== 'sebzésdobás') continue;
+      if (mod.mód !== 'előny' && mod.mód !== 'hátrány' && mod.mód !== 'enyhít') continue;
       const hatás: DobásHatás = {
         forrás,
         cél: mod.cél as 'té_dobás' | 'sebzésdobás',

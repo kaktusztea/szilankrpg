@@ -45,7 +45,9 @@ export function HarcFegyverTable({
     const { veBónusz, téExtra, isOverlay, dimmed, displayNév, showPh2 } = opts;
     const té = computeTÉ(r.TÉ, téLevonás, taktikaMods['TÉ'], téExtra, r.támadások, többTámTÉ);
     const vé = computeVÉ(r.VÉ, veBónusz, taktikaMods['VÉ'], session.vé_csökkenés);
-    const sp = r.SP + taktikaMods['SP'];
+    const spTotal = r.SP + taktikaMods['SP'];
+    const spBónusz = (fortelyMods['SP'] ?? 0) + taktikaMods['SP'];
+    const spBase = spTotal - spBónusz;
     const ph = r.pengehossz + (fortelyMods['pengehossz'] ?? 0);
     const pengeWarning = belharciAktív && r.pengehossz > 0;
     const név = displayNév ?? r.fegyver_név;
@@ -57,7 +59,9 @@ export function HarcFegyverTable({
         <td className="harc-tam-clickable" onClick={() => onTámInfoClick({ név: r.fegyver_név, sebesség: r.sebesség, harckeret: r.harckeret, hk_harcmodor: r.hk_harcmodor, hk_gyorsaság: r.hk_gyorsaság, hk_mgt: r.hk_mgt, hk_felszerelés_mgt: r.hk_felszerelés_mgt, hk_fortély: r.hk_fortély })}>{r.támadások}</td>
         <td>{té}</td>
         <td className={véFlashClass}>{vé}</td>
-        <td>{sp} {r.sebzésmód}</td>
+        <td>{spBónusz !== 0
+          ? <>{spBase}<span className={spBónusz > 0 ? 'sp-bonus-pos' : 'sp-bonus-neg'}>{spBónusz > 0 ? '+' : ''}{spBónusz}</span></>
+          : spTotal} {r.sebzésmód}</td>
         <td className={phBonusClass}>{showPh2 != null ? `${ph}(${showPh2 + (fortelyMods['pengehossz'] ?? 0)})` : ph}</td>
       </tr>
     );
