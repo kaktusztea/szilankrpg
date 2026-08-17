@@ -29,6 +29,11 @@ export function SzilankPickerOverlay({ current, onPick, onClose }: Props) {
         <a className="szilank-hub-link" href={REPO_BASE + 'web/karakter/README.md'}
           target="_blank" rel="noopener noreferrer">📱 Webapp manuál</a>
 
+        <hr className="szilank-divider" />
+
+        <a className="szilank-hub-link" href="https://github.com/kaktusztea/szilankrpg/raw/master/segedlet/szilank_segedlet_ingame.pdf?raw=true"
+          target="_blank" rel="noopener noreferrer">📋 Segédlet pdf</a>
+
 
       </div>
     </OverlayPortal>
